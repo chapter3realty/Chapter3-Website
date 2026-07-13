@@ -58,6 +58,10 @@ function scriptBySignature(s, sig) {
   return null;
 }
 const partial = (name) => fs.readFileSync(path.join(PARTIALS, name), "utf-8");
+// Compare/stamp chrome ignoring line-ending style (repo is CRLF, git blobs are LF).
+const lf = (s) => s.replace(/\r\n/g, "\n");
+const eolOf = (s) => (s.includes("\r\n") ? "\r\n" : "\n");            // a page's own line ending
+const toEol = (s, eol) => s.replace(/\r\n/g, "\n").replace(/\n/g, eol); // convert content to that ending
 
 function walkHtml(dir, out) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -99,11 +103,11 @@ function check() {
   // truth; a page edited directly will be overwritten on the next stitch, so catch it here.
   if (fs.existsSync(PARTIALS)) {
     for (const r of REGIONS) {
-      const want = partial(r.file);
+      const want = lf(partial(r.file));
       for (const f of pages) {
         const s = fs.readFileSync(f, "utf-8");
         const span = r.find(s);
-        if (span && s.slice(span.start, span.end) !== want)
+        if (span && lf(s.slice(span.start, span.end)) !== want)
           errors.push(`${f.replace(ROOT + path.sep, "")}: ${r.name} differs from partials/${r.file} -> edit the partial, then run 'node build.js stitch'`);
       }
     }
@@ -157,14 +161,15 @@ function stitch() {
   const pages = htmlFiles();
   let totalRepl = 0;
   for (const r of REGIONS) {
-    const want = partial(r.file);
+    const wantLf = lf(partial(r.file));
     let repl = 0, missing = 0;
     for (const f of pages) {
       let s = fs.readFileSync(f, "utf-8");
       const span = r.find(s);
       if (!span) { missing++; continue; }
-      if (s.slice(span.start, span.end) !== want) {
-        s = s.slice(0, span.start) + want + s.slice(span.end);
+      const cur = s.slice(span.start, span.end);
+      if (lf(cur) !== wantLf) {              // real content change, ignoring line-ending style
+        s = s.slice(0, span.start) + toEol(wantLf, eolOf(cur)) + s.slice(span.end);
         fs.writeFileSync(f, s);
         repl++;
       }
