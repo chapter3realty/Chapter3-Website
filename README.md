@@ -28,6 +28,25 @@ The random-looking part of the file name (`b87c0807ee`) is a **fingerprint of th
 
 Each page still has a small inline `<style>` with rules unique to that page, and some pages have their own inline `<script>` for page-specific tools (like the investment calculators). That is fine and expected.
 
+## One source for the header, nav, and footer
+
+The header (with the nav menus), the footer, the analytics snippet, and the Google Maps loader are the same on every page. They each live ONCE in the `partials/` folder at the repo root:
+
+- `partials/header.html` - the top bar and both menus
+- `partials/footer.html` - the footer
+- `partials/ga.html` - the analytics snippet
+- `partials/maps-loader.html` - the Google Maps loader
+
+To change any of them (say, add a nav link):
+
+1. Edit the file in `partials/`.
+2. Run: `node build.js stitch`
+   This stamps your change into every page automatically. One edit, all pages updated.
+3. Run: `node build.js check`
+4. Push.
+
+Do not edit the header or footer inside an individual page. `check` will catch it and fail (a page edited directly would be overwritten by the next stitch), and tell you to make the change in `partials/` instead.
+
 ## Everyday editing
 
 **Editing the words or layout of one page:** just edit that page's `index.html` and push. Nothing special.
@@ -68,11 +87,13 @@ wrangler pages deploy chapter3realty --project-name chapter3realty
 
 | Command | When | What it does |
 | --- | --- | --- |
-| `node build.js check` | Before every push | Verifies asset links, guards against regressions, reports heavy pages. |
+| `node build.js check` | Before every push | Verifies asset links, chrome matches partials, no stale assets, reports heavy pages. |
 | `node build.js rehash` | After editing any file in `chapter3realty/assets/` | Re-fingerprints changed assets and updates every page that links to them, so the browser cache updates. |
+| `node build.js stitch` | After editing any file in `partials/` | Stamps the shared header/footer/snippets into every page. |
 
-## Scaling to many pages (the next step)
+## The safe routine for any change
 
-The shared CSS/JS now lives in one place, but the page **chrome** (the `<head>` tags, the top navigation, and the footer) is still copy-pasted identically into every `index.html`. That is manageable for ~40 pages but not for thousands.
-
-The natural next step is a small generator: keep the header, footer, and `<head>` as single template files, keep each page as just its unique content, and have a build step stamp the shared chrome into each page before deploy. That keeps the "plain static files on Cloudflare" model (fast, simple, no server) while letting you change the nav or footer in one place instead of forty. `build.js` is the seed of that build step.
+1. Edit content in a page, or shared styling in `chapter3realty/assets/`, or chrome in `partials/`.
+2. If you touched `assets/`: `node build.js rehash`. If you touched `partials/`: `node build.js stitch`.
+3. `node build.js check` (fix anything it flags).
+4. `wrangler pages deploy chapter3realty --project-name chapter3realty`

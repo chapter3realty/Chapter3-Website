@@ -26,7 +26,38 @@
 const fs = require("fs"), path = require("path"), crypto = require("crypto");
 const ROOT = "chapter3realty";
 const ASSETS = path.join(ROOT, "assets");
+const PARTIALS = "partials";
 const md5 = (buf) => crypto.createHash("md5").update(buf).digest("hex").slice(0, 10);
+
+/*
+ * Shared page chrome lives ONCE in partials/ and is stamped into every page by
+ * 'node build.js stitch'. To change the nav, footer, analytics snippet, or the
+ * Google Maps loader: edit the file in partials/, run stitch, check, then deploy.
+ * 'check' fails if any page's copy has drifted from its partial, so the partial
+ * is always the single source of truth.
+ *
+ * How a region is found inside a page:
+ *  - header: the <header>...</header> element (one per page)
+ *  - footer: the <footer...>...</footer> element (one per page)
+ *  - ga / maps-loader: the inline <script> whose body contains the signature text
+ */
+const REGIONS = [
+  { name: "header", file: "header.html", find: (s) => spanBetween(s, "<header>", "</header>") },
+  { name: "footer", file: "footer.html", find: (s) => spanBetween(s, "<footer", "</footer>") },
+  { name: "ga", file: "ga.html", find: (s) => scriptBySignature(s, "GA deferred") },
+  { name: "maps-loader", file: "maps-loader.html", find: (s) => scriptBySignature(s, "GOOGLE_MAPS_KEY") },
+];
+function spanBetween(s, a, b) {
+  const i = s.indexOf(a); if (i < 0) return null;
+  const j = s.indexOf(b, i); if (j < 0) return null;
+  return { start: i, end: j + b.length };
+}
+function scriptBySignature(s, sig) {
+  for (const m of s.matchAll(/<script>[\s\S]*?<\/script>/g))
+    if (m[0].includes(sig)) return { start: m.index, end: m.index + m[0].length };
+  return null;
+}
+const partial = (name) => fs.readFileSync(path.join(PARTIALS, name), "utf-8");
 
 function walkHtml(dir, out) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -64,6 +95,19 @@ function check() {
   }
   // ERROR: an asset referenced by nobody is either a leftover or a broken rename
   for (const a of assets) if (!referenced.has(a)) errors.push(`orphan asset: /assets/${a} is referenced by no page`);
+  // ERROR: page chrome drifted from its partial. The partial is the single source of
+  // truth; a page edited directly will be overwritten on the next stitch, so catch it here.
+  if (fs.existsSync(PARTIALS)) {
+    for (const r of REGIONS) {
+      const want = partial(r.file);
+      for (const f of pages) {
+        const s = fs.readFileSync(f, "utf-8");
+        const span = r.find(s);
+        if (span && s.slice(span.start, span.end) !== want)
+          errors.push(`${f.replace(ROOT + path.sep, "")}: ${r.name} differs from partials/${r.file} -> edit the partial, then run 'node build.js stitch'`);
+      }
+    }
+  }
   // ERROR: an asset whose contents no longer match the hash in its name was edited without rehashing.
   // Because /assets/* is cached "immutable" for a year, shipping it would serve the OLD file to
   // returning visitors and the CDN for up to a year. Catch it here instead.
@@ -109,7 +153,30 @@ function rehash() {
   console.log(`Updated references in ${touched} page(s). Run 'node build.js check', then deploy.`);
 }
 
+function stitch() {
+  const pages = htmlFiles();
+  let totalRepl = 0;
+  for (const r of REGIONS) {
+    const want = partial(r.file);
+    let repl = 0, missing = 0;
+    for (const f of pages) {
+      let s = fs.readFileSync(f, "utf-8");
+      const span = r.find(s);
+      if (!span) { missing++; continue; }
+      if (s.slice(span.start, span.end) !== want) {
+        s = s.slice(0, span.start) + want + s.slice(span.end);
+        fs.writeFileSync(f, s);
+        repl++;
+      }
+    }
+    totalRepl += repl;
+    console.log(`${r.name.padEnd(12)} stamped into ${repl} page(s)` + (missing ? ` (${missing} page(s) have no ${r.name}, skipped)` : ""));
+  }
+  console.log(totalRepl ? `\nDone. Run 'node build.js check', then deploy.` : `\nEverything already matched the partials - nothing to do.`);
+}
+
 const cmd = process.argv[2] || "check";
 if (cmd === "check") check();
 else if (cmd === "rehash") rehash();
-else { console.log("Usage: node build.js [check|rehash]"); process.exit(1); }
+else if (cmd === "stitch") stitch();
+else { console.log("Usage: node build.js [check|rehash|stitch]"); process.exit(1); }

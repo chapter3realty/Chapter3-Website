@@ -1,0 +1,14 @@
+<script>
+const GOOGLE_MAPS_KEY = 'AIzaSyAFTNMGh-PmVFTl3S0ViiM9zNYicFrgGfs';
+if (GOOGLE_MAPS_KEY !== 'YOUR_GOOGLE_MAPS_KEY') {
+  var _c3NeedsMap = document.getElementById('page-strmap');
+  var _c3NeedsPlaces = document.getElementById('page-ltr');
+  if (_c3NeedsMap || _c3NeedsPlaces) {
+    const s = document.createElement('script');
+    var _c3Cb = _c3NeedsMap ? 'initSTRMap' : 'd2PlacesReady';
+    s.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_KEY}&libraries=places,geometry&callback=${_c3Cb}`;
+    s.async = true; s.defer = true;
+    document.head.appendChild(s);
+  }
+}
+</script>
