@@ -312,6 +312,14 @@ function ltrRenderResults(d, address, isFixer, isCash) {
           <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">HOA ($/mo)</div>
           <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-hoa" type="number" value="${hoaMoVal}" oninput="recalcLtr()"/>
         </div>
+        <div>
+          <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Insurance ($/yr)</div>
+          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-insurance" type="number" value="${d.insuranceAnnual||1800}" oninput="recalcLtr()"/>
+        </div>
+        <div>
+          <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Repair budget ($)</div>
+          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-rehab" type="number" value="${d.rehabBudgetHigh||0}" oninput="recalcLtr()"/>
+        </div>
         ${!isCash?`
         <div>
           <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Down Payment (%)</div>
@@ -379,7 +387,7 @@ function recalcLtr() {
   const vac     = Math.round(gross * vacPct / 100);
   const egi     = gross - vac;
   const tax     = d.propertyTaxAnnual || Math.round(price * 0.0082);
-  const ins     = d.insuranceAnnual   || 1800;
+  const ins     = parseFloat(document.getElementById('adj-insurance')?.value) || d.insuranceAnnual || 1800;
   const maint   = d.maintenanceAnnual || Math.round(price * 0.0085);
   const utBase  = d.utilitiesMonthly || Math.round((d.inferredSqft || _ltrData?.inferredSqft || 1200) * 0.20 / 12);
   const utAnn   = utPay === 'landlord' ? utBase * 12 : 0;
@@ -400,7 +408,8 @@ function recalcLtr() {
 
   const cf   = noiTrue - debt - vac;
   const moCF = cf / 12;
-  const cash = effectiveCash ? price : price * downPct / 100 + price * 0.03;
+  const rehab = parseFloat(document.getElementById("adj-rehab")?.value) || 0;
+  const cash = (effectiveCash ? price : price * downPct / 100 + price * 0.03) + rehab;
   const coc  = cash > 0 ? (cf / cash) * 100 : 0;
   const cap  = price > 0 ? (noiTrue / price) * 100 : 0;
 
@@ -446,17 +455,30 @@ function recalcLtr() {
 }
 
 function ltrSavePDF() {
-  const btns = document.querySelectorAll('#ltr-results button, #ltr-results a.btn');
-  btns.forEach(b => b.style.display='none');
-  const h = document.createElement('div');
-  h.id = 'ltr-pdf-hdr';
-  h.style.cssText = 'text-align:center;padding:1rem 0 1.5rem;border-bottom:2px solid #1c2028;margin-bottom:1.5rem';
-  h.innerHTML = '<div style="font-family:serif;font-size:1.4rem;font-weight:700;color:#1c2028">Chapter 3 Realty</div><div style="font-size:.75rem;color:#6b7280;margin-top:.25rem">Long-Term Rental Analysis · chapter3realty.com · 854.333.2135</div>';
-  document.getElementById('ltr-results').prepend(h);
-  window.print();
-  setTimeout(() => { btns.forEach(b => b.style.display=''); const hh=document.getElementById('ltr-pdf-hdr'); if(hh) hh.remove(); }, 1000);
+  var res = document.getElementById('ltr-results'); if (!res) return;
+  var btns = res.querySelectorAll('button, a.btn'); for (var i=0;i<btns.length;i++) btns[i].style.display='none';
+  var h = document.createElement('div'); h.id='ltr-pdf-hdr';
+  h.style.cssText='text-align:center;padding:1rem 0 1.5rem;border-bottom:2px solid #1c2028;margin-bottom:1.5rem';
+  h.innerHTML='<div style="font-family:serif;font-size:1.4rem;font-weight:700;color:#1c2028">Chapter3 Realty</div><div style="font-size:.75rem;color:#6b7280;margin-top:.25rem">Investor Property Report · chapter3realty.com · 854.333.2135</div>';
+  res.prepend(h);
+  function cleanup(){ for (var i=0;i<btns.length;i++) btns[i].style.display=''; var hh=document.getElementById('ltr-pdf-hdr'); if(hh) hh.remove(); }
+  function fallback(){ try{ window.print(); }catch(e){} setTimeout(cleanup, 1200); }
+  function gen(){
+    if (!window.html2canvas || !window.jspdf) { fallback(); return; }
+    window.html2canvas(res, {scale:2, backgroundColor:'#ffffff', useCORS:true}).then(function(canvas){
+      var img=canvas.toDataURL('image/jpeg',0.92);
+      var JsPDF=window.jspdf.jsPDF; var pdf=new JsPDF('p','pt','a4');
+      var pw=pdf.internal.pageSize.getWidth(), ph=pdf.internal.pageSize.getHeight();
+      var ih=canvas.height*(pw/canvas.width), y=0, pg=0;
+      while (y < ih && pg < 25) { if (pg>0) pdf.addPage(); pdf.addImage(img,'JPEG',0,-y,pw,ih); y+=ph; pg++; }
+      pdf.save('Chapter3-Investor-Report.pdf'); cleanup();
+    }).catch(fallback);
+  }
+  var need=[]; if(!window.jspdf) need.push('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'); if(!window.html2canvas) need.push('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js');
+  if (!need.length) { gen(); return; }
+  var done=0, failed=false;
+  need.forEach(function(u){ var sc=document.createElement('script'); sc.src=u; sc.onload=function(){ if(++done===need.length){ failed?fallback():gen(); } }; sc.onerror=function(){ failed=true; if(++done===need.length) fallback(); }; document.head.appendChild(sc); });
 }
-
 function resetLtr() {
   document.getElementById('ltr-results').style.display = 'none';
   document.getElementById('ltr-form').style.display = 'block';
