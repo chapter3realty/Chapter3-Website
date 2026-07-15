@@ -23,3 +23,5 @@
   .stat-box{padding:1.1rem}
   .stat-box-val{font-size:1.25rem;overflow-wrap:anywhere}
 }
+
+.bimb-hero-grid{display:grid;grid-template-columns:1.2fr .85fr;gap:3rem;align-items:center}@media (max-width:860px){.bimb-hero-grid{grid-template-columns:1fr;gap:2rem}}
