@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grand Strand 3D Investor Map | Chapter3 Realty</title>
+<meta name="description" content="Explore the Grand Strand in 3D. Tap any area to see what it is good for, its price range, and a link to the full investor report.">
+<link rel="stylesheet" href="/assets/app.f283c6e16c.css">
+<script>/* GA deferred for mobile performance: loads on first interaction or after 4s */(function(){var l=false;function g(){if(l)return;l=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-681MKM6TCB";document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag("js",new Date());gtag("config","G-681MKM6TCB");}var e=["scroll","mousemove","touchstart","click","keydown"];function t(){g();e.forEach(function(v){window.removeEventListener(v,t);});}e.forEach(function(v){window.addEventListener(v,t,{passive:true});});setTimeout(g,4000);})();</script>
+<style>
+  :root{--c-navy:var(--navy,#1c2028);--c-brass:var(--brass,#c4783a);--c-brass2:var(--brass-2,#d89a63);--c-ivory:var(--ivory,#f4efe8);--c-rule:var(--rule,rgba(28,32,40,.12))}
+  body{margin:0;background:var(--c-navy);display:flex;flex-direction:column;height:100vh;overflow:hidden}
+  #mapshell{position:relative;flex:1;min-height:0;background:var(--c-navy);overflow:hidden}
+  #wrap{position:absolute;inset:0}
+  gmp-map-3d{width:100%;height:100%}
+  .overlay{position:absolute;z-index:20;background:rgba(28,32,40,.82);backdrop-filter:blur(6px);border:1px solid rgba(244,239,232,.14);border-radius:12px;color:var(--c-ivory);font-family:var(--sans,system-ui,sans-serif)}
+  #title{top:14px;left:14px;padding:12px 16px;max-width:290px}
+  #title h1{font-family:var(--serif,Georgia,serif);font-size:1.1rem;margin:0 0 4px}
+  #title p{margin:0;font-size:.76rem;line-height:1.5;color:rgba(244,239,232,.7)}
+  /* Mouse control diagram, top-right */
+  #controls{top:14px;right:14px;padding:12px 14px;display:flex;gap:12px;align-items:center}
+  #controls ul{list-style:none;margin:0;padding:0;font-size:.72rem;line-height:1.6}
+  #controls li b{font-weight:600}
+  .k-move{color:var(--c-brass2)} .k-tilt{color:#7fb0e0} .k-zoom{color:#8fd0a8}
+  /* Info card: left on desktop, bottom sheet on phones */
+  #card{padding:16px 18px;box-shadow:0 20px 60px rgba(0,0,0,.5);display:none;max-width:330px}
+  @media(min-width:721px){#card{left:14px;top:104px;width:310px}}
+  @media(max-width:720px){#card{left:12px;right:12px;bottom:12px;max-width:none}#controls{padding:8px 10px}#controls ul{font-size:.66rem}}
+  #card .eyebrow{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--c-brass2);margin-bottom:6px}
+  #card h2{font-family:var(--serif,Georgia,serif);font-size:1.25rem;margin:0 0 8px;line-height:1.15}
+  #card .desc{font-size:.86rem;line-height:1.55;color:rgba(244,239,232,.82);margin:0 0 12px}
+  #card .price{font-size:.82rem;color:rgba(244,239,232,.65);margin:0 0 12px}
+  #card .price b{color:var(--c-ivory)}
+  #card a.cta{display:inline-block;background:var(--c-brass);color:#fff;text-decoration:none;font-size:.82rem;font-weight:600;padding:8px 14px;border-radius:8px}
+  #card .close{position:absolute;top:8px;right:12px;background:none;border:none;color:rgba(244,239,232,.6);font-size:1.5rem;line-height:1;cursor:pointer}
+  #status{bottom:12px;left:14px;padding:6px 10px;font-size:.72rem;color:rgba(244,239,232,.7)}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap header-inner">
+<a class="logo" href="/">
+<span class="logo-word">Chapter<span class="logo-num">3</span></span>
+</a>
+<nav class="primary"><a href="/buyers/buying-in-myrtle-beach/">Buy</a><a href="/sell/">Sell</a><div class="nav-dd"><a href="/invest/" class="nav-dd-trigger">Invest<span class="nav-caret">&#9662;</span></a><div class="nav-dd-menu"><a href="/invest/">Investor Hub</a><a href="/invest/long-term-rental/">LTR Analyzer</a><a href="/invest/str-vs-ltr/">Investor Tools</a></div></div><div class="nav-dd"><a href="/about/" class="nav-dd-trigger">About<span class="nav-caret">&#9662;</span></a><div class="nav-dd-menu"><a href="/why-chapter-3/">Why Us</a><a href="/about/">Meet the Team</a></div></div></nav>
+<div class="header-ctas">
+<button class="btn btn-outline" style="cursor:pointer" onclick="openIdx()">Search Listings</button>
+<a class="btn btn-primary hdr-contact-d" href="/contact/">854.333.2135</a><a class="btn btn-primary hdr-contact-m" href="tel:+18543332135" aria-label="Call Chapter3">854.333.2135</a>
+</div>
+<button aria-label="Menu" class="burger" id="burgerBtn" onclick="toggleMobile()">
+<span></span><span></span><span></span>
+</button>
+</div>
+<div class="mobile-nav" id="mobileNav">
+<a href="/buyers/buying-in-myrtle-beach/">Buy</a>
+<a href="/sell/">Sell</a>
+<a href="/invest/">Invest</a>
+<a href="/why-chapter-3/">Why Us</a>
+<a href="/invest/str-vs-ltr/">Investor Tools</a>
+<a href="/about/">Meet the Team</a>
+<div class="mob-ctas">
+<button class="btn btn-outline" style="cursor:pointer" onclick="openIdx()">Search Listings</button>
+<a class="btn btn-primary" href="/contact/">Contact Us</a>
+</div>
+</div>
+</header>
+
+<div id="mapshell">
+  <div id="wrap"></div>
+  <div class="overlay" id="title">
+    <h1>Grand Strand investor map</h1>
+    <p>Tap an area to see what it is good for and its price range.</p>
+  </div>
+  <div class="overlay" id="controls">
+    <svg width="42" height="64" viewBox="0 0 42 64" aria-hidden="true">
+      <rect x="5" y="3" width="32" height="58" rx="16" fill="none" stroke="rgba(244,239,232,.85)" stroke-width="2"/>
+      <path d="M6 22 L21 22 L21 4 A15 15 0 0 0 6 19 Z" fill="#d89a63" opacity=".5"/>
+      <line x1="21" y1="3.5" x2="21" y2="22" stroke="rgba(244,239,232,.85)" stroke-width="1.5"/>
+      <line x1="6" y1="22" x2="36" y2="22" stroke="rgba(244,239,232,.85)" stroke-width="1.5"/>
+      <path d="M36 22 L21 22 L21 4 A15 15 0 0 1 36 19 Z" fill="#7fb0e0" opacity=".45"/>
+      <rect x="18.5" y="8" width="5" height="11" rx="2.5" fill="#8fd0a8"/>
+    </svg>
+    <ul>
+      <li class="k-move"><b>Left drag</b> move</li>
+      <li class="k-tilt"><b>Right drag</b> tilt &amp; turn</li>
+      <li class="k-zoom"><b>Scroll</b> zoom</li>
+    </ul>
+  </div>
+  <div class="overlay" id="card">
+    <button class="close" onclick="document.getElementById('card').style.display='none'">&times;</button>
+    <div class="eyebrow">Area</div>
+    <h2 id="c-name"></h2>
+    <p class="desc" id="c-desc"></p>
+    <p class="price" id="c-price"></p>
+    <a class="cta" id="c-link" href="#" style="display:none">See the full report</a>
+  </div>
+  <div class="overlay" id="status">loading...</div>
+</div>
+
+
+<script>
+// Minimal header behaviors for this standalone map page (no heavy site JS here).
+function toggleMobile(){var n=document.getElementById('mobileNav');if(n)n.classList.toggle('open');}
+function openIdx(){location.href='/contact/';}
+
+let map = null;
+
+// ---- Camera controls (mouse-pivoted zoom) ----
+// Registered BEFORE the map loads so they beat the map's own gestures. Range (zoom
+// distance) is tracked in JS so zoom stops dead at the limits. Scroll zooms straight
+// toward the cursor. Right-drag tilts (up/down) and spins (left/right) around the current
+// view, keeping the zoom the same and never jumping to the cursor.
+(function(){
+  const shell = document.getElementById('mapshell');
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  const DEG=Math.PI/180;
+  const MIN_RANGE=100, MAX_RANGE=90000;          // closest / farthest camera distance (metres)
+  const FOV=45*DEG;                              // approx vertical field of view (tune if zoom-to-cursor drifts)
+  const cosT=()=>Math.max(0.05, Math.cos(((map&&map.tilt)||0)*DEG));
+  let camRange=null;
+  const ensureRange=()=>{ if(camRange==null && map) camRange=map.range||62000; };
+  const overMap=(e)=>{ const path=e.composedPath?e.composedPath():[]; return path.indexOf(shell)!==-1; };
+
+  // Shift the focus point by metres along the camera's forward (heading) and right axes.
+  function moveCenter(fwd,rgt){
+    if(!map||!map.center) return;
+    const hr=(map.heading||0)*DEG;
+    const north=fwd*Math.cos(hr) - rgt*Math.sin(hr);
+    const east =fwd*Math.sin(hr) + rgt*Math.cos(hr);
+    const c=map.center;
+    map.center={ lat:c.lat + north/111320, lng:c.lng + east/(111320*Math.max(0.2,Math.cos(c.lat*DEG))), altitude:0 };
+  }
+  // Ground offset (metres, forward/right from screen center) of a screen point.
+  function cursorOffset(cx,cy){
+    const r=shell.getBoundingClientRect();
+    const dx=cx-(r.left+r.width/2), dy=cy-(r.top+r.height/2);
+    const angPerPx=FOV/r.height, R=(map&&map.range)||62000;
+    return { fwd:-dy*R*angPerPx/cosT(), rgt:dx*R*angPerPx };   // forward is foreshortened by tilt
+  }
+
+  shell.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+  window.addEventListener('dblclick', function(e){ if(overMap(e)){ e.preventDefault(); e.stopImmediatePropagation(); } }, true);
+
+  // Right-drag: tilt (up/down) and spin (left/right) around the current view. No recenter, no zoom change.
+  let rd=null;
+  shell.addEventListener('pointerdown', function(e){
+    if(e.button!==2 || !map) return;               // left button still pans
+    e.preventDefault(); e.stopPropagation();
+    rd={ x:e.clientX, y:e.clientY, tilt:map.tilt||0, heading:map.heading||0 };
+    try{ shell.setPointerCapture(e.pointerId); }catch(_){}
+  }, true);
+  shell.addEventListener('pointermove', function(e){
+    if(!rd||!map) return;
+    e.preventDefault(); e.stopPropagation();
+    map.tilt=clamp(rd.tilt-(e.clientY-rd.y)*0.20,0,82);   // up/down tilt; range (zoom) untouched
+    map.heading=rd.heading+(e.clientX-rd.x)*0.70;         // left/right spin; ~500px = a full turn
+  }, true);
+  const end=function(e){ if(!rd)return; rd=null; try{shell.releasePointerCapture(e.pointerId);}catch(_){} };
+  shell.addEventListener('pointerup', end, true);
+  shell.addEventListener('pointercancel', end, true);
+
+  // Wheel: zoom straight toward the cursor, range-tracked, hard stop at the limits.
+  window.addEventListener('wheel', function(e){
+    if(!overMap(e)) return;
+    e.preventDefault(); e.stopImmediatePropagation();
+    if(!map) return;
+    ensureRange();
+    const target=clamp(camRange*Math.exp((e.deltaY||0)*0.0016), MIN_RANGE, MAX_RANGE);
+    if(target===camRange) return;                  // at a limit -> nothing moves at all
+    const frac=1-target/camRange;
+    const o=cursorOffset(e.clientX,e.clientY);
+    camRange=target; map.range=camRange;
+    moveCenter(o.fwd*frac, o.rgt*frac);            // hold the point under the cursor fixed
+  }, { passive:false, capture:true });
+})();
+
+(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+  key: "AIzaSyCt5l9sq_5t1bq9uNWRIoUjty41A-NW0HY",
+  v: "alpha",
+});
+
+// Shared boundary points. Neighboring areas reuse the SAME point objects on their
+// shared edges, so the areas tile with no gaps. NE -> SW along the strand.
+const P = {
+  cCG:[33.862,-78.560], cNMB:[33.818,-78.652], cWH:[33.786,-78.706], cAR:[33.744,-78.808],
+  cGD:[33.712,-78.854], cMBb:[33.688,-78.884], cMC:[33.644,-78.926], cSF:[33.598,-78.974],
+  cGC:[33.568,-79.004], cMI:[33.534,-79.036], cHB:[33.500,-79.064], cLF:[33.460,-79.104], cPW:[33.416,-79.140],
+  wLR:[33.848,-78.648], wBF:[33.798,-78.732], wGD:[33.744,-78.818], wMB:[33.704,-78.894],
+  wSC:[33.664,-78.974], wEN:[33.608,-79.022], wMI:[33.556,-79.050], wPW:[33.508,-79.080], wPWs:[33.470,-79.108],
+  iLOR:[34.010,-78.930], iCONn:[33.902,-79.032], iCONw:[33.798,-79.080], iSOCw:[33.698,-79.064],
+  i707w:[33.596,-79.090], iPAWw:[33.468,-79.154], iPAWsw:[33.414,-79.150],
+  nNE:[33.906,-78.582], lrN:[33.888,-78.620], bfN:[33.812,-78.712],
+  sLCFe:[33.812,-78.762], sLCFw:[33.858,-79.006],
+  sCF5e:[33.716,-78.906], sCF5w:[33.782,-79.074],
+  s57e:[33.636,-78.980], s57w:[33.656,-79.064],
+};
+// Price ranges are the ranges shown on the matching submarket page. Areas with no page
+// use the nearest page's range (Longs=Conway, 544=Conway, 707=Murrells Inlet) - confirm.
+const AREAS = [
+  { name:"Longs, Hwy 90 & 905", link:null, price:"$120,000 to $500,000",
+    blurb:"Rural and semi-rural land west of the beach. Bigger lots and lower prices, with a longer drive to the ocean.",
+    coords:[P.iLOR,P.nNE,P.lrN,P.bfN,P.sLCFe,P.sLCFw,P.iCONn] },
+  { name:"Little River", link:"/submarkets/little-river/", price:"$150,000 to $800,000",
+    blurb:"Older waterfront town near the North Carolina line. Value pricing and fast growth.",
+    coords:[P.lrN,P.nNE,P.cCG,P.wLR,P.bfN] },
+  { name:"North Myrtle Beach (East of Waterway)", link:"/submarkets/north-myrtle-beach/", price:"$300,000 to $2,500,000+",
+    blurb:"Beachside North Myrtle Beach. Vacation rentals, golf, and a family beach-town feel.",
+    coords:[P.cCG,P.cNMB,P.cWH,P.cAR,P.wGD,P.wBF,P.wLR] },
+  { name:"Barefoot Resort", link:"/submarkets/north-myrtle-beach/", price:"$300,000 to $2,500,000+",
+    blurb:"Golf and resort community in North Myrtle Beach. Condos, villas, and marina living.",
+    coords:[P.bfN,P.wLR,P.wBF,P.sLCFe] },
+  { name:"Carolina Forest", link:"/submarkets/myrtle-beach/", price:"$150,000 to $1,500,000+",
+    blurb:"Master-planned suburban Myrtle Beach. Newer homes and schools, popular with primary residents.",
+    coords:[P.sLCFw,P.sLCFe,P.wBF,P.wGD,P.wMB,P.sCF5e,P.sCF5w,P.iCONw,P.iCONn] },
+  { name:"S of 501 / W of Waterway / 544", link:null, price:"$120,000 to $500,000",
+    blurb:"Inland Myrtle Beach and Socastee. More affordable homes with quick access to Hwy 501 and 544.",
+    coords:[P.sCF5w,P.sCF5e,P.wMB,P.wSC,P.s57e,P.s57w,P.iSOCw,P.iCONw] },
+  { name:"Myrtle Beach / Grande Dunes / Market Common", link:"/submarkets/myrtle-beach/", price:"$150,000 to $1,500,000+",
+    blurb:"The core of Myrtle Beach: oceanfront condos, Grande Dunes luxury, and walkable Market Common.",
+    coords:[P.cAR,P.cGD,P.cMBb,P.cMC,P.wSC,P.wMB,P.wGD] },
+  { name:"Hwy 707 Corridor", link:null, price:"$200,000 to $1,000,000+",
+    blurb:"Growing area between Myrtle Beach and Surfside. Newer construction and some acreage.",
+    coords:[P.s57w,P.s57e,P.wSC,P.wEN,P.wMI,P.i707w] },
+  { name:"Surfside / Garden City", link:"/submarkets/surfside-beach/", price:"$250,000 to $1,500,000",
+    blurb:"Smaller family beach towns south of Myrtle Beach, with strong short-term rental demand.",
+    coords:[P.cMC,P.cSF,P.cGC,P.wEN,P.wSC] },
+  { name:"Murrells Inlet", link:"/submarkets/murrells-inlet/", price:"$200,000 to $1,000,000+",
+    blurb:"The MarshWalk and inland neighborhoods. Long-term rentals and second homes.",
+    coords:[P.cGC,P.cMI,P.cHB,P.wPW,P.wMI,P.wEN] },
+  { name:"Litchfield / Pawleys Island", link:"/submarkets/pawleys-island/", price:"$450,000 to $5,000,000+",
+    blurb:"The quieter, upscale south end. Historic cottages and oceanfront estates.",
+    coords:[P.cHB,P.cLF,P.cPW,P.iPAWsw,P.iPAWw,P.wPWs,P.wPW] },
+];
+
+const PALETTE = ["#c4783a","#5a8f7b","#8a6ea8","#c96f6f","#6f93c9","#b7963f","#5f9ea0","#a8776a","#7f9b52","#9a5f8a","#4f7d8c"];
+const status = document.getElementById('status');
+async function init(){
+  try{
+    const maps3d = await google.maps.importLibrary("maps3d");
+    const { Map3DElement, Polygon3DInteractiveElement, AltitudeMode } = maps3d;
+    map = new Map3DElement({
+      center: { lat: 33.70, lng: -78.92, altitude: 0 },
+      range: 62000, tilt: 55, heading: 25, mode: 'HYBRID', minAltitude: 5, maxAltitude: 100000,
+    });
+    document.getElementById('wrap').append(map);
+
+
+    const palette = PALETTE;
+    const polyRefs = [];
+    AREAS.forEach((area, i) => {
+      const color = palette[i % palette.length];
+      const poly = new Polygon3DInteractiveElement({
+        altitudeMode: AltitudeMode.CLAMP_TO_GROUND,
+        fillColor: color + "55", strokeColor: color, strokeWidth: 3,
+        outerCoordinates: area.coords.map(c => ({ lat:c[0], lng:c[1] })),
+      });
+      poly.addEventListener('gmp-click', () => showCard(area));
+      map.append(poly);
+      polyRefs.push({ poly, color });
+    });
+
+    // Fade the color overlays as the camera gets closer, so homes show clean and
+    // photorealistic up close instead of tinted by the area colors.
+    // far (overview): 33% fill / mid: 13% / near (street level): fill off, thin outline.
+    let lastTier = "";
+    function fillsByRange(){
+      const r = map.range || 62000;
+      const tier = r > 26000 ? "far" : (r > 9000 ? "mid" : "near");
+      if (tier === lastTier) return;
+      lastTier = tier;
+      const alpha = tier === "far" ? "55" : (tier === "mid" ? "22" : "00");
+      const sw    = tier === "near" ? 2 : 3;
+      polyRefs.forEach(p => { p.poly.fillColor = p.color + alpha; p.poly.strokeWidth = sw; });
+    }
+    setInterval(fillsByRange, 400);
+    status.style.display='none';
+  }catch(err){
+    status.textContent = "Map error: " + err.message;
+    console.error(err);
+  }
+}
+function showCard(area){
+  document.getElementById('c-name').textContent = area.name;
+  document.getElementById('c-desc').textContent = area.blurb;
+  document.getElementById('c-price').innerHTML = area.price ? ("Price range: <b>"+area.price+"</b>") : "Price range: <b>we confirm the current figure</b>";
+  const link = document.getElementById('c-link');
+  if(area.link){ link.href = area.link; link.style.display='inline-block'; } else { link.style.display='none'; }
+  document.getElementById('card').style.display='block';
+}
+
+init();
+</script>
+</body>
+</html>
