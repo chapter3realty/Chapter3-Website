@@ -182,24 +182,24 @@ let map = null;
 // Shared boundary points. Neighboring areas reuse the SAME point objects on their
 // shared edges, so the areas tile with no gaps. NE -> SW along the strand.
 const P = {
-  cCG:[33.862,-78.560], cNMB:[33.818,-78.652], cWH:[33.786,-78.706], cAR:[33.744,-78.808],
-  cGD:[33.712,-78.854], cMBb:[33.688,-78.884], cMC:[33.644,-78.926], cSF:[33.598,-78.974],
-  cGC:[33.568,-79.004], cMI:[33.534,-79.036], cHB:[33.500,-79.064], cLF:[33.460,-79.104], cPW:[33.416,-79.140],
+  cCG:[33.834,-78.633], cNMB:[33.816,-78.678], cWH:[33.796,-78.702], cAR:[33.758,-78.784],
+  cGD:[33.726,-78.818], cMBb:[33.690,-78.878], cMC:[33.644,-78.915], cSF:[33.604,-78.966],
+  cGC:[33.576,-78.992], cMI:[33.546,-79.020], cHB:[33.508,-79.052], cLF:[33.468,-79.095], cPW:[33.418,-79.128],
   wLR:[33.848,-78.648], wBF:[33.798,-78.732], wGD:[33.744,-78.818], wMB:[33.704,-78.894],
   wSC:[33.664,-78.974], wEN:[33.608,-79.022], wMI:[33.556,-79.050], wPW:[33.508,-79.080], wPWs:[33.470,-79.108],
-  iLOR:[34.010,-78.930], iCONn:[33.902,-79.032], iCONw:[33.798,-79.080], iSOCw:[33.698,-79.064],
-  i707w:[33.596,-79.090], iPAWw:[33.468,-79.154], iPAWsw:[33.414,-79.150],
+  iLOR:[34.010,-78.930], i707w:[33.596,-79.090], iPAWw:[33.468,-79.154], iPAWsw:[33.414,-79.150],
   nNE:[33.906,-78.582], lrN:[33.888,-78.620], bfN:[33.812,-78.712],
   sLCFe:[33.812,-78.762], sLCFw:[33.858,-79.006],
-  sCF5e:[33.716,-78.906], sCF5w:[33.782,-79.074],
-  s57e:[33.636,-78.980], s57w:[33.656,-79.064],
+  sCF5e:[33.716,-78.906], s57e:[33.636,-78.980], s57w:[33.656,-79.064],
+  wacN:[33.905,-79.028], wacM:[33.800,-79.012], wacS:[33.720,-79.020],
+  cwNW:[33.905,-79.125], cwW:[33.815,-79.160], cwSW:[33.720,-79.120],
 };
 // Price ranges are the ranges shown on the matching submarket page. Areas with no page
-// use the nearest page's range (Longs=Conway, 544=Conway, 707=Murrells Inlet) - confirm.
+// use the nearest page's range or an estimate (Longs, Socastee, 707) - confirm.
 const AREAS = [
   { name:"Longs, Hwy 90 & 905", link:null, price:"$120,000 to $500,000",
     blurb:"Rural and semi-rural land west of the beach. Bigger lots and lower prices, with a longer drive to the ocean.",
-    coords:[P.iLOR,P.nNE,P.lrN,P.bfN,P.sLCFe,P.sLCFw,P.iCONn] },
+    coords:[P.iLOR,P.nNE,P.lrN,P.bfN,P.sLCFe,P.sLCFw,P.wacN] },
   { name:"Little River", link:"/submarkets/little-river/", price:"$150,000 to $800,000",
     blurb:"Older waterfront town near the North Carolina line. Value pricing and fast growth.",
     coords:[P.lrN,P.nNE,P.cCG,P.wLR,P.bfN] },
@@ -211,10 +211,10 @@ const AREAS = [
     coords:[P.bfN,P.wLR,P.wBF,P.sLCFe] },
   { name:"Carolina Forest", link:"/submarkets/myrtle-beach/", price:"$150,000 to $1,500,000+",
     blurb:"Master-planned suburban Myrtle Beach. Newer homes and schools, popular with primary residents.",
-    coords:[P.sLCFw,P.sLCFe,P.wBF,P.wGD,P.wMB,P.sCF5e,P.sCF5w,P.iCONw,P.iCONn] },
-  { name:"S of 501 / W of Waterway / 544", link:null, price:"$120,000 to $500,000",
-    blurb:"Inland Myrtle Beach and Socastee. More affordable homes with quick access to Hwy 501 and 544.",
-    coords:[P.sCF5w,P.sCF5e,P.wMB,P.wSC,P.s57e,P.s57w,P.iSOCw,P.iCONw] },
+    coords:[P.sLCFw,P.sLCFe,P.wBF,P.wGD,P.wMB,P.sCF5e,P.wacM,P.wacN] },
+  { name:"Socastee", link:null, price:"$150,000 to $600,000",
+    blurb:"Unincorporated Myrtle Beach between the Waterway and the Waccamaw River. More affordable homes with quick access to Hwy 544 and 501.",
+    coords:[P.wacM,P.sCF5e,P.wSC,P.s57e,P.s57w,P.wacS] },
   { name:"Myrtle Beach / Grande Dunes / Market Common", link:"/submarkets/myrtle-beach/", price:"$150,000 to $1,500,000+",
     blurb:"The core of Myrtle Beach: oceanfront condos, Grande Dunes luxury, and walkable Market Common.",
     coords:[P.cAR,P.cGD,P.cMBb,P.cMC,P.wSC,P.wMB,P.wGD] },
@@ -230,9 +230,12 @@ const AREAS = [
   { name:"Litchfield / Pawleys Island", link:"/submarkets/pawleys-island/", price:"$450,000 to $5,000,000+",
     blurb:"The quieter, upscale south end. Historic cottages and oceanfront estates.",
     coords:[P.cHB,P.cLF,P.cPW,P.iPAWsw,P.iPAWw,P.wPWs,P.wPW] },
+  { name:"Conway", link:"/submarkets/conway/", price:"$120,000 to $500,000",
+    blurb:"The inland river town and home of Coastal Carolina University. Lower prices, student and workforce rentals, and the longest drive to the beach.",
+    coords:[P.wacN,P.wacM,P.wacS,P.cwSW,P.cwW,P.cwNW] },
 ];
 
-const PALETTE = ["#c4783a","#5a8f7b","#8a6ea8","#c96f6f","#6f93c9","#b7963f","#5f9ea0","#a8776a","#7f9b52","#9a5f8a","#4f7d8c"];
+const PALETTE = ["#c4783a","#5a8f7b","#8a6ea8","#c96f6f","#6f93c9","#b7963f","#5f9ea0","#a8776a","#7f9b52","#9a5f8a","#4f7d8c","#6b8fb0"];
 const status = document.getElementById('status');
 async function init(){
   try{
