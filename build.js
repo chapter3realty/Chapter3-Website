@@ -180,8 +180,61 @@ function stitch() {
   console.log(totalRepl ? `\nDone. Run 'node build.js check', then deploy.` : `\nEverything already matched the partials - nothing to do.`);
 }
 
+/* llmsfull: regenerate chapter3realty/llms-full.txt from the live HTML so it can
+ * never drift from the pages again. Page list + order come from sitemap.xml, so
+ * anything not in the sitemap (legal pages, map) is automatically excluded. */
+function llmsfull() {
+  const decode = (t) => t
+    .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&rsquo;|&#8217;/g, "’")
+    .replace(/&lsquo;/g, "‘").replace(/&ldquo;/g, "“").replace(/&rdquo;/g, "”")
+    .replace(/&middot;/g, "·").replace(/&nbsp;/g, " ").replace(/&#8594;|&rarr;/g, "→")
+    .replace(/&#8595;/g, "").replace(/&mdash;/g, ", ").replace(/&ndash;/g, "-").replace(/&hellip;/g, "...");
+  const strip = (t) => decode(t.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+  const pageText = (html) => {
+    const m = html.match(/<main[\s\S]*?<\/main>/i);
+    let s = m ? m[0] : html;
+    s = s.replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<style[\s\S]*?<\/style>/gi, "")
+         .replace(/<svg[\s\S]*?<\/svg>/gi, "").replace(/<noscript[\s\S]*?<\/noscript>/gi, "")
+         .replace(/<form[\s\S]*?<\/form>/gi, "");
+    s = s.replace(/<h1[^>]*>([\s\S]*?)<\/h1>/gi, (_, t) => "\n\n# " + strip(t) + "\n");
+    s = s.replace(/<h2[^>]*>([\s\S]*?)<\/h2>/gi, (_, t) => "\n\n## " + strip(t) + "\n");
+    s = s.replace(/<h3[^>]*>([\s\S]*?)<\/h3>/gi, (_, t) => "\n\n### " + strip(t) + "\n");
+    s = s.replace(/<li[^>]*>/gi, "\n- ").replace(/<br\s*\/?>/gi, "\n");
+    s = s.replace(/<\/(p|div|section|tr|ul|ol|table|details|summary|blockquote|li|figure)>/gi, "\n");
+    s = decode(s.replace(/<[^>]+>/g, " "));
+    return s.split("\n").map(l => l.replace(/\s+/g, " ").trim()).join("\n")
+            .replace(/\n{3,}/g, "\n\n").trim();
+  };
+  const today = new Date().toISOString().slice(0, 10);
+  const sm = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
+  const urls = [...sm.matchAll(/<loc>(https:\/\/chapter3realty\.com(\/[^<]*))<\/loc>/g)].map(m => [m[1], m[2]]);
+  const out = [
+    "# Chapter3 Realty - Full Site Content", "",
+    "> Complete plain-text content of chapter3realty.com for language models and answer engines.",
+    "> Chapter3 Realty is a data-forward real estate brokerage serving Myrtle Beach and the Grand Strand, South Carolina.",
+    `> Last updated: ${today}. Index version: https://chapter3realty.com/llms.txt`, ""
+  ];
+  let count = 0;
+  for (const [full, rel] of urls) {
+    const file = rel === "/" ? path.join(ROOT, "index.html")
+      : path.join(ROOT, rel.replace(/^\//, "").replace(/\/$/, "").split("/").join(path.sep), "index.html");
+    if (!fs.existsSync(file)) { console.log("  skip (no file): " + rel); continue; }
+    const html = fs.readFileSync(file, "utf8");
+    const title = strip((html.match(/<title>([\s\S]*?)<\/title>/i) || [, rel])[1]);
+    const desc = strip((html.match(/<meta name="description" content="([^"]*)"/i) || [, ""])[1]);
+    out.push("---", "", `## ${title}`, `URL: ${full}`, `Summary: ${desc}`, "", pageText(html), "");
+    count++;
+  }
+  const dest = path.join(ROOT, "llms-full.txt");
+  fs.writeFileSync(dest, out.join("\n") + "\n", "utf8");
+  const kb = Math.round(fs.statSync(dest).size / 1024);
+  console.log(`llms-full.txt regenerated: ${count} pages, ${kb}KB, dated ${today}.`);
+}
+
 const cmd = process.argv[2] || "check";
 if (cmd === "check") check();
 else if (cmd === "rehash") rehash();
 else if (cmd === "stitch") stitch();
-else { console.log("Usage: node build.js [check|rehash|stitch]"); process.exit(1); }
+else if (cmd === "llmsfull") llmsfull();
+else { console.log("Usage: node build.js [check|rehash|stitch|llmsfull]"); process.exit(1); }
