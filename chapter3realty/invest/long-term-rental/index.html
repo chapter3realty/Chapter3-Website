@@ -232,6 +232,25 @@
 <section id="compare" style="background:var(--ivory-2);scroll-margin-top:80px;display:none"><div style="max-width:1000px;margin:0 auto;padding:3.5rem 1.5rem"><p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">Long-term vs short-term</p><h2 style="font-family:var(--serif);font-size:clamp(1.6rem,3.2vw,1.95rem);color:var(--navy);margin-bottom:.6rem;letter-spacing:-.01em">Compare rental strategies side by side</h2><p style="color:var(--muted);line-height:1.7;max-width:680px;margin-bottom:1.6rem">The numbers below start with typical Grand Strand figures. Change any of them to match your property and the comparison updates as you type. Short-term numbers are estimates; the real result depends on the exact property and the town rules.</p><div id="cmp-warn" style="display:none;background:rgba(196,120,58,.1);border:1px solid var(--brass);border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.2rem;font-size:.85rem;color:var(--navy);line-height:1.55"></div><div id="cmp-note" style="font-size:.8rem;color:var(--muted);margin:-.4rem 0 1.3rem;min-height:1px"></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:1rem;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:1.5rem 1.6rem;margin-bottom:1.4rem"><div><label style="display:block;font-family:var(--sans);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;font-weight:600">Purchase price ($)</label><input id="cmp-price" type="number" inputmode="decimal" value="350000" oninput="c3Compare()" style="width:100%;padding:.6rem .7rem;border:1px solid var(--rule);border-radius:8px;background:#fff;font-family:var(--sans);font-size:.9rem;color:var(--navy)"></div><div><label style="display:block;font-family:var(--sans);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;font-weight:600">Long-term rent ($/mo)</label><input id="cmp-rent" type="number" inputmode="decimal" value="2100" oninput="c3Compare()" style="width:100%;padding:.6rem .7rem;border:1px solid var(--rule);border-radius:8px;background:#fff;font-family:var(--sans);font-size:.9rem;color:var(--navy)"></div><div><label style="display:block;font-family:var(--sans);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;font-weight:600">Short-term rate ($/night)</label><input id="cmp-adr" type="number" inputmode="decimal" value="185" oninput="c3Compare()" style="width:100%;padding:.6rem .7rem;border:1px solid var(--rule);border-radius:8px;background:#fff;font-family:var(--sans);font-size:.9rem;color:var(--navy)"></div><div><label style="display:block;font-family:var(--sans);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;font-weight:600">Short-term occupancy (%)</label><input id="cmp-occ" type="number" inputmode="decimal" value="62" oninput="c3Compare()" style="width:100%;padding:.6rem .7rem;border:1px solid var(--rule);border-radius:8px;background:#fff;font-family:var(--sans);font-size:.9rem;color:var(--navy)"></div></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(255px,100%),1fr));gap:1rem"><div id="cmp-ltr-card" style="background:var(--navy);border-radius:12px;padding:1.6rem 1.75rem;border:2px solid transparent;transition:border-color .2s"><div style="font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-2);margin-bottom:1.1rem">Long-term rental</div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.55rem 0;border-bottom:1px solid rgba(244,239,232,.12)"><span style="color:rgba(244,239,232,.7);font-size:.83rem">Income a year</span><strong id="cmp-ltr-gross" style="color:var(--ivory);font-family:var(--sans);font-size:.95rem;font-weight:500">$0</strong></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.55rem 0;border-bottom:1px solid rgba(244,239,232,.12)"><span style="color:rgba(244,239,232,.7);font-size:.83rem">Operating costs</span><strong id="cmp-ltr-cost" style="color:var(--ivory);font-family:var(--sans);font-size:.95rem;font-weight:500">$0</strong></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.9rem 0;border-bottom:1px solid rgba(244,239,232,.12)"><span style="color:rgba(244,239,232,.7);font-size:.8rem">Net income a year</span><strong id="cmp-ltr-noi" style="color:var(--ivory);font-family:var(--sans);font-size:1.4rem;font-weight:600">$0</strong></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.55rem 0 0"><span style="color:rgba(244,239,232,.7);font-size:.83rem">Return on price</span><strong id="cmp-ltr-cap" style="color:var(--brass-2);font-family:var(--sans);font-size:.95rem">0%</strong></div><div style="margin-top:.9rem;font-size:.72rem;color:rgba(244,239,232,.45);line-height:1.5">A year-round lease. Steadier, less work.</div></div><div id="cmp-str-card" style="background:var(--navy);border-radius:12px;padding:1.6rem 1.75rem;border:2px solid transparent;transition:border-color .2s"><div style="font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-2);margin-bottom:1.1rem">Short-term rental (estimate)</div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.55rem 0;border-bottom:1px solid rgba(244,239,232,.12)"><span style="color:rgba(244,239,232,.7);font-size:.83rem">Income a year</span><strong id="cmp-str-gross" style="color:var(--ivory);font-family:var(--sans);font-size:.95rem;font-weight:500">$0</strong></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.55rem 0;border-bottom:1px solid rgba(244,239,232,.12)"><span style="color:rgba(244,239,232,.7);font-size:.83rem">Operating costs</span><strong id="cmp-str-cost" style="color:var(--ivory);font-family:var(--sans);font-size:.95rem;font-weight:500">$0</strong></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.9rem 0;border-bottom:1px solid rgba(244,239,232,.12)"><span style="color:rgba(244,239,232,.7);font-size:.8rem">Net income a year</span><strong id="cmp-str-noi" style="color:var(--ivory);font-family:var(--sans);font-size:1.4rem;font-weight:600">$0</strong></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.55rem 0 0"><span style="color:rgba(244,239,232,.7);font-size:.83rem">Return on price</span><strong id="cmp-str-cap" style="color:var(--brass-2);font-family:var(--sans);font-size:.95rem">0%</strong></div><div style="margin-top:.9rem;font-size:.72rem;color:rgba(244,239,232,.45);line-height:1.5">Nightly stays. Higher ceiling, more work, town rules apply.</div></div></div><div id="cmp-verdict" style="text-align:center;font-family:var(--serif);font-size:1.05rem;color:var(--navy);margin:1.3rem 0 0"></div><div style="background:#fff;border:1px solid var(--rule);border-radius:12px;padding:1.2rem 1.5rem;margin-top:1.3rem;font-size:.82rem;color:var(--muted);line-height:1.6"><div style="margin-bottom:.55rem">Operating costs as a share of income: long-term <input id="cmp-ltrcost" type="number" inputmode="decimal" value="35" oninput="c3Compare()" style="width:52px;padding:.25rem .35rem;border:1px solid var(--rule);border-radius:6px;font-family:var(--sans);text-align:center">% , short-term <input id="cmp-strcost" type="number" inputmode="decimal" value="50" oninput="c3Compare()" style="width:52px;padding:.25rem .35rem;border:1px solid var(--rule);border-radius:6px;font-family:var(--sans);text-align:center">%</div>These cover taxes, insurance, upkeep, and management. Short-term runs higher because of cleaning, supplies, utilities, and 20 to 30 percent management. Change them to your own numbers.</div><p style="color:var(--muted);line-height:1.7;max-width:680px;margin-top:1.4rem">Short-term can earn more, but it takes more work and the rules change street by street. See <a href="/invest/str-tools/" style="color:var(--brass);font-weight:600;text-decoration:none">how Grand Strand short-term rentals work</a>, or <a href="/contact/" style="color:var(--brass);font-weight:600;text-decoration:none">have us run your exact property</a>.</p></div><script>function c3Compare(){var g=function(id){var e=document.getElementById(id);return e?(parseFloat(e.value)||0):0;};var price=g("cmp-price"),rent=g("cmp-rent"),adr=g("cmp-adr"),occ=g("cmp-occ")/100,lc=g("cmp-ltrcost")/100,sc=g("cmp-strcost")/100;var lg=rent*12,sg=adr*365*occ;var ln=lg*(1-lc),sn=sg*(1-sc);var money=function(n){return "$"+Math.round(n).toLocaleString("en-US");};var set=function(id,v){var e=document.getElementById(id);if(e)e.textContent=v;};set("cmp-ltr-gross",money(lg));set("cmp-str-gross",money(sg));set("cmp-ltr-cost","-"+money(lg*lc));set("cmp-str-cost","-"+money(sg*sc));set("cmp-ltr-noi",money(ln));set("cmp-str-noi",money(sn));set("cmp-ltr-cap",(price?(ln/price*100):0).toFixed(1)+"%");set("cmp-str-cap",(price?(sn/price*100):0).toFixed(1)+"%");var lcard=document.getElementById("cmp-ltr-card"),scard=document.getElementById("cmp-str-card");if(lcard&&scard){lcard.style.borderColor=ln>=sn?"var(--brass)":"transparent";scard.style.borderColor=sn>ln?"var(--brass)":"transparent";}var v=document.getElementById("cmp-verdict");if(v){var diff=Math.abs(sn-ln);if(sn>ln){v.textContent="Short-term projects about "+money(diff)+" more a year, before the extra work.";}else if(ln>sn){v.textContent="Long-term projects about "+money(diff)+" more a year, with less work.";}else{v.textContent="";}}}var C3_STR={"north myrtle beach":{adr:370,occ:56,name:"North Myrtle Beach"},"myrtle beach":{adr:255,occ:58,name:"Myrtle Beach",mb:true},"surfside beach":{adr:410,occ:42,name:"Surfside Beach"},"garden city":{adr:360,occ:48,name:"Garden City"},"murrells inlet":{adr:300,occ:50,name:"Murrells Inlet"},"pawleys island":{adr:420,occ:56,name:"Pawleys Island"},"little river":{adr:240,occ:52,name:"Little River"},"conway":{adr:150,occ:45,name:"Conway"},"_default":{adr:270,occ:54,name:"the Grand Strand"}};function c3DetectSub(){var city=((document.getElementById("ltr-city")||{}).value||"").toLowerCase().trim();for(var k in C3_STR){if(k!=="_default"&&city.indexOf(k)>=0)return C3_STR[k];}var zip=(((document.getElementById("ltr-zip")||{}).value)||"").trim().slice(0,5);var Z={"29582":"north myrtle beach","29597":"north myrtle beach","29598":"north myrtle beach","29585":"pawleys island","29576":"murrells inlet","29566":"little river","29526":"conway","29527":"conway","29587":"surfside beach"};if(Z[zip])return C3_STR[Z[zip]];if(/^295(72|75|77|79|88)$/.test(zip))return C3_STR["myrtle beach"];return C3_STR["_default"];}function c3SetVal(id,v){var e=document.getElementById(id);if(e){e.value=v;}}function c3AutoCompare(){var cmp=document.getElementById("compare");if(cmp)cmp.style.display="block";var sm=c3DetectSub();var val=document.getElementById("ltr-r-value");var price=val?parseFloat(val.textContent.replace(/[^0-9.]/g,"")):0;if(price>1000)c3SetVal("cmp-price",Math.round(price));var mt=document.querySelectorAll("#ltr-income-metrics>div");for(var i=0;i<mt.length;i++){if(/monthly rent/i.test(mt[i].textContent)){var mr=(mt[i].textContent.match(/\$[\d,]+/)||[""])[0].replace(/[^0-9]/g,"");if(mr)c3SetVal("cmp-rent",mr);break;}}c3SetVal("cmp-adr",sm.adr);c3SetVal("cmp-occ",sm.occ);var note=document.getElementById("cmp-note");if(note)note.textContent="Short-term numbers are the "+sm.name+" average. Adjust them to your property.";var warn=document.getElementById("cmp-warn");if(warn){if(sm.mb){warn.style.display="block";warn.innerHTML="<strong>Heads up:</strong> most residential zones in the City of Myrtle Beach do not allow short-term rentals. Confirm the zoning before you count on nightly income. <a href=\"/contact/\" style=\"color:var(--brass);font-weight:600;text-decoration:none\">Chapter3 can check this for you.</a>";}else{warn.style.display="none";}}c3Compare();}(function(){var m=document.getElementById("ltr-income-metrics");if(m&&window.MutationObserver){new MutationObserver(function(){if(m.children.length){setTimeout(c3AutoCompare,60);}}).observe(m,{childList:true});}})();document.addEventListener("DOMContentLoaded",c3Compare);</script><section style="background:var(--ivory)"><div style="max-width:1000px;margin:0 auto;padding:3.5rem 1.5rem 4rem"><p style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">Common Questions</p><h2 style="font-family:var(--serif);font-size:2rem;color:var(--navy);margin-bottom:1.5rem">Frequently asked questions</h2><div style="border-top:1px solid var(--rule);padding:1.4rem 0"><h3 style="font-family:var(--serif);font-size:1.2rem;color:var(--navy);margin-bottom:.5rem">Can I still invest here if my property can&rsquo;t be a short-term rental?</h3><p style="color:var(--muted);line-height:1.7;max-width:680px">Yes, and this is one of the most useful workarounds on the Grand Strand. Many Myrtle Beach residential zones (and plenty of HOAs) don&rsquo;t allow Airbnb-style short-term rentals. But South Carolina only counts a stay as &ldquo;short-term&rdquo; when it&rsquo;s under 90 days. Renting to mid-term tenants on 90-day-plus leases, traveling nurses, remote workers, and October-to-March snowbirds, stays outside the short-term-rental rules and the accommodations tax, so it&rsquo;s a common way to cash-flow a property in a zone where nightly rentals are banned. Run any address through the analyzer to compare the long-term and mid-term numbers.</p></div><div style="border-top:1px solid var(--rule);padding:1.4rem 0"><h3 style="font-family:var(--serif);font-size:1.2rem;color:var(--navy);margin-bottom:.5rem">What does the long-term rental analyzer calculate?</h3><p style="color:var(--muted);line-height:1.7;max-width:680px">For any Grand Strand address you enter, it estimates property value, market rent, DSCR, cap rate, net operating income, monthly cash flow, cash-on-cash return, and appreciation, and it flags nearby permit activity.</p></div><div style="border-top:1px solid var(--rule);padding:1.4rem 0"><h3 style="font-family:var(--serif);font-size:1.2rem;color:var(--navy);margin-bottom:.5rem">What is DSCR and why does it matter?</h3><p style="color:var(--muted);line-height:1.7;max-width:680px">Debt-Service Coverage Ratio is net operating income divided by annual debt service. Investor lenders typically look for 1.20 or higher. It tells you whether the rent comfortably covers the loan.</p></div><div style="border-top:1px solid var(--rule);padding:1.4rem 0"><h3 style="font-family:var(--serif);font-size:1.2rem;color:var(--navy);margin-bottom:.5rem">What cap rate is realistic for a Myrtle Beach long-term rental?</h3><p style="color:var(--muted);line-height:1.7;max-width:680px">As of mid-2026, Grand Strand long-term rentals commonly pencil out in the 5 to 7 percent cap range. Coastal pricing often means appreciation and short-term-rental upside carry part of the return.</p></div><div style="border-top:1px solid var(--rule);padding:1.4rem 0"><h3 style="font-family:var(--serif);font-size:1.2rem;color:var(--navy);margin-bottom:.5rem">Are the numbers an appraisal?</h3><p style="color:var(--muted);line-height:1.7;max-width:680px">No. They are an actual screening estimate to compare deals quickly. Confirm with comparable sales, inspections, and a licensed agent before making an offer.</p></div></div></section>
 <section style="background:var(--ivory-2)"><div style="max-width:1000px;margin:0 auto;padding:3rem 1.5rem 3.5rem"><h2 style="font-family:var(--serif);font-size:1.6rem;color:var(--navy);margin-bottom:.9rem">About this analyzer</h2><p style="color:var(--muted);max-width:720px;line-height:1.75;margin-bottom:1.1rem">Enter any Grand Strand address and your financing terms to get an actual screening estimate for a long-term rental: property value, market rent, DSCR, cap rate, net operating income, monthly cash flow, cash-on-cash return, and projected appreciation, along with nearby permit activity.</p><p style="color:var(--muted);max-width:720px;line-height:1.75">It is built to help you compare deals quickly and decide which ones are worth a closer look. The output is an estimate for screening, not an appraisal, so confirm with comps, inspections, and a licensed agent before you make an offer.</p></div></section>
 </main>
+<div aria-labelledby="ltr-gate-title" aria-modal="true" id="ltr-gate" role="dialog" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(18,22,30,.78);padding:1.2rem;overflow-y:auto">
+<div style="max-width:430px;margin:7vh auto;background:var(--ivory);border-top:3px solid var(--brass);padding:2rem 1.9rem 1.6rem">
+<p style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-weight:600;margin:0 0 .5rem">Investor property report</p>
+<h2 id="ltr-gate-title" style="font-family:var(--serif);font-size:1.4rem;color:var(--navy);margin:0 0 .5rem;line-height:1.25">Where should we send the report?</h2>
+<p id="ltr-gate-sub" style="color:var(--muted);font-size:.9rem;line-height:1.6;margin:0 0 1.2rem">We will email you the full investor report for this property as a PDF.</p>
+<form onsubmit="return ltrGateSubmit(event)">
+<label style="display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;font-weight:600" for="ltr-gate-name">Name</label>
+<input autocomplete="name" id="ltr-gate-name" style="width:100%;padding:.75rem .85rem;margin-bottom:.6rem;border:1px solid var(--rule);background:#fdfbf7;color:var(--navy);font-family:var(--sans);font-size:.95rem" type="text"/>
+<label style="display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;font-weight:600" for="ltr-gate-email">Email</label>
+<input autocomplete="email" id="ltr-gate-email" required="" style="width:100%;padding:.75rem .85rem;margin-bottom:.6rem;border:1px solid var(--rule);background:#fdfbf7;color:var(--navy);font-family:var(--sans);font-size:.95rem" type="email"/>
+<label style="display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;font-weight:600" for="ltr-gate-phone">Phone (optional)</label>
+<input autocomplete="tel" id="ltr-gate-phone" style="width:100%;padding:.75rem .85rem;margin-bottom:1rem;border:1px solid var(--rule);background:#fdfbf7;color:var(--navy);font-family:var(--sans);font-size:.95rem" type="tel"/>
+<button class="btn btn-primary" id="ltr-gate-submit" style="width:100%;justify-content:center" type="submit">Email me the report</button>
+</form>
+<button id="ltr-gate-skip" onclick="ltrGateSkip()" style="display:none;width:100%;margin-top:.7rem;padding:.6rem;background:none;border:none;color:var(--muted);font-family:var(--sans);font-size:.85rem;text-decoration:underline;cursor:pointer" type="button">No thanks, start over</button>
+<button aria-label="Close" onclick="ltrCloseGate()" style="width:100%;margin-top:.4rem;padding:.5rem;background:none;border:none;color:var(--muted);font-family:var(--sans);font-size:.8rem;cursor:pointer" type="button">Close</button>
+<p style="font-size:.72rem;color:var(--muted);line-height:1.55;margin:.9rem 0 0;padding-top:.9rem;border-top:1px solid var(--rule)">Your numbers stay on this page either way. We send the report and occasional Grand Strand investor data, and you can unsubscribe at any time. See our <a href="/privacy/" style="color:var(--brass)">privacy policy</a>.</p>
+</div>
+</div>
 <footer>
 <div class="wrap">
 <div class="footer-cta" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.2rem 2rem;padding-bottom:2.2rem;margin-bottom:2.4rem;border-bottom:1px solid rgba(244,239,232,.12)"><div style="max-width:600px"><p style="font-family:var(--serif);font-size:1.6rem;color:var(--ivory);margin:0 0 .4rem;line-height:1.15">Ready to make your next move on the Grand Strand?</p><p style="color:rgba(244,239,232,.6);font-size:.92rem;line-height:1.6;margin:0">Whether you are buying, selling, or investing, talk to a licensed local agent with an in-house lender under the same roof. No pressure, just straight answers.</p></div><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-primary" href="/contact/">Talk to an agent</a><a class="btn btn-outline" href="/guides/" style="color:var(--ivory);border-color:rgba(244,239,232,.4)">Browse guides &amp; tools</a></div></div>
@@ -257,10 +276,10 @@
 <p class="footer-col-head">Invest</p>
 <ul class="footer-links">
 <li><a href="/invest/">Investor Hub</a></li>
-<li><a href="/invest/long-term-rental/">Grand Investor Tool</a></li>
-<li><a href="/invest/">Building Analyses</a></li>
 <li><a href="/invest/condos/">Condo Investing</a></li>
+<li><a href="/invest/condo-buildings/">Condo Buildings</a></li>
 <li><a href="/invest/str-tools/">Short-Term Rentals</a></li>
+<li><a href="/invest/airbnb-income/">Airbnb Income Data</a></li>
 <li><a href="/market-reports/">Market Report</a></li>
 </ul>
 </div>
@@ -269,19 +288,18 @@
 <ul class="footer-links">
 <li><a href="/invest/strategies/dscr-loans/">DSCR Loans</a></li>
 <li><a href="/invest/strategies/brrrr/">BRRRR Method</a></li>
-<li><a href="/invest/strategies/fix-and-flip/">Fix & Flip</a></li>
+<li><a href="/invest/strategies/fix-and-flip/">Fix &amp; Flip</a></li>
 <li><a href="/invest/strategies/1031-exchange/">1031 Exchange</a></li>
 <li><a href="/invest/strategies/small-multifamily/">Multifamily Investing</a></li>
 </ul>
 </div>
 <div>
-<p class="footer-col-head">Tools</p>
+<p class="footer-col-head">Calculators</p>
 <ul class="footer-links">
-<li><a href="/invest/long-term-rental/">DSCR Calculator</a></li>
-<li><a href="/invest/long-term-rental/">Rent Estimator</a></li>
-<li><a href="/invest/long-term-rental/">STR ROI Analyzer</a></li>
-<li><a href="/invest/long-term-rental/">Cap Rate</a></li>
-<li><a href="/invest/long-term-rental/">1031 Timeline</a></li>
+<li><a href="/invest/long-term-rental/">Rental Deal Analyzer</a></li>
+<li><a href="/buyers/closing-costs/">Closing Cost Calculator</a></li>
+<li><a href="/sell/capital-gains/">Capital Gains Calculator</a></li>
+<li><a href="/buyers/property-taxes/">Property Tax Estimator</a></li>
 <li><a href="/map/">3D Map Search</a></li>
 </ul>
 </div>
@@ -289,7 +307,7 @@
 <p class="footer-col-head">Company</p>
 <ul class="footer-links">
 <li><a href="/about/">Meet the Team</a></li>
-<li><a href="/market-reports/">Journal</a></li>
+<li><a href="/guides/">Guides &amp; Tools</a></li>
 <li><a href="/contact/">Contact</a></li>
 </ul>
 </div>
@@ -298,13 +316,12 @@
 <ul class="footer-links">
 <li><a href="/buyers/">For Buyers</a></li>
 <li><a href="/sell/">For Sellers</a></li>
-<li><a href="/sell/">Home Valuation</a></li>
-<li><span aria-disabled="true" style="opacity:.55;cursor:not-allowed">Search Listings (Coming Soon)</span></li>
+<li><a href="/submarkets/">Neighborhoods</a></li>
 </ul>
 </div>
 </div>
-<div class="footer-explore" style="grid-column:1/-1;border-top:1px solid rgba(244,239,232,.1);margin-top:1.6rem;padding-top:1.4rem;display:grid;gap:1.1rem"><div><p class="footer-col-head" style="margin-bottom:.5rem"><a href="/submarkets/" style="color:inherit;text-decoration:none">Neighborhoods</a></p><p style="font-size:.78rem;line-height:1.95;margin:0"><a href="/submarkets/myrtle-beach/" style="color:rgba(244,239,232,.6);text-decoration:none">Myrtle Beach</a> &middot; <a href="/submarkets/north-myrtle-beach/" style="color:rgba(244,239,232,.6);text-decoration:none">North Myrtle Beach</a> &middot; <a href="/submarkets/surfside-beach/" style="color:rgba(244,239,232,.6);text-decoration:none">Surfside Beach</a> &middot; <a href="/submarkets/garden-city/" style="color:rgba(244,239,232,.6);text-decoration:none">Garden City</a> &middot; <a href="/submarkets/murrells-inlet/" style="color:rgba(244,239,232,.6);text-decoration:none">Murrells Inlet</a> &middot; <a href="/submarkets/pawleys-island/" style="color:rgba(244,239,232,.6);text-decoration:none">Pawleys Island</a> &middot; <a href="/submarkets/little-river/" style="color:rgba(244,239,232,.6);text-decoration:none">Little River</a> &middot; <a href="/submarkets/conway/" style="color:rgba(244,239,232,.6);text-decoration:none">Conway</a></p></div><div><p class="footer-col-head" style="margin-bottom:.5rem">Buyer and seller guides</p><p style="font-size:.78rem;line-height:1.95;margin:0"><a href="/buyers/first-time-home-buyer-myrtle-beach/" style="color:rgba(244,239,232,.6);text-decoration:none">First-time buyer guide</a> &middot; <a href="/buyers/programs/" style="color:rgba(244,239,232,.6);text-decoration:none">Down payment assistance</a> &middot; <a href="/buyers/first-time-home-buyer-myrtle-beach/" style="color:rgba(244,239,232,.6);text-decoration:none">Myrtle Beach first-time buyers</a> &middot; <a href="/buyers/va-loans/" style="color:rgba(244,239,232,.6);text-decoration:none">VA loans</a> &middot; <a href="/buyers/second-home/" style="color:rgba(244,239,232,.6);text-decoration:none">Second homes</a> &middot; <a href="/buyers/retirees/" style="color:rgba(244,239,232,.6);text-decoration:none">Retirees</a> &middot; <a href="/buyers/relocating/" style="color:rgba(244,239,232,.6);text-decoration:none">Relocating</a> &middot; <a href="/sell/out-of-state-buyers/" style="color:rgba(244,239,232,.6);text-decoration:none">Selling to out-of-state buyers</a></p></div></div><div class="footer-bottom">
-<p class="footer-copy">© 2026 Chapter3 Realty LLC. All rights reserved. SC Brokerage License #TBD. Broker-in-Charge: Timmy Fredrick Nash.</p>
+<div class="footer-bottom">
+<p class="footer-copy">© 2026 Chapter3 Realty LLC. All rights reserved. Broker-in-Charge: Timmy Fredrick Nash.</p>
 <div class="footer-legal-links">
 <a href="/privacy/">Privacy</a>
 <a href="/terms/">Terms</a>
@@ -315,6 +332,51 @@
 </div>
 <p class="footer-afba"><strong style="color:rgba(244,239,232,0.55)">RESPA Affiliated Business Arrangement Disclosure.</strong> Chapter3 Realty LLC has a business relationship with BrickWood Mortgage (NMLS #189497). Because of this relationship, this referral may provide Chapter3 Realty a financial or other benefit. You are NOT required to use BrickWood Mortgage as a condition for purchase, sale, or refinance of the subject property. There are frequently other providers available. You are free to shop around. <a href="/buyers/programs/#afba">See full AfBA Disclosure.</a></p>
 </div>
+<script>
+/* Chapter3 conversion tracking. Sends GA4 events for leads, calls, and tool use. */
+(function () {
+  function track(name, params) {
+    if (typeof gtag === 'function') { try { gtag('event', name, params || {}); } catch (e) {} }
+  }
+  window.c3track = track;
+  function ready(fn) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+    else fn();
+  }
+  ready(function () {
+    /* Every lead form on the site routes through c3SendForm, which is defined inline per page. */
+    if (typeof window.c3SendForm === 'function' && !window.__c3formWrapped) {
+      var original = window.c3SendForm;
+      window.c3SendForm = function (fields, pageName) {
+        track('generate_lead', { form_name: pageName || 'unknown', page_path: location.pathname });
+        return original.apply(this, arguments);
+      };
+      window.__c3formWrapped = true;
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || !el.closest) return;
+      var tel = el.closest('a[href^="tel:"]');
+      if (tel) { track('phone_click', { page_path: location.pathname }); return; }
+      var mail = el.closest('a[href^="mailto:"]');
+      if (mail) track('email_click', { page_path: location.pathname });
+    }, true);
+    /* Fires once per page the first time someone touches a calculator field. */
+    var toolUsed = false;
+    ['input', 'change'].forEach(function (evt) {
+      document.addEventListener(evt, function (e) {
+        if (toolUsed) return;
+        var t = e.target;
+        if (!t || !t.tagName) return;
+        if (['INPUT', 'SELECT', 'TEXTAREA'].indexOf(t.tagName) === -1) return;
+        if (t.closest && t.closest('form') && t.closest('#ltr-gate')) return;
+        toolUsed = true;
+        track('calculator_used', { page_path: location.pathname });
+      }, true);
+    });
+  });
+})();
+</script>
 </footer>
 
 
@@ -336,7 +398,7 @@ if (GOOGLE_MAPS_KEY !== 'YOUR_GOOGLE_MAPS_KEY') {
 }
 </script>
 
-<script src="/assets/s.32907dd2c6.js"></script>
+<script src="/assets/s.0603329f8a.js"></script>
 
 <!-- ══════════════════════════════════════
      DYNAMIC LAYER v2 ELEMENTS

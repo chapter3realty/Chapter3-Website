@@ -263,6 +263,7 @@ ${permitCtx ? 'Permit signals: generate GREEN flags for hospital/medical/retail/
 function ltrRenderResults(d, address, isFixer, isCash) {
   document.getElementById('ltr-loading').style.display = 'none';
   document.getElementById('ltr-results').style.display = 'block';
+  if (window.c3track) c3track('analysis_complete', { page_path: location.pathname });
   _ltrData = d; _ltrIsCash = isCash;
 
   document.getElementById('ltr-r-address').textContent = address;
@@ -454,7 +455,97 @@ function recalcLtr() {
   setTimeout(initLtrTips, 50);
 }
 
+// ── INVESTOR REPORT EMAIL GATE ────────────────────────
+// Results are never hidden. We ask for an email only when someone wants the PDF
+// copy, or the first time they start a second analysis.
+function ltrStore(k, v) { try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } }
+function ltrHasEmail() { return !!ltrStore('c3_ltr_email'); }
+function ltrGateAsked() { return !!ltrStore('c3_ltr_asked'); }
+
+function ltrGateSnapshot() {
+  function v(id) { var e = document.getElementById(id); return e ? (e.value || e.textContent || '').trim() : ''; }
+  var addr = v('ltr-r-address') || [v('ltr-street'), v('ltr-city'), v('ltr-zip')].filter(Boolean).join(', ');
+  var parts = [];
+  if (addr) parts.push('Property: ' + addr);
+  if (v('ltr-price')) parts.push('Price: $' + v('ltr-price'));
+  if (v('ltr-r-verdict')) parts.push('Verdict: ' + v('ltr-r-verdict'));
+  if (v('ltr-r-value')) parts.push('Headline: ' + v('ltr-r-value'));
+  return parts.join(' | ') || 'No property details captured';
+}
+
+function ltrOpenGate(mode) {
+  var g = document.getElementById('ltr-gate');
+  if (!g) { ltrGateProceed(mode); return; }
+  g.setAttribute('data-mode', mode);
+  var t = document.getElementById('ltr-gate-title');
+  var s = document.getElementById('ltr-gate-sub');
+  var b = document.getElementById('ltr-gate-submit');
+  var k = document.getElementById('ltr-gate-skip');
+  if (mode === 'pdf') {
+    if (t) t.textContent = 'Where should we send the report?';
+    if (s) s.textContent = 'We will email you the full investor report for this property as a PDF.';
+    if (b) b.textContent = 'Email me the report';
+    if (k) k.style.display = 'none';
+  } else {
+    if (t) t.textContent = 'Want these numbers emailed to you?';
+    if (s) s.textContent = 'Before you run another property, we can send you the report for this one. We only ask once.';
+    if (b) b.textContent = 'Send it and start over';
+    if (k) k.style.display = 'block';
+  }
+  g.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  var em = document.getElementById('ltr-gate-email');
+  if (em) setTimeout(function () { em.focus(); }, 60);
+  if (window.c3track) c3track('lead_prompt_shown', { form_name: 'Investor Report', mode: mode, page_path: location.pathname });
+}
+
+function ltrCloseGate() {
+  var g = document.getElementById('ltr-gate');
+  if (g) g.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function ltrGateProceed(mode) {
+  ltrCloseGate();
+  if (mode === 'pdf') ltrRunPDF(); else ltrDoReset();
+}
+
+function ltrGateSkip() {
+  ltrStore('c3_ltr_asked', '1');
+  var g = document.getElementById('ltr-gate');
+  ltrGateProceed(g ? g.getAttribute('data-mode') : 'again');
+}
+
+function ltrGateSubmit(ev) {
+  if (ev && ev.preventDefault) ev.preventDefault();
+  var em = document.getElementById('ltr-gate-email');
+  var email = em ? em.value.trim() : '';
+  if (!email || email.indexOf('@') < 1) { if (em) em.focus(); return false; }
+  function val(id) { var e = document.getElementById(id); return e ? e.value.trim() : ''; }
+  ltrStore('c3_ltr_email', email);
+  ltrStore('c3_ltr_asked', '1');
+  var g = document.getElementById('ltr-gate');
+  var mode = g ? g.getAttribute('data-mode') : 'pdf';
+  if (typeof c3SendForm === 'function') {
+    c3SendForm({
+      name: val('ltr-gate-name'),
+      email: email,
+      phone: val('ltr-gate-phone'),
+      deal: ltrGateSnapshot()
+    }, 'Investor Report Request');
+  }
+  if (window.c3track) c3track('generate_lead', { form_name: 'Investor Report Request', mode: mode, page_path: location.pathname });
+  ltrGateProceed(mode);
+  return false;
+}
+
 function ltrSavePDF() {
+  if (window.c3track) c3track('report_download', { page_path: location.pathname });
+  if (ltrHasEmail()) { ltrRunPDF(); return; }
+  ltrOpenGate('pdf');
+}
+
+function ltrRunPDF() {
   var res = document.getElementById('ltr-results'); if (!res) return;
   var btns = res.querySelectorAll('button, a.btn'); for (var i=0;i<btns.length;i++) btns[i].style.display='none';
   var h = document.createElement('div'); h.id='ltr-pdf-hdr';
@@ -480,6 +571,11 @@ function ltrSavePDF() {
   need.forEach(function(u){ var sc=document.createElement('script'); sc.src=u; sc.onload=function(){ if(++done===need.length){ failed?fallback():gen(); } }; sc.onerror=function(){ failed=true; if(++done===need.length) fallback(); }; document.head.appendChild(sc); });
 }
 function resetLtr() {
+  if (!ltrHasEmail() && !ltrGateAsked()) { ltrOpenGate('again'); return; }
+  ltrDoReset();
+}
+
+function ltrDoReset() {
   document.getElementById('ltr-results').style.display = 'none';
   document.getElementById('ltr-form').style.display = 'block';
   document.getElementById('ltr-arv-section').style.display = 'none';
