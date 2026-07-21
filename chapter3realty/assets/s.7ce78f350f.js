@@ -2,6 +2,11 @@
 // ── LTR TOOL ─────────────────────────────────────────────
 
 let _ltrData = null, _ltrIsCash = false;
+// Implied rates captured from the first analysis, so property tax, maintenance
+// and management scale when the user edits price or rent in the Adjust panel.
+// Previously these were fixed dollar amounts and never moved, even though the
+// panel says the numbers recalculate instantly. No API call is involved.
+let _ltrRates = null;
 
 function toggleLtrFixer() {
   const on = document.getElementById('ltr-is-fixer').checked;
@@ -93,7 +98,9 @@ async function getNearbyPermits(lat, lng) {
   try {
     const radius = 26400; // 5 miles in feet
     const url = `https://www.horrycounty.org/gisweb/rest/services/Public/PermitsActive/MapServer/0/query?` +
-      `geometry=${lng},${lat}&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelWithin` +
+      // Intersects, not Within: a buffered point query asks which permits fall
+      // inside the radius. Within asks the opposite and returns nothing here.
+      `geometry=${lng},${lat}&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects` +
       `&distance=${radius}&units=esriSRUnit_Foot` +
       `&outFields=PERMITNUMBER,APPLYDATE,PermitType,Workclass,DESCRIPTION,StreetNum,StreetName,VALUE` +
       `&where=1%3D1&orderByFields=APPLYDATE+DESC&resultRecordCount=25&f=json`;
@@ -148,15 +155,19 @@ async function getNearbyPermits(lat, lng) {
   } catch(e) { return null; }
 }
 
+// Geocoding runs through our own worker, which uses the free US Census
+// geocoder and caches the result. The previous version called Google Maps with
+// a key whose billing is disabled, so it always returned null and the
+// nearby-permits lookup below never ran for a single visitor.
 async function ltrGeocodeAddress(addr) {
   try {
-    const key = 'AIzaSyAFTNMGh-PmVFTl3S0ViiM9zNYicFrgGfs';
-    const res  = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(addr)}&key=${key}`);
+    const res = await fetch('https://api-proxy.chapter3realty.workers.dev/geocode', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ address: addr })
+    });
     const data = await res.json();
-    if (data.results && data.results[0]) {
-      const loc = data.results[0].geometry.location;
-      return { lat: loc.lat, lng: loc.lng };
-    }
+    if (data && data.lat != null && data.lng != null) return { lat: data.lat, lng: data.lng };
     return null;
   } catch(e) { return null; }
 }
@@ -264,7 +275,7 @@ function ltrRenderResults(d, address, isFixer, isCash) {
   document.getElementById('ltr-loading').style.display = 'none';
   document.getElementById('ltr-results').style.display = 'block';
   if (window.c3track) c3track('analysis_complete', { page_path: location.pathname });
-  _ltrData = d; _ltrIsCash = isCash;
+  _ltrData = d; _ltrIsCash = isCash; _ltrRates = null;
 
   document.getElementById('ltr-r-address').textContent = address;
   const verdictEl = document.getElementById('ltr-r-verdict');
@@ -389,13 +400,24 @@ function recalcLtr() {
   const gross   = rent * 12;
   const vac     = Math.round(gross * vacPct / 100);
   const egi     = gross - vac;
-  const tax     = d.propertyTaxAnnual || Math.round(price * 0.0082);
+  // Capture the implied rates once, off the values the analysis returned, then
+  // derive from the live price and rent so the Adjust panel actually recalculates.
+  if (!_ltrRates) {
+    const basePrice = d.estimatedValue || price || 0;
+    const baseRent  = (d.estRentMonthly || rent || 0) * 12;
+    _ltrRates = {
+      tax:   basePrice > 0 && d.propertyTaxAnnual   ? d.propertyTaxAnnual   / basePrice : 0.0082,
+      maint: basePrice > 0 && d.maintenanceAnnual   ? d.maintenanceAnnual   / basePrice : 0.0085,
+      mgmt:  baseRent  > 0 && d.managementFeeAnnual ? d.managementFeeAnnual / baseRent  : 0
+    };
+  }
+  const tax     = Math.round(price * _ltrRates.tax);
   const ins     = parseFloat(document.getElementById('adj-insurance')?.value) || d.insuranceAnnual || 1800;
-  const maint   = d.maintenanceAnnual || Math.round(price * 0.0085);
+  const maint   = Math.round(price * _ltrRates.maint);
   const utBase  = d.utilitiesMonthly || Math.round((d.inferredSqft || _ltrData?.inferredSqft || 1200) * 0.20 / 12);
   const utAnn   = utPay === 'landlord' ? utBase * 12 : 0;
   const hoaAnn  = hoaMo * 12;
-  const mgmt    = d.managementFeeAnnual || 0;
+  const mgmt    = Math.round(gross * _ltrRates.mgmt);
   const opEx    = tax + ins + utAnn + hoaAnn + mgmt + maint + vac;
   const noi     = egi - opEx + vac; // NOI excludes vacancy
   const noiTrue = egi - (tax + ins + utAnn + hoaAnn + mgmt + maint);
