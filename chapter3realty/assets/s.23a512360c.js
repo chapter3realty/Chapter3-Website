@@ -375,13 +375,15 @@ function recalcLtr() {
   const hoaMo   = parseFloat(document.getElementById('adj-hoa')?.value)       || 0;
   const utPay   = document.getElementById('adj-utilities')?.value             || 'landlord';
   const vacPct  = parseFloat(document.getElementById('adj-vacancy')?.value)   || 0; // 0 = off by default
-  const rawDown = parseFloat(document.getElementById('adj-down')?.value)      || 0;
+  const _downRaw = document.getElementById('adj-down')?.value;
+  const rawDown = (_downRaw === '' || _downRaw == null) ? NaN : parseFloat(_downRaw);
   const ratePct = parseFloat(document.getElementById('adj-rate')?.value)      || 7.5;
   const termYrs = parseFloat(document.getElementById('ltr-term')?.value)      || 30;
 
   // 100% down = cash purchase regardless of isCash toggle
   const effectiveCash = _ltrIsCash || rawDown >= 100;
-  const downPct       = effectiveCash ? 100 : rawDown || 25;
+  // Blank field falls back to 25%. An explicit 0 stays 0 (VA and USDA are zero down).
+  const downPct       = effectiveCash ? 100 : (isNaN(rawDown) ? 25 : rawDown);
 
   // SC investment property tax: 6% assessment ratio × Horry County millage 0.1367 = ~0.82% of value
   const gross   = rent * 12;
@@ -407,7 +409,9 @@ function recalcLtr() {
     dscr = debt > 0 ? noiTrue / debt : null;
   }
 
-  const cf   = noiTrue - debt - vac;
+  // noiTrue is already net of vacancy (egi = gross - vac), so vacancy must NOT
+  // be subtracted again here. Doing so double-counted it and overstated losses.
+  const cf   = noiTrue - debt;
   const moCF = cf / 12;
   const rehab = parseFloat(document.getElementById("adj-rehab")?.value) || 0;
   const cash = (effectiveCash ? price : price * downPct / 100 + price * 0.03) + rehab;
@@ -441,14 +445,16 @@ function recalcLtr() {
     ...(hoaAnn > 0 ? [['HOA Fees', hoaAnn]] : []),
     ...(mgmt > 0   ? [['Management', mgmt]] : []),
     ['Maintenance Reserve', maint],
-    ...(vac > 0    ? [['Vacancy (' + vacPct + '%)', vac]] : []),
   ];
+  // Vacancy is a reduction in gross income, not an operating expense, so it is
+  // listed below the total. Inside the list it made the rows not sum to the total.
   const rowStyle = 'display:flex;justify-content:space-between;align-items:baseline;padding:.3rem 0;border-bottom:1px solid rgba(0,0,0,.04)';
   const divStyle = 'display:flex;justify-content:space-between;align-items:baseline;padding:.45rem 0;border-top:1.5px solid var(--rule);margin-top:.2rem';
   document.getElementById('ltr-expense-table').innerHTML =
     `<div style="display:flex;flex-direction:column;width:100%;font-size:.83rem">` +
     rows.map(([l,v]) => `<div style="${rowStyle}"><span style="color:var(--muted)">${l}</span><span style="font-weight:500;font-variant-numeric:tabular-nums">${ltrFmt(v)}</span></div>`).join('') +
     `<div style="${divStyle}"><span style="font-weight:600">Total Operating Expenses</span><span style="font-weight:700;font-variant-numeric:tabular-nums">${ltrFmt(opEx - vac)}</span></div>` +
+    (vac > 0 ? `<div style="${rowStyle}"><span style="color:var(--muted)">Vacancy allowance (${vacPct}%)</span><span style="font-weight:500;font-variant-numeric:tabular-nums">${ltrFmt(vac)}</span></div>` : '') +
     (!effectiveCash ? `<div style="${rowStyle}"><span style="color:var(--muted)">Annual Mortgage</span><span style="font-weight:500;font-variant-numeric:tabular-nums">${ltrFmt(debt)}</span></div>` : '') +
     `</div>`;
 
