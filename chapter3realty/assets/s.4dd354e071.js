@@ -489,12 +489,12 @@ function ltrOpenGate(mode) {
   var k = document.getElementById('ltr-gate-skip');
   if (mode === 'pdf') {
     if (t) t.textContent = 'Where should we send the report?';
-    if (s) s.textContent = 'We will email you the full investor report for this property as a PDF.';
+    if (s) s.textContent = 'Your report downloads as soon as you submit this. We use your email to follow up with the numbers.';
     if (b) b.textContent = 'Email me the report';
     if (k) k.style.display = 'none';
   } else {
     if (t) t.textContent = 'Want these numbers emailed to you?';
-    if (s) s.textContent = 'Before you run another property, we can send you the report for this one. We only ask once.';
+    if (s) s.textContent = 'Before you run another property, we can follow up with the numbers on this one. We only ask once.';
     if (b) b.textContent = 'Send it and start over';
     if (k) k.style.display = 'block';
   }
@@ -540,7 +540,8 @@ function ltrGateSubmit(ev) {
       deal: ltrGateSnapshot()
     }, 'Investor Report Request');
   }
-  if (window.c3track) c3track('generate_lead', { form_name: 'Investor Report Request', mode: mode, page_path: location.pathname });
+  // generate_lead is fired by the sitewide c3SendForm wrapper in the footer.
+  // Firing it here too would double-count every lead.
   ltrGateProceed(mode);
   return false;
 }
