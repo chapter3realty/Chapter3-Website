@@ -107,7 +107,11 @@ function corsHeaders(origin) {
   return {
     'Access-Control-Allow-Origin': origin,
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
+    // The site's callProxy still sends x-api-name. Narrowing this to Content-Type
+    // made every browser request fail preflight with 'Failed to fetch', while curl
+    // kept working because curl does not preflight. Permit the headers the deployed
+    // site actually sends; they are ignored server-side either way.
+    'Access-Control-Allow-Headers': 'Content-Type, x-api-name, x-api-path',
     'Access-Control-Max-Age': '86400',
     Vary: 'Origin',
   };

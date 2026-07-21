@@ -99,7 +99,9 @@ function initLtrTips() {
 async function callProxy(body) {
   const res = await fetch('https://api-proxy.chapter3realty.workers.dev', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'x-api-name': 'anthropic' },
+    // x-api-name was only meaningful to the old worker. Sending it forces a CORS
+    // preflight that must explicitly permit it, so it is simply dropped.
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
   });
   const data = await res.json();
