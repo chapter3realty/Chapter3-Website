@@ -90,6 +90,15 @@ function normalizeAddress(s) {
 // and a mismatch fails silently: the worker keeps answering but stores nothing,
 // so the same address quietly goes back to returning different numbers. Accept
 // any of the plausible names instead of depending on one.
+// Same defensive treatment as the KV binding. The secret may already exist under
+// a different name from whatever the previous worker used, and an empty key is
+// sent upstream as a blank header, which returns a confusing "invalid x-api-key"
+// rather than telling you the secret is simply missing.
+function anthropicKey(env) {
+  return env.ANTHROPIC_API_KEY || env.ANTHROPIC_KEY || env.CLAUDE_API_KEY ||
+         env.API_KEY || env.anthropic_api_key || '';
+}
+
 function kvStore(env) {
   return env.ANALYSIS_CACHE || env.KV || env.CACHE || env.c3_analysis_cache || null;
 }
@@ -427,13 +436,19 @@ async function handleAnalysis(incoming, env, origin) {
     }
   }
 
+  const apiKey = anthropicKey(env);
+  if (!apiKey) {
+    return deny(500, 'Server is missing its Anthropic API key. Add it to this worker under ' +
+                     'Settings, Variables and Secrets, named ANTHROPIC_API_KEY.', origin);
+  }
+
   let upstream;
   try {
     upstream = await fetch(ANTHROPIC_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': env.ANTHROPIC_API_KEY,
+        'x-api-key': apiKey,
         'anthropic-version': ANTHROPIC_VERSION,
       },
       body: payload,
