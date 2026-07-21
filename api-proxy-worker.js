@@ -269,10 +269,17 @@ async function handleAnalysis(incoming, env, origin) {
   // term and price are recomputed in the browser by recalcLtr(), so letting them
   // fragment the cache would hand two people different property facts for the
   // same house purely because one typed 20% down and the other typed 25%.
-  const scope =
-    typeof incoming.cache_key === 'string' && incoming.cache_key.trim()
-      ? 'addr:' + normalizeAddress(incoming.cache_key)
-      : 'body:' + payload;
+  // The client names the slot, so verify it is actually talking about the
+  // property it claims. Without this check a console user could store invented
+  // numbers under a real address and have them served to everyone afterwards.
+  let scope = 'body:' + payload;
+  if (typeof incoming.cache_key === 'string' && incoming.cache_key.trim()) {
+    const claimed = normalizeAddress(incoming.cache_key);
+    const prompt = normalizeAddress(JSON.stringify(body.messages));
+    // The street number and name must appear in the prompt the model receives.
+    const stem = claimed.split('|').filter(Boolean).slice(1).join(' ').split(' ').slice(0, 3).join(' ');
+    if (stem && prompt.indexOf(stem) !== -1) scope = 'addr:' + claimed;
+  }
   const key = `${CACHE_VERSION}:msg:` + (await sha256Hex(scope));
 
   if (env.ANALYSIS_CACHE) {
@@ -302,9 +309,28 @@ async function handleAnalysis(incoming, env, origin) {
 
   const text = await upstream.text();
 
-  // Only successful answers are stored, so an outage or rate-limit response
-  // never becomes the permanent answer for an address.
-  if (env.ANALYSIS_CACHE && upstream.ok) {
+  // Only complete, successful answers are stored. A 200 is not enough: a reply
+  // cut off at the token ceiling, or declined by a safety classifier, still
+  // arrives as 200 and would otherwise become the permanent answer for that
+  // address for a year, with no way to clear it except purging every address.
+  let cacheable = upstream.ok;
+  if (cacheable) {
+    try {
+      const parsed = JSON.parse(text);
+      const stop = parsed && parsed.stop_reason;
+      if (stop === 'max_tokens' || stop === 'refusal') cacheable = false;
+      const blocks = (parsed && parsed.content) || [];
+      const textOut = blocks.filter((b) => b.type === 'text').map((b) => b.text).join('');
+      // The analyzer needs parseable JSON back. If it will not parse, storing it
+      // would hand every later visitor the same instant failure.
+      const a = textOut.indexOf('{'), z = textOut.lastIndexOf('}');
+      if (a < 0 || z <= a) cacheable = false;
+      else JSON.parse(textOut.slice(a, z + 1));
+    } catch (e) {
+      cacheable = false;
+    }
+  }
+  if (env.ANALYSIS_CACHE && cacheable) {
     await env.ANALYSIS_CACHE.put(key, text, { expirationTtl: CACHE_TTL_SECONDS });
   }
 
@@ -333,14 +359,6 @@ export default {
     if (!allowed) return deny(403, 'Origin not allowed.', null);
     if (request.method !== 'POST') return deny(405, 'Method not allowed.', origin);
 
-    // Rate limit misses only would be ideal, but the limiter runs before we
-    // know. The limit is set high enough that cached traffic is unaffected.
-    if (env.RATE_LIMITER) {
-      const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
-      const { success } = await env.RATE_LIMITER.limit({ key: ip });
-      if (!success) return deny(429, 'Too many requests. Please wait a moment.', origin);
-    }
-
     const raw = await request.text();
     if (raw.length > MAX_BODY_BYTES) return deny(413, 'Request too large.', origin);
 
@@ -352,8 +370,19 @@ export default {
     }
 
     const path = new URL(request.url).pathname;
+
+    // Autocomplete fires on almost every keystroke, so it must not draw on the
+    // same budget as an analysis. Typing one address carefully used to be enough
+    // to get "Too many requests" on the Analyze button, and a shared office IP
+    // made it far worse. Only the expensive route is limited.
     if (path === '/geocode') return handleGeocode(incoming, env, origin);
     if (path === '/suggest') return handleSuggest(incoming, env, origin);
+
+    if (env.RATE_LIMITER) {
+      const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+      const { success } = await env.RATE_LIMITER.limit({ key: ip });
+      if (!success) return deny(429, 'Too many requests. Please wait a moment.', origin);
+    }
     return handleAnalysis(incoming, env, origin);
   },
 };

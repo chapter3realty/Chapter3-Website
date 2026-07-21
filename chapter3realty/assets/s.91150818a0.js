@@ -16,6 +16,14 @@ function toggleLtrCash() {
   const on = document.getElementById('ltr-is-cash').checked;
   document.getElementById('ltr-loan-fields').style.display = on ? 'none' : 'block';
 }
+// Reads a numeric field, distinguishing "left blank" from "typed zero".
+function ltrNum(id, fallback) {
+  const el = document.getElementById(id);
+  const raw = el ? el.value : '';
+  if (raw === '' || raw == null) return fallback;
+  const n = parseFloat(raw);
+  return isNaN(n) ? fallback : n;
+}
 function ltrFmt(n) { return (n==null||isNaN(n)) ? '--' : '$'+Math.round(n).toLocaleString(); }
 function ltrFmtPct(n) { return (n==null||isNaN(n)) ? '--' : n.toFixed(1)+'%'; }
 
@@ -49,6 +57,18 @@ function ltrTip(key) {
   const t = LTR_TIPS[key]||'';
   if (!t) return '';
   return `<span class="ltr-tip-wrap" style="position:relative;display:inline-block;margin-left:.35rem;vertical-align:middle"><span class="ltr-tip-icon" style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:#e5e7eb;color:#6b7280;font-size:.62rem;font-weight:700;cursor:default">?</span><span class="ltr-tip-box" style="display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);width:240px;background:#1c2028;color:#f4efe8;font-size:.75rem;line-height:1.55;padding:.7rem .9rem;z-index:999;pointer-events:none">${t}</span></span>`;
+}
+
+// Scores the header badge off the SAME numbers shown on the cards, so the verdict
+// can never contradict them. Called at the end of recalcLtr().
+function ltrSetBadge(cap, moCF, coc) {
+  const el = document.getElementById('ltr-r-badge');
+  if (!el) return;
+  const rating = (cap >= 5.5 && moCF >= 100 && coc >= 5) ? 'good'
+               : (cap >= 4 && moCF >= 0) ? 'ok' : 'tough';
+  const colors = { good: ['#2d7a4f','Strong Deal'], ok: ['#d97706','Decent Deal'], tough: ['#c0392b','Tough Deal'] };
+  const [bc, bt] = colors[rating];
+  el.innerHTML = `<span style="display:inline-flex;align-items:center;padding:.3rem .85rem;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;background:${bc};color:#fff">${bt}</span>`;
 }
 
 function ltrCard(label, displayValue, metric, topColor, tipKey, rawScore) {
@@ -202,7 +222,10 @@ function c3Esc(s) {
 function c3AcPick(i) {
   const s = _c3Ac.items[i];
   if (!s) return;
-  const set = function (id, v) { const e = document.getElementById(id); if (e && v) e.value = v; };
+  // Clear, do not skip: picking a Conway address after a Myrtle Beach one used to
+  // leave the old ZIP in place, producing "Conway, 29577" -- an address that does
+  // not exist, which then became the shared cache key for everyone.
+  const set = function (id, v) { const e = document.getElementById(id); if (e) e.value = v || ''; };
   set('ltr-street', s.street);
   set('ltr-city', s.city);
   set('ltr-zip', s.zip);
@@ -416,11 +439,10 @@ function ltrRenderResults(d, address, isFixer, isCash) {
   if (verdictEl) verdictEl.textContent = d.verdict || '';
   document.getElementById('ltr-r-value').textContent = ltrFmt(d.estimatedValue);
 
-  const _cap = d.capRate||0, _cf = d.monthlyCashflow||0, _coc = d.cashOnCashReturn||0;
-  const _rating = (_cap>=5.5 && _cf>=100 && _coc>=5) ? 'good' : (_cap>=4 && _cf>=0) ? 'ok' : 'tough';
-  const badgeColors = {good:['#2d7a4f','Strong Deal'],ok:['#d97706','Decent Deal'],tough:['#c0392b','Tough Deal']};
-  const [bc,bt] = badgeColors[_rating];
-  document.getElementById('ltr-r-badge').innerHTML = `<span style="display:inline-flex;align-items:center;padding:.3rem .85rem;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;background:${bc};color:#fff">${bt}</span>`;
+  // The badge is set by recalcLtr() below, off the recomputed numbers. It used to
+  // be scored here from the model's own financing guess, which is never displayed
+  // anywhere else, so the header could read STRONG DEAL directly above a negative
+  // cash flow, and it never moved when the buyer edited price or terms.
 
   // Inferred strip
   if (d.inferredBeds || d.inferredSqft) {
@@ -519,14 +541,17 @@ function ltrRenderResults(d, address, isFixer, isCash) {
 function recalcLtr() {
   const d = _ltrData; if (!d) return;
 
-  const rent    = parseFloat(document.getElementById('adj-rent')?.value)      || d.estRentMonthly||0;
-  const price   = parseFloat(document.getElementById('adj-price')?.value)     || d.estimatedValue||0;
+  // A typed 0 is a real value, not a blank. The || pattern treated 0 as missing,
+  // so entering 0 rent or 0 insurance silently reverted to the model's estimate
+  // while the 0 stayed visible on screen.
+  const rent    = ltrNum('adj-rent',  d.estRentMonthly || 0);
+  const price   = ltrNum('adj-price', d.estimatedValue || 0);
   const hoaMo   = parseFloat(document.getElementById('adj-hoa')?.value)       || 0;
   const utPay   = document.getElementById('adj-utilities')?.value             || 'landlord';
   const vacPct  = parseFloat(document.getElementById('adj-vacancy')?.value)   || 0; // 0 = off by default
   const _downRaw = document.getElementById('adj-down')?.value;
   const rawDown = (_downRaw === '' || _downRaw == null) ? NaN : parseFloat(_downRaw);
-  const ratePct = parseFloat(document.getElementById('adj-rate')?.value)      || 7.5;
+  const ratePct = ltrNum('adj-rate', 7.5);
   const termYrs = parseFloat(document.getElementById('ltr-term')?.value)      || 30;
 
   // 100% down = cash purchase regardless of isCash toggle
@@ -546,11 +571,15 @@ function recalcLtr() {
     _ltrRates = {
       tax:   basePrice > 0 && d.propertyTaxAnnual   ? d.propertyTaxAnnual   / basePrice : 0.0082,
       maint: basePrice > 0 && d.maintenanceAnnual   ? d.maintenanceAnnual   / basePrice : 0.0085,
-      mgmt:  baseRent  > 0 && d.managementFeeAnnual ? d.managementFeeAnnual / baseRent  : 0
+      // Management is a pure user input, but it is not part of the cache key, so a
+      // cached answer from someone who left it blank would otherwise zero it out
+      // for everyone after them. The typed percentage wins.
+      mgmt:  (ltrNum('ltr-mgmt', 0) / 100) ||
+             (baseRent > 0 && d.managementFeeAnnual ? d.managementFeeAnnual / baseRent : 0)
     };
   }
   const tax     = Math.round(price * _ltrRates.tax);
-  const ins     = parseFloat(document.getElementById('adj-insurance')?.value) || d.insuranceAnnual || 1800;
+  const ins     = ltrNum('adj-insurance', d.insuranceAnnual || 1800);
   const maint   = Math.round(price * _ltrRates.maint);
   const utBase  = d.utilitiesMonthly || Math.round((d.inferredSqft || _ltrData?.inferredSqft || 1200) * 0.20 / 12);
   const utAnn   = utPay === 'landlord' ? utBase * 12 : 0;
@@ -561,10 +590,13 @@ function recalcLtr() {
   const noiTrue = egi - (tax + ins + utAnn + hoaAnn + mgmt + maint);
 
   let mort = 0, debt = 0, loan = 0, dscr = null;
-  if (!effectiveCash && ratePct > 0) {
+  if (!effectiveCash && ratePct >= 0) {
     loan = price * (1 - downPct / 100);
     const mo = ratePct / 100 / 12, n = termYrs * 12;
-    mort = loan * (mo * Math.pow(1+mo,n)) / (Math.pow(1+mo,n) - 1);
+    // A genuine 0% note (seller or family financing) is straight-line principal.
+    // The standard annuity formula divides by zero at a 0% rate.
+    mort = mo === 0 ? (n > 0 ? loan / n : 0)
+                    : loan * (mo * Math.pow(1+mo,n)) / (Math.pow(1+mo,n) - 1);
     debt = mort * 12;
     dscr = debt > 0 ? noiTrue / debt : null;
   }
@@ -573,7 +605,7 @@ function recalcLtr() {
   // be subtracted again here. Doing so double-counted it and overstated losses.
   const cf   = noiTrue - debt;
   const moCF = cf / 12;
-  const rehab = parseFloat(document.getElementById("adj-rehab")?.value) || 0;
+  const rehab = ltrNum('adj-rehab', 0);
   const cash = (effectiveCash ? price : price * downPct / 100 + price * 0.03) + rehab;
   const coc  = cash > 0 ? (cf / cash) * 100 : 0;
   const cap  = price > 0 ? (noiTrue / price) * 100 : 0;
@@ -618,6 +650,7 @@ function recalcLtr() {
     (!effectiveCash ? `<div style="${rowStyle}"><span style="color:var(--muted)">Annual Mortgage</span><span style="font-weight:500;font-variant-numeric:tabular-nums">${ltrFmt(debt)}</span></div>` : '') +
     `</div>`;
 
+  ltrSetBadge(cap, moCF, coc);
   setTimeout(initLtrTips, 50);
 }
 
