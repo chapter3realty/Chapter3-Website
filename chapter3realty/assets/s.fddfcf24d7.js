@@ -410,7 +410,7 @@ RENT: ${beds||'?'}BR comps 2026: 1BR $1100-1600,2BR $1400-2100,3BR $1700-2600,4B
 EXP: Tax=0.82% of value (SC 6% investment assessment×Horry millage),Ins=$1500SFH/$3000condo/$5000ocean,Utils=$0.20/sqft/yr (e.g. 1200sqft=$240/yr=$20/mo),Maint=0.85%/yr,Vac=6%.
 ${permitCtx ? 'Permit signals: generate GREEN flags for hospital/medical/retail/school growth, AMBER for new residential supply, RED for industrial or demolition near subject. Farther = less weight.' : ''}
 
-{"inferredPropertyType":"","inferredBeds":${beds||0},"inferredBaths":${baths||0},"inferredSqft":${sqft||0},"inferredYearBuilt":0,"inferredHOAMonthly":0,"inferredFloodZone":null,"inferredFeatures":[],"estimatedValue":0,"verdict":"one punchy sentence","dealRating":"good|ok|tough","estRentMonthly":0,"grossRentAnnual":0,"vacancyLoss":0,"effectiveGrossIncome":0,"propertyTaxAnnual":0,"insuranceAnnual":0,"utilitiesMonthly":0,"hoaAnnual":0,"managementFeeAnnual":0,"maintenanceAnnual":0,"totalExpensesAnnual":0,"noi":0,"capRate":0,"loanAmount":0,"monthlyMortgage":0,"annualDebtService":0,"dscr":${isCash?'null':0},"monthlyCashflow":0,"annualCashflow":0,"cashOnCashReturn":0,"totalCashInvested":0,"estimatedAppreciationPct":0,"estimatedAppreciationDollar1yr":0,"estimatedAppreciationDollar5yr":0,"arv":${isFixer?0:'null'},"rehabBudgetLow":${isFixer?0:'null'},"rehabBudgetHigh":${isFixer?0:'null'},"rehabNarrative":${isFixer?'""':'null'},"totalProjectCost":${isFixer?0:'null'},"potentialEquityGain":${isFixer?0:'null'},"narrative":"Write 3-4 plain sentences that any first-time investor can understand - avoid jargon, use simple language, no acronyms. Cover: (1) what kind of tenant would rent this and why it works as a rental, (2) what the nearby construction activity means in plain terms - e.g. a hospital expanding nearby usually brings stable tenants like nurses and doctors who pay rent reliably, new homes being built shows the area is growing, (3) which of these investing goals this property fits and why in plain terms: steady monthly income, long-term value growth, fixer-upper flip, or tax-efficient swap - be honest if it does not fit some of these, (4) one clear bottom line sentence","flags":[{"type":"green|amber|red","text":""}]}`;
+{"inferredPropertyType":"","inferredBeds":${beds||0},"inferredBaths":${baths||0},"inferredSqft":${sqft||0},"inferredYearBuilt":0,"inferredHOAMonthly":0,"inferredFloodZone":null,"inferredFeatures":[],"estimatedValue":0,"verdict":"one punchy sentence","dealRating":"good|ok|tough","estRentMonthly":0,"grossRentAnnual":0,"vacancyLoss":0,"effectiveGrossIncome":0,"propertyTaxAnnual":0,"insuranceAnnual":0,"utilitiesMonthly":0,"hoaAnnual":0,"managementFeeAnnual":0,"maintenanceAnnual":0,"totalExpensesAnnual":0,"noi":0,"capRate":0,"loanAmount":0,"monthlyMortgage":0,"annualDebtService":0,"dscr":${isCash?'null':0},"monthlyCashflow":0,"annualCashflow":0,"cashOnCashReturn":0,"totalCashInvested":0,"estimatedAppreciationPct":0,"estimatedAppreciationDollar1yr":0,"estimatedAppreciationDollar5yr":0,"arv":${isFixer?0:'null'},"rehabBudgetLow":${isFixer?0:'null'},"rehabBudgetHigh":${isFixer?0:'null'},"rehabNarrative":${isFixer?'""':'null'},"totalProjectCost":${isFixer?0:'null'},"potentialEquityGain":${isFixer?0:'null'},"narrative":"Write 3-4 plain sentences that any first-time investor can understand - avoid jargon, use simple language, no acronyms. Cover: (1) what makes this property work as a rental in terms of its size, layout, condition and location - describe the PROPERTY and never the people who might live there or the surrounding population, (2) what the nearby construction activity means in plain terms - e.g. a hospital expanding nearby usually brings stable tenants like nurses and doctors who pay rent reliably, new homes being built shows the area is growing, (3) which of these investing goals this property fits and why in plain terms: steady monthly income, long-term value growth, fixer-upper flip, or tax-efficient swap - be honest if it does not fit some of these, (4) one clear bottom line sentence","flags":[{"type":"green|amber|red","text":""}]}`;
 
     const analysisRaw = await callProxy({
       model: 'claude-sonnet-4-5', max_tokens: 1200,
@@ -426,6 +426,20 @@ ${permitCtx ? 'Permit signals: generate GREEN flags for hospital/medical/retail/
     document.getElementById('ltr-form').style.display = 'block';
     ltrShowError('Analysis failed: ' + err.message + '. Please try again.');
   }
+}
+
+// Fair housing backstop. The prompt is written to describe the property, not the
+// people, but model output is not guaranteed and every narrative is cached for a
+// year, so a single bad sentence would be served to every later visitor. Any
+// narrative mentioning a protected class or family status is dropped rather than
+// published under the brokerage's license.
+const FH_BLOCK = /\b(famil(y|ies)|children|kids|child|singles?|couples?|retirees?|elderly|seniors?|young|old(er)?\s+(people|folks|residents)|race|racial|ethnic|religio(n|us)|christian|jewish|muslim|church|disab(led|ility)|handicap|nationality|immigrant|student body|gender|male|female)\b/i;
+function ltrSafeNarrative(text) {
+  const t = String(text || '');
+  if (!t) return '';
+  return t.split(/(?<=[.!?])\s+/).filter(function (sentence) {
+    return !FH_BLOCK.test(sentence);
+  }).join(' ').trim();
 }
 
 function ltrRenderResults(d, address, isFixer, isCash) {
@@ -527,7 +541,7 @@ function ltrRenderResults(d, address, isFixer, isCash) {
     if (d.rehabNarrative) document.getElementById('ltr-arv-note').textContent = d.rehabNarrative;
   }
 
-  document.getElementById('ltr-narrative-text').textContent = d.narrative || '';
+  document.getElementById('ltr-narrative-text').textContent = ltrSafeNarrative(d.narrative || '');
   document.getElementById('ltr-flags').innerHTML = (d.flags||[]).map(f=>{
     const c={green:'#2d7a4f',amber:'#d97706',red:'#c0392b'};
     return `<div style="display:flex;gap:.75rem;align-items:flex-start;padding:.7rem 0;border-bottom:1px solid var(--rule);font-size:.87rem;line-height:1.6;color:var(--navy)"><div style="width:8px;height:8px;border-radius:50%;background:${c[f.type]||c.amber};flex-shrink:0;margin-top:5px"></div><div>${f.text}</div></div>`;

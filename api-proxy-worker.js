@@ -186,34 +186,38 @@ async function handleSuggest(incoming, env, origin) {
     });
   }
 
-  let suggestions = [];
+  const suggestions = [];
 
-  // 1. Photon, boxed to the Grand Strand.
-  try {
-    const url = `${PHOTON}?q=${encodeURIComponent(q)}&limit=6&lang=en&bbox=${GRAND_STRAND_BBOX}`;
-    const res = await fetch(url, { headers: { 'User-Agent': 'chapter3realty.com analyzer' } });
-    const data = await res.json();
-    suggestions = (data.features || [])
-      .map((f) => {
-        const out = photonLabel(f.properties || {});
-        out.lat = f.geometry?.coordinates?.[1] ?? null;
-        out.lng = f.geometry?.coordinates?.[0] ?? null;
-        return out;
-      })
-      .filter((s) => s.street && s.lat != null);
-  } catch (e) { /* fall through to Census */ }
+  // Both sources are queried in PARALLEL and merged, rather than using Census
+  // only when Photon comes back empty. OpenStreetMap has good street coverage
+  // but misses many individual Grand Strand homes; the Census TIGER database has
+  // near-complete US address coverage but needs a fairly complete address. Asking
+  // both and merging is what gets the whole service area to autocomplete instead
+  // of just the streets OSM happens to know.
+  const photonReq = (async () => {
+    try {
+      const url = `${PHOTON}?q=${encodeURIComponent(q)}&limit=8&lang=en&bbox=${GRAND_STRAND_BBOX}`;
+      const res = await fetch(url, { headers: { 'User-Agent': 'chapter3realty.com analyzer' } });
+      const data = await res.json();
+      return (data.features || [])
+        .map((f) => {
+          const out = photonLabel(f.properties || {});
+          out.lat = f.geometry?.coordinates?.[1] ?? null;
+          out.lng = f.geometry?.coordinates?.[0] ?? null;
+          return out;
+        })
+        .filter((s) => s.street && s.lat != null);
+    } catch (e) { return []; }
+  })();
 
-  // 2. OpenStreetMap misses plenty of US residential addresses. The Census
-  //    geocoder is the official TIGER address database, so it covers the gaps
-  //    when someone has typed something close to a full address.
-  if (suggestions.length === 0 && /\d/.test(q)) {
+  const censusReq = (async () => {
+    if (!/\d/.test(q)) return []; // needs a street number to match anything
     try {
       const res = await fetch(CENSUS_GEOCODER + encodeURIComponent(q));
       const data = await res.json();
-      const m = data?.result?.addressMatches?.[0];
-      if (m) {
+      return (data?.result?.addressMatches || []).slice(0, 4).map((m) => {
         const parts = String(m.matchedAddress || '').split(',').map((x) => x.trim());
-        suggestions = [{
+        return {
           street: parts[0] || m.matchedAddress,
           city: parts[1] || '',
           state: parts[2] || '',
@@ -221,9 +225,21 @@ async function handleSuggest(incoming, env, origin) {
           label: m.matchedAddress,
           lat: m.coordinates?.y ?? null,
           lng: m.coordinates?.x ?? null,
-        }];
-      }
-    } catch (e) { /* return whatever we have */ }
+        };
+      }).filter((s) => s.street && s.lat != null);
+    } catch (e) { return []; }
+  })();
+
+  const [fromPhoton, fromCensus] = await Promise.all([photonReq, censusReq]);
+
+  // Photon first (better labels and it respects the bounding box), then any
+  // Census match the same street is not already covering.
+  const seen = new Set();
+  for (const s of fromPhoton.concat(fromCensus)) {
+    const k = normalizeAddress(s.street + ' ' + (s.zip || s.city || ''));
+    if (seen.has(k)) continue;
+    seen.add(k);
+    suggestions.push(s);
   }
 
   const body = JSON.stringify({ suggestions: suggestions.slice(0, 6) });
