@@ -161,7 +161,7 @@ async function getNearbyPermits(lat, lng) {
 // field never had autocomplete before; the Google Places code on this site
 // targets an element that does not exist on any page.
 const C3_SUGGEST_URL = 'https://api-proxy.chapter3realty.workers.dev/suggest';
-let _c3Ac = { items: [], active: -1, timer: null, box: null, picked: null };
+let _c3Ac = { items: [], active: -1, timer: null, box: null, picked: null, seq: 0 };
 
 function c3AcStyles() {
   if (document.getElementById('c3-ac-style')) return;
@@ -213,6 +213,11 @@ function c3AcPick(i) {
 }
 
 async function c3AcFetch(q) {
+  // Sequence guard: typing fast fires overlapping requests, and a slower earlier
+  // one can resolve after a newer one. Without this, suggestions for "1201 N"
+  // could land on top of suggestions for "1201 N Ocean Blvd" and the list would
+  // no longer match what is in the box.
+  const seq = ++_c3Ac.seq;
   try {
     const res = await fetch(C3_SUGGEST_URL, {
       method: 'POST',
@@ -220,10 +225,13 @@ async function c3AcFetch(q) {
       body: JSON.stringify({ q: q })
     });
     const data = await res.json();
+    if (seq !== _c3Ac.seq) return; // a newer query has already been issued
     _c3Ac.items = (data && data.suggestions) || [];
     _c3Ac.active = -1;
     c3AcRender();
-  } catch (e) { c3AcClose(); }
+  } catch (e) {
+    if (seq === _c3Ac.seq) c3AcClose();
+  }
 }
 
 function c3InitAddressAutocomplete() {
@@ -252,7 +260,9 @@ function c3InitAddressAutocomplete() {
     _c3Ac.picked = null;
     const v = input.value.trim();
     clearTimeout(_c3Ac.timer);
-    if (v.length < 3) { _c3Ac.items = []; c3AcClose(); return; }
+    // Bumping the sequence invalidates any request still in flight, so clearing
+    // the box cannot be undone by a late response re-opening the dropdown.
+    if (v.length < 3) { _c3Ac.seq++; _c3Ac.items = []; c3AcClose(); return; }
     _c3Ac.timer = setTimeout(function () { c3AcFetch(v); }, 220);
   });
 
