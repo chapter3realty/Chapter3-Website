@@ -54,6 +54,37 @@ const CENSUS_GEOCODER =
   'https://geocoding.geo.census.gov/geocoder/locations/onelineaddress' +
   '?benchmark=Public_AR_Current&format=json&address=';
 
+// Address suggestions come from Photon (OpenStreetMap, free, no key), hard-limited
+// to a Grand Strand bounding box. Without the box it returns Georgia and Maryland
+// streets for Horry County queries. Photon sends no CORS header, which is the other
+// reason this is proxied here rather than called from the browser.
+const PHOTON = 'https://photon.komoot.io/api/';
+const GRAND_STRAND_BBOX = '-79.6,33.05,-78.4,34.15'; // Horry + Georgetown counties
+
+// Normalizing the address is what makes "same house, same numbers" work. Without
+// it, "1201 N. Ocean Blvd" and "1201 n ocean blvd" would be two cache entries.
+function normalizeAddress(s) {
+  return String(s || '')
+    .toLowerCase()
+    .replace(/[.,#]/g, ' ')
+    .replace(/\b(north|n)\b/g, 'n')
+    .replace(/\b(south|s)\b/g, 's')
+    .replace(/\b(east|e)\b/g, 'e')
+    .replace(/\b(west|w)\b/g, 'w')
+    .replace(/\b(street|st)\b/g, 'st')
+    .replace(/\b(avenue|ave)\b/g, 'ave')
+    .replace(/\b(boulevard|blvd)\b/g, 'blvd')
+    .replace(/\b(drive|dr)\b/g, 'dr')
+    .replace(/\b(road|rd)\b/g, 'rd')
+    .replace(/\b(lane|ln)\b/g, 'ln')
+    .replace(/\b(court|ct)\b/g, 'ct')
+    .replace(/\b(circle|cir)\b/g, 'cir')
+    .replace(/\b(highway|hwy)\b/g, 'hwy')
+    .replace(/\b(unit|apt|suite|ste)\b/g, 'unit')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function corsHeaders(origin) {
   return {
     'Access-Control-Allow-Origin': origin,
@@ -129,6 +160,88 @@ async function handleGeocode(incoming, env, origin) {
   });
 }
 
+/* --------------------------------------------------------------- suggest */
+
+function photonLabel(p) {
+  const line1 = [p.housenumber, p.street || p.name].filter(Boolean).join(' ');
+  return {
+    street: line1,
+    city: p.city || p.district || p.county || '',
+    state: p.state || '',
+    zip: p.postcode || '',
+    label: [line1, p.city || p.district, p.state, p.postcode].filter(Boolean).join(', '),
+  };
+}
+
+async function handleSuggest(incoming, env, origin) {
+  const q = String(incoming.q || '').trim();
+  if (q.length < 3) return json({ suggestions: [] }, 200, origin);
+
+  const key = `${CACHE_VERSION}:sug:` + (await sha256Hex(normalizeAddress(q)));
+  if (env.ANALYSIS_CACHE) {
+    const hit = await env.ANALYSIS_CACHE.get(key);
+    if (hit) return new Response(hit, {
+      status: 200,
+      headers: { 'Content-Type': 'application/json', 'X-C3-Cache': 'hit', ...corsHeaders(origin) },
+    });
+  }
+
+  let suggestions = [];
+
+  // 1. Photon, boxed to the Grand Strand.
+  try {
+    const url = `${PHOTON}?q=${encodeURIComponent(q)}&limit=6&lang=en&bbox=${GRAND_STRAND_BBOX}`;
+    const res = await fetch(url, { headers: { 'User-Agent': 'chapter3realty.com analyzer' } });
+    const data = await res.json();
+    suggestions = (data.features || [])
+      .map((f) => {
+        const out = photonLabel(f.properties || {});
+        out.lat = f.geometry?.coordinates?.[1] ?? null;
+        out.lng = f.geometry?.coordinates?.[0] ?? null;
+        return out;
+      })
+      .filter((s) => s.street && s.lat != null);
+  } catch (e) { /* fall through to Census */ }
+
+  // 2. OpenStreetMap misses plenty of US residential addresses. The Census
+  //    geocoder is the official TIGER address database, so it covers the gaps
+  //    when someone has typed something close to a full address.
+  if (suggestions.length === 0 && /\d/.test(q)) {
+    try {
+      const res = await fetch(CENSUS_GEOCODER + encodeURIComponent(q));
+      const data = await res.json();
+      const m = data?.result?.addressMatches?.[0];
+      if (m) {
+        const parts = String(m.matchedAddress || '').split(',').map((x) => x.trim());
+        suggestions = [{
+          street: parts[0] || m.matchedAddress,
+          city: parts[1] || '',
+          state: parts[2] || '',
+          zip: parts[3] || '',
+          label: m.matchedAddress,
+          lat: m.coordinates?.y ?? null,
+          lng: m.coordinates?.x ?? null,
+        }];
+      }
+    } catch (e) { /* return whatever we have */ }
+  }
+
+  const body = JSON.stringify({ suggestions: suggestions.slice(0, 6) });
+  if (env.ANALYSIS_CACHE && suggestions.length) {
+    // Shorter TTL than property data: suggestions are cheap to refetch and
+    // OSM coverage improves over time.
+    await env.ANALYSIS_CACHE.put(key, body, { expirationTtl: 60 * 60 * 24 * 30 });
+  }
+  return new Response(body, {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json',
+      'X-C3-Cache': env.ANALYSIS_CACHE ? 'miss' : 'disabled',
+      ...corsHeaders(origin),
+    },
+  });
+}
+
 /* ------------------------------------------------------------- anthropic */
 
 async function handleAnalysis(incoming, env, origin) {
@@ -147,7 +260,20 @@ async function handleAnalysis(incoming, env, origin) {
   if (typeof incoming.system === 'string') body.system = incoming.system;
 
   const payload = JSON.stringify(body);
-  const key = `${CACHE_VERSION}:msg:` + (await sha256Hex(payload));
+
+  // THIS IS WHAT MAKES "SAME HOUSE, SAME NUMBERS" WORK.
+  // When the client supplies cache_key -- the normalized address plus only the
+  // property characteristics that legitimately change the answer (beds, baths,
+  // sqft, fixer condition) -- we key on that instead of the whole request body.
+  // Financing terms deliberately do NOT belong in the key: down payment, rate,
+  // term and price are recomputed in the browser by recalcLtr(), so letting them
+  // fragment the cache would hand two people different property facts for the
+  // same house purely because one typed 20% down and the other typed 25%.
+  const scope =
+    typeof incoming.cache_key === 'string' && incoming.cache_key.trim()
+      ? 'addr:' + normalizeAddress(incoming.cache_key)
+      : 'body:' + payload;
+  const key = `${CACHE_VERSION}:msg:` + (await sha256Hex(scope));
 
   if (env.ANALYSIS_CACHE) {
     const hit = await env.ANALYSIS_CACHE.get(key);
@@ -227,6 +353,7 @@ export default {
 
     const path = new URL(request.url).pathname;
     if (path === '/geocode') return handleGeocode(incoming, env, origin);
+    if (path === '/suggest') return handleSuggest(incoming, env, origin);
     return handleAnalysis(incoming, env, origin);
   },
 };

@@ -898,14 +898,16 @@
 
 
 
-<script src="/assets/s.a14ed1fa82.js"></script>
+<script src="/assets/s.089a979d4e.js"></script>
 <!-- Google Maps: loaded only on pages that use it (STR map / LTR analyzer) -->
 <script>
 const GOOGLE_MAPS_KEY = 'AIzaSyAFTNMGh-PmVFTl3S0ViiM9zNYicFrgGfs';
 if (GOOGLE_MAPS_KEY !== 'YOUR_GOOGLE_MAPS_KEY') {
+  // The analyzer (#page-ltr) no longer loads Google. Its address autocomplete and
+  // geocoding run through our own worker with no key, so the only page that still
+  // needs the Maps library is the 3D map itself.
   var _c3NeedsMap = document.getElementById('page-strmap');
-  var _c3NeedsPlaces = document.getElementById('page-ltr');
-  if (_c3NeedsMap || _c3NeedsPlaces) {
+  if (_c3NeedsMap) {
     const s = document.createElement('script');
     var _c3Cb = _c3NeedsMap ? 'initSTRMap' : 'd2PlacesReady';
     s.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_KEY}&libraries=places,geometry&callback=${_c3Cb}`;

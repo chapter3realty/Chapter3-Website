@@ -518,6 +518,9 @@ function d2InitPlaces() {
 }
 
 function d2EnsurePlaces() {
+  // Nothing to bind to: this autocomplete targets #d2-street, which no page
+  // renders. Bail out rather than downloading the Maps library for nothing.
+  if (!document.getElementById('d2-street')) return;
   // Already ready
   if (d2AutocompleteService) return;
   // Maps loaded but Places not yet initialized
@@ -604,14 +607,10 @@ function d2SelectAddress(placeId, description) {
   });
 }
 
-// Trigger Places load as soon as user lands on LTR page
-const _baseShowPage = window.showPage || showPage;
-window.showPage = function(id) {
-  _baseShowPage(id);
-  if (id === 'ltr') {
-    setTimeout(d2EnsurePlaces, 100);
-  }
-};
+// The analyzer used to trigger a Google Places load here. It was pure waste:
+// this autocomplete binds to #d2-street, which is not present on any page, so
+// the Maps library was downloaded on every analyzer visit and then never used.
+// The analyzer now has its own keyless autocomplete on #ltr-street.
 
 // Close DSCR dropdown on outside click
 document.addEventListener('click', e => {

@@ -155,6 +155,124 @@ async function getNearbyPermits(lat, lng) {
   } catch(e) { return null; }
 }
 
+// ── ADDRESS AUTOCOMPLETE ──────────────────────────────
+// Keyless, served through our own worker (OpenStreetMap with a Grand Strand
+// bounding box, falling back to the US Census address database). The address
+// field never had autocomplete before; the Google Places code on this site
+// targets an element that does not exist on any page.
+const C3_SUGGEST_URL = 'https://api-proxy.chapter3realty.workers.dev/suggest';
+let _c3Ac = { items: [], active: -1, timer: null, box: null, picked: null };
+
+function c3AcStyles() {
+  if (document.getElementById('c3-ac-style')) return;
+  const st = document.createElement('style');
+  st.id = 'c3-ac-style';
+  st.textContent =
+    '.c3-ac{position:absolute;left:0;right:0;top:100%;z-index:60;background:#fdfbf7;border:1.5px solid var(--rule,#ddd);border-top:none;max-height:264px;overflow-y:auto;display:none;box-shadow:0 8px 24px rgba(20,30,40,.12)}' +
+    '.c3-ac.open{display:block}' +
+    '.c3-ac-item{padding:.6rem .85rem;font-size:.88rem;line-height:1.35;cursor:pointer;border-bottom:1px solid rgba(0,0,0,.05);color:var(--navy,#1c2028)}' +
+    '.c3-ac-item:last-child{border-bottom:none}' +
+    '.c3-ac-item:hover,.c3-ac-item.active{background:rgba(196,120,58,.12)}' +
+    '.c3-ac-item small{display:block;color:var(--muted,#6b7280);font-size:.76rem;margin-top:.1rem}';
+  document.head.appendChild(st);
+}
+
+function c3AcClose() {
+  if (_c3Ac.box) { _c3Ac.box.classList.remove('open'); }
+  _c3Ac.active = -1;
+}
+
+function c3AcRender() {
+  if (!_c3Ac.box) return;
+  if (!_c3Ac.items.length) { c3AcClose(); return; }
+  _c3Ac.box.innerHTML = _c3Ac.items.map(function (s, i) {
+    const sub = [s.city, s.state, s.zip].filter(Boolean).join(', ');
+    return '<div class="c3-ac-item' + (i === _c3Ac.active ? ' active' : '') + '" data-i="' + i + '">' +
+      c3Esc(s.street) + (sub ? '<small>' + c3Esc(sub) + '</small>' : '') + '</div>';
+  }).join('');
+  _c3Ac.box.classList.add('open');
+}
+
+function c3Esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+
+function c3AcPick(i) {
+  const s = _c3Ac.items[i];
+  if (!s) return;
+  const set = function (id, v) { const e = document.getElementById(id); if (e && v) e.value = v; };
+  set('ltr-street', s.street);
+  set('ltr-city', s.city);
+  set('ltr-zip', s.zip);
+  // Coordinates ride along with the suggestion, so choosing one skips the
+  // geocode round-trip entirely and the permit lookup gets exact coordinates.
+  _c3Ac.picked = { street: s.street, city: s.city, zip: s.zip, lat: s.lat, lng: s.lng };
+  c3AcClose();
+}
+
+async function c3AcFetch(q) {
+  try {
+    const res = await fetch(C3_SUGGEST_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ q: q })
+    });
+    const data = await res.json();
+    _c3Ac.items = (data && data.suggestions) || [];
+    _c3Ac.active = -1;
+    c3AcRender();
+  } catch (e) { c3AcClose(); }
+}
+
+function c3InitAddressAutocomplete() {
+  const input = document.getElementById('ltr-street');
+  if (!input || input.dataset.c3ac) return;
+  input.dataset.c3ac = '1';
+  input.setAttribute('autocomplete', 'off');
+  c3AcStyles();
+
+  const wrap = input.parentElement;
+  if (wrap && getComputedStyle(wrap).position === 'static') wrap.style.position = 'relative';
+  const box = document.createElement('div');
+  box.className = 'c3-ac';
+  box.setAttribute('role', 'listbox');
+  (wrap || document.body).appendChild(box);
+  _c3Ac.box = box;
+
+  box.addEventListener('mousedown', function (e) {
+    const item = e.target.closest ? e.target.closest('.c3-ac-item') : null;
+    if (!item) return;
+    e.preventDefault(); // keep focus so blur does not close before the click lands
+    c3AcPick(parseInt(item.dataset.i, 10));
+  });
+
+  input.addEventListener('input', function () {
+    _c3Ac.picked = null;
+    const v = input.value.trim();
+    clearTimeout(_c3Ac.timer);
+    if (v.length < 3) { _c3Ac.items = []; c3AcClose(); return; }
+    _c3Ac.timer = setTimeout(function () { c3AcFetch(v); }, 220);
+  });
+
+  input.addEventListener('keydown', function (e) {
+    if (!_c3Ac.box.classList.contains('open')) return;
+    if (e.key === 'ArrowDown') { e.preventDefault(); _c3Ac.active = Math.min(_c3Ac.active + 1, _c3Ac.items.length - 1); c3AcRender(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); _c3Ac.active = Math.max(_c3Ac.active - 1, 0); c3AcRender(); }
+    else if (e.key === 'Enter') { if (_c3Ac.active >= 0) { e.preventDefault(); c3AcPick(_c3Ac.active); } }
+    else if (e.key === 'Escape') { c3AcClose(); }
+  });
+
+  input.addEventListener('blur', function () { setTimeout(c3AcClose, 120); });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', c3InitAddressAutocomplete);
+} else {
+  c3InitAddressAutocomplete();
+}
+
 // Geocoding runs through our own worker, which uses the free US Census
 // geocoder and caches the result. The previous version called Google Maps with
 // a key whose billing is disabled, so it always returned null and the
@@ -197,7 +315,10 @@ async function runLtrAnalysis() {
   document.getElementById('ltr-loading').style.display = 'block';
 
   const fullAddr = [street, city, zip||'SC'].filter(Boolean).join(', ');
-  const priceCtx = price ? `Purchase price: $${Number(price).toLocaleString()}` : 'Purchase price: not provided, estimate from comps';
+  // The buyer's price is deliberately NOT sent to the model. Market value has to
+  // be a property fact so the same house returns the same estimate to everyone;
+  // their own price is applied in the browser by recalcLtr().
+  const priceCtx = 'Estimate current market value from comparable sales';
   const finCtx   = isCash ? 'Cash purchase. Set dscr null, monthlyMortgage 0, annualDebtService 0, loanAmount 0.' : `${downPct}% down, ${rate}% interest, ${term}-year loan`;
   const hoaCtx   = hoaMo ? `HOA: $${hoaMo}/mo (use exactly)` : 'HOA: 0 (user confirmed none)';
   const mgmtCtx  = mgmtPct ? `Management: ${mgmtPct}% of rent` : 'Management: not provided, set managementFeeAnnual 0';
@@ -215,6 +336,7 @@ async function runLtrAnalysis() {
       try {
         const raw = await callProxy({
           model: 'claude-sonnet-4-5', max_tokens: 120,
+          cache_key: 'facts|' + fullAddr,
           messages: [{ role: 'user', content: `What are the beds, baths, and sqft for: ${fullAddr}? Use actual listing records. JSON only: {"beds":N,"baths":N,"sqft":N}` }]
         });
         const p = extractJSON(raw);
@@ -233,7 +355,8 @@ async function runLtrAnalysis() {
     document.getElementById('ltr-loading-sub').textContent = 'Pulling Horry County permit data.';
 
     let permitCtx = '';
-    const coords = await ltrGeocodeAddress(fullAddr);
+    const _pick = (_c3Ac.picked && _c3Ac.picked.lat != null) ? _c3Ac.picked : null;
+    const coords = _pick ? { lat: _pick.lat, lng: _pick.lng } : await ltrGeocodeAddress(fullAddr);
     if (coords) {
       const permits = await getNearbyPermits(coords.lat, coords.lng);
       if (permits) permitCtx = permits;
@@ -258,6 +381,7 @@ ${permitCtx ? 'Permit signals: generate GREEN flags for hospital/medical/retail/
 
     const analysisRaw = await callProxy({
       model: 'claude-sonnet-4-5', max_tokens: 1200,
+      cache_key: ['analysis', fullAddr, beds||'', baths||'', sqft||'', isFixer ? (cond||'fixer') : ''].join('|'),
       messages: [{ role: 'user', content: analysisPrompt }]
     });
 
@@ -309,6 +433,10 @@ function ltrRenderResults(d, address, isFixer, isCash) {
     const utPaid   = (d.utilitiesMonthly||0)>0 ? 'landlord' : 'tenant';
     const downVal  = document.getElementById('ltr-down')?.value || 25;
     const rateVal  = document.getElementById('ltr-rate')?.value || 7.5;
+    // The buyer's own purchase price wins over the model's market estimate.
+    // The estimate is a property fact shared by every visitor; the price they
+    // would actually pay is personal to them.
+    const priceVal = parseFloat(document.getElementById('ltr-price')?.value) || d.estimatedValue || '';
     adj.innerHTML = `
       <div style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;padding-bottom:.6rem;border-bottom:1px solid var(--rule)">Adjust Assumptions <span style="font-size:.7rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);margin-left:.5rem">recalculates instantly</span></div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem" class="adj-grid">
@@ -318,7 +446,7 @@ function ltrRenderResults(d, address, isFixer, isCash) {
         </div>
         <div>
           <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Purchase Price ($)</div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-price" type="number" value="${d.estimatedValue||''}" oninput="recalcLtr()"/>
+          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-price" type="number" value="${priceVal}" oninput="recalcLtr()"/>
         </div>
         <div>
           <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">HOA ($/mo)</div>
