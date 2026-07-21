@@ -85,6 +85,15 @@ function normalizeAddress(s) {
     .trim();
 }
 
+// Resolve the KV store regardless of what the binding was named. Cloudflare's
+// own "Connect" snippet suggests KV, the setup notes here say ANALYSIS_CACHE,
+// and a mismatch fails silently: the worker keeps answering but stores nothing,
+// so the same address quietly goes back to returning different numbers. Accept
+// any of the plausible names instead of depending on one.
+function kvStore(env) {
+  return env.ANALYSIS_CACHE || env.KV || env.CACHE || env.c3_analysis_cache || null;
+}
+
 function corsHeaders(origin) {
   return {
     'Access-Control-Allow-Origin': origin,
@@ -123,8 +132,8 @@ async function handleGeocode(incoming, env, origin) {
 
   const key = `${CACHE_VERSION}:geo:` + (await sha256Hex(address.toLowerCase().replace(/\s+/g, ' ')));
 
-  if (env.ANALYSIS_CACHE) {
-    const hit = await env.ANALYSIS_CACHE.get(key);
+  if (kvStore(env)) {
+    const hit = await kvStore(env).get(key);
     if (hit) return new Response(hit, {
       status: 200,
       headers: { 'Content-Type': 'application/json', 'X-C3-Cache': 'hit', ...corsHeaders(origin) },
@@ -147,14 +156,14 @@ async function handleGeocode(incoming, env, origin) {
 
   const body = JSON.stringify(out);
   // Only cache successful lookups, so a transient miss is not stored for a year.
-  if (env.ANALYSIS_CACHE && out.lat != null) {
-    await env.ANALYSIS_CACHE.put(key, body, { expirationTtl: CACHE_TTL_SECONDS });
+  if (kvStore(env) && out.lat != null) {
+    await kvStore(env).put(key, body, { expirationTtl: CACHE_TTL_SECONDS });
   }
   return new Response(body, {
     status: 200,
     headers: {
       'Content-Type': 'application/json',
-      'X-C3-Cache': env.ANALYSIS_CACHE ? 'miss' : 'disabled',
+      'X-C3-Cache': kvStore(env) ? 'miss' : 'disabled',
       ...corsHeaders(origin),
     },
   });
@@ -178,8 +187,8 @@ async function handleSuggest(incoming, env, origin) {
   if (q.length < 3) return json({ suggestions: [] }, 200, origin);
 
   const key = `${CACHE_VERSION}:sug:` + (await sha256Hex(normalizeAddress(q)));
-  if (env.ANALYSIS_CACHE) {
-    const hit = await env.ANALYSIS_CACHE.get(key);
+  if (kvStore(env)) {
+    const hit = await kvStore(env).get(key);
     if (hit) return new Response(hit, {
       status: 200,
       headers: { 'Content-Type': 'application/json', 'X-C3-Cache': 'hit', ...corsHeaders(origin) },
@@ -243,16 +252,16 @@ async function handleSuggest(incoming, env, origin) {
   }
 
   const body = JSON.stringify({ suggestions: suggestions.slice(0, 6) });
-  if (env.ANALYSIS_CACHE && suggestions.length) {
+  if (kvStore(env) && suggestions.length) {
     // Shorter TTL than property data: suggestions are cheap to refetch and
     // OSM coverage improves over time.
-    await env.ANALYSIS_CACHE.put(key, body, { expirationTtl: 60 * 60 * 24 * 30 });
+    await kvStore(env).put(key, body, { expirationTtl: 60 * 60 * 24 * 30 });
   }
   return new Response(body, {
     status: 200,
     headers: {
       'Content-Type': 'application/json',
-      'X-C3-Cache': env.ANALYSIS_CACHE ? 'miss' : 'disabled',
+      'X-C3-Cache': kvStore(env) ? 'miss' : 'disabled',
       ...corsHeaders(origin),
     },
   });
@@ -285,8 +294,8 @@ async function handleParcel(incoming, env, origin) {
   if (!address) return deny(400, 'Missing address.', origin);
 
   const key = `${CACHE_VERSION}:parcel:` + (await sha256Hex(normalizeAddress(address)));
-  if (env.ANALYSIS_CACHE) {
-    const hit = await env.ANALYSIS_CACHE.get(key);
+  if (kvStore(env)) {
+    const hit = await kvStore(env).get(key);
     if (hit) return new Response(hit, {
       status: 200,
       headers: { 'Content-Type': 'application/json', 'X-C3-Cache': 'hit', ...corsHeaders(origin) },
@@ -353,16 +362,16 @@ async function handleParcel(incoming, env, origin) {
   }
 
   const body = JSON.stringify(out);
-  if (env.ANALYSIS_CACHE && out.found) {
+  if (kvStore(env) && out.found) {
     // Assessments change once a year, so this is safe to hold, and it keeps the
     // county's server out of the request path for repeat lookups.
-    await env.ANALYSIS_CACHE.put(key, body, { expirationTtl: 60 * 60 * 24 * 120 });
+    await kvStore(env).put(key, body, { expirationTtl: 60 * 60 * 24 * 120 });
   }
   return new Response(body, {
     status: 200,
     headers: {
       'Content-Type': 'application/json',
-      'X-C3-Cache': env.ANALYSIS_CACHE ? 'miss' : 'disabled',
+      'X-C3-Cache': kvStore(env) ? 'miss' : 'disabled',
       ...corsHeaders(origin),
     },
   });
@@ -408,8 +417,8 @@ async function handleAnalysis(incoming, env, origin) {
   }
   const key = `${CACHE_VERSION}:msg:` + (await sha256Hex(scope));
 
-  if (env.ANALYSIS_CACHE) {
-    const hit = await env.ANALYSIS_CACHE.get(key);
+  if (kvStore(env)) {
+    const hit = await kvStore(env).get(key);
     if (hit) {
       return new Response(hit, {
         status: 200,
@@ -456,15 +465,15 @@ async function handleAnalysis(incoming, env, origin) {
       cacheable = false;
     }
   }
-  if (env.ANALYSIS_CACHE && cacheable) {
-    await env.ANALYSIS_CACHE.put(key, text, { expirationTtl: CACHE_TTL_SECONDS });
+  if (kvStore(env) && cacheable) {
+    await kvStore(env).put(key, text, { expirationTtl: CACHE_TTL_SECONDS });
   }
 
   return new Response(text, {
     status: upstream.status,
     headers: {
       'Content-Type': 'application/json',
-      'X-C3-Cache': env.ANALYSIS_CACHE ? 'miss' : 'disabled',
+      'X-C3-Cache': kvStore(env) ? 'miss' : 'disabled',
       ...corsHeaders(origin),
     },
   });
