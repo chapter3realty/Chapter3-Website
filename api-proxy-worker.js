@@ -258,6 +258,116 @@ async function handleSuggest(incoming, env, origin) {
   });
 }
 
+/* ---------------------------------------------------------------- parcel */
+
+// Horry County publishes its assessor file on the same ArcGIS server the permit
+// lookup already uses. It is anonymous and CORS-open. This replaces the model's
+// GUESSED market value and property tax with the county's actual record.
+// It does NOT carry beds, baths, square footage or year built - those stay
+// AI-estimated because no county source exists for them.
+const HC_GEOCODER = 'https://www.horrycounty.org/gisweb/rest/services/Locators/Composite_Locator/GeocodeServer/findAddressCandidates';
+const HC_PARCELS = 'https://www.horrycounty.org/gisweb/rest/services/Public/Parcels/MapServer/1/query';
+const HC_FIELDS = 'TMS,MarketProp,MarketLand,MarketImprv,TaxableProp,AssessedProp,LandUseCode,TaxDistrict,Acreage,SaleDate,LegalDescr,CONDOLABEL';
+
+// Horry County millage, expressed as a rate against ASSESSED value. Refresh each
+// autumn when the county publishes the new rates (they are a PDF, not on the GIS
+// server, so this cannot be looked up live).
+const HC_MILLAGE = 0.1367;
+const HC_MILLAGE_YEAR = '2025-2026';
+
+async function hcJson(url) {
+  const res = await fetch(url, { headers: { Accept: 'application/json' } });
+  return res.json();
+}
+
+async function handleParcel(incoming, env, origin) {
+  const address = String(incoming.address || '').trim();
+  if (!address) return deny(400, 'Missing address.', origin);
+
+  const key = `${CACHE_VERSION}:parcel:` + (await sha256Hex(normalizeAddress(address)));
+  if (env.ANALYSIS_CACHE) {
+    const hit = await env.ANALYSIS_CACHE.get(key);
+    if (hit) return new Response(hit, {
+      status: 200,
+      headers: { 'Content-Type': 'application/json', 'X-C3-Cache': 'hit', ...corsHeaders(origin) },
+    });
+  }
+
+  let out = { found: false };
+  try {
+    // The county's own geocoder resolves its own addresses better than a national
+    // one, and needs no key. Its coordinates also land inside the parcel polygon,
+    // where a generic geocoder often lands in the road right-of-way instead.
+    const g = await hcJson(`${HC_GEOCODER}?SingleLine=${encodeURIComponent(address)}&outFields=*&outSR=4326&f=json`);
+    const cand = (g.candidates || [])[0];
+    if (cand && cand.location) {
+      const { x: lng, y: lat } = cand.location;
+      const base = `${HC_PARCELS}?geometry=${lng},${lat}&geometryType=esriGeometryPoint&inSR=4326` +
+                   `&spatialRel=esriSpatialRelIntersects&outFields=${HC_FIELDS}&returnGeometry=false&where=1%3D1&f=json`;
+      let p = await hcJson(base);
+      // A point on road frontage falls outside every polygon. Retry with a small
+      // buffer and take the nearest match.
+      if (!(p.features || []).length) {
+        p = await hcJson(base + '&distance=100&units=esriSRUnit_Foot');
+      }
+      const feats = p.features || [];
+      if (feats.length) {
+        const a = feats[0].attributes || {};
+        const taxable = Number(a.TaxableProp) || 0;
+        const assessed = Number(a.AssessedProp) || 0;
+        // Ratio is assessed over TAXABLE, not market. After a sale South Carolina's
+        // ATI exemption caps taxable at 75% of market, so dividing by market gives
+        // noise instead of a clean 4% or 6%.
+        const ratio = taxable > 0 ? assessed / taxable : null;
+        const isOwnerOccupied = ratio != null && Math.abs(ratio - 0.04) < 0.005;
+        const investorAssessed = taxable > 0 ? taxable * 0.06 : null;
+        out = {
+          found: true,
+          tms: a.TMS || null,
+          marketValue: Number(a.MarketProp) || null,
+          landValue: Number(a.MarketLand) || null,
+          improvementValue: Number(a.MarketImprv) || null,
+          taxableValue: taxable || null,
+          assessedValue: assessed || null,
+          assessmentRatio: ratio,
+          currentlyOwnerOccupied: isOwnerOccupied,
+          taxDistrict: a.TaxDistrict || null,
+          landUseCode: a.LandUseCode || null,
+          acreage: Number(a.Acreage) || null,
+          legalDescription: a.LegalDescr || null,
+          isCondo: !!a.CONDOLABEL,
+          unitsAtThisPoint: feats.length, // a condo tower returns every stacked unit
+          // 1900-01-01 in epoch ms is the county's "no recorded sale" sentinel.
+          lastSaleDate: (a.SaleDate && a.SaleDate > -2208988800000) ? a.SaleDate : null,
+          currentAnnualTax: assessed > 0 ? Math.round(assessed * HC_MILLAGE) : null,
+          investorAnnualTax: investorAssessed ? Math.round(investorAssessed * HC_MILLAGE) : null,
+          millage: HC_MILLAGE,
+          millageYear: HC_MILLAGE_YEAR,
+          source: 'Horry County Assessor, via county GIS',
+          matchedAddress: cand.address || null,
+        };
+      }
+    }
+  } catch (e) {
+    return json({ found: false, error: 'county records unavailable' }, 200, origin, { 'X-C3-Cache': 'error' });
+  }
+
+  const body = JSON.stringify(out);
+  if (env.ANALYSIS_CACHE && out.found) {
+    // Assessments change once a year, so this is safe to hold, and it keeps the
+    // county's server out of the request path for repeat lookups.
+    await env.ANALYSIS_CACHE.put(key, body, { expirationTtl: 60 * 60 * 24 * 120 });
+  }
+  return new Response(body, {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json',
+      'X-C3-Cache': env.ANALYSIS_CACHE ? 'miss' : 'disabled',
+      ...corsHeaders(origin),
+    },
+  });
+}
+
 /* ------------------------------------------------------------- anthropic */
 
 async function handleAnalysis(incoming, env, origin) {
@@ -393,6 +503,7 @@ export default {
     // made it far worse. Only the expensive route is limited.
     if (path === '/geocode') return handleGeocode(incoming, env, origin);
     if (path === '/suggest') return handleSuggest(incoming, env, origin);
+    if (path === '/parcel') return handleParcel(incoming, env, origin);
 
     if (env.RATE_LIMITER) {
       const ip = request.headers.get('CF-Connecting-IP') || 'unknown';

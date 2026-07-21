@@ -7,6 +7,8 @@ let _ltrData = null, _ltrIsCash = false;
 // Previously these were fixed dollar amounts and never moved, even though the
 // panel says the numbers recalculate instantly. No API call is involved.
 let _ltrRates = null;
+// The county assessor record for the analyzed address, when one is found.
+let _ltrParcel = null;
 
 function toggleLtrFixer() {
   const on = document.getElementById('ltr-is-fixer').checked;
@@ -379,6 +381,13 @@ async function runLtrAnalysis() {
       } catch(e) {}
     }
 
+    const countyFacts = _ltrParcel ? (
+      `COUNTY RECORD (authoritative, use exactly, do not re-estimate): market value $${(_ltrParcel.marketValue||0).toLocaleString()}` +
+      `, annual property tax at the 6% investment rate $${(_ltrParcel.investorAnnualTax||0).toLocaleString()}` +
+      (_ltrParcel.acreage ? `, ${_ltrParcel.acreage} acres` : '') +
+      (_ltrParcel.isCondo ? ', condominium' : '') + '.'
+    ) : '';
+
     const knownFacts = (beds && baths && sqft)
       ? `CONFIRMED: ${beds} beds, ${baths} baths, ${sqft.toLocaleString()} sqft. Use these exactly.`
       : 'Property details: estimate from address.';
@@ -388,6 +397,18 @@ async function runLtrAnalysis() {
     document.getElementById('ltr-loading-sub').textContent = 'Pulling Horry County permit data.';
 
     let permitCtx = '';
+    // Horry County's assessor record replaces the model's guessed market value
+    // and property tax with the county's own figures.
+    _ltrParcel = null;
+    try {
+      const pres = await fetch('https://api-proxy.chapter3realty.workers.dev/parcel', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ address: fullAddr })
+      });
+      const pdata = await pres.json();
+      if (pdata && pdata.found) _ltrParcel = pdata;
+    } catch (e) { /* county data is a bonus, never a blocker */ }
+
     const _pick = (_c3Ac.picked && _c3Ac.picked.lat != null) ? _c3Ac.picked : null;
     const coords = _pick ? { lat: _pick.lat, lng: _pick.lng } : await ltrGeocodeAddress(fullAddr);
     if (coords) {
@@ -403,6 +424,7 @@ async function runLtrAnalysis() {
 
 PROPERTY: ${fullAddr} | ${priceCtx} | ${finCtx}${isFixer?' | FIXER: '+(cond||'general'):''}
 ${knownFacts}
+${countyFacts}
 ${hoaCtx}
 ${mgmtCtx}
 ${permitCtx ? permitCtx.slice(0,320) : ''}
@@ -419,6 +441,35 @@ ${permitCtx ? 'Permit signals: generate GREEN flags for hospital/medical/retail/
     });
 
     const d = extractJSON(analysisRaw);
+
+    // The county's own numbers override the model's estimate. Value and property
+    // tax are matters of public record, not something worth guessing at.
+    if (_ltrParcel) {
+      if (_ltrParcel.marketValue) d.estimatedValue = _ltrParcel.marketValue;
+      if (_ltrParcel.investorAnnualTax) d.propertyTaxAnnual = _ltrParcel.investorAnnualTax;
+      d.flags = d.flags || [];
+      if (_ltrParcel.currentlyOwnerOccupied) {
+        // The single most useful thing the county file tells an investor: the
+        // seller pays the 4% owner-occupied rate, the buyer will not.
+        const jump = (_ltrParcel.investorAnnualTax || 0) - (_ltrParcel.currentAnnualTax || 0);
+        d.flags.unshift({
+          type: 'amber',
+          text: 'County records show this property is taxed at the 4 percent owner-occupied rate today. ' +
+                'As an investment property it is reassessed at 6 percent, raising the annual tax from about $' +
+                (_ltrParcel.currentAnnualTax || 0).toLocaleString() + ' to about $' +
+                (_ltrParcel.investorAnnualTax || 0).toLocaleString() + ', an increase of roughly $' +
+                jump.toLocaleString() + ' a year. The figures below already use the 6 percent rate.'
+        });
+      }
+      if (_ltrParcel.isCondo && _ltrParcel.unitsAtThisPoint > 1) {
+        d.flags.push({
+          type: 'green',
+          text: 'This address sits in a building with ' + _ltrParcel.unitsAtThisPoint +
+                ' separately assessed units on county record, which is a useful comparison set when pricing an offer.'
+        });
+      }
+    }
+
     ltrRenderResults(d, fullAddr, isFixer, isCash);
 
   } catch(err) {
@@ -583,7 +634,11 @@ function recalcLtr() {
     const basePrice = d.estimatedValue || price || 0;
     const baseRent  = (d.estRentMonthly || rent || 0) * 12;
     _ltrRates = {
-      tax:   basePrice > 0 && d.propertyTaxAnnual   ? d.propertyTaxAnnual   / basePrice : 0.0082,
+      // With a county record the tax is a known dollar amount tied to the county's
+      // assessment, so it must not drift with whatever price the buyer types.
+      tax:   (_ltrParcel && _ltrParcel.investorAnnualTax && basePrice > 0)
+               ? _ltrParcel.investorAnnualTax / basePrice
+               : (basePrice > 0 && d.propertyTaxAnnual ? d.propertyTaxAnnual / basePrice : 0.0082),
       maint: basePrice > 0 && d.maintenanceAnnual   ? d.maintenanceAnnual   / basePrice : 0.0085,
       // Management is a pure user input, but it is not part of the cache key, so a
       // cached answer from someone who left it blank would otherwise zero it out
