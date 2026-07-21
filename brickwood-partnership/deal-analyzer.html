@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Investment Property Deal Analyzer | BrickWood Mortgage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#1e7ac4; --blue-dark:#175f90; --red:#941b1b; --ink:#141414;
+    --text:#333; --muted:#6b7280; --line:#e3e7ec; --bg:#f5f7f9; --card:#fff;
+    --serif:'Merriweather',Georgia,'Times New Roman',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--sans);color:var(--text);background:var(--bg);line-height:1.6}
+  .da-wrap{max-width:940px;margin:0 auto;background:var(--card);box-shadow:0 2px 20px rgba(20,30,40,.08)}
+  .da-topbar{background:var(--ink);color:#fff;padding:.5rem 1.5rem;font-size:.78rem;letter-spacing:.03em;text-align:right}
+  .da-topbar a{color:#fff;text-decoration:none;opacity:.85}
+  .da-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.5rem;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .da-head img{height:56px;width:auto}
+  .da-head .phone{font-weight:700;color:var(--ink);font-size:1.15rem;text-decoration:none;white-space:nowrap}
+  .da-hero{background:linear-gradient(135deg,#1a2733,#0e1620);color:#fff;padding:2rem 1.5rem}
+  .da-hero .eyebrow{color:#7fb4e0;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin:0 0 .5rem}
+  .da-hero h1{font-family:var(--serif);font-weight:900;font-size:1.9rem;line-height:1.15;margin:0 0 .6rem}
+  .da-hero p{margin:0;color:rgba(255,255,255,.8);max-width:620px;font-size:.98rem}
+  .da-body{padding:1.6rem 1.5rem 2rem}
+  .da-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem 1.2rem;margin-bottom:1.6rem}
+  .da-field label{display:block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.35rem}
+  .da-field .in{position:relative}
+  .da-field .pre{position:absolute;left:.7rem;top:50%;transform:translateY(-50%);color:var(--muted);font-size:.95rem}
+  .da-field input{width:100%;padding:.6rem .7rem;border:1px solid #c9d1da;border-radius:6px;font-size:1rem;color:var(--ink);background:#fff}
+  .da-field input.pad{padding-left:1.5rem}
+  .da-field input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(30,122,196,.15)}
+  .da-results{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:1.4rem}
+  .da-verdict{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:1rem 1.2rem;border-radius:8px;margin-bottom:1.3rem;border-left:5px solid var(--blue);background:#fff}
+  .da-verdict .dscr-num{font-family:var(--serif);font-weight:900;font-size:2.1rem;line-height:1;color:var(--ink)}
+  .da-verdict .dscr-txt{flex:1;min-width:200px}
+  .da-verdict .dscr-txt b{display:block;color:var(--ink);font-size:1.02rem}
+  .da-verdict .dscr-txt span{font-size:.9rem;color:var(--muted)}
+  .da-badge{font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.3rem .7rem;border-radius:20px;color:#fff;white-space:nowrap}
+  .da-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.9rem}
+  .da-metric{background:#fff;border:1px solid var(--line);border-radius:8px;padding:.9rem 1rem}
+  .da-metric .k{font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.3rem}
+  .da-metric .v{font-family:var(--serif);font-weight:700;font-size:1.4rem;color:var(--ink);line-height:1}
+  .da-metric .v.pos{color:#1c7a44}.da-metric .v.neg{color:var(--red)}
+  .da-cta{margin-top:1.6rem;text-align:center;background:var(--ink);border-radius:10px;padding:1.6rem 1.3rem}
+  .da-cta h2{font-family:var(--serif);color:#fff;font-size:1.35rem;margin:0 0 .5rem}
+  .da-cta p{color:rgba(255,255,255,.75);margin:0 auto 1.2rem;max-width:520px;font-size:.95rem}
+  .da-btn{display:inline-block;background:var(--blue);color:#fff;font-weight:700;text-decoration:none;padding:.85rem 2rem;border-radius:6px;font-size:1rem;letter-spacing:.02em;transition:background .15s}
+  .da-btn:hover{background:var(--blue-dark)}
+  .da-partner{text-align:center;padding:1.3rem 1.5rem;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+  .da-partner a{color:var(--blue);font-weight:700;text-decoration:none}
+  .da-partner .c3{font-family:var(--serif);font-weight:900;color:var(--ink)}
+  .da-partner .c3 i{color:#c4783a;font-style:normal}
+  .da-disc{font-size:.75rem;color:#98a2ad;line-height:1.5;padding:0 1.5rem 1.6rem;max-width:820px;margin:0 auto}
+  @media(max-width:560px){.da-hero h1{font-size:1.5rem}}
+</style>
+</head>
+<body>
+<div class="da-wrap">
+  <div class="da-topbar">A partnership of BrickWood Mortgage &amp; Chapter3 Realty</div>
+  <div class="da-head">
+    <img src="https://brickwoodmortgage.com/wp-content/uploads/2021/08/BrickWoodMortgage.png" alt="BrickWood Mortgage">
+    <a class="phone" href="tel:+18433144101">(843) 314-4101</a>
+  </div>
+  <div class="da-hero">
+    <p class="eyebrow">BrickWood Mortgage &middot; Investor Tools</p>
+    <h1>Investment Property Deal Analyzer</h1>
+    <p>Run any Grand Strand rental in seconds. Enter the numbers below to see your cash flow, cap rate, cash-on-cash return, and the DSCR our lenders use to qualify the loan.</p>
+  </div>
+  <div class="da-body">
+    <div class="da-grid">
+      <div class="da-field"><label>Purchase price</label><div class="in"><span class="pre">$</span><input id="f-price" class="pad" inputmode="numeric" value="300,000"></div></div>
+      <div class="da-field"><label>Down payment (%)</label><div class="in"><input id="f-down" inputmode="numeric" value="25"></div></div>
+      <div class="da-field"><label>Interest rate (%)</label><div class="in"><input id="f-rate" inputmode="numeric" value="7.25"></div></div>
+      <div class="da-field"><label>Loan term (years)</label><div class="in"><input id="f-term" inputmode="numeric" value="30"></div></div>
+      <div class="da-field"><label>Monthly rent</label><div class="in"><span class="pre">$</span><input id="f-rent" class="pad" inputmode="numeric" value="2,400"></div></div>
+      <div class="da-field"><label>Property tax (yearly)</label><div class="in"><span class="pre">$</span><input id="f-tax" class="pad" inputmode="numeric" value="3,600"></div></div>
+      <div class="da-field"><label>Insurance (yearly)</label><div class="in"><span class="pre">$</span><input id="f-ins" class="pad" inputmode="numeric" value="1,800"></div></div>
+      <div class="da-field"><label>HOA (monthly)</label><div class="in"><span class="pre">$</span><input id="f-hoa" class="pad" inputmode="numeric" value="0"></div></div>
+      <div class="da-field"><label>Other expenses (monthly)</label><div class="in"><span class="pre">$</span><input id="f-other" class="pad" inputmode="numeric" value="250"></div></div>
+    </div>
+
+    <div class="da-results">
+      <div class="da-verdict">
+        <span class="dscr-num" id="r-dscr">1.21</span>
+        <div class="dscr-txt"><b>DSCR (debt-service coverage ratio)</b><span id="r-dscr-note">Rent covers the loan and carrying costs, meeting the typical 1.0 DSCR floor.</span></div>
+        <span class="da-badge" id="r-badge" style="background:#1c7a44">Qualifies</span>
+      </div>
+      <div class="da-metrics">
+        <div class="da-metric"><div class="k">Monthly payment (P&amp;I)</div><div class="v" id="r-pi">$1,535</div></div>
+        <div class="da-metric"><div class="k">Total monthly cost</div><div class="v" id="r-piti">$2,235</div></div>
+        <div class="da-metric"><div class="k">Monthly cash flow</div><div class="v pos" id="r-cf">$165</div></div>
+        <div class="da-metric"><div class="k">Cap rate</div><div class="v" id="r-cap">6.8%</div></div>
+        <div class="da-metric"><div class="k">Cash-on-cash return</div><div class="v pos" id="r-coc">2.4%</div></div>
+        <div class="da-metric"><div class="k">Cash needed to close</div><div class="v" id="r-cash">$84,000</div></div>
+      </div>
+    </div>
+
+    <div class="da-cta">
+      <h2>Like the numbers? Get pre-qualified.</h2>
+      <p>BrickWood Mortgage finances investment properties on their income, including DSCR loans, condotels, and non-warrantable condos. Find out what you qualify for.</p>
+      <a class="da-btn" href="https://brickwoodmortgage.com/home-purchase/" target="_blank" rel="noopener">Get pre-qualified with BrickWood &#8594;</a>
+    </div>
+  </div>
+
+  <div class="da-partner">
+    Property analysis and local investor data by <a href="https://chapter3realty.com/invest/" target="_blank" rel="noopener"><span class="c3">Chapter<i>3</i> Realty</span></a>, the data-forward Grand Strand brokerage. Explore the <a href="https://chapter3realty.com/invest/airbnb-income/" target="_blank" rel="noopener">Myrtle Beach Airbnb income report</a> and <a href="https://chapter3realty.com/invest/condo-buildings/" target="_blank" rel="noopener">oceanfront building guide</a>.
+  </div>
+  <p class="da-disc">Estimates only, for education and screening. Not a loan commitment, pre-approval, or an offer to lend, and not investment, tax, or legal advice. Cap rate uses net operating income before financing; cash-on-cash and cash-to-close assume closing costs near 3% of price. Actual rates, terms, taxes, and insurance vary. NMLS #189497. Equal Housing Lender. Verify any figure with BrickWood Mortgage and a licensed professional before you offer.</p>
+</div>
+
+<script>
+(function(){
+  var ids=['f-price','f-down','f-rate','f-term','f-rent','f-tax','f-ins','f-hoa','f-other'];
+  var el={}; ids.forEach(function(i){el[i]=document.getElementById(i)});
+  function num(x){return parseFloat((x.value||'').replace(/[^0-9.]/g,''))||0}
+  function money(x){return (x<0?'-$':'$')+Math.abs(Math.round(x)).toLocaleString('en-US')}
+  function calc(){
+    var price=num(el['f-price']), downPct=num(el['f-down'])/100, rate=num(el['f-rate'])/100,
+        term=num(el['f-term'])||30, rent=num(el['f-rent']),
+        tax=num(el['f-tax']), ins=num(el['f-ins']), hoa=num(el['f-hoa']), other=num(el['f-other']);
+    var loan=price*(1-downPct), r=rate/12, n=term*12;
+    var pi = r>0 ? loan*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1) : loan/n;
+    var mTax=tax/12, mIns=ins/12;
+    var piti = pi + mTax + mIns + hoa;               // debt + carrying (no "other")
+    var totalCost = piti + other;
+    var cashFlow = rent - totalCost;
+    var noiAnnual = rent*12 - (tax + ins + hoa*12 + other*12);
+    var cap = price>0 ? noiAnnual/price*100 : 0;
+    var cashInvested = price*downPct + price*0.03;
+    var coc = cashInvested>0 ? (cashFlow*12)/cashInvested*100 : 0;
+    var dscr = piti>0 ? rent/piti : 0;
+    document.getElementById('r-pi').textContent=money(pi);
+    document.getElementById('r-piti').textContent=money(totalCost);
+    var cf=document.getElementById('r-cf'); cf.textContent=money(cashFlow); cf.className='v '+(cashFlow>=0?'pos':'neg');
+    document.getElementById('r-cap').textContent=cap.toFixed(1)+'%';
+    var cocEl=document.getElementById('r-coc'); cocEl.textContent=coc.toFixed(1)+'%'; cocEl.className='v '+(coc>=0?'pos':'neg');
+    document.getElementById('r-cash').textContent=money(cashInvested);
+    document.getElementById('r-dscr').textContent=dscr.toFixed(2);
+    var badge=document.getElementById('r-badge'), note=document.getElementById('r-dscr-note');
+    if(dscr>=1.25){badge.textContent='Strong';badge.style.background='#1c7a44';note.textContent='Comfortably above the 1.0 minimum most DSCR lenders want.';}
+    else if(dscr>=1.0){badge.textContent='Qualifies';badge.style.background='#1c7a44';note.textContent='Rent covers the loan and carrying costs, meeting the typical 1.0 DSCR floor.';}
+    else if(dscr>=0.75){badge.textContent='Tight';badge.style.background='#b8860b';note.textContent='Below 1.0. Some DSCR programs still work with reserves or more down.';}
+    else{badge.textContent='Below threshold';badge.style.background='#941b1b';note.textContent='Rent does not cover carrying costs at this price and rate.';}
+  }
+  ids.forEach(function(i){el[i].addEventListener('input',calc)});
+  calc();
+})();
+</script>
+</body>
+</html>
