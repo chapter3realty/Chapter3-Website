@@ -232,9 +232,223 @@ function llmsfull() {
   console.log(`llms-full.txt regenerated: ${count} pages, ${kb}KB, dated ${today}.`);
 }
 
+/* ────────────────────────────────────────────────────────────────────────────
+ * audit: the publish gate. Every rule here exists because the matching defect
+ * actually reached (or nearly reached) production on this site at least once.
+ * Blockers exit 1. See PLAYBOOK.md for the human procedure this enforces.
+ * ────────────────────────────────────────────────────────────────────────── */
+
+// Locked strings. These must be byte-identical wherever they appear.
+const TCPA = "I consent to receive calls and text messages from Chapter 3 Realty about my property inquiry, showing appointments, and listing information I requested, at the phone number provided, including calls placed using an automated system or an artificial or prerecorded voice. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase.";
+const AFBA_SIG = "Affiliated Business Arrangement";
+
+// Copy the owner has banned: creative/metaphorical phrasing. Style rule is
+// "literal and direct", so these read as off-brand.
+const BANNED_PHRASES = [
+  "whole game", "content engine", "marina country", "are wishes", "black box",
+  "no-brainer", "slam dunk", "hidden gem", "goldmine", "jackpot", "kick back",
+  "rewards patience", "trades speed for scenery", "collect price cuts", "collects price cuts",
+];
+// Fair-housing advertising risk: statements about who lives somewhere or how safe it is.
+const FAIR_HOUSING = [
+  "safe neighborhood", "low crime", "crime-free", "family-friendly neighborhood",
+  "perfect for families", "no children", "adults only", "exclusive neighborhood",
+  "good schools for your kids",
+];
+// Unsubstantiated performance promises (FTC substantiation). Checked with a
+// negation guard, because "returns are not guaranteed" is a disclaimer, not a claim.
+const GUARANTEE = /\bwe guarantee\b|\bguarantees?\b|\bguaranteed\b|you will sell your|we will sell your|cannot fail|we promise|won['’]t fail/gi;
+// A negation anywhere in the run-up to the word, without crossing a sentence
+// boundary, means it is a disclaimer: "not a guarantee", "Nobody can guarantee".
+const NEGATED_BEFORE = /\b(?:not|no|never|nobody|none|nor|without|cannot|can['’]t|isn['’]t|aren['’]t|won['’]t)\b[^.!?;]{0,32}$/i;
+// Reg Z 1026.24(d) trigger term: a stated down payment amount pulls in APR +
+// repayment-term disclosure obligations. Assessment ratios (4%/6%) are tax, not credit.
+const TRIGGER_DOWN = /([0-9]+(?:\.[0-9]+)? ?(?:percent|%)) ?(?:down\b|down payment)/gi;
+
+// Decode named AND numeric entities. Pages use a mix of &#39; and &#x27; for the
+// same apostrophe; missing one form caused a false "FAQ not visible" failure.
+const decodeEnt = (t) => t
+  .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+  .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(parseInt(n, 10)))
+  .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"')
+  .replace(/&rsquo;|&lsquo;|&apos;/g, "'").replace(/&ldquo;|&rdquo;/g, '"')
+  .replace(/&nbsp;/g, " ").replace(/&middot;/g, "·").replace(/&mdash;|&ndash;/g, "-");
+// Normalise for text comparison: entities, smart quotes, tags, punctuation, case.
+const textKey = (t) => decodeEnt(t).replace(/[’‘]/g, "'").replace(/[“”]/g, '"')
+  .replace(/<[^>]+>/g, " ").toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+
+function audit() {
+  const pages = htmlFiles();
+  const errors = [], warns = [];
+  const titles = new Map(), descs = new Map();
+  const sitemapPath = path.join(ROOT, "sitemap.xml");
+  const sm = fs.existsSync(sitemapPath) ? fs.readFileSync(sitemapPath, "utf-8") : "";
+  const smUrls = new Set([...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]));
+  const smDates = [...sm.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map(m => m[1]);
+  const llms = fs.existsSync(path.join(ROOT, "llms.txt")) ? fs.readFileSync(path.join(ROOT, "llms.txt"), "utf-8") : "";
+  const declaredKw = new Map();  // keyword -> [pages]  (cannibalisation guard)
+
+  for (const f of pages) {
+    // 404.html is an error document, not an indexable page: no canonical or sitemap entry.
+    if (path.basename(f) !== "index.html") continue;
+    const s = fs.readFileSync(f, "utf-8");
+    const rel = "/" + f.replace(ROOT + path.sep, "").replace(/index\.html$/, "").split(path.sep).join("/");
+    const url = "https://chapter3realty.com" + rel;
+    const noindex = /content="noindex/.test(s);
+    const E = (m) => errors.push(`${rel}  ${m}`);
+    const W = (m) => warns.push(`${rel}  ${m}`);
+
+    /* ---- indexing ---- */
+    if (noindex && smUrls.has(url)) E("noindex page is listed in sitemap.xml");
+    if (!noindex && !smUrls.has(url)) E("missing from sitemap.xml");
+    if (!noindex && rel !== "/" && !llms.includes(rel)) W("not listed in llms.txt");
+
+    /* ---- title / description ---- */
+    const t = (s.match(/<title>([^<]*)<\/title>/) || [])[1];
+    if (!t) E("no <title>");
+    else {
+      const shown = decodeEnt(t);
+      if (shown.length > 62) E(`title ${shown.length} chars (max 62, it truncates in Google)`);
+      if (shown.length < 20) W(`title only ${shown.length} chars`);
+      if (titles.has(t)) E(`duplicate <title> shared with ${titles.get(t)}`); else titles.set(t, rel);
+    }
+    const d = (s.match(/name="description" content="([^"]*)"/) || [])[1];
+    if (!d) E("no meta description");
+    else {
+      const shown = decodeEnt(d);
+      if (!noindex && (shown.length < 110 || shown.length > 165)) E(`meta description ${shown.length} chars (want 110-165)`);
+      if (descs.has(d)) E(`duplicate meta description shared with ${descs.get(d)}`); else descs.set(d, rel);
+    }
+
+    /* ---- canonical / open graph ---- */
+    const canon = (s.match(/rel="canonical" href="([^"]*)"/) || [])[1];
+    if (!canon) E("no canonical");
+    else if (canon !== url) E(`canonical points to ${canon}, expected ${url}`);
+    const ogUrl = (s.match(/property="og:url" content="([^"]*)"/) || [])[1];
+    if (ogUrl && ogUrl !== url) E(`og:url ${ogUrl} != canonical`);
+    if (!noindex) for (const p of ["og:title", "og:description", "og:image"])
+      if (!s.includes(`property="${p}"`)) W(`missing ${p}`);
+
+    /* ---- structure ---- */
+    const h1s = s.match(/<h1[^>]*>/g) || [];
+    if (h1s.length !== 1) E(`${h1s.length} <h1> tags (must be exactly 1)`);
+
+    /* ---- structured data ---- */
+    const blocks = [...s.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => m[1]);
+    const parsed = [];
+    for (const b of blocks) {
+      try { parsed.push(JSON.parse(b)); }
+      catch (err) { E(`invalid JSON-LD: ${String(err.message).slice(0, 60)}`); }
+    }
+    // Google requires every FAQ answer/question in schema to be visible on the page.
+    const visible = textKey(s.replace(/<script[\s\S]*?<\/script>/g, " "));
+    for (const blk of parsed) {
+      if (blk && blk["@type"] === "FAQPage") {
+        for (const q of blk.mainEntity || []) {
+          if (q && q.name && !visible.includes(textKey(q.name)))
+            E(`FAQ schema question not visible on page: "${String(q.name).slice(0, 55)}"`);
+        }
+      }
+      if (blk && blk["@type"] === "Article" && blk.keywords) {
+        for (const k of String(blk.keywords).split(",").map(x => x.trim().toLowerCase()).filter(Boolean)) {
+          if (!declaredKw.has(k)) declaredKw.set(k, []);
+          declaredKw.get(k).push(rel);
+        }
+      }
+    }
+
+    /* ---- invisible text: ivory-on-ivory in a light hero (happened twice) ---- */
+    const hero = (s.match(/<div class="detail-hero[^"]*">[\s\S]*?<\/div><\/div>/) || [])[0];
+    if (hero && !hero.includes("background:var(--navy)") &&
+        /color:\s*(var\(--ivory\)|rgba\(244,\s*239,\s*232)/.test(hero))
+      E("hero contains ivory-coloured text on the ivory hero background (invisible)");
+
+    /* ---- legal ---- */
+    // Strip code and form controls: a number inside a calculator input is not ad copy.
+    let prose = s.replace(/<script[\s\S]*?<\/script>/g, " ")
+                 .replace(/<label[\s\S]*?<\/label>|<input[^>]*>|<select[\s\S]*?<\/select>/g, " ");
+    const trig = [...prose.matchAll(TRIGGER_DOWN)].map(m => m[0].trim());
+    if (trig.length) W(`Reg Z trigger term in copy: ${[...new Set(trig)].slice(0, 3).join(", ")} (needs APR + repayment terms, or rewrite qualitatively)`);
+    if (s.includes("c3SendForm(") && !s.includes(TCPA)) E("lead form present but the exact TCPA consent string is missing or altered");
+    if (/brickwoodmortgage\.com/.test(prose) && !s.includes(AFBA_SIG)) E("links to the affiliated lender without an AfBA disclosure");
+    const low = decodeEnt(prose).toLowerCase();
+    for (const p of BANNED_PHRASES) if (low.includes(p)) W(`off-brand phrase: "${p}"`);
+    for (const p of FAIR_HOUSING) if (low.includes(p)) E(`fair-housing risk phrase: "${p}"`);
+    for (const g of prose.matchAll(GUARANTEE)) {
+      const before = prose.slice(Math.max(0, g.index - 70), g.index);
+      if (NEGATED_BEFORE.test(before)) continue;   // "returns are not guaranteed" = disclaimer
+      E(`unsubstantiated guarantee: "...${prose.slice(Math.max(0, g.index - 22), g.index + g[0].length).replace(/\s+/g, " ").trim()}"`);
+    }
+
+    /* ---- links ---- */
+    for (const m of s.matchAll(/href="(\/[a-zA-Z0-9\-/]*)"/g)) {
+      const target = m[1].split("#")[0].replace(/^\/|\/$/g, "");
+      if (!target) continue;
+      if (!fs.existsSync(path.join(ROOT, target.split("/").join(path.sep))))
+        E(`dead internal link ${m[1]}`);
+    }
+
+    /* ---- images ---- */
+    for (const m of s.matchAll(/<img\b[^>]*>/g)) {
+      if (!/\balt=/.test(m[0])) E("an <img> has no alt attribute");
+      else if (!/\bwidth=/.test(m[0]) || !/\bheight=/.test(m[0])) W("an <img> lacks width/height (causes layout shift)");
+    }
+  }
+
+  /* ---- cross-page ---- */
+  for (const [k, ps] of declaredKw)
+    if (new Set(ps).size > 1) errors.push(`cannibalisation: keyword "${k}" declared by ${[...new Set(ps)].join(", ")}`);
+  // A sitemap where every lastmod is identical reads as auto-stamped and Google discounts it.
+  if (smDates.length > 5 && new Set(smDates).size === 1)
+    errors.push(`sitemap.xml: all ${smDates.length} lastmod dates are identical (${smDates[0]}) - only date pages whose visible text changed`);
+  for (const dt of new Set(smDates))
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(dt)) errors.push(`sitemap.xml: malformed lastmod "${dt}"`);
+
+  /* ---- divergent duplicate logic across bundles ----
+   * Two bundles defining the same function with DIFFERENT bodies means one page
+   * silently runs older maths than the rest. Found live: /sell/ shipped a stale
+   * recalcLtr with the vacancy double-subtraction long after it was fixed. */
+  const jsAssets = assetFiles().filter(n => n.endsWith(".js"));
+  const fnBodies = new Map();  // fnName -> [{asset, sig}]
+  for (const a of jsAssets) {
+    const src = fs.readFileSync(path.join(ASSETS, a), "utf-8");
+    for (const m of src.matchAll(/function ([a-zA-Z_$][\w$]*)\s*\(/g)) {
+      const sig = crypto.createHash("md5").update(src.slice(m.index, m.index + 1200)).digest("hex").slice(0, 8);
+      if (!fnBodies.has(m[1])) fnBodies.set(m[1], []);
+      fnBodies.get(m[1]).push({ asset: a, sig });
+    }
+  }
+  for (const [fn, defs] of fnBodies) {
+    if (defs.length < 2) continue;
+    if (new Set(defs.map(d => d.sig)).size > 1)
+      warns.push(`divergent duplicate: ${fn}() differs between ${defs.map(d => d.asset).join(" and ")} - one page runs stale logic`);
+  }
+
+  /* ---- inert CSS utility classes (a class that never sets display:grid) ---- */
+  for (const a of assetFiles().filter(n => n.endsWith(".css"))) {
+    const css = fs.readFileSync(path.join(ASSETS, a), "utf-8");
+    for (const m of css.matchAll(/\.(grid-\d|flex-\w+)\{([^}]*)\}/g)) {
+      const [, cls, body] = m;
+      if (/grid-template/.test(body) && !/display:\s*grid/.test(body))
+        warns.push(`/assets/${a}: .${cls} sets grid-template but never display:grid, so the class does nothing`);
+    }
+  }
+
+  console.log(`Audited ${pages.length} pages against the PLAYBOOK.md rules.`);
+  if (warns.length) { console.log(`\nWARN (${warns.length}) - review, not blocking:`); warns.forEach(w => console.log("  ~  " + w)); }
+  if (errors.length) {
+    console.log(`\nFAIL (${errors.length}) - fix before publishing:`);
+    errors.forEach(e => console.log("  !! " + e));
+    process.exit(1);
+  }
+  console.log("\nOK - zero blocking defects. Page quality gate passed.");
+}
+
 const cmd = process.argv[2] || "check";
 if (cmd === "check") check();
 else if (cmd === "rehash") rehash();
 else if (cmd === "stitch") stitch();
 else if (cmd === "llmsfull") llmsfull();
-else { console.log("Usage: node build.js [check|rehash|stitch|llmsfull]"); process.exit(1); }
+else if (cmd === "audit") audit();
+else if (cmd === "preflight") { check(); console.log(""); audit(); }
+else { console.log("Usage: node build.js [check|rehash|stitch|llmsfull|audit|preflight]"); process.exit(1); }
