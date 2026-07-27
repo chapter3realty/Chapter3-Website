@@ -435,7 +435,14 @@ function audit() {
     // Strip code and form controls: a number inside a calculator input is not ad copy.
     let prose = s.replace(/<script[\s\S]*?<\/script>/g, " ")
                  .replace(/<label[\s\S]*?<\/label>|<input[^>]*>|<select[\s\S]*?<\/select>/g, " ");
-    const trig = [...prose.matchAll(TRIGGER_DOWN)].map(m => m[0].trim());
+    // Official commentary to 1026.24(d)(1): "This provision applies only if a
+    // downpayment is actually required; statements such as no downpayment or
+    // no trade-in required do not trigger the additional disclosures."
+    // So "0% down" is NOT a triggering term. Counting it was a false positive
+    // that wrongly put /buyers/va-loans/ on the high-risk list.
+    const trig = [...prose.matchAll(TRIGGER_DOWN)]
+      .map(m => m[0].trim())
+      .filter(t => parseFloat(t) !== 0);
     if (trig.length) {
       // Reg Z 1026.24(d)(1) makes "the amount or percentage of any downpayment"
       // a triggering term, which pulls in 24(d)(2): downpayment, full repayment
@@ -449,8 +456,9 @@ function audit() {
       // 11 pages HIGH and tells you nothing.
       const mainOnly = (prose.match(/<main[\s\S]*?<\/main>/) || [prose])[0];
       const LENDER = /our (?:preferred|in-house) lender|BrickWood|our lender/i;
-      const near = [...mainOnly.matchAll(TRIGGER_DOWN)].some(m =>
-        LENDER.test(mainOnly.slice(Math.max(0, m.index - 500), m.index + 500)));
+      const near = [...mainOnly.matchAll(TRIGGER_DOWN)]
+        .filter(m => parseFloat(m[0]) !== 0)      // "0% down" is not a trigger term
+        .some(m => LENDER.test(mainOnly.slice(Math.max(0, m.index - 500), m.index + 500)));
       const label = near ? "HIGH" : "review";
       W(`Reg Z ${label}: downpayment figure in copy (${[...new Set(trig)].slice(0, 3).join(", ")})`
         + (near ? " stated alongside the affiliated lender — closest to a credit ad; rewrite qualitatively or add APR + repayment terms"
