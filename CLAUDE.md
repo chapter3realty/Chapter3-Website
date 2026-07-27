@@ -24,6 +24,22 @@ node build.js rehash      # after editing assets/*, renames + updates all refs
 node build.js llmsfull    # regenerate llms-full.txt
 ```
 
+**[MISTAKES.md](MISTAKES.md)** is the log of every mistake made here and what
+stops it recurring. Read its five rules before changing anything.
+
+## The five rules that caused the most damage
+
+1. **A change is not verified until it is measured on the rendered page.**
+   Reading HTML proves nothing; invisible text has shipped four times.
+2. **Before any multi-file replace, list the distinct contexts.** This site has
+   two hero types with opposite colours; a blind replace corrupts one of them.
+3. **Verify a fix in both directions.** "Ivory is wrong here" does not make dark
+   right everywhere. That error broke 24 pages across two passes.
+4. **Sanity-check a scanner before believing it** — one case that should match,
+   one that should not. Several "findings" here were the scanner being wrong.
+5. **Never infer a real-world fact from repo artifacts.** Git history is not the
+   launch date.
+
 ## Non-negotiables
 
 1. **Never deploy.** The owner deploys, themselves, from PowerShell. Prepare and

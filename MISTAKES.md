@@ -1,0 +1,102 @@
+# Mistake log
+
+Every entry is a real mistake made on this project, what caused it, and what
+now stops it recurring. Read the **Five rules** before any change; they are
+where most of the pain came from.
+
+Mechanical guards live in `node build.js audit`. Judgment rules live here and in
+`CLAUDE.md`. Neither layer alone is enough — several of these mistakes were
+made *while fixing another one*, and passed a green gate.
+
+---
+
+## The five rules
+
+**1. A change is not verified until it is measured on the rendered page.**
+Reading HTML proves nothing. Text that is present in the source can be
+invisible on screen. That has now happened four separate times.
+
+**2. Before any multi-file replace, enumerate the distinct contexts.**
+This site has two hero types with opposite colours. Three separate times a
+find-and-replace assumed one context and silently corrupted the other. List
+the variants first, handle each explicitly, and measure a sample from *each
+group* afterwards, not just the one you were thinking about.
+
+**3. Verify a fix in both directions.**
+"Ivory text is invisible here" does not mean dark text is safe everywhere. A
+one-directional rule let 16 pages get broken while the gate stayed green.
+
+**4. Sanity-check a scanner before trusting what it reports.**
+Run it against one case that should match and one that should not. Several
+"findings" in this project were the scanner being wrong: 125 phantom defects
+from a 0×0 viewport, 20 false positives from a nesting-blind text scan, a
+"51 pages missing dates" count that was reading JSON-LD instead of visible copy.
+
+**5. Never infer a fact about the business or the world from repo artifacts.**
+Git history is not the site's launch date. A file's presence is not proof a
+feature works. Open the real source.
+
+---
+
+## Rendering and CSS
+
+| # | Mistake | Now prevented by |
+|---|---|---|
+| 1 | Ivory text on the ivory `.detail-hero`, contrast 1.00:1. Shipped, then recurred twice more after "fixes" that used a non-greedy hero regex and missed 16 pages. | `audit` byline rule + `.claude/verify.js` contrast pass |
+| 2 | **Fixing #1 backwards:** changed bylines to dark on *navy* heroes, creating navy-on-navy at 1.00:1. Done twice — 8 submarket pages, then 16 more. | `audit` checks **both** directions against the page's hero type |
+| 3 | Hero headings unselectable: an animated overlay lacked `pointer-events:none`. | `verify.js` hit-tests with `elementFromPoint` |
+| 4 | `.grid-2/3/4` set `grid-template-columns` but never `display:grid`, so cards stacked full width. | `audit` flags the inert class; `verify.js` asserts computed `display` |
+| 5 | Inserted a modal before `</main>`, landing it inside a `display:none` section. Measured 0×0. | `verify.js` painted-size check |
+| 6 | Tested responsive layout at element widths instead of viewport widths. | Playbook: resize the real viewport, then measure |
+
+## Content and facts
+
+| # | Mistake | Now prevented by |
+|---|---|---|
+| 7 | Claimed a research finding that did not exist. | Rule 5; cite a source you opened |
+| 8 | Told the owner the site was 13 days old, inferred from the first git commit. It was ~2.5 months. | Rule 5; memory records the real launch date |
+| 9 | Said Pawleys Island straddles the county line. It is entirely in Georgetown County. | Adversarial fact-check pass; 20 of 163 researched facts were wrong |
+| 10 | Copy written with metaphors against the owner's literal-and-direct rule. | `audit` banned-phrase list |
+| 11 | Reading-order phrases ("the former") that break a passage when an AI quotes it alone. | `audit` anaphora rule |
+
+## Code
+
+| # | Mistake | Now prevented by |
+|---|---|---|
+| 12 | Deleted a variable declaration during an edit. `node --check` passed: it validates syntax, not undeclared identifiers. | `audit` verifies every inline handler calls a function that exists; `verify.js` checks the console |
+| 13 | Narrowed a CORS header and broke every browser request. `curl` still worked, so it looked fine. | Playbook: verify in the browser, not with curl |
+| 14 | Calculator maths bugs: vacancy double-subtracted, typed zeros ignored, 0% rate divide. | Playbook: hand-compute two expected values and compare to the dollar |
+| 15 | Copy promised an emailed PDF; the code downloaded locally. | Playbook: exercise the feature, do not describe it from the code |
+| 16 | Fired the same analytics event twice for one conversion. | Playbook form step |
+| 17 | Broke a `/* */` comment block in `build.js` twice by pasting `*` lines outside it. | `node --check` after every edit to build tooling |
+
+## Site structure
+
+| # | Mistake | Now prevented by |
+|---|---|---|
+| 18 | Published `/buyers/new-construction/` with no inbound body link from anywhere. | `audit` orphan rule (blocker) |
+| 19 | Bulk-stamped all 54 sitemap `lastmod` dates to one day. | `audit` bulk-stamp guard; dates come from real content-change commits |
+| 20 | Let `llms.txt` advertise a date older than the newest page. | `audit` freshness rule |
+| 21 | Left visible date, schema `dateModified` and sitemap `lastmod` disagreeing on 34 pages. | `audit` three-date agreement rule |
+
+## Working with the owner
+
+| # | Mistake | Now prevented by |
+|---|---|---|
+| 22 | Gave a URL with no instruction on where to put it; it was pasted into PowerShell and failed. | Say where a command or link goes, and what must be running |
+| 23 | Handed over localhost preview links without saying they die when the server stops. | Same |
+| 24 | Ran two commands on one line, producing `productionwrangler`. | Give one command per block |
+
+---
+
+## Standing exceptions
+
+Current `audit` warnings that are deliberate. Do not "fix" them silently.
+
+- **11 legacy pages state a down-payment percentage.** Regulation Z exposure,
+  pending attorney review. New pages must not add to this list.
+- **`--brass` link colour measures 3.01:1 on ivory**, below AA for body text.
+  Brand-level decision.
+- **`/sell/` ships a stale duplicate JS bundle** with an old `recalcLtr`. That
+  page renders no calculator, so no wrong number reaches a user.
+- **Two pages have no question-shaped heading**, which is weaker for AI answers.

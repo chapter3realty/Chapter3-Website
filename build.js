@@ -287,6 +287,14 @@ function audit() {
   const smDates = [...sm.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map(m => m[1]);
   const llms = fs.existsSync(path.join(ROOT, "llms.txt")) ? fs.readFileSync(path.join(ROOT, "llms.txt"), "utf-8") : "";
   const declaredKw = new Map();  // keyword -> [pages]  (cannibalisation guard)
+  // Every function name any asset bundle defines, so inline handlers can be checked.
+  const assetFns = new Set();
+  for (const a of assetFiles().filter(n => n.endsWith(".js"))) {
+    const src = fs.readFileSync(path.join(ASSETS, a), "utf-8");
+    for (const m of src.matchAll(/function\s+([A-Za-z_$][\w$]*)/g)) assetFns.add(m[1]);
+    for (const m of src.matchAll(/(?:window\.|var |let |const )([A-Za-z_$][\w$]*)\s*=\s*(?:function|\()/g)) assetFns.add(m[1]);
+  }
+  const JS_KEYWORDS = new Set(["if","for","while","return","switch","typeof","void","new","delete","do","else","try","catch"]);
   const inbound = new Map();     // page -> Set(pages linking to it from BODY copy)
   const shingles = new Map();    // page -> Set(8-word shingles) for near-duplicate detection
   const indexable = [];
@@ -379,10 +387,49 @@ function audit() {
      * Ignoring that, an earlier pass "fixed" 8 submarket bylines to dark text
      * and measured them at 1.00:1 navy-on-navy: the same defect, freshly made. */
     const lightHero = /class="detail-hero/.test(s);
-    if (lightHero && /<p style="color:\s*rgba\(244,\s*239,\s*232[^"]*">\s*By /.test(s))
-      E("byline is ivory on the light .detail-hero (invisible) — use color:var(--muted)");
+    // A real byline is "By <strong>Name</strong>, Role". Matching a bare
+    // "By " also hits body copy like "By using this site you agree…".
+    const byline = s.match(/<p style="([^"]*)"[^>]*>\s*By\s*<strong/);
+    if (byline) {
+      const col = byline[1];
+      const ivoryText = /color:\s*(?:var\(--ivory\)|rgba\(244,\s*239,\s*232)/.test(col);
+      const darkText = /color:\s*(?:var\(--muted\)|var\(--navy\)|rgba\(28,\s*32,\s*40)/.test(col);
+      // Both directions. Only checking one is how 8 navy-hero bylines got
+      // "fixed" into navy-on-navy at 1.00:1 while the gate stayed green.
+      if (lightHero && ivoryText)
+        E("byline is ivory on the light .detail-hero (invisible) — use color:var(--muted)");
+      if (!lightHero && darkText)
+        E("byline is dark on a navy hero (invisible) — use color:rgba(244,239,232,.5)");
+    }
     if (lightHero && /class="btn btn-outline btn-lg"[^>]*style="color:\s*var\(--ivory\)/.test(s))
       E("hero outline button is ivory on the light .detail-hero (invisible) — drop the inline colour override");
+
+    /* ---- the three dates must agree ----
+     * visible "Updated <date>" == schema dateModified == sitemap lastmod.
+     * They drifted apart on 34 pages before anyone noticed. */
+    const MONTHS = ["January","February","March","April","May","June",
+                    "July","August","September","October","November","December"];
+    const wantDate = (sm.match(new RegExp("<loc>" + url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "</loc>\\s*<lastmod>([^<]+)</lastmod>")) || [])[1];
+    if (wantDate) {
+      const dm = (s.match(/"dateModified":"([^"]+)"/) || [])[1];
+      if (dm && dm !== wantDate) E(`schema dateModified ${dm} != sitemap lastmod ${wantDate}`);
+      const vm = s.replace(/<script[\s\S]*?<\/script>/g, " ").match(/Updated ([A-Z][a-z]+) (\d{1,2}), (20\d\d)/);
+      if (vm) {
+        const iso = `${vm[3]}-${String(MONTHS.indexOf(vm[1]) + 1).padStart(2, "0")}-${String(+vm[2]).padStart(2, "0")}`;
+        if (iso !== wantDate) E(`visible "Updated ${vm[0].slice(8)}" != sitemap lastmod ${wantDate}`);
+      }
+    }
+
+    /* ---- inline handlers must call a function that exists ----
+     * `node --check` validates syntax only; it happily passes a page whose
+     * onclick calls a function an edit deleted. That shipped once. */
+    const inlineFns = new Set([...s.matchAll(/function\s+([A-Za-z_$][\w$]*)/g)].map(m => m[1]));
+    for (const m of s.matchAll(/on(?:click|change|input|submit)="([A-Za-z_$][\w$]*)\s*\(/g)) {
+      const fn = m[1];
+      if (JS_KEYWORDS.has(fn)) continue;
+      if (!inlineFns.has(fn) && !assetFns.has(fn))
+        E(`inline handler calls ${fn}() which is not defined in this page or any asset bundle`);
+    }
 
     /* ---- legal ---- */
     // Strip code and form controls: a number inside a calculator input is not ad copy.
