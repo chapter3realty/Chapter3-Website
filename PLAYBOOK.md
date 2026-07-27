@@ -268,10 +268,28 @@ and the rendered page matches what you built.
 Devin Day NMLS 2721275 · Timmy Fredrick Nash, BIC, SC licence 43182,
 NMLS 252563 · Paul Hankins NMLS 281393 · 854.333.2135 · Murrells Inlet, SC 29576
 
-**Colour contrast traps:** `--ivory #f4efe8` and `--navy #1c2028` are the two
-backgrounds. `.detail-hero` is **ivory (light)**. Ivory text inside it is
-invisible. `--brass #c4783a` on ivory measures 3.01:1 — acceptable for large
-bold text, below AA for body text.
+**Colour contrast traps.** `--ivory #f4efe8` and `--navy #1c2028` are the two
+backgrounds, and **the site uses BOTH for heroes**:
+
+| Hero | Background | Text must be |
+|---|---|---|
+| `.detail-hero` (most inner pages) | **ivory, light** | `var(--muted)` or `var(--navy)` |
+| Homepage, `/about/`, `/buyers/`, submarket guides | **navy, dark** | ivory |
+
+A find-and-replace across both breaks one of them. Eight submarket bylines were
+once "fixed" from ivory to dark and measured **1.00:1 navy-on-navy** — the same
+invisible-text defect, newly created by the fix for it. Before changing any
+colour, check which hero the page uses, and measure the rendered contrast
+afterwards. The static gate only pins the two known-bad `.detail-hero`
+patterns; the browser check in Phase 8 is what covers the general case.
+
+`--brass #c4783a` on ivory measures 3.01:1 — acceptable for large bold text,
+below AA for body text.
+
+**Dates.** Every page shows `Updated <date>` in its byline, and that date equals
+the page's schema `dateModified` and its sitemap `lastmod`. All three come from
+the same source: the newest commit where the text inside `<main>` actually
+changed. Never hand-write a date, and never stamp them all the same.
 
 ---
 

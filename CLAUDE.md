@@ -64,8 +64,15 @@ plainly; assume the reader is smart but not in the industry.
 
 ## Gotchas that have bitten before
 
-- `.detail-hero` has an **ivory (light)** background. Ivory-coloured text inside
-  it is invisible. This shipped twice.
+- **This site has TWO hero types and they are opposite colours.** Check which
+  one a page uses before touching any colour in it:
+  - `.detail-hero` → **ivory (light)**. Text must be `var(--muted)` / `var(--navy)`.
+    Ivory text here is invisible. Shipped broken three times.
+  - `.bimb-hero-grid` and the homepage / `/about/` / `/buyers/` / submarket
+    heroes → **navy (dark)**. Text must be ivory. Dark text here is invisible.
+  A blind find-and-replace across both breaks one of them. That happened: eight
+  submarket bylines were "fixed" to dark text and measured 1.00:1 navy-on-navy.
+  **Always measure the rendered contrast before and after a colour change.**
 - `node --check` validates syntax only. It will not catch an undeclared
   identifier after an edit.
 - The site mixes `&#39;` and `&#x27;` for apostrophes. Normalise both when

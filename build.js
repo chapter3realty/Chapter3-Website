@@ -363,11 +363,26 @@ function audit() {
       }
     }
 
-    /* ---- invisible text: ivory-on-ivory in a light hero (happened twice) ---- */
-    const hero = (s.match(/<div class="detail-hero[^"]*">[\s\S]*?<\/div><\/div>/) || [])[0];
-    if (hero && !hero.includes("background:var(--navy)") &&
-        /color:\s*(var\(--ivory\)|rgba\(244,\s*239,\s*232)/.test(hero))
-      E("hero contains ivory-coloured text on the ivory hero background (invisible)");
+    /* ---- invisible text: ivory-on-ivory ----
+     * This defect has now shipped THREE times. The first two fixes used a
+     * non-greedy "hero block" regex that stopped at the first </div></div> and
+     * silently missed 16 pages whose hero has deeper nesting.
+     * Static analysis CANNOT solve the general case: an inline background sits
+     * on one element while the ivory text sits on a sibling, and a text scan
+     * has no nesting model. Attempting it produced 20 false positives.
+     * So the gate pins the two exact patterns that have actually shipped
+     * broken, and the general case is owned by the browser contrast check in
+     * .claude/verify.js, which measures what is really painted. Both are
+     * required by PLAYBOOK.md; neither alone is sufficient.
+     * Scope matters: .detail-hero is IVORY, but the homepage, /about/, /buyers/
+     * and the submarket guides use a NAVY hero where ivory text is correct.
+     * Ignoring that, an earlier pass "fixed" 8 submarket bylines to dark text
+     * and measured them at 1.00:1 navy-on-navy: the same defect, freshly made. */
+    const lightHero = /class="detail-hero/.test(s);
+    if (lightHero && /<p style="color:\s*rgba\(244,\s*239,\s*232[^"]*">\s*By /.test(s))
+      E("byline is ivory on the light .detail-hero (invisible) — use color:var(--muted)");
+    if (lightHero && /class="btn btn-outline btn-lg"[^>]*style="color:\s*var\(--ivory\)/.test(s))
+      E("hero outline button is ivory on the light .detail-hero (invisible) — drop the inline colour override");
 
     /* ---- legal ---- */
     // Strip code and form controls: a number inside a calculator input is not ad copy.
