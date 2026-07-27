@@ -436,7 +436,26 @@ function audit() {
     let prose = s.replace(/<script[\s\S]*?<\/script>/g, " ")
                  .replace(/<label[\s\S]*?<\/label>|<input[^>]*>|<select[\s\S]*?<\/select>/g, " ");
     const trig = [...prose.matchAll(TRIGGER_DOWN)].map(m => m[0].trim());
-    if (trig.length) W(`Reg Z trigger term in copy: ${[...new Set(trig)].slice(0, 3).join(", ")} (needs APR + repayment terms, or rewrite qualitatively)`);
+    if (trig.length) {
+      // Reg Z 1026.24(d)(1) makes "the amount or percentage of any downpayment"
+      // a triggering term, which pulls in 24(d)(2): downpayment, full repayment
+      // terms, and the APR. But 1026.1(c) applies Reg Z to those who OFFER OR
+      // EXTEND credit. A brokerage describing a government fee schedule or who
+      // is buying in a market is not advertising its own credit; the same
+      // figure sitting next to "our preferred lender" reads much more like an
+      // offer. Tier it so attention lands on the real exposure.
+      // Proximity, inside <main> only. The footer's AfBA disclosure names
+      // BrickWood on every page, so "mentions the lender somewhere" marks all
+      // 11 pages HIGH and tells you nothing.
+      const mainOnly = (prose.match(/<main[\s\S]*?<\/main>/) || [prose])[0];
+      const LENDER = /our (?:preferred|in-house) lender|BrickWood|our lender/i;
+      const near = [...mainOnly.matchAll(TRIGGER_DOWN)].some(m =>
+        LENDER.test(mainOnly.slice(Math.max(0, m.index - 500), m.index + 500)));
+      const label = near ? "HIGH" : "review";
+      W(`Reg Z ${label}: downpayment figure in copy (${[...new Set(trig)].slice(0, 3).join(", ")})`
+        + (near ? " stated alongside the affiliated lender — closest to a credit ad; rewrite qualitatively or add APR + repayment terms"
+                : " — check whether this page is describing a program/market or offering credit"));
+    }
     if (s.includes("c3SendForm(") && !s.includes(TCPA)) E("lead form present but the exact TCPA consent string is missing or altered");
     if (/brickwoodmortgage\.com/.test(prose) && !s.includes(AFBA_SIG)) E("links to the affiliated lender without an AfBA disclosure");
     const low = decodeEnt(prose).toLowerCase();

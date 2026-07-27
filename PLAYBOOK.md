@@ -115,11 +115,38 @@ strongest signal for both Google and AI answer engines.
 Do this before generating JSON-LD, `llms-full.txt` or the sitemap entry.
 Fixing copy afterwards means fixing it in four places.
 
-**A14. Regulation Z.** Never state a down-payment amount or percentage, a
-payment amount, the number of payments, or a finance charge. Any one of them
-obliges you to also publish APR and full repayment terms. Write qualitatively:
-"a larger down payment and a somewhat higher rate; we quote your real numbers."
-→ *Verify:* `audit` warns on any `N% down` in prose.
+**A14. Regulation Z.** The four triggering terms in
+[12 CFR 1026.24(d)(1)](https://www.consumerfinance.gov/rules-policy/regulations/1026/24/),
+quoted verbatim, are:
+
+1. "The amount or percentage of any downpayment"
+2. "The number of payments or period of repayment"
+3. "The amount of any payment"
+4. "The amount of any finance charge"
+
+State any one and 1026.24(d)(2) requires you to also publish the downpayment,
+the full repayment terms, **and** the APR using that term.
+
+**Scope, which is the part people get wrong.** 1026.1(c) applies Reg Z to those
+who *offer or extend* credit. A brokerage is not a creditor. But 1026.24(a) is
+written about "an advertisement for credit", and this brokerage has a disclosed
+affiliation with a lender and an MLO on staff, so the safest reading is that
+financing copy here can be treated as credit advertising.
+
+Separately, the **MAP Rule (Regulation N, 12 CFR 1014)** covers "any person",
+and real estate brokers are named in the rulemaking as likely respondents. But
+Reg N prohibits *material misrepresentations* about mortgage terms — it does not
+turn an accurate figure into a violation. Accuracy is the defence there.
+
+**Practical rule for new pages:** write financing qualitatively. "A larger down
+payment and a somewhat higher rate; we quote your real numbers." Then no
+trigger term exists and no disclosure obligation attaches.
+
+→ *Verify:* `audit` tiers every `N% down`. **HIGH** means the figure sits within
+500 characters of the affiliated lender inside `<main>` — that is the closest
+thing to an offer and should be rewritten. **review** means it is describing a
+government program or the market, which is far weaker ground for calling it an
+advertisement.
 
 **A15. TCPA.** Any form collecting a phone number carries the locked consent
 string byte-for-byte (see Locked strings below), as an unchecked checkbox.

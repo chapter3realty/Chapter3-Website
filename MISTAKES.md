@@ -93,8 +93,20 @@ feature works. Open the real source.
 
 Current `audit` warnings that are deliberate. Do not "fix" them silently.
 
-- **11 legacy pages state a down-payment percentage.** Regulation Z exposure,
-  pending attorney review. New pages must not add to this list.
+- **11 legacy pages state a down-payment percentage.** Cross-referenced against
+  the rule text on 2026-07-26 and now tiered by `audit`:
+  - **4 HIGH** — the figure sits beside the affiliated lender in body copy, the
+    closest thing to a credit advertisement: `/buyers/va-loans/`,
+    `/invest/condo-buildings/`, `/invest/strategies/dscr-loans/`,
+    `/sell/sell-my-condo/`. `dscr-loans` is the sharpest: "our preferred lender
+    asks for 20 percent down" names a creditor and its requirement.
+  - **7 review** — describing a government fee schedule or who is buying in the
+    market, not offering credit.
+  Reg Z 1026.1(c) applies to those who offer or extend credit, and a brokerage
+  is not a creditor; the risk comes from the disclosed lender affiliation and
+  the MLO on staff. Reg N covers brokers but only bars misrepresentations, so
+  accuracy is the defence there. Still an attorney call, but the four HIGH
+  pages are where it matters. New pages must not add to this list.
 - **`--brass` link colour measures 3.01:1 on ivory**, below AA for body text.
   Brand-level decision.
 - **`/sell/` ships a stale duplicate JS bundle** with an old `recalcLtr`. That
