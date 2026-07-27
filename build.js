@@ -396,10 +396,16 @@ function audit() {
       const darkText = /color:\s*(?:var\(--muted\)|var\(--navy\)|rgba\(28,\s*32,\s*40)/.test(col);
       // Both directions. Only checking one is how 8 navy-hero bylines got
       // "fixed" into navy-on-navy at 1.00:1 while the gate stayed green.
+      // `.detail-hero{background:var(--ivory)}` is a single unambiguous CSS rule,
+      // so ivory text there is provably invisible. Blocker.
       if (lightHero && ivoryText)
         E("byline is ivory on the light .detail-hero (invisible) — use color:var(--muted)");
+      // The reverse is NOT provable statically. "No .detail-hero" does not mean
+      // the hero is navy: /submarkets/, /market-reports/ and the first-time-buyer
+      // page all have light heroes from other classes, and this rule wrongly
+      // called them navy. Only the browser knows. Warn and defer.
       if (!lightHero && darkText)
-        E("byline is dark on a navy hero (invisible) — use color:rgba(244,239,232,.5)");
+        W("dark byline on a hero this script cannot classify — measure it with .claude/verify.js before trusting either colour");
     }
     if (lightHero && /class="btn btn-outline btn-lg"[^>]*style="color:\s*var\(--ivory\)/.test(s))
       E("hero outline button is ivory on the light .detail-hero (invisible) — drop the inline colour override");
