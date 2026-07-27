@@ -218,7 +218,10 @@ produced real bugs here.
 
 **A36. Nav** (`partials/header.html` → `stitch`), **footer** if it is a tool,
 **sitemap**, **llms.txt**, and at least one **contextual inbound link** from a
-related page. A page nothing links to is a page Google discounts.
+related page — a link in body copy, not just the nav.
+→ *Verify:* `audit` **fails** on an orphan. Nav and footer links do not count,
+because they link everything and would hide a genuinely orphaned page.
+`/buyers/new-construction/` shipped orphaned exactly this way.
 
 **A37. `llmsfull`** to regenerate the plain-text mirror.
 

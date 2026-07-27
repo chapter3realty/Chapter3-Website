@@ -287,6 +287,12 @@ function audit() {
   const smDates = [...sm.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map(m => m[1]);
   const llms = fs.existsSync(path.join(ROOT, "llms.txt")) ? fs.readFileSync(path.join(ROOT, "llms.txt"), "utf-8") : "";
   const declaredKw = new Map();  // keyword -> [pages]  (cannibalisation guard)
+  const inbound = new Map();     // page -> Set(pages linking to it from BODY copy)
+  const shingles = new Map();    // page -> Set(8-word shingles) for near-duplicate detection
+  const indexable = [];
+  // Phrases that only make sense in reading order. An AI answer engine quotes a
+  // single passage, so "as mentioned above" makes that passage useless.
+  const ANAPHORA = /\b(?:as (?:mentioned|noted|discussed) (?:above|earlier|before)|as described above|see above|the (?:former|latter))\b/i;
 
   for (const f of pages) {
     // 404.html is an error document, not an indexable page: no canonical or sitemap entry.
@@ -388,6 +394,31 @@ function audit() {
         E(`dead internal link ${m[1]}`);
     }
 
+    /* ---- collect for the cross-page checks below ---- */
+    if (!noindex) {
+      indexable.push(rel);
+      const mainM = s.match(/<main[\s\S]*?<\/main>/);
+      const mainHtml = (mainM ? mainM[0] : s).replace(/<script[\s\S]*?<\/script>/g, " ");
+      // inbound links from BODY copy only: nav and footer link everything, so
+      // counting them would hide a genuinely orphaned page.
+      for (const m of mainHtml.matchAll(/href="(\/[a-zA-Z0-9\-/]*)"/g)) {
+        const t = m[1].split("#")[0];
+        if (t === rel) continue;
+        if (!inbound.has(t)) inbound.set(t, new Set());
+        inbound.get(t).add(rel);
+      }
+      const words = decodeEnt(mainHtml.replace(/<[^>]+>/g, " ")).toLowerCase().match(/[a-z]{3,}/g) || [];
+      const sh = new Set();
+      for (let i = 0; i + 8 <= words.length; i++) sh.add(words.slice(i, i + 8).join(" "));
+      shingles.set(rel, sh);
+      const plain = decodeEnt(mainHtml.replace(/<[^>]+>/g, " "));
+      const ana = plain.match(ANAPHORA);
+      if (ana) W(`reading-order phrase "${ana[0]}" — breaks the passage if an AI quotes it alone`);
+      const heads = [...s.matchAll(/<h[23][^>]*>([\s\S]*?)<\/h[23]>/g)].map(m => m[1]);
+      if (heads.length && !heads.some(h => h.includes("?")))
+        W("no question-shaped H2/H3 — weaker for People Also Ask and AI answers");
+    }
+
     /* ---- images ---- */
     for (const m of s.matchAll(/<img\b[^>]*>/g)) {
       if (!/\balt=/.test(m[0])) E("an <img> has no alt attribute");
@@ -403,6 +434,36 @@ function audit() {
     errors.push(`sitemap.xml: all ${smDates.length} lastmod dates are identical (${smDates[0]}) - only date pages whose visible text changed`);
   for (const dt of new Set(smDates))
     if (!/^\d{4}-\d{2}-\d{2}$/.test(dt)) errors.push(`sitemap.xml: malformed lastmod "${dt}"`);
+
+  /* ---- orphan pages ----
+   * A page nothing links to from body copy gets very little crawl priority and
+   * no internal link equity. /buyers/new-construction/ shipped orphaned. */
+  for (const rel of indexable) {
+    if (rel === "/") continue;                       // the homepage is linked by every nav
+    if (!inbound.has(rel) || inbound.get(rel).size === 0)
+      errors.push(`${rel}  orphan: no other page links to it from body copy (nav/footer do not count)`);
+  }
+
+  /* ---- near-duplicate bodies ----
+   * Template-built siblings can drift into being the same page twice, which
+   * splits impressions between them. */
+  for (let i = 0; i < indexable.length; i++) {
+    for (let j = i + 1; j < indexable.length; j++) {
+      const a = shingles.get(indexable[i]), b = shingles.get(indexable[j]);
+      if (!a || !b || a.size < 40 || b.size < 40) continue;
+      let shared = 0;
+      for (const x of a) if (b.has(x)) shared++;
+      const overlap = shared / Math.min(a.size, b.size);
+      if (overlap > 0.25)
+        warns.push(`near-duplicate content ${(overlap * 100).toFixed(0)}%: ${indexable[i]} and ${indexable[j]}`);
+    }
+  }
+
+  /* ---- llms.txt must not claim to be fresher or staler than the site ---- */
+  const llmsDate = (llms.match(/Last updated:\s*(\d{4}-\d{2}-\d{2})/) || [])[1];
+  const newestPage = [...smDates].sort().pop();
+  if (llmsDate && newestPage && llmsDate < newestPage)
+    warns.push(`llms.txt says "Last updated: ${llmsDate}" but the newest page changed ${newestPage} — run 'node build.js llmsfull' and update the header`);
 
   /* ---- divergent duplicate logic across bundles ----
    * Two bundles defining the same function with DIFFERENT bodies means one page
