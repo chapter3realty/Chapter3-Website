@@ -32,6 +32,13 @@ Run it against one case that should match and one that should not. Several
 from a 0×0 viewport, 20 false positives from a nesting-blind text scan, a
 "51 pages missing dates" count that was reading JSON-LD instead of visible copy.
 
+**Silence is not a pass.** A rule that cannot match reports nothing, and nothing
+looks exactly like clean. Two of these got through: a `dateModified` regex that
+required no whitespace skipped 30 pages, and a `ReferenceError` in a new rule
+was invisible because the test piped output through `grep` for the *expected*
+message — which a crash never contains. Assert the failing case actually fails,
+and check the exit code, not a filtered line.
+
 **5. Never infer a fact about the business or the world from repo artifacts.**
 Git history is not the site's launch date. A file's presence is not proof a
 feature works. Open the real source.
@@ -78,6 +85,9 @@ feature works. Open the real source.
 | 19 | Bulk-stamped all 54 sitemap `lastmod` dates to one day. | `audit` bulk-stamp guard; dates come from real content-change commits |
 | 20 | Let `llms.txt` advertise a date older than the newest page. | `audit` freshness rule |
 | 21 | Left visible date, schema `dateModified` and sitemap `lastmod` disagreeing on 34 pages. | `audit` three-date agreement rule |
+| 29 | `llmsfull` dated the file with `new Date().toISOString()`, which is UTC. `llms-full.txt` claimed `2026-07-28` while every page in it said `07-27` — an index advertising itself as newer than its own content. | The date now comes from the newest sitemap `lastmod`, so it is content-derived and deterministic. `audit` errors if either llms file is **newer** than every page, and warns if it is older. |
+| 30 | The three-date rule matched `"dateModified":"` with **no** whitespace. Every pretty-printed JSON-LD block therefore skipped the check entirely and the gate reported clean. 30 pages were carrying a second `WebPage` block frozen at `2026-07-10` against sitemap dates up to `07-25`. | Regex allows `\s*` around the colon, checks **every** occurrence, and errors when one page holds two different `dateModified` values. A scanner that cannot match is not a passing test — see rule 4. |
+| 31 | Counted a page as edited because the only diff was the `Updated <date>` stamp that had just been added to it. That reasoning would have bumped nearly every URL — the exact bulk stamp rule 19 exists to stop. | Content comparison strips date stamps and boilerplate entity renames before diffing, so a page only counts as changed when its actual prose changed. |
 
 ## Design and CTA
 

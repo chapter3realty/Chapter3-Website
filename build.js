@@ -206,8 +206,12 @@ function llmsfull() {
     return s.split("\n").map(l => l.replace(/\s+/g, " ").trim()).join("\n")
             .replace(/\n{3,}/g, "\n\n").trim();
   };
-  const today = new Date().toISOString().slice(0, 10);
   const sm = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
+  // Date the file by the newest real content change, not by the clock.
+  // toISOString() is UTC, so after ~8pm Eastern it stamped tomorrow's date and
+  // llms-full.txt claimed to be newer than every page in it.
+  const today = [...sm.matchAll(/<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/g)]
+    .map(m => m[1]).sort().pop();
   const urls = [...sm.matchAll(/<loc>(https:\/\/chapter3realty\.com(\/[^<]*))<\/loc>/g)].map(m => [m[1], m[2]]);
   const out = [
     "# Chapter3 Realty - Full Site Content", "",
@@ -286,6 +290,10 @@ function audit() {
   const smUrls = new Set([...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]));
   const smDates = [...sm.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map(m => m[1]);
   const llms = fs.existsSync(path.join(ROOT, "llms.txt")) ? fs.readFileSync(path.join(ROOT, "llms.txt"), "utf-8") : "";
+  // header only: llms-full.txt is 650KB of page copy and "Last updated" appears
+  // inside it, so matching the whole file would read a page's date as the index's
+  const llmsFull = fs.existsSync(path.join(ROOT, "llms-full.txt"))
+    ? fs.readFileSync(path.join(ROOT, "llms-full.txt"), "utf-8").slice(0, 2000) : "";
   const declaredKw = new Map();  // keyword -> [pages]  (cannibalisation guard)
   // Function names PER BUNDLE, so a page is checked only against the bundles it
   // actually loads. Pooling every bundle together hid a real break: /sell/ called
@@ -422,12 +430,20 @@ function audit() {
                     "July","August","September","October","November","December"];
     const wantDate = (sm.match(new RegExp("<loc>" + url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "</loc>\\s*<lastmod>([^<]+)</lastmod>")) || [])[1];
     if (wantDate) {
-      const dm = (s.match(/"dateModified":"([^"]+)"/) || [])[1];
-      if (dm && dm !== wantDate) E(`schema dateModified ${dm} != sitemap lastmod ${wantDate}`);
-      const vm = s.replace(/<script[\s\S]*?<\/script>/g, " ").match(/Updated ([A-Z][a-z]+) (\d{1,2}), (20\d\d)/);
+      // \s* after the colon: this regex used to demand `"dateModified":"` with no
+      // space, so every pretty-printed JSON-LD block silently skipped the check.
+      // /invest/strategies/brrrr/ sat at 2026-07-10 against a 07-19 sitemap and
+      // the gate reported clean. A scanner that cannot match is not a passing test.
+      const dms = [...s.matchAll(/"dateModified"\s*:\s*"([^"]+)"/g)].map(m => m[1]);
+      if (!dms.length) W("no schema dateModified — cannot verify the page date");
+      // a page can carry more than one JSON-LD block; they must not disagree
+      if (new Set(dms).size > 1) E(`schema has conflicting dateModified values: ${[...new Set(dms)].join(", ")}`);
+      for (const dm of new Set(dms))
+        if (dm !== wantDate) E(`schema dateModified ${dm} != sitemap lastmod ${wantDate}`);
+      const vm = s.replace(/<script[\s\S]*?<\/script>/g, " ").match(/(?:Updated|Reviewed) ([A-Z][a-z]+) (\d{1,2}), (20\d\d)/);
       if (vm) {
         const iso = `${vm[3]}-${String(MONTHS.indexOf(vm[1]) + 1).padStart(2, "0")}-${String(+vm[2]).padStart(2, "0")}`;
-        if (iso !== wantDate) E(`visible "Updated ${vm[0].slice(8)}" != sitemap lastmod ${wantDate}`);
+        if (iso !== wantDate) E(`visible "${vm[0]}" != sitemap lastmod ${wantDate}`);
       }
     }
 
@@ -581,11 +597,21 @@ function audit() {
     }
   }
 
-  /* ---- llms.txt must not claim to be fresher or staler than the site ---- */
-  const llmsDate = (llms.match(/Last updated:\s*(\d{4}-\d{2}-\d{2})/) || [])[1];
+  /* ---- llms.txt and llms-full.txt must match the site, in BOTH directions ----
+   * Was one-directional and only covered llms.txt, so it missed llms-full.txt
+   * claiming 2026-07-28 while every page said 07-27. Cause: toISOString() is
+   * UTC, which rolls over at 8pm Eastern. A file that claims to be newer than
+   * all of its own content tells a crawler the index is ahead of the pages. */
   const newestPage = [...smDates].sort().pop();
-  if (llmsDate && newestPage && llmsDate < newestPage)
-    warns.push(`llms.txt says "Last updated: ${llmsDate}" but the newest page changed ${newestPage} — run 'node build.js llmsfull' and update the header`);
+  for (const [label, body] of [["llms.txt", llms], ["llms-full.txt", llmsFull]]) {
+    if (!body) continue;
+    const d = (body.match(/Last updated:\s*(\d{4}-\d{2}-\d{2})/) || [])[1];
+    if (!d || !newestPage) continue;
+    if (d < newestPage)
+      warns.push(`${label} says "Last updated: ${d}" but the newest page changed ${newestPage} — run 'node build.js llmsfull'`);
+    if (d > newestPage)
+      errors.push(`${label} claims ${d}, which is newer than every page on the site (newest is ${newestPage}) — a clock/timezone stamp, not a real content date`);
+  }
 
   /* ---- divergent duplicate logic across bundles ----
    * Two bundles defining the same function with DIFFERENT bodies means one page
