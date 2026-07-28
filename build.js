@@ -180,6 +180,294 @@ function stitch() {
   console.log(totalRepl ? `\nDone. Run 'node build.js check', then deploy.` : `\nEverything already matched the partials - nothing to do.`);
 }
 
+/* =========================================================================
+ * dates - the ONE place any date this site publishes is decided.
+ *
+ * Every page states its age in three places: the visible "Updated <date>"
+ * line, schema dateModified, and sitemap lastmod. They must agree, and they
+ * must equal the day the page's PROSE last changed. Doing this by hand went
+ * wrong in every possible direction:
+ *
+ *   - all 54 lastmods stamped to one day, which tells Google the whole site
+ *     is churn and is the fastest way to have it stop trusting the dates
+ *   - llms-full.txt dated by UTC clock, claiming a day that had not happened
+ *   - 30 pages carrying two different dateModified values at once
+ *   - a page counted as "edited" because the only change was the date stamp
+ *     this very process had just written to it
+ *
+ * So: never decide a date by hand or by clock again. Run this. It derives
+ * each date from git - the day the page's stripped visible text actually
+ * changed - and writes that one value to all three places.
+ *
+ *   node build.js dates          fix every date, print what moved and why
+ *   node build.js dates --check  report drift, change nothing, exit 1
+ *
+ * --check runs inside preflight, so a page whose dates drifted cannot reach
+ * a deploy. If it fails, the fix is always `node build.js dates`.
+ * ========================================================================= */
+
+// Local calendar date. NEVER toISOString(): it is UTC, so from ~8pm Eastern
+// it returns tomorrow. That shipped - llms-full.txt claimed 2026-07-28 while
+// every page inside it said 07-27.
+const localISO = (d = new Date()) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+
+const MONTH_NAMES = ["January", "February", "March", "April", "May", "June",
+                     "July", "August", "September", "October", "November", "December"];
+const longDate = (iso) => {
+  const [y, m, d] = iso.split("-").map(Number);
+  return `${MONTH_NAMES[m - 1]} ${d}, ${y}`;
+};
+
+// A visible date stamp, in any wording the site uses.
+const DATE_STAMP = /(?:&middot;|·)?\s*\b(Updated|Reviewed|Published|Verified|Last updated)\s+[A-Z][a-z]+\s+\d{1,2},?\s*20\d\d/g;
+// Only these two mean "modified". "Published" is a historical fact and is
+// never rewritten - a page can be published in June and updated in July.
+const MODIFIED_STAMP = /\b(Updated|Reviewed)\s+[A-Z][a-z]+\s+\d{1,2},\s*20\d\d/g;
+
+/*
+ * What counts as CONTENT for the purpose of dating a page.
+ *
+ * Everything stripped here changes without the page saying anything new.
+ * Both directions of getting this wrong have already happened:
+ *
+ *   strip too little - the date stamp this command writes reads as an edit on
+ *     the next run, so every page bumps every time and the sitemap is bulk
+ *     stamped. This is the single rule the site most needs not to break, and
+ *     the naive version of this check walked straight into it.
+ *   strip too much - a real rewrite looks like nothing and the page keeps
+ *     advertising a stale date.
+ *
+ * The site mixes &#39; and &#x27; for apostrophes, so entities are normalised
+ * before comparing or the same sentence reads as two different ones.
+ */
+const contentOf = (html) => {
+  if (html == null) return null;
+  const m = html.match(/<main[\s\S]*?<\/main>/i);
+  let b = m ? m[0] : html;
+  b = b.replace(/<script[\s\S]*?<\/script>/gi, " ")
+       .replace(/<style[\s\S]*?<\/style>/gi, " ")
+       .replace(/<!--[\s\S]*?-->/g, " ")
+       .replace(/<[^>]+>/g, " ")
+       .replace(/&#x27;|&#39;|&rsquo;|&#8217;/g, "'")
+       .replace(/&quot;|&#34;/g, '"')
+       .replace(/&amp;/g, "&").replace(/&nbsp;/g, " ").replace(/&middot;/g, " ");
+  b = b.replace(DATE_STAMP, " ");
+  // legal-entity rename: boilerplate, lands on every page at once, says nothing new
+  b = b.replace(/Chapter3 Realty (?:LLC|Corp|Inc)\b/g, "Chapter3 Realty");
+  b = b.replace(/\s+/g, " ");
+  // Removing a tag leaves a space behind, so wrapping words in a link turns
+  // "construction," into "construction ,". Real case: /submarkets/carolina-forest/
+  // linked two existing words to /buyers/new-construction/ and nothing else. The
+  // prose was identical, but the naive compare called it an edit and wanted to
+  // bump the date. Collapse space before punctuation so markup-only changes are
+  // invisible here and prose changes still are not.
+  b = b.replace(/\s+([,.;:!?%)\]])/g, "$1").replace(/([(\[])\s+/g, "$1");
+  return b.trim();
+};
+
+const _gitCache = new Map();
+const git = (args) => {
+  const key = args.join(" ");
+  if (_gitCache.has(key)) return _gitCache.get(key);
+  const r = require("child_process").spawnSync("git", args,
+    { encoding: "utf-8", maxBuffer: 128 * 1024 * 1024 });
+  const out = r.status === 0 ? r.stdout : null;
+  _gitCache.set(key, out);
+  return out;
+};
+
+/*
+ * History and blobs are fetched in exactly two git calls for the whole site.
+ *
+ * The obvious version - `git show <sha>:<path>` per commit per page - spawned
+ * about 900 processes and took 4m47s on Windows. A gate nobody will wait for is
+ * a gate nobody runs. One `git log --name-only` gives every commit that touched
+ * every file; one `git cat-file --batch` streams every blob needed.
+ */
+let _hist = null;
+const loadHistory = () => {
+  if (_hist) return _hist;
+  _hist = new Map();
+  const out = git(["log", "--format=\x01%H %as", "--name-only"]) || "";
+  for (const rec of out.split("\x01")) {
+    if (!rec.trim()) continue;
+    const lines = rec.split("\n");
+    const head = lines[0].trim(), sp = head.indexOf(" ");
+    if (sp < 0) continue;
+    const sha = head.slice(0, sp), date = head.slice(sp + 1).trim();
+    for (const raw of lines.slice(1)) {
+      const p = raw.trim();
+      if (!p) continue;
+      if (!_hist.has(p)) _hist.set(p, []);
+      _hist.get(p).push({ sha, date });   // git log is newest-first
+    }
+  }
+  return _hist;
+};
+
+// git cat-file --batch: stdin one "<sha>:<path>" per line, stdout
+// "<oid> <type> <size>\n<bytes>\n" per hit or "<input> missing\n" per miss.
+// Parsed as Buffer because sizes are byte counts, not character counts.
+const catFile = (specs) => {
+  const out = new Map();
+  if (!specs.length) return out;
+  const r = require("child_process").spawnSync("git", ["cat-file", "--batch"],
+    { input: specs.join("\n") + "\n", maxBuffer: 1024 * 1024 * 1024 });
+  if (r.status !== 0 || !r.stdout) return out;
+  const buf = r.stdout;
+  let pos = 0, i = 0;
+  while (pos < buf.length && i < specs.length) {
+    const nl = buf.indexOf(0x0a, pos);
+    if (nl === -1) break;
+    const header = buf.slice(pos, nl).toString("utf-8");
+    pos = nl + 1;
+    if (/\bmissing$/.test(header)) { out.set(specs[i++], null); continue; }
+    const size = parseInt(header.slice(header.lastIndexOf(" ") + 1), 10);
+    if (!Number.isFinite(size)) break;
+    out.set(specs[i++], buf.slice(pos, pos + size).toString("utf-8"));
+    pos += size + 1;
+  }
+  return out;
+};
+
+/*
+ * The day this page's prose last changed.
+ *
+ * Working tree first: an uncommitted content change is a change made today, and
+ * it must win over history or you would publish a page whose visible date
+ * predates the edit sitting in front of you.
+ *
+ * Consecutive entries in `git log -- <path>` are exactly the commits that
+ * touched that path, so the content at commit i-1 is what commit i changed
+ * away from. Comparing neighbours needs N blobs, not the 2N that looking up
+ * every <sha>^ would cost.
+ *
+ * No --follow. Across a rename, <sha>:<path> points at a path that did not
+ * exist yet, which reads as "file added" and dates the page to the move. A
+ * moved page has a new URL and is a new page anyway.
+ */
+const trueDate = (relFile, blobs) => {
+  const gp = relFile.split(path.sep).join("/");
+  const hist = loadHistory().get(gp) || [];
+  const disk = contentOf(fs.readFileSync(relFile, "utf-8"));
+  if (!hist.length) return { date: localISO(), why: "new page, not committed yet" };
+  if (disk !== contentOf(blobs.get(`${hist[0].sha}:${gp}`)))
+    return { date: localISO(), why: "uncommitted content change" };
+  for (let i = 0; i < hist.length - 1; i++) {
+    const now = contentOf(blobs.get(`${hist[i].sha}:${gp}`));
+    const prev = contentOf(blobs.get(`${hist[i + 1].sha}:${gp}`));
+    if (prev === null) return { date: hist[i].date, why: "first published" };
+    if (now !== prev) return { date: hist[i].date, why: "prose last changed" };
+  }
+  // Every commit touching this file was chrome, assets or dates. Use the oldest
+  // rather than today: the content genuinely has not changed since then.
+  return { date: hist[hist.length - 1].date, why: "first published" };
+};
+
+// Rewrite visible stamps without touching JSON-LD, which lives in <script> and
+// carries its own dateModified handled separately.
+const setVisibleDate = (html, iso) => {
+  const held = [];
+  let out = html.replace(/<script[\s\S]*?<\/script>/gi, (m) => {
+    held.push(m); return ` S${held.length - 1} `;
+  });
+  out = out.replace(MODIFIED_STAMP, `$1 ${longDate(iso)}`);
+  return out.replace(/ S(\d+) /g, (_, i) => held[+i]);
+};
+
+function dates(check) {
+  const smPath = path.join(ROOT, "sitemap.xml");
+  if (!fs.existsSync(smPath)) { console.log("no sitemap.xml"); process.exit(1); }
+  let sm = fs.readFileSync(smPath, "utf-8");
+  if (git(["rev-parse", "--git-dir"]) === null) {
+    console.log("dates: not a git repository - cannot derive content dates."); process.exit(1);
+  }
+
+  const entries = [...sm.matchAll(
+    /<loc>https:\/\/chapter3realty\.com(\/[^<]*)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g)];
+  const drift = [], moved = [];
+
+  const fileFor = (url) => url === "/" ? path.join(ROOT, "index.html")
+    : path.join(ROOT, url.replace(/^\//, "").replace(/\/$/, "").split("/").join(path.sep), "index.html");
+
+  // One batched blob fetch for the whole site, before any page is examined.
+  const hist = loadHistory();
+  const specs = [];
+  for (const [, url] of entries) {
+    const f = fileFor(url);
+    if (!fs.existsSync(f)) continue;
+    const gp = f.split(path.sep).join("/");
+    for (const h of hist.get(gp) || []) specs.push(`${h.sha}:${gp}`);
+  }
+  const blobs = catFile(specs);
+
+  for (const e of entries) {
+    const [, url, had] = e;
+    const file = fileFor(url);
+    if (!fs.existsSync(file)) { drift.push(`${url}  in sitemap but no file on disk`); continue; }
+
+    const { date: want, why } = trueDate(file, blobs);
+    const before = fs.readFileSync(file, "utf-8");
+    let after = before.replace(/("dateModified"\s*:\s*")[^"]+(")/g, `$1${want}$2`);
+    after = setVisibleDate(after, want);
+
+    // datePublished is a historical fact. If this ever moves it, stop.
+    const pubBefore = (before.match(/"datePublished"\s*:\s*"[^"]+"/g) || []).join("|");
+    const pubAfter = (after.match(/"datePublished"\s*:\s*"[^"]+"/g) || []).join("|");
+    if (pubBefore !== pubAfter) {
+      console.log(`\nFAIL - ${url}: datePublished would change. Refusing.`); process.exit(1);
+    }
+
+    const smWrong = had !== want, pageWrong = after !== before;
+    if (!smWrong && !pageWrong) continue;
+
+    if (check) {
+      if (smWrong) drift.push(`${url}  sitemap lastmod ${had}, but ${why} on ${want}`);
+      if (pageWrong) drift.push(`${url}  visible date or schema disagrees with ${want}`);
+    } else {
+      if (pageWrong) fs.writeFileSync(file, after);
+      if (smWrong) sm = sm.replace(e[0], e[0].replace(`<lastmod>${had}</lastmod>`, `<lastmod>${want}</lastmod>`));
+      moved.push(`${url}  ${had} -> ${want}  (${why})`);
+    }
+  }
+
+  const newest = [...sm.matchAll(/<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/g)].map(m => m[1]).sort().pop();
+  const lp = path.join(ROOT, "llms.txt");
+  if (fs.existsSync(lp) && newest) {
+    const l = fs.readFileSync(lp, "utf-8");
+    const cur = (l.match(/Last updated:\s*(\d{4}-\d{2}-\d{2})/) || [])[1];
+    if (cur && cur !== newest) {
+      if (check) drift.push(`llms.txt  Last updated ${cur}, newest page is ${newest}`);
+      else {
+        fs.writeFileSync(lp, l.replace(/(Last updated:\s*)\d{4}-\d{2}-\d{2}/, `$1${newest}`));
+        moved.push(`llms.txt  ${cur} -> ${newest}`);
+      }
+    }
+  }
+
+  if (check) {
+    if (drift.length) {
+      console.log(`\nFAIL (${drift.length}) - dates are wrong. Run 'node build.js dates'.`);
+      drift.forEach(d => console.log("  !! " + d));
+      process.exit(1);
+    }
+    console.log(`OK - all ${entries.length} pages date to their real last content change.`);
+    return;
+  }
+
+  if (!fs.existsSync(smPath) || !moved.length) {
+    console.log(`OK - all ${entries.length} pages already correct. Nothing to change.`);
+    return;
+  }
+  fs.writeFileSync(smPath, sm);
+  console.log(`Corrected ${moved.length}:`);
+  moved.forEach(m => console.log("  " + m));
+  const bump = moved.filter(m => !m.startsWith("llms.txt")).length;
+  console.log(`\n${bump} page dates moved, ${entries.length - bump} left alone.`);
+  console.log("llms-full.txt carries the header date - run 'node build.js llmsfull' if page text changed.");
+}
+
 /* llmsfull: regenerate chapter3realty/llms-full.txt from the live HTML so it can
  * never drift from the pages again. Page list + order come from sitemap.xml, so
  * anything not in the sitemap (legal pages, map) is automatically excluded. */
@@ -654,10 +942,14 @@ function audit() {
 }
 
 const cmd = process.argv[2] || "check";
+const flag = process.argv.includes("--check");
 if (cmd === "check") check();
 else if (cmd === "rehash") rehash();
 else if (cmd === "stitch") stitch();
 else if (cmd === "llmsfull") llmsfull();
+else if (cmd === "dates") dates(flag);
 else if (cmd === "audit") audit();
-else if (cmd === "preflight") { check(); console.log(""); audit(); }
-else { console.log("Usage: node build.js [check|rehash|stitch|llmsfull|audit|preflight]"); process.exit(1); }
+// dates --check runs last: it is the only gate that compares what the pages
+// CLAIM against what git says actually happened.
+else if (cmd === "preflight") { check(); console.log(""); audit(); console.log(""); dates(true); }
+else { console.log("Usage: node build.js [check|rehash|stitch|llmsfull|dates|audit|preflight]"); process.exit(1); }

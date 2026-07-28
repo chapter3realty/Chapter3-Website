@@ -252,10 +252,23 @@ because they link everything and would hide a genuinely orphaned page.
 
 **A37. `llmsfull`** to regenerate the plain-text mirror.
 
-**A38. Sitemap `lastmod` = today only for pages whose visible text changed.**
-Never restamp the whole file. A sitemap where every date matches reads as
-auto-generated and Google discounts all of it. Nav, CSS and asset-hash changes
-are **not** content changes.
+**A38. `node build.js dates`.** Never type a date anywhere — not in the byline,
+not in `dateModified`, not in `lastmod`. The command derives each page's date
+from git, by finding the commit where that page's prose actually changed, and
+writes the same value to all three places.
+
+Why it is a command and not a judgement call. Every hand-made version of this
+went wrong: all 54 URLs stamped to one day (a sitemap where every date matches
+reads as auto-generated and Google discounts all of it); `llms-full.txt` dated
+by UTC clock to a day that had not happened; 30 pages carrying two different
+`dateModified` values; and a page counted as edited because the only change was
+the date stamp the process had just written to it.
+
+What it deliberately ignores: nav, CSS, asset hashes, the legal-entity name, and
+markup-only edits. Wrapping existing words in a link does not age a page.
+`datePublished` is never moved; the command aborts if a change would move it.
+
+→ *Verify:* `preflight` runs `dates --check` and fails on any drift.
 
 **A39. `preflight` again**, then commit. Never deploy on the owner's behalf.
 
@@ -271,11 +284,10 @@ and the rendered page matches what you built.
 3. **Blast radius:** did you touch `partials/*` or `assets/*`? If yes, you just
    changed *every page*. Run `stitch` and/or `rehash`, then verify a sample of
    at least three pages in the browser, not just the one you were thinking about.
-4. `node build.js preflight` → must exit 0.
-5. Browser-verify the changed region using Phase 8 checks.
-6. **Did the visible text change?** If yes, update that page's `lastmod`.
-   If you only changed styling, nav, or an asset hash — **do not** touch
-   `lastmod`.
+4. `node build.js dates` — never decide a date yourself. It works out whether
+   the prose changed and updates all three date fields, or leaves the page alone.
+5. `node build.js preflight` → must exit 0.
+6. Browser-verify the changed region using Phase 8 checks.
 7. Commit with a message that names the defect you fixed.
 
 ---

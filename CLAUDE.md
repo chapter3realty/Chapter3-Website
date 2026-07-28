@@ -16,13 +16,21 @@ verified like every page.
 ## Commands
 
 ```
-node build.js preflight   # check + audit. MUST exit 0 before any deploy
+node build.js preflight   # check + audit + dates --check. MUST exit 0 before any deploy
 node build.js check       # asset links, partial drift, stale hashes
 node build.js audit       # page quality, SEO, structured data, compliance
+node build.js dates       # set every date from git. Run after editing page copy
 node build.js stitch      # push partials/* into every page
 node build.js rehash      # after editing assets/*, renames + updates all refs
 node build.js llmsfull    # regenerate llms-full.txt
 ```
+
+**Never type a date into a page, a schema block, or the sitemap.** Run
+`node build.js dates`. It reads git to find the day each page's prose actually
+changed and writes that one value to the visible line, `dateModified` and
+`lastmod` together. It ignores markup-only edits, so wrapping words in a link
+does not age a page, and it leaves `datePublished` alone. `preflight` runs
+`dates --check`, so a page whose dates drifted cannot reach a deploy.
 
 **[MISTAKES.md](MISTAKES.md)** is the log of every mistake made here and what
 stops it recurring. Read its five rules before changing anything.
