@@ -711,6 +711,31 @@ function audit() {
     if (lightHero && /class="btn btn-outline btn-lg"[^>]*style="color:\s*var\(--ivory\)/.test(s))
       E("hero outline button is ivory on the light .detail-hero (invisible) — drop the inline colour override");
 
+    /* ---- the inline MAP block is LOAD-BEARING, not dead code ----
+     * It looks like a leftover from when this was a single-page app, and it was
+     * one delete away from being removed as junk. It is the only thing that
+     * makes the main content visible on most pages.
+     *
+     * The chain: /assets/app.css sets .page-section{display:none} and only
+     * .page-section.active{display:block} shows it. An early inline script
+     * strips .active from every section on DOMContentLoaded and re-adds it to
+     * #page-home - but #page-home exists in exactly ONE file, the homepage. On
+     * every other page that reset leaves nothing active, and the MAP block's
+     * showPage(CUR), registered later and therefore run later, is what puts
+     * .active back. Delete it and 64 pages render their chrome and nothing else.
+     *
+     * Measured, not assumed: /buyers/retirees/ at 375x812 paints 375x8977 with
+     * 7287 characters of copy and passes a hit-test, and does so only because
+     * this block runs. */
+    const hasSection = /class="page-section[^"]*"/.test(s);
+    const ownsPageHome = /id="page-home"/.test(s);
+    const runsReset = /page-home/.test(s);
+    const restores = /showPage\(CUR\)/.test(s);
+    if (hasSection && runsReset && !ownsPageHome && !restores)
+      E("main content would be invisible: this page hides .page-section, runs the " +
+        "reset that looks for #page-home, has no #page-home of its own, and no " +
+        "longer calls showPage(CUR) to restore it. Do not remove the inline MAP block.");
+
     /* ---- the three dates must agree ----
      * visible "Updated <date>" == schema dateModified == sitemap lastmod.
      * They drifted apart on 34 pages before anyone noticed. */
