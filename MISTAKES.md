@@ -134,6 +134,12 @@ Current `audit` warnings that are deliberate. Do not "fix" them silently.
   gate was corrected. Do not strip "0% down" from VA or USDA copy.
 - **`--brass` link colour measures 3.01:1 on ivory**, below AA for body text.
   Brand-level decision.
+- **`--muted` body text measures 3.91:1 on ivory and 3.80:1 on ivory-2**, below
+  the 4.5:1 AA threshold. This is site-wide and pre-existing, not introduced by
+  any one batch: an existing page and a new one measure identically. `--muted`
+  is `rgba(28,32,40,0.58)`. Raising the alpha to **0.64** clears AA on both
+  backgrounds (4.69 and 4.52) and is visually near-identical. Not changed
+  unilaterally because it repaints every page. Owner's call.
 - **`/sell/` ships a stale duplicate JS bundle** with an old `recalcLtr`. That
   page renders no calculator, so no wrong number reaches a user.
 - **Two pages have no question-shaped heading**, which is weaker for AI answers.
