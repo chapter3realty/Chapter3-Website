@@ -110,6 +110,8 @@ feature works. Open the real source.
 | 22 | Gave a URL with no instruction on where to put it; it was pasted into PowerShell and failed. | Say where a command or link goes, and what must be running |
 | 23 | Handed over localhost preview links without saying they die when the server stops. | Same |
 | 24 | Ran two commands on one line, producing `productionwrangler`. | Give one command per block |
+| 37 | Nearly handed over `curl -sI ...` for the owner to verify a 503. In Windows PowerShell `curl` is an **alias for `Invoke-WebRequest`**, which does not take `-sI`, so the check would have errored and the "is the site really down?" question would have gone unanswered. Real curl is at `C:\WINDOWS\system32\curl.exe`. | Always write `curl.exe` for PowerShell. Test any command in the owner's actual shell before sending it. |
+| 38 | `README.md` gave the deploy command **without** `--branch production`, in two places, while `PLAYBOOK.md` had it right. Cloudflare Pages treats any other branch as a preview deployment, so following the README succeeds, prints a URL, and never updates the live site. | Both files now carry the identical command, and the README says why the flag matters. When two docs give the same command, diff them. |
 
 ---
 
