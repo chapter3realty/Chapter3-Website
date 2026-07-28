@@ -79,6 +79,15 @@ feature works. Open the real source.
 | 20 | Let `llms.txt` advertise a date older than the newest page. | `audit` freshness rule |
 | 21 | Left visible date, schema `dateModified` and sitemap `lastmod` disagreeing on 34 pages. | `audit` three-date agreement rule |
 
+## Design and CTA
+
+| # | Mistake | Now prevented by |
+|---|---|---|
+| 25 | Changed `object-position` on a square photo inside a square box. Cover crops nothing when the aspect ratios match, so the "fix" did nothing at all. Reframing needs the BOX aspect changed. | `audit` warns on object-position applied to a square team photo |
+| 26 | Left CTA phone numbers as underlined body text next to a button. They read as prose, not as an action. Flagged twice by the owner. | `audit` warns on a `tel:` link in a CTA row that is not a `.btn` |
+| 27 | Buried the strongest selling point (the AI document analysis) in a paragraph. Buyers skim; it has to be a visual block. | Manual: put a differentiator in a contrast panel, never mid-paragraph |
+| 28 | Claimed a team member reviews "every agreement and addendum". Overstated a person's role. | Manual: describe a role, never promise an individual's involvement in every transaction |
+
 ## Working with the owner
 
 | # | Mistake | Now prevented by |

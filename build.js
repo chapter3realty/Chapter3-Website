@@ -523,6 +523,24 @@ function audit() {
         W("no question-shaped H2/H3 — weaker for People Also Ask and AI answers");
     }
 
+    /* ---- CTA phone links must be buttons, not bare text ----
+     * A tel: link styled as underlined body text reads as prose, not an action.
+     * The owner flagged it twice. Anything in a CTA row must be a .btn. */
+    for (const m of s.matchAll(/<a href="tel:\+18543332135"(?![^>]*class="btn)[^>]*>/g)) {
+      const before = s.slice(Math.max(0, m.index - 260), m.index);
+      if (/#lead-form|btn-brass/.test(before))
+        W("CTA phone link is not styled as a button - use class=\"btn btn-outline\"");
+    }
+
+    /* ---- a square photo in a square box crops nothing ----
+     * object-position on a same-aspect image/box pair is a no-op, which is how
+     * a 'fix' to the team photos changed nothing at all. Flag it so the next
+     * person changes the BOX aspect instead of the position. */
+    for (const m of s.matchAll(/<img[^>]*width="(\d+)"[^>]*height="(\d+)"[^>]*object-position:[^;"]+/g)) {
+      if (m[1] === m[2] && /\/team\//.test(m[0]))
+        W("team photo box is square, so object-position does nothing - change the box aspect ratio to reframe");
+    }
+
     /* ---- images ---- */
     for (const m of s.matchAll(/<img\b[^>]*>/g)) {
       if (!/\balt=/.test(m[0])) E("an <img> has no alt attribute");
