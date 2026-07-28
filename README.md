@@ -77,17 +77,22 @@ It also prints any "heavy page" warnings (a large page-specific inline script). 
 
 ## Pushing to the live site
 
-You push manually (this repo has no auto-deploy). From this folder:
+You push manually (this repo has no auto-deploy). Run this from the repo root,
+the folder that contains `chapter3realty/` and `build.js`.
+
+**`--branch production` is required.** Cloudflare Pages treats every other branch
+name as a preview deployment, so without it the command succeeds, prints a URL,
+and never touches the live site.
 
 ```
-wrangler pages deploy chapter3realty --project-name chapter3realty
+npx wrangler pages deploy chapter3realty --project-name chapter3realty --branch production
 ```
 
 ## build.js commands
 
 | Command | When | What it does |
 | --- | --- | --- |
-| `node build.js check` | Before every push | Verifies asset links, chrome matches partials, no stale assets, reports heavy pages. |
+| `node build.js preflight` | Before every push | Verifies asset links, chrome matches partials, no stale assets, reports heavy pages. |
 | `node build.js rehash` | After editing any file in `chapter3realty/assets/` | Re-fingerprints changed assets and updates every page that links to them, so the browser cache updates. |
 | `node build.js stitch` | After editing any file in `partials/` | Stamps the shared header/footer/snippets into every page. |
 
@@ -96,4 +101,4 @@ wrangler pages deploy chapter3realty --project-name chapter3realty
 1. Edit content in a page, or shared styling in `chapter3realty/assets/`, or chrome in `partials/`.
 2. If you touched `assets/`: `node build.js rehash`. If you touched `partials/`: `node build.js stitch`.
 3. `node build.js check` (fix anything it flags).
-4. `wrangler pages deploy chapter3realty --project-name chapter3realty`
+4. `npx wrangler pages deploy chapter3realty --project-name chapter3realty --branch production`

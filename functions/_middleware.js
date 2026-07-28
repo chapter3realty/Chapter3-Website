@@ -84,15 +84,20 @@ const PAGE = `<!doctype html>
   .box{max-width:32rem;text-align:center}
   .mark{font-size:1.7rem;letter-spacing:.02em;margin-bottom:2.25rem;font-weight:500}
   .mark span{color:var(--brass)}
-  h1{font-size:1.9rem;font-weight:400;margin:0;line-height:1.3}
-  .rule{width:48px;height:2px;background:var(--brass);margin:1.75rem auto 0}
+  h1{font-size:1.9rem;font-weight:400;margin:0 0 1rem;line-height:1.3}
+  p{color:#c9d2de;margin:0 0 2rem;font-size:1.05rem}
+  /* boxed, not an underlined link. A phone number sitting in body text reads as
+     prose and gets skipped; the owner flagged that twice on the main site. */
+  .cta{display:inline-block;padding:.9rem 1.9rem;border:1px solid var(--brass);border-radius:4px;
+       color:var(--brass);font-weight:600;text-decoration:none;font-size:1.15rem;letter-spacing:.01em}
 </style>
 </head>
 <body>
   <div class="box">
     <div class="mark">Chapter<span>3</span></div>
-    <h1>We will be back shortly.</h1>
-    <div class="rule"></div>
+    <h1>We are updating our website.</h1>
+    <p>We will return shortly. You can call or text us any time.</p>
+    <a class="cta" href="tel:+18543332135">854.333.2135</a>
   </div>
 </body>
 </html>`;
