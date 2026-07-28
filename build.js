@@ -287,12 +287,17 @@ function audit() {
   const smDates = [...sm.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map(m => m[1]);
   const llms = fs.existsSync(path.join(ROOT, "llms.txt")) ? fs.readFileSync(path.join(ROOT, "llms.txt"), "utf-8") : "";
   const declaredKw = new Map();  // keyword -> [pages]  (cannibalisation guard)
-  // Every function name any asset bundle defines, so inline handlers can be checked.
-  const assetFns = new Set();
+  // Function names PER BUNDLE, so a page is checked only against the bundles it
+  // actually loads. Pooling every bundle together hid a real break: /sell/ called
+  // showPersona() from a bundle that had been removed from that page, and the
+  // gate stayed green because some other page still shipped it.
+  const fnsByAsset = new Map();
   for (const a of assetFiles().filter(n => n.endsWith(".js"))) {
     const src = fs.readFileSync(path.join(ASSETS, a), "utf-8");
-    for (const m of src.matchAll(/function\s+([A-Za-z_$][\w$]*)/g)) assetFns.add(m[1]);
-    for (const m of src.matchAll(/(?:window\.|var |let |const )([A-Za-z_$][\w$]*)\s*=\s*(?:function|\()/g)) assetFns.add(m[1]);
+    const set = new Set();
+    for (const m of src.matchAll(/function\s+([A-Za-z_$][\w$]*)/g)) set.add(m[1]);
+    for (const m of src.matchAll(/(?:window\.|var |let |const )([A-Za-z_$][\w$]*)\s*=\s*(?:function|\()/g)) set.add(m[1]);
+    fnsByAsset.set(a, set);
   }
   const JS_KEYWORDS = new Set(["if","for","while","return","switch","typeof","void","new","delete","do","else","try","catch"]);
   const inbound = new Map();     // page -> Set(pages linking to it from BODY copy)
@@ -430,11 +435,15 @@ function audit() {
      * `node --check` validates syntax only; it happily passes a page whose
      * onclick calls a function an edit deleted. That shipped once. */
     const inlineFns = new Set([...s.matchAll(/function\s+([A-Za-z_$][\w$]*)/g)].map(m => m[1]));
+    // only the bundles THIS page loads
+    const pageFns = new Set(inlineFns);
+    for (const m of s.matchAll(/\/assets\/([A-Za-z0-9._-]+\.js)/g))
+      for (const fn of (fnsByAsset.get(m[1]) || [])) pageFns.add(fn);
     for (const m of s.matchAll(/on(?:click|change|input|submit)="([A-Za-z_$][\w$]*)\s*\(/g)) {
       const fn = m[1];
       if (JS_KEYWORDS.has(fn)) continue;
-      if (!inlineFns.has(fn) && !assetFns.has(fn))
-        E(`inline handler calls ${fn}() which is not defined in this page or any asset bundle`);
+      if (!pageFns.has(fn))
+        E(`inline handler calls ${fn}() which is not defined on this page or in any bundle this page loads`);
     }
 
     /* ---- legal ---- */
