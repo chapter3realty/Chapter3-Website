@@ -346,3 +346,51 @@ These are current `audit` warnings that are deliberately not fixed. Do not
   containing an old `recalcLtr` with the vacancy double-subtraction bug. The
   page renders no calculator UI, so no wrong number is shown to a user, but the
   dead code is a landmine and wasted bandwidth.
+
+---
+
+## Taking the site offline
+
+`functions/_middleware.js`, line 41. One word.
+
+```
+const MAINTENANCE_ON = true;    // down: every URL returns 503
+const MAINTENANCE_ON = false;   // live
+```
+
+Then deploy. That is the entire procedure. Cloudflare Pages needs a deploy for
+a dashboard environment variable to take effect anyway, so the dashboard buys
+nothing and gives you something to forget to switch back.
+
+**503, never 200.** A maintenance page served with a normal status gets its
+content indexed for every URL on the site, so Google sees 69 identical thin
+pages and can drop them. 503 means temporary: URLs keep their place and Google
+retries. `Retry-After` says when.
+
+**Verify after every flip**, because a deploy that reports success can still
+leave the old deployment on the custom domain:
+
+```
+curl.exe -sI https://chapter3realty.com/ | Select-Object -First 1
+```
+
+`curl.exe`, not `curl`. In PowerShell `curl` is an alias for `Invoke-WebRequest`
+and will not take these flags. Allow a minute or two for the edge to update; a
+200 immediately after deploying usually means propagation, not failure.
+
+Everything 503s including `robots.txt` and `sitemap.xml`. That is correct.
+Googlebot backs off for the duration instead of recording page-level errors. Do
+**not** additionally add `Disallow: /`, `noindex`, or remove sitemap URLs. Those
+say permanent, and permanent is what costs rankings.
+
+The IndexNow key file is exempt so search-engine verification survives.
+
+`https://chapter3realty.com/?preview=letmein` sets a 24-hour cookie that shows
+you the live site while visitors see the notice.
+
+**Keep it under a week.** Past roughly two weeks Google treats a persistent 503
+as real and URLs start dropping. Newly indexed pages fall out first.
+
+Coming back: flip to `false`, deploy, confirm 200, run `indexnow.ps1`, resubmit
+the sitemap in Search Console, then spend that day's quota on the homepage and
+strongest pages.
