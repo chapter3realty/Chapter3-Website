@@ -28,16 +28,33 @@
  * the real site while everyone else sees the notice. Crawlers never get it.
  */
 
+/* =======================================================================
+ *  TURN MAINTENANCE ON AND OFF HERE. Change this one word, then deploy.
+ *
+ *    true   site shows the notice and returns 503
+ *    false  site is live as normal
+ *
+ *  Cloudflare Pages needs a deploy for a dashboard environment variable to
+ *  take effect anyway, so flipping this line is strictly simpler than the
+ *  dashboard and there is nothing to forget to switch back.
+ * ======================================================================= */
+const MAINTENANCE_ON = false;
+
 const RETRY_AFTER_SECONDS = 60 * 60 * 24 * 2; // 2 days; raise if the work runs long
 const BYPASS_COOKIE = "c3_bypass";
+
+// Anyone who knows this can still view the live site while it is down:
+// https://chapter3realty.com/?preview=<word>
+const BYPASS_WORD = "letmein";
 
 export async function onRequest(context) {
   const { request, env, next } = context;
 
-  if (env.MAINTENANCE !== "1") return next();
+  // env var still works, so the dashboard remains an option if you prefer it
+  if (!MAINTENANCE_ON && env.MAINTENANCE !== "1") return next();
 
   const url = new URL(request.url);
-  const secret = env.MAINTENANCE_BYPASS;
+  const secret = env.MAINTENANCE_BYPASS || BYPASS_WORD;
 
   // Grant a bypass cookie, then send you back to the same path without the query.
   if (secret && url.searchParams.get("preview") === secret) {
