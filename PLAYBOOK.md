@@ -104,6 +104,45 @@ stats monthly, statutes quarterly, insurance and program limits twice a year.
 headers as hooks, no em dashes. This is a standing owner instruction.
 → *Verify:* `audit` warns on the banned-phrase list.
 
+**A11a. The buyer test. Apply this before any readability check.**
+For every sentence: *would a buyer, standing in the property, do anything
+differently because of this sentence?* If not, cut it.
+
+This exists because the `/hoa/` batch passed every readability score, at grade
+4.8 to 6.8, and the owner still could not follow it. **Reading level was not the
+defect. Subject matter was.** We wrote about the industry instead of the buyer.
+
+Fails the test, cut on sight:
+- **which body wrote a rule.** Never name Fannie Mae, Freddie Mac, a Selling
+  Guide, a Lender Letter, the NAIC, an insurance institute or a state
+  department in body copy. Say "your lender will require" and move on.
+- **when a rule took effect.** No effective dates, no enactment years, no "as
+  of March 2026", no "for applications on or after". Two dates per page, and
+  only where the date is the point.
+- **how a statute is built,** what it does not say, or which section it is.
+- **market-wide figures** a buyer cannot act on: insured values, counts of
+  associations in a state programme, percentages of exposure.
+- **how we verified something.** That belongs in the commit message.
+
+Passes, keep:
+- what you are responsible for and what the association is
+- what it could cost you
+- what to ask for, and when
+- what goes wrong if you skip it
+
+→ *Verify:* `audit` errors on a hero sub-header over 45 words and a sources
+block over 90 words; warns on 3+ industry bodies, more than 2 dates, and under
+2 in-article CTAs on a page over 900 words.
+
+**A11b. The sources line is a list of links, not a second article.**
+Three to five entries, each a short plain name and a link. Never quote the
+statute, never list section numbers, never write "enacted text read and
+re-verified". Under 90 words including link text. One page shipped 1,022.
+
+**A11c. Two calls to action inside the article.** One about a third of the way
+down, one before the last section. A single ask in the hero gets buried. 45
+pages on this site currently ship with none in the body at all.
+
 **A12. Gloss every jargon term** on first use, in the same sentence.
 
 **A13. Show the reasoning, not just the conclusion.** Firsthand process and real

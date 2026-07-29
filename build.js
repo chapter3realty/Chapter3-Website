@@ -736,6 +736,52 @@ function audit() {
         "reset that looks for #page-home, has no #page-home of its own, and no " +
         "longer calls showPage(CUR) to restore it. Do not remove the inline MAP block.");
 
+    /* ---- written for a buyer, not for the industry ----
+     * All five of these shipped on the /hoa/ batch and the owner, who works in
+     * this industry, said he could not follow half of it. A page can pass every
+     * readability score and still be unreadable, because the defect is subject
+     * matter rather than sentence length. These are the specific failures. */
+    {
+      const mainOnly = (s.match(/<main[\s\S]*?<\/main>/i) || [""])[0];
+      const noScripts = mainOnly.replace(/<(script|style)[\s\S]*?<\/\1>/g, " ");
+      const srcBlock = (noScripts.match(/<p style="font-size:\.78rem[\s\S]*?<\/p>/) || [""])[0];
+      const prose = noScripts.replace(/<p style="font-size:\.78rem[\s\S]*?<\/p>/, " ");
+      const txt = prose.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+      const words = (x) => x.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+
+      // 1. The hero sub-header is the first thing read. 84 words is an essay.
+      const sub = (noScripts.match(/<p class="detail-sub">([\s\S]*?)<\/p>/) || [])[1];
+      if (sub && words(sub) > 45)
+        E(`hero sub-header is ${words(sub)} words (max 45) - say it in two or three sentences`);
+
+      // 2. The sources line is a citation list, not a second article. One page
+      //    shipped 1,022 words of recited statute under the copy.
+      if (srcBlock && words(srcBlock) > 90)
+        E(`sources block is ${words(srcBlock)} words (max 90) - link the source, do not recite it`);
+
+      // 3. A buyer does not know or care who Fannie Mae is. Say "your lender".
+      //    A warning, not a blocker: /invest/ pages written for investors can
+      //    reasonably name the loan buyers, because warrantability IS their
+      //    concept. On a buyer page there is no excuse.
+      const INDUSTRY = /Fannie Mae|Freddie Mac|Selling Guide|Lender Letter|Bulletin \d|NAIC|National Association of Insurance|Insurance Information Institute|council of co-owners|horizontal property regime|declarant|Nonprofit Corporation Act|adjudicatory/gi;
+      const ind = [...new Set((txt.match(INDUSTRY) || []).map(x => x.toLowerCase()))];
+      if (ind.length >= 3)
+        W(`names ${ind.length} industry bodies or legal terms in body copy (${ind.slice(0, 4).join(", ")}) - write it the way a buyer would say it`);
+
+      // 4. Effective dates and enactment years are for practitioners.
+      const dates = txt.match(/\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s*20\d\d|\bon or after\b/g) || [];
+      if (dates.length > 2)
+        W(`${dates.length} explicit dates in body copy - a buyer needs the rule, not when it took effect`);
+
+      // 5. A long read with one call to action buries the ask. Site-wide
+      //    condition: 45 pages ship with zero, so this warns rather than blocks.
+      //    Promote to E() once the back catalogue is fixed.
+      if (words(prose) > 900) {
+        const ctas = (prose.match(/href="#lead-form"/g) || []).length;
+        if (ctas < 2) W(`${words(prose)} words of copy with only ${ctas} in-article CTA - add one mid-page`);
+      }
+    }
+
     /* ---- the three dates must agree ----
      * visible "Updated <date>" == schema dateModified == sitemap lastmod.
      * They drifted apart on 34 pages before anyone noticed. */

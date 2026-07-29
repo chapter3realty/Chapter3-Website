@@ -75,6 +75,19 @@ Literal and direct. Short sentences. No metaphors, no personification, no
 creative hooks, no question-headers as teasers, no em dashes. Explain things
 plainly; assume the reader is smart but not in the industry.
 
+**Write for the buyer, not the industry.** Before anything else, apply the
+buyer test to every sentence: *would a buyer, standing in the property, do
+anything differently because of this?* If not, cut it.
+
+Never in body copy: the name of the body that wrote a rule (Fannie Mae, Freddie
+Mac, a Selling Guide, the NAIC, a state department), when a rule took effect,
+statute section numbers, or how we verified something. Say "your lender will
+require" and move on. Sources go in the sources line, under 90 words, links
+only. Hero sub-header under 45 words. Two CTAs inside the article.
+
+A page can score grade 6 and still be unreadable, because the defect is subject
+matter, not sentence length. That has happened here. See PLAYBOOK A11a.
+
 ## Who is who
 
 - **Timmy Fredrick Nash** — Broker-in-Charge, SC licence 43182, NMLS 252563.
