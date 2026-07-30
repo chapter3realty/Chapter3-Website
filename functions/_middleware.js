@@ -92,29 +92,35 @@ const PAGE = `<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Chapter3 Realty</title>
 <meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=DM+Sans:wght@300;400;500&display=swap">
 <style>
-  :root{--navy:#10233c;--ivory:#f4efe8;--brass:#b08d57;--muted:#5b6472}
+  /* Same palette as the site, not an approximation of it. The old maintenance
+     page used its own navy and its own brass, so the mark did not match the
+     header it is meant to reproduce. */
+  :root{--navy:#1c2028;--ivory:#f4efe8;--brass:#c4783a;--serif:'Fraunces',Georgia,serif}
   *{box-sizing:border-box}
   body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
        background:var(--navy);color:var(--ivory);padding:2rem;
        font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.7}
   .box{max-width:32rem;text-align:center}
-  .mark{font-size:1.7rem;letter-spacing:.02em;margin-bottom:2.25rem;font-weight:500}
-  .mark span{color:var(--brass)}
-  h1{font-size:1.9rem;font-weight:400;margin:0 0 1rem;line-height:1.3}
-  p{color:#c9d2de;margin:0 0 2rem;font-size:1.05rem}
-  /* boxed, not an underlined link. A phone number sitting in body text reads as
-     prose and gets skipped; the owner flagged that twice on the main site. */
-  .cta{display:inline-block;padding:.9rem 1.9rem;border:1px solid var(--brass);border-radius:4px;
-       color:var(--brass);font-weight:600;text-decoration:none;font-size:1.15rem;letter-spacing:.01em}
+  /* The header wordmark, same markup and same letter-spacing, recoloured for a
+     dark background the way the site already does it on its navy sections.
+     Georgia is the fallback so this still reads if the webfont never arrives. */
+  .logo-word{font-family:var(--serif);font-size:clamp(2.4rem,9vw,3.4rem);color:var(--ivory);
+             letter-spacing:-.03em;display:block;margin:0 0 2.25rem;line-height:1}
+  .logo-num{color:var(--brass);letter-spacing:-.04em}
+  h1{font-size:1.05rem;font-weight:500;margin:0 0 1.1rem;line-height:1.4;
+     letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+  p{color:rgba(244,239,232,.82);margin:0;font-size:1.05rem}
 </style>
 </head>
 <body>
   <div class="box">
-    <div class="mark">Chapter<span>3</span></div>
-    <h1>We are updating our website.</h1>
-    <p>We will return shortly. You can call or text us any time.</p>
-    <a class="cta" href="tel:+18543332135">854.333.2135</a>
+    <span class="logo-word">Chapter<span class="logo-num">3</span></span>
+    <h1>Coming soon</h1>
+    <p>We are creating pages for the Grand Strand's next big brokerage. We will be live after licensing.</p>
   </div>
 </body>
 </html>`;
