@@ -7,7 +7,11 @@ logged mistakes and what now prevents each. **Read those first.** This file is
 only the things they do not say: who you are working with, real-world facts you
 cannot infer, what is in flight, and what is unresolved.
 
-Written 2026-07-30. Anything marked **UNRESOLVED** needs the owner.
+Written 2026-07-30.
+
+**Start with "State as of this writing" below.** A licensing review is open
+and the site is deliberately offline. Three rules in that section override the
+usual priorities, including anything about SEO.
 
 ---
 
@@ -60,14 +64,48 @@ the buyer. See PLAYBOOK A11a.
 ## State as of this writing
 
 **The site is intentionally offline, returning 503.**
-`functions/_middleware.js` line 41 is `MAINTENANCE_ON = true`. It was taken down
-for a licensing matter, planned for about three days. Sixteen commits are
-pending deployment; nothing since the window opened has gone live.
+`functions/_middleware.js` line 41 is `MAINTENANCE_ON = true`. What is deployed
+is the state at commit `771e91d`, which is the deploy that armed maintenance.
+Everything after it is committed and unreleased, including all eight new `/hoa/`
+pages. `git log 771e91d..HEAD` is the pending list.
 
-To bring it back: flip that line to `false`, deploy, then confirm with
+### Read this before touching the live site
+
+**A South Carolina licensing review of Chapter3 Realty is open.** The site is
+down because of it, and it stays down until the owner says otherwise. The
+original estimate was a few days. It is now open-ended and may run weeks.
+
+Three rules follow from that, and they override the usual priorities:
+
+1. **Do not bring the site back up** without the owner explicitly saying the
+   review is resolved. Not on a schedule, not because a window elapsed, not
+   because rankings are slipping.
+2. **Do not modify published content in order to change how the site's history
+   appears.** Removing calls to action, rewriting service pages, or serving a
+   reduced version of the site while a regulator is reviewing is not a task to
+   take on. If the owner's attorney advises a specific change, that is the
+   owner acting on counsel and is fine. A session should not design it.
+3. **SEO is not the deciding variable here.** A multi-week outage will cost
+   rankings and will probably deindex the newest pages. That is a real loss and
+   it is much smaller than the thing being protected. Do not let a ranking
+   argument shape the timing, and do not raise it as a reason to go back up.
+
+The owner has been advised to speak to a South Carolina real estate attorney
+who handles licensing. That is the path forward, not anything in this repo.
+
+Useful work that does not touch the live site: new content, new clusters, the
+deferred HOA analyzer, gate improvements. All of it can be committed and held.
+
+### When the owner does give the go-ahead
+
+Flip line 41 to `false`, deploy, then confirm with
 `curl.exe -sI https://chapter3realty.com/ | Select-Object -First 1` that it
-returns 200. Then run `indexnow.ps1`, resubmit the sitemap, and spend Search
-Console quota on the homepage first.
+returns 200. Allow a minute for propagation. Then run `indexnow.ps1`, resubmit
+the sitemap, and spend Search Console quota on the homepage first, since it is
+recrawled soonest and pulls the rest along behind it.
+
+Expect a dip in the graphs afterwards and do not react to it. After an outage
+this long, plan for re-indexing work rather than an instant recovery.
 
 **Twelve URLs still need manual indexing in Search Console** once it is back up.
 He ran out of daily quota partway through the list.
