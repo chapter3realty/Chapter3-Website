@@ -298,18 +298,10 @@ function initTilt() {
   });
 }
 
-// ── 12. MAGNETIC BUTTONS ─────────────────────────────────
-function initMagnetic() {
-  qsa('.btn-brass, .btn-primary').forEach(btn => {
-    btn.addEventListener('mousemove', e => {
-      const r = btn.getBoundingClientRect();
-      const x = (e.clientX - r.left - r.width/2) * .3;
-      const y = (e.clientY - r.top - r.height/2) * .3;
-      btn.style.transform = `translate(${x}px,${y}px) translateY(-2px)`;
-    });
-    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-  });
-}
+// ── 12. (removed) MAGNETIC BUTTONS ───────────────────────
+// Buttons used to follow the cursor and lift on hover. Removed on owner
+// instruction: a button that moves is harder to click, and it moves under
+// the pointer on the way to it. Buttons now change colour only.
 
 // ── 13. BUTTON RIPPLE ────────────────────────────────────
 document.addEventListener('click', e => {
@@ -392,7 +384,6 @@ function init() {
   initReveal();
   initCounters();
   initTilt();
-  initMagnetic();
   injectDividers();
   initOrbs();
   setTimeout(scrambleHeroEyebrow, 200);
@@ -403,7 +394,7 @@ else init();
 
 // Re-init on dynamic content changes
 new MutationObserver(() => {
-  setTimeout(() => { initTilt(); initMagnetic(); }, 60);
+  setTimeout(() => { initTilt(); }, 60);
 }).observe(document.body, { childList: true, subtree: false });
 
 })();
