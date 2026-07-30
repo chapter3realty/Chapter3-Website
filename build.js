@@ -736,6 +736,23 @@ function audit() {
         "reset that looks for #page-home, has no #page-home of its own, and no " +
         "longer calls showPage(CUR) to restore it. Do not remove the inline MAP block.");
 
+    /* ---- Chapter3 is a BROKERAGE. It is not a lender. ----
+     * Owner instruction, stated plainly: "we cant finance anything its not our
+     * expertise we are not a lender". Devin holds an MLO licence and BrickWood
+     * is an affiliated lender, which makes the line easy to blur, and blurring
+     * it is a licensing problem rather than a wording preference.
+     *
+     * Explaining how financing works is fine and useful. Saying or implying
+     * that this brokerage does the financing is not. "Underwrite" is the word
+     * that slipped through twice: an underwriter works for a lender. */
+    {
+      const mainTxt = ((s.match(/<main[\s\S]*?<\/main>/i) || [""])[0])
+        .replace(/<(script|style)[\s\S]*?<\/\1>/g, " ").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+      const OFFERS_CREDIT = /\b(?:we|our team|Chapter3)\s+(?:can\s+)?(?:finance|fund|lend|underwrite|approve|pre-?approve|originate)\w*\b|\bour\s+(?:loan|lending|mortgage|financing)\s+(?:program|product|rate|offer)\w*\b|\bwe\s+offer\s+(?:loans|financing|mortgages)\b/gi;
+      for (const m of mainTxt.matchAll(OFFERS_CREDIT))
+        E(`"${m[0].trim()}" reads as this brokerage providing credit. Chapter3 is not a lender. Describe what a lender does, do not claim to do it.`);
+    }
+
     /* ---- written for a buyer, not for the industry ----
      * All five of these shipped on the /hoa/ batch and the owner, who works in
      * this industry, said he could not follow half of it. A page can pass every
@@ -773,12 +790,30 @@ function audit() {
       if (dates.length > 2)
         W(`${dates.length} explicit dates in body copy - a buyer needs the rule, not when it took effect`);
 
-      // 5. A long read with one call to action buries the ask. Site-wide
-      //    condition: 45 pages ship with zero, so this warns rather than blocks.
-      //    Promote to E() once the back catalogue is fixed.
+      // 5. A long read with the only ask in the hero buries it.
+      //
+      //    The first version of this rule counted ONLY href="#lead-form" and
+      //    reported 42 pages with zero in-article CTAs. That was the scanner
+      //    being wrong, not the site. Only the generated /hoa/ pages carry a
+      //    #lead-form anchor; the whole back catalogue links to /contact/
+      //    instead. /submarkets/conway/ has a boxed "Talk to a Conway agent"
+      //    at 45% through the article and was still flagged. See rule 4.
+      //
+      //    A real in-article CTA is a BOXED link (a bare text link reads as
+      //    prose and gets skipped, which the owner flagged twice) pointing at
+      //    the form, the contact page, or the phone, and sitting in the middle
+      //    of the read rather than at the very top or bottom.
       if (words(prose) > 900) {
-        const ctas = (prose.match(/href="#lead-form"/g) || []).length;
-        if (ctas < 2) W(`${words(prose)} words of copy with only ${ctas} in-article CTA - add one mid-page`);
+        const L = prose.length;
+        let mid = 0, total = 0;
+        for (const m of prose.matchAll(/<a\b[^>]*href="(#lead-form|\/contact\/|tel:[^"]*)"[^>]*>/g)) {
+          if (!/class="[^"]*\bbtn\b/.test(m[0])) continue;   // boxed only
+          total++;
+          const at = m.index / L;
+          if (at > 0.2 && at < 0.9) mid++;
+        }
+        if (mid < 1)
+          W(`${words(prose)} words with no boxed CTA in the middle of the read (${total} elsewhere) - add one mid-page`);
       }
     }
 
