@@ -35,6 +35,12 @@ does not age a page, and it leaves `datePublished` alone. `preflight` runs
 **[MISTAKES.md](MISTAKES.md)** is the log of every mistake made here and what
 stops it recurring. Read its five rules before changing anything.
 
+**[HANDOFF.md](HANDOFF.md)** is everything the code cannot tell you: who the
+owner is and how he reviews, real-world facts you cannot infer from the repo,
+what is currently in flight, two unresolved contradictions that need him, facts
+that were expensive to establish and must not be re-derived, and the environment
+traps that have cost the most time. **Read it at the start of a new session.**
+
 ## The five rules that caused the most damage
 
 1. **A change is not verified until it is measured on the rendered page.**
