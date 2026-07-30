@@ -78,17 +78,19 @@ It is not part of the site build and is not deployed by wrangler.
 
 ---
 
-## UNRESOLVED: two contradictions only the owner can settle
+## Contradictions: one resolved, one still open
 
-**1. Affiliation.** He said "we aren't a commonly owned site." Three pages of his
-own say otherwise: `/about/`, `/buyers/new-construction/` and
-`/invest/non-warrantable-condos/` state that Chapter3 Realty Corp and BrickWood
-Mortgage are "affiliated businesses under common ownership." Eighty-one pages
-carry some form of affiliated-business disclosure.
+**1. Affiliation. RESOLVED 2026-07-30.** The owner states Chapter3 does not
+own BrickWood. Three pages had said the two were "affiliated businesses under
+common ownership"; they now use the same wording as the other 81, which
+discloses the referral benefit without asserting ownership. Zero pages claim
+common ownership.
 
-This matters for RESPA on any BrickWood referral page. The BrickWood one-pager
-deliberately asserts neither, and says only what is true either way: the reader
-is free to choose any brokerage and any lender.
+Still open for compliance counsel, not for a session to decide: an Affiliated
+Business Arrangement can exist without common ownership, so whether the full
+RESPA AfBA disclosure is required here is a separate question from the
+ownership fact. Every page still carries the referral-benefit disclosure and
+the you-are-free-to-shop sentence.
 
 **2. Condotel financing as an expertise claim.** He said financing "is not our
 expertise, we are not a lender." All 77 indexable pages list
