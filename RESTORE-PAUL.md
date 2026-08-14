@@ -12,10 +12,12 @@ people *and* four, so it must survive. Restore the four blocks by hand instead.
 
 ---
 
-## The four places he appeared
+## The five places he appeared
 
-There were four, not the three an initial pass found. The fourth has no leading
-comma so a regex written for the array entry silently misses it. Check all four.
+The count has gone up twice. An initial pass found three; the fourth has no
+leading comma, so a regex written for the array entry silently misses it. The
+fifth was found two weeks later and never contained his name at all. Check all
+five, and see the note at the end of 5 before assuming there is no sixth.
 
 ### 1. Employee array entry — **69 pages**
 
@@ -65,6 +67,29 @@ In the leadership prose, directly after the Timmy Fredrick Nash paragraph:
 ```html
 <p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem"><strong style="color:var(--navy)">Paul Hankins</strong>, owner of <a href="https://brickwoodmortgage.com/" target="_blank" rel="noopener noreferrer" style="color:var(--brass);font-weight:600;text-decoration:none">BrickWood Mortgage</a>. More than 20 years in mortgage lending. NMLS 281393.</p>
 ```
+
+### 5. "Legal rigor" card — **`/about/` only** — removed later, 2026-08-14
+
+Found two weeks after the removal, in commit `2dc8dd1`. It never contained the
+string "Paul", which is why the original pass missed it: it described him by his
+title instead of his name, so with him gone the site claimed a legal officer it
+did not have.
+
+Last card in the "Why buyers and investors trust us" grid, after "Permit
+intelligence":
+
+```html
+<div style="background:var(--navy);padding:1.75rem"><div style="font-family:var(--serif);font-size:1.6rem;color:var(--brass-2);margin-bottom:.4rem">Legal rigor</div><p style="color:rgba(244,239,232,.6);font-size:.88rem;line-height:1.6">Having a dedicated legal officer on the ownership team is rare at this size, and it shapes how carefully we handle paperwork.</p></div>
+```
+
+The grid is `repeat(auto-fit,minmax(230px,1fr))`, so it took three cards and
+takes four back without a change. Note the wording says "ownership team", which
+is the phrasing the owner rejected elsewhere on 2026-07-30: Chapter3 does not own
+BrickWood. Do not restore this card verbatim without asking him about that word.
+
+**The lesson, which generalises past Paul:** grep for what a person *is*, not
+only for their name. Titles, roles and "our in-house X" claims outlive a name
+removal silently.
 
 ---
 
