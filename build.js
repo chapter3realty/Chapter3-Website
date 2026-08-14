@@ -753,6 +753,46 @@ function audit() {
         E(`"${m[0].trim()}" reads as this brokerage providing credit. Chapter3 is not a lender. Describe what a lender does, do not claim to do it.`);
     }
 
+    /* ---- never "under one roof" ----
+     * Owner instruction, 2026-08-14, given as a legal problem and not a style
+     * one: "dont ever say we bring it under one roof cause thats illegal so
+     * hard code it to never say that again".
+     *
+     * Chapter3 Realty and BrickWood Mortgage are separate companies. The owner
+     * confirmed on 2026-07-30 that Chapter3 does not own BrickWood, and every
+     * page carries a disclosure saying the relationship is a referral one the
+     * buyer is free to decline. "Under one roof" asserts the opposite: a single
+     * business doing both the real estate and the lending. It had shipped in 17
+     * places including the site-wide footer, so this is a gate, not a note.
+     *
+     * Deliberately scoped to a roof word in the SAME SENTENCE as a lender or
+     * agent word. /invest/strategies/small-multifamily/ correctly says "one
+     * purchase, one loan, one roof" and "One roof or HVAC bill hits every unit
+     * at once" about a literal duplex roof, and must keep passing. That is why
+     * a bare "loan" is not enough to fire this. */
+    {
+      const ROOF = /\b(?:under\s+(?:one|the\s+same)\s+roof|(?:one|the\s+same)\s+roof)\b/i;
+      const AFFIL = /\b(?:lender|lending|loan officer|mortgage|financ\w*|brokerage|in-house|BrickWood|agents?)\b/i;
+
+      // the claim hid in meta/og/twitter/schema descriptions as well as body copy
+      const descs = [...s.matchAll(/<meta[^>]+(?:name|property)="(?:description|og:description|twitter:description)"[^>]+content="([^"]*)"/gi)]
+        .map(m => m[1]);
+      const jsonDescs = [...s.matchAll(/"(?:description|headline)"\s*:\s*"((?:[^"\\]|\\.)*)"/g)].map(m => m[1]);
+      const bodyTxt = ((s.match(/<main[\s\S]*?<\/main>/i) || [s])[0])
+        .replace(/<(script|style)[\s\S]*?<\/\1>/g, " ").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+
+      const sentences = [...descs, ...jsonDescs, ...bodyTxt.split(/(?<=[.!?])\s+/)];
+      const seen = new Set();
+      for (const sent of sentences) {
+        if (!ROOF.test(sent) || !AFFIL.test(sent)) continue;
+        const key = sent.trim().slice(0, 60);
+        if (seen.has(key)) continue;
+        seen.add(key);
+        E(`"${sent.trim().slice(0, 100)}" puts real estate and financing under one roof. `
+          + `Chapter3 does not own BrickWood; it is a referral relationship. Owner instruction: never say this.`);
+      }
+    }
+
     /* ---- written for a buyer, not for the industry ----
      * All five of these shipped on the /hoa/ batch and the owner, who works in
      * this industry, said he could not follow half of it. A page can pass every

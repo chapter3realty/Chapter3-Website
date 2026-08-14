@@ -65,6 +65,7 @@ feature works. Open the real source.
 | 9 | Said Pawleys Island straddles the county line. It is entirely in Georgetown County. | Adversarial fact-check pass; 20 of 163 researched facts were wrong |
 | 10 | Copy written with metaphors against the owner's literal-and-direct rule. | `audit` banned-phrase list |
 | 11 | Reading-order phrases ("the former") that break a passage when an AI quotes it alone. | `audit` anaphora rule |
+| 42 | Said real estate and financing were "under one roof" in 17 places, including the site-wide footer and four meta/schema descriptions. The owner called it illegal: Chapter3 does not own BrickWood, so it asserts a company that does not exist. Removing the prose in three pages during the July ownership fix missed it because that pass grepped "common ownership", not the claim restated as a metaphor. | `audit` roof gate, scoped to a roof word in the same sentence as a lender or agent word so the literal duplex roof on `/invest/strategies/small-multifamily/` still passes |
 
 ## Code
 
