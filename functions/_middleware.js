@@ -38,7 +38,7 @@
  *  take effect anyway, so flipping this line is strictly simpler than the
  *  dashboard and there is nothing to forget to switch back.
  * ======================================================================= */
-const MAINTENANCE_ON = true;
+const MAINTENANCE_ON = false;
 
 const RETRY_AFTER_SECONDS = 60 * 60 * 24 * 2; // 2 days; raise if the work runs long
 const BYPASS_COOKIE = "c3_bypass";
