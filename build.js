@@ -123,6 +123,53 @@ function check() {
       errors.push(`stale asset: /assets/${a} was edited but not rehashed (contents hash ${realHash}) -> run 'node build.js rehash'`);
   }
 
+  /* ---- market data must not go stale, and pages must match the data file ----
+   *
+   * On 2026-08-15 the site was publishing AirROI figures pulled on July 6. In
+   * five weeks three of four markets had flipped from growth to decline while
+   * /invest/airbnb-income/ still advertised North Myrtle Beach at +7.5% when it
+   * was actually -5.4%. Nobody noticed because the number lived only in the
+   * page. Two gates follow from that:
+   *
+   *   1. data/str-market.json carries its own retrieval date. Owner refreshes
+   *      every 90 days. WARN at 75 so there is notice, FAIL at 90 so a stale
+   *      number cannot reach a deploy.
+   *   2. every revenue figure in the file must actually appear on the page that
+   *      shows the table, or the JSON is decorative and the page has drifted.
+   */
+  {
+    const dp = path.join(__dirname, "data", "str-market.json");
+    if (!fs.existsSync(dp)) {
+      errors.push("data/str-market.json is missing - the STR figures have no source of truth");
+    } else {
+      let d = null;
+      try { d = JSON.parse(fs.readFileSync(dp, "utf-8")); }
+      catch (e) { errors.push(`data/str-market.json does not parse: ${e.message}`); }
+      if (d) {
+        const limit = d.refreshDays || 90;
+        const days = Math.floor((Date.now() - Date.parse(d.retrieved)) / 86400000);
+        if (!Number.isFinite(days)) {
+          errors.push(`data/str-market.json has an unreadable "retrieved" date: ${d.retrieved}`);
+        } else if (days >= limit) {
+          errors.push(`STR market data is ${days} days old (limit ${limit}). Re-open each sourceUrl in `
+            + `data/str-market.json, update the figures, set "retrieved", then run 'node build.js strdata'.`);
+        } else if (days >= limit - 15) {
+          warns.push(`STR market data is ${days} days old; it blocks the build at ${limit}. Refresh soon.`);
+        }
+        const target = path.join(ROOT, "invest", "airbnb-income", "index.html");
+        if (fs.existsSync(target)) {
+          const html = fs.readFileSync(target, "utf-8");
+          for (const m of d.markets || []) {
+            const shown = "$" + m.revenue.toLocaleString("en-US");
+            if (!html.includes(shown))
+              errors.push(`/invest/airbnb-income/ does not show ${m.name} at ${shown} - the page has drifted `
+                + `from data/str-market.json. Run 'node build.js strdata'.`);
+          }
+        }
+      }
+    }
+  }
+
   let total = 0; for (const f of pages) total += fs.statSync(f).size;
   console.log(`Pages: ${pages.length} | Assets: ${assets.size} | Avg page: ${(total / pages.length / 1024).toFixed(0)}KB`);
   if (warns.length) { console.log(`\nWARN (${warns.length}) - heavy pages, not broken:`); warns.forEach((w) => console.log("  ~  " + w)); }

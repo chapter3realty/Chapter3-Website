@@ -1,0 +1,88 @@
+{
+  "_readme": "Short-term rental market data. ONE source of truth for every page that shows these numbers. Refresh every 90 days: re-open each sourceUrl, update the figures, set retrieved and dataAsOf, run 'node build.js strdata' then 'node build.js preflight'. The preflight gate FAILS when retrieved is older than 90 days, because these numbers went stale in five weeks once and three markets flipped from growth to decline while the site still advertised growth.",
+  "vendor": "AirROI",
+  "retrieved": "2026-08-15",
+  "dataAsOf": "2026-08-08",
+  "refreshDays": 90,
+  "note": "Trailing twelve months. Revenue is the average per active listing, not a median. Occupancy is booked nights over all calendar nights.",
+  "markets": [
+    {
+      "slug": "murrells-inlet", "name": "Murrells Inlet", "page": "/submarkets/murrells-inlet/",
+      "revenue": 38356, "occupancy": 37.7, "adr": 406, "revpar": 161, "listings": 461, "yoy": -0.1,
+      "top10": 10063, "top25": 5589, "median": 3047, "bottom25": 1552,
+      "peakMonth": "June", "peakRevenue": 7420, "lowMonth": "January", "lowRevenue": 2366,
+      "sourceUrl": "https://www.airroi.com/airbnb-data/united-states/south-carolina/murrells-inlet"
+    },
+    {
+      "slug": "surfside-beach", "name": "Surfside Beach", "page": "/submarkets/surfside-beach/",
+      "revenue": 35482, "occupancy": 34.2, "adr": 415, "revpar": 151, "listings": 538, "yoy": -10.1,
+      "top10": 11379, "top25": 6211, "median": 3221, "bottom25": 1512,
+      "peakMonth": "June", "peakRevenue": null, "lowMonth": "December", "lowRevenue": null,
+      "sourceUrl": "https://www.airroi.com/airbnb-data/united-states/south-carolina/surfside-beach"
+    },
+    {
+      "slug": "garden-city", "name": "Garden City Beach", "page": "/submarkets/garden-city/",
+      "revenue": 33942, "occupancy": 36.2, "adr": 372, "revpar": 138, "listings": 395, "yoy": -11.1,
+      "top10": 9411, "top25": 5212, "median": 2916, "bottom25": 1411,
+      "peakMonth": "June", "peakRevenue": 6480, "lowMonth": "January", "lowRevenue": 2701,
+      "sourceUrl": "https://www.airroi.com/airbnb-data/united-states/south-carolina/garden-city-beach"
+    },
+    {
+      "slug": "north-myrtle-beach", "name": "North Myrtle Beach", "page": "/submarkets/north-myrtle-beach/",
+      "revenue": 28667, "occupancy": 32.2, "adr": 374, "revpar": 127, "listings": 4406, "yoy": -5.4,
+      "top10": 8753, "top25": 5090, "median": 2729, "bottom25": 1310,
+      "peakMonth": "June", "peakRevenue": 6040, "lowMonth": "January", "lowRevenue": 2349,
+      "sourceUrl": "https://www.airroi.com/airbnb-data/united-states/south-carolina/north-myrtle-beach"
+    },
+    {
+      "slug": "pawleys-island", "name": "Pawleys Island", "page": "/submarkets/pawleys-island/",
+      "revenue": 27953, "occupancy": 33.4, "adr": 392, "revpar": 122, "listings": 428, "yoy": 9.9,
+      "top10": 7499, "top25": 4485, "median": 2528, "bottom25": 1334,
+      "peakMonth": "June", "peakRevenue": 5457, "lowMonth": "January", "lowRevenue": 2105,
+      "supplyGrowth": 62.1,
+      "sourceUrl": "https://www.airroi.com/airbnb-data/united-states/south-carolina/pawleys-island"
+    },
+    {
+      "slug": "conway", "name": "Conway", "page": "/submarkets/conway/",
+      "revenue": 21285, "occupancy": 34.7, "adr": 245, "revpar": 79, "listings": 106, "yoy": 9.2,
+      "top10": 5347, "top25": 3494, "median": 1808, "bottom25": 893,
+      "peakMonth": "June", "peakRevenue": null, "lowMonth": "January", "lowRevenue": null,
+      "supplyGrowth": 43.2,
+      "sourceUrl": "https://www.airroi.com/airbnb-data/united-states/south-carolina/conway"
+    },
+    {
+      "slug": "myrtle-beach", "name": "Myrtle Beach", "page": "/submarkets/myrtle-beach/",
+      "revenue": 20946, "occupancy": 33.2, "adr": 253, "revpar": 90, "listings": 8583, "yoy": -10.7,
+      "top10": 6043, "top25": 3803, "median": 2115, "bottom25": 1034,
+      "peakMonth": "June", "peakRevenue": 4878, "lowMonth": "January", "lowRevenue": 1466,
+      "supplyGrowth": 36.1,
+      "sourceUrl": "https://www.airroi.com/airbnb-data/united-states/south-carolina/myrtle-beach"
+    },
+    {
+      "slug": "little-river", "name": "Little River", "page": "/submarkets/little-river/",
+      "revenue": 12243, "occupancy": 30.3, "adr": 202, "revpar": 63, "listings": 171, "yoy": 1.8,
+      "top10": 4106, "top25": 2758, "median": 1505, "bottom25": 664,
+      "peakMonth": "June", "peakRevenue": null, "lowMonth": "January", "lowRevenue": null,
+      "supplyGrowth": 42.5,
+      "sourceUrl": "https://www.airroi.com/airbnb-data/united-states/south-carolina/little-river"
+    }
+  ],
+  "noMarket": [
+    {
+      "slug": "carolina-forest", "name": "Carolina Forest", "page": "/submarkets/carolina-forest/",
+      "reason": "AirROI returns 404 for Carolina Forest. It is an inland master-planned area, not a vacation-rental market. Do not invent a row for it; the absence is itself the finding and the page says so.",
+      "checked": "2026-08-15"
+    }
+  ],
+  "management": {
+    "_note": "Owner-observed market ranges, stated by Devin Day 2026-08-15. Not vendor-published. Present as observed averages, never as a competitor claim.",
+    "fullServiceLow": 40,
+    "fullServiceHigh": 60,
+    "fullServiceBase": "gross profit",
+    "fullServiceIncludes": "marketing, guest communication, accounting, taxes, maintenance and repairs",
+    "basicLow": 12.62,
+    "basicHigh": 17.45,
+    "basicIncludes": "marketing, guest communication and basic accounting, with condition and financial reporting; repairs and tax help billed separately on request",
+    "observedOn": "2026-08-15"
+  }
+}
