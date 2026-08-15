@@ -791,6 +791,20 @@ function audit() {
         E(`"${sent.trim().slice(0, 100)}" puts real estate and financing under one roof. `
           + `Chapter3 does not own BrickWood; it is a referral relationship. Owner instruction: never say this.`);
       }
+
+      /* Same false claim, different words. "in-house" asserts the lender is
+       * part of this company. Owner, 2026-08-14: "we are our own company fully
+       * separate". The approved word is "preferred". */
+      for (const m of s.matchAll(/\b(?:in-house|our own)\s+lender\b/gi))
+        E(`"${m[0]}" says the lender is part of this company. Chapter3 and BrickWood are separate. Use "preferred lender".`);
+
+      /* Chapter3 does not underwrite. Owner, 2026-08-14: "we dont underwrite we
+       * just have analyzers or estimators". A lender's underwriter, a title
+       * underwriter and the SC Wind and Hail Underwriting Association are all
+       * real and stay; this fires only when underwriting is offered as one of
+       * OUR services. */
+      for (const m of s.matchAll(/\b(?:free|our|instant|rental|DSCR|LTR|STR)\s+underwriting\b/gi))
+        E(`"${m[0]}" offers underwriting as a Chapter3 service. We do not underwrite. Say analysis, estimate, or run the numbers.`);
     }
 
     /* ---- written for a buyer, not for the industry ----
