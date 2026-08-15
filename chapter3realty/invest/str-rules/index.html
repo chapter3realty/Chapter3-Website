@@ -321,6 +321,18 @@ html.touch #page-home.active { display:flex !important; }
 
 <script>(function(){var MAP={"home": "/", "why": "/why-chapter-3/", "invest": "/invest/", "ltr": "/invest/long-term-rental/", "strmap": "/invest/str-map/", "tools": "/invest/str-tools/", "invest-chooser": "/invest/strategy/", "buyers": "/buyers/", "buyers-visual": "/buyers/guide/", "sc-housing-dpa": "/buyers/programs/", "lender-dpa": "/buyers/lender-dpa/", "program-contact": "/buyers/first-time-home-buyer-myrtle-beach/", "sellers": "/sell/", "contact": "/contact/", "journal": "/market-reports/", "about": "/about/", "submarket": "/submarkets/", "buyer-mistakes": "/buyers/common-mistakes/", "path-firsttime": "/buyers/first-time-buyer-guide/", "path-military": "/buyers/va-loans/", "path-relocating": "/buyers/relocating/", "path-retiree": "/buyers/retirees/", "path-secondhome": "/buyers/second-home/", "buyinmb": "/buyers/buying-in-myrtle-beach/", "outofstate": "/sell/out-of-state-buyers/"};var CUR="invest-strrules";var _spa=window.showPage;window.showPage=function(id){if(id===CUR){if(_spa)_spa(id);}else{location.href=MAP[id]||'/';}};window.showSubmarket=function(s){location.href='/submarkets/'+s+'/';};var t=('ontouchstart' in window)||navigator.maxTouchPoints>0||(window.matchMedia&&matchMedia('(pointer:coarse)').matches);if(t)document.documentElement.classList.add('touch');document.addEventListener('DOMContentLoaded',function(){try{if(CUR)window.showPage(CUR);}catch(e){}});})();</script>
 <script>
+/* Flip to false the day Web3Forms is removed. It is the ONLY switch: it stops
+   the second send AND turns a CRM failure into a visible phone number. */
+var C3_DUAL_WRITE = true;
+function c3FormFailed() {
+  try {
+    var b = document.createElement('div');
+    b.setAttribute('role', 'alert');
+    b.style.cssText = 'position:fixed;left:50%;bottom:1.2rem;transform:translateX(-50%);z-index:99999;max-width:min(30rem,92vw);background:#1c2028;color:#f4efe8;border:1px solid #c4783a;border-radius:6px;padding:.9rem 1.1rem;font:500 15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.35)';
+    b.innerHTML = 'We could not send that. Please call <a href="tel:+18543332135" style="color:#ffd79a;font-weight:700">854.333.2135</a> and we will take the details.';
+    document.body.appendChild(b);
+  } catch (e) { /* a failed notice must never throw on top of a failed send */ }
+}
 function c3SendForm(fields, pageName) {
   /* ---- 1. the disclosure EXACTLY as this page renders it ----
      Two wordings ship on this site. The CRM stores this verbatim as proof of
@@ -342,9 +354,16 @@ function c3SendForm(fields, pageName) {
   if (p.indexOf('/sell/home-value') === 0 || p.indexOf('/sell/net-proceeds') === 0) formType = 'valuation';
   else if (p.indexOf('/sell/') === 0) formType = 'seller';
 
-  /* ---- 3. the enquiry itself, whichever field this page used ---- */
-  var about = fields.property_address || fields.building || fields.community ||
-              fields.details || fields.message || fields.notes || '';
+  /* ---- 3. the enquiry, under the CRM's PROMOTED key names ----
+     Keys on the CRM's promoted list land on the contact record itself, where
+     the team and Katie read them. Anything else only reaches the submission.
+     So property_address goes as property_address, not as a generic blob. */
+  var promoted = {};
+  if (fields.property_address) { promoted.property_address = String(fields.property_address); }
+  if (fields.building || fields.community) { promoted.area = String(fields.building || fields.community); }
+  var msg = fields.message || fields.notes || fields.details || '';
+  if (msg) { promoted.message = String(msg); }
+  if (fields.interest) { promoted.interest = String(fields.interest); }
 
   /* ---- 4. CRM payload. Identity, contact, consent, and where it came from.
            Nothing else is sent. ---- */
@@ -359,7 +378,7 @@ function c3SendForm(fields, pageName) {
     page: p,
     formName: pageName || ''
   };
-  if (about) { crm.about = String(about); }
+  for (var k in promoted) { if (Object.prototype.hasOwnProperty.call(promoted, k)) { crm[k] = promoted[k]; } }
 
   /* No ticked consent box means the CRM will refuse this and alarm. Skip the
      CRM, keep the email path, and say why in the console. */
@@ -372,14 +391,22 @@ function c3SendForm(fields, pageName) {
     body: JSON.stringify(crm)
   }).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(d){
       if (r.ok && d.ok) { console.log('CRM lead sent'); }
-      else { console.warn('CRM rejected the lead', r.status, d); }
+      else {
+        console.warn('CRM rejected the lead', r.status, d);
+        /* While Web3Forms still runs, a CRM refusal is not a lost lead, so the
+           visitor is not alarmed. Set C3_DUAL_WRITE to false when Web3Forms is
+           removed and this becomes a visible "call us" instead of silence. */
+        if (!C3_DUAL_WRITE) { c3FormFailed(); }
+      }
     });
   }).catch(function(e){ console.warn('CRM send failed', e); });
 
   /* ---- 5. Web3Forms, still running. Remove once the CRM has been clean for a
            week; until then this is what stops a rejected payload losing a lead. ---- */
-  var payload = Object.assign({}, fields, { access_key: '64cdd971-2a88-4aa3-991f-2158440b28f3', subject: 'New lead from Chapter3 Realty - ' + pageName, from_name: 'Chapter3 Realty Website', replyto: fields.email || '', redirect: 'false' });
-  fetch('https://api.web3forms.com/submit', { method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify(payload) }).then(function(r){return r.json();}).then(function(d){ if(d.success){console.log('Form sent');} else{console.warn('Web3Forms error',d);} }).catch(function(e){console.warn('Form send failed',e);});
+  if (C3_DUAL_WRITE) {
+    var payload = Object.assign({}, fields, { access_key: '64cdd971-2a88-4aa3-991f-2158440b28f3', subject: 'New lead from Chapter3 Realty - ' + pageName, from_name: 'Chapter3 Realty Website', replyto: fields.email || '', redirect: 'false' });
+    fetch('https://api.web3forms.com/submit', { method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify(payload) }).then(function(r){return r.json();}).then(function(d){ if(d.success){console.log('Form sent');} else{console.warn('Web3Forms error',d);} }).catch(function(e){console.warn('Form send failed',e);});
+  }
 }
 </script>
 <div id="idxModal" class="idx-modal" aria-hidden="true"><div class="idx-backdrop" onclick="closeIdx()"></div><div class="idx-panel" role="dialog" aria-label="Search Grand Strand listings"><div class="idx-head"><div><p class="idx-eyebrow">Grand Strand MLS Search <span class="idx-soon">Coming soon</span></p><h2 class="idx-title">Find your property</h2><p class="idx-soon-note" style="margin-top:.4rem;font-size:.82rem;color:var(--muted);line-height:1.5">Live MLS search is launching soon. Submit your search and we will follow up, or contact us and we will run it for you.</p></div><button class="idx-close" onclick="closeIdx()" aria-label="Close">&times;</button></div><div id="idxForm"><div class="idx-body"><div class="idx-field"><label>Location</label><select class="idx-select" id="idxCity"><option value="All Grand Strand">All Grand Strand</option><option value="Myrtle Beach">Myrtle Beach</option><option value="North Myrtle Beach">North Myrtle Beach</option><option value="Surfside Beach">Surfside Beach</option><option value="Garden City">Garden City</option><option value="Murrells Inlet">Murrells Inlet</option><option value="Pawleys Island">Pawleys Island</option><option value="Little River">Little River</option><option value="Conway">Conway</option><option value="Longs">Longs</option><option value="Loris">Loris</option><option value="Carolina Forest">Carolina Forest</option><option value="Socastee">Socastee</option></select></div><div class="idx-field"><label>Property type</label><div class="idx-pills"><button type="button" class="idx-pill" data-type="1" onclick="idxPill(this)">Single-Family</button><button type="button" class="idx-pill" data-type="1" onclick="idxPill(this)">Condo</button><button type="button" class="idx-pill" data-type="1" onclick="idxPill(this)">Townhouse</button><button type="button" class="idx-pill" data-type="1" onclick="idxPill(this)">Manufactured</button><button type="button" class="idx-pill" data-type="1" onclick="idxPill(this)">Multi-Family</button><button type="button" class="idx-pill" data-type="1" onclick="idxPill(this)">Land / Lot</button><button type="button" class="idx-pill" data-type="1" onclick="idxPill(this)">New Construction</button></div></div><div class="idx-field idx-2col"><div><label>Min price</label><select class="idx-select" id="idxMin"><option value="No min">No min</option><option value="$100k">$100k</option><option value="$150k">$150k</option><option value="$200k">$200k</option><option value="$250k">$250k</option><option value="$300k">$300k</option><option value="$350k">$350k</option><option value="$400k">$400k</option><option value="$450k">$450k</option><option value="$500k">$500k</option><option value="$600k">$600k</option><option value="$750k">$750k</option><option value="$1M">$1M</option><option value="$1.5M">$1.5M</option><option value="$2M">$2M</option></select></div><div><label>Max price</label><select class="idx-select" id="idxMax"><option value="No max">No max</option><option value="$100k">$100k</option><option value="$150k">$150k</option><option value="$200k">$200k</option><option value="$250k">$250k</option><option value="$300k">$300k</option><option value="$350k">$350k</option><option value="$400k">$400k</option><option value="$450k">$450k</option><option value="$500k">$500k</option><option value="$600k">$600k</option><option value="$750k">$750k</option><option value="$1M">$1M</option><option value="$1.5M">$1.5M</option><option value="$2M">$2M</option><option value="$2M+">$2M+</option></select></div></div><div class="idx-field idx-2col"><div><label>Beds</label><select class="idx-select" id="idxBeds"><option value="Any">Any</option><option value="1+">1+</option><option value="2+">2+</option><option value="3+">3+</option><option value="4+">4+</option><option value="5+">5+</option></select></div><div><label>Baths</label><select class="idx-select" id="idxBaths"><option value="Any">Any</option><option value="1+">1+</option><option value="2+">2+</option><option value="3+">3+</option><option value="4+">4+</option></select></div></div><div class="idx-field idx-2col"><div><label>Lot size</label><select class="idx-select" id="idxLot"><option value="Any">Any</option><option value="0.25+ acre">0.25+ acre</option><option value="0.5+ acre">0.5+ acre</option><option value="1+ acre">1+ acre</option><option value="2+ acre">2+ acre</option><option value="5+ acre">5+ acre</option></select></div><div><label>Min sq ft</label><select class="idx-select" id="idxSqft"><option value="Any">Any</option><option value="1,000+">1,000+</option><option value="1,500+">1,500+</option><option value="2,000+">2,000+</option><option value="2,500+">2,500+</option><option value="3,000+">3,000+</option></select></div></div><div class="idx-field"><label>Amenities &amp; features</label><div class="idx-checks"><label class="idx-check"><input type="checkbox" class="idx-amen" value="No HOA">No HOA</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Private pool">Private pool</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Community pool">Community pool</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Waterfront">Waterfront</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Water view">Water view</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Golf community">Golf community</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Gated community">Gated community</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Garage">Garage</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Boat slip / dock">Boat slip / dock</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Furnished">Furnished</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="55+ community">55+ community</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Fireplace">Fireplace</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Pet friendly">Pet friendly</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Fenced yard">Fenced yard</label></div></div></div><div class="idx-foot"><span class="idx-note">Live MLS search is launching soon. Set your criteria and we will send matching Grand Strand listings to your inbox, including off-market homes before they hit the public sites.</span><div class="idx-lead"><input class="idx-input" id="idxName" placeholder="Name"><input class="idx-input" id="idxPhone" placeholder="Phone"></div><div class="idx-lead" style="grid-template-columns:1fr"><input class="idx-input" id="idxEmail" placeholder="Email" type="email"></div><label class="idx-consent" style="display:flex;gap:.5rem;align-items:flex-start;font-family:var(--sans);font-size:.72rem;color:var(--muted);line-height:1.45;margin:0 0 .85rem;cursor:pointer"><input type="checkbox" id="idxConsent" style="margin-top:.15rem;accent-color:var(--brass);flex-shrink:0;width:15px;height:15px"><span>I consent to receive calls and text messages from Chapter 3 Realty about my property inquiry, showing appointments, and listing information I requested, at the phone number provided, including calls placed using an automated system or an artificial or prerecorded voice. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase.</span></label><button class="btn btn-brass" style="width:100%%" onclick="idxSearch()">Send me matching listings</button></div></div><div class="idx-ok" id="idxOk">Thanks. A licensed agent will send Grand Strand listings that match your criteria, then keep you posted as new ones come on. Check your inbox shortly.</div></div></div><script src="/assets/s.d9624f015c.js"></script></body>
