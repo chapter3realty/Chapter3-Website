@@ -345,14 +345,17 @@
 </div>
 <script>
 (function () {
-  var KEY = 'c3PopSeen', DAYS = 30, DELAY = 10000;
+  /* Shows on every page load. The only thing that suppresses it is having
+     already submitted - see DONE below. To go back to once-per-visitor, put a
+     time check back in shouldSkip(). */
+  var DONE = 'c3PopDone', DELAY = 10000;
   var pop, lastFocus;
 
-  function seen() {
-    try { var v = localStorage.getItem(KEY); return v && (Date.now() - +v) < DAYS * 864e5; }
+  function shouldSkip() {
+    try { return !!localStorage.getItem(DONE); }
     catch (e) { return false; }               /* private mode: just show it */
   }
-  function mark() { try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {} }
+  function markDone() { try { localStorage.setItem(DONE, String(Date.now())); } catch (e) {} }
 
   function close() {
     if (!pop) return;
@@ -378,7 +381,6 @@
     if (other) return;
     lastFocus = document.activeElement;
     pop.hidden = false; pop.style.display = 'flex';
-    mark();
     document.addEventListener('keydown', onKey);
     var n = document.getElementById('c3-pop-name'); if (n) n.focus();
     if (window.c3track) window.c3track('popup_shown', { page_path: location.pathname });
@@ -397,13 +399,14 @@
     if (typeof c3SendForm === 'function') {
       c3SendForm({ name: name, phone: phone, email: email, message: 'Site popup enquiry', consent: 'yes' }, 'Site popup');
     }
+    markDone();                               /* do not ask again for details we now have */
     document.getElementById('c3-pop-form').style.display = 'none';
     document.getElementById('c3-pop-ok').style.display = 'block';
     setTimeout(close, 2600);
   }
 
   function init() {
-    if (seen()) return;
+    if (shouldSkip()) return;
     if (location.pathname.indexOf('/contact/') === 0) return;  /* already contacting us */
     var p = document.getElementById('c3-pop');
     if (!p) return;
