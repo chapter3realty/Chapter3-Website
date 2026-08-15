@@ -382,6 +382,11 @@ function c3SendForm(fields, pageName) {
   };
   if (about) { crm.about = String(about); }
 
+  /* No ticked consent box means the CRM will refuse this and alarm. Skip the
+     CRM, keep the email path, and say why in the console. */
+  if (!crm.consent) {
+    console.warn('CRM skipped: this form collected no consent box, so the lead cannot be created. Email path still used.');
+  } else
   fetch('https://app.chapter3realty.com/api/forms/lead', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
