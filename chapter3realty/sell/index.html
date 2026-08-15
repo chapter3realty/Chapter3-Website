@@ -917,6 +917,117 @@ function showPersona(id, btn) {
   });
 })();
 </script>
+
+<!-- timed lead popup -->
+<div id="c3-pop" role="dialog" aria-modal="true" aria-labelledby="c3-pop-title" hidden
+     style="position:fixed;inset:0;z-index:9998;display:none;align-items:center;justify-content:center;padding:1rem;background:rgba(10,26,42,.62)">
+  <div id="c3-pop-panel" style="position:relative;width:100%;max-width:29rem;max-height:94vh;overflow-y:auto;background:var(--ivory);border-radius:14px;box-shadow:0 28px 70px rgba(6,20,36,.5)">
+    <button type="button" id="c3-pop-x" aria-label="Close"
+            style="position:absolute;top:.55rem;right:.7rem;z-index:2;width:2rem;height:2rem;border:0;border-radius:50%;background:rgba(8,28,48,.55);color:#fff;font-size:1.4rem;line-height:1;cursor:pointer">&times;</button>
+    <div style="background:#0b4f8a;border-radius:14px 14px 0 0;overflow:hidden">
+      <img src="/popup-myrtle-beach.jpg" alt="A paper model of the Myrtle Beach oceanfront rising out of an open book"
+           width="1200" height="884" loading="lazy" decoding="async"
+           style="display:block;width:100%;height:auto"
+           onerror="var b=this.parentNode;if(b&&b.parentNode){b.parentNode.removeChild(b);}"/>
+    </div>
+    <div style="padding:1.5rem 1.6rem 1.7rem">
+      <h2 id="c3-pop-title" style="font-family:var(--serif);font-size:1.6rem;color:var(--navy);line-height:1.15;margin:0 0 .45rem;letter-spacing:-.01em">You&#x27;ll love talking to us</h2>
+      <p style="color:var(--muted);font-size:.95rem;line-height:1.55;margin:0 0 1.1rem">A licensed local agent, not a call center. Tell us how to reach you.</p>
+      <div id="c3-pop-form">
+        <input id="c3-pop-name" type="text" autocomplete="name" placeholder="Name" aria-label="Name"
+               style="width:100%;padding:.72rem .85rem;margin-bottom:.55rem;border:1px solid var(--rule);border-radius:6px;background:#fff;color:var(--navy);font-family:var(--sans);font-size:1rem"/>
+        <input id="c3-pop-phone" type="tel" autocomplete="tel" placeholder="Phone" aria-label="Phone"
+               style="width:100%;padding:.72rem .85rem;margin-bottom:.55rem;border:1px solid var(--rule);border-radius:6px;background:#fff;color:var(--navy);font-family:var(--sans);font-size:1rem"/>
+        <input id="c3-pop-email" type="email" autocomplete="email" placeholder="Email" aria-label="Email"
+               style="width:100%;padding:.72rem .85rem;margin-bottom:.9rem;border:1px solid var(--rule);border-radius:6px;background:#fff;color:var(--navy);font-family:var(--sans);font-size:1rem"/>
+        <label class="form-consent" style="display:flex;gap:.6rem;align-items:flex-start;margin-bottom:1rem;cursor:pointer">
+          <input id="c3-pop-consent" type="checkbox" style="margin-top:.25rem;flex:0 0 auto"/>
+          <span style="font-size:.72rem;color:var(--muted);line-height:1.5">I consent to receive calls and text messages from Chapter 3 Realty about my property inquiry, showing appointments, and listing information I requested, at the phone number provided, including calls placed using an automated system or an artificial or prerecorded voice. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase.</span>
+        </label>
+        <p id="c3-pop-err" role="alert" style="display:none;color:#a32b1f;font-size:.85rem;margin:0 0 .7rem"></p>
+        <button type="button" id="c3-pop-send" class="btn btn-brass" style="width:100%;justify-content:center;font-size:1rem">Have an agent reach out</button>
+        <p style="text-align:center;margin:.85rem 0 0;font-size:.85rem;color:var(--muted)">Or call <a href="tel:+18543332135" style="color:var(--navy);font-weight:700;text-decoration:underline;text-underline-offset:3px">854.333.2135</a></p>
+      </div>
+      <div id="c3-pop-ok" style="display:none;text-align:center;padding:1rem 0">
+        <p style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:0 0 .35rem">Got it, thank you.</p>
+        <p style="color:var(--muted);font-size:.92rem;margin:0">An agent will reach out shortly.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var KEY = 'c3PopSeen', DAYS = 30, DELAY = 10000;
+  var pop, lastFocus;
+
+  function seen() {
+    try { var v = localStorage.getItem(KEY); return v && (Date.now() - +v) < DAYS * 864e5; }
+    catch (e) { return false; }               /* private mode: just show it */
+  }
+  function mark() { try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {} }
+
+  function close() {
+    if (!pop) return;
+    pop.style.display = 'none'; pop.hidden = true;
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e) {
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key !== 'Tab') return;
+    var f = pop.querySelectorAll('button, input, a[href]');
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  function open() {
+    pop = document.getElementById('c3-pop');
+    if (!pop) return;
+    /* never stack on top of another dialog */
+    var other = document.querySelector('.idx-modal.open, #ltr-gate[style*="display:block"]');
+    if (other) return;
+    lastFocus = document.activeElement;
+    pop.hidden = false; pop.style.display = 'flex';
+    mark();
+    document.addEventListener('keydown', onKey);
+    var n = document.getElementById('c3-pop-name'); if (n) n.focus();
+    if (window.c3track) window.c3track('popup_shown', { page_path: location.pathname });
+  }
+
+  function send() {
+    var g = function (id) { var el = document.getElementById(id); return el ? String(el.value || '').trim() : ''; };
+    var name = g('c3-pop-name'), phone = g('c3-pop-phone'), email = g('c3-pop-email');
+    var consent = !!(document.getElementById('c3-pop-consent') || {}).checked;
+    var err = document.getElementById('c3-pop-err');
+    function fail(m) { if (err) { err.textContent = m; err.style.display = 'block'; } }
+    if (err) err.style.display = 'none';
+    if (!name) { fail('Please add your name.'); return; }
+    if (!phone) { fail('Please add a phone number so an agent can reach you.'); return; }
+    if (!consent) { fail('Please tick the box so we are allowed to call or text you.'); return; }
+    if (typeof c3SendForm === 'function') {
+      c3SendForm({ name: name, phone: phone, email: email, message: 'Site popup enquiry', consent: 'yes' }, 'Site popup');
+    }
+    document.getElementById('c3-pop-form').style.display = 'none';
+    document.getElementById('c3-pop-ok').style.display = 'block';
+    setTimeout(close, 2600);
+  }
+
+  function init() {
+    if (seen()) return;
+    if (location.pathname.indexOf('/contact/') === 0) return;  /* already contacting us */
+    var p = document.getElementById('c3-pop');
+    if (!p) return;
+    var x = document.getElementById('c3-pop-x'); if (x) x.addEventListener('click', close);
+    var s = document.getElementById('c3-pop-send'); if (s) s.addEventListener('click', send);
+    p.addEventListener('click', function (e) { if (e.target === p) close(); });
+    setTimeout(open, DELAY);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 </footer>
 
 
