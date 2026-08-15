@@ -876,6 +876,22 @@ function audit() {
         E(`"${m[0]}" offers underwriting as a Chapter3 service. We do not underwrite. Say analysis, estimate, or run the numbers.`);
     }
 
+    /* ---- American spelling ----
+     * This is a South Carolina brokerage writing for American buyers. Seven
+     * British spellings had shipped in visible copy across four pages
+     * ("paint colours", "works in your favour", "neighbourhood"), which reads
+     * as carelessly generated even when the page underneath is good.
+     *
+     * "analyses" is deliberately NOT in this list: it is the correct American
+     * plural of analysis and /contact/ uses it properly. */
+    {
+      const BRITISH = /\b(neighbourhoods?|colours?|realise[ds]?|organis(?:e|ed|es|ing|ation)|behaviour|favour(?:s|ed|ite|ites)?|metres?|prioritise[ds]?|recognise[ds]?|apologise[ds]?|licence[ds]?)\b/gi;
+      const visible = ((s.match(/<main[\s\S]*?<\/main>/i) || [""])[0])
+        .replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ").replace(/<[^>]+>/g, " ");
+      for (const m of new Set([...visible.matchAll(BRITISH)].map(x => x[0])))
+        E(`"${m}" is British spelling. This site writes American English for American buyers.`);
+    }
+
     /* ---- written for a buyer, not for the industry ----
      * All five of these shipped on the /hoa/ batch and the owner, who works in
      * this industry, said he could not follow half of it. A page can pass every
