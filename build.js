@@ -156,15 +156,37 @@ function check() {
         } else if (days >= limit - 15) {
           warns.push(`STR market data is ${days} days old; it blocks the build at ${limit}. Refresh soon.`);
         }
+        const usd = n => "$" + Number(n).toLocaleString("en-US");
+
+        // the roll-up page must carry every market's revenue...
         const target = path.join(ROOT, "invest", "airbnb-income", "index.html");
         if (fs.existsSync(target)) {
           const html = fs.readFileSync(target, "utf-8");
           for (const m of d.markets || []) {
-            const shown = "$" + m.revenue.toLocaleString("en-US");
-            if (!html.includes(shown))
-              errors.push(`/invest/airbnb-income/ does not show ${m.name} at ${shown} - the page has drifted `
+            if (!html.includes(usd(m.revenue)))
+              errors.push(`/invest/airbnb-income/ does not show ${m.name} at ${usd(m.revenue)} - the page has drifted `
                 + `from data/str-market.json. Run 'node build.js strdata'.`);
           }
+          // ...and the Myrtle Beach percentile copy, which drifted once because
+          // the first version of this gate only looked at revenue.
+          const mb = (d.markets || []).find(m => m.slug === "myrtle-beach");
+          if (mb) for (const k of ["top10", "top25", "median", "bottom25"]) {
+            if (mb[k] != null && !html.includes(usd(mb[k])))
+              errors.push(`/invest/airbnb-income/ percentile copy is stale: Myrtle Beach ${k} should read ${usd(mb[k])}.`);
+          }
+        }
+
+        // each submarket page must match its own row
+        for (const m of d.markets || []) {
+          const p = path.join(ROOT, "submarkets", m.slug, "index.html");
+          if (!fs.existsSync(p)) continue;
+          const html = fs.readFileSync(p, "utf-8");
+          if (!html.includes("Short-term rental data")) continue; // block not added yet
+          const want = [[usd(m.revenue), "revenue"], [m.occupancy + "%", "occupancy"],
+                        [usd(m.adr), "nightly rate"], [usd(m.top10), "top-10% tier"], [usd(m.median), "median tier"]];
+          for (const [v, label] of want)
+            if (!html.includes(v))
+              errors.push(`/submarkets/${m.slug}/ ${label} disagrees with data/str-market.json (expected ${v}).`);
         }
       }
     }
