@@ -1,0 +1,155 @@
+/*
+ * Page spec: /buyers/relocating/cost-of-living/
+ * Assemble with: node data/relocating/assemble-page.js data/relocating/pages/cost-of-living.js
+ *
+ * Numbers in the copy come from data/relocating/col-places.json (BEA RPP 2024,
+ * Zillow July 2026) and research/relocating/*.md. Every figure has a source
+ * there. Do not retype a number here without re-opening its source.
+ */
+'use strict';
+
+const S = {
+  eyebrow: 'font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600',
+  h2: 'font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em',
+  p: 'color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem',
+  pLast: 'color:var(--muted);line-height:1.75;max-width:720px',
+  a: 'color:var(--brass);font-weight:600;text-decoration:none',
+  label: 'display:block;font-family:var(--sans);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin-bottom:.4rem;font-weight:600',
+  small: 'font-family:var(--sans);font-size:.75rem;color:var(--muted);margin-top:.9rem;line-height:1.5',
+  ctaBox: 'background:var(--ivory);border:1px solid var(--rule);border-radius:12px;padding:1.2rem 1.3rem;margin-top:1.8rem;max-width:720px;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between',
+};
+const A = (href, text) => `<a href="${href}" style="${S.a}">${text}</a>`;
+const X = (href, text) => `<a href="${href}" style="${S.a}" rel="noopener" target="_blank">${text}</a>`;
+
+const faq = [
+  { q: 'How much lower is the cost of living in Myrtle Beach than the national average?',
+    a: 'About 6 percent lower overall, using the federal government&#39;s 2024 regional price index, where 100 is the U.S. average and the Myrtle Beach metro area scores 93.6. Housing is where the gap is: rents here index at 83.1, about 17 percent below the national average. Utilities index at 88.0 and everyday goods at 96.3, so those savings are smaller.' },
+  { q: 'What salary do I need to live in Myrtle Beach?',
+    a: 'It depends on where you are coming from, which is what the calculator on this page is for. Multiply your current income by the Myrtle Beach price index divided by your current city&#39;s index. Someone earning $70,000 in the New York City metro area, for example, keeps roughly the same standard of living here on about $58,000, because overall prices are about 17 percent lower.' },
+  { q: 'Is Myrtle Beach cheaper than Charlotte or Raleigh?',
+    a: 'On the overall index, yes, by a few percent. The bigger difference is home prices: Zillow&#39;s typical home value in July 2026 was about $342,000 for the Myrtle Beach metro area, against about $389,000 for Charlotte and $437,000 for Raleigh. Property tax on a primary home is also lower here because of South Carolina&#39;s 4 percent owner-occupied assessment.' },
+  { q: 'What costs more in Myrtle Beach than people expect?',
+    a: 'Home insurance, because a coastal policy is often wind, hail, and flood on top of the base policy. The annual property tax on your car, which most northern states do not charge. And property tax on a second home or rental, which is assessed at 6 percent instead of 4 percent and comes out roughly three times higher on the same house.' },
+  { q: 'Where does the calculator&#39;s data come from?',
+    a: 'The price indexes are the U.S. Bureau of Economic Analysis Regional Price Parities for 2024, released in February 2026, covering 387 metro areas and all 50 states plus D.C. Home values and rents are Zillow&#39;s metro-level typical values for the latest month in their public data. Both are metro-wide averages, not quotes for a specific home.' },
+  { q: 'Does the calculator include South Carolina taxes?',
+    a: 'Not in the headline number. The price index measures what goods, rent, and services cost, not what you pay in income tax, property tax, or vehicle tax. Those change a lot depending on the state you leave and how you earn your income, so they are covered in the sections below and on our origin-state pages.' },
+];
+
+const CALC_HTML = `
+<section style="background:var(--ivory-2)" id="col-calc"><div class="wrap"><p style="${S.eyebrow}">The calculator</p><h2 style="${S.h2}">Compare your city with Myrtle Beach</h2>
+<div style="max-width:760px;background:#fff;border:1px solid var(--rule);border-radius:14px;padding:1.5rem">
+<div style="display:grid;grid-template-columns:1fr 1.6fr;gap:1rem;margin-bottom:1rem" class="col-grid">
+<div><label style="${S.label}" for="colIncome">Household income before tax ($ / year)</label><input class="idx-input" id="colIncome" type="text" inputmode="numeric" value="75,000" autocomplete="off"></div>
+<div><label style="${S.label}" for="colFrom">I am moving from</label><select class="idx-select" id="colFrom" aria-describedby="colFromNote"><option value="">Loading places&hellip;</option></select></div>
+</div>
+<div id="colChips" style="display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.1rem" aria-label="Common starting cities"></div>
+<div id="colOut" aria-live="polite" style="border-top:1px solid var(--rule);padding-top:1.1rem">
+<p id="colHead" style="font-family:var(--serif);font-size:1.35rem;color:var(--navy);line-height:1.35;margin:0 0 .6rem">Pick a starting city to compare.</p>
+<p id="colSub" style="font-family:var(--sans);font-size:.95rem;color:var(--muted);line-height:1.6;margin:0 0 .35rem"></p>
+<p id="colRev" style="font-family:var(--sans);font-size:.95rem;color:var(--muted);line-height:1.6;margin:0 0 1rem"></p>
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table id="colTable" style="width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.9rem;color:var(--navy);min-width:520px"><thead><tr style="text-align:left;border-bottom:1px solid var(--rule)"><th style="padding:.5rem .4rem;font-weight:600">Category</th><th id="colThFrom" style="padding:.5rem .4rem;font-weight:600">Where you live now</th><th style="padding:.5rem .4rem;font-weight:600">Myrtle Beach area</th><th style="padding:.5rem .4rem;font-weight:600">Difference</th></tr></thead><tbody id="colBody"></tbody></table></div>
+<p id="colFromNote" style="${S.small}">Index numbers: 100 is the U.S. average. &ldquo;Lower&rdquo; and &ldquo;higher&rdquo; are measured against where you live now. Prices are the U.S. Bureau of Economic Analysis regional price parities for 2024 (released February 2026), which cover 387 metro areas and every state. Home values and rents are Zillow&#39;s typical values for each metro area, <span id="colZDate">latest month</span>. Both are metro-wide averages, not quotes for a specific home. The index measures prices, not taxes; property tax, vehicle tax, income tax, and insurance are covered below.</p>
+</div></div>
+<script src="/assets/col.js"></script>
+<script>
+(function(){
+  var D=window.C3_COL; if(!D||!D.rows){return;}
+  var MB='myrtle-beach-conway-north-myrtle-beach-sc';
+  var R={},rows=D.rows; for(var i=0;i<rows.length;i++){R[rows[i][0]]=rows[i];}
+  var sel=document.getElementById('colFrom'),inc=document.getElementById('colIncome'),chips=document.getElementById('colChips');
+  var head=document.getElementById('colHead'),sub=document.getElementById('colSub'),rev=document.getElementById('colRev'),body=document.getElementById('colBody'),thFrom=document.getElementById('colThFrom');
+  document.getElementById('colZDate').textContent=zMonth(D.meta.zillowLatestMonth);
+  // Build the select: metros first, then statewide averages.
+  var gM=document.createElement('optgroup');gM.label='Metro areas';var gS=document.createElement('optgroup');gS.label='Statewide averages';
+  for(var j=0;j<rows.length;j++){var r=rows[j];if(r[3]==='us')continue;var o=document.createElement('option');o.value=r[0];o.textContent=r[1];(r[3]==='msa'?gM:gS).appendChild(o);}
+  sel.innerHTML='';sel.appendChild(gM);sel.appendChild(gS);
+  var QUICK=[['New York City','new-york-newark-jersey-city-ny-nj'],['Charlotte','charlotte-concord-gastonia-nc-sc'],['Raleigh','raleigh-cary-nc'],['Columbus','columbus-oh'],['Cleveland','cleveland-oh'],['Philadelphia','philadelphia-camden-wilmington-pa-nj-de-md'],['Pittsburgh','pittsburgh-pa'],['Boston','boston-cambridge-newton-ma-nh'],['Washington DC','washington-arlington-alexandria-dc-va-md-wv'],['Baltimore','baltimore-columbia-towson-md'],['Chicago','chicago-naperville-elgin-il-in'],['U.S. average','us']];
+  QUICK.forEach(function(q){if(!R[q[1]])return;var b=document.createElement('button');b.type='button';b.className='idx-pill';b.textContent=q[0];b.setAttribute('data-id',q[1]);b.onclick=function(){setFrom(q[1]);calc();};chips.appendChild(b);});
+  function setFrom(id){ if(!R[id])return; if(id==='us'){ /* US is not an <option>; add it once */ if(!sel.querySelector('option[value="us"]')){var o=document.createElement('option');o.value='us';o.textContent='United States average';sel.insertBefore(o,sel.firstChild);} } sel.value=id; }
+  function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  function money100(n){return '$'+(Math.round(n/100)*100).toLocaleString('en-US');}
+  function idx(n){return (Math.round(n*10)/10).toFixed(1);}
+  function pctWord(from,to){ if(!from||!to)return {t:'n/a',c:''}; var d=to/from; if(Math.abs(d-1)<0.0005)return {t:'about the same',c:''}; return d<1?{t:(Math.round((1-d)*1000)/10).toFixed(1)+'% lower',c:'#2f6b3a'}:{t:(Math.round((d-1)*1000)/10).toFixed(1)+'% higher',c:'#a03333'}; }
+  function zMonth(iso){ if(!iso)return 'latest month'; var p=iso.split('-'); var M=['January','February','March','April','May','June','July','August','September','October','November','December']; return M[parseInt(p[1],10)-1]+' '+p[0]; }
+  function readIncome(){ var v=parseFloat((inc.value||'').replace(/[^0-9.]/g,'')); return isFinite(v)&&v>0?v:0; }
+  function shortName(r){ return r[3]==='us'?'the U.S. average':r[1]; }
+  function inPlace(r){ return r[3]==='us'?'at U.S.-average prices':'in '+r[1]; }
+  function thanPlace(r){ return r[3]==='us'?'than the U.S. average':'than in '+r[1]; }
+  function row(label,a,b,fmt,note){ var tr=document.createElement('tr'); tr.style.borderBottom='1px solid var(--rule)'; var p=pctWord(a,b); tr.innerHTML='<td style="padding:.55rem .4rem">'+label+(note?'<br><span style="font-size:.75rem;color:var(--muted)">'+note+'</span>':'')+'</td><td style="padding:.55rem .4rem">'+(a==null?'n/a':fmt(a))+'</td><td style="padding:.55rem .4rem">'+(b==null?'n/a':fmt(b))+'</td><td style="padding:.55rem .4rem;font-weight:600;color:'+(p.c||'var(--navy)')+'">'+p.t+'</td>'; body.appendChild(tr); }
+  function calc(){
+    var f=R[sel.value],t=R[MB]; if(!f||!t){return;}
+    var income=readIncome();
+    body.innerHTML='';
+    thFrom.textContent=f[3]==='us'?'U.S. average':(f[3]==='state'?f[1].replace(' (statewide average)',''):f[1]);
+    if(f[0]===MB){ head.textContent='That is the Myrtle Beach area itself. Pick the place you are moving from.'; sub.textContent='';rev.textContent=''; return; }
+    var ratio=t[4]/f[4], need=income*ratio, p=pctWord(f[4],t[4]);
+    if(income>0){
+      head.textContent='To keep the same standard of living in the Myrtle Beach area, a household earning '+money(income)+' '+inPlace(f)+' needs about '+money100(need)+'.';
+      var diff=income-need;
+      sub.textContent='Overall prices are '+p.t+' '+thanPlace(f)+'. That is about '+money100(Math.abs(diff))+(diff>=0?' less':' more')+' than your current income.';
+      rev.textContent='Put the other way: '+money(income)+' here buys about what '+money100(income/ratio)+' buys '+(f[3]==='us'?'at U.S.-average prices':'in '+shortName(f))+'.';
+    } else {
+      head.textContent='Overall prices in the Myrtle Beach area are '+p.t+' '+thanPlace(f)+'.';
+      sub.textContent='Enter your household income to see the equivalent income here.'; rev.textContent='';
+    }
+    row('Overall (all items)',f[4],t[4],idx,'');
+    row('Housing',f[6],t[6],idx,'rents; owner costs counted at rent-equivalent');
+    row('Utilities',f[7],t[7],idx,'electricity, gas, water, sewer');
+    row('Goods',f[5],t[5],idx,'groceries, clothing, gasoline, household items');
+    row('Other services',f[8],t[8],idx,'health care, dining out, personal and professional services');
+    var zm=zMonth(D.meta.zillowLatestMonth);
+    if(f[3]==='msa'){ row('Typical home value',f[9],t[9],money,'Zillow, '+zm+(f[9]==null?'; not published for this metro':'')); row('Typical rent (monthly)',f[10],t[10],money,'Zillow, '+zm+(f[10]==null?'; not published for this metro':'')); }
+    else { row('Typical home value',null,t[9],money,'Zillow, '+zm+'; pick a metro area for a home-value comparison'); row('Typical rent (monthly)',null,t[10],money,'Zillow, '+zm); }
+    try{ var u=new URL(location.href); u.searchParams.set('from',f[0]); if(income>0)u.searchParams.set('income',String(Math.round(income)));else u.searchParams.delete('income'); history.replaceState(null,'',u.pathname+u.search+u.hash);}catch(e){}
+    Array.prototype.forEach.call(chips.children,function(b){b.classList.toggle('on',b.getAttribute('data-id')===f[0]);});
+  }
+  inc.addEventListener('input',calc); inc.addEventListener('blur',function(){var v=readIncome(); if(v>0)inc.value=Math.round(v).toLocaleString('en-US');});
+  sel.addEventListener('change',calc);
+  var start='new-york-newark-jersey-city-ny-nj';
+  try{ var q=new URLSearchParams(location.search); var qf=q.get('from'); if(qf&&R[qf])start=qf; var qi=parseFloat(q.get('income')); if(isFinite(qi)&&qi>0)inc.value=Math.round(qi).toLocaleString('en-US'); }catch(e){}
+  setFrom(start); calc();
+})();
+</script>
+</div></section>`;
+
+const spec = {
+  slug: '/buyers/relocating/cost-of-living/',
+  cur: 'buyers-relocating-col',
+  title: 'Cost of Living in Myrtle Beach, SC: Calculator vs. Your City',
+  description: 'Compare the cost of living in Myrtle Beach with 387 U.S. metro areas: the income you need here, housing, utilities, goods, home prices, and what changes in SC.',
+  headline: 'Cost of Living in Myrtle Beach, SC, Compared With Your City',
+  keywords: 'cost of living in Myrtle Beach SC, Myrtle Beach cost of living calculator, salary needed to live in Myrtle Beach',
+  breadcrumb: [{ name: 'Buyers', href: '/buyers/' }, { name: 'Relocating', href: '/buyers/relocating/' }, { name: 'Cost of Living', href: '/buyers/relocating/cost-of-living/' }],
+  faq,
+  main: ({ faqHtml, bylineDate }) => `
+<div class="detail-hero bg-grid"><div class="wrap"><div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/buyers/">Buyers</a><span>/</span><a href="/buyers/relocating/">Relocating</a><span>/</span><span style="color:var(--muted)">Cost of Living</span></div><p class="eyebrow" style="margin-bottom:1rem">Cost of living calculator, 387 metro areas</p><h1 class="detail-h1">Cost of living in Myrtle Beach<br/><em style="font-style:italic;color:var(--brass)">compared with your city.</em></h1><p style="color:var(--muted);font-size:.9rem;margin-bottom:1rem">By <strong style="color:var(--navy);font-weight:600">Devin Day</strong>, Operations Officer &amp; licensed MLO, NMLS 2721275 &middot; Reviewed by <strong style="color:var(--navy);font-weight:600">Timmy Fredrick Nash</strong>, Broker-in-Charge &middot; <span style="white-space:nowrap">Updated ${bylineDate}</span></p><p class="detail-sub">Prices in the Myrtle Beach area run about 6 percent below the U.S. average, and housing about 17 percent below. Enter your income and the city you are leaving to see the income you would need here, category by category.</p><div style="margin-top:1.8rem;display:flex;gap:.75rem;flex-wrap:wrap"><a class="btn btn-brass btn-lg" href="#col-calc">Run the comparison</a><a class="btn btn-outline btn-lg" href="tel:+18543332135">Call 854.333.2135</a></div></div></div>
+${CALC_HTML}
+<section style="background:var(--ivory)"><div class="wrap"><p style="${S.eyebrow}">The direct answer</p><h2 style="${S.h2}">What it costs to live in Myrtle Beach</h2><p style="${S.p}">Overall prices in the Myrtle Beach metro area are about 6 percent below the U.S. average. Housing is the reason: rents index at 83.1 against a national 100, about 17 percent below. Utilities sit about 12 percent below average, everyday goods about 4 percent below, and other services about 2 percent below. Those are the federal government&#39;s 2024 regional price figures, released in February 2026.</p><p style="${S.p}">For buyers, the number that matters more is the home itself. Zillow&#39;s typical home value for the metro area was about $342,000 in July 2026, against roughly $737,000 for the New York City area, $549,000 for Portland, Oregon, $437,000 for Raleigh, and $389,000 for Charlotte. Typical rent here was about $1,714 a month.</p><p style="${S.pLast}">What the index does not measure is taxes and insurance, and that is where a move to South Carolina changes your budget most. The sections below cover the four costs that move: property tax, insurance, the annual tax on your car, and income tax.</p></div></section>
+<section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">Where the savings are</p><h2 style="${S.h2}">Housing carries almost the whole gap</h2><p style="${S.p}">Strip the index down and one category does the work. Rents here run about 17 percent below the national average. Everything else is close to par: goods about 4 percent below, other services about 2 percent below, utilities about 12 percent below. If you are moving from a metro where housing is the reason your money disappears, that trade is large. If you are moving from somewhere already cheap, the move will feel roughly neutral, and the calculator above will tell you so rather than pretend otherwise.</p><p style="${S.pLast}">On the purchase side the difference is sharper than the rent index suggests. Zillow&#39;s typical home value here was about $342,000 in July 2026. The same measure was about $737,000 for the New York metro, $742,000 for Boston, $580,000 for Washington, $405,000 for Baltimore, $392,000 for Philadelphia, $333,000 for Columbus, $254,000 for Cleveland, and $232,000 for Pittsburgh. Those last three are the honest cases: parts of the Midwest and western Pennsylvania are cheaper to buy in than the Grand Strand, and anyone telling you otherwise is selling.</p></div></section>
+
+<section style="background:var(--ivory)"><div class="wrap"><p style="${S.eyebrow}">Real bills</p><h2 style="${S.h2}">What the monthly utilities actually run</h2><p style="${S.p}">Index numbers do not pay bills, so here are real ones. In a 1,400 square foot two-storey house here, summer electricity runs about $130 a month with the air conditioning working, and water about $50. That is one household, in one house, not an area average, and your bill will move with square footage, insulation, and how cold you keep it. We publish it because most cost-of-living pages will not give you a single real figure.</p><p style="${S.p}">Internet runs roughly $40 to $75 a month depending on speed and whether you are inside a first-year promotion. There is a member-owned fiber cooperative across much of the county and cable in the built-up areas, so most addresses have a real choice, which is not true everywhere in the state.</p><p style="${S.pLast}">Two setup costs newcomers do not budget for. Both electric providers run a credit check and can ask for a deposit: the state-owned utility sets it from the two highest bills at that address with a $100 floor and refunds it after about a year of on-time payments, while the cooperative charges $35 in fees to open an account and adds a deposit only if the credit check calls for one. Water and sewer outside the city limits needs 24 hours notice and a deposit of $40 to $140 depending on whether you own or rent. The ${A('/buyers/relocating/moving-checklist/', 'moving checklist')} has who serves which area.</p></div></section>
+
+<section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">The part the index misses</p><h2 style="${S.h2}">Taxes: lower, but not in the ways people assume</h2><p style="${S.p}">The price index measures what things cost, not what the state takes. For most people moving here that second number is the larger change, and it moves in both directions.</p><h3 style="${S.h3}">Income tax</h3><p style="${S.p}">South Carolina taxes income at two rates as of this year: 1.99 percent on the first $30,000 of taxable income and 5.21 percent above that, replacing a structure that topped out at 6 percent. There is no local income tax anywhere in the state, which matters if you are leaving a city that charges one. Social Security is not taxed at all. Military retirement pay is fully exempt at any age. Other retirement income gets a deduction of up to $3,000 a year before 65 and up to $10,000 from 65, and there is a separate deduction of up to $15,000 at 65 against any income, reduced by whatever retirement deduction you already took.</p><h3 style="${S.h3}">Property tax</h3><p style="${S.p}">This is where the numbers get genuinely unusual. A home that is your legal residence is assessed at 4 percent of value and is exempt from the school operating tax. Anything else, a second home or a rental, is assessed at 6 percent and pays the school tax too. On a $350,000 house in the unincorporated county that is roughly $1,300 a year as a primary home against roughly $4,200 as a second home. Same house. The gap is about three to one, it is the single biggest cost surprise we see, and it turns on a form you have to file yourself. Full detail and a calculator are on the ${A('/buyers/property-taxes/', 'Horry County property tax page')}.</p><h3 style="${S.h3}">The one that runs the other way</h3><p style="${S.p}">South Carolina taxes vehicles every year, which most northern states do not. Cars are assessed at 6 percent of value at the full local millage, so a $30,000 car runs roughly $360 a year outside the city and closer to $460 inside Myrtle Beach, plus a $50 county road fee. On arrival you also pay a one-time $250 fee per vehicle in place of sales tax on a car you already own. Budget for it: a two-car household is looking at roughly $500 to $1,000 a year that simply did not exist before, and about $600 in one-time fees on the way in.</p><h3 style="${S.h3}">Sales tax and groceries</h3><p style="${S.pLast}">Sales tax runs 8 percent in the unincorporated county and most towns, and 9 percent inside the City of Myrtle Beach. Unprepared groceries are taxed at zero here, state and local both, which is not true in every South Carolina county. Gasoline carries a state tax of about 29 cents a gallon, below most of the Northeast, and pump prices here typically run well under the national average.</p><div style="${S.ctaBox}"><p style="margin:0;color:var(--navy);font-family:var(--sans);font-size:.92rem;font-weight:600">Want these numbers run against a real address and your actual situation?</p><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-brass" href="#lead-form">Run my numbers</a><a class="btn btn-outline" href="tel:+18543332135">Call 854.333.2135</a></div></div></div></section>
+
+<section style="background:var(--ivory)"><div class="wrap"><p style="${S.eyebrow}">The ambush</p><h2 style="${S.h2}">Insurance is where the monthly estimate breaks</h2><p style="${S.pLast}">Every other line on this page is predictable. Coastal insurance is not, and it is the reason a monthly estimate that looked fine in a spreadsheet turns out low. Near the water a policy is often three: the homeowners policy, wind and hail, and flood, each priced separately, with hurricane deductibles calculated as a percentage of the insured value rather than a flat dollar amount. Two houses on the same street can quote very differently based on roof age, elevation, and distance to water. Get real quotes during due diligence rather than after closing, because it is the number most likely to change your view of a house. What the pieces are and how to pay less is on the ${A('/buyers/coastal-insurance/', 'coastal insurance page')}, and the ${A('/buyers/cost-to-own/', 'cost to own calculator')} adds it to the payment, taxes, and dues.</p></div></section>
+<section style="background:var(--navy)" id="lead-form"><div class="wrap" style="padding:3rem 1.5rem"><div style="max-width:680px;margin:0 auto;text-align:center"><h2 style="font-family:var(--serif);font-size:1.9rem;color:var(--ivory);margin-bottom:.8rem">Get the real monthly number for a specific home.</h2><p style="color:rgba(244,239,232,.6);margin:0 auto 1.6rem;line-height:1.7">Send an address or a price range and the city you are leaving. We run property tax at your ownership status, insurance, dues, and payment for that property, free.</p></div><div id="ldWrap" style="max-width:680px;margin:0 auto;background:var(--ivory);border-radius:14px;padding:1.6rem;text-align:left"><div class="idx-lead" style="grid-template-columns:1fr"><input class="idx-input" id="ldCtx" placeholder="Address or price range, and the city you are moving from"></div><div class="idx-lead"><input class="idx-input" id="ldName" placeholder="Your name"><input class="idx-input" id="ldPhone" placeholder="Phone" type="tel"></div><div class="idx-lead" style="grid-template-columns:1fr"><input class="idx-input" id="ldEmail" placeholder="Email" type="email"></div><label style="display:flex;gap:.5rem;align-items:flex-start;font-family:var(--sans);font-size:.72rem;color:var(--muted);line-height:1.45;margin:0 0 .85rem;cursor:pointer"><input type="checkbox" id="ldConsent" style="margin-top:.15rem;accent-color:var(--brass);flex-shrink:0;width:15px;height:15px"><span>I consent to receive calls and text messages from Chapter 3 Realty about my property inquiry, showing appointments, and listing information I requested, at the phone number provided, including calls placed using an automated system or an artificial or prerecorded voice. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase.</span></label><p id="ldErr" style="display:none;color:#a03333;font-family:var(--sans);font-size:.8rem;margin:0 0 .7rem"></p><button class="btn btn-brass" style="width:100%" onclick="ldSubmit()">Run my numbers</button><p style="font-family:var(--sans);font-size:.75rem;color:var(--muted);margin:.7rem 0 0;line-height:1.5">Free, no obligation. We reach out the same day, evenings included. Prefer to talk now? <a href="tel:+18543332135" class="btn btn-outline" style="padding:.35rem .8rem;font-size:.8rem">Call 854.333.2135</a>.</p></div><div id="ldOk" style="display:none;max-width:680px;margin:0 auto;background:rgba(244,239,232,.08);border:1px solid var(--brass);border-radius:14px;padding:1.4rem;color:var(--ivory);text-align:center;line-height:1.6">Thanks. A licensed team member will reach out the same day, evenings included, with the real monthly number.</div><script>
+function ldSubmit(){
+ var cx=document.getElementById('ldCtx').value.trim(),n=document.getElementById('ldName').value.trim(),ph=document.getElementById('ldPhone').value.trim(),em=document.getElementById('ldEmail').value.trim(),c=document.getElementById('ldConsent').checked,err=document.getElementById('ldErr');
+ function fail(m){err.textContent=m;err.style.display='block';}
+ err.style.display='none';
+ if(!cx||!n){fail('Add the address or price range, and your name.');return;}
+ if(!ph&&!em){fail('Add a phone number or an email so we can reach you.');return;}
+ if(ph&&!c){fail('Check the consent box so we can call or text you, or leave the phone blank and use email.');return;}
+ c3SendForm({property_address:cx,name:n,phone:ph,email:em,consent:c?'yes':'no'},'relocating-cost-of-living');
+ document.getElementById('ldWrap').style.display='none';
+ document.getElementById('ldOk').style.display='block';
+}
+</script></div></section>
+<section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">Where the numbers come from</p><h2 style="${S.h2}">How this calculator works, and what it cannot tell you</h2><p style="${S.p}">The price comparison uses the federal government&#39;s regional price parities, which measure what a fixed basket of goods, rent, utilities and services costs in one place against the national average. They cover 387 metro areas plus every state, they are published annually, and they are the same measure economists use for this question. The equivalent-income figure is simple arithmetic: your income multiplied by the Myrtle Beach index divided by your current area&#39;s index. Home values and rents come from Zillow&#39;s published metro series.</p><p style="${S.pLast}">What it cannot do: price your actual life. It is a metro-wide average, so it does not know your neighborhood, your commute, your insurance quote, or your tax situation, and the tax sections above sit outside the index entirely. Treat the output as the honest first cut that tells you whether a move is worth modelling properly, then let us run the real numbers on a real address.</p><div style="${S.ctaBox}"><p style="margin:0;color:var(--navy);font-family:var(--sans);font-size:.92rem;font-weight:600">Moving from a specific city? We will build the side-by-side for your situation.</p><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-brass" href="#lead-form">Ask for the comparison</a><a class="btn btn-outline" href="tel:+18543332135">Call 854.333.2135</a></div></div></div></section>
+
+<section style="background:var(--ivory)"><div class="wrap"><p style="${S.eyebrow}">Common questions</p><h2 style="${S.h2}">Myrtle Beach cost of living FAQ</h2>${faqHtml}<p style="${S.small};margin-top:1.6rem"><strong style="color:var(--navy)">Sources:</strong> ${X('https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area', 'BEA regional price parities')}, ${X('https://www.zillow.com/research/data/', 'Zillow home value and rent data')}, ${X('https://dor.sc.gov/', 'South Carolina Department of Revenue')}, ${X('https://www.horrycountysc.gov/tax-payer-services/', 'Horry County tax payer services')}. Household bills are ours and are labelled as such. Prices, rates and utility deposits change; the figures carry the date shown in the calculator.</p></div></section>
+`,
+};
+
+module.exports = spec;

@@ -1,0 +1,7490 @@
+{
+ "meta": {
+  "generated": "2026-08-16",
+  "rppVintage": "2024",
+  "rppSource": "U.S. Bureau of Economic Analysis, Regional Price Parities (MARPP, SARPP), released February 2026",
+  "zillowLatestMonth": "2026-07-31",
+  "zillowSource": "Zillow Research, ZHVI (all homes, smoothed, seasonally adjusted) and ZORI, metro level",
+  "counts": {
+   "msa": 387,
+   "state": 51,
+   "total": 439,
+   "msaWithZhvi": 380,
+   "msaWithZori": 383
+  },
+  "unmatchedZillow": [
+   "Amherst Town-Northampton, MA  ->  Amherst Town, MA",
+   "Dayton-Kettering-Beavercreek, OH  ->  Dayton, OH",
+   "Kenosha, WI  ->  Kenosha, WI",
+   "Kiryas Joel-Poughkeepsie-Newburgh, NY  ->  Poughkeepsie, NY",
+   "Prescott Valley-Prescott, AZ  ->  Prescott Valley, AZ",
+   "Slidell-Mandeville-Covington, LA  ->  Slidell, LA",
+   "Waterbury-Shelton, CT  ->  Waterbury, CT"
+  ]
+ },
+ "places": [
+  {
+   "id": "us",
+   "name": "United States average",
+   "state": "",
+   "kind": "us",
+   "rpp": {
+    "all": 100,
+    "goods": 99.567,
+    "housing": 100.629,
+    "utilities": 98.441,
+    "other": 100.147
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "abilene-tx",
+   "name": "Abilene, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.364,
+    "goods": 93.757,
+    "housing": 73.791,
+    "utilities": 81.162,
+    "other": 96.24
+   },
+   "zhvi": 220955,
+   "zori": 2003,
+   "zAsOf": "2026-07-31",
+   "zName": "Abilene, TX"
+  },
+  {
+   "id": "akron-oh",
+   "name": "Akron, OH",
+   "state": "OH",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.37,
+    "goods": 93.628,
+    "housing": 76.785,
+    "utilities": 96.448,
+    "other": 98.939
+   },
+   "zhvi": 243507,
+   "zori": 1293,
+   "zAsOf": "2026-07-31",
+   "zName": "Akron, OH"
+  },
+  {
+   "id": "albany-schenectady-troy-ny",
+   "name": "Albany-Schenectady-Troy, NY",
+   "state": "NY",
+   "kind": "msa",
+   "rpp": {
+    "all": 99.566,
+    "goods": 99.693,
+    "housing": 102.582,
+    "utilities": 134.048,
+    "other": 97.754
+   },
+   "zhvi": 377793,
+   "zori": 1689,
+   "zAsOf": "2026-07-31",
+   "zName": "Albany, NY"
+  },
+  {
+   "id": "albany-ga",
+   "name": "Albany, GA",
+   "state": "GA",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.669,
+    "goods": 96.269,
+    "housing": 54.626,
+    "utilities": 88.272,
+    "other": 98.667
+   },
+   "zhvi": 167805,
+   "zori": 1131,
+   "zAsOf": "2026-07-31",
+   "zName": "Albany, GA"
+  },
+  {
+   "id": "albany-or",
+   "name": "Albany, OR",
+   "state": "OR",
+   "kind": "msa",
+   "rpp": {
+    "all": 102.1,
+    "goods": 105.261,
+    "housing": 101.059,
+    "utilities": 104.816,
+    "other": 100.298
+   },
+   "zhvi": 413795,
+   "zori": 1644,
+   "zAsOf": "2026-07-31",
+   "zName": "Albany, OR"
+  },
+  {
+   "id": "albuquerque-nm",
+   "name": "Albuquerque, NM",
+   "state": "NM",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.546,
+    "goods": 96.144,
+    "housing": 89.153,
+    "utilities": 77.852,
+    "other": 98.54
+   },
+   "zhvi": 352693,
+   "zori": 1511,
+   "zAsOf": "2026-07-31",
+   "zName": "Albuquerque, NM"
+  },
+  {
+   "id": "alexandria-la",
+   "name": "Alexandria, LA",
+   "state": "LA",
+   "kind": "msa",
+   "rpp": {
+    "all": 85.686,
+    "goods": 93.691,
+    "housing": 53.684,
+    "utilities": 71.076,
+    "other": 95.705
+   },
+   "zhvi": 171887,
+   "zori": 1063,
+   "zAsOf": "2026-07-31",
+   "zName": "Alexandria, LA"
+  },
+  {
+   "id": "allentown-bethlehem-easton-pa-nj",
+   "name": "Allentown-Bethlehem-Easton, PA-NJ",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 99.968,
+    "goods": 100.569,
+    "housing": 105.52,
+    "utilities": 107.591,
+    "other": 97.752
+   },
+   "zhvi": 368621,
+   "zori": 1873,
+   "zAsOf": "2026-07-31",
+   "zName": "Allentown, PA"
+  },
+  {
+   "id": "altoona-pa",
+   "name": "Altoona, PA",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.507,
+    "goods": 100.684,
+    "housing": 54.978,
+    "utilities": 107.673,
+    "other": 97.726
+   },
+   "zhvi": 180150,
+   "zori": 1080,
+   "zAsOf": "2026-07-31",
+   "zName": "Altoona, PA"
+  },
+  {
+   "id": "amarillo-tx",
+   "name": "Amarillo, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.82,
+    "goods": 93.757,
+    "housing": 78.38,
+    "utilities": 83.474,
+    "other": 96.24
+   },
+   "zhvi": 221823,
+   "zori": 1290,
+   "zAsOf": "2026-07-31",
+   "zName": "Amarillo, TX"
+  },
+  {
+   "id": "ames-ia",
+   "name": "Ames, IA",
+   "state": "IA",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.83,
+    "goods": 93.73,
+    "housing": 69.163,
+    "utilities": 83.004,
+    "other": 92.927
+   },
+   "zhvi": 281626,
+   "zori": 1070,
+   "zAsOf": "2026-07-31",
+   "zName": "Ames, IA"
+  },
+  {
+   "id": "amherst-town-northampton-ma",
+   "name": "Amherst Town-Northampton, MA",
+   "state": "MA",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.243,
+    "goods": 97.015,
+    "housing": 97.537,
+    "utilities": 155.733,
+    "other": 101.197
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "anchorage-ak",
+   "name": "Anchorage, AK",
+   "state": "AK",
+   "kind": "msa",
+   "rpp": {
+    "all": 105.42,
+    "goods": 107.34,
+    "housing": 109.905,
+    "utilities": 111.772,
+    "other": 103.342
+   },
+   "zhvi": 428282,
+   "zori": 1808,
+   "zAsOf": "2026-07-31",
+   "zName": "Anchorage, AK"
+  },
+  {
+   "id": "ann-arbor-mi",
+   "name": "Ann Arbor, MI",
+   "state": "MI",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.88,
+    "goods": 93.711,
+    "housing": 125.3,
+    "utilities": 98.184,
+    "other": 99.561
+   },
+   "zhvi": 423247,
+   "zori": 2015,
+   "zAsOf": "2026-07-31",
+   "zName": "Ann Arbor, MI"
+  },
+  {
+   "id": "anniston-oxford-al",
+   "name": "Anniston-Oxford, AL",
+   "state": "AL",
+   "kind": "msa",
+   "rpp": {
+    "all": 85.949,
+    "goods": 96.397,
+    "housing": 54.705,
+    "utilities": 87.127,
+    "other": 96.693
+   },
+   "zhvi": 171384,
+   "zori": 983,
+   "zAsOf": "2026-07-31",
+   "zName": "Anniston, AL"
+  },
+  {
+   "id": "appleton-wi",
+   "name": "Appleton, WI",
+   "state": "WI",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.419,
+    "goods": 93.787,
+    "housing": 70.785,
+    "utilities": 90.588,
+    "other": 99.411
+   },
+   "zhvi": 354433,
+   "zori": 1231,
+   "zAsOf": "2026-07-31",
+   "zName": "Appleton, WI"
+  },
+  {
+   "id": "asheville-nc",
+   "name": "Asheville, NC",
+   "state": "NC",
+   "kind": "msa",
+   "rpp": {
+    "all": 96.506,
+    "goods": 96.621,
+    "housing": 93.371,
+    "utilities": 88.63,
+    "other": 98.186
+   },
+   "zhvi": 426217,
+   "zori": 1686,
+   "zAsOf": "2026-07-31",
+   "zName": "Asheville, NC"
+  },
+  {
+   "id": "athens-clarke-county-ga",
+   "name": "Athens-Clarke County, GA",
+   "state": "GA",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.343,
+    "goods": 96.269,
+    "housing": 76.759,
+    "utilities": 89.257,
+    "other": 98.667
+   },
+   "zhvi": 374272,
+   "zori": 1638,
+   "zAsOf": "2026-07-31",
+   "zName": "Athens, GA"
+  },
+  {
+   "id": "atlanta-sandy-springs-roswell-ga",
+   "name": "Atlanta-Sandy Springs-Roswell, GA",
+   "state": "GA",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.058,
+    "goods": 100.416,
+    "housing": 111.022,
+    "utilities": 96.239,
+    "other": 96.701
+   },
+   "zhvi": 381872,
+   "zori": 1855,
+   "zAsOf": "2026-07-31",
+   "zName": "Atlanta, GA"
+  },
+  {
+   "id": "atlantic-city-hammonton-nj",
+   "name": "Atlantic City-Hammonton, NJ",
+   "state": "NJ",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.857,
+    "goods": 99.79,
+    "housing": 98.673,
+    "utilities": 109.204,
+    "other": 97.925
+   },
+   "zhvi": 387264,
+   "zori": 2088,
+   "zAsOf": "2026-07-31",
+   "zName": "Atlantic City, NJ"
+  },
+  {
+   "id": "auburn-opelika-al",
+   "name": "Auburn-Opelika, AL",
+   "state": "AL",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.933,
+    "goods": 96.397,
+    "housing": 62.078,
+    "utilities": 83.889,
+    "other": 96.693
+   },
+   "zhvi": 352523,
+   "zori": 1661,
+   "zAsOf": "2026-07-31",
+   "zName": "Auburn, AL"
+  },
+  {
+   "id": "augusta-richmond-county-ga-sc",
+   "name": "Augusta-Richmond County, GA-SC",
+   "state": "GA",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.903,
+    "goods": 96.293,
+    "housing": 70.603,
+    "utilities": 89.473,
+    "other": 98.54
+   },
+   "zhvi": 253288,
+   "zori": 1510,
+   "zAsOf": "2026-07-31",
+   "zName": "Augusta, GA"
+  },
+  {
+   "id": "austin-round-rock-san-marcos-tx",
+   "name": "Austin-Round Rock-San Marcos, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.066,
+    "goods": 93.757,
+    "housing": 120.361,
+    "utilities": 82.044,
+    "other": 96.24
+   },
+   "zhvi": 424339,
+   "zori": 1647,
+   "zAsOf": "2026-07-31",
+   "zName": "Austin, TX"
+  },
+  {
+   "id": "bakersfield-delano-ca",
+   "name": "Bakersfield-Delano, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.886,
+    "goods": 105.168,
+    "housing": 90.291,
+    "utilities": 158.257,
+    "other": 100.267
+   },
+   "zhvi": 364984,
+   "zori": 1803,
+   "zAsOf": "2026-07-31",
+   "zName": "Bakersfield, CA"
+  },
+  {
+   "id": "baltimore-columbia-towson-md",
+   "name": "Baltimore-Columbia-Towson, MD",
+   "state": "MD",
+   "kind": "msa",
+   "rpp": {
+    "all": 104.487,
+    "goods": 102.353,
+    "housing": 118.194,
+    "utilities": 110.215,
+    "other": 101.496
+   },
+   "zhvi": 405069,
+   "zori": 1946,
+   "zAsOf": "2026-07-31",
+   "zName": "Baltimore, MD"
+  },
+  {
+   "id": "bangor-me",
+   "name": "Bangor, ME",
+   "state": "ME",
+   "kind": "msa",
+   "rpp": {
+    "all": 96.508,
+    "goods": 97.171,
+    "housing": 77.688,
+    "utilities": 134.759,
+    "other": 103.191
+   },
+   "zhvi": 286652,
+   "zori": 1562,
+   "zAsOf": "2026-07-31",
+   "zName": "Bangor, ME"
+  },
+  {
+   "id": "barnstable-town-ma",
+   "name": "Barnstable Town, MA",
+   "state": "MA",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.351,
+    "goods": 97.015,
+    "housing": 90.012,
+    "utilities": 158.45,
+    "other": 101.197
+   },
+   "zhvi": 768173,
+   "zori": 2738,
+   "zAsOf": "2026-07-31",
+   "zName": "Barnstable Town, MA"
+  },
+  {
+   "id": "baton-rouge-la",
+   "name": "Baton Rouge, LA",
+   "state": "LA",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.78,
+    "goods": 93.691,
+    "housing": 74.183,
+    "utilities": 71.185,
+    "other": 95.705
+   },
+   "zhvi": 249578,
+   "zori": 1407,
+   "zAsOf": "2026-07-31",
+   "zName": "Baton Rouge, LA"
+  },
+  {
+   "id": "battle-creek-mi",
+   "name": "Battle Creek, MI",
+   "state": "MI",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.541,
+    "goods": 93.711,
+    "housing": 61.045,
+    "utilities": 95.003,
+    "other": 99.561
+   },
+   "zhvi": 194043,
+   "zori": 1124,
+   "zAsOf": "2026-07-31",
+   "zName": "Battle Creek, MI"
+  },
+  {
+   "id": "bay-city-mi",
+   "name": "Bay City, MI",
+   "state": "MI",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.921,
+    "goods": 93.711,
+    "housing": 66.684,
+    "utilities": 95.219,
+    "other": 99.561
+   },
+   "zhvi": 188682,
+   "zori": 1121,
+   "zAsOf": "2026-07-31",
+   "zName": "Bay City, MI"
+  },
+  {
+   "id": "beaumont-port-arthur-tx",
+   "name": "Beaumont-Port Arthur, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.046,
+    "goods": 93.757,
+    "housing": 70.939,
+    "utilities": 83.098,
+    "other": 96.24
+   },
+   "zhvi": 187418,
+   "zori": 1301,
+   "zAsOf": "2026-07-31",
+   "zName": "Beaumont, TX"
+  },
+  {
+   "id": "beckley-wv",
+   "name": "Beckley, WV",
+   "state": "WV",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.369,
+    "goods": 96.27,
+    "housing": 52.246,
+    "utilities": 91.774,
+    "other": 99.806
+   },
+   "zhvi": 150735,
+   "zori": 1045,
+   "zAsOf": "2026-07-31",
+   "zName": "Beckley, WV"
+  },
+  {
+   "id": "bellingham-wa",
+   "name": "Bellingham, WA",
+   "state": "WA",
+   "kind": "msa",
+   "rpp": {
+    "all": 103.334,
+    "goods": 105.028,
+    "housing": 112.946,
+    "utilities": 99.878,
+    "other": 99.472
+   },
+   "zhvi": 621276,
+   "zori": 1986,
+   "zAsOf": "2026-07-31",
+   "zName": "Bellingham, WA"
+  },
+  {
+   "id": "bend-or",
+   "name": "Bend, OR",
+   "state": "OR",
+   "kind": "msa",
+   "rpp": {
+    "all": 103.607,
+    "goods": 105.261,
+    "housing": 109.958,
+    "utilities": 104.992,
+    "other": 100.298
+   },
+   "zhvi": 668236,
+   "zori": 2235,
+   "zAsOf": "2026-07-31",
+   "zName": "Bend, OR"
+  },
+  {
+   "id": "billings-mt",
+   "name": "Billings, MT",
+   "state": "MT",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.526,
+    "goods": 96.006,
+    "housing": 77.364,
+    "utilities": 72.437,
+    "other": 98.715
+   },
+   "zhvi": 415661,
+   "zori": 1429,
+   "zAsOf": "2026-07-31",
+   "zName": "Billings, MT"
+  },
+  {
+   "id": "binghamton-ny",
+   "name": "Binghamton, NY",
+   "state": "NY",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.863,
+    "goods": 99.693,
+    "housing": 69.694,
+    "utilities": 131.567,
+    "other": 97.754
+   },
+   "zhvi": 205581,
+   "zori": 1333,
+   "zAsOf": "2026-07-31",
+   "zName": "Binghamton, NY"
+  },
+  {
+   "id": "birmingham-al",
+   "name": "Birmingham, AL",
+   "state": "AL",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.644,
+    "goods": 96.397,
+    "housing": 71.851,
+    "utilities": 83.803,
+    "other": 96.693
+   },
+   "zhvi": 263665,
+   "zori": 1456,
+   "zAsOf": "2026-07-31",
+   "zName": "Birmingham, AL"
+  },
+  {
+   "id": "bismarck-nd",
+   "name": "Bismarck, ND",
+   "state": "ND",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.024,
+    "goods": 95.701,
+    "housing": 84.013,
+    "utilities": 74.999,
+    "other": 91.158
+   },
+   "zhvi": 361921,
+   "zori": 1348,
+   "zAsOf": "2026-07-31",
+   "zName": "Bismarck, ND"
+  },
+  {
+   "id": "blacksburg-christiansburg-radford-va",
+   "name": "Blacksburg-Christiansburg-Radford, VA",
+   "state": "VA",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.71,
+    "goods": 96.773,
+    "housing": 74.371,
+    "utilities": 88.097,
+    "other": 98.612
+   },
+   "zhvi": 291204,
+   "zori": 1637,
+   "zAsOf": "2026-07-31",
+   "zName": "Blacksburg, VA"
+  },
+  {
+   "id": "bloomington-il",
+   "name": "Bloomington, IL",
+   "state": "IL",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.537,
+    "goods": 93.643,
+    "housing": 74.715,
+    "utilities": 89.591,
+    "other": 99.59
+   },
+   "zhvi": 262618,
+   "zori": 1317,
+   "zAsOf": "2026-07-31",
+   "zName": "Bloomington, IL"
+  },
+  {
+   "id": "bloomington-in",
+   "name": "Bloomington, IN",
+   "state": "IN",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.084,
+    "goods": 94.318,
+    "housing": 85.59,
+    "utilities": 86.518,
+    "other": 99.141
+   },
+   "zhvi": 304198,
+   "zori": 1452,
+   "zAsOf": "2026-07-31",
+   "zName": "Bloomington, IN"
+  },
+  {
+   "id": "boise-city-id",
+   "name": "Boise City, ID",
+   "state": "ID",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.391,
+    "goods": 96.179,
+    "housing": 105.58,
+    "utilities": 70.695,
+    "other": 98.974
+   },
+   "zhvi": 497096,
+   "zori": 1906,
+   "zAsOf": "2026-07-31",
+   "zName": "Boise City, ID"
+  },
+  {
+   "id": "boston-cambridge-newton-ma-nh",
+   "name": "Boston-Cambridge-Newton, MA-NH",
+   "state": "MA",
+   "kind": "msa",
+   "rpp": {
+    "all": 108.266,
+    "goods": 99.651,
+    "housing": 148.424,
+    "utilities": 148.768,
+    "other": 103.603
+   },
+   "zhvi": 742341,
+   "zori": 3165,
+   "zAsOf": "2026-07-31",
+   "zName": "Boston, MA"
+  },
+  {
+   "id": "boulder-co",
+   "name": "Boulder, CO",
+   "state": "CO",
+   "kind": "msa",
+   "rpp": {
+    "all": 105.202,
+    "goods": 96.052,
+    "housing": 157.02,
+    "utilities": 82.741,
+    "other": 99.822
+   },
+   "zhvi": 718693,
+   "zori": 2246,
+   "zAsOf": "2026-07-31",
+   "zName": "Boulder, CO"
+  },
+  {
+   "id": "bowling-green-ky",
+   "name": "Bowling Green, KY",
+   "state": "KY",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.179,
+    "goods": 96.246,
+    "housing": 63.395,
+    "utilities": 75.2,
+    "other": 96.892
+   },
+   "zhvi": 264193,
+   "zori": 1247,
+   "zAsOf": "2026-07-31",
+   "zName": "Bowling Green, KY"
+  },
+  {
+   "id": "bozeman-mt",
+   "name": "Bozeman, MT",
+   "state": "MT",
+   "kind": "msa",
+   "rpp": {
+    "all": 102.51,
+    "goods": 96.006,
+    "housing": 139.188,
+    "utilities": 73.637,
+    "other": 98.715
+   },
+   "zhvi": 701508,
+   "zori": 2191,
+   "zAsOf": "2026-07-31",
+   "zName": "Bozeman, MT"
+  },
+  {
+   "id": "bremerton-silverdale-port-orchard-wa",
+   "name": "Bremerton-Silverdale-Port Orchard, WA",
+   "state": "WA",
+   "kind": "msa",
+   "rpp": {
+    "all": 105.607,
+    "goods": 105.028,
+    "housing": 129.641,
+    "utilities": 92.038,
+    "other": 99.472
+   },
+   "zhvi": 589257,
+   "zori": 2075,
+   "zAsOf": "2026-07-31",
+   "zName": "Bremerton, WA"
+  },
+  {
+   "id": "bridgeport-stamford-danbury-ct-metropolitan-statistical-area",
+   "name": "Bridgeport-Stamford-Danbury, CT Metropolitan Statistical Area",
+   "state": "CT",
+   "kind": "msa",
+   "rpp": {
+    "all": 106.864,
+    "goods": 97.33,
+    "housing": 150.453,
+    "utilities": 147.074,
+    "other": 102.658
+   },
+   "zhvi": 698397,
+   "zori": 2897,
+   "zAsOf": "2026-07-31",
+   "zName": "Bridgeport, CT"
+  },
+  {
+   "id": "brownsville-harlingen-tx",
+   "name": "Brownsville-Harlingen, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 85.975,
+    "goods": 93.757,
+    "housing": 57.72,
+    "utilities": 81.15,
+    "other": 96.24
+   },
+   "zhvi": 207319,
+   "zori": 1447,
+   "zAsOf": "2026-07-31",
+   "zName": "Brownsville, TX"
+  },
+  {
+   "id": "brunswick-st-simons-ga",
+   "name": "Brunswick-St. Simons, GA",
+   "state": "GA",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.708,
+    "goods": 96.269,
+    "housing": 56.34,
+    "utilities": 87.264,
+    "other": 98.667
+   },
+   "zhvi": 322546,
+   "zori": 1640,
+   "zAsOf": "2026-07-31",
+   "zName": "Brunswick, GA"
+  },
+  {
+   "id": "buffalo-cheektowaga-ny",
+   "name": "Buffalo-Cheektowaga, NY",
+   "state": "NY",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.844,
+    "goods": 99.693,
+    "housing": 80.989,
+    "utilities": 129.489,
+    "other": 97.754
+   },
+   "zhvi": 292860,
+   "zori": 1446,
+   "zAsOf": "2026-07-31",
+   "zName": "Buffalo, NY"
+  },
+  {
+   "id": "burlington-south-burlington-vt",
+   "name": "Burlington-South Burlington, VT",
+   "state": "VT",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.949,
+    "goods": 97.274,
+    "housing": 103.842,
+    "utilities": 125.55,
+    "other": 101.586
+   },
+   "zhvi": 478145,
+   "zori": 2131,
+   "zAsOf": "2026-07-31",
+   "zName": "Burlington, VT"
+  },
+  {
+   "id": "burlington-nc",
+   "name": "Burlington, NC",
+   "state": "NC",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.196,
+    "goods": 96.621,
+    "housing": 77.88,
+    "utilities": 89.234,
+    "other": 98.186
+   },
+   "zhvi": 297197,
+   "zori": 1314,
+   "zAsOf": "2026-07-31",
+   "zName": "Burlington, NC"
+  },
+  {
+   "id": "canton-massillon-oh",
+   "name": "Canton-Massillon, OH",
+   "state": "OH",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.406,
+    "goods": 93.628,
+    "housing": 58.143,
+    "utilities": 96.945,
+    "other": 98.939
+   },
+   "zhvi": 220157,
+   "zori": 1136,
+   "zAsOf": "2026-07-31",
+   "zName": "Canton, OH"
+  },
+  {
+   "id": "cape-coral-fort-myers-fl",
+   "name": "Cape Coral-Fort Myers, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 102.349,
+    "goods": 96.24,
+    "housing": 125.113,
+    "utilities": 86.901,
+    "other": 98.864
+   },
+   "zhvi": 337352,
+   "zori": 1864,
+   "zAsOf": "2026-07-31",
+   "zName": "Cape Coral, FL"
+  },
+  {
+   "id": "cape-girardeau-mo-il",
+   "name": "Cape Girardeau, MO-IL",
+   "state": "MO",
+   "kind": "msa",
+   "rpp": {
+    "all": 86.078,
+    "goods": 94.222,
+    "housing": 56.422,
+    "utilities": 85.609,
+    "other": 93.088
+   },
+   "zhvi": 226995,
+   "zori": 958,
+   "zAsOf": "2026-07-31",
+   "zName": "Cape Girardeau, MO"
+  },
+  {
+   "id": "carson-city-nv",
+   "name": "Carson City, NV",
+   "state": "NV",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.13,
+    "goods": 96.271,
+    "housing": 101.176,
+    "utilities": 92.674,
+    "other": 98.744
+   },
+   "zhvi": 498224,
+   "zori": 1879,
+   "zAsOf": "2026-07-31",
+   "zName": "Carson City, NV"
+  },
+  {
+   "id": "casper-wy",
+   "name": "Casper, WY",
+   "state": "WY",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.829,
+    "goods": 95.368,
+    "housing": 74.189,
+    "utilities": 78.876,
+    "other": 100.428
+   },
+   "zhvi": 315872,
+   "zori": 1404,
+   "zAsOf": "2026-07-31",
+   "zName": "Casper, WY"
+  },
+  {
+   "id": "cedar-rapids-ia",
+   "name": "Cedar Rapids, IA",
+   "state": "IA",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.963,
+    "goods": 93.73,
+    "housing": 71.447,
+    "utilities": 83.981,
+    "other": 92.927
+   },
+   "zhvi": 247058,
+   "zori": 1283,
+   "zAsOf": "2026-07-31",
+   "zName": "Cedar Rapids, IA"
+  },
+  {
+   "id": "chambersburg-pa",
+   "name": "Chambersburg, PA",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 94.642,
+    "goods": 100.684,
+    "housing": 71.914,
+    "utilities": 108.348,
+    "other": 97.726
+   },
+   "zhvi": 293175,
+   "zori": 1338,
+   "zAsOf": "2026-07-31",
+   "zName": "Chambersburg, PA"
+  },
+  {
+   "id": "champaign-urbana-il",
+   "name": "Champaign-Urbana, IL",
+   "state": "IL",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.704,
+    "goods": 93.643,
+    "housing": 71.604,
+    "utilities": 90.467,
+    "other": 99.59
+   },
+   "zhvi": 240904,
+   "zori": 1333,
+   "zAsOf": "2026-07-31",
+   "zName": "Champaign, IL"
+  },
+  {
+   "id": "charleston-north-charleston-sc",
+   "name": "Charleston-North Charleston, SC",
+   "state": "SC",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.962,
+    "goods": 96.339,
+    "housing": 119.77,
+    "utilities": 88.212,
+    "other": 98.284
+   },
+   "zhvi": 435645,
+   "zori": 2063,
+   "zAsOf": "2026-07-31",
+   "zName": "Charleston, SC"
+  },
+  {
+   "id": "charleston-wv",
+   "name": "Charleston, WV",
+   "state": "WV",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.717,
+    "goods": 96.27,
+    "housing": 51.394,
+    "utilities": 91.712,
+    "other": 99.806
+   },
+   "zhvi": 150171,
+   "zori": 1264,
+   "zAsOf": "2026-07-31",
+   "zName": "Charleston, WV"
+  },
+  {
+   "id": "charlotte-concord-gastonia-nc-sc",
+   "name": "Charlotte-Concord-Gastonia, NC-SC",
+   "state": "NC",
+   "kind": "msa",
+   "rpp": {
+    "all": 97.348,
+    "goods": 96.58,
+    "housing": 97.635,
+    "utilities": 89.164,
+    "other": 98.2
+   },
+   "zhvi": 388736,
+   "zori": 1756,
+   "zAsOf": "2026-07-31",
+   "zName": "Charlotte, NC"
+  },
+  {
+   "id": "charlottesville-va",
+   "name": "Charlottesville, VA",
+   "state": "VA",
+   "kind": "msa",
+   "rpp": {
+    "all": 99.146,
+    "goods": 96.773,
+    "housing": 107.041,
+    "utilities": 88.973,
+    "other": 98.612
+   },
+   "zhvi": 472800,
+   "zori": 2008,
+   "zAsOf": "2026-07-31",
+   "zName": "Charlottesville, VA"
+  },
+  {
+   "id": "chattanooga-tn-ga",
+   "name": "Chattanooga, TN-GA",
+   "state": "TN",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.464,
+    "goods": 95.994,
+    "housing": 76.55,
+    "utilities": 74.209,
+    "other": 95.311
+   },
+   "zhvi": 326041,
+   "zori": 1531,
+   "zAsOf": "2026-07-31",
+   "zName": "Chattanooga, TN"
+  },
+  {
+   "id": "cheyenne-wy",
+   "name": "Cheyenne, WY",
+   "state": "WY",
+   "kind": "msa",
+   "rpp": {
+    "all": 96.491,
+    "goods": 95.368,
+    "housing": 89.828,
+    "utilities": 77.961,
+    "other": 100.428
+   },
+   "zhvi": 393974,
+   "zori": 1528,
+   "zAsOf": "2026-07-31",
+   "zName": "Cheyenne, WY"
+  },
+  {
+   "id": "chicago-naperville-elgin-il-in",
+   "name": "Chicago-Naperville-Elgin, IL-IN",
+   "state": "IL",
+   "kind": "msa",
+   "rpp": {
+    "all": 103.595,
+    "goods": 107.258,
+    "housing": 112.01,
+    "utilities": 83.581,
+    "other": 100.492
+   },
+   "zhvi": 360262,
+   "zori": 2253,
+   "zAsOf": "2026-07-31",
+   "zName": "Chicago, IL"
+  },
+  {
+   "id": "chico-ca",
+   "name": "Chico, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 101.197,
+    "goods": 105.168,
+    "housing": 91.946,
+    "utilities": 158.837,
+    "other": 100.267
+   },
+   "zhvi": 401873,
+   "zori": 1527,
+   "zAsOf": "2026-07-31",
+   "zName": "Chico, CA"
+  },
+  {
+   "id": "cincinnati-oh-ky-in",
+   "name": "Cincinnati, OH-KY-IN",
+   "state": "OH",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.37,
+    "goods": 93.751,
+    "housing": 87.608,
+    "utilities": 90.954,
+    "other": 99.04
+   },
+   "zhvi": 311116,
+   "zori": 1552,
+   "zAsOf": "2026-07-31",
+   "zName": "Cincinnati, OH"
+  },
+  {
+   "id": "clarksville-tn-ky",
+   "name": "Clarksville, TN-KY",
+   "state": "TN",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.947,
+    "goods": 96.247,
+    "housing": 73.801,
+    "utilities": 72.546,
+    "other": 95.52
+   },
+   "zhvi": 293172,
+   "zori": 1362,
+   "zAsOf": "2026-07-31",
+   "zName": "Clarksville, TN"
+  },
+  {
+   "id": "cleveland-oh",
+   "name": "Cleveland, OH",
+   "state": "OH",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.923,
+    "goods": 93.628,
+    "housing": 79.434,
+    "utilities": 95.967,
+    "other": 98.939
+   },
+   "zhvi": 254473,
+   "zori": 1476,
+   "zAsOf": "2026-07-31",
+   "zName": "Cleveland, OH"
+  },
+  {
+   "id": "cleveland-tn",
+   "name": "Cleveland, TN",
+   "state": "TN",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.08,
+    "goods": 96.247,
+    "housing": 60.327,
+    "utilities": 72.32,
+    "other": 95.142
+   },
+   "zhvi": 313342,
+   "zori": 1415,
+   "zAsOf": "2026-07-31",
+   "zName": "Cleveland, TN"
+  },
+  {
+   "id": "coeur-d-alene-id",
+   "name": "Coeur d'Alene, ID",
+   "state": "ID",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.293,
+    "goods": 96.179,
+    "housing": 105.597,
+    "utilities": 70.763,
+    "other": 98.974
+   },
+   "zhvi": 605399,
+   "zori": 1829,
+   "zAsOf": "2026-07-31",
+   "zName": "Coeur d'Alene, ID"
+  },
+  {
+   "id": "college-station-bryan-tx",
+   "name": "College Station-Bryan, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.951,
+    "goods": 93.757,
+    "housing": 75.088,
+    "utilities": 84.39,
+    "other": 96.24
+   },
+   "zhvi": 310295,
+   "zori": 1439,
+   "zAsOf": "2026-07-31",
+   "zName": "College Station, TX"
+  },
+  {
+   "id": "colorado-springs-co",
+   "name": "Colorado Springs, CO",
+   "state": "CO",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.707,
+    "goods": 96.052,
+    "housing": 116.207,
+    "utilities": 83.195,
+    "other": 99.822
+   },
+   "zhvi": 455359,
+   "zori": 1791,
+   "zAsOf": "2026-07-31",
+   "zName": "Colorado Springs, CO"
+  },
+  {
+   "id": "columbia-mo",
+   "name": "Columbia, MO",
+   "state": "MO",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.438,
+    "goods": 94.193,
+    "housing": 69.248,
+    "utilities": 85.966,
+    "other": 93.026
+   },
+   "zhvi": 322991,
+   "zori": 1432,
+   "zAsOf": "2026-07-31",
+   "zName": "Columbia, MO"
+  },
+  {
+   "id": "columbia-sc",
+   "name": "Columbia, SC",
+   "state": "SC",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.662,
+    "goods": 96.339,
+    "housing": 79.455,
+    "utilities": 88.306,
+    "other": 98.284
+   },
+   "zhvi": 256240,
+   "zori": 1562,
+   "zAsOf": "2026-07-31",
+   "zName": "Columbia, SC"
+  },
+  {
+   "id": "columbus-ga-al",
+   "name": "Columbus, GA-AL",
+   "state": "GA",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.296,
+    "goods": 96.332,
+    "housing": 61.185,
+    "utilities": 89.666,
+    "other": 98.578
+   },
+   "zhvi": 209704,
+   "zori": 1334,
+   "zAsOf": "2026-07-31",
+   "zName": "Columbus, GA"
+  },
+  {
+   "id": "columbus-in",
+   "name": "Columbus, IN",
+   "state": "IN",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.003,
+    "goods": 94.318,
+    "housing": 75.468,
+    "utilities": 86.577,
+    "other": 99.141
+   },
+   "zhvi": 277086,
+   "zori": 1398,
+   "zAsOf": "2026-07-31",
+   "zName": "Columbus, IN"
+  },
+  {
+   "id": "columbus-oh",
+   "name": "Columbus, OH",
+   "state": "OH",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.469,
+    "goods": 93.628,
+    "housing": 87.945,
+    "utilities": 95.523,
+    "other": 98.939
+   },
+   "zhvi": 332765,
+   "zori": 1519,
+   "zAsOf": "2026-07-31",
+   "zName": "Columbus, OH"
+  },
+  {
+   "id": "corpus-christi-tx",
+   "name": "Corpus Christi, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.671,
+    "goods": 93.757,
+    "housing": 84.905,
+    "utilities": 80.991,
+    "other": 96.24
+   },
+   "zhvi": 224780,
+   "zori": 1433,
+   "zAsOf": "2026-07-31",
+   "zName": "Corpus Christi, TX"
+  },
+  {
+   "id": "corvallis-or",
+   "name": "Corvallis, OR",
+   "state": "OR",
+   "kind": "msa",
+   "rpp": {
+    "all": 104.017,
+    "goods": 105.261,
+    "housing": 114.437,
+    "utilities": 108.649,
+    "other": 100.298
+   },
+   "zhvi": 562325,
+   "zori": 1767,
+   "zAsOf": "2026-07-31",
+   "zName": "Corvallis, OR"
+  },
+  {
+   "id": "crestview-fort-walton-beach-destin-fl",
+   "name": "Crestview-Fort Walton Beach-Destin, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 97.031,
+    "goods": 96.24,
+    "housing": 94.934,
+    "utilities": 89.046,
+    "other": 98.864
+   },
+   "zhvi": 442871,
+   "zori": 1978,
+   "zAsOf": "2026-07-31",
+   "zName": "Crestview, FL"
+  },
+  {
+   "id": "dallas-fort-worth-arlington-tx",
+   "name": "Dallas-Fort Worth-Arlington, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 103.09,
+    "goods": 102.838,
+    "housing": 117.874,
+    "utilities": 90.711,
+    "other": 99.673
+   },
+   "zhvi": 364793,
+   "zori": 1667,
+   "zAsOf": "2026-07-31",
+   "zName": "Dallas, TX"
+  },
+  {
+   "id": "dalton-ga",
+   "name": "Dalton, GA",
+   "state": "GA",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.844,
+    "goods": 96.269,
+    "housing": 63.342,
+    "utilities": 88.76,
+    "other": 98.667
+   },
+   "zhvi": 248317,
+   "zori": 1510,
+   "zAsOf": "2026-07-31",
+   "zName": "Dalton, GA"
+  },
+  {
+   "id": "daphne-fairhope-foley-al",
+   "name": "Daphne-Fairhope-Foley, AL",
+   "state": "AL",
+   "kind": "msa",
+   "rpp": {
+    "all": 94.69,
+    "goods": 96.397,
+    "housing": 89.15,
+    "utilities": 83.286,
+    "other": 96.693
+   },
+   "zhvi": 376467,
+   "zori": 1672,
+   "zAsOf": "2026-07-31",
+   "zName": "Daphne, AL"
+  },
+  {
+   "id": "davenport-moline-rock-island-ia-il",
+   "name": "Davenport-Moline-Rock Island, IA-IL",
+   "state": "IA",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.079,
+    "goods": 94.2,
+    "housing": 68.346,
+    "utilities": 89.945,
+    "other": 93.53
+   },
+   "zhvi": 198068,
+   "zori": 990,
+   "zAsOf": "2026-07-31",
+   "zName": "Davenport, IA"
+  },
+  {
+   "id": "dayton-kettering-beavercreek-oh",
+   "name": "Dayton-Kettering-Beavercreek, OH",
+   "state": "OH",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.694,
+    "goods": 93.628,
+    "housing": 72.712,
+    "utilities": 95.388,
+    "other": 98.939
+   },
+   "zhvi": null,
+   "zori": 1357,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "decatur-al",
+   "name": "Decatur, AL",
+   "state": "AL",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.212,
+    "goods": 96.397,
+    "housing": 58.067,
+    "utilities": 84.745,
+    "other": 96.693
+   },
+   "zhvi": 232764,
+   "zori": 1142,
+   "zAsOf": "2026-07-31",
+   "zName": "Decatur, AL"
+  },
+  {
+   "id": "decatur-il",
+   "name": "Decatur, IL",
+   "state": "IL",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.422,
+    "goods": 93.643,
+    "housing": 56.186,
+    "utilities": 91.095,
+    "other": 99.59
+   },
+   "zhvi": 127196,
+   "zori": 1003,
+   "zAsOf": "2026-07-31",
+   "zName": "Decatur, IL"
+  },
+  {
+   "id": "deltona-daytona-beach-ormond-beach-fl",
+   "name": "Deltona-Daytona Beach-Ormond Beach, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 99.367,
+    "goods": 96.24,
+    "housing": 108.375,
+    "utilities": 87.566,
+    "other": 98.864
+   },
+   "zhvi": 332955,
+   "zori": 1783,
+   "zAsOf": "2026-07-31",
+   "zName": "Deltona, FL"
+  },
+  {
+   "id": "denver-aurora-centennial-co",
+   "name": "Denver-Aurora-Centennial, CO",
+   "state": "CO",
+   "kind": "msa",
+   "rpp": {
+    "all": 105.782,
+    "goods": 100.957,
+    "housing": 146.919,
+    "utilities": 87.856,
+    "other": 99.448
+   },
+   "zhvi": 566529,
+   "zori": 1930,
+   "zAsOf": "2026-07-31",
+   "zName": "Denver, CO"
+  },
+  {
+   "id": "des-moines-west-des-moines-ia",
+   "name": "Des Moines-West Des Moines, IA",
+   "state": "IA",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.701,
+    "goods": 93.73,
+    "housing": 84.741,
+    "utilities": 84.585,
+    "other": 92.927
+   },
+   "zhvi": 295955,
+   "zori": 1311,
+   "zAsOf": "2026-07-31",
+   "zName": "Des Moines, IA"
+  },
+  {
+   "id": "detroit-warren-dearborn-mi",
+   "name": "Detroit-Warren-Dearborn, MI",
+   "state": "MI",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.298,
+    "goods": 98.817,
+    "housing": 94.69,
+    "utilities": 106.988,
+    "other": 102.591
+   },
+   "zhvi": 270370,
+   "zori": 1531,
+   "zAsOf": "2026-07-31",
+   "zName": "Detroit, MI"
+  },
+  {
+   "id": "dothan-al",
+   "name": "Dothan, AL",
+   "state": "AL",
+   "kind": "msa",
+   "rpp": {
+    "all": 83.833,
+    "goods": 96.397,
+    "housing": 46.872,
+    "utilities": 84.319,
+    "other": 96.693
+   },
+   "zhvi": 197173,
+   "zori": 1263,
+   "zAsOf": "2026-07-31",
+   "zName": "Dothan, AL"
+  },
+  {
+   "id": "dover-de",
+   "name": "Dover, DE",
+   "state": "DE",
+   "kind": "msa",
+   "rpp": {
+    "all": 97.507,
+    "goods": 96.372,
+    "housing": 95.899,
+    "utilities": 97.183,
+    "other": 98.774
+   },
+   "zhvi": 374662,
+   "zori": 1742,
+   "zAsOf": "2026-07-31",
+   "zName": "Dover, DE"
+  },
+  {
+   "id": "dubuque-ia",
+   "name": "Dubuque, IA",
+   "state": "IA",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.328,
+    "goods": 93.73,
+    "housing": 64.046,
+    "utilities": 81.196,
+    "other": 92.927
+   },
+   "zhvi": 281598,
+   "zori": 1088,
+   "zAsOf": "2026-07-31",
+   "zName": "Dubuque, IA"
+  },
+  {
+   "id": "duluth-mn-wi",
+   "name": "Duluth, MN-WI",
+   "state": "MN",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.768,
+    "goods": 95.3,
+    "housing": 71.147,
+    "utilities": 87.25,
+    "other": 92.187
+   },
+   "zhvi": 270683,
+   "zori": 1351,
+   "zAsOf": "2026-07-31",
+   "zName": "Duluth, MN"
+  },
+  {
+   "id": "durham-chapel-hill-nc",
+   "name": "Durham-Chapel Hill, NC",
+   "state": "NC",
+   "kind": "msa",
+   "rpp": {
+    "all": 97.572,
+    "goods": 96.621,
+    "housing": 98.934,
+    "utilities": 89.317,
+    "other": 98.186
+   },
+   "zhvi": 411325,
+   "zori": 1660,
+   "zAsOf": "2026-07-31",
+   "zName": "Durham, NC"
+  },
+  {
+   "id": "eagle-pass-tx",
+   "name": "Eagle Pass, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 83.805,
+    "goods": 93.757,
+    "housing": 53.681,
+    "utilities": 81.86,
+    "other": 96.24
+   },
+   "zhvi": 222307,
+   "zori": 1206,
+   "zAsOf": "2026-07-31",
+   "zName": "Eagle Pass, TX"
+  },
+  {
+   "id": "eau-claire-wi",
+   "name": "Eau Claire, WI",
+   "state": "WI",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.796,
+    "goods": 93.787,
+    "housing": 72.85,
+    "utilities": 90.935,
+    "other": 99.411
+   },
+   "zhvi": 327568,
+   "zori": 1157,
+   "zAsOf": "2026-07-31",
+   "zName": "Eau Claire, WI"
+  },
+  {
+   "id": "el-centro-ca",
+   "name": "El Centro, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.174,
+    "goods": 105.168,
+    "housing": 66.274,
+    "utilities": 157.195,
+    "other": 100.267
+   },
+   "zhvi": 385963,
+   "zori": 1682,
+   "zAsOf": "2026-07-31",
+   "zName": "El Centro, CA"
+  },
+  {
+   "id": "el-paso-tx",
+   "name": "El Paso, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.912,
+    "goods": 93.757,
+    "housing": 71.248,
+    "utilities": 82.585,
+    "other": 96.24
+   },
+   "zhvi": 233302,
+   "zori": 1534,
+   "zAsOf": "2026-07-31",
+   "zName": "El Paso, TX"
+  },
+  {
+   "id": "elizabethtown-ky",
+   "name": "Elizabethtown, KY",
+   "state": "KY",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.572,
+    "goods": 96.246,
+    "housing": 66.669,
+    "utilities": 74.599,
+    "other": 96.892
+   },
+   "zhvi": 250243,
+   "zori": 1262,
+   "zAsOf": "2026-07-31",
+   "zName": "Elizabethtown, KY"
+  },
+  {
+   "id": "elkhart-goshen-in",
+   "name": "Elkhart-Goshen, IN",
+   "state": "IN",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.325,
+    "goods": 94.318,
+    "housing": 64.327,
+    "utilities": 86.359,
+    "other": 99.141
+   },
+   "zhvi": 268109,
+   "zori": 1134,
+   "zAsOf": "2026-07-31",
+   "zName": "Elkhart, IN"
+  },
+  {
+   "id": "elmira-ny",
+   "name": "Elmira, NY",
+   "state": "NY",
+   "kind": "msa",
+   "rpp": {
+    "all": 94.398,
+    "goods": 99.693,
+    "housing": 76.357,
+    "utilities": 131.583,
+    "other": 97.754
+   },
+   "zhvi": 166759,
+   "zori": 1135,
+   "zAsOf": "2026-07-31",
+   "zName": "Elmira, NY"
+  },
+  {
+   "id": "enid-ok",
+   "name": "Enid, OK*",
+   "state": "OK",
+   "kind": "msa",
+   "rpp": {
+    "all": 84.269,
+    "goods": 93.778,
+    "housing": 51.389,
+    "utilities": 74.37,
+    "other": 95.458
+   },
+   "zhvi": 142443,
+   "zori": 1268,
+   "zAsOf": "2026-07-31",
+   "zName": "Enid, OK"
+  },
+  {
+   "id": "erie-pa",
+   "name": "Erie, PA",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.95,
+    "goods": 100.684,
+    "housing": 56.83,
+    "utilities": 106.806,
+    "other": 97.726
+   },
+   "zhvi": 226767,
+   "zori": 1126,
+   "zAsOf": "2026-07-31",
+   "zName": "Erie, PA"
+  },
+  {
+   "id": "eugene-springfield-or",
+   "name": "Eugene-Springfield, OR",
+   "state": "OR",
+   "kind": "msa",
+   "rpp": {
+    "all": 101.568,
+    "goods": 105.261,
+    "housing": 98.35,
+    "utilities": 102.531,
+    "other": 100.298
+   },
+   "zhvi": 461511,
+   "zori": 1761,
+   "zAsOf": "2026-07-31",
+   "zName": "Eugene, OR"
+  },
+  {
+   "id": "evansville-in",
+   "name": "Evansville, IN",
+   "state": "IN",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.528,
+    "goods": 94.318,
+    "housing": 66.735,
+    "utilities": 86.717,
+    "other": 99.141
+   },
+   "zhvi": 228373,
+   "zori": 1120,
+   "zAsOf": "2026-07-31",
+   "zName": "Evansville, IN"
+  },
+  {
+   "id": "fairbanks-college-ak",
+   "name": "Fairbanks-College, AK",
+   "state": "AK",
+   "kind": "msa",
+   "rpp": {
+    "all": 103.208,
+    "goods": 107.34,
+    "housing": 92.562,
+    "utilities": 119.776,
+    "other": 103.342
+   },
+   "zhvi": 317116,
+   "zori": 1827,
+   "zAsOf": "2026-07-31",
+   "zName": "Fairbanks, AK"
+  },
+  {
+   "id": "fargo-nd-mn",
+   "name": "Fargo, ND-MN",
+   "state": "ND",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.871,
+    "goods": 95.654,
+    "housing": 81.142,
+    "utilities": 77.324,
+    "other": 91.334
+   },
+   "zhvi": 330476,
+   "zori": 1113,
+   "zAsOf": "2026-07-31",
+   "zName": "Fargo, ND"
+  },
+  {
+   "id": "farmington-nm",
+   "name": "Farmington, NM",
+   "state": "NM",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.707,
+    "goods": 96.144,
+    "housing": 56.552,
+    "utilities": 77.865,
+    "other": 98.54
+   },
+   "zhvi": 276704,
+   "zori": 1246,
+   "zAsOf": "2026-07-31",
+   "zName": "Farmington, NM"
+  },
+  {
+   "id": "fayetteville-springdale-rogers-ar",
+   "name": "Fayetteville-Springdale-Rogers, AR",
+   "state": "AR",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.353,
+    "goods": 93.577,
+    "housing": 76.886,
+    "utilities": 75.109,
+    "other": 95.295
+   },
+   "zhvi": 368527,
+   "zori": 1595,
+   "zAsOf": "2026-07-31",
+   "zName": "Fayetteville, AR"
+  },
+  {
+   "id": "fayetteville-nc",
+   "name": "Fayetteville, NC",
+   "state": "NC",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.978,
+    "goods": 96.621,
+    "housing": 73.081,
+    "utilities": 87.779,
+    "other": 98.186
+   },
+   "zhvi": 257053,
+   "zori": 1460,
+   "zAsOf": "2026-07-31",
+   "zName": "Fayetteville, NC"
+  },
+  {
+   "id": "flagstaff-az",
+   "name": "Flagstaff, AZ",
+   "state": "AZ",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.325,
+    "goods": 96.237,
+    "housing": 108.961,
+    "utilities": 93.825,
+    "other": 99.838
+   },
+   "zhvi": 628778,
+   "zori": 2218,
+   "zAsOf": "2026-07-31",
+   "zName": "Flagstaff, AZ"
+  },
+  {
+   "id": "flint-mi",
+   "name": "Flint, MI",
+   "state": "MI",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.034,
+    "goods": 93.711,
+    "housing": 74.039,
+    "utilities": 97.067,
+    "other": 99.561
+   },
+   "zhvi": 199857,
+   "zori": 1060,
+   "zAsOf": "2026-07-31",
+   "zName": "Flint, MI"
+  },
+  {
+   "id": "florence-muscle-shoals-al",
+   "name": "Florence-Muscle Shoals, AL",
+   "state": "AL",
+   "kind": "msa",
+   "rpp": {
+    "all": 84.817,
+    "goods": 96.397,
+    "housing": 47.677,
+    "utilities": 85.771,
+    "other": 96.693
+   },
+   "zhvi": 219560,
+   "zori": 1146,
+   "zAsOf": "2026-07-31",
+   "zName": "Florence, AL"
+  },
+  {
+   "id": "florence-sc",
+   "name": "Florence, SC",
+   "state": "SC",
+   "kind": "msa",
+   "rpp": {
+    "all": 86.774,
+    "goods": 96.339,
+    "housing": 52.425,
+    "utilities": 87.731,
+    "other": 98.284
+   },
+   "zhvi": 193768,
+   "zori": 1395,
+   "zAsOf": "2026-07-31",
+   "zName": "Florence, SC"
+  },
+  {
+   "id": "fond-du-lac-wi",
+   "name": "Fond du Lac, WI",
+   "state": "WI",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.643,
+    "goods": 93.787,
+    "housing": 67.317,
+    "utilities": 91.108,
+    "other": 99.411
+   },
+   "zhvi": 296786,
+   "zori": 1177,
+   "zAsOf": "2026-07-31",
+   "zName": "Fond du Lac, WI"
+  },
+  {
+   "id": "fort-collins-loveland-co",
+   "name": "Fort Collins-Loveland, CO",
+   "state": "CO",
+   "kind": "msa",
+   "rpp": {
+    "all": 101.128,
+    "goods": 96.052,
+    "housing": 120.592,
+    "utilities": 82.156,
+    "other": 99.822
+   },
+   "zhvi": 554636,
+   "zori": 1956,
+   "zAsOf": "2026-07-31",
+   "zName": "Fort Collins, CO"
+  },
+  {
+   "id": "fort-smith-ar-ok",
+   "name": "Fort Smith, AR-OK",
+   "state": "AR",
+   "kind": "msa",
+   "rpp": {
+    "all": 85.888,
+    "goods": 93.606,
+    "housing": 53.443,
+    "utilities": 73.797,
+    "other": 95.319
+   },
+   "zhvi": 204837,
+   "zori": 1065,
+   "zAsOf": "2026-07-31",
+   "zName": "Fort Smith, AR"
+  },
+  {
+   "id": "fort-wayne-in",
+   "name": "Fort Wayne, IN",
+   "state": "IN",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.572,
+    "goods": 94.318,
+    "housing": 72.277,
+    "utilities": 86.247,
+    "other": 99.141
+   },
+   "zhvi": 261006,
+   "zori": 1299,
+   "zAsOf": "2026-07-31",
+   "zName": "Fort Wayne, IN"
+  },
+  {
+   "id": "fresno-ca",
+   "name": "Fresno, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 102.158,
+    "goods": 105.168,
+    "housing": 95.725,
+    "utilities": 161.01,
+    "other": 100.267
+   },
+   "zhvi": 409811,
+   "zori": 2062,
+   "zAsOf": "2026-07-31",
+   "zName": "Fresno, CA"
+  },
+  {
+   "id": "gadsden-al",
+   "name": "Gadsden, AL",
+   "state": "AL",
+   "kind": "msa",
+   "rpp": {
+    "all": 85.653,
+    "goods": 96.397,
+    "housing": 53.696,
+    "utilities": 86.712,
+    "other": 96.693
+   },
+   "zhvi": 186704,
+   "zori": 1011,
+   "zAsOf": "2026-07-31",
+   "zName": "Gadsden, AL"
+  },
+  {
+   "id": "gainesville-fl",
+   "name": "Gainesville, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 96.733,
+    "goods": 96.24,
+    "housing": 92.982,
+    "utilities": 88.155,
+    "other": 98.864
+   },
+   "zhvi": 304902,
+   "zori": 1661,
+   "zAsOf": "2026-07-31",
+   "zName": "Gainesville, FL"
+  },
+  {
+   "id": "gainesville-ga",
+   "name": "Gainesville, GA",
+   "state": "GA",
+   "kind": "msa",
+   "rpp": {
+    "all": 96.766,
+    "goods": 96.269,
+    "housing": 93.488,
+    "utilities": 89.587,
+    "other": 98.667
+   },
+   "zhvi": 391528,
+   "zori": 1655,
+   "zAsOf": "2026-07-31",
+   "zName": "Gainesville, GA"
+  },
+  {
+   "id": "gettysburg-pa",
+   "name": "Gettysburg, PA",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.379,
+    "goods": 100.684,
+    "housing": 73.865,
+    "utilities": 107.003,
+    "other": 97.726
+   },
+   "zhvi": 338842,
+   "zori": 1269,
+   "zAsOf": "2026-07-31",
+   "zName": "Gettysburg, PA"
+  },
+  {
+   "id": "glens-falls-ny",
+   "name": "Glens Falls, NY",
+   "state": "NY",
+   "kind": "msa",
+   "rpp": {
+    "all": 94.866,
+    "goods": 99.693,
+    "housing": 76.231,
+    "utilities": 133.827,
+    "other": 97.754
+   },
+   "zhvi": 319595,
+   "zori": 1464,
+   "zAsOf": "2026-07-31",
+   "zName": "Glens Falls, NY"
+  },
+  {
+   "id": "goldsboro-nc",
+   "name": "Goldsboro, NC",
+   "state": "NC",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.462,
+    "goods": 96.621,
+    "housing": 57.684,
+    "utilities": 87.888,
+    "other": 98.186
+   },
+   "zhvi": 184255,
+   "zori": 1474,
+   "zAsOf": "2026-07-31",
+   "zName": "Goldsboro, NC"
+  },
+  {
+   "id": "grand-forks-nd-mn",
+   "name": "Grand Forks, ND-MN",
+   "state": "ND",
+   "kind": "msa",
+   "rpp": {
+    "all": 86.663,
+    "goods": 95.632,
+    "housing": 59.664,
+    "utilities": 77.088,
+    "other": 91.417
+   },
+   "zhvi": 283186,
+   "zori": 1168,
+   "zAsOf": "2026-07-31",
+   "zName": "Grand Forks, ND"
+  },
+  {
+   "id": "grand-island-ne",
+   "name": "Grand Island, NE",
+   "state": "NE",
+   "kind": "msa",
+   "rpp": {
+    "all": 86.657,
+    "goods": 94.101,
+    "housing": 61.748,
+    "utilities": 74.241,
+    "other": 92.98
+   },
+   "zhvi": 259523,
+   "zori": 1296,
+   "zAsOf": "2026-07-31",
+   "zName": "Grand Island, NE"
+  },
+  {
+   "id": "grand-junction-co",
+   "name": "Grand Junction, CO",
+   "state": "CO",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.476,
+    "goods": 96.052,
+    "housing": 86.367,
+    "utilities": 83.286,
+    "other": 99.822
+   },
+   "zhvi": 436437,
+   "zori": 1718,
+   "zAsOf": "2026-07-31",
+   "zName": "Grand Junction, CO"
+  },
+  {
+   "id": "grand-rapids-wyoming-kentwood-mi",
+   "name": "Grand Rapids-Wyoming-Kentwood, MI",
+   "state": "MI",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.546,
+    "goods": 93.711,
+    "housing": 86.596,
+    "utilities": 93.775,
+    "other": 99.561
+   },
+   "zhvi": 360930,
+   "zori": 1628,
+   "zAsOf": "2026-07-31",
+   "zName": "Grand Rapids, MI"
+  },
+  {
+   "id": "grants-pass-or",
+   "name": "Grants Pass, OR",
+   "state": "OR",
+   "kind": "msa",
+   "rpp": {
+    "all": 97.76,
+    "goods": 105.261,
+    "housing": 79.911,
+    "utilities": 103.562,
+    "other": 100.298
+   },
+   "zhvi": 394254,
+   "zori": 1621,
+   "zAsOf": "2026-07-31",
+   "zName": "Grants Pass, OR"
+  },
+  {
+   "id": "great-falls-mt",
+   "name": "Great Falls, MT",
+   "state": "MT",
+   "kind": "msa",
+   "rpp": {
+    "all": 96.845,
+    "goods": 96.006,
+    "housing": 97.115,
+    "utilities": 73.048,
+    "other": 98.715
+   },
+   "zhvi": 344123,
+   "zori": 1381,
+   "zAsOf": "2026-07-31",
+   "zName": "Great Falls, MT"
+  },
+  {
+   "id": "greeley-co",
+   "name": "Greeley, CO",
+   "state": "CO",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.176,
+    "goods": 96.052,
+    "housing": 112.599,
+    "utilities": 81.997,
+    "other": 99.822
+   },
+   "zhvi": 495353,
+   "zori": 1739,
+   "zAsOf": "2026-07-31",
+   "zName": "Greeley, CO"
+  },
+  {
+   "id": "green-bay-wi",
+   "name": "Green Bay, WI",
+   "state": "WI",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.086,
+    "goods": 93.787,
+    "housing": 74.696,
+    "utilities": 90.041,
+    "other": 99.411
+   },
+   "zhvi": 351940,
+   "zori": 1134,
+   "zAsOf": "2026-07-31",
+   "zName": "Green Bay, WI"
+  },
+  {
+   "id": "greensboro-high-point-nc",
+   "name": "Greensboro-High Point, NC",
+   "state": "NC",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.865,
+    "goods": 96.621,
+    "housing": 74.519,
+    "utilities": 89.065,
+    "other": 98.186
+   },
+   "zhvi": 265237,
+   "zori": 1400,
+   "zAsOf": "2026-07-31",
+   "zName": "Greensboro, NC"
+  },
+  {
+   "id": "greenville-anderson-greer-sc",
+   "name": "Greenville-Anderson-Greer, SC",
+   "state": "SC",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.26,
+    "goods": 96.339,
+    "housing": 76.836,
+    "utilities": 88.762,
+    "other": 98.284
+   },
+   "zhvi": 315006,
+   "zori": 1577,
+   "zAsOf": "2026-07-31",
+   "zName": "Greenville, SC"
+  },
+  {
+   "id": "greenville-nc",
+   "name": "Greenville, NC",
+   "state": "NC",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.402,
+    "goods": 96.621,
+    "housing": 57.326,
+    "utilities": 87.286,
+    "other": 98.186
+   },
+   "zhvi": 245427,
+   "zori": 1423,
+   "zAsOf": "2026-07-31",
+   "zName": "Greenville, NC"
+  },
+  {
+   "id": "gulfport-biloxi-ms",
+   "name": "Gulfport-Biloxi, MS",
+   "state": "MS",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.006,
+    "goods": 96.219,
+    "housing": 67.906,
+    "utilities": 76.34,
+    "other": 96.09
+   },
+   "zhvi": 223508,
+   "zori": 1454,
+   "zAsOf": "2026-07-31",
+   "zName": "Gulfport, MS"
+  },
+  {
+   "id": "hagerstown-martinsburg-md-wv",
+   "name": "Hagerstown-Martinsburg, MD-WV",
+   "state": "MD",
+   "kind": "msa",
+   "rpp": {
+    "all": 94.171,
+    "goods": 96.399,
+    "housing": 75.737,
+    "utilities": 95.694,
+    "other": 99.48
+   },
+   "zhvi": 325773,
+   "zori": 1619,
+   "zAsOf": "2026-07-31",
+   "zName": "Hagerstown, MD"
+  },
+  {
+   "id": "hammond-la",
+   "name": "Hammond, LA",
+   "state": "LA",
+   "kind": "msa",
+   "rpp": {
+    "all": 84.46,
+    "goods": 93.691,
+    "housing": 48.16,
+    "utilities": 71.002,
+    "other": 95.705
+   },
+   "zhvi": 225124,
+   "zori": 1389,
+   "zAsOf": "2026-07-31",
+   "zName": "Hammond, LA"
+  },
+  {
+   "id": "hanford-corcoran-ca",
+   "name": "Hanford-Corcoran, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 101.612,
+    "goods": 105.168,
+    "housing": 93.497,
+    "utilities": 157.378,
+    "other": 100.267
+   },
+   "zhvi": 367801,
+   "zori": 2005,
+   "zAsOf": "2026-07-31",
+   "zName": "Hanford, CA"
+  },
+  {
+   "id": "harrisburg-carlisle-pa",
+   "name": "Harrisburg-Carlisle, PA",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.65,
+    "goods": 100.684,
+    "housing": 96.28,
+    "utilities": 108.078,
+    "other": 97.726
+   },
+   "zhvi": 312861,
+   "zori": 1482,
+   "zAsOf": "2026-07-31",
+   "zName": "Harrisburg, PA"
+  },
+  {
+   "id": "harrisonburg-va",
+   "name": "Harrisonburg, VA",
+   "state": "VA",
+   "kind": "msa",
+   "rpp": {
+    "all": 94.892,
+    "goods": 96.773,
+    "housing": 82.272,
+    "utilities": 88.549,
+    "other": 98.612
+   },
+   "zhvi": 353959,
+   "zori": 1791,
+   "zAsOf": "2026-07-31",
+   "zName": "Harrisonburg, VA"
+  },
+  {
+   "id": "hartford-west-hartford-east-hartford-ct",
+   "name": "Hartford-West Hartford-East Hartford, CT",
+   "state": "CT",
+   "kind": "msa",
+   "rpp": {
+    "all": 102.746,
+    "goods": 97.33,
+    "housing": 110.234,
+    "utilities": 144.854,
+    "other": 102.658
+   },
+   "zhvi": 404943,
+   "zori": 2020,
+   "zAsOf": "2026-07-31",
+   "zName": "Hartford, CT"
+  },
+  {
+   "id": "hattiesburg-ms",
+   "name": "Hattiesburg, MS",
+   "state": "MS",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.633,
+    "goods": 96.219,
+    "housing": 60.059,
+    "utilities": 76.88,
+    "other": 96.09
+   },
+   "zhvi": 217753,
+   "zori": 1372,
+   "zAsOf": "2026-07-31",
+   "zName": "Hattiesburg, MS"
+  },
+  {
+   "id": "helena-mt",
+   "name": "Helena, MT",
+   "state": "MT",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.675,
+    "goods": 96.006,
+    "housing": 90.141,
+    "utilities": 72.646,
+    "other": 98.715
+   },
+   "zhvi": 479977,
+   "zori": 1585,
+   "zAsOf": "2026-07-31",
+   "zName": "Helena, MT"
+  },
+  {
+   "id": "hickory-lenoir-morganton-nc",
+   "name": "Hickory-Lenoir-Morganton, NC",
+   "state": "NC",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.486,
+    "goods": 96.621,
+    "housing": 59.578,
+    "utilities": 87.81,
+    "other": 98.186
+   },
+   "zhvi": 271350,
+   "zori": 1593,
+   "zAsOf": "2026-07-31",
+   "zName": "Hickory, NC"
+  },
+  {
+   "id": "hilton-head-island-bluffton-port-royal-sc",
+   "name": "Hilton Head Island-Bluffton-Port Royal, SC",
+   "state": "SC",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.017,
+    "goods": 96.339,
+    "housing": 101.235,
+    "utilities": 88.087,
+    "other": 98.284
+   },
+   "zhvi": 525530,
+   "zori": 1974,
+   "zAsOf": "2026-07-31",
+   "zName": "Hilton Head Island, SC"
+  },
+  {
+   "id": "hinesville-ga",
+   "name": "Hinesville, GA",
+   "state": "GA",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.933,
+    "goods": 96.269,
+    "housing": 79.46,
+    "utilities": 86.837,
+    "other": 98.667
+   },
+   "zhvi": 258184,
+   "zori": 1753,
+   "zAsOf": "2026-07-31",
+   "zName": "Hinesville, GA"
+  },
+  {
+   "id": "homosassa-springs-fl",
+   "name": "Homosassa Springs, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.467,
+    "goods": 96.24,
+    "housing": 78.427,
+    "utilities": 87.328,
+    "other": 98.864
+   },
+   "zhvi": 272840,
+   "zori": 1739,
+   "zAsOf": "2026-07-31",
+   "zName": "Homosassa Springs, FL"
+  },
+  {
+   "id": "hot-springs-ar",
+   "name": "Hot Springs, AR",
+   "state": "AR",
+   "kind": "msa",
+   "rpp": {
+    "all": 85.73,
+    "goods": 93.577,
+    "housing": 57.281,
+    "utilities": 74.255,
+    "other": 95.295
+   },
+   "zhvi": 246753,
+   "zori": 1300,
+   "zAsOf": "2026-07-31",
+   "zName": "Hot Springs, AR"
+  },
+  {
+   "id": "houma-bayou-cane-thibodaux-la",
+   "name": "Houma-Bayou Cane-Thibodaux, LA",
+   "state": "LA",
+   "kind": "msa",
+   "rpp": {
+    "all": 85.103,
+    "goods": 93.691,
+    "housing": 51.311,
+    "utilities": 71.298,
+    "other": 95.705
+   },
+   "zhvi": 185773,
+   "zori": 1308,
+   "zAsOf": "2026-07-31",
+   "zName": "Houma, LA"
+  },
+  {
+   "id": "houston-pasadena-the-woodlands-tx",
+   "name": "Houston-Pasadena-The Woodlands, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.629,
+    "goods": 100.639,
+    "housing": 104.51,
+    "utilities": 95.288,
+    "other": 95.595
+   },
+   "zhvi": 307772,
+   "zori": 1654,
+   "zAsOf": "2026-07-31",
+   "zName": "Houston, TX"
+  },
+  {
+   "id": "huntington-ashland-wv-ky-oh",
+   "name": "Huntington-Ashland, WV-KY-OH",
+   "state": "WV",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.422,
+    "goods": 96.316,
+    "housing": 51.257,
+    "utilities": 87.852,
+    "other": 99.409
+   },
+   "zhvi": 167828,
+   "zori": 1111,
+   "zAsOf": "2026-07-31",
+   "zName": "Huntington, WV"
+  },
+  {
+   "id": "huntsville-al",
+   "name": "Huntsville, AL",
+   "state": "AL",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.072,
+    "goods": 96.397,
+    "housing": 77.946,
+    "utilities": 83.931,
+    "other": 96.693
+   },
+   "zhvi": 316616,
+   "zori": 1385,
+   "zAsOf": "2026-07-31",
+   "zName": "Huntsville, AL"
+  },
+  {
+   "id": "idaho-falls-id",
+   "name": "Idaho Falls, ID",
+   "state": "ID",
+   "kind": "msa",
+   "rpp": {
+    "all": 94.412,
+    "goods": 96.179,
+    "housing": 83.985,
+    "utilities": 69.651,
+    "other": 98.974
+   },
+   "zhvi": 413737,
+   "zori": 1443,
+   "zAsOf": "2026-07-31",
+   "zName": "Idaho Falls, ID"
+  },
+  {
+   "id": "indianapolis-carmel-greenwood-in",
+   "name": "Indianapolis-Carmel-Greenwood, IN",
+   "state": "IN",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.696,
+    "goods": 94.318,
+    "housing": 88.917,
+    "utilities": 86.358,
+    "other": 99.141
+   },
+   "zhvi": 296033,
+   "zori": 1571,
+   "zAsOf": "2026-07-31",
+   "zName": "Indianapolis, IN"
+  },
+  {
+   "id": "iowa-city-ia",
+   "name": "Iowa City, IA",
+   "state": "IA",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.509,
+    "goods": 93.73,
+    "housing": 83.99,
+    "utilities": 83.667,
+    "other": 92.927
+   },
+   "zhvi": 304707,
+   "zori": 1366,
+   "zAsOf": "2026-07-31",
+   "zName": "Iowa City, IA"
+  },
+  {
+   "id": "ithaca-ny",
+   "name": "Ithaca, NY",
+   "state": "NY",
+   "kind": "msa",
+   "rpp": {
+    "all": 103.317,
+    "goods": 99.693,
+    "housing": 128.377,
+    "utilities": 131.638,
+    "other": 97.754
+   },
+   "zhvi": 359656,
+   "zori": 1872,
+   "zAsOf": "2026-07-31",
+   "zName": "Ithaca, NY"
+  },
+  {
+   "id": "jackson-mi",
+   "name": "Jackson, MI",
+   "state": "MI",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.779,
+    "goods": 93.711,
+    "housing": 67.092,
+    "utilities": 97.845,
+    "other": 99.561
+   },
+   "zhvi": 229002,
+   "zori": 1102,
+   "zAsOf": "2026-07-31",
+   "zName": "Jackson, MI"
+  },
+  {
+   "id": "jackson-ms",
+   "name": "Jackson, MS",
+   "state": "MS",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.048,
+    "goods": 96.219,
+    "housing": 64.768,
+    "utilities": 78.137,
+    "other": 96.09
+   },
+   "zhvi": 213701,
+   "zori": 1506,
+   "zAsOf": "2026-07-31",
+   "zName": "Jackson, MS"
+  },
+  {
+   "id": "jackson-tn",
+   "name": "Jackson, TN",
+   "state": "TN",
+   "kind": "msa",
+   "rpp": {
+    "all": 85.522,
+    "goods": 96.247,
+    "housing": 56.567,
+    "utilities": 72.619,
+    "other": 95.142
+   },
+   "zhvi": 207877,
+   "zori": 1425,
+   "zAsOf": "2026-07-31",
+   "zName": "Jackson, TN"
+  },
+  {
+   "id": "jacksonville-fl",
+   "name": "Jacksonville, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 99.484,
+    "goods": 96.24,
+    "housing": 109.777,
+    "utilities": 87.514,
+    "other": 98.864
+   },
+   "zhvi": 353050,
+   "zori": 1711,
+   "zAsOf": "2026-07-31",
+   "zName": "Jacksonville, FL"
+  },
+  {
+   "id": "jacksonville-nc",
+   "name": "Jacksonville, NC",
+   "state": "NC",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.085,
+    "goods": 96.621,
+    "housing": 72.118,
+    "utilities": 87.243,
+    "other": 98.186
+   },
+   "zhvi": 293695,
+   "zori": 1581,
+   "zAsOf": "2026-07-31",
+   "zName": "Jacksonville, NC"
+  },
+  {
+   "id": "janesville-beloit-wi",
+   "name": "Janesville-Beloit, WI",
+   "state": "WI",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.703,
+    "goods": 93.787,
+    "housing": 79.552,
+    "utilities": 90.357,
+    "other": 99.411
+   },
+   "zhvi": 301229,
+   "zori": 1242,
+   "zAsOf": "2026-07-31",
+   "zName": "Janesville, WI"
+  },
+  {
+   "id": "jefferson-city-mo",
+   "name": "Jefferson City, MO",
+   "state": "MO",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.975,
+    "goods": 94.193,
+    "housing": 62.123,
+    "utilities": 85.497,
+    "other": 93.026
+   },
+   "zhvi": 276464,
+   "zori": 1097,
+   "zAsOf": "2026-07-31",
+   "zName": "Jefferson City, MO"
+  },
+  {
+   "id": "johnson-city-tn",
+   "name": "Johnson City, TN",
+   "state": "TN",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.928,
+    "goods": 96.247,
+    "housing": 63.176,
+    "utilities": 71.934,
+    "other": 95.142
+   },
+   "zhvi": 284806,
+   "zori": 1467,
+   "zAsOf": "2026-07-31",
+   "zName": "Johnson City, TN"
+  },
+  {
+   "id": "johnstown-pa",
+   "name": "Johnstown, PA",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 85.929,
+    "goods": 100.684,
+    "housing": 42.333,
+    "utilities": 108.869,
+    "other": 97.726
+   },
+   "zhvi": 102273,
+   "zori": 875,
+   "zAsOf": "2026-07-31",
+   "zName": "Johnstown, PA"
+  },
+  {
+   "id": "jonesboro-ar",
+   "name": "Jonesboro, AR",
+   "state": "AR",
+   "kind": "msa",
+   "rpp": {
+    "all": 85.876,
+    "goods": 93.577,
+    "housing": 53.848,
+    "utilities": 74.971,
+    "other": 95.295
+   },
+   "zhvi": 205636,
+   "zori": 1373,
+   "zAsOf": "2026-07-31",
+   "zName": "Jonesboro, AR"
+  },
+  {
+   "id": "joplin-mo-ks",
+   "name": "Joplin, MO-KS",
+   "state": "MO",
+   "kind": "msa",
+   "rpp": {
+    "all": 85.718,
+    "goods": 94.179,
+    "housing": 53.976,
+    "utilities": 85.872,
+    "other": 93.091
+   },
+   "zhvi": 226215,
+   "zori": 1304,
+   "zAsOf": "2026-07-31",
+   "zName": "Joplin, MO"
+  },
+  {
+   "id": "kahului-wailuku-hi",
+   "name": "Kahului-Wailuku, HI",
+   "state": "HI",
+   "kind": "msa",
+   "rpp": {
+    "all": 109.393,
+    "goods": 111.562,
+    "housing": 119.179,
+    "utilities": 190.585,
+    "other": 102.898
+   },
+   "zhvi": 994403,
+   "zori": 3332,
+   "zAsOf": "2026-07-31",
+   "zName": "Kahului, HI"
+  },
+  {
+   "id": "kalamazoo-portage-mi",
+   "name": "Kalamazoo-Portage, MI",
+   "state": "MI",
+   "kind": "msa",
+   "rpp": {
+    "all": 94.84,
+    "goods": 93.711,
+    "housing": 81.59,
+    "utilities": 99.271,
+    "other": 99.561
+   },
+   "zhvi": 281585,
+   "zori": 1264,
+   "zAsOf": "2026-07-31",
+   "zName": "Kalamazoo, MI"
+  },
+  {
+   "id": "kankakee-il",
+   "name": "Kankakee, IL",
+   "state": "IL",
+   "kind": "msa",
+   "rpp": {
+    "all": 96.394,
+    "goods": 93.643,
+    "housing": 92.856,
+    "utilities": 89.419,
+    "other": 99.59
+   },
+   "zhvi": 228871,
+   "zori": 1410,
+   "zAsOf": "2026-07-31",
+   "zName": "Kankakee, IL"
+  },
+  {
+   "id": "kansas-city-mo-ks",
+   "name": "Kansas City, MO-KS",
+   "state": "MO",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.543,
+    "goods": 94.12,
+    "housing": 86.642,
+    "utilities": 89.034,
+    "other": 93.373
+   },
+   "zhvi": 330112,
+   "zori": 1546,
+   "zAsOf": "2026-07-31",
+   "zName": "Kansas City, MO"
+  },
+  {
+   "id": "kennewick-richland-wa",
+   "name": "Kennewick-Richland, WA",
+   "state": "WA",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.079,
+    "goods": 105.028,
+    "housing": 94.824,
+    "utilities": 93.555,
+    "other": 99.472
+   },
+   "zhvi": 442889,
+   "zori": 1717,
+   "zAsOf": "2026-07-31",
+   "zName": "Kennewick, WA"
+  },
+  {
+   "id": "kenosha-wi",
+   "name": "Kenosha, WI",
+   "state": "WI",
+   "kind": "msa",
+   "rpp": {
+    "all": 101.118,
+    "goods": 106.187,
+    "housing": 95.814,
+    "utilities": 85.858,
+    "other": 100.334
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "killeen-temple-tx",
+   "name": "Killeen-Temple, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.132,
+    "goods": 93.757,
+    "housing": 77.884,
+    "utilities": 81.242,
+    "other": 96.24
+   },
+   "zhvi": 251916,
+   "zori": 1337,
+   "zAsOf": "2026-07-31",
+   "zName": "Killeen, TX"
+  },
+  {
+   "id": "kingsport-bristol-tn-va",
+   "name": "Kingsport-Bristol, TN-VA",
+   "state": "TN",
+   "kind": "msa",
+   "rpp": {
+    "all": 86.447,
+    "goods": 96.235,
+    "housing": 56.496,
+    "utilities": 75.908,
+    "other": 95.809
+   },
+   "zhvi": 246585,
+   "zori": 1321,
+   "zAsOf": "2026-07-31",
+   "zName": "Kingsport, TN"
+  },
+  {
+   "id": "kingston-ny",
+   "name": "Kingston, NY",
+   "state": "NY",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.709,
+    "goods": 99.693,
+    "housing": 110.173,
+    "utilities": 133.595,
+    "other": 97.754
+   },
+   "zhvi": 449945,
+   "zori": 1995,
+   "zAsOf": "2026-07-31",
+   "zName": "Kingston, NY"
+  },
+  {
+   "id": "kiryas-joel-poughkeepsie-newburgh-ny",
+   "name": "Kiryas Joel-Poughkeepsie-Newburgh, NY",
+   "state": "NY",
+   "kind": "msa",
+   "rpp": {
+    "all": 109.422,
+    "goods": 110.254,
+    "housing": 115.763,
+    "utilities": 136.764,
+    "other": 106.536
+   },
+   "zhvi": null,
+   "zori": 2257,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "knoxville-tn",
+   "name": "Knoxville, TN",
+   "state": "TN",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.569,
+    "goods": 96.247,
+    "housing": 82.783,
+    "utilities": 71.869,
+    "other": 95.142
+   },
+   "zhvi": 367915,
+   "zori": 1747,
+   "zAsOf": "2026-07-31",
+   "zName": "Knoxville, TN"
+  },
+  {
+   "id": "kokomo-in",
+   "name": "Kokomo, IN",
+   "state": "IN",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.648,
+    "goods": 94.318,
+    "housing": 59.252,
+    "utilities": 86.257,
+    "other": 99.141
+   },
+   "zhvi": 194961,
+   "zori": 1014,
+   "zAsOf": "2026-07-31",
+   "zName": "Kokomo, IN"
+  },
+  {
+   "id": "la-crosse-onalaska-wi-mn",
+   "name": "La Crosse-Onalaska, WI-MN",
+   "state": "WI",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.769,
+    "goods": 93.8,
+    "housing": 69.386,
+    "utilities": 89.528,
+    "other": 99.446
+   },
+   "zhvi": 338463,
+   "zori": 1149,
+   "zAsOf": "2026-07-31",
+   "zName": "La Crosse, WI"
+  },
+  {
+   "id": "lafayette-west-lafayette-in",
+   "name": "Lafayette-West Lafayette, IN",
+   "state": "IN",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.43,
+    "goods": 94.318,
+    "housing": 76.442,
+    "utilities": 86.38,
+    "other": 99.141
+   },
+   "zhvi": 287462,
+   "zori": 1426,
+   "zAsOf": "2026-07-31",
+   "zName": "Lafayette, IN"
+  },
+  {
+   "id": "lafayette-la",
+   "name": "Lafayette, LA",
+   "state": "LA",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.209,
+    "goods": 93.691,
+    "housing": 58.845,
+    "utilities": 71.215,
+    "other": 95.705
+   },
+   "zhvi": 202272,
+   "zori": 1364,
+   "zAsOf": "2026-07-31",
+   "zName": "Lafayette, LA"
+  },
+  {
+   "id": "lake-charles-la",
+   "name": "Lake Charles, LA",
+   "state": "LA",
+   "kind": "msa",
+   "rpp": {
+    "all": 85.852,
+    "goods": 93.691,
+    "housing": 51.752,
+    "utilities": 71.742,
+    "other": 95.705
+   },
+   "zhvi": 201282,
+   "zori": 1319,
+   "zAsOf": "2026-07-31",
+   "zName": "Lake Charles, LA"
+  },
+  {
+   "id": "lake-havasu-city-kingman-az",
+   "name": "Lake Havasu City-Kingman, AZ",
+   "state": "AZ",
+   "kind": "msa",
+   "rpp": {
+    "all": 94.098,
+    "goods": 96.237,
+    "housing": 79.773,
+    "utilities": 88.723,
+    "other": 99.838
+   },
+   "zhvi": 352357,
+   "zori": 1549,
+   "zAsOf": "2026-07-31",
+   "zName": "Lake Havasu City, AZ"
+  },
+  {
+   "id": "lakeland-winter-haven-fl",
+   "name": "Lakeland-Winter Haven, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 97.141,
+    "goods": 96.24,
+    "housing": 95.942,
+    "utilities": 86.883,
+    "other": 98.864
+   },
+   "zhvi": 298055,
+   "zori": 1847,
+   "zAsOf": "2026-07-31",
+   "zName": "Lakeland, FL"
+  },
+  {
+   "id": "lancaster-pa",
+   "name": "Lancaster, PA",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.257,
+    "goods": 100.684,
+    "housing": 93.815,
+    "utilities": 107.265,
+    "other": 97.726
+   },
+   "zhvi": 390025,
+   "zori": 1558,
+   "zAsOf": "2026-07-31",
+   "zName": "Lancaster, PA"
+  },
+  {
+   "id": "lansing-east-lansing-mi",
+   "name": "Lansing-East Lansing, MI",
+   "state": "MI",
+   "kind": "msa",
+   "rpp": {
+    "all": 94.991,
+    "goods": 93.711,
+    "housing": 83.472,
+    "utilities": 95.519,
+    "other": 99.561
+   },
+   "zhvi": 252339,
+   "zori": 1287,
+   "zAsOf": "2026-07-31",
+   "zName": "Lansing, MI"
+  },
+  {
+   "id": "laredo-tx",
+   "name": "Laredo, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 86.956,
+    "goods": 93.757,
+    "housing": 59.746,
+    "utilities": 80.614,
+    "other": 96.24
+   },
+   "zhvi": 218953,
+   "zori": 1305,
+   "zAsOf": "2026-07-31",
+   "zName": "Laredo, TX"
+  },
+  {
+   "id": "las-cruces-nm",
+   "name": "Las Cruces, NM",
+   "state": "NM",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.212,
+    "goods": 96.144,
+    "housing": 62.982,
+    "utilities": 77.918,
+    "other": 98.54
+   },
+   "zhvi": 288909,
+   "zori": 1452,
+   "zAsOf": "2026-07-31",
+   "zName": "Las Cruces, NM"
+  },
+  {
+   "id": "las-vegas-henderson-north-las-vegas-nv",
+   "name": "Las Vegas-Henderson-North Las Vegas, NV",
+   "state": "NV",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.215,
+    "goods": 96.271,
+    "housing": 115.538,
+    "utilities": 90.646,
+    "other": 98.744
+   },
+   "zhvi": 429591,
+   "zori": 1747,
+   "zAsOf": "2026-07-31",
+   "zName": "Las Vegas, NV"
+  },
+  {
+   "id": "lawrence-ks",
+   "name": "Lawrence, KS",
+   "state": "KS",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.243,
+    "goods": 94.027,
+    "housing": 71.636,
+    "utilities": 89.291,
+    "other": 93.816
+   },
+   "zhvi": 343019,
+   "zori": 1362,
+   "zAsOf": "2026-07-31",
+   "zName": "Lawrence, KS"
+  },
+  {
+   "id": "lawton-ok",
+   "name": "Lawton, OK",
+   "state": "OK",
+   "kind": "msa",
+   "rpp": {
+    "all": 85.941,
+    "goods": 93.778,
+    "housing": 57.389,
+    "utilities": 72.982,
+    "other": 95.458
+   },
+   "zhvi": 155847,
+   "zori": 1129,
+   "zAsOf": "2026-07-31",
+   "zName": "Lawton, OK"
+  },
+  {
+   "id": "lebanon-pa",
+   "name": "Lebanon, PA",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.214,
+    "goods": 100.684,
+    "housing": 66.039,
+    "utilities": 108.444,
+    "other": 97.726
+   },
+   "zhvi": 321498,
+   "zori": 1412,
+   "zAsOf": "2026-07-31",
+   "zName": "Lebanon, PA"
+  },
+  {
+   "id": "lewiston-auburn-me",
+   "name": "Lewiston-Auburn, ME",
+   "state": "ME",
+   "kind": "msa",
+   "rpp": {
+    "all": 94.736,
+    "goods": 97.171,
+    "housing": 69.003,
+    "utilities": 134.381,
+    "other": 103.191
+   },
+   "zhvi": 337574,
+   "zori": 1569,
+   "zAsOf": "2026-07-31",
+   "zName": "Lewiston, ME"
+  },
+  {
+   "id": "lewiston-id-wa",
+   "name": "Lewiston, ID-WA",
+   "state": "ID",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.16,
+    "goods": 96.217,
+    "housing": 71.925,
+    "utilities": 72.591,
+    "other": 99.363
+   },
+   "zhvi": 379653,
+   "zori": 1288,
+   "zAsOf": "2026-07-31",
+   "zName": "Lewiston, ID"
+  },
+  {
+   "id": "lexington-park-md",
+   "name": "Lexington Park, MD",
+   "state": "MD",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.76,
+    "goods": 99.663,
+    "housing": 103.809,
+    "utilities": 106.4,
+    "other": 100.322
+   },
+   "zhvi": 437883,
+   "zori": 1919,
+   "zAsOf": "2026-07-31",
+   "zName": "California, MD"
+  },
+  {
+   "id": "lexington-fayette-ky",
+   "name": "Lexington-Fayette, KY",
+   "state": "KY",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.889,
+    "goods": 96.246,
+    "housing": 77.093,
+    "utilities": 74.587,
+    "other": 96.892
+   },
+   "zhvi": 327773,
+   "zori": 1541,
+   "zAsOf": "2026-07-31",
+   "zName": "Lexington, KY"
+  },
+  {
+   "id": "lima-oh",
+   "name": "Lima, OH",
+   "state": "OH",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.669,
+    "goods": 93.628,
+    "housing": 57.275,
+    "utilities": 95.814,
+    "other": 98.939
+   },
+   "zhvi": 194194,
+   "zori": 1190,
+   "zAsOf": "2026-07-31",
+   "zName": "Lima, OH"
+  },
+  {
+   "id": "lincoln-ne",
+   "name": "Lincoln, NE",
+   "state": "NE",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.581,
+    "goods": 94.101,
+    "housing": 84.208,
+    "utilities": 76.817,
+    "other": 92.98
+   },
+   "zhvi": 304490,
+   "zori": 1332,
+   "zAsOf": "2026-07-31",
+   "zName": "Lincoln, NE"
+  },
+  {
+   "id": "little-rock-north-little-rock-conway-ar",
+   "name": "Little Rock-North Little Rock-Conway, AR",
+   "state": "AR",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.364,
+    "goods": 93.577,
+    "housing": 68.295,
+    "utilities": 74.635,
+    "other": 95.295
+   },
+   "zhvi": 231278,
+   "zori": 1270,
+   "zAsOf": "2026-07-31",
+   "zName": "Little Rock, AR"
+  },
+  {
+   "id": "logan-ut-id",
+   "name": "Logan, UT-ID",
+   "state": "UT",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.927,
+    "goods": 96.43,
+    "housing": 90.959,
+    "utilities": 77.857,
+    "other": 98.96
+   },
+   "zhvi": 471050,
+   "zori": 1450,
+   "zAsOf": "2026-07-31",
+   "zName": "Logan, UT"
+  },
+  {
+   "id": "longview-kelso-wa",
+   "name": "Longview-Kelso, WA",
+   "state": "WA",
+   "kind": "msa",
+   "rpp": {
+    "all": 97.545,
+    "goods": 105.028,
+    "housing": 82.536,
+    "utilities": 98.455,
+    "other": 99.472
+   },
+   "zhvi": 424667,
+   "zori": 1392,
+   "zAsOf": "2026-07-31",
+   "zName": "Longview, WA"
+  },
+  {
+   "id": "longview-tx",
+   "name": "Longview, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.485,
+    "goods": 93.757,
+    "housing": 66.749,
+    "utilities": 83.464,
+    "other": 96.24
+   },
+   "zhvi": 221161,
+   "zori": 1209,
+   "zAsOf": "2026-07-31",
+   "zName": "Longview, TX"
+  },
+  {
+   "id": "los-angeles-long-beach-anaheim-ca",
+   "name": "Los Angeles-Long Beach-Anaheim, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 113.566,
+    "goods": 106.623,
+    "housing": 170.433,
+    "utilities": 158.589,
+    "other": 104.362
+   },
+   "zhvi": 964934,
+   "zori": 2944,
+   "zAsOf": "2026-07-31",
+   "zName": "Los Angeles, CA"
+  },
+  {
+   "id": "louisville-jefferson-county-ky-in",
+   "name": "Louisville/Jefferson County, KY-IN",
+   "state": "KY",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.074,
+    "goods": 96.23,
+    "housing": 78.558,
+    "utilities": 74.957,
+    "other": 96.796
+   },
+   "zhvi": 282043,
+   "zori": 1357,
+   "zAsOf": "2026-07-31",
+   "zName": "Louisville, KY"
+  },
+  {
+   "id": "lubbock-tx",
+   "name": "Lubbock, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.317,
+    "goods": 93.757,
+    "housing": 76.357,
+    "utilities": 82.768,
+    "other": 96.24
+   },
+   "zhvi": 213274,
+   "zori": 1383,
+   "zAsOf": "2026-07-31",
+   "zName": "Lubbock, TX"
+  },
+  {
+   "id": "lynchburg-va",
+   "name": "Lynchburg, VA",
+   "state": "VA",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.363,
+    "goods": 96.773,
+    "housing": 63.912,
+    "utilities": 87.774,
+    "other": 98.612
+   },
+   "zhvi": 291659,
+   "zori": 1342,
+   "zAsOf": "2026-07-31",
+   "zName": "Lynchburg, VA"
+  },
+  {
+   "id": "macon-bibb-county-ga",
+   "name": "Macon-Bibb County, GA",
+   "state": "GA",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.528,
+    "goods": 96.269,
+    "housing": 58.916,
+    "utilities": 89.482,
+    "other": 98.667
+   },
+   "zhvi": 199964,
+   "zori": 1256,
+   "zAsOf": "2026-07-31",
+   "zName": "Macon, GA"
+  },
+  {
+   "id": "madison-wi",
+   "name": "Madison, WI",
+   "state": "WI",
+   "kind": "msa",
+   "rpp": {
+    "all": 97.287,
+    "goods": 93.787,
+    "housing": 99.748,
+    "utilities": 89.825,
+    "other": 99.411
+   },
+   "zhvi": 452940,
+   "zori": 1649,
+   "zAsOf": "2026-07-31",
+   "zName": "Madison, WI"
+  },
+  {
+   "id": "manchester-nashua-nh",
+   "name": "Manchester-Nashua, NH",
+   "state": "NH",
+   "kind": "msa",
+   "rpp": {
+    "all": 105.657,
+    "goods": 97.687,
+    "housing": 134.22,
+    "utilities": 133.535,
+    "other": 103.687
+   },
+   "zhvi": 528959,
+   "zori": 2174,
+   "zAsOf": "2026-07-31",
+   "zName": "Manchester, NH"
+  },
+  {
+   "id": "manhattan-ks",
+   "name": "Manhattan, KS",
+   "state": "KS",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.162,
+    "goods": 94.027,
+    "housing": 71.971,
+    "utilities": 88.365,
+    "other": 93.816
+   },
+   "zhvi": 271423,
+   "zori": 1305,
+   "zAsOf": "2026-07-31",
+   "zName": "Manhattan, KS"
+  },
+  {
+   "id": "mankato-mn",
+   "name": "Mankato, MN",
+   "state": "MN",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.955,
+    "goods": 95.433,
+    "housing": 79.884,
+    "utilities": 87.05,
+    "other": 92.193
+   },
+   "zhvi": 311714,
+   "zori": 1206,
+   "zAsOf": "2026-07-31",
+   "zName": "Mankato, MN"
+  },
+  {
+   "id": "mansfield-oh",
+   "name": "Mansfield, OH",
+   "state": "OH",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.872,
+    "goods": 93.628,
+    "housing": 54.919,
+    "utilities": 96.245,
+    "other": 98.939
+   },
+   "zhvi": 200826,
+   "zori": 933,
+   "zAsOf": "2026-07-31",
+   "zName": "Mansfield, OH"
+  },
+  {
+   "id": "mcallen-edinburg-mission-tx",
+   "name": "McAllen-Edinburg-Mission, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 85.895,
+    "goods": 93.757,
+    "housing": 55.892,
+    "utilities": 81.186,
+    "other": 96.24
+   },
+   "zhvi": 191508,
+   "zori": 1118,
+   "zAsOf": "2026-07-31",
+   "zName": "McAllen, TX"
+  },
+  {
+   "id": "medford-or",
+   "name": "Medford, OR",
+   "state": "OR",
+   "kind": "msa",
+   "rpp": {
+    "all": 101.433,
+    "goods": 105.261,
+    "housing": 97.658,
+    "utilities": 102.266,
+    "other": 100.298
+   },
+   "zhvi": 441885,
+   "zori": 1829,
+   "zAsOf": "2026-07-31",
+   "zName": "Medford, OR"
+  },
+  {
+   "id": "memphis-tn-ms-ar",
+   "name": "Memphis, TN-MS-AR",
+   "state": "TN",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.179,
+    "goods": 96.221,
+    "housing": 79.807,
+    "utilities": 74.097,
+    "other": 95.372
+   },
+   "zhvi": 246065,
+   "zori": 1422,
+   "zAsOf": "2026-07-31",
+   "zName": "Memphis, TN"
+  },
+  {
+   "id": "merced-ca",
+   "name": "Merced, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.275,
+    "goods": 105.168,
+    "housing": 78.63,
+    "utilities": 158.338,
+    "other": 100.267
+   },
+   "zhvi": 419764,
+   "zori": 2075,
+   "zAsOf": "2026-07-31",
+   "zName": "Merced, CA"
+  },
+  {
+   "id": "miami-fort-lauderdale-west-palm-beach-fl",
+   "name": "Miami-Fort Lauderdale-West Palm Beach, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 114.155,
+    "goods": 103.556,
+    "housing": 155.551,
+    "utilities": 97.235,
+    "other": 109.113
+   },
+   "zhvi": 477769,
+   "zori": 2677,
+   "zAsOf": "2026-07-31",
+   "zName": "Miami, FL"
+  },
+  {
+   "id": "michigan-city-la-porte-in",
+   "name": "Michigan City-La Porte, IN",
+   "state": "IN",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.682,
+    "goods": 94.318,
+    "housing": 68.451,
+    "utilities": 86.422,
+    "other": 99.141
+   },
+   "zhvi": 262733,
+   "zori": 1120,
+   "zAsOf": "2026-07-31",
+   "zName": "Michigan City, IN"
+  },
+  {
+   "id": "midland-mi",
+   "name": "Midland, MI",
+   "state": "MI",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.921,
+    "goods": 93.711,
+    "housing": 66.684,
+    "utilities": 95.219,
+    "other": 99.561
+   },
+   "zhvi": 252945,
+   "zori": 1397,
+   "zAsOf": "2026-07-31",
+   "zName": "Midland, MI"
+  },
+  {
+   "id": "midland-tx",
+   "name": "Midland, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.783,
+    "goods": 93.757,
+    "housing": 101.497,
+    "utilities": 83.24,
+    "other": 96.24
+   },
+   "zhvi": 332760,
+   "zori": 1636,
+   "zAsOf": "2026-07-31",
+   "zName": "Midland, TX"
+  },
+  {
+   "id": "milwaukee-waukesha-wi",
+   "name": "Milwaukee-Waukesha, WI",
+   "state": "WI",
+   "kind": "msa",
+   "rpp": {
+    "all": 96.937,
+    "goods": 93.787,
+    "housing": 97.111,
+    "utilities": 91.59,
+    "other": 99.411
+   },
+   "zhvi": 393208,
+   "zori": 1545,
+   "zAsOf": "2026-07-31",
+   "zName": "Milwaukee, WI"
+  },
+  {
+   "id": "minneapolis-st-paul-bloomington-mn-wi",
+   "name": "Minneapolis-St. Paul-Bloomington, MN-WI",
+   "state": "MN",
+   "kind": "msa",
+   "rpp": {
+    "all": 104.822,
+    "goods": 103.065,
+    "housing": 111.838,
+    "utilities": 93.493,
+    "other": 104.419
+   },
+   "zhvi": 394711,
+   "zori": 1725,
+   "zAsOf": "2026-07-31",
+   "zName": "Minneapolis, MN"
+  },
+  {
+   "id": "minot-nd",
+   "name": "Minot, ND",
+   "state": "ND",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.028,
+    "goods": 95.701,
+    "housing": 63.234,
+    "utilities": 72.897,
+    "other": 91.158
+   },
+   "zhvi": 272133,
+   "zori": 1189,
+   "zAsOf": "2026-07-31",
+   "zName": "Minot, ND"
+  },
+  {
+   "id": "missoula-mt",
+   "name": "Missoula, MT",
+   "state": "MT",
+   "kind": "msa",
+   "rpp": {
+    "all": 96.445,
+    "goods": 96.006,
+    "housing": 94.945,
+    "utilities": 72.081,
+    "other": 98.715
+   },
+   "zhvi": 580178,
+   "zori": 1559,
+   "zAsOf": "2026-07-31",
+   "zName": "Missoula, MT"
+  },
+  {
+   "id": "mobile-al",
+   "name": "Mobile, AL",
+   "state": "AL",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.098,
+    "goods": 96.397,
+    "housing": 60.116,
+    "utilities": 84.185,
+    "other": 96.693
+   },
+   "zhvi": 197652,
+   "zori": 1327,
+   "zAsOf": "2026-07-31",
+   "zName": "Mobile, AL"
+  },
+  {
+   "id": "modesto-ca",
+   "name": "Modesto, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 104.108,
+    "goods": 105.168,
+    "housing": 108.476,
+    "utilities": 152.259,
+    "other": 100.267
+   },
+   "zhvi": 467989,
+   "zori": 2046,
+   "zAsOf": "2026-07-31",
+   "zName": "Modesto, CA"
+  },
+  {
+   "id": "monroe-la",
+   "name": "Monroe, LA",
+   "state": "LA",
+   "kind": "msa",
+   "rpp": {
+    "all": 83.597,
+    "goods": 93.691,
+    "housing": 42.815,
+    "utilities": 72.215,
+    "other": 95.705
+   },
+   "zhvi": 167253,
+   "zori": 1225,
+   "zAsOf": "2026-07-31",
+   "zName": "Monroe, LA"
+  },
+  {
+   "id": "monroe-mi",
+   "name": "Monroe, MI",
+   "state": "MI",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.492,
+    "goods": 93.711,
+    "housing": 74.641,
+    "utilities": 93.681,
+    "other": 99.561
+   },
+   "zhvi": 275037,
+   "zori": 1227,
+   "zAsOf": "2026-07-31",
+   "zName": "Monroe, MI"
+  },
+  {
+   "id": "montgomery-al",
+   "name": "Montgomery, AL",
+   "state": "AL",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.682,
+    "goods": 96.397,
+    "housing": 64.347,
+    "utilities": 84.907,
+    "other": 96.693
+   },
+   "zhvi": 214925,
+   "zori": 1420,
+   "zAsOf": "2026-07-31",
+   "zName": "Montgomery, AL"
+  },
+  {
+   "id": "morgantown-wv",
+   "name": "Morgantown, WV",
+   "state": "WV",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.323,
+    "goods": 96.27,
+    "housing": 69.126,
+    "utilities": 92.528,
+    "other": 99.806
+   },
+   "zhvi": 228100,
+   "zori": 1462,
+   "zAsOf": "2026-07-31",
+   "zName": "Morgantown, WV"
+  },
+  {
+   "id": "morristown-tn",
+   "name": "Morristown, TN",
+   "state": "TN",
+   "kind": "msa",
+   "rpp": {
+    "all": 86.364,
+    "goods": 96.247,
+    "housing": 59.024,
+    "utilities": 72.433,
+    "other": 95.142
+   },
+   "zhvi": 301469,
+   "zori": 1532,
+   "zAsOf": "2026-07-31",
+   "zName": "Morristown, TN"
+  },
+  {
+   "id": "mount-vernon-anacortes-wa",
+   "name": "Mount Vernon-Anacortes, WA",
+   "state": "WA",
+   "kind": "msa",
+   "rpp": {
+    "all": 102.443,
+    "goods": 105.028,
+    "housing": 108.165,
+    "utilities": 96.008,
+    "other": 99.472
+   },
+   "zhvi": 587718,
+   "zori": 2208,
+   "zAsOf": "2026-07-31",
+   "zName": "Mount Vernon, WA"
+  },
+  {
+   "id": "muncie-in",
+   "name": "Muncie, IN",
+   "state": "IN",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.148,
+    "goods": 94.318,
+    "housing": 57.474,
+    "utilities": 86.435,
+    "other": 99.141
+   },
+   "zhvi": 172537,
+   "zori": 982,
+   "zAsOf": "2026-07-31",
+   "zName": "Muncie, IN"
+  },
+  {
+   "id": "muskegon-norton-shores-mi",
+   "name": "Muskegon-Norton Shores, MI",
+   "state": "MI",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.519,
+    "goods": 93.711,
+    "housing": 74.228,
+    "utilities": 92.808,
+    "other": 99.561
+   },
+   "zhvi": 259410,
+   "zori": 1324,
+   "zAsOf": "2026-07-31",
+   "zName": "Muskegon, MI"
+  },
+  {
+   "id": "myrtle-beach-conway-north-myrtle-beach-sc",
+   "name": "Myrtle Beach-Conway-North Myrtle Beach, SC",
+   "state": "SC",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.642,
+    "goods": 96.339,
+    "housing": 83.129,
+    "utilities": 87.986,
+    "other": 98.284
+   },
+   "zhvi": 342010,
+   "zori": 1714,
+   "zAsOf": "2026-07-31",
+   "zName": "Myrtle Beach, SC"
+  },
+  {
+   "id": "napa-ca",
+   "name": "Napa, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 112.554,
+    "goods": 105.168,
+    "housing": 197.44,
+    "utilities": 156.536,
+    "other": 100.267
+   },
+   "zhvi": 882040,
+   "zori": 2873,
+   "zAsOf": "2026-07-31",
+   "zName": "Napa, CA"
+  },
+  {
+   "id": "naples-marco-island-fl",
+   "name": "Naples-Marco Island, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 103.2,
+    "goods": 96.24,
+    "housing": 129.441,
+    "utilities": 87.761,
+    "other": 98.864
+   },
+   "zhvi": 553831,
+   "zori": 2620,
+   "zAsOf": "2026-07-31",
+   "zName": "Naples, FL"
+  },
+  {
+   "id": "nashville-davidson-murfreesboro-franklin-tn",
+   "name": "Nashville-Davidson--Murfreesboro--Franklin, TN",
+   "state": "TN",
+   "kind": "msa",
+   "rpp": {
+    "all": 96.338,
+    "goods": 96.247,
+    "housing": 104.626,
+    "utilities": 71.95,
+    "other": 95.142
+   },
+   "zhvi": 455444,
+   "zori": 1820,
+   "zAsOf": "2026-07-31",
+   "zName": "Nashville, TN"
+  },
+  {
+   "id": "new-haven-ct",
+   "name": "New Haven, CT",
+   "state": "CT",
+   "kind": "msa",
+   "rpp": {
+    "all": 104.559,
+    "goods": 97.33,
+    "housing": 124.293,
+    "utilities": 144.848,
+    "other": 102.658
+   },
+   "zhvi": 411326,
+   "zori": 2140,
+   "zAsOf": "2026-07-31",
+   "zName": "New Haven, CT"
+  },
+  {
+   "id": "new-orleans-metairie-la",
+   "name": "New Orleans-Metairie, LA",
+   "state": "LA",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.597,
+    "goods": 93.691,
+    "housing": 86.009,
+    "utilities": 71.231,
+    "other": 95.705
+   },
+   "zhvi": 263842,
+   "zori": 1604,
+   "zAsOf": "2026-07-31",
+   "zName": "New Orleans, LA"
+  },
+  {
+   "id": "new-york-newark-jersey-city-ny-nj",
+   "name": "New York-Newark-Jersey City, NY-NJ",
+   "state": "NY",
+   "kind": "msa",
+   "rpp": {
+    "all": 112.563,
+    "goods": 110.261,
+    "housing": 148.616,
+    "utilities": 127.018,
+    "other": 105.836
+   },
+   "zhvi": 737078,
+   "zori": 3627,
+   "zAsOf": "2026-07-31",
+   "zName": "New York, NY"
+  },
+  {
+   "id": "niles-mi",
+   "name": "Niles, MI",
+   "state": "MI",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.37,
+    "goods": 93.711,
+    "housing": 71.599,
+    "utilities": 95.957,
+    "other": 99.561
+   },
+   "zhvi": 285493,
+   "zori": 1333,
+   "zAsOf": "2026-07-31",
+   "zName": "Niles, MI"
+  },
+  {
+   "id": "north-port-bradenton-sarasota-fl",
+   "name": "North Port-Bradenton-Sarasota, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 102.417,
+    "goods": 96.24,
+    "housing": 127.95,
+    "utilities": 88.171,
+    "other": 98.864
+   },
+   "zhvi": 404446,
+   "zori": 2127,
+   "zAsOf": "2026-07-31",
+   "zName": "North Port, FL"
+  },
+  {
+   "id": "norwich-new-london-willimantic-ct",
+   "name": "Norwich-New London-Willimantic, CT",
+   "state": "CT",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.445,
+    "goods": 97.33,
+    "housing": 93.662,
+    "utilities": 148.557,
+    "other": 102.658
+   },
+   "zhvi": 434944,
+   "zori": 1988,
+   "zAsOf": "2026-07-31",
+   "zName": "Norwich, CT"
+  },
+  {
+   "id": "ocala-fl",
+   "name": "Ocala, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.234,
+    "goods": 96.24,
+    "housing": 86.23,
+    "utilities": 87.109,
+    "other": 98.864
+   },
+   "zhvi": 272790,
+   "zori": 1593,
+   "zAsOf": "2026-07-31",
+   "zName": "Ocala, FL"
+  },
+  {
+   "id": "odessa-tx",
+   "name": "Odessa, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.896,
+    "goods": 93.757,
+    "housing": 89.709,
+    "utilities": 82.86,
+    "other": 96.24
+   },
+   "zhvi": 255567,
+   "zori": 1551,
+   "zAsOf": "2026-07-31",
+   "zName": "Odessa, TX"
+  },
+  {
+   "id": "ogden-ut",
+   "name": "Ogden, UT",
+   "state": "UT",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.349,
+    "goods": 96.446,
+    "housing": 117.903,
+    "utilities": 78.778,
+    "other": 98.959
+   },
+   "zhvi": 516604,
+   "zori": 1631,
+   "zAsOf": "2026-07-31",
+   "zName": "Ogden, UT"
+  },
+  {
+   "id": "oklahoma-city-ok",
+   "name": "Oklahoma City, OK",
+   "state": "OK",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.408,
+    "goods": 93.778,
+    "housing": 73.885,
+    "utilities": 74.067,
+    "other": 95.458
+   },
+   "zhvi": 246438,
+   "zori": 1390,
+   "zAsOf": "2026-07-31",
+   "zName": "Oklahoma City, OK"
+  },
+  {
+   "id": "olympia-lacey-tumwater-wa",
+   "name": "Olympia-Lacey-Tumwater, WA",
+   "state": "WA",
+   "kind": "msa",
+   "rpp": {
+    "all": 103.67,
+    "goods": 105.028,
+    "housing": 116.675,
+    "utilities": 91.705,
+    "other": 99.472
+   },
+   "zhvi": 532102,
+   "zori": 2090,
+   "zAsOf": "2026-07-31",
+   "zName": "Olympia, WA"
+  },
+  {
+   "id": "omaha-ne-ia",
+   "name": "Omaha, NE-IA",
+   "state": "NE",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.911,
+    "goods": 94.063,
+    "housing": 86.404,
+    "utilities": 76.378,
+    "other": 92.975
+   },
+   "zhvi": 310736,
+   "zori": 1420,
+   "zAsOf": "2026-07-31",
+   "zName": "Omaha, NE"
+  },
+  {
+   "id": "orlando-kissimmee-sanford-fl",
+   "name": "Orlando-Kissimmee-Sanford, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 101.418,
+    "goods": 96.24,
+    "housing": 123.374,
+    "utilities": 87.196,
+    "other": 98.864
+   },
+   "zhvi": 386867,
+   "zori": 1959,
+   "zAsOf": "2026-07-31",
+   "zName": "Orlando, FL"
+  },
+  {
+   "id": "oshkosh-neenah-wi",
+   "name": "Oshkosh-Neenah, WI",
+   "state": "WI",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.929,
+    "goods": 93.787,
+    "housing": 74.442,
+    "utilities": 90.614,
+    "other": 99.411
+   },
+   "zhvi": 307585,
+   "zori": 1172,
+   "zAsOf": "2026-07-31",
+   "zName": "Oshkosh, WI"
+  },
+  {
+   "id": "owensboro-ky",
+   "name": "Owensboro, KY",
+   "state": "KY",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.61,
+    "goods": 96.246,
+    "housing": 55.698,
+    "utilities": 75.172,
+    "other": 96.892
+   },
+   "zhvi": 214939,
+   "zori": 1163,
+   "zAsOf": "2026-07-31",
+   "zName": "Owensboro, KY"
+  },
+  {
+   "id": "oxnard-thousand-oaks-ventura-ca",
+   "name": "Oxnard-Thousand Oaks-Ventura, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 110.534,
+    "goods": 105.168,
+    "housing": 171.096,
+    "utilities": 152.925,
+    "other": 100.267
+   },
+   "zhvi": 883341,
+   "zori": 2964,
+   "zAsOf": "2026-07-31",
+   "zName": "Oxnard, CA"
+  },
+  {
+   "id": "paducah-ky-il",
+   "name": "Paducah, KY-IL",
+   "state": "KY",
+   "kind": "msa",
+   "rpp": {
+    "all": 86.084,
+    "goods": 96.025,
+    "housing": 48.794,
+    "utilities": 76.873,
+    "other": 96.897
+   },
+   "zhvi": 170202,
+   "zori": 1098,
+   "zAsOf": "2026-07-31",
+   "zName": "Paducah, KY"
+  },
+  {
+   "id": "palm-bay-melbourne-titusville-fl",
+   "name": "Palm Bay-Melbourne-Titusville, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.005,
+    "goods": 96.24,
+    "housing": 111.731,
+    "utilities": 88.064,
+    "other": 98.864
+   },
+   "zhvi": 344709,
+   "zori": 1914,
+   "zAsOf": "2026-07-31",
+   "zName": "Palm Bay, FL"
+  },
+  {
+   "id": "panama-city-panama-city-beach-fl",
+   "name": "Panama City-Panama City Beach, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 97.296,
+    "goods": 96.24,
+    "housing": 96.424,
+    "utilities": 88.088,
+    "other": 98.864
+   },
+   "zhvi": 344879,
+   "zori": 1735,
+   "zAsOf": "2026-07-31",
+   "zName": "Panama City, FL"
+  },
+  {
+   "id": "parkersburg-vienna-wv",
+   "name": "Parkersburg-Vienna, WV",
+   "state": "WV",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.066,
+    "goods": 96.27,
+    "housing": 45.884,
+    "utilities": 92.898,
+    "other": 99.806
+   },
+   "zhvi": 170898,
+   "zori": 947,
+   "zAsOf": "2026-07-31",
+   "zName": "Parkersburg, WV"
+  },
+  {
+   "id": "pensacola-ferry-pass-brent-fl",
+   "name": "Pensacola-Ferry Pass-Brent, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 97.717,
+    "goods": 96.24,
+    "housing": 98.77,
+    "utilities": 88.477,
+    "other": 98.864
+   },
+   "zhvi": 311363,
+   "zori": 1761,
+   "zAsOf": "2026-07-31",
+   "zName": "Pensacola, FL"
+  },
+  {
+   "id": "peoria-il",
+   "name": "Peoria, IL",
+   "state": "IL",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.231,
+    "goods": 93.643,
+    "housing": 63.763,
+    "utilities": 90.504,
+    "other": 99.59
+   },
+   "zhvi": 175814,
+   "zori": 1179,
+   "zAsOf": "2026-07-31",
+   "zName": "Peoria, IL"
+  },
+  {
+   "id": "philadelphia-camden-wilmington-pa-nj-de-md",
+   "name": "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 102.554,
+    "goods": 96.833,
+    "housing": 113.141,
+    "utilities": 114.389,
+    "other": 103.052
+   },
+   "zhvi": 392329,
+   "zori": 1925,
+   "zAsOf": "2026-07-31",
+   "zName": "Philadelphia, PA"
+  },
+  {
+   "id": "phoenix-mesa-chandler-az",
+   "name": "Phoenix-Mesa-Chandler, AZ",
+   "state": "AZ",
+   "kind": "msa",
+   "rpp": {
+    "all": 103.316,
+    "goods": 95.024,
+    "housing": 121.236,
+    "utilities": 93.332,
+    "other": 104.016
+   },
+   "zhvi": 445924,
+   "zori": 1727,
+   "zAsOf": "2026-07-31",
+   "zName": "Phoenix, AZ"
+  },
+  {
+   "id": "pinehurst-southern-pines-nc",
+   "name": "Pinehurst-Southern Pines, NC",
+   "state": "NC",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.336,
+    "goods": 96.621,
+    "housing": 59.318,
+    "utilities": 88.176,
+    "other": 98.186
+   },
+   "zhvi": 416453,
+   "zori": 1983,
+   "zAsOf": "2026-07-31",
+   "zName": "Pinehurst, NC"
+  },
+  {
+   "id": "pittsburgh-pa",
+   "name": "Pittsburgh, PA",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 94.671,
+    "goods": 100.684,
+    "housing": 71.986,
+    "utilities": 107.711,
+    "other": 97.726
+   },
+   "zhvi": 231708,
+   "zori": 1499,
+   "zAsOf": "2026-07-31",
+   "zName": "Pittsburgh, PA"
+  },
+  {
+   "id": "pittsfield-ma",
+   "name": "Pittsfield, MA",
+   "state": "MA",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.106,
+    "goods": 97.015,
+    "housing": 73.452,
+    "utilities": 153.711,
+    "other": 101.197
+   },
+   "zhvi": 395329,
+   "zori": 1753,
+   "zAsOf": "2026-07-31",
+   "zName": "Pittsfield, MA"
+  },
+  {
+   "id": "pocatello-id",
+   "name": "Pocatello, ID",
+   "state": "ID",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.906,
+    "goods": 96.179,
+    "housing": 66.396,
+    "utilities": 69.773,
+    "other": 98.974
+   },
+   "zhvi": 355736,
+   "zori": 1086,
+   "zAsOf": "2026-07-31",
+   "zName": "Pocatello, ID"
+  },
+  {
+   "id": "port-st-lucie-fl",
+   "name": "Port St. Lucie, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.228,
+    "goods": 96.24,
+    "housing": 113.642,
+    "utilities": 87.031,
+    "other": 98.864
+   },
+   "zhvi": 383699,
+   "zori": 2337,
+   "zAsOf": "2026-07-31",
+   "zName": "Port St. Lucie, FL"
+  },
+  {
+   "id": "portland-south-portland-me",
+   "name": "Portland-South Portland, ME",
+   "state": "ME",
+   "kind": "msa",
+   "rpp": {
+    "all": 101.858,
+    "goods": 97.171,
+    "housing": 105.164,
+    "utilities": 134.591,
+    "other": 103.191
+   },
+   "zhvi": 546999,
+   "zori": 2369,
+   "zAsOf": "2026-07-31",
+   "zName": "Portland, ME"
+  },
+  {
+   "id": "portland-vancouver-hillsboro-or-wa",
+   "name": "Portland-Vancouver-Hillsboro, OR-WA",
+   "state": "OR",
+   "kind": "msa",
+   "rpp": {
+    "all": 105.421,
+    "goods": 105.222,
+    "housing": 125.114,
+    "utilities": 106.974,
+    "other": 100.136
+   },
+   "zhvi": 549241,
+   "zori": 1810,
+   "zAsOf": "2026-07-31",
+   "zName": "Portland, OR"
+  },
+  {
+   "id": "prescott-valley-prescott-az",
+   "name": "Prescott Valley-Prescott, AZ",
+   "state": "AZ",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.255,
+    "goods": 96.237,
+    "housing": 98.781,
+    "utilities": 91.457,
+    "other": 99.838
+   },
+   "zhvi": null,
+   "zori": 1869,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "providence-warwick-ri-ma",
+   "name": "Providence-Warwick, RI-MA",
+   "state": "RI",
+   "kind": "msa",
+   "rpp": {
+    "all": 101.773,
+    "goods": 97.116,
+    "housing": 103.851,
+    "utilities": 148.809,
+    "other": 102.275
+   },
+   "zhvi": 529756,
+   "zori": 2180,
+   "zAsOf": "2026-07-31",
+   "zName": "Providence, RI"
+  },
+  {
+   "id": "provo-orem-lehi-ut",
+   "name": "Provo-Orem-Lehi, UT",
+   "state": "UT",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.232,
+    "goods": 96.446,
+    "housing": 104.081,
+    "utilities": 78.63,
+    "other": 98.959
+   },
+   "zhvi": 544867,
+   "zori": 1823,
+   "zAsOf": "2026-07-31",
+   "zName": "Provo, UT"
+  },
+  {
+   "id": "pueblo-co",
+   "name": "Pueblo, CO",
+   "state": "CO",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.762,
+    "goods": 96.052,
+    "housing": 71.285,
+    "utilities": 81.933,
+    "other": 99.822
+   },
+   "zhvi": 286962,
+   "zori": 1390,
+   "zAsOf": "2026-07-31",
+   "zName": "Pueblo, CO"
+  },
+  {
+   "id": "punta-gorda-fl",
+   "name": "Punta Gorda, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.525,
+    "goods": 96.24,
+    "housing": 113.277,
+    "utilities": 87.35,
+    "other": 98.864
+   },
+   "zhvi": 299372,
+   "zori": 1863,
+   "zAsOf": "2026-07-31",
+   "zName": "Punta Gorda, FL"
+  },
+  {
+   "id": "racine-mount-pleasant-wi",
+   "name": "Racine-Mount Pleasant, WI",
+   "state": "WI",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.961,
+    "goods": 93.787,
+    "housing": 92.029,
+    "utilities": 90.021,
+    "other": 99.411
+   },
+   "zhvi": 319383,
+   "zori": 1433,
+   "zAsOf": "2026-07-31",
+   "zName": "Racine, WI"
+  },
+  {
+   "id": "raleigh-cary-nc",
+   "name": "Raleigh-Cary, NC",
+   "state": "NC",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.157,
+    "goods": 96.621,
+    "housing": 103.476,
+    "utilities": 88.96,
+    "other": 98.186
+   },
+   "zhvi": 437484,
+   "zori": 1683,
+   "zAsOf": "2026-07-31",
+   "zName": "Raleigh, NC"
+  },
+  {
+   "id": "rapid-city-sd",
+   "name": "Rapid City, SD",
+   "state": "SD",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.16,
+    "goods": 95.473,
+    "housing": 72.552,
+    "utilities": 79.087,
+    "other": 91.899
+   },
+   "zhvi": 376376,
+   "zori": 1494,
+   "zAsOf": "2026-07-31",
+   "zName": "Rapid City, SD"
+  },
+  {
+   "id": "reading-pa",
+   "name": "Reading, PA",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 97.06,
+    "goods": 100.684,
+    "housing": 85.419,
+    "utilities": 108.217,
+    "other": 97.726
+   },
+   "zhvi": 315441,
+   "zori": 1517,
+   "zAsOf": "2026-07-31",
+   "zName": "Reading, PA"
+  },
+  {
+   "id": "redding-ca",
+   "name": "Redding, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.684,
+    "goods": 105.168,
+    "housing": 89.366,
+    "utilities": 157.712,
+    "other": 100.267
+   },
+   "zhvi": 377853,
+   "zori": 1688,
+   "zAsOf": "2026-07-31",
+   "zName": "Redding, CA"
+  },
+  {
+   "id": "reno-nv",
+   "name": "Reno, NV",
+   "state": "NV",
+   "kind": "msa",
+   "rpp": {
+    "all": 101.014,
+    "goods": 96.271,
+    "housing": 123.478,
+    "utilities": 89.274,
+    "other": 98.744
+   },
+   "zhvi": 573912,
+   "zori": 2030,
+   "zAsOf": "2026-07-31",
+   "zName": "Reno, NV"
+  },
+  {
+   "id": "richmond-va",
+   "name": "Richmond, VA",
+   "state": "VA",
+   "kind": "msa",
+   "rpp": {
+    "all": 97.858,
+    "goods": 96.773,
+    "housing": 99.136,
+    "utilities": 89.221,
+    "other": 98.612
+   },
+   "zhvi": 397963,
+   "zori": 1751,
+   "zAsOf": "2026-07-31",
+   "zName": "Richmond, VA"
+  },
+  {
+   "id": "riverside-san-bernardino-ontario-ca",
+   "name": "Riverside-San Bernardino-Ontario, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 106.442,
+    "goods": 101.431,
+    "housing": 129.312,
+    "utilities": 148.641,
+    "other": 101.281
+   },
+   "zhvi": 586798,
+   "zori": 2547,
+   "zAsOf": "2026-07-31",
+   "zName": "Riverside, CA"
+  },
+  {
+   "id": "roanoke-va",
+   "name": "Roanoke, VA",
+   "state": "VA",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.618,
+    "goods": 96.773,
+    "housing": 78.531,
+    "utilities": 88.913,
+    "other": 98.612
+   },
+   "zhvi": 303569,
+   "zori": 1424,
+   "zAsOf": "2026-07-31",
+   "zName": "Roanoke, VA"
+  },
+  {
+   "id": "rochester-mn",
+   "name": "Rochester, MN",
+   "state": "MN",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.821,
+    "goods": 95.433,
+    "housing": 78.628,
+    "utilities": 87.389,
+    "other": 92.193
+   },
+   "zhvi": 344850,
+   "zori": 1668,
+   "zAsOf": "2026-07-31",
+   "zName": "Rochester, MN"
+  },
+  {
+   "id": "rochester-ny",
+   "name": "Rochester, NY",
+   "state": "NY",
+   "kind": "msa",
+   "rpp": {
+    "all": 97.035,
+    "goods": 99.693,
+    "housing": 87.481,
+    "utilities": 133.213,
+    "other": 97.754
+   },
+   "zhvi": 289019,
+   "zori": 1557,
+   "zAsOf": "2026-07-31",
+   "zName": "Rochester, NY"
+  },
+  {
+   "id": "rockford-il",
+   "name": "Rockford, IL",
+   "state": "IL",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.154,
+    "goods": 93.643,
+    "housing": 70.076,
+    "utilities": 89.378,
+    "other": 99.59
+   },
+   "zhvi": 224377,
+   "zori": 1258,
+   "zAsOf": "2026-07-31",
+   "zName": "Rockford, IL"
+  },
+  {
+   "id": "rocky-mount-nc",
+   "name": "Rocky Mount, NC",
+   "state": "NC",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.012,
+    "goods": 96.621,
+    "housing": 56.103,
+    "utilities": 88.378,
+    "other": 98.186
+   },
+   "zhvi": 201130,
+   "zori": 1286,
+   "zAsOf": "2026-07-31",
+   "zName": "Rocky Mount, NC"
+  },
+  {
+   "id": "rome-ga",
+   "name": "Rome, GA",
+   "state": "GA",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.161,
+    "goods": 96.269,
+    "housing": 60.276,
+    "utilities": 90.721,
+    "other": 98.667
+   },
+   "zhvi": 235879,
+   "zori": 1312,
+   "zAsOf": "2026-07-31",
+   "zName": "Rome, GA"
+  },
+  {
+   "id": "sacramento-roseville-folsom-ca",
+   "name": "Sacramento-Roseville-Folsom, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 106.67,
+    "goods": 105.168,
+    "housing": 130.23,
+    "utilities": 151.29,
+    "other": 100.267
+   },
+   "zhvi": 581822,
+   "zori": 2296,
+   "zAsOf": "2026-07-31",
+   "zName": "Sacramento, CA"
+  },
+  {
+   "id": "saginaw-mi",
+   "name": "Saginaw, MI",
+   "state": "MI",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.891,
+    "goods": 93.711,
+    "housing": 63.647,
+    "utilities": 95.849,
+    "other": 99.561
+   },
+   "zhvi": 177241,
+   "zori": 1134,
+   "zAsOf": "2026-07-31",
+   "zName": "Saginaw, MI"
+  },
+  {
+   "id": "salem-or",
+   "name": "Salem, OR",
+   "state": "OR",
+   "kind": "msa",
+   "rpp": {
+    "all": 103.649,
+    "goods": 105.261,
+    "housing": 110.333,
+    "utilities": 104.689,
+    "other": 100.298
+   },
+   "zhvi": 455386,
+   "zori": 1623,
+   "zAsOf": "2026-07-31",
+   "zName": "Salem, OR"
+  },
+  {
+   "id": "salinas-ca",
+   "name": "Salinas, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 109.042,
+    "goods": 105.168,
+    "housing": 145.669,
+    "utilities": 154.157,
+    "other": 100.267
+   },
+   "zhvi": 852478,
+   "zori": 2834,
+   "zAsOf": "2026-07-31",
+   "zName": "Salinas, CA"
+  },
+  {
+   "id": "salisbury-md",
+   "name": "Salisbury, MD",
+   "state": "MD",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.617,
+    "goods": 96.592,
+    "housing": 87.212,
+    "utilities": 102.801,
+    "other": 98.995
+   },
+   "zhvi": 430481,
+   "zori": 1972,
+   "zAsOf": "2026-07-31",
+   "zName": "Salisbury, MD"
+  },
+  {
+   "id": "salt-lake-city-murray-ut",
+   "name": "Salt Lake City-Murray, UT",
+   "state": "UT",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.868,
+    "goods": 96.446,
+    "housing": 123.311,
+    "utilities": 79,
+    "other": 98.959
+   },
+   "zhvi": 566207,
+   "zori": 1647,
+   "zAsOf": "2026-07-31",
+   "zName": "Salt Lake City, UT"
+  },
+  {
+   "id": "san-angelo-tx",
+   "name": "San Angelo, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.453,
+    "goods": 93.757,
+    "housing": 81.442,
+    "utilities": 81.575,
+    "other": 96.24
+   },
+   "zhvi": 231274,
+   "zori": 1335,
+   "zAsOf": "2026-07-31",
+   "zName": "San Angelo, TX"
+  },
+  {
+   "id": "san-antonio-new-braunfels-tx",
+   "name": "San Antonio-New Braunfels, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 94.716,
+    "goods": 93.757,
+    "housing": 94.575,
+    "utilities": 82.169,
+    "other": 96.24
+   },
+   "zhvi": 279434,
+   "zori": 1425,
+   "zAsOf": "2026-07-31",
+   "zName": "San Antonio, TX"
+  },
+  {
+   "id": "san-diego-chula-vista-carlsbad-ca",
+   "name": "San Diego-Chula Vista-Carlsbad, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 111.887,
+    "goods": 107.963,
+    "housing": 179.267,
+    "utilities": 174.247,
+    "other": 99.597
+   },
+   "zhvi": 934166,
+   "zori": 3008,
+   "zAsOf": "2026-07-31",
+   "zName": "San Diego, CA"
+  },
+  {
+   "id": "san-francisco-oakland-fremont-ca",
+   "name": "San Francisco-Oakland-Fremont, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 115.613,
+    "goods": 108.465,
+    "housing": 194.718,
+    "utilities": 172.585,
+    "other": 106.207
+   },
+   "zhvi": 1136810,
+   "zori": 3372,
+   "zAsOf": "2026-07-31",
+   "zName": "San Francisco, CA"
+  },
+  {
+   "id": "san-jose-sunnyvale-santa-clara-ca",
+   "name": "San Jose-Sunnyvale-Santa Clara, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 110.423,
+    "goods": 105.168,
+    "housing": 211.901,
+    "utilities": 156.659,
+    "other": 100.267
+   },
+   "zhvi": 1559187,
+   "zori": 3782,
+   "zAsOf": "2026-07-31",
+   "zName": "San Jose, CA"
+  },
+  {
+   "id": "san-luis-obispo-paso-robles-ca",
+   "name": "San Luis Obispo-Paso Robles, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 108.596,
+    "goods": 105.168,
+    "housing": 144.362,
+    "utilities": 147.823,
+    "other": 100.267
+   },
+   "zhvi": 906817,
+   "zori": 2882,
+   "zAsOf": "2026-07-31",
+   "zName": "San Luis Obispo, CA"
+  },
+  {
+   "id": "sandusky-oh",
+   "name": "Sandusky, OH",
+   "state": "OH",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.281,
+    "goods": 93.628,
+    "housing": 59.462,
+    "utilities": 96.703,
+    "other": 98.939
+   },
+   "zhvi": 242265,
+   "zori": 1869,
+   "zAsOf": "2026-07-31",
+   "zName": "Sandusky, OH"
+  },
+  {
+   "id": "santa-cruz-watsonville-ca",
+   "name": "Santa Cruz-Watsonville, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 109.896,
+    "goods": 105.168,
+    "housing": 164.328,
+    "utilities": 152.716,
+    "other": 100.267
+   },
+   "zhvi": 1158619,
+   "zori": 3539,
+   "zAsOf": "2026-07-31",
+   "zName": "Santa Cruz, CA"
+  },
+  {
+   "id": "santa-fe-nm",
+   "name": "Santa Fe, NM",
+   "state": "NM",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.767,
+    "goods": 96.144,
+    "housing": 107.978,
+    "utilities": 76.705,
+    "other": 98.54
+   },
+   "zhvi": 562484,
+   "zori": 1883,
+   "zAsOf": "2026-07-31",
+   "zName": "Santa Fe, NM"
+  },
+  {
+   "id": "santa-maria-santa-barbara-ca",
+   "name": "Santa Maria-Santa Barbara, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 108.798,
+    "goods": 105.168,
+    "housing": 151.394,
+    "utilities": 149.807,
+    "other": 100.267
+   },
+   "zhvi": 1003290,
+   "zori": 3258,
+   "zAsOf": "2026-07-31",
+   "zName": "Santa Maria, CA"
+  },
+  {
+   "id": "santa-rosa-petaluma-ca",
+   "name": "Santa Rosa-Petaluma, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 107.784,
+    "goods": 105.168,
+    "housing": 139.569,
+    "utilities": 154.777,
+    "other": 100.267
+   },
+   "zhvi": 791767,
+   "zori": 2700,
+   "zAsOf": "2026-07-31",
+   "zName": "Santa Rosa, CA"
+  },
+  {
+   "id": "savannah-ga",
+   "name": "Savannah, GA",
+   "state": "GA",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.206,
+    "goods": 96.269,
+    "housing": 86.012,
+    "utilities": 88.603,
+    "other": 98.667
+   },
+   "zhvi": 345393,
+   "zori": 1818,
+   "zAsOf": "2026-07-31",
+   "zName": "Savannah, GA"
+  },
+  {
+   "id": "scranton-wilkes-barre-pa",
+   "name": "Scranton--Wilkes-Barre, PA",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.556,
+    "goods": 100.684,
+    "housing": 66.987,
+    "utilities": 106.533,
+    "other": 97.726
+   },
+   "zhvi": 230799,
+   "zori": 1333,
+   "zAsOf": "2026-07-31",
+   "zName": "Scranton, PA"
+  },
+  {
+   "id": "seattle-tacoma-bellevue-wa",
+   "name": "Seattle-Tacoma-Bellevue, WA",
+   "state": "WA",
+   "kind": "msa",
+   "rpp": {
+    "all": 111.133,
+    "goods": 103.972,
+    "housing": 151.314,
+    "utilities": 92.814,
+    "other": 106.835
+   },
+   "zhvi": 740579,
+   "zori": 2282,
+   "zAsOf": "2026-07-31",
+   "zName": "Seattle, WA"
+  },
+  {
+   "id": "sebastian-vero-beach-west-vero-corridor-fl",
+   "name": "Sebastian-Vero Beach-West Vero Corridor, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.308,
+    "goods": 96.24,
+    "housing": 101.635,
+    "utilities": 87.265,
+    "other": 98.864
+   },
+   "zhvi": 366119,
+   "zori": 2156,
+   "zAsOf": "2026-07-31",
+   "zName": "Sebastian, FL"
+  },
+  {
+   "id": "sebring-fl",
+   "name": "Sebring, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.47,
+    "goods": 96.24,
+    "housing": 73.455,
+    "utilities": 86.755,
+    "other": 98.864
+   },
+   "zhvi": 233884,
+   "zori": 1513,
+   "zAsOf": "2026-07-31",
+   "zName": "Sebring, FL"
+  },
+  {
+   "id": "sheboygan-wi",
+   "name": "Sheboygan, WI",
+   "state": "WI",
+   "kind": "msa",
+   "rpp": {
+    "all": 94.014,
+    "goods": 93.787,
+    "housing": 80.54,
+    "utilities": 87.566,
+    "other": 99.411
+   },
+   "zhvi": 330019,
+   "zori": 1147,
+   "zAsOf": "2026-07-31",
+   "zName": "Sheboygan, WI"
+  },
+  {
+   "id": "sherman-denison-tx",
+   "name": "Sherman-Denison, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.771,
+    "goods": 93.757,
+    "housing": 89.466,
+    "utilities": 83.323,
+    "other": 96.24
+   },
+   "zhvi": 288073,
+   "zori": 1348,
+   "zAsOf": "2026-07-31",
+   "zName": "Sherman, TX"
+  },
+  {
+   "id": "shreveport-bossier-city-la",
+   "name": "Shreveport-Bossier City, LA",
+   "state": "LA",
+   "kind": "msa",
+   "rpp": {
+    "all": 84.766,
+    "goods": 93.691,
+    "housing": 52.286,
+    "utilities": 72.558,
+    "other": 95.705
+   },
+   "zhvi": 185028,
+   "zori": 1357,
+   "zAsOf": "2026-07-31",
+   "zName": "Shreveport, LA"
+  },
+  {
+   "id": "sierra-vista-douglas-az",
+   "name": "Sierra Vista-Douglas, AZ",
+   "state": "AZ",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.243,
+    "goods": 96.237,
+    "housing": 61.918,
+    "utilities": 91.945,
+    "other": 99.838
+   },
+   "zhvi": 263767,
+   "zori": 1323,
+   "zAsOf": "2026-07-31",
+   "zName": "Sierra Vista, AZ"
+  },
+  {
+   "id": "sioux-city-ia-ne-sd",
+   "name": "Sioux City, IA-NE-SD",
+   "state": "IA",
+   "kind": "msa",
+   "rpp": {
+    "all": 86.454,
+    "goods": 94.013,
+    "housing": 57.849,
+    "utilities": 82.706,
+    "other": 92.749
+   },
+   "zhvi": 228374,
+   "zori": 1332,
+   "zAsOf": "2026-07-31",
+   "zName": "Sioux City, IA"
+  },
+  {
+   "id": "sioux-falls-sd-mn",
+   "name": "Sioux Falls, SD-MN",
+   "state": "SD",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.631,
+    "goods": 95.472,
+    "housing": 77.605,
+    "utilities": 80.7,
+    "other": 91.906
+   },
+   "zhvi": 344172,
+   "zori": 1307,
+   "zAsOf": "2026-07-31",
+   "zName": "Sioux Falls, SD"
+  },
+  {
+   "id": "slidell-mandeville-covington-la",
+   "name": "Slidell-Mandeville-Covington, LA",
+   "state": "LA",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.726,
+    "goods": 93.691,
+    "housing": 85.449,
+    "utilities": 71.65,
+    "other": 95.705
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "south-bend-mishawaka-in-mi",
+   "name": "South Bend-Mishawaka, IN-MI",
+   "state": "IN",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.858,
+    "goods": 94.221,
+    "housing": 74.586,
+    "utilities": 87.733,
+    "other": 99.213
+   },
+   "zhvi": 242803,
+   "zori": 1320,
+   "zAsOf": "2026-07-31",
+   "zName": "South Bend, IN"
+  },
+  {
+   "id": "spartanburg-sc",
+   "name": "Spartanburg, SC",
+   "state": "SC",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.051,
+    "goods": 96.339,
+    "housing": 68.007,
+    "utilities": 88.331,
+    "other": 98.284
+   },
+   "zhvi": 278713,
+   "zori": 1513,
+   "zAsOf": "2026-07-31",
+   "zName": "Spartanburg, SC"
+  },
+  {
+   "id": "spokane-spokane-valley-wa",
+   "name": "Spokane-Spokane Valley, WA",
+   "state": "WA",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.346,
+    "goods": 105.028,
+    "housing": 97.059,
+    "utilities": 91.196,
+    "other": 99.472
+   },
+   "zhvi": 424976,
+   "zori": 1552,
+   "zAsOf": "2026-07-31",
+   "zName": "Spokane, WA"
+  },
+  {
+   "id": "springfield-il",
+   "name": "Springfield, IL",
+   "state": "IL",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.745,
+    "goods": 93.643,
+    "housing": 71.616,
+    "utilities": 90.406,
+    "other": 99.59
+   },
+   "zhvi": 202440,
+   "zori": 1194,
+   "zAsOf": "2026-07-31",
+   "zName": "Springfield, IL"
+  },
+  {
+   "id": "springfield-ma",
+   "name": "Springfield, MA",
+   "state": "MA",
+   "kind": "msa",
+   "rpp": {
+    "all": 96.061,
+    "goods": 97.015,
+    "housing": 75.781,
+    "utilities": 154.996,
+    "other": 101.197
+   },
+   "zhvi": 380012,
+   "zori": 1918,
+   "zAsOf": "2026-07-31",
+   "zName": "Springfield, MA"
+  },
+  {
+   "id": "springfield-mo",
+   "name": "Springfield, MO",
+   "state": "MO",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.585,
+    "goods": 94.193,
+    "housing": 65.568,
+    "utilities": 85.825,
+    "other": 93.026
+   },
+   "zhvi": 273356,
+   "zori": 1261,
+   "zAsOf": "2026-07-31",
+   "zName": "Springfield, MO"
+  },
+  {
+   "id": "springfield-oh",
+   "name": "Springfield, OH",
+   "state": "OH",
+   "kind": "msa",
+   "rpp": {
+    "all": 90.482,
+    "goods": 93.628,
+    "housing": 61.726,
+    "utilities": 97.155,
+    "other": 98.939
+   },
+   "zhvi": 202847,
+   "zori": 1202,
+   "zAsOf": "2026-07-31",
+   "zName": "Springfield, OH"
+  },
+  {
+   "id": "st-cloud-mn",
+   "name": "St. Cloud, MN",
+   "state": "MN",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.632,
+    "goods": 95.433,
+    "housing": 65.057,
+    "utilities": 88.672,
+    "other": 92.193
+   },
+   "zhvi": 315022,
+   "zori": 1259,
+   "zAsOf": "2026-07-31",
+   "zName": "St. Cloud, MN"
+  },
+  {
+   "id": "st-george-ut",
+   "name": "St. George, UT",
+   "state": "UT",
+   "kind": "msa",
+   "rpp": {
+    "all": 97.321,
+    "goods": 96.446,
+    "housing": 98.148,
+    "utilities": 77.69,
+    "other": 98.959
+   },
+   "zhvi": 528875,
+   "zori": 1878,
+   "zAsOf": "2026-07-31",
+   "zName": "St. George, UT"
+  },
+  {
+   "id": "st-joseph-mo-ks",
+   "name": "St. Joseph, MO-KS",
+   "state": "MO",
+   "kind": "msa",
+   "rpp": {
+    "all": 86.382,
+    "goods": 94.18,
+    "housing": 55.359,
+    "utilities": 88.283,
+    "other": 93.088
+   },
+   "zhvi": 216539,
+   "zori": 1070,
+   "zAsOf": "2026-07-31",
+   "zName": "St. Joseph, MO"
+  },
+  {
+   "id": "st-louis-mo-il",
+   "name": "St. Louis, MO-IL",
+   "state": "MO",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.088,
+    "goods": 99.996,
+    "housing": 79.024,
+    "utilities": 69.921,
+    "other": 98.642
+   },
+   "zhvi": 277434,
+   "zori": 1445,
+   "zAsOf": "2026-07-31",
+   "zName": "St. Louis, MO"
+  },
+  {
+   "id": "state-college-pa",
+   "name": "State College, PA",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 96.762,
+    "goods": 100.684,
+    "housing": 85.688,
+    "utilities": 109.462,
+    "other": 97.726
+   },
+   "zhvi": 357220,
+   "zori": 1796,
+   "zAsOf": "2026-07-31",
+   "zName": "State College, PA"
+  },
+  {
+   "id": "staunton-stuarts-draft-va",
+   "name": "Staunton-Stuarts Draft, VA",
+   "state": "VA",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.128,
+    "goods": 96.773,
+    "housing": 68.232,
+    "utilities": 89.522,
+    "other": 98.612
+   },
+   "zhvi": 337653,
+   "zori": 1534,
+   "zAsOf": "2026-07-31",
+   "zName": "Staunton, VA"
+  },
+  {
+   "id": "stockton-lodi-ca",
+   "name": "Stockton-Lodi, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 105.089,
+    "goods": 105.168,
+    "housing": 115.614,
+    "utilities": 158.247,
+    "other": 100.267
+   },
+   "zhvi": 527766,
+   "zori": 2467,
+   "zAsOf": "2026-07-31",
+   "zName": "Stockton, CA"
+  },
+  {
+   "id": "sumter-sc",
+   "name": "Sumter, SC",
+   "state": "SC",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.02,
+    "goods": 96.339,
+    "housing": 60.833,
+    "utilities": 87.304,
+    "other": 98.284
+   },
+   "zhvi": 201028,
+   "zori": 1516,
+   "zAsOf": "2026-07-31",
+   "zName": "Sumter, SC"
+  },
+  {
+   "id": "syracuse-ny",
+   "name": "Syracuse, NY",
+   "state": "NY",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.742,
+    "goods": 99.693,
+    "housing": 80.656,
+    "utilities": 133.405,
+    "other": 97.754
+   },
+   "zhvi": 272560,
+   "zori": 1613,
+   "zAsOf": "2026-07-31",
+   "zName": "Syracuse, NY"
+  },
+  {
+   "id": "tallahassee-fl",
+   "name": "Tallahassee, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.919,
+    "goods": 96.24,
+    "housing": 78.528,
+    "utilities": 87.471,
+    "other": 98.864
+   },
+   "zhvi": 285739,
+   "zori": 1482,
+   "zAsOf": "2026-07-31",
+   "zName": "Tallahassee, FL"
+  },
+  {
+   "id": "tampa-st-petersburg-clearwater-fl",
+   "name": "Tampa-St. Petersburg-Clearwater, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 100.89,
+    "goods": 95.47,
+    "housing": 125.839,
+    "utilities": 88.525,
+    "other": 97.565
+   },
+   "zhvi": 361634,
+   "zori": 2013,
+   "zAsOf": "2026-07-31",
+   "zName": "Tampa, FL"
+  },
+  {
+   "id": "terre-haute-in",
+   "name": "Terre Haute, IN",
+   "state": "IN",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.797,
+    "goods": 94.318,
+    "housing": 51.923,
+    "utilities": 86.564,
+    "other": 99.141
+   },
+   "zhvi": 169353,
+   "zori": 1001,
+   "zAsOf": "2026-07-31",
+   "zName": "Terre Haute, IN"
+  },
+  {
+   "id": "texarkana-tx-ar",
+   "name": "Texarkana, TX-AR",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 84.012,
+    "goods": 93.693,
+    "housing": 49.885,
+    "utilities": 79.258,
+    "other": 95.895
+   },
+   "zhvi": 184784,
+   "zori": 1269,
+   "zAsOf": "2026-07-31",
+   "zName": "Texarkana, TX"
+  },
+  {
+   "id": "toledo-oh",
+   "name": "Toledo, OH",
+   "state": "OH",
+   "kind": "msa",
+   "rpp": {
+    "all": 91.455,
+    "goods": 93.628,
+    "housing": 67.317,
+    "utilities": 96.285,
+    "other": 98.939
+   },
+   "zhvi": 205580,
+   "zori": 1294,
+   "zAsOf": "2026-07-31",
+   "zName": "Toledo, OH"
+  },
+  {
+   "id": "topeka-ks",
+   "name": "Topeka, KS",
+   "state": "KS",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.82,
+    "goods": 94.027,
+    "housing": 64.987,
+    "utilities": 88.942,
+    "other": 93.816
+   },
+   "zhvi": 220299,
+   "zori": 1288,
+   "zAsOf": "2026-07-31",
+   "zName": "Topeka, KS"
+  },
+  {
+   "id": "traverse-city-mi",
+   "name": "Traverse City, MI",
+   "state": "MI",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.372,
+    "goods": 93.711,
+    "housing": 78.146,
+    "utilities": 92.356,
+    "other": 99.561
+   },
+   "zhvi": 425177,
+   "zori": 1896,
+   "zAsOf": "2026-07-31",
+   "zName": "Traverse City, MI"
+  },
+  {
+   "id": "trenton-princeton-nj",
+   "name": "Trenton-Princeton, NJ",
+   "state": "NJ",
+   "kind": "msa",
+   "rpp": {
+    "all": 103.18,
+    "goods": 99.79,
+    "housing": 135.082,
+    "utilities": 112.266,
+    "other": 97.925
+   },
+   "zhvi": 450991,
+   "zori": 2606,
+   "zAsOf": "2026-07-31",
+   "zName": "Trenton, NJ"
+  },
+  {
+   "id": "tucson-az",
+   "name": "Tucson, AZ",
+   "state": "AZ",
+   "kind": "msa",
+   "rpp": {
+    "all": 96.896,
+    "goods": 96.237,
+    "housing": 91.765,
+    "utilities": 89.521,
+    "other": 99.838
+   },
+   "zhvi": 340855,
+   "zori": 1483,
+   "zAsOf": "2026-07-31",
+   "zName": "Tucson, AZ"
+  },
+  {
+   "id": "tulsa-ok",
+   "name": "Tulsa, OK",
+   "state": "OK",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.214,
+    "goods": 93.778,
+    "housing": 68.235,
+    "utilities": 73.856,
+    "other": 95.458
+   },
+   "zhvi": 254207,
+   "zori": 1373,
+   "zAsOf": "2026-07-31",
+   "zName": "Tulsa, OK"
+  },
+  {
+   "id": "tuscaloosa-al",
+   "name": "Tuscaloosa, AL",
+   "state": "AL",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.722,
+    "goods": 96.397,
+    "housing": 58.246,
+    "utilities": 84.396,
+    "other": 96.693
+   },
+   "zhvi": 223921,
+   "zori": 1466,
+   "zAsOf": "2026-07-31",
+   "zName": "Tuscaloosa, AL"
+  },
+  {
+   "id": "twin-falls-id",
+   "name": "Twin Falls, ID*",
+   "state": "ID",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.108,
+    "goods": 96.179,
+    "housing": 73.833,
+    "utilities": 70.028,
+    "other": 98.974
+   },
+   "zhvi": 388787,
+   "zori": 1594,
+   "zAsOf": "2026-07-31",
+   "zName": "Twin Falls, ID"
+  },
+  {
+   "id": "tyler-tx",
+   "name": "Tyler, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.156,
+    "goods": 93.757,
+    "housing": 79.911,
+    "utilities": 82.904,
+    "other": 96.24
+   },
+   "zhvi": 271328,
+   "zori": 1422,
+   "zAsOf": "2026-07-31",
+   "zName": "Tyler, TX"
+  },
+  {
+   "id": "urban-honolulu-hi",
+   "name": "Urban Honolulu, HI",
+   "state": "HI",
+   "kind": "msa",
+   "rpp": {
+    "all": 110.961,
+    "goods": 111.562,
+    "housing": 135.538,
+    "utilities": 187.263,
+    "other": 102.898
+   },
+   "zhvi": 854584,
+   "zori": 3004,
+   "zAsOf": "2026-07-31",
+   "zName": "Urban Honolulu, HI"
+  },
+  {
+   "id": "utica-rome-ny",
+   "name": "Utica-Rome, NY",
+   "state": "NY",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.678,
+    "goods": 99.693,
+    "housing": 66.063,
+    "utilities": 131.909,
+    "other": 97.754
+   },
+   "zhvi": 234055,
+   "zori": 1429,
+   "zAsOf": "2026-07-31",
+   "zName": "Utica, NY"
+  },
+  {
+   "id": "valdosta-ga",
+   "name": "Valdosta, GA",
+   "state": "GA",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.271,
+    "goods": 96.269,
+    "housing": 58.758,
+    "utilities": 87.803,
+    "other": 98.667
+   },
+   "zhvi": 226008,
+   "zori": 1382,
+   "zAsOf": "2026-07-31",
+   "zName": "Valdosta, GA"
+  },
+  {
+   "id": "vallejo-ca",
+   "name": "Vallejo, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 108.479,
+    "goods": 105.168,
+    "housing": 142.042,
+    "utilities": 154.993,
+    "other": 100.267
+   },
+   "zhvi": 577331,
+   "zori": 2437,
+   "zAsOf": "2026-07-31",
+   "zName": "Vallejo, CA"
+  },
+  {
+   "id": "victoria-tx",
+   "name": "Victoria, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.839,
+    "goods": 93.757,
+    "housing": 69.318,
+    "utilities": 85.271,
+    "other": 96.24
+   },
+   "zhvi": 224645,
+   "zori": 1189,
+   "zAsOf": "2026-07-31",
+   "zName": "Victoria, TX"
+  },
+  {
+   "id": "vineland-nj",
+   "name": "Vineland, NJ",
+   "state": "NJ",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.968,
+    "goods": 99.79,
+    "housing": 83.883,
+    "utilities": 108.227,
+    "other": 97.925
+   },
+   "zhvi": 279824,
+   "zori": 1718,
+   "zAsOf": "2026-07-31",
+   "zName": "Vineland, NJ"
+  },
+  {
+   "id": "virginia-beach-chesapeake-norfolk-va-nc",
+   "name": "Virginia Beach-Chesapeake-Norfolk, VA-NC",
+   "state": "VA",
+   "kind": "msa",
+   "rpp": {
+    "all": 97.941,
+    "goods": 96.767,
+    "housing": 99.805,
+    "utilities": 89.579,
+    "other": 98.599
+   },
+   "zhvi": 375665,
+   "zori": 1877,
+   "zAsOf": "2026-07-31",
+   "zName": "Virginia Beach, VA"
+  },
+  {
+   "id": "visalia-ca",
+   "name": "Visalia, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 99.825,
+    "goods": 105.168,
+    "housing": 84.053,
+    "utilities": 156.446,
+    "other": 100.267
+   },
+   "zhvi": 365398,
+   "zori": 1784,
+   "zAsOf": "2026-07-31",
+   "zName": "Visalia, CA"
+  },
+  {
+   "id": "waco-tx",
+   "name": "Waco, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.55,
+    "goods": 93.757,
+    "housing": 83.531,
+    "utilities": 80.967,
+    "other": 96.24
+   },
+   "zhvi": 255418,
+   "zori": 1438,
+   "zAsOf": "2026-07-31",
+   "zName": "Waco, TX"
+  },
+  {
+   "id": "walla-walla-wa",
+   "name": "Walla Walla, WA",
+   "state": "WA",
+   "kind": "msa",
+   "rpp": {
+    "all": 98.519,
+    "goods": 105.028,
+    "housing": 86.579,
+    "utilities": 94.308,
+    "other": 99.472
+   },
+   "zhvi": 420341,
+   "zori": 1509,
+   "zAsOf": "2026-07-31",
+   "zName": "Walla Walla, WA"
+  },
+  {
+   "id": "warner-robins-ga",
+   "name": "Warner Robins, GA",
+   "state": "GA",
+   "kind": "msa",
+   "rpp": {
+    "all": 93.789,
+    "goods": 96.269,
+    "housing": 79.172,
+    "utilities": 88.135,
+    "other": 98.667
+   },
+   "zhvi": 255173,
+   "zori": 1539,
+   "zAsOf": "2026-07-31",
+   "zName": "Warner Robins, GA"
+  },
+  {
+   "id": "washington-arlington-alexandria-dc-va-md-wv",
+   "name": "Washington-Arlington-Alexandria, DC-VA-MD-WV",
+   "state": "DC",
+   "kind": "msa",
+   "rpp": {
+    "all": 108.884,
+    "goods": 104.847,
+    "housing": 151.134,
+    "utilities": 106.7,
+    "other": 102.321
+   },
+   "zhvi": 579812,
+   "zori": 2456,
+   "zAsOf": "2026-07-31",
+   "zName": "Washington, DC"
+  },
+  {
+   "id": "waterbury-shelton-ct",
+   "name": "Waterbury-Shelton, CT",
+   "state": "CT",
+   "kind": "msa",
+   "rpp": {
+    "all": 99.778,
+    "goods": 97.33,
+    "housing": 89.111,
+    "utilities": 147.562,
+    "other": 102.658
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "waterloo-cedar-falls-ia",
+   "name": "Waterloo-Cedar Falls, IA",
+   "state": "IA",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.057,
+    "goods": 93.73,
+    "housing": 63.13,
+    "utilities": 83.652,
+    "other": 92.927
+   },
+   "zhvi": 201600,
+   "zori": 1006,
+   "zAsOf": "2026-07-31",
+   "zName": "Waterloo, IA"
+  },
+  {
+   "id": "watertown-fort-drum-ny",
+   "name": "Watertown-Fort Drum, NY",
+   "state": "NY",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.69,
+    "goods": 99.693,
+    "housing": 53.185,
+    "utilities": 132.18,
+    "other": 97.754
+   },
+   "zhvi": 235529,
+   "zori": 1504,
+   "zAsOf": "2026-07-31",
+   "zName": "Watertown, NY"
+  },
+  {
+   "id": "wausau-wi",
+   "name": "Wausau, WI",
+   "state": "WI",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.651,
+    "goods": 93.787,
+    "housing": 71.464,
+    "utilities": 89.981,
+    "other": 99.411
+   },
+   "zhvi": 277316,
+   "zori": 1010,
+   "zAsOf": "2026-07-31",
+   "zName": "Wausau, WI"
+  },
+  {
+   "id": "weirton-steubenville-wv-oh",
+   "name": "Weirton-Steubenville, WV-OH",
+   "state": "WV",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.024,
+    "goods": 96.446,
+    "housing": 52.383,
+    "utilities": 94.991,
+    "other": 99.651
+   },
+   "zhvi": 133580,
+   "zori": 777,
+   "zAsOf": "2026-07-31",
+   "zName": "Weirton, WV"
+  },
+  {
+   "id": "wenatchee-east-wenatchee-wa",
+   "name": "Wenatchee-East Wenatchee, WA",
+   "state": "WA",
+   "kind": "msa",
+   "rpp": {
+    "all": 103.855,
+    "goods": 105.028,
+    "housing": 114.958,
+    "utilities": 100.591,
+    "other": 99.472
+   },
+   "zhvi": 528302,
+   "zori": 1811,
+   "zAsOf": "2026-07-31",
+   "zName": "Wenatchee, WA"
+  },
+  {
+   "id": "wheeling-wv-oh",
+   "name": "Wheeling, WV-OH",
+   "state": "WV",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.323,
+    "goods": 96.42,
+    "housing": 51.443,
+    "utilities": 94.892,
+    "other": 99.675
+   },
+   "zhvi": 143257,
+   "zori": 895,
+   "zAsOf": "2026-07-31",
+   "zName": "Wheeling, WV"
+  },
+  {
+   "id": "wichita-falls-tx",
+   "name": "Wichita Falls, TX",
+   "state": "TX",
+   "kind": "msa",
+   "rpp": {
+    "all": 89.513,
+    "goods": 93.757,
+    "housing": 68.208,
+    "utilities": 84.092,
+    "other": 96.24
+   },
+   "zhvi": 178592,
+   "zori": 1295,
+   "zAsOf": "2026-07-31",
+   "zName": "Wichita Falls, TX"
+  },
+  {
+   "id": "wichita-ks",
+   "name": "Wichita, KS",
+   "state": "KS",
+   "kind": "msa",
+   "rpp": {
+    "all": 88.946,
+    "goods": 94.027,
+    "housing": 66.245,
+    "utilities": 88.459,
+    "other": 93.816
+   },
+   "zhvi": 226045,
+   "zori": 1214,
+   "zAsOf": "2026-07-31",
+   "zName": "Wichita, KS"
+  },
+  {
+   "id": "wildwood-the-villages-fl",
+   "name": "Wildwood-The Villages, FL",
+   "state": "FL",
+   "kind": "msa",
+   "rpp": {
+    "all": 85.424,
+    "goods": 96.24,
+    "housing": 51.733,
+    "utilities": 88.996,
+    "other": 98.864
+   },
+   "zhvi": 387864,
+   "zori": 1732,
+   "zAsOf": "2026-07-31",
+   "zName": "The Villages, FL"
+  },
+  {
+   "id": "williamsport-pa",
+   "name": "Williamsport, PA",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.35,
+    "goods": 100.684,
+    "housing": 64.392,
+    "utilities": 107.451,
+    "other": 97.726
+   },
+   "zhvi": 238628,
+   "zori": 1085,
+   "zAsOf": "2026-07-31",
+   "zName": "Williamsport, PA"
+  },
+  {
+   "id": "wilmington-nc",
+   "name": "Wilmington, NC",
+   "state": "NC",
+   "kind": "msa",
+   "rpp": {
+    "all": 96.422,
+    "goods": 96.621,
+    "housing": 93.215,
+    "utilities": 87.902,
+    "other": 98.186
+   },
+   "zhvi": 448165,
+   "zori": 1726,
+   "zAsOf": "2026-07-31",
+   "zName": "Wilmington, NC"
+  },
+  {
+   "id": "winchester-va-wv",
+   "name": "Winchester, VA-WV",
+   "state": "VA",
+   "kind": "msa",
+   "rpp": {
+    "all": 96.45,
+    "goods": 96.699,
+    "housing": 90.009,
+    "utilities": 89.716,
+    "other": 98.797
+   },
+   "zhvi": 389180,
+   "zori": 1900,
+   "zAsOf": "2026-07-31",
+   "zName": "Winchester, VA"
+  },
+  {
+   "id": "winston-salem-nc",
+   "name": "Winston-Salem, NC",
+   "state": "NC",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.043,
+    "goods": 96.621,
+    "housing": 71.377,
+    "utilities": 88.421,
+    "other": 98.186
+   },
+   "zhvi": 282311,
+   "zori": 1557,
+   "zAsOf": "2026-07-31",
+   "zName": "Winston, NC"
+  },
+  {
+   "id": "worcester-ma",
+   "name": "Worcester, MA",
+   "state": "MA",
+   "kind": "msa",
+   "rpp": {
+    "all": 102.523,
+    "goods": 97.015,
+    "housing": 113.001,
+    "utilities": 155.206,
+    "other": 101.197
+   },
+   "zhvi": 485789,
+   "zori": 2142,
+   "zAsOf": "2026-07-31",
+   "zName": "Worcester, MA"
+  },
+  {
+   "id": "yakima-wa",
+   "name": "Yakima, WA",
+   "state": "WA",
+   "kind": "msa",
+   "rpp": {
+    "all": 95.545,
+    "goods": 105.028,
+    "housing": 72.628,
+    "utilities": 91.901,
+    "other": 99.472
+   },
+   "zhvi": 358231,
+   "zori": 1421,
+   "zAsOf": "2026-07-31",
+   "zName": "Yakima, WA"
+  },
+  {
+   "id": "york-hanover-pa",
+   "name": "York-Hanover, PA",
+   "state": "PA",
+   "kind": "msa",
+   "rpp": {
+    "all": 96,
+    "goods": 100.684,
+    "housing": 79.762,
+    "utilities": 107.011,
+    "other": 97.726
+   },
+   "zhvi": 312066,
+   "zori": 1410,
+   "zAsOf": "2026-07-31",
+   "zName": "York, PA"
+  },
+  {
+   "id": "youngstown-warren-oh",
+   "name": "Youngstown-Warren, OH",
+   "state": "OH",
+   "kind": "msa",
+   "rpp": {
+    "all": 87.394,
+    "goods": 93.628,
+    "housing": 53.448,
+    "utilities": 96.292,
+    "other": 98.939
+   },
+   "zhvi": 175260,
+   "zori": 1037,
+   "zAsOf": "2026-07-31",
+   "zName": "Youngstown, OH"
+  },
+  {
+   "id": "yuba-city-ca",
+   "name": "Yuba City, CA",
+   "state": "CA",
+   "kind": "msa",
+   "rpp": {
+    "all": 104.233,
+    "goods": 105.168,
+    "housing": 108.279,
+    "utilities": 160.771,
+    "other": 100.267
+   },
+   "zhvi": 433083,
+   "zori": 2014,
+   "zAsOf": "2026-07-31",
+   "zName": "Yuba City, CA"
+  },
+  {
+   "id": "yuma-az",
+   "name": "Yuma, AZ",
+   "state": "AZ",
+   "kind": "msa",
+   "rpp": {
+    "all": 92.706,
+    "goods": 96.237,
+    "housing": 73.776,
+    "utilities": 87.834,
+    "other": 99.838
+   },
+   "zhvi": 279844,
+   "zori": 1493,
+   "zAsOf": "2026-07-31",
+   "zName": "Yuma, AZ"
+  },
+  {
+   "id": "state-alabama",
+   "name": "Alabama (statewide average)",
+   "state": "AL",
+   "kind": "state",
+   "rpp": {
+    "all": 88.823,
+    "goods": 96.399,
+    "housing": 61.785,
+    "utilities": 84.643,
+    "other": 96.711
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-alaska",
+   "name": "Alaska (statewide average)",
+   "state": "AK",
+   "kind": "state",
+   "rpp": {
+    "all": 102.359,
+    "goods": 106.319,
+    "housing": 93.784,
+    "utilities": 119.021,
+    "other": 102.208
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-arizona",
+   "name": "Arizona (statewide average)",
+   "state": "AZ",
+   "kind": "state",
+   "rpp": {
+    "all": 100.677,
+    "goods": 95.361,
+    "housing": 106.804,
+    "utilities": 92.317,
+    "other": 102.808
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-arkansas",
+   "name": "Arkansas (statewide average)",
+   "state": "AR",
+   "kind": "state",
+   "rpp": {
+    "all": 86.937,
+    "goods": 93.597,
+    "housing": 58.203,
+    "utilities": 74.731,
+    "other": 95.312
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-california",
+   "name": "California (statewide average)",
+   "state": "CA",
+   "kind": "state",
+   "rpp": {
+    "all": 110.72,
+    "goods": 106.098,
+    "housing": 154.346,
+    "utilities": 158.899,
+    "other": 102.591
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-colorado",
+   "name": "Colorado (statewide average)",
+   "state": "CO",
+   "kind": "state",
+   "rpp": {
+    "all": 103.052,
+    "goods": 98.727,
+    "housing": 127.359,
+    "utilities": 84.971,
+    "other": 99.613
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-connecticut",
+   "name": "Connecticut (statewide average)",
+   "state": "CT",
+   "kind": "state",
+   "rpp": {
+    "all": 103.61,
+    "goods": 97.33,
+    "housing": 117.048,
+    "utilities": 146.495,
+    "other": 102.658
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-delaware",
+   "name": "Delaware (statewide average)",
+   "state": "DE",
+   "kind": "state",
+   "rpp": {
+    "all": 99.808,
+    "goods": 96.155,
+    "housing": 102.015,
+    "utilities": 103.81,
+    "other": 101.235
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-district-of-columbia",
+   "name": "District of Columbia (statewide average)",
+   "state": "DC",
+   "kind": "state",
+   "rpp": {
+    "all": 109.901,
+    "goods": 106.502,
+    "housing": 154.984,
+    "utilities": 112.821,
+    "other": 102.964
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-florida",
+   "name": "Florida (statewide average)",
+   "state": "FL",
+   "kind": "state",
+   "rpp": {
+    "all": 103.414,
+    "goods": 98.059,
+    "housing": 122.107,
+    "utilities": 90.074,
+    "other": 101.324
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-georgia",
+   "name": "Georgia (statewide average)",
+   "state": "GA",
+   "kind": "state",
+   "rpp": {
+    "all": 96.293,
+    "goods": 98.929,
+    "housing": 88.694,
+    "utilities": 92.814,
+    "other": 97.343
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-hawaii",
+   "name": "Hawaii (statewide average)",
+   "state": "HI",
+   "kind": "state",
+   "rpp": {
+    "all": 109.951,
+    "goods": 111.562,
+    "housing": 125.304,
+    "utilities": 190.178,
+    "other": 102.898
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-idaho",
+   "name": "Idaho (statewide average)",
+   "state": "ID",
+   "kind": "state",
+   "rpp": {
+    "all": 95.494,
+    "goods": 96.311,
+    "housing": 90.027,
+    "utilities": 70.444,
+    "other": 99.015
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-illinois",
+   "name": "Illinois (statewide average)",
+   "state": "IL",
+   "kind": "state",
+   "rpp": {
+    "all": 99.958,
+    "goods": 103.832,
+    "housing": 93.944,
+    "utilities": 84.952,
+    "other": 100.156
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-indiana",
+   "name": "Indiana (statewide average)",
+   "state": "IN",
+   "kind": "state",
+   "rpp": {
+    "all": 93.329,
+    "goods": 95.509,
+    "housing": 73.926,
+    "utilities": 85.545,
+    "other": 99.145
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-iowa",
+   "name": "Iowa (statewide average)",
+   "state": "IA",
+   "kind": "state",
+   "rpp": {
+    "all": 87.762,
+    "goods": 93.73,
+    "housing": 65.322,
+    "utilities": 83.274,
+    "other": 92.927
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-kansas",
+   "name": "Kansas (statewide average)",
+   "state": "KS",
+   "kind": "state",
+   "rpp": {
+    "all": 90.068,
+    "goods": 94.027,
+    "housing": 71.156,
+    "utilities": 88.438,
+    "other": 93.816
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-kentucky",
+   "name": "Kentucky (statewide average)",
+   "state": "KY",
+   "kind": "state",
+   "rpp": {
+    "all": 90.159,
+    "goods": 95.967,
+    "housing": 64.313,
+    "utilities": 75.313,
+    "other": 97.25
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-louisiana",
+   "name": "Louisiana (statewide average)",
+   "state": "LA",
+   "kind": "state",
+   "rpp": {
+    "all": 88.207,
+    "goods": 93.7,
+    "housing": 63.104,
+    "utilities": 71.463,
+    "other": 95.706
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-maine",
+   "name": "Maine (statewide average)",
+   "state": "ME",
+   "kind": "state",
+   "rpp": {
+    "all": 97.05,
+    "goods": 97.171,
+    "housing": 78.94,
+    "utilities": 135.189,
+    "other": 103.191
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-maryland",
+   "name": "Maryland (statewide average)",
+   "state": "MD",
+   "kind": "state",
+   "rpp": {
+    "all": 104.959,
+    "goods": 102.524,
+    "housing": 121.079,
+    "utilities": 110.86,
+    "other": 101.596
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-massachusetts",
+   "name": "Massachusetts (statewide average)",
+   "state": "MA",
+   "kind": "state",
+   "rpp": {
+    "all": 105.757,
+    "goods": 98.82,
+    "housing": 128.068,
+    "utilities": 152.07,
+    "other": 102.852
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-michigan",
+   "name": "Michigan (statewide average)",
+   "state": "MI",
+   "kind": "state",
+   "rpp": {
+    "all": 96.217,
+    "goods": 95.993,
+    "housing": 82.332,
+    "utilities": 100.15,
+    "other": 100.933
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-minnesota",
+   "name": "Minnesota (statewide average)",
+   "state": "MN",
+   "kind": "state",
+   "rpp": {
+    "all": 98.621,
+    "goods": 100.519,
+    "housing": 91.281,
+    "utilities": 90.836,
+    "other": 100.213
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-mississippi",
+   "name": "Mississippi (statewide average)",
+   "state": "MS",
+   "kind": "state",
+   "rpp": {
+    "all": 86.953,
+    "goods": 96.219,
+    "housing": 56.456,
+    "utilities": 78.415,
+    "other": 96.09
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-missouri",
+   "name": "Missouri (statewide average)",
+   "state": "MO",
+   "kind": "state",
+   "rpp": {
+    "all": 90.817,
+    "goods": 96.299,
+    "housing": 69.88,
+    "utilities": 79.406,
+    "other": 95.169
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-montana",
+   "name": "Montana (statewide average)",
+   "state": "MT",
+   "kind": "state",
+   "rpp": {
+    "all": 94.645,
+    "goods": 96.006,
+    "housing": 84.648,
+    "utilities": 72.254,
+    "other": 98.715
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-nebraska",
+   "name": "Nebraska (statewide average)",
+   "state": "NE",
+   "kind": "state",
+   "rpp": {
+    "all": 90.103,
+    "goods": 94.101,
+    "housing": 75.174,
+    "utilities": 75.604,
+    "other": 92.98
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-nevada",
+   "name": "Nevada (statewide average)",
+   "state": "NV",
+   "kind": "state",
+   "rpp": {
+    "all": 99.979,
+    "goods": 96.271,
+    "housing": 114.135,
+    "utilities": 90.51,
+    "other": 98.744
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-new-hampshire",
+   "name": "New Hampshire (statewide average)",
+   "state": "NH",
+   "kind": "state",
+   "rpp": {
+    "all": 104.165,
+    "goods": 98.578,
+    "housing": 114.947,
+    "utilities": 133.663,
+    "other": 103.879
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-new-jersey",
+   "name": "New Jersey (statewide average)",
+   "state": "NJ",
+   "kind": "state",
+   "rpp": {
+    "all": 108.805,
+    "goods": 107.066,
+    "housing": 134.292,
+    "utilities": 114.187,
+    "other": 103.529
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-new-mexico",
+   "name": "New Mexico (statewide average)",
+   "state": "NM",
+   "kind": "state",
+   "rpp": {
+    "all": 92.212,
+    "goods": 96.144,
+    "housing": 73.611,
+    "utilities": 77.895,
+    "other": 98.54
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-new-york",
+   "name": "New York (statewide average)",
+   "state": "NY",
+   "kind": "state",
+   "rpp": {
+    "all": 107.921,
+    "goods": 107.254,
+    "housing": 122.168,
+    "utilities": 134.37,
+    "other": 104.067
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-north-carolina",
+   "name": "North Carolina (statewide average)",
+   "state": "NC",
+   "kind": "state",
+   "rpp": {
+    "all": 94.326,
+    "goods": 96.621,
+    "housing": 81.364,
+    "utilities": 88.619,
+    "other": 98.186
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-north-dakota",
+   "name": "North Dakota (statewide average)",
+   "state": "ND",
+   "kind": "state",
+   "rpp": {
+    "all": 88.959,
+    "goods": 95.701,
+    "housing": 71.421,
+    "utilities": 73.669,
+    "other": 91.158
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-ohio",
+   "name": "Ohio (statewide average)",
+   "state": "OH",
+   "kind": "state",
+   "rpp": {
+    "all": 92.774,
+    "goods": 93.67,
+    "housing": 73.012,
+    "utilities": 95.823,
+    "other": 98.947
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-oklahoma",
+   "name": "Oklahoma (statewide average)",
+   "state": "OK",
+   "kind": "state",
+   "rpp": {
+    "all": 87.843,
+    "goods": 93.778,
+    "housing": 62.763,
+    "utilities": 73.882,
+    "other": 95.458
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-oregon",
+   "name": "Oregon (statewide average)",
+   "state": "OR",
+   "kind": "state",
+   "rpp": {
+    "all": 103.361,
+    "goods": 105.261,
+    "housing": 108.628,
+    "utilities": 107.046,
+    "other": 100.298
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-pennsylvania",
+   "name": "Pennsylvania (statewide average)",
+   "state": "PA",
+   "kind": "state",
+   "rpp": {
+    "all": 97.572,
+    "goods": 99.357,
+    "housing": 85.068,
+    "utilities": 109.321,
+    "other": 99.762
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-rhode-island",
+   "name": "Rhode Island (statewide average)",
+   "state": "RI",
+   "kind": "state",
+   "rpp": {
+    "all": 102.28,
+    "goods": 97.165,
+    "housing": 105.62,
+    "utilities": 146.653,
+    "other": 102.84
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-south-carolina",
+   "name": "South Carolina (statewide average)",
+   "state": "SC",
+   "kind": "state",
+   "rpp": {
+    "all": 93.749,
+    "goods": 96.339,
+    "housing": 80.49,
+    "utilities": 88.303,
+    "other": 98.284
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-south-dakota",
+   "name": "South Dakota (statewide average)",
+   "state": "SD",
+   "kind": "state",
+   "rpp": {
+    "all": 88.586,
+    "goods": 95.473,
+    "housing": 67.642,
+    "utilities": 79.651,
+    "other": 91.899
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-tennessee",
+   "name": "Tennessee (statewide average)",
+   "state": "TN",
+   "kind": "state",
+   "rpp": {
+    "all": 91.87,
+    "goods": 96.247,
+    "housing": 79.07,
+    "utilities": 72.137,
+    "other": 95.142
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-texas",
+   "name": "Texas (statewide average)",
+   "state": "TX",
+   "kind": "state",
+   "rpp": {
+    "all": 97.057,
+    "goods": 98.083,
+    "housing": 96.503,
+    "utilities": 87.512,
+    "other": 97.081
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-utah",
+   "name": "Utah (statewide average)",
+   "state": "UT",
+   "kind": "state",
+   "rpp": {
+    "all": 98.864,
+    "goods": 96.446,
+    "housing": 107.814,
+    "utilities": 78.739,
+    "other": 98.959
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-vermont",
+   "name": "Vermont (statewide average)",
+   "state": "VT",
+   "kind": "state",
+   "rpp": {
+    "all": 97.958,
+    "goods": 97.274,
+    "housing": 86.502,
+    "utilities": 125.833,
+    "other": 101.586
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-virginia",
+   "name": "Virginia (statewide average)",
+   "state": "VA",
+   "kind": "state",
+   "rpp": {
+    "all": 101.104,
+    "goods": 100.368,
+    "housing": 106.799,
+    "utilities": 92.185,
+    "other": 100.233
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-washington",
+   "name": "Washington (statewide average)",
+   "state": "WA",
+   "kind": "state",
+   "rpp": {
+    "all": 107.013,
+    "goods": 104.359,
+    "housing": 125.979,
+    "utilities": 92.86,
+    "other": 103.873
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-west-virginia",
+   "name": "West Virginia (statewide average)",
+   "state": "WV",
+   "kind": "state",
+   "rpp": {
+    "all": 89.497,
+    "goods": 96.539,
+    "housing": 54.241,
+    "utilities": 92.242,
+    "other": 99.94
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-wisconsin",
+   "name": "Wisconsin (statewide average)",
+   "state": "WI",
+   "kind": "state",
+   "rpp": {
+    "all": 94.095,
+    "goods": 94.31,
+    "housing": 79.312,
+    "utilities": 89.906,
+    "other": 99.501
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  },
+  {
+   "id": "state-wyoming",
+   "name": "Wyoming (statewide average)",
+   "state": "WY",
+   "kind": "state",
+   "rpp": {
+    "all": 92.691,
+    "goods": 95.368,
+    "housing": 71.127,
+    "utilities": 78.422,
+    "other": 100.428
+   },
+   "zhvi": null,
+   "zori": null,
+   "zAsOf": null,
+   "zName": null
+  }
+ ]
+}

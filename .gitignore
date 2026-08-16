@@ -2,3 +2,6 @@
 .wrangler/
 node_modules/
 .claude/
+
+# Zillow raw CSVs are 5MB and refreshed monthly; build-col-data.js re-downloads them
+data/relocating/raw/zillow_*.csv

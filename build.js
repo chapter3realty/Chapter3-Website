@@ -123,6 +123,56 @@ function check() {
       errors.push(`stale asset: /assets/${a} was edited but not rehashed (contents hash ${realHash}) -> run 'node build.js rehash'`);
   }
 
+  /* ---- cost-of-living data: asset must equal the JSON, and neither may go stale ----
+   *
+   * /buyers/relocating/cost-of-living/ carries a 439-place calculator fed by
+   * /assets/col.<hash>.js, which is generated from data/relocating/col-places.json
+   * by data/relocating/build-col-data.js. Same failure mode as the STR figures:
+   * a number that lives only in a page goes stale silently. Three gates:
+   *
+   *   1. the deployed asset must be byte-identical to what the JSON generates.
+   *   2. Zillow month must be under 120 days old (WARN), 200 blocks (FAIL). BEA
+   *      publishes a new vintage each December; WARN once the vintage is more
+   *      than two full years behind the calendar.
+   *   3. the headline figures typed into the page copy (Myrtle Beach all-items
+   *      and housing index, typical home value) must equal the JSON.
+   */
+  {
+    const dp = path.join(__dirname, "data", "relocating", "col-places.json");
+    const page = path.join(ROOT, "buyers", "relocating", "cost-of-living", "index.html");
+    if (fs.existsSync(page)) {
+      if (!fs.existsSync(dp)) {
+        errors.push("data/relocating/col-places.json is missing - the cost-of-living calculator has no source of truth");
+      } else {
+        let d = null;
+        try { d = JSON.parse(fs.readFileSync(dp, "utf-8")); }
+        catch (e) { errors.push(`data/relocating/col-places.json does not parse: ${e.message}`); }
+        if (d) {
+          const { buildAsset } = require(path.join(__dirname, "data", "relocating", "build-col-data.js"));
+          const assetName = assetFiles().find(n => /^col\.[0-9a-f]{10}\.js$/.test(n) || n === "col.js");
+          if (!assetName) errors.push("no /assets/col.*.js - run 'node build.js coldata' then 'node build.js rehash'");
+          else if (fs.readFileSync(path.join(ASSETS, assetName), "utf-8") !== buildAsset(d))
+            errors.push(`/assets/${assetName} does not match data/relocating/col-places.json - run 'node build.js coldata' then 'node build.js rehash'`);
+          const zDays = Math.floor((Date.now() - Date.parse(d.meta.zillowLatestMonth)) / 86400000);
+          if (!Number.isFinite(zDays)) errors.push(`col-places.json has an unreadable zillowLatestMonth: ${d.meta.zillowLatestMonth}`);
+          else if (zDays >= 200) errors.push(`cost-of-living home values are ${zDays} days old (Zillow month ${d.meta.zillowLatestMonth}). Run 'node build.js coldata', update the typed figures on the page, then rehash.`);
+          else if (zDays >= 120) warns.push(`cost-of-living home values are ${zDays} days old (Zillow month ${d.meta.zillowLatestMonth}); the build blocks at 200. Run 'node build.js coldata' soon.`);
+          const vintage = parseInt(d.meta.rppVintage, 10);
+          if (new Date().getFullYear() - vintage > 2) warns.push(`cost-of-living price index is the ${vintage} vintage; BEA has released a newer one. Re-download MARPP/SARPP and run 'node build.js coldata'.`);
+          const mb = (d.places || []).find(p => p.id === "myrtle-beach-conway-north-myrtle-beach-sc");
+          if (!mb) errors.push("col-places.json has no Myrtle Beach record");
+          else {
+            const html = fs.readFileSync(page, "utf-8");
+            const want = [[mb.rpp.all.toFixed(1), "all-items index"], [mb.rpp.housing.toFixed(1), "housing index"],
+                          ["$" + (Math.round(mb.zhvi / 1000) * 1000).toLocaleString("en-US"), "typical home value"]];
+            for (const [v, label] of want)
+              if (!html.includes(v)) errors.push(`/buyers/relocating/cost-of-living/ copy is stale: Myrtle Beach ${label} should read ${v} (data/relocating/col-places.json).`);
+          }
+        }
+      }
+    }
+  }
+
   /* ---- market data must not go stale, and pages must match the data file ----
    *
    * On 2026-08-15 the site was publishing AirROI figures pulled on July 6. In
@@ -724,6 +774,26 @@ function audit() {
       try { parsed.push(JSON.parse(b)); }
       catch (err) { E(`invalid JSON-LD: ${String(err.message).slice(0, 60)}`); }
     }
+    /* HTML entities inside JSON-LD.
+     *
+     * The HTML parser does not decode entities inside <script>, so
+     * "calculator&#39;s" in a schema string reaches Google as those six literal
+     * characters while the page itself renders an apostrophe. On an FAQPage that
+     * silently breaks the schema-to-visible-text match Google requires.
+     *
+     * This rule exists because the FAQ-visibility check below could never catch
+     * it: that one runs textKey() over BOTH sides, which normalises entities
+     * away, so the mismatch cancelled out and two pages passed `audit` while
+     * .claude/verify.js failed them in the browser. Compare the raw bytes.
+     * One error per page; fixing the first usually fixes the rest. */
+    {
+      const LD_ENT = /&(?:#39|#x27|#8217|rsquo|lsquo|quot|#34|ldquo|rdquo|amp|nbsp|middot|hellip|mdash|ndash|rarr|deg);/i;
+      for (const b of blocks) {
+        const m = b.match(LD_ENT);
+        if (m) { E(`HTML entity "${m[0]}" inside JSON-LD - entities are not decoded in <script>, so this reaches Google literally. Write the character itself.`); break; }
+      }
+    }
+
     // Google requires every FAQ answer/question in schema to be visible on the page.
     const visible = textKey(s.replace(/<script[\s\S]*?<\/script>/g, " "));
     for (const blk of parsed) {
@@ -1194,7 +1264,11 @@ else if (cmd === "stitch") stitch();
 else if (cmd === "llmsfull") llmsfull();
 else if (cmd === "dates") dates(flag);
 else if (cmd === "audit") audit();
+// regenerate data/relocating/col-places.json and /assets/col.js from the raw
+// BEA and Zillow files (re-downloads Zillow if the CSVs are absent). Follow
+// with 'rehash' so the asset gets its new cache-busting name.
+else if (cmd === "coldata") { require("child_process").execFileSync(process.execPath, [path.join(__dirname, "data", "relocating", "build-col-data.js")], { stdio: "inherit" }); }
 // dates --check runs last: it is the only gate that compares what the pages
 // CLAIM against what git says actually happened.
 else if (cmd === "preflight") { check(); console.log(""); audit(); console.log(""); dates(true); }
-else { console.log("Usage: node build.js [check|rehash|stitch|llmsfull|dates|audit|preflight]"); process.exit(1); }
+else { console.log("Usage: node build.js [check|rehash|stitch|llmsfull|dates|audit|coldata|preflight]"); process.exit(1); }
