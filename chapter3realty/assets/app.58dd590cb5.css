@@ -48,3 +48,58 @@
 .nav-mega-foot a{font-size:.8rem !important;text-transform:none !important;letter-spacing:.02em !important;color:var(--brass) !important;font-weight:600}
 .nav-mega-foot a::after{display:none !important}
 @media (max-width:1024px){.nav-mega-inner{grid-template-columns:repeat(3,1fr)}}.contact-dark .eyebrow{color:var(--brass-2)}
+/* THE BLACK BARS ARE IN THE VIDEO FILE, not in this CSS. popup.mp4 is a 4:3
+   scene pillarboxed into a 16:9 frame - measured at exactly 12.5% of the width
+   of solid black down each side. So the media window is 4:3 and the video
+   covers it, which crops off precisely those two bars and nothing else. Any
+   window wider than 4:3 lets them back in. */
+#c3-pop{position:fixed;inset:0;z-index:9998;display:none;align-items:center;justify-content:center;padding:.75rem;background:rgba(6,18,32,.86)}
+#c3-pop-panel{position:relative;width:min(94vw,calc(80vh * 4 / 3),60rem);max-height:94vh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:#061220;border-radius:14px;box-shadow:0 30px 80px rgba(6,20,36,.6)}
+#c3-pop-x{position:absolute;top:.6rem;right:.75rem;z-index:5;width:2.2rem;height:2.2rem;border:0;border-radius:50%;background:rgba(8,28,48,.6);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer}
+#c3-pop-media{position:relative;width:100%;aspect-ratio:4 / 3}
+#c3-pop-video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+#c3-pop-overlay{padding:2.2rem 1.6rem 1.35rem;opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+#c3-pop-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.5rem;margin-bottom:.6rem}
+#c3-pop-overlay input[type=text],#c3-pop-overlay input[type=tel],#c3-pop-overlay input[type=email]{width:100%;padding:.7rem .85rem;border:1px solid rgba(255,255,255,.35);border-radius:6px;background:rgba(10,24,40,.55);color:#fff;font-family:var(--sans);font-size:1rem;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+#c3-pop .form-consent{display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.6rem;cursor:pointer}
+#c3-pop .form-consent span{font-size:.6rem;color:rgba(255,255,255,.72);line-height:1.4}
+#c3-pop-err{display:none;color:#ffb4a8;font-size:.85rem;margin:0 0 .5rem}
+#c3-pop-send{width:100%;justify-content:center;font-size:1.05rem}
+#c3-pop-ok{display:none;text-align:center;padding:.6rem 0 .3rem}
+
+/* Wide enough for the form to sit ON the picture. */
+@media (min-width:701px){
+  #c3-pop-overlay{position:absolute;inset:auto 0 0 0;background:linear-gradient(to top,rgba(6,18,32,.94) 0%,rgba(6,18,32,.86) 45%,rgba(6,18,32,0) 100%)}
+}
+
+/* A phone cannot do that. A 412-character consent disclosure, three fields and
+   a button need about 380px; a 4:3 video on a 360px screen is 270px tall. The
+   old build floated the form over it anyway and clipped the three inputs
+   straight out of the panel, so nobody could get past "Please add your name".
+   Here the form starts on the last frame and continues onto solid ground - one
+   surface, no second box - and the panel scrolls if the screen is very short. */
+@media (max-width:700px){
+  #c3-pop{padding:.5rem}
+  #c3-pop-panel{width:96vw}
+  /* the scrim must reach FULLY opaque by the time it clears the video, or the
+     3% of picture still showing through draws a visible line right where the
+     frame ends - which is the seam this layout exists to avoid */
+  #c3-pop-overlay{position:relative;z-index:2;margin-top:-3.5rem;padding:4.2rem 1.15rem 1.35rem;background:linear-gradient(to bottom,rgba(6,18,32,0) 0,#061220 3.5rem,#061220 100%)}
+}
+/* Short phones - 360x640 is still a very common budget Android - ran about 90px
+   over and pushed the CTA under the fold. Measured at every size below, so
+   these numbers are the ones that make it fit, not a guess: two fields to a
+   row instead of three stacked, a shorter blend, tighter everything. */
+@media (max-width:700px) and (max-height:700px){
+  #c3-pop-overlay{margin-top:-2.5rem;padding:3rem 1rem 1.1rem}
+  #c3-pop-overlay{background:linear-gradient(to bottom,rgba(6,18,32,0) 0,#061220 2.5rem,#061220 100%)}
+  /* 118px, not 130: at 320px wide the row is 256px of usable width and 2x130
+     plus the gap did not fit, so the oldest phones silently fell back to one
+     column and lost the CTA off the bottom again */
+  #c3-pop-fields{grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:.4rem;margin-bottom:.45rem}
+  #c3-pop-overlay input[type=text],#c3-pop-overlay input[type=tel],#c3-pop-overlay input[type=email]{padding:.55rem .7rem;font-size:.95rem}
+  #c3-pop .form-consent{margin-bottom:.45rem}
+  #c3-pop .form-consent span{font-size:.56rem;line-height:1.35}
+  #c3-pop-send{font-size:.95rem}
+}
+@media (prefers-reduced-motion:reduce){#c3-pop-overlay{transition:none}}

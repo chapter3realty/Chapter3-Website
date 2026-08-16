@@ -130,34 +130,34 @@
 </script>
 
 <!-- timed lead popup -->
-<div id="c3-pop" role="dialog" aria-modal="true" aria-label="Speak to an agent" hidden
-     style="position:fixed;inset:0;z-index:9998;display:none;align-items:center;justify-content:center;padding:.75rem;background:rgba(8,22,38,.72)">
-  <div id="c3-pop-panel" style="position:relative;width:min(95vw,72rem);max-height:94vh;background:#0b1d30;border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(6,20,36,.6)">
-    <button type="button" id="c3-pop-x" aria-label="Close"
-            style="position:absolute;top:.6rem;right:.75rem;z-index:4;width:2.2rem;height:2.2rem;border:0;border-radius:50%;background:rgba(8,28,48,.6);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer">&times;</button>
+<!-- popup styling lives in assets/app.*.css (search "#c3-pop") -->
+<div id="c3-pop" role="dialog" aria-modal="true" aria-label="Speak to an agent" hidden>
+  <div id="c3-pop-panel">
+    <button type="button" id="c3-pop-x" aria-label="Close">&times;</button>
 
-    <video id="c3-pop-video" width="1920" height="1080" muted playsinline preload="none"
-           poster="/popup-poster.jpg" aria-label="Chapter3 Realty, Myrtle Beach"
-           style="display:block;width:100%;height:auto;max-height:82vh;object-fit:cover;background:#0b1d30">
-      <source src="/popup.mp4" type="video/mp4"/>
-    </video>
+    <div id="c3-pop-media">
+      <video id="c3-pop-video" width="1920" height="1080" muted playsinline preload="none"
+             poster="/popup-poster.jpg" aria-label="Chapter3 Realty, Myrtle Beach">
+        <source src="/popup.mp4" type="video/mp4"/>
+      </video>
+    </div>
 
-    <!-- the capture, over the video. Hidden until the clip ends. -->
-    <div id="c3-pop-overlay" style="position:absolute;inset:auto 0 0 0;padding:2.2rem 1.6rem 1.35rem;opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;pointer-events:none;background:linear-gradient(to top,rgba(6,18,32,.94) 0%,rgba(6,18,32,.86) 45%,rgba(6,18,32,0) 100%)">
+    <!-- the capture. Hidden until the clip ends. -->
+    <div id="c3-pop-overlay">
       <div id="c3-pop-form">
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.5rem;margin-bottom:.6rem">
-          <input id="c3-pop-name" type="text" autocomplete="name" placeholder="Name" aria-label="Name" style="width:100%;padding:.7rem .85rem;border:1px solid rgba(255,255,255,.35);border-radius:6px;background:rgba(10,24,40,.55);color:#fff;font-family:var(--sans);font-size:1rem;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)"/>
-          <input id="c3-pop-phone" type="tel" autocomplete="tel" placeholder="Phone" aria-label="Phone" style="width:100%;padding:.7rem .85rem;border:1px solid rgba(255,255,255,.35);border-radius:6px;background:rgba(10,24,40,.55);color:#fff;font-family:var(--sans);font-size:1rem;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)"/>
-          <input id="c3-pop-email" type="email" autocomplete="email" placeholder="Email" aria-label="Email" style="width:100%;padding:.7rem .85rem;border:1px solid rgba(255,255,255,.35);border-radius:6px;background:rgba(10,24,40,.55);color:#fff;font-family:var(--sans);font-size:1rem;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)"/>
+        <div id="c3-pop-fields">
+          <input id="c3-pop-name" type="text" autocomplete="name" placeholder="Name" aria-label="Name"/>
+          <input id="c3-pop-phone" type="tel" autocomplete="tel" placeholder="Phone" aria-label="Phone"/>
+          <input id="c3-pop-email" type="email" autocomplete="email" placeholder="Email" aria-label="Email"/>
         </div>
-        <label class="form-consent" style="display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.6rem;cursor:pointer">
+        <label class="form-consent">
           <input id="c3-pop-consent" type="checkbox" style="margin-top:.18rem;flex:0 0 auto"/>
-          <span style="font-size:.6rem;color:rgba(255,255,255,.72);line-height:1.4">I consent to receive calls and text messages from Chapter 3 Realty about my property inquiry, showing appointments, and listing information I requested, at the phone number provided, including calls placed using an automated system or an artificial or prerecorded voice. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase.</span>
+          <span>I consent to receive calls and text messages from Chapter 3 Realty about my property inquiry, showing appointments, and listing information I requested, at the phone number provided, including calls placed using an automated system or an artificial or prerecorded voice. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase.</span>
         </label>
-        <p id="c3-pop-err" role="alert" style="display:none;color:#ffb4a8;font-size:.85rem;margin:0 0 .5rem"></p>
-        <button type="button" id="c3-pop-send" class="btn btn-brass" style="width:100%;justify-content:center;font-size:1.05rem">Speak to an agent</button>
+        <p id="c3-pop-err" role="alert"></p>
+        <button type="button" id="c3-pop-send" class="btn btn-brass">Speak to an agent</button>
       </div>
-      <div id="c3-pop-ok" style="display:none;text-align:center;padding:.6rem 0 .3rem">
+      <div id="c3-pop-ok">
         <p style="font-family:var(--serif);font-size:1.3rem;color:#fff;margin:0 0 .3rem">Got it, thank you.</p>
         <p style="color:rgba(255,255,255,.8);font-size:.95rem;margin:0">An agent will reach out shortly.</p>
       </div>
@@ -169,8 +169,12 @@
   /* Shows on every page load. The only thing that suppresses it is having
      already submitted - see DONE below. To go back to once-per-visitor, put a
      time check back in shouldSkip(). */
-  var DONE = 'c3PopDone', DELAY = 10000;
+  var DONE = 'c3PopDone', DELAY = 10000, WARM = 4000;
   var pop, lastFocus;
+
+  /* Metered or 2G: never fetch 3.6MB of video. Show the still and the form. */
+  var NET = navigator.connection || {};
+  var LIGHT = NET.saveData === true || /2g/.test(NET.effectiveType || '');
 
   function shouldSkip() {
     try { return !!localStorage.getItem(DONE); }
@@ -178,9 +182,23 @@
   }
   function markDone() { try { localStorage.setItem(DONE, String(Date.now())); } catch (e) {} }
 
-  /* The capture floats up over the last frame. Bound to 'ended', but also to a
-     timeout and to 'error', so a blocked or broken video can never leave the
-     visitor looking at a dialog with nothing in it. */
+  /* preload="none" meant the 3.6MB only started downloading when the popup
+     opened, so on a phone the backstop fired first and the clip never played -
+     which is what "the video is slower" was. Start fetching WARM ms before the
+     popup is due instead. Anyone still reading at 6s was going to see it at
+     10s anyway, so this costs no extra visitor the download. */
+  function warmVideo() {
+    if (LIGHT) return;
+    var v = document.getElementById('c3-pop-video');
+    if (!v || v.preload === 'auto') return;
+    v.preload = 'auto';
+    try { v.load(); } catch (e) {}
+  }
+
+  /* The capture floats up over the last frame. Bound to 'ended', but also to
+     'error', to a never-started check and to a hard cap, so a blocked, slow or
+     broken video can never leave the visitor looking at a dialog with nothing
+     in it. */
   function revealAfterVideo() {
     var v = document.getElementById('c3-pop-video');
     var ov = document.getElementById('c3-pop-overlay');
@@ -193,15 +211,13 @@
       ov.style.pointerEvents = 'auto';
       var n = document.getElementById('c3-pop-name'); if (n) n.focus();
     }
-    if (!v) { reveal(); return; }
-    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      ov.style.transition = 'none';
-    }
+    if (!v || LIGHT) { reveal(); return; }
     v.addEventListener('ended', reveal);
     v.addEventListener('error', reveal);
-    setTimeout(reveal, 4000);                 /* backstop, whatever the video does */
+    setTimeout(function () { if (!v.currentTime) reveal(); }, 3000);  /* never started */
+    setTimeout(reveal, 8000);                                         /* hard cap */
     try {
-      v.load();
+      if (!v.readyState) v.load();            /* warmVideo did not get there first */
       var p = v.play();
       if (p && p.catch) p.catch(function () { reveal(); });   /* autoplay refused */
     } catch (e) { reveal(); }
@@ -263,6 +279,7 @@
     var x = document.getElementById('c3-pop-x'); if (x) x.addEventListener('click', close);
     var s = document.getElementById('c3-pop-send'); if (s) s.addEventListener('click', send);
     p.addEventListener('click', function (e) { if (e.target === p) close(); });
+    setTimeout(warmVideo, Math.max(0, DELAY - WARM));
     setTimeout(open, DELAY);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
