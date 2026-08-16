@@ -284,7 +284,7 @@ coCalc();
 </script>
 
 <!-- timed lead popup -->
-<div id="c3-pop" role="dialog" aria-modal="true" aria-labelledby="c3-pop-title" hidden
+<div id="c3-pop" role="dialog" aria-modal="true" aria-label="Speak to an agent" hidden
      style="position:fixed;inset:0;z-index:9998;display:none;align-items:center;justify-content:center;padding:.75rem;background:rgba(8,22,38,.72)">
   <div id="c3-pop-panel" style="position:relative;width:min(95vw,72rem);max-height:94vh;background:#0b1d30;border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(6,20,36,.6)">
     <button type="button" id="c3-pop-x" aria-label="Close"
@@ -298,7 +298,6 @@ coCalc();
 
     <!-- the capture, over the video. Hidden until the clip ends. -->
     <div id="c3-pop-overlay" style="position:absolute;inset:auto 0 0 0;padding:2.2rem 1.6rem 1.35rem;opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;pointer-events:none;background:linear-gradient(to top,rgba(6,18,32,.94) 0%,rgba(6,18,32,.86) 45%,rgba(6,18,32,0) 100%)">
-      <h2 id="c3-pop-title" style="font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,1.9rem);color:#fff;line-height:1.1;margin:0 0 .7rem;text-align:center;letter-spacing:-.015em;text-shadow:0 2px 12px rgba(0,0,0,.5)">You&#x27;ll love talking to us</h2>
       <div id="c3-pop-form">
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.5rem;margin-bottom:.6rem">
           <input id="c3-pop-name" type="text" autocomplete="name" placeholder="Name" aria-label="Name" style="width:100%;padding:.7rem .85rem;border:1px solid rgba(255,255,255,.35);border-radius:6px;background:rgba(10,24,40,.55);color:#fff;font-family:var(--sans);font-size:1rem;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)"/>
