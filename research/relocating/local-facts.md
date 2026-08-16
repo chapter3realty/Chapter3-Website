@@ -581,3 +581,248 @@ Rolled up by origin state (named counties only -- see the caveat below), in and 
 - Confidence: HIGH for the county rows exactly as the IRS published them. MEDIUM for the state roll-up, because of the suppression above.
 - One number worth using: inflow AGI $1.25 billion against outflow AGI $505 million in a single year -- the households arriving reported about 2.5 times the income of the households leaving. That is an IRS figure, it is dated, and it does not require ranking anything.
 
+
+## E. Cost-of-living details specific to here
+
+### E19. Electricity
+
+Two utilities serve Horry County, and **both of them now put a demand charge on an ordinary residential bill.** That is unusual and it is the single most useful thing to tell a newcomer about power here: your bill depends not only on how many kilowatt-hours you use but on your single highest hour of use during a defined peak window.
+
+**Santee Cooper (South Carolina Public Service Authority) -- state-owned utility, retail service in Berkeley, Georgetown and Horry Counties**
+- Fact: Standard residential schedule RG-25. Customer charge $20.00 a month. Demand charge $8.00 per kW of Peak Billing Demand. Base energy charge $0.0792 per kWh. On top of that, four adjustment clauses apply to every kWh: the Fuel Adjustment Clause (FAC-25), the Demand Sales Adjustment (DSC-25), the Economic Development Sales Adjustment (EDA-25) and the Deferred Cost Recovery Adjustment (DCR-25). Peak Billing Demand is the highest 60-minute kW reading during Peak Demand Hours: 3 p.m. to 6 p.m. April through October, and 6 a.m. to 9 a.m. November through March. There is also a time-of-use schedule, RT-25: $20.00 customer charge, $0.3380 per kWh during on-peak hours (same windows), $0.0792 per kWh off-peak, no demand charge.
+- Source: https://www.santeecooper.com/Rates/_pdfs/Residential/RG-25.pdf and https://www.santeecooper.com/Rates/_pdfs/Residential/RT-25.pdf , linked from https://www.santeecooper.com/rates/
+- Quote (RG-25): "This schedule is available in the retail service area of the Authority in Berkeley, Georgetown, and Horry Counties, South Carolina." ... "Customer Charge: For each month, a charge of $20.00" ... "Demand Charge: All kW of Peak Billing Demand $8.00/kW" ... "Energy Charge: Base Energy Charge $0.0792/kWh" ... "Adopted December 9, 2024. Effective for bills rendered on and after April 1, 2025. Supersedes: Residential General Service RG-17, Effective April 1, 2017."
+- Date: schedule effective 2025-04-01; PDFs downloaded 2026-08-16.
+- Confidence: HIGH.
+- Coming change: on May 1, 2026 the Santee Cooper board received proposed rate changes for 2027 and 2028. Source https://www.santeecooper.com/rates/rate-study/residential/ , quote: "The proposed 2027 adjustment for residential customers is a 4.7% increase, and the proposed 2028 adjustment is a 4.6% increase, which equates to about 20 cents a day or $6.60 a month." Proposed, not adopted -- do not publish it as a fact about future bills.
+
+**Horry Electric Cooperative -- member-owned cooperative, headquartered in Conway**
+- Fact: Regular Residential Service, Rate 900 (Policy Bulletin No. 508). Account charge $1.05 per day. Energy charge $0.069 per kWh. Peak charge $12.00 per kW, set by the highest single hour of use during 3 p.m. to 6 p.m. April 1 to October 31 and 6 a.m. to 9 a.m. November 1 to March 31. A Wholesale Power Cost Adjustment (WPCA) is added or subtracted per kWh on top. Minimum charge $1.05 per day of service. Sales and franchise taxes are added.
+- Source: https://horryelectric.com/wp-content/uploads/2026/06/Rate-900-Residential-2026.pdf , linked from https://horryelectric.com/members/rate-center/residential-rate/
+- Quote: "Account Charge: $1.05 per day" ... "Energy Charge: $0.069 per kWh" ... "Peak Charge*: $12.00 per kW" ... "*As determined by the highest one-hour of use during these hours: 3:00 PM - 6:00 PM [summer] / 6:00 AM - 9:00 AM [winter]" ... "APPROVED DATE: April 25, 2024. Effective for bills rendered on and after October 1, 2024. REVISED DATE: May 28, 2026. Effective for bills rendered on and after July 1, 2026."
+- Date: current schedule effective 2026-07-01; PDF downloaded 2026-08-16.
+- Confidence: HIGH.
+
+**Which utility serves which area**
+- Fact: Santee Cooper's own tariff says its retail area covers parts of Berkeley, Georgetown and Horry Counties. Horry Electric's tariff says only "Available in all of the Cooperative service area." Neither document draws a boundary.
+- Confidence: UNVERIFIED for any statement of the form "Santee Cooper serves the beach, Horry Electric serves inland." Do not write that. The correct instruction for a buyer is: check the address. Horry Electric's district map is at https://horryelectric.com/ and Santee Cooper's customer service is at https://www.santeecooper.com/ . A page can safely say "Horry County is split between two electric utilities, Santee Cooper and Horry Electric Cooperative; which one you get depends on the address."
+
+**Average monthly bill -- use the EIA state figure, not a utility figure**
+- Fact: Neither utility publishes an average residential monthly bill on any page I opened. EIA does, at state level. For 2024: South Carolina residential customers averaged 1,050.4 kWh a month at 14.23 cents per kWh, for an average monthly bill of **$149.51**. The United States averaged 863.3 kWh a month at 16.48 cents per kWh, for **$142.26**. So South Carolina has a lower price per kilowatt-hour than the nation but a HIGHER monthly bill, because households here use about 22% more electricity.
+- Comparison states, 2024, same table (avg monthly kWh / cents per kWh / average monthly bill):
+
+| State | kWh per month | cents/kWh | Average monthly bill |
+|---|---|---|---|
+| South Carolina | 1,050.4 | 14.23 | $149.51 |
+| Pennsylvania | 817.2 | 17.77 | $145.17 |
+| North Carolina | 1,015.3 | 14.13 | $143.50 |
+| United States | 863.3 | 16.48 | $142.26 |
+| New York | 571.2 | 24.43 | $139.53 |
+| Ohio | 845.5 | 15.99 | $135.16 |
+| New Jersey | 662.4 | 19.34 | $128.13 |
+
+- Source: U.S. Energy Information Administration, "2024 Average Monthly Bill- Residential", Table 5.a of Electric Sales, Revenue, and Average Price. https://www.eia.gov/electricity/sales_revenue_price/xls/table_5A.xlsx (index page https://www.eia.gov/electricity/sales_revenue_price/ , "With Data for 2024", release date October 7, 2025).
+- More recent price, monthly: EIA Electric Power Monthly Table 5.6.A, "Average Price of Electricity to Ultimate Customers by End-Use Sector, by State, May 2026 and 2025" -- South Carolina residential 16.18 cents/kWh in May 2026 (15.41 in May 2025); U.S. total 18.44 cents/kWh (17.37 in May 2025). https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a
+- Date: 2024 annual and May 2026 monthly; pulled 2026-08-16.
+- Confidence: HIGH.
+- **Never write "electricity is cheap in South Carolina."** The rate is below the national average; the bill is above it. Say both.
+
+### E20. Gasoline
+
+- Fact: On August 16, 2026 the AAA state average for regular gasoline was $3.618 in South Carolina against a national average of $4.066. AAA figures the same day: North Carolina $3.699, New Jersey $3.970, Pennsylvania $4.075, New York $4.133, Ohio $4.234.
+- Source: AAA Gas Prices, State Gas Price Averages, https://gasprices.aaa.com/state-gas-price-averages/
+- Date: checked 2026-08-16. **This number changes every day.** Any page that prints it must date it in the sentence, or say "typically among the lowest in the country" without a figure and link AAA.
+- Confidence: HIGH as of the date checked.
+- The page did not show prior-year or prior-month values for South Carolina; do not state a trend from this source.
+
+### E21. Auto insurance
+
+- Fact: Average annual full-coverage car insurance premiums, NerdWallet's August 2026 analysis:
+
+| State | Average annual full coverage |
+|---|---|
+| New Jersey | $3,661 |
+| New York | $2,676 |
+| United States | $2,356 |
+| South Carolina | $2,288 |
+| Pennsylvania | $2,287 |
+| Ohio | $1,799 |
+| North Carolina | $1,789 |
+
+- Source: https://www.nerdwallet.com/insurance/auto/average-car-insurance-cost
+- Quote (methodology): "NerdWallet found median rates based on public filings obtained by pricing analytics company Quadrant Information Services. We examined rates for men and women for all ZIP codes in any of the 50 states and Washington, D.C." The standard driver is 35 years old with good credit and a clean record, in a 2023 Toyota Camry LE, 12,000 miles a year, at 100/300/50 limits with collision and comprehensive at $1,000 deductibles.
+- Date: analysis dated August 2026; page opened 2026-08-16.
+- Confidence: MEDIUM. It is a rate-filing model, not what anyone actually paid, and it is a commercial publisher rather than a regulator. It is dated and its methodology is stated, which is why it is usable.
+- **The honest reading, and it is not the flattering one:** South Carolina's average is essentially the same as Pennsylvania's and only about 3% below the national average. It is well below New Jersey and New York, and it is ABOVE Ohio and above North Carolina. Someone moving here from Ohio or North Carolina should expect car insurance to cost more, not less. Do not put auto insurance in a "everything is cheaper" list.
+- Regulator data, for the record: the Insurance Information Institute publishes NAIC average auto insurance expenditures, but the most recent table I could open is **2021** and it shows only the ten most and ten least expensive states, so South Carolina and Pennsylvania are not in it. Values shown: United States $1,061.54, New York $1,511.04, New Jersey $1,365.71, North Carolina $780.19, Ohio $776.24. Source https://www.iii.org/fact-statistic/facts-statistics-auto-insurance , quote: "The average expenditure measures what consumers spend for insurance on each vehicle." Note this is expenditure per vehicle, not a full-coverage quote -- it is NOT comparable to the NerdWallet table. Do not mix the two. Confidence: HIGH for the quote, but the year (2021) makes it stale.
+
+### E22. Homeowners insurance
+
+- Fact: Average homeowners premiums by state, NAIC data as published by the Insurance Information Institute. Most recent year available on that page is **2021**:
+
+| State | Average premium (2021) |
+|---|---|
+| New York | $1,455 |
+| South Carolina | $1,432 |
+| United States | $1,411 |
+| New Jersey | $1,309 |
+| North Carolina | $1,192 |
+| Pennsylvania | $1,014 |
+| Ohio | $920 |
+
+- Source: https://www.iii.org/fact-statistic/facts-statistics-homeowners-and-renters-insurance
+- Quote: "Based on the HO-3 homeowner package policy for owner-occupied dwellings, 1 to 4 family units" ... "Includes state funds, residual markets and some wind pools." Source named as the National Association of Insurance Commissioners.
+- Date: 2021 data; page opened 2026-08-16.
+- Confidence: MEDIUM for the figures, LOW for present-day relevance. **Four years old and premiums have moved a lot since.** Get a current NAIC report before printing a dollar figure, or print no dollar figure at all.
+- Note the shape even so: South Carolina's statewide average was already above the national average in 2021, while its home values are below it. That is the coastal wind exposure showing up. Say that qualitatively and skip the number.
+- **This is a statewide average and Horry County is coastal.** A statewide South Carolina average blends the coast with the Upstate. It understates the coast. I found no published county-level average premium for Horry County. UNVERIFIED -- do not estimate one.
+
+**Wind and hail, and the fact that flood is separate**
+- Fact: A standard homeowners policy in South Carolina does not cover flood. Water entering the home from street flooding, an overflowing creek, river or stream, or from storm surge is covered by flood insurance, not by a homeowners or renters policy. Separately, wind and hail coverage in the designated coastal "beach" area is backed by the South Carolina Wind and Hail Underwriting Association (SCWHUA, the "wind pool"), a residual market created by the General Assembly in 1971 and available when the voluntary market will not write the risk. Many carriers offer a separate, higher deductible that applies only to wind or hail losses.
+- Source: South Carolina Department of Insurance, https://doi.sc.gov/592/Coastal-Insurance , https://www.doi.sc.gov/858/Flood-Insurance , https://doi.sc.gov/faq.aspx?TID=19 ; and the SCDOI "2024 Status Report on the South Carolina Coastal Property Insurance Market" https://doi.sc.gov/DocumentCenter/View/14909/
+- Quote (2024 status report): "The SCWHUA assures an adequate market for wind and hail insurance in the coastal areas of South Carolina." ... "Residual markets are intended to supplement the private market, not to compete with or displace it. Rates in the residual market are generally higher than in the voluntary market". On Horry County specifically: "Horry County has the highest exposure with $2.46 billion of in-force liability ('Insured Limits'); Beaufort County has the second highest with $1.66 billion." And on the direction of travel: "The SCWHUA has lost two-thirds of its policies since August 2011, a positive development for coastal consumers... Horry County lost the most policies with a total of 13,354."
+- Date: report covers year-end 2024; downloaded 2026-08-16.
+- Confidence: HIGH for the quotes.
+- Two more sourced points from the same report that are safe and useful: the SCWHUA's last approved rate change was "a 4% increase for dwelling policies and 15% for mobile home policies" effective December 1, 2022; and the National Flood Insurance Program "is currently $20.5 billion in debt to the Treasury" and is moving to its Risk Rating methodology.
+- Page wording that is accurate and not alarming: "Two things surprise people who move here from inland. Wind and hail can carry its own, larger deductible, and flood is a separate policy. Get both quoted before you write an offer."
+- **Do not name an insurer, do not quote a premium, and do not say whether a particular property needs flood insurance.** That is the lender's and the agent's determination on the specific address.
+
+### E23. GROCERIES -- what we may and may not put in a public calculator
+
+This is the section that decides whether the calculator can have a food line at all. Verdict first, then the evidence.
+
+**Verdict table**
+
+| Source | County-level? | Latest year | Free download? | May we redistribute in a public commercial calculator? |
+|---|---|---|---|---|
+| (a) EPI Family Budget Calculator | Yes, 3,143 counties + 613 metro areas | 2026 edition, 2025 dollars | Yes, plain .xlsx | **NO, not without asking EPI.** Licensed CC BY-NC-SA 4.0, non-commercial only. Commercial use requires contacting EPI. |
+| (b) MIT Living Wage Calculator | Yes, 3,144 counties + 387 MSAs | Updated 2026-02-15 | No | **NO.** Site explicitly forbids scraping/exporting and caps free use at 10 locations. |
+| (c) Feeding America Map the Meal Gap | Yes, county cost per meal | 2024 data, released 2026-07-28 | No, request form only | **NO, not without a signed data request.** Built on proprietary NielsenIQ scanner data. |
+| (d) USDA Cost of Food / Thrifty Food Plan | **No -- national only** (separate Alaska and Hawaii adjustments) | May 2026 | Yes, PDF and Excel | **YES**, US Government work, but it gives you no local number. |
+| (e) BLS average price data | **No -- U.S. city average and four regions only** | July 2026 | Yes, API and flat files | **YES**, US Government work. Best available: "South urban" region. |
+
+**(a) EPI Family Budget Calculator**
+- Fact: EPI publishes the whole dataset as a downloadable Excel workbook. The 2026 edition covers all 3,143 U.S. counties and county equivalents and 613 HUD Fair Market Rent metro areas, for 10 family types, with separate Housing, Food, Transportation, Healthcare, Other Necessities, Childcare and Taxes columns, monthly and annual, all in 2025 dollars. Food does genuinely vary by county: across the 3,143 counties there are 201 distinct monthly food values for a single adult, from $250 to $585.58.
+- Horry County, EPI 2026 edition, FOOD only: 1 adult $349.08 a month ($4,189 a year); 1 adult 2 children $754.75 ($9,057); 2 adults no children $639.92 ($7,679); 2 adults 2 children $1,009.67 ($12,116). For scale, the same file gives New York County NY $585.58 and Cuyahoga County OH $399.08 for a single adult. EPI's "Myrtle Beach-North Myrtle Beach-Conway, SC HUD Metro FMR Area" row is identical to the Horry County row.
+- Source (data): https://files.epi.org/uploads/fbc_data_2026.xlsx (also fbc_livingwage_data_2026.xlsx), linked from https://www.epi.org/resources/budget/budget-map/ . Calculator: https://www.epi.org/resources/budget/
+- Source (methodology): "The Economic Policy Institute's Family Budget Calculator: Technical Documentation", Zane Mokhiber, Elise Gould and Emma Cohn, March 1, 2026, https://www.epi.org/publication/family-budget-calculator-documentation/
+- Quote (what the food number is built from): "We use the USDA Low-Cost Plan, which assumes that almost all food is bought at a grocery store and then prepared at home. We use June 2025 data, which represents the 2025 average weekly cost... We provide county-level food costs by adjusting the national cost estimates from the USDA for county-level food cost variance using a multiplier generated from 2023 data from Feeding America's Map the Meal Gap project."
+- Quote (how the multiplier is built -- note the proprietary layer): "For all U.S. counties and county equivalents, Feeding America's Map the Meal Gap 2023 report provides average cost estimates for a meal consumed by a 19-to-50-year-old male under the USDA's Thrifty Food Plan. These county-level meal cost estimates are derived from data provided by Nielsen PLC that measures the costs of Universal Product Code (UPC) barcoded food items in over 65,000 stores across the country."
+- **Quote (THE TERMS, verbatim, from the Family Budget Calculator FAQ at https://www.epi.org/resources/budget/budget-map/):** "If you are an academic, student, non-profit researcher or advocate, or a journalist, you may download and use all Family Budget Calculator related materials without requesting any further permission. This is permitted under a non-commercial use Creative Commons license CC BY-NC-SA 4.0. If you are a commercial enterprise looking to incorporate Family Budget Calculator data in any product that will be sold or as part of services and data you provide to paying customers, you may request commercial use by contacting EPI." Suggested citation given on the same page: "Economic Policy Institute. 2026. Family Budget Calculator."
+- Date: 2026 edition, 2025 dollars; documentation dated 2026-03-01; downloaded 2026-08-16.
+- Confidence: HIGH.
+- **VERDICT: do not put EPI numbers in the public calculator on our own authority.** A brokerage web calculator is a commercial enterprise's product even if the calculator itself is free, and the SA (ShareAlike) term would also try to reach whatever we build. Two clean options: (1) email EPI and ask for written commercial permission -- they publish that route themselves; or (2) do not use it. There is a third, weaker option: link out to EPI's own calculator for the food figure instead of copying the number. Linking is not redistribution.
+- One more EPI caveat worth keeping: "Can I compare this with earlier releases? No... the Family Budget Calculator does not just measure prices, it also measures spending." Do not build a year-over-year trend from it.
+
+**(b) MIT Living Wage Calculator**
+- Fact: Covers 3,144 counties, 387 MSAs, 50 states plus DC, 12 family types, updated February 15, 2026. Horry County page (https://livingwage.mit.edu/counties/45051) gives an annual FOOD cost of $4,241 for 1 adult, $9,650 for 2 adults 1 child, $12,413 for 2 adults 2 children. Food does vary geographically (Horry $4,241 vs New York County $7,116 vs Cuyahoga $4,849 vs San Francisco $5,807 for a single adult).
+- Quote (geography): "The calculator includes living wage estimates for 3,144 counties to account for the geographic variation in costs across the U.S. The data is also available for 387 Metropolitan Statistical Areas (MSAs or metros) and 50 states plus Washington, D.C."
+- Quote (food basis): "Data on the cost of food is based on the U.S. Department of Agriculture's Low-Cost Food Plan, which represents a nutritious and practical diet all prepared at home... The USDA publishes monthly costs associated with the Low-Cost Food Plan, and this national cost broken down by family size and individual family members' gender and age serves as a base for the estimates." Source data listed as "June 2025 USDA Food Plans: Cost of Food Reports."
+- **Quote (THE TERMS, verbatim, from https://livingwage.mit.edu/pages/faqs, "FAQs updated February 15, 2026"):** "Can I scrape the living wage data? ... If you plan on using 10 or fewer locations worth of data, you may use it directly off the web, taking care to cite it as: Living wage data sourced from the Living Wage Institute via https://livingwage.mit.edu. If you want to use data for more than 10 locations at once, please do not scrape, extract, or export the data available on the site. Instead, please submit a request to license the data via the contact form." And: "Do not scrape, extract, or export the data on the Living Wage Calculator website. If you are interested in licensing the data, please submit a request via the contact form." The site footer repeats: "Please do not scrape the data."
+- Required citation format: "Living wage data sourced from the Living Wage Institute via https://livingwage.mit.edu/[Insert Geography]/[Insert Code]. Accessed on [Insert Date Accessed]."
+- Source URLs: https://livingwage.mit.edu/counties/45051 ; https://livingwage.mit.edu/pages/methodology ; https://livingwage.mit.edu/pages/faqs
+- Date: data last updated 2026-02-15; pages opened 2026-08-16.
+- Confidence: HIGH.
+- **VERDICT: NO.** Even a single-county use inside a calculator is at the edge, and any multi-location build is expressly forbidden without a licence. The calculator is produced by the Living Wage Institute, not by MIT's open-data operation, and they mean it.
+
+**(c) Feeding America, Map the Meal Gap**
+- Fact: Publishes an average "cost per meal" for every U.S. county and congressional district, alongside food insecurity rates. The most recent release is 2024 data, published July 28, 2026. The cost per meal is built from NielsenIQ scanner data: "NielsenIQ assigns every sale of UPC-coded food items in a county to one of the food categories in the USDA Thrifty Food Plan (TFP) and then weights those categories based on actual pounds purchased per week," then county and sales tax rates are applied to make a price index, which is applied to the national average meal cost. The dataset is NOT a free download -- it is obtained through a "Map the Meal Gap Dataset Request Form."
+- Source: https://www.feedingamerica.org/research/map-the-meal-gap/by-county ; methodology https://www.feedingamerica.org/research/map-the-meal-gap/how-we-got-the-map-data ; interactive map https://map.feedingamerica.org/
+- Required citation form (from the report front matter, e.g. the 2023 edition): "Gundersen, C., Strayer, M., Dewey, A., Hake, M., & Engelhard, E. (2023). Map the Meal Gap 2023: An Analysis of County and Congressional District Food Insecurity and County Food Cost in the United States in 2021. Feeding America."
+- Date: 2024 data year, released 2026-07-28; pages opened 2026-08-16.
+- Confidence: HIGH that the data exist at county level and are request-gated. **The exact licence text is UNVERIFIED** -- no terms-of-use, licence or redistribution clause is published on the public pages I opened. The terms arrive with the data request.
+- **VERDICT: NO, not without submitting the request form and reading the agreement that comes back.** The underlying NielsenIQ layer is commercially licensed data, which is exactly the kind of thing that carries a no-redistribution clause. Do not lift the county cost-per-meal number off the interactive map into our calculator. If someone wants this route, submit the request form first and keep the reply.
+
+**(d) USDA Cost of Food / Thrifty Food Plan**
+- Fact: USDA publishes four food plans -- Thrifty, Low-Cost, Moderate-Cost and Liberal -- with monthly costs by age and sex group. These are **national** figures. The only geographic variants USDA publishes are separate cost adjustments for Alaska and Hawaii. There is no state, metro or county version.
+- Most recent report, Thrifty Food Plan, May 2026, monthly cost: male 20-50 years $317.10; female 20-50 years $252.40; child 6-8 years $208.20; child 9-11 years $240.50. Reference family of four (male and female 20-50 and two children 6-8 and 9-11): $235.00 a week, **$1,018.20 a month**.
+- Source: USDA Food and Nutrition Administration (renamed from Food and Nutrition Service on June 1, 2026), https://www.fns.usda.gov/cnpp/usda-food-plans-cost-food-monthly-reports
+- Quote: "USDA produces four food plans at successively higher cost levels: the Thrifty, Low-Cost, Moderate-Cost, and Liberal Food Plans, illustrating how a healthy diet can be achieved at various costs." ... "Each food plan has an associated cost based on average prices of their respective foods and beverages at the time of publication plus adjustments each month to reflect inflation using the Consumer Price Index for All Urban Consumers (CPI-U)." ... "More information on the cost adjustments to the Thrifty Food Plan for Alaska and Hawaii is available in the Thrifty Food Plan Cost Estimates for Alaska and Hawaii report."
+- Date: May 2026 report; page opened 2026-08-16.
+- Confidence: HIGH.
+- **VERDICT: YES, freely usable** -- a work of the U.S. Government, no licence needed, attribution is good practice. But it tells you nothing about Myrtle Beach. It is the national base that both EPI and MIT start from. Using it alone means printing a national grocery figure and saying so.
+
+**(e) BLS average price data**
+- Fact: BLS publishes average prices for around 100 food items, monthly. For FOOD, the only geographies are the U.S. city average and four regions -- Northeast urban, Midwest urban, South urban, West urban. Myrtle Beach is not covered, and neither is any other metro area, for food. (Household fuel and motor fuel get more geographic detail: 23 urban areas, 4 regions, 12 region/size classes and 9 divisions -- but not food.)
+- Quote (BLS survey documentation, https://download.bls.gov/pub/time.series/ap/ap.txt): "Average consumer prices for household fuel and motor fuel are available for the U.S. city average, 23 urban areas, 4 regions, 12 region/size class groupings, and 9 divisions. Average consumer prices for food are available for the U.S. city average, and four regions." Also: "Average prices are best used to measure the price level in a particular month, not to measure price change over time."
+- I verified this directly rather than taking the documentation's word: parsing every series in https://download.bls.gov/pub/time.series/ap/ap.series , food item series (item codes beginning with 7) exist for exactly five area codes -- 0000 U.S. city average, 0100 Northeast urban, 0200 Midwest urban, 0300 South urban, 0400 West urban. No metropolitan area carries a food series.
+- Best available local proxy, South urban region vs U.S. city average, **July 2026** (BLS API, series APU0300nnnnnn and APU0000nnnnnn):
+
+| Item | U.S. city average | South urban |
+|---|---|---|
+| Flour, white, all purpose, per lb. | $0.543 | $0.489 |
+| Bread, white, pan, per lb. | $1.820 | $1.748 |
+| Ground beef, 100% beef, per lb. | $6.885 | $6.449 |
+| Chicken, fresh, whole, per lb. | $2.005 | $1.898 |
+| Eggs, grade A, large, per doz. | $2.189 | $2.206 |
+| Milk, fresh, whole, fortified, per gal. | $4.313 | $4.002 |
+| Potatoes, white, per lb. | $0.942 | $1.000 |
+| Sugar, white, per lb. | $1.024 | $1.056 |
+| Malt beverages, per 16 oz. | $1.878 | $1.788 |
+
+- Source: BLS Average Price Data (AP). API https://api.bls.gov/publicAPI/v1/timeseries/data/APU0300709112?startyear=2026&endyear=2026 (change the item code); flat files https://download.bls.gov/pub/time.series/ap/ ; item names from ap.item; program page https://www.bls.gov/cpi/
+- Date: July 2026 values; pulled 2026-08-16.
+- Confidence: HIGH.
+- **VERDICT: YES, freely usable.** A work of the U.S. Government. This is the only genuinely redistributable, near-current, sub-national grocery price data available for a public calculator. It is regional, not local: "South urban" spans from Texas to Maryland. Label it exactly that way.
+
+**Recommendation for the calculator**
+1. Build the food line on BLS South-urban average prices plus the USDA plan totals. Both are federal, both are current, both may be republished with attribution, and both can be refreshed by an automated job.
+2. Label the number honestly: "U.S. Bureau of Labor Statistics average prices, South urban region, July 2026. BLS does not publish grocery prices for Myrtle Beach or any other metro area."
+3. If a genuine county-level number is wanted, email EPI and ask for commercial permission for the Family Budget Calculator food column. Keep the reply. Do not use MIT's, and do not lift Feeding America's off the map.
+4. Whatever is used, put the source, the geography and the month on the page next to the number. All four of the above change on different schedules.
+
+### E24. Sales tax, and what you actually pay on groceries in Horry County
+
+**The direct answer: 0% on groceries in Horry County.**
+
+- Fact: South Carolina exempts unprepared food from the 6% state sales and use tax. That exemption does NOT automatically reach local taxes -- a local tax only exempts groceries if its own enabling law says so. In Horry County, the two local sales taxes collected by the Department of Revenue are the 1% Education Capital Improvement Tax (code 5261) and the 1% Transportation Tax (code 1026), and **both of them exempt unprepared food**. The Department of Revenue's own municipality chart therefore prints a "Total Tax Rate Unprepared Foods" of 0% for every jurisdiction in Horry County.
+- Horry County rows from the SCDOR chart, revised February 5, 2026:
+
+| Jurisdiction | Local taxes | Total sales tax | Accommodations | **Unprepared foods** |
+|---|---|---|---|---|
+| Unincorporated Horry | ECI (5261), TT (1026) | 8% | 9% | **0%** |
+| Myrtle Beach | ECI (5261), TT (1026), TD (2615) | 9% | 10% | **0%** |
+| North Myrtle Beach | ECI (5261), TT (1026) | 8% | 9% | **0%** |
+| Conway | ECI (5261), TT (1026) | 8% | 9% | **0%** |
+| Surfside Beach | ECI (5261), TT (1026) | 8% | 9% | **0%** |
+| Loris | ECI (5261), TT (1026) | 8% | 9% | **0%** |
+| Aynor | ECI (5261), TT (1026) | 8% | 9% | **0%** |
+| Atlantic Beach | ECI (5261), TT (1026) | 8% | 9% | **0%** |
+| Briarcliffe Acres | ECI (5261), TT (1026) | 8% | 9% | **0%** |
+
+- Source: South Carolina Department of Revenue form ST-575, "South Carolina Sales Tax Rate by Municipality", (Rev. 2/5/26), https://dor.sc.gov/sites/dor/files/forms/ST575.pdf . Local sales tax index: https://dor.sc.gov/sales-use-tax-index/local-sales-taxes
+- Quote (ST-575 header): "This form provides a list of Sales Tax rates, Accommodations Tax rates, unprepared foods tax rates, and local taxes along with their reporting codes for South Carolina counties and municipalities. Local taxes directly collected by the counties or municipalities are not included." And: "To qualify as unprepared food, a food item must be able to be lawfully purchased with United States Department of Agriculture food coupons under the state Sales and Use Tax exemption." Abbreviations used: "CP - Capital Projects, SD - School District, ECI - Education Capital Improvement, TT - Transportation Tax, LO - Local Option, TD - Tourism Development."
+- Quote (SCDOR Sales Tax Manual, Chapter 21, "Unprepared Food Exemption", dated September 2025, https://dor.sc.gov/sites/dor/files/Documents/Policy%20Manuals/Chapter%2021%20-%20Unprepared%20Food%20Exemption.pdf): "The gross proceeds of sales or sales price of 'unprepared food that lawfully may be purchased with United States Department of Agriculture food coupons' are exempt from the sales and use tax. This exemption does not apply to local sales and use taxes that are administered and collected by the Department on behalf of counties and other jurisdictions, unless the local tax law specifically exempts the sales of such unprepared food." And from Regulation 117-337: "Effective November 1, 2007, SC Code Section 12-36-2120(75) exempts from the state sales and use tax the gross proceeds of sales or sales price of 'unprepared food that lawfully may be purchased with United States Department of Agriculture food coupons.'"
+- Date: chart revised 2026-02-05; manual chapter dated September 2025; both downloaded 2026-08-16.
+- Confidence: HIGH.
+- The general rule the page should give: "Groceries are not taxed in Horry County. Everything else is taxed at 8%, or 9% inside Myrtle Beach city limits."
+- Two things that must not be blurred:
+  1. This is about **unprepared** food -- what you can buy with SNAP, for home consumption. Restaurant meals, prepared foods and hot deli items are taxed, and in this county they also carry local hospitality fees that the SCDOR chart explicitly does not cover ("Local taxes directly collected by the counties or municipalities are not included"). A restaurant bill in Myrtle Beach is not 9%; it is higher. Do not quote a restaurant rate from this chart.
+  2. **Many South Carolina counties DO tax groceries** -- the chart shows 1% or 2% unprepared-food rates in counties with a Local Option or Transportation tax that does not exempt food, for example Richland County at 2%. Horry County happens not to. Say "in Horry County", not "in South Carolina".
+- One more oddity in the same chart, quoted because a retiree will ask about it: "An individual 85 years old or older is entitled to claim a 1% exemption from State Sales & Use Tax on purchases for their own personal use. They must provide proof of age at the time of sale."
+
+### E25. Golf
+
+**How many courses**
+- Fact: Visit Myrtle Beach's media fact sheet says the area has "over 80 championship golf courses" plus "more than 35 extravagant miniature golf courses", with "approximately 3.2 million rounds of golf played annually". The Myrtle Beach Golf Passport says its card is accepted at "over 70 courses".
+- Source: https://www.visitmyrtlebeach.com/media/media-resources/fact-sheet ; https://www.myrtlebeachgolfpassport.com/memberships/annual-membership/
+- Date: both opened 2026-08-16.
+- Confidence: MEDIUM. **Neither figure carries a date or a source on its page**, and the two counts are measuring different things (courses in the area vs courses accepting one card). Write "more than 70" or "around 80" and attribute it; do not print a precise count and do not rank any course.
+
+**Myrtle Beach Golf Passport -- the local card**
+- Fact: The Resident Golf Passport costs $72 including tax, or $124 including tax for a couple (spouse added for $52 including tax). The 2026-27 membership runs through July 31, 2027. It is sold online only. Eligibility is limited to people who live in or own property in 15 named counties: Berkeley, Brunswick, Charleston, Clarendon, Columbus, Dillon, Dorchester, Florence, Georgetown, Horry, Marion, New Hanover, Onslow, Pender and Williamsburg.
+- Source: https://www.myrtlebeachgolfpassport.com/memberships/annual-membership/
+- Quote: "Eligibility for the Resident Golf Passport is only open to those who live or own residences or property in the following 15 counties in North Carolina or South Carolina: Berkeley, Brunswick, Charleston, Clarendon, Columbus, Dillon, Dorchester, Florence, Georgetown, Horry, Marion, New Hanover, Onslow, Pender, Williamsburg." ... "The 2026-27 membership is valid through July 31, 2027."
+- Date: opened 2026-08-16.
+- Confidence: HIGH. Re-check the price each season; it renews annually on August 1.
+
+**Whispering Pines Golf Course -- the municipal course**
+- Fact: Whispering Pines is owned by the City of Myrtle Beach, acquired through the federal Lands-to-Parks program after the Air Force base closed. Address 900 Harrelson Boulevard, next to Myrtle Beach International Airport. 6,771 yards. Residents of Horry, Georgetown and Brunswick Counties play for $45 per round plus tax, cart included.
+- Source: City of Myrtle Beach, https://www.cityofmyrtlebeach.com/i_want_to/find/whispering_pines_golf_course.php ; course site https://www.playwhisperingpinesgolf.com/ ; clubhouse (843) 918-2305.
+- Quote (city page): "The course is owned by the City of Myrtle Beach, thanks to the federal Lands-to-Parks program following Air Force Base Closure." ... "Local residents of Horry, Georgetown and Brunswick Counties can play at Whispering Pines for just $45 per round (plus tax), including the use of a cart!"
+- Date: opened 2026-08-16. The city page shows no effective date for the $45 rate -- confirm by phone before printing it.
+- Confidence: MEDIUM (price is undated on the source page).
+- **TRAP, flagged because it nearly caught me.** A web search for "Whispering Pines golf rates" returns **whisperingpinesgolf.com**, which is a completely different Whispering Pines in Annandale, **Minnesota**, with its own 2026 rate card ($35 weekday with cart, $48 weekend, $899 single membership, season April 1 to November 1). Those numbers are not Myrtle Beach numbers. The Myrtle Beach course's site is **playwhisperingpinesgolf.com**. Do not let the Minnesota rate card get anywhere near this page.
+- No rating, no ranking, no recommendation. Facts and prices only.
+
+<!-- APPEND-MARKER -->
