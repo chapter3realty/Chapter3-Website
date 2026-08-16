@@ -226,6 +226,7 @@
   function close() {
     if (!pop) return;
     pop.style.display = 'none'; pop.hidden = true;
+    pop.classList.remove('is-open');          /* so re-opening replays the rise */
     document.removeEventListener('keydown', onKey);
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
@@ -247,6 +248,8 @@
     if (other) return;
     lastFocus = document.activeElement;
     pop.hidden = false; pop.style.display = 'flex';
+    void pop.offsetWidth;                     /* flush, or the class lands in the same frame */
+    pop.classList.add('is-open');             /* starts the rise, see #c3-pop.is-open in the css */
     document.addEventListener('keydown', onKey);
     revealAfterVideo();
     if (window.c3track) window.c3track('popup_shown', { page_path: location.pathname });
