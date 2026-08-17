@@ -210,10 +210,10 @@
      lost context all leave the plain <video> on screen.
      ------------------------------------------------------------------ */
   var GREEN_SRC = '/popup-green.mp4';
-  var keyer = null;
+  var keyer = null, greenReady = false;
 
   function startKeyer() {
-    if (keyer || LIGHT) return;
+    if (keyer || LIGHT || !greenReady) return;
     var media = document.getElementById('c3-pop-media');
     var cv = document.getElementById('c3-pop-canvas');
     var vid = document.getElementById('c3-pop-video');
@@ -328,6 +328,9 @@
     if (!v || v.preload === 'auto') return;
     tryGreen(function (ok) {
       if (ok) {
+        greenReady = true;
+        var p = document.getElementById('c3-pop');
+        if (p) p.classList.add('c3-green');   /* switches the window to 16:9, see the css */
         /* the keyed master replaces the source AND the poster: the poster is a
            frame of the old blue clip and would flash behind a transparent one */
         v.removeAttribute('poster');
