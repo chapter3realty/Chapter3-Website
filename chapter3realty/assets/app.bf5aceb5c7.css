@@ -53,13 +53,16 @@
    of solid black down each side. So the media window is 4:3 and the video
    covers it, which crops off precisely those two bars and nothing else. Any
    window wider than 4:3 lets them back in. */
-#c3-pop{position:fixed;inset:0;z-index:9998;display:none;align-items:center;justify-content:center;padding:.75rem;background:rgba(6,18,32,.92)}
-#c3-pop-panel{position:relative;width:min(94vw,calc(80vh * 4 / 3),60rem);max-height:94vh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:transparent;border-radius:0;box-shadow:none}
+#c3-pop{position:fixed;inset:0;z-index:9998;display:none;align-items:center;justify-content:center;padding:.75rem;background:rgba(6,18,32,.93);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+#c3-pop-panel{position:relative;width:min(94vw,calc(74vh * 16 / 9),64rem);max-height:94vh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:transparent;border-radius:0;box-shadow:none}
 #c3-pop-x{position:absolute;top:.6rem;right:.75rem;z-index:5;width:2.2rem;height:2.2rem;border:0;border-radius:50%;background:rgba(8,28,48,.6);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer}
-#c3-pop-media{position:relative;width:100%;aspect-ratio:4 / 3;-webkit-mask-image:radial-gradient(ellipse 76% 82% at 50% 44%,#000 44%,rgba(0,0,0,.88) 64%,transparent 100%);mask-image:radial-gradient(ellipse 76% 82% at 50% 44%,#000 44%,rgba(0,0,0,.88) 64%,transparent 100%)}
+#c3-pop-media{position:relative;width:100%;aspect-ratio:16 / 9}
 /* THE RISE ONLY EXISTS ONCE THE DIALOG IS ON SCREEN. Declared bare on #c3-pop-media it never ran - animations do not run inside a display:none subtree, and fill-mode:both then pinned the video at its from-frame, translateY(46vh) and opacity 0, forever. Measured: y stuck at 294 and opacity 0 through the whole clip. Gating it on .is-open, which the script adds after the dialog is displayed, also means a JS failure leaves the video in its normal place rather than invisible. */
 #c3-pop.is-open #c3-pop-media{animation:c3PopRise .85s cubic-bezier(.16,1,.3,1) both}
-#c3-pop-video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.92) brightness(.97)}
+#c3-pop-video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}
+#c3-pop-canvas{position:absolute;inset:0;display:none;width:100%;height:100%}
+#c3-pop-media.c3-keyed #c3-pop-video{visibility:hidden}
+#c3-pop-media.c3-keyed #c3-pop-canvas{display:block}
 /* up from the bottom of the screen, opening as it climbs: the clip is 1.7s and the climb is 0.85s, so the covers are still swinging when it arrives */
 @keyframes c3PopRise{from{transform:translateY(46vh) scale(.9);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
 #c3-pop-overlay{padding:2.2rem 1.6rem 1.35rem;opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
@@ -83,12 +86,12 @@
    Here the form starts on the last frame and continues onto solid ground - one
    surface, no second box - and the panel scrolls if the screen is very short. */
 @media (max-width:700px){
-  #c3-pop{padding:.5rem;background:#061220}
+  #c3-pop{padding:.5rem;background:rgba(6,18,32,.96)}
   #c3-pop-panel{width:96vw}
   /* the scrim must reach FULLY opaque by the time it clears the video, or the
      3% of picture still showing through draws a visible line right where the
      frame ends - which is the seam this layout exists to avoid */
-  #c3-pop-overlay{position:relative;z-index:2;margin-top:-3.5rem;padding:4.2rem 1.15rem 1.35rem;background:linear-gradient(to bottom,rgba(6,18,32,0) 0,#061220 3.5rem,#061220 100%)}
+  #c3-pop-overlay{position:relative;z-index:2;margin-top:-2.5rem;padding:3.4rem 1.15rem 1.35rem;background:linear-gradient(to bottom,rgba(6,18,32,0) 0,rgba(6,18,32,.55) 2.5rem,rgba(6,18,32,.55) 100%)}
 }
 /* Short phones - 360x640 is still a very common budget Android - ran about 90px
    over and pushed the CTA under the fold. Measured at every size below, so
