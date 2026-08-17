@@ -162,11 +162,20 @@ function check() {
           const mb = (d.places || []).find(p => p.id === "myrtle-beach-conway-north-myrtle-beach-sc");
           if (!mb) errors.push("col-places.json has no Myrtle Beach record");
           else {
+            /* Check the figures the page ACTUALLY states, which are written in
+             * plain language, not index points. The owner cut "rents index at
+             * 83.1 against a national 100" because it means nothing to a buyer,
+             * so this gate must not demand it back. What the copy says is "about
+             * 6 percent less" and "about 17 percent less", which are the two
+             * index gaps rounded, plus the typical home value. */
             const html = fs.readFileSync(page, "utf-8");
-            const want = [[mb.rpp.all.toFixed(1), "all-items index"], [mb.rpp.housing.toFixed(1), "housing index"],
-                          ["$" + (Math.round(mb.zhvi / 1000) * 1000).toLocaleString("en-US"), "typical home value"]];
+            const want = [
+              [`${Math.round(100 - mb.rpp.all)} percent`, "overall gap vs the US average"],
+              [`${Math.round(100 - mb.rpp.housing)} percent`, "rent gap vs the US average"],
+              ["$" + (Math.round(mb.zhvi / 1000) * 1000).toLocaleString("en-US"), "typical home value"],
+            ];
             for (const [v, label] of want)
-              if (!html.includes(v)) errors.push(`/buyers/relocating/cost-of-living/ copy is stale: Myrtle Beach ${label} should read ${v} (data/relocating/col-places.json).`);
+              if (!html.includes(v)) errors.push(`/buyers/relocating/cost-of-living/ copy is stale: ${label} should read "${v}" (recompute from data/relocating/col-places.json).`);
           }
         }
       }
@@ -660,6 +669,63 @@ const BANNED_PHRASES = [
   "no-brainer", "slam dunk", "hidden gem", "goldmine", "jackpot", "kick back",
   "rewards patience", "trades speed for scenery", "collect price cuts", "collects price cuts",
 ];
+
+/* Figurative language. Owner instruction, 2026-08-16: "replace all metaphors and
+ * idioms and personification". The relocator batch shipped with nine of these on
+ * one page — housing "carries" a gap, money "disappears", insurance is an
+ * "ambush", New York "does not let go". Each one makes a plain fact sound like
+ * an essay, and the owner reads the page as a buyer would.
+ *
+ * FAILS the build, because a warning did not stop the last batch. If a phrase
+ * here is genuinely literal in context, rewrite the sentence rather than
+ * loosening the rule: every entry below was a real defect in real copy. */
+const FIGURATIVE = [
+  "carries almost", "carries the whole", "does the work", "money disappears",
+  "the ambush", "runs the other way", "goes the wrong way", "cuts both ways",
+  "pressure-test", "the trap is", "catches people",
+  // NOT "rate card": a property-management rate card is a real document, and
+  // /invest/airbnb-income/ cites them literally in its sources line.
+  // NOT "the clock starts": the 45-day and 180-day clocks are what the 1031
+  // rules are actually called.
+  "let go quickly", "does not let go", "worth ten minutes", "dressing it up",
+  "the size of the win", "stand in for", "a brand new line",
+  "falls straight out", "lives only", "sits outside the", "in your favor",
+  // NOT "is where the": it fires on plain literal sentences such as "Conway is
+  // where the county offices are". A substring rule cannot tell those apart,
+  // and it flagged seven pages that read fine.
+  "collapse that is not coming", "eats into", "punishing",
+  "the honest ones", "hold on to", "paints a picture", "tells a story",
+  "the numbers speak", "at the end of the day", "when push comes to shove",
+  "the bottom line is", "a stone's throw", "worth its weight",
+];
+/* Self-congratulation and meta-commentary about our own page. The owner cut
+ * "and almost nobody mentions it" by hand. A buyer does not care what other
+ * websites do. FAILS the build. */
+const SELF_REFERENTIAL = [
+  "almost nobody mentions", "nobody mentions", "no one else mentions",
+  "most articles", "every other article", "unlike other", "other sites",
+  "we are the only", "nobody else", "you will not find this",
+  "what makes this page", "the only page",
+];
+/* Flesch-Kincaid grade level. PLAYBOOK A11a: the /hoa/ batch scored grade 4.8
+ * to 6.8 and the owner still could not follow it, so a low score is not proof
+ * of a readable page. But a HIGH score is proof of an unreadable one, and the
+ * relocator batch drifted to long sentences full of clauses. Warn over 7, fail
+ * over 9. Sentences and syllables are counted on visible body prose only. */
+const readability = (text) => {
+  const clean = text.replace(/\s+/g, " ").trim();
+  const sentences = (clean.match(/[.!?]+(?=\s|$)/g) || []).length || 1;
+  const words = clean.split(/\s+/).filter((w) => /[a-z]/i.test(w));
+  if (words.length < 120) return null;                  // too short to judge
+  const syll = (w) => {
+    w = w.toLowerCase().replace(/[^a-z]/g, "");
+    if (w.length <= 3) return 1;
+    w = w.replace(/(?:es|ed|[^aeiou]e)$/, "");
+    return (w.match(/[aeiouy]{1,2}/g) || ["x"]).length;
+  };
+  const syllables = words.reduce((n, w) => n + syll(w), 0);
+  return 0.39 * (words.length / sentences) + 11.8 * (syllables / words.length) - 15.59;
+};
 // Fair-housing advertising risk: statements about who lives somewhere or how safe it is.
 const FAIR_HOUSING = [
   "safe neighborhood", "low crime", "crime-free", "family-friendly neighborhood",
@@ -955,7 +1021,7 @@ function audit() {
      * "analyses" is deliberately NOT in this list: it is the correct American
      * plural of analysis and /contact/ uses it properly. */
     {
-      const BRITISH = /\b(neighbourhoods?|colours?|realise[ds]?|organis(?:e|ed|es|ing|ation)|behaviour|favour(?:s|ed|ite|ites)?|metres?|prioritise[ds]?|recognise[ds]?|apologise[ds]?|licence[ds]?)\b/gi;
+      const BRITISH = /\b(petrol|fibre|storey|storeys|kerb|whilst|amongst|neighbourhoods?|colours?|realise[ds]?|organis(?:e|ed|es|ing|ation)|behaviour|favour(?:s|ed|ite|ites)?|metres?|prioritise[ds]?|recognise[ds]?|apologise[ds]?|licence[ds]?)\b/gi;
       const visible = ((s.match(/<main[\s\S]*?<\/main>/i) || [""])[0])
         .replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ").replace(/<[^>]+>/g, " ");
       for (const m of new Set([...visible.matchAll(BRITISH)].map(x => x[0])))
@@ -1103,6 +1169,38 @@ function audit() {
     const low = decodeEnt(prose).toLowerCase();
     for (const p of BANNED_PHRASES) if (low.includes(p)) W(`off-brand phrase: "${p}"`);
     for (const p of FAIR_HOUSING) if (low.includes(p)) E(`fair-housing risk phrase: "${p}"`);
+    for (const p of FIGURATIVE) if (low.includes(p)) E(`figurative language: "${p}" - say it literally`);
+    for (const p of SELF_REFERENTIAL) if (low.includes(p)) E(`writes about our own page or other websites: "${p}" - the buyer only needs the fact`);
+    {
+      /* Build the text for readability separately.
+       *
+       * Two mistakes this avoids, both made while writing this rule:
+       *  1. Feeding it `prose` (tags + inline CSS) scored every page grade 47,
+       *     because "font-size:.78rem" counts as words with no sentence end.
+       *  2. Feeding it `txt` glued table cells and headings into one 226-word
+       *     "sentence". A heading is not a run-on sentence. Close every block
+       *     element with a full stop first, so each cell, heading and list item
+       *     counts as its own unit. */
+      // Self-contained on purpose. Two earlier versions of this rule broke on
+      // ambient variables: `noScripts` was out of scope and crashed the whole
+      // audit, and `prose` turned out not to be limited to <main>, which pulled
+      // in the footer and legal boilerplate and inflated every score.
+      const readMain = (s.match(/<main[\s\S]*?<\/main>/i) || [""])[0]
+        .replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ");
+      const readTxt = decodeEnt(
+        readMain.replace(/<\/(p|h[1-6]|li|td|th|div|section|caption)>/gi, ". ")
+                .replace(/<[^>]+>/g, " ")
+      ).replace(/\s*\.\s*(?=\.)/g, "").replace(/\s+/g, " ");
+      const grade = readability(readTxt);
+      /* Thresholds. The site's own pages run grade 4.7 to 9.5 today, so a hard
+       * fail at 9 would block the deploy on eighty pages nobody asked to
+       * rewrite. Fail at 12, which is the "unreadable" line (the calibration
+       * sample of stacked subordinate clauses scores 43). Warn at 8, which is
+       * where drift starts. The owner's instruction is plainer than the gate:
+       * aim for 6. /buyers/relocating/cost-of-living/ sits at 4.7. */
+      if (grade != null && grade > 12) E(`reading level grade ${grade.toFixed(1)} (max 12) - split the long sentences`);
+      else if (grade != null && grade > 8) W(`reading level grade ${grade.toFixed(1)} - aim for 6`);
+    }
     for (const g of prose.matchAll(GUARANTEE)) {
       const before = prose.slice(Math.max(0, g.index - 70), g.index);
       if (NEGATED_BEFORE.test(before)) continue;   // "returns are not guaranteed" = disclaimer
