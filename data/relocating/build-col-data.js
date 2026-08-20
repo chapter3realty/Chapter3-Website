@@ -27,6 +27,7 @@ const localISO = (d = new Date()) => d.getFullYear() + '-' + String(d.getMonth()
 const ZILLOW = {
   zillow_zhvi_metro: 'https://files.zillowstatic.com/research/public_csvs/zhvi/Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv',
   zillow_zori_metro: 'https://files.zillowstatic.com/research/public_csvs/zori/Metro_zori_uc_sfrcondomfr_sm_month.csv',
+  zillow_zhvi_state: 'https://files.zillowstatic.com/research/public_csvs/zhvi/State_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv',
 };
 // The Zillow CSVs are 5MB and gitignored; fetch them when absent (or when
 // REFRESH_ZILLOW=1) with curl, which Windows 10+ ships as curl.exe.
@@ -128,6 +129,47 @@ function main() {
   }
   const zhvi = loadZillow(path.join(RAW, 'zillow_zhvi_metro.csv'));
   const zori = loadZillow(path.join(RAW, 'zillow_zori_metro.csv'));
+
+  /* ---- home values for the buyer-weighted index ----
+   * The BEA all-items index weights housing at only ~14.5% of consumption and
+   * measures it as RENT. That is right for "what does a basket of everything
+   * cost" and wrong for a page read by people BUYING a house: it made Myrtle
+   * Beach look far less of a saving than every other calculator on the web.
+   * Los Angeles to Myrtle Beach came out $57,719 against Forbes' $45,276.
+   *
+   * So we also publish `coli`, a composite that uses C2ER's PUBLISHED category
+   * weights (the same weights behind the Forbes/Bankrate/NerdWallet numbers)
+   * with the housing component driven by Zillow home PRICES instead of rent.
+   * The weights are public; only C2ER's collected prices are licensed, and we
+   * use none of them. Validated against Forbes on two cities: Los Angeles
+   * -4.4%, Portland +3.3%. See data/relocating/README-coli.md. */
+  function loadZillowByType(file, wantType) {
+    const rows = parseCsv(fs.readFileSync(file, 'utf8'));
+    const head = rows[0];
+    const nameI = head.indexOf('RegionName'), typeI = head.indexOf('RegionType');
+    const dateCols = head.map((h, i) => ({ h, i })).filter(x => /^\d{4}-\d{2}-\d{2}$/.test(x.h));
+    const out = new Map();
+    for (const r of rows.slice(1)) {
+      if (r[typeI] !== wantType) continue;
+      for (let k = dateCols.length - 1; k >= Math.max(0, dateCols.length - 4); k--) {
+        const x = parseFloat(r[dateCols[k].i]);
+        if (Number.isFinite(x)) { out.set(r[nameI], x); break; }
+      }
+    }
+    return out;
+  }
+  const usZhvi = loadZillowByType(path.join(RAW, 'zillow_zhvi_metro.csv'), 'country').get('United States');
+  if (!usZhvi) throw new Error('No United States row in the Zillow metro file; cannot scale home prices');
+  const stateZhvi = loadZillowByType(path.join(RAW, 'zillow_zhvi_state.csv'), 'state');
+  if (stateZhvi.size < 45) throw new Error('State home values look wrong: only ' + stateZhvi.size + ' states');
+
+  const COLI_W = { housing: 0.2803, utilities: 0.0965, goods: 0.2456, other: 0.3776 };  // C2ER published weights
+  const coliOf = (rpp, homeValue) => homeValue
+    ? +(COLI_W.housing * (homeValue / usZhvi * 100)
+      + COLI_W.utilities * rpp.utilities
+      + COLI_W.goods * rpp.goods
+      + COLI_W.other * rpp.other).toFixed(3)
+    : null;
   
   // Zillow keys look like "Myrtle Beach, SC". BEA like
   // "Myrtle Beach-Conway-North Myrtle Beach, SC-NC (Metropolitan Statistical Area)".
@@ -157,7 +199,7 @@ function main() {
   const unmatched = [];
   for (const p of metro) {
     if (p.kind === 'us') {
-      out.push({ id: 'us', name: 'United States average', state: '', kind: 'us', rpp: p.rpp, zhvi: null, zori: null, zAsOf: null, zName: null });
+      out.push({ id: 'us', name: 'United States average', state: '', kind: 'us', rpp: p.rpp, zhvi: Math.round(usZhvi), zori: null, coli: coliOf(p.rpp, usZhvi), zAsOf: null, zName: null });
       continue;
     }
     const clean = p.rawName.replace(/\s*\(Metropolitan Statistical Area\)\s*/i, '').trim();
@@ -173,14 +215,16 @@ function main() {
       state: stAbbr,
       kind: 'msa',
       rpp: p.rpp,
-      zhvi: h ? Math.round(h.v) : null,
+        zhvi: h ? Math.round(h.v) : null,
       zori: r ? Math.round(r.v) : null,
+      coli: coliOf(p.rpp, h ? h.v : null),
       zAsOf: h ? h.asOf : null,
       zName: h ? key : null,
     });
   }
   for (const p of stateRecs) {
-    out.push({ id: 'state-' + toSlug(p.rawName), name: p.rawName + ' (statewide average)', state: STATE_ABBR[p.rawName], kind: 'state', rpp: p.rpp, zhvi: null, zori: null, zAsOf: null, zName: null });
+    const sv = stateZhvi.get(p.rawName) || null;
+    out.push({ id: 'state-' + toSlug(p.rawName), name: p.rawName + ' (statewide average)', state: STATE_ABBR[p.rawName], kind: 'state', rpp: p.rpp, zhvi: sv ? Math.round(sv) : null, zori: null, coli: coliOf(p.rpp, sv), zAsOf: null, zName: null });
   }
   // Sort: US, then MSAs by name, then states.
   const order = { us: 0, msa: 1, state: 2 };
@@ -191,6 +235,9 @@ function main() {
   if (!mb) throw new Error('Myrtle Beach MSA missing');
   for (const k of ['all','goods','housing','utilities','other']) if (!(mb.rpp[k] > 50 && mb.rpp[k] < 200)) throw new Error('MB ' + k + ' RPP out of range: ' + mb.rpp[k]);
   if (!(mb.zhvi > 100000 && mb.zhvi < 2000000)) throw new Error('MB ZHVI out of range: ' + mb.zhvi);
+  if (!(mb.coli > 60 && mb.coli < 140)) throw new Error('MB coli out of range: ' + mb.coli);
+  const noColi = out.filter(p => p.coli == null);
+  if (noColi.length > 25) throw new Error(noColi.length + ' places have no buyer-weighted index; expected under 25');
   const us = out.find(p => p.id === 'us');
   if (us.rpp.all !== 100) throw new Error('US index not 100');
   const dupIds = out.map(p => p.id).filter((v, i, a) => a.indexOf(v) !== i);
@@ -224,7 +271,7 @@ function main() {
   }
 
 function buildAsset(d) {
-  const rows = d.places.map(p => [p.id, p.name, p.state, p.kind, p.rpp.all, p.rpp.goods, p.rpp.housing, p.rpp.utilities, p.rpp.other, p.zhvi, p.zori]);
+  const rows = d.places.map(p => [p.id, p.name, p.state, p.kind, p.rpp.all, p.rpp.goods, p.rpp.housing, p.rpp.utilities, p.rpp.other, p.zhvi, p.zori, p.coli]);
   const m = { rppVintage: d.meta.rppVintage, zillowLatestMonth: d.meta.zillowLatestMonth, generated: d.meta.generated, counts: d.meta.counts };
   return '/* Cost of living data for /buyers/relocating/cost-of-living/. Generated by data/relocating/build-col-data.js. Do not edit by hand.\n' +
     '   Sources: ' + d.meta.rppSource + '; ' + d.meta.zillowSource + '.\n' +

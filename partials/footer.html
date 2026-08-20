@@ -176,17 +176,29 @@
   /* Shows on every page load. The only thing that suppresses it is having
      already submitted - see DONE below. To go back to once-per-visitor, put a
      time check back in shouldSkip(). */
-  var DONE = 'c3PopDone', DELAY = 10000, WARM = 4000;
+  var DONE = 'c3PopDone', SEEN = 'c3PopSeen', DELAY = 10000, WARM = 4000;
   var pop, lastFocus;
 
   /* Metered or 2G: never fetch 3.6MB of video. Show the still and the form. */
   var NET = navigator.connection || {};
   var LIGHT = NET.saveData === true || /2g/.test(NET.effectiveType || '');
 
+  /* Two separate suppressions, and they answer different questions.
+     DONE (localStorage, permanent): they already gave us their details, so we
+     never ask again on any visit.
+     SEEN (sessionStorage, this visit only): they have already been shown it
+     once during this browsing session. Without this the popup reopened on
+     every page navigation, which is what a visitor reads as spam. It clears
+     when the browser tab closes, so a genuine return visit gets one more. */
   function shouldSkip() {
-    try { return !!localStorage.getItem(DONE); }
+    try {
+      if (localStorage.getItem(DONE)) return true;
+      if (sessionStorage.getItem(SEEN)) return true;
+      return false;
+    }
     catch (e) { return false; }               /* private mode: just show it */
   }
+  function markSeen() { try { sessionStorage.setItem(SEEN, '1'); } catch (e) {} }
   function markDone() { try { localStorage.setItem(DONE, String(Date.now())); } catch (e) {} }
 
   /* ------------------------------------------------------------------
@@ -403,6 +415,7 @@
     pop.hidden = false; pop.style.display = 'flex';
     void pop.offsetWidth;                     /* flush, or the class lands in the same frame */
     pop.classList.add('is-open');             /* starts the rise, see #c3-pop.is-open in the css */
+    markSeen();                               /* once per session, not once per page */
     document.addEventListener('keydown', onKey);
     revealAfterVideo();
     if (window.c3track) window.c3track('popup_shown', { page_path: location.pathname });

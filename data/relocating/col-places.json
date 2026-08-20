@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-08-16",
+  "generated": "2026-08-20",
   "rppVintage": "2024",
   "rppSource": "U.S. Bureau of Economic Analysis, Regional Price Parities (MARPP, SARPP), released February 2026",
   "zillowLatestMonth": "2026-07-31",
@@ -35,8 +35,9 @@
     "utilities": 98.441,
     "other": 100.147
    },
-   "zhvi": null,
+   "zhvi": 371774,
    "zori": null,
+   "coli": 99.799,
    "zAsOf": null,
    "zName": null
   },
@@ -54,6 +55,7 @@
    },
    "zhvi": 220955,
    "zori": 2003,
+   "coli": 83.858,
    "zAsOf": "2026-07-31",
    "zName": "Abilene, TX"
   },
@@ -71,6 +73,7 @@
    },
    "zhvi": 243507,
    "zori": 1293,
+   "coli": 88.021,
    "zAsOf": "2026-07-31",
    "zName": "Akron, OH"
   },
@@ -88,6 +91,7 @@
    },
    "zhvi": 377793,
    "zori": 1689,
+   "coli": 102.816,
    "zAsOf": "2026-07-31",
    "zName": "Albany, NY"
   },
@@ -105,6 +109,7 @@
    },
    "zhvi": 167805,
    "zori": 1131,
+   "coli": 82.07,
    "zAsOf": "2026-07-31",
    "zName": "Albany, GA"
   },
@@ -122,6 +127,7 @@
    },
    "zhvi": 413795,
    "zori": 1644,
+   "coli": 105.038,
    "zAsOf": "2026-07-31",
    "zName": "Albany, OR"
   },
@@ -139,6 +145,7 @@
    },
    "zhvi": 352693,
    "zori": 1511,
+   "coli": 94.926,
    "zAsOf": "2026-07-31",
    "zName": "Albuquerque, NM"
   },
@@ -156,6 +163,7 @@
    },
    "zhvi": 171887,
    "zori": 1063,
+   "coli": 78.967,
    "zAsOf": "2026-07-31",
    "zName": "Alexandria, LA"
   },
@@ -173,6 +181,7 @@
    },
    "zhvi": 368621,
    "zori": 1873,
+   "coli": 99.786,
    "zAsOf": "2026-07-31",
    "zName": "Allentown, PA"
   },
@@ -190,6 +199,7 @@
    },
    "zhvi": 180150,
    "zori": 1080,
+   "coli": 85.602,
    "zAsOf": "2026-07-31",
    "zName": "Altoona, PA"
   },
@@ -207,6 +217,7 @@
    },
    "zhvi": 221823,
    "zori": 1290,
+   "coli": 84.147,
    "zAsOf": "2026-07-31",
    "zName": "Amarillo, TX"
   },
@@ -224,6 +235,7 @@
    },
    "zhvi": 281626,
    "zori": 1070,
+   "coli": 87.352,
    "zAsOf": "2026-07-31",
    "zName": "Ames, IA"
   },
@@ -241,6 +253,7 @@
    },
    "zhvi": null,
    "zori": null,
+   "coli": null,
    "zAsOf": null,
    "zName": null
   },
@@ -258,6 +271,7 @@
    },
    "zhvi": 428282,
    "zori": 1808,
+   "coli": 108.461,
    "zAsOf": "2026-07-31",
    "zName": "Anchorage, AK"
   },
@@ -275,6 +289,7 @@
    },
    "zhvi": 423247,
    "zori": 2015,
+   "coli": 101.995,
    "zAsOf": "2026-07-31",
    "zName": "Ann Arbor, MI"
   },
@@ -292,6 +307,7 @@
    },
    "zhvi": 171384,
    "zori": 983,
+   "coli": 81.516,
    "zAsOf": "2026-07-31",
    "zName": "Anniston, AL"
   },
@@ -309,6 +325,7 @@
    },
    "zhvi": 354433,
    "zori": 1231,
+   "coli": 96.036,
    "zAsOf": "2026-07-31",
    "zName": "Appleton, WI"
   },
@@ -326,6 +343,7 @@
    },
    "zhvi": 426217,
    "zori": 1686,
+   "coli": 101.493,
    "zAsOf": "2026-07-31",
    "zName": "Asheville, NC"
   },
@@ -343,6 +361,7 @@
    },
    "zhvi": 374272,
    "zori": 1638,
+   "coli": 97.732,
    "zAsOf": "2026-07-31",
    "zName": "Athens, GA"
   },
@@ -360,6 +379,7 @@
    },
    "zhvi": 381872,
    "zori": 1855,
+   "coli": 99.255,
    "zAsOf": "2026-07-31",
    "zName": "Atlanta, GA"
   },
@@ -377,6 +397,7 @@
    },
    "zhvi": 387264,
    "zori": 2088,
+   "coli": 101.221,
    "zAsOf": "2026-07-31",
    "zName": "Atlantic City, NJ"
   },
@@ -394,6 +415,7 @@
    },
    "zhvi": 352523,
    "zori": 1661,
+   "coli": 94.86,
    "zAsOf": "2026-07-31",
    "zName": "Auburn, AL"
   },
@@ -411,6 +433,7 @@
    },
    "zhvi": 253288,
    "zori": 1510,
+   "coli": 88.589,
    "zAsOf": "2026-07-31",
    "zName": "Augusta, GA"
   },
@@ -428,6 +451,7 @@
    },
    "zhvi": 424339,
    "zori": 1647,
+   "coli": 99.277,
    "zAsOf": "2026-07-31",
    "zName": "Austin, TX"
   },
@@ -445,6 +469,7 @@
    },
    "zhvi": 364984,
    "zori": 1803,
+   "coli": 106.48,
    "zAsOf": "2026-07-31",
    "zName": "Bakersfield, CA"
   },
@@ -462,6 +487,7 @@
    },
    "zhvi": 405069,
    "zori": 1946,
+   "coli": 104.639,
    "zAsOf": "2026-07-31",
    "zName": "Baltimore, MD"
   },
@@ -479,6 +505,7 @@
    },
    "zhvi": 286652,
    "zori": 1562,
+   "coli": 97.447,
    "zAsOf": "2026-07-31",
    "zName": "Bangor, ME"
   },
@@ -496,6 +523,7 @@
    },
    "zhvi": 768173,
    "zori": 2738,
+   "coli": 135.246,
    "zAsOf": "2026-07-31",
    "zName": "Barnstable Town, MA"
   },
@@ -513,6 +541,7 @@
    },
    "zhvi": 249578,
    "zori": 1407,
+   "coli": 84.835,
    "zAsOf": "2026-07-31",
    "zName": "Baton Rouge, LA"
   },
@@ -530,6 +559,7 @@
    },
    "zhvi": 194043,
    "zori": 1124,
+   "coli": 84.407,
    "zAsOf": "2026-07-31",
    "zName": "Battle Creek, MI"
   },
@@ -547,6 +577,7 @@
    },
    "zhvi": 188682,
    "zori": 1121,
+   "coli": 84.024,
    "zAsOf": "2026-07-31",
    "zName": "Bay City, MI"
   },
@@ -564,6 +595,7 @@
    },
    "zhvi": 187418,
    "zori": 1301,
+   "coli": 81.516,
    "zAsOf": "2026-07-31",
    "zName": "Beaumont, TX"
   },
@@ -581,6 +613,7 @@
    },
    "zhvi": 150735,
    "zori": 1045,
+   "coli": 81.552,
    "zAsOf": "2026-07-31",
    "zName": "Beckley, WV"
   },
@@ -598,6 +631,7 @@
    },
    "zhvi": 621276,
    "zori": 1986,
+   "coli": 119.835,
    "zAsOf": "2026-07-31",
    "zName": "Bellingham, WA"
   },
@@ -615,6 +649,7 @@
    },
    "zhvi": 668236,
    "zori": 2235,
+   "coli": 124.238,
    "zAsOf": "2026-07-31",
    "zName": "Bend, OR"
   },
@@ -632,6 +667,7 @@
    },
    "zhvi": 415661,
    "zori": 1429,
+   "coli": 99.183,
    "zAsOf": "2026-07-31",
    "zName": "Billings, MT"
   },
@@ -649,6 +685,7 @@
    },
    "zhvi": 205581,
    "zori": 1333,
+   "coli": 89.593,
    "zAsOf": "2026-07-31",
    "zName": "Binghamton, NY"
   },
@@ -666,6 +703,7 @@
    },
    "zhvi": 263665,
    "zori": 1456,
+   "coli": 88.152,
    "zAsOf": "2026-07-31",
    "zName": "Birmingham, AL"
   },
@@ -683,6 +721,7 @@
    },
    "zhvi": 361921,
    "zori": 1348,
+   "coli": 92.45,
    "zAsOf": "2026-07-31",
    "zName": "Bismarck, ND"
   },
@@ -700,6 +739,7 @@
    },
    "zhvi": 291204,
    "zori": 1637,
+   "coli": 91.46,
    "zAsOf": "2026-07-31",
    "zName": "Blacksburg, VA"
   },
@@ -717,6 +757,7 @@
    },
    "zhvi": 262618,
    "zori": 1317,
+   "coli": 89.05,
    "zAsOf": "2026-07-31",
    "zName": "Bloomington, IL"
   },
@@ -734,6 +775,7 @@
    },
    "zhvi": 304198,
    "zori": 1452,
+   "coli": 91.884,
    "zAsOf": "2026-07-31",
    "zName": "Bloomington, IN"
   },
@@ -751,6 +793,7 @@
    },
    "zhvi": 497096,
    "zori": 1906,
+   "coli": 105.295,
    "zAsOf": "2026-07-31",
    "zName": "Boise City, ID"
   },
@@ -768,6 +811,7 @@
    },
    "zhvi": 742341,
    "zori": 3165,
+   "coli": 133.92,
    "zAsOf": "2026-07-31",
    "zName": "Boston, MA"
   },
@@ -785,6 +829,7 @@
    },
    "zhvi": 718693,
    "zori": 2246,
+   "coli": 123.454,
    "zAsOf": "2026-07-31",
    "zName": "Boulder, CO"
   },
@@ -802,6 +847,7 @@
    },
    "zhvi": 264193,
    "zori": 1247,
+   "coli": 87.4,
    "zAsOf": "2026-07-31",
    "zName": "Bowling Green, KY"
   },
@@ -819,6 +865,7 @@
    },
    "zhvi": 701508,
    "zori": 2191,
+   "coli": 120.85,
    "zAsOf": "2026-07-31",
    "zName": "Bozeman, MT"
   },
@@ -836,6 +883,7 @@
    },
    "zhvi": 589257,
    "zori": 2075,
+   "coli": 116.664,
    "zAsOf": "2026-07-31",
    "zName": "Bremerton, WA"
   },
@@ -853,6 +901,7 @@
    },
    "zhvi": 698397,
    "zori": 2897,
+   "coli": 129.516,
    "zAsOf": "2026-07-31",
    "zName": "Bridgeport, CT"
   },
@@ -870,6 +919,7 @@
    },
    "zhvi": 207319,
    "zori": 1447,
+   "coli": 82.829,
    "zAsOf": "2026-07-31",
    "zName": "Brownsville, TX"
   },
@@ -887,6 +937,7 @@
    },
    "zhvi": 322546,
    "zori": 1640,
+   "coli": 93.64,
    "zAsOf": "2026-07-31",
    "zName": "Brunswick, GA"
   },
@@ -904,6 +955,7 @@
    },
    "zhvi": 292860,
    "zori": 1446,
+   "coli": 95.972,
    "zAsOf": "2026-07-31",
    "zName": "Buffalo, NY"
   },
@@ -921,6 +973,7 @@
    },
    "zhvi": 478145,
    "zori": 2131,
+   "coli": 110.415,
    "zAsOf": "2026-07-31",
    "zName": "Burlington, VT"
   },
@@ -938,6 +991,7 @@
    },
    "zhvi": 297197,
    "zori": 1314,
+   "coli": 91.823,
    "zAsOf": "2026-07-31",
    "zName": "Burlington, NC"
   },
@@ -955,6 +1009,7 @@
    },
    "zhvi": 220157,
    "zori": 1136,
+   "coli": 86.308,
    "zAsOf": "2026-07-31",
    "zName": "Canton, OH"
   },
@@ -972,6 +1027,7 @@
    },
    "zhvi": 337352,
    "zori": 1864,
+   "coli": 94.788,
    "zAsOf": "2026-07-31",
    "zName": "Cape Coral, FL"
   },
@@ -989,6 +1045,7 @@
    },
    "zhvi": 226995,
    "zori": 958,
+   "coli": 83.667,
    "zAsOf": "2026-07-31",
    "zName": "Cape Girardeau, MO"
   },
@@ -1006,6 +1063,7 @@
    },
    "zhvi": 498224,
    "zori": 1879,
+   "coli": 107.437,
    "zAsOf": "2026-07-31",
    "zName": "Carson City, NV"
   },
@@ -1023,6 +1081,7 @@
    },
    "zhvi": 315872,
    "zori": 1404,
+   "coli": 92.771,
    "zAsOf": "2026-07-31",
    "zName": "Casper, WY"
   },
@@ -1040,6 +1099,7 @@
    },
    "zhvi": 247058,
    "zori": 1283,
+   "coli": 84.84,
    "zAsOf": "2026-07-31",
    "zName": "Cedar Rapids, IA"
   },
@@ -1057,6 +1117,7 @@
    },
    "zhvi": 293175,
    "zori": 1338,
+   "coli": 94.189,
    "zAsOf": "2026-07-31",
    "zName": "Chambersburg, PA"
   },
@@ -1074,6 +1135,7 @@
    },
    "zhvi": 240904,
    "zori": 1333,
+   "coli": 87.497,
    "zAsOf": "2026-07-31",
    "zName": "Champaign, IL"
   },
@@ -1091,6 +1153,7 @@
    },
    "zhvi": 435645,
    "zori": 2063,
+   "coli": 102.131,
    "zAsOf": "2026-07-31",
    "zName": "Charleston, SC"
   },
@@ -1108,6 +1171,7 @@
    },
    "zhvi": 150171,
    "zori": 1264,
+   "coli": 81.503,
    "zAsOf": "2026-07-31",
    "zName": "Charleston, WV"
   },
@@ -1125,6 +1189,7 @@
    },
    "zhvi": 388736,
    "zori": 1756,
+   "coli": 98.714,
    "zAsOf": "2026-07-31",
    "zName": "Charlotte, NC"
   },
@@ -1142,6 +1207,7 @@
    },
    "zhvi": 472800,
    "zori": 2008,
+   "coli": 105.236,
    "zAsOf": "2026-07-31",
    "zName": "Charlottesville, VA"
   },
@@ -1159,6 +1225,7 @@
    },
    "zhvi": 326041,
    "zori": 1531,
+   "coli": 91.309,
    "zAsOf": "2026-07-31",
    "zName": "Chattanooga, TN"
   },
@@ -1176,6 +1243,7 @@
    },
    "zhvi": 393974,
    "zori": 1528,
+   "coli": 98.571,
    "zAsOf": "2026-07-31",
    "zName": "Cheyenne, WY"
   },
@@ -1193,6 +1261,7 @@
    },
    "zhvi": 360262,
    "zori": 2253,
+   "coli": 99.516,
    "zAsOf": "2026-07-31",
    "zName": "Chicago, IL"
   },
@@ -1210,6 +1279,7 @@
    },
    "zhvi": 401873,
    "zori": 1527,
+   "coli": 109.317,
    "zAsOf": "2026-07-31",
    "zName": "Chico, CA"
   },
@@ -1227,6 +1297,7 @@
    },
    "zhvi": 311116,
    "zori": 1552,
+   "coli": 92.656,
    "zAsOf": "2026-07-31",
    "zName": "Cincinnati, OH"
   },
@@ -1244,6 +1315,7 @@
    },
    "zhvi": 293172,
    "zori": 1362,
+   "coli": 88.811,
    "zAsOf": "2026-07-31",
    "zName": "Clarksville, TN"
   },
@@ -1261,6 +1333,7 @@
    },
    "zhvi": 254473,
    "zori": 1476,
+   "coli": 88.801,
    "zAsOf": "2026-07-31",
    "zName": "Cleveland, OH"
   },
@@ -1278,6 +1351,7 @@
    },
    "zhvi": 313342,
    "zori": 1415,
+   "coli": 90.167,
    "zAsOf": "2026-07-31",
    "zName": "Cleveland, TN"
   },
@@ -1295,6 +1369,7 @@
    },
    "zhvi": 605399,
    "zori": 1829,
+   "coli": 113.467,
    "zAsOf": "2026-07-31",
    "zName": "Coeur d'Alene, ID"
   },
@@ -1312,6 +1387,7 @@
    },
    "zhvi": 310295,
    "zori": 1439,
+   "coli": 90.905,
    "zAsOf": "2026-07-31",
    "zName": "College Station, TX"
   },
@@ -1329,6 +1405,7 @@
    },
    "zhvi": 455359,
    "zori": 1791,
+   "coli": 103.643,
    "zAsOf": "2026-07-31",
    "zName": "Colorado Springs, CO"
   },
@@ -1346,6 +1423,7 @@
    },
    "zhvi": 322991,
    "zori": 1432,
+   "coli": 90.908,
    "zAsOf": "2026-07-31",
    "zName": "Columbia, MO"
   },
@@ -1363,6 +1441,7 @@
    },
    "zhvi": 256240,
    "zori": 1562,
+   "coli": 88.614,
    "zAsOf": "2026-07-31",
    "zName": "Columbia, SC"
   },
@@ -1380,6 +1459,7 @@
    },
    "zhvi": 209704,
    "zori": 1334,
+   "coli": 85.346,
    "zAsOf": "2026-07-31",
    "zName": "Columbus, GA"
   },
@@ -1397,6 +1477,7 @@
    },
    "zhvi": 277086,
    "zori": 1398,
+   "coli": 89.846,
    "zAsOf": "2026-07-31",
    "zName": "Columbus, IN"
   },
@@ -1414,6 +1495,7 @@
    },
    "zhvi": 332765,
    "zori": 1519,
+   "coli": 94.661,
    "zAsOf": "2026-07-31",
    "zName": "Columbus, OH"
   },
@@ -1431,6 +1513,7 @@
    },
    "zhvi": 224780,
    "zori": 1433,
+   "coli": 84.13,
    "zAsOf": "2026-07-31",
    "zName": "Corpus Christi, TX"
   },
@@ -1448,6 +1531,7 @@
    },
    "zhvi": 562325,
    "zori": 1767,
+   "coli": 116.606,
    "zAsOf": "2026-07-31",
    "zName": "Corvallis, OR"
   },
@@ -1465,6 +1549,7 @@
    },
    "zhvi": 442871,
    "zori": 1978,
+   "coli": 102.951,
    "zAsOf": "2026-07-31",
    "zName": "Crestview, FL"
   },
@@ -1482,6 +1567,7 @@
    },
    "zhvi": 364793,
    "zori": 1667,
+   "coli": 99.151,
    "zAsOf": "2026-07-31",
    "zName": "Dallas, TX"
   },
@@ -1499,6 +1585,7 @@
    },
    "zhvi": 248317,
    "zori": 1510,
+   "coli": 88.188,
    "zAsOf": "2026-07-31",
    "zName": "Dalton, GA"
   },
@@ -1516,6 +1603,7 @@
    },
    "zhvi": 376467,
    "zori": 1672,
+   "coli": 96.607,
    "zAsOf": "2026-07-31",
    "zName": "Daphne, AL"
   },
@@ -1533,6 +1621,7 @@
    },
    "zhvi": 198068,
    "zori": 990,
+   "coli": 82.065,
    "zAsOf": "2026-07-31",
    "zName": "Davenport, IA"
   },
@@ -1550,6 +1639,7 @@
    },
    "zhvi": null,
    "zori": 1357,
+   "coli": null,
    "zAsOf": null,
    "zName": null
   },
@@ -1567,6 +1657,7 @@
    },
    "zhvi": 232764,
    "zori": 1142,
+   "coli": 85.914,
    "zAsOf": "2026-07-31",
    "zName": "Decatur, AL"
   },
@@ -1584,6 +1675,7 @@
    },
    "zhvi": 127196,
    "zori": 1003,
+   "coli": 78.985,
    "zAsOf": "2026-07-31",
    "zName": "Decatur, IL"
   },
@@ -1601,6 +1693,7 @@
    },
    "zhvi": 332955,
    "zori": 1783,
+   "coli": 94.521,
    "zAsOf": "2026-07-31",
    "zName": "Deltona, FL"
   },
@@ -1618,6 +1711,7 @@
    },
    "zhvi": 566529,
    "zori": 1930,
+   "coli": 113.538,
    "zAsOf": "2026-07-31",
    "zName": "Denver, CO"
   },
@@ -1635,6 +1729,7 @@
    },
    "zhvi": 295955,
    "zori": 1311,
+   "coli": 88.585,
    "zAsOf": "2026-07-31",
    "zName": "Des Moines, IA"
   },
@@ -1652,6 +1747,7 @@
    },
    "zhvi": 270370,
    "zori": 1531,
+   "coli": 93.717,
    "zAsOf": "2026-07-31",
    "zName": "Detroit, MI"
   },
@@ -1669,6 +1765,7 @@
    },
    "zhvi": 197173,
    "zori": 1263,
+   "coli": 83.189,
    "zAsOf": "2026-07-31",
    "zName": "Dothan, AL"
   },
@@ -1686,6 +1783,7 @@
    },
    "zhvi": 374662,
    "zori": 1742,
+   "coli": 98.592,
    "zAsOf": "2026-07-31",
    "zName": "Dover, DE"
   },
@@ -1703,6 +1801,7 @@
    },
    "zhvi": 281598,
    "zori": 1088,
+   "coli": 87.176,
    "zAsOf": "2026-07-31",
    "zName": "Dubuque, IA"
   },
@@ -1720,6 +1819,7 @@
    },
    "zhvi": 270683,
    "zori": 1351,
+   "coli": 87.043,
    "zAsOf": "2026-07-31",
    "zName": "Duluth, MN"
   },
@@ -1737,6 +1837,7 @@
    },
    "zhvi": 411325,
    "zori": 1660,
+   "coli": 100.436,
    "zAsOf": "2026-07-31",
    "zName": "Durham, NC"
   },
@@ -1754,6 +1855,7 @@
    },
    "zhvi": 222307,
    "zori": 1206,
+   "coli": 84.027,
    "zAsOf": "2026-07-31",
    "zName": "Eagle Pass, TX"
   },
@@ -1771,6 +1873,7 @@
    },
    "zhvi": 327568,
    "zori": 1157,
+   "coli": 94.044,
    "zAsOf": "2026-07-31",
    "zName": "Eau Claire, WI"
   },
@@ -1788,6 +1891,7 @@
    },
    "zhvi": 385963,
    "zori": 1682,
+   "coli": 107.959,
    "zAsOf": "2026-07-31",
    "zName": "El Centro, CA"
   },
@@ -1805,6 +1909,7 @@
    },
    "zhvi": 233302,
    "zori": 1534,
+   "coli": 84.926,
    "zAsOf": "2026-07-31",
    "zName": "El Paso, TX"
   },
@@ -1822,6 +1927,7 @@
    },
    "zhvi": 250243,
    "zori": 1262,
+   "coli": 86.29,
    "zAsOf": "2026-07-31",
    "zName": "Elizabethtown, KY"
   },
@@ -1839,6 +1945,7 @@
    },
    "zhvi": 268109,
    "zori": 1134,
+   "coli": 89.148,
    "zAsOf": "2026-07-31",
    "zName": "Elkhart, IN"
   },
@@ -1856,6 +1963,7 @@
    },
    "zhvi": 166759,
    "zori": 1135,
+   "coli": 86.667,
    "zAsOf": "2026-07-31",
    "zName": "Elmira, NY"
   },
@@ -1873,6 +1981,7 @@
    },
    "zhvi": 142443,
    "zori": 1268,
+   "coli": 76.993,
    "zAsOf": "2026-07-31",
    "zName": "Enid, OK"
   },
@@ -1890,6 +1999,7 @@
    },
    "zhvi": 226767,
    "zori": 1126,
+   "coli": 89.033,
    "zAsOf": "2026-07-31",
    "zName": "Erie, PA"
   },
@@ -1907,6 +2017,7 @@
    },
    "zhvi": 461511,
    "zori": 1761,
+   "coli": 108.415,
    "zAsOf": "2026-07-31",
    "zName": "Eugene, OR"
   },
@@ -1924,6 +2035,7 @@
    },
    "zhvi": 228373,
    "zori": 1120,
+   "coli": 86.187,
    "zAsOf": "2026-07-31",
    "zName": "Evansville, IN"
   },
@@ -1941,6 +2053,7 @@
    },
    "zhvi": 317116,
    "zori": 1827,
+   "coli": 100.852,
    "zAsOf": "2026-07-31",
    "zName": "Fairbanks, AK"
   },
@@ -1958,6 +2071,7 @@
    },
    "zhvi": 330476,
    "zori": 1113,
+   "coli": 90.358,
    "zAsOf": "2026-07-31",
    "zName": "Fargo, ND"
   },
@@ -1975,6 +2089,7 @@
    },
    "zhvi": 276704,
    "zori": 1246,
+   "coli": 89.198,
    "zAsOf": "2026-07-31",
    "zName": "Farmington, NM"
   },
@@ -1992,6 +2107,7 @@
    },
    "zhvi": 368527,
    "zori": 1595,
+   "coli": 93.999,
    "zAsOf": "2026-07-31",
    "zName": "Fayetteville, AR"
   },
@@ -2009,6 +2125,7 @@
    },
    "zhvi": 257053,
    "zori": 1460,
+   "coli": 88.656,
    "zAsOf": "2026-07-31",
    "zName": "Fayetteville, NC"
   },
@@ -2026,6 +2143,7 @@
    },
    "zhvi": 628778,
    "zori": 2218,
+   "coli": 117.796,
    "zAsOf": "2026-07-31",
    "zName": "Flagstaff, AZ"
   },
@@ -2043,6 +2161,7 @@
    },
    "zhvi": 199857,
    "zori": 1060,
+   "coli": 85.045,
    "zAsOf": "2026-07-31",
    "zName": "Flint, MI"
   },
@@ -2060,6 +2179,7 @@
    },
    "zhvi": 219560,
    "zori": 1146,
+   "coli": 85.017,
    "zAsOf": "2026-07-31",
    "zName": "Florence, AL"
   },
@@ -2077,6 +2197,7 @@
    },
    "zhvi": 193768,
    "zori": 1395,
+   "coli": 83.848,
    "zAsOf": "2026-07-31",
    "zName": "Florence, SC"
   },
@@ -2094,6 +2215,7 @@
    },
    "zhvi": 296786,
    "zori": 1177,
+   "coli": 91.74,
    "zAsOf": "2026-07-31",
    "zName": "Fond du Lac, WI"
   },
@@ -2111,6 +2233,7 @@
    },
    "zhvi": 554636,
    "zori": 1956,
+   "coli": 111.028,
    "zAsOf": "2026-07-31",
    "zName": "Fort Collins, CO"
   },
@@ -2128,6 +2251,7 @@
    },
    "zhvi": 204837,
    "zori": 1065,
+   "coli": 81.547,
    "zAsOf": "2026-07-31",
    "zName": "Fort Smith, AR"
   },
@@ -2145,6 +2269,7 @@
    },
    "zhvi": 261006,
    "zori": 1299,
+   "coli": 88.602,
    "zAsOf": "2026-07-31",
    "zName": "Fort Wayne, IN"
   },
@@ -2162,6 +2287,7 @@
    },
    "zhvi": 409811,
    "zori": 2062,
+   "coli": 110.125,
    "zAsOf": "2026-07-31",
    "zName": "Fresno, CA"
   },
@@ -2179,6 +2305,7 @@
    },
    "zhvi": 186704,
    "zori": 1011,
+   "coli": 82.631,
    "zAsOf": "2026-07-31",
    "zName": "Gadsden, AL"
   },
@@ -2196,6 +2323,7 @@
    },
    "zhvi": 304902,
    "zori": 1661,
+   "coli": 92.463,
    "zAsOf": "2026-07-31",
    "zName": "Gainesville, FL"
   },
@@ -2213,6 +2341,7 @@
    },
    "zhvi": 391528,
    "zori": 1655,
+   "coli": 99.065,
    "zAsOf": "2026-07-31",
    "zName": "Gainesville, GA"
   },
@@ -2230,6 +2359,7 @@
    },
    "zhvi": 338842,
    "zori": 1269,
+   "coli": 97.502,
    "zAsOf": "2026-07-31",
    "zName": "Gettysburg, PA"
   },
@@ -2247,6 +2377,7 @@
    },
    "zhvi": 319595,
    "zori": 1464,
+   "coli": 98.407,
    "zAsOf": "2026-07-31",
    "zName": "Glens Falls, NY"
   },
@@ -2264,6 +2395,7 @@
    },
    "zhvi": 184255,
    "zori": 1474,
+   "coli": 83.178,
    "zAsOf": "2026-07-31",
    "zName": "Goldsboro, NC"
   },
@@ -2281,6 +2413,7 @@
    },
    "zhvi": 283186,
    "zori": 1168,
+   "coli": 86.796,
    "zAsOf": "2026-07-31",
    "zName": "Grand Forks, ND"
   },
@@ -2298,6 +2431,7 @@
    },
    "zhvi": 259523,
    "zori": 1296,
+   "coli": 84.952,
    "zAsOf": "2026-07-31",
    "zName": "Grand Island, NE"
   },
@@ -2315,6 +2449,7 @@
    },
    "zhvi": 436437,
    "zori": 1718,
+   "coli": 102.226,
    "zAsOf": "2026-07-31",
    "zName": "Grand Junction, CO"
   },
@@ -2332,6 +2467,7 @@
    },
    "zhvi": 360930,
    "zori": 1628,
+   "coli": 96.871,
    "zAsOf": "2026-07-31",
    "zName": "Grand Rapids, MI"
   },
@@ -2349,6 +2485,7 @@
    },
    "zhvi": 394254,
    "zori": 1621,
+   "coli": 103.443,
    "zAsOf": "2026-07-31",
    "zName": "Grants Pass, OR"
   },
@@ -2366,6 +2503,7 @@
    },
    "zhvi": 344123,
    "zori": 1381,
+   "coli": 93.848,
    "zAsOf": "2026-07-31",
    "zName": "Great Falls, MT"
   },
@@ -2383,6 +2521,7 @@
    },
    "zhvi": 495353,
    "zori": 1739,
+   "coli": 106.543,
    "zAsOf": "2026-07-31",
    "zName": "Greeley, CO"
   },
@@ -2400,6 +2539,7 @@
    },
    "zhvi": 351940,
    "zori": 1134,
+   "coli": 95.795,
    "zAsOf": "2026-07-31",
    "zName": "Green Bay, WI"
   },
@@ -2417,6 +2557,7 @@
    },
    "zhvi": 265237,
    "zori": 1400,
+   "coli": 89.398,
    "zAsOf": "2026-07-31",
    "zName": "Greensboro, NC"
   },
@@ -2434,6 +2575,7 @@
    },
    "zhvi": 315006,
    "zori": 1577,
+   "coli": 93.088,
    "zAsOf": "2026-07-31",
    "zName": "Greenville, SC"
   },
@@ -2451,6 +2593,7 @@
    },
    "zhvi": 245427,
    "zori": 1423,
+   "coli": 87.732,
    "zAsOf": "2026-07-31",
    "zName": "Greenville, NC"
   },
@@ -2468,6 +2611,7 @@
    },
    "zhvi": 223508,
    "zori": 1454,
+   "coli": 84.133,
    "zAsOf": "2026-07-31",
    "zName": "Gulfport, MS"
   },
@@ -2485,6 +2629,7 @@
    },
    "zhvi": 325773,
    "zori": 1619,
+   "coli": 95.035,
    "zAsOf": "2026-07-31",
    "zName": "Hagerstown, MD"
   },
@@ -2502,6 +2647,7 @@
    },
    "zhvi": 225124,
    "zori": 1389,
+   "coli": 82.974,
    "zAsOf": "2026-07-31",
    "zName": "Hammond, LA"
   },
@@ -2519,6 +2665,7 @@
    },
    "zhvi": 367801,
    "zori": 2005,
+   "coli": 106.608,
    "zAsOf": "2026-07-31",
    "zName": "Hanford, CA"
   },
@@ -2536,6 +2683,7 @@
    },
    "zhvi": 312861,
    "zori": 1482,
+   "coli": 95.647,
    "zAsOf": "2026-07-31",
    "zName": "Harrisburg, PA"
   },
@@ -2553,6 +2701,7 @@
    },
    "zhvi": 353959,
    "zori": 1791,
+   "coli": 96.235,
    "zAsOf": "2026-07-31",
    "zName": "Harrisonburg, VA"
   },
@@ -2570,6 +2719,7 @@
    },
    "zhvi": 404943,
    "zori": 2020,
+   "coli": 107.177,
    "zAsOf": "2026-07-31",
    "zName": "Hartford, CT"
   },
@@ -2587,6 +2737,7 @@
    },
    "zhvi": 217753,
    "zori": 1372,
+   "coli": 83.751,
    "zAsOf": "2026-07-31",
    "zName": "Hattiesburg, MS"
   },
@@ -2604,6 +2755,7 @@
    },
    "zhvi": 479977,
    "zori": 1585,
+   "coli": 104.052,
    "zAsOf": "2026-07-31",
    "zName": "Helena, MT"
   },
@@ -2621,6 +2773,7 @@
    },
    "zhvi": 271350,
    "zori": 1593,
+   "coli": 89.737,
    "zAsOf": "2026-07-31",
    "zName": "Hickory, NC"
   },
@@ -2638,6 +2791,7 @@
    },
    "zhvi": 525530,
    "zori": 1974,
+   "coli": 108.896,
    "zAsOf": "2026-07-31",
    "zName": "Hilton Head Island, SC"
   },
@@ -2655,6 +2809,7 @@
    },
    "zhvi": 258184,
    "zori": 1753,
+   "coli": 88.746,
    "zAsOf": "2026-07-31",
    "zName": "Hinesville, GA"
   },
@@ -2672,6 +2827,7 @@
    },
    "zhvi": 272840,
    "zori": 1739,
+   "coli": 89.966,
    "zAsOf": "2026-07-31",
    "zName": "Homosassa Springs, FL"
   },
@@ -2689,6 +2845,7 @@
    },
    "zhvi": 246753,
    "zori": 1300,
+   "coli": 84.736,
    "zAsOf": "2026-07-31",
    "zName": "Hot Springs, AR"
   },
@@ -2706,6 +2863,7 @@
    },
    "zhvi": 185773,
    "zori": 1308,
+   "coli": 80.035,
    "zAsOf": "2026-07-31",
    "zName": "Houma, LA"
   },
@@ -2723,6 +2881,7 @@
    },
    "zhvi": 307772,
    "zori": 1654,
+   "coli": 93.213,
    "zAsOf": "2026-07-31",
    "zName": "Houston, TX"
   },
@@ -2740,6 +2899,7 @@
    },
    "zhvi": 167828,
    "zori": 1111,
+   "coli": 82.323,
    "zAsOf": "2026-07-31",
    "zName": "Huntington, WV"
   },
@@ -2757,6 +2917,7 @@
    },
    "zhvi": 316616,
    "zori": 1385,
+   "coli": 92.157,
    "zAsOf": "2026-07-31",
    "zName": "Huntsville, AL"
   },
@@ -2774,6 +2935,7 @@
    },
    "zhvi": 413737,
    "zori": 1443,
+   "coli": 98.909,
    "zAsOf": "2026-07-31",
    "zName": "Idaho Falls, ID"
   },
@@ -2791,6 +2953,7 @@
    },
    "zhvi": 296033,
    "zori": 1571,
+   "coli": 91.253,
    "zAsOf": "2026-07-31",
    "zName": "Indianapolis, IN"
   },
@@ -2808,6 +2971,7 @@
    },
    "zhvi": 304707,
    "zori": 1366,
+   "coli": 89.157,
    "zAsOf": "2026-07-31",
    "zName": "Iowa City, IA"
   },
@@ -2825,6 +2989,7 @@
    },
    "zhvi": 359656,
    "zori": 1872,
+   "coli": 101.216,
    "zAsOf": "2026-07-31",
    "zName": "Ithaca, NY"
   },
@@ -2842,6 +3007,7 @@
    },
    "zhvi": 229002,
    "zori": 1102,
+   "coli": 87.317,
    "zAsOf": "2026-07-31",
    "zName": "Jackson, MI"
   },
@@ -2859,6 +3025,7 @@
    },
    "zhvi": 213701,
    "zori": 1506,
+   "coli": 83.567,
    "zAsOf": "2026-07-31",
    "zName": "Jackson, MS"
   },
@@ -2876,6 +3043,7 @@
    },
    "zhvi": 207877,
    "zori": 1425,
+   "coli": 82.245,
    "zAsOf": "2026-07-31",
    "zName": "Jackson, TN"
   },
@@ -2893,6 +3061,7 @@
    },
    "zhvi": 353050,
    "zori": 1711,
+   "coli": 96.031,
    "zAsOf": "2026-07-31",
    "zName": "Jacksonville, FL"
   },
@@ -2910,6 +3079,7 @@
    },
    "zhvi": 293695,
    "zori": 1581,
+   "coli": 91.367,
    "zAsOf": "2026-07-31",
    "zName": "Jacksonville, NC"
   },
@@ -2927,6 +3097,7 @@
    },
    "zhvi": 301229,
    "zori": 1242,
+   "coli": 92.002,
    "zAsOf": "2026-07-31",
    "zName": "Janesville, WI"
   },
@@ -2944,6 +3115,7 @@
    },
    "zhvi": 276464,
    "zori": 1097,
+   "coli": 87.355,
    "zAsOf": "2026-07-31",
    "zName": "Jefferson City, MO"
   },
@@ -2961,6 +3133,7 @@
    },
    "zhvi": 284806,
    "zori": 1467,
+   "coli": 87.979,
    "zAsOf": "2026-07-31",
    "zName": "Johnson City, TN"
   },
@@ -2978,6 +3151,7 @@
    },
    "zhvi": 102273,
    "zori": 875,
+   "coli": 79.846,
    "zAsOf": "2026-07-31",
    "zName": "Johnstown, PA"
   },
@@ -2995,6 +3169,7 @@
    },
    "zhvi": 205636,
    "zori": 1373,
+   "coli": 81.705,
    "zAsOf": "2026-07-31",
    "zName": "Jonesboro, AR"
   },
@@ -3012,6 +3187,7 @@
    },
    "zhvi": 226215,
    "zori": 1304,
+   "coli": 83.624,
    "zAsOf": "2026-07-31",
    "zName": "Joplin, MO"
   },
@@ -3029,6 +3205,7 @@
    },
    "zhvi": 994403,
    "zori": 3332,
+   "coli": 159.619,
    "zAsOf": "2026-07-31",
    "zName": "Kahului, HI"
   },
@@ -3046,6 +3223,7 @@
    },
    "zhvi": 281585,
    "zori": 1264,
+   "coli": 91.419,
    "zAsOf": "2026-07-31",
    "zName": "Kalamazoo, MI"
   },
@@ -3063,6 +3241,7 @@
    },
    "zhvi": 228871,
    "zori": 1410,
+   "coli": 86.489,
    "zAsOf": "2026-07-31",
    "zName": "Kankakee, IL"
   },
@@ -3080,6 +3259,7 @@
    },
    "zhvi": 330112,
    "zori": 1546,
+   "coli": 91.854,
    "zAsOf": "2026-07-31",
    "zName": "Kansas City, MO"
   },
@@ -3097,6 +3277,7 @@
    },
    "zhvi": 442889,
    "zori": 1717,
+   "coli": 105.775,
    "zAsOf": "2026-07-31",
    "zName": "Kennewick, WA"
   },
@@ -3114,6 +3295,7 @@
    },
    "zhvi": null,
    "zori": null,
+   "coli": null,
    "zAsOf": null,
    "zName": null
   },
@@ -3131,6 +3313,7 @@
    },
    "zhvi": 251916,
    "zori": 1337,
+   "coli": 86.2,
    "zAsOf": "2026-07-31",
    "zName": "Killeen, TX"
   },
@@ -3148,6 +3331,7 @@
    },
    "zhvi": 246585,
    "zori": 1321,
+   "coli": 85.729,
    "zAsOf": "2026-07-31",
    "zName": "Kingsport, TN"
   },
@@ -3165,6 +3349,7 @@
    },
    "zhvi": 449945,
    "zori": 1995,
+   "coli": 108.212,
    "zAsOf": "2026-07-31",
    "zName": "Kingston, NY"
   },
@@ -3182,6 +3367,7 @@
    },
    "zhvi": null,
    "zori": 2257,
+   "coli": null,
    "zAsOf": null,
    "zName": null
   },
@@ -3199,6 +3385,7 @@
    },
    "zhvi": 367915,
    "zori": 1747,
+   "coli": 94.238,
    "zAsOf": "2026-07-31",
    "zName": "Knoxville, TN"
   },
@@ -3216,6 +3403,7 @@
    },
    "zhvi": 194961,
    "zori": 1014,
+   "coli": 83.623,
    "zAsOf": "2026-07-31",
    "zName": "Kokomo, IN"
   },
@@ -3233,6 +3421,7 @@
    },
    "zhvi": 338463,
    "zori": 1149,
+   "coli": 94.746,
    "zAsOf": "2026-07-31",
    "zName": "La Crosse, WI"
   },
@@ -3250,6 +3439,7 @@
    },
    "zhvi": 287462,
    "zori": 1426,
+   "coli": 90.609,
    "zAsOf": "2026-07-31",
    "zName": "Lafayette, IN"
   },
@@ -3267,6 +3457,7 @@
    },
    "zhvi": 202272,
    "zori": 1364,
+   "coli": 81.271,
    "zAsOf": "2026-07-31",
    "zName": "Lafayette, LA"
   },
@@ -3284,6 +3475,7 @@
    },
    "zhvi": 201282,
    "zori": 1319,
+   "coli": 81.247,
    "zAsOf": "2026-07-31",
    "zName": "Lake Charles, LA"
   },
@@ -3301,6 +3493,7 @@
    },
    "zhvi": 352357,
    "zori": 1549,
+   "coli": 96.462,
    "zAsOf": "2026-07-31",
    "zName": "Lake Havasu City, AZ"
   },
@@ -3318,6 +3511,7 @@
    },
    "zhvi": 298055,
    "zori": 1847,
+   "coli": 91.824,
    "zAsOf": "2026-07-31",
    "zName": "Lakeland, FL"
   },
@@ -3335,6 +3529,7 @@
    },
    "zhvi": 390025,
    "zori": 1558,
+   "coli": 101.386,
    "zAsOf": "2026-07-31",
    "zName": "Lancaster, PA"
   },
@@ -3352,6 +3547,7 @@
    },
    "zhvi": 252339,
    "zori": 1287,
+   "coli": 88.852,
    "zAsOf": "2026-07-31",
    "zName": "Lansing, MI"
   },
@@ -3369,6 +3565,7 @@
    },
    "zhvi": 218953,
    "zori": 1305,
+   "coli": 83.654,
    "zAsOf": "2026-07-31",
    "zName": "Laredo, TX"
   },
@@ -3386,6 +3583,7 @@
    },
    "zhvi": 288909,
    "zori": 1452,
+   "coli": 90.123,
    "zAsOf": "2026-07-31",
    "zName": "Las Cruces, NM"
   },
@@ -3403,6 +3601,7 @@
    },
    "zhvi": 429591,
    "zori": 1747,
+   "coli": 102.066,
    "zAsOf": "2026-07-31",
    "zName": "Las Vegas, NV"
   },
@@ -3420,6 +3619,7 @@
    },
    "zhvi": 343019,
    "zori": 1362,
+   "coli": 92.997,
    "zAsOf": "2026-07-31",
    "zName": "Lawrence, KS"
   },
@@ -3437,6 +3637,7 @@
    },
    "zhvi": 155847,
    "zori": 1129,
+   "coli": 77.87,
    "zAsOf": "2026-07-31",
    "zName": "Lawton, OK"
   },
@@ -3454,6 +3655,7 @@
    },
    "zhvi": 321498,
    "zori": 1412,
+   "coli": 96.334,
    "zAsOf": "2026-07-31",
    "zName": "Lebanon, PA"
   },
@@ -3471,6 +3673,7 @@
    },
    "zhvi": 337574,
    "zori": 1569,
+   "coli": 101.249,
    "zAsOf": "2026-07-31",
    "zName": "Lewiston, ME"
   },
@@ -3488,6 +3691,7 @@
    },
    "zhvi": 379653,
    "zori": 1288,
+   "coli": 96.779,
    "zAsOf": "2026-07-31",
    "zName": "Lewiston, ID"
   },
@@ -3505,6 +3709,7 @@
    },
    "zhvi": 437883,
    "zori": 1919,
+   "coli": 105.641,
    "zAsOf": "2026-07-31",
    "zName": "California, MD"
   },
@@ -3522,6 +3727,7 @@
    },
    "zhvi": 327773,
    "zori": 1541,
+   "coli": 92.135,
    "zAsOf": "2026-07-31",
    "zName": "Lexington, KY"
   },
@@ -3539,6 +3745,7 @@
    },
    "zhvi": 194194,
    "zori": 1190,
+   "coli": 84.242,
    "zAsOf": "2026-07-31",
    "zName": "Lima, OH"
   },
@@ -3556,6 +3763,7 @@
    },
    "zhvi": 304490,
    "zori": 1332,
+   "coli": 88.59,
    "zAsOf": "2026-07-31",
    "zName": "Lincoln, NE"
   },
@@ -3573,6 +3781,7 @@
    },
    "zhvi": 231278,
    "zori": 1270,
+   "coli": 83.605,
    "zAsOf": "2026-07-31",
    "zName": "Little Rock, AR"
   },
@@ -3590,6 +3799,7 @@
    },
    "zhvi": 471050,
    "zori": 1450,
+   "coli": 104.079,
    "zAsOf": "2026-07-31",
    "zName": "Logan, UT"
   },
@@ -3607,6 +3817,7 @@
    },
    "zhvi": 424667,
    "zori": 1392,
+   "coli": 104.874,
    "zAsOf": "2026-07-31",
    "zName": "Longview, WA"
   },
@@ -3624,6 +3835,7 @@
    },
    "zhvi": 221161,
    "zori": 1209,
+   "coli": 84.096,
    "zAsOf": "2026-07-31",
    "zName": "Longview, TX"
   },
@@ -3641,6 +3853,7 @@
    },
    "zhvi": 964934,
    "zori": 2944,
+   "coli": 153.649,
    "zAsOf": "2026-07-31",
    "zName": "Los Angeles, CA"
   },
@@ -3658,6 +3871,7 @@
    },
    "zhvi": 282043,
    "zori": 1357,
+   "coli": 88.682,
    "zAsOf": "2026-07-31",
    "zName": "Louisville, KY"
   },
@@ -3675,6 +3889,7 @@
    },
    "zhvi": 213274,
    "zori": 1383,
+   "coli": 83.434,
    "zAsOf": "2026-07-31",
    "zName": "Lubbock, TX"
   },
@@ -3692,6 +3907,7 @@
    },
    "zhvi": 291659,
    "zori": 1342,
+   "coli": 91.463,
    "zAsOf": "2026-07-31",
    "zName": "Lynchburg, VA"
   },
@@ -3709,6 +3925,7 @@
    },
    "zhvi": 199964,
    "zori": 1256,
+   "coli": 84.612,
    "zAsOf": "2026-07-31",
    "zName": "Macon, GA"
   },
@@ -3726,6 +3943,7 @@
    },
    "zhvi": 452940,
    "zori": 1649,
+   "coli": 103.389,
    "zAsOf": "2026-07-31",
    "zName": "Madison, WI"
   },
@@ -3743,6 +3961,7 @@
    },
    "zhvi": 528959,
    "zori": 2174,
+   "coli": 115.911,
    "zAsOf": "2026-07-31",
    "zName": "Manchester, NH"
   },
@@ -3760,6 +3979,7 @@
    },
    "zhvi": 271423,
    "zori": 1305,
+   "coli": 87.509,
    "zAsOf": "2026-07-31",
    "zName": "Manhattan, KS"
   },
@@ -3777,6 +3997,7 @@
    },
    "zhvi": 311714,
    "zori": 1206,
+   "coli": 90.153,
    "zAsOf": "2026-07-31",
    "zName": "Mankato, MN"
   },
@@ -3794,6 +4015,7 @@
    },
    "zhvi": 200826,
    "zori": 933,
+   "coli": 84.783,
    "zAsOf": "2026-07-31",
    "zName": "Mansfield, OH"
   },
@@ -3811,6 +4033,7 @@
    },
    "zhvi": 191508,
    "zori": 1118,
+   "coli": 81.64,
    "zAsOf": "2026-07-31",
    "zName": "McAllen, TX"
   },
@@ -3828,6 +4051,7 @@
    },
    "zhvi": 441885,
    "zori": 1829,
+   "coli": 106.909,
    "zAsOf": "2026-07-31",
    "zName": "Medford, OR"
   },
@@ -3845,6 +4069,7 @@
    },
    "zhvi": 246065,
    "zori": 1422,
+   "coli": 85.347,
    "zAsOf": "2026-07-31",
    "zName": "Memphis, TN"
   },
@@ -3862,6 +4087,7 @@
    },
    "zhvi": 419764,
    "zori": 2075,
+   "coli": 110.618,
    "zAsOf": "2026-07-31",
    "zName": "Merced, CA"
   },
@@ -3879,6 +4105,7 @@
    },
    "zhvi": 477769,
    "zori": 2677,
+   "coli": 112.039,
    "zAsOf": "2026-07-31",
    "zName": "Miami, FL"
   },
@@ -3896,6 +4123,7 @@
    },
    "zhvi": 262733,
    "zori": 1120,
+   "coli": 88.749,
    "zAsOf": "2026-07-31",
    "zName": "Michigan City, IN"
   },
@@ -3913,6 +4141,7 @@
    },
    "zhvi": 252945,
    "zori": 1397,
+   "coli": 88.869,
    "zAsOf": "2026-07-31",
    "zName": "Midland, MI"
   },
@@ -3930,6 +4159,7 @@
    },
    "zhvi": 332760,
    "zori": 1636,
+   "coli": 92.488,
    "zAsOf": "2026-07-31",
    "zName": "Midland, TX"
   },
@@ -3947,6 +4177,7 @@
    },
    "zhvi": 393208,
    "zori": 1545,
+   "coli": 99.056,
    "zAsOf": "2026-07-31",
    "zName": "Milwaukee, WI"
   },
@@ -3964,6 +4195,7 @@
    },
    "zhvi": 394711,
    "zori": 1725,
+   "coli": 103.523,
    "zAsOf": "2026-07-31",
    "zName": "Minneapolis, MN"
   },
@@ -3981,6 +4213,7 @@
    },
    "zhvi": 272133,
    "zori": 1189,
+   "coli": 85.478,
    "zAsOf": "2026-07-31",
    "zName": "Minot, ND"
   },
@@ -3998,6 +4231,7 @@
    },
    "zhvi": 580178,
    "zori": 1559,
+   "coli": 111.552,
    "zAsOf": "2026-07-31",
    "zName": "Missoula, MT"
   },
@@ -4015,6 +4249,7 @@
    },
    "zhvi": 197652,
    "zori": 1327,
+   "coli": 83.212,
    "zAsOf": "2026-07-31",
    "zName": "Mobile, AL"
   },
@@ -4032,6 +4267,7 @@
    },
    "zhvi": 467989,
    "zori": 2046,
+   "coli": 113.667,
    "zAsOf": "2026-07-31",
    "zName": "Modesto, CA"
   },
@@ -4049,6 +4285,7 @@
    },
    "zhvi": 167253,
    "zori": 1225,
+   "coli": 78.728,
    "zAsOf": "2026-07-31",
    "zName": "Monroe, LA"
   },
@@ -4066,6 +4303,7 @@
    },
    "zhvi": 275037,
    "zori": 1227,
+   "coli": 90.386,
    "zAsOf": "2026-07-31",
    "zName": "Monroe, MI"
   },
@@ -4083,6 +4321,7 @@
    },
    "zhvi": 214925,
    "zori": 1420,
+   "coli": 84.584,
    "zAsOf": "2026-07-31",
    "zName": "Montgomery, AL"
   },
@@ -4100,6 +4339,7 @@
    },
    "zhvi": 228100,
    "zori": 1462,
+   "coli": 87.457,
    "zAsOf": "2026-07-31",
    "zName": "Morgantown, WV"
   },
@@ -4117,6 +4357,7 @@
    },
    "zhvi": 301469,
    "zori": 1532,
+   "coli": 89.283,
    "zAsOf": "2026-07-31",
    "zName": "Morristown, TN"
   },
@@ -4134,6 +4375,7 @@
    },
    "zhvi": 587718,
    "zori": 2208,
+   "coli": 116.931,
    "zAsOf": "2026-07-31",
    "zName": "Mount Vernon, WA"
   },
@@ -4151,6 +4393,7 @@
    },
    "zhvi": 172537,
    "zori": 982,
+   "coli": 81.95,
    "zAsOf": "2026-07-31",
    "zName": "Muncie, IN"
   },
@@ -4168,6 +4411,7 @@
    },
    "zhvi": 259410,
    "zori": 1324,
+   "coli": 89.124,
    "zAsOf": "2026-07-31",
    "zName": "Muskegon, MI"
   },
@@ -4185,6 +4429,7 @@
    },
    "zhvi": 342010,
    "zori": 1714,
+   "coli": 95.05,
    "zAsOf": "2026-07-31",
    "zName": "Myrtle Beach, SC"
   },
@@ -4202,6 +4447,7 @@
    },
    "zhvi": 882040,
    "zori": 2873,
+   "coli": 145.297,
    "zAsOf": "2026-07-31",
    "zName": "Napa, CA"
   },
@@ -4219,6 +4465,7 @@
    },
    "zhvi": 553831,
    "zori": 2620,
+   "coli": 111.193,
    "zAsOf": "2026-07-31",
    "zName": "Naples, FL"
   },
@@ -4236,6 +4483,7 @@
    },
    "zhvi": 455444,
    "zori": 1820,
+   "coli": 100.845,
    "zAsOf": "2026-07-31",
    "zName": "Nashville, TN"
   },
@@ -4253,6 +4501,7 @@
    },
    "zhvi": 411326,
    "zori": 2140,
+   "coli": 107.658,
    "zAsOf": "2026-07-31",
    "zName": "New Haven, CT"
   },
@@ -4270,6 +4519,7 @@
    },
    "zhvi": 263842,
    "zori": 1604,
+   "coli": 85.915,
    "zAsOf": "2026-07-31",
    "zName": "New Orleans, LA"
   },
@@ -4287,6 +4537,7 @@
    },
    "zhvi": 737078,
    "zori": 3627,
+   "coli": 134.873,
    "zAsOf": "2026-07-31",
    "zName": "New York, NY"
   },
@@ -4304,6 +4555,7 @@
    },
    "zhvi": 285493,
    "zori": 1333,
+   "coli": 91.394,
    "zAsOf": "2026-07-31",
    "zName": "Niles, MI"
   },
@@ -4321,6 +4573,7 @@
    },
    "zhvi": 404446,
    "zori": 2127,
+   "coli": 99.969,
    "zAsOf": "2026-07-31",
    "zName": "North Port, FL"
   },
@@ -4338,6 +4591,7 @@
    },
    "zhvi": 434944,
    "zori": 1988,
+   "coli": 109.796,
    "zAsOf": "2026-07-31",
    "zName": "Norwich, CT"
   },
@@ -4355,6 +4609,7 @@
    },
    "zhvi": 272790,
    "zori": 1593,
+   "coli": 89.941,
    "zAsOf": "2026-07-31",
    "zName": "Ocala, FL"
   },
@@ -4372,6 +4627,7 @@
    },
    "zhvi": 255567,
    "zori": 1551,
+   "coli": 86.631,
    "zAsOf": "2026-07-31",
    "zName": "Odessa, TX"
   },
@@ -4389,6 +4645,7 @@
    },
    "zhvi": 516604,
    "zori": 1631,
+   "coli": 107.606,
    "zAsOf": "2026-07-31",
    "zName": "Ogden, UT"
   },
@@ -4406,6 +4663,7 @@
    },
    "zhvi": 246438,
    "zori": 1390,
+   "coli": 84.805,
    "zAsOf": "2026-07-31",
    "zName": "Oklahoma City, OK"
   },
@@ -4423,6 +4681,7 @@
    },
    "zhvi": 532102,
    "zori": 2090,
+   "coli": 112.323,
    "zAsOf": "2026-07-31",
    "zName": "Olympia, WA"
   },
@@ -4440,6 +4699,7 @@
    },
    "zhvi": 310736,
    "zori": 1420,
+   "coli": 89.008,
    "zAsOf": "2026-07-31",
    "zName": "Omaha, NE"
   },
@@ -4457,6 +4717,7 @@
    },
    "zhvi": 386867,
    "zori": 1959,
+   "coli": 98.55,
    "zAsOf": "2026-07-31",
    "zName": "Orlando, FL"
   },
@@ -4474,6 +4735,7 @@
    },
    "zhvi": 307585,
    "zori": 1172,
+   "coli": 92.506,
    "zAsOf": "2026-07-31",
    "zName": "Oshkosh, WI"
   },
@@ -4491,6 +4753,7 @@
    },
    "zhvi": 214939,
    "zori": 1163,
+   "coli": 83.684,
    "zAsOf": "2026-07-31",
    "zName": "Owensboro, KY"
   },
@@ -4508,6 +4771,7 @@
    },
    "zhvi": 883341,
    "zori": 2964,
+   "coli": 145.047,
    "zAsOf": "2026-07-31",
    "zName": "Oxnard, CA"
   },
@@ -4525,6 +4789,7 @@
    },
    "zhvi": 170202,
    "zori": 1098,
+   "coli": 80.423,
    "zAsOf": "2026-07-31",
    "zName": "Paducah, KY"
   },
@@ -4542,6 +4807,7 @@
    },
    "zhvi": 344709,
    "zori": 1914,
+   "coli": 95.455,
    "zAsOf": "2026-07-31",
    "zName": "Palm Bay, FL"
   },
@@ -4559,6 +4825,7 @@
    },
    "zhvi": 344879,
    "zori": 1735,
+   "coli": 95.47,
    "zAsOf": "2026-07-31",
    "zName": "Panama City, FL"
   },
@@ -4576,6 +4843,7 @@
    },
    "zhvi": 170898,
    "zori": 947,
+   "coli": 83.18,
    "zAsOf": "2026-07-31",
    "zName": "Parkersburg, WV"
   },
@@ -4593,6 +4861,7 @@
    },
    "zhvi": 311363,
    "zori": 1761,
+   "coli": 92.981,
    "zAsOf": "2026-07-31",
    "zName": "Pensacola, FL"
   },
@@ -4610,6 +4879,7 @@
    },
    "zhvi": 175814,
    "zori": 1179,
+   "coli": 82.593,
    "zAsOf": "2026-07-31",
    "zName": "Peoria, IL"
   },
@@ -4627,6 +4897,7 @@
    },
    "zhvi": 392329,
    "zori": 1925,
+   "coli": 103.313,
    "zAsOf": "2026-07-31",
    "zName": "Philadelphia, PA"
   },
@@ -4644,6 +4915,7 @@
    },
    "zhvi": 445924,
    "zori": 1727,
+   "coli": 105.241,
    "zAsOf": "2026-07-31",
    "zName": "Phoenix, AZ"
   },
@@ -4661,6 +4933,7 @@
    },
    "zhvi": 416453,
    "zori": 1983,
+   "coli": 100.713,
    "zAsOf": "2026-07-31",
    "zName": "Pinehurst, NC"
   },
@@ -4678,6 +4951,7 @@
    },
    "zhvi": 231708,
    "zori": 1499,
+   "coli": 89.493,
    "zAsOf": "2026-07-31",
    "zName": "Pittsburgh, PA"
   },
@@ -4695,6 +4969,7 @@
    },
    "zhvi": 395329,
    "zori": 1753,
+   "coli": 106.678,
    "zAsOf": "2026-07-31",
    "zName": "Pittsfield, MA"
   },
@@ -4712,6 +4987,7 @@
    },
    "zhvi": 355736,
    "zori": 1086,
+   "coli": 94.548,
    "zAsOf": "2026-07-31",
    "zName": "Pocatello, ID"
   },
@@ -4729,6 +5005,7 @@
    },
    "zhvi": 383699,
    "zori": 2337,
+   "coli": 98.295,
    "zAsOf": "2026-07-31",
    "zName": "Port St. Lucie, FL"
   },
@@ -4746,6 +5023,7 @@
    },
    "zhvi": 546999,
    "zori": 2369,
+   "coli": 117.059,
    "zAsOf": "2026-07-31",
    "zName": "Portland, ME"
   },
@@ -4763,6 +5041,7 @@
    },
    "zhvi": 549241,
    "zori": 1810,
+   "coli": 115.387,
    "zAsOf": "2026-07-31",
    "zName": "Portland, OR"
   },
@@ -4780,6 +5059,7 @@
    },
    "zhvi": null,
    "zori": 1869,
+   "coli": null,
    "zAsOf": null,
    "zName": null
   },
@@ -4797,6 +5077,7 @@
    },
    "zhvi": 529756,
    "zori": 2180,
+   "coli": 116.772,
    "zAsOf": "2026-07-31",
    "zName": "Providence, RI"
   },
@@ -4814,6 +5095,7 @@
    },
    "zhvi": 544867,
    "zori": 1823,
+   "coli": 109.722,
    "zAsOf": "2026-07-31",
    "zName": "Provo, UT"
   },
@@ -4831,6 +5113,7 @@
    },
    "zhvi": 286962,
    "zori": 1390,
+   "coli": 90.825,
    "zAsOf": "2026-07-31",
    "zName": "Pueblo, CO"
   },
@@ -4848,6 +5131,7 @@
    },
    "zhvi": 299372,
    "zori": 1863,
+   "coli": 91.968,
    "zAsOf": "2026-07-31",
    "zName": "Punta Gorda, FL"
   },
@@ -4865,6 +5149,7 @@
    },
    "zhvi": 319383,
    "zori": 1433,
+   "coli": 93.339,
    "zAsOf": "2026-07-31",
    "zName": "Racine, WI"
   },
@@ -4882,6 +5167,7 @@
    },
    "zhvi": 437484,
    "zori": 1683,
+   "coli": 102.374,
    "zAsOf": "2026-07-31",
    "zName": "Raleigh, NC"
   },
@@ -4899,6 +5185,7 @@
    },
    "zhvi": 376376,
    "zori": 1494,
+   "coli": 94.158,
    "zAsOf": "2026-07-31",
    "zName": "Rapid City, SD"
   },
@@ -4916,6 +5203,7 @@
    },
    "zhvi": 315441,
    "zori": 1517,
+   "coli": 95.855,
    "zAsOf": "2026-07-31",
    "zName": "Reading, PA"
   },
@@ -4933,6 +5221,7 @@
    },
    "zhvi": 377853,
    "zori": 1688,
+   "coli": 107.398,
    "zAsOf": "2026-07-31",
    "zName": "Redding, CA"
   },
@@ -4950,6 +5239,7 @@
    },
    "zhvi": 573912,
    "zori": 2030,
+   "coli": 112.815,
    "zAsOf": "2026-07-31",
    "zName": "Reno, NV"
   },
@@ -4967,6 +5257,7 @@
    },
    "zhvi": 397963,
    "zori": 1751,
+   "coli": 99.618,
    "zAsOf": "2026-07-31",
    "zName": "Richmond, VA"
   },
@@ -4984,6 +5275,7 @@
    },
    "zhvi": 586798,
    "zori": 2547,
+   "coli": 121.741,
    "zAsOf": "2026-07-31",
    "zName": "Riverside, CA"
   },
@@ -5001,6 +5293,7 @@
    },
    "zhvi": 303569,
    "zori": 1424,
+   "coli": 92.471,
    "zAsOf": "2026-07-31",
    "zName": "Roanoke, VA"
   },
@@ -5018,6 +5311,7 @@
    },
    "zhvi": 344850,
    "zori": 1668,
+   "coli": 92.683,
    "zAsOf": "2026-07-31",
    "zName": "Rochester, MN"
   },
@@ -5035,6 +5329,7 @@
    },
    "zhvi": 289019,
    "zori": 1557,
+   "coli": 96.042,
    "zAsOf": "2026-07-31",
    "zName": "Rochester, NY"
   },
@@ -5052,6 +5347,7 @@
    },
    "zhvi": 224377,
    "zori": 1258,
+   "coli": 86.146,
    "zAsOf": "2026-07-31",
    "zName": "Rockford, IL"
   },
@@ -5069,6 +5365,7 @@
    },
    "zhvi": 201130,
    "zori": 1286,
+   "coli": 84.498,
    "zAsOf": "2026-07-31",
    "zName": "Rocky Mount, NC"
   },
@@ -5086,6 +5383,7 @@
    },
    "zhvi": 235879,
    "zori": 1312,
+   "coli": 87.439,
    "zAsOf": "2026-07-31",
    "zName": "Rome, GA"
   },
@@ -5103,6 +5401,7 @@
    },
    "zhvi": 581822,
    "zori": 2296,
+   "coli": 122.156,
    "zAsOf": "2026-07-31",
    "zName": "Sacramento, CA"
   },
@@ -5120,6 +5419,7 @@
    },
    "zhvi": 177241,
    "zori": 1134,
+   "coli": 83.222,
    "zAsOf": "2026-07-31",
    "zName": "Saginaw, MI"
   },
@@ -5137,6 +5437,7 @@
    },
    "zhvi": 455386,
    "zori": 1623,
+   "coli": 108.161,
    "zAsOf": "2026-07-31",
    "zName": "Salem, OR"
   },
@@ -5154,6 +5455,7 @@
    },
    "zhvi": 852478,
    "zori": 2834,
+   "coli": 142.839,
    "zAsOf": "2026-07-31",
    "zName": "Salinas, CA"
   },
@@ -5171,6 +5473,7 @@
    },
    "zhvi": 430481,
    "zori": 1972,
+   "coli": 103.48,
    "zAsOf": "2026-07-31",
    "zName": "Salisbury, MD"
   },
@@ -5188,6 +5491,7 @@
    },
    "zhvi": 566207,
    "zori": 1647,
+   "coli": 111.367,
    "zAsOf": "2026-07-31",
    "zName": "Salt Lake City, UT"
   },
@@ -5205,6 +5509,7 @@
    },
    "zhvi": 231274,
    "zori": 1335,
+   "coli": 84.676,
    "zAsOf": "2026-07-31",
    "zName": "San Angelo, TX"
   },
@@ -5222,6 +5527,7 @@
    },
    "zhvi": 279434,
    "zori": 1425,
+   "coli": 88.364,
    "zAsOf": "2026-07-31",
    "zName": "San Antonio, TX"
   },
@@ -5239,6 +5545,7 @@
    },
    "zhvi": 934166,
    "zori": 3008,
+   "coli": 151.37,
    "zAsOf": "2026-07-31",
    "zName": "San Diego, CA"
   },
@@ -5256,6 +5563,7 @@
    },
    "zhvi": 1136810,
    "zori": 3372,
+   "coli": 169.107,
    "zAsOf": "2026-07-31",
    "zName": "San Francisco, CA"
   },
@@ -5273,6 +5581,7 @@
    },
    "zhvi": 1559187,
    "zori": 3782,
+   "coli": 196.363,
    "zAsOf": "2026-07-31",
    "zName": "San Jose, CA"
   },
@@ -5290,6 +5599,7 @@
    },
    "zhvi": 906817,
    "zori": 2882,
+   "coli": 146.325,
    "zAsOf": "2026-07-31",
    "zName": "San Luis Obispo, CA"
   },
@@ -5307,6 +5617,7 @@
    },
    "zhvi": 242265,
    "zori": 1869,
+   "coli": 87.952,
    "zAsOf": "2026-07-31",
    "zName": "Sandusky, OH"
   },
@@ -5324,6 +5635,7 @@
    },
    "zhvi": 1158619,
    "zori": 3539,
+   "coli": 165.782,
    "zAsOf": "2026-07-31",
    "zName": "Santa Cruz, CA"
   },
@@ -5341,6 +5653,7 @@
    },
    "zhvi": 562484,
    "zori": 1883,
+   "coli": 110.632,
    "zAsOf": "2026-07-31",
    "zName": "Santa Fe, NM"
   },
@@ -5358,6 +5671,7 @@
    },
    "zhvi": 1003290,
    "zori": 3258,
+   "coli": 153.79,
    "zAsOf": "2026-07-31",
    "zName": "Santa Maria, CA"
   },
@@ -5375,6 +5689,7 @@
    },
    "zhvi": 791767,
    "zori": 2700,
+   "coli": 138.322,
    "zAsOf": "2026-07-31",
    "zName": "Santa Rosa, CA"
   },
@@ -5392,6 +5707,7 @@
    },
    "zhvi": 345393,
    "zori": 1818,
+   "coli": 95.492,
    "zAsOf": "2026-07-31",
    "zName": "Savannah, GA"
   },
@@ -5409,6 +5725,7 @@
    },
    "zhvi": 230799,
    "zori": 1333,
+   "coli": 89.311,
    "zAsOf": "2026-07-31",
    "zName": "Scranton, PA"
   },
@@ -5426,6 +5743,7 @@
    },
    "zhvi": 740579,
    "zori": 2282,
+   "coli": 130.669,
    "zAsOf": "2026-07-31",
    "zName": "Seattle, WA"
   },
@@ -5443,6 +5761,7 @@
    },
    "zhvi": 366119,
    "zori": 2156,
+   "coli": 96.992,
    "zAsOf": "2026-07-31",
    "zName": "Sebastian, FL"
   },
@@ -5460,6 +5779,7 @@
    },
    "zhvi": 233884,
    "zori": 1513,
+   "coli": 86.973,
    "zAsOf": "2026-07-31",
    "zName": "Sebring, FL"
   },
@@ -5477,6 +5797,7 @@
    },
    "zhvi": 330019,
    "zori": 1147,
+   "coli": 93.904,
    "zAsOf": "2026-07-31",
    "zName": "Sheboygan, WI"
   },
@@ -5494,6 +5815,7 @@
    },
    "zhvi": 288073,
    "zori": 1348,
+   "coli": 89.127,
    "zAsOf": "2026-07-31",
    "zName": "Sherman, TX"
   },
@@ -5511,6 +5833,7 @@
    },
    "zhvi": 185028,
    "zori": 1357,
+   "coli": 80.101,
    "zAsOf": "2026-07-31",
    "zName": "Shreveport, LA"
   },
@@ -5528,6 +5851,7 @@
    },
    "zhvi": 263767,
    "zori": 1323,
+   "coli": 90.094,
    "zAsOf": "2026-07-31",
    "zName": "Sierra Vista, AZ"
   },
@@ -5545,6 +5869,7 @@
    },
    "zhvi": 228374,
    "zori": 1332,
+   "coli": 83.311,
    "zAsOf": "2026-07-31",
    "zName": "Sioux City, IA"
   },
@@ -5562,6 +5887,7 @@
    },
    "zhvi": 344172,
    "zori": 1307,
+   "coli": 91.888,
    "zAsOf": "2026-07-31",
    "zName": "Sioux Falls, SD"
   },
@@ -5579,6 +5905,7 @@
    },
    "zhvi": null,
    "zori": null,
+   "coli": null,
    "zAsOf": null,
    "zName": null
   },
@@ -5596,6 +5923,7 @@
    },
    "zhvi": 242803,
    "zori": 1320,
+   "coli": 87.376,
    "zAsOf": "2026-07-31",
    "zName": "South Bend, IN"
   },
@@ -5613,6 +5941,7 @@
    },
    "zhvi": 278713,
    "zori": 1513,
+   "coli": 90.31,
    "zAsOf": "2026-07-31",
    "zName": "Spartanburg, SC"
   },
@@ -5630,6 +5959,7 @@
    },
    "zhvi": 424976,
    "zori": 1552,
+   "coli": 104.197,
    "zAsOf": "2026-07-31",
    "zName": "Spokane, WA"
   },
@@ -5647,6 +5977,7 @@
    },
    "zhvi": 202440,
    "zori": 1194,
+   "coli": 84.591,
    "zAsOf": "2026-07-31",
    "zName": "Springfield, IL"
   },
@@ -5664,6 +5995,7 @@
    },
    "zhvi": 380012,
    "zori": 1918,
+   "coli": 105.647,
    "zAsOf": "2026-07-31",
    "zName": "Springfield, MA"
   },
@@ -5681,6 +6013,7 @@
    },
    "zhvi": 273356,
    "zori": 1261,
+   "coli": 87.152,
    "zAsOf": "2026-07-31",
    "zName": "Springfield, MO"
   },
@@ -5698,6 +6031,7 @@
    },
    "zhvi": 202847,
    "zori": 1202,
+   "coli": 85.024,
    "zAsOf": "2026-07-31",
    "zName": "Springfield, OH"
   },
@@ -5715,6 +6049,7 @@
    },
    "zhvi": 315022,
    "zori": 1259,
+   "coli": 90.558,
    "zAsOf": "2026-07-31",
    "zName": "St. Cloud, MN"
   },
@@ -5732,6 +6067,7 @@
    },
    "zhvi": 528875,
    "zori": 1878,
+   "coli": 108.426,
    "zAsOf": "2026-07-31",
    "zName": "St. George, UT"
   },
@@ -5749,6 +6085,7 @@
    },
    "zhvi": 216539,
    "zori": 1070,
+   "coli": 83.126,
    "zAsOf": "2026-07-31",
    "zName": "St. Joseph, MO"
   },
@@ -5766,6 +6103,7 @@
    },
    "zhvi": 277434,
    "zori": 1445,
+   "coli": 89.471,
    "zAsOf": "2026-07-31",
    "zName": "St. Louis, MO"
   },
@@ -5783,6 +6121,7 @@
    },
    "zhvi": 357220,
    "zori": 1796,
+   "coli": 99.125,
    "zAsOf": "2026-07-31",
    "zName": "State College, PA"
   },
@@ -5800,6 +6139,7 @@
    },
    "zhvi": 337653,
    "zori": 1534,
+   "coli": 95.1,
    "zAsOf": "2026-07-31",
    "zName": "Staunton, VA"
   },
@@ -5817,6 +6157,7 @@
    },
    "zhvi": 527766,
    "zori": 2467,
+   "coli": 118.752,
    "zAsOf": "2026-07-31",
    "zName": "Stockton, CA"
   },
@@ -5834,6 +6175,7 @@
    },
    "zhvi": 201028,
    "zori": 1516,
+   "coli": 84.354,
    "zAsOf": "2026-07-31",
    "zName": "Sumter, SC"
   },
@@ -5851,6 +6193,7 @@
    },
    "zhvi": 272560,
    "zori": 1613,
+   "coli": 94.82,
    "zAsOf": "2026-07-31",
    "zName": "Syracuse, NY"
   },
@@ -5868,6 +6211,7 @@
    },
    "zhvi": 285739,
    "zori": 1482,
+   "coli": 90.952,
    "zAsOf": "2026-07-31",
    "zName": "Tallahassee, FL"
   },
@@ -5885,6 +6229,7 @@
    },
    "zhvi": 361634,
    "zori": 2013,
+   "coli": 96.096,
    "zAsOf": "2026-07-31",
    "zName": "Tampa, FL"
   },
@@ -5902,6 +6247,7 @@
    },
    "zhvi": 169353,
    "zori": 1001,
+   "coli": 81.722,
    "zAsOf": "2026-07-31",
    "zName": "Terre Haute, IN"
   },
@@ -5919,6 +6265,7 @@
    },
    "zhvi": 184784,
    "zori": 1269,
+   "coli": 80.801,
    "zAsOf": "2026-07-31",
    "zName": "Texarkana, TX"
   },
@@ -5936,6 +6283,7 @@
    },
    "zhvi": 205580,
    "zori": 1294,
+   "coli": 85.146,
    "zAsOf": "2026-07-31",
    "zName": "Toledo, OH"
   },
@@ -5953,6 +6301,7 @@
    },
    "zhvi": 220299,
    "zori": 1288,
+   "coli": 83.71,
    "zAsOf": "2026-07-31",
    "zName": "Topeka, KS"
   },
@@ -5970,6 +6319,7 @@
    },
    "zhvi": 425177,
    "zori": 1896,
+   "coli": 101.578,
    "zAsOf": "2026-07-31",
    "zName": "Traverse City, MI"
   },
@@ -5987,6 +6337,7 @@
    },
    "zhvi": 450991,
    "zori": 2606,
+   "coli": 106.321,
    "zAsOf": "2026-07-31",
    "zName": "Trenton, NJ"
   },
@@ -6004,6 +6355,7 @@
    },
    "zhvi": 340855,
    "zori": 1483,
+   "coli": 95.672,
    "zAsOf": "2026-07-31",
    "zName": "Tucson, AZ"
   },
@@ -6021,6 +6373,7 @@
    },
    "zhvi": 254207,
    "zori": 1373,
+   "coli": 85.37,
    "zAsOf": "2026-07-31",
    "zName": "Tulsa, OK"
   },
@@ -6038,6 +6391,7 @@
    },
    "zhvi": 223921,
    "zori": 1466,
+   "coli": 85.213,
    "zAsOf": "2026-07-31",
    "zName": "Tuscaloosa, AL"
   },
@@ -6055,6 +6409,7 @@
    },
    "zhvi": 388787,
    "zori": 1594,
+   "coli": 97.065,
    "zAsOf": "2026-07-31",
    "zName": "Twin Falls, ID"
   },
@@ -6072,6 +6427,7 @@
    },
    "zhvi": 271328,
    "zori": 1422,
+   "coli": 87.824,
    "zAsOf": "2026-07-31",
    "zName": "Tyler, TX"
   },
@@ -6089,6 +6445,7 @@
    },
    "zhvi": 854584,
    "zori": 3004,
+   "coli": 148.756,
    "zAsOf": "2026-07-31",
    "zName": "Urban Honolulu, HI"
   },
@@ -6106,6 +6463,7 @@
    },
    "zhvi": 234055,
    "zori": 1429,
+   "coli": 91.772,
    "zAsOf": "2026-07-31",
    "zName": "Utica, NY"
   },
@@ -6123,6 +6481,7 @@
    },
    "zhvi": 226008,
    "zori": 1382,
+   "coli": 86.413,
    "zAsOf": "2026-07-31",
    "zName": "Valdosta, GA"
   },
@@ -6140,6 +6499,7 @@
    },
    "zhvi": 577331,
    "zori": 2437,
+   "coli": 122.175,
    "zAsOf": "2026-07-31",
    "zName": "Vallejo, CA"
   },
@@ -6157,6 +6517,7 @@
    },
    "zhvi": 224645,
    "zori": 1189,
+   "coli": 84.533,
    "zAsOf": "2026-07-31",
    "zName": "Victoria, TX"
   },
@@ -6174,6 +6535,7 @@
    },
    "zhvi": 279824,
    "zori": 1718,
+   "coli": 93.026,
    "zAsOf": "2026-07-31",
    "zName": "Vineland, NJ"
   },
@@ -6191,6 +6553,7 @@
    },
    "zhvi": 375665,
    "zori": 1877,
+   "coli": 97.965,
    "zAsOf": "2026-07-31",
    "zName": "Virginia Beach, VA"
   },
@@ -6208,6 +6571,7 @@
    },
    "zhvi": 365398,
    "zori": 1784,
+   "coli": 106.336,
    "zAsOf": "2026-07-31",
    "zName": "Visalia, CA"
   },
@@ -6225,6 +6589,7 @@
    },
    "zhvi": 255418,
    "zori": 1438,
+   "coli": 86.438,
    "zAsOf": "2026-07-31",
    "zName": "Waco, TX"
   },
@@ -6242,6 +6607,7 @@
    },
    "zhvi": 420341,
    "zori": 1509,
+   "coli": 104.148,
    "zAsOf": "2026-07-31",
    "zName": "Walla Walla, WA"
   },
@@ -6259,6 +6625,7 @@
    },
    "zhvi": 255173,
    "zori": 1539,
+   "coli": 88.644,
    "zAsOf": "2026-07-31",
    "zName": "Warner Robins, GA"
   },
@@ -6276,6 +6643,7 @@
    },
    "zhvi": 579812,
    "zori": 2456,
+   "coli": 118.398,
    "zAsOf": "2026-07-31",
    "zName": "Washington, DC"
   },
@@ -6293,6 +6661,7 @@
    },
    "zhvi": null,
    "zori": null,
+   "coli": null,
    "zAsOf": null,
    "zName": null
   },
@@ -6310,6 +6679,7 @@
    },
    "zhvi": 201600,
    "zori": 1006,
+   "coli": 81.381,
    "zAsOf": "2026-07-31",
    "zName": "Waterloo, IA"
   },
@@ -6327,6 +6697,7 @@
    },
    "zhvi": 235529,
    "zori": 1504,
+   "coli": 91.91,
    "zAsOf": "2026-07-31",
    "zName": "Watertown, NY"
   },
@@ -6344,6 +6715,7 @@
    },
    "zhvi": 277316,
    "zori": 1010,
+   "coli": 90.163,
    "zAsOf": "2026-07-31",
    "zName": "Wausau, WI"
   },
@@ -6361,6 +6733,7 @@
    },
    "zhvi": 133580,
    "zori": 777,
+   "coli": 80.553,
    "zAsOf": "2026-07-31",
    "zName": "Weirton, WV"
   },
@@ -6378,6 +6751,7 @@
    },
    "zhvi": 528302,
    "zori": 1811,
+   "coli": 112.894,
    "zAsOf": "2026-07-31",
    "zName": "Wenatchee, WA"
   },
@@ -6395,6 +6769,7 @@
    },
    "zhvi": 143257,
    "zori": 895,
+   "coli": 81.276,
    "zAsOf": "2026-07-31",
    "zName": "Wheeling, WV"
   },
@@ -6412,6 +6787,7 @@
    },
    "zhvi": 178592,
    "zori": 1295,
+   "coli": 80.947,
    "zAsOf": "2026-07-31",
    "zName": "Wichita Falls, TX"
   },
@@ -6429,6 +6805,7 @@
    },
    "zhvi": 226045,
    "zori": 1214,
+   "coli": 84.097,
    "zAsOf": "2026-07-31",
    "zName": "Wichita, KS"
   },
@@ -6446,6 +6823,7 @@
    },
    "zhvi": 387864,
    "zori": 1732,
+   "coli": 98.799,
    "zAsOf": "2026-07-31",
    "zName": "The Villages, FL"
   },
@@ -6463,6 +6841,7 @@
    },
    "zhvi": 238628,
    "zori": 1085,
+   "coli": 89.99,
    "zAsOf": "2026-07-31",
    "zName": "Williamsport, PA"
   },
@@ -6480,6 +6859,7 @@
    },
    "zhvi": 448165,
    "zori": 1726,
+   "coli": 103.077,
    "zAsOf": "2026-07-31",
    "zName": "Wilmington, NC"
   },
@@ -6497,6 +6877,7 @@
    },
    "zhvi": 389180,
    "zori": 1900,
+   "coli": 99.055,
    "zAsOf": "2026-07-31",
    "zName": "Winchester, VA"
   },
@@ -6514,6 +6895,7 @@
    },
    "zhvi": 282311,
    "zori": 1557,
+   "coli": 90.623,
    "zAsOf": "2026-07-31",
    "zName": "Winston, NC"
   },
@@ -6531,6 +6913,7 @@
    },
    "zhvi": 485789,
    "zori": 2142,
+   "coli": 113.642,
    "zAsOf": "2026-07-31",
    "zName": "Worcester, MA"
   },
@@ -6548,6 +6931,7 @@
    },
    "zhvi": 358231,
    "zori": 1421,
+   "coli": 99.233,
    "zAsOf": "2026-07-31",
    "zName": "Yakima, WA"
   },
@@ -6565,6 +6949,7 @@
    },
    "zhvi": 312066,
    "zori": 1410,
+   "coli": 95.484,
    "zAsOf": "2026-07-31",
    "zName": "York, PA"
   },
@@ -6582,6 +6967,7 @@
    },
    "zhvi": 175260,
    "zori": 1037,
+   "coli": 82.86,
    "zAsOf": "2026-07-31",
    "zName": "Youngstown, OH"
   },
@@ -6599,6 +6985,7 @@
    },
    "zhvi": 433083,
    "zori": 2014,
+   "coli": 111.857,
    "zAsOf": "2026-07-31",
    "zName": "Yuba City, CA"
   },
@@ -6616,6 +7003,7 @@
    },
    "zhvi": 279844,
    "zori": 1493,
+   "coli": 90.91,
    "zAsOf": "2026-07-31",
    "zName": "Yuma, AZ"
   },
@@ -6631,8 +7019,9 @@
     "utilities": 84.643,
     "other": 96.711
    },
-   "zhvi": null,
+   "zhvi": 241009,
    "zori": null,
+   "coli": 86.533,
    "zAsOf": null,
    "zName": null
   },
@@ -6648,8 +7037,9 @@
     "utilities": 119.021,
     "other": 102.208
    },
-   "zhvi": null,
+   "zhvi": 402190,
    "zori": null,
+   "coli": 106.514,
    "zAsOf": null,
    "zName": null
   },
@@ -6665,8 +7055,9 @@
     "utilities": 92.317,
     "other": 102.808
    },
-   "zhvi": null,
+   "zhvi": 421381,
    "zori": null,
+   "coli": 102.92,
    "zAsOf": null,
    "zName": null
   },
@@ -6682,8 +7073,9 @@
     "utilities": 74.731,
     "other": 95.312
    },
-   "zhvi": null,
+   "zhvi": 225822,
    "zori": null,
+   "coli": 83.215,
    "zAsOf": null,
    "zName": null
   },
@@ -6699,8 +7091,9 @@
     "utilities": 158.899,
     "other": 102.591
    },
-   "zhvi": null,
+   "zhvi": 773735,
    "zori": null,
+   "coli": 138.466,
    "zAsOf": null,
    "zName": null
   },
@@ -6716,8 +7109,9 @@
     "utilities": 84.971,
     "other": 99.613
    },
-   "zhvi": null,
+   "zhvi": 538932,
    "zori": null,
+   "coli": 110.694,
    "zAsOf": null,
    "zName": null
   },
@@ -6733,8 +7127,9 @@
     "utilities": 146.495,
     "other": 102.658
    },
-   "zhvi": null,
+   "zhvi": 453319,
    "zori": null,
+   "coli": 110.983,
    "zAsOf": null,
    "zName": null
   },
@@ -6750,8 +7145,9 @@
     "utilities": 103.81,
     "other": 101.235
    },
-   "zhvi": null,
+   "zhvi": 410192,
    "zori": null,
+   "coli": 102.786,
    "zAsOf": null,
    "zName": null
   },
@@ -6767,8 +7163,9 @@
     "utilities": 112.821,
     "other": 102.964
    },
-   "zhvi": null,
+   "zhvi": 577041,
    "zori": null,
+   "coli": 119.429,
    "zAsOf": null,
    "zName": null
   },
@@ -6784,8 +7181,9 @@
     "utilities": 90.074,
     "other": 101.324
    },
-   "zhvi": null,
+   "zhvi": 378167,
    "zori": null,
+   "coli": 99.547,
    "zAsOf": null,
    "zName": null
   },
@@ -6801,8 +7199,9 @@
     "utilities": 92.814,
     "other": 97.343
    },
-   "zhvi": null,
+   "zhvi": 334119,
    "zori": null,
+   "coli": 95.201,
    "zAsOf": null,
    "zName": null
   },
@@ -6818,8 +7217,9 @@
     "utilities": 190.178,
     "other": 102.898
    },
-   "zhvi": null,
+   "zhvi": 833877,
    "zori": null,
+   "coli": 147.476,
    "zAsOf": null,
    "zName": null
   },
@@ -6835,8 +7235,9 @@
     "utilities": 70.444,
     "other": 99.015
    },
-   "zhvi": null,
+   "zhvi": 481825,
    "zori": null,
+   "coli": 104.167,
    "zAsOf": null,
    "zName": null
   },
@@ -6852,8 +7253,9 @@
     "utilities": 84.952,
     "other": 100.156
    },
-   "zhvi": null,
+   "zhvi": 299900,
    "zori": null,
+   "coli": 94.129,
    "zAsOf": null,
    "zName": null
   },
@@ -6869,8 +7271,9 @@
     "utilities": 85.545,
     "other": 99.145
    },
-   "zhvi": null,
+   "zhvi": 260808,
    "zori": null,
+   "coli": 88.813,
    "zAsOf": null,
    "zName": null
   },
@@ -6886,8 +7289,9 @@
     "utilities": 83.274,
     "other": 92.927
    },
-   "zhvi": null,
+   "zhvi": 240435,
    "zori": null,
+   "coli": 84.273,
    "zAsOf": null,
    "zName": null
   },
@@ -6903,8 +7307,9 @@
     "utilities": 88.438,
     "other": 93.816
    },
-   "zhvi": null,
+   "zhvi": 250918,
    "zori": null,
+   "coli": 85.97,
    "zAsOf": null,
    "zName": null
   },
@@ -6920,8 +7325,9 @@
     "utilities": 75.313,
     "other": 97.25
    },
-   "zhvi": null,
+   "zhvi": 234510,
    "zori": null,
+   "coli": 85.24,
    "zAsOf": null,
    "zName": null
   },
@@ -6937,8 +7343,9 @@
     "utilities": 71.463,
     "other": 95.706
    },
-   "zhvi": null,
+   "zhvi": 217092,
    "zori": null,
+   "coli": 82.415,
    "zAsOf": null,
    "zName": null
   },
@@ -6954,8 +7361,9 @@
     "utilities": 135.189,
     "other": 103.191
    },
-   "zhvi": null,
+   "zhvi": 421966,
    "zori": null,
+   "coli": 107.69,
    "zAsOf": null,
    "zName": null
   },
@@ -6971,8 +7379,9 @@
     "utilities": 110.86,
     "other": 101.596
    },
-   "zhvi": null,
+   "zhvi": 433112,
    "zori": null,
+   "coli": 106.895,
    "zAsOf": null,
    "zName": null
   },
@@ -6988,8 +7397,9 @@
     "utilities": 152.07,
     "other": 102.852
    },
-   "zhvi": null,
+   "zhvi": 669053,
    "zori": null,
+   "coli": 128.225,
    "zAsOf": null,
    "zName": null
   },
@@ -7005,8 +7415,9 @@
     "utilities": 100.15,
     "other": 100.933
    },
-   "zhvi": null,
+   "zhvi": 269576,
    "zori": null,
+   "coli": 91.677,
    "zAsOf": null,
    "zName": null
   },
@@ -7022,8 +7433,9 @@
     "utilities": 90.836,
     "other": 100.213
    },
-   "zhvi": null,
+   "zhvi": 356066,
    "zori": null,
+   "coli": 98.139,
    "zAsOf": null,
    "zName": null
   },
@@ -7039,8 +7451,9 @@
     "utilities": 78.415,
     "other": 96.09
    },
-   "zhvi": null,
+   "zhvi": 196333,
    "zori": null,
+   "coli": 82.285,
    "zAsOf": null,
    "zName": null
   },
@@ -7056,8 +7469,9 @@
     "utilities": 79.406,
     "other": 95.169
    },
-   "zhvi": null,
+   "zhvi": 268420,
    "zori": null,
+   "coli": 87.487,
    "zAsOf": null,
    "zName": null
   },
@@ -7073,8 +7487,9 @@
     "utilities": 72.254,
     "other": 98.715
    },
-   "zhvi": null,
+   "zhvi": 475191,
    "zori": null,
+   "coli": 103.653,
    "zAsOf": null,
    "zName": null
   },
@@ -7090,8 +7505,9 @@
     "utilities": 75.604,
     "other": 92.98
    },
-   "zhvi": null,
+   "zhvi": 282767,
    "zori": null,
+   "coli": 86.836,
    "zAsOf": null,
    "zName": null
   },
@@ -7107,8 +7523,9 @@
     "utilities": 90.51,
     "other": 98.744
    },
-   "zhvi": null,
+   "zhvi": 447473,
    "zori": null,
+   "coli": 103.401,
    "zAsOf": null,
    "zName": null
   },
@@ -7124,8 +7541,9 @@
     "utilities": 133.663,
     "other": 103.879
    },
-   "zhvi": null,
+   "zhvi": 521177,
    "zori": null,
+   "coli": 115.628,
    "zAsOf": null,
    "zName": null
   },
@@ -7141,8 +7559,9 @@
     "utilities": 114.187,
     "other": 103.529
    },
-   "zhvi": null,
+   "zhvi": 584072,
    "zori": null,
+   "coli": 120.443,
    "zAsOf": null,
    "zName": null
   },
@@ -7158,8 +7577,9 @@
     "utilities": 77.895,
     "other": 98.54
    },
-   "zhvi": null,
+   "zhvi": 320106,
    "zori": null,
+   "coli": 92.473,
    "zAsOf": null,
    "zName": null
   },
@@ -7175,8 +7595,9 @@
     "utilities": 134.37,
     "other": 104.067
    },
-   "zhvi": null,
+   "zhvi": 527312,
    "zori": null,
+   "coli": 118.361,
    "zAsOf": null,
    "zName": null
   },
@@ -7192,8 +7613,9 @@
     "utilities": 88.619,
     "other": 98.186
    },
-   "zhvi": null,
+   "zhvi": 338359,
    "zori": null,
+   "coli": 94.868,
    "zAsOf": null,
    "zName": null
   },
@@ -7209,8 +7631,9 @@
     "utilities": 73.669,
     "other": 91.158
    },
-   "zhvi": null,
+   "zhvi": 293741,
    "zori": null,
+   "coli": 87.181,
    "zAsOf": null,
    "zName": null
   },
@@ -7226,8 +7649,9 @@
     "utilities": 95.823,
     "other": 98.947
    },
-   "zhvi": null,
+   "zhvi": 249941,
    "zori": null,
+   "coli": 88.459,
    "zAsOf": null,
    "zName": null
   },
@@ -7243,8 +7667,9 @@
     "utilities": 73.882,
     "other": 95.458
    },
-   "zhvi": null,
+   "zhvi": 223612,
    "zori": null,
+   "coli": 83.066,
    "zAsOf": null,
    "zName": null
   },
@@ -7260,8 +7685,9 @@
     "utilities": 107.046,
     "other": 100.298
    },
-   "zhvi": null,
+   "zhvi": 502156,
    "zori": null,
+   "coli": 111.915,
    "zAsOf": null,
    "zName": null
   },
@@ -7277,8 +7703,9 @@
     "utilities": 109.321,
     "other": 99.762
    },
-   "zhvi": null,
+   "zhvi": 290552,
    "zori": null,
+   "coli": 94.528,
    "zAsOf": null,
    "zName": null
   },
@@ -7294,8 +7721,9 @@
     "utilities": 146.653,
     "other": 102.84
    },
-   "zhvi": null,
+   "zhvi": 515289,
    "zori": null,
+   "coli": 115.698,
    "zAsOf": null,
    "zName": null
   },
@@ -7311,8 +7739,9 @@
     "utilities": 88.303,
     "other": 98.284
    },
-   "zhvi": null,
+   "zhvi": 307777,
    "zori": null,
+   "coli": 92.499,
    "zAsOf": null,
    "zName": null
   },
@@ -7328,8 +7757,9 @@
     "utilities": 79.651,
     "other": 91.899
    },
-   "zhvi": null,
+   "zhvi": 324891,
    "zori": null,
+   "coli": 90.331,
    "zAsOf": null,
    "zName": null
   },
@@ -7345,8 +7775,9 @@
     "utilities": 72.137,
     "other": 95.142
    },
-   "zhvi": null,
+   "zhvi": 336508,
    "zori": null,
+   "coli": 91.896,
    "zAsOf": null,
    "zName": null
   },
@@ -7362,8 +7793,9 @@
     "utilities": 87.512,
     "other": 97.081
    },
-   "zhvi": null,
+   "zhvi": 301806,
    "zori": null,
+   "coli": 91.947,
    "zAsOf": null,
    "zName": null
   },
@@ -7379,8 +7811,9 @@
     "utilities": 78.739,
     "other": 98.959
    },
-   "zhvi": null,
+   "zhvi": 539949,
    "zori": null,
+   "coli": 109.362,
    "zAsOf": null,
    "zName": null
   },
@@ -7396,8 +7829,9 @@
     "utilities": 125.833,
     "other": 101.586
    },
-   "zhvi": null,
+   "zhvi": 405980,
    "zori": null,
+   "coli": 105.001,
    "zAsOf": null,
    "zName": null
   },
@@ -7413,8 +7847,9 @@
     "utilities": 92.185,
     "other": 100.233
    },
-   "zhvi": null,
+   "zhvi": 418375,
    "zori": null,
+   "coli": 102.938,
    "zAsOf": null,
    "zName": null
   },
@@ -7430,8 +7865,9 @@
     "utilities": 92.86,
     "other": 103.873
    },
-   "zhvi": null,
+   "zhvi": 601545,
    "zori": null,
+   "coli": 119.168,
    "zAsOf": null,
    "zName": null
   },
@@ -7447,8 +7883,9 @@
     "utilities": 92.242,
     "other": 99.94
    },
-   "zhvi": null,
+   "zhvi": 178702,
    "zori": null,
+   "coli": 83.822,
    "zAsOf": null,
    "zName": null
   },
@@ -7464,8 +7901,9 @@
     "utilities": 89.906,
     "other": 99.501
    },
-   "zhvi": null,
+   "zhvi": 343798,
    "zori": null,
+   "coli": 95.331,
    "zAsOf": null,
    "zName": null
   },
@@ -7481,8 +7919,9 @@
     "utilities": 78.422,
     "other": 100.428
    },
-   "zhvi": null,
+   "zhvi": 371685,
    "zori": null,
+   "coli": 96.935,
    "zAsOf": null,
    "zName": null
   }
