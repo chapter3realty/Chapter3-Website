@@ -698,6 +698,18 @@ const FIGURATIVE = [
   "the numbers speak", "at the end of the day", "when push comes to shove",
   "the bottom line is", "a stone's throw", "worth its weight",
 ];
+
+/* Filler and teaser sentences the owner deleted on review (2026-08-22): lines
+ * that promise, editorialize or state the obvious instead of giving the fact.
+ * "It repeats every year", "prices move weekly", a header ending "and one of
+ * them is new", "nobody tells them until they file". Each entry shipped once.
+ * Checked against the corpus before adding: no other page contains any of
+ * them, so a hit is the defect and not a coincidence. */
+const FILLER = [
+  "repeats every year", "prices move weekly", "one of them is new",
+  "go against you", "the single largest number", "written as though",
+  "all upside", "nobody tells them",
+];
 /* Industry jargon. Owner instruction, 2026-08-20: "never use an industry term
  * ever in an article, hard code that". He caught "listing" being used where
  * "house" was meant. A buyer does not say listing, comp, DOM, or SFR; they say
@@ -1224,6 +1236,7 @@ function audit() {
     for (const p of BANNED_PHRASES) if (low.includes(p)) W(`off-brand phrase: "${p}"`);
     for (const p of FAIR_HOUSING) if (low.includes(p)) E(`fair-housing risk phrase: "${p}"`);
     for (const p of FIGURATIVE) if (low.includes(p)) E(`figurative language: "${p}" - say it literally`);
+    for (const p of FILLER) if (low.includes(p)) E(`filler line: "${p}" - state the fact or delete the sentence`);
     for (const p of SELF_REFERENTIAL) if (low.includes(p)) E(`writes about our own page or other websites: "${p}" - the buyer only needs the fact`);
     /* Scoped to <main>. `prose` is NOT limited to the article: the nav says
      * "listings" and a shared script mentions "the subject property", so
