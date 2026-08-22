@@ -62,6 +62,36 @@ for the licence terms on all five candidates).
 Seven places have no Zillow home value and therefore no `coli`. The page
 falls back to the BEA all-items index for those and says so.
 
+## The city name index
+
+`cities.json` and `chapter3realty/assets/cities.js` map 12,097 town names to
+the metro the calculator prices. Built by `node build.js citydata` from three
+public domain Census files: the 2020 place file, the July 2023 CBSA
+delineation, and the Vintage 2024 population estimates.
+
+It exists because the picker used to search metro titles only. "Plano",
+"Scottsdale", "Bethesda" and "Boca Raton" appear in no metro title, so those
+buyers got no result at all. Worse, "Conway" returned Little Rock, when Conway
+is in our own metro.
+
+Three things it has to get right, each of which was wrong on the first build:
+
+- The county list in the place file is separated by `~~~`, not commas.
+  Splitting on commas drops every city in two counties, which is most large
+  suburbs. Plano, Frisco and Cary all disappeared.
+- A city in two counties must not take the first one listed. Cary sits in
+  Chatham and Wake, and the first lands it in Durham instead of Raleigh.
+- Connecticut replaced counties with planning regions in 2022. The delineation
+  file uses the new regions, the place file still uses the old counties, and
+  there is no newer place file. CT is bridged by hand in `build-cities.js`.
+
+Census designated places are kept at any size because the population estimates
+program does not cover them, so every one would score zero and be cut. That
+includes Bethesda, Arlington, Silver Spring, Metairie and The Villages.
+
+The file is 282KB, so the page fetches it only when the cursor lands in the
+city box. The metro search works without it.
+
 ## Refreshing
 
 `node build.js coldata` rebuilds both indexes and the browser asset from the

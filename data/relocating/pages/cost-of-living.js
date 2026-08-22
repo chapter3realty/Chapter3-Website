@@ -107,6 +107,8 @@ const CALC_HTML = `
 .colx-list{display:none;position:absolute;left:0;right:0;top:100%;z-index:40;background:var(--white);border:1px solid var(--rule);border-top:none;border-radius:0 0 4px 4px;max-height:260px;overflow-y:auto;box-shadow:0 8px 28px rgba(28,32,40,.08)}
 .colx-opt{padding:.58rem .8rem;font-family:var(--sans);font-size:.88rem;color:var(--navy);cursor:pointer}
 .colx-opt[aria-selected="true"],.colx-opt:hover{background:rgba(196,120,58,.09)}
+.colx-opt-a{display:block}
+.colx-opt-b{display:block;font-size:.74rem;color:var(--muted);margin-top:.08rem}
 
 .colx-answer{padding:1.9rem 0 1.9rem 2.5rem;display:flex;flex-direction:column;justify-content:center}
 .colx-lead{font-family:var(--sans);font-size:.92rem;color:var(--muted);margin:0 0 .6rem;max-width:34ch;line-height:1.55}
@@ -197,7 +199,11 @@ function colCalc(){}
   function money2(n){return '$'+n.toFixed(2);}
   function money100(n){return '$'+(Math.round(n/100)*100).toLocaleString('en-US');}
   function readIncome(){var v=parseFloat((inc.value||'').replace(/[^0-9.]/g,''));return isFinite(v)&&v>0?v:0;}
-  function place(r){return r[3]==='us'?'the average US city':r[1].replace(' (statewide average)','');}
+  // Backslashes must be doubled: this whole script is inside a template
+  // literal, so \\s reaches the browser as \\s and not as a bare s. Written
+  // singly, /\\*+/ arrived as /*+ which opens a comment and kills the file.
+  function tidy(n){return String(n).replace(/\\s*Metropolitan Statistical Area\\s*$/i,'').replace(/\\*+\\s*$/,'').trim();}
+  function place(r){return r[3]==='us'?'the average US city':tidy(r[1].replace(' (statewide average)',''));}
   // Column 11 is the buyer-weighted index. Fall back to BEA all-items (4) for
   // the few places with no home value. See data/relocating/README-coli.md.
   function idx(r){return r[11]!=null?r[11]:r[4];}
@@ -213,24 +219,64 @@ function colCalc(){}
   }
   function colorOf(g){return g.pct<0?'#2f6b3a':(g.pct>0?'#a03333':'var(--navy)');}
   function arrowOf(g){return g.pct<0?'\\u25BC':(g.pct>0?'\\u25B2':'');}
-  /* ---- searchable city picker ---- */
+  /* ---- searchable picker: metros, plus 12,000 town names ----
+   * The price data is metro level, because that is the level every source
+   * publishes at. Nobody types a metro. So the town list maps a place to its
+   * metro, and the option shows both, so it is never a surprise which area
+   * the number describes. The list is 280KB, so it is fetched the first time
+   * the cursor lands in the box and never on page load. */
+  var CITY=null, cityLoading=false;
+  function loadCities(){
+    if(CITY||cityLoading)return;
+    cityLoading=true;
+    var el=document.createElement('script');
+    el.src='/assets/cities.js';
+    el.onload=function(){cityLoading=false;CITY=window.C3_CITIES||null;if(CITY&&document.activeElement===cityIn)render(cityIn.value);};
+    el.onerror=function(){cityLoading=false;};   // metro search still works
+    document.head.appendChild(el);
+  }
   function render(q){
     var s=q.trim().toLowerCase();
     listEl.innerHTML='';shown=[];active=-1;
     if(s.length<2){listEl.style.display='none';cityIn.setAttribute('aria-expanded','false');return;}
-    var starts=[],has=[];
-    for(var j=0;j<rows.length;j++){
+    var starts=[],has=[],j;
+    for(j=0;j<rows.length;j++){
       var nm=rows[j][1].toLowerCase();
-      if(nm.indexOf(s)===0)starts.push(rows[j]);
-      else if(nm.indexOf(s)>0)has.push(rows[j]);
+      if(nm.indexOf(s)===0)starts.push({id:rows[j][0],label:tidy(rows[j][1]),sub:''});
+      else if(nm.indexOf(s)>0)has.push({id:rows[j][0],label:tidy(rows[j][1]),sub:''});
     }
-    shown=starts.concat(has).slice(0,40);
+    var list=starts.concat(has).slice(0,12);
+    if(CITY){
+      var seen={},k;
+      for(k=0;k<list.length;k++)seen[list[k].id+'|'+list[k].label]=1;
+      var cs=[],cd=[];
+      for(j=0;j<CITY.cities.length;j++){
+        var c=CITY.cities[j], cn=c[0].toLowerCase();
+        var at=cn.indexOf(s);
+        if(at!==0&&at<1)continue;
+        var id=CITY.metros[c[2]];
+        var lab=c[0]+', '+c[1], s2=(R[id]?tidy(R[id][1]):'');
+        // A town whose metro carries its own name is already in the list
+        // above. Enid, OK under Enid, OK reads like a bug.
+        if(s2===lab||seen[id+'|'+lab])continue;
+        seen[id+'|'+lab]=1;
+        var o={id:id,label:lab,sub:s2};
+        (at===0?cs:cd).push(o);
+        if(cs.length>=28)break;
+      }
+      list=list.concat(cs.slice(0,28)).concat(cd.slice(0,8));
+    }
+    shown=list.slice(0,40);
     if(!shown.length){listEl.innerHTML='<div class="colx-opt" style="color:var(--muted);cursor:default">No match. Try a nearby city or the state name.</div>';listEl.style.display='block';return;}
-    for(var k=0;k<shown.length;k++){
+    for(var m=0;m<shown.length;m++){
       var o=document.createElement('div');
       o.className='colx-opt';
-      o.setAttribute('role','option');o.setAttribute('data-i',String(k));
-      o.textContent=shown[k][1];
+      o.setAttribute('role','option');o.setAttribute('data-i',String(m));
+      if(shown[m].sub){
+        o.innerHTML='<span class="colx-opt-a"></span><span class="colx-opt-b"></span>';
+        o.firstChild.textContent=shown[m].label;
+        o.lastChild.textContent=shown[m].sub;
+      } else o.textContent=shown[m].label;
       o.onmousedown=function(e){e.preventDefault();pick(parseInt(this.getAttribute('data-i'),10));};
       listEl.appendChild(o);
     }
@@ -243,12 +289,13 @@ function colCalc(){}
   }
   function pick(j){
     if(j<0||j>=shown.length)return;
-    chosen=shown[j][0];cityIn.value=shown[j][1];
+    chosen=shown[j].id;cityIn.value=shown[j].label;
     listEl.style.display='none';cityIn.setAttribute('aria-expanded','false');
     window.colCalc();
   }
   cityIn.addEventListener('input',function(){chosen=null;render(cityIn.value);});
-  cityIn.addEventListener('focus',function(){if(cityIn.value.trim().length>1)render(cityIn.value);});
+  cityIn.addEventListener('focus',function(){loadCities();if(cityIn.value.trim().length>1)render(cityIn.value);});
+  cityIn.addEventListener('input',function(){loadCities();});
   cityIn.addEventListener('blur',function(){setTimeout(function(){listEl.style.display='none';},150);});
   cityIn.addEventListener('keydown',function(e){
     if(listEl.style.display==='none')return;
@@ -320,7 +367,7 @@ function colCalc(){}
     sub.textContent=g.pct===0
       ? 'The cost of living is about the same in Myrtle Beach as in '+place(f)+'.'
       : 'The cost of living is '+g.word+' in Myrtle Beach than in '+place(f)+'.';
-    var shortName=f[3]==='us'?'US average':f[1].replace(' (statewide average)','').split(',')[0];
+    var shortName=f[3]==='us'?'US average':tidy(f[1]).replace(' (statewide average)','').split(',')[0];
     stats.innerHTML=buildStats(f,t);
     var html='';
     for(var j=0;j<CAT.length;j++)html+=catBlock(CAT[j],shortName,f,t);
@@ -331,7 +378,7 @@ function colCalc(){}
   inc.addEventListener('blur',function(){var v=readIncome();if(v>0)inc.value=Math.round(v).toLocaleString('en-US');});
   var start='new-york-newark-jersey-city-ny-nj';
   try{var q=new URLSearchParams(location.search);var qf=q.get('from');if(qf&&R[qf])start=qf;var qi=parseFloat(q.get('income'));if(isFinite(qi)&&qi>0)inc.value=Math.round(qi).toLocaleString('en-US');}catch(e){}
-  chosen=start;cityIn.value=R[start][1];window.colCalc();
+  chosen=start;cityIn.value=tidy(R[start][1]);window.colCalc();
 })();
 </script>
 </div></section>`;

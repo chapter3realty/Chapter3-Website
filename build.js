@@ -1435,7 +1435,8 @@ else if (cmd === "audit") audit();
 // BEA and Zillow files (re-downloads Zillow if the CSVs are absent). Follow
 // with 'rehash' so the asset gets its new cache-busting name.
 else if (cmd === "coldata") { require("child_process").execFileSync(process.execPath, [path.join(__dirname, "data", "relocating", "build-col-data.js")], { stdio: "inherit" }); }
+else if (cmd === "citydata") { require("child_process").execFileSync(process.execPath, [path.join(__dirname, "data", "relocating", "build-cities.js")], { stdio: "inherit" }); }
 // dates --check runs last: it is the only gate that compares what the pages
 // CLAIM against what git says actually happened.
 else if (cmd === "preflight") { check(); console.log(""); audit(); console.log(""); dates(true); }
-else { console.log("Usage: node build.js [check|rehash|stitch|llmsfull|dates|audit|coldata|preflight]"); process.exit(1); }
+else { console.log("Usage: node build.js [check|rehash|stitch|llmsfull|dates|audit|coldata|citydata|preflight]"); process.exit(1); }

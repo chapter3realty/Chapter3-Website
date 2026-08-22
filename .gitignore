@@ -5,3 +5,7 @@ node_modules/
 
 # Zillow raw CSVs are 5MB and refreshed monthly; build-col-data.js re-downloads them
 data/relocating/raw/zillow_*.csv
+
+# Census place, delineation and population files are 9MB and refreshed yearly;
+# build-cities.js re-downloads them
+data/relocating/raw/census_*
