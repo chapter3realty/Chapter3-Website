@@ -698,6 +698,60 @@ const FIGURATIVE = [
   "the numbers speak", "at the end of the day", "when push comes to shove",
   "the bottom line is", "a stone's throw", "worth its weight",
 ];
+/* Industry jargon. Owner instruction, 2026-08-20: "never use an industry term
+ * ever in an article, hard code that". He caught "listing" being used where
+ * "house" was meant. A buyer does not say listing, comp, DOM, or SFR; they say
+ * house, what it sold for, how long it sat. FAILS the build.
+ *
+ * Only words with a plain-English equivalent are listed. Terms a buyer must
+ * actually learn (escrow, HOA, closing costs, flood zone, assessment ratio)
+ * are NOT here: glossing those is the job, per PLAYBOOK A12. */
+const JARGON = [
+  /* Word-boundary regexes, not substrings: a plain substring list matched
+   * "ran(dom)" and "a comp(arable)" on pages that were written correctly.
+   *
+   * This list is deliberately NARROW, because the first version flagged 54 of
+   * 88 pages and most of those were right. Checked every hit by hand first:
+   *   - "listing agent" is a role a buyer meets and several pages teach it on
+   *     purpose ("the listing agent works for the seller"). Allowed.
+   *   - "every listing in the market" on the submarket pages means an Airbnb
+   *     listing, which is the correct word. Allowed.
+   *   - "days on market" and "months of supply" are the labels on the market
+   *     data tables and Zillow shows both to consumers. Allowed.
+   *   - "CMA" and "comps" are already glossed on first use, which PLAYBOOK A12
+   *     asks for. Allowed.
+   * What is banned is the misuse the owner caught: "listing" standing in for
+   * the house itself. */
+  [/\blisting(?:'s|&#39;s|&rsquo;s)\s+(?:word|claim|school|photo|remarks|description)/i, "listing's (say the home's)"],
+  [/\bpast the listing\b|\bon a listing\b|\bon (?:real|our|these) listings\b|\ba listing photo\b/i, "listing (say home)"],
+  [/\babsorption rate\b/i, "absorption rate"],
+  [/\bprice point\b|\bprice per door\b/i, "price point (say price)"],
+  [/\bSFRs?\b|\bSFHs?\b/, "SFR/SFH"],
+  [/\bbuy box\b|\boff-market deal\b|\bfarm area\b|\bsphere of influence\b/i, "prospecting jargon"],
+  [/\bboots on the ground\b|\bvalue-add play\b|\btrade area\b/i, "investor jargon"],
+  [/\bthe subject property\b|\basset class\b|\bproduct type\b/i, "appraiser jargon"],
+  [/\bend[- ]user buyer\b|\bretail buyer\b/i, "end-user buyer"],
+  // Owner, 2026-08-20: "Don't say marketing copy". Naming our own trade inside
+  // an article breaks the fourth wall; the buyer wants the fact, not the genre.
+  [/marketing copy|ad copy|sales copy|this article/i, "writing about the writing"],
+];
+
+/* Headings must say what the section is about. Owner instruction, 2026-08-20:
+ * "stop speaking in metaphors and rhymes and shit be clear if someone reads
+ * this they have no idea at all what the next section is about", on the
+ * heading "What to bring, and the dates that bind".
+ *
+ * Checks every H2 and H3 inside <main> for figurative or empty phrasing.
+ * A heading is allowed to be a question. It is not allowed to be a riddle.
+ * FAILS the build. */
+const VAGUE_HEADING = [
+  "dates that bind", "the dates that", "what nobody tells you", "the truth about",
+  "here is the thing", "what you need to know", "a few thoughts", "some notes on",
+  "the real story", "the honest version", "what it really means", "read this first",
+  "the bottom line", "the big picture", "food for thought", "worth knowing",
+  "the fine print", "what gives", "the catch", "the rub", "the twist",
+];
+
 /* Self-congratulation and meta-commentary about our own page. The owner cut
  * "and almost nobody mentions it" by hand. A buyer does not care what other
  * websites do. FAILS the build. */
@@ -1171,6 +1225,21 @@ function audit() {
     for (const p of FAIR_HOUSING) if (low.includes(p)) E(`fair-housing risk phrase: "${p}"`);
     for (const p of FIGURATIVE) if (low.includes(p)) E(`figurative language: "${p}" - say it literally`);
     for (const p of SELF_REFERENTIAL) if (low.includes(p)) E(`writes about our own page or other websites: "${p}" - the buyer only needs the fact`);
+    /* Scoped to <main>. `prose` is NOT limited to the article: the nav says
+     * "listings" and a shared script mentions "the subject property", so
+     * scanning the whole page flagged every one of the 88 pages, including
+     * /accessibility/. Same trap the readability rule fell into. */
+    {
+      const bodyOnly = (s.match(/<main[\s\S]*?<\/main>/i) || [""])[0]
+        .replace(/<(script|style)[\s\S]*?<\/>/gi, " ");
+      const bodyLow = decodeEnt(bodyOnly.replace(/<[^>]+>/g, " ")).toLowerCase().replace(/\s+/g, " ");
+      for (const [re, label] of JARGON) if (re.test(bodyLow)) E(`industry term in body copy: "${label}" - say it the way a buyer would`);
+      for (const m of bodyOnly.matchAll(/<h([23])[^>]*>([\s\S]*?)<\/h>/g)) {
+        const head = decodeEnt(m[2].replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim().toLowerCase();
+        for (const v of VAGUE_HEADING)
+          if (head.includes(v)) E(`heading does not say what the section is about: "${head.slice(0, 60)}" - name the subject`);
+      }
+    }
     {
       /* Build the text for readability separately.
        *
