@@ -164,11 +164,33 @@ function main() {
   if (stateZhvi.size < 45) throw new Error('State home values look wrong: only ' + stateZhvi.size + ' states');
 
   const COLI_W = { housing: 0.2803, utilities: 0.0965, goods: 0.2456, other: 0.3776 };  // C2ER published weights
-  const coliOf = (rpp, homeValue) => homeValue
-    ? +(COLI_W.housing * (homeValue / usZhvi * 100)
+  /* Housing is half the Zillow home price ratio and half the BEA housing
+   * parity. The raw price ratio on its own has a standard deviation of 46.9
+   * against BEA's 27.7, so it exaggerates every gap, and it prices the house
+   * rather than the cost of housing yourself. New Orleans is the clearest
+   * case: cheap houses, expensive to live in, because the money goes on
+   * insurance. Half and half fits the reference points better than either
+   * alone (mean error 11.8% against 13.2% and 11.9%).
+   *
+   * MB_CALIBRATION then scales the destination. Every result on the page is
+   * a comparison against Myrtle Beach, so one constant on the destination
+   * calibrates the whole page. Fitted against the eight reference points in
+   * calibration.json: 0.92 minimises mean error at 6.3%, down from 11.8%,
+   * and it is a genuine minimum, not a slide to the floor. Below about 0.86
+   * the error climbs again.
+   *
+   * This is a correction, not a measurement. The index cannot reproduce C2ER
+   * from free data, because C2ER prices home insurance and ownership carrying
+   * cost and no free source publishes those by metro. That is why New Orleans,
+   * Miami and Anchorage are still the worst fits. Re-run the fit against
+   * calibration.json before changing this number. */
+  const MB_ID = 'myrtle-beach-conway-north-myrtle-beach-sc';
+  const MB_CALIBRATION = 0.92;
+  const coliOf = (rpp, homeValue, id) => homeValue
+    ? +((COLI_W.housing * (0.5 * (homeValue / usZhvi * 100) + 0.5 * rpp.housing)
       + COLI_W.utilities * rpp.utilities
       + COLI_W.goods * rpp.goods
-      + COLI_W.other * rpp.other).toFixed(3)
+      + COLI_W.other * rpp.other) * (id === MB_ID ? MB_CALIBRATION : 1)).toFixed(3)
     : null;
   
   // Zillow keys look like "Myrtle Beach, SC". BEA like
@@ -209,7 +231,7 @@ function main() {
   const unmatched = [];
   for (const p of metro) {
     if (p.kind === 'us') {
-      out.push({ id: 'us', name: 'United States average', state: '', kind: 'us', rpp: p.rpp, zhvi: Math.round(usZhvi), zori: null, coli: coliOf(p.rpp, usZhvi), elec: elecOf('US'), zAsOf: null, zName: null });
+      out.push({ id: 'us', name: 'United States average', state: '', kind: 'us', rpp: p.rpp, zhvi: Math.round(usZhvi), zori: null, coli: coliOf(p.rpp, usZhvi, 'us'), elec: elecOf('US'), zAsOf: null, zName: null });
       continue;
     }
     const clean = p.rawName.replace(/\s*\(Metropolitan Statistical Area\)\s*/i, '').trim();
@@ -227,7 +249,7 @@ function main() {
       rpp: p.rpp,
         zhvi: h ? Math.round(h.v) : null,
       zori: r ? Math.round(r.v) : null,
-      coli: coliOf(p.rpp, h ? h.v : null),
+      coli: coliOf(p.rpp, h ? h.v : null, toSlug(clean)),
       elec: elecOf(stAbbr),
       zAsOf: h ? h.asOf : null,
       zName: h ? key : null,
@@ -235,7 +257,7 @@ function main() {
   }
   for (const p of stateRecs) {
     const sv = stateZhvi.get(p.rawName) || null;
-    out.push({ id: 'state-' + toSlug(p.rawName), name: p.rawName + ' (statewide average)', state: STATE_ABBR[p.rawName], kind: 'state', rpp: p.rpp, zhvi: sv ? Math.round(sv) : null, zori: null, coli: coliOf(p.rpp, sv), elec: elecOf(STATE_ABBR[p.rawName]), zAsOf: null, zName: null });
+    out.push({ id: 'state-' + toSlug(p.rawName), name: p.rawName + ' (statewide average)', state: STATE_ABBR[p.rawName], kind: 'state', rpp: p.rpp, zhvi: sv ? Math.round(sv) : null, zori: null, coli: coliOf(p.rpp, sv, 'state-' + toSlug(p.rawName)), elec: elecOf(STATE_ABBR[p.rawName]), zAsOf: null, zName: null });
   }
   // Sort: US, then MSAs by name, then states.
   const order = { us: 0, msa: 1, state: 2 };

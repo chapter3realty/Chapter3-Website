@@ -37,17 +37,38 @@ publish.
   typical home value, times 100. A home **price**, not a rent.
 - **Everything else**: the BEA component indexes.
 
-### Does it work
+### Two corrections, 2026-08-22
 
-Checked against the two Forbes figures we have:
+Two Forbes points were not enough. Both are large expensive west coast metros,
+and the fit did not survive contact with anywhere else. Checked against five
+more places, every one of them said Myrtle Beach looked too expensive.
 
-| Move | Forbes (C2ER) | This index | Difference |
-|---|---|---|---|
-| Los Angeles to Myrtle Beach | $45,276 | $43,303 | −4.4% |
-| Portland to Myrtle Beach | $55,806 | $57,662 | +3.3% |
+**Housing is now half the price ratio and half the BEA housing parity.** The
+raw Zillow ratio has a standard deviation of 46.9 against BEA's 27.7, so it
+exaggerated every gap, and it prices the house rather than the cost of housing
+yourself. New Orleans is the clearest case: cheap houses, expensive to live in,
+because the money goes on insurance.
 
-Within about 4% on both, in opposite directions, which is what an honest
-approximation of a licensed dataset should look like.
+**A destination constant of 0.92 is applied to Myrtle Beach.** Every result on
+the page is a comparison against Myrtle Beach, so one constant on the
+destination calibrates every answer. It is fitted against the eight reference
+points in `calibration.json`, and 0.92 is a real minimum: below about 0.86 the
+error climbs again.
+
+| | before | after |
+|---|---|---|
+| mean error against the reference points | 11.8% | **6.3%** |
+| worst single city | 31% | 20% |
+| Myrtle Beach index | 95.0 | 86.3 |
+
+This is a correction, not a measurement, and it is honest about what it cannot
+do. The index cannot reproduce C2ER from free data, because C2ER prices home
+insurance and ownership carrying cost and no free source publishes either by
+metro. That is exactly why New Orleans, Miami and Anchorage are still the worst
+fits, and why the next real improvement is a home insurance term rather than
+more tuning.
+
+Re-run the fit against `calibration.json` before touching the constant.
 
 Range across all 380 metros with a home value: **77.0** (Enid, OK) to
 **196.4** (San Jose). No outliers. Myrtle Beach is **95.0**.

@@ -39,7 +39,7 @@ const faq = [
   { q: 'Is the cost of living cheaper in Myrtle Beach?',
     a: 'Yes. The biggest difference is the house. A typical home here sells for about $342,000, against about $737,000 in the New York area and about $742,000 in Boston. Day to day costs are closer to average, and rent runs about 17 percent below the national average.' },
   { q: 'What salary do I need to live in Myrtle Beach?',
-    a: 'It depends on where you live now, which is what the calculator on this page is for. On the price index behind the calculator, someone earning $70,000 in Los Angeles would need about $43,000 here for the same buying power. Someone moving from Cleveland would need slightly more here, not less.' },
+    a: 'It depends on where you live now, which is what the calculator on this page is for. On the price index behind the calculator, someone earning $70,000 in Los Angeles would need about $43,000 here for the same buying power. Not every move saves money. Someone coming from Montgomery, Alabama would need about the same, and from a few smaller southern metros slightly more.' },
   { q: 'Is Myrtle Beach cheaper than Charlotte or Raleigh?',
     a: 'On the house, yes. A typical home here is about $342,000. Charlotte is about $389,000 and Raleigh about $437,000. Property tax on a main home is also lower here because South Carolina taxes an owner-occupied home on 4 percent of its value.' },
   { q: 'What costs more in Myrtle Beach than people expect?',
@@ -73,9 +73,7 @@ const CALC_HTML = `
 <div class="colx">
   <div class="colx-form">
     <div class="colx-field"><label class="colx-label" for="colIncome">My household income before tax</label><input class="colx-in" id="colIncome" type="text" inputmode="numeric" value="75,000" autocomplete="off"></div>
-    <div class="colx-field" style="position:relative"><label class="colx-label" for="colCity">My city now</label><input class="colx-in" id="colCity" type="text" placeholder="Start typing a city or state" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="colList"><div id="colList" role="listbox" class="colx-list"></div>
-      <p class="colx-or"><span>or pick from the list</span></p>
-      <select class="colx-in colx-sel" id="colPick" aria-label="Choose a metro area or state"></select></div>
+    <div class="colx-field" style="position:relative"><label class="colx-label" for="colCity">My city now</label><input class="colx-in" id="colCity" type="text" placeholder="Start typing a city or state" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="colList"><button type="button" class="colx-caret" id="colCaret" aria-label="Show all areas" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div id="colList" role="listbox" class="colx-list"></div></div>
     <div class="colx-field"><p class="colx-label" id="colToLab">I want to live in</p><p class="colx-fixed" aria-labelledby="colToLab">Myrtle Beach and surrounding areas</p><p class="colx-hint">Covers Myrtle Beach, Conway, North Myrtle Beach and the rest of the county.</p></div>
     <button class="btn btn-brass colx-go" id="colGo" onclick="colCalc()">Calculate</button>
   </div>
@@ -101,7 +99,7 @@ const CALC_HTML = `
 .colx-form{padding:1.9rem 2rem 1.9rem 0;border-right:1px solid var(--rule)}
 .colx-field{margin-bottom:1.15rem}
 .colx-label{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--slate);margin-bottom:.45rem;font-weight:500}
-.colx-in{width:100%;padding:.6rem .8rem;font-family:var(--sans);font-size:.92rem;background:var(--white);border:1px solid var(--rule);border-radius:4px;color:var(--navy);outline:none;transition:border-color .16s,box-shadow .16s}
+.colx-in{width:100%;padding:.6rem 2.2rem .6rem .8rem;font-family:var(--sans);font-size:.92rem;background:var(--white);border:1px solid var(--rule);border-radius:4px;color:var(--navy);outline:none;transition:border-color .16s,box-shadow .16s}
 .colx-in:focus{border-color:var(--brass);box-shadow:0 0 0 3px rgba(196,120,58,.14)}
 .colx-fixed{margin:0;padding:.6rem .8rem;font-family:var(--sans);font-size:.9rem;font-weight:500;line-height:1.4;background:var(--ivory-2);border:1px solid var(--rule);border-radius:4px;color:var(--navy)}
 .colx-hint{font-family:var(--sans);font-size:.72rem;color:var(--muted);margin:.45rem 0 0;line-height:1.5}
@@ -109,9 +107,10 @@ const CALC_HTML = `
 .colx-list{display:none;position:absolute;left:0;right:0;top:100%;z-index:40;background:var(--white);border:1px solid var(--rule);border-top:none;border-radius:0 0 4px 4px;max-height:260px;overflow-y:auto;box-shadow:0 8px 28px rgba(28,32,40,.08)}
 .colx-opt{padding:.58rem .8rem;font-family:var(--sans);font-size:.88rem;color:var(--navy);cursor:pointer}
 .colx-opt[aria-selected="true"],.colx-opt:hover{background:rgba(196,120,58,.09)}
-.colx-or{display:flex;align-items:center;gap:.6rem;margin:.75rem 0 .5rem;font-family:var(--sans);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate)}
-.colx-or::before,.colx-or::after{content:'';flex:1;height:1px;background:var(--rule)}
-.colx-sel{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%231c2028' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .8rem center;padding-right:2.2rem}
+.colx-caret{position:absolute;right:.1rem;bottom:0;height:2.45rem;width:2.2rem;display:flex;align-items:center;justify-content:center;background:none;border:0;color:var(--slate);cursor:pointer;transition:color .15s,transform .18s}
+.colx-caret:hover{color:var(--navy)}
+.colx-open .colx-caret{transform:rotate(180deg)}
+.colx-head-opt{padding:.5rem .8rem .3rem;font-family:var(--sans);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);background:var(--ivory);position:sticky;top:0}
 .colx-opt-a{display:block}
 .colx-opt-b{display:block;font-size:.74rem;color:var(--muted);margin-top:.08rem}
 
@@ -230,20 +229,58 @@ function colCalc(){}
    * metro, and the option shows both, so it is never a surprise which area
    * the number describes. The list is 280KB, so it is fetched the first time
    * the cursor lands in the box and never on page load. */
-  var CITY=null, cityLoading=false;
+  var CITY=null, cityLoading=false, openAll=false;
+  var wrapEl=cityIn.parentNode;
+  /* One box, two ways in. Typing filters; the caret, or clicking an empty
+   * box, drops the whole list. A separate select for 438 areas sat unused
+   * beside a search box that looked like the only way in. */
+  function showAll(){
+    // Owns the flag. cityIn.focus() runs the focus listener, which calls
+    // render(), which clears openAll. Setting it in the caret handler before
+    // focus() was therefore useless, and the city index arriving a moment
+    // later redrew one match over all 439 areas.
+    openAll=true;
+    var h='',j,mode='';
+    shown=[];
+    for(j=0;j<rows.length;j++){
+      var k=rows[j][3]==='state'?'State averages':'Metro areas';
+      if(k!==mode){h+='<div class="colx-head-opt">'+k+'</div>';mode=k;}
+      h+='<div class="colx-opt" role="option" data-i="'+shown.length+'">'+tidy(rows[j][1]).replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</div>';
+      shown.push({id:rows[j][0],label:tidy(rows[j][1]),sub:''});
+    }
+    listEl.innerHTML=h;
+    Array.prototype.forEach.call(listEl.querySelectorAll('.colx-opt'),function(o){
+      o.onmousedown=function(e){e.preventDefault();pick(parseInt(this.getAttribute('data-i'),10));};});
+    listEl.style.display='block';cityIn.setAttribute('aria-expanded','true');wrapEl.classList.add('colx-open');
+    var cur=chosen?listEl.querySelector('.colx-opt[data-i="'+shown.map(function(x){return x.id;}).indexOf(chosen)+'"]'):null;
+    if(cur&&cur.scrollIntoView)cur.scrollIntoView({block:'center'});
+  }
+  function closeList(){listEl.style.display='none';cityIn.setAttribute('aria-expanded','false');wrapEl.classList.remove('colx-open');openAll=false;}
+  document.getElementById('colCaret').addEventListener('mousedown',function(e){
+    e.preventDefault();
+    if(listEl.style.display==='block'){closeList();return;}
+    openAll=true; cityIn.focus(); loadCities();
+    if(cityIn.value.trim().length>1)cityIn.select();
+    showAll();
+  });
   function loadCities(){
     if(CITY||cityLoading)return;
     cityLoading=true;
     var el=document.createElement('script');
     el.src='/assets/cities.js';
-    el.onload=function(){cityLoading=false;CITY=window.C3_CITIES||null;if(CITY&&document.activeElement===cityIn)render(cityIn.value);};
+    el.onload=function(){cityLoading=false;CITY=window.C3_CITIES||null;
+      // Do not redraw over the full list. The caret calls loadCities, and this
+      // arriving 150ms later used to replace 439 areas with the one match for
+      // whatever was already in the box.
+      if(CITY&&!openAll&&document.activeElement===cityIn)render(cityIn.value);};
     el.onerror=function(){cityLoading=false;};   // metro search still works
     document.head.appendChild(el);
   }
   function render(q){
     var s=q.trim().toLowerCase();
     listEl.innerHTML='';shown=[];active=-1;
-    if(s.length<2){listEl.style.display='none';cityIn.setAttribute('aria-expanded','false');return;}
+    if(s.length<2){ if(openAll) return showAll(); listEl.style.display='none';cityIn.setAttribute('aria-expanded','false');wrapEl.classList.remove('colx-open');return; }
+    openAll=false;
     var starts=[],has=[],j;
     for(j=0;j<rows.length;j++){
       var nm=rows[j][1].toLowerCase();
@@ -295,45 +332,20 @@ function colCalc(){}
   function pick(j){
     if(j<0||j>=shown.length)return;
     chosen=shown[j].id;cityIn.value=shown[j].label;
-    listEl.style.display='none';cityIn.setAttribute('aria-expanded','false');
+    closeList();
     window.colCalc();
   }
-  /* The list holds every priced area: 387 metros then the 51 state averages.
-   * It is built from the same rows the search uses, so the two can never drift
-   * apart, and picking in one updates the other. */
-  var pickEl=document.getElementById('colPick');
-  (function(){
-    var h='<option value="">Choose a metro area or state</option>';
-    function group(label,kinds){
-      var out='',j;
-      for(j=0;j<rows.length;j++){
-        if(kinds.indexOf(rows[j][3])<0)continue;
-        out+='<option value="'+rows[j][0]+'">'+tidy(rows[j][1]).replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</option>';
-      }
-      return out?'<optgroup label="'+label+'">'+out+'</optgroup>':'';
-    }
-    h+=group('Metro areas',['msa','us']);
-    h+=group('State averages',['state']);
-    pickEl.innerHTML=h;
-  })();
-  pickEl.addEventListener('change',function(){
-    if(!pickEl.value)return;
-    chosen=pickEl.value;
-    cityIn.value=tidy(R[chosen][1]);
-    listEl.style.display='none';
-    window.colCalc();
-  });
-  function syncPick(){ if(pickEl) pickEl.value = (chosen && R[chosen] && R[chosen][3] !== 'city') ? chosen : ''; }
   cityIn.addEventListener('input',function(){chosen=null;render(cityIn.value);});
   cityIn.addEventListener('focus',function(){loadCities();if(cityIn.value.trim().length>1)render(cityIn.value);});
+  cityIn.addEventListener('click',function(){if(!cityIn.value.trim()){openAll=true;showAll();}});
   cityIn.addEventListener('input',function(){loadCities();});
-  cityIn.addEventListener('blur',function(){setTimeout(function(){listEl.style.display='none';},150);});
+  cityIn.addEventListener('blur',function(){setTimeout(closeList,150);});
   cityIn.addEventListener('keydown',function(e){
     if(listEl.style.display==='none')return;
     if(e.key==='ArrowDown'){e.preventDefault();active=Math.min(active+1,shown.length-1);highlight();}
     else if(e.key==='ArrowUp'){e.preventDefault();active=Math.max(active-1,0);highlight();}
     else if(e.key==='Enter'){if(active>=0){e.preventDefault();pick(active);}}
-    else if(e.key==='Escape'){listEl.style.display='none';}
+    else if(e.key==='Escape'){closeList();}
   });
   /* ---- the figures row ---- */
   function statHTML(icon,label,g){
@@ -403,7 +415,6 @@ function colCalc(){}
     var html='';
     for(var j=0;j<CAT.length;j++)html+=catBlock(CAT[j],shortName,f,t);
     cats.innerHTML=html;
-    syncPick();
     try{var u=new URL(location.href);u.searchParams.set('from',f[0]);if(income>0)u.searchParams.set('income',String(Math.round(income)));else u.searchParams.delete('income');history.replaceState(null,'',u.pathname+u.search+u.hash);}catch(e){}
   };
   inc.addEventListener('input',function(){if(chosen)window.colCalc();});

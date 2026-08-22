@@ -1,0 +1,23 @@
+{
+  "note": "Reference points used to calibrate the cost of living index. Values are cost-of-living indexes with the US at 100, read from published C2ER-derived sources on 2026-08-22, plus the two Forbes figures already recorded in README-coli.md. Stored so the fit can be re-checked and re-run rather than re-derived from memory.",
+  "retrieved": "2026-08-22",
+  "sources": {
+    "c2er_derived": "RentCafe cost of living calculator, which publishes C2ER Cost of Living Index values. Data last published March 2026.",
+    "forbes": "The two Forbes figures recorded in README-coli.md: Los Angeles and Portland to Myrtle Beach on $70,000."
+  },
+  "caveats": [
+    "RentCafe values are for the named CITY. Our data is METRO level. Myrtle Beach city and the Myrtle Beach metro are not the same place.",
+    "Published sources disagree about Myrtle Beach by 14 points: RentCafe 92, Redfin 93, HomeSnacks 106, Salary.com about 106.",
+    "Seven reference points is a small fit. Treat the constant as a correction, not a measurement."
+  ],
+  "points": {
+    "myrtle-beach-conway-north-myrtle-beach-sc": 92,
+    "new-orleans-metairie-la": 113,
+    "anchorage-ak": 125,
+    "miami-fort-lauderdale-west-palm-beach-fl": 120,
+    "grand-junction-co": 107,
+    "montgomery-al": 91,
+    "los-angeles-long-beach-anaheim-ca": 142.2,
+    "portland-vancouver-hillsboro-or-wa": 115.4
+  }
+}
