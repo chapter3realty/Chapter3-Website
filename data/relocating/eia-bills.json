@@ -1,0 +1,324 @@
+{
+ "meta": {
+  "table": "2024 Average Monthly Bill - Residential",
+  "source": "U.S. Energy Information Administration, Table 5.A (forms EIA-861 schedules 4A-D, EIA-861S, EIA-861U)",
+  "url": "https://www.eia.gov/electricity/sales_revenue_price/pdf/table_5a.pdf",
+  "vintage": "2024",
+  "retrieved": "2026-08-22",
+  "note": "Residential electricity only. Does not include natural gas, water, or other home fuels. State averages, not metro figures."
+ },
+ "states": {
+  "AL": {
+   "state": "Alabama",
+   "kwh": 1143,
+   "centsPerKwh": 15.18,
+   "monthlyBill": 173.5
+  },
+  "AK": {
+   "state": "Alaska",
+   "kwh": 578,
+   "centsPerKwh": 24.82,
+   "monthlyBill": 143.54
+  },
+  "AZ": {
+   "state": "Arizona",
+   "kwh": 1075,
+   "centsPerKwh": 14.91,
+   "monthlyBill": 160.24
+  },
+  "AR": {
+   "state": "Arkansas",
+   "kwh": 1048,
+   "centsPerKwh": 12.32,
+   "monthlyBill": 129.13
+  },
+  "CA": {
+   "state": "California",
+   "kwh": 503,
+   "centsPerKwh": 31.97,
+   "monthlyBill": 160.86
+  },
+  "CO": {
+   "state": "Colorado",
+   "kwh": 674,
+   "centsPerKwh": 14.92,
+   "monthlyBill": 100.57
+  },
+  "CT": {
+   "state": "Connecticut",
+   "kwh": 695,
+   "centsPerKwh": 28.75,
+   "monthlyBill": 199.66
+  },
+  "DE": {
+   "state": "Delaware",
+   "kwh": 911,
+   "centsPerKwh": 16.57,
+   "monthlyBill": 150.87
+  },
+  "DC": {
+   "state": "DistrictofColumbia",
+   "kwh": 639,
+   "centsPerKwh": 17.71,
+   "monthlyBill": 113.23
+  },
+  "FL": {
+   "state": "Florida",
+   "kwh": 1104,
+   "centsPerKwh": 14.14,
+   "monthlyBill": 156.09
+  },
+  "GA": {
+   "state": "Georgia",
+   "kwh": 1074,
+   "centsPerKwh": 14.08,
+   "monthlyBill": 151.25
+  },
+  "HI": {
+   "state": "Hawaii",
+   "kwh": 495,
+   "centsPerKwh": 42.86,
+   "monthlyBill": 212.12
+  },
+  "ID": {
+   "state": "Idaho",
+   "kwh": 944,
+   "centsPerKwh": 11.52,
+   "monthlyBill": 108.73
+  },
+  "IL": {
+   "state": "Illinois",
+   "kwh": 693,
+   "centsPerKwh": 15.87,
+   "monthlyBill": 109.99
+  },
+  "IN": {
+   "state": "Indiana",
+   "kwh": 901,
+   "centsPerKwh": 14.77,
+   "monthlyBill": 133.06
+  },
+  "IA": {
+   "state": "Iowa",
+   "kwh": 832,
+   "centsPerKwh": 13.4,
+   "monthlyBill": 111.54
+  },
+  "KS": {
+   "state": "Kansas",
+   "kwh": 876,
+   "centsPerKwh": 14.15,
+   "monthlyBill": 123.9
+  },
+  "KY": {
+   "state": "Kentucky",
+   "kwh": 1047,
+   "centsPerKwh": 12.79,
+   "monthlyBill": 133.81
+  },
+  "LA": {
+   "state": "Louisiana",
+   "kwh": 1202,
+   "centsPerKwh": 11.73,
+   "monthlyBill": 140.96
+  },
+  "ME": {
+   "state": "Maine",
+   "kwh": 550,
+   "centsPerKwh": 24.29,
+   "monthlyBill": 133.6
+  },
+  "MD": {
+   "state": "Maryland",
+   "kwh": 929,
+   "centsPerKwh": 17.86,
+   "monthlyBill": 165.87
+  },
+  "MA": {
+   "state": "Massachusetts",
+   "kwh": 570,
+   "centsPerKwh": 29.35,
+   "monthlyBill": 167.2
+  },
+  "MI": {
+   "state": "Michigan",
+   "kwh": 618,
+   "centsPerKwh": 19.3,
+   "monthlyBill": 119.31
+  },
+  "MN": {
+   "state": "Minnesota",
+   "kwh": 712,
+   "centsPerKwh": 15.45,
+   "monthlyBill": 110.06
+  },
+  "MS": {
+   "state": "Mississippi",
+   "kwh": 1156,
+   "centsPerKwh": 13.39,
+   "monthlyBill": 154.83
+  },
+  "MO": {
+   "state": "Missouri",
+   "kwh": 1001,
+   "centsPerKwh": 12.91,
+   "monthlyBill": 129.18
+  },
+  "MT": {
+   "state": "Montana",
+   "kwh": 852,
+   "centsPerKwh": 12.66,
+   "monthlyBill": 107.91
+  },
+  "NE": {
+   "state": "Nebraska",
+   "kwh": 956,
+   "centsPerKwh": 11.53,
+   "monthlyBill": 110.28
+  },
+  "NV": {
+   "state": "Nevada",
+   "kwh": 930,
+   "centsPerKwh": 15.0,
+   "monthlyBill": 139.39
+  },
+  "NH": {
+   "state": "New Hampshire",
+   "kwh": 619,
+   "centsPerKwh": 23.4,
+   "monthlyBill": 144.87
+  },
+  "NJ": {
+   "state": "New Jersey",
+   "kwh": 662,
+   "centsPerKwh": 19.34,
+   "monthlyBill": 128.13
+  },
+  "NM": {
+   "state": "New Mexico",
+   "kwh": 654,
+   "centsPerKwh": 14.2,
+   "monthlyBill": 92.88
+  },
+  "NY": {
+   "state": "New York",
+   "kwh": 571,
+   "centsPerKwh": 24.43,
+   "monthlyBill": 139.53
+  },
+  "NC": {
+   "state": "North Carolina",
+   "kwh": 1015,
+   "centsPerKwh": 14.13,
+   "monthlyBill": 143.5
+  },
+  "ND": {
+   "state": "North Dakota",
+   "kwh": 1029,
+   "centsPerKwh": 11.51,
+   "monthlyBill": 118.38
+  },
+  "OH": {
+   "state": "Ohio",
+   "kwh": 846,
+   "centsPerKwh": 15.99,
+   "monthlyBill": 135.16
+  },
+  "OK": {
+   "state": "Oklahoma",
+   "kwh": 1079,
+   "centsPerKwh": 12.24,
+   "monthlyBill": 132.05
+  },
+  "OR": {
+   "state": "Oregon",
+   "kwh": 882,
+   "centsPerKwh": 14.7,
+   "monthlyBill": 129.62
+  },
+  "PA": {
+   "state": "Pennsylvania",
+   "kwh": 817,
+   "centsPerKwh": 17.77,
+   "monthlyBill": 145.17
+  },
+  "RI": {
+   "state": "Rhode Island",
+   "kwh": 567,
+   "centsPerKwh": 28.65,
+   "monthlyBill": 162.4
+  },
+  "SC": {
+   "state": "South Carolina",
+   "kwh": 1050,
+   "centsPerKwh": 14.23,
+   "monthlyBill": 149.51
+  },
+  "SD": {
+   "state": "South Dakota",
+   "kwh": 994,
+   "centsPerKwh": 12.86,
+   "monthlyBill": 127.81
+  },
+  "TN": {
+   "state": "Tennessee",
+   "kwh": 1154,
+   "centsPerKwh": 12.42,
+   "monthlyBill": 143.32
+  },
+  "TX": {
+   "state": "Texas",
+   "kwh": 1096,
+   "centsPerKwh": 14.94,
+   "monthlyBill": 163.72
+  },
+  "UT": {
+   "state": "Utah",
+   "kwh": 774,
+   "centsPerKwh": 12.22,
+   "monthlyBill": 94.57
+  },
+  "VT": {
+   "state": "Vermont",
+   "kwh": 574,
+   "centsPerKwh": 21.9,
+   "monthlyBill": 125.66
+  },
+  "VA": {
+   "state": "Virginia",
+   "kwh": 1032,
+   "centsPerKwh": 14.41,
+   "monthlyBill": 148.77
+  },
+  "WA": {
+   "state": "Washington",
+   "kwh": 955,
+   "centsPerKwh": 11.9,
+   "monthlyBill": 113.68
+  },
+  "WV": {
+   "state": "West Virginia",
+   "kwh": 1027,
+   "centsPerKwh": 15.07,
+   "monthlyBill": 154.76
+  },
+  "WI": {
+   "state": "Wisconsin",
+   "kwh": 645,
+   "centsPerKwh": 17.18,
+   "monthlyBill": 110.87
+  },
+  "WY": {
+   "state": "Wyoming",
+   "kwh": 863,
+   "centsPerKwh": 12.47,
+   "monthlyBill": 107.65
+  },
+  "US": {
+   "state": "U.S.Total",
+   "kwh": 863,
+   "centsPerKwh": 16.48,
+   "monthlyBill": 142.26
+  }
+ }
+}

@@ -51,34 +51,52 @@ const faq = [
 ];
 
 const ICONS = {
-  house: '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg>',
-  bolt:  '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>',
-  cart:  '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.4a2 2 0 0 0 2-1.55L20.5 8H6"/><circle cx="10" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg>',
-  heart: '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.6-7-9.4A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.6C19 15.4 12 20 12 20Z"/></svg>',
+  house: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg>',
+  bolt:  '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>',
+  cart:  '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.4a2 2 0 0 0 2-1.55L20.5 8H6"/><circle cx="10" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg>',
+  heart: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.6-7-9.4A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.6C19 15.4 12 20 12 20Z"/></svg>',
+  wallet:'<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H18a1 1 0 0 1 1 1v2"/><path d="M3 7.5V17a2 2 0 0 0 2 2h14a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1H5.5A2.5 2.5 0 0 1 3 7.5Z"/><circle cx="16" cy="13.5" r="1.2"/></svg>',
+  gauge: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M4 18a8 8 0 1 1 16 0"/><path d="m12 18 4.2-5.6"/><circle cx="12" cy="18" r="1.2"/></svg>',
 };
 
 /* ---------- the calculator ----------
- * Forbes layout: income, a searchable "my city now", a fixed destination, a
- * Calculate button, one big number, then a category breakdown, each with an
- * icon, a headline percentage and a small table.
- * The destination is deliberately not a picker. We only sell here. */
+ * Forbes layout, in our colours: income and the two cities on the left, the
+ * one big number on the right, a strip of five plain-language cards under it,
+ * then a collapsible row per category with the real figures.
+ * The destination is deliberately not a picker. We only sell here. It reads
+ * "and surrounding areas" because the metro is Horry county wide, not the
+ * city limits.
+ * Only Housing and Electricity get tables, because only those two have real
+ * dollars behind them. The rest would have to print index points, and
+ * "158.6 vs 88.0" tells a buyer nothing. */
 const CALC_HTML = `
-<section style="background:var(--ivory-2)" id="col-calc"><div class="wrap"><p style="${S.eyebrow}">The calculator</p><h2 style="${S.h2}">Compare your city with Myrtle Beach</h2><p style="${S.p}">Our cost of living calculator compares how much money you need to make in Myrtle Beach compared to the city you live in.</p>
-<div style="max-width:760px;background:#fff;border:1px solid var(--rule);border-radius:14px;padding:1.6rem">
-<div style="margin-bottom:1.1rem"><label style="${S.label}" for="colIncome">My household income before tax</label><input class="idx-input" id="colIncome" type="text" inputmode="numeric" value="75,000" autocomplete="off"></div>
-<div style="margin-bottom:1.1rem;position:relative"><label style="${S.label}" for="colCity">My city now</label><input class="idx-input" id="colCity" type="text" placeholder="Start typing a city or state" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="colList"><div id="colList" role="listbox" style="display:none;position:absolute;left:0;right:0;top:100%;z-index:40;background:#fff;border:1px solid var(--rule);border-top:none;border-radius:0 0 8px 8px;max-height:260px;overflow-y:auto;box-shadow:0 12px 30px rgba(28,32,40,.14)"></div></div>
-<div style="margin-bottom:1.3rem"><label style="${S.label}" for="colTo">I want to live in</label><input class="idx-input" id="colTo" value="Myrtle Beach / Surrounding Areas" readonly aria-readonly="true" style="background:var(--ivory-2);color:var(--navy);font-weight:600"></div>
+<section style="background:var(--ivory)" id="col-calc"><div class="wrap"><p style="${S.eyebrow}">The calculator</p><h2 style="${S.h2}">Compare your city with Myrtle Beach</h2><p style="${S.p}">Put in what you earn now and the city you live in. You get the income you would need here to live the same way.</p>
+
+<div style="max-width:860px;background:#fff;border:1px solid var(--rule);border-radius:14px;overflow:hidden;box-shadow:0 2px 16px rgba(28,32,40,.055)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+
+<div style="background:var(--ivory-2);padding:1.6rem;border-right:1px solid var(--rule)">
+<div style="margin-bottom:1.05rem"><label style="${S.label}" for="colIncome">My household income before tax</label><input class="idx-input" id="colIncome" type="text" inputmode="numeric" value="75,000" autocomplete="off"></div>
+<div style="margin-bottom:1.05rem;position:relative"><label style="${S.label}" for="colCity">My city now</label><input class="idx-input" id="colCity" type="text" placeholder="Start typing a city or state" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="colList"><div id="colList" role="listbox" style="display:none;position:absolute;left:0;right:0;top:100%;z-index:40;background:#fff;border:1px solid var(--rule);border-top:none;border-radius:0 0 8px 8px;max-height:260px;overflow-y:auto;box-shadow:0 12px 30px rgba(28,32,40,.14)"></div></div>
+<div style="margin-bottom:1.2rem"><label style="${S.label}" for="colTo">I want to live in</label><input class="idx-input" id="colTo" value="Myrtle Beach and surrounding areas" readonly aria-readonly="true" style="background:#fff;color:var(--navy);font-weight:600"><p style="font-family:var(--sans);font-size:.72rem;color:var(--muted);margin:.4rem 0 0;line-height:1.5">Covers Myrtle Beach, Conway, North Myrtle Beach and the rest of the county.</p></div>
 <button class="btn btn-brass" style="width:100%" id="colGo" onclick="colCalc()">Calculate</button>
-<div id="colOut" aria-live="polite" style="border-top:1px solid var(--rule);margin-top:1.5rem;padding-top:1.4rem">
-<p id="colLead" style="font-family:var(--sans);font-size:.95rem;color:var(--muted);line-height:1.6;margin:0 0 .4rem">To live the same way in Myrtle Beach, you need a household income of:</p>
-<p id="colBig" style="font-family:var(--serif);font-size:2.6rem;color:var(--brass);line-height:1;margin:0 0 1rem">&nbsp;</p>
-<p id="colSub" style="font-family:var(--sans);font-size:1rem;color:var(--navy);line-height:1.6;margin:0 0 .3rem"></p>
-<p id="colDiff" style="font-family:var(--sans);font-size:1rem;color:var(--muted);line-height:1.6;margin:0"></p>
 </div>
-<p style="${S.small}">Home values and rents: Zillow, <span id="colZDate">latest month</span>. Other prices: US Bureau of Economic Analysis regional price parities, <span id="colBDate">latest vintage</span>. Averages for a whole metro area, not a quote for one home. Taxes are not included.</p>
+
+<div style="padding:1.6rem;display:flex;flex-direction:column;justify-content:center" id="colOut" aria-live="polite">
+<p id="colLead" style="font-family:var(--sans);font-size:.92rem;color:var(--muted);line-height:1.6;margin:0 0 .5rem;max-width:340px">To live the same way in Myrtle Beach, you need a household income of:</p>
+<p id="colBig" style="font-family:var(--serif);font-size:2.8rem;color:var(--brass);line-height:1;margin:0 0 .8rem">&nbsp;</p>
+<p id="colSub" style="font-family:var(--sans);font-size:.95rem;color:var(--navy);line-height:1.6;margin:0;max-width:340px"></p>
 </div>
-<div id="colCats" style="max-width:760px;margin-top:1.6rem"></div>
-<div style="max-width:760px;margin-top:1.6rem;background:var(--navy);border-radius:14px;padding:1.5rem 1.6rem;display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;justify-content:space-between"><div style="flex:1 1 320px"><p style="font-family:var(--serif);font-size:1.3rem;color:var(--ivory);margin:0 0 .4rem">Want this run on a real house?</p><p style="font-family:var(--sans);font-size:.92rem;color:rgba(244,239,232,.65);margin:0;line-height:1.6">Send a price range and the city you are leaving. We work out the property tax, an insurance estimate and the carrying cost on real homes.</p></div><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-brass" href="#lead-form">Run my numbers</a><a class="btn btn-outline" href="tel:+18543332135" style="color:var(--ivory);border-color:rgba(244,239,232,.4)">Call 854.333.2135</a></div></div>
+
+</div></div>
+
+<div id="colCards" style="max-width:860px;margin-top:1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:.7rem"></div>
+
+<div id="colCats" style="max-width:860px;margin-top:1rem"></div>
+
+<p style="${S.small};max-width:860px">Home values and rents: Zillow, <span id="colZDate">latest month</span>. Electricity: US Energy Information Administration, <span id="colEDate">latest</span> average monthly residential bill for the state. Other prices: US Bureau of Economic Analysis regional price parities, <span id="colBDate">latest vintage</span>. These are averages for a whole area, not a quote for one home. Taxes are not included.</p>
+
+<div style="max-width:860px;margin-top:1.6rem;background:var(--navy);border-radius:14px;padding:1.5rem 1.6rem;display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;justify-content:space-between"><div style="flex:1 1 320px"><p style="font-family:var(--serif);font-size:1.3rem;color:var(--ivory);margin:0 0 .4rem">Want this run on a real house?</p><p style="font-family:var(--sans);font-size:.92rem;color:rgba(244,239,232,.65);margin:0;line-height:1.6">Send a price range and the city you are leaving. We work out the property tax, an insurance estimate and the carrying cost on real homes.</p></div><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-brass" href="#lead-form">Run my numbers</a><a class="btn btn-outline" href="tel:+18543332135" style="color:var(--ivory);border-color:rgba(244,239,232,.4)">Call 854.333.2135</a></div></div>
 </div>
 <script src="/assets/col.js"></script>
 <script>
@@ -87,9 +105,9 @@ const CALC_HTML = `
 function colCalc(){}
 (function(){
   // ICONS is a Node-side constant in this spec. It must be serialised INTO
-  // the browser script, or catBlock throws ReferenceError and the whole
-  // category breakdown renders empty. That shipped once and the browser
-  // console caught it; the static audit could not.
+  // the browser script, or the cards throw ReferenceError and the whole
+  // breakdown renders empty. That shipped once and the browser console
+  // caught it; the static audit could not.
   var ICONS=${JSON.stringify(ICONS)};
   var D=window.C3_COL;
   if(!D||!D.rows){document.getElementById('colLead').textContent='The comparison data did not load. Call 854.333.2135 and we will run it for you.';return;}
@@ -97,14 +115,17 @@ function colCalc(){}
   var R={},rows=D.rows,i;
   for(i=0;i<rows.length;i++){R[rows[i][0]]=rows[i];}
   var cityIn=document.getElementById('colCity'),listEl=document.getElementById('colList'),inc=document.getElementById('colIncome');
-  var big=document.getElementById('colBig'),lead=document.getElementById('colLead'),sub=document.getElementById('colSub'),diff=document.getElementById('colDiff'),cats=document.getElementById('colCats');
+  var big=document.getElementById('colBig'),lead=document.getElementById('colLead'),sub=document.getElementById('colSub');
+  var cards=document.getElementById('colCards'),cats=document.getElementById('colCats');
   var chosen=null, active=-1, shown=[];
   function zMonth(iso){if(!iso)return 'latest month';var p=iso.split('-');var M=['January','February','March','April','May','June','July','August','September','October','November','December'];return M[parseInt(p[1],10)-1]+' '+p[0];}
   document.getElementById('colZDate').textContent=zMonth(D.meta.zillowLatestMonth);
   // The BEA vintage is two years behind by design (they publish with a lag).
   // Hiding that behind "latest" was flagged in the 2026-08-20 compliance review.
   var bd=document.getElementById('colBDate'); if(bd&&D.meta.rppVintage)bd.textContent=D.meta.rppVintage;
+  var ed=document.getElementById('colEDate'); if(ed&&D.meta.elecVintage)ed.textContent=D.meta.elecVintage;
   function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  function money2(n){return '$'+n.toFixed(2);}
   function money100(n){return '$'+(Math.round(n/100)*100).toLocaleString('en-US');}
   function readIncome(){var v=parseFloat((inc.value||'').replace(/[^0-9.]/g,''));return isFinite(v)&&v>0?v:0;}
   function place(r){return r[3]==='us'?'the average US city':r[1].replace(' (statewide average)','');}
@@ -114,11 +135,15 @@ function colCalc(){}
   function gap(from,to){
     if(from==null||to==null||!from||!to)return null;
     var d=to/from;
-    if(Math.abs(d-1)<0.005)return {word:'about the same',pct:0};
-    var p=(Math.abs(1-d)*100).toFixed(1);
-    return d<1?{word:p+'% lower',pct:-1}:{word:p+'% higher',pct:1};
+    if(Math.abs(d-1)<0.005)return {word:'about the same',pct:0,n:0,less:'about the same'};
+    var p=Math.abs(1-d)*100;
+    // Whole percentages, like the Forbes tool. One decimal reads as false
+    // precision on an index that is an approximation to within a few points.
+    var w=Math.round(p);
+    return d<1?{word:w+'% lower',pct:-1,n:-p,less:w+'% less'}:{word:w+'% higher',pct:1,n:p,less:w+'% more'};
   }
   function colorOf(g){return g.pct<0?'#2f6b3a':(g.pct>0?'#a03333':'var(--navy)');}
+  function arrowOf(g){return g.pct<0?'\\u25BC':(g.pct>0?'\\u25B2':'');}
   /* ---- searchable city picker ---- */
   function render(q){
     var s=q.trim().toLowerCase();
@@ -163,56 +188,78 @@ function colCalc(){}
     else if(e.key==='Enter'){if(active>=0){e.preventDefault();pick(active);}}
     else if(e.key==='Escape'){listEl.style.display='none';}
   });
-  /* ---- category breakdown ---- */
-  var CAT=[
-    {key:'home', icon:'house', name:'Housing', blurb:'The biggest number in any move. What a typical home sells for, and what a typical rent runs.'},
-    {key:'util', icon:'bolt', name:'Utilities', blurb:'Power, water and gas. Summers here run the air conditioning hard, so the yearly total matters more than the rate.'},
-    {key:'goods', icon:'cart', name:'Groceries and everyday items', blurb:'Food, clothing, fuel and household goods. Food you cook at home is not taxed at all in Horry County.'},
-    {key:'serv', icon:'heart', name:'Health care and services', blurb:'Doctors, dentists, eating out, and the everyday services you pay people for.'}
-  ];
+  /* ---- the five cards ---- */
+  function cardHTML(icon,body){
+    return '<div style="background:#fff;border:1px solid var(--rule);border-radius:12px;padding:.95rem .9rem">'+
+      '<span style="color:var(--brass);display:flex;margin-bottom:.5rem">'+ICONS[icon]+'</span>'+
+      '<p style="font-family:var(--sans);font-size:.82rem;color:var(--muted);line-height:1.5;margin:0">'+body+'</p></div>';
+  }
+  function strong(t,g){return '<strong style="color:'+colorOf(g)+';font-weight:600">'+t+'</strong>';}
+  function buildCards(f,t,income,need){
+    var h=[];
+    var gAll=gap(idx(f),idx(t)), gHome=gap(f[9],t[9]), gEl=gap(f[12],t[12]), gGoods=gap(f[5],t[5]);
+    if(income>0&&gAll){
+      var d=need-income, gi={pct:d<0?-1:(d>0?1:0)};
+      h.push(cardHTML('wallet','The income you need is '+strong(money100(Math.abs(d)),gi)+(d<0?' less':' more')+' than you earn now.'));
+    }
+    if(gHome)h.push(cardHTML('house','Homes tend to cost '+strong(gHome.word,gHome)+'.'));
+    if(gEl)h.push(cardHTML('bolt','Electricity tends to cost '+strong(gEl.word,gEl)+'.'));
+    if(gGoods)h.push(cardHTML('cart','Everyday goods and driving tend to cost '+strong(gGoods.word,gGoods)+'.'));
+    if(gAll)h.push(cardHTML('gauge',gAll.pct===0?'Overall, living here costs about the same as in your city.':'Overall, living here costs '+strong(gAll.less,gAll)+' than in your city.'));
+    return h.join('');
+  }
+  /* ---- collapsible category rows ---- */
   function trow(label,a,b,fmt){
     if(a==null||b==null)return '';
     var g=gap(a,b); if(!g)return '';
-    return '<tr><td style="padding:.55rem .5rem;border-bottom:1px solid var(--rule)">'+label+'</td>'+
-      '<td style="padding:.55rem .5rem;border-bottom:1px solid var(--rule)">'+fmt(a)+'</td>'+
-      '<td style="padding:.55rem .5rem;border-bottom:1px solid var(--rule)">'+fmt(b)+'</td>'+
-      '<td style="padding:.55rem .5rem;border-bottom:1px solid var(--rule);font-weight:600;color:'+colorOf(g)+'">'+g.word+'</td></tr>';
+    var td='padding:.55rem .5rem;border-bottom:1px solid var(--rule)';
+    return '<tr><td style="'+td+'">'+label+'</td>'+
+      '<td style="'+td+';font-variant-numeric:tabular-nums">'+fmt(a)+'</td>'+
+      '<td style="'+td+';font-variant-numeric:tabular-nums">'+fmt(b)+'</td>'+
+      '<td style="'+td+';font-weight:600;white-space:nowrap;color:'+colorOf(g)+'"><span aria-hidden="true">'+arrowOf(g)+'</span> '+g.word+'</td></tr>';
   }
-  var one=function(x){return x.toFixed(1);};
-  /* Only Housing gets a table, because only Housing has real dollar figures.
-     The other three would have to print raw index points, and "158.6 vs 88.0"
-     tells a buyer nothing. They get the headline percentage instead. */
+  var CAT=[
+    {key:'home', icon:'house', name:'Housing', blurb:'The biggest number in any move. What a typical home sells for, and what a typical rent runs.'},
+    {key:'elec', icon:'bolt', name:'Electricity', blurb:'Summers here run the air conditioning hard, so the yearly total matters more than the rate. This is the state average bill, and it does not include gas or water.'},
+    {key:'goods', icon:'cart', name:'Everyday goods and driving', blurb:'Food, clothing, fuel and household goods. Food you cook at home is not taxed at all in Horry County.'},
+    {key:'serv', icon:'heart', name:'Health care and services', blurb:'Doctors, dentists, eating out, and the everyday services you pay people for.'}
+  ];
   function catBlock(c,fromName,f,t){
     var head=null,body='';
     if(c.key==='home'){head=gap(f[9],t[9]);body=trow('Typical home value',f[9],t[9],money)+trow('Typical rent, a month',f[10],t[10],money);}
-    if(c.key==='util'){head=gap(f[7],t[7]);}
+    if(c.key==='elec'){head=gap(f[12],t[12]);body=trow('Average electricity bill, a month',f[12],t[12],money2);}
     if(c.key==='goods'){head=gap(f[5],t[5]);}
     if(c.key==='serv'){head=gap(f[8],t[8]);}
     if(!head)return '';
-    var table=body?('<div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table style="width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.9rem;color:var(--navy);min-width:460px">'+
+    var table=body?('<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:.9rem"><table style="width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.88rem;color:var(--navy);min-width:460px">'+
       '<thead><tr style="text-align:left"><th style="padding:.5rem;font-weight:600;border-bottom:1px solid var(--rule)"></th>'+
       '<th style="padding:.5rem;font-weight:600;border-bottom:1px solid var(--rule)">'+fromName+'</th>'+
       '<th style="padding:.5rem;font-weight:600;border-bottom:1px solid var(--rule)">Myrtle Beach</th>'+
       '<th style="padding:.5rem;font-weight:600;border-bottom:1px solid var(--rule)">Change</th></tr></thead><tbody>'+body+'</tbody></table></div>'):'';
-    return '<div style="background:#fff;border:1px solid var(--rule);border-radius:14px;padding:1.4rem 1.5rem;margin-bottom:1rem">'+
-      '<div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.6rem;flex-wrap:wrap"><span style="color:var(--brass);display:flex">'+ICONS[c.icon]+'</span>'+
-      '<h3 style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:0">'+c.name+'</h3>'+
-      '<span style="margin-left:auto;font-family:var(--sans);font-size:1.05rem;font-weight:600;color:'+colorOf(head)+'">'+head.word+'</span></div>'+
-      '<p style="font-family:var(--sans);font-size:.88rem;color:var(--muted);line-height:1.6;margin:0 0 '+(table?'.9rem':'0')+';max-width:640px">'+c.blurb+'</p>'+table+'</div>';
+    return '<details class="col-cat" style="background:#fff;border:1px solid var(--rule);border-radius:12px;margin-bottom:.7rem"'+(c.key==='home'?' open':'')+'>'+
+      '<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:.75rem;padding:1rem 1.1rem">'+
+      '<span style="color:var(--brass);display:flex">'+ICONS[c.icon]+'</span>'+
+      '<span style="font-family:var(--serif);font-size:1.1rem;color:var(--navy)">'+c.name+'</span>'+
+      '<span style="margin-left:auto;font-family:var(--sans);font-size:.95rem;font-weight:600;white-space:nowrap;color:'+colorOf(head)+'"><span aria-hidden="true">'+arrowOf(head)+'</span> '+head.word+'</span>'+
+      '<span class="col-chev" aria-hidden="true" style="color:var(--muted);display:flex;transition:transform .18s"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>'+
+      '</summary>'+
+      '<div style="padding:0 1.1rem 1.2rem">'+
+      '<p style="font-family:var(--sans);font-size:.86rem;color:var(--muted);line-height:1.6;margin:0;max-width:640px">'+c.blurb+'</p>'+table+'</div></details>';
   }
   window.colCalc=function(){
     var f=chosen?R[chosen]:null,t=R[MB];
-    if(!f){lead.textContent='Type your city above and pick it from the list.';big.innerHTML='&nbsp;';sub.textContent='';diff.textContent='';cats.innerHTML='';return;}
-    if(f[0]===MB){lead.textContent='That is Myrtle Beach. Pick the city you live in now.';big.innerHTML='&nbsp;';sub.textContent='';diff.textContent='';cats.innerHTML='';return;}
+    function clear(msg){lead.textContent=msg;big.innerHTML='&nbsp;';sub.textContent='';cards.innerHTML='';cats.innerHTML='';}
+    if(!f){clear('Type your city above and pick it from the list.');return;}
+    if(f[0]===MB){clear('That is Myrtle Beach. Pick the city you live in now.');return;}
     var income=readIncome();
     var need=income*idx(t)/idx(f), g=gap(idx(f),idx(t));
     lead.textContent='To live the same way in Myrtle Beach, you need a household income of:';
-    big.textContent=income>0?money100(need):'—';
+    big.textContent=income>0?money100(need):'\\u2014';
     sub.textContent=g.pct===0
       ? 'The cost of living is about the same in Myrtle Beach as in '+place(f)+'.'
       : 'The cost of living is '+g.word+' in Myrtle Beach than in '+place(f)+'.';
-    diff.textContent=income>0?('That is '+money100(Math.abs(income-need))+(need<income?' less':' more')+' than you earn now.'):'Enter your income to see the number.';
     var shortName=f[3]==='us'?'US average':f[1].replace(' (statewide average)','').split(',')[0];
+    cards.innerHTML=buildCards(f,t,income,need);
     var html='';
     for(var j=0;j<CAT.length;j++)html+=catBlock(CAT[j],shortName,f,t);
     cats.innerHTML=html;
@@ -225,6 +272,12 @@ function colCalc(){}
   chosen=start;cityIn.value=R[start][1];window.colCalc();
 })();
 </script>
+<style>
+.col-cat > summary::-webkit-details-marker{display:none}
+.col-cat > summary::marker{content:''}
+.col-cat[open] > summary .col-chev{transform:rotate(180deg)}
+.col-cat > summary:focus-visible{outline:2px solid var(--brass);outline-offset:-2px;border-radius:12px}
+</style>
 </div></section>`;
 
 const spec = {
