@@ -122,7 +122,9 @@
 <div class="colx">
   <div class="colx-form">
     <div class="colx-field"><label class="colx-label" for="colIncome">My household income before tax</label><input class="colx-in" id="colIncome" type="text" inputmode="numeric" value="75,000" autocomplete="off"></div>
-    <div class="colx-field" style="position:relative"><label class="colx-label" for="colCity">My city now</label><input class="colx-in" id="colCity" type="text" placeholder="Start typing a city or state" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="colList"><div id="colList" role="listbox" class="colx-list"></div></div>
+    <div class="colx-field" style="position:relative"><label class="colx-label" for="colCity">My city now</label><input class="colx-in" id="colCity" type="text" placeholder="Start typing a city or state" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="colList"><div id="colList" role="listbox" class="colx-list"></div>
+      <p class="colx-or"><span>or pick from the list</span></p>
+      <select class="colx-in colx-sel" id="colPick" aria-label="Choose a metro area or state"></select></div>
     <div class="colx-field"><p class="colx-label" id="colToLab">I want to live in</p><p class="colx-fixed" aria-labelledby="colToLab">Myrtle Beach and surrounding areas</p><p class="colx-hint">Covers Myrtle Beach, Conway, North Myrtle Beach and the rest of the county.</p></div>
     <button class="btn btn-brass colx-go" id="colGo" onclick="colCalc()">Calculate</button>
   </div>
@@ -156,6 +158,9 @@
 .colx-list{display:none;position:absolute;left:0;right:0;top:100%;z-index:40;background:var(--white);border:1px solid var(--rule);border-top:none;border-radius:0 0 4px 4px;max-height:260px;overflow-y:auto;box-shadow:0 8px 28px rgba(28,32,40,.08)}
 .colx-opt{padding:.58rem .8rem;font-family:var(--sans);font-size:.88rem;color:var(--navy);cursor:pointer}
 .colx-opt[aria-selected="true"],.colx-opt:hover{background:rgba(196,120,58,.09)}
+.colx-or{display:flex;align-items:center;gap:.6rem;margin:.75rem 0 .5rem;font-family:var(--sans);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate)}
+.colx-or::before,.colx-or::after{content:'';flex:1;height:1px;background:var(--rule)}
+.colx-sel{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%231c2028' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .8rem center;padding-right:2.2rem}
 .colx-opt-a{display:block}
 .colx-opt-b{display:block;font-size:.74rem;color:var(--muted);margin-top:.08rem}
 
@@ -342,6 +347,32 @@ function colCalc(){}
     listEl.style.display='none';cityIn.setAttribute('aria-expanded','false');
     window.colCalc();
   }
+  /* The list holds every priced area: 387 metros then the 51 state averages.
+   * It is built from the same rows the search uses, so the two can never drift
+   * apart, and picking in one updates the other. */
+  var pickEl=document.getElementById('colPick');
+  (function(){
+    var h='<option value="">Choose a metro area or state</option>';
+    function group(label,kinds){
+      var out='',j;
+      for(j=0;j<rows.length;j++){
+        if(kinds.indexOf(rows[j][3])<0)continue;
+        out+='<option value="'+rows[j][0]+'">'+tidy(rows[j][1]).replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</option>';
+      }
+      return out?'<optgroup label="'+label+'">'+out+'</optgroup>':'';
+    }
+    h+=group('Metro areas',['msa','us']);
+    h+=group('State averages',['state']);
+    pickEl.innerHTML=h;
+  })();
+  pickEl.addEventListener('change',function(){
+    if(!pickEl.value)return;
+    chosen=pickEl.value;
+    cityIn.value=tidy(R[chosen][1]);
+    listEl.style.display='none';
+    window.colCalc();
+  });
+  function syncPick(){ if(pickEl) pickEl.value = (chosen && R[chosen] && R[chosen][3] !== 'city') ? chosen : ''; }
   cityIn.addEventListener('input',function(){chosen=null;render(cityIn.value);});
   cityIn.addEventListener('focus',function(){loadCities();if(cityIn.value.trim().length>1)render(cityIn.value);});
   cityIn.addEventListener('input',function(){loadCities();});
@@ -421,6 +452,7 @@ function colCalc(){}
     var html='';
     for(var j=0;j<CAT.length;j++)html+=catBlock(CAT[j],shortName,f,t);
     cats.innerHTML=html;
+    syncPick();
     try{var u=new URL(location.href);u.searchParams.set('from',f[0]);if(income>0)u.searchParams.set('income',String(Math.round(income)));else u.searchParams.delete('income');history.replaceState(null,'',u.pathname+u.search+u.hash);}catch(e){}
   };
   inc.addEventListener('input',function(){if(chosen)window.colCalc();});
