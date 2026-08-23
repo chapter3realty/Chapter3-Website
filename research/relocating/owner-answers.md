@@ -108,3 +108,42 @@ brief him and Timmy on.
   toward the total and is accurate per city; exact item prices not required.
 - One indexable calculator URL. Origin pages only where we write real content
   (agreed in chat 2026-08-16 after the doorway-page discussion).
+
+
+## Round 2 answers, 2026-08-23 (Devin, in chat)
+
+Collected for the E-E-A-T pass. What shipped and what was cut, with reasons.
+
+- **Name and founding.** "Chapter 3" has no story ("just sounded cool"), and the
+  brokerage is new. Owner said not to discuss founding. Neither appears on any
+  page. The positioning that DID ship: partnership, simple, technology, informed
+  on the biggest purchase of your life, reliable quality.
+- **Fred Nash.** Timmy's father, Fred Nash, sold real estate here before him.
+  Fred Nash BOULEVARD (not Drive) is real: Horry County/SCDOT project by the
+  airport, opened 2026-02. The claim that it is named FOR him is family
+  knowledge, not independently verified, so the pages say the road "carries the
+  family name", which is true under any resolution. If Timmy produces the
+  naming record, upgrade the sentence.
+- **Timmy's first ten minutes.** Shipped as a quote on pros-and-cons, with
+  "heaven on earth" paraphrased out (metaphor rule).
+- **Biggest NY-buyer mistake.** As told, it was culture/personality matching
+  with soccer moms and retirees as examples. NOT PUBLISHABLE, steering. Shipped
+  as the rules-fit version (HOA covenants, boats, carts, rentals, pool), which
+  the owner's own words also support.
+- **Devin's move.** Ohio, three years ago. Shocked by the annual vehicle tax
+  (cars, boats, campers confirmed at Horry Auditor pages and now cited),
+  cheaper gas his favorite change, missed the 45-day license window, found the
+  parking decal in year two. All shipped, labelled as his.
+- **J-1 students.** Cut again, same rule as last round: seasonal population
+  only, no visa categories. Not shipped anywhere.
+- **NY client tax story.** $1M house, $20k+ tax -> $700k house, ~$3,200 tax.
+  Shipped on from-new-york, rounded, labelled one household, "not a promise".
+  The "also saved on insurance" clause was CUT: it contradicts the site's own
+  verified warning that coastal insurance usually goes UP, and one household
+  cannot carry that claim.
+- **Off season.** Dogs-on-beach rule verified at the City of Myrtle Beach and
+  cited (off season any hour, summer before 10 and after 5, each town its own).
+  Hotel prices kept qualitative ("well below summer prices"), no dollar figure.
+- **Schools story.** CCU family, zone-edge houses, address-by-address lookup
+  with no opinions. Shipped on schools as told; it is the compliant process
+  working, which is the page's whole argument.
