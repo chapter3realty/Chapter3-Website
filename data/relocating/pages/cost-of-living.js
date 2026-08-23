@@ -30,7 +30,7 @@ const S = {
   a: 'color:var(--brass);font-weight:600;text-decoration:none',
   label: 'display:block;font-family:var(--sans);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin-bottom:.4rem;font-weight:600',
   small: 'font-family:var(--sans);font-size:.75rem;color:var(--muted);margin-top:.9rem;line-height:1.5',
-  ctaBox: 'background:var(--ivory);border:1px solid var(--rule);border-radius:12px;padding:1.2rem 1.3rem;margin-top:1.8rem;max-width:720px;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between',
+  ctaBox: 'background:var(--ivory);border:1px solid var(--rule);border-radius:6px;padding:1.2rem 1.3rem;margin-top:1.8rem;max-width:720px;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between',
 };
 const A = (href, text) => `<a href="${href}" style="${S.a}">${text}</a>`;
 const X = (href, text) => `<a href="${href}" style="${S.a}" rel="noopener" target="_blank">${text}</a>`;
@@ -481,7 +481,8 @@ function ldSubmit(){
 }
 </script></div></section>
 
-<section style="background:var(--ivory)"><div class="wrap"><p style="${S.eyebrow}">Common questions</p><h2 style="${S.h2}">Myrtle Beach cost of living FAQ</h2>${faqHtml}<p style="${S.small};margin-top:1.6rem"><strong style="color:var(--navy)">Sources:</strong> ${X('https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area', 'US Bureau of Economic Analysis')}, ${X('https://www.zillow.com/research/data/', 'Zillow')}, ${X('https://dor.sc.gov/', 'SC Department of Revenue')}, ${X('https://www.horrycountysc.gov/tax-payer-services/', 'Horry County')}, ${X('https://gasprices.aaa.com/state-gas-price-averages/', 'AAA fuel prices')}. Our own bills are marked as ours. Prices and rates change.</p></div></section>
+<section style="background:var(--ivory)"><div class="wrap"><p style="${S.eyebrow}">Common questions</p><h2 style="${S.h2}">Myrtle Beach cost of living FAQ</h2>${faqHtml}<div style="border-top:1px solid var(--rule);margin-top:2.2rem;padding-top:1.5rem;max-width:720px"><p style="${S.eyebrow}">Who wrote this</p><p style="${S.small}">Chapter 3 Realty is a real estate brokerage in Myrtle Beach. Timmy Fredrick Nash is the Broker-in-Charge, South Carolina broker license 43182. He has sold real estate on the Grand Strand for more than 30 years, he reviews every page we publish, and he runs our market analyses himself. Devin Day wrote this page. He is our Operations Officer and a licensed mortgage loan originator, NMLS 2721275. Meet the team on ${A('/about/', 'the about page')} or read ${A('/why-chapter-3/', 'why buyers work with us')}. The direct line is <a href="tel:+18543332135" style="${S.a}">854.333.2135</a>.</p></div>
+<p style="${S.small};margin-top:1.6rem"><strong style="color:var(--navy)">Sources:</strong> ${X('https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area', 'US Bureau of Economic Analysis')}, ${X('https://www.zillow.com/research/data/', 'Zillow')}, ${X('https://dor.sc.gov/', 'SC Department of Revenue')}, ${X('https://www.horrycountysc.gov/tax-payer-services/', 'Horry County')}, ${X('https://gasprices.aaa.com/state-gas-price-averages/', 'AAA fuel prices')}. Our own bills are marked as ours. Prices and rates change.</p></div></section>
 `,
 };
 

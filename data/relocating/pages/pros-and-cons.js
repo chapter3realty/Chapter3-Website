@@ -21,7 +21,7 @@ const S = {
   pLast: 'color:var(--muted);line-height:1.75;max-width:720px',
   ul: 'color:var(--muted);line-height:1.65;margin:0 0 0 1.1rem;padding:0;font-family:var(--sans);font-size:.93rem',
   a: 'color:var(--brass);font-weight:600;text-decoration:none',
-  ctaBox: 'background:var(--ivory);border:1px solid var(--rule);border-radius:12px;padding:1.2rem 1.3rem;margin-top:1.8rem;max-width:720px;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between',
+  ctaBox: 'background:var(--ivory);border:1px solid var(--rule);border-radius:6px;padding:1.2rem 1.3rem;margin-top:1.8rem;max-width:720px;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between',
   small: 'font-family:var(--sans);font-size:.78rem;color:var(--muted);line-height:1.6;max-width:720px',
   th: 'padding:.6rem .5rem;font-weight:600;text-align:left;border-bottom:1px solid var(--rule)',
   td: 'padding:.6rem .5rem;vertical-align:top;border-bottom:1px solid var(--rule)',
@@ -59,7 +59,7 @@ const spec = {
 <section style="background:var(--ivory)"><div class="wrap"><p style="${S.eyebrow}">The short answer</p><h2 style="${S.h2}">Is Myrtle Beach a good place to live?</h2><p style="${S.p}">It depends what you want from a place. Your housing money goes further, the winters are mild, and you are near the water. What you give up is walkability, higher pay, and some big city services.</p><p style="${S.pLast}">Here is the whole trade, split into two lists so you can scan it.</p>
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.1rem;max-width:760px;margin-top:1.6rem">
-<div style="background:#fff;border:1px solid var(--rule);border-radius:14px;padding:1.3rem 1.4rem"><h3 style="font-family:var(--serif);font-size:1.2rem;color:var(--navy);margin:0 0 .9rem">Pros of living in Myrtle Beach</h3><ul style="${S.ul}">
+<div style="background:#fff;border:1px solid var(--rule);border-radius:6px;padding:1.3rem 1.4rem"><h3 style="font-family:var(--serif);font-size:1.2rem;color:var(--navy);margin:0 0 .9rem">Pros of living in Myrtle Beach</h3><ul style="${S.ul}">
 <li style="margin-bottom:.55rem">A typical home costs about $342,000, well under most of the Northeast</li>
 <li style="margin-bottom:.55rem">Mild winters. January highs average the mid 50s</li>
 <li style="margin-bottom:.55rem">Sixty miles of beach, and the ocean is swimmable from June into October</li>
@@ -69,7 +69,7 @@ const spec = {
 <li style="margin-bottom:.55rem">Traffic is light compared with any large metro</li>
 <li style="margin-bottom:0">Golf carts are a real way to get around in many neighborhoods</li>
 </ul></div>
-<div style="background:#fff;border:1px solid var(--rule);border-radius:14px;padding:1.3rem 1.4rem"><h3 style="font-family:var(--serif);font-size:1.2rem;color:var(--navy);margin:0 0 .9rem">Cons of living in Myrtle Beach</h3><ul style="${S.ul}">
+<div style="background:#fff;border:1px solid var(--rule);border-radius:6px;padding:1.3rem 1.4rem"><h3 style="font-family:var(--serif);font-size:1.2rem;color:var(--navy);margin:0 0 .9rem">Cons of living in Myrtle Beach</h3><ul style="${S.ul}">
 <li style="margin-bottom:.55rem">You cannot walk to much. This is a driving area</li>
 <li style="margin-bottom:.55rem">Pay is lower than in a northern metro</li>
 <li style="margin-bottom:.55rem">Summers are hot and humid, with about 22 days a year over 90 degrees</li>
@@ -139,7 +139,8 @@ function ldSubmit(){
 }
 </script></div></section>
 
-<section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">Common questions</p><h2 style="${S.h2}">Living in Myrtle Beach FAQ</h2>${faqHtml}<p style="${S.small};margin-top:1.6rem"><strong style="color:var(--navy)">Sources:</strong> ${X('https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area', 'BEA regional price parities')}, ${X('https://www.ncei.noaa.gov/access/us-climate-normals/', 'NOAA climate normals')}, ${X('https://www.weather.gov/ilm/', 'National Weather Service Wilmington')}, ${X('https://tidesandcurrents.noaa.gov/stationhome.html?id=8661070', 'NOAA Springmaid Pier gauge')}, ${X('https://www.horrycountysc.gov/departments/stormwater/major-initiatives/mosquito-control/', 'Horry County Mosquito Control')}, ${X('https://www.scdot.org/travel/travel-trafficdata.html', 'SCDOT traffic counts')}. Hospital bed counts and project timelines come from each health system. Drive times are off-peak estimates. Household bills and observations are ours and are labelled as such.</p></div></section>
+<section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">Common questions</p><h2 style="${S.h2}">Living in Myrtle Beach FAQ</h2>${faqHtml}<div style="border-top:1px solid var(--rule);margin-top:2.2rem;padding-top:1.5rem;max-width:720px"><p style="${S.eyebrow}">Who wrote this</p><p style="${S.small}">Chapter 3 Realty is a real estate brokerage in Myrtle Beach. Timmy Fredrick Nash is the Broker-in-Charge, South Carolina broker license 43182. He has sold real estate on the Grand Strand for more than 30 years, he reviews every page we publish, and he runs our market analyses himself. Devin Day wrote this page. He is our Operations Officer and a licensed mortgage loan originator, NMLS 2721275. Meet the team on ${A('/about/', 'the about page')} or read ${A('/why-chapter-3/', 'why buyers work with us')}. The direct line is <a href="tel:+18543332135" style="${S.a}">854.333.2135</a>.</p></div>
+<p style="${S.small};margin-top:1.6rem"><strong style="color:var(--navy)">Sources:</strong> ${X('https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area', 'BEA regional price parities')}, ${X('https://www.ncei.noaa.gov/access/us-climate-normals/', 'NOAA climate normals')}, ${X('https://www.weather.gov/ilm/', 'National Weather Service Wilmington')}, ${X('https://tidesandcurrents.noaa.gov/stationhome.html?id=8661070', 'NOAA Springmaid Pier gauge')}, ${X('https://www.horrycountysc.gov/departments/stormwater/major-initiatives/mosquito-control/', 'Horry County Mosquito Control')}, ${X('https://www.scdot.org/travel/travel-trafficdata.html', 'SCDOT traffic counts')}. Hospital bed counts and project timelines come from each health system. Drive times are off-peak estimates. Household bills and observations are ours and are labelled as such.</p></div></section>
 `,
 };
 

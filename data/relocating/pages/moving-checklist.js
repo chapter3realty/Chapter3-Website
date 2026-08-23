@@ -16,8 +16,8 @@ const S = {
   pLast: 'color:var(--muted);line-height:1.75;max-width:720px',
   a: 'color:var(--brass);font-weight:600;text-decoration:none',
   ul: 'color:var(--muted);line-height:1.7;max-width:720px;margin:0 0 1rem 1.2rem;padding:0',
-  card: 'background:#fff;border:1px solid var(--rule);border-radius:12px;padding:1.2rem 1.3rem;max-width:720px;margin-bottom:1rem',
-  ctaBox: 'background:var(--ivory);border:1px solid var(--rule);border-radius:12px;padding:1.2rem 1.3rem;margin-top:1.8rem;max-width:720px;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between',
+  card: 'background:#fff;border:1px solid var(--rule);border-radius:6px;padding:1.2rem 1.3rem;max-width:720px;margin-bottom:1rem',
+  ctaBox: 'background:var(--ivory);border:1px solid var(--rule);border-radius:6px;padding:1.2rem 1.3rem;margin-top:1.8rem;max-width:720px;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between',
   small: 'font-family:var(--sans);font-size:.75rem;color:var(--muted);margin-top:.9rem;line-height:1.5',
 };
 const A = (href, text) => `<a href="${href}" style="${S.a}"${/^https?:/.test(href) ? ' rel="noopener" target="_blank"' : ''}>${text}</a>`;
@@ -105,7 +105,8 @@ function ldSubmit(){
 }
 </script></div></section>
 
-<section style="background:var(--ivory)"><div class="wrap"><p style="${S.eyebrow}">Common questions</p><h2 style="${S.h2}">Moving to Myrtle Beach FAQ</h2>${faqHtml}<p style="${S.small};margin-top:1.6rem"><strong style="color:var(--navy)">Sources:</strong> ${X('https://dmv.sc.gov/driver-services/moving-to-sc', 'SCDMV moving to SC')}, ${X('https://www.horrycountysc.gov/tax-payer-services/', 'Horry County tax payer services')}, ${X('https://www.solidwasteauthority.org/residential.html', 'Horry County Solid Waste Authority')}, ${X('https://www.cityofmyrtlebeach.com/services/parking_meters/index.php', 'City of Myrtle Beach parking')}, ${X('https://scvotes.gov/voters/register-to-vote/', 'SC Votes')}. Fees, deadlines and utility deposits change. Every figure here was read at the source; confirm the current one before you rely on it.</p></div></section>
+<section style="background:var(--ivory)"><div class="wrap"><p style="${S.eyebrow}">Common questions</p><h2 style="${S.h2}">Moving to Myrtle Beach FAQ</h2>${faqHtml}<div style="border-top:1px solid var(--rule);margin-top:2.2rem;padding-top:1.5rem;max-width:720px"><p style="${S.eyebrow}">Who wrote this</p><p style="${S.small}">Chapter 3 Realty is a real estate brokerage in Myrtle Beach. Timmy Fredrick Nash is the Broker-in-Charge, South Carolina broker license 43182. He has sold real estate on the Grand Strand for more than 30 years, he reviews every page we publish, and he runs our market analyses himself. Devin Day wrote this page. He is our Operations Officer and a licensed mortgage loan originator, NMLS 2721275. Meet the team on ${A('/about/', 'the about page')} or read ${A('/why-chapter-3/', 'why buyers work with us')}. The direct line is <a href="tel:+18543332135" style="${S.a}">854.333.2135</a>.</p></div>
+<p style="${S.small};margin-top:1.6rem"><strong style="color:var(--navy)">Sources:</strong> ${X('https://dmv.sc.gov/driver-services/moving-to-sc', 'SCDMV moving to SC')}, ${X('https://www.horrycountysc.gov/tax-payer-services/', 'Horry County tax payer services')}, ${X('https://www.solidwasteauthority.org/residential.html', 'Horry County Solid Waste Authority')}, ${X('https://www.cityofmyrtlebeach.com/services/parking_meters/index.php', 'City of Myrtle Beach parking')}, ${X('https://scvotes.gov/voters/register-to-vote/', 'SC Votes')}. Fees, deadlines and utility deposits change. Every figure here was read at the source; confirm the current one before you rely on it.</p></div></section>
 `,
 };
 
