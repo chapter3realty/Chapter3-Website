@@ -147,3 +147,26 @@ Collected for the E-E-A-T pass. What shipped and what was cut, with reasons.
 - **Schools story.** CCU family, zone-edge houses, address-by-address lookup
   with no opinions. Shipped on schools as told; it is the compliant process
   working, which is the page's whole argument.
+
+
+## Round 3 answers, 2026-08-24 (Devin, in chat)
+
+- **Devin origin:** Pleasant City, Guernsey County, Ohio, village of about 400
+  (population verified against census sources). First SC vehicle bill $325 plus
+  the $250 one-time fee and $50 road fee. Shipped on from-ohio, labelled his.
+- **Fred Nash Boulevard naming CONFIRMED by owner:** named for Timmy's father,
+  who also sold real estate here. Author block upgraded from "carries the
+  family name" to "is named for him" on every relocator page.
+- **"Ask Devin" button removed** at owner request. All lead-form and ctaBox
+  buttons now carry page-specific labels instead of "Run my numbers".
+- **NC client story shipped** (construction build, land + builder + BrickWood
+  financing, cleaning business expansion). BrickWood is named, so the page
+  carries an inline RESPA AfBA pointer in addition to the footer disclosure.
+  No builder named. "Cheaper build costs" NOT stated as fact.
+- **NJ 2% holdback claim VERIFIED at the owner's request:** it is an estimated
+  prepayment reconciled and refunded on the nonresident return, per the state
+  bulletin already cited on the page. Experience line added.
+- **PA:** most PA buyers are retirees (owner-stated mix, shipped); job-hunt
+  help for arriving clients shipped. "Party city" and price comparisons to
+  unnamed competitor towns NOT used.
+- **CUT:** "nicer culture" (people-characterization, same rule as always).
