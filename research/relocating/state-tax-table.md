@@ -698,3 +698,18 @@ Confidence: HIGH (opened 2026-08-16).
 ---
 
 *End of research file. Sections 0–1 written in a prior session; sections 2–8 written 2026-08-16.*
+
+
+## 9. Update 2026-08-24
+
+- Open item 8 closed: the NC/SC crossover arithmetic in section 3.8 was
+  independently re-run from the schedules in sections 1.1 and 3.1, including
+  the SCIAD round-to-lowest-ten rule. All three published waypoints reproduce
+  exactly ($597/$2,965/$4,291 SC against $1,377/$2,973/$3,771 NC), and the
+  crossover lands at roughly $100,300 of joint AGI. The from-north-carolina
+  page states it as "about $100,000" with schedule-level figures only.
+- Open item 4 remains open: the 2026 Ohio IT 1040 does not exist until filing
+  season. The from-ohio page therefore prints no Ohio state-tax dollar math.
+- Origin volume correction from the owner (2026-08-24, in chat): North
+  Carolina is the largest origin state by client count, ahead of New York.
+  The hub already said this; page priorities now match it.
