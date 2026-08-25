@@ -219,6 +219,10 @@ function colCalc(){}
   var big=document.getElementById('colBig'),lead=document.getElementById('colLead'),pct=document.getElementById('colPct'),delta=document.getElementById('colDelta'),want=document.getElementById('colWant');
   var stats=document.getElementById('colCards'),cats=document.getElementById('colCats');
   var chosen=null, active=-1, shown=[];
+  /* The page loads showing the example the grey placeholders describe: New York
+     on 75,000, with both inputs still empty so they read as examples. The first
+     keystroke in either field ends it and the tool behaves normally. */
+  var DEMO_CITY='new-york-newark-jersey-city-ny-nj', DEMO_INCOME=75000, demo=true;
   function zMonth(iso){if(!iso)return 'latest month';var p=iso.split('-');var M=['January','February','March','April','May','June','July','August','September','October','November','December'];return M[parseInt(p[1],10)-1]+' '+p[0];}
   document.getElementById('colZDate').textContent=zMonth(D.meta.zillowLatestMonth);
   // The BEA vintage is two years behind by design (they publish with a lag).
@@ -228,7 +232,7 @@ function colCalc(){}
   function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
   function money2(n){return '$'+n.toFixed(2);}
   function money100(n){return '$'+(Math.round(n/100)*100).toLocaleString('en-US');}
-  function readIncome(){var v=parseFloat((inc.value||'').replace(/[^0-9.]/g,''));return isFinite(v)&&v>0?v:0;}
+  function readIncome(){var v=parseFloat((inc.value||'').replace(/[^0-9.]/g,''));if(isFinite(v)&&v>0)return v;return demo?DEMO_INCOME:0;}
   // Backslashes must be doubled: this whole script is inside a template
   // literal, so \\s reaches the browser as \\s and not as a bare s. Written
   // singly, /\\*+/ arrived as /*+ which opens a comment and kills the file.
@@ -360,7 +364,7 @@ function colCalc(){}
     closeList();
     window.colCalc();
   }
-  cityIn.addEventListener('input',function(){chosen=null;render(cityIn.value);});
+  cityIn.addEventListener('input',function(){demo=false;chosen=null;render(cityIn.value);});
   cityIn.addEventListener('focus',function(){loadCities();if(cityIn.value.trim().length>1)render(cityIn.value);});
   cityIn.addEventListener('click',function(){if(!cityIn.value.trim()){openAll=true;showAll();}});
   cityIn.addEventListener('input',function(){loadCities();});
@@ -445,13 +449,12 @@ function colCalc(){}
     cats.innerHTML=html;
     try{var u=new URL(location.href);u.searchParams.set('from',f[0]);if(income>0)u.searchParams.set('income',String(Math.round(income)));else u.searchParams.delete('income');history.replaceState(null,'',u.pathname+u.search+u.hash);}catch(e){}
   };
-  inc.addEventListener('input',function(){if(chosen)window.colCalc();});
-  inc.addEventListener('blur',function(){var v=readIncome();if(v>0)inc.value=Math.round(v).toLocaleString('en-US');});
-  // Load empty so the placeholders read as the example. A shared link still
-  // arrives filled in, which is the only case that should prefill.
+  inc.addEventListener('input',function(){demo=false;if(chosen)window.colCalc();});
+  inc.addEventListener('blur',function(){var v=parseFloat((inc.value||'').replace(/[^0-9.]/g,''));if(isFinite(v)&&v>0)inc.value=Math.round(v).toLocaleString('en-US');});
   var start=null;
-  try{var q=new URLSearchParams(location.search);var qf=q.get('from');if(qf&&R[qf])start=qf;var qi=parseFloat(q.get('income'));if(isFinite(qi)&&qi>0)inc.value=Math.round(qi).toLocaleString('en-US');}catch(e){}
-  if(start){chosen=start;cityIn.value=tidy(R[start][1]);}
+  try{var q=new URLSearchParams(location.search);var qf=q.get('from');if(qf&&R[qf])start=qf;var qi=parseFloat(q.get('income'));if(isFinite(qi)&&qi>0){inc.value=Math.round(qi).toLocaleString('en-US');demo=false;}}catch(e){}
+  if(start){demo=false;chosen=start;cityIn.value=tidy(R[start][1]);}   /* a shared link fills the fields in */
+  else if(demo&&R[DEMO_CITY])chosen=DEMO_CITY;                        /* otherwise run the example, fields empty */
   window.colCalc();
 })();
 </script>
