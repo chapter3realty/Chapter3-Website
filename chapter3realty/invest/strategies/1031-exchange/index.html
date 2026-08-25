@@ -166,7 +166,7 @@
 </main>
 <footer>
 <div class="wrap">
-<div class="footer-cta" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.2rem 2rem;padding-bottom:2.2rem;margin-bottom:2.4rem;border-bottom:1px solid rgba(244,239,232,.12)"><div style="max-width:600px"><p style="font-family:var(--serif);font-size:1.6rem;color:var(--ivory);margin:0 0 .4rem;line-height:1.15">Ready to make your next move on the Grand Strand?</p><p style="color:rgba(244,239,232,.6);font-size:.92rem;line-height:1.6;margin:0">Whether you are buying, selling, or investing, talk to a licensed local agent who knows the Grand Strand. No pressure, just straight answers.</p></div><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-primary" href="/contact/">Talk to an agent</a><a class="btn btn-outline" href="/guides/" style="color:var(--ivory);border-color:rgba(244,239,232,.4)">Browse guides &amp; tools</a></div></div>
+<div class="footer-cta" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.2rem 2rem;padding-bottom:2.2rem;margin-bottom:2.4rem;border-bottom:1px solid rgba(244,239,232,.12)"><div style="max-width:600px"><p style="font-family:var(--serif);font-size:1.6rem;color:var(--ivory);margin:0 0 .4rem;line-height:1.15">Ready to make your next move on the Grand Strand?</p><p style="color:rgba(244,239,232,.6);font-size:.92rem;line-height:1.6;margin:0">Whether you are buying, selling, or investing, talk to a licensed local agent who knows the Grand Strand. No pressure, just straight answers.</p></div><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-primary" href="/contact/">Talk to an agent</a><a class="btn btn-outline" href="tel:+18543332135" style="color:var(--ivory);border-color:rgba(244,239,232,.4)">Call 854.333.2135</a></div></div>
 <div class="footer-grid">
 <div class="footer-brand">
 <a class="logo" href="/">
@@ -585,7 +585,11 @@
     document.addEventListener('keydown', onKey);
     revealAfterVideo();
     if (window.c3track) window.c3track('popup_shown', { page_path: location.pathname });
+    return true;
   }
+  /* CTA buttons on pages with no on-page form call this; true = opened, so the
+     caller cancels its /contact/ fallback navigation. */
+  window.c3PopOpen = open;
 
   function send() {
     var g = function (id) { var el = document.getElementById(id); return el ? String(el.value || '').trim() : ''; };
@@ -607,13 +611,15 @@
   }
 
   function init() {
-    if (shouldSkip()) return;
     if (location.pathname.indexOf('/contact/') === 0) return;  /* already contacting us */
     var p = document.getElementById('c3-pop');
     if (!p) return;
+    /* wire close and send even when the timed show is skipped, because CTA
+       buttons can open the dialog through c3PopOpen at any time */
     var x = document.getElementById('c3-pop-x'); if (x) x.addEventListener('click', close);
     var s = document.getElementById('c3-pop-send'); if (s) s.addEventListener('click', send);
     p.addEventListener('click', function (e) { if (e.target === p) close(); });
+    if (shouldSkip()) return;
     setTimeout(warmVideo, Math.max(0, DELAY - WARM));
     setTimeout(open, DELAY);
   }

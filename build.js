@@ -710,6 +710,23 @@ const FILLER = [
   "go against you", "the single largest number", "written as though",
   "all upside", "nobody tells them",
 ];
+/* Owner instruction, 2026-08-25: "every CTA on the site needs to either go to
+ * a functional value based tool or to a contact us pop up/page. Normal links
+ * are for linking to pages; the CTAs are trying to get conversions."
+ * A button-styled anchor (class contains "btn") may point only at these pages,
+ * tel:/sms:/mailto:, or a form/calculator anchor that actually exists on the
+ * target page. The anchor-must-exist part also catches dead buttons: the HOA
+ * cluster shipped 60 buttons to #lead-form on pages that had no lead form. */
+const CTA_DESTINATIONS = new Set([
+  "/contact/",
+  "/buyers/cost-to-own/",
+  "/buyers/relocating/cost-of-living/",
+  "/buyers/closing-costs/",
+  "/buyers/property-taxes/",
+  "/invest/long-term-rental/",
+  "/sell/capital-gains/",
+  "/sell/net-proceeds/",
+]);
 /* Industry jargon. Owner instruction, 2026-08-20: "never use an industry term
  * ever in an article, hard code that". He caught "listing" being used where
  * "house" was meant. A buyer does not say listing, comp, DOM, or SFR; they say
@@ -849,6 +866,14 @@ function audit() {
   const JS_KEYWORDS = new Set(["if","for","while","return","switch","typeof","void","new","delete","do","else","try","catch"]);
   const inbound = new Map();     // page -> Set(pages linking to it from BODY copy)
   const shingles = new Map();    // page -> Set(8-word shingles) for near-duplicate detection
+  const pageSrcCache = new Map(); // for CTA cross-page anchor checks
+  const pageHasId = (pg, id) => {
+    if (!pageSrcCache.has(pg)) {
+      const tf = path.join(ROOT, pg.replace(/^\//, ""), "index.html");
+      pageSrcCache.set(pg, fs.existsSync(tf) ? fs.readFileSync(tf, "utf-8") : "");
+    }
+    return pageSrcCache.get(pg).includes(`id="${id}"`);
+  };
   const indexable = [];
   // Phrases that only make sense in reading order. An AI answer engine quotes a
   // single passage, so "as mentioned above" makes that passage useless.
@@ -1237,6 +1262,19 @@ function audit() {
     for (const p of FAIR_HOUSING) if (low.includes(p)) E(`fair-housing risk phrase: "${p}"`);
     for (const p of FIGURATIVE) if (low.includes(p)) E(`figurative language: "${p}" - say it literally`);
     for (const p of FILLER) if (low.includes(p)) E(`filler line: "${p}" - state the fact or delete the sentence`);
+    for (const m of s.matchAll(/<a\b[^>]*>/g)) {
+      const tag = m[0];
+      if (!/\bbtn\b/.test((tag.match(/class="([^"]*)"/) || [])[1] || "")) continue;
+      const href = (tag.match(/href="([^"]*)"/) || [])[1] || "";
+      if (/^(tel:|sms:|mailto:)/.test(href)) continue;
+      if (CTA_DESTINATIONS.has(href.replace(/[#?].*$/, ""))) continue;
+      if (href.includes("#")) {
+        const [pg, id] = href.split("#");
+        const ok = /(form|calc)/.test(id) && (pg ? pageHasId(pg, id) : s.includes(`id="${id}"`));
+        if (ok) continue;
+      }
+      E(`CTA button to "${href}" - a button must convert: point it at a tool page, /contact/, tel:, or a form/calculator anchor that exists, or demote it to a text link`);
+    }
     for (const p of SELF_REFERENTIAL) if (low.includes(p)) E(`writes about our own page or other websites: "${p}" - the buyer only needs the fact`);
     /* Scoped to <main>. `prose` is NOT limited to the article: the nav says
      * "listings" and a shared script mentions "the subject property", so
