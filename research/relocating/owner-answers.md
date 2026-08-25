@@ -170,3 +170,39 @@ Collected for the E-E-A-T pass. What shipped and what was cut, with reasons.
   help for arriving clients shipped. "Party city" and price comparisons to
   unnamed competitor towns NOT used.
 - **CUT:** "nicer culture" (people-characterization, same rule as always).
+
+## Round 4 answers, 2026-08-25 (Devin, in chat) — jobs/healthcare/towns/Maryland
+
+- **Jobs.** Most buyers arrive and find work in a month or two (shipped,
+  labelled our-clients experience, not a promise). Fields seen: child
+  protective services, stores, welding; split-year north/south work; remote.
+  Owner asked us to verify "lots of jobs" with real stats: shipped as QCEW
+  growth 9.1% vs 5.1% (D19) plus the attributed Census second-fastest-metro
+  rank. Stories shipped: the child-protective-services client hired a month
+  after applying during a visit (BrickWood financed, so the jobs page carries
+  the inline AfBA pointer), and the veteran working alternating weeks in New
+  York. Devin's MLO note on family-business hires needing up to two years of
+  income history shipped, phrased qualitatively.
+- **Healthcare.** South-strand communities sit across from the rising South
+  Strand Hospital site (shipped as fact + we-measure-drives offer). CUT:
+  "people with medical issues love this area" framing (health condition is
+  disability-adjacent; service-offer framing used instead) and the
+  "7-10 minutes" NMB figure (unverified, garbled in the note).
+- **Which town.** Devin and Abdulla both chose Murrells Inlet; Devin's
+  routine (office, Market Common, Barnes & Noble, Fitness Edge MMA in
+  Carolina Forest) and Abdulla's (Crunch by the mall) shipped as the
+  authors-chose-their-own-town section. Party-town and retirement-town
+  misconceptions shipped with geography and the county 65+ share as the
+  correction. NC build clients bought in LONGS (shipped, also added to the
+  NC story); NY clients bought North Myrtle Beach beachfront near the
+  waterway for their boat (shipped on from-new-york and referenced).
+  CUT: "no shortage of younger people near the college/gyms" and any
+  young-areas/old-areas mapping — that is demographic steering; the legal
+  county-wide stat carries the correction instead. Owner asked if the age
+  line was legal: answered in chat, no.
+- **Maryland.** Colleague moved from Clarksville and Columbia (Howard
+  County). Shipped as his labelled observations: farm stands and butchers
+  fill the organic gap the stores leave; many more motorcycles in summer
+  (Devin rides too, shipped); construction everywhere, tied to the growth
+  stats. CUT: his observation that ages mix in Maryland but separate here
+  (same steering rule as above).

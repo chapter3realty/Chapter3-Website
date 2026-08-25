@@ -826,3 +826,19 @@ This is the section that decides whether the calculator can have a food line at 
 - No rating, no ranking, no recommendation. Facts and prices only.
 
 <!-- APPEND-MARKER -->
+
+### D19. Employment growth (added 2026-08-25, for the jobs page)
+
+- Fact: Horry County all-industry, all-ownership annual average employment:
+  **133,871 (2019) → 122,231 (2020, pandemic year, -8.7%) → 146,055 (2025)**.
+  2019→2025 growth **+12,184 jobs, +9.1%**. United States same measure:
+  148,105,092 (2019) → 155,685,781 (2025), **+5.1%**. So Horry added jobs at
+  nearly twice the national rate over the six years. Use 2019 as the base,
+  never 2020: the 2020 dip makes any 2020-based growth figure flattering.
+- Source: BLS QCEW open data, annual files
+  https://data.bls.gov/cew/data/api/2019/a/area/45051.csv (and /2020/, /2025/,
+  /US000.csv), own_code 0, industry 10. Pulled 2026-08-25.
+- Confidence: HIGH. The division is our arithmetic; say so if quoted precisely.
+- NOT verified: a job-openings rate for SC. The BLS v1 API daily quota blocked
+  the state JOLTS series (JTS000000450000000JOR) on 2026-08-25. Do not print
+  an openings rate until that series is actually opened.
