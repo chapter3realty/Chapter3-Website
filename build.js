@@ -683,6 +683,11 @@ const FIGURATIVE = [
   "carries almost", "carries the whole", "does the work", "money disappears",
   "the ambush", "runs the other way", "goes the wrong way", "cuts both ways",
   "pressure-test", "the trap is", "catches people",
+  // Owner review 2026-08-25: "the line that disappears" shipped as a header.
+  // Taxes end, exemptions are lost, credits stop; nothing disappears. "slice"
+  // for a share of income, "dress it up", and agents who "vanish" are the
+  // same family. Each of these had a live instance when it was added.
+  "disappear", "vanish", "entire slice", "dress it up", "dressing up",
   // NOT "rate card": a property-management rate card is a real document, and
   // /invest/airbnb-income/ cites them literally in its sources line.
   // NOT "the clock starts": the 45-day and 180-day clocks are what the 1031
@@ -1262,18 +1267,40 @@ function audit() {
     for (const p of FAIR_HOUSING) if (low.includes(p)) E(`fair-housing risk phrase: "${p}"`);
     for (const p of FIGURATIVE) if (low.includes(p)) E(`figurative language: "${p}" - say it literally`);
     for (const p of FILLER) if (low.includes(p)) E(`filler line: "${p}" - state the fact or delete the sentence`);
+    /* Owner instruction, 2026-08-25: a CTA must deliver what its label
+     * promises. "Check the drive from an address" pointed at a lead form,
+     * which checks nothing - we do, after they write in. A form or contact
+     * destination is a request, so its label must read as one ("Have us
+     * check...", "Ask us...", "Send..."), never as an inspection the click
+     * itself performs. Buttons that open a real tool (openIdx, a calculator
+     * page) may promise the action. */
+    const CTA_PROMISE = /^\s*(check|open|map|see|view|browse|explore|watch|look)\b/i;
     for (const m of s.matchAll(/<a\b[^>]*>/g)) {
       const tag = m[0];
       if (!/\bbtn\b/.test((tag.match(/class="([^"]*)"/) || [])[1] || "")) continue;
       const href = (tag.match(/href="([^"]*)"/) || [])[1] || "";
       if (/^(tel:|sms:|mailto:)/.test(href)) continue;
-      if (CTA_DESTINATIONS.has(href.replace(/[#?].*$/, ""))) continue;
+      const base = href.replace(/[#?].*$/, "");
+      const isTool = CTA_DESTINATIONS.has(base) && base !== "/contact/";
+      let anchorOk = false;
       if (href.includes("#")) {
         const [pg, id] = href.split("#");
-        const ok = /(form|calc)/.test(id) && (pg ? pageHasId(pg, id) : s.includes(`id="${id}"`));
-        if (ok) continue;
+        anchorOk = /(form|calc)/.test(id) && (pg ? pageHasId(pg, id) : s.includes(`id="${id}"`));
       }
-      E(`CTA button to "${href}" - a button must convert: point it at a tool page, /contact/, tel:, or a form/calculator anchor that exists, or demote it to a text link`);
+      if (!isTool && base !== "/contact/" && !anchorOk) {
+        E(`CTA button to "${href}" - a button must convert: point it at a tool page, /contact/, tel:, or a form/calculator anchor that exists, or demote it to a text link`);
+        continue;
+      }
+      const isFormDest = !isTool && !/calc/.test(href.split("#")[1] || "");
+      if (isFormDest && !tag.includes("openIdx")) {
+        const label = s.slice(m.index + tag.length, m.index + tag.length + 200)
+          .split("</a>")[0].replace(/<[^>]*>/g, "").trim();
+        if (CTA_PROMISE.test(label)) E(`CTA label "${label}" promises an action but points at a form (${href}) - reword as a request (Have us... / Ask us... / Send...) or point it at a tool`);
+      }
+    }
+    for (const m of s.matchAll(/<button\b[^>]*ldSubmit\(\)[^>]*>([^<]*)<\/button>/g)) {
+      const label = m[1].trim();
+      if (CTA_PROMISE.test(label)) E(`form submit label "${label}" promises an action the form does not perform - reword as a request`);
     }
     for (const p of SELF_REFERENTIAL) if (low.includes(p)) E(`writes about our own page or other websites: "${p}" - the buyer only needs the fact`);
     /* Scoped to <main>. `prose` is NOT limited to the article: the nav says

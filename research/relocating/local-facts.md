@@ -842,3 +842,26 @@ This is the section that decides whether the calculator can have a food line at 
 - NOT verified: a job-openings rate for SC. The BLS v1 API daily quota blocked
   the state JOLTS series (JTS000000450000000JOR) on 2026-08-25. Do not print
   an openings rate until that series is actually opened.
+
+### A5. Hospital awards and certifications (added 2026-08-25, owner request)
+
+- Grand Strand Medical Center, from its own about page (opened 2026-08-25):
+  Healthgrades "America's 250 Best Hospitals Award" 2023 and 2024;
+  "America's 100 Best Hospitals for Stroke Care Award" 2023, 2024, 2025;
+  "America's 100 Best Hospitals for Critical Care Award" 2023, 2024, 2025;
+  plus 100-Best listings in gastrointestinal care and surgery, orthopedic
+  surgery, spine surgery and 50-Best vascular surgery across those years.
+  American Heart Association/American Stroke Association "Get With The
+  Guidelines Stroke Gold Plus Quality Achievement Award."
+  Source: https://www.mygrandstrandhealth.com/about. Confidence HIGH that the
+  hospital claims them; they are the hospital's own statements of third-party
+  awards, so attribute to Healthgrades/AHA and date them on any page.
+- Conway Medical Center, from its own about page (opened 2026-08-25): Family
+  Medicine Residency Program sponsored by Campbell University, accredited by
+  the ACGME. Strategic relationship with Novant Health (announced Aug 2023).
+  Source: https://www.conwaymedicalcenter.com/about/. Confidence HIGH.
+- Tidelands designations already in A1.2/A1.3 (Joint Commission advanced
+  primary stroke centers; Waccamaw baby-friendly; Level IV trauma).
+- Page rule: these are attributed third-party awards, never our grading. The
+  Charleston two-kinds-of-care section was REMOVED at owner request
+  2026-08-25; do not reintroduce Charleston-dependency claims.
