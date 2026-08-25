@@ -55,6 +55,7 @@ const ICONS = {
   bolt:  '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>',
   cart:  '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.4a2 2 0 0 0 2-1.55L20.5 8H6"/><circle cx="10" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg>',
   heart: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.6-7-9.4A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.6C19 15.4 12 20 12 20Z"/></svg>',
+  dollar:'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5v19"/><path d="M16.6 6.6c0-1.7-2-2.7-4.6-2.7s-4.6 1-4.6 3c0 4.2 9.4 2 9.4 6.5 0 2-2 3-4.8 3s-4.8-1-4.8-2.8"/></svg>',
 };
 
 /* ---------- the calculator ----------
@@ -68,20 +69,20 @@ const ICONS = {
  * Only Housing and Electricity get tables, because only those two have real
  * dollars behind them. */
 const CALC_HTML = `
-<section style="background:var(--ivory)" id="col-calc"><div class="wrap"><p style="${S.eyebrow}">The calculator</p><h2 style="${S.h2}">Compare your city with Myrtle Beach</h2><p style="${S.p}">Put in what you earn now and the city you live in. You get the income you would need here to live the same way.</p>
+<section style="background:var(--ivory)" id="col-calc"><div class="wrap"><h2 class="colx-sr">Compare your city with Myrtle Beach</h2>
 
 <div class="colx">
   <div class="colx-form">
-    <div class="colx-field"><label class="colx-label" for="colIncome">My household income before tax</label><input class="colx-in" id="colIncome" type="text" inputmode="numeric" value="75,000" autocomplete="off"></div>
-    <div class="colx-field" style="position:relative"><label class="colx-label" for="colCity">My city now (type your city)</label><input class="colx-in" id="colCity" type="text" placeholder="Start typing a city or state" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="colList"><button type="button" class="colx-caret" id="colCaret" aria-label="Show all areas" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div id="colList" role="listbox" class="colx-list"></div></div>
+    <div class="colx-field"><label class="colx-label" for="colIncome">Household income</label><input class="colx-in" id="colIncome" type="text" inputmode="numeric" placeholder="75,000" autocomplete="off"></div>
+    <div class="colx-field" style="position:relative"><label class="colx-label" for="colCity">My city now (type your city)</label><input class="colx-in" id="colCity" type="text" placeholder="NYC" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="colList"><button type="button" class="colx-caret" id="colCaret" aria-label="Show all areas" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div id="colList" role="listbox" class="colx-list"></div></div>
     <div class="colx-field"><p class="colx-label" id="colToLab">I want to live in</p><p class="colx-fixed" aria-labelledby="colToLab">Myrtle Beach and surrounding areas</p><p class="colx-hint">Covers Myrtle Beach, Conway, North Myrtle Beach and the rest of the county.</p></div>
     <button class="btn btn-brass colx-go" id="colGo" onclick="colCalc()">Calculate</button>
   </div>
   <div class="colx-answer" id="colOut" aria-live="polite">
     <p class="colx-lead" id="colLead">To live the same way in Myrtle Beach, you need a household income of</p>
-    <p class="colx-big" id="colBig">&nbsp;</p>
+    <div class="colx-bigrow"><p class="colx-big" id="colBig">&nbsp;</p><span class="colx-pct" id="colPct"></span></div>
     <p class="colx-delta" id="colDelta"></p>
-    <p class="colx-sub" id="colSub"></p>
+    <a class="btn btn-brass colx-want" id="colWant" href="/contact/">I want to live here</a>
   </div>
 </div>
 
@@ -116,17 +117,25 @@ const CALC_HTML = `
 
 .colx-answer{padding:1.9rem 0 1.9rem 2.5rem;display:flex;flex-direction:column;justify-content:center}
 .colx-lead{font-family:var(--sans);font-size:.92rem;color:var(--muted);margin:0 0 .6rem;max-width:34ch;line-height:1.55}
-.colx-big{font-family:var(--serif);font-size:clamp(2.6rem,6vw,3.9rem);font-weight:300;color:var(--brass-ink);line-height:.95;margin:0;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.colx-bigrow{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+/* Fraunces ships 300/400/500 on this site, so 500 is the real bold. 600 would
+   be synthesised and look smeared at this size. */
+.colx-big{font-family:var(--serif);font-size:clamp(2.5rem,5.6vw,3.6rem);font-weight:500;color:var(--brass-ink);line-height:.95;margin:0;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.colx-pct{font-family:var(--sans);font-size:1rem;font-weight:700;white-space:nowrap;letter-spacing:-.01em}
+.colx-want{display:none;margin-top:1.25rem;align-self:flex-start}
+.colx-want.is-on{display:inline-flex}
+/* The tool is the page, so the heading stays for structure and screen readers
+   and the form starts at the top of the section. */
+.colx-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .colx-delta{font-family:var(--sans);font-size:.95rem;color:var(--navy);margin:.7rem 0 0;font-weight:500}
-.colx-sub{font-family:var(--sans);font-size:.88rem;color:var(--muted);margin:.35rem 0 0;line-height:1.6;max-width:44ch}
 
 /* --- figures row: the site's .hero-stats idea, gap 0 under one rule --- */
 .colx-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:0;max-width:900px;margin-top:1.6rem;border-top:1px solid var(--rule);padding-top:1.3rem}
 .colx-stat{padding:0 1.1rem;border-left:1px solid var(--rule)}
 .colx-stat:first-child{border-left:none;padding-left:0}
-.colx-k{display:flex;align-items:center;gap:.4rem;font-family:var(--sans);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin:0 0 .5rem;font-weight:500}
-.colx-k svg{color:var(--brass);flex:none}
-.colx-v{font-family:var(--serif);font-size:1.5rem;line-height:1;margin:0;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.colx-k{display:flex;align-items:center;gap:.45rem;font-family:var(--sans);font-size:1.15rem;letter-spacing:-.01em;color:var(--navy);margin:0 0 .45rem;font-weight:600;line-height:1.25}
+.colx-k svg{color:var(--brass);flex:none;width:22px;height:22px}
+.colx-v{font-family:var(--sans);font-size:.85rem;font-weight:600;line-height:1.25;margin:0;font-variant-numeric:tabular-nums;letter-spacing:0}
 .colx-w{display:block;font-family:var(--sans);font-size:.74rem;font-weight:400;color:var(--muted);margin-top:.3rem;letter-spacing:0}
 
 /* --- breakdown: hairline rows, no cards --- */
@@ -161,7 +170,24 @@ const CALC_HTML = `
 .colx-cta-p{font-family:var(--sans);font-size:.89rem;color:rgba(244,239,232,.68);margin:0;line-height:1.6;max-width:46ch}
 .colx-cta-btns{display:flex;gap:.7rem;flex-wrap:wrap}
 
+/* This page leads with the tool. The shared hero is 5rem/4rem of padding on a
+   clamp(2.5rem,5vw,4.5rem) headline, which pushes the form off the first
+   screen. Compact it here only. */
+.detail-hero{padding:2.5rem 0 2rem}
+.detail-hero .detail-h1{font-size:clamp(1.85rem,3.6vw,2.75rem);margin-bottom:.7rem}
+.detail-hero .detail-sub{font-size:1rem;max-width:560px}
+#col-calc{padding-top:1.5rem}
+
 @media (max-width:820px){
+  .detail-hero{padding:1.5rem 0 1.4rem}
+  .detail-hero .eyebrow{display:none}
+  .detail-hero .detail-h1{font-size:1.45rem;margin-bottom:.5rem;line-height:1.12}
+  .detail-hero .detail-sub{font-size:.92rem;line-height:1.45}
+  .detail-hero .breadcrumb{margin-bottom:.55rem}
+  .col-byline{font-size:.78rem!important;line-height:1.45;margin-bottom:.6rem!important}
+  .col-herocta{margin-top:1rem!important;gap:.5rem!important;flex-wrap:nowrap!important}
+  .col-herocta .btn{padding:.58rem .9rem;font-size:.66rem;letter-spacing:.08em}
+  #col-calc{padding-top:1rem}
   .colx{grid-template-columns:1fr}
   .colx-form{padding:1.6rem 0;border-right:none;border-bottom:1px solid var(--rule)}
   .colx-answer{padding:1.6rem 0}
@@ -190,7 +216,7 @@ function colCalc(){}
   var R={},rows=D.rows,i;
   for(i=0;i<rows.length;i++){R[rows[i][0]]=rows[i];}
   var cityIn=document.getElementById('colCity'),listEl=document.getElementById('colList'),inc=document.getElementById('colIncome');
-  var big=document.getElementById('colBig'),lead=document.getElementById('colLead'),sub=document.getElementById('colSub'),delta=document.getElementById('colDelta');
+  var big=document.getElementById('colBig'),lead=document.getElementById('colLead'),pct=document.getElementById('colPct'),delta=document.getElementById('colDelta'),want=document.getElementById('colWant');
   var stats=document.getElementById('colCards'),cats=document.getElementById('colCats');
   var chosen=null, active=-1, shown=[];
   function zMonth(iso){if(!iso)return 'latest month';var p=iso.split('-');var M=['January','February','March','April','May','June','July','August','September','October','November','December'];return M[parseInt(p[1],10)-1]+' '+p[0];}
@@ -207,7 +233,6 @@ function colCalc(){}
   // literal, so \\s reaches the browser as \\s and not as a bare s. Written
   // singly, /\\*+/ arrived as /*+ which opens a comment and kills the file.
   function tidy(n){return String(n).replace(/\\s*Metropolitan Statistical Area\\s*$/i,'').replace(/\\*+\\s*$/,'').trim();}
-  function place(r){return r[3]==='us'?'the average US city':tidy(r[1].replace(' (statewide average)',''));}
   // Column 11 is the buyer-weighted index. Fall back to BEA all-items (4) for
   // the few places with no home value. See data/relocating/README-coli.md.
   function idx(r){return r[11]!=null?r[11]:r[4];}
@@ -368,7 +393,7 @@ function colCalc(){}
     return null;
   }
   function buildStats(f,t){
-    var h=statHTML('',"Cost of living",gap(idx(f),idx(t)));
+    var h=statHTML('dollar',"Cost of living",gap(idx(f),idx(t)));
     for(var j=0;j<CAT.length;j++)h+=statHTML(CAT[j].icon,CAT[j].label,headOf(CAT[j].key,f,t));
     return h;
   }
@@ -396,20 +421,23 @@ function colCalc(){}
   }
   window.colCalc=function(){
     var f=chosen?R[chosen]:null,t=R[MB];
-    function clear(msg){lead.textContent=msg;big.innerHTML='&nbsp;';sub.textContent='';delta.textContent='';stats.innerHTML='';cats.innerHTML='';}
+    function clear(msg){lead.textContent=msg;big.innerHTML='&nbsp;';big.style.color='';pct.textContent='';delta.textContent='';want.classList.remove('is-on');stats.innerHTML='';cats.innerHTML='';}
     if(!f){clear('Type your city above and pick it from the list.');return;}
     if(f[0]===MB){clear('That is Myrtle Beach. Pick the city you live in now.');return;}
     var income=readIncome();
     var need=income*idx(t)/idx(f), g=gap(idx(f),idx(t));
     lead.textContent='To live the same way in Myrtle Beach, you need a household income of';
     big.textContent=income>0?money100(need):'\\u2014';
-    if(income>0){var d=need-income;
-      delta.textContent=Math.abs(d)<50?'About what you earn now.':(money100(Math.abs(d))+(d<0?' less':' more')+' than you earn now.');
-      delta.style.color=d<0?'#2f6b3a':(d>0?'#a03333':'var(--navy)');}
-    else{delta.textContent='Enter your income to see the number.';delta.style.color='var(--muted)';}
-    sub.textContent=g.pct===0
-      ? 'The cost of living is about the same in Myrtle Beach as in '+place(f)+'.'
-      : 'The cost of living is '+g.word+' in Myrtle Beach than in '+place(f)+'.';
+    if(income>0){var d=need-income,same=Math.abs(d)<50;
+      // the needed income carries the direction: green when it drops, brass when it rises
+      big.style.color=same?'var(--navy)':(d<0?'#2f6b3a':'var(--brass-ink)');
+      pct.textContent=g.pct===0?'':g.num+' '+g.dir;
+      pct.style.color=colorOf(g);
+      delta.textContent=same?'About what you earn now.':(money100(Math.abs(d))+(d<0?' less':' more')+' than you earn now.');
+      delta.style.color=d<0?'#2f6b3a':(d>0?'#a03333':'var(--navy)');
+      want.classList.add('is-on');}
+    else{big.style.color='';pct.textContent='';want.classList.remove('is-on');
+      delta.textContent='Enter your income to see the number.';delta.style.color='var(--muted)';}
     var shortName=f[3]==='us'?'US average':tidy(f[1]).replace(' (statewide average)','').split(',')[0];
     stats.innerHTML=buildStats(f,t);
     var html='';
@@ -419,9 +447,12 @@ function colCalc(){}
   };
   inc.addEventListener('input',function(){if(chosen)window.colCalc();});
   inc.addEventListener('blur',function(){var v=readIncome();if(v>0)inc.value=Math.round(v).toLocaleString('en-US');});
-  var start='new-york-newark-jersey-city-ny-nj';
+  // Load empty so the placeholders read as the example. A shared link still
+  // arrives filled in, which is the only case that should prefill.
+  var start=null;
   try{var q=new URLSearchParams(location.search);var qf=q.get('from');if(qf&&R[qf])start=qf;var qi=parseFloat(q.get('income'));if(isFinite(qi)&&qi>0)inc.value=Math.round(qi).toLocaleString('en-US');}catch(e){}
-  chosen=start;cityIn.value=tidy(R[start][1]);window.colCalc();
+  if(start){chosen=start;cityIn.value=tidy(R[start][1]);}
+  window.colCalc();
 })();
 </script>
 </div></section>`;
@@ -436,7 +467,7 @@ const spec = {
   breadcrumb: [{ name: 'Buyers', href: '/buyers/' }, { name: 'Relocating', href: '/buyers/relocating/' }, { name: 'Cost of Living', href: '/buyers/relocating/cost-of-living/' }],
   faq,
   main: ({ faqHtml, bylineDate }) => `
-<div class="detail-hero bg-grid"><div class="wrap"><div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/buyers/">Buyers</a><span>/</span><a href="/buyers/relocating/">Relocating</a><span>/</span><span style="color:var(--muted)">Cost of Living</span></div><p class="eyebrow" style="margin-bottom:1rem">Cost of living calculator</p><h1 class="detail-h1">Cost of living in Myrtle Beach<br/><em style="font-style:italic;color:var(--brass)">compared with your city.</em></h1><p style="color:var(--muted);font-size:.9rem;margin-bottom:1rem">By <strong style="color:var(--navy);font-weight:600">Devin Day</strong>, Operations Officer &amp; licensed MLO, NMLS 2721275 &middot; Reviewed by <strong style="color:var(--navy);font-weight:600">Timmy Fredrick Nash</strong>, Broker-in-Charge &middot; <span style="white-space:nowrap">Updated ${bylineDate}</span></p><p class="detail-sub">See what income you would need here to live the way you live now, and what your money buys once you arrive.</p><div style="margin-top:1.8rem;display:flex;gap:.75rem;flex-wrap:wrap"><a class="btn btn-brass btn-lg" href="#col-calc">Compare my city</a><a class="btn btn-outline btn-lg" href="tel:+18543332135">Call 854.333.2135</a></div></div></div>
+<div class="detail-hero bg-grid"><div class="wrap"><div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/buyers/">Buyers</a><span>/</span><a href="/buyers/relocating/">Relocating</a><span>/</span><span style="color:var(--muted)">Cost of Living</span></div><p class="eyebrow" style="margin-bottom:1rem">Cost of living calculator</p><h1 class="detail-h1">Cost of living in Myrtle Beach<br/><em style="font-style:italic;color:var(--brass)">compared with your city.</em></h1><p class="col-byline" style="color:var(--muted);font-size:.9rem;margin-bottom:1rem">By <strong style="color:var(--navy);font-weight:600">Devin Day</strong>, Operations Officer &amp; licensed MLO, NMLS 2721275 &middot; Reviewed by <strong style="color:var(--navy);font-weight:600">Timmy Fredrick Nash</strong>, Broker-in-Charge &middot; <span style="white-space:nowrap">Updated ${bylineDate}</span></p><p class="detail-sub">See what income you would need here to live the way you live now, and what your money buys once you arrive.</p><div class="col-herocta" style="margin-top:1.8rem;display:flex;gap:.75rem;flex-wrap:wrap"><a class="btn btn-brass btn-lg" href="#col-calc">Compare my city</a><a class="btn btn-outline btn-lg" href="tel:+18543332135">Call 854.333.2135</a></div></div></div>
 ${CALC_HTML}
 
 <section style="background:var(--ivory)"><div class="wrap"><p style="${S.eyebrow}">The short answer</p><h2 style="${S.h2}">Your money buys a lot more house here</h2><p style="${S.p}">The typical home in the Myrtle Beach area sells for about $342,000. In the New York area it is about $737,000. Boston is about $742,000, Washington about $580,000 and Philadelphia about $392,000. Sell in any of those and you can often buy here outright, or buy a much bigger house for the same payment.</p><p style="${S.p}">Day to day costs move less than the house does. Food, power and everyday items run close to the national average. Rent is the one that clearly drops, at about 17 percent below average.</p><p style="${S.pLast}">Not every move saves you money on a house. Cleveland runs about $254,000 and Pittsburgh about $232,000, so both are cheaper than here. If you are coming from the Midwest, put your city in the calculator before you assume the coast is a bargain.</p><div style="${S.ctaBox}"><p style="margin:0;color:var(--navy);font-family:var(--sans);font-size:.92rem;font-weight:600">See what your sale actually buys on the Grand Strand.</p><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-brass" href="#lead-form">Show me homes in my range</a><a class="btn btn-outline" href="tel:+18543332135">Call 854.333.2135</a></div></div></div></section>
