@@ -713,3 +713,108 @@ Confidence: HIGH (opened 2026-08-16).
 - Origin volume correction from the owner (2026-08-24, in chat): North
   Carolina is the largest origin state by client count, ahead of New York.
   The hub already said this; page priorities now match it.
+
+---
+
+## 10. MARYLAND — primary-source pass, 2026-08-25
+
+Section 7.1 was AARP-based and MEDIUM. This section replaces it for anything
+that goes on a page. Everything below was opened today from the Comptroller of
+Maryland's own documents.
+
+### 10.1 State income tax rates, tax year 2026 — CONFIRMED
+Source: Comptroller of Maryland, Central Payroll Bureau, "2026 Maryland State
+and Local Income Tax Withholding Information", memo dated **January 27, 2026**.
+https://www.marylandcomptroller.gov/content/dam/mdcomp/md/state-payroll/memos/2026/2026-maryland-state-and-local-withholding-information.pdf
+
+Joint / head of household / qualifying surviving spouse:
+2.00% $1–$1,000 · 3.00% to $2,000 · 4.00% to $3,000 · 4.75% to $150,000 ·
+5.00% to $175,000 · 5.25% to $225,000 · 5.50% to $300,000 · 5.75% to $600,000 ·
+**6.25% to $1,200,000 (new)** · **6.5% above $1,200,000 (new)**
+
+Single / married filing separately / dependent:
+same first three steps · 4.75% to $100,000 · 5.00% to $125,000 · 5.25% to
+$150,000 · 5.50% to $250,000 · 5.75% to $500,000 · **6.25% to $1,000,000
+(new)** · **6.5% above $1,000,000 (new)**
+
+Confidence: HIGH. Note this supersedes the "2% to 6.50%" shorthand in §7.1 and
+the 5.75% top rate in TB-51, which was written for tax year 2024.
+
+### 10.2 The 2025 legislative session changes — CONFIRMED
+Source: Comptroller of Maryland Tax Alert, "Changes to Standardized and
+Itemized Deductions and to State and Local Income Tax Rate from 2025
+Legislative Session", Legal Division.
+https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/alerts/tax-alert-changes-to-standard-and-itemized-deductions-and-to-state-and-local-income-tax-rates-from-the-2025-legislative-session.pdf
+
+- Two new brackets as in 10.1.
+- **An additional 2 percent tax on net capital gains** for individuals with
+  federal AGI over **$350,000**, subject to exceptions, for tax years
+  beginning after December 31, 2024. Quote: "The Act also imposes an
+  additional 2 percent tax on net capital gains for individuals with a
+  federal adjusted gross income (FAGI) over $350,000, subject to certain
+  exceptions, for tax years beginning after December 31, 2024."
+- **Itemized deductions phase out** at 7.5% of FAGI above $200,000 (single
+  example in the alert: FAGI $250,000, excess $50,000, reduction $3,750).
+- Maryland standard deduction in the alert's worked examples: **$3,350
+  single, $6,700 joint**.
+- Local rates changed for tax years beginning after December 31, 2025 for
+  exactly two counties: **Allegany 3.03% → 3.20%** and **Kent 3.20% → 3.30%**.
+  Every other county's 2026 rate therefore equals its 2025 rate.
+- Confidence: HIGH.
+
+### 10.3 Local income tax — every county, and the range
+Source: Comptroller of Maryland, 2025 Resident Booklet, "2025 LOCAL TAX RATE
+CHART" (Instruction 19).
+https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/instructions/2025/resident-booklet.pdf
+
+Every Maryland county and Baltimore City levies a local income tax. Read
+straight off the chart's rate column, the 2025 rates run from **.0265 (2.65%)
+at the lowest to .0330 (3.30%), with the great majority of counties at .0320
+(3.20%)**.
+
+**DO NOT publish a county-by-county pairing from this file.** The county names
+in the booklet are drawn as separate text objects and did not extract in a
+reliable order next to their rates. The rate column above is trustworthy; the
+name-to-rate mapping from this extraction is NOT. If a page ever needs a named
+county rate, open the chart in a browser and read it.
+
+**Contradiction, flagged, do not paper over.** The January 27, 2026 payroll
+memo says the default (highest) local rate "for the year 2026 will be 3.20%",
+while the tax alert puts Kent at 3.30% for tax years beginning after
+December 31, 2025. Both are Comptroller documents. The payroll memo's default
+line appears to lag the statute. Safe wording: give the range, do not assert a
+single statewide maximum.
+
+### 10.4 Pension exclusion — year matters, the two figures are both real
+- **$39,500** is the maximum for **tax year 2024**. Source: Comptroller
+  Technical Bulletin No. 51, "Senior Citizens and Maryland Income Tax",
+  effective April 10, 2025. Quote: "Maryland's maximum pension exclusion of
+  $39,500 is available to taxpayers if: 1) On the last day of the tax year:
+  the taxpayer was 65 or older, or ... totally disabled".
+  https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/technical-bulletins/tb-51.pdf
+- **$41,200** is the figure carried for **tax year 2025** on the Comptroller's
+  pension exclusion guidance and worksheet 13A. The worksheet PDF did not
+  extract cleanly; the figure is from the Comptroller's own search-indexed
+  guidance page, so treat as MEDIUM until read in a browser.
+- §7.1 quoted AARP's $41,200 without a year. That was the 2025 figure, not a
+  2026 one. The exclusion is indexed, so **always print the tax year with it**.
+- Military retirement: TB-51 says taxpayers at least 55 on the last day of the
+  taxable year may subtract up to **$20,000** of military retirement income.
+  Confidence HIGH for TY2024; the under-55 figure was not captured.
+
+### 10.5 What did NOT get verified today
+- Per-county local rates by name (see 10.3).
+- Maryland's annual vehicle tax position. §7.1 says no annual property tax on
+  vehicles, from AARP. **Not confirmed at a Maryland source.** A page may say
+  South Carolina's annual vehicle tax is new to most movers, which is already
+  supported, but must not assert what Maryland does or does not charge until
+  this is opened.
+- The 2026 pension exclusion figure. Only 2024 and 2025 are established.
+- Maryland gas tax for 2026. §0.5's 46.19 cents is Tax Foundation July 2025 and
+  Maryland indexes annually on July 1, so it is a year stale.
+
+### 10.6 Why Maryland earns a page (volume, from the IRS file in local-facts D18)
+543 returns in, 47 out, **net +496 returns and +855 exemptions** in the IRS
+2022–2023 county migration data — the largest identifiable state source after
+New York, North Carolina, New Jersey and Pennsylvania, and ahead of Virginia,
+Connecticut and Massachusetts. Same suppression caveat as D18 applies.
