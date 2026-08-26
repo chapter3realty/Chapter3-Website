@@ -695,6 +695,11 @@ const FIGURATIVE = [
   // things-decide teaser sentences, plus two road metaphors and one
   // self-referential line caught in the same review. Plain "the county
   // decides" stays legal; the ban is the N-things-decide-X construction.
+  // Owner, 2026-08-26 round 4: "never say one rule decides or sits above or
+  // anything else similar ever again." The family is rule-hierarchy teasers.
+  // Plain geographic "sits" ("the airport sits inside the city") stays legal.
+  "one rule decides", "one rule sits", "rule sits above", "sits above",
+  "stands above", "rule above every",
   "exceptions decide", "things decide", "differences decide",
   "decide where to look", "decides where to look",
   "decide the purchase", "decides the purchase",
