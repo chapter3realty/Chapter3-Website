@@ -866,3 +866,32 @@ This is the section that decides whether the calculator can have a food line at 
 - Page rule: these are attributed third-party awards, never our grading. The
   Charleston two-kinds-of-care section was REMOVED at owner request
   2026-08-25; do not reintroduce Charleston-dependency claims.
+
+---
+
+## Addendum 2026-08-26 (round 2): drainage, king tides, transit specifics
+
+### G1. Deepwater ocean outfalls (why beach-town streets drain fast)
+- Fact: The City of Myrtle Beach has spent close to $75 million building four deepwater ocean outfalls, underground pipes that "carry stormwater runoff more than 1,000 feet offshore, beyond the breakers, where it benefits from sun and saltwater and is quickly diluted." The Fourth Avenue North pipes "extend 1,400 feet into the ocean." A fifth project (24th Avenue North) has been reported in construction press with a beach access closed into early 2026; count it as "more planned," do not state it complete without re-checking.
+- Fact: North Myrtle Beach has built six ocean outfalls since 2002 (latest 18th Avenue North), pipes about 1,200 feet offshore, with 17th and 29th Avenue South planned "with plans for 6 more in the future." City's stated purposes, quoted: "This project tackles 2 big challenges—improving water quality and reducing inland flooding"; "Better inland drainage systems help keep streets and properties dry"; "Offshore drainage reduces bacteria where people swim."
+- Source: https://www.cityofmyrtlebeach.com/news_detail_T6_R498.php ; https://www.nmb.us/804/Stormwater-Ocean-Outfall-Program (both opened 2026-08-26).
+- Confidence: HIGH for counts, spend, distances, and quoted purposes as of the open date.
+- Owner observation (Devin, 2026-08-26, recorded): during Debby the roads were drivable slowly and "the main roads dried incredibly quickly"; rain stands a few inches during the biggest storms and drains almost immediately after rain stops. Corroboration search found no broad forum sentiment either way; one news item noted main streets "clear just after the latest high tide." Published as HIS observation plus the engineering, with two exceptions stated (rain on a high tide backs up drains in Cherry Grove/Garden City low streets; river flooding inland lasts days). Do not publish "streets never flood."
+
+### G2. King tides and Pawleys Island
+- Fact: NOAA: "A King Tide is a non-scientific term people often use to describe exceptionally high tides," typically around a new or full moon at perigee. Source: https://oceanservice.noaa.gov/facts/kingtide.html (2026-08-26).
+- Fact: Pawleys Island floods at king tides; police have closed the causeways at peak tide (WBTW coverage, incl. "causeways shut down for 2nd straight day because of king tide"); water comes up through storm drains. Town administrator Dan Newquist, quoted in Coastal Observer (town meeting, 2023 era, around Idalia): "Our flooding issues are first and foremost a public safety issue." Island has 87 storm drains and 50 outfalls; a Master Drainage and Flood Mitigation Plan is underway with a $250,000 state earmark. Cherry Grove and Garden City low streets also flood at king tides (WBTW, Post and Courier, myhorrynews).
+- Confidence: HIGH that recurring king-tide street flooding at Pawleys is documented public record with the town's own acknowledgment. No specific closure dates carried into page copy because individual article dates were not all verifiable this pass.
+- COMPLIANCE NOTE: framed as observable public record + town's own statements. No forecast language ("expected to become more frequent" NOT used — that is a projection). No characterization of who lives there.
+
+### G3. Coast RTA specifics (2026-08-26)
+- Fact: 10 fixed routes named for towns (Andrews, Bucksport, Conway, Garden City, Georgetown, Loris, Murrells Inlet, Myrtle Beach, Pawleys Island, Surfside Beach); 7 days, 362 days/yr. Route 7 (Conway–Myrtle Beach) operates Conway→MB 6 a.m.–7 p.m. and MB→Conway 7 a.m.–9 p.m.; Route 7X Express runs TWICE a day each direction (6:15a/1:00p and 9:15a/8:15p). Headways are NOT published in machine-readable form (timetable PDF is scanned images) — do NOT publish an "hourly" claim.
+- Source: https://coastrta.com/routes-and-schedules/ ; https://coastrta.com/routes/route-7-myrtle-beach-conway/ (2026-08-26).
+
+### G4. Airport fare mechanics (2026-08-26)
+- Fact: Allegiant's own fee page: fares include "an electronic usage charge of $22 per passenger, per segment, applicable to all airline reservations booked through the Web site or call center." Airport counter purchases are not in that list; press coverage (OMAAT, Yahoo Finance) confirms counter purchases avoid it and counters staff limited windows around departures. Source: https://www.allegiantair.com/popup/taxes-and-fees
+- Fact: Frontier nonstops from MYR per the airport's own route map on 2026-08-26: Cleveland (CLE) and Long Island/Islip (ISP, shared with Breeze). Frontier GoWild all-you-can-fly passes actively sold for 2026-27 (Frontier newsroom). Route lists are seasonal; re-check the route map before touching this sentence.
+- Owner experience (recorded 2026-08-26, published as his experience): 1 hour sufficed with no bags; plan 2.5 hours with checked luggage; same-day ticket purchase closed roughly 2 hours before departure in his experience. He flies Allegiant; clients hold GoWild.
+
+### G5. Devin's commute + winter (recorded 2026-08-26, published as experience)
+- US 17 Murrells Inlet→Surfside 7 a.m. "wide open"; to Carolina Forest ~5 p.m. "a little busy"; only reliable waits are the lights entering/leaving Carolina Forest; never stuck on SC 31. Rides motorcycle into late Nov/early Dec; parked ~2–3 months around January; night rides are what get cold. "It snowed the first winter I stayed here" — his memory; his "first time in 10 years" span NOT published (conflicts with 2018 snow events; the verified events are Jan 2025 5 in. and early 2026 5 in.).
