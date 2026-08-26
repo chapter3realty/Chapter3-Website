@@ -688,6 +688,8 @@ const FIGURATIVE = [
   // for a share of income, "dress it up", and agents who "vanish" are the
   // same family. Each of these had a live instance when it was added.
   "disappear", "vanish", "entire slice", "dress it up", "dressing up",
+  // Owner, 2026-08-25 round 7: "that one line decides" is banned everywhere.
+  "one line decides", "one line on the map", "that one line", "the line that changes",
   // NOT "rate card": a property-management rate card is a real document, and
   // /invest/airbnb-income/ cites them literally in its sources line.
   // NOT "the clock starts": the 45-day and 180-day clocks are what the 1031
