@@ -481,17 +481,14 @@ ${CALC_HTML}
 
 <section style="background:var(--navy)" id="lead-form"><div class="wrap" style="padding:3.5rem 1.5rem"><div style="max-width:620px;margin:0 auto">
 <p style="font-family:var(--sans);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-2);margin-bottom:.7rem;text-align:center">Free, no obligation</p>
-<h2 style="font-family:var(--serif);font-size:1.9rem;font-weight:300;color:var(--ivory);letter-spacing:-.01em;margin-bottom:.6rem;text-align:center">Get the real monthly cost for one home.</h2>
-<p style="font-family:var(--sans);font-size:.93rem;color:rgba(244,239,232,.68);margin:0 auto 1.9rem;line-height:1.65;text-align:center;max-width:52ch">Send an address or a price range and the city you are leaving. We work out the tax, the insurance, the dues and the payment for that property. Free.</p>
+<h2 style="font-family:var(--serif);font-size:1.9rem;font-weight:300;color:var(--ivory);letter-spacing:-.01em;margin-bottom:1.4rem;text-align:center">Leave a name and number.</h2>
 <div id="ldWrap">
 <div style="display:grid;gap:.7rem;margin-bottom:1rem">
-<input class="ld-in" id="ldCtx" placeholder="Address or price range, and the city you are leaving">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.7rem"><input class="ld-in" id="ldName" placeholder="Your name" autocomplete="name"><input class="ld-in" id="ldPhone" placeholder="Phone" type="tel" autocomplete="tel"></div>
-<input class="ld-in" id="ldEmail" placeholder="Email" type="email" autocomplete="email">
 </div>
 <label style="display:flex;gap:.6rem;align-items:flex-start;font-family:var(--sans);font-size:.72rem;color:rgba(244,239,232,.6);line-height:1.5;margin:0 0 1.1rem;cursor:pointer"><input type="checkbox" id="ldConsent" style="margin-top:.18rem;accent-color:var(--brass);flex-shrink:0;width:15px;height:15px"><span>I consent to receive calls and text messages from Chapter 3 Realty about my property inquiry, showing appointments, and listing information I requested, at the phone number provided, including calls placed using an automated system or an artificial or prerecorded voice. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase.</span></label>
 <p id="ldErr" style="display:none;color:#e6b0a9;font-family:var(--sans);font-size:.8rem;margin:0 0 .8rem"></p>
-<button class="btn btn-brass" style="width:100%;justify-content:center" onclick="ldSubmit()">Get my cost breakdown</button>
+<button class="btn btn-brass" style="width:100%;justify-content:center" onclick="ldSubmit()">I want to move here</button>
 <p style="font-family:var(--sans);font-size:.78rem;color:rgba(244,239,232,.6);margin:.9rem 0 0;line-height:1.6;text-align:center">We reply the same day, evenings included. Prefer to talk now? <a href="tel:+18543332135" style="color:var(--brass-2);font-weight:600;text-decoration:none;white-space:nowrap">Call 854.333.2135</a></p>
 </div>
 <div id="ldOk" style="display:none;border:1px solid var(--brass);border-radius:6px;padding:1.4rem;color:var(--ivory);text-align:center;line-height:1.6;font-family:var(--sans)">Thanks. A licensed team member will reply the same day, evenings included.</div>
@@ -503,13 +500,13 @@ ${CALC_HTML}
 </style>
 <script>
 function ldSubmit(){
- var cx=document.getElementById('ldCtx').value.trim(),n=document.getElementById('ldName').value.trim(),ph=document.getElementById('ldPhone').value.trim(),em=document.getElementById('ldEmail').value.trim(),c=document.getElementById('ldConsent').checked,err=document.getElementById('ldErr');
+ var n=document.getElementById('ldName').value.trim(),ph=document.getElementById('ldPhone').value.trim(),c=document.getElementById('ldConsent').checked,err=document.getElementById('ldErr');
  function fail(m){err.textContent=m;err.style.display='block';}
  err.style.display='none';
- if(!cx||!n){fail('Add the address or price range, and your name.');return;}
- if(!ph&&!em){fail('Add a phone number or an email so we can reach you.');return;}
- if(ph&&!c){fail('Check the consent box so we can call or text you, or leave the phone blank and use email.');return;}
- c3SendForm({property_address:cx,name:n,phone:ph,email:em,consent:c?'yes':'no'},'relocating-cost-of-living');
+ if(!n){fail('Add your name.');return;}
+ if(!ph){fail('Add a phone number so we can reach you.');return;}
+ if(!c){fail('Check the consent box so we are allowed to call or text you.');return;}
+ c3SendForm({name:n,phone:ph,consent:'yes'},'relocating-cost-of-living');
  document.getElementById('ldWrap').style.display='none';
  document.getElementById('ldOk').style.display='block';
 }
