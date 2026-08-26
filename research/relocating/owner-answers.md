@@ -206,3 +206,34 @@ Collected for the E-E-A-T pass. What shipped and what was cut, with reasons.
   (Devin rides too, shipped); construction everywhere, tied to the growth
   stats. CUT: his observation that ages mix in Maryland but separate here
   (same steering rule as above).
+
+---
+
+## 2026-08-26 — Timmy's Hugo account (relayed by Devin, this session)
+
+Recorded near-verbatim for provenance; published on /buyers/relocating/hurricanes/
+as "his recollection, as he told it to us," with similes ("like a war zone,"
+"like toothpicks") paraphrased to literal detail per the no-metaphor style rule.
+
+- Family evacuated to Augusta, GA, leaving ~3-4 p.m., about 5 hours ahead of the
+  outer bands. Eye hit McClellanville ~midnight. Waited in a hotel; returned at
+  checkout time.
+- Socastee bridge: National Guard turning people back; father was EMS, let through.
+- Home: power, water, telephone all out. Father had filled bathtubs + two
+  50-gallon barrels before leaving. Power out ~2 weeks; daily water pickup at
+  town hall about as long.
+- Dirt bike ride up the beach 5 miles north to grandmother's oceanfront house,
+  south end Myrtle Beach: houses and pier pieces strung down the beach, dead
+  fish everywhere, campers piled in her front yard; house stood, flood water had
+  filled and drained. National Guard sent him home.
+- His figures: 18+ ft surge / 135 mph at McClellanville, "not much worse than
+  100 if that" here. RECORD CHECK (weather.gov/ilm/hurricanehugo, 2026-08-26):
+  landfall midnight Sept 22 near Sullivan's Island, 140 mph sustained; surge up
+  to 20 ft (Bulls Bay, debris marks), 19.4 ft Awendaw, 16 ft McClellanville
+  (6 ft of seawater in the school gym); Myrtle Beach 45 kt sustained / 66 kt
+  gusts = about 52 / 76 mph. HIS WIND NUMBERS NOT PUBLISHED — the record
+  paragraph on the page carries the NWS figures; his verbatim close ("We were
+  lucky. One shift north of 50 miles and nothing would have been left here.")
+  published as quoted judgment.
+- OPEN: Timmy should read the published passage before deploy and confirm the
+  details (which town hall; five-miles-north geography) are as he wants them.
