@@ -690,6 +690,15 @@ const FIGURATIVE = [
   "disappear", "vanish", "entire slice", "dress it up", "dressing up",
   // Owner, 2026-08-25 round 7: "that one line decides" is banned everywhere.
   "one line decides", "one line on the map", "that one line", "the line that changes",
+  // Owner, 2026-08-26 round 3: "Two exceptions decide where to look harder"
+  // drew "stop saying any phrase similar to this at all ever." The family is
+  // things-decide teaser sentences, plus two road metaphors and one
+  // self-referential line caught in the same review. Plain "the county
+  // decides" stays legal; the ban is the N-things-decide-X construction.
+  "exceptions decide", "things decide", "differences decide",
+  "decide where to look", "decides where to look",
+  "decide the purchase", "decides the purchase",
+  "workhorse", "the main artery", "will not invent",
   // NOT "rate card": a property-management rate card is a real document, and
   // /invest/airbnb-income/ cites them literally in its sources line.
   // NOT "the clock starts": the 45-day and 180-day clocks are what the 1031

@@ -895,3 +895,9 @@ This is the section that decides whether the calculator can have a food line at 
 
 ### G5. Devin's commute + winter (recorded 2026-08-26, published as experience)
 - US 17 Murrells Inlet→Surfside 7 a.m. "wide open"; to Carolina Forest ~5 p.m. "a little busy"; only reliable waits are the lights entering/leaving Carolina Forest; never stuck on SC 31. Rides motorcycle into late Nov/early Dec; parked ~2–3 months around January; night rides are what get cold. "It snowed the first winter I stayed here" — his memory; his "first time in 10 years" span NOT published (conflicts with 2018 snow events; the verified events are Jan 2025 5 in. and early 2026 5 in.).
+
+### G6. Hurricane landfalls by state (for the hurricanes-page comparison)
+- Fact: NOAA HRD "Continental United States Hurricane Impacts/Landfalls 1851-2018": South Carolina 29 hurricane landfalls; Florida 120+. Published as "since 1851 ... 29 in South Carolina against more than 120 in Florida, about a quarter as many."
+- CAUTION: the same table credits North Carolina 27 — landfall-POINT counting, which undercounts NC (storms that landfall in SC then cross NC count once, for SC). Do NOT publish an SC-vs-NC comparison from this table; only the Florida comparison is safe and favorable-and-true. The commonly quoted "NC 55" figure is a different NOAA strike table (storms AFFECTING each state); do not mix the two.
+- Also on page: "The last major hurricane to come ashore on this coast was Hugo, in 1989" — verified: no Category 3+ landfall on the SC coast since Hugo (Matthew and Ian were Category 1 at SC landfall; Florence was Category 1 at NC landfall).
+- Source: https://www.aoml.noaa.gov/hrd/tcfaq/E23.html (opened 2026-08-26). Owner request 2026-08-26: page must open with a comparison so the honesty does not read as fear; comparison chosen over adjectives so no reassurance conclusion is stated (legal finding 2.2 intact).
