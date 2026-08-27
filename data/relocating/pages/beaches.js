@@ -1,0 +1,117 @@
+/*
+ * Page spec: /buyers/relocating/beaches/
+ * Every rule traces to the jurisdiction's own page, opened 2026-08-27.
+ * DIVISION OF LABOR: the checklist owns HOW to get the parking decal and
+ * the golf cart road permit; the weather page owns water temperatures;
+ * which-town owns town character. This page owns the RULES ON THE SAND.
+ * Never blend jurisdictions: the county's year-round umbrella-only rule
+ * and Pawleys' year-round dogs are true ONLY where stated.
+ */
+'use strict';
+
+const S = {
+  eyebrow: 'font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600',
+  h2: 'font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em',
+  h3: 'font-family:var(--serif);font-size:1.15rem;color:var(--navy);margin:1.4rem 0 .5rem',
+  p: 'color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem',
+  pLast: 'color:var(--muted);line-height:1.75;max-width:720px',
+  a: 'color:var(--brass);font-weight:600;text-decoration:none',
+  ctaBox: 'background:var(--ivory);border:1px solid var(--rule);border-radius:6px;padding:1.2rem 1.3rem;margin-top:1.8rem;max-width:720px;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between',
+  small: 'font-family:var(--sans);font-size:.78rem;color:var(--muted);line-height:1.6;max-width:720px',
+  th: 'padding:.6rem .5rem;font-weight:600;text-align:left;border-bottom:1px solid var(--rule)',
+  td: 'padding:.6rem .5rem;vertical-align:top;border-bottom:1px solid var(--rule)',
+};
+const A = (href, text) => `<a href="${href}" style="${S.a}">${text}</a>`;
+const X = (href, text) => `<a href="${href}" style="${S.a}" rel="noopener" target="_blank">${text}</a>`;
+
+
+const faq = [
+  { q: 'Are dogs allowed on the beach in Myrtle Beach?',
+    a: 'Yes, with a summer clock. In the City of Myrtle Beach dogs are banned from the sand 10 a.m. to 5 p.m. from May 1 through Labor Day, and welcome any hour the rest of the year, always on a leash of 7 feet or shorter. Each town sets its own hours: North Myrtle Beach bans 10 to 4 starting May 15, and Pawleys Island allows dogs year round at any hour.' },
+  { q: 'Which beach near Myrtle Beach allows dogs all day in summer?',
+    a: 'Pawleys Island. The town allows dogs on the beach year round with no daytime ban: leashed 8 a.m. to 8 p.m. from May 1 through September 30, and off leash under voice control, leash in hand, from October through April. Every other beach on the Grand Strand runs a midday summer ban.' },
+  { q: 'Are tents allowed on Myrtle Beach beaches?',
+    a: 'Depends on the town and the season. Myrtle Beach allows only round umbrellas up to 7.5 feet from Memorial Day through Labor Day, with tents up to 12 by 12 the rest of the year. North Myrtle Beach is umbrella-only May 15 through Labor Day. Surfside Beach allows canopies up to 10 by 10. County beaches like Garden City are umbrella-only all year.' },
+  { q: 'Is alcohol allowed on the beach in Myrtle Beach?',
+    a: 'No. Alcohol and glass are prohibited on every beach on the Grand Strand, and on the county beaches the ban covers the access paths too. Fires, including barbecues, are prohibited, and holes deeper than two feet are not allowed in Myrtle Beach; fill any hole before you leave.' },
+  { q: 'Can you drive a golf cart on the beach in Myrtle Beach?',
+    a: 'Not in the cities. On Horry County&#39;s unincorporated beaches, which include stretches of Garden City, permitted golf carts with a licensed driver are allowed on the sand from November 1 through February 28. That winter season is the exception, not the rule, and the cities do not offer one.' },
+  { q: 'Do you have to pay to park at the beach?',
+    a: 'Depends where you live and where you park. The City of Myrtle Beach sells no visitor pass but gives its residents a decal covering city paid spaces. North Myrtle Beach posts its rules at each access. Surfside Beach uses town decals. Where you buy decides which program you are in, which is a real reason to pick your town deliberately.' },
+];
+
+const spec = {
+  slug: '/buyers/relocating/beaches/',
+  cur: 'buyers-relocating-beaches',
+  title: 'Myrtle Beach Beach Rules by Town: Dogs, Tents, Parking',
+  description: 'Beach rules across the Grand Strand, town by town: when dogs are allowed, umbrella and tent limits, parking, the winter golf cart season, and who sets each rule.',
+  headline: 'Beach Rules on the Grand Strand, Town by Town',
+  keywords: 'Myrtle Beach beach rules, dogs on beach Myrtle Beach, beach tent rules Myrtle Beach, golf cart on beach',
+  breadcrumb: [{ name: 'Buyers', href: '/buyers/' }, { name: 'Relocating', href: '/buyers/relocating/' }, { name: 'Beaches', href: '/buyers/relocating/beaches/' }],
+  faq,
+  main: ({ faqHtml, bylineDate }) => `
+<div class="detail-hero bg-grid"><div class="wrap"><div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/buyers/">Buyers</a><span>/</span><a href="/buyers/relocating/">Relocating</a><span>/</span><span style="color:var(--muted)">Beaches</span></div><p class="eyebrow" style="margin-bottom:1rem">The sand, practically</p><h1 class="detail-h1">The beaches,<br/><em style="font-style:italic;color:var(--brass)">town by town.</em></h1><p style="color:var(--muted);font-size:.9rem;margin-bottom:1rem">By <strong style="color:var(--navy);font-weight:600">Devin Day</strong>, Operations Officer &amp; licensed MLO, NMLS 2721275 &middot; Reviewed by <strong style="color:var(--navy);font-weight:600">Timmy Fredrick Nash</strong>, Broker-in-Charge &middot; <span style="white-space:nowrap">Updated ${bylineDate}</span></p><p class="detail-sub">Sixty miles of sand, five rulebooks. When dogs are allowed on which beach, what shade you can put up, who parks free, and the winter golf cart season most visitors never hear about.</p><div style="margin-top:1.8rem;display:flex;gap:.75rem;flex-wrap:wrap"><a class="btn btn-brass btn-lg" href="#lead-form">Ask us about the beaches</a><a class="btn btn-outline btn-lg" href="tel:+18543332135">Call 854.333.2135</a></div></div></div>
+
+<section style="background:var(--ivory)"><div class="wrap"><p style="${S.eyebrow}">The short answer</p><h2 style="${S.h2}">Same ocean, five sets of rules</h2><p style="${S.p}">The Grand Strand&#39;s sand belongs to different governments: the cities of Myrtle Beach and North Myrtle Beach, the towns of Surfside Beach and Pawleys Island, and Horry County for the unincorporated stretches such as most of Garden City. Each writes its own beach rules, and they genuinely differ, which means where you buy decides which rulebook your everyday beach runs on.</p><p style="${S.pLast}">Three rules are the same everywhere and worth stating once: no alcohol, no glass, no fires on the sand, anywhere. Everything else varies, and the two tables below carry the differences that change how you would actually use the beach: the dog clock and the shade rules. If one of these tables decides your town for you, the ${A('/buyers/relocating/which-town/', 'town by town page')} carries prices and the rest.</p></div></section>
+
+<section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">Dogs</p><h2 style="${S.h2}">The dog clock, beach by beach</h2><p style="${S.p}">Every beach here allows dogs most of the year. The difference is summer: four of the five jurisdictions clear dogs off the sand in the middle of the day, and one never does. Leashes are required on all of them, 7 feet or shorter.</p>
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table style="width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.9rem;color:var(--navy);min-width:560px"><thead><tr><th style="${S.th}">Beach</th><th style="${S.th}">Summer rule for dogs</th><th style="${S.th}">Dates it applies</th></tr></thead><tbody>
+<tr><td style="${S.td}">Myrtle Beach</td><td style="${S.td}">Banned 10 a.m. to 5 p.m.</td><td style="${S.td}">May 1 through Labor Day</td></tr>
+<tr><td style="${S.td}">North Myrtle Beach</td><td style="${S.td}">Banned 10 a.m. to 4 p.m.</td><td style="${S.td}">May 15 through Labor Day</td></tr>
+<tr><td style="${S.td}">Surfside Beach</td><td style="${S.td}">Banned 10 a.m. to 5 p.m.</td><td style="${S.td}">May 1 through Labor Day</td></tr>
+<tr><td style="${S.td}">Garden City and other county beaches</td><td style="${S.td}">Banned 10 a.m. to 5 p.m.</td><td style="${S.td}">May 1 through Labor Day</td></tr>
+<tr><td style="${S.td}">Pawleys Island</td><td style="${S.td}">No ban at any hour; leashed 8 a.m. to 8 p.m.</td><td style="${S.td}">Leash rule May 1 through September 30; off leash under voice control October through April</td></tr>
+</tbody></table></div>
+<p style="${S.p};margin-top:1.1rem">Read the last row again if the dog is family. Pawleys Island is the one beach on this coast where a July afternoon with the dog on the sand is legal, and from October to April the town allows dogs off leash under voice control with a leash in hand. Off season, Myrtle Beach opens up too: dogs any hour on the beach and the boardwalk from the day after Labor Day through April 30.</p><p style="${S.pLast}">Pick up after the dog everywhere; every jurisdiction requires it and the fines are real. In North Myrtle Beach the timing differs enough to matter: the ban starts May 15 rather than May 1 and ends at 4 rather than 5, an extra hour of summer evening beach.</p></div></section>
+
+<section style="background:var(--ivory)"><div class="wrap"><p style="${S.eyebrow}">Shade</p><h2 style="${S.h2}">What shade you can put up, and when</h2><p style="${S.p}">This is the rule visitors trip over every summer, and each government writes it differently.</p>
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table style="width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.9rem;color:var(--navy);min-width:560px"><thead><tr><th style="${S.th}">Beach</th><th style="${S.th}">Peak season</th><th style="${S.th}">Rest of the year</th></tr></thead><tbody>
+<tr><td style="${S.td}">Myrtle Beach</td><td style="${S.td}">Round umbrellas only, up to 7.5 feet, Memorial Day through Labor Day</td><td style="${S.td}">Tents up to 12 by 12 allowed</td></tr>
+<tr><td style="${S.td}">North Myrtle Beach</td><td style="${S.td}">Umbrellas only, 9 foot shade on a pole up to 7 feet 6, May 15 through Labor Day</td><td style="${S.td}">Shading devices allowed</td></tr>
+<tr><td style="${S.td}">Surfside Beach</td><td style="${S.td}">Canopies up to 10 by 10 allowed, set 10 feet behind the guard stands</td><td style="${S.td}">Same rule year round</td></tr>
+<tr><td style="${S.td}">Garden City and other county beaches</td><td style="${S.td}">Umbrellas only, up to 7 feet 6, all year; infant cabanas to 4 by 3 by 3</td><td style="${S.td}">Same rule year round</td></tr>
+</tbody></table></div>
+<p style="${S.p};margin-top:1.1rem">Two details save arguments. In Myrtle Beach nothing goes up before 8 a.m. and everything comes off the sand by 7 p.m.; in North Myrtle Beach and on the county beaches, anything left between 7 p.m. and 8 a.m. is removed. And Surfside Beach is the one place on this list where a family canopy is legal on a July afternoon, which is exactly the kind of small fact that picks a town.</p><p style="${S.pLast}">The rest of the everywhere-rules: holes no deeper than two feet in Myrtle Beach and filled before you leave on every beach, no fireworks, and in North Myrtle Beach swimmers stay within 50 yards of shore and no deeper than shoulder height. Myrtle Beach runs designated surfing and kayak zones at five street ends in summer between 10 and 5.</p></div></section>
+
+<section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">Parking and carts</p><h2 style="${S.h2}">Who parks free, and the winter cart season</h2><h3 style="${S.h3}">Parking follows your address</h3><p style="${S.p}">Each government runs its own parking program, and the pattern is simple: residency in the right town is what makes beach parking cheap. The City of Myrtle Beach gives its residents a decal covering city paid spaces, meters and street-end accesses; Surfside Beach issues town decals; North Myrtle Beach posts its rules access by access. If you buy outside the town limits, you are a visitor in the paid zones like everyone else, which is one of the quiet differences between an address inside city limits and one outside them. How to actually get the decal after you close is on the ${A('/buyers/relocating/moving-checklist/', 'new resident checklist')}, and the incorporated-or-not question is explained on the ${A('/buyers/relocating/which-town/', 'town by town page')}.</p><h3 style="${S.h3}">Golf carts: on the road yes, on the sand only in winter, only in the county</h3><p style="${S.pLast}">Golf carts with the $5 state permit drive local streets all over the Grand Strand, and many neighborhoods are built around that. The sand is different: the cities keep carts off the beach entirely, but Horry County allows permitted carts with a licensed driver on its unincorporated beaches from November 1 through February 28. A winter morning driving the cart onto an empty Garden City beach is a real thing owners here do, and almost no visitor knows the season exists. The road-permit rules are on the ${A('/buyers/relocating/moving-checklist/', 'checklist')}.</p><div style="${S.ctaBox}"><p style="margin:0;color:var(--navy);font-family:var(--sans);font-size:.92rem;font-weight:600">Buying near the sand? We will walk the exact access with you.</p><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-brass" href="#lead-form">Ask us about the beaches</a><a class="btn btn-outline" href="tel:+18543332135">Call 854.333.2135</a></div></div></div></section>
+
+<section style="background:var(--ivory)"><div class="wrap"><p style="${S.eyebrow}">Living with it</p><h2 style="${S.h2}">What this means when you own here</h2><p style="${S.p}">Rules read differently when the beach is your daily walk instead of your vacation week. The summer dog clock stops mattering when your normal beach hour is 7 a.m. before work. The umbrella rules stop mattering in September, which is warmer in the water than June and empty of crowds; the ${A('/buyers/relocating/weather/', 'weather page')} has the ocean temperatures month by month. And the flags and rip current basics become second nature the way anyone&#39;s home geography does.</p><p style="${S.pLast}">The one thing worth deciding before you buy rather than after: which of these rulebooks fits how your household actually uses a beach. A dog household points one way. A grandchildren-every-July household points another. Tell us which one you are and we will show you the sand along with the house.</p></div></section>
+
+<section style="background:var(--navy)" id="lead-form"><div class="wrap" style="padding:3.5rem 1.5rem"><div style="max-width:620px;margin:0 auto">
+<p style="font-family:var(--sans);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-2);margin-bottom:.7rem;text-align:center">Free, no obligation</p>
+<h2 style="font-family:var(--serif);font-size:1.9rem;font-weight:300;color:var(--ivory);letter-spacing:-.01em;margin-bottom:1.4rem;text-align:center">Move to Myrtle.</h2>
+<div id="ldWrap">
+<div style="display:grid;gap:.7rem;margin-bottom:1rem">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.7rem"><input class="ld-in" id="ldName" placeholder="Your name" autocomplete="name"><input class="ld-in" id="ldPhone" placeholder="Phone" type="tel" autocomplete="tel"></div>
+</div>
+<label style="display:flex;gap:.6rem;align-items:flex-start;font-family:var(--sans);font-size:.72rem;color:rgba(244,239,232,.6);line-height:1.5;margin:0 0 1.1rem;cursor:pointer"><input type="checkbox" id="ldConsent" style="margin-top:.18rem;accent-color:var(--brass);flex-shrink:0;width:15px;height:15px"><span>I consent to receive calls and text messages from Chapter 3 Realty about my property inquiry, showing appointments, and listing information I requested, at the phone number provided, including calls placed using an automated system or an artificial or prerecorded voice. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase.</span></label>
+<p id="ldErr" style="display:none;color:#e6b0a9;font-family:var(--sans);font-size:.8rem;margin:0 0 .8rem"></p>
+<button class="btn btn-brass" style="width:100%;justify-content:center" onclick="ldSubmit()">I want to move here</button>
+<p style="font-family:var(--sans);font-size:.78rem;color:rgba(244,239,232,.6);margin:.9rem 0 0;line-height:1.6;text-align:center">We reach out the same day, evenings included. Prefer to talk now? <a href="tel:+18543332135" style="color:var(--brass-2);font-weight:600;text-decoration:none;white-space:nowrap">Call 854.333.2135</a></p>
+</div>
+<div id="ldOk" style="display:none;border:1px solid var(--brass);border-radius:6px;padding:1.4rem;color:var(--ivory);text-align:center;line-height:1.6;font-family:var(--sans)">Thanks. A licensed team member will reach out the same day, evenings included.</div>
+</div>
+<style>
+.ld-in{width:100%;padding:.7rem .85rem;font-family:var(--sans);font-size:.92rem;background:var(--white);border:1px solid transparent;border-radius:4px;color:var(--navy);outline:none;transition:border-color .16s,box-shadow .16s}
+.ld-in::placeholder{color:var(--slate)}
+.ld-in:focus{border-color:var(--brass-2);box-shadow:0 0 0 3px rgba(212,137,74,.28)}
+</style>
+<script>
+function ldSubmit(){
+ var n=document.getElementById('ldName').value.trim(),ph=document.getElementById('ldPhone').value.trim(),c=document.getElementById('ldConsent').checked,err=document.getElementById('ldErr');
+ function fail(m){err.textContent=m;err.style.display='block';}
+ err.style.display='none';
+ if(!n){fail('Add your name.');return;}
+ if(!ph){fail('Add a phone number so we can reach you.');return;}
+ if(!c){fail('Check the consent box so we are allowed to call or text you.');return;}
+ c3SendForm({name:n,phone:ph,consent:'yes'},'relocating-beaches');
+ document.getElementById('ldWrap').style.display='none';
+ document.getElementById('ldOk').style.display='block';
+}
+</script></div></section>
+
+<section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">Common questions</p><h2 style="${S.h2}">Grand Strand beach rules FAQ</h2>${faqHtml}<div style="border-top:1px solid var(--rule);margin-top:2.2rem;padding-top:1.5rem;max-width:720px"><p style="${S.eyebrow}">Who wrote this</p><p style="${S.small}">Chapter 3 Realty is a real estate brokerage in Myrtle Beach, built as a partnership around a simple idea: you should be as informed as possible on the biggest purchase of your life, every single time. Timmy Fredrick Nash is the Broker-in-Charge, South Carolina broker license 43182, with more than 30 years selling real estate on the Grand Strand. He reviews every page we publish and runs our market analyses himself. His father, Fred Nash, also sold real estate here, and Fred Nash Boulevard by Myrtle Beach International Airport is named for him. Devin Day wrote this page. He is our Operations Officer, a licensed mortgage loan originator, NMLS 2721275, and a relocator himself, from Ohio. Meet the team on ${A('/about/', 'the about page')} or read ${A('/why-chapter-3/', 'why buyers work with us')}. The direct line is <a href="tel:+18543332135" style="${S.a}">854.333.2135</a>.</p></div><p style="${S.small};margin-top:1.6rem"><strong style="color:var(--navy)">Sources:</strong> ${X('https://www.cityofmyrtlebeach.com/i_want_to/learn_about/beach_conditions.php', 'City of Myrtle Beach beach rules')}, ${X('https://www.nmb.us/249/Beach-Laws', 'North Myrtle Beach beach laws')}, ${X('https://www.surfsidebeach.org/214/Frequently-Needed-Information', 'Town of Surfside Beach')}, ${X('https://www.horrycountysc.gov/about-our-beaches', 'Horry County beach rules')}, ${X('https://www.townofpawleysisland.com/beach-rules/', 'Town of Pawleys Island beach rules')}. Rules change; each government&#39;s own page governs, and we re-check these when we update this page.</p></div></section>
+`,
+};
+
+module.exports = spec;

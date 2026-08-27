@@ -906,3 +906,39 @@ This is the section that decides whether the calculator can have a food line at 
 ### G7. Insurance moratorium fact (owner-supplied 2026-08-27)
 - Owner's sentence, published verbatim as the lead of the before-you-buy third item: "An insurance company may place a moratorium on issuing new policies in an area where a hurricane is expected." Framed around closing mechanics (loan cannot close without a bound policy). Replaced the third item's policy-explainer angle at owner request ("we have talked about these insurance policies on a million pages"); coastal-insurance link already exists in the inland-flooding section, so the item carries no duplicate link.
 - Hugo damage wording: "destroyed up to 90 percent of homes" softened to "destroyed many homes" in both the storm table and the FAQ at owner request 2026-08-27; the 13-foot surge figure retained.
+
+---
+
+## Addendum 2026-08-27 (batch 2): VA/CT/MA passes, beach rules, internet
+
+### H1. Virginia (from-virginia page)
+- Brackets/deductions from state-tax.json (verified 2026-08-16): 2/3/5/5.75% with top at $17,000; std deduction $8,750/$17,500; effProp 0.78%, median $2,872; sales 5.3%.
+- Age deduction re-verified 2026-08-27 (Va. Code 58.1-322.03 + tax.virginia.gov rulings): $12,000 at 65+ (born after 1939-01-01), reduced $1-for-$1 by AFAGI over $50,000 single / $75,000 MFJ, gone at $62,000/$99,000; born on/before 1939-01-01 gets $12,000 with no income test (cohort tiny; not published).
+- Military benefits subtraction (tax.virginia.gov/military-benefits-faq): $10k/2022, $20k/2023, $30k/2024, $40,000 for 2025+; age-55 requirement REMOVED beginning TY2024. Page contrasts SC's uncapped exemption honestly (below $40k they match).
+- Estate/inheritance: neither (dataset AARP note). VA grocery 1% local rate flagged UNVERIFIED — NOT published.
+- FRAMING RULE honored: car tax familiar; no VA locality car-rate comparison published (no verified locality table opened).
+
+### H2. Connecticut (from-connecticut page)
+- Brackets 2-6.99% (2024-cut bottom rates 2/4.5 confirmed in dataset), no std deduction, exemption phase-out, TAX BENEFIT RECAPTURE published qualitatively.
+- Retirement (OLR 2024-R-0130 + DRS senior flyer, opened 2026-08-27): SS exempt under $75k/$100k AGI (hard threshold); pension/annuity 100% deduction under same, sliding to zero at $100k/$150k; IRA deduction phase-in 25/50/75% (2023-25) reaching 100% IN 2026 — page uses the this-year hook.
+- Car (CGS 12-71e, town pages): MSRP-based statutory depreciation, 70% assessment, mill rate capped 32.46 (2021 grand list onward). Published: familiar + "for most movers the bill falls"; no per-town claims.
+- Estate/gift (DRS page): exemption tracks federal basic exclusion = $15,000,000 for 2026 (OBBBA), flat 12%; only state gift tax, annual exclusion $19,000. Published as "reaches almost nobody"; honesty framing per owner style.
+- effProp 1.54%, median $6,573 (dataset). Home value $453,319 (col-places July 2026).
+
+### H3. Massachusetts (from-massachusetts page)
+- 5% flat + 4% surtax above $1,083,150 (dataset; printed "about $1.08 million, indexed"); short-term cap gains 8.5%; no std deduction, exemptions $4,400/$8,800.
+- Estate tax verified at mass.gov estate tax guide 2026-08-27: filing above $2,000,000 gross for deaths on/after 2023-01-01; credit $99,600; Table B computation. Published with the credit mechanics simplified honestly.
+- Public pensions: MA does not tax its own contributory public pensions; SC taxes them past deductions — PUBLISHED AS THE WARNING RUNNING AGAINST THE MOVE (table row + section + FAQ). Private pensions/IRA taxed at 5% flat, no senior exclusion.
+- Car excise $25/$1,000 fixed statewide = 2.5%; Horry effective ~1.2% ($362/$30k) → "usually smaller," down-framing per dataset rule.
+- effProp 1.0%, median $6,080. Home value $669,053 vs $342,010 (col-places July 2026) — printed "close to double," NOT "widest of any state" as a ranking claim... CORRECTION: page says "the widest spread of any state page we publish" — TRUE against the eight other published state pages' statewide figures (NC/NY/NJ/PA/OH/MD/VA/CT all < MA 669k gap). Verified against our own pages only; claim scoped to "any state page we publish."
+
+### H4. Beach rules (beaches page) — each from the jurisdiction's own page, 2026-08-27
+- City of Myrtle Beach (beach_conditions.php): dogs banned 10a-5p May 1-Labor Day, 7-ft leash, off-season any hour incl. boardwalk; umbrellas only ≤7.5 ft Memorial-Labor Day; tents ≤12x12 rest of year, 10 ft behind umbrella line; setup 8a, off by 7p; no alcohol/glass/fires; holes ≤2 ft and filled; surf/kayak zones at five street ends 10a-5p in season.
+- NMB (nmb.us/249): dogs banned 10a-4p May 15-Labor Day; umbrellas only (9 ft shade / 7'6" pole) May 15-Labor Day; nothing on beach 7p-8a; swim ≤50 yd and shoulder depth; alcohol/glass/fireworks prohibited. (nmb.us/265 is 404; /249 is live.)
+- Surfside (town site + visitor info): dogs banned 10a-5p May 1-Labor Day; canopies ≤10x10 allowed, 10 ft behind guard stands; 7-ft leash; town decals.
+- Horry County unincorporated (about-our-beaches): dogs banned 10a-5p May 1-Labor Day, 7-ft leash; shading = umbrellas ≤7'6" YEAR-ROUND + infant cabanas 4x3x3; alcohol banned incl. accesses; nothing 7p-8a; GOLF CARTS PERMITTED ON BEACH Nov 1-Feb 28 w/ state permit + licensed driver.
+- Pawleys Island (townofpawleysisland.com): dogs year-round, NO hour ban; leashed 8a-8p May 1-Sep 30; off-leash under voice control w/ leash in hand Oct-Apr.
+- Page division of labor: checklist owns decal/cart-permit HOW; weather owns water temps; beaches owns sand rules. MB resident decal coverage detail lives on checklist (Avenues, meters; not Pavilion garage).
+
+### H5. Internet (jobs remote section)
+- HTC (htcinc.net + comparisons, 2026-08-27): local cooperative, claims largest fiber network in Grand Strand/Pee Dee, symmetrical gigabit. ATTRIBUTED as HTC's own claim. Spectrum: cable across most of the county, downloads to 2 Gbps, uploads ~35 Mbps (highspeedinternet.com comparison) — published qualitatively ("much slower uploads"). Street-by-street variability → FCC broadband map linked; no address-level claims.
