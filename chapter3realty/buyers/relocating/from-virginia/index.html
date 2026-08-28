@@ -137,74 +137,87 @@
 <section style="background:var(--ivory-2)" id="tax-calc"><div class="wrap">
 <p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">Side by side</p>
 <h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em">What you pay in taxes now, and what you would pay here</h2>
-<p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1.4rem">Put in what you earn, how you earn it, and what your house is worth. It works out the state income tax and the property tax on both ends, and shows them next to each other. Nothing you type leaves your browser.</p>
+<p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1.5rem">It opens on a real example. Change any line to your own numbers and press Calculate. It works out the state income tax, the local income tax where your town charges one, and the property tax on both ends. Nothing you type leaves your browser.</p>
 
 <style>
-.txc{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);max-width:900px;display:grid;grid-template-columns:minmax(280px,360px) 1fr}
-.txc-form{padding:1.8rem 1.9rem 1.8rem 0;border-right:1px solid var(--rule)}
-.txc-res{padding:1.8rem 0 1.8rem 1.9rem}
-.txc-lab{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--slate);margin-bottom:.4rem;font-weight:500}
-.txc-f{margin-bottom:1rem}
-.txc-in,.txc-sel{width:100%;padding:.6rem .8rem;font-family:var(--sans);font-size:.92rem;background:var(--white);border:1px solid var(--rule);border-radius:4px;color:var(--navy);outline:none}
-.txc-in:focus,.txc-sel:focus{border-color:var(--brass);box-shadow:0 0 0 3px rgba(196,120,58,.14)}
-.txc-pair{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
-.txc-seg{display:flex;gap:.4rem}
-.txc-seg button{flex:1;padding:.55rem .3rem;font-family:var(--sans);font-size:.85rem;background:var(--white);border:1px solid var(--rule);border-radius:4px;color:var(--muted);cursor:pointer}
+.txc{display:grid;grid-template-columns:minmax(300px,380px) 1fr;gap:0;max-width:940px;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--white)}
+.txc-form{padding:1.7rem 1.7rem 1.5rem;background:var(--white)}
+.txc-leg{font-family:var(--sans);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-weight:700;margin:0 0 .9rem}
+.txc-leg+.txc-leg,.txc-grp+.txc-leg{margin-top:1.5rem}
+.txc-f{margin-bottom:.85rem}
+.txc-lab{display:block;font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-bottom:.3rem}
+.txc-money{position:relative}
+.txc-money span{position:absolute;left:.7rem;top:50%;transform:translateY(-50%);font-family:var(--sans);font-size:.9rem;color:var(--slate);pointer-events:none}
+.txc-in,.txc-sel{width:100%;padding:.62rem .8rem;font-family:var(--sans);font-size:.95rem;background:var(--white);border:1px solid var(--rule);border-radius:6px;color:var(--navy);outline:none;transition:border-color .15s,box-shadow .15s}
+.txc-money .txc-in{padding-left:1.55rem}
+.txc-in:focus,.txc-sel:focus{border-color:var(--brass);box-shadow:0 0 0 3px rgba(196,120,58,.15)}
+.txc-in.is-example{color:var(--slate)}
+.txc-seg{display:flex;gap:.35rem}
+.txc-seg button{flex:1;padding:.55rem .35rem;font-family:var(--sans);font-size:.85rem;background:var(--white);border:1px solid var(--rule);border-radius:6px;color:var(--muted);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.txc-seg button:hover{border-color:var(--brass)}
 .txc-seg button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--ivory);font-weight:600}
-.txc-check{display:flex;align-items:center;gap:.55rem;font-family:var(--sans);font-size:.88rem;color:var(--navy);cursor:pointer;margin:.2rem 0 1rem}
-.txc-check input{width:16px;height:16px;accent-color:var(--brass)}
-.txc-hint{font-family:var(--sans);font-size:.72rem;color:var(--muted);margin:.35rem 0 0;line-height:1.5}
-.txc-sub{font-family:var(--sans);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin:1.5rem 0 .7rem;font-weight:600}
-.txc-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
-.txc-col h3{font-family:var(--sans);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin:0 0 .8rem;font-weight:600}
-.txc-col.here h3{color:var(--brass)}
-.txc-row{display:flex;justify-content:space-between;gap:.6rem;padding:.5rem 0;border-bottom:1px solid var(--rule);font-family:var(--sans);font-size:.86rem;color:var(--muted)}
-.txc-row b{color:var(--navy);font-weight:600;white-space:nowrap}
-.txc-tot{display:flex;justify-content:space-between;gap:.6rem;padding:.7rem 0 0;font-family:var(--sans);font-size:.9rem;color:var(--navy);font-weight:600}
-.txc-tot span:last-child{font-family:var(--serif);font-size:1.45rem;font-weight:400}
-.txc-big{font-family:var(--serif);font-size:2rem;color:var(--navy);line-height:1.15;margin:1.5rem 0 .3rem}
-.txc-big em{font-style:normal;color:var(--brass)}
-.txc-note{font-family:var(--sans);font-size:.8rem;color:var(--muted);line-height:1.6;margin:0 0 1.1rem;max-width:420px}
-.txc-src{font-family:var(--sans);font-size:.76rem;color:var(--muted);line-height:1.6;max-width:900px;margin-top:1.2rem}
-@media(max-width:820px){.txc{grid-template-columns:1fr}.txc-form{padding:1.4rem 0;border-right:0;border-bottom:1px solid var(--rule)}.txc-res{padding:1.4rem 0}}
+.txc-grp{margin-bottom:.85rem}
+.txc-two{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;align-items:end}
+.txc-two .txc-lab{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.txc-go{width:100%;justify-content:center;margin-top:1.1rem}
+.txc-reset{display:block;width:100%;margin-top:.7rem;background:none;border:0;font-family:var(--sans);font-size:.78rem;color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.txc-reset:hover{color:var(--navy)}
+
+.txc-out{position:relative;background:var(--navy);color:var(--ivory);padding:1.9rem 1.8rem;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.txc-out>*{width:100%;max-width:480px}
+.txc-out>.txc-stale{max-width:none;width:auto}
+.txc-cap{font-family:var(--sans);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--brass-2);font-weight:700;margin:0 0 .5rem}
+.txc-big{font-family:var(--serif);font-size:2.5rem;line-height:1.08;color:var(--ivory);margin:0 0 .35rem;letter-spacing:-.01em}
+.txc-mo{font-family:var(--sans);font-size:.88rem;color:rgba(244,239,232,.72);margin:0 0 1.2rem}
+.txc-tab{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.86rem;margin-bottom:1.1rem}
+.txc-tab th{text-align:right;font-weight:600;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,239,232,.6);padding:0 0 .5rem;border-bottom:1px solid rgba(244,239,232,.18)}
+.txc-tab th:first-child{text-align:left}
+.txc-tab td{padding:.5rem 0;border-bottom:1px solid rgba(244,239,232,.12);color:rgba(244,239,232,.82);text-align:right;white-space:nowrap}
+.txc-tab td:first-child{text-align:left;white-space:normal;padding-right:.6rem}
+.txc-tab tr.tot td{border-bottom:0;padding-top:.7rem;color:var(--ivory);font-weight:700;font-size:.95rem}
+.txc-tab td.hi{color:var(--brass-2);font-weight:600}
+.txc-from{font-family:var(--sans);font-size:.82rem;line-height:1.65;color:rgba(244,239,232,.72);margin:0 0 1.2rem}
+.txc-from b{color:var(--ivory);font-weight:600}
+.txc-cta{margin-top:.2rem}
+.txc-stale{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(11,22,40,.82);backdrop-filter:blur(1px);z-index:3}
+.txc-stale p{font-family:var(--sans);font-size:.9rem;color:var(--ivory);text-align:center;max-width:230px;line-height:1.6;margin:0}
+.txc.is-stale .txc-stale{display:flex}
+.txc-src{font-family:var(--sans);font-size:.76rem;color:var(--muted);line-height:1.65;max-width:940px;margin-top:1.1rem}
+@media(max-width:840px){.txc{grid-template-columns:1fr}.txc-form{padding:1.3rem}.txc-out{padding:1.5rem 1.3rem}.txc-big{font-size:2.1rem}}
 </style>
-<div class="txc">
+<div class="txc" id="txcWrap">
   <div class="txc-form">
-    <div class="txc-f"><label class="txc-lab" for="txcState">Where you live now</label><select class="txc-sel" id="txcState"><option value="NY">New York</option><option value="NJ">New Jersey</option><option value="PA">Pennsylvania</option><option value="OH">Ohio</option><option value="MD">Maryland</option><option value="VA" selected>Virginia</option><option value="NC">North Carolina</option><option value="CT">Connecticut</option><option value="MA">Massachusetts</option><option value="FL">Florida</option><option value="TX">Texas</option></select></div>
-    <div class="txc-f"><span class="txc-lab">Who is filing</span><div class="txc-seg" role="group" aria-label="Filing status"><button type="button" id="txcSingle" aria-pressed="true">Just me</button><button type="button" id="txcJoint" aria-pressed="false">Married, together</button></div></div>
-    <label class="txc-check"><input type="checkbox" id="txc65"> Someone is 65 or older</label>
-    <p class="txc-sub">How you earn it, per year</p>
-    <div class="txc-f"><label class="txc-lab" for="txcWages">Wages or business income</label><input class="txc-in" id="txcWages" type="text" inputmode="numeric" placeholder="0" autocomplete="off"></div>
-    <div class="txc-f"><label class="txc-lab" for="txcPension">Pension, 401(k) or IRA withdrawals</label><input class="txc-in" id="txcPension" type="text" inputmode="numeric" placeholder="0" autocomplete="off"></div>
-    <div class="txc-pair"><div class="txc-f"><label class="txc-lab" for="txcSS">Social Security</label><input class="txc-in" id="txcSS" type="text" inputmode="numeric" placeholder="0" autocomplete="off"></div>
-    <div class="txc-f"><label class="txc-lab" for="txcMil">Military retirement</label><input class="txc-in" id="txcMil" type="text" inputmode="numeric" placeholder="0" autocomplete="off"></div></div>
-    <p class="txc-sub">The house</p>
-    <div class="txc-pair"><div class="txc-f"><label class="txc-lab" for="txcHomeNow">Your home now</label><input class="txc-in" id="txcHomeNow" type="text" inputmode="numeric" placeholder="450,000" autocomplete="off"></div>
-    <div class="txc-f"><label class="txc-lab" for="txcHomeHere">A home here</label><input class="txc-in" id="txcHomeHere" type="text" inputmode="numeric" value="342,000" autocomplete="off"></div></div>
-    <div class="txc-f" id="txcLocalWrap" hidden><label class="txc-lab" id="txcLocalLab" for="txcLocal">Local income tax rate</label><input class="txc-in" id="txcLocal" type="text" inputmode="decimal" placeholder="0" autocomplete="off"><p class="txc-hint" id="txcLocalHint"></p></div>
-    <button class="btn btn-brass" id="txcGo" style="width:100%;justify-content:center;margin-top:.4rem">Show me both</button>
+    <p class="txc-leg">Where you live now</p>
+    <div class="txc-f"><label class="txc-lab" for="txcState">Your state</label><select class="txc-sel" id="txcState"><option value="NY">New York</option><option value="NJ">New Jersey</option><option value="PA">Pennsylvania</option><option value="OH">Ohio</option><option value="MD">Maryland</option><option value="VA" selected>Virginia</option><option value="NC">North Carolina</option><option value="CT">Connecticut</option><option value="MA">Massachusetts</option><option value="FL">Florida</option><option value="TX">Texas</option></select></div>
+    <div class="txc-grp" id="txcLocalWrap" hidden><p class="txc-lab" id="txcLocalQ"></p><div class="txc-seg" id="txcLocalSeg" role="group" aria-label="Local income tax"></div></div>
+    <div class="txc-grp"><p class="txc-lab">Who is filing</p><div class="txc-seg" role="group" aria-label="Filing status"><button type="button" id="txcSingle" aria-pressed="false">Just me</button><button type="button" id="txcJoint" aria-pressed="true">Married</button></div></div>
+    <div class="txc-grp"><p class="txc-lab">Anyone 65 or older</p><div class="txc-seg" role="group" aria-label="Age 65 or older"><button type="button" id="txcAgeNo" aria-pressed="true">No</button><button type="button" id="txcAgeYes" aria-pressed="false">Yes</button></div></div>
+    <p class="txc-leg">What you earn in a year</p>
+    <div class="txc-f"><label class="txc-lab" for="txcWages">Wages or business income</label><div class="txc-money"><span>$</span><input class="txc-in is-example" id="txcWages" type="text" inputmode="numeric" autocomplete="off"></div></div>
+    <div class="txc-f"><label class="txc-lab" for="txcPension">Pension, 401(k) or IRA withdrawals</label><div class="txc-money"><span>$</span><input class="txc-in is-example" id="txcPension" type="text" inputmode="numeric" autocomplete="off"></div></div>
+    <div class="txc-two"><div class="txc-f"><label class="txc-lab" for="txcSS">Social Security</label><div class="txc-money"><span>$</span><input class="txc-in is-example" id="txcSS" type="text" inputmode="numeric" autocomplete="off"></div></div><div class="txc-f"><label class="txc-lab" for="txcMil">Military retirement</label><div class="txc-money"><span>$</span><input class="txc-in is-example" id="txcMil" type="text" inputmode="numeric" autocomplete="off"></div></div></div>
+    <p class="txc-leg">The house</p>
+    <div class="txc-two"><div class="txc-f"><label class="txc-lab" for="txcHomeNow">Your home now</label><div class="txc-money"><span>$</span><input class="txc-in is-example" id="txcHomeNow" type="text" inputmode="numeric" autocomplete="off"></div></div><div class="txc-f"><label class="txc-lab" for="txcHomeHere">A home here</label><div class="txc-money"><span>$</span><input class="txc-in is-example" id="txcHomeHere" type="text" inputmode="numeric" autocomplete="off"></div></div></div>
+    <button class="btn btn-brass txc-go" id="txcGo">Calculate</button>
+    <button type="button" class="txc-reset" id="txcReset">Put the example back</button>
   </div>
-  <div class="txc-res" aria-live="polite">
-    <div class="txc-cols">
-      <div class="txc-col"><h3 id="txcNowH">Where you live now</h3>
-        <div class="txc-row"><span>State income tax</span><b id="txcNowInc">$0</b></div>
-        <div class="txc-row" id="txcNowLocalRow" hidden><span id="txcNowLocalLab">Local income tax</span><b id="txcNowLocal">$0</b></div>
-        <div class="txc-row"><span>Property tax</span><b id="txcNowProp">$0</b></div>
-        <div class="txc-tot"><span>A year</span><span id="txcNowTot">$0</span></div>
-      </div>
-      <div class="txc-col here"><h3>In Myrtle Beach</h3>
-        <div class="txc-row"><span>State income tax</span><b id="txcHereInc">$0</b></div>
-        <div class="txc-row" id="txcHereLocalRow" hidden><span>Local income tax</span><b>None</b></div>
-        <div class="txc-row"><span>Property tax</span><b id="txcHereProp">$0</b></div>
-        <div class="txc-tot"><span>A year</span><span id="txcHereTot">$0</span></div>
-      </div>
-    </div>
-    <p class="txc-big" id="txcBig">Fill in what you earn.</p>
-    <p class="txc-note" id="txcNote">Every figure updates as you type.</p>
-    <a class="btn btn-brass" href="#lead-form">Have an expert check my numbers</a>
+  <div class="txc-out" aria-live="polite">
+    <p class="txc-cap" id="txcCap">Example</p>
+    <p class="txc-big" id="txcBig">&nbsp;</p>
+    <p class="txc-mo" id="txcMo">&nbsp;</p>
+    <table class="txc-tab"><thead><tr><th>Every year</th><th id="txcNowH">Now</th><th>Myrtle Beach</th></tr></thead>
+      <tbody>
+        <tr><td>State income tax</td><td id="txcNowInc">$0</td><td id="txcHereInc">$0</td></tr>
+        <tr id="txcLocalRow" hidden><td id="txcLocalLab">Local income tax</td><td id="txcNowLocal">$0</td><td>None</td></tr>
+        <tr><td>Property tax</td><td id="txcNowProp">$0</td><td id="txcHereProp">$0</td></tr>
+        <tr class="tot"><td>Total</td><td id="txcNowTot">$0</td><td class="hi" id="txcHereTot">$0</td></tr>
+      </tbody></table>
+    <p class="txc-from" id="txcFrom"></p>
+    <div class="txc-cta"><a class="btn btn-brass" href="#lead-form">Have an expert check my numbers</a></div>
+    <div class="txc-stale"><p>Press Calculate to see your own numbers.</p></div>
   </div>
 </div>
-<p class="txc-src">An estimate, not a tax return. State rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026; the Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. It leaves out federal tax, city and county income taxes unless you enter one, car taxes, and every credit that depends on your own return. Connecticut&#39;s exemption phase-out and benefit recapture are left out too, so a large Connecticut income shows lower here than you would really pay. Your accountant has the last word, and we will happily sit with you and go through it.</p>
+<p class="txc-src" id="txcSrc">An estimate, not a tax return. State rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026. The Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. It leaves out federal tax, car taxes, and credits that depend on your own return, and it leaves out Connecticut&#39;s exemption phase-out and benefit recapture, so a large Connecticut income shows lower here than you would really pay. Your accountant has the last word, and we will sit down and go through it with you.</p>
 </div></section>
 
 <script>
@@ -237,7 +250,8 @@
       bM: [[17150, .039], [23600, .044], [27900, .0515], [161550, .054], [323200, .059], [2155350, .0685], [5000000, .0965], [25000000, .103], [null, .109]],
       std: { s: 8000, m: 16050 }, exempt: { s: 0, m: 0 },
       propRate: .0130,
-      local: { label: 'New York City or Yonkers income tax rate', base: 'taxable', hint: 'New York City runs about 3 to 4 percent. Leave it at 0 if you live outside the city.' },
+      local: { kind: 'choice', question: 'Do you live inside New York City?', options: [['nyc', 'In the city'], ['yonkers', 'Yonkers'], ['no', 'Neither']], preset: 'nyc',
+        note: 'New York City resident rates, from the state&#39;s own IT-201 schedule. Yonkers adds 16.75 percent of your state tax.' },
       ret: 'ny',
     },
     NJ: {
@@ -254,7 +268,8 @@
       bS: [[null, .0307]], bM: [[null, .0307]],
       std: { s: 0, m: 0 }, exempt: { s: 0, m: 0 },
       propRate: .0126,
-      local: { label: 'Your local earned income tax rate', base: 'wages', hint: 'Most Pennsylvania towns charge one. It averages about 1 percent and is on your pay stub.' },
+      local: { kind: 'yesno', question: 'Does your town charge the local earned income tax?', preset: 'yes', rate: .01, base: 'wages', rowLabel: 'Local earned income tax',
+        note: 'Most Pennsylvania towns charge one. We use 1 percent, near the state average; yours is on your pay stub.' },
       ret: 'pa',
     },
     OH: {
@@ -262,7 +277,8 @@
       bS: [[26050, 0], [null, .0275]], bM: [[26050, 0], [null, .0275]],
       std: { s: 0, m: 0 }, exempt: { s: 2400, m: 4800 },
       propRate: .0136,
-      local: { label: 'Your city income tax rate', base: 'wages', hint: 'Most Ohio cities charge 1 to 3 percent on wages. It is on your pay stub.' },
+      local: { kind: 'yesno', question: 'Does your city charge an income tax?', preset: 'yes', rate: .02, base: 'wages', rowLabel: 'City income tax',
+        note: 'Ohio cities charge 1 to 3 percent on wages. We use 2 percent; yours is on your pay stub.' },
       ret: 'oh',
     },
     MD: {
@@ -271,7 +287,8 @@
       bM: [[1000, .02], [2000, .03], [3000, .04], [150000, .0475], [175000, .05], [225000, .0525], [300000, .055], [600000, .0575], [1200000, .0625], [null, .065]],
       std: { s: 3350, m: 6700 }, exempt: { s: 3200, m: 6400 },
       propRate: .0092,
-      local: { label: 'Your county income tax rate', base: 'taxable', hint: 'Every Maryland county and Baltimore City charges one. Statewide it averages about 2.5 percent, and yours is on your return.' },
+      local: { kind: 'auto', rate: .0251, base: 'taxable', rowLabel: 'County income tax',
+        note: 'Every Maryland county and Baltimore City charges one. We use 2.51 percent, the state average; yours is on your return.' },
       ret: 'md',
     },
     VA: {
@@ -319,6 +336,15 @@
       ret: 'sc',
     },
   };
+
+  /* New York City resident rate schedule, printed in the state's own IT-201
+   * instructions (opened 2026-08-28), and the Yonkers resident surcharge of
+   * 16.75 percent of the state tax from the same instructions. We apply the
+   * city schedule to New York taxable income, which is our estimate: the city
+   * starts from the same figure but allows its own credits. */
+  var NYC_S = [[12000, .03078], [25000, .03762], [50000, .03819], [null, .03876]];
+  var NYC_M = [[21600, .03078], [45000, .03762], [90000, .03819], [null, .03876]];
+  var YONKERS = .1675;
 
   // Horry County, tax year 2025 certified millage, unincorporated (the same
   // constants as the calculator on /buyers/property-taxes/).
@@ -439,9 +465,17 @@
       var taxable = Math.max(0, gross - ded);
       var income = Math.max(0, bracketTax(taxable, inp.mfj ? R.bM : R.bS) - r.credit);
 
-      var localRate = (side === 'now' && R.local) ? (inp.localRate || 0) : 0;
-      var localBase = (R.local && R.local.base === 'wages') ? inc.wages : taxable;
-      var local = localRate * localBase;
+      var local = 0, localLabel = '';
+      if (side === 'now' && R.local) {
+        var L = R.local, choice = (inp.localChoice === undefined || inp.localChoice === null) ? L.preset : inp.localChoice;
+        if (L.kind === 'auto') { local = L.rate * taxable; localLabel = L.rowLabel; }
+        else if (L.kind === 'yesno') {
+          if (choice === 'yes' || choice === true) { local = L.rate * (L.base === 'wages' ? inc.wages : taxable); localLabel = L.rowLabel; }
+        } else if (L.kind === 'choice') {
+          if (choice === 'nyc') { local = bracketTax(taxable, inp.mfj ? NYC_M : NYC_S); localLabel = 'New York City income tax'; }
+          else if (choice === 'yonkers') { local = income * YONKERS; localLabel = 'Yonkers surcharge'; }
+        }
+      }
 
       var prop;
       if (side === 'here') {
@@ -450,61 +484,134 @@
       } else {
         prop = (inp.homeNow || 0) * R.propRate;
       }
-      out[side] = { income: income, local: local, property: prop, total: income + local + prop, taxableIncome: taxable };
+      out[side] = { income: income, local: local, localLabel: localLabel, property: prop, total: income + local + prop, taxableIncome: taxable };
     });
     out.difference = out.now.total - out.here.total;
     return out;
   }
 
-  root.C3TAX = { RULES: RULES, calc: calc, bracketTax: bracketTax, retirement: retirement };
+
+  /* What the calculator shows on load: a real household, not zeroes. Home
+   * values are each state's own Zillow statewide typical from col-places.json
+   * (July 2026), against the $342,000 typical here. */
+  var EXAMPLES = {
+    NY: { homeNow: 527000 }, NJ: { homeNow: 584000 }, PA: { homeNow: 291000 },
+    OH: { homeNow: 250000 }, MD: { homeNow: 433000 }, VA: { homeNow: 418000 },
+    NC: { homeNow: 338000 }, CT: { homeNow: 453000 }, MA: { homeNow: 669000 },
+    FL: { homeNow: 400000 }, TX: { homeNow: 340000 },
+  };
+  function example(code) {
+    var e = EXAMPLES[code] || { homeNow: 450000 };
+    return { state: code, mfj: true, is65: false, wages: 120000, pension: 0, ss: 0, military: 0,
+             homeNow: e.homeNow, homeHere: 342000, localChoice: undefined };
+  }
+
+  root.C3TAX = { RULES: RULES, calc: calc, bracketTax: bracketTax, retirement: retirement, example: example };
 })(typeof window !== 'undefined' ? window : globalThis);
 
 (function(){
   var $=function(id){return document.getElementById(id);};
-  var st=$('txcState'),single=$('txcSingle'),joint=$('txcJoint'),age=$('txc65');
-  if(!st||!window.C3TAX){return;}
-  var mfj=false;
-  function num(el){var v=(el.value||'').replace(/[^0-9.]/g,'');return parseFloat(v)||0;}
+  var wrap=$('txcWrap'), st=$('txcState');
+  if(!wrap||!st||!window.C3TAX){return;}
+  var T=window.C3TAX, mfj=true, is65=false, localChoice=null, touched={};
+  var FIELDS=['txcWages','txcPension','txcSS','txcMil','txcHomeNow','txcHomeHere'];
+  var KEYS={txcWages:'wages',txcPension:'pension',txcSS:'ss',txcMil:'military',txcHomeNow:'homeNow',txcHomeHere:'homeHere'};
+
   function money(x){return '$'+Math.round(x).toLocaleString('en-US');}
-  function localCfg(){var R=window.C3TAX.RULES[st.value];return R?R.local:null;}
-  function syncLocal(){
-    var cfg=localCfg(),wrap=$('txcLocalWrap');
-    if(cfg){wrap.hidden=false;$('txcLocalLab').textContent=cfg.label;$('txcLocalHint').textContent=cfg.hint;}
-    else{wrap.hidden=true;$('txcLocal').value='';}
+  function num(el){return parseFloat((el.value||'').replace(/[^0-9.]/g,''))||0;}
+  function commas(el){var v=num(el);el.value=v?v.toLocaleString('en-US'):'';}
+  function stale(on){wrap.classList.toggle('is-stale',!!on);}
+
+  function localSeg(){
+    var L=T.RULES[st.value].local, w=$('txcLocalWrap'), seg=$('txcLocalSeg');
+    seg.innerHTML='';
+    if(!L||L.kind==='auto'){w.hidden=true;localChoice=null;return;}
+    w.hidden=false;
+    $('txcLocalQ').textContent=L.question;
+    var opts=L.kind==='yesno'?[['yes','Yes'],['no','No']]:L.options;
+    if(localChoice===null){localChoice=L.preset;}
+    opts.forEach(function(o){
+      var b=document.createElement('button');
+      b.type='button';b.textContent=o[1];b.setAttribute('aria-pressed',String(o[0]===localChoice));
+      b.addEventListener('click',function(){
+        localChoice=o[0];
+        Array.prototype.forEach.call(seg.children,function(c){c.setAttribute('aria-pressed',String(c===b));});
+        stale(true);
+      });
+      seg.appendChild(b);
+    });
   }
-  function run(){
-    var R=window.C3TAX.RULES[st.value];
-    var localPct=num($('txcLocal'));
-    var r=window.C3TAX.calc({state:st.value,mfj:mfj,is65:age.checked,
-      wages:num($('txcWages')),pension:num($('txcPension')),ss:num($('txcSS')),military:num($('txcMil')),
-      homeNow:num($('txcHomeNow')),homeHere:num($('txcHomeHere')),localRate:localPct>1?localPct/100:localPct});
-    $('txcNowH').textContent='In '+R.name+' now';
+
+  function read(){
+    var v={state:st.value,mfj:mfj,is65:is65,localChoice:localChoice};
+    FIELDS.forEach(function(id){v[KEYS[id]]=num($(id));});
+    return v;
+  }
+
+  function fill(ex){
+    FIELDS.forEach(function(id){
+      var el=$(id), val=ex[KEYS[id]];
+      el.value=val?val.toLocaleString('en-US'):'';
+      el.classList.add('is-example');
+    });
+    touched={};
+  }
+
+  function render(v,isExample){
+    var r=T.calc(v), R=T.RULES[v.state];
+    $('txcCap').textContent=isExample?('Example: a couple leaving '+R.name):'Your numbers';
+    $('txcNowH').textContent=R.name;
     $('txcNowInc').textContent=money(r.now.income);
-    $('txcNowProp').textContent=money(r.now.property);
-    $('txcNowTot').textContent=money(r.now.total);
     $('txcHereInc').textContent=money(r.here.income);
+    $('txcNowProp').textContent=money(r.now.property);
     $('txcHereProp').textContent=money(r.here.property);
+    $('txcNowTot').textContent=money(r.now.total);
     $('txcHereTot').textContent=money(r.here.total);
-    var lr=$('txcNowLocalRow');
-    if(r.now.local>0){lr.hidden=false;$('txcNowLocal').textContent=money(r.now.local);$('txcNowLocalLab').textContent=localCfg()?localCfg().label.replace(/^Your /,'').replace(/ rate$/,''):'Local income tax';$('txcHereLocalRow').hidden=false;}
-    else{lr.hidden=true;$('txcHereLocalRow').hidden=true;}
-    var d=r.difference, any=(num($('txcWages'))+num($('txcPension'))+num($('txcSS'))+num($('txcMil'))+num($('txcHomeNow')))>0;
-    if(!any){$('txcBig').innerHTML='Fill in what you earn.';$('txcNote').textContent='Every figure updates as you type.';return;}
-    if(d>0){$('txcBig').innerHTML='About <em>'+money(d)+' less</em> a year in tax.';
-      $('txcNote').textContent='That is '+money(d/12)+' a month, before anything else about the move changes.';}
-    else if(d<0){$('txcBig').innerHTML='About <em>'+money(-d)+' more</em> a year in tax.';
-      $('txcNote').textContent='Not every move saves tax money, and we would rather show you that here than after you buy.';}
-    else{$('txcBig').innerHTML='About the same either way.';$('txcNote').textContent='The tax side is close. The house price is usually where the difference shows up.';}
+    var row=$('txcLocalRow');
+    if(r.now.local>0){row.hidden=false;$('txcLocalLab').textContent=r.now.localLabel;$('txcNowLocal').textContent=money(r.now.local);}
+    else{row.hidden=true;}
+    var d=r.difference;
+    if(d>0){
+      $('txcBig').textContent=money(d)+' less a year';
+      $('txcMo').textContent='About '+money(d/12)+' a month, in tax alone.';
+    }else if(d<0){
+      $('txcBig').textContent=money(-d)+' more a year';
+      $('txcMo').textContent='Not every move saves tax money. We would rather show you that now than after you buy.';
+    }else{
+      $('txcBig').textContent='About the same';
+      $('txcMo').textContent='The tax side is a wash here. The house price is usually where the difference shows up.';
+    }
+    var parts=[];
+    var pp=r.now.property-r.here.property, pi=r.now.income-r.here.income, pl=r.now.local;
+    if(pp>0)parts.push('property tax <b>'+money(pp)+'</b>');
+    if(pi>0)parts.push('state income tax <b>'+money(pi)+'</b>');
+    if(pl>0)parts.push((r.now.localLabel||'Local income tax')+' <b>'+money(pl)+'</b>');
+    $('txcFrom').innerHTML=parts.length?('Where it comes from: '+parts.join(', ')+'.'):'';
+    var note=R.local&&R.local.note?' '+R.local.note:'';
+    var src=$('txcSrc');
+    if(note&&src.getAttribute('data-base')===null){src.setAttribute('data-base',src.textContent);}
+    stale(false);
   }
-  single.addEventListener('click',function(){mfj=false;single.setAttribute('aria-pressed','true');joint.setAttribute('aria-pressed','false');run();});
-  joint.addEventListener('click',function(){mfj=true;joint.setAttribute('aria-pressed','true');single.setAttribute('aria-pressed','false');run();});
-  st.addEventListener('change',function(){syncLocal();run();});
-  age.addEventListener('change',run);
-  ['txcWages','txcPension','txcSS','txcMil','txcHomeNow','txcHomeHere','txcLocal'].forEach(function(id){
-    var el=$(id); if(el){el.addEventListener('input',run);}
+
+  function calculate(){render(read(),false);}
+
+  st.addEventListener('change',function(){localChoice=null;localSeg();fill(T.example(st.value));stale(true);});
+  $('txcSingle').addEventListener('click',function(){mfj=false;this.setAttribute('aria-pressed','true');$('txcJoint').setAttribute('aria-pressed','false');stale(true);});
+  $('txcJoint').addEventListener('click',function(){mfj=true;this.setAttribute('aria-pressed','true');$('txcSingle').setAttribute('aria-pressed','false');stale(true);});
+  $('txcAgeNo').addEventListener('click',function(){is65=false;this.setAttribute('aria-pressed','true');$('txcAgeYes').setAttribute('aria-pressed','false');stale(true);});
+  $('txcAgeYes').addEventListener('click',function(){is65=true;this.setAttribute('aria-pressed','true');$('txcAgeNo').setAttribute('aria-pressed','false');stale(true);});
+  FIELDS.forEach(function(id){
+    var el=$(id);
+    el.addEventListener('input',function(){el.classList.remove('is-example');touched[id]=true;stale(true);});
+    el.addEventListener('blur',function(){commas(el);});
   });
-  $('txcGo').addEventListener('click',run);
-  syncLocal();run();
+  $('txcGo').addEventListener('click',calculate);
+  $('txcReset').addEventListener('click',function(){localChoice=null;localSeg();fill(T.example(st.value));render(T.example(st.value),true);});
+
+  localSeg();
+  var ex=T.example(st.value);
+  fill(ex);
+  render(ex,true);
 })();
 </script>
 

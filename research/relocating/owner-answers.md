@@ -411,3 +411,36 @@ CUT, with reasons (owner asked for the legality pass):
   different base and I have no verified locality table for Virginia or North
   Carolina. Say the word and I will add the states where the formula is
   statutory (SC, MA, CT).
+
+## 2026-08-28: calculator redesign, on his review
+
+- "It needs a professional redesign." Rebuilt as one rounded card: white form
+  on the left, NAVY result panel on the right, the same navy the lead form and
+  the property tax calculator already use, with a brass caption, a serif
+  headline number and a three column table (Every year / your state / Myrtle
+  Beach). Measured on the rendered page: 14.27:1 contrast on the headline and
+  the table, 5.81:1 on the brass caption, no horizontal overflow at 390, 768
+  or 1280 wide.
+- "It changes as I type and I felt disappointed." Nothing recalculates on
+  input any more. Editing anything drops a scrim over the result panel that
+  says "Press Calculate to see your own numbers", and only the Calculate
+  button recomputes. Verified: after typing, the displayed number is byte
+  identical to what it was; after Calculate it changes and the caption flips
+  from "Example" to "Your numbers".
+- "An impressive and realistic savings example initially loaded." Every state
+  opens on a worked example, shown in muted type in the fields so it reads as
+  an example: a married couple, $120,000 of wages, that state's own Zillow
+  typical home value, against a $342,000 home here. New York opens at $10,956
+  a year, Massachusetts $7,270, Connecticut $5,816, Maryland $6,712, North
+  Carolina $1,021. A test now fails the build if any state's example stops
+  showing a saving.
+- "Have the New York City rate auto pop up as a yes or no and make your own
+  estimate." No rate boxes anywhere now. New York asks "Do you live inside
+  New York City?" with In the city / Yonkers / Neither and applies the city
+  schedule from the state's own IT-201 instructions (3.078 to 3.876 percent)
+  or the 16.75 percent Yonkers surcharge. Ohio and Pennsylvania ask whether
+  the town charges one and use 2 percent and 1 percent. Maryland applies the
+  2.51 percent state average with no question at all.
+- "Where are the big tax savings." The result now names them: "Where it comes
+  from: property tax $5,594, state income tax $1,558, New York City income tax
+  $3,804."

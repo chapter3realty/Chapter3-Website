@@ -27,7 +27,8 @@
       bM: [[17150, .039], [23600, .044], [27900, .0515], [161550, .054], [323200, .059], [2155350, .0685], [5000000, .0965], [25000000, .103], [null, .109]],
       std: { s: 8000, m: 16050 }, exempt: { s: 0, m: 0 },
       propRate: .0130,
-      local: { label: 'New York City or Yonkers income tax rate', base: 'taxable', hint: 'New York City runs about 3 to 4 percent. Leave it at 0 if you live outside the city.' },
+      local: { kind: 'choice', question: 'Do you live inside New York City?', options: [['nyc', 'In the city'], ['yonkers', 'Yonkers'], ['no', 'Neither']], preset: 'nyc',
+        note: 'New York City resident rates, from the state&#39;s own IT-201 schedule. Yonkers adds 16.75 percent of your state tax.' },
       ret: 'ny',
     },
     NJ: {
@@ -44,7 +45,8 @@
       bS: [[null, .0307]], bM: [[null, .0307]],
       std: { s: 0, m: 0 }, exempt: { s: 0, m: 0 },
       propRate: .0126,
-      local: { label: 'Your local earned income tax rate', base: 'wages', hint: 'Most Pennsylvania towns charge one. It averages about 1 percent and is on your pay stub.' },
+      local: { kind: 'yesno', question: 'Does your town charge the local earned income tax?', preset: 'yes', rate: .01, base: 'wages', rowLabel: 'Local earned income tax',
+        note: 'Most Pennsylvania towns charge one. We use 1 percent, near the state average; yours is on your pay stub.' },
       ret: 'pa',
     },
     OH: {
@@ -52,7 +54,8 @@
       bS: [[26050, 0], [null, .0275]], bM: [[26050, 0], [null, .0275]],
       std: { s: 0, m: 0 }, exempt: { s: 2400, m: 4800 },
       propRate: .0136,
-      local: { label: 'Your city income tax rate', base: 'wages', hint: 'Most Ohio cities charge 1 to 3 percent on wages. It is on your pay stub.' },
+      local: { kind: 'yesno', question: 'Does your city charge an income tax?', preset: 'yes', rate: .02, base: 'wages', rowLabel: 'City income tax',
+        note: 'Ohio cities charge 1 to 3 percent on wages. We use 2 percent; yours is on your pay stub.' },
       ret: 'oh',
     },
     MD: {
@@ -61,7 +64,8 @@
       bM: [[1000, .02], [2000, .03], [3000, .04], [150000, .0475], [175000, .05], [225000, .0525], [300000, .055], [600000, .0575], [1200000, .0625], [null, .065]],
       std: { s: 3350, m: 6700 }, exempt: { s: 3200, m: 6400 },
       propRate: .0092,
-      local: { label: 'Your county income tax rate', base: 'taxable', hint: 'Every Maryland county and Baltimore City charges one. Statewide it averages about 2.5 percent, and yours is on your return.' },
+      local: { kind: 'auto', rate: .0251, base: 'taxable', rowLabel: 'County income tax',
+        note: 'Every Maryland county and Baltimore City charges one. We use 2.51 percent, the state average; yours is on your return.' },
       ret: 'md',
     },
     VA: {
@@ -109,6 +113,15 @@
       ret: 'sc',
     },
   };
+
+  /* New York City resident rate schedule, printed in the state's own IT-201
+   * instructions (opened 2026-08-28), and the Yonkers resident surcharge of
+   * 16.75 percent of the state tax from the same instructions. We apply the
+   * city schedule to New York taxable income, which is our estimate: the city
+   * starts from the same figure but allows its own credits. */
+  var NYC_S = [[12000, .03078], [25000, .03762], [50000, .03819], [null, .03876]];
+  var NYC_M = [[21600, .03078], [45000, .03762], [90000, .03819], [null, .03876]];
+  var YONKERS = .1675;
 
   // Horry County, tax year 2025 certified millage, unincorporated (the same
   // constants as the calculator on /buyers/property-taxes/).
@@ -229,9 +242,17 @@
       var taxable = Math.max(0, gross - ded);
       var income = Math.max(0, bracketTax(taxable, inp.mfj ? R.bM : R.bS) - r.credit);
 
-      var localRate = (side === 'now' && R.local) ? (inp.localRate || 0) : 0;
-      var localBase = (R.local && R.local.base === 'wages') ? inc.wages : taxable;
-      var local = localRate * localBase;
+      var local = 0, localLabel = '';
+      if (side === 'now' && R.local) {
+        var L = R.local, choice = (inp.localChoice === undefined || inp.localChoice === null) ? L.preset : inp.localChoice;
+        if (L.kind === 'auto') { local = L.rate * taxable; localLabel = L.rowLabel; }
+        else if (L.kind === 'yesno') {
+          if (choice === 'yes' || choice === true) { local = L.rate * (L.base === 'wages' ? inc.wages : taxable); localLabel = L.rowLabel; }
+        } else if (L.kind === 'choice') {
+          if (choice === 'nyc') { local = bracketTax(taxable, inp.mfj ? NYC_M : NYC_S); localLabel = 'New York City income tax'; }
+          else if (choice === 'yonkers') { local = income * YONKERS; localLabel = 'Yonkers surcharge'; }
+        }
+      }
 
       var prop;
       if (side === 'here') {
@@ -240,11 +261,27 @@
       } else {
         prop = (inp.homeNow || 0) * R.propRate;
       }
-      out[side] = { income: income, local: local, property: prop, total: income + local + prop, taxableIncome: taxable };
+      out[side] = { income: income, local: local, localLabel: localLabel, property: prop, total: income + local + prop, taxableIncome: taxable };
     });
     out.difference = out.now.total - out.here.total;
     return out;
   }
 
-  root.C3TAX = { RULES: RULES, calc: calc, bracketTax: bracketTax, retirement: retirement };
+
+  /* What the calculator shows on load: a real household, not zeroes. Home
+   * values are each state's own Zillow statewide typical from col-places.json
+   * (July 2026), against the $342,000 typical here. */
+  var EXAMPLES = {
+    NY: { homeNow: 527000 }, NJ: { homeNow: 584000 }, PA: { homeNow: 291000 },
+    OH: { homeNow: 250000 }, MD: { homeNow: 433000 }, VA: { homeNow: 418000 },
+    NC: { homeNow: 338000 }, CT: { homeNow: 453000 }, MA: { homeNow: 669000 },
+    FL: { homeNow: 400000 }, TX: { homeNow: 340000 },
+  };
+  function example(code) {
+    var e = EXAMPLES[code] || { homeNow: 450000 };
+    return { state: code, mfj: true, is65: false, wages: 120000, pension: 0, ss: 0, military: 0,
+             homeNow: e.homeNow, homeHere: 342000, localChoice: undefined };
+  }
+
+  root.C3TAX = { RULES: RULES, calc: calc, bracketTax: bracketTax, retirement: retirement, example: example };
 })(typeof window !== 'undefined' ? window : globalThis);

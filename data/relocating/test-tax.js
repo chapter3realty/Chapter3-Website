@@ -63,9 +63,29 @@ check('MD 65+ pension 50k + SS 20k', run({ state: 'MD', pension: 50000, ss: 2000
 // VA 65+ military 50k: 40k subtraction, then the age deduction wipes the rest.
 check('VA 65+ military 50k', run({ state: 'VA', military: 50000, is65: true }).now.income, 0);
 // OH wages 60k with a 2% city tax: state on 57,600 above the 26,050 zero band.
-const oh = run({ state: 'OH', wages: 60000, localRate: 0.02 });
+const oh = run({ state: 'OH', wages: 60000 });
 check('OH state on 60k wages', oh.now.income, (57600 - 26050) * 0.0275);
-check('OH city tax at 2%', oh.now.local, 1200);
+check('OH city tax, default yes at 2%', oh.now.local, 1200);
+check('OH city tax, answered no', run({ state: 'OH', wages: 60000, localChoice: 'no' }).now.local, 0);
+// New York City resident schedule, IT-201 instructions: MFJ 3,264 + 3.876%
+// of the excess over 90,000.
+const ny = run({ state: 'NY', wages: 120000, mfj: true });
+check('NY taxable income', ny.now.taxableIncome, 103950);
+check('NYC tax on that', ny.now.local, 3264 + (103950 - 90000) * 0.03876);
+check('NYC row label', ny.now.localLabel, 'New York City income tax');
+// Yonkers is a surcharge of 16.75 percent of the state tax, not a rate on income.
+check('Yonkers surcharge', run({ state: 'NY', wages: 120000, mfj: true, localChoice: 'yonkers' }).now.local, ny.now.income * 0.1675);
+check('No city, no local tax', run({ state: 'NY', wages: 120000, mfj: true, localChoice: 'no' }).now.local, 0);
+// Pennsylvania and Maryland: one at the state average, one automatic.
+check('PA local EIT at 1%', run({ state: 'PA', wages: 80000 }).now.local, 800);
+const md2 = run({ state: 'MD', wages: 80000 });
+check('MD county tax at the 2.51% average', md2.now.local, md2.now.taxableIncome * 0.0251);
+// Every worked example has to show a saving, or the page opens on a dud.
+for (const st of ['NY', 'NJ', 'PA', 'OH', 'MD', 'VA', 'NC', 'CT', 'MA']) {
+  const e = T.calc(T.example(st));
+  if (!(e.difference > 0)) { fails++; console.log(`  FAIL ${st} example shows no saving`); }
+  else console.log(`  ok   ${st} example saves ${Math.round(e.difference)}`);
+}
 // NJ cliff: at 150,001 of total income the pension exclusion is gone.
 check('NJ pension 60k at AGI 160k', run({ state: 'NJ', wages: 100000, pension: 60000, mfj: true, is65: true }).now.taxableIncome, 158000);
 check('NJ pension 60k at AGI 90k', run({ state: 'NJ', pension: 60000, ss: 30000, mfj: true, is65: true }).now.taxableIncome, 0);
