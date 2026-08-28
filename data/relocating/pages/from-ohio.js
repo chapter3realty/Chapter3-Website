@@ -9,6 +9,8 @@
  */
 'use strict';
 
+const { taxCalcSection } = require('../tax-calc.js');
+
 const S = {
   eyebrow: 'font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600',
   h2: 'font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em',
@@ -64,6 +66,8 @@ const spec = {
 <tr><td style="${S.td}">Typical home value, July 2026</td><td style="${S.td}">Cleveland area about $254,000</td><td style="${S.td}">About $342,000</td></tr>
 </tbody></table></div>
 <p style="${S.small};margin-top:.9rem">Rates are the 2026 tax year. Property figures are the most recent federal survey data. The calculator on our ${A('/buyers/relocating/cost-of-living/', 'cost of living page')} runs the full comparison against your income.</p></div></section>
+${taxCalcSection({ preselect: 'OH', bg: 'ivory-2' })}
+
 
 <section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">Income tax</p><h2 style="${S.h2}">You stop paying city income tax</h2><p style="${S.p}">Ohio&#39;s state rate is one of the lowest in the country. What most Ohio households actually feel is the layer under it: city income taxes, commonly 1 to 3 percent of wages, and in some places a school district income tax on top of that.</p><p style="${S.pLast}">South Carolina has no local income tax anywhere. No city rate, no district rate. For a working household this is the largest single income-tax change in the whole comparison, and it is bigger than the difference between the two state rates.</p></div></section>
 

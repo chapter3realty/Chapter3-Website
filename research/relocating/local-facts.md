@@ -953,3 +953,23 @@ ARITHMETIC PUBLISHED (mine, from that printed rate, not a summarizer's):
 12% of $1,000,000 = $120,000 per million above the line; $20M estate =
 $600,000; $25M estate = $1,200,000. First search summary on this contradicted
 itself on the federal amount and was discarded - the DRS page is the source.
+
+### H6. Tax calculator sources, opened 2026-08-28
+- CT DRS estate and gift tax information page: 2026 exemption $15,000,000,
+  estate tax "12% of the excess over the federal basic exclusion amount";
+  gift tax mirrors it. (See H2a.)
+- MD Comptroller PENSION EXCLUSION COMPUTATION WORKSHEET (13A), pulled and
+  parsed from the PDF: line 2 prints $41,200 in both the You and Spouse
+  columns, and line 3 subtracts Social Security received, so the exclusion is
+  reduced dollar for dollar by SS. A search summary claimed $40,600 for 2026;
+  the printed worksheet is what the engine uses, and the difference is worth
+  about $45 a year.
+  https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/forms/worksheets/Pension-Exclusion-Worksheet.pdf
+- ORC 5747.01(A)(23), read from codes.ohio.gov: Ohio deducts "amounts received
+  by the taxpayer as retired personnel pay for service in the uniformed
+  services or reserve components thereof, or the national guard". Ohio
+  military retirement is therefore exempt in the engine.
+- SC property math in the calculator is the SAME math as
+  /buyers/property-taxes/: Horry unincorporated 201.0 mills, school operating
+  109.1 mills removed on a legal residence, 4 percent ratio, $50,000 homestead
+  exemption at 65+.

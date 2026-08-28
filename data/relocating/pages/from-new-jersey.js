@@ -9,6 +9,8 @@
  */
 'use strict';
 
+const { taxCalcSection } = require('../tax-calc.js');
+
 const S = {
   eyebrow: 'font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600',
   h2: 'font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em',
@@ -65,6 +67,8 @@ const spec = {
 <tr><td style="${S.td}">Typical home value, July 2026</td><td style="${S.td}">New York metro area about $737,000</td><td style="${S.td}">About $342,000</td></tr>
 </tbody></table></div>
 <p style="${S.small};margin-top:.9rem">Rates are the 2026 tax year. Property figures are the most recent federal survey data. The calculator on our ${A('/buyers/relocating/cost-of-living/', 'cost of living page')} runs the full comparison against your income.</p></div></section>
+${taxCalcSection({ preselect: 'NJ', bg: 'ivory-2' })}
+
 
 <section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">Property tax</p><h2 style="${S.h2}">The property tax drop, done honestly</h2><p style="${S.p}">This is the number that moves people. Bergen County runs about 1.89 percent effective. Horry County runs about 0.38 percent on a primary home, and the primary rate also removes the school operating tax. At published rates, a $400,000 owner-occupied home in the unincorporated county bills roughly $1,470 a year. Many New Jersey sellers pay five figures now.</p><h3 style="${S.h3}">If you are 65 or older, do the honest version</h3><p style="${S.p}">New Jersey&#39;s senior relief exists and it does not travel. The programs many owners hold, including one that pays a large share of the bill outright and a freeze on increases, can take thousands off what you actually pay. Net them off your real bill before you count the saving, or the comparison flatters the move.</p><p style="${S.pLast}">South Carolina&#39;s own senior break: at 65, after one year as a resident, the first $50,000 of a primary home&#39;s value comes off before tax, with no income test. You apply for the 4 percent primary rate yourself; the ${A('/buyers/property-taxes/', 'property tax page')} has the calculator and the deadline.</p><p style="${S.p}">You know this pattern from the shore: the famous name is one town on a long coast. It works the same way here. North Myrtle Beach, Surfside Beach, Garden City and Murrells Inlet each carry their own prices and their own property tax bills, and the right town for your budget may be one over from the one you searched. Ask us to show you more than one, or start with the ${A('/buyers/relocating/which-town/', 'town comparison')}.</p><div style="${S.ctaBox}"><p style="margin:0;color:var(--navy);font-family:var(--sans);font-size:.92rem;font-weight:600">Want your real bill against a real house here?</p><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-brass" href="#lead-form">Talk to a local expert</a><a class="btn btn-outline" href="tel:+18543332135">Call 854.333.2135</a></div></div></div></section>
 

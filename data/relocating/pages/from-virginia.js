@@ -8,6 +8,8 @@
  */
 'use strict';
 
+const { taxCalcSection } = require('../tax-calc.js');
+
 const S = {
   eyebrow: 'font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600',
   h2: 'font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em',
@@ -65,6 +67,8 @@ const spec = {
 <tr><td style="${S.td}">Estate and inheritance tax</td><td style="${S.td}">Neither</td><td style="${S.td}">Neither</td></tr>
 </tbody></table></div>
 <p style="${S.small};margin-top:.9rem">Virginia figures from the Virginia Department of Taxation. Property figures are the most recent federal survey data. The calculator on our ${A('/buyers/relocating/cost-of-living/', 'cost of living page')} runs the full comparison against your income.</p></div></section>
+${taxCalcSection({ preselect: 'VA', bg: 'ivory-2' })}
+
 
 <section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">What the sale buys</p><h2 style="${S.h2}">What a Virginia sale buys at the coast</h2><p style="${S.p}">A typical Virginia home runs about $418,000 on the statewide Zillow average, against about $342,000 here, on the same July 2026 measure. That statewide number hides the split that matters: Northern Virginia sits far above it and much of the rest of the state below it. See how much further every dollar goes here compared with your hometown on the ${A('/buyers/relocating/cost-of-living/', 'cost of living calculator')}. The property tax on whatever you buy drops from a $2,872 median bill to a $1,337 one.</p><p style="${S.pLast}">Two parts of the map speak Virginia&#39;s language. Market Common is built on the old Myrtle Beach Air Force Base, and the street grid and parade ground still carry its history, with the airport next door. The beach towns run from ${A('/submarkets/north-myrtle-beach/', 'North Myrtle Beach')} to ${A('/submarkets/pawleys-island/', 'Pawleys Island')}, each at a different price, and appeal to different types of people. Check the ${A('/buyers/relocating/which-town/', 'town by town page')} to see what differs.</p></div></section>
 

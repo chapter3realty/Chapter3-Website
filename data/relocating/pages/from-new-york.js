@@ -21,6 +21,8 @@
  */
 'use strict';
 
+const { taxCalcSection } = require('../tax-calc.js');
+
 const S = {
   eyebrow: 'font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600',
   h2: 'font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em',
@@ -77,6 +79,8 @@ const spec = {
 <tr><td style="${S.td}">Typical home value, July 2026</td><td style="${S.td}">About $737,000</td><td style="${S.td}">About $342,000</td></tr>
 </tbody></table></div>
 <p style="${S.small};margin-top:.9rem">Rates are the 2026 tax year. Property figures are the most recent federal survey data. The calculator on our ${A('/buyers/relocating/cost-of-living/', 'cost of living page')} runs the full comparison against your income.</p></div></section>
+${taxCalcSection({ preselect: 'NY', bg: 'ivory-2' })}
+
 
 <section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">Property tax</p><h2 style="${S.h2}">Property tax depends on which part of New York you leave</h2>
 <h3 style="${S.h3}">Long Island, Westchester and Rockland</h3><p style="${S.p}">The drop is large. Those counties carry effective property tax rates of roughly 1.6 percent in Suffolk, 1.7 percent in Nassau, 1.8 percent in Westchester and 2.1 percent in Rockland. Horry County runs about 0.38 percent on a primary home. The federal survey stops counting at $10,000, so the published medians for those counties are floors rather than actual figures. The real median bill in all four is above $10,000. On a comparable house here you are usually looking at a bill in the low thousands.</p><p style="${S.p}">One client of ours left a house worth about $1 million and a property tax bill over $20,000 a year. They bought a similar sized house here for about $700,000, beachfront in North Myrtle Beach with ocean views, near the restaurants they wanted and near the waterway, because they own a boat and finally wanted to use it. The county bill on the house runs about $3,200. Those are one household&#39;s rounded numbers, not a promise, but they show the scale of the gap.</p>

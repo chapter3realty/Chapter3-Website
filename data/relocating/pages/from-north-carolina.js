@@ -9,6 +9,8 @@
  */
 'use strict';
 
+const { taxCalcSection } = require('../tax-calc.js');
+
 const S = {
   eyebrow: 'font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600',
   h2: 'font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em',
@@ -65,6 +67,8 @@ const spec = {
 <tr><td style="${S.td}">Typical home value, July 2026</td><td style="${S.td}">Charlotte about $389,000; Raleigh about $437,000</td><td style="${S.td}">About $342,000</td></tr>
 </tbody></table></div>
 <p style="${S.small};margin-top:.9rem">Rates are the 2026 tax year. Property figures are the most recent federal survey data. The calculator on our ${A('/buyers/relocating/cost-of-living/', 'cost of living page')} runs the full comparison against your income.</p></div></section>
+${taxCalcSection({ preselect: 'NC', bg: 'ivory-2' })}
+
 
 <section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">What the sale buys</p><h2 style="${S.h2}">What a Charlotte or Raleigh sale buys at the coast</h2><p style="${S.p}">A typical Charlotte home sells for about $389,000 and a typical Raleigh home about $437,000, against about $342,000 here. That is not the gap a New York seller sees, but it usually trades a suburban lot for a coastal one with money left over, and the property tax on it drops at the same time.</p><p style="${S.p}">Myrtle Beach is the name people search, but the market around it is a set of towns: North Myrtle Beach, Surfside Beach, Murrells Inlet, Pawleys Island, Little River and inland Conway, each with its own prices. One of them may fit you better than the city itself, and we would love to show you the ones you have not seen on a weekend trip. What actually differs between them is laid out ${A('/buyers/relocating/which-town/', 'town by town')}.</p><p style="${S.pLast}">Because the bills are this close, most North Carolina moves are about the coast itself, or a lifestyle change, not the tax math. The cost of living generally shifts less from North Carolina than from any other state we compare. The ${A('/buyers/relocating/cost-of-living/', 'cost of living calculator')} shows whether your city runs more or less than Myrtle Beach and its surrounding areas, in about a minute.</p></div></section>
 

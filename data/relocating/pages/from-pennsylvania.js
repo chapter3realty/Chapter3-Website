@@ -9,6 +9,8 @@
  */
 'use strict';
 
+const { taxCalcSection } = require('../tax-calc.js');
+
 const S = {
   eyebrow: 'font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600',
   h2: 'font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em',
@@ -65,6 +67,8 @@ const spec = {
 <tr><td style="${S.td}">Typical home value, July 2026</td><td style="${S.td}">Philadelphia area about $392,000</td><td style="${S.td}">About $342,000</td></tr>
 </tbody></table></div>
 <p style="${S.small};margin-top:.9rem">Rates are the 2026 tax year. Property figures are the most recent federal survey data. The calculator on our ${A('/buyers/relocating/cost-of-living/', 'cost of living page')} runs the full comparison against your income.</p></div></section>
+${taxCalcSection({ preselect: 'PA', bg: 'ivory-2' })}
+
 
 <section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">What drops</p><h2 style="${S.h2}">Property tax, the wage tax and the most expensive gas in the region</h2><h3 style="${S.h3}">Property tax</h3><p style="${S.p}">A $440,000 home in Montgomery or Bucks County bills about $5,800 to $5,900 a year. The same value in unincorporated Horry County bills roughly $1,600 at the primary rate, which also removes the school operating tax. Philadelphia itself is the exception: its rate is low and its houses cheap, so a rowhouse seller sees a smaller drop. You apply for the primary rate yourself; the ${A('/buyers/property-taxes/', 'property tax page')} has the calculator and the deadline.</p><h3 style="${S.h3}">The wage tax, if you still work</h3><p style="${S.p}">Nearly every Pennsylvania municipality taxes wages on top of the state rate, and Philadelphia&#39;s is about 3.7 percent. South Carolina has no local income tax anywhere. A working Philadelphia household keeps that entire amount. And if the move needs a job on this end, say so: we have pointed arriving clients at local employers and openings that fit their background, because the move only makes sense if you enjoy your life and job here in South Carolina.</p><h3 style="${S.h3}">Gas</h3><p style="${S.pLast}">Pennsylvania&#39;s fuel tax is 57.6 cents a gallon, the highest of any state we compare. South Carolina&#39;s is 28.75 cents. That is about 29 cents a gallon, every fill, the largest drop of any move on this site.</p><div style="${S.ctaBox}"><p style="margin:0;color:var(--navy);font-family:var(--sans);font-size:.92rem;font-weight:600">Want your Pennsylvania bills against a real house here?</p><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-brass" href="#lead-form">Have an expert run it both ways</a><a class="btn btn-outline" href="tel:+18543332135">Call 854.333.2135</a></div></div></div></section>
 

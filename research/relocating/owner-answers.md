@@ -381,3 +381,33 @@ CUT, with reasons (owner asked for the legality pass):
   none of it. "Domicile here removes the entire state layer" replaced with
   "moving here saves you twelve cents on the dollar in taxes." Rate and
   exemption re-verified at the DRS page the same day (local-facts H2a).
+
+## 2026-08-28: the tax comparison calculator
+
+- Landing strip paragraph deleted from the Connecticut first-hand section; the
+  h2 is now "What Connecticut movers tell us".
+- CALCULATOR BUILT AND SHIPPED on the nine from-state pages and the cost of
+  living page. Questions it asks, which was his design brief: where you live
+  now, who is filing, whether anyone is 65 or older, four income boxes (wages,
+  pension or 401k/IRA, Social Security, military retirement), your home value
+  now, a home here, and a local income tax rate that only appears for the
+  states that charge one (NY, PA, OH, MD). Results are two columns, what you
+  pay now against what you would pay here, with income tax, local income tax
+  where it applies, property tax, a yearly total and the difference in one
+  line. It updates as you type and nothing leaves the browser.
+- Architecture: data/relocating/tax-engine.js holds every rate and rule and is
+  embedded verbatim in each page, so the pages and the tests can never
+  disagree. data/relocating/test-tax.js checks (a) drift against
+  state-tax.json and (b) twelve cases computed by hand first. NEW PREFLIGHT
+  GATE: preflight now runs that test and fails the build if the calculator
+  drifts from the data file. Positive-controlled: planting a wrong PA rate
+  failed preflight, restoring passed.
+- Honesty rules inside the engine: where a rule is uncertain it errs AGAINST
+  us. Connecticut's exemption phase-out and benefit recapture are left out,
+  which understates what Connecticut would really charge. The sources line
+  says so, and says the tool leaves out federal tax, car taxes and personal
+  credits.
+- Car taxes are deliberately not in it: every state computes them from a
+  different base and I have no verified locality table for Virginia or North
+  Carolina. Say the word and I will add the states where the formula is
+  statutory (SC, MA, CT).

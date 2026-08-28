@@ -1543,6 +1543,27 @@ function audit() {
 
 const cmd = process.argv[2] || "check";
 const flag = process.argv.includes("--check");
+/* The tax comparison calculator carries real dollar figures on ten pages. Its
+ * arithmetic lives in data/relocating/tax-engine.js and its inputs live in
+ * data/relocating/state-tax.json; if those two ever disagree the pages lie
+ * quietly. data/relocating/test-tax.js checks both the drift and a set of
+ * hand-computed cases, and preflight refuses to pass while it fails. */
+function taxEngine() {
+  const { execFileSync } = require("child_process");
+  const test = path.join(__dirname, "data", "relocating", "test-tax.js");
+  if (!fs.existsSync(test)) return;
+  try {
+    execFileSync(process.execPath, [test], { stdio: "pipe" });
+    console.log("OK - tax engine matches state-tax.json and every hand-computed case.");
+  } catch (e) {
+    const out = (e.stdout ? e.stdout.toString() : "") + (e.stderr ? e.stderr.toString() : "");
+    console.log("FAIL - tax engine:");
+    console.log(out.split("\n").filter(l => /FAIL|Error/.test(l)).join("\n") || out);
+    process.exitCode = 1;
+  }
+}
+
+
 if (cmd === "check") check();
 else if (cmd === "rehash") rehash();
 else if (cmd === "stitch") stitch();
@@ -1556,5 +1577,5 @@ else if (cmd === "coldata") { require("child_process").execFileSync(process.exec
 else if (cmd === "citydata") { require("child_process").execFileSync(process.execPath, [path.join(__dirname, "data", "relocating", "build-cities.js")], { stdio: "inherit" }); }
 // dates --check runs last: it is the only gate that compares what the pages
 // CLAIM against what git says actually happened.
-else if (cmd === "preflight") { check(); console.log(""); audit(); console.log(""); dates(true); }
+else if (cmd === "preflight") { check(); console.log(""); audit(); console.log(""); dates(true); console.log(""); taxEngine(); }
 else { console.log("Usage: node build.js [check|rehash|stitch|llmsfull|dates|audit|coldata|citydata|preflight]"); process.exit(1); }

@@ -8,6 +8,8 @@
  */
 'use strict';
 
+const { taxCalcSection } = require('../tax-calc.js');
+
 const S = {
   eyebrow: 'font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600',
   h2: 'font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em',
@@ -78,6 +80,8 @@ const spec = {
 <tr><td style="${S.td}">Estate tax</td><td style="${S.td}">Above $2,000,000</td><td style="${S.td}">None, and no inheritance tax</td></tr>
 </tbody></table></div>
 <p style="${S.small};margin-top:.9rem">Massachusetts figures from the Department of Revenue. Property figures are the most recent federal survey data. The calculator on our ${A('/buyers/relocating/cost-of-living/', 'cost of living page')} runs the full comparison against your income.</p></div></section>
+${taxCalcSection({ preselect: 'MA', bg: 'ivory-2' })}
+
 
 <section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">The estate</p><h2 style="${S.h2}">Massachusetts taxes your estate when you die. South Carolina does not.</h2><p style="${S.p}">Massachusetts taxes estates above $2 million, one of the lowest thresholds in the country. For deaths on or after January 1, 2023 the state allows a credit of $99,600, which is what makes the first $2 million pass untaxed; above the line, the estate itself owes the tax before anything reaches your heirs.</p><p style="${S.p}">Two million arrives faster than people expect. A paid-off house near the state&#39;s $669,000 average, retirement accounts built over two working lifetimes, and life insurance can cross the line together without anyone in the household ever feeling rich. South Carolina has no estate tax and no inheritance tax at any amount.</p><p style="${S.p}">Here is the part most people have never been told, and it is worth reading twice. What Massachusetts can reach after you move depends on the kind of asset. Once you are domiciled in South Carolina, your investment accounts, retirement accounts, and other intangible assets are out of the Massachusetts estate tax entirely, wherever the brokerage sits. Real estate is different: a house you keep in Massachusetts stays taxable there even after you become a South Carolinian, and the filing trigger is still your total worldwide estate over $2 million, with the tax computed on the Massachusetts property. So the move itself protects the accounts; keeping the old house keeps one foot in their system.</p><p style="${S.pLast}">What decides all of it is where you are domiciled at death, so if this is part of why you are moving, move properly: license, registration, voting, the primary-home application, all of it. We are not tax or estate advisers and the details belong with yours; the part we handle is making you a South Carolinian, and the ${A('/buyers/relocating/moving-checklist/', 'checklist')} is where that starts.</p><div style="${S.ctaBox}"><p style="margin:0;color:var(--navy);font-family:var(--sans);font-size:.92rem;font-weight:600">Thinking about the move as part of a larger plan?</p><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-brass" href="#lead-form">Talk through the move</a><a class="btn btn-outline" href="tel:+18543332135">Call 854.333.2135</a></div></div></div></section>
 

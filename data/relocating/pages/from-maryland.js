@@ -14,6 +14,8 @@
  */
 'use strict';
 
+const { taxCalcSection } = require('../tax-calc.js');
+
 const S = {
   eyebrow: 'font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600',
   h2: 'font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em',
@@ -70,6 +72,8 @@ const spec = {
 <tr><td style="${S.td}">Estate and inheritance tax</td><td style="${S.td}">Both. Estate above $5,000,000; inheritance on non-lineal heirs</td><td style="${S.td}">Neither</td></tr>
 </tbody></table></div>
 <p style="${S.small};margin-top:.9rem">Maryland rates from the Comptroller of Maryland. Property figures are the most recent federal survey data. The calculator on our ${A('/buyers/relocating/cost-of-living/', 'cost of living page')} runs the full comparison against your income.</p></div></section>
+${taxCalcSection({ preselect: 'MD', bg: 'ivory-2' })}
+
 
 <section style="background:var(--ivory-2)"><div class="wrap"><p style="${S.eyebrow}">The county tax</p><h2 style="${S.h2}">You stop paying the county income tax</h2><p style="${S.p}">Maryland is unusual. Every county and Baltimore City charges an income tax on top of the state rate, and you pay it based on where you live rather than where you work. On the Comptroller&#39;s own 2025 rate chart those local rates run from 2.65 percent to 3.30 percent, and the great majority of counties sit at 3.20 percent. Two moved for 2026: Allegany rose to 3.20 percent and Kent to 3.30 percent.</p><p style="${S.p}">South Carolina has no local income tax anywhere, in any county or town. So a Maryland household earning here keeps that entire amount, and it applies to the first dollar of income rather than the last.</p><p style="${S.p}">The state rates themselves are closer than people expect. Maryland runs 4.75 percent on most middle incomes, up to $150,000 of taxable income on a joint return. South Carolina charges 1.99 percent on the first $30,000 and 5.21 percent above it, with a deduction that shrinks as joint income climbs from $80,000 to $190,000. Compare the state lines and it is not obvious. Add the county tax and it is.</p><p style="${S.pLast}">Two Maryland rules bite harder at the top. The 2025 legislative session added brackets of 6.25 and 6.5 percent above $600,000 and $1,200,000 of taxable income on a joint return, and it imposed an additional 2 percent tax on net capital gains for anyone with federal adjusted gross income over $350,000. Maryland itemized deductions also phase out above $200,000 of federal AGI. If you are selling a business or a large position in the same year you move, the timing of that sale matters and it is a question for your accountant before you list the house.</p><div style="${S.ctaBox}"><p style="margin:0;color:var(--navy);font-family:var(--sans);font-size:.92rem;font-weight:600">Want your Maryland bills against a real house here?</p><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-brass" href="#lead-form">Talk to a local expert</a><a class="btn btn-outline" href="tel:+18543332135">Call 854.333.2135</a></div></div></div></section>
 

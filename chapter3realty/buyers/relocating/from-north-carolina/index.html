@@ -134,6 +134,381 @@
 </tbody></table></div>
 <p style="font-family:var(--sans);font-size:.78rem;color:var(--muted);line-height:1.6;max-width:720px;margin-top:.9rem">Rates are the 2026 tax year. Property figures are the most recent federal survey data. The calculator on our <a href="/buyers/relocating/cost-of-living/" style="color:var(--brass);font-weight:600;text-decoration:none">cost of living page</a> runs the full comparison against your income.</p></div></section>
 
+<section style="background:var(--ivory-2)" id="tax-calc"><div class="wrap">
+<p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">Side by side</p>
+<h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em">What you pay in taxes now, and what you would pay here</h2>
+<p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1.4rem">Put in what you earn, how you earn it, and what your house is worth. It works out the state income tax and the property tax on both ends, and shows them next to each other. Nothing you type leaves your browser.</p>
+
+<style>
+.txc{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);max-width:900px;display:grid;grid-template-columns:minmax(280px,360px) 1fr}
+.txc-form{padding:1.8rem 1.9rem 1.8rem 0;border-right:1px solid var(--rule)}
+.txc-res{padding:1.8rem 0 1.8rem 1.9rem}
+.txc-lab{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--slate);margin-bottom:.4rem;font-weight:500}
+.txc-f{margin-bottom:1rem}
+.txc-in,.txc-sel{width:100%;padding:.6rem .8rem;font-family:var(--sans);font-size:.92rem;background:var(--white);border:1px solid var(--rule);border-radius:4px;color:var(--navy);outline:none}
+.txc-in:focus,.txc-sel:focus{border-color:var(--brass);box-shadow:0 0 0 3px rgba(196,120,58,.14)}
+.txc-pair{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.txc-seg{display:flex;gap:.4rem}
+.txc-seg button{flex:1;padding:.55rem .3rem;font-family:var(--sans);font-size:.85rem;background:var(--white);border:1px solid var(--rule);border-radius:4px;color:var(--muted);cursor:pointer}
+.txc-seg button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--ivory);font-weight:600}
+.txc-check{display:flex;align-items:center;gap:.55rem;font-family:var(--sans);font-size:.88rem;color:var(--navy);cursor:pointer;margin:.2rem 0 1rem}
+.txc-check input{width:16px;height:16px;accent-color:var(--brass)}
+.txc-hint{font-family:var(--sans);font-size:.72rem;color:var(--muted);margin:.35rem 0 0;line-height:1.5}
+.txc-sub{font-family:var(--sans);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin:1.5rem 0 .7rem;font-weight:600}
+.txc-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.txc-col h3{font-family:var(--sans);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin:0 0 .8rem;font-weight:600}
+.txc-col.here h3{color:var(--brass)}
+.txc-row{display:flex;justify-content:space-between;gap:.6rem;padding:.5rem 0;border-bottom:1px solid var(--rule);font-family:var(--sans);font-size:.86rem;color:var(--muted)}
+.txc-row b{color:var(--navy);font-weight:600;white-space:nowrap}
+.txc-tot{display:flex;justify-content:space-between;gap:.6rem;padding:.7rem 0 0;font-family:var(--sans);font-size:.9rem;color:var(--navy);font-weight:600}
+.txc-tot span:last-child{font-family:var(--serif);font-size:1.45rem;font-weight:400}
+.txc-big{font-family:var(--serif);font-size:2rem;color:var(--navy);line-height:1.15;margin:1.5rem 0 .3rem}
+.txc-big em{font-style:normal;color:var(--brass)}
+.txc-note{font-family:var(--sans);font-size:.8rem;color:var(--muted);line-height:1.6;margin:0 0 1.1rem;max-width:420px}
+.txc-src{font-family:var(--sans);font-size:.76rem;color:var(--muted);line-height:1.6;max-width:900px;margin-top:1.2rem}
+@media(max-width:820px){.txc{grid-template-columns:1fr}.txc-form{padding:1.4rem 0;border-right:0;border-bottom:1px solid var(--rule)}.txc-res{padding:1.4rem 0}}
+</style>
+<div class="txc">
+  <div class="txc-form">
+    <div class="txc-f"><label class="txc-lab" for="txcState">Where you live now</label><select class="txc-sel" id="txcState"><option value="NY">New York</option><option value="NJ">New Jersey</option><option value="PA">Pennsylvania</option><option value="OH">Ohio</option><option value="MD">Maryland</option><option value="VA">Virginia</option><option value="NC" selected>North Carolina</option><option value="CT">Connecticut</option><option value="MA">Massachusetts</option><option value="FL">Florida</option><option value="TX">Texas</option></select></div>
+    <div class="txc-f"><span class="txc-lab">Who is filing</span><div class="txc-seg" role="group" aria-label="Filing status"><button type="button" id="txcSingle" aria-pressed="true">Just me</button><button type="button" id="txcJoint" aria-pressed="false">Married, together</button></div></div>
+    <label class="txc-check"><input type="checkbox" id="txc65"> Someone is 65 or older</label>
+    <p class="txc-sub">How you earn it, per year</p>
+    <div class="txc-f"><label class="txc-lab" for="txcWages">Wages or business income</label><input class="txc-in" id="txcWages" type="text" inputmode="numeric" placeholder="0" autocomplete="off"></div>
+    <div class="txc-f"><label class="txc-lab" for="txcPension">Pension, 401(k) or IRA withdrawals</label><input class="txc-in" id="txcPension" type="text" inputmode="numeric" placeholder="0" autocomplete="off"></div>
+    <div class="txc-pair"><div class="txc-f"><label class="txc-lab" for="txcSS">Social Security</label><input class="txc-in" id="txcSS" type="text" inputmode="numeric" placeholder="0" autocomplete="off"></div>
+    <div class="txc-f"><label class="txc-lab" for="txcMil">Military retirement</label><input class="txc-in" id="txcMil" type="text" inputmode="numeric" placeholder="0" autocomplete="off"></div></div>
+    <p class="txc-sub">The house</p>
+    <div class="txc-pair"><div class="txc-f"><label class="txc-lab" for="txcHomeNow">Your home now</label><input class="txc-in" id="txcHomeNow" type="text" inputmode="numeric" placeholder="450,000" autocomplete="off"></div>
+    <div class="txc-f"><label class="txc-lab" for="txcHomeHere">A home here</label><input class="txc-in" id="txcHomeHere" type="text" inputmode="numeric" value="342,000" autocomplete="off"></div></div>
+    <div class="txc-f" id="txcLocalWrap" hidden><label class="txc-lab" id="txcLocalLab" for="txcLocal">Local income tax rate</label><input class="txc-in" id="txcLocal" type="text" inputmode="decimal" placeholder="0" autocomplete="off"><p class="txc-hint" id="txcLocalHint"></p></div>
+    <button class="btn btn-brass" id="txcGo" style="width:100%;justify-content:center;margin-top:.4rem">Show me both</button>
+  </div>
+  <div class="txc-res" aria-live="polite">
+    <div class="txc-cols">
+      <div class="txc-col"><h3 id="txcNowH">Where you live now</h3>
+        <div class="txc-row"><span>State income tax</span><b id="txcNowInc">$0</b></div>
+        <div class="txc-row" id="txcNowLocalRow" hidden><span id="txcNowLocalLab">Local income tax</span><b id="txcNowLocal">$0</b></div>
+        <div class="txc-row"><span>Property tax</span><b id="txcNowProp">$0</b></div>
+        <div class="txc-tot"><span>A year</span><span id="txcNowTot">$0</span></div>
+      </div>
+      <div class="txc-col here"><h3>In Myrtle Beach</h3>
+        <div class="txc-row"><span>State income tax</span><b id="txcHereInc">$0</b></div>
+        <div class="txc-row" id="txcHereLocalRow" hidden><span>Local income tax</span><b>None</b></div>
+        <div class="txc-row"><span>Property tax</span><b id="txcHereProp">$0</b></div>
+        <div class="txc-tot"><span>A year</span><span id="txcHereTot">$0</span></div>
+      </div>
+    </div>
+    <p class="txc-big" id="txcBig">Fill in what you earn.</p>
+    <p class="txc-note" id="txcNote">Every figure updates as you type.</p>
+    <a class="btn btn-brass" href="#lead-form">Have an expert check my numbers</a>
+  </div>
+</div>
+<p class="txc-src">An estimate, not a tax return. State rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026; the Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. It leaves out federal tax, city and county income taxes unless you enter one, car taxes, and every credit that depends on your own return. Connecticut&#39;s exemption phase-out and benefit recapture are left out too, so a large Connecticut income shows lower here than you would really pay. Your accountant has the last word, and we will happily sit with you and go through it.</p>
+</div></section>
+
+<script>
+/* Tax comparison engine. ONE source of truth: this file is embedded verbatim
+ * into every page that carries the calculator AND loaded by test-tax.js, so a
+ * number can never differ between the browser and the tests.
+ *
+ * Every rate, bracket, deduction and threshold below traces to
+ * data/relocating/state-tax.json, which in turn traces to the statutes and
+ * departments of revenue listed in research/relocating/state-tax-table.md.
+ * The South Carolina property tax math is the SAME math as the calculator on
+ * /buyers/property-taxes/ (2025 certified millage, Act 388 school operating
+ * exemption on a legal residence, $50,000 homestead exemption at 65+).
+ *
+ * WHERE A RULE IS UNCERTAIN THE ENGINE ERRS AGAINST US: it leaves out
+ * Connecticut's exemption phase-out and benefit recapture, and New Jersey's
+ * age exemption, all of which would RAISE the number we show for the state
+ * someone is leaving. It never shortens the South Carolina side.
+ */
+(function (root) {
+  'use strict';
+
+  var D = 1;   // dollars, kept for readability in the tables below
+
+  // ---- brackets: [topOfBracket|null, rate] ---------------------------------
+  var RULES = {
+    NY: {
+      name: 'New York',
+      bS: [[8500, .039], [11700, .044], [13900, .0515], [80650, .054], [215400, .059], [1077550, .0685], [5000000, .0965], [25000000, .103], [null, .109]],
+      bM: [[17150, .039], [23600, .044], [27900, .0515], [161550, .054], [323200, .059], [2155350, .0685], [5000000, .0965], [25000000, .103], [null, .109]],
+      std: { s: 8000, m: 16050 }, exempt: { s: 0, m: 0 },
+      propRate: .0130,
+      local: { label: 'New York City or Yonkers income tax rate', base: 'taxable', hint: 'New York City runs about 3 to 4 percent. Leave it at 0 if you live outside the city.' },
+      ret: 'ny',
+    },
+    NJ: {
+      name: 'New Jersey',
+      bS: [[20000, .014], [35000, .0175], [40000, .035], [75000, .05525], [500000, .0637], [1000000, .0897], [null, .1075]],
+      bM: [[20000, .014], [50000, .0175], [70000, .0245], [80000, .035], [150000, .05525], [500000, .0637], [1000000, .0897], [null, .1075]],
+      std: { s: 0, m: 0 }, exempt: { s: 1000, m: 2000 },
+      propRate: .0188,
+      local: null,
+      ret: 'nj',
+    },
+    PA: {
+      name: 'Pennsylvania',
+      bS: [[null, .0307]], bM: [[null, .0307]],
+      std: { s: 0, m: 0 }, exempt: { s: 0, m: 0 },
+      propRate: .0126,
+      local: { label: 'Your local earned income tax rate', base: 'wages', hint: 'Most Pennsylvania towns charge one. It averages about 1 percent and is on your pay stub.' },
+      ret: 'pa',
+    },
+    OH: {
+      name: 'Ohio',
+      bS: [[26050, 0], [null, .0275]], bM: [[26050, 0], [null, .0275]],
+      std: { s: 0, m: 0 }, exempt: { s: 2400, m: 4800 },
+      propRate: .0136,
+      local: { label: 'Your city income tax rate', base: 'wages', hint: 'Most Ohio cities charge 1 to 3 percent on wages. It is on your pay stub.' },
+      ret: 'oh',
+    },
+    MD: {
+      name: 'Maryland',
+      bS: [[1000, .02], [2000, .03], [3000, .04], [100000, .0475], [125000, .05], [150000, .0525], [250000, .055], [500000, .0575], [1000000, .0625], [null, .065]],
+      bM: [[1000, .02], [2000, .03], [3000, .04], [150000, .0475], [175000, .05], [225000, .0525], [300000, .055], [600000, .0575], [1200000, .0625], [null, .065]],
+      std: { s: 3350, m: 6700 }, exempt: { s: 3200, m: 6400 },
+      propRate: .0092,
+      local: { label: 'Your county income tax rate', base: 'taxable', hint: 'Every Maryland county and Baltimore City charges one. Statewide it averages about 2.5 percent, and yours is on your return.' },
+      ret: 'md',
+    },
+    VA: {
+      name: 'Virginia',
+      bS: [[3000, .02], [5000, .03], [17000, .05], [null, .0575]],
+      bM: [[3000, .02], [5000, .03], [17000, .05], [null, .0575]],
+      std: { s: 8750, m: 17500 }, exempt: { s: 930, m: 1860 },
+      propRate: .0078,
+      local: null,
+      ret: 'va',
+    },
+    NC: {
+      name: 'North Carolina',
+      bS: [[null, .0399]], bM: [[null, .0399]],
+      std: { s: 12750, m: 25500 }, exempt: { s: 0, m: 0 },
+      propRate: .0066,
+      local: null,
+      ret: 'nc',
+    },
+    CT: {
+      name: 'Connecticut',
+      bS: [[10000, .02], [50000, .045], [100000, .055], [200000, .06], [250000, .065], [500000, .069], [null, .0699]],
+      bM: [[20000, .02], [100000, .045], [200000, .055], [400000, .06], [500000, .065], [1000000, .069], [null, .0699]],
+      std: { s: 0, m: 0 }, exempt: { s: 15000, m: 24000 },
+      propRate: .0154,
+      local: null,
+      ret: 'ct',
+    },
+    MA: {
+      name: 'Massachusetts',
+      bS: [[1083150, .05], [null, .09]], bM: [[1083150, .05], [null, .09]],
+      std: { s: 0, m: 0 }, exempt: { s: 4400, m: 8800 },
+      propRate: .0100,
+      local: null,
+      ret: 'ma',
+    },
+    FL: { name: 'Florida', bS: [[null, 0]], bM: [[null, 0]], std: { s: 0, m: 0 }, exempt: { s: 0, m: 0 }, propRate: .0078, local: null, ret: 'none' },
+    TX: { name: 'Texas', bS: [[null, 0]], bM: [[null, 0]], std: { s: 0, m: 0 }, exempt: { s: 0, m: 0 }, propRate: .0140, local: null, ret: 'none' },
+    SC: {
+      name: 'South Carolina',
+      bS: [[30000, .0199], [null, .0521]], bM: [[30000, .0199], [null, .0521]],
+      std: { s: 15000, m: 30000 }, exempt: { s: 0, m: 0 },
+      propRate: null,   // computed from Horry County millage instead
+      local: null,
+      ret: 'sc',
+    },
+  };
+
+  // Horry County, tax year 2025 certified millage, unincorporated (the same
+  // constants as the calculator on /buyers/property-taxes/).
+  var HORRY_MILLS = 201.0, SCHOOL_OPS = 109.1, HOMESTEAD = 50000, RES_RATIO = .04;
+
+  function bracketTax(taxable, brackets) {
+    var t = 0, prev = 0;
+    for (var i = 0; i < brackets.length; i++) {
+      var top = brackets[i][0], rate = brackets[i][1];
+      var ceil = (top === null) ? Infinity : top;
+      if (taxable > prev) t += (Math.min(taxable, ceil) - prev) * rate;
+      prev = ceil;
+      if (taxable <= ceil) break;
+    }
+    return Math.max(0, t);
+  }
+
+  /* Returns the part of retirement money that the state actually taxes, plus
+   * any credit it hands back. inc: {wages, pension, ss, military}. */
+  function retirement(code, inc, mfj, is65) {
+    var agi = inc.wages + inc.pension + inc.military + inc.ss;
+    var out = { pension: inc.pension, military: inc.military, ss: 0, credit: 0, extraDeduction: 0 };
+    switch (code) {
+      case 'ny':
+        // $20,000 pension and annuity exclusion per taxpayer at 59.5+; federal
+        // and military pensions are exempt with no cap.
+        out.military = 0;
+        out.pension = Math.max(0, inc.pension - (is65 ? 20000 * (mfj ? 2 : 1) : 0));
+        break;
+      case 'nj': {
+        // Hard income cliffs, NJ Division of Taxation pension exclusion table.
+        out.military = 0;
+        var pct = 0;
+        if (agi <= 100000) pct = 1;
+        else if (agi <= 125000) pct = mfj ? .50 : .375;
+        else if (agi <= 150000) pct = mfj ? .25 : .1875;
+        var cap = mfj ? 100000 : 75000;
+        if (pct > 0 && agi <= 150000) {
+          var allow = (pct === 1) ? Math.min(inc.pension, cap) : inc.pension * pct;
+          out.pension = Math.max(0, inc.pension - allow);
+        }
+        break;
+      }
+      case 'pa':
+        // No retirement income is taxed once you are retired.
+        out.pension = 0; out.military = 0;
+        break;
+      case 'oh': {
+        // ORC 5747.01(A)(23), opened 2026-08-28: deduct "amounts received by
+        // the taxpayer as retired personnel pay for service in the uniformed
+        // services or reserve components thereof, or the national guard".
+        out.military = 0;
+        var p = inc.pension;
+        if (agi < 100000 && p > 0) {
+          out.credit += p >= 8000 ? 200 : p >= 5000 ? 130 : p >= 3000 ? 80 : p >= 1500 ? 50 : p >= 500 ? 25 : 0;
+        }
+        if (is65 && agi < 100000) out.credit += 50;
+        break;
+      }
+      case 'md': {
+        // Worksheet 13A: up to $41,200 per person at 65+, REDUCED by Social
+        // Security received. Military subtraction $20,000 at 55+.
+        out.military = Math.max(0, inc.military - (is65 ? 20000 : 12500));
+        if (is65) {
+          var people = mfj ? 2 : 1;
+          var room = Math.max(0, 41200 * people - inc.ss);
+          out.pension = Math.max(0, inc.pension - Math.min(inc.pension, room));
+        }
+        break;
+      }
+      case 'va': {
+        out.military = Math.max(0, inc.military - 40000);
+        if (is65) {
+          var floor = mfj ? 75000 : 50000;
+          var age = Math.max(0, 12000 * (mfj ? 2 : 1) - Math.max(0, agi - floor));
+          out.extraDeduction += age + 800 * (mfj ? 2 : 1);
+        }
+        break;
+      }
+      case 'ct': {
+        out.military = 0;
+        var lo = mfj ? 100000 : 75000, hi = mfj ? 150000 : 100000;
+        if (agi >= lo) out.ss = inc.ss * .75;          // 25% deductible above the line
+        var share = agi <= lo ? 1 : agi >= hi ? 0 : (hi - agi) / (hi - lo);
+        out.pension = inc.pension * (1 - share);
+        break;
+      }
+      case 'ma':
+        out.military = 0;
+        break;
+      case 'nc':
+        out.military = 0;   // 20 years of service or medical retirement
+        break;
+      case 'sc': {
+        out.military = 0;                       // exempt at any age
+        var people = mfj ? 2 : 1;
+        var retDed = Math.min(inc.pension, (is65 ? 10000 : 3000) * people);
+        out.pension = inc.pension - retDed;
+        if (is65) out.extraDeduction += Math.max(0, 15000 * people - retDed - Math.min(inc.military, 15000 * people));
+        break;
+      }
+      case 'none':
+      default:
+        out.pension = 0; out.military = 0;
+    }
+    return out;
+  }
+
+  /* inputs: {state, mfj, is65, wages, pension, ss, military, homeNow, homeHere, localRate} */
+  function calc(inp) {
+    var out = { now: {}, here: {} };
+    [['now', inp.state], ['here', 'SC']].forEach(function (pair) {
+      var side = pair[0], code = pair[1], R = RULES[code];
+      var inc = { wages: inp.wages || 0, pension: inp.pension || 0, ss: inp.ss || 0, military: inp.military || 0 };
+      var r = retirement(R.ret, inc, !!inp.mfj, !!inp.is65);
+      var gross = inc.wages + r.pension + r.military + r.ss;
+      var ded = (inp.mfj ? R.std.m : R.std.s) + (inp.mfj ? R.exempt.m : R.exempt.s) + r.extraDeduction;
+      var taxable = Math.max(0, gross - ded);
+      var income = Math.max(0, bracketTax(taxable, inp.mfj ? R.bM : R.bS) - r.credit);
+
+      var localRate = (side === 'now' && R.local) ? (inp.localRate || 0) : 0;
+      var localBase = (R.local && R.local.base === 'wages') ? inc.wages : taxable;
+      var local = localRate * localBase;
+
+      var prop;
+      if (side === 'here') {
+        var fmv = Math.max(0, (inp.homeHere || 0) - (inp.is65 ? HOMESTEAD : 0));
+        prop = fmv * RES_RATIO * (HORRY_MILLS - SCHOOL_OPS) / 1000;
+      } else {
+        prop = (inp.homeNow || 0) * R.propRate;
+      }
+      out[side] = { income: income, local: local, property: prop, total: income + local + prop, taxableIncome: taxable };
+    });
+    out.difference = out.now.total - out.here.total;
+    return out;
+  }
+
+  root.C3TAX = { RULES: RULES, calc: calc, bracketTax: bracketTax, retirement: retirement };
+})(typeof window !== 'undefined' ? window : globalThis);
+
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var st=$('txcState'),single=$('txcSingle'),joint=$('txcJoint'),age=$('txc65');
+  if(!st||!window.C3TAX){return;}
+  var mfj=false;
+  function num(el){var v=(el.value||'').replace(/[^0-9.]/g,'');return parseFloat(v)||0;}
+  function money(x){return '$'+Math.round(x).toLocaleString('en-US');}
+  function localCfg(){var R=window.C3TAX.RULES[st.value];return R?R.local:null;}
+  function syncLocal(){
+    var cfg=localCfg(),wrap=$('txcLocalWrap');
+    if(cfg){wrap.hidden=false;$('txcLocalLab').textContent=cfg.label;$('txcLocalHint').textContent=cfg.hint;}
+    else{wrap.hidden=true;$('txcLocal').value='';}
+  }
+  function run(){
+    var R=window.C3TAX.RULES[st.value];
+    var localPct=num($('txcLocal'));
+    var r=window.C3TAX.calc({state:st.value,mfj:mfj,is65:age.checked,
+      wages:num($('txcWages')),pension:num($('txcPension')),ss:num($('txcSS')),military:num($('txcMil')),
+      homeNow:num($('txcHomeNow')),homeHere:num($('txcHomeHere')),localRate:localPct>1?localPct/100:localPct});
+    $('txcNowH').textContent='In '+R.name+' now';
+    $('txcNowInc').textContent=money(r.now.income);
+    $('txcNowProp').textContent=money(r.now.property);
+    $('txcNowTot').textContent=money(r.now.total);
+    $('txcHereInc').textContent=money(r.here.income);
+    $('txcHereProp').textContent=money(r.here.property);
+    $('txcHereTot').textContent=money(r.here.total);
+    var lr=$('txcNowLocalRow');
+    if(r.now.local>0){lr.hidden=false;$('txcNowLocal').textContent=money(r.now.local);$('txcNowLocalLab').textContent=localCfg()?localCfg().label.replace(/^Your /,'').replace(/ rate$/,''):'Local income tax';$('txcHereLocalRow').hidden=false;}
+    else{lr.hidden=true;$('txcHereLocalRow').hidden=true;}
+    var d=r.difference, any=(num($('txcWages'))+num($('txcPension'))+num($('txcSS'))+num($('txcMil'))+num($('txcHomeNow')))>0;
+    if(!any){$('txcBig').innerHTML='Fill in what you earn.';$('txcNote').textContent='Every figure updates as you type.';return;}
+    if(d>0){$('txcBig').innerHTML='About <em>'+money(d)+' less</em> a year in tax.';
+      $('txcNote').textContent='That is '+money(d/12)+' a month, before anything else about the move changes.';}
+    else if(d<0){$('txcBig').innerHTML='About <em>'+money(-d)+' more</em> a year in tax.';
+      $('txcNote').textContent='Not every move saves tax money, and we would rather show you that here than after you buy.';}
+    else{$('txcBig').innerHTML='About the same either way.';$('txcNote').textContent='The tax side is close. The house price is usually where the difference shows up.';}
+  }
+  single.addEventListener('click',function(){mfj=false;single.setAttribute('aria-pressed','true');joint.setAttribute('aria-pressed','false');run();});
+  joint.addEventListener('click',function(){mfj=true;joint.setAttribute('aria-pressed','true');single.setAttribute('aria-pressed','false');run();});
+  st.addEventListener('change',function(){syncLocal();run();});
+  age.addEventListener('change',run);
+  ['txcWages','txcPension','txcSS','txcMil','txcHomeNow','txcHomeHere','txcLocal'].forEach(function(id){
+    var el=$(id); if(el){el.addEventListener('input',run);}
+  });
+  $('txcGo').addEventListener('click',run);
+  syncLocal();run();
+})();
+</script>
+
+
 <section style="background:var(--ivory-2)"><div class="wrap"><p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">What the sale buys</p><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em">What a Charlotte or Raleigh sale buys at the coast</h2><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">A typical Charlotte home sells for about $389,000 and a typical Raleigh home about $437,000, against about $342,000 here. That is not the gap a New York seller sees, but it usually trades a suburban lot for a coastal one with money left over, and the property tax on it drops at the same time.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Myrtle Beach is the name people search, but the market around it is a set of towns: North Myrtle Beach, Surfside Beach, Murrells Inlet, Pawleys Island, Little River and inland Conway, each with its own prices. One of them may fit you better than the city itself, and we would love to show you the ones you have not seen on a weekend trip. What actually differs between them is laid out <a href="/buyers/relocating/which-town/" style="color:var(--brass);font-weight:600;text-decoration:none">town by town</a>.</p><p style="color:var(--muted);line-height:1.75;max-width:720px">Because the bills are this close, most North Carolina moves are about the coast itself, or a lifestyle change, not the tax math. The cost of living generally shifts less from North Carolina than from any other state we compare. The <a href="/buyers/relocating/cost-of-living/" style="color:var(--brass);font-weight:600;text-decoration:none">cost of living calculator</a> shows whether your city runs more or less than Myrtle Beach and its surrounding areas, in about a minute.</p></div></section>
 
 <section style="background:var(--ivory)"><div class="wrap"><p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">Income tax</p><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em">The income tax can move either way, and the line sits near $100,000</h2><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">North Carolina charges one flat rate on everything past its deduction. South Carolina charges a low rate on the first $30,000 and a higher one above it, with a deduction that shrinks as joint income climbs from $80,000 to $190,000.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">We ran the two published schedules side by side for a married couple with no dependents. At $60,000 of income, South Carolina charges about $600 and North Carolina about $1,400. At $100,000 the two states land within a few dollars of each other. Above $100,000, South Carolina charges more, not less.</p><p style="color:var(--muted);line-height:1.75;max-width:720px">Dependents and credits move that line, so treat it as the shape of the comparison rather than your bill. What it means in practice: a working couple under $100,000 saves a little, a higher earner pays a little more, and nobody should make this move for the income tax alone.</p><div style="background:var(--ivory);border:1px solid var(--rule);border-radius:6px;padding:1.2rem 1.3rem;margin-top:1.8rem;max-width:720px;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between"><p style="margin:0;color:var(--navy);font-family:var(--sans);font-size:.92rem;font-weight:600">Want the numbers on your own income and city?</p><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-brass" href="#lead-form">Have an expert run my numbers</a><a class="btn btn-outline" href="tel:+18543332135">Call 854.333.2135</a></div></div></div></section>
