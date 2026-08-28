@@ -344,3 +344,18 @@ CUT, with reasons (owner asked for the legality pass):
   document recorded at the county", "the HOA decides"). The
   rental-restrictions h2 avoided the banned N-things-decide construction:
   "Two sets of rules control whether you can rent it out".
+- Owner, later same day: "I paint a picture. I didn't mean actual pictures."
+  The two-panel golf cart drawing came out of the beaches page (figure and
+  both SVGs deleted, 0 svgs left in main, measured). The winter cart season
+  is now told as a story instead: cooler and buckets in the cart, down onto
+  the sand at Garden City, empty beach, sandcastles, lunch, an hour watching
+  the waves. All the rules that were in the figure stay in the paragraph
+  above it (permit, licensed driver, November 1 to February 28, county
+  beaches only, cities never).
+  RULE GOING FORWARD: he means word pictures. Do not add illustrations to
+  these pages unless he asks for one in those words.
+- Jobs page, remote section: the spending-power comparison ("a northern
+  salary spends against Myrtle Beach prices") is out. Replaced with the
+  plain statement he dictated: hold northern pay and live here and you are
+  earning at the higher end of wages in this market. No index math on that
+  page; the calculator pages own that comparison.
