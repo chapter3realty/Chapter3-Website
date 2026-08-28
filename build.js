@@ -704,6 +704,10 @@ const FIGURATIVE = [
   // called out as personification/metaphor. Same review hard-coded the
   // no-negative-headers rule (HEADER_NEGATIVE below).
   "the register takes", "goes the other way",
+  // Owner, 2026-08-28: "Sixty miles of sand, five rulebooks" in the beaches
+  // hero. Towns write ordinances, not books. Covers rulebook(s) and the
+  // two-word form.
+  "rulebook", "rule book",
   "exceptions decide", "things decide", "differences decide",
   "decide where to look", "decides where to look",
   "decide the purchase", "decides the purchase",

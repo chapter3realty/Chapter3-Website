@@ -325,3 +325,22 @@ CUT, with reasons (owner asked for the legality pass):
   llms.txt. TAX CALCULATOR: committed as the next build (state-tax.json
   already carries the bracket data); property-tax estimator included in
   that design.
+
+## 2026-08-28 round: what-to-expect subheaders (owner template)
+
+- Owner: the beaches sub "Sixty miles of sand, five rulebooks" is out. The
+  subheader describes the page, so its template is now four or five
+  "what ___ to expect" clauses ("what taxes to expect, what changes to
+  expect"). Applied to all eight pages new this session: beaches,
+  from-virginia, from-connecticut, from-massachusetts, why-myrtle-beach,
+  hurricanes, weather, getting-around. All measured rendered: 4-5 expect
+  clauses each, 26-37 words, visible, zero JS errors. Older cluster pages
+  keep their subs until he asks.
+- "rulebook"/"rule book" HARD-CODED into the FIGURATIVE gate. The gate then
+  found five occurrences across four pages (my grep had found four across
+  three - the audit out-scanned the grep, twice): beaches x3, hoa/
+  rental-restrictions x3 (one an h2), hoa/hoa-vs-poa x1, submarkets/
+  carolina-forest x1. All rewritten literally ("sets of rules", "the
+  document recorded at the county", "the HOA decides"). The
+  rental-restrictions h2 avoided the banned N-things-decide construction:
+  "Two sets of rules control whether you can rent it out".
