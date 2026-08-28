@@ -282,3 +282,46 @@ CUT, with reasons (owner asked for the legality pass):
    management business properly licensed before any future edit re-adds scale
    numbers; page ships with "grown into a real business" only.
 7. DoubleTree fiber-convention memory — unverifiable, fails buyer test.
+
+---
+
+## 2026-08-28 — Positive-first round (owner review of MA/VA/CT + sitewide rules)
+
+- SUBS/DESCRIPTIONS now sell before the click on VA/CT/MA; honesty stays in body.
+- SECTION ORDER on all three: side-by-side, then the good sections, then neutral,
+  then the honest costs, story last.
+- MA estate section: owner's header ("Massachusetts taxes your estate when you
+  die. South Carolina does not."), plus the domicile mechanics verified at
+  mass.gov: nonresident decedents STILL taxed on MA real/tangible property
+  (worldwide-estate filing trigger, MA-situs computation); intangibles excluded.
+  Published: accounts escape after domicile change, a kept MA house does not.
+  New FAQ carries the second-home answer.
+- MA story: emotional rewrite, "his real numbers, from a real story... not a
+  promise" (owner cut the longer disclaimer), "helps manage fourteen units"
+  (owner-approved phrasing; "helps" retained for the licensing question).
+- CT retirees: savings pitch ("Your Social Security is never taxed here"),
+  $75k here = ~$83k CT / $100k = ~$110k on col-places RPP (103.61/93.642),
+  calc deep link; cliffs demoted to a side note.
+- CT estate: UHNW selling point ("No estate tax here, at any amount"; 12% of
+  the excess above $15M + only state gift tax stays with the family here);
+  "Speak with our broker" CTA. HQ-relocation angle NOT published (corporate
+  tax out of scope).
+- GROCERY CHECK (owner asked): BEA RPP goods MB 96.339 vs VA 100.368 / MA
+  98.82 / CT 97.33 — the cart itself is cheaper here before tax; published on
+  each page with the honest higher-sales-tax statement.
+- HARD-CODED: (1) FIGURATIVE += "the register takes", "goes the other way";
+  (2) HEADER_NEGATIVE gate: no negative framing inside any h2/h3 in <main>
+  ("takes more", "warning that", "against the move", "the gap is real",
+  "swings", "plan on a car", "no longer matters"...); (3) CTA_PROMISE verbs
+  += run|compare|calculate|estimate (form CTAs must ask for a person).
+  Sweep caught and fixed 15 old calculator-verb CTAs (cost-to-own x4 incl
+  submit, cost-of-living x2, from-MD/NJ/NY/NC/OH/PA x9, hoa/benefits x1)
+  and negative headers on jobs, getting-around, hurricanes.
+- "price point" (owner-dictated) adjusted to "price": the industry-term gate
+  fired on it; flagged to owner.
+- NEW PAGE /buyers/relocating/why-myrtle-beach/: ONE page carrying the
+  regional queries (Northeast/Midwest/Carolinas sections) instead of four
+  near-duplicate pages; wired into hub (lead position), guides, sitemap,
+  llms.txt. TAX CALCULATOR: committed as the next build (state-tax.json
+  already carries the bracket data); property-tax estimator included in
+  that design.

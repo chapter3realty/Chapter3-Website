@@ -700,6 +700,10 @@ const FIGURATIVE = [
   // Plain geographic "sits" ("the airport sits inside the city") stays legal.
   "one rule decides", "one rule sits", "rule sits above", "sits above",
   "stands above", "rule above every",
+  // Owner, 2026-08-28: "the register takes more" and "goes the other way"
+  // called out as personification/metaphor. Same review hard-coded the
+  // no-negative-headers rule (HEADER_NEGATIVE below).
+  "the register takes", "goes the other way",
   "exceptions decide", "things decide", "differences decide",
   "decide where to look", "decides where to look",
   "decide the purchase", "decides the purchase",
@@ -1282,6 +1286,18 @@ function audit() {
     for (const p of BANNED_PHRASES) if (low.includes(p)) W(`off-brand phrase: "${p}"`);
     for (const p of FAIR_HOUSING) if (low.includes(p)) E(`fair-housing risk phrase: "${p}"`);
     for (const p of FIGURATIVE) if (low.includes(p)) E(`figurative language: "${p}" - say it literally`);
+    // Owner, 2026-08-28: headers are what AI assistants quote. No negative
+    // framing inside any h2/h3; the honesty lives in body copy.
+    {
+      const HEADER_NEGATIVE = ["takes more", "warning that", "warning printed", "against the move",
+        "goes the other way", "is thin", "never actually get", "gets worse",
+        "the gap is real", "swings", "plan on a car", "no longer matters"];
+      const mainHtml = (s.match(/<main[\s\S]*?<\/main>/) || [s])[0];
+      for (const hm of mainHtml.matchAll(/<h[23][^>]*>([\s\S]*?)<\/h[23]>/gi)) {
+        const ht = hm[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim().toLowerCase();
+        for (const neg of HEADER_NEGATIVE) if (ht.includes(neg)) E(`negative header: "${neg}" inside a heading - move the honesty to body copy, keep headers neutral or positive`);
+      }
+    }
     for (const p of FILLER) if (low.includes(p)) E(`filler line: "${p}" - state the fact or delete the sentence`);
     /* Owner instruction, 2026-08-25: a CTA must deliver what its label
      * promises. "Check the drive from an address" pointed at a lead form,
@@ -1290,7 +1306,7 @@ function audit() {
      * check...", "Ask us...", "Send..."), never as an inspection the click
      * itself performs. Buttons that open a real tool (openIdx, a calculator
      * page) may promise the action. */
-    const CTA_PROMISE = /^\s*(check|open|map|see|view|browse|explore|watch|look)\b/i;
+    const CTA_PROMISE = /^\s*(check|open|map|see|view|browse|explore|watch|look|run|compare|calculate|estimate)\b/i;
     for (const m of s.matchAll(/<a\b[^>]*>/g)) {
       const tag = m[0];
       if (!/\bbtn\b/.test((tag.match(/class="([^"]*)"/) || [])[1] || "")) continue;
