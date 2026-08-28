@@ -359,3 +359,25 @@ CUT, with reasons (owner asked for the legality pass):
   plain statement he dictated: hold northern pay and live here and you are
   earning at the higher end of wages in this market. No index math on that
   page; the calculator pages own that comparison.
+
+## 2026-08-28 round: the template applied to all 21, CT section simplified
+
+- All 21 relocating subheaders now run the what-to-expect template, 3 or 4
+  clauses each. His constraint: do not stack four clauses from the same
+  category ("what this tax to expect, what this tax to expect"). So the
+  state pages consolidate to "what taxes to expect" once and spend the other
+  clauses on the sale, the pension, the car, the story. Measured on all 21:
+  visible, 14.27:1 contrast, 23-39 words, 3-4 clauses, zero JS errors.
+- The personal hooks that used to open from-ohio (Devin made this move) and
+  from-maryland (Howard County transplant) are preserved inside a clause
+  rather than lost.
+- CT retirees: "on the same federal index our ... runs" deleted, calculator
+  link kept. "A retiree near Connecticut's income lines gains twice here"
+  deleted whole. "Put the move in one picture" also cut, since he has banned
+  that kind of phrase.
+- CT estate section rewritten to read easily and to state the money: 12
+  percent of the amount over $15 million, $120,000 for every million above
+  it, $20M owes about $600,000, $25M owes about $1.2 million, South Carolina
+  none of it. "Domicile here removes the entire state layer" replaced with
+  "moving here saves you twelve cents on the dollar in taxes." Rate and
+  exemption re-verified at the DRS page the same day (local-facts H2a).

@@ -942,3 +942,14 @@ This is the section that decides whether the calculator can have a food line at 
 
 ### H5. Internet (jobs remote section)
 - HTC (htcinc.net + comparisons, 2026-08-27): local cooperative, claims largest fiber network in Grand Strand/Pee Dee, symmetrical gigabit. ATTRIBUTED as HTC's own claim. Spectrum: cable across most of the county, downloads to 2 Gbps, uploads ~35 Mbps (highspeedinternet.com comparison) — published qualitatively ("much slower uploads"). Street-by-street variability → FCC broadband map linked; no address-level claims.
+
+### H2a. Connecticut estate tax, re-opened 2026-08-28 (DRS estate and gift
+tax information page). Printed: "For estates of decedents dying during 2026,
+the Connecticut estate tax exemption amount is $15 million... Over
+$15,000,000 The Amount of the Estate Tax Is: 12% of the excess over the
+federal basic exclusion amount." Gift tax mirrors it: 12% of the excess over
+$15,000,000 on aggregate CT taxable gifts made on or after 2005-01-01.
+ARITHMETIC PUBLISHED (mine, from that printed rate, not a summarizer's):
+12% of $1,000,000 = $120,000 per million above the line; $20M estate =
+$600,000; $25M estate = $1,200,000. First search summary on this contradicted
+itself on the federal amount and was discarded - the DRS page is the source.
