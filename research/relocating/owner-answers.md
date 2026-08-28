@@ -237,3 +237,48 @@ as "his recollection, as he told it to us," with similes ("like a war zone,"
   published as quoted judgment.
 - OPEN: Timmy should read the published passage before deploy and confirm the
   details (which town hall; five-miles-north geography) are as he wants them.
+
+---
+
+## 2026-08-28 — Batch-2 weave round (Devin's answers) + legal triage
+
+SHIPPED (where):
+- VA: Virginia Beach client comparison ("much bigger... entertainment scene many
+  times ours" — his "10x" softened to "many times," unverified ratio), respect-for-
+  Virginia/military-careers framing, growing-quickly/money-goes-further, "Nobody
+  here parties like Miami... enjoying their money" as attributed client line.
+- CT: praise-what-they-leave (historic towns kept, "safe" CUT), winters, "prices
+  they describe as getting out of hand" (attributed), more beach/more room; the
+  landing-strip friends (acreage + pilot licenses) with Longs/Conway pointer.
+- MA: the Boston hotel manager story. Anonymized ("ran a Boston hotel" — Marriott
+  name withheld for privacy), $100k saved / $450k sale / 3 condos in one unnamed
+  oceanfront building / $120k gross, ~half profit, LABELED "his numbers... not a
+  promise, not advice, not a typical result," tied to airbnb-income market ranges
+  ("his units sit at the strong end"), $60k-here = ~$69,000-in-Boston computed on
+  col-places RPP (108.266/93.642) with deep link ?from=boston-cambridge-newton-ma-nh
+  &income=60000. Small-print disclaimer + condo-buildings/condotel links.
+- Beaches: downtown-social ( ~$10 all-day parking, volleyball, boardwalk),
+  Cherry Grove quiet (free-ish parking, Heritage Shores preserve trails + the
+  point walk), Surfside via the TOWN'S OWN "Family Beach" branding, Devin's dog
+  passage, licensed chair/umbrella stands note, September month.
+- Jobs remote: "about half of the buyers who come to us from the northern states
+  arrive with a remote job" (his stat, attributed to our buyers), Starlink
+  availability, fiber building push (qualitative), team-carriers-no-problems +
+  "Devin's phone held through Debby" (carrier name Cricket withheld — no need).
+
+CUT, with reasons (owner asked for the legality pass):
+1. "South Carolina is safer" — safety/crime characterization = fair-housing
+   steering exposure on a brokerage site. NEVER publish comparative safety.
+2. CT "safe... cities" — same family; historic/beautiful kept.
+3. "beaches with less pollution" — unverifiable comparative disparagement.
+4. Surfside "just families and their kids / nicest people / mainly locals" —
+   familial-status steering risk; replaced with the town's own registered
+   Family Beach branding + activity/pace description. Rule: describe the sand,
+   never the demographic.
+5. "sunnier weather makes people feel healthier" — health claim; kept as
+   "want more of the year outdoors."
+6. Marriott name + the 14-condos-for-others count — privacy + SC property
+   management licensing question. OPEN ITEM: confirm the friend operates his
+   management business properly licensed before any future edit re-adds scale
+   numbers; page ships with "grown into a real business" only.
+7. DoubleTree fiber-convention memory — unverifiable, fails buyer test.
