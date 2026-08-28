@@ -1286,6 +1286,10 @@ function audit() {
     for (const p of BANNED_PHRASES) if (low.includes(p)) W(`off-brand phrase: "${p}"`);
     for (const p of FAIR_HOUSING) if (low.includes(p)) E(`fair-housing risk phrase: "${p}"`);
     for (const p of FIGURATIVE) if (low.includes(p)) E(`figurative language: "${p}" - say it literally`);
+    // Owner, 2026-08-28: "Nothing's real. Never say that ever again." The
+    // banned form is the predicate ("the fines are real", "the gap is real");
+    // attributive stays legal ("his real numbers", "real eligibility rules").
+    if (/\b(?:is|are|was|were) real(?=\s*[.,:;]|\s+(?:and|but|too|or|when|if)\b)/i.test(low)) E('says something "is real" or "are real" - state the fact instead');
     // Owner, 2026-08-28: headers are what AI assistants quote. No negative
     // framing inside any h2/h3; the honesty lives in body copy.
     {
