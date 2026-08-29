@@ -48,7 +48,7 @@
       bS: [[null, .0307]], bM: [[null, .0307]],
       std: { s: 0, m: 0 }, exempt: { s: 0, m: 0 },
       propRate: .0126,
-      local: { kind: 'yesno', question: 'Does your town charge the local earned income tax?', preset: 'yes', rate: .01, base: 'wages', rowLabel: 'Local earned income tax',
+      local: { kind: 'yesno', question: 'Does your town charge the local earned income tax?', preset: 'yes', rate: .01, base: 'wages', rowLabel: 'Local income tax',
         note: 'Most Pennsylvania towns charge one. We use 1 percent, near the state average; yours is on your pay stub.' },
       ret: 'pa',
     },
@@ -281,7 +281,7 @@
         else if (L.kind === 'yesno') {
           if (choice === 'yes' || choice === true) { local = L.rate * (L.base === 'wages' ? inc.wages : taxable); localLabel = L.rowLabel; }
         } else if (L.kind === 'choice') {
-          if (choice === 'nyc') { local = bracketTax(taxable, inp.mfj ? NYC_M : NYC_S); localLabel = 'New York City income tax'; }
+          if (choice === 'nyc') { local = bracketTax(taxable, inp.mfj ? NYC_M : NYC_S); localLabel = 'New York City tax'; }
           else if (choice === 'yonkers') { local = income * YONKERS; localLabel = 'Yonkers surcharge'; }
         }
       }

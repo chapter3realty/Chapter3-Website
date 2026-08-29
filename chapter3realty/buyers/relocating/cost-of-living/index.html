@@ -517,7 +517,7 @@ function colCalc(){}
 <section style="background:var(--ivory-2)" id="tax-calc"><div class="wrap">
 <p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">Side by side</p>
 <h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em">What you pay in taxes now, and what you would pay here</h2>
-<p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1.5rem">It opens on a real example. Change any line to your own numbers and press Calculate. It estimates the state income tax, the local income tax where your town charges one, and the property tax on both ends, and it shows what the price difference on the house puts back in your pocket. It is an estimate, not a tax return. Nothing you type leaves your browser.</p>
+<p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1.5rem">It opens on a real example. Change any line to your own numbers and press Calculate. It estimates the income tax, the local income tax where your town charges one, and the property tax on both ends, and what the price of the house puts back in your pocket. Estimates, not facts. Nothing you type leaves your browser.</p>
 
 <style>
 .txc{display:grid;grid-template-columns:minmax(300px,380px) 1fr;gap:0;max-width:940px;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--white)}
@@ -551,8 +551,10 @@ function colCalc(){}
 .txc-mo{font-family:var(--sans);font-size:.88rem;color:rgba(244,239,232,.72);margin:0 0 1.2rem}
 .txc-eq{font-family:var(--sans);font-size:.88rem;line-height:1.6;color:var(--brass-2);border-top:1px solid rgba(244,239,232,.18);padding-top:.9rem;margin:0 0 1.2rem}
 .txc-eq b{color:var(--ivory);font-weight:600}
-.txc-tab{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.86rem;margin-bottom:1.1rem}
-.txc-tab th{text-align:right;font-weight:600;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,239,232,.6);padding:0 0 .5rem;border-bottom:1px solid rgba(244,239,232,.18)}
+.txc-tab{width:100%;table-layout:fixed;border-collapse:collapse;font-family:var(--sans);font-size:.86rem;margin-bottom:.9rem}
+.txc-tab th{text-align:right;font-weight:600;font-size:.62rem;letter-spacing:.03em;text-transform:uppercase;color:rgba(244,239,232,.6);padding:0 0 .5rem;border-bottom:1px solid rgba(244,239,232,.18);white-space:nowrap}
+.txc-tab th:first-child{width:36%}
+.txc-tab th:nth-child(2),.txc-tab th:nth-child(3){width:32%}
 .txc-tab th:first-child{text-align:left}
 .txc-tab td{padding:.5rem 0;border-bottom:1px solid rgba(244,239,232,.12);color:rgba(244,239,232,.82);text-align:right;white-space:nowrap}
 .txc-tab td:first-child{text-align:left;white-space:normal;padding-right:.6rem}
@@ -566,7 +568,7 @@ function colCalc(){}
 .txc-stale p{font-family:var(--sans);font-size:.9rem;color:var(--ivory);text-align:center;max-width:230px;line-height:1.6;margin:0}
 .txc.is-stale .txc-stale{display:flex}
 .txc-src{font-family:var(--sans);font-size:.76rem;color:var(--muted);line-height:1.65;max-width:940px;margin-top:1.1rem}
-@media(max-width:840px){.txc{grid-template-columns:1fr}.txc-form{padding:1.3rem}.txc-out{padding:1.5rem 1.3rem}.txc-big{font-size:2.1rem}}
+@media(max-width:840px){.txc{grid-template-columns:1fr}.txc-form{padding:1.3rem}.txc-out{padding:1.5rem 1.3rem}.txc-big{font-size:2.1rem}.txc-tab{font-size:.82rem}.txc-tab th{font-size:.55rem;letter-spacing:.01em}.txc-tab th:first-child{width:32%}.txc-tab th:nth-child(2),.txc-tab th:nth-child(3){width:34%}}
 </style>
 <div class="txc" id="txcWrap">
   <div class="txc-form">
@@ -588,21 +590,20 @@ function colCalc(){}
     <p class="txc-cap" id="txcCap">Example</p>
     <p class="txc-big" id="txcBig">&nbsp;</p>
     <p class="txc-mo" id="txcMo">&nbsp;</p>
-    <p class="txc-eq" id="txcEq" hidden></p>
     <table class="txc-tab"><thead><tr><th>Every year</th><th id="txcNowH">Now</th><th>Myrtle Beach</th></tr></thead>
       <tbody>
-        <tr><td>State income tax</td><td id="txcNowInc">$0</td><td id="txcHereInc">$0</td></tr>
+        <tr><td>Income tax</td><td id="txcNowInc">$0</td><td id="txcHereInc">$0</td></tr>
         <tr id="txcLocalRow" hidden><td id="txcLocalLab">Local income tax</td><td id="txcNowLocal">$0</td><td>None</td></tr>
         <tr><td>Property tax</td><td id="txcNowProp">$0</td><td id="txcHereProp">$0</td></tr>
         <tr class="tot"><td>Total</td><td id="txcNowTot">$0</td><td class="hi" id="txcHereTot">$0</td></tr>
       </tbody></table>
-    <p class="txc-est">These are estimates, not a tax return. Rules change, and your own return will not match to the dollar.</p>
     <p class="txc-from" id="txcFrom"></p>
-    <div class="txc-cta"><a class="btn btn-brass" href="#lead-form">Have an expert check my numbers</a></div>
+    <p class="txc-est">These are estimates, not facts. Rules change, and your own numbers will not match to the dollar.</p>
+    <div class="txc-cta"><a class="btn btn-brass" href="#lead-form">Start your move to Myrtle</a></div>
     <div class="txc-stale"><p>Press Calculate to see your own numbers.</p></div>
   </div>
 </div>
-<p class="txc-src" id="txcSrc">An estimate, not a tax return. Rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026, and the Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. Left out on both sides: federal tax, car taxes, insurance, and any credit that depends on your own return. Where a state rule is too detailed to model we leave it out, and almost every one of those left out would RAISE the bill in the state you are leaving, not lower it: Connecticut&#39;s tax recapture, New York&#39;s supplemental tax, and the exemption phase-outs in Maryland and Ohio. Two run the other way and we would rather name them: Pennsylvania&#39;s tax forgiveness and the Massachusetts senior circuit breaker are low-income credits we do not apply, so if you qualify for one, your bill up north is lower than we show. Insurance is its own question on this coast and usually costs more here than up north; the <a href="/buyers/coastal-insurance/" style="color:var(--brass);font-weight:600;text-decoration:none">coastal insurance page</a> has the real numbers. Your accountant has the last word, and we will sit down and go through it with you.</p>
+<p class="txc-src" id="txcSrc">An estimate, not a fact. Rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026, and the Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. Left out on both sides: federal tax, car taxes, insurance, and any credit that depends on your own return. Where a state rule is too detailed to model we leave it out, and almost every one of those left out would RAISE the bill in the state you are leaving, not lower it: Connecticut&#39;s tax recapture, New York&#39;s supplemental tax, and the exemption phase-outs in Maryland and Ohio. Two run the other way and we would rather name them: Pennsylvania&#39;s tax forgiveness and the Massachusetts senior circuit breaker are low-income credits we do not apply, so if you qualify for one, your bill up north is lower than we show. Insurance is its own question on this coast and usually costs more here than up north; the <a href="/buyers/coastal-insurance/" style="color:var(--brass);font-weight:600;text-decoration:none">coastal insurance page</a> has the real numbers. Your accountant has the last word, and we will sit down and go through it with you.</p>
 </div></section>
 
 <script>
@@ -656,7 +657,7 @@ function colCalc(){}
       bS: [[null, .0307]], bM: [[null, .0307]],
       std: { s: 0, m: 0 }, exempt: { s: 0, m: 0 },
       propRate: .0126,
-      local: { kind: 'yesno', question: 'Does your town charge the local earned income tax?', preset: 'yes', rate: .01, base: 'wages', rowLabel: 'Local earned income tax',
+      local: { kind: 'yesno', question: 'Does your town charge the local earned income tax?', preset: 'yes', rate: .01, base: 'wages', rowLabel: 'Local income tax',
         note: 'Most Pennsylvania towns charge one. We use 1 percent, near the state average; yours is on your pay stub.' },
       ret: 'pa',
     },
@@ -889,7 +890,7 @@ function colCalc(){}
         else if (L.kind === 'yesno') {
           if (choice === 'yes' || choice === true) { local = L.rate * (L.base === 'wages' ? inc.wages : taxable); localLabel = L.rowLabel; }
         } else if (L.kind === 'choice') {
-          if (choice === 'nyc') { local = bracketTax(taxable, inp.mfj ? NYC_M : NYC_S); localLabel = 'New York City income tax'; }
+          if (choice === 'nyc') { local = bracketTax(taxable, inp.mfj ? NYC_M : NYC_S); localLabel = 'New York City tax'; }
           else if (choice === 'yonkers') { local = income * YONKERS; localLabel = 'Yonkers surcharge'; }
         }
       }
@@ -1001,15 +1002,14 @@ function colCalc(){}
       $('txcBig').textContent='About the same';
       $('txcMo').textContent='The tax side is a wash here. The house price is usually where the difference shows up.';
     }
-    var eq=$('txcEq');
-    if(r.equity>0){eq.hidden=false;eq.innerHTML='And the house: selling at '+money(v.homeNow)+' and buying at '+money(v.homeHere)+' puts about <b>'+money(r.equity)+'</b> back in your pocket, before selling costs. The same house costs less here, so you borrow less for it too.';}
-    else{eq.hidden=true;}
-    var parts=[];
-    var pp=r.now.property-r.here.property, pi=r.now.income-r.here.income, pl=r.now.local;
-    if(pp>0)parts.push('property tax <b>'+money(pp)+'</b>');
-    if(pi>0)parts.push('state income tax <b>'+money(pi)+'</b>');
-    if(pl>0)parts.push((r.now.localLabel||'Local income tax')+' <b>'+money(pl)+'</b>');
-    $('txcFrom').innerHTML=parts.length?('Where it comes from: '+parts.join(', ')+'.'):'';
+    var parts=[], pp=r.now.property-r.here.property, pi=r.now.income-r.here.income, pl=r.now.local;
+    if(pp>0)parts.push('property tax '+money(pp));
+    if(pi>0)parts.push('income tax '+money(pi));
+    if(pl>0)parts.push((r.now.localLabel||'Local income tax')+' '+money(pl));
+    var line='';
+    if(parts.length)line='Where you save: '+parts.join(', ')+' a year';
+    if(r.equity>0)line+=(line?', plus about ':'Where you save: about ')+'<b>'+money(r.equity)+'</b> once on the house, and a smaller loan with it';
+    $('txcFrom').innerHTML=line?line+'.':'';
     var note=R.local&&R.local.note?' '+R.local.note:'';
     var src=$('txcSrc');
     if(note&&src.getAttribute('data-base')===null){src.setAttribute('data-base',src.textContent);}

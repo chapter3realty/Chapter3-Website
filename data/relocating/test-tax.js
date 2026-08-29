@@ -74,7 +74,7 @@ check('OH city tax, answered no', run({ state: 'OH', wages: 60000, localChoice: 
 const ny = run({ state: 'NY', wages: 120000, mfj: true });
 check('NY taxable income', ny.now.taxableIncome, 103950);
 check('NYC tax on that', ny.now.local, 3264 + (103950 - 90000) * 0.03876);
-check('NYC row label', ny.now.localLabel, 'New York City income tax');
+check('NYC row label', ny.now.localLabel, 'New York City tax');
 // Yonkers is a surcharge of 16.75 percent of the state tax, not a rate on income.
 check('Yonkers surcharge', run({ state: 'NY', wages: 120000, mfj: true, localChoice: 'yonkers' }).now.local, ny.now.income * 0.1675);
 check('No city, no local tax', run({ state: 'NY', wages: 120000, mfj: true, localChoice: 'no' }).now.local, 0);

@@ -490,3 +490,20 @@ federal tax, and personal credits.
   state someone is leaving, except two narrow low-income credits,
   Pennsylvania's tax forgiveness and the Massachusetts senior circuit breaker,
   which are now NAMED ON THE PAGE as running in our favour.
+
+## 2026-08-29 round: tighter panel, plainer words, new CTA
+
+- "Connecticut / Myrtle Beach, there's no real space here." The result table is
+  now fixed-layout with the state columns given a third of the width each, the
+  header letter-spacing cut, and shorter row labels ("Income tax", "Local
+  income tax", "New York City tax"). Measured on desktop and phone across
+  Massachusetts, North Carolina and New York, the three longest names: every
+  header now sits on one line with nothing clipped.
+- "Bring down the words for the house section and briefly mention everywhere
+  they save." The whole house paragraph is gone. One line now covers all of
+  it: "Where you save: property tax $5,433, income tax $1,837 a year, plus
+  about $327,000 once on the house, and a smaller loan with it." The equity
+  clause drops out on its own when the home here costs more.
+- "Instead of tax return say a fact." All three places now read estimates, not
+  facts.
+- CTA is "Start your move to Myrtle" on all ten pages.
