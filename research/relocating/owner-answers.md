@@ -461,3 +461,32 @@ Fair challenge, and the answer was no, for two separate reasons.
 Still deliberately left out, and disclosed on the page: Connecticut's tax
 recapture above $105,000 single and $210,000 joint, car taxes, insurance,
 federal tax, and personal credits.
+
+## 2026-08-29: the house line, the estimate wording, and the state audit
+
+- "Plus you can get the same house for less money here, that's a lower mortgage
+  and insurance." Half of that is published as he said it; half is not, and
+  here is why. The house line now reads "...puts about $111,000 back in your
+  pocket, before selling costs. The same house costs less here, so you borrow
+  less for it too." Borrowing less is a statement about the loan size, which
+  Reg Z allows; a payment, a rate or a down payment would not be, so none
+  appears. INSURANCE IS NOT CLAIMED AS LOWER. Our own coastal insurance page
+  prices Myrtle Beach zips above $5,000 a year on a standardised $300,000
+  house, the highest in South Carolina, so telling a Connecticut buyer their
+  insurance drops would be false and would contradict our own page. The
+  sources line instead says insurance is its own question here, usually costs
+  more than up north, and links to that page.
+- "Make it clear these are estimates." Three places now: the section intro
+  says it estimates; a line sits directly under the totals in the panel,
+  "These are estimates, not a tax return. Rules change, and your own return
+  will not match to the dollar."; and the caption reads "Your numbers,
+  estimated" after Calculate. Measured at 14.27:1 contrast.
+- "Make sure no state over or under exaggerates." Full audit written to
+  research/relocating/tax-calculator-audit.md, state by state, with the
+  direction each remaining simplification pushes. One defect found and fixed:
+  New Jersey's $1,000 age 65 exemption was missing, which inflated the New
+  Jersey bill and therefore our saving. Verified at the NJ Division of
+  Taxation and added with a test. Everything else left out understates the
+  state someone is leaving, except two narrow low-income credits,
+  Pennsylvania's tax forgiveness and the Massachusetts senior circuit breaker,
+  which are now NAMED ON THE PAGE as running in our favour.

@@ -9,10 +9,13 @@
  * /buyers/property-taxes/ (2025 certified millage, Act 388 school operating
  * exemption on a legal residence, $50,000 homestead exemption at 65+).
  *
- * WHERE A RULE IS UNCERTAIN THE ENGINE ERRS AGAINST US: it leaves out
- * Connecticut's exemption phase-out and benefit recapture, and New Jersey's
- * age exemption, all of which would RAISE the number we show for the state
- * someone is leaving. It never shortens the South Carolina side.
+ * HONESTY RULE: every simplification still in here is listed in
+ * research/relocating/tax-calculator-audit.md with the direction it pushes.
+ * Almost all of them UNDERSTATE the state someone is leaving, which makes our
+ * saving look smaller, never bigger. The two that run the other way are
+ * Pennsylvania's tax forgiveness and Massachusetts's senior circuit breaker,
+ * both narrow low-income credits, and both are named on the page itself.
+ * The South Carolina side is never shortened.
  */
 (function (root) {
   'use strict';
@@ -164,7 +167,12 @@
         break;
       case 'nj': {
         // Hard income cliffs, NJ Division of Taxation pension exclusion table.
+        // NJ Division of Taxation, exemptions page, opened 2026-08-29: "You can
+        // claim a $1,000 exemption if you were 65 or older on the last day of
+        // the tax year", on top of the regular $1,000 each. Leaving it out
+        // would have made New Jersey look worse than it is.
         out.military = 0;
+        if (is65) out.extraDeduction += 1000 * (mfj ? 2 : 1);
         var pct = 0;
         if (agi <= 100000) pct = 1;
         else if (agi <= 125000) pct = mfj ? .50 : .375;

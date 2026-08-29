@@ -94,6 +94,13 @@ check('CT joint 48k wages', run({ state: 'CT', wages: 48000, mfj: true }).now.in
 // The add-back caps after ten bands.
 check('CT add-back caps at 500', run({ state: 'CT', wages: 400000, mfj: true }).now.income
   - T.bracketTax(400000, T.RULES.CT.bM), 500);
+// New Jersey gives an extra $1,000 exemption per person at 65 (NJ Division of
+// Taxation, opened 2026-08-29). Omitting it made New Jersey look worse than it
+// is, which is the one direction we never allow.
+const njY = run({ state: 'NJ', wages: 80000, mfj: true, is65: true });
+const njN = run({ state: 'NJ', wages: 80000, mfj: true, is65: false });
+check('NJ age 65 exemption is worth 2,000 of deduction', njN.now.taxableIncome - njY.now.taxableIncome, 2000);
+check('NJ under 65 taxable', njN.now.taxableIncome, 80000 - 2000);
 // The house money is reported alongside the tax.
 check('equity freed', run({ state: 'CT', homeNow: 453000, homeHere: 342000 }).equity, 111000);
 check('equity never negative', run({ state: 'CT', homeNow: 300000, homeHere: 342000 }).equity, 0);
@@ -103,8 +110,9 @@ for (const st of ['NY', 'NJ', 'PA', 'OH', 'MD', 'VA', 'NC', 'CT', 'MA']) {
   if (!(e.difference > 0)) { fails++; console.log(`  FAIL ${st} example shows no saving`); }
   else console.log(`  ok   ${st} example saves ${Math.round(e.difference)}`);
 }
-// NJ cliff: at 150,001 of total income the pension exclusion is gone.
-check('NJ pension 60k at AGI 160k', run({ state: 'NJ', wages: 100000, pension: 60000, mfj: true, is65: true }).now.taxableIncome, 158000);
+// NJ cliff: at 150,001 of total income the pension exclusion is gone, leaving
+// 160,000 less the $2,000 regular and $2,000 age exemptions.
+check('NJ pension 60k at AGI 160k', run({ state: 'NJ', wages: 100000, pension: 60000, mfj: true, is65: true }).now.taxableIncome, 160000 - 4000);
 check('NJ pension 60k at AGI 90k', run({ state: 'NJ', pension: 60000, ss: 30000, mfj: true, is65: true }).now.taxableIncome, 0);
 // Social Security is untaxed in every state we compare, and in SC.
 for (const st of ['NY', 'NJ', 'PA', 'OH', 'MD', 'VA', 'NC', 'MA']) {

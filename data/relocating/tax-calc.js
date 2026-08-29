@@ -67,6 +67,7 @@ const CSS = `
 .txc-tab td:first-child{text-align:left;white-space:normal;padding-right:.6rem}
 .txc-tab tr.tot td{border-bottom:0;padding-top:.7rem;color:var(--ivory);font-weight:700;font-size:.95rem}
 .txc-tab td.hi{color:var(--brass-2);font-weight:600}
+.txc-est{font-family:var(--sans);font-size:.78rem;line-height:1.6;color:rgba(244,239,232,.62);margin:0 0 .7rem}
 .txc-from{font-family:var(--sans);font-size:.82rem;line-height:1.65;color:rgba(244,239,232,.72);margin:0 0 1.2rem}
 .txc-from b{color:var(--ivory);font-weight:600}
 .txc-cta{margin-top:.2rem}
@@ -76,6 +77,8 @@ const CSS = `
 .txc-src{font-family:var(--sans);font-size:.76rem;color:var(--muted);line-height:1.65;max-width:940px;margin-top:1.1rem}
 @media(max-width:840px){.txc{grid-template-columns:1fr}.txc-form{padding:1.3rem}.txc-out{padding:1.5rem 1.3rem}.txc-big{font-size:2.1rem}}
 </style>`;
+
+const A = (href, text) => `<a href="${href}" style="color:var(--brass);font-weight:600;text-decoration:none">${text}</a>`;
 
 function taxCalcSection(opts) {
   const o = opts || {};
@@ -94,7 +97,7 @@ function taxCalcSection(opts) {
 <section style="background:var(--${bg})" id="tax-calc"><div class="wrap">
 <p style="${S.eyebrow}">Side by side</p>
 <h2 style="${S.h2}">What you pay in taxes now, and what you would pay here</h2>
-<p style="${S.p}">It opens on a real example. Change any line to your own numbers and press Calculate. It works out the state income tax, the local income tax where your town charges one, and the property tax on both ends, and it shows what the price difference on the house puts back in your pocket. Nothing you type leaves your browser.</p>
+<p style="${S.p}">It opens on a real example. Change any line to your own numbers and press Calculate. It estimates the state income tax, the local income tax where your town charges one, and the property tax on both ends, and it shows what the price difference on the house puts back in your pocket. It is an estimate, not a tax return. Nothing you type leaves your browser.</p>
 ${CSS}
 <div class="txc" id="txcWrap">
   <div class="txc-form">
@@ -124,12 +127,13 @@ ${CSS}
         <tr><td>Property tax</td><td id="txcNowProp">$0</td><td id="txcHereProp">$0</td></tr>
         <tr class="tot"><td>Total</td><td id="txcNowTot">$0</td><td class="hi" id="txcHereTot">$0</td></tr>
       </tbody></table>
+    <p class="txc-est">These are estimates, not a tax return. Rules change, and your own return will not match to the dollar.</p>
     <p class="txc-from" id="txcFrom"></p>
     <div class="txc-cta"><a class="btn btn-brass" href="${cta}">Have an expert check my numbers</a></div>
     <div class="txc-stale"><p>Press Calculate to see your own numbers.</p></div>
   </div>
 </div>
-<p class="txc-src" id="txcSrc">An estimate, not a tax return. State rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026. The Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. It leaves out federal tax, car taxes, insurance, and credits that depend on your own return. Connecticut&#39;s exemption phase-out and its 2 percent add-back are included; its tax recapture, which starts above $105,000 single and $210,000 joint, is not, so a large Connecticut income shows lower here than you would really pay. Your accountant has the last word, and we will sit down and go through it with you.</p>
+<p class="txc-src" id="txcSrc">An estimate, not a tax return. Rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026, and the Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. Left out on both sides: federal tax, car taxes, insurance, and any credit that depends on your own return. Where a state rule is too detailed to model we leave it out, and almost every one of those left out would RAISE the bill in the state you are leaving, not lower it: Connecticut&#39;s tax recapture, New York&#39;s supplemental tax, and the exemption phase-outs in Maryland and Ohio. Two run the other way and we would rather name them: Pennsylvania&#39;s tax forgiveness and the Massachusetts senior circuit breaker are low-income credits we do not apply, so if you qualify for one, your bill up north is lower than we show. Insurance is its own question on this coast and usually costs more here than up north; the ${A('/buyers/coastal-insurance/', 'coastal insurance page')} has the real numbers. Your accountant has the last word, and we will sit down and go through it with you.</p>
 </div></section>
 
 <script>
@@ -184,7 +188,7 @@ ${ENGINE}
 
   function render(v,isExample){
     var r=T.calc(v), R=T.RULES[v.state];
-    $('txcCap').textContent=isExample?('Example: a couple leaving '+R.name):'Your numbers';
+    $('txcCap').textContent=isExample?('Example: a couple leaving '+R.name):'Your numbers, estimated';
     $('txcNowH').textContent=R.name;
     $('txcNowInc').textContent=money(r.now.income);
     $('txcHereInc').textContent=money(r.here.income);
@@ -207,7 +211,7 @@ ${ENGINE}
       $('txcMo').textContent='The tax side is a wash here. The house price is usually where the difference shows up.';
     }
     var eq=$('txcEq');
-    if(r.equity>0){eq.hidden=false;eq.innerHTML='And the house: selling at '+money(v.homeNow)+' and buying at '+money(v.homeHere)+' puts about <b>'+money(r.equity)+'</b> back in your pocket, before selling costs.';}
+    if(r.equity>0){eq.hidden=false;eq.innerHTML='And the house: selling at '+money(v.homeNow)+' and buying at '+money(v.homeHere)+' puts about <b>'+money(r.equity)+'</b> back in your pocket, before selling costs. The same house costs less here, so you borrow less for it too.';}
     else{eq.hidden=true;}
     var parts=[];
     var pp=r.now.property-r.here.property, pi=r.now.income-r.here.income, pl=r.now.local;

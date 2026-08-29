@@ -137,7 +137,7 @@
 <section style="background:var(--ivory-2)" id="tax-calc"><div class="wrap">
 <p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">Side by side</p>
 <h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em">What you pay in taxes now, and what you would pay here</h2>
-<p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1.5rem">It opens on a real example. Change any line to your own numbers and press Calculate. It works out the state income tax, the local income tax where your town charges one, and the property tax on both ends, and it shows what the price difference on the house puts back in your pocket. Nothing you type leaves your browser.</p>
+<p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1.5rem">It opens on a real example. Change any line to your own numbers and press Calculate. It estimates the state income tax, the local income tax where your town charges one, and the property tax on both ends, and it shows what the price difference on the house puts back in your pocket. It is an estimate, not a tax return. Nothing you type leaves your browser.</p>
 
 <style>
 .txc{display:grid;grid-template-columns:minmax(300px,380px) 1fr;gap:0;max-width:940px;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--white)}
@@ -178,6 +178,7 @@
 .txc-tab td:first-child{text-align:left;white-space:normal;padding-right:.6rem}
 .txc-tab tr.tot td{border-bottom:0;padding-top:.7rem;color:var(--ivory);font-weight:700;font-size:.95rem}
 .txc-tab td.hi{color:var(--brass-2);font-weight:600}
+.txc-est{font-family:var(--sans);font-size:.78rem;line-height:1.6;color:rgba(244,239,232,.62);margin:0 0 .7rem}
 .txc-from{font-family:var(--sans);font-size:.82rem;line-height:1.65;color:rgba(244,239,232,.72);margin:0 0 1.2rem}
 .txc-from b{color:var(--ivory);font-weight:600}
 .txc-cta{margin-top:.2rem}
@@ -215,12 +216,13 @@
         <tr><td>Property tax</td><td id="txcNowProp">$0</td><td id="txcHereProp">$0</td></tr>
         <tr class="tot"><td>Total</td><td id="txcNowTot">$0</td><td class="hi" id="txcHereTot">$0</td></tr>
       </tbody></table>
+    <p class="txc-est">These are estimates, not a tax return. Rules change, and your own return will not match to the dollar.</p>
     <p class="txc-from" id="txcFrom"></p>
     <div class="txc-cta"><a class="btn btn-brass" href="#lead-form">Have an expert check my numbers</a></div>
     <div class="txc-stale"><p>Press Calculate to see your own numbers.</p></div>
   </div>
 </div>
-<p class="txc-src" id="txcSrc">An estimate, not a tax return. State rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026. The Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. It leaves out federal tax, car taxes, insurance, and credits that depend on your own return. Connecticut&#39;s exemption phase-out and its 2 percent add-back are included; its tax recapture, which starts above $105,000 single and $210,000 joint, is not, so a large Connecticut income shows lower here than you would really pay. Your accountant has the last word, and we will sit down and go through it with you.</p>
+<p class="txc-src" id="txcSrc">An estimate, not a tax return. Rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026, and the Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. Left out on both sides: federal tax, car taxes, insurance, and any credit that depends on your own return. Where a state rule is too detailed to model we leave it out, and almost every one of those left out would RAISE the bill in the state you are leaving, not lower it: Connecticut&#39;s tax recapture, New York&#39;s supplemental tax, and the exemption phase-outs in Maryland and Ohio. Two run the other way and we would rather name them: Pennsylvania&#39;s tax forgiveness and the Massachusetts senior circuit breaker are low-income credits we do not apply, so if you qualify for one, your bill up north is lower than we show. Insurance is its own question on this coast and usually costs more here than up north; the <a href="/buyers/coastal-insurance/" style="color:var(--brass);font-weight:600;text-decoration:none">coastal insurance page</a> has the real numbers. Your accountant has the last word, and we will sit down and go through it with you.</p>
 </div></section>
 
 <script>
@@ -235,10 +237,13 @@
  * /buyers/property-taxes/ (2025 certified millage, Act 388 school operating
  * exemption on a legal residence, $50,000 homestead exemption at 65+).
  *
- * WHERE A RULE IS UNCERTAIN THE ENGINE ERRS AGAINST US: it leaves out
- * Connecticut's exemption phase-out and benefit recapture, and New Jersey's
- * age exemption, all of which would RAISE the number we show for the state
- * someone is leaving. It never shortens the South Carolina side.
+ * HONESTY RULE: every simplification still in here is listed in
+ * research/relocating/tax-calculator-audit.md with the direction it pushes.
+ * Almost all of them UNDERSTATE the state someone is leaving, which makes our
+ * saving look smaller, never bigger. The two that run the other way are
+ * Pennsylvania's tax forgiveness and Massachusetts's senior circuit breaker,
+ * both narrow low-income credits, and both are named on the page itself.
+ * The South Carolina side is never shortened.
  */
 (function (root) {
   'use strict';
@@ -390,7 +395,12 @@
         break;
       case 'nj': {
         // Hard income cliffs, NJ Division of Taxation pension exclusion table.
+        // NJ Division of Taxation, exemptions page, opened 2026-08-29: "You can
+        // claim a $1,000 exemption if you were 65 or older on the last day of
+        // the tax year", on top of the regular $1,000 each. Leaving it out
+        // would have made New Jersey look worse than it is.
         out.military = 0;
+        if (is65) out.extraDeduction += 1000 * (mfj ? 2 : 1);
         var pct = 0;
         if (agi <= 100000) pct = 1;
         else if (agi <= 125000) pct = mfj ? .50 : .375;
@@ -589,7 +599,7 @@
 
   function render(v,isExample){
     var r=T.calc(v), R=T.RULES[v.state];
-    $('txcCap').textContent=isExample?('Example: a couple leaving '+R.name):'Your numbers';
+    $('txcCap').textContent=isExample?('Example: a couple leaving '+R.name):'Your numbers, estimated';
     $('txcNowH').textContent=R.name;
     $('txcNowInc').textContent=money(r.now.income);
     $('txcHereInc').textContent=money(r.here.income);
@@ -612,7 +622,7 @@
       $('txcMo').textContent='The tax side is a wash here. The house price is usually where the difference shows up.';
     }
     var eq=$('txcEq');
-    if(r.equity>0){eq.hidden=false;eq.innerHTML='And the house: selling at '+money(v.homeNow)+' and buying at '+money(v.homeHere)+' puts about <b>'+money(r.equity)+'</b> back in your pocket, before selling costs.';}
+    if(r.equity>0){eq.hidden=false;eq.innerHTML='And the house: selling at '+money(v.homeNow)+' and buying at '+money(v.homeHere)+' puts about <b>'+money(r.equity)+'</b> back in your pocket, before selling costs. The same house costs less here, so you borrow less for it too.';}
     else{eq.hidden=true;}
     var parts=[];
     var pp=r.now.property-r.here.property, pi=r.now.income-r.here.income, pl=r.now.local;
