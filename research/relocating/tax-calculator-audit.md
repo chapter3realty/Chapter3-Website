@@ -36,3 +36,25 @@ is acceptable, and gets disclosed on the page.** Both kinds are listed here.
   Myrtle Beach zip codes above $5,000 a year on a standardised $300,000 house,
   the highest in South Carolina. The calculator says insurance is its own
   question and links there.
+
+## Gas and groceries claims, added 2026-08-29
+
+Owner asked for "plus lower gas and groceries and insurance" on the savings
+line. Two of the three are published, per state, only where the data supports
+it. Insurance is NOT, for the reason in the Never do section above.
+
+- GAS: state gas tax from state-tax.json. South Carolina 28.75 cents. Claimed
+  only where the other state is at least 3 cents higher: NJ 49.1, PA 57.6,
+  MD 46.19, NC 41.25, OH 38.5, FL 39.4. NOT claimed for CT (25), MA (27.47) or
+  TX (20), which all tax gas LESS than we do, and not for NY or VA, whose
+  figures are unverified in our data.
+- GROCERIES: BEA regional price parity for goods, col-places.json. Myrtle
+  Beach 96.339. Claimed only where the state is at least 1.5 points higher:
+  NY 107.3, NJ 107.1, MD 102.5, VA 100.4, PA 99.4, MA 98.8, FL 98.1, TX 98.1.
+  NOT claimed for OH (93.7, cheaper there), NC (96.6, three tenths of a point
+  apart) or CT (97.3, one point apart).
+- Both flags are recomputed from those two files by test-tax.js, so the claim
+  on the page cannot drift from the data behind it.
+- Net effect on the state pages: Connecticut gets neither clause, Ohio and
+  North Carolina get gas only, New York, Virginia, Massachusetts and Texas get
+  groceries only, and New Jersey, Pennsylvania, Maryland and Florida get both.

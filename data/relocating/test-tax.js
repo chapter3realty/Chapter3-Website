@@ -104,6 +104,23 @@ check('NJ under 65 taxable', njN.now.taxableIncome, 80000 - 2000);
 // The house money is reported alongside the tax.
 check('equity freed', run({ state: 'CT', homeNow: 453000, homeHere: 342000 }).equity, 111000);
 check('equity never negative', run({ state: 'CT', homeNow: 300000, homeHere: 342000 }).equity, 0);
+// The gas and groceries claims are recomputed here from the two data files, so
+// a flag in the engine can never drift from the numbers behind it.
+const COL = JSON.parse(fs.readFileSync(path.join(__dirname, 'col-places.json'), 'utf8'));
+const goodsOf = name => {
+  const row = COL.places.find(p => p.name === name);
+  return row && row.rpp ? row.rpp.goods : null;
+};
+const MB_GOODS = goodsOf('Myrtle Beach-Conway-North Myrtle Beach, SC');
+const SC_GAS = DATA.states.find(s => s.abbr === 'SC').gasTaxCentsPerGallon;
+const STATE_NAME = { NY: 'New York', NJ: 'New Jersey', PA: 'Pennsylvania', OH: 'Ohio', MD: 'Maryland',
+  VA: 'Virginia', NC: 'North Carolina', CT: 'Connecticut', MA: 'Massachusetts', FL: 'Florida', TX: 'Texas' };
+for (const [abbr, name] of Object.entries(STATE_NAME)) {
+  const gas = DATA.states.find(s => s.abbr === abbr).gasTaxCentsPerGallon;
+  const goods = goodsOf(`${name} (statewide average)`);
+  check(`${abbr} gas claim`, T.CHEAPER[abbr].gas, gas !== null && gas !== undefined && gas - SC_GAS >= 3);
+  check(`${abbr} groceries claim`, T.CHEAPER[abbr].goods, goods !== null && goods - MB_GOODS >= 1.5);
+}
 // Every worked example has to show a saving, or the page opens on a dud.
 for (const st of ['NY', 'NJ', 'PA', 'OH', 'MD', 'VA', 'NC', 'CT', 'MA']) {
   const e = T.calc(T.example(st));

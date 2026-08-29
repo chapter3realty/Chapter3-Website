@@ -507,3 +507,24 @@ federal tax, and personal credits.
 - "Instead of tax return say a fact." All three places now read estimates, not
   facts.
 - CTA is "Start your move to Myrtle" on all ten pages.
+
+## 2026-08-29: gas, groceries, insurance, and the word "once"
+
+- "Plus lower gas and groceries and insurance. What do you think?" Two yes, one
+  no. Gas and groceries are now claimed per state, only where our own data
+  supports it, with a test that recomputes both flags from the source files
+  (audit file has the thresholds and the per-state result). INSURANCE IS NOT
+  CLAIMED: our coastal insurance page prices Myrtle Beach zips above $5,000 a
+  year on a standardised $300,000 house, the highest in South Carolina, so for
+  most northern movers insurance goes UP here, not down. Saying otherwise would
+  contradict our own page.
+  Worth telling him: on the Connecticut page neither clause appears, because
+  Connecticut taxes gas less than South Carolina does and its grocery prices
+  are within a point of ours.
+- "Remove the word once." Done: "plus about $185,000 on the house, and a
+  smaller loan with it."
+- "New York is a bigger savings so let's make that the example." The generic
+  instance, on the cost of living page, already opens on New York, and still
+  does. The nine state pages each open on their own state, which has to stay:
+  a Virginia page opening on New York would be wrong. Confirmed by reading the
+  rendered select on every page.

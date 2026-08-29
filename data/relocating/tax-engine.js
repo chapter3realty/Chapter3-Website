@@ -137,6 +137,35 @@
   var NYC_M = [[21600, .03078], [45000, .03762], [90000, .03819], [null, .03876]];
   var YONKERS = .1675;
 
+
+  /* What ELSE is cheaper here, state by state. Two sources, both already in
+   * the repo, and test-tax.js recomputes these flags from them so they cannot
+   * go stale:
+   *   gas   - state gas tax, state-tax.json. South Carolina is 28.75 cents.
+   *           Flagged only where the other state is at least 3 cents higher.
+   *   goods - BEA regional price parity for goods, col-places.json. Myrtle
+   *           Beach is 96.339. Flagged only where the other state is at least
+   *           1.5 points higher, so a rounding-width gap is never sold as a
+   *           saving.
+   * INSURANCE IS DELIBERATELY ABSENT. Our own coastal insurance page prices
+   * Myrtle Beach zips above $5,000 a year on a standardised $300,000 house,
+   * the highest in South Carolina. It usually costs MORE here, and the sources
+   * line says so. */
+  var CHEAPER = {
+    NY: { gas: false, goods: true },   // gas tax not verified for NY
+    NJ: { gas: true,  goods: true },
+    PA: { gas: true,  goods: true },
+    OH: { gas: true,  goods: false },  // Ohio groceries are cheaper than ours
+    MD: { gas: true,  goods: true },
+    VA: { gas: false, goods: true },   // gas tax not verified for VA
+    NC: { gas: true,  goods: false },  // 0.3 of a point apart, too close to claim
+    CT: { gas: false, goods: false },  // Connecticut taxes gas LESS than we do
+    MA: { gas: false, goods: true },   // Massachusetts taxes gas less than we do
+    FL: { gas: true,  goods: true },
+    TX: { gas: false, goods: true },
+    SC: { gas: false, goods: false },
+  };
+
   // Horry County, tax year 2025 certified millage, unincorporated (the same
   // constants as the calculator on /buyers/property-taxes/).
   var HORRY_MILLS = 201.0, SCHOOL_OPS = 109.1, HOMESTEAD = 50000, RES_RATIO = .04;
@@ -299,6 +328,7 @@
     // The money that comes out of the house is not a tax, but it is the
     // biggest number in most of these moves, so the tool reports it.
     out.equity = Math.max(0, (inp.homeNow || 0) - (inp.homeHere || 0));
+    out.cheaper = CHEAPER[inp.state] || { gas: false, goods: false };
     return out;
   }
 
@@ -318,5 +348,5 @@
              homeNow: e.homeNow, homeHere: 342000, localChoice: undefined };
   }
 
-  root.C3TAX = { RULES: RULES, calc: calc, bracketTax: bracketTax, retirement: retirement, example: example };
+  root.C3TAX = { RULES: RULES, calc: calc, bracketTax: bracketTax, retirement: retirement, example: example, CHEAPER: CHEAPER };
 })(typeof window !== 'undefined' ? window : globalThis);

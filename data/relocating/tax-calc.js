@@ -214,11 +214,17 @@ ${ENGINE}
     var parts=[], pp=r.now.property-r.here.property, pi=r.now.income-r.here.income, pl=r.now.local;
     if(pp>0)parts.push('property tax '+money(pp));
     if(pi>0)parts.push('income tax '+money(pi));
-    if(pl>0)parts.push((r.now.localLabel||'Local income tax')+' '+money(pl));
+    if(pl>0){var ll=r.now.localLabel||'Local income tax';
+      if(!/^(New York|Yonkers)/.test(ll))ll=ll.charAt(0).toLowerCase()+ll.slice(1);
+      parts.push(ll+' '+money(pl));}
     var line='';
     if(parts.length)line='Where you save: '+parts.join(', ')+' a year';
-    if(r.equity>0)line+=(line?', plus about ':'Where you save: about ')+'<b>'+money(r.equity)+'</b> once on the house, and a smaller loan with it';
-    $('txcFrom').innerHTML=line?line+'.':'';
+    if(r.equity>0)line+=(line?', plus about ':'Where you save: about ')+'<b>'+money(r.equity)+'</b> on the house, and a smaller loan with it';
+    if(line)line+='.';
+    if(r.cheaper.gas&&r.cheaper.goods)line+=' Groceries and the gas tax are lower here too.';
+    else if(r.cheaper.goods)line+=' Groceries cost less here too.';
+    else if(r.cheaper.gas)line+=' The gas tax is lower here too.';
+    $('txcFrom').innerHTML=line;
     var note=R.local&&R.local.note?' '+R.local.note:'';
     var src=$('txcSrc');
     if(note&&src.getAttribute('data-base')===null){src.setAttribute('data-base',src.textContent);}
