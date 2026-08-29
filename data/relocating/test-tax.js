@@ -56,8 +56,10 @@ check('SC property 342k', run({ state: 'PA', homeHere: 342000 }).here.property, 
 check('SC property 342k at 65+', run({ state: 'PA', homeHere: 342000, is65: true }).here.property, 292000 * 0.04 * 0.0919);
 // NC: SS exempt, pension fully taxed at 3.99% after the 12,750 deduction.
 check('NC pension 60k + SS 30k', run({ state: 'NC', pension: 60000, ss: 30000, is65: true }).now.income, (60000 - 12750) * 0.0399);
-// CT joint, AGI 120k: SS 75% taxable, pension deduction 60% (linear), exemption 24k.
-check('CT joint pension 80k + SS 40k', run({ state: 'CT', pension: 80000, ss: 40000, mfj: true, is65: true }).now.income, 400 + 810);
+// CT joint, AGI 120k: SS 75% taxable (30k), pension deduction 60% so 32k is
+// taxable, and the exemption is fully phased out above 71k. 62,000 taxable ->
+// 400 + 1,890, plus the $200 add-back at that AGI.
+check('CT joint pension 80k + SS 40k', run({ state: 'CT', pension: 80000, ss: 40000, mfj: true, is65: true }).now.income, 400 + 1890 + 200);
 // MD 65+: exclusion room 41,200 - 20,000 SS = 21,200 against a 50,000 pension.
 check('MD 65+ pension 50k + SS 20k', run({ state: 'MD', pension: 50000, ss: 20000, is65: true }).now.income, 20 + 30 + 40 + (22250 - 3000) * 0.0475);
 // VA 65+ military 50k: 40k subtraction, then the age deduction wipes the rest.
@@ -80,6 +82,21 @@ check('No city, no local tax', run({ state: 'NY', wages: 120000, mfj: true, loca
 check('PA local EIT at 1%', run({ state: 'PA', wages: 80000 }).now.local, 800);
 const md2 = run({ state: 'MD', wages: 80000 });
 check('MD county tax at the 2.51% average', md2.now.local, md2.now.taxableIncome * 0.0251);
+// Connecticut Tax Calculation Schedule, Tables A and C, opened 2026-08-28.
+// Joint AGI 120,000: the $24,000 exemption is gone above $71,000, so the tax
+// is 400 + 3,600 + 1,100 = 5,100, plus a $200 phase-out add-back.
+check('CT joint 120k wages', run({ state: 'CT', wages: 120000, mfj: true }).now.income, 5100 + 200);
+// Single AGI 40,000: exemption 15,000 - 10,000 = 5,000, no add-back yet.
+check('CT single 40k wages', run({ state: 'CT', wages: 40000 }).now.income, 200 + 1125);
+// The exemption survives in full below the phase-out.
+// 24,000 taxable: the 2 percent band stops at 20,000, so 400 + 4,000 at 4.5%.
+check('CT joint 48k wages', run({ state: 'CT', wages: 48000, mfj: true }).now.income, 400 + 180);
+// The add-back caps after ten bands.
+check('CT add-back caps at 500', run({ state: 'CT', wages: 400000, mfj: true }).now.income
+  - T.bracketTax(400000, T.RULES.CT.bM), 500);
+// The house money is reported alongside the tax.
+check('equity freed', run({ state: 'CT', homeNow: 453000, homeHere: 342000 }).equity, 111000);
+check('equity never negative', run({ state: 'CT', homeNow: 300000, homeHere: 342000 }).equity, 0);
 // Every worked example has to show a saving, or the page opens on a dud.
 for (const st of ['NY', 'NJ', 'PA', 'OH', 'MD', 'VA', 'NC', 'CT', 'MA']) {
   const e = T.calc(T.example(st));

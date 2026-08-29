@@ -973,3 +973,21 @@ itself on the federal amount and was discarded - the DRS page is the source.
   /buyers/property-taxes/: Horry unincorporated 201.0 mills, school operating
   109.1 mills removed on a legal residence, 4 percent ratio, $50,000 homestead
   exemption at 65+.
+
+### H2b. Connecticut Tax Calculation Schedule, opened 2026-08-28
+Form CT-1040 TCS (Rev. 12/25), parsed from the PDF at
+https://portal.ct.gov/-/media/drs/forms/2025/income/ct-1040-tcs_1225.pdf
+- TABLE A, personal exemptions: single $15,000 up to $30,000 of CT AGI, falling
+  $1,000 per $1,000 band, printed "$44,000 $1,000" then "and up $0" - gone at
+  $45,000. Joint $24,000 up to $48,000, same taper, gone above $71,000.
+- TABLE C, 2 percent rate phase-out add-back: single $0 to $56,500 then $25 per
+  $5,000 band, capped $250 above $101,500. Joint $0 to $100,500 then $50 per
+  $5,000 band, capped $500.
+- TABLE D, tax recapture: single column starts above $105,000 at $40 and steps
+  $40 per $5,000; joint starts above $210,000. NOT implemented in the engine -
+  the columns interleave in extraction and a mis-transcribed table would be
+  worse than an omission. Omitting it understates Connecticut, which errs
+  against us, and the sources line on the page says so.
+- TOOLING NOTE: this container's `cryptography` wheel is broken, which breaks
+  pypdf and pdfminer on import. Stub the cryptography modules in sys.modules
+  first (unencrypted PDFs never touch them) and pdfminer works fine.

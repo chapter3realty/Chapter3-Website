@@ -58,6 +58,8 @@ const CSS = `
 .txc-cap{font-family:var(--sans);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--brass-2);font-weight:700;margin:0 0 .5rem}
 .txc-big{font-family:var(--serif);font-size:2.5rem;line-height:1.08;color:var(--ivory);margin:0 0 .35rem;letter-spacing:-.01em}
 .txc-mo{font-family:var(--sans);font-size:.88rem;color:rgba(244,239,232,.72);margin:0 0 1.2rem}
+.txc-eq{font-family:var(--sans);font-size:.88rem;line-height:1.6;color:var(--brass-2);border-top:1px solid rgba(244,239,232,.18);padding-top:.9rem;margin:0 0 1.2rem}
+.txc-eq b{color:var(--ivory);font-weight:600}
 .txc-tab{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.86rem;margin-bottom:1.1rem}
 .txc-tab th{text-align:right;font-weight:600;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,239,232,.6);padding:0 0 .5rem;border-bottom:1px solid rgba(244,239,232,.18)}
 .txc-tab th:first-child{text-align:left}
@@ -92,7 +94,7 @@ function taxCalcSection(opts) {
 <section style="background:var(--${bg})" id="tax-calc"><div class="wrap">
 <p style="${S.eyebrow}">Side by side</p>
 <h2 style="${S.h2}">What you pay in taxes now, and what you would pay here</h2>
-<p style="${S.p}">It opens on a real example. Change any line to your own numbers and press Calculate. It works out the state income tax, the local income tax where your town charges one, and the property tax on both ends. Nothing you type leaves your browser.</p>
+<p style="${S.p}">It opens on a real example. Change any line to your own numbers and press Calculate. It works out the state income tax, the local income tax where your town charges one, and the property tax on both ends, and it shows what the price difference on the house puts back in your pocket. Nothing you type leaves your browser.</p>
 ${CSS}
 <div class="txc" id="txcWrap">
   <div class="txc-form">
@@ -114,6 +116,7 @@ ${CSS}
     <p class="txc-cap" id="txcCap">Example</p>
     <p class="txc-big" id="txcBig">&nbsp;</p>
     <p class="txc-mo" id="txcMo">&nbsp;</p>
+    <p class="txc-eq" id="txcEq" hidden></p>
     <table class="txc-tab"><thead><tr><th>Every year</th><th id="txcNowH">Now</th><th>Myrtle Beach</th></tr></thead>
       <tbody>
         <tr><td>State income tax</td><td id="txcNowInc">$0</td><td id="txcHereInc">$0</td></tr>
@@ -126,7 +129,7 @@ ${CSS}
     <div class="txc-stale"><p>Press Calculate to see your own numbers.</p></div>
   </div>
 </div>
-<p class="txc-src" id="txcSrc">An estimate, not a tax return. State rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026. The Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. It leaves out federal tax, car taxes, and credits that depend on your own return, and it leaves out Connecticut&#39;s exemption phase-out and benefit recapture, so a large Connecticut income shows lower here than you would really pay. Your accountant has the last word, and we will sit down and go through it with you.</p>
+<p class="txc-src" id="txcSrc">An estimate, not a tax return. State rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026. The Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. It leaves out federal tax, car taxes, insurance, and credits that depend on your own return. Connecticut&#39;s exemption phase-out and its 2 percent add-back are included; its tax recapture, which starts above $105,000 single and $210,000 joint, is not, so a large Connecticut income shows lower here than you would really pay. Your accountant has the last word, and we will sit down and go through it with you.</p>
 </div></section>
 
 <script>
@@ -203,6 +206,9 @@ ${ENGINE}
       $('txcBig').textContent='About the same';
       $('txcMo').textContent='The tax side is a wash here. The house price is usually where the difference shows up.';
     }
+    var eq=$('txcEq');
+    if(r.equity>0){eq.hidden=false;eq.innerHTML='And the house: selling at '+money(v.homeNow)+' and buying at '+money(v.homeHere)+' puts about <b>'+money(r.equity)+'</b> back in your pocket, before selling costs.';}
+    else{eq.hidden=true;}
     var parts=[];
     var pp=r.now.property-r.here.property, pi=r.now.income-r.here.income, pl=r.now.local;
     if(pp>0)parts.push('property tax <b>'+money(pp)+'</b>');

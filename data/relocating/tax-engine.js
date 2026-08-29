@@ -90,6 +90,17 @@
       bS: [[10000, .02], [50000, .045], [100000, .055], [200000, .06], [250000, .065], [500000, .069], [null, .0699]],
       bM: [[20000, .02], [100000, .045], [200000, .055], [400000, .06], [500000, .065], [1000000, .069], [null, .0699]],
       std: { s: 0, m: 0 }, exempt: { s: 15000, m: 24000 },
+      /* Form CT-1040 Tax Calculation Schedule (Rev. 12/25), opened 2026-08-28.
+       * Table A: the personal exemption falls $1,000 for every $1,000 of
+       * Connecticut AGI over $30,000 single and $48,000 joint, and is gone at
+       * $45,000 and $71,000. Table C: the 2 percent rate phase-out add-back,
+       * $25 per $5,000 band over $56,500 single and $50 per $5,000 band over
+       * $100,500 joint, capped after ten bands.
+       * Table D, the tax recapture, is NOT applied. It starts above $105,000
+       * single and $210,000 joint and would raise the Connecticut number
+       * further, so leaving it out errs against us, never against the reader. */
+      exemptPhase: { startS: 30000, startM: 48000 },
+      addBack: { startS: 56500, stepS: 25, startM: 100500, stepM: 50, per: 5000, capSteps: 10 },
       propRate: .0154,
       local: null,
       ret: 'ct',
@@ -238,9 +249,22 @@
       var inc = { wages: inp.wages || 0, pension: inp.pension || 0, ss: inp.ss || 0, military: inp.military || 0 };
       var r = retirement(R.ret, inc, !!inp.mfj, !!inp.is65);
       var gross = inc.wages + r.pension + r.military + r.ss;
-      var ded = (inp.mfj ? R.std.m : R.std.s) + (inp.mfj ? R.exempt.m : R.exempt.s) + r.extraDeduction;
+      var agiFull = inc.wages + inc.pension + inc.military + inc.ss;
+      var exempt = inp.mfj ? R.exempt.m : R.exempt.s;
+      if (R.exemptPhase) {
+        var start = inp.mfj ? R.exemptPhase.startM : R.exemptPhase.startS;
+        if (agiFull > start) exempt = Math.max(0, exempt - 1000 * Math.ceil((agiFull - start) / 1000));
+      }
+      var ded = (inp.mfj ? R.std.m : R.std.s) + exempt + r.extraDeduction;
       var taxable = Math.max(0, gross - ded);
       var income = Math.max(0, bracketTax(taxable, inp.mfj ? R.bM : R.bS) - r.credit);
+      if (R.addBack) {
+        var aStart = inp.mfj ? R.addBack.startM : R.addBack.startS;
+        var aStep = inp.mfj ? R.addBack.stepM : R.addBack.stepS;
+        if (agiFull > aStart) {
+          income += aStep * Math.min(R.addBack.capSteps, Math.ceil((agiFull - aStart) / R.addBack.per));
+        }
+      }
 
       var local = 0, localLabel = '';
       if (side === 'now' && R.local) {
@@ -264,6 +288,9 @@
       out[side] = { income: income, local: local, localLabel: localLabel, property: prop, total: income + local + prop, taxableIncome: taxable };
     });
     out.difference = out.now.total - out.here.total;
+    // The money that comes out of the house is not a tax, but it is the
+    // biggest number in most of these moves, so the tool reports it.
+    out.equity = Math.max(0, (inp.homeNow || 0) - (inp.homeHere || 0));
     return out;
   }
 

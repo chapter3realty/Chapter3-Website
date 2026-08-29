@@ -444,3 +444,20 @@ CUT, with reasons (owner asked for the legality pass):
 - "Where are the big tax savings." The result now names them: "Where it comes
   from: property tax $5,594, state income tax $1,558, New York City income tax
   $3,804."
+
+## 2026-08-29: "is 5,816 all someone really saves?"
+
+Fair challenge, and the answer was no, for two separate reasons.
+1. The Connecticut number was wrong in his favour, not ours. I had been
+   allowing the full $24,000 personal exemption at every income to stay
+   conservative. Connecticut's own Tax Calculation Schedule taper kills that
+   exemption above $71,000, and adds a 2 percent phase-out add-back over
+   $100,500 joint. Both are now implemented and tested (local-facts H2b). The
+   Connecticut example went from $5,816 to $7,296 a year.
+2. Tax was never the big number. The house is. The result panel now carries a
+   line under the headline: selling at $453,000 and buying at $342,000 puts
+   about $111,000 back in your pocket, before selling costs. It hides itself
+   when the home here costs more.
+Still deliberately left out, and disclosed on the page: Connecticut's tax
+recapture above $105,000 single and $210,000 joint, car taxes, insurance,
+federal tax, and personal credits.
