@@ -329,6 +329,10 @@
     // biggest number in most of these moves, so the tool reports it.
     out.equity = Math.max(0, (inp.homeNow || 0) - (inp.homeHere || 0));
     out.cheaper = CHEAPER[inp.state] || { gas: false, goods: false };
+    /* Ten years of the yearly tax difference plus the one-time house money.
+     * At today's rates: it is arithmetic on the numbers already shown, not a
+     * forecast, and the page says so in those words. */
+    out.tenYear = out.difference * 10 + out.equity;
     return out;
   }
 

@@ -528,3 +528,20 @@ federal tax, and personal credits.
   does. The nine state pages each open on their own state, which has to stay:
   a Virginia page opening on New York would be wrong. Confirmed by reading the
   rendered select on every page.
+
+## 2026-08-29: the ten year number
+
+- Added, per his pick from the list of ideas. It sits directly under the
+  monthly line, in brass with a rule above it: "Ten years at today's rates:
+  about $294,560, tax and the house together." New York $294,560,
+  Connecticut $183,960, Ohio $32,714 (Ohio has no house money, so its line
+  ends after the figure).
+- The arithmetic is the yearly difference times ten plus the one-time house
+  money, so it is arithmetic on numbers already on screen, not a forecast.
+  "At today's rates" is in the sentence for that reason, and the estimates
+  line still sits under the table.
+- The line hides itself when the move costs more in tax, so it can never sell
+  a ten year gain on top of a yearly loss. Verified by driving a case that
+  comes out $2,824 a year worse: the line disappears.
+- Tests cover the total, the house money being counted exactly once, and the
+  no-equity case.

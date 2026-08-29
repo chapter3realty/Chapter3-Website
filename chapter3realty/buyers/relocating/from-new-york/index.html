@@ -169,8 +169,8 @@
 .txc-cap{font-family:var(--sans);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--brass-2);font-weight:700;margin:0 0 .5rem}
 .txc-big{font-family:var(--serif);font-size:2.5rem;line-height:1.08;color:var(--ivory);margin:0 0 .35rem;letter-spacing:-.01em}
 .txc-mo{font-family:var(--sans);font-size:.88rem;color:rgba(244,239,232,.72);margin:0 0 1.2rem}
-.txc-eq{font-family:var(--sans);font-size:.88rem;line-height:1.6;color:var(--brass-2);border-top:1px solid rgba(244,239,232,.18);padding-top:.9rem;margin:0 0 1.2rem}
-.txc-eq b{color:var(--ivory);font-weight:600}
+.txc-ten{font-family:var(--sans);font-size:.92rem;line-height:1.55;color:var(--brass-2);border-top:1px solid rgba(244,239,232,.18);padding-top:.85rem;margin:0 0 1.2rem}
+.txc-ten b{color:var(--ivory);font-weight:700;font-size:1.05rem}
 .txc-tab{width:100%;table-layout:fixed;border-collapse:collapse;font-family:var(--sans);font-size:.86rem;margin-bottom:.9rem}
 .txc-tab th{text-align:right;font-weight:600;font-size:.62rem;letter-spacing:.03em;text-transform:uppercase;color:rgba(244,239,232,.6);padding:0 0 .5rem;border-bottom:1px solid rgba(244,239,232,.18);white-space:nowrap}
 .txc-tab th:first-child{width:36%}
@@ -210,6 +210,7 @@
     <p class="txc-cap" id="txcCap">Example</p>
     <p class="txc-big" id="txcBig">&nbsp;</p>
     <p class="txc-mo" id="txcMo">&nbsp;</p>
+    <p class="txc-ten" id="txcTen" hidden></p>
     <table class="txc-tab"><thead><tr><th>Every year</th><th id="txcNowH">Now</th><th>Myrtle Beach</th></tr></thead>
       <tbody>
         <tr><td>Income tax</td><td id="txcNowInc">$0</td><td id="txcHereInc">$0</td></tr>
@@ -558,6 +559,10 @@
     // biggest number in most of these moves, so the tool reports it.
     out.equity = Math.max(0, (inp.homeNow || 0) - (inp.homeHere || 0));
     out.cheaper = CHEAPER[inp.state] || { gas: false, goods: false };
+    /* Ten years of the yearly tax difference plus the one-time house money.
+     * At today's rates: it is arithmetic on the numbers already shown, not a
+     * forecast, and the page says so in those words. */
+    out.tenYear = out.difference * 10 + out.equity;
     return out;
   }
 
@@ -652,6 +657,10 @@
       $('txcBig').textContent='About the same';
       $('txcMo').textContent='The tax side is a wash here. The house price is usually where the difference shows up.';
     }
+    var ten=$('txcTen');
+    if(d>0&&r.tenYear>0){ten.hidden=false;
+      ten.innerHTML='Ten years at today&#39;s rates: about <b>'+money(r.tenYear)+'</b>'+(r.equity>0?', tax and the house together.':'.');}
+    else{ten.hidden=true;}
     var parts=[], pp=r.now.property-r.here.property, pi=r.now.income-r.here.income, pl=r.now.local;
     if(pp>0)parts.push('property tax '+money(pp));
     if(pi>0)parts.push('income tax '+money(pi));

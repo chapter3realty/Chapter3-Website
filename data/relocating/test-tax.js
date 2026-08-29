@@ -104,6 +104,13 @@ check('NJ under 65 taxable', njN.now.taxableIncome, 80000 - 2000);
 // The house money is reported alongside the tax.
 check('equity freed', run({ state: 'CT', homeNow: 453000, homeHere: 342000 }).equity, 111000);
 check('equity never negative', run({ state: 'CT', homeNow: 300000, homeHere: 342000 }).equity, 0);
+// Ten years of the yearly difference plus the house money, once.
+const ten = run({ state: 'CT', wages: 120000, mfj: true, homeNow: 453000, homeHere: 342000 });
+check('ten year total', ten.tenYear, ten.difference * 10 + 111000);
+check('ten year has the house in it once', ten.tenYear - ten.difference * 10, 111000);
+// No house money to add when the home here costs more.
+const tenNoEq = run({ state: 'CT', wages: 120000, mfj: true, homeNow: 300000, homeHere: 342000 });
+check('ten year without house money', tenNoEq.tenYear, tenNoEq.difference * 10);
 // The gas and groceries claims are recomputed here from the two data files, so
 // a flag in the engine can never drift from the numbers behind it.
 const COL = JSON.parse(fs.readFileSync(path.join(__dirname, 'col-places.json'), 'utf8'));
