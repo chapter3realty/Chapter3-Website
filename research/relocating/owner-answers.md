@@ -720,3 +720,28 @@ and analytics untouched, hero canvas untouched.
 - For the owner's dashboard, not this repo: Cloudflare's own RUM beacon
   (static.cloudflareinsights.com, 12KB) shows in PSI; it can be turned off
   in the Cloudflare dashboard under Web Analytics if wanted.
+
+## 2026-08-30, overnight: the early-page sweep
+
+- Metaphor hunt across all 99 pages against 40 realtor-speak patterns beyond
+  the existing gates: five live instances found and fixed (navigating
+  bylaws, only unlocks when, the heart of x3), one false positive correctly
+  left alone (the Paradise tower at the Breakers is a proper noun). All
+  three families added to the FIGURATIVE gate, each plant-controlled.
+- Industry-body language on the two condo pages rewritten to buyer language,
+  one definitional Fannie/Freddie mention kept per page, the Selling Guide
+  citation sentences cut, and the February 2024 dates absorbed into "early
+  2024" while at it. Both audit warnings cleared, schema synced.
+- The three cross-page duplicate FAQ questions are differentiated; the
+  sitewide duplicate count is zero.
+- The three hero bylines the scanner cannot classify were measured in the
+  browser: 6.97 to 7.29 to 1, all passing.
+- Two stale MISTAKES exceptions retired (question-headings, /sell/ bundle).
+- Deliberately NOT done at 4am, for daytime editorial with the owner:
+  the 20 reading-level warnings (mass prose rewrites of researched copy are
+  the highest silent-damage class this repo knows) and the 8 explicit-date
+  warnings (every date is welded to a sourced claim; removing one weakens
+  the claim and needs per-fact judgment). The one dated market stat found by
+  the stale-info scan ("137 days as of June 2026, per the local REALTOR
+  association") is properly attributed and stays until its source is
+  re-opened.

@@ -138,6 +138,6 @@ Current `audit` warnings that are deliberate. Do not "fix" them silently.
   gate was corrected. Do not strip "0% down" from VA or USDA copy.
 - **`--brass` link colour measures 3.01:1 on ivory**, below AA for body text.
   Brand-level decision.
-- **`/sell/` ships a stale duplicate JS bundle** with an old `recalcLtr`. That
+- ~~`/sell/` ships a stale duplicate JS bundle~~ Fixed 2026-08-30: the divergent pair is merged (the divergent function was dead code in both), and the real finding behind it was a launch-day double maps-loader throwing a SyntaxError on all eight original submarket pages, also fixed.
   page renders no calculator, so no wrong number reaches a user.
-- **Two pages have no question-shaped heading**, which is weaker for AI answers.
+- ~~Two pages have no question-shaped heading~~ Stale: the audit reports zero such pages as of 2026-08-30. Retired.

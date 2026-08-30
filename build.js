@@ -688,6 +688,8 @@ const FIGURATIVE = [
   // for a share of income, "dress it up", and agents who "vanish" are the
   // same family. Each of these had a live instance when it was added.
   "disappear", "vanish", "entire slice", "dress it up", "dressing up",
+  // Overnight sweep 2026-08-30: each had a live instance when added.
+  "the heart of", "navigating bylaws", "unlocks when",
   // Owner, 2026-08-25 round 7: "that one line decides" is banned everywhere.
   "one line decides", "one line on the map", "that one line", "the line that changes",
   // Owner, 2026-08-26 round 3: "Two exceptions decide where to look harder"
