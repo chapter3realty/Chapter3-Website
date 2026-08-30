@@ -181,6 +181,18 @@ turn an accurate figure into a violation. Accuracy is the defence there.
 payment and a somewhat higher rate; we quote your real numbers." Then no
 trigger term exists and no disclosure obligation attaches.
 
+Since 2026-08-30 this is enforced, not advised: `audit` ERRORS on any stated
+down-payment percentage (only "0% down" / "no down payment" passes, per the
+official commentary), any stated lending rate or loan-payment amount, and any
+em dash in body copy.
+
+**A14a. The financing voice rule (owner, 2026-08-30).** Chapter 3 is never
+the actor doing the lending. BrickWood lends, or "your lender" does. "Our
+lending partner" and "our financing partner" are the approved constructions;
+"our mortgages", "we finance", and "in-house" beside any lending word are
+errors, and the gate scans meta descriptions and JSON-LD too, because the
+"in-house mortgage lender" claim once lived in two SERP snippets.
+
 → *Verify:* `audit` tiers every `N% down`. **HIGH** means the figure sits within
 500 characters of the affiliated lender inside `<main>` — that is the closest
 thing to an offer and should be rewritten. **review** means it is describing a

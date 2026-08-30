@@ -246,9 +246,14 @@ Silence is not a pass.
 
 ## Owner decisions taken 2026-08-30, NOT YET IMPLEMENTED
 
-He gave these four answers, then paused the session to continue with a
-different model. Nothing below is built yet. These are instructions, already
-decided; do not re-ask him.
+He gave these four answers, then paused the session for a model handoff.
+**STATUS 2026-08-30, overnight: ALL FOUR ARE SHIPPED** (commits 1be4d94
+through 2009340), except that decision 3 needed no code: the contrast fix
+had already shipped on 2026-08-15 at 0.78, darker than the approved 0.64,
+and applying 0.64 would have been a regression (MISTAKES row 45). The
+sections below are kept for the reasoning; the sweep summary lives in
+research/relocating/owner-answers.md under the 2026-08-30 overnight
+entries.
 
 ### 1. Reg Z: rewrite all ten percentage pages qualitatively
 
