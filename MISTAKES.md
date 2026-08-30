@@ -125,20 +125,12 @@ feature works. Open the real source.
 
 Current `audit` warnings that are deliberate. Do not "fix" them silently.
 
-- **SUPERSEDED 2026-08-30, pending implementation.** The owner chose to
-  rewrite all ten qualitatively rather than keep this exception. Do not
-  "restore" any figure on the strength of the analysis below; it recorded why
-  the pages were defensible, not why they should stay. Delete this entry once
-  the rewrite ships. The "0% down" carve-out below still stands.
-  **10 pages state a down-payment percentage.** Cross-referenced against the
-  rule text on 2026-07-26. **Zero HIGH remaining** — the two pages that stated a
-  figure beside our own lender (`/invest/strategies/dscr-loans/`,
-  `/invest/condo-buildings/`) were rewritten qualitatively. The remaining ten
-  are "review": a VA funding-fee schedule, an FHA/SC Housing program table, or a
-  description of who is buying in the market. Reg Z 1026.1(c) applies to those
-  who offer or extend credit and a brokerage is not a creditor; Reg N covers
-  brokers but only bars misrepresentations, so accuracy is the defence.
-  New pages must not add to this list — write financing qualitatively.
+- **The ten down-payment pages were rewritten qualitatively on 2026-08-30**
+  per the owner's decision, and the audit now ERRORS on any stated down-payment
+  percentage, lending rate, loan-payment amount, first-person lending voice,
+  "in-house" beside a lending word, or em dash in body copy. All gates
+  positive-controlled. The old standing exception is gone; do not restore a
+  figure.
 - **"0% down" is NOT a trigger term.** Official commentary to 1026.24(d)(1):
   "statements such as no downpayment or no trade-in required do not trigger the
   additional disclosures." `/buyers/va-loans/` was wrongly flagged until the

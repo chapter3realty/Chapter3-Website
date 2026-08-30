@@ -657,3 +657,22 @@ Two things I would have flagged before starting, for whoever picks this up:
   never been swept as a batch. Read them before assuming they are all noise;
   rule 4 says sanity-check a scanner before believing it, and that cuts both
   ways here.
+
+## 2026-08-30, overnight: Reg Z + financing voice shipped
+
+- Six gates built and positive-controlled (plant, fire, restore): down-payment
+  percentage now an ERROR (0%-down carve-out kept, "10%+ down" pattern gap
+  closed), first-person lending voice, "in-house" beside a lending word (both
+  word orders, and scanning meta descriptions and JSON-LD, where /about/ and
+  /why-chapter-3/ carried "an in-house mortgage lender" in their SERP
+  snippets), stated lending rates (APR case-sensitive after flagging the
+  occupancy charts' "44% Apr"), loan-payment amounts ($0 calculator states
+  exempt), em dashes.
+- 20 defects across 16 pages rewritten: VA funding-fee schedule on two pages,
+  SC Housing card block (also carried "1% origination fee" and "Loan term is
+  30 years", two more trigger classes), six invest/sell down-payment spots,
+  the DSCR worked example (now ratio form, no dollars), "Our mortgages" twice,
+  and the in-house family on seven pages plus eight meta-description copies.
+- Every edited FAQ synced to its schema copy; audit 0, preflight 0; the nine
+  most-edited pages DOM-verified painted (two false alarms were my checker
+  reading innerText of a closed accordion - the pages were right).

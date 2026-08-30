@@ -852,7 +852,29 @@ const GUARANTEE = /\bwe guarantee\b|\bguarantees?\b|\bguaranteed\b|you will sell
 const NEGATED_BEFORE = /\b(?:not|no|never|nobody|none|nor|without|cannot|can['’]t|isn['’]t|aren['’]t|won['’]t)\b[^.!?;]{0,32}$/i;
 // Reg Z 1026.24(d) trigger term: a stated down payment amount pulls in APR +
 // repayment-term disclosure obligations. Assessment ratios (4%/6%) are tax, not credit.
-const TRIGGER_DOWN = /([0-9]+(?:\.[0-9]+)? ?(?:percent|%)) ?(?:down\b|down payment)/gi;
+const TRIGGER_DOWN = /([0-9]+(?:\.[0-9]+)? ?(?:percent|%))\+? ?(?:down\b|down payment)/gi;
+
+/* Owner instruction 2026-08-30, recorded verbatim in HANDOFF.md: "never talk
+ * as if we finance the loan always as BrickWood Finances the loan." Chapter 3
+ * is never the actor doing the lending. "our lending partner" and "our
+ * financing partner" are the approved constructions and must pass; everything
+ * where WE lend is an error. This shipped: two pages said "Our mortgages
+ * usually require only hazard insurance". */
+const LEND_VOICE = [
+  /\b(?:we|chapter\s*3)\s+(?:finance|lend|originate|underwrite)\w*\b/i,
+  /\bour\s+(?:mortgage|loan|rate|financing|lending)s?\b(?!\s+(?:partner|referral))/i,
+  /\bwe\s+can\s+get\s+you\s+(?:a\s+)?(?:pre.?approved|approved|loan|mortgage|rate|financ)/i,
+  /(?<!\bnot\s)\b(?:financing|loans?|mortgages?)\s+through\s+us\b/i,
+];
+// Non-negotiable 3 also bans stated rates and payment amounts in credit
+// context. The site currently has zero of either (checked 2026-08-30: all 46
+// numeric "rate" hits are tax, occupancy or graduation rates; all 72 "$N a
+// month" hits are HOA dues, rents and running costs). These pin that.
+// APR is matched case-sensitively: the submarket occupancy charts write
+// "44% Apr" for April, and a case-insensitive match flagged all eight of them.
+const RATE_NUM_I = /\b\d+(?:\.\d+)?\s*(?:%|percent)\s*interest\b|\b(?:interest\s+rates?|mortgage\s+rates?|loan\s+rates?)\s+(?:of|at|from|as\s+low\s+as|around|near|about)\s+\d/i;
+const RATE_NUM_APR = /\b\d+(?:\.\d+)?\s*(?:%|percent)\s*APR\b|\bAPR\s+(?:of|at|from|as low as|around|near|about)\s+\d/;
+const PAY_NUM = /\b(?:mortgage|loan)\s+payments?[^.!?]{0,60}\$[\d,]+|\$[\d,]+[^.!?]{0,60}\b(?:mortgage|loan)\s+payments?\b/i;
 
 // Decode named AND numeric entities. Pages use a mix of &#39; and &#x27; for the
 // same apostrophe; missing one form caused a false "FAQ not visible" failure.
@@ -1285,25 +1307,58 @@ function audit() {
       .map(m => m[0].trim())
       .filter(t => parseFloat(t) !== 0);
     if (trig.length) {
-      // Reg Z 1026.24(d)(1) makes "the amount or percentage of any downpayment"
-      // a triggering term, which pulls in 24(d)(2): downpayment, full repayment
-      // terms, and the APR. But 1026.1(c) applies Reg Z to those who OFFER OR
-      // EXTEND credit. A brokerage describing a government fee schedule or who
-      // is buying in a market is not advertising its own credit; the same
-      // figure sitting next to "our preferred lender" reads much more like an
-      // offer. Tier it so attention lands on the real exposure.
-      // Proximity, inside <main> only. The footer's AfBA disclosure names
-      // BrickWood on every page, so "mentions the lender somewhere" marks all
-      // 11 pages HIGH and tells you nothing.
-      const mainOnly = (prose.match(/<main[\s\S]*?<\/main>/) || [prose])[0];
-      const LENDER = /our (?:preferred|in-house) lender|BrickWood|our lender/i;
-      const near = [...mainOnly.matchAll(TRIGGER_DOWN)]
-        .filter(m => parseFloat(m[0]) !== 0)      // "0% down" is not a trigger term
-        .some(m => LENDER.test(mainOnly.slice(Math.max(0, m.index - 500), m.index + 500)));
-      const label = near ? "HIGH" : "review";
-      W(`Reg Z ${label}: downpayment figure in copy (${[...new Set(trig)].slice(0, 3).join(", ")})`
-        + (near ? " stated alongside the affiliated lender — closest to a credit ad; rewrite qualitatively or add APR + repayment terms"
-                : " — check whether this page is describing a program/market or offering credit"));
+      /* Owner decision 2026-08-30 (HANDOFF.md): every stated down-payment
+       * percentage is an ERROR, not a review item - the old HIGH/review
+       * tiering is gone with the standing exception it served. 1026.24(d)(1)
+       * makes "the amount or percentage of any downpayment" a triggering term
+       * pulling in 24(d)(2); writing it qualitatively means no trigger term
+       * exists and nothing can attach. The one carve-out stands: official
+       * commentary says "no downpayment" statements do not trigger, so
+       * "0% down" passes (the filter above already dropped it). */
+      E(`Reg Z: down-payment percentage in copy (${[...new Set(trig)].slice(0, 3).join(", ")}) - write it qualitatively; only "0% down" / "no down payment" escapes 1026.24(d)(1)`);
+    }
+    {
+      /* The financing voice rule, the rate rule and the payment rule.
+       *
+       * The scan surface is not just <main>: /about/ shipped "an in-house
+       * mortgage lender" in its META DESCRIPTION - the SERP snippet - while
+       * its body was clean, so a main-only scan misses the most visible copy
+       * on the page. Claims surface = body prose + title + every meta/og/
+       * twitter description + every string value inside JSON-LD. Entities are
+       * decoded first so "&#39;" cannot split a match. */
+      const mainProse = decodeEnt(((s.match(/<main[\s\S]*?<\/main>/) || [s])[0])
+        .replace(/<script[\s\S]*?<\/script>/g, " ")
+        .replace(/<style[\s\S]*?<\/style>/g, " ")
+        .replace(/<[^>]+>/g, " ").replace(/\s+/g, " "));
+      const metaBits = [...s.matchAll(/<meta[^>]+(?:name|property)="(?:description|og:description|twitter:description|og:title)"[^>]+content="([^"]*)"/g)].map(m => m[1]);
+      const titleBit = (s.match(/<title>([\s\S]*?)<\/title>/) || [, ""])[1];
+      const ldBits = [...s.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+        .map(m => { try { return JSON.stringify(JSON.parse(m[1])); } catch { return ""; } });
+      const claims = decodeEnt([mainProse, titleBit, ...metaBits, ...ldBits].join(" \n "));
+      for (const re of LEND_VOICE) {
+        const m = claims.match(re);
+        if (m) { E(`first-person lending voice: "${m[0]}" - BrickWood lends, or "your lender" does; Chapter 3 never does (owner rule 2026-08-30)`); break; }
+      }
+      // "in-house" within a lending sentence, either word order: the
+      // internality claim is the "under one roof" defect (mistake 42) in new
+      // clothes, and it shipped in eight places including two SERP snippets.
+      {
+        const IH = /in.house/gi; let ih;
+        while ((ih = IH.exec(claims))) {
+          const win = claims.slice(Math.max(0, ih.index - 70), ih.index + 80);
+          if (/financ|lend|loan|mortgage/i.test(win)) {
+            E(`"in-house" beside a lending word: "...${win.trim().slice(0, 90)}..." - BrickWood is a separate company; say "our lending partner" (owner rules 2026-07-30 and 2026-08-30)`);
+            break;
+          }
+        }
+      }
+      const rm = mainProse.match(RATE_NUM_I) || mainProse.match(RATE_NUM_APR);
+      if (rm) E(`stated interest rate in copy: "${rm[0]}" - never state a rate (non-negotiable 3); keep financing qualitative`);
+      // $0 is a calculator's zero state, not an advertised payment.
+      const pm = [...mainProse.matchAll(new RegExp(PAY_NUM.source, "gi"))]
+        .find(m => /\$[\d,]*[1-9]/.test(m[0]));
+      if (pm) E(`stated loan payment amount in copy: "${pm[0].slice(0, 60)}" - never state a payment amount (non-negotiable 3)`);
+      if (mainProse.includes("\u2014")) E("em dash in body copy - the style rule is short sentences and commas, never em dashes");
     }
     if (s.includes("c3SendForm(") && !s.includes(TCPA)) E("lead form present but the exact TCPA consent string is missing or altered");
     if (/brickwoodmortgage\.com/.test(prose) && !s.includes(AFBA_SIG)) E("links to the affiliated lender without an AfBA disclosure");
