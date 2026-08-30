@@ -676,3 +676,47 @@ Two things I would have flagged before starting, for whoever picks this up:
 - Every edited FAQ synced to its schema copy; audit 0, preflight 0; the nine
   most-edited pages DOM-verified painted (two false alarms were my checker
   reading innerText of a closed accordion - the pages were right).
+
+## 2026-08-30, overnight: the contrast change was already done
+
+- His approved --muted 0.58 -> 0.64 was NOT applied, and here is why: the fix
+  shipped on 2026-08-15 ("Raise the body type and darken the muted grey for
+  older readers") at 0.78, darker than the approved 0.64. Measured live:
+  7.29:1 on ivory, 6.97:1 on ivory-2, both past AA and the first past AAA.
+  Applying 0.64 would have been a contrast regression carrying his approval.
+  The stale MISTAKES exception is retired and the near-miss logged as row 45.
+
+## 2026-08-30, overnight: the invisible performance work
+
+Constraint honored exactly: no look change, no functionality change, popup
+and analytics untouched, hero canvas untouched.
+
+- Fonts self-hosted: the same eight woff2 files Google serves, at
+  /assets/fonts/, loaded through the same async pattern the site already
+  used, now same-origin. Two third-party origins and the 186KB Google Fonts
+  CDN chain are gone. First tried inline @font-face with preloads; a
+  controlled A/B against the old page (98 vs 85 locally) showed the fonts
+  contending with render-blocking CSS, so the async-late pattern won. Final:
+  FCP byte-identical to the old page in the same harness.
+- The ~24KB calculator script that was inlined into all 11 calculator pages
+  is now one minified 12KB /assets/taxcalc.<hash>.js, generated from
+  tax-engine.js at assemble time and hash-named with the exact md5 scheme
+  build.js rehash uses, so the two naming authorities can never disagree.
+  Each calculator page got ~17KB lighter; the engine still cannot drift from
+  the data because the asset is generated from it.
+- The divergent s.* bundle pair is merged (the divergent function turned out
+  to be dead code in both variants - nothing calls idxQuick anywhere).
+- Real bug found and fixed: all eight original submarket pages carried the
+  maps-loader TWICE (a stale pre-partial copy plus the partial), throwing
+  "Identifier GOOGLE_MAPS_KEY has already been declared" on every load since
+  launch. First fix removed the wrong copy; the partial-drift gate caught it
+  within a minute, which is exactly what that gate is for. All submarkets
+  now carry the canonical partial once, zero page errors.
+- The load-bearing MAP no longer references the two retired URLs on 103
+  pages; both keys now point at their 301 targets, so nothing that calls
+  them can break and Google stops rediscovering dead URLs from JS.
+- /assets/* was already Cache-Control immutable, so fonts and taxcalc
+  inherit a year of edge caching.
+- For the owner's dashboard, not this repo: Cloudflare's own RUM beacon
+  (static.cloudflareinsights.com, 12KB) shows in PSI; it can be turned off
+  in the Cloudflare dashboard under Web Analytics if wanted.

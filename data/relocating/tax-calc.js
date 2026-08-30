@@ -22,6 +22,40 @@
 const fs = require('fs'), path = require('path');
 
 const ENGINE = fs.readFileSync(path.join(__dirname, 'tax-engine.js'), 'utf8');
+const UI_JS = "\n(function(){\n  var $=function(id){return document.getElementById(id);};\n  var wrap=$('txcWrap'), st=$('txcState');\n  if(!wrap||!st||!window.C3TAX){return;}\n  var T=window.C3TAX, mfj=true, is65=false, localChoice=null, touched={};\n  var FIELDS=['txcWages','txcPension','txcSS','txcMil','txcHomeNow','txcHomeHere'];\n  var KEYS={txcWages:'wages',txcPension:'pension',txcSS:'ss',txcMil:'military',txcHomeNow:'homeNow',txcHomeHere:'homeHere'};\n\n  function money(x){return '$'+Math.round(x).toLocaleString('en-US');}\n  function num(el){return parseFloat((el.value||'').replace(/[^0-9.]/g,''))||0;}\n  function commas(el){var v=num(el);el.value=v?v.toLocaleString('en-US'):'';}\n  function stale(on){wrap.classList.toggle('is-stale',!!on);}\n\n  function localSeg(){\n    var L=T.RULES[st.value].local, w=$('txcLocalWrap'), seg=$('txcLocalSeg');\n    seg.innerHTML='';\n    if(!L||L.kind==='auto'){w.hidden=true;localChoice=null;return;}\n    w.hidden=false;\n    $('txcLocalQ').textContent=L.question;\n    var opts=L.kind==='yesno'?[['yes','Yes'],['no','No']]:L.options;\n    if(localChoice===null){localChoice=L.preset;}\n    opts.forEach(function(o){\n      var b=document.createElement('button');\n      b.type='button';b.textContent=o[1];b.setAttribute('aria-pressed',String(o[0]===localChoice));\n      b.addEventListener('click',function(){\n        localChoice=o[0];\n        Array.prototype.forEach.call(seg.children,function(c){c.setAttribute('aria-pressed',String(c===b));});\n        stale(true);\n      });\n      seg.appendChild(b);\n    });\n  }\n\n  function read(){\n    var v={state:st.value,mfj:mfj,is65:is65,localChoice:localChoice};\n    FIELDS.forEach(function(id){v[KEYS[id]]=num($(id));});\n    return v;\n  }\n\n  function fill(ex){\n    FIELDS.forEach(function(id){\n      var el=$(id), val=ex[KEYS[id]];\n      el.value=val?val.toLocaleString('en-US'):'';\n      el.classList.add('is-example');\n    });\n    touched={};\n  }\n\n  function render(v,isExample){\n    var r=T.calc(v), R=T.RULES[v.state];\n    $('txcCap').textContent=isExample?('Example: a couple leaving '+R.name):'Your numbers, estimated';\n    $('txcNowH').textContent=R.name;\n    $('txcNowInc').textContent=money(r.now.income);\n    $('txcHereInc').textContent=money(r.here.income);\n    $('txcNowProp').textContent=money(r.now.property);\n    $('txcHereProp').textContent=money(r.here.property);\n    $('txcNowTot').textContent=money(r.now.total);\n    $('txcHereTot').textContent=money(r.here.total);\n    var row=$('txcLocalRow');\n    if(r.now.local>0){row.hidden=false;$('txcLocalLab').textContent=r.now.localLabel;$('txcNowLocal').textContent=money(r.now.local);}\n    else{row.hidden=true;}\n    var d=r.difference;\n    if(d>0){\n      $('txcBig').textContent=money(d)+' less a year';\n      $('txcMo').textContent='About '+money(d/12)+' a month, in tax alone.';\n    }else if(d<0){\n      $('txcBig').textContent=money(-d)+' more a year';\n      $('txcMo').textContent='Not every move saves tax money. We would rather show you that now than after you buy.';\n    }else{\n      $('txcBig').textContent='About the same';\n      $('txcMo').textContent='The tax side is a wash here. The house price is usually where the difference shows up.';\n    }\n    var ten=$('txcTen');\n    if(d>0&&r.tenYear>0){ten.hidden=false;\n      ten.innerHTML='Ten years at today&#39;s rates: about <b>'+money(r.tenYear)+'</b>'+(r.equity>0?', tax and the house together.':'.');}\n    else{ten.hidden=true;}\n    var parts=[], pp=r.now.property-r.here.property, pi=r.now.income-r.here.income, pl=r.now.local;\n    if(pp>0)parts.push('property tax '+money(pp));\n    if(pi>0)parts.push('income tax '+money(pi));\n    if(pl>0){var ll=r.now.localLabel||'Local income tax';\n      if(!/^(New York|Yonkers)/.test(ll))ll=ll.charAt(0).toLowerCase()+ll.slice(1);\n      parts.push(ll+' '+money(pl));}\n    var line='';\n    if(parts.length)line='Where you save: '+parts.join(', ')+' a year';\n    if(r.equity>0)line+=(line?', plus about ':'Where you save: about ')+'<b>'+money(r.equity)+'</b> on the house, and a smaller loan with it';\n    if(line)line+='.';\n    if(r.cheaper.gas&&r.cheaper.goods)line+=' Groceries and the gas tax are lower here too.';\n    else if(r.cheaper.goods)line+=' Groceries cost less here too.';\n    else if(r.cheaper.gas)line+=' The gas tax is lower here too.';\n    if(r.propNote)line+=(line?' ':'')+r.propNote;\n    $('txcFrom').innerHTML=line;\n    var note=R.local&&R.local.note?' '+R.local.note:'';\n    var src=$('txcSrc');\n    if(note&&src.getAttribute('data-base')===null){src.setAttribute('data-base',src.textContent);}\n    stale(false);\n  }\n\n  function calculate(){render(read(),false);}\n\n  st.addEventListener('change',function(){localChoice=null;localSeg();fill(T.example(st.value));stale(true);});\n  $('txcSingle').addEventListener('click',function(){mfj=false;this.setAttribute('aria-pressed','true');$('txcJoint').setAttribute('aria-pressed','false');stale(true);});\n  $('txcJoint').addEventListener('click',function(){mfj=true;this.setAttribute('aria-pressed','true');$('txcSingle').setAttribute('aria-pressed','false');stale(true);});\n  $('txcAgeNo').addEventListener('click',function(){is65=false;this.setAttribute('aria-pressed','true');$('txcAgeYes').setAttribute('aria-pressed','false');stale(true);});\n  $('txcAgeYes').addEventListener('click',function(){is65=true;this.setAttribute('aria-pressed','true');$('txcAgeNo').setAttribute('aria-pressed','false');stale(true);});\n  FIELDS.forEach(function(id){\n    var el=$(id);\n    el.addEventListener('input',function(){el.classList.remove('is-example');touched[id]=true;stale(true);});\n    el.addEventListener('blur',function(){commas(el);});\n  });\n  $('txcGo').addEventListener('click',calculate);\n  $('txcReset').addEventListener('click',function(){localChoice=null;localSeg();fill(T.example(st.value));render(T.example(st.value),true);});\n\n  localSeg();\n  var ex=T.example(st.value);\n  fill(ex);\n  render(ex,true);\n})();\n";
+const crypto = require('crypto');
+
+/* The calculator script used to be embedded verbatim into every page, which
+ * cost each of the eleven pages ~24KB of identical inline JS and re-parsed it
+ * on every view. It is now written once to /assets/taxcalc.<hash>.js at
+ * require time (content-hashed, so a changed engine gets a new URL and every
+ * page must be reassembled, which build.js check enforces via the broken-ref
+ * gate) and each page emits one cached <script src> instead. The engine is
+ * still read from tax-engine.js at build time, so the pages, the asset and
+ * data/relocating/test-tax.js can never disagree. */
+let _calcSrc = ENGINE + UI_JS;
+/* Minified when uglify-js is installed (it is, globally, in the build
+ * environment); shipped readable otherwise. Deterministic either way, so the
+ * hash is stable for a given engine + UI + toolchain. */
+try {
+  const ug = require('uglify-js');
+  const out = ug.minify(_calcSrc, { compress: { passes: 2 }, mangle: true });
+  if (!out.error && out.code) _calcSrc = out.code;
+} catch (e) { /* uglify not installed: ship readable */ }
+const CALC_JS = _calcSrc;
+// Same scheme as build.js rehash (md5, 10 hex chars), so the two naming
+// authorities can never disagree about this file's name.
+const CALC_HASH = crypto.createHash('md5').update(CALC_JS).digest('hex').slice(0, 10);
+const CALC_REL = `/assets/taxcalc.${CALC_HASH}.js`;
+{
+  const assetsDir = path.join(__dirname, '..', '..', 'chapter3realty', 'assets');
+  const target = path.join(assetsDir, `taxcalc.${CALC_HASH}.js`);
+  for (const f of fs.readdirSync(assetsDir)) {
+    if (/^taxcalc\.[0-9a-f]{10}\.js$/.test(f) && f !== `taxcalc.${CALC_HASH}.js`) fs.unlinkSync(path.join(assetsDir, f));
+  }
+  fs.writeFileSync(target, CALC_JS);
+}
+
 
 // The order the dropdown offers. Origin states with their own page first.
 const ORDER = ['NY', 'NJ', 'PA', 'OH', 'MD', 'VA', 'NC', 'CT', 'MA', 'FL', 'TX'];
@@ -145,126 +179,7 @@ ${CSS}
 <p class="txc-src" id="txcSrc">An estimate, not a fact. Rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026, and the Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. Left out on both sides: federal tax, car taxes, insurance, and any credit that depends on your own return. Where a state rule is too detailed to model we leave it out, and almost every one of those left out would RAISE the bill in the state you are leaving, not lower it: Connecticut&#39;s tax recapture, New York&#39;s supplemental tax, and the exemption phase-outs in Maryland and Ohio. Three run the other way and we would rather name them: Pennsylvania&#39;s tax forgiveness and the Massachusetts senior circuit breaker are low-income credits we do not apply, and Florida caps how fast a homesteaded home&#39;s assessed value can rise, so a long-held Florida home&#39;s real bill sits below our estimate. If one of those is you, your bill in the state you are leaving is lower than we show. Insurance is its own question on this coast, usually costing more here than in the states up north; coming from coastal Florida it runs address by address, in both directions. The ${A('/buyers/coastal-insurance/', 'coastal insurance page')} has the real numbers. Your accountant has the last word, and we will sit down and go through it with you.</p>
 </div></section>
 
-<script>
-${ENGINE}
-(function(){
-  var $=function(id){return document.getElementById(id);};
-  var wrap=$('txcWrap'), st=$('txcState');
-  if(!wrap||!st||!window.C3TAX){return;}
-  var T=window.C3TAX, mfj=true, is65=false, localChoice=null, touched={};
-  var FIELDS=['txcWages','txcPension','txcSS','txcMil','txcHomeNow','txcHomeHere'];
-  var KEYS={txcWages:'wages',txcPension:'pension',txcSS:'ss',txcMil:'military',txcHomeNow:'homeNow',txcHomeHere:'homeHere'};
-
-  function money(x){return '$'+Math.round(x).toLocaleString('en-US');}
-  function num(el){return parseFloat((el.value||'').replace(/[^0-9.]/g,''))||0;}
-  function commas(el){var v=num(el);el.value=v?v.toLocaleString('en-US'):'';}
-  function stale(on){wrap.classList.toggle('is-stale',!!on);}
-
-  function localSeg(){
-    var L=T.RULES[st.value].local, w=$('txcLocalWrap'), seg=$('txcLocalSeg');
-    seg.innerHTML='';
-    if(!L||L.kind==='auto'){w.hidden=true;localChoice=null;return;}
-    w.hidden=false;
-    $('txcLocalQ').textContent=L.question;
-    var opts=L.kind==='yesno'?[['yes','Yes'],['no','No']]:L.options;
-    if(localChoice===null){localChoice=L.preset;}
-    opts.forEach(function(o){
-      var b=document.createElement('button');
-      b.type='button';b.textContent=o[1];b.setAttribute('aria-pressed',String(o[0]===localChoice));
-      b.addEventListener('click',function(){
-        localChoice=o[0];
-        Array.prototype.forEach.call(seg.children,function(c){c.setAttribute('aria-pressed',String(c===b));});
-        stale(true);
-      });
-      seg.appendChild(b);
-    });
-  }
-
-  function read(){
-    var v={state:st.value,mfj:mfj,is65:is65,localChoice:localChoice};
-    FIELDS.forEach(function(id){v[KEYS[id]]=num($(id));});
-    return v;
-  }
-
-  function fill(ex){
-    FIELDS.forEach(function(id){
-      var el=$(id), val=ex[KEYS[id]];
-      el.value=val?val.toLocaleString('en-US'):'';
-      el.classList.add('is-example');
-    });
-    touched={};
-  }
-
-  function render(v,isExample){
-    var r=T.calc(v), R=T.RULES[v.state];
-    $('txcCap').textContent=isExample?('Example: a couple leaving '+R.name):'Your numbers, estimated';
-    $('txcNowH').textContent=R.name;
-    $('txcNowInc').textContent=money(r.now.income);
-    $('txcHereInc').textContent=money(r.here.income);
-    $('txcNowProp').textContent=money(r.now.property);
-    $('txcHereProp').textContent=money(r.here.property);
-    $('txcNowTot').textContent=money(r.now.total);
-    $('txcHereTot').textContent=money(r.here.total);
-    var row=$('txcLocalRow');
-    if(r.now.local>0){row.hidden=false;$('txcLocalLab').textContent=r.now.localLabel;$('txcNowLocal').textContent=money(r.now.local);}
-    else{row.hidden=true;}
-    var d=r.difference;
-    if(d>0){
-      $('txcBig').textContent=money(d)+' less a year';
-      $('txcMo').textContent='About '+money(d/12)+' a month, in tax alone.';
-    }else if(d<0){
-      $('txcBig').textContent=money(-d)+' more a year';
-      $('txcMo').textContent='Not every move saves tax money. We would rather show you that now than after you buy.';
-    }else{
-      $('txcBig').textContent='About the same';
-      $('txcMo').textContent='The tax side is a wash here. The house price is usually where the difference shows up.';
-    }
-    var ten=$('txcTen');
-    if(d>0&&r.tenYear>0){ten.hidden=false;
-      ten.innerHTML='Ten years at today&#39;s rates: about <b>'+money(r.tenYear)+'</b>'+(r.equity>0?', tax and the house together.':'.');}
-    else{ten.hidden=true;}
-    var parts=[], pp=r.now.property-r.here.property, pi=r.now.income-r.here.income, pl=r.now.local;
-    if(pp>0)parts.push('property tax '+money(pp));
-    if(pi>0)parts.push('income tax '+money(pi));
-    if(pl>0){var ll=r.now.localLabel||'Local income tax';
-      if(!/^(New York|Yonkers)/.test(ll))ll=ll.charAt(0).toLowerCase()+ll.slice(1);
-      parts.push(ll+' '+money(pl));}
-    var line='';
-    if(parts.length)line='Where you save: '+parts.join(', ')+' a year';
-    if(r.equity>0)line+=(line?', plus about ':'Where you save: about ')+'<b>'+money(r.equity)+'</b> on the house, and a smaller loan with it';
-    if(line)line+='.';
-    if(r.cheaper.gas&&r.cheaper.goods)line+=' Groceries and the gas tax are lower here too.';
-    else if(r.cheaper.goods)line+=' Groceries cost less here too.';
-    else if(r.cheaper.gas)line+=' The gas tax is lower here too.';
-    if(r.propNote)line+=(line?' ':'')+r.propNote;
-    $('txcFrom').innerHTML=line;
-    var note=R.local&&R.local.note?' '+R.local.note:'';
-    var src=$('txcSrc');
-    if(note&&src.getAttribute('data-base')===null){src.setAttribute('data-base',src.textContent);}
-    stale(false);
-  }
-
-  function calculate(){render(read(),false);}
-
-  st.addEventListener('change',function(){localChoice=null;localSeg();fill(T.example(st.value));stale(true);});
-  $('txcSingle').addEventListener('click',function(){mfj=false;this.setAttribute('aria-pressed','true');$('txcJoint').setAttribute('aria-pressed','false');stale(true);});
-  $('txcJoint').addEventListener('click',function(){mfj=true;this.setAttribute('aria-pressed','true');$('txcSingle').setAttribute('aria-pressed','false');stale(true);});
-  $('txcAgeNo').addEventListener('click',function(){is65=false;this.setAttribute('aria-pressed','true');$('txcAgeYes').setAttribute('aria-pressed','false');stale(true);});
-  $('txcAgeYes').addEventListener('click',function(){is65=true;this.setAttribute('aria-pressed','true');$('txcAgeNo').setAttribute('aria-pressed','false');stale(true);});
-  FIELDS.forEach(function(id){
-    var el=$(id);
-    el.addEventListener('input',function(){el.classList.remove('is-example');touched[id]=true;stale(true);});
-    el.addEventListener('blur',function(){commas(el);});
-  });
-  $('txcGo').addEventListener('click',calculate);
-  $('txcReset').addEventListener('click',function(){localChoice=null;localSeg();fill(T.example(st.value));render(T.example(st.value),true);});
-
-  localSeg();
-  var ex=T.example(st.value);
-  fill(ex);
-  render(ex,true);
-})();
-</script>`;
+<script src="${CALC_REL}" defer></script>`;
 }
 
 module.exports = { taxCalcSection, ORDER };

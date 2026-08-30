@@ -118,6 +118,7 @@ feature works. Open the real source.
 | 24 | Ran two commands on one line, producing `productionwrangler`. | Give one command per block |
 | 37 | Nearly handed over `curl -sI ...` for the owner to verify a 503. In Windows PowerShell `curl` is an **alias for `Invoke-WebRequest`**, which does not take `-sI`, so the check would have errored and the "is the site really down?" question would have gone unanswered. Real curl is at `C:\WINDOWS\system32\curl.exe`. | Always write `curl.exe` for PowerShell. Test any command in the owner's actual shell before sending it. |
 | 38 | `README.md` gave the deploy command **without** `--branch production`, in two places, while `PLAYBOOK.md` had it right. Cloudflare Pages treats any other branch as a preview deployment, so following the README succeeds, prints a URL, and never updates the live site. | Both files now carry the identical command, and the README says why the flag matters. When two docs give the same command, diff them. |
+| 45 | Asked the owner to approve raising `--muted` from 0.58 to 0.64 for AA, he approved, and the change was one edit from shipping. The premise was stale: a commit on 2026-08-15 ("darken the muted grey for older readers") had already raised it to **0.78**, which measures 7.29:1 on ivory and 6.97:1 on ivory-2. Applying the approved 0.64 would have LOWERED contrast below what is live, with an approval attached. The standing-exception note was written before the fix and never retired. | Measure the rendered value before acting on any recorded defect, however authoritative the note (rules 3 and 4). Retire a standing exception the moment its fix ships. |
 
 ---
 
@@ -137,14 +138,6 @@ Current `audit` warnings that are deliberate. Do not "fix" them silently.
   gate was corrected. Do not strip "0% down" from VA or USDA copy.
 - **`--brass` link colour measures 3.01:1 on ivory**, below AA for body text.
   Brand-level decision.
-- **APPROVED 2026-08-30, pending implementation.** The owner said raise it to
-  0.64. Delete this entry once it ships and the rendered contrast is measured.
-  **`--muted` body text measures 3.91:1 on ivory and 3.80:1 on ivory-2**, below
-  the 4.5:1 AA threshold. This is site-wide and pre-existing, not introduced by
-  any one batch: an existing page and a new one measure identically. `--muted`
-  is `rgba(28,32,40,0.58)`. Raising the alpha to **0.64** clears AA on both
-  backgrounds (4.69 and 4.52) and is visually near-identical. Not changed
-  unilaterally because it repaints every page. Owner's call.
 - **`/sell/` ships a stale duplicate JS bundle** with an old `recalcLtr`. That
   page renders no calculator, so no wrong number reaches a user.
 - **Two pages have no question-shaped heading**, which is weaker for AI answers.
