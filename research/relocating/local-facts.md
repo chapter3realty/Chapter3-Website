@@ -991,3 +991,29 @@ https://portal.ct.gov/-/media/drs/forms/2025/income/ct-1040-tcs_1225.pdf
 - TOOLING NOTE: this container's `cryptography` wheel is broken, which breaks
   pypdf and pdfminer on import. Stub the cryptography modules in sys.modules
   first (unencrypted PDFs never touch them) and pdfminer works fine.
+
+### H7. Florida (from-florida page), all opened 2026-08-30
+
+**No personal income tax, no estate or inheritance tax — constitutional.**
+- Quote (FL Constitution Art. VII, s. 5(a), flsenate.gov/Laws/Constitution): "No tax upon estates or inheritances or upon the income of natural persons who are residents or citizens of the state shall be levied by the state, or under its authority..."
+- One source establishes both the income tax fact and the estate tax fact.
+- Confidence: HIGH.
+
+**Save Our Homes cap, portability, reassessment at sale.**
+- Source: FL DOR brochure PT-112 (R. 08/24), floridarevenue.com/property/Documents/pt112.pdf. Parsed the PDF text directly (WebFetch could not read it; pdfminer with the cryptography stub could).
+- Quotes: "the assessment for each following year cannot increase more than three percent or the percent change in the Consumer Price Index (CPI), whichever is less" (s. 193.155). "If you are moving from a previous Florida homestead to a new homestead in Florida, you may be able to transfer, or 'port,' all or part of your homestead assessment difference" — portability is Florida-to-Florida only. "you must establish a homestead exemption for the new home within three years of January 1 of the year you abandoned the old homestead (not three years after the sale)." "If a change in ownership occurs for a homestead property protected by the SOH cap, the property will lose the SOH benefit and will be subject to assessment at just value on the following January 1."
+- Homestead exemption amount: DOR exemptions page says "as much as $50,000". We did not publish the $25k/$25k split or the $500k portability cap — neither was confirmed at the source we opened.
+- Confidence: HIGH for everything published.
+
+**Groceries exempt from sales tax.**
+- Quote (s. 212.08(1)(a), F.S., flsenate.gov): "Food products for human consumption are exempt from the tax imposed by this chapter."
+- Confidence: HIGH. Cleared the UNVERIFIED flag in state-tax.json.
+
+**Vehicle registration is flat, by weight, never by value.**
+- Source: s. 320.08, F.S. (flsenate.gov): private automobiles "$14.50 flat" under 2,500 lb, "$22.50 flat" 2,500-3,499, "$32.50 flat" 3,500+. Nothing in the section keys on value. (flhsmv.gov/fees returned HTTP 403; the statute is the better source anyway.)
+- Note: these are the license-tax base amounts; county service fees stack on top. The page says only "a flat fee set by the car's weight" and never states a Florida dollar figure, so the stacking cannot make us wrong.
+- Confidence: HIGH. Cleared the UNVERIFIED flag in state-tax.json.
+
+**Engine example home values pinned to col-places.json.**
+- FL example homeNow was 400,000 against a 378,167 zhvi; TX 340,000 against 301,806. Both inflated, both in our favor (bigger property bill there, bigger equity freed). Fixed to 378,000 / 302,000 and test-tax.js now pins all 11 states to zhvi rounded to the nearest thousand.
+- The FL example (working couple, $120,000 wages) computes to about $2,030 MORE tax a year here; the panel and the page copy both say so. test-tax.js pins the sign so a data edit can never silently flip the page's story.

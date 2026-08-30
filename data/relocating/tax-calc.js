@@ -86,6 +86,13 @@ function taxCalcSection(opts) {
   const o = opts || {};
   const bg = o.bg || 'ivory-2';
   const pre = o.preselect || 'NY';
+  // Only an explicit preselect names the state in the H2. The default 'NY'
+  // above is a fallback for the generic page, and its heading must stay
+  // generic - a "What New York taxes you now" H2 on the cost of living page
+  // would be wrong.
+  const h2Text = o.preselect
+    ? 'What ' + NAMES[o.preselect] + ' taxes you now, and what South Carolina would'
+    : 'What you pay in taxes now, and what you would pay here';
   const cta = o.cta || '#lead-form';
   const S = {
     eyebrow: 'font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600',
@@ -98,7 +105,7 @@ function taxCalcSection(opts) {
   return `
 <section style="background:var(--${bg})" id="tax-calc"><div class="wrap">
 <p style="${S.eyebrow}">Side by side</p>
-<h2 style="${S.h2}">What you pay in taxes now, and what you would pay here</h2>
+<h2 style="${S.h2}">${h2Text}</h2>
 <p style="${S.p}">It opens on a real example. Change any line to your own numbers and press Calculate. It estimates the income tax, the local income tax where your town charges one, and the property tax on both ends, and what the price of the house puts back in your pocket. Estimates, not facts. Nothing you type leaves your browser.</p>
 ${CSS}
 <div class="txc" id="txcWrap">
@@ -135,7 +142,7 @@ ${CSS}
     <div class="txc-stale"><p>Press Calculate to see your own numbers.</p></div>
   </div>
 </div>
-<p class="txc-src" id="txcSrc">An estimate, not a fact. Rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026, and the Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. Left out on both sides: federal tax, car taxes, insurance, and any credit that depends on your own return. Where a state rule is too detailed to model we leave it out, and almost every one of those left out would RAISE the bill in the state you are leaving, not lower it: Connecticut&#39;s tax recapture, New York&#39;s supplemental tax, and the exemption phase-outs in Maryland and Ohio. Two run the other way and we would rather name them: Pennsylvania&#39;s tax forgiveness and the Massachusetts senior circuit breaker are low-income credits we do not apply, so if you qualify for one, your bill up north is lower than we show. Insurance is its own question on this coast and usually costs more here than up north; the ${A('/buyers/coastal-insurance/', 'coastal insurance page')} has the real numbers. Your accountant has the last word, and we will sit down and go through it with you.</p>
+<p class="txc-src" id="txcSrc">An estimate, not a fact. Rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026, and the Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. Left out on both sides: federal tax, car taxes, insurance, and any credit that depends on your own return. Where a state rule is too detailed to model we leave it out, and almost every one of those left out would RAISE the bill in the state you are leaving, not lower it: Connecticut&#39;s tax recapture, New York&#39;s supplemental tax, and the exemption phase-outs in Maryland and Ohio. Three run the other way and we would rather name them: Pennsylvania&#39;s tax forgiveness and the Massachusetts senior circuit breaker are low-income credits we do not apply, and Florida caps how fast a homesteaded home&#39;s assessed value can rise, so a long-held Florida home&#39;s real bill sits below our estimate. If one of those is you, your bill in the state you are leaving is lower than we show. Insurance is its own question on this coast, usually costing more here than in the states up north; coming from coastal Florida it runs address by address, in both directions. The ${A('/buyers/coastal-insurance/', 'coastal insurance page')} has the real numbers. Your accountant has the last word, and we will sit down and go through it with you.</p>
 </div></section>
 
 <script>
@@ -229,6 +236,7 @@ ${ENGINE}
     if(r.cheaper.gas&&r.cheaper.goods)line+=' Groceries and the gas tax are lower here too.';
     else if(r.cheaper.goods)line+=' Groceries cost less here too.';
     else if(r.cheaper.gas)line+=' The gas tax is lower here too.';
+    if(r.propNote)line+=(line?' ':'')+r.propNote;
     $('txcFrom').innerHTML=line;
     var note=R.local&&R.local.note?' '+R.local.note:'';
     var src=$('txcSrc');

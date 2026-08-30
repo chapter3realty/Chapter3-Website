@@ -134,6 +134,28 @@ for (const st of ['NY', 'NJ', 'PA', 'OH', 'MD', 'VA', 'NC', 'CT', 'MA']) {
   if (!(e.difference > 0)) { fails++; console.log(`  FAIL ${st} example shows no saving`); }
   else console.log(`  ok   ${st} example saves ${Math.round(e.difference)}`);
 }
+// Florida is the opposite pin. The from-florida page opens on this example and
+// its copy says the yearly tax line moves against a working household; if a
+// data edit ever flips the example positive, the page copy is wrong and this
+// is the alarm. (Property falls, income tax appears, income tax is bigger.)
+{
+  const e = T.calc(T.example('FL'));
+  check('FL example: tax line moves against the mover', e.difference < 0, true);
+  check('FL example: house money still positive', e.equity > 0, true);
+}
+// Example home values are each state's Zillow statewide typical from
+// col-places.json, rounded to the nearest thousand. FL was carrying 400,000
+// against a 378,167 zhvi and TX 340,000 against 301,806 - both inflated, both
+// in our favor (bigger property bill there, bigger equity freed). Pin all 11.
+for (const [abbr, name] of Object.entries(STATE_NAME)) {
+  const row = COL.places.find(p => p.name === `${name} (statewide average)`);
+  check(`${abbr} example home = zhvi rounded`, T.EXAMPLES[abbr].homeNow, Math.round(row.zhvi / 1000) * 1000);
+}
+// The Florida homestead-cap note must reach the panel: our flat propRate
+// estimate overstates a long-held Florida home's bill, so the panel says so.
+check('FL carries the homestead-cap note', !!T.calc(Object.assign({}, base, { state: 'FL' })).propNote, true);
+check('PA carries no property note', T.calc(Object.assign({}, base, { state: 'PA' })).propNote, null);
+check('FL taxes no wages', T.calc(Object.assign({}, base, { state: 'FL', wages: 100000 })).now.income, 0);
 // NJ cliff: at 150,001 of total income the pension exclusion is gone, leaving
 // 160,000 less the $2,000 regular and $2,000 age exemptions.
 check('NJ pension 60k at AGI 160k', run({ state: 'NJ', wages: 100000, pension: 60000, mfj: true, is65: true }).now.taxableIncome, 160000 - 4000);

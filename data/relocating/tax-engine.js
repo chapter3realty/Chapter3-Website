@@ -116,7 +116,13 @@
       local: null,
       ret: 'ma',
     },
-    FL: { name: 'Florida', bS: [[null, 0]], bM: [[null, 0]], std: { s: 0, m: 0 }, exempt: { s: 0, m: 0 }, propRate: .0078, local: null, ret: 'none' },
+    // propNote: Florida caps yearly assessed-value growth on a homesteaded
+    // house (s. 193.155: 3 percent or CPI, whichever is less), so a long-held
+    // home's real bill sits below propRate times market value. Our estimate of
+    // the Florida bill is therefore HIGH for long-tenured owners, which
+    // overstates the saving. The honesty rule says name it, on the panel.
+    FL: { name: 'Florida', bS: [[null, 0]], bM: [[null, 0]], std: { s: 0, m: 0 }, exempt: { s: 0, m: 0 }, propRate: .0078, local: null, ret: 'none',
+          propNote: 'Owned your Florida home for years? Its capped assessed value means your real bill is lower than this estimate, and the gap here smaller. Use your last tax bill.' },
     TX: { name: 'Texas', bS: [[null, 0]], bM: [[null, 0]], std: { s: 0, m: 0 }, exempt: { s: 0, m: 0 }, propRate: .0140, local: null, ret: 'none' },
     SC: {
       name: 'South Carolina',
@@ -333,6 +339,7 @@
      * At today's rates: it is arithmetic on the numbers already shown, not a
      * forecast, and the page says so in those words. */
     out.tenYear = out.difference * 10 + out.equity;
+    out.propNote = (RULES[inp.state] && RULES[inp.state].propNote) || null;
     return out;
   }
 
@@ -344,7 +351,7 @@
     NY: { homeNow: 527000 }, NJ: { homeNow: 584000 }, PA: { homeNow: 291000 },
     OH: { homeNow: 250000 }, MD: { homeNow: 433000 }, VA: { homeNow: 418000 },
     NC: { homeNow: 338000 }, CT: { homeNow: 453000 }, MA: { homeNow: 669000 },
-    FL: { homeNow: 400000 }, TX: { homeNow: 340000 },
+    FL: { homeNow: 378000 }, TX: { homeNow: 302000 },
   };
   function example(code) {
     var e = EXAMPLES[code] || { homeNow: 450000 };
@@ -352,5 +359,5 @@
              homeNow: e.homeNow, homeHere: 342000, localChoice: undefined };
   }
 
-  root.C3TAX = { RULES: RULES, calc: calc, bracketTax: bracketTax, retirement: retirement, example: example, CHEAPER: CHEAPER };
+  root.C3TAX = { RULES: RULES, calc: calc, bracketTax: bracketTax, retirement: retirement, example: example, EXAMPLES: EXAMPLES, CHEAPER: CHEAPER };
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -137,7 +137,7 @@
 
 <section style="background:var(--ivory-2)" id="tax-calc"><div class="wrap">
 <p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">Side by side</p>
-<h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em">What you pay in taxes now, and what you would pay here</h2>
+<h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;letter-spacing:-.01em">What Massachusetts taxes you now, and what South Carolina would</h2>
 <p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1.5rem">It opens on a real example. Change any line to your own numbers and press Calculate. It estimates the income tax, the local income tax where your town charges one, and the property tax on both ends, and what the price of the house puts back in your pocket. Estimates, not facts. Nothing you type leaves your browser.</p>
 
 <style>
@@ -225,7 +225,7 @@
     <div class="txc-stale"><p>Press Calculate to see your own numbers.</p></div>
   </div>
 </div>
-<p class="txc-src" id="txcSrc">An estimate, not a fact. Rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026, and the Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. Left out on both sides: federal tax, car taxes, insurance, and any credit that depends on your own return. Where a state rule is too detailed to model we leave it out, and almost every one of those left out would RAISE the bill in the state you are leaving, not lower it: Connecticut&#39;s tax recapture, New York&#39;s supplemental tax, and the exemption phase-outs in Maryland and Ohio. Two run the other way and we would rather name them: Pennsylvania&#39;s tax forgiveness and the Massachusetts senior circuit breaker are low-income credits we do not apply, so if you qualify for one, your bill up north is lower than we show. Insurance is its own question on this coast and usually costs more here than up north; the <a href="/buyers/coastal-insurance/" style="color:var(--brass);font-weight:600;text-decoration:none">coastal insurance page</a> has the real numbers. Your accountant has the last word, and we will sit down and go through it with you.</p>
+<p class="txc-src" id="txcSrc">An estimate, not a fact. Rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026, and the Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. Left out on both sides: federal tax, car taxes, insurance, and any credit that depends on your own return. Where a state rule is too detailed to model we leave it out, and almost every one of those left out would RAISE the bill in the state you are leaving, not lower it: Connecticut&#39;s tax recapture, New York&#39;s supplemental tax, and the exemption phase-outs in Maryland and Ohio. Three run the other way and we would rather name them: Pennsylvania&#39;s tax forgiveness and the Massachusetts senior circuit breaker are low-income credits we do not apply, and Florida caps how fast a homesteaded home&#39;s assessed value can rise, so a long-held Florida home&#39;s real bill sits below our estimate. If one of those is you, your bill in the state you are leaving is lower than we show. Insurance is its own question on this coast, usually costing more here than in the states up north; coming from coastal Florida it runs address by address, in both directions. The <a href="/buyers/coastal-insurance/" style="color:var(--brass);font-weight:600;text-decoration:none">coastal insurance page</a> has the real numbers. Your accountant has the last word, and we will sit down and go through it with you.</p>
 </div></section>
 
 <script>
@@ -347,7 +347,13 @@
       local: null,
       ret: 'ma',
     },
-    FL: { name: 'Florida', bS: [[null, 0]], bM: [[null, 0]], std: { s: 0, m: 0 }, exempt: { s: 0, m: 0 }, propRate: .0078, local: null, ret: 'none' },
+    // propNote: Florida caps yearly assessed-value growth on a homesteaded
+    // house (s. 193.155: 3 percent or CPI, whichever is less), so a long-held
+    // home's real bill sits below propRate times market value. Our estimate of
+    // the Florida bill is therefore HIGH for long-tenured owners, which
+    // overstates the saving. The honesty rule says name it, on the panel.
+    FL: { name: 'Florida', bS: [[null, 0]], bM: [[null, 0]], std: { s: 0, m: 0 }, exempt: { s: 0, m: 0 }, propRate: .0078, local: null, ret: 'none',
+          propNote: 'Owned your Florida home for years? Its capped assessed value means your real bill is lower than this estimate, and the gap here smaller. Use your last tax bill.' },
     TX: { name: 'Texas', bS: [[null, 0]], bM: [[null, 0]], std: { s: 0, m: 0 }, exempt: { s: 0, m: 0 }, propRate: .0140, local: null, ret: 'none' },
     SC: {
       name: 'South Carolina',
@@ -564,6 +570,7 @@
      * At today's rates: it is arithmetic on the numbers already shown, not a
      * forecast, and the page says so in those words. */
     out.tenYear = out.difference * 10 + out.equity;
+    out.propNote = (RULES[inp.state] && RULES[inp.state].propNote) || null;
     return out;
   }
 
@@ -575,7 +582,7 @@
     NY: { homeNow: 527000 }, NJ: { homeNow: 584000 }, PA: { homeNow: 291000 },
     OH: { homeNow: 250000 }, MD: { homeNow: 433000 }, VA: { homeNow: 418000 },
     NC: { homeNow: 338000 }, CT: { homeNow: 453000 }, MA: { homeNow: 669000 },
-    FL: { homeNow: 400000 }, TX: { homeNow: 340000 },
+    FL: { homeNow: 378000 }, TX: { homeNow: 302000 },
   };
   function example(code) {
     var e = EXAMPLES[code] || { homeNow: 450000 };
@@ -583,7 +590,7 @@
              homeNow: e.homeNow, homeHere: 342000, localChoice: undefined };
   }
 
-  root.C3TAX = { RULES: RULES, calc: calc, bracketTax: bracketTax, retirement: retirement, example: example, CHEAPER: CHEAPER };
+  root.C3TAX = { RULES: RULES, calc: calc, bracketTax: bracketTax, retirement: retirement, example: example, EXAMPLES: EXAMPLES, CHEAPER: CHEAPER };
 })(typeof window !== 'undefined' ? window : globalThis);
 
 (function(){
@@ -675,6 +682,7 @@
     if(r.cheaper.gas&&r.cheaper.goods)line+=' Groceries and the gas tax are lower here too.';
     else if(r.cheaper.goods)line+=' Groceries cost less here too.';
     else if(r.cheaper.gas)line+=' The gas tax is lower here too.';
+    if(r.propNote)line+=(line?' ':'')+r.propNote;
     $('txcFrom').innerHTML=line;
     var note=R.local&&R.local.note?' '+R.local.note:'';
     var src=$('txcSrc');

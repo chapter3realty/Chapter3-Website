@@ -35,8 +35,8 @@ const faq = [
     a: 'It can. New Jersey excludes up to $100,000 of retirement income for a couple at 62 and older when total income is $150,000 or less, which beats South Carolina&#39;s deductions. Above that cliff New Jersey gives nothing and South Carolina&#39;s deductions win. Social Security is untaxed in both.' },
   { q: 'Do Stay NJ, the Senior Freeze or ANCHOR transfer to South Carolina?',
     a: 'No. They are New Jersey programs and they end with the move. South Carolina&#39;s senior break is different: at 65, after one year of residency, the first $50,000 of a primary home&#39;s value is exempt, with no income test.' },
-  { q: 'Is there a car tax in South Carolina?',
-    a: 'Yes, and it is yearly. Expect about $360 to $460 on a $30,000 car depending on the town, plus a $50 road fee, billed by the county before the plate will renew. Each vehicle also pays a one-time $250 fee at its first South Carolina registration, within 45 days of the move.' },
+  { q: 'How much is the car tax in South Carolina?',
+    a: 'It is yearly: about $360 to $460 on a $30,000 car depending on the town, plus a $50 road fee, billed by the county before the plate will renew. Each vehicle also pays a one-time $250 fee at its first South Carolina registration, within 45 days of the move.' },
   { q: 'What gets more expensive after leaving New Jersey?',
     a: 'Clothing gains an 8 to 9 percent sales tax, every vehicle picks up the yearly tax, and coastal insurance is usually higher than an inland New Jersey policy. Price an insurance quote early; it is the line that moves a monthly budget most.' },
 ];

@@ -58,3 +58,27 @@ it. Insurance is NOT, for the reason in the Never do section above.
 - Net effect on the state pages: Connecticut gets neither clause, Ohio and
   North Carolina get gas only, New York, Virginia, Massachusetts and Texas get
   groceries only, and New Jersey, Pennsylvania, Maryland and Florida get both.
+
+## Florida preselect, added 2026-08-30
+
+Florida is the one state where the honest example runs against us, and it is
+built to stay that way:
+
+- `example('FL')` (working couple, $120,000 wages, $378,000 home) computes to
+  about **$2,032 more tax a year here**. The panel says "more a year" with the
+  no-pretending line, and `test-tax.js` pins `difference < 0` so a data edit
+  can never silently flip the page's story to a saving.
+- **Homestead-cap guard.** Our flat 0.78% estimate overstates a long-held,
+  capped Florida home's real bill, which would overstate the mover's current
+  cost, in our favor. `RULES.FL.propNote` now rides the result panel telling
+  the owner to use their last tax bill, and the shared disclaimer names
+  Florida's cap in the runs-the-other-way list beside Pennsylvania's tax
+  forgiveness and the Massachusetts circuit breaker.
+- **Example home values pinned.** FL was 400,000 against a 378,167 zhvi and TX
+  340,000 against 301,806, both inflated, both in our favor. Fixed, and all 11
+  example homes are now gated to col-places.json zhvi rounded to the nearest
+  thousand.
+- Texas carries a similar homestead assessment cap that we have not modelled
+  or noted, because no page preselects TX and no TX claim is published. If a
+  from-texas page is ever built, it needs the same treatment as Florida:
+  verified cap source, propNote, and an example whose sign is pinned.

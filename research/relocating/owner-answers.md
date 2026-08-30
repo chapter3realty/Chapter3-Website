@@ -545,3 +545,34 @@ federal tax, and personal credits.
   comes out $2,824 a year worse: the line disappears.
 - Tests cover the total, the house money being counted exactly once, and the
   no-equity case.
+
+## 2026-08-30: shared H2s, and the Florida page
+
+- He asked whether Google would see the from-state pages as unique. While
+  building the answer from evidence instead of assertion, two real defects
+  surfaced: the Massachusetts page carried one FAQ entry six times (fixed,
+  gated), and the near-duplicate checker was counting CSS as body words,
+  reporting 49-57% where the true overlap is 38% worst (fixed, gated, and the
+  number he was worried about came down with it).
+- Decision on the two identical H2s: the calculator heading is now
+  state-specific on every preselect page ("What Florida taxes you now, and
+  what South Carolina would"), which puts the state name in an H2. The
+  "Move to Myrtle." CTA heading stays identical everywhere on purpose: it is
+  the brand sign-off, not content, and nine variants of it would weaken it.
+- He said build the Florida page. Built at /buyers/relocating/from-florida/,
+  under the standing rule in state-tax.json: never run a tax-savings angle at
+  a Florida buyer. The page leads with the lines that rise, the calculator
+  example opens on a working couple paying about $2,000 MORE a year here, and
+  test-tax.js pins that sign so no future data edit can quietly flip the
+  page's story. Insurance section promises nothing in either direction:
+  quotes on the specific address, wind and flood, before any offer.
+- Florida facts opened at primary sources same day: FL Constitution Art. VII
+  s.5 (no income, estate or inheritance tax), DOR PT-112 (3% assessment cap,
+  portability is Florida-to-Florida only, sale reassessed at just value),
+  s. 212.08 (groceries exempt), s. 320.08 (flat weight-based registration).
+  Both UNVERIFIED flags in state-tax.json cleared.
+- Found while pinning the example: FL and TX example home values were inflated
+  (400k vs 378,167 zhvi; 340k vs 301,806). Both corrected; all 11 now gated
+  against col-places.json.
+- Not on the page because we have no real material: a Florida client story.
+  If he has one, send it and it gets its own section like Ohio's.

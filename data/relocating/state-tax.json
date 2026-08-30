@@ -1,1105 +1,1110 @@
 {
-  "meta": {
-    "generated": "2026-08-16",
-    "note": "Companion to research/relocating/state-tax-table.md. Tax year 2026 unless a field note says otherwise. RATES ARE DECIMAL FRACTIONS: 0.0399 means 3.99 percent. Bracket arrays are ordered lowest to highest; each entry's 'upTo' is the top of that bracket in dollars of that state's taxable income, and the final entry has upTo: null meaning no ceiling. effectivePropertyTaxRate is median real estate taxes paid divided by median owner-occupied home value, ACS 2024 data, from Tax Foundation's March 16, 2026 table. medianPropertyTaxBill is the ACS 2024 1-year state median (table B25103), which is a different vintage from the effective rate and will not divide out exactly. Local income taxes are EXCLUDED from bracketsSingle/bracketsMFJ/topRate - NY, OH, PA and MD all levy them on top and the omission understates those states. Anything the markdown marks UNVERIFIED is not repeated here as if it were fact. Do not put a figure from this file on a public page without reading the corresponding markdown section first, which carries the caveats. VERIFICATION DEPTH IS NOT UNIFORM. SC, NY, NC, OH, NJ and PA were built from statutes, departments of revenue and DMV fee schedules opened directly (markdown sections 1-6). MD, VA, CT, MA, MI, IL, GA, FL, TX and CA (markdown section 7) lean on Tax Foundation plus the AARP state tax guides, with a primary source opened only where a field note says so; treat them as MEDIUM unless stated. A null in gasTaxCentsPerGallon means sources contradicted each other: read gasTaxNote and do not publish a figure. A null in annualVehicleTax means it was not established, and it flips the framing for that state, so resolve it before writing copy.",
-    "statesIncluded": [
-      "SC",
-      "NY",
-      "NC",
-      "OH",
-      "NJ",
-      "PA",
-      "MD",
-      "VA",
-      "CT",
-      "MA",
-      "MI",
-      "IL",
-      "GA",
-      "FL",
-      "TX",
-      "CA"
-    ],
-    "statesPending": [],
-    "sources": [
-      "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/",
-      "https://taxfoundation.org/data/all/state/2026-sales-tax-rates-midyear/",
-      "https://taxfoundation.org/data/all/state/property-taxes-by-state-county/",
-      "https://taxfoundation.org/data/all/state/gas-taxes-state/",
-      "https://taxfoundation.org/data/all/state/estate-inheritance-taxes/",
-      "https://data.census.gov/table/ACSDT1Y2024.B25103"
-    ]
-  },
-  "states": [
-    {
-      "state": "South Carolina",
-      "abbr": "SC",
-      "incomeTaxType": "graduated",
-      "topRate": 0.0521,
-      "bracketsSingle": [
-        {
-          "upTo": 30000,
-          "rate": 0.0199
-        },
-        {
-          "upTo": null,
-          "rate": 0.0521
-        }
-      ],
-      "bracketsMFJ": [
-        {
-          "upTo": 30000,
-          "rate": 0.0199
-        },
-        {
-          "upTo": null,
-          "rate": 0.0521
-        }
-      ],
-      "stdDeductionSingle": 15000,
-      "stdDeductionMFJ": 30000,
-      "taxesSocialSecurity": false,
-      "socialSecurityNote": "Fully exempt. SC DOR: 'Social Security benefits and railroad retirement taxed for federal purposes are exempt from Individual Income Tax in South Carolina.'",
-      "retirementExclusionNote": "Retirement income deduction under SC Code 12-6-1170(A): up to $3,000/yr of qualified retirement income before age 65, up to $10,000/yr at 65 and after, per taxpayer. Separate age-65 deduction under 12-6-1170(B): $15,000 against any SC income per qualifying spouse ($30,000 when both are 65+), reduced by any retirement or military deduction claimed. All military retirement pay is fully exempt at any age (12-6-1171). H.4216 did not change any of these.",
-      "effectivePropertyTaxRate": 0.0049,
-      "medianPropertyTaxBill": 1337,
-      "stateSalesTax": 0.06,
-      "avgCombinedSalesTax": 0.0749,
-      "groceriesTaxedState": false,
-      "annualVehicleTax": true,
-      "vehicleTaxNote": "Annual county property tax on vehicles at 6% of fair market value times the full local millage, school operating included. Must be paid before the plate renews. Horry County estimate: $30,000 car about $362/yr unincorporated, about $458/yr in the City of Myrtle Beach, plus a $50 county road maintenance fee. One-time $250 Infrastructure Maintenance Fee when a vehicle first titled in another state is registered in SC; 45 days to register after moving. Standard plate fee UNVERIFIED (dmv.sc.gov blocks automated fetch).",
-      "estateTax": false,
-      "estateTaxNote": "None.",
-      "inheritanceTax": false,
-      "inheritanceTaxNote": "None.",
-      "gasTaxCentsPerGallon": 28.75,
-      "movingOutGotcha": "Destination state, not an origin. Inbound: 45 days to register vehicles and pay the $250 IMF; apply to the county assessor for the 4% owner-occupied assessment ratio before the first penalty date of the first year claimed, or the home is taxed at 6% with school operating millage included, roughly 3.3x the bill.",
-      "sources": [
-        "https://dor.sc.gov/news/information-about-h-4216",
-        "https://www.scstatehouse.gov/sess126_2025-2026/bills/4216.htm",
-        "https://dor.sc.gov/tax-tips/retirees-lower-your-individual-income-tax-bill-these-five-tips",
-        "https://www.scstatehouse.gov/code/t12c006.php",
-        "https://www.sccounties.org/sites/default/files/uploads/resource-files/property-tax-rates-by-county-2025.pdf",
-        "https://www.dor.sc.gov/sites/dor/files/forms/ST575.pdf",
-        "https://dor.sc.gov/income-tax-motor-fuel-user-fee-property-tax-south-carolina-infrastructure-and-economic-development-reform-act-0"
-      ],
-      "asOf": "2026 tax year (H.4216 / Act 110, signed March 30, 2026)"
-    },
-    {
-      "state": "New York",
-      "abbr": "NY",
-      "incomeTaxType": "graduated",
-      "topRate": 0.109,
-      "bracketsSingle": [
-        {
-          "upTo": 8500,
-          "rate": 0.039
-        },
-        {
-          "upTo": 11700,
-          "rate": 0.044
-        },
-        {
-          "upTo": 13900,
-          "rate": 0.0515
-        },
-        {
-          "upTo": 80650,
-          "rate": 0.054
-        },
-        {
-          "upTo": 215400,
-          "rate": 0.059
-        },
-        {
-          "upTo": 1077550,
-          "rate": 0.0685
-        },
-        {
-          "upTo": 5000000,
-          "rate": 0.0965
-        },
-        {
-          "upTo": 25000000,
-          "rate": 0.103
-        },
-        {
-          "upTo": null,
-          "rate": 0.109
-        }
-      ],
-      "bracketsMFJ": [
-        {
-          "upTo": 17150,
-          "rate": 0.039
-        },
-        {
-          "upTo": 23600,
-          "rate": 0.044
-        },
-        {
-          "upTo": 27900,
-          "rate": 0.0515
-        },
-        {
-          "upTo": 161550,
-          "rate": 0.054
-        },
-        {
-          "upTo": 323200,
-          "rate": 0.059
-        },
-        {
-          "upTo": 2155350,
-          "rate": 0.0685
-        },
-        {
-          "upTo": 5000000,
-          "rate": 0.0965
-        },
-        {
-          "upTo": 25000000,
-          "rate": 0.103
-        },
-        {
-          "upTo": null,
-          "rate": 0.109
-        }
-      ],
-      "stdDeductionSingle": 8000,
-      "stdDeductionMFJ": 16050,
-      "taxesSocialSecurity": false,
-      "socialSecurityNote": "Fully exempt. NY DTF: 'Social security benefits that are included in federal adjusted gross income may be subtracted from your federal adjusted gross income when computing your New York adjusted gross income.'",
-      "retirementExclusionNote": "$20,000 pension and annuity exclusion at age 59.5 or older, per taxpayer not per return, so $40,000 on a joint return only when both spouses have their own qualifying income. IRA and 401(k) distributions count toward that $20,000 rather than being separately exempt. New York State and local government pensions, federal pensions including military, and certain public authority pensions are fully exempt with no dollar cap and no age test.",
-      "effectivePropertyTaxRate": 0.013,
-      "medianPropertyTaxBill": 6542,
-      "stateSalesTax": 0.04,
-      "avgCombinedSalesTax": 0.0854,
-      "groceriesTaxedState": false,
-      "annualVehicleTax": false,
-      "vehicleTaxNote": "No annual property or excise tax on vehicles. Registration is weight-based: $26.00 to $140.00 for TWO years. Plates $25, title $50. County vehicle use tax plus MCTD supplemental fee: NYC $30 use tax plus $50 supplemental per two years; most other counties $10 to $20 per two years. Roughly $13 to $70 a year all in.",
-      "estateTax": true,
-      "estateTaxNote": "Basic exclusion amount $7,350,000 for deaths in 2026 ($7,160,000 in 2025), rates 3.06% to 16%. A 'cliff' reportedly removes the exclusion entirely for taxable estates above 105% of it (about $7,717,500); that mechanic is from Wealthspire, not restated on the NY DTF page opened 2026-08-16, so treat it as MEDIUM confidence.",
-      "inheritanceTax": false,
-      "inheritanceTaxNote": "None.",
-      "gasTaxCentsPerGallon": null,
-      "gasTaxNote": "CONTRADICTION, do not publish a figure. Tax Foundation (July 2025) gives 24.87 cents; AARP (March 31, 2026) gives 23.85 cents for 2026. The two count different components of New York's motor fuel excise, petroleum business tax and prepaid sales tax stack. Either way New York is BELOW South Carolina's 28.75 cents, so this is the one origin state where per-gallon state tax goes up on a move. Needs a human check at tax.ny.gov.",
-      "movingOutGotcha": "Two traps. First, domicile: NY DTF says 'Your New York domicile does not change until you can demonstrate with clear and convincing evidence that you have abandoned your New York domicile and established a new domicile outside New York State.' Second, statutory residence: even after a real domicile change, New York taxes you as a full-year resident if you keep 'a permanent place of abode in New York State for substantially all of the taxable year' AND spend '184 days or more in New York State during the taxable year' - so keeping the Long Island house and visiting family half the year can leave a former New Yorker taxed by both states.",
-      "sources": [
-        "https://www.tax.ny.gov/pit/file/information_for_seniors.htm",
-        "https://www.tax.ny.gov/pit/file/nonresident-faqs.htm",
-        "https://www.tax.ny.gov/pit/file/standard_deductions.htm",
-        "https://www.tax.ny.gov/pit/estate/etidx.htm",
-        "https://www.tax.ny.gov/pubs_and_bulls/tg_bulletins/st/food_sold_by_food_stores.htm",
-        "https://dmv.ny.gov/registration/registration-fees-use-taxes-and-supplemental-fees-passenger-vehicles",
-        "https://www.aarp.org/states/new-york/state-taxes-guide/",
-        "https://www.anchin.com/articles/new-york-states-2026-fiscal-year-budget-finally-passes/"
-      ],
-      "asOf": "2026 tax year. Standard deduction figures are the 2025 table, which NY does not index, so they carry to 2026. Another 0.1 point comes off the bottom five brackets in 2027."
-    },
-    {
-      "state": "North Carolina",
-      "abbr": "NC",
-      "incomeTaxType": "flat",
-      "topRate": 0.0399,
-      "bracketsSingle": [
-        {
-          "upTo": null,
-          "rate": 0.0399
-        }
-      ],
-      "bracketsMFJ": [
-        {
-          "upTo": null,
-          "rate": 0.0399
-        }
-      ],
-      "stdDeductionSingle": 12750,
-      "stdDeductionMFJ": 25500,
-      "taxesSocialSecurity": false,
-      "socialSecurityNote": "Fully exempt. N.C.G.S. 105-153.5(b)(3) deducts 'Benefits received under Title II of the Social Security Act and amounts received from retirement annuities or pensions paid under the provisions of the Railroad Retirement Act of 1937.'",
-      "retirementExclusionNote": "No general age-based exclusion. Private pensions, 401(k), 403(b), traditional IRA withdrawals and annuities are fully taxed at 3.99%. Two carve-outs: the Bailey settlement exempts benefits from NC and federal government defined benefit plans (and State 401(k)/457 plans) but ONLY for retirees with five or more years of creditable service as of August 12, 1989, a closed and shrinking class; and military retirement pay is exempt for a retiree who served at least 20 years in the uniformed services or was medically retired.",
-      "effectivePropertyTaxRate": 0.0066,
-      "medianPropertyTaxBill": 2044,
-      "stateSalesTax": 0.0475,
-      "avgCombinedSalesTax": 0.071,
-      "groceriesTaxedState": false,
-      "groceriesNote": "Exempt from the state and transit rates, but a 2.00% local rate applies to qualifying food. Candy, soft drinks, prepared food, dietary supplements and vending-machine food are taxed at the full combined rate.",
-      "annualVehicleTax": true,
-      "vehicleTaxNote": "Annual county vehicle property tax, collected with registration renewal under the Tag and Tax Together program: 'You must pay both your vehicle's registration and the property tax at the same time.' Registration fee for a regular private passenger vehicle is $46.25 per year, effective July 1, 2024, adjusted every four years to CPI (next adjustment due July 1, 2028). Highway Use Tax at titling is 3%, capped at $2,000 only for commercial vehicles and RVs.",
-      "estateTax": false,
-      "estateTaxNote": "None.",
-      "inheritanceTax": false,
-      "inheritanceTaxNote": "None.",
-      "gasTaxCentsPerGallon": 41.25,
-      "gasTaxNote": "NCDOR 2026 motor fuels rate is 41.0 cents plus a 0.25 cent inspection tax = 41.25 cents. This SUPERSEDES the Tax Foundation July 2025 figure of 40.55 and the AARP figure of 40.3 (which is the 2025 rate).",
-      "movingOutGotcha": "The counterintuitive one: state income tax can go UP. NC is a flat 3.99% with a $25,500 joint standard deduction; SC from 2026 is 1.99% on the first $30,000 then 5.21%, with a deduction that phases out between $80,000 and $190,000 of joint AGI. Arithmetic on the two published schedules (joint, no dependents, no credits) puts the crossover around $100,000 of joint AGI - above that a mover from NC pays more state income tax in SC. Those are internal estimates, not published figures; re-run them before use. Mechanically, leaving NC is simple: a part-year Form D-400 with Schedule PN, and no statutory day-count residency test of the New York or Ohio kind.",
-      "sources": [
-        "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-153.7.html",
-        "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-153.5.html",
-        "https://www.ncdor.gov/taxes-forms/individual-income-tax/tax-rate-schedules",
-        "https://www.ncdor.gov/taxes-forms/individual-income-tax/bailey-decision-concerning-federal-state-and-local-retirement-benefits",
-        "https://www.ncdor.gov/taxes-forms/sales-and-use-tax/food-non-qualifying-food-and-prepaid-meal-plans",
-        "https://www.ncdor.gov/taxes-forms/motor-fuels-tax/motor-fuels-tax-rates",
-        "https://www.ncdot.gov/dmv/title-registration/Pages/vehicle-property-tax.aspx",
-        "https://www.ncdot.gov/news/press-releases/Pages/2024/2024-04-02-ncdmv-fee-increase-state-law.aspx",
-        "https://www.aarp.org/states/north-carolina/state-taxes-guide/"
-      ],
-      "asOf": "2026 tax year. Further rate cuts possible from 2027 under the N.C.G.S. 105-153.7(a1) revenue trigger; do not publish a 2027 rate."
-    },
-    {
-      "state": "Ohio",
-      "abbr": "OH",
-      "incomeTaxType": "flat",
-      "topRate": 0.0275,
-      "bracketsSingle": [
-        {
-          "upTo": 26050,
-          "rate": 0
-        },
-        {
-          "upTo": null,
-          "rate": 0.0275
-        }
-      ],
-      "bracketsMFJ": [
-        {
-          "upTo": 26050,
-          "rate": 0
-        },
-        {
-          "upTo": null,
-          "rate": 0.0275
-        }
-      ],
-      "stdDeductionSingle": null,
-      "stdDeductionMFJ": null,
-      "bracketsNote": "SIMPLIFIED. Ohio uses one schedule for all filing statuses and has no standard deduction, only personal exemptions ($2,400 single / $4,800 MFJ for 2026, reduced to $2,150 each at $40k-$80k MAGI and $1,900 each above $80k, and lost entirely at MAGI of $500,000 or more from 2026). The statute, ORC 5747.02(A)(3)(c), reads 'For taxable years beginning in 2026 and thereafter, $332.00 plus 2.75% of the amount in excess of $26,050' - a $332 base amount, not a smooth zero-then-2.75% ramp. Do not build a calculator on the two-bracket simplification above without checking the 2026 Form IT 1040.",
-      "taxesSocialSecurity": false,
-      "socialSecurityNote": "Fully exempt. ORC 5747.01 deducts 'Benefits under Title II of the Social Security Act and tier 1 railroad retirement' from federal AGI.",
-      "retirementExclusionNote": "Pensions, 401(k) and IRA withdrawals ARE taxable at 2.75%. No exclusion, only two small credits under ORC 5747.055, both capped at modified AGI less exemptions below $100,000: a retirement income credit on a sliding schedule topping out at $200 per return ('Only one such credit shall be allowed for each return'), and a $50 per return senior citizen credit at age 65 or older. Ohio's 'retirement income credit' sounds generous and is worth at most $200 a year.",
-      "effectivePropertyTaxRate": 0.0136,
-      "medianPropertyTaxBill": 2937,
-      "stateSalesTax": 0.0575,
-      "avgCombinedSalesTax": 0.0729,
-      "groceriesTaxedState": false,
-      "groceriesNote": "ORC 5739.02(B)(2) exempts 'Sales of food for human consumption off the premises where sold.'",
-      "annualVehicleTax": false,
-      "vehicleTaxNote": "No annual property or excise tax on vehicles. Ohio BMV passenger vehicle registration is $36.00 per year effective 1/5/2026, plus an $8.00 deputy registrar fee for a one-year renewal, plus a local permissive tax that 'cannot exceed $30.00 per vehicle'. Title fee $18 statewide, $23 in some counties. Roughly $44 to $74 a year, none of it tied to vehicle value.",
-      "estateTax": false,
-      "estateTaxNote": "None. Ohio's estate tax was repealed for deaths on or after January 1, 2013 (repeal date UNVERIFIED at a primary source; the current-year answer of 'none' is confirmed).",
-      "inheritanceTax": false,
-      "inheritanceTaxNote": "None.",
-      "gasTaxCentsPerGallon": 38.5,
-      "movingOutGotcha": "Ohio's bright-line residency test has one condition that catches almost everybody: you cannot hold an Ohio driver's license or state ID at any point in the year. ORC 5747.24(B)(1) presumes non-domicile for a full year only if you file a statement with the tax commissioner AND have no more than 212 contact periods in Ohio, keep an abode outside Ohio all year, 'did not hold a valid Ohio driver's license or identification card at any time during the taxable year', and claimed no Ohio homestead property tax reduction. The statement is due by October 15 and a false one 'is guilty of perjury'. File it and qualify and the presumption is 'irrebuttable'; fail to file and you are presumed Ohio-domiciled for the entire year. A 'contact period' is any portion, 'however minimal, of each of two consecutive days in this state'.",
-      "sources": [
-        "https://codes.ohio.gov/ohio-revised-code/section-5747.02",
-        "https://codes.ohio.gov/ohio-revised-code/section-5747.025",
-        "https://codes.ohio.gov/ohio-revised-code/section-5747.055",
-        "https://codes.ohio.gov/ohio-revised-code/section-5747.24",
-        "https://codes.ohio.gov/ohio-revised-code/section-5747.01",
-        "https://codes.ohio.gov/ohio-revised-code/section-5739.02",
-        "https://tax.ohio.gov/individual/resources/annual-tax-rates",
-        "https://www.bmv.ohio.gov/doc-fees.aspx",
-        "https://www.aarp.org/states/ohio/state-taxes-guide/"
-      ],
-      "asOf": "2026 tax year (HB 96, 136th General Assembly, effective September 30, 2025). NOTE: Ohio municipalities levy their own income tax (commonly 1% to 3%) and many school districts levy a separate SDIT on top; Tax Foundation puts Ohio's average effective local income tax rate at 1.49%. South Carolina has none."
-    },
-    {
-      "state": "New Jersey",
-      "abbr": "NJ",
-      "incomeTaxType": "graduated",
-      "topRate": 0.1075,
-      "bracketsSingle": [
-        {
-          "upTo": 20000,
-          "rate": 0.014
-        },
-        {
-          "upTo": 35000,
-          "rate": 0.0175
-        },
-        {
-          "upTo": 40000,
-          "rate": 0.035
-        },
-        {
-          "upTo": 75000,
-          "rate": 0.05525
-        },
-        {
-          "upTo": 500000,
-          "rate": 0.0637
-        },
-        {
-          "upTo": 1000000,
-          "rate": 0.0897
-        },
-        {
-          "upTo": null,
-          "rate": 0.1075
-        }
-      ],
-      "bracketsMFJ": [
-        {
-          "upTo": 20000,
-          "rate": 0.014
-        },
-        {
-          "upTo": 50000,
-          "rate": 0.0175
-        },
-        {
-          "upTo": 70000,
-          "rate": 0.0245
-        },
-        {
-          "upTo": 80000,
-          "rate": 0.035
-        },
-        {
-          "upTo": 150000,
-          "rate": 0.05525
-        },
-        {
-          "upTo": 500000,
-          "rate": 0.0637
-        },
-        {
-          "upTo": 1000000,
-          "rate": 0.0897
-        },
-        {
-          "upTo": null,
-          "rate": 0.1075
-        }
-      ],
-      "stdDeductionSingle": null,
-      "stdDeductionMFJ": null,
-      "bracketsNote": "No standard deduction. Personal exemption $1,000 single / $2,000 MFJ, dependent exemption $1,500. An additional exemption at age 65+ exists but the amount is UNVERIFIED here.",
-      "taxesSocialSecurity": false,
-      "socialSecurityNote": "Fully exempt. NJ Division of Taxation lists 'Social Security and Railroad Retirement benefits' as nontaxable retirement income.",
-      "retirementExclusionNote": "Pension Exclusion at age 62 or older (or disabled), with a hard income cliff. Total income $150,001 or more: 'Not eligible for a pension exclusion.' Total income $1 to $100,000: exclude taxable pension, annuity and IRA withdrawals up to $100,000 MFJ, $75,000 single/HOH/QW, $50,000 MFS. $100,001 to $125,000: exclude 50% MFJ, 37.5% single, 25% MFS of the taxable pension. $125,001 to $150,000: 25% MFJ, 18.75% single, 12.5% MFS. Military pensions and survivor benefits are exempt at any age; civil service annuities are not. Nonresidents pay no NJ tax on pension, annuity or IRA income at all. Below $100,000 of total income this exclusion is MORE generous than South Carolina's, so a NJ retiree under the cap can pay more income tax after moving.",
-      "effectivePropertyTaxRate": 0.0188,
-      "medianPropertyTaxBill": 9358,
-      "stateSalesTax": 0.06625,
-      "avgCombinedSalesTax": 0.066,
-      "groceriesTaxedState": false,
-      "groceriesNote": "Most groceries exempt, and New Jersey also exempts most clothing and footwear entirely, which South Carolina does not. Grocery treatment sourced to AARP (April 6, 2026); the nj.gov exemption pages 404'd on 2026-08-16, so MEDIUM confidence.",
-      "annualVehicleTax": false,
-      "vehicleTaxNote": "No annual property or excise tax on vehicles. NJ MVC registration by weight class and model year: $46.50 (under 3,500 lbs, older than 2 years), $59.00 (under 3,500 lbs, within 2 years), $71.50 (over 3,500 lbs, older than 2 years); older model-year classes $35.50 to $72.50. Zero-emission vehicles pay an added annual fee, $250 from July 1, 2024, rising $10 per year for four years. One-time 0.4% fee on new passenger cars costing $45,000 or more.",
-      "estateTax": false,
-      "estateTaxNote": "None since 2018. NJ Division of Taxation: 'New Jersey Estate Tax is no longer imposed for individuals who died on or after January 1, 2018.'",
-      "inheritanceTax": true,
-      "inheritanceTaxNote": "Transfer Inheritance Tax based on WHO inherits, not estate size. Class A is fully exempt: parent, grandparent, spouse, child (including legally adopted), grandchild and great-grandchild, stepchild (not step-grandchild), mutually acknowledged child, civil union partner after 2/19/2007, domestic partner after 7/10/2004. Class C (sibling, or spouse/civil union partner of a child) gets a $25,000 exemption then 11% to 16%. Class D (everyone else) 15% to 16%, no exemption. Class E (charities, religious, educational, medical, government) exempt. Most buyers leave to spouse and children, who pay nothing.",
-      "gasTaxCentsPerGallon": 49.1,
-      "gasTaxNote": "Effective January 1, 2026: PPGRT rose from 34.4 to 38.6 cents plus the fixed 10.5 cent Motor Fuels Tax = 49.1 cents. SUPERSEDES the Tax Foundation July 2025 figure of 44.95.",
-      "movingOutGotcha": "The so-called 'exit tax' is not a tax. It is an estimated Gross Income Tax payment a NON-RESIDENT seller must make before the deed can be recorded (N.J.S.A. 54A:8-8 to 8-10), calculated as the federal reportable gain times the top 10.75% rate but 'not less than 2% of the seller's consideration...stated in the deed', and it is credited or refunded on the New Jersey non-resident return. It is owed even with no gain: 'Even if the seller/grantor do not recognize a gain, they are still required to pay at least 2% of the total consideration stated in the deed on or before the time of closing.' The ordering matters: a seller still resident in NJ at closing files GIT/REP-3 and nothing is withheld; a seller who has already moved to South Carolina files GIT/REP-1 with payment. There is also an IRC Section 121 exemption where the property was a principal residence and the ENTIRE gain is federally excludable.",
-      "sources": [
-        "https://www.nj.gov/treasury/taxation/njit6.shtml",
-        "https://www.nj.gov/treasury/taxation/njit7.shtml",
-        "https://www.nj.gov/treasury/taxation/inheritance-estate/inheritance.shtml",
-        "https://www.nj.gov/treasury/taxation/pdf/other_forms/inheritance/transferinheritanceclasses.pdf",
-        "https://www.nj.gov/mvc/vehicles/regfees.htm",
-        "https://www.nj.gov/treasury/taxation/pdf/pubs/tb/tb57r.pdf",
-        "https://www.nj.gov/treasury/taxation/gitrepfaqs.shtml",
-        "https://www.nj.gov/treasury/news/2025/12012025.shtml",
-        "https://www.aarp.org/states/new-jersey/state-taxes-guide/"
-      ],
-      "asOf": "2026 tax year. Pension exclusion tiers are the figures NJ publishes against the 2025 NJ-1040; nothing different has been published for 2026 as of 2026-08-16. NJ property tax relief programs (Stay NJ, Senior Freeze, ANCHOR) do not travel and must be netted off before claiming a property tax saving."
-    },
-    {
-      "state": "Pennsylvania",
-      "abbr": "PA",
-      "incomeTaxType": "flat",
-      "topRate": 0.0307,
-      "bracketsSingle": [
-        {
-          "upTo": null,
-          "rate": 0.0307
-        }
-      ],
-      "bracketsMFJ": [
-        {
-          "upTo": null,
-          "rate": 0.0307
-        }
-      ],
-      "stdDeductionSingle": null,
-      "stdDeductionMFJ": null,
-      "bracketsNote": "No standard deduction and no personal exemption. Pennsylvania has a low-income Tax Forgiveness credit (Schedule SP) whose limits are UNVERIFIED here. Local earned income tax is levied by most municipalities on top of the 3.07%, averaging 1.07% effective statewide and reaching 3.74% in Philadelphia and 3.75% in Chester City.",
-      "taxesSocialSecurity": false,
-      "socialSecurityNote": "Fully exempt.",
-      "retirementExclusionNote": "Pennsylvania taxes NO retirement income once you are retired. PA DOR: 'Under Pennsylvania law, payments commonly recognized as old age or retirement benefits are not subject to tax. In order to be considered exempt retirement benefits, the payments must come from an eligible Pennsylvania retirement plan and must be paid to persons retired from service after reaching a specific age or after a stated period of employment.' Eligible plans include 401(a) qualified pension plans, IRAs, Roth IRAs, SEPs and Keoghs. Military retirement also exempt. The exception is early distributions: those taken 'before retirement age or years of service are taxable in the year received to the extent that the distributions exceed previously taxed contributions.' Note also that PA taxes 401(k) contributions going in - 'Employee contributions to any retirement plan are always taxable as compensation.'",
-      "effectivePropertyTaxRate": 0.0126,
-      "medianPropertyTaxBill": 3214,
-      "stateSalesTax": 0.06,
-      "avgCombinedSalesTax": 0.0634,
-      "groceriesTaxedState": false,
-      "groceriesNote": "Most groceries exempt, and Pennsylvania also exempts candy, gum and most clothing, which South Carolina does not. Sourced to AARP (March 24, 2026); statute 72 P.S. 7204 UNVERIFIED here.",
-      "annualVehicleTax": false,
-      "vehicleTaxNote": "No annual property or excise tax on vehicles. PennDOT Form MV-70S (4-26): passenger registration $48.00 for one year, $96.00 for two. Certificate of title $72.00. Participating counties add a $5 annual Fee for Local Use. New for 2026, a Road User Charge of $250/yr for electric vehicles and $63/yr for plug-in hybrids. About $48 to $53 a year for a gasoline car, regardless of value.",
-      "estateTax": false,
-      "estateTaxNote": "None.",
-      "inheritanceTax": true,
-      "inheritanceTaxNote": "Yes, with NO exemption threshold. PA DOR: '0 percent on transfers to a surviving spouse or to a parent from a child aged 21 or younger; 4.5 percent on transfers to direct descendants and lineal heirs; 12 percent on transfers to siblings; and 15 percent on transfers to other heirs, except charitable organizations, exempt institutions and government entities exempt from tax.' Property owned jointly between spouses is exempt. Unlike New Jersey, Pennsylvania taxes transfers to CHILDREN, at 4.5% from the first dollar. Due at death, delinquent nine months later, 5% discount if paid within three months.",
-      "gasTaxCentsPerGallon": 57.6,
-      "gasTaxNote": "PA DOR 2026 motor fuel tax rate on liquid fuels (motor gasoline and gasohol) is $0.576/gallon, effective January 1, 2026, unchanged from 2025. Tax Foundation's 58.70 for July 2025 is about 1.1 cents higher because it adds other per-gallon taxes and fees; cite whichever you use.",
-      "movingOutGotcha": "Pennsylvania inheritance tax follows Pennsylvania real estate even after you stop being a Pennsylvanian. Section 2116(b)(2) of the Inheritance and Estate Tax Act of 1991: 'When the decedent was a nonresident, the tax shall be computed upon the value of real property and tangible personal property having its situs in this Commonwealth...at the rates in effect at the transferor's death.' Keeping the Bucks County house does not escape it - the estate files Form REV-1737-A and pays at the same 4.5% / 12% / 15% rates. Second, running the other way: Pennsylvania taxes no retirement income at all, so a retiree moving to South Carolina starts paying state income tax on a pension for the first time. Small after SC's deductions, but not zero. Do not claim an income tax saving for a Pennsylvania mover.",
-      "sources": [
-        "https://www.pa.gov/agencies/revenue/forms-and-publications/pa-personal-income-tax-guide/gross-compensation",
-        "https://www.pa.gov/agencies/revenue/resources/tax-types-and-information/inheritance-tax",
-        "https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/inheritancetax/documents/rev-1737-a.pdf",
-        "https://www.pa.gov/agencies/revenue/resources/tax-rates/motor-fuel-tax-rates",
-        "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-forms/mv-70s.pdf",
-        "https://www.aarp.org/states/pennsylvania/state-taxes-guide/"
-      ],
-      "asOf": "2026 tax year"
-    },
-    {
-      "state": "Maryland",
-      "abbr": "MD",
-      "incomeTaxType": "graduated",
-      "topRate": 0.065,
-      "bracketsSingle": [
-        {
-          "upTo": 1000,
-          "rate": 0.02
-        },
-        {
-          "upTo": 2000,
-          "rate": 0.03
-        },
-        {
-          "upTo": 3000,
-          "rate": 0.04
-        },
-        {
-          "upTo": 100000,
-          "rate": 0.0475
-        },
-        {
-          "upTo": 125000,
-          "rate": 0.05
-        },
-        {
-          "upTo": 150000,
-          "rate": 0.0525
-        },
-        {
-          "upTo": 250000,
-          "rate": 0.055
-        },
-        {
-          "upTo": 500000,
-          "rate": 0.0575
-        },
-        {
-          "upTo": 1000000,
-          "rate": 0.0625
-        },
-        {
-          "upTo": null,
-          "rate": 0.065
-        }
-      ],
-      "bracketsMFJ": [
-        {
-          "upTo": 1000,
-          "rate": 0.02
-        },
-        {
-          "upTo": 2000,
-          "rate": 0.03
-        },
-        {
-          "upTo": 3000,
-          "rate": 0.04
-        },
-        {
-          "upTo": 150000,
-          "rate": 0.0475
-        },
-        {
-          "upTo": 175000,
-          "rate": 0.05
-        },
-        {
-          "upTo": 225000,
-          "rate": 0.0525
-        },
-        {
-          "upTo": 300000,
-          "rate": 0.055
-        },
-        {
-          "upTo": 600000,
-          "rate": 0.0575
-        },
-        {
-          "upTo": 1200000,
-          "rate": 0.0625
-        },
-        {
-          "upTo": null,
-          "rate": 0.065
-        }
-      ],
-      "stdDeductionSingle": 3350,
-      "stdDeductionMFJ": 6700,
-      "bracketsNote": "Personal exemption $3,200 single / $6,400 MFJ, phasing out $100k-$150k single and $150k-$200k MFJ. STATE RATES ONLY: every Maryland county and Baltimore City levies a local income tax on top, and Tax Foundation puts Maryland's average effective local income tax rate at 2.51%, the highest in the nation. A Marylander's real combined rate is roughly 7% to 9%. South Carolina has no local income tax.",
-      "taxesSocialSecurity": false,
-      "socialSecurityNote": "Not taxed (AARP, April 2, 2026).",
-      "retirementExclusionNote": "Pension exclusion up to $41,200 for residents 65+ with no income limit (AARP figure for tax year 2025; the amount is indexed annually and the 2026 figure is UNVERIFIED). Military: subtract up to $12,500 under age 55, $20,000 at 55+.",
-      "effectivePropertyTaxRate": 0.0092,
-      "medianPropertyTaxBill": 4144,
-      "stateSalesTax": 0.06,
-      "avgCombinedSalesTax": 0.06,
-      "groceriesTaxedState": false,
-      "annualVehicleTax": false,
-      "vehicleTaxNote": "No annual property tax on vehicles. One-time excise on purchase of 6.5% of book value (AARP). Annual registration fee UNVERIFIED. South Carolina's annual vehicle tax is new for a Marylander.",
-      "estateTax": true,
-      "estateTaxNote": "Exemption $5,000,000, rates 0.8% to 16%. Maryland is the ONLY state with both an estate tax and an inheritance tax.",
-      "inheritanceTax": true,
-      "inheritanceTaxNote": "$1,000 exemption, 0% to 10%. AARP: 10 percent on property passing to non-qualified heirs; direct lineal heirs are exempt.",
-      "gasTaxCentsPerGallon": 46.19,
-      "movingOutGotcha": "The county income tax is what actually falls away, not the state rate. Maryland's average effective local income tax is 2.51%, first in the nation, and South Carolina has none. Maryland is also the only origin state that charges both an estate tax (at $5M) and an inheritance tax (on non-lineal heirs). Maryland residency and domicile audit standards UNVERIFIED.",
-      "sources": [
-        "https://www.aarp.org/states/maryland/state-taxes-guide/",
-        "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/"
-      ],
-      "asOf": "2026 tax year. MEDIUM confidence: retirement and vehicle items from AARP only, no Maryland Comptroller source opened."
-    },
-    {
-      "state": "Virginia",
-      "abbr": "VA",
-      "incomeTaxType": "graduated",
-      "topRate": 0.0575,
-      "bracketsSingle": [
-        {
-          "upTo": 3000,
-          "rate": 0.02
-        },
-        {
-          "upTo": 5000,
-          "rate": 0.03
-        },
-        {
-          "upTo": 17000,
-          "rate": 0.05
-        },
-        {
-          "upTo": null,
-          "rate": 0.0575
-        }
-      ],
-      "bracketsMFJ": [
-        {
-          "upTo": 3000,
-          "rate": 0.02
-        },
-        {
-          "upTo": 5000,
-          "rate": 0.03
-        },
-        {
-          "upTo": 17000,
-          "rate": 0.05
-        },
-        {
-          "upTo": null,
-          "rate": 0.0575
-        }
-      ],
-      "stdDeductionSingle": 8750,
-      "stdDeductionMFJ": 17500,
-      "bracketsNote": "Personal exemption $930 / $1,860. The top 5.75% rate starts at just $17,000 of taxable income, so Virginia is effectively flat for anyone with real income. No local income tax.",
-      "taxesSocialSecurity": false,
-      "socialSecurityNote": "AARP: No, the state does not tax Social Security income.",
-      "retirementExclusionNote": "Age deduction of up to $12,000 at 65+, phasing out by $1 for every $1 that federal AGI exceeds $50,000 single or $75,000 married, plus an additional $800 exemption at 65+. Military retirement gets a $40,000 subtraction. Pensions, 401(k) and IRA withdrawals are otherwise fully taxed.",
-      "effectivePropertyTaxRate": 0.0078,
-      "medianPropertyTaxBill": 2872,
-      "stateSalesTax": 0.053,
-      "avgCombinedSalesTax": 0.0577,
-      "groceriesTaxedState": false,
-      "groceriesNote": "State grocery rate removed; a 1% local tax on food remains. UNVERIFIED at tax.virginia.gov.",
-      "annualVehicleTax": true,
-      "vehicleTaxNote": "YES, the Virginia car tax. AARP: vehicles face a sales tax of 4.15 percent of gross purchase price plus an annual personal property tax at the city and county level based on vehicle value. IMPORTANT FOR COPY: do not use the South Carolina car tax will surprise you framing for Virginia; the mechanism is already familiar.",
-      "estateTax": false,
-      "estateTaxNote": "None. AARP: No, the state does not have an inheritance or estate tax.",
-      "inheritanceTax": false,
-      "inheritanceTaxNote": "None.",
-      "gasTaxCentsPerGallon": null,
-      "gasTaxNote": "CONTRADICTION, do not publish. Tax Foundation (July 2025) gives 41.60 cents; AARP (April 1, 2026) gives 31.7 cents. A ~10 cent gap, too large for rounding. Needs a primary source at tax.virginia.gov.",
-      "movingOutGotcha": "Virginia's top bracket starts at $17,000, so Virginia 5.75% versus South Carolina 5.21% overstates the gap once SC's 1.99% first bracket and the SCIAD are applied. The vehicle tax is a wash because Virginia already has one. Sales tax goes UP, from 5.77% to 8% or 9%. Virginia is a weak tax-savings story.",
-      "sources": [
-        "https://www.aarp.org/states/virginia/state-tax-guide/",
-        "https://www.tax.virginia.gov/deductions",
-        "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/"
-      ],
-      "asOf": "2026 tax year. MEDIUM confidence outside the Tax Foundation figures."
-    },
-    {
-      "state": "Connecticut",
-      "abbr": "CT",
-      "incomeTaxType": "graduated",
-      "topRate": 0.0699,
-      "bracketsSingle": [
-        {
-          "upTo": 10000,
-          "rate": 0.02
-        },
-        {
-          "upTo": 50000,
-          "rate": 0.045
-        },
-        {
-          "upTo": 100000,
-          "rate": 0.055
-        },
-        {
-          "upTo": 200000,
-          "rate": 0.06
-        },
-        {
-          "upTo": 250000,
-          "rate": 0.065
-        },
-        {
-          "upTo": 500000,
-          "rate": 0.069
-        },
-        {
-          "upTo": null,
-          "rate": 0.0699
-        }
-      ],
-      "bracketsMFJ": [
-        {
-          "upTo": 20000,
-          "rate": 0.02
-        },
-        {
-          "upTo": 100000,
-          "rate": 0.045
-        },
-        {
-          "upTo": 200000,
-          "rate": 0.055
-        },
-        {
-          "upTo": 400000,
-          "rate": 0.06
-        },
-        {
-          "upTo": 500000,
-          "rate": 0.065
-        },
-        {
-          "upTo": 1000000,
-          "rate": 0.069
-        },
-        {
-          "upTo": null,
-          "rate": 0.0699
-        }
-      ],
-      "stdDeductionSingle": null,
-      "stdDeductionMFJ": null,
-      "bracketsNote": "No standard deduction. Personal exemption $15,000 / $24,000, phasing out. Connecticut has TAX BENEFIT RECAPTURE: per Tax Foundation, many high-income taxpayers pay their top tax rate on all income, not just on amounts above the benefit threshold, so a bracket calculation understates a high earner's bill.",
-      "taxesSocialSecurity": "partial",
-      "socialSecurityNote": "Fully exempt below $75,000 AGI single / $100,000 MFJ. Above those thresholds, taxpayers may deduct up to 25% of benefits. A hard AGI threshold, not a gradual phase-out.",
-      "retirementExclusionNote": "Pension and annuity income gets a 100% deduction below $75,000 AGI single / $100,000 MFJ, phasing out entirely at $100,000 / $150,000. IRA distributions other than Roth phase in to a 100% deduction beginning in 2026 (50% for 2024, 75% for 2025). Railroad retirement and military retirement pay get a 100% deduction. Under the AGI thresholds Connecticut taxes retirement income at ZERO and South Carolina does not; over them Connecticut is worse. CT DRS material seen in summary form only, MEDIUM.",
-      "effectivePropertyTaxRate": 0.0154,
-      "medianPropertyTaxBill": 6573,
-      "stateSalesTax": 0.0635,
-      "avgCombinedSalesTax": 0.0635,
-      "groceriesTaxedState": false,
-      "annualVehicleTax": null,
-      "vehicleTaxNote": "UNVERIFIED AND IMPORTANT. Connecticut towns are believed to levy an annual municipal motor vehicle property tax, which would mean South Carolina's vehicle tax is familiar rather than surprising for a Connecticut mover. AARP did not mention it and no primary source was opened. VERIFY BEFORE WRITING EITHER FRAMING. Purchase tax is 6.35%, or 7.75% for vehicles priced over $50,000.",
-      "estateTax": true,
-      "estateTaxNote": "Exemption $13,990,000 for 2025 deaths, flat 12%. Connecticut conforms to the federal exemption, so 2026 is $15,000,000 (Wealthspire, Feb 4, 2026). Practically, it now reaches almost nobody.",
-      "inheritanceTax": false,
-      "inheritanceTaxNote": "None.",
-      "gasTaxCentsPerGallon": 25,
-      "gasTaxNote": "Tax Foundation (July 2025) 25.00; AARP (March 17, 2026) gasohol $0.25 per gallon. Consistent. NOTE: this is BELOW South Carolina's 28.75, so gas tax goes UP on this move. Do not list it as a saving.",
-      "movingOutGotcha": "The AGI cliffs. A Connecticut retiree at $99,000 of AGI pays no state tax on Social Security or pension income; at $101,000 the pension deduction starts unwinding and the Social Security exemption is already gone. Combined with tax benefit recapture at the top, Connecticut's effective rates move in steps rather than smoothly. The genuine win is the 1.54% property tax, third highest in the country.",
-      "sources": [
-        "https://www.aarp.org/states/connecticut/state-tax-guide/",
-        "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/",
-        "https://taxfoundation.org/data/all/state/property-taxes-by-state-county/"
-      ],
-      "asOf": "2026 tax year. MEDIUM confidence outside the Tax Foundation figures."
-    },
-    {
-      "state": "Massachusetts",
-      "abbr": "MA",
-      "incomeTaxType": "graduated",
-      "topRate": 0.09,
-      "bracketsSingle": [
-        {
-          "upTo": 1083150,
-          "rate": 0.05
-        },
-        {
-          "upTo": null,
-          "rate": 0.09
-        }
-      ],
-      "bracketsMFJ": [
-        {
-          "upTo": 1083150,
-          "rate": 0.05
-        },
-        {
-          "upTo": null,
-          "rate": 0.09
-        }
-      ],
-      "stdDeductionSingle": null,
-      "stdDeductionMFJ": null,
-      "bracketsNote": "Effectively a 5% flat tax plus a 4% surtax on income above $1,083,150 (2025 threshold, indexed), giving a 9% top rate. Short-term capital gains are taxed at 8.5% regardless of income. No standard deduction; personal exemption $4,400 / $8,800. No local income tax.",
-      "taxesSocialSecurity": false,
-      "socialSecurityNote": "AARP: Massachusetts does not tax Social Security benefits.",
-      "retirementExclusionNote": "Private pensions, 401(k) and IRA withdrawals are taxed at 5%. Military pensions are excluded from Massachusetts gross income. Massachusetts and US government contributory pensions are generally exempt but that is UNVERIFIED; AARP did not address it.",
-      "effectivePropertyTaxRate": 0.01,
-      "medianPropertyTaxBill": 6080,
-      "stateSalesTax": 0.0625,
-      "avgCombinedSalesTax": 0.0625,
-      "groceriesTaxedState": false,
-      "groceriesNote": "Groceries exempt, and clothing under $175 per item is exempt.",
-      "annualVehicleTax": true,
-      "vehicleTaxNote": "YES, an annual municipal motor vehicle excise at $25 per $1,000 of the vehicle's value, i.e. 2.5% of a statutory depreciated value. That is HIGHER than Horry County's roughly 1.2% effective rate on a car, so a Massachusetts mover's vehicle tax likely goes DOWN. Do not use the vehicle-tax-surprise framing for Massachusetts. Verify the Massachusetts valuation schedule before quantifying.",
-      "estateTax": true,
-      "estateTaxNote": "Taxable above $2,000,000, one of the lowest thresholds in the country, at 0.8% to 16%, with a $99,600 credit for deaths on or after January 1, 2023. A Massachusetts couple with a $900,000 house and $1.2M in retirement accounts is already over the line. South Carolina has no estate tax. Whether Massachusetts still taxes Massachusetts real estate in a non-resident's estate is UNVERIFIED.",
-      "inheritanceTax": false,
-      "inheritanceTaxNote": "None.",
-      "gasTaxCentsPerGallon": 27.47,
-      "gasTaxNote": "Tax Foundation (July 2025) 27.47; AARP (April 1, 2026) 24 cents. The ~2.5 cent gap is the underground storage tank fee Tax Foundation includes. Either way this is BELOW South Carolina's 28.75, so gas tax goes UP. Do not list it as a saving.",
-      "movingOutGotcha": "The $2,000,000 estate tax threshold is the strongest non-property-tax argument in the file, and it catches ordinary homeowners. But note that gas tax and vehicle excise both favour Massachusetts, so the honest pitch is property tax dollars, income tax rate and the estate tax, not the small recurring items.",
-      "sources": [
-        "https://www.aarp.org/states/massachusetts/state-taxes-guide/",
-        "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/",
-        "https://taxfoundation.org/data/all/state/estate-inheritance-taxes/"
-      ],
-      "asOf": "2026 tax year. MEDIUM confidence outside the Tax Foundation figures."
-    },
-    {
-      "state": "Michigan",
-      "abbr": "MI",
-      "incomeTaxType": "flat",
-      "topRate": 0.0425,
-      "bracketsSingle": [
-        {
-          "upTo": null,
-          "rate": 0.0425
-        }
-      ],
-      "bracketsMFJ": [
-        {
-          "upTo": null,
-          "rate": 0.0425
-        }
-      ],
-      "stdDeductionSingle": null,
-      "stdDeductionMFJ": null,
-      "bracketsNote": "No standard deduction. Personal exemption $5,900 single / $11,800 MFJ plus $5,900 per dependent for 2026, the most generous exemption of any origin state here. AARP's $5,800 is the 2025 figure. 24 Michigan cities levy a city income tax; Tax Foundation puts the average effective local rate at 0.18%.",
-      "taxesSocialSecurity": false,
-      "socialSecurityNote": "AARP: Michigan does not tax Social Security benefits.",
-      "retirementExclusionNote": "UNVERIFIED FOR 2026, DO NOT PUBLISH. Michigan is mid-way through a multi-year restoration of its pre-2012 pension deduction, phasing in through tax year 2026, and the tiers turn on the taxpayer's BIRTH YEAR rather than current age. AARP (March 13, 2026) describes: born before 1946, a 75% subtraction on eligible retirement income; born 1946-1952, up to $20,000 single / $40,000 joint. That may be a prior-year snapshot. Open michigan.gov/treasury before using any Michigan retirement figure.",
-      "effectivePropertyTaxRate": 0.0119,
-      "medianPropertyTaxBill": 2988,
-      "stateSalesTax": 0.06,
-      "avgCombinedSalesTax": 0.06,
-      "groceriesTaxedState": false,
-      "annualVehicleTax": null,
-      "vehicleTaxNote": "No county property tax on vehicles, but Michigan's annual registration fee is itself value-based, calculated from the vehicle's original MSRP rather than a flat amount. UNVERIFIED; AARP gave no registration detail. Check before framing South Carolina's vehicle tax as a surprise for a Michigander.",
-      "estateTax": false,
-      "estateTaxNote": "None.",
-      "inheritanceTax": false,
-      "inheritanceTaxNote": "None. AARP: Michigan has no inheritance tax for deaths after September 30, 1993.",
-      "gasTaxCentsPerGallon": null,
-      "gasTaxNote": "CONTRADICTION, do not publish. Tax Foundation (July 2025) 48.20 cents; AARP (March 13, 2026) 52.4 cents. Michigan indexes its motor fuel tax annually and also applies sales tax to fuel, so both figures can be defensible depending on what is counted. Roughly 20 to 24 cents above South Carolina either way.",
-      "movingOutGotcha": "The retirement-income tiers are the moving part and they turn on birth year, not current age, so two 70-year-olds can be treated differently. Nothing about Michigan's tax code makes leaving administratively hard; no day-count residency statute surfaced.",
-      "sources": [
-        "https://www.aarp.org/states/michigan/state-taxes-guide/",
-        "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/"
-      ],
-      "asOf": "2026 tax year. MEDIUM confidence; retirement and vehicle items UNVERIFIED."
-    },
-    {
-      "state": "Illinois",
-      "abbr": "IL",
-      "incomeTaxType": "flat",
-      "topRate": 0.0495,
-      "bracketsSingle": [
-        {
-          "upTo": null,
-          "rate": 0.0495
-        }
-      ],
-      "bracketsMFJ": [
-        {
-          "upTo": null,
-          "rate": 0.0495
-        }
-      ],
-      "stdDeductionSingle": null,
-      "stdDeductionMFJ": null,
-      "bracketsNote": "No standard deduction. Personal exemption $2,925 / $5,850. No local income tax.",
-      "taxesSocialSecurity": false,
-      "socialSecurityNote": "AARP: Illinois does not tax Social Security benefits.",
-      "retirementExclusionNote": "ILLINOIS TAXES NO RETIREMENT INCOME AT ALL; it is the second Pennsylvania on this list. Per Illinois Department of Revenue guidance (Publication 120 and the IL-1040 subtraction, seen in search-index form on 2026-08-16, MEDIUM confidence, the PDF itself was not opened), Illinois does not tax the federally taxed portion of qualified employee benefit plans including 401(k) plans, IRAs, self-employed retirement plans, or a traditional IRA converted to a Roth. An Illinois retiree pays zero state income tax on pension, 401(k) and IRA income and STARTS paying in South Carolina. Do not claim an income-tax saving for an Illinois mover.",
-      "effectivePropertyTaxRate": 0.0188,
-      "medianPropertyTaxBill": 5399,
-      "stateSalesTax": 0.0625,
-      "avgCombinedSalesTax": 0.0898,
-      "groceriesTaxedState": false,
-      "groceriesNote": "Exempt from the state rate, but AARP notes local municipalities may impose a 1 percent sales tax on groceries.",
-      "annualVehicleTax": false,
-      "vehicleTaxNote": "No annual property tax on vehicles. Registration is a flat annual fee, commonly cited around $151 for a passenger car, UNVERIFIED. South Carolina's annual vehicle tax is new for an Illinoisan.",
-      "estateTax": true,
-      "estateTaxNote": "Exemption $4,000,000, rates 0.8% to 16%. Second-lowest estate tax threshold in this file after Massachusetts.",
-      "inheritanceTax": false,
-      "inheritanceTaxNote": "None.",
-      "gasTaxCentsPerGallon": null,
-      "gasTaxNote": "LARGE CONTRADICTION, do not publish. Tax Foundation (July 2025) 66.40 cents; AARP (March 16, 2026) 48.3 cents, an 18 cent gap. Tax Foundation's figure includes the state sales tax applied to motor fuel and local motor fuel taxes; AARP's looks like the motor fuel tax alone. Both are well above South Carolina's 28.75, but the specific number must be re-derived from a primary source.",
-      "movingOutGotcha": "Property tax at 1.88% is rank 2 in the country and is a real win; Lake County's 2.26% effective rate is the highest county figure in this whole file. But it is offset by the fact that Illinois charges no income tax on retirement income and South Carolina does. For a retired Illinois couple the two move in opposite directions; run both before claiming anything.",
-      "sources": [
-        "https://www.aarp.org/states/illinois/state-taxes-guide/",
-        "https://tax.illinois.gov/research/publications/pubs/retirement-income.html",
-        "https://taxfoundation.org/data/all/state/property-taxes-by-state-county/"
-      ],
-      "asOf": "2026 tax year. MEDIUM confidence outside the Tax Foundation figures."
-    },
-    {
-      "state": "Georgia",
-      "abbr": "GA",
-      "incomeTaxType": "flat",
-      "topRate": 0.0519,
-      "bracketsSingle": [
-        {
-          "upTo": null,
-          "rate": 0.0519
-        }
-      ],
-      "bracketsMFJ": [
-        {
-          "upTo": null,
-          "rate": 0.0519
-        }
-      ],
-      "stdDeductionSingle": 12000,
-      "stdDeductionMFJ": 24000,
-      "bracketsNote": "RATE UNVERIFIED FOR 2026. Tax Foundation's 2026 table prints 5.19%, which HB 111 made retroactive to January 1, 2025. Georgia law schedules further 0.10-point annual reductions toward 4.99% subject to revenue triggers, so the 2026 rate may be 5.09%. Do not publish a 2026 Georgia rate without checking dor.georgia.gov. Dependent exemption $4,000. No local income tax.",
-      "taxesSocialSecurity": false,
-      "socialSecurityNote": "AARP: No. Georgia does not tax Social Security benefits.",
-      "retirementExclusionNote": "Georgia DOR: taxpayers who are 62 or older, or permanently and totally disabled regardless of age, may be eligible for a retirement income adjustment. Qualifying income includes pensions and annuities, interest, dividends, net rental income, capital gains, royalties, and up to $5,000 of earned income. For married couples filing jointly with both members receiving retirement income, the maximum adjustment may be up to twice the individual exclusion amount. THE DOLLAR AMOUNTS ARE NOT ON THE DOR PAGE; it points to Form IT-511. Commonly cited as $35,000 for ages 62-64 and $65,000 for 65+, per taxpayer; UNVERIFIED. Military: $17,500 excluded under age 62, plus another $17,500 for those with more than $17,500 of Georgia earned income.",
-      "effectivePropertyTaxRate": 0.0079,
-      "medianPropertyTaxBill": 2554,
-      "stateSalesTax": 0.04,
-      "avgCombinedSalesTax": 0.0756,
-      "groceriesTaxedState": false,
-      "groceriesNote": "AARP: food, prescription medication, lottery tickets and other items are exempt from statewide sales tax but may be subject to local sales taxes.",
-      "annualVehicleTax": false,
-      "vehicleTaxNote": "Georgia replaced the annual ad valorem tax with a one-time Title Ad Valorem Tax (TAVT) at purchase, 7% per AARP. Vehicles still on the pre-2013 system pay an annual ad valorem tax. For most Georgians, South Carolina's annual vehicle tax IS new.",
-      "estateTax": false,
-      "estateTaxNote": "None.",
-      "inheritanceTax": false,
-      "inheritanceTaxNote": "None. AARP: Georgia has no inheritance or estate tax.",
-      "gasTaxCentsPerGallon": 33,
-      "gasTaxNote": "AARP (March 12, 2026): gasoline and diesel are taxed at 33 and 37 cents per gallon as of Jan. 1, 2026. Tax Foundation (July 2025) 33.85. Consistent. Saving over South Carolina is only about 4.3 cents/gal, the smallest of any origin state.",
-      "movingOutGotcha": "Georgia is South Carolina's closest peer and the honest answer is that very little changes. Similar income tax rate, slightly higher property tax in Georgia, slightly lower sales tax in Georgia, no estate tax on either side, and Georgia's retirement exclusion at 65+ is MORE generous than South Carolina's. The two real differences are South Carolina's annual vehicle tax, which is new for most Georgians, and Horry County's 0.38% property tax against Fulton's 0.89%. Do not build a big-tax-savings page for Georgia buyers.",
-      "sources": [
-        "https://www.aarp.org/states/georgia/state-taxes-guide/",
-        "https://dor.georgia.gov/retirement-income-exclusion",
-        "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/"
-      ],
-      "asOf": "2026 tax year. Rate and retirement amounts UNVERIFIED for 2026."
-    },
-    {
-      "state": "Florida",
-      "abbr": "FL",
-      "incomeTaxType": "none",
-      "topRate": 0,
-      "bracketsSingle": [],
-      "bracketsMFJ": [],
-      "stdDeductionSingle": null,
-      "stdDeductionMFJ": null,
-      "taxesSocialSecurity": false,
-      "socialSecurityNote": "No state income tax, so no state tax on Social Security.",
-      "retirementExclusionNote": "No state income tax, so pensions, 401(k) and IRA withdrawals are untaxed at the state level. A Florida mover picks up a South Carolina income tax where there was none.",
-      "effectivePropertyTaxRate": 0.0078,
-      "medianPropertyTaxBill": 2993,
-      "stateSalesTax": 0.06,
-      "avgCombinedSalesTax": 0.0698,
-      "groceriesTaxedState": false,
-      "groceriesNote": "Groceries believed exempt. UNVERIFIED, no Florida source opened.",
-      "annualVehicleTax": false,
-      "vehicleTaxNote": "No annual value-based property tax on vehicles. Florida charges a large one-time initial registration fee plus annual weight-based fees. UNVERIFIED, no AARP Florida guide was retrieved.",
-      "estateTax": false,
-      "estateTaxNote": "None.",
-      "inheritanceTax": false,
-      "inheritanceTaxNote": "None.",
-      "gasTaxCentsPerGallon": 39.4,
-      "movingOutGotcha": "Florida to South Carolina is a tax INCREASE in almost every dimension and the page must not pretend otherwise. The mover picks up a state income tax where there was none, picks up an annual vehicle property tax, and pays higher sales tax (6.98% to 8% or 9%). They also lose Florida's homestead exemption, the Save Our Homes 3%-a-year assessed value cap and its portability, which for a long-tenured owner can outweigh the headline rate difference. Property tax effective rate does fall (0.78% to 0.38% in Horry) and neither state has an estate tax. Never run a tax-savings angle at a Florida buyer.",
-      "sources": [
-        "https://taxfoundation.org/data/all/state/property-taxes-by-state-county/",
-        "https://taxfoundation.org/data/all/state/2026-sales-tax-rates-midyear/",
-        "https://taxfoundation.org/data/all/state/gas-taxes-state/"
-      ],
-      "asOf": "2026 tax year for sales tax; ACS 2024 for property; July 2025 for gas. LOW-MEDIUM confidence, built from Tax Foundation tables only."
-    },
-    {
-      "state": "Texas",
-      "abbr": "TX",
-      "incomeTaxType": "none",
-      "topRate": 0,
-      "bracketsSingle": [],
-      "bracketsMFJ": [],
-      "stdDeductionSingle": null,
-      "stdDeductionMFJ": null,
-      "taxesSocialSecurity": false,
-      "socialSecurityNote": "No state income tax, so no state tax on Social Security.",
-      "retirementExclusionNote": "No state income tax, so pensions, 401(k) and IRA withdrawals are untaxed at the state level. A Texas mover picks up a South Carolina income tax where there was none.",
-      "effectivePropertyTaxRate": 0.014,
-      "medianPropertyTaxBill": 4108,
-      "stateSalesTax": 0.0625,
-      "avgCombinedSalesTax": 0.082,
-      "groceriesTaxedState": false,
-      "groceriesNote": "Groceries believed exempt. UNVERIFIED, no Texas source opened.",
-      "annualVehicleTax": false,
-      "vehicleTaxNote": "No annual value-based property tax on personal vehicles. Registration is a flat state fee plus county fees. UNVERIFIED. South Carolina's annual vehicle tax is new for a Texan.",
-      "estateTax": false,
-      "estateTaxNote": "None.",
-      "inheritanceTax": false,
-      "inheritanceTaxNote": "None.",
-      "gasTaxCentsPerGallon": 20,
-      "gasTaxNote": "20.00 cents is the LOWEST of any state in this file. South Carolina is 28.75, so a Texan's gas tax goes UP by about 8.75 cents/gal.",
-      "movingOutGotcha": "Texas trades no income tax for the seventh-highest property tax in the country (1.40% effective). South Carolina does the reverse: a real income tax and the 46th-lowest property tax. Whether a Texan comes out ahead depends entirely on the ratio of their income to their home value. A retired Texan with modest income and an expensive house wins; a high earner with a modest house loses. This is the one comparison in the file that genuinely needs a calculator rather than a claim.",
-      "sources": [
-        "https://taxfoundation.org/data/all/state/property-taxes-by-state-county/",
-        "https://taxfoundation.org/data/all/state/2026-sales-tax-rates-midyear/",
-        "https://taxfoundation.org/data/all/state/gas-taxes-state/"
-      ],
-      "asOf": "2026 tax year for sales tax; ACS 2024 for property; July 2025 for gas. LOW-MEDIUM confidence, built from Tax Foundation tables only."
-    },
-    {
-      "state": "California",
-      "abbr": "CA",
-      "incomeTaxType": "graduated",
-      "topRate": 0.133,
-      "bracketsSingle": [
-        {
-          "upTo": 11079,
-          "rate": 0.01
-        },
-        {
-          "upTo": 26264,
-          "rate": 0.02
-        },
-        {
-          "upTo": 41452,
-          "rate": 0.04
-        },
-        {
-          "upTo": 57542,
-          "rate": 0.06
-        },
-        {
-          "upTo": 72724,
-          "rate": 0.08
-        },
-        {
-          "upTo": 371479,
-          "rate": 0.093
-        },
-        {
-          "upTo": 445771,
-          "rate": 0.103
-        },
-        {
-          "upTo": 742953,
-          "rate": 0.113
-        },
-        {
-          "upTo": 1000000,
-          "rate": 0.123
-        },
-        {
-          "upTo": null,
-          "rate": 0.133
-        }
-      ],
-      "bracketsMFJ": [
-        {
-          "upTo": 22158,
-          "rate": 0.01
-        },
-        {
-          "upTo": 52528,
-          "rate": 0.02
-        },
-        {
-          "upTo": 82904,
-          "rate": 0.04
-        },
-        {
-          "upTo": 115084,
-          "rate": 0.06
-        },
-        {
-          "upTo": 145448,
-          "rate": 0.08
-        },
-        {
-          "upTo": 742958,
-          "rate": 0.093
-        },
-        {
-          "upTo": 891542,
-          "rate": 0.103
-        },
-        {
-          "upTo": 1000000,
-          "rate": 0.113
-        },
-        {
-          "upTo": 1485906,
-          "rate": 0.123
-        },
-        {
-          "upTo": null,
-          "rate": 0.133
-        }
-      ],
-      "stdDeductionSingle": 5540,
-      "stdDeductionMFJ": 11080,
-      "bracketsNote": "Top rate includes the 1% mental health services tax and is the highest in the country. Exemptions are credits, $153 single / $306 MFJ, not deductions. No local income tax.",
-      "taxesSocialSecurity": false,
-      "socialSecurityNote": "California does not tax Social Security benefits.",
-      "retirementExclusionNote": "Pensions, 401(k) and IRA withdrawals are fully taxed at ordinary rates with no age-based exclusion. California also adds its own 2.5% state penalty on early distributions on top of the federal 10%. UNVERIFIED, no California source was opened.",
-      "effectivePropertyTaxRate": 0.007,
-      "medianPropertyTaxBill": 5369,
-      "stateSalesTax": 0.0725,
-      "avgCombinedSalesTax": 0.0903,
-      "groceriesTaxedState": false,
-      "groceriesNote": "Groceries believed exempt. UNVERIFIED. Note the state rate includes a 1.25% mandatory local component.",
-      "annualVehicleTax": null,
-      "vehicleTaxNote": "No county property tax on vehicles, but the annual registration bill includes a Vehicle License Fee of about 0.65% of the vehicle's depreciated value, which functions as an annual value-based tax. UNVERIFIED. If confirmed, South Carolina's vehicle tax is a familiar mechanism at a somewhat higher effective rate for a Californian.",
-      "estateTax": false,
-      "estateTaxNote": "None.",
-      "inheritanceTax": false,
-      "inheritanceTaxNote": "None.",
-      "gasTaxCentsPerGallon": 70.92,
-      "gasTaxNote": "Highest in the country. South Carolina is 28.75, so a Californian saves about 42 cents a gallon, by far the largest per-gallon drop in this file.",
-      "movingOutGotcha": "Two things. First, Proposition 13 means the California property tax comparison depends on PURCHASE DATE, not the published 0.70% rate: assessed value is capped at 2% growth a year until the property sells, so a 1995 Orange County buyer may be paying under 0.2% of market value and will see their property tax RISE in Horry County despite the lower nominal rate. Never quote California's effective rate at a specific owner without asking when they bought. Second, the Franchise Tax Board is aggressive on residency and applies a facts-and-circumstances closest-connections test rather than a day count. UNVERIFIED, but flag it for anyone selling California real estate or holding California-source income after the move.",
-      "sources": [
-        "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/",
-        "https://taxfoundation.org/data/all/state/property-taxes-by-state-county/",
-        "https://taxfoundation.org/data/all/state/2026-sales-tax-rates-midyear/"
-      ],
-      "asOf": "2026 tax year. LOW-MEDIUM confidence, built from Tax Foundation tables, no California source opened."
-    }
+ "meta": {
+  "generated": "2026-08-16",
+  "note": "Companion to research/relocating/state-tax-table.md. Tax year 2026 unless a field note says otherwise. RATES ARE DECIMAL FRACTIONS: 0.0399 means 3.99 percent. Bracket arrays are ordered lowest to highest; each entry's 'upTo' is the top of that bracket in dollars of that state's taxable income, and the final entry has upTo: null meaning no ceiling. effectivePropertyTaxRate is median real estate taxes paid divided by median owner-occupied home value, ACS 2024 data, from Tax Foundation's March 16, 2026 table. medianPropertyTaxBill is the ACS 2024 1-year state median (table B25103), which is a different vintage from the effective rate and will not divide out exactly. Local income taxes are EXCLUDED from bracketsSingle/bracketsMFJ/topRate - NY, OH, PA and MD all levy them on top and the omission understates those states. Anything the markdown marks UNVERIFIED is not repeated here as if it were fact. Do not put a figure from this file on a public page without reading the corresponding markdown section first, which carries the caveats. VERIFICATION DEPTH IS NOT UNIFORM. SC, NY, NC, OH, NJ and PA were built from statutes, departments of revenue and DMV fee schedules opened directly (markdown sections 1-6). MD, VA, CT, MA, MI, IL, GA, FL, TX and CA (markdown section 7) lean on Tax Foundation plus the AARP state tax guides, with a primary source opened only where a field note says so; treat them as MEDIUM unless stated. A null in gasTaxCentsPerGallon means sources contradicted each other: read gasTaxNote and do not publish a figure. A null in annualVehicleTax means it was not established, and it flips the framing for that state, so resolve it before writing copy.",
+  "statesIncluded": [
+   "SC",
+   "NY",
+   "NC",
+   "OH",
+   "NJ",
+   "PA",
+   "MD",
+   "VA",
+   "CT",
+   "MA",
+   "MI",
+   "IL",
+   "GA",
+   "FL",
+   "TX",
+   "CA"
+  ],
+  "statesPending": [],
+  "sources": [
+   "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/",
+   "https://taxfoundation.org/data/all/state/2026-sales-tax-rates-midyear/",
+   "https://taxfoundation.org/data/all/state/property-taxes-by-state-county/",
+   "https://taxfoundation.org/data/all/state/gas-taxes-state/",
+   "https://taxfoundation.org/data/all/state/estate-inheritance-taxes/",
+   "https://data.census.gov/table/ACSDT1Y2024.B25103"
   ]
+ },
+ "states": [
+  {
+   "state": "South Carolina",
+   "abbr": "SC",
+   "incomeTaxType": "graduated",
+   "topRate": 0.0521,
+   "bracketsSingle": [
+    {
+     "upTo": 30000,
+     "rate": 0.0199
+    },
+    {
+     "upTo": null,
+     "rate": 0.0521
+    }
+   ],
+   "bracketsMFJ": [
+    {
+     "upTo": 30000,
+     "rate": 0.0199
+    },
+    {
+     "upTo": null,
+     "rate": 0.0521
+    }
+   ],
+   "stdDeductionSingle": 15000,
+   "stdDeductionMFJ": 30000,
+   "taxesSocialSecurity": false,
+   "socialSecurityNote": "Fully exempt. SC DOR: 'Social Security benefits and railroad retirement taxed for federal purposes are exempt from Individual Income Tax in South Carolina.'",
+   "retirementExclusionNote": "Retirement income deduction under SC Code 12-6-1170(A): up to $3,000/yr of qualified retirement income before age 65, up to $10,000/yr at 65 and after, per taxpayer. Separate age-65 deduction under 12-6-1170(B): $15,000 against any SC income per qualifying spouse ($30,000 when both are 65+), reduced by any retirement or military deduction claimed. All military retirement pay is fully exempt at any age (12-6-1171). H.4216 did not change any of these.",
+   "effectivePropertyTaxRate": 0.0049,
+   "medianPropertyTaxBill": 1337,
+   "stateSalesTax": 0.06,
+   "avgCombinedSalesTax": 0.0749,
+   "groceriesTaxedState": false,
+   "annualVehicleTax": true,
+   "vehicleTaxNote": "Annual county property tax on vehicles at 6% of fair market value times the full local millage, school operating included. Must be paid before the plate renews. Horry County estimate: $30,000 car about $362/yr unincorporated, about $458/yr in the City of Myrtle Beach, plus a $50 county road maintenance fee. One-time $250 Infrastructure Maintenance Fee when a vehicle first titled in another state is registered in SC; 45 days to register after moving. Standard plate fee UNVERIFIED (dmv.sc.gov blocks automated fetch).",
+   "estateTax": false,
+   "estateTaxNote": "None.",
+   "inheritanceTax": false,
+   "inheritanceTaxNote": "None.",
+   "gasTaxCentsPerGallon": 28.75,
+   "movingOutGotcha": "Destination state, not an origin. Inbound: 45 days to register vehicles and pay the $250 IMF; apply to the county assessor for the 4% owner-occupied assessment ratio before the first penalty date of the first year claimed, or the home is taxed at 6% with school operating millage included, roughly 3.3x the bill.",
+   "sources": [
+    "https://dor.sc.gov/news/information-about-h-4216",
+    "https://www.scstatehouse.gov/sess126_2025-2026/bills/4216.htm",
+    "https://dor.sc.gov/tax-tips/retirees-lower-your-individual-income-tax-bill-these-five-tips",
+    "https://www.scstatehouse.gov/code/t12c006.php",
+    "https://www.sccounties.org/sites/default/files/uploads/resource-files/property-tax-rates-by-county-2025.pdf",
+    "https://www.dor.sc.gov/sites/dor/files/forms/ST575.pdf",
+    "https://dor.sc.gov/income-tax-motor-fuel-user-fee-property-tax-south-carolina-infrastructure-and-economic-development-reform-act-0"
+   ],
+   "asOf": "2026 tax year (H.4216 / Act 110, signed March 30, 2026)"
+  },
+  {
+   "state": "New York",
+   "abbr": "NY",
+   "incomeTaxType": "graduated",
+   "topRate": 0.109,
+   "bracketsSingle": [
+    {
+     "upTo": 8500,
+     "rate": 0.039
+    },
+    {
+     "upTo": 11700,
+     "rate": 0.044
+    },
+    {
+     "upTo": 13900,
+     "rate": 0.0515
+    },
+    {
+     "upTo": 80650,
+     "rate": 0.054
+    },
+    {
+     "upTo": 215400,
+     "rate": 0.059
+    },
+    {
+     "upTo": 1077550,
+     "rate": 0.0685
+    },
+    {
+     "upTo": 5000000,
+     "rate": 0.0965
+    },
+    {
+     "upTo": 25000000,
+     "rate": 0.103
+    },
+    {
+     "upTo": null,
+     "rate": 0.109
+    }
+   ],
+   "bracketsMFJ": [
+    {
+     "upTo": 17150,
+     "rate": 0.039
+    },
+    {
+     "upTo": 23600,
+     "rate": 0.044
+    },
+    {
+     "upTo": 27900,
+     "rate": 0.0515
+    },
+    {
+     "upTo": 161550,
+     "rate": 0.054
+    },
+    {
+     "upTo": 323200,
+     "rate": 0.059
+    },
+    {
+     "upTo": 2155350,
+     "rate": 0.0685
+    },
+    {
+     "upTo": 5000000,
+     "rate": 0.0965
+    },
+    {
+     "upTo": 25000000,
+     "rate": 0.103
+    },
+    {
+     "upTo": null,
+     "rate": 0.109
+    }
+   ],
+   "stdDeductionSingle": 8000,
+   "stdDeductionMFJ": 16050,
+   "taxesSocialSecurity": false,
+   "socialSecurityNote": "Fully exempt. NY DTF: 'Social security benefits that are included in federal adjusted gross income may be subtracted from your federal adjusted gross income when computing your New York adjusted gross income.'",
+   "retirementExclusionNote": "$20,000 pension and annuity exclusion at age 59.5 or older, per taxpayer not per return, so $40,000 on a joint return only when both spouses have their own qualifying income. IRA and 401(k) distributions count toward that $20,000 rather than being separately exempt. New York State and local government pensions, federal pensions including military, and certain public authority pensions are fully exempt with no dollar cap and no age test.",
+   "effectivePropertyTaxRate": 0.013,
+   "medianPropertyTaxBill": 6542,
+   "stateSalesTax": 0.04,
+   "avgCombinedSalesTax": 0.0854,
+   "groceriesTaxedState": false,
+   "annualVehicleTax": false,
+   "vehicleTaxNote": "No annual property or excise tax on vehicles. Registration is weight-based: $26.00 to $140.00 for TWO years. Plates $25, title $50. County vehicle use tax plus MCTD supplemental fee: NYC $30 use tax plus $50 supplemental per two years; most other counties $10 to $20 per two years. Roughly $13 to $70 a year all in.",
+   "estateTax": true,
+   "estateTaxNote": "Basic exclusion amount $7,350,000 for deaths in 2026 ($7,160,000 in 2025), rates 3.06% to 16%. A 'cliff' reportedly removes the exclusion entirely for taxable estates above 105% of it (about $7,717,500); that mechanic is from Wealthspire, not restated on the NY DTF page opened 2026-08-16, so treat it as MEDIUM confidence.",
+   "inheritanceTax": false,
+   "inheritanceTaxNote": "None.",
+   "gasTaxCentsPerGallon": null,
+   "gasTaxNote": "CONTRADICTION, do not publish a figure. Tax Foundation (July 2025) gives 24.87 cents; AARP (March 31, 2026) gives 23.85 cents for 2026. The two count different components of New York's motor fuel excise, petroleum business tax and prepaid sales tax stack. Either way New York is BELOW South Carolina's 28.75 cents, so this is the one origin state where per-gallon state tax goes up on a move. Needs a human check at tax.ny.gov.",
+   "movingOutGotcha": "Two traps. First, domicile: NY DTF says 'Your New York domicile does not change until you can demonstrate with clear and convincing evidence that you have abandoned your New York domicile and established a new domicile outside New York State.' Second, statutory residence: even after a real domicile change, New York taxes you as a full-year resident if you keep 'a permanent place of abode in New York State for substantially all of the taxable year' AND spend '184 days or more in New York State during the taxable year' - so keeping the Long Island house and visiting family half the year can leave a former New Yorker taxed by both states.",
+   "sources": [
+    "https://www.tax.ny.gov/pit/file/information_for_seniors.htm",
+    "https://www.tax.ny.gov/pit/file/nonresident-faqs.htm",
+    "https://www.tax.ny.gov/pit/file/standard_deductions.htm",
+    "https://www.tax.ny.gov/pit/estate/etidx.htm",
+    "https://www.tax.ny.gov/pubs_and_bulls/tg_bulletins/st/food_sold_by_food_stores.htm",
+    "https://dmv.ny.gov/registration/registration-fees-use-taxes-and-supplemental-fees-passenger-vehicles",
+    "https://www.aarp.org/states/new-york/state-taxes-guide/",
+    "https://www.anchin.com/articles/new-york-states-2026-fiscal-year-budget-finally-passes/"
+   ],
+   "asOf": "2026 tax year. Standard deduction figures are the 2025 table, which NY does not index, so they carry to 2026. Another 0.1 point comes off the bottom five brackets in 2027."
+  },
+  {
+   "state": "North Carolina",
+   "abbr": "NC",
+   "incomeTaxType": "flat",
+   "topRate": 0.0399,
+   "bracketsSingle": [
+    {
+     "upTo": null,
+     "rate": 0.0399
+    }
+   ],
+   "bracketsMFJ": [
+    {
+     "upTo": null,
+     "rate": 0.0399
+    }
+   ],
+   "stdDeductionSingle": 12750,
+   "stdDeductionMFJ": 25500,
+   "taxesSocialSecurity": false,
+   "socialSecurityNote": "Fully exempt. N.C.G.S. 105-153.5(b)(3) deducts 'Benefits received under Title II of the Social Security Act and amounts received from retirement annuities or pensions paid under the provisions of the Railroad Retirement Act of 1937.'",
+   "retirementExclusionNote": "No general age-based exclusion. Private pensions, 401(k), 403(b), traditional IRA withdrawals and annuities are fully taxed at 3.99%. Two carve-outs: the Bailey settlement exempts benefits from NC and federal government defined benefit plans (and State 401(k)/457 plans) but ONLY for retirees with five or more years of creditable service as of August 12, 1989, a closed and shrinking class; and military retirement pay is exempt for a retiree who served at least 20 years in the uniformed services or was medically retired.",
+   "effectivePropertyTaxRate": 0.0066,
+   "medianPropertyTaxBill": 2044,
+   "stateSalesTax": 0.0475,
+   "avgCombinedSalesTax": 0.071,
+   "groceriesTaxedState": false,
+   "groceriesNote": "Exempt from the state and transit rates, but a 2.00% local rate applies to qualifying food. Candy, soft drinks, prepared food, dietary supplements and vending-machine food are taxed at the full combined rate.",
+   "annualVehicleTax": true,
+   "vehicleTaxNote": "Annual county vehicle property tax, collected with registration renewal under the Tag and Tax Together program: 'You must pay both your vehicle's registration and the property tax at the same time.' Registration fee for a regular private passenger vehicle is $46.25 per year, effective July 1, 2024, adjusted every four years to CPI (next adjustment due July 1, 2028). Highway Use Tax at titling is 3%, capped at $2,000 only for commercial vehicles and RVs.",
+   "estateTax": false,
+   "estateTaxNote": "None.",
+   "inheritanceTax": false,
+   "inheritanceTaxNote": "None.",
+   "gasTaxCentsPerGallon": 41.25,
+   "gasTaxNote": "NCDOR 2026 motor fuels rate is 41.0 cents plus a 0.25 cent inspection tax = 41.25 cents. This SUPERSEDES the Tax Foundation July 2025 figure of 40.55 and the AARP figure of 40.3 (which is the 2025 rate).",
+   "movingOutGotcha": "The counterintuitive one: state income tax can go UP. NC is a flat 3.99% with a $25,500 joint standard deduction; SC from 2026 is 1.99% on the first $30,000 then 5.21%, with a deduction that phases out between $80,000 and $190,000 of joint AGI. Arithmetic on the two published schedules (joint, no dependents, no credits) puts the crossover around $100,000 of joint AGI - above that a mover from NC pays more state income tax in SC. Those are internal estimates, not published figures; re-run them before use. Mechanically, leaving NC is simple: a part-year Form D-400 with Schedule PN, and no statutory day-count residency test of the New York or Ohio kind.",
+   "sources": [
+    "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-153.7.html",
+    "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-153.5.html",
+    "https://www.ncdor.gov/taxes-forms/individual-income-tax/tax-rate-schedules",
+    "https://www.ncdor.gov/taxes-forms/individual-income-tax/bailey-decision-concerning-federal-state-and-local-retirement-benefits",
+    "https://www.ncdor.gov/taxes-forms/sales-and-use-tax/food-non-qualifying-food-and-prepaid-meal-plans",
+    "https://www.ncdor.gov/taxes-forms/motor-fuels-tax/motor-fuels-tax-rates",
+    "https://www.ncdot.gov/dmv/title-registration/Pages/vehicle-property-tax.aspx",
+    "https://www.ncdot.gov/news/press-releases/Pages/2024/2024-04-02-ncdmv-fee-increase-state-law.aspx",
+    "https://www.aarp.org/states/north-carolina/state-taxes-guide/"
+   ],
+   "asOf": "2026 tax year. Further rate cuts possible from 2027 under the N.C.G.S. 105-153.7(a1) revenue trigger; do not publish a 2027 rate."
+  },
+  {
+   "state": "Ohio",
+   "abbr": "OH",
+   "incomeTaxType": "flat",
+   "topRate": 0.0275,
+   "bracketsSingle": [
+    {
+     "upTo": 26050,
+     "rate": 0
+    },
+    {
+     "upTo": null,
+     "rate": 0.0275
+    }
+   ],
+   "bracketsMFJ": [
+    {
+     "upTo": 26050,
+     "rate": 0
+    },
+    {
+     "upTo": null,
+     "rate": 0.0275
+    }
+   ],
+   "stdDeductionSingle": null,
+   "stdDeductionMFJ": null,
+   "bracketsNote": "SIMPLIFIED. Ohio uses one schedule for all filing statuses and has no standard deduction, only personal exemptions ($2,400 single / $4,800 MFJ for 2026, reduced to $2,150 each at $40k-$80k MAGI and $1,900 each above $80k, and lost entirely at MAGI of $500,000 or more from 2026). The statute, ORC 5747.02(A)(3)(c), reads 'For taxable years beginning in 2026 and thereafter, $332.00 plus 2.75% of the amount in excess of $26,050' - a $332 base amount, not a smooth zero-then-2.75% ramp. Do not build a calculator on the two-bracket simplification above without checking the 2026 Form IT 1040.",
+   "taxesSocialSecurity": false,
+   "socialSecurityNote": "Fully exempt. ORC 5747.01 deducts 'Benefits under Title II of the Social Security Act and tier 1 railroad retirement' from federal AGI.",
+   "retirementExclusionNote": "Pensions, 401(k) and IRA withdrawals ARE taxable at 2.75%. No exclusion, only two small credits under ORC 5747.055, both capped at modified AGI less exemptions below $100,000: a retirement income credit on a sliding schedule topping out at $200 per return ('Only one such credit shall be allowed for each return'), and a $50 per return senior citizen credit at age 65 or older. Ohio's 'retirement income credit' sounds generous and is worth at most $200 a year.",
+   "effectivePropertyTaxRate": 0.0136,
+   "medianPropertyTaxBill": 2937,
+   "stateSalesTax": 0.0575,
+   "avgCombinedSalesTax": 0.0729,
+   "groceriesTaxedState": false,
+   "groceriesNote": "ORC 5739.02(B)(2) exempts 'Sales of food for human consumption off the premises where sold.'",
+   "annualVehicleTax": false,
+   "vehicleTaxNote": "No annual property or excise tax on vehicles. Ohio BMV passenger vehicle registration is $36.00 per year effective 1/5/2026, plus an $8.00 deputy registrar fee for a one-year renewal, plus a local permissive tax that 'cannot exceed $30.00 per vehicle'. Title fee $18 statewide, $23 in some counties. Roughly $44 to $74 a year, none of it tied to vehicle value.",
+   "estateTax": false,
+   "estateTaxNote": "None. Ohio's estate tax was repealed for deaths on or after January 1, 2013 (repeal date UNVERIFIED at a primary source; the current-year answer of 'none' is confirmed).",
+   "inheritanceTax": false,
+   "inheritanceTaxNote": "None.",
+   "gasTaxCentsPerGallon": 38.5,
+   "movingOutGotcha": "Ohio's bright-line residency test has one condition that catches almost everybody: you cannot hold an Ohio driver's license or state ID at any point in the year. ORC 5747.24(B)(1) presumes non-domicile for a full year only if you file a statement with the tax commissioner AND have no more than 212 contact periods in Ohio, keep an abode outside Ohio all year, 'did not hold a valid Ohio driver's license or identification card at any time during the taxable year', and claimed no Ohio homestead property tax reduction. The statement is due by October 15 and a false one 'is guilty of perjury'. File it and qualify and the presumption is 'irrebuttable'; fail to file and you are presumed Ohio-domiciled for the entire year. A 'contact period' is any portion, 'however minimal, of each of two consecutive days in this state'.",
+   "sources": [
+    "https://codes.ohio.gov/ohio-revised-code/section-5747.02",
+    "https://codes.ohio.gov/ohio-revised-code/section-5747.025",
+    "https://codes.ohio.gov/ohio-revised-code/section-5747.055",
+    "https://codes.ohio.gov/ohio-revised-code/section-5747.24",
+    "https://codes.ohio.gov/ohio-revised-code/section-5747.01",
+    "https://codes.ohio.gov/ohio-revised-code/section-5739.02",
+    "https://tax.ohio.gov/individual/resources/annual-tax-rates",
+    "https://www.bmv.ohio.gov/doc-fees.aspx",
+    "https://www.aarp.org/states/ohio/state-taxes-guide/"
+   ],
+   "asOf": "2026 tax year (HB 96, 136th General Assembly, effective September 30, 2025). NOTE: Ohio municipalities levy their own income tax (commonly 1% to 3%) and many school districts levy a separate SDIT on top; Tax Foundation puts Ohio's average effective local income tax rate at 1.49%. South Carolina has none."
+  },
+  {
+   "state": "New Jersey",
+   "abbr": "NJ",
+   "incomeTaxType": "graduated",
+   "topRate": 0.1075,
+   "bracketsSingle": [
+    {
+     "upTo": 20000,
+     "rate": 0.014
+    },
+    {
+     "upTo": 35000,
+     "rate": 0.0175
+    },
+    {
+     "upTo": 40000,
+     "rate": 0.035
+    },
+    {
+     "upTo": 75000,
+     "rate": 0.05525
+    },
+    {
+     "upTo": 500000,
+     "rate": 0.0637
+    },
+    {
+     "upTo": 1000000,
+     "rate": 0.0897
+    },
+    {
+     "upTo": null,
+     "rate": 0.1075
+    }
+   ],
+   "bracketsMFJ": [
+    {
+     "upTo": 20000,
+     "rate": 0.014
+    },
+    {
+     "upTo": 50000,
+     "rate": 0.0175
+    },
+    {
+     "upTo": 70000,
+     "rate": 0.0245
+    },
+    {
+     "upTo": 80000,
+     "rate": 0.035
+    },
+    {
+     "upTo": 150000,
+     "rate": 0.05525
+    },
+    {
+     "upTo": 500000,
+     "rate": 0.0637
+    },
+    {
+     "upTo": 1000000,
+     "rate": 0.0897
+    },
+    {
+     "upTo": null,
+     "rate": 0.1075
+    }
+   ],
+   "stdDeductionSingle": null,
+   "stdDeductionMFJ": null,
+   "bracketsNote": "No standard deduction. Personal exemption $1,000 single / $2,000 MFJ, dependent exemption $1,500. An additional exemption at age 65+ exists but the amount is UNVERIFIED here.",
+   "taxesSocialSecurity": false,
+   "socialSecurityNote": "Fully exempt. NJ Division of Taxation lists 'Social Security and Railroad Retirement benefits' as nontaxable retirement income.",
+   "retirementExclusionNote": "Pension Exclusion at age 62 or older (or disabled), with a hard income cliff. Total income $150,001 or more: 'Not eligible for a pension exclusion.' Total income $1 to $100,000: exclude taxable pension, annuity and IRA withdrawals up to $100,000 MFJ, $75,000 single/HOH/QW, $50,000 MFS. $100,001 to $125,000: exclude 50% MFJ, 37.5% single, 25% MFS of the taxable pension. $125,001 to $150,000: 25% MFJ, 18.75% single, 12.5% MFS. Military pensions and survivor benefits are exempt at any age; civil service annuities are not. Nonresidents pay no NJ tax on pension, annuity or IRA income at all. Below $100,000 of total income this exclusion is MORE generous than South Carolina's, so a NJ retiree under the cap can pay more income tax after moving.",
+   "effectivePropertyTaxRate": 0.0188,
+   "medianPropertyTaxBill": 9358,
+   "stateSalesTax": 0.06625,
+   "avgCombinedSalesTax": 0.066,
+   "groceriesTaxedState": false,
+   "groceriesNote": "Most groceries exempt, and New Jersey also exempts most clothing and footwear entirely, which South Carolina does not. Grocery treatment sourced to AARP (April 6, 2026); the nj.gov exemption pages 404'd on 2026-08-16, so MEDIUM confidence.",
+   "annualVehicleTax": false,
+   "vehicleTaxNote": "No annual property or excise tax on vehicles. NJ MVC registration by weight class and model year: $46.50 (under 3,500 lbs, older than 2 years), $59.00 (under 3,500 lbs, within 2 years), $71.50 (over 3,500 lbs, older than 2 years); older model-year classes $35.50 to $72.50. Zero-emission vehicles pay an added annual fee, $250 from July 1, 2024, rising $10 per year for four years. One-time 0.4% fee on new passenger cars costing $45,000 or more.",
+   "estateTax": false,
+   "estateTaxNote": "None since 2018. NJ Division of Taxation: 'New Jersey Estate Tax is no longer imposed for individuals who died on or after January 1, 2018.'",
+   "inheritanceTax": true,
+   "inheritanceTaxNote": "Transfer Inheritance Tax based on WHO inherits, not estate size. Class A is fully exempt: parent, grandparent, spouse, child (including legally adopted), grandchild and great-grandchild, stepchild (not step-grandchild), mutually acknowledged child, civil union partner after 2/19/2007, domestic partner after 7/10/2004. Class C (sibling, or spouse/civil union partner of a child) gets a $25,000 exemption then 11% to 16%. Class D (everyone else) 15% to 16%, no exemption. Class E (charities, religious, educational, medical, government) exempt. Most buyers leave to spouse and children, who pay nothing.",
+   "gasTaxCentsPerGallon": 49.1,
+   "gasTaxNote": "Effective January 1, 2026: PPGRT rose from 34.4 to 38.6 cents plus the fixed 10.5 cent Motor Fuels Tax = 49.1 cents. SUPERSEDES the Tax Foundation July 2025 figure of 44.95.",
+   "movingOutGotcha": "The so-called 'exit tax' is not a tax. It is an estimated Gross Income Tax payment a NON-RESIDENT seller must make before the deed can be recorded (N.J.S.A. 54A:8-8 to 8-10), calculated as the federal reportable gain times the top 10.75% rate but 'not less than 2% of the seller's consideration...stated in the deed', and it is credited or refunded on the New Jersey non-resident return. It is owed even with no gain: 'Even if the seller/grantor do not recognize a gain, they are still required to pay at least 2% of the total consideration stated in the deed on or before the time of closing.' The ordering matters: a seller still resident in NJ at closing files GIT/REP-3 and nothing is withheld; a seller who has already moved to South Carolina files GIT/REP-1 with payment. There is also an IRC Section 121 exemption where the property was a principal residence and the ENTIRE gain is federally excludable.",
+   "sources": [
+    "https://www.nj.gov/treasury/taxation/njit6.shtml",
+    "https://www.nj.gov/treasury/taxation/njit7.shtml",
+    "https://www.nj.gov/treasury/taxation/inheritance-estate/inheritance.shtml",
+    "https://www.nj.gov/treasury/taxation/pdf/other_forms/inheritance/transferinheritanceclasses.pdf",
+    "https://www.nj.gov/mvc/vehicles/regfees.htm",
+    "https://www.nj.gov/treasury/taxation/pdf/pubs/tb/tb57r.pdf",
+    "https://www.nj.gov/treasury/taxation/gitrepfaqs.shtml",
+    "https://www.nj.gov/treasury/news/2025/12012025.shtml",
+    "https://www.aarp.org/states/new-jersey/state-taxes-guide/"
+   ],
+   "asOf": "2026 tax year. Pension exclusion tiers are the figures NJ publishes against the 2025 NJ-1040; nothing different has been published for 2026 as of 2026-08-16. NJ property tax relief programs (Stay NJ, Senior Freeze, ANCHOR) do not travel and must be netted off before claiming a property tax saving."
+  },
+  {
+   "state": "Pennsylvania",
+   "abbr": "PA",
+   "incomeTaxType": "flat",
+   "topRate": 0.0307,
+   "bracketsSingle": [
+    {
+     "upTo": null,
+     "rate": 0.0307
+    }
+   ],
+   "bracketsMFJ": [
+    {
+     "upTo": null,
+     "rate": 0.0307
+    }
+   ],
+   "stdDeductionSingle": null,
+   "stdDeductionMFJ": null,
+   "bracketsNote": "No standard deduction and no personal exemption. Pennsylvania has a low-income Tax Forgiveness credit (Schedule SP) whose limits are UNVERIFIED here. Local earned income tax is levied by most municipalities on top of the 3.07%, averaging 1.07% effective statewide and reaching 3.74% in Philadelphia and 3.75% in Chester City.",
+   "taxesSocialSecurity": false,
+   "socialSecurityNote": "Fully exempt.",
+   "retirementExclusionNote": "Pennsylvania taxes NO retirement income once you are retired. PA DOR: 'Under Pennsylvania law, payments commonly recognized as old age or retirement benefits are not subject to tax. In order to be considered exempt retirement benefits, the payments must come from an eligible Pennsylvania retirement plan and must be paid to persons retired from service after reaching a specific age or after a stated period of employment.' Eligible plans include 401(a) qualified pension plans, IRAs, Roth IRAs, SEPs and Keoghs. Military retirement also exempt. The exception is early distributions: those taken 'before retirement age or years of service are taxable in the year received to the extent that the distributions exceed previously taxed contributions.' Note also that PA taxes 401(k) contributions going in - 'Employee contributions to any retirement plan are always taxable as compensation.'",
+   "effectivePropertyTaxRate": 0.0126,
+   "medianPropertyTaxBill": 3214,
+   "stateSalesTax": 0.06,
+   "avgCombinedSalesTax": 0.0634,
+   "groceriesTaxedState": false,
+   "groceriesNote": "Most groceries exempt, and Pennsylvania also exempts candy, gum and most clothing, which South Carolina does not. Sourced to AARP (March 24, 2026); statute 72 P.S. 7204 UNVERIFIED here.",
+   "annualVehicleTax": false,
+   "vehicleTaxNote": "No annual property or excise tax on vehicles. PennDOT Form MV-70S (4-26): passenger registration $48.00 for one year, $96.00 for two. Certificate of title $72.00. Participating counties add a $5 annual Fee for Local Use. New for 2026, a Road User Charge of $250/yr for electric vehicles and $63/yr for plug-in hybrids. About $48 to $53 a year for a gasoline car, regardless of value.",
+   "estateTax": false,
+   "estateTaxNote": "None.",
+   "inheritanceTax": true,
+   "inheritanceTaxNote": "Yes, with NO exemption threshold. PA DOR: '0 percent on transfers to a surviving spouse or to a parent from a child aged 21 or younger; 4.5 percent on transfers to direct descendants and lineal heirs; 12 percent on transfers to siblings; and 15 percent on transfers to other heirs, except charitable organizations, exempt institutions and government entities exempt from tax.' Property owned jointly between spouses is exempt. Unlike New Jersey, Pennsylvania taxes transfers to CHILDREN, at 4.5% from the first dollar. Due at death, delinquent nine months later, 5% discount if paid within three months.",
+   "gasTaxCentsPerGallon": 57.6,
+   "gasTaxNote": "PA DOR 2026 motor fuel tax rate on liquid fuels (motor gasoline and gasohol) is $0.576/gallon, effective January 1, 2026, unchanged from 2025. Tax Foundation's 58.70 for July 2025 is about 1.1 cents higher because it adds other per-gallon taxes and fees; cite whichever you use.",
+   "movingOutGotcha": "Pennsylvania inheritance tax follows Pennsylvania real estate even after you stop being a Pennsylvanian. Section 2116(b)(2) of the Inheritance and Estate Tax Act of 1991: 'When the decedent was a nonresident, the tax shall be computed upon the value of real property and tangible personal property having its situs in this Commonwealth...at the rates in effect at the transferor's death.' Keeping the Bucks County house does not escape it - the estate files Form REV-1737-A and pays at the same 4.5% / 12% / 15% rates. Second, running the other way: Pennsylvania taxes no retirement income at all, so a retiree moving to South Carolina starts paying state income tax on a pension for the first time. Small after SC's deductions, but not zero. Do not claim an income tax saving for a Pennsylvania mover.",
+   "sources": [
+    "https://www.pa.gov/agencies/revenue/forms-and-publications/pa-personal-income-tax-guide/gross-compensation",
+    "https://www.pa.gov/agencies/revenue/resources/tax-types-and-information/inheritance-tax",
+    "https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforindividuals/inheritancetax/documents/rev-1737-a.pdf",
+    "https://www.pa.gov/agencies/revenue/resources/tax-rates/motor-fuel-tax-rates",
+    "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-forms/mv-70s.pdf",
+    "https://www.aarp.org/states/pennsylvania/state-taxes-guide/"
+   ],
+   "asOf": "2026 tax year"
+  },
+  {
+   "state": "Maryland",
+   "abbr": "MD",
+   "incomeTaxType": "graduated",
+   "topRate": 0.065,
+   "bracketsSingle": [
+    {
+     "upTo": 1000,
+     "rate": 0.02
+    },
+    {
+     "upTo": 2000,
+     "rate": 0.03
+    },
+    {
+     "upTo": 3000,
+     "rate": 0.04
+    },
+    {
+     "upTo": 100000,
+     "rate": 0.0475
+    },
+    {
+     "upTo": 125000,
+     "rate": 0.05
+    },
+    {
+     "upTo": 150000,
+     "rate": 0.0525
+    },
+    {
+     "upTo": 250000,
+     "rate": 0.055
+    },
+    {
+     "upTo": 500000,
+     "rate": 0.0575
+    },
+    {
+     "upTo": 1000000,
+     "rate": 0.0625
+    },
+    {
+     "upTo": null,
+     "rate": 0.065
+    }
+   ],
+   "bracketsMFJ": [
+    {
+     "upTo": 1000,
+     "rate": 0.02
+    },
+    {
+     "upTo": 2000,
+     "rate": 0.03
+    },
+    {
+     "upTo": 3000,
+     "rate": 0.04
+    },
+    {
+     "upTo": 150000,
+     "rate": 0.0475
+    },
+    {
+     "upTo": 175000,
+     "rate": 0.05
+    },
+    {
+     "upTo": 225000,
+     "rate": 0.0525
+    },
+    {
+     "upTo": 300000,
+     "rate": 0.055
+    },
+    {
+     "upTo": 600000,
+     "rate": 0.0575
+    },
+    {
+     "upTo": 1200000,
+     "rate": 0.0625
+    },
+    {
+     "upTo": null,
+     "rate": 0.065
+    }
+   ],
+   "stdDeductionSingle": 3350,
+   "stdDeductionMFJ": 6700,
+   "bracketsNote": "Personal exemption $3,200 single / $6,400 MFJ, phasing out $100k-$150k single and $150k-$200k MFJ. STATE RATES ONLY: every Maryland county and Baltimore City levies a local income tax on top, and Tax Foundation puts Maryland's average effective local income tax rate at 2.51%, the highest in the nation. A Marylander's real combined rate is roughly 7% to 9%. South Carolina has no local income tax.",
+   "taxesSocialSecurity": false,
+   "socialSecurityNote": "Not taxed (AARP, April 2, 2026).",
+   "retirementExclusionNote": "Pension exclusion up to $41,200 for residents 65+ with no income limit (AARP figure for tax year 2025; the amount is indexed annually and the 2026 figure is UNVERIFIED). Military: subtract up to $12,500 under age 55, $20,000 at 55+.",
+   "effectivePropertyTaxRate": 0.0092,
+   "medianPropertyTaxBill": 4144,
+   "stateSalesTax": 0.06,
+   "avgCombinedSalesTax": 0.06,
+   "groceriesTaxedState": false,
+   "annualVehicleTax": false,
+   "vehicleTaxNote": "No annual property tax on vehicles. One-time excise on purchase of 6.5% of book value (AARP). Annual registration fee UNVERIFIED. South Carolina's annual vehicle tax is new for a Marylander.",
+   "estateTax": true,
+   "estateTaxNote": "Exemption $5,000,000, rates 0.8% to 16%. Maryland is the ONLY state with both an estate tax and an inheritance tax.",
+   "inheritanceTax": true,
+   "inheritanceTaxNote": "$1,000 exemption, 0% to 10%. AARP: 10 percent on property passing to non-qualified heirs; direct lineal heirs are exempt.",
+   "gasTaxCentsPerGallon": 46.19,
+   "movingOutGotcha": "The county income tax is what actually falls away, not the state rate. Maryland's average effective local income tax is 2.51%, first in the nation, and South Carolina has none. Maryland is also the only origin state that charges both an estate tax (at $5M) and an inheritance tax (on non-lineal heirs). Maryland residency and domicile audit standards UNVERIFIED.",
+   "sources": [
+    "https://www.aarp.org/states/maryland/state-taxes-guide/",
+    "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/"
+   ],
+   "asOf": "2026 tax year. MEDIUM confidence: retirement and vehicle items from AARP only, no Maryland Comptroller source opened."
+  },
+  {
+   "state": "Virginia",
+   "abbr": "VA",
+   "incomeTaxType": "graduated",
+   "topRate": 0.0575,
+   "bracketsSingle": [
+    {
+     "upTo": 3000,
+     "rate": 0.02
+    },
+    {
+     "upTo": 5000,
+     "rate": 0.03
+    },
+    {
+     "upTo": 17000,
+     "rate": 0.05
+    },
+    {
+     "upTo": null,
+     "rate": 0.0575
+    }
+   ],
+   "bracketsMFJ": [
+    {
+     "upTo": 3000,
+     "rate": 0.02
+    },
+    {
+     "upTo": 5000,
+     "rate": 0.03
+    },
+    {
+     "upTo": 17000,
+     "rate": 0.05
+    },
+    {
+     "upTo": null,
+     "rate": 0.0575
+    }
+   ],
+   "stdDeductionSingle": 8750,
+   "stdDeductionMFJ": 17500,
+   "bracketsNote": "Personal exemption $930 / $1,860. The top 5.75% rate starts at just $17,000 of taxable income, so Virginia is effectively flat for anyone with real income. No local income tax.",
+   "taxesSocialSecurity": false,
+   "socialSecurityNote": "AARP: No, the state does not tax Social Security income.",
+   "retirementExclusionNote": "Age deduction of up to $12,000 at 65+, phasing out by $1 for every $1 that federal AGI exceeds $50,000 single or $75,000 married, plus an additional $800 exemption at 65+. Military retirement gets a $40,000 subtraction. Pensions, 401(k) and IRA withdrawals are otherwise fully taxed.",
+   "effectivePropertyTaxRate": 0.0078,
+   "medianPropertyTaxBill": 2872,
+   "stateSalesTax": 0.053,
+   "avgCombinedSalesTax": 0.0577,
+   "groceriesTaxedState": false,
+   "groceriesNote": "State grocery rate removed; a 1% local tax on food remains. UNVERIFIED at tax.virginia.gov.",
+   "annualVehicleTax": true,
+   "vehicleTaxNote": "YES, the Virginia car tax. AARP: vehicles face a sales tax of 4.15 percent of gross purchase price plus an annual personal property tax at the city and county level based on vehicle value. IMPORTANT FOR COPY: do not use the South Carolina car tax will surprise you framing for Virginia; the mechanism is already familiar.",
+   "estateTax": false,
+   "estateTaxNote": "None. AARP: No, the state does not have an inheritance or estate tax.",
+   "inheritanceTax": false,
+   "inheritanceTaxNote": "None.",
+   "gasTaxCentsPerGallon": null,
+   "gasTaxNote": "CONTRADICTION, do not publish. Tax Foundation (July 2025) gives 41.60 cents; AARP (April 1, 2026) gives 31.7 cents. A ~10 cent gap, too large for rounding. Needs a primary source at tax.virginia.gov.",
+   "movingOutGotcha": "Virginia's top bracket starts at $17,000, so Virginia 5.75% versus South Carolina 5.21% overstates the gap once SC's 1.99% first bracket and the SCIAD are applied. The vehicle tax is a wash because Virginia already has one. Sales tax goes UP, from 5.77% to 8% or 9%. Virginia is a weak tax-savings story.",
+   "sources": [
+    "https://www.aarp.org/states/virginia/state-tax-guide/",
+    "https://www.tax.virginia.gov/deductions",
+    "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/"
+   ],
+   "asOf": "2026 tax year. MEDIUM confidence outside the Tax Foundation figures."
+  },
+  {
+   "state": "Connecticut",
+   "abbr": "CT",
+   "incomeTaxType": "graduated",
+   "topRate": 0.0699,
+   "bracketsSingle": [
+    {
+     "upTo": 10000,
+     "rate": 0.02
+    },
+    {
+     "upTo": 50000,
+     "rate": 0.045
+    },
+    {
+     "upTo": 100000,
+     "rate": 0.055
+    },
+    {
+     "upTo": 200000,
+     "rate": 0.06
+    },
+    {
+     "upTo": 250000,
+     "rate": 0.065
+    },
+    {
+     "upTo": 500000,
+     "rate": 0.069
+    },
+    {
+     "upTo": null,
+     "rate": 0.0699
+    }
+   ],
+   "bracketsMFJ": [
+    {
+     "upTo": 20000,
+     "rate": 0.02
+    },
+    {
+     "upTo": 100000,
+     "rate": 0.045
+    },
+    {
+     "upTo": 200000,
+     "rate": 0.055
+    },
+    {
+     "upTo": 400000,
+     "rate": 0.06
+    },
+    {
+     "upTo": 500000,
+     "rate": 0.065
+    },
+    {
+     "upTo": 1000000,
+     "rate": 0.069
+    },
+    {
+     "upTo": null,
+     "rate": 0.0699
+    }
+   ],
+   "stdDeductionSingle": null,
+   "stdDeductionMFJ": null,
+   "bracketsNote": "No standard deduction. Personal exemption $15,000 / $24,000, phasing out. Connecticut has TAX BENEFIT RECAPTURE: per Tax Foundation, many high-income taxpayers pay their top tax rate on all income, not just on amounts above the benefit threshold, so a bracket calculation understates a high earner's bill.",
+   "taxesSocialSecurity": "partial",
+   "socialSecurityNote": "Fully exempt below $75,000 AGI single / $100,000 MFJ. Above those thresholds, taxpayers may deduct up to 25% of benefits. A hard AGI threshold, not a gradual phase-out.",
+   "retirementExclusionNote": "Pension and annuity income gets a 100% deduction below $75,000 AGI single / $100,000 MFJ, phasing out entirely at $100,000 / $150,000. IRA distributions other than Roth phase in to a 100% deduction beginning in 2026 (50% for 2024, 75% for 2025). Railroad retirement and military retirement pay get a 100% deduction. Under the AGI thresholds Connecticut taxes retirement income at ZERO and South Carolina does not; over them Connecticut is worse. CT DRS material seen in summary form only, MEDIUM.",
+   "effectivePropertyTaxRate": 0.0154,
+   "medianPropertyTaxBill": 6573,
+   "stateSalesTax": 0.0635,
+   "avgCombinedSalesTax": 0.0635,
+   "groceriesTaxedState": false,
+   "annualVehicleTax": null,
+   "vehicleTaxNote": "UNVERIFIED AND IMPORTANT. Connecticut towns are believed to levy an annual municipal motor vehicle property tax, which would mean South Carolina's vehicle tax is familiar rather than surprising for a Connecticut mover. AARP did not mention it and no primary source was opened. VERIFY BEFORE WRITING EITHER FRAMING. Purchase tax is 6.35%, or 7.75% for vehicles priced over $50,000.",
+   "estateTax": true,
+   "estateTaxNote": "Exemption $13,990,000 for 2025 deaths, flat 12%. Connecticut conforms to the federal exemption, so 2026 is $15,000,000 (Wealthspire, Feb 4, 2026). Practically, it now reaches almost nobody.",
+   "inheritanceTax": false,
+   "inheritanceTaxNote": "None.",
+   "gasTaxCentsPerGallon": 25,
+   "gasTaxNote": "Tax Foundation (July 2025) 25.00; AARP (March 17, 2026) gasohol $0.25 per gallon. Consistent. NOTE: this is BELOW South Carolina's 28.75, so gas tax goes UP on this move. Do not list it as a saving.",
+   "movingOutGotcha": "The AGI cliffs. A Connecticut retiree at $99,000 of AGI pays no state tax on Social Security or pension income; at $101,000 the pension deduction starts unwinding and the Social Security exemption is already gone. Combined with tax benefit recapture at the top, Connecticut's effective rates move in steps rather than smoothly. The genuine win is the 1.54% property tax, third highest in the country.",
+   "sources": [
+    "https://www.aarp.org/states/connecticut/state-tax-guide/",
+    "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/",
+    "https://taxfoundation.org/data/all/state/property-taxes-by-state-county/"
+   ],
+   "asOf": "2026 tax year. MEDIUM confidence outside the Tax Foundation figures."
+  },
+  {
+   "state": "Massachusetts",
+   "abbr": "MA",
+   "incomeTaxType": "graduated",
+   "topRate": 0.09,
+   "bracketsSingle": [
+    {
+     "upTo": 1083150,
+     "rate": 0.05
+    },
+    {
+     "upTo": null,
+     "rate": 0.09
+    }
+   ],
+   "bracketsMFJ": [
+    {
+     "upTo": 1083150,
+     "rate": 0.05
+    },
+    {
+     "upTo": null,
+     "rate": 0.09
+    }
+   ],
+   "stdDeductionSingle": null,
+   "stdDeductionMFJ": null,
+   "bracketsNote": "Effectively a 5% flat tax plus a 4% surtax on income above $1,083,150 (2025 threshold, indexed), giving a 9% top rate. Short-term capital gains are taxed at 8.5% regardless of income. No standard deduction; personal exemption $4,400 / $8,800. No local income tax.",
+   "taxesSocialSecurity": false,
+   "socialSecurityNote": "AARP: Massachusetts does not tax Social Security benefits.",
+   "retirementExclusionNote": "Private pensions, 401(k) and IRA withdrawals are taxed at 5%. Military pensions are excluded from Massachusetts gross income. Massachusetts and US government contributory pensions are generally exempt but that is UNVERIFIED; AARP did not address it.",
+   "effectivePropertyTaxRate": 0.01,
+   "medianPropertyTaxBill": 6080,
+   "stateSalesTax": 0.0625,
+   "avgCombinedSalesTax": 0.0625,
+   "groceriesTaxedState": false,
+   "groceriesNote": "Groceries exempt, and clothing under $175 per item is exempt.",
+   "annualVehicleTax": true,
+   "vehicleTaxNote": "YES, an annual municipal motor vehicle excise at $25 per $1,000 of the vehicle's value, i.e. 2.5% of a statutory depreciated value. That is HIGHER than Horry County's roughly 1.2% effective rate on a car, so a Massachusetts mover's vehicle tax likely goes DOWN. Do not use the vehicle-tax-surprise framing for Massachusetts. Verify the Massachusetts valuation schedule before quantifying.",
+   "estateTax": true,
+   "estateTaxNote": "Taxable above $2,000,000, one of the lowest thresholds in the country, at 0.8% to 16%, with a $99,600 credit for deaths on or after January 1, 2023. A Massachusetts couple with a $900,000 house and $1.2M in retirement accounts is already over the line. South Carolina has no estate tax. Whether Massachusetts still taxes Massachusetts real estate in a non-resident's estate is UNVERIFIED.",
+   "inheritanceTax": false,
+   "inheritanceTaxNote": "None.",
+   "gasTaxCentsPerGallon": 27.47,
+   "gasTaxNote": "Tax Foundation (July 2025) 27.47; AARP (April 1, 2026) 24 cents. The ~2.5 cent gap is the underground storage tank fee Tax Foundation includes. Either way this is BELOW South Carolina's 28.75, so gas tax goes UP. Do not list it as a saving.",
+   "movingOutGotcha": "The $2,000,000 estate tax threshold is the strongest non-property-tax argument in the file, and it catches ordinary homeowners. But note that gas tax and vehicle excise both favour Massachusetts, so the honest pitch is property tax dollars, income tax rate and the estate tax, not the small recurring items.",
+   "sources": [
+    "https://www.aarp.org/states/massachusetts/state-taxes-guide/",
+    "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/",
+    "https://taxfoundation.org/data/all/state/estate-inheritance-taxes/"
+   ],
+   "asOf": "2026 tax year. MEDIUM confidence outside the Tax Foundation figures."
+  },
+  {
+   "state": "Michigan",
+   "abbr": "MI",
+   "incomeTaxType": "flat",
+   "topRate": 0.0425,
+   "bracketsSingle": [
+    {
+     "upTo": null,
+     "rate": 0.0425
+    }
+   ],
+   "bracketsMFJ": [
+    {
+     "upTo": null,
+     "rate": 0.0425
+    }
+   ],
+   "stdDeductionSingle": null,
+   "stdDeductionMFJ": null,
+   "bracketsNote": "No standard deduction. Personal exemption $5,900 single / $11,800 MFJ plus $5,900 per dependent for 2026, the most generous exemption of any origin state here. AARP's $5,800 is the 2025 figure. 24 Michigan cities levy a city income tax; Tax Foundation puts the average effective local rate at 0.18%.",
+   "taxesSocialSecurity": false,
+   "socialSecurityNote": "AARP: Michigan does not tax Social Security benefits.",
+   "retirementExclusionNote": "UNVERIFIED FOR 2026, DO NOT PUBLISH. Michigan is mid-way through a multi-year restoration of its pre-2012 pension deduction, phasing in through tax year 2026, and the tiers turn on the taxpayer's BIRTH YEAR rather than current age. AARP (March 13, 2026) describes: born before 1946, a 75% subtraction on eligible retirement income; born 1946-1952, up to $20,000 single / $40,000 joint. That may be a prior-year snapshot. Open michigan.gov/treasury before using any Michigan retirement figure.",
+   "effectivePropertyTaxRate": 0.0119,
+   "medianPropertyTaxBill": 2988,
+   "stateSalesTax": 0.06,
+   "avgCombinedSalesTax": 0.06,
+   "groceriesTaxedState": false,
+   "annualVehicleTax": null,
+   "vehicleTaxNote": "No county property tax on vehicles, but Michigan's annual registration fee is itself value-based, calculated from the vehicle's original MSRP rather than a flat amount. UNVERIFIED; AARP gave no registration detail. Check before framing South Carolina's vehicle tax as a surprise for a Michigander.",
+   "estateTax": false,
+   "estateTaxNote": "None.",
+   "inheritanceTax": false,
+   "inheritanceTaxNote": "None. AARP: Michigan has no inheritance tax for deaths after September 30, 1993.",
+   "gasTaxCentsPerGallon": null,
+   "gasTaxNote": "CONTRADICTION, do not publish. Tax Foundation (July 2025) 48.20 cents; AARP (March 13, 2026) 52.4 cents. Michigan indexes its motor fuel tax annually and also applies sales tax to fuel, so both figures can be defensible depending on what is counted. Roughly 20 to 24 cents above South Carolina either way.",
+   "movingOutGotcha": "The retirement-income tiers are the moving part and they turn on birth year, not current age, so two 70-year-olds can be treated differently. Nothing about Michigan's tax code makes leaving administratively hard; no day-count residency statute surfaced.",
+   "sources": [
+    "https://www.aarp.org/states/michigan/state-taxes-guide/",
+    "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/"
+   ],
+   "asOf": "2026 tax year. MEDIUM confidence; retirement and vehicle items UNVERIFIED."
+  },
+  {
+   "state": "Illinois",
+   "abbr": "IL",
+   "incomeTaxType": "flat",
+   "topRate": 0.0495,
+   "bracketsSingle": [
+    {
+     "upTo": null,
+     "rate": 0.0495
+    }
+   ],
+   "bracketsMFJ": [
+    {
+     "upTo": null,
+     "rate": 0.0495
+    }
+   ],
+   "stdDeductionSingle": null,
+   "stdDeductionMFJ": null,
+   "bracketsNote": "No standard deduction. Personal exemption $2,925 / $5,850. No local income tax.",
+   "taxesSocialSecurity": false,
+   "socialSecurityNote": "AARP: Illinois does not tax Social Security benefits.",
+   "retirementExclusionNote": "ILLINOIS TAXES NO RETIREMENT INCOME AT ALL; it is the second Pennsylvania on this list. Per Illinois Department of Revenue guidance (Publication 120 and the IL-1040 subtraction, seen in search-index form on 2026-08-16, MEDIUM confidence, the PDF itself was not opened), Illinois does not tax the federally taxed portion of qualified employee benefit plans including 401(k) plans, IRAs, self-employed retirement plans, or a traditional IRA converted to a Roth. An Illinois retiree pays zero state income tax on pension, 401(k) and IRA income and STARTS paying in South Carolina. Do not claim an income-tax saving for an Illinois mover.",
+   "effectivePropertyTaxRate": 0.0188,
+   "medianPropertyTaxBill": 5399,
+   "stateSalesTax": 0.0625,
+   "avgCombinedSalesTax": 0.0898,
+   "groceriesTaxedState": false,
+   "groceriesNote": "Exempt from the state rate, but AARP notes local municipalities may impose a 1 percent sales tax on groceries.",
+   "annualVehicleTax": false,
+   "vehicleTaxNote": "No annual property tax on vehicles. Registration is a flat annual fee, commonly cited around $151 for a passenger car, UNVERIFIED. South Carolina's annual vehicle tax is new for an Illinoisan.",
+   "estateTax": true,
+   "estateTaxNote": "Exemption $4,000,000, rates 0.8% to 16%. Second-lowest estate tax threshold in this file after Massachusetts.",
+   "inheritanceTax": false,
+   "inheritanceTaxNote": "None.",
+   "gasTaxCentsPerGallon": null,
+   "gasTaxNote": "LARGE CONTRADICTION, do not publish. Tax Foundation (July 2025) 66.40 cents; AARP (March 16, 2026) 48.3 cents, an 18 cent gap. Tax Foundation's figure includes the state sales tax applied to motor fuel and local motor fuel taxes; AARP's looks like the motor fuel tax alone. Both are well above South Carolina's 28.75, but the specific number must be re-derived from a primary source.",
+   "movingOutGotcha": "Property tax at 1.88% is rank 2 in the country and is a real win; Lake County's 2.26% effective rate is the highest county figure in this whole file. But it is offset by the fact that Illinois charges no income tax on retirement income and South Carolina does. For a retired Illinois couple the two move in opposite directions; run both before claiming anything.",
+   "sources": [
+    "https://www.aarp.org/states/illinois/state-taxes-guide/",
+    "https://tax.illinois.gov/research/publications/pubs/retirement-income.html",
+    "https://taxfoundation.org/data/all/state/property-taxes-by-state-county/"
+   ],
+   "asOf": "2026 tax year. MEDIUM confidence outside the Tax Foundation figures."
+  },
+  {
+   "state": "Georgia",
+   "abbr": "GA",
+   "incomeTaxType": "flat",
+   "topRate": 0.0519,
+   "bracketsSingle": [
+    {
+     "upTo": null,
+     "rate": 0.0519
+    }
+   ],
+   "bracketsMFJ": [
+    {
+     "upTo": null,
+     "rate": 0.0519
+    }
+   ],
+   "stdDeductionSingle": 12000,
+   "stdDeductionMFJ": 24000,
+   "bracketsNote": "RATE UNVERIFIED FOR 2026. Tax Foundation's 2026 table prints 5.19%, which HB 111 made retroactive to January 1, 2025. Georgia law schedules further 0.10-point annual reductions toward 4.99% subject to revenue triggers, so the 2026 rate may be 5.09%. Do not publish a 2026 Georgia rate without checking dor.georgia.gov. Dependent exemption $4,000. No local income tax.",
+   "taxesSocialSecurity": false,
+   "socialSecurityNote": "AARP: No. Georgia does not tax Social Security benefits.",
+   "retirementExclusionNote": "Georgia DOR: taxpayers who are 62 or older, or permanently and totally disabled regardless of age, may be eligible for a retirement income adjustment. Qualifying income includes pensions and annuities, interest, dividends, net rental income, capital gains, royalties, and up to $5,000 of earned income. For married couples filing jointly with both members receiving retirement income, the maximum adjustment may be up to twice the individual exclusion amount. THE DOLLAR AMOUNTS ARE NOT ON THE DOR PAGE; it points to Form IT-511. Commonly cited as $35,000 for ages 62-64 and $65,000 for 65+, per taxpayer; UNVERIFIED. Military: $17,500 excluded under age 62, plus another $17,500 for those with more than $17,500 of Georgia earned income.",
+   "effectivePropertyTaxRate": 0.0079,
+   "medianPropertyTaxBill": 2554,
+   "stateSalesTax": 0.04,
+   "avgCombinedSalesTax": 0.0756,
+   "groceriesTaxedState": false,
+   "groceriesNote": "AARP: food, prescription medication, lottery tickets and other items are exempt from statewide sales tax but may be subject to local sales taxes.",
+   "annualVehicleTax": false,
+   "vehicleTaxNote": "Georgia replaced the annual ad valorem tax with a one-time Title Ad Valorem Tax (TAVT) at purchase, 7% per AARP. Vehicles still on the pre-2013 system pay an annual ad valorem tax. For most Georgians, South Carolina's annual vehicle tax IS new.",
+   "estateTax": false,
+   "estateTaxNote": "None.",
+   "inheritanceTax": false,
+   "inheritanceTaxNote": "None. AARP: Georgia has no inheritance or estate tax.",
+   "gasTaxCentsPerGallon": 33,
+   "gasTaxNote": "AARP (March 12, 2026): gasoline and diesel are taxed at 33 and 37 cents per gallon as of Jan. 1, 2026. Tax Foundation (July 2025) 33.85. Consistent. Saving over South Carolina is only about 4.3 cents/gal, the smallest of any origin state.",
+   "movingOutGotcha": "Georgia is South Carolina's closest peer and the honest answer is that very little changes. Similar income tax rate, slightly higher property tax in Georgia, slightly lower sales tax in Georgia, no estate tax on either side, and Georgia's retirement exclusion at 65+ is MORE generous than South Carolina's. The two real differences are South Carolina's annual vehicle tax, which is new for most Georgians, and Horry County's 0.38% property tax against Fulton's 0.89%. Do not build a big-tax-savings page for Georgia buyers.",
+   "sources": [
+    "https://www.aarp.org/states/georgia/state-taxes-guide/",
+    "https://dor.georgia.gov/retirement-income-exclusion",
+    "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/"
+   ],
+   "asOf": "2026 tax year. Rate and retirement amounts UNVERIFIED for 2026."
+  },
+  {
+   "state": "Florida",
+   "abbr": "FL",
+   "incomeTaxType": "none",
+   "topRate": 0,
+   "bracketsSingle": [],
+   "bracketsMFJ": [],
+   "stdDeductionSingle": null,
+   "stdDeductionMFJ": null,
+   "taxesSocialSecurity": false,
+   "socialSecurityNote": "No state income tax, so no state tax on Social Security.",
+   "retirementExclusionNote": "No state income tax, so pensions, 401(k) and IRA withdrawals are untaxed at the state level. A Florida mover picks up a South Carolina income tax where there was none.",
+   "effectivePropertyTaxRate": 0.0078,
+   "medianPropertyTaxBill": 2993,
+   "stateSalesTax": 0.06,
+   "avgCombinedSalesTax": 0.0698,
+   "groceriesTaxedState": false,
+   "groceriesNote": "Groceries exempt. s. 212.08(1)(a), F.S.: 'Food products for human consumption are exempt from the tax imposed by this chapter.' Opened at flsenate.gov 2026-08-30.",
+   "annualVehicleTax": false,
+   "vehicleTaxNote": "No annual value-based tax on vehicles. s. 320.08, F.S. levies flat license taxes by weight ($14.50 / $22.50 / $32.50 for private automobiles); nothing in the section keys on value. Opened at flsenate.gov 2026-08-30.",
+   "estateTax": false,
+   "estateTaxNote": "None.",
+   "inheritanceTax": false,
+   "inheritanceTaxNote": "None.",
+   "gasTaxCentsPerGallon": 39.4,
+   "movingOutGotcha": "Florida to South Carolina is a tax INCREASE in almost every dimension and the page must not pretend otherwise. The mover picks up a state income tax where there was none, picks up an annual vehicle property tax, and pays higher sales tax (6.98% to 8% or 9%). They also lose Florida's homestead exemption, the Save Our Homes 3%-a-year assessed value cap and its portability, which for a long-tenured owner can outweigh the headline rate difference. Property tax effective rate does fall (0.78% to 0.38% in Horry) and neither state has an estate tax. Never run a tax-savings angle at a Florida buyer.",
+   "sources": [
+    "https://taxfoundation.org/data/all/state/property-taxes-by-state-county/",
+    "https://taxfoundation.org/data/all/state/2026-sales-tax-rates-midyear/",
+    "https://taxfoundation.org/data/all/state/gas-taxes-state/",
+    "https://www.flsenate.gov/Laws/Statutes/2025/212.08",
+    "https://www.flsenate.gov/Laws/Statutes/2025/320.08",
+    "https://floridarevenue.com/property/Documents/pt112.pdf",
+    "https://www.flsenate.gov/Laws/Constitution"
+   ],
+   "asOf": "2026 tax year for sales tax; ACS 2024 for property; July 2025 for gas. LOW-MEDIUM confidence, built from Tax Foundation tables only.",
+   "sohNote": "Save Our Homes: after the first homestead year, assessed value cannot rise more than 3% or CPI, whichever is less (s. 193.155). The benefit can port only to a new homestead IN FLORIDA, within three years of January 1 of the abandonment year. A change of ownership triggers reassessment at just value. Source: FL DOR brochure PT-112 (R. 08/24), parsed 2026-08-30."
+  },
+  {
+   "state": "Texas",
+   "abbr": "TX",
+   "incomeTaxType": "none",
+   "topRate": 0,
+   "bracketsSingle": [],
+   "bracketsMFJ": [],
+   "stdDeductionSingle": null,
+   "stdDeductionMFJ": null,
+   "taxesSocialSecurity": false,
+   "socialSecurityNote": "No state income tax, so no state tax on Social Security.",
+   "retirementExclusionNote": "No state income tax, so pensions, 401(k) and IRA withdrawals are untaxed at the state level. A Texas mover picks up a South Carolina income tax where there was none.",
+   "effectivePropertyTaxRate": 0.014,
+   "medianPropertyTaxBill": 4108,
+   "stateSalesTax": 0.0625,
+   "avgCombinedSalesTax": 0.082,
+   "groceriesTaxedState": false,
+   "groceriesNote": "Groceries believed exempt. UNVERIFIED, no Texas source opened.",
+   "annualVehicleTax": false,
+   "vehicleTaxNote": "No annual value-based property tax on personal vehicles. Registration is a flat state fee plus county fees. UNVERIFIED. South Carolina's annual vehicle tax is new for a Texan.",
+   "estateTax": false,
+   "estateTaxNote": "None.",
+   "inheritanceTax": false,
+   "inheritanceTaxNote": "None.",
+   "gasTaxCentsPerGallon": 20,
+   "gasTaxNote": "20.00 cents is the LOWEST of any state in this file. South Carolina is 28.75, so a Texan's gas tax goes UP by about 8.75 cents/gal.",
+   "movingOutGotcha": "Texas trades no income tax for the seventh-highest property tax in the country (1.40% effective). South Carolina does the reverse: a real income tax and the 46th-lowest property tax. Whether a Texan comes out ahead depends entirely on the ratio of their income to their home value. A retired Texan with modest income and an expensive house wins; a high earner with a modest house loses. This is the one comparison in the file that genuinely needs a calculator rather than a claim.",
+   "sources": [
+    "https://taxfoundation.org/data/all/state/property-taxes-by-state-county/",
+    "https://taxfoundation.org/data/all/state/2026-sales-tax-rates-midyear/",
+    "https://taxfoundation.org/data/all/state/gas-taxes-state/"
+   ],
+   "asOf": "2026 tax year for sales tax; ACS 2024 for property; July 2025 for gas. LOW-MEDIUM confidence, built from Tax Foundation tables only."
+  },
+  {
+   "state": "California",
+   "abbr": "CA",
+   "incomeTaxType": "graduated",
+   "topRate": 0.133,
+   "bracketsSingle": [
+    {
+     "upTo": 11079,
+     "rate": 0.01
+    },
+    {
+     "upTo": 26264,
+     "rate": 0.02
+    },
+    {
+     "upTo": 41452,
+     "rate": 0.04
+    },
+    {
+     "upTo": 57542,
+     "rate": 0.06
+    },
+    {
+     "upTo": 72724,
+     "rate": 0.08
+    },
+    {
+     "upTo": 371479,
+     "rate": 0.093
+    },
+    {
+     "upTo": 445771,
+     "rate": 0.103
+    },
+    {
+     "upTo": 742953,
+     "rate": 0.113
+    },
+    {
+     "upTo": 1000000,
+     "rate": 0.123
+    },
+    {
+     "upTo": null,
+     "rate": 0.133
+    }
+   ],
+   "bracketsMFJ": [
+    {
+     "upTo": 22158,
+     "rate": 0.01
+    },
+    {
+     "upTo": 52528,
+     "rate": 0.02
+    },
+    {
+     "upTo": 82904,
+     "rate": 0.04
+    },
+    {
+     "upTo": 115084,
+     "rate": 0.06
+    },
+    {
+     "upTo": 145448,
+     "rate": 0.08
+    },
+    {
+     "upTo": 742958,
+     "rate": 0.093
+    },
+    {
+     "upTo": 891542,
+     "rate": 0.103
+    },
+    {
+     "upTo": 1000000,
+     "rate": 0.113
+    },
+    {
+     "upTo": 1485906,
+     "rate": 0.123
+    },
+    {
+     "upTo": null,
+     "rate": 0.133
+    }
+   ],
+   "stdDeductionSingle": 5540,
+   "stdDeductionMFJ": 11080,
+   "bracketsNote": "Top rate includes the 1% mental health services tax and is the highest in the country. Exemptions are credits, $153 single / $306 MFJ, not deductions. No local income tax.",
+   "taxesSocialSecurity": false,
+   "socialSecurityNote": "California does not tax Social Security benefits.",
+   "retirementExclusionNote": "Pensions, 401(k) and IRA withdrawals are fully taxed at ordinary rates with no age-based exclusion. California also adds its own 2.5% state penalty on early distributions on top of the federal 10%. UNVERIFIED, no California source was opened.",
+   "effectivePropertyTaxRate": 0.007,
+   "medianPropertyTaxBill": 5369,
+   "stateSalesTax": 0.0725,
+   "avgCombinedSalesTax": 0.0903,
+   "groceriesTaxedState": false,
+   "groceriesNote": "Groceries believed exempt. UNVERIFIED. Note the state rate includes a 1.25% mandatory local component.",
+   "annualVehicleTax": null,
+   "vehicleTaxNote": "No county property tax on vehicles, but the annual registration bill includes a Vehicle License Fee of about 0.65% of the vehicle's depreciated value, which functions as an annual value-based tax. UNVERIFIED. If confirmed, South Carolina's vehicle tax is a familiar mechanism at a somewhat higher effective rate for a Californian.",
+   "estateTax": false,
+   "estateTaxNote": "None.",
+   "inheritanceTax": false,
+   "inheritanceTaxNote": "None.",
+   "gasTaxCentsPerGallon": 70.92,
+   "gasTaxNote": "Highest in the country. South Carolina is 28.75, so a Californian saves about 42 cents a gallon, by far the largest per-gallon drop in this file.",
+   "movingOutGotcha": "Two things. First, Proposition 13 means the California property tax comparison depends on PURCHASE DATE, not the published 0.70% rate: assessed value is capped at 2% growth a year until the property sells, so a 1995 Orange County buyer may be paying under 0.2% of market value and will see their property tax RISE in Horry County despite the lower nominal rate. Never quote California's effective rate at a specific owner without asking when they bought. Second, the Franchise Tax Board is aggressive on residency and applies a facts-and-circumstances closest-connections test rather than a day count. UNVERIFIED, but flag it for anyone selling California real estate or holding California-source income after the move.",
+   "sources": [
+    "https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/",
+    "https://taxfoundation.org/data/all/state/property-taxes-by-state-county/",
+    "https://taxfoundation.org/data/all/state/2026-sales-tax-rates-midyear/"
+   ],
+   "asOf": "2026 tax year. LOW-MEDIUM confidence, built from Tax Foundation tables, no California source opened."
+  }
+ ]
 }
