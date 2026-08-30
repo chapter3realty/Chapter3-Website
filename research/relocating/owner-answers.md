@@ -745,3 +745,26 @@ and analytics untouched, hero canvas untouched.
   the stale-info scan ("137 days as of June 2026, per the local REALTOR
   association") is properly attributed and stays until its source is
   re-opened.
+
+## 2026-08-30, overnight: the whole site measured in a browser
+
+- All 104 pages loaded in Chromium: zero JS errors, zero broken asset
+  requests, every H1 painted, no page thinner than its content, no
+  horizontal scroll at 375px (the noindex /map/ app page shows a transient
+  pre-init width before Google Maps loads; not reachable from this
+  container, noted for a production spot-check).
+- Contrast measured on ~5,500 text nodes with a full alpha-compositing
+  checker (the first version mis-scored translucent panels and reported 82
+  false failures; rule 4, fixed). Thirteen real findings, all small print:
+  eight chart captions on the submarket pages (3.79:1), three faint legal
+  and source lines on navy (2.5 to 2.9:1, including the
+  commissions-are-negotiable line), one breadcrumb (3.44:1). All raised to
+  pass 4.5:1 with the smallest possible change. The "Targeted County"
+  eyebrow at 4.25:1 stays: it already exceeds the accepted 3.01:1 brass
+  brand baseline.
+- Functional: the popup appears on schedule and closes from its X (kept, as
+  instructed); the lead form blocks empty submits and requires the TCPA
+  box; the property-tax and cost-to-own calculators compute; the tax
+  comparison calculator works from its new shared asset on all three page
+  types; the submarket quick-search modal opens, syncs pills, and closes;
+  the nav dropdown and mobile menu work.
