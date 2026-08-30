@@ -576,3 +576,24 @@ federal tax, and personal credits.
   against col-places.json.
 - Not on the page because we have no real material: a Florida client story.
   If he has one, send it and it gets its own section like Ohio's.
+
+## 2026-08-30, round 2: benefits first on the Florida page
+
+- Instruction: do not make the focus taxes, talk about the other benefits.
+- Restructured: title "What You Gain", opening section leads with the house
+  money, day-to-day prices roughly nine index points under the Florida
+  average (col-places RPP, same dataset as cost-of-living), the airport (ten
+  airlines, 50+ nonstops, Aug 2026), six hospitals with the adult Level I
+  trauma center, around 80 golf courses by the local count, the winter golf
+  cart season on the sand, and cooler winters, all previously established
+  facts. Insurance section unchanged.
+- The never-pretend rule survives the reframe: all tax content consolidated
+  into one "The taxes, honestly" section near the bottom with the full table,
+  linked from the opening ("this page will not pretend the tax table is a
+  reason to come"). The calculator still opens on the honest $2,032-more
+  example and its sign is still pinned in test-tax.js.
+- Removed my own unsupported line "Most Florida movers we talk with" before
+  ship: we have no recorded Florida client conversations. Addressed the
+  reader instead.
+- FIGURATIVE gate caught "in your favor"; rewritten literally. Second catch
+  in two rounds; the gate is earning its place on my own copy.
