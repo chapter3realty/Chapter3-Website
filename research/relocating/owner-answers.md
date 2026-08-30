@@ -597,3 +597,24 @@ federal tax, and personal credits.
   reader instead.
 - FIGURATIVE gate caught "in your favor"; rewritten literally. Second catch
   in two rounds; the gate is earning its place on my own copy.
+
+## 2026-08-30, round 3: "is that really what they move here for?"
+
+- He challenged the benefits list, correctly: it was assembled from facts we
+  already had, not from research into actual motives. Researched it.
+- Documented drivers, now in local-facts H8: insurance renewals, condo
+  assessments under the post-Surfside inspection law (s. 553.899 opened:
+  3+ stories, due the year a building turns 30, association pays), costs
+  outgrowing the no-income-tax advantage, crowding/overdevelopment, and the
+  halfback pattern. 2025 moving-industry count: SC gained more 65+ residents
+  than any state (about 5,400 net) and Florida sent the second most of them
+  (nearly 1,900), behind only North Carolina.
+- Page changes: new "Halfway back" section with the numbers and the geography
+  logic (day's drive to the mid-Atlantic, one nonstop to most of the
+  Northeast, family closer both directions), push acknowledgment in the
+  opening, condo-assessment paragraph in the insurance section with the
+  read-the-budget-with-you service line, rewritten "why" FAQ plus a new
+  "What is a halfback move?" FAQ, study and statute added to sources.
+- Deliberately left out: Florida average premium figures (secondary sources
+  conflict, none opened at origin, and the reader knows their own renewal)
+  and the FAU sentiment survey (no buyer action). Both noted in H8.

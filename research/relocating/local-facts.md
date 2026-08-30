@@ -1017,3 +1017,22 @@ https://portal.ct.gov/-/media/drs/forms/2025/income/ct-1040-tcs_1225.pdf
 **Engine example home values pinned to col-places.json.**
 - FL example homeNow was 400,000 against a 378,167 zhvi; TX 340,000 against 301,806. Both inflated, both in our favor (bigger property bill there, bigger equity freed). Fixed to 378,000 / 302,000 and test-tax.js now pins all 11 states to zhvi rounded to the nearest thousand.
 - The FL example (working couple, $120,000 wages) computes to about $2,030 MORE tax a year here; the panel and the page copy both say so. test-tax.js pins the sign so a data edit can never silently flip the page's story.
+
+### H8. Why Floridians actually move here (from-florida framing), opened 2026-08-30
+
+**The halfback pattern, with 2025 numbers.**
+- Source: HireAHelper "The New Retirement Map" study, hireahelper.com/moving-statistics/retirement-study-2026/, opened 2026-08-30. Methodology per the study: "We analyzed PGM's proprietary database of 14,977,223 national moves recorded between January 2025 and December 2025."
+- Quotes: "Florida recorded the highest total inbound moves (45,696) among residents 65+, but also saw 44,881 outbound moves, resulting in a net gain of just 815." South Carolina "added 5,427 adults aged 65+ in 2025" — the largest net gain of any state. SC's 65+ arrivals by origin: "North Carolina (2,014 moves to South Carolina), Florida (1,862), New York (1,010), Georgia (982), and Pennsylvania (729)."
+- So Florida is the SECOND-largest source of South Carolina's 65+ arrivals, behind only North Carolina. Published on the page as "a national count of 2025 moves", rounded ("about 5,400", "nearly 1,900"), with the link in the sources line.
+- Confidence: MEDIUM-HIGH. It is one moving-industry database, not Census; the study's own numbers are quoted exactly. Do not present as Census.
+- "Halfback" = person who moved Northeast/Midwest to Florida, later settled halfway back (Carolinas/Georgia/Tennessee). Term long used in Carolina migration coverage (UNC Carolina Demography 2016 analysis per secondary reporting; term used generically on the page, no coinage claim).
+
+**Florida condo milestone inspections (the assessment driver).**
+- Source: s. 553.899, F.S., flsenate.gov/Laws/Statutes/2025/553.899, opened 2026-08-30.
+- Quotes: applies to buildings "three habitable stories or more in height"; condo/co-op under ch. 718/719; "must have a milestone inspection performed by December 31 of the year in which the building reaches 30 years of age" and "every 10 years thereafter"; "The condominium association or cooperative association is responsible for all costs associated with the milestone inspection..."
+- Buildings 30+ before July 1, 2022 were due by December 31, 2024 — the wave that produced the assessment letters now pushing owners to sell. Five-figure per-unit assessment claims exist in press but were NOT opened; the page states the mechanism only, no dollar figures.
+- Confidence: HIGH for the statute mechanics.
+
+**What was deliberately left OUT of the page.**
+- Florida average insurance premium figures: secondary sources conflict ($8,292 Insurify vs ~$10k "1-800-Insurance"). Neither opened at origin. The buyer knows their own renewal; the average adds nothing they can act on (A11a). Omitted.
+- FAU survey ("half would consider leaving"): market-wide sentiment stat, no buyer action. Omitted.
