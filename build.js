@@ -984,6 +984,27 @@ function audit() {
     const visible = textKey(s.replace(/<script[\s\S]*?<\/script>/g, " "));
     for (const blk of parsed) {
       if (blk && blk["@type"] === "FAQPage") {
+        /* A repeated Q or A inside one FAQPage.
+         *
+         * This shipped: /buyers/relocating/from-massachusetts/ carried the same
+         * estate-tax question and answer SIX times, in the schema and printed
+         * six times down the visible page. Nothing caught it, because the
+         * visibility rule above only asks whether each schema question appears
+         * on the page - six copies of a visible question pass it six times, and
+         * assemble-page's FAQ-to-FAQPage sync passes too, since both sides were
+         * equally wrong. A duplicated block is the one shape both existing
+         * checks are structurally blind to. Compare the entries to each other.
+         * Answers are compared too: a copy-paste that edits the question and
+         * leaves the answer is the same defect wearing a hat. */
+        const seenQ = new Map(), seenA = new Map();
+        for (const q of blk.mainEntity || []) {
+          const qk = textKey(String((q && q.name) || ""));
+          const ak = textKey(String((q && q.acceptedAnswer && q.acceptedAnswer.text) || ""));
+          if (qk) { seenQ.set(qk, (seenQ.get(qk) || 0) + 1); }
+          if (ak) { seenA.set(ak, (seenA.get(ak) || 0) + 1); }
+        }
+        for (const [k, n] of seenQ) if (n > 1) E(`FAQ question repeated ${n} times on this page: "${k.slice(0, 55)}"`);
+        for (const [k, n] of seenA) if (n > 1) E(`FAQ answer repeated ${n} times on this page: "${k.slice(0, 55)}"`);
         for (const q of blk.mainEntity || []) {
           if (q && q.name && !visible.includes(textKey(q.name)))
             E(`FAQ schema question not visible on page: "${String(q.name).slice(0, 55)}"`);
@@ -1406,7 +1427,20 @@ function audit() {
     if (!noindex) {
       indexable.push(rel);
       const mainM = s.match(/<main[\s\S]*?<\/main>/);
-      const mainHtml = (mainM ? mainM[0] : s).replace(/<script[\s\S]*?<\/script>/g, " ");
+      /* <style> contents are stripped alongside <script>.
+       *
+       * Without this the near-duplicate check below counted CSS as body words.
+       * Every page inline-styles the same chrome, and the tax calculator adds a
+       * large identical <style> block to ten pages, so property names, values
+       * and class names formed thousands of shingles that are identical by
+       * construction. That reported the from-state pages at 49-57% overlap when
+       * their rendered prose overlaps 36% at worst - a number that would have
+       * driven a real decision about how many state pages to build.
+       * Inline style="" attributes were already dropped with their tag; only
+       * the <style> element survived. */
+      const mainHtml = (mainM ? mainM[0] : s)
+        .replace(/<script[\s\S]*?<\/script>/g, " ")
+        .replace(/<style[\s\S]*?<\/style>/g, " ");
       // inbound links from BODY copy only: nav and footer link everything, so
       // counting them would hide a genuinely orphaned page.
       for (const m of mainHtml.matchAll(/href="(\/[a-zA-Z0-9\-/]*)"/g)) {
