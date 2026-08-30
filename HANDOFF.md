@@ -135,11 +135,25 @@ RESPA AfBA disclosure is required here is a separate question from the
 ownership fact. Every page still carries the referral-benefit disclosure and
 the you-are-free-to-shop sentence.
 
-**2. Condotel financing as an expertise claim.** He said financing "is not our
-expertise, we are not a lender." All 77 indexable pages list
-`condotel financing` in their `knowsAbout` schema, and `/invest/condotel-financing/`
-exists as a full page. Unreconciled. `/invest/str-tools/` also carries a
-"Financing a short-term rental" section.
+**2. Condotel financing as an expertise claim. RESOLVED 2026-08-30.** The
+owner's words, verbatim: *"we have a lender partner who advised us and reviewed
+these things but never talk as if we finance the loan always as BrickWood
+Finances the loan."*
+
+So the knowsAbout claim and the financing pages STAY. The content was reviewed
+by the lender partner, and explaining how something works is not a lender
+claim. What changes is voice, everywhere, permanently:
+
+- **Never write a sentence where Chapter 3 is the actor doing the lending.**
+  Not "we finance", "our loan", "we can get you", "we offer", "our rates",
+  "we approve", "we lend".
+- **Name BrickWood as the lender when a lender is the actor**, or use the
+  neutral "your lender". BrickWood is NMLS #189497; any body reference to
+  BrickWood still pulls in the RESPA AfBA disclosure inline on that page
+  (non-negotiable 4 in CLAUDE.md, unchanged).
+- This is now a first-class writing rule, equal to the no-metaphors rule. It
+  needs a `build.js` gate: error on a first-person lending verb in body copy.
+  See the task list below.
 
 ---
 
@@ -227,3 +241,83 @@ that reported cleanly while being blind, or reported a defect that was not
 there. Before you trust a count, run the rule against one case that should fire
 and one that should not, and check the exit code rather than a filtered line.
 Silence is not a pass.
+
+---
+
+## Owner decisions taken 2026-08-30, NOT YET IMPLEMENTED
+
+He gave these four answers, then paused the session to continue with a
+different model. Nothing below is built yet. These are instructions, already
+decided; do not re-ask him.
+
+### 1. Reg Z: rewrite all ten percentage pages qualitatively
+
+He chose the strictest option. **Remove every stated down-payment percentage
+from page copy sitewide**, including the two that the old standing exception
+protected: the VA funding-fee schedule and the FHA / SC Housing program table.
+Write financing qualitatively ("a larger down payment and a somewhat higher
+rate; we quote your real numbers"), so no trigger term exists and no
+1026.24(d)(2) disclosure obligation can attach.
+
+Keep the "0% down" carve-out: official commentary to 1026.24(d)(1) says "no
+downpayment" is NOT a trigger term, so VA and USDA copy keeps it. Do not
+strip that.
+
+After the rewrite, the MISTAKES.md standing exception for those ten pages is
+dead. Delete it and tighten the gate from "review" to an error.
+
+### 2. Mobile 80 to 100: only invisible changes
+
+His words: *"do whatever doesnt change any look or functionality of the site
+and doesnt hurt SEO AEO or human consumption but dont get rid of the popup."*
+
+That answer decides all four levers I offered him:
+
+- **Self-host the fonts. YES.** No visual change, same two faces.
+- **Extract the repeated inline scripts to shared hashed assets. YES.** No
+  visual change; it is the committed next-batch item already. Lane B blast
+  radius, so verify like every page.
+- **Pause the hero canvas on mobile. NO.** He ruled out visible change.
+- **Move GA behind first interaction. NO.** It would cost him bounce data,
+  which is a functionality change.
+- **The welcome popup stays.** Named explicitly. Do not remove, do not defer
+  it into uselessness.
+
+If 100 is not reachable inside that constraint, report the honest ceiling and
+what it would cost to go further. Do not quietly break the rule to hit the
+number.
+
+### 3. Body text contrast: approved
+
+Raise `--muted` from `rgba(28,32,40,0.58)` to **0.64**. Measured: 4.69:1 on
+ivory and 4.52:1 on ivory-2, both clearing AA; currently 3.91 and 3.80. This
+repaints every page, so measure the rendered contrast before and after on both
+hero types (see the two-hero warning in CLAUDE.md) and delete the standing
+exception in MISTAKES.md when done.
+
+### 4. Financing voice: BrickWood lends, we never do
+
+See contradiction 2 above, now resolved. The rule applies to every page on the
+site, not just new ones, and needs a build.js gate.
+
+---
+
+## Suggested order for the next session
+
+Highest risk of silent damage first, because every one of these is a sitewide
+edit and this site's two worst defects both came from edit passes.
+
+1. **Build the gates before the edits.** A first-person-lending gate and a
+   tightened down-payment gate. Positive-control each one (plant, fire,
+   restore, exit 0) before trusting it. Rule 4 in CLAUDE.md.
+2. **Reg Z rewrite** on whatever the tightened gate lists.
+3. **Financing voice sweep** on whatever the new gate lists.
+4. **`--muted` to 0.64**, measured both directions.
+5. **Fonts self-hosted**, then **scripts extracted**, then re-measure mobile.
+6. **Early-page audit** for banned phrasing and stale facts. The oldest pages
+   predate most of the style rules; `node build.js audit` currently reports
+   ~108 review-tier warnings and they have never been swept as a batch.
+7. `node build.js preflight` must exit 0, then browser-measure, then commit.
+
+**Do not deploy.** He deploys from PowerShell:
+`npx wrangler pages deploy chapter3realty --project-name chapter3realty --branch production`

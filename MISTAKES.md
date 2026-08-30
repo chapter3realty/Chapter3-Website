@@ -125,7 +125,12 @@ feature works. Open the real source.
 
 Current `audit` warnings that are deliberate. Do not "fix" them silently.
 
-- **10 pages state a down-payment percentage.** Cross-referenced against the
+- **SUPERSEDED 2026-08-30, pending implementation.** The owner chose to
+  rewrite all ten qualitatively rather than keep this exception. Do not
+  "restore" any figure on the strength of the analysis below; it recorded why
+  the pages were defensible, not why they should stay. Delete this entry once
+  the rewrite ships. The "0% down" carve-out below still stands.
+  **10 pages state a down-payment percentage.** Cross-referenced against the
   rule text on 2026-07-26. **Zero HIGH remaining** — the two pages that stated a
   figure beside our own lender (`/invest/strategies/dscr-loans/`,
   `/invest/condo-buildings/`) were rewritten qualitatively. The remaining ten
@@ -140,7 +145,9 @@ Current `audit` warnings that are deliberate. Do not "fix" them silently.
   gate was corrected. Do not strip "0% down" from VA or USDA copy.
 - **`--brass` link colour measures 3.01:1 on ivory**, below AA for body text.
   Brand-level decision.
-- **`--muted` body text measures 3.91:1 on ivory and 3.80:1 on ivory-2**, below
+- **APPROVED 2026-08-30, pending implementation.** The owner said raise it to
+  0.64. Delete this entry once it ships and the rendered contrast is measured.
+  **`--muted` body text measures 3.91:1 on ivory and 3.80:1 on ivory-2**, below
   the 4.5:1 AA threshold. This is site-wide and pre-existing, not introduced by
   any one batch: an existing page and a new one measure identically. `--muted`
   is `rgba(28,32,40,0.58)`. Raising the alpha to **0.64** clears AA on both

@@ -618,3 +618,42 @@ federal tax, and personal credits.
 - Deliberately left out: Florida average premium figures (secondary sources
   conflict, none opened at origin, and the reader knows their own renewal)
   and the FAU sentiment survey (no buyer action). Both noted in H8.
+
+## 2026-08-30, round 4: four decisions, then paused for a model handoff
+
+He asked for a whole-site overnight sweep and invited questions first. I asked
+four. His answers, recorded verbatim where the wording matters:
+
+1. **Reg Z.** Chose "rewrite all 10 qualitatively" over keeping the documented
+   exception. Every stated down-payment percentage comes out of page copy,
+   including the VA funding-fee schedule and the FHA/SC Housing table. The
+   "0% down" carve-out survives (not a trigger term).
+2. **Mobile 80 to 100.** *"do whatever doesnt change any look or functionality
+   of the site and doesnt hurt SEO AEO or human consumption but dont get rid
+   of the popup."* Reads as: self-host fonts yes, extract inline scripts yes,
+   hero-canvas change no, GA change no, popup stays.
+3. **Contrast.** Approved --muted 0.58 to 0.64 sitewide.
+4. **Condotel financing.** *"we have a lender partner who advised us and
+   reviewed these things but never talk as if we finance the loan always as
+   BrickWood Finances the loan."* This resolves the contradiction open since
+   July: the pages and the knowsAbout claim stay, the voice changes. Chapter 3
+   is never the actor doing the lending; BrickWood is, or "your lender" is.
+   Now a standing writing rule and a gate to build. Full text in HANDOFF.md.
+
+He then paused the session to continue with a different model, so none of it
+is implemented. Nothing was started; the tree was clean at ff63ad8. The
+ordered task list is in HANDOFF.md under "Owner decisions taken 2026-08-30".
+
+Two things I would have flagged before starting, for whoever picks this up:
+
+- **The site is mid-recovery from the robots.txt 5xx incident.** Google was
+  treating the whole host as disallowed until the recrawl he requested a few
+  days ago. A sweep that rewrites copy on ~100 pages will move a lot of
+  dateModified and lastmod values at once. That is legitimate when the visible
+  text really changed and `node build.js dates` derives it from git, so it is
+  not a bulk stamp. But it is worth being deliberate about, and worth telling
+  him it will happen rather than letting him find a hundred changed dates.
+- **The audit currently reports about 108 review-tier warnings.** They have
+  never been swept as a batch. Read them before assuming they are all noise;
+  rule 4 says sanity-check a scanner before believing it, and that cuts both
+  ways here.
