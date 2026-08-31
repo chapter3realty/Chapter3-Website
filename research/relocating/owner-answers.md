@@ -920,3 +920,25 @@ filters", contact and CTA at the end, no sticky footer, 16px inputs so iOS
 does not zoom, 44px+ tap targets, bottom-sheet layout on small screens. All 38
 text nodes in it clear AA. The TCPA string is byte-identical and every element
 id the JS depends on is unchanged; the whole flow was exercised in a browser.
+
+
+### Same night, after review
+
+He opened the modal preview, saw the homepage under an open panel and said it
+looked broken. Instruction: *"whatever you did about the search listing feature
+reverse it."* Done - all 103 pages are byte-identical to their pre-rebuild
+state, verified against the commit. The preview artifact was replaced with a
+withdrawal notice. Measured after the revert: the modal is `display:none` on
+every page, nothing from it paints at the bottom of any page, no console errors.
+
+Two cuts on the Florida page, his words:
+- *"Florida markets cost less than Myrtle Beach: Jacksonville ... and we will
+  tell you that rather than let you find out at renewal. Remove"* - removed
+  from the insurance section and from the FAQ, which carried the same claim.
+  The table still lists both cities under Myrtle Beach, so the data is there
+  without the page pointing at it.
+- *"Averages are a point of reference, not a quote. Premiums here are set per
+  address ... Delete"* - deleted. The paragraph now opens on the Chapter 3
+  quote offer.
+
+His verdict on the page after those cuts: *"its a very good page."*

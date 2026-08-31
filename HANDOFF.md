@@ -346,12 +346,24 @@ and 8 explicit-date warnings deferred to a daytime pass with him.
 - Two accuracy fixes worth knowing: the SC age-65 and retirement deductions do
   NOT stack (four pages said they did), and Myrtle Beach is "among" the highest
   insurance in SC, not "the highest" (surveys disagree).
-- The Grand Strand MLS Search is a modal on all 103 pages, not a page. It was
-  unusable on mobile (two sticky edges left ~18px for the filters) and has been
-  rebuilt. Its markup and CSS are duplicated per page, not stitched from
-  partials/, so any future edit is a scripted 103-file replace - the blocks are
-  byte-identical, which is what makes that safe. Worth moving into partials/
-  when someone has a clean session for it.
+- The Grand Strand MLS Search is a modal on all 103 pages, not a page. A
+  rebuild of it was **reverted at the owner's instruction on 2026-08-31** and
+  every page is byte-identical to its pre-rebuild state. Do not rebuild it
+  again without asking him first.
+
+  What is still true and was measured: on a 390x844 phone the modal's sticky
+  header and sticky footer leave about 18px of scroll for every filter, so the
+  filters are effectively unreachable on a phone. He has seen the rebuild and
+  did not want it. If it comes up again, the minimal fix is dropping
+  `position:sticky` from `.idx-foot`, which is one declaration and changes
+  nothing else.
+
+  Its markup and CSS are duplicated per page rather than stitched from
+  partials/, so any edit is a scripted 103-file replace; the blocks are
+  byte-identical, which is what makes that safe.
+
+  **Never publish a preview artifact with the modal forced open.** That is what
+  made him think the homepage had broken.
 
 ---
 
