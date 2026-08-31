@@ -307,6 +307,34 @@ site, not just new ones, and needs a build.js gate.
 
 ---
 
+## 2026-08-31 overnight: the plain-English mandate — SHIPPED
+
+The owner banned the complete rhetorical-device and AI-register taxonomy
+("Ban all of these for eternity across the universe... Ban it all HARDCODED
+lets never have this conversation again") and asked for a full rewrite of
+`/buyers/relocating/from-florida/`. Both are done and committed:
+
+- Taxonomy in PLAYBOOK A11; enforced as **errors** in `build.js`
+  (`AI_TELL_PHRASES`, `AI_TELL_REGEX`), positive-controlled. His verbatim
+  message and the round log: `research/relocating/owner-answers.md`,
+  2026-08-31 entry.
+- Florida page rewritten (~40 line edits); the gates then caught 90+ more
+  instances sitewide (indirect price verbs, calculator-disclaimer idioms,
+  three fixes reverted by spec reassembly). All fixed at the source.
+  MISTAKES rows 46-48 cover the three new failure classes.
+- Preflight exits 0; page DOM-verified in a browser (body contrast
+  6.95-7.34:1, calculator computes with FL preselected, zero page errors).
+
+**Standing rule going forward: when he bans a phrasing, the ban lands in
+build.js in the same commit as the fix.** A spec-generated page is only ever
+fixed in its spec (`data/relocating/pages/*.js`), never in the built HTML.
+
+Still with the owner (unchanged): deploy + PSI re-run, Maps key referrer
+restriction, optional Cloudflare Insights toggle, 20 reading-level warnings
+and 8 explicit-date warnings deferred to a daytime pass with him.
+
+---
+
 ## Suggested order for the next session
 
 Highest risk of silent damage first, because every one of these is a sitewide

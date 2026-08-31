@@ -768,3 +768,106 @@ and analytics untouched, hero canvas untouched.
   comparison calculator works from its new shared asset on all three page
   types; the submarket quick-search modal opens, syncs pills, and closes;
   the nav dropdown and mobile menu work.
+
+
+---
+
+## 2026-08-31 — the plain-English mandate (owner, verbatim)
+
+> What to expect from the housing money, what to expect from a smaller beach town, what to expect on daily costs, and what to expect on insurance and taxes. Housing money doesnt make sense. 
+> 
+> What's a renewal bill is this common headache in florida no need to change the site yet just explain it to me. 
+> 
+> the state they bought into,  replace with what they wanted 
+> 
+> Is this page organized in the best way possible for AI citations and SEO front page? 
+> 
+> The geography does the rest Remove and do a revamp on the whole page to remove metaphors idioms similes anything that isnt direct and to the point spaking in plain english and hard code the prevention of saying anything you find. 
+> 
+> The pattern shows in the numbers Remove 
+> 
+> The wanting is specific: replace with They want to and hard code against phrases like this 
+> 
+> I think these first paragraphs need to be much more straight to the point without any filler to help AEO. 
+> 
+> Averages understate the real spread, Delete hard code to never say it again 
+> 
+> Does this whole parapghraph make more sense to someone who lives there? The typical Florida home ran about $378,000 in July 2026; the typical home here about $342,000. Averages understate the real spread, because Florida's coastal metros price far above their state line while the Grand Strand does not. A sale in most of coastal Florida buys a comparable house here with money left over, a smaller loan, or both. A sale in inland or Panhandle markets lands closer to even, and we will say so rather than stretch it.
+> 
+> What the leftover money does is your call: delete what would you call phrases like those? whatever you would call it hard code ever saying it pseudo-cleft sentence hard code from ever saying one of these again and remove them from this page
+> 
+> If what you want is a smaller town that still works, What does still works mean replace and please for the love of god stop ever saying anything besides the direct literal way of saying something 
+> 
+> Ban all of these for eternity across the universe never use any of these mannerisms ever again Metaphor: Comparing two unrelated things directly without using "like" or "as" (e.g., "Time is a thief").
+> 
+> * Simile: Comparing two things using the explicit words "like" or "as" (e.g., "Quiet as a mouse").
+> * Hyperbole: Using extreme exaggeration to make a point, not meant to be taken literally (e.g., "I've told you a million times").
+> * Understatement: Representing something as much less intense or important than it actually is (e.g., saying "It's a bit breezy" during a hurricane).
+> * Personification: Giving human qualities, emotions, or actions to non-human objects or ideas (e.g., "The wind howled").
+> * Idiom: An established expression where the meaning cannot be understood from the literal words (e.g., "Bite the bullet" or "Spill the beans").
+> * Irony: Expressing a meaning by using language that normally signifies the opposite, typically for humor or emphasis (e.g., "What a beautiful day" during a downpour).
+> * Sarcasm: A sharp, bitter, or cutting form of irony intended to mock or convey contempt (e.g., "Oh, brilliant idea").
+> * Oxymoron: Combining two contradictory terms side-by-side to create a paradoxical effect (e.g., "Deafening silence").
+> * Synecdoche: Using a part of something to represent the whole thing (e.g., "Nice wheels" to mean a car).
+> * Metonymy: Replacing the name of a thing with something else closely associated with it (e.g., "The White House issued a statement" to mean the President).
+> * Pun: A play on words that exploits multiple meanings of a term or similar-sounding words for humorous effect.
+> * Allegory: Speaking or writing in a way that functions as a hidden, extended metaphor representing a broader moral or political meaning.
+> 
+> Indirect Speech & Pragmatics
+> These communication strategies rely on social context, tone, and implication rather than the literal dictionary definition of the sentence.
+> 
+> * Euphemism: Substituting a mild, vague, or indirect expression for one thought to be offensive, harsh, or blunt (e.g., "Passed away" instead of "died").
+> * Innuendo: An allusive or oblique remark, typically hinting at something polite, critical, or improper without saying it directly.
+> * Allusion: Making an indirect or passing reference to a well-known person, place, event, or literary work without mentioning it explicitly.
+> * Circumlocution: Using unnecessarily large numbers of words or roundabout language to express an idea, often to avoid speaking directly or to delay an answer.
+> * Hedging: Using cautious or vague language to avoid making a direct commitment or sounding too aggressive (e.g., "I might be wrong, but...", "It seems like...").
+> * Equivocation: Using ambiguous language deliberately to conceal the truth or avoid committing to a clear stance.
+> * Passive-Aggressive Speech: Expressing negative feelings or resistance indirectly through subtle insults, sarcasm, or stubborn silence rather than open confrontation.
+> * Indirect Speech Act: A linguistic device where the literal command doesn't match the intended action, often used for politeness (e.g., asking "Can you reach the salt?" to mean "Pass the salt").
+> * rhetorical shortcuts, syntactic framing, and "crutch" words.
+> * Contrast Framing ("Not X, but Y"): AI loves creating immediate dramatic balance.
+>    * Example: "It's not just a software update; it’s a revolution in how we work". [[1](https://habr.com/en/articles/1032620/), [2](https://www.linkedin.com/posts/austin-roth-eagle_ai-generated-content-without-human-defined-activity-7443350142742806528-nW8u), [3](https://www.youtube.com/watch?v=kEsZIDqcWBQ&t=43), [4](https://www.linkedin.com/pulse/how-ai-uses-rhetorical-techniques-sound-melodramatic-why-dan-kaufman-9wgec)]
+> * The Tricolon (Rule of Threes): AI heavily relies on grouping adjectives, verbs, or clauses in strict packages of three to sound rhythmic and complete.
+>    * Example: "The tool is designed to be efficient, intuitive, and robust." [[1](https://www.youtube.com/watch?v=d03Tww5n3bg&t=606), [2](https://www.youtube.com/watch?v=kEsZIDqcWBQ&t=43)]
+> * False Suspense Transitions: Used to manufacture excitement or importance right before delivering a totally ordinary point.
+>    * Example: "Here’s the kicker..." or "Here’s where it gets interesting..." [[1](https://gist.github.com/ossa-ma/f3baa9d25154c33095e22272c631f5a1)]
+> * The Grandiose Conclusion: AI has a hard time just ending a thought cleanly. It almost always tacks on a high-level summary statement to wrap things up neatly.
+>    * Example: "...underscoring the enduring legacy of human connection". [[1](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), [2](https://www.pangram.com/blog/comprehensive-guide-to-spotting-ai-writing-patterns), [3](https://www.youtube.com/watch?v=d03Tww5n3bg&t=606)]
+> * No X. No Y. Just Z.: A punchy, marketing-style sentence structure AI defaults to when trying to sound conversational.
+>    * Example: "No fluff. No filler. Just results." [[1](https://medium.com/@KimWitten/once-you-see-these-ai-writing-tells-you-cant-unsee-them-234041476710)]
+> 
+> Niche Linguistic and Creative Biases
+> 
+> * The Ornate Metaphor Overuse: When asked to write creatively, AI will heavily stack flowery, cosmic, or craft-based imagery. It views everything as a tapestry, a landscape, a symphony, a lighthouse, or an uncharted ocean. [[1](https://www.youtube.com/watch?v=kEsZIDqcWBQ&t=43)]
+> * Therapist-Speak (The Harmony Bias): AI is programmed to avoid conflict and promote emotional safety. In creative writing or roleplay, even villainous characters or bullies will quickly revert to speaking likeHR representatives or counselors. They validate feelings and seek mutual understanding far too easily. [[1](https://www.linkedin.com/posts/nathan-baugh_a-list-of-phrases-i-avoid-because-they-scream-activity-7364324354358218753-hj3B), [2](https://e-discoveryteam.com/2024/04/05/stochastic-parrots-how-to-tell-if-something-was-written-by-an-ai-or-a-human/), [3](https://www.reddit.com/r/WritingWithAI/comments/1orzwjs/what_are_some_cliches_or_tropes_youve_noticed_ai/)]
+> * Physical Shorthand Stacking: In fiction, AI overuses safe, intimate, non-sexual physical gestures as a crutch to show emotion. Characters are constantly touching foreheads, letting out breaths they didn't know they were holding, or having a shiver run down their spine. [[1](https://www.youtube.com/watch?v=kEsZIDqcWBQ&t=43), [2](https://www.reddit.com/r/WritingWithAI/comments/1orzwjs/what_are_some_cliches_or_tropes_youve_noticed_ai/)]
+> * Sensory Fixations: AI tends to fixate on bizarrely specific sensory details. For example, in dramatic or sci-fi scenes, AI will almost always note that the air "smells of ozone". [[1](https://www.reddit.com/r/WritingWithAI/comments/1orzwjs/what_are_some_cliches_or_tropes_youve_noticed_ai/)]
+> 
+> The AI Vocabulary Blacklist
+> AI disproportionately favors a specific set of verbs and adjectives because they bridge transitions safely. The most common offenders include: [[1](https://www.oliviacal.com/post/ai-writing-tells), [2](https://www.reddit.com/r/WritingWithAI/comments/1mqse0s/megathread_what_aiisms_give_away_aigenerated/)]
+> 
+> * Verbs: Delve, leverage, harken, resonate, unlock, navigate, encapsulate, underscore, foster.
+> * Adjectives: Crucial, pivotal, testament, vibrant, dynamic, multifaceted, bespoke. [[1](https://ai-text-humanizer.com/ai-words/), [2](https://www.youtube.com/watch?v=d03Tww5n3bg&t=606), [4](https://habr.com/en/articles/1032620/), [5](https://www.oliviacal.com/post/ai-writing-tells)] Ban it all HARDCODED lets never have this conversation again and re write the florida page alot of the information is valueable but its too AI sounding.
+
+**What was done with it, same night:**
+
+- The complete device taxonomy went into PLAYBOOK A11 and into `build.js` as
+  **errors**: `AI_TELL_PHRASES` (79 entries) and `AI_TELL_REGEX` (12
+  patterns: pseudo-/wh-clefts, "not just X but Y", "No X. No Y. Just Z.",
+  understate-verbs, leverage/unlock/navigate/foster/dynamic families). Both
+  positive-controlled (planted on /about/, fired, restored, audit back to
+  baseline). FIGURATIVE list confirmed intact at 85 entries after the edit.
+- `/buyers/relocating/from-florida/` fully rewritten: 40 line edits across
+  hero, meta, opening, halfback, house, town, daily-costs, insurance, tax
+  sections and all 8 FAQs. Opening now answers first (price, metros, index
+  gap, airport, hospitals, golf) with zero filler sentences.
+- The gates then caught the same register **sitewide**: 73 indirect price
+  verbs ("runs about $342,000", "runs higher", "ran roughly") on 16 pages,
+  idioms in the shared calculator disclaimer rendered onto 12 pages ("puts
+  back in your pocket", "has the last word"), and 3 fixes that an earlier
+  pass had applied to built pages instead of specs (schools, pros-and-cons,
+  getting-around) which reassembly had silently reverted. All fixed at the
+  source. MISTAKES rows 46-48.
+- His question about the renewal bill answered in chat (the annual
+  homeowners-insurance renewal notice; yes, a documented common Florida
+  pain point) - no site change made, as instructed.

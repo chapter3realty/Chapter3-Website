@@ -730,6 +730,84 @@ const FIGURATIVE = [
   "the bottom line is", "a stone's throw", "worth its weight",
 ];
 
+/* Owner instruction 2026-08-30, second round, verbatim ending: "Ban it all
+ * HARDCODED lets never have this conversation again." The banned territory is
+ * every figurative device (metaphor, simile, hyperbole, understatement,
+ * personification, idiom, irony, sarcasm, oxymoron, synecdoche, metonymy,
+ * pun, allegory), every indirect-speech device (euphemism, innuendo,
+ * allusion, circumlocution, hedging, equivocation, indirect speech acts),
+ * and the AI-writing tells he listed (contrast framing, tricolon,
+ * false-suspense transitions, grandiose conclusions, "No X. No Y. Just Z.",
+ * ornate metaphor, therapist-speak, the vocabulary blacklist).
+ *
+ * A regex cannot recognise irony or hyperbole. What it CAN do is hold every
+ * named phrase, every blacklisted word, and every detectable structure, and
+ * grow by one entry every time a live instance is found - the same contract
+ * as FIGURATIVE above. The full taxonomy lives in PLAYBOOK.md A11 so the
+ * writer is bound by the whole list, not only the detectable part.
+ * Word-sense carve-outs, each checked against the live corpus 2026-08-30:
+ *   - "understated" (adjective, the Pawleys Island character) stays legal;
+ *     the verb understate/understates/understating is banned.
+ *   - "navigation" (keyboard navigation on /accessibility/, literal boat
+ *     navigation) stays legal; navigate/navigates/navigated/navigating is
+ *     banned.
+ *   - a literal lighthouse or landscape is legal; "beacon of", "symphony
+ *     of", "tapestry" and "a lighthouse of/for" are banned. */
+const AI_TELL_PHRASES = [
+  // named by the owner this round, each with a live instance when added
+  "is your call", "does the rest", "the pattern shows", "bought into",
+  "that still works", "the wanting is", "housing money", "house money",
+  // false-suspense transitions
+  "here's the kicker", "here is the kicker", "here's where it gets",
+  "here is where it gets", "here's the thing", "here is the thing",
+  "the thing is,", "the thing about", "the truth is,", "the reality is,",
+  "plot twist",
+  // grandiose-conclusion family
+  "testament to", "a testament", "enduring legacy", "underscores",
+  "underscoring", "underscored",
+  // hedges (numeric qualifiers like "about" and "roughly" stay legal - the
+  // calculator honesty rule requires them)
+  "it seems like", "some might say", "one could argue", "arguably",
+  "needless to say", "to be fair,", "it's worth noting", "it is worth noting",
+  // euphemism
+  "passed away",
+  // ornate-metaphor family
+  "tapestry", "beacon of", "symphony of", "a lighthouse of",
+  "a lighthouse for", "uncharted",
+  // the vocabulary blacklist
+  "delve", "delving", "harken", "resonate", "resonates", "resonating",
+  "encapsulate", "encapsulates", "multifaceted", "bespoke",
+  "crucial", "pivotal", "vibrant", "game-chang", "game chang",
+  // money/number idioms and mannerisms (owner round 2026-08-31)
+  "in your pocket", "the last word", "seals it", "fare better", "fares better",
+  "set this off", "worth trusting", "moves the other way", "move the other way",
+  "run the other way", "runs the other way", "starts fresh", "start fresh",
+  "outgrow", "outgrew", "outgrown", "held down by", "its own question",
+  "run lower", "runs lower", "run higher", "runs higher",
+  "runs about", "run about", "ran about", "runs roughly", "run roughly",
+  "ran roughly", "runs around", "run around", "ran around",
+];
+const AI_TELL_REGEX = [
+  // pseudo-cleft: "What the leftover money does is your call" and "What the
+  // designation does is close that school" both shipped.
+  [/\bwhat [^.?!;]{1,55} (does|did|was|means) is\b/i, 'pseudo-cleft ("What X does is Y") - state it directly: "X does Y"'],
+  [/\bwhat [^.?!;]{1,55} is is\b/i, 'pseudo-cleft ("What X is is Y") - state it directly'],
+  // contrast framing, all three shapes found or listed
+  [/\bnot (just|only|merely|simply) [^.?!;]{1,60}[,;] (but |it)/i, 'contrast framing ("not just X, but Y") - state the one true claim'],
+  [/, not (just|only) [a-z]/i, 'contrast framing (", not just X") - drop the rhetorical contrast'],
+  [/\b(isn't|is not) (just|only|merely) (a|an|about)\b/i, 'contrast framing ("is not just a") - state what it is'],
+  // marketing staccato
+  [/\bno [\w' -]{1,22}\. no [\w' -]{1,22}\. just\b/i, '"No X. No Y. Just Z." - write one plain sentence'],
+  // banned verb forms whose noun or adjective forms stay legal
+  [/\bunderstates?\b|\bunderstating\b/i, 'understatement - give the accurate number instead'],
+  [/\bnavigat(e|es|ed|ing)\b/i, '"navigate" - say what the person actually does (drive, read, work through)'],
+  [/\bleverag/i, '"leverage" - say negotiating power, bargaining power, or borrowed money'],
+  [/\bunlock(s|ed|ing)?\b/i, '"unlock" - say what actually becomes available'],
+  [/\bfoster(s|ed|ing)?\b/i, '"foster" - say what actually happens'],
+  [/\bdynamic(s|ally)?\b/i, '"dynamic" - describe the actual behavior'],
+];
+
+
 /* Filler and teaser sentences the owner deleted on review (2026-08-22): lines
  * that promise, editorialize or state the obvious instead of giving the fact.
  * "It repeats every year", "prices move weekly", a header ending "and one of
@@ -1352,6 +1430,18 @@ function audit() {
             E(`"in-house" beside a lending word: "...${win.trim().slice(0, 90)}..." - BrickWood is a separate company; say "our lending partner" (owner rules 2026-07-30 and 2026-08-30)`);
             break;
           }
+        }
+      }
+      // The plain-English hardcode (owner, 2026-08-30 round two). Runs over
+      // the same claims surface as the voice rule: body, title, metas, schema.
+      {
+        const lowClaims = claims.toLowerCase();
+        for (const p of AI_TELL_PHRASES) {
+          if (lowClaims.includes(p)) { E(`banned mannerism: "${p}" - say it the direct literal way (PLAYBOOK A11, owner rule 2026-08-30)`); break; }
+        }
+        for (const [re, msg] of AI_TELL_REGEX) {
+          const m = claims.match(re);
+          if (m) { E(`banned construction: "${m[0].slice(0, 50)}" - ${msg}`); break; }
         }
       }
       const rm = mainProse.match(RATE_NUM_I) || mainProse.match(RATE_NUM_APR);

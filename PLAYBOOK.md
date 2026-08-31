@@ -100,9 +100,43 @@ stats monthly, statutes quarterly, insurance and program limits twice a year.
 
 ## Phase 4 — Draft
 
-**A11. Literal and direct.** No metaphors, no personification, no question
-headers as hooks, no em dashes. This is a standing owner instruction.
-→ *Verify:* `audit` warns on the banned-phrase list.
+**A11. Literal and direct.** Say the thing itself, in the plainest words that
+carry it. This is a standing owner instruction (2026-08-30/31: "stop ever
+saying anything besides the direct literal way of saying something").
+
+**Banned for good, sitewide — rhetorical devices:** metaphor, simile,
+hyperbole, understatement, personification (numbers, taxes, states, bills and
+buildings do not *sit*, *move*, *follow*, *send*, *seal*, *outgrow* or *do*
+anything), idiom, irony, sarcasm, oxymoron, synecdoche, metonymy, pun,
+allegory, euphemism, innuendo, allusion, circumlocution, hedging,
+equivocation, passive-aggressive or indirect speech acts.
+
+**Banned — AI-register constructions:**
+- pseudo-clefts and wh-clefts: "What X does is Y", "What you give up is Z",
+  "If what you want is…". State it directly: "X does Y." "You give up Z."
+- contrast framing: "not just X, but Y", "isn't just about X".
+- tricolon for effect, and "No X. No Y. Just Z."
+- false suspense: "Here's the kicker", "Here's the thing", "The truth is,".
+- grandiose conclusions: "testament to", "enduring legacy", "underscores".
+- ornate metaphor stock: tapestry, symphony, beacon, lighthouse, uncharted.
+- therapist-speak, physical-shorthand stacking, sensory fixations.
+- anaphora (the same opener repeated across clauses for rhythm).
+- indirect number verbs: prices, rates, bills and premiums never *run*,
+  *sit at*, *move*, *fare* or get *held down*. They **cost**, **are**,
+  **average**, or **are taxed**.
+
+**Banned — vocabulary:** delve, leverage, harken, resonate, unlock, navigate,
+encapsulate, underscore, foster, crucial, pivotal, testament, vibrant,
+dynamic, multifaceted, bespoke, game-changing.
+
+Also standing: no question headers as hooks, no em dashes.
+
+→ *Verify:* `audit` **errors** (not warns) on all of it: the `FIGURATIVE`
+list, `AI_TELL_PHRASES`, and `AI_TELL_REGEX` in build.js, scanned across the
+full claims surface (prose + title + meta/og/twitter descriptions + JSON-LD).
+All positive-controlled. When the owner bans a new phrasing, add it to the
+list in the same commit as the fix; that is what "never have this
+conversation again" means.
 
 **A11a. The buyer test. Apply this before any readability check.**
 For every sentence: *would a buyer, standing in the property, do anything
