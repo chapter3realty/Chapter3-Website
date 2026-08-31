@@ -32,7 +32,7 @@ const faq = [
   { q: 'Do I pay local income tax in Myrtle Beach?',
     a: 'No. South Carolina has no city or school district income tax anywhere. Most Ohio cities charge 1 to 3 percent of wages, so for working households this is usually the biggest single change.' },
   { q: 'How is retirement income taxed in South Carolina compared with Ohio?',
-    a: 'Ohio taxes pensions and retirement account withdrawals with credits that top out at $200 a year. South Carolina allows deductions instead: up to $10,000 of retirement income from age 65 per person, plus an age-65 deduction of up to $15,000. Social Security is untaxed in both.' },
+    a: 'Ohio taxes pensions and retirement account withdrawals with credits that top out at $200 a year. South Carolina allows a deduction instead: up to $15,000 of income per person from age 65, with the retirement income deduction of up to $10,000 counting against that same $15,000. Social Security is untaxed in both.' },
   { q: 'Does South Carolina really tax my car every year?',
     a: 'Yes. Vehicles are taxed yearly on value: a $30,000 car is taxed roughly $360 to $460 plus a $50 road fee, and the bill must be paid before the plate renews. Ohio charges a flat fee of roughly $36 to $74. Add a one-time $250 fee per vehicle when you arrive, within 45 days.' },
   { q: 'Can Ohio still tax me after I move to South Carolina?',

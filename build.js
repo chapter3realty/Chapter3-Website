@@ -786,11 +786,19 @@ const AI_TELL_PHRASES = [
   "run lower", "runs lower", "run higher", "runs higher",
   "runs about", "run about", "ran about", "runs roughly", "run roughly",
   "ran roughly", "runs around", "run around", "ran around",
+  // refusing to answer a factual question instead of giving the average
+  // (owner rule 2026-08-31: "give actual data and say on average yes or no").
+  // "not a promise" stays legal: it is a required disclaimer on one household's
+  // numbers, not a dodge.
+  "will not promise", "won't promise", "cannot promise", "can't promise",
+  "nobody can promise", "no one can promise", "we do not promise",
+  "we don't promise", "not something we promise",
 ];
 const AI_TELL_REGEX = [
   // pseudo-cleft: "What the leftover money does is your call" and "What the
   // designation does is close that school" both shipped.
   [/\bwhat [^.?!;]{1,55} (does|did|was|means) is\b/i, 'pseudo-cleft ("What X does is Y") - state it directly: "X does Y"'],
+  [/\bwhat (we|they|you|it) [a-z]{2,12}( [a-z]{2,12})? is\b/i, 'pseudo-cleft ("What we do X is Y") - state it directly: "We do X"'],
   [/\bwhat [^.?!;]{1,55} is is\b/i, 'pseudo-cleft ("What X is is Y") - state it directly'],
   // contrast framing, all three shapes found or listed
   [/\bnot (just|only|merely|simply) [^.?!;]{1,60}[,;] (but |it)/i, 'contrast framing ("not just X, but Y") - state the one true claim'],

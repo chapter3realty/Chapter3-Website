@@ -335,6 +335,26 @@ and 8 explicit-date warnings deferred to a daytime pass with him.
 
 ---
 
+## 2026-08-31 later: answer-with-data + the search modal - SHIPPED
+
+- Florida page: opening carries the insurance average instead of the tax
+  caveat, insurance section is now a metro-by-metro table with an on-average
+  yes, tax calculator sits at the top of the tax section (42% down the page,
+  was 62%), FAQs lead with yes.
+- Sitewide: non-promise hedging removed and gated; the pseudo-cleft gate was
+  widened and caught 13 more instances, all fixed at source.
+- Two accuracy fixes worth knowing: the SC age-65 and retirement deductions do
+  NOT stack (four pages said they did), and Myrtle Beach is "among" the highest
+  insurance in SC, not "the highest" (surveys disagree).
+- The Grand Strand MLS Search is a modal on all 103 pages, not a page. It was
+  unusable on mobile (two sticky edges left ~18px for the filters) and has been
+  rebuilt. Its markup and CSS are duplicated per page, not stitched from
+  partials/, so any future edit is a scripted 103-file replace - the blocks are
+  byte-identical, which is what makes that safe. Worth moving into partials/
+  when someone has a clean session for it.
+
+---
+
 ## Suggested order for the next session
 
 Highest risk of silent damage first, because every one of these is a sitewide

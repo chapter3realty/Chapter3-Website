@@ -871,3 +871,52 @@ and analytics untouched, hero canvas untouched.
 - His question about the renewal bill answered in chat (the annual
   homeowners-insurance renewal notice; yes, a documented common Florida
   pain point) - no site change made, as instructed.
+
+
+---
+
+## 2026-08-31 (later) - answer with the number, and the search modal
+
+Owner edits, applied verbatim where they were wording calls:
+
+- "repeat across the national data and reporting" -> "are clear".
+- "crowding" -> "overcrowding".
+- The opening no longer carries the tax caveat ("leave the tax part for later
+  in the website not the first few sections"). It now carries the insurance
+  average instead.
+- Insurance section rewritten to his instruction: *"just talk about the
+  averages ... on average is the insurance cheaper here than in Florida and by
+  how much ... don't mention on this page that we wont promise lower insurance
+  just give them the numbers for a point of reference and say that we can get
+  them a insurance quote before they make an offer on a house if they use
+  Chapter3 Realty."* Researched fresh, three sources cross-checked, all on the
+  same $300,000 house: Myrtle Beach $4,472; Florida statewide $6,504; Miami
+  $15,576; Naples $10,440; Cape Coral $8,808; Tampa $6,264; Orlando $5,328;
+  Jacksonville $4,080; Ocala $4,020; South Carolina statewide $2,796. Two
+  Florida markets are cheaper than Myrtle Beach and the page says so.
+- The tax calculator moved to the top of the tax section, so the dollar
+  difference appears before the table rather than after three subsections.
+  Verified: FL preselected, deductions applied automatically, default example
+  returns "$2,032 more a year".
+- Both FAQs now open with "On average, yes."
+- "We will not promise that" is gone sitewide and gated.
+
+Accuracy work this round, from his "verify everything is accurate again":
+
+- Four state pages said the SC retirement deduction ($10,000) and the age 65
+  deduction ($15,000) stack. They do not; the age deduction is reduced by the
+  retirement deduction claimed, so the cap is $15,000 per person. The engine
+  had it right and the prose beside it was wrong. Fixed on all four.
+- `/buyers/coastal-insurance/` claimed Myrtle Beach is "the highest in South
+  Carolina" and "above $5,000". Surveys disagree on both. Now stated as a
+  range, "among the highest".
+
+The Grand Strand MLS Search block: it is not a page. It is the search modal
+that opens from the Search Listings button in the header, and it is on all 103
+pages of the live site. It was unusable on a phone: a sticky header and a
+sticky footer left about 18 pixels for the filters. Rebuilt: essentials first
+(where, price, beds, baths, property type), everything else behind "More
+filters", contact and CTA at the end, no sticky footer, 16px inputs so iOS
+does not zoom, 44px+ tap targets, bottom-sheet layout on small screens. All 38
+text nodes in it clear AA. The TCPA string is byte-identical and every element
+id the JS depends on is unchanged; the whole flow was exercised in a browser.

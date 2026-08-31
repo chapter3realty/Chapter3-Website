@@ -168,6 +168,19 @@ Passes, keep:
 block over 90 words; warns on 3+ industry bodies, more than 2 dates, and under
 2 in-article CTAs on a page over 900 words.
 
+**A11d. Answer the question, with the number.** A page that raises a
+comparison must answer it. Lead with **on average, yes** or **on average, no**,
+then the figures, then what changes it for this buyer. Never answer with a
+refusal to answer: "we will not promise", "nobody can promise", "we cannot say"
+are banned and gated. Averages are a point of reference and the page says so in
+those words; the individual quote or calculation comes after. Standing owner
+rule 2026-08-31: *"give actual data and say on average yes or no whenever it
+shows on the site."*
+
+A required legal disclaimer on one household's numbers ("that is one family's
+math, not a promise") is not a hedge and stays legal.
+→ *Verify:* `audit` errors on the non-promise phrases in `AI_TELL_PHRASES`.
+
 **A11b. The sources line is a list of links, not a second article.**
 Three to five entries, each a short plain name and a link. Never quote the
 statute, never list section numbers, never write "enacted text read and
