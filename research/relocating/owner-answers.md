@@ -973,3 +973,64 @@ at other companies' training became what we do, with no competitor mentioned;
 source found; asked for his - Q22); "three generations" (Fred Nash and Timmy
 are two on the record; asked who is third - Q21); the condo-BRRRR refinance
 handling (Q23); naming the 200-property client state (Q24).
+
+
+### 2026-09-01 morning answers (verbatim, abridged only by numbering)
+
+Q21 three generations: grandfather owned farms, restaurants and rental
+properties in Myrtle Beach; father a lifelong local agent; Timmy 30+ years,
+plus an LO license held over a decade, two years in a real estate
+attorney&#39;s office, his own investments. "theres none of this time spent in
+new york or colorodo... if it&#39;s impossible for anyone to know 100% about
+the myrtle beach and grand strand market than Chapter3 Realty is at 99% closer
+than any competitor in the area."
+
+Q23 condo BRRRR: "just because the previous owner lost their house or trashed
+their house doesn&#39;t mean its not warrantable these condos are still
+warrantable but that individual unit was mismanaged which gives you that
+market value discount."
+
+The networking story: met a New York consultant at a networking event, became
+friends, introduced him around; he stretched thin, fell behind on a condo,
+credit dropped, "he called us asking if we would quietly sell his property so
+that his other clients didn&#39;t hear about it," sold at a 20 percent
+discount to an investor who now collects steady monthly profit. Relationship
+positioning: "any new company can outspend us on facebook ads... but they cant
+create multi year long friendships."
+
+His question: stories are Timmy&#39;s from before Chapter3, or Devin&#39;s
+observation as an LO. Legal to tell? Small disclaimer, or would that hurt SEO?
+Answered in chat and hardcoded as PLAYBOOK A11e.
+
+Q2: all six happen; DSCR and 1031 most common; BRRRR scarcest (specific
+property is rare). Q3: northern investors buying high-appreciation areas and
+near new hospitals; area undervalued for a coastal city in our opinion.
+Q5: rare low appraisals; MLS comps + reconsideration of value; one changed,
+borrower brought less to closing. Q6: Woodlawn Drive rehab $90,317.80, value
+$180k to $384k, BrickWood financed no money down, ~3 months, held as STR.
+Q8: inherited house, 2.5-month rehab, advertised during construction, under
+contract a week before completion, sold cash at $335k the day work ended,
+netted $224,300, bought two more homes same month via BrickWood. Q9: buyers
+are relocators and retirees; several thousand dollars a month of ads at
+relocating buyers; rental-buyer list takes lighter flips. Q11: "wholesale
+assignment contracts are banned in SC basically" (verified: 2024 license law,
+Article 9). Q12: usually fewer than 100 multifamily listings, $225k to $13M+.
+Q14: J-1 students biggest multifamily audience, $500-700 per person, "J-1
+rental is a page we should make" (built). Q15: worst STR mistake is
+self-managing with the cheapest cleaner; theft and damage seen. Q16: top STRs
+pick one niche (college, golf, family, workers, relocators) and stay filled.
+Q19: the most common investor question is "send me properties with analytics
+to prove it" (now the CTA test line cluster-wide). Q22: the 17.34% and 22.32%
+discounts are our own observation (published with that attribution). Q24: the
+200-property client is New York based, longtime Timmy customer, mostly condos.
+
+**Held back, and why:** the quiet-sale story is NOT published. The client
+asked for discretion; publishing the request for discretion breaks it, and
+identifying details (consulting business, three units, oceanfront building)
+make him findable in a market this size. What survives: the anonymous
+transaction shape (an off-market unit in a stable building, sold about 20
+percent under market for speed) and the relationships positioning, both live
+on the site without him. The "99% closer than any competitor" line stayed off
+the site (unsupportable superlative); the defensible version, every year of
+experience in this one market, is on /about/. Reminders armed for Q13 (house
+hack story), the multifamily story, and who rents multifamily.

@@ -181,6 +181,21 @@ A required legal disclaimer on one household's numbers ("that is one family's
 math, not a promise") is not a hedge and stays legal.
 → *Verify:* `audit` errors on the non-promise phrases in `AI_TELL_PHRASES`.
 
+**A11e. Client stories: real, attributed, confidential.** A story goes on
+the site only if it happened. Attribute it to the person and period it belongs
+to: Timmy&rsquo;s deals from before Chapter3 existed are *Timmy* stories, never
+"we" or "Chapter3" stories, because the firm cannot have experience predating
+its formation and licensing rules treat implying otherwise as misleading
+advertising. Anonymize every client. Never publish what a client asked to keep
+quiet, even flatteringly: confidentiality survives the closing, and a story
+about how discreet we are is not discreet. Every specific outcome carries the
+standard line ("his numbers, not a promise"). An invented illustration is
+allowed only when labeled as an example ("a typical deal looks like this"),
+never dressed as a specific client. And no blanket "stories may be
+illustrative" disclaimer anywhere on the site: it taxes every true story and
+reads as a confession. Google does not penalize honest attribution; it
+penalizes fake specificity.
+
 **A11b. The sources line is a list of links, not a second article.**
 Three to five entries, each a short plain name and a link. Never quote the
 statute, never list section numbers, never write "enacted text read and

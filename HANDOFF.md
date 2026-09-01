@@ -367,6 +367,23 @@ and 8 explicit-date warnings deferred to a daytime pass with him.
 
 ---
 
+## 2026-09-01: investor round 2 + /invest/j1-rentals/ - SHIPPED
+
+Morning answers worked into about, hub, brrrr, flip, 1031, dst, str-tools,
+small-multifamily; CTA test line ("ask for three current properties with the
+full numbers run") on all 17 invest pages; new page /invest/j1-rentals/ built,
+wired into sitemap, llms.txt and body links. PLAYBOOK A11e is the story rule:
+real, attributed to the person and period, confidential, no blanket
+disclaimers. The quiet-sale condo story is deliberately unpublished; see
+owner-answers 2026-09-01 before anyone re-adds it. A reminder trigger is armed
+until Devin sends the house-hack story, the multifamily story, and who rents
+multifamily. New-page trap for the future: every hand-built page carries
+`var CUR="<section-key>"` in its MAP script and the page-section div id must
+be `page-<that key>`, or the whole page renders display:none (caught by the
+browser check this round).
+
+---
+
 ## Suggested order for the next session
 
 Highest risk of silent damage first, because every one of these is a sitewide
