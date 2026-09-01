@@ -941,6 +941,23 @@ const NEGATED_BEFORE = /\b(?:not|no|never|nobody|none|nor|without|cannot|can['â€
 // Reg Z 1026.24(d) trigger term: a stated down payment amount pulls in APR +
 // repayment-term disclosure obligations. Assessment ratios (4%/6%) are tax, not credit.
 const TRIGGER_DOWN = /([0-9]+(?:\.[0-9]+)? ?(?:percent|%))\+? ?(?:down\b|down payment)/gi;
+// The same trigger term stated at a distance ("The down payment. Plan on 20 to
+// 25 percent...") dodged the adjacency pattern above and shipped on the DSCR
+// page. These catch a nonzero percentage within the same sentence as "down
+// payment", either order. [1-9] start keeps the "0% down" carve-out legal.
+const TRIGGER_DOWN_NEAR = [
+  // '.' is allowed forward so the label form is caught ("The down payment.
+  // Plan on 20 to 25 percent"); '!?<' still bound the window.
+  /down payment\.?[^!?<]{0,70}\b[1-9][0-9]?(?:\.[0-9]+)? ?(?:percent|%)/i,
+  /\b[1-9][0-9]?(?:\.[0-9]+)? ?(?:percent|%)[^.!?<]{0,70}down payment/i,
+];
+// Percentages that sit near "down payment" but are not the down payment:
+// VA seller concessions ("0% down payment, no PMI, seller concessions up to
+// 4%") false-positived on 2026-09-01. Windows matching these are skipped.
+const TRIGGER_DOWN_NEAR_OK = /(?:closing costs?|on top of the down payment|concessions? (?:are capped at|up to) [0-9.]+ ?(?:percent|%))/i;
+// closing-cost ranges and seller-concession caps are not 1026.24(d)(1)
+// trigger terms; both false-positived on 2026-09-01 and are exempt when the
+// phrase sits inside the matched window.
 
 /* Owner instruction 2026-08-30, recorded verbatim in HANDOFF.md: "never talk
  * as if we finance the loan always as BrickWood Finances the loan." Chapter 3
@@ -950,6 +967,9 @@ const TRIGGER_DOWN = /([0-9]+(?:\.[0-9]+)? ?(?:percent|%))\+? ?(?:down\b|down pa
  * usually require only hazard insurance". */
 const LEND_VOICE = [
   /\b(?:we|chapter\s*3)\s+(?:finance|lend|originate|underwrite)\w*\b/i,
+  // "we price it deal by deal" shipped on the DSCR page: Chapter 3 pricing a
+  // loan. Scoped to loan words so CMA and listing pricing stay legal.
+  /\bwe\s+price\s+(?:it|the|your|each|every)\s*(?:loan|deal|rate)/i,
   /\bour\s+(?:mortgage|loan|rate|financing|lending)s?\b(?!\s+(?:partner|referral))/i,
   /\bwe\s+can\s+get\s+you\s+(?:a\s+)?(?:pre.?approved|approved|loan|mortgage|rate|financ)/i,
   /(?<!\bnot\s)\b(?:financing|loans?|mortgages?)\s+through\s+us\b/i,
@@ -1404,6 +1424,19 @@ function audit() {
        * commentary says "no downpayment" statements do not trigger, so
        * "0% down" passes (the filter above already dropped it). */
       E(`Reg Z: down-payment percentage in copy (${[...new Set(trig)].slice(0, 3).join(", ")}) - write it qualitatively; only "0% down" / "no down payment" escapes 1026.24(d)(1)`);
+    }
+    // Distance form of the same trigger (found live on the DSCR page after the
+    // adjacency gate passed it): a nonzero percentage in the same sentence as
+    // "down payment", either order.
+    // Tags stay in `prose`, and a </strong> between the label and the number
+    // killed the window on the real DSCR case. Match on a tag-stripped copy.
+    const proseTxt = prose.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+    for (const re of TRIGGER_DOWN_NEAR) {
+      const m = proseTxt.match(re);
+      if (m && !TRIGGER_DOWN_NEAR_OK.test(m[0])) {
+        E(`Reg Z: down-payment percentage stated near "down payment" ("${m[0].slice(0, 60)}") - write it qualitatively`);
+        break;
+      }
     }
     {
       /* The financing voice rule, the rate rule and the payment rule.

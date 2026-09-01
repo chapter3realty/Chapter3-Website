@@ -942,3 +942,34 @@ Two cuts on the Florida page, his words:
   quote offer.
 
 His verdict on the page after those cuts: *"its a very good page."*
+
+
+---
+
+## 2026-09-01 - investor pages round 1 (owner, verbatim, sent before sleep)
+
+> Many investors sell in expensive markets and buy in high-growth, lower-cost states. Myrtle beach fits this profile perfectly and so 10-31 is one of the biggest types of investors that we work with one gentleman we work with owns over 200 properties after one of his properties no longer deliver on depreciation he sells it and uses the proceeds to upgrade using a 10-31 exchange. The team of real estate agents lending partners insurance and close knit legal partners allow us to move very quickly and avoid being late on the 180 or 45 day rule this is important because the IRS almost never grants extensions, except in declared federal disasters Our love of providing detailed analytics paired with off market properties and we are often known as the best real estate brokerage for those seeking to do a 10-31 exchange. Most companies train agents to find like kind properties by identifying expensive floors or counters rather than the cap rate and tenant history. We understand better than any brokerage in the area that this is not your primary residence and is an investment and needs expert knowledge and analysis.
+
+> BRRRR requires you to find damaged or distressed properties in order to get in cheap build value and then refinance to capture that new value and buy a new property. one of the best places to find eligible BRRRR properties is from bank owned properties where you can take advantage of an average 17.34% below market value discounts Myrtle beach's Real estate owned average discount is lower than the average because the amount of foreclosures is less than average and competition is consistent. With that said we have the decades in the local market and connections that allow us to identify and be told about new foreclosures much faster than the average real estate agent our tech team is growing rapidly with a focus towards using AI and technology to find high cash flow properties on mass faster than any other local brokerage. We supply our tech team with unlimited monster energy, Celsius and Claude tokens these in combination with agents who have 30 years of experience turns our real estate company into A bridge between eras able to capitalize on the connections a family who has been involved in the local real estate market for over 3 generations made along with the innovative idea's of a group of 21 year old's with ambition. Most top BRRRR contenders are either lower value homes inland towards longs or little river and or condo units that are in a stable building but with a distressed owner the condo building distressed purchases averaging a discount of 22.32% given the larger supply of condos and half of investors not wanting to purchase in a condo building. These ocean front condos are a gem the its easier to pass the 70% rule when you already have a discount before ARV.
+
+> DSCR flips. we have a buyer who has spent the last year scrolling zillow and sending his agent zillow links asking if they think its a good purchase and they got the same yes its in an up and coming neighborhood answer every single time for over a year many agents in the industry are passive agents waiting for you to bring them a deal but an agents purpose is for us to bring you the deal of your lifetime we are one of the only companies that actively market towards investors because working with investors is hard we have to do alot of work and have alot of knowledge to find properties which will cash flow enough to make a DSCR loan worth it and we can outwordly say that we are great at finding those cash flowing deals.
+
+**Used as sent:** the 200-property client and the depreciation-exhaustion
+trigger (verified against Pub 527: 27.5 years, and the carried-basis
+mechanics); "IRS almost never grants extensions except declared federal
+disasters" (the IRS fact sheet says it in nearly the same words, cited);
+the team-speed point; cap-rate-and-tenant-history over finishes; bank-owned
+sourcing with the thinner-local-discount honesty; Longs and Little River as
+the wider target map; the distressed-condo lane; the Zillow-links story; the
+active-search positioning; the analyst screening, written literally.
+
+**Softened:** "best brokerage in the area for 1031" and "better than any
+brokerage" became "1031 replacement buyers are one of the largest groups of
+investors we work with" (MISTAKES 51: superlatives need support); the swipe
+at other companies' training became what we do, with no competitor mentioned;
+"bridge between eras" and the energy-drink line became the literal facts.
+
+**Held for his answers:** the 17.34% and 22.32% discount figures (no public
+source found; asked for his - Q22); "three generations" (Fred Nash and Timmy
+are two on the record; asked who is third - Q21); the condo-BRRRR refinance
+handling (Q23); naming the 200-property client state (Q24).
