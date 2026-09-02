@@ -413,6 +413,25 @@ story, and who rents multifamily.
 
 ---
 
+## 2026-09-02 later: header phone, hub wording, local edge on strategy pages - SHIPPED
+
+Owner review of the morning round: (1) the header showed two phone boxes; now
+one bold text link, no box, measured at both widths (MISTAKES 59). (2) Two hub
+sentences swapped to his wording: "Those relationships are why investors are
+so successful with Chapter3 Realty" and "This is only one story illustrating
+how Chapter3 benefits its investors with our relationships." (3) The six
+strategy pages now carry four to six casual, specific reasons to use Chapter3
+here, woven into the sections (PLAYBOOK A16), gated by `LOCAL EDGE` (min 4
+pairing sentences under /invest/strategies/) and `SALESY` (desperate phrases
+fail sitewide). Both positive-controlled: the local-edge gate fired on all six
+pages before the weave, the salesy gate on a planted "Call today".
+
+Still open for him: the 40 percent versus over 60 percent out-of-state buyer
+figure (relocating hub versus /sell/out-of-state-buyers/), and the reminders
+for the house-hack story, the multifamily story and who rents multifamily.
+
+---
+
 ## Suggested order for the next session
 
 Highest risk of silent damage first, because every one of these is a sitewide

@@ -946,6 +946,29 @@ const PUNCH_WORDS = [
 ];
 const PUNCH_OPENER = /(?:^|[.!?]\s+)(?:And|So)\b(?!\s+(?:far|what|how|much|many|long)\b)/;
 
+/* ---- The local edge on investor strategy pages (owner, 2026-09-02) ----
+ * "All of the investor strategy pages should be focused on why we are the
+ * best brokerage to help them in Myrtle Beach and the Grand Strand, otherwise
+ * we just compete with national brands. Not too salesy and desperate; should
+ * read as informational and frequently drop casually why we are the greatest."
+ * Measured as: sentences that pair a Chapter3 token with a local token. A
+ * strategy page with fewer than LOCAL_EDGE_MIN of them is a page a national
+ * brand could have written. SALESY is the other half of the instruction: the
+ * desperate phrases fail everywhere on the site. */
+const LOCAL_EDGE_PAGES = /^\/invest\/strategies\//;
+const LOCAL_EDGE_MIN = 4;
+// case matters only where it must: "US 17" is a road, "us " is the brokerage
+const LOCAL_BRAND = /\b(?:Chapter ?3|[Oo]ur (?:agents?|team|broker|lending partner|preferred lender|analysts|buyer list)|an agent at|Timmy|Devin|[Ww]e |us )/;
+const LOCAL_PLACE = /\b(?:Myrtle Beach|Grand Strand|Horry|this market|here\b|local|Conway|Coastal Carolinas)/;
+const SALESY = [
+  // imperative or exclusivity forms only: "Why buyers trust us" and "no hurry" are legal
+  [/(?:^|[.!?:]\s+)trust us\b/i, "trust us"], [/\bcall today\b/i, "call today"], [/\bact now\b/i, "act now"],
+  [/\bdon'?t (?:wait|miss out)\b/i, "don't wait"], [/\bhurry up\b/i, "hurry up"], [/\byou can'?t afford to\b/i, "you can't afford to"],
+  [/\bguaranteed results\b/i, "guaranteed results"], [/\bworld-class\b|\bunmatched\b|\bunrivaled\b|\bsecond to none\b|\baward-winning\b|\bpremier\b/i, "puffery adjective"],
+  [/\bthe only brokerage\b|\bno other brokerage\b|\bnobody else can\b|\bno one else can\b/i, "exclusivity claim"],
+  [/#1 brokerage|\bnumber one brokerage\b|\btop-rated brokerage\b|\bbest-in-class\b|\bindustry-leading\b|\bleading brokerage\b/i, "ranking claim"],
+];
+
 /* Filler and teaser sentences the owner deleted on review (2026-08-22): lines
  * that promise, editorialize or state the obvious instead of giving the fact.
  * "It repeats every year", "prices move weekly", a header ending "and one of
@@ -1731,6 +1754,18 @@ function audit() {
         if (nSent >= 20 && total / nSent > PUNCH_MAX_MEAN) E(`mean sentence length ${(total / nSent).toFixed(1)} words (max ${PUNCH_MAX_MEAN}) - shorten across the page`);
         if (over > 3) W(`${over} sentences over ${PUNCH_WARN_SENTENCE} words - aim shorter`);
         if (modals > PUNCH_MAX_MODALS) W(`"may/might" ${modals} times - say what happens, or what the rule requires`);
+      }
+      /* ---- LOCAL EDGE + SALESY (owner rule 2026-09-02, PLAYBOOK A16) ---- */
+      if (!noindex) {
+        const mainTxt = decodeEnt(((s.match(/<main[\s\S]*?<\/main>/) || [s])[0])
+          .replace(/<(script|style)[\s\S]*?<\/\1>/g, " ").replace(/<\/(p|li|h[1-6]|td|div)>/g, ". ").replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ");
+        for (const [re, label] of SALESY) { const m = mainTxt.match(re); if (m) { E(`salesy: "${m[0].trim()}" (${label}) - informational tone; state the specific reason instead (owner rule 2026-09-02)`); break; } }
+        if (LOCAL_EDGE_PAGES.test(rel)) {
+          const sents = mainTxt.split(/(?<=[.!?])\s+/);
+          const edge = sents.filter(x => LOCAL_BRAND.test(x) && LOCAL_PLACE.test(x)).length;
+          if (edge < LOCAL_EDGE_MIN)
+            E(`local edge: only ${edge} sentence(s) say why Chapter3, here (min ${LOCAL_EDGE_MIN}) - a national brand could have written this page; add the specific local reasons, casually`);
+        }
       }
       const rm = mainProse.match(RATE_NUM_I) || mainProse.match(RATE_NUM_APR);
       if (rm) E(`stated interest rate in copy: "${rm[0]}" - never state a rate (non-negotiable 3); keep financing qualitative`);

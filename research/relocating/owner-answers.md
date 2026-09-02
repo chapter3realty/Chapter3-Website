@@ -1067,3 +1067,26 @@ override of the earlier confidentiality hold, recorded in PLAYBOOK A11e);
 story voice changed to "an agent at Chapter3"; SUBHEAD and PUNCH gates in
 build.js (PLAYBOOK A14, A15); 92 subs and 626 sentence-level instances
 rewritten at source.
+
+
+## 2026-09-02, after the subheader round (verbatim)
+
+"There's two blue phone number boxes also what if we just made the number
+bolder and removed the box?"
+
+"are what we are worth to an investor. replace with are why investors are so
+successful with Chapter3 Realty"
+
+"Neither of them would have called a company they found in an ad. Replace with
+this is only one story illustrating how Chapter3 benefits its investors with
+our relationships."
+
+"all of the investor strategy pages (brrr, DSCR, 1031 so on) should be focused
+on why we are the best brokerage to help them in myrtle beach and the grand
+strand otherwise we just compete with national brands. The page shouldnt be
+too salesly and desperate should just read as informkational adn frequently
+drop casually why we are the greatest."
+
+Done as: one bold phone link in the header; both hub swaps verbatim; four to
+six woven local-edge sentences per strategy page plus the LOCAL EDGE and
+SALESY gates (PLAYBOOK A16).

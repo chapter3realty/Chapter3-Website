@@ -285,6 +285,24 @@ A 50-word sentence is two sentences. An aside is the next sentence. When a
 hedge carried a real quantity ("very high", "somewhat higher"), give the number
 that is already on the page or state the plain comparison.
 
+**A16. Investor strategy pages say why Chapter3, here, casually and often.**
+(Owner, 2026-09-02: "all of the investor strategy pages should be focused on
+why we are the best brokerage to help them in Myrtle Beach and the Grand
+Strand, otherwise we just compete with national brands. Not too salesy and
+desperate; informational, and frequently drop casually why we are the
+greatest.") The `LOCAL EDGE` block in `build.js` counts sentences under
+`/invest/strategies/` that pair a Chapter3 token (Chapter3, our agents, our
+lending partner, Timmy, Devin, we) with a local token (Myrtle Beach, Grand
+Strand, Horry, here, local, Coastal Carolinas) and errors under four. The
+reasons are specific and true, never adjectives: three generations selling in
+this market, agents who own rentals here, the relationships that surface
+properties before they list, the lending partner that has priced Grand Strand
+rehabs, our own sales tracking with the numbers, the team that has run 1031
+deadlines before, the three-properties test. Woven into the sections where
+they belong, never a sales block. `SALESY` errors sitewide on the desperate
+forms: call today, act now, don't wait, trust us, world-class, unmatched,
+award-winning, the only brokerage, number one brokerage, industry-leading.
+
 **A11e, amended 2026-09-01.** Attribution wording: a story is told about "an
 agent at Chapter3" or "one of our agents", or the named person when the page
 already names them, never "Chapter3 did" or "we did" as if the company were the
