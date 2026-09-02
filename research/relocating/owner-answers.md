@@ -1090,3 +1090,44 @@ drop casually why we are the greatest."
 Done as: one bold phone link in the header; both hub swaps verbatim; four to
 six woven local-edge sentences per strategy page plus the LOCAL EDGE and
 SALESY gates (PLAYBOOK A16).
+
+
+## 2026-09-02 evening, page-by-page review (verbatim asks)
+
+1031: "The identification itself follows one of three rules... This needs to be
+explained more simply and how we would help. the page should basically just be
+a step by step of the process and what we do to help each step of the way and
+super informational as we go."
+
+BRRRR: "the thing that makes BRRRR harder to find is on top of finding a
+distressed house you need to find a distressed home inside of a rental market
+since that strategy relies on getting high rent rolls."
+
+BRRRR, the builder: "We have a builder who builds houses for X amount of money
+when he is finished building the house appraises for more immediately after
+construction is finished he also rents it for more because its new construction
+he also has renters lined up before construction is finished 90% of the time
+because we work with him to find renters moving to the area around the time
+construction will be finished... One property in the past took 260k of capital
+to build half of it was financed and it was recently appraised for 390k."
+
+BRRRR, the condo paragraph: "explain why failing the test is bad and remove
+confirm which case i don't like that phrase sounds AI hardcode the prevention
+of that phrase." Done; AI_TELL_REGEX errors on it now (MISTAKES 62).
+
+Down payments: "If its unwarrentable it would require a 25% Loan to value
+meaning and extra 5% of the homes value is trapped and unable to be used for
+the next purchase can we mention down payments if we do what does reg Z require
+because i would like to use exact down payment percentages and then say that
+info is from BrickWood Mortgage. We could make it more vague or a range as
+well." Answered in chat and hardcoded as PLAYBOOK A17.
+
+Cash buyers: "we need a section inside of these about cash buyers and why that
+helps you succeed but isn't required. We will make a cash buyer page that we
+can link to also. bank owned and of market are both our first options Make the
+CTA get off market listings." Sections live on BRRRR and fix-and-flip; the
+standalone page is not built yet.
+
+DSCR figures, from him as a licensed MLO: 15 to 25 percent down on a purchase,
+more on a condotel; only 75 percent of a short-term rental estimate counts;
+our preferred lender starts writing DSCR loans at a 0.75 ratio.

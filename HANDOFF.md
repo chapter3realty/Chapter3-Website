@@ -432,6 +432,36 @@ for the house-hack story, the multifamily story and who rents multifamily.
 
 ---
 
+## 2026-09-02 evening: three strategy pages, and Reg Z rescoped - SHIPPED
+
+The owner reviewed 1031, BRRRR and DSCR line by line. Three things worth
+knowing next session:
+
+1. **Down-payment percentages are now legal on four pages.** He asked what Reg
+   Z requires; it does not reach business-purpose investor credit (PLAYBOOK
+   A17, MISTAKES 61). DSCR, BRRRR, fix-and-flip and non-warrantable condos may
+   state the range with the lender named. Owner-occupied stays qualitative,
+   house hacking included. Numbers he supplied as a licensed MLO: 15 to 25
+   percent down on a DSCR purchase, more on a condotel, about 25 percent on a
+   non-warrantable building, and BrickWood writes DSCR loans down to a 0.75
+   ratio.
+2. **The DSCR page carries a live calculator.** Three inputs, `c3Dscr()`
+   inline on the page. Measured at both widths: math right, readout contrast
+   5.81, no horizontal scroll, no JS errors.
+3. **Two new facts from him, both published.** BRRRR is scarce because the
+   house must be distressed *and* sit where rent is strong, since the
+   refinance is judged on rent. And the new-construction version: a builder
+   whose finished houses appraise above build cost, with tenants lined up
+   during construction about nine times in ten; one house took about $260,000
+   of capital, half financed, and appraised at $390,000.
+
+Still open for him: the cash-buyer page he wants to link to (sections are live
+on BRRRR and fix-and-flip; the standalone page needs sourced local cash-share
+numbers before it is worth building), the 40 versus 60 percent out-of-state
+figure, and the three multifamily questions the daily reminder carries.
+
+---
+
 ## Suggested order for the next session
 
 Highest risk of silent damage first, because every one of these is a sitewide

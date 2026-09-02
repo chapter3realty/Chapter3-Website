@@ -303,6 +303,39 @@ they belong, never a sales block. `SALESY` errors sitewide on the desperate
 forms: call today, act now, don't wait, trust us, world-class, unmatched,
 award-winning, the only brokerage, number one brokerage, industry-leading.
 
+**A17. Down-payment percentages: where they are legal, and where they are not.**
+(Owner, 2026-09-02: "can we mention down payments, if we do what does Reg Z
+require, because I would like to use exact down payment percentages and then
+say that info is from BrickWood Mortgage.") Regulation Z governs *consumer*
+credit. 12 CFR 1026.3(a)(1) exempts credit extended primarily for a business
+purpose, and official commentary 3(a)-4.i deems credit to acquire, improve or
+maintain rental property that is **not owner-occupied** to be business purpose,
+whatever the unit count. The trigger-term rule in 1026.24(d)(1), the one that
+pulls in APR and repayment disclosures, therefore does not reach an investor
+loan on a house the buyer will not live in.
+
+The same commentary draws the line this market crosses constantly: if the owner
+expects to occupy the property **more than 14 days** in the coming year it is
+not non-owner-occupied, and the exemption is gone. A beach condo the buyer uses
+for a month each summer is consumer credit. So:
+
+- **Allowed**, gated to exactly these pages in `build.js`
+  (`DOWN_PAYMENT_OK_PAGES`): `/invest/strategies/dscr-loans/`,
+  `/invest/strategies/brrrr/`, `/invest/strategies/fix-and-flip/`,
+  `/invest/non-warrantable-condos/`. The page must also name the lender the
+  figure came from, which the gate checks. The RESPA AfBA disclosure already
+  ships in the footer partial on every page.
+- **Banned everywhere else**, unchanged: every `/buyers/` page, second homes,
+  the condotel page where personal use is normal, and house hacking on
+  `/invest/strategies/small-multifamily/`, which is owner-occupied by
+  definition and therefore consumer credit.
+- **Still banned everywhere with no exception: interest rates and payment
+  amounts.** Those go stale, and a stale number in an advertisement is a
+  different problem from a trigger term.
+
+State it as a range, attribute it ("Figures from BrickWood Mortgage"), and keep
+the wording qualitative anywhere the buyer might live in the property.
+
 **A11e, amended 2026-09-01.** Attribution wording: a story is told about "an
 agent at Chapter3" or "one of our agents", or the named person when the page
 already names them, never "Chapter3 did" or "we did" as if the company were the

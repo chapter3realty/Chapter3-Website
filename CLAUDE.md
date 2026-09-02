@@ -60,9 +60,12 @@ traps that have cost the most time. **Read it at the start of a new session.**
    commit; then stop and give them the command.
 2. **Never hand-edit chrome inside a page.** Edit `partials/*`, run `stitch`.
    `check` fails on drift.
-3. **Never state a down payment, payment amount, or rate** in page copy.
-   Regulation Z trigger terms pull in APR and repayment-disclosure obligations.
-   Keep financing qualitative.
+3. **Never state a payment amount or an interest rate** in page copy, anywhere.
+   Down-payment percentages are allowed on four investor-financing pages only
+   (DSCR, BRRRR, fix and flip, non-warrantable condos): those are business-purpose
+   loans outside Regulation Z, and the page must name the lender the figure came
+   from. Everything with an owner living in it stays qualitative, including house
+   hacking, second homes and every `/buyers/` page. `build.js` holds the list.
 4. **The TCPA consent string is locked.** Byte-identical on every form that
    collects a phone number. See PLAYBOOK.md.
 5. **Never publish a conclusion about a named building, HOA, or builder.**

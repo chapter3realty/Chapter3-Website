@@ -813,6 +813,10 @@ const AI_TELL_REGEX = [
   [/\bunlock(s|ed|ing)?\b/i, '"unlock" - say what actually becomes available'],
   [/\bfoster(s|ed|ing)?\b/i, '"foster" - say what actually happens'],
   [/\bdynamic(s|ally)?\b/i, '"dynamic" - describe the actual behavior'],
+  // Owner, 2026-09-02: "remove confirm which, i don't like that phrase sounds
+  // AI". The reader cannot "confirm which case" anything; tell them what to
+  // check, who checks it, and what a bad answer costs them.
+  [/\bconfirm which\b|\bwhich case you are\b|\bdetermine which\b/i, '"confirm which X" - name the thing to check and what a bad answer costs'],
 ];
 
 
@@ -1107,6 +1111,32 @@ const TRIGGER_DOWN_NEAR = [
 // Percentages that sit near "down payment" but are not the down payment:
 // VA seller concessions ("0% down payment, no PMI, seller concessions up to
 // 4%") false-positived on 2026-09-01. Windows matching these are skipped.
+/* ---- Where a stated down-payment percentage is legal (owner, 2026-09-02) ----
+ * Regulation Z governs CONSUMER credit. 12 CFR 1026.3(a)(1) exempts credit
+ * extended primarily for a business or commercial purpose, and official
+ * commentary 3(a)-4.i deems credit to acquire, improve or maintain rental
+ * property that is NOT owner-occupied to be business purpose, whatever the
+ * unit count. The trigger-term rule in 1026.24(d)(1) therefore does not reach
+ * an investor loan on a house the buyer will not live in, and those pages may
+ * state the percentage.
+ *
+ * The same commentary draws the line this market walks into constantly: if the
+ * owner expects to occupy the property more than 14 days in the coming year it
+ * is not non-owner-occupied and the exemption is gone. A beach condo the buyer
+ * uses for a month each summer is consumer credit. So the allowlist is short
+ * and everything with an owner living in it stays banned: house hacking on
+ * /invest/strategies/small-multifamily/, second homes, the condotel page where
+ * personal use is normal, and every /buyers/ page.
+ *
+ * A percentage on an allowed page must carry its source, so the gate also
+ * requires the page to name the lender it came from. */
+const DOWN_PAYMENT_OK_PAGES = new Set([
+  "/invest/strategies/dscr-loans/",
+  "/invest/strategies/brrrr/",
+  "/invest/strategies/fix-and-flip/",
+  "/invest/non-warrantable-condos/",
+]);
+const DOWN_PAYMENT_SOURCE = "BrickWood Mortgage";
 const TRIGGER_DOWN_NEAR_OK = /(?:closing costs?|on top of the down payment|concessions? (?:are capped at|up to) [0-9.]+ ?(?:percent|%))/i;
 // closing-cost ranges and seller-concession caps are not 1026.24(d)(1)
 // trigger terms; both false-positived on 2026-09-01 and are exempt when the
@@ -1565,7 +1595,11 @@ function audit() {
     const trig = [...prose.matchAll(TRIGGER_DOWN)]
       .map(m => m[0].trim())
       .filter(t => parseFloat(t) !== 0);
-    if (trig.length) {
+    const dpAllowed = DOWN_PAYMENT_OK_PAGES.has(rel);
+    if (trig.length && dpAllowed && !prose.includes(DOWN_PAYMENT_SOURCE)) {
+      E(`down-payment percentage without its source - name ${DOWN_PAYMENT_SOURCE} on the page so the figure is attributed (owner rule 2026-09-02)`);
+    }
+    if (trig.length && !dpAllowed) {
       /* Owner decision 2026-08-30 (HANDOFF.md): every stated down-payment
        * percentage is an ERROR, not a review item - the old HIGH/review
        * tiering is gone with the standing exception it served. 1026.24(d)(1)
@@ -1582,7 +1616,7 @@ function audit() {
     // Tags stay in `prose`, and a </strong> between the label and the number
     // killed the window on the real DSCR case. Match on a tag-stripped copy.
     const proseTxt = prose.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
-    for (const re of TRIGGER_DOWN_NEAR) {
+    for (const re of dpAllowed ? [] : TRIGGER_DOWN_NEAR) {
       const m = proseTxt.match(re);
       if (m && !TRIGGER_DOWN_NEAR_OK.test(m[0])) {
         E(`Reg Z: down-payment percentage stated near "down payment" ("${m[0].slice(0, 60)}") - write it qualitatively`);
