@@ -1034,3 +1034,36 @@ on the site without him. The "99% closer than any competitor" line stayed off
 the site (unsupportable superlative); the defensible version, every year of
 experience in this one market, is on /about/. Reminders armed for Q13 (house
 hack story), the multifamily story, and who rents multifamily.
+
+## 2026-09-01 evening (verbatim)
+
+> our license number for the company is 28849
+
+> I did not publish the quiet-sale condo story Use this story i don't name
+> anyone and im pretty vague make it well written but i would say its valuable
+> to put somewhere make it more vague if needed
+
+> can you change wording on our stories to be like our agents or an agent at
+> our company or an agent at Chapter3 instead of chapter3 did this ya know?
+
+> Picking the right strategy should take minutes, not weeks. all of our
+> subheaders need to be keyword and attention grabbing lets make hard rules so
+> that it does it right every time please do alot of research to make the
+> perfect subheader read many sources and hard code the solution so we always
+> do it
+
+> also lets make sure that we hard code sentences being punchy and snappy and
+> valuable Fable 5.1 is known for that problem go ahead and research reddit and
+> everywhere else you can find what people are saying you are doing wrong when
+> it comes to writing and hard code the solution to never making those
+> mistakes again while writing this website. tell me if you find problems and
+> how you solved them go ahead and cross reference that and re write the parts
+> of the website you made the mistakes on make sure to keep all the other
+> rules ive made for you when you are writing.
+
+**What was done with it:** licence 28849 in the footer partial and on /about/;
+the quiet-sale story published on the strategies hub in vague form (his
+override of the earlier confidentiality hold, recorded in PLAYBOOK A11e);
+story voice changed to "an agent at Chapter3"; SUBHEAD and PUNCH gates in
+build.js (PLAYBOOK A14, A15); 92 subs and 626 sentence-level instances
+rewritten at source.

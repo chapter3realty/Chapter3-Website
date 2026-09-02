@@ -96,6 +96,8 @@ matter, not sentence length. That has happened here. See PLAYBOOK A11a.
 
 ## Who is who
 
+- **Chapter3 Realty Corp** — South Carolina real estate company licence **28849**.
+  Shown in the footer partial and on /about/.
 - **Timmy Fredrick Nash** — Broker-in-Charge, SC licence 43182, NMLS 252563.
   30+ years on the Grand Strand. Does the CMAs.
 - **Devin Day** — Operations Officer, licensed MLO, **NMLS 2721275**. Must be

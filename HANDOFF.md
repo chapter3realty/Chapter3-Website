@@ -384,6 +384,35 @@ browser check this round).
 
 ---
 
+## 2026-09-01 evening: subheaders + punch gates, licence, story, agent voice - SHIPPED
+
+Two new gate families in `build.js`, both positive-controlled on /about/:
+`SUBHEAD` (hero sub rules, PLAYBOOK A14) and `PUNCH` (sentence rules, PLAYBOOK
+A15). The audit went from clean to 644 errors when they landed; every one was
+rewritten at source (specs for the 22 relocation pages, HTML elsewhere), then
+the audit went back to zero. 92 hero subs rewritten or added (three pages had
+none). Eight submarket H2s shortened, five pages got a keyword-bearing H2.
+
+Company licence 28849 is in the footer partial (stitched sitewide) and on
+/about/ beside Timmy's 43182 / NMLS 252563. CLAUDE.md roster updated.
+
+The quiet-sale story is published on the strategies hub, vague by owner
+instruction (no state, no business, no building type, no unit count, "about
+20 percent under market"). PLAYBOOK A11e records the override. Story voice is
+now "an agent at Chapter3", never "Chapter3 did" (flip and inherited-house
+changed).
+
+**Open contradiction for Devin:** /buyers/relocating/ says "40 percent of
+Myrtle Beach buyers" come from out of state; /sell/out-of-state-buyers/ says
+"over 60 percent of Grand Strand buyers relocate from out of state". Different
+framing, both unsourced on the page. The new subs avoid restating either until
+he picks one.
+
+Reminder trigger still armed for Q13 (house-hack story), the multifamily
+story, and who rents multifamily.
+
+---
+
 ## Suggested order for the next session
 
 Highest risk of silent damage first, because every one of these is a sitewide

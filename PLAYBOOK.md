@@ -211,6 +211,89 @@ pages on this site currently ship with none in the body at all.
 (anonymised) client files are the one thing competitors cannot copy, and the
 strongest signal for both Google and AI answer engines.
 
+**A14. The hero sub-header is the second headline. Every page has one, and
+the gate measures it.** (Owner, 2026-09-01: "all of our subheaders need to be
+keyword and attention grabbing... hard code the solution so we always do it.")
+What the subheadline guidance agrees on, stripped of the fluff, is what the
+`SUBHEAD` block in `build.js` enforces on the rendered text of the sub,
+whichever markup the hero uses:
+
+1. **8 to 30 words.** Two lines at most. A 45-word sub is a paragraph nobody
+   reads (the old cap was 45; 51 pages sat between 31 and 67 words).
+2. **The topic word is in it.** One significant token from the page's Article
+   `keywords` (first phrase), or the title, or the H1. "Cost", "closing",
+   "hurricanes", "1031": the word a searcher typed. Generic tokens (Myrtle,
+   Beach, Grand Strand, home, guide, real estate) do not count.
+3. **A concrete anchor.** A number, a dollar figure, a percentage, or a place
+   name. Specific beats clever; "$6,573 to $1,337" is the hook.
+4. **Written to the reader.** No "we", "our", "us". The sub says what the reader
+   gets, with "you" where it is natural. The brand name is allowed.
+5. **Not a question, no exclamation mark.** The fact is the hook.
+6. **No ", not X" contrast** ("minutes, not weeks"). Say the specific thing.
+7. **No repeated three-word phrase.** The 22 relocation subs all ran on one
+   "what to expect... what to expect" template; a template is not a sentence.
+8. **Does not restate the H1.** It adds the benefit or the proof.
+
+H2s get light rules in the same block: 2 to 16 words, no generic label
+("Overview", "Details", "Summary"), and at least one H2 outside the FAQ carries a
+page keyword or a place name.
+
+Sources read for this rule set: Nielsen Norman Group on scanning behavior and
+front-loading; Copyblogger and CXL on subheadline structure (one specific
+benefit or proof, a number, reader-facing, at most two lines); Google's
+heading guidance (the topic in the heading text). And the owner's own review
+notes, which is where every rule here came from first.
+
+**A15. Punchy sentences, measured.** (Owner, 2026-09-01: "hard code sentences
+being punchy and snappy and valuable... research what people are saying you
+are doing wrong when it comes to writing and hard code the solution.") The
+complaints about this model's register, taken from PCWorld's ranked list of AI
+writing habits, Wikipedia's "Signs of AI writing" project page, Reddit threads
+on r/writing and r/ClaudeAI, and the owner's reviews, agree on a short list.
+The `PUNCH` block in `build.js` errors on each of them in every `<p>` and
+`<li>` inside `<main>` (the TCPA consent, the AfBA disclosure, the calculator
+disclaimer and the sources lists are exempt):
+
+1. **No sentence over 40 words**, and a page mean under 20. Split at the clause.
+   Keep every fact. (186 sentences were over 40 when the gate landed.)
+2. **No parenthetical aside of five or more words.** An aside is its own
+   sentence or a comma clause. "(HOA)" and "(2016)" stay legal. This was the
+   single most-named tell.
+3. **No sentence opening with "And" or "So".** Join it to the sentence before,
+   or start with the subject.
+4. **No hedging or intensifying adverb**: actually, very, really, truly,
+   genuinely, quite, somewhat, fairly, a bit, basically, essentially, clearly,
+   obviously. "actually" appeared 106 times on 66 pages and deleted cleanly
+   every time. "rather than" and "would rather" stay legal.
+5. **No commentary adverb or summarizer**: importantly, notably, interestingly,
+   in other words, put simply, in short, in practice, ultimately, at the end of
+   the day, the bottom line, the lesson, the takeaway, in conclusion, that said,
+   it is important to, keep in mind, "in plain English" (never describe the
+   writing).
+6. **No teaser frame**: "here is how/what/the", "which is why" (split it), "the
+   whole story/deal/picture", "real money/story/question", "one thing", "worth
+   knowing", "the good news", "the catch is", "think of it as", "imagine".
+7. **No time contrast** ("months, not years"): give the actual time.
+8. **Wordiness and buzzwords**: when it comes to, in terms of, in order to, the
+   reality of, a wide range of, plays a role, in today's, landscape, robust,
+   seamless, journey, unpack, nuance, deep dive, sweet spot.
+9. **may/might more than four times on a page** is a warning: say what the
+   rule requires or what happens.
+
+The fix is almost always deletion. "How you actually live" is "how you live".
+A 50-word sentence is two sentences. An aside is the next sentence. When a
+hedge carried a real quantity ("very high", "somewhat higher"), give the number
+that is already on the page or state the plain comparison.
+
+**A11e, amended 2026-09-01.** Attribution wording: a story is told about "an
+agent at Chapter3" or "one of our agents", or the named person when the page
+already names them, never "Chapter3 did" or "we did" as if the company were the
+actor. Owner decision, same day: the quiet-sale condo story is published on the
+strategies hub in anonymized, deliberately vague form (no state, no business,
+no building type, no unit count) at the owner's instruction, which overrides the
+confidentiality hold recorded in owner-answers. The rule above still applies to
+the next story.
+
 ## Phase 5 — Compliance, BEFORE the copy is mirrored anywhere
 
 Do this before generating JSON-LD, `llms-full.txt` or the sitemap entry.

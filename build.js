@@ -816,6 +816,136 @@ const AI_TELL_REGEX = [
 ];
 
 
+/* ---- Hero sub-header rules (owner, 2026-09-01) ----
+ * "All of our subheaders need to be keyword and attention grabbing. Make
+ * hard rules so that it does it right every time." The rules below are what
+ * the subheadline guidance agrees on once the fluff is removed: Nielsen
+ * Norman Group (readers scan, front-load the topic word, address the reader),
+ * Copyblogger and CXL (a subheadline states one specific benefit or proof,
+ * carries a number or a place, runs at most two lines), Google's heading
+ * guidance (the page topic in the heading text), plus the owner's own review
+ * notes: "minutes, not weeks" flagged as empty contrast, and the 22 relocation
+ * subs that all ran on one "what to expect ... what to expect" template.
+ * Every rule is measured on the rendered text of the sub, whichever markup
+ * the hero uses (ivory .detail-sub, or the inline-styled ivory paragraph on
+ * a navy hero). See PLAYBOOK.md A14. */
+const SUB_PLACE = /\b(?:Myrtle Beach|Grand Strand|Horry|South Carolina|Conway|Surfside|Pawleys|Litchfield|Little River|Murrells Inlet|Carolina Forest|Garden City|Socastee|Longs|Loris|Aynor|Georgetown|Market Common|Cherry Grove|Forestbrook|Burgess|Coastal Carolina|Intracoastal|Waccamaw|Barefoot|Grande Dunes|Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|New Jersey|New Mexico|New York|North Carolina|North Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming|Charlotte|Raleigh|Boston|Pittsburgh|Philadelphia|Baltimore|Buffalo|Cleveland|Columbus|Richmond|Hartford|Tampa|Orlando|Jacksonville|Miami|Naples|Cape Coral|Long Island|Bergen|Nassau|Suffolk|Howard County)\b/;
+const SUB_NUMWORD = /\b(?:thousands?|hundreds?|dozens?|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|fifteen|twenty|thirty|forty|fifty|sixty|eighty|half|quarter|double|triple)\b/i;
+// tokens that appear in almost every keyword string on the site, so they
+// cannot prove the sub is about THIS page
+const SUB_WEAK = new Set(["myrtle","beach","grand","strand","south","carolina","horry","realty","chapter3","chapter",
+  "guide","guides","home","homes","house","houses","real","estate","area","areas","near","best","2026","2025",
+  "with","from","your","what","that","this","the","and","for","you","when","where","which","how","why","every",
+  "need","know","much","make","good","right","work","find","look","live","actually","sell","buy","buying","selling"]);
+const SUB_STOP = new Set("the a an and or of to in on for with by at from as is are was were be been it its this that these those you your we our us their they them he she his her not no but if then than so do does did have has had can could will would should may might into over under about after before between more most less least very just only also any all some such which who whom whose what when where why how".split(" "));
+const subTokens = (x) => x.toLowerCase().replace(/[^a-z0-9$%' -]/g, " ").split(/\s+/).filter(w => w.length >= 4 && !SUB_STOP.has(w));
+const subStem = (w) => { w = w.toLowerCase(); return w.length <= 4 ? w : w.replace(/ies$/, "i").replace(/(?:ing|ed|es|s|ly)$/, ""); };
+const subHasToken = (kwTok, text) => {
+  const a = subStem(kwTok);
+  return text.toLowerCase().split(/[^a-z0-9$%'-]+/).some(w => {
+    const b = subStem(w);
+    if (!a || !b) return false;
+    return a === b || (a.length >= 3 && b.startsWith(a)) || (b.length >= 3 && a.startsWith(b))
+      || (a.length >= 6 && b.length >= 6 && a.slice(0, 5) === b.slice(0, 5));
+  });
+};
+/* Returns { text, markup } for the hero sub-header, or null. Two markups
+ * exist: <p class="detail-sub"> on ivory heroes, and on navy heroes the first
+ * inline-styled ivory paragraph after </h1> that is not the byline. */
+function heroSub(mainHtml) {
+  const d = mainHtml.match(/<p class="detail-sub">([\s\S]*?)<\/p>/);
+  const clean = (x) => decodeEnt(x.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+  if (d) return { text: clean(d[1]), markup: "detail-sub" };
+  const h1 = mainHtml.indexOf("</h1>");
+  if (h1 < 0) return null;
+  const after = mainHtml.slice(h1 + 5, h1 + 2000);
+  for (const m of after.matchAll(/<p style="color:rgba\(244,239,232,[^"]*"[^>]*>([\s\S]*?)<\/p>/g)) {
+    const t = clean(m[1]);
+    if (!/^By\b/.test(t)) return { text: t, markup: "navy inline" };
+  }
+  return null;
+}
+
+/* ---- Sentence-level punch rules (owner, 2026-09-01) ----
+ * "Hard code sentences being punchy and snappy and valuable ... research
+ * what people are saying you are doing wrong when it comes to writing and
+ * hard code the solution." What the complaints agree on, measured here:
+ *   - long sentences (a cap per sentence, and a cap on the page mean)
+ *   - parenthetical asides (the most-named tell; an aside is its own sentence)
+ *   - hedging and intensifying adverbs: actually, very, really, genuinely...
+ *   - "And"/"So" sentence openers (the fragment-for-rhythm tic)
+ *   - teaser and summarizer phrases: "here is how", "the takeaway", "which
+ *     is why", "the whole story", "the good news"
+ *   - over-used modals: may/might counted per page
+ * Sources: PCWorld's ranked list of AI writing habits, Wikipedia's "Signs of
+ * AI writing" project page, Reddit r/writing and r/ClaudeAI threads on
+ * Claude's register, and the owner's reviews. The legal blocks (TCPA consent,
+ * AfBA disclosure, the calculator disclaimer, sources lists) are exempt: their
+ * wording is fixed by law or by the sources themselves. See PLAYBOOK.md A15. */
+const PUNCH_MAX_SENTENCE = 40;      // words; error above this
+const PUNCH_WARN_SENTENCE = 32;     // words; page warning when more than 3 exceed it
+const PUNCH_MAX_MEAN = 20;          // words per sentence, page mean
+const PUNCH_MAX_MODALS = 4;         // may/might per page before a warning
+const PUNCH_ASIDE_WORDS = 5;        // a parenthetical this long is an aside
+const PUNCH_WORDS = [
+  // hedges and intensifiers
+  [/\bactually\b/i, '"actually" - delete it; the sentence says the same thing without it'],
+  [/\bvery\b/i, '"very" - delete it or give the number'],
+  [/\breally\b/i, '"really" - delete it'],
+  [/\btruly\b/i, '"truly" - delete it'],
+  [/\bgenuinely\b/i, '"genuinely" - delete it'],
+  [/\bquite\b/i, '"quite" - delete it or give the number'],
+  [/(?<!would |'d |\bor )\brather\b(?! than)/i, '"rather" as a hedge - delete it ("rather than" and "would rather" stay legal)'],
+  [/\bsomewhat\b/i, '"somewhat" - give the number or delete it'],
+  [/\bfairly\b/i, '"fairly" - give the number or delete it'],
+  [/\ba bit\b/i, '"a bit" - give the number or delete it'],
+  [/\bbasically\b/i, '"basically" - delete it'],
+  [/\bessentially\b/i, '"essentially" - delete it'],
+  [/\bclearly\b/i, '"clearly" - delete it; state the fact'],
+  [/\bobviously\b/i, '"obviously" - delete it'],
+  [/\bof course,/i, '"of course" - delete it'],
+  // commentary adverbs and summarizers
+  [/\bimportantly\b/i, '"importantly" - delete it; put the important fact first'],
+  [/\bnotably\b/i, '"notably" - delete it'],
+  [/\binterestingly\b/i, '"interestingly" - delete it'],
+  [/\bin other words\b/i, '"in other words" - say it once, the clear way'],
+  [/\b(?:put simply|simply put)\b/i, '"put simply" - just say it'],
+  [/\bin short[,.]/i, '"in short" - delete it'],
+  [/\bin practice\b/i, '"in practice" - delete it; state what happens'],
+  [/\bin plain (?:english|words|language|terms)\b/i, '"in plain English" - do not describe the writing, just write plainly'],
+  [/\bultimately\b/i, '"ultimately" - delete it'],
+  [/\bat the end of the day\b/i, '"at the end of the day" - delete it'],
+  [/\bthe bottom line\b/i, '"the bottom line" - state the fact'],
+  [/\bthe lesson\b/i, '"the lesson" - state the fact, do not narrate a moral'],
+  [/\bthe takeaway\b/i, '"the takeaway" - state the fact'],
+  [/\bin conclusion\b|\bin summary\b|\bto sum up\b|\ball in all\b/i, 'summary opener - delete it'],
+  [/\bthat said,|\bthat being said\b/i, '"that said" - start the sentence with the fact'],
+  [/\bit(?:'s| is) important to\b|\bit should be noted\b/i, '"it is important to" - delete the frame, keep the fact'],
+  [/\b(?:keep|bear) in mind\b/i, '"keep in mind" - delete the frame, keep the fact'],
+  // teaser openers
+  // sentence-initial, or after a comma/colon/"so": "a deal here is a house" is not a teaser
+  [/(?:^|[.:;!?]\s+|,\s+|\b(?:so|and|but)\s+)here(?:'s| is| are) (?:how|what|why|the|a|an|our|where|when|every|each|two|three|four|five)\b/i, '"here is how/what" teaser - delete it and state the thing'],
+  [/\bwhich is why\b/i, '"which is why" - split into two sentences'],
+  [/\bthe whole (?:trade|idea|question|point|strategy|deal|exchange|cycle|picture|answer|story|game|reason|process)\b/i, '"the whole story/deal" - say the specific thing'],
+  [/\breal (?:money|story|question|answer|picture|version|thing|test|reason|difference)\b/i, '"real X" intensifier - drop "real"'],
+  [/\b(?:minutes|hours|days|weeks|months|years), not (?:minutes|hours|days|weeks|months|years)\b/i, '"X, not Y" time contrast - give the actual time'],
+  [/\bone thing\b/i, '"one thing" - name the thing'],
+  [/\bworth (?:knowing|noting|mentioning|remembering)\b/i, '"worth knowing" - delete the frame, state the fact'],
+  [/\bthe (?:good|bad) news\b/i, '"the good news" - state the fact'],
+  [/\bthe catch is\b|\bthe big one\b/i, '"the catch is" / "the big one" - state the fact'],
+  [/\bthink of it as\b|\bimagine\b|\bpicture this\b/i, 'imagination frame - state the fact'],
+  // wordiness and buzzwords
+  [/\bwhen it comes to\b/i, '"when it comes to" - say "for" or restructure'],
+  [/\bin terms of\b/i, '"in terms of" - delete it'],
+  [/\bin order to\b/i, '"in order to" - say "to"'],
+  [/\bthe reality of\b|\bthe reality is\b/i, '"the reality" - state the fact'],
+  [/\ba (?:wide|broad) (?:range|variety|array) of\b|\ba variety of\b/i, '"a wide range of" - say how many, or name them'],
+  [/\bplays? an? (?:\w+ )?role\b/i, '"plays a role" - say what it does'],
+  [/\bin today's\b|\bin the (?:world|realm) of\b/i, 'scene-setting opener - delete it'],
+  [/\blandscape\b|\brobust\b|\bseamless|\bcutting.edge\b|\bstate.of.the.art\b|\bdeep dive\b|\bsweet spot\b|\bat its core\b|\bthe beauty of\b|\bjourney\b|\bunpack|\bnuance/i, 'buzzword - say the plain thing'],
+];
+const PUNCH_OPENER = /(?:^|[.!?]\s+)(?:And|So)\b(?!\s+(?:far|what|how|much|many|long)\b)/;
+
 /* Filler and teaser sentences the owner deleted on review (2026-08-22): lines
  * that promise, editorialize or state the obvious instead of giving the fact.
  * "It repeats every year", "prices move weekly", a header ending "and one of
@@ -872,7 +1002,7 @@ const JARGON = [
   [/\bpast the listing\b|\bon a listing\b|\bon (?:real|our|these) listings\b|\ba listing photo\b/i, "listing (say home)"],
   [/\babsorption rate\b/i, "absorption rate"],
   [/\bprice point\b|\bprice per door\b/i, "price point (say price)"],
-  [/\bSFRs?\b|\bSFHs?\b/, "SFR/SFH"],
+  [/\bsfrs?\b|\bsfhs?\b/, "SFR/SFH"],   // bodyLow is lowercased; the old capitals never matched
   [/\bbuy box\b|\boff-market deal\b|\bfarm area\b|\bsphere of influence\b/i, "prospecting jargon"],
   [/\bboots on the ground\b|\bvalue-add play\b|\btrade area\b/i, "investor jargon"],
   [/\bthe subject property\b|\basset class\b|\bproduct type\b/i, "appraiser jargon"],
@@ -1292,7 +1422,7 @@ function audit() {
      * "analyses" is deliberately NOT in this list: it is the correct American
      * plural of analysis and /contact/ uses it properly. */
     {
-      const BRITISH = /\b(petrol|fibre|storey|storeys|kerb|whilst|amongst|neighbourhoods?|colours?|realise[ds]?|organis(?:e|ed|es|ing|ation)|behaviour|favour(?:s|ed|ite|ites)?|metres?|prioritise[ds]?|recognise[ds]?|apologise[ds]?|licence[ds]?)\b/gi;
+      const BRITISH = /\b(petrol|fibre|storey|storeys|kerb|whilst|amongst|ageing|neighbourhoods?|colours?|realise[ds]?|organis(?:e|ed|es|ing|ation)|behaviour|favour(?:s|ed|ite|ites)?|metres?|prioritise[ds]?|recognise[ds]?|apologise[ds]?|licence[ds]?)\b/gi;
       const visible = ((s.match(/<main[\s\S]*?<\/main>/i) || [""])[0])
         .replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ").replace(/<[^>]+>/g, " ");
       for (const m of new Set([...visible.matchAll(BRITISH)].map(x => x[0])))
@@ -1312,10 +1442,8 @@ function audit() {
       const txt = prose.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
       const words = (x) => x.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
 
-      // 1. The hero sub-header is the first thing read. 84 words is an essay.
-      const sub = (noScripts.match(/<p class="detail-sub">([\s\S]*?)<\/p>/) || [])[1];
-      if (sub && words(sub) > 45)
-        E(`hero sub-header is ${words(sub)} words (max 45) - say it in two or three sentences`);
+      // 1. The hero sub-header rules (length, keyword, anchor, voice) live in the
+      //    SUBHEAD block further down; the cap is 30 words there.
 
       // 2. The sources line is a citation list, not a second article. One page
       //    shipped 1,022 words of recited statute under the copy.
@@ -1484,6 +1612,125 @@ function audit() {
           const m = claims.match(re);
           if (m) { E(`banned construction: "${m[0].slice(0, 50)}" - ${msg}`); break; }
         }
+      }
+      /* ---- SUBHEAD: the hero sub-header (owner rule 2026-09-01, PLAYBOOK A14) ----
+       * noindex pages (privacy, terms, accessibility, the map) are legal or
+       * utility text and carry neither a hero sub nor page keywords. */
+      if (!noindex) {
+        const mainHtml = ((s.match(/<main[\s\S]*?<\/main>/) || [s])[0]).replace(/<(script|style)[\s\S]*?<\/\1>/g, " ");
+        const h1Txt = decodeEnt(((mainHtml.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [, ""])[1]).replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+        let kw = "";
+        for (const b of ldBits) {
+          const m = b.match(/"keywords":"([^"]*)"/);
+          if (m) { kw = m[1]; break; }
+        }
+        const phrases = kw.split(",").map(x => x.trim().toLowerCase()).filter(Boolean);
+        let want = phrases.length ? subTokens(phrases[0]).filter(w => !SUB_WEAK.has(w)) : [];
+        if (!want.length) want = subTokens(phrases.join(" ")).filter(w => !SUB_WEAK.has(w));
+        // pages without Article keywords (home, hubs, /about/): the title's
+        // first segment names the topic better than a brand-line H1 does
+        if (!want.length) want = subTokens(decodeEnt(titleBit).split("|")[0]).filter(w => !SUB_WEAK.has(w));
+        if (!want.length) want = subTokens(h1Txt).filter(w => !SUB_WEAK.has(w));
+        const hs = heroSub(mainHtml);
+        if (!hs) E("no hero sub-header under the H1 - every page carries one (owner rule 2026-09-01)");
+        else {
+          const sub = hs.text, low = sub.toLowerCase();
+          const n = sub.split(/\s+/).filter(Boolean).length;
+          if (n < 8) E(`hero sub-header is ${n} words (min 8) - say the specific benefit, with a number or a place`);
+          if (n > 30) E(`hero sub-header is ${n} words (max 30) - one specific claim, two lines at most`);
+          if (want.length && !want.some(t => subHasToken(t, sub)))
+            E(`hero sub-header carries none of the page's keywords (${want.slice(0, 4).join(", ")}) - the topic word belongs in the sub`);
+          if (!(/\d|\$|%/.test(sub) || SUB_PLACE.test(sub) || SUB_NUMWORD.test(sub)))
+            E("hero sub-header has no concrete anchor - give a number, a dollar figure, a percentage, or a place name");
+          if (/\?/.test(sub)) E("hero sub-header is a question - answer it instead");
+          if (/!/.test(sub)) E("hero sub-header has an exclamation mark - the fact is the hook");
+          if (/\b(?:we|our|us|ours|ourselves)\b/i.test(sub)) E('hero sub-header says "we/our/us" - write it to the reader: what they get, with "you"');
+          if (/, not (?!a promise)/i.test(sub)) E('hero sub-header uses ", not X" contrast - give the specific thing instead of what it is not');
+          {
+            const ws = low.replace(/[^a-z0-9' ]/g, " ").split(/\s+/).filter(Boolean);
+            const seen = new Map();
+            for (let i = 0; i + 2 < ws.length; i++) { const k = ws.slice(i, i + 3).join(" "); seen.set(k, (seen.get(k) || 0) + 1); }
+            const rep = [...seen].find(([, c]) => c >= 2);
+            if (rep) E(`hero sub-header repeats the phrase "${rep[0]}" - a template, not a sentence; say one specific thing`);
+          }
+          if (h1Txt && low.includes(h1Txt.toLowerCase().replace(/[.]$/, "")))
+            E("hero sub-header restates the H1 - it must add the benefit or the proof, not repeat the title");
+        }
+        /* H2s are the section subheaders. Light rules only: a length band and
+         * no generic label, plus at least one keyword-bearing H2 outside the
+         * FAQ so the section headings carry the topic too. */
+        const h2s = [...mainHtml.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/g)]
+          .map(m => decodeEnt(m[1].replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim()).filter(Boolean);
+        for (const h of h2s) {
+          const n = h.split(/\s+/).length;
+          if (n > 16) E(`H2 is ${n} words (max 16): "${h.slice(0, 60)}" - a heading, not a sentence`);
+          if (/^(?:overview|introduction|details|summary|conclusion|more|other|notes|background|resources|next steps|key takeaways|final thoughts|tips|highlights|basics|the basics)$/i.test(h))
+            E(`generic H2 "${h}" - say what the section is about`);
+        }
+        const bodyH2 = h2s.filter(h => !/^frequently asked questions$/i.test(h));
+        if (want.length && bodyH2.length && !bodyH2.some(h => want.some(t => subHasToken(t, h)) || SUB_PLACE.test(h)))
+          E(`no H2 carries a page keyword (${want.slice(0, 3).join(", ")}) or a place name - put the topic in at least one section heading`);
+      }
+
+      /* ---- PUNCH: sentence-level rules (owner rule 2026-09-01, PLAYBOOK A15) ---- */
+      if (!noindex) {
+        const mainHtml = ((s.match(/<main[\s\S]*?<\/main>/) || [s])[0]).replace(/<(script|style|noscript)[\s\S]*?<\/\1>/g, " ");
+        const blocks = [];
+        for (const m of mainHtml.matchAll(/<(p|li)\b([^>]*)>([\s\S]*?)<\/\1>/g)) {
+          const attrs = m[2], inner = m[3];
+          if (/txc-src|footer-afba/.test(attrs)) continue;
+          if (m[1] === "li" && /^\s*<a\b[^>]*>[\s\S]*<\/a>\s*$/.test(inner)) continue;   // a citation item
+          const t = decodeEnt(inner.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+          if (!t) continue;
+          if (t.startsWith(TCPA.slice(0, 30)) || t.includes("Affiliated Business Arrangement") || t.includes("Because of this relationship")
+              || t.startsWith("An estimate, not a fact") || /^Sources?[:.]/.test(t) || t.includes("This is general information")) continue;
+          blocks.push(t);
+        }
+        const protect = (x) => x.replace(/\b(U\.S|St|Mt|Dr|Jr|Sr|vs|No|Inc|Corp|Ltd|approx|Ave|Blvd|Hwy|Rd|Mr|Mrs|Ms|Sq)\./g, "$1<DOT>").replace(/(\d)\.(\d)/g, "$1<DOT>$2");
+        let total = 0, nSent = 0, over = 0, modals = 0;
+        const longest = [], hits = new Map();
+        for (const b of blocks) {
+          for (const [re, msg] of PUNCH_WORDS) {
+            const m = b.match(re);
+            if (m && !hits.has(msg)) hits.set(msg, m[0]);
+          }
+          const op = b.match(PUNCH_OPENER);
+          if (op && !hits.has("opener")) hits.set("opener", op[0].trim());
+          modals += (b.match(/\b(?:may|might)\b/gi) || []).length;
+          const aside = [...b.matchAll(/\(([^()]{0,240})\)/g)].find(a => a[1].split(/\s+/).filter(Boolean).length >= PUNCH_ASIDE_WORDS);
+          if (aside && !hits.has("aside")) hits.set("aside", aside[0]);
+          const sents = protect(b).split(/(?<=[.!?])\s+(?=["'(]?[A-Z0-9$])/).map(x => x.replace(/<DOT>/g, ".").trim()).filter(Boolean);
+          for (const se of sents) {
+            const w = se.split(/\s+/).length;
+            total += w; nSent++;
+            if (w > PUNCH_WARN_SENTENCE) over++;
+            if (w > PUNCH_MAX_SENTENCE) longest.push([w, se]);
+          }
+        }
+        /* Headings, the title, the meta descriptions and the schema strings are
+         * the most-quoted text on the page, so the word list applies there too
+         * (the sentence-shape rules do not: a heading is not a sentence). */
+        {
+          const heads = [...mainHtml.matchAll(/<h[1-3][^>]*>([\s\S]*?)<\/h[1-3]>/g)].map(m => decodeEnt(m[1].replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim());
+          const surface = [...heads, decodeEnt(titleBit), ...metaBits.map(decodeEnt), ...ldBits];
+          for (const t of surface) {
+            for (const [re, msg] of PUNCH_WORDS) {
+              const m = t.match(re);
+              if (m && !hits.has(msg)) { hits.set(msg, m[0] + '" in heading/title/meta/schema: "' + t.slice(0, 50)); break; }
+            }
+          }
+        }
+        for (const [msg, found] of hits) {
+          if (msg === "opener") E(`sentence opens with "${found}" - join it to the sentence before, or start with the subject`);
+          else if (msg === "aside") E(`parenthetical aside "${found.slice(0, 60)}" - make it its own sentence or cut it`);
+          else E(`punch: ${msg} (found "${found}")`);
+        }
+        longest.sort((a, b) => b[0] - a[0]);
+        for (const [w, se] of longest.slice(0, 3)) E(`sentence is ${w} words (max ${PUNCH_MAX_SENTENCE}): "${se.slice(0, 70)}..." - split it`);
+        if (longest.length > 3) E(`${longest.length - 3} more sentences over ${PUNCH_MAX_SENTENCE} words`);
+        if (nSent >= 20 && total / nSent > PUNCH_MAX_MEAN) E(`mean sentence length ${(total / nSent).toFixed(1)} words (max ${PUNCH_MAX_MEAN}) - shorten across the page`);
+        if (over > 3) W(`${over} sentences over ${PUNCH_WARN_SENTENCE} words - aim shorter`);
+        if (modals > PUNCH_MAX_MODALS) W(`"may/might" ${modals} times - say what happens, or what the rule requires`);
       }
       const rm = mainProse.match(RATE_NUM_I) || mainProse.match(RATE_NUM_APR);
       if (rm) E(`stated interest rate in copy: "${rm[0]}" - never state a rate (non-negotiable 3); keep financing qualitative`);
@@ -1677,9 +1924,26 @@ function audit() {
   /* ---- cross-page ---- */
   for (const [k, ps] of declaredKw)
     if (new Set(ps).size > 1) errors.push(`cannibalisation: keyword "${k}" declared by ${[...new Set(ps)].join(", ")}`);
-  // A sitemap where every lastmod is identical reads as auto-stamped and Google discounts it.
-  if (smDates.length > 5 && new Set(smDates).size === 1)
-    errors.push(`sitemap.xml: all ${smDates.length} lastmod dates are identical (${smDates[0]}) - only date pages whose visible text changed`);
+  // A sitemap where every lastmod is identical reads as auto-stamped and Google
+  // discounts it. The one legitimate case is a sitewide copy rewrite (2026-09-01:
+  // every hero sub and 95 pages of body copy changed in one day), so before
+  // failing, ask git whether every page's prose really did change on that date.
+  if (smDates.length > 5 && new Set(smDates).size === 1) {
+    const day = smDates[0];
+    const hist = loadHistory();
+    const files = [...sm.matchAll(/<loc>https:\/\/chapter3realty\.com(\/[^<]*)<\/loc>/g)].map(m => m[1] === "/"
+      ? path.join(ROOT, "index.html")
+      : path.join(ROOT, m[1].replace(/^\//, "").replace(/\/$/, "").split("/").join(path.sep), "index.html"))
+      .filter(f => fs.existsSync(f));
+    const specs = [];
+    for (const f of files) { const gp = f.split(path.sep).join("/"); for (const h of hist.get(gp) || []) specs.push(`${h.sha}:${gp}`); }
+    const blobs = catFile(specs);
+    const changedThatDay = files.filter(f => trueDate(f, blobs).date === day).length;
+    if (changedThatDay === files.length)
+      warns.push(`sitemap.xml: all ${smDates.length} lastmod dates are ${day}; git confirms every page's prose changed that day (sitewide rewrite), so this is allowed once`);
+    else
+      errors.push(`sitemap.xml: all ${smDates.length} lastmod dates are identical (${day}) but git dates only ${changedThatDay} pages to that day - only date pages whose visible text changed`);
+  }
   for (const dt of new Set(smDates))
     if (!/^\d{4}-\d{2}-\d{2}$/.test(dt)) errors.push(`sitemap.xml: malformed lastmod "${dt}"`);
 
