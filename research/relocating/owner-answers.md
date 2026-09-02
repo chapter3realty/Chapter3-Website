@@ -1131,3 +1131,50 @@ standalone page is not built yet.
 DSCR figures, from him as a licensed MLO: 15 to 25 percent down on a purchase,
 more on a condotel; only 75 percent of a short-term rental estimate counts;
 our preferred lender starts writing DSCR loans at a 0.75 ratio.
+
+
+## 2026-09-02 late, fix-and-flip review (verbatim asks)
+
+Sub-header: "just say how much you'll fix and flip cost within the grand strand.
+how the financing works and one more example". On the figure: "It was three
+hundred and ninety thousand dollars, not three hundred and thirty five... one
+real example that's sold for a hundred and thirty thousand dollars profit the
+day construction ended." UNRESOLVED: his written answer on 2026-09-01 said the
+sale was $335,000 and he netted $224,300. Asked him which is right; the
+sub-header names no figure meanwhile.
+
+Style: "Cash wins the houses that speed decides. Theres too much of this shit it
+is against your rules to talk like this whatever this phrase is called delete it
+from the face of the website and NEVER let me see it ever again we speak plain
+and consice and literal no other way of speakig at all." Hardcoded as PLAYBOOK
+A18; eleven instances rewritten.
+
+"The sales for most of the profit is made or lost doesn't make any sense...
+hard code that phrase away. and just delete it in this case. Delete this page
+spends as much time on the exit as on the purchase as well." Done.
+
+Steps: "First step's not buy. Buy below market is not good. How to fix and flip
+works first step. Buy below market. Work with chapter three to find homes in
+distress and below market price... Step three should be monitor holding costs.
+Work with chapter three to sell the repaired product."
+
+Costs: "change that header to the six costs for fix and flippers... Also,
+there's not six costs then, really, because property taxes, insurance,
+utilities, those are just holding costs... And then deed recording fees are
+part of closing costs as well. So so far, I see holding costs, closing costs.
+You could put the loan as its own cost... And then permits." Built as four:
+permits, the loan, holding costs, closing costs, each with its own header.
+Wholesaling moved out into its own section.
+
+"Replace confirm they exist before the walls are closed up with confirm with
+your contractor all permits have been applied for and gotten." Done.
+
+Cash section renamed to his wording: "can i get good opportunities without being
+a cash buyer". On the financed-buyer paragraph: "No it doesn't bro nothing beats
+a cash offer say how Chapter3 can help you negotiate on off market deals so that
+the seller will accept an offer that would require financing." Rewritten that
+way on both the flip and BRRRR pages.
+
+Liability question on the BrickWood construction paragraph: answered in chat.
+The paragraph now attributes the guideline to BrickWood, says BrickWood sets and
+changes the terms, and drops the implied approval.

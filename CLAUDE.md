@@ -121,6 +121,10 @@ matter, not sentence length. That has happened here. See PLAYBOOK A11a.
   A blind find-and-replace across both breaks one of them. That happened: eight
   submarket bylines were "fixed" to dark text and measured 1.00:1 navy-on-navy.
   **Always measure the rendered contrast before and after a colour change.**
+  The same trap works one box at a time: a `background:var(--navy)` card that
+  never closes swallows the paragraphs after it and they render invisible
+  (MISTAKES 63). `build.js` now errors on that when the background is set
+  inline; when it comes from a CSS class only a browser measurement can see it.
 - `node --check` validates syntax only. It will not catch an undeclared
   identifier after an edit.
 - The site mixes `&#39;` and `&#x27;` for apostrophes. Normalise both when

@@ -817,6 +817,17 @@ const AI_TELL_REGEX = [
   // AI". The reader cannot "confirm which case" anything; tell them what to
   // check, who checks it, and what a bad answer costs them.
   [/\bconfirm which\b|\bwhich case you are\b|\bdetermine which\b/i, '"confirm which X" - name the thing to check and what a bad answer costs'],
+  /* The aphorism family (owner, 2026-09-02): "Cash wins the houses that speed
+   * decides", "the sale is where most of the profit is made or lost". A short
+   * epigram with an abstract subject, saying nothing a reader can act on. His
+   * instruction was to delete it from the site and never write it again. Say
+   * who does what, and what it costs them. */
+  [/\b(?:made or lost|make or break|makes or breaks|won or lost)\b/i, 'aphorism ("made or lost") - say what actually happens and to whom'],
+  [/\bis where (?:the |all |most of the )?[a-z ]{2,28}(?:is|are) (?:made|won|lost|decided|kept)\b/i, 'aphorism ("X is where the Y is made") - state the fact plainly'],
+  [/\b(?:wins?|won) the [a-z ]{2,28}that\b/i, 'aphorism ("X wins the Y that Z") - name who does what'],
+  [/\b(?:speed|price|timing|cash|rent|relationships?|discipline|the market|the building)\s+decides?\b/i, 'aphorism ("X decides") - name the person deciding and what they decide'],
+  [/\bdecides? who\b/i, 'aphorism ("decides who") - say who gets what, and why'],
+  [/\bdecides? the outcome\b/i, 'aphorism ("decides the outcome") - say which number moves and how'],
 ];
 
 
@@ -1801,6 +1812,53 @@ function audit() {
             E(`local edge: only ${edge} sentence(s) say why Chapter3, here (min ${LOCAL_EDGE_MIN}) - a national brand could have written this page; add the specific local reasons, casually`);
         }
       }
+      /* ---- invisible text: dark text on a dark ground, ivory on ivory ----
+       * CLAUDE.md gotcha 1, and the defect that has now shipped five times.
+       * Two paragraphs on the fix-and-flip page sat inside a navy box with
+       * color:var(--muted) and measured 1.00:1 against their own background;
+       * reading the source cannot see it, because the colour that matters is
+       * the nearest painted ancestor. This walks the tag stream, tracks that
+       * ancestor, and errors when an element paints text the same shade as
+       * the ground under it. */
+      if (!noindex) {
+        const mh = ((s.match(/<main[\s\S]*?<\/main>/) || [s])[0]).replace(/<(script|style)[\s\S]*?<\/\1>/g, " ");
+        // brass and saddle are mid-dark grounds the site deliberately pairs with
+        // ivory text, so they count as dark here
+        const DARK_BG  = /background(?:-color)?:\s*(?:var\(--navy(?:-2)?\)|var\(--brass(?:-2)?\)|var\(--saddle\)|#1c2028|#2a3040|#c4783a)/i;
+        const LIGHT_BG = /background(?:-color)?:\s*(?:var\(--ivory(?:-2|-3)?\)|var\(--white\)|#f4efe8|#ede5d8|#fff)/i;
+        const DARK_FG  = /color:\s*(?:var\(--muted\)|var\(--navy(?:-2)?\)|var\(--ink\)|#1c2028)/i;
+        const LIGHT_FG = /color:\s*(?:var\(--ivory\)|rgba\(244, ?239, ?232)/i;
+        const CONTAINER = /^(?:div|section|main|td|th|li|ul|ol|figure|article|aside)$/;
+        // tri-state: null = the ground is painted by a CSS class, not an inline
+        // style, so this scanner cannot know it and stays quiet. Only an inline
+        // background makes the ground knowable, which is the case that shipped.
+        const stack = [null];
+        const TAG = /<(\/?)([a-z][a-z0-9]*)\b([^>]*?)(\/?)>/gi;
+        let m;
+        while ((m = TAG.exec(mh))) {
+          const closing = m[1] === "/", tag = m[2].toLowerCase(), attrs = m[3] || "", selfClose = m[4] === "/";
+          const isBox = CONTAINER.test(tag);
+          if (closing) { if (isBox && stack.length > 1) stack.pop(); continue; }
+          let dark = stack[stack.length - 1];
+          if (DARK_BG.test(attrs)) dark = true;
+          else if (LIGHT_BG.test(attrs)) dark = false;
+          else if (/class="/.test(attrs) && !/style="/.test(attrs) && /hero|bimb|invest-hero|path-hero/.test(attrs)) dark = null;
+          const after = mh.slice(m.index + m[0].length);
+          const own = after.slice(0, 400).split("<")[0].replace(/&[a-z#0-9]+;/gi, " ").trim();
+          if (own.length > 12) {
+            if (dark === true && DARK_FG.test(attrs))
+              E(`invisible text: dark colour on the navy ground ("${own.slice(0, 45)}") - inside a navy box text must be ivory (CLAUDE.md gotcha 1)`);
+            else if (dark === false && LIGHT_FG.test(attrs))
+              E(`invisible text: ivory colour on the ivory ground ("${own.slice(0, 45)}") - on ivory use var(--muted) or var(--navy) (CLAUDE.md gotcha 1)`);
+          }
+          if (isBox && !selfClose) stack.push(dark);
+        }
+        const dOpen = (mh.match(/<div\b/g) || []).length, dClose = (mh.match(/<\/div>/g) || []).length;
+        const sOpen = (mh.match(/<section\b/g) || []).length, sClose = (mh.match(/<\/section>/g) || []).length;
+        if (dOpen !== dClose) W(`${dOpen} <div> against ${dClose} </div> inside <main> - unbalanced markup silently re-parents content`);
+        if (sOpen !== sClose) W(`${sOpen} <section> against ${sClose} </section> inside <main>`);
+      }
+
       const rm = mainProse.match(RATE_NUM_I) || mainProse.match(RATE_NUM_APR);
       if (rm) E(`stated interest rate in copy: "${rm[0]}" - never state a rate (non-negotiable 3); keep financing qualitative`);
       // $0 is a calculator's zero state, not an advertised payment.

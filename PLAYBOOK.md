@@ -336,6 +336,16 @@ for a month each summer is consumer credit. So:
 State it as a range, attribute it ("Figures from BrickWood Mortgage"), and keep
 the wording qualitative anywhere the buyer might live in the property.
 
+**A18. No aphorisms.** (Owner, 2026-09-02, on "Cash wins the houses that speed
+decides": "there is too much of this... we speak plain and concise and literal,
+no other way of speaking at all.") The shape is a short epigram with an
+abstract subject and no actor: *X wins the Y that Z decides*, *the sale is
+where the profit is made or lost*, *discipline decides the outcome*. It sounds
+like insight and tells the reader nothing they can act on. Six patterns in
+`AI_TELL_REGEX` error on it. The replacement always names the actor and the
+consequence: not "speed decides who gets the house" but "the buyer who can
+close soonest usually gets the house".
+
 **A11e, amended 2026-09-01.** Attribution wording: a story is told about "an
 agent at Chapter3" or "one of our agents", or the named person when the page
 already names them, never "Chapter3 did" or "we did" as if the company were the

@@ -462,6 +462,43 @@ figure, and the three multifamily questions the daily reminder carries.
 
 ---
 
+## 2026-09-02 late: the flip page, and invisible text found on the live site
+
+The owner's review of `/invest/strategies/fix-and-flip/` turned up a defect he
+could not name because he could not see it. Two paragraphs, the real-deal story
+and the who-buys paragraph, sat inside the navy example box in `var(--muted)`
+and measured 1.00:1. He reported it as "the example box has a really long
+bottom part for no reason". That empty part was the invisible text. Fixed, and
+gated (MISTAKES 63).
+
+A full browser contrast sweep of all 105 pages ran afterwards. Result: those
+two paragraphs were the ONLY truly invisible text on the site. Nothing else is
+below 2.0.
+
+**Open, and worth a decision from him:** the sweep found 121 elements between
+2.0 and 3.0 contrast and 306 between 3.0 and 4.5, on 98 pages. Almost all of
+them are one thing: the brass eyebrow labels, `var(--brass)` #c4783a on ivory
+at about 11.9px, which measures 2.76:1 where small text wants 4.5. The palette
+already carries `--brass-ink` #91592b for exactly this, and it measures 4.83:1
+on ivory. Swapping the eyebrow colour token would fix roughly 120 elements in
+one edit. It is a visible sitewide change, so it needs his yes, and brass on
+navy backgrounds must NOT change (CLAUDE.md gotcha 1).
+
+Also this round: the aphorism ban (PLAYBOOK A18, MISTAKES 64), the flip page
+rebuilt to four costs with headers, wholesaling given its own section, the cash
+section rewritten to say plainly that cash is stronger and that off-market is
+how a financed buyer competes.
+
+**One thing needs his answer:** the flip page says the inherited-house deal
+sold at $335,000 and netted $224,300, which came from his own written answer on
+2026-09-01. On 2026-09-02 he said verbally it was $390,000, not $335,000, and
+asked the sub-header to say $130,000 profit. Those two sets do not reconcile,
+and $390,000 minus $260,000 is exactly the builder example on the BRRRR page,
+so the numbers may have crossed. The sub-header now names no figure until he
+confirms which is right.
+
+---
+
 ## Suggested order for the next session
 
 Highest risk of silent damage first, because every one of these is a sitewide
