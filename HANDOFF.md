@@ -514,6 +514,114 @@ confirms which is right.
 
 ---
 
+## 2026-09-03: cluster planning, buyer-page backlog, and the AEO research
+
+### Subheader compliance, measured
+
+All 100 indexable pages pass every hero sub-header rule. The 5 exempt pages are
+noindex legal and utility pages that carry no hero. The gate was positive
+-controlled four ways on `/about/` (a four-word sub, a question, we/our voice,
+and no concrete anchor); each planted defect failed the build and the file was
+restored byte-identical. The rule is enforced, not merely satisfied today.
+
+### The eight buyer pages, ranked by call intent
+
+Owner's decision 2026-09-03: build the investor tax cluster first, these next.
+Each was checked against the site; none duplicates an existing page. Counts are
+pages currently mentioning the phrase at all.
+
+1. **Who pays your agent, and what you sign before touring.** Zero coverage on
+   all three phrasings ("buyer agency agreement", "who pays the buyer",
+   "buyer agent commission"). Since the 2024 rule change this is the question
+   that precedes hiring anyone, so answering it plainly *is* the pitch.
+2. **Zero down with a USDA loan in inland Horry County.** Three passing
+   mentions, no owning page. Conway, Aynor, Loris and Green Sea are in eligible
+   territory. Feeds BrickWood directly.
+3. **Winning a multiple-offer situation without overpaying.** Zero coverage,
+   including "escalation clause" and "appraisal gap". Latest-funnel page here.
+4. **What a home inspection finds in a coastal house.** One passing mention.
+   Stucco and EIFS, HVAC in salt air, crawlspace moisture, older oceanfront
+   buildings. Where Timmy's 30 years is visible and a national site is empty.
+5. **Manufactured and mobile homes in Horry County.** One mention. Large share
+   of this market, different financing, and the de-titling step catches people.
+6. **Rent versus buy on the Grand Strand.** Zero coverage. Top of funnel, feeds
+   every other buyer page.
+7. **What credit score you need, and what to do if you are short.** One
+   mention. High volume, early funnel, another BrickWood line.
+8. **Title insurance and the attorney closing.** Four mentions, no owner. South
+   Carolina requires an attorney at closing and most buyers here are out of
+   state, so it surprises them.
+
+**Held back, deliberately.** An affordability page ("how much house can I
+afford") returns zero and has enormous search volume, but non-negotiable 3 bans
+payment amounts and rates in copy, so it must stay qualitative and lean on
+`/buyers/cost-to-own/`. Writable, but the hardest on this list to write inside
+the rules. A "best time to buy" page also returns zero but ages badly and would
+need date discipline forever.
+
+**Not to be built:** an investor property-tax page. The 4 and 6 percent
+assessment ratio is already on 17 pages with a dedicated `/buyers/property-taxes/`
+and a working Horry County calculator. It is a link target, not a page.
+
+### AEO: what actually decides whether a model recommends Chapter3
+
+The owner's goal is that an assistant answering "who should I hire for this
+investment in Myrtle Beach" names Chapter3. **That goal splits in two and the
+halves are won by different things. Do not conflate them again.**
+
+- *Informational* queries ("how does BRRRR work in Myrtle Beach") are won by
+  the pages. Content is the lever and the cluster work is correct.
+- *Recommendation* queries ("who should I hire") are mostly not won by the
+  site. Published research puts roughly 85 percent of top-of-funnel brand
+  visibility on domains the brand does not own, finds third-party mentions
+  correlate about 3x more strongly with AI visibility than owned content, and
+  attributes 70 to 80 percent of AI visibility to brand and third-party trust
+  signals. The site is how a model *verifies* Chapter3 once something else has
+  named it. The naming happens elsewhere.
+
+**On-site state, measured 2026-09-03.** Entity markup is already strong and
+should not be "fixed": `RealEstateAgent`, `telephone`, `PostalAddress` and
+`sameAs` are all present on all 100 indexable pages, NAP reads 573 Vista Drive,
+Murrells Inlet 29576 and +1-854-333-2135, and `llms.txt` plus `llms-full.txt`
+are generated. Two real gaps:
+
+1. **`sameAs` lists only Facebook, Instagram and YouTube.** Missing the
+   profiles that actually drive local AI recommendations: Google Business
+   Profile, Yelp, Foursquare, Zillow, Realtor.com, LinkedIn, and the SC licence
+   lookup. This is entity resolution, it is how a model links the site to the
+   business everywhere else, and it is a small edit with high leverage.
+2. **Zero `aggregateRating` or `Review` markup sitewide.** Blocked until there
+   are reviews to mark up. Never invent them.
+
+**Off-site, which the owner must do and the repo cannot.** Ranked:
+Google Business Profile completeness; review volume and rating; a claimed
+Foursquare listing (BrightLocal found Foursquare powers 60 to 70 percent of
+ChatGPT local results, and the effect is strongest in smaller towns, which
+describes this market exactly); Yelp (a source in about 33 percent of searches
+across industries); and genuine Reddit participation (Reddit is roughly 40
+percent of citations across LLMs and about 47 percent of Perplexity answers).
+Vendor blogs claim ChatGPT rarely names businesses under about 150 reviews and
+averages 4.3 stars or better. **Treat those two figures as soft** - they come
+from SEO vendors with an interest in the number - but the direction is
+well-supported across independent sources.
+
+**A tension to resolve, not to paper over.** The Princeton GEO study (Aggarwal
+et al., KDD 2024, arXiv 2311.09735) measured citation lifts from inline source
+citation, named-expert quotation, specific statistics, and confident prose, and
+reports up to 40 percent visibility improvement, with the largest gains going to
+lower-ranked pages. Four of those five tactics the writing rules already
+enforce. One conflicts: the style rule bans naming the body that wrote a rule in
+body copy, and naming sources is exactly what the study measured lifting
+citation. The sources line partly covers it. **Ask the owner before widening
+that rule; do not quietly relax it.**
+
+**A caution on timelines.** The Seer GEO Olympics study (231,347 responses, 7
+platforms, 52 days) found new content does not quickly override an existing
+narrative: 1 in 5 factually correct responses still told the stale story three
+weeks later. This work compounds slowly. Do not promise the owner a fast turn.
+
+---
+
 ## Suggested order for the next session
 
 Highest risk of silent damage first, because every one of these is a sitewide
