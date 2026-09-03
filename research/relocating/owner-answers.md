@@ -1178,3 +1178,43 @@ way on both the flip and BRRRR pages.
 Liability question on the BrickWood construction paragraph: answered in chat.
 The paragraph now attributes the guideline to BrickWood, says BrickWood sets and
 changes the terms, and drops the implied approval.
+
+
+## 2026-09-03, DSCR and BRRRR line edits (verbatim asks)
+
+DSCR: delete "around here, the building itself can determine whether a lender
+will finance it"; the oceanfront block cut to "let us check if it meets a
+lenders warrantable condo building guidelines if it doesn't it could affect
+your mortgage or future sale"; the nightly-income block to "lenders subtract
+appraisal estimates for short term rentals by 25%" plus the compare link; the
+analyzer box to "if it is a buy or not"; "so finding the property that clears
+it is the work" to "finding the property is the hard part that agents tend to
+leave up to you"; "for that math" deleted.
+
+BRRRR: "Split these up into different sections its too long" for the seven
+paragraphs under the steps. Now six sections: the buy, sourcing, condos, the
+work, the refinance, the repeat.
+
+"never finishes the cycle. bro never use a phrase ever again in your life hard
+code it" - replaced with "does not work" and gated.
+
+"Which one you are buying decides whether the strategy works at all. Delete and
+hard code this way of talking away." Deleted; the gate was first written too
+broadly and narrowed after measuring (MISTAKES 65).
+
+Deleted at his request: "The gap here is usually thinner than that, because
+foreclosures are scarce..."; "and a condotel is run like a hotel; both cut the
+list of lenders who will refinance you down to a few."
+
+"The rehab and the rent. Specify how we help with this and can help advise on
+how to get vouchers as well." Done.
+
+"finished houses. Make this built houses that appraised." Done.
+
+Cash section header to "Benefits of buying cash". The financed paragraph to his
+words: "if you need to finance the investment let us know we can still find off
+market properties from friends of ours and negotiate a way to allow for
+financing. This happens alot more than you'd think."
+
+CTA sitewide: "an investment property for sale" instead of three, and the Open
+the LTR analyzer button removed from the closing call to action on 8 pages.

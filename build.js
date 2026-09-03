@@ -828,6 +828,11 @@ const AI_TELL_REGEX = [
   [/\b(?:speed|price|timing|cash|rent|relationships?|discipline|the market|the building)\s+decides?\b/i, 'aphorism ("X decides") - name the person deciding and what they decide'],
   [/\bdecides? who\b/i, 'aphorism ("decides who") - say who gets what, and why'],
   [/\bdecides? the outcome\b/i, 'aphorism ("decides the outcome") - say which number moves and how'],
+  // narrowed after measuring: "the recorded rules decide whether you can rent"
+  // is a plain statement of who holds the authority and stays legal. The shape
+  // the owner objected to is the cleft, where the subject is hidden.
+  [/\b(?:is|are) what decides?\b|\bwhat decides? (?:whether|who|if)\b/i, 'cleft ("what decides whether") - name the thing and say what it does'],
+  [/\bfinish(?:es|ed)? the cycle\b|\bcompletes? the cycle\b|\bbreaks? the cycle\b/i, 'metaphor ("finishes the cycle") - say it does not work, and why'],
 ];
 
 
