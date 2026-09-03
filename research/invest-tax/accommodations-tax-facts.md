@@ -211,3 +211,25 @@ never re-verified. Non-negotiable 8.
   track record. Write it as an offer: Chapter3 can walk a new owner through
   registration and the first filing. **Do not write that we routinely do this,
   or imply past clients.** There is no history to claim yet.
+
+### North Myrtle Beach — RESOLVED 2026-09-03
+
+A rental **does** count as a business requiring a North Myrtle Beach business
+licence. **Source: the owner, Devin Day, a licensed local professional**, not
+the licence office. Their FAQ still does not say it in writing, so if this is
+ever challenged the answer is a call to 843-280-5585, not a link.
+
+The dates, the 5-percent-a-month penalty and the gross-income basis are from
+the city's own FAQ and are safe to publish as written.
+
+### Still blocking the jurisdiction totals table
+
+Georgetown County finance, 843-545-3002, has not been called. The seven
+published totals stay unverified and the Pawleys Island figure is disputed
+between 11 and 12 percent.
+
+**Decision: build the page without a single-number totals column.** Show the
+layers each owner actually files instead: state 7 percent, then the county or
+city line that applies to their address. That is more useful than a headline
+percentage and it does not depend on the disputed arithmetic. Add the totals
+column later, once the county confirms.
