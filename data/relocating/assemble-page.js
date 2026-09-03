@@ -111,7 +111,7 @@ replaceLd('Article', {
   '@context': 'https://schema.org', '@type': 'Article', '@id': url + '#article',
   headline: deEnt(spec.headline), description: deEnt(spec.description), url,
   author: { '@id': ORIGIN + '/about/#devin-day' },
-  reviewedBy: { '@type': 'Person', name: 'Timmy Fredrick Nash', jobTitle: 'Broker-in-Charge' },
+  reviewedBy: { '@type': 'Person', name: 'Tim Nash', jobTitle: 'Broker-in-Charge' },
   publisher: { '@id': ORIGIN + '/#org' },
   datePublished, dateModified, inLanguage: 'en-US', image: ORIGIN + '/og-image.jpg',
   mainEntityOfPage: { '@id': url + '#webpage' },

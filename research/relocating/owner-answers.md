@@ -89,16 +89,16 @@ Most clients are from **New York** and **North Carolina**, a few from **Ohio**.
 No state-specific client stories on file. Origin page order: NY, NC, OH, then
 NJ, PA.
 
-## Timmy
+## Tim
 
-Owner is texting Timmy to ask what he tells every relocator in the first ten
+Owner is texting Tim to ask what he tells every relocator in the first ten
 minutes. Add later if valuable; do not block on it.
 
 ## Schools page
 
 Owner wants it built, compliant, "the best real estate page about schools in
 the universe that is also compliant." Compliance research is ours to do and to
-brief him and Timmy on.
+brief him and Tim on.
 
 ## Calculator decisions (owner)
 
@@ -118,13 +118,13 @@ Collected for the E-E-A-T pass. What shipped and what was cut, with reasons.
   brokerage is new. Owner said not to discuss founding. Neither appears on any
   page. The positioning that DID ship: partnership, simple, technology, informed
   on the biggest purchase of your life, reliable quality.
-- **Fred Nash.** Timmy's father, Fred Nash, sold real estate here before him.
+- **Fred Nash.** Tim's father, Fred Nash, sold real estate here before him.
   Fred Nash BOULEVARD (not Drive) is real: Horry County/SCDOT project by the
   airport, opened 2026-02. The claim that it is named FOR him is family
   knowledge, not independently verified, so the pages say the road "carries the
-  family name", which is true under any resolution. If Timmy produces the
+  family name", which is true under any resolution. If Tim produces the
   naming record, upgrade the sentence.
-- **Timmy's first ten minutes.** Shipped as a quote on pros-and-cons, with
+- **Tim's first ten minutes.** Shipped as a quote on pros-and-cons, with
   "heaven on earth" paraphrased out (metaphor rule).
 - **Biggest NY-buyer mistake.** As told, it was culture/personality matching
   with soccer moms and retirees as examples. NOT PUBLISHABLE, steering. Shipped
@@ -154,7 +154,7 @@ Collected for the E-E-A-T pass. What shipped and what was cut, with reasons.
 - **Devin origin:** Pleasant City, Guernsey County, Ohio, village of about 400
   (population verified against census sources). First SC vehicle bill $325 plus
   the $250 one-time fee and $50 road fee. Shipped on from-ohio, labelled his.
-- **Fred Nash Boulevard naming CONFIRMED by owner:** named for Timmy's father,
+- **Fred Nash Boulevard naming CONFIRMED by owner:** named for Tim's father,
   who also sold real estate here. Author block upgraded from "carries the
   family name" to "is named for him" on every relocator page.
 - **"Ask Devin" button removed** at owner request. All lead-form and ctaBox
@@ -209,7 +209,7 @@ Collected for the E-E-A-T pass. What shipped and what was cut, with reasons.
 
 ---
 
-## 2026-08-26 — Timmy's Hugo account (relayed by Devin, this session)
+## 2026-08-26 — Tim's Hugo account (relayed by Devin, this session)
 
 Recorded near-verbatim for provenance; published on /buyers/relocating/hurricanes/
 as "his recollection, as he told it to us," with similes ("like a war zone,"
@@ -235,7 +235,7 @@ as "his recollection, as he told it to us," with similes ("like a war zone,"
   paragraph on the page carries the NWS figures; his verbatim close ("We were
   lucky. One shift north of 50 miles and nothing would have been left here.")
   published as quoted judgment.
-- OPEN: Timmy should read the published passage before deploy and confirm the
+- OPEN: Tim should read the published passage before deploy and confirm the
   details (which town hall; five-miles-north geography) are as he wants them.
 
 ---
@@ -970,7 +970,7 @@ at other companies' training became what we do, with no competitor mentioned;
 "bridge between eras" and the energy-drink line became the literal facts.
 
 **Held for his answers:** the 17.34% and 22.32% discount figures (no public
-source found; asked for his - Q22); "three generations" (Fred Nash and Timmy
+source found; asked for his - Q22); "three generations" (Fred Nash and Tim
 are two on the record; asked who is third - Q21); the condo-BRRRR refinance
 handling (Q23); naming the 200-property client state (Q24).
 
@@ -978,7 +978,7 @@ handling (Q23); naming the 200-property client state (Q24).
 ### 2026-09-01 morning answers (verbatim, abridged only by numbering)
 
 Q21 three generations: grandfather owned farms, restaurants and rental
-properties in Myrtle Beach; father a lifelong local agent; Timmy 30+ years,
+properties in Myrtle Beach; father a lifelong local agent; Tim 30+ years,
 plus an LO license held over a decade, two years in a real estate
 attorney&#39;s office, his own investments. "theres none of this time spent in
 new york or colorodo... if it&#39;s impossible for anyone to know 100% about
@@ -998,7 +998,7 @@ discount to an investor who now collects steady monthly profit. Relationship
 positioning: "any new company can outspend us on facebook ads... but they cant
 create multi year long friendships."
 
-His question: stories are Timmy&#39;s from before Chapter3, or Devin&#39;s
+His question: stories are Tim&#39;s from before Chapter3, or Devin&#39;s
 observation as an LO. Legal to tell? Small disclaimer, or would that hurt SEO?
 Answered in chat and hardcoded as PLAYBOOK A11e.
 
@@ -1022,7 +1022,7 @@ pick one niche (college, golf, family, workers, relocators) and stay filled.
 Q19: the most common investor question is "send me properties with analytics
 to prove it" (now the CTA test line cluster-wide). Q22: the 17.34% and 22.32%
 discounts are our own observation (published with that attribution). Q24: the
-200-property client is New York based, longtime Timmy customer, mostly condos.
+200-property client is New York based, longtime Tim customer, mostly condos.
 
 **Held back, and why:** the quiet-sale story is NOT published. The client
 asked for discretion; publishing the request for discretion breaks it, and

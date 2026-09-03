@@ -383,6 +383,12 @@ const contentOf = (html) => {
   b = b.replace(DATE_STAMP, " ");
   // legal-entity rename: boilerplate, lands on every page at once, says nothing new
   b = b.replace(/Chapter3 Realty (?:LLC|Corp|Inc)\b/g, "Chapter3 Realty");
+  // broker rename: same class as the legal-entity rename above. The byline went
+  // from "Timmy Fredrick Nash" to "Tim Nash" on 104 pages at once (owner,
+  // 2026-09-03), with "Timothy Nash" kept in schema and the licence line. Same
+  // person, no new information, so it must not bump 104 lastmod dates.
+  // Non-negotiable 6: never bulk-stamp lastmod.
+  b = b.replace(/\bTim(?:my|othy)?\b(?:\s+Fredrick)?(?:\s+Nash)?/g, "Nash");
   b = b.replace(/\s+/g, " ");
   // Removing a tag leaves a space behind, so wrapping words in a link turns
   // "construction," into "construction ,". Real case: /submarkets/carolina-forest/
@@ -978,7 +984,7 @@ const PUNCH_OPENER = /(?:^|[.!?]\s+)(?:And|So)\b(?!\s+(?:far|what|how|much|many|
 const LOCAL_EDGE_PAGES = /^\/invest\/strategies\//;
 const LOCAL_EDGE_MIN = 4;
 // case matters only where it must: "US 17" is a road, "us " is the brokerage
-const LOCAL_BRAND = /\b(?:Chapter ?3|[Oo]ur (?:agents?|team|broker|lending partner|preferred lender|analysts|buyer list)|an agent at|Timmy|Devin|[Ww]e |us )/;
+const LOCAL_BRAND = /\b(?:Chapter ?3|[Oo]ur (?:agents?|team|broker|lending partner|preferred lender|analysts|buyer list)|an agent at|Tim|Devin|[Ww]e |us )/;
 const LOCAL_PLACE = /\b(?:Myrtle Beach|Grand Strand|Horry|this market|here\b|local|Conway|Coastal Carolinas)/;
 const SALESY = [
   // imperative or exclusivity forms only: "Why buyers trust us" and "no hurry" are legal
@@ -1684,6 +1690,37 @@ function audit() {
         for (const [re, msg] of AI_TELL_REGEX) {
           const m = claims.match(re);
           if (m) { E(`banned construction: "${m[0].slice(0, 50)}" - ${msg}`); break; }
+        }
+      }
+      /* ---- SOURCES + NAMED VOICE (owner rules 2026-09-03, PLAYBOOK A19/A20) ----
+       * The Princeton GEO study (Aggarwal et al., KDD 2024) measured citation
+       * lift from citing sources inline and from quoting named experts. Both
+       * are things a national competitor cannot copy here, because they do not
+       * have a broker with 30 years on this beach.
+       *
+       * WARNINGS, not errors, on purpose. 19 article pages currently carry no
+       * external source and 98 carry no attributed sentence. Making these fail
+       * the build would block every deploy on a backlog, and MISTAKES 65 is
+       * explicit that a gate firing on a known backlog teaches people to ignore
+       * gates. Flip each to E() once its list is empty. */
+      if (!noindex) {
+        const mainSrc = (s.match(/<main[\s\S]*?<\/main>/) || [""])[0]
+          .replace(/<(script|style|nav|footer|svg)[\s\S]*?<\/\1>/g, " ");
+        const plain = mainSrc.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+        /* a hub is nav furniture: short, and mostly a card grid pointing away */
+        const isHub = plain.trim().split(/\s+/).length < 900;
+
+        if (!isHub) {
+          const hosts = new Set([...mainSrc.matchAll(/<a [^>]*href="https?:\/\/([^"\/]+)/gi)]
+            .map(m => m[1]).filter(h => !/chapter3realty\.com/i.test(h)));
+          if (hosts.size < 2)
+            W(`only ${hosts.size} external source link(s) in the body - an article page cites at least two primary sources (PLAYBOOK A19)`);
+
+          /* an attributed sentence: a named licensed person doing or saying
+           * something, not merely appearing in a byline or a schema block */
+          const SAYS = /\b(?:Tim|Timothy) Nash\b[^.]{0,80}\b(?:says?|said|puts? it|calls?|tells?|has seen|will not|refuses?|walks?|checks?|looks? for|starts?|asks?)\b|\bDevin Day\b[^.]{0,80}\b(?:says?|said|puts? it|calls?|tells?|has seen|runs?|checks?|looks? for)\b/;
+          if (!SAYS.test(plain))
+            W("no attributed sentence from a named licensed person - quote Tim or Devin doing or saying something specific (PLAYBOOK A20)");
         }
       }
       /* ---- SUBHEAD: the hero sub-header (owner rule 2026-09-01, PLAYBOOK A14) ----

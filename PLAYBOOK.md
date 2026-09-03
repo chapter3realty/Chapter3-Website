@@ -183,7 +183,7 @@ math, not a promise") is not a hedge and stays legal.
 
 **A11e. Client stories: real, attributed, confidential.** A story goes on
 the site only if it happened. Attribute it to the person and period it belongs
-to: Timmy&rsquo;s deals from before Chapter3 existed are *Timmy* stories, never
+to: Tim&rsquo;s deals from before Chapter3 existed are *Tim* stories, never
 "we" or "Chapter3" stories, because the firm cannot have experience predating
 its formation and licensing rules treat implying otherwise as misleading
 advertising. Anonymize every client. Never publish what a client asked to keep
@@ -292,7 +292,7 @@ Strand, otherwise we just compete with national brands. Not too salesy and
 desperate; informational, and frequently drop casually why we are the
 greatest.") The `LOCAL EDGE` block in `build.js` counts sentences under
 `/invest/strategies/` that pair a Chapter3 token (Chapter3, our agents, our
-lending partner, Timmy, Devin, we) with a local token (Myrtle Beach, Grand
+lending partner, Tim, Devin, we) with a local token (Myrtle Beach, Grand
 Strand, Horry, here, local, Coastal Carolinas) and errors under four. The
 reasons are specific and true, never adjectives: three generations selling in
 this market, agents who own rentals here, the relationships that surface
@@ -345,6 +345,48 @@ like insight and tells the reader nothing they can act on. Six patterns in
 `AI_TELL_REGEX` error on it. The replacement always names the actor and the
 consequence: not "speed decides who gets the house" but "the buyer who can
 close soonest usually gets the house".
+
+**A19. Every article page cites at least two primary sources, in the body.**
+Measured 2026-09-03: 19 article pages carried no external source link at all,
+including `/invest/strategies/brrrr/` and `/invest/strategies/dscr-loans/`, two
+of the most commercially important pages here. The rule is at least two links
+to external primary sources inside `<main>`, plus a sources line. Hubs are
+exempt, defined as under 900 words of body text, because a hub is nav furniture
+pointing away. The Princeton GEO study (Aggarwal et al., KDD 2024, arXiv
+2311.09735) measured citation lift from inline source attribution, with the
+largest gains going to pages that rank lower, which describes most of this
+site. `build.js` warns as A19. **A link is not a source:** it must support a
+specific claim on the page. A decorative link to a homepage supports nothing
+and is worse than none, because it teaches the reader the page cites things
+when it does not. Re-open every source before linking it (non-negotiable 8).
+
+**A20. Every article page carries one attributed sentence from a named person.**
+Measured 2026-09-03: 98 of 100 pages had none. The rule is at least one
+sentence where Tim Nash or Devin Day does or says something specific. A byline
+does not count. A schema block does not count. "Tim Nash says he walks the
+crawlspace before he lets a client bid" counts. This is the one tactic a
+national brand structurally cannot copy, because they do not have a broker with
+30 years on this beach. `build.js` warns as A20. **Never write a quote for a
+named person and ship it.** Owner instruction, 2026-09-03: draft it, send it to
+him, wait. A fabricated quote attributed to a licensed broker is a compliance
+problem, not a style problem.
+
+**A21. Two rules proposed on 2026-09-03 and withdrawn, with the evidence.**
+Recorded so nobody proposes them again off the same bad measurement. *A
+statistics-density floor* of ten figures per 1,000 words was withdrawn: the
+scanner counted only dollar amounts, percentages and comma-grouped numbers, so
+it read `/invest/strategies/dscr-loans/` at 5.5 per 1,000 when counting any
+number gives 38.7, and it could not tell a thin page from one whose figures
+live in a calculator. A sourced figure is what matters and A19 already requires
+it. *A zero-tolerance hedge ban* was withdrawn: the scanner reported 152
+hedges, but 115 were the word "rather" inside "X rather than Y", which is
+precise contrastive prose, and 24 more were "it depends", which is the honest
+and legally correct answer to questions like what HOA fees cover. Thirteen were
+real. Banning the list would have pushed the site toward false certainty on
+exactly the pages where certainty is a compliance risk. One genuine defect was
+fixed: "can often times benefit" on `/invest/strategies/dst/`. The lesson is
+MISTAKES 4 and 65 again: sanity-check a proposed rule against the copy it would
+fire on **before** writing the gate.
 
 **A11e, amended 2026-09-01.** Attribution wording: a story is told about "an
 agent at Chapter3" or "one of our agents", or the named person when the page
@@ -561,7 +603,7 @@ and the rendered page matches what you built.
 > condition of any purchase.
 
 **Identity:** Chapter3 Realty LLC · BrickWood Mortgage NMLS #189497 ·
-Devin Day NMLS 2721275 · Timmy Fredrick Nash, BIC, SC licence 43182,
+Devin Day NMLS 2721275 · Timothy Nash, BIC, SC licence 43182,
 NMLS 252563 · Paul Hankins NMLS 281393 · 854.333.2135 · Murrells Inlet, SC 29576
 
 **Colour contrast traps.** `--ivory #f4efe8` and `--navy #1c2028` are the two

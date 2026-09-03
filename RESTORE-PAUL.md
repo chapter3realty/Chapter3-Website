@@ -46,7 +46,7 @@ quickest check that this one is back.
 
 ### 3. Team card — **`/` and `/about/`**
 
-Last card in `.team-grid`, after Timmy Fredrick Nash:
+Last card in `.team-grid`, after Timothy Nash:
 
 ```html
 <div class="team-card">
@@ -62,7 +62,7 @@ resolve the moment the card returns.
 
 ### 4. Bio paragraph — **`/about/` only**
 
-In the leadership prose, directly after the Timmy Fredrick Nash paragraph:
+In the leadership prose, directly after the Timothy Nash paragraph:
 
 ```html
 <p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem"><strong style="color:var(--navy)">Paul Hankins</strong>, owner of <a href="https://brickwoodmortgage.com/" target="_blank" rel="noopener noreferrer" style="color:var(--brass);font-weight:600;text-decoration:none">BrickWood Mortgage</a>. More than 20 years in mortgage lending. NMLS 281393.</p>

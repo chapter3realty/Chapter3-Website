@@ -101,8 +101,11 @@ matter, not sentence length. That has happened here. See PLAYBOOK A11a.
 
 - **Chapter3 Realty Corp** — South Carolina real estate company licence **28849**.
   Shown in the footer partial and on /about/.
-- **Timmy Fredrick Nash** — Broker-in-Charge, SC licence 43182, NMLS 252563.
-  30+ years on the Grand Strand. Does the CMAs.
+- **Timothy Nash** — Broker-in-Charge, SC licence 43182, NMLS 252563.
+  30+ years on the Grand Strand. Does the CMAs. **Formal name in schema and
+  in the footer licence line only. Every visible byline and every mention in
+  body copy says "Tim Nash"; the schema carries `alternateName: "Tim Nash"`
+  so the two forms resolve to one person. Owner instruction 2026-09-03.**
 - **Devin Day** — Operations Officer, licensed MLO, **NMLS 2721275**. Must be
   shown visibly on financing content.
 - **Paul Hankins** — owner of BrickWood Mortgage, NMLS 281393.

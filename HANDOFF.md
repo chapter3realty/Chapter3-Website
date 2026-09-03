@@ -25,7 +25,7 @@ licensing distinctions, not preferences. `audit` fails the build on any phrasing
 where the brokerage appears to provide credit; that gate exists because "we
 underwrite" had shipped on two pages.
 
-**Timmy Fredrick Nash** is Broker-in-Charge, SC licence 43182, 30+ years on the
+**Timothy Nash** is Broker-in-Charge, SC licence 43182, 30+ years on the
 Grand Strand. He is the byline author on every page and the correct home for any
 claim about transaction experience.
 
@@ -409,7 +409,7 @@ the audit went back to zero. 92 hero subs rewritten or added (three pages had
 none). Eight submarket H2s shortened, five pages got a keyword-bearing H2.
 
 Company licence 28849 is in the footer partial (stitched sitewide) and on
-/about/ beside Timmy's 43182 / NMLS 252563. CLAUDE.md roster updated.
+/about/ beside Tim's 43182 / NMLS 252563. CLAUDE.md roster updated.
 
 The quiet-sale story is published on the strategies hub, vague by owner
 instruction (no state, no business, no building type, no unit count, "about
@@ -541,7 +541,7 @@ pages currently mentioning the phrase at all.
    including "escalation clause" and "appraisal gap". Latest-funnel page here.
 4. **What a home inspection finds in a coastal house.** One passing mention.
    Stucco and EIFS, HVAC in salt air, crawlspace moisture, older oceanfront
-   buildings. Where Timmy's 30 years is visible and a national site is empty.
+   buildings. Where Tim's 30 years is visible and a national site is empty.
 5. **Manufactured and mobile homes in Horry County.** One mention. Large share
    of this market, different financing, and the de-titling step catches people.
 6. **Rent versus buy on the Grand Strand.** Zero coverage. Top of funnel, feeds
