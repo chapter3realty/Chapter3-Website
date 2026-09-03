@@ -197,6 +197,21 @@ Do not re-derive these and do not trust a search summary over the primary source
 
 ## Environment traps that cost real time
 
+**Windows line endings break every hashed asset.** Git's Windows default
+`core.autocrlf=true` rewrites LF to CRLF on checkout. Each asset filename
+carries a hash of that file's contents, so the translation makes `preflight`
+report every CSS and JS file as "edited but not rehashed", and the fix is not
+to run `rehash`, which would rename the files and diverge the clone from the
+repo. The repo now ships `.gitattributes` with `* -text`, and a Windows clone
+also needs `git config core.autocrlf false` once, then a renormalize:
+`git rm -r --cached .` followed by `git reset --hard FETCH_HEAD`.
+
+**The owner's desktop folder is a git clone, not an unzip target.** Deploys
+should go through `git fetch origin <branch>` and `git reset --hard FETCH_HEAD`.
+Sending zips cost most of an evening on 2026-09-03: the download never saved,
+so every extract silently had no source file, and a keep-list cleanup line ran
+against the stale folder and deleted the live stylesheet.
+
 - **Screenshots time out** because of the `c3-particles` animated canvas. Hide it
   first, then capture, or the call hangs.
 - **The browser viewport can report 0x0**, which produces confident phantom

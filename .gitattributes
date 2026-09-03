@@ -1,0 +1,7 @@
+# Every asset filename carries a hash of that file's contents (app.<hash>.css).
+# Git's Windows default, core.autocrlf=true, rewrites LF to CRLF on checkout,
+# which changes the bytes, which makes every hashed CSS and JS file look
+# "edited but not rehashed" on a Windows clone. It cost a deploy on 2026-09-03.
+# Disable all text translation: bytes on disk match bytes in the repo, on every
+# machine.
+* -text
