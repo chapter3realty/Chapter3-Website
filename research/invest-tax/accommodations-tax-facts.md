@@ -125,3 +125,89 @@ unverified and needs checking before it is repeated.
    seven-day average stay, what the participation test measures, and what
    records to keep. **Never tell a reader they qualify.** No self-check tool:
    he chose the version that does not output a verdict.
+
+---
+
+## The three jurisdictions he asked me to verify — 2026-09-03
+
+### The headline finding: the transient threshold is NOT the same everywhere
+
+| Jurisdiction | A stay stops being taxable at | Source |
+|---|---|---|
+| South Carolina (state) | **90** continuous days | SCDOR |
+| Horry County hospitality fee | **90** consecutive days | horrycountysc.gov |
+| City of Conway | **90** continuous days | Conway code of ordinances, Art. D |
+| **Georgetown County** | **30** continuous days | gtcountysc.gov/351 |
+
+An owner in Murrells Inlet or Pawleys Island who learned the 90-day rule from a
+Horry County source will get this wrong. A 45-day stay is exempt from the
+Georgetown County accommodations tax and still owes the state tax. This is the
+best fact on the page and no national source carries it.
+
+### Georgetown County — gtcountysc.gov/351, read 2026-09-03
+- Local accommodations tax **3%** on accommodations furnished to transients.
+- Local hospitality tax **2%**, but that is on prepared food and beverages, not
+  on lodging. Do not add it to a lodging total.
+- Transient threshold **30 or more continuous days**.
+- Remit by the **20th** of each month for the prior month.
+- Filing frequency scales: monthly over $50/month estimated, quarterly $25 to
+  $50, annually under $25. Small owners file once a year.
+- The business establishment collects and remits.
+- Separately: an owner renting a **furnished** residence in Georgetown County
+  files a **PT100** with the state each year. Business personal property, and
+  widely missed. Verify at SCDOR before publishing.
+- Contact: Beth Elliott, 843-545-3002.
+
+### City of Conway — Conway code of ordinances, Article D
+- Hospitality fee **1%** of gross proceeds on transient accommodations.
+- Same 1% also applies to prepared food and beverages and to paid admissions.
+- **90 continuous day** exemption.
+- Monthly remittance when estimated average fee is over $50 a month.
+
+### Unincorporated Horry County — horrycountysc.gov business licence
+- A county business licence "is required of every person engaged in any
+  calling, business, occupation or profession within the unincorporated areas
+  (outside the city limits) of Horry County."
+- Hospitality fee 3% outside city limits, as recorded above.
+- If a property manager arranges the booking, confirm the manager is actually
+  collecting and remitting. The obligation does not disappear.
+- Business Licence Department: 843-915-5620.
+
+### Pawleys Island — CORRECTION NEEDED TO LIVE COPY
+
+The site currently says Pawleys Island "is the only coastal town here with no
+business license at all". That is half true and reads as misleading:
+
+- The **town** does not levy its own business licence. True, and it has been
+  debated publicly.
+- **Georgetown County still requires one** for anyone renting for less than 30
+  days at a time.
+
+An owner reading the current sentence could conclude no licence is needed
+anywhere. **Fix that sentence when the new page ships.** Find it with
+`grep -rn "no business license" chapter3realty`.
+
+- The 3% local accommodations tax funding beach renourishment is confirmed by
+  the town's own renourishment FAQ; adopted 1999, called the Beach Fund.
+
+### UNRESOLVED: the Pawleys Island lodging total
+
+The site's existing table says **11%**. A vacation-rental management site says
+**12%**, broken out as 7% state, 3% local, 2% Georgetown County. Neither is a
+primary source and they disagree. **Do not publish either.** The 2% Georgetown
+County component is not something I found on the county's own page, which
+describes a 3% accommodations tax and a 2% food-and-beverage tax. Resolve by
+calling Georgetown County finance at 843-545-3002 before the table ships.
+
+The same doubt applies to all seven totals in the existing table. They were
+never re-verified. Non-negotiable 8.
+
+## Owner answers, 2026-09-03
+
+- **No story exists** for this page. He has not seen an owner get burned by
+  accommodations tax or a missed licence renewal. Write the page without an
+  anecdote rather than inventing one.
+- **"We definitely could help if we needed to."** That is an offer, not a
+  track record. Write it as an offer: Chapter3 can walk a new owner through
+  registration and the first filing. **Do not write that we routinely do this,
+  or imply past clients.** There is no history to claim yet.
