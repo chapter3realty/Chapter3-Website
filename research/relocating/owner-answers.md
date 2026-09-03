@@ -1218,3 +1218,25 @@ financing. This happens alot more than you'd think."
 
 CTA sitewide: "an investment property for sale" instead of three, and the Open
 the LTR analyzer button removed from the closing call to action on 8 pages.
+
+
+## 2026-09-03 later (verbatim asks)
+
+"make this the paragraph for BRRRR page too its very good" - the off-market
+financing paragraph from the flip page, now identical on both.
+
+"Example with round numbers. Can you make this example interactable as well and
+let them change the numbers to test their own deals." Built: four inputs, live
+profit, plus the purchase-plus-rehab share of the fixed-up value against the 70
+to 75 percent guideline the page teaches.
+
+1031: "delete so the wire instructions matter more than anything else that day."
+
+CTA: "replace the 3 investment properties with an investment property on the CTA
+for all of these pages" - already done in the previous round; all 18 invest
+pages read "an investment property for sale".
+
+Worth his attention: the page's own round-number example sits at 82 percent of
+the fixed-up value, above the 70 to 75 percent the same page recommends. The
+calculator now says so out loud. Changing the sample numbers would remove the
+tension, but they are his numbers, so they stay until he says otherwise.
