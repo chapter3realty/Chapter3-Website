@@ -622,7 +622,7 @@ weeks later. This work compounds slowly. Do not promise the owner a fast turn.
 
 ---
 
-## 2026-09-04: the investor tax cluster, three of five pages built
+## 2026-09-04: the investor tax cluster, all five pages built
 
 Owner decisions that govern the whole cluster (2026-09-03): a CPA referral
 exists but stays **unnamed**; the material participation page **teaches the
@@ -635,14 +635,16 @@ a track record.
 | `/invest/accommodations-tax/` | built, gates 0, browser-verified | artifact 19ee51cf |
 | `/invest/str-tax-treatment/` | built, gates 0, browser-verified | artifact 007b6443 |
 | `/invest/cost-segregation/` | built, gates 0, browser-verified | artifact (this session) |
-| Depreciation and recapture at sale | **scope decision needed, see below** | |
-| The 14-day rule and personal use | not started | |
+| `/invest/rental-depreciation/` | built 09-04, gates 0, browser-verified | preview-depr.html |
+| `/invest/14-day-rule/` | built 09-04, gates 0, browser-verified | preview-14day.html |
 
 Research files with every source, quote and hard limit: `research/invest-tax/`.
 Every rate and rule on the three pages was read at its own source on the day
 and is cited inline; the sources lines carry the read dates.
 
-**Page four may no longer have a job.** The brief was "depreciation and
+**Page four was rescoped, not dropped.** The owner said "write all of these pages" without answering the scope question, so the assumption was stated to him and acted on: page four became the everyday version (basis on closing day, the land split via the Horry County record, placed in service, repairs against improvements, allowed-or-allowable at sale). Page five ships without a personal-use calculator, matching his call on page two; one can be added later. The original reasoning follows for the record.
+
+**Page four as briefed had no job.** The brief was "depreciation and
 recapture when you sell: the land allocation, the 27.5-year schedule, what
 comes back at sale". Since then `/invest/cost-segregation/` has taken the
 27.5-year schedule, the land rule, and both recapture layers (ordinary income
@@ -677,15 +679,14 @@ the audit.
 
 ## Suggested order for the next session
 
-1. **Decide page four's scope** with the owner, using the overlap numbers in
-   the section above. Fold anything left into the 14-day page or drop it.
-2. **Build the 14-day rule page** (`/invest/personal-use/` or similar). It is
-   the most local page in the cluster because owners here stay in their own
-   units. Sources: Publication 527, the personal-use allocation, the 14-day /
-   10-percent test. Same pipeline: research file, draft, audit, wire, dates,
-   preflight 0, browser measure, preview artifact, commit.
-3. **Add the lodging totals column** once Georgetown County confirms.
-4. **Tim's five answers** into all five pages, one attributed sentence each.
+1. **Owner review of the five tax pages** from the previews. Expect line edits;
+   apply them to the built page (these are hand-built, not spec-built), then
+   dates, preflight 0, browser measure, republish the preview.
+2. **Add the lodging totals column** once Georgetown County confirms.
+3. **Tim's five answers** into all five pages, one attributed sentence each,
+   which clears A20 across the cluster.
+4. **Optional: a personal-use split calculator** on `/invest/14-day-rule/`
+   if the owner wants one. Days rented over total days used; no verdict.
 5. **The eight buyer pages** in the 2026-09-03 section, in the order ranked.
 
 **Do not deploy.** He deploys from PowerShell after `git fetch origin
