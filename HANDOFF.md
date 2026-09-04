@@ -622,22 +622,72 @@ weeks later. This work compounds slowly. Do not promise the owner a fast turn.
 
 ---
 
+## 2026-09-04: the investor tax cluster, three of five pages built
+
+Owner decisions that govern the whole cluster (2026-09-03): a CPA referral
+exists but stays **unnamed**; the material participation page **teaches the
+test and never applies it**, with no self-check tool; no quote is written for
+Tim without his sign-off; "we could help" is written as an **offer**, never as
+a track record.
+
+| Page | Status | Preview |
+|---|---|---|
+| `/invest/accommodations-tax/` | built, gates 0, browser-verified | artifact 19ee51cf |
+| `/invest/str-tax-treatment/` | built, gates 0, browser-verified | artifact 007b6443 |
+| `/invest/cost-segregation/` | built, gates 0, browser-verified | artifact (this session) |
+| Depreciation and recapture at sale | **scope decision needed, see below** | |
+| The 14-day rule and personal use | not started | |
+
+Research files with every source, quote and hard limit: `research/invest-tax/`.
+Every rate and rule on the three pages was read at its own source on the day
+and is cited inline; the sources lines carry the read dates.
+
+**Page four may no longer have a job.** The brief was "depreciation and
+recapture when you sell: the land allocation, the 27.5-year schedule, what
+comes back at sale". Since then `/invest/cost-segregation/` has taken the
+27.5-year schedule, the land rule, and both recapture layers (ordinary income
+on reclassified personal property, the 25 percent ceiling on the building),
+and `/sell/capital-gains/` already owned recapture at sale with a calculator.
+Run PLAYBOOK A1 against those two before drafting anything. The near-duplicate
+check warns at 25 percent overlap and is a warning, not an error, so it will
+not stop a duplicate on its own.
+
+**Still unresolved, all needing the owner or a phone call:**
+- Georgetown County finance, 843-545-3002, for the lodging totals column on
+  the accommodations page. The seven published totals on `/invest/str-rules/`
+  were never verified; Pawleys Island is disputed at 11 versus 12 percent.
+- North Myrtle Beach: a rental counts as a licensed business **on the owner's
+  word** (2026-09-03), not the licence office's. If challenged, the answer is
+  a call to 843-280-5585.
+- The five questions for Tim that would give every page an attributed
+  sentence (A20). Asked 2026-09-03, unanswered.
+- The three multifamily questions on the daily reminder. His "no story" of
+  2026-09-03 was about the accommodations page only.
+
+**Gate behaviour worth knowing.** Across three pages the build caught 25 real
+defects in first drafts, most often: the 62-character title limit, the 165
+-character description limit, sentence fragments opening with a conjunction
+(". And", ". So"), the "which is why" join, pseudo-clefts, one filler
+"actually" per page, and the A19 rule counting **hosts** not links, so two
+citations to irs.gov count as one source. Draft against those before running
+the audit.
+
+---
+
 ## Suggested order for the next session
 
-Highest risk of silent damage first, because every one of these is a sitewide
-edit and this site's two worst defects both came from edit passes.
+1. **Decide page four's scope** with the owner, using the overlap numbers in
+   the section above. Fold anything left into the 14-day page or drop it.
+2. **Build the 14-day rule page** (`/invest/personal-use/` or similar). It is
+   the most local page in the cluster because owners here stay in their own
+   units. Sources: Publication 527, the personal-use allocation, the 14-day /
+   10-percent test. Same pipeline: research file, draft, audit, wire, dates,
+   preflight 0, browser measure, preview artifact, commit.
+3. **Add the lodging totals column** once Georgetown County confirms.
+4. **Tim's five answers** into all five pages, one attributed sentence each.
+5. **The eight buyer pages** in the 2026-09-03 section, in the order ranked.
 
-1. **Build the gates before the edits.** A first-person-lending gate and a
-   tightened down-payment gate. Positive-control each one (plant, fire,
-   restore, exit 0) before trusting it. Rule 4 in CLAUDE.md.
-2. **Reg Z rewrite** on whatever the tightened gate lists.
-3. **Financing voice sweep** on whatever the new gate lists.
-4. **`--muted` to 0.64**, measured both directions.
-5. **Fonts self-hosted**, then **scripts extracted**, then re-measure mobile.
-6. **Early-page audit** for banned phrasing and stale facts. The oldest pages
-   predate most of the style rules; `node build.js audit` currently reports
-   ~108 review-tier warnings and they have never been swept as a batch.
-7. `node build.js preflight` must exit 0, then browser-measure, then commit.
-
-**Do not deploy.** He deploys from PowerShell:
-`npx wrangler pages deploy chapter3realty --project-name chapter3realty --branch production`
+**Do not deploy.** He deploys from PowerShell after `git fetch origin
+claude/github-account-check-wutg8b` and `git reset --hard FETCH_HEAD`, then
+`node build.js preflight` must exit 0, then
+`npx wrangler pages deploy chapter3realty --project-name chapter3realty --branch production`.
