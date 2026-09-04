@@ -662,6 +662,7 @@ not stop a duplicate on its own.
 - The five questions for Tim that would give every page an attributed
   sentence (A20). Asked 2026-09-03, unanswered.
 - The three multifamily questions on the daily reminder. His "no story" of
+- **Two pre-existing contrast items found 2026-09-04 while verifying, not fixed, not mine.** (1) The breadcrumb separator `/` renders at 20 percent alpha ivory on navy heroes, 1.82:1. It is decorative and sitewide; changing it is a design decision. (2) On `/buyers/second-home/` the eyebrow inside the brass box measures 2.23:1 (0.7-alpha ivory over brass). It belongs with the pending brass decision. Both sit outside the selector set the established checker measures (p, h1-h3, td, th, a, li); they surfaced only when spans and divs were added in report mode.
   2026-09-03 was about the accommodations page only.
 
 **Gate behaviour worth knowing.** Across three pages the build caught 25 real
