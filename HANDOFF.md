@@ -48,11 +48,15 @@ the buyer. See PLAYBOOK A11a.
 
 - **The site launched early May 2026.** Roughly three months old. Git history
   starts later and will mislead you. Never date the business from commits.
-- **He deploys. You never do.** There is **no git remote.** Deployment is
-  `npx wrangler pages deploy chapter3realty --project-name chapter3realty
-  --branch production`, run by him from PowerShell. `--branch production` is
-  required; without it Cloudflare treats it as a preview and the live site never
-  changes.
+- **He deploys. You never do.** The remote is `origin`, which is
+  github.com/chapter3realty/Chapter3-Website; sessions push to branch
+  `claude/github-account-check-wutg8b` and he pulls it into his clone. The
+  deploy is four commands run **inside the clone folder**: `git fetch origin
+  claude/github-account-check-wutg8b`, `git reset --hard FETCH_HEAD`,
+  `node build.js preflight` (must exit 0), then `npx wrangler pages deploy
+  chapter3realty --project-name chapter3realty --branch production`.
+  `--branch production` is required; without it Cloudflare treats it as a
+  preview and the live site never changes. Always give him the `cd` first.
 - **Paul Hankins was removed 2026-07-28.** `RESTORE-PAUL.md` is the map back.
   Do not revert the commit, it also carries a CSS fix. On 2026-08-14 the owner
   confirmed he stays off for the relaunch. He may still return later; that is
@@ -212,6 +216,12 @@ Sending zips cost most of an evening on 2026-09-03: the download never saved,
 so every extract silently had no source file, and a keep-list cleanup line ran
 against the stale folder and deleted the live stylesheet.
 
+- **A fresh PowerShell opens in `C:\Users\DevinDay`, not in the clone.** On
+  2026-09-05 all four deploy commands failed there: no remote ref, no
+  FETCH_HEAD, no `build.js`, no `chapter3realty` folder. His home folder also
+  holds a git repo with a remote and no commits (wrangler warned "your working
+  directory is a git repo"), so the failures read as git errors instead of
+  "wrong folder". Every deploy instruction starts with `cd` into the clone.
 - **Screenshots time out** because of the `c3-particles` animated canvas. Hide it
   first, then capture, or the call hangs.
 - **The browser viewport can report 0x0**, which produces confident phantom
