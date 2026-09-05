@@ -756,68 +756,57 @@ the audit.
 
 ---
 
-## 2026-09-05 evening: homepage rebuilt simple - on the branch, NOT deployed
+## 2026-09-05 evening: homepage, two redesigns rejected, original restored
 
-**What he said.** "That's really bad." The declutter round had left three
-navy bands stacked, the review carousel boxed inside the hero, and a badge
-row that read "30+, 8, Pawleys to NC..." because a count-up animation from
-the old stat row rewrote "Instant" to "8" on scroll (MISTAKES 69). He asked
-for the simplest, most visually appealing UI with the same information, and
-for the analyzer heading to read "Try our investment analyzer".
+**Sequence.** He asked for a declutter (commit e177fe9). He opened it and said
+"that's really bad": three navy bands stacked, the review carousel boxed in the
+hero, and the badge row showing "8" where "Instant" should be, because the
+count-up keyed to `.why-stat:nth-child(2)` rewrote it on scroll (MISTAKES 69).
+The page was rebuilt as a simple six-section layout (commit 736552b). He said
+"go back to the original design". The homepage is now the file from before the
+declutter (`git show e177fe9^:chapter3realty/index.html`) with three changes:
+the current header chrome stitched in (the mobile phone icon lives in the
+partial and every page carries it), the CSS hash updated, and the analyzer
+heading "Try our investment analyzer", which he asked for twice. Everything
+else from the declutter is undone: the ticker is back, the four stats are back
+(30+, 8, 24hr, 1:1), "A new chapter for Grand Strand real estate." is back,
+the "Let's have a real conversation." section is back, the reviews are back in
+the hero, the effects script is back.
 
-**What the page is now.** Six sections, one style block (`#c3-home-css` in
-the head of `chapter3realty/index.html`), no decorative script.
-1. Hero, navy, centred: eyebrow, H1, sub-header, three path cards (Seller,
-   Investor, Buyer). Same links as before.
-2. Analyzer, ivory, one white card: eyebrow "Free investor tool", H2 "Try our
-   investment analyzer", the same sentence, street/city/ZIP inputs, button
-   "Analyze this address". Same ids, same `shouldIBuy()`.
-3. Why Chapter3, navy: H2 unchanged, the eight badges as a 4x2 grid with 1px
-   dividers, button "Talk to a Chapter3 agent" to /contact/.
-4. Reviews, ivory: H2 "What do clients say?", one quote at a time, five dots,
-   auto-advance every five seconds. All five reviews kept, same script.
-5. Team, ivory: H2 "Who is on the Chapter3 team?", the three cards unchanged.
-6. FAQ, ivory: questions and answers unchanged (FAQ schema untouched).
+**Measured after a full scroll (A29a), desktop 1366 and mobile 390.** Stats
+read 30+, 8, 24hr, 1:1 after the count-up. No reveal element left hidden. All
+three team photos loaded. No horizontal overflow. One H1. Ticker present.
+Carousel advances. No page errors. The only text under 4.5:1 is the brass
+eyebrow "Common Questions", the standing brand exception (open item 4).
+Preflight 0.
 
-**Removed from the homepage only.** The effects layer: custom cursor,
-particle canvas, scroll-progress bar, floating button, hero word split,
-eyebrow scramble, scroll reveal, count-up counters, card tilt, magnetic
-buttons, ripple, hero orbs, page transition, injected dividers. Their DOM
-elements and the 380-line inline script are gone, with three inline style
-patches (v54 mobile home layout, v55 teaser rule, c3-ui-tweaks) and the v54
-script that moved reviews on mobile. The same effects still load on 100+
-other pages from `s.940d034594.js`. Untouched there.
+**Lesson.** Two homepage redesigns in one day, both rejected. The next
+homepage change starts with a preview he approves before `index.html` is
+touched. Do not turn "declutter" or "simple" into a layout; show him one and
+ask.
 
-**Measured.** Desktop 1366 and mobile 390: no text below 4.5:1 except the
-star glyphs, now `--brass-ink`; no horizontal overflow; one H1; badges read
-as written; carousel advances (dot 0 to 1 at 5.6 s); team photos load when
-scrolled into view (they are lazy, so a full-page capture taken at the top
-shows them blank; that is the capture, not the page). Preflight 0.
-
-**Gate.** `build.js audit` errors when a count-up definition in the page's
-scripts or its bundles targets a `.stat-kpi` whose text is not the
-animation's final value. Positive-controlled both ways on `/why-chapter-3/`.
-MISTAKES 69, PLAYBOOK A29a.
+**Kept from today.** The count-up gate in `build.js audit`, PLAYBOOK A29a,
+MISTAKES 69. The original stat row matches the count-up targets, so the gate
+passes.
 
 **Two parser facts that cost time.** The hero sub-header must be
 `<p style="color:rgba(244,239,232,...` with the style attribute FIRST in the
 tag, or `heroSub()` in `build.js` does not see it and the audit fails "no
-hero sub-header". And `initReveal()` in the effects bundle adds `.sr`
+hero sub-header". And `initReveal()` in the effects script adds `.sr`
 (opacity 0) to `.section-h2`, `.chooser-card`, `.why-stat`, `.accordion-item`
 and others on every page that loads it; a capture taken without scrolling
-shows those elements missing.
+shows those elements missing. Scroll first, then capture.
 
-**Still open from this round.** Which "sliding thing" he meant (the reviews
-carousel is kept; the stats ticker went in the declutter). Whether the
-effects layer should come off the other pages too.
+**Still open.** He asked to delete "the sliding thing" in the declutter
+request. The ticker is back with the original design. Ask which one he meant
+before removing either.
 
 Preview: https://claude.ai/code/artifact/021ff216-8e61-4316-b164-72b0175adc35
 
 ## Suggested order for the next session
 
-0. **Owner review of the homepage** from its preview. If he wants the
-   effects off every page, strip them from `s.940d034594.js` and measure each
-   page after a full scroll (A29a).
+0. **The homepage is back to its original design.** Any further homepage
+   change: mock it up in a preview, get his yes, then touch `index.html`.
 1. **Owner review of the five tax pages** from the previews. Expect line edits;
    apply them to the built page (these are hand-built, not spec-built), then
    dates, preflight 0, browser measure, republish the preview.
