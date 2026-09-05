@@ -960,8 +960,71 @@ today). All five tax pages at 1366 and 390: no overflow, one H1 each, no
 console errors, only the pre-existing brass eyebrow contrast exceptions.
 Previews republished at the same three URLs.
 
+## 2026-09-05 night: the next investor batch, ranked, owner choosing
+
+He wants at least ten more investor pages before the weekend ends, and they
+must produce investor customers, not only credibility. Ranked by call intent
+first, then by the size of the gap on the site, then by whether a local fact
+can go on the page that a national site cannot carry. Coverage was measured
+with a term count that excludes the shared chrome; several words (furnish,
+cap rate, golf, manufactured, boat slip) live in a sitewide block on every
+page, so raw grep counts for them are meaningless (rule 4).
+
+0. **`/invest/run-the-numbers/`, a conversion page.** Address plus strategy in,
+   numbers back. The hub FAQ already promises this; every investor page links
+   here instead of `/contact/`. Locked TCPA string if it takes a phone.
+1. **Buying a rental from out of state.** Video walk-through, inspection,
+   attorney closing by mail, management set up before closing. Two pages say
+   "sight unseen" in passing, none owns it.
+2. **Property management here: cost, questions, on-site program vs outside
+   company vs self.** Eleven pages mention it, none owns it; `/invest/condos/`
+   has one section. Never claim Chapter3 manages; fee figures need a source
+   that can be re-opened or stay qualitative.
+3. **Rental program vs Airbnb for an oceanfront condo.** Split, program costs,
+   owner-use limits, exit terms, loan effect. No conclusions about a named
+   building or program (non-negotiable 5).
+4. **Where to buy a rental, by strategy: a submarket matrix.** Overlaps the hub
+   FAQ paragraph and `/invest/str-rules/`; run A1. The seven lodging totals on
+   the rules page were never verified.
+5. **How much cash you need to buy a rental here.** Percentages are allowed on
+   four investor-financing pages only; this page is qualitative unless he adds
+   it to the list in `build.js`. His call, not a session's.
+6. **Setting up a short-term rental after closing, in order.** Licence, tax
+   accounts, HOA registration, furnishing, photos, listing, timeline.
+7. **Mid-term rentals: travel nurses and the 90-day floor.** Zero pages say
+   "travel nurse"; `/invest/str-tools/` has one section. Hospitals and lease
+   lengths need sources.
+8. **Foreclosures and the Horry County Master-in-Equity sale.** Zero coverage.
+   Every procedural step from the county's own page, read on the day.
+9. **Student rentals near Coastal Carolina in Conway.** Fourteen pages mention
+   the university, none sells the product. Enrollment and occupancy rules need
+   sources.
+10. **Holding a rental in an LLC in South Carolina.** Three passing mentions.
+    General only; deed, loan, insurance, tax; points to DSCR page and an
+    attorney.
+11. **Landlord rules: deposits, leases, notices, evictions in Horry County.**
+    Zero coverage. Lower buy intent, reaches current owners (future sellers).
+12. **Selling a rental with tenants or bookings in place.** `/sell/sell-my-condo/`
+    has one section on bookings; run A1. The investor-seller page.
+
+**Not for this batch, with reasons.** Rental insurance (the coastal insurance
+page already owns the landlord and STR section); a cap-rate page (no local
+source that can be re-opened for the numbers, rule 8); seller financing and
+self-directed IRAs (thin local demand, no local fact); vacant land (a real
+market, but zoning, septic and wetlands facts are too heavy for a weekend).
+
+**Facts only he has, asked 2026-09-05.** Whether Chapter3 sets up or refers
+management at closing and how it is worded (pages 1, 2, 3, 6 depend on it);
+whether the cash-to-close page joins the percentage list.
+
+**Context that governs the whole batch.** These pages win informational
+queries. "Who should I hire" answers are won off-site (see the 2026-09-03 AEO
+section); no page fixes that.
+
 ## Suggested order for the next session
 
+00. **The investor batch above, once he picks.** Lane A per page: A1 overlap
+   check first, research file per page, gates 0, browser measure, preview.
 0. **The three revised tax pages are on the branch and in the previews.** Expect
    the next line edits from him, plus his answer on the local-versus-Chapter3
    question above. Two pages (accommodations tax, STR tax) still await notes.
