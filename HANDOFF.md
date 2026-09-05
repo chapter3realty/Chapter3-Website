@@ -622,6 +622,41 @@ weeks later. This work compounds slowly. Do not promise the owner a fast turn.
 
 ---
 
+## 2026-09-05, round two: two facts he challenged were wrong, page two rewritten for the real query
+
+**He was right twice.** Georgetown County requires NO business licence in its
+unincorporated areas or in Pawleys Island (county FAQ, gtcounty.org
+Faq.aspx?QID=116). A sentence claiming otherwise came from a search summary
+citing a listing aggregator, was published on the accommodations page, and was
+used to "correct" a rules-page sentence that had been right. Both fixed.
+MISTAKES 67. Surfside Beach late penalty is 5 percent a month from June 1
+(town FAQ); the chart had said "Ask the town".
+
+**Page two is now `Can rental losses reduce the tax on your W-2 income?`**
+Same URL. Active and passive income defined first. Rental pool defined in its
+own section. Each test under its own heading. The $25,000 allowance stated,
+with the distinction that a seven-day-average rental does not use it. "Hiring
+everything out is fine if you do not need the loss against salary" is on the
+page because he asked and it is true. All seven tests re-confirmed from
+Publication 925. CTA is "Book a consultation call". His name is out of the
+offer sentences on all five pages; A20 warns on them and that is accepted
+until Tim's quotes arrive.
+
+**New gate families** (positive-controlled): hedges ("not a verdict", "will
+not tell you whether", "nobody can", "hard to undo"), two steps in one
+sentence, and a heading in which the page disclaims itself. The disclaimer rule
+was first written too wide and caught "What public records cannot tell you"
+on `/sell/home-value/`, a literal heading; narrowed to the page as subject.
+MISTAKES 68.
+
+**The rule no regex holds, now in CLAUDE.md and PLAYBOOK A22:** define every
+term before it is used. Active, passive, rental pool, basis, recapture. If the
+reader has to already know it, the page has failed.
+
+**Still open:** which "sliding thing" he meant on the homepage (the stats bar
+was deleted; the review carousel was kept); Georgetown County finance for the
+lodging totals column; Tim's five answers; the multifamily questions.
+
 ## 2026-09-05: the owner could not read the tax pages. All five rewritten, register hard-coded
 
 He read `/invest/accommodations-tax/` for over an hour and understood none of
