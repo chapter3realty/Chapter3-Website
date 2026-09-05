@@ -65,3 +65,34 @@ reader.** Phrase it as what the tests measure, not as who passes.
 - Never state or imply a tax saving figure.
 - Never write that Chapter3 or Devin can determine participation status.
 - The page teaches what is measured and what to keep. The CPA decides.
+
+
+---
+
+## Additions 2026-09-05, all quoted from Publication 925
+
+- **The $25,000 allowance.** For rental real estate with *active* participation
+  (approving tenants, setting rental terms, approving expenditures), up to
+  $25,000 of loss can offset nonpassive income. It starts to phase out when
+  modified AGI passes $100,000. It applies to ordinary rentals, NOT to a
+  seven-day-average short-term rental, which is not a "rental activity" and
+  needs *material* participation instead. The page now states both.
+- **What a seven-day-average property is, if not a rental activity:** it is
+  tested as a trade or business activity under the material participation
+  tests. The publication does not say it in one sentence; the regulation's
+  structure does. The page says "treated as a business, the same way a hotel is."
+- **All seven tests re-confirmed** by first words, at the owner's request.
+- **Owner's understanding confirmed:** if you do not need the loss against
+  W-2 income, hiring everything out is fine. The loss stays passive and carries
+  forward to a sale. The page now says so.
+
+## Owner review 2026-09-05, applied
+- H1 rewritten to the query people search: "Can rental losses reduce the tax
+  on your W-2 income?" The old H1 was jargon nobody types.
+- Active and passive income defined in the first section. Never assumed.
+- Rental pool defined in its own section. Never assumed.
+- The two tests each get their own heading. Never both in one sentence.
+- The "What will this page not tell you?" section deleted as a hedge section.
+  A disclaimer-section heading is now a build error.
+- The owner's name removed from all five pages' offer sentences.
+- CTA is "Book a consultation call".

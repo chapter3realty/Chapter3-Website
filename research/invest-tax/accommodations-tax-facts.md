@@ -233,3 +233,28 @@ layers each owner actually files instead: state 7 percent, then the county or
 city line that applies to their address. That is more useful than a headline
 percentage and it does not depend on the disputed arithmetic. Add the totals
 column later, once the county confirms.
+
+
+---
+
+## CORRECTION 2026-09-05: Georgetown County requires NO business license
+
+The owner challenged the sentence "Georgetown County still requires one for
+stays under 30 days." He was right. The county's own FAQ
+(gtcounty.org/Faq.aspx?QID=116): Georgetown County does not issue or require
+business licenses in the unincorporated areas. The City of Georgetown, Andrews
+and the Town of Pawleys Island may have their own; Pawleys Island has none.
+
+The wrong sentence came from a search summary that cited a third-party
+listing site, not the county. It was published on `/invest/accommodations-tax/`
+and used to "correct" a sentence on `/invest/str-rules/` that had been right
+all along. Both are now fixed. MISTAKES 67.
+
+What unincorporated Georgetown County does require of a furnished rental: the
+yearly PT-100 business personal property return to the state, a tax on the
+furniture. That is now the chart row.
+
+## Surfside Beach late penalty, confirmed 2026-09-05
+surfsidebeach.org business licence FAQ: from June 1, 5 percent per month, no
+cap, until fees and penalties are paid. The chart said "Ask the town"; it now
+says the number.

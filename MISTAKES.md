@@ -180,3 +180,41 @@ And no rule required the page to define its subject before elaborating.
 on all of them; strict sentence caps on every page from that date; question
 headings with the first one defining the subject. And the standing lesson:
 when the owner says a page is unreadable, the gates are wrong, not the owner.
+
+## 67. A correct sentence was "fixed" into a wrong one from a search summary (2026-09-05)
+
+**What happened.** `/invest/str-rules/` said Pawleys Island has no business
+licence. A web search summary, citing a third-party listing site, said
+Georgetown County requires one for stays under 30 days. That claim was
+published on the new accommodations tax page and used to "correct" the rules
+page. The owner challenged it. The county's own FAQ says the county requires
+no business licence in unincorporated areas. The original sentence was right.
+
+**Why it happened.** Non-negotiable 8 was skipped for one fact. The search tool
+returns a summary that reads like a source; it is not one. The county FAQ was
+one click away.
+
+**What stops it.** A fact that changes an existing sentence gets the same
+treatment as a new fact: open the primary source, quote it into the research
+file, then edit. A summary that cites a listing aggregator is not a source.
+
+## 68. Hedge sections passed the register gate (2026-09-05, same day as 66)
+
+**What happened.** The rewritten short-term rental page carried a section
+titled "What will this page not tell you?", a hero sub-header made of three
+undefined terms, and lines like "That is a fact about the tests. It is not a
+verdict on you." Every one passed the new register gate. The owner read it and
+stopped reading.
+
+**Why.** The gate matched the phrase families he had named. It did not match
+the families he had not yet seen: a whole section whose purpose is to
+disclaim, two steps named in one sentence, "not a verdict", "no web page can".
+And no gate can catch a term used before it is defined.
+
+**What stops it.** Those families are in `REGISTER_REGEX` now. A section
+heading that says what the page will not do is a build error. And the rule
+that cannot be a regex is written where every session reads it: define active
+and passive, define a rental pool, define every term of art in its own
+sentence before it is used. If the reader has to already know it, the page
+has failed.
+

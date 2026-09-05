@@ -815,6 +815,11 @@ const REGISTER_REGEX = [
   [/\b(?:off guard|comes with a catch|the trap\b|a trap\b|trap on\b|sinks? it\b|earns? its (?:keep|place)|leans? on\b|leaned on\b|hand in hand|(?:offer|letter|job|permit|approval|contract|numbers?|facts) in hand|on paper\b|on the table\b|off the table\b|a report cover|pile of paper)/i, 'idiom - say the literal fact'],
   // editorial aside: the writer commenting on the material instead of stating it
   [/\b(?:worth (?:stating|noting|knowing|asking|settling|ordering|saying|your attention|a thought|thinking about)|the operative word|once you see it|is where the (?:money|trouble|case|value|risk) is|the trouble starts|where the trouble|the whole apparatus|apparatus|the version that fails|the case is strongest|the case has to be made|nobody can do that|for the record)/i, 'editorial aside - delete the comment and state the fact'],
+  // hedge: the writer telling the reader what the page will not do, or softening a fact
+  [/\b(?:(?:does|will|can)(?:not|n't| not) tell you whether|not a verdict|is a fact about|this is a fact|no web page can|nobody can|no one can|hard to undo|made at purchase|that is the mistake|people stop reading|where people stop)\b/i, 'hedge - delete it; state the rule and stop (owner, 2026-09-05: "eradicate the hedges")'],
+  // structure: two steps named in one sentence read as filler; give each step its own heading
+  [/\bstep (?:one|1|two|2)\b[^.?!]*\bstep (?:one|1|two|2)\b/i, 'structure - two steps in one sentence; give each its own heading'],
+  [/\bcount(?:s|ing)? your hours against\b/i, 'phrase - say whose hours are compared and what the test requires'],
   // aphorism shapes not already in AI_TELL_REGEX
   [/\b(?:costs the \w+ and keeps the|people buy here to be here|the terms are set|a loan from a future|bought timing|timing that will not arrive)/i, 'aphorism - name the actor and the consequence'],
 ];
@@ -1833,6 +1838,9 @@ function audit() {
          * headings (which end in a period) are not counted. The first section
          * heading on a strict page must be a question, because that is where the
          * page defines its subject before elaborating on it. */
+        for (const h of h2s)
+          if (/\b(?:this page|the page|we|it|this article) (?:will not|does not|cannot|won't|can't|will never) (?:tell|do|answer|say|show)\b|what (?:this|the) page (?:will|does|can)(?:not|n't| not)\b/i.test(h))
+            E(`disclaimer section "${h.slice(0, 50)}" - a section whose job is to say what the page will not do is a hedge; the disclaimer belongs in the sources line (PLAYBOOK A22)`);
         const sectionH2 = h2s.filter(h => !/faq|frequently asked|find your property|^sources|^data sources/i.test(h) && !/\.$/.test(h));
         const qH2 = sectionH2.filter(h => /\?$/.test(h));
         if (sectionH2.length >= 3) {
