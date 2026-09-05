@@ -237,3 +237,25 @@ page's own scripts or its loaded bundles targets a `.stat-kpi` whose visible
 text is not the animation's final value. Positive-controlled both ways. The
 homepage effects script is deleted; the page is static. PLAYBOOK A29a: a page
 with scroll-triggered script is measured after a full scroll, not at load.
+
+## 70. The preview builder dropped every head style block (2026-09-05)
+
+**What happened.** The preview builder (now `tools/mkpreview.js`) kept the
+page `<body>` and the shared CSS and threw away every `<style>` block in the
+page head. Article pages lost only the dropdown nav and the search modal
+styling, so the modal's form printed at the foot of every tax preview. The
+homepage keeps its carousel, chooser cards, ticker and search modal styles in
+those blocks, so its preview showed five reviews stacked in the hero,
+unstyled cards, the search form at the foot of the page and no team photos.
+The owner judged three homepage versions through that preview in one day and
+rejected all three. The third was already the original design.
+
+**Why it happened.** The builder was checked on article pages, where the
+damage is small, and never on the homepage. No rendered preview was opened
+before its link went out. Rule 1 applies to a preview as much as to a page.
+
+**What stops it.** The builder keeps every head style block, inlines local
+images, and throws if a head style block does not reach the output. It is in
+the repo. Before any preview link goes out: render the preview file in the
+browser and compare its height and section list with the page's own render.
+A preview that differs from the page is not sent.

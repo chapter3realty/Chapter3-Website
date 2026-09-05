@@ -30,5 +30,7 @@ window.c3SendForm=function(){var t=document.getElementById('c3toast');t.textCont
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';if(/^(#|javascript:|tel:|mailto:)/.test(h))return;e.preventDefault();var t=document.getElementById('c3toast');t.textContent='Preview only: '+h+' opens on the live site.';t.style.display='block';setTimeout(function(){t.style.display='none'},2600);},true);
 document.addEventListener('DOMContentLoaded',function(){try{localStorage.c3PopDone=1}catch(x){}});
 </script>`;
+const wantStyles=(headSrc.match(/<style\b/g)||[]).length;
+if((headStyles.match(/<style\b/g)||[]).length!==wantStyles) throw new Error('preview dropped head style blocks: '+wantStyles+' in the page');
 fs.writeFileSync(out,head+"\n"+body+'\n<div id="c3toast"></div>\n');
 console.log(out,Math.round(fs.statSync(out).size/1024)+"KB","head styles:",(headStyles.match(/<style/g)||[]).length,"images inlined:",inlined);

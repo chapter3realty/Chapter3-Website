@@ -797,16 +797,40 @@ hero sub-header". And `initReveal()` in the effects script adds `.sr`
 and others on every page that loads it; a capture taken without scrolling
 shows those elements missing. Scroll first, then capture.
 
-**Still open.** He asked to delete "the sliding thing" in the declutter
-request. The ticker is back with the original design. Ask which one he meant
-before removing either.
+**The previews were the problem.** Every homepage preview sent today came
+from a builder that dropped all nine `<style>` blocks in the page head
+(MISTAKES 70). The preview showed five reviews stacked in the hero, unstyled
+cards, the search form printed at the foot of the page and no team photos.
+He judged the declutter, the simple rebuild and the restored original through
+that preview and rejected all three. His "no revert it back to the actual
+original" came after a broken preview of a page that already was the
+original. The builder is fixed and committed as `tools/mkpreview.js`
+(`node tools/mkpreview.js /path/ out.html [source-file]`). All six previews
+are republished from it.
 
-Preview: https://claude.ai/code/artifact/021ff216-8e61-4316-b164-72b0175adc35
+**His morning list, verbatim, so nobody re-derives it.** "...the facts a
+seller may hide. Delete / every chapter starts at home. Delete / The sliding
+thing at the top delete / Make the call button on mobile an icon of a phone
+and keep the phone number on the desktop version / Call if you have any
+questions: 854.333.2135 Remove on home page / Should I buy this house?
+replace with 'try our investment analyzer'..." The full text is in the
+session transcript. "The sliding thing at the top" is the ticker. That closes
+the open question.
+
+**Where it stands.** The repo homepage is the original design plus two items
+from that list he asked for explicitly: the mobile phone icon (header
+partial, every page) and the analyzer heading. Two corrected previews are
+published: the original, and the morning declutter version with the "8" hook
+removed (https://claude.ai/code/artifact/ed70c80b-b15a-4929-aff5-b940df51cb39).
+He has not said which he wants. Touch nothing on the homepage until he does.
+
+Preview of the original: https://claude.ai/code/artifact/021ff216-8e61-4316-b164-72b0175adc35
 
 ## Suggested order for the next session
 
 0. **The homepage is back to its original design.** Any further homepage
-   change: mock it up in a preview, get his yes, then touch `index.html`.
+   change: mock it up in a preview, open the rendered preview yourself
+   (MISTAKES 70), get his yes, then touch `index.html`.
 1. **Owner review of the five tax pages** from the previews. Expect line edits;
    apply them to the built page (these are hand-built, not spec-built), then
    dates, preflight 0, browser measure, republish the preview.
