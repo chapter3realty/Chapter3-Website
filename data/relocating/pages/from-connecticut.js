@@ -33,7 +33,7 @@ const faq = [
   { q: 'Does Connecticut tax Social Security?',
     a: 'Not below $75,000 of AGI single or $100,000 married filing jointly. At those thresholds the exemption changes at once rather than phasing gently. South Carolina never taxes Social Security at any income.' },
   { q: 'What happens to my pension and IRA exemption when I leave Connecticut?',
-    a: 'Connecticut fully exempts pension, annuity and, from 2026, IRA income below $75,000 AGI single or $100,000 joint, sliding to nothing by $100,000 and $150,000. South Carolina&#39;s retirement and age-65 deductions are smaller on paper but have no income test, and military retirement is fully exempt.' },
+    a: 'Connecticut fully exempts pension, annuity and, from 2026, IRA income below $75,000 AGI single or $100,000 joint, sliding to nothing by $100,000 and $150,000. South Carolina&#39;s retirement and age-65 deductions are smaller as numbers but have no income test, and military retirement is fully exempt.' },
   { q: 'Does South Carolina have a gift or estate tax?',
     a: 'Neither. Connecticut is the only state with its own gift tax, but its estate and gift exemption now tracks the federal amount, $15 million for 2026, so it reaches almost nobody. For most movers this line is no longer the reason to move; the property tax is.' },
   { q: 'Will my car tax go up in South Carolina?',

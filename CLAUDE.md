@@ -94,6 +94,17 @@ statute section numbers, or how we verified something. Say "your lender will
 require" and move on. Sources go in the sources line, under 90 words, links
 only. Hero sub-header under 45 words. Two CTAs inside the article.
 
+**Owner rule 2026-09-05, after reading a tax page for an hour and understanding
+none of it.** Say everything with the fewest words. One idea per sentence.
+Subject, verb, object. No phrases of any kind: no spatial metaphors ("which line
+of the map", "the gap opens"), no personification ("the rule catches"), no
+idioms ("on paper", "in hand"), no editorial asides ("worth noting", "the
+operative word"). Define the subject before elaborating on it: the first
+section says what the thing is and who it applies to. Write section headings
+as questions wherever possible. `build.js` errors on the phrase families
+(REGISTER_REGEX) and applies shorter sentence caps to every page published
+from that date (STRICT_REGISTER_PAGES). PLAYBOOK A22.
+
 A page can score grade 6 and still be unreadable, because the defect is subject
 matter, not sentence length. That has happened here. See PLAYBOOK A11a.
 

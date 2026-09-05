@@ -161,3 +161,22 @@ Current `audit` warnings that are deliberate. Do not "fix" them silently.
 - ~~`/sell/` ships a stale duplicate JS bundle~~ Fixed 2026-08-30: the divergent pair is merged (the divergent function was dead code in both), and the real finding behind it was a launch-day double maps-loader throwing a SyntaxError on all eight original submarket pages, also fixed.
   page renders no calculator, so no wrong number reaches a user.
 - ~~Two pages have no question-shaped heading~~ Stale: the audit reports zero such pages as of 2026-08-30. Retired.
+
+## 66. Five pages passed every gate and the owner could not read them (2026-09-05)
+
+**What happened.** The five investor tax pages cleared the punch rule, the
+aphorism rule, the figurative list and the sub-header rule. The owner spent an
+hour on the first one and understood nothing. His examples were exact: "which
+line of the map", "the gap opens", "catches almost nobody", and a paragraph
+that took four clauses to say "if the platform takes the payment, the platform
+pays the tax".
+
+**Why the gates missed it.** They matched instances, not the class. A18 banned
+six aphorism shapes; the copy used metaphors instead. The sentence caps were
+set for a general reader and the tax pages sat inside them at a mean of 19.
+And no rule required the page to define its subject before elaborating.
+
+**What stops it.** PLAYBOOK A22: `REGISTER_REGEX` names phrase types and errors
+on all of them; strict sentence caps on every page from that date; question
+headings with the first one defining the subject. And the standing lesson:
+when the owner says a page is unreadable, the gates are wrong, not the owner.

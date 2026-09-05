@@ -800,6 +800,25 @@ const AI_TELL_PHRASES = [
   "nobody can promise", "no one can promise", "we do not promise",
   "we don't promise", "not something we promise",
 ];
+/* ---- REGISTER: literal only (owner, 2026-09-05) ----
+ * "We only speak extremely literal. No phrases of any kind at all ever."
+ * He read /invest/accommodations-tax/ for an hour and understood none of it.
+ * The page had passed every gate. Each entry names the TYPE of phrase so the
+ * writer learns the class, not just the instance. Errors, every match. */
+const REGISTER_REGEX = [
+  // spatial metaphor: a threshold described as a line, a gap that opens, a point that is passed
+  [/\b(?:line of the map|lines are close|the local lines|on the local lines|which line\b|past the line|at that line|the gap opens|a gap opens|gap opens on|past that point|beyond that point|crosses? (?:this|that|the) (?:test|line|threshold)|cross(?:es)? it\b)/i, 'spatial metaphor - say the number and what happens above and below it, not a line or a gap'],
+  // personification: a rule, tax or document doing something only a person does
+  [/\b(?:rule|rules|test|tests|law|laws|tax|taxes|fee|fees|charge|charges|perks?|page|study|exemption|threshold|gate|check|section|table|chart|column)s?\s+(?:catch|catches|caught|catching|punish|punishes|reward|rewards|forgive|forgives|care|cares|want|wants|think|thinks|ignore|ignores|forget|forgets|miss|misses|leave|leaves|exists? to|earn|earns|assume|assumes|expect|expects)\b/i, 'personification - a rule cannot catch, notice, want or leave anything; say what the rule requires'],
+  [/\b(?:catch(?:es|ing)?|caught)\b/i, '"catch" is banned outright (owner, 2026-09-05: "never say it again") - use find, notice, surprise, or say what happens'],
+  // idiom
+  [/\b(?:off guard|comes with a catch|the trap\b|a trap\b|trap on\b|sinks? it\b|earns? its (?:keep|place)|leans? on\b|leaned on\b|hand in hand|(?:offer|letter|job|permit|approval|contract|numbers?|facts) in hand|on paper\b|on the table\b|off the table\b|a report cover|pile of paper)/i, 'idiom - say the literal fact'],
+  // editorial aside: the writer commenting on the material instead of stating it
+  [/\b(?:worth (?:stating|noting|knowing|asking|settling|ordering|saying|your attention|a thought|thinking about)|the operative word|once you see it|is where the (?:money|trouble|case|value|risk) is|the trouble starts|where the trouble|the whole apparatus|apparatus|the version that fails|the case is strongest|the case has to be made|nobody can do that|for the record)/i, 'editorial aside - delete the comment and state the fact'],
+  // aphorism shapes not already in AI_TELL_REGEX
+  [/\b(?:costs the \w+ and keeps the|people buy here to be here|the terms are set|a loan from a future|bought timing|timing that will not arrive)/i, 'aphorism - name the actor and the consequence'],
+];
+
 const AI_TELL_REGEX = [
   // pseudo-cleft: "What the leftover money does is your call" and "What the
   // designation does is close that school" both shipped.
@@ -971,6 +990,7 @@ const PUNCH_WORDS = [
   [/\blandscape\b|\brobust\b|\bseamless|\bcutting.edge\b|\bstate.of.the.art\b|\bdeep dive\b|\bsweet spot\b|\bat its core\b|\bthe beauty of\b|\bjourney\b|\bunpack|\bnuance/i, 'buzzword - say the plain thing'],
 ];
 const PUNCH_OPENER = /(?:^|[.!?]\s+)(?:And|So)\b(?!\s+(?:far|what|how|much|many|long)\b)/;
+const PUNCH_OPENER_STRICT = /(?:^|[.!?]\s+)(?:And|So|But|Or|Yet)\b(?!\s+(?:far|what|how|much|many|long)\b)/;  // strict register only (A22)
 
 /* ---- The local edge on investor strategy pages (owner, 2026-09-02) ----
  * "All of the investor strategy pages should be focused on why we are the
@@ -1152,6 +1172,18 @@ const TRIGGER_DOWN_NEAR = [
  *
  * A percentage on an allowed page must carry its source, so the gate also
  * requires the page to name the lender it came from. */
+/* ---- STRICT REGISTER (owner, 2026-09-05) ----
+ * Shorter caps than the sitewide punch rule: max 28 words a sentence, page mean
+ * 16, warn above 22. Applies to these pages and to every page whose Article
+ * datePublished is 2026-09-05 or later, so new pages inherit it automatically.
+ * The sitewide caps stay where they are so 100 existing pages do not fail on a
+ * backlog (MISTAKES 65). */
+const STRICT_REGISTER_PAGES = new Set([
+  "/invest/accommodations-tax/", "/invest/str-tax-treatment/", "/invest/cost-segregation/",
+  "/invest/rental-depreciation/", "/invest/14-day-rule/",
+]);
+const STRICT_MAX_SENTENCE = 28, STRICT_WARN_SENTENCE = 22, STRICT_MAX_MEAN = 16;
+
 const DOWN_PAYMENT_OK_PAGES = new Set([
   "/invest/strategies/dscr-loans/",
   "/invest/strategies/brrrr/",
@@ -1250,6 +1282,11 @@ function audit() {
     const rel = "/" + f.replace(ROOT + path.sep, "").replace(/index\.html$/, "").split(path.sep).join("/");
     const url = "https://chapter3realty.com" + rel;
     const noindex = /content="noindex/.test(s);
+    const pubDate = (s.match(/"datePublished"\s*:\s*"(\d{4}-\d{2}-\d{2})"/) || [, ""])[1];
+    const strictReg = STRICT_REGISTER_PAGES.has(rel) || (pubDate && pubDate >= "2026-09-05");
+    const maxS = strictReg ? STRICT_MAX_SENTENCE : PUNCH_MAX_SENTENCE;
+    const warnS = strictReg ? STRICT_WARN_SENTENCE : PUNCH_WARN_SENTENCE;
+    const maxMean = strictReg ? STRICT_MAX_MEAN : PUNCH_MAX_MEAN;
     const E = (m) => errors.push(`${rel}  ${m}`);
     const W = (m) => warns.push(`${rel}  ${m}`);
 
@@ -1687,6 +1724,18 @@ function audit() {
         for (const p of AI_TELL_PHRASES) {
           if (lowClaims.includes(p)) { E(`banned mannerism: "${p}" - say it the direct literal way (PLAYBOOK A11, owner rule 2026-08-30)`); break; }
         }
+        {
+          /* quotations are someone else's words: a client review is not ours to rewrite */
+          const regSrc = decodeEnt(((s.match(/<main[\s\S]*?<\/main>/) || [s])[0])
+            .replace(/<(script|style)[\s\S]*?<\/\1>/g, " ")
+            .replace(/<blockquote[\s\S]*?<\/blockquote>/g, " ")
+            .replace(/<p[^>]*>\s*(?:"|&quot;|&ldquo;|\u201c)[\s\S]*?(?:"|&quot;|&rdquo;|\u201d)\s*<\/p>/g, " ")
+            .replace(/<(p|div|figure)[^>]*class="[^"]*(?:review|testimonial|quote)[^"]*"[^>]*>[\s\S]*?<\/\1>/g, " ")
+            .replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ");
+          for (const [re, msg] of REGISTER_REGEX)
+            for (const m of regSrc.matchAll(new RegExp(re.source, "gi")))
+              E(`register: "${m[0].slice(0, 45)}" - ${msg} (PLAYBOOK A22)`);
+        }
         for (const [re, msg] of AI_TELL_REGEX) {
           const m = claims.match(re);
           if (m) { E(`banned construction: "${m[0].slice(0, 50)}" - ${msg}`); break; }
@@ -1778,6 +1827,23 @@ function audit() {
             E(`generic H2 "${h}" - say what the section is about`);
         }
         const bodyH2 = h2s.filter(h => !/^frequently asked questions$/i.test(h));
+        /* Question headlines (owner, 2026-09-05): "Structure as many headlines as
+         * a question as possible." Better for search, for answer engines, and for
+         * a reader who wants the point of the section. FAQ, sources and CTA
+         * headings (which end in a period) are not counted. The first section
+         * heading on a strict page must be a question, because that is where the
+         * page defines its subject before elaborating on it. */
+        const sectionH2 = h2s.filter(h => !/faq|frequently asked|find your property|^sources|^data sources/i.test(h) && !/\.$/.test(h));
+        const qH2 = sectionH2.filter(h => /\?$/.test(h));
+        if (sectionH2.length >= 3) {
+          const qr = qH2.length / sectionH2.length;
+          if (strictReg) {
+            if (qr < 0.6) E(`${qH2.length} of ${sectionH2.length} section headings are questions (strict register wants 60%+) - PLAYBOOK A22`);
+            if (!/\?$/.test(sectionH2[0])) E(`first section heading "${sectionH2[0].slice(0, 50)}" is not a question - define the subject before elaborating (PLAYBOOK A22)`);
+          } else if (qr < 0.5) {
+            W(`${qH2.length} of ${sectionH2.length} section headings are questions - owner rule 2026-09-05, write headings as questions (PLAYBOOK A22)`);
+          }
+        }
         if (want.length && bodyH2.length && !bodyH2.some(h => want.some(t => subHasToken(t, h)) || SUB_PLACE.test(h)))
           E(`no H2 carries a page keyword (${want.slice(0, 3).join(", ")}) or a place name - put the topic in at least one section heading`);
       }
@@ -1804,7 +1870,7 @@ function audit() {
             const m = b.match(re);
             if (m && !hits.has(msg)) hits.set(msg, m[0]);
           }
-          const op = b.match(PUNCH_OPENER);
+          const op = b.match((strictReg ? PUNCH_OPENER_STRICT : PUNCH_OPENER));
           if (op && !hits.has("opener")) hits.set("opener", op[0].trim());
           modals += (b.match(/\b(?:may|might)\b/gi) || []).length;
           const aside = [...b.matchAll(/\(([^()]{0,240})\)/g)].find(a => a[1].split(/\s+/).filter(Boolean).length >= PUNCH_ASIDE_WORDS);
@@ -1813,8 +1879,8 @@ function audit() {
           for (const se of sents) {
             const w = se.split(/\s+/).length;
             total += w; nSent++;
-            if (w > PUNCH_WARN_SENTENCE) over++;
-            if (w > PUNCH_MAX_SENTENCE) longest.push([w, se]);
+            if (w > warnS) over++;
+            if (w > maxS) longest.push([w, se]);
           }
         }
         /* Headings, the title, the meta descriptions and the schema strings are
@@ -1836,10 +1902,10 @@ function audit() {
           else E(`punch: ${msg} (found "${found}")`);
         }
         longest.sort((a, b) => b[0] - a[0]);
-        for (const [w, se] of longest.slice(0, 3)) E(`sentence is ${w} words (max ${PUNCH_MAX_SENTENCE}): "${se.slice(0, 70)}..." - split it`);
-        if (longest.length > 3) E(`${longest.length - 3} more sentences over ${PUNCH_MAX_SENTENCE} words`);
-        if (nSent >= 20 && total / nSent > PUNCH_MAX_MEAN) E(`mean sentence length ${(total / nSent).toFixed(1)} words (max ${PUNCH_MAX_MEAN}) - shorten across the page`);
-        if (over > 3) W(`${over} sentences over ${PUNCH_WARN_SENTENCE} words - aim shorter`);
+        for (const [w, se] of longest.slice(0, 3)) E(`sentence is ${w} words (max ${maxS}${strictReg ? ", strict register" : ""}): "${se.slice(0, 70)}..." - split it`);
+        if (longest.length > 3) E(`${longest.length - 3} more sentences over ${maxS} words`);
+        if (nSent >= 20 && total / nSent > maxMean) E(`mean sentence length ${(total / nSent).toFixed(1)} words (max ${maxMean}${strictReg ? ", strict register" : ""}) - shorten across the page`);
+        if (over > 3) W(`${over} sentences over ${warnS} words - aim shorter`);
         if (modals > PUNCH_MAX_MODALS) W(`"may/might" ${modals} times - say what happens, or what the rule requires`);
       }
       /* ---- LOCAL EDGE + SALESY (owner rule 2026-09-02, PLAYBOOK A16) ---- */

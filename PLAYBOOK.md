@@ -388,6 +388,35 @@ fixed: "can often times benefit" on `/invest/strategies/dst/`. The lesson is
 MISTAKES 4 and 65 again: sanity-check a proposed rule against the copy it would
 fire on **before** writing the gate.
 
+**A22. The literal register (owner, 2026-09-05).** He read
+`/invest/accommodations-tax/` for over an hour, understood none of it, and said
+so at length. The page had passed every gate. Three things were wrong at once,
+and each now has a rule.
+
+*Phrases.* Even after A18, the copy carried spatial metaphors ("which line of
+the map your property sits on", "the gap opens on the local lines"),
+personification ("one exemption catches almost nobody"), idioms ("on paper",
+"the trap on that table") and editorial asides ("the operative word", "worth
+stating"). `REGISTER_REGEX` errors on every one and names the type, so the
+writer learns the class. "Catch" is banned outright. New families go in the
+same list with a type label.
+
+*Length.* The sitewide caps (40 max, 20 mean) let a page pass that a smart
+reader could not follow. Pages in `STRICT_REGISTER_PAGES`, and every page whose
+`datePublished` is 2026-09-05 or later, get 28 max, 16 mean, warning at 22.
+The sitewide caps did not move, so the backlog does not fail (MISTAKES 65).
+
+*Context.* The page elaborated on a tax before saying what it was a tax on,
+which rentals owed it, or what triggered it. "The page is assuming I know."
+On a strict page the first section heading must be a question that defines
+the subject, and at least 60 percent of section headings must be questions.
+Elsewhere the build warns below 50 percent. FAQ, sources and CTA headings
+(which end in a period) are not counted.
+
+*His own wording, which is the target register:* "If Airbnb or VRBO take the
+payment, they are responsible for the taxes. If you take the payment, you are
+responsible for the taxes." Thirteen words, then eleven. Write like that.
+
 **A11e, amended 2026-09-01.** Attribution wording: a story is told about "an
 agent at Chapter3" or "one of our agents", or the named person when the page
 already names them, never "Chapter3 did" or "we did" as if the company were the
