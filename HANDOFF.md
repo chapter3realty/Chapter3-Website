@@ -856,9 +856,39 @@ is his call, not a gate's.
 
 Preview of the page as it is now: https://claude.ai/code/artifact/021ff216-8e61-4316-b164-72b0175adc35
 
+## 2026-09-05 late: the ticker deleted sitewide, and the black bands it was painting
+
+**One object, two complaints.** "The little sliding thing at the top, delete
+that from every page" and "there's a dark black gradient border on the 5 pages
+we were working on" were the same element. The ticker had lost its base CSS in
+an earlier cleanup and kept only its two edge-fade overlays, 100px of
+`linear-gradient(...var(--navy))` running the full height of the element. On
+ivory pages those are black bands down both sides of the hero. MISTAKES 71.
+
+**Removed.** The markup block from all 108 pages (byte-identical on every one),
+six CSS rules including the `@keyframes`, the `#c3-ticker` entry in the
+print-hide selector, section 6 of `s.940d034594.js`, and the inline copy of
+that section in the six older pages that carry the script inline rather than
+loading the bundle (`/invest/long-term-rental/`, `/buyers/relocating/`,
+`/buyers/first-time-home-buyer-myrtle-beach/`, `/buyers/retirees/`, `/terms/`,
+`/privacy/`). Both assets rehashed: `app.650a027cfa.css`, `s.35fe572371.js`.
+
+**Gate.** `build.js check` carries a DELETED list; any of `c3-ticker`,
+`ticker-track`, `ticker-item`, `tickerData` or `@keyframes ticker` in a page or
+an asset is a build error. Positive-controlled both ways. Add a row to that
+list when he deletes the next component.
+
+**Measured.** Eleven pages including all five tax pages, after a full scroll at
+1366: no ticker element, no dark gradient, no console errors, no horizontal
+overflow, header followed directly by main. Preflight 0.
+
+**Next.** He said "then we will finish working on the pages", meaning the five
+tax pages. Their previews are current.
+
 ## Suggested order for the next session
 
-0. **Homepage: the declutter version with his evening edits is on the branch.**
+0. **Finish the five tax pages.** He is ready to review them again.
+0b. **Homepage: the declutter version with his evening edits is on the branch.**
    He has the corrected preview; expect line edits. Any further homepage
    change: mock it up in a preview, open the rendered preview yourself
    (MISTAKES 70), get his yes, then touch `index.html`.

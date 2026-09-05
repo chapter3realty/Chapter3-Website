@@ -259,3 +259,37 @@ images, and throws if a head style block does not reach the output. It is in
 the repo. Before any preview link goes out: render the preview file in the
 browser and compare its height and section list with the page's own render.
 A preview that differs from the page is not sent.
+
+## 71. A half-deleted component painted black bands on 108 pages (2026-09-05)
+
+**What happened.** The owner asked twice to delete the market ticker, the
+scrolling strip of statistics under the header. He also asked why the five tax
+pages had "a dark black gradient border". Both were the same object. A CSS
+cleanup at some earlier point had removed the ticker's base rules but left
+`.c3-ticker::before` and `.c3-ticker::after`: two 100px overlays, `top:0`
+`bottom:0`, filled `linear-gradient(90deg, var(--navy), transparent)`. With no
+base rule the ticker no longer clipped to one line, so it grew to 82px and
+wrapped across three lines, and its two edge fades painted as black gradient
+bands down both sides of the hero. On the navy homepage they were invisible.
+On the 108 ivory article pages they were the border he was looking at.
+
+**Why it happened.** Nobody opened the top of an article page in a browser
+after that CSS cleanup. The ticker was chrome, so it was never the subject of
+a review, and every page-level check ran on the article body below it. The
+markup carried `style="display:none"`, which reads as switched off in the
+source; the bundle set `display:block` at run time. Reading the HTML said the
+thing was off. The rendered page said otherwise. Rule 1.
+
+**What stops it.** The ticker is gone: markup from all 108 pages, the six CSS
+rules, the `@keyframes`, the print-hide selector, the bundle section, and the
+inline copy of that section in six older pages. `build.js check` now carries a
+DELETED list and errors if any of its tokens reappears in a page or an asset,
+so a copy-paste from an old page cannot bring it back. Positive-controlled on
+markup and on CSS, restored byte-identical both times.
+
+**A scanner tried and withdrawn.** The general form of this defect is an
+orphaned overlay: a `::before` or `::after` rule whose base class has no rule
+left. Implemented and run against the stylesheet, it flagged five legitimate
+modifier classes (`.chooser-seller`, `.chooser-investor`, `.chooser-buyer`,
+`.invest-type-card-str`, `.invest-type-card-ltr`), all of which take their
+base styling from a companion class. Not shipped. PLAYBOOK A21 and rule 4.

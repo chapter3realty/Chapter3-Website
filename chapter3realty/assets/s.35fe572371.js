@@ -123,30 +123,6 @@ window.addEventListener('scroll', () => {
   fab.classList.toggle('visible', window.scrollY > 400);
 }, { passive: true });
 
-// ── 6. MARKET TICKER ────────────────────────────────────
-const tickerData = [
-  { label: 'YoY Price Growth',     value: '+10.5%' },
-  { label: 'Annual Visitors',      value: '19M+' },
-  { label: 'Fastest-Growing Metro',value: '#2 in US' },
-  { label: 'Golf Courses',         value: '100+' },
-  { label: 'Miles of Beach',       value: '60 miles' },
-  { label: 'Inbound Migration #1', value: 'North Carolina' },
-  { label: 'New Construction From',value: '$270K' },
-  { label: 'BrickWood Mortgage',   value: 'NMLS #189497' },
-];
-
-const ticker    = qs('#c3-ticker');
-const tickTrack = qs('#ticker-track');
-if (ticker && tickTrack) {
-  const doubled = [...tickerData, ...tickerData];
-  tickTrack.innerHTML = doubled.map(d =>
-    `<span class="ticker-item"><span class="ticker-sep">◆</span> ${d.label}: <strong>${d.value}</strong></span>`
-  ).join('');
-  ticker.style.display = 'block';
-  const header = qs('header');
-  if (header) header.after(ticker);
-}
-
 // ── 7. HERO WORD SPLIT ──────────────────────────────────
 function splitWords() {
   const h1 = qs('.hero-h1');

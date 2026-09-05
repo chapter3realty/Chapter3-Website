@@ -123,6 +123,31 @@ function check() {
       errors.push(`stale asset: /assets/${a} was edited but not rehashed (contents hash ${realHash}) -> run 'node build.js rehash'`);
   }
 
+  /* ---- components the owner deleted must stay deleted ----
+   * The market ticker was removed from every page on 2026-09-05. It had been
+   * shipping half-styled: a CSS cleanup had taken its base rules but left
+   * `.c3-ticker::before/::after`, two 100px `linear-gradient(...var(--navy))`
+   * overlays spanning the element's full height. On the ivory article pages
+   * those painted as black bands down both edges of the hero, on 108 pages,
+   * until the owner spotted it. MISTAKES 71. A deleted component comes back
+   * by copy-paste from an old page, so name the tokens here rather than trust
+   * that nobody will. Add a row when the owner deletes the next one.
+   * (An "orphaned overlay" scanner was tried instead - any X::before whose
+   * base class has no rule - and withdrawn: it flags .chooser-seller and four
+   * other legitimate modifier classes. PLAYBOOK A21.) */
+  {
+    const DELETED = [
+      { name: "market ticker (owner, 2026-09-05)", re: /\bc3-ticker\b|\bticker-track\b|\bticker-item\b|\btickerData\b|@keyframes\s+ticker\b/ },
+    ];
+    const scan = [...pages, ...[...assets].map((a) => path.join(ASSETS, a))];
+    for (const f of scan) {
+      const s2 = fs.readFileSync(f, "utf-8");
+      for (const d of DELETED)
+        if (d.re.test(s2))
+          errors.push(`${f.replace(ROOT + path.sep, "")}: ${d.name} was deleted from the site - remove it here too, do not copy it back from an old page`);
+    }
+  }
+
   /* ---- cost-of-living data: asset must equal the JSON, and neither may go stale ----
    *
    * /buyers/relocating/cost-of-living/ carries a 439-place calculator fed by
