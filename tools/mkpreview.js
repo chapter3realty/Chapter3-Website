@@ -10,6 +10,9 @@ const title=(s.match(/<title>([\s\S]*?)<\/title>/)||[,"Preview"])[1];
 const headSrc=(s.match(/<head[^>]*>([\s\S]*?)<\/head>/)||[,""])[1];
 const headStyles=[...headSrc.matchAll(/<style\b[^>]*>[\s\S]*?<\/style>/g)].map(m=>m[0]).join("\n");
 let body=(s.match(/<body[^>]*>([\s\S]*?)<\/body>/)||[,s])[1];
+// the artifact wrapper supplies its own <body>; carry the page body class so body.home rules apply
+const bodyClass=((s.match(/<body[^>]*\bclass="([^"]*)"/)||[])[1]||"").trim();
+if(bodyClass) body=`<script>(function(){function f(){document.body.className+=" ${bodyClass}";}if(document.body)f();else document.addEventListener("DOMContentLoaded",f);})();</script>\n`+body;
 // drop analytics and external loaders; inline our own bundles
 body=body.replace(/<script[^>]*googletagmanager[^>]*>[\s\S]*?<\/script>/g,"").replace(/<script>[^<]*gtag\([\s\S]*?<\/script>/g,"");
 body=body.replace(/<script src="\/assets\/([^"]+\.js)"[^>]*><\/script>/g,(m,f)=>{const p=path.join(ROOT,"assets",f);return fs.existsSync(p)?"<script>"+fs.readFileSync(p,"utf-8").replace(/AIza[0-9A-Za-z_-]{20,}/g,"YOUR_GOOGLE_MAPS_KEY").replace(/<\/script>/g,"<\\/script>")+"</script>":"";});
