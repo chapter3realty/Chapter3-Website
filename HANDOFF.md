@@ -622,6 +622,50 @@ weeks later. This work compounds slowly. Do not promise the owner a fast turn.
 
 ---
 
+## 2026-09-05: the owner could not read the tax pages. All five rewritten, register hard-coded
+
+He read `/invest/accommodations-tax/` for over an hour and understood none of
+it. It had passed every gate. His review named the classes: spatial metaphors,
+personification, idioms, asides, four-clause sentences for one-clause ideas,
+and elaborating on a tax before saying what it was a tax on. **PLAYBOOK A22
+and MISTAKES 66 record it. Read both before writing a sentence.**
+
+What changed, all shipped in commit 8ca2afa:
+- All five pages rewritten: short literal sentences, every section heading a
+  question, the first heading defines the subject. His verbatim wording used
+  wherever he gave it. One of his phrases, "when it comes to", is on the
+  site's own banned list and became "for".
+- `REGISTER_REGEX` in build.js errors on the phrase families, each named by
+  type. "Catch" is banned outright. Client quotations are exempt.
+- Strict tier: 28 words max, mean 16, But/Or/Yet openers, on the five pages
+  and on every page with `datePublished` 2026-09-05 or later. Sitewide caps
+  unchanged (MISTAKES 65).
+- Question headings: strict pages need 60 percent and a question first; every
+  other page warns below 50 percent.
+- 56 backlog instances on 40 older pages replaced with literal words, in the
+  built pages and in the seven spec files that generate them.
+- Six positive controls passed both directions; files restored byte-identical.
+
+**The sitewide question-heading audit he asked for**, measured 2026-09-05
+before any rewrite outside the five pages:
+
+| Cluster | Pages | Section headings | Questions | Ratio |
+|---|---|---|---|---|
+| buyers | 38 | 243 | 8 | 3% |
+| submarkets | 9 | 194 | 0 | 0% |
+| invest | 22 | 139 | 49 | 35% |
+| hoa | 16 | 89 | 13 | 15% |
+| sell | 7 | 38 | 5 | 13% |
+| Sitewide | 100 | 724 | 79 | 11% |
+
+52 pages have no question heading at all. Rewriting 645 headings is a
+project, not a fix; the build now warns on every page below 50 percent so
+the list is always current. Recommended order: submarkets (0 percent, 194
+headings, the pages national brands cannot match), then buyers.
+
+**Two pre-existing items were not touched:** the breadcrumb slash at 20
+percent alpha and the eyebrow over the brass box on `/buyers/second-home/`.
+
 ## 2026-09-04: the investor tax cluster, all five pages built
 
 Owner decisions that govern the whole cluster (2026-09-03): a CPA referral
