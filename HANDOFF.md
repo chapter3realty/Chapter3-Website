@@ -817,18 +817,49 @@ replace with 'try our investment analyzer'..." The full text is in the
 session transcript. "The sliding thing at the top" is the ticker. That closes
 the open question.
 
-**Where it stands.** The repo homepage is the original design plus two items
-from that list he asked for explicitly: the mobile phone icon (header
-partial, every page) and the analyzer heading. Two corrected previews are
-published: the original, and the morning declutter version with the "8" hook
-removed (https://claude.ai/code/artifact/ed70c80b-b15a-4929-aff5-b940df51cb39).
-He has not said which he wants. Touch nothing on the homepage until he does.
+**Where it stands, 2026-09-05 late.** He opened the corrected preview of
+the declutter version and said "This page is not bad i didnt get to see this
+before". That version is now the homepage, with his edits applied verbatim:
+hero sub ends "with a specialized real estate agent"; analyzer heading "Try
+our investor analysis tool" (its button went back to the live label "See the
+investor analysis", my call, because the heading now carries the "try"); the
+"Call if you have any questions" bar is off the homepage (`body.home`); the
+eight badges are orange bold with a brass line icon beside each and a plain
+sub line: 30+ years / On the Grand Strand; Instant replies / Weekends
+included; Pawleys to NC; 1:1; Specialized agents / For investors, home
+buyers, and sellers (his words were "special agents for..."; rendered as the
+sub line); Free tools / Investor analyzer, cost of living calculator and
+more; Permit data; Clear communication / We avoid confusion and stress. The
+count-up hooks are gone, the badges are words. Measured after a full scroll
+at 1366 and 390: all eight read as written, icons 30px brass, photos load,
+no overflow, carousel advances, preflight 0.
 
-Preview of the original: https://claude.ai/code/artifact/021ff216-8e61-4316-b164-72b0175adc35
+**The Tim Nash photo.** From his Drive: "Timmy Nash - photos / Timmy Image
+Main" (jpg, 670x768, seated on a bench). The file is link-shared, so a plain
+download works: `https://drive.google.com/uc?export=download&id=176r0ztniTRxMvxSwj9wV4RUCTP_T3ETY`.
+No PIL, sharp, cwebp or ImageMagick in this box; `tools/cropwebp.js` crops
+and encodes through Chromium's canvas (`node tools/cropwebp.js in.jpg out.webp
+sx sy side size quality`; this one used 115 100 440 330 0.86, head and
+shoulders, to match the other two cards). Replaced in place at
+`/team/timmy.webp`, which 30+ pages reference, so /about/ and the HOA bylines
+show it too. Cloudflare caches the old file under the same name: purge the
+cache for `/team/timmy.webp` after deploy or the old photo lingers.
+
+**A gate fact.** The hero-sub keyword gate takes the homepage topic from the
+title's first segment, "Myrtle Beach Real Estate, By the Numbers", and after
+the weak-word filter wants "numbers" in the sub. His new sub has none. The
+WebPage schema now carries `"keywords":"specialized real estate agent Myrtle
+Beach"` (no space after the colon; the gate's regex needs that), which the
+gate reads first, and the sub carries "specialized" and "agent". The title
+still says "By the Numbers" while the sub now says "specialized agent"; that
+is his call, not a gate's.
+
+Preview of the page as it is now: https://claude.ai/code/artifact/021ff216-8e61-4316-b164-72b0175adc35
 
 ## Suggested order for the next session
 
-0. **The homepage is back to its original design.** Any further homepage
+0. **Homepage: the declutter version with his evening edits is on the branch.**
+   He has the corrected preview; expect line edits. Any further homepage
    change: mock it up in a preview, open the rendered preview yourself
    (MISTAKES 70), get his yes, then touch `index.html`.
 1. **Owner review of the five tax pages** from the previews. Expect line edits;
