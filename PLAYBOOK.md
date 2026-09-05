@@ -546,6 +546,18 @@ and completely undetectable by reading the HTML.
 `opacity:0`, and is not covered. This site ships `.sr{opacity:0}` reveal
 animations, so "text is in the DOM" proves nothing.
 
+**A29a. Measured after the scripts run, not at load (2026-09-05).** A
+scroll-triggered count-up rewrote the badge "Instant" to "8"; the page had
+been measured at load, for colour, and passed (MISTAKES 69). For any page
+that loads `s.940d034594.js` or carries its own effects script: scroll the
+whole page in the browser, wait, then re-read every text node and compare it
+to the source. That bundle also adds `.sr` (opacity 0 until scrolled into
+view) to `.section-h2`, `.chooser-card`, `.why-stat` and `.accordion-item`,
+so a capture taken at the top of the page shows those elements missing. No
+script may write visible text by element position; `build.js audit` errors
+when a count-up target's text differs from the animation's final value. The
+homepage carries no decorative script at all.
+
 **A30. Selectable.** Hit-test with `document.elementFromPoint` at the element's
 centre and confirm it returns that element, not an overlay. `getSelection()` is
 not a valid test. An animated pseudo-element without `pointer-events:none` once

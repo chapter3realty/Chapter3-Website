@@ -218,3 +218,22 @@ and passive, define a rental pool, define every term of art in its own
 sentence before it is used. If the reader has to already know it, the page
 has failed.
 
+## 69. A count-up animation rewrote "Instant" to "8" (2026-09-05)
+
+**What happened.** The homepage declutter replaced the four-number stat row
+with eight word badges. The second badge said "Instant". The homepage effects
+script keyed a count-up to `.why-stat:nth-child(2) .stat-kpi` with a target
+of 8, left over from the old row. On scroll it wrote "8" over "Instant". The
+change was browser-verified for colour and contrast at load, before the
+animation ran. The owner opened the page and said the UI was bad.
+
+**Why it happened.** Rule 1 was applied to colour and not to text. A check at
+load does not see what a scroll-triggered script does after load. And the
+hook chose its target by position, so a content edit that kept the class
+names changed what it hit.
+
+**What stops it.** `build.js audit` errors when a count-up definition in a
+page's own scripts or its loaded bundles targets a `.stat-kpi` whose visible
+text is not the animation's final value. Positive-controlled both ways. The
+homepage effects script is deleted; the page is static. PLAYBOOK A29a: a page
+with scroll-triggered script is measured after a full scroll, not at load.

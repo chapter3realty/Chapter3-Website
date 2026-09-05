@@ -1647,6 +1647,32 @@ function audit() {
         E(`inline handler calls ${fn}() which is not defined on this page or in any bundle this page loads`);
     }
 
+    /* ---- a count-up animation must land on the value it overwrites ----
+     * The homepage badge row's second value was "Instant". The effects script
+     * keyed a count-up to `.why-stat:nth-child(2) .stat-kpi` and rewrote it to
+     * "8" on scroll. The colour check passed; nobody measured the text after
+     * the animation ran (MISTAKES 69). Any hook that writes textContent by
+     * position must match the markup on every page that loads it. */
+    {
+      const jsSources = [...s.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g)].map(m => m[1]);
+      for (const m of s.matchAll(/\/assets\/([A-Za-z0-9._-]+\.js)/g)) {
+        const f = path.join(ROOT, "assets", m[1]);
+        if (fs.existsSync(f)) jsSources.push(fs.readFileSync(f, "utf-8"));
+      }
+      const statsAt = s.search(/class="why-stats(?:\s|")/);
+      for (const js of jsSources) {
+        for (const d of js.matchAll(/sel:\s*'([^']*stat-kpi[^']*)',\s*end:\s*([\d.]+),\s*suf:\s*'([^']*)'/g)) {
+          const nth = +((d[1].match(/nth-child\((\d+)\)/) || [])[1] || 0);
+          if (!nth || statsAt < 0) continue;
+          const stats = s.slice(statsAt).split(/<div class="why-stat"[^>]*>/).slice(1);
+          if (stats.length < nth) continue;
+          const shown = ((stats[nth - 1].match(/class="stat-kpi"[^>]*>([^<]*)</) || [])[1] || "").trim();
+          const target = `${d[2]}${d[3]}`;
+          if (shown && shown !== target) E(`count-up animation rewrites "${shown}" to "${target}" on scroll (selector ${d[1]}) - match the markup or drop the hook`);
+        }
+      }
+    }
+
     /* ---- legal ---- */
     // Strip code and form controls: a number inside a calculator input is not ad copy.
     let prose = s.replace(/<script[\s\S]*?<\/script>/g, " ")
