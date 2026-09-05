@@ -847,6 +847,8 @@ const REGISTER_REGEX = [
   [/\bcount(?:s|ing)? your hours against\b/i, 'phrase - say whose hours are compared and what the test requires'],
   // aphorism shapes not already in AI_TELL_REGEX
   [/\b(?:costs the \w+ and keeps the|people buy here to be here|the terms are set|a loan from a future|bought timing|timing that will not arrive)/i, 'aphorism - name the actor and the consequence'],
+  // Owner, 2026-09-05, depreciation page: "Get them right in year one." Never again.
+  [/\bget (?:it|them|this|that|these|those|the \w+) right\b/i, 'idiom ("get it right") - say the correct action and who takes it'],
 ];
 
 const AI_TELL_REGEX = [
@@ -993,6 +995,10 @@ const PUNCH_WORDS = [
   [/\bthe bottom line\b/i, '"the bottom line" - state the fact'],
   [/\bthe lesson\b/i, '"the lesson" - state the fact, do not narrate a moral'],
   [/\bthe takeaway\b/i, '"the takeaway" - state the fact'],
+  // Owner, 2026-09-05, cost segregation page: "This is the sentence most cost
+  // segregation articles leave out." No build-ups. State the fact.
+  [/\b(?:the (?:sentence|part|thing|step|number|fact|question|rule|detail|piece) )?(?:that )?most (?:[a-z-]+ ){0,3}(?:articles|guides|pages|sites|posts|blogs|agents|people|owners|advisors|writers) (?:leave out|leave off|miss|skip|ignore|gloss over|never (?:say|mention|tell you|explain)|(?:do not|don't|won't|will not) (?:tell you|mention|say|explain))\b/i, '"most articles leave out" build-up - delete it and state the fact (owner, 2026-09-05)'],
+  [/\b(?:what|the (?:one|only) thing) (?:nobody|no one|they) (?:tells?|told|will tell) you\b/i, '"what nobody tells you" build-up - delete it and state the fact'],
   [/\bin conclusion\b|\bin summary\b|\bto sum up\b|\ball in all\b/i, 'summary opener - delete it'],
   [/\bthat said,|\bthat being said\b/i, '"that said" - start the sentence with the fact'],
   [/\bit(?:'s| is) important to\b|\bit should be noted\b/i, '"it is important to" - delete the frame, keep the fact'],

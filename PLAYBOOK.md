@@ -164,7 +164,7 @@ Passes, keep:
 - what to ask for, and when
 - what goes wrong if you skip it
 
-→ *Verify:* `audit` errors on a hero sub-header over 45 words and a sources
+→ *Verify:* `audit` errors on a hero sub-header over 30 words or phrased as a question, and a sources
 block over 90 words; warns on 3+ industry bodies, more than 2 dates, and under
 2 in-article CTAs on a page over 900 words.
 

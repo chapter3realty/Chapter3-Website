@@ -66,3 +66,16 @@ owners who "skipped" depreciation to keep things simple.
 - No typical land-to-building ratio. No safe-harbor dollar figure. No example
   with invented numbers that could be read as this market's numbers.
 - "We" help is an offer: Devin runs the closing statement lines with a buyer.
+
+## Owner instruction 2026-09-05: assessor steps, the condo case, an example
+The "no example with invented numbers" limit is lifted by the owner for one
+worked calculation, labelled "Round numbers, not a local price" ($50,000 land,
+$200,000 building, 20 percent, $300,000 price, $244,000 basis, $8,873 a year).
+The six steps point at the Horry County assessor department page
+(horrycountysc.gov/departments/assessor/); the county's Land Records app
+(/apps/LandRecords/) sits behind a sign-in, so the page links the department,
+not the app. The condo rule stated on the page: use the unit record's land line
+if it carries one; if blank, the CPA sets the share from the master deed
+percentage of common elements times the whole parcel's land value. What a
+Horry County condo record shows on its land line was NOT verified against a
+live record on this date; the page is written so either case is covered.

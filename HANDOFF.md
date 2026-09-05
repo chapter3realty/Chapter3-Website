@@ -885,9 +885,88 @@ overflow, header followed directly by main. Preflight 0.
 **Next.** He said "then we will finish working on the pages", meaning the five
 tax pages. Their previews are current.
 
+## 2026-09-05 late: the tax-page review round, three pages, two more phrase gates
+
+He reviewed the cost segregation, depreciation and 14-day pages from the
+previews and sent one message with every edit. All applied. The accommodations
+tax and short-term-rental tax pages had no notes and are unchanged.
+
+**Cost segregation.** New H1 "How do you write off a Myrtle Beach condo faster
+than 27.5 years?" with a 29-word sub. Hero button "Talk to a specialized
+agent". The short answer now says what a study is, why it matters on a
+furnished condo, and how it is done. A bar chart of the four recovery periods
+(5, 7, 15, 27.5 years) sits above the recovery table; one hue, bars measured
+proportional, the table below it is the accessible view. Two new H3s: a
+round-number example ($400,000 condo) and a five-step "How is a study done?".
+The rental-pool box is now "Want help finding your next investment?"; a second
+box after the 1031 paragraph offers help with the exchange; the bottom CTA
+reads "Have us help find your next investment."
+
+**His question, answered from the source.** "Can I use a loss I cannot use
+this year to offset rents next year, or do I need to wait to sell?" Pub 925,
+re-opened today: a disallowed passive loss carries to the next year and is
+deducted against passive income, which includes the rent from this unit and
+from any other rental. No sale is needed. Whatever is still unused is released
+in full when the whole property is sold in a taxable sale. The page, its FAQ
+answer and the schema say exactly that. Quotes in
+`research/invest-tax/material-participation-facts.md` and
+`cost-segregation-facts.md`.
+
+**Depreciation.** Sub rewritten as a 30-word statement. "Both are fixed on
+closing day" deleted. "Get them right in year one" deleted, and the phrase
+family is now banned (below). The split section is three question H3s: how to
+find the land value on the Horry County record (six steps), what to do when it
+is a condo, and how to calculate the yearly deduction (round-number example).
+The short answer carries the brief version of all three. "before your CPA sees
+it" is now "to help make it make sense".
+
+**Two facts here are not fully verified.** The county's Land Records app is
+behind a sign-in, so the page links the assessor department page and describes
+the search in words. Whether a Horry County condo record shows a land line was
+not checked against a live record; the page covers both cases (use the line if
+present, otherwise the CPA sets the share from the master deed). The owner has
+county access and can confirm one condo record. Noted in
+`rental-depreciation-facts.md`.
+
+**14-day rule.** H1 "How many nights can you use your own Myrtle Beach
+rental? The 14-day rule." for the local query. Hero button "Speak to an
+expert". The short answer ends "because they were never told this". The
+building box is now "Consult an expert real estate agent". The expense-split
+section has a worked example ($12,000 of costs, five sixths to the rental,
+$1,000 carried forward).
+
+**Two more phrase gates, positive-controlled.** REGISTER_REGEX bans "get it
+right / get them right / get the X right" ("never say this again ever").
+PUNCH bans the teaser build-ups "most articles leave out", "what nobody tells
+you" and the family around them ("straight to the point no build ups"). Both
+gates hit two other pages: `/hoa/violations-and-fines/` ("most owners miss
+it" is now "few owners check it") and `/sell/fsbo/` (the "get it right"
+disclosure line is now "Fill out the state disclosure form completely and
+honestly the first time"). Fixed in the same commit.
+
+**Audit facts learned this round.** The hero sub cap is 30 words, not 45, and
+a sub may not be a question; both are in `build.js`, and CLAUDE.md and
+PLAYBOOK A14 said 45 until this commit. "caught up" trips the catch ban.
+
+**His strategy question, still his call.** He asked whether these pages should
+carry more local information or more about Chapter3 for SEO and AEO, or whether
+their job is credibility when a model is asked about us. Recommendation given:
+the pages earn citations with checkable local facts, so keep them as they are;
+Chapter3 credibility lives in schema, /about/, reviews and one short
+"what we do here" section per page, which they already have. Waiting on him.
+
+**Measured.** Preflight 0. Dates unchanged (all three pages were already dated
+today). All five tax pages at 1366 and 390: no overflow, one H1 each, no
+console errors, only the pre-existing brass eyebrow contrast exceptions.
+Previews republished at the same three URLs.
+
 ## Suggested order for the next session
 
-0. **Finish the five tax pages.** He is ready to review them again.
+0. **The three revised tax pages are on the branch and in the previews.** Expect
+   the next line edits from him, plus his answer on the local-versus-Chapter3
+   question above. Two pages (accommodations tax, STR tax) still await notes.
+0a. **Ask him to check one Horry County condo record** for a land line, and
+   correct the depreciation page if the record shows something else.
 0b. **Homepage: the declutter version with his evening edits is on the branch.**
    He has the corrected preview; expect line edits. Any further homepage
    change: mock it up in a preview, open the rendered preview yourself

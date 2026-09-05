@@ -96,3 +96,17 @@ reader.** Phrase it as what the tests measure, not as who passes.
   A disclaimer-section heading is now a build error.
 - The owner's name removed from all five pages' offer sentences.
 - CTA is "Book a consultation call".
+
+## Carryover of a disallowed loss - Publication 925, re-read 2026-09-05
+Quoted: "the disallowed deductions are allocated among your activities for the
+next tax year ... treated as deductions or credits from the activity for the
+next tax year." So a passive loss the owner cannot use this year carries to
+next year and offsets passive income then, including rent from the same unit
+or another rental. And, quoted: "Any passive activity losses (but not credits)
+that haven't been allowed (including current-year losses) are generally allowed
+in full in the tax year in which you dispose of your entire interest in the
+passive (or former passive) activity", in "a transaction in which all realized
+gain or loss is recognized." The owner asked "can I use it to offset rents next
+year or do I need to wait to sell?" Answer on the cost segregation page: next
+year against rent, no sale needed; whatever is left is released at a taxable
+sale of the whole property.

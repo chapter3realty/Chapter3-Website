@@ -66,3 +66,15 @@ Read at the sources on 2026-09-04. Re-open before reuse.
 - Never write that a reader should order a study. Write what decides whether
   one is worth ordering, and stop.
 - No "permanent" on bonus depreciation.
+
+## Owner instruction 2026-09-05: an example and the study steps
+The "no invented example" limit above is lifted by the owner: "give an example
+and an example of how to do the study". The page carries a worked example in
+round numbers, labelled "Round numbers, not a local price", with the arithmetic
+shown ($360,000 / 27.5 = $13,091; $300,000 / 27.5 = $10,909; year one $60,000
++ $10,909). It states "The share a study finds varies by unit" so the $60,000
+cannot be read as typical. Study cost is still not stated. The five study
+steps are process, not tax positions. The look-back step (a change of method
+that takes the missed depreciation in one year) is the automatic change with a
+negative section 481(a) adjustment taken in full in the year of change; stated
+on the page without the section number, per the writing rules.

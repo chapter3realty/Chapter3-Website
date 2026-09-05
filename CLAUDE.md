@@ -92,7 +92,7 @@ Never in body copy: the name of the body that wrote a rule (Fannie Mae, Freddie
 Mac, a Selling Guide, the NAIC, a state department), when a rule took effect,
 statute section numbers, or how we verified something. Say "your lender will
 require" and move on. Sources go in the sources line, under 90 words, links
-only. Hero sub-header under 45 words. Two CTAs inside the article.
+only. Hero sub-header 30 words or fewer, a statement, not a question. Two CTAs inside the article.
 
 **Owner rule 2026-09-05, after reading a tax page for an hour and understanding
 none of it.** Say everything with the fewest words. One idea per sentence.
