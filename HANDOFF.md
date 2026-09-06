@@ -1031,10 +1031,78 @@ whether the cash-to-close page joins the percentage list.
 queries. "Who should I hire" answers are won off-site (see the 2026-09-03 AEO
 section); no page fixes that.
 
+## 2026-09-06: investor batch 1, four pages built, plus a generator and two gates
+
+He approved all twelve pages from the ranked list and asked for questions "no
+AI knows". Batch 1 is the four highest on that list, built in rank order.
+Previews: run-the-numbers b53ffca2, out-of-state 1a095913, property-management
+abac4e3a, rental-program-vs-airbnb 7abeded4. All four are on the branch and
+in the sitemap; preflight 0; browser-measured at 1280, 768 and 320 with no
+contrast, overflow or console defects beyond the sitewide brass labels.
+
+**How they were built.** `tools/mkpage.js` takes a spec in `specs/` and
+clones the chrome of `/invest/14-day-rule/` byte for byte, rewriting every
+identity field as one operation (title, description, canonical, og, twitter,
+BreadcrumbList, WebPage, Article, FAQPage). It refuses to write if any donor
+phrase survives, if the chrome outside the identity elements differs from the
+donor, if the title or description is out of range, or if the hero sub is over
+30 words or a question. Every page in the remaining eight should go through it.
+Edit the spec, rerun, never hand-edit the page.
+
+**Why the generator exists.** All five tax pages had been hand-cloned and
+every one kept the donor's BreadcrumbList @id, WebPage.breadcrumb and
+WebPage.mainEntity from `/invest/str-rules/`. Fixed on all five (markup only,
+dates untouched) and gated: `audit` now errors when any page-identity @id
+names another page. Positive-controlled.
+
+**Two more findings, both fixed.** (1) Seven lead forms let a visitor send an
+email-only request without the consent box, showed "Thanks", and sent nothing,
+because the shared sender and the CRM both refuse a lead without consent. The
+box is now required on all seven and verified in the browser on three.
+(2) The browser harness itself sent one real test lead to the CRM (MISTAKES
+72). The harness now blocks the CRM route at the network layer and stubs the
+sender after load; PLAYBOOK A33 says so. He was asked to delete the test lead
+("Test Person", 123 Ocean Blvd, test@example.com, run-the-numbers page).
+
+**The conversion page.** `/invest/run-the-numbers/` is a form: address, plan,
+notes, name, phone, email, the locked TCPA string. It posts through
+`c3SendForm` with `interest` mapped onto the CRM's closed set ("STR / Vacation
+rental" for a short-term plan, "Investment property" otherwise) and the plan
+in `message`. It is in `CTA_DESTINATIONS`, so a boxed button to it is a valid
+CTA, and the mid-page CTA gate counts it. Every batch-1 page's hero and boxes
+point there.
+
+**Facts and their limits.** Research files under `research/invest-next/`,
+one per page, with every quote and a "Not verified" list. Every source cited
+on a page was re-opened by the writer on 2026-09-06 before the spec was
+written. Three limits worth knowing: no primary source exists for a Myrtle
+Beach management-fee average, so the management page states none; Vrbo's tax
+and liability pages could not be opened, so the rental-program page cites
+only Vrbo's fee page; the Horry County ordinance that exempts an owner from
+the county business license when a licensed company manages the rental was
+retrieved by the researcher through Municode's API but could not be re-opened
+by the writer, so it is not on any page.
+
+**What A20 still needs.** None of the four carries an attributed sentence.
+The question list sent to him on 2026-09-06 asks for exactly those facts; his
+answers go in as one sentence each, then the A20 warnings clear.
+
+**Wiring done.** Inbound body links from the invest hub (step 6, the condo
+card, the run-the-numbers FAQ), `/invest/condos/`, and `/invest/14-day-rule/`
+(link wrapped on existing words, so its date did not move). The hub and the
+condos page moved to 2026-09-06 because their prose changed.
+
+**Batch 2, in rank order.** Where to buy by strategy (A1 against the hub FAQ
+and `/invest/str-rules/` first), cash to close (qualitative unless he adds it
+to `DOWN_PAYMENT_OK_PAGES`), STR setup after closing, mid-term rentals. Then
+foreclosures, student rentals, LLC, landlord rules, selling a rental.
+
 ## Suggested order for the next session
 
-00. **The investor batch above, once he picks.** Lane A per page: A1 overlap
-   check first, research file per page, gates 0, browser measure, preview.
+00. **Investor batch 2** (see the 2026-09-06 section): specs through
+   `tools/mkpage.js`, research file per page, sources re-opened by the writer,
+   gates 0, browser measure with the CRM route blocked, preview. Batch 1 is
+   awaiting his review and his answers to the question list.
 0. **The three revised tax pages are on the branch and in the previews.** Expect
    the next line edits from him, plus his answer on the local-versus-Chapter3
    question above. Two pages (accommodations tax, STR tax) still await notes.

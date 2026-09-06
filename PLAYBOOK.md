@@ -571,9 +571,13 @@ your layout. Assert computed `display`, not the class name.
 `scrollWidth`. Content can be cut off inside a scrolling container while the
 page reports no overflow.
 
-**A33. Forms.** Exercise every validation path with `c3SendForm` stubbed so no
-fake lead is sent. Confirm the error text, the success state, and that nothing
-submits when validation fails.
+**A33. Forms.** Exercise every validation path with the CRM route blocked at
+the network layer (`context.route('**/api/forms/**')`) AND `c3SendForm` stubbed
+*after* the page loads, never in an init script: every form page defines its
+own `c3SendForm` inline and overwrites an early stub (MISTAKES 72, a real test
+lead reached the CRM). Count requests to `/api/forms/`; any is a failed test.
+Confirm the error text, the success state, and that nothing submits when
+validation fails.
 
 **A34. Calculators.** Hand-compute at least two expected values independently
 and compare to the dollar. Also test a typed `0` and a `0%` rate — both have

@@ -1076,6 +1076,7 @@ const CTA_DESTINATIONS = new Set([
   "/buyers/closing-costs/",
   "/buyers/property-taxes/",
   "/invest/long-term-rental/",
+  "/invest/run-the-numbers/",
   "/sell/capital-gains/",
   "/sell/net-proceeds/",
 ]);
@@ -1368,6 +1369,27 @@ function audit() {
       try { parsed.push(JSON.parse(b)); }
       catch (err) { E(`invalid JSON-LD: ${String(err.message).slice(0, 60)}`); }
     }
+    /* Donor identity left behind in the schema (PLAYBOOK A23).
+     *
+     * All five investor tax pages shipped with a BreadcrumbList @id, a
+     * WebPage.breadcrumb and a WebPage.mainEntity that named the page they were
+     * cloned from, /invest/str-rules/. Google then reads two pages claiming one
+     * breadcrumb and one article. Every @id that describes THIS page must live
+     * under this page's own canonical URL. Found 2026-09-05 while building the
+     * page generator; fixed on all five, gated here so a clone cannot repeat it. */
+    if (url) {
+      const own = url.split("#")[0];
+      const foreign = (id) => typeof id === "string" && /^https?:/.test(id) && id.split("#")[0] !== own;
+      const bad = [];
+      for (const blk of parsed) {
+        if (!blk || typeof blk !== "object") continue;
+        const t = blk["@type"];
+        if (["BreadcrumbList", "WebPage", "Article", "FAQPage"].includes(t) && foreign(blk["@id"])) bad.push(`${t} @id ${blk["@id"]}`);
+        if (t === "WebPage") for (const k of ["breadcrumb", "mainEntity"]) { const v = blk[k] && blk[k]["@id"]; if (foreign(v)) bad.push(`WebPage.${k} ${v}`); }
+        if (t === "Article") { const v = blk.mainEntityOfPage && blk.mainEntityOfPage["@id"]; if (foreign(v)) bad.push(`Article.mainEntityOfPage ${v}`); }
+      }
+      if (bad.length) E(`schema @id names another page (donor identity left behind, A23): ${bad[0]}`);
+    }
     /* HTML entities inside JSON-LD.
      *
      * The HTML parser does not decode entities inside <script>, so
@@ -1628,7 +1650,9 @@ function audit() {
       if (words(prose) > 900) {
         const L = prose.length;
         let mid = 0, total = 0;
-        for (const m of prose.matchAll(/<a\b[^>]*href="(#lead-form|\/contact\/|tel:[^"]*)"[^>]*>/g)) {
+        // /invest/run-the-numbers/ and its #run-form anchor are the investor
+        // conversion page (owner, 2026-09-05): a boxed button to it is an ask.
+        for (const m of prose.matchAll(/<a\b[^>]*href="(#lead-form|#run-form|\/contact\/|\/invest\/run-the-numbers\/|tel:[^"]*)"[^>]*>/g)) {
           if (!/class="[^"]*\bbtn\b/.test(m[0])) continue;   // boxed only
           total++;
           const at = m.index / L;

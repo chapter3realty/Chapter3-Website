@@ -293,3 +293,31 @@ left. Implemented and run against the stylesheet, it flagged five legitimate
 modifier classes (`.chooser-seller`, `.chooser-investor`, `.chooser-buyer`,
 `.invest-type-card-str`, `.invest-type-card-ltr`), all of which take their
 base styling from a companion class. Not shipped. PLAYBOOK A21 and rule 4.
+
+## 72. A browser test sent a real lead to the CRM (2026-09-05)
+
+**What happened.** The form test for `/invest/run-the-numbers/` stubbed
+`window.c3SendForm` in an init script, before the page loaded. The page then
+defined its own `c3SendForm` and overwrote the stub, so the "consent checked"
+step ran the real sender and posted to `app.chapter3realty.com/api/forms/lead`.
+The captured payload was `null`, which is how it was noticed. One test lead
+(name "Test Person", address "123 Ocean Blvd, Myrtle Beach", email
+test@example.com, plan "Short-term rental", page run-the-numbers) may be in the
+CRM from about 23:35 UTC. The owner was told to delete it.
+
+**Why the existing rule did not stop it.** PLAYBOOK A33 says stub `c3SendForm`.
+It did not say when. An init-script stub is overwritten by any page that
+defines the function inline, which is every page with a form.
+
+**What stops it recurring.** The harness (`verify-forms.js`) now does two
+things, and both are required: it blocks the CRM route at the network layer
+(`context.route('**/api/forms/**')` fulfilled locally) so nothing can leave the
+browser whatever the page defines, and it installs the stub *after* `load`.
+It also counts requests to `/api/forms/` and prints the count; a non-zero
+count is a failed test. A33 now says so.
+
+**Found on the way.** Seven existing lead forms let a visitor submit with an
+email only and no consent box, showed "Thanks", and sent nothing, because the
+shared sender refuses a lead without consent and the CRM refuses it too. Fixed
+on all seven (the box is now required to send) and verified in the browser on
+three of them with the route blocked.

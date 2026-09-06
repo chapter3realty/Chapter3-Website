@@ -121,7 +121,7 @@ function ldSubmit(){
  err.style.display='none';
  if((true&&!cx)||!n){fail('Add the property address and your name.');return;}
  if(!ph&&!em){fail('Add a phone number or an email so we can reach you.');return;}
- if(ph&&!c){fail('Check the consent box so we can call or text you, or leave the phone blank and use email.');return;}
+ if(!c){fail('Check the consent box to send the request.');return;}
  c3SendForm({property_address:cx,name:n,phone:ph,email:em,consent:c?'yes':'no'},'net-proceeds');
  document.getElementById('ldWrap').style.display='none';
  document.getElementById('ldOk').style.display='block';

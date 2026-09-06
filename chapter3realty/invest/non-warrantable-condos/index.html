@@ -127,7 +127,7 @@ function nwSubmit(){
   err.style.display='none';
   if(!b||!n){fail('Add the building name and your name.');return;}
   if(!ph&&!em){fail('Add a phone number or an email so we can send you the answer.');return;}
-  if(ph&&!c){fail('Check the consent box so we can call or text you, or leave the phone blank and use email.');return;}
+  if(!c){fail('Check the consent box to send the request.');return;}
   c3SendForm({building:b,name:n,phone:ph,email:em,consent:c?'yes':'no'},'non-warrantable-building-check');
   document.getElementById('nwWrap').style.display='none';
   document.getElementById('nwOk').style.display='block';
