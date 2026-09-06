@@ -69,7 +69,7 @@ module.exports = {
       h.ul([
         "The address, or the MLS number.",
         "Your plan: long-term rental, short-term rental, mid-term rental or fix and flip. Not sure is fine.",
-        "How you plan to pay, cash or a loan. We do not need your finances to run the property.",
+        `How you plan to pay, cash or a loan. We do not need your finances to run the property. ${h.a("/invest/cash-to-close/", "What you pay at closing, beyond the down payment")}.`,
         `Whether you will stay in it yourself. More than 14 nights a year changes the tax treatment. ${h.a("/invest/14-day-rule/", "The 14-day rule")}.`,
         "Anything you already have: a rent history, the dues, a prior inspection.",
       ]) + FORM },
