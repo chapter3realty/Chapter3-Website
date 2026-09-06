@@ -1,9 +1,10 @@
 /* /invest/landlord-rules/ - what a South Carolina landlord must do, and how
  * an eviction runs in Horry County. Facts: research/invest-next/landlord-rules-facts.md;
  * every cited source re-opened by the writer 2026-09-06 (statute pages, court
- * forms, the fee schedule, county pages, federal pages). Brokerage facts from
- * research/invest-next/owner-answers-batch3.md (answers 14, 16, 17, 18),
- * attributed to Devin Day. Built by tools/mkpage.js. */
+ * forms, the fee schedule, county pages, federal pages). Brokerage facts and
+ * the eviction story from research/invest-next/owner-answers-batch3.md
+ * (answers 14, 16, 17, 18, round 2), attributed to Devin Day. Built by
+ * tools/mkpage.js. */
 const { h } = require("../tools/mkpage.js");
 
 const RTN = "/invest/run-the-numbers/";
@@ -55,7 +56,7 @@ module.exports = {
       h.p(`Showings when you sell follow the same 24 hours. ${h.a("/sell/rental-property/", "Selling with the tenant in place")}.`) },
     { h2: "Can you end a lease to sell the house?", html:
       h.p(`No. ${h.ext(EJECT, "The grounds for ejectment")} are unpaid rent, a term that has ended, or a lease violation. Selling the house is not one of them. A fixed-term lease runs to its end date, or ends by agreement, usually a buyout you pay the tenant to leave early.`) +
-      h.p(`${h.ext(LTA, "A month-to-month tenancy")} ends on 30 days written notice from either side, for any reason. That is the fastest legal route to an empty house. A tenant who has complained about a code violation can still raise retaliation as a defense, so state the reason in the notice: the sale.`) },
+      h.p(`${h.ext(LTA, "A month-to-month tenancy")} ends on 30 days written notice from either side, for any reason. That is the fastest legal way to an empty house. A tenant who has complained about a code violation can still raise retaliation as a defense, so state the reason in the notice: the sale.`) },
     { h2: "What happens when rent is late?", html: (bg) =>
       h.p(`Rent unpaid ${h.ext(LTA, "five days after the due date")} lets you end the lease, if the tenant had the written notice. The bold clause in the lease is that notice. Without the clause, one written notice per lease term is enough. The clause carries into a month-to-month tenancy after the lease term ends.`) +
       h.p(`${h.ext(EJECT, "Rent keeps accruing")} after you file, at the lease rate, until the tenant leaves. Accepting it does not waive the eviction and does not renew the lease.`) +
@@ -66,7 +67,8 @@ module.exports = {
       h.p("A month-to-month tenancy ends on 30 days written notice from either side. A tenant who stays past the end date is a holdover, and you file for possession.") +
       h.p(`${h.ext(LTA, "Retaliation is barred")}. You cannot raise the rent above market, cut services or file for possession because the tenant complained to a code office, or to you, about a violation. The tenant raises that defense in writing within ten days of the rule to vacate. A retaliatory non-renewal with the rent current bars possession for 75 days. Damages run to three months of rent or three times the loss, whichever is greater, plus attorney's fees. Tenant neglect and the tenant's own material breach are exceptions.`) },
     { h2: "How does an eviction work in Horry County?", html: (bg) =>
-      h.p("The law sets the minimum times. The calendar belongs to the court and the sheriff. Devin Day, Chapter3's operations officer, puts the Horry County process at up to three weeks from filing to the writ. A strong case with a clean ledger has finished in a few days. After the writ, the tenant has 24 hours. There are four steps.") +
+      h.p("The law sets the minimum times. The court and the sheriff set the actual dates. Devin Day, Chapter3's operations officer, puts the Horry County process at up to three weeks from filing to the writ. A strong case with a clean ledger has finished in a few days. After the writ, the tenant has 24 hours. There are four steps.") +
+      h.p("The fastest eviction in Chapter3's files took a few days. Police were called to a fight between two tenants inside the unit. The officers barred the tenant who struck the other from returning to the property. The other tenant wanted that person off the lease. The person refused, and the landlord filed. The belongings left in a few trips with a police escort. A documented crime inside the unit is the strongest case a landlord can file.") +
       h.h3("Step 1: file the application") +
       h.p(`File the ${h.ext(FORMS, "Application for Ejectment")}, form SCCA 732, at the magistrate court for the property's area. You swear to the facts before a notary and attach the lease or other written proof. The grounds are unpaid rent, a term that has ended, or a lease violation. ${h.ext(LTA, "Your broker-in-charge or property manager can file it")} for you, with no separate charge.`) +
       h.p(`${h.ext(FEES, "The statewide fee schedule")} lists $20 to file, $10 to serve and a $10 assessment. It adds $5 to mail when mailing is required and $10 to serve the writ if that is needed. The total is $55. ${h.ext(FEE2027, "The filing fee becomes $40")} on January 1, 2027, and the court has not published the rest of the new schedule.`) +
@@ -89,7 +91,7 @@ module.exports = {
         "Calendar the answer window, ten or twenty days, and the hearing date. Gather the photos, the ledger and the notices, and bring the witnesses, because the court takes no written statements.",
         "Check the tenant's military status and file the affidavit before any default judgment.",
         "Request the sit-out with the sheriff's civil process office and meet the deputy at the property.",
-        "Photograph the unit, change the locks once the deputy hands it back, and list it for rent that week.",
+        "Photograph the unit, change the locks once the deputy returns possession, and list it for rent that week.",
       ]) +
       h.p("Rent keeps accruing until the tenant leaves, so every day saved on steps two and three is rent recovered.") },
     { h2: "Will a property manager handle the eviction?", html:

@@ -186,3 +186,66 @@ human reading"
 - Any attorney, screening company or insurance agent by name (6, 18, 24): no AfBA exists.
 - That Chapter3 is or is not HUD-registered (29).
 - The tax-sale interest schedule (27): the statute's quarterly percentages stay off the page.
+
+## Round 2 (2026-09-06, later): instruction and four stories, verbatim
+
+Instruction on occupancy: "just say most lenders will require 60 day's to move in for VA and
+FHA and USDA loans."
+
+Selling a tenant-occupied house (for /sell/rental-property/): "our agent had a sale once we
+were helping a guy sell his tenant occupied home he had bought 15 years prior his tenant was 8
+months away from renewing a lease but he had to move to new york to be with his sister and did
+not want such a big financial investment to be that far away from him he didn't feel comfortable
+managing from a far or having anyone else manage the property so he decided to sell we didnt
+want to offer the tenant a buyout unless we had a hard time finding an investor buyer in which
+case we would have offered the buy out to widen our buyer pool to a bigger array of investors
+along with owner occupied buyers the property was in good shape and had been appreciating well
+his current cashflow was over 1,200 but the next investor wasnt going to get that same cashflow
+because they would be paying higher monthly taxes than he was and a higher loan amount than he
+had in total the next investor would only make about half given the current cashflow of 600
+dollars but again the home was in a great location and was appreciating so we started to market
+to our list of investors who like modest cashflow and high appreciating homes the agent found
+him a cash buyer who closed within 13 days of the day he listed."
+
+August turnover (for /invest/student-rentals/): "we havnt had any problem with august turnover
+because that's when new students are coming to the area and need a home to rent. August is the
+month that we have found to be best to have 0 vacancy when finding a new tenant close to the
+college especially if you begin marketing your rental 1 month before the lease is up. I guess you
+should take this advice and replace my dep3nds on your strategy fro a more concrete answer."
+
+Fastest eviction (for /invest/landlord-rules/): "the fastest evictions we ever saw was a lady
+who had a boyfriend and one day they got into a fight and the lady slapped and scratched her
+boyfriends face well after that the police got involved and immediately they had to settle with
+the landlord and the police on if she was allowed to be back on the property the police decided
+she is not allowed to be back at the property in which case the boyfriend wanted her off the
+lease but she didn't want off the lease because of the legal complication the landlord could have
+had if she wasn't taken off he decided to evict her off of the lease and the total turnaround
+time was only a few days with a few police escorted trip to take her things from the house. the
+fastest you can evict someone is when the police are involved and something illegal has occurred
+in the house."
+
+LLC clarification (for /invest/llc/): "a customer is fully allowed to move their house into an
+LLC with the lenders approval they can even do it as a owner occupied home but the problem
+happens when they are renting the home out when they said it was going to be owner occupied"
+
+Register instruction: "When you are writing go back through all pages and make sure there's not
+a single phrase or filler word and that there's not a single other type of speaking such as
+metaphor that's not purely literal and on topic"
+
+Courthouse sale story (for /invest/foreclosures/): "an agent that works with us now got a call
+from a guy who wanted to bid on a foreclosed house at the courthouse sale, and instead of just
+cheering him on, he drove out to look at it first. Brick ranch on an acre off a two-lane road,
+tarped roof, and a car in the carport with a current plate, which told him everything. He
+knocked. An older woman answered, the sister of the man who used to own the place, still living
+there and getting nowhere with the bank because her name was never on the loan. Most people would
+have walked back to the car. He sat on the porch steps with her for an hour, then spent the next
+two weeks digging: pulled the old records, found that the little mobile home behind the main
+house had never been signed over with the land, which meant it was hers outright and nobody could
+touch it. He brought that to his buyer before the sale, not after, so the man knew exactly what
+he was bidding on and could plan around it. Then he got the two of them at the same kitchen table
+and worked out the deal himself, a written lease on that back corner of the lot, fair to both,
+signed in an afternoon. His buyer got a renovation with someone already on site watching it. She
+got her home on paper for the first time in years. The agent got the listing that summer, sold it
+in eleven days to a couple from Ohio, and the only reason any of it worked is that he was the one
+person in the whole thing who bothered to knock on the door. Feel free to shorten this and
+simplify this for the site"

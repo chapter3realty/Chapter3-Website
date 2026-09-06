@@ -1312,6 +1312,52 @@ broker must submit the offer. Do not state either fact on the site.
 (which magistrate office takes which address); the stories he offered to add
 next; batch-1 and batch-2 question lists.
 
+## 2026-09-06, third pass: four stories, the 60-day rule, and a literal-register sweep
+
+His second message (verbatim at the end of
+`research/invest-next/owner-answers-batch3.md`) gave one instruction and four
+stories, and asked for a sweep of every phrase, filler word and figure of
+speech on the five pages. All applied; preflight 0; browser-measured at three
+widths; previews republished at the same URLs.
+
+- **The 60-day rule, his wording.** The selling page now says "most lenders
+  require the buyer to move in within 60 days of closing on an FHA, VA or USDA
+  loan", linked to Handbook 4000.1 for the FHA figure. The VA statute link
+  and the VA-only sentence are gone. Do not narrow it back to FHA alone; the
+  wording is his.
+- **Stories on the pages, anonymised.** The 15-year owner moving to New York
+  (eight months left on the lease, cash flow over $1,200 a month for him and
+  about half for the next owner, investors who accept modest cash flow in an
+  appreciating area, cash buyer closed 13 days after listing) on the selling
+  page. August as the no-vacancy month near campus, with marketing one month
+  before the lease ends, on the student page; it replaced the "depends on the
+  strategy" line at his request. The few-day eviction after a fight inside
+  the unit and a police bar on the landlord page, with no genders or names.
+  The brick ranch, the previous owner's sister, the mobile home that was never
+  conveyed with the land, the written lease for the back corner, and the
+  eleven-day sale, on the foreclosures page under "Why visit the property
+  before the sale?" His original had "on paper", "told him everything",
+  "getting nowhere" and "bothered to knock"; all rewritten literal.
+- **LLC clarification.** "With the servicer's approval you can deed the house
+  to your LLC, and that includes a home you live in. The problem is renting
+  out a house you told the lender you would live in."
+- **Register sweep.** Removed or replaced on the five pages: "the line that
+  gets missed", "in the tenant's eyes", "draws the line", "costs you twice",
+  "route", "layers", "line up", "walk away with", "the hard part", "run the
+  company as a company", "silence", "looks wrong", "hands over", "the clock
+  restarted", "upside", "hold back", "shapes the product", "refills",
+  "carries a premium", "sits over", "the number that decides the numbers",
+  "plenty", "the calendar belongs to", "hands it back". The audit's own
+  regexes then caught "taxes leave" (personification) and a stray "The
+  former" reading-order phrase; both fixed. The audit does not catch most
+  metaphors; the sweep was manual, sentence by sentence. Batches 1 and 2
+  have not had this sweep.
+
+**Still open.** Question 15 (which magistrate office takes which address);
+the VA handbook itself (the 60-day figure is now his instruction, not a
+citation); the batch-1 and batch-2 question lists and the same sweep on
+those eight pages.
+
 ## Suggested order for the next session
 
 00. **All twelve investor pages are built and on the branch** (three 2026-09-06
