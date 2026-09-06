@@ -1097,12 +1097,76 @@ and `/invest/str-rules/` first), cash to close (qualitative unless he adds it
 to `DOWN_PAYMENT_OK_PAGES`), STR setup after closing, mid-term rentals. Then
 foreclosures, student rentals, LLC, landlord rules, selling a rental.
 
+## 2026-09-06: investor batch 2, four more pages, eight of twelve built
+
+Built in rank order after batch 1, without waiting for his review, because he
+asked for at least ten before the weekend ended. Previews: cash-to-close
+33d26957, where-to-buy 877583a2, str-setup 138ec994, mid-term-rentals
+3f3b063b. All four are on the branch, wired, preflight 0, browser-measured at
+1280, 768 and 320 with nothing beyond the sitewide brass labels. Every source
+cited on a page was re-opened by the writer on 2026-09-06.
+
+**Cash to close.** Qualitative on the loan: no down-payment percentage, rate
+or payment amount. The buyer-pays exceptions to the deed fee (foreclosure,
+government and retirement-plan deeds) and the county's doubled license rate
+for a business with no fixed place in the county are the two facts national
+pages do not carry. Whether an out-of-state owner's rental counts as "no
+fixed place of business" is the county's call and is in the question list.
+
+**Where to buy.** A seven-row table over nine areas: county, nightly-rental
+rule, license, local levies, fit. The fit column is our reading of the
+market (the hub's established positions), not a rule. No price figures: the
+MLS statistics site (coastalcarolinas.org) would not resolve, so prices link
+to the market report. Three facts worth knowing: Georgetown County's tax
+threshold is 30 days, not 90; Conway allows nightly rental only as a
+commercial use in three downtown districts; and two state bills in committee
+would rewrite every row.
+
+**Setting up a short-term rental.** Eight steps in the order the sources
+support. The state retail license is needed only for direct bookings. The
+City of Myrtle Beach's own site gives two license years (June 1 on the FAQ,
+renewals due April 30 on the division page); the page uses the division
+page's April 30 and the FAQ conflict is in the question list. The county's
+personal property return on furnishings is on the page because the county's
+own inventory form lists beds, sofas and the refrigerator.
+
+**Mid-term rentals.** The page's one claim that matters: inside the Myrtle
+Beach city limits the floor is 90 nights, not the 30 that national advice
+gives, because the city counts any stay under 90 days as a short-term rental
+and R zones bar those. The counter-rule is the December 2024 conversion
+overlay between Kings Highway and the ocean, where short-term buildings of
+more than two units may not be leased for 90 days or more. That ordinance is
+a scanned PDF; the writer could not machine-read it and quotes the codified
+section the researcher read on Municode and OCR'd. If he wants a human read,
+the city's copy is at cityofmyrtlebeach.com under "2024-069 Conversion
+Overlay". Surfside Beach defines transient as under 30 days and long-term as
+365 or more; the months between are undefined and the page says to ask the
+town.
+
+**Not on any page, deliberately.** Tidelands Health's site blocks fetches, so
+Tidelands Waccamaw is named with its town only, no beds or address. No
+furnished-rent figures exist anywhere primary; the page gives the federal
+lodging rate for Horry County as the one public reference and says so. No
+Myrtle Beach management-fee average exists; the management page states none.
+
+**Research files.** `research/invest-next/` now holds eight files, one per
+page. The mid-term file in commit 4f6bbda was the researcher's 561-line
+draft, captured mid-task by `git add -A`; this commit carries the trimmed
+final. Every file ends with "Questions only the brokerage can answer"; the
+question list sent to him is drawn from those.
+
+**Batch 3, the last four in rank order.** Foreclosures and the Master-in-Equity
+sale, student rentals near Coastal Carolina, holding a rental in an LLC,
+landlord rules and evictions, and selling a rental with tenants in place.
+Same method: research file, sources re-opened by the writer, spec through
+`tools/mkpage.js`, gates 0, browser measure, preview.
+
 ## Suggested order for the next session
 
-00. **Investor batch 2** (see the 2026-09-06 section): specs through
-   `tools/mkpage.js`, research file per page, sources re-opened by the writer,
-   gates 0, browser measure with the CRM route blocked, preview. Batch 1 is
-   awaiting his review and his answers to the question list.
+00. **Investor batch 3, the last four** (see the second 2026-09-06 section):
+   foreclosures, student rentals, LLC, landlord rules, selling a rental. Same
+   method. Batches 1 and 2 await his review and his answers to the question
+   list; apply his edits to the specs and regenerate, never to the pages.
 0. **The three revised tax pages are on the branch and in the previews.** Expect
    the next line edits from him, plus his answer on the local-versus-Chapter3
    question above. Two pages (accommodations tax, STR tax) still await notes.
