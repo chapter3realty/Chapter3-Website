@@ -1161,12 +1161,97 @@ landlord rules and evictions, and selling a rental with tenants in place.
 Same method: research file, sources re-opened by the writer, spec through
 `tools/mkpage.js`, gates 0, browser measure, preview.
 
+## 2026-09-06: investor batch 3, the last five pages, twelve of twelve built
+
+Built in rank order after batch 2, same method: research file with verbatim
+quotes, every cited source re-opened by the writer on 2026-09-06 (curl and
+pypdf phrase checks, all confirmed), spec in `specs/`, page from
+`tools/mkpage.js`, audit to zero errors, wired, `preflight` 0, browser-measured
+at 1280, 768 and 320 (no low-contrast node, no overflow, one h1, consent gate
+holds, no console error). Previews: landlord-rules 207d106d, llc aca79303,
+foreclosures 59ebf067, student-rentals 19e1795e, rental-property f9f46d1b. The
+five: `/sell/rental-property/`, `/invest/student-rentals/`,
+`/invest/landlord-rules/`, `/invest/llc/`, `/invest/foreclosures/`. Inbound
+body links were added by wrapping existing words on twelve pages (invest hub,
+sell hub, dscr-loans, brrrr, fix-and-flip, cash-to-close, where-to-buy,
+out-of-state, property-management, sell-my-condo, conway submarket), so no
+page aged except the two hubs, already dated today.
+
+**Selling a rental.** The withholding rate is the state's top individual
+rate for the year of the sale (6 percent for 2025, 5.21 percent for 2026), not
+the 7 percent every older page on the web still carries; the live tax pages
+already had this right. The lease and the deposit follow the property; the
+seller stays liable for the deposit until it is transferred and the tenant
+told in writing. Bookings that start within 90 days of recording go with the
+property, later guests are refunded within 45 days, and every future booking
+must be disclosed in writing before the contract.
+
+**Student rentals.** Read from the two zoning PDFs themselves (Conway UDO
+dated 7.20.26, Horry County Appendix B dated 9.1.26): the city counts a family
+as up to three unrelated people; the CCU Neighborhood Overlay names five
+subdivisions of record where unrelated occupants cannot exceed the bedroom
+count on the county record, never more than four, with no street or yard
+parking 11pm to 8am; the county allows five unrelated and carries the same
+overlay on its side of the line. Those five subdivision names are ordinance
+text, not conclusions about any community. No public rent index exists for
+student houses; the only public figure is the university's $8,086 off-campus
+housing allowance, which the page calls a budgeting figure, not a rent.
+
+**Landlord rules.** Statutory minimums only. Fees are the court's statewide
+Attachment K ($55 with service) and H.4813, signed 2026-05-15, which doubles
+the filing fee to $40 on 2027-01-01; the court has not published the rest of
+the new schedule, so the page does not add it up. The county posted in
+October 2024 that the Surfside Beach magistrate office was closed for
+maintenance and no page says it reopened; the page says call first. Observed
+timelines (filing to writ, sit-out scheduling, which office takes which
+address) are owner questions, not on the page. The 2026 servicemember rent
+ceiling is $10,542.60 (Federal Register, 2026-03-10).
+
+**LLC.** The finding that changes advice: CFRE, LLC v. Greenville County
+Assessor (S.C. Supreme Court, 2011) held a single-member LLC-owned home can
+take the 4 percent rate when the member meets every test, and Horry County's
+application asks for the operating agreement. The common claim that an LLC
+forfeits the 4 percent is wrong for a single-member LLC. A deed from a member
+to a disregarded single-member LLC owes no recording fee (SCDOR manual,
+January 2024) and is not an assessable transfer (12-37-3150(B)(11)). The
+federal due-on-sale exemption list names no LLC; the Fannie Mae servicing
+rule that allows a post-closing transfer sits in the sources line only, and
+body copy says "many conventional loans" and "your servicer's rule governs".
+How a partnership-taxed LLC is classed on the I-290 follows from 12-2-25 and
+no SCDOR sentence says it outright, so the page tells the reader to ask the
+closing attorney. No DOI or carrier page addresses an LLC as named insured.
+
+**Foreclosures.** The county's own documents disagree on the registration
+deadline (seven days, one week, the Monday before); the page says at least a
+week and names the disagreement. No primary source states the "no post-sale
+right of redemption" rule that every law-firm page repeats; the page says only
+that the foreclosure chapter sets no period, which is the researcher's
+absence finding (0 hits in Title 15 Chapter 39, 36 control hits in the
+tax-sale chapter). HUD's owner-occupant exclusive period is 15 days insured
+and 5 days uninsured for listings on or after 2025-05-30 (ML 2025-13). Fannie
+Mae's First Look pages could not be read (Cloudflare challenge) and are not on
+the page. The county tax-sale sheet's redemption interest schedule is
+deliberately not on the page (non-negotiable 3). The next sale date is not
+printed; it changes monthly.
+
+**Scanner note.** After links were wrapped around existing words, the audit
+counted one where-to-buy sentence at 29 and then 30 words while a whitespace
+count gave 28 and 29. The sentence was split rather than argued with. If this
+recurs, sanity-check the audit's tokenizer against a link followed by a comma
+before trusting the count either way.
+
+**Owner questions.** Each research file ends with "Questions only the
+brokerage can answer"; the chat reply carries the batch-3 list. Batches 1 and
+2 questions are still open. Apply his answers to the specs and regenerate,
+never to the pages.
+
 ## Suggested order for the next session
 
-00. **Investor batch 3, the last four** (see the second 2026-09-06 section):
-   foreclosures, student rentals, LLC, landlord rules, selling a rental. Same
-   method. Batches 1 and 2 await his review and his answers to the question
-   list; apply his edits to the specs and regenerate, never to the pages.
+00. **All twelve investor pages are built and on the branch** (three 2026-09-06
+   sections). They await his review and his answers to the three question
+   lists; apply his edits to the specs and regenerate, never to the pages. He
+   has not deployed batches 2 or 3; the deploy command is in the environment
+   section.
 0. **The three revised tax pages are on the branch and in the previews.** Expect
    the next line edits from him, plus his answer on the local-versus-Chapter3
    question above. Two pages (accommodations tax, STR tax) still await notes.

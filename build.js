@@ -1077,6 +1077,7 @@ const CTA_DESTINATIONS = new Set([
   "/buyers/property-taxes/",
   "/invest/long-term-rental/",
   "/invest/run-the-numbers/",
+  "/sell/home-value/",
   "/sell/capital-gains/",
   "/sell/net-proceeds/",
 ]);
@@ -1652,7 +1653,7 @@ function audit() {
         let mid = 0, total = 0;
         // /invest/run-the-numbers/ and its #run-form anchor are the investor
         // conversion page (owner, 2026-09-05): a boxed button to it is an ask.
-        for (const m of prose.matchAll(/<a\b[^>]*href="(#lead-form|#run-form|\/contact\/|\/invest\/run-the-numbers\/|tel:[^"]*)"[^>]*>/g)) {
+        for (const m of prose.matchAll(/<a\b[^>]*href="(#lead-form|#run-form|\/contact\/|\/invest\/run-the-numbers\/|\/sell\/home-value\/|tel:[^"]*)"[^>]*>/g)) {
           if (!/class="[^"]*\bbtn\b/.test(m[0])) continue;   // boxed only
           total++;
           const at = m.index / L;
