@@ -2,11 +2,15 @@
  * place. Facts: research/invest-next/selling-a-rental-facts.md; every cited
  * source re-opened by the writer 2026-09-06. The withholding rate is the
  * state's top individual rate for the tax year of the sale (5.21 percent for
- * 2026), not the pre-2024 7 percent. Built by tools/mkpage.js. */
+ * 2026), not the pre-2024 7 percent. The FHA 60-day occupancy rule is quoted
+ * from Handbook 4000.1 (read 2026-09-06). Brokerage facts from
+ * research/invest-next/owner-answers-batch3.md (answers 1 to 6), attributed to
+ * Devin Day. Built by tools/mkpage.js. */
 const { h } = require("../tools/mkpage.js");
 
 const HV = "/sell/home-value/";
 const SC2740 = "https://www.scstatehouse.gov/code/t27c040.php";
+const SC2737 = "https://www.scstatehouse.gov/code/t27c037.php";
 const SC2750 = "https://www.scstatehouse.gov/code/t27c050.php";
 const SC128 = "https://www.scstatehouse.gov/code/t12c008.php";
 const DORRATE = "https://dor.sc.gov/tax/individual-income";
@@ -15,40 +19,47 @@ const I295 = "https://dor.sc.gov/forms-site/Forms/I295.pdf";
 const TC409 = "https://www.irs.gov/taxtopics/tc409";
 const I8824 = "https://www.irs.gov/instructions/i8824";
 const P523 = "https://www.irs.gov/publications/p523";
+const FHA = "https://www.hud.gov/hud-partners/single-family-handbook-4000-1";
+const VA = "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title38-section3704&num=0&edition=prelim";
 
 module.exports = {
   url: "/sell/rental-property/",
   hub: { name: "Sell", url: "/sell/" },
   title: "Selling a Myrtle Beach Rental With Tenants in Place | Chapter3",
-  description: "How to sell a Myrtle Beach rental with a tenant or bookings in place: showings, the lease and deposit at closing, the 90-day booking rule, and withholding.",
+  description: "Selling a Myrtle Beach rental with a tenant or bookings in place: which buyers the lease allows, the deposit at closing, the 90-day booking rule, and withholding.",
   ogTitle: "Selling a Myrtle Beach rental with tenants or bookings in place",
   crumb: "Selling a rental",
   eyebrow: "Investor sellers",
   h1: "How do you sell a Myrtle Beach rental with a tenant in place?",
   h1em: "Or with bookings on the calendar.",
-  sub: "Selling a rental: the lease and deposit go to the buyer, bookings inside 90 days go with the property, and an out-of-state seller has tax withheld.",
+  sub: "Selling a rental: the lease sets the buyer pool, the deposit goes to the buyer, bookings inside 90 days transfer, and an out-of-state seller has tax withheld.",
   heroCta: { label: "Have us price the rental", href: HV },
   author: "tim",
-  shortAnswer: "You can sell a rental with the tenant in it and with guests on the calendar. The lease continues and the buyer becomes the landlord at closing. The security deposit and a written notice to the tenant move with it. On a vacation rental, the buyer takes the property subject to every booking that starts within 90 days of the deed being recorded. You must disclose every future booking in writing before the contract. Showings need 24 hours notice. If you live in another state, the buyer withholds state tax at closing at the top individual rate, which is 5.21 percent for a 2026 sale. Depreciation is taxed at the sale unless you exchange.",
+  shortAnswer: "You can sell a rental with the tenant in it and with guests on the calendar. The lease continues and the buyer becomes the landlord at closing. The lease also sets the buyer pool. A buyer with an FHA loan must move in within 60 days of closing, so a longer lease means an investor buyer, a wait, or a buyout. The security deposit and a written notice to the tenant move with the sale. On a vacation rental, the buyer takes the property subject to every booking that starts within 90 days of the deed being recorded. You must disclose every future booking in writing before the contract. Showings need 24 hours notice. If you live in another state, the buyer withholds state tax at closing at the top individual rate, 5.21 percent for a 2026 sale. Depreciation is taxed at the sale unless you exchange.",
   sections: [
     { h2: "What happens to the lease when you sell?", html:
       h.p(`The lease continues and the buyer steps in as landlord. ${h.ext(SC2740, "State law")} relieves a seller who sells in good faith of liability under the lease for events after the tenant gets written notice of the sale. Until that notice goes out, you are still the landlord in the tenant's eyes.`) +
-      h.p("The security deposit is the line that gets missed. You stay liable for it unless it is transferred to the buyer and the tenant is told in writing. Ask the closing attorney to show the deposit as a credit to the buyer on the settlement statement. Send the tenant the notice on closing day, with the buyer's name and address.") +
-      h.p(`The buyer must also give the tenant, in writing, the name and address of the new owner or the person acting for the owner. ${h.a("/invest/property-management/", "The deposit and notice rules, in full")}.`) },
+      h.p("The security deposit is the line that gets missed. The law does not say who sends the notice. It says you stay liable for the deposit unless two things happen. The deposit is transferred to the buyer, and the tenant is told in writing within a reasonable time. Both are in your interest, so you send the notice, on closing day, with the buyer's name and address. Ask the closing attorney to show the deposit as a credit to the buyer on the settlement statement.") +
+      h.p(`The buyer must also give the tenant, in writing, the name and address of the new owner or the person acting for the owner. ${h.a("/invest/property-management/", "The deposit and notice rules, in full")}. ${h.a("/invest/landlord-rules/", "Every landlord duty, in order")}.`) },
+    { h2: "Who can buy a house with a tenant in it?", html:
+      h.p(`The lease sets the buyer pool. A buyer with ${h.ext(FHA, "an FHA loan")} must move in within 60 days of closing and stay at least a year. A buyer with ${h.ext(VA, "a VA loan")} certifies at application and at closing that the house will be the veteran's home. Devin Day, Chapter3's operations officer, draws the line at three to four months left on the lease. Under it, an owner-occupant buyer can close and wait. Over it, the buyer is an investor, or you wait for the lease to end, or you pay the tenant to leave.`) +
+      h.p("Condition then sets which investor buys. A house the tenant kept up sells to a turnkey buyer, who wants a house that rents the day after closing. A house the tenant damaged sells to a value-add buyer, who wants instant equity and will fix it before renting. The value-add buyer pays less, so a bad tenant costs you twice.") +
+      h.p(`The last test is the price. The house cash-flowed at what you paid and at the taxes you were assessed. The buyer pays today's price, and the sale resets the assessed value at the 6 percent rate. A house that no longer cash flows at today's price still sells: Chapter3 has investors who take a house in an appreciating area that cash flows a little. ${h.a("/buyers/property-taxes/", "How the sale resets the tax value")}.`) },
     { h2: "How do showings work with a tenant in place?", html:
-      h.p(`${h.ext(SC2740, "The tenant cannot unreasonably refuse")} entry to show the home to prospective buyers. You must give at least 24 hours notice and enter only at reasonable times. You cannot use showings to harass the tenant, and the tenant cannot change the locks without your permission.`) +
-      h.p("Set showing windows the tenant agrees to, two or three a week, and hold to them. A tenant who is treated well shows a clean home. Tell the tenant in writing what happens to the lease at the sale, because that is the question every tenant asks first.") },
+      h.p(`${h.ext(SC2740, "The tenant cannot unreasonably refuse")} entry to show the home to prospective buyers. You must give at least 24 hours notice and enter only at reasonable times. You cannot use showings to harass the tenant, and the tenant cannot change the locks without your permission. We do everything the statute allows to show the house well, and nothing it does not.`) +
+      h.p(`Selling is not a ground to end a lease. ${h.ext(SC2737, "The three grounds for ejectment")} are unpaid rent, a term that has ended, and a lease violation. An eviction filed on any other basis while you market the house invites a lawsuit, and the sale stalls while it runs. A month-to-month tenancy is the exception: 30 days written notice ends it, for any reason.`) +
+      h.p("The tenant is not paid for showings unless you choose to pay or the lease says so. Sometimes the cheaper route is a buyout, a written agreement that pays the tenant to leave on a date before the lease ends. You cannot control the condition of the house on showing day. Set showing windows the tenant agrees to, two or three a week, and hold to them. A tenant who is treated well shows a clean home. Tell the tenant in writing what happens to the lease at the sale, because that is the question every tenant asks first.") },
     { h2: "What happens to bookings on a vacation rental?", html: (bg) =>
       h.p(`${h.ext(SC2750, "The state's vacation rental law")} decides it. The buyer takes the property subject to every vacation rental agreement for stays that begin within 90 days of the day the deed is recorded. The rental management agreement transfers for those stays too. A guest whose stay begins later than that has no right to it, and is due a refund within 45 days of the recording.`) +
       h.p("Two duties fall on you as the seller. Before the contract is ratified, you must disclose to the buyer in writing every future period the property is booked. Within 14 days of the contract, and again within 14 days of closing, you must give the rental management company the buyer's name and address. A seller who knowingly skips either is liable to the guest for actual damages.") +
-      h.p(`The management agreement transfers with those 90 days of bookings, so read its exit terms before you list. ${h.a("/sell/sell-my-condo/", "Selling a condo with bookings in place")}. ${h.a("/invest/rental-program-vs-airbnb/", "What the program agreement says")}.`) +
+      h.p(`Most rental programs here run inside oceanfront short-term buildings. Expect the association's charges at closing: a transfer fee, and often a few months of dues paid in advance. Those charges are common in any association, with or without a program. A building full of investors is usually non-warrantable, so the buyer needs ${h.a("/invest/non-warrantable-condos/", "a non-warrantable condo loan")}. The same fact tells the buyer the building is run for owners like them. ${h.a("/sell/sell-my-condo/", "Selling a condo with bookings in place")}. ${h.a("/invest/rental-program-vs-airbnb/", "What the program agreement says")}.`) +
       h.cta("Selling a unit in a rental program?", "Send the address and the program's name. We read the exit terms and the booking calendar with you before the listing goes live.", "Have us price the rental", HV, bg) },
     { h2: "What must you disclose?", html:
       h.p(`The state disclosure statement covers a rental. None of its exemptions names a rental or a tenant-occupied home. ${h.ext(SC2750, "The statement must say")} whether a rental, rental management, vacation rental or other lease contract will be in place at closing. It must also list any utility charges the tenant owes that you know of. You deliver it before the buyer signs the contract.`) +
       h.p(`The Commission's form has a section for it: the lease terms, the bookings that start within 90 days of recording, and the management company's name. "Owner occupied" on that form is a status box, not an exemption. ${h.a("/sell/fsbo/", "Filling out the disclosure form")}.`) },
     { h2: "What does the state withhold from an out-of-state seller?", html:
       h.p(`If your permanent home is outside South Carolina on the day of the sale, ${h.ext(SC128, "the buyer must withhold state income tax")} from your proceeds. The amount is the state's top individual income tax rate applied to your gain, if you give the buyer a signed affidavit of the gain. Without the affidavit it applies to the whole amount realized. A corporation is withheld at 5 percent.`) +
-      h.p(`${h.ext(DORRATE, "The top individual rate")} is 6 percent for a 2025 sale and 5.21 percent for a 2026 sale. The withholding is capped at your net proceeds, and the buyer remits it by the 15th of the following month. It is a prepayment credited on your state return. ${h.ext(I290, "The buyer's form")} and ${h.ext(I295, "the seller's affidavit")} are the two documents; the closing attorney prepares both.`) +
+      h.p(`${h.ext(DORRATE, "The top individual rate")} is 6 percent for a 2025 sale and 5.21 percent for a 2026 sale. The withholding is capped at your net proceeds, and the buyer remits it by the 15th of the following month. It is a prepayment credited on your state return. ${h.ext(I290, "The buyer's form")} and ${h.ext(I295, "the seller's affidavit")} are the two documents. We work with several closing attorneys who prepare both.`) +
       h.p(`Two cases withhold less. Gain excluded as a principal residence is not withheld, but a rental you never lived in has none. A 1031 exchange with a replacement property identified at the sale is not withheld; without an identified replacement, it is. ${h.a("/sell/capital-gains/", "The withholding and gain calculator")}.`) },
     { h2: "What tax comes due on the gain?", html: (bg) =>
       h.p(`Two federal layers. The gain from the depreciation you took is taxed at ${h.ext(TC409, "up to 25 percent")}. The rest of the gain is taxed at the capital gains rates. The home-sale exclusion does not apply to a property you never lived in. If you lived in it and then rented it, ${h.ext(P523, "the years it was a rental after 2008 are nonqualified use")}. The depreciation after 1997 is never excludable.`) +
@@ -62,6 +73,8 @@ module.exports = {
   faqTitle: "Selling a rental FAQ",
   faq: [
     { q: "Can I sell a house with a tenant in it?", a: "Yes. The lease continues and the buyer becomes the landlord at closing. Give the tenant written notice of the sale and transfer the deposit to the buyer." },
+    { q: "Can I sell my rental to a buyer with an FHA or VA loan?", a: "Only if the tenant will be out soon after closing. An FHA buyer must move in within 60 days, and a VA buyer certifies the house will be their home. With more months left on the lease, the buyer is an investor, or you wait for the lease to end, or you pay the tenant to leave." },
+    { q: "Can I evict my tenant so I can sell?", a: "No. Selling is not one of the three grounds for ejectment. A month-to-month tenancy ends on 30 days written notice. A fixed lease runs to its end date or ends by a paid buyout." },
     { q: "How much notice do I give a tenant for a showing?", a: "At least 24 hours, at reasonable times. The tenant cannot unreasonably refuse, and you cannot use showings to harass." },
     { q: "What happens to my Airbnb bookings when I sell?", a: "The buyer takes the property subject to every booking that starts within 90 days of the deed being recorded, and to the management agreement for those stays. Later guests get a refund within 45 days. You must disclose every future booking in writing before the contract." },
     { q: "How much does South Carolina withhold from an out-of-state seller?", a: "The top individual income tax rate, which is 5.21 percent for a 2026 sale. It applies to the gain if you give the buyer a signed affidavit of gain, or to the whole sale price if you do not. It is a prepayment credited on your state return." },
@@ -71,11 +84,13 @@ module.exports = {
     { name: "South Carolina Code, residential landlord and tenant", href: SC2740 },
     { name: "South Carolina Code, property disclosure and vacation rentals", href: SC2750 },
     { name: "South Carolina Code 12-8-580, nonresident withholding", href: SC128 },
-    { name: "South Carolina Department of Revenue, individual income tax rates", href: DORRATE },
+    { name: "SCDOR, individual income tax rates", href: DORRATE },
+    { name: "HUD Handbook 4000.1, owner occupancy", href: FHA },
+    { name: "38 U.S.C. 3704, VA occupancy", href: VA },
     { name: "IRS Topic 409, capital gains and losses", href: TC409 },
   ],
   sourcesNote: "Educational only, not legal or tax advice. The withholding rate moves with the state's top individual rate each year.",
   bottomCta: { h2: "Sell it with the lease in place or at lease end.", p: "Send the address and the lease dates. We price it both ways and tell you which buyer pool each one reaches.", label: "Have us price the rental", href: HV },
-  keywords: "selling a rental property Myrtle Beach, sell house with tenants South Carolina, South Carolina nonresident seller withholding 2026, selling a vacation rental with bookings South Carolina",
+  keywords: "selling a rental property Myrtle Beach, sell house with tenants South Carolina, can I sell my house with a tenant to an FHA buyer, South Carolina nonresident seller withholding 2026, selling a vacation rental with bookings South Carolina",
   about: "Selling a Myrtle Beach rental property",
 };

@@ -1245,6 +1245,73 @@ brokerage can answer"; the chat reply carries the batch-3 list. Batches 1 and
 2 questions are still open. Apply his answers to the specs and regenerate,
 never to the pages.
 
+## 2026-09-06 later: the owner answered the batch-3 questions; five pages revised
+
+He answered 31 of 32 questions in one message. The answers are verbatim in
+`research/invest-next/owner-answers-batch3.md`, with a list at the end of what
+may not go on a page (his "$250 a month on interest", BrickWood by name, any
+attorney or screening company by name, the tax-sale interest schedule, and
+whether Chapter3 is HUD-registered). Every brokerage fact on the five pages is
+attributed to Devin Day or Tim Nash and traceable to that file by answer
+number. Preflight 0, browser-measured again at three widths, previews
+republished at the same URLs. Where he asked for the legal answer, the writer
+re-opened the statute and the answer is on the page:
+
+- **Selling a rental.** FHA occupancy from Handbook 4000.1 (read 2026-09-06):
+  "At least one Borrower must occupy the Property within 60 Days of signing
+  the security instrument and intend to continue occupancy for at least one
+  year." His three-to-four-month line follows from it. VA: the Lenders
+  Handbook (Pamphlet 26-7, chapter 3) could not be opened; benefits.va.gov
+  and its KnowVA redirect hand fetchers a script shell. The page cites 38
+  U.S.C. 3704(c) instead (the veteran certifies intent to occupy as home) and
+  prints no VA day count. Deposit liability is 27-40-450: the seller is
+  relieved only after written notice to the tenant, and stays liable for the
+  deposit unless it is transferred and the tenant notified in writing; the
+  statute names no sender, so the page has the seller send both notices on
+  closing day. Selling is not one of the three ejectment grounds (27-37-10);
+  a month-to-month tenancy ends on 30 days notice (27-40-770).
+- **Student rentals.** Two tenant pools, the three-to-five-times income rule,
+  about three in four leases with a parent co-signer, the short-lease
+  premium, the five risk tools, renewal timing, turnover cost items, HOA
+  filtering. Public rent benchmark added: HUD fair market rents for the
+  Myrtle Beach-North Myrtle Beach-Conway area (huduser FY27_FMRs.xlsx, read
+  2026-09-06): $1,155, $1,258, $1,504, $1,823, $1,981 for zero to four
+  bedrooms; FY2026 was $1,145, $1,229, $1,465, $1,805, $2,111. huduser.gov
+  needs a browser user agent; a plain curl gets an empty 202. The overlay
+  example is labeled as made up.
+- **Landlord rules.** His timeline (up to three weeks to the writ, a few days
+  for a strong case), a six-item list of what a Chapter3 agent does (the
+  filing step is conditional on Chapter3 managing the unit, because only a
+  property manager or broker-in-charge may file under 27-40-710(C)),
+  all-inclusive versus partial managers, the "cannot end a lease to sell"
+  section, screening companies unnamed.
+- **LLC.** The occupancy-promise paragraph (deeding a primary-residence-financed
+  house to an LLC and renting it a month later is mortgage fraud; no dollar
+  figure), every DSCR and business-purpose loan closes in an entity and the
+  lender requires it, the attorney drafts the deed and the county rarely
+  questions it, every investor client holds in an entity, insurance as a
+  commodity, and the multi-member 4 percent proration with its two
+  exceptions from 12-43-220(c)(2)(8)(ii) and (iii)(D), read 2026-09-06.
+- **Foreclosures.** Tim has bought at the sale many times; the title
+  certification quote; earnest money with the closing attorney; about 45
+  days for an REO loan (Devin, NMLS line); a past-due HOA assessments
+  section (attributed observation, no names); the tax-sale story with the
+  statute behind it: notice by certified mail 20 to 45 days before the
+  redemption year ends (12-51-120), the county may void a sale for a missed
+  step and refund with the interest it earned (12-51-150), only the owner, a
+  grantee, or a mortgage or judgment creditor may redeem and redemption
+  returns the house to the owner (12-51-90), which corrects his "family can
+  take ownership" premise, and the tax deed is prima facie evidence of title
+  with a two-year contest window (12-51-160).
+
+**Not on the site, on purpose.** Chapter3 is not a HUD-registered selling
+broker (answer 29). The foreclosures page says only that a HUD-registered
+broker must submit the offer. Do not state either fact on the site.
+
+**Still open.** The VA 60-day figure (needs the handbook itself); question 15
+(which magistrate office takes which address); the stories he offered to add
+next; batch-1 and batch-2 question lists.
+
 ## Suggested order for the next session
 
 00. **All twelve investor pages are built and on the branch** (three 2026-09-06
