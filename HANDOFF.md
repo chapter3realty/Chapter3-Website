@@ -1555,6 +1555,25 @@ that were there before this change (the byline colour did not move).
 older pages still say "sets" 14 times (their bylines are already fixed by the
 sweep); the VA handbook citation; his name in stories or not.
 
+## 2026-09-07 evening: the deploy that shipped nothing
+
+He deployed and got "Uploaded 0 files (148 already uploaded)" and asked why.
+The prompt showed the folder: `C:\Users\DevinDay\Downloads\chapter3site20260905`.
+He deployed a downloaded copy, not his clone, so the upload was byte-identical
+to what was already live. Verified against the live site: `/invest/llc/`,
+`/invest/landlord-rules/`, `/invest/where-to-buy/` and `/invest/run-the-numbers/`
+all 404, the sitemap lists 105 URLs against our 118, and `/about/` still
+carries the NMLS number and "licensed mortgage loan originator" three times.
+So none of the twelve investor pages and none of the compliance fix are live.
+
+`build.js preflight` now ends with a deploy source check and `node build.js
+source` runs it alone (PLAYBOOK A39a, MISTAKES 76). It fails outside a git
+clone and otherwise prints the page count, the commit and the branch.
+
+**He may not have a clone on that machine.** If he does not, he needs one
+before he can deploy this work at all; the clone command is in the reply and
+in the environment section below.
+
 ## Suggested order for the next session
 
 00. **All twelve investor pages are built and on the branch**, and the five

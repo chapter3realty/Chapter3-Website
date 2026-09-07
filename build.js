@@ -2423,6 +2423,39 @@ function taxEngine() {
 }
 
 
+/* The deploy source (owner, 2026-09-07; MISTAKES 76). A deploy sends whatever
+ * folder wrangler is pointed at. A downloaded copy of the site has no .git, so
+ * every gate in this file passes against stale content and the deploy uploads
+ * nothing, which reads like success. This refuses to pass outside the clone,
+ * and prints the commit so the deployer can compare it with the branch. */
+function deploySource() {
+  const { execFileSync } = require("child_process");
+  const git = (args) => execFileSync("git", args, { cwd: __dirname, stdio: ["ignore", "pipe", "ignore"] }).toString().trim();
+  let head, branch;
+  try { head = git(["rev-parse", "--short", "HEAD"]); branch = git(["rev-parse", "--abbrev-ref", "HEAD"]); }
+  catch {
+    console.log("FAIL - this folder is not the git clone, so nothing here can be trusted to be current.");
+    console.log("       Deploying from a downloaded copy uploads stale pages and reports 0 files uploaded.");
+    console.log("       Deploy from the clone: git fetch origin <branch>, git reset --hard FETCH_HEAD.");
+    process.exitCode = 1;
+    return;
+  }
+  let dirty = "";
+  try { dirty = git(["status", "--porcelain"]); } catch { }
+  const pages = countPages();
+  console.log(`OK - deploying ${pages} pages from commit ${head} on ${branch}${dirty ? " (uncommitted changes present)" : ""}.`);
+  console.log("     Check that commit against the branch before you deploy.");
+}
+function countPages() {
+  let n = 0;
+  const walk = (dir) => { for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const f = path.join(dir, e.name);
+    if (e.isDirectory()) walk(f); else if (e.name === "index.html") n++;
+  } };
+  walk(path.join(__dirname, "chapter3realty"));
+  return n;
+}
+
 if (cmd === "check") check();
 else if (cmd === "rehash") rehash();
 else if (cmd === "stitch") stitch();
@@ -2436,5 +2469,6 @@ else if (cmd === "coldata") { require("child_process").execFileSync(process.exec
 else if (cmd === "citydata") { require("child_process").execFileSync(process.execPath, [path.join(__dirname, "data", "relocating", "build-cities.js")], { stdio: "inherit" }); }
 // dates --check runs last: it is the only gate that compares what the pages
 // CLAIM against what git says actually happened.
-else if (cmd === "preflight") { check(); console.log(""); audit(); console.log(""); dates(true); console.log(""); taxEngine(); }
-else { console.log("Usage: node build.js [check|rehash|stitch|llmsfull|dates|audit|coldata|citydata|preflight]"); process.exit(1); }
+else if (cmd === "source") deploySource();
+else if (cmd === "preflight") { check(); console.log(""); audit(); console.log(""); dates(true); console.log(""); taxEngine(); console.log(""); deploySource(); }
+else { console.log("Usage: node build.js [check|rehash|stitch|llmsfull|dates|audit|coldata|citydata|source|preflight]"); process.exit(1); }

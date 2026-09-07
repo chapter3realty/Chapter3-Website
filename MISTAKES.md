@@ -389,3 +389,31 @@ the subject of "does that for you", "cares", "wants" or "expects".
 **What stops it recurring.** Two REGISTER_REGEX entries, sitewide errors,
 sanity-checked first: they match the flagged sentence and nothing else on the
 site, and they do not match "the law requires". PLAYBOOK A22b.
+
+
+## 76. A deploy from a downloaded folder shipped nothing and looked like success (2026-09-07)
+
+**What happened.** The owner ran the deploy from
+`C:\Users\DevinDay\Downloads\chapter3site20260905`, a copy of the site
+downloaded two days earlier, not from his clone. Wrangler reported "Uploaded 0
+files (148 already uploaded)" and "Deployment complete", which reads like
+success. Nothing shipped. Twelve investor pages were still 404 on the live
+site, the sitemap still listed 105 URLs against 118 in the repo, and the NMLS
+number and "licensed mortgage loan originator" were still on the About page
+after the sitewide removal. Zero files uploaded because every file in that
+folder was byte-identical to what Cloudflare already held.
+
+**Why the existing rule did not stop it.** PLAYBOOK A27 says preflight must
+exit 0, and it did: preflight ran inside the stale folder and checked the
+stale pages against the stale git data. A39 says commit before deploying, and
+the commits existed, on the branch, in a different folder. Nothing tied the
+folder wrangler uploads to the branch the work is on. A40 says verify live
+after a deploy, which would have caught it, but only after the fact.
+
+**What stops it recurring.** `node build.js preflight` now ends with a deploy
+source check, and `node build.js source` runs it alone. Outside a git clone it
+fails: a downloaded copy has no `.git`, which is the exact shape of this
+failure. Inside the clone it prints the page count, the commit and the branch,
+so the deployer compares that commit with the branch before uploading.
+Positive control: the clone prints its commit. Negative control: a folder with
+build.js and two pages and no `.git` exits 1. PLAYBOOK A39a.

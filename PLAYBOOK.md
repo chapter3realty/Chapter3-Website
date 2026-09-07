@@ -657,6 +657,16 @@ markup-only edits. Wrapping existing words in a link does not age a page.
 
 **A39. `preflight` again**, then commit. Never deploy on the owner's behalf.
 
+**A39a. Deploy from the clone, and check the commit (owner, 2026-09-07).** A
+deploy sends whatever folder wrangler is pointed at. A downloaded copy of the
+site passes every gate in `build.js`, because the gates read that folder's own
+pages and its own git data, and then uploads nothing: "Uploaded 0 files"
+with a deployment URL, which reads like success. `preflight` now ends with
+`deploySource()` and fails outside a clone; `node build.js source` runs it
+alone. Read the commit it prints and compare it with the branch before
+uploading. Zero files uploaded is not success, it means the folder is already
+live, byte for byte. MISTAKES 76.
+
 **A40. After deploy, verify live:** the URL returns 200, the canonical is right,
 and the rendered page matches what you built.
 
