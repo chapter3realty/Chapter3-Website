@@ -288,3 +288,51 @@ What must you give the tenant at move-in? make this more clear on what the secti
 Own a rental and want the lease checked against these rules? Send the address and the lease. We tell you what the unit rents for now and which lease terms to update. replace with have us help buy your next rental"
 
 Rules taken from it, both hard-coded the same day: the Operations Officer's name is never written in page copy on these five pages or any page built from 2026-09-07 (build.js NO_OWNER_NAME_PAGES, tools/mkpage.js); nothing "sets" anything (build.js SETS_REGEX). His wording for the loan-fact attribution: none. The pages say "Reviewed by Chapter3's licensed mortgage loan originator, NMLS 2721275."
+
+
+## Round 4 (2026-09-07, after the fourth-pass preview)
+
+Verbatim:
+
+"Buying a rental and want the rules priced in? change to have us help buy your next unit 
+
+
+What does a Chapter3 agent do during an eviction? lets remove this because we don't do any property management make sure nothing says we do. 
+
+
+Make all of the authors on these 5 the by me and reviewed by Tim Nash
+Send the address. We pull the judgment and the notice of sale, and run the rent and the repair budget against the bid We pull judgment and notice of sale and analyze the property for cashflow and repair costs. 
+
+What does the master's deed carry? Explain what the master deed is and make sure all 5 pages are giving proper context before explaining something like why do we care about the master deed it feels random here
+
+Dont mention my NMLS or say im a licensed loan originator with Chapter3 ever that's illegal just state the fact and if you need to get credibility say according to a loan officer at our preferred lender
+
+pulled for your numbers? delete this in the CTA and then its good 
+
+change the Author to by Devin Day and reviewed by Tim Nash like all the other pages we have 
+
+A Conway student rental serves the rest, under the city's cap of three unrelated tenants. Explain this better in the sub header i don't get it. 
+
+The City of Conway counts a household as no more than three unrelated people What's this mean add more context 
+
+Parents often buy the house, rent the other rooms no they dont parents either buy a house to move their family into or the student just rents 3/4 times with a parent as a co signer 
+
+Two tenant pools rent near campus, in Chapter3's files. Students want the cheapest house that fits their group. Families who move to Conway to be near a student pay a premium for a nice house close to campus. The second pool is smaller and steadier, and it rents the nicer houses. This sentance is not structured in a way that makes sense. say the students who want cheap housing and the families who blah bla blah and then delete second pool is 
+
+The rent depends on this number. Delete this 
+
+Want the cap checked for one address? replace with "want to rent to college students" then have the thing about how we will help them find and buy the house. 
+
+Can you talk about a solution to this parking problem you introduced? if there is no solution than delete the problem 
+
+There is no public rent index for student houses in Conway. The one public benchmark by bedroom count is the federal fair market rent for Horry County Delete 
+
+What does a student house rent for? Find a better answer to this question or delete the entire section 
+
+, roommates rent the others, very few if any parents are doing this they just buy a house for their family so the kid is close to the college bro 
+
+the house is their legal residence bro parents move houses close to a college their kid is attending thats all thats happening. re write this whole section and woul dthe school let them stay at their parents house in their first 2 years 
+ 
+. The state's landlord and tenant law does not do that for you. Please delete and never say some retarded shit like that again a law never does anything for you why are we personifying a law? its against the rules."
+
+Rules taken from it, hard-coded the same day: never his NMLS number or a licensed-loan-originator claim tied to him or to Chapter3, anywhere, schema included (build.js, mkpage.js, PLAYBOOK A17 rewritten); a loan fact that needs a source says "according to a loan officer at our preferred lender"; bylines read "By Devin Day, Operations Officer, reviewed by Tim Nash" on the five pages (A20a amended); a law, a lease or a rule never does anything for anyone (REGISTER_REGEX, A22b); Chapter3 does no property management and no page may say it does.

@@ -75,7 +75,7 @@ function build(spec) {
   const subWords = words(spec.sub);
   if (subWords < 8 || subWords > 30) throw new Error(`hero sub is ${subWords} words (8-30)`);
   if (/\?\s*$/.test(spec.sub)) throw new Error("hero sub must not be a question");
-  if (spec.author !== "tim") throw new Error(`author must be tim - the Operations Officer's name is never written on a page built from 2026-09-07 (owner rule 2026-09-06), so a page cannot carry his byline`);
+  if (!["tim", "devin"].includes(spec.author)) throw new Error("author must be tim or devin");
   if (!Array.isArray(spec.faq) || spec.faq.length < 3) throw new Error("at least three FAQ entries");
   for (const f of spec.faq) if (/[<>&]/.test(f.q + f.a)) throw new Error(`FAQ text must be plain characters, no tags or entities: ${f.q}`);
 
@@ -125,7 +125,13 @@ function build(spec) {
   if (seen !== 4) throw new Error(`replaced ${seen} identity JSON-LD blocks, expected 4`);
 
   /* ---- main ---- */
-  const byline = `By <strong style="color:var(--navy);font-weight:600">Tim Nash</strong>, Broker-in-Charge, 30+ years on the Grand Strand &middot; Reviewed by Chapter3's licensed mortgage loan originator, NMLS 2721275 &middot; <span style="white-space:nowrap">Updated ${shown}</span>`;
+  /* Owner rules: his name is in the byline only, with the title Operations Officer and
+   * nothing after it; never his NMLS number, never a licensed-loan-originator claim
+   * (2026-09-06, 2026-09-07; PLAYBOOK A17, A20a). */
+  const NAME = (n) => `<strong style="color:var(--navy);font-weight:600">${n}</strong>`;
+  const byline = spec.author === "devin"
+    ? `By ${NAME("Devin Day")}, Operations Officer &middot; Reviewed by ${NAME("Tim Nash")}, Broker-in-Charge &middot; <span style="white-space:nowrap">Updated ${shown}</span>`
+    : `By ${NAME("Tim Nash")}, Broker-in-Charge, 30+ years on the Grand Strand &middot; Reviewed by ${NAME("Devin Day")}, Operations Officer &middot; <span style="white-space:nowrap">Updated ${shown}</span>`;
   const bgs = ["ivory", "ivory-2"];
   let i = 0; const nextBg = () => bgs[i++ % 2];
   const parts = [];
@@ -146,7 +152,9 @@ function build(spec) {
   /* ---- self-checks ---- */
   for (const t of DONOR_TOKENS) if (out.includes(t)) throw new Error(`donor identity survived: "${t}"`);
   /* Owner rules 2026-09-06: his name is never in page copy, and nothing "sets" anything. */
-  if (/\bDevin\b/.test(main + spec.title + spec.description)) throw new Error('the Operations Officer\'s name is in the page copy - write "Chapter3\'s licensed mortgage loan originator, NMLS 2721275" instead (owner rule 2026-09-06)');
+  if (/\bDevin\b/.test(main.replace(byline, "") + spec.title + spec.description)) throw new Error("the Operations Officer's name is in the page copy outside the byline - a story from his files is \"in Chapter3's files\" (owner rule 2026-09-06, PLAYBOOK A20a)");
+  if (/\b2721275\b/.test(out) || /Licensed Mortgage Loan Originator/.test(out) || /\bDevin(?: Day)?\b[^.<"]{0,120}\b(?:MLO|loan originator|loan officer|NMLS)\b|\b(?:MLO|loan originator|loan officer|NMLS)\b[^.<"]{0,120}\bDevin\b|Chapter3(?:'s|&#39;s|&#x27;s|\u2019s)?\s+(?:own\s+)?licensed\s+(?:mortgage\s+)?loan\s+(?:originator|officer)|\bour licensed (?:mortgage )?loan (?:originator|officer)\b/i.test(out))
+    throw new Error("licence claim: never his NMLS number, never a licensed-loan-originator claim tied to him or to Chapter3; a loan fact that needs a source says \"according to a loan officer at our preferred lender\" (owner rule 2026-09-07, PLAYBOOK A17)");
   { const hit = (main + " " + spec.title + " " + spec.description).replace(/<[^>]+>/g, " ").match(/\b(?:sets(?!\s+of\b)|set by)\b/i);
     if (hit) throw new Error(`"${hit[0]}" - nothing sets anything; write what depends on what (owner rule 2026-09-06)`); }
   const strip = (html) => html.replace(/<main id="main">[\s\S]*<\/main>/, "").replace(/<title>[^<]*<\/title>/, "").replace(/<meta (?:name|property)="(?:description|og:title|og:description|og:url|twitter:title|twitter:description)" content="[^"]*">/g, "").replace(/<link rel="canonical" href="[^"]*">/, "").replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, (m) => { try { const t = JSON.parse(m.slice(35, -9))["@type"]; return blocks[t] ? "" : m; } catch { return m; } });

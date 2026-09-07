@@ -117,12 +117,17 @@ matter, not sentence length. That has happened here. See PLAYBOOK A11a.
   in the footer licence line only. Every visible byline and every mention in
   body copy says "Tim Nash"; the schema carries `alternateName: "Tim Nash"`
   so the two forms resolve to one person. Owner instruction 2026-09-03.**
-- **Devin Day** — Operations Officer, licensed MLO, **NMLS 2721275**. The NMLS
-  number must be shown visibly on financing content. **His name is never written
-  in page copy on any page built from 2026-09-07. Owner instruction 2026-09-06.**
-  A loan fact carries "Reviewed by Chapter3's licensed mortgage loan originator,
-  NMLS 2721275." and no name. `build.js` errors on the name on those pages and
-  `tools/mkpage.js` refuses to generate a page that contains it.
+- **Devin Day** — Operations Officer. Bylines read "By Devin Day, Operations
+  Officer · Reviewed by Tim Nash" (or the reverse on Tim's pages). **Never write
+  his NMLS number, and never call him, or Chapter3, a licensed mortgage loan
+  originator, MLO or loan officer, anywhere on the site, schema included.
+  Chapter3 is not a lender and the claim is illegal. Owner instruction
+  2026-09-07.** A loan fact stands on its own; when it needs a source it says
+  "according to a loan officer at our preferred lender". His name is not written
+  in body copy; a story from his files is "in Chapter3's files". `build.js`
+  errors on the number and the claim sitewide, and on the name in the copy of
+  pages built from 2026-09-07; `tools/mkpage.js` refuses to generate a page that
+  breaks any of it.
 - **Paul Hankins** — owner of BrickWood Mortgage, NMLS 281393.
 - **Abdulla Hijazi** — CMO, builds the site tooling.
 - **BrickWood Mortgage** — affiliated lender, NMLS #189497. Any body reference

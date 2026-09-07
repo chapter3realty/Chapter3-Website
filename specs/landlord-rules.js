@@ -36,7 +36,7 @@ module.exports = {
   h1em: "Deposits, entry, notices and the Horry County eviction.",
   sub: "South Carolina landlord rules for a Myrtle Beach rental: the deposit clock, the owner disclosure, 24-hour entry, the five-day rent notice, and the Horry County eviction steps.",
   heroCta: { label: "Ask about your rental", href: "/contact/" },
-  author: "tim",
+  author: "devin",
   shortAnswer: "A South Carolina landlord must give the tenant the owner's name and address in writing and keep the home fit and habitable. The landlord must give 24 hours notice before entering, and must return or itemize the deposit within 30 days of move-out. Rent unpaid five days after the due date lets you end the lease, if the lease carries the state's notice clause in bold. Every other breach gets 14 days to cure. An eviction is filed at the Horry County magistrate court for the property's area, on a sworn two-page form, for $55 on the statewide fee schedule. The tenant has ten days to answer. After the writ, the sheriff gives 24 hours. In Chapter3's files the process takes up to three weeks. Changing the locks yourself costs three months of rent.",
   sections: [
     { h2: "Who is a landlord under South Carolina law?", html:
@@ -72,7 +72,7 @@ module.exports = {
       h.p("A month-to-month tenancy ends on 30 days written notice from either side. A tenant who stays past the end date is a holdover, and you file for possession.") +
       h.p(`${h.ext(LTA, "Retaliation is barred")}. You cannot raise the rent above market, cut services or file for possession because the tenant complained to a code office, or to you, about a violation. The tenant raises that defense in writing within ten days of the rule to vacate. A retaliatory non-renewal with the rent current bars possession for 75 days. Damages run to three months of rent or three times the loss, whichever is greater, plus attorney's fees. Tenant neglect and the tenant's own material breach are exceptions.`) },
     { h2: "How does an eviction work in Horry County?", html: (bg) =>
-      h.p("The minimum times are in the statute. The actual dates come from the court and the sheriff. In Chapter3's files the Horry County process takes up to three weeks from filing to the writ. A strong case with a clean ledger has finished in a few days. After the writ, the tenant has 24 hours. There are four steps.") +
+      h.p("An eviction is the court process that ends the tenant's right to stay and returns the house to you. South Carolina calls it ejectment, and the magistrate court runs it. The minimum times are in the statute. The actual dates come from the court and the sheriff. In Chapter3's files the Horry County process takes up to three weeks from filing to the writ. A strong case with a clean ledger has finished in a few days. After the writ, the tenant has 24 hours. There are four steps.") +
       h.p("The fastest eviction in Chapter3's files took a few days. Police were called to a fight between two tenants inside the unit. The officers barred the tenant who struck the other from returning to the property. The other tenant wanted that person off the lease. The person refused, and the landlord filed. The belongings left in a few trips with a police escort. A documented crime inside the unit is the strongest case a landlord can file.") +
       h.h3("Step 1: file the application") +
       h.p(`File the ${h.ext(FORMS, "Application for Ejectment")}, form SCCA 732, at the magistrate court for the property's area. You swear to the facts before a notary and attach the lease or other written proof. The grounds are unpaid rent, a term that has ended, or a lease violation. ${h.ext(LTA, "Your broker-in-charge or property manager can file it")} for you, with no separate charge.`) +
@@ -87,18 +87,7 @@ module.exports = {
       h.p(`Never change the locks, remove a door or cut a utility. ${h.ext(LTA, "A lockout")} costs three months of rent or twice the tenant's actual damages, whichever is greater, plus attorney's fees. Only the sheriff or a constable removes a tenant, and only on a writ.`) +
       h.p(`Horry County has ${h.ext(HORRYCT, "six magistrate offices")}. Conway is at 1201 Third Avenue and Myrtle Beach at 1201 21st Avenue North. Surfside Beach is at 9630 Scipio Lane, Little River at 107 Highway 57 North, Loris at 3817 Walnut Street and Aynor at 640 9th Avenue. ${h.ext(SURF, "The county posted in late 2024")} that the Surfside Beach office was closed for maintenance. Call before you file there.`) +
       h.p(`A tenant on active military duty ${h.ext(SCRA, "cannot be evicted without a court order")} when the rent is at or below the federal ceiling. The ceiling is ${h.ext(SCRACAP, "$10,542.60 a month for 2026")}. The court can stay the case for 90 days. ${h.ext(DOJ, "File an affidavit of the tenant's military status")} before any default judgment.`) +
-      h.cta("Buying a rental and want the rules priced in?", "Send the address. We run the rent, the vacancy and the turnover cost before you offer.", "Send the address", RTN, bg) },
-    { h2: "What does a Chapter3 agent do during an eviction?", html:
-      h.p("Six things. We do all of them.") +
-      h.ol([
-        "Read the lease and the ledger, confirm the five-day clause is in bold, and send the written notice if it is not.",
-        "Complete the Application for Ejectment. When Chapter3 manages the unit, the broker-in-charge files it for you at no separate charge, as the statute allows.",
-        "Calendar the answer window, ten or twenty days, and the hearing date. Gather the photos, the ledger and the notices, and bring the witnesses, because the court takes no written statements.",
-        "Check the tenant's military status and file the affidavit before any default judgment.",
-        "Request the sit-out with the sheriff's civil process office and meet the deputy at the property.",
-        "Photograph the unit, change the locks once the deputy returns possession, and list it for rent that week.",
-      ]) +
-      h.p("Rent keeps accruing until the tenant leaves, so every day saved on steps two and three is rent recovered.") },
+      h.cta("Have us help buy your next unit", "Send the address. We run the rent, the vacancy and the turnover cost before you offer.", "Send the address", RTN, bg) },
     { h2: "Will a property manager handle the eviction?", html:
       h.p(`Some will. An all-inclusive manager files the application, attends the hearing and meets the deputy. A manager you pay for some services only will not. Most managers charge a percentage of the rent whatever the work is. Some charge by the hour, and an eviction then costs extra. Ask before you sign the management agreement. ${h.a("/invest/property-management/", "What to ask a manager, and what one costs")}.`) },
     { h2: "How do you screen an applicant?", html:

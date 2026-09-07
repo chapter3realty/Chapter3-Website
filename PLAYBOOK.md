@@ -426,19 +426,19 @@ no building type, no unit count) at the owner's instruction, which overrides the
 confidentiality hold recorded in owner-answers. The rule above still applies to
 the next story.
 
-**A20a. The Operations Officer's name is never written in page copy (owner,
-2026-09-06).** Said twice in one message: "make a rule to never say my name
-hardcode remove my name from all these pages on the pages we are making now"
-and "Please stop saying my name delete my name across all paged we are making
-now." A17 stands: a loan fact still carries the licence, as "Reviewed by
-Chapter3's licensed mortgage loan originator, NMLS 2721275." and no name. A
-story from his files is "in Chapter3's files" or "in Chapter3's experience".
-`build.js` errors on the name in the main copy of the five batch-3 pages
-(`NO_OWNER_NAME_PAGES`) and of every page whose `datePublished` is 2026-09-07
-or later. `tools/mkpage.js` refuses to generate a page that contains it and
-accepts only `author: "tim"`. On those pages the A20 attributed sentence comes
-from Tim Nash or does not exist; never invent one. The eight batch-1 and
-batch-2 pages are outside the gate until he says to sweep them.
+**A20a. His name is in the byline and nowhere else in page copy (owner,
+2026-09-06 and 2026-09-07).** On 2026-09-06 he asked for his name to come off
+the five batch-3 pages; the sentences that named him also carried his NMLS
+number, which is the part that was illegal (A17). On 2026-09-07 he asked for
+the byline back: "change the Author to by Devin Day and reviewed by Tim Nash
+like all the other pages we have". So the byline names him, as author or as
+reviewer, with the title Operations Officer and nothing after it. Body copy
+does not name him; a story from his files is "in Chapter3's files" or "in
+Chapter3's experience". `build.js` errors on the name in the main copy of the
+five batch-3 pages and of every page published from 2026-09-07, byline
+excluded; `tools/mkpage.js` does the same before it writes a file. The A20
+attributed sentence on those pages comes from Tim Nash or does not exist;
+never invent one.
 
 **A22a. Nothing "sets" anything (owner, 2026-09-06).** "the lease never sets
 anything condition doesnt set anything nothing sets anything hard code it
@@ -448,6 +448,14 @@ maximum deposit". `SETS_REGEX` matches "sets" and "set by"; "sets of" is a
 noun and passes. It errors on the same pages as A20a and warns on the older
 pages, about 45 of which match today and fail nothing until they are swept
 (MISTAKES 65: a new rule does not fail the backlog).
+
+**A22b. A law does nothing for anyone (owner, 2026-09-07).** "a law never does
+anything for you why are we personifying a law? its against the rules." A law,
+a statute, an ordinance, a lease, a contract, a judgment or a deed does not do
+things for people, and it does not care, want, expect, think or watch. Write
+what it requires, allows or says. Two REGISTER_REGEX entries error on those
+shapes sitewide; "the law requires" and "the lease allows" pass. Sanity-checked
+against the site before it went in: one hit, the sentence he flagged.
 
 ## Phase 5 — Compliance, BEFORE the copy is mirrored anywhere
 
@@ -507,9 +515,19 @@ string byte-for-byte (see Locked strings below), as an unchecked checkbox.
 affiliated-business disclosure inline, not only in the footer.
 → *Verify:* `audit` fails on a BrickWood body link with no disclosure.
 
-**A17. NMLS.** Financing-related content authored by the MLO shows
-"Devin Day, licensed MLO, NMLS 2721275" **visibly**. It was rendered invisible
-once by a colour bug; visibility is the requirement, not presence in the HTML.
+**A17. NMLS: never (owner, 2026-09-07).** The Operations Officer's NMLS number
+is never written anywhere on the site, visible or in schema, and neither he nor
+Chapter3 is ever called a licensed mortgage loan originator, MLO or loan
+officer. Chapter3 is a brokerage, not a lender, and the claim is illegal. His
+words: "Dont mention my NMLS or say im a licensed loan originator with Chapter3
+ever that's illegal just state the fact and if you need to get credibility say
+according to a loan officer at our preferred lender." So a loan fact stands on
+its own, and when it needs a source it says "according to a loan officer at our
+preferred lender"; the AfBA disclosure in the footer covers that reference on
+every page. `build.js` errors sitewide on the number and on the claim, schema
+included; `tools/mkpage.js` refuses to generate a page carrying either. Until
+2026-09-07 this rule said the opposite and 117 pages carried the claim
+(MISTAKES 74).
 
 **A18. Fair housing.** No claims about safety, crime, who lives somewhere, or
 who a neighbourhood suits. Describe property and geography, not people.

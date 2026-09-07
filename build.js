@@ -831,6 +831,9 @@ const AI_TELL_PHRASES = [
  * The page had passed every gate. Each entry names the TYPE of phrase so the
  * writer learns the class, not just the instance. Errors, every match. */
 const REGISTER_REGEX = [
+  // personification of a law, a lease or a rule (owner, 2026-09-07, PLAYBOOK A22b: "a law never does anything for you")
+  [/\b(?:law|laws|statute|code|ordinance|rule|rules|lease|contract|judgment|deed|court order)\b[^.<]{0,30}?\b(?:does|doesn't|does not|did|will|won't|will not|can|cannot|can't|never)\s+(?:do\s+)?(?:that|this|it|anything|nothing|the work|the rest|everything|things|more|less)\s+for\s+(?:you|them|the tenant|the buyer|the seller|the owner|the landlord)\b/i, "personification: a law, a lease or a rule does nothing for anyone; say what it requires or allows (owner rule 2026-09-07)"],
+  [/\b(?:law|laws|statute|code|ordinance|rule|rules|lease|contract|judgment|deed|court order)\s+(?:doesn't|does not|won't|will not|cannot|can't|never)?\s*(?:cares?|wants?|tries|expects?|thinks?|knows?|sees?|likes|worries|watch(?:es)?|looks? after|takes? care)\b/i, "personification: a law, a lease or a rule has no mind; say what it requires or allows (owner rule 2026-09-07)"],
   // spatial metaphor: a threshold described as a line, a gap that opens, a point that is passed
   [/\b(?:line of the map|lines are close|the local lines|on the local lines|which line\b|past the line|at that line|the gap opens|a gap opens|gap opens on|past that point|beyond that point|crosses? (?:this|that|the) (?:test|line|threshold)|cross(?:es)? it\b)/i, 'spatial metaphor - say the number and what happens above and below it, not a line or a gap'],
   // personification: a rule, tax or document doing something only a person does
@@ -1222,10 +1225,11 @@ const STRICT_REGISTER_PAGES = new Set([
 ]);
 const STRICT_MAX_SENTENCE = 28, STRICT_WARN_SENTENCE = 22, STRICT_MAX_MEAN = 16;
 
-/* Owner rule 2026-09-06: the Operations Officer's name is never written in the
- * copy of these pages, or of any page built from 2026-09-07. A loan fact carries
- * the licence only: "Reviewed by Chapter3's licensed mortgage loan originator,
- * NMLS 2721275." tools/mkpage.js refuses to generate a page that breaks this. */
+/* Owner rules 2026-09-06 and 2026-09-07 (PLAYBOOK A20a): the Operations Officer's
+ * name is in the byline only, with the title Operations Officer; it is never in the
+ * body copy of these pages or of any page built from 2026-09-07. A story from his
+ * files is "in Chapter3's files". tools/mkpage.js refuses to generate a page that
+ * breaks this. */
 const NO_OWNER_NAME_PAGES = new Set([
   "/sell/rental-property/", "/invest/student-rentals/", "/invest/landlord-rules/",
   "/invest/llc/", "/invest/foreclosures/",
@@ -1237,6 +1241,14 @@ const OWNER_NAME_REGEX = /\bDevin\b/;
  * the lease"). Error on the pages above and on every page built from that date;
  * a warning on the older pages until they are swept. "sets of" is a noun. */
 const SETS_REGEX = /\b(?:sets(?!\s+of\b)|set by)\b/i;
+/* Owner rule 2026-09-07 (PLAYBOOK A17, MISTAKES 74): never his NMLS number, and
+ * never a claim that he, or Chapter3, is or has a licensed mortgage loan
+ * originator, MLO or loan officer. Chapter3 is a brokerage, not a lender, and the
+ * claim is illegal. Whole file, every page, schema included. A loan fact that
+ * needs a source says "according to a loan officer at our preferred lender". */
+const NMLS_NUMBER_REGEX = /\b2721275\b/;
+const MLO_SCHEMA_REGEX = /Licensed Mortgage Loan Originator/;
+const MLO_CLAIM_REGEX = /\bDevin(?: Day)?\b[^.<"]{0,120}\b(?:MLO|loan originator|loan officer|NMLS)\b|\b(?:MLO|loan originator|loan officer|NMLS)\b[^.<"]{0,120}\bDevin\b|Chapter3(?:'s|&#39;s|&#x27;s|\u2019s)?\s+(?:own\s+)?licensed\s+(?:mortgage\s+)?loan\s+(?:originator|officer)|\bour licensed (?:mortgage )?loan (?:originator|officer)\b/i;
 
 const DOWN_PAYMENT_OK_PAGES = new Set([
   "/invest/strategies/dscr-loans/",
@@ -1840,8 +1852,17 @@ function audit() {
               E(`register: "${m[0].slice(0, 45)}" - ${msg} (PLAYBOOK A22)`);
           /* owner rules 2026-09-06 (PLAYBOOK A20a, A22a): no owner name, nothing "sets" anything */
           const newRules = NO_OWNER_NAME_PAGES.has(rel) || (pubDate && pubDate >= NO_OWNER_NAME_FROM);
-          if (newRules && OWNER_NAME_REGEX.test(regSrc))
-            E(`owner name in page copy - never write the Operations Officer's name on a page built from ${NO_OWNER_NAME_FROM}; write "Chapter3's licensed mortgage loan originator, NMLS 2721275" (owner rule 2026-09-06, PLAYBOOK A20a)`);
+          const nameSrc = regSrc.replace(/\b(?:Reviewed by|By)\s+Devin Day\s*,\s*Operations Officer\b/g, " ");
+          if (newRules && OWNER_NAME_REGEX.test(nameSrc))
+            E(`owner name in page copy outside the byline - on a page built from ${NO_OWNER_NAME_FROM} a story from his files is "in Chapter3's files" (owner rule 2026-09-06, PLAYBOOK A20a)`);
+          {
+            /* owner rule 2026-09-07 (PLAYBOOK A17): sitewide, whole file, schema included */
+            if (NMLS_NUMBER_REGEX.test(s) || MLO_SCHEMA_REGEX.test(s))
+              E("licence claim: the Operations Officer's NMLS number or \"Licensed Mortgage Loan Originator\" is in the file - never, anywhere, schema included (owner rule 2026-09-07, PLAYBOOK A17)");
+            const whole = decodeEnt(s.replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ");
+            const mlo = whole.match(MLO_CLAIM_REGEX);
+            if (mlo) E(`licence claim: "${mlo[0].slice(0, 70)}" - never call him, or Chapter3, a licensed loan originator; a loan fact that needs a source says "according to a loan officer at our preferred lender" (owner rule 2026-09-07, PLAYBOOK A17)`);
+          }
           const setsHit = regSrc.match(SETS_REGEX);
           if (setsHit) {
             const setsMsg = `register: "${setsHit[0]}" - nothing sets anything; write what depends on what (owner rule 2026-09-06, PLAYBOOK A22a)`;
@@ -1882,7 +1903,7 @@ function audit() {
           const SAYS = /\b(?:Tim|Timothy) Nash\b[^.]{0,80}\b(?:says?|said|puts? it|calls?|tells?|has seen|will not|refuses?|walks?|checks?|looks? for|starts?|asks?)\b|\bDevin Day\b[^.]{0,80}\b(?:says?|said|puts? it|calls?|tells?|has seen|runs?|checks?|looks? for)\b/;
           if (!SAYS.test(plain))
             W((NO_OWNER_NAME_PAGES.has(rel) || (pubDate && pubDate >= NO_OWNER_NAME_FROM))
-              ? "no attributed sentence from a named licensed person - quote Tim Nash doing or saying something specific; the Operations Officer's name is never written on this page (PLAYBOOK A20, A20a)"
+              ? "no attributed sentence from a named licensed person - quote Tim Nash doing or saying something specific; the Operations Officer's name is in the byline only on this page (PLAYBOOK A20, A20a)"
               : "no attributed sentence from a named licensed person - quote Tim or Devin doing or saying something specific (PLAYBOOK A20)");
         }
       }

@@ -347,3 +347,45 @@ file and accepts only `author: "tim"`. The three `llms.txt` entries that
 named him were rewritten. PLAYBOOK A20a and A22a. The eight batch-1 and
 batch-2 pages still name him and still say "sets"; that sweep waits for his
 instruction, because the rule as given was "the pages we are making now".
+
+
+## 74. The site called Chapter3's Operations Officer its licensed mortgage loan originator, with his NMLS number, on 117 pages (2026-09-07)
+
+**What happened.** His NMLS number and the words "licensed MLO" or "licensed
+mortgage loan originator" were on 117 of 118 pages: in the Person schema on
+every page, in the byline of 87 pages, in the author box of 22 relocation
+pages, on the About page and the homepage team card, and in eight body
+sentences. The five batch-3 pages had just been changed to say "Reviewed by
+Chapter3's licensed mortgage loan originator, NMLS 2721275", which tied the
+licence to the brokerage and made it worse. He read it: "Dont mention my NMLS
+or say im a licensed loan originator with Chapter3 ever that's illegal just
+state the fact and if you need to get credibility say according to a loan
+officer at our preferred lender."
+
+**Why the existing rule did not stop it.** PLAYBOOK A17 required the opposite.
+It said financing content "shows Devin Day, licensed MLO, NMLS 2721275 visibly",
+and the gates enforced visibility. The rule was written from the licence fact
+without asking whether a brokerage may display it. Chapter3 is not a lender.
+
+**What stops it recurring.** Every instance is gone: the schema description on
+117 pages, the bylines, the author boxes, the team cards, the eight sentences,
+two llms.txt entries. `build.js` errors sitewide on the number anywhere in a
+file, schema included, on the title-case schema phrase, and on any sentence
+that puts him or Chapter3 next to "MLO", "loan originator", "loan officer" or
+"NMLS". `tools/mkpage.js` refuses to generate a page that carries any of it.
+A17 is rewritten. A loan fact stands on its own; when it needs a source it
+says "according to a loan officer at our preferred lender".
+
+## 75. A page said a law "does not do that for you" (2026-09-07)
+
+**What happened.** The student-rentals page said "The state's landlord and
+tenant law does not do that for you." He read it: "a law never does anything
+for you why are we personifying a law? its against the rules."
+
+**Why the existing rule did not stop it.** REGISTER_REGEX bans named
+personifications ("catches") but had no shape for a law, a lease or a rule as
+the subject of "does that for you", "cares", "wants" or "expects".
+
+**What stops it recurring.** Two REGISTER_REGEX entries, sitewide errors,
+sanity-checked first: they match the flagged sentence and nothing else on the
+site, and they do not match "the law requires". PLAYBOOK A22b.

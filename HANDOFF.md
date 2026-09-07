@@ -1466,16 +1466,106 @@ takes which address), the batch-1 and batch-2 question lists, the VA
 handbook citation (unreachable; the page says "most lenders require" as he
 instructed), and the sweep above.
 
+## 2026-09-07: the licence claim removed from every page, bylines restored, the student page rewritten, fifth pass on the five
+
+He read the fourth-pass preview and sent one message that reversed one rule and
+amended another. It is verbatim in `research/invest-next/owner-answers-batch3.md`,
+"Round 4".
+
+**The licence claim, sitewide (PLAYBOOK A17 rewritten, MISTAKES 74).** "Dont
+mention my NMLS or say im a licensed loan originator with Chapter3 ever that's
+illegal just state the fact and if you need to get credibility say according
+to a loan officer at our preferred lender." It was on 117 of 118 pages: the
+Person schema on every page, 87 bylines, 22 relocation author boxes, the
+About page and the homepage team card, and eight body sentences (five on the
+batch-3 pages, cash-to-close, non-warrantable condos, the HOA turnover page
+and the jobs page). All gone, by one script of exact replacements plus five
+hand edits. Where a fact needed a source it now says "according to a loan
+officer at our preferred lender"; the AfBA disclosure in the footer covers
+that reference on every page. `build.js` errors sitewide on the number
+anywhere in a file, on the title-case schema phrase, and on any sentence that
+puts him or Chapter3 next to MLO, loan originator, loan officer or NMLS;
+`tools/mkpage.js` refuses either before it writes. Positive control: 117
+pages failed before the sweep, none after. `dates` moved 90 pages because
+their visible byline changed; that is rule 6 applied, not bulk-stamping.
+The cash-to-close sentence was removed in the spec and in the page by the
+same edit, without regenerating, because its spec still says "sets" and the
+generator now refuses that; regenerate it only after the "sets" sweep.
+
+**Bylines (A20a amended).** "change the Author to by Devin Day and reviewed
+by Tim Nash like all the other pages we have." The five pages are author
+devin: "By Devin Day, Operations Officer · Reviewed by Tim Nash,
+Broker-in-Charge". The generator accepts tim or devin again; a tim page reads
+the reverse. The name-in-copy gate now excludes the byline; the first attempt
+missed because tag-stripping leaves a space before the comma ("Devin Day ,
+Operations Officer"), so the strip regex allows it. Body copy still says "in
+Chapter3's files". Ask him whether he wants his name back in the stories.
+
+**Property management.** "we don't do any property management make sure
+nothing says we do." The landlord page's "What does a Chapter3 agent do
+during an eviction?" section is deleted, with the sentence "When Chapter3
+manages the unit, the broker-in-charge files it for you". A sitewide search
+for management claims (we manage, we screen, we collect, we serve, we file,
+Chapter3 manages) found nothing else.
+
+**A law does nothing for anyone (A22b, MISTAKES 75).** Two REGISTER_REGEX
+entries; one sitewide hit before (the sentence he flagged), none after, and
+"the law requires" passes. An earlier draft also caught "an owner's policy
+protects you" on cash-to-close, which is an insurance policy doing its
+literal job, so "policy" and "protects" came out of the pattern.
+
+**The five pages.**
+
+- `/invest/student-rentals/`, rewritten where he said. The sub says who
+  rents and states the three-tenant cap plainly. The cap section opens by
+  saying the number is a zoning rule, then gives the family definition. The
+  parking rule has its solution: a driveway that holds one car per tenant
+  and a lease that limits the cars. The rent section is deleted with its two
+  FAQs and the fair-market-rent sources; there is no public student rent
+  index and he had no figure ("i dont have these stats"). The parents
+  section says what happens: a parent buys a house near campus and moves the
+  family in, legal residence, 4 percent rate, primary-residence loan; or the
+  student rents and a parent co-signs three times in four. The university's
+  housing policy STUD-336 (the PDF, revised February 2021, read 2026-09-07)
+  exempts automatically a student whose permanent address on file is within
+  50 miles of campus and who lives there with a legal guardian, so a
+  first- or second-year student can live at the parents' house; new FAQ,
+  new source. "The state's landlord and tenant law does not do that for you"
+  is deleted. The cap CTA is "Want to rent to college students?" to
+  `/contact/`.
+- `/invest/foreclosures/`: the sale-list CTA text in his words; "pulled for
+  your numbers?" deleted from the REO CTA; the master's deed section now
+  defines the master-in-equity and the deed before the warranty point; the
+  upset-bid section defines the period before the deficiency judgment.
+- `/invest/landlord-rules/`: first CTA "Have us help buy your next unit";
+  the eviction section defines eviction and ejectment first; the
+  agent-eviction section is gone.
+- `/invest/llc/`: the sale section opens with what differs from a personal
+  sale; the DSCR entity fact is "according to a loan officer at our preferred
+  lender".
+- `/sell/rental-property/`: the bookings section defines a vacation rental
+  before the statute.
+
+**Gates and browser.** `preflight` exits 0. The harness at 1280, 768 and 320:
+the five pages have no low-contrast node, no overflow, one H1 and a hit
+hero CTA. The About page and the relocation pages show low-contrast headings
+that were there before this change (the byline colour did not move).
+
+**Open.** Question 15; the batch-1 and batch-2 question lists; the eight
+older pages still say "sets" 14 times (their bylines are already fixed by the
+sweep); the VA handbook citation; his name in stories or not.
+
 ## Suggested order for the next session
 
 00. **All twelve investor pages are built and on the branch**, and the five
    batch-3 pages are on their fourth pass (2026-09-06 sections). Apply his
-   edits to the specs and regenerate, never to the pages. Two rules are now
-   gates: his name is never in page copy (A20a) and nothing "sets" anything
-   (A22a). When he says so, sweep the eight batch-1 and batch-2 pages for both
-   and regenerate them; ask him about the schema Person entity and the 24
-   older bylines first. He has not deployed batches 2 or 3; the deploy command
-   is in the environment section.
+   edits to the specs and regenerate, never to the pages. Three rules are now
+   gates: his NMLS number and any licensed-loan-originator claim never appear
+   anywhere (A17), his name is in the byline only (A20a), and nothing "sets"
+   anything (A22a). When he says so, sweep the eight batch-1 and batch-2
+   pages for "sets" and regenerate them. He has not deployed batches 2 or 3;
+   the deploy command is in the environment section. The licence sweep
+   touched 117 pages, so the next deploy is a full one.
 0. **The three revised tax pages are on the branch and in the previews.** Expect
    the next line edits from him, plus his answer on the local-versus-Chapter3
    question above. Two pages (accommodations tax, STR tax) still await notes.
