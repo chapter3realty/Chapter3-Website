@@ -15,29 +15,31 @@ const FEMAFS = "https://dlnreng.hawaii.gov/nfip/wp-content/uploads/sites/11/2015
 const MSC = "https://msc.fema.gov/portal/home";
 const DOI = "https://doi.sc.gov/";
 const ASSESSOR = "https://www.horrycountysc.gov/departments/assessor/";
+const CLOVERED = "https://clovered.com/landlord-insurance/south-carolina/";
 
 module.exports = {
   url: "/invest/landlord-insurance/",
   title: "Landlord Insurance on a Myrtle Beach Rental | Chapter3",
-  description: "Insurance on a Myrtle Beach rental: the landlord policy, wind and flood, how much more a rental costs to insure, and why the property tax costs more than all three.",
+  description: "Landlord insurance on a Myrtle Beach rental: what a landlord policy costs here, wind and flood, what the lender may require, and the property tax that costs more.",
   ogTitle: "Insurance on a Myrtle Beach rental, priced before you offer",
   crumb: "Landlord insurance",
   eyebrow: "Underwriting the rental",
-  h1: "What does insurance cost on a Myrtle Beach rental?",
+  h1: "How much does landlord insurance cost on a Myrtle Beach rental?",
   h1em: "The landlord policy, wind, flood, and the tax that costs more.",
-  sub: "A landlord policy is about a fifth more than a homeowner policy, flood adds a $250 surcharge on a rental, and the property tax is three times higher.",
+  sub: "A landlord policy on a Myrtle Beach rental costs 15 to 25 percent more than the homeowner policy on the same house. The lender may also require wind and flood.",
   heroCta: { label: "Call a specialized agent", href: TEL },
   author: "devin",
-  shortAnswer: "A rental needs a landlord policy instead of a homeowner policy. It needs wind coverage on most of the coast, and flood coverage where the lender or the zone requires it. The insurance trade body puts a landlord policy at about 25 percent more than a homeowner policy. In Chapter3's files it has run 15 to 20 percent more. Federal flood insurance adds a $250 yearly surcharge on a rental instead of $25, and its premium rises faster. The larger cost is the property tax. A rental is assessed at 6 percent and pays the school operating tax. Its bill is three to four times the bill for the same house as a legal residence. We put all four numbers in the projection before you offer.",
+  shortAnswer: "A landlord policy on a Myrtle Beach house costs about $1,700 to $4,400 a year. That is 15 to 25 percent more than the homeowner policy on the same house, which costs about $1,500 to $3,500 here. In Chapter3's files the difference has been 15 to 20 percent. A rental needs the landlord policy instead of a homeowner policy. It also needs wind coverage on most of the coast, and flood coverage where the lender or the zone requires it. Federal flood insurance adds a $250 yearly surcharge on a rental instead of $25, and its premium rises faster. The larger cost is the property tax. A rental is assessed at 6 percent and pays the school operating tax. Its bill is three to four times the bill for the same house as a legal residence. We put all four numbers in the projection before you offer.",
   sections: [
     { h2: "What insurance does a rental need?", html:
-      h.p(`Three policies.`) +
-      h.table(["Policy", "What it covers", "Who requires it"], [["Landlord policy", "The building, your liability if someone is hurt, and lost rent during a covered repair", "Your lender, and any claim you make"], ["Wind and hail", "Storm damage. Often a separate policy on the coast", "Your lender"], ["Flood", "Rising water. Always a separate policy", "Your lender in a high-risk zone. Your choice elsewhere"]]) +
+      h.p(`Three policies. Your lender may require all three: a landlord policy with replacement cost on the building, wind where it is a separate policy, and flood in a high-risk zone.`) +
+      h.table(["Policy", "What it covers"], [["Landlord policy", "The building, your liability if someone is hurt, and lost rent during a covered repair"], ["Wind and hail", "Storm damage. Often a separate policy on the coast"], ["Flood", "Rising water. Always a separate policy"]]) +
       h.p(`${h.ext(III, "A landlord policy replaces the homeowner policy")}. A homeowner policy is written for a house you live in. A claim on a rented house can be denied under it.`) +
       h.p(`${h.ext(MSC, "Check the flood zone")} for any address at the federal map center. ${h.a("/buyers/coastal-insurance/", "The three coastal policies, explained")}, with the average premiums here. A short-term rental needs coverage written for short-term use, not a landlord policy. ${h.a("/invest/str-setup/", "What a short-term rental owner arranges after closing")}.`) },
-    { h2: "How much more does a rental cost to insure?", html:
-      h.table(["Cost", "Home you live in", "Rental"], [["Building policy", "Homeowner policy", "Landlord policy. About 25 percent more by the trade body's figure. 15 to 20 percent more in Chapter3's files"], ["Federal flood surcharge", "$25 a year", "$250 a year"], ["Property tax", "4 percent assessment. No school operating tax", "6 percent assessment. Full school operating tax. Three to four times the bill"]]) +
-      h.p(`${h.ext(III, "The insurance trade body puts a landlord policy at about 25 percent more")} than a homeowner policy on the same house. The extra pays for the liability and the lost-rent coverage.`) +
+    { h2: "How much more does a Myrtle Beach rental cost to insure?", html:
+      h.p(`${h.a("/buyers/coastal-insurance/", "A homeowner policy on a Myrtle Beach house costs about $1,500 to $3,500 a year")} in the standard market. ${h.ext(III, "A landlord policy costs about 25 percent more")} than the homeowner policy on the same house. In Chapter3's files the difference has been 15 to 20 percent. A landlord policy here therefore costs about $1,700 to $4,400 a year. ${h.ext(CLOVERED, "One state comparison puts it at about $2,000 a year on a $200,000 house and $3,150 on a $350,000 house")}, statewide. Myrtle Beach prices near the top of the state, so expect the upper part of the range.`) +
+      h.table(["Cost", "Home you live in", "Rental"], [["Building policy", "Homeowner policy, about $1,500 to $3,500 a year here", "Landlord policy, 15 to 25 percent more than the homeowner policy on the same house, about $1,700 to $4,400"], ["Federal flood surcharge", "$25 a year", "$250 a year"], ["Property tax", "4 percent assessment. No school operating tax", "6 percent assessment. Full school operating tax. Three to four times the bill"]]) +
+      h.p(`The extra on the landlord policy pays for the liability and the lost-rent coverage. Get a quote on the house, not the average: the same house can price a thousand dollars apart at two insurers.`) +
       h.p(`Flood is different. The federal program prices a rental's flood risk the same way it prices a primary home's. ${h.ext(FEMAFS, "It charges a $250 yearly surcharge on a rental instead of $25")}. It also lets the premium rise faster toward its full-risk price. A rental's flood policy can cost a multiple of what the last owner paid while living there. In Chapter3's files that multiple has been about three.`) +
       h.p(`Ask the seller for the current declarations page and any claims on the house before you offer. Tell the insurer how the house will be used, because the vacancy between tenants changes the price.`) },
     { h2: "What makes one quote double another?", html: (bg) =>
@@ -54,6 +56,7 @@ module.exports = {
   ],
   faqTitle: "Landlord insurance FAQ",
   faq: [
+    { q: "How much does landlord insurance cost in Myrtle Beach?", a: "About $1,700 to $4,400 a year on a single-family house. That is 15 to 25 percent more than the homeowner policy on the same house, which costs about $1,500 to $3,500 here. Get a quote on the address before you offer." },
     { q: "How much more is landlord insurance than homeowners insurance?", a: "The insurance trade body puts it at about 25 percent more. In Chapter3's files it has been 15 to 20 percent more on the same house." },
     { q: "Is flood insurance more expensive on a rental?", a: "The federal program charges a rental a $250 yearly surcharge instead of $25 and lets its premium rise faster toward the full-risk price. In Chapter3's files a rental's flood policy has cost about three times what the owner paid while living there." },
     { q: "Do I need flood insurance on a rental in Myrtle Beach?", a: "If the house is in a high-risk flood zone and the loan is federally backed, yes. Outside those zones it is your choice. Check the zone at the federal map center before you offer." },
@@ -65,6 +68,7 @@ module.exports = {
     { name: "FEMA flood map center", href: MSC },
     { name: "SC Department of Insurance", href: DOI },
     { name: "Horry County Assessor", href: ASSESSOR },
+    { name: "Clovered, landlord insurance in South Carolina", href: CLOVERED },
   ],
   sourcesNote: "Educational only, not insurance advice. Premiums are quotes on the house, not averages; get them before you offer.",
   bottomCta: { h2: "Price the insurance and the tax before you offer.", p: "One call. We get the three quotes and the tax at the 6 percent rate, and put them in the projection.", label: "Call a specialized agent", href: TEL },

@@ -443,3 +443,27 @@ map of the county", "the STR map", "carry the boxes" or "carries out the sale".
 refuses to generate either. PLAYBOOK A22c adds the reading pass for the verbs
 no regex has.
 
+## 78. A title that offered financing, and a loan-rule page nobody asked for (2026-09-07)
+
+**What happened.** The financing page's title became "Finance Multiple Rental
+Properties in Myrtle Beach | Chapter3" and its H1 "How do you finance more
+than one rental property?", with a hero sub about the ten-financed-property
+limit and reserves, and a section on growing with FHA loans. He read it: "FUCK
+NO we are NOT a lending company we are a real estate brokerage NEVER talk in
+away that makes it sound like we can finance a house ... thats all loan
+company shit that we have NOTHING to do with." The same round: "All of our
+headers need to be local specific."
+
+**Why the existing rule did not stop it.** LEND_VOICE bans Chapter3 as the
+actor ("we finance", "our loans") in copy. An imperative headline ("Finance
+Multiple Rental Properties") names no actor, so it passed, and it reads as an
+offer anyway. Nothing checked that a headline names the place.
+
+**What stops it recurring.** `LEND_HEADLINE` (sitewide error on the title,
+H1, hero sub and every CTA label) and `HEADLINE_PLACE` (error on pages built
+from 2026-09-07, warning elsewhere) in `build.js`, both with positive and
+negative controls; `mkpage` refuses both. PLAYBOOK A17b and A22d. The page
+itself was rebuilt around what a brokerage knows: the mistakes on a second
+rental, one client's story, and equity for the next one, with the loan rule
+as one short section halfway down.
+

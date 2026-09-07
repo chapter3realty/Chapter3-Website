@@ -468,6 +468,21 @@ before a page ships, read it once for a house that "sits", a standard that is a
 "ceiling", a rule that "covers", a gap, a line, a door. Replace each with the
 literal action.
 
+**A22d. Every headline names the place (owner, 2026-09-07: "All of our
+headers need to be local specific we cant compete nationally with these
+national sounding headlines").** The H1 of every page names Myrtle Beach,
+Horry County, the Grand Strand or a town on it. `build.js` errors on a page
+built from 2026-09-07 whose H1 names no place and warns on older pages;
+`mkpage` refuses to generate one.
+
+**A17b. No headline offers financing (owner, 2026-09-07: "we are NOT a lending
+company we are a real estate brokerage NEVER talk in away that makes it sound
+like we can finance a house").** A title, H1, hero sub or CTA label never
+starts with "Finance", "Financing", "Refinance" or "Get a loan", and never
+says "finance your", "finance the next" or "we finance". The page can be about
+loans; the headline cannot read as an offer of one. `build.js` errors sitewide
+(`LEND_HEADLINE`); `mkpage` refuses.
+
 ## Phase 5 — Compliance, BEFORE the copy is mirrored anywhere
 
 Do this before generating JSON-LD, `llms-full.txt` or the sitemap entry.

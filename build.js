@@ -1245,6 +1245,13 @@ const SETS_REGEX = /\b(?:sets(?!\s+of\b)|set by)\b/i;
  * plan, and nothing "carries" a loan, a payment or a cost. "carrying costs" is
  * the same metaphor. Error on the new pages, a warning on the 13 older pages
  * until they are swept; "maps out" is an error everywhere (it appeared once). */
+/* Owner rules 2026-09-07 (PLAYBOOK A22d, A17b, MISTAKES 78). "All of our headers
+ * need to be local specific we cant compete nationally with these national
+ * sounding headlines": the H1 of every page built from 2026-09-07 names a place
+ * on the Grand Strand (error); older pages warn. "We are NOT a lending company":
+ * no title, H1, hero sub or CTA label may read as an offer to finance. */
+const HEADLINE_PLACE = /\b(?:Myrtle Beach|Horry|Grand Strand|South Carolina|Conway|Surfside|Murrells Inlet|Pawleys|Georgetown|Carolina Forest|Little River|Longs|Garden City|Litchfield|Socastee|Loris|Aynor|Cherry Grove|Coastal Carolina|Market Common|Waccamaw|Grande Dunes|Barefoot|Intracoastal|Briarcliffe|Burgess|Forestbrook)\b/i;
+const LEND_HEADLINE = /^\s*(?:finance|financing|refinanc\w*|get (?:a |your )?(?:loan|mortgage|financing|pre-?approv\w*))\b|\b(?:we |chapter\s*3 )?(?:finance|financing|refinance) (?:your|the next|multiple|more|another)\b|\bwe (?:can )?(?:finance|lend|refinance)\b/i;
 const MAPS_REGEX = /\bmap(?:s|ped|ping)?\s+(?:out\b|the\s+(?:loan|route|path|plan|numbers|deal|purchase|year|way|next)\b)/i;
 const CARRY_REGEX = /\bcarr(?:y|ies|ied|ying)\s+(?:a |an |the |its |their |your |his |her |our |new |two |three |both |that |this |each |every |own )*(?:loan|mortgage|payment|payments|cost|costs|debt|note|rest|house|property|premium|itself|themselves)\b|\bcarrying costs?\b/i;
 /* Owner rule 2026-09-07 (PLAYBOOK A17, MISTAKES 74): never his NMLS number, and
@@ -1873,6 +1880,18 @@ function audit() {
           if (setsHit) {
             const setsMsg = `register: "${setsHit[0]}" - nothing sets anything; write what depends on what (owner rule 2026-09-06, PLAYBOOK A22a)`;
             if (newRules) E(setsMsg); else W(setsMsg);
+          }
+          {
+            const titleTxt = decodeEnt(((s.match(/<title>([^<]*)<\/title>/) || [, ""])[1] || "")).replace(/\s+/g, " ").trim();
+            const h1Txt = decodeEnt(((s.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [, ""])[1] || "").replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+            const subTxt = decodeEnt(((s.match(/class="detail-sub"[^>]*>([\s\S]*?)<\/p>/) || [, ""])[1] || "").replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+            const labels = [...s.matchAll(/<a[^>]*class="btn[^"]*"[^>]*>([\s\S]*?)<\/a>/g)].map(m => decodeEnt(m[1].replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim());
+            for (const [what, txt] of [["title", titleTxt], ["H1", h1Txt], ["hero sub", subTxt], ...labels.map(l => ["CTA label", l])])
+              if (LEND_HEADLINE.test(txt)) E(`${what} reads as an offer to finance: "${txt.slice(0, 60)}" - Chapter3 is a brokerage, never a lender (owner rule 2026-09-07, PLAYBOOK A17b)`);
+            if (h1Txt && !HEADLINE_PLACE.test(h1Txt)) {
+              const localMsg = `H1 names no place on the Grand Strand: "${h1Txt.slice(0, 60)}" - every headline is local (owner rule 2026-09-07, PLAYBOOK A22d)`;
+              if (newRules) E(localMsg); else W(localMsg);
+            }
           }
           const mapsHit = regSrc.match(MAPS_REGEX);
           if (mapsHit) E(`register: "${mapsHit[0]}" - nothing maps a loan or a plan; say plan, list, or the literal action (owner rule 2026-09-07, PLAYBOOK A22c)`);

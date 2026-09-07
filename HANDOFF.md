@@ -1765,12 +1765,38 @@ touching either page. The short version:
 **Gates.** Audit 0, preflight 0, harness clean on the five at three widths, the
 calculator check green.
 
+## 2026-09-07 last: batch-4 round 4, headlines local, no headline offers financing, the second-rental page
+
+His fourth list is verbatim under "Round 4" in
+`research/invest-next/owner-answers-batch4.md` with the checks and the changes.
+Two new standing rules came out of it, both gated:
+
+- **Every H1 names the place** (A22d). Error on pages built from 2026-09-07,
+  warning on older ones. Nineteen older H1s warn today: five legal pages
+  (accessibility, fair housing, privacy, terms) and fourteen content pages
+  (condo-in-litigation, relocating/beaches, undisclosed-flooding, hoa/documents,
+  hoa/master-insurance-ho6, hoa/rental-restrictions, hoa/reserves,
+  hoa/tax-deductible, invest/accommodations-tax, invest/long-term-rental,
+  invest/str-tax-treatment, strategies/dst, map, why-chapter-3). He was given
+  the list; do not rewrite live H1s until he says which.
+- **No headline offers financing** (A17b, MISTAKES 78). Sitewide error.
+
+**The financing page** is now "Buying a Second Rental in Myrtle Beach" at the
+same URL: the three mistakes with his story, equity for the next one ("no new
+cash from savings", never "$0 down"), the ten-property limit as one short
+section, reserves. No FHA. The hub anchor and llms.txt follow it.
+
+**Insurance** prices the landlord policy ($1,700 to $4,400 a year here, from the
+coastal page's homeowner range plus the trade body's 25 percent, with two
+statewide figures from a comparison page for context). **Rent prices** has the
+eight-row expenses table and the two ways to get the rent as separate steps.
+
 ## Suggested order for the next session
 
 00. **Seventeen investor pages are built and on the branch.** The twelve are
    live as of 2026-09-07 night; batch 4 (five pages, three sections above) has
-   his round-2 and round-3 edits applied, gates green, and awaits his review
-   and deploy.
+   his round-2, round-3 and round-4 edits applied, gates green, and awaits
+   his review and deploy.
    Apply his
    edits to the specs and regenerate, never to the pages. Three rules are now
    gates: his NMLS number and any licensed-loan-originator claim never appear

@@ -294,3 +294,93 @@ Spending the reserve. mention how it took him a bit longer but he did it safer a
   "carry a loan / payment / cost" and "carrying costs" on every page built from
   2026-09-07 (a warning on the 13 older pages that use them). mkpage refuses to
   generate either.
+
+## Round 4 (2026-09-07, later still). His message, verbatim
+
+"All of our headers need to be local specific we cant compete nationally with these national sounding headlines.
+
+okay delete the only ten financed properties then it isnt portraying something thats correct and i dont like it delete it make one section where you explain that and have it halfway in the page its not the main focus its a very very very small side note that applies to almost nobody. Get this out out of the subheader and replaced actually re write the entire subheader thats all loan company shit that we have NOTHING to do with
+
+Finance Multiple Rental Properties in Myrtle Beach | Chapter3 FUCK NO we are NOT a lending company we are a real estate brokerage NEVER talk in away that makes it sound like we can finance a house.
+
+Can you grow with FHA loans and multi-unit buildings? Just delete this it doesnt fit
+
+What the hell even is this entire article about now that i read it its all jumbled bullshit. Talk about common mistakes people make buying a second rental have our story in there talk about 0 dollar down opportunities when you own multiple rentals and i guess delete the other stuff because it doesnt make any sense in this page and make the subheader and title make sense with that and also decide if the page is too thin if so then we just delete the whole thing.
+
+What does insurance cost on a Myrtle Beach rental? Have we not talked about this on the website already?
+
+ Who requires it who the fuck else would require it lets delete that and at the top mention how the lender may require these policies
+
+Landlord policy. About 25 percent more by the trade body's figure. 15 to 20 percent more in Chapter3's files  Bruh what? 25%20% more than what why mention it randomly with fuck all context I also dont know how much it costs to get a landlord policy so you get the price for it.
+
+The county benchmark, and what moves it. Delete this or replace this with something better for SEO
+
+It is the 40th percentile of gross rents for standard-quality units, so 60 percent of standard units rent above it. It includes utilities. This is complicated sounding.
+
+Want the rent for one house? change this to "want to buy a rental"
+
+How do you find out what one house will rent for?
+ Move the CTA down here and separate the 2 ways to find out what a house will rent for
+
+What comes out of the rent? Elaborate more on this section
+
+ add supply faster than tenants arrive, so a street of identical new houses rents on price alone. Delete
+
+Buying a rental and want the rent checked first? Delete this CTA"
+
+### Round 4, checked
+
+- **Landlord policy price.** The site's own coastal insurance page (sources
+  re-opened when it was built) puts a homeowner policy on a Myrtle Beach
+  single-family house at about $1,500 to $3,500 a year in the standard market,
+  and comparison sites at $4,500 to $5,300 for a standardized $300,000 house.
+  The insurance trade body puts a landlord policy at about 25 percent more than
+  a homeowner policy. A South Carolina comparison page (Clovered, re-opened
+  2026-09-07) puts landlord insurance at about $2,005 a year on a $200,000
+  house and $3,150 on a $350,000 house statewide, "15% to 25% higher" than a
+  homeowner policy. A second page (InsuredBetter) says $1,605 statewide with no
+  basis given, so it is not used. The page says: about $1,700 to $4,400 a year
+  here, 15 to 25 percent more than the homeowner policy on the same house,
+  with the two state figures for context. Insurance premiums are not loan
+  payments, so the amounts are allowed.
+- **"0 dollar down opportunities."** The down payment on the next rental can
+  come from a cash-out refinance or a line of credit on a rental you own, so
+  the purchase takes no new cash from savings. The page says that, in those
+  words. It does not say "$0 down" or "nothing down": the amount of a down
+  payment is a Reg Z trigger term, this page is not one of the four
+  business-purpose pages where percentages are allowed, and his own round-1
+  note said the equity figures "may be reg Z issues so be careful".
+- **Has the site covered insurance cost already?** Yes: /buyers/coastal-
+  insurance/ has the three policies and the averages for a home you live in.
+  This page is the rental difference: the landlord policy, the $250 flood
+  surcharge, the 6 percent tax. The H1 now says "landlord insurance" so the two
+  pages do not compete, and it links to the buyer page for the averages.
+- **Is the page too thin without the loan material?** No. The rebuilt page is
+  about 1,050 words in the article: the three mistakes with his story, the
+  equity section, the limit in one short section halfway down, and reserves.
+  It stays.
+
+### Round 4, applied
+
+- Every H1 on the five pages names a place. Gate: `build.js` errors when the
+  H1 of a page built from 2026-09-07 names no place on the Grand Strand and
+  warns on older pages (14 content pages and 5 legal pages warn today);
+  `mkpage` refuses to generate one.
+- No headline, hero sub or CTA label may read as an offer to finance. Gate:
+  `LEND_HEADLINE` in `build.js`, sitewide error, positive and negative
+  controls; `mkpage` refuses. "Finance Multiple Rental Properties" is gone.
+- Financing page rebuilt as "Buying a Second Rental in Myrtle Beach": H1 "What
+  goes wrong when you buy a second rental in Myrtle Beach?", a new hero sub
+  with no loan-company content, the three mistakes with his story first, the
+  equity section second, the ten-property limit as one four-sentence section
+  third, reserves fourth. FHA section deleted. The URL did not change.
+- Insurance: "Who requires it" column deleted, "your lender may require all
+  three" at the top, the landlord policy priced with context, H1 names the
+  landlord policy.
+- Rent prices: h1em "Myrtle Beach rents by bedroom, and what changes them"; the
+  percentile sentence is "the rent that 40 out of 100 standard homes rent at or
+  below"; the two ways to find the rent are separate numbered paragraphs with
+  the "Want to buy a rental?" CTA under them; "What comes out of the rent" is
+  an eight-row table; the supply sentence and the "rent checked first" CTA are
+  deleted. The expenses section carries the page's second CTA ("Want the full
+  cost of one rental?"), because every article carries two.

@@ -71,6 +71,12 @@ function build(spec) {
   for (const k of REQUIRED) if (spec[k] === undefined) throw new Error(`spec missing ${k}`);
   if (!/^\/[a-z0-9-]+(?:\/[a-z0-9-]+)*\/$/.test(spec.url)) throw new Error(`bad url ${spec.url}`);
   if (spec.title.length > 62) throw new Error(`title is ${spec.title.length} chars (max 62)`);
+  /* Owner rules 2026-09-07: every H1 names a place on the Grand Strand; no headline, sub or CTA label offers financing (Chapter3 is a brokerage). */
+  { const LOCAL = /\b(?:Myrtle Beach|Horry|Grand Strand|South Carolina|Conway|Surfside|Murrells Inlet|Pawleys|Georgetown|Carolina Forest|Little River|Longs|Garden City|Litchfield|Socastee|Loris|Aynor|Cherry Grove|Coastal Carolina|Market Common|Waccamaw|Grande Dunes|Barefoot|Intracoastal|Briarcliffe|Burgess|Forestbrook)\b/i;
+    if (!LOCAL.test(spec.h1)) throw new Error(`H1 names no place on the Grand Strand: "${spec.h1}" (owner rule 2026-09-07: every headline is local)`);
+    const LEND = /^\s*(?:finance|financing|refinanc\w*|get (?:a |your )?(?:loan|mortgage|financing|pre-?approv\w*))\b|\b(?:we |chapter\s*3 )?(?:finance|financing|refinance) (?:your|the next|multiple|more|another)\b|\bwe (?:can )?(?:finance|lend|refinance)\b/i;
+    const heads = [["title", spec.title], ["h1", spec.h1], ["sub", spec.sub], ["heroCta", spec.heroCta && spec.heroCta.label || ""], ["bottomCta", spec.bottomCta && spec.bottomCta.label || ""]];
+    for (const [k, v] of heads) if (LEND.test(v)) throw new Error(`${k} reads as an offer to finance: "${v}" (owner rule 2026-09-07: Chapter3 is a brokerage, never a lender)`); }
   if (spec.description.length < 110 || spec.description.length > 165) throw new Error(`description is ${spec.description.length} chars (110-165)`);
   const subWords = words(spec.sub);
   if (subWords < 8 || subWords > 30) throw new Error(`hero sub is ${subWords} words (8-30)`);
