@@ -467,3 +467,35 @@ itself was rebuilt around what a brokerage knows: the mistakes on a second
 rental, one client's story, and equity for the next one, with the loan rule
 as one short section halfway down.
 
+## 79. The deploy script asked for the clone, and there was no clone (2026-09-07)
+
+**What happened.** `deploy.ps1` looked for the clone in six likely folders,
+found none, and asked the owner to paste the path. He pasted a whole command,
+`cd "$env:USERPROFILE\Chapter3-Website"`, which is not a path, so `Join-Path`
+threw. The script then carried on with `$clone` empty: `Set-Location $null`
+failed, the working directory stayed `C:\Users\DevinDay`, and `git remote
+get-url origin` answered from there. **His home folder is itself a git repo,
+for `chapter3realty/loanofficer.ai`**, so the script reported the wrong-project
+error for a folder it had never chosen. He then typed the four commands by
+hand in the same place: `git reset --hard FETCH_HEAD` failed, `node build.js`
+failed, and wrangler failed with `ENOENT ... C:\Users\DevinDay\chapter3realty`.
+Nothing shipped and nothing broke.
+
+**The real finding underneath it.** There is no Chapter3-Website clone on that
+computer. Every previous deploy ran from a downloaded copy of the site, which
+is MISTAKES 76.
+
+**Why the existing rule did not stop it.** A39a and the deploy-source gate
+catch a downloaded folder once `build.js` runs in it. Nothing covered the case
+where no clone exists at all, and nothing stopped the script continuing after
+its own lookup failed.
+
+**What stops it recurring.** `deploy.ps1` now: fails immediately when no clone
+is chosen, instead of continuing with an empty path; accepts a pasted path even
+when it arrives as a whole command with quotes or `$env:` in it; searches the
+drive when the usual folders miss; and, when there really is no clone, offers
+to `git clone` one to `C:\c3` and continues from there. Every git command runs
+inside the verified clone, never in the folder PowerShell happened to open in.
+That last point matters on this machine specifically, because the home folder
+answers git commands for a different project.
+

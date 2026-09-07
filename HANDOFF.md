@@ -216,6 +216,19 @@ Sending zips cost most of an evening on 2026-09-03: the download never saved,
 so every extract silently had no source file, and a keep-list cleanup line ran
 against the stale folder and deleted the live stylesheet.
 
+- **`C:\Users\DevinDay` is itself a git repo, for `chapter3realty/loanofficer.ai`
+  (found 2026-09-07).** A git command typed in a fresh PowerShell answers for
+  that project, not this one, and it answers without error, which is what makes
+  it dangerous. `git remote get-url origin` there returns loanofficer.ai.
+  Wrangler run there says "your working directory is a git repo and has
+  uncommitted changes" and then fails on the missing `chapter3realty` folder.
+  Anything that shells out to git must set its own working directory first.
+- **As of 2026-09-07 there was no Chapter3-Website clone on his computer.**
+  Every deploy before that ran from a downloaded copy of the site (MISTAKES 76).
+  `deploy.ps1` at the repo root now offers to clone to `C:\c3` and runs the
+  whole deploy from there: find or make the clone, pull the branch, preflight,
+  ask, deploy, then check the pages are live. Send him that file; it is the
+  deploy procedure now.
 - **A fresh PowerShell opens in `C:\Users\DevinDay`, not in the clone.** On
   2026-09-05 all four deploy commands failed there: no remote ref, no
   FETCH_HEAD, no `build.js`, no `chapter3realty` folder. His home folder also
