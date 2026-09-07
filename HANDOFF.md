@@ -1574,10 +1574,82 @@ clone and otherwise prints the page count, the commit and the branch.
 before he can deploy this work at all; the clone command is in the reply and
 in the environment section below.
 
+## 2026-09-07 night: investor batch 4, five pages fact-checked from his ten answers
+
+He asked for the next five high-value investor pages, then answered ten
+questions in one message and asked for a fact-check of what he said. The
+message is verbatim in `research/invest-next/owner-answers-batch4.md`, and the
+"Checked" section there records each claim, the verdict and the source that was
+re-opened. Read that file before touching these pages.
+
+**Built and wired, all spec-generated, author devin:**
+
+- `/invest/section-8-rentals/`. The two authorities (Housing Authority of
+  Myrtle Beach, 660 vouchers, its service area in eastern Horry County; Conway
+  Housing Authority, 373, Conway and the unincorporated county), the payment
+  standard at 90 to 110 percent of the FY2027 fair market rent, the lower-of
+  rule, the six-step approval, the payment timing, what damage and eviction do
+  to a voucher. The federal rules were read at law.cornell.edu because eCFR
+  returns a bot-block redirect to every fetch; the page links eCFR. Neither
+  authority publishes its payment standards online, so the page says to ask.
+  His "never get another voucher ever" is corrected to what the rule says.
+- `/invest/new-construction-rentals/`. Permits from the Census series on FRED
+  (7,152 in 2024, 6,898 in 2025), SC Code 27-30-130 on recording, the county
+  records index, his Little River story anonymized (no community, no builder),
+  his builder-incentive observation as Chapter3's experience.
+- `/invest/financing-multiple-rentals/`. Ten financed properties, the reserve
+  tiers, the twelve-month rental-income rule, equity for the next purchase
+  kept qualitative (his LTV figures are off the page: not a DOWN_PAYMENT_OK
+  page), the second-deal mistakes and his reserve story. Loan facts attributed
+  to a loan officer at our preferred lender; the guide is named in the sources
+  line only, like the other pages.
+- `/invest/landlord-insurance/`. Trade body 25 percent, his 15 to 20, the $250
+  flood surcharge from FEMA's fact sheet (read from a state-hosted copy; FEMA
+  and floodsmart refused the fetch), the tax multiple from the site's own
+  calculator page. The coastal insurance page keeps the averages and the
+  three-policy explainer; this page links there instead of repeating them.
+- `/invest/rent-prices/`. He has no lease data (answer 10), so the page uses
+  the FY2027 fair market rents, the 40th-percentile definition, and the Zillow
+  metro rent index (about $1,714 in July 2026, CSV re-opened), and routes to
+  the analyzer and to an agent.
+
+**Wiring.** Sitemap and llms.txt entries; three sentences added to the hub's
+"how to buy" and "what it costs" paragraphs; nineteen inbound links made by
+wrapping existing words on existing pages (markup only, no date change); one
+sentence added to `/buyers/new-construction/` and one to the landlord-rules
+screening paragraph (both visible, dates moved). Every new page has four to
+six inbound links from body copy.
+
+**Gates.** Audit 0, preflight 0 on 128 pages, harness clean on the five at
+1280, 768 and 320. The hub's 3.45 stat labels and the buyer page's 3.01 brass
+links are pre-existing styles; the new link on that page uses the same style as
+its neighbours.
+
+**Traps this round, so the next session does not repeat them.**
+
+- A python edit script that asserts a description length mid-way aborts the
+  edits after it, silently. Twice. Apply each edit on its own and print misses.
+- The link-wrapping helper put two links into a hero sub (cash-to-close), and
+  the sub's word count went to 31 because the counter treats `</a>,` as a
+  token. The helper now skips `.detail-sub`.
+- "sets up" in link text trips the sets gate. Write "arranges".
+- mkpage's self-checks caught all of it before a file was written, which is
+  what they are for.
+
+**Not on the pages, on purpose.** His LTV percentages and "0 dollars down";
+"never again" for a voucher; BrickWood by name; the state authority's
+seven-county list (seen only in a search summary, not re-opened); any
+insurance agent.
+
+**Open.** Local payment standards (call each authority); the MBHA landlord
+pages, which 404 through the fetch tool; question 15; the batch-1 and batch-2
+question lists; the "sets" sweep on the eight older pages; his name in stories.
+
 ## Suggested order for the next session
 
-00. **All twelve investor pages are built and on the branch**, and the five
-   batch-3 pages are on their fourth pass (2026-09-06 sections). Apply his
+00. **Seventeen investor pages are built and on the branch.** The twelve are
+   live as of 2026-09-07 night; batch 4 (five pages, section above) awaits his
+   review and deploy. Apply his
    edits to the specs and regenerate, never to the pages. Three rules are now
    gates: his NMLS number and any licensed-loan-originator claim never appear
    anywhere (A17), his name is in the byline only (A20a), and nothing "sets"

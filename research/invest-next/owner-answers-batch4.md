@@ -1,0 +1,70 @@
+# Owner answers, batch 4 (2026-09-07)
+
+Ten questions asked 2026-09-07 for the next five investor pages: Housing
+Choice Vouchers in Horry County, renting out new construction, financing the
+second, third and fourth rental, insurance on a rental, and what long-term
+rents are. His answers, verbatim. Fact-check results are in the "Checked"
+section at the end, with the source re-opened for each.
+
+## Verbatim
+
+"one buyer we have worked with in the past is a developer from maryland who started to invest down here looking for fixer uppers that are 3 to 4 bedrooms his goal was to get the voucher for the property which pays you more depending on the amount of bedrooms there are. look up the numbers but his fix and flip that he purchased and fixed for 220k now worth 280k and rented at the 4 bedroom rate is insane profit margin per month and the benifit of renting to people on vouchers is if they end up destroying the house if you report that to the HUD then they can never get another voucher ever which incentivizes most people to never damage your property you also don't need to worry about your rent being late the government pays you on time each month. fact check what i'm saying
+
+you can go and find out how the pricing works for voucher renters and you should say how our county pays you and decides how much to pay you for the voucher renters and the exact process to be approved housing for the voucher program.
+
+newly built communities when it comes to rent caps its hard to say what the pattern is because this area has so many unqiue locations such as close to the ocean west of highway 17 near the college into the rural areas of longs and then retiree communities and close to entertainment areas. The pattern changes on all of these and we have to look at each newly built community on a case by case situation.
+
+yeah an agent that now works for us helped buy like 8 units in a new community in little river the houses were all basically the same and were townhouses and they all rented for a bit over 2k but as he kept selling houses the price of the houses went up slightly more and more so the cash flow opportunity slowly went away the rents did not raise with the the price is first sale in that area was at 230k and the last one was at 292k over the course of 1.5 years. New communities can be a great investment if you buy that community early for the appreciation because if they build 80 homes the first ones they need sales to recoup their investment by the 75th home the amount of homes available is scarce now so the value goes up in alot of scenarios. There is alot of new communities being built here right now one guy in the community that agent helped sell 8 homes in there was another guy separate from our company but he bought 9 homes and never did anything with them he just holds them and plans to sell them at 300k
+
+Most builders in the area offer incentives to FHA VA and conventional home builders however its very very rare for a builder in the area to offer any incentives for investors such as for DSCR loans
+
+so the first rental is always the hardest property to get when you are buying a rental property or a fix in flip one common condition is to prove that you have prior experience and if you don't some lenders will give you a worse deal or even deny you. BrickWood does have programs that will offer loans to first time investors. After you get a a few properties you can also begin to do 0 dollars down investments buy using the equity you own in other properties for your down payment in the new property you buy. If your properties cashflow at 75 or 80% LTV and you happen to have a 60% LTV on one property than you can add 20% and use it to buy another property that also cashflows. Now these %'s may be reg Z issues so be careful when you are writing this please and fact check what i said i could always be wrong.
+
+the common second rental mistake that people make is assuming that the second loan process will be the same as the first its common for people to get into their own way by saying "my last guy didnt ask for blank" it's possible the second lender and us as a real estate brokerage hounds you for too many documents but compared to the last guy but i promise that we do try to ask for the least amount of documents needed but sometimes the underwriters or even sellers require more or less documents than your last purchase. (Dont make this sound too harsh you can probbaly just breeze through that) another common mistake is not paying attention to the worst case scenerio you are doubling your profits but you also double your liabilities so look closely at what you would do in the worst case scenario and talk to us to build defenses so that its unlikely you get put into that worst case scenario but if you do find yourself in it you also have a plan to keep yourself protected. by using all the money you have in your bank account you put yourself into a vulnerable position we had a buyer once who wanted to fix a house he owned and rent it then sell a few other houses and buy more but by fixing that house the guy would be broke so we brought that risk to his attention and he found it would be a safer idea to sell a few houses then fix that house and buy less houses then originally planned to in order to keep a healthy and safe reserve.
+
+the insurance cost when it comes to an investment property and a primary home is not as bad as you would expect. Flood insurance is about 3 times more regular insurance is only about 15-20% more expensive. but usually taxes kill more deals than insurance the rates on DSCR are basically the same as a conventional loan on a good credit score and 1.25-1.5 DSCR property and the insurance is about the same the taxes are about 3x more than a primary home here.
+
+for number 10 i don't really our agent would do an analysis on the property or if you want a quick answer our AI on the site will estimate your rent as well pretty accurately
+
+Don't use any phrases and make each sentence as simple and easy to understand as possible. follow all of our hardcode rules. make these pages perfect for SEO AEO and human readability."
+
+## May not go on a page
+
+- "BrickWood" by name in body copy without the inline AfBA block; the pages say "our preferred lender".
+- The LTV and "0 dollars down" percentages: these pages are not on the DOWN_PAYMENT_OK list, so the equity idea stays qualitative.
+- "never get another voucher ever": overstated, see Checked.
+- "the government pays you on time each month": only the housing authority's share, see Checked.
+
+
+## Checked (2026-09-07, every source re-opened the same day)
+
+Voucher claims.
+- "pays you more depending on the amount of bedrooms": TRUE in structure, with one condition. The subsidy is capped by a payment standard per bedroom count, 90 to 110 percent of the fair market rent (24 CFR 982.503(c)). The standard applied is the LOWER of the voucher's bedroom count and the unit's bedroom count (982.505(c)(1)), and the voucher's count comes from family size (982.402). A four-bedroom house earns the four-bedroom standard only for a family with a four-bedroom voucher. Read at law.cornell.edu (eCFR blocks automated fetches; the page links eCFR).
+- "look up the numbers": FY2027 fair market rents, Horry County (HUD FY27_FMRs.xlsx, re-opened): studio $1,155; one $1,258; two $1,504; three $1,823; four $1,981. Neither local authority publishes its payment standards on its website; the page says to ask for the table.
+- "if they destroy the house and you report it to HUD they can never get another voucher ever": OVERSTATED. Damage beyond ordinary wear is a family obligation breach and the authority "must take prompt and vigorous action" and MAY terminate (982.404(b)(1)(iii), (b)(3); 982.552(c)(1)). The authority MUST terminate if the family is evicted from assisted housing for a serious lease violation (982.552(b)(2)). It MAY deny a new voucher for five years after an eviction from federally assisted housing, and while the family owes a housing authority money (982.552(c)(1)). The report goes to the local authority, not HUD. The page says "can lose it", "five years", "while they owe", not "never".
+- "the government pays you on time each month": TRUE for the authority's share only. The authority must pay promptly when due and the contract can carry a late penalty (982.451(a)(5)). The family's share is ordinary rent and can be late. No payment before the HAP contract is executed; retroactive up to 60 days (982.305). Conway HA: "reliable direct-deposit rental assistance payments".
+- Who runs it: Housing Authority of Myrtle Beach, 660 vouchers, "Vouchers can only be used in MBHA Service Area/Eastern Horry County, SC", 1704 North Oak Street, 843-918-1525 (mbhaonline.org). Conway Housing Authority, 373 vouchers, City of Conway and unincorporated Horry County, 843-248-7327; leasing packet with the RTA, HQS inspection about 3 to 15 days after the packet, rent reasonableness study, HAP begins when the contract is signed and the lease received (conwayhousingsc.org). The state authority's seven-county list does not include Horry (search summary only, not re-opened, so not on the page).
+- The developer story: his figures, $220,000 in, about $280,000 value, four-bedroom rate; on the page as "in Chapter3's files", no name, no state beyond "from Maryland".
+
+New construction claims.
+- No pattern in rental caps: his statement, on the page as Chapter3's experience.
+- Little River story: eight townhouses, a little over $2,000 rent, first sale $230,000, last $292,000 over about eighteen months, rents flat; another buyer bought nine and holds to sell at about $300,000. On the page anonymized, no community name.
+- Builder incentives for FHA, VA and conventional buyers, rarely for investor loans: his observation, on the page as Chapter3's experience; the incentive mechanics are on /buyers/new-construction/.
+- Permits: Census/FRED series MYRT845BPPRIV, Myrtle Beach-Conway-North Myrtle Beach MSA, units authorized: 7,152 in 2024, 6,898 in 2025, 3,873 January to July 2026.
+- Enforceability: SC Code 27-30-130, governing documents must be recorded to be enforceable; rules and amendments recorded by January 10 of the year after adoption. Horry County Register of Deeds records deeds, mortgages and plats; online index at acclaimweb.horrycounty.org.
+
+Financing claims.
+- "first rental is the hardest, prove prior experience": TRUE. Standard loan rules count positive rental income for qualifying only with 12 months of property management experience; otherwise rental income only offsets the subject's PITIA (Selling Guide B3-3.8-01, read at the b3-3.1-08 URL). Investor lenders' experience overlays: his statement, attributed on the page to a loan officer at our preferred lender.
+- "BrickWood has first-time investor programs": on the page as "our preferred lender has programs for first-time investors", no name, no inline AfBA needed.
+- "0 dollars down using equity, 75 or 80 percent LTV, add 20 percent": MECHANISM TRUE (cash-out refinance or line of credit funds the next down payment). The percentages are not on the page: the page is not on the DOWN_PAYMENT_OK list, and cash-out caps on rentals are lower than his example suggests. Kept qualitative: "lenders cap the cash you can pull from a rental below the cap on your own home", attributed to the loan officer.
+- Limit: ten financed properties on DU, counting the primary if financed; commercial, 5+ units and lots excluded (B2-2-03). Reserves: six months on the subject investment property plus 2, 4 or 6 percent of the other financed balances for 1-4, 5-6, 7-10 properties (B3-4.1-01).
+- Second-purchase mistakes and the reserve story: his, on the page softened as asked.
+
+Insurance and tax claims.
+- "regular insurance 15-20% more": his files; the trade body says about 25 percent (iii.org). Both on the page, each attributed.
+- "flood insurance about 3 times more": the federal program prices the building's risk the same; a rental carries a $250 yearly surcharge instead of $25 (FEMA HFIAA surcharge fact sheet, April 2015, read from the state-hosted copy) and the subsidy phase-out runs faster on non-primary policies. The page says the surcharge and "in Chapter3's files about three times", not a flat "3x".
+- "taxes about 3x": the site's tax page, from certified 2025 millage: about 3.3 times unincorporated, about 4.3 times in the city of Myrtle Beach. Page says three to four times, links the calculator and the assessor.
+- "DSCR rates basically the same as conventional at good credit and 1.25-1.5": no rate on the page; "prices about the same", attributed to the loan officer.
+
+Rents.
+- No lease data from him; the page uses the FMR table, the 40th-percentile definition (huduser.gov, 24 CFR 888.113), and the Zillow metro index (ZORI, all homes, smoothed: about $1,695 September 2025, about $1,714 July 2026, CSV re-opened), and routes to the analyzer and an agent.
