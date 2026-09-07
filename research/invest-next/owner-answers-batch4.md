@@ -163,3 +163,134 @@ Every item above is applied at the spec and regenerated. What changed, in his or
   bans or limits renting is enforceable when it is recorded with the county
   (SC Code 27-30-130 makes recording the condition). The page and its FAQ say
   so. An unrecorded rule is the one that fails.
+
+## Round 3 (2026-09-07, later). His message, verbatim
+
+"Want to buy a new construction home? This CTA is great but lets put it in a section where we are saying something good about construction instead of sorta bad
+
+Price the house without the incentive. Delete
+
+count it as a gain, not a plan. replace with count it as a gain, but not part of the plan.
+
+Ask a loan officer at our preferred lender to compare the builder's loan with an investor loan before you decide. Replace with if you need to know what the rates and monthly prices would look like here in myrtle call us and we can work with our preferred lender to give you solid numbers.
+
+ as a legal residence. As a primary residence but also this doesnt change based on if its new construction its the same as an old investor property
+
+not from the day a tenant reports a problem. Delete
+
+Make the inspection and the warranty separate  actually delete the inspection cause its not different but mention how much builders have a warranty and alot of them within the first 12 months will have their maintenance guy come and fix defects and spot paint once in the year Fact check what the actual standard warranty is
+
+The competition. Elaborate a bit more why this is an issue
+
+How do you finance your second, third and fourth rental?
+The limit, the reserves, the equity. is this the best title for SEO and AEO And CTR?
+
+also are you sure about the 10 home rule i havn't had any issue with this doing loans in the past.
+
+Why is the first rental the hardest to finance? Delete this section noen of the information is correct or good.
+
+If DSCR loans dont count towards the 10 property rule then why are we making it the main focus delete that and have one section about people who use FHA loans and multi units to grow and how maybe that's maxed at 10 and research if even that is true.
+
+What reserves does each rental add? Thats not proper English
+
+Specify how the bank doesnt take or freeze any money used for the reserves and how they just want to prove you have it. Also be more clear about the reserves for other properties and make sure thats true for DSCR loans
+
+All of this carry new loan and stuff is bullshit metaphors replace all of that in all 5 pages with more literal talking
+
+and a loan officer at our preferred lender maps the loan around the limit and the reserves. delete this and jhard code no phrases like maps the loan and other shit if you say maps out anywhere in these 5 pages delete them
+
+Expecting the same paperwork. Each lender and each underwriter asks for its own list, and a seller can ask for more too. Expect a different list from last time, even with the same broker. We ask for the least the file needs, and the underwriter still writes the list. Rewrite this to make it make more sense and delete the We ask for the least the file needs, and the underwriter still writes the list.
+
+Spending the reserve. mention how it took him a bit longer but he did it safer and can successfully grow now"
+
+### Round 3, checked
+
+- **The ten-property rule is real.** Re-opened 2026-09-07 in the conventional
+  selling guide (B2-2-03): a second home or investment property loan is limited
+  to ten financed properties per borrower, counting the borrower's own home if
+  it is financed and every one- to four-unit property with a mortgage in the
+  borrower's name, whatever loan bought it. Commercial property, buildings of
+  more than four units, timeshares, vacant lots and chattel-titled manufactured
+  homes do not count. A loan on the home you live in has no limit. Why he never
+  hit it: most investors never reach ten financed properties, and the ones who
+  do use DSCR or portfolio loans, which are outside the rule. The page now says
+  exactly that and no longer makes DSCR the focus.
+- **FHA is not capped at ten.** Re-opened 2026-09-07 in Handbook 4000.1
+  (downloaded, 1,883 pages, read at pages 157 to 158 and 168 to 169): FHA will
+  not insure more than one property as a principal residence for any borrower,
+  and will not insure a loan designed to use FHA insurance as a vehicle for
+  obtaining investment properties. Four exceptions: an employment-related move
+  of more than 100 miles; an increase in legal dependents with the old home no
+  longer fitting and its LTV at or under 75 percent; vacating a home a
+  co-borrower keeps; having been a non-occupying co-borrower. At least one
+  borrower must occupy within 60 days and intend to stay at least one year. A
+  three- or four-unit building must pass the self-sufficiency test: PITI divided
+  by net self-sufficiency rental income (the appraiser's market rent for all
+  units less the greater of the appraiser's vacancy and maintenance estimate or
+  25 percent) may not exceed 100 percent. There is no FHA limit on the number of
+  financed properties held. The financed properties count toward the
+  conventional ten when the borrower later applies for a conventional rental
+  loan.
+- **Reserves are verified, not held.** Selling guide B3-4.1-01, re-opened:
+  liquid financial reserves are assets available to the borrower after closing.
+  Six months of PITIA on an investment property subject; plus 2, 4 or 6 percent
+  of the aggregate unpaid balance of other financed properties (1-4, 5-6, 7-10
+  financed properties), excluding the subject and the principal residence. The
+  lender verifies the money and does not take, escrow or freeze it.
+- **DSCR reserves are lender-specific.** Two lenders' published guidelines
+  re-opened: one asks two months of PITIA on the subject for a standard loan
+  (more above $1.5 million); the other describes the market as three to six
+  months on the subject, sometimes two to six months on each other financed
+  property, seasoned 60 days, verified in the borrower's accounts. The page says
+  "each lender writes its own rule; most ask two to six months; some add a few
+  months per other rental; ask for the figure before you shop."
+- **Builder warranty.** The 1-2-10 structure re-opened at two warranty
+  companies' pages (StrucSure: one year workmanship and materials, two years on
+  the delivery portion of the systems, ten years structural, from the day of
+  closing; a builder's page calls 1-2-10 the industry standard). His "within the
+  first 12 months the maintenance guy comes and fixes defects and spot paints"
+  is common practice (Realtor and builder pages describe 30-day and 11-month
+  visits) but not in any warranty standard, so the page states it as Chapter3's
+  experience and tells the reader to ask for the warranty booklet.
+- **"Solid numbers" / rates.** The replacement sentence offers to get rates and
+  monthly payments from our preferred lender; it states no rate and no payment,
+  so it stays outside the payment and rate ban. RESPA: "our preferred lender",
+  not the name.
+
+### Round 3, applied
+
+- New construction: the "Want to buy a new construction home?" CTA moved to the
+  first section, under a new paragraph on why a new house is a simple rental
+  (new roof, water heater, heating and cooling, the warranty). "Price the house
+  without the incentive" deleted. "Count it as a gain, but not part of the
+  plan." His rates sentence in. "Primary residence", and "That is the same for a
+  new house and an old one." "Not from the day a tenant reports a problem"
+  deleted. The inspection bullet is gone; the warranty bullet states the 1-2-10
+  terms, that it starts at closing, the end-of-first-year repair visit as
+  Chapter3's experience, and "ask for the warranty booklet". The competition
+  bullet explains why: identical houses, several owners renting at once, the
+  builder still selling on the same street with incentives, so the rent is the
+  lowest rent on the street until the build-out ends. Warranty FAQ added.
+- Financing: title "Finance Multiple Rental Properties in Myrtle Beach |
+  Chapter3", H1 "How do you finance more than one rental property?" (the query
+  people type is "finance multiple rental properties"; "second, third and
+  fourth" is nobody's search). "Why is the first rental the hardest" deleted
+  with its FAQ. DSCR reduced to one sentence in the limit section. New section
+  "Can you grow with FHA loans and multi-unit buildings?" with the one-loan
+  rule, the four exceptions as a table, the 60-day and one-year occupancy, the
+  rent test, "Is FHA capped at ten? No", and the warning that a lender refuses
+  an FHA loan designed to buy rentals. "How much do lenders want in reserves?"
+  with "the lender does not take it, hold it or freeze it", the other-rentals
+  share with the home and the subject excluded, and the DSCR paragraph. Every
+  "carry" and "maps" gone. The paperwork paragraph rewritten. The reserve story
+  ends "It took him longer. He did it the safer way, he kept a reserve, and he
+  can keep buying now."
+- All five pages: "carries a premium" is "rents for more"; "flood carries a
+  surcharge" is "adds"; "the analyzer carries both" is "includes both"; "kill
+  more deals" is "stop more deals"; "a ceiling" is "the most the authority pays";
+  "a gap" is "a wait"; "hold the larger vouchers" is "have"; "covers" (an
+  authority) is "serves"; "reach your rent" is "at or above your rent".
+- Gates: build.js errors on "maps out" and "maps the loan" everywhere, and on
+  "carry a loan / payment / cost" and "carrying costs" on every page built from
+  2026-09-07 (a warning on the 13 older pages that use them). mkpage refuses to
+  generate either.

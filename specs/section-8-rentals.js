@@ -45,7 +45,7 @@ const TOOL = `
   <p id="s8note" style="font-size:.85rem;color:var(--navy);line-height:1.5;margin:0 0 1rem;min-height:1.2em"></p>
   <div style="font-size:.78rem;color:var(--muted);margin-bottom:.35rem">Who pays your rent</div>
   <div id="s8chart1" style="margin-bottom:1rem"></div>
-  <div style="font-size:.78rem;color:var(--muted);margin-bottom:.35rem">Which bedroom standards reach your rent</div>
+  <div style="font-size:.78rem;color:var(--muted);margin-bottom:.35rem">Which bedroom standards at or above your rent</div>
   <div id="s8chart2"></div>
 </div>
 <script>
@@ -76,7 +76,7 @@ const TOOL = `
     var c='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Payment standard by bedroom count against your rent" style="display:block;max-width:600px;font-family:var(--sans)">';
     for(var b=0;b<5;b++){var v=Math.round(FMR[b]*pct/100), bw=Math.max(2,Math.round(BW*v/max)), y=b*rowH+4, reach=v>=rent;
       c+='<text x="'+(L-8)+'" y="'+(y+15)+'" font-size="12" text-anchor="end" fill="'+NAVY+'">'+NAMES[b]+'</text>';
-      c+='<rect x="'+L+'" y="'+y+'" width="'+bw+'" height="20" fill="'+(reach?BRASS:GRAY)+'"><title>'+NAMES[b]+': '+esc(fmt(v))+(reach?" reaches your rent":" is under your rent")+'</title></rect>';
+      c+='<rect x="'+L+'" y="'+y+'" width="'+bw+'" height="20" fill="'+(reach?BRASS:GRAY)+'"><title>'+NAMES[b]+': '+esc(fmt(v))+(reach?" is at or above your rent":" is under your rent")+'</title></rect>';
       c+='<text x="'+(L+bw+6)+'" y="'+(y+15)+'" font-size="12" fill="'+NAVY+'">'+esc(fmt(v))+'</text>';}
     var rx=L+Math.round(BW*rent/max);
     c+='<line x1="'+rx+'" y1="0" x2="'+rx+'" y2="'+(5*rowH+4)+'" stroke="'+NAVY+'" stroke-width="2"/>';
@@ -98,7 +98,7 @@ module.exports = {
   sub: "In Horry County the housing authority pays most of a voucher tenant's rent by direct deposit, up to a payment standard that depends on the bedroom count.",
   heroCta: { label: "Call to learn more", href: TEL },
   author: "devin",
-  shortAnswer: "A Housing Choice Voucher, still called Section 8, pays part of a tenant's rent. Two housing authorities run it in Horry County. The Housing Authority of Myrtle Beach covers its service area in the eastern county. The Conway Housing Authority covers Conway and the unincorporated county. The authority pays its share to you by direct deposit each month. The tenant pays the rest. The most the program pays depends on a payment standard for each bedroom count, between 90 and 110 percent of the federal fair market rent. For four bedrooms that rent is $1,981 this fiscal year. The house must pass an inspection first, and the rent must match similar houses nearby. We run the numbers before you offer.",
+  shortAnswer: "A Housing Choice Voucher, still called Section 8, pays part of a tenant's rent. Two housing authorities run it in Horry County. The Housing Authority of Myrtle Beach serves its area in the eastern county. The Conway Housing Authority serves Conway and the unincorporated county. The authority pays its share to you by direct deposit each month. The tenant pays the rest. The most the program pays depends on a payment standard for each bedroom count, between 90 and 110 percent of the federal fair market rent. For four bedrooms that rent is $1,981 this fiscal year. The house must pass an inspection first, and the rent must match similar houses nearby. We run the numbers before you offer.",
   sections: [
     { h2: "What is a Housing Choice Voucher?", html:
       h.p(`A voucher is federal rent help. A family with low income uses it to rent a house from a private owner. Most people still call it Section 8.`) +
@@ -119,7 +119,7 @@ module.exports = {
       h.p(`In Chapter3's files a developer from Maryland buys three- and four-bedroom houses here that need work. He fixes them and rents them to voucher families. One house cost $220,000 to buy and repair. It is worth about $280,000 now and rents at the four-bedroom standard. The bedroom count is why he buys the bigger houses.`) +
       h.cta("Want help buying a house for this strategy?", "Tell us the bedroom count and the budget. We find houses that pass the inspection and fit the payment standard, and run the numbers before you offer.", "Call a specialized agent", TEL, bg) },
     { h2: "How is the rent split between the tenant and the authority?", html:
-      h.p(`Enter your rent and the family's income. The tool splits the rent between the authority and the tenant. It also shows which bedroom standards reach your rent.`) +
+      h.p(`Enter your rent and the family's income. The tool splits the rent between the authority and the tenant. It also shows which bedroom standards are at or above your rent.`) +
       h.raw(TOOL) +
       h.p(`The tool uses the federal fair market rent for the bedroom count, at the percent you pick, because neither authority publishes its standard. It estimates the tenant's share at 30 percent of the income you enter. The authority uses adjusted income, its own standard and a utility allowance, so its numbers will differ. The rent must also pass the rent check below.`) },
     { h2: "What stops you from charging the most the voucher allows?", html:
@@ -130,7 +130,7 @@ module.exports = {
         `<strong>The utility allowance.</strong> If the tenant pays the utilities, the authority adds a utility allowance to your rent before it compares the total to the standard. ${h.ext(C505, "The comparison uses gross rent")}, rent plus utilities. A house where the tenant pays utilities has less room under the standard.`,
         `<strong>The bedroom count on the voucher.</strong> The standard follows the smaller of the voucher's count and the house's count.`,
       ]) +
-      h.p(`The standard is a ceiling, not a price. The rent you can charge is the market rent for that house, up to the standard.`) },
+      h.p(`The standard is the most the authority pays toward the rent, not the rent itself. The rent you can charge is the market rent for that house, up to the standard.`) },
     { h2: "How do you get a house approved?", html:
       h.p(`The house is approved after you find the tenant, not before. The authority inspects for a specific family and a specific lease. There is no list of pre-approved houses.`) +
       h.ol([
@@ -149,14 +149,14 @@ module.exports = {
       h.p(`The gate is not the tenant. It is the inspection and the rent check. A house that passes both, with the right bedroom count, at or under the standard, has a tenant pool with few other choices.`) },
     { h2: "Does Horry County pay on time?", html:
       h.p(`The housing authority's share, yes. ${h.ext(C451, "The rule requires the authority to pay when due")}, and the contract can charge the authority a late fee if local landlords charge one. In Chapter3's files the authority's share has arrived on time every month.`) +
-      h.p(`The tenant's share is different. The family owes it under the lease, and it can be late like any rent. You collect it and, if you must, ${h.a("/invest/landlord-rules/", "evict for it the way you evict anyone")}. The first payment also waits for the contract, so plan for a gap between move-in and the first deposit.`) },
+      h.p(`The tenant's share is different. The family owes it under the lease, and it can be late like any rent. You collect it and, if you must, ${h.a("/invest/landlord-rules/", "evict for it the way you evict anyone")}. The first payment also waits for the contract, so plan for a wait between move-in and the first deposit.`) },
     { h2: "What happens if a voucher tenant damages the house?", html: (bg) =>
       h.p(`Report it to the authority in writing. Then use the deposit and the courts the way you would with any tenant. ${h.ext(C404, "Damage beyond ordinary wear breaks the family's program obligations")}, and the authority must act on it.`) +
       h.p(`${h.ext(C552, "The authority may end the family's assistance")} for that. It must end it if you evict the family through the court for a serious lease violation. It may refuse the family a new voucher for five years after an eviction from assisted housing. It may also refuse while the family owes a housing authority money.`) +
       h.p(`${h.ext(C310, "You can evict a voucher tenant")} for nonpayment of the family's share, for serious or repeated lease violations, and for other good cause. It goes through the magistrate court like any eviction. Send the authority a copy of the notice.`) +
       h.cta("Buying a rental to hold long term?", "Tell us the budget and the bedroom count. We find houses that fit the payment standard and the inspection, and run the numbers before you offer.", "Start the search", "/contact/", bg) },
     { h2: "Which houses fit the program?", html:
-      h.p(`Two facts point to bigger houses. The standard steps up with each bedroom, as the table above shows. Families with children hold the larger vouchers, because the voucher's bedroom count follows family size.`) +
+      h.p(`Two facts point to bigger houses. The standard steps up with each bedroom, as the table above shows. Families with children have the larger vouchers, because the voucher's bedroom count follows family size.`) +
       h.p(`One client's pattern, not a rule: the developer from Maryland buys houses that need work, because the inspection tests safety and function, not finishes. Any house that passes the inspection and the rent check can take a voucher.`) +
       h.p(`Check the house against the standard before you buy: heat, plumbing, electrical, windows, railings, smoke alarms, and the roof. Fixing those first costs less than a failed inspection and a lost month.`) },
   ],

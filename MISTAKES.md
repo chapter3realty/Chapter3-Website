@@ -417,3 +417,29 @@ failure. Inside the clone it prints the page count, the commit and the branch,
 so the deployer compares that commit with the branch before uploading.
 Positive control: the clone prints its commit. Negative control: a folder with
 build.js and two pages and no `.git` exits 1. PLAYBOOK A39a.
+
+## 77. "The house needs to carry its payment", "a loan officer maps the loan" (2026-09-07)
+
+**What happened.** The financing page said "The refinanced house needs to
+carry its new payment from its own rent", "both houses must carry their own
+payments", and, three times, "a loan officer at our preferred lender maps the
+loan". Four other batch-4 pages had "carries a premium", "flood carries a
+surcharge", "the analyzer carries both", "kill more deals", "a ceiling", "a
+gap", "reach your rent". He read them: "All of this carry new loan and stuff is
+bullshit metaphors replace all of that in all 5 pages with more literal talking
+... if you say maps out anywhere in these 5 pages delete them."
+
+**Why the existing rule did not stop it.** A22 bans phrase families by shape
+(personification, idiom, aside, hedge) and A22a bans "sets". "Carry" and "map"
+are ordinary verbs with a literal sense, so no regex had them, and the writer
+did not read the page for figurative verbs before shipping it to the branch.
+
+**What stops it recurring.** `MAPS_REGEX` and `CARRY_REGEX` in `build.js`,
+sanity-checked both ways: they match "maps the loan", "Map the next loan",
+"carry its new payment", "carrying costs" and "Carries a premium", and not "a
+map of the county", "the STR map", "carry the boxes" or "carries out the sale".
+"Maps" is an error everywhere; "carry" is an error on every page built from
+2026-09-07 and a warning on the 13 older pages until they are swept. `mkpage`
+refuses to generate either. PLAYBOOK A22c adds the reading pass for the verbs
+no regex has.
+

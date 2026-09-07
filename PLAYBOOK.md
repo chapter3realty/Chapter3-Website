@@ -457,6 +457,17 @@ what it requires, allows or says. Two REGISTER_REGEX entries error on those
 shapes sitewide; "the law requires" and "the lease allows" pass. Sanity-checked
 against the site before it went in: one hit, the sentence he flagged.
 
+**A22c. Nothing "carries" a loan, a payment or a cost, and nothing "maps" a
+loan or a plan (owner, 2026-09-07: "all of this carry new loan and stuff is
+bullshit metaphors").** Say who pays what: "the rent on the new house must pay
+its payment", not "the house needs to carry its payment". "Carrying costs" is
+the same metaphor. `build.js` errors on both families on every page built from
+2026-09-07 and warns on the 13 older pages that still use them; `mkpage`
+refuses to generate either. The same instruction covers every figurative verb:
+before a page ships, read it once for a house that "sits", a standard that is a
+"ceiling", a rule that "covers", a gap, a line, a door. Replace each with the
+literal action.
+
 ## Phase 5 — Compliance, BEFORE the copy is mirrored anywhere
 
 Do this before generating JSON-LD, `llms-full.txt` or the sitemap entry.

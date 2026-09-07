@@ -1241,6 +1241,12 @@ const OWNER_NAME_REGEX = /\bDevin\b/;
  * the lease"). Error on the pages above and on every page built from that date;
  * a warning on the older pages until they are swept. "sets of" is a noun. */
 const SETS_REGEX = /\b(?:sets(?!\s+of\b)|set by)\b/i;
+/* Owner rule 2026-09-07 (PLAYBOOK A22c, MISTAKES 77): nothing "maps" a loan or a
+ * plan, and nothing "carries" a loan, a payment or a cost. "carrying costs" is
+ * the same metaphor. Error on the new pages, a warning on the 13 older pages
+ * until they are swept; "maps out" is an error everywhere (it appeared once). */
+const MAPS_REGEX = /\bmap(?:s|ped|ping)?\s+(?:out\b|the\s+(?:loan|route|path|plan|numbers|deal|purchase|year|way|next)\b)/i;
+const CARRY_REGEX = /\bcarr(?:y|ies|ied|ying)\s+(?:a |an |the |its |their |your |his |her |our |new |two |three |both |that |this |each |every |own )*(?:loan|mortgage|payment|payments|cost|costs|debt|note|rest|house|property|premium|itself|themselves)\b|\bcarrying costs?\b/i;
 /* Owner rule 2026-09-07 (PLAYBOOK A17, MISTAKES 74): never his NMLS number, and
  * never a claim that he, or Chapter3, is or has a licensed mortgage loan
  * originator, MLO or loan officer. Chapter3 is a brokerage, not a lender, and the
@@ -1867,6 +1873,13 @@ function audit() {
           if (setsHit) {
             const setsMsg = `register: "${setsHit[0]}" - nothing sets anything; write what depends on what (owner rule 2026-09-06, PLAYBOOK A22a)`;
             if (newRules) E(setsMsg); else W(setsMsg);
+          }
+          const mapsHit = regSrc.match(MAPS_REGEX);
+          if (mapsHit) E(`register: "${mapsHit[0]}" - nothing maps a loan or a plan; say plan, list, or the literal action (owner rule 2026-09-07, PLAYBOOK A22c)`);
+          const carryHit = regSrc.match(CARRY_REGEX);
+          if (carryHit) {
+            const carryMsg = `register: "${carryHit[0]}" - nothing carries a loan, a payment or a cost; say who pays what (owner rule 2026-09-07, PLAYBOOK A22c)`;
+            if (newRules) E(carryMsg); else W(carryMsg);
           }
         }
         for (const [re, msg] of AI_TELL_REGEX) {

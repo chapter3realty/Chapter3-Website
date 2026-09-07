@@ -157,6 +157,12 @@ function build(spec) {
     throw new Error("licence claim: never his NMLS number, never a licensed-loan-originator claim tied to him or to Chapter3; a loan fact that needs a source says \"according to a loan officer at our preferred lender\" (owner rule 2026-09-07, PLAYBOOK A17)");
   { const hit = (main + " " + spec.title + " " + spec.description).replace(/<[^>]+>/g, " ").match(/\b(?:sets(?!\s+of\b)|set by)\b/i);
     if (hit) throw new Error(`"${hit[0]}" - nothing sets anything; write what depends on what (owner rule 2026-09-06)`); }
+  /* Owner rules 2026-09-07: nothing "maps" a loan or a plan, nothing "carries" a loan, a payment or a cost. */
+  { const txt = (main + " " + spec.title + " " + spec.description).replace(/<[^>]+>/g, " ");
+    const m1 = txt.match(/\bmap(?:s|ped|ping)?\s+(?:out\b|the\s+(?:loan|route|path|plan|numbers|deal|purchase|year|way|next)\b)/i);
+    if (m1) throw new Error(`"${m1[0]}" - nothing maps a loan or a plan; say plan, list, or the literal action (owner rule 2026-09-07)`);
+    const m2 = txt.match(/\bcarr(?:y|ies|ied|ying)\s+(?:a |an |the |its |their |your |his |her |our |new |two |three |both |that |this |each |every |own )*(?:loan|mortgage|payment|payments|cost|costs|debt|note|rest|house|property|premium|itself|themselves)\b|\bcarrying costs?\b/i);
+    if (m2) throw new Error(`"${m2[0]}" - nothing carries a loan, a payment or a cost; say who pays what (owner rule 2026-09-07)`); }
   const strip = (html) => html.replace(/<main id="main">[\s\S]*<\/main>/, "").replace(/<title>[^<]*<\/title>/, "").replace(/<meta (?:name|property)="(?:description|og:title|og:description|og:url|twitter:title|twitter:description)" content="[^"]*">/g, "").replace(/<link rel="canonical" href="[^"]*">/, "").replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, (m) => { try { const t = JSON.parse(m.slice(35, -9))["@type"]; return blocks[t] ? "" : m; } catch { return m; } });
   const donorChrome = strip(donor);
   /* Completeness of the identity list: once the identity elements are removed

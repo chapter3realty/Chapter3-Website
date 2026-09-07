@@ -1725,11 +1725,52 @@ at in a clipped screenshot. This page has no animated canvas, so a clipped
   showed it. The DOM checks cannot see a label collision; look at every chart
   once before calling it done.
 
+## 2026-09-07 later: batch-4 round 3, the financing page rebuilt, the new construction page corrected
+
+His third list is verbatim under "Round 3" in
+`research/invest-next/owner-answers-batch4.md`, with the fact-checks under
+"Round 3, checked" and the changes under "Round 3, applied". Read those before
+touching either page. The short version:
+
+- **He doubted the ten-property rule.** It is real, and it was re-opened in the
+  conventional selling guide. It applies to a loan on a second home or a rental,
+  counts every financed one- to four-unit property in the borrower's name
+  including the home and FHA-financed ones, and has no limit for a loan on the
+  home you live in. He never hit it because most investors never reach ten and
+  the rest use DSCR or portfolio loans, which are outside it. The page now says
+  so and DSCR is one sentence, not the focus.
+- **FHA is not capped at ten.** Handbook 4000.1 was downloaded (14 MB, 1,883
+  pages; the fetch tool refuses it, `curl` plus `pypdf` reads it in about two
+  minutes) and read at pages 157 to 158 and 168 to 169: one FHA-insured
+  principal residence per borrower, four exceptions, occupancy within 60 days for
+  at least a year, the self-sufficiency test on three- and four-unit buildings,
+  and the sentence that FHA refuses a loan designed to buy rentals with FHA
+  insurance. The page carries all of it and tells the reader to live in each
+  home and move when life needs a different home.
+- **Reserves.** The lender verifies and never holds them; the other-rentals
+  share excludes the home and the subject; DSCR lenders write their own rule.
+  Two DSCR lenders' guidelines are the source for "two to six months, sometimes
+  a few months per other rental".
+- **Builder warranty.** 1-2-10 from a warranty company's page and a builder's
+  page; the end-of-first-year repair visit is stated as Chapter3's experience
+  because no standard requires it.
+- **The financing title** is "Finance Multiple Rental Properties in Myrtle
+  Beach | Chapter3" with H1 "How do you finance more than one rental property?"
+  because that is the search phrase. llms.txt updated. The URL did not change.
+- **"Carry" and "maps" are gates now** (A22c, MISTAKES 77). The 13 older pages
+  that say "carrying costs" or "carries the rest" warn, not fail. Sweep them
+  when he says so, at the spec for generated pages and in the page for the
+  hand-built ones.
+
+**Gates.** Audit 0, preflight 0, harness clean on the five at three widths, the
+calculator check green.
+
 ## Suggested order for the next session
 
 00. **Seventeen investor pages are built and on the branch.** The twelve are
-   live as of 2026-09-07 night; batch 4 (five pages, two sections above) has
-   his round-2 edits applied, gates green, and awaits his review and deploy.
+   live as of 2026-09-07 night; batch 4 (five pages, three sections above) has
+   his round-2 and round-3 edits applied, gates green, and awaits his review
+   and deploy.
    Apply his
    edits to the specs and regenerate, never to the pages. Three rules are now
    gates: his NMLS number and any licensed-loan-originator claim never appear
