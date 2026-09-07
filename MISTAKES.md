@@ -321,3 +321,29 @@ email only and no consent box, showed "Thanks", and sent nothing, because the
 shared sender refuses a lead without consent and the CRM refuses it too. Fixed
 on all seven (the box is now required to send) and verified in the browser on
 three of them with the route blocked.
+
+
+## 73. Five new pages named the owner and said "sets" (2026-09-06)
+
+**What happened.** The five batch-3 pages carried the Operations Officer's
+name 24 times in their copy ("Devin Day, licensed MLO, NMLS 2721275, reviewed
+this section", "in Devin Day's files", "Devin Day's example") and the verb
+"sets" 24 times ("the calendar sets the lease", "the judgment sets the
+compliance date", "state law sets no maximum deposit"). He read the combined
+preview and asked for both to go, and for both to be hard-coded away.
+
+**Why the existing rule did not stop it.** No rule existed for either. A17
+says the NMLS number is shown on financing content, and it had been read as
+"show the name with it". "Sets" is not a metaphor, an idiom or a
+personification in the sense of REGISTER_REGEX, so A22 let it through.
+
+**What stops it recurring.** `build.js` errors on the name in the main copy
+of the five pages (`NO_OWNER_NAME_PAGES`) and of every page whose
+`datePublished` is 2026-09-07 or later, and errors on "sets" and "set by"
+(`SETS_REGEX`, "sets of" is a noun and passes) on the same pages; the older
+pages get a warning for "sets" until they are swept, so the backlog does not
+fail (MISTAKES 65). `tools/mkpage.js` throws on either before it writes a
+file and accepts only `author: "tim"`. The three `llms.txt` entries that
+named him were rewritten. PLAYBOOK A20a and A22a. The eight batch-1 and
+batch-2 pages still name him and still say "sets"; that sweep waits for his
+instruction, because the rule as given was "the pages we are making now".

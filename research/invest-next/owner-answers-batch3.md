@@ -249,3 +249,42 @@ got her home on paper for the first time in years. The agent got the listing tha
 in eleven days to a couple from Ohio, and the only reason any of it worked is that he was the one
 person in the whole thing who bothered to knock on the door. Feel free to shorten this and
 simplify this for the site"
+
+
+## Round 3 (2026-09-06, after the third-pass preview)
+
+Verbatim:
+
+"do you think the information is structured in the LLC page in the best order for SEO AEO and a human trying to find the answer to their question or do you think national brand answers are up high and not the local or niche stuff that we would be showing in results for?
+
+What do you decide before the contract? Settle the title holder before you write the offer: you, or an LLC formed before the contract. Delete its nonsensical or too complicated. if you want say quote the title attorneys and if you should make a new LLC for this investment and talk about the benefit of having a new LLC for each house which is what 90% of our customers do.
+
+make a rule to never say my name hardcode remove my name from all these pages on the pages we are making now.
+
+Want the structure settled before you offer? Tell us how you plan to hold the property. We match the contract, the lender and the closing attorney to that choice. make this CTA something like let us help make it simple
+
+Yes. Devin Day, NMLS 2721275, Please stop saying my name delete my name across all paged we are making now.
+
+and the CTA make it Call A Specialized Agent
+
+is our section about the STR
+
+Selling a rental: replace with Selling a rental?
+
+In the main home page there's a little hair inside of the i am buttons please remove that so its all a solid color
+
+I dont like the term sets hard code to never say sets like that depending on the lease stuff like that is better but the lease never sets anything condition doesnt set anything nothing sets anything hard code it away.
+
+Who can buy a house with a tenant in it? this page is too complicated ive read it a few times and youre talking in a way that makes this feel very complicated re write this
+
+What happens to bookings on a vacation rental? do you think this section cannibalizes any other page?
+
+are any of these pages cannibalizing other pages like this one on the rules page Can you end a lease to sell the house?
+
+What must you give the tenant at move-in? Replace to what does the buyer need to give to the existing tenants
+
+What must you give the tenant at move-in? make this more clear on what the section is about
+
+Own a rental and want the lease checked against these rules? Send the address and the lease. We tell you what the unit rents for now and which lease terms to update. replace with have us help buy your next rental"
+
+Rules taken from it, both hard-coded the same day: the Operations Officer's name is never written in page copy on these five pages or any page built from 2026-09-07 (build.js NO_OWNER_NAME_PAGES, tools/mkpage.js); nothing "sets" anything (build.js SETS_REGEX). His wording for the loan-fact attribution: none. The pages say "Reviewed by Chapter3's licensed mortgage loan originator, NMLS 2721275."

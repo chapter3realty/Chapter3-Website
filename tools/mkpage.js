@@ -75,7 +75,7 @@ function build(spec) {
   const subWords = words(spec.sub);
   if (subWords < 8 || subWords > 30) throw new Error(`hero sub is ${subWords} words (8-30)`);
   if (/\?\s*$/.test(spec.sub)) throw new Error("hero sub must not be a question");
-  if (!["tim", "devin"].includes(spec.author)) throw new Error("author must be tim or devin");
+  if (spec.author !== "tim") throw new Error(`author must be tim - the Operations Officer's name is never written on a page built from 2026-09-07 (owner rule 2026-09-06), so a page cannot carry his byline`);
   if (!Array.isArray(spec.faq) || spec.faq.length < 3) throw new Error("at least three FAQ entries");
   for (const f of spec.faq) if (/[<>&]/.test(f.q + f.a)) throw new Error(`FAQ text must be plain characters, no tags or entities: ${f.q}`);
 
@@ -125,9 +125,7 @@ function build(spec) {
   if (seen !== 4) throw new Error(`replaced ${seen} identity JSON-LD blocks, expected 4`);
 
   /* ---- main ---- */
-  const byline = spec.author === "tim"
-    ? `By <strong style="color:var(--navy);font-weight:600">Tim Nash</strong>, Broker-in-Charge, 30+ years on the Grand Strand &middot; Reviewed by <strong style="color:var(--navy);font-weight:600">Devin Day</strong>, Operations Officer &middot; <span style="white-space:nowrap">Updated ${shown}</span>`
-    : `By <strong style="color:var(--navy);font-weight:600">Devin Day</strong>, Operations Officer &amp; licensed MLO &middot; Reviewed by <strong style="color:var(--navy);font-weight:600">Tim Nash</strong>, Broker-in-Charge &middot; <span style="white-space:nowrap">Updated ${shown}</span>`;
+  const byline = `By <strong style="color:var(--navy);font-weight:600">Tim Nash</strong>, Broker-in-Charge, 30+ years on the Grand Strand &middot; Reviewed by Chapter3's licensed mortgage loan originator, NMLS 2721275 &middot; <span style="white-space:nowrap">Updated ${shown}</span>`;
   const bgs = ["ivory", "ivory-2"];
   let i = 0; const nextBg = () => bgs[i++ % 2];
   const parts = [];
@@ -147,6 +145,10 @@ function build(spec) {
 
   /* ---- self-checks ---- */
   for (const t of DONOR_TOKENS) if (out.includes(t)) throw new Error(`donor identity survived: "${t}"`);
+  /* Owner rules 2026-09-06: his name is never in page copy, and nothing "sets" anything. */
+  if (/\bDevin\b/.test(main + spec.title + spec.description)) throw new Error('the Operations Officer\'s name is in the page copy - write "Chapter3\'s licensed mortgage loan originator, NMLS 2721275" instead (owner rule 2026-09-06)');
+  { const hit = (main + " " + spec.title + " " + spec.description).replace(/<[^>]+>/g, " ").match(/\b(?:sets(?!\s+of\b)|set by)\b/i);
+    if (hit) throw new Error(`"${hit[0]}" - nothing sets anything; write what depends on what (owner rule 2026-09-06)`); }
   const strip = (html) => html.replace(/<main id="main">[\s\S]*<\/main>/, "").replace(/<title>[^<]*<\/title>/, "").replace(/<meta (?:name|property)="(?:description|og:title|og:description|og:url|twitter:title|twitter:description)" content="[^"]*">/g, "").replace(/<link rel="canonical" href="[^"]*">/, "").replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, (m) => { try { const t = JSON.parse(m.slice(35, -9))["@type"]; return blocks[t] ? "" : m; } catch { return m; } });
   const donorChrome = strip(donor);
   /* Completeness of the identity list: once the identity elements are removed

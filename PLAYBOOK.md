@@ -426,6 +426,29 @@ no building type, no unit count) at the owner's instruction, which overrides the
 confidentiality hold recorded in owner-answers. The rule above still applies to
 the next story.
 
+**A20a. The Operations Officer's name is never written in page copy (owner,
+2026-09-06).** Said twice in one message: "make a rule to never say my name
+hardcode remove my name from all these pages on the pages we are making now"
+and "Please stop saying my name delete my name across all paged we are making
+now." A17 stands: a loan fact still carries the licence, as "Reviewed by
+Chapter3's licensed mortgage loan originator, NMLS 2721275." and no name. A
+story from his files is "in Chapter3's files" or "in Chapter3's experience".
+`build.js` errors on the name in the main copy of the five batch-3 pages
+(`NO_OWNER_NAME_PAGES`) and of every page whose `datePublished` is 2026-09-07
+or later. `tools/mkpage.js` refuses to generate a page that contains it and
+accepts only `author: "tim"`. On those pages the A20 attributed sentence comes
+from Tim Nash or does not exist; never invent one. The eight batch-1 and
+batch-2 pages are outside the gate until he says to sweep them.
+
+**A22a. Nothing "sets" anything (owner, 2026-09-06).** "the lease never sets
+anything condition doesnt set anything nothing sets anything hard code it
+away." Write what depends on what: "depending on the lease", "the rent depends
+on this number", "the judgment states the compliance date", "state law has no
+maximum deposit". `SETS_REGEX` matches "sets" and "set by"; "sets of" is a
+noun and passes. It errors on the same pages as A20a and warns on the older
+pages, about 45 of which match today and fail nothing until they are swept
+(MISTAKES 65: a new rule does not fail the backlog).
+
 ## Phase 5 — Compliance, BEFORE the copy is mirrored anywhere
 
 Do this before generating JSON-LD, `llms-full.txt` or the sitemap entry.

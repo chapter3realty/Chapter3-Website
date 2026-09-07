@@ -1222,6 +1222,22 @@ const STRICT_REGISTER_PAGES = new Set([
 ]);
 const STRICT_MAX_SENTENCE = 28, STRICT_WARN_SENTENCE = 22, STRICT_MAX_MEAN = 16;
 
+/* Owner rule 2026-09-06: the Operations Officer's name is never written in the
+ * copy of these pages, or of any page built from 2026-09-07. A loan fact carries
+ * the licence only: "Reviewed by Chapter3's licensed mortgage loan originator,
+ * NMLS 2721275." tools/mkpage.js refuses to generate a page that breaks this. */
+const NO_OWNER_NAME_PAGES = new Set([
+  "/sell/rental-property/", "/invest/student-rentals/", "/invest/landlord-rules/",
+  "/invest/llc/", "/invest/foreclosures/",
+]);
+const NO_OWNER_NAME_FROM = "2026-09-07";
+const OWNER_NAME_REGEX = /\bDevin\b/;
+/* Owner rule 2026-09-06: nothing "sets" anything. A lease, a condition, a rule
+ * or a statute does not set a thing; write what depends on what ("depending on
+ * the lease"). Error on the pages above and on every page built from that date;
+ * a warning on the older pages until they are swept. "sets of" is a noun. */
+const SETS_REGEX = /\b(?:sets(?!\s+of\b)|set by)\b/i;
+
 const DOWN_PAYMENT_OK_PAGES = new Set([
   "/invest/strategies/dscr-loans/",
   "/invest/strategies/brrrr/",
@@ -1822,6 +1838,15 @@ function audit() {
           for (const [re, msg] of REGISTER_REGEX)
             for (const m of regSrc.matchAll(new RegExp(re.source, "gi")))
               E(`register: "${m[0].slice(0, 45)}" - ${msg} (PLAYBOOK A22)`);
+          /* owner rules 2026-09-06 (PLAYBOOK A20a, A22a): no owner name, nothing "sets" anything */
+          const newRules = NO_OWNER_NAME_PAGES.has(rel) || (pubDate && pubDate >= NO_OWNER_NAME_FROM);
+          if (newRules && OWNER_NAME_REGEX.test(regSrc))
+            E(`owner name in page copy - never write the Operations Officer's name on a page built from ${NO_OWNER_NAME_FROM}; write "Chapter3's licensed mortgage loan originator, NMLS 2721275" (owner rule 2026-09-06, PLAYBOOK A20a)`);
+          const setsHit = regSrc.match(SETS_REGEX);
+          if (setsHit) {
+            const setsMsg = `register: "${setsHit[0]}" - nothing sets anything; write what depends on what (owner rule 2026-09-06, PLAYBOOK A22a)`;
+            if (newRules) E(setsMsg); else W(setsMsg);
+          }
         }
         for (const [re, msg] of AI_TELL_REGEX) {
           const m = claims.match(re);
@@ -1856,7 +1881,9 @@ function audit() {
            * something, not merely appearing in a byline or a schema block */
           const SAYS = /\b(?:Tim|Timothy) Nash\b[^.]{0,80}\b(?:says?|said|puts? it|calls?|tells?|has seen|will not|refuses?|walks?|checks?|looks? for|starts?|asks?)\b|\bDevin Day\b[^.]{0,80}\b(?:says?|said|puts? it|calls?|tells?|has seen|runs?|checks?|looks? for)\b/;
           if (!SAYS.test(plain))
-            W("no attributed sentence from a named licensed person - quote Tim or Devin doing or saying something specific (PLAYBOOK A20)");
+            W((NO_OWNER_NAME_PAGES.has(rel) || (pubDate && pubDate >= NO_OWNER_NAME_FROM))
+              ? "no attributed sentence from a named licensed person - quote Tim Nash doing or saying something specific; the Operations Officer's name is never written on this page (PLAYBOOK A20, A20a)"
+              : "no attributed sentence from a named licensed person - quote Tim or Devin doing or saying something specific (PLAYBOOK A20)");
         }
       }
       /* ---- SUBHEAD: the hero sub-header (owner rule 2026-09-01, PLAYBOOK A14) ----

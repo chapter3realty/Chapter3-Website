@@ -1358,13 +1358,124 @@ the VA handbook itself (the 60-day figure is now his instruction, not a
 citation); the batch-1 and batch-2 question lists and the same sweep on
 those eight pages.
 
+## 2026-09-06, fourth pass: his name is gone from the five pages, nothing "sets" anything, the LLC page reordered, the homepage cards fixed
+
+He read the third-pass preview and sent one message with a structure question,
+two rules to hard-code, five copy edits, two CTA changes, two cannibalization
+questions and a homepage defect. The message is verbatim in
+`research/invest-next/owner-answers-batch3.md`, "Round 3".
+
+**Two new hard-coded rules, PLAYBOOK A20a and A22a, MISTAKES 73.**
+
+- *His name is never written in page copy.* `build.js` errors on `Devin` in
+  the main copy of the five batch-3 pages (`NO_OWNER_NAME_PAGES`) and of every
+  page whose `datePublished` is 2026-09-07 or later. `tools/mkpage.js` throws
+  before writing a file that contains it, accepts only `author: "tim"`, and its
+  byline now reads "Reviewed by Chapter3's licensed mortgage loan originator,
+  NMLS 2721275" with no name. The A20 warning on those pages now says "quote
+  Tim Nash". The five pages carried the name 24 times; all gone. Three
+  `llms.txt` entries that named him were rewritten. The CLAUDE.md line about
+  him says so.
+- *Nothing "sets" anything.* `SETS_REGEX` (`sets`, `set by`; "sets of" is a
+  noun and passes) errors on the same pages and warns on the older ones. The
+  five pages said it 24 times; all gone. 45 older pages warn today and fail
+  nothing (MISTAKES 65).
+
+**What the rule does not cover, and needs his word.** The sitewide identity
+JSON-LD on every page (the Organization `employee` list and the Person entity
+`/about/#devin-day`) still names him; that is schema, not copy, and it is on
+all 118 pages, so I left it. 24 older pages carry "Reviewed by Devin Day" in
+the byline. The eight batch-1 and batch-2 pages name him in copy nine times
+and say "sets" 14 times. He said "the pages we are making now", so those wait
+for him. Regenerating a batch-1 or batch-2 spec now drops the name from its
+byline automatically, but the copy edits are manual.
+
+**The five pages.**
+
+- `/invest/llc/`: he asked whether national answers sat above the local ones.
+  They did. Reordered local-first: what an LLC is (one sentence that every
+  investor client holds title in an entity), the loan in the LLC's name (every
+  DSCR and business-purpose loan closes in the entity, the lender requires it),
+  the deed into the LLC, the 4 percent ruling, a new section "Should you form
+  a new LLC for each house?" (his figure: about nine in ten investor clients
+  do; a claim at one property stops at that property; form it before the
+  contract), cost, withholding at sale, and income tax last. The "What do you
+  decide before the contract?" section he called nonsensical is deleted; its
+  one useful sentence is in the new section. CTAs are his words: "Let us make
+  it simple" to `/contact/` and "Call a specialized agent" to the phone link
+  at the bottom.
+- `/sell/rental-property/`: eyebrow "Selling a rental?" (the hero sub cannot
+  be a question, A14, so the question went in the eyebrow). "Who can buy a
+  house with a tenant in it?" rewritten plainly: anyone can buy it, the
+  question is who can use it; our rule is three to four months or less left
+  on the lease and an owner-occupant can close and wait, more than that means
+  an investor buyer, a wait, or a buyout. The evict-to-sell paragraph is now
+  three sentences and a link to the landlord page, which is the canonical
+  answer (his cannibalization question; it was duplicated on both pages).
+- `/invest/landlord-rules/`: "What must you give the tenant at move-in?" is
+  now "What must a landlord give a new tenant in writing?" and says what the
+  section is about in its first sentence. New section "What does the buyer
+  need to give the existing tenants?" (name and address of the new owner in
+  writing, 27-40-420; the deposit transferred and the tenant told in writing,
+  27-40-450; the lease unchanged). The rent-late CTA is his words: "Have us
+  help buy your next rental" to `/invest/run-the-numbers/`. New FAQ to match.
+- `/invest/student-rentals/` and `/invest/foreclosures/`: name and "sets"
+  removed, nothing else changed.
+
+**Cannibalization, his two questions.** "Can you end a lease to sell the
+house?" lived on both the landlord page and the selling page; now only the
+landlord page answers it and the selling page links there. "What happens to
+bookings on a vacation rental?" overlaps one paragraph on
+`/sell/sell-my-condo/` and one FAQ on the sell hub; both already link to
+`/sell/rental-property/` for the full answer, and the queries differ (selling
+a condo, selling a rental), so I left them.
+
+**Homepage "hair" in the "I am" buttons.** It was the fixed particle canvas
+(`#c3-particles`, position fixed, z-index 0, opacity .35, appended to `body`
+after `main`) painting its dots and arcs over the three ivory chooser cards,
+because the cards were positioned with z-index auto and came earlier in the
+DOM. Fix: `position:relative;z-index:1` on `.hero-chooser .chooser-card` in
+the page-local `c3-ui-tweaks` style block in `index.html` (not a partial, not
+`assets/*`, so no stitch and no rehash). Measured with a 2x screenshot and a
+pixel scan of one card excluding the label box: 696 stray pixels at 390px
+before, 0 after, on three frames each at 1280, 768 and 390; the cards still
+take the click at the point tested. The canvas is on 93 pages; any other
+ivory box over a dark section may show the same specks. Not touched.
+
+**Gates and browser.** `preflight` exits 0. The harness at 1280, 768 and 320
+on the five pages and the homepage: no low-contrast node and no overflow on
+the five. The landlord page's hero CTA "missed" the hit-test at 320 in the
+first run. Measured cause: the site's `html{scroll-behavior:smooth}` animates
+the harness's programmatic scrolls, so after its scroll sweep the hit-test
+read the CTA mid-scroll, with its top at -52px. The harness now scrolls with
+`behavior:'instant'` and the CTA passes at all three widths on both pages
+tested. The harness lived only in the session scratchpad until now; it is in
+`tools/verify-forms.js` (MISTAKES 72 describes it), run as
+`NODE_PATH=$(npm root -g) node tools/verify-forms.js /invest/llc/ /` against
+`python3 -m http.server 8123` started inside `chapter3realty/`. The
+homepage's "3.01 Common Questions" contrast and the clipped `#home` section
+and 320px brass button are identical on the committed page; pre-existing, not
+from this change.
+
+**Two mkpage self-checks fired usefully.** The LLC description came out at
+171 characters and the name check caught the generator's own byline, which is
+how the byline template got fixed.
+
+**Still open from earlier rounds.** Question 15 (which magistrate office
+takes which address), the batch-1 and batch-2 question lists, the VA
+handbook citation (unreachable; the page says "most lenders require" as he
+instructed), and the sweep above.
+
 ## Suggested order for the next session
 
-00. **All twelve investor pages are built and on the branch** (three 2026-09-06
-   sections). They await his review and his answers to the three question
-   lists; apply his edits to the specs and regenerate, never to the pages. He
-   has not deployed batches 2 or 3; the deploy command is in the environment
-   section.
+00. **All twelve investor pages are built and on the branch**, and the five
+   batch-3 pages are on their fourth pass (2026-09-06 sections). Apply his
+   edits to the specs and regenerate, never to the pages. Two rules are now
+   gates: his name is never in page copy (A20a) and nothing "sets" anything
+   (A22a). When he says so, sweep the eight batch-1 and batch-2 pages for both
+   and regenerate them; ask him about the schema Person entity and the 24
+   older bylines first. He has not deployed batches 2 or 3; the deploy command
+   is in the environment section.
 0. **The three revised tax pages are on the branch and in the previews.** Expect
    the next line edits from him, plus his answer on the local-versus-Chapter3
    question above. Two pages (accommodations tax, STR tax) still await notes.
