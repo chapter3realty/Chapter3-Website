@@ -1645,11 +1645,92 @@ insurance agent.
 pages, which 404 through the fetch tool; question 15; the batch-1 and batch-2
 question lists; the "sets" sweep on the eight older pages; his name in stories.
 
+## 2026-09-07 late: batch-4 round 2, his edit list applied to the five pages
+
+He read the five batch-4 pages and sent an edit list. It is verbatim under
+"Round 2" in `research/invest-next/owner-answers-batch4.md`, and a "Round 2,
+applied" list under it says what changed and answers his three questions.
+Everything was applied at the spec and regenerated. No page was hand-edited.
+
+**Section 8, the page with the most changes.**
+
+- Hero CTA "Call to learn more" (tel). "Rent to them."
+- The long paragraphs became tables: who does what; the two authorities with
+  voucher counts and phone numbers; the FY2027 fair market rent by bedroom.
+- An interactive calculator (`#s8rent`, `#s8inc`, `#s8br`, `#s8pct`): the
+  payment standard, the authority's share, the tenant's share, the tenant's
+  share of income, a stacked bar of who pays, and five bars of the bedroom
+  standards against a line at the rent. The rent check and the 40 percent cap
+  appear as notes when they apply. The maths: standard = FMR x percent; tenant
+  share = 30 percent of income; authority = min(standard, rent) - tenant share;
+  tenant = rent - authority. That is the simple case, no utility allowance and
+  no minimum rent, and the disclaimer under the tool says so.
+- **The function is a top-level `function c3S8(){}`.** The audit's
+  inline-handler gate looks for `function NAME` on the page or in a loaded
+  bundle. The first version was `window.c3S8=` inside an IIFE and the audit
+  failed the page four times. Every inline `oninput`/`onchange` handler on the
+  site must be declared as a plain function.
+- **The FY2027 fair market rents are hard-coded twice**: in the visible table
+  and in the `FMR` constant inside the spec's `TOOL` string. When FY2028
+  publishes (usually late summer), change both, in the spec, then regenerate.
+- `tools/verify-s8calc.js` drives the calculator through three hand-computed
+  cases and exits 1 on a mismatch, a page error, or sideways scroll at 320.
+  Run it after any change to that spec. It is green.
+- Two new sections: "What stops you from charging the most the voucher
+  allows?" (rent reasonableness, the 40 percent cap, the utility allowance,
+  the bedroom count, all from the federal rule read at law.cornell.edu) and
+  "How hard is it to find a tenant with a voucher?" (1,033 vouchers, the
+  Conway list closed, the Myrtle Beach list open for two days in January 2022
+  and 1,000 names drawn by lottery, the 60 days a family has to find a house).
+- The approval steps are bold, and the section says the house is approved
+  after the family is found, not before. "Does Horry County pay on time?" The
+  late-tenant sentence links to the eviction page. The "does not ban a family
+  for life" sentence is gone.
+- "Which houses fit the program?" He asked whether it was fact or one
+  investor's habit. The bedroom logic is what the rule does and is stated as
+  fact. The buy-a-fixer-and-add-bedrooms pattern was one client's and is
+  labelled that way.
+
+**New construction.** Title "New Construction as a Rental in Myrtle Beach |
+Chapter3", H1 "Can you buy new construction as a rental in Myrtle Beach?": the
+words people type, and the answer in the first line. "Covenants" is "rules"
+everywhere. A recorded rule that bans renting is enforceable in South Carolina;
+the page says so and the sources line carries SC Code 27-30-130. "Not in the
+sales office" deleted. CTAs "Talk to a new construction agent", "Want to buy a
+new construction home?", bottom "Call a specialized agent". The description was
+175 characters and mkpage refused it; it is 164 now.
+
+**Financing, insurance, rent prices.** Same facts, shorter sentences, tables
+instead of paragraphs (the first-time-investor rules, what counts toward ten,
+the reserve tiers; the three policies and the home-versus-rental cost lines;
+the rent factors), a static SVG bar chart of the five fair market rents on the
+rent page, CTAs renamed ("Plan the next purchase", "Have us run the numbers",
+"Have us run the rent", "Call a specialized agent").
+
+**"Send the address" is still on 19 older pages, 30 labels**: cost-to-own,
+hoa-vs-poa, thirteen /invest/ pages, home-value, net-proceeds, rental-property,
+why-chapter-3. He asked for the change on the batch-4 pages only. Ask before
+sweeping: the label is right on the CMA pages.
+
+**Gates.** Audit 0, preflight 0 on 128 pages, harness clean on the five at
+1280, 768 and 320, the calculator check green, and the calculator block looked
+at in a clipped screenshot. This page has no animated canvas, so a clipped
+`page.screenshot` works here. It does not on the homepage.
+
+**Traps this round.**
+
+- The inline-handler gate, above. It did its job.
+- The strict register caps FAQ answers too, 28 words a sentence. Split them.
+- The chart's "Your rent" label overlapped the last bar. Only the screenshot
+  showed it. The DOM checks cannot see a label collision; look at every chart
+  once before calling it done.
+
 ## Suggested order for the next session
 
 00. **Seventeen investor pages are built and on the branch.** The twelve are
-   live as of 2026-09-07 night; batch 4 (five pages, section above) awaits his
-   review and deploy. Apply his
+   live as of 2026-09-07 night; batch 4 (five pages, two sections above) has
+   his round-2 edits applied, gates green, and awaits his review and deploy.
+   Apply his
    edits to the specs and regenerate, never to the pages. Three rules are now
    gates: his NMLS number and any licensed-loan-originator claim never appear
    anywhere (A17), his name is in the byline only (A20a), and nothing "sets"

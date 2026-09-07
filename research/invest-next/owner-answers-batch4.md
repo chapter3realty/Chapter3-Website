@@ -68,3 +68,98 @@ Insurance and tax claims.
 
 Rents.
 - No lease data from him; the page uses the FMR table, the 40th-percentile definition (huduser.gov, 24 CFR 888.113), and the Zillow metro index (ZORI, all homes, smoothed: about $1,695 September 2025, about $1,714 July 2026, CSV re-opened), and routes to the analyzer and an agent.
+
+
+## Round 2 (2026-09-07, after the first-draft previews)
+
+Verbatim:
+
+"make the section 8 CTA at the top call to learn more. 
+
+You screen the family and rent to it.  Rent to them 
+
+the information after the short answer needs to be put in much more simple sentences  so we convey all the information in the most easy to understand way go ahead and check all 5 pages to make sure th information is being written int he most simple and easy to understand way and using graphs and not super long paragraphs. there could also be a chart showing what they would be paid by the tenant and by the government based on your rent and then an extra overlay on how many bedrooms you'd need to charge that rent. 
+
+how many houses are approved for the vouchers lets answer the question how hard is it to find a tenant with a voucher is it hard to compete with the other houses? 
+
+Want the voucher rent for one address?
+
+Send the address. We check which authority covers it, the bedroom count on the county record and the current payment standard, and run the numbers before you offer. replace with help buy a house for this strategy. 
+
+also lets answer the question what stops you from renting your house at the max the voucher allows. 
+
+How do you get a house approved? Make these steps bold so that it is better for human reading. be clear if you get the house approved before or after you find the tenant who holds a voucher. 
+
+Does the government pay on time? replace with Does Horry county pay on time 
+
+ The first payment also waits for the contract, so Link to the page we talk about evictions. 
+
+The rule does not ban a family for life, so the deposit still matters. Delete 
+
+Which houses work best for voucher tenants? Is this accurate or are you just saying this because that's what one of our investors do? 
+
+i don't like the "Send the address" CTA if you cant think of a good related CTA make it "Call a Specialized Agent" 
+
+The cash flow depends on when you buy. delete replace with another top answer we address in the article. 
+
+do we think this new construction title is the best for SEO and AEO and CTR? 
+
+is it actually legal for an HOA to say no rentals? 
+
+Covenants is a big word use rules 
+
+Looking at a new community? replace this with a "want to buy a new construction home" then the sub CTA about that instead. 
+
+not in the sales office. Delete"
+
+### Round 2, applied (2026-09-07 late)
+
+Every item above is applied at the spec and regenerated. What changed, in his order:
+
+- Section 8 hero CTA: "Call to learn more" (tel). "Rent to them."
+- All five pages: paragraphs over about three sentences became tables or bold
+  lists; every sentence under 28 words; the audit's strict register passes.
+- Section 8 calculator: rent, family income, bedrooms on the voucher, the
+  authority's standard as a percent of fair market rent. Outputs the payment
+  standard, the authority's share, the tenant's share and the tenant's share of
+  income. Chart 1: a stacked bar of who pays. Chart 2: the five bedroom
+  standards as bars against a line at the rent, brass where the standard reaches
+  the rent, gray where it does not. Assumptions: 30 percent of income as the
+  tenant's share, no utility allowance, no minimum rent, the authority's standard
+  at the chosen percent of the FY2027 fair market rent. The notes fire when the
+  rent is above the standard and when the tenant's share is over 40 percent of
+  income. Verified in a browser by `tools/verify-s8calc.js` against three
+  hand-computed cases.
+- New section "How hard is it to find a tenant with a voucher?": 1,033 vouchers
+  between the two authorities, the Conway list closed, the Myrtle Beach list
+  open two days in January 2022 with 1,000 names drawn by lottery, 60 days for
+  a family to find a house. The competition is the inspection and the rent
+  check, not other houses.
+- "Want the voucher rent for one address?" is now "Want help buying a house for
+  this strategy?" with "Call a specialized agent".
+- New section "What stops you from charging the most the voucher allows?": the
+  rent check against comparable unassisted units, the 40 percent cap at
+  move-in, the utility allowance inside the gross rent, and the bedroom count on
+  the voucher. Federal rule, read at law.cornell.edu.
+- Approval steps bold. The section says the house is approved after the family
+  is found, not before.
+- "Does Horry County pay on time?"
+- The late-tenant sentence links to /invest/landlord-rules/ (the eviction page).
+- "The rule does not ban a family for life" deleted.
+- "Which houses fit the program?": his question answered honestly. The bedroom
+  logic is what the rule does and is written as fact. The buy-a-fixer-and-add-
+  bedrooms pattern was one client's and the page now says "One client's pattern,
+  not a rule."
+- No "Send the address" on the five pages. Bottom CTAs are "Call a specialized
+  agent". Nineteen older pages still use "Send the address" (30 labels); not
+  changed, pending his call.
+- New construction: "The cash flow depends on when you buy" replaced with the
+  recorded-rules answer; title "New Construction as a Rental in Myrtle Beach |
+  Chapter3", H1 "Can you buy new construction as a rental in Myrtle Beach?";
+  "covenants" is "rules" everywhere; "Looking at a new community?" is "Want to
+  buy a new construction home?" with "Talk to a new construction agent"; "not in
+  the sales office" deleted.
+- Is it legal for an HOA to say no rentals? Yes, in South Carolina. A rule that
+  bans or limits renting is enforceable when it is recorded with the county
+  (SC Code 27-30-130 makes recording the condition). The page and its FAQ say
+  so. An unrecorded rule is the one that fails.

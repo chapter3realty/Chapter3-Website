@@ -599,6 +599,16 @@ script may write visible text by element position; `build.js audit` errors
 when a count-up target's text differs from the animation's final value. The
 homepage carries no decorative script at all.
 
+**A29b. A calculator is verified against hand-computed cases, in the browser
+(2026-09-07).** Work three cases by hand before writing the tool, then drive
+the page's inputs with Playwright and compare every output to the hand
+figures (`tools/verify-s8calc.js` is the pattern; run it after any change to
+that spec). Every inline `oninput`/`onchange` handler must call a top-level
+`function NAME(){}` declared on the page or in a loaded bundle; a function
+assigned inside an IIFE fails `build.js audit`, and would fail in the browser
+too. Then look at every chart once, clipped to the tool's box: a label that
+overlaps a bar is invisible to every DOM check.
+
 **A30. Selectable.** Hit-test with `document.elementFromPoint` at the element's
 centre and confirm it returns that element, not an overlay. `getSelection()` is
 not a valid test. An animated pseudo-element without `pointer-events:none` once

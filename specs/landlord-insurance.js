@@ -8,6 +8,7 @@
  * is named (no AfBA exists). Built by tools/mkpage.js. */
 const { h } = require("../tools/mkpage.js");
 
+const TEL = "tel:+18543332135";
 const RTN = "/invest/run-the-numbers/";
 const III = "https://www.iii.org/article/coverage-for-renting-out-your-home";
 const FEMAFS = "https://dlnreng.hawaii.gov/nfip/wp-content/uploads/sites/11/2015/07/HFIAA-Surcharge-Fact-Sheet_Final-April-2015.pdf";
@@ -25,24 +26,26 @@ module.exports = {
   h1: "What does insurance cost on a Myrtle Beach rental?",
   h1em: "The landlord policy, wind, flood, and the tax that costs more.",
   sub: "A landlord policy is about a fifth more than a homeowner policy, flood carries a $250 surcharge on a rental, and the property tax is three times higher.",
-  heroCta: { label: "Send the address", href: RTN },
+  heroCta: { label: "Call a specialized agent", href: TEL },
   author: "devin",
   shortAnswer: "A rental needs a landlord policy instead of a homeowner policy. It needs wind coverage on most of the coast, and flood coverage where the lender or the zone requires it. The insurance trade body puts a landlord policy at about 25 percent more than a homeowner policy. In Chapter3's files it has run 15 to 20 percent more. Federal flood insurance adds a $250 yearly surcharge on a rental instead of $25, and its premium rises faster. The larger cost is the property tax. A rental is assessed at 6 percent and pays the school operating tax. Its bill is three to four times the bill for the same house as a legal residence. We put all four numbers in the projection before you offer.",
   sections: [
     { h2: "What insurance does a rental need?", html:
-      h.p(`Three policies. ${h.ext(III, "A landlord policy covers the building, your liability if a tenant or a guest is hurt, and lost rent")} while a covered repair is made. A homeowner policy is written for a house you live in, and a claim on a rented house can be denied under it.`) +
-      h.p(`Wind and hail coverage is separate on much of the coast, and flood is always a separate policy. ${h.ext(MSC, "Check the flood zone")} for any address at the federal map center. ${h.a("/buyers/coastal-insurance/", "The three coastal policies, explained")}, with the average premiums here.`) +
-      h.p(`A short-term rental needs coverage written for short-term rental use, not a landlord policy. ${h.a("/invest/str-setup/", "What a short-term rental owner arranges after closing")}.`) },
+      h.p(`Three policies.`) +
+      h.table(["Policy", "What it covers", "Who requires it"], [["Landlord policy", "The building, your liability if someone is hurt, and lost rent during a covered repair", "Your lender, and any claim you make"], ["Wind and hail", "Storm damage. Often a separate policy on the coast", "Your lender"], ["Flood", "Rising water. Always a separate policy", "Your lender in a high-risk zone. Your choice elsewhere"]]) +
+      h.p(`${h.ext(III, "A landlord policy replaces the homeowner policy")}. A homeowner policy is written for a house you live in. A claim on a rented house can be denied under it.`) +
+      h.p(`${h.ext(MSC, "Check the flood zone")} for any address at the federal map center. ${h.a("/buyers/coastal-insurance/", "The three coastal policies, explained")}, with the average premiums here. A short-term rental needs coverage written for short-term use, not a landlord policy. ${h.a("/invest/str-setup/", "What a short-term rental owner arranges after closing")}.`) },
     { h2: "How much more does a rental cost to insure?", html:
-      h.p(`${h.ext(III, "The insurance trade body puts a landlord policy at about 25 percent more")} than a homeowner policy on the same house. In Chapter3's files the difference has been 15 to 20 percent. The extra pays for the liability and the lost-rent coverage.`) +
-      h.p(`Flood is different. The federal program prices a rental's flood risk the same way it prices a primary home's. ${h.ext(FEMAFS, "It charges a $250 yearly surcharge on a rental instead of $25")}, and it lets the premium rise faster toward its full-risk price. A rental's flood policy can therefore cost a multiple of what the last owner paid while living there. In Chapter3's files that multiple has been about three.`) +
-      h.p(`Ask the seller for the current declarations page and any claims on the house before you offer. The rental's premium also depends on the vacancy between tenants, so tell the insurer how the house will be used.`) },
+      h.table(["Cost", "Home you live in", "Rental"], [["Building policy", "Homeowner policy", "Landlord policy. About 25 percent more by the trade body's figure. 15 to 20 percent more in Chapter3's files"], ["Federal flood surcharge", "$25 a year", "$250 a year"], ["Property tax", "4 percent assessment. No school operating tax", "6 percent assessment. Full school operating tax. Three to four times the bill"]]) +
+      h.p(`${h.ext(III, "The insurance trade body puts a landlord policy at about 25 percent more")} than a homeowner policy on the same house. The extra pays for the liability and the lost-rent coverage.`) +
+      h.p(`Flood is different. The federal program prices a rental's flood risk the same way it prices a primary home's. ${h.ext(FEMAFS, "It charges a $250 yearly surcharge on a rental instead of $25")}. It also lets the premium rise faster toward its full-risk price. A rental's flood policy can cost a multiple of what the last owner paid while living there. In Chapter3's files that multiple has been about three.`) +
+      h.p(`Ask the seller for the current declarations page and any claims on the house before you offer. Tell the insurer how the house will be used, because the vacancy between tenants changes the price.`) },
     { h2: "What makes one quote double another?", html: (bg) =>
-      h.p(`Distance to the ocean, roof age, the wind deductible, construction type, and claims on the address. ${h.a("/buyers/coastal-insurance/", "Six ways to lower a coastal premium")}. Quotes on the same house vary widely here, so shop the landlord policy the same way you shopped the first one.`) +
-      h.cta("Want the insurance and the tax in the numbers?", "Send the address. We get the landlord, wind and flood quotes and the tax at the 6 percent rate, and put them in the projection before you offer.", "Send the address", RTN, bg) },
+      h.p(`Distance to the ocean, roof age, the wind deductible, construction type, and claims on the address. ${h.a("/buyers/coastal-insurance/", "Six ways to lower a coastal premium")}. Quotes on the same house vary widely here. Shop the landlord policy the same way you shopped the first one.`) +
+      h.cta("Want the insurance and the tax in the numbers?", "Tell us the address and how you will use it. We get the three quotes and the tax at the 6 percent rate, and put them in the projection before you offer.", "Have us run the numbers", RTN, bg) },
     { h2: "Do taxes or insurance kill more deals?", html:
       h.p(`Taxes, in Chapter3's files. Insurance on a rental is higher than on a primary home by about a fifth. The property tax is higher by a multiple.`) +
-      h.p(`${h.ext(ASSESSOR, "The county assesses a legal residence at 4 percent")} of value and every other house at 6 percent, and a legal residence pays no school operating tax. Together, the two rules make a rental's bill about three times the legal-residence bill in the unincorporated county. Inside the city of Myrtle Beach it is about four times. ${h.a("/buyers/property-taxes/", "The calculator, with the county's millage")}.`) +
+      h.p(`${h.ext(ASSESSOR, "The county assesses a legal residence at 4 percent")} of value and every other house at 6 percent. A legal residence also pays no school operating tax. Together, the two rules make a rental's bill about three times the legal-residence bill in the unincorporated county. Inside the city of Myrtle Beach it is about four times. ${h.a("/buyers/property-taxes/", "The calculator, with the county's millage")}.`) +
       h.p(`According to a loan officer at our preferred lender, a DSCR loan prices about the same as a conventional investment loan. That holds with strong credit and a coverage ratio of 1.25 to 1.5. The insurance is about the same on either. The tax is the cost that changes when a house becomes a rental. It is the cost that most often ends a deal in our files.`) },
     { h2: "How do you put insurance into the offer?", html: (bg) =>
       h.p(`Get three quotes before you write the offer, not after the inspection. They are the landlord policy, wind if it is separate, and flood if the zone or the lender requires it. Send the seller's declarations page and the claims history with the quote request.`) +
@@ -64,7 +67,7 @@ module.exports = {
     { name: "Horry County Assessor", href: ASSESSOR },
   ],
   sourcesNote: "Educational only, not insurance advice. Premiums are quotes on the house, not averages; get them before you offer.",
-  bottomCta: { h2: "Price the insurance and the tax before you offer.", p: "Send the address. We get the three quotes and the tax at the 6 percent rate, and put them in the projection.", label: "Send the address", href: RTN },
+  bottomCta: { h2: "Price the insurance and the tax before you offer.", p: "One call. We get the three quotes and the tax at the 6 percent rate, and put them in the projection.", label: "Call a specialized agent", href: TEL },
   keywords: "landlord insurance Myrtle Beach, rental property insurance cost South Carolina coast, flood insurance on a rental, investment property insurance vs homeowners, property tax on a rental Horry County",
   about: "Insurance on a Myrtle Beach rental property",
 };
