@@ -1765,6 +1765,13 @@ touching either page. The short version:
 **Gates.** Audit 0, preflight 0, harness clean on the five at three widths, the
 calculator check green.
 
+**Round 5**, five wording edits, verbatim and applied under "Round 5" in the
+same research file: the seller sentence deleted from the second-rental page,
+the insurance H2s renamed ("What makes insurance so expensive in Myrtle
+Beach?", "Get insurance quotes before making an offer"), the insurance CTA
+rewritten to offer quotes, and the rent-prices expenses CTA renamed to "Have
+us help find a new rental."
+
 ## 2026-09-07 last: batch-4 round 4, headlines local, no headline offers financing, the second-rental page
 
 His fourth list is verbatim under "Round 4" in

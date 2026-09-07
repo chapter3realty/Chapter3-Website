@@ -384,3 +384,33 @@ Buying a rental and want the rent checked first? Delete this CTA"
   an eight-row table; the supply sentence and the "rent checked first" CTA are
   deleted. The expenses section carries the page's second CTA ("Want the full
   cost of one rental?"), because every article carries two.
+
+## Round 5 (2026-09-07). His message, verbatim
+
+"A seller can ask for more.  Delete
+
+What makes one quote double another? Replace with "what makes insurance so expensive?"
+
+Want the insurance and the tax in the numbers? we help get insurance quotes if needed have us find a price out a few new investments for you.
+
+How do you put insurance into the offer? make this section "get insurance quotes before making an offer"
+
+Want the full cost of one rental? Replace with Have us help find a new rental. (this is on the rent prices page."
+
+### Round 5, applied
+
+All five at the spec, regenerated, audit and preflight 0, harness clean at
+1280, 768 and 320.
+
+- "A seller can ask for more" deleted. It was on the second-rental page, in
+  the paperwork paragraph, not on the insurance page.
+- Insurance H2 "What makes one quote double another?" is now "What makes
+  insurance so expensive in Myrtle Beach?" (the place name is required by
+  A22d, and the H2 is the one people search).
+- Insurance CTA is now "We help get insurance quotes if you need them." with
+  "Tell us the addresses you are looking at. We get the quotes and the tax at
+  the 6 percent rate, and price out a few new investments for you."
+- Insurance H2 "How do you put insurance into the offer?" is now "Get
+  insurance quotes before making an offer".
+- Rent prices CTA "Want the full cost of one rental?" is now "Have us help
+  find a new rental." with "Tell us the area and the budget."
