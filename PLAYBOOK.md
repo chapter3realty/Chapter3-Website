@@ -475,6 +475,18 @@ Horry County, the Grand Strand or a town on it. `build.js` errors on a page
 built from 2026-09-07 whose H1 names no place and warns on older pages;
 `mkpage` refuses to generate one.
 
+**A22e. One number, one source, and every page that repeats it points at it
+(owner, batch 5 answer 10, 2026-09-08: "10.5 may have been older numbers ...
+10.5 is some areas not every one of them now").** When two pages need the same
+figure, one page owns it and computes it from the data file at build time; the
+other links. The returns page owns the yields (built from
+`research/invest-next/data/submarkets.json`); the hold page owns the price
+history (`data/hold-*.csv`) and takes the yields it needs from that same JSON.
+The hub's "+10.5% year-over-year" tile was a number with no source that no area
+matched; it is now four dated tiles, each linking to the page that owns its
+figure. Never carry a yield, a rent or a growth rate into copy by hand from
+another page or a research table: require the file.
+
 **A17b. No headline offers financing (owner, 2026-09-07: "we are NOT a lending
 company we are a real estate brokerage NEVER talk in away that makes it sound
 like we can finance a house").** A title, H1, hero sub or CTA label never
@@ -635,6 +647,16 @@ assigned inside an IIFE fails `build.js audit`, and would fail in the browser
 too. Then look at every chart once, clipped to the tool's box: a label that
 overlaps a bar is invisible to every DOM check.
 
+**A29c. A chart is built from the data file, then looked at (2026-09-08).** A
+chart on a spec page is an SVG string built at generation time from the same
+JSON or CSV the prose uses, never from typed values. After generating, clip
+every `main svg[role="img"]` to a PNG (`scratchpad/shots.js` pattern:
+document coordinates, `fullPage: true`) and look at each once. The first
+render of the returns page had two label collisions the DOM checks could not
+see: the "2 percent screen" label over the last row, and a negative bar's label
+running into its row label. Every chart in batch 5 was looked at before
+publishing.
+
 **A30. Selectable.** Hit-test with `document.elementFromPoint` at the element's
 centre and confirm it returns that element, not an overlay. `getSelection()` is
 not a valid test. An animated pseudo-element without `pointer-events:none` once
@@ -705,6 +727,19 @@ live, byte for byte. MISTAKES 76.
 
 **A40. After deploy, verify live:** the URL returns 200, the canonical is right,
 and the rendered page matches what you built.
+
+**A41. A monthly data page (2026-09-08).** `/invest/what-is-being-built/` is
+generated from `research/invest-next/data/pipeline-latest.json`. Each month:
+`node tools/permits.js` (refreshes the county development layer, the county
+permit map and FRED; a feed that fails keeps its old values and its old read
+date), `node tools/mkpage.js specs/what-is-being-built.js`, `node build.js
+dates`, `node build.js preflight`, commit. The page prints each feed's read
+date. The county permit map stopped updating on 2025-09-22, so the page says
+the map is stale rather than reading zero permits as no building. The airport
+block is updated by hand from the airport's own tables. The fixed facts
+(hospitals, I-73, roads) come from `research/invest-next/construction-pipeline-facts.md`;
+re-open a source before changing a date or a budget, and never write "under
+construction" for the interstate (it has no contract).
 
 ---
 

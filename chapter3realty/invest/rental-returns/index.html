@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script>/* GA deferred for mobile performance: loads on first interaction or after 4s */(function(){var l=false;function g(){if(l)return;l=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-681MKM6TCB";document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag("js",new Date());gtag("config","G-681MKM6TCB");}var e=["scroll","mousemove","touchstart","click","keydown"];function t(){g();e.forEach(function(v){window.removeEventListener(v,t);});}e.forEach(function(v){window.addEventListener(v,t,{passive:true});});setTimeout(g,4000);})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="stylesheet" href="/assets/fonts.5be9fb17b5.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/assets/fonts.5be9fb17b5.css"></noscript>
+<link rel="stylesheet" href="/assets/app.650a027cfa.css"><style>.nav-dd{position:relative;display:flex;align-items:center}.nav-caret{font-size:.6em;margin-left:.4em;opacity:.55;display:inline-block;vertical-align:middle}.nav-dd-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(5px);background:var(--ivory);border:1px solid var(--rule);border-radius:10px;box-shadow:0 12px 30px rgba(28,32,40,.14);padding:.45rem 0;min-width:185px;opacity:0;visibility:hidden;transition:opacity .17s ease,transform .17s ease;z-index:300;display:flex;flex-direction:column}.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}.nav-dd-menu a{display:block;padding:.55rem 1.25rem;font-size:.72rem;letter-spacing:.04em;text-transform:none;opacity:.85;white-space:nowrap;text-align:center}.nav-dd-menu a:hover{opacity:1;background:rgba(196,120,58,.08)}.nav-dd-menu a::after{display:none!important}.idx-modal{position:fixed;inset:0;z-index:9999;display:none}.idx-modal.open{display:block}.idx-backdrop{position:absolute;inset:0;background:rgba(28,32,40,.6)}.idx-panel{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(720px,94vw);max-height:92vh;overflow-y:auto;background:var(--ivory);border-radius:16px;box-shadow:0 30px 80px rgba(28,32,40,.45)}.idx-head{display:flex;justify-content:space-between;align-items:flex-start;padding:1.6rem 1.75rem 1.1rem;border-bottom:1px solid var(--rule);position:sticky;top:0;background:var(--ivory);z-index:2}.idx-eyebrow{font-family:var(--sans);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);margin-bottom:.35rem}.idx-title{font-family:var(--serif);font-size:1.45rem;color:var(--navy);line-height:1}.idx-close{background:none;border:none;font-size:1.9rem;line-height:1;color:var(--muted);cursor:pointer;padding:0 .25rem}.idx-body{padding:1.4rem 1.75rem}.idx-field{margin-bottom:1.3rem}.idx-field>label{display:block;font-family:var(--sans);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin-bottom:.55rem;font-weight:600}.idx-2col{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.idx-select,.idx-input{width:100%;padding:.65rem .75rem;border:1px solid var(--rule);border-radius:8px;background:#fff;font-family:var(--sans);font-size:.88rem;color:var(--navy)}.idx-pills{display:flex;flex-wrap:wrap;gap:.45rem}.idx-pill{padding:.5rem .85rem;border:1px solid var(--rule);border-radius:30px;background:#fff;font-family:var(--sans);font-size:.8rem;color:var(--muted);cursor:pointer;transition:all .15s}.idx-pill.on{background:var(--navy);color:var(--ivory);border-color:var(--navy)}.idx-checks{display:grid;grid-template-columns:1fr 1fr;gap:.5rem .75rem}.idx-check{display:flex;align-items:center;gap:.5rem;font-family:var(--sans);font-size:.84rem;color:var(--navy);cursor:pointer}.idx-check input{accent-color:var(--brass);width:16px;height:16px}.idx-foot{padding:1.2rem 1.75rem 1.5rem;border-top:1px solid var(--rule);position:sticky;bottom:0;background:var(--ivory)}.idx-note{display:block;font-family:var(--sans);font-size:.8rem;color:var(--muted);margin-bottom:.85rem;line-height:1.5}.idx-lead{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.9rem}.idx-ok{display:none;padding:1.1rem;background:rgba(196,120,58,.1);border:1px solid var(--brass);border-radius:8px;color:var(--navy);font-size:.92rem;text-align:center;line-height:1.5}@media(max-width:560px){.idx-checks,.idx-lead,.idx-2col{grid-template-columns:1fr}}.qsearch{background:var(--navy);border-radius:14px;padding:1.6rem 1.5rem 1.5rem;position:relative;overflow:hidden;box-shadow:0 22px 55px rgba(28,32,40,.22);max-width:660px;margin-top:1.85rem}.qsearch-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(244,239,232,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(244,239,232,.03) 1px,transparent 1px);background-size:46px 46px;pointer-events:none}.qs-head{font-family:var(--serif);font-size:1.18rem;color:var(--ivory);margin-bottom:1.1rem;position:relative}.qs-row{display:grid;gap:.7rem;margin-bottom:.8rem;position:relative}.qs-2{grid-template-columns:1fr 1fr}.qs-price{grid-template-columns:1fr auto 1fr;align-items:end}.qs-label{font-family:var(--sans);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-2);margin-bottom:.32rem;display:block}.qs-sel{width:100%;padding:.62rem .6rem;border:1px solid rgba(244,239,232,.2);border-radius:8px;background:rgba(244,239,232,.07);color:var(--ivory);font-family:var(--sans);font-size:.87rem}.qs-sel option{color:#1c2028}.qs-to{color:rgba(244,239,232,.5);font-size:.66rem;letter-spacing:.12em;padding:0 .3rem .68rem}.qs-types{display:flex;flex-wrap:wrap;gap:.55rem 1.1rem;margin:.55rem 0 1.2rem;position:relative}.qs-type{display:flex;align-items:center;gap:.4rem;font-family:var(--sans);font-size:.82rem;color:var(--ivory);cursor:pointer}.qs-type input{accent-color:var(--brass);width:15px;height:15px}.qs-actions{display:flex;align-items:center;gap:1.4rem;position:relative}.qs-search{background:var(--brass);color:#fff;border:none;padding:.82rem 2.4rem;border-radius:8px;font-family:var(--sans);font-size:.85rem;letter-spacing:.04em;cursor:pointer;font-weight:600;transition:background .15s}.qs-search:hover{background:#a96531}.qs-adv{color:var(--brass-2);font-size:.85rem;text-decoration:underline;cursor:pointer;background:none;border:none;font-family:var(--sans);padding:0}@media(max-width:560px){.qsearch{padding:1.3rem 1.1rem}}</style>
+<style id="c3-tap-fix">
+/* iOS Safari tap fix: non-anchor elements need cursor:pointer to receive
+   tap-generated click events. The touch cursor:auto rules strip it, killing
+   <div onclick> buttons. Restore pointer for clickables on touch only. */
+@media (hover: none), (pointer: coarse) {
+  a, button, summary, [onclick], [role="button"],
+  .btn, .chooser-card, .str-card, .invest-cta-primary, .invest-cta-secondary,
+  .tool-tab, .persona-tab, .segment-card, .program-card, .team-card, .nav-pill,
+  .rail-item, .persona-tab, .accordion-q { cursor: pointer !important; }
+}
+</style>
+<title>What Return Should a Myrtle Beach Rental Make? | Chapter3</title>
+<meta name="description" content="Cap rates, short-term returns and price change for nine Grand Strand areas, from Zillow, AirROI and HUD data, with a hover map, a calculator and five dealbreakers.">
+<link rel="canonical" href="https://chapter3realty.com/invest/rental-returns/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Chapter3 Realty">
+<meta name="theme-color" content="#1c2028">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="geo.position" content="33.6891;-78.8867">
+<meta name="ICBM" content="33.6891, -78.8867">
+<meta name="geo.region" content="US-SC">
+<meta name="geo.placename" content="Myrtle Beach">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Chapter3 Realty">
+<meta property="og:title" content="What return should a Myrtle Beach rental make?">
+<meta property="og:description" content="Cap rates, short-term returns and price change for nine Grand Strand areas, from Zillow, AirROI and HUD data, with a hover map, a calculator and five dealbreakers.">
+<meta property="og:url" content="https://chapter3realty.com/invest/rental-returns/">
+<meta property="og:image" content="https://chapter3realty.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Chapter3 Realty, a data-forward Myrtle Beach real estate brokerage">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What return should a Myrtle Beach rental make?">
+<meta name="twitter:description" content="Cap rates, short-term returns and price change for nine Grand Strand areas, from Zillow, AirROI and HUD data, with a hover map, a calculator and five dealbreakers.">
+<meta name="twitter:image" content="https://chapter3realty.com/og-image.jpg">
+<meta name="twitter:image:alt" content="Chapter3 Realty, a data-forward Myrtle Beach real estate brokerage">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "RealEstateAgent", "@id": "https://chapter3realty.com/#org", "name": "Chapter3 Realty", "legalName": "Chapter3 Realty Corp", "employee": [{"@type": "Person", "name": "Devin Day", "jobTitle": "Operations Officer", "image": "https://chapter3realty.com/team/devin.webp", "url": "https://chapter3realty.com/about/"}, {"@type": "Person", "name": "Timothy Nash", "alternateName": "Tim Nash", "jobTitle": "Broker-in-Charge", "image": "https://chapter3realty.com/team/timmy.webp", "url": "https://chapter3realty.com/about/"}, {"@type": "Person", "name": "Abdulla Hijazi", "jobTitle": "Chief Marketing Officer", "image": "https://chapter3realty.com/team/abdulla.webp", "url": "https://chapter3realty.com/about/"}], "founder": {"@type": "Person", "name": "Abdulla Hijazi"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "16:00"}], "url": "https://chapter3realty.com/", "logo": {"@type": "ImageObject", "url": "https://chapter3realty.com/favicon-512.png"}, "image": "https://chapter3realty.com/og-image.jpg", "telephone": "+1-854-333-2135", "email": "hello@chapter3realty.com", "priceRange": "$$", "description": "Data-forward real estate brokerage serving Myrtle Beach and the Grand Strand, buyers, sellers, and investors, with long-term and short-term rental investment analysis.", "areaServed": [{"@type": "City", "name": "Myrtle Beach"}, {"@type": "City", "name": "North Myrtle Beach"}, {"@type": "City", "name": "Surfside Beach"}, {"@type": "City", "name": "Conway"}, {"@type": "AdministrativeArea", "name": "Horry County"}, {"@type": "AdministrativeArea", "name": "Grand Strand"}, {"@type": "City", "name": "Garden City"}, {"@type": "City", "name": "Murrells Inlet"}, {"@type": "City", "name": "Pawleys Island"}, {"@type": "City", "name": "Little River"}], "address": {"@type": "PostalAddress", "streetAddress": "573 Vista Drive", "addressLocality": "Murrells Inlet", "addressRegion": "SC", "postalCode": "29576", "addressCountry": "US"}, "sameAs": ["https://facebook.com/chapter3realty", "https://instagram.com/chapter3realty", "https://youtube.com/@chapter3realty"], "slogan": "Myrtle Beach real estate, by the numbers.", "foundingDate": "2026", "knowsAbout": ["Myrtle Beach real estate", "Grand Strand housing market", "short-term rental investing", "long-term rental investing", "DSCR loans", "cap rate analysis", "condotel financing", "Horry County property taxes", "South Carolina down payment assistance", "VA loans", "first-time home buying", "vacation rental regulations", "relocation to South Carolina", "Myrtle Beach condo market", "real estate investment analysis"], "geo": {"@type": "GeoCoordinates", "latitude": 33.5510, "longitude": -79.0359}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://chapter3realty.com/#website", "url": "https://chapter3realty.com/", "name": "Chapter3 Realty", "publisher": {"@id": "https://chapter3realty.com/#org"}, "inLanguage": "en-US", "description": "Data-forward Myrtle Beach and Grand Strand real estate brokerage for buyers, sellers, and investors."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://chapter3realty.com/invest/rental-returns/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://chapter3realty.com/"},{"@type":"ListItem","position":2,"name":"Invest","item":"https://chapter3realty.com/invest/"},{"@type":"ListItem","position":3,"name":"Rental returns","item":"https://chapter3realty.com/invest/rental-returns/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@id":"https://chapter3realty.com/about/#devin-day"},"@id":"https://chapter3realty.com/invest/rental-returns/#webpage","url":"https://chapter3realty.com/invest/rental-returns/","name":"What return should a Myrtle Beach rental make?","description":"Cap rates, short-term returns and price change for nine Grand Strand areas, from Zillow, AirROI and HUD data, with a hover map, a calculator and five dealbreakers.","isPartOf":{"@id":"https://chapter3realty.com/#website"},"about":{"@id":"https://chapter3realty.com/#org"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://chapter3realty.com/og-image.jpg","width":1200,"height":630},"dateModified":"2026-09-08","datePublished":"2026-09-08","inLanguage":"en-US","breadcrumb":{"@id":"https://chapter3realty.com/invest/rental-returns/#breadcrumb"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1"]},"mainEntity":{"@id":"https://chapter3realty.com/invest/rental-returns/#article"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://chapter3realty.com/invest/rental-returns/#article","headline":"What return should a Myrtle Beach rental make?","description":"Cap rates, short-term returns and price change for nine Grand Strand areas, from Zillow, AirROI and HUD data, with a hover map, a calculator and five dealbreakers.","url":"https://chapter3realty.com/invest/rental-returns/","author":{"@id":"https://chapter3realty.com/#org"},"reviewedBy":{"@type":"Person","name":"Timothy Nash","alternateName":"Tim Nash","jobTitle":"Broker-in-Charge"},"publisher":{"@id":"https://chapter3realty.com/#org"},"datePublished":"2026-09-08","dateModified":"2026-09-08","inLanguage":"en-US","image":"https://chapter3realty.com/og-image.jpg","mainEntityOfPage":{"@id":"https://chapter3realty.com/invest/rental-returns/"},"about":{"@type":"Thing","name":"The return a rental property makes in Myrtle Beach and the Grand Strand, by area"},"keywords":"Myrtle Beach rental returns, cap rate Myrtle Beach rental, Myrtle Beach investment property return, Grand Strand rental cap rate by area, Myrtle Beach Airbnb return, DSCR Myrtle Beach rental"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good cap rate for a rental in Myrtle Beach?","acceptedAnswer":{"@type":"Answer","text":"With a manager and a 25 percent allowance for empty months and repairs, the typical house at the typical rent returns 1.1 to 2.3 percent in Horry County. Above 2 percent passes Chapter3's screen. Self-managed houses reach 2.7 to 4.6 percent. A national research firm put single-family cap rates at 7.3 percent in late 2025. Myrtle Beach returns have come from the price change and from short-term rates instead."}},{"@type":"Question","name":"What is a good DSCR for a Myrtle Beach rental?","acceptedAnswer":{"@type":"Answer","text":"Most lenders want 1.10 to 1.25 or higher. Divide the monthly rent by the monthly cost of the loan, taxes, insurance and dues. At 1.25, a $1,823 rent supports $1,458 a month for all of those together. Some lenders fund down to 0.75 and charge for it."}},{"@type":"Question","name":"Which Myrtle Beach area has the best rental returns?","acceptedAnswer":{"@type":"Answer","text":"Long-term, Conway and the Myrtle Beach city core, because the houses cost less. Short-term, Surfside Beach, Murrells Inlet and Garden City, where the average listing earned $33,942 to $38,356 from August 2025 to July 2026."}},{"@type":"Question","name":"Why are rental returns lower in Myrtle Beach than the national number?","acceptedAnswer":{"@type":"Answer","text":"The typical home value rose 80 percent in ten years and rents did not keep up. A rental also pays property tax at the 6 percent ratio, which takes 1.2 to 1.6 points off the return in Horry County. The price change has made up the difference: 6.1 percent a year over ten years."}},{"@type":"Question","name":"How much does a short-term rental make in Myrtle Beach?","acceptedAnswer":{"@type":"Answer","text":"The average active listing in the city earned $20,946 from August 2025 to July 2026, with 33 percent of nights booked. Surfside Beach averaged $35,482 and Murrells Inlet $38,356. After 45 to 65 percent expenses that is 1.3 to 5.4 percent of the typical home value, by area."}},{"@type":"Question","name":"What occupancy should I expect from a Myrtle Beach Airbnb?","acceptedAnswer":{"@type":"Answer","text":"AirROI measures 30 to 38 percent of nights booked across the year in the eight areas it covers. June runs 41.5 to 48.9 percent and January 23.5 to 28 percent. A projection above 50 percent in June is above the market's best month."}}]}</script>
+<style>#c3-transition{display:none!important}</style>
+<style>.skip-link{position:absolute;left:-9999px;background:#1c2028;color:#f4efe8;padding:.6rem 1rem;z-index:999;font-family:system-ui,sans-serif;font-size:.8rem;text-decoration:none}.skip-link:focus{left:8px;top:8px}</style>
+<style>/* mobile UX overhaul v54 (mobile-only, desktop untouched) */
+@media (max-width:640px){
+  input,select,textarea{font-size:16px!important}
+  .wrap,.wrap-sm{padding-left:1.4rem!important;padding-right:1.4rem!important}
+  a.btn,.btn,button.btn,.cta-btns a,.cta-btns button{min-height:48px;touch-action:manipulation}
+  a,button{touch-action:manipulation}
+  p{line-height:1.6}
+  img{max-width:100%;height:auto}
+  h1{line-height:1.15}
+}
+</style>
+<style>/* v55 fixes */
+.mobile-nav a.btn-primary{color:var(--ivory)!important}
+.hdr-contact-m{display:none}
+.idx-soon{display:inline-block;font-family:var(--sans);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);background:rgba(196,120,58,.12);border:1px solid rgba(196,120,58,.4);border-radius:999px;padding:.12rem .5rem;vertical-align:middle;margin-left:.4rem}
+@media (max-width:768px){
+  .hdr-contact-d{display:none}
+  .hdr-contact-m{display:inline-flex;padding:.5rem .7rem;font-size:.8rem;white-space:nowrap}
+}
+@media (max-width:640px){
+  #ltr-teaser .wrap>div{flex-direction:column;align-items:center;text-align:center}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "@id": "https://chapter3realty.com/about/#devin-day", "name": "Devin Day", "jobTitle": "Operations Officer", "description": "Operations Officer and front-end product lead", "knowsAbout": ["Mortgage financing", "DSCR loans", "Real estate investment analysis", "Myrtle Beach real estate"], "worksFor": {"@id": "https://chapter3realty.com/#org"}, "url": "https://chapter3realty.com/about/", "image": "https://chapter3realty.com/team/devin.webp"}</script><style id="c3-nohscroll">html{overflow-x:clip}#c3-fab{display:none !important}</style></head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header>
+<div class="wrap header-inner">
+<a class="logo" href="/">
+<span class="logo-word">Chapter<span class="logo-num">3</span></span>
+</a>
+<nav class="primary"><a href="/buyers/buying-in-myrtle-beach/">Buy</a><a href="/sell/">Sell</a><a href="/invest/">Invest</a><div class="nav-mega-wrap"><a href="/guides/" class="nav-dd-trigger">Guides<span class="nav-caret">&#9662;</span></a><div class="nav-mega"><div class="nav-mega-inner"><div class="nav-mega-col"><p class="nav-mega-h">For buyers</p><a href="/buyers/buying-in-myrtle-beach/">Buying in Myrtle Beach</a><a href="/buyers/first-time-home-buyer-myrtle-beach/">First-time buyers</a><a href="/buyers/relocating/">Moving to the area</a><a href="/buyers/relocating/cost-of-living/">Cost of living calculator</a><a href="/buyers/relocating/pros-and-cons/">Pros and cons of living here</a><a href="/buyers/relocating/moving-checklist/">New resident checklist</a><a href="/buyers/relocating/schools/">Schools and zones</a><a href="/buyers/relocating/which-town/">Which town is right for you</a><a href="/buyers/relocating/jobs/">Jobs and the economy</a><a href="/buyers/relocating/healthcare/">Healthcare and hospitals</a><a href="/buyers/relocating/">Moving from your state</a><a href="/buyers/retirees/">Retiring here</a><a href="/buyers/second-home/">Second homes</a><a href="/buyers/new-construction/">New construction</a><a href="/buyers/waterfront-homes/">Waterfront homes</a><a href="/buyers/va-loans/">VA loans</a><a href="/buyers/programs/">Down payment help</a><a href="/buyers/common-mistakes/">Buyer mistakes</a></div><div class="nav-mega-col"><p class="nav-mega-h">Costs &amp; communities</p><a href="/buyers/property-taxes/">Property tax calculator</a><a href="/buyers/closing-costs/">Closing cost calculator</a><a href="/buyers/coastal-insurance/">Coastal insurance costs</a><a href="/buyers/cost-to-own/">Cost of owning calculator</a><a href="/buyers/55-plus-communities/">55+ communities</a><a href="/buyers/golf-communities/">Golf communities</a><a href="/buyers/condo-in-litigation/">Condos in litigation</a><a href="/buyers/undisclosed-flooding/">Checking for past flooding</a></div><div class="nav-mega-col"><p class="nav-mega-h">For investors</p><a href="/invest/">Investor hub</a><a href="/invest/long-term-rental/">Long-term rental analyzer</a><a href="/invest/str-tools/">Short-term rental tools</a><a href="/invest/str-vs-ltr/">Short-term vs long-term</a><a href="/invest/condos/">Are condos a good buy?</a><a href="/invest/condotel-financing/">Condotel financing</a><a href="/invest/non-warrantable-condos/">Non-warrantable condos</a><a href="/invest/str-rules/">STR rules by city</a><a href="/invest/airbnb-income/">Airbnb income report</a><a href="/invest/condo-buildings/">Condo building directory</a></div><div class="nav-mega-col"><p class="nav-mega-h">HOA guide</p><a href="/hoa/">HOA fees explained</a><a href="/hoa/special-assessments/">Special assessments</a><a href="/hoa/reserves/">Reserves &amp; studies</a><a href="/hoa/documents/">Reading HOA documents</a><a href="/hoa/rental-restrictions/">Rules &amp; restrictions</a><a href="/hoa/liens-and-foreclosure/">Liens &amp; foreclosure</a><a href="/hoa/south-carolina-hoa-laws/">South Carolina HOA law</a><a href="/hoa/hoa-vs-poa/">HOA vs POA</a><a href="/hoa/master-insurance-ho6/">Master policy vs HO-6</a><a href="/hoa/who-pays-for-damage/">Who pays for damage</a><a href="/hoa/dues-increases/">Dues increases</a><a href="/hoa/violations-and-fines/">Violations &amp; fines</a><a href="/hoa/estoppel-and-transfer-fees/">Estoppel &amp; transfer fees</a><a href="/hoa/developer-control-turnover/">Developer controlled HOAs</a><a href="/hoa/tax-deductible/">Are HOA fees deductible</a><a href="/hoa/benefits/">Are HOA dues worth it</a><p class="nav-mega-h stacked">Investor strategies</p><a href="/invest/strategies/dscr-loans/">DSCR loans</a><a href="/invest/strategies/brrrr/">BRRRR method</a><a href="/invest/strategies/fix-and-flip/">Fix and flip</a><a href="/invest/strategies/1031-exchange/">1031 exchange</a><a href="/invest/strategies/dst/">Delaware Statutory Trust</a><a href="/invest/strategies/small-multifamily/">Small multifamily</a><p class="nav-mega-h stacked">For sellers</p><a href="/sell/">Selling your home</a><a href="/sell/home-value/">What your home is worth</a><a href="/sell/net-proceeds/">Net proceeds calculator</a><a href="/sell/fsbo/">Selling it yourself (FSBO)</a><a href="/sell/out-of-state-buyers/">Out-of-state buyers</a><a href="/sell/inherited-house/">Inherited house</a><a href="/sell/sell-my-condo/">Sell a condo</a><a href="/sell/capital-gains/">Capital gains &amp; withholding</a></div><div class="nav-mega-col"><p class="nav-mega-h">Neighborhoods</p><a href="/submarkets/">All neighborhoods</a><a href="/submarkets/myrtle-beach/">Myrtle Beach</a><a href="/submarkets/north-myrtle-beach/">North Myrtle Beach</a><a href="/submarkets/carolina-forest/">Carolina Forest</a><a href="/submarkets/surfside-beach/">Surfside Beach</a><a href="/submarkets/murrells-inlet/">Murrells Inlet</a><a href="/submarkets/pawleys-island/">Pawleys Island</a><a href="/submarkets/little-river/">Little River</a><a href="/submarkets/conway/">Conway</a><a href="/submarkets/garden-city/">Garden City</a><p class="nav-mega-h stacked">Company</p><a href="/market-reports/">Market reports</a><a href="/about/">About</a><a href="/contact/">Contact</a></div></div><div class="nav-mega-foot"><a href="/guides/">View the full directory of guides, tools, and reports &#8594;</a></div></div></div><div class="nav-dd"><a href="/about/" class="nav-dd-trigger">About<span class="nav-caret">&#9662;</span></a><div class="nav-dd-menu"><a href="/why-chapter-3/">Why Us</a><a href="/about/">Meet the Team</a><a href="/contact/">Contact</a></div></div></nav>
+<div class="header-ctas">
+<button class="btn btn-outline" style="cursor:pointer" onclick="openIdx()">Search Listings</button>
+<a class="hdr-phone" href="tel:+18543332135" aria-label="Call Chapter3 at 854.333.2135"><svg class="hdr-phone-ico" viewBox="0 0 24 24" width="21" height="21" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.24 1z"/></svg><span class="hdr-phone-num">854.333.2135</span></a>
+</div>
+<button aria-label="Menu" class="burger" id="burgerBtn" onclick="toggleMobile()">
+<span></span><span></span><span></span>
+</button>
+</div>
+<div class="mobile-nav" id="mobileNav">
+<a href="/buyers/buying-in-myrtle-beach/">Buy</a>
+<a href="/sell/">Sell</a>
+<a href="/invest/">Invest</a>
+<a href="/guides/">All Guides &amp; Tools</a>
+<a href="/submarkets/">Neighborhoods</a>
+<a href="/market-reports/">Market Reports</a>
+<a href="/about/">Meet the Team</a>
+<div class="mob-ctas">
+<button class="btn btn-outline" style="cursor:pointer" onclick="openIdx()">Search Listings</button>
+<a class="btn btn-primary" href="/contact/">Contact Us</a>
+</div>
+</div>
+<div class="hdr-callbar" style="background:var(--navy);text-align:center;padding:.4rem .75rem"><a href="tel:+18543332135" style="font-family:var(--sans);font-size:.72rem;letter-spacing:.05em;color:rgba(244,239,232,.82);text-decoration:none">Call if you have any questions: <span style="color:var(--brass-2);font-weight:600;white-space:nowrap">854.333.2135</span></a></div>
+</header>
+
+
+<main id="main"><div class="detail-hero bg-grid"><div class="wrap"><div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/invest/">Invest</a><span>/</span><span style="color:var(--muted)">Rental returns</span></div><p class="eyebrow" style="margin-bottom:1rem">Rental returns</p><h1 class="detail-h1">What return should a Myrtle Beach rental make?<br/><em style="font-style:italic;color:var(--brass)">The numbers by area, and when to walk away.</em></h1><p style="color:var(--muted);font-size:.9rem;margin-bottom:1rem">By <strong style="color:var(--navy);font-weight:600">Devin Day</strong>, Operations Officer &middot; Reviewed by <strong style="color:var(--navy);font-weight:600">Tim Nash</strong>, Broker-in-Charge &middot; <span style="white-space:nowrap">Updated September 8, 2026</span></p><p class="detail-sub">A Myrtle Beach house rented long-term keeps 1.1 to 2.3 percent of its price a year after costs. The rest of the return has come from the price change.</p><div style="margin-top:1.8rem"><a class="btn btn-brass btn-lg" href="/invest/run-the-numbers/">Have us run the numbers</a></div></div></div><section style="background:var(--ivory)"><div class="wrap"><p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">The short answer</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Two numbers. A long-term rental in Horry County keeps 1.1 to 2.3 percent of its price each year after costs. That assumes a manager and a 25 percent allowance for empty months and repairs. Self-managed with a 10 percent allowance, 2.7 to 4.6 percent. A short-term rental nets 1.3 to 5.4 percent of the typical home value, by area. Both are below the 7.3 percent a national research firm reports for single-family rentals. The price change has been the larger part of the return here. It was 6.1 percent a year over ten years and 4.8 percent over five. It fell 1.7 percent over the last three. Below 2 percent with a manager, or with a rent that does not cover the costs, we call it a dealbreaker. The map and the calculator below give the numbers for one area and one house.</p></div></section><section style="background:var(--ivory-2)"><div class="wrap"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3">What does a Myrtle Beach rental return?</h2><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">A rental pays you two ways. The first is the rent left after the costs of owning the house. The second is the change in the price when you sell.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The first part is small on the Grand Strand. A typical house rented at the typical rent keeps 1.1 to 2.3 percent of its price each year after costs. That assumes a manager and a 25 percent allowance for empty months and repairs. Investors call that number the cap rate. Self-managed, with a 10 percent allowance, it is 2.7 to 4.6 percent.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The second part has been larger. <a href="https://www.zillow.com/research/data/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">The typical home value in the metro</a> rose 6.1 percent a year over the last ten years and 4.8 percent a year over the last five. It fell 1.7 percent over the last three.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Short-term rentals sit between the two. The average listing's revenue, after 45 to 65 percent expenses, is 1.3 to 5.4 percent of the typical home value, depending on the area.</p><div style="overflow-x:auto;margin:1.2rem 0;max-width:760px"><table style="width:100%;border-collapse:collapse;font-size:.92rem"><thead><tr><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Number</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">What it is</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Typical here, July 2026</th></tr></thead><tbody><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Cap rate</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">The rent left after the costs of owning the house, divided by the price</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.1 to 2.3 percent on a long-term rental in Horry County, with a manager</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Coverage ratio</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">The monthly rent divided by the monthly cost of the loan, taxes, insurance and dues</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Most lenders want 1.10 to 1.25 or higher</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Price change</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">The change in the typical home value each year</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">+6.1 percent a year over ten years, −0.6 over the last three</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Occupancy</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">The share of nights a short-term rental is booked</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">30 to 38 percent across the year</td></tr></tbody></table></div><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem"><a href="https://arbor.com/research/reports/single-family-rental-investment-trends-report-q1-2026/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">A national research firm puts the cap rate on single-family rentals at 7.3 percent</a> for late 2025. Myrtle Beach is below that on rent alone. Buyers here have made their return from the price change and from short-term rates instead. That is why the price part and the short-term part get their own sections below.</p></div></section><section style="background:var(--ivory)"><div class="wrap"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3">How much does a long-term rental make in each area?</h2><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The chart uses the typical asking rent and the typical home value in the same ZIP, <a href="https://www.zillow.com/research/data/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">from Zillow for July 2026</a>. The dark bar is the return with a manager and a 25 percent allowance for empty months and repairs. The light bar is self-managed with a 10 percent allowance. The dashed line is Chapter3's 2 percent screen.</p><div style="max-width:640px;margin:1rem 0 1.2rem"><svg viewBox="0 0 640 296" width="100%" role="img" aria-label="Long-term rental return by area, typical rent and typical home value, July 2026" style="display:block;max-width:640px;font-family:var(--sans)"><text x="124" y="19" font-size="12" text-anchor="end" fill="#1c2028">Conway</text><rect x="132" y="4" width="381" height="20" fill="#e3bf8f"><title>Conway: 2.3 to 4.6%</title></rect><rect x="132" y="4" width="188" height="20" fill="#c4783a"><title>Conway: 2.3 to 4.6%</title></rect><text x="519" y="19" font-size="12" fill="#1c2028">2.3 to 4.6%</text><text x="124" y="45" font-size="12" text-anchor="end" fill="#1c2028">Myrtle Beach</text><rect x="132" y="30" width="362" height="20" fill="#e3bf8f"><title>Myrtle Beach: 2.1 to 4.4%</title></rect><rect x="132" y="30" width="172" height="20" fill="#c4783a"><title>Myrtle Beach: 2.1 to 4.4%</title></rect><text x="500" y="45" font-size="12" fill="#1c2028">2.1 to 4.4%</text><text x="124" y="71" font-size="12" text-anchor="end" fill="#1c2028">Garden City</text><rect x="132" y="56" width="296" height="20" fill="#e3bf8f"><title>Garden City: 1.8 to 3.6%</title></rect><rect x="132" y="56" width="148" height="20" fill="#c4783a"><title>Garden City: 1.8 to 3.6%</title></rect><text x="434" y="71" font-size="12" fill="#1c2028">1.8 to 3.6%</text><text x="124" y="97" font-size="12" text-anchor="end" fill="#1c2028">Murrells Inlet</text><rect x="132" y="82" width="296" height="20" fill="#e3bf8f"><title>Murrells Inlet: 1.8 to 3.6%</title></rect><rect x="132" y="82" width="148" height="20" fill="#c4783a"><title>Murrells Inlet: 1.8 to 3.6%</title></rect><text x="434" y="97" font-size="12" fill="#1c2028">1.8 to 3.6%</text><text x="124" y="123" font-size="12" text-anchor="end" fill="#1c2028">Carolina Forest</text><rect x="132" y="108" width="294" height="20" fill="#e3bf8f"><title>Carolina Forest: 1.7 to 3.5%</title></rect><rect x="132" y="108" width="142" height="20" fill="#c4783a"><title>Carolina Forest: 1.7 to 3.5%</title></rect><text x="432" y="123" font-size="12" fill="#1c2028">1.7 to 3.5%</text><text x="124" y="149" font-size="12" text-anchor="end" fill="#1c2028">Little River</text><rect x="132" y="134" width="274" height="20" fill="#e3bf8f"><title>Little River: 1.5 to 3.3%</title></rect><rect x="132" y="134" width="123" height="20" fill="#c4783a"><title>Little River: 1.5 to 3.3%</title></rect><text x="412" y="149" font-size="12" fill="#1c2028">1.5 to 3.3%</text><text x="124" y="175" font-size="12" text-anchor="end" fill="#1c2028">Surfside Beach</text><rect x="132" y="160" width="255" height="20" fill="#e3bf8f"><title>Surfside Beach: 1.3 to 3.1%</title></rect><rect x="132" y="160" width="112" height="20" fill="#c4783a"><title>Surfside Beach: 1.3 to 3.1%</title></rect><text x="393" y="175" font-size="12" fill="#1c2028">1.3 to 3.1%</text><text x="124" y="201" font-size="12" text-anchor="end" fill="#1c2028">North Myrtle Beach</text><rect x="132" y="186" width="222" height="20" fill="#e3bf8f"><title>North Myrtle Beach: 1.1 to 2.7%</title></rect><rect x="132" y="186" width="93" height="20" fill="#c4783a"><title>North Myrtle Beach: 1.1 to 2.7%</title></rect><text x="360" y="201" font-size="12" fill="#1c2028">1.1 to 2.7%</text><text x="124" y="227" font-size="12" text-anchor="end" fill="#1c2028">Pawleys Island</text><rect x="132" y="212" width="171" height="20" fill="#e3bf8f"><title>Pawleys Island: 0.8 to 2.1%</title></rect><rect x="132" y="212" width="63" height="20" fill="#c4783a"><title>Pawleys Island: 0.8 to 2.1%</title></rect><text x="309" y="227" font-size="12" fill="#1c2028">0.8 to 2.1%</text><line x1="298" y1="0" x2="298" y2="244" stroke="#1c2028" stroke-width="1.5" stroke-dasharray="4 3"/><text x="303" y="254" font-size="11" fill="rgba(28,32,40,.78)">2 percent screen</text><rect x="132" y="270" width="12" height="12" fill="#c4783a"/><text x="149" y="280" font-size="12" fill="#1c2028">With a manager, 25 percent allowance</text><rect x="382" y="270" width="12" height="12" fill="#e3bf8f"/><text x="399" y="280" font-size="12" fill="#1c2028">Self-managed, 10 percent allowance</text></svg></div><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Conway and the Myrtle Beach city core lead because the houses cost less, not because the rent is higher. Garden City and Murrells Inlet have the highest typical rent, $1,943 a month, and a $401,110 typical home, so the return is lower. Pawleys Island has the most expensive houses and the lowest return.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The last column uses the county's three-bedroom benchmark rent instead of the ZIP's typical rent. <a href="https://www.huduser.gov/portal/datasets/fmr/fmr2027/FY27_FMRs.xlsx" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">That benchmark is $1,823 in Horry County</a> and $1,380 in Georgetown County, where Pawleys Island sits.</p><div style="overflow-x:auto;margin:1.2rem 0;max-width:760px"><table style="width:100%;border-collapse:collapse;font-size:.92rem"><thead><tr><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Area</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">ZIP</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Typical home value</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Typical rent</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Return, with a manager</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Self-managed</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">At the county three-bedroom rent</th></tr></thead><tbody><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Conway</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">29526</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$302,222</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,892 a month</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.3%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">4.6%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.1% at $1,823</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Myrtle Beach</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">29577</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$279,713</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,680 a month</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.1%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">4.4%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.5% at $1,823</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Garden City</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">29576</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$401,110</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,943 a month</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.8%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">3.6%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.5% at $1,823</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Murrells Inlet</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">29576</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$401,110</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,943 a month</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.8%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">3.6%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.5% at $1,823</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Carolina Forest</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">29579</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$359,496</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,736 a month</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.7%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">3.5%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.9% at $1,823</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Little River</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">29566</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$323,004</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,502 a month</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.5%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">3.3%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.3% at $1,823</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Surfside Beach</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">29575</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$360,243</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,607 a month</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.3%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">3.1%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.8% at $1,823</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">North Myrtle Beach</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">29582</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$400,143</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,627 a month</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.1%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.7%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.5% at $1,823</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Pawleys Island</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">29585</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$550,277</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,926 a month</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">0.8%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.1%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">0.0% at $1,380</td></tr></tbody></table></div><h3 style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:1.6rem 0 .6rem">One worked example, the Myrtle Beach city core</h3><div style="overflow-x:auto;margin:1.2rem 0;max-width:760px"><table style="width:100%;border-collapse:collapse;font-size:.92rem"><thead><tr><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Line</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">A year</th></tr></thead><tbody><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Rent, 12 months at $1,823</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$21,876</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Allowance for empty months and repairs, 25 percent</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">−$5,469</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Management, 10 percent</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">−$2,188</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Property tax at 6 percent, city of Myrtle Beach, 254.6 mills</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">−$4,273</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Landlord insurance</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">−$3,050</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Left for you</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$6,897</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Divided by the $279,713 price</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.5 percent</td></tr></tbody></table></div><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Property tax is the largest cost after the allowance. A rental pays the 6 percent assessment ratio, not the 4 percent a legal residence pays. In Horry County the tax alone takes 1.2 to 1.6 points off the return. <a href="/buyers/property-taxes/" style="color:var(--navy);text-decoration:underline">The property tax page</a> has every district's rate. <a href="/invest/landlord-insurance/" style="color:var(--navy);text-decoration:underline">The insurance figure</a> is the middle of the site's landlord range.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The 25 percent allowance is the share of rent <a href="https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">a conventional lender leaves out</a> when it counts rent toward a loan. <a href="https://fred.stlouisfed.org/series/SCRVAC" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">South Carolina's rental vacancy rate</a> was 9.8 percent in 2025, which is where the 10 percent self-managed case comes from.</p><div style="border-left:3px solid var(--brass);background:var(--ivory-2);padding:1.2rem 1.4rem;margin:1.8rem 0;max-width:720px"><p style="color:var(--navy);font-weight:600;margin-bottom:.4rem">Want the return on one house?</p><p style="color:var(--muted);line-height:1.7;margin-bottom:.8rem">Send us the address and the rent you expect. We run the numbers with local leases and the tax district before you offer.</p><a class="btn btn-brass" href="/invest/run-the-numbers/">Have us run the numbers</a></div></div></section><section style="background:var(--ivory-2)"><div class="wrap"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3">How much does a short-term rental make in each area?</h2><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The chart uses <a href="https://www.airroi.com/airbnb-data/united-states/south-carolina/myrtle-beach" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">the average revenue per active listing from AirROI</a>, August 2025 to July 2026, against the same typical home values. The dark bar takes 65 percent expenses. The light bar takes 45 percent. Both include management, cleaning, utilities, platform fees, the 6 percent tax and insurance.</p><div style="max-width:640px;margin:1rem 0 1.2rem"><svg viewBox="0 0 640 280" width="100%" role="img" aria-label="Short-term rental return by area, average listing revenue against the typical home value" style="display:block;max-width:640px;font-family:var(--sans)"><text x="124" y="19" font-size="12" text-anchor="end" fill="#1c2028">Surfside Beach</text><rect x="132" y="4" width="376" height="20" fill="#c2b9e3"><title>Surfside Beach: 3.4 to 5.4%</title></rect><rect x="132" y="4" width="239" height="20" fill="#6a5aa8"><title>Surfside Beach: 3.4 to 5.4%</title></rect><text x="514" y="19" font-size="12" fill="#1c2028">3.4 to 5.4%</text><text x="124" y="45" font-size="12" text-anchor="end" fill="#1c2028">Murrells Inlet</text><rect x="132" y="30" width="365" height="20" fill="#c2b9e3"><title>Murrells Inlet: 3.3 to 5.3%</title></rect><rect x="132" y="30" width="232" height="20" fill="#6a5aa8"><title>Murrells Inlet: 3.3 to 5.3%</title></rect><text x="503" y="45" font-size="12" fill="#1c2028">3.3 to 5.3%</text><text x="124" y="71" font-size="12" text-anchor="end" fill="#1c2028">Garden City</text><rect x="132" y="56" width="323" height="20" fill="#c2b9e3"><title>Garden City: 3.0 to 4.7%</title></rect><rect x="132" y="56" width="205" height="20" fill="#6a5aa8"><title>Garden City: 3.0 to 4.7%</title></rect><text x="461" y="71" font-size="12" fill="#1c2028">3.0 to 4.7%</text><text x="124" y="97" font-size="12" text-anchor="end" fill="#1c2028">Myrtle Beach</text><rect x="132" y="82" width="286" height="20" fill="#c2b9e3"><title>Myrtle Beach: 2.6 to 4.1%</title></rect><rect x="132" y="82" width="182" height="20" fill="#6a5aa8"><title>Myrtle Beach: 2.6 to 4.1%</title></rect><text x="424" y="97" font-size="12" fill="#1c2028">2.6 to 4.1%</text><text x="124" y="123" font-size="12" text-anchor="end" fill="#1c2028">North Myrtle Beach</text><rect x="132" y="108" width="273" height="20" fill="#c2b9e3"><title>North Myrtle Beach: 2.5 to 3.9%</title></rect><rect x="132" y="108" width="174" height="20" fill="#6a5aa8"><title>North Myrtle Beach: 2.5 to 3.9%</title></rect><text x="411" y="123" font-size="12" fill="#1c2028">2.5 to 3.9%</text><text x="124" y="149" font-size="12" text-anchor="end" fill="#1c2028">Conway</text><rect x="132" y="134" width="269" height="20" fill="#c2b9e3"><title>Conway: 2.5 to 3.9%</title></rect><rect x="132" y="134" width="171" height="20" fill="#6a5aa8"><title>Conway: 2.5 to 3.9%</title></rect><text x="407" y="149" font-size="12" fill="#1c2028">2.5 to 3.9%</text><text x="124" y="175" font-size="12" text-anchor="end" fill="#1c2028">Pawleys Island</text><rect x="132" y="160" width="194" height="20" fill="#c2b9e3"><title>Pawleys Island: 1.8 to 2.8%</title></rect><rect x="132" y="160" width="123" height="20" fill="#6a5aa8"><title>Pawleys Island: 1.8 to 2.8%</title></rect><text x="332" y="175" font-size="12" fill="#1c2028">1.8 to 2.8%</text><text x="124" y="201" font-size="12" text-anchor="end" fill="#1c2028">Little River</text><rect x="132" y="186" width="145" height="20" fill="#c2b9e3"><title>Little River: 1.3 to 2.1%</title></rect><rect x="132" y="186" width="92" height="20" fill="#6a5aa8"><title>Little River: 1.3 to 2.1%</title></rect><text x="283" y="201" font-size="12" fill="#1c2028">1.3 to 2.1%</text><text x="124" y="227" font-size="12" text-anchor="end" fill="#1c2028">Carolina Forest</text><text x="138" y="227" font-size="12" fill="rgba(28,32,40,.78)">no data</text><rect x="132" y="254" width="12" height="12" fill="#6a5aa8"/><text x="149" y="264" font-size="12" fill="#1c2028">At 65 percent expenses</text><rect x="382" y="254" width="12" height="12" fill="#c2b9e3"/><text x="399" y="264" font-size="12" fill="#1c2028">At 45 percent expenses</text></svg></div><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Surfside Beach, Murrells Inlet and Garden City lead. Their listings earn $33,942 to $38,356 a year and the typical home costs $360,243 to $401,110. Little River is the weakest. Its listings average $12,243 a year. After expenses that is $4,285 to $6,734, about what a long-term lease of the same house leaves.</p><div style="overflow-x:auto;margin:1.2rem 0;max-width:760px"><table style="width:100%;border-collapse:collapse;font-size:.92rem"><thead><tr><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Area</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Active listings</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Nights booked</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Average revenue per listing</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Return at 65 percent expenses</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">At 45 percent</th></tr></thead><tbody><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Surfside Beach</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">538</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">34%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$35,482 a year</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">3.4%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">5.4%</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Murrells Inlet</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">461</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">38%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$38,356 a year</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">3.3%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">5.3%</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Garden City</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">395</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">36%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$33,942 a year</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">3.0%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">4.7%</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Myrtle Beach</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">8,583</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">33%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$20,946 a year</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.6%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">4.1%</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">North Myrtle Beach</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">4,406</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">32%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$28,667 a year</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.5%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">3.9%</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Conway</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">106</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">35%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$21,285 a year</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.5%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">3.9%</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Pawleys Island</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">428</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">33%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$27,953 a year</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.8%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.8%</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Little River</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">171</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">30%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$12,243 a year</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.3%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.1%</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Carolina Forest</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">no AirROI market</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)"></td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)"></td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)"></td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)"></td></tr></tbody></table></div><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Three cautions. The revenue is the average of every active listing in the area, mostly condos in Myrtle Beach and North Myrtle Beach, and the price is a typical home. The chart compares an area's typical listing with an area's typical house, not one house with its own bookings. AirROI does not say whether revenue is before or after platform fees and cleaning fees, so the page treats it as gross. Revenue fell from the year before in five of the eight areas.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem"><a href="/invest/airbnb-income/" style="color:var(--navy);text-decoration:underline">How much Airbnbs make here</a> has the income by percentile. <a href="/invest/rental-program-vs-airbnb/" style="color:var(--navy);text-decoration:underline">Rental program against Airbnb</a> has the management split.</p></div></section><section style="background:var(--ivory)"><div class="wrap"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3">Which area is best for each number?</h2><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Hover over an area, or tap it, for its long-term and short-term numbers. The buttons change what the color shows. Darker is higher.</p>
+<style>
+#rrmap{position:relative;max-width:640px}
+#rrmap svg{display:block;width:100%;height:auto}
+#rrmap .rg{cursor:pointer}
+#rrmap .rg path{transition:fill .15s}
+#rrmap .rg:hover path,#rrmap .rg:focus path,#rrmap .rg.on path{stroke:#1c2028;stroke-width:2}
+#rrmap .rg:focus{outline:none}
+#rrtip{position:absolute;pointer-events:none;background:#1c2028;color:#f4efe8;font-size:.8rem;line-height:1.45;padding:.55rem .7rem;border-radius:6px;max-width:250px;display:none;z-index:2}
+#rrtip b{color:#f4efe8;display:block;margin-bottom:.15rem}
+#rrtog{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 .6rem}
+#rrtog button{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.45rem .7rem;border:1.5px solid rgba(28,32,40,.25);background:transparent;color:rgba(28,32,40,.78);cursor:pointer;border-radius:4px}
+#rrtog button[aria-pressed="true"]{background:#1c2028;color:#f4efe8;border-color:#1c2028}
+#rrleg{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;font-size:.72rem;color:rgba(28,32,40,.78);margin-top:.4rem}
+#rrleg i{display:inline-block;width:14px;height:14px;border-radius:2px}
+</style>
+<div id="rrtog" role="group" aria-label="What the map color shows"></div>
+<div id="rrmap"></div>
+<div id="rrleg"></div>
+<p style="font-size:.72rem;color:rgba(28,32,40,.78);margin:.3rem 0 0">Not to scale. Hover, tap or tab to an area. Home values and rents: Zillow, July 2026, by ZIP. Short-term figures: AirROI, August 2025 to July 2026.</p>
+<script>
+(function(){
+var R=[{"id":"little-river","n":"Little River","zip":"29566","v":323004,"rent":1502,"ltr":1.5,"rev":12243,"occ":30.3,"str":2.1,"strLo":1.3,"a5":4.3},{"id":"north-myrtle-beach","n":"North Myrtle Beach","zip":"29582","v":400143,"rent":1627,"ltr":1.1,"rev":28667,"occ":32.2,"str":3.9,"strLo":2.5,"a5":5.3},{"id":"myrtle-beach","n":"Myrtle Beach","zip":"29577","v":279713,"rent":1680,"ltr":2.1,"rev":20946,"occ":33.2,"str":4.1,"strLo":2.6,"a5":4.7},{"id":"carolina-forest","n":"Carolina Forest","zip":"29579","v":359496,"rent":1736,"ltr":1.7,"rev":null,"occ":null,"str":null,"strLo":null,"a5":4.2},{"id":"surfside-beach","n":"Surfside Beach","zip":"29575","v":360243,"rent":1607,"ltr":1.3,"rev":35482,"occ":34.2,"str":5.4,"strLo":3.4,"a5":5.6},{"id":"garden-city","n":"Garden City","zip":"29576","v":401110,"rent":1943,"ltr":1.8,"rev":33942,"occ":36.2,"str":4.7,"strLo":3,"a5":5.4},{"id":"murrells-inlet","n":"Murrells Inlet","zip":"29576","v":401110,"rent":1943,"ltr":1.8,"rev":38356,"occ":37.7,"str":5.3,"strLo":3.3,"a5":5.4},{"id":"pawleys-island","n":"Pawleys Island","zip":"29585","v":550277,"rent":1926,"ltr":0.8,"rev":27953,"occ":33.4,"str":2.8,"strLo":1.8,"a5":6.7},{"id":"conway","n":"Conway","zip":"29526","v":302222,"rent":1892,"ltr":2.3,"rev":21285,"occ":34.7,"str":3.9,"strLo":2.5,"a5":5.1}];
+function money(v){return "$"+v.toLocaleString("en-US")}
+var METRICS=[
+ {k:"ltr",label:"Long-term return",fmt:function(v){return v.toFixed(1)+" percent a year"}},
+ {k:"str",label:"Short-term return",fmt:function(v){return v.toFixed(1)+" percent a year"}},
+ {k:"v",label:"Home value",fmt:function(v){return money(v)}},
+ {k:"a5",label:"Price change, 5 years",fmt:function(v){return (v>=0?"+":"")+v.toFixed(1)+" percent a year"}}
+];
+var RAMP=["#f3e3cf","#ecd3b0","#e3bf8f","#dba36a","#d4894a"], NONE="#e6e0d6";
+var P=[[585,165],[530,215],[470,270],[385,345],[335,390],[290,430],[230,475],[140,540]];
+var OFF=[-51,-68];
+function o(d){return [OFF[0]*d,OFF[1]*d]}
+function pt(i,d){var q=o(d);return [P[i][0]+q[0],P[i][1]+q[1]]}
+function band(i,depth){var d=depth||0;return [pt(i,d),pt(i+1,d),pt(i+1,d+1),pt(i,d+1)];}
+var SHAPES={
+ "little-river":band(0),"north-myrtle-beach":band(1),"myrtle-beach":band(2),"surfside-beach":band(3),
+ "garden-city":band(4),"murrells-inlet":band(5),"pawleys-island":band(6),
+ "carolina-forest":band(2,1),
+ "conway":[pt(1,1),pt(2,1),pt(2,2),pt(3,2),pt(3,3),pt(1,3)]
+};
+var SHORT={"north-myrtle-beach":"N. Myrtle Beach","pawleys-island":"Pawleys","surfside-beach":"Surfside"};
+function centroid(pts){var x=0,y=0;pts.forEach(function(p){x+=p[0];y+=p[1]});return [x/pts.length,y/pts.length]}
+function ramp(k){var vals=R.filter(function(r){return r[k]!==null}).map(function(r){return r[k]}),lo=Math.min.apply(null,vals),hi=Math.max.apply(null,vals);
+  return function(v){if(v===null)return NONE;var t=hi===lo?0:(v-lo)/(hi-lo);return RAMP[Math.min(4,Math.floor(t*5))]}}
+var cur="ltr", map=document.getElementById("rrmap"), tog=document.getElementById("rrtog"), leg=document.getElementById("rrleg");
+var svg='<svg viewBox="0 0 640 570" role="img" aria-label="Nine Grand Strand areas with long-term and short-term rental figures">';
+svg+='<rect x="0" y="0" width="640" height="570" fill="#f4efe8"/>';
+svg+='<polygon points="'+P.map(function(p){return p.join(",")}).join(" ")+' 640,570 640,110" fill="rgba(28,32,40,.06)"/>';
+svg+='<text x="560" y="380" font-size="11" fill="rgba(28,32,40,.55)" transform="rotate(-40 560 380)">Atlantic Ocean</text>';
+R.forEach(function(r){var pts=SHAPES[r.id],c=centroid(pts);
+  svg+='<g class="rg" tabindex="0" role="button" data-id="'+r.id+'" aria-label="'+r.n+'"><path d="M'+pts.map(function(p){return p.join(" ")}).join(" L")+' Z" stroke="#f4efe8" stroke-width="2"/>';
+  svg+='<text x="'+c[0]+'" y="'+(c[1]+4)+'" font-size="11" font-weight="600" text-anchor="middle" fill="#1c2028" pointer-events="none">'+(SHORT[r.id]||r.n)+'</text></g>';});
+svg+='</svg><div id="rrtip" role="status" aria-live="polite"></div>';
+map.innerHTML=svg;
+var tip=document.getElementById("rrtip");
+function paint(){var f=ramp(cur);R.forEach(function(r){map.querySelector('[data-id="'+r.id+'"] path').setAttribute("fill",f(r[cur]))});
+  var m=METRICS.filter(function(x){return x.k===cur})[0],vals=R.filter(function(r){return r[cur]!==null}).map(function(r){return r[cur]});
+  leg.innerHTML='<span>'+m.label+':</span>'+RAMP.map(function(c){return '<i style="background:'+c+'"></i>'}).join("")+'<span>'+m.fmt(Math.min.apply(null,vals))+' to '+m.fmt(Math.max.apply(null,vals))+'</span>'+(vals.length<R.length?'<i style="background:'+NONE+'"></i><span>no data</span>':'');
+  tog.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.k===cur?"true":"false")});}
+METRICS.forEach(function(m){var b=document.createElement("button");b.type="button";b.textContent=m.label;b.dataset.k=m.k;b.addEventListener("click",function(){cur=m.k;paint()});tog.appendChild(b)});
+function lines(r){var a=["Typical home value: "+money(r.v),"Long-term rent: "+money(r.rent)+" a month","Long-term return: "+r.ltr.toFixed(1)+" percent a year"];
+  if(r.str===null)a.push("Short-term: no data for this area");else{a.push("Short-term revenue: "+money(r.rev)+" a year per listing, "+Math.round(r.occ)+" percent of nights booked");a.push("Short-term return: "+r.strLo.toFixed(1)+" to "+r.str.toFixed(1)+" percent a year");}
+  a.push("Price change, 5 years: "+(r.a5>=0?"+":"")+r.a5.toFixed(1)+" percent a year");return a;}
+function show(r,x,y){tip.innerHTML="<b>"+r.n+" (ZIP "+r.zip+")</b>"+lines(r).join("<br>");
+  tip.style.display="block";var W=map.clientWidth,tw=tip.offsetWidth;tip.style.left=Math.max(0,Math.min(W-tw,x+12))+"px";tip.style.top=(y-tip.offsetHeight-12<0?y+16:y-tip.offsetHeight-12)+"px";}
+map.querySelectorAll(".rg").forEach(function(g){var r=R.filter(function(x){return x.id===g.dataset.id})[0];
+  g.addEventListener("mousemove",function(e){var b=map.getBoundingClientRect();show(r,e.clientX-b.left,e.clientY-b.top)});
+  g.addEventListener("mouseleave",function(){if(!g.classList.contains("on"))tip.style.display="none"});
+  g.addEventListener("focus",function(){var b=g.getBoundingClientRect(),m=map.getBoundingClientRect();show(r,b.left-m.left+b.width/2,b.top-m.top)});
+  g.addEventListener("blur",function(){if(!g.classList.contains("on"))tip.style.display="none"});
+  g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();g.dispatchEvent(new MouseEvent("click",{bubbles:true}));}});
+  g.addEventListener("click",function(){map.querySelectorAll(".rg.on").forEach(function(x){if(x!==g)x.classList.remove("on")});g.classList.toggle("on");if(g.classList.contains("on")){var b=g.getBoundingClientRect(),m=map.getBoundingClientRect();show(r,b.left-m.left+b.width/2,b.top-m.top)}else tip.style.display="none";});
+});
+window.addEventListener("resize",function(){tip.style.display="none";map.querySelectorAll(".rg.on").forEach(function(x){x.classList.remove("on")})});
+paint();
+})();
+</script><div style="overflow-x:auto;margin:1.2rem 0;max-width:760px"><table style="width:100%;border-collapse:collapse;font-size:.92rem"><thead><tr><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">The number</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Best areas</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">The figure</th></tr></thead><tbody><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Long-term return, typical rent and value</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Conway 2.3%; Myrtle Beach 2.1%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Cheaper houses, not higher rent</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Long-term return at the county three-bedroom rent</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Myrtle Beach 2.5%; Little River 2.3%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,823 a month in Horry County</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Typical rent</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Garden City $1,943; Murrells Inlet $1,943</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Garden City and Murrells Inlet share ZIP 29576</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Lowest typical home value</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Myrtle Beach $279,713; Conway $302,222</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">The price is the denominator</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Short-term revenue per listing</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Murrells Inlet $38,356; Surfside Beach $35,482</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Average of every active listing, a year</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Short-term return</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Surfside Beach 3.4 to 5.4%; Murrells Inlet 3.3 to 5.3%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">At 65 and 45 percent expenses</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Nights booked</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Murrells Inlet 38%; Garden City 36%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Across the whole year</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Price rise, five years</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Pawleys Island +6.7% a year; Surfside Beach +5.6% a year</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Zillow, July 2021 to July 2026</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Price fall, three years</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Myrtle Beach −7.3%; Little River −5.0%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">Zillow, July 2023 to July 2026</td></tr></tbody></table></div><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The rules differ by town, and nightly rentals are banned in most neighborhoods. <a href="/invest/where-to-buy/" style="color:var(--navy);text-decoration:underline">Where to buy a rental</a> has the rule, the license and the taxes for each of the nine areas.</p></div></section><section style="background:var(--ivory-2)"><div class="wrap"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3">When does a number become a dealbreaker?</h2><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">These are Chapter3's screening rules. They come from the numbers above, not from an industry standard. No published standard says what one rental house should return.</p><ol style="color:var(--muted);line-height:1.75;max-width:720px;margin:0 0 1rem 1.3rem;padding:0"><li style="margin-bottom:.5rem"><strong>The rent does not cover the costs.</strong> Take the rent, subtract the allowance, management, property tax, insurance and dues. If nothing is left, the house loses money before any loan. Pawleys Island at the county's three-bedroom benchmark is the live example: $1,380 a month against a $550,277 house comes up $105 short each year. That house only works as a bet on the price.</li><li style="margin-bottom:.5rem"><strong>The return is under 2 percent with a manager.</strong> Below 2 percent, the return depends on the price rising. The metro price fell 1.7 percent over the last three years. At the county benchmark rent, that rule flags North Myrtle Beach, Carolina Forest, Surfside Beach, Garden City, Murrells Inlet and Pawleys Island.</li><li style="margin-bottom:.5rem"><strong>The rent does not cover the loan.</strong> <a href="https://griffinfunding.com/dscr-loans/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">Lenders divide the monthly rent by the monthly cost of the loan, taxes, insurance and dues</a>. Below 1.00 the rent does not cover it. <a href="https://newfi.com/dscr-loan-requirements/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">Some lenders fund down to 0.75</a> and charge for it. <a href="https://lendingone.com/insight/a-guide-to-dscr-loans-for-real-estate-investors/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">Most want 1.10 to 1.25 or higher</a>. Divide the rent by 1.25. If the lender's monthly figure is above that, the house fails at most lenders.</li><li style="margin-bottom:.5rem"><strong>A short-term rental that does not beat a lease.</strong> Little River is the example above. If the area's listings net no more than a long-term lease, the extra work of nightly guests earns nothing extra.</li><li style="margin-bottom:.5rem"><strong>A projection above 50 percent occupancy in June.</strong> AirROI's measured June occupancy is 41.5 to 48.9 percent across the eight areas it covers. A projection above 50 percent in June is above the market's best month.</li></ol><div style="overflow-x:auto;margin:1.2rem 0;max-width:760px"><table style="width:100%;border-collapse:collapse;font-size:.92rem"><thead><tr><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Ratio</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">What it means</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">At $1,823 of rent</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">At $1,943 of rent</th></tr></thead><tbody><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.00</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">The rent equals the monthly cost of the loan, taxes, insurance and dues</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,823</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,943</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.10</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">The rent is 10 percent above it</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,657</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,766</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">1.25</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">The rent is 25 percent above it</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,458</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">$1,554</td></tr></tbody></table></div><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The ratio decides the loan, so taxes and insurance sit inside the monthly figure the lender uses. <a href="/invest/strategies/dscr-loans/" style="color:var(--navy);text-decoration:underline">The DSCR page</a> has the loan itself.</p><div style="border-left:3px solid var(--brass);background:var(--ivory);padding:1.2rem 1.4rem;margin:1.8rem 0;max-width:720px"><p style="color:var(--navy);font-weight:600;margin-bottom:.4rem">Not sure which rule a house fails?</p><p style="color:var(--muted);line-height:1.7;margin-bottom:.8rem">Call us with the address. We run the five rules on it with local rent and the tax district, in one call.</p><a class="btn btn-brass" href="tel:+18543332135">Call a specialized agent</a></div></div></section><section style="background:var(--ivory)"><div class="wrap"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3">How do you calculate the return on one house?</h2><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Enter the price and the rent. The tool subtracts the allowance, management, the property tax for the area, insurance and dues. It shows what is left, the return on the price, and the rent divided by each coverage ratio.</p>
+<div id="rrtool" style="background:var(--ivory-2);border:1.5px solid var(--rule);padding:1.4rem 1.4rem 1.2rem;margin:1.2rem 0 1.4rem">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.9rem 1.2rem;margin-bottom:1rem">
+    <label style="display:block;font-size:.78rem;color:var(--muted);font-weight:600">Area, for the tax rate<br><select id="rrArea" onchange="c3Ret()" aria-label="Area, which decides the property tax rate" style="width:100%;max-width:170px;margin-top:.3rem;background:var(--ivory);border:1px solid rgba(28,32,40,.3);border-radius:6px;color:var(--navy);font-family:var(--sans);font-size:.95rem;padding:.42rem .55rem"><option value="little-river" data-mills="201" data-fees="0">Little River</option><option value="north-myrtle-beach" data-mills="216.2" data-fees="0">North Myrtle Beach</option><option value="myrtle-beach" data-mills="254.6" data-fees="0" selected>Myrtle Beach</option><option value="carolina-forest" data-mills="201" data-fees="0">Carolina Forest</option><option value="surfside-beach" data-mills="214.2" data-fees="0">Surfside Beach</option><option value="garden-city" data-mills="207.3" data-fees="0">Garden City</option><option value="murrells-inlet" data-mills="207.3" data-fees="0">Murrells Inlet</option><option value="pawleys-island" data-mills="233.9" data-fees="96">Pawleys Island</option><option value="conway" data-mills="269.3" data-fees="0">Conway</option></select></label>
+    <label style="display:block;font-size:.78rem;color:var(--muted);font-weight:600">Price<br><input id="rrPrice" type="number" min="0" step="1000" value="300000" oninput="c3Ret()" aria-label="Purchase price in dollars" style="width:100%;max-width:170px;margin-top:.3rem;background:var(--ivory);border:1px solid rgba(28,32,40,.3);border-radius:6px;color:var(--navy);font-family:var(--sans);font-size:.95rem;padding:.42rem .55rem"></label>
+    <label style="display:block;font-size:.78rem;color:var(--muted);font-weight:600">Monthly rent<br><input id="rrRent" type="number" min="0" step="25" value="1800" oninput="c3Ret()" aria-label="Monthly rent in dollars" style="width:100%;max-width:170px;margin-top:.3rem;background:var(--ivory);border:1px solid rgba(28,32,40,.3);border-radius:6px;color:var(--navy);font-family:var(--sans);font-size:.95rem;padding:.42rem .55rem"></label>
+    <label style="display:block;font-size:.78rem;color:var(--muted);font-weight:600">Association dues a month<br><input id="rrHoa" type="number" min="0" step="10" value="0" oninput="c3Ret()" aria-label="Association dues a month in dollars" style="width:100%;max-width:170px;margin-top:.3rem;background:var(--ivory);border:1px solid rgba(28,32,40,.3);border-radius:6px;color:var(--navy);font-family:var(--sans);font-size:.95rem;padding:.42rem .55rem"></label>
+    <label style="display:block;font-size:.78rem;color:var(--muted);font-weight:600">Landlord insurance a year<br><input id="rrIns" type="number" min="0" step="50" value="3050" oninput="c3Ret()" aria-label="Landlord insurance a year in dollars" style="width:100%;max-width:170px;margin-top:.3rem;background:var(--ivory);border:1px solid rgba(28,32,40,.3);border-radius:6px;color:var(--navy);font-family:var(--sans);font-size:.95rem;padding:.42rem .55rem"></label>
+    <label style="display:block;font-size:.78rem;color:var(--muted);font-weight:600">Management<br><select id="rrMgmt" onchange="c3Ret()" aria-label="Management fee as a percent of rent" style="width:100%;max-width:170px;margin-top:.3rem;background:var(--ivory);border:1px solid rgba(28,32,40,.3);border-radius:6px;color:var(--navy);font-family:var(--sans);font-size:.95rem;padding:.42rem .55rem"><option value="10" selected>A manager, 10 percent of rent</option><option value="0">Self-managed, 0</option></select></label>
+    <label style="display:block;font-size:.78rem;color:var(--muted);font-weight:600">Allowance for empty months and repairs<br><select id="rrAllow" onchange="c3Ret()" aria-label="Allowance for empty months and repairs as a percent of rent" style="width:100%;max-width:170px;margin-top:.3rem;background:var(--ivory);border:1px solid rgba(28,32,40,.3);border-radius:6px;color:var(--navy);font-family:var(--sans);font-size:.95rem;padding:.42rem .55rem"><option value="25" selected>25 percent of rent</option><option value="10">10 percent of rent</option></select></label>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem 1rem;margin-bottom:.9rem">
+    <div><div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Rent left after costs, a year</div><div id="rrNoi" style="font-family:var(--serif);font-size:1.5rem;color:var(--navy)">$0</div></div>
+    <div><div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Return on the price</div><div id="rrCap" style="font-family:var(--serif);font-size:1.5rem;color:var(--navy)">0.0%</div></div>
+    <div><div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Property tax at 6 percent</div><div id="rrTax" style="font-family:var(--serif);font-size:1.5rem;color:var(--navy)">$0</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem 1rem;margin-bottom:.9rem">
+    <div><div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Rent divided by 1.00</div><div id="rrC100" style="font-family:var(--serif);font-size:1.5rem;color:var(--navy)">$0</div></div>
+    <div><div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Rent divided by 1.10</div><div id="rrC110" style="font-family:var(--serif);font-size:1.5rem;color:var(--navy)">$0</div></div>
+    <div><div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Rent divided by 1.25</div><div id="rrC125" style="font-family:var(--serif);font-size:1.5rem;color:var(--navy)">$0</div></div>
+  </div>
+  <p id="rrVerdict" style="font-size:.92rem;color:var(--navy);line-height:1.5;margin:0 0 1rem;min-height:1.2em;font-weight:600"></p>
+  <div style="font-size:.78rem;color:var(--muted);margin-bottom:.35rem">Where the rent goes</div>
+  <div id="rrChart"></div>
+</div>
+<script>
+  var RR_MILLS={"little-river":[201,0],"north-myrtle-beach":[216.2,0],"myrtle-beach":[254.6,0],"carolina-forest":[201,0],"surfside-beach":[214.2,0],"garden-city":[207.3,0],"murrells-inlet":[207.3,0],"pawleys-island":[233.9,96],"conway":[269.3,0]};
+  function rr$(i){return document.getElementById(i)}
+  function rrFmt(n){return (n<0?"\u2212$":"$")+Math.round(Math.abs(n)).toLocaleString("en-US")}
+  function c3Ret(){
+    var area=rr$("rrArea").value, mf=RR_MILLS[area]||[0,0];
+    var price=Math.max(0,+rr$("rrPrice").value||0), rent=Math.max(0,+rr$("rrRent").value||0), hoa=Math.max(0,+rr$("rrHoa").value||0), ins=Math.max(0,+rr$("rrIns").value||0);
+    var mg=+rr$("rrMgmt").value/100, al=+rr$("rrAllow").value/100;
+    var gross=rent*12, allow=gross*al, mgmt=gross*mg, tax=price*0.06*mf[0]/1000+mf[1], dues=hoa*12;
+    var noi=gross-allow-mgmt-tax-ins-dues, cap=price>0?noi/price*100:0;
+    rr$("rrNoi").textContent=rrFmt(noi); rr$("rrCap").textContent=(cap<0?"\u2212":"")+Math.abs(cap).toFixed(1)+"%"; rr$("rrTax").textContent=rrFmt(tax);
+    rr$("rrC100").textContent=rrFmt(rent); rr$("rrC110").textContent=rrFmt(rent/1.10); rr$("rrC125").textContent=rrFmt(rent/1.25);
+    var v;
+    if(price<=0||rent<=0) v="Enter a price and a rent.";
+    else if(noi<=0) v="Dealbreaker. The rent does not cover the costs of owning the house, before any loan.";
+    else if(cap<2) v="Below 2 percent with these costs. The return depends on the price rising. The metro price fell 1.7 percent over the last three years.";
+    else v="Passes the first screen. If the lender's monthly figure for the loan, taxes, insurance and dues is above the rent divided by 1.25, most lenders will not fund it at standard terms.";
+    rr$("rrVerdict").textContent=v;
+    var parts=[["Allowance",allow,"#b9b3aa"],["Management",mgmt,"#8f8a82"],["Property tax",tax,"#6a5aa8"],["Insurance",ins,"#9a8bc9"],["Dues",dues,"#c2b9e3"],["Left for you",Math.max(0,noi),"#c4783a"]].filter(function(p){return p[1]>0});
+    var W=640, total=Math.max(gross,1), x=0, s='<svg viewBox="0 0 '+W+' 66" width="100%" role="img" aria-label="Where the rent goes" style="display:block;max-width:640px;font-family:var(--sans)">';
+    if(noi<0){parts.push(["Short",-noi,"#b23b3b"]);total=gross-noi;}
+    parts.forEach(function(p){var w=Math.max(1,Math.round(W*p[1]/total)); s+='<rect x="'+x+'" y="0" width="'+Math.max(0,w-2)+'" height="24" fill="'+p[2]+'"><title>'+p[0]+' '+rrFmt(p[1])+'</title></rect>'; x+=w;});
+    x=0; parts.forEach(function(p,i){var col=Math.floor(i/3), rowi=i%3; s+='<rect x="'+(rowi*210)+'" y="'+(34+col*16)+'" width="10" height="10" fill="'+p[2]+'"/><text x="'+(rowi*210+15)+'" y="'+(43+col*16)+'" font-size="11" fill="#1c2028">'+p[0]+' '+rrFmt(p[1])+'</text>';});
+    s+='</svg>'; rr$("rrChart").innerHTML=s;
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",c3Ret); else c3Ret();
+</script><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The tool uses the 6 percent assessment ratio and the 2025 millage for each area. The Horry County rates come from <a href="https://www.horrycountysc.gov/departments/assessor/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">the county assessor</a>. Pawleys Island uses <a href="https://gtcountysc.gov/385/Property-Tax-Calculator" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">the Georgetown County calculator</a>, which adds $96 of fees. It assumes no flood or wind policy, no leasing fee and no capital repairs. Enter the insurance quote for the house when you have it. A lender uses its own rent estimate and its own ratio.</p></div></section><section style="background:var(--ivory-2)"><div class="wrap"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3">How much does the price change add?</h2><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The rent part of the return is the same each year. The price part depends on when you buy and when you sell. The chart adds the two for the Myrtle Beach city core at the typical rent, over three windows ending in July 2026.</p><div style="max-width:640px;margin:1rem 0 1.2rem"><svg viewBox="0 0 640 164" width="100%" role="img" aria-label="The rent part and the price part of a yearly return, over three, five and ten years" style="display:block;max-width:640px;font-family:var(--sans)"><text x="88" y="24" font-size="12" text-anchor="end" fill="#1c2028">3 years</text><rect x="173" y="4" width="80" height="12" fill="#c4783a"><title>3 years: rent +2.1%</title></rect><text x="258" y="14" font-size="11" text-anchor="start" fill="#1c2028">rent +2.1%</text><rect x="152" y="19" width="21" height="12" fill="#6a5aa8"><title>3 years: price −0.6%</title></rect><text x="178" y="29" font-size="11" text-anchor="start" fill="#1c2028">price −0.6%</text><text x="636" y="24" font-size="12" font-weight="600" text-anchor="end" fill="#1c2028">total +1.5%</text><text x="88" y="64" font-size="12" text-anchor="end" fill="#1c2028">5 years</text><rect x="173" y="44" width="80" height="12" fill="#c4783a"><title>5 years: rent +2.1%</title></rect><text x="258" y="54" font-size="11" text-anchor="start" fill="#1c2028">rent +2.1%</text><rect x="173" y="59" width="184" height="12" fill="#6a5aa8"><title>5 years: price +4.8%</title></rect><text x="362" y="69" font-size="11" text-anchor="start" fill="#1c2028">price +4.8%</text><text x="636" y="64" font-size="12" font-weight="600" text-anchor="end" fill="#1c2028">total +6.8%</text><text x="88" y="104" font-size="12" text-anchor="end" fill="#1c2028">10 years</text><rect x="173" y="84" width="80" height="12" fill="#c4783a"><title>10 years: rent +2.1%</title></rect><text x="258" y="94" font-size="11" text-anchor="start" fill="#1c2028">rent +2.1%</text><rect x="173" y="99" width="235" height="12" fill="#6a5aa8"><title>10 years: price +6.1%</title></rect><text x="413" y="109" font-size="11" text-anchor="start" fill="#1c2028">price +6.1%</text><text x="636" y="104" font-size="12" font-weight="600" text-anchor="end" fill="#1c2028">total +8.1%</text><line x1="173" y1="0" x2="173" y2="126" stroke="#1c2028" stroke-width="1.5"/><rect x="96" y="138" width="12" height="12" fill="#c4783a"/><text x="113" y="148" font-size="12" fill="#1c2028">Rent after costs, with a manager</text><rect x="346" y="138" width="12" height="12" fill="#6a5aa8"/><text x="363" y="148" font-size="12" fill="#1c2028">Price change a year, metro</text></svg></div><div style="overflow-x:auto;margin:1.2rem 0;max-width:760px"><table style="width:100%;border-collapse:collapse;font-size:.92rem"><thead><tr><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Window</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Rent after costs, with a manager</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Price change a year, metro</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Total a year</th></tr></thead><tbody><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">3 years</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.1%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">−0.6%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">+1.5%</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">5 years</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.1%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">+4.8%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">+6.8%</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">10 years</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">2.1%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">+6.1%</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">+8.1%</td></tr></tbody></table></div><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Over ten years the price did most of the work. Over the last three it took some back. A buyer who needs the return now, not in ten years, should buy on the rent part alone and treat the price part as a possible bonus.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem"><a href="/invest/how-long-to-hold/" style="color:var(--navy);text-decoration:underline">How long to hold a rental before selling</a> has the price history for every area. It has the worst three-year fall on record and the years it takes to get the selling costs back.</p></div></section><section style="background:var(--ivory)"><div class="wrap"><p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">Common questions</p><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3">Rental returns FAQ</h2><h3 style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:1.6rem 0 .6rem">What is a good cap rate for a rental in Myrtle Beach?</h3><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">With a manager and a 25 percent allowance for empty months and repairs, the typical house at the typical rent returns 1.1 to 2.3 percent in Horry County. Above 2 percent passes Chapter3's screen. Self-managed houses reach 2.7 to 4.6 percent. A national research firm put single-family cap rates at 7.3 percent in late 2025. Myrtle Beach returns have come from the price change and from short-term rates instead.</p><h3 style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:1.6rem 0 .6rem">What is a good DSCR for a Myrtle Beach rental?</h3><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Most lenders want 1.10 to 1.25 or higher. Divide the monthly rent by the monthly cost of the loan, taxes, insurance and dues. At 1.25, a $1,823 rent supports $1,458 a month for all of those together. Some lenders fund down to 0.75 and charge for it.</p><h3 style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:1.6rem 0 .6rem">Which Myrtle Beach area has the best rental returns?</h3><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Long-term, Conway and the Myrtle Beach city core, because the houses cost less. Short-term, Surfside Beach, Murrells Inlet and Garden City, where the average listing earned $33,942 to $38,356 from August 2025 to July 2026.</p><h3 style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:1.6rem 0 .6rem">Why are rental returns lower in Myrtle Beach than the national number?</h3><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The typical home value rose 80 percent in ten years and rents did not keep up. A rental also pays property tax at the 6 percent ratio, which takes 1.2 to 1.6 points off the return in Horry County. The price change has made up the difference: 6.1 percent a year over ten years.</p><h3 style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:1.6rem 0 .6rem">How much does a short-term rental make in Myrtle Beach?</h3><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The average active listing in the city earned $20,946 from August 2025 to July 2026, with 33 percent of nights booked. Surfside Beach averaged $35,482 and Murrells Inlet $38,356. After 45 to 65 percent expenses that is 1.3 to 5.4 percent of the typical home value, by area.</p><h3 style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:1.6rem 0 .6rem">What occupancy should I expect from a Myrtle Beach Airbnb?</h3><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">AirROI measures 30 to 38 percent of nights booked across the year in the eight areas it covers. June runs 41.5 to 48.9 percent and January 23.5 to 28 percent. A projection above 50 percent in June is above the market's best month.</p><p style="font-size:.78rem;color:var(--muted);line-height:1.7;max-width:760px;margin-top:1.6rem"><strong style="color:var(--navy)">Sources:</strong> <a href="https://www.zillow.com/research/data/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">Zillow home value and rent indexes</a>, <a href="https://www.airroi.com/airbnb-data/united-states/south-carolina/myrtle-beach" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">AirROI market data</a>, <a href="https://www.huduser.gov/portal/datasets/fmr/fmr2027/FY27_FMRs.xlsx" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">HUD fair market rents FY2027</a>, <a href="https://arbor.com/research/reports/single-family-rental-investment-trends-report-q1-2026/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">Arbor, single-family rental report</a>, <a href="https://lendingone.com/insight/a-guide-to-dscr-loans-for-real-estate-investors/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">LendingOne, DSCR guide</a>, <a href="https://newfi.com/dscr-loan-requirements/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">Newfi, DSCR requirements</a>, <a href="https://griffinfunding.com/dscr-loans/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">Griffin Funding, DSCR loans</a>, <a href="https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">Selling Guide B3-3.8-02</a>, <a href="https://fred.stlouisfed.org/series/SCRVAC" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">FRED, SC rental vacancy</a>, <a href="https://www.horrycountysc.gov/departments/assessor/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">Horry County Assessor</a>, <a href="https://gtcountysc.gov/385/Property-Tax-Calculator" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">Georgetown County tax calculator</a>. Read September 8, 2026. Educational only, not a loan offer and not an appraisal. Chapter3 is a real estate brokerage. Area figures are not a quote on one house.</p></div></section><section style="background:var(--navy);padding:3rem 0"><div class="wrap" style="text-align:center;max-width:720px;margin:0 auto"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--ivory);margin-bottom:1rem">Have us run the five rules on a house before you offer.</h2><p style="color:rgba(244,239,232,.75);line-height:1.7;margin-bottom:1.6rem">One call. Local rent, the tax district, the insurance quote, and the return, before the contract.</p><a class="btn btn-brass btn-lg" href="tel:+18543332135">Call a specialized agent</a></div></section></main>
+<footer>
+<div class="wrap">
+<div class="footer-cta" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.2rem 2rem;padding-bottom:2.2rem;margin-bottom:2.4rem;border-bottom:1px solid rgba(244,239,232,.12)"><div style="max-width:600px"><p style="font-family:var(--serif);font-size:1.6rem;color:var(--ivory);margin:0 0 .4rem;line-height:1.15">Ready to make your next move on the Grand Strand?</p><p style="color:rgba(244,239,232,.6);font-size:.92rem;line-height:1.6;margin:0">Whether you are buying, selling, or investing, talk to a licensed local agent who knows the Grand Strand. No pressure, just straight answers.</p></div><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-primary" href="/contact/">Talk to an agent</a><a class="btn btn-outline" href="tel:+18543332135" style="color:var(--ivory);border-color:rgba(244,239,232,.4)">Call 854.333.2135</a></div></div>
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="logo" href="/">
+<span class="logo-word">Chapter<span class="logo-num">3</span></span>
+</a>
+<p class="footer-desc">The Myrtle Beach investor-focused brokerage. DSCR financing, STR analysis, and condo-by-condo ROI data for serious real estate investors.</p>
+<address class="footer-address">
+<strong style="color:var(--ivory);font-style:normal">Chapter3 Realty Corp</strong><br/>
+          573 Vista Drive<br/>
+          Murrells Inlet, SC 29576<br/>
+<a href="tel:+18543332135">854.333.2135</a><br/>
+<a href="/contact/">Email us</a>
+</address>
+<div class="footer-socials">
+<a href="https://facebook.com/chapter3realty" target="_blank" rel="noopener noreferrer">Facebook</a>
+<a href="https://instagram.com/chapter3realty" target="_blank" rel="noopener noreferrer">Instagram</a>
+<a href="https://youtube.com/@chapter3realty" target="_blank" rel="noopener noreferrer">YouTube</a>
+</div>
+</div>
+<div>
+<p class="footer-col-head">Invest</p>
+<ul class="footer-links">
+<li><a href="/invest/">Investor Hub</a></li>
+<li><a href="/invest/condos/">Condo Investing</a></li>
+<li><a href="/invest/condo-buildings/">Condo Buildings</a></li>
+<li><a href="/invest/str-tools/">Short-Term Rentals</a></li>
+<li><a href="/invest/airbnb-income/">Airbnb Income Data</a></li>
+<li><a href="/market-reports/">Market Report</a></li>
+</ul>
+</div>
+<div>
+<p class="footer-col-head">Strategies</p>
+<ul class="footer-links">
+<li><a href="/invest/strategies/dscr-loans/">DSCR Loans</a></li>
+<li><a href="/invest/strategies/brrrr/">BRRRR Method</a></li>
+<li><a href="/invest/strategies/fix-and-flip/">Fix &amp; Flip</a></li>
+<li><a href="/invest/strategies/1031-exchange/">1031 Exchange</a></li>
+<li><a href="/invest/strategies/small-multifamily/">Multifamily Investing</a></li>
+</ul>
+</div>
+<div>
+<p class="footer-col-head">Calculators</p>
+<ul class="footer-links">
+<li><a href="/invest/long-term-rental/">Rental Deal Analyzer</a></li>
+<li><a href="/buyers/closing-costs/">Closing Cost Calculator</a></li>
+<li><a href="/buyers/cost-to-own/">Cost to Own Calculator</a></li>
+<li><a href="/sell/net-proceeds/">Seller Net Proceeds</a></li>
+<li><a href="/sell/capital-gains/">Capital Gains Calculator</a></li>
+<li><a href="/buyers/property-taxes/">Property Tax Estimator</a></li>
+<li><a href="/hoa/">HOA Fees Guide</a></li>
+<li><a href="/map/">3D Map Search</a></li>
+</ul>
+</div>
+<div>
+<p class="footer-col-head">Company</p>
+<ul class="footer-links">
+<li><a href="/about/">Meet the Team</a></li>
+<li><a href="/guides/">Guides &amp; Tools</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<div>
+<p class="footer-col-head">Buyers &amp; Sellers</p>
+<ul class="footer-links">
+<li><a href="/buyers/">For Buyers</a></li>
+<li><a href="/sell/">For Sellers</a></li>
+<li><a href="/sell/home-value/">What Is My Home Worth</a></li>
+<li><a href="/submarkets/">Neighborhoods</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p class="footer-copy">© 2026 Chapter3 Realty Corp. All rights reserved. South Carolina real estate company license 28849. Broker-in-Charge: Timothy Nash.</p>
+<div class="footer-legal-links">
+<a href="/privacy/">Privacy</a>
+<a href="/terms/">Terms</a>
+<a href="/accessibility/">Accessibility</a>
+<a href="/fair-housing/">Fair Housing</a>
+<a href="/buyers/programs/#afba">AfBA Disclosure</a>
+</div>
+</div>
+<p class="footer-afba"><strong style="color:rgba(244,239,232,0.55)">RESPA Affiliated Business Arrangement Disclosure.</strong> Chapter3 Realty Corp has a business relationship with BrickWood Mortgage (NMLS #189497). Because of this relationship, this referral may provide Chapter3 Realty a financial or other benefit. You are NOT required to use BrickWood Mortgage as a condition for purchase, sale, or refinance of the subject property. There are frequently other providers available. You are free to shop around. <a href="/buyers/programs/#afba">See full AfBA Disclosure.</a></p>
+</div>
+<script>
+/* Chapter3 conversion tracking. Sends GA4 events for leads, calls, and tool use. */
+(function () {
+  function track(name, params) {
+    if (typeof gtag === 'function') { try { gtag('event', name, params || {}); } catch (e) {} }
+  }
+  window.c3track = track;
+  function ready(fn) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+    else fn();
+  }
+  ready(function () {
+    /* Every lead form on the site routes through c3SendForm, which is defined inline per page. */
+    if (typeof window.c3SendForm === 'function' && !window.__c3formWrapped) {
+      var original = window.c3SendForm;
+      window.c3SendForm = function (fields, pageName) {
+        track('generate_lead', { form_name: pageName || 'unknown', page_path: location.pathname });
+        return original.apply(this, arguments);
+      };
+      window.__c3formWrapped = true;
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || !el.closest) return;
+      var tel = el.closest('a[href^="tel:"]');
+      if (tel) { track('phone_click', { page_path: location.pathname }); return; }
+      var mail = el.closest('a[href^="mailto:"]');
+      if (mail) track('email_click', { page_path: location.pathname });
+    }, true);
+    /* Fires once per page the first time someone touches a calculator field. */
+    var toolUsed = false;
+    ['input', 'change'].forEach(function (evt) {
+      document.addEventListener(evt, function (e) {
+        if (toolUsed) return;
+        var t = e.target;
+        if (!t || !t.tagName) return;
+        if (['INPUT', 'SELECT', 'TEXTAREA'].indexOf(t.tagName) === -1) return;
+        if (t.closest && t.closest('form') && t.closest('#ltr-gate')) return;
+        toolUsed = true;
+        track('calculator_used', { page_path: location.pathname });
+      }, true);
+    });
+  });
+})();
+</script>
+
+<!-- timed lead popup -->
+<!-- popup styling lives in assets/app.*.css (search "#c3-pop") -->
+<div id="c3-pop" role="dialog" aria-modal="true" aria-label="Speak to an agent" hidden>
+  <div id="c3-pop-panel">
+    <button type="button" id="c3-pop-x" aria-label="Close">&times;</button>
+
+    <!-- Two paths. If popup-green.mp4 exists, a WebGL shader keys its green out
+         and paints the result into the canvas, so the book floats with no
+         backdrop at all. If it does not exist, or WebGL is unavailable, the
+         plain <video> stays visible and behaves exactly as it does today.
+         c3-keyed on the media element is what switches between them, and it is
+         only ever set after a frame has been keyed successfully. -->
+    <div id="c3-pop-media">
+      <video id="c3-pop-video" width="1920" height="1080" muted playsinline preload="none"
+             poster="/popup-poster.jpg" aria-label="Chapter3 Realty, Myrtle Beach">
+        <source src="/popup.mp4" type="video/mp4"/>
+      </video>
+      <canvas id="c3-pop-canvas" aria-hidden="true"></canvas>
+    </div>
+
+    <!-- the capture. Hidden until the clip ends. -->
+    <div id="c3-pop-overlay">
+      <div id="c3-pop-form">
+        <div id="c3-pop-fields">
+          <input id="c3-pop-name" type="text" autocomplete="name" placeholder="Name" aria-label="Name"/>
+          <input id="c3-pop-phone" type="tel" autocomplete="tel" placeholder="Phone" aria-label="Phone"/>
+          <input id="c3-pop-email" type="email" autocomplete="email" placeholder="Email" aria-label="Email"/>
+        </div>
+        <label class="form-consent">
+          <input id="c3-pop-consent" type="checkbox" style="margin-top:.18rem;flex:0 0 auto"/>
+          <span>I consent to receive calls and text messages from Chapter 3 Realty about my property inquiry, showing appointments, and listing information I requested, at the phone number provided, including calls placed using an automated system or an artificial or prerecorded voice. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase.</span>
+        </label>
+        <p id="c3-pop-err" role="alert"></p>
+        <button type="button" id="c3-pop-send" class="btn btn-brass">Speak to an agent</button>
+      </div>
+      <div id="c3-pop-ok">
+        <p style="font-family:var(--serif);font-size:1.3rem;color:#fff;margin:0 0 .3rem">Got it, thank you.</p>
+        <p style="color:rgba(255,255,255,.8);font-size:.95rem;margin:0">An agent will reach out shortly.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  /* Shows on every page load. The only thing that suppresses it is having
+     already submitted - see DONE below. To go back to once-per-visitor, put a
+     time check back in shouldSkip(). */
+  var DONE = 'c3PopDone', SEEN = 'c3PopSeen', DELAY = 10000, WARM = 4000;
+  var pop, lastFocus;
+
+  /* Metered or 2G: never fetch 3.6MB of video. Show the still and the form. */
+  var NET = navigator.connection || {};
+  var LIGHT = NET.saveData === true || /2g/.test(NET.effectiveType || '');
+
+  /* Two separate suppressions, and they answer different questions.
+     DONE (localStorage, permanent): they already gave us their details, so we
+     never ask again on any visit.
+     SEEN (sessionStorage, this visit only): they have already been shown it
+     once during this browsing session. Without this the popup reopened on
+     every page navigation, which is what a visitor reads as spam. It clears
+     when the browser tab closes, so a genuine return visit gets one more. */
+  function shouldSkip() {
+    try {
+      if (localStorage.getItem(DONE)) return true;
+      if (sessionStorage.getItem(SEEN)) return true;
+      return false;
+    }
+    catch (e) { return false; }               /* private mode: just show it */
+  }
+  function markSeen() { try { sessionStorage.setItem(SEEN, '1'); } catch (e) {} }
+  function markDone() { try { localStorage.setItem(DONE, String(Date.now())); } catch (e) {} }
+
+  /* ------------------------------------------------------------------
+     GREEN KEY, ON THE GPU.
+     Measured on this project: keying in canvas 2D costs 50-59ms per frame on
+     a fast desktop, which is ~200ms on the Moto G that PageSpeed emulates -
+     unusable. The same key as a WebGL fragment shader costs 0.10ms. That is
+     the entire reason this is WebGL and not getImageData.
+
+     The key is a chromaticity test, not a colour-distance test: how far green
+     exceeds the larger of red and blue. Call that k. Measured over five real
+     frames of this clip, k splits cleanly: 39.5% of pixels sit below 0.05 (the
+     subject) and 51.5% sit at or above 0.20 (the backdrop), with only 9% in
+     between. Shadowed backdrop lands around 0.15, which is why the upper edge
+     has to come down to 0.15 and not sit at 0.26 - swept against the real
+     frames, 0.06-0.26 left 19.9% of the frame on partial alpha, a green haze,
+     while 0.07-0.15 leaves 1.5% and that residue is the genuine matte edge on
+     the fanning paper.
+
+     It degrades in every direction: no WebGL, no shader, no green file, or a
+     lost context all leave the plain <video> on screen.
+     ------------------------------------------------------------------ */
+  var GREEN_SRC = '/popup-green.mp4';
+  var keyer = null, greenReady = false;
+
+  function startKeyer() {
+    if (keyer || LIGHT || !greenReady) return;
+    var media = document.getElementById('c3-pop-media');
+    var cv = document.getElementById('c3-pop-canvas');
+    var vid = document.getElementById('c3-pop-video');
+    if (!media || !cv || !vid) return;
+
+    var gl = null;
+    try {
+      gl = cv.getContext('webgl', { premultipliedAlpha: false, alpha: true, antialias: false })
+        || cv.getContext('experimental-webgl', { premultipliedAlpha: false, alpha: true });
+    } catch (e) { gl = null; }
+    if (!gl) return;                          /* no WebGL: plain video stays */
+
+    function sh(type, src) {
+      var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);
+      return gl.getShaderParameter(s, gl.COMPILE_STATUS) ? s : null;
+    }
+    var vs = sh(gl.VERTEX_SHADER,
+      'attribute vec2 p;varying vec2 uv;' +
+      'void main(){uv=vec2(p.x*.5+.5,.5-p.y*.5);gl_Position=vec4(p,0.,1.);}');
+    var fs = sh(gl.FRAGMENT_SHADER,
+      'precision mediump float;uniform sampler2D t;varying vec2 uv;' +
+      'void main(){vec4 c=texture2D(t,uv);' +
+      'float g=c.g-max(c.r,c.b);' +               /* how green is it */
+      'float a=1.0-smoothstep(0.07,0.15,g);' +    /* band measured off the real clip, see below */
+      'float s=max(0.0,g)*0.85;' +                /* pull the spill off what remains */
+      'gl_FragColor=vec4(c.r,c.g-s,c.b,a);}');
+    if (!vs || !fs) return;
+    var pr = gl.createProgram();
+    gl.attachShader(pr, vs); gl.attachShader(pr, fs); gl.linkProgram(pr);
+    if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) return;
+    gl.useProgram(pr);
+
+    var buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,1]), gl.STATIC_DRAW);
+    var loc = gl.getAttribLocation(pr, 'p');
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+    var tex = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.clearColor(0, 0, 0, 0);
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+    var running = false, painted = false, raf = 0;
+
+    function size() {
+      /* never rasterise more than the box needs; the source may be 4K */
+      var r = media.getBoundingClientRect();
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var w = Math.max(2, Math.min(1600, Math.round(r.width * dpr)));
+      var h = Math.max(2, Math.round(w * 9 / 16));
+      if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
+      gl.viewport(0, 0, cv.width, cv.height);
+    }
+
+    function frame() {
+      if (!running) return;
+      if (vid.readyState >= 2) {
+        size();
+        try {
+          gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, vid);
+          gl.clear(gl.COLOR_BUFFER_BIT);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+          if (!painted) { painted = true; media.classList.add('c3-keyed'); }
+        } catch (e) { stop(); return; }
+      }
+      raf = requestAnimationFrame(frame);
+    }
+    function stop() { running = false; if (raf) cancelAnimationFrame(raf); raf = 0; }
+
+    cv.addEventListener('webglcontextlost', function (e) {
+      e.preventDefault(); stop(); media.classList.remove('c3-keyed');
+    });
+
+    keyer = {
+      start: function () { if (running) return; running = true; frame(); },
+      stop: stop,
+      /* keep the last keyed frame up after the clip ends, but stop burning rAF */
+      freeze: function () { stop(); }
+    };
+    keyer.start();
+  }
+
+  /* Swap the source to the green master only if it is actually there. A HEAD
+     that 404s leaves the existing clip and the existing behaviour untouched. */
+  function tryGreen(cb) {
+    if (LIGHT) { cb(false); return; }
+    var done = false;
+    var finish = function (ok) { if (!done) { done = true; cb(ok); } };
+    try {
+      fetch(GREEN_SRC, { method: 'HEAD' })
+        .then(function (r) { finish(r && r.ok); })
+        .catch(function () { finish(false); });
+      setTimeout(function () { finish(false); }, 2500);
+    } catch (e) { finish(false); }
+  }
+
+  /* preload="none" meant the 3.6MB only started downloading when the popup
+     opened, so on a phone the backstop fired first and the clip never played -
+     which is what "the video is slower" was. Start fetching WARM ms before the
+     popup is due instead. Anyone still reading at 6s was going to see it at
+     10s anyway, so this costs no extra visitor the download. */
+  function warmVideo() {
+    if (LIGHT) return;
+    var v = document.getElementById('c3-pop-video');
+    if (!v || v.preload === 'auto') return;
+    tryGreen(function (ok) {
+      if (ok) {
+        greenReady = true;
+        var p = document.getElementById('c3-pop');
+        if (p) p.classList.add('c3-green');   /* switches the window to 16:9, see the css */
+        /* the keyed master replaces the source AND the poster: the poster is a
+           frame of the old blue clip and would flash behind a transparent one */
+        v.removeAttribute('poster');
+        var s = v.querySelector('source');
+        if (s) s.setAttribute('src', GREEN_SRC); else v.setAttribute('src', GREEN_SRC);
+      }
+      v.preload = 'auto';
+      try { v.load(); } catch (e) {}
+    });
+  }
+
+  /* The capture floats up over the last frame. Bound to 'ended', but also to
+     'error', to a never-started check and to a hard cap, so a blocked, slow or
+     broken video can never leave the visitor looking at a dialog with nothing
+     in it. */
+  function revealAfterVideo() {
+    var v = document.getElementById('c3-pop-video');
+    var ov = document.getElementById('c3-pop-overlay');
+    var shown = false;
+    function reveal() {
+      if (shown || !ov) return;
+      shown = true;
+      ov.style.opacity = '1';
+      ov.style.transform = 'translateY(0)';
+      ov.style.pointerEvents = 'auto';
+      var n = document.getElementById('c3-pop-name'); if (n) n.focus();
+    }
+    if (!v || LIGHT) { reveal(); return; }
+    startKeyer();                             /* no-op unless WebGL and the green file are both there */
+    v.addEventListener('ended', function () { reveal(); if (keyer) keyer.freeze(); });
+    v.addEventListener('error', reveal);
+    /* The clip runs ~5s. Nobody should sit looking at an unusable dialog that
+       long, so the form arrives once the book is open and the scene is up,
+       rather than waiting for the last frame. */
+    setTimeout(reveal, 2500);
+    setTimeout(function () { if (!v.currentTime) reveal(); }, 3000);  /* never started */
+    setTimeout(reveal, 8000);                                         /* hard cap */
+    try {
+      if (!v.readyState) v.load();            /* warmVideo did not get there first */
+      var p = v.play();
+      if (p && p.catch) p.catch(function () { reveal(); });   /* autoplay refused */
+    } catch (e) { reveal(); }
+  }
+
+  function close() {
+    if (!pop) return;
+    pop.style.display = 'none'; pop.hidden = true;
+    pop.classList.remove('is-open');          /* so re-opening replays the rise */
+    if (keyer) keyer.stop();                  /* never leave rAF running behind a closed dialog */
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e) {
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key !== 'Tab') return;
+    var f = pop.querySelectorAll('button, input, a[href]');
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  function open() {
+    pop = document.getElementById('c3-pop');
+    if (!pop) return;
+    /* never stack on top of another dialog */
+    var other = document.querySelector('.idx-modal.open, #ltr-gate[style*="display:block"]');
+    if (other) return;
+    lastFocus = document.activeElement;
+    pop.hidden = false; pop.style.display = 'flex';
+    void pop.offsetWidth;                     /* flush, or the class lands in the same frame */
+    pop.classList.add('is-open');             /* starts the rise, see #c3-pop.is-open in the css */
+    markSeen();                               /* once per session, not once per page */
+    document.addEventListener('keydown', onKey);
+    revealAfterVideo();
+    if (window.c3track) window.c3track('popup_shown', { page_path: location.pathname });
+    return true;
+  }
+  /* CTA buttons on pages with no on-page form call this; true = opened, so the
+     caller cancels its /contact/ fallback navigation. */
+  window.c3PopOpen = open;
+
+  function send() {
+    var g = function (id) { var el = document.getElementById(id); return el ? String(el.value || '').trim() : ''; };
+    var name = g('c3-pop-name'), phone = g('c3-pop-phone'), email = g('c3-pop-email');
+    var consent = !!(document.getElementById('c3-pop-consent') || {}).checked;
+    var err = document.getElementById('c3-pop-err');
+    function fail(m) { if (err) { err.textContent = m; err.style.display = 'block'; } }
+    if (err) err.style.display = 'none';
+    if (!name) { fail('Please add your name.'); return; }
+    if (!phone) { fail('Please add a phone number so an agent can reach you.'); return; }
+    if (!consent) { fail('Please tick the box so we are allowed to call or text you.'); return; }
+    if (typeof c3SendForm === 'function') {
+      c3SendForm({ name: name, phone: phone, email: email, message: 'Site popup enquiry', consent: 'yes' }, 'Site popup');
+    }
+    markDone();                               /* do not ask again for details we now have */
+    document.getElementById('c3-pop-form').style.display = 'none';
+    document.getElementById('c3-pop-ok').style.display = 'block';
+    setTimeout(close, 2600);
+  }
+
+  function init() {
+    if (location.pathname.indexOf('/contact/') === 0) return;  /* already contacting us */
+    var p = document.getElementById('c3-pop');
+    if (!p) return;
+    /* wire close and send even when the timed show is skipped, because CTA
+       buttons can open the dialog through c3PopOpen at any time */
+    var x = document.getElementById('c3-pop-x'); if (x) x.addEventListener('click', close);
+    var s = document.getElementById('c3-pop-send'); if (s) s.addEventListener('click', send);
+    p.addEventListener('click', function (e) { if (e.target === p) close(); });
+    if (shouldSkip()) return;
+    setTimeout(warmVideo, Math.max(0, DELAY - WARM));
+    setTimeout(open, DELAY);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</footer>
+
+
+
+<script src="/assets/s.089a979d4e.js"></script>
+<!-- Google Maps: loaded only on pages that use it (STR map / LTR analyzer) -->
+<script>
+const GOOGLE_MAPS_KEY = 'AIzaSyAFTNMGh-PmVFTl3S0ViiM9zNYicFrgGfs';
+if (GOOGLE_MAPS_KEY !== 'YOUR_GOOGLE_MAPS_KEY') {
+  // The analyzer (#page-ltr) no longer loads Google. Its address autocomplete and
+  // geocoding run through our own worker with no key, so the only page that still
+  // needs the Maps library is the 3D map itself.
+  var _c3NeedsMap = document.getElementById('page-strmap');
+  if (_c3NeedsMap) {
+    const s = document.createElement('script');
+    var _c3Cb = _c3NeedsMap ? 'initSTRMap' : 'd2PlacesReady';
+    s.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_KEY}&libraries=places,geometry&callback=${_c3Cb}`;
+    s.async = true; s.defer = true;
+    document.head.appendChild(s);
+  }
+}
+</script>
+
+
+<!-- ══════════════════════════════════════
+     DYNAMIC LAYER v2 ELEMENTS
+══════════════════════════════════════ -->
+<div id="c3-cursor"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 2L17 9.5L10.5 11.5L8 18L3 2Z" fill="#1c2028" stroke="#ffffff" stroke-width="1" stroke-linejoin="round"/></svg></div>
+<div id="c3-transition"><div id="c3-transition-label">Chapter3</div></div>
+<div id="c3-progress"></div>
+<canvas id="c3-particles"></canvas>
+<button id="c3-fab" onclick="showPage('sellers')" title="Get My Home Value">
+  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+    <path d="M11 3L3 9v10h5v-5h6v5h5V9L11 3z" stroke="#f4efe8" stroke-width="1.5" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+
+<script src="/assets/s.35fe572371.js"></script>
+
+<script>(function(){document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".page-section").forEach(function(p){p.classList.remove("active")});var pg=document.getElementById("page-home");if(pg)pg.classList.add("active");window.scrollTo(0,0)})})();</script>
+<style id="c3-mobile-fix-css">
+html.touch #c3-cursor, html.touch #c3-cursor-ring, html.touch #c3-cursor-outer,
+html.touch #c3-particles, html.touch #c3-transition, html.touch #c3-progress { display:none !important; }
+html.touch * { cursor:auto !important; }
+html.touch .sr, html.touch .c3-divider { opacity:1 !important; transform:none !important; }
+html.touch a, html.touch button, html.touch [onclick], html.touch [role=button],
+html.touch .btn, html.touch .chooser-card { touch-action:manipulation; -webkit-tap-highlight-color:rgba(196,120,58,.18); }
+html.touch .page-section { display:none !important; }
+html.touch .page-section.active { display:block !important; }
+html.touch #page-home.active { display:flex !important; }
+</style>
+
+
+<script>(function(){var MAP={"home": "/", "why": "/why-chapter-3/", "invest": "/invest/", "ltr": "/invest/long-term-rental/", "strmap": "/invest/str-map/", "tools": "/invest/str-tools/", "invest-chooser": "/invest/strategy/", "buyers": "/buyers/", "buyers-visual": "/buyers/guide/", "sc-housing-dpa": "/buyers/programs/", "lender-dpa": "/buyers/programs/", "program-contact": "/buyers/first-time-home-buyer-myrtle-beach/", "sellers": "/sell/", "contact": "/contact/", "journal": "/market-reports/", "about": "/about/", "submarket": "/submarkets/", "buyer-mistakes": "/buyers/common-mistakes/", "path-firsttime": "/buyers/first-time-home-buyer-myrtle-beach/", "path-military": "/buyers/va-loans/", "path-relocating": "/buyers/relocating/", "path-retiree": "/buyers/retirees/", "path-secondhome": "/buyers/second-home/", "buyinmb": "/buyers/buying-in-myrtle-beach/", "outofstate": "/sell/out-of-state-buyers/"};var CUR="invest-strrules";var _spa=window.showPage;window.showPage=function(id){if(id===CUR){if(_spa)_spa(id);}else{location.href=MAP[id]||'/';}};window.showSubmarket=function(s){location.href='/submarkets/'+s+'/';};var t=('ontouchstart' in window)||navigator.maxTouchPoints>0||(window.matchMedia&&matchMedia('(pointer:coarse)').matches);if(t)document.documentElement.classList.add('touch');document.addEventListener('DOMContentLoaded',function(){try{if(CUR)window.showPage(CUR);}catch(e){}});})();</script>
+<script>
+/* Flip to false the day Web3Forms is removed. It is the ONLY switch: it stops
+   the second send AND turns a CRM failure into a visible phone number. */
+function c3SendForm(fields, pageName) {
+  /* The disclosure EXACTLY as this page renders it. The CRM stores it verbatim
+     as proof of what the visitor saw, so it is read from the DOM, not hardcoded. */
+  var consentText = '';
+  var box = document.querySelector('.form-consent span');
+  if (box) { consentText = (box.textContent || '').replace(/\s+/g, ' ').trim(); }
+  if (!consentText) {
+    var nodes = document.querySelectorAll('.form-consent, label, span, p');
+    for (var i = 0; i < nodes.length; i++) {
+      var t = nodes[i].textContent || '';
+      if (t.indexOf('I consent to receive') > -1) { consentText = t.replace(/\s+/g, ' ').trim(); break; }
+    }
+  }
+
+  /* One of the CRM's three form types. A closed set: the page selects one of
+     theirs, it never invents a value. */
+  var p = location.pathname;
+  var formType = 'contact';
+  if (p.indexOf('/sell/home-value') === 0 || p.indexOf('/sell/net-proceeds') === 0) formType = 'valuation';
+  else if (p.indexOf('/sell/') === 0) formType = 'seller';
+
+  var crm = {
+    formType: formType,
+    name: fields.name || '',
+    phone: fields.phone || '',
+    email: fields.email || '',
+    consent: fields.consent === true || fields.consent === 'yes',
+    consentText: consentText,
+    website: '',
+    page: p,
+    formName: pageName || ''
+  };
+
+  /* The CRM's promoted keys land on the contact record itself, where the team
+     reads them. Anything else only reaches the submission. */
+  if (fields.property_address) { crm.property_address = String(fields.property_address); }
+  if (fields.building || fields.community) { crm.area = String(fields.building || fields.community); }
+  var msg = fields.message || fields.notes || fields.details || '';
+  if (msg) { crm.message = String(msg); }
+  if (fields.interest) { crm.interest = String(fields.interest); }
+
+  /* No consent box on this page means the CRM will refuse and alarm Slack.
+     Do not send it. */
+  if (!crm.consent) { console.warn('c3SendForm: no consent recorded, not sending'); return; }
+
+  function post(attempt) {
+    return fetch('https://app.chapter3realty.com/api/forms/lead', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(crm)
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (d) {
+        if (r.ok && d.ok) { console.log('CRM lead sent'); return; }
+        /* 4xx is our payload being wrong - retrying sends the same wrong thing.
+           Only a network drop or a 5xx is worth a second attempt. */
+        if (attempt === 1 && r.status >= 500) { return post(2); }
+        console.warn('CRM rejected the lead', r.status, d);
+      });
+    }).catch(function (e) {
+      if (attempt === 1) { return post(2); }
+      console.warn('CRM send failed', e);
+    });
+  }
+  post(1);
+}
+</script>
+<div id="idxModal" class="idx-modal" aria-hidden="true"><div class="idx-backdrop" onclick="closeIdx()"></div><div class="idx-panel" role="dialog" aria-label="Search Grand Strand listings"><div class="idx-head"><div><p class="idx-eyebrow">Grand Strand MLS Search <span class="idx-soon">Coming soon</span></p><h2 class="idx-title">Find your property</h2><p class="idx-soon-note" style="margin-top:.4rem;font-size:.82rem;color:var(--muted);line-height:1.5">Live MLS search is launching soon. Submit your search and we will follow up, or contact us and we will run it for you.</p></div><button class="idx-close" onclick="closeIdx()" aria-label="Close">&times;</button></div><div id="idxForm"><div class="idx-body"><div class="idx-field"><label>Location</label><select class="idx-select" id="idxCity"><option value="All Grand Strand">All Grand Strand</option><option value="Myrtle Beach">Myrtle Beach</option><option value="North Myrtle Beach">North Myrtle Beach</option><option value="Surfside Beach">Surfside Beach</option><option value="Garden City">Garden City</option><option value="Murrells Inlet">Murrells Inlet</option><option value="Pawleys Island">Pawleys Island</option><option value="Little River">Little River</option><option value="Conway">Conway</option><option value="Longs">Longs</option><option value="Loris">Loris</option><option value="Carolina Forest">Carolina Forest</option><option value="Socastee">Socastee</option></select></div><div class="idx-field"><label>Property type</label><div class="idx-pills"><button type="button" class="idx-pill" data-type="1" onclick="idxPill(this)">Single-Family</button><button type="button" class="idx-pill" data-type="1" onclick="idxPill(this)">Condo</button><button type="button" class="idx-pill" data-type="1" onclick="idxPill(this)">Townhouse</button><button type="button" class="idx-pill" data-type="1" onclick="idxPill(this)">Manufactured</button><button type="button" class="idx-pill" data-type="1" onclick="idxPill(this)">Multi-Family</button><button type="button" class="idx-pill" data-type="1" onclick="idxPill(this)">Land / Lot</button><button type="button" class="idx-pill" data-type="1" onclick="idxPill(this)">New Construction</button></div></div><div class="idx-field idx-2col"><div><label>Min price</label><select class="idx-select" id="idxMin"><option value="No min">No min</option><option value="$100k">$100k</option><option value="$150k">$150k</option><option value="$200k">$200k</option><option value="$250k">$250k</option><option value="$300k">$300k</option><option value="$350k">$350k</option><option value="$400k">$400k</option><option value="$450k">$450k</option><option value="$500k">$500k</option><option value="$600k">$600k</option><option value="$750k">$750k</option><option value="$1M">$1M</option><option value="$1.5M">$1.5M</option><option value="$2M">$2M</option></select></div><div><label>Max price</label><select class="idx-select" id="idxMax"><option value="No max">No max</option><option value="$100k">$100k</option><option value="$150k">$150k</option><option value="$200k">$200k</option><option value="$250k">$250k</option><option value="$300k">$300k</option><option value="$350k">$350k</option><option value="$400k">$400k</option><option value="$450k">$450k</option><option value="$500k">$500k</option><option value="$600k">$600k</option><option value="$750k">$750k</option><option value="$1M">$1M</option><option value="$1.5M">$1.5M</option><option value="$2M">$2M</option><option value="$2M+">$2M+</option></select></div></div><div class="idx-field idx-2col"><div><label>Beds</label><select class="idx-select" id="idxBeds"><option value="Any">Any</option><option value="1+">1+</option><option value="2+">2+</option><option value="3+">3+</option><option value="4+">4+</option><option value="5+">5+</option></select></div><div><label>Baths</label><select class="idx-select" id="idxBaths"><option value="Any">Any</option><option value="1+">1+</option><option value="2+">2+</option><option value="3+">3+</option><option value="4+">4+</option></select></div></div><div class="idx-field idx-2col"><div><label>Lot size</label><select class="idx-select" id="idxLot"><option value="Any">Any</option><option value="0.25+ acre">0.25+ acre</option><option value="0.5+ acre">0.5+ acre</option><option value="1+ acre">1+ acre</option><option value="2+ acre">2+ acre</option><option value="5+ acre">5+ acre</option></select></div><div><label>Min sq ft</label><select class="idx-select" id="idxSqft"><option value="Any">Any</option><option value="1,000+">1,000+</option><option value="1,500+">1,500+</option><option value="2,000+">2,000+</option><option value="2,500+">2,500+</option><option value="3,000+">3,000+</option></select></div></div><div class="idx-field"><label>Amenities &amp; features</label><div class="idx-checks"><label class="idx-check"><input type="checkbox" class="idx-amen" value="No HOA">No HOA</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Private pool">Private pool</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Community pool">Community pool</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Waterfront">Waterfront</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Water view">Water view</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Golf community">Golf community</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Gated community">Gated community</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Garage">Garage</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Boat slip / dock">Boat slip / dock</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Furnished">Furnished</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="55+ community">55+ community</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Fireplace">Fireplace</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Pet friendly">Pet friendly</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Fenced yard">Fenced yard</label></div></div></div><div class="idx-foot"><span class="idx-note">Live MLS search is launching soon. Set your criteria and we will send matching Grand Strand listings to your inbox, including off-market homes before they hit the public sites.</span><div class="idx-lead"><input class="idx-input" id="idxName" placeholder="Name"><input class="idx-input" id="idxPhone" placeholder="Phone"></div><div class="idx-lead" style="grid-template-columns:1fr"><input class="idx-input" id="idxEmail" placeholder="Email" type="email"></div><label class="idx-consent" style="display:flex;gap:.5rem;align-items:flex-start;font-family:var(--sans);font-size:.72rem;color:var(--muted);line-height:1.45;margin:0 0 .85rem;cursor:pointer"><input type="checkbox" id="idxConsent" style="margin-top:.15rem;accent-color:var(--brass);flex-shrink:0;width:15px;height:15px"><span>I consent to receive calls and text messages from Chapter 3 Realty about my property inquiry, showing appointments, and listing information I requested, at the phone number provided, including calls placed using an automated system or an artificial or prerecorded voice. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase.</span></label><button class="btn btn-brass" style="width:100%%" onclick="idxSearch()">Send me matching listings</button></div></div><div class="idx-ok" id="idxOk">Thanks. A licensed agent will send Grand Strand listings that match your criteria, then keep you posted as new ones come on. Check your inbox shortly.</div></div></div><script src="/assets/s.6af7c2078d.js"></script></body>
+</html>

@@ -17,6 +17,7 @@ const WARRANTY = "https://www.strucsure.com/builders/our-builder-warranties/1-2-
 
 module.exports = {
   url: "/invest/new-construction-rentals/",
+  datePublished: "2026-09-07",
   title: "New Construction as a Rental in Myrtle Beach | Chapter3",
   description: "New construction as a rental in Myrtle Beach: the recorded rules on renting, why early buyers in a community cash flow and late ones do not, and builder incentives.",
   ogTitle: "Buying new construction as a rental in Myrtle Beach",
@@ -32,7 +33,7 @@ module.exports = {
     { h2: "How much new construction is there?", html: (bg) =>
       h.p(`${h.ext(FRED, "Builders were allowed to start 6,898 homes")} in the Myrtle Beach area in 2025. Builders are working from Little River and Longs in the north, through Carolina Forest and Conway, to Surfside Beach and Murrells Inlet in the south.`) +
       h.table(["Year", "Homes authorized in the Myrtle Beach area"], [["2024", "7,152"], ["2025", "6,898"], ["2026, January to July", "3,873"]]) +
-      h.p(`Most of it is single-family houses and townhouses in planned communities with a homeowners association. ${h.a("/buyers/new-construction/", "How buying new construction works here")}, including the inspection a new house still needs.`) +
+      h.p(`Most of it is single-family houses and townhouses in planned communities with a homeowners association. ${h.a("/invest/what-is-being-built/", "What is being built right now")} has the monthly count, the approved communities and the roads. ${h.a("/buyers/new-construction/", "How buying new construction works here")}, including the inspection a new house still needs.`) +
       h.p(`A new house is a simple rental to own in the first years. The roof, the water heater and the heating and cooling system are new, and the builder's warranty pays for defects.`) +
       h.cta("Want to buy a new construction home?", "Tell us the area and the budget. We tour the communities with you, pull the recorded rules, and run the rent before you sign.", "Talk to a new construction agent", "/contact/", bg) },
     { h2: "Can you rent out a new house?", html:

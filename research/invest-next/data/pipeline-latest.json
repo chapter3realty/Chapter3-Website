@@ -1,0 +1,403 @@
+{
+ "generated": "2026-09-08",
+ "permits_fred": {
+  "series": "MYRT845BPPRIV",
+  "source": "https://fred.stlouisfed.org/series/MYRT845BPPRIV",
+  "title": "New Private Housing Structures Authorized by Building Permits for Myrtle Beach-Conway-North Myrtle Beach, SC-NC (MSA), units, not seasonally adjusted, monthly, U.S. Census Bureau",
+  "read": "2026-09-07",
+  "note": "The metro is Horry County plus Brunswick County, North Carolina. 2023 sums to 12,312, far above 2024, with no explanation on the FRED page; not printed. Each month's figure appears about four weeks after the month ends.",
+  "monthly": {
+   "2024-01": 612,
+   "2024-02": 649,
+   "2024-03": 679,
+   "2024-04": 666,
+   "2024-05": 820,
+   "2024-06": 574,
+   "2024-07": 599,
+   "2024-08": 478,
+   "2024-09": 525,
+   "2024-10": 588,
+   "2024-11": 469,
+   "2024-12": 493,
+   "2025-01": 601,
+   "2025-02": 605,
+   "2025-03": 656,
+   "2025-04": 676,
+   "2025-05": 685,
+   "2025-06": 596,
+   "2025-07": 634,
+   "2025-08": 592,
+   "2025-09": 513,
+   "2025-10": 522,
+   "2025-11": 364,
+   "2025-12": 454,
+   "2026-01": 458,
+   "2026-02": 527,
+   "2026-03": 659,
+   "2026-04": 520,
+   "2026-05": 592,
+   "2026-06": 555,
+   "2026-07": 562
+  }
+ },
+ "county_permit_feed": {
+  "endpoint": "https://www.horrycounty.org/gisweb/rest/services/Public/PermitsActive/MapServer/0/query",
+  "read": "2026-09-08",
+  "since": "2026-08-09",
+  "last30": 0,
+  "total": 2646,
+  "max_issue_date": "2025-09-22",
+  "live": false,
+  "note": "Unincorporated Horry County permits on the county's public map. When max_issue_date is older than 45 days the feed is stale and last30 says nothing about building activity. last_live_30_days is the count in the feed's last live 30 days (313 to 2025-09-22) until it updates again.",
+  "last_live_30_days": 313
+ },
+ "developments": {
+  "endpoint": "https://utility.arcgis.com/usrsvcs/servers/80af96d3ac864d068045634ac4365405/rest/services/PZ_Edit/pz_MajorResidentialDevelopments/FeatureServer/0/query",
+  "read": "2026-09-08",
+  "records": 1486,
+  "remaining_total": 44735,
+  "remaining_single_family": 29704,
+  "remaining_multifamily": 15028,
+  "by_community": [
+   {
+    "name": "Longs",
+    "rem": 5776
+   },
+   {
+    "name": "Carolina Forest",
+    "rem": 4917
+   },
+   {
+    "name": "Surfside",
+    "rem": 4870
+   },
+   {
+    "name": "Burgess",
+    "rem": 3837
+   },
+   {
+    "name": "Little River",
+    "rem": 3281
+   },
+   {
+    "name": "Conway South",
+    "rem": 1784
+   },
+   {
+    "name": "no community named",
+    "rem": 1721
+   },
+   {
+    "name": "Aynor",
+    "rem": 1638
+   },
+   {
+    "name": "Bear Bluff",
+    "rem": 1573
+   },
+   {
+    "name": "Upper Conway",
+    "rem": 1564
+   },
+   {
+    "name": "Garden City",
+    "rem": 1241
+   },
+   {
+    "name": "Socastee",
+    "rem": 1234
+   },
+   {
+    "name": "Loris",
+    "rem": 1077
+   },
+   {
+    "name": "Conway",
+    "rem": 1003
+   },
+   {
+    "name": "Forestbrook",
+    "rem": 965
+   },
+   {
+    "name": "North Myrtle Beach",
+    "rem": 663
+   },
+   {
+    "name": "Canon Hill",
+    "rem": 660
+   },
+   {
+    "name": "Wampee",
+    "rem": 604
+   },
+   {
+    "name": "Horry",
+    "rem": 559
+   },
+   {
+    "name": "Shell",
+    "rem": 550
+   },
+   {
+    "name": "Red Bluff",
+    "rem": 483
+   },
+   {
+    "name": "Star Bluff Crossroads",
+    "rem": 481
+   },
+   {
+    "name": "Klondike",
+    "rem": 477
+   },
+   {
+    "name": "Arcadian Shores",
+    "rem": 407
+   },
+   {
+    "name": "Bucksville",
+    "rem": 404
+   },
+   {
+    "name": "Maple Crossroads",
+    "rem": 359
+   },
+   {
+    "name": "Nixon Crossroads",
+    "rem": 335
+   },
+   {
+    "name": "Star Bluff",
+    "rem": 274
+   },
+   {
+    "name": "Goretown",
+    "rem": 222
+   },
+   {
+    "name": "Sandridge",
+    "rem": 170
+   },
+   {
+    "name": "Allsbrook",
+    "rem": 167
+   },
+   {
+    "name": "Gore Town",
+    "rem": 143
+   },
+   {
+    "name": "Baxters Fork",
+    "rem": 136
+   },
+   {
+    "name": "Maple Crossings",
+    "rem": 134
+   },
+   {
+    "name": "Hickory Grove",
+    "rem": 124
+   },
+   {
+    "name": "Myrtle Beach",
+    "rem": 110
+   },
+   {
+    "name": "Hillsborough",
+    "rem": 97
+   },
+   {
+    "name": "Lee'S Landing",
+    "rem": 95
+   },
+   {
+    "name": "Chestnut Crossroads",
+    "rem": 92
+   },
+   {
+    "name": "Forney",
+    "rem": 80
+   },
+   {
+    "name": "Bucksport",
+    "rem": 79
+   },
+   {
+    "name": "319 Community",
+    "rem": 64
+   },
+   {
+    "name": "Floyds",
+    "rem": 49
+   },
+   {
+    "name": "Mt. Vernon",
+    "rem": 45
+   },
+   {
+    "name": "Finklea",
+    "rem": 33
+   },
+   {
+    "name": "Maple Crossing",
+    "rem": 26
+   },
+   {
+    "name": "Forest Brook",
+    "rem": 24
+   },
+   {
+    "name": "Pee Dee Crossroads",
+    "rem": 24
+   },
+   {
+    "name": "Mt Vernon",
+    "rem": 17
+   },
+   {
+    "name": "Gurley",
+    "rem": 13
+   },
+   {
+    "name": "Murrells Inlet",
+    "rem": 12
+   },
+   {
+    "name": "Toddville",
+    "rem": 10
+   },
+   {
+    "name": "Dongola",
+    "rem": 9
+   },
+   {
+    "name": "Stephen'S Crossroads",
+    "rem": 7
+   },
+   {
+    "name": "Dog Bluff",
+    "rem": 7
+   },
+   {
+    "name": "Bayboro",
+    "rem": 5
+   },
+   {
+    "name": "Pleasant View",
+    "rem": 4
+   },
+   {
+    "name": "Ketchuptown",
+    "rem": 0
+   },
+   {
+    "name": "Murells Inlet",
+    "rem": 0
+   },
+   {
+    "name": "Toddsville",
+    "rem": 0
+   },
+   {
+    "name": "Nixons Crossroads",
+    "rem": 0
+   },
+   {
+    "name": "Mt Olive",
+    "rem": 0
+   },
+   {
+    "name": "Cannon Hill",
+    "rem": 0
+   },
+   {
+    "name": "Daisy",
+    "rem": 0
+   },
+   {
+    "name": "Green Sea",
+    "rem": 0
+   },
+   {
+    "name": "Adrian",
+    "rem": 0
+   }
+  ],
+  "by_status": [
+   {
+    "status": "COMPLETE",
+    "rem": 18,
+    "n": 979
+   },
+   {
+    "status": "INCOMPLETE",
+    "rem": 21438,
+    "n": 394
+   },
+   {
+    "status": "ACTIVE REZONING CASE",
+    "rem": 1710,
+    "n": 7
+   },
+   {
+    "status": "NOT STARTED",
+    "rem": 21569,
+    "n": 106
+   }
+  ],
+  "updated": [
+   {
+    "updated": "FEBRUARY 1, 2019",
+    "rem": 10621,
+    "n": 811
+   },
+   {
+    "updated": "AUGUST 2026",
+    "rem": 16074,
+    "n": 276
+   },
+   {
+    "updated": "OCTOBER 15, 2025",
+    "rem": 197,
+    "n": 51
+   },
+   {
+    "updated": "JULY 2026",
+    "rem": 4590,
+    "n": 42
+   },
+   {
+    "updated": "JANUARY 5, 2026",
+    "rem": 2767,
+    "n": 36
+   },
+   {
+    "updated": "JULY 7, 2025",
+    "rem": 411,
+    "n": 18
+   },
+   {
+    "updated": "JANUARY 4, 2024",
+    "rem": 24,
+    "n": 18
+   },
+   {
+    "updated": "JULY 5, 2023",
+    "rem": 20,
+    "n": 12
+   }
+  ],
+  "note": "Maximum units allowed by approved zoning minus units built, unincorporated Horry County only; the county says the layer is updated annually and many records still carry a 2019 date."
+ },
+ "airport": {
+  "source": "https://www.flymyrtlebeach.com/media/",
+  "read": "2026-09-07",
+  "passengers_2024": 3837052,
+  "passengers_2025": 3530754,
+  "jan_jul_2025": 2090718,
+  "jan_jul_2026": 1881122,
+  "airlines": 10,
+  "note": "Enplanements plus deplanements from the airport's own monthly tables; 2024 total from its January 17, 2025 release. Updated by hand; the tables are HTML, not a feed."
+ }
+}

@@ -499,3 +499,52 @@ inside the verified clone, never in the folder PowerShell happened to open in.
 That last point matters on this machine specifically, because the home folder
 answers git commands for a different project.
 
+## 80. The hand-computed case used the unrounded rent (2026-09-08)
+
+**What happened.** The returns calculator's fourth verification case expected
+$4,450 of rent left after costs to read "$4,451", because the figure was copied
+from the research table, which was computed on the unrounded Zillow rent
+($1,627.20). The page's input is the rounded $1,627. The tool was right; the
+expected value was wrong. The browser harness caught it on the first run.
+
+**What stops it recurring.** A29b now reads: hand-compute from the exact
+inputs the tool receives, on paper, in the header comment of the verify script.
+A research table is a source for the inputs, not for the expected output.
+
+## 81. The hero sub carried none of the page's keywords (2026-09-08)
+
+**What happened.** The hold page's sub said "a financed buyer" and "the price"
+and never "hold" or "rental". The construction page's sub said "licensed" where
+the H1 said "being built". The audit's keyword gate stopped both; each cost a
+regeneration.
+
+**What stops it recurring.** Write the sub last, after the H1, and put the
+H1's topic word in it. `mkpage.js` checks length and the question mark; the
+keyword check runs only in `build.js audit`, so run the audit before the
+harness, not after.
+
+## 82. `element.click()` on an SVG group (2026-09-08)
+
+**What happened.** The returns map's keyboard handler called `g.click()` on an
+SVG `<g>` so Enter would pin the tooltip. `SVGElement` has no `click()` in
+Chromium; Enter threw a page error that `node --check` and the audit could not
+see. `tools/verify-returns-calc.js` saw it in the console and in the failed
+"Enter pins the tooltip" check.
+
+**What stops it recurring.** Dispatch a `MouseEvent("click")` on SVG nodes.
+The rule is A29b's: run the page in the browser and read the console before
+believing any script.
+
+## 83. Two hub grids scrolled sideways at 320px, on the live site (2026-09-08)
+
+**What happened.** The harness reported `overflow: true` on `/invest/` at
+320px after the tile edit. The committed page did the same, so it was live:
+two card grids used `minmax(300px,1fr)` and `minmax(320px,1fr)`, wider than
+the column at that width, so the cards ran 4 and 24 pixels off the right edge
+and the whole page scrolled sideways on a phone.
+
+**What stops it recurring.** `minmax(min(300px,100%),1fr)`, and the same on
+every grid the harness flags. A32 already says check 320px; the hub had been
+checked only through its own pages' previews. Run the harness on every page an
+edit touches, including a hub, not only the new pages.
+

@@ -1811,8 +1811,169 @@ coastal page's homeowner range plus the trade body's 25 percent, with two
 statewide figures from a comparison page for context). **Rent prices** has the
 eight-row expenses table and the two ways to get the rent as separate steps.
 
+## 2026-09-08: investor batch 5, five pages, a hover map, two calculators, a monthly data page
+
+**What he asked for (verbatim where it decided a page):** "What is being
+built on the Grand Strand right now ... we will make this a monthly schedules
+run using he counties permit API"; a J-1 "ultimate guide ... what companies
+employ the most j-1's does that company have their own j-1 housing ... what
+happens if you need to evict one"; "What return should a Myrtle Beach rental
+make. all the stats with a few examples in pretty visual graphs and when a
+number becomes a deal breaker how to calculate it ... what locations are best
+to maximize each number ... a little above view with the sections highlighted
+and when you hover over it it gives you the average stats for a long term and
+short term rental"; "Buying a Myrtle Beach rental as a Canadian"; "How long
+should you hold a rental here before selling ... be careful not to hurt any
+other page talking about appreciation". His ten answers are in
+`research/invest-next/owner-answers-batch5.md`.
+
+**Research (all primary, all dated, all in `research/invest-next/`):**
+`returns-facts.md` + `data/submarkets.json` (Zillow ZIP home values and rents
+for July 2026, AirROI August 2025 to July 2026, HUD FY2027 rents, the site's
+2025 millage by district, the DSCR floors, Arbor's 7.3 percent national cap
+rate); `hold-facts.md` + `data/hold-*.csv` (25 years of metro, city and ZIP
+Zillow history, rolling-window outcomes, break-even models, the IRS and
+lender waiting periods); `canadian-facts.md` (62 sources); `j1-facts.md`
+(66 reads: 22 CFR 62.32, the 2025 State Department counts, the IPMC section
+404 text, the city code, SC 27-40, HUD on language rules); and
+`construction-pipeline-facts.md` (80 reads: SCDOT on I-73, the state licence
+list, the county development layer, council packets, RIDE 4, the airport's
+own tables). Every page cites only what those files read.
+
+**The five pages, all spec-built, gates green, harness clean at three widths:**
+- `/invest/rental-returns/` (`specs/rental-returns.js`). Every number is
+  computed at build time from `submarkets.json`: long-term return by area
+  (with a manager 1.1 to 2.3 percent in Horry County; self-managed 2.7 to
+  4.6), short-term return by area (1.3 to 5.4 percent on AirROI revenue at 45
+  to 65 percent expenses), the nine-area hover map with four color toggles and
+  keyboard access, the five dealbreakers as Chapter3's screening rules, the
+  return calculator (`c3Ret()`, area picks the millage; Pawleys adds $96 of
+  fees) and the rent-versus-price chart. Coverage is shown as the rent divided
+  by 1.00, 1.10 and 1.25, never as a payment. Verified by
+  `tools/verify-returns-calc.js`: four hand-computed cases, the map's hover,
+  focus, Enter and click, the no-data fill, 320px, and a clean console.
+- `/invest/how-long-to-hold/` (`specs/how-long-to-hold.js`). Reads the
+  `hold-*.csv` files: the price rise that pays the costs back (10.5 percent
+  financed at the net-proceeds calculator's example commission, 7.9 cash), the
+  years-to-break-even chart, the monthly metro history line 2001 to 2026 with
+  the 2007 peak, 2011 low and 2020 recovery, the share of holds of each length
+  that covered the costs, the ZIP table, the waiting periods by strategy, and
+  the all-cash section (saved rent takes 41 to 67 years to buy a second house
+  with a manager; the Pawleys-for-two-Conway trade computed on the returns
+  page's inputs, payback about four years through a 1031). It links to the
+  returns page for yields and never restates a cap range (A22e).
+- `/invest/canadian-buyers/` (`specs/canadian-buyers.js`). Cash or a
+  foreign-national loan; the ITIN; the 30 percent rent withholding and the
+  election; the two withholdings at sale (federal 15 percent of price; South
+  Carolina at its top individual rate, Form I-290); the six-month stay, the
+  183-day test and Form 8840; the 6 percent assessment; the estate threshold.
+  His answer 7 ("canadians have to do a DSCR loan unless they get their social
+  security card") is on the page as Chapter3's experience where the sources
+  agree; the sources add that FHA is closed to non-permanent residents.
+- `/invest/j1-rentals/` rebuilt at the same URL (`specs/j1-rentals.js`,
+  `datePublished` kept at 2026-09-01). The old page's "$500 to $700 a person",
+  "624 beds under construction" and "May to September" were replaced with the
+  listings' $100 to $140 a week, the 300-bed hall open since May 2025, and the
+  program windows by country. His 60-person house (answer 4) is on the page as
+  "the owner of a house we sold reported 40 people in 2,500 square feet at
+  $700 each and 20 more in a garage" next to the lawful count of 10 to 13,
+  labeled the case not to copy. Employers that house students (Lazarus, the
+  sponsor listings), the sponsor's housing duty, eviction under the state act,
+  and fair housing on language are all sourced.
+- `/invest/what-is-being-built/` (`specs/what-is-being-built.js`). Built from
+  `research/invest-next/data/pipeline-latest.json`, which `tools/permits.js`
+  refreshes (A41). The county development layer answered live (44,735
+  approved-but-unbuilt units); the county permit map answered and is stale
+  (newest issue date 2025-09-22, so the page says the map is stale); FRED
+  refused this environment (HTTP 503 and timeouts to curl) and the tool kept
+  the seed months through July 2026 from the research. I-73 is written as
+  bought right of way and plans with no contract and no money. **A monthly
+  Routine exists**, `trig_01P3kXuXeAjTtX3GqnceSDEo`, first run 2026-09-27 13:05 UTC,
+  fresh session each time with push and email notice to the owner. It runs the tool,
+  regenerates the page, runs the gates and pushes a `claude/monthly-pipeline-YYYY-MM`
+  branch on the 27th of each month at 13:00 UTC; the owner still deploys.
+
+**Other changes on the branch:**
+- `/invest/long-term-rental/`: the FAQ's "5 to 7 percent cap range" (visible
+  and schema) replaced with the measured 1.1 to 2.3 percent with a manager
+  and 2.7 to 4.6 self-managed, linking to the returns page. No source ever
+  supported 5 to 7 at the metro price and rent.
+- `/sell/rental-property/`: the nonqualified-use sentence had the sequence
+  backwards (it is rental years *before* you move in that count against you;
+  rental years after you move out, inside the five-year window, do not). Fixed
+  and linked to the hold page.
+- `/invest/`: the four stat tiles ("19M+", "#2 fastest-growing", "+10.5%",
+  "60 mi") had no source and the price figure matched no area. Replaced with
+  four dated tiles, each linking to the page that owns the number: +6.1
+  percent a year over ten years (Zillow), 6,898 homes permitted in 2025
+  (Census), $1,823 three-bedroom benchmark (HUD FY2027), $20,946 average
+  Airbnb revenue in Myrtle Beach (AirROI). **He only asked about the +10.5%
+  tile; replacing the other three is my call, made because none had a source.**
+  Also: the guide paragraph links all five pages, and two card grids with
+  300px and 320px minimums no longer scroll the page sideways at 320px
+  (MISTAKES 83).
+- `specs/out-of-state.js` and `specs/new-construction-rentals.js` gained one
+  cross-link each and now pin `datePublished` (2026-09-06 and 2026-09-07) so
+  regeneration cannot move it. Any spec regenerated in future needs the same.
+- `chapter3realty/llms.txt`, `sitemap.xml`: four new entries, the J-1 line
+  rewritten. `build.js dates` and `llmsfull` run; preflight exits 0.
+
+**Facts established this batch that must not be re-derived:** the metro
+typical home value was $342,010 in July 2026, +0.2 percent over one year,
+-1.7 over three, +26.3 over five (4.8 a year), +80.5 over ten (6.1 a year),
++46.8 over twenty (1.9 a year); the March 2007 peak fell 34.1 percent to
+November 2011 and was not passed until December 2020. Horry County long-term
+caps at the typical rent and value are 1.1 to 2.3 percent with a manager;
+Pawleys at the county's $1,380 three-bedroom rent loses $105 a year before any
+loan. AirROI's measured annual occupancy is 30 to 38 percent and June 41.5 to
+48.9 across the eight markets it covers. Most DSCR lenders publish 1.10 to
+1.25 for standard pricing and some fund to 0.75. Zillow's data site returns
+403 to fetches; the CSV files download. FRED refuses this environment's
+fetches; the county development layer and the county permit map answer.
+
+**Decisions of mine he should confirm or overrule:** the four hub tiles
+(above); the hold page's trade-down example uses two Conway houses at the
+returns page's inputs rather than the research file's Loris example, so the
+two pages agree; the returns page calls its thresholds "Chapter3's screening
+rules"; the J-1 story is anonymized to "the owner of a house we sold"; the
+Canadian page carries "in Chapter3's files a few Canadian investors have
+closed with a U.S. loan; most have bought with cash".
+
+**Still open on the live site, his call:** the nine submarket pages' seasonal
+occupancy curves are labeled illustrative and show June at 52 to 91 percent
+against AirROI's measured 41.5 to 48.9; the returns page's fifth dealbreaker
+says any projection above 50 percent in June is above the market's best
+month, so the two now disagree. Replacing the curves with AirROI's peak and
+low months per market is the fix. Also: "Send the address" on 19 older pages;
+14 older content pages with non-local H1s (warnings); the brass eyebrow labels
+sitewide measure 3.45:1 on white, including the new hub tiles; one element on
+`/sell/rental-property/` measures 3.01:1 ("the rent covers less of the co…").
+
+**Previews (artifacts):** combined tabs
+https://claude.ai/code/artifact/003da5fd-a197-4861-bf0a-91c62d498639 ;
+returns https://claude.ai/code/artifact/3b6a6d25-9dee-4750-97f5-e013919f31fe ;
+hold https://claude.ai/code/artifact/85fe0327-ce0c-430a-8d96-605f2e1aa91f ;
+Canadian https://claude.ai/code/artifact/4a75ebc3-1ffa-4e32-8209-a3bc23dcdc85 ;
+J-1 https://claude.ai/code/artifact/c1ee5b3c-992d-4f99-aafb-0b0652ca862a ;
+construction https://claude.ai/code/artifact/31d0a2ab-938a-401d-85a7-10d743888ff9 .
+The artifact service refuses wake subscriptions from this session, so nothing
+watches them; read comments with the Artifact tool when he says he has left
+some.
+
+**Deploy state:** he has not deployed since batch 3 went live on 2026-09-07
+night; batches 4 and 5 are on the branch only. He has no clone (MISTAKES 79);
+the four commands in the environment section make one at `C:\c3`.
+
 ## Suggested order for the next session
 
+000. **Batch 5 is built and on the branch, not deployed.** Five pages, the hub
+   tiles, two corrected pages. Expect his edit list from the six previews;
+   apply edits to the specs and regenerate (`node tools/mkpage.js specs/<name>.js`),
+   then `node build.js dates`, `llmsfull`, `preflight`, the harness, and for the
+   returns page `tools/verify-returns-calc.js`. Ask him about the four hub
+   tiles and the submarket occupancy curves (both above). The monthly Routine
+   for the construction page fires on the 27th; its first run needs
+   `tools/permits.js` on a branch it can find.
 00. **Seventeen investor pages are built and on the branch.** The twelve are
    live as of 2026-09-07 night; batch 4 (five pages, three sections above) has
    his round-2, round-3 and round-4 edits applied, gates green, and awaits

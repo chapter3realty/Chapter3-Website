@@ -7,6 +7,7 @@ const RTN = "/invest/run-the-numbers/";
 
 module.exports = {
   url: "/invest/out-of-state/",
+  datePublished: "2026-09-06",
   title: "Buying a Myrtle Beach Rental From Out of State | Chapter3",
   description: "How to buy a Myrtle Beach rental without flying in: the video walk-through, the inspection, the attorney closing by mail, and management set up before you close.",
   ogTitle: "Buying a Myrtle Beach rental from out of state, without flying in",
@@ -17,7 +18,7 @@ module.exports = {
   sub: "Many Grand Strand rental owners live in another state. The walk-through, the inspection and the closing can all be done without a flight to Myrtle Beach.",
   heroCta: { label: "Send us the address", href: RTN },
   author: "tim",
-  shortAnswer: "You can buy a Grand Strand rental without visiting. A local agent walks the property on video. A licensed home inspector reports on it. A South Carolina attorney runs the closing, and you sign the papers in your own state before a notary with two witnesses. Flood insurance starts on the day the loan closes. Property tax is charged at the 6 percent rate because the property is not your legal residence. Two things go wrong for remote buyers: wire fraud, and a signing package that does not meet South Carolina form. Both are avoidable.",
+  shortAnswer: "You can buy a Grand Strand rental without visiting. A buyer in Canada has <a href=\"/invest/canadian-buyers/\" style=\"color:var(--navy);text-decoration:underline\">four extra steps</a>. A local agent walks the property on video. A licensed home inspector reports on it. A South Carolina attorney runs the closing, and you sign the papers in your own state before a notary with two witnesses. Flood insurance starts on the day the loan closes. Property tax is charged at the 6 percent rate because the property is not your legal residence. Two things go wrong for remote buyers: wire fraud, and a signing package that does not meet South Carolina form. Both are avoidable.",
   sections: [
     { h2: "What does buying from out of state involve?", html:
       h.p("Five steps have to happen in South Carolina while you are somewhere else. Each one has a person here who does it.") +

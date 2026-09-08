@@ -1,0 +1,1192 @@
+{
+ "meta": {
+  "generated": "2026-09-08",
+  "assumptions": {
+   "vacMaintBase": 0.25,
+   "vacMaintLean": 0.1,
+   "mgmtBase": 0.1,
+   "mgmtLean": 0,
+   "insLow": 1700,
+   "insHigh": 4400,
+   "insMid": 3050,
+   "hoa": 0,
+   "strExpLow": 0.45,
+   "strExpHigh": 0.65
+  },
+  "metro_zhvi": [
+   {
+    "label": "United States",
+    "latestDate": "2026-07-31",
+    "latest": 371774.01398407604,
+    "date12": "2025-07-31",
+    "v12": 368143.7496572218,
+    "yoy": 0.9860996771599018,
+    "v36": 355171.8777123943,
+    "d36": "2023-07-31",
+    "v60": 305996.82340974937,
+    "d60": "2021-07-31",
+    "v120": 208495.4021739479,
+    "d120": "2016-07-31"
+   },
+   {
+    "label": "Myrtle Beach, SC",
+    "latestDate": "2026-07-31",
+    "latest": 342010.48407615867,
+    "date12": "2025-07-31",
+    "v12": 341410.6694014313,
+    "yoy": 0.17568714995901402,
+    "v36": 347806.77545488917,
+    "d36": "2023-07-31",
+    "v60": 270891.60127255437,
+    "d60": "2021-07-31",
+    "v120": 189485.90355473734,
+    "d120": "2016-07-31"
+   }
+  ],
+  "notes": "See returns-facts.md sections 5 and 6 for every label and source."
+ },
+ "submarkets": [
+  {
+   "slug": "little-river",
+   "name": "Little River",
+   "zip": "29566",
+   "ltr_rent_zip": 1502,
+   "ltr_rent_zip_yoy_pct": -3.84,
+   "ltr_rent_zip_prior": 1562,
+   "ltr_rent_date": "2026-07-31",
+   "ltr_rent_city": 1503,
+   "ltr_rent_city_yoy_pct": -4.02,
+   "ltr_rent_fmr_3br_fy2027": 1823,
+   "ltr_rent_fmr_area": "Horry County (Myrtle Beach-North Myrtle Beach-Conway, SC HUD Metro FMR Area)",
+   "zhvi": 323004,
+   "zhvi_yoy": -0.65,
+   "zhvi_prior_year": 325129,
+   "zhvi_date": "2026-07-31",
+   "zhvi_3y": 340109,
+   "zhvi_5y": 261319,
+   "zhvi_10y": 181856,
+   "zhvi_city": 324412,
+   "zhvi_city_yoy": -0.65,
+   "median_price": 323004,
+   "median_price_basis": "Zillow ZHVI, ZIP 29566, all homes mid-tier smoothed seasonally adjusted, 2026-07-31",
+   "page_stated_medians": "Redfin median near $292,000 (3 months ending May 2026); Zillow home-value index near $321,000",
+   "page_stated_medians_source": "https://www.redfin.com/city/23919/SC/Little-River/housing-market (linked on page); Zillow not linked",
+   "str_occupancy": [
+    24,
+    28,
+    38,
+    50,
+    58,
+    68,
+    78,
+    74,
+    54,
+    53,
+    36,
+    28
+   ],
+   "str_occupancy_note": "12 monthly values as printed on the submarket page, labelled \"illustrative\" there and unsourced; the page prints each value twice (chart and table), 24 in all. Not AirROI data.",
+   "str_annual_occupancy_airroi_pct": 30.3,
+   "str_peak_low_month_occupancy_airroi": {
+    "peak": [
+     "June",
+     41.5
+    ],
+    "low": [
+     "January",
+     25.3
+    ]
+   },
+   "str_adr_airroi": 202,
+   "str_avg_annual_revenue_airroi": 12243,
+   "str_monthly_revenue_median": 1505,
+   "str_monthly_revenue_top10": 4106,
+   "str_revenue_yoy_pct": 1.8,
+   "str_active_listings": 171,
+   "str_data_through": "2026-08-08 (AirROI, August 2025 to July 2026)",
+   "property_tax_mills_6pct": 201,
+   "property_tax_mills_source": "Horry calculator: Unincorporated Horry (Carolina Forest, Socastee, Little River)",
+   "property_tax_extra_fees": 0,
+   "ltr_math": {
+    "FMR 3BR FY2027 $1,823": {
+     "base": {
+      "gross": 21876,
+      "vm": 5469,
+      "mg": 2187.6,
+      "tax": 3895.431159012962,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 7273.968840987038,
+      "cap": 2.2519731614133187
+     },
+     "lean": {
+      "gross": 21876,
+      "vm": 2187.6,
+      "mg": 0,
+      "tax": 3895.431159012962,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 14092.96884098704,
+      "cap": 4.363090946404224
+     }
+    },
+    "ZIP ZORI Jul 2026 $1,502": {
+     "base": {
+      "gross": 18021.69230769231,
+      "vm": 4505.423076923077,
+      "mg": 1802.169230769231,
+      "tax": 3895.431159012962,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 4768.668840987037,
+      "cap": 1.4763486729637338
+     },
+     "lean": {
+      "gross": 18021.69230769231,
+      "vm": 1802.169230769231,
+      "mg": 0,
+      "tax": 3895.431159012962,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 10624.091917910115,
+      "cap": 3.2891493470124917
+     }
+    }
+   },
+   "str_math": {
+    "avgRevenue": 12243,
+    "medianListingAnnual": 18060,
+    "noi45": 6733.650000000001,
+    "noi65": 4285.05,
+    "cap45": 2.0846939834145783,
+    "cap65": 1.3266234439910956,
+    "medCap45": 3.0751918108688465,
+    "medCap65": 1.9569402432801752
+   },
+   "sources": {
+    "zillow_zip_zori": "https://files.zillowstatic.com/research/public_csvs/zori/Zip_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_zip_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "zillow_city_zori": "https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_city_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "hud_fmr_fy2027": "https://www.huduser.gov/portal/datasets/fmr/fmr2027/FY27_FMRs.xlsx",
+    "airroi": "https://www.airroi.com/airbnb-data/united-states/south-carolina/little-river",
+    "horry_tax_calculator": "https://chapter3realty.com/buyers/property-taxes/ (Horry County certified 2025 millage embedded in the calculator)",
+    "landlord_insurance": "https://chapter3realty.com/invest/landlord-insurance/",
+    "fannie_mae_75pct": "https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property",
+    "submarket_page": "https://chapter3realty.com/submarkets/little-river/"
+   }
+  },
+  {
+   "slug": "north-myrtle-beach",
+   "name": "North Myrtle Beach",
+   "zip": "29582",
+   "ltr_rent_zip": 1627,
+   "ltr_rent_zip_yoy_pct": 10.19,
+   "ltr_rent_zip_prior": 1477,
+   "ltr_rent_date": "2026-07-31",
+   "ltr_rent_city": 1673,
+   "ltr_rent_city_yoy_pct": 12.14,
+   "ltr_rent_fmr_3br_fy2027": 1823,
+   "ltr_rent_fmr_area": "Horry County",
+   "zhvi": 400143,
+   "zhvi_yoy": 0.14,
+   "zhvi_prior_year": 399588,
+   "zhvi_date": "2026-07-31",
+   "zhvi_3y": 417449,
+   "zhvi_5y": 308892,
+   "zhvi_10y": 219657,
+   "zhvi_city": 398524,
+   "zhvi_city_yoy": -0.02,
+   "median_price": 400143,
+   "median_price_basis": "Zillow ZHVI, ZIP 29582, all homes mid-tier smoothed seasonally adjusted, 2026-07-31",
+   "page_stated_medians": "$399,000 to $415,000 (early 2026, per Redfin and Zillow); 2BR condo median about $268,000; SF median well into the $600,000s",
+   "page_stated_medians_source": "no Redfin or Zillow link on the page",
+   "str_occupancy": [
+    23,
+    29,
+    42,
+    59,
+    66,
+    81,
+    88,
+    79,
+    61,
+    56,
+    33,
+    23
+   ],
+   "str_occupancy_note": "12 monthly values as printed on the submarket page, labelled \"illustrative\" there and unsourced; the page prints each value twice (chart and table), 24 in all. Not AirROI data.",
+   "str_annual_occupancy_airroi_pct": 32.2,
+   "str_peak_low_month_occupancy_airroi": {
+    "peak": [
+     "June",
+     42.1
+    ],
+    "low": [
+     "January",
+     24.3
+    ]
+   },
+   "str_adr_airroi": 374,
+   "str_avg_annual_revenue_airroi": 28667,
+   "str_monthly_revenue_median": 2729,
+   "str_monthly_revenue_top10": 8753,
+   "str_revenue_yoy_pct": -5.4,
+   "str_active_listings": 4406,
+   "str_data_through": "2026-08-08 (AirROI, August 2025 to July 2026)",
+   "property_tax_mills_6pct": 216.2,
+   "property_tax_mills_source": "Horry calculator: North Myrtle Beach",
+   "property_tax_extra_fees": 0,
+   "ltr_math": {
+    "FMR 3BR FY2027 $1,823": {
+     "base": {
+      "gross": 21876,
+      "vm": 5469,
+      "mg": 2187.6,
+      "tax": 5190.659398394689,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 5978.74060160531,
+      "cap": 1.4941497241758885
+     },
+     "lean": {
+      "gross": 21876,
+      "vm": 2187.6,
+      "mg": 0,
+      "tax": 5190.659398394689,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 12797.740601605314,
+      "cap": 3.198289048504446
+     }
+    },
+    "ZIP ZORI Jul 2026 $1,627": {
+     "base": {
+      "gross": 19526.355555555558,
+      "vm": 4881.588888888889,
+      "mg": 1952.6355555555558,
+      "tax": 5190.659398394689,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 4451.471712716423,
+      "cap": 1.112469276547331
+     },
+     "lean": {
+      "gross": 19526.355555555558,
+      "vm": 1952.6355555555558,
+      "mg": 0,
+      "tax": 5190.659398394689,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 10683.060601605313,
+      "cap": 2.6698084287110584
+     }
+    }
+   },
+   "str_math": {
+    "avgRevenue": 28667,
+    "medianListingAnnual": 32748,
+    "noi45": 15766.85,
+    "noi65": 10033.449999999999,
+    "cap45": 3.9403004994558897,
+    "cap65": 2.507463954199202,
+    "medCap45": 4.50123698873902,
+    "medCap65": 2.8644235382884666
+   },
+   "sources": {
+    "zillow_zip_zori": "https://files.zillowstatic.com/research/public_csvs/zori/Zip_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_zip_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "zillow_city_zori": "https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_city_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "hud_fmr_fy2027": "https://www.huduser.gov/portal/datasets/fmr/fmr2027/FY27_FMRs.xlsx",
+    "airroi": "https://www.airroi.com/airbnb-data/united-states/south-carolina/north-myrtle-beach",
+    "horry_tax_calculator": "https://chapter3realty.com/buyers/property-taxes/ (Horry County certified 2025 millage embedded in the calculator)",
+    "landlord_insurance": "https://chapter3realty.com/invest/landlord-insurance/",
+    "fannie_mae_75pct": "https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property",
+    "submarket_page": "https://chapter3realty.com/submarkets/north-myrtle-beach/"
+   }
+  },
+  {
+   "slug": "myrtle-beach",
+   "name": "Myrtle Beach",
+   "zip": "29577",
+   "ltr_rent_zip": 1680,
+   "ltr_rent_zip_yoy_pct": 1.52,
+   "ltr_rent_zip_prior": 1655,
+   "ltr_rent_date": "2026-07-31",
+   "ltr_rent_city": 1697,
+   "ltr_rent_city_yoy_pct": -0.2,
+   "ltr_rent_fmr_3br_fy2027": 1823,
+   "ltr_rent_fmr_area": "Horry County",
+   "zhvi": 279713,
+   "zhvi_yoy": -0.76,
+   "zhvi_prior_year": 281868,
+   "zhvi_date": "2026-07-31",
+   "zhvi_3y": 301726,
+   "zhvi_5y": 222532,
+   "zhvi_10y": 162498,
+   "zhvi_city": 324532,
+   "zhvi_city_yoy": -0.03,
+   "median_price": 279713,
+   "median_price_basis": "Zillow ZHVI, ZIP 29577, all homes mid-tier smoothed seasonally adjusted, 2026-07-31",
+   "page_stated_medians": "Zillow city home-value index near $315,000 (early 2026, down about 3% YoY); SF $330,000s to high $380,000s; ZIPs about $275,000 (29577) to about $354,000 (29579)",
+   "page_stated_medians_source": "no Zillow link on the page",
+   "str_occupancy": [
+    19,
+    22,
+    39,
+    52,
+    69,
+    84,
+    90,
+    85,
+    63,
+    51,
+    29,
+    21
+   ],
+   "str_occupancy_note": "12 monthly values as printed on the submarket page, labelled \"illustrative\" there and unsourced; the page prints each value twice (chart and table), 24 in all. Not AirROI data.",
+   "str_annual_occupancy_airroi_pct": 33.2,
+   "str_peak_low_month_occupancy_airroi": {
+    "peak": [
+     "June",
+     48.8
+    ],
+    "low": [
+     "January",
+     23.5
+    ]
+   },
+   "str_adr_airroi": 253,
+   "str_avg_annual_revenue_airroi": 20946,
+   "str_monthly_revenue_median": 2115,
+   "str_monthly_revenue_top10": 6043,
+   "str_revenue_yoy_pct": -10.7,
+   "str_active_listings": 8583,
+   "str_data_through": "2026-08-08 (AirROI, August 2025 to July 2026)",
+   "property_tax_mills_6pct": 254.6,
+   "property_tax_mills_source": "Horry calculator: City of Myrtle Beach (254.6 incl. 83.4 city)",
+   "property_tax_extra_fees": 0,
+   "ltr_math": {
+    "FMR 3BR FY2027 $1,823": {
+     "base": {
+      "gross": 21876,
+      "vm": 5469,
+      "mg": 2187.6,
+      "tax": 4272.888752834919,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 6896.511247165081,
+      "cap": 2.46557099671263
+     },
+     "lean": {
+      "gross": 21876,
+      "vm": 2187.6,
+      "mg": 0,
+      "tax": 4272.888752834919,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 13715.511247165083,
+      "cap": 4.903430955759976
+     }
+    },
+    "ZIP ZORI Jul 2026 $1,680": {
+     "base": {
+      "gross": 20159.488095238095,
+      "vm": 5039.872023809524,
+      "mg": 2015.9488095238096,
+      "tax": 4272.888752834919,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 5780.7785090698435,
+      "cap": 2.0666855051155277
+     },
+     "lean": {
+      "gross": 20159.488095238095,
+      "vm": 2015.9488095238096,
+      "mg": 0,
+      "tax": 4272.888752834919,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 12170.650532879368,
+      "cap": 4.351127967394758
+     }
+    }
+   },
+   "str_math": {
+    "avgRevenue": 20946,
+    "medianListingAnnual": 25380,
+    "noi45": 11520.300000000001,
+    "noi65": 7331.099999999999,
+    "cap45": 4.118621218098422,
+    "cap65": 2.6209407751535405,
+    "medCap45": 4.99048059368557,
+    "medCap65": 3.1757603777999077
+   },
+   "sources": {
+    "zillow_zip_zori": "https://files.zillowstatic.com/research/public_csvs/zori/Zip_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_zip_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "zillow_city_zori": "https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_city_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "hud_fmr_fy2027": "https://www.huduser.gov/portal/datasets/fmr/fmr2027/FY27_FMRs.xlsx",
+    "airroi": "https://www.airroi.com/airbnb-data/united-states/south-carolina/myrtle-beach",
+    "horry_tax_calculator": "https://chapter3realty.com/buyers/property-taxes/ (Horry County certified 2025 millage embedded in the calculator)",
+    "landlord_insurance": "https://chapter3realty.com/invest/landlord-insurance/",
+    "fannie_mae_75pct": "https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property",
+    "submarket_page": "https://chapter3realty.com/submarkets/myrtle-beach/"
+   }
+  },
+  {
+   "slug": "carolina-forest",
+   "name": "Carolina Forest",
+   "zip": "29579",
+   "ltr_rent_zip": 1736,
+   "ltr_rent_zip_yoy_pct": -0.66,
+   "ltr_rent_zip_prior": 1747,
+   "ltr_rent_date": "2026-07-31",
+   "ltr_rent_city": null,
+   "ltr_rent_city_yoy_pct": null,
+   "ltr_rent_fmr_3br_fy2027": 1823,
+   "ltr_rent_fmr_area": "Horry County",
+   "zhvi": 359496,
+   "zhvi_yoy": -0.02,
+   "zhvi_prior_year": 359557,
+   "zhvi_date": "2026-07-31",
+   "zhvi_3y": 372446,
+   "zhvi_5y": 292230,
+   "zhvi_10y": 212073,
+   "zhvi_city": null,
+   "zhvi_city_yoy": null,
+   "median_price": 359496,
+   "median_price_basis": "Zillow ZHVI, ZIP 29579, all homes mid-tier smoothed seasonally adjusted, 2026-07-31",
+   "page_stated_medians": "Redfin median sale $418,000 (mid-2026, +7.7% YoY); SC Realtors ZIP 29579 SF median $464,710 (Dec 2025); condos near $215,500",
+   "page_stated_medians_source": "no Redfin or SC Realtors link on the page; sources block lists Census Reporter, HCS, SCAC, SCDOI, FEMA",
+   "str_occupancy": null,
+   "str_occupancy_note": "Page states no STR market; AirROI 404",
+   "str_annual_occupancy_airroi_pct": null,
+   "str_peak_low_month_occupancy_airroi": null,
+   "str_adr_airroi": null,
+   "str_avg_annual_revenue_airroi": null,
+   "str_monthly_revenue_median": null,
+   "str_monthly_revenue_top10": null,
+   "str_revenue_yoy_pct": null,
+   "str_active_listings": null,
+   "str_data_through": "2026-08-08 (AirROI, August 2025 to July 2026)",
+   "property_tax_mills_6pct": 201,
+   "property_tax_mills_source": "Horry calculator: Unincorporated Horry (Carolina Forest, Socastee, Little River)",
+   "property_tax_extra_fees": 0,
+   "ltr_math": {
+    "FMR 3BR FY2027 $1,823": {
+     "base": {
+      "gross": 21876,
+      "vm": 5469,
+      "mg": 2187.6,
+      "tax": 4335.527032787655,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 6833.8729672123445,
+      "cap": 1.9009570776817124
+     },
+     "lean": {
+      "gross": 21876,
+      "vm": 2187.6,
+      "mg": 0,
+      "tax": 4335.527032787655,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 13652.872967212346,
+      "cap": 3.7977769885732195
+     }
+    },
+    "ZIP ZORI Jul 2026 $1,736": {
+     "base": {
+      "gross": 20827.467455480146,
+      "vm": 5206.8668638700365,
+      "mg": 2082.7467455480146,
+      "tax": 4335.527032787655,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 6152.32681327444,
+      "cap": 1.7113735148453806
+     },
+     "lean": {
+      "gross": 20827.467455480146,
+      "vm": 2082.7467455480146,
+      "mg": 0,
+      "tax": 4335.527032787655,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 12709.193677144476,
+      "cap": 3.535276670799837
+     }
+    }
+   },
+   "str_math": null,
+   "sources": {
+    "zillow_zip_zori": "https://files.zillowstatic.com/research/public_csvs/zori/Zip_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_zip_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "zillow_city_zori": "https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_city_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "hud_fmr_fy2027": "https://www.huduser.gov/portal/datasets/fmr/fmr2027/FY27_FMRs.xlsx",
+    "airroi": null,
+    "horry_tax_calculator": "https://chapter3realty.com/buyers/property-taxes/ (Horry County certified 2025 millage embedded in the calculator)",
+    "landlord_insurance": "https://chapter3realty.com/invest/landlord-insurance/",
+    "fannie_mae_75pct": "https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property",
+    "submarket_page": "https://chapter3realty.com/submarkets/carolina-forest/"
+   }
+  },
+  {
+   "slug": "surfside-beach",
+   "name": "Surfside Beach",
+   "zip": "29575",
+   "ltr_rent_zip": 1607,
+   "ltr_rent_zip_yoy_pct": 2.57,
+   "ltr_rent_zip_prior": 1566,
+   "ltr_rent_date": "2026-07-31",
+   "ltr_rent_city": 1607,
+   "ltr_rent_city_yoy_pct": 2.65,
+   "ltr_rent_fmr_3br_fy2027": 1823,
+   "ltr_rent_fmr_area": "Horry County",
+   "zhvi": 360243,
+   "zhvi_yoy": 1.39,
+   "zhvi_prior_year": 355292,
+   "zhvi_date": "2026-07-31",
+   "zhvi_3y": 362563,
+   "zhvi_5y": 274413,
+   "zhvi_10y": 184906,
+   "zhvi_city": 361707,
+   "zhvi_city_yoy": 1.46,
+   "median_price": 360243,
+   "median_price_basis": "Zillow ZHVI, ZIP 29575, all homes mid-tier smoothed seasonally adjusted, 2026-07-31",
+   "page_stated_medians": "Redfin around $530,000 (early 2026, blended); typical home-value index $347,000 to $360,000; detached SF into the $800,000s",
+   "page_stated_medians_source": "no Redfin or Zillow link on the page",
+   "str_occupancy": [
+    18,
+    23,
+    37,
+    52,
+    67,
+    85,
+    91,
+    83,
+    59,
+    47,
+    27,
+    21
+   ],
+   "str_occupancy_note": "12 monthly values as printed on the submarket page, labelled \"illustrative\" there and unsourced; the page prints each value twice (chart and table), 24 in all. Not AirROI data.",
+   "str_annual_occupancy_airroi_pct": 34.2,
+   "str_peak_low_month_occupancy_airroi": {
+    "peak": [
+     "June",
+     null
+    ],
+    "low": [
+     "December",
+     null
+    ]
+   },
+   "str_adr_airroi": 415,
+   "str_avg_annual_revenue_airroi": 35482,
+   "str_monthly_revenue_median": 3221,
+   "str_monthly_revenue_top10": 11379,
+   "str_revenue_yoy_pct": -10.1,
+   "str_active_listings": 538,
+   "str_data_through": "2026-08-08 (AirROI, August 2025 to July 2026)",
+   "property_tax_mills_6pct": 214.2,
+   "property_tax_mills_source": "Horry calculator: Surfside Beach",
+   "property_tax_extra_fees": 0,
+   "ltr_math": {
+    "FMR 3BR FY2027 $1,823": {
+     "base": {
+      "gross": 21876,
+      "vm": 5469,
+      "mg": 2187.6,
+      "tax": 4629.8392947935245,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 6539.560705206475,
+      "cap": 1.8153207667019424
+     },
+     "lean": {
+      "gross": 21876,
+      "vm": 2187.6,
+      "mg": 0,
+      "tax": 4629.8392947935245,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 13358.560705206477,
+      "cap": 3.708211262891581
+     }
+    },
+    "ZIP ZORI Jul 2026 $1,607": {
+     "base": {
+      "gross": 19278.066666666666,
+      "vm": 4819.516666666666,
+      "mg": 1927.8066666666666,
+      "tax": 4629.8392947935245,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 4850.9040385398075,
+      "cap": 1.3465655011702502
+     },
+     "lean": {
+      "gross": 19278.066666666666,
+      "vm": 1927.8066666666666,
+      "mg": 0,
+      "tax": 4629.8392947935245,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 11020.420705206474,
+      "cap": 3.0591655106169298
+     }
+    }
+   },
+   "str_math": {
+    "avgRevenue": 35482,
+    "medianListingAnnual": 38652,
+    "noi45": 19515.100000000002,
+    "noi65": 12418.699999999999,
+    "cap45": 5.4172088755228645,
+    "cap65": 3.447314738969095,
+    "medCap45": 5.901188136427195,
+    "medCap65": 3.75530154136276
+   },
+   "sources": {
+    "zillow_zip_zori": "https://files.zillowstatic.com/research/public_csvs/zori/Zip_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_zip_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "zillow_city_zori": "https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_city_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "hud_fmr_fy2027": "https://www.huduser.gov/portal/datasets/fmr/fmr2027/FY27_FMRs.xlsx",
+    "airroi": "https://www.airroi.com/airbnb-data/united-states/south-carolina/surfside-beach",
+    "horry_tax_calculator": "https://chapter3realty.com/buyers/property-taxes/ (Horry County certified 2025 millage embedded in the calculator)",
+    "landlord_insurance": "https://chapter3realty.com/invest/landlord-insurance/",
+    "fannie_mae_75pct": "https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property",
+    "submarket_page": "https://chapter3realty.com/submarkets/surfside-beach/"
+   }
+  },
+  {
+   "slug": "garden-city",
+   "name": "Garden City",
+   "zip": "29576",
+   "zip_note": "29576 covers both Murrells Inlet and Garden City Beach; Zillow labels it City=Murrells Inlet, County=Horry",
+   "ltr_rent_zip": 1943,
+   "ltr_rent_zip_yoy_pct": 1.28,
+   "ltr_rent_zip_prior": 1918,
+   "ltr_rent_date": "2026-07-31",
+   "ltr_rent_city": null,
+   "ltr_rent_city_yoy_pct": null,
+   "ltr_rent_fmr_3br_fy2027": 1823,
+   "ltr_rent_fmr_area": "Horry County (Horry portion; Georgetown portion would use Georgetown County FMR $1,380)",
+   "zhvi": 401110,
+   "zhvi_yoy": 0.09,
+   "zhvi_prior_year": 400732,
+   "zhvi_date": "2026-07-31",
+   "zhvi_3y": 398795,
+   "zhvi_5y": 308495,
+   "zhvi_10y": 222418,
+   "zhvi_city": null,
+   "zhvi_city_yoy": null,
+   "median_price": 401110,
+   "median_price_basis": "Zillow ZHVI, ZIP 29576, all homes mid-tier smoothed seasonally adjusted, 2026-07-31",
+   "page_stated_medians": "Oceanfront/ocean-view condos low $200,000s to about $400,000; raised beach houses $600,000s past $1 million; Horry County oceanfront/resort condos about $238,825 median (early 2026)",
+   "page_stated_medians_source": "no price source linked on the page",
+   "str_occupancy": [
+    17,
+    20,
+    33,
+    48,
+    68,
+    84,
+    90,
+    82,
+    58,
+    42,
+    24,
+    16
+   ],
+   "str_occupancy_note": "12 monthly values as printed on the submarket page, labelled \"illustrative\" there and unsourced; the page prints each value twice (chart and table), 24 in all. Not AirROI data.",
+   "str_annual_occupancy_airroi_pct": 36.2,
+   "str_peak_low_month_occupancy_airroi": {
+    "peak": [
+     "June",
+     48.9
+    ],
+    "low": [
+     "January",
+     27.6
+    ]
+   },
+   "str_adr_airroi": 372,
+   "str_avg_annual_revenue_airroi": 33942,
+   "str_monthly_revenue_median": 2916,
+   "str_monthly_revenue_top10": 9411,
+   "str_revenue_yoy_pct": -11.1,
+   "str_active_listings": 395,
+   "str_data_through": "2026-08-08 (AirROI, August 2025 to July 2026)",
+   "property_tax_mills_6pct": 207.3,
+   "property_tax_mills_source": "Horry calculator: Murrells Inlet / Garden City",
+   "property_tax_extra_fees": 0,
+   "ltr_math": {
+    "FMR 3BR FY2027 $1,823": {
+     "base": {
+      "gross": 21876,
+      "vm": 5469,
+      "mg": 2187.6,
+      "tax": 4989.009019555323,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 6180.390980444678,
+      "cap": 1.5408210871830128
+     },
+     "lean": {
+      "gross": 21876,
+      "vm": 2187.6,
+      "mg": 0,
+      "tax": 4989.009019555323,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 12999.390980444678,
+      "cap": 3.240852529650913
+     }
+    },
+    "ZIP ZORI Jul 2026 $1,943": {
+     "base": {
+      "gross": 23313.7,
+      "vm": 5828.425,
+      "mg": 2331.3700000000003,
+      "tax": 4989.009019555323,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 7114.895980444679,
+      "cap": 1.7738006858255508
+     },
+     "lean": {
+      "gross": 23313.7,
+      "vm": 2331.3700000000003,
+      "mg": 0,
+      "tax": 4989.009019555323,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 14293.320980444678,
+      "cap": 3.5634396662328887
+     }
+    }
+   },
+   "str_math": {
+    "avgRevenue": 33942,
+    "medianListingAnnual": 34992,
+    "noi45": 18668.100000000002,
+    "noi65": 11879.699999999999,
+    "cap45": 4.654107196236254,
+    "cap65": 2.961704579423069,
+    "medCap45": 4.798082582366948,
+    "medCap65": 3.0533252796880577
+   },
+   "sources": {
+    "zillow_zip_zori": "https://files.zillowstatic.com/research/public_csvs/zori/Zip_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_zip_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "zillow_city_zori": "https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_city_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "hud_fmr_fy2027": "https://www.huduser.gov/portal/datasets/fmr/fmr2027/FY27_FMRs.xlsx",
+    "airroi": "https://www.airroi.com/airbnb-data/united-states/south-carolina/garden-city-beach",
+    "horry_tax_calculator": "https://chapter3realty.com/buyers/property-taxes/ (Horry County certified 2025 millage embedded in the calculator)",
+    "landlord_insurance": "https://chapter3realty.com/invest/landlord-insurance/",
+    "fannie_mae_75pct": "https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property",
+    "submarket_page": "https://chapter3realty.com/submarkets/garden-city/"
+   }
+  },
+  {
+   "slug": "murrells-inlet",
+   "name": "Murrells Inlet",
+   "zip": "29576",
+   "zip_note": "29576 covers both Murrells Inlet and Garden City Beach; Zillow labels it City=Murrells Inlet, County=Horry",
+   "ltr_rent_zip": 1943,
+   "ltr_rent_zip_yoy_pct": 1.28,
+   "ltr_rent_zip_prior": 1918,
+   "ltr_rent_date": "2026-07-31",
+   "ltr_rent_city": 1948,
+   "ltr_rent_city_yoy_pct": 1.35,
+   "ltr_rent_fmr_3br_fy2027": 1823,
+   "ltr_rent_fmr_area": "Horry County (Georgetown portion: $1,380)",
+   "zhvi": 401110,
+   "zhvi_yoy": 0.09,
+   "zhvi_prior_year": 400732,
+   "zhvi_date": "2026-07-31",
+   "zhvi_3y": 398795,
+   "zhvi_5y": 308495,
+   "zhvi_10y": 222418,
+   "zhvi_city": 401332,
+   "zhvi_city_yoy": 0.17,
+   "median_price": 401110,
+   "median_price_basis": "Zillow ZHVI, ZIP 29576, all homes mid-tier smoothed seasonally adjusted, 2026-07-31",
+   "page_stated_medians": "mid $330,000s to about $445,000 depending on source; Redfin near $360,000 (early 2026)",
+   "page_stated_medians_source": "https://www.redfin.com/city/24397/SC/Murrells-Inlet/housing-market (linked on page)",
+   "str_occupancy": [
+    30,
+    32,
+    41,
+    52,
+    63,
+    74,
+    79,
+    75,
+    60,
+    53,
+    37,
+    31
+   ],
+   "str_occupancy_note": "12 monthly values as printed on the submarket page, labelled \"illustrative\" there and unsourced; the page prints each value twice (chart and table), 24 in all. Not AirROI data.",
+   "str_annual_occupancy_airroi_pct": 37.7,
+   "str_peak_low_month_occupancy_airroi": {
+    "peak": [
+     "June",
+     null
+    ],
+    "low": [
+     "January",
+     null
+    ]
+   },
+   "str_adr_airroi": 406,
+   "str_avg_annual_revenue_airroi": 38356,
+   "str_monthly_revenue_median": 3047,
+   "str_monthly_revenue_top10": 10063,
+   "str_revenue_yoy_pct": -0.1,
+   "str_active_listings": 461,
+   "str_data_through": "2026-08-08 (AirROI, August 2025 to July 2026)",
+   "property_tax_mills_6pct": 207.3,
+   "property_tax_mills_source": "Horry calculator: Murrells Inlet / Garden City (Horry side). Georgetown side District 41 = 248.8 mills at 6%",
+   "property_tax_extra_fees": 0,
+   "ltr_math": {
+    "FMR 3BR FY2027 $1,823": {
+     "base": {
+      "gross": 21876,
+      "vm": 5469,
+      "mg": 2187.6,
+      "tax": 4989.009019555323,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 6180.390980444678,
+      "cap": 1.5408210871830128
+     },
+     "lean": {
+      "gross": 21876,
+      "vm": 2187.6,
+      "mg": 0,
+      "tax": 4989.009019555323,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 12999.390980444678,
+      "cap": 3.240852529650913
+     }
+    },
+    "ZIP ZORI Jul 2026 $1,943": {
+     "base": {
+      "gross": 23313.7,
+      "vm": 5828.425,
+      "mg": 2331.3700000000003,
+      "tax": 4989.009019555323,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 7114.895980444679,
+      "cap": 1.7738006858255508
+     },
+     "lean": {
+      "gross": 23313.7,
+      "vm": 2331.3700000000003,
+      "mg": 0,
+      "tax": 4989.009019555323,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 14293.320980444678,
+      "cap": 3.5634396662328887
+     }
+    }
+   },
+   "str_math": {
+    "avgRevenue": 38356,
+    "medianListingAnnual": 36564,
+    "noi45": 21095.800000000003,
+    "noi65": 13424.599999999999,
+    "cap45": 5.259352295646624,
+    "cap65": 3.3468605517751238,
+    "medCap45": 5.013634303316904,
+    "medCap65": 3.1904945566562115
+   },
+   "sources": {
+    "zillow_zip_zori": "https://files.zillowstatic.com/research/public_csvs/zori/Zip_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_zip_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "zillow_city_zori": "https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_city_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "hud_fmr_fy2027": "https://www.huduser.gov/portal/datasets/fmr/fmr2027/FY27_FMRs.xlsx",
+    "airroi": "https://www.airroi.com/airbnb-data/united-states/south-carolina/murrells-inlet",
+    "horry_tax_calculator": "https://chapter3realty.com/buyers/property-taxes/ (Horry County certified 2025 millage embedded in the calculator)",
+    "landlord_insurance": "https://chapter3realty.com/invest/landlord-insurance/",
+    "fannie_mae_75pct": "https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property",
+    "submarket_page": "https://chapter3realty.com/submarkets/murrells-inlet/"
+   }
+  },
+  {
+   "slug": "pawleys-island",
+   "name": "Pawleys Island",
+   "zip": "29585",
+   "ltr_rent_zip": 1926,
+   "ltr_rent_zip_yoy_pct": null,
+   "ltr_rent_zip_prior": null,
+   "ltr_rent_date": "2026-07-31",
+   "ltr_rent_city": 1926,
+   "ltr_rent_city_yoy_pct": null,
+   "ltr_rent_fmr_3br_fy2027": 1380,
+   "ltr_rent_fmr_area": "Georgetown County, SC (non-metro FMR area)",
+   "zhvi": 550277,
+   "zhvi_yoy": 0.14,
+   "zhvi_prior_year": 549510,
+   "zhvi_date": "2026-07-31",
+   "zhvi_3y": 512170,
+   "zhvi_5y": 398183,
+   "zhvi_10y": 290070,
+   "zhvi_city": 548832,
+   "zhvi_city_yoy": 0.14,
+   "median_price": 550277,
+   "median_price_basis": "Zillow ZHVI, ZIP 29585, all homes mid-tier smoothed seasonally adjusted, 2026-07-31",
+   "page_stated_medians": "Zillow home-value index near $514,000 (mid-2026, +5% YoY); median list mid $500,000s",
+   "page_stated_medians_source": "https://www.zillow.com/home-values/35932/pawleys-island-sc/ (linked on page)",
+   "str_occupancy": [
+    27,
+    30,
+    42,
+    55,
+    62,
+    74,
+    80,
+    72,
+    58,
+    54,
+    38,
+    30
+   ],
+   "str_occupancy_note": "12 monthly values as printed on the submarket page, labelled \"illustrative\" there and unsourced; the page prints each value twice (chart and table), 24 in all. Not AirROI data.",
+   "str_annual_occupancy_airroi_pct": 33.4,
+   "str_peak_low_month_occupancy_airroi": {
+    "peak": [
+     "June",
+     46.3
+    ],
+    "low": [
+     "January",
+     24.5
+    ]
+   },
+   "str_adr_airroi": 392,
+   "str_avg_annual_revenue_airroi": 27953,
+   "str_monthly_revenue_median": 2528,
+   "str_monthly_revenue_top10": 7499,
+   "str_revenue_yoy_pct": 9.9,
+   "str_active_listings": 428,
+   "str_data_through": "2026-08-08 (AirROI, August 2025 to July 2026)",
+   "property_tax_mills_6pct": 233.9,
+   "property_tax_mills_source": "Georgetown County calculator: District 4 East of Waccamaw River/Pawleys Island, 6% branch (.2339); Tax Information page example says 233.5",
+   "property_tax_extra_fees": 96,
+   "ltr_math": {
+    "FMR 3BR FY2027 $1,380": {
+     "base": {
+      "gross": 16560,
+      "vm": 4140,
+      "mg": 1656,
+      "tax": 7818.583815574511,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": -104.58381557451139,
+      "cap": -0.019005676115973667
+     },
+     "lean": {
+      "gross": 16560,
+      "vm": 1656,
+      "mg": 0,
+      "tax": 7818.583815574511,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 5385.416184425489,
+      "cap": 0.9786741398624071
+     }
+    },
+    "ZIP ZORI Jul 2026 $1,926": {
+     "base": {
+      "gross": 23112,
+      "vm": 5778,
+      "mg": 2311.2000000000003,
+      "tax": 7818.583815574511,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 4154.216184425488,
+      "cap": 0.7549321745741405
+     },
+     "lean": {
+      "gross": 23112,
+      "vm": 2311.2000000000003,
+      "mg": 0,
+      "tax": 7818.583815574511,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 11282.216184425488,
+      "cap": 2.0502803946641035
+     }
+    }
+   },
+   "str_math": {
+    "avgRevenue": 27953,
+    "medianListingAnnual": 30336,
+    "noi45": 15374.150000000001,
+    "noi65": 9783.55,
+    "cap45": 2.793894197235706,
+    "cap65": 1.777932670968176,
+    "medCap45": 3.032074352210581,
+    "medCap65": 1.929501860497642
+   },
+   "sources": {
+    "zillow_zip_zori": "https://files.zillowstatic.com/research/public_csvs/zori/Zip_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_zip_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "zillow_city_zori": "https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_city_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "hud_fmr_fy2027": "https://www.huduser.gov/portal/datasets/fmr/fmr2027/FY27_FMRs.xlsx",
+    "airroi": "https://www.airroi.com/airbnb-data/united-states/south-carolina/pawleys-island",
+    "horry_tax_calculator": "https://chapter3realty.com/buyers/property-taxes/ (Horry County certified 2025 millage embedded in the calculator)",
+    "georgetown_tax_calculator": "https://gtcountysc.gov/385/Property-Tax-Calculator",
+    "landlord_insurance": "https://chapter3realty.com/invest/landlord-insurance/",
+    "fannie_mae_75pct": "https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property",
+    "submarket_page": "https://chapter3realty.com/submarkets/pawleys-island/"
+   }
+  },
+  {
+   "slug": "conway",
+   "name": "Conway",
+   "zip": "29526",
+   "ltr_rent_zip": 1892,
+   "ltr_rent_zip_yoy_pct": 2.08,
+   "ltr_rent_zip_prior": 1854,
+   "ltr_rent_date": "2026-07-31",
+   "ltr_rent_city": 1890,
+   "ltr_rent_city_yoy_pct": 1.07,
+   "ltr_rent_fmr_3br_fy2027": 1823,
+   "ltr_rent_fmr_area": "Horry County",
+   "zhvi": 302222,
+   "zhvi_yoy": -0.3,
+   "zhvi_prior_year": 303140,
+   "zhvi_date": "2026-07-31",
+   "zhvi_3y": 301850,
+   "zhvi_5y": 235980,
+   "zhvi_10y": 166146,
+   "zhvi_city": 289610,
+   "zhvi_city_yoy": -0.16,
+   "median_price": 302222,
+   "median_price_basis": "Zillow ZHVI, ZIP 29526, all homes mid-tier smoothed seasonally adjusted, 2026-07-31",
+   "page_stated_medians": "Redfin median near $280,000 (3 months ending May 2026, -4.5% YoY); other trackers $300,000 to $320,000",
+   "page_stated_medians_source": "https://www.redfin.com/city/4264/SC/Conway/housing-market (linked on page)",
+   "str_occupancy": [
+    34,
+    35,
+    40,
+    44,
+    48,
+    52,
+    54,
+    53,
+    46,
+    44,
+    38,
+    34
+   ],
+   "str_occupancy_note": "12 monthly values as printed on the submarket page, labelled \"illustrative\" there and unsourced; the page prints each value twice (chart and table), 24 in all. Not AirROI data.",
+   "str_annual_occupancy_airroi_pct": 34.7,
+   "str_peak_low_month_occupancy_airroi": {
+    "peak": [
+     "June",
+     47.6
+    ],
+    "low": [
+     "January",
+     28
+    ]
+   },
+   "str_adr_airroi": 245,
+   "str_avg_annual_revenue_airroi": 21285,
+   "str_monthly_revenue_median": 1808,
+   "str_monthly_revenue_top10": 5347,
+   "str_revenue_yoy_pct": 9.2,
+   "str_active_listings": 106,
+   "str_data_through": "2026-08-08 (AirROI, August 2025 to July 2026)",
+   "property_tax_mills_6pct": 269.3,
+   "property_tax_mills_source": "Horry calculator: Conway",
+   "property_tax_extra_fees": 0,
+   "ltr_math": {
+    "FMR 3BR FY2027 $1,823": {
+     "base": {
+      "gross": 21876,
+      "vm": 5469,
+      "mg": 2187.6,
+      "tax": 4883.309228252708,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 6286.090771747291,
+      "cap": 2.0799554142967027
+     },
+     "lean": {
+      "gross": 21876,
+      "vm": 2187.6,
+      "mg": 0,
+      "tax": 4883.309228252708,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 13105.090771747295,
+      "cap": 4.336240995446025
+     }
+    },
+    "ZIP ZORI Jul 2026 $1,892": {
+     "base": {
+      "gross": 22705,
+      "vm": 5676.25,
+      "mg": 2270.5,
+      "tax": 4883.309228252708,
+      "ins": 3050,
+      "hoa": 0,
+      "noi": 6824.940771747293,
+      "cap": 2.258251276652227
+     },
+     "lean": {
+      "gross": 22705,
+      "vm": 2270.5,
+      "mg": 0,
+      "tax": 4883.309228252708,
+      "ins": 1700,
+      "hoa": 0,
+      "noi": 13851.190771747293,
+      "cap": 4.583112189476749
+     }
+    }
+   },
+   "str_math": {
+    "avgRevenue": 21285,
+    "medianListingAnnual": 21696,
+    "noi45": 11706.750000000002,
+    "noi65": 7449.749999999999,
+    "cap45": 3.8735549533831666,
+    "cap65": 2.464989515789287,
+    "medCap45": 3.9483508700305934,
+    "medCap65": 2.5125869172921953
+   },
+   "sources": {
+    "zillow_zip_zori": "https://files.zillowstatic.com/research/public_csvs/zori/Zip_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_zip_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "zillow_city_zori": "https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv",
+    "zillow_city_zhvi": "https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+    "hud_fmr_fy2027": "https://www.huduser.gov/portal/datasets/fmr/fmr2027/FY27_FMRs.xlsx",
+    "airroi": "https://www.airroi.com/airbnb-data/united-states/south-carolina/conway",
+    "horry_tax_calculator": "https://chapter3realty.com/buyers/property-taxes/ (Horry County certified 2025 millage embedded in the calculator)",
+    "landlord_insurance": "https://chapter3realty.com/invest/landlord-insurance/",
+    "fannie_mae_75pct": "https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property",
+    "submarket_page": "https://chapter3realty.com/submarkets/conway/"
+   }
+  }
+ ]
+}
