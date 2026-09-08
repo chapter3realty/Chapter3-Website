@@ -1,0 +1,5 @@
+# Raw Zillow research downloads (tens to hundreds of MB). Re-download with
+# extract-zillow.js; only the extracted Grand Strand rows are tracked.
+*_month.csv
+*.csv.headers
+zillow-research-data-page.html
