@@ -77,18 +77,37 @@ const col = (d) => zh.indexOf(d);
 const ZIPLABEL = { "29526": "Conway", "29527": "Conway, west", "29566": "Little River", "29568": "Longs", "29569": "Loris", "29572": "Myrtle Beach, north end", "29575": "Surfside Beach", "29576": "Murrells Inlet and Garden City", "29577": "Myrtle Beach, city core", "29579": "Carolina Forest and the 501 corridor", "29582": "North Myrtle Beach", "29585": "Pawleys Island", "29588": "Socastee and Burgess" };
 const zips = zipCsv.slice(1).map(r => { const v = (d) => +r[col(d)]; const n = v("2026-07-31"); return { zip: r[zh.indexOf("RegionName")], label: ZIPLABEL[r[zh.indexOf("RegionName")]] || r[zh.indexOf("City")], now: n, y1: chg(n, v("2025-07-31")), y3: chg(n, v("2023-07-31")), y5: chg(n, v("2021-07-31")), a5: ann(n, v("2021-07-31"), 5), y10: chg(n, v("2016-07-31")), a10: ann(n, v("2016-07-31"), 10) }; }).sort((a, b) => b.a10 - a.a10);
 
-/* all-cash model from the returns page's own numbers (submarkets.json) */
-const S = D.submarkets.filter(s => s.slug !== "pawleys-island");
-const fmrKey = (s) => Object.keys(s.ltr_math).find(k => k.startsWith("FMR"));
-const cashRows = S.map(s => { const f = s.ltr_math[fmrKey(s)]; return { name: s.name, zhvi: s.zhvi, noi: f.base.noi, noiL: f.lean.noi, yrs: s.zhvi / f.base.noi, yrsL: s.zhvi / f.lean.noi }; }).sort((a, b) => a.yrs - b.yrs);
+/* All-cash model, on the same basis as the returns page (owner, 2026-09-09):
+   the price a rental actually sells for (Zillow's cheaper third for the ZIP) and
+   a 10 percent allowance for empty months and repairs. The two pages must not
+   disagree about the same figure (PLAYBOOK A22e). */
+const BOTTOM = require(path.join(DATA, "zip-bottom-tier.json"));
+const VAC = 0.10, MGMT = 0.10, INS = 3050;
+const noiAt = (s, price, mgmt) => {
+  const gross = s.ltr_rent_fmr_3br_fy2027 * 12;
+  const tax = price * 0.06 * s.property_tax_mills_6pct / 1000 + (s.property_tax_extra_fees || 0);
+  return gross - gross * VAC - gross * mgmt - tax - INS;
+};
+const S = D.submarkets.filter(s => s.slug !== "pawleys-island" && s.slug !== "garden-city");
+const cashRows = S.map(s => {
+  const price = BOTTOM[s.zip].bottom;
+  const noi = noiAt(s, price, MGMT), noiL = noiAt(s, price, 0);
+  return { name: s.slug === "murrells-inlet" ? "Murrells Inlet and Garden City" : s.name,
+    zhvi: price, noi, noiL, yrs: price / noi, yrsL: price / noiL };
+}).sort((a, b) => a.yrs - b.yrs);
 const yrsLo = Math.min(...cashRows.map(r => r.yrs)), yrsHi = Math.max(...cashRows.map(r => r.yrs)), yrsLLo = Math.min(...cashRows.map(r => r.yrsL)), yrsLHi = Math.max(...cashRows.map(r => r.yrsL));
-const MB = D.submarkets.find(s => s.slug === "myrtle-beach"), mbF = MB.ltr_math[fmrKey(MB)].base;
+const MB = D.submarkets.find(s => s.slug === "myrtle-beach");
+const mbPrice = BOTTOM[MB.zip].bottom, mbNoi = noiAt(MB, mbPrice, MGMT);
 const tenYear = (P, noi, g) => { let saved = 0; for (let t = 0; t < 10; t++) saved += noi * Math.pow(1 + g, t); const v = P * Math.pow(1 + g, 10); return { saved, v, total: v + saved, pct: chg(v + saved, P) }; };
-const ty0 = tenYear(MB.zhvi, mbF.noi, 0), ty3 = tenYear(MB.zhvi, mbF.noi, 0.03);
-/* trade one expensive low-yield house for two cheaper ones, same cost inputs as the returns page */
+const ty0 = tenYear(mbPrice, mbNoi, 0), ty3 = tenYear(mbPrice, mbNoi, 0.03);
+/* The trade example is two real houses someone already owns or would buy, so it
+   keeps each area's typical value and its own asking rent, at the same 10 percent
+   allowance. */
 const PI = D.submarkets.find(s => s.slug === "pawleys-island"), CW = D.submarkets.find(s => s.slug === "conway");
-const zoriKey = (s) => Object.keys(s.ltr_math).find(k => k.startsWith("ZIP ZORI"));
-const piNoi = PI.ltr_math[zoriKey(PI)].base.noi, cwNoi = CW.ltr_math[zoriKey(CW)].base.noi;
+const noiZori = (s) => { const gross = s.ltr_rent_zip * 12;
+  const tax = s.zhvi * 0.06 * s.property_tax_mills_6pct / 1000 + (s.property_tax_extra_fees || 0);
+  return gross - gross * VAC - gross * MGMT - tax - INS; };
+const piNoi = noiZori(PI), cwNoi = noiZori(CW);
 const stamps = (p) => Math.ceil(p / 500) * 1.85;
 const sellCost = 0.06 * PI.zhvi + stamps(PI.zhvi) + 1500;
 const buyCost = (p) => 900 + 330 + 2.10 * Math.max(0, (p - 100000) / 1000) + 112.5 + 15;
@@ -165,7 +184,7 @@ const T_STRAT = h.table(["Strategy", "The waiting period", "Where it comes from"
   ["Live in it, then rent it", "Two of the last five years lived in, and a sale within three years of moving out, excludes up to $250,000 of gain, or $500,000 on a joint return. Depreciation taken while rented is never excluded.", "The home sale exclusion"],
   ["Rent it, then move in", "The rental years before you moved in are taxed in proportion. Eight rental years out of ten owned leaves a fifth of the gain excluded.", "The nonqualified-use rule"],
 ]);
-const T_CASH = h.table(["Area", "Typical value", "Rent left after costs, with a manager", "Years of saved rent to buy a second house", "Self-managed"], cashRows.map(r => [r.name, fmt$(r.zhvi), fmt$(r.noi) + " a year", Math.round(r.yrs) + " years", Math.round(r.yrsL) + " years"]));
+const T_CASH = h.table(["Area", "Price of a rental", "Rent left after costs, with a manager", "Years of saved rent to buy a second house", "Self-managed"], cashRows.map(r => [r.name, fmt$(r.zhvi), fmt$(r.noi) + " a year", Math.round(r.yrs) + " years", Math.round(r.yrsL) + " years"]));
 const T_TRADE = h.table(["Step", "Figure"], [
   [`Sell the ${PI.name} house, ${fmt$(PI.zhvi)}, which leaves ${fmt$(piNoi)} a year after costs`, `Net after commission at the example rate, stamps and closing: ${fmt$(netSale)}`],
   [`Buy two ${CW.name} houses at ${fmt$(CW.zhvi)} each`, `${fmt$(twoCost)} with buying costs, so ${fmt$(gap)} of new cash`],
@@ -226,9 +245,9 @@ module.exports = {
     { h2: "What is the best hold for an all-cash buyer who dislikes risk?", html: (bg) =>
       h.p(`The long one. Three facts from the numbers above decide it.`) +
       h.p(`First, the costs come back in about three years at 3 percent a year, and every 15-year hold in this market's history ended above its start. Shorter holds lost money in ${100 - rollAt(5).any} of 100 cases at five years and ${100 - rollAt(1).any} of 100 at one year.`) +
-      h.p(`Second, the rent does not buy a second house. The table takes each area's rent left after costs from the returns page. That is at the county's three-bedroom benchmark rent, with a manager. It divides the typical home value by that figure. That is how many years of saved rent it takes to pay cash for a second house of the same kind, with no price change.`) +
+      h.p(`Second, the rent does not buy a second house. The table takes each area's rent left after costs from the returns page, at the county's three-bedroom benchmark rent with a manager. It divides the price of a rental by that figure. That is how many years of saved rent it takes to pay cash for a second house of the same kind, with no price change.`) +
       T_CASH +
-      h.p(`A ${MB.name} house at ${fmt$(MB.zhvi)} that leaves ${fmt$(mbF.noi)} a year is worth ${fmt$(ty0.total)} after ten years with the rent saved and no price change, ${sp(ty0.pct)} percent. With prices and rents rising 3 percent a year it is ${fmt$(ty3.total)}, ${sp(ty3.pct)} percent. An all-cash owner's growth comes from the price and the saved rent, not from the number of houses.`) +
+      h.p(`A ${MB.name} rental at ${fmt$(mbPrice)} that leaves ${fmt$(mbNoi)} a year is worth ${fmt$(ty0.total)} after ten years with the rent saved and no price change, ${sp(ty0.pct)} percent. With prices and rents rising 3 percent a year it is ${fmt$(ty3.total)}, ${sp(ty3.pct)} percent. An all-cash owner's growth comes from the price and the saved rent, not from the number of houses.`) +
       h.p(`Third, selling one house to buy two of the same kind never helps, because the sale only adds the selling costs and the buying costs. Selling one expensive house that leaves little rent for two cheaper houses that leave more can help. The two must be held long enough to earn the costs back. The example uses the returns page's figures and the calculator's example commission, through a 1031 exchange so no tax is due at the trade.`) +
       T_TRADE +
       h.p(`The trade is behind by the costs for the first ${Math.ceil(payback)} years and ahead after that. Without a 1031 exchange, the tax on the gain and the depreciation would sit on top of the costs and push the payback later.`) +

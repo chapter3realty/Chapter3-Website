@@ -1964,8 +1964,113 @@ some.
 night; batches 4 and 5 are on the branch only. He has no clone (MISTAKES 79);
 the four commands in the environment section make one at `C:\c3`.
 
+## 2026-09-09: the returns page round 2, and the price error he caught
+
+**His edit list, and what each became.** Seventeen notes on the returns page.
+The two that changed the most:
+
+1. **"a $401,110 typical home I dont think this is the typical price for an
+   investment property here which may be lowering our Cap rate."** He was
+   right, and it was the whole problem. Zillow's headline ZIP value is the
+   middle third of every home in the ZIP, beach houses and second homes
+   included. Dividing the county's $1,823 three-bedroom rent by that produced
+   2.3 to 3.6 percent and made the market look broken next to the 7.3 percent
+   national benchmark. Zillow's bottom-tier file for the same ZIPs
+   (`Zip_zhvi_uc_sfrcondo_tier_0.0_0.33_sm_sa_month.csv`, extracted to
+   `research/invest-next/data/zip-bottom-tier.json`) puts the cheaper third at
+   $160,703 in the Myrtle Beach core and $263,914 in Murrells Inlet. With his
+   10 percent vacancy allowance the same rent returns **4.2 to 7.5 percent with
+   a manager and 5.1 to 8.8 percent without one** in Horry County. MISTAKES 84.
+2. **"Is our cap rate really that low if national is 7 and ours is 2-4"** —
+   answered by the same fix. The page now has a section, "Which price should
+   you divide the rent by?", that shows both prices side by side, because that
+   question will occur to every investor who reads a national cap-rate figure.
+
+**I was wrong on 2026-09-08 and told him so.** I removed the long-term rental
+page's "5 to 7 percent cap range" that day, wrote it up as unsourced, and
+logged it as a site defect I had fixed. The claim was right; my arithmetic was
+wrong. That page now carries the corrected range and links to the returns page.
+MISTAKES 85 and PLAYBOOK A22g: when a number the brokerage published from
+experience disagrees with one I derive, my derivation is the suspect.
+
+**The other fifteen edits, all applied:** 10 percent vacancy everywhere;
+every return shown with a manager and without; the short answer says the
+figures are all-cash before any loan and is followed by four stat tiles
+instead of a wall of numbers; "appreciation" replaces "price change"
+throughout, including the definitions table; "Most lenders want 1.10 to 1.25"
+became "our target is 1.25"; the percent column at the county benchmark rent
+is gone; "denominator" is gone; the CTAs are his words ("let us find top
+performing properties", "every investor's goals are different"); the
+dealbreaker section is four of his numbers in one table with no repeated
+chart; the appreciation chart is larger; "A lender uses its own rent estimate"
+is deleted; the calculator is rebuilt with a dark header, an input panel, two
+big result cards, a line-by-line breakdown and a colour-coded verdict, and it
+links to the rental analyzer.
+
+**Two things I decided, both worth his eye.**
+- **Short-term returns divide by the typical home value, not the cheaper
+  third.** AirROI's revenue is the average of every listing in a market, and
+  those are mostly beach properties. Pairing beach revenue with the cheapest
+  houses would have shown Surfside at 10.6 percent. It shows 3.4 to 5.4
+  percent, and the page explains the difference in one paragraph. If he wants
+  the higher framing it needs a different revenue source, not a different
+  price.
+- **His 60 percent occupancy line stands, with the market average beside it.**
+  AirROI measures 25 to 36 percent for the middle listing and 67 to 76 percent
+  for the top tenth. The page states the target, states the average, and says
+  the gap is the manager, which is his own point back to him.
+
+**The map is a satellite photo now, as he asked.** Base image
+`chapter3realty/invest/grand-strand-areas.jpg` (1400x1552, 224 KB), built by
+`scratchpad/buildmap.py` from USGS The National Map imagery (public domain),
+81 tiles at zoom 12, composited, cropped, desaturated and darkened. The USGS
+service covers land plus an uneven nearshore buffer and returns black beyond
+it, so `fixocean.py` builds one sea mask (close the black void across the pale
+strips, subtract anything colourful or bright so the fill never reaches the
+beach) and paints it deep teal. Boundaries are real ZIP polygons from Census
+TIGERweb (public domain), simplified with Douglas-Peucker to 10 to 189 points
+each, in `research/invest-next/data/map-shapes.json`. Eight areas, because
+**Murrells Inlet and Garden City share ZIP 29576 and are now one area with one
+label**, which is what he asked for instead of the sentence explaining the
+shared ZIP. Both credits are printed under the map. To rebuild it, both
+scripts are in the scratchpad and both are re-runnable; copy them into
+`tools/` if this becomes a recurring job.
+
+**The hold page was rebased to match.** Its all-cash section used the old 25
+percent allowance and typical prices, so it contradicted the returns page the
+moment the returns page changed. It now uses the same investor price and the
+same 10 percent allowance: saved rent buys a second house in **13 to 24 years**,
+not 41 to 67. PLAYBOOK A22e says the two pages carry one number from one
+source, and that is what kept this from shipping broken.
+
+**Verification.** `tools/verify-returns-calc.js` rewritten: four hand-computed
+cases (including a negative one), every line item, the verdict text and its
+colour class, the eight map regions, the four toggles, the satellite image's
+natural size, hover, keyboard focus, Enter to pin, the not-measured fill, the
+three charts and 320px. All pass. One case disagreed by a dollar and the tool
+was right: my hand arithmetic dropped a term in the Pawleys tax. Same class as
+MISTAKES 80. `verify-forms.js` clean at 1280, 768 and 320 on all three changed
+pages. `preflight` exits 0.
+
+**Still open, his call.** The brass eyebrow labels measure 3.45:1 on white
+sitewide, including the four new stat tiles and the hub tiles. Fixing it means
+darkening `--brass` everywhere, which is a brand decision, so I left the new
+tiles matching the rest of the site rather than introducing a second brass.
+
+**Previews.** Combined, all six pages, returns first:
+https://claude.ai/code/artifact/003da5fd-a197-4861-bf0a-91c62d498639 . Hold:
+https://claude.ai/code/artifact/85fe0327-ce0c-430a-8d96-605f2e1aa91f . The
+standalone returns artifact
+(https://claude.ai/code/artifact/3b6a6d25-9dee-4750-97f5-e013919f31fe) still
+shows the 2026-09-08 build: the service refused a republish without a full
+read of the live copy, so the combined link is the current one for that page.
+
 ## Suggested order for the next session
 
+0000. **The returns page round 2 is on the branch** (section above). Expect his
+   reaction to the new cap rates, the satellite map and the rebuilt
+   calculator. If he wants the short-term figures on the investor price too,
+   that needs a revenue source for cheaper properties, not a price change.
 000. **Batch 5 is built and on the branch, not deployed.** Five pages, the hub
    tiles, two corrected pages. Expect his edit list from the six previews;
    apply edits to the specs and regenerate (`node tools/mkpage.js specs/<name>.js`),

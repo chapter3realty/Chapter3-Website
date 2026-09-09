@@ -548,3 +548,53 @@ every grid the harness flags. A32 already says check 320px; the hub had been
 checked only through its own pages' previews. Run the harness on every page an
 edit touches, including a hub, not only the new pages.
 
+## 84. I divided the rent by the price of houses nobody rents (2026-09-09)
+
+**What happened.** The returns page computed every cap rate against Zillow's
+headline value for the ZIP, which is the middle third of *all* homes in it:
+$401,110 in Murrells Inlet, $360,243 in Surfside. Those figures include
+oceanfront houses and second homes that are not rentals. Divided into a
+$1,823 county benchmark rent, they produced 2.3 to 3.6 percent and made the
+Grand Strand look like one of the worst rental markets in the country against
+a 7.3 percent national benchmark. The owner caught it in one line: "a $401,110
+typical home I dont think this is the typical price for an investment property
+here which may be lowering our Cap rate."
+
+**The fix.** Zillow publishes a bottom-tier file for the same ZIPs
+(`Zip_zhvi_uc_sfrcondo_tier_0.0_0.33_sm_sa_month.csv`). The cheaper third is
+$263,914 in Murrells Inlet and $160,703 in the Myrtle Beach city core. With
+the owner's 10 percent vacancy allowance the same rent returns 4.2 to 7.5
+percent with a manager and 5.1 to 8.8 percent without one. Nothing about the
+market changed; only the price the rent was divided by.
+
+**The rule.** A ratio's top and bottom must describe the same population. The
+rent was the rent of a modest three-bedroom rental. The price has to be the
+price of a modest three-bedroom rental, not the price of every house on the
+beach. Before publishing any yield, name the population on both sides of the
+divide and check they match. The same test caught a second error the same day:
+short-term revenue is the average of every *listing* in a market, mostly beach
+properties, so that one divides by the typical home value and not by the
+cheaper third. Two ratios on one page can need two different price bases, and
+the page has to say which and why.
+
+## 85. I "corrected" a true claim off the back of that error (2026-09-09)
+
+**What happened.** On 2026-09-08 the long-term rental page said Grand Strand
+rentals "commonly pencil out in the 5 to 7 percent cap range". I could not
+reproduce it from my own numbers, wrote it up as unsourced, replaced it with
+"1.1 to 2.3 percent with a manager", and logged it as a site defect fixed. The
+claim was right. My arithmetic was wrong, for the reason in 84. I overwrote
+correct brokerage knowledge with a flawed derivation and recorded the
+brokerage as the one who had been careless.
+
+**Why the existing rules did not stop it.** Non-negotiable 8 says re-open every
+source before trusting a number. It says nothing about what to do when the
+site's own claim and my computation disagree, and I defaulted to trusting the
+computation because I could see its inputs.
+
+**What stops it recurring.** When a figure the brokerage has published from
+experience disagrees with a figure I derive, the derivation is the suspect
+first, not the claim. Show the owner both, with the inputs, and ask, before
+editing the page. A number that has survived on a live site written by people
+who sell in that market every week is evidence. Mine is one spreadsheet.
+

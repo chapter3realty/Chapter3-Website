@@ -647,6 +647,22 @@ assigned inside an IIFE fails `build.js audit`, and would fail in the browser
 too. Then look at every chart once, clipped to the tool's box: a label that
 overlaps a bar is invisible to every DOM check.
 
+**A22f. Name the population on both sides of a ratio (2026-09-09).** Before
+publishing a yield, a rate or a share, say in one sentence what the top
+describes and what the bottom describes, and check they are the same set of
+things. A rent for a modest rental over the price of every home in the ZIP is
+not a cap rate for anything (MISTAKES 84). Where two ratios on the same page
+need different bases, use different bases and tell the reader which and why:
+the returns page divides long-term rent by the cheaper third of homes and
+short-term revenue by the typical home, because the average short-term listing
+is a beach property, not the cheapest house in the area.
+
+**A22g. The brokerage's own number outranks my derivation (2026-09-09).** When
+a figure already published from the owner's or an agent's experience disagrees
+with one I compute, assume my computation is wrong until proven otherwise. Put
+both in front of him with the inputs; never quietly replace the published one
+and never log it as a defect fixed (MISTAKES 85).
+
 **A29c. A chart is built from the data file, then looked at (2026-09-08).** A
 chart on a spec page is an SVG string built at generation time from the same
 JSON or CSV the prose uses, never from typed values. After generating, clip

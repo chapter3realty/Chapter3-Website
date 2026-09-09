@@ -1,25 +1,52 @@
-// Verify the return calculator on /invest/rental-returns/ in a real browser
-// against three hand-computed cases, then the map. Usage (server on :8123
-// from chapter3realty/):
+// Verify the return calculator and the satellite map on /invest/rental-returns/
+// in a real browser. Usage (server on :8123 from chapter3realty/):
 //   NODE_PATH=$(npm root -g) node tools/verify-returns-calc.js [screenshot-dir]
-// Hand computation (PLAYBOOK A29b): gross = rent x 12; allowance = gross x
-// allow%; management = gross x mgmt%; tax = price x 0.06 x mills / 1000 + fees;
-// left = gross - allowance - management - tax - insurance - dues x 12;
-// return = left / price; coverage = rent / 1.00, / 1.10, / 1.25.
-//   A  Myrtle Beach 254.6 mills, $279,713, $1,823, ins $3,050, 10%, 25%:
-//      gross 21,876; allow 5,469; mgmt 2,187.60; tax 4,272.89; left 6,896.51; 2.47% -> "2.5%"; 1,823 / 1,657 / 1,458
-//   B  Pawleys Island 233.9 mills + $96, $550,277, $1,380, ins $3,050, 10%, 25%:
-//      gross 16,560; allow 4,140; mgmt 1,656; tax 7,818.58; left -104.58 -> "-$105"; -0.02% -> "-0.0%"; dealbreaker
-//   C  Conway 269.3 mills, $250,000, $1,900, dues $50, ins $1,700, 0%, 10%:
-//      gross 22,800; allow 2,280; mgmt 0; tax 4,039.50; dues 600; left 14,180.50; 5.67% -> "5.7%"; 1,900 / 1,727 / 1,520; passes
+//
+// Hand computation (PLAYBOOK A29b), from the exact values the inputs carry:
+//   gross      = rent x 12
+//   allowance  = gross x allow%          management = gross x 10%
+//   tax        = price x 0.06 x mills / 1000 + fees
+//   other      = insurance + dues x 12
+//   self-managed left = gross - allowance - tax - other
+//   with a manager    = that, minus management
+//   return = left / price;  coverage line = rent / 1.25
+//
+// A  Myrtle Beach 254.6 mills, $160,000, $1,823, ins $3,050, dues 0, allow 10%
+//    gross 21,876; allow 2,187.60; mgmt 2,187.60; tax 2,444.16; other 3,050
+//    self 14,194.24 -> $14,194 = 8.87% -> 8.9%   mgr 12,006.64 -> $12,007 = 7.504% -> 7.5%
+//    1,823 / 1.25 = 1,458.40 -> $1,458            verdict: passes
+// B  Pawleys Island 233.9 mills + $96, $320,314, $1,380, ins $3,050, allow 10%
+//    gross 16,560; allow 1,656; mgmt 1,656; tax 4,591.29; other 3,050
+//    self 7,262.71 -> $7,263 = 2.267% -> 2.3%     mgr 5,606.71 -> $5,607 = 1.750% -> 1.8%
+//    verdict: below the target either way
+// C  Conway 269.3 mills, $214,498, $1,900, ins $1,700, dues $50, allow 15%
+//    gross 22,800; allow 3,420; mgmt 2,280; tax 3,465.86; other 2,300
+//    self 13,614.14 -> $13,614 = 6.347% -> 6.3%   mgr 11,334.14 -> $11,334 = 5.284% -> 5.3%
+//    verdict: self-managed only
+// D  Myrtle Beach, $600,000, $900 rent: every line negative -> dealbreaker
+//    gross 10,800; allow 1,080; mgmt 1,080; tax 9,165.60; other 3,050
+//    self -2,495.60 -> -$2,496 = -0.416% -> -0.4%  mgr -3,575.60 -> -$3,576 = -0.596% -> -0.6%
 const { chromium } = require('playwright');
 const fs = require('fs');
 const DIR = process.argv[2];
+const MINUS = '−';
 const CASES = [
-  { name: 'A', area: 'myrtle-beach', price: 279713, rent: 1823, hoa: 0, ins: 3050, mgmt: '10', allow: '25', noi: '$6,897', cap: '2.5%', tax: '$4,273', c100: '$1,823', c110: '$1,657', c125: '$1,458', verdictHas: 'Passes the first screen' },
-  { name: 'B', area: 'pawleys-island', price: 550277, rent: 1380, hoa: 0, ins: 3050, mgmt: '10', allow: '25', noi: '−$105', cap: '−0.0%', tax: '$7,819', c100: '$1,380', c110: '$1,255', c125: '$1,104', verdictHas: 'Dealbreaker' },
-  { name: 'C', area: 'conway', price: 250000, rent: 1900, hoa: 50, ins: 1700, mgmt: '0', allow: '10', noi: '$14,181', cap: '5.7%', tax: '$4,040', c100: '$1,900', c110: '$1,727', c125: '$1,520', verdictHas: 'Passes the first screen' },
-  { name: 'D', area: 'north-myrtle-beach', price: 400143, rent: 1627, hoa: 0, ins: 3050, mgmt: '10', allow: '25', noi: '$4,450', cap: '1.1%', tax: '$5,191', c100: '$1,627', c110: '$1,479', c125: '$1,302', verdictHas: 'Below 2 percent' },
+  { name: 'A', area: 'myrtle-beach', price: 160000, rent: 1823, ins: 3050, hoa: 0, allow: '10',
+    capM: '7.5%', capS: '8.9%', noiM: '$12,007 a year', noiS: '$14,194 a year',
+    gross: '$21,876', vac: MINUS + '$2,188', mgmt: MINUS + '$2,188', tax: MINUS + '$2,444', other: MINUS + '$3,050',
+    c125: '$1,458', verdict: 'Passes.', cls: 'pass' },
+  { name: 'B', area: 'pawleys-island', price: 320314, rent: 1380, ins: 3050, hoa: 0, allow: '10',
+    capM: '1.8%', capS: '2.3%', noiM: '$5,607 a year', noiS: '$7,263 a year',
+    gross: '$16,560', vac: MINUS + '$1,656', mgmt: MINUS + '$1,656', tax: MINUS + '$4,591', other: MINUS + '$3,050',
+    c125: '$1,104', verdict: 'Below the 6 percent target either way', cls: 'warn' },
+  { name: 'C', area: 'conway', price: 214498, rent: 1900, ins: 1700, hoa: 50, allow: '15',
+    capM: '5.3%', capS: '6.3%', noiM: '$11,334 a year', noiS: '$13,614 a year',
+    gross: '$22,800', vac: MINUS + '$3,420', mgmt: MINUS + '$2,280', tax: MINUS + '$3,466', other: MINUS + '$2,300',
+    c125: '$1,520', verdict: 'Passes only if you manage it yourself', cls: 'warn' },
+  { name: 'D', area: 'myrtle-beach', price: 600000, rent: 900, ins: 3050, hoa: 0, allow: '10',
+    capM: MINUS + '0.6%', capS: MINUS + '0.4%', noiM: MINUS + '$3,576 a year', noiS: MINUS + '$2,496 a year',
+    gross: '$10,800', vac: MINUS + '$1,080', mgmt: MINUS + '$1,080', tax: MINUS + '$9,166', other: MINUS + '$3,050',
+    c125: '$720', verdict: 'Dealbreaker', cls: 'stop' },
 ];
 (async () => {
   const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
@@ -28,71 +55,114 @@ const CASES = [
   page.on('pageerror', e => errors.push('pageerror: ' + e.message));
   page.on('console', m => { if (m.type() === 'error') errors.push('console: ' + m.text()); });
   await page.route(/fonts\.(googleapis|gstatic)\.com/, r => r.abort());
-  await page.goto('http://127.0.0.1:8123/invest/rental-returns/', { waitUntil: 'domcontentloaded' });
+  await page.goto('http://127.0.0.1:8123/invest/rental-returns/', { waitUntil: 'load' });
   await page.waitForFunction(() => typeof window.c3Ret === 'function');
   let fails = 0;
-  const set = async c => { await page.selectOption('#rrArea', c.area); await page.fill('#rrPrice', String(c.price)); await page.fill('#rrRent', String(c.rent)); await page.fill('#rrHoa', String(c.hoa)); await page.fill('#rrIns', String(c.ins)); await page.selectOption('#rrMgmt', c.mgmt); await page.selectOption('#rrAllow', c.allow); await page.dispatchEvent('#rrPrice', 'input'); };
-  const read = () => page.evaluate(() => ({
-    noi: document.getElementById('rrNoi').textContent, cap: document.getElementById('rrCap').textContent, tax: document.getElementById('rrTax').textContent,
-    c100: document.getElementById('rrC100').textContent, c110: document.getElementById('rrC110').textContent, c125: document.getElementById('rrC125').textContent,
-    verdict: document.getElementById('rrVerdict').textContent, rects: document.querySelectorAll('#rrChart rect').length,
-    vis: ['rrNoi', 'rrCap', 'rrTax', 'rrC125', 'rrVerdict', 'rrChart'].every(id => { const b = document.getElementById(id).getBoundingClientRect(); return b.width > 0 && b.height > 0; }),
-  }));
+  const ok = (cond, label, got, exp) => { if (!cond) fails++; console.log(`${cond ? 'ok  ' : 'FAIL'} ${label}: got "${got}" expected "${exp}"`); };
+
   for (const c of CASES) {
-    await set(c);
-    const g = await read();
-    const checks = [['left', g.noi === c.noi, g.noi, c.noi], ['return', g.cap === c.cap, g.cap, c.cap], ['tax', g.tax === c.tax, g.tax, c.tax], ['/1.00', g.c100 === c.c100, g.c100, c.c100], ['/1.10', g.c110 === c.c110, g.c110, c.c110], ['/1.25', g.c125 === c.c125, g.c125, c.c125], ['verdict', g.verdict.includes(c.verdictHas), g.verdict.slice(0, 40), c.verdictHas], ['visible', g.vis, String(g.vis), 'true']];
-    for (const [k, ok, got, exp] of checks) { if (!ok) fails++; console.log(`${ok ? 'ok  ' : 'FAIL'} case ${c.name} ${k}: got "${got}" expected "${exp}"`); }
-    console.log(`     case ${c.name} chart rects=${g.rects}`);
+    await page.selectOption('#rrArea', c.area);
+    await page.fill('#rrPrice', String(c.price));
+    await page.fill('#rrRent', String(c.rent));
+    await page.fill('#rrIns', String(c.ins));
+    await page.fill('#rrHoa', String(c.hoa));
+    await page.selectOption('#rrAllow', c.allow);
+    await page.dispatchEvent('#rrPrice', 'input');
+    const g = await page.evaluate(() => {
+      const t = id => document.getElementById(id).textContent;
+      const vis = ['rrCapM', 'rrCapS', 'rrNoiM', 'rrNoiS', 'rrVerdict'].every(id => {
+        const b = document.getElementById(id).getBoundingClientRect(); return b.width > 0 && b.height > 0;
+      });
+      return { capM: t('rrCapM'), capS: t('rrCapS'), noiM: t('rrNoiM'), noiS: t('rrNoiS'),
+        gross: t('rrGross'), vac: t('rrVac'), mgmt: t('rrMgmt'), tax: t('rrTax'), other: t('rrOther'),
+        c125: t('rrC125'), verdict: t('rrVerdict'), cls: document.getElementById('rrVerdict').className, vis };
+    });
+    for (const k of ['capM', 'capS', 'noiM', 'noiS', 'gross', 'vac', 'mgmt', 'tax', 'other', 'c125'])
+      ok(g[k] === c[k], `case ${c.name} ${k}`, g[k], c[k]);
+    ok(g.verdict.includes(c.verdict), `case ${c.name} verdict`, g.verdict.slice(0, 46), c.verdict);
+    ok(g.cls.includes(c.cls), `case ${c.name} verdict style`, g.cls, c.cls);
+    ok(g.vis, `case ${c.name} visible`, String(g.vis), 'true');
   }
-  /* ---- the map: nine regions, four toggles, tooltip on hover, focus and click, no data fill ---- */
+
+  /* ---- the satellite map ---- */
+  // the base image is lazy-loaded, so bring it on screen and let it decode first
+  await page.locator('#rrmapwrap').scrollIntoViewIfNeeded();
+  await page.waitForFunction(() => { const i = document.querySelector('#rrmapwrap img'); return i && i.complete && i.naturalWidth > 0; }, null, { timeout: 15000 });
   const m = await page.evaluate(() => {
-    const regions = [...document.querySelectorAll('#rrmap .rg')];
-    const fills = regions.map(r => r.querySelector('path').getAttribute('fill'));
-    return { regions: regions.length, buttons: document.querySelectorAll('#rrtog button').length, pressed: document.querySelectorAll('#rrtog button[aria-pressed="true"]').length, fills: [...new Set(fills)].length, legend: document.getElementById('rrleg').textContent.trim().slice(0, 60), ids: regions.map(r => r.dataset.id) };
+    const rg = [...document.querySelectorAll('#rrmapsvg .rg')];
+    const img = document.querySelector('#rrmapwrap img');
+    return { regions: rg.length, ids: rg.map(g => g.dataset.id),
+      fills: [...new Set(rg.map(g => g.querySelector('path').getAttribute('fill')))].length,
+      buttons: document.querySelectorAll('#rrtog button').length,
+      pressed: document.querySelectorAll('#rrtog button[aria-pressed="true"]').length,
+      labels: document.querySelectorAll('#rrmapsvg .lbl').length,
+      values: [...document.querySelectorAll('#rrmapsvg .val')].map(t => t.textContent).filter(Boolean).length,
+      legend: document.getElementById('rrleg').textContent.trim(),
+      imgOk: img && img.complete && img.naturalWidth > 1000,
+      imgW: img ? img.naturalWidth : 0, imgH: img ? img.naturalHeight : 0,
+      svgBox: document.getElementById('rrmapsvg').getBoundingClientRect().width };
   });
-  const mchecks = [['nine regions', m.regions === 9, m.regions, 9], ['four buttons', m.buttons === 4, m.buttons, 4], ['one pressed', m.pressed === 1, m.pressed, 1], ['ramp used', m.fills >= 3, m.fills, '>=3'], ['legend text', /Long-term return/.test(m.legend), m.legend, 'Long-term return']];
-  for (const [k, ok, got, exp] of mchecks) { if (!ok) fails++; console.log(`${ok ? 'ok  ' : 'FAIL'} map ${k}: got "${got}" expected "${exp}"`); }
-  await page.locator('#rrmap').scrollIntoViewIfNeeded();
-  await page.hover('#rrmap [data-id="surfside-beach"] path');
-  let tip = await page.evaluate(() => { const t = document.getElementById('rrtip'); const b = t.getBoundingClientRect(); return { shown: getComputedStyle(t).display !== 'none' && b.width > 0, text: t.textContent }; });
-  const hoverOk = tip.shown && /Surfside Beach \(ZIP 29575\)/.test(tip.text) && /Short-term return: 3\.4 to 5\.4 percent/.test(tip.text) && /Long-term rent: \$1,607/.test(tip.text);
-  if (!hoverOk) fails++; console.log(`${hoverOk ? 'ok  ' : 'FAIL'} map hover Surfside: "${tip.text.slice(0, 120)}"`);
-  await page.mouse.move(5, 5);
+  ok(m.regions === 8, 'map: eight areas', m.regions, 8);
+  ok(m.buttons === 4, 'map: four toggles', m.buttons, 4);
+  ok(m.pressed === 1, 'map: one toggle pressed', m.pressed, 1);
+  ok(m.labels === 8, 'map: eight labels', m.labels, 8);
+  ok(m.values === 8, 'map: eight values drawn', m.values, 8);
+  ok(m.fills >= 4, 'map: colour ramp in use', m.fills, '>=4');
+  ok(m.imgOk, 'map: satellite image loaded', `${m.imgW}x${m.imgH}`, 'natural width > 1000');
+  ok(m.svgBox > 200, 'map: overlay sized', Math.round(m.svgBox), '>200');
+  ok(/Long-term return/.test(m.legend), 'map: legend text', m.legend.slice(0, 40), 'Long-term return');
+
+  await page.locator('#rrmapwrap').scrollIntoViewIfNeeded();
+  await page.hover('#rrmapsvg [data-id="myrtle-beach"] path');
+  let tip = await page.evaluate(() => { const t = document.getElementById('rrtip');
+    return { shown: getComputedStyle(t).display !== 'none' && t.getBoundingClientRect().width > 0, text: t.textContent }; });
+  ok(tip.shown && /Myrtle Beach/.test(tip.text) && /7\.5%/.test(tip.text) && /8\.8%/.test(tip.text),
+    'map: hover shows both manager cases', tip.text.slice(0, 90), 'Myrtle Beach 7.5% / 8.8%');
+
+  await page.mouse.move(4, 4);
   await page.click('#rrtog button[data-k="str"]');
-  const cf = await page.evaluate(() => ({ fill: document.querySelector('#rrmap [data-id="carolina-forest"] path').getAttribute('fill'), pressed: document.querySelector('#rrtog button[aria-pressed="true"]').dataset.k, legend: document.getElementById('rrleg').textContent }));
-  const cfOk = cf.fill === '#e6e0d6' && cf.pressed === 'str' && /no data/.test(cf.legend);
-  if (!cfOk) fails++; console.log(`${cfOk ? 'ok  ' : 'FAIL'} map short-term toggle: Carolina Forest fill ${cf.fill}, pressed ${cf.pressed}, legend "${cf.legend.slice(0, 80)}"`);
-  await page.focus('#rrmap [data-id="conway"]');
-  tip = await page.evaluate(() => { const t = document.getElementById('rrtip'); return { shown: getComputedStyle(t).display !== 'none', text: t.textContent }; });
-  const focusOk = tip.shown && /Conway \(ZIP 29526\)/.test(tip.text);
-  if (!focusOk) fails++; console.log(`${focusOk ? 'ok  ' : 'FAIL'} map keyboard focus Conway: "${tip.text.slice(0, 60)}"`);
+  const cf = await page.evaluate(() => ({
+    fill: document.querySelector('#rrmapsvg [data-id="carolina-forest"] path').getAttribute('fill'),
+    val: document.querySelector('#rrmapsvg [data-val="carolina-forest"]').textContent,
+    legend: document.getElementById('rrleg').textContent }));
+  ok(cf.fill === '#8d9298' && cf.val === 'not measured' && /not measured/.test(cf.legend),
+    'map: Carolina Forest reads as not measured', `${cf.fill} / ${cf.val}`, '#8d9298 / not measured');
+
+  await page.focus('#rrmapsvg [data-id="conway"]');
+  tip = await page.evaluate(() => ({ shown: getComputedStyle(document.getElementById('rrtip')).display !== 'none',
+    text: document.getElementById('rrtip').textContent }));
+  ok(tip.shown && /Conway/.test(tip.text), 'map: keyboard focus opens the tooltip', tip.text.slice(0, 40), 'Conway');
   await page.keyboard.press('Enter');
-  const on = await page.evaluate(() => document.querySelector('#rrmap [data-id="conway"]').classList.contains('on'));
-  if (!on) fails++; console.log(`${on ? 'ok  ' : 'FAIL'} map Enter pins the tooltip`);
-  await page.click('#rrmap [data-id="carolina-forest"] path');
-  tip = await page.evaluate(() => document.getElementById('rrtip').textContent);
-  const cfTip = /Carolina Forest \(ZIP 29579\)/.test(tip) && /Short-term: no data/.test(tip);
-  if (!cfTip) fails++; console.log(`${cfTip ? 'ok  ' : 'FAIL'} map click Carolina Forest: "${tip.slice(0, 90)}"`);
-  /* ---- the three static charts render with bars ---- */
-  const charts = await page.evaluate(() => [...document.querySelectorAll('main svg[role="img"]')].map(s => ({ label: s.getAttribute('aria-label').slice(0, 40), rects: s.querySelectorAll('rect').length, w: s.getBoundingClientRect().width })));
-  for (const c of charts) console.log(`     chart "${c.label}" rects=${c.rects} width=${Math.round(c.w)}`);
-  const chartOk = charts.filter(c => c.rects >= 6 && c.w > 200).length >= 4;
-  if (!chartOk) fails++; console.log(`${chartOk ? 'ok  ' : 'FAIL'} four charts with bars and width`);
+  const pinned = await page.evaluate(() => document.querySelector('#rrmapsvg [data-id="conway"]').classList.contains('on'));
+  ok(pinned, 'map: Enter pins the tooltip', String(pinned), 'true');
+
+  /* ---- the three charts ---- */
+  const charts = await page.evaluate(() => [...document.querySelectorAll('main svg[role="img"]')]
+    .map(s => ({ label: (s.getAttribute('aria-label') || '').slice(0, 44), rects: s.querySelectorAll('rect').length, w: s.getBoundingClientRect().width })));
+  charts.forEach(c => console.log(`     chart "${c.label}" rects=${c.rects} width=${Math.round(c.w)}`));
+  ok(charts.filter(c => c.rects >= 6 && c.w > 300).length >= 3, 'three charts drawn and sized',
+    charts.filter(c => c.rects >= 6 && c.w > 300).length, '>=3');
+
   if (DIR) {
     fs.mkdirSync(DIR, { recursive: true });
-    const shots = [['#rrtool', 'returns-calc.png'], ['#rrmap', 'returns-map.png']];
-    const docBox = (sel, i) => page.evaluate(([sel, i]) => { const el = document.querySelectorAll(sel)[i]; const r = el.getBoundingClientRect(); return { x: r.left + window.scrollX, y: r.top + window.scrollY, width: Math.ceil(r.width), height: Math.ceil(r.height) }; }, [sel, i]);
-    const n = await page.evaluate(() => document.querySelectorAll('main svg[role="img"]').length);
-    for (let i = 0; i < n; i++) { const bb = await docBox('main svg[role="img"]', i); if (bb.width > 200 && bb.height > 20) await page.screenshot({ path: `${DIR}/returns-chart-${i}.png`, clip: bb, fullPage: true, timeout: 30000 }).catch(e => console.log('screenshot skipped: ' + e.message.split('\n')[0])); }
-    for (const [sel, file] of shots) { const bb = await docBox(sel, 0); await page.screenshot({ path: `${DIR}/${file}`, clip: bb, fullPage: true, timeout: 30000 }).catch(e => console.log('screenshot skipped: ' + e.message.split('\n')[0])); }
+    const svgs = await page.$$('main svg[role="img"]');
+    for (let i = 0; i < svgs.length; i++) {
+      const bb = await svgs[i].boundingBox();
+      if (bb && bb.width > 300) { await svgs[i].scrollIntoViewIfNeeded(); await svgs[i].screenshot({ path: `${DIR}/rr-chart-${i}.png`, timeout: 25000 }).catch(e => console.log('screenshot skipped: ' + e.message.split('\n')[0])); }
+    }
+    for (const [sel, file] of [['#rrtool', 'rr-calc.png'], ['#rrmapwrap', 'rr-map.png']]) {
+      const el = await page.$(sel); await el.scrollIntoViewIfNeeded();
+      await el.screenshot({ path: `${DIR}/${file}`, timeout: 25000 }).catch(e => console.log('screenshot skipped: ' + e.message.split('\n')[0]));
+    }
   }
+
   await page.setViewportSize({ width: 320, height: 700 });
   await page.dispatchEvent('#rrPrice', 'input');
   const docW = await page.evaluate(() => document.documentElement.scrollWidth);
-  if (docW > 320) { fails++; console.log('FAIL 320px: document scrolls sideways, width ' + docW); } else console.log('ok   320px: no sideways scroll');
+  ok(docW <= 320, '320px: no sideways scroll', docW, '<=320');
+
   console.log(errors.length ? 'ERRORS:\n' + errors.join('\n') : 'no page errors');
-  console.log(fails ? `FAILS=${fails}` : 'ALL CASES PASS');
+  console.log(fails || errors.length ? `FAILS=${fails}` : 'ALL CHECKS PASS');
   await browser.close();
   process.exit(fails || errors.length ? 1 : 0);
 })();
