@@ -140,7 +140,7 @@ module.exports = {
   shortAnswer: `Houses, mostly. Builders were allowed to start ${fmt(y2025)} homes in the Myrtle Beach metro in 2025 and ${fmt(ytdNow)} from ${ytdLabel}. That is ${p1(Math.abs(ytdChg))} percent ${ytdChg < 0 ? "below" : "above"} the same months a year earlier. The unincorporated county has ${fmt(D.remaining_total)} more units approved and not yet built, most of them in Longs, Carolina Forest, Surfside and Burgess. Three hospitals hold state licenses and are not yet fully open. Interstate 73 is bought right of way and a set of plans, with no construction contract and no construction money. The roads under way are US 501, the downtown 501 realignment, US 701 north of Conway and the US 17 Bypass. The airport opened a $93.5 million terminal in December 2025 and has carried fewer passengers since. This page is rebuilt each month from the federal permit count and the county's data.`,
   sections: [
     { h2: "What is being built in Myrtle Beach right now?", html:
-      h.p(`The table is the whole page in six lines. Each row names the source and the date its data runs to. The sections below have the detail.`) +
+      h.p(`Each row names the source and the date its data runs to. The sections below have the detail.`) +
       T_SUM +
       h.p(`Two things the owner of a rental here asks about are not on the list. Nothing is under construction on Interstate 73. No new bridge to the beach has a contract. The section on roads has what is funded and what is only planned.`) },
     { h2: "How many houses are being built?", html: (bg) =>

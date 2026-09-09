@@ -2065,6 +2065,73 @@ standalone returns artifact
 shows the 2026-09-08 build: the service refused a republish without a full
 read of the live copy, so the combined link is the current one for that page.
 
+## 2026-09-09, later: his second pass on the returns page
+
+**Applied.** Hero sub cut to one plain line ("about 4 to 9 percent of the price
+in rent each year"). "Which price should you divide the rent by?" became his
+title, "How expensive are rental properties in Myrtle Beach?". The CTA is
+"Have us find you your next investment" and its sub names off-market
+properties. The rental analyzer is a brass CTA button under the calculator,
+not a link in a footnote. Deleted: the Murrells Inlet ZIP paragraph, the
+platform-fee caution, "The rent return is the same every year you own it."
+"That gap is the manager" became "This relies on a good manager."
+
+**Meta-commentary swept from all five pages**, per "delete this type of speech
+from all 5 pages". Removed: "This is the question that decides whether the
+market looks good or bad", "the whole page in six lines", "The next section is
+why that matters more than anything else on this page", "The numbers below are
+the whole page", "the one people argue with", "That is the argument for", and
+a "from the next section" cross-reference on the J-1 page. The pattern to keep
+out is any sentence about the page itself rather than about rentals.
+
+**The nightly-rental section is rebuilt around occupancy, which answers his
+question.** He asked why short-term does not beat long-term and guessed the
+average occupancy. He was right, and the old chart was also unfair: it put
+long-term (on a cheap house) beside short-term (on a typical house), so it
+read as long-term winning everywhere. Every bar is now the same house:
+a yearly lease, nightly at the market's average occupancy, and nightly at 60
+percent. Costs are a single 55 percent of revenue, the midpoint of the
+researched 45 to 65. Revenue scales with occupancy at the same nightly rate,
+which is sound because AirROI's revenue is not rate times 365 times occupancy
+(its listings are not all available all year, ratio 0.55 to 0.69).
+
+**What that shows, and it is worth him seeing:** at average occupancy the
+nightly let already beats a yearly lease in the beach markets, and loses in
+Myrtle Beach city, Conway and Little River. At 60 percent every market wins.
+The new last column is the occupancy a nightly let needs to match a yearly
+lease: 20.7 percent in Murrells Inlet, 21.0 in Surfside, 35.8 in Myrtle Beach
+city, 58.1 in Little River. That single column answers the strategy question
+better than any prose on the page.
+
+**The appreciation chart is his design:** a $150,000 purchase, stacked columns
+at 3, 5 and 10 years, grey for what you paid, teal for appreciation at the
+metro's ten-year rate, brass for rent kept. $150,000 in, $392,335 after ten
+years. The rate is labelled on the chart and the text says plainly it is a
+record and not a promise, that the same measure fell over the last three
+years, and that rent is held flat so the brass side is understated.
+
+**Verification.** All calculator cases, the map and the three charts pass;
+`verify-forms.js` clean at three widths; preflight 0. The only harness flag
+left is the 3.45:1 brass eyebrow, sitewide, still his call.
+
+**Stats he asked about but told me not to add yet** (my recommendation, in
+order): the break-even occupancy column, which I did add because it replaced
+two confusing expense columns; nightly revenue year over year (Myrtle Beach
+-10.7 percent, Garden City -11.1, Surfside -10.1, against Pawleys +9.9 and
+Conway +9.2); asking-rent growth by ZIP (North Myrtle Beach +10.2 percent,
+Little River -3.8); the June-to-January revenue swing; and listing counts as a
+competition measure (8,583 in Myrtle Beach). Cash-on-cash with a loan is the
+one an investor asks for most and non-negotiable 3 blocks it, because it
+cannot be computed without a rate.
+
+**Preview links after this round.** Combined, all six pages:
+https://claude.ai/code/artifact/4f1a338e-bcb8-4271-8390-8731a2d2e646 .
+Returns alone:
+https://claude.ai/code/artifact/9857df6d-674f-4703-b9c4-1ce49e9254f2 . The
+older combined (003da5fd) and returns (3b6a6d25) links are stale; the artifact
+service refuses to overwrite them without a full read of the live copy, so
+they were replaced rather than updated.
+
 ## Suggested order for the next session
 
 0000. **The returns page round 2 is on the branch** (section above). Expect his

@@ -51,7 +51,9 @@ const GTCALC = "https://gtcountysc.gov/385/Property-Tax-Calculator";
 const VAC = 0.10;          // vacancy and upkeep, share of rent (owner, 2026-09-09)
 const MGMT = 0.10;         // management, share of rent, when a manager runs it
 const INS = 3050;          // landlord insurance, midpoint of the site's $1,700-$4,400
-const STR_LO = 0.45, STR_HI = 0.65;   // short-term expense share, low and high
+const STR_EXP = 0.55;      // short-term costs, share of revenue (midpoint of the researched 45-65%)
+const GOOD_OCC = 60;       // what a well-run listing books (owner, 2026-09-09)
+const START = 150000;      // the worked purchase price in the appreciation chart (his figure)
 
 /* ---------------- data ---------------- */
 const M = D.meta.metro_zhvi.find(x => x.label === "Myrtle Beach, SC");
@@ -85,7 +87,12 @@ const areas = src.map(s => {
   const twin = s.slug === "murrells-inlet" ? D.submarkets.find(x => x.slug === "garden-city") : null;
   const rev = twin ? (s.str_avg_annual_revenue_airroi + twin.str_avg_annual_revenue_airroi) / 2 : s.str_avg_annual_revenue_airroi;
   const occ = twin ? (s.str_annual_occupancy_airroi_pct + twin.str_annual_occupancy_airroi_pct) / 2 : s.str_annual_occupancy_airroi_pct;
-  const strAt = (price, share) => rev ? rev * (1 - share) / price * 100 : null;
+  /* Revenue scales with occupancy at the same nightly rate: a listing booking
+     60 percent of the nights it offers earns 60/avg times what the average one
+     earns. AirROI's revenue is not rate x 365 x occupancy (its listings are not
+     all available all year), so scaling its revenue is the sound move, not
+     rebuilding it from the rate. */
+  const netAtOcc = (o) => rev ? rev * (o / occ) * (1 - STR_EXP) : null;
   return {
     id: s.slug, name: MERGED[s.slug] || s.name, zip: s.zip, rent, mills, fees,
     low, mid: s.zhvi,
@@ -94,8 +101,8 @@ const areas = src.map(s => {
     a5: ann(s.zhvi, s.zhvi_5y, 5), a10: ann(s.zhvi, s.zhvi_10y, 10),
     y3: (s.zhvi / s.zhvi_3y - 1) * 100,
     rev, occ,
-    strHi: rev ? strAt(s.zhvi, STR_LO) : null,
-    strLo: rev ? strAt(s.zhvi, STR_HI) : null,
+    strAvg: rev ? netAtOcc(occ) / s.zhvi * 100 : null,
+    strGood: rev ? netAtOcc(GOOD_OCC) / s.zhvi * 100 : null,
   };
 });
 const by = (id) => areas.find(a => a.id === id);
@@ -106,12 +113,20 @@ const mb = by("myrtle-beach"), pi = by("pawleys-island"), lr = by("little-river"
 /* Short-term markets are AirROI's, not ZIPs: Garden City and Murrells Inlet are
    measured separately, and there is no Carolina Forest market. */
 const strMarkets = D.submarkets.filter(s => s.str_avg_annual_revenue_airroi).map(s => {
-  const rev = s.str_avg_annual_revenue_airroi;
-  return { name: s.name, listings: s.str_active_listings, occ: s.str_annual_occupancy_airroi_pct,
-    rev, yoy: s.str_revenue_yoy_pct, price: s.zhvi,
-    capHi: rev * (1 - STR_LO) / s.zhvi * 100,
-    capLo: rev * (1 - STR_HI) / s.zhvi * 100 };
-}).sort((a, b) => b.capHi - a.capHi);
+  const rev = s.str_avg_annual_revenue_airroi, occ = s.str_annual_occupancy_airroi_pct;
+  const gross = s.ltr_rent_fmr_3br_fy2027 * 12;
+  const tax = s.zhvi * 0.06 * s.property_tax_mills_6pct / 1000 + (s.property_tax_extra_fees || 0);
+  /* The same house let on a yearly lease, so the chart compares the strategy and
+     not the price. */
+  const ltrNet = gross - gross * VAC - gross * MGMT - tax - INS;
+  const netAt = (o) => rev * (o / occ) * (1 - STR_EXP);
+  return { name: s.name, listings: s.str_active_listings, occ, rev, yoy: s.str_revenue_yoy_pct,
+    price: s.zhvi, ltrNet, ltrCap: ltrNet / s.zhvi * 100,
+    avgNet: netAt(occ), goodNet: netAt(GOOD_OCC),
+    capAvg: netAt(occ) / s.zhvi * 100, capGood: netAt(GOOD_OCC) / s.zhvi * 100,
+    /* the occupancy at which a short-term let matches the yearly lease */
+    breakEven: occ * (ltrNet / (1 - STR_EXP)) / rev };
+}).sort((a, b) => b.capGood - a.capGood);
 
 const fmt$ = (n) => "$" + Math.round(n).toLocaleString("en-US");
 const p1 = (n) => (Math.round(n * 10) / 10).toFixed(1);
@@ -123,7 +138,8 @@ const rng = (arr, f) => { const v = arr.map(f).filter(x => x !== null); return [
 const [lowMgrLo, lowMgrHi] = rng(horry, a => a.lowMgr && a.lowMgr.cap);
 const [lowSelfLo, lowSelfHi] = rng(horry, a => a.lowSelf && a.lowSelf.cap);
 const [midMgrLo, midMgrHi] = rng(horry, a => a.midMgr.cap);
-const [strCapLo, strCapHi] = [Math.min(...strMarkets.map(m => m.capLo)), Math.max(...strMarkets.map(m => m.capHi))];
+const [strCapLo, strCapHi] = [Math.min(...strMarkets.map(m => m.capAvg)), Math.max(...strMarkets.map(m => m.capGood))];
+const strBeat = strMarkets.filter(m => m.capAvg > m.ltrCap);
 const [occLo, occHi] = rng(strMarkets, m => m.occ);
 const sortBy = (arr, f, desc = true) => arr.slice().sort((a, b) => desc ? f(b) - f(a) : f(a) - f(b));
 const capsAt6 = areas.filter(a => a.lowMgr && a.lowMgr.cap >= 6).map(a => a.name);
@@ -133,9 +149,10 @@ const NAVY = "#1c2028", MUTED = "rgba(28,32,40,.72)", BRASS = "#c4783a", BRASS_L
       TEAL = "#2f6f7e", TEAL_LT = "#9dc3cc", RED = "#a8412f", GRID = "rgba(28,32,40,.13)";
 const SVGSTYLE = 'style="display:block;width:100%;height:auto;font-family:var(--sans)"';
 
-/* Paired bars: one row per area, a bar for "with a manager" and one for "without". */
+/* One row per area, with two or three bars in it. `rows[i].bars` holds the
+   values, `opt.colors` and `opt.labels` describe them in the same order. */
 function pairChart(rows, opt) {
-  const W = 760, L = 208, R = 74, BW = W - L - R, rowH = 46, H = rows.length * rowH + 62;
+  const W = 760, L = 208, R = 74, BW = W - L - R, rowH = rows[0].bars.length > 2 ? 48 : 46, H = rows.length * rowH + 62;
   const max = opt.max, x = (v) => Math.max(2, Math.round(BW * v / max));
   let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(opt.aria)}" ${SVGSTYLE}>`;
   for (let g = 0; g <= max; g += opt.step) {
@@ -147,10 +164,10 @@ function pairChart(rows, opt) {
     const y = i * rowH + 22;
     s += `<text x="${L - 10}" y="${y + 14}" font-size="12.5" text-anchor="end" fill="${NAVY}">${esc(r.name)}</text>`;
     s += `<text x="${L - 10}" y="${y + 30}" font-size="11" text-anchor="end" fill="${MUTED}">${esc(r.note)}</text>`;
-    [[r.a, opt.aColor, 0], [r.b, opt.bColor, 15]].forEach(([v, col, dy]) => {
-      const w = x(v);
-      s += `<rect x="${L}" y="${y + dy}" width="${w}" height="13" fill="${col}" rx="2"><title>${esc(r.name)}: ${p1(v)} percent</title></rect>`;
-      s += `<text x="${L + w + 6}" y="${y + dy + 11}" font-size="12" fill="${NAVY}">${p1(v)}%</text>`;
+    r.bars.forEach((v, bi) => {
+      const w = x(v), dy = bi * (r.bars.length > 2 ? 11 : 15), bh = r.bars.length > 2 ? 9 : 13;
+      s += `<rect x="${L}" y="${y + dy}" width="${w}" height="${bh}" fill="${opt.colors[bi]}" rx="2"><title>${esc(r.name)}, ${esc(opt.labels[bi])}: ${p1(v)} percent</title></rect>`;
+      s += `<text x="${L + w + 6}" y="${y + dy + bh - 1}" font-size="11.5" fill="${NAVY}">${p1(v)}%</text>`;
     });
   });
   if (opt.mark) {
@@ -159,61 +176,78 @@ function pairChart(rows, opt) {
     s += `<text x="${mx}" y="12" font-size="12.5" font-weight="600" text-anchor="middle" fill="${NAVY}">${esc(opt.markLabel)}</text>`;
   }
   const by0 = rows.length * rowH + 48;
-  s += `<rect x="${L}" y="${by0}" width="12" height="12" fill="${opt.aColor}" rx="2"/><text x="${L + 18}" y="${by0 + 10}" font-size="12.5" fill="${NAVY}">${esc(opt.aLabel)}</text>`;
-  s += `<rect x="${L + 250}" y="${by0}" width="12" height="12" fill="${opt.bColor}" rx="2"/><text x="${L + 268}" y="${by0 + 10}" font-size="12.5" fill="${NAVY}">${esc(opt.bLabel)}</text>`;
+  let lx = L;
+  opt.labels.forEach((lab, i) => {
+    s += `<rect x="${lx}" y="${by0}" width="12" height="12" fill="${opt.colors[i]}" rx="2"/><text x="${lx + 18}" y="${by0 + 10}" font-size="12" fill="${NAVY}">${esc(lab)}</text>`;
+    lx += 24 + lab.length * 6.1;
+  });
   return s + "</svg>";
 }
 
 const CHART_LTR = pairChart(
   sortBy(areas.filter(a => a.lowMgr), a => a.lowMgr.cap).map(a => ({
     name: a.name, note: `${fmt$(a.low)} house, ${fmt$(a.rent)} rent`,
-    a: a.lowMgr.cap, b: a.lowSelf.cap })),
-  { max: 10, step: 2, mark: 6, markLabel: "6% target", aColor: BRASS, bColor: BRASS_LT,
-    aLabel: "With a property manager", bLabel: "Without one",
+    bars: [a.lowMgr.cap, a.lowSelf.cap] })),
+  { max: 10, step: 2, mark: 6, markLabel: "6% target", colors: [BRASS, BRASS_LT],
+    labels: ["With a property manager", "Without one"],
     aria: "Yearly return on a long-term rental by area, with and without a property manager" });
 
 const CHART_STR = pairChart(
   strMarkets.map(m => ({
-    name: m.name, note: `${fmt$(m.rev)} a year, ${Math.round(m.occ)}% of nights`,
-    a: m.capLo, b: m.capHi })),
-  { max: 10, step: 2, mark: 6, markLabel: "6% target", aColor: TEAL, bColor: TEAL_LT,
-    aLabel: "After 65% expenses", bLabel: "After 45% expenses",
-    aria: "Yearly return on a short-term rental by area, at high and low expense assumptions" });
+    name: m.name, note: `${Math.round(m.occ)}% of nights booked, ${fmt$(m.price)} house`,
+    bars: [m.ltrCap, m.capAvg, m.capGood] })),
+  { max: 10, step: 2, mark: 6, markLabel: "6% target", colors: [BRASS, TEAL, TEAL_LT],
+    labels: ["Yearly lease", "Nightly, average", "Nightly at 60%"],
+    aria: "The same house let by the year, let nightly at the market's average occupancy, and let nightly at 60 percent occupancy" });
 
-/* The two parts of the return, stacked, over three windows. Large by request. */
+/* What a purchase turns into. Owner, 2026-09-09: "showing what it will be worth
+   if you bought at 150 in 3 5 and 10 years." Stacked columns: what you paid, what
+   it appreciates, and the rent kept along the way. The growth rate is the metro's
+   own ten-year record, named on the chart, and the page says it is not a forecast.
+   Rent is held flat, which understates the later years. */
+const appNoi = (() => {
+  const gross = mb.rent * 12;
+  const tax = START * 0.06 * mb.mills / 1000 + mb.fees;
+  return gross - gross * VAC - gross * MGMT - tax - INS;
+})();
+const RATE = metro.a10 / 100;
+const YEARS = [3, 5, 10].map(y => {
+  const value = START * Math.pow(1 + RATE, y);
+  const rent = appNoi * y;
+  return { y, value, gain: value - START, rent, total: value + rent };
+});
 function appreciationChart() {
-  const W = 760, H = 300, L = 92, R = 150, T = 16, BW = W - L - R;
-  const wins = [
-    { label: "3 years", app: metro.a3 }, { label: "5 years", app: metro.a5 }, { label: "10 years", app: metro.a10 },
-  ];
-  const rent = mb.lowMgr.cap;
-  const max = 14, rowH = 76;
-  const x = (v) => L + BW * v / max;
-  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Rent and appreciation added together, over three, five and ten years" ${SVGSTYLE}>`;
-  for (let g = 0; g <= max; g += 2) {
-    s += `<line x1="${x(g)}" y1="${T - 6}" x2="${x(g)}" y2="${T + wins.length * rowH - 12}" stroke="${GRID}"/>`;
-    s += `<text x="${x(g)}" y="${T + wins.length * rowH + 6}" font-size="12.5" text-anchor="middle" fill="${MUTED}">${g}%</text>`;
+  const W = 760, H = 380, L = 74, R = 22, T = 44, B = 82;
+  const PW = W - L - R, PH = H - T - B;
+  const max = Math.ceil(Math.max(...YEARS.map(v => v.total)) / 50000) * 50000;
+  const colW = PW / YEARS.length, bw = Math.min(132, colW * 0.54);
+  const y = (v) => T + PH * (1 - v / max);
+  const k = (v) => "$" + Math.round(v / 1000) + "k";
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="What a ${Math.round(START / 1000)} thousand dollar rental turns into after three, five and ten years" ${SVGSTYLE}>`;
+  for (let g = 0; g <= max; g += 100000) {
+    s += `<line x1="${L}" y1="${y(g)}" x2="${W - R}" y2="${y(g)}" stroke="${GRID}"/>`;
+    s += `<text x="${L - 8}" y="${y(g) + 4}" font-size="12" text-anchor="end" fill="${MUTED}">${k(g)}</text>`;
   }
-  wins.forEach((w, i) => {
-    const y = T + i * rowH;
-    s += `<text x="${L - 12}" y="${y + 26}" font-size="14" font-weight="600" text-anchor="end" fill="${NAVY}">${w.label}</text>`;
-    const rw = x(rent) - L;
-    s += `<rect x="${L}" y="${y + 6}" width="${rw}" height="30" fill="${BRASS}" rx="3"><title>Rent after costs: ${p1(rent)} percent</title></rect>`;
-    if (rw > 74) s += `<text x="${L + 10}" y="${y + 26}" font-size="13" font-weight="600" fill="#fff">${p1(rent)}%</text>`;
-    if (w.app >= 0) {
-      const aw = x(rent + w.app) - x(rent);
-      s += `<rect x="${x(rent)}" y="${y + 6}" width="${Math.max(2, aw)}" height="30" fill="${TEAL}" rx="3"><title>Appreciation: ${sp(w.app)} percent a year</title></rect>`;
-      if (aw > 74) s += `<text x="${x(rent) + 10}" y="${y + 26}" font-size="13" font-weight="600" fill="#fff">${sp(w.app)}%</text>`;
-      s += `<text x="${x(rent + w.app) + 10}" y="${y + 26}" font-size="14" font-weight="600" fill="${NAVY}">${sp(rent + w.app)}% a year</text>`;
-    } else {
-      const aw = x(rent) - x(rent + w.app);
-      s += `<rect x="${x(rent + w.app)}" y="${y + 6}" width="${Math.max(2, aw)}" height="30" fill="${RED}" rx="3"><title>Appreciation: ${sp(w.app)} percent a year</title></rect>`;
-      s += `<text x="${x(rent) + 10}" y="${y + 26}" font-size="14" font-weight="600" fill="${NAVY}">${sp(rent + w.app)}% a year, after ${sp(w.app)}% appreciation</text>`;
-    }
+  // the line you started from
+  s += `<line x1="${L}" y1="${y(START)}" x2="${W - R}" y2="${y(START)}" stroke="${NAVY}" stroke-width="2" stroke-dasharray="6 4"/>`;
+  YEARS.forEach((v, i) => {
+    const cx = L + colW * i + colW / 2, x0 = cx - bw / 2;
+    const seg = (from, to, fill, label) => {
+      const top = y(to), h2 = y(from) - y(to);
+      s += `<rect x="${x0}" y="${top}" width="${bw}" height="${h2}" fill="${fill}"><title>${esc(label)}</title></rect>`;
+      if (h2 > 22) s += `<text x="${cx}" y="${top + h2 / 2 + 5}" font-size="13" font-weight="600" text-anchor="middle" fill="#fff">${k(to - from)}</text>`;
+    };
+    seg(0, START, "#8a8378", `What you paid: ${fmt$(START)}`);
+    seg(START, v.value, TEAL, `Appreciation: ${fmt$(v.gain)}`);
+    seg(v.value, v.total, BRASS, `Rent kept: ${fmt$(v.rent)}`);
+    s += `<text x="${cx}" y="${y(v.total) - 10}" font-size="16" font-weight="700" text-anchor="middle" fill="${NAVY}">${fmt$(v.total)}</text>`;
+    s += `<text x="${cx}" y="${T + PH + 22}" font-size="14" font-weight="600" text-anchor="middle" fill="${NAVY}">${v.y} years</text>`;
   });
-  const by0 = T + wins.length * rowH + 26;
-  s += `<rect x="${L}" y="${by0}" width="13" height="13" fill="${BRASS}" rx="2"/><text x="${L + 19}" y="${by0 + 11}" font-size="13" fill="${NAVY}">Rent left after costs, with a manager</text>`;
-  s += `<rect x="${L + 300}" y="${by0}" width="13" height="13" fill="${TEAL}" rx="2"/><text x="${L + 319}" y="${by0 + 11}" font-size="13" fill="${NAVY}">Appreciation a year</text>`;
+  const by0 = H - 40;
+  [["#8a8378", "What you paid"], [TEAL, `Appreciation at ${p1(metro.a10)}% a year`], [BRASS, "Rent kept, after costs"]].forEach(([c, lab], i) => {
+    const lx = L + i * 232;
+    s += `<rect x="${lx}" y="${by0}" width="13" height="13" fill="${c}" rx="2"/><text x="${lx + 19}" y="${by0 + 11}" font-size="12.5" fill="${NAVY}">${esc(lab)}</text>`;
+  });
   return s + "</svg>";
 }
 const CHART_APP = appreciationChart();
@@ -224,7 +258,7 @@ const mapAreas = areas.map(a => ({
   poly: MAP.zips[a.zip],
   ltr: a.lowMgr ? +p1(a.lowMgr.cap) : null,
   ltrSelf: a.lowSelf ? +p1(a.lowSelf.cap) : null,
-  str: a.strHi ? +p1(a.strHi) : null, strLo: a.strLo ? +p1(a.strLo) : null,
+  str: a.strAvg !== null ? +p1(a.strAvg) : null, strGood: a.strGood !== null ? +p1(a.strGood) : null,
   price: a.low, mid: a.mid, rent: a.rent, occ: a.occ ? Math.round(a.occ) : null,
   app: +p1(a.a5),
   twin: a.id === "murrells-inlet",
@@ -309,7 +343,7 @@ function lines(a){
          "Rent "+money(a.rent)+" a month.",
          "Long-term return <i>"+a.ltr.toFixed(1)+"%</i> with a manager, <i>"+a.ltrSelf.toFixed(1)+"%</i> without."];
   if(a.str===null) L.push("Short-term rentals are not measured here.");
-  else L.push("Short-term return <i>"+a.strLo.toFixed(1)+"% to "+a.str.toFixed(1)+"%</i>, "+a.occ+"% of nights booked"+(a.twin?", averaging the two markets.":"."));
+  else L.push("Nightly return <i>"+a.str.toFixed(1)+"%</i> at this market's "+a.occ+"% occupancy, <i>"+a.strGood.toFixed(1)+"%</i> at 60%.");
   L.push("Appreciation "+(a.app>=0?"+":"")+a.app.toFixed(1)+"% a year over five years.");
   return L;}
 function show(a,x,y){tip.innerHTML="<b>"+a.n+"</b>"+lines(a).join("<br>");tip.style.display="block";
@@ -396,7 +430,12 @@ const TOOL = `
       <p class="rrverdict" id="rrVerdict"></p>
     </div>
   </div>
-  <div class="rrfoot">The tax uses the 6 percent rental ratio and this area's 2025 rate. Enter the insurance quote for the house when you have it. For a full report on one address, with the loan, the cash flow and nearby permits, use <a href="/invest/long-term-rental/" style="color:var(--navy);text-decoration:underline">the rental analyzer</a>.</div>
+  <div class="rrfoot">The tax uses the 6 percent rental ratio and this area's 2025 rate. Enter the insurance quote for the house when you have it.</div>
+</div>
+<div style="max-width:760px;margin:1.2rem 0 0;padding:1.2rem 1.3rem;background:var(--ivory-2);border-left:3px solid var(--brass)">
+  <p style="color:var(--navy);font-weight:600;margin-bottom:.4rem">Want the full report on one address?</p>
+  <p style="color:var(--muted);line-height:1.7;margin-bottom:.9rem">The rental analyzer takes an address and returns the value, the market rent, the coverage ratio, the cash flow and the permits filed nearby.</p>
+  <a class="btn btn-brass btn-lg" href="/invest/long-term-rental/">Open the rental analyzer</a>
 </div>
 <script>
   var RR_TAX=${JSON.stringify(Object.fromEntries(areas.map(a => [a.id, [a.mills, a.fees]])))};
@@ -436,7 +475,7 @@ const TILE = (big, label, note) => `<div style="background:#fff;border:1px solid
 const PANEL = `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));gap:.85rem;margin:1.1rem 0 1.3rem;max-width:760px">
 ${TILE(`${p1(lowMgrLo)}–${p1(lowMgrHi)}%`, "Long-term, with a manager", "Rent left after costs, on a rental bought in the cheaper third of Horry County")}
 ${TILE(`${p1(lowSelfLo)}–${p1(lowSelfHi)}%`, "Long-term, self-managed", "The same houses with no management fee")}
-${TILE(`${p1(strCapLo)}–${p1(strCapHi)}%`, "Short-term", "The average listing's revenue after 45 to 65 percent expenses")}
+${TILE(`${p1(strCapLo)}–${p1(strCapHi)}%`, "Nightly rental", "From the market's average occupancy up to a well-run 60 percent")}
 ${TILE(`${sp(metro.a5)}%`, "Appreciation a year", `Over five years. ${sp(metro.a10)} percent a year over ten, ${sp(metro.a3)} over three`)}
 </div>`;
 
@@ -466,14 +505,15 @@ const T_EX = h.table(["Line", "A year"], [
   [`<strong>Divided by the ${fmt$(mb.low)} price</strong>`, `<strong>${p1(mb.lowMgr.cap)} percent</strong>`],
 ]);
 
-const T_STR = h.table(["Market", "Listings", "Nights booked", "Revenue a listing", "Typical home", "After 65% costs", "After 45% costs"],
+const T_STR = h.table(["Market", "Listings", "Nights booked", "Revenue a listing", "Cap rate now", "Cap rate at 60%", "Occupancy to beat a yearly lease"],
   strMarkets.map(m => [m.name, m.listings.toLocaleString("en-US"), Math.round(m.occ) + "%", fmt$(m.rev) + " a year",
-    fmt$(m.price), p1(m.capLo) + "%", `<strong>${p1(m.capHi)}%</strong>`]));
+    p1(m.capAvg) + "%", `<strong>${p1(m.capGood)}%</strong>`,
+    m.breakEven > 100 ? "not reachable" : p1(m.breakEven) + "%"]));
 
 const best = (label, list, note) => [label, list, note];
 const T_BEST = h.table(["If you want", "Look at", "Why"], [
   best("The highest rent return", sortBy(areas.filter(a => a.low), a => a.lowMgr.cap).slice(0, 2).map(a => a.name).join(", "), "The rent is the same across Horry County. These have the cheapest houses."),
-  best("The highest short-term return", strMarkets.slice(0, 2).map(m => m.name).join(", "), "The most booking revenue for the price of a house there."),
+  best("The highest nightly return", strMarkets.slice(0, 2).map(m => m.name).join(", "), "The most booking revenue for the price of a house there."),
   best("The most nights booked", sortBy(strMarkets, m => m.occ).slice(0, 2).map(m => `${m.name} (${Math.round(m.occ)}%)`).join(", "), "Steadier bookings across the shoulder months."),
   best("The strongest appreciation", sortBy(areas, a => a.a5).slice(0, 2).map(a => `${a.name} (${sp(a.a5)}%)`).join(", "), "Five-year rate. Ten-year order differs."),
   best("The lowest price to start", sortBy(areas.filter(a => a.low), a => a.low, false).slice(0, 2).map(a => `${a.name} (${fmt$(a.low)})`).join(", "), "Less cash in, and the rent barely changes."),
@@ -496,27 +536,26 @@ module.exports = {
   eyebrow: "Rental returns",
   h1: "What return should a Myrtle Beach rental make?",
   h1em: "By area, with and without a manager.",
-  sub: `A Myrtle Beach rental returns ${p1(lowMgrLo)} to ${p1(lowMgrHi)} percent of its price a year after costs with a manager, and ${p1(lowSelfLo)} to ${p1(lowSelfHi)} percent without one. Appreciation comes on top.`,
+  sub: `Most Myrtle Beach rentals keep about 4 to 9 percent of the price in rent each year, after every cost. Whatever the house appreciates is on top of that.`,
   heroCta: { label: "Have us find top performing properties", href: "/invest/run-the-numbers/" },
   author: "devin",
-  shortAnswer: `Two numbers, and the price you buy at decides both. A Horry County rental bought in the cheaper third of the market keeps ${p1(lowMgrLo)} to ${p1(lowMgrHi)} percent of its price each year after costs, with a manager. Without a manager it keeps ${p1(lowSelfLo)} to ${p1(lowSelfHi)} percent. Appreciation has added ${p1(metro.a5)} percent a year over five years and ${p1(metro.a10)} percent over ten. Those are all-cash returns, before any loan. With a loan the rent has to cover the payment too, and our line is a 1.25 coverage ratio. The numbers below are the whole page.`,
+  shortAnswer: `Two numbers, and the price you buy at decides both. A Horry County rental bought in the cheaper third of the market keeps ${p1(lowMgrLo)} to ${p1(lowMgrHi)} percent of its price each year after costs, with a manager. Without a manager it keeps ${p1(lowSelfLo)} to ${p1(lowSelfHi)} percent. Appreciation has added ${p1(metro.a5)} percent a year over five years and ${p1(metro.a10)} percent over ten. Those are all-cash returns, before any loan. With a loan the rent has to cover the payment too, and our line is a 1.25 coverage ratio.`,
   sections: [
     { h2: "What return should you expect on a Myrtle Beach rental?", html:
       h.raw(PANEL) +
       h.p(`A rental pays you two ways. The rent left after the cost of owning the house, and the appreciation when you sell.`) +
       h.p(`The tiles above are all-cash returns, before any loan. A loan changes the cash you put in and adds a payment the rent has to cover. That is the coverage ratio, and it has its own line in the dealbreakers below.`) +
       T_TERMS +
-      h.p(`${h.ext(ARBOR, "A national research firm puts the cap rate on single-family rentals at 7.3 percent")} for late 2025. Myrtle Beach sits inside that range once you use the price a rental sells for. The next section is why that matters more than anything else on this page.`) },
+      h.p(`${h.ext(ARBOR, "A national research firm puts the cap rate on single-family rentals at 7.3 percent")} for late 2025. Myrtle Beach sits inside that range once you use the price a rental sells for.`) },
 
-    { h2: "Which price should you divide the rent by?", html: (bg) =>
-      h.p(`This is the question that decides whether the market looks good or bad, and it is easy to get wrong.`) +
+    { h2: "How expensive are rental properties in Myrtle Beach?", html: (bg) =>
       h.p(`${h.ext(ZILLOW, "Zillow publishes a typical value for every home in a ZIP code")}. In Murrells Inlet that is ${fmt$(mgc.mid)}. It counts oceanfront houses, second homes and everything else. Almost nobody buys that house as a rental.`) +
       h.p(`Zillow also publishes the value of the cheaper third of homes in the same ZIP. In Murrells Inlet that is ${fmt$(mgc.low)}. That is much closer to what a rental sells for here, and it is the price this page uses.`) +
       h.p(`The rent barely changes between the two. ${h.ext(FMR27, "The county's three-bedroom benchmark rent is " + fmt$(mb.rent))} either way. The price you divide by decides the whole return.`) +
       T_PRICE +
       h.p(`In the Myrtle Beach city core that is the difference between ${p1(mb.midMgr.cap)} percent and ${p1(mb.lowMgr.cap)} percent, on the same rent. Divide by the wrong price and a normal market looks like a bad one.`) +
       h.p(`One caution on the costs. This page keeps insurance at ${fmt$(INS)} on every house, which is the middle of our landlord range. A smaller house usually insures for less, so the real return on a cheaper house is a little higher than the table shows.`) +
-      h.cta("Not sure what a rental costs in an area?", "Tell us the area and what you want the house to do. We send you what is for sale now and what each one would return.", "Have us find top performing properties", "/invest/run-the-numbers/", bg) },
+      h.cta("Have us find you your next investment.", "Tell us the area and what you want the house to do. We send you what fits, including off-market properties that never reach the public sites, with the return run on each one.", "Have us find your next investment", "/invest/run-the-numbers/", bg) },
 
     { h2: "How much does a long-term rental make in each area?", html:
       h.p(`Each area has two bars. The dark bar is the return with a property manager taking 10 percent of the rent. The light bar is the same house with you managing it. Both allow 10 percent of the rent for empty months and repairs.`) +
@@ -528,14 +567,15 @@ module.exports = {
       h.p(`Property tax is the biggest cost after the allowance. A rental pays the 6 percent ratio, not the 4 percent a home you live in pays. ${h.a("/buyers/property-taxes/", "The property tax page")} has every district's rate, and ${h.a("/invest/landlord-insurance/", "the insurance page")} has the range.`) +
       h.p(`The 10 percent allowance for empty months and repairs is close to what the market runs. ${h.ext(FRED, "South Carolina's rental vacancy rate")} was 9.8 percent in 2025. A lender is stricter and ${h.ext("https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property", "counts only 75 percent of the rent")} when it decides your loan.`) },
 
-    { h2: "How much does a short-term rental make in each area?", html:
-      h.p(`${h.ext(AIRROI, "These are the average revenue and occupancy for every active listing")} in each market, August 2025 to July 2026, against the same rental prices. The dark bar takes 65 percent for costs and the light bar takes 45. Both cover management, cleaning, utilities, platform fees, the 6 percent tax and insurance.`) +
-      h.p(`One difference from the section above. That revenue is the average of every listing in a market, and most of them are beach properties, not the cheapest houses in the area. This section therefore divides by the typical home value instead of the cheaper third. Pairing beach revenue with the cheapest houses would flatter the number.`) +
+    { h2: "How much does a nightly rental make in each area?", html:
+      h.p(`Every bar here is the same house. The brass bar is that house on a yearly lease. The two green bars are the same house rented nightly: first at the occupancy its market averages, then at 60 percent, which is what a well-run listing books.`) +
+      h.p(`${h.ext(AIRROI, "The revenue and occupancy are the average of every active listing")} in each market, August 2025 to July 2026. Nightly costs take 55 percent of revenue, covering management, cleaning, utilities, platform fees, the 6 percent tax and insurance.`) +
       h.raw(`<div style="max-width:760px;margin:1.1rem 0 1.3rem">${CHART_STR}</div>`) +
+      h.p(`Occupancy decides it. The average listing books only ${Math.round(occLo)} to ${Math.round(occHi)} percent of its nights, and at that rate ${strBeat.length} of the ${strMarkets.length} markets beat a yearly lease. Get the same house to 60 percent and every market beats it, most of them twice over. ${sb.name} goes from ${p1(strMarkets.find(m => m.name === sb.name).capAvg)} percent to ${p1(strMarkets.find(m => m.name === sb.name).capGood)} percent.`) +
       T_STR +
-      h.p(`Murrells Inlet and Garden City are one ZIP code for price and rent, and two separate short-term markets. The table keeps them apart because their bookings differ.`) +
-      h.p(`Carolina Forest has no short-term figure because our data source does not measure it. That is not the same as no demand. It sits beside the new Carolina Forest hospital, and a furnished monthly rental there serves traveling nurses on 13-week contracts. ${h.a("/invest/mid-term-rentals/", "Furnished monthly rentals")} covers that, and ${h.a("/invest/where-to-buy/", "where to buy")} has the nightly-rental rules, which ban them in most neighborhoods.`) +
-      h.p(`One more caution. Our source does not say whether revenue is before or after platform and cleaning fees, so this page treats it as before. ${h.a("/invest/airbnb-income/", "How much Airbnbs make here")} has the income by percentile.`) },
+      h.p(`The cap rate is the rent left after costs divided by the price, with no loan in it. The last column is the occupancy a nightly rental needs to match a yearly lease on that house. In ${mgc.name} and ${sb.name} that bar is around 21 percent, which the market already clears. In ${lr.name} it is ${p1(strMarkets.find(m => m.name === lr.name).breakEven)} percent, which almost nothing clears.`) +
+      h.p(`This section divides by the typical home value, not the cheaper third above. The listings earning this revenue are mostly beach properties, not the cheapest houses in the area.`) +
+      h.p(`Carolina Forest has no nightly figure because our data source does not measure it. That is not the same as no demand. It sits beside the new Carolina Forest hospital, and a furnished monthly rental there serves traveling nurses on 13-week contracts. ${h.a("/invest/mid-term-rentals/", "Furnished monthly rentals")} covers that, and ${h.a("/invest/where-to-buy/", "where to buy")} has the nightly-rental rules, which ban them in most neighborhoods.`) },
 
     { h2: "Which area is best for each number?", html:
       h.p(`Hover an area, or tap it, for its numbers. The buttons change what the color shows. Darker is higher.`) +
@@ -546,7 +586,7 @@ module.exports = {
     { h2: "When should you walk away?", html: (bg) =>
       h.p(`Four numbers. If a house misses one of them, we say so before you write an offer.`) +
       T_STOP +
-      h.p(`The occupancy line is the one people argue with. The market average looks low because it includes every part-time and badly run listing. A well-run house books far more nights than the average one. That is why the manager matters more than the address.`) +
+      h.p(`The market average looks low because it counts every part-time and badly run listing. A well-run house books far more nights than the average one. This relies on a good manager.`) +
       h.p(`These are our lines, not an industry standard. No published study says what one rental house should return. ${h.a("/invest/strategies/dscr-loans/", "The DSCR page")} has the loan side of the coverage ratio.`) +
       h.cta("Every investor's goals are different.", "Tell us what you want the house to do, and we find properties that fit those goals and run all four numbers on each one.", "Have us find properties for your goals", "/invest/run-the-numbers/", bg) },
 
@@ -555,9 +595,10 @@ module.exports = {
       h.raw(TOOL) },
 
     { h2: "How much does appreciation add?", html:
-      h.p(`The rent return is the same every year you own it. Appreciation depends on when you buy and when you sell. The chart adds the two for a Myrtle Beach rental at ${fmt$(mb.low)}.`) +
+      h.p(`The chart takes a ${fmt$(START)} rental in the Myrtle Beach city core and shows what it turns into. The grey block is what you paid. The green block is what the house gained. The brass block is the rent you kept along the way.`) +
       h.raw(`<div style="max-width:760px;margin:1.1rem 0 1.4rem">${CHART_APP}</div>`) +
-      h.p(`Over ten years appreciation did more than the rent. Over the last three it went backwards and the rent carried the whole return. That is the argument for buying on the rent and treating appreciation as a bonus.`) +
+      h.p(`The green blocks grow at ${p1(metro.a10)} percent a year, which is what the metro averaged over the last ten years. That is a record, not a promise. Over the last three years the same measure fell ${p1(Math.abs(metro.y3))} percent, and the rent carried the whole return. Rent is held flat here, so the later years are understated on the brass side and the green side is the part that could go either way.`) +
+      h.p(`Buy on the rent, and treat appreciation as a bonus.`) +
       h.p(`${h.a("/invest/how-long-to-hold/", "How long to hold a rental before selling")} has the price history for every area and the years it takes to earn the selling costs back.`) },
   ],
   faqTitle: "Rental returns FAQ",
@@ -565,7 +606,7 @@ module.exports = {
     { q: "What is a good cap rate for a rental in Myrtle Beach?", a: `Six percent or better is our line. A Horry County rental bought in the cheaper third of the market returns ${p1(lowMgrLo)} to ${p1(lowMgrHi)} percent with a property manager and ${p1(lowSelfLo)} to ${p1(lowSelfHi)} percent without one. A national research firm put single-family cap rates at 7.3 percent in late 2025, so the better Myrtle Beach areas sit right in that range.` },
     { q: "Why do Myrtle Beach cap rates look so low in some reports?", a: `Because they divide the rent by the typical value of every home in the area, which includes oceanfront houses and second homes nobody rents out. Use the price a rental sells for and the same rent returns far more. In the Myrtle Beach city core that is the difference between ${p1(mb.midMgr.cap)} percent and ${p1(mb.lowMgr.cap)} percent.` },
     { q: "What DSCR do you need for a Myrtle Beach rental?", a: `Our line is 1.25. Divide the monthly rent by the monthly cost of the loan, taxes, insurance and dues. At ${fmt$(mb.rent)} of rent, 1.25 means all of those together stay under ${fmt$(mb.rent / 1.25)} a month. Some lenders will fund below that and charge for it.` },
-    { q: "Which Myrtle Beach area has the best rental returns?", a: `For long-term rent, ${sortBy(areas.filter(a => a.low), a => a.lowMgr.cap).slice(0, 2).map(a => a.name).join(" and ")}, because the houses cost least and the rent is the same across the county. For short-term, ${strMarkets.slice(0, 2).map(m => m.name).join(" and ")}.` },
+    { q: "Which Myrtle Beach area has the best rental returns?", a: `For long-term rent, ${sortBy(areas.filter(a => a.low), a => a.lowMgr.cap).slice(0, 2).map(a => a.name).join(" and ")}, because the houses cost least and the rent is the same across the county. For nightly rentals, ${strMarkets.slice(0, 2).map(m => m.name).join(" and ")}, once the house is run well enough to book 60 percent of its nights.` },
     { q: "Does a property manager make a rental worth it?", a: `A manager takes about 10 percent of the rent, which costs roughly one point of return. On a short-term rental the manager usually earns it back. The middle listing books 25 to 36 percent of nights. The top tenth books 67 to 76 percent. On a long-term rental, self-managing is worth about one extra point a year.` },
     { q: "How much does a Myrtle Beach rental appreciate?", a: `The metro rose ${p1(metro.a5)} percent a year over five years and ${p1(metro.a10)} percent a year over ten. Over the last three years it fell ${p1(Math.abs(metro.y3))} percent in total. Our line is 3 percent a year over the long run.` },
   ],

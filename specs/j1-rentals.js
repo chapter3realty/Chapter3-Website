@@ -87,7 +87,7 @@ module.exports = {
         ["10", "$600", "$24,000"],
         ["13", "$600", "$31,200"],
       ]) +
-      h.p(`The bed count in the table is the lawful count for a 2,500 square foot four-bedroom house, from the next section. The season is four months because the visa allows four. Deposits of $250 a person are held through the season, and the local listings keep $50 to $100 of each for cleaning and linens at checkout.`) +
+      h.p(`The bed count in the table is the lawful count for a 2,500 square foot four-bedroom house. The season is four months because the visa allows four. Deposits of $250 a person are held through the season, and the local listings keep $50 to $100 of each for cleaning and linens at checkout.`) +
       h.p(`${h.ext(GREENHEART, "One sponsor caps a student's rent at a third of gross pay")}. At 32 hours a week, the minimum in several local listings, a third of pay is a few hundred dollars a month. The rent per bed has a ceiling the students' wages put on it.`) +
       h.cta("Want the rent on a house you are looking at?", "Send us the address and the bedroom sizes. We count the lawful beds and run the season against a yearly lease before you offer.", "Have us run the numbers", "/invest/run-the-numbers/", bg) },
     { h2: "How many people can a Myrtle Beach house lawfully hold?", html:
