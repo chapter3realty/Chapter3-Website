@@ -852,6 +852,10 @@ const REGISTER_REGEX = [
   [/\b(?:costs the \w+ and keeps the|people buy here to be here|the terms are set|a loan from a future|bought timing|timing that will not arrive)/i, 'aphorism - name the actor and the consequence'],
   // Owner, 2026-09-05, depreciation page: "Get them right in year one." Never again.
   [/\bget (?:it|them|this|that|these|those|the \w+) right\b/i, 'idiom ("get it right") - say the correct action and who takes it'],
+  // Owner, 2026-09-10, rental returns page: "our line is a phrase we should
+  // hardcode away." A threshold is a target, or a number with a consequence
+  // above and below it. "24-hour line" is a phone line and stays legal.
+  [/\bour lines?\b/i, '"our line" - say "our target", or name the number and what happens above and below it (owner rule 2026-09-10, PLAYBOOK A22h)'],
 ];
 
 const AI_TELL_REGEX = [

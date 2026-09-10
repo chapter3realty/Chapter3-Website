@@ -663,6 +663,20 @@ with one I compute, assume my computation is wrong until proven otherwise. Put
 both in front of him with the inputs; never quietly replace the published one
 and never log it as a defect fixed (MISTAKES 85).
 
+**A22h. A threshold is a target, never "our line" (owner, 2026-09-10).** He
+struck "our line" from the returns page. Say "our target is 1.25", or name the
+number and say what happens above it and below it. `build.js` REGISTER_REGEX
+errors on `\bour lines?\b` over every page. The word boundary is the whole
+design: "the sponsor's 24-hour line" is a phone line and stays legal, and the
+scanner was tested on that case and on "Our line is 1.25" before it shipped
+(rule 4).
+
+**A22i. The short answer carries the answer and nothing else (owner,
+2026-09-10).** Three facts at most: what the thing costs, what it returns, what
+it appreciates. No opener, no framing sentence, no caveat that belongs in a
+section. A qualifier earns its place there only if the numbers are wrong
+without it. "After costs" stays; "before any loan" moves down (MISTAKES 86).
+
 **A29c. A chart is built from the data file, then looked at (2026-09-08).** A
 chart on a spec page is an SVG string built at generation time from the same
 JSON or CSV the prose uses, never from typed values. After generating, clip

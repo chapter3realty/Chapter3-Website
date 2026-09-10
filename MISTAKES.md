@@ -598,3 +598,25 @@ first, not the claim. Show the owner both, with the inputs, and ask, before
 editing the page. A number that has survived on a live site written by people
 who sell in that market every week is evidence. Mine is one spreadsheet.
 
+
+## 86. The short answer answered a question nobody asked (2026-09-10)
+
+**What happened.** The returns page opened with "Two numbers, and the price you
+buy at decides both", then gave two ranges, then appreciation, then a sentence
+saying "those are all-cash returns, before any loan. With a loan the rent has
+to cover the payment too, and our line is a 1.25 coverage ratio." Five ideas in
+five sentences, one of which was false: appreciation had just been named, and
+appreciation is not a cash return. The owner read it and said so.
+
+**Why the existing rules did not stop it.** The register gates measure sentence
+length, banned phrases and heading shape. Every sentence here was short and
+clean. Nothing measured whether the summary was a summary. The loan sentence
+was there because the fact is true, not because a reader asking "what does a
+rental return here" needed it in the first paragraph.
+
+**What stops it recurring.** The short answer holds the answer and nothing
+else. Name what the thing costs, what it returns, and what it appreciates.
+Every qualifier that is not needed to keep those three numbers honest belongs
+in a section below. If a sentence in the short answer would still be true on a
+different page, it is not part of the answer. Test the block by reading only
+it: a reader who stops there has to leave with the numbers, not with a caveat.

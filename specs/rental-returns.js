@@ -25,6 +25,14 @@
  *  - "denominator" and the ZIP-sharing aside are gone; "appreciation" is used
  *    throughout instead of "price change".
  *
+ * Round 4 (owner, 2026-09-10). The short answer is three facts and nothing
+ * else: what a rental costs, the average return with a manager and without
+ * one, and the average appreciation over five and ten years. He struck the
+ * old opener, and he struck the loan sentence because it followed
+ * appreciation with "those are all-cash returns" and appreciation is not a
+ * cash return. "Our line" is gone from the site and from the language:
+ * build.js REGISTER_REGEX errors on it (PLAYBOOK A22h).
+ *
  * Every number is computed here from research/invest-next/data/*.json so the
  * prose, the tables, the charts, the map and the calculator cannot disagree.
  * No interest rate and no loan payment appears anywhere (non-negotiable 3):
@@ -135,7 +143,11 @@ const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
 
 const horry = areas.filter(a => a.id !== "pawleys-island");
 const rng = (arr, f) => { const v = arr.map(f).filter(x => x !== null); return [Math.min(...v), Math.max(...v)]; };
+const avgOf = (arr, f) => { const v = arr.map(f).filter(x => x !== null && x !== undefined); return v.reduce((x, y) => x + y, 0) / v.length; };
 const [lowMgrLo, lowMgrHi] = rng(horry, a => a.lowMgr && a.lowMgr.cap);
+const [priceLo, priceHi] = rng(horry, a => a.low);
+const lowMgrAvg = avgOf(horry, a => a.lowMgr && a.lowMgr.cap);
+const lowSelfAvg = avgOf(horry, a => a.lowSelf && a.lowSelf.cap);
 const [lowSelfLo, lowSelfHi] = rng(horry, a => a.lowSelf && a.lowSelf.cap);
 const [midMgrLo, midMgrHi] = rng(horry, a => a.midMgr.cap);
 const [strCapLo, strCapHi] = [Math.min(...strMarkets.map(m => m.capAvg)), Math.max(...strMarkets.map(m => m.capGood))];
@@ -520,7 +532,7 @@ const T_BEST = h.table(["If you want", "Look at", "Why"], [
   best("A tenant all year, not a guest", `${cf.name}, ${cw.name}`, "Year-round households and workers, away from the nightly-rental rules."),
 ]);
 
-const T_STOP = h.table(["The number", "Our line", "What the market does"], [
+const T_STOP = h.table(["The number", "When we walk", "What the market does"], [
   ["Coverage ratio", "<strong>Below 1.25, walk</strong>", `Divide the rent by 1.25. At ${fmt$(mb.rent)} of rent that is ${fmt$(mb.rent / 1.25)} a month for the loan, taxes, insurance and dues together.`],
   ["Cap rate", "<strong>Below 6 percent, walk</strong>", `With a manager, ${capsAt6.length} of the ${areas.filter(a => a.low).length} areas clear it: ${capsAt6.join(", ")}.`],
   ["Appreciation", "<strong>Below 3 percent a year, walk</strong>", `The metro ran ${sp(metro.a5)} percent a year over five years and ${sp(metro.a10)} over ten. It ran ${sp(metro.a3)} over the last three.`],
@@ -539,12 +551,12 @@ module.exports = {
   sub: `Most Myrtle Beach rentals keep about 4 to 9 percent of the price in rent each year, after every cost. Whatever the house appreciates is on top of that.`,
   heroCta: { label: "Have us find top performing properties", href: "/invest/run-the-numbers/" },
   author: "devin",
-  shortAnswer: `Two numbers, and the price you buy at decides both. A Horry County rental bought in the cheaper third of the market keeps ${p1(lowMgrLo)} to ${p1(lowMgrHi)} percent of its price each year after costs, with a manager. Without a manager it keeps ${p1(lowSelfLo)} to ${p1(lowSelfHi)} percent. Appreciation has added ${p1(metro.a5)} percent a year over five years and ${p1(metro.a10)} percent over ten. Those are all-cash returns, before any loan. With a loan the rent has to cover the payment too, and our line is a 1.25 coverage ratio.`,
+  shortAnswer: `A Horry County rental costs about ${fmt$(priceLo)} to ${fmt$(priceHi)}, depending on the area. The average return is ${p1(lowMgrAvg)} percent a year after costs, with a property manager, and ${p1(lowSelfAvg)} percent without one. Appreciation is on average ${p1(metro.a5)} percent a year over the last five years and ${p1(metro.a10)} percent over the last ten.`,
   sections: [
     { h2: "What return should you expect on a Myrtle Beach rental?", html:
       h.raw(PANEL) +
       h.p(`A rental pays you two ways. The rent left after the cost of owning the house, and the appreciation when you sell.`) +
-      h.p(`The tiles above are all-cash returns, before any loan. A loan changes the cash you put in and adds a payment the rent has to cover. That is the coverage ratio, and it has its own line in the dealbreakers below.`) +
+      h.p(`The three return tiles assume you paid cash. A loan changes the money you put in, and adds a payment the rent has to cover. That is the coverage ratio, and it is one of the four dealbreakers below.`) +
       T_TERMS +
       h.p(`${h.ext(ARBOR, "A national research firm puts the cap rate on single-family rentals at 7.3 percent")} for late 2025. Myrtle Beach sits inside that range once you use the price a rental sells for.`) },
 
@@ -587,7 +599,7 @@ module.exports = {
       h.p(`Four numbers. If a house misses one of them, we say so before you write an offer.`) +
       T_STOP +
       h.p(`The market average looks low because it counts every part-time and badly run listing. A well-run house books far more nights than the average one. This relies on a good manager.`) +
-      h.p(`These are our lines, not an industry standard. No published study says what one rental house should return. ${h.a("/invest/strategies/dscr-loans/", "The DSCR page")} has the loan side of the coverage ratio.`) +
+      h.p(`These are Chapter3's numbers, not an industry standard. No published study says what one rental house should return. ${h.a("/invest/strategies/dscr-loans/", "The DSCR page")} has the loan side of the coverage ratio.`) +
       h.cta("Every investor's goals are different.", "Tell us what you want the house to do, and we find properties that fit those goals and run all four numbers on each one.", "Have us find properties for your goals", "/invest/run-the-numbers/", bg) },
 
     { h2: "How do you calculate the return on one house?", html:
@@ -603,12 +615,12 @@ module.exports = {
   ],
   faqTitle: "Rental returns FAQ",
   faq: [
-    { q: "What is a good cap rate for a rental in Myrtle Beach?", a: `Six percent or better is our line. A Horry County rental bought in the cheaper third of the market returns ${p1(lowMgrLo)} to ${p1(lowMgrHi)} percent with a property manager and ${p1(lowSelfLo)} to ${p1(lowSelfHi)} percent without one. A national research firm put single-family cap rates at 7.3 percent in late 2025, so the better Myrtle Beach areas sit right in that range.` },
+    { q: "What is a good cap rate for a rental in Myrtle Beach?", a: `Six percent or better is our target. A Horry County rental bought in the cheaper third of the market returns ${p1(lowMgrLo)} to ${p1(lowMgrHi)} percent with a property manager and ${p1(lowSelfLo)} to ${p1(lowSelfHi)} percent without one. A national research firm put single-family cap rates at 7.3 percent in late 2025, so the better Myrtle Beach areas sit right in that range.` },
     { q: "Why do Myrtle Beach cap rates look so low in some reports?", a: `Because they divide the rent by the typical value of every home in the area, which includes oceanfront houses and second homes nobody rents out. Use the price a rental sells for and the same rent returns far more. In the Myrtle Beach city core that is the difference between ${p1(mb.midMgr.cap)} percent and ${p1(mb.lowMgr.cap)} percent.` },
-    { q: "What DSCR do you need for a Myrtle Beach rental?", a: `Our line is 1.25. Divide the monthly rent by the monthly cost of the loan, taxes, insurance and dues. At ${fmt$(mb.rent)} of rent, 1.25 means all of those together stay under ${fmt$(mb.rent / 1.25)} a month. Some lenders will fund below that and charge for it.` },
+    { q: "What DSCR do you need for a Myrtle Beach rental?", a: `Our target is 1.25. Divide the monthly rent by the monthly cost of the loan, taxes, insurance and dues. At ${fmt$(mb.rent)} of rent, 1.25 means all of those together stay under ${fmt$(mb.rent / 1.25)} a month. Some lenders will fund below that and charge for it.` },
     { q: "Which Myrtle Beach area has the best rental returns?", a: `For long-term rent, ${sortBy(areas.filter(a => a.low), a => a.lowMgr.cap).slice(0, 2).map(a => a.name).join(" and ")}, because the houses cost least and the rent is the same across the county. For nightly rentals, ${strMarkets.slice(0, 2).map(m => m.name).join(" and ")}, once the house is run well enough to book 60 percent of its nights.` },
     { q: "Does a property manager make a rental worth it?", a: `A manager takes about 10 percent of the rent, which costs roughly one point of return. On a short-term rental the manager usually earns it back. The middle listing books 25 to 36 percent of nights. The top tenth books 67 to 76 percent. On a long-term rental, self-managing is worth about one extra point a year.` },
-    { q: "How much does a Myrtle Beach rental appreciate?", a: `The metro rose ${p1(metro.a5)} percent a year over five years and ${p1(metro.a10)} percent a year over ten. Over the last three years it fell ${p1(Math.abs(metro.y3))} percent in total. Our line is 3 percent a year over the long run.` },
+    { q: "How much does a Myrtle Beach rental appreciate?", a: `The metro rose ${p1(metro.a5)} percent a year over five years and ${p1(metro.a10)} percent a year over ten. Over the last three years it fell ${p1(Math.abs(metro.y3))} percent in total. Our target is 3 percent a year over the long run.` },
   ],
   sources: [
     { name: "Zillow home values and rents", href: ZILLOW },
