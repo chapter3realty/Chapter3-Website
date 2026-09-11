@@ -681,3 +681,34 @@ top to bottom at six widths and hit-tests every control with
 `elementFromPoint`, so a control counts only if a tap lands on it. It also
 asserts the footer is not sticky. A control that is present, sized and painted
 can still be untappable, and only a hit test at each scroll position sees that.
+
+## 90. The pop-up book rose with an empty box (2026-09-11)
+
+**What happened.** He reported the lead pop-up rising on mobile with the book
+never opening. The cause is one line in `warmVideo`: when the keyed master
+exists it called `v.removeAttribute('poster')`. From that moment the video
+element had no fallback image at all. Whenever the clip did not play, and there
+are several ordinary reasons it does not, the dialog rose with a 366 by 275
+rectangle of nothing and the form underneath. Reproduced exactly on a phone
+viewport.
+
+The clip does not play when iOS Low Power Mode blocks autoplay, which it does
+even for a muted inline video; when the device cannot decode the file; when the
+fetch stalls or the range request comes back wrong; and when a call-to-action
+opened the dialog before the 6-second warm-up, because `warmVideo` then called
+`v.load()` on a clip that was already playing and rewound it.
+
+**Why the existing rules did not stop it.** The code has four separate
+backstops so the form always arrives. Every one of them protects the form. None
+of them protects the picture. The comment above them says a broken video can
+never leave the visitor looking at a dialog with nothing in it, and that is
+exactly what shipped, because "nothing in it" was only ever measured as "no
+form".
+
+**What stops it recurring.** A poster is replaced, never removed. When the clip
+will not start, the poster becomes the last frame, the finished pop-up rather
+than the closed book, and a play button appears over it so a tap opens it. A
+broken keyed master falls back to the original clip. `warmVideo` does nothing
+once the dialog is open. `tools/verify-popup.js` drives all four cases in a
+browser, including a stubbed autoplay refusal, and asserts a poster is set and
+something is on screen in each one.
