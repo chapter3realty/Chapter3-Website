@@ -722,6 +722,14 @@ attribute, which disappears on the first keystroke. A DOM check reads the
 attribute in both states and cannot tell the difference, so look at the
 screenshot with the fields filled in (MISTAKES 87).
 
+**A29f. A control counts only when a tap lands on it (2026-09-11).** Existence,
+a non-zero box and a painted pixel are three different things, and none of them
+is reachability. Hit-test with `elementFromPoint` at the control's centre, at
+every scroll position of its container and at every width. A sticky element with
+an opaque background hides its siblings without changing a single measurement on
+them, which is how a pop-up shipped with none of its 28 controls tappable on a
+phone (MISTAKES 89). `tools/verify-idx-modal.js` is the pattern.
+
 **A30. Selectable.** Hit-test with `document.elementFromPoint` at the element's
 centre and confirm it returns that element, not an overlay. `getSelection()` is
 not a valid test. An animated pseudo-element without `pointer-events:none` once

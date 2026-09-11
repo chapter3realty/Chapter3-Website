@@ -660,3 +660,24 @@ after every base rule they override. A width check measures the control the
 person types into, `scrollWidth` against `clientWidth` on the input itself, not
 the container around it. Sweep the widths with values longer than the defaults:
 the four-digit default fitted a box that clipped a five-digit number.
+
+## 89. The listings pop-up opened on a phone with nothing usable in it (2026-09-11)
+
+**What happened.** He reported the pop-up opening on mobile with the search
+form unreachable. The panel scrolls, and `.idx-foot` was `position:sticky;
+bottom:0` with an opaque background. On a phone the footer holds the lead form
+stacked to one column plus the nine-line consent paragraph, so it grows to 543
+pixels inside a 776-pixel panel. Pinned to the bottom, it covered everything
+above it. Measured: 0 of 28 search controls were reachable at 390px, and 8 of
+28 on a 1280px desktop. It has been live in that state.
+
+**Why the existing rules did not stop it.** Every check written for this modal
+asked whether an element existed and had a non-zero box. All 28 did. Nothing
+asked whether a person could reach them. A sticky element with an opaque
+background covers its siblings without changing any of their measurements.
+
+**What stops it recurring.** `tools/verify-idx-modal.js` scrolls the panel from
+top to bottom at six widths and hit-tests every control with
+`elementFromPoint`, so a control counts only if a tap lands on it. It also
+asserts the footer is not sticky. A control that is present, sized and painted
+can still be untappable, and only a hit test at each scroll position sees that.
