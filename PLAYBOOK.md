@@ -687,6 +687,21 @@ see: the "2 percent screen" label over the last row, and a negative bar's label
 running into its row label. Every chart in batch 5 was looked at before
 publishing.
 
+**A29d. Measure the control, not the box around it (2026-09-11).** A field
+check compares `scrollWidth` with `clientWidth` on the `input` or `select`
+itself. A wrapper that fits can hold an input crushed to zero width, and that
+shipped: two boxes on the returns calculator measured 0px at 320px and the
+wrapper check passed (MISTAKES 88). Sweep every width from 320 to 1440 with
+values longer than the defaults, because a box sized for a four-digit default
+clips a five-digit entry. Media queries go last in a page-local style block:
+same specificity as the base rules, so source order decides.
+
+**A29e. A placeholder is a hint, never a label (2026-09-11).** A name that has
+to stay on screen is an element inside the field, not the `placeholder`
+attribute, which disappears on the first keystroke. A DOM check reads the
+attribute in both states and cannot tell the difference, so look at the
+screenshot with the fields filled in (MISTAKES 87).
+
 **A30. Selectable.** Hit-test with `document.elementFromPoint` at the element's
 centre and confirm it returns that element, not an overlay. `getSelection()` is
 not a valid test. An animated pseudo-element without `pointer-events:none` once

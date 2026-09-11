@@ -2132,6 +2132,42 @@ older combined (003da5fd) and returns (3b6a6d25) links are stale; the artifact
 service refuses to overwrite them without a full read of the live copy, so
 they were replaced rather than updated.
 
+## 2026-09-11: the returns page rounds 4 and 5, and a live header defect
+
+**Round 4.** The short answer is three facts and nothing else: what a Horry
+County rental costs, the average return with a manager and without one, and the
+average appreciation over five and ten years. "Our line" is banned sitewide and
+`build.js` errors on it.
+
+**Round 5.** The calculator is now "Investment calculator". Each box carries its
+own greyed name inside it, there is a monthly loan payment input, and that input
+drives a live coverage ratio and the verdict. The four dealbreakers are
+explained in his own words. The appreciation chart lost the rent-kept block, so
+only two blocks remain and every gain block carries its number.
+
+**One instruction arrived without its verb.** His list quoted the calculator
+verdict, "Passes. Above the 6 percent target with a manager running it.", and
+said nothing about what to do with it. The loan payment input changed that
+verdict anyway, because the verdict now has to answer the coverage test as well.
+It reads "Passes. The return is above the 6 percent target with a manager
+running it.", plus a sentence about the monthly cost when a payment is entered.
+He has been told that is my reading and it is his to overturn.
+
+**A live defect he has not seen yet, found while measuring this round.** Every
+page on the site scrolls sideways between 800px and 979px wide. The page is
+980px at its narrowest and the viewport is smaller. The cause is the header:
+`nav.primary` hides at `max-width:768px`, so between 769px and 979px the logo,
+the full nav and the phone number are all on screen and do not fit. Measured on
+five pages, including pages untouched this month, so it is not from this work.
+Common laptop windows and Android tablets land in that band. iPad portrait
+(768) and landscape (1024) are both clear, which is probably why nobody has
+reported it.
+
+The fix is to move the breakpoint that hides the nav and shows the menu button
+from 768px up to 979px, in `chapter3realty/assets/app.*.css`, then
+`node build.js rehash` and re-verify. It changes every page, so it is its own
+change and it needs his yes first. Nothing in this round depends on it.
+
 ## Suggested order for the next session
 
 0000. **The returns page round 2 is on the branch** (section above). Expect his

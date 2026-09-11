@@ -620,3 +620,43 @@ Every qualifier that is not needed to keep those three numbers honest belongs
 in a section below. If a sentence in the short answer would still be true on a
 different page, it is not part of the answer. Test the block by reading only
 it: a reader who stops there has to leave with the numbers, not with a caveat.
+
+## 87. I made the field titles placeholders, and they vanished (2026-09-11)
+
+**What happened.** He asked for the titles above the calculator inputs to be
+deleted and put inside the boxes, greyed. I used the HTML `placeholder`
+attribute, which is exactly that until someone types. Then it disappears. The
+screenshot of the finished tool showed five boxes reading `160000`, `1823`,
+`3050`, `0`, `1400`, with nothing on screen saying which number was which.
+
+**Why the existing rules did not stop it.** Rule 1 says a change is not
+verified until it is measured on the rendered page, and I did measure it. The
+DOM check confirmed every placeholder was present and correctly spelled. A
+placeholder is present in the DOM whether or not it is painted, so the check
+passed on a broken tool. Only looking at the screenshot found it.
+
+**What stops it recurring.** A placeholder is a hint, never a label. When a
+field's name must stay visible, the name is an element inside the box with the
+value beside it or under it, and the check asserts both are painted at once. In
+general: when a check reads an attribute, ask what the attribute looks like in
+every state the control has, not just the empty one.
+
+## 88. A media query that never applied, and a check that could not see it (2026-09-11)
+
+**What happened.** The rebuilt calculator stacked its paired boxes below 820px
+through `@media (max-width:820px){#rrtool .rrpair{grid-template-columns:1fr}}`.
+The media query sat above the base `.rrpair` rule in the same style block. Same
+specificity, so source order decided, and the base rule won at every width. At
+320px two inputs measured 0 pixels wide. Playwright refused to type into them,
+which is the only reason I found it.
+
+**Why the existing rules did not stop it.** My own width check asked whether
+the bordered box overflowed. It never did: the box was the right size and the
+input inside it was crushed to nothing. The check measured the wrapper and
+called the field fine.
+
+**What stops it recurring.** Media queries go last in a page-local style block,
+after every base rule they override. A width check measures the control the
+person types into, `scrollWidth` against `clientWidth` on the input itself, not
+the container around it. Sweep the widths with values longer than the defaults:
+the four-digit default fitted a box that clipped a five-digit number.

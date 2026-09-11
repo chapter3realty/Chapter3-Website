@@ -33,6 +33,13 @@
  * cash return. "Our line" is gone from the site and from the language:
  * build.js REGISTER_REGEX errors on it (PLAYBOOK A22h).
  *
+ * Round 5 (owner, 2026-09-11). The calculator is "Investment calculator": no
+ * labels above the boxes, the name greyed inside each box instead, and a
+ * monthly loan payment input that drives a live coverage ratio and the
+ * verdict. The four dealbreakers are explained in his words, and the
+ * appreciation chart drops the rent-kept block so the only two blocks are
+ * what you paid and what the house gained, each one carrying its number.
+ *
  * Every number is computed here from research/invest-next/data/*.json so the
  * prose, the tables, the charts, the map and the calculator cannot disagree.
  * No interest rate and no loan payment appears anywhere (non-negotiable 3):
@@ -158,7 +165,8 @@ const capsAt6 = areas.filter(a => a.lowMgr && a.lowMgr.cap >= 6).map(a => a.name
 
 /* ---------------- palette and chart helpers ---------------- */
 const NAVY = "#1c2028", MUTED = "rgba(28,32,40,.72)", BRASS = "#c4783a", BRASS_LT = "#e3bf8f",
-      TEAL = "#2f6f7e", TEAL_LT = "#9dc3cc", RED = "#a8412f", GRID = "rgba(28,32,40,.13)";
+      TEAL = "#2f6f7e", TEAL_LT = "#9dc3cc", RED = "#a8412f", GRID = "rgba(28,32,40,.13)",
+      PAID = "#6f6a61";
 const SVGSTYLE = 'style="display:block;width:100%;height:auto;font-family:var(--sans)"';
 
 /* One row per area, with two or three bars in it. `rows[i].bars` holds the
@@ -229,35 +237,34 @@ const YEARS = [3, 5, 10].map(y => {
   return { y, value, gain: value - START, rent, total: value + rent };
 });
 function appreciationChart() {
-  const W = 760, H = 380, L = 74, R = 22, T = 44, B = 82;
+  const W = 760, H = 400, L = 78, R = 22, T = 46, B = 78;
   const PW = W - L - R, PH = H - T - B;
-  const max = Math.ceil(Math.max(...YEARS.map(v => v.total)) / 50000) * 50000;
-  const colW = PW / YEARS.length, bw = Math.min(132, colW * 0.54);
+  const max = Math.ceil(Math.max(...YEARS.map(v => v.value)) / 25000) * 25000;
+  const colW = PW / YEARS.length, bw = Math.min(148, colW * 0.58);
   const y = (v) => T + PH * (1 - v / max);
   const k = (v) => "$" + Math.round(v / 1000) + "k";
-  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="What a ${Math.round(START / 1000)} thousand dollar rental turns into after three, five and ten years" ${SVGSTYLE}>`;
-  for (let g = 0; g <= max; g += 100000) {
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="What a ${Math.round(START / 1000)} thousand dollar rental is worth after three, five and ten years" ${SVGSTYLE}>`;
+  for (let g = 0; g <= max; g += 50000) {
     s += `<line x1="${L}" y1="${y(g)}" x2="${W - R}" y2="${y(g)}" stroke="${GRID}"/>`;
     s += `<text x="${L - 8}" y="${y(g) + 4}" font-size="12" text-anchor="end" fill="${MUTED}">${k(g)}</text>`;
   }
-  // the line you started from
+  // the price you paid, so the gain above it is read against it
   s += `<line x1="${L}" y1="${y(START)}" x2="${W - R}" y2="${y(START)}" stroke="${NAVY}" stroke-width="2" stroke-dasharray="6 4"/>`;
   YEARS.forEach((v, i) => {
     const cx = L + colW * i + colW / 2, x0 = cx - bw / 2;
-    const seg = (from, to, fill, label) => {
-      const top = y(to), h2 = y(from) - y(to);
-      s += `<rect x="${x0}" y="${top}" width="${bw}" height="${h2}" fill="${fill}"><title>${esc(label)}</title></rect>`;
-      if (h2 > 22) s += `<text x="${cx}" y="${top + h2 / 2 + 5}" font-size="13" font-weight="600" text-anchor="middle" fill="#fff">${k(to - from)}</text>`;
-    };
-    seg(0, START, "#8a8378", `What you paid: ${fmt$(START)}`);
-    seg(START, v.value, TEAL, `Appreciation: ${fmt$(v.gain)}`);
-    seg(v.value, v.total, BRASS, `Rent kept: ${fmt$(v.rent)}`);
-    s += `<text x="${cx}" y="${y(v.total) - 10}" font-size="16" font-weight="700" text-anchor="middle" fill="${NAVY}">${fmt$(v.total)}</text>`;
-    s += `<text x="${cx}" y="${T + PH + 22}" font-size="14" font-weight="600" text-anchor="middle" fill="${NAVY}">${v.y} years</text>`;
+    const paidTop = y(START), paidH = y(0) - y(START);
+    s += `<rect x="${x0}" y="${paidTop}" width="${bw}" height="${paidH}" fill="${PAID}"><title>What you paid: ${fmt$(START)}</title></rect>`;
+    s += `<text x="${cx}" y="${paidTop + paidH / 2 + 5}" font-size="13.5" font-weight="600" text-anchor="middle" fill="#fff">${fmt$(START)}</text>`;
+    /* 2px of surface between the two fills, so the boundary is a gap and not a seam */
+    const gainTop = y(v.value), gainH = Math.max(paidTop - gainTop - 2, 3);
+    s += `<rect x="${x0}" y="${gainTop}" width="${bw}" height="${gainH}" fill="${TEAL}"><title>Appreciation over ${v.y} years: ${fmt$(v.gain)}</title></rect>`;
+    s += `<text x="${cx}" y="${gainTop + gainH / 2 + 5}" font-size="13.5" font-weight="700" text-anchor="middle" fill="#fff">+${fmt$(v.gain)}</text>`;
+    s += `<text x="${cx}" y="${gainTop - 13}" font-size="17" font-weight="700" text-anchor="middle" fill="${NAVY}">${fmt$(v.value)}</text>`;
+    s += `<text x="${cx}" y="${T + PH + 24}" font-size="14" font-weight="600" text-anchor="middle" fill="${NAVY}">${v.y} years</text>`;
   });
-  const by0 = H - 40;
-  [["#8a8378", "What you paid"], [TEAL, `Appreciation at ${p1(metro.a10)}% a year`], [BRASS, "Rent kept, after costs"]].forEach(([c, lab], i) => {
-    const lx = L + i * 232;
+  const by0 = H - 30;
+  [[PAID, `What you paid, ${fmt$(START)}`], [TEAL, `Appreciation at ${p1(metro.a10)}% a year`]].forEach(([c, lab], i) => {
+    const lx = L + i * 250;
     s += `<rect x="${lx}" y="${by0}" width="13" height="13" fill="${c}" rx="2"/><text x="${lx + 19}" y="${by0 + 11}" font-size="12.5" fill="${NAVY}">${esc(lab)}</text>`;
   });
   return s + "</svg>";
@@ -385,17 +392,22 @@ paint();
 const TOOL = `
 <style>
 #rrtool{border:1px solid var(--rule);border-radius:12px;overflow:hidden;margin:1.2rem 0 1.3rem;max-width:760px;background:var(--ivory)}
-#rrtool .rrhead{background:var(--navy);color:var(--ivory);padding:.85rem 1.15rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1rem}
+#rrtool .rrhead{background:var(--navy);color:var(--ivory);padding:.85rem 1.15rem}
 #rrtool .rrhead p{margin:0;font-family:var(--serif);font-size:1.12rem;color:var(--ivory)}
-#rrtool .rrhead span{font-size:.76rem;color:rgba(244,239,232,.68)}
-#rrtool .rrbody{display:grid;grid-template-columns:minmax(220px,1fr) minmax(230px,1.05fr);gap:0}
+#rrtool .rrbody{display:grid;grid-template-columns:minmax(280px,1.12fr) minmax(230px,1fr);gap:0}
 #rrtool .rrin{padding:1.1rem 1.15rem;border-right:1px solid var(--rule)}
 #rrtool .rrout{padding:1.1rem 1.15rem;background:var(--ivory-2)}
-@media (max-width:640px){#rrtool .rrbody{grid-template-columns:1fr}#rrtool .rrin{border-right:0;border-bottom:1px solid var(--rule)}}
-#rrtool label{display:block;font-size:.75rem;font-weight:600;color:var(--muted);letter-spacing:.02em;margin-bottom:.85rem}
-#rrtool input,#rrtool select{width:100%;margin-top:.28rem;background:#fff;border:1px solid rgba(28,32,40,.26);border-radius:7px;color:var(--navy);font-family:var(--sans);font-size:.97rem;padding:.5rem .6rem;box-sizing:border-box}
-#rrtool input:focus,#rrtool select:focus{outline:2px solid var(--brass);outline-offset:1px;border-color:var(--brass)}
+#rrtool .rrin>*{margin-bottom:.7rem}
+#rrtool .rrin>*:last-child{margin-bottom:0}
+#rrtool .rrf{display:flex;align-items:center;gap:.4rem;background:#fff;border:1px solid rgba(28,32,40,.26);border-radius:7px;padding:.5rem .55rem;box-sizing:border-box}
+#rrtool .rrf>span{font-size:.8rem;color:rgba(28,32,40,.66);white-space:nowrap;flex:0 0 auto}
+#rrtool .rrf input,#rrtool .rrf select{flex:1 1 auto;min-width:0;width:100%;border:0;background:transparent;text-align:right;padding:0;margin:0;color:var(--navy);font-family:var(--sans);font-size:.95rem;font-variant-numeric:tabular-nums}
+#rrtool .rrf input::-webkit-outer-spin-button,#rrtool .rrf input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+#rrtool .rrf input[type=number]{-moz-appearance:textfield}
+#rrtool .rrf input:focus,#rrtool .rrf select:focus{outline:none}
+#rrtool .rrf:focus-within{outline:2px solid var(--brass);outline-offset:1px;border-color:var(--brass)}
 #rrtool .rrpair{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+#rrtool .rrpair>*{margin-bottom:0}
 #rrtool .rrbig{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.9rem}
 #rrtool .rrcard{background:#fff;border:1px solid var(--rule);border-radius:9px;padding:.7rem .8rem}
 #rrtool .rrcard .k{font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
@@ -404,29 +416,33 @@ const TOOL = `
 #rrtool .rrline{display:flex;justify-content:space-between;gap:1rem;font-size:.83rem;padding:.32rem 0;border-bottom:1px solid var(--rule)}
 #rrtool .rrline:last-of-type{border-bottom:0}
 #rrtool .rrline span:first-child{color:var(--muted)}
-#rrtool .rrline span:last-child{color:var(--navy);font-weight:600;font-variant-numeric:tabular-nums}
+#rrtool .rrline span:last-child{color:var(--navy);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
 #rrtool .rrverdict{margin:.9rem 0 0;padding:.65rem .8rem;border-radius:8px;font-size:.87rem;line-height:1.5;font-weight:600}
 #rrtool .rrverdict.pass{background:rgba(47,111,126,.13);color:#22525d;border-left:3px solid #2f6f7e}
 #rrtool .rrverdict.warn{background:rgba(196,120,58,.14);color:#8a4f22;border-left:3px solid var(--brass)}
 #rrtool .rrverdict.stop{background:rgba(168,65,47,.13);color:#8c3626;border-left:3px solid #a8412f}
-#rrtool .rrfoot{padding:.75rem 1.15rem;border-top:1px solid var(--rule);font-size:.78rem;color:var(--muted);line-height:1.6}
+/* the media queries live last: same specificity as the base rules, so source order decides */
+@media (max-width:820px){#rrtool .rrpair{grid-template-columns:1fr}}
+/* on a phone the longest titles leave no room for the value beside them, so the
+   title takes its own line, still inside the box */
+@media (max-width:560px){#rrtool .rrf{display:block;padding:.45rem .55rem}#rrtool .rrf>span{display:block;margin-bottom:.05rem}#rrtool .rrf input,#rrtool .rrf select{text-align:left;width:100%}}
+@media (max-width:640px){#rrtool .rrbody{grid-template-columns:1fr}#rrtool .rrin{border-right:0;border-bottom:1px solid var(--rule)}}
 </style>
 <div id="rrtool">
-  <div class="rrhead"><p>What one house returns</p><span>All-cash, before any loan</span></div>
+  <div class="rrhead"><p>Investment calculator</p></div>
   <div class="rrbody">
     <div class="rrin">
-      <label>Area, which decides the tax rate
-        <select id="rrArea" onchange="c3Ret()">${areas.map(a => `<option value="${a.id}" data-mills="${a.mills}" data-fees="${a.fees}"${a.id === "myrtle-beach" ? " selected" : ""}>${esc(a.name)}</option>`).join("")}</select></label>
+      <label class="rrf"><span>Area</span>
+        <select id="rrArea" onchange="c3Ret()">${areas.map(a => `<option value="${a.id}"${a.id === "myrtle-beach" ? " selected" : ""}>${esc(a.name)}</option>`).join("")}</select></label>
       <div class="rrpair">
-        <label>Price<input id="rrPrice" type="number" min="0" step="1000" value="160000" oninput="c3Ret()"></label>
-        <label>Rent a month<input id="rrRent" type="number" min="0" step="25" value="1823" oninput="c3Ret()"></label>
+        <label class="rrf"><span>Price</span><input id="rrPrice" type="number" min="0" step="1000" value="160000" oninput="c3Ret()"></label>
+        <label class="rrf"><span>Rent a month</span><input id="rrRent" type="number" min="0" step="25" value="1823" oninput="c3Ret()"></label>
       </div>
-      <div class="rrpair">
-        <label>Insurance a year<input id="rrIns" type="number" min="0" step="50" value="3050" oninput="c3Ret()"></label>
-        <label>Dues a month<input id="rrHoa" type="number" min="0" step="10" value="0" oninput="c3Ret()"></label>
-      </div>
-      <label>Empty months and repairs
-        <select id="rrAllow" onchange="c3Ret()"><option value="10" selected>10 percent of rent</option><option value="15">15 percent of rent</option><option value="25">25 percent of rent</option></select></label>
+      <label class="rrf"><span>Insurance a year</span><input id="rrIns" type="number" min="0" step="50" value="3050" oninput="c3Ret()"></label>
+      <label class="rrf"><span>Dues a month</span><input id="rrHoa" type="number" min="0" step="10" value="0" oninput="c3Ret()"></label>
+      <label class="rrf"><span>Mortgage payment a month</span><input id="rrPay" type="number" min="0" step="25" placeholder="0" oninput="c3Ret()"></label>
+      <label class="rrf"><span>Empty months and repairs</span>
+        <select id="rrAllow" onchange="c3Ret()"><option value="10" selected>10 percent</option><option value="15">15 percent</option><option value="25">25 percent</option></select></label>
     </div>
     <div class="rrout">
       <div class="rrbig">
@@ -438,11 +454,10 @@ const TOOL = `
       <div class="rrline"><span>Management, 10 percent</span><span id="rrMgmt">$0</span></div>
       <div class="rrline"><span>Property tax at 6 percent</span><span id="rrTax">$0</span></div>
       <div class="rrline"><span>Insurance and dues</span><span id="rrOther">$0</span></div>
-      <div class="rrline"><span>Rent divided by 1.25</span><span id="rrC125">$0</span></div>
+      <div class="rrline"><span>Coverage ratio</span><span id="rrDscr">Add a payment</span></div>
       <p class="rrverdict" id="rrVerdict"></p>
     </div>
   </div>
-  <div class="rrfoot">The tax uses the 6 percent rental ratio and this area's 2025 rate. Enter the insurance quote for the house when you have it.</div>
 </div>
 <div style="max-width:760px;margin:1.2rem 0 0;padding:1.2rem 1.3rem;background:var(--ivory-2);border-left:3px solid var(--brass)">
   <p style="color:var(--navy);font-weight:600;margin-bottom:.4rem">Want the full report on one address?</p>
@@ -454,13 +469,15 @@ const TOOL = `
   function rr$(i){return document.getElementById(i)}
   function rrFmt(n){return (n<0?"\\u2212$":"$")+Math.round(Math.abs(n)).toLocaleString("en-US")}
   function c3Ret(){
-    var mf=RR_TAX[rr$("rrArea").value]||[0,0];
+    var mf=RR_TAX[rr$("rrArea").value];
     var price=Math.max(0,+rr$("rrPrice").value||0), rent=Math.max(0,+rr$("rrRent").value||0);
     var ins=Math.max(0,+rr$("rrIns").value||0), hoa=Math.max(0,+rr$("rrHoa").value||0);
-    var al=+rr$("rrAllow").value/100;
-    var gross=rent*12, vac=gross*al, mgmt=gross*0.10, tax=price*0.06*mf[0]/1000+mf[1], other=ins+hoa*12;
+    var pay=Math.max(0,+rr$("rrPay").value||0), al=+rr$("rrAllow").value/100;
+    var gross=rent*12, vac=gross*al, mgmt=gross*0.10;
+    var tax=mf?price*0.06*mf[0]/1000+mf[1]:0, other=ins+hoa*12;
     var noiS=gross-vac-tax-other, noiM=noiS-mgmt;
     var capS=price>0?noiS/price*100:0, capM=price>0?noiM/price*100:0;
+    var monthly=pay+tax/12+ins/12+hoa, dscr=monthly>0?rent/monthly:0;
     rr$("rrCapM").textContent=(capM<0?"\\u2212":"")+Math.abs(capM).toFixed(1)+"%";
     rr$("rrCapS").textContent=(capS<0?"\\u2212":"")+Math.abs(capS).toFixed(1)+"%";
     rr$("rrNoiM").textContent=rrFmt(noiM)+" a year";
@@ -470,12 +487,14 @@ const TOOL = `
     rr$("rrMgmt").textContent="\\u2212"+rrFmt(mgmt);
     rr$("rrTax").textContent="\\u2212"+rrFmt(tax);
     rr$("rrOther").textContent="\\u2212"+rrFmt(other);
-    rr$("rrC125").textContent=rrFmt(rent/1.25);
+    rr$("rrDscr").textContent=pay>0?dscr.toFixed(2):"Add a payment";
     var v=rr$("rrVerdict"), t, cls;
-    if(price<=0||rent<=0){t="Enter a price and a rent.";cls="warn";}
-    else if(noiM<=0){t="Dealbreaker. The rent does not cover the cost of owning it, before any loan.";cls="stop";}
-    else if(capM>=6){t="Passes. Above the 6 percent target with a manager running it.";cls="pass";}
-    else if(capS>=6){t="Passes only if you manage it yourself. With a manager it is below the 6 percent target.";cls="warn";}
+    if(!mf){t="Choose an area.";cls="warn";}
+    else if(price<=0||rent<=0){t="Enter a price and a rent.";cls="warn";}
+    else if(noiM<=0){t="Dealbreaker. The rent does not cover what the house costs to own.";cls="stop";}
+    else if(pay>0&&dscr<1.25){t="Dealbreaker. The rent is less than 25 percent above what the house costs you each month.";cls="stop";}
+    else if(capM>=6){t="Passes. The return is above the 6 percent target with a manager running it."+(pay>0?" The rent clears the monthly cost by 25 percent or more.":"");cls="pass";}
+    else if(capS>=6){t="Passes only if you manage it yourself. With a manager the return is below the 6 percent target.";cls="warn";}
     else {t="Below the 6 percent target either way. The return would depend on appreciation.";cls="warn";}
     v.textContent=t; v.className="rrverdict "+cls;
   }
@@ -532,11 +551,11 @@ const T_BEST = h.table(["If you want", "Look at", "Why"], [
   best("A tenant all year, not a guest", `${cf.name}, ${cw.name}`, "Year-round households and workers, away from the nightly-rental rules."),
 ]);
 
-const T_STOP = h.table(["The number", "When we walk", "What the market does"], [
-  ["Coverage ratio", "<strong>Below 1.25, walk</strong>", `Divide the rent by 1.25. At ${fmt$(mb.rent)} of rent that is ${fmt$(mb.rent / 1.25)} a month for the loan, taxes, insurance and dues together.`],
-  ["Cap rate", "<strong>Below 6 percent, walk</strong>", `With a manager, ${capsAt6.length} of the ${areas.filter(a => a.low).length} areas clear it: ${capsAt6.join(", ")}.`],
-  ["Appreciation", "<strong>Below 3 percent a year, walk</strong>", `The metro ran ${sp(metro.a5)} percent a year over five years and ${sp(metro.a10)} over ten. It ran ${sp(metro.a3)} over the last three.`],
-  ["Occupancy", "<strong>Below 60 percent a year, walk</strong>", "The middle listing books 25 to 36 percent of nights. The top tenth books 67 to 76 percent. That gap is the manager."],
+const T_STOP = h.table(["The number", "When we walk", "Why we walk"], [
+  ["Coverage ratio", "<strong>Below 1.25, walk</strong>", "You take in 25 percent more rent each month than the loan, the taxes, the insurance and the dues cost you. Enough houses here do that. Accepting less makes no sense."],
+  ["Cap rate", "<strong>Below 6 percent, walk</strong>", "This is how much you make each year against how much of your money went into the house. We target the top end of the market at 6 percent."],
+  ["Appreciation", "<strong>Below 3 percent a year, walk</strong>", "Below 3 percent a year usually means the location is not in demand. Unless it rents very well, we do not bring those to customers."],
+  ["Occupancy", "<strong>Below 60 percent a year, walk</strong>", "This depends mostly on the property manager. In a good location 60 percent is very doable."],
 ]);
 
 module.exports = {
@@ -598,18 +617,18 @@ module.exports = {
     { h2: "When should you walk away?", html: (bg) =>
       h.p(`Four numbers. If a house misses one of them, we say so before you write an offer.`) +
       T_STOP +
-      h.p(`The market average looks low because it counts every part-time and badly run listing. A well-run house books far more nights than the average one. This relies on a good manager.`) +
-      h.p(`These are Chapter3's numbers, not an industry standard. No published study says what one rental house should return. ${h.a("/invest/strategies/dscr-loans/", "The DSCR page")} has the loan side of the coverage ratio.`) +
+      h.p(`The market average looks low for short-term rentals because it counts every part-time and badly run listing.`) +
+      h.p(`These are Chapter3's numbers, not an industry standard. No published study says what one rental house should return. They are not a promise about what one house will do. ${h.a("/invest/strategies/dscr-loans/", "The DSCR page")} has the loan side of the coverage ratio.`) +
       h.cta("Every investor's goals are different.", "Tell us what you want the house to do, and we find properties that fit those goals and run all four numbers on each one.", "Have us find properties for your goals", "/invest/run-the-numbers/", bg) },
 
-    { h2: "How do you calculate the return on one house?", html:
-      h.p(`Enter a price and a rent. The tool takes out the allowance, the property tax for that area, insurance and dues, and shows the return with a manager and without one.`) +
+    { h2: "Calculate how much your Myrtle Beach rental will make", html:
+      h.p(`Pick the area, then enter a price and a rent. Add the insurance, the dues and your monthly loan payment when you have them. The tool takes out the allowance, the property tax for that area, insurance and dues, and shows the return with a manager and without one.`) +
       h.raw(TOOL) },
 
     { h2: "How much does appreciation add?", html:
-      h.p(`The chart takes a ${fmt$(START)} rental in the Myrtle Beach city core and shows what it turns into. The grey block is what you paid. The green block is what the house gained. The brass block is the rent you kept along the way.`) +
+      h.p(`The chart takes a ${fmt$(START)} rental in the Myrtle Beach city core and shows what it is worth later. The grey block is what you paid. The blue block is what the house gained.`) +
       h.raw(`<div style="max-width:760px;margin:1.1rem 0 1.4rem">${CHART_APP}</div>`) +
-      h.p(`The green blocks grow at ${p1(metro.a10)} percent a year, which is what the metro averaged over the last ten years. That is a record, not a promise. Over the last three years the same measure fell ${p1(Math.abs(metro.y3))} percent, and the rent carried the whole return. Rent is held flat here, so the later years are understated on the brass side and the green side is the part that could go either way.`) +
+      h.p(`The blue blocks grow at ${p1(metro.a10)} percent a year, which is what the metro averaged over the last ten years. That is a record, not a promise. Over the last three years the same measure fell ${p1(Math.abs(metro.y3))} percent. The rent is what paid the owner over those three years.`) +
       h.p(`Buy on the rent, and treat appreciation as a bonus.`) +
       h.p(`${h.a("/invest/how-long-to-hold/", "How long to hold a rental before selling")} has the price history for every area and the years it takes to earn the selling costs back.`) },
   ],
