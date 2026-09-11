@@ -53,7 +53,12 @@ module.exports = {
   sub: "A Canadian can buy a Myrtle Beach rental with cash or a foreign-national loan. The rent needs a U.S. tax number. The sale has two withholdings.",
   heroCta: { label: "Ask about buying from Canada", href: "/contact/" },
   author: "devin",
-  shortAnswer: "The same way anyone does, with four extra steps. A Canadian can own a house in South Carolina with no residency at all. Most Canadian investors pay cash. A standard U.S. loan is for people who live in the U.S. with a Social Security number or a U.S. tax number. A Canadian living in Canada uses a foreign-national loan instead. That loan is qualified on the rent. The four extra steps are these. You get a U.S. tax number. You choose how the rent is taxed. You file the form that stops a 30 percent withholding on the rent. You pay two withholdings when the house is sold. Canada then taxes the same income and credits the U.S. tax. In Chapter3's files a few Canadian investors have closed with a U.S. loan; most have bought with cash.",
+  shortAnswer: [
+    "A Canadian can own a house in South Carolina with no residency and no visa. The buying part is the same as it is for anyone.",
+    "The money is the first difference. Most Canadian investors here pay cash. A regular American mortgage is for people living in the United States. A Canadian living in Canada uses a foreign-national loan, which is qualified on the rent the house brings in.",
+    "The paperwork is the second. You get a United States tax number. You choose how the rent is taxed. You file the form that stops a 30 percent withholding on the rent. Two more withholdings come out when you sell. Canada taxes the same income and credits the tax you already paid here.",
+    "Each of those steps has a section below, in the order you will meet them.",
+  ],
   sections: [
     { h2: "Can a Canadian buy a house in Myrtle Beach?", html:
       h.p(`Yes. Nothing in South Carolina requires a buyer to be a citizen or a resident. ${h.ext(NAR, "Canada is the top country of origin for foreign buyers of U.S. homes")}, and about half of foreign buyers pay cash. ${h.ext(CANAM, "Myrtle Beach has held Can-Am Days for Ontario families every March since 1961")}. ${h.ext(VMB, "The area's visitor bureau calls Myrtle Beach the top beach in America for Canadian visitors")}.`) +

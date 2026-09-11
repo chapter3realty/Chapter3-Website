@@ -142,7 +142,7 @@ function build(spec) {
   let i = 0; const nextBg = () => bgs[i++ % 2];
   const parts = [];
   parts.push(`<main id="main"><div class="detail-hero bg-grid"><div class="wrap"><div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="${hub.url}">${hub.name}</a><span>/</span><span style="color:var(--muted)">${spec.crumb}</span></div><p class="eyebrow" style="margin-bottom:1rem">${spec.eyebrow}</p><h1 class="detail-h1">${spec.h1}<br/><em style="font-style:italic;color:var(--brass)">${spec.h1em}</em></h1><p style="color:var(--muted);font-size:.9rem;margin-bottom:1rem">${byline}</p><p class="detail-sub">${spec.sub}</p><div style="margin-top:1.8rem"><a class="btn btn-brass btn-lg" href="${spec.heroCta.href}">${spec.heroCta.label}</a></div></div></div>`);
-  parts.push(`<section style="background:var(--${nextBg()})"><div class="wrap"><p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">The short answer</p><p ${P}>${spec.shortAnswer}</p></div></section>`);
+  parts.push(`<section style="background:var(--${nextBg()})"><div class="wrap"><p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">The short answer</p>${(Array.isArray(spec.shortAnswer) ? spec.shortAnswer : [spec.shortAnswer]).map(t => `<p ${P}>${t}</p>`).join("")}</div></section>`);
   for (const s of spec.sections) {
     const bg = nextBg();
     const body = typeof s.html === "function" ? s.html(bg === "ivory" ? "ivory-2" : "ivory") : s.html;

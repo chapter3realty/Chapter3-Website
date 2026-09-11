@@ -856,6 +856,10 @@ const REGISTER_REGEX = [
   // hardcode away." A threshold is a target, or a number with a consequence
   // above and below it. "24-hour line" is a phone line and stays legal.
   [/\bour lines?\b/i, '"our line" - say "our target", or name the number and what happens above and below it (owner rule 2026-09-10, PLAYBOOK A22h)'],
+  // Owner, 2026-09-11: "Always use the term appreciation instead of anything
+  // else when talking about it." The verb form stays legal ("the price rises"),
+  // so only the noun phrases that mean appreciation are matched.
+  [/\b(?:price (?:rise|change|growth)|rise in value|value growth)\b/i, 'say "appreciation" - it is the one word this site uses for a property gaining value (owner rule 2026-09-11, PLAYBOOK A22j)'],
 ];
 
 const AI_TELL_REGEX = [

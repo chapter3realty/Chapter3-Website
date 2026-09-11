@@ -59,7 +59,12 @@ module.exports = {
   sub: "J-1 students staff the Myrtle Beach summer and rent by the bed. A house holds as many as its bedroom floor area allows, at $100 to $140 a week each.",
   heroCta: { label: "Call a specialized agent", href: TEL },
   author: "devin",
-  shortAnswer: "J-1 students are college students from abroad on a four-month summer work visa. South Carolina had about 3,000 of them in 2025 and Myrtle Beach was the fourth busiest destination in the country. They rent by the bed, three or four to a room, at about $100 to $140 a week each. The city's rule on how many people a house may hold counts bedroom floor area, 70 square feet for one person and 50 square feet each for two or more. A 2,500 square foot four-bedroom house holds about 10 to 13 people, and a garage holds none. Leases are per person and end before the student's program does. The state landlord law applies to them like any tenant. The owner of one house we sold reported 60 people in it at $700 each. That is the case this page tells you not to copy.",
+  shortAnswer: [
+    "J-1 students are college students from abroad, here on a four-month summer work visa. South Carolina hosted about 3,000 of them in 2025. Myrtle Beach was the fourth busiest destination in the country.",
+    "They rent by the bed, three or four to a room, at about $100 to $140 a week each. That is the appeal. One house, four months, several rents at once.",
+    "The limit is how many people the house may lawfully hold. The city counts bedroom floor area, 70 square feet for the first person and 50 for each one after that. A 2,500 square foot four-bedroom house holds about 10 to 13 people. A garage holds none.",
+    "The owner of one house we sold reported 60 people living in it. That is the case this page tells you not to copy, and the sections below say why.",
+  ],
   sections: [
     { h2: "What is a J-1 student, and why do they rent in Myrtle Beach?", html:
       h.p(`A J-1 student is a full-time college student from another country on a Summer Work Travel visa. ${h.ext(CFR32, "The program allows up to four months of seasonal work")} during the student's summer break, and no extension. ${h.ext(SWT, "Most students have a job before they arrive")}, through a sponsor organization that screens them and vets the employer.`) +

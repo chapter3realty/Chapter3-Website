@@ -671,11 +671,31 @@ design: "the sponsor's 24-hour line" is a phone line and stays legal, and the
 scanner was tested on that case and on "Our line is 1.25" before it shipped
 (rule 4).
 
-**A22i. The short answer carries the answer and nothing else (owner,
-2026-09-10).** Three facts at most: what the thing costs, what it returns, what
-it appreciates. No opener, no framing sentence, no caveat that belongs in a
-section. A qualifier earns its place there only if the numbers are wrong
-without it. "After costs" stays; "before any loan" moves down (MISTAKES 86).
+**A22i. The short answer carries the answer and nothing else (owner, 2026-09-10,
+widened 2026-09-11).** Three facts at most: what the thing costs, what it
+returns, what it appreciates. No opener, no framing sentence, no caveat that
+belongs in a section. A qualifier earns its place there only if the numbers are
+wrong without it. "After costs" stays; "before any loan" moves down
+(MISTAKES 86).
+
+On 2026-09-11 he applied the same test to every page, not just the returns
+page: "take this lesson when it comes to making a simple short answer in the
+other pages too." So the short answer is short paragraphs, not one block. It
+answers the question a reader came with, including the one behind it. On the
+hold page that question was not "how long", it was "should I sell at all", and
+the answer is no unless you need the money or it does better elsewhere, because
+an owner can borrow against a house without selling it. The last paragraph
+gives the reader a reason to read on. `shortAnswer` in a spec takes an array of
+strings and each becomes its own paragraph.
+
+**A22j. Appreciation is the only word for it (owner, 2026-09-11).** Never "price
+rise", "price change", "price growth", "rise in value" or "value growth". A
+property gaining value is appreciation, in body copy, in a chart label, in a
+table header and in the meta description. `build.js` REGISTER_REGEX errors on
+the noun phrases; the verb stays legal, so "the builder raises prices near the
+end of a build-out" still passes. The scanner was run against a planted
+"price growth" on a live page and against that build-out sentence before it
+shipped (rule 4).
 
 **A29c. A chart is built from the data file, then looked at (2026-09-08).** A
 chart on a spec page is an SVG string built at generation time from the same

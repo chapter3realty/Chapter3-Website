@@ -148,6 +148,10 @@ function grouped(groups, opt) {
   groups.forEach((g, i) => {
     const y = i * gH + 4;
     s += `<text x="${L - 8}" y="${y + 19}" font-size="12" text-anchor="end" fill="${NAVY}">${esc(g.name)}</text>`;
+    if (g.a === null && g.b === null) {
+      s += `<text x="${L + 6}" y="${y + 17}" font-size="11.5" fill="${MUTED}">${esc(g.none || "never")}</text>`;
+      return;
+    }
     [[g.a, opt.aLabel, BRASS, 0], [g.b, opt.bLabel, PURPLE, 15]].forEach(([v, lab, colr, dy]) => {
       if (v === null) { s += `<text x="${L + 6}" y="${y + dy + 10}" font-size="11" fill="${MUTED}">${esc(g.none || "never")}</text>`; return; }
       const w = Math.max(2, Math.round(BW * v / max));
@@ -160,18 +164,17 @@ function grouped(groups, opt) {
   return s + "</svg>";
 }
 const num = (s) => /never/.test(s) ? null : +s;
-const beGroups = [["3%", "3 percent a year"], ["5%", "5 percent a year"], ["1.94%", `${p1(win[5].a)} percent, the 20-year rate`], ["5.18%", `${p1(win[4].a)} percent, the 15-year rate`], ["6.08%", `${p1(win[3].a)} percent, the 10-year rate`], ["0%", "No price change"]].map(([k, name]) => ({ name, a: num(beAt(k, "financed").no), b: num(beAt(k, "cash").no) }));
-const CHART_BE = grouped(beGroups, { max: 6, left: 190, aLabel: "Financed buyer", bLabel: "Cash buyer", fmt: (v) => v.toFixed(1) + " years", aria: "Years until a sale returns the buying and selling costs, by yearly price change, financed and cash buyers" });
+const beGroups = [["0%", "No appreciation", "never covers the costs"], ["1.94%", `${p1(win[5].a)} percent a year, the 20-year rate`], ["3%", "3 percent a year"], ["6.08%", `${p1(win[3].a)} percent a year, the 10-year rate`]]
+  .map(([k, name, none]) => ({ name, none, a: num(beAt(k, "financed").no), b: num(beAt(k, "cash").no) }));
+const CHART_BE = grouped(beGroups, { max: 6, left: 240, aLabel: "Financed buyer", bLabel: "Cash buyer", fmt: (v) => v.toFixed(1) + " years", aria: "Years until a sale covers the buying and selling costs, at four rates of appreciation, financed and cash buyers" });
 const rollGroups = [1, 2, 3, 5, 7, 10, 15].map(y => { const r = rollAt(y); return { name: `${y} year${y > 1 ? "s" : ""}`, a: r.fin, b: r.cash }; });
-const CHART_ROLL = grouped(rollGroups, { max: 100, left: 80, aLabel: "Financed buyer, needs +10.5 percent", bLabel: "Cash buyer, needs +7.9 percent", fmt: (v) => v + " of 100", aria: "Share of holds of each length since 2001 whose price rise covered the buying and selling costs" });
+const CHART_ROLL = grouped(rollGroups, { max: 100, left: 80, aLabel: "Financed buyer, needs +10.5 percent", bLabel: "Cash buyer, needs +7.9 percent", fmt: (v) => v + " of 100", aria: "Share of holds of each length since 2001 whose appreciation covered the buying and selling costs" });
 
 /* ---------------- tables ---------------- */
 const T_WIN = h.table(["Bought in July", "Typical value then", "Change to July 2026", "A year"], win.map(w => [`${2026 - w.y} (${w.y} year${w.y > 1 ? "s" : ""})`, fmt$(w.from), sp(w.total) + "%", sp(w.a) + "%"]));
-const T_BE = h.table(["Buyer", "Buying costs", "Selling costs", "Price rise needed"], [
-  ["Financed", "3 percent of the price", "Commission at the calculator's example rate, deed stamps, $1,500 closing", "+10.5 percent"],
-  ["Cash", "$1,866: attorney, owner's title policy, termite letter, recording", "The same", "+7.9 percent"],
-  ["Financed, no commission", "3 percent", "Deed stamps and $1,500", "+3.8 percent"],
-  ["Cash, no commission", "$1,866", "Deed stamps and $1,500", "+1.4 percent"],
+const T_BE = h.table(["Buyer", "What buying costs", "What selling costs", "Appreciation needed to break even"], [
+  ["Financed", "About 3 percent of the price", "Commission, deed fee, about $1,500 of closing fees", "+10.5 percent"],
+  ["Cash", "About $1,866: attorney, owner's title policy, termite letter, recording fee", "Commission, deed fee, about $1,500 of closing fees", "+7.9 percent"],
 ]);
 const T_ROLL = h.table(["Hold", "Holds counted", "Worst", "Typical", "Best", "Ended below the start"], [1, 2, 3, 5, 7, 10, 15].map(y => { const r = rollAt(y); return [`${y} year${y > 1 ? "s" : ""}`, r.n, `${sp(r.worst)}% (${r.ws.slice(0, 7)} to ${r.we.slice(0, 7)})`, sp(r.median) + "%", sp(r.best) + "%", `${100 - r.any} of 100`]; }));
 const T_ZIP = h.table(["Area (ZIP)", "Typical value, July 2026", "1 year", "3 years", "5 years, a year", "10 years, a year"], zips.map(z => [`${z.label} (${z.zip})`, fmt$(z.now), sp(z.y1) + "%", sp(z.y3) + "%", sp(z.a5) + "%", sp(z.a10) + "%"]));
@@ -196,28 +199,35 @@ const T_TRADE = h.table(["Step", "Figure"], [
 module.exports = {
   url: "/invest/how-long-to-hold/",
   title: "How Long to Hold a Myrtle Beach Rental | Chapter3",
-  description: "How long to hold a Myrtle Beach rental: the price rise that pays the costs back, Zillow price history by area since 2001, and the tax and loan waiting periods.",
+  description: "How long to hold a Myrtle Beach rental: the appreciation that pays the costs back, Zillow price history by area since 2001, and the tax and loan waiting periods.",
   ogTitle: "How long should you hold a Myrtle Beach rental before selling?",
   crumb: "How long to hold",
   eyebrow: "Holding period",
   h1: "How long should you hold a Myrtle Beach rental before selling?",
   h1em: "The costs, the price history, and the rules.",
-  sub: "A financed buyer needs the Myrtle Beach price up about 10 percent to cover a rental's costs. Since 2001 that hold was usually three years or more.",
+  sub: "A financed buyer needs about 10 percent of appreciation to cover a Myrtle Beach rental's costs. Since 2001 that hold was usually three years or more.",
   heroCta: { label: "Have us run your net proceeds", href: "/sell/net-proceeds/" },
   author: "devin",
-  shortAnswer: `Hold until a sale pays back the costs of buying and selling, and until the tax rule you are counting on is met. A financed buyer at the example commission in our net proceeds calculator needs the price to rise 10.5 percent. A cash buyer needs 7.9 percent. At 3 percent a year that is about three years. In this market's history since 2001, three-year holds cleared the financed buyer's bar ${rollAt(3).fin} times out of 100 and one-year holds ${rollAt(1).fin} times. The tax rules have their own waiting periods. More than one year gets the lower capital gains rate. Two of the last five years lived in gets the home sale exclusion. A 1031 exchange of a house you also use has a 24-month IRS safe harbor. An all-cash buyer who dislikes risk holds longest. Saved rent does not buy a second house for ${Math.round(yrsLo)} years or more, so the return is the price and the saved rent. Every 15-year hold since 2001 ended above its start.`,
+  shortAnswer: [
+    `It depends on what you want the house to do. The rule of thumb is short. Do not sell until the house is worth enough more to cover what you spent buying it and what a sale costs. In this market that has usually taken about three years.`,
+    `Then there is the tax. A house sold inside one year is taxed at your ordinary income rate. Past one year the lower long-term rate applies.`,
+    `The bigger question is whether to sell at all. Most owners can take money out of a house without selling it, through a cash-out refinance or a line of credit. Your lender decides what you qualify for. Selling ends the rent, the appreciation and the tax shelter in one move.`,
+    `Sell when you need the money, or when it would do better in another property. Otherwise the default is to keep the house.`,
+  ],
   sections: [
     { h2: "What decides how long to hold a rental in Myrtle Beach?", html:
-      h.p(`Three things. The costs of buying and selling, which a price rise has to pay back. The price history of the market you bought in. The waiting periods in the tax and loan rules for your strategy.`) +
-      h.p(`The costs are the same for every strategy. The price history decides how long the costs take to earn back. The rules add a floor for some strategies and none for others. Each has a section below.`) +
-      h.p(`The rent left after costs is the other part of the return. ${h.a("/invest/rental-returns/", "What return a Myrtle Beach rental makes")} has it by area. This page uses those figures where it needs them and does not restate them.`) },
+      h.p(`For most investors in good financial shape, selling makes no sense until the house has paid back what came out of your pocket to buy it. That is the closing costs and whatever you spent on repairs.`) +
+      h.p(`Most investors also want to keep away from the higher tax on a quick sale. Sell inside one year and the gain is taxed at your ordinary income rate. Unless you need the money, or you are moving it into a better property, selling that early costs you the tax as well as the selling costs.`) +
+      h.p(`The rest of this page has the numbers. What the two sets of costs come to. What this market's prices have done since 2001. What waiting period your strategy carries.`) },
     { h2: "How much does the price need to rise to get your money back?", html: (bg) =>
-      h.p(`A financed buyer pays about 3 percent of the price to buy, per ${h.a("/buyers/closing-costs/", "the closing costs page")}. A cash buyer pays about $1,866 at the typical metro price: the attorney, an owner's title policy, the termite letter and the recording. Selling costs the commission, ${h.ext(SC1224, "the deed recording fee of $1.85 per $500 of the price")}, and about $1,500 of attorney and closing fees.`) +
-      h.p(`Commissions are negotiable and the site states none as a fact. ${h.a("/sell/net-proceeds/", "The net proceeds calculator")} uses an editable example of 6 percent, and the table below uses that example. Change it there for your own number.`) +
+      h.p(`Buying a house costs money that is not the price, and so does selling it. Until the house is worth enough more to cover both, a sale hands you back less than you put in. This section works out how much more.`) +
+      h.p(`Buying costs a financed buyer about 3 percent of the price, per ${h.a("/buyers/closing-costs/", "the closing costs page")}. A cash buyer pays about $1,866 at the typical metro price: the attorney, an owner's title policy, the termite letter and the recording fee.`) +
+      h.p(`Selling costs come out of the sale, and the seller pays them. They are the commission, ${h.ext(SC1224, "the state's deed fee of $1.85 per $500 of the price")}, and about $1,500 of attorney and closing fees. ${h.a("/sell/net-proceeds/", "The net proceeds calculator")} holds the figures used here.`) +
       T_BE +
-      h.p(`The price rise needed comes from the typical metro home value of ${fmt$(now)} in July 2026. The chart turns the rise into years at each yearly price change. It counts no rent and no loan paydown, so it is the slow case.`) +
+      h.p(`Both figures are worked out on the typical home in the metro, which Zillow put at ${fmt$(now)} in July 2026. On a cheaper house the fixed fees are a bigger share of the price, so the appreciation needed is a little more.`) +
+      h.p(`The chart turns that into years. Pick a rate of appreciation on the left and read how long the house takes to cover both sets of costs. It counts no rent and no loan paydown, so it is the slow case.`) +
       h.raw(`<div style="max-width:640px;margin:1rem 0 1.2rem">${CHART_BE}</div>`) +
-      h.p(`With a loan, the principal you repay shortens the wait, because the payoff at sale is smaller. On a 30-year loan the share repaid in the first three years is between ${csv("hold-amortization-share.csv")[3][1]} and ${csv("hold-amortization-share.csv")[3][2]} percent of the loan, depending on the rate. At 3 percent a year that cuts the financed buyer's wait from ${beAt("3%", "financed").no} years to ${beAt("3%", "financed").pay} years. With no price change at all, paydown alone takes ${beAt("0%", "financed").pay} years.`) +
+      h.p(`A loan shortens the wait. Every payment pays down part of what you owe, so less of the sale goes to the payoff. At 3 percent a year it takes the financed buyer from ${beAt("3%", "financed").no} years to ${beAt("3%", "financed").pay} years. With no appreciation at all, the paydown alone takes ${beAt("0%", "financed").pay} years.`) +
       h.cta("Want the numbers on a house you own?", "The net proceeds calculator takes your price, your payoff and your commission example and shows what a sale leaves today.", "Have us run your net proceeds", "/sell/net-proceeds/", bg) },
     { h2: "What has the Myrtle Beach price done since 2001?", html:
       h.p(`${h.ext(ZILLOW, "Zillow's home value index")} tracks the typical home in the metro, all types, the middle third by value. The chart is every month from ${mon(metroRows[0][0])} to ${mon(LAST[0])}.`) +
@@ -227,14 +237,14 @@ module.exports = {
       T_WIN +
       h.p(`The 20-year row starts one year before the peak. It is the honest figure for a buyer who bought at the top: ${p1(win[5].a)} percent a year. The 10-year and 15-year rows start after the low, so they are the best case.`) },
     { h2: "How often did a hold of each length pay?", html:
-      h.p(`The chart counts every hold of each length that could have started since November 2001, and asks whether the price rise covered the costs in the table above. One bust sits inside most of the holds, so this is a count of what happened, not a forecast.`) +
+      h.p(`The chart counts every hold of each length that could have started since November 2001, and asks whether the appreciation covered the costs in the table above. One bust sits inside most of the holds, so this is a count of what happened, not a forecast.`) +
       h.raw(`<div style="max-width:640px;margin:1rem 0 1.2rem">${CHART_ROLL}</div>`) +
       T_ROLL +
       h.p(`In the first two years the selling costs decided the result more than the market did. From year three on, the holds that failed are almost all the ones that started between 2005 and 2008. Every 15-year hold ended above its start, and the lowest 15-year result was ${sp(rollAt(15).worst)} percent, which still clears the financed buyer's costs.`) },
     { h2: "Which Myrtle Beach areas rose the most?", html: (bg) =>
       h.p(`The same index by ZIP. Garden City and Carolina Forest have no Zillow row of their own. ZIP 29576 and ZIP 29579 are used for them and labeled that way. The list is sorted by the ten-year rate.`) +
       T_ZIP +
-      h.p(`No area rose more than ${p1(Math.max(...zips.map(z => z.y1)))} percent in the last year, and most fell over the last three. The ten-year rates run from ${p1(Math.min(...zips.map(z => z.a10)))} to ${p1(Math.max(...zips.map(z => z.a10)))} percent a year, so the spread between areas is small next to the spread between decades. The area decides the rent and the rules more than the price rise. ${h.a("/invest/where-to-buy/", "Where to buy a rental")} has the rules by area.`) +
+      h.p(`No area rose more than ${p1(Math.max(...zips.map(z => z.y1)))} percent in the last year, and most fell over the last three. The ten-year rates run from ${p1(Math.min(...zips.map(z => z.a10)))} to ${p1(Math.max(...zips.map(z => z.a10)))} percent a year, so the spread between areas is small next to the spread between decades. The area decides the rent and the rules more than the appreciation. ${h.a("/invest/where-to-buy/", "Where to buy a rental")} has the rules by area.`) +
       h.cta("Want to know what a rental you own is worth now?", "Send the address. Tim Nash runs the comparable sales himself and tells you what it would sell for today, and what a sale would leave.", "Have us value your rental", "/sell/home-value/", bg) },
     { h2: "How long do you hold for each strategy?", html:
       h.p(`These are the waiting periods in the rules, not advice on when to sell. Each one comes from the source named in the last column and linked in the sources line.`) +
@@ -245,9 +255,9 @@ module.exports = {
     { h2: "What is the best hold for an all-cash buyer who dislikes risk?", html: (bg) =>
       h.p(`The long one. Three facts from the numbers above decide it.`) +
       h.p(`First, the costs come back in about three years at 3 percent a year, and every 15-year hold in this market's history ended above its start. Shorter holds lost money in ${100 - rollAt(5).any} of 100 cases at five years and ${100 - rollAt(1).any} of 100 at one year.`) +
-      h.p(`Second, the rent does not buy a second house. The table takes each area's rent left after costs from the returns page, at the county's three-bedroom benchmark rent with a manager. It divides the price of a rental by that figure. That is how many years of saved rent it takes to pay cash for a second house of the same kind, with no price change.`) +
+      h.p(`Second, the rent does not buy a second house. The table takes each area's rent left after costs from the returns page, at the county's three-bedroom benchmark rent with a manager. It divides the price of a rental by that figure. That is how many years of saved rent it takes to pay cash for a second house of the same kind, with no appreciation.`) +
       T_CASH +
-      h.p(`A ${MB.name} rental at ${fmt$(mbPrice)} that leaves ${fmt$(mbNoi)} a year is worth ${fmt$(ty0.total)} after ten years with the rent saved and no price change, ${sp(ty0.pct)} percent. With prices and rents rising 3 percent a year it is ${fmt$(ty3.total)}, ${sp(ty3.pct)} percent. An all-cash owner's growth comes from the price and the saved rent, not from the number of houses.`) +
+      h.p(`A ${MB.name} rental at ${fmt$(mbPrice)} that leaves ${fmt$(mbNoi)} a year is worth ${fmt$(ty0.total)} after ten years with the rent saved and no appreciation, ${sp(ty0.pct)} percent. With prices and rents rising 3 percent a year it is ${fmt$(ty3.total)}, ${sp(ty3.pct)} percent. An all-cash owner's growth comes from the price and the saved rent, not from the number of houses.`) +
       h.p(`Third, selling one house to buy two of the same kind never helps, because the sale only adds the selling costs and the buying costs. Selling one expensive house that leaves little rent for two cheaper houses that leave more can help. The two must be held long enough to earn the costs back. The example uses the returns page's figures and the calculator's example commission, through a 1031 exchange so no tax is due at the trade.`) +
       T_TRADE +
       h.p(`The trade is behind by the costs for the first ${Math.ceil(payback)} years and ahead after that. Without a 1031 exchange, the tax on the gain and the depreciation would sit on top of the costs and push the payback later.`) +

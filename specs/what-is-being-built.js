@@ -137,7 +137,12 @@ module.exports = {
   sub: `Builders were allowed to start ${fmt(ytdNow)} homes in the Myrtle Beach metro from ${ytdLabel.replace("January to ", "January through ")}. Three hospitals are being built or opening. The interstate has no contract.`,
   heroCta: { label: "Call a specialized agent", href: TEL },
   author: "devin",
-  shortAnswer: `Houses, mostly. Builders were allowed to start ${fmt(y2025)} homes in the Myrtle Beach metro in 2025 and ${fmt(ytdNow)} from ${ytdLabel}. That is ${p1(Math.abs(ytdChg))} percent ${ytdChg < 0 ? "below" : "above"} the same months a year earlier. The unincorporated county has ${fmt(D.remaining_total)} more units approved and not yet built, most of them in Longs, Carolina Forest, Surfside and Burgess. Three hospitals hold state licenses and are not yet fully open. Interstate 73 is bought right of way and a set of plans, with no construction contract and no construction money. The roads under way are US 501, the downtown 501 realignment, US 701 north of Conway and the US 17 Bypass. The airport opened a $93.5 million terminal in December 2025 and has carried fewer passengers since. This page is rebuilt each month from the federal permit count and the county's data.`,
+  shortAnswer: [
+    `Houses, mostly. Builders were allowed to start ${fmt(y2025)} homes in the Myrtle Beach metro in 2025, and ${fmt(ytdNow)} from ${ytdLabel}. That is ${p1(Math.abs(ytdChg))} percent ${ytdChg < 0 ? "below" : "above"} the same months a year earlier.`,
+    `The county has ${fmt(D.remaining_total)} more units already approved and not yet built. Most of them are in Longs, Carolina Forest, Surfside and Burgess.`,
+    `The big projects are three hospitals holding state licenses that are not fully open, four road jobs under way, and the airport terminal that opened in December 2025. Interstate 73 has right of way and plans. It has no construction contract and no money to build.`,
+    `This page is rebuilt every month from the federal permit count and the county's own data. The sections below have each number and where it came from.`,
+  ],
   sections: [
     { h2: "What is being built in Myrtle Beach right now?", html:
       h.p(`Each row names the source and the date its data runs to. The sections below have the detail.`) +
