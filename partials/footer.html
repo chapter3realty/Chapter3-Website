@@ -148,12 +148,6 @@
         <source src="/popup.mp4" type="video/mp4"/>
       </video>
       <canvas id="c3-pop-canvas" aria-hidden="true"></canvas>
-      <!-- Shown only when the clip will not start on its own. iOS Low Power
-           Mode blocks autoplay even for a muted inline video, and the dialog
-           used to rise with an empty box and nothing to tap. -->
-      <button type="button" id="c3-pop-play" aria-label="Play">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
-      </button>
     </div>
 
     <!-- the capture. Hidden until the clip ends. -->
@@ -229,13 +223,6 @@
      lost context all leave the plain <video> on screen.
      ------------------------------------------------------------------ */
   var GREEN_SRC = '/popup-green.mp4';
-  /* The first frame of that clip, keyed with the same shader, so a visitor who
-     never gets playback still sees the book. Built by tools/popup-poster.py. */
-  var GREEN_POSTER = '/popup-green-poster.webp';
-  /* The last frame, for the case where the clip will not play at all. A closed
-     book behind a play button still reads as a book that is not opening. */
-  var GREEN_END = '/popup-green-end.webp';
-  var BLUE_SRC = '/popup.mp4', BLUE_POSTER = '/popup-poster.jpg';
   var keyer = null, greenReady = false;
 
   function startKeyer() {
@@ -348,58 +335,24 @@
      which is what "the video is slower" was. Start fetching WARM ms before the
      popup is due instead. Anyone still reading at 6s was going to see it at
      10s anyway, so this costs no extra visitor the download. */
-  function isOpen() {
-    var p = document.getElementById('c3-pop');
-    return !!(p && p.classList.contains('is-open'));
-  }
   function warmVideo() {
     if (LIGHT) return;
     var v = document.getElementById('c3-pop-video');
     if (!v || v.preload === 'auto') return;
-    /* A CTA can open the dialog before this runs. v.load() below rewinds and
-       pauses, so calling it then stopped the book dead halfway through. */
-    if (isOpen()) return;
     tryGreen(function (ok) {
-      if (isOpen()) return;
       if (ok) {
         greenReady = true;
         var p = document.getElementById('c3-pop');
         if (p) p.classList.add('c3-green');   /* switches the window to 16:9, see the css */
-        /* The keyed master replaces the source AND the poster. The old poster
-           is a frame of the blue clip and would flash behind a transparent
-           one. It is replaced, never removed: removing it is what left an
-           empty box whenever the clip did not play. */
-        v.setAttribute('poster', GREEN_POSTER);
+        /* the keyed master replaces the source AND the poster: the poster is a
+           frame of the old blue clip and would flash behind a transparent one */
+        v.removeAttribute('poster');
         var s = v.querySelector('source');
         if (s) s.setAttribute('src', GREEN_SRC); else v.setAttribute('src', GREEN_SRC);
       }
       v.preload = 'auto';
       try { v.load(); } catch (e) {}
     });
-  }
-
-  /* Autoplay is refused more often than it used to be: iOS Low Power Mode
-     blocks it for a muted inline clip too, and so do some data-saver modes.
-     The poster stays on screen and a tap opens the book. */
-  function offerTap(v) {
-    var media = document.getElementById('c3-pop-media');
-    var btn = document.getElementById('c3-pop-play');
-    if (!media || !btn || btn.getAttribute('data-on') === '1') return;
-    btn.setAttribute('data-on', '1');
-    /* show the finished pop-up, not the closed book, behind the play button */
-    if (greenReady && /popup-green/.test(v.currentSrc || v.src || '') && !v.currentTime) {
-      v.setAttribute('poster', GREEN_END);
-    }
-    media.classList.add('c3-needtap');
-    var go = function (e) {
-      if (e) { e.preventDefault(); e.stopPropagation(); }
-      media.classList.remove('c3-needtap');
-      btn.setAttribute('data-on', '0');
-      startKeyer();
-      try { var q = v.play(); if (q && q.catch) q.catch(function () {}); } catch (err) {}
-    };
-    btn.addEventListener('click', go);
-    media.addEventListener('click', go);
   }
 
   /* The capture floats up over the last frame. Bound to 'ended', but also to
@@ -420,56 +373,25 @@
     }
     if (!v || LIGHT) { reveal(); return; }
     startKeyer();                             /* no-op unless WebGL and the green file are both there */
-
-    /* The keyed master can fail on its own: a partial upload, a codec the
-       device will not take, a range request the CDN mishandles. Go back to the
-       clip that has always played rather than leaving the box empty. */
-    var triedBlue = false;
-    function onErr() {
-      if (!triedBlue && /popup-green/.test(v.currentSrc || '')) {
-        triedBlue = true;
-        if (keyer) keyer.stop();
-        var media = document.getElementById('c3-pop-media');
-        if (media) media.classList.remove('c3-keyed');
-        var pEl = document.getElementById('c3-pop');
-        if (pEl) pEl.classList.remove('c3-green');
-        v.setAttribute('poster', BLUE_POSTER);
-        var s = v.querySelector('source');
-        if (s) s.setAttribute('src', BLUE_SRC); else v.setAttribute('src', BLUE_SRC);
-        try {
-          v.load();
-          var q = v.play();
-          if (q && q.catch) q.catch(function () { offerTap(v); });
-        } catch (e) { offerTap(v); }
-        return;
-      }
-      offerTap(v);
-      reveal();
-    }
-
     v.addEventListener('ended', function () { reveal(); if (keyer) keyer.freeze(); });
-    v.addEventListener('error', onErr);
+    v.addEventListener('error', reveal);
     /* The clip runs ~5s. Nobody should sit looking at an unusable dialog that
        long, so the form arrives once the book is open and the scene is up,
        rather than waiting for the last frame. */
     setTimeout(reveal, 2500);
-    /* Still on frame one after 1.6s means it is not going to start by itself. */
-    setTimeout(function () { if (!v.currentTime) offerTap(v); }, 1600);
     setTimeout(function () { if (!v.currentTime) reveal(); }, 3000);  /* never started */
     setTimeout(reveal, 8000);                                         /* hard cap */
     try {
       if (!v.readyState) v.load();            /* warmVideo did not get there first */
       var p = v.play();
-      if (p && p.catch) p.catch(function () { offerTap(v); reveal(); });  /* autoplay refused */
-    } catch (e) { offerTap(v); reveal(); }
+      if (p && p.catch) p.catch(function () { reveal(); });   /* autoplay refused */
+    } catch (e) { reveal(); }
   }
 
   function close() {
     if (!pop) return;
     pop.style.display = 'none'; pop.hidden = true;
     pop.classList.remove('is-open');          /* so re-opening replays the rise */
-    var media = document.getElementById('c3-pop-media');
-    if (media) media.classList.remove('c3-needtap');
     if (keyer) keyer.stop();                  /* never leave rAF running behind a closed dialog */
     document.removeEventListener('keydown', onKey);
     if (lastFocus && lastFocus.focus) lastFocus.focus();

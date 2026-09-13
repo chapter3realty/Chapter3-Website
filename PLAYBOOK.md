@@ -730,15 +730,6 @@ an opaque background hides its siblings without changing a single measurement on
 them, which is how a pop-up shipped with none of its 28 controls tappable on a
 phone (MISTAKES 89). `tools/verify-idx-modal.js` is the pattern.
 
-**A29g. A media fallback is measured, not assumed (2026-09-11).** Any element
-that plays or streams needs a still that is present in every failure state, and
-a check that asserts it. Autoplay refusal is ordinary, not exotic: iOS Low Power
-Mode blocks it for muted inline video. Test it by stubbing
-`HTMLMediaElement.prototype.play` to reject, then assert a poster is set, a tap
-target appears, and the tap starts playback (MISTAKES 90). Never remove a
-poster; replace it. This container's Chromium has no H.264, so a WebM stands in
-for the clip when the success path needs exercising.
-
 **A30. Selectable.** Hit-test with `document.elementFromPoint` at the element's
 centre and confirm it returns that element, not an overlay. `getSelection()` is
 not a valid test. An animated pseudo-element without `pointer-events:none` once

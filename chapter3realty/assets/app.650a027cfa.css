@@ -72,7 +72,7 @@
 #c3-pop.is-open #c3-pop-media{animation:c3PopRise .85s cubic-bezier(.16,1,.3,1) both}
 #c3-pop-video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
 #c3-pop.c3-green #c3-pop-video{object-fit:contain}
-#c3-pop-canvas{position:absolute;inset:0;display:none;width:100%;height:100%}#c3-pop-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:4;display:none;align-items:center;justify-content:center;width:4.4rem;height:4.4rem;padding:0;border:0;border-radius:50%;background:rgba(8,28,48,.72);color:#fff;cursor:pointer;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}#c3-pop-media.c3-needtap #c3-pop-play{display:flex}#c3-pop-media.c3-needtap{cursor:pointer}#c3-pop-play svg{width:2rem;height:2rem;display:block;margin-left:.18rem}
+#c3-pop-canvas{position:absolute;inset:0;display:none;width:100%;height:100%}
 #c3-pop-media.c3-keyed #c3-pop-video{visibility:hidden}
 #c3-pop-media.c3-keyed #c3-pop-canvas{display:block}
 /* up from the bottom of the screen, opening as it climbs: the clip is 1.7s and the climb is 0.85s, so the covers are still swinging when it arrives */
