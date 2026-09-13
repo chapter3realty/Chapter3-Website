@@ -458,6 +458,12 @@ function ldSubmit(){
      already submitted - see DONE below. To go back to once-per-visitor, put a
      time check back in shouldSkip(). */
   var DONE = 'c3PopDone', SEEN = 'c3PopSeen', DELAY = 10000, WARM = 4000;
+  /* The clip is 3.43s of footage. 1.33x runs it in 2.58s, which is the pace he
+     asked for (owner, 2026-09-13). Nothing is re-encoded: the element plays the
+     same file faster, and the keyer follows because it paints whatever frame is
+     showing. defaultPlaybackRate is set too, because load() resets
+     playbackRate to it. */
+  var RATE = 1.33;
   var pop, lastFocus;
 
   /* Metered or 2G: never fetch 3.6MB of video. Show the still and the form. */
@@ -652,12 +658,12 @@ function ldSubmit(){
       var n = document.getElementById('c3-pop-name'); if (n) n.focus();
     }
     if (!v || LIGHT) { reveal(); return; }
+    try { v.defaultPlaybackRate = RATE; v.playbackRate = RATE; } catch (e) {}
     startKeyer();                             /* no-op unless WebGL and the green file are both there */
     v.addEventListener('ended', function () { reveal(); if (keyer) keyer.freeze(); });
     v.addEventListener('error', reveal);
-    /* The clip runs ~5s. Nobody should sit looking at an unusable dialog that
-       long, so the form arrives once the book is open and the scene is up,
-       rather than waiting for the last frame. */
+    /* The clip runs 2.58s at this rate. The form arrives as the book finishes,
+       and these backstops cover a clip that is slow, blocked or broken. */
     setTimeout(reveal, 2500);
     setTimeout(function () { if (!v.currentTime) reveal(); }, 3000);  /* never started */
     setTimeout(reveal, 8000);                                         /* hard cap */
