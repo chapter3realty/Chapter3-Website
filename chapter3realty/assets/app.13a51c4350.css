@@ -142,3 +142,11 @@ body.home .hdr-callbar{display:none}
 .why-stats-8 .stat-label{line-height:1.45}
 @media (max-width:900px){.why-stats-8{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:480px){.why-stats-8{grid-template-columns:1fr}}
+
+/* Owner, 2026-09-16: every page except the homepage gets a near-white ground
+   with a faint grey cast, in place of the warm cream. Scoped to body:not(.home)
+   so the homepage keeps the cream exactly as it was. The two values keep the
+   same light/darker relationship the cream pair had, so alternating sections
+   still read as separate bands. --muted and --rule are alpha over the ink, so a
+   lighter ground raises their contrast rather than lowering it. */
+body:not(.home){--ivory:#fafafa;--ivory-2:#f1f1f2}
