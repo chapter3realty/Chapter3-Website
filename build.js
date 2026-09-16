@@ -871,6 +871,16 @@ const REGISTER_REGEX = [
   // the bare "The first is" opener are matched.
   [/\b(?:is|are) the (?:first|second|third|fourth|fifth)(?:\s+\w+)?\s*\.|\bThe (?:first|second|third|fourth|fifth) is\b/i,
    'numbering a list in prose ("The paperwork is the second", "The first is...") - name the part instead (owner rule 2026-09-16, PLAYBOOK A22l)'],
+  // Owner, 2026-09-16, construction page: "Two things the owner of a rental here
+  // asks about are not on the list." He asked for the shape identified and
+  // banned. It is two faults in one sentence. Announcing an absence spends a
+  // sentence on what is not there instead of saying what is. Telling the reader
+  // what they ask about is a guess about a stranger. Both are padding in front
+  // of the fact, which the next sentence always carries anyway.
+  [/\b(?:is|are|was|were)\s+not\s+(?:on|in)\s+(?:the|this|that)\s+(?:list|table|chart|page)\b/i,
+   'announcing an absence ("is not on the list") - say what is there, or state the missing fact directly (owner rule 2026-09-16, PLAYBOOK A22m)'],
+  [/\b(?:what|the thing|the things|two things|three things)\b[^.?!]{0,50}\b(?:owner|buyer|seller|reader|investor|landlord)s?\b[^.?!]{0,40}\b(?:asks?|wants? to know|wonders?|cares?)\s+about\b/i,
+   'telling the reader what they ask about - you do not know; state the fact (owner rule 2026-09-16, PLAYBOOK A22m)'],
 ];
 
 const AI_TELL_REGEX = [

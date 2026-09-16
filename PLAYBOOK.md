@@ -719,6 +719,19 @@ fourteen pages are hand-written HTML, not specs, and /buyers/relocating/from-
 florida/ carried the sentence twice, once in the visible copy and once in the
 JSON-LD; both had to change together.
 
+**A22m. Never announce an absence, never guess what the reader wants (owner,
+2026-09-16).** He struck "Two things the owner of a rental here asks about are
+not on the list" and asked for the shape identified and banned. Two faults in
+one sentence. Announcing an absence spends a sentence on what is not there;
+telling the reader what they ask about is a guess about a stranger. Both are
+padding in front of a fact the next sentence already carries, which is exactly
+what happened there. `build.js` REGISTER_REGEX errors on both. Controlled
+against four planted hits and six live legal uses, among them "Sponsors tell
+students to ask the weekly cost" and "What the tenant pays is set in the lease".
+On its first run it caught three more live pages. One, /invest/student-rentals/,
+was a real legal fact wearing the bad shape ("Student status is not on that
+list"), now "Student status is not protected", which is shorter and truer.
+
 **A29c. A chart is built from the data file, then looked at (2026-09-08).** A
 chart on a spec page is an SVG string built at generation time from the same
 JSON or CSV the prose uses, never from typed values. After generating, clip

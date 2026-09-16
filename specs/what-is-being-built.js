@@ -20,6 +20,9 @@ const TEL = "tel:+18543332135";
 const FRED = "https://fred.stlouisfed.org/series/MYRT845BPPRIV";
 const DEVLAYER = "https://www.arcgis.com/home/item.html?id=80af96d3ac864d068045634ac4365405";
 const PACKET = "https://horrycounty.granicus.com/AgendaViewer.php?view_id=3&clip_id=3355";
+const COLES = "https://www.postandcourier.com/myrtle-beach/news/development-deal-horry-county-conway-subdivision/article_fd486de6-223e-497c-92a8-a7cbaff6d183.html";
+const CAMP = "https://www.myhorrynews.com/news/horry-county-planning-commission-gives-thumbs-up-to-new-campground/article_44bba8d5-68d7-4b7e-9f3c-932aee374369.html";
+const BILL4982 = "https://www.scstatehouse.gov/sess126_2025-2026/bills/4982.htm";
 const I73 = "https://projectportal.scdot.gov/i-73-project";
 const RIDE73 = "https://roads.horrycountysc.gov/projects/interstate-connector/";
 const CON = "https://dph.sc.gov/sites/scdph/files/2026-09/2026_August_Archived_CON_Applications.pdf";
@@ -81,13 +84,13 @@ function communityChart() {
 const CHART_PERMITS = permitChart(), CHART_COMM = communityChart();
 
 /* ---------------- tables ---------------- */
-const T_SUM = h.table(["What", "Where it stands", "Data through"], [
-  ["Houses", `${fmt(ytdNow)} homes permitted in the metro, ${ytdLabel}; ${fmt(y2025)} in 2025`, mName(latestM) + ", federal count"],
-  ["Approved and not yet built", `${fmt(D.remaining_total)} units in the unincorporated county's planning layer`, `County layer, read ${longDate(D.read)}`],
-  ["Hospitals", "Three with state licenses and not yet fully open: 48, 59 and 36 beds; five free-standing emergency departments", "State license list, August 31, 2026"],
-  ["Interstate 73", "Right of way bought, plans drawn, no construction contract and no construction money", "SCDOT, read September 7, 2026"],
-  ["Roads", "US 501 to SC 544 and the downtown 501 realignment finishing fall 2026; US 701 north of Conway and the US 17 Bypass six-laning under way", "County and SCDOT pages, September 2026"],
-  ["Airport", `$93.5 million terminal open since December 2025; passengers ${p1(Math.abs(airChg))} percent below 2025 in January to July 2026`, "Airport tables, read " + longDate(air.read)],
+const T_SUM = h.table(["What", "Where it stands"], [
+  ["Houses", `${fmt(ytdNow)} homes permitted in the metro, ${ytdLabel}; ${fmt(y2025)} in 2025`],
+  ["Approved and not yet built", `${fmt(D.remaining_total)} units in the unincorporated county's planning layer`],
+  ["Hospitals", "Three with state licenses and not yet fully open: 48, 59 and 36 beds; five free-standing emergency departments"],
+  ["Interstate 73", "Right of way bought, plans drawn, no construction contract and no construction money"],
+  ["Roads", "US 501 to SC 544 and the downtown 501 realignment finishing fall 2026; US 701 north of Conway and the US 17 Bypass six-laning under way"],
+  ["Airport", "$93.5 million terminal open since December 2025"],
 ]);
 const T_PERMITS = h.table(["Period", "Homes permitted"], [
   ["2024", fmt(y2024)], ["2025", fmt(y2025)], [ytdLabel, fmt(ytdNow)], [`Same months of ${+latestY - 1}`, fmt(ytdPrev)], [mName(latestM), fmt(monthly[latestM])],
@@ -145,9 +148,9 @@ module.exports = {
   ],
   sections: [
     { h2: "What is being built in Myrtle Beach right now?", html:
-      h.p(`Each row names the source and the date its data runs to. The sections below have the detail.`) +
+      h.p(`The sections below have the detail and the source for each row.`) +
       T_SUM +
-      h.p(`Two things the owner of a rental here asks about are not on the list. Nothing is under construction on Interstate 73. No new bridge to the beach has a contract. The section on roads has what is funded and what is only planned.`) },
+      h.p(`Nothing is under construction on Interstate 73. No new bridge to the beach has a contract. The section on roads has what is funded and what is only planned.`) },
     { h2: "How many houses are being built?", html: (bg) =>
       h.p(`${h.ext(FRED, "The federal government counts the homes that local governments permit each month")}. The count covers the Myrtle Beach metro, which is Horry County plus Brunswick County in North Carolina. Each month's figure arrives about four weeks after the month ends.`) +
       h.raw(`<div style="max-width:640px;margin:1rem 0 1.2rem">${CHART_PERMITS}</div>`) +
@@ -162,6 +165,21 @@ module.exports = {
       h.p(`Inside the city of Conway, ${h.ext(WARDEN, "Warden Station was annexed in January 2024 with more than 3,300 homes planned")} on about 1,800 acres along US 701 South. The news report counts 1,380 houses, 1,018 townhomes and 920 apartments. The city's own agreement was not found online. It is not in the county layer because it is inside the city.`) +
       h.p(`At the 2025 pace of ${fmt(y2025)} permits a year, the ${fmt(D.remaining_total)} approved units are about ${Math.round(D.remaining_total / y2025)} years of building. ${h.a("/invest/rent-prices/", "The rent page")} has what new supply does to the rent in the areas that get it.`) +
       h.cta("Buying a rental where the building is?", "Tell us the area and the budget. We run the numbers with the rent from local leases, and check the approved units around the house before you offer.", "Have us run the numbers", "/invest/run-the-numbers/", bg) },
+    { h2: "What is being discussed but not yet approved?", html:
+      h.p(`None of these is approved. Each one sits somewhere in the county's or a city's process, and any of them can be changed or voted down.`) +
+      h.table(["What", "Where", "Where it stands"], [
+        ["372 homes on about 187 acres, the Coles Tract",
+         "SC 905 at Old Reaves Ferry Road, outside Conway",
+         `${h.ext(COLES, "The planning commission took it up in June 2026")} and held it after residents spoke against it. County council decides the rezoning.`],
+        ["A 448-site recreational vehicle campground",
+         "Osprey Marina, off Enterprise Road on the Intracoastal Waterway",
+         `${h.ext(CAMP, "The planning commission approved the rezoning on June 4, 2026")}. It needs three readings at county council before anything is built.`],
+        ["A replacement fire station and a bus operations center",
+         "Executive Avenue at Robert M. Grissom Parkway",
+         "Myrtle Beach passed a first reading to annex the land and rezone it."],
+      ]) +
+      h.p(`The Coles Tract shows the shape of these deals here. ${h.ext(COLES, "The applicant offered the county $5,800 a home")}, about $2 million. On top of that: a traffic signal, turning lanes, 1.2 acres for a fire station, and land for widening SC 905 later. The county trades density for roads and land.`) +
+      h.p(`A proposal at this stage is not supply and it is not a reason to pay more for a house nearby. Watch it. Do not price it. A rezoning that fails leaves the land as it was.`) },
     { h2: "Which hospitals are being built?", html:
       h.p(`Three. ${h.ext(CON, "The state's license list")}, updated August 31, 2026, carries all three with their bed counts and their approval dates from 2021. Each was appealed by competing systems and each survived.`) +
       T_HOSP +
@@ -170,7 +188,8 @@ module.exports = {
     { h2: "Is Interstate 73 being built?", html:
       h.p(`No. ${h.ext(I73, "The state transportation department's own page")} says right of way is bought from I-95 to US 501. It is nearly bought from US 501 to the Marion County line. From there to SC 22 it is still being bought, through 2026. It also says: funding has not been identified to advance construction on any of the three phases. The northern half, into North Carolina, is on hold.`) +
       h.p(`${h.ext(RIDE73, "Horry County has $450 million in its road sales tax for the interstate")}. It is a local match of up to half the cost from SC 22 to the county line. The match is paid only if the state signs a construction contract for the rest. Nothing has been spent.`) +
-      h.p(`A road with bought land and finished plans is not a road. Nothing on this page counts the interstate as a reason to buy in one area over another, and no listing should.`) },
+      h.p(`What changes if it is built? ${h.ext(BILL4982, "The state's published figures")} put the saving at 33 percent of the drive time on the corridor, worth about $172 million a year by 2040. They put the wider effect at about $3.6 billion and about 20,500 jobs by the same year. Getting out ahead of a storm gets faster.`) +
+      h.p(`For a rental, the land near the interchanges moves before the rest. On this end that is SC 22 and US 501. The road is not funded, so buy the house on what it earns today and treat the interstate as a gain you did not pay for.`) },
     { h2: "Which roads are under construction?", html:
       h.p(`${h.ext(RIDE4, "Horry County's one-percent road sales tax")} funds most of the work. The 2017 to 2025 program paid for the roads finishing now. The 2025 to 2050 program, approved by voters in November 2024, lists $6.6 billion of projects. Design on the large ones starts between 2025 and 2030. Budgets below are the county's or the state's own figures.`) +
       T_ROADS +
@@ -185,9 +204,9 @@ module.exports = {
       h.p(`${h.ext(ENERGOV, "The county's live permit system")} still takes applications and shows records by address. North Myrtle Beach and Conway have their own portals. The City of Myrtle Beach and Surfside Beach publish forms and no online records. For one house, ${h.a("/invest/long-term-rental/", "the rental analyzer")} flags nearby permit activity with the numbers. After you buy through us, we tell you when a permit is filed near the property.`) +
       h.cta("Want the permits pulled for one address?", "Send us the address. We check the county map, the city's records and the approved units around it before you offer.", "Have us run the numbers", "/invest/run-the-numbers/", bg) },
     { h2: "What does the building mean for a rental buyer?", html:
-      h.p(`New houses are supply. ${fmt(y2025)} permits a year and ${fmt(D.remaining_total)} approved units mean new competition for a landlord. The areas with the most approved land will have new houses for rent next to yours for years. Those are Longs, Carolina Forest, Surfside, Burgess and Little River. Rents in those areas have to compete with new construction. ${h.a("/invest/rental-returns/", "The returns page")} has the rent and the return by area.`) +
-      h.p(`Hospitals are demand. Each one brings traveling nurses on short contracts, and the furnished monthly rental is what they rent. Roads change the drive to the beach, and a house on a road being widened is a house next to a construction site for two years.`) +
-      h.p(`The interstate is neither. Until a construction contract is signed, a listing that prices in the interstate is pricing in a plan. We do not.`) },
+      h.p(`Hospitals are demand. Each one brings traveling nurses on short contracts, and the furnished monthly rental is what they rent. ${h.a("/invest/mid-term-rentals/", "The mid-term rental page")} has that market.`) +
+      h.p(`Roads change the drive to the beach. A house on a road being widened sits next to a construction site for two years. A house on a finished one is easier to rent.`) +
+      h.p(`If the interstate is built, the land near the SC 22 and US 501 interchanges moves first. It is not funded, so it is a gain you did not pay for rather than a reason to pay more today.`) },
   ],
   faqTitle: "Grand Strand construction FAQ",
   faq: [
