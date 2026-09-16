@@ -707,6 +707,18 @@ live instance on /buyers/cost-to-own/ the first time it ran, in the visible FAQ
 and in that page's JSON-LD copy of the same answer; both had to change together
 or the schema and the page would disagree.
 
+**A22l. Do not number a list in prose (owner, 2026-09-16).** "The paperwork is
+the second." "The first is the lease." Name the part instead: "Give the tenant
+the lease." He asked for it gone from the five pages he had in front of him;
+the gate found it on fourteen. Ordinary ordinals stay legal, so the regex
+matches only the sentence-final complement and the bare "The first is" opener.
+It was controlled against five planted enumerations and six live ordinary uses
+("the first thing we check", "the second fastest-growing metro area", "When is
+the first property tax bill due?") before it shipped (rule 4). Nine of the
+fourteen pages are hand-written HTML, not specs, and /buyers/relocating/from-
+florida/ carried the sentence twice, once in the visible copy and once in the
+JSON-LD; both had to change together.
+
 **A29c. A chart is built from the data file, then looked at (2026-09-08).** A
 chart on a spec page is an SVG string built at generation time from the same
 JSON or CSV the prose uses, never from typed values. After generating, clip

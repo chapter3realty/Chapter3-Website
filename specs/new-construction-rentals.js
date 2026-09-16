@@ -37,7 +37,7 @@ module.exports = {
       h.p(`A new house is a simple rental to own in the first years. The roof, the water heater and the heating and cooling system are new, and the builder's warranty pays for defects.`) +
       h.cta("Want to buy a new construction home?", "Tell us the area and the budget. We tour the communities with you, pull the recorded rules, and run the rent before you sign.", "Talk to a new construction agent", "/contact/", bg) },
     { h2: "Can you rent out a new house?", html:
-      h.p(`Usually. The answer is in two documents. The first is the rules recorded for the community. The second is the builder's purchase contract.`) +
+      h.p(`Usually. The answer is in two documents: the rules recorded for the community, and the builder's purchase contract.`) +
       h.p(`${h.ext(HOAACT, "A homeowners association rule counts only if it is recorded")} with the county register of deeds. Rules and changes adopted during the year must be recorded by January 10 of the next year. If they are not, they cannot be enforced.`) +
       h.p(`A community can ban renting. State law says a rule must be recorded to count. It does not limit what a recorded rule may say about renting. A recorded ban on renting is enforceable here.`) +
       h.table(["Rule to look for", "What it means for a rental"], [["Leasing cap", "Only a fixed share of the homes may be rented at one time. You may wait for a slot."], ["Minimum lease term", "Often one year. It blocks furnished and seasonal stays."], ["Approval process", "The association reviews the tenant or the lease first."], ["Owner-occupancy period", "You must live in the house for a fixed time after buying before you may rent it."]]) +

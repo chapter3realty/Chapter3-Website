@@ -864,6 +864,13 @@ const REGISTER_REGEX = [
   // hard code it away." Announcing that a rule is coming wastes the sentence.
   // State the rule.
   [/\brules? of thumb\b/i, '"rule of thumb" - drop the announcement and state the rule itself (owner rule 2026-09-16, PLAYBOOK A22k)'],
+  // Owner, 2026-09-16, Canadian page: "Never say anything is first or second or
+  // anything." He means numbering the parts of a list in prose. Name the part
+  // instead. Ordinary ordinals stay legal ("the first thing we check", "the
+  // second fastest-growing metro"), so only the sentence-final complement and
+  // the bare "The first is" opener are matched.
+  [/\b(?:is|are) the (?:first|second|third|fourth|fifth)(?:\s+\w+)?\s*\.|\bThe (?:first|second|third|fourth|fifth) is\b/i,
+   'numbering a list in prose ("The paperwork is the second", "The first is...") - name the part instead (owner rule 2026-09-16, PLAYBOOK A22l)'],
 ];
 
 const AI_TELL_REGEX = [

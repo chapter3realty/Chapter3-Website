@@ -7,7 +7,7 @@
  * rent and the election, FIRPTA, SC's non-resident seller withholding (now
  * tied to the top state rate, not 7 percent), estate exposure and the treaty
  * credit, the six-month stay, the substantial presence test, CRA's rules, the
- * attorney closing and the 6 percent assessment. The owner's answer 7 is on
+ * attorney closing. The owner's answer 7 is on
  * the page as Chapter3's experience where the sources agree with it
  * (research/invest-next/owner-answers-batch5.md). No neighbourhood is called
  * "Canadian": no source says it. Chapter3 is a brokerage; nothing here is a
@@ -25,6 +25,8 @@ const P515 = "https://www.irs.gov/publications/p515";
 const W8 = "https://www.irs.gov/instructions/iw8eci";
 const FIRPTA = "https://www.irs.gov/individuals/international-taxpayers/firpta-withholding";
 const CERT = "https://www.irs.gov/individuals/international-taxpayers/withholding-certificates";
+const SANTEE = "https://www.santeecooper.com/residential/start-move-stop-service/start-service/";
+const SANTEEPAYGO = "https://www.santeecooper.com/residential/ways-to-pay/pay-as-you-go/";
 const ESTATE = "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns";
 const SPT = "https://www.irs.gov/individuals/international-taxpayers/substantial-presence-test";
 const F8840 = "https://www.irs.gov/forms-pubs/about-form-8840";
@@ -33,7 +35,6 @@ const CRA = "https://www.canada.ca/en/revenue-agency/services/tax/international-
 const T1135 = "https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/foreign-reporting/foreign-income-verification-statement.html";
 const SC580 = "https://www.scstatehouse.gov/code/t12c008.php";
 const I290 = "https://dor.sc.gov/forms-site/Forms/I290.pdf";
-const SC220 = "https://www.scstatehouse.gov/code/t12c043.php";
 const DOE = "https://www.sccourts.org/opinions/htmlfiles/sc/25508.htm";
 const GC = "https://travel.gc.ca/destinations/united-states";
 const USCIS = "https://www.uscis.gov/alienregistration";
@@ -55,8 +56,8 @@ module.exports = {
   author: "devin",
   shortAnswer: [
     "A Canadian can own a house in South Carolina with no residency and no visa. The buying part is the same as it is for anyone.",
-    "The money is the first difference. Most Canadian investors here pay cash. A regular American mortgage is for people living in the United States. A Canadian living in Canada uses a foreign-national loan, which is qualified on the rent the house brings in.",
-    "The paperwork is the second. You get a United States tax number. You choose how the rent is taxed. You file the form that stops a 30 percent withholding on the rent. Two more withholdings come out when you sell. Canada taxes the same income and credits the tax you already paid here.",
+    "Most Canadian investors here pay cash. There are mortgage options here in America, including options at our preferred lender. A Canadian living in Canada uses a foreign-national loan, which is qualified on the rent the house brings in.",
+    "You will need a U.S. tax number. Without one, whoever collects your rent must send 30 percent of it to the government. One form stops that. Then you pay tax on your profit instead of on all the rent. When you sell, money is held back again, and you claim the extra back on a return. Canada taxes the same money and subtracts what you already paid here.",
     "Each of those steps has a section below, in the order you will meet them.",
   ],
   sections: [
@@ -66,7 +67,7 @@ module.exports = {
       h.table(["What", "Why"], [["A passport", "Identity for the attorney, the lender if any, and the utilities."], ["A U.S. bank account", "Two Canadian banks open U.S. accounts from Canada with a Canadian ID. The closing attorney gives wiring instructions for the funds."], ["A U.S. tax number, or a plan to get one", "Needed to file the return on the rent, to stop the 30 percent withholding, and to sell. Not needed to buy."], ["An accountant on each side of the border", "The rent and the sale are taxed in both countries. Canada credits the U.S. tax, but only on a return that claims it."]]) },
     { h2: "How does a Canadian pay for a Myrtle Beach rental?", html: (bg) =>
       h.p(`Three ways.`) +
-      h.table(["Way", "Who it is for", "What it needs"], [["Cash", "Most Canadian investors, in Chapter3's files and in the national data.", "Funds wired to the closing attorney. No U.S. credit, no tax number, no loan file."], ["A foreign-national loan", "A Canadian who lives in Canada and wants a loan on a rental.", "A passport, foreign bank statements and reserves. No U.S. credit score. Some programs ask for a U.S. tax number, most do not. The loan is qualified on the property's rent, and it is for rentals only."], ["A standard U.S. loan", "A Canadian who lives in the U.S. with work authorization and a Social Security number or a U.S. tax number.", "The same file a U.S. buyer brings. Not open to a Canadian living in Canada."]]) +
+      h.table(["Way", "Who it is for", "What it needs"], [["Cash", "Most Canadian investors, in Chapter3's files and in the national data.", "Funds wired to the closing attorney. No U.S. credit, no tax number, no loan file."], ["A foreign-national loan", "A Canadian who lives in Canada and wants a loan on a rental.", "A passport, foreign bank statements and reserves. No U.S. credit score. Some programs ask for a U.S. tax number, most do not. The loan is qualified on the property's rent, and it is for rentals only."], ["A standard U.S. loan", "A Canadian who lives in the U.S. with work authorization and a Social Security number or a U.S. tax number.", "The same loan as a U.S. buyer. Not open to a Canadian living in Canada."]]) +
       h.p(`${h.ext(B2202, "The standard loan rules cover non-citizens who are residents of the United States")}. A Canadian in Canada is outside that sentence, so the loan that fits is ${h.a("/invest/strategies/dscr-loans/", "one qualified on the rent")}. ${h.ext(LENDER, "One foreign-national lender's public list")}: a passport, six to twelve months of foreign bank statements, and no U.S. credit required. ${h.ext(HUDFHA, "FHA loans are closed to non-permanent residents")}, so a work permit opens a standard loan but not an FHA one.`) +
       h.p(`In Chapter3's experience the cash buyer closes fastest. A few of our Canadian investors have closed with a U.S. loan. If you want one, tell us early, because the loan file takes longer from outside the country.`) +
       h.cta("Buying a rental from Canada?", "Tell us the town and the budget. We tour by video, read the association documents, and put you with the closing attorney and, if you want a loan, a loan officer at our preferred lender.", "Ask about buying from Canada", "/contact/", bg) },
@@ -75,7 +76,8 @@ module.exports = {
       h.p(`You do not need it to buy. You need it three times after that. It goes on the U.S. return for the rent. It goes on the form that stops the 30 percent withholding, which you give to whoever collects your rent. It goes on the withholding certificate application when you sell. It expires if it is not used on a return for three years. Apply the year you buy, not the week you sell.`) },
     { h2: "How is the rent taxed for a Canadian owner?", html:
       h.p(`Two ways, and you choose.`) +
-      h.table(["", "The default", "The election"], [["What is taxed", "The gross rent, with no deductions", "The net rent, after every expense the property has"], ["The rate", "A flat 30 percent", "The normal U.S. rates on the net"], ["Who takes it", `${h.ext(P515, "Whoever collects the rent withholds it")}: a manager, or the tenant`, "Nobody. You file Form 1040-NR and pay what the return shows"], ["The paper", "None", `${h.ext(W8, "Form W-8ECI to the person collecting the rent")}, which needs your U.S. tax number`]]) +
+      h.table(["", "The default", "The election"], [["What is taxed", "The gross rent, with no deductions", "The net rent, after every expense the property has"], ["The rate", "A flat 30 percent", "The normal U.S. rates on the net"], ["Who takes it", `${h.ext(P515, "Whoever collects the rent withholds it")}: a manager`, "Nobody. You file Form 1040-NR and pay what the return shows"]]) +
+      h.p(`How do you make the election? You sign ${h.ext(W8, "Form W-8ECI")} and give it to whoever collects your rent, usually the property manager. It does not go to the government. The form carries your U.S. tax number, so get the number first. The manager keeps it on file and stops withholding. You then file a U.S. return each year and pay on the profit. The form runs out at the end of the third year after you sign it, so you send a fresh one.`) +
       h.p(`${h.ext(P519, "The election treats the rent as business income")}, so the mortgage interest, the taxes, the insurance, the manager and the depreciation all count. Almost every owner makes it. Without the form, the person collecting your rent must withhold 30 percent of every payment and is personally liable if they do not. Managers here will ask for the form before the first tenant pays.`) +
       h.p(`The U.S. return is due June 15. Canada taxes the same rent as world income and ${h.ext(CRA, "credits the U.S. tax you paid")}. ${h.ext(T1135, "A rental costing more than C$100,000 also goes on Form T1135")} each year; a vacation home used mostly by your family may not. The treaty does not exempt the rent. It lets the U.S. tax it first and makes Canada credit that tax.`) },
     { h2: "What happens when a Canadian sells a Myrtle Beach rental?", html: (bg) =>
@@ -88,11 +90,10 @@ module.exports = {
       h.p(`${h.ext(GC, "Six months without a visa")}, declared at the border. ${h.ext(USCIS, "A stay of 30 days or longer must be registered")} with the U.S. government, and a Canadian who drove in without an entry record does that online.`) +
       h.p(`Tax residency is a separate count. ${h.ext(SPT, "The substantial presence test")} adds every day this year, a third of last year's days, and a sixth of the year before. At 183 you are a U.S. tax resident. About four months every year, every year, is enough to reach it. A snowbird who reaches it but keeps a home and a closer connection to Canada ${h.ext(F8840, "files Form 8840 by the return deadline")} to stay a nonresident. Miss the form and the exception is lost for that year. Canada keeps taxing you as a resident the whole time.`) },
     { h2: "What is different for a Canadian owner after closing?", html:
+      h.p(`Two things. The rest of owning a rental here is the same for you as for anyone, and ${h.a("/invest/property-management/", "the pages on running a rental")} cover it.`) +
       h.ul([
-        `<strong>The tax bill.</strong> ${h.ext(SC220, "The 4 percent rate needs a South Carolina domicile")}, so a Canadian's house is assessed at 6 percent like every rental. ${h.a("/buyers/property-taxes/", "The bill is about three times the bill for the same house as a primary residence")}.`,
-        `<strong>The utilities.</strong> The power company runs a credit check to size the deposit and accepts a passport number or a tax number as identification. With no U.S. credit file, expect a deposit.`,
-        `<strong>The insurance.</strong> ${h.a("/invest/landlord-insurance/", "The same landlord policy, wind and flood any investor buys here")}.`,
-        `<strong>The estate.</strong> ${h.ext(ESTATE, "U.S. real estate is a U.S. asset for estate tax")}, and a nonresident's estate files when its U.S. assets pass $60,000. ${h.ext(TREATY, "The treaty gives a Canadian resident's estate a credit pro-rated to the U.S. share of the whole estate")}. The return is due nine months after death. Plan the title with an accountant on each side before you buy, not after.`,
+        `<strong>The utilities want a deposit.</strong> ${h.ext(SANTEE, "The power company runs a credit check to size it")} and takes a passport number as identification. The check finds nothing. Credit files do not cross the border. Equifax and TransUnion run separate databases in each country and do not share them. A thirty-year Canadian credit record cannot be seen here. No file means the largest deposit. ${h.ext(SANTEEPAYGO, "Prepaid service skips the credit check and the deposit")} for an upfront amount instead.`,
+        `<strong>The estate is taxed here too.</strong> ${h.ext(ESTATE, "U.S. real estate is a U.S. asset for estate tax")}, and a nonresident's estate files when its U.S. assets pass $60,000. A house here clears that on its own. ${h.ext(TREATY, "The treaty gives a Canadian resident's estate a credit pro-rated to the U.S. share of the whole estate")}. The return is due nine months after death. Put the title together with an accountant on each side before you buy, not after.`,
       ]) },
   ],
   faqTitle: "Canadian buyer FAQ",
@@ -119,7 +120,7 @@ module.exports = {
     { name: "CRA, T1135", href: T1135 },
     { name: "SC Code 12-8-580", href: SC580 },
     { name: "SC Form I-290", href: I290 },
-    { name: "SC Code 12-43-220", href: SC220 },
+    { name: "Santee Cooper", href: SANTEE },
     { name: "Canada travel advice", href: GC },
     { name: "USCIS registration", href: USCIS },
     { name: "NAR 2026", href: NAR },
