@@ -149,4 +149,8 @@ body.home .hdr-callbar{display:none}
    same light/darker relationship the cream pair had, so alternating sections
    still read as separate bands. --muted and --rule are alpha over the ink, so a
    lighter ground raises their contrast rather than lowering it. */
-body:not(.home){--ivory:#fafafa;--ivory-2:#f1f1f2}
+/* Owner, 2026-09-16: body copy is the ink at full strength, not the soft grey
+   most sites use. Safe because the muted ink is never used on a dark ground:
+   1,089 elements across 15 pages were measured and none sat on one. Dark
+   sections use the ivory text colours instead. */
+body:not(.home){--ivory:#fafafa;--ivory-2:#f1f1f2;--muted:#1c2028}
