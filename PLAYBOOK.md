@@ -697,6 +697,16 @@ end of a build-out" still passes. The scanner was run against a planted
 "price growth" on a live page and against that build-out sentence before it
 shipped (rule 4).
 
+**A22k. No "rule of thumb" (owner, 2026-09-16).** He struck "The rule of thumb
+is short." from the hold page and asked for it hard-coded away. Announcing that
+a rule is coming spends a sentence saying nothing. State the rule. `build.js`
+REGISTER_REGEX errors on "rule of thumb" and "rules of thumb" sitewide. The
+regex was run against three planted variants and three near misses, including
+"a green thumb and a rule book", before it shipped (rule 4). It caught a second
+live instance on /buyers/cost-to-own/ the first time it ran, in the visible FAQ
+and in that page's JSON-LD copy of the same answer; both had to change together
+or the schema and the page would disagree.
+
 **A29c. A chart is built from the data file, then looked at (2026-09-08).** A
 chart on a spec page is an SVG string built at generation time from the same
 JSON or CSV the prose uses, never from typed values. After generating, clip

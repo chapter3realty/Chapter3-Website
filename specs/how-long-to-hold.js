@@ -4,9 +4,9 @@
  * at build time so the charts and tables cannot drift from the file. Rules
  * quoted from the IRS, the statute and the lender pages named in the sources
  * line (research/invest-next/hold-facts.md). Yields are not restated here: the
- * all-cash section takes each area's rent-after-costs from
- * data/submarkets.json, the same file the returns page uses, so the two pages
- * carry one number from one source (owner, batch 5 answer 10). No commission
+ * FAQ takes each area's rent-after-costs from data/submarkets.json, the same
+ * file the returns page uses, so the two pages carry one number from one
+ * source (owner, batch 5 answer 10). No commission
  * is stated as a fact: the break-even rows use the editable example in the net
  * proceeds calculator and say so. No loan payment, no interest rate and no
  * down-payment percentage appears (non-negotiable 3; this page is not one of
@@ -26,8 +26,6 @@ const RP0816 = "https://www.irs.gov/irb/2008-10_IRB";
 const FNMA = "https://selling-guide.fanniemae.com/sel/b2-1.3-03/cash-out-refinance-transactions";
 const EASY = "https://easystreetcap.com/dscr-loan-cash-out-refinance-guide/";
 const SC1224 = "https://www.scstatehouse.gov/code/t12c024.php";
-const NAR = "https://www.nar.realtor/blogs/economists-outlook/top-10-takeaways-from-nars-2025-profile-of-home-buyers-and-sellers";
-const CHENG = "https://ideas.repec.org/a/eee/jhouse/v19y2010i2p109-118.html";
 
 /* ---------------- data ---------------- */
 function parseCSV(text) {
@@ -95,11 +93,7 @@ const cashRows = S.map(s => {
   return { name: s.slug === "murrells-inlet" ? "Murrells Inlet and Garden City" : s.name,
     zhvi: price, noi, noiL, yrs: price / noi, yrsL: price / noiL };
 }).sort((a, b) => a.yrs - b.yrs);
-const yrsLo = Math.min(...cashRows.map(r => r.yrs)), yrsHi = Math.max(...cashRows.map(r => r.yrs)), yrsLLo = Math.min(...cashRows.map(r => r.yrsL)), yrsLHi = Math.max(...cashRows.map(r => r.yrsL));
-const MB = D.submarkets.find(s => s.slug === "myrtle-beach");
-const mbPrice = BOTTOM[MB.zip].bottom, mbNoi = noiAt(MB, mbPrice, MGMT);
-const tenYear = (P, noi, g) => { let saved = 0; for (let t = 0; t < 10; t++) saved += noi * Math.pow(1 + g, t); const v = P * Math.pow(1 + g, 10); return { saved, v, total: v + saved, pct: chg(v + saved, P) }; };
-const ty0 = tenYear(mbPrice, mbNoi, 0), ty3 = tenYear(mbPrice, mbNoi, 0.03);
+const yrsLo = Math.min(...cashRows.map(r => r.yrs));
 /* The trade example is two real houses someone already owns or would buy, so it
    keeps each area's typical value and its own asking rent, at the same 10 percent
    allowance. */
@@ -111,10 +105,13 @@ const piNoi = noiZori(PI), cwNoi = noiZori(CW);
 const stamps = (p) => Math.ceil(p / 500) * 1.85;
 const sellCost = 0.06 * PI.zhvi + stamps(PI.zhvi) + 1500;
 const buyCost = (p) => 900 + 330 + 2.10 * Math.max(0, (p - 100000) / 1000) + 112.5 + 15;
-const netSale = PI.zhvi - sellCost, twoCost = 2 * CW.zhvi + 2 * buyCost(CW.zhvi), gap = twoCost - netSale;
 const gainYr = 2 * cwNoi - piNoi, tradeCosts = sellCost + 2 * buyCost(CW.zhvi), payback = tradeCosts / gainYr;
 
 const fmt$ = (n) => (n < 0 ? "−$" : "$") + Math.round(Math.abs(n)).toLocaleString("en-US");
+/* Straight-line depreciation on the typical metro home, a fifth of the price in
+ * land, over the 27.5 years the rule allows. Derived from the Zillow value so it
+ * cannot drift from the rest of the page. */
+const dep = (now * 0.8) / 27.5;
 const p1 = (n) => (Math.round(n * 10) / 10).toFixed(1);
 const sp = (n) => (n >= 0 ? "+" : "−") + p1(Math.abs(n));
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
@@ -178,22 +175,11 @@ const T_BE = h.table(["Buyer", "What buying costs", "What selling costs", "Appre
 ]);
 const T_ROLL = h.table(["Hold", "Holds counted", "Worst", "Typical", "Best", "Ended below the start"], [1, 2, 3, 5, 7, 10, 15].map(y => { const r = rollAt(y); return [`${y} year${y > 1 ? "s" : ""}`, r.n, `${sp(r.worst)}% (${r.ws.slice(0, 7)} to ${r.we.slice(0, 7)})`, sp(r.median) + "%", sp(r.best) + "%", `${100 - r.any} of 100`]; }));
 const T_ZIP = h.table(["Area (ZIP)", "Typical value, July 2026", "1 year", "3 years", "5 years, a year", "10 years, a year"], zips.map(z => [`${z.label} (${z.zip})`, fmt$(z.now), sp(z.y1) + "%", sp(z.y3) + "%", sp(z.a5) + "%", sp(z.a10) + "%"]));
-const T_STRAT = h.table(["Strategy", "The waiting period", "Where it comes from"], [
-  ["Flip", "None. The profit is ordinary income however long you hold, because a house bought to resell is inventory. It cannot go into a 1031 exchange.", "Tax law on inventory"],
-  ["Any rental sold outright", "More than one year for the lower long-term capital gains rate. One year or less is taxed as ordinary income.", "The capital gains rule"],
-  ["BRRRR, conventional cash-out refinance", "Six months on title, and the loan being paid off must be at least 12 months old. A cash buyer can refinance inside six months for no more than what was paid plus the loan's costs.", "The conventional selling guide"],
-  ["BRRRR, rental-loan lenders", "Many have no waiting period. One publishes a smaller loan inside six months and the appraised value only after six.", "A DSCR lender's published tiers"],
-  ["1031 exchange", "No minimum in the statute. The house must be held for investment, not for sale. A house you also use has a 24-month safe harbor before and after the trade.", "The statute and the IRS safe harbor"],
-  ["Live in it, then rent it", "Two of the last five years lived in, and a sale within three years of moving out, excludes up to $250,000 of gain, or $500,000 on a joint return. Depreciation taken while rented is never excluded.", "The home sale exclusion"],
-  ["Rent it, then move in", "The rental years before you moved in are taxed in proportion. Eight rental years out of ten owned leaves a fifth of the gain excluded.", "The nonqualified-use rule"],
-]);
-const T_CASH = h.table(["Area", "Price of a rental", "Rent left after costs, with a manager", "Years of saved rent to buy a second house", "Self-managed"], cashRows.map(r => [r.name, fmt$(r.zhvi), fmt$(r.noi) + " a year", Math.round(r.yrs) + " years", Math.round(r.yrsL) + " years"]));
-const T_TRADE = h.table(["Step", "Figure"], [
-  [`Sell the ${PI.name} house, ${fmt$(PI.zhvi)}, which leaves ${fmt$(piNoi)} a year after costs`, `Net after commission at the example rate, stamps and closing: ${fmt$(netSale)}`],
-  [`Buy two ${CW.name} houses at ${fmt$(CW.zhvi)} each`, `${fmt$(twoCost)} with buying costs, so ${fmt$(gap)} of new cash`],
-  ["Rent left after costs, two houses", `${fmt$(2 * cwNoi)} a year, ${fmt$(gainYr)} more than before`],
-  ["Costs of the trade", fmt$(tradeCosts)],
-  ["Years to earn the costs back", `${p1(payback)} years`],
+const T_STRAT = h.table(["Strategy", "The waiting period"], [
+  ["Flip", "None. Sell as fast as you can."],
+  ["Any rental sold outright", "More than one year for the lower long-term capital gains rate. One year or less is taxed as ordinary income."],
+  ["BRRRR", "You do not sell. In a true BRRRR you refinance and keep the house."],
+  ["1031 exchange", "No minimum. The house must be held for investment."],
 ]);
 
 module.exports = {
@@ -209,7 +195,7 @@ module.exports = {
   heroCta: { label: "Have us run your net proceeds", href: "/sell/net-proceeds/" },
   author: "devin",
   shortAnswer: [
-    `It depends on what you want the house to do. The rule of thumb is short. Do not sell until the house is worth enough more to cover what you spent buying it and what a sale costs. In this market that has usually taken about three years.`,
+    `It depends on what you want the house to do. Do not sell until the house is worth enough more to cover what you spent buying it and what a sale costs. In this market that has usually taken about three years.`,
     `Then there is the tax. A house sold inside one year is taxed at your ordinary income rate. Past one year the lower long-term rate applies.`,
     `The bigger question is whether to sell at all. Most owners can take money out of a house without selling it, through a cash-out refinance or a line of credit. Your lender decides what you qualify for. Selling ends the rent, the appreciation and the tax shelter in one move.`,
     `Sell when you need the money, or when it would do better in another property. Otherwise the default is to keep the house.`,
@@ -247,22 +233,17 @@ module.exports = {
       h.p(`No area rose more than ${p1(Math.max(...zips.map(z => z.y1)))} percent in the last year, and most fell over the last three. The ten-year rates run from ${p1(Math.min(...zips.map(z => z.a10)))} to ${p1(Math.max(...zips.map(z => z.a10)))} percent a year, so the spread between areas is small next to the spread between decades. The area decides the rent and the rules more than the appreciation. ${h.a("/invest/where-to-buy/", "Where to buy a rental")} has the rules by area.`) +
       h.cta("Want to know what a rental you own is worth now?", "Send the address. Tim Nash runs the comparable sales himself and tells you what it would sell for today, and what a sale would leave.", "Have us value your rental", "/sell/home-value/", bg) },
     { h2: "How long do you hold for each strategy?", html:
-      h.p(`These are the waiting periods in the rules, not advice on when to sell. Each one comes from the source named in the last column and linked in the sources line.`) +
+      h.p(`These are the waiting periods in the rules, not advice on when to sell. The sources line has each rule.`) +
       T_STRAT +
-      h.p(`Depreciation is the other clock on a long-term rental. The building depreciates over 27.5 years, and at sale the depreciation taken is taxed back at up to 25 percent. On a ${fmt$(now)} house with a fifth of the price in land, that is about $9,949 a year. After ten years it is up to $24,873 of tax at sale, before the state's share and before tax on any price gain. ${h.a("/invest/rental-depreciation/", "The depreciation page")} has the math and ${h.a("/sell/capital-gains/", "the capital gains page")} has the state layer.`) +
-      h.p(`${h.a("/invest/strategies/1031-exchange/", "A 1031 exchange")} defers both. Our 1031 page has a client who sells when a house has used up its depreciation and trades the money up. That is a hold decided by the tax rule, not by the price.`) +
-      h.p(`${h.a("/invest/strategies/fix-and-flip/", "The fix and flip page")} and ${h.a("/invest/strategies/brrrr/", "the BRRRR page")} have each strategy in full. ${h.ext(P523, "The home sale exclusion")} applies to the house you live in; ${h.a("/sell/rental-property/", "selling a rental you once lived in")} has the sequence that matters.`) },
-    { h2: "What is the best hold for an all-cash buyer who dislikes risk?", html: (bg) =>
-      h.p(`The long one. Three facts from the numbers above decide it.`) +
-      h.p(`First, the costs come back in about three years at 3 percent a year, and every 15-year hold in this market's history ended above its start. Shorter holds lost money in ${100 - rollAt(5).any} of 100 cases at five years and ${100 - rollAt(1).any} of 100 at one year.`) +
-      h.p(`Second, the rent does not buy a second house. The table takes each area's rent left after costs from the returns page, at the county's three-bedroom benchmark rent with a manager. It divides the price of a rental by that figure. That is how many years of saved rent it takes to pay cash for a second house of the same kind, with no appreciation.`) +
-      T_CASH +
-      h.p(`A ${MB.name} rental at ${fmt$(mbPrice)} that leaves ${fmt$(mbNoi)} a year is worth ${fmt$(ty0.total)} after ten years with the rent saved and no appreciation, ${sp(ty0.pct)} percent. With prices and rents rising 3 percent a year it is ${fmt$(ty3.total)}, ${sp(ty3.pct)} percent. An all-cash owner's growth comes from the price and the saved rent, not from the number of houses.`) +
-      h.p(`Third, selling one house to buy two of the same kind never helps, because the sale only adds the selling costs and the buying costs. Selling one expensive house that leaves little rent for two cheaper houses that leave more can help. The two must be held long enough to earn the costs back. The example uses the returns page's figures and the calculator's example commission, through a 1031 exchange so no tax is due at the trade.`) +
-      T_TRADE +
-      h.p(`The trade is behind by the costs for the first ${Math.ceil(payback)} years and ahead after that. Without a 1031 exchange, the tax on the gain and the depreciation would sit on top of the costs and push the payback later.`) +
-      h.p(`Research on holding periods agrees on the direction and gives no single number. ${h.ext(CHENG, "Higher transaction costs lengthen the right hold and higher price swings shorten it")}. ${h.ext(NAR, "Home sellers in 2025 had owned for a median of 11 years")}, a record, though those are people's own homes, not rentals.`) +
-      h.cta("Deciding whether to sell a rental or keep it?", "Call us with the address, what you paid and what it rents for. We run the sale against the hold, with the commission example you choose.", "Call a specialized agent", TEL, bg) },
+      h.p(`${h.a("/invest/strategies/fix-and-flip/", "The fix and flip page")} and ${h.a("/invest/strategies/brrrr/", "the BRRRR page")} have each strategy in full. If you once lived in the house, ${h.a("/sell/rental-property/", "selling a rental you once lived in")} has the sequence that matters.`) },
+    { h2: "How does depreciation work when you sell?", html:
+      h.p(`Depreciation is a deduction. You take it every year you own a rental, and it lowers the rental income you pay tax on while you hold the house.`) +
+      h.p(`Only the building counts. Land never depreciates. You divide the building's value by 27.5 and deduct that much a year. On a ${fmt$(now)} house with a fifth of the price in land, that is about ${fmt$(dep)} a year.`) +
+      h.p(`At a sale the deductions come back. Everything you deducted is added to your gain and taxed at up to 25 percent. That is a higher rate than the long-term rate on the rest of the gain.`) +
+      h.p(`Ten years of ${fmt$(dep)} a year is ${fmt$(dep * 10)}. At the top rate that is ${fmt$(dep * 10 * 0.25)} of tax when you sell, before the state's share and before any tax on the appreciation.`) +
+      h.p(`Skipping the deduction does not help you. The tax at a sale is worked out on the depreciation you were allowed to take, not on what you took. Take it.`) +
+      h.p(`${h.a("/invest/strategies/1031-exchange/", "A 1031 exchange")} pushes the whole bill into the next house. Our 1031 page has a client who sells when a house has used up its depreciation and trades the money up. That is a hold decided by the tax rule, not by the price.`) +
+      h.p(`${h.a("/invest/rental-depreciation/", "The depreciation page")} has the math. ${h.a("/sell/capital-gains/", "The capital gains page")} has the state layer.`) },
   ],
   faqTitle: "Holding period FAQ",
   faq: [
@@ -283,8 +264,6 @@ module.exports = {
     { name: "Selling Guide B2-1.3-03", href: FNMA },
     { name: "a DSCR lender's seasoning tiers", href: EASY },
     { name: "SC Code 12-24", href: SC1224 },
-    { name: "NAR 2025 profile", href: NAR },
-    { name: "Cheng, Lin and Liu 2010", href: CHENG },
   ],
   sourcesNote: "Educational only, not tax or legal advice and not a loan offer. Chapter3 is a real estate brokerage. Commissions are negotiable; the example rate is the calculator's.",
   bottomCta: { h2: "Thinking about selling a rental? Run the sale against the hold first.", p: "One call. Your price, your payoff, the commission example you choose, and what the next years look like either way.", label: "Call a specialized agent", href: TEL },
