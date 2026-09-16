@@ -45,6 +45,8 @@ const GREENHEART = "https://greenheartexchange.org/professional-exchange/work-an
 const ISOP = "https://www.myrtlebeachj1students.com/housing";
 const WTG = "https://www.workandtravelgroup.com/us/program/work-and-travel-usa/jobs/job-locations/east-coast-ii/north-and-south-carolina/";
 const COAST = "https://coastrta.com/j-1-travel-information/";
+const ISOPPD = "https://police.cityofmyrtlebeach.com/programs/international-student-outreach/";
+const MBHA = "https://www.mbhospitality.org/";
 const SPONSORS = "https://j1visa.state.gov/participants/how-to-apply/sponsor-search/";
 const FBGROUP = "https://www.facebook.com/groups/475195817440518/";
 const PANDC = "https://www.postandcourier.com/myrtle-beach/news/j1-housing-summer-student-visa-myrtle-beach-sc/article_dfecc2cc-a1f2-11ef-b994-3387f70e46a3.html";
@@ -106,19 +108,33 @@ module.exports = {
       h.p(`We have walked through a house here with more than 60 J-1 students living in it. Do not copy it.`) +
       h.p(`The fines are per day. ${h.ext(CODE400, "A code violation in the city is a civil fine of up to $200")}. After seven days' notice to fix it, the fine is up to $2,000 for each day it continues. ${h.ext(LICENSE, "Every rental in the city needs a business license")}. Renting without one is a misdemeanor, with up to a $500 fine and 30 days, and each day is a separate offense.`) +
       h.p(`Enforcement happens, and it starts with complaints. ${h.ext(PC21, "In July 2021 a homeowner was charged")} for housing three J-1 students in a garage apartment he built without permits; the students were moved. ${h.ext(WMBF25, "In 2025 the city described reports of more than ten students in a two-bedroom space")}. ${h.ext(WMBF26, "In 2026 the fire marshal described past citations")} for four or five students in one bed with an air mattress in the closet.`) },
+    { h2: "Is the J-1 housing market already full?", html: (bg) =>
+      h.p(`No. The people who need the beds have said so in public, by name.`) +
+      h.p(`${h.ext(MHN, "The owner of Lazarus Entertainment Group said securing beds that met his standards was hard")}. ${h.ext(WMBF24, "He described putting deposits on houses all over Myrtle Beach")} to get enough of them, and called it difficult and challenging. He hires about 150 J-1 students a season out of 500 seasonal staff.`) +
+      h.p(`${h.ext(WMBF25, "The city manager said the same from the other side")}. When the city finds a house with too many people in it, it has to have somewhere to move those young adults to. The city needs spare beds to exist before it can enforce anything.`) +
+      h.p(`Then count it.`) +
+      h.table(["What", "How many"], [
+        ["International students working on the Grand Strand", `${h.ext(PANDC, "About 3,500")}, roughly 4 percent of the workforce`],
+        ["Beds in the residence hall's first phase", `${h.ext(MHN, "624")}`],
+        ["Beds there when every building is finished", "About 1,200 to 1,500, depending on which source you read"],
+        ["Who rents from a private owner", "Everyone else, which is most of them"],
+      ]) +
+      h.p(`Even finished, the purpose-built building holds under half the students who work here. The rest need a house.`) +
+      h.p(`The gap is not only beds. It is clean beds. ${h.ext(WMBF24, "The mayor said in 2024 that some properties are not taken care of as they should be")}, and that students have been taken advantage of. ${h.ext(MHN, "A partner in the residence hall said he had heard of 19 people in one house")}. A house inside the lawful count, with a real bed for each person, is competing against that.`) +
+      h.cta("Want to rent to J-1 students?", "Tell us which jobs you want to be near and what you want to spend. We find the houses that hold the beds lawfully and check the license and the zoning before you offer.", "Talk about buying a J-1 house", TEL, bg) },
     { h2: "How do you find J-1 students to rent to?", html: (bg) =>
       h.p(`Start with the employers, not the students. The big ones rent houses before the season and put their own staff in them. ${h.ext(WMBF24, "The president of Lazarus Entertainment Group described putting deposits on houses all over Myrtle Beach")} to get enough beds, and called it difficult. A house an employer takes every year fills with no advertising at all.`) +
       h.p(`Sponsors will not do it for you. ${h.ext(SPONSORS, "The State Department lists every sponsor by name")} and you can call them. They no longer keep lists of landlords, and they have no staff for placing students in private houses. ${h.ext(CFR32, "The rule says only that the sponsor must help the student find housing")} and must send information about available housing before the student leaves home. Nobody inspects or approves your house.`) +
       h.table(["Where to look", "What it gets you"], [
-        ["The employers who hire them", "The steadiest version. They rent early, fill the house themselves, and come back the next year."],
+        ["Make partnerships with local employers", "The steadiest version. They rent early, fill the house themselves, and come back the next year."],
         ["The visitor bureau forum", `${h.ext(CVB, "It put employers, landlords and sponsors in one room in February 2026")}.`],
         ["Facebook groups", `${h.ext(FBGROUP, "One group covers J-1 and H-2B housing for this area")}. Students post asking for rooms.`],
         ["The sites students are told to search", "Sponsors name Craigslist, Apartments.com, Roommates.com and Zillow."],
-        ["The city's orientation site", `${h.ext(ISOP, "It lists one provider and warns about deposit scams")}. There is no sign-up for landlords.`],
+        ["The city's orientation site", `${h.ext(ISOP, "It lists one provider and warns about deposit scams")}. No sign-up for landlords, so you have to ask.`],
       ]) +
+      h.p(`Who do you ask about that site? ${h.ext(ISOPPD, "The police department runs it as the International Student Outreach Program")}, with the area chamber and the hospitality association. The program takes calls at ${h.a("tel:+18439181806", "843-918-1806")} and email at ${h.a("mailto:j1studentoutreach@cityofmyrtlebeach.com", "j1studentoutreach@cityofmyrtlebeach.com")}. ${h.ext(MBHA, "The hospitality association")} is at ${h.a("tel:+18436269668", "843-626-9668")}. Be straight about what you are asking. Neither publishes a landlord list, so you are asking them to point students at a house, not to add you to a form.`) +
       h.p(`Write the listing the way a student reads it. The weekly rent per bed. The deposit and what comes back. How far to work, in miles. A photo of the bed. ${h.ext(INTEREX, "Sponsors tell students to ask those exact questions")}, so answer them before they ask.`) +
       h.p(`List the house over the winter. Employers plan the season months ahead, and the students land in May. A house first listed in March is late.`) +
-      h.p(`Is the market already full? No. ${h.ext(PANDC, "The area chamber counts about 3,500 international students working on the Grand Strand")}, about 4 percent of the workforce. ${h.ext(MHN, "The residence hall opened with a few hundred beds and is built toward about 1,500")}. Everyone else rents from a private owner. ${h.ext(WMBF24, "The mayor said in 2024 that some properties are not taken care of as they should be")}. That is what a clean house is competing against.`) +
       h.cta("Want to rent to J-1 students?", "Tell us which jobs you want to be near and what you want to spend. We find the houses that hold the beds lawfully and check the license and the zoning before you offer.", "Talk about buying a J-1 house", TEL, bg) },
     { h2: "What do J-1 students look for in a Myrtle Beach rental?", html:
       h.ul([
