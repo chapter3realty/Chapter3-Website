@@ -45,6 +45,9 @@ const GREENHEART = "https://greenheartexchange.org/professional-exchange/work-an
 const ISOP = "https://www.myrtlebeachj1students.com/housing";
 const WTG = "https://www.workandtravelgroup.com/us/program/work-and-travel-usa/jobs/job-locations/east-coast-ii/north-and-south-carolina/";
 const COAST = "https://coastrta.com/j-1-travel-information/";
+const SPONSORS = "https://j1visa.state.gov/participants/how-to-apply/sponsor-search/";
+const FBGROUP = "https://www.facebook.com/groups/475195817440518/";
+const PANDC = "https://www.postandcourier.com/myrtle-beach/news/j1-housing-summer-student-visa-myrtle-beach-sc/article_dfecc2cc-a1f2-11ef-b994-3387f70e46a3.html";
 
 module.exports = {
   url: "/invest/j1-rentals/",
@@ -57,20 +60,20 @@ module.exports = {
   h1: "How do you rent a Myrtle Beach house to J-1 students?",
   h1em: "The program, the employers, the beds, the rules.",
   sub: "J-1 students staff the Myrtle Beach summer and rent by the bed. A house holds as many as its bedroom floor area allows, at $100 to $140 a week each.",
-  heroCta: { label: "Call a specialized agent", href: TEL },
+  heroCta: { label: "Talk about buying a J-1 house", href: TEL },
   author: "devin",
   shortAnswer: [
     "J-1 students are college students from abroad, here on a four-month summer work visa. South Carolina hosted about 3,000 of them in 2025. Myrtle Beach was the fourth busiest destination in the country.",
     "They rent by the bed, three or four to a room, at about $100 to $140 a week each. That is the appeal. One house, four months, several rents at once.",
     "The limit is how many people the house may lawfully hold. The city counts bedroom floor area, 70 square feet for the first person and 50 for each one after that. A 2,500 square foot four-bedroom house holds about 10 to 13 people. A garage holds none.",
-    "The owner of one house we sold reported 60 people living in it. That is the case this page tells you not to copy, and the sections below say why.",
+    "We have walked through a house here with more than 60 J-1 students living in it. That is the case this page tells you not to copy, and the sections below say why.",
   ],
   sections: [
     { h2: "What is a J-1 student, and why do they rent in Myrtle Beach?", html:
       h.p(`A J-1 student is a full-time college student from another country on a Summer Work Travel visa. ${h.ext(CFR32, "The program allows up to four months of seasonal work")} during the student's summer break, and no extension. ${h.ext(SWT, "Most students have a job before they arrive")}, through a sponsor organization that screens them and vets the employer.`) +
       h.p(`They rent here because the jobs are here. Myrtle Beach has about 35,000 residents and ${h.ext(MHN, "about 17 million visitors a year")}. Hotels, restaurants and attractions need summer staff the town cannot supply. ${h.ext(WBTW, "The city has hosted about 8,500 J-1 students since 2018")}.`) +
       h.p(`${h.ext(FLYER, "The State Department counted 104,609 Summer Work Travel students in 2025")}. South Carolina had 3,003 of them, the 14th most of any state. ${h.ext(WTOP, "Myrtle Beach was the fourth busiest destination in the country")}, after Ocean City, Orlando and Wisconsin Dells. No source gives the exact Myrtle Beach count.`) +
-      h.p(`The top sending countries in 2025 were Jamaica, Thailand, Mexico, Peru, Romania, Turkey, Ecuador and the Dominican Republic. ${h.ext(DATES, "Each country has its own program window")}. Most run May to September. Peru, Argentina, Brazil, Chile and South Africa run December to April, so some students are here in winter. No source says how many.`) },
+      h.p(`The top sending countries in 2025 were Jamaica, Thailand, Mexico, Peru, Romania, Turkey, Ecuador and the Dominican Republic. ${h.ext(DATES, "Each country has its own program window")}. Most run May to September. Peru, Argentina, Brazil, Chile and South Africa run December to April, so some students are here in winter.`) },
     { h2: "Which employers hire the most J-1 students, and do they house them?", html:
       h.p(`The employers with the most seasonal jobs. ${h.ext(WMBF24, "The president of Lazarus Entertainment Group said in November 2024")} that 150 of the 500 summer staff at Myrtle Waves Water Park and Broadway Grand Prix are J-1 students. He said he had been pre-renting houses around the city to get enough beds. He had reserved 150 of the 300 beds in the new residence hall for the next summer.`) +
       h.p(`${h.ext(WMBF26, "The owner of Extreme Pizza and Toasted Yolk Cafe")} told a reporter in February 2026 that without the students the summer would be like 2021. That was the year no one had enough staff. ${h.ext(WTG, "Sponsor job listings for the area")} show a pizza restaurant, a diner chain and an oceanfront resort offering housing at $100 a week. A beachwear chain offers it at $110 a week, taken from the paycheck.`) +
@@ -94,18 +97,32 @@ module.exports = {
       ]) +
       h.p(`The bed count in the table is the lawful count for a 2,500 square foot four-bedroom house. The season is four months because the visa allows four. Deposits of $250 a person are held through the season, and the local listings keep $50 to $100 of each for cleaning and linens at checkout.`) +
       h.p(`${h.ext(GREENHEART, "One sponsor caps a student's rent at a third of gross pay")}. At 32 hours a week, the minimum in several local listings, a third of pay is a few hundred dollars a month. The rent per bed has a ceiling the students' wages put on it.`) +
-      h.cta("Want the rent on a house you are looking at?", "Send us the address and the bedroom sizes. We count the lawful beds and run the season against a yearly lease before you offer.", "Have us run the numbers", "/invest/run-the-numbers/", bg) },
+      h.cta("Want to rent to J-1 students?", "Tell us which jobs you want to be near and what you want to spend. We find the houses that hold the beds lawfully, count them room by room, and check the license and the zoning before you offer.", "Talk about buying a J-1 house", TEL, bg) },
     { h2: "How many people can a Myrtle Beach house lawfully hold?", html:
       h.p(`Inside the City of Myrtle Beach the answer comes from bedroom floor area. ${h.ext(CODE300, "The city adopts the International Property Maintenance Code")}. ${h.ext(IPMC, "Its occupancy section")} says a bedroom for one person needs 70 square feet, and a bedroom for two or more needs 50 square feet for each person. Kitchens and nonhabitable spaces cannot be slept in. Every bedroom needs a path to a toilet without passing through another bedroom.`) +
       h.p(`A 2,500 square foot four-bedroom house: one 14 by 16 foot bedroom holds four people. Three 12 by 12 foot bedrooms hold two each. That is ten people. If the three smaller bedrooms are 12 by 14 feet, they hold three each, and the house holds thirteen. A detached garage holds no one unless it was converted under a permit with a certificate of occupancy.`) +
-      h.p(`In Chapter3's files, the owner of a house we sold reported 40 people in 2,500 square feet at $700 a month each, and 20 more in a detached garage. That is $42,000 a month. It is also 60 people in a house that lawfully sleeps 10 to 13, and a garage that lawfully sleeps none. We sold the house. We do not run it, and we tell every buyer not to copy it.`) +
-      h.p(`The fines are per day. ${h.ext(CODE400, "A code violation in the city is a civil fine of up to $200")}. After seven days' notice to fix it, the fine is up to $2,000 for each day it continues. ${h.ext(LICENSE, "Every rental in the city needs a business license")}. Renting without one is a misdemeanor, with up to a $500 fine and 30 days, and each day is a separate offense.`) +
-      h.p(`Enforcement happens, and it starts with complaints. ${h.ext(PC21, "In July 2021 a homeowner was charged")} for housing three J-1 students in a garage apartment he built without permits; the students were moved. ${h.ext(WMBF25, "In 2025 the city described reports of more than ten students in a two-bedroom space")}. ${h.ext(WMBF26, "In 2026 the fire marshal described past citations")} for four or five students in one bed with an air mattress in the closet.`) +
       h.p(`North Myrtle Beach and the unincorporated county do not list the property maintenance code among their adopted codes, as mirrored online. They enforce through the building codes, their unfit-dwelling rules and, in North Myrtle Beach, the zoning definitions. Confirm the count for the exact house with the building department before you model the rent. We do that with you.`) },
+    { h2: "What happens if you put too many people in the house?", html:
+      h.p(`We have walked through a house here with more than 60 J-1 students living in it. Do not copy it.`) +
+      h.p(`The fines are per day. ${h.ext(CODE400, "A code violation in the city is a civil fine of up to $200")}. After seven days' notice to fix it, the fine is up to $2,000 for each day it continues. ${h.ext(LICENSE, "Every rental in the city needs a business license")}. Renting without one is a misdemeanor, with up to a $500 fine and 30 days, and each day is a separate offense.`) +
+      h.p(`Enforcement happens, and it starts with complaints. ${h.ext(PC21, "In July 2021 a homeowner was charged")} for housing three J-1 students in a garage apartment he built without permits; the students were moved. ${h.ext(WMBF25, "In 2025 the city described reports of more than ten students in a two-bedroom space")}. ${h.ext(WMBF26, "In 2026 the fire marshal described past citations")} for four or five students in one bed with an air mattress in the closet.`) },
+    { h2: "How do you find J-1 students to rent to?", html: (bg) =>
+      h.p(`Start with the employers, not the students. The big ones rent houses before the season and put their own staff in them. ${h.ext(WMBF24, "The president of Lazarus Entertainment Group described putting deposits on houses all over Myrtle Beach")} to get enough beds, and called it difficult. A house an employer takes every year fills with no advertising at all.`) +
+      h.p(`Sponsors will not do it for you. ${h.ext(SPONSORS, "The State Department lists every sponsor by name")} and you can call them. They no longer keep lists of landlords, and they have no staff for placing students in private houses. ${h.ext(CFR32, "The rule says only that the sponsor must help the student find housing")} and must send information about available housing before the student leaves home. Nobody inspects or approves your house.`) +
+      h.table(["Where to look", "What it gets you"], [
+        ["The employers who hire them", "The steadiest version. They rent early, fill the house themselves, and come back the next year."],
+        ["The visitor bureau forum", `${h.ext(CVB, "It put employers, landlords and sponsors in one room in February 2026")}.`],
+        ["Facebook groups", `${h.ext(FBGROUP, "One group covers J-1 and H-2B housing for this area")}. Students post asking for rooms.`],
+        ["The sites students are told to search", "Sponsors name Craigslist, Apartments.com, Roommates.com and Zillow."],
+        ["The city's orientation site", `${h.ext(ISOP, "It lists one provider and warns about deposit scams")}. There is no sign-up for landlords.`],
+      ]) +
+      h.p(`Write the listing the way a student reads it. The weekly rent per bed. The deposit and what comes back. How far to work, in miles. A photo of the bed. ${h.ext(INTEREX, "Sponsors tell students to ask those exact questions")}, so answer them before they ask.`) +
+      h.p(`List the house over the winter. Employers plan the season months ahead, and the students land in May. A house first listed in March is late.`) +
+      h.p(`Is the market already full? No. ${h.ext(PANDC, "The area chamber counts about 3,500 international students working on the Grand Strand")}, about 4 percent of the workforce. ${h.ext(MHN, "The residence hall opened with a few hundred beds and is built toward about 1,500")}. Everyone else rents from a private owner. ${h.ext(WMBF24, "The mayor said in 2024 that some properties are not taken care of as they should be")}. That is what a clean house is competing against.`) +
+      h.cta("Want to rent to J-1 students?", "Tell us which jobs you want to be near and what you want to spend. We find the houses that hold the beds lawfully and check the license and the zoning before you offer.", "Talk about buying a J-1 house", TEL, bg) },
     { h2: "What do J-1 students look for in a Myrtle Beach rental?", html:
       h.ul([
         `<strong>Close to work without a car.</strong> ${h.ext(J1HOUSE, "One operator says all its houses are under two miles from the job")} and most students rent or buy a bike. ${h.ext(COAST, "Every Coast RTA bus carries two bikes")}. A house near the oceanfront employers or on a bus route fills first.`,
-        `<strong>Their own bed.</strong> ${h.ext(GREENHEART, "A sponsor's rule: every participant has a bed with a frame, in a bedroom")}, never a couch in a living room.`,
         `<strong>A kitchen, Wi-Fi and laundry.</strong> Every local listing advertises all three. Linens are sometimes included.`,
         `<strong>Weekly rent and a clear deposit.</strong> ${h.ext(INTEREX, "Sponsors tell students to ask the weekly cost, the deposit and what is refundable")}, and to check the occupancy limit in the lease.`,
         `<strong>No scams.</strong> ${h.ext(ISOP, "The city's orientation site warns students about people who take deposits and provide no room")}. Sponsors tell them never to wire money before arrival. A landlord who shows the house on a video call and takes the deposit on arrival removes that fear.`,
@@ -120,10 +137,22 @@ module.exports = {
       h.p(`Weekly rent with no fixed term makes a week-to-week tenancy, which either side ends on seven days' written notice. A fixed term ends on its date. ${h.ext(SC2740, "Fifteen days of unexplained absence after unpaid rent is abandonment")}. The magistrate process, the writ and the fees are on ${h.a("/invest/landlord-rules/", "the landlord rules page")}.`) +
       h.p(`The student's program does not end with the housing. ${h.ext(CFR40, "Losing housing is not a ground for termination")}. ${h.ext(CFR32, "The sponsor must actively and immediately help the student find new housing")}, and the student reports the new address within ten days. Sponsors list eviction as a reason to call their 24-hour line. In the 2021 garage case the city moved the students the same day.`) +
       h.p(`The cost of an eviction on a four-month lease is the season. A house that stays inside the lawful count, with one lease per person and the sponsor's number in the file, rarely needs one. In Chapter3's files, the problem houses are the overfilled ones, not the tenants.`) +
-      h.cta("Buying a house for this rental?", "Call us with the address. We count the lawful beds, check the license and the zoning, and run the season against a yearly lease.", "Call a specialized agent", TEL, bg) },
+      h.cta("Want to rent to J-1 students?", "Call us with the address. We count the lawful beds, check the license and the zoning, and run the season against a yearly lease.", "Talk about buying a J-1 house", TEL, bg) },
+    { h2: "What do you do with the house the other eight months?", html:
+      h.p(`The season is four months because ${h.ext(CFR32, "the visa allows four")}. A house that sits empty from October is a worse rental than a house on one yearly lease. Plan the other eight months before you buy, not after.`) +
+      h.p(`Some students are here in winter. ${h.ext(DATES, "Peru, Argentina, Brazil, Chile and South Africa run December to April")}, so their students work our winter. How many reach this area is not published.`) +
+      h.p(`The residence hall has said what it does. ${h.ext(PANDC, "A partner in it said H-2B workers stay nine months a year")}, so it expects lower winter occupancy rather than an empty building. H-2B is the other seasonal visa. Those workers staff the same hotels, golf courses and restaurants, and they stay longer than a J-1 student can.`) +
+      h.table(["October to April", "What it is"], [
+        ["H-2B workers", "The same seasonal jobs, a longer stay. The residence hall is built around them."],
+        ["Winter monthly renters", "The area's winter market runs from late October to March at the lowest rents of the year. Most of it is condos, so a house is a different offer."],
+        ["Workers on assignment", `Nurses and trades on 13-week contracts. ${h.a("/invest/mid-term-rentals/", "The mid-term rental page")} has that market.`],
+        ["One yearly lease instead", `The steady option, and the one to beat. ${h.a("/invest/long-term-rental/", "What a yearly lease collects here")}.`],
+        ["University students", `A nine-month year near the campus. ${h.a("/invest/student-rentals/", "Student rentals")}.`],
+      ]) +
+      h.p(`Run the comparison before you buy. Four months by the bed, from the table above, collects about what a yearly lease on the same house collects in twelve. You beat a yearly lease only if you fill those eight months.`) +
+      h.p(`Wear is the part people forget. Ten people use a house harder than three. Budget paint and cleaning every autumn. Put the turnover between tenants into the year you model.`) },
     { h2: "What can go wrong with a J-1 rental?", html:
-      h.p(`The season is four months. From October to April the house needs winter tenants: monthly renters, traveling workers, or the southern-hemisphere students whose numbers here are unknown. Model the year, not the summer.`) +
-      h.p(`Wear is higher with ten people. Budget paint and cleaning every fall. Neighbors notice a full house, and the city says neighbors are how it learns about overcrowding.`) +
+      h.p(`Neighbors notice a full house, and the city says neighbors are how it learns about overcrowding. Stay inside the lawful count and that call does not come.`) +
       h.p(`The residence hall competes at the low end, three hundred beds at a time, with employers reserving blocks. A clean house inside the lawful count, near the jobs, competes on quality. A duplex or fourplex spreads the same model across units; ${h.a("/invest/strategies/small-multifamily/", "the small multifamily page")} has the financing. ${h.a("/invest/student-rentals/", "Student rentals near the university")} are the year-round version.`) },
   ],
   faqTitle: "J-1 rental FAQ",
@@ -139,21 +168,23 @@ module.exports = {
     { name: "22 CFR 62.32", href: CFR32 },
     { name: "22 CFR 62.10", href: CFR10 },
     { name: "22 CFR 62.40", href: CFR40 },
-    { name: "State Department, 2025 figures", href: FLYER },
+    { name: "State Department 2025", href: FLYER },
     { name: "2026 program dates", href: DATES },
     { name: "WTOP, April 2026", href: WTOP },
     { name: "WBTW, March 2025", href: WBTW },
     { name: "WMBF, February 2026", href: WMBF26 },
-    { name: "Myrtle Beach Code 6-300", href: CODE300 },
+    { name: "Code 6-300", href: CODE300 },
     { name: "IPMC section 404", href: IPMC },
     { name: "Code 6-400, fines", href: CODE400 },
     { name: "business license FAQ", href: LICENSE },
     { name: "SC Code 27-40", href: SC2740 },
     { name: "HUD on language rules", href: HUD },
     { name: "the residence hall", href: IRH },
+    { name: "sponsor list", href: SPONSORS },
+    { name: "Post and Courier", href: PANDC },
   ],
   sourcesNote: "Educational only, not legal advice. Confirm the lawful bed count for a specific house with its building department.",
-  bottomCta: { h2: "Talk to us before you buy a house for J-1 tenants.", p: "One call. The lawful bed count, the license, the zoning, and the season against a yearly lease.", label: "Call a specialized agent", href: TEL },
+  bottomCta: { h2: "Talk to us before you buy a house for J-1 tenants.", p: "One call. The lawful bed count, the license, the zoning, and the season against a yearly lease.", label: "Talk about buying a J-1 house", href: TEL },
   keywords: "J-1 student housing Myrtle Beach, renting to J-1 students, J-1 rental Myrtle Beach landlord, Myrtle Beach seasonal worker housing, international student housing Myrtle Beach investors, occupancy limit Myrtle Beach rental",
   about: "Renting a house in Myrtle Beach to J-1 Summer Work Travel students",
 };
