@@ -2168,8 +2168,58 @@ from 768px up to 979px, in `chapter3realty/assets/app.*.css`, then
 `node build.js rehash` and re-verify. It changes every page, so it is its own
 change and it needs his yes first. Nothing in this round depends on it.
 
+## 2026-09-28: homepage redesign candidate, waiting for his accept or decline
+
+**His request, verbatim.** "You full freedom do whatever you want to make the
+homepage Dynamic as fuck go all out make it look as pretty as you can without
+making too slow. Do some research to get some inspiration you have zero
+guardrails make whatever design you want. Just don't deploy it give me an
+option to accept or decline after i preview it."
+
+**Where it is.** `design/homepage-v2/`, outside `chapter3realty/`, so
+`deploy.ps1` cannot ship it. `chapter3realty/index.html` is unchanged.
+`node design/homepage-v2/assemble.js` builds `design/homepage-v2/index.html`
+from the live homepage. It keeps the header, footer, pop-up, `#idxModal`, every
+TCPA string, `c3SendForm`, the MAP block and `shouldIBuy()` byte-identical,
+fills every piece of his approved copy in from the live page byte for byte, and
+throws if any of that drifts. `node design/homepage-v2/preview.js <dir>` builds
+the preview folder (page plus `media/hero/`).
+
+**What it is.** Navy hero: the walk-through video (the wood view cut, re-encoded
+to 2.0MB at 720p and 1.1MB at 480p for phones, AVIF/WebP posters) bleeds off the
+top right, the H1 rises in once, and on scroll the film settles into a rounded
+frame. Reviews sit under the film as captions and dissolve in place every 7s.
+The analyzer is an ivory sheet over the hero. Badge icons draw themselves. A
+Grand Strand map drawn from Census boundaries links nine submarket pages. The
+FAQ is always open. No ticker, count-up, call bar or particles.
+
+**New copy, his to approve.** Towns section: eyebrow "Pawleys Island to Little
+River", H2 "Where on the Grand Strand are you looking?", links "All
+neighborhoods" and "3D map search", the nine place names. The analyzer's field
+labels "Street address", "City", "ZIP" (they were placeholders). Control labels
+for the video and review buttons.
+
+**Measured in Chromium.** One H1; no hidden or low-contrast text; no sideways
+scroll from 320 to 1920 except 900, which is the header defect in the
+2026-09-11 section. 81 behaviour checks pass (reduced motion, JavaScript off,
+every video gate, reviews, fold budgets, fallback fonts, label collisions,
+layout shift). Throttled phone: LCP about 0.68s (live 0.59s), blocking time
+about 230ms (live 160ms), CLS 0. `build.js preflight` passes once
+`node build.js dates` runs. The test scripts are in `design/homepage-v2/tests/`.
+
+**On accept.** Copy `design/homepage-v2/index.html` over
+`chapter3realty/index.html` and `design/homepage-v2/media/hero/` to
+`chapter3realty/media/hero/`, then `node build.js dates`, `node build.js
+llmsfull`, `node build.js preflight` (exit 0), commit, and give him the deploy
+command. After that `assemble.js` no longer works, because its anchors are the
+old page's; delete `design/homepage-v2/` except the tests. **On decline,**
+nothing in `chapter3realty/` needs undoing.
+
 ## Suggested order for the next session
 
+00000. **Homepage redesign candidate** (section above). Waiting for his accept
+   or decline on the preview. Do not touch `chapter3realty/index.html` before
+   he says yes.
 0000. **The returns page round 2 is on the branch** (section above). Expect his
    reaction to the new cap rates, the satellite map and the rebuilt
    calculator. If he wants the short-term figures on the investor price too,
