@@ -9,6 +9,9 @@ let s=fs.readFileSync(srcFile||path.join(ROOT,rel.replace(/^\//,""),"index.html"
 const title=(s.match(/<title>([\s\S]*?)<\/title>/)||[,"Preview"])[1];
 const headSrc=(s.match(/<head[^>]*>([\s\S]*?)<\/head>/)||[,""])[1];
 const headStyles=[...headSrc.matchAll(/<style\b[^>]*>[\s\S]*?<\/style>/g)].map(m=>m[0]).join("\n");
+// 2026-09-28: head inline scripts too (not analytics, not JSON-LD). The homepage redesign sets
+// html.js in the head; without it the preview showed the no-JS layout, five reviews stacked.
+const headScripts=[...headSrc.matchAll(/<script>([\s\S]*?)<\/script>/g)].filter(m=>!/GA deferred|gtag|googletagmanager/.test(m[1])).map(m=>m[0]).join("\n");
 let body=(s.match(/<body[^>]*>([\s\S]*?)<\/body>/)||[,s])[1];
 // the artifact wrapper supplies its own <body>; carry the page body class so body.home rules apply
 const bodyClass=((s.match(/<body[^>]*\bclass="([^"]*)"/)||[])[1]||"").trim();
@@ -28,6 +31,7 @@ const head=`<title>${title.replace(/\s*\|.*$/,"")}</title>
 #c3toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1f33;color:#f4efe8;padding:.7rem 1rem;border-radius:8px;font:14px/1.4 system-ui;z-index:99999;display:none;max-width:90vw}
 </style>
 ${headStyles}
+${headScripts}
 <script>
 window.c3SendForm=function(){var t=document.getElementById('c3toast');t.textContent='Preview only: forms do not send from here.';t.style.display='block';setTimeout(function(){t.style.display='none'},2600);return false;};
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';if(/^(#|javascript:|tel:|mailto:)/.test(h))return;e.preventDefault();var t=document.getElementById('c3toast');t.textContent='Preview only: '+h+' opens on the live site.';t.style.display='block';setTimeout(function(){t.style.display='none'},2600);},true);
@@ -35,5 +39,7 @@ document.addEventListener('DOMContentLoaded',function(){try{localStorage.c3PopDo
 </script>`;
 const wantStyles=(headSrc.match(/<style\b/g)||[]).length;
 if((headStyles.match(/<style\b/g)||[]).length!==wantStyles) throw new Error('preview dropped head style blocks: '+wantStyles+' in the page');
+const wantScripts=[...headSrc.matchAll(/<script>([\s\S]*?)<\/script>/g)].filter(m=>!/GA deferred|gtag|googletagmanager/.test(m[1])).length;
+if((headScripts.match(/<script>/g)||[]).length!==wantScripts) throw new Error('preview dropped head scripts: '+wantScripts+' in the page');
 fs.writeFileSync(out,head+"\n"+body+'\n<div id="c3toast"></div>\n');
 console.log(out,Math.round(fs.statSync(out).size/1024)+"KB","head styles:",(headStyles.match(/<style/g)||[]).length,"images inlined:",inlined);
