@@ -24,19 +24,63 @@ const once = (str, needle, label) => {
   if (n !== 1) throw new Error(`${label}: expected 1 match, found ${n}`);
 };
 
+// 0. fill the content template with the owner-approved copy, byte for byte from the base page
+const baseSrc = s;
+function grab(re, label) { const m = baseSrc.match(re); if (!m) throw new Error("copy not found in base: " + label); return m[1]; }
+function grabAll(re, label, n) { const m = [...baseSrc.matchAll(re)]; if (m.length !== n) throw new Error(`${label}: expected ${n}, found ${m.length}`); return m; }
+const geo = JSON.parse(fs.readFileSync(path.join(DIR, "data", "strand-geo.json"), "utf-8"));
+const fill = {};
+fill.EYEBROW = grab(/<p class="eyebrow" style="color:var\(--brass-2\);margin-bottom:\.9rem">([^<]+)<\/p>/, "hero eyebrow");
+fill.SUB = grab(/<\/h1><p style="color:rgba\(244,239,232,\.65\)[^"]*">([^<]+)<\/p>/, "hero sub");
+{
+  const stars = grab(/<div class="c3-review"><div style="[^"]*">([^<]+)<\/div>/, "stars");
+  const rv = grabAll(/<div class="c3-review"><div style="[^"]*">[^<]+<\/div><p style="font-family:var\(--serif\)[^"]*">([^<]+)<\/p><p style="[^"]*">([^<]+)<\/p><\/div>/g, "reviews", 5);
+  fill.REVIEWS = rv.map((m, k) => `<figure class="rv-slide${k ? "" : " on"}" role="group" aria-roledescription="slide" aria-label="Review ${k + 1} of 5"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">${stars}</span><blockquote><p>${m[1]}</p></blockquote><figcaption>${m[2]}</figcaption></figure>`).join("\n");
+}
+fill.AN_EB = grab(/<section id="ltr-teaser"[\s\S]*?<p style="[^"]*">([^<]+)<\/p><h2/, "analyzer eyebrow");
+fill.AN_P = grab(/Try our investor analysis tool<\/h2><p style="[^"]*">([^<]+)<\/p>/, "analyzer text");
+{
+  const why = grab(/<div class="why-stats why-stats-8">([\s\S]*?)<\/div>\n<div style="display:flex;justify-content:center;margin-top:3rem">/, "badges");
+  const b = [...why.matchAll(/<div class="why-stat"><div class="why-ico">(<svg[\s\S]*?<\/svg>)<\/div><div><div class="stat-kpi">([^<]+)<\/div><div class="stat-label">([^<]+)<\/div><\/div><\/div>/g)];
+  if (b.length !== 8) throw new Error("badges: expected 8, found " + b.length);
+  fill.BADGES = b.map((m, k) => `<div class="why-stat" style="--i:${k}"><div class="why-ico">${m[1].replace(/<(path|rect|circle)\b/g, '<$1 pathLength="1"')}</div><div><div class="stat-kpi">${m[2]}</div><div class="stat-label">${m[3]}</div></div></div>`).join("");
+}
+{
+  const t = grabAll(/<div class="team-card">\n<img class="team-photo" src="([^"]+)" alt="([^"]+)"[^>]*>\n<h3 class="team-name">([^<]+)<\/h3>\n<p class="team-role">([^<]+)<\/p>\n<p class="team-bio">([^<]+)<\/p>\n<\/div>/g, "team", 3);
+  fill.TEAM = t.map((m, k) => `<li class="tm" style="--i:${k}"><div class="tp"><img src="${m[1]}" alt="${m[2]}" width="330" height="330" loading="lazy" decoding="async"></div><h3 class="tm-name">${m[3]}</h3><p class="tm-role">${m[4]}</p><p class="tm-bio">${m[5]}</p></li>`).join("\n");
+}
+{
+  const f = grabAll(/<div style="border-top:1px solid var\(--rule\);padding:1\.4rem 0"><h3 style="[^"]*">([^<]+)<\/h3><p style="[^"]*">([^<]+)<\/p><\/div>/g, "faq", 3);
+  fill.FAQ = f.map((m, k) => `<div class="qa" style="--i:${k}"><h3>${m[1]}</h3><p>${m[2]}</p></div>`).join("\n");
+}
+fill.COAST = "M" + geo.coast.map(([x, y]) => `${x} ${y}`).join("L") + "L1025 124";
+fill.LAND = geo.land;
+fill.STATE = geo.state;
+{
+  const side = { "pawleys-island": "r", conway: "r" }, dy = { "murrells-inlet": "6px", "garden-city": "5px", "surfside-beach": "-8px" };
+  const towns = Object.entries(geo.T).sort((a, b) => b[1].y - a[1].y);   // south to north
+  fill.MARKERS = towns.map(([slug, t], k) => `<g class="mk" data-town="${slug}" transform="translate(${t.x} ${t.y})" style="--i:${k}"><g class="mk-i"><circle class="pg" r="10"/><circle class="ring" r="16"/><circle class="dot" r="6"/></g></g>`).join("\n");
+  fill.TOWNLINKS = towns.map(([slug, t]) => {
+    if (!fs.existsSync(path.join(REPO, "chapter3realty", "submarkets", slug, "index.html"))) throw new Error("no page for town " + slug);
+    return `<li style="--x:${t.px}%;--y:${t.py}%${dy[slug] ? ";--dy:" + dy[slug] : ""}"${side[slug] ? ' data-side="r"' : ""}><a href="/submarkets/${slug}/" data-town="${slug}">${t.n}</a></li>`;
+  }).join("\n");
+}
+let mainHtml = src("main.tpl.html").replace(/\{\{([A-Z_]+)\}\}/g, (m, k) => { if (!(k in fill)) throw new Error("no fill for " + k); return fill[k]; });
+
 // 1. head: drop the homepage-only layout blocks, add ours
 for (const [a, b, l] of [
   ["<style>/* mobile home layout v54 */", "</style>", "v54 home layout"],
   ['<style id="c3-ui-tweaks">', "</style>", "c3-ui-tweaks"],
+  ['<style id="c3-why-icons">', "</style>", "c3-why-icons"],
 ]) { once(s, a, l); const [pre, , post] = cut(s, a, b, l); s = pre + post; }
 once(s, "</head>", "head close");
-s = s.replace("</head>", src("head.html").trim() + "\n</head>");
+s = s.replace("</head>", () => src("head.html").trim() + "\n</head>");
 
 // 2. main: everything inside <main> is replaced; #page-home wrapper kept
 once(s, '<main id="main">', "main open");
 {
   const [pre, , post] = cut(s, '<main id="main">', "</main>", "main");
-  s = pre + '<main id="main">\n<div class="page-section active" id="page-home">\n' + src("main.html").trim() + "\n</div>\n</main>" + post;
+  s = pre + '<main id="main">\n<div class="page-section active" id="page-home">\n' + mainHtml.trim() + "\n</div>\n</main>" + post;
 }
 
 // 3. the old effects layer (cursor, particles, transition, tilt, reveal) and its touch CSS
@@ -59,9 +103,11 @@ for (const [a, l] of [
 
 // 5. our effects, last thing in the body
 once(s, "</body>", "body close");
-s = s.replace("</body>", src("fx.html").trim() + "\n</body>");
+s = s.replace("</body>", () => src("fx.html").trim() + "\n</body>");
 
 // guards: shared pieces survived byte-identical
+for (const f of ["head.html", "fx.html"]) if (!s.includes(src(f).trim())) throw new Error(f + " was altered on the way in");
+if (!s.includes(mainHtml.trim())) throw new Error("main was altered on the way in");
 const lf = (x) => x.replace(/\r\n/g, "\n");
 for (const [name, file, a, b] of [["header", "header.html", "<header>", "</header>"], ["footer", "footer.html", "<footer", "</footer>"]]) {
   const want = lf(fs.readFileSync(path.join(REPO, "partials", file), "utf-8"));
