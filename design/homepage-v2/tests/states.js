@@ -302,6 +302,25 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     ok('map, reduced motion: at rest, everything shown', r.an === 0 && r.op === 0, JSON.stringify(r));
     await ctx.close();
   }
+  // a browser without trigonometric CSS (Safari before 15.4, Chrome before 111): the map stays a picture, the towns are a
+  // list under it, and nothing moves them. Emulated by swapping the two @supports blocks and making CSS.supports agree.
+  for (const [w, h] of [[1440, 900], [390, 844]]) {
+    const { ctx, page } = await ctxPage(browser, { w, h }, () => { const o = CSS.supports.bind(CSS); CSS.supports = function (a, b) { return /sin\(/.test(String(a) + String(b)) ? false : o.apply(null, arguments); }; });
+    await page.route(URL0, async (r) => { const res = await r.fetch(); const t0 = await res.text(); const t1 = t0.replace(/@supports not \(width:calc\(1px \* sin\(1deg\)\)\)/g, '@supports (display:block)').replace(/@supports \(width:calc\(1px \* sin\(1deg\)\)\)/g, '@supports (display:nonsense)'); r.fulfill({ response: res, body: t1 }); });
+    await page.goto(URL0, { waitUntil: 'load' });
+    await page.evaluate(() => { const r = document.querySelector('#towns').getBoundingClientRect(); scrollTo({ top: r.top + scrollY, behavior: 'instant' }); });
+    await page.waitForTimeout(3500);
+    const r = await page.evaluate(() => {
+      const a = [...document.querySelectorAll('.tw-pin a')].map((e) => e.getBoundingClientRect());
+      const moved = document.getAnimations().filter((x) => x.effect && x.effect.target && x.effect.target.closest && x.effect.target.closest('.tw-pins')).length;
+      const inside = a.every((b) => b.left >= 0 && b.right <= innerWidth + 0.5);
+      let overlap = 0; for (let i = 0; i < a.length; i++) for (let j = i + 1; j < a.length; j++) if (a[i].left < a[j].right && a[j].left < a[i].right && a[i].top < a[j].bottom && a[j].top < a[i].bottom) overlap++;
+      const below = a.every((b) => b.top >= document.querySelector('.tw-scene').getBoundingClientRect().bottom - 1);
+      return { moved, inside, overlap, below, op: [...document.querySelectorAll('.tw-pin')].filter((e) => getComputedStyle(e).opacity !== '1').length };
+    });
+    ok(`map without CSS trig ${w}: towns are a still list under the map`, r.moved === 0 && r.inside && r.overlap === 0 && r.below && r.op === 0, JSON.stringify(r));
+    await ctx.close();
+  }
   {
     const { ctx, page } = await ctxPage(browser, { js: false });
     await page.goto(URL0, { waitUntil: 'load' });

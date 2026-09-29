@@ -7,10 +7,10 @@ Steps: download U.S. Census Bureau TIGER/Line 2024 shapefiles and USGS PAD-US 4.
 protected areas (both public domain) into a work folder outside the repo, project them
 onto the page's plane, write an SVG in Google Maps' current dark roadmap palette with no
 text on it, rasterize it with Playwright Chromium (render_svg.js), encode AVIF and WebP
-with ffmpeg at the lowest size that keeps full quality, and write data/strand-plane.json
+with ffmpeg (quality first, then the byte ceiling), and write data/strand-plane.json
 with the plane constants, the towns and the shield and water-label anchors. Every anchor
-is sampled on the lossless render and on each encoded file before anything in the repo
-is written.
+is sampled on the lossless renders and on each encoded file, decoded by ffmpeg and by
+Chromium, before anything in the repo is written.
 
 Needs: python3 with pyshp, shapely, numpy; curl; node with playwright
 (NODE_PATH=$(npm root -g)); a Chromium binary; an ffmpeg with libaom-av1 and
@@ -48,7 +48,9 @@ H = (LAT1 - LAT0) * S                        # plane height (~1602)
 IMG_W = 2048
 IMG_H = round(IMG_W * H / W)                 # 1771
 SX, SY = IMG_W / W, IMG_H / H                # plane units -> 2048 px
-SIZES = [(2048, 320_000), (1400, 170_000)]   # width, AVIF byte ceiling
+# width, AVIF byte ceiling. The page's plane is wider than the screen (2000 CSS px on desktop, 1200 on phones), so
+# 2x and 3x screens need the two larger files to stay sharp; srcset in src/main.tpl.html picks one by density.
+SIZES = [(4096, 450_000), (3072, 320_000), (2048, 320_000), (1400, 170_000)]
 
 def plane_x(lon): return (lon - LON0) * K * S
 def plane_y(lat): return (LAT1 - lat) * S
@@ -76,7 +78,7 @@ C = dict(
     local="#3f5167", sec="#3f5167", hwy="#4c6c96", edge="#121b27",
 )
 HWY_W, HWY_EDGE = 3.6, 0.6                     # tier 1; edge = dark edge on each side
-SEC_W, SEC_EDGE = 1.6, 0.3                     # tier 2 (ramps are this width in the tier 1 blue)
+SEC_W, SEC_EDGE = 1.6, 0.3                     # tier 2; ramps that reach a tier 1 road are this width in its blue
 LOCAL_W, LOCAL_OPACITY = 0.9, 0.8              # tier 3: streets, in towns only
 RIVER_W = 1.5                                  # named rivers from the linear water files
 STATE_W, STATE_DASH = 1.0, "4 3"
@@ -433,6 +435,14 @@ def render(svg, jobs):
     args = ["node", os.path.join(HERE, "render_svg.js"), "svg", svg]
     for out, w, h in jobs: args += [out, str(w), str(h)]
     subprocess.run(args, check=True, env=node_env())
+
+def decode_in_chromium(files):
+    """Each file as Chromium decodes it (render_svg.js decode), saved as a PNG in WORK."""
+    outs = [os.path.join(WORK, "chromium-" + os.path.basename(f) + ".png") for f in files]
+    args = ["node", os.path.join(HERE, "render_svg.js"), "decode"]
+    for f, o in zip(files, outs): args += [f, o]
+    subprocess.run(args, check=True, env=node_env())
+    return outs
 
 def read_rgb(path, vf=None):
     cmd = [FFMPEG, "-v", "error", "-i", path] + (["-vf", vf] if vf else []) + ["-f", "rawvideo", "-pix_fmt", "rgb24", "-"]
@@ -905,13 +915,17 @@ def main():
         log(f"  {w}: 4:2:0 ceiling {cap:.2f} dB; avif crf {crf} = {asize:,} B, {adb:.2f} dB (limit {limit:,}); "
             f"webp quality {q} = {wsize:,} B, {wdb:.2f} dB ({wsize / asize:.2f}x the avif)")
 
-    # the anchors go only where every raster the page may load shows their feature
+    # the anchors go only where every raster the page may load shows their feature, as ffmpeg decodes it
+    # and as Chromium does (the two upsample 4:2:0 colour differently, which matters on a 2 px waterway)
+    log("decode the encoded files in Chromium")
+    seen = decode_in_chromium([os.path.join(WORK, n) for n in names])
     rasters = [(os.path.basename(png), read_rgb(png), True) for png, _, _ in jobs] + \
-              [(n, read_rgb(os.path.join(WORK, n)), False) for n in names]
+              [(n + ", ffmpeg", read_rgb(os.path.join(WORK, n)), False) for n in names] + \
+              [(n + ", Chromium", read_rgb(c), False) for n, c in zip(names, seen)]
     log("anchors")
     shields, water, _ = anchors(geo, [(img, strict) for _, img, strict in rasters])
     plane = plane_json(shields, water)
-    log("verify the lossless renders and the encoded files")
+    log("verify the lossless renders and the encoded files, decoded by ffmpeg and by Chromium")
     if not all([verify(img, plane, n, geo) for n, img, _ in rasters]):
         raise SystemExit("an anchor missed its feature")
 

@@ -2176,6 +2176,12 @@ making too slow. Do some research to get some inspiration you have zero
 guardrails make whatever design you want. Just don't deploy it give me an
 option to accept or decline after i preview it."
 
+**His reply to the first preview, verbatim (2026-09-29).** "This is cool a few
+ideas though get the words and the photos as an overlay not under it and in the
+Where on the Grand Strand are you looking? Can you make it look like A dark mode
+3d version of google maps that like default maps not satellite." Both are done
+in the second preview (below).
+
 **Where it is.** `design/homepage-v2/`, outside `chapter3realty/`, so
 `deploy.ps1` cannot ship it. `chapter3realty/index.html` is unchanged.
 `node design/homepage-v2/assemble.js` builds `design/homepage-v2/index.html`
@@ -2183,55 +2189,91 @@ from the live homepage. It keeps the header, footer, pop-up, `#idxModal`, every
 TCPA string, `c3SendForm`, the MAP block and `shouldIBuy()` byte-identical,
 fills every piece of his approved copy in from the live page byte for byte, and
 throws if any of that drifts. `node design/homepage-v2/preview.js <dir>` builds
-the preview folder (page plus `media/hero/`).
+the preview folder (page plus `media/hero/` and `media/map/`).
 
-**What it is.** Navy hero: the walk-through video (the wood view cut, re-encoded
-to 2.0MB at 720p and 1.1MB at 480p for phones, AVIF/WebP posters) bleeds off the
-top right, the H1 rises in once, and on scroll the film settles into a rounded
-frame. Reviews sit under the film as captions and dissolve in place every 7s.
-The analyzer is an ivory sheet over the hero. Badge icons draw themselves. A
-Grand Strand map drawn from Census boundaries links nine submarket pages. The
-FAQ is always open. No ticker, count-up, call bar or particles.
+**What it is.** Hero: the walk-through video fills the hero and the eyebrow,
+H1, sub-header, the three "I am a" paths and the reviews sit on top of it, over
+a gradient scrim measured for contrast on every frame of the film (tall screens
+get a 9:16 cut). The analyzer is an ivory sheet over the hero. Badge icons draw
+themselves. The towns section is a dark road map in the style of today's
+Google Maps dark mode (near-black water, slate land, blue-grey roads, teal
+parks), tilted in 3D: it flies in from overhead when it scrolls into view, the
+nine town pins land one by one, then the map turns slowly while it is on screen
+and holds still under the pointer or keyboard focus. The FAQ is always open. No
+ticker, count-up, call bar or particles.
+
+**How the map works, so nobody re-derives it.** The map is one image
+(`media/map/strand-dark-{1400,2048,3072,4096}.{avif,webp}`; as AVIF 78, 131,
+222 and 284 KB; the page picks by screen density, so a 1x desktop loads the
+2048, a phone the 2048 or 3072, a retina desktop the 4096) drawn by
+`map/build_basemap.py` from U.S. Census TIGER/Line 2024 roads and water and
+USGS PAD-US parks and refuges, both public domain (see `map/README.md`); it
+carries no text. CSS tilts it (`rotateX`, `rotateZ`,
+perspective). Every label is an ordinary HTML link, not part of the 3D scene,
+so it stays sharp; CSS places it with `sin()`/`cos()` in `calc()` at the
+screen point where its town lands. `tests/twcheck.js` compares each label
+with a probe inside the tilted plane: under 0.2px off in Chromium, WebKit and
+Firefox. The camera, label sides and water-name spots are set per width in
+`src/head.html` (`<style id="c3-home-map">`); they were chosen by
+`tests/twsearch.js` so that no label covers another label, a pin, a shield, a
+water name, the card or the compass at any width and at any point of the turn,
+even with labels 4.5% wider (Firefox draws DM Sans about 3.5% wider). The
+motion is not CSS: `src/fx.html` computes transform keyframes with the same
+projection and the compositor plays them, because animating the CSS variables
+cost 12ms of style work per frame and dropped a throttled phone to 21fps; now
+the turn costs about 6ms per second. Browsers without CSS trigonometry
+(Safari before 15.4, Chrome before 111) get the tilted picture with the towns
+as a plain list under it.
 
 **New copy, his to approve.** Towns section: eyebrow "Pawleys Island to Little
 River", H2 "Where on the Grand Strand are you looking?" (italic on "looking?";
 italic on "Grand Strand" made WebKit read "theGrand" wherever the line wrapped
 before it), links "All neighborhoods" and "3D map search", the nine place
-names. The analyzer's field
-labels "Street address", "City", "ZIP" (they were placeholders). Control labels
-for the video and review buttons.
+names, and on the map the water names "Atlantic Ocean", "Intracoastal
+Waterway", "Waccamaw River" and the road numbers 17, 501 and 22. The
+analyzer's field labels "Street address", "City", "ZIP" (they were
+placeholders). Control labels for the video and review buttons.
 
-**Measured in Chromium.** One H1; no hidden or low-contrast text; no sideways
-scroll from 320 to 1920 except 900, which is the header defect in the
-2026-09-11 section. 81 behaviour checks pass (reduced motion, JavaScript off,
-every video gate, reviews, fold budgets, fallback fonts, label collisions,
-layout shift). Throttled phone, ten interleaved runs each: LCP 0.69s (live
-0.57s), blocking time 298ms (live 162ms), CLS 0. An earlier build used
-`content-visibility:auto` on the lower sections to save layout time; it hid
-Team, Towns and FAQ from Safari/VoiceOver and Firefox screen readers, so it
-is gone and must not come back. Two review rounds (craft, copy, accessibility,
-code and cross-browser), every finding reproduced by a second agent and fixed;
-all 12 headings read correctly in Chromium, WebKit and Firefox. `build.js preflight` passes once
-`node build.js dates` runs. The test scripts are in `design/homepage-v2/tests/`.
+**Measured in Chromium.** One H1; no hidden or low-contrast text (the town
+labels measure 7.3:1 or better from pixels, the water names 5.6:1 or better next
+to their letters, over the map); no sideways scroll from 320 to 1920 except 800
+to 979, which is the header defect in the 2026-09-11 section. 146 behaviour
+checks pass (reduced motion, JavaScript off,
+IntersectionObserver never firing, every video gate, reviews, fold budgets,
+fallback fonts, layout shift, and the map: label collisions at 19 widths
+through the whole turn, labels on their towns at rest and while moving, the
+turn holding still under the pointer and stopping off screen, and the plain
+list a browser without CSS trigonometry gets). The map checks
+also pass in WebKit and Firefox at six widths. Throttled phone, five
+interleaved runs each: LCP 0.70s (live 0.58s), blocking time 330ms (live
+155ms), CLS 0; the map section itself adds about 30ms of blocking time. An
+earlier build used `content-visibility:auto` on the lower sections; it hid
+Team, Towns and FAQ from Safari/VoiceOver and Firefox screen readers, so it is
+gone and must not come back. `build.js preflight` passes once `node build.js
+dates` and `llmsfull` run. The test scripts are in `design/homepage-v2/tests/`
+(README there). One measurement trap: this site's reduced-motion CSS gives
+every element a .01ms transition, so a script that emulates reduced motion
+and reads a position right after changing a style gets the old value; the
+tools switch transitions off first.
 
-**Preview sent 2026-09-29:** https://claude.ai/artifact/SSH4EGsM6DZpfTTaabcWeo
-(built by `design/homepage-v2/preview.js`, measured rendered at 320 to 1440
-before sending: video plays, one review showing, pop-up and search modal
-closed, team photos load, no script errors).
+**Preview 1 sent 2026-09-29:** https://claude.ai/artifact/SSH4EGsM6DZpfTTaabcWeo
+He replied with the two notes above. Preview 2 replaces it at the same link.
 
 **On accept.** Copy `design/homepage-v2/index.html` over
-`chapter3realty/index.html` and `design/homepage-v2/media/hero/` to
-`chapter3realty/media/hero/`, then `node build.js dates`, `node build.js
+`chapter3realty/index.html`, `design/homepage-v2/media/hero/` to
+`chapter3realty/media/hero/` and `design/homepage-v2/media/map/` to
+`chapter3realty/media/map/`, then `node build.js dates`, `node build.js
 llmsfull`, `node build.js preflight` (exit 0), commit, and give him the deploy
 command. After that `assemble.js` no longer works, because its anchors are the
-old page's; delete `design/homepage-v2/` except the tests. **On decline,**
-nothing in `chapter3realty/` needs undoing.
+old page's; keep `map/`, `data/strand-plane.json` and `tests/`, delete the
+rest of `design/homepage-v2/`. **On decline,** nothing in `chapter3realty/`
+needs undoing.
 
 ## Suggested order for the next session
 
 00000. **Homepage redesign candidate** (section above). Waiting for his accept
-   or decline on the preview. Do not touch `chapter3realty/index.html` before
-   he says yes.
+   or decline on the second preview (words over the film, dark 3D map). Do not
+   touch `chapter3realty/index.html` before he says yes.
 0000. **The returns page round 2 is on the branch** (section above). Expect his
    reaction to the new cap rates, the satellite map and the rebuilt
    calculator. If he wants the short-term figures on the investor price too,

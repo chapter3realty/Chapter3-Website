@@ -61,8 +61,8 @@ fill.AN_P = grab(/Try our investor analysis tool<\/h2><p style="[^"]*">([^<]+)<\
     if (!fs.existsSync(path.join(REPO, "chapter3realty", "submarkets", slug, "index.html"))) throw new Error("no page for town " + slug);
     return `<li class="tw-pt tw-pin" data-town="${slug}" style="--px:${f(t.px)};--py:${f(t.py)};--i:${k}"><a href="/submarkets/${slug}/">${t.n}</a><i class="rg"></i></li>`;
   }).join("\n");
-  // SC 31 is left off: at every width its shield sits where the waterway's name has to go
-  fill.SHIELDS = plane.shields.filter((s) => s.label !== "31").map((s) => `<span class="tw-pt sh ${s.kind === "sc" ? "sc" : "us"}" data-r="${s.label}" style="--px:${f(s.px)};--py:${f(s.py)}"><b>${s.label}</b></span>`).join("\n");
+  // head.html hides a shield at a width where it would sit under a label (data-r names the route)
+  fill.SHIELDS = plane.shields.map((s) => `<span class="tw-pt sh ${s.kind === "sc" ? "sc" : "us"}" data-r="${s.label}" style="--px:${f(s.px)};--py:${f(s.py)}"><b>${s.label}</b></span>`).join("\n");
   // water names: where each sits, and at which angle, is set per width in head.html; these are the names the basemap carries
   const cls = { "Intracoastal Waterway": "icw", "Waccamaw River": "wac", "Atlantic Ocean": "sea" };
   fill.WATER = plane.water.map((w) => {

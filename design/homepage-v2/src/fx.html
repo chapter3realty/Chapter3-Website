@@ -179,7 +179,9 @@
      style work per frame. With no motion allowed nothing here runs and the CSS draws the map at rest. ---- */
   var tw = $('#towns'), tst = tw && $('.tw-stage', tw);
   var towns = { stop: function () {}, sync: function () {} };
-  if (tst && hasIO && tst.animate) (function () {
+  /* only where CSS places the labels on the map: without trigonometric CSS they are a plain list, which must not move */
+  var trig = window.CSS && CSS.supports && CSS.supports('width', 'calc(1px * sin(1deg))');
+  if (tst && hasIO && tst.animate && trig) (function () {
     var plane = $('.tw-plane', tst), pts = $$('.tw-pt', tst), wls = $$('.tw-deco .wl i', tst), needle = $('.tw-compass i', tst);
     var R = Math.PI / 180, flown = false, landed = false, vis = false, hold = false, fly = [], turn = [];
     function num(cs, k) { return parseFloat(cs.getPropertyValue(k)) || 0; }
