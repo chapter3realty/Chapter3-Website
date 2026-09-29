@@ -2257,7 +2257,10 @@ and reads a position right after changing a style gets the old value; the
 tools switch transitions off first.
 
 **Preview 1 sent 2026-09-29:** https://claude.ai/artifact/SSH4EGsM6DZpfTTaabcWeo
-He replied with the two notes above. Preview 2 replaces it at the same link.
+He replied with the two notes above. **Preview 2 sent 2026-09-29 at the same
+link** (artifact version 2, built from commit fa19ee6 by `preview.js`; loaded
+before sending at 390 and 1440: the film plays, the map loads and flies in, no
+script errors, no missing files).
 
 **On accept.** Copy `design/homepage-v2/index.html` over
 `chapter3realty/index.html`, `design/homepage-v2/media/hero/` to
