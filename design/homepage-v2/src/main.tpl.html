@@ -1,21 +1,22 @@
-<!-- HERO: title card on navy, the walk-through film bleeding off the top right, reviews as captions under it -->
+<!-- HERO: the walk-through fills the hero; the title, paths and reviews sit on top of it -->
 <section id="home" class="cine band-navy" aria-labelledby="home-h1">
-<div class="cine-stage">
 <div class="cine-film">
 <div class="cine-media" aria-hidden="true">
 <div class="cine-media-in">
 <picture>
-<source media="(max-width:699px)" type="image/avif" srcset="/media/hero/poster-4x3-640.avif 640w,/media/hero/poster-4x3-960.avif 960w" sizes="100vw">
-<source media="(max-width:699px)" type="image/webp" srcset="/media/hero/poster-4x3-640.webp 640w,/media/hero/poster-4x3-960.webp 960w" sizes="100vw">
-<source type="image/avif" srcset="/media/hero/poster-16x9-960.avif 960w,/media/hero/poster-16x9-1280.avif 1280w" sizes="(min-width:1100px) 56vw,100vw">
-<img class="cine-poster" src="/media/hero/poster-16x9-1280.webp" srcset="/media/hero/poster-16x9-960.webp 960w,/media/hero/poster-16x9-1280.webp 1280w" sizes="(min-width:1100px) 56vw,100vw" width="1280" height="720" alt="" fetchpriority="high">
+<source media="(max-aspect-ratio:1/1)" type="image/avif" srcset="/media/hero/poster-9x16-540.avif 540w" sizes="100vw">
+<source media="(max-aspect-ratio:1/1)" type="image/webp" srcset="/media/hero/poster-9x16-540.webp 540w" sizes="100vw">
+<source type="image/avif" srcset="/media/hero/poster-16x9-960.avif 960w,/media/hero/poster-16x9-1280.avif 1280w" sizes="100vw">
+<img class="cine-poster" src="/media/hero/poster-16x9-1280.webp" srcset="/media/hero/poster-16x9-960.webp 960w,/media/hero/poster-16x9-1280.webp 1280w" sizes="100vw" width="1280" height="720" alt="" fetchpriority="high">
 </picture>
-<video class="cine-video" data-hero muted playsinline loop preload="none" disablepictureinpicture disableremoteplayback tabindex="-1" data-mp4="/media/hero/walkthrough-16x9-720p.mp4" data-mp4-sm="/media/hero/walkthrough-4x3-480p.mp4" data-webm="/media/hero/walkthrough-16x9-720p.webm"></video>
+<video class="cine-video" data-hero muted playsinline loop preload="none" disablepictureinpicture disableremoteplayback tabindex="-1" data-mp4="/media/hero/walkthrough-16x9-720p.mp4" data-webm="/media/hero/walkthrough-16x9-720p.webm" data-mp4-tall="/media/hero/walkthrough-9x16-960p.mp4" data-webm-tall="/media/hero/walkthrough-9x16-960p.webm"></video>
+</div>
 </div>
 </div>
 <button class="cine-pause" type="button" aria-label="Pause the video" hidden><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l10.5-6.5z"/></svg></button>
-</div>
+<div class="cine-stage">
 <div class="cine-copy">
+<div class="cine-text">
 <p class="cine-eyebrow">{{EYEBROW}}</p>
 <h1 class="cine-h1" id="home-h1"><span class="l1"><span>Myrtle Beach</span></span> <span class="l2"><span>Real Estate</span></span></h1>
 <p style="color:rgba(244,239,232,.86)" class="cine-sub">{{SUB}}</p>
@@ -24,6 +25,7 @@
 <li><a class="cine-path" href="/invest/"><span class="pk">I am an</span> <span class="pr" data-r="Investor">Investor</span><span class="pa" aria-hidden="true"><svg viewBox="0 0 12 12" focusable="false"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></span></a></li>
 <li><a class="cine-path" href="/buyers/buying-in-myrtle-beach/"><span class="pk">I am a</span> <span class="pr" data-r="Buyer">Buyer</span><span class="pa" aria-hidden="true"><svg viewBox="0 0 12 12" focusable="false"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></span></a></li>
 </ul>
+</div>
 </div>
 <div id="home-reviews" class="rv" role="region" aria-roledescription="carousel" aria-labelledby="rv-h">
 <div class="rv-head">
@@ -84,35 +86,28 @@
 </div>
 </section>
 
-<!-- TOWNS: a Grand Strand chart drawn from Census boundaries; every label is a link -->
-<section id="towns" class="band band-navy" aria-labelledby="towns-h">
-<div class="w tw">
-<div class="tw-head">
+<!-- TOWNS: a dark road map of the Grand Strand from Census data, tilted in 3D. Each town label is a link that CSS places over its spot on the map. -->
+<section id="towns" class="band band-navy tw3d" aria-labelledby="towns-h">
+<div class="tw-card">
 <p class="eb" data-io>Pawleys Island to Little River</p>
 <h2 id="towns-h">Where on the Grand Strand are you <span class="it">looking?</span></h2>
 <p class="tw-links"><a class="tl" href="/submarkets/"><span class="tl-t">All neighborhoods</span> <span class="arr" aria-hidden="true">&rarr;</span></a><a class="tl" href="/map/"><span class="tl-t">3D map search</span> <span class="arr" aria-hidden="true">&rarr;</span></a></p>
 </div>
-<figure class="tw-map" data-io>
-<div class="tw-chart">
-<svg class="tw-base" viewBox="0 0 1000 934" aria-hidden="true" focusable="false">
-<defs><path id="c3-coast" pathLength="1" d="{{COAST}}"/></defs>
-<g class="wl w4" style="--k:4"><use href="#c3-coast" transform="translate(73.2 65.2)"/></g>
-<g class="wl w3" style="--k:3"><use href="#c3-coast" transform="translate(49.3 43.9)"/></g>
-<g class="wl w2" style="--k:2"><use href="#c3-coast" transform="translate(31.4 27.9)"/></g>
-<g class="wl w1" style="--k:1"><use href="#c3-coast" transform="translate(17.9 16)"/></g>
-<g class="wl w0" style="--k:0"><use href="#c3-coast" transform="translate(7.5 6.7)"/></g>
-<path class="land" d="{{LAND}}"/>
-<use class="coast" href="#c3-coast"/>
-<path class="state" d="{{STATE}}"/>
-</svg>
-<svg class="tw-marks" viewBox="0 0 1000 934" aria-hidden="true" focusable="false">
-{{MARKERS}}
-</svg>
+<div class="tw-stage">
+<div class="tw-scene" aria-hidden="true">
+<div class="tw-plane"><picture>
+<source type="image/avif" srcset="/media/map/strand-dark-1400.avif 1400w,/media/map/strand-dark-2048.avif 2048w" sizes="(min-width:1100px) 1900px,(min-width:700px) 1300px,460px">
+<img src="/media/map/strand-dark-2048.webp" srcset="/media/map/strand-dark-1400.webp 1400w,/media/map/strand-dark-2048.webp 2048w" sizes="(min-width:1100px) 1900px,(min-width:700px) 1300px,460px" width="2048" height="1771" alt="" loading="lazy" decoding="async">
+</picture></div>
 </div>
-<ol class="tw-list">
-{{TOWNLINKS}}
+<div class="tw-deco" aria-hidden="true">
+{{SHIELDS}}
+{{WATER}}
+</div>
+<ol class="tw-pins">
+{{PINS}}
 </ol>
-</figure>
+<span class="tw-compass" aria-hidden="true"><i></i></span>
 </div>
 </section>
 

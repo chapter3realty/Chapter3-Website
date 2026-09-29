@@ -1,0 +1,31 @@
+// labels stay on their towns while the map moves: freeze every animation at several moments and compare
+// each label anchor with a probe placed at the same spot inside the (animated) plane. node twmotion.js <url> <w> <h>
+const { chromium } = require('playwright'), fs = require('fs');
+(async () => {
+  const [url, w, h] = process.argv.slice(2);
+  const lib = fs.readFileSync(__dirname + '/twlib.js', 'utf-8');
+  const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+  for (const at of [300, 900, 1800, 2700, 6000, 11000]) {
+    const ctx = await b.newContext({ viewport: { width: +w, height: +h }, isMobile: +w <= 430, hasTouch: +w <= 430 });
+    const p = await ctx.newPage();
+    await p.addInitScript(() => { try { localStorage.c3PopDone = 1; } catch (e) {} });
+    await p.goto(url, { waitUntil: 'load' });
+    await p.evaluate(() => { const i = document.querySelector('.tw-plane img'); i.loading = 'eager'; });
+    await p.waitForFunction(() => { const i = document.querySelector('.tw-plane img'); return i.complete && i.naturalWidth > 0; }, null, { timeout: 15000 });
+    await p.evaluate(() => { const el = document.querySelector('#towns .tw-stage'); const r = el.getBoundingClientRect(); window.scrollTo({ top: r.top + scrollY - Math.max(0, (innerHeight - r.height) / 2), behavior: 'instant' }); });
+    await p.waitForFunction(() => document.querySelector('.tw-stage').classList.contains('in'));
+    await p.waitForTimeout(at);
+    await p.evaluate(lib);
+    const r = await p.evaluate(() => {
+      const an = document.getAnimations().filter((a) => a.effect && a.effect.target && a.effect.target.closest && a.effect.target.closest('.tw-stage'));
+      an.forEach((a) => a.pause());
+      const moving = an.filter((a) => a.playState === 'paused' && a.effect.getKeyframes().some((k) => k.transform)).length;
+      const e = window.__tw.projErr();
+      const plane = getComputedStyle(document.querySelector('.tw-plane')).transform;
+      return { moving, err: e.worst, who: e.who, plane: plane.slice(0, 60) };
+    });
+    console.log(`t+${at}ms: ${r.moving} transform animations, worst label offset ${r.err}px (${r.who})`);
+    await ctx.close();
+  }
+  await b.close();
+})().catch((e) => { console.error(e); process.exit(1); });

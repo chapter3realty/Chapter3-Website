@@ -1,0 +1,147 @@
+{
+ "lon0": -79.62,
+ "lon1": -78.12,
+ "lat0": 33.12,
+ "lat1": 34.2,
+ "K": 0.832389639,
+ "S": 1483.161062,
+ "W": 1851.852,
+ "H": 1601.814,
+ "img": {
+  "w": 2048,
+  "h": 1771
+ },
+ "towns": {
+  "pawleys-island": {
+   "n": "Pawleys Island",
+   "x": 611.1,
+   "y": 1144.9,
+   "px": 33.0,
+   "py": 71.47
+  },
+  "murrells-inlet": {
+   "n": "Murrells Inlet",
+   "x": 694.9,
+   "y": 953.3,
+   "px": 37.52,
+   "py": 59.51
+  },
+  "garden-city": {
+   "n": "Garden City",
+   "x": 757.3,
+   "y": 902.2,
+   "px": 40.9,
+   "py": 56.33
+  },
+  "surfside-beach": {
+   "n": "Surfside Beach",
+   "x": 793.2,
+   "y": 875.6,
+   "px": 42.83,
+   "py": 54.66
+  },
+  "myrtle-beach": {
+   "n": "Myrtle Beach",
+   "x": 906.1,
+   "y": 726.2,
+   "px": 48.93,
+   "py": 45.33
+  },
+  "carolina-forest": {
+   "n": "Carolina Forest",
+   "x": 872.2,
+   "y": 643.2,
+   "px": 47.1,
+   "py": 40.15
+  },
+  "conway": {
+   "n": "Conway",
+   "x": 704.7,
+   "y": 542.0,
+   "px": 38.06,
+   "py": 33.84
+  },
+  "north-myrtle-beach": {
+   "n": "North Myrtle Beach",
+   "x": 1125.1,
+   "y": 556.9,
+   "px": 60.75,
+   "py": 34.77
+  },
+  "little-river": {
+   "n": "Little River",
+   "x": 1209.3,
+   "y": 473.7,
+   "px": 65.3,
+   "py": 29.57
+  }
+ },
+ "shields": [
+  {
+   "label": "17",
+   "x": 853.7,
+   "y": 735.1,
+   "px": 46.1,
+   "py": 45.89,
+   "kind": "us"
+  },
+  {
+   "label": "501",
+   "x": 757.3,
+   "y": 591.0,
+   "px": 40.9,
+   "py": 36.9,
+   "kind": "us"
+  },
+  {
+   "label": "31",
+   "x": 906.7,
+   "y": 668.7,
+   "px": 48.96,
+   "py": 41.75,
+   "kind": "sc"
+  },
+  {
+   "label": "22",
+   "x": 861.2,
+   "y": 407.8,
+   "px": 46.51,
+   "py": 25.46,
+   "kind": "sc"
+  },
+  {
+   "label": "17",
+   "x": 656.2,
+   "y": 1047.8,
+   "px": 35.44,
+   "py": 65.42,
+   "kind": "us"
+  }
+ ],
+ "water": [
+  {
+   "label": "Atlantic Ocean",
+   "x": 1111.1,
+   "y": 927.0,
+   "px": 60.0,
+   "py": 57.87,
+   "angle": 0.0
+  },
+  {
+   "label": "Intracoastal Waterway",
+   "x": 1023.7,
+   "y": 619.4,
+   "px": 55.28,
+   "py": 38.67,
+   "angle": -31.1
+  },
+  {
+   "label": "Waccamaw River",
+   "x": 649.5,
+   "y": 808.3,
+   "px": 35.07,
+   "py": 50.46,
+   "angle": -64.1
+  }
+ ]
+}

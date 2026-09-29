@@ -131,17 +131,18 @@ html{scroll-padding-top:97px}
 #page-home .btn-brass:focus-visible::before{transform:scaleX(1)}
 #page-home .btn-brass:focus-visible{outline:2px solid var(--ring);outline-offset:3px}
 
-/* ---------- HERO ---------- */
-#page-home #home.cine{background:var(--navy);padding:0;position:relative;z-index:1;overflow:hidden;overflow:clip}
+/* ---------- HERO: the walk-through fills the hero; the words, paths and reviews sit on top of it ---------- */
+#page-home #home.cine{--side:max(32px,calc((100vw - 1200px)/2 + 32px));--gap:48px;--T:clamp(24px,5svh,56px);background:var(--navy);padding:0;position:relative;z-index:1;overflow:hidden;overflow:clip;display:flex;flex-direction:column;justify-content:flex-end;min-height:clamp(560px,calc(100svh - var(--hdr,89px)),920px)}
 #page-home #home.cine::after{content:none}
-.cine-stage{--side:max(32px,calc((100vw - 1200px)/2 + 32px));--gap:48px;--bleed:24px;--T:clamp(24px,5svh,56px);display:grid;grid-template-columns:var(--side) minmax(0,1fr) var(--gap) minmax(0,1fr) var(--side);grid-template-rows:minmax(240px,1fr) auto 56px;min-height:clamp(560px,calc(100svh - var(--hdr,89px)),920px)}
-.cine-film{grid-column:3/-1;grid-row:1;margin:calc(-1*var(--bleed)) calc(-1*var(--bleed)) 0 0;position:relative;border-radius:20px;overflow:hidden;overflow:clip;transform-origin:0 100%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 min(160px,22%));mask-image:linear-gradient(90deg,transparent 0,#000 min(160px,22%));background:var(--navy-2);opacity:.999}
+.cine-film{position:absolute;inset:0;z-index:0;opacity:.999;overflow:hidden;overflow:clip}
 .cine-media,.cine-media-in{position:absolute;inset:0}
-.cine-media-in{transform:translateX(var(--fx,0px))}
-.cine-poster,.cine-video{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover;object-position:50% 52%;display:block}
+.cine-poster,.cine-video{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover;object-position:50% 45%;display:block}
 .cine-video{opacity:0;transition:opacity .8s ease}
 .cine.is-playing .cine-video{opacity:1}
-.cine-pause{position:absolute;right:calc(var(--bleed) + var(--side));bottom:16px;z-index:2;width:44px;height:44px;border-radius:50%;background:rgba(28,32,40,.72);border:1px solid rgba(244,239,232,.3);display:grid;place-items:center;cursor:pointer;color:var(--ivory)}
+/* the scrim: dark behind the words, clear over the house on the right */
+.cine-film::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(28,32,40,.95) 0,rgba(28,32,40,.93) calc(var(--side) + 360px),rgba(28,32,40,.7) calc(var(--side) + 560px),rgba(28,32,40,.22) calc(var(--side) + 820px),rgba(28,32,40,.1) 100%),linear-gradient(0deg,rgba(28,32,40,.9) 0%,rgba(28,32,40,.5) 24%,rgba(28,32,40,0) 46%),linear-gradient(180deg,rgba(28,32,40,.5) 0%,rgba(28,32,40,0) 20%)}
+.cine-stage{position:relative;z-index:1;display:grid;grid-template-columns:var(--side) minmax(0,1fr) var(--gap) minmax(0,1fr) var(--side);align-items:end;padding-block:clamp(40px,8svh,96px) calc(28px + clamp(32px,6svh,64px))}
+.cine-pause{position:absolute;top:20px;right:var(--side);z-index:3;width:44px;height:44px;border-radius:50%;background:rgba(28,32,40,.72);border:1px solid rgba(244,239,232,.3);display:grid;place-items:center;cursor:pointer;color:var(--ivory)}
 .cine-pause[hidden]{display:none}
 .cine-pause svg,.rb svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .cine-pause .i-play,.rb .i-play{fill:currentColor;stroke:none}
@@ -149,7 +150,7 @@ html{scroll-padding-top:97px}
 .is-paused>.i-play{display:block}
 .cine-pause:hover{border-color:var(--brass-2)}
 #page-home .cine-pause:focus-visible{box-shadow:0 0 0 10px var(--navy)}
-.cine-copy{grid-column:2;grid-row:1/3;align-self:end;padding-block:var(--T) 0;position:relative;z-index:1}
+.cine-copy{grid-column:2;position:relative;text-shadow:0 1px 24px rgba(28,32,40,.45)}
 .cine-eyebrow{display:flex;align-items:center;font:500 11.5px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--brass-2)}
 .cine-eyebrow::before{content:"";flex:0 0 28px;height:1px;margin-right:12px;background:var(--brass-2);transform-origin:0 50%}
 #page-home .cine-h1{font-family:var(--disp);font-weight:300;font-synthesis:none;font-variation-settings:'wght' 300,'opsz' 144;font-size:clamp(64px,min(9.2vw,16svh),108px);line-height:.95;letter-spacing:-.02em;color:var(--ivory);margin:18px 0 0}
@@ -174,11 +175,10 @@ html{scroll-padding-top:97px}
 @media (hover:hover){.cine-path:hover::before{transform:scaleX(1)}.cine-path:hover{border-color:var(--brass-2)}.cine-path:hover .pa{background:var(--brass-2)}.cine-path:hover .pa svg{stroke:var(--navy);transform:translateX(3px)}}
 @media (hover:none){.cine-path .pa{background:var(--brass-2)}.cine-path .pa svg{stroke:var(--navy)}.cine-path:active::before{transform:scaleX(1);transition:none}}
 
-/* reviews, set as captions under the film */
-#home-reviews{grid-column:4;grid-row:2;align-self:start;padding-top:20px;position:relative;z-index:1}
-#home-reviews::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--brass-2);opacity:.6;transform-origin:0 50%}
+/* reviews, a frosted card over the film */
+#home-reviews{grid-column:4;justify-self:end;width:min(100%,520px);position:relative;padding:14px 22px 22px;border-radius:18px;background:rgba(28,32,40,.82);border:1px solid rgba(244,239,232,.14);-webkit-backdrop-filter:blur(14px) saturate(1.1);backdrop-filter:blur(14px) saturate(1.1);box-shadow:0 24px 60px rgba(0,0,0,.28)}
 .rv-head{display:flex;justify-content:space-between;align-items:center;min-height:44px;gap:4px 8px;flex-wrap:wrap}
-#page-home .rv-label{font:500 11px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--brass-2)}
+#page-home .rv-label{font:500 11px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ivory-3)}
 .rv-ctl{display:none;align-items:center;gap:6px}
 .js .rv-ctl{display:flex}
 .rb{flex:0 0 44px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(244,239,232,.3);background:transparent;color:var(--ivory);display:grid;place-items:center;cursor:pointer;transition:border-color .25s}
@@ -189,7 +189,8 @@ html{scroll-padding-top:97px}
 .rv-dots button::before{content:"";width:8px;height:8px;border-radius:4px;background:rgba(244,239,232,.5);transition:width .35s var(--ease-out),background .35s}
 .rv-dots button[aria-current="true"]{width:32px}
 .rv-dots button[aria-current="true"]::before{width:16px;background:var(--brass-2)}
-@media (max-width:359px){.rv-ctl{gap:4px}}
+@media (max-width:359px){.rv-ctl{gap:3px}#page-home #home-reviews{padding-left:14px;padding-right:14px}.rv-dots button{width:18px}.rv-dots button[aria-current="true"]{width:28px}}
+
 .rv-slide{margin:0}
 .rv-slide+.rv-slide{margin-top:22px}
 .js .rv-stack{display:grid;touch-action:pan-y pinch-zoom}
@@ -250,41 +251,6 @@ html{scroll-padding-top:97px}
 #page-home .tm-bio{font-size:16px;line-height:1.65;max-width:36ch;margin-top:12px}
 #page-home .tm-more{margin-top:40px}
 
-/* ---------- TOWNS ---------- */
-.w.tw{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:48px;align-items:center}
-#towns h2{max-width:13ch}
-.tw-links{display:flex;flex-wrap:wrap;gap:4px 28px;margin-top:20px}
-.tw-map{position:relative;margin:0}
-.tw-chart{position:relative;aspect-ratio:1000/934}
-.tw-chart svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.tw-base{-webkit-mask-image:radial-gradient(50% 50% at 50% 50%,#000 58%,transparent 100%);mask-image:radial-gradient(50% 50% at 50% 50%,#000 58%,transparent 100%)}
-.tw-base .wl use{fill:none;stroke:var(--ivory);stroke-width:1;vector-effect:non-scaling-stroke}
-.tw-base .wl{transition:transform 1.6s var(--ease-out) calc(.4s + (4 - var(--k))*90ms),opacity 1.2s ease calc(.4s + (4 - var(--k))*90ms)}
-.tw-base .w4{opacity:.08}.tw-base .w3{opacity:.12}.tw-base .w2{opacity:.17}.tw-base .w1{opacity:.24}.tw-base .w0{opacity:.32}
-.tw-base .land{fill:var(--navy-2)}
-.tw-base .coast{fill:none;stroke:var(--brass-2);stroke-width:1.25;vector-effect:non-scaling-stroke;stroke-dasharray:1 2;stroke-dashoffset:0;transition:stroke-dashoffset 1.4s var(--ease-io)}
-.tw-base .state{fill:none;stroke:rgba(244,239,232,.28);stroke-width:1;stroke-dasharray:4 4;vector-effect:non-scaling-stroke}
-.tw-marks .mk-i{transform-box:fill-box;transform-origin:center;transition:transform .5s var(--ease-out) calc(1s + var(--i)*60ms),opacity .5s ease calc(1s + var(--i)*60ms)}
-.tw-marks .dot{fill:var(--brass-2);transform-box:fill-box;transform-origin:center;transition:transform .35s var(--ease-out)}
-.tw-marks .ring{fill:none;stroke:var(--brass-2);stroke-width:2;opacity:0;vector-effect:non-scaling-stroke;transition:opacity .25s}
-.tw-marks .mk.hl .ring{opacity:1}.tw-marks .mk.hl .dot{transform:scale(1.4)}
-.tw-marks .pg{fill:none;stroke:var(--brass-2);stroke-width:1.5;vector-effect:non-scaling-stroke;opacity:0;transform-box:fill-box;transform-origin:center}
-.tw-list{list-style:none;margin:0;padding:0}
-.tw-list a{display:block;text-decoration:none}
-@media (min-width:1100px){
-.tw-marks .mk{cursor:pointer}
-.tw-list{position:absolute;inset:0}
-.tw-list li{position:absolute;left:var(--x);top:calc(var(--y) + var(--dy,0px));transform:translate(calc(-100% - 12px),-50%)}
-.tw-list li[data-side=r]{transform:translate(12px,-50%)}
-.tw-list a{font:500 14px/18px var(--sans);color:rgba(244,239,232,.86);padding:4px 8px;border-radius:4px;white-space:nowrap;transition:background .2s,color .2s}
-.tw-list a.hl,.tw-list a:hover,.tw-list a:focus-visible{background:var(--ivory);color:var(--navy)}
-.tw-list{pointer-events:none}.tw-list a{pointer-events:auto}.tw-marks .mk .ring{pointer-events:all}}
-@media (max-width:1099px){.tw-marks{pointer-events:none}
-.tw-list{border-top:1px solid var(--line)}
-.tw-list a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;border-bottom:1px solid var(--line);font-family:var(--serif);font-weight:300;font-variation-settings:'wght' 340;font-size:20px;color:var(--ivory)}
-.tw-list a::after{content:"\2192";content:"\2192" / "";font-family:var(--sans);color:var(--brass-2);transition:transform .3s var(--ease-out)}
-.tw-list a:hover::after,.tw-list a.hl::after{transform:translateX(4px)}}
-
 /* ---------- FAQ ---------- */
 .w.faq{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
 .qa{padding:28px 0;position:relative}
@@ -297,9 +263,8 @@ html{scroll-padding-top:97px}
 /* ---------- MOTION (only when the visitor allows it) ---------- */
 @media (prefers-reduced-motion:no-preference){
 .cine-media-in{animation:film-in 1.6s var(--ease-out) both}
-@keyframes film-in{from{transform:translateX(var(--fx,0px)) scale(1.06)}}
+@keyframes film-in{from{transform:scale(1.06)}}
 .cine-eyebrow::before{animation:line-in .52s var(--ease-out) .15s both}
-#home-reviews::before{animation:line-in .9s var(--ease-out) .35s both}
 @keyframes line-in{from{transform:scaleX(0)}}
 .cine-h1 .l1>span,.cine-h1 .l2>span{animation:h1-rise 1s var(--ease-out) .1s both}
 .cine-h1 .l2>span{animation-delay:.22s}
@@ -309,39 +274,32 @@ html{scroll-padding-top:97px}
 .m .why-stats[data-io]:not(.in) .why-ico :is(path,rect,circle){stroke-dashoffset:1.01}
 .m .why-stats[data-io]:not(.in) .stat-kpi{color:var(--ivory-3)}
 .m .tm-grid[data-io]:not(.in) .tp img{transform:scale(1.08)}
-.m .tw-map[data-io]:not(.in) .coast{stroke-dashoffset:1.01}
-.m .tw-map[data-io]:not(.in) .wl{opacity:0;transform:translate(30px,27px)}
-.m .tw-map[data-io]:not(.in) .mk-i{opacity:0;transform:scale(.4)}
-.m .tw-map.in .pg{animation:ping 1.4s var(--ease-out) calc(1.25s + var(--i)*60ms) 1 both}
-@keyframes ping{0%{opacity:.9;transform:scale(.6)}100%{opacity:0;transform:scale(2.6)}}
 @media (hover:hover){#page-home .why-stat:hover .why-ico :is(path,rect,circle){animation:redraw .9s var(--ease-io)}}
 @keyframes redraw{from{stroke-dashoffset:1.01}}
 @supports (animation-timeline:scroll()){
-.cine-film{animation:film-settle linear both;animation-timeline:scroll(root block);animation-range:0px 60svh}
-.cine-media{animation:film-push linear both;animation-timeline:scroll(root block);animation-range:0px 60svh}
-@keyframes film-settle{to{scale:.9}}
-@keyframes film-push{to{scale:1.08}}}}
+.cine-media{animation:hero-drift linear both;animation-timeline:scroll(root block);animation-range:0px 100svh}
+@keyframes hero-drift{to{transform:translateY(16%) scale(1.04)}}}}
 @media (prefers-reduced-motion:reduce){.rv-rot{display:none!important}}
 
 /* ---------- TABLET AND PHONE ---------- */
 @media (max-width:1099px){
-.cine-stage{display:flex;flex-direction:column;min-height:0;padding-bottom:56px}
-.cine-film{height:calc(min(56.25vw,56vh) + 24px);height:calc(min(56.25vw,56svh) + 24px);margin:-24px -24px 0;-webkit-mask-image:none;mask-image:none;transform-origin:50% 100%;border-radius:0 0 20px 20px;flex:0 0 auto}
-.cine-media::after{content:"";position:absolute;inset:0 0 -2px;background:linear-gradient(180deg,rgba(28,32,40,0) 62%,var(--navy) 97%)}
+#page-home #home.cine{display:block;min-height:0}
+.cine-film{bottom:auto;height:calc(100vh - 89px);height:calc(100svh - 89px)}
+.cine-film::after{inset:0 0 -2px;background:linear-gradient(180deg,rgba(28,32,40,.45) 0%,rgba(28,32,40,.06) 12%,rgba(28,32,40,.12) 30%,rgba(28,32,40,.5) 60%,var(--navy) 97%)}
+.cine-text{position:relative;isolation:isolate}
+.cine-text::before{content:"";position:absolute;left:-2rem;right:-2rem;top:-120px;bottom:-40px;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(28,32,40,0) 0,rgba(28,32,40,.8) 70px,rgba(28,32,40,.95) 116px,rgba(28,32,40,.96) 100%)}
+.cine-stage{display:flex;flex-direction:column;align-items:stretch;padding:0 0 56px}
 #page-home .rv-slide blockquote p{max-width:32em}
 #page-home .qa p{max-width:36em}
-.cine-pause{top:36px;right:36px;bottom:auto}
-.cine-copy{padding:24px 2rem 0;align-self:stretch}
+.cine-pause{top:16px;right:2rem}
+.cine-copy{min-height:calc(100vh - 89px);min-height:calc(100svh - 89px);display:flex;flex-direction:column;justify-content:flex-end;padding:96px 2rem 36px}
 #page-home .cine-h1{font-size:clamp(40px,calc((100vw - 4rem)/4.85),96px)}
-#home-reviews{margin:36px 2rem 0;max-width:720px;align-self:stretch}
+#home-reviews{margin:0 2rem;width:auto;max-width:720px;align-self:stretch;justify-self:auto;background:var(--navy-2);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
 .cine-paths .cine-path{min-height:84px}
 .w.an{grid-template-columns:1fr;gap:28px}
 #page-home .why-stats-8{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 28px}
-.w.tw{grid-template-columns:1fr;gap:40px}
-.tw-map{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:center}
-.tw-marks .mk-i{scale:1.4}
 .w.faq{grid-template-columns:1fr;gap:28px}
-@media (prefers-reduced-motion:no-preference){@supports (animation-timeline:scroll()){.cine-film{animation-name:film-settle-s;animation-range:0px 45svh}@keyframes film-settle-s{to{scale:.92}}}}}
+@media (prefers-reduced-motion:no-preference){@supports (animation-timeline:scroll()){.cine-media{animation-range:0px 80svh}}}}
 @media (max-width:899px){
 .tm-grid{grid-template-columns:1fr;gap:36px}
 .tm{display:grid;grid-template-columns:112px minmax(0,1fr);column-gap:22px;align-items:center}
@@ -353,34 +311,118 @@ html{scroll-padding-top:97px}
 #page-home .w{padding:0 1.4rem}
 #page-home #ltr-teaser.sheet{margin-top:-24px;border-radius:24px 24px 0 0;padding-top:64px}
 .cine-stage{padding-bottom:48px}
-.cine-film{height:calc(min(75vw,58vh) + 24px);height:calc(min(75vw,58svh) + 24px)}
-.cine-copy{padding:20px 1.4rem 0}
+.cine-media-in{scale:1.14;transform-origin:50% 100%}
+.cine-text::before{left:-1.4rem;right:-1.4rem}
+#page-home .cine-path .pa{display:none}
+#page-home .cine-paths .cine-path{grid-template:"k" auto "r" 1fr/1fr}
+.cine-pause{right:1.4rem}
+.cine-copy{padding:88px 1.4rem 28px}
 #page-home .cine-h1{font-size:clamp(40px,calc((100vw - 2.8rem)/4.85),96px);line-height:.95}
 .cine-h1 .l2{padding-inline-start:0}
 #page-home .cine-sub{font-size:17px;margin-top:16px}
-.cine-paths{grid-template-columns:1fr;gap:10px;margin-top:24px}
-.cine-paths .cine-path{min-height:60px;display:flex;align-items:center;gap:8px;padding:10px 12px 10px 16px}
-.cine-path .pk{padding-top:0;align-self:center}
-.cine-path .pr{margin-top:0;font-size:22px;align-self:center}
-.cine-path .pa{margin-left:auto;flex:0 0 28px}
-#home-reviews{margin:36px 1.4rem 0}
+.cine-paths{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:22px}
+.cine-paths .cine-path{min-height:76px;grid-template:"k a" auto "r r" 1fr/1fr 22px;padding:10px 10px 10px 12px;border-radius:12px}
+.cine-path .pk{font-size:10.5px;letter-spacing:.12em;padding-top:3px}
+.cine-path .pr{font-size:clamp(18px,5.4vw,21px);margin-top:6px}
+.cine-path .pa{width:22px;height:22px}
+#home-reviews{margin:0 1.4rem;padding:12px 18px 20px}
 .rv-head{align-items:flex-start;flex-direction:column}
 .an-row{grid-template-columns:minmax(0,1fr) 104px}
 .an-card{padding:20px}
 #page-home .why-stats-8{grid-template-columns:1fr;gap:0}
 #page-home .why-stats-8 .why-stat{padding:20px 0}
 #page-home .why-cta .btn{display:flex;justify-content:center;min-height:48px}
-.tw-map{grid-template-columns:1fr;gap:28px}
-.tw-chart{max-width:520px;width:100%}
-.tw-base{-webkit-mask-image:radial-gradient(50% 50% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(50% 50% at 50% 50%,#000 70%,transparent 100%)}
-.tw-marks .mk-i{scale:2}
 #page-home .qa h3{font-size:19.5px}}
 @media (forced-colors:active){.cine-film{-webkit-mask-image:none;mask-image:none}.cine-media::after{display:none}.rv-dots button::before{forced-color-adjust:none;background:CanvasText}.rv-dots button[aria-current="true"]::before{background:Highlight}}
 /* older engines. Safari 15.4-15.6: no overflow:clip. Samsung Internet 20 and Chrome 105-107: no svh.
    Safari before 17: no size-adjust, so the fallback face is wider than Fraunces on phones. */
-@supports not (height:1svh){@media (min-width:1100px){.cine-stage{--T:clamp(24px,5vh,56px);min-height:clamp(560px,calc(100vh - var(--hdr,89px)),920px)}#page-home .cine-h1{font-size:clamp(64px,min(9.2vw,16vh),108px)}}}
+@supports not (height:1svh){@media (min-width:1100px){#page-home #home.cine{--T:clamp(24px,5vh,56px);min-height:clamp(560px,calc(100vh - var(--hdr,89px)),920px)}#page-home .cine-h1{font-size:clamp(64px,min(9.2vw,16vh),108px)}}}
 @supports not (overflow:clip){.cine-h1 .l1>span,.cine-h1 .l2>span{animation:none!important}}
 @supports not (contain-intrinsic-size:1px){@media (max-width:699px){#page-home .cine-h1{font-size:clamp(34px,calc((100vw - 2.8rem)/5.9),96px)}}}
+</style>
+<style id="c3-home-map">
+/* ---------- TOWNS: a dark road map of the Grand Strand, tilted in 3D ----------
+   The plane is one image. Each town label is an ordinary link outside the 3D scene, so its text stays sharp.
+   CSS projects the town's spot on the plane to the screen with the same perspective, tilt and heading as the plane:
+   --P perspective, --pw plane width, --t0 tilt, --h0 heading (the slow turn runs to --h1), --cx/--cy where the camera
+   target sits in the stage, --tx/--ty the target on the plane. The motion is not CSS: fx.html computes transform
+   keyframes with the same projection and the compositor plays them. tests/states.js checks labels against the image. */
+@property --tw-u{syntax:'<number>';inherits:false;initial-value:0}
+@property --tw-v{syntax:'<number>';inherits:false;initial-value:0}
+@property --tw-up{syntax:'<number>';inherits:false;initial-value:0}
+@property --tw-vp{syntax:'<number>';inherits:false;initial-value:0}
+@property --tw-k{syntax:'<number>';inherits:false;initial-value:1}
+#page-home #towns.band{padding:0;--side:max(32px,calc((100vw - 1200px)/2 + 32px));--hw:.864979;--tx:.49;--ty:.45;--P:1200;--pw:2000;--t0:54deg;--h0:11deg;--h1:17deg;--cx:100;--cy:.58;--sh:800px;--fog:90px}
+.tw-card{position:absolute;z-index:3;left:var(--side);top:56px;width:470px;box-sizing:border-box;padding:28px 32px 14px;border-radius:18px;background:rgba(28,32,40,.86);border:1px solid rgba(244,239,232,.14);box-shadow:0 24px 60px rgba(0,0,0,.3)}
+#page-home #towns h2{font-size:clamp(34px,3.2vw,46px);margin-top:14px}
+.tw-links{display:flex;flex-wrap:wrap;gap:0 26px;margin-top:12px}
+.tw-stage{position:relative;height:var(--sh);overflow:hidden;overflow:clip;background:linear-gradient(180deg,var(--navy) 35%,#0b0e14 100%)}
+.tw-scene{position:absolute;inset:0;overflow:hidden;perspective:calc(var(--P)*1px);perspective-origin:calc(50% + var(--cx)*1px) calc(var(--cy)*100%)}
+.tw-plane{position:absolute;left:calc(50% + var(--cx)*1px);top:calc(var(--cy)*100%);width:calc(var(--pw)*1px);height:calc(var(--pw)*var(--hw)*1px);margin:calc(var(--ty)*var(--pw)*var(--hw)*-1px) 0 0 calc(var(--tx)*var(--pw)*-1px);transform-origin:calc(var(--tx)*100%) calc(var(--ty)*100%);transform:rotateX(var(--t0)) rotateZ(var(--h0));will-change:transform;background:#1a2536;-webkit-mask-image:radial-gradient(closest-side at calc(var(--tx)*100%) calc(var(--ty)*100%),#000 62%,transparent 100%);mask-image:radial-gradient(closest-side at calc(var(--tx)*100%) calc(var(--ty)*100%),#000 62%,transparent 100%)}
+.tw-plane picture,.tw-plane img{display:block;width:100%;height:100%}
+/* haze toward the horizon in the page's navy; the near edge darkens toward the map's black water, not toward navy,
+   which would lay a lighter band over the ocean */
+.tw-scene::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,var(--navy) 0,rgba(28,32,40,.92) var(--fog),rgba(28,32,40,.5) calc(var(--fog)*2.2),rgba(28,32,40,0) calc(var(--fog)*3.6)),linear-gradient(0deg,rgba(6,8,11,.85) 0,rgba(6,8,11,0) 110px)}
+.tw-pins{list-style:none;margin:0;padding:0}
+.tw-pin .rg{display:none}
+/* without trigonometric CSS the labels cannot be placed, so the map stays a picture and the towns are a list */
+@supports not (width:calc(1px * sin(1deg))){
+.tw-deco,.tw-compass{display:none}
+.tw-stage{height:auto}
+.tw-scene{position:relative;height:var(--sh)}
+.tw-pins{max-width:1200px;margin:0 auto;padding:16px 2rem 72px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0 28px}
+.tw-pin a{display:flex;align-items:center;min-height:56px;border-bottom:1px solid var(--line);font:400 20px/1.3 var(--serif);color:var(--ivory);text-decoration:none}}
+@supports (width:calc(1px * sin(1deg))){
+.tw-deco,.tw-pins{position:absolute;inset:0;pointer-events:none}
+.tw-pt{position:absolute;left:calc(50% + var(--cx)*1px);top:calc(var(--cy)*100%);width:0;height:0;will-change:transform;--tw-u:calc((var(--px) - var(--tx))*var(--pw));--tw-v:calc((var(--py) - var(--ty))*var(--pw)*var(--hw));--tw-up:calc(var(--tw-u)*cos(var(--h0)) - var(--tw-v)*sin(var(--h0)));--tw-vp:calc(var(--tw-u)*sin(var(--h0)) + var(--tw-v)*cos(var(--h0)));--tw-k:calc(var(--P)/(var(--P) - var(--tw-vp)*sin(var(--t0))));transform:translate(calc(var(--tw-up)*var(--tw-k)*1px),calc(var(--tw-vp)*cos(var(--t0))*var(--tw-k)*1px))}
+/* a pin: a brass dot on the ground, a stem, and the label. --ax/--ay pick the label corner at the anchor, --ox/--oy move it */
+.tw-pin{--ax:.5;--ay:1;--ox:0;--oy:-28;--stem:28}
+.tw-pin::before{content:"";position:absolute;left:-1px;bottom:0;width:2px;height:calc(var(--stem)*1px);background:linear-gradient(rgba(212,137,74,.95),rgba(212,137,74,.3))}
+.tw-pin::after{content:"";position:absolute;left:-6px;top:-6px;width:12px;height:12px;box-sizing:border-box;border-radius:50%;background:var(--brass-2);border:2px solid var(--navy);box-shadow:0 0 0 1px rgba(212,137,74,.55),0 0 16px 4px rgba(212,137,74,.32);transition:transform .3s var(--ease-out)}
+.tw-pin .rg{display:block;position:absolute;left:-22px;top:-22px;width:44px;height:44px;box-sizing:border-box;border-radius:50%;border:1.5px solid var(--brass-2);opacity:0;transform:scaleY(cos(var(--t0)));pointer-events:none}
+.tw-pin a{position:absolute;left:0;top:0;pointer-events:auto;white-space:nowrap;transform:translate(calc(var(--ax)*-100% + var(--ox)*1px),calc(var(--ay)*-100% + var(--oy)*1px));font:600 13.5px/1 var(--sans);color:var(--ivory);text-decoration:none;padding:8px 12px;border-radius:999px;background:rgba(42,48,64,.94);border:1px solid rgba(244,239,232,.16);box-shadow:0 8px 22px rgba(0,0,0,.38);transition:background .2s,color .2s,border-color .2s}
+.tw-pin a:hover,.tw-pin a:focus-visible{background:var(--ivory);color:var(--navy);border-color:var(--ivory)}
+.tw-pin:is(:hover,:focus-within)::after{transform:scale(1.35)}
+.tw-pin:is(:hover,:focus-within) .rg{opacity:.8}
+/* road shields and water names, as a dark Google map draws them */
+.tw-deco b,.tw-deco i{position:absolute;left:0;top:0;white-space:nowrap}
+.tw-deco .sh b{transform:translate(-50%,-50%);font:700 10.5px/1 var(--sans);color:var(--navy);background:#f1f1f2;padding:3px 5px 4px;border-radius:3px 3px 7px 7px;box-shadow:0 1px 3px rgba(0,0,0,.45)}
+.tw-deco .sh.sc b{border-radius:9px;padding:3px 6px}
+.tw-deco .wl i{transform:translate(-50%,-50%) rotate(atan2(calc(sin(var(--a) + var(--h0))*cos(var(--t0))),cos(var(--a) + var(--h0))));will-change:transform;font:italic 400 12.5px/1 var(--sans);letter-spacing:.1em;color:#8fa3bd;text-shadow:0 0 6px #17263c,0 0 2px #17263c}
+/* the compass needle points at north on the tilted map */
+.tw-compass{position:absolute;z-index:2;right:var(--side);bottom:28px;width:44px;height:44px;box-sizing:border-box;border-radius:50%;background:rgba(42,48,64,.92);border:1px solid rgba(244,239,232,.16);box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.tw-compass i{position:absolute;left:50%;top:50%;width:10px;height:28px;margin:-14px 0 0 -5px;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);background:linear-gradient(var(--brass-2) 50%,rgba(244,239,232,.6) 50%);transform:rotate(atan2(sin(var(--h0)),cos(var(--h0))*cos(var(--t0))));will-change:transform}}
+@media (max-width:1099px){
+#page-home #towns.band{--P:1100;--sh:600px;--fog:50px}
+.tw-card{position:relative;left:auto;top:auto;width:auto;max-width:1200px;margin:0 auto;padding:clamp(72px,9vw,120px) 2rem 4px;border:0;border-radius:0;background:none;box-shadow:none}
+#page-home #towns h2{font-size:clamp(34px,4.2vw,56px);max-width:13ch}
+.tw-compass{right:2rem;bottom:20px}}
+@media (max-width:699px){
+#page-home #towns.band{--P:900;--pw:1200;--t0:46deg;--h0:-32deg;--h1:-28deg;--cx:20;--cy:.44;--sh:640px;--fog:40px}
+.tw-card{padding-left:1.4rem;padding-right:1.4rem}
+.tw-pin a{font-size:12px;padding:7px 10px}
+.tw-compass{right:1.4rem}}
+/* label sides and water names per width, from a search over every width in the range and the whole turn:
+   no label covers another label, a pin, a road shield, a water name, the card or the compass (tests/states.js checks it) */
+.tw-deco .wl.icw{--px:0.5495;--py:0.3904;--a:-31.6deg}.tw-deco .wl.wac{--px:0.3776;--py:0.4685;--a:-72deg}.tw-deco .wl.sea{--px:0.5843;--py:0.5632;--a:-48.3deg}
+@media (min-width:1100px){.tw-pin:is([data-town=myrtle-beach],[data-town=north-myrtle-beach],[data-town=surfside-beach]){--ax:0;--ay:.5;--ox:12;--oy:0;--stem:0}.tw-pin:is([data-town=murrells-inlet]){--ax:1;--ay:.5;--ox:-12;--oy:0;--stem:0}.tw-pin:is([data-town=conway]){--ax:0;--ay:1;--ox:-14;--oy:-28;--stem:28}}
+@media (min-width:900px) and (max-width:1099px){#page-home #towns.band{--pw:1700;--t0:54deg;--h0:10deg;--h1:16deg;--cx:80;--cy:.5}.tw-pin:is([data-town=myrtle-beach],[data-town=carolina-forest],[data-town=surfside-beach],[data-town=pawleys-island]){--ax:0;--ay:.5;--ox:12;--oy:0;--stem:0}.tw-pin:is([data-town=murrells-inlet]){--ax:1;--ay:.5;--ox:-12;--oy:0;--stem:0}.tw-pin:is([data-town=north-myrtle-beach],[data-town=garden-city]){--ax:1;--ay:1;--ox:14;--oy:-28;--stem:28}.tw-deco .wl.icw{display:none}.tw-deco .wl.wac{--px:0.3771;--py:0.4333;--a:-96.3deg}}
+@media (min-width:700px) and (max-width:899px){#page-home #towns.band{--pw:1300;--t0:48deg;--h0:7deg;--h1:13deg;--cx:20;--cy:.5}.tw-pin:is([data-town=myrtle-beach],[data-town=carolina-forest],[data-town=surfside-beach],[data-town=pawleys-island]){--ax:0;--ay:.5;--ox:12;--oy:0;--stem:0}.tw-pin:is([data-town=murrells-inlet]){--ax:1;--ay:.5;--ox:-12;--oy:0;--stem:0}.tw-pin:is([data-town=north-myrtle-beach],[data-town=garden-city]){--ax:1;--ay:1;--ox:14;--oy:-28;--stem:28}.tw-pin:is([data-town=little-river]){--ax:0;--ay:1;--ox:-14;--oy:-28;--stem:28}.tw-deco .wl.icw{display:none}.tw-deco .wl.wac{--px:0.3689;--py:0.4093;--a:-93deg}}
+@media (max-width:699px){.tw-pin:is([data-town=myrtle-beach],[data-town=surfside-beach],[data-town=murrells-inlet]){--ax:0;--ay:.5;--ox:12;--oy:0;--stem:0}.tw-pin:is([data-town=north-myrtle-beach],[data-town=garden-city]){--ax:1;--ay:.5;--ox:-12;--oy:0;--stem:0}.tw-pin:is([data-town=conway]){--ax:0;--ay:1;--ox:-14;--oy:-28;--stem:28}.tw-deco .wl.icw{display:none}.tw-deco .wl.wac{--px:0.3787;--py:0.4481;--a:89.7deg}.tw-deco .wl.sea{--px:0.6247;--py:0.4169;--a:-48.3deg}}
+@media (max-width:359px){#page-home #towns.band{--pw:1150;--h0:-38deg;--h1:-34deg;--cx:30;--sh:620px}.tw-pin:is([data-town=conway]){--ax:0;--ay:.5;--ox:12;--oy:0;--stem:0}.tw-pin[data-town=surfside-beach]{--ax:0;--ay:1;--ox:-14;--oy:-28;--stem:28}.tw-deco .sh[data-r="501"]{display:none}.tw-deco .wl.wac{--px:0.3784;--py:0.4352;--a:83.8deg}}
+/* motion: just before the map scrolls into view fx.html sets .pre and the camera looks straight down (the first frame of
+   the flight it then plays): it tilts down into 3D and turns, the pins land one by one, then the map turns slowly while
+   it is on screen. Nothing is hidden unless the script has seen the map coming, so text never waits on an observer. */
+@media (prefers-reduced-motion:no-preference){
+.m .tw-stage.pre .tw-plane{transform:rotateX(0deg) rotateZ(calc(var(--h0) - 28deg)) scale(.78)}
+.m .tw-stage.pre :is(.tw-pin,.tw-deco,.tw-compass){opacity:0}
+.m .tw-stage.pre .tw-pin a{translate:0 -10px}
+.tw-pin{transition:opacity .45s ease calc(1.5s + var(--i)*80ms)}
+.tw-pin a{transition:background .2s,color .2s,border-color .2s,translate .6s var(--ease-out) calc(1.5s + var(--i)*80ms)}
+.tw-deco,.tw-compass{transition:opacity .8s ease 1.2s}
+.tw-stage.in .tw-pin .rg{animation:tw-ring 1.2s var(--ease-out) calc(1.6s + var(--i)*80ms) 1 both}
+.tw-stage .tw-pin:is(:hover,:focus-within) .rg{animation:tw-ring 1.4s var(--ease-out) infinite}
+@keyframes tw-ring{from{opacity:.9;transform:scaleY(cos(var(--t0))) scale(.35)}to{opacity:0;transform:scaleY(cos(var(--t0))) scale(1.3)}}}
 </style>
 <script>(function(h){h.classList.add('js');if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;h.classList.add('m');window.__c3T=setTimeout(function(){h.classList.remove('m')},3000)})(document.documentElement)</script>
 </head>
@@ -419,24 +461,25 @@ html{scroll-padding-top:97px}
 
 <main id="main">
 <div class="page-section active" id="page-home">
-<!-- HERO: title card on navy, the walk-through film bleeding off the top right, reviews as captions under it -->
+<!-- HERO: the walk-through fills the hero; the title, paths and reviews sit on top of it -->
 <section id="home" class="cine band-navy" aria-labelledby="home-h1">
-<div class="cine-stage">
 <div class="cine-film">
 <div class="cine-media" aria-hidden="true">
 <div class="cine-media-in">
 <picture>
-<source media="(max-width:699px)" type="image/avif" srcset="/media/hero/poster-4x3-640.avif 640w,/media/hero/poster-4x3-960.avif 960w" sizes="100vw">
-<source media="(max-width:699px)" type="image/webp" srcset="/media/hero/poster-4x3-640.webp 640w,/media/hero/poster-4x3-960.webp 960w" sizes="100vw">
-<source type="image/avif" srcset="/media/hero/poster-16x9-960.avif 960w,/media/hero/poster-16x9-1280.avif 1280w" sizes="(min-width:1100px) 56vw,100vw">
-<img class="cine-poster" src="/media/hero/poster-16x9-1280.webp" srcset="/media/hero/poster-16x9-960.webp 960w,/media/hero/poster-16x9-1280.webp 1280w" sizes="(min-width:1100px) 56vw,100vw" width="1280" height="720" alt="" fetchpriority="high">
+<source media="(max-aspect-ratio:1/1)" type="image/avif" srcset="/media/hero/poster-9x16-540.avif 540w" sizes="100vw">
+<source media="(max-aspect-ratio:1/1)" type="image/webp" srcset="/media/hero/poster-9x16-540.webp 540w" sizes="100vw">
+<source type="image/avif" srcset="/media/hero/poster-16x9-960.avif 960w,/media/hero/poster-16x9-1280.avif 1280w" sizes="100vw">
+<img class="cine-poster" src="/media/hero/poster-16x9-1280.webp" srcset="/media/hero/poster-16x9-960.webp 960w,/media/hero/poster-16x9-1280.webp 1280w" sizes="100vw" width="1280" height="720" alt="" fetchpriority="high">
 </picture>
-<video class="cine-video" data-hero muted playsinline loop preload="none" disablepictureinpicture disableremoteplayback tabindex="-1" data-mp4="/media/hero/walkthrough-16x9-720p.mp4" data-mp4-sm="/media/hero/walkthrough-4x3-480p.mp4" data-webm="/media/hero/walkthrough-16x9-720p.webm"></video>
+<video class="cine-video" data-hero muted playsinline loop preload="none" disablepictureinpicture disableremoteplayback tabindex="-1" data-mp4="/media/hero/walkthrough-16x9-720p.mp4" data-webm="/media/hero/walkthrough-16x9-720p.webm" data-mp4-tall="/media/hero/walkthrough-9x16-960p.mp4" data-webm-tall="/media/hero/walkthrough-9x16-960p.webm"></video>
+</div>
 </div>
 </div>
 <button class="cine-pause" type="button" aria-label="Pause the video" hidden><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l10.5-6.5z"/></svg></button>
-</div>
+<div class="cine-stage">
 <div class="cine-copy">
+<div class="cine-text">
 <p class="cine-eyebrow">Chapter3 Realty &middot; Myrtle Beach, SC</p>
 <h1 class="cine-h1" id="home-h1"><span class="l1"><span>Myrtle Beach</span></span> <span class="l2"><span>Real Estate</span></span></h1>
 <p style="color:rgba(244,239,232,.86)" class="cine-sub">Buy, sell and invest from Pawleys Island to the North Carolina line, with a specialized real estate agent.</p>
@@ -445,6 +488,7 @@ html{scroll-padding-top:97px}
 <li><a class="cine-path" href="/invest/"><span class="pk">I am an</span> <span class="pr" data-r="Investor">Investor</span><span class="pa" aria-hidden="true"><svg viewBox="0 0 12 12" focusable="false"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></span></a></li>
 <li><a class="cine-path" href="/buyers/buying-in-myrtle-beach/"><span class="pk">I am a</span> <span class="pr" data-r="Buyer">Buyer</span><span class="pa" aria-hidden="true"><svg viewBox="0 0 12 12" focusable="false"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></span></a></li>
 </ul>
+</div>
 </div>
 <div id="home-reviews" class="rv" role="region" aria-roledescription="carousel" aria-labelledby="rv-h">
 <div class="rv-head">
@@ -511,51 +555,41 @@ html{scroll-padding-top:97px}
 </div>
 </section>
 
-<!-- TOWNS: a Grand Strand chart drawn from Census boundaries; every label is a link -->
-<section id="towns" class="band band-navy" aria-labelledby="towns-h">
-<div class="w tw">
-<div class="tw-head">
+<!-- TOWNS: a dark road map of the Grand Strand from Census data, tilted in 3D. Each town label is a link that CSS places over its spot on the map. -->
+<section id="towns" class="band band-navy tw3d" aria-labelledby="towns-h">
+<div class="tw-card">
 <p class="eb" data-io>Pawleys Island to Little River</p>
 <h2 id="towns-h">Where on the Grand Strand are you <span class="it">looking?</span></h2>
 <p class="tw-links"><a class="tl" href="/submarkets/"><span class="tl-t">All neighborhoods</span> <span class="arr" aria-hidden="true">&rarr;</span></a><a class="tl" href="/map/"><span class="tl-t">3D map search</span> <span class="arr" aria-hidden="true">&rarr;</span></a></p>
 </div>
-<figure class="tw-map" data-io>
-<div class="tw-chart">
-<svg class="tw-base" viewBox="0 0 1000 934" aria-hidden="true" focusable="false">
-<defs><path id="c3-coast" pathLength="1" d="M121 956L121 951L126 947L133 947L138 939L144 917L151 878L157 862L160 855L166 840L186 798L191 787L199 775L208 755L229 721L253 695L279 669L286 654L285 650L288 648L292 648L293 650L296 650L298 648L304 638L310 623L319 607L324 598L352 562L386 518L409 489L439 457L466 431L474 424L481 413L498 396L526 369L552 345L585 319L625 290L659 268L707 240L743 223L785 208L837 188L854 183L874 180L883 179L885 177L884 174L892 168L899 174L901 174L940 153L1025 124"/></defs>
-<g class="wl w4" style="--k:4"><use href="#c3-coast" transform="translate(73.2 65.2)"/></g>
-<g class="wl w3" style="--k:3"><use href="#c3-coast" transform="translate(49.3 43.9)"/></g>
-<g class="wl w2" style="--k:2"><use href="#c3-coast" transform="translate(31.4 27.9)"/></g>
-<g class="wl w1" style="--k:1"><use href="#c3-coast" transform="translate(17.9 16)"/></g>
-<g class="wl w0" style="--k:0"><use href="#c3-coast" transform="translate(7.5 6.7)"/></g>
-<path class="land" d="M1025 124l0-154l-1050 0l0 994l151 0l-2-2l-3-6l0-5l5-4l7 0l5-8l6-22l7-39l6-16l3-7l6-15l20-42l5-11l8-12l9-20l21-34l24-26l26-26l7-15l-1-4l3-2l4 0l1 2l3 0l2-2l6-10l6-15l9-16l5-9l28-36l34-44l23-29l30-32l27-26l8-7l7-11l17-17l28-27l26-24l33-26l40-29l34-22l48-28l36-17l42-15l52-20l17-5l20-3l9-1l2-2l-1-3l8-6l7 6l2 0l39-21l85-29z"/>
-<use class="coast" href="#c3-coast"/>
-<path class="state" d="M892 168l-85-87l-57-58l-50-52l-1-1"/>
-</svg>
-<svg class="tw-marks" viewBox="0 0 1000 934" aria-hidden="true" focusable="false">
-<g class="mk" data-town="pawleys-island" transform="translate(179 803.7)" style="--i:0"><g class="mk-i"><circle class="pg" r="10"/><circle class="ring" r="16"/><circle class="dot" r="6"/></g></g>
-<g class="mk" data-town="murrells-inlet" transform="translate(262.8 612.2)" style="--i:1"><g class="mk-i"><circle class="pg" r="10"/><circle class="ring" r="16"/><circle class="dot" r="6"/></g></g>
-<g class="mk" data-town="garden-city" transform="translate(325.2 561.1)" style="--i:2"><g class="mk-i"><circle class="pg" r="10"/><circle class="ring" r="16"/><circle class="dot" r="6"/></g></g>
-<g class="mk" data-town="surfside-beach" transform="translate(361.1 534.5)" style="--i:3"><g class="mk-i"><circle class="pg" r="10"/><circle class="ring" r="16"/><circle class="dot" r="6"/></g></g>
-<g class="mk" data-town="myrtle-beach" transform="translate(474 385)" style="--i:4"><g class="mk-i"><circle class="pg" r="10"/><circle class="ring" r="16"/><circle class="dot" r="6"/></g></g>
-<g class="mk" data-town="carolina-forest" transform="translate(440.2 302)" style="--i:5"><g class="mk-i"><circle class="pg" r="10"/><circle class="ring" r="16"/><circle class="dot" r="6"/></g></g>
-<g class="mk" data-town="north-myrtle-beach" transform="translate(693 215.8)" style="--i:6"><g class="mk-i"><circle class="pg" r="10"/><circle class="ring" r="16"/><circle class="dot" r="6"/></g></g>
-<g class="mk" data-town="conway" transform="translate(272.6 200.9)" style="--i:7"><g class="mk-i"><circle class="pg" r="10"/><circle class="ring" r="16"/><circle class="dot" r="6"/></g></g>
-<g class="mk" data-town="little-river" transform="translate(777.2 132.5)" style="--i:8"><g class="mk-i"><circle class="pg" r="10"/><circle class="ring" r="16"/><circle class="dot" r="6"/></g></g>
-</svg>
+<div class="tw-stage">
+<div class="tw-scene" aria-hidden="true">
+<div class="tw-plane"><picture>
+<source type="image/avif" srcset="/media/map/strand-dark-1400.avif 1400w,/media/map/strand-dark-2048.avif 2048w" sizes="(min-width:1100px) 1900px,(min-width:700px) 1300px,460px">
+<img src="/media/map/strand-dark-2048.webp" srcset="/media/map/strand-dark-1400.webp 1400w,/media/map/strand-dark-2048.webp 2048w" sizes="(min-width:1100px) 1900px,(min-width:700px) 1300px,460px" width="2048" height="1771" alt="" loading="lazy" decoding="async">
+</picture></div>
 </div>
-<ol class="tw-list">
-<li style="--x:17.9%;--y:86.05%" data-side="r"><a href="/submarkets/pawleys-island/" data-town="pawleys-island">Pawleys Island</a></li>
-<li style="--x:26.28%;--y:65.54%;--dy:6px"><a href="/submarkets/murrells-inlet/" data-town="murrells-inlet">Murrells Inlet</a></li>
-<li style="--x:32.52%;--y:60.08%;--dy:5px"><a href="/submarkets/garden-city/" data-town="garden-city">Garden City</a></li>
-<li style="--x:36.11%;--y:57.22%;--dy:-8px"><a href="/submarkets/surfside-beach/" data-town="surfside-beach">Surfside Beach</a></li>
-<li style="--x:47.4%;--y:41.23%"><a href="/submarkets/myrtle-beach/" data-town="myrtle-beach">Myrtle Beach</a></li>
-<li style="--x:44.02%;--y:32.34%"><a href="/submarkets/carolina-forest/" data-town="carolina-forest">Carolina Forest</a></li>
-<li style="--x:69.3%;--y:23.1%;--dy:8px"><a href="/submarkets/north-myrtle-beach/" data-town="north-myrtle-beach">North Myrtle Beach</a></li>
-<li style="--x:27.26%;--y:21.51%;--dy:-8px" data-side="r"><a href="/submarkets/conway/" data-town="conway">Conway</a></li>
-<li style="--x:77.72%;--y:14.19%"><a href="/submarkets/little-river/" data-town="little-river">Little River</a></li>
+<div class="tw-deco" aria-hidden="true">
+<span class="tw-pt sh us" data-r="17" style="--px:0.461;--py:0.4589"><b>17</b></span>
+<span class="tw-pt sh us" data-r="501" style="--px:0.409;--py:0.369"><b>501</b></span>
+<span class="tw-pt sh sc" data-r="22" style="--px:0.4651;--py:0.2546"><b>22</b></span>
+<span class="tw-pt sh us" data-r="17" style="--px:0.3544;--py:0.6542"><b>17</b></span>
+<span class="tw-pt wl sea"><i>Atlantic Ocean</i></span>
+<span class="tw-pt wl icw"><i>Intracoastal Waterway</i></span>
+<span class="tw-pt wl wac"><i>Waccamaw River</i></span>
+</div>
+<ol class="tw-pins">
+<li class="tw-pt tw-pin" data-town="pawleys-island" style="--px:0.33;--py:0.7147;--i:0"><a href="/submarkets/pawleys-island/">Pawleys Island</a><i class="rg"></i></li>
+<li class="tw-pt tw-pin" data-town="murrells-inlet" style="--px:0.3752;--py:0.5951;--i:1"><a href="/submarkets/murrells-inlet/">Murrells Inlet</a><i class="rg"></i></li>
+<li class="tw-pt tw-pin" data-town="garden-city" style="--px:0.409;--py:0.5633;--i:2"><a href="/submarkets/garden-city/">Garden City</a><i class="rg"></i></li>
+<li class="tw-pt tw-pin" data-town="surfside-beach" style="--px:0.4283;--py:0.5466;--i:3"><a href="/submarkets/surfside-beach/">Surfside Beach</a><i class="rg"></i></li>
+<li class="tw-pt tw-pin" data-town="myrtle-beach" style="--px:0.4893;--py:0.4533;--i:4"><a href="/submarkets/myrtle-beach/">Myrtle Beach</a><i class="rg"></i></li>
+<li class="tw-pt tw-pin" data-town="carolina-forest" style="--px:0.471;--py:0.4015;--i:5"><a href="/submarkets/carolina-forest/">Carolina Forest</a><i class="rg"></i></li>
+<li class="tw-pt tw-pin" data-town="north-myrtle-beach" style="--px:0.6075;--py:0.3477;--i:6"><a href="/submarkets/north-myrtle-beach/">North Myrtle Beach</a><i class="rg"></i></li>
+<li class="tw-pt tw-pin" data-town="conway" style="--px:0.3806;--py:0.3384;--i:7"><a href="/submarkets/conway/">Conway</a><i class="rg"></i></li>
+<li class="tw-pt tw-pin" data-town="little-river" style="--px:0.653;--py:0.2957;--i:8"><a href="/submarkets/little-river/">Little River</a><i class="rg"></i></li>
 </ol>
-</figure>
+<span class="tw-compass" aria-hidden="true"><i></i></span>
 </div>
 </section>
 
@@ -1211,10 +1245,11 @@ function c3SendForm(fields, pageName) {
   function startFilm() {
     if (!v || !stage || film.state !== 'idle') return;
     var c = navigator.connection || {};
-    if (rm.matches || c.saveData || /(^|-)2g$/.test(c.effectiveType || '') || document.hidden || !hasIO) return;
+    if (rm.matches || c.saveData || /(^|-)[23]g$/.test(c.effectiveType || '') || document.hidden || !hasIO) return;
+    /* a tall screen gets the 9:16 cut, which fills it without upscaling a 16:9 frame */
     var h264 = v.canPlayType('video/mp4; codecs="avc1.64001F"');
-    var small = window.matchMedia('(max-width:699px)').matches || c.effectiveType === '3g';
-    var src = h264 ? (small ? v.getAttribute('data-mp4-sm') : v.getAttribute('data-mp4')) : (v.canPlayType('video/webm; codecs="vp9"') ? v.getAttribute('data-webm') : '');
+    var tall = window.matchMedia('(max-aspect-ratio:1/1)').matches;
+    var src = h264 ? v.getAttribute(tall ? 'data-mp4-tall' : 'data-mp4') : (v.canPlayType('video/webm; codecs="vp9"') ? v.getAttribute(tall ? 'data-webm-tall' : 'data-webm') : '');
     if (!src) return;
     film.state = 'loading';
     v.muted = true; v.defaultMuted = true;
@@ -1318,36 +1353,107 @@ function c3SendForm(fields, pageName) {
     card.addEventListener('input', check);
   })();
 
-  /* ---- towns: each label lights its marker, and on desktop each marker lights its label ---- */
-  var tw = $('#towns');
-  if (tw) (function () {
-    function pair(slug, on) {
-      $$('[data-town="' + slug + '"]', tw).forEach(function (el) { el.classList.toggle('hl', on); });
+  /* ---- towns: when the map comes into view the camera tilts down from overhead and turns; after that it turns slowly
+     while the map is on screen and holds still under the pointer or keyboard focus. The compositor plays both motions:
+     each moving element gets transform keyframes computed here with the projection head.html uses, so the page does no
+     style work per frame. With no motion allowed nothing here runs and the CSS draws the map at rest. ---- */
+  var tw = $('#towns'), tst = tw && $('.tw-stage', tw);
+  var towns = { stop: function () {}, sync: function () {} };
+  if (tst && hasIO && tst.animate) (function () {
+    var plane = $('.tw-plane', tst), pts = $$('.tw-pt', tst), wls = $$('.tw-deco .wl i', tst), needle = $('.tw-compass i', tst);
+    var R = Math.PI / 180, flown = false, landed = false, vis = false, hold = false, fly = [], turn = [];
+    function num(cs, k) { return parseFloat(cs.getPropertyValue(k)) || 0; }
+    function camera() {
+      var cs = getComputedStyle(tw);
+      return { P: num(cs, '--P'), pw: num(cs, '--pw'), hw: num(cs, '--hw'), tx: num(cs, '--tx'), ty: num(cs, '--ty'), t0: num(cs, '--t0'), h0: num(cs, '--h0'), h1: num(cs, '--h1'),
+        at: pts.map(function (el) { var s = getComputedStyle(el); return [num(s, '--px'), num(s, '--py')]; }),
+        a: wls.map(function (el) { return num(getComputedStyle(el), '--a'); }) };
     }
-    $$('.tw-list a', tw).forEach(function (a) {
-      var s = a.getAttribute('data-town');
-      a.addEventListener('pointerenter', function () { pair(s, true); });
-      a.addEventListener('pointerleave', function () { pair(s, false); });
-      a.addEventListener('focus', function () { pair(s, true); });
-      a.addEventListener('blur', function () { pair(s, false); });
+    /* one frame of the scene at tilt t, heading h (degrees) and zoom z */
+    function pose(c, t, h, z) {
+      var st = Math.sin(t * R), ct = Math.cos(t * R), sh = Math.sin(h * R), ch = Math.cos(h * R);
+      return {
+        plane: 'rotateX(' + t + 'deg) rotateZ(' + h + 'deg) scale(' + z + ')',
+        pts: c.at.map(function (p) {
+          var u = (p[0] - c.tx) * c.pw * z, v = (p[1] - c.ty) * c.pw * c.hw * z, up = u * ch - v * sh, vp = u * sh + v * ch, k = c.P / (c.P - vp * st);
+          return 'translate(' + (up * k).toFixed(2) + 'px,' + (vp * ct * k).toFixed(2) + 'px)';
+        }),
+        wls: c.a.map(function (a) { var r = (a + h) * R; return 'translate(-50%,-50%) rotate(' + (Math.atan2(Math.sin(r) * ct, Math.cos(r)) / R).toFixed(3) + 'deg)'; }),
+        needle: 'rotate(' + (Math.atan2(sh, ch * ct) / R).toFixed(3) + 'deg)'
+      };
+    }
+    function play(c, samples, opts) {
+      var fr = samples.map(function (s) { return pose(c, s[0], s[1], s[2]); }), out = [];
+      /* an element the CSS hides at this width is left alone: animating it would tick on the main thread */
+      var put = function (el, key, i) { if (el.getClientRects().length) out.push(el.animate(fr.map(function (f) { return { transform: i < 0 ? f[key] : f[key][i] }; }), opts)); };
+      put(plane, 'plane', -1);
+      pts.forEach(function (el, i) { put(el, 'pts', i); });
+      wls.forEach(function (el, i) { put(el, 'wls', i); });
+      if (needle) put(needle, 'needle', -1);
+      return out;
+    }
+    /* the flight follows the page's ease-out curve, cubic-bezier(.16,1,.3,1), baked into 48 frames */
+    function ease(x) {
+      var lo = 0, hi = 1, t = x;
+      for (var n = 0; n < 30; n++) { t = (lo + hi) / 2; if (3 * .16 * t * (1 - t) * (1 - t) + 3 * .3 * t * t * (1 - t) + t * t * t < x) lo = t; else hi = t; }
+      return 3 * t * (1 - t) * (1 - t) + 3 * t * t * (1 - t) + t * t * t;
+    }
+    function takeOff() {
+      var c = camera(), s = [];
+      for (var i = 0; i <= 48; i++) { var p = ease(i / 48); s.push([c.t0 * p, c.h0 - 28 + 28 * p, .78 + .22 * p]); }
+      fly = play(c, s, { duration: 2600, easing: 'linear' });
+      fly[0].finished.then(function () { landed = true; sync(); }, function () {});
+    }
+    function sync() {
+      var on = landed && vis && !hold && !rm.matches;
+      if (on && !turn.length) {
+        var c = camera(), s = [];
+        for (var i = 0; i <= 12; i++) s.push([c.t0, c.h0 + (c.h1 - c.h0) * i / 12, 1]);
+        turn = play(c, s, { duration: 18000, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' });
+      }
+      turn.forEach(function (a) { if (on) a.play(); else a.pause(); });
+    }
+    towns.sync = sync;
+    towns.stop = function () {
+      fly.concat(turn).forEach(function (a) { a.cancel(); }); fly = []; turn = []; landed = flown = true;
+      tst.classList.remove('pre'); tst.classList.add('in');
+    };
+    /* before the map comes into view the camera goes overhead; once it is in view the flight starts from there */
+    new IntersectionObserver(function (es) {
+      if (es[es.length - 1].isIntersecting && !flown && html.classList.contains('m') && !rm.matches) tst.classList.add('pre');
+    }, { rootMargin: '0px 0px 60% 0px' }).observe(tst);
+    new IntersectionObserver(function (es) {
+      vis = es[es.length - 1].isIntersecting;
+      if (vis && !flown) {
+        flown = true;
+        if (tst.classList.contains('pre')) takeOff(); else landed = true;
+        tst.classList.remove('pre'); tst.classList.add('in');
+      }
+      sync();
+    }, { rootMargin: '0px 0px -12% 0px' }).observe(tst);
+    tst.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hold = true; sync(); } });
+    tst.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hold = false; sync(); } });
+    tst.addEventListener('focusin', function () { hold = true; sync(); });
+    tst.addEventListener('focusout', function (e) { if (!tst.contains(e.relatedTarget)) { hold = false; sync(); } });
+    /* a new width can mean a new camera: the turn restarts from rest with fresh frames */
+    var rz = 0;
+    window.addEventListener('resize', function () {
+      clearTimeout(rz);
+      rz = setTimeout(function () { if (!landed) return; turn.forEach(function (a) { a.cancel(); }); turn = []; sync(); }, 250);
     });
-    var fine = window.matchMedia('(min-width:1100px) and (pointer:fine)');
-    $$('.tw-marks .mk', tw).forEach(function (m) {
-      var s = m.getAttribute('data-town'), a = $('.tw-list a[data-town="' + s + '"]', tw);
-      m.addEventListener('pointerenter', function () { if (fine.matches) pair(s, true); });
-      m.addEventListener('pointerleave', function () { if (fine.matches) pair(s, false); });
-      m.addEventListener('click', function () { if (fine.matches && a) location.href = a.href; });
-    });
+    window.addEventListener('beforeprint', function () { tst.classList.add('in'); });
   })();
+  else if (tst) tst.classList.add('in');
 
   /* ---- motion preference can change while the page is open ---- */
   var onRm = function () {
     if (rm.matches) {
-      html.classList.remove('m'); revealAll();
+      html.classList.remove('m'); revealAll(); towns.stop();
       if (film.state === 'ready') { G.userPlay = false; film.state = 'rest'; v.pause(); stage.classList.remove('is-playing'); setVidBtn(true); }
     } else {
       if (hasIO) html.classList.add('m');
       if (document.readyState === 'complete') whenIdle(startFilm);
+      towns.sync();
     }
     sync();
   };

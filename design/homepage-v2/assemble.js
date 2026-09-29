@@ -28,7 +28,7 @@ const once = (str, needle, label) => {
 const baseSrc = s;
 function grab(re, label) { const m = baseSrc.match(re); if (!m) throw new Error("copy not found in base: " + label); return m[1]; }
 function grabAll(re, label, n) { const m = [...baseSrc.matchAll(re)]; if (m.length !== n) throw new Error(`${label}: expected ${n}, found ${m.length}`); return m; }
-const geo = JSON.parse(fs.readFileSync(path.join(DIR, "data", "strand-geo.json"), "utf-8"));
+const plane = JSON.parse(fs.readFileSync(path.join(DIR, "data", "strand-plane.json"), "utf-8"));
 const fill = {};
 fill.EYEBROW = grab(/<p class="eyebrow" style="color:var\(--brass-2\);margin-bottom:\.9rem">([^<]+)<\/p>/, "hero eyebrow");
 fill.SUB = grab(/<\/h1><p style="color:rgba\(244,239,232,\.65\)[^"]*">([^<]+)<\/p>/, "hero sub");
@@ -53,16 +53,21 @@ fill.AN_P = grab(/Try our investor analysis tool<\/h2><p style="[^"]*">([^<]+)<\
   const f = grabAll(/<div style="border-top:1px solid var\(--rule\);padding:1\.4rem 0"><h3 style="[^"]*">([^<]+)<\/h3><p style="[^"]*">([^<]+)<\/p><\/div>/g, "faq", 3);
   fill.FAQ = f.map((m, k) => `<div class="qa" style="--i:${k}"><h3>${m[1]}</h3><p>${m[2]}</p></div>`).join("\n");
 }
-fill.COAST = "M" + geo.coast.map(([x, y]) => `${x} ${y}`).join("L") + "L1025 124";
-fill.LAND = geo.land;
-fill.STATE = geo.state;
 {
-  const side = { "pawleys-island": "r", conway: "r" }, dy = { "murrells-inlet": "6px", "garden-city": "5px", "surfside-beach": "-8px", conway: "-8px", "north-myrtle-beach": "8px" };
-  const towns = Object.entries(geo.T).sort((a, b) => b[1].y - a[1].y);   // south to north
-  fill.MARKERS = towns.map(([slug, t], k) => `<g class="mk" data-town="${slug}" transform="translate(${t.x} ${t.y})" style="--i:${k}"><g class="mk-i"><circle class="pg" r="10"/><circle class="ring" r="16"/><circle class="dot" r="6"/></g></g>`).join("\n");
-  fill.TOWNLINKS = towns.map(([slug, t]) => {
+  // the towns map: every label is placed over the tilted map by CSS from its spot on the plane (fractions of its width and height)
+  const f = (n) => +(n / 100).toFixed(4);
+  const towns = Object.entries(plane.towns).sort((a, b) => b[1].y - a[1].y);   // south to north, the order a visitor reads the coast
+  fill.PINS = towns.map(([slug, t], k) => {
     if (!fs.existsSync(path.join(REPO, "chapter3realty", "submarkets", slug, "index.html"))) throw new Error("no page for town " + slug);
-    return `<li style="--x:${t.px}%;--y:${t.py}%${dy[slug] ? ";--dy:" + dy[slug] : ""}"${side[slug] ? ' data-side="r"' : ""}><a href="/submarkets/${slug}/" data-town="${slug}">${t.n}</a></li>`;
+    return `<li class="tw-pt tw-pin" data-town="${slug}" style="--px:${f(t.px)};--py:${f(t.py)};--i:${k}"><a href="/submarkets/${slug}/">${t.n}</a><i class="rg"></i></li>`;
+  }).join("\n");
+  // SC 31 is left off: at every width its shield sits where the waterway's name has to go
+  fill.SHIELDS = plane.shields.filter((s) => s.label !== "31").map((s) => `<span class="tw-pt sh ${s.kind === "sc" ? "sc" : "us"}" data-r="${s.label}" style="--px:${f(s.px)};--py:${f(s.py)}"><b>${s.label}</b></span>`).join("\n");
+  // water names: where each sits, and at which angle, is set per width in head.html; these are the names the basemap carries
+  const cls = { "Intracoastal Waterway": "icw", "Waccamaw River": "wac", "Atlantic Ocean": "sea" };
+  fill.WATER = plane.water.map((w) => {
+    if (!cls[w.label]) throw new Error("no place set for water label " + w.label);
+    return `<span class="tw-pt wl ${cls[w.label]}"><i>${w.label}</i></span>`;
   }).join("\n");
 }
 let mainHtml = src("main.tpl.html").replace(/\{\{([A-Z_]+)\}\}/g, (m, k) => { if (!(k in fill)) throw new Error("no fill for " + k); return fill[k]; });

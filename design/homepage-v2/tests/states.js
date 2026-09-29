@@ -138,7 +138,8 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
       await page.click('.cine-pause'); await page.waitForTimeout(300);
       // three plays then rest (fast-forward)
       await page.evaluate(() => { document.querySelector('.cine-video').playbackRate = 16; });
-      await page.waitForTimeout(4200);
+      // three loops at 16x take about 3s when the decoder keeps up; under load it can take longer, so wait for the rest state
+      await page.waitForFunction(() => !document.querySelector('#home').classList.contains('is-playing'), null, { timeout: 20000 }).catch(() => {});
       const rest = await page.evaluate(() => ({ paused: document.querySelector('.cine-video').paused, playing: document.querySelector('#home').classList.contains('is-playing'), label: document.querySelector('.cine-pause').getAttribute('aria-label') }));
       ok('video: rests on poster after 3 plays', rest.paused && !rest.playing && rest.label === 'Play the video', JSON.stringify(rest));
     }
@@ -235,19 +236,77 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     await ctx.close();
   }
 
-  // 8. town labels never collide
-  for (const [w, h] of [[1100, 800], [1152, 800], [1280, 800], [1440, 900], [1920, 1000]]) {
-    const { ctx, page } = await ctxPage(browser, { w, h });
-    await page.goto(URL0, { waitUntil: 'load' }); await page.waitForTimeout(800);
+  // 8. the towns map. At rest, at every width and through the whole slow turn: each label sits on its town, and no label
+  // covers another label, a pin, a shield, a water name, the card or the compass, even drawn 4.5% wider (Firefox draws
+  // DM Sans about 3.5% wider than Chromium and WebKit). Then while it moves.
+  const TW = require('fs').readFileSync(__dirname + '/twlib.js', 'utf-8');
+  for (const [w, h] of [[2560, 1440], [1920, 1080], [1440, 900], [1366, 768], [1280, 800], [1100, 800], [1099, 800], [1024, 768], [900, 1000], [899, 1000], [820, 1180], [768, 1024], [700, 900], [699, 900], [430, 932], [390, 844], [360, 740], [359, 640], [320, 568]]) {
+    const { ctx, page } = await ctxPage(browser, { w, h, reduced: true });
+    await page.goto(URL0, { waitUntil: 'load' });
+    // the site's reduced-motion rule gives every element a .01ms transition, which makes synchronous reads lag one change
+    await page.addStyleTag({ content: '*,*::before,*::after{transition:none!important;animation:none!important}' });
+    await page.evaluate(() => document.fonts.ready);
+    await page.evaluate(TW);
     const r = await page.evaluate(() => {
-      const rs = [...document.querySelectorAll('.tw-list a')].map(a => ({ t: a.textContent, b: a.getBoundingClientRect() }));
-      const hits = [];
-      for (let i = 0; i < rs.length; i++) for (let j = i + 1; j < rs.length; j++) { const a = rs[i].b, b = rs[j].b; if (a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom) hits.push(rs[i].t + '/' + rs[j].t); }
-      const sec = document.querySelector('#towns').getBoundingClientRect();
-      const out = rs.filter(x => x.b.left < 0 || x.b.right > innerWidth).map(x => x.t);
-      return { hits, out };
+      const T = window.__tw, [h0, h1] = T.heads(), all = new Set();
+      for (let k = 0; k <= 6; k++) { T.setHead(h0 + (h1 - h0) * k / 6); T.problems(0.045).forEach((x) => all.add(x)); }
+      document.querySelector('#towns').style.removeProperty('--h0');
+      return { probs: [...all], proj: T.projErr(), n: document.querySelectorAll('.tw-pin a[href^="/submarkets/"]').length };
     });
-    ok(`towns ${w}: labels do not overlap`, r.hits.length === 0 && r.out.length === 0, r.hits.concat(r.out).join(', '));
+    ok(`map ${w}: nine town links`, r.n === 9, String(r.n));
+    ok(`map ${w}: labels clear through the turn`, r.probs.length === 0, r.probs.slice(0, 4).join('; '));
+    ok(`map ${w}: labels on their towns`, r.proj.worst <= 1, r.proj.worst + 'px ' + r.proj.who);
+    await ctx.close();
+  }
+  for (const [w, h] of [[1440, 900], [390, 844]]) {
+    const { ctx, page, errs } = await ctxPage(browser, { w, h });
+    await page.goto(URL0, { waitUntil: 'load' });
+    await page.evaluate(() => { document.querySelector('.tw-plane img').loading = 'eager'; });
+    await page.evaluate(() => { const r = document.querySelector('.tw-stage').getBoundingClientRect(); scrollTo({ top: r.top + scrollY - Math.max(0, (innerHeight - r.height) / 2), behavior: 'instant' }); });
+    await page.waitForFunction(() => document.querySelector('.tw-stage').classList.contains('in'));
+    const worst = [], mv = [];
+    for (const t of [400, 1600, 3200, 7000]) {
+      await page.waitForTimeout(t - (worst.length ? [400, 1600, 3200, 7000][worst.length - 1] : 0));
+      await page.evaluate(TW);
+      const r = await page.evaluate(() => {
+        const an = document.getAnimations().filter((a) => a.effect && a.effect.target && a.effect.target.closest && a.effect.target.closest('.tw-stage') && !(a instanceof CSSAnimation) && !(a instanceof CSSTransition) && a.effect.getKeyframes().some((k) => k.transform));
+        const running = an.filter((a) => a.playState === 'running').length;
+        an.forEach((a) => a.pause()); const e = window.__tw.projErr(); an.forEach((a) => a.play());
+        return { e: e.worst, running };
+      });
+      worst.push(r.e); mv.push(r.running);
+    }
+    ok(`map ${w}: labels stay on their towns while it moves`, Math.max(...worst) <= 1, worst.join(', ') + 'px');
+    const movers = await page.evaluate(() => [...document.querySelectorAll('.tw-plane, .tw-pt, .tw-deco .wl i, .tw-compass i')].filter((e) => e.getClientRects().length).length);
+    ok(`map ${w}: flight then turn move every drawn element`, mv.every((n) => n === movers), mv.join(', ') + ' of ' + movers);
+    if (w > 430) {
+      await page.mouse.move(w / 2, h / 2);
+      await page.waitForTimeout(300);
+      const held = await page.evaluate(() => document.getAnimations().filter((a) => a.effect && a.effect.target && a.effect.target.closest && a.effect.target.closest('.tw-stage') && !(a instanceof CSSAnimation) && !(a instanceof CSSTransition) && a.effect.getKeyframes().some((k) => k.transform)).map((a) => a.playState));
+      ok('map: holds still under the pointer', held.length > 20 && held.every((s) => s === 'paused'), [...new Set(held)].join());
+      await page.mouse.move(2, 2);
+    }
+    await page.evaluate(() => scrollTo({ top: document.querySelector('#faq').getBoundingClientRect().top + scrollY + 600, behavior: 'instant' }));
+    await page.waitForTimeout(400);
+    const off = await page.evaluate(() => document.getAnimations().filter((a) => a.effect && a.effect.target && a.effect.target.closest && a.effect.target.closest('.tw-stage') && !(a instanceof CSSAnimation) && !(a instanceof CSSTransition) && a.effect.getKeyframes().some((k) => k.transform)).map((a) => a.playState));
+    ok(`map ${w}: stops turning off screen`, off.every((s) => s !== 'running'), [...new Set(off)].join());
+    ok(`map ${w}: no script errors`, errs.length === 0, errs.join(' | '));
+    await ctx.close();
+  }
+  {
+    const { ctx, page } = await ctxPage(browser, { reduced: true });
+    await page.goto(URL0, { waitUntil: 'load' }); await scrollAll(page);
+    await page.evaluate(() => { const r = document.querySelector('.tw-stage').getBoundingClientRect(); scrollTo({ top: r.top + scrollY, behavior: 'instant' }); });
+    await page.waitForTimeout(1500);
+    const r = await page.evaluate(() => ({ an: document.getAnimations().filter((a) => a.effect && a.effect.target && a.effect.target.closest && a.effect.target.closest('.tw-stage') && !(a instanceof CSSAnimation) && !(a instanceof CSSTransition) && a.effect.getKeyframes().some((k) => k.transform)).length, op: [...document.querySelectorAll('.tw-pin, .tw-deco, .tw-compass')].map((e) => getComputedStyle(e).opacity).filter((o) => o !== '1').length }));
+    ok('map, reduced motion: at rest, everything shown', r.an === 0 && r.op === 0, JSON.stringify(r));
+    await ctx.close();
+  }
+  {
+    const { ctx, page } = await ctxPage(browser, { js: false });
+    await page.goto(URL0, { waitUntil: 'load' });
+    const r = await page.evaluate(() => ({ op: [...document.querySelectorAll('.tw-pin, .tw-deco, .tw-compass')].map((e) => getComputedStyle(e).opacity).filter((o) => o !== '1').length, t: getComputedStyle(document.querySelector('.tw-plane')).transform !== 'none' }));
+    ok('map, no JavaScript: tilted, every pin shown', r.op === 0 && r.t, JSON.stringify(r));
     await ctx.close();
   }
 

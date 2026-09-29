@@ -65,10 +65,11 @@
   function startFilm() {
     if (!v || !stage || film.state !== 'idle') return;
     var c = navigator.connection || {};
-    if (rm.matches || c.saveData || /(^|-)2g$/.test(c.effectiveType || '') || document.hidden || !hasIO) return;
+    if (rm.matches || c.saveData || /(^|-)[23]g$/.test(c.effectiveType || '') || document.hidden || !hasIO) return;
+    /* a tall screen gets the 9:16 cut, which fills it without upscaling a 16:9 frame */
     var h264 = v.canPlayType('video/mp4; codecs="avc1.64001F"');
-    var small = window.matchMedia('(max-width:699px)').matches || c.effectiveType === '3g';
-    var src = h264 ? (small ? v.getAttribute('data-mp4-sm') : v.getAttribute('data-mp4')) : (v.canPlayType('video/webm; codecs="vp9"') ? v.getAttribute('data-webm') : '');
+    var tall = window.matchMedia('(max-aspect-ratio:1/1)').matches;
+    var src = h264 ? v.getAttribute(tall ? 'data-mp4-tall' : 'data-mp4') : (v.canPlayType('video/webm; codecs="vp9"') ? v.getAttribute(tall ? 'data-webm-tall' : 'data-webm') : '');
     if (!src) return;
     film.state = 'loading';
     v.muted = true; v.defaultMuted = true;
@@ -172,36 +173,107 @@
     card.addEventListener('input', check);
   })();
 
-  /* ---- towns: each label lights its marker, and on desktop each marker lights its label ---- */
-  var tw = $('#towns');
-  if (tw) (function () {
-    function pair(slug, on) {
-      $$('[data-town="' + slug + '"]', tw).forEach(function (el) { el.classList.toggle('hl', on); });
+  /* ---- towns: when the map comes into view the camera tilts down from overhead and turns; after that it turns slowly
+     while the map is on screen and holds still under the pointer or keyboard focus. The compositor plays both motions:
+     each moving element gets transform keyframes computed here with the projection head.html uses, so the page does no
+     style work per frame. With no motion allowed nothing here runs and the CSS draws the map at rest. ---- */
+  var tw = $('#towns'), tst = tw && $('.tw-stage', tw);
+  var towns = { stop: function () {}, sync: function () {} };
+  if (tst && hasIO && tst.animate) (function () {
+    var plane = $('.tw-plane', tst), pts = $$('.tw-pt', tst), wls = $$('.tw-deco .wl i', tst), needle = $('.tw-compass i', tst);
+    var R = Math.PI / 180, flown = false, landed = false, vis = false, hold = false, fly = [], turn = [];
+    function num(cs, k) { return parseFloat(cs.getPropertyValue(k)) || 0; }
+    function camera() {
+      var cs = getComputedStyle(tw);
+      return { P: num(cs, '--P'), pw: num(cs, '--pw'), hw: num(cs, '--hw'), tx: num(cs, '--tx'), ty: num(cs, '--ty'), t0: num(cs, '--t0'), h0: num(cs, '--h0'), h1: num(cs, '--h1'),
+        at: pts.map(function (el) { var s = getComputedStyle(el); return [num(s, '--px'), num(s, '--py')]; }),
+        a: wls.map(function (el) { return num(getComputedStyle(el), '--a'); }) };
     }
-    $$('.tw-list a', tw).forEach(function (a) {
-      var s = a.getAttribute('data-town');
-      a.addEventListener('pointerenter', function () { pair(s, true); });
-      a.addEventListener('pointerleave', function () { pair(s, false); });
-      a.addEventListener('focus', function () { pair(s, true); });
-      a.addEventListener('blur', function () { pair(s, false); });
+    /* one frame of the scene at tilt t, heading h (degrees) and zoom z */
+    function pose(c, t, h, z) {
+      var st = Math.sin(t * R), ct = Math.cos(t * R), sh = Math.sin(h * R), ch = Math.cos(h * R);
+      return {
+        plane: 'rotateX(' + t + 'deg) rotateZ(' + h + 'deg) scale(' + z + ')',
+        pts: c.at.map(function (p) {
+          var u = (p[0] - c.tx) * c.pw * z, v = (p[1] - c.ty) * c.pw * c.hw * z, up = u * ch - v * sh, vp = u * sh + v * ch, k = c.P / (c.P - vp * st);
+          return 'translate(' + (up * k).toFixed(2) + 'px,' + (vp * ct * k).toFixed(2) + 'px)';
+        }),
+        wls: c.a.map(function (a) { var r = (a + h) * R; return 'translate(-50%,-50%) rotate(' + (Math.atan2(Math.sin(r) * ct, Math.cos(r)) / R).toFixed(3) + 'deg)'; }),
+        needle: 'rotate(' + (Math.atan2(sh, ch * ct) / R).toFixed(3) + 'deg)'
+      };
+    }
+    function play(c, samples, opts) {
+      var fr = samples.map(function (s) { return pose(c, s[0], s[1], s[2]); }), out = [];
+      /* an element the CSS hides at this width is left alone: animating it would tick on the main thread */
+      var put = function (el, key, i) { if (el.getClientRects().length) out.push(el.animate(fr.map(function (f) { return { transform: i < 0 ? f[key] : f[key][i] }; }), opts)); };
+      put(plane, 'plane', -1);
+      pts.forEach(function (el, i) { put(el, 'pts', i); });
+      wls.forEach(function (el, i) { put(el, 'wls', i); });
+      if (needle) put(needle, 'needle', -1);
+      return out;
+    }
+    /* the flight follows the page's ease-out curve, cubic-bezier(.16,1,.3,1), baked into 48 frames */
+    function ease(x) {
+      var lo = 0, hi = 1, t = x;
+      for (var n = 0; n < 30; n++) { t = (lo + hi) / 2; if (3 * .16 * t * (1 - t) * (1 - t) + 3 * .3 * t * t * (1 - t) + t * t * t < x) lo = t; else hi = t; }
+      return 3 * t * (1 - t) * (1 - t) + 3 * t * t * (1 - t) + t * t * t;
+    }
+    function takeOff() {
+      var c = camera(), s = [];
+      for (var i = 0; i <= 48; i++) { var p = ease(i / 48); s.push([c.t0 * p, c.h0 - 28 + 28 * p, .78 + .22 * p]); }
+      fly = play(c, s, { duration: 2600, easing: 'linear' });
+      fly[0].finished.then(function () { landed = true; sync(); }, function () {});
+    }
+    function sync() {
+      var on = landed && vis && !hold && !rm.matches;
+      if (on && !turn.length) {
+        var c = camera(), s = [];
+        for (var i = 0; i <= 12; i++) s.push([c.t0, c.h0 + (c.h1 - c.h0) * i / 12, 1]);
+        turn = play(c, s, { duration: 18000, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' });
+      }
+      turn.forEach(function (a) { if (on) a.play(); else a.pause(); });
+    }
+    towns.sync = sync;
+    towns.stop = function () {
+      fly.concat(turn).forEach(function (a) { a.cancel(); }); fly = []; turn = []; landed = flown = true;
+      tst.classList.remove('pre'); tst.classList.add('in');
+    };
+    /* before the map comes into view the camera goes overhead; once it is in view the flight starts from there */
+    new IntersectionObserver(function (es) {
+      if (es[es.length - 1].isIntersecting && !flown && html.classList.contains('m') && !rm.matches) tst.classList.add('pre');
+    }, { rootMargin: '0px 0px 60% 0px' }).observe(tst);
+    new IntersectionObserver(function (es) {
+      vis = es[es.length - 1].isIntersecting;
+      if (vis && !flown) {
+        flown = true;
+        if (tst.classList.contains('pre')) takeOff(); else landed = true;
+        tst.classList.remove('pre'); tst.classList.add('in');
+      }
+      sync();
+    }, { rootMargin: '0px 0px -12% 0px' }).observe(tst);
+    tst.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hold = true; sync(); } });
+    tst.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hold = false; sync(); } });
+    tst.addEventListener('focusin', function () { hold = true; sync(); });
+    tst.addEventListener('focusout', function (e) { if (!tst.contains(e.relatedTarget)) { hold = false; sync(); } });
+    /* a new width can mean a new camera: the turn restarts from rest with fresh frames */
+    var rz = 0;
+    window.addEventListener('resize', function () {
+      clearTimeout(rz);
+      rz = setTimeout(function () { if (!landed) return; turn.forEach(function (a) { a.cancel(); }); turn = []; sync(); }, 250);
     });
-    var fine = window.matchMedia('(min-width:1100px) and (pointer:fine)');
-    $$('.tw-marks .mk', tw).forEach(function (m) {
-      var s = m.getAttribute('data-town'), a = $('.tw-list a[data-town="' + s + '"]', tw);
-      m.addEventListener('pointerenter', function () { if (fine.matches) pair(s, true); });
-      m.addEventListener('pointerleave', function () { if (fine.matches) pair(s, false); });
-      m.addEventListener('click', function () { if (fine.matches && a) location.href = a.href; });
-    });
+    window.addEventListener('beforeprint', function () { tst.classList.add('in'); });
   })();
+  else if (tst) tst.classList.add('in');
 
   /* ---- motion preference can change while the page is open ---- */
   var onRm = function () {
     if (rm.matches) {
-      html.classList.remove('m'); revealAll();
+      html.classList.remove('m'); revealAll(); towns.stop();
       if (film.state === 'ready') { G.userPlay = false; film.state = 'rest'; v.pause(); stage.classList.remove('is-playing'); setVidBtn(true); }
     } else {
       if (hasIO) html.classList.add('m');
       if (document.readyState === 'complete') whenIdle(startFilm);
+      towns.sync();
     }
     sync();
   };
