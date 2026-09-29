@@ -2194,8 +2194,10 @@ Grand Strand map drawn from Census boundaries links nine submarket pages. The
 FAQ is always open. No ticker, count-up, call bar or particles.
 
 **New copy, his to approve.** Towns section: eyebrow "Pawleys Island to Little
-River", H2 "Where on the Grand Strand are you looking?", links "All
-neighborhoods" and "3D map search", the nine place names. The analyzer's field
+River", H2 "Where on the Grand Strand are you looking?" (italic on "looking?";
+italic on "Grand Strand" made WebKit read "theGrand" wherever the line wrapped
+before it), links "All neighborhoods" and "3D map search", the nine place
+names. The analyzer's field
 labels "Street address", "City", "ZIP" (they were placeholders). Control labels
 for the video and review buttons.
 
@@ -2203,8 +2205,13 @@ for the video and review buttons.
 scroll from 320 to 1920 except 900, which is the header defect in the
 2026-09-11 section. 81 behaviour checks pass (reduced motion, JavaScript off,
 every video gate, reviews, fold budgets, fallback fonts, label collisions,
-layout shift). Throttled phone: LCP about 0.68s (live 0.59s), blocking time
-about 230ms (live 160ms), CLS 0. `build.js preflight` passes once
+layout shift). Throttled phone, ten interleaved runs each: LCP 0.69s (live
+0.57s), blocking time 298ms (live 162ms), CLS 0. An earlier build used
+`content-visibility:auto` on the lower sections to save layout time; it hid
+Team, Towns and FAQ from Safari/VoiceOver and Firefox screen readers, so it
+is gone and must not come back. Two review rounds (craft, copy, accessibility,
+code and cross-browser), every finding reproduced by a second agent and fixed;
+all 12 headings read correctly in Chromium, WebKit and Firefox. `build.js preflight` passes once
 `node build.js dates` runs. The test scripts are in `design/homepage-v2/tests/`.
 
 **On accept.** Copy `design/homepage-v2/index.html` over

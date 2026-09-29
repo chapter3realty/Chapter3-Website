@@ -57,7 +57,7 @@ fill.COAST = "M" + geo.coast.map(([x, y]) => `${x} ${y}`).join("L") + "L1025 124
 fill.LAND = geo.land;
 fill.STATE = geo.state;
 {
-  const side = { "pawleys-island": "r", conway: "r" }, dy = { "murrells-inlet": "6px", "garden-city": "5px", "surfside-beach": "-8px" };
+  const side = { "pawleys-island": "r", conway: "r" }, dy = { "murrells-inlet": "6px", "garden-city": "5px", "surfside-beach": "-8px", conway: "-8px", "north-myrtle-beach": "8px" };
   const towns = Object.entries(geo.T).sort((a, b) => b[1].y - a[1].y);   // south to north
   fill.MARKERS = towns.map(([slug, t], k) => `<g class="mk" data-town="${slug}" transform="translate(${t.x} ${t.y})" style="--i:${k}"><g class="mk-i"><circle class="pg" r="10"/><circle class="ring" r="16"/><circle class="dot" r="6"/></g></g>`).join("\n");
   fill.TOWNLINKS = towns.map(([slug, t]) => {

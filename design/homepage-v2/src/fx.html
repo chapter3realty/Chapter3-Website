@@ -24,14 +24,16 @@
   /* ---- the gate: one place decides whether the film and the reviews may run ---- */
   var stage = $('#home.cine'), v = $('.cine-video'), pb = $('.cine-pause');
   var rvBox = $('#home-reviews'), pop = document.getElementById('c3-pop');
-  var G = { vis: !document.hidden, pop: pop ? pop.hidden : true, film: false, rv: false, hov: false, foc: false, userVid: false, rvStopped: rm.matches };
+  /* userPlay: the visitor pressed play, which overrides a reduced-motion setting; rvStopped: they stopped the reviews */
+  var G = { vis: !document.hidden, pop: pop ? pop.hidden : true, film: false, rv: false, hov: false, userVid: false, userPlay: false, rvStopped: false };
   var film = { state: 'idle', plays: 0, last: 0, run: function () {} };
   var rv = { run: function () {} };
   function sync() {
-    film.run(G.vis && G.pop && G.film && !G.userVid && !rm.matches);
-    rv.run(G.vis && G.pop && G.rv && !G.hov && !G.foc && !G.rvStopped && !rm.matches);
+    film.run(G.vis && G.pop && G.film && !G.userVid && (G.userPlay || !rm.matches));
+    rv.run(G.vis && G.pop && G.rv && !G.hov && !G.rvStopped && !rm.matches);
   }
-  document.addEventListener('visibilitychange', function () { G.vis = !document.hidden; if (G.vis) startFilm(); sync(); });
+  /* a tab shown before 'load' waits for load, so the film never competes with the poster and fonts */
+  document.addEventListener('visibilitychange', function () { G.vis = !document.hidden; if (G.vis && document.readyState === 'complete') whenIdle(startFilm); sync(); });
   if (pop && 'MutationObserver' in window) {
     new MutationObserver(function () { G.pop = pop.hidden; sync(); }).observe(pop, { attributes: true, attributeFilter: ['hidden'] });
   }
@@ -99,8 +101,8 @@
     });
   }
   if (pb) pb.addEventListener('click', function () {
-    if (film.state === 'rest') { film.state = 'ready'; film.plays = 0; film.last = 0; stage.classList.add('is-playing'); G.userVid = false; setVidBtn(false); sync(); return; }
-    G.userVid = !G.userVid; setVidBtn(G.userVid); sync();
+    if (film.state === 'rest') { film.state = 'ready'; film.plays = 0; film.last = 0; stage.classList.add('is-playing'); G.userVid = false; G.userPlay = true; setVidBtn(false); sync(); return; }
+    G.userVid = !G.userVid; if (!G.userVid) G.userPlay = true; setVidBtn(G.userVid); sync();
   });
   function whenIdle(fn) { if ('requestIdleCallback' in window) requestIdleCallback(fn, { timeout: 2500 }); else setTimeout(fn, 1200); }
   if (document.readyState === 'complete') whenIdle(startFilm);
@@ -121,9 +123,11 @@
       G.rvStopped = stopped;
       rot.classList.toggle('is-paused', stopped);
       rot.setAttribute('aria-label', stopped ? 'Play reviews' : 'Pause reviews');
-      stack.setAttribute('aria-live', stopped ? 'polite' : 'off');
+      stack.setAttribute('aria-live', stopped || rm.matches ? 'polite' : 'off');
       sync();
     }
+    var rmLive = function () { stack.setAttribute('aria-live', G.rvStopped || rm.matches ? 'polite' : 'off'); };
+    if (rm.addEventListener) rm.addEventListener('change', rmLive); else if (rm.addListener) rm.addListener(rmLive);
     function manual(n) { show(n); setRot(true); }
     rv.run = function (on) { clearTimeout(t); if (on) t = setTimeout(function () { show(i + 1); sync(); }, 7000); };
     rot.addEventListener('click', function () { setRot(!G.rvStopped); });
@@ -132,8 +136,11 @@
     dots.forEach(function (d, k) { d.addEventListener('click', function () { manual(k); }); });
     rvBox.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { G.hov = true; sync(); } });
     rvBox.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { G.hov = false; sync(); } });
-    rvBox.addEventListener('focusin', function () { G.foc = true; sync(); });
-    rvBox.addEventListener('focusout', function (e) { if (!rvBox.contains(e.relatedTarget)) { G.foc = false; sync(); } });
+    /* WAI APG carousel: keyboard focus entering the carousel stops rotation until the visitor presses play */
+    rvBox.addEventListener('focusin', function (e) {
+      var kb = false; try { kb = e.target.matches(':focus-visible'); } catch (x) {}
+      if (!G.rvStopped && kb && !rvBox.contains(e.relatedTarget)) setRot(true);
+    });
     var sx = 0, sy = 0, sw = false;
     stack.addEventListener('pointerdown', function (e) { if (e.pointerType === 'mouse') return; sw = true; sx = e.clientX; sy = e.clientY; });
     stack.addEventListener('pointerup', function (e) {
@@ -189,14 +196,22 @@
 
   /* ---- motion preference can change while the page is open ---- */
   var onRm = function () {
-    if (rm.matches) { html.classList.remove('m'); revealAll(); if (film.state === 'ready') { v.pause(); } }
-    else if (hasIO) { html.classList.add('m'); }
+    if (rm.matches) {
+      html.classList.remove('m'); revealAll();
+      if (film.state === 'ready') { G.userPlay = false; film.state = 'rest'; v.pause(); stage.classList.remove('is-playing'); setVidBtn(true); }
+    } else {
+      if (hasIO) html.classList.add('m');
+      if (document.readyState === 'complete') whenIdle(startFilm);
+    }
     sync();
   };
   if (rm.addEventListener) rm.addEventListener('change', onRm); else if (rm.addListener) rm.addListener(onRm);
 
-  /* the hero fills the first screen under the header; the header is 89px today */
+  /* the hero fills the first screen under the header, and keyboard focus never lands under it; the header is 89px today */
   var hd = document.querySelector('body > header, header');
-  if (hd && stage && hd.offsetHeight && hd.offsetHeight !== 89) stage.style.setProperty('--hdr', hd.offsetHeight + 'px');
+  if (hd && hd.offsetHeight) {
+    html.style.scrollPaddingTop = (hd.offsetHeight + 8) + 'px';
+    if (stage && hd.offsetHeight !== 89) stage.style.setProperty('--hdr', hd.offsetHeight + 'px');
+  }
 })();
 </script>
