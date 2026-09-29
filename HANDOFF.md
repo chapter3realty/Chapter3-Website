@@ -2214,6 +2214,11 @@ code and cross-browser), every finding reproduced by a second agent and fixed;
 all 12 headings read correctly in Chromium, WebKit and Firefox. `build.js preflight` passes once
 `node build.js dates` runs. The test scripts are in `design/homepage-v2/tests/`.
 
+**Preview sent 2026-09-29:** https://claude.ai/artifact/SSH4EGsM6DZpfTTaabcWeo
+(built by `design/homepage-v2/preview.js`, measured rendered at 320 to 1440
+before sending: video plays, one review showing, pop-up and search modal
+closed, team photos load, no script errors).
+
 **On accept.** Copy `design/homepage-v2/index.html` over
 `chapter3realty/index.html` and `design/homepage-v2/media/hero/` to
 `chapter3realty/media/hero/`, then `node build.js dates`, `node build.js
