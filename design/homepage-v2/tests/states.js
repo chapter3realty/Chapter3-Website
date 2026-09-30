@@ -1,4 +1,4 @@
-// Behaviour tests for the redesigned homepage. node states.js <url>
+// Behaviour tests for the redesigned homepage. node states.js <url>. Exits 1 when a check fails.
 const { chromium } = require('playwright');
 const URL0 = process.argv[2] || 'http://localhost:8124/';
 const results = [];
@@ -10,14 +10,17 @@ async function ctxPage(browser, opts = {}, init) {
   const mobile = w <= 430;
   const ctx = await browser.newContext({ viewport: { width: w, height: h }, isMobile: mobile, hasTouch: mobile, reducedMotion: reduced ? 'reduce' : 'no-preference', javaScriptEnabled: js });
   const page = await ctx.newPage();
-  const media = [];
-  page.on('request', r => { if (/\/media\/hero\/walkthrough/.test(r.url())) media.push({ url: r.url(), t: Date.now() }); });
+  const zoom = [];
+  page.on('request', r => { if (/\/media\/map\/zoom-/.test(r.url())) zoom.push(r.url()); });
   const errs = [];
   page.on('pageerror', e => errs.push(e.message));
   await page.addInitScript(noPop);
   if (init) await page.addInitScript(init);
-  return { ctx, page, media, errs };
+  return { ctx, page, zoom, errs };
 }
+// the hero map: every town label shown (the flight has landed), and the pause button, which lands a flight at once
+const landed = (page, ms = 14000) => page.waitForFunction(() => [...document.querySelectorAll('.tw-pin')].every(e => getComputedStyle(e).opacity === '1'), null, { timeout: ms }).catch(() => {});
+const pressPause = page => page.evaluate(() => document.querySelector('.tw-rot').click());
 const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < document.documentElement.scrollHeight; y += 300) { scrollTo({ top: y, behavior: 'instant' }); await new Promise(r => setTimeout(r, 60)); } scrollTo({ top: 0, behavior: 'instant' }); });
 
 (async () => {
@@ -25,7 +28,7 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
 
   // 1. reduced motion
   {
-    const { ctx, page, media, errs } = await ctxPage(browser, { reduced: true });
+    const { ctx, page, zoom, errs } = await ctxPage(browser, { reduced: true });
     await page.goto(URL0, { waitUntil: 'load' }); await page.waitForTimeout(3500);
     const r0 = await page.evaluate(() => document.querySelector('.rv-slide.on figcaption').textContent);
     await scrollAll(page); await page.waitForTimeout(500);
@@ -34,12 +37,12 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
       const hidden = [...document.querySelectorAll('.eb, .ln, .why-stat, .tm, .qa')].filter(el => { const t = getComputedStyle(el, el.matches('.eb') ? '::before' : el.matches('.ln') ? null : '::before').transform; return t && t !== 'none' && /matrix\(0/.test(t); }).length;
       const strokes = [...document.querySelectorAll('.why-ico path, .why-ico rect, .why-ico circle, .coast')].filter(el => parseFloat(getComputedStyle(el).strokeDashoffset) > 0.01).length;
       const kpi = [...document.querySelectorAll('.stat-kpi')].map(e => getComputedStyle(e).color);
-      return { scrollTL: anims.filter(n => n === 'ScrollTimeline' || n === 'ViewTimeline').length, videoSrc: !!document.querySelector('.cine-video').getAttribute('src'), hidden, strokes, rot: getComputedStyle(document.querySelector('.rv-rot')).display, live: document.querySelector('.rv-stack').getAttribute('aria-live'), kpi: [...new Set(kpi)] };
+      return { scrollTL: anims.filter(n => n === 'ScrollTimeline' || n === 'ViewTimeline').length, hidden, strokes, rot: getComputedStyle(document.querySelector('.rv-rot')).display, live: document.querySelector('.rv-stack').getAttribute('aria-live'), kpi: [...new Set(kpi)] };
     });
     await page.waitForTimeout(8000);
     const r1 = await page.evaluate(() => document.querySelector('.rv-slide.on figcaption').textContent);
     ok('reduced: no scroll timelines', r.scrollTL === 0, JSON.stringify(r.scrollTL));
-    ok('reduced: no video requested', !r.videoSrc && media.length === 0);
+    ok('reduced: no zoom maps requested', zoom.length === 0, zoom.join());
     ok('reduced: all lines drawn', r.hidden === 0, 'hidden=' + r.hidden);
     ok('reduced: all strokes drawn', r.strokes === 0, 'undrawn=' + r.strokes);
     ok('reduced: badge values brass-2', r.kpi.length === 1 && r.kpi[0] === 'rgb(212, 137, 74)', r.kpi.join());
@@ -74,7 +77,7 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
   // 3. IntersectionObserver never fires: text stays visible
   {
     const { ctx, page } = await ctxPage(browser, {}, () => { window.IntersectionObserver = function () { return { observe() {}, unobserve() {}, disconnect() {} }; }; });
-    await page.goto(URL0, { waitUntil: 'load' }); await page.waitForTimeout(4000);
+    await page.goto(URL0, { waitUntil: 'load' }); await landed(page);
     await scrollAll(page);
     const r = await page.evaluate(() => {
       const bad = [];
@@ -101,64 +104,40 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     await ctx.close();
   }
 
-  // 5. video gates
-  for (const [label, init, expectNone] of [
-    ['saveData', () => { Object.defineProperty(navigator, 'connection', { value: { saveData: true, effectiveType: '4g' } }); }, true],
-    ['2g', () => { Object.defineProperty(navigator, 'connection', { value: { saveData: false, effectiveType: '2g' } }); }, true],
-    ['normal', null, false],
+  // 5. the hero map's loading gates: the zoom maps load with the page and the flight is the zoom; on Save-Data or a 2G link
+  // no zoom map is requested and the flight is the short one; if the zoom maps stall, the short one starts after 2.5s
+  const planeFlight = page => page.evaluate(() => document.getAnimations().filter(a => a.effect && a.effect.target && a.effect.target.matches && a.effect.target.matches('.tw-plane') && a.effect.getTiming().iterations !== Infinity).map(a => a.effect.getTiming().duration).join());
+  for (const [label, init, short] of [
+    ['Save-Data', () => { Object.defineProperty(navigator, 'connection', { value: { saveData: true, effectiveType: '4g' }, configurable: true }); }, true],
+    ['2G', () => { Object.defineProperty(navigator, 'connection', { value: { saveData: false, effectiveType: '2g' }, configurable: true }); }, true],
+    ['a normal link', null, false],
   ]) {
-    const { ctx, page, media } = await ctxPage(browser, {}, init);
-    let loadAt = 0; page.on('load', () => { loadAt = Date.now(); });
-    await page.goto(URL0, { waitUntil: 'load' }); await page.waitForTimeout(4500);
-    if (expectNone) ok(`video: none on ${label}`, media.length === 0, media.map(m => m.url).join());
-    else {
-      ok('video: requested only after load', media.length > 0 && media[0].t >= loadAt, media.map(m => m.url.split('/').pop()).join());
-      ok('video: webm chosen in headless Chromium', media.length > 0 && /\.webm$/.test(media[0].url));
-      const st = await page.evaluate(() => ({ playing: document.querySelector('#home').classList.contains('is-playing'), paused: document.querySelector('.cine-video').paused, btn: !document.querySelector('.cine-pause').hidden }));
-      ok('video: playing, button shown', st.playing && !st.paused && st.btn, JSON.stringify(st));
-      // scroll away -> pause
-      await page.evaluate(() => scrollTo({ top: 3000, behavior: 'instant' })); await page.waitForTimeout(600);
-      const sp = await page.evaluate(() => document.querySelector('.cine-video').paused);
-      ok('video: pauses when scrolled away', sp);
-      await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' })); await page.waitForTimeout(600);
-      ok('video: resumes when back', !(await page.evaluate(() => document.querySelector('.cine-video').paused)));
-      // pop-up opens -> pause; closes -> resume
-      await page.evaluate(() => { document.getElementById('c3-pop').hidden = false; }); await page.waitForTimeout(300);
-      ok('video: pauses while pop-up is open', await page.evaluate(() => document.querySelector('.cine-video').paused));
-      await page.evaluate(() => { document.getElementById('c3-pop').hidden = true; }); await page.waitForTimeout(300);
-      ok('video: resumes after pop-up closes', !(await page.evaluate(() => document.querySelector('.cine-video').paused)));
-      // hidden tab
-      await page.evaluate(() => { Object.defineProperty(document, 'hidden', { configurable: true, get: () => true }); document.dispatchEvent(new Event('visibilitychange')); }); await page.waitForTimeout(300);
-      ok('video: pauses on hidden tab', await page.evaluate(() => document.querySelector('.cine-video').paused));
-      await page.evaluate(() => { Object.defineProperty(document, 'hidden', { configurable: true, get: () => false }); document.dispatchEvent(new Event('visibilitychange')); }); await page.waitForTimeout(300);
-      // user pause button
-      await page.click('.cine-pause'); await page.waitForTimeout(200);
-      const up = await page.evaluate(() => [document.querySelector('.cine-video').paused, document.querySelector('.cine-pause').getAttribute('aria-label')]);
-      ok('video: pause button pauses and relabels', up[0] && up[1] === 'Play the video', JSON.stringify(up));
-      await page.click('.cine-pause'); await page.waitForTimeout(300);
-      // three plays then rest (fast-forward)
-      await page.evaluate(() => { document.querySelector('.cine-video').playbackRate = 16; });
-      // three loops at 16x take about 3s when the decoder keeps up; under load it can take longer, so wait for the rest state
-      await page.waitForFunction(() => !document.querySelector('#home').classList.contains('is-playing'), null, { timeout: 20000 }).catch(() => {});
-      const rest = await page.evaluate(() => ({ paused: document.querySelector('.cine-video').paused, playing: document.querySelector('#home').classList.contains('is-playing'), label: document.querySelector('.cine-pause').getAttribute('aria-label') }));
-      ok('video: rests on poster after 3 plays', rest.paused && !rest.playing && rest.label === 'Play the video', JSON.stringify(rest));
-    }
+    const { ctx, page, zoom, errs } = await ctxPage(browser, {}, init);
+    await page.goto(URL0, { waitUntil: 'load' });
+    await page.waitForFunction(() => document.querySelector('#home .tw-stage').classList.contains('in'), null, { timeout: 8000 }).catch(() => {});
+    const d = await planeFlight(page);
+    if (short) ok(`hero map, ${label}: the short flight, no zoom maps requested`, d === '2600' && zoom.length === 0, `flight ${d} requests ${zoom.length}`);
+    else ok('hero map: the zoom maps load with the page, and the flight is the zoom', d === '4600' && zoom.length >= 3 && ['us', 'se', 'coast'].every(k => zoom.some(u => u.includes('zoom-' + k + '-'))), `flight ${d} requests ${zoom.map(u => u.split('/').pop()).join()}`);
+    ok(`hero map, ${label}: no script errors`, errs.length === 0, errs.join(' | '));
     await ctx.close();
   }
-  // stall -> abort to poster
   {
     const { ctx, page } = await ctxPage(browser);
-    await page.route(/walkthrough/, () => {}); // never answer
-    await page.goto(URL0, { waitUntil: 'load' }); await page.waitForTimeout(8000);
-    const r = await page.evaluate(() => ({ src: document.querySelector('.cine-video').getAttribute('src'), btn: document.querySelector('.cine-pause').hidden, playing: document.querySelector('#home').classList.contains('is-playing') }));
-    ok('video: stall aborts to poster, button hidden', !r.src && r.btn && !r.playing, JSON.stringify(r));
+    await page.route(/\/media\/map\/zoom-/, () => {}); // never answer
+    await page.goto(URL0, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(1500);
+    const a = await page.evaluate(() => document.querySelector('#home .tw-stage').classList.contains('in'));
+    await page.waitForTimeout(2200);
+    const d = await planeFlight(page);
+    ok('hero map: zoom maps that stall give the short flight after 2.5s', !a && d === '2600', `in at 1.5s ${a}, flight ${d}`);
     await ctx.close();
   }
 
   // 6. reviews
   {
     const { ctx, page } = await ctxPage(browser);
-    await page.goto(URL0, { waitUntil: 'load' }); await page.waitForTimeout(500);
+    await page.goto(URL0, { waitUntil: 'load' });
+    await page.evaluate(() => document.querySelector('#home-reviews').scrollIntoView({ block: 'center', behavior: 'instant' })); await page.waitForTimeout(500);
     const cap = () => page.evaluate(() => document.querySelector('.rv-slide.on figcaption').textContent);
     const a = await cap(); await page.waitForTimeout(7600); const b = await cap();
     ok('reviews: advance after 7s', a !== b, `${a} -> ${b}`);
@@ -190,37 +169,44 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     await ctx.close();
   }
 
-  // 7. layout budgets
-  for (const [w, h] of [[1100, 700], [1366, 657], [1440, 789], [1920, 969]]) {
-    const { ctx, page } = await ctxPage(browser, { w, h });
-    await page.goto(URL0, { waitUntil: 'load' }); await page.waitForTimeout(1800);
-    const r = await page.evaluate(() => {
-      const rv = document.querySelector('#home-reviews').getBoundingClientRect();
-      const film = document.querySelector('.cine-film').getBoundingClientRect();
-      const pbtn = document.querySelector('.cine-pause'); pbtn.hidden = false; const pb = pbtn.getBoundingClientRect();
-      const col = document.querySelector('.cine-copy').getBoundingClientRect().width;
-      const lines = [...document.querySelectorAll('.cine-h1 .l1, .cine-h1 .l2')].map(l => { const s = l.firstElementChild.getBoundingClientRect(); return Math.round(s.right - document.querySelector('.cine-copy').getBoundingClientRect().left); });
+  // 7. layout budgets. A wide screen: the words and the three paths, and once the map lands every town and its controls,
+  // inside the first screen; the H1 inside its column. The H1's box is the column: on a narrow screen the words' wrapper
+  // is display:contents and has no box of its own.
+  const h1Fit = () => { const h = document.querySelector('.cine-h1').getBoundingClientRect(); return { inner: Math.round(h.width), lines: [...document.querySelectorAll('.cine-h1 .l1>span, .cine-h1 .l2>span')].map(s => Math.round(s.getBoundingClientRect().right - h.left)) }; };
+  for (const [w, h] of [[1100, 700], [1366, 657], [1440, 789], [1920, 969], [1280, 649]]) {
+    const { ctx, page } = await ctxPage(browser, { w, h, reduced: true });
+    await page.goto(URL0, { waitUntil: 'load' }); await page.waitForTimeout(600);
+    const r = await page.evaluate((h1Fit) => {
+      const f = new Function('return (' + h1Fit + ')()'), H = innerHeight;
+      const words = Math.max(...[...document.querySelectorAll('.cine-copy > *')].map(e => e.getBoundingClientRect().bottom));
+      const pins = [...document.querySelectorAll('.tw-pin')].filter(li => Math.max(li.querySelector('a').getBoundingClientRect().bottom, li.getBoundingClientRect().top + 8) > H).map(li => li.dataset.town);
+      document.querySelector('.tw-rot').style.setProperty('display', 'grid', 'important');
+      const ctl = document.querySelector('.tw-ctl').getBoundingClientRect(), st = document.querySelector('#home .tw-stage').getBoundingClientRect();
       const tiles = [...document.querySelectorAll('.cine-path')].map(t => t.scrollWidth <= t.clientWidth + 1);
-      return { rvBottom: Math.round(rv.bottom), ih: innerHeight, pbIn: pb.left >= film.left && pb.right <= Math.min(film.right, innerWidth) && pb.top >= Math.max(film.top, 89) && pb.bottom <= film.bottom, col: Math.round(col), lines, tiles };
-    });
-    ok(`fold ${w}x${h}: reviews end above fold`, r.rvBottom <= r.ih, `${r.rvBottom} <= ${r.ih}`);
-    ok(`fold ${w}x${h}: pause button inside visible film`, r.pbIn);
-    ok(`fold ${w}x${h}: H1 lines inside column-8`, r.lines.every(x => x <= r.col - 8), `${r.lines} col ${r.col}`);
-    ok(`fold ${w}x${h}: path tiles do not overflow`, r.tiles.every(Boolean));
+      return { words: Math.round(words), H, pins, ctl: ctl.bottom <= Math.min(H, st.bottom) && ctl.right <= st.right, ...f(), tiles };
+    }, h1Fit.toString());
+    ok(`hero ${w}x${h}: the words and the paths in the first screen`, r.words <= r.H, `${r.words} <= ${r.H}`);
+    ok(`hero ${w}x${h}: all nine towns in the first screen`, r.pins.length === 0, r.pins.join());
+    ok(`hero ${w}x${h}: the map controls in the first screen`, r.ctl);
+    ok(`hero ${w}x${h}: H1 lines inside the column`, r.lines.every(x => x <= r.inner), `${r.lines} col ${r.inner}`);
+    ok(`hero ${w}x${h}: path tiles do not overflow`, r.tiles.every(Boolean));
     await ctx.close();
   }
+  // a narrow screen: the paths and the point the flight lands on in the first screen
   for (const w of [320, 360, 390, 768]) {
     const { ctx, page } = await ctxPage(browser, { w, h: w < 700 ? 740 : 1024 });
     await page.goto(URL0, { waitUntil: 'load' }); await page.waitForTimeout(1500);
-    const r = await page.evaluate(() => {
-      const copy = document.querySelector('.cine-copy'), cs = getComputedStyle(copy); const inner = copy.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight); const left = copy.getBoundingClientRect().left + parseFloat(cs.paddingLeft);
-      const lines = [...document.querySelectorAll('.cine-h1 .l1>span, .cine-h1 .l2>span')].map(s => Math.round(s.getBoundingClientRect().right - left));
+    const r = await page.evaluate((h1Fit) => {
+      const f = new Function('return (' + h1Fit + ')()'), cs = getComputedStyle(document.querySelector('#home'));
+      const st = document.querySelector('#home .tw-stage').getBoundingClientRect(), target = st.bottom - parseFloat(cs.getPropertyValue('--cb'));
+      const paths = document.querySelector('.cine-paths').getBoundingClientRect();
       const ctl = document.querySelector('.rv-ctl').getBoundingClientRect(); const rvb = document.querySelector('#home-reviews').getBoundingClientRect();
       const row = document.querySelector('.an-row').getBoundingClientRect(), card = document.querySelector('.an-card').getBoundingClientRect();
       const bios = [...document.querySelectorAll('.tm-bio')].every(b => b.scrollWidth <= b.clientWidth + 1);
-      return { inner: Math.round(inner), lines, ctlFits: ctl.right <= rvb.right + 1, rowFits: row.right <= card.right - 10, bios };
-    });
-    ok(`mobile ${w}: H1 lines fit`, r.lines.every(x => x <= r.inner), `${r.lines} / ${r.inner}`);
+      return { ...f(), paths: Math.round(paths.bottom), target: Math.round(target), H: innerHeight, sw: document.documentElement.scrollWidth, ctlFits: ctl.right <= rvb.right + 1, rowFits: row.right <= card.right - 10, bios };
+    }, h1Fit.toString());
+    ok(`mobile ${w}: H1 lines fit`, r.lines.every(x => x <= r.inner) && r.sw <= w, `${r.lines} / ${r.inner} sw=${r.sw}`);
+    ok(`mobile ${w}: the paths and the flight's landing point in the first screen`, r.paths <= r.H && r.target <= r.H - 40, `paths ${r.paths}, landing ${r.target}, screen ${r.H}`);
     ok(`mobile ${w}: review controls fit`, r.ctlFits);
     ok(`mobile ${w}: analyzer city/ZIP row fits`, r.rowFits);
     ok(`mobile ${w}: bios do not overflow`, r.bios);
@@ -231,74 +217,66 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     const { ctx, page } = await ctxPage(browser, { w, h: 800 });
     await page.route(/\.woff2$/, r => r.abort());
     await page.goto(URL0, { waitUntil: 'load' }); await page.waitForTimeout(800);
-    const r = await page.evaluate(() => { const copy = document.querySelector('.cine-copy'), cs = getComputedStyle(copy); const left = copy.getBoundingClientRect().left + parseFloat(cs.paddingLeft); const inner = copy.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight); return { inner: Math.round(inner), lines: [...document.querySelectorAll('.cine-h1 .l1>span, .cine-h1 .l2>span')].map(s => Math.round(s.getBoundingClientRect().right - left)), sw: document.documentElement.scrollWidth, fam: getComputedStyle(document.querySelector('.cine-h1')).fontFamily.slice(0, 40) }; });
+    const r = await page.evaluate((h1Fit) => ({ ...new Function('return (' + h1Fit + ')()')(), sw: document.documentElement.scrollWidth }), h1Fit.toString());
     ok(`fallback fonts ${w}: H1 lines fit`, r.lines.every(x => x <= r.inner) && r.sw <= w, `${r.lines} / ${r.inner} sw=${r.sw}`);
     await ctx.close();
   }
 
-  // 8. the towns map. At rest, at every width and through the whole slow turn: each label sits on its town, and no label
-  // covers another label, a pin, a shield, a water name, the card, the pause button, the compass or the map data line,
+  // 8. the hero map. At rest, at every width and through the whole slow turn: each label sits on its town, and no label
+  // covers another label, a pin, a shield, a water name, the words, the pause button, the compass or the map data line,
   // even drawn 4.5% wider (Firefox draws DM Sans about 3.5% wider than Chromium and WebKit). Then while it moves.
   const TW = require('fs').readFileSync(__dirname + '/twlib.js', 'utf-8');
-  // motion allowed, so the pause button shows; the map is far below the first screen, so nothing flies or turns
-  for (const [w, h] of [[2560, 1440], [1920, 1080], [1920, 860], [1536, 730], [1440, 900], [1440, 790], [1381, 800], [1366, 768], [1280, 800], [1280, 720], [1159, 900], [1150, 769], [1130, 900], [1100, 800], [1099, 800], [1024, 768], [900, 1000], [899, 1000], [820, 1180], [768, 1024], [700, 900], [699, 900], [430, 932], [390, 844], [360, 740], [359, 640], [340, 700], [320, 568]]) {
+  // motion allowed, so the pause button shows; pressing it lands the flight at once and stops the turn
+  for (const [w, h] of [[2560, 1440], [1920, 1080], [1920, 860], [1680, 649], [1536, 730], [1440, 900], [1440, 790], [1400, 800], [1400, 649], [1399, 800], [1399, 649], [1366, 768], [1280, 800], [1280, 720], [1159, 900], [1100, 800], [1100, 600], [1099, 800], [1024, 768], [900, 1000], [899, 1000], [820, 1180], [768, 1024], [700, 900], [699, 900], [430, 932], [390, 844], [360, 740], [359, 640], [340, 700], [320, 568]]) {
     const { ctx, page } = await ctxPage(browser, { w, h });
     await page.goto(URL0, { waitUntil: 'load' });
+    await pressPause(page);
     await page.addStyleTag({ content: '*,*::before,*::after{transition:none!important;animation:none!important}' });
     await page.evaluate(() => document.fonts.ready);
     await page.evaluate(TW);
     const r = await page.evaluate(() => {
       const T = window.__tw, [h0, h1] = T.heads(), all = new Set();
       for (let k = 0; k <= 6; k++) { T.setHead(h0 + (h1 - h0) * k / 6); T.problems(0.045).forEach((x) => all.add(x)); }
-      document.querySelector('#towns').style.removeProperty('--h0');
+      document.querySelector('#home').style.removeProperty('--h0');
       return { probs: [...all], proj: T.projErr(), n: document.querySelectorAll('.tw-pin a[href^="/submarkets/"]').length };
     });
-    ok(`map ${w}: nine town links`, r.n === 9, String(r.n));
-    ok(`map ${w}: labels clear through the turn`, r.probs.length === 0, r.probs.slice(0, 4).join('; '));
-    ok(`map ${w}: labels on their towns`, r.proj.worst <= 1, r.proj.worst + 'px ' + r.proj.who);
+    ok(`map ${w}x${h}: nine town links`, r.n === 9, String(r.n));
+    ok(`map ${w}x${h}: labels clear through the turn`, r.probs.length === 0, r.probs.slice(0, 4).join('; '));
+    ok(`map ${w}x${h}: labels on their towns`, r.proj.worst <= 1, r.proj.worst + 'px ' + r.proj.who);
     await ctx.close();
   }
   // the map in motion. __twan lists the map's own transform animations (the flight and the turn), not CSS ones.
   const twInit = () => { window.__twan = () => document.getAnimations().filter((a) => a.effect && a.effect.target && a.effect.target.closest && a.effect.target.closest('.tw-stage') && !(a instanceof CSSAnimation) && !(a instanceof CSSTransition) && a.effect.getKeyframes().some((k) => k.transform)); window.__shown = () => [...document.querySelectorAll('.tw-pin')].filter((e) => parseFloat(getComputedStyle(e).opacity) > 0.05).length; };
-  const flightState = (page) => page.evaluate(() => { const an = window.__twan(); return { flight: an.filter((a) => a.effect.getTiming().iterations !== Infinity && a.playState === 'running').length, turn: an.filter((a) => a.effect.getTiming().iterations === Infinity && a.playState === 'running').length, shown: window.__shown(), pre: document.querySelector('.tw-stage').classList.contains('pre') }; });
-  const imgReady = (page) => page.evaluate(async () => { const i = document.querySelector('.tw-plane img'); i.loading = 'eager'; if (!(i.complete && i.naturalWidth)) await new Promise((r) => { i.addEventListener('load', r, { once: true }); i.addEventListener('error', r, { once: true }); }); });
-  const centreMap = (page) => page.evaluate(() => { const r = document.querySelector('.tw-stage').getBoundingClientRect(); scrollTo({ top: r.top + scrollY - Math.max(0, (innerHeight - r.height) / 2), behavior: 'instant' }); });
+  const flightState = (page) => page.evaluate(() => { const an = window.__twan(); return { flight: an.filter((a) => a.effect.getTiming().iterations !== Infinity && a.playState === 'running').length, turn: an.filter((a) => a.effect.getTiming().iterations === Infinity && a.playState === 'running').length, shown: window.__shown(), in: document.querySelector('#home .tw-stage').classList.contains('in') }; });
+  const takeoff = (page) => page.waitForFunction(() => document.querySelector('#home .tw-stage').classList.contains('in'), null, { timeout: 10000 });
   for (const [w, h] of [[1440, 900], [390, 844]]) {
     const { ctx, page, errs } = await ctxPage(browser, { w, h }, twInit);
     await page.goto(URL0, { waitUntil: 'load' });
-    await imgReady(page);
-    // two steps, as a visitor scrolls: first the map comes within reach and the camera goes overhead, with every label
-    // hidden at once; a while later the map scrolls into view and the flight starts with no label showing yet
-    await page.evaluate(() => { const r = document.querySelector('.tw-stage').getBoundingClientRect(); scrollTo({ top: r.top + scrollY - innerHeight * 1.3, behavior: 'instant' }); });
-    await page.waitForTimeout(250);
-    const pre = await flightState(page);
-    ok(`map ${w}: overhead before it comes into view, labels hidden at once`, pre.pre && pre.shown === 0, JSON.stringify(pre));
-    await page.waitForTimeout(1600);
-    await centreMap(page);
-    await page.waitForTimeout(100);
-    const f100 = await flightState(page);
-    await page.waitForTimeout(300);
+    await takeoff(page);
+    const f0 = await flightState(page);
+    await page.waitForTimeout(400);
     const f400 = await flightState(page);
-    ok(`map ${w}: the flight starts with no label shown`, f100.flight > 0 && f100.shown === 0 && !f100.pre, JSON.stringify(f100));
-    ok(`map ${w}: the flight is still running at +400ms`, f400.flight > 0, JSON.stringify(f400));
-    const worst = [], mv = [];
-    for (const t of [400, 1600, 3200, 7000]) {
-      await page.waitForTimeout(t - (worst.length ? [400, 1600, 3200, 7000][worst.length - 1] : 0));
+    ok(`map ${w}: the flight starts as the page opens, with no label shown`, f0.flight > 0 && f0.shown === 0, JSON.stringify(f0));
+    ok(`map ${w}: the flight is still running at +400ms`, f400.flight > 0 && f400.shown === 0, JSON.stringify(f400));
+    // the labels, shields and compass are hidden until the landing and move only in the flight's last 30% (from 3.2s):
+    // every label that can be seen sits on its town, and at 3.5s, just before they show, all of them already do
+    const worst = [], mv = [], T = [800, 1600, 3500, 4200, 7000];
+    for (const t of T) {
+      await page.waitForTimeout(t - (worst.length ? T[worst.length - 1] : 400));
       await page.evaluate(TW);
-      const r = await page.evaluate(() => {
+      const r = await page.evaluate((all) => {
         const an = window.__twan(), running = an.filter((a) => a.playState === 'running' && a.effect.target.matches('.tw-plane, .tw-pt, .tw-deco .wl i, .tw-compass i')).length;
-        an.forEach((a) => a.pause()); const e = window.__tw.projErr(); an.forEach((a) => a.play());
+        an.forEach((a) => a.pause()); const e = window.__tw.projErr(!all); an.forEach((a) => a.play());
         return { e: e.worst, running };
-      });
+      }, t === 3500);
       worst.push(r.e); mv.push(r.running);
     }
-    ok(`map ${w}: labels stay on their towns while it moves`, Math.max(...worst) <= 1, worst.join(', ') + 'px');
+    ok(`map ${w}: labels stay on their towns while it moves, whenever they can be seen`, Math.max(...worst) <= 1, worst.join(', ') + 'px (3.5s: all labels, seen or not)');
     const movers = await page.evaluate(() => [...document.querySelectorAll('.tw-plane, .tw-pt, .tw-deco .wl i, .tw-compass i')].filter((e) => e.getClientRects().length).length);
     ok(`map ${w}: flight then turn move every drawn element`, mv.every((n) => n === movers), mv.join(', ') + ' of ' + movers);
-    const landed = await flightState(page);
-    ok(`map ${w}: after the flight, the slow turn runs`, landed.flight === 0 && landed.turn === movers && landed.shown === 9, JSON.stringify(landed));
-    // a resize that keeps the camera (a phone's address bar, a window made taller) leaves the turn running where it was.
-    // Taller, because a desktop window under 881px tall has its own camera
+    const done = await flightState(page);
+    ok(`map ${w}: after the flight, the slow turn runs`, done.flight === 0 && done.turn === movers && done.shown === 9, JSON.stringify(done));
+    // a resize that keeps the camera (a phone's address bar, a window made taller) leaves the turn running where it was
     const t0 = await page.evaluate(() => { const a = window.__twan().find((x) => x.effect.getTiming().iterations === Infinity); window.__turn0 = a; return a.currentTime; });
     await page.setViewportSize({ width: w, height: h + 60 });
     await page.waitForTimeout(400);
@@ -322,7 +300,7 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     ok(`map ${w}: pause button starts it again`, p2.states.join() === 'running' && p2.label === 'Pause the map', JSON.stringify(p2));
     if (w > 430) {
       // the pointer on the map's background does not hold the turn; on a town label it does
-      const bg = await page.evaluate(() => { const s = document.querySelector('.tw-stage').getBoundingClientRect(); return [s.left + s.width * 0.9, s.top + 40]; });
+      const bg = await page.evaluate(() => { const s = document.querySelector('#home .tw-stage').getBoundingClientRect(); return [s.left + s.width * 0.9, s.top + 40]; });
       await page.mouse.move(bg[0], bg[1]);
       await page.waitForTimeout(300);
       const free = await page.evaluate(() => [...new Set(window.__twan().map((a) => a.playState))]);
@@ -357,96 +335,85 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     ok(`map ${w}: no script errors`, errs.length === 0, errs.join(' | '));
     await ctx.close();
   }
-  // the zoom from the whole United States: its first frame shows the country, framed beside the card on a wide screen,
-  // with the basemap hidden; after it lands the zoom levels are gone and the basemap is the only map
-  for (const [w, h] of [[1440, 900], [390, 844]]) {
+  // the zoom: at 400ms the camera looks at the eastern United States (98W to 66.5W, 24.5N to 47.5N), tilted, inside the part of
+  // the screen the words leave free (beside them on a wide screen, under them on a narrow one), with the basemap hidden and
+  // the brass point on the Grand Strand; after it lands the zoom levels are gone and the basemap is the only map
+  for (const [w, h] of [[1440, 900], [1100, 649], [820, 1180], [390, 844]]) {
     const { ctx, page, errs } = await ctxPage(browser, { w, h }, twInit);
     await page.goto(URL0, { waitUntil: 'load' });
-    await page.evaluate(() => { const r = document.querySelector('.tw-stage').getBoundingClientRect(); scrollTo({ top: r.top + scrollY - innerHeight * 1.4, behavior: 'instant' }); });
-    await page.waitForFunction(() => [...document.querySelectorAll('.tw-lod img')].every((i) => i.complete && i.naturalWidth > 0), null, { timeout: 30000 }).catch(() => {});
-    await imgReady(page);
-    await centreMap(page);
-    await page.waitForFunction(() => document.querySelector('.tw-stage').classList.contains('in'));
+    await takeoff(page);
     const f0 = await page.evaluate(() => {
       const an = document.getAnimations().filter((a) => a.effect && a.effect.target && a.effect.target.closest && a.effect.target.closest('.tw-stage') && !(a instanceof CSSTransition) && !(a instanceof CSSAnimation));
-      an.forEach((a) => { a.pause(); a.currentTime = 0; });
-      const st = document.querySelector('.tw-stage').getBoundingClientRect(), us = document.querySelector('.tw-lod[data-lod=us]'), r = us.getBoundingClientRect(), e = us.dataset.ext.split(',').map(Number);
+      an.forEach((a) => { a.pause(); a.currentTime = 400; });
+      const st = document.querySelector('#home .tw-stage').getBoundingClientRect(), us = document.querySelector('.tw-lod[data-lod=us]'), img = us.querySelector('img'), e = us.dataset.ext.split(',').map(Number);
       const ym = (lat) => Math.log(Math.tan(Math.PI / 4 + lat * Math.PI / 360)) * 180 / Math.PI;
-      // where the middle of the contiguous states sits, from the level's own rectangle (flat in the first frame)
-      const mx = r.left + (-95.85 - e[0]) / (e[1] - e[0]) * r.width, my = r.top + (ym(e[3]) - ym(38)) / (ym(e[3]) - ym(e[2])) * r.height;
-      const usW = (124.8 - 66.9) / (e[1] - e[0]) * r.width;
-      const card = document.querySelector('.tw-card').getBoundingClientRect(), abs = getComputedStyle(document.querySelector('.tw-card')).position === 'absolute';
-      const west = mx - usW / 2;
+      // probes inside the country map at the box's corners, placed by the browser through the map's own 3D transform
+      const at = (lon, lat) => { const p = document.createElement('i'); p.style.cssText = `position:absolute;width:0;height:0;left:${(lon - e[0]) / (e[1] - e[0]) * img.width}px;top:${(ym(e[3]) - ym(lat)) / (ym(e[3]) - ym(e[2])) * img.height}px`; us.appendChild(p); const r = p.getBoundingClientRect(); p.remove(); return [r.left, r.top]; };
+      const [nw, ne, se, sw] = [at(-98, 47.5), at(-66.5, 47.5), at(-66.5, 24.5), at(-98, 24.5)];
+      const xs = [nw[0], ne[0], se[0], sw[0]], ys = [nw[1], ne[1], se[1], sw[1]];
+      const box = { l: Math.min(...xs), r: Math.max(...xs), t: Math.min(...ys), b: Math.max(...ys) };
+      let words = null;
+      for (const el of document.querySelectorAll('.cine-copy > *')) { const r = el.getBoundingClientRect(); if (!r.height || r.bottom <= st.top || r.top >= st.bottom) continue; words = words ? { r: Math.max(words.r, r.right), b: Math.max(words.b, r.bottom) } : { r: r.right, b: r.bottom }; }
+      const beside = words && st.right - words.r > st.width / 3;
+      const free = beside ? { l: words.r, r: st.right, t: Math.max(st.top, 0), b: Math.min(st.bottom, innerHeight) } : { l: st.left, r: st.right, t: Math.max(words ? words.b : st.top, 0), b: Math.min(st.bottom, innerHeight) };
       const o = (sel) => +getComputedStyle(document.querySelector(sel)).opacity;
-      const out = { lod: document.querySelector('.tw-stage').classList.contains('lod'), us: o('.tw-lod[data-lod=us]'), plane: o('.tw-plane'), fog: o('.tw-fog'),
-        usW: Math.round(usW), stageW: Math.round(st.width), westOfCard: abs ? Math.round(west - card.right) : null, inside: west >= st.left - 1 && west + usW <= st.right + 1 };
-      an.forEach((a) => { a.currentTime = 400; });
-      out.dest = o('.tw-dest');
+      const out = { lod: document.querySelector('#home .tw-stage').classList.contains('lod'), us: o('.tw-lod[data-lod=us]'), plane: o('.tw-plane'), fog: +o('.tw-fog').toFixed(2), dest: o('.tw-dest'),
+        beside, inFree: box.l >= free.l + 20 && box.r <= free.r - 8 && box.t >= free.t + 8 && box.b <= free.b - 8,
+        fill: +Math.max((box.r - box.l) / (free.r - free.l), (box.b - box.t) / (free.b - free.t)).toFixed(2),
+        tilt: +((ne[0] - nw[0]) / (se[0] - sw[0])).toFixed(3) };
       an.forEach((a) => a.play());
       return out;
     });
-    ok(`map ${w}: the flight starts on the whole country, the basemap hidden`, f0.lod && f0.us === 1 && f0.plane === 0 && f0.fog === 0 && f0.dest > 0.9 && f0.inside && (f0.westOfCard === null || f0.westOfCard > 0) && f0.usW > f0.stageW * (w > 1099 ? 0.4 : 0.8), JSON.stringify(f0));
+    ok(`map ${w}x${h}: the flight starts on the eastern United States, tilted, where the words leave room`, f0.lod && f0.us === 1 && f0.plane === 0 && f0.dest > 0.9 && f0.fog >= 0.45 && f0.fog <= 0.6 && f0.inFree && f0.fill >= 0.8 && f0.tilt < 0.97 && f0.beside === (w > 1099), JSON.stringify(f0));
     await page.waitForTimeout(5400);
-    const end = await page.evaluate(() => ({ lod: document.querySelector('.tw-stage').classList.contains('lod'), shown: [...document.querySelectorAll('.tw-lod, .tw-dest')].filter((e) => e.getClientRects().length).length, plane: getComputedStyle(document.querySelector('.tw-plane')).opacity, fog: getComputedStyle(document.querySelector('.tw-fog')).opacity, pins: window.__shown() }));
-    ok(`map ${w}: after the zoom lands, only the basemap is left`, !end.lod && end.shown === 0 && end.plane === '1' && end.fog === '1' && end.pins === 9, JSON.stringify(end));
-    ok(`map ${w}: zoom without script errors`, errs.length === 0, errs.join(' | '));
+    const end = await page.evaluate(() => ({ lod: document.querySelector('#home .tw-stage').classList.contains('lod'), shown: [...document.querySelectorAll('.tw-lod, .tw-dest')].filter((e) => e.getClientRects().length).length, plane: getComputedStyle(document.querySelector('.tw-plane')).opacity, fog: getComputedStyle(document.querySelector('.tw-fog')).opacity, pins: window.__shown() }));
+    ok(`map ${w}x${h}: after the zoom lands, only the basemap is left`, !end.lod && end.shown === 0 && end.plane === '1' && end.fog === '1' && end.pins === 9, JSON.stringify(end));
+    ok(`map ${w}x${h}: zoom without script errors`, errs.length === 0, errs.join(' | '));
     await ctx.close();
   }
   // the motion preference changing while the page is open: the map stops at rest with every label shown, then turns again
   {
     const { ctx, page } = await ctxPage(browser, { w: 1440, h: 900 }, twInit);
     await page.goto(URL0, { waitUntil: 'load' });
-    await imgReady(page);
-    await centreMap(page);
-    await page.waitForTimeout(6000);
+    await landed(page); await page.waitForTimeout(500);
     const a = await flightState(page);
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.waitForTimeout(400);
-    const b = await page.evaluate(() => ({ running: window.__twan().filter((x) => x.playState === 'running').length, shown: window.__shown(), lod: document.querySelector('.tw-stage').classList.contains('lod') }));
+    const b = await page.evaluate(() => ({ running: window.__twan().filter((x) => x.playState === 'running').length, shown: window.__shown(), lod: document.querySelector('#home .tw-stage').classList.contains('lod') }));
     await page.emulateMedia({ reducedMotion: 'no-preference' });
     await page.waitForTimeout(400);
     const c = await flightState(page);
     ok('map: turning off motion while open stops it at rest, turning it back on turns it again', a.turn > 0 && b.running === 0 && b.shown === 9 && !b.lod && c.turn > 0, JSON.stringify({ a, b, c }));
     await ctx.close();
   }
-  // Save-Data: the short flight, and the zoom maps are never requested
+  // motion turned off during the flight: it stops at once, at rest, every label shown
   {
-    const { ctx, page } = await ctxPage(browser, { w: 1440, h: 900 }, () => { Object.defineProperty(navigator, 'connection', { value: { saveData: true, effectiveType: '4g' }, configurable: true }); });
-    const zoomReqs = []; page.on('request', (r) => { if (/zoom-(us|se|coast)/.test(r.url())) zoomReqs.push(r.url()); });
+    const { ctx, page } = await ctxPage(browser, { w: 390, h: 844 }, twInit);
     await page.goto(URL0, { waitUntil: 'load' });
-    await imgReady(page);
-    await page.evaluate(() => { const r = document.querySelector('.tw-stage').getBoundingClientRect(); scrollTo({ top: r.top + scrollY - innerHeight * 1.4, behavior: 'instant' }); });
-    await page.waitForTimeout(300);
-    await centreMap(page);
+    await takeoff(page); await page.waitForTimeout(700);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.waitForTimeout(400);
-    const r = await page.evaluate(() => ({ lod: document.querySelector('.tw-stage').classList.contains('lod'), flight: document.getAnimations().filter((a) => a.effect && a.effect.target && a.effect.target.matches && a.effect.target.matches('.tw-plane') && a.effect.getTiming().iterations !== Infinity).map((a) => a.effect.getTiming().duration) }));
-    ok('map, Save-Data: the short flight, no zoom maps downloaded', !r.lod && r.flight.join() === '2600' && zoomReqs.length === 0, JSON.stringify(r) + ' requests ' + zoomReqs.length);
+    const b = await page.evaluate(() => ({ running: window.__twan().filter((x) => x.playState === 'running').length, shown: window.__shown(), lod: document.querySelector('#home .tw-stage').classList.contains('lod') }));
+    ok('map: turning off motion mid-flight stops it at rest', b.running === 0 && b.shown === 9 && !b.lod, JSON.stringify(b));
     await ctx.close();
   }
-  // a jump straight to the map (a link, a reload with the scroll restored): both observers report in one frame. The flight
-  // must still play, with no label showing at its start. Five fresh loads, because this used to go either way.
+  // a reload further down the page (the browser restores the scroll): back at the top, the map is at rest, every label shown
   {
-    let flew = 0; const seen = [];
-    for (let k = 0; k < 5; k++) {
-      const { ctx, page } = await ctxPage(browser, { w: 1440, h: 900 }, twInit);
-      await page.goto(URL0, { waitUntil: 'load' });
-      await imgReady(page);
-      await centreMap(page);
-      await page.waitForTimeout(100);
-      const f = await flightState(page);
-      if (f.flight > 0 && f.shown === 0) flew++;
-      seen.push(`${f.flight}/${f.shown}`);
-      await ctx.close();
-    }
-    ok('map: a jump to the map still flies in, labels hidden at its start', flew === 5, seen.join(' '));
+    const { ctx, page } = await ctxPage(browser, { w: 1440, h: 900 }, twInit);
+    await page.goto(URL0, { waitUntil: 'load' });
+    await page.evaluate(() => scrollTo({ top: 3000, behavior: 'instant' })); await page.waitForTimeout(300);
+    await page.reload({ waitUntil: 'load' }); await page.waitForTimeout(6500);
+    const y = await page.evaluate(() => Math.round(scrollY));
+    await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' })); await page.waitForTimeout(600);
+    const r = await flightState(page);
+    ok('map: after a reload further down, the map is at rest at the top', y > 900 && r.flight === 0 && r.in && r.shown === 9, JSON.stringify({ y, ...r }));
+    await ctx.close();
   }
   // a crossing of a breakpoint during the flight: the flight jumps to its end, labels on their towns
   {
     const { ctx, page } = await ctxPage(browser, { w: 1440, h: 900 }, twInit);
     await page.goto(URL0, { waitUntil: 'load' });
-    await imgReady(page);
-    await centreMap(page);
-    await page.waitForTimeout(900);
+    await takeoff(page); await page.waitForTimeout(900);
     await page.setViewportSize({ width: 1000, height: 900 });
     await page.waitForTimeout(150);
     await page.evaluate(TW);
@@ -454,42 +421,47 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     ok('map: a breakpoint crossed mid-flight ends the flight, labels on their towns', r.e <= 1 && r.flight === 0, JSON.stringify(r));
     await ctx.close();
   }
-  // keyboard focus reaching the map while it waits overhead: the map comes to rest at once and the label shows
+  // keyboard focus reaching the map during the flight: the map comes to rest at once and the focused label shows
   {
     const { ctx, page } = await ctxPage(browser, { w: 820, h: 1180 }, twInit);
     await page.goto(URL0, { waitUntil: 'load' });
-    await imgReady(page);
-    await page.evaluate(() => { const r = document.querySelector('.tw-stage').getBoundingClientRect(); scrollTo({ top: r.top + scrollY - innerHeight * 0.95, behavior: 'instant' }); });
-    await page.waitForTimeout(300);
-    await page.focus('#towns .tw-links a:last-child');
+    await takeoff(page); await page.waitForTimeout(500);
+    await page.focus('.cine-copy .tw-links a:last-child');
     await page.keyboard.press('Tab');
     await page.waitForTimeout(60);
     await page.evaluate(TW);
-    const r = await page.evaluate(() => { const a = document.activeElement, li = a.closest('.tw-pin'); return { town: li && li.dataset.town, op: li && getComputedStyle(li).opacity, pre: document.querySelector('.tw-stage').classList.contains('pre'), flight: window.__twan().filter((x) => x.effect.getTiming().iterations !== Infinity && x.playState === 'running').length, proj: window.__tw.projErr().worst }; });
-    ok('map: tabbing into it shows the focused label at once, on its town', r.town === 'pawleys-island' && r.op === '1' && !r.pre && r.flight === 0 && r.proj <= 1, JSON.stringify(r));
+    const r = await page.evaluate(() => { const a = document.activeElement, li = a.closest('.tw-pin'); return { town: li && li.dataset.town, op: li && getComputedStyle(li).opacity, flight: window.__twan().filter((x) => x.effect.getTiming().iterations !== Infinity && x.playState === 'running').length, proj: window.__tw.projErr().worst }; });
+    ok('map: tabbing into it mid-flight shows the focused label at once, on its town', r.town === 'pawleys-island' && r.op === '1' && r.flight === 0 && r.proj <= 1, JSON.stringify(r));
     await ctx.close();
   }
-  // on a slow link the flight waits for the map image, up to 1.5s, overhead with the labels hidden
+  // on a slow link the flight waits for the basemap, up to 2.5s, with the map and the labels hidden
   {
     const { ctx, page } = await ctxPage(browser, { w: 1440, h: 900 }, twInit);
     await page.route(/\/media\/map\/strand-dark/, async (r) => { await new Promise((z) => setTimeout(z, 6000)); try { await r.continue(); } catch (e) {} });
     await page.goto(URL0, { waitUntil: 'domcontentloaded' });
-    await page.waitForTimeout(500);
-    await centreMap(page);
-    await page.waitForTimeout(700);
-    const a = await flightState(page);
     await page.waitForTimeout(1200);
+    const a = await flightState(page);
+    await page.waitForTimeout(2000);
     const b = await flightState(page);
-    ok('map: waits overhead for the map image, then flies after 1.5s at most', a.pre && a.flight === 0 && a.shown === 0 && b.flight > 0 && !b.pre, JSON.stringify(a) + ' then ' + JSON.stringify(b));
+    ok('map: waits for the basemap with nothing shown, then flies after 2.5s at most', !a.in && a.flight === 0 && a.shown === 0 && b.flight > 0 && b.in, JSON.stringify(a) + ' then ' + JSON.stringify(b));
+    await ctx.close();
+  }
+  // the page script never runs: the head boot's timer removes .m after 3s and the map shows at rest
+  {
+    const { ctx, page } = await ctxPage(browser, { w: 1440, h: 900 });
+    await page.route(URL0, async (r) => { const res = await r.fetch(); const t = (await res.text()).replace(/<script>\s*\/\* Homepage (effects|map), 2026-09 redesign[\s\S]*?<\/script>/g, ''); r.fulfill({ response: res, body: t }); });
+    await page.goto(URL0, { waitUntil: 'load' });
+    const scripts = await page.evaluate(() => [...document.scripts].filter((s) => /Homepage (effects|map)/.test(s.textContent)).length);
+    await page.waitForTimeout(7000);
+    const r = await page.evaluate(() => ({ m: document.documentElement.classList.contains('m'), op: [...document.querySelectorAll('.tw-plane, .tw-pin, .tw-deco')].map((e) => getComputedStyle(e).opacity).filter((o) => o !== '1').length }));
+    ok('map: with the page script gone, the map shows at rest after the 3s timer', scripts === 0 && !r.m && r.op === 0, JSON.stringify({ scripts, ...r }));
     await ctx.close();
   }
   {
     const { ctx, page } = await ctxPage(browser, { reduced: true });
-    await page.goto(URL0, { waitUntil: 'load' }); await scrollAll(page);
-    await page.evaluate(() => { const r = document.querySelector('.tw-stage').getBoundingClientRect(); scrollTo({ top: r.top + scrollY, behavior: 'instant' }); });
-    await page.waitForTimeout(1500);
-    const r = await page.evaluate(() => ({ an: document.getAnimations().filter((a) => a.effect && a.effect.target && a.effect.target.closest && a.effect.target.closest('.tw-stage') && !(a instanceof CSSAnimation) && !(a instanceof CSSTransition) && a.effect.getKeyframes().some((k) => k.transform)).length, op: [...document.querySelectorAll('.tw-pin, .tw-deco, .tw-ctl')].map((e) => getComputedStyle(e).opacity).filter((o) => o !== '1').length, btn: getComputedStyle(document.querySelector('.tw-rot')).display }));
-    ok('map, reduced motion: at rest, everything shown, no pause button', r.an === 0 && r.op === 0 && r.btn === 'none', JSON.stringify(r));
+    await page.goto(URL0, { waitUntil: 'load' }); await page.waitForTimeout(600);
+    const r = await page.evaluate(() => ({ an: document.getAnimations().filter((a) => a.effect && a.effect.target && a.effect.target.closest && a.effect.target.closest('.tw-stage') && !(a instanceof CSSAnimation) && !(a instanceof CSSTransition) && a.effect.getKeyframes().some((k) => k.transform)).length, op: [...document.querySelectorAll('.tw-plane, .tw-pin, .tw-deco, .tw-ctl')].map((e) => getComputedStyle(e).opacity).filter((o) => o !== '1').length, btn: getComputedStyle(document.querySelector('.tw-rot')).display }));
+    ok('map, reduced motion: at rest from the start, everything shown, no pause button', r.an === 0 && r.op === 0 && r.btn === 'none', JSON.stringify(r));
     await ctx.close();
   }
   // a browser without trigonometric CSS (Safari before 15.4, Chrome before 111): the map stays a picture, the towns are a
@@ -498,23 +470,23 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     const { ctx, page } = await ctxPage(browser, { w, h }, () => { const o = CSS.supports.bind(CSS); CSS.supports = function (a, b) { return /sin\(/.test(String(a) + String(b)) ? false : o.apply(null, arguments); }; });
     await page.route(URL0, async (r) => { const res = await r.fetch(); const t0 = await res.text(); const t1 = t0.replace(/@supports not \(width:calc\(1px \* sin\(1deg\)\)\)/g, '@supports (display:block)').replace(/@supports \(width:calc\(1px \* sin\(1deg\)\)\)/g, '@supports (display:nonsense)'); r.fulfill({ response: res, body: t1 }); });
     await page.goto(URL0, { waitUntil: 'load' });
-    await page.evaluate(() => { const r = document.querySelector('#towns').getBoundingClientRect(); scrollTo({ top: r.top + scrollY, behavior: 'instant' }); });
     await page.waitForTimeout(3500);
     const r = await page.evaluate(() => {
       const a = [...document.querySelectorAll('.tw-pin a')].map((e) => e.getBoundingClientRect());
       const moved = document.getAnimations().filter((x) => x.effect && x.effect.target && x.effect.target.closest && x.effect.target.closest('.tw-pins')).length;
       const inside = a.every((b) => b.left >= 0 && b.right <= innerWidth + 0.5);
       let overlap = 0; for (let i = 0; i < a.length; i++) for (let j = i + 1; j < a.length; j++) if (a[i].left < a[j].right && a[j].left < a[i].right && a[i].top < a[j].bottom && a[j].top < a[i].bottom) overlap++;
-      const below = a.every((b) => b.top >= document.querySelector('.tw-scene').getBoundingClientRect().bottom - 1);
-      return { moved, inside, overlap, below, op: [...document.querySelectorAll('.tw-pin')].filter((e) => getComputedStyle(e).opacity !== '1').length };
+      const scene = document.querySelector('.tw-scene').getBoundingClientRect(), words = [...document.querySelectorAll('.cine-copy > *')].map((e) => e.getBoundingClientRect());
+      const below = a.every((b) => b.top >= scene.bottom - 1), clear = a.every((b) => words.every((c) => b.bottom <= c.top || b.top >= c.bottom || b.right <= c.left || b.left >= c.right));
+      return { moved, inside, overlap, below, clear, sceneH: Math.round(scene.height), op: [...document.querySelectorAll('.tw-pin')].filter((e) => getComputedStyle(e).opacity !== '1').length };
     });
-    ok(`map without CSS trig ${w}: towns are a still list under the map`, r.moved === 0 && r.inside && r.overlap === 0 && r.below && r.op === 0, JSON.stringify(r));
+    ok(`map without CSS trig ${w}: towns are a still list under the map`, r.moved === 0 && r.inside && r.overlap === 0 && r.below && r.clear && r.sceneH > 300 && r.op === 0, JSON.stringify(r));
     await ctx.close();
   }
   {
     const { ctx, page } = await ctxPage(browser, { js: false });
     await page.goto(URL0, { waitUntil: 'load' });
-    const r = await page.evaluate(() => ({ op: [...document.querySelectorAll('.tw-pin, .tw-deco, .tw-ctl')].map((e) => getComputedStyle(e).opacity).filter((o) => o !== '1').length, t: getComputedStyle(document.querySelector('.tw-plane')).transform !== 'none', btn: getComputedStyle(document.querySelector('.tw-rot')).display }));
+    const r = await page.evaluate(() => ({ op: [...document.querySelectorAll('.tw-plane, .tw-pin, .tw-deco, .tw-ctl')].map((e) => getComputedStyle(e).opacity).filter((o) => o !== '1').length, t: getComputedStyle(document.querySelector('.tw-plane')).transform !== 'none', btn: getComputedStyle(document.querySelector('.tw-rot')).display }));
     ok('map, no JavaScript: tilted, every pin shown, no pause button', r.op === 0 && r.t && r.btn === 'none', JSON.stringify(r));
     await ctx.close();
   }

@@ -1,22 +1,8 @@
-<!-- HERO: the walk-through fills the hero; the title, paths and reviews sit on top of it -->
+<!-- HERO: a dark road map of the Grand Strand, tilted in 3D, fills the hero, and the title, the paths and the map links sit over it.
+     On load the camera flies in from the eastern United States (fx.html). Each town label is a link that CSS places over its spot on the map.
+     The cine- prefix names the hero's own pieces: the site stylesheet already uses hero-. -->
 <section id="home" class="cine band-navy" aria-labelledby="home-h1">
-<div class="cine-film">
-<div class="cine-media" aria-hidden="true">
-<div class="cine-media-in">
-<picture>
-<source media="(max-aspect-ratio:1/1)" type="image/avif" srcset="/media/hero/poster-9x16-540.avif 540w" sizes="100vw">
-<source media="(max-aspect-ratio:1/1)" type="image/webp" srcset="/media/hero/poster-9x16-540.webp 540w" sizes="100vw">
-<source type="image/avif" srcset="/media/hero/poster-16x9-960.avif 960w,/media/hero/poster-16x9-1280.avif 1280w" sizes="100vw">
-<img class="cine-poster" src="/media/hero/poster-16x9-1280.webp" srcset="/media/hero/poster-16x9-960.webp 960w,/media/hero/poster-16x9-1280.webp 1280w" sizes="100vw" width="1280" height="720" alt="" fetchpriority="high">
-</picture>
-<video class="cine-video" data-hero muted playsinline loop preload="none" disablepictureinpicture disableremoteplayback tabindex="-1" data-mp4="/media/hero/walkthrough-16x9-720p.mp4" data-webm="/media/hero/walkthrough-16x9-720p.webm" data-mp4-tall="/media/hero/walkthrough-9x16-960p.mp4" data-webm-tall="/media/hero/walkthrough-9x16-960p.webm"></video>
-</div>
-</div>
-</div>
-<button class="cine-pause" type="button" aria-label="Pause the video" hidden><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l10.5-6.5z"/></svg></button>
-<div class="cine-stage">
 <div class="cine-copy">
-<div class="cine-text">
 <p class="cine-eyebrow">{{EYEBROW}}</p>
 <h1 class="cine-h1" id="home-h1"><span class="l1"><span>Myrtle Beach</span></span> <span class="l2"><span>Real Estate</span></span></h1>
 <p style="color:rgba(244,239,232,.86)" class="cine-sub">{{SUB}}</p>
@@ -25,8 +11,36 @@
 <li><a class="cine-path" href="/invest/"><span class="pk">I am an</span> <span class="pr" data-r="Investor">Investor</span><span class="pa" aria-hidden="true"><svg viewBox="0 0 12 12" focusable="false"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></span></a></li>
 <li><a class="cine-path" href="/buyers/buying-in-myrtle-beach/"><span class="pk">I am a</span> <span class="pr" data-r="Buyer">Buyer</span><span class="pa" aria-hidden="true"><svg viewBox="0 0 12 12" focusable="false"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></span></a></li>
 </ul>
+<p class="tw-links"><a class="tl" href="/submarkets/"><span class="tl-t">All neighborhoods</span> <span class="arr" aria-hidden="true">&rarr;</span></a><a class="tl" href="/map/"><span class="tl-t">3D map search</span> <span class="arr" aria-hidden="true">&rarr;</span></a></p>
 </div>
+<div class="tw-stage" data-plane="{{PLANE}}">
+<div class="tw-scene" aria-hidden="true">
+{{ZOOM}}
+<div class="tw-plane"><picture>
+<source type="image/avif" srcset="/media/map/strand-dark-1400.avif 1400w,/media/map/strand-dark-2048.avif 2048w,/media/map/strand-dark-3072.avif 3072w,/media/map/strand-dark-4096.avif 4096w" sizes="(min-width:1100px) 1850px,(min-width:900px) 1500px,(min-width:700px) 1300px,1000px">
+<img src="/media/map/strand-dark-2048.webp" srcset="/media/map/strand-dark-1400.webp 1400w,/media/map/strand-dark-2048.webp 2048w,/media/map/strand-dark-3072.webp 3072w,/media/map/strand-dark-4096.webp 4096w" sizes="(min-width:1100px) 1850px,(min-width:900px) 1500px,(min-width:700px) 1300px,1000px" width="2048" height="1771" alt="" fetchpriority="high" decoding="async">
+</picture></div>
+<div class="tw-fog"></div>
 </div>
+<span class="tw-dest" aria-hidden="true"><i></i></span>
+<div class="tw-deco" aria-hidden="true">
+{{SHIELDS}}
+{{WATER}}
+</div>
+<ol class="tw-pins" role="list" aria-label="Towns on the map">
+{{PINS}}
+</ol>
+<div class="tw-ctl">
+<button class="rb tw-rot" type="button" aria-label="Pause the map" hidden><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 7v10M15 7v10"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6.5v11l8.5-5.5z"/></svg></button>
+<span class="tw-compass" aria-hidden="true"><i></i></span>
+</div>
+<p class="tw-credit">Map data: U.S. Census Bureau, USGS</p>
+</div>
+</section>
+
+<!-- REVIEWS: five reviews that dissolve in place, in a band of their own under the map -->
+<section id="reviews" class="band band-navy">
+<div class="w">
 <div id="home-reviews" class="rv" role="region" aria-roledescription="carousel" aria-labelledby="rv-h">
 <div class="rv-head">
 <p id="rv-h" class="rv-label">What people say</p>
@@ -44,7 +58,7 @@
 </div>
 </section>
 
-<!-- ANALYZER: an ivory sheet that rises over the hero -->
+<!-- ANALYZER: an ivory sheet that rises over the reviews -->
 <section id="ltr-teaser" class="band band-ivory sheet" aria-labelledby="ltr-h">
 <div class="w an">
 <div class="an-head">
@@ -83,38 +97,6 @@
 {{TEAM}}
 </div>
 <p class="tm-more"><a class="tl" href="/about/"><span class="tl-t">More about Chapter3</span> <span class="arr" aria-hidden="true">&rarr;</span></a></p>
-</div>
-</section>
-
-<!-- TOWNS: a dark road map of the Grand Strand from Census data, tilted in 3D. Each town label is a link that CSS places over its spot on the map. -->
-<section id="towns" class="band band-navy tw3d" aria-labelledby="towns-h">
-<div class="tw-card">
-<p class="eb" data-io>Pawleys Island to Little River</p>
-<h2 id="towns-h">Where on the Grand&nbsp;Strand are you <span class="it">looking?</span></h2>
-<p class="tw-links"><a class="tl" href="/submarkets/"><span class="tl-t">All neighborhoods</span> <span class="arr" aria-hidden="true">&rarr;</span></a><a class="tl" href="/map/"><span class="tl-t">3D map search</span> <span class="arr" aria-hidden="true">&rarr;</span></a></p>
-</div>
-<div class="tw-stage" data-plane="{{PLANE}}">
-<div class="tw-scene" aria-hidden="true">
-{{ZOOM}}
-<div class="tw-plane"><picture>
-<source type="image/avif" srcset="/media/map/strand-dark-1400.avif 1400w,/media/map/strand-dark-2048.avif 2048w,/media/map/strand-dark-3072.avif 3072w,/media/map/strand-dark-4096.avif 4096w" sizes="(min-width:1100px) 2000px,(min-width:900px) 1700px,(min-width:700px) 1300px,1000px">
-<img src="/media/map/strand-dark-2048.webp" srcset="/media/map/strand-dark-1400.webp 1400w,/media/map/strand-dark-2048.webp 2048w,/media/map/strand-dark-3072.webp 3072w,/media/map/strand-dark-4096.webp 4096w" sizes="(min-width:1100px) 2000px,(min-width:900px) 1700px,(min-width:700px) 1300px,1000px" width="2048" height="1771" alt="" loading="lazy" decoding="async">
-</picture></div>
-<div class="tw-fog"></div>
-</div>
-<span class="tw-dest" aria-hidden="true"><i></i></span>
-<div class="tw-deco" aria-hidden="true">
-{{SHIELDS}}
-{{WATER}}
-</div>
-<ol class="tw-pins" role="list">
-{{PINS}}
-</ol>
-<div class="tw-ctl">
-<button class="rb tw-rot" type="button" aria-label="Pause the map" hidden><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 7v10M15 7v10"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6.5v11l8.5-5.5z"/></svg></button>
-<span class="tw-compass" aria-hidden="true"><i></i></span>
-</div>
-<p class="tw-credit">Map data: U.S. Census Bureau, USGS</p>
 </div>
 </section>
 

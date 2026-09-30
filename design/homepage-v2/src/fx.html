@@ -21,93 +21,17 @@
   } else revealAll();
   window.addEventListener('beforeprint', revealAll);
 
-  /* ---- the gate: one place decides whether the film and the reviews may run ---- */
-  var stage = $('#home.cine'), v = $('.cine-video'), pb = $('.cine-pause');
-  var rvBox = $('#home-reviews'), pop = document.getElementById('c3-pop');
-  /* userPlay: the visitor pressed play, which overrides a reduced-motion setting; rvStopped: they stopped the reviews */
-  var G = { vis: !document.hidden, pop: pop ? pop.hidden : true, film: false, rv: false, hov: false, userVid: false, userPlay: false, rvStopped: false };
-  var film = { state: 'idle', plays: 0, last: 0, run: function () {} };
+  /* ---- the gate: one place decides whether the reviews may rotate ---- */
+  var stage = $('#home.cine'), rvBox = $('#home-reviews'), pop = document.getElementById('c3-pop');
+  /* rvStopped: the visitor stopped the reviews */
+  var G = { vis: !document.hidden, pop: pop ? pop.hidden : true, rv: false, hov: false, rvStopped: false };
   var rv = { run: function () {} };
-  function sync() {
-    film.run(G.vis && G.pop && G.film && !G.userVid && (G.userPlay || !rm.matches));
-    rv.run(G.vis && G.pop && G.rv && !G.hov && !G.rvStopped && !rm.matches);
-  }
-  /* a tab shown before 'load' waits for load, so the film never competes with the poster and fonts */
-  document.addEventListener('visibilitychange', function () { G.vis = !document.hidden; if (G.vis && document.readyState === 'complete') whenIdle(startFilm); sync(); });
+  function sync() { rv.run(G.vis && G.pop && G.rv && !G.hov && !G.rvStopped && !rm.matches); }
+  document.addEventListener('visibilitychange', function () { G.vis = !document.hidden; sync(); });
   if (pop && 'MutationObserver' in window) {
     new MutationObserver(function () { G.pop = pop.hidden; sync(); }).observe(pop, { attributes: true, attributeFilter: ['hidden'] });
   }
-  if (hasIO) {
-    var gio = new IntersectionObserver(function (es) {
-      es.forEach(function (e) {
-        if (e.target === rvBox) G.rv = e.intersectionRatio >= 0.5;
-        else G.film = e.isIntersecting;
-      });
-      sync();
-    }, { threshold: [0, 0.5] });
-    if (stage) gio.observe($('.cine-film'));
-    if (rvBox) gio.observe(rvBox);
-  }
-
-  /* ---- the film: loads after the page, never on reduced motion, Save-Data or 2G ---- */
-  function setVidBtn(paused) {
-    if (!pb) return;
-    pb.classList.toggle('is-paused', paused);
-    pb.setAttribute('aria-label', paused ? 'Play the video' : 'Pause the video');
-  }
-  function abortFilm() {
-    if (film.state === 'ready') return;
-    film.state = 'dead';
-    try { v.pause(); v.removeAttribute('src'); v.load(); } catch (e) {}
-    stage.classList.remove('is-playing');
-    if (pb) pb.hidden = true;
-  }
-  function startFilm() {
-    if (!v || !stage || film.state !== 'idle') return;
-    var c = navigator.connection || {};
-    if (rm.matches || c.saveData || /(^|-)[23]g$/.test(c.effectiveType || '') || document.hidden || !hasIO) return;
-    /* a tall screen gets the 9:16 cut, which fills it without upscaling a 16:9 frame */
-    var h264 = v.canPlayType('video/mp4; codecs="avc1.64001F"');
-    var tall = window.matchMedia('(max-aspect-ratio:1/1)').matches;
-    var src = h264 ? v.getAttribute(tall ? 'data-mp4-tall' : 'data-mp4') : (v.canPlayType('video/webm; codecs="vp9"') ? v.getAttribute(tall ? 'data-webm-tall' : 'data-webm') : '');
-    if (!src) return;
-    film.state = 'loading';
-    v.muted = true; v.defaultMuted = true;
-    v.src = src;
-    var timer = setTimeout(abortFilm, 4000);
-    v.addEventListener('playing', function () {
-      clearTimeout(timer);
-      if (film.state !== 'loading') return;
-      film.state = 'ready';
-      stage.classList.add('is-playing');
-      if (pb) pb.hidden = false;
-      sync();
-    }, { once: true });
-    var p = v.play();
-    if (p && p.catch) p.catch(abortFilm);
-  }
-  film.run = function (on) {
-    if (film.state !== 'ready') return;
-    if (on) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-    else v.pause();
-  };
-  if (v) {
-    /* three plays, then it rests on the poster */
-    v.addEventListener('timeupdate', function () {
-      var t = v.currentTime;
-      if (film.state === 'ready' && t < film.last - 1 && ++film.plays >= 3) {
-        film.state = 'rest'; v.pause(); stage.classList.remove('is-playing'); setVidBtn(true);
-      }
-      film.last = t;
-    });
-  }
-  if (pb) pb.addEventListener('click', function () {
-    if (film.state === 'rest') { film.state = 'ready'; film.plays = 0; film.last = 0; stage.classList.add('is-playing'); G.userVid = false; G.userPlay = true; setVidBtn(false); sync(); return; }
-    G.userVid = !G.userVid; if (!G.userVid) G.userPlay = true; setVidBtn(G.userVid); sync();
-  });
-  function whenIdle(fn) { if ('requestIdleCallback' in window) requestIdleCallback(fn, { timeout: 2500 }); else setTimeout(fn, 1200); }
-  if (document.readyState === 'complete') whenIdle(startFilm);
-  else window.addEventListener('load', function () { whenIdle(startFilm); });
+  if (hasIO && rvBox) new IntersectionObserver(function (es) { G.rv = es[es.length - 1].intersectionRatio >= 0.5; sync(); }, { threshold: [0, 0.5] }).observe(rvBox);
 
   /* ---- reviews: dissolve in place every 7s while visible; any manual step stops rotation ---- */
   if (rvBox) (function () {
@@ -176,13 +100,8 @@
 
   /* ---- motion preference can change while the page is open ---- */
   var onRm = function () {
-    if (rm.matches) {
-      html.classList.remove('m'); revealAll();
-      if (film.state === 'ready') { G.userPlay = false; film.state = 'rest'; v.pause(); stage.classList.remove('is-playing'); setVidBtn(true); }
-    } else {
-      if (hasIO) html.classList.add('m');
-      if (document.readyState === 'complete') whenIdle(startFilm);
-    }
+    if (rm.matches) { html.classList.remove('m'); revealAll(); }
+    else if (hasIO) html.classList.add('m');
     sync();
   };
   if (rm.addEventListener) rm.addEventListener('change', onRm); else if (rm.addListener) rm.addListener(onRm);
@@ -196,8 +115,8 @@
 })();
 </script>
 <script>
-/* Homepage towns map, 2026-09 redesign: the flight from the whole United States and the slow turn. Its own script
-   because it is its own piece: it needs only the page's motion class (html.m), which the effects script above sets. */
+/* Homepage map, 2026-09 redesign: the flight in from the eastern United States and the slow turn. Its own script because
+   it is its own piece: it needs only the page's motion class (html.m), which the head boot sets. */
 (function () {
   'use strict';
   var html = document.documentElement;
@@ -206,26 +125,25 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var hasIO = 'IntersectionObserver' in window;
 
-  /* ---- towns: when the map comes into view the camera flies down to it from a view of the whole United States: it
-     slides toward South Carolina while it zooms, handing over from the country map to the Southeast to the Carolina
-     coast to the Grand Strand basemap, then tilts into 3D and turns. After that it turns slowly while the map is on
-     screen. It holds still while the pointer or keyboard focus is on a town label, and the button next to the compass
-     stops it. The compositor plays both motions: each moving element gets transform and opacity keyframes computed here
-     with the projection head.html uses, so the page does no style work per frame. With no motion allowed nothing here
-     runs and the CSS draws the map at rest. On Save-Data, a 2G or 3G link, or if the zoom maps do not arrive in time,
-     the flight is the short one: the camera tilts down from overhead. ---- */
-  var tw = $('#towns'), tst = tw && $('.tw-stage', tw);
+  /* ---- the map in the hero: as the page opens, the camera flies down to it from the eastern United States, tilted a
+     little. It glides toward South Carolina as it zooms, from the country map to the Southeast to the Carolina coast to
+     the basemap, and tilts further and turns as it lands. Then it turns slowly while on screen; it holds still while the
+     pointer or keyboard focus is on a town label, and the button by the compass stops it. The compositor plays both
+     motions: keyframes computed here with the projection head.html uses, so no style work per frame. With no motion
+     allowed the CSS draws the map at rest. On Save-Data, a 2G or 3G link, or if the zoom maps are late, the flight is
+     the short one: the camera tilts down from overhead. ---- */
+  var tw = $('#home'), tst = tw && $('.tw-stage', tw);
   var towns = { stop: function () {}, sync: function () {} };
   /* only where CSS places the labels on the map: without trigonometric CSS they are a plain list, which must not move */
   var trig = window.CSS && CSS.supports && CSS.supports('width', 'calc(1px * sin(1deg))');
   if (tst && hasIO && tst.animate && trig) (function () {
     var plane = $('.tw-plane', tst), img = $('img', plane), pts = $$('.tw-pt', tst), wls = $$('.tw-deco .wl i', tst);
     var needle = $('.tw-compass i', tst), btn = $('.tw-rot', tst), fog = $('.tw-fog', tst), dest = $('.tw-dest', tst);
-    var card = $('.tw-card', tw), pl = (tst.getAttribute('data-plane') || '').split(',').map(Number);
+    var words = $$('.cine-copy > *', tw), pl = (tst.getAttribute('data-plane') || '').split(',').map(Number);
     var lods = $$('.tw-lod', tst).map(function (el) { return { el: el, img: $('img', el), ext: el.getAttribute('data-ext').split(',').map(Number) }; });
     var conn = navigator.connection || {};
     var canZoom = lods.length === 3 && pl.length === 6 && !conn.saveData && !/(^|-)[23]g$/.test(conn.effectiveType || '');
-    var R = Math.PI / 180, flown = false, landed = false, started = false, zoom = false;
+    var R = Math.PI / 180, landed = false, started = false;
     var vis = false, hov = false, foc = false, stopped = false, fly = [], turn = [], cam = '', ZT = 4600, ZN = 96;
     function num(cs, k) { return parseFloat(cs.getPropertyValue(k)) || 0; }
     function cl(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
@@ -235,48 +153,64 @@
     function camera() {
       var cs = getComputedStyle(tw);
       return { P: num(cs, '--P'), pw: num(cs, '--pw'), hw: num(cs, '--hw'), tx: num(cs, '--tx'), ty: num(cs, '--ty'), t0: num(cs, '--t0'), h0: num(cs, '--h0'), h1: num(cs, '--h1'),
-        cx: num(cs, '--cx'), cy: num(cs, '--cy'),
+        cx: num(cs, '--cx'), cb: num(cs, '--cb'),
         at: pts.map(function (el) { var s = getComputedStyle(el); return [num(s, '--px'), num(s, '--py')]; }),
         a: wls.map(function (el) { return num(getComputedStyle(el), '--a'); }),
         on: pts.concat(wls).map(function (el) { return el.getClientRects().length > 0; }) };
     }
-    /* one frame of the scene: tilt t, heading h (degrees), zoom z, and the world point (dx, dy) under the camera target,
-       in CSS px of the basemap at zoom 1, measured from the target. A zoom level is placed by the same camera */
-    function pose(c, s, geo) {
-      var st = Math.sin(s.t * R), ct = Math.cos(s.t * R), sh = Math.sin(s.h * R), ch = Math.cos(s.h * R);
-      var head = 'rotateX(' + s.t.toFixed(3) + 'deg) rotateZ(' + s.h.toFixed(3) + 'deg) scale(' + s.z.toPrecision(6) + ')';
-      var at = function (u, v) {
-        u = (u - s.dx) * s.z; v = (v - s.dy) * s.z;
-        var up = u * ch - v * sh, vp = u * sh + v * ch, k = c.P / (c.P - vp * st);
-        return 'translate(' + (up * k).toFixed(2) + 'px,' + (vp * ct * k).toFixed(2) + 'px)';
-      };
-      return {
-        plane: head + ' translate(' + (-s.dx).toFixed(2) + 'px,' + (-s.dy).toFixed(2) + 'px)',
-        pts: c.at.map(function (p) { return at((p[0] - c.tx) * c.pw, (p[1] - c.ty) * c.pw * c.hw); }),
-        wls: c.a.map(function (a) { var r = (a + s.h) * R; return 'translate(-50%,-50%) rotate(' + (Math.atan2(Math.sin(r) * ct, Math.cos(r)) / R).toFixed(3) + 'deg)'; }),
-        needle: 'rotate(' + (Math.atan2(sh, ch * ct) / R).toFixed(3) + 'deg)',
-        dest: at(0, 0),
-        lods: geo ? geo.map(function (g) { return head + ' translate(' + (g.ox - s.dx).toFixed(2) + 'px,' + (g.oy - s.dy).toFixed(2) + 'px) scale(' + g.ax.toPrecision(7) + ',' + g.ay.toPrecision(7) + ')'; }) : []
-      };
+    /* a world point on screen, from the camera target, at one frame: tilt t, heading h (degrees), zoom z, and the world
+       point (dx, dy) under the target, in CSS px of the basemap at zoom 1, from the target */
+    function scr(c, s, u, v) {
+      var st = Math.sin(s.t * R), sh = Math.sin(s.h * R), ch = Math.cos(s.h * R);
+      u = (u - s.dx) * s.z; v = (v - s.dy) * s.z;
+      var up = u * ch - v * sh, vp = u * sh + v * ch, k = c.P / (c.P - vp * st);
+      return [up * k, vp * Math.cos(s.t * R) * k];
     }
-    function play(c, samples, geo, opts) {
-      var fr = samples.map(function (s) { return pose(c, s, geo); }), out = [];
+    /* one frame of the scene, the map (part 'v': the plane, the zoom levels, the brass point) or what is drawn on it
+       (part 'h': pins, shields, water names, compass), or both. A zoom level is placed by the same camera */
+    function pose(c, s, geo, part) {
+      var ct = Math.cos(s.t * R), sh = Math.sin(s.h * R), ch = Math.cos(s.h * R), f = {};
+      var head = 'rotateX(' + s.t.toFixed(3) + 'deg) rotateZ(' + s.h.toFixed(3) + 'deg) scale(' + s.z.toPrecision(6) + ')';
+      var at = function (u, v) { var p = scr(c, s, u, v); return 'translate(' + p[0].toFixed(2) + 'px,' + p[1].toFixed(2) + 'px)'; };
+      if (part !== 'h') {
+        f.plane = head + ' translate(' + (-s.dx).toFixed(2) + 'px,' + (-s.dy).toFixed(2) + 'px)';
+        f.dest = at(0, 0);
+        f.lods = geo ? geo.map(function (g) { return head + ' translate(' + (g.ox - s.dx).toFixed(2) + 'px,' + (g.oy - s.dy).toFixed(2) + 'px) scale(' + g.ax.toPrecision(7) + ',' + g.ay.toPrecision(7) + ')'; }) : [];
+      }
+      if (part !== 'v') {
+        f.pts = c.at.map(function (p) { return at((p[0] - c.tx) * c.pw, (p[1] - c.ty) * c.pw * c.hw); });
+        f.wls = c.a.map(function (a) { var r = (a + s.h) * R; return 'translate(-50%,-50%) rotate(' + (Math.atan2(Math.sin(r) * ct, Math.cos(r)) / R).toFixed(3) + 'deg)'; });
+        f.needle = 'rotate(' + (Math.atan2(sh, ch * ct) / R).toFixed(3) + 'deg)';
+      }
+      return f;
+    }
+    /* keyframes for part of the scene (see pose). From sample i0 on only, if given: what is drawn on the map stays hidden
+       until the flight lands, so it needs keyframes only for the flight's last part, which then starts that much later */
+    function play(c, samples, geo, opts, part, i0) {
+      var out = [], n = samples.length - 1, fr = [];
+      i0 = i0 || 0;
+      for (var i = i0; i <= n; i++) fr.push(pose(c, samples[i], geo, part));
+      if (i0) opts = { duration: opts.duration * (1 - i0 / n), delay: opts.duration * i0 / n, easing: opts.easing };
       cam = JSON.stringify(c);
       /* an element the CSS hides at this width is left alone: animating it would tick on the main thread */
       var put = function (el, key, get) {
         if (!el || !el.getClientRects().length) return;
-        var a = el.animate(fr.map(function (f, i) { var k = get(f, samples[i]); if (samples[i].o && key) k.opacity = samples[i].o[key]; return k; }), opts);
+        var a = el.animate(fr.map(function (f, i) { var s = samples[i + i0], k = get(f, s); if (s.o && key) k.opacity = s.o[key]; return k; }), opts);
         a.pause();
         out.push(a);
       };
-      put(plane, 'plane', function (f) { return { transform: f.plane }; });
-      pts.forEach(function (el, i) { put(el, '', function (f) { return { transform: f.pts[i] }; }); });
-      wls.forEach(function (el, i) { put(el, '', function (f) { return { transform: f.wls[i] }; }); });
-      if (needle) put(needle, '', function (f) { return { transform: f.needle }; });
-      if (geo) {
-        lods.forEach(function (l, i) { put(l.el, '', function (f, s) { return { transform: f.lods[i], opacity: s.o.lod[i] }; }); });
-        put(dest, 'dest', function (f) { return { transform: f.dest }; });
-        put(fog, 'fog', function () { return {}; });
+      if (part !== 'h') {
+        put(plane, 'plane', function (f) { return { transform: f.plane }; });
+        if (geo) {
+          lods.forEach(function (l, i) { put(l.el, '', function (f, s) { return { transform: f.lods[i], opacity: s.o.lod[i] }; }); });
+          put(dest, 'dest', function (f) { return { transform: f.dest }; });
+          put(fog, 'fog', function () { return {}; });
+        }
+      }
+      if (part !== 'v') {
+        pts.forEach(function (el, i) { put(el, '', function (f) { return { transform: f.pts[i] }; }); });
+        wls.forEach(function (el, i) { put(el, '', function (f) { return { transform: f.wls[i] }; }); });
+        if (needle) put(needle, '', function (f) { return { transform: f.needle }; });
       }
       return out;
     }
@@ -288,12 +222,11 @@
     }
     function tiltPath(c) {
       var s = [];
-      for (var i = 0; i <= 48; i++) { var p = ease(i / 48); s.push({ t: c.t0 * p, h: c.h0 - 28 + 28 * p, z: .78 + .22 * p, dx: 0, dy: 0 }); }
+      for (var i = 0; i <= 48; i++) { var p = ease(i / 48); s.push({ u: i / 48, t: c.t0 * p, h: c.h0 - 28 + 28 * p, z: .78 + .22 * p, dx: 0, dy: 0 }); }
       return s;
     }
-    /* the zoom levels in the camera's world: CSS px of the basemap at zoom 1, from the camera target. A level is Mercator,
-       the basemap is an equirectangular plane (pl: lon0, lat1, K, S, W, H of build_basemap.py); they agree at the target's
-       latitude, and within a pixel over the basemap */
+    /* the zoom levels in the camera's world (CSS px of the basemap at zoom 1, from the target). A level is Mercator, the
+       basemap equirectangular (pl: lon0, lat1, K, S, W, H of build_basemap.py): they agree at the target's latitude */
     function world(c) {
       var K = pl[2], S = pl[3], W = pl[4], u2w = c.pw / W, yT = ym(pl[1] - c.ty * pl[5] / S);
       return { ppd: K * S * u2w, at: function (lon, lat) { return [((lon - pl[0]) * K * S - c.tx * W) * u2w, K * S * (yT - ym(lat)) * u2w]; } };
@@ -304,39 +237,53 @@
         return { ox: o[0], oy: o[1], ax: (b[0] - o[0]) / wc, ay: (b[1] - o[1]) / hc, w: wc, h: hc, ppd: wc / (e[1] - e[0]) };
       });
     }
-    /* the whole country, framed where the stage is free: beside the card on a wide screen, else the whole stage */
+    /* where the flight starts: the part of the stage on screen the words leave free (beside or under them) */
     function frame(c) {
-      var st = tst.getBoundingClientRect(), f = { x: 16, y: 16, w: st.width - 32, h: st.height - 32 };
-      if (card && getComputedStyle(card).position === 'absolute') {
-        var r = card.getBoundingClientRect(), x = r.right - st.left + 28;
-        f = { x: x, y: 24, w: st.width - x - 24, h: st.height - 48 };
-      }
-      f.sw = st.width; f.sh = st.height; f.cx = st.width / 2 + c.cx; f.cy = st.height * c.cy;
+      var st = tst.getBoundingClientRect(), y0 = Math.max(0, -st.top), y1 = Math.min(st.height, innerHeight - st.top), u = null, f;
+      words.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.height && r.bottom > st.top && r.top < st.bottom) u = u ? { r: Math.max(u.r, r.right), b: Math.max(u.b, r.bottom) } : { r: r.right, b: r.bottom };
+      });
+      if (u && st.right - u.r > st.width / 3) { var x = u.r - st.left + 28; f = { x: x, y: y0 + 24, w: st.width - x - 24, h: y1 - y0 - 48 }; }
+      else { var y = Math.max(y0, u ? u.b - st.top : 0) + 16; f = { x: 16, y: y, w: st.width - 32, h: y1 - y - 16 }; }
+      if (f.w < 160 || f.h < 160) f = { x: 16, y: y0 + 16, w: st.width - 32, h: Math.max(160, y1 - y0 - 32) };
+      f.sw = st.width; f.sh = st.height; f.cx = st.width / 2 + c.cx; f.cy = st.height - c.cb;
       return f;
     }
     function zoomPath(c, geo) {
-      var w = world(c), f = frame(c), us = [-124.8, -66.9, 24.5, 49.4];
-      var z0 = Math.min(.94 * f.w / ((us[1] - us[0]) * w.ppd), .94 * f.h / ((ym(us[3]) - ym(us[2])) * w.ppd));
-      var mid = w.at((us[0] + us[1]) / 2, 38);
-      /* the target's place on screen at the start; it glides to the middle while the camera zooms around it */
-      var sx = (-mid[0]) * z0 + (f.x + f.w / 2 - f.cx), sy = (-mid[1]) * z0 + (f.y + f.h / 2 - f.cy), out = [];
+      var w = world(c), f = frame(c), E = [-98, -66.5, 24.5, 47.5], ta = Math.min(28, c.t0), ha = c.h0 * .4, s0 = { t: ta, h: ha };
+      var box = [w.at(E[0], E[3]), w.at(E[1], E[3]), w.at(E[1], E[2]), w.at(E[0], E[2])], m = w.at((E[0] + E[1]) / 2, (E[2] + E[3]) / 2);
+      var fx = f.x + f.w / 2 - f.cx, fy = f.y + f.h / 2 - f.cy, ch = Math.cos(ha * R), sh = Math.sin(ha * R), ct = Math.cos(ta * R);
+      s0.z = Math.min(f.w / (box[1][0] - box[0][0]), f.h / (box[2][1] - box[1][1])); s0.dx = m[0]; s0.dy = m[1];
+      /* the eastern United States at the start: 94% of the free part of the stage, centred, as the tilted camera sees it.
+         Moving the camera by the error, back through the tilt and the heading, settles in a few rounds */
+      for (var n = 0; n < 24; n++) {
+        var x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9;
+        box.forEach(function (p) { var q = scr(c, s0, p[0], p[1]); x0 = Math.min(x0, q[0]); x1 = Math.max(x1, q[0]); y0 = Math.min(y0, q[1]); y1 = Math.max(y1, q[1]); });
+        var ex = (x0 + x1) / 2 - fx, ey = ((y0 + y1) / 2 - fy) / ct;
+        s0.dx += (ex * ch + ey * sh) / s0.z; s0.dy += (ey * ch - ex * sh) / s0.z;
+        s0.z *= Math.min(.94 * f.w / (x1 - x0), .94 * f.h / (y1 - y0));
+      }
+      /* the Grand Strand glides from its place at the start to the camera target while the camera zooms around it */
+      var z0 = s0.z, qx = s0.dx * z0, qy = s0.dy * z0, out = [];
       for (var i = 0; i <= ZN; i++) {
         var u = i / ZN, z = Math.exp(Math.log(z0) * (1 - eio(cl((u - .05) / .83)))), g = 1 - eio(cl((u - .03) / .33));
-        out.push({ u: u, z: z, dx: -sx * g / z, dy: -sy * g / z, h: c.h0 * eio(cl((u - .45) / .55)), t: c.t0 * (1 - Math.pow(1 - cl((u - .52) / .48), 3)) });
+        out.push({ u: u, z: z, dx: qx * g / z, dy: qy * g / z, h: ha + (c.h0 - ha) * eio(cl((u - .3) / .7)), t: ta + (c.t0 - ta) * (1 - Math.pow(1 - cl((u - .4) / .6), 3)) });
       }
-      /* a level fades in once it is detailed enough to add something, and the one under it fades out over the next nine
-         frames once it is fully in and covers the whole stage; the coast fades as the camera lands, as the page has it */
+      /* a level fades in once detailed enough to add something; the one under it fades out over nine frames once it is in
+         and covers the stage (its corners, back through the camera onto the ground). The coast fades as the camera lands */
       var covers = function (s, g) {
-        var ch = Math.cos(-s.h * R), sh = Math.sin(-s.h * R), mx = g.w * g.ax * .04, my = g.h * g.ay * .04;
+        var st = Math.sin(s.t * R), ct = Math.cos(s.t * R), ch = Math.cos(s.h * R), sh = Math.sin(s.h * R), mx = g.w * g.ax * .04, my = g.h * g.ay * .04;
         return [[0, 0], [f.sw, 0], [f.sw, f.sh], [0, f.sh]].every(function (p) {
-          var x = (p[0] - f.cx) / s.z, y = (p[1] - f.cy) / s.z, u = x * ch - y * sh + s.dx, v = x * sh + y * ch + s.dy;
+          var X = p[0] - f.cx, Y = p[1] - f.cy, vp = Y * c.P / (c.P * ct + Y * st), up = X * (c.P - vp * st) / c.P;
+          var u = (up * ch + vp * sh) / s.z + s.dx, v = (vp * ch - up * sh) / s.z + s.dy;
           return u > g.ox + mx && u < g.ox + g.w * g.ax - mx && v > g.oy + my && v < g.oy + g.h * g.ay - my;
         });
       };
       out.forEach(function (s) {
         var ppd = s.z * w.ppd, land = 1 - cl((s.u - .84) / .14);
-        s.o = { lod: [land, cl((ppd / geo[1].ppd - .3) / .25) * land, cl((ppd / geo[2].ppd - .3) / .25) * land],
-          plane: cl((s.z - .2) / .16), fog: eio(cl((s.u - .52) / .48)), dest: cl(s.u / .04) * (1 - cl((s.u - .78) / .12)) };
+        s.o = { lod: [cl(s.u / .04) * land, cl((ppd / geo[1].ppd - .3) / .25) * land, cl((ppd / geo[2].ppd - .3) / .25) * land],
+          plane: cl((s.z - .2) / .16), fog: .5 + .5 * eio(cl((s.u - .45) / .55)), dest: cl(s.u / .04) * (1 - cl((s.u - .78) / .12)) };
       });
       [0, 1].forEach(function (i) {
         var j = -1;
@@ -349,32 +296,38 @@
       lods.forEach(function (l) { $$('source,img', l.el).forEach(function (e) { var v = e.getAttribute('data-srcset'); if (v && !e.getAttribute('srcset')) e.setAttribute('srcset', v); }); });
     }
     function ok(im) { return im.complete && im.naturalWidth > 0; }
-    function land() { landed = flown = true; tst.classList.remove('pre', 'lod'); tst.classList.add('in'); }
-    /* the flight's first frame, held until the map is in view */
-    function prep() {
+    function land() { landed = true; tst.classList.remove('lod'); tst.classList.add('in'); }
+    /* the flight, from the layout of the moment; the zoom only if all three maps are in. Three tasks, each short on a slow
+       phone: the path; the map's keyframes, and it moves; then what is drawn on it, hidden until the landing, from 70% of
+       the flight on (50% of the short one), on the map's clock */
+    function go() {
       if (landed || started) return;
-      fly.forEach(function (a) { a.cancel(); });
-      zoom = canZoom;
-      if (zoom) load();
+      started = true;
+      var zoom = canZoom && lods.every(function (l) { return ok(l.img); });
       tst.classList.toggle('lod', zoom);
-      var c = camera(), geo = zoom ? levels(c, world(c)) : null;
-      fly = play(c, zoom ? zoomPath(c, geo) : tiltPath(c), geo, { duration: zoom ? ZT : 2600, easing: 'linear' });
-    }
-    function takeOff() {
-      var go = function () {
-        if (landed || started) return;
-        if (zoom && !lods.every(function (l) { return ok(l.img); })) { canZoom = false; prep(); }   // too slow: fly the short way
-        started = true;
+      var c = camera(), geo = zoom ? levels(c, world(c)) : null, path = zoom ? zoomPath(c, geo) : tiltPath(c), opts = { duration: zoom ? ZT : 2600, easing: 'linear' };
+      setTimeout(function () {
+        if (landed) return;
+        var mine = fly = play(c, path, geo, opts, 'v');
         tst.classList.toggle('z', zoom);
-        tst.classList.remove('pre'); tst.classList.add('in');
+        tst.classList.add('in');
         fly.forEach(function (a) { a.play(); });
         if (!fly.length) { land(); sync(); return; }
         fly[0].finished.then(function () { landed = true; tst.classList.remove('lod'); sync(); }, function () {});
-      };
-      /* the flight waits for its maps, up to 1.5s, so it does not play over an empty plane on a slow link */
-      var need = [img].concat(zoom ? lods.map(function (l) { return l.img; }) : []).filter(function (im) { return im && !ok(im) && im.decode; });
+        setTimeout(function () {
+          if (landed || fly !== mine) return;
+          var h = play(c, path, geo, opts, 'h', Math.floor((zoom ? .7 : .5) * (path.length - 1)));
+          fly.push.apply(fly, h);
+          mine[0].ready.then(function () { if (!landed && fly === mine) h.forEach(function (a) { a.startTime = mine[0].startTime; }); });
+        }, 0);
+      }, 0);
+    }
+    /* the flight waits for its maps, up to 2.5s, so it does not play over an empty stage on a slow link */
+    function takeOff() {
+      if (canZoom) load();
+      var need = [img].concat(canZoom ? lods.map(function (l) { return l.img; }) : []).filter(function (im) { return im && !ok(im) && im.decode; });
       if (!need.length) return go();
-      var n = need.length, t = setTimeout(go, 1500), done = function () { if (--n <= 0) { clearTimeout(t); go(); } };
+      var n = need.length, t = setTimeout(go, 2500), done = function () { if (--n <= 0) { clearTimeout(t); go(); } };
       need.forEach(function (im) { im.decode().then(done, done); });
     }
     /* the flight jumps to its last frame: keyboard focus in the map, the pause button, a new breakpoint, printing */
@@ -382,8 +335,8 @@
       if (landed) return;
       tst.classList.add('now');
       requestAnimationFrame(function () { requestAnimationFrame(function () { tst.classList.remove('now'); }); });
-      if (started) fly.forEach(function (a) { a.finish(); });
-      else { fly.forEach(function (a) { a.cancel(); }); fly = []; land(); }
+      if (fly.length) fly.forEach(function (a) { a.finish(); });
+      else land();
     }
     function sync() {
       var on = landed && vis && !hov && !foc && !stopped && !rm.matches;
@@ -395,30 +348,20 @@
       turn.forEach(function (a) { if (on) a.play(); else a.pause(); });
     }
     towns.sync = sync;
+    /* motion turned off: the map stops at rest, and labels still waiting for the landing show now, not when it was due */
     towns.stop = function () {
       fly.concat(turn).forEach(function (a) { a.cancel(); }); fly = []; turn = []; land();
+      if (tst.getAnimations) tst.getAnimations({ subtree: true }).forEach(function (a) { if (a.transitionProperty) a.finish(); });
     };
-    /* the zoom maps start loading well before the map arrives */
-    if (canZoom) new IntersectionObserver(function (es, ob) {
-      if (es[es.length - 1].isIntersecting && html.classList.contains('m') && !rm.matches) { load(); ob.disconnect(); }
-    }, { rootMargin: '0px 0px 250% 0px' }).observe(tst);
-    /* just before the map comes into view the flight's first frame is set; once it is in view the flight starts */
-    new IntersectionObserver(function (es) {
-      if (es[es.length - 1].isIntersecting && !flown && html.classList.contains('m') && !rm.matches && !tst.classList.contains('pre')) { tst.classList.add('pre'); prep(); }
-    }, { rootMargin: '0px 0px 60% 0px' }).observe(tst);
-    new IntersectionObserver(function (es) {
-      vis = es[es.length - 1].isIntersecting;
-      if (vis && !flown) {
-        flown = true;
-        if (html.classList.contains('m') && !rm.matches) {
-          /* both observers can report in the same frame (a jump, or a reload with the scroll restored): the first frame
-             must be styled once, or the labels show from the start and the landing is lost */
-          if (!tst.classList.contains('pre')) { tst.classList.add('pre'); prep(); getComputedStyle(pts[0] || tst).opacity; }
-          takeOff();
-        } else land();
-      }
-      sync();
-    }, { rootMargin: '0px 0px -12% 0px' }).observe(tst);
+    /* the flight plays once, as the page opens with the map on screen (a background tab: when first shown). A page opened
+       further down, or with no motion allowed, shows the map at rest */
+    var r = tst.getBoundingClientRect();
+    if (html.classList.contains('m') && !rm.matches && r.bottom > 0 && r.top < innerHeight) {
+      if (!document.hidden) takeOff();
+      else document.addEventListener('visibilitychange', function wake() { if (!document.hidden) { document.removeEventListener('visibilitychange', wake); takeOff(); } });
+    } else land();
+    /* the slow turn runs only while the map is on screen */
+    new IntersectionObserver(function (es) { vis = es[es.length - 1].isIntersecting; sync(); }, { rootMargin: '0px 0px -12% 0px' }).observe(tst);
     /* the turn holds while the pointer is on a town label, not anywhere over the map */
     $$('.tw-pin a', tst).forEach(function (a) {
       a.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hov = true; sync(); } });
@@ -442,21 +385,19 @@
       });
     }
     /* a resize that crosses a breakpoint changes the camera: the flight jumps to its end, or the turn restarts from rest with
-       new frames. Any other resize, such as a phone's address bar showing or hiding, changes nothing the frames use. A
-       flight that has not started yet is set up again for the new size. */
+       new frames. Any other resize, such as a phone's address bar showing or hiding, changes nothing the frames use */
     var rz = 0;
     window.addEventListener('resize', function () {
       if (rz) return;
       rz = requestAnimationFrame(function () {
         rz = 0;
-        if (fly.length && !started && !landed) { prep(); return; }
         if (!fly.length && !turn.length) return;
         if (JSON.stringify(camera()) === cam) return;
         if (!landed) { end(); return; }
         turn.forEach(function (a) { a.cancel(); }); turn = []; sync();
       });
     });
-    window.addEventListener('beforeprint', function () { end(); tst.classList.remove('pre'); tst.classList.add('in'); });
+    window.addEventListener('beforeprint', function () { end(); tst.classList.add('in'); });
   })();
   else if (tst) tst.classList.add('in');
 

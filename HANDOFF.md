@@ -2187,6 +2187,16 @@ in the second preview (below).
 website". Done in the fourth preview: the map now starts on the whole United
 States and zooms down to the Grand Strand (below).
 
+**His request after the fourth preview, verbatim (2026-09-30).** "Have the zoom
+start towards the right of the USA and have it at a slight angle to make the
+zoom a bit more sleep and make it the landing page instead of the video of the
+house we have". "sleep" read as "sleek". Done in the fifth preview: the map is
+the hero, the house video is gone, and the flight starts over the eastern half
+of the country with the camera tilted from the first frame (below). Two
+consequences he was told about and can reverse: the reviews moved to a band of
+their own under the hero, and the separate towns section is gone (its "All
+neighborhoods" and "3D map search" links moved under the three paths).
+
 **Where it is.** `design/homepage-v2/`, outside `chapter3realty/`, so
 `deploy.ps1` cannot ship it. `chapter3realty/index.html` is unchanged.
 `node design/homepage-v2/assemble.js` builds `design/homepage-v2/index.html`
@@ -2194,26 +2204,28 @@ from the live homepage. It keeps the header, footer, pop-up, `#idxModal`, every
 TCPA string, `c3SendForm`, the MAP block and `shouldIBuy()` byte-identical,
 fills every piece of his approved copy in from the live page byte for byte, and
 throws if any of that drifts. `node design/homepage-v2/preview.js <dir>` builds
-the preview folder (page plus `media/hero/` and `media/map/`).
+the preview folder (page plus `media/map/`).
 
-**What it is.** Hero: the walk-through video fills the hero and the eyebrow,
-H1, sub-header, the three "I am a" paths and the reviews sit on top of it, over
-a gradient scrim measured for contrast on every frame of the film (tall screens
-get a 9:16 cut). That holds at every width: below 1100px the film runs behind
-the whole hero, and the paths and the reviews card are translucent over it. The
-analyzer is an ivory sheet over the hero. Badge icons draw themselves. The towns
-section is a dark road map in the style of today's Google Maps dark mode
-(near-black water, slate land, blue-grey roads, teal parks), tilted in 3D. When
-it scrolls into view the camera starts on the whole United States (beside the
-card on a wide screen), slides east toward South Carolina while it zooms down
-through the Southeast and the Carolina coast to the Grand Strand, with a brass
-point on Myrtle Beach to fly to, then tilts into 3D and turns; the nine town
+**What it is.** Hero: a dark road map of the Grand Strand in the style of
+today's Google Maps dark mode (near-black water, slate land, blue-grey roads,
+teal parks), tilted in 3D, fills the first screen. On a wide screen (1100px and
+up) the eyebrow, H1, sub-header, the three "I am a" paths and the two map links
+("All neighborhoods", "3D map search") sit in a column on the left over a
+scrim, and the towns are on the right. Below 1100px the eyebrow, H1 and paths
+sit at the top over the map's dark sky, the map is under them, and the
+sub-header and the map links follow the map. As the page opens the camera
+starts over the eastern half of the United States, tilted, with a brass point
+on the Grand Strand, glides and zooms down through the Southeast and the
+Carolina coast to the Grand Strand, then tilts further and turns; the nine town
 pins land one by one as it arrives (4.6s in all), then the map turns slowly
-while it is on screen. It holds still while the
-pointer or keyboard focus is on a town label, and a pause button next to the
-compass stops it (WCAG 2.2.2: moving content that runs past five seconds needs a
-stop control). The FAQ is always open. No ticker, count-up, call bar or
-particles.
+while it is on screen. It holds still while the pointer or keyboard focus is on
+a town label, and a pause button next to the compass stops it (WCAG 2.2.2:
+moving content that runs past five seconds needs a stop control). The reviews
+are a band of their own under the hero; the analyzer is an ivory sheet over
+their last 28px. Badge icons draw themselves. The FAQ is always open. No
+ticker, count-up, call bar or particles. The house video and its posters are no
+longer used; they stay in `design/homepage-v2/media/hero/` and in commit
+b020a20 (the fourth preview) in case he wants the video back.
 
 **How the map works, so nobody re-derives it.** The map is one image
 (`media/map/strand-dark-{1400,2048,3072,4096}.{avif,webp}`; as AVIF 78, 131,
@@ -2228,17 +2240,25 @@ perspective). Every label is an ordinary HTML link, not part of the 3D scene,
 so it stays sharp; CSS places it with `sin()`/`cos()` in `calc()` at the
 screen point where its town lands. `tests/twcheck.js` compares each label
 with a probe inside the tilted plane: under 0.2px off in Chromium, WebKit and
-Firefox. The camera, label sides and water-name spots are set per width in
+Firefox. The camera, label sides and water-name spots are set per band in
 `src/head.html` (`<style id="c3-home-map">`); they were chosen by
 `tests/twsearch.js` so that no label covers another label, a pin, a shield, a
-water name, the card, the controls or the map data line at any width and at any
-point of the turn, even with labels 4.5% wider (Firefox draws DM Sans about 3.5%
-wider). The cameras are also in `data/cameras.json`, which `build_basemap.py`
-places the road shields for; `tests/cameras.js` fails when the page and that
-file disagree. On a laptop screen under 881px tall the map stage is 120px
-shorter and the map sits 120px higher, so the card, all nine towns and the
-controls fit on the screen together; the Waccamaw River name moves along the
-river there, and from 1381px wide it has no room beside the card and is hidden.
+water name, the words over the map, the controls or the map data line at any
+width and at any point of the turn, even with labels 4.5% wider (Firefox draws
+DM Sans about 3.5% wider). There are eight bands: four for wide screens (1100
+to 1399px and 1400px up, each for a screen under 800px tall and from 800px),
+tablet (900 to 1099), small tablet (700 to 899), phone, and small phone (under
+360). The hero is one screen tall less the 89px header, from 560 to 920px, and
+the camera target is set in px above the stage's bottom (`--cb`), so a taller
+screen adds sky, not a new layout; a wide-screen band was searched at the
+shortest screen it serves (649px, the 560px minimum). Below 1100px the map's
+height under the words is `--ma` (520 or 560px). The cameras are also in
+`data/cameras.json`, which `build_basemap.py` places the road shields for;
+`tests/cameras.js` fails when the page and that file disagree. The road shields
+and water names were placed for the old section's cameras and were not moved:
+the search hides a shield or a water name wherever a label cannot avoid it (the
+Intracoastal Waterway name below 1100px and on screens under 800px tall; the
+501 and 31 shields under 360px).
 The motion is not CSS: `src/fx.html` computes transform keyframes with the same
 projection and the compositor plays them, because animating the CSS variables
 cost 12ms of style work per frame and dropped a throttled phone to 21fps; now
@@ -2246,33 +2266,49 @@ the turn costs about 6ms per second. Browsers without CSS trigonometry
 (Safari before 15.4, Chrome before 111) get the tilted picture with the towns
 as a plain list under it.
 
-**The zoom from the whole country, so nobody re-derives it.** Three more maps sit
-under the basemap in the same 3D scene: the United States, the Southeast and the
-Carolina coast (`media/map/zoom-{us,se,coast}-{1600,3200}.{avif,webp}`), drawn by
+**The zoom, so nobody re-derives it.** Three more maps sit under the basemap in
+the same 3D scene: the United States, the Southeast and the Carolina coast
+(`media/map/zoom-{us,se,coast}-{1600,3200}.{avif,webp}`), drawn by
 `map/build_zoom.py` in the same palette from Census states, urban areas,
 counties, water and roads, PAD-US parks, and Natural Earth (public domain) for
 the other countries, the Great Lakes, lakes and rivers. They are Web Mercator and
 the basemap is an equirectangular plane; `src/fx.html` places all four with the
 one camera, and they agree at the camera target's latitude to within a pixel
-over the basemap. The flight is baked into 96 frames of transform and opacity
-keyframes, as before, so the compositor plays it. A level fades in once it is
+over the basemap. The flight starts as the page opens (a tab opened in the
+background: when it is first shown; a page opened further down shows the map at
+rest). Its first frame is the eastern United States (98W to 66.5W, 24.5N to
+47.5N) filling 94% of the part of the hero the words leave free (beside them on
+a wide screen, under them on a narrow one, on screen only), seen with the camera
+tilted 28 degrees (or the landing tilt if that is less) at 40% of the landing
+heading; the fit is solved through the tilted camera by moving it by the error a
+few times. The Grand Strand then glides to the camera target while the camera
+zooms, tilts further and turns. The flight is baked into 96 frames of transform
+and opacity keyframes, so the compositor plays it. A level fades in once it is
 detailed enough to add something, and the one under it fades out once the level
-above covers the whole stage; the coast fades as the camera lands, so the final
-view is exactly the one before this change. The haze at the horizon is now an
-element (`.tw-fog`) so it can fade in with the tilt. The three maps load only
-when motion is allowed and the map is within two and a half screens (the page
-sets their `srcset` then): 180 KB on a phone or an ordinary screen, 414 KB on a
-high-density desktop. On Save-Data, a 2G or 3G link, or if the maps have not
-arrived 1.5s after the map comes into view, the flight is the old short one (the
-camera tilts down from overhead) and the maps are not downloaded or not used.
-Measured on a phone-sized screen at 3x (`tests/flightfps.js`): 58 fps across the
-whole flight (the old flight 60), 55 fps at 4x CPU slowdown (the old 58); the one
-long frame is where the flight is set up, which on an ordinary scroll happens
-before the map is on screen. On a 1440px screen this sandbox draws in software,
-and both the old flight and the zoom run at 31 to 38 fps there; main-thread work
-during the flight is about the same (110 against 89 ms per second), so a real
-graphics chip should hold full speed for both. Checked in WebKit and Firefox as well. `tests/zoomframes.js` freezes the
-flight at set moments and screenshots it, to look at every hand-off.
+above covers the whole stage, tested by projecting the stage's corners back
+through the tilted camera; the coast fades as the camera lands, so the final
+view is the map at rest. The haze at the top (`.tw-fog`) is at half strength at
+the start. Until the flight starts, the map is not drawn: the hero shows its
+words over the navy stage (a 3s timer in the head boot shows the map at rest if
+the page script never runs). The three maps load as the page opens when motion
+is allowed (the page script sets their `srcset`): with the basemap, 300 KB on a
+2x phone or a 1x desktop, 393 KB on a 3x phone, 621 to 681 KB on a 2x tablet or
+desktop. The flight waits for them up to 2.5s. On Save-Data or a 2G or 3G link
+they are never requested and the flight is the short one (the camera tilts down
+from overhead); if they are late, it is the short one too. The labels, shields,
+water names and compass are hidden until the landing, so they get keyframes only
+for the flight's last 30%, created in a second task on the map's clock (synced
+on the first animation's `ready`); with the path in a first task, each setup
+task is about 50ms at 4x CPU slowdown instead of one of 120ms. Measured on a
+phone-sized screen at 3x (`tests/flightfps.js`): 58 fps across the flight at 1x
+and at 4x CPU slowdown, with one long frame where it starts. On a 1440px screen
+this sandbox draws in software and the flight runs at 28 to 31 fps (the old
+flight and the whole-country zoom ran at 31 to 38 there); main-thread work
+during it is 12ms of style per second, so a real graphics chip should hold full
+speed. The slow turn costs about 3ms of main-thread time per second on a 4x
+throttled phone, the same as before. Checked in WebKit and Firefox as well.
+`tests/zoomframes.js` freezes the flight at set moments and screenshots the first
+screen, to look at every hand-off.
 
 **A font fact, so nobody re-derives it.** Fraunces at optical size 144 (its
 display end) draws the roman "e" with so thin a crossbar that at 100px and up it
@@ -2280,57 +2316,60 @@ disappears on screen and "Myrtle Beach" reads "Myrtlc Bcach". The hero H1 uses
 optical size 80 and tops out at 100px; keep any large Fraunces text at 80 or
 below.
 
-**New copy, his to approve.** Towns section: eyebrow "Pawleys Island to Little
-River", H2 "Where on the Grand Strand are you looking?" (italic on "looking?";
-italic on "Grand Strand" made WebKit read "theGrand" wherever the line wrapped
-before it), links "All neighborhoods" and "3D map search", the nine place
-names, and on the map the water names "Atlantic Ocean", "Intracoastal
-Waterway", "Waccamaw River", the road numbers 17, 501, 31 and 22 (31 is hidden
-from 700 to 1099px and 501 below 360px, where a label would cover them), and
-the source line "Map data: U.S. Census Bureau, USGS" (the Census Bureau's terms
-require a credit; the wording is his to change, the credit is not optional).
-The analyzer's field labels "Street address", "City", "ZIP" (they were
-placeholders). Control labels for the video, review and map buttons ("Pause the
-map" / "Play the map" for the new one, read by screen readers only).
+**New copy, his to approve.** The map links "All neighborhoods" and "3D map
+search" (now under the three paths), the nine place names, and on the map the
+water names "Atlantic Ocean", "Intracoastal Waterway", "Waccamaw River", the
+road numbers 17, 501, 31 and 22 (501 and 31 are hidden under 360px, where a
+label would cover them), and the source line "Map data: U.S. Census Bureau,
+USGS" (the Census Bureau's terms require a credit; the wording is his to change,
+the credit is not optional). The town list's name for screen readers, "Towns on
+the map" (new in the fifth preview). The analyzer's field labels "Street
+address", "City", "ZIP" (they were placeholders). Control labels for the review
+and map buttons ("Pause the map" / "Play the map" for the map's, read by screen
+readers only). The towns section's eyebrow "Pawleys Island to Little River" and
+H2 "Where on the Grand Strand are you looking?" went with the section; the
+video's button labels went with the video.
 
-**Measured in Chromium.** One H1; no hidden or low-contrast text (the town
-labels measure 7.3:1 or better from pixels, the water names 5.6:1 or better next
-to their letters, the map data line 7.4:1 or better, all over the map); no
-sideways scroll from 320 to 1920 except 800 to 979, which is the header defect
-in the 2026-09-11 section (the live page does the same at 900). 204 behaviour
-checks pass (`tests/states.js`): reduced motion, JavaScript off,
-IntersectionObserver never firing, every video gate, reviews, fold budgets,
-fallback fonts, layout shift, and the map: label collisions at 28 sizes through
-the whole turn, labels on their towns at rest and while moving, no label showing
-at the start of the flight whether the map is scrolled to or jumped to, the
-pause button, the turn holding with the pointer or focus on a town label but not
-on the map background, a height-only resize leaving the turn alone, a breakpoint
-crossed mid-flight, keyboard focus arriving while the map waits overhead, a slow
-map image, stopping off screen, the zoom starting on the whole country beside the
-card with the basemap hidden and leaving only the basemap when it lands, the short
-flight with no zoom maps downloaded on Save-Data, the map stopping at rest and
-turning again when the motion setting changes mid-visit, and the plain list a
-browser without CSS trigonometry gets. `tests/twcheck.js` with labels 4.5% wider is clean at 42
-sizes. The map checks also pass in WebKit and Firefox at nine sizes (labels
-within 0.15px of their towns at rest, 0.65px while moving). The hero text
-measures 4.5:1 or better from pixels at twelve moments of the film, at ten sizes
-from 320 to 1920. Throttled phone (4x CPU, 9 Mbps, 60ms), five interleaved runs
-each, medians: LCP 0.73s (live 0.57s; the LCP element is the hero poster),
-blocking time 315ms (live 151ms), CLS 0. After a container restart on 2026-09-30
-the same test measured everything slower (the live page: blocking time 434ms);
-interleaved there, the build with the zoom matched the build before it (blocking
-time 620 against 629ms, LCP within the noise, CLS 0), because the zoom maps are
-not part of the page load. An earlier build used
+**Measured in Chromium (fifth preview).** One H1; no hidden or low-contrast text
+(`tests/check.js`, 128 text elements at every width, normal and reduced motion);
+no sideways scroll from 320 to 1920 except 800 to 979, which is the header
+defect in the 2026-09-11 section (the live page does the same at 900). The
+hero's words over the map measure 5.5:1 or better from pixels
+(`tests/mediacontrast.js`) at eleven moments of the flight and at rest, at 1440,
+1100, 820, 390 and 320px wide. 225 behaviour checks pass (`tests/states.js`):
+reduced motion, JavaScript off, IntersectionObserver never firing, the map's
+loading gates (the zoom maps with the page; none on Save-Data or 2G; the short
+flight when they stall), reviews in their band, fold budgets (the words, the
+paths, all nine towns and the map controls in the first screen on a wide screen,
+the paths and the flight's landing point on a narrow one), fallback fonts, layout
+shift, and the map: label collisions at 31 sizes through the whole turn, labels
+on their towns at rest and whenever they can be seen while it moves, the flight
+starting as the page opens with no label shown, the first frame on the eastern
+United States, tilted, where the words leave room (at 1440, 1100, 820 and 390),
+only the basemap left after landing, the pause button, the turn holding with the
+pointer or focus on a town label but not on the map background, a height-only
+resize leaving the turn alone, a breakpoint crossed mid-flight, keyboard focus
+arriving mid-flight, a slow basemap, the page script missing, motion turned off
+mid-flight and mid-visit, a reload further down the page, stopping off screen,
+and the plain list a browser without CSS trigonometry gets. `tests/twcheck.js`
+with labels 4.5% wider is clean at 29 sizes; `tests/cameras.js` agrees at all 24
+of its sizes. WebKit and Firefox at ten sizes: clean at rest, labels within
+0.15px of their towns at rest and once shown. On a phone-sized screen only Safari's
+toolbars (about 390x664) or a small phone put Pawleys Island and Murrells Inlet
+under the fold; the flight's landing point stays on screen. Throttled phone (4x
+CPU, 9 Mbps, 60ms), interleaved with the fourth preview: LCP 0.85s (the eyebrow;
+the fourth preview 0.75s on its poster, live 0.63s), blocking time about 500ms
+(the fourth preview about 440ms, live about 230ms), CLS 0. An earlier build used
 `content-visibility:auto` on the lower sections; it hid Team, Towns and FAQ from
 Safari/VoiceOver and Firefox screen readers, so it is gone and must not come
-back. In a clean copy of the branch
-with the page and media in place, `tests/media.js` finds all 35 local files and
-`build.js preflight` exits 0; the audit's 487 advisory warnings are the same
-count as the live site's, so the page adds none. The test scripts are in
-`design/homepage-v2/tests/` (README there). One measurement trap: this site's
-reduced-motion CSS gives every element a .01ms transition, so a script that
-emulates reduced motion and reads a position right after changing a style gets
-the old value; the tools switch transitions off first.
+back. In a clean copy of the branch with the page and `media/map/` in place,
+`tests/media.js` finds all 27 local files and `build.js preflight` exits 0; the
+audit's 487 advisory warnings are the same count as the live site's, so the page
+adds none. The test scripts are in `design/homepage-v2/tests/` (README there).
+One measurement trap: this site's reduced-motion CSS gives every element a .01ms
+transition, so a script that emulates reduced motion and reads a position right
+after changing a style gets the old value; the tools switch transitions off
+first.
 
 **Preview 1 sent 2026-09-29:** https://claude.ai/artifact/SSH4EGsM6DZpfTTaabcWeo
 He replied with the two notes above. **Preview 2 sent 2026-09-29 at the same
@@ -2351,9 +2390,10 @@ missing files; the twelve zoom images were added to the artifact, the other
 media files kept.
 
 **On accept.** Copy `design/homepage-v2/index.html` over
-`chapter3realty/index.html`, `design/homepage-v2/media/hero/` to
-`chapter3realty/media/hero/` and `design/homepage-v2/media/map/` to
-`chapter3realty/media/map/`, and `git add chapter3realty/media`. Then
+`chapter3realty/index.html` and `design/homepage-v2/media/map/` to
+`chapter3realty/media/map/`, and `git add chapter3realty/media`. The fifth
+preview uses no `media/hero/` file; copy that folder only if he picks the
+fourth preview's video hero instead (commit b020a20). Then
 `node design/homepage-v2/tests/media.js` must print "all ... local files
 present" and exit 0: `build.js preflight` checks asset links but not `/media/`
 files, so it passes with every poster, film and map image missing (that gap is
@@ -2368,9 +2408,11 @@ undoing.
 ## Suggested order for the next session
 
 00000. **Homepage redesign candidate** (section above). Waiting for his accept
-   or decline on the fourth preview (words over the film, the dark 3D map that
-   now zooms in from the whole United States). The map data line is new copy he
-   may reword. Do not touch `chapter3realty/index.html` before he says yes.
+   or decline on the fifth preview (the dark 3D map is the landing page and flies
+   in from the eastern United States, tilted; the house video is gone; the
+   reviews are a band under the map). The map data line and the town list's
+   screen-reader name "Towns on the map" are new copy he may reword. Do not
+   touch `chapter3realty/index.html` before he says yes.
 0000. **The returns page round 2 is on the branch** (section above). Expect his
    reaction to the new cap rates, the satellite map and the rebuilt
    calculator. If he wants the short-term figures on the investor price too,

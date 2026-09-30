@@ -32,9 +32,9 @@ const WIDTHS = wArg > -1 ? args[wArg + 1].split(',').map(Number) : [320, 360, 39
       scrollTo(0, H()); await new Promise(r => setTimeout(r, 400));
     });
     await page.waitForTimeout(1500);
-    // the towns map may still be landing (its pins show 1.5s to 2.7s after the flight starts): wait for that, up to 8s,
-    // so a label caught mid-fade is not counted, while one that never shows still is
-    await page.waitForFunction(() => [...document.querySelectorAll('.tw-pin')].every((e) => getComputedStyle(e).opacity === '1'), null, { timeout: 8000 }).catch(() => {});
+    // the hero map may still be landing (its pins show 3.7s to 4.8s after the flight starts, which waits up to 2.5s for
+    // its maps): wait for that, up to 12s, so a label caught mid-fade is not counted, while one that never shows still is
+    await page.waitForFunction(() => [...document.querySelectorAll('.tw-pin')].every((e) => getComputedStyle(e).opacity === '1'), null, { timeout: 12000 }).catch(() => {});
     const r = await page.evaluate(() => {
       const out = {};
       const de = document.documentElement;

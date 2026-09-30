@@ -1,6 +1,6 @@
-// shared in-page geometry for the towns map tests. Runs inside the page (page.evaluate(fn)).
+// shared in-page geometry for the hero map tests. Runs inside the page (page.evaluate(fn)).
 window.__tw = (function () {
-  const st = document.querySelector('.tw-stage'), sec = document.querySelector('#towns');
+  const st = document.querySelector('#home .tw-stage'), sec = document.querySelector('#home');
   const R = (e) => e.getBoundingClientRect();
   // oriented box of an element whose transform is translate + rotate: centre, half sizes, angle
   function obox(el, pad) {
@@ -21,6 +21,15 @@ window.__tw = (function () {
     }
     return true;
   }
+  // the words over the map (eyebrow, H1, sub-header, paths, map links): the box round those that overlap the stage
+  function words() {
+    const S = R(st); let u = null;
+    for (const el of document.querySelectorAll('.cine-copy > *')) {
+      const r = R(el); if (!r.height || r.bottom <= S.top || r.top >= S.bottom) continue;
+      u = u ? { left: Math.min(u.left, r.left), top: Math.min(u.top, r.top), right: Math.max(u.right, r.right), bottom: Math.max(u.bottom, r.bottom) } : { left: r.left, top: r.top, right: r.right, bottom: r.bottom };
+    }
+    return u && { left: u.left, top: u.top, width: u.right - u.left, height: u.bottom - u.top };
+  }
   function inside(b, S, m) { return corners(b).every(([x, y]) => x >= S.left + m && x <= S.right - m && y >= S.top + m && y <= S.bottom - m); }
   function items() {
     const pins = [...document.querySelectorAll('.tw-pin')].map((li) => { const r = R(li); return { n: li.dataset.town, x: r.left, y: r.top, li, a: li.querySelector('a') }; });
@@ -33,9 +42,8 @@ window.__tw = (function () {
   function problems(grow) {
     const S = R(st), out = [];
     const { pins, deco } = items();
-    const card = document.querySelector('.tw-card'), cardAbs = getComputedStyle(card).position === 'absolute';
-    const obs = [];
-    if (cardAbs) obs.push({ n: 'card', b: rbox(R(card), 8) });
+    const obs = [], wb = words();
+    if (wb) obs.push({ n: 'words', b: rbox(wb, 8) });
     // the controls over the map: the pause button, the compass and the map data line
     for (const [n, sel] of [['compass', '.tw-compass'], ['pause', '.tw-rot'], ['credit', '.tw-credit']]) {
       const el = st.querySelector(sel);
@@ -67,11 +75,13 @@ window.__tw = (function () {
     });
     return out;
   }
-  // labels must sit on their towns: a probe inside the tilted plane at the same spot, projected by the browser
-  function projErr() {
+  // labels must sit on their towns: a probe inside the tilted plane at the same spot, projected by the browser.
+  // seen: only the labels that can be seen (the flight moves the hidden ones only in its last part, before they show)
+  const seenOp = (el) => { let o = 1; for (let a = el; a && a !== st; a = a.parentElement) o *= +getComputedStyle(a).opacity; return o; };
+  function projErr(seen) {
     const plane = document.querySelector('.tw-plane'); let worst = 0, who = '';
     for (const li of document.querySelectorAll('.tw-pt')) {
-      if (getComputedStyle(li).display === 'none') continue;
+      if (getComputedStyle(li).display === 'none' || (seen && seenOp(li) < 0.05)) continue;
       const cs = getComputedStyle(li), px = +cs.getPropertyValue('--px'), py = +cs.getPropertyValue('--py');
       const pr = document.createElement('i'); pr.style.cssText = `position:absolute;left:${px * 100}%;top:${py * 100}%;width:0;height:0`;
       plane.appendChild(pr); const a = R(pr), b = R(li); pr.remove();
@@ -81,5 +91,5 @@ window.__tw = (function () {
   }
   function heads() { sec.style.removeProperty('--h0'); const cs = getComputedStyle(sec); return [parseFloat(cs.getPropertyValue('--h0')), parseFloat(cs.getPropertyValue('--h1'))]; }
   function setHead(h) { sec.style.setProperty('--h0', h + 'deg'); }
-  return { problems, projErr, heads, setHead, obox, hit, inside, R };
+  return { problems, projErr, heads, setHead, obox, hit, inside, R, words };
 })();

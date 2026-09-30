@@ -53,7 +53,7 @@ H = (LAT1 - LAT0) * S                        # plane height (~1602)
 IMG_W = 2048
 IMG_H = round(IMG_W * H / W)                 # 1771
 SX, SY = IMG_W / W, IMG_H / H                # plane units -> 2048 px
-# width, AVIF byte ceiling. The page's plane is wider than the screen (2000 CSS px on desktop, 1200 on phones), so
+# width, AVIF byte ceiling. The page's plane is wider than the screen (1500 to 1850 CSS px on desktop, 1200 on phones), so
 # 2x and 3x screens need the two larger files to stay sharp; srcset in src/main.tpl.html picks one by density.
 SIZES = [(4096, 450_000), (3072, 320_000), (2048, 320_000), (1400, 170_000)]
 
@@ -523,9 +523,9 @@ def pick_webp(png, out, target_db, limit):
 
 # ---- 5. anchors -----------------------------------------------------------------
 # Shields and water labels are HTML on the page, placed over the tilted plane by CSS
-# (design/homepage-v2/src/head.html, #towns). Each anchor sits on its feature; where the brief
+# (design/homepage-v2/src/head.html, #home). Each anchor sits on its feature; where the brief
 # leaves room ("near", "midway"), it slides along the feature to the spot nearest the nominal
-# one that stays clear of the town pins, the town labels, the other anchors, the text card,
+# one that stays clear of the town pins, the town labels, the other anchors, the words over the map,
 # the map controls and data line, and the fogged edges, at every heading of the slow turn.
 # The cameras and label sides come from data/cameras.json, which tests/cameras.js keeps equal
 # to the page. The page places the water names itself (head.html); here they only steer.
@@ -541,7 +541,7 @@ TOWN_LABEL_W = {"pawleys-island": 117.5, "murrells-inlet": 107.7, "garden-city":
                 "little-river": 93.5}
 SHIELD_W = {"17": 19.1, "501": 27.1, "31": 21.5, "22": 24.1}
 WATER_W = {"Atlantic Ocean": 103, "Intracoastal Waterway": 155, "Waccamaw River": 116}
-SHIELD_H, WATER_H, PIN_R, CARD, BUTTON, CREDIT_W = 17.5, 13, 9, (470, 272.4, 56), 44, 191
+SHIELD_H, WATER_H, PIN_R, BUTTON, CREDIT_W = 17.5, 13, 9, 44, 191
 CLEAR = 6                                      # CSS px between an anchor's box and anything else
 MASK_MIN = 0.5                                 # the plane fades out toward its edges; stay where it is at least half visible
 
@@ -550,13 +550,21 @@ def label_size(slug, cam):
     if cam["font"] == 13.5: return w, 31.5
     return (w - 26) * cam["font"] / 13.5 + 22, cam["font"] + 16         # 7/10 px padding and a 1 px border
 
+def stage_h(cam):
+    """The map stage's height in CSS px. Beside the words (a wide screen) the stage is the hero, one screen tall less the
+    89 px header, from 560 to 920 px. Under the words (a narrow screen) only its bottom --ma px are free of them; the
+    words fill the rest, so any top height does, and 300 px stands in for it."""
+    if cam["layout"] == "beside": return min(920, max(560, cam["vh"] - 89))
+    return cam["ma"] + 300
+
 def screen(cam, vw, x, y, head):
-    """Plane units -> stage CSS px, exactly as the page's .tw-pt transform does it."""
+    """Plane units -> stage CSS px, exactly as the page's .tw-pt transform does it (the camera target is --cx px right of
+    the stage's middle and --cb px above its bottom)."""
     u, v = (x / W - TX) * cam["pw"], (y / H - TY) * cam["pw"] * HW
     h, t = math.radians(head), math.radians(cam["tilt"])
     up, vp = u * math.cos(h) - v * math.sin(h), u * math.sin(h) + v * math.cos(h)
     k = cam["P"] / (cam["P"] - vp * math.sin(t))
-    return vw / 2 + cam["cx"] + up * k, cam["cy"] * cam["sh"] + vp * math.cos(t) * k
+    return vw / 2 + cam["cx"] + up * k, stage_h(cam) - cam["cb"] + vp * math.cos(t) * k
 
 def screen_angle(cam, ang, head):
     a = math.radians(ang + head)
@@ -568,7 +576,7 @@ def mask_alpha(x, y):
     return 1.0 if e <= 0.62 else max(0.0, (1 - e) / 0.38)
 
 def fixed_obstacles(cam, vw, head):
-    """Town pins, their stems and labels, the card, the controls and the map data line, in stage px."""
+    """Town pins, their stems and labels, the words, the controls and the map data line, in stage px."""
     out = []
     for slug, n, lat, lon in TOWNS:
         X, Y = screen(cam, vw, plane_x(lon), plane_y(lat), head)
@@ -578,13 +586,16 @@ def fixed_obstacles(cam, vw, head):
         x0, y0 = X - ax * w + ox, Y - ay * h + oy          # the label's corner, as the page's transform puts it
         out.append(box(x0, y0, x0 + w, y0 + h))
         if stem: out.append(box(X - 2, Y - stem, X + 2, Y))
-    side = max(32, (vw - 1200) / 2 + 32)
-    if cam["card"]: out.append(box(side, CARD[2], side + CARD[0], CARD[2] + CARD[1]))
+    side, sh = max(32, (vw - 1200) / 2 + 32), stage_h(cam)
+    # the words: beside the map, a column the height of the stage (they are centred, so they move with the screen's
+    # height); over a narrow screen, everything above the map's bottom --ma px
+    if cam["layout"] == "beside": out.append(box(side - 8, 0, side + min(544, (vw - 2 * side - 48) / 2) + 8, sh))
+    else: out.append(box(0, 0, vw, sh - cam["ma"] + 8))
     # the pause button and the compass, side by side (a column on phones), with the map data line under them
     right = side if cam["ci"] == "side" else cam["ci"]
     cw, ch = (2 * BUTTON + 10, BUTTON) if cam["ctl"] == "row" else (BUTTON, 2 * BUTTON + 10)
-    out.append(box(vw - right - cw, cam["sh"] - cam["ctlBottom"] - ch, vw - right, cam["sh"] - cam["ctlBottom"]))
-    out.append(box(vw - right - CREDIT_W, cam["sh"] - 26, vw - right, cam["sh"] - 8))
+    out.append(box(vw - right - cw, sh - cam["ctlBottom"] - ch, vw - right, sh - cam["ctlBottom"]))
+    out.append(box(vw - right - CREDIT_W, sh - 26, vw - right, sh - 8))
     return out
 
 def anchor_box(cam, vw, head, a):
@@ -597,6 +608,7 @@ def anchor_box(cam, vw, head, a):
     return shapely.affinity.translate(b, X, Y)
 
 VIEWS = [(cam, vw, head) for cam in CAMERAS for vw in cam["vws"] for head in cam["heads"]]
+DESK = [cam["name"] for cam in CAMERAS if cam["layout"] == "beside"]   # the wide-screen cameras come first
 FIXED = {(cam["name"], vw, head): fixed_obstacles(cam, vw, head) for cam, vw, head in VIEWS}
 
 def conflicts(a, placed):
@@ -610,10 +622,10 @@ def conflicts(a, placed):
         key = (cam["name"], vw, head)
         b = anchor_box(cam, vw, head, a)
         x0, y0, x1, y1 = b.bounds
-        if x1 < 0 or x0 > vw or y1 < 0 or y0 > cam["sh"]: continue           # off screen here
+        if x1 < 0 or x0 > vw or y1 < 0 or y0 > stage_h(cam): continue       # off screen here
         gap = min([b.distance(o) for o in FIXED[key]] + [b.distance(p["boxes"][key]) for p in placed])
         if gap < 1 or x0 < 0 or x1 > vw: hard[cam["name"]] += 1
-        elif gap < CLEAR or y0 < 2.2 * cam["fog"] or y1 > cam["sh"] - 48 or x0 < CLEAR or x1 > vw - CLEAR:
+        elif gap < CLEAR or y0 < 2.2 * cam["fog"] or y1 > stage_h(cam) - 48 or x0 < CLEAR or x1 > vw - CLEAR:
             soft[cam["name"]] += 1
     return hard, soft
 
@@ -623,7 +635,7 @@ def choose(cands, nominal, placed):
     best = None
     for a in cands:
         hard, soft = conflicts(a, placed)
-        d_h, d_s = hard["desktop"], soft["desktop"]
+        d_h, d_s = sum(hard[n] for n in DESK), sum(soft[n] for n in DESK)
         key = (d_h, sum(hard.values()) - d_h, d_s, sum(soft.values()) - d_s,
                round(math.hypot(a["x"] - nominal[0], a["y"] - nominal[1]), 1))
         if best is None or key < best[0]: best = (key, a)
@@ -771,7 +783,8 @@ def anchors(geo, rasters):
     pts, t = between(us17, town_px("pawleys-island"), town_px("murrells-inlet"), 0.2, 0.8, off=60)
     place("17 (Pawleys to Murrells Inlet)", pts, (X / SX, Y / SY), shield("17", "us", us17, 4))
 
-    log("  placement: overlaps and near misses, desktop (of 9 views) / other widths (of 18); plane units from the nominal spot")
+    nw = sum(len(c["vws"]) * 3 for c in CAMERAS if c["layout"] == "beside"); nn = sum(len(c["vws"]) * 3 for c in CAMERAS) - nw
+    log(f"  placement: overlaps and near misses, wide screens (of {nw} views) / narrow screens (of {nn}); plane units from the nominal spot")
     for name, (dh, oh, ds, os_, dist), a in report:
         lon, la = LON0 + a["x"] / (K * S), LAT1 - a["y"] / S
         log(f"    {name:32s} overlaps {dh:2d} / {oh:2d}  near {ds:2d} / {os_:2d}  {dist:6.1f}  at {la:.4f}, {lon:.4f}")
