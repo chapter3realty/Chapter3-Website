@@ -24,7 +24,7 @@ window.__tw = (function () {
   function inside(b, S, m) { return corners(b).every(([x, y]) => x >= S.left + m && x <= S.right - m && y >= S.top + m && y <= S.bottom - m); }
   function items() {
     const pins = [...document.querySelectorAll('.tw-pin')].map((li) => { const r = R(li); return { n: li.dataset.town, x: r.left, y: r.top, li, a: li.querySelector('a') }; });
-    const deco = [...document.querySelectorAll('.tw-deco .sh b, .tw-deco .wl i')].filter((e) => e.getClientRects().length).map((e) => ({ n: e.textContent, el: e, sh: !!e.closest('.sh') }));
+    const deco = [...document.querySelectorAll('.tw-deco .sh b, .tw-deco .wl i')].filter((e) => e.getClientRects().length).map((e) => ({ n: e.dataset.t || e.textContent, el: e, sh: !!e.closest('.sh') }));
     return { pins, deco };
   }
   // every problem at the current camera
@@ -34,10 +34,13 @@ window.__tw = (function () {
     const S = R(st), out = [];
     const { pins, deco } = items();
     const card = document.querySelector('.tw-card'), cardAbs = getComputedStyle(card).position === 'absolute';
-    const comp = document.querySelector('.tw-compass');
     const obs = [];
     if (cardAbs) obs.push({ n: 'card', b: rbox(R(card), 8) });
-    if (comp && getComputedStyle(comp).display !== 'none') obs.push({ n: 'compass', b: rbox(R(comp), 6) });
+    // the controls over the map: the pause button, the compass and the map data line
+    for (const [n, sel] of [['compass', '.tw-compass'], ['pause', '.tw-rot'], ['credit', '.tw-credit']]) {
+      const el = st.querySelector(sel);
+      if (el && el.getClientRects().length) obs.push({ n, b: rbox(R(el), 6) });
+    }
     const dots = pins.map((p) => ({ n: p.n, b: { cx: p.x, cy: p.y, hw: 8, hh: 8, a: 0 } }));
     const pills = pins.map((p) => {
       const b = obox(p.a, 2);
@@ -72,7 +75,7 @@ window.__tw = (function () {
       const cs = getComputedStyle(li), px = +cs.getPropertyValue('--px'), py = +cs.getPropertyValue('--py');
       const pr = document.createElement('i'); pr.style.cssText = `position:absolute;left:${px * 100}%;top:${py * 100}%;width:0;height:0`;
       plane.appendChild(pr); const a = R(pr), b = R(li); pr.remove();
-      const e = Math.hypot(a.left - b.left, a.top - b.top); if (e > worst) { worst = e; who = li.dataset.town || li.textContent; }
+      const e = Math.hypot(a.left - b.left, a.top - b.top); if (e > worst) { worst = e; const t = li.querySelector('[data-t]'); who = li.dataset.town || (t && t.dataset.t) || ''; }
     }
     return { worst: +worst.toFixed(2), who };
   }

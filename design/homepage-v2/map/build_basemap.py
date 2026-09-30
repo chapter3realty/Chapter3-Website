@@ -4,7 +4,9 @@
     python3 design/homepage-v2/map/build_basemap.py [--work DIR]
 
 Steps: download U.S. Census Bureau TIGER/Line 2024 shapefiles and USGS PAD-US 4.1
-protected areas (both public domain) into a work folder outside the repo, project them
+protected areas into a work folder outside the repo (TIGER/Line is free to use, on the
+condition that the Census Bureau is credited as the source; the page's "Map data" line
+does that; PAD-US is public domain), project them
 onto the page's plane, write an SVG in Google Maps' current dark roadmap palette with no
 text on it, rasterize it with Playwright Chromium (render_svg.js), encode AVIF and WebP
 with ffmpeg (quality first, then the byte ceiling), and write data/strand-plane.json
@@ -13,10 +15,12 @@ is sampled on the lossless renders and on each encoded file, decoded by ffmpeg a
 Chromium, before anything in the repo is written.
 
 Needs: python3 with pyshp, shapely, numpy; curl; node with playwright
-(NODE_PATH=$(npm root -g)); a Chromium binary; an ffmpeg with libaom-av1 and
-libwebp. Paths can be overridden with CHROMIUM, FFMPEG and STRAND_MAPDATA.
+(NODE_PATH=$(npm root -g)) and its Chromium; an ffmpeg with libaom-av1 and libwebp on
+PATH. Environment overrides: FFMPEG (the ffmpeg binary), CHROMIUM (a Chromium binary
+instead of Playwright's own) and STRAND_MAPDATA (the work folder; default: strand-mapdata
+in the system temp folder).
 """
-import argparse, collections, io, json, math, os, re, subprocess, time, urllib.parse, zipfile
+import argparse, collections, io, json, math, os, re, subprocess, tempfile, time, urllib.parse, zipfile
 
 import numpy as np
 import shapefile
@@ -29,9 +33,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 HP = os.path.dirname(HERE)
 MEDIA = os.path.join(HP, "media", "map")
 PLANE_JSON = os.path.join(HP, "data", "strand-plane.json")
-WORK = os.environ.get("STRAND_MAPDATA", "/tmp/claude-0/-home-user-Chapter3-Website/9ba410d9-cb33-5363-bdba-94e4f377d9fb/scratchpad/mapdata")
-FFMPEG = os.environ.get("FFMPEG", "/usr/local/lib/python3.11/dist-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2")
-CHROMIUM = os.environ.get("CHROMIUM", "/opt/pw-browsers/chromium")
+CAMERAS_JSON = os.path.join(HP, "data", "cameras.json")
+WORK = os.environ.get("STRAND_MAPDATA", os.path.join(tempfile.gettempdir(), "strand-mapdata"))
+FFMPEG = os.environ.get("FFMPEG", "ffmpeg")
+CHROMIUM = os.environ.get("CHROMIUM")          # unset: Playwright's own Chromium
 TIGER = "https://www2.census.gov/geo/tiger/TIGER2024/"
 # USGS Protected Areas Database of the United States (PAD-US) 4.1, public domain
 PADUS = "https://services.arcgis.com/v01gqwM5QqNysAAi/arcgis/rest/services/Manager_Name_PADUS/FeatureServer/0/query"
@@ -426,7 +431,8 @@ def write_svg(geo, path):
 
 # ---- 4. raster + encode ---------------------------------------------------------
 def node_env():
-    env = dict(os.environ, CHROMIUM=CHROMIUM)
+    env = dict(os.environ)
+    if CHROMIUM: env["CHROMIUM"] = CHROMIUM
     if "NODE_PATH" not in env:
         env["NODE_PATH"] = subprocess.run(["npm", "root", "-g"], capture_output=True, text=True, check=True).stdout.strip()
     return env
@@ -520,35 +526,22 @@ def pick_webp(png, out, target_db, limit):
 # (design/homepage-v2/src/head.html, #towns). Each anchor sits on its feature; where the brief
 # leaves room ("near", "midway"), it slides along the feature to the spot nearest the nominal
 # one that stays clear of the town pins, the town labels, the other anchors, the text card,
-# the compass and the fogged edges, at every heading of the slow turn. CAMERAS copies the
-# page's camera and label sides for each width band from head.html as it stood on 2026-09-29
-# (21:48 UTC). It only steers placement: when the page's camera changes, update it, rebuild,
-# and run the page's own label tests.
+# the map controls and data line, and the fogged edges, at every heading of the slow turn.
+# The cameras and label sides come from data/cameras.json, which tests/cameras.js keeps equal
+# to the page. The page places the water names itself (head.html); here they only steer.
 TX, TY, HW = 0.49, 0.45, H / W                 # camera target on the plane (fractions), height/width
-CAMERAS = [
-    dict(name="desktop", vws=(1100, 1440, 1920), sh=760, P=1200, pw=1900, tilt=56, heads=(13, 16, 19), cx=80, cy=0.66,
-         fog=90, font=13.5, card=True, compass=(28, None),
-         right={"myrtle-beach", "little-river", "surfside-beach"}, left={"conway", "murrells-inlet"}),
-    dict(name="tablet", vws=(900, 1099), sh=600, P=1100, pw=1600, tilt=54, heads=(9, 12, 15), cx=80, cy=0.55,
-         fog=50, font=13.5, card=False, compass=(20, 34),
-         right={"myrtle-beach", "north-myrtle-beach", "surfside-beach", "murrells-inlet"}, left={"carolina-forest"}),
-    dict(name="small tablet", vws=(700, 899), sh=600, P=1100, pw=1300, tilt=50, heads=(13, 16, 19), cx=0, cy=0.55,
-         fog=50, font=13.5, card=False, compass=(20, 34),
-         right={"myrtle-beach", "north-myrtle-beach", "surfside-beach", "pawleys-island"},
-         left={"carolina-forest", "murrells-inlet"}),
-    dict(name="phone", vws=(360, 430), sh=620, P=900, pw=1300, tilt=52, heads=(-30, -28, -26), cx=50, cy=0.5,
-         fog=40, font=12, card=False, compass=(20, 23.8),
-         right={"myrtle-beach", "surfside-beach", "murrells-inlet"},
-         left={"north-myrtle-beach", "little-river", "garden-city", "carolina-forest"}),
-]
-# box sizes in CSS px, measured on the page (town labels at 13.5 px type; phones use 12 px type).
-# The compass sits 2rem (34 px) and 1.4rem (23.8 px) from the right edge on tablets and phones.
+with open(CAMERAS_JSON) as _f: _cams = json.load(_f)
+SIDE_NAMES = _cams["sideNames"]
+CAMERAS = [dict(c, heads=tuple(c["heads"]), vws=tuple(c["vws"]),
+                sides={t: SIDE_NAMES[v] if isinstance(v, str) else v for t, v in c["sides"].items()})
+           for c in _cams["cameras"]]
+# box sizes in CSS px, measured on the page (town labels at 13.5 px type; phones use 12 px type)
 TOWN_LABEL_W = {"pawleys-island": 117.5, "murrells-inlet": 107.7, "garden-city": 102.9, "surfside-beach": 121.1,
                 "myrtle-beach": 109.8, "carolina-forest": 121.8, "north-myrtle-beach": 149.4, "conway": 77.1,
                 "little-river": 93.5}
 SHIELD_W = {"17": 19.1, "501": 27.1, "31": 21.5, "22": 24.1}
 WATER_W = {"Atlantic Ocean": 103, "Intracoastal Waterway": 155, "Waccamaw River": 116}
-SHIELD_H, WATER_H, PIN_R, STEM, CARD, COMPASS = 17.5, 13, 9, 28, (470, 272.4, 56), 44
+SHIELD_H, WATER_H, PIN_R, CARD, BUTTON, CREDIT_W = 17.5, 13, 9, (470, 272.4, 56), 44, 191
 CLEAR = 6                                      # CSS px between an anchor's box and anything else
 MASK_MIN = 0.5                                 # the plane fades out toward its edges; stay where it is at least half visible
 
@@ -575,20 +568,23 @@ def mask_alpha(x, y):
     return 1.0 if e <= 0.62 else max(0.0, (1 - e) / 0.38)
 
 def fixed_obstacles(cam, vw, head):
-    """Town pins, their stems and labels, the card and the compass, in stage px."""
+    """Town pins, their stems and labels, the card, the controls and the map data line, in stage px."""
     out = []
     for slug, n, lat, lon in TOWNS:
         X, Y = screen(cam, vw, plane_x(lon), plane_y(lat), head)
         w, h = label_size(slug, cam)
+        ax, ay, ox, oy, stem = cam["sides"].get(slug, SIDE_NAMES["up"])
         out.append(Point(X, Y).buffer(PIN_R))
-        if slug in cam["right"]: out.append(box(X + 12, Y - h / 2, X + 12 + w, Y + h / 2))
-        elif slug in cam["left"]: out.append(box(X - 12 - w, Y - h / 2, X - 12, Y + h / 2))
-        else: out += [box(X - w / 2, Y - STEM - h, X + w / 2, Y - STEM), box(X - 2, Y - STEM, X + 2, Y)]
+        x0, y0 = X - ax * w + ox, Y - ay * h + oy          # the label's corner, as the page's transform puts it
+        out.append(box(x0, y0, x0 + w, y0 + h))
+        if stem: out.append(box(X - 2, Y - stem, X + 2, Y))
     side = max(32, (vw - 1200) / 2 + 32)
     if cam["card"]: out.append(box(side, CARD[2], side + CARD[0], CARD[2] + CARD[1]))
-    bottom, right = cam["compass"]
-    right = side if right is None else right
-    out.append(box(vw - right - COMPASS, cam["sh"] - bottom - COMPASS, vw - right, cam["sh"] - bottom))
+    # the pause button and the compass, side by side (a column on phones), with the map data line under them
+    right = side if cam["ci"] == "side" else cam["ci"]
+    cw, ch = (2 * BUTTON + 10, BUTTON) if cam["ctl"] == "row" else (BUTTON, 2 * BUTTON + 10)
+    out.append(box(vw - right - cw, cam["sh"] - cam["ctlBottom"] - ch, vw - right, cam["sh"] - cam["ctlBottom"]))
+    out.append(box(vw - right - CREDIT_W, cam["sh"] - 26, vw - right, cam["sh"] - 8))
     return out
 
 def anchor_box(cam, vw, head, a):

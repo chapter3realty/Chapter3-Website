@@ -1,11 +1,12 @@
 # Homepage redesign tests
 
-Browser measurements for the redesign. Run with Playwright's Chromium:
+Browser measurements for the redesign. Run with Playwright's Chromium. `states.js`, `cameras.js`,
+`twcheck.js` and `twmotion.js` exit 1 when a check fails.
 
     export NODE_PATH=$(npm root -g)
     node check.js  http://localhost:8124/            # every width: sideways scroll, H1, hidden text, contrast, errors
     node check.js  http://localhost:8124/ --reduced  # same, reduced motion
-    node states.js http://localhost:8124/            # 144 behaviour checks: video gates, reviews, fold, fonts, CLS, the towns map
+    node states.js http://localhost:8124/            # 196 behaviour checks: video gates, reviews, fold, fonts, CLS, the towns map
     node perf.js   http://localhost:8124/ mobile     # throttled LCP, CLS, blocking time
     node holes.js  http://localhost:8124/ 768 1024   # transparent pixels at the film edge while it scales
     node mediacontrast.js http://localhost:8124/ 1440 '.tl'   # contrast from pixels
@@ -15,12 +16,17 @@ The towns map (a tilted basemap with CSS-placed labels) has its own tools. They 
 
     node twcheck.js  http://localhost:8124/ 1440x900 390x844   # label collisions over the whole turn, and label-to-map error
     GROW=0.045 node twcheck.js http://localhost:8124/          # the same with labels 4.5% wider, as Firefox draws them
+    SPACING=1 node twcheck.js http://localhost:8124/ 1100x900  # with the WCAG 1.4.12 text spacing (labels then widen too)
+    CSS='...' node twcheck.js http://localhost:8124/ 1100x900  # try a placement before writing it into src/head.html
+    node cameras.js  http://localhost:8124/                    # the page's cameras match data/cameras.json
     node twmotion.js http://localhost:8124/ 1440 900           # labels stay on their towns during the flight and the turn
     node twperf.js   http://localhost:8124/ 390 844 4          # main-thread cost while the map moves (4x CPU slowdown)
     node twsearch.js '<json>'                                  # searches cameras and label sides for a range of widths
 
 `twsearch.js` is how the per-width cameras, label sides and water-name spots in
-`src/head.html` were chosen. Example for the phone range:
+`src/head.html` were chosen. A camera or label side changed there goes into
+`data/cameras.json` too, which `map/build_basemap.py` places the road shields for.
+Example for the phone range:
 
     node twsearch.js '{"url":"http://localhost:8124/","sh":640,"widths":[360,390,430,699],"grid":{"P":[900],"pw":[1100,1200,1300],"t0":[46,50],"hc":[-34,-30,-26],"cx":[10,20,40],"cy":[0.44,0.5]},"drift":2,"order":["myrtle-beach","carolina-forest","conway","north-myrtle-beach","little-river","surfside-beach","garden-city","murrells-inlet","pawleys-island"],"prefs":["up","r","l","ur","ul","up2"],"grow":0.045}'
 

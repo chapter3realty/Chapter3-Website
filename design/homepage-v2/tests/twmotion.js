@@ -1,10 +1,12 @@
 // labels stay on their towns while the map moves: freeze every animation at several moments and compare
 // each label anchor with a probe placed at the same spot inside the (animated) plane. node twmotion.js <url> <w> <h>
+// Exits 1 when a label is more than 1px off its town, or when nothing moved.
 const { chromium } = require('playwright'), fs = require('fs');
 (async () => {
   const [url, w, h] = process.argv.slice(2);
   const lib = fs.readFileSync(__dirname + '/twlib.js', 'utf-8');
   const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+  let worst = 0, still = 0;
   for (const at of [300, 900, 1800, 2700, 6000, 11000]) {
     const ctx = await b.newContext({ viewport: { width: +w, height: +h }, isMobile: +w <= 430, hasTouch: +w <= 430 });
     const p = await ctx.newPage();
@@ -25,7 +27,11 @@ const { chromium } = require('playwright'), fs = require('fs');
       return { moving, err: e.worst, who: e.who, plane: plane.slice(0, 60) };
     });
     console.log(`t+${at}ms: ${r.moving} transform animations, worst label offset ${r.err}px (${r.who})`);
+    worst = Math.max(worst, r.err); if (!r.moving) still++;
     await ctx.close();
   }
   await b.close();
+  const bad = worst > 1 || still > 0;
+  console.log(bad ? `FAIL: worst ${worst}px, ${still} moments with nothing moving` : `ok: worst ${worst}px`);
+  process.exitCode = bad ? 1 : 0;
 })().catch((e) => { console.error(e); process.exit(1); });

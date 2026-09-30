@@ -174,22 +174,27 @@
   })();
 
   /* ---- towns: when the map comes into view the camera tilts down from overhead and turns; after that it turns slowly
-     while the map is on screen and holds still under the pointer or keyboard focus. The compositor plays both motions:
-     each moving element gets transform keyframes computed here with the projection head.html uses, so the page does no
-     style work per frame. With no motion allowed nothing here runs and the CSS draws the map at rest. ---- */
+     while the map is on screen. It holds still while the pointer is on a town label or keyboard focus is on one, and the
+     button next to the compass stops it. The compositor plays both motions: each moving element gets transform keyframes
+     computed here with the projection head.html uses, so the page does no style work per frame. With no motion allowed
+     nothing here runs and the CSS draws the map at rest. ---- */
   var tw = $('#towns'), tst = tw && $('.tw-stage', tw);
   var towns = { stop: function () {}, sync: function () {} };
   /* only where CSS places the labels on the map: without trigonometric CSS they are a plain list, which must not move */
   var trig = window.CSS && CSS.supports && CSS.supports('width', 'calc(1px * sin(1deg))');
   if (tst && hasIO && tst.animate && trig) (function () {
-    var plane = $('.tw-plane', tst), pts = $$('.tw-pt', tst), wls = $$('.tw-deco .wl i', tst), needle = $('.tw-compass i', tst);
-    var R = Math.PI / 180, flown = false, landed = false, vis = false, hold = false, fly = [], turn = [];
+    var plane = $('.tw-plane', tst), img = $('img', plane), pts = $$('.tw-pt', tst), wls = $$('.tw-deco .wl i', tst);
+    var needle = $('.tw-compass i', tst), btn = $('.tw-rot', tst);
+    var R = Math.PI / 180, flown = false, landed = false, vis = false, hov = false, foc = false, stopped = false;
+    var fly = [], turn = [], cam = '';
     function num(cs, k) { return parseFloat(cs.getPropertyValue(k)) || 0; }
+    /* everything the keyframes depend on: the camera, each label's spot, and which labels this width draws */
     function camera() {
       var cs = getComputedStyle(tw);
       return { P: num(cs, '--P'), pw: num(cs, '--pw'), hw: num(cs, '--hw'), tx: num(cs, '--tx'), ty: num(cs, '--ty'), t0: num(cs, '--t0'), h0: num(cs, '--h0'), h1: num(cs, '--h1'),
         at: pts.map(function (el) { var s = getComputedStyle(el); return [num(s, '--px'), num(s, '--py')]; }),
-        a: wls.map(function (el) { return num(getComputedStyle(el), '--a'); }) };
+        a: wls.map(function (el) { return num(getComputedStyle(el), '--a'); }),
+        on: pts.concat(wls).map(function (el) { return el.getClientRects().length > 0; }) };
     }
     /* one frame of the scene at tilt t, heading h (degrees) and zoom z */
     function pose(c, t, h, z) {
@@ -206,6 +211,7 @@
     }
     function play(c, samples, opts) {
       var fr = samples.map(function (s) { return pose(c, s[0], s[1], s[2]); }), out = [];
+      cam = JSON.stringify(c);
       /* an element the CSS hides at this width is left alone: animating it would tick on the main thread */
       var put = function (el, key, i) { if (el.getClientRects().length) out.push(el.animate(fr.map(function (f) { return { transform: i < 0 ? f[key] : f[key][i] }; }), opts)); };
       put(plane, 'plane', -1);
@@ -220,14 +226,24 @@
       for (var n = 0; n < 30; n++) { t = (lo + hi) / 2; if (3 * .16 * t * (1 - t) * (1 - t) + 3 * .3 * t * t * (1 - t) + t * t * t < x) lo = t; else hi = t; }
       return 3 * t * (1 - t) * (1 - t) + 3 * t * t * (1 - t) + t * t * t;
     }
+    function land() { landed = flown = true; tst.classList.remove('pre'); tst.classList.add('in'); }
     function takeOff() {
-      var c = camera(), s = [];
-      for (var i = 0; i <= 48; i++) { var p = ease(i / 48); s.push([c.t0 * p, c.h0 - 28 + 28 * p, .78 + .22 * p]); }
-      fly = play(c, s, { duration: 2600, easing: 'linear' });
-      fly[0].finished.then(function () { landed = true; sync(); }, function () {});
+      var go = function () {
+        if (landed || fly.length) return;
+        var c = camera(), s = [];
+        for (var i = 0; i <= 48; i++) { var p = ease(i / 48); s.push([c.t0 * p, c.h0 - 28 + 28 * p, .78 + .22 * p]); }
+        fly = play(c, s, { duration: 2600, easing: 'linear' });
+        tst.classList.remove('pre'); tst.classList.add('in');
+        if (!fly.length) { land(); sync(); return; }
+        fly[0].finished.then(function () { landed = true; sync(); }, function () {});
+      };
+      /* the flight waits for the map image, up to 1.5s, so it does not play over an empty plane on a slow link */
+      if (!img || !img.decode || (img.complete && img.naturalWidth)) return go();
+      var t = setTimeout(go, 1500), done = function () { clearTimeout(t); go(); };
+      img.decode().then(done, done);
     }
     function sync() {
-      var on = landed && vis && !hold && !rm.matches;
+      var on = landed && vis && !hov && !foc && !stopped && !rm.matches;
       if (on && !turn.length) {
         var c = camera(), s = [];
         for (var i = 0; i <= 12; i++) s.push([c.t0, c.h0 + (c.h1 - c.h0) * i / 12, 1]);
@@ -237,8 +253,7 @@
     }
     towns.sync = sync;
     towns.stop = function () {
-      fly.concat(turn).forEach(function (a) { a.cancel(); }); fly = []; turn = []; landed = flown = true;
-      tst.classList.remove('pre'); tst.classList.add('in');
+      fly.concat(turn).forEach(function (a) { a.cancel(); }); fly = []; turn = []; land();
     };
     /* before the map comes into view the camera goes overhead; once it is in view the flight starts from there */
     new IntersectionObserver(function (es) {
@@ -248,22 +263,50 @@
       vis = es[es.length - 1].isIntersecting;
       if (vis && !flown) {
         flown = true;
-        if (tst.classList.contains('pre')) takeOff(); else landed = true;
-        tst.classList.remove('pre'); tst.classList.add('in');
+        if (html.classList.contains('m') && !rm.matches) {
+          /* both observers can report in the same frame (a jump, or a reload with the scroll restored): the overhead
+             pose must be styled once, or the labels show from the first frame and the landing is lost */
+          if (!tst.classList.contains('pre')) { tst.classList.add('pre'); getComputedStyle(pts[0] || tst).opacity; }
+          takeOff();
+        } else land();
       }
       sync();
     }, { rootMargin: '0px 0px -12% 0px' }).observe(tst);
-    tst.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hold = true; sync(); } });
-    tst.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hold = false; sync(); } });
-    tst.addEventListener('focusin', function () { hold = true; sync(); });
-    tst.addEventListener('focusout', function (e) { if (!tst.contains(e.relatedTarget)) { hold = false; sync(); } });
-    /* a new width can mean a new camera: the turn restarts from rest with fresh frames */
+    /* the turn holds while the pointer is on a town label, not anywhere over the map */
+    $$('.tw-pin a', tst).forEach(function (a) {
+      a.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hov = true; sync(); } });
+      a.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hov = false; sync(); } });
+    });
+    /* keyboard focus in the map brings it to rest at once, so the focused label is visible and on its town */
+    tst.addEventListener('focusin', function (e) {
+      foc = !!(e.target.closest && e.target.closest('.tw-pin'));
+      if (!landed) { if (fly.length) fly.forEach(function (a) { a.finish(); }); else land(); }
+      sync();
+    });
+    tst.addEventListener('focusout', function (e) { if (!tst.contains(e.relatedTarget)) { foc = false; sync(); } });
+    if (btn) {
+      btn.hidden = false;
+      btn.addEventListener('click', function () {
+        stopped = !stopped;
+        btn.classList.toggle('is-paused', stopped);
+        btn.setAttribute('aria-label', stopped ? 'Play the map' : 'Pause the map');
+        sync();
+      });
+    }
+    /* a resize that crosses a breakpoint changes the camera: the flight jumps to its end, or the turn restarts from rest with
+       new frames. Any other resize, such as a phone's address bar showing or hiding, changes nothing the frames use. */
     var rz = 0;
     window.addEventListener('resize', function () {
-      clearTimeout(rz);
-      rz = setTimeout(function () { if (!landed) return; turn.forEach(function (a) { a.cancel(); }); turn = []; sync(); }, 250);
+      if (rz) return;
+      rz = requestAnimationFrame(function () {
+        rz = 0;
+        if (!fly.length && !turn.length) return;
+        if (JSON.stringify(camera()) === cam) return;
+        if (!landed) { fly.forEach(function (a) { a.finish(); }); return; }
+        turn.forEach(function (a) { a.cancel(); }); turn = []; sync();
+      });
     });
-    window.addEventListener('beforeprint', function () { tst.classList.add('in'); });
+    window.addEventListener('beforeprint', function () { tst.classList.remove('pre'); tst.classList.add('in'); });
   })();
   else if (tst) tst.classList.add('in');
 

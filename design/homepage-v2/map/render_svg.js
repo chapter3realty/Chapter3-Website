@@ -17,7 +17,7 @@ const TYPES = { ".avif": "image/avif", ".webp": "image/webp", ".png": "image/png
   if (cmd === "svg" && rest.length % 3) throw new Error("usage: render_svg.js svg in.svg out.png w h [...]");
   if (cmd === "decode" && args.length % 2) throw new Error("usage: render_svg.js decode in out.png [...]");
   const browser = await chromium.launch({
-    executablePath: process.env.CHROMIUM || "/opt/pw-browsers/chromium",
+    executablePath: process.env.CHROMIUM || undefined,   // unset: Playwright's own Chromium
     args: ["--force-color-profile=srgb", "--disable-gpu"],
   });
   try {

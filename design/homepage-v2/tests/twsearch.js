@@ -1,5 +1,5 @@
 // Search the towns map layout in the real page, one breakpoint range at a time.
-//   node twsearch.js '<json>'  { url, widths:[..], grid:{P,pw,t0,hc,cx,cy}, drift, order:[..], prefs:[..], top }
+//   node twsearch.js '<json>'  { url, widths:[..], vh, sh, grid:{P,pw,t0,hc,cx,cy}, drift, order:[..], prefs:[..], top }
 // For every camera: measure pins, shields and candidate water-label spots (relative to the camera target) over the turn,
 // then greedily give each town a label side that clears every width and every step of the turn. Shields a label cannot
 // avoid are hidden; each water label takes the first candidate spot that clears everything, or is hidden.
@@ -8,7 +8,7 @@ const { chromium } = require('playwright'), fs = require('fs');
   const cfg = JSON.parse(process.argv[2]);
   const cands = JSON.parse(fs.readFileSync(__dirname + '/water-cands.json', 'utf-8'));
   const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
-  const ctx = await b.newContext({ viewport: { width: cfg.widths[0], height: 900 }, reducedMotion: 'reduce' });
+  const ctx = await b.newContext({ viewport: { width: cfg.widths[0], height: cfg.vh || 900 }, reducedMotion: 'reduce' });
   const p = await ctx.newPage();
   await p.addInitScript(() => { try { localStorage.c3PopDone = 1; } catch (e) {} });
   await p.goto(cfg.url, { waitUntil: 'load' });
@@ -18,23 +18,25 @@ const { chromium } = require('playwright'), fs = require('fs');
   // phase A: per width, the stage size and the fixed obstacles (card, compass) in stage coordinates
   const W = [];
   for (const w of cfg.widths) {
-    await p.setViewportSize({ width: w, height: 900 });
+    await p.setViewportSize({ width: w, height: cfg.vh || 900 });
     W.push(await p.evaluate(() => {
       const st = document.querySelector('.tw-stage').getBoundingClientRect(), R = (e) => e.getBoundingClientRect();
-      const card = document.querySelector('.tw-card'), comp = document.querySelector('.tw-compass');
+      // the controls: the pause button and the compass (shown here even with reduced motion), and the map data line
+      const card = document.querySelector('.tw-card'), ctl = document.querySelector('.tw-ctl'), credit = document.querySelector('.tw-credit');
+      document.querySelector('.tw-rot').style.setProperty('display', 'grid', 'important');
       const rel = (r, pad) => [r.left - st.left - pad, r.top - st.top - pad, r.right - st.left + pad, r.bottom - st.top + pad];
-      return { w: st.width, h: st.height, card: getComputedStyle(card).position === 'absolute' ? rel(R(card), 8) : null, comp: rel(R(comp), 6) };
+      return { w: st.width, h: st.height, card: getComputedStyle(card).position === 'absolute' ? rel(R(card), 8) : null, comp: rel(R(ctl), 6), credit: rel(R(credit), 6) };
     }));
   }
-  await p.setViewportSize({ width: cfg.widths[0], height: 900 });
+  await p.setViewportSize({ width: cfg.widths[0], height: cfg.vh || 900 });
   // phase B + C in the page
   const res = await p.evaluate(({ cfg, W, cands }) => {
     const sec = document.querySelector('#towns'), st = document.querySelector('.tw-stage'), deco = document.querySelector('.tw-deco');
     const R = (e) => e.getBoundingClientRect();
     const pins = [...document.querySelectorAll('.tw-pin')];
     const size = {}; for (const li of pins) { const a = li.querySelector('a'); size[li.dataset.town] = [a.offsetWidth * (1 + (cfg.grow || 0)), a.offsetHeight]; }
-    const shields = [...document.querySelectorAll('.tw-deco .sh')].map((s, k) => ({ id: 'sh' + k + ':' + s.textContent, el: s, w: s.firstChild.offsetWidth, h: s.firstChild.offsetHeight }));
-    const wl = {}; for (const s of document.querySelectorAll('.tw-deco .wl')) { const i = s.firstChild; wl[i.textContent] = [i.offsetWidth, i.offsetHeight]; }
+    const shields = [...document.querySelectorAll('.tw-deco .sh')].map((s, k) => ({ id: 'sh' + k + ':' + s.dataset.r, el: s, w: s.firstElementChild.offsetWidth, h: s.firstElementChild.offsetHeight }));
+    const wl = {}; for (const s of document.querySelectorAll('.tw-deco .wl')) { const i = s.firstElementChild; wl[i.dataset.t] = [i.offsetWidth, i.offsetHeight]; }
     const water = [['Intracoastal Waterway', 'icw'], ['Waccamaw River', 'wac'], ['Atlantic Ocean', 'ocean']];
     // probes for every candidate water spot
     const probes = {};
@@ -75,7 +77,7 @@ const { chromium } = require('playwright'), fs = require('fs');
       sec.style.setProperty('--h0', (cam.hc - cfg.drift) + 'deg');
       // absolute (stage coordinates) for width index wi
       const at = (v, wi) => [W[wi].w / 2 + cam.cx + v[0], W[wi].h * cam.cy + v[1]];
-      const fixed = W.map((w) => [w.card && rectO(w.card), rectO(w.comp)].filter(Boolean));
+      const fixed = W.map((w) => [w.card && rectO(w.card), rectO(w.comp), rectO(w.credit)].filter(Boolean));
       const dots = (wi, si, except) => Object.entries(P).filter(([t]) => t !== except).map(([t, v]) => { const [x, y] = at(v[si], wi); return obb(x, y, 8, 8, 0); });
       let fails = 0; const choice = {}, placed = [];   // placed[i] = array over (wi,si) of obb
       const shOn = shields.map((s) => !(cfg.hideShields || []).includes(s.id));

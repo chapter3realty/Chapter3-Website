@@ -79,9 +79,9 @@
 <div class="w">
 <p class="eb" data-io>The team</p>
 <h2 id="team-h">The people behind <span class="it">the work.</span></h2>
-<ul class="tm-grid" role="list" data-io>
+<div class="tm-grid" role="list" data-io>
 {{TEAM}}
-</ul>
+</div>
 <p class="tm-more"><a class="tl" href="/about/"><span class="tl-t">More about Chapter3</span> <span class="arr" aria-hidden="true">&rarr;</span></a></p>
 </div>
 </section>
@@ -90,7 +90,7 @@
 <section id="towns" class="band band-navy tw3d" aria-labelledby="towns-h">
 <div class="tw-card">
 <p class="eb" data-io>Pawleys Island to Little River</p>
-<h2 id="towns-h">Where on the Grand Strand are you <span class="it">looking?</span></h2>
+<h2 id="towns-h">Where on the Grand&nbsp;Strand are you <span class="it">looking?</span></h2>
 <p class="tw-links"><a class="tl" href="/submarkets/"><span class="tl-t">All neighborhoods</span> <span class="arr" aria-hidden="true">&rarr;</span></a><a class="tl" href="/map/"><span class="tl-t">3D map search</span> <span class="arr" aria-hidden="true">&rarr;</span></a></p>
 </div>
 <div class="tw-stage">
@@ -104,10 +104,14 @@
 {{SHIELDS}}
 {{WATER}}
 </div>
-<ol class="tw-pins">
+<ol class="tw-pins" role="list">
 {{PINS}}
 </ol>
+<div class="tw-ctl">
+<button class="rb tw-rot" type="button" aria-label="Pause the map" hidden><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 7v10M15 7v10"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6.5v11l8.5-5.5z"/></svg></button>
 <span class="tw-compass" aria-hidden="true"><i></i></span>
+</div>
+<p class="tw-credit">Map data: U.S. Census Bureau, USGS</p>
 </div>
 </section>
 

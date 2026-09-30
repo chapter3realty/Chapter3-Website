@@ -47,7 +47,7 @@ fill.AN_P = grab(/Try our investor analysis tool<\/h2><p style="[^"]*">([^<]+)<\
 }
 {
   const t = grabAll(/<div class="team-card">\n<img class="team-photo" src="([^"]+)" alt="([^"]+)"[^>]*>\n<h3 class="team-name">([^<]+)<\/h3>\n<p class="team-role">([^<]+)<\/p>\n<p class="team-bio">([^<]+)<\/p>\n<\/div>/g, "team", 3);
-  fill.TEAM = t.map((m, k) => `<li class="tm" style="--i:${k}"><div class="tp"><img src="${m[1]}" alt="${m[2]}" width="330" height="330" loading="lazy" decoding="async"></div><h3 class="tm-name">${m[3]}</h3><p class="tm-role">${m[4]}</p><p class="tm-bio">${m[5]}</p></li>`).join("\n");
+  fill.TEAM = t.map((m, k) => `<div class="tm" role="listitem" style="--i:${k}"><div class="tp"><img src="${m[1]}" alt="${m[2]}" width="330" height="330" loading="lazy" decoding="async"></div><h3 class="tm-name">${m[3]}</h3><p class="tm-role">${m[4]}</p><p class="tm-bio">${m[5]}</p></div>`).join("\n");
 }
 {
   const f = grabAll(/<div style="border-top:1px solid var\(--rule\);padding:1\.4rem 0"><h3 style="[^"]*">([^<]+)<\/h3><p style="[^"]*">([^<]+)<\/p><\/div>/g, "faq", 3);
@@ -61,13 +61,14 @@ fill.AN_P = grab(/Try our investor analysis tool<\/h2><p style="[^"]*">([^<]+)<\
     if (!fs.existsSync(path.join(REPO, "chapter3realty", "submarkets", slug, "index.html"))) throw new Error("no page for town " + slug);
     return `<li class="tw-pt tw-pin" data-town="${slug}" style="--px:${f(t.px)};--py:${f(t.py)};--i:${k}"><a href="/submarkets/${slug}/">${t.n}</a><i class="rg"></i></li>`;
   }).join("\n");
-  // head.html hides a shield at a width where it would sit under a label (data-r names the route)
-  fill.SHIELDS = plane.shields.map((s) => `<span class="tw-pt sh ${s.kind === "sc" ? "sc" : "us"}" data-r="${s.label}" style="--px:${f(s.px)};--py:${f(s.py)}"><b>${s.label}</b></span>`).join("\n");
+  // head.html hides a shield at a width where it would sit under a label (data-r names the route). CSS draws the shield and
+  // water text from data-t, so this decoration, hidden from assistive tech, adds no loose lines to llms-full.txt
+  fill.SHIELDS = plane.shields.map((s) => `<span class="tw-pt sh ${s.kind === "sc" ? "sc" : "us"}" data-r="${s.label}" style="--px:${f(s.px)};--py:${f(s.py)}"><b data-t="${s.label}"></b></span>`).join("\n");
   // water names: where each sits, and at which angle, is set per width in head.html; these are the names the basemap carries
   const cls = { "Intracoastal Waterway": "icw", "Waccamaw River": "wac", "Atlantic Ocean": "sea" };
   fill.WATER = plane.water.map((w) => {
     if (!cls[w.label]) throw new Error("no place set for water label " + w.label);
-    return `<span class="tw-pt wl ${cls[w.label]}"><i>${w.label}</i></span>`;
+    return `<span class="tw-pt wl ${cls[w.label]}"><i data-t="${w.label}"></i></span>`;
   }).join("\n");
 }
 let mainHtml = src("main.tpl.html").replace(/\{\{([A-Z_]+)\}\}/g, (m, k) => { if (!(k in fill)) throw new Error("no fill for " + k); return fill[k]; });

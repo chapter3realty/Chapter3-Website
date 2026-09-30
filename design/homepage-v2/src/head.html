@@ -1,14 +1,14 @@
 <style id="c3-home-fonts">
 /* Fallback faces sized to Fraunces and DM Sans, so the swap moves nothing. Scoped to #page-home through --serif/--sans. */
-@font-face{font-family:'Fraunces Display Fallback';src:local('Georgia');size-adjust:80%;ascent-override:122.3%;descent-override:31.9%;line-gap-override:0%}
-@font-face{font-family:'Fraunces Display Fallback';font-style:italic;src:local('Georgia Italic'),local('Georgia-Italic');size-adjust:76.5%;ascent-override:127.8%;descent-override:33.3%;line-gap-override:0%}
-@font-face{font-family:'Fraunces Display Fallback N';src:local('Noto Serif'),local('NotoSerif-Regular');size-adjust:74.9%;ascent-override:130.6%;descent-override:34%;line-gap-override:0%}
-@font-face{font-family:'Fraunces Display Fallback N';font-style:italic;src:local('Noto Serif Italic'),local('NotoSerif-Italic');size-adjust:70.4%;ascent-override:138.9%;descent-override:36.2%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Display Fallback';src:local('Georgia');size-adjust:86.2%;ascent-override:113.5%;descent-override:29.6%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Display Fallback';font-style:italic;src:local('Georgia Italic'),local('Georgia-Italic');size-adjust:82.4%;ascent-override:118.7%;descent-override:30.9%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Display Fallback N';src:local('Noto Serif'),local('NotoSerif-Regular');size-adjust:80.7%;ascent-override:121.3%;descent-override:31.6%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Display Fallback N';font-style:italic;src:local('Noto Serif Italic'),local('NotoSerif-Italic');size-adjust:75.8%;ascent-override:129.0%;descent-override:33.6%;line-gap-override:0%}
 @font-face{font-family:'Fraunces Fallback';src:local('Georgia');size-adjust:97.5%;ascent-override:100.3%;descent-override:26.2%;line-gap-override:0%}
 @font-face{font-family:'Fraunces Fallback';font-style:italic;src:local('Georgia Italic'),local('Georgia-Italic');size-adjust:94%;ascent-override:104%;descent-override:27.1%;line-gap-override:0%}
 @font-face{font-family:'Fraunces Fallback N';src:local('Noto Serif'),local('NotoSerif-Regular');size-adjust:92%;ascent-override:106.3%;descent-override:27.7%;line-gap-override:0%}
-@font-face{font-family:'Fraunces Display Fallback T';src:local('Times New Roman'),local('TimesNewRomanPSMT'),local('Liberation Serif'),local('LiberationSerif');size-adjust:87.7%;ascent-override:111.5%;descent-override:29.1%;line-gap-override:0%}
-@font-face{font-family:'Fraunces Display Fallback T';font-style:italic;src:local('Times New Roman Italic'),local('TimesNewRomanPS-ItalicMT'),local('Liberation Serif Italic'),local('LiberationSerif-Italic');size-adjust:84.2%;ascent-override:116.2%;descent-override:30.3%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Display Fallback T';src:local('Times New Roman'),local('TimesNewRomanPSMT'),local('Liberation Serif'),local('LiberationSerif');size-adjust:94.5%;ascent-override:103.5%;descent-override:27.0%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Display Fallback T';font-style:italic;src:local('Times New Roman Italic'),local('TimesNewRomanPS-ItalicMT'),local('Liberation Serif Italic'),local('LiberationSerif-Italic');size-adjust:90.7%;ascent-override:107.9%;descent-override:28.1%;line-gap-override:0%}
 @font-face{font-family:'Fraunces Fallback T';src:local('Times New Roman'),local('TimesNewRomanPSMT'),local('Liberation Serif'),local('LiberationSerif');size-adjust:107.1%;ascent-override:91.3%;descent-override:23.8%;line-gap-override:0%}
 @font-face{font-family:'Fraunces Fallback T';font-style:italic;src:local('Times New Roman Italic'),local('TimesNewRomanPS-ItalicMT'),local('Liberation Serif Italic'),local('LiberationSerif-Italic');size-adjust:103.9%;ascent-override:94.1%;descent-override:24.5%;line-gap-override:0%}
 @font-face{font-family:'DM Sans Fallback';src:local('Arial'),local('ArialMT'),local('Liberation Sans');size-adjust:101.9%;ascent-override:97.3%;descent-override:30.4%;line-gap-override:0%}
@@ -71,9 +71,9 @@ html{scroll-padding-top:97px}
 .cine-pause:hover{border-color:var(--brass-2)}
 #page-home .cine-pause:focus-visible{box-shadow:0 0 0 10px var(--navy)}
 .cine-copy{grid-column:2;position:relative;text-shadow:0 1px 24px rgba(28,32,40,.45)}
-.cine-eyebrow{display:flex;align-items:center;font:500 11.5px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--brass-2)}
+.cine-eyebrow{display:flex;align-items:center;font:500 11.5px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--brass-2);text-wrap:balance}
 .cine-eyebrow::before{content:"";flex:0 0 28px;height:1px;margin-right:12px;background:var(--brass-2);transform-origin:0 50%}
-#page-home .cine-h1{font-family:var(--disp);font-weight:300;font-synthesis:none;font-variation-settings:'wght' 300,'opsz' 144;font-size:clamp(64px,min(9.2vw,16svh),108px);line-height:.95;letter-spacing:-.02em;color:var(--ivory);margin:18px 0 0}
+#page-home .cine-h1{font-family:var(--disp);font-weight:300;font-synthesis:none;font-variation-settings:'wght' 300,'opsz' 80;font-size:clamp(64px,min(8.5vw,15svh),100px);line-height:.95;letter-spacing:-.02em;color:var(--ivory);margin:18px 0 0}
 .cine-h1 .l1,.cine-h1 .l2{display:block;white-space:normal;padding-bottom:.18em;margin-bottom:-.18em}
 .cine-h1 .l1>span,.cine-h1 .l2>span{display:inline-block}
 .cine-h1 .l2{font-style:italic;color:var(--ivory-3);padding-inline-start:1em}
@@ -103,13 +103,14 @@ html{scroll-padding-top:97px}
 .js .rv-ctl{display:flex}
 .rb{flex:0 0 44px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(244,239,232,.3);background:transparent;color:var(--ivory);display:grid;place-items:center;cursor:pointer;transition:border-color .25s}
 .rb:hover{border-color:var(--brass-2)}
-.rv-rot .i-play{display:none}
+.rb:not(.is-paused)>.i-play{display:none}
 .rv-dots{display:flex}
 .rv-dots button{width:24px;height:24px;border-radius:12px;display:grid;place-items:center;background:none;border:0;padding:0;cursor:pointer;transition:width .35s var(--ease-out)}
 .rv-dots button::before{content:"";width:8px;height:8px;border-radius:4px;background:rgba(244,239,232,.5);transition:width .35s var(--ease-out),background .35s}
 .rv-dots button[aria-current="true"]{width:32px}
 .rv-dots button[aria-current="true"]::before{width:16px;background:var(--brass-2)}
-@media (max-width:359px){.rv-ctl{gap:3px}#page-home #home-reviews{padding-left:14px;padding-right:14px}.rv-dots button{width:18px}.rv-dots button[aria-current="true"]{width:28px}}
+@media (max-width:359px){#page-home .rv-dots{display:none}}
+@media (max-width:379px){.cine-eyebrow{letter-spacing:.14em}}
 
 .rv-slide{margin:0}
 .rv-slide+.rv-slide{margin-top:22px}
@@ -199,22 +200,23 @@ html{scroll-padding-top:97px}
 @supports (animation-timeline:scroll()){
 .cine-media{animation:hero-drift linear both;animation-timeline:scroll(root block);animation-range:0px 100svh}
 @keyframes hero-drift{to{transform:translateY(16%) scale(1.04)}}}}
-@media (prefers-reduced-motion:reduce){.rv-rot{display:none!important}}
+@media (prefers-reduced-motion:reduce){.rv-rot,.tw-rot{display:none!important}}
 
 /* ---------- TABLET AND PHONE ---------- */
 @media (max-width:1099px){
 #page-home #home.cine{display:block;min-height:0}
-.cine-film{bottom:auto;height:calc(100vh - 89px);height:calc(100svh - 89px)}
-.cine-film::after{inset:0 0 -2px;background:linear-gradient(180deg,rgba(28,32,40,.45) 0%,rgba(28,32,40,.06) 12%,rgba(28,32,40,.12) 30%,rgba(28,32,40,.5) 60%,var(--navy) 97%)}
+.cine-film::after{inset:0 0 -2px;background:linear-gradient(180deg,rgba(28,32,40,.4) 0,rgba(28,32,40,.06) 80px,rgba(28,32,40,.1) calc(100vh - 629px),rgba(28,32,40,.5) calc(100vh - 419px),rgba(28,32,40,.6) calc(100vh - 89px),rgba(28,32,40,.74) calc(100vh + 20px));background:linear-gradient(180deg,rgba(28,32,40,.4) 0,rgba(28,32,40,.06) 80px,rgba(28,32,40,.1) calc(100svh - 629px),rgba(28,32,40,.5) calc(100svh - 419px),rgba(28,32,40,.6) calc(100svh - 89px),rgba(28,32,40,.74) calc(100svh + 20px))}
 .cine-text{position:relative;isolation:isolate}
-.cine-text::before{content:"";position:absolute;left:-2rem;right:-2rem;top:-120px;bottom:-40px;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(28,32,40,0) 0,rgba(28,32,40,.8) 70px,rgba(28,32,40,.95) 116px,rgba(28,32,40,.96) 100%)}
+.cine-text::before{content:"";position:absolute;left:-2rem;right:-2rem;top:-120px;bottom:-40px;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(28,32,40,0) 0,rgba(28,32,40,.52) 70px,rgba(28,32,40,.58) 120px,rgba(28,32,40,.6) 100%)}
+.cine-eyebrow{color:var(--ivory)}
+.cine-paths .cine-path{background:rgba(28,32,40,.4)}
 .cine-stage{display:flex;flex-direction:column;align-items:stretch;padding:0 0 56px}
 #page-home .rv-slide blockquote p{max-width:32em}
 #page-home .qa p{max-width:36em}
 .cine-pause{top:16px;right:2rem}
 .cine-copy{min-height:calc(100vh - 89px);min-height:calc(100svh - 89px);display:flex;flex-direction:column;justify-content:flex-end;padding:96px 2rem 36px}
-#page-home .cine-h1{font-size:clamp(40px,calc((100vw - 4rem)/4.85),96px)}
-#home-reviews{margin:0 2rem;width:auto;max-width:720px;align-self:stretch;justify-self:auto;background:var(--navy-2);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
+#page-home .cine-h1{font-size:clamp(40px,calc((100vw - 4rem)/5.25),96px)}
+#home-reviews{margin:0 2rem;width:auto;max-width:720px;align-self:stretch;justify-self:auto;background:rgba(28,32,40,.8)}
 .cine-paths .cine-path{min-height:84px}
 .w.an{grid-template-columns:1fr;gap:28px}
 #page-home .why-stats-8{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 28px}
@@ -237,7 +239,7 @@ html{scroll-padding-top:97px}
 #page-home .cine-paths .cine-path{grid-template:"k" auto "r" 1fr/1fr}
 .cine-pause{right:1.4rem}
 .cine-copy{padding:88px 1.4rem 28px}
-#page-home .cine-h1{font-size:clamp(40px,calc((100vw - 2.8rem)/4.85),96px);line-height:.95}
+#page-home .cine-h1{font-size:clamp(40px,calc((100vw - 2.8rem)/5.25),96px);line-height:.95}
 .cine-h1 .l2{padding-inline-start:0}
 #page-home .cine-sub{font-size:17px;margin-top:16px}
 .cine-paths{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:22px}
@@ -256,7 +258,7 @@ html{scroll-padding-top:97px}
 @media (forced-colors:active){.cine-film{-webkit-mask-image:none;mask-image:none}.cine-media::after{display:none}.rv-dots button::before{forced-color-adjust:none;background:CanvasText}.rv-dots button[aria-current="true"]::before{background:Highlight}}
 /* older engines. Safari 15.4-15.6: no overflow:clip. Samsung Internet 20 and Chrome 105-107: no svh.
    Safari before 17: no size-adjust, so the fallback face is wider than Fraunces on phones. */
-@supports not (height:1svh){@media (min-width:1100px){#page-home #home.cine{--T:clamp(24px,5vh,56px);min-height:clamp(560px,calc(100vh - var(--hdr,89px)),920px)}#page-home .cine-h1{font-size:clamp(64px,min(9.2vw,16vh),108px)}}}
+@supports not (height:1svh){@media (min-width:1100px){#page-home #home.cine{--T:clamp(24px,5vh,56px);min-height:clamp(560px,calc(100vh - var(--hdr,89px)),920px)}#page-home .cine-h1{font-size:clamp(64px,min(8.5vw,15vh),100px)}}}
 @supports not (overflow:clip){.cine-h1 .l1>span,.cine-h1 .l2>span{animation:none!important}}
 @supports not (contain-intrinsic-size:1px){@media (max-width:699px){#page-home .cine-h1{font-size:clamp(34px,calc((100vw - 2.8rem)/5.9),96px)}}}
 </style>
@@ -272,7 +274,7 @@ html{scroll-padding-top:97px}
 @property --tw-up{syntax:'<number>';inherits:false;initial-value:0}
 @property --tw-vp{syntax:'<number>';inherits:false;initial-value:0}
 @property --tw-k{syntax:'<number>';inherits:false;initial-value:1}
-#page-home #towns.band{padding:0;--side:max(32px,calc((100vw - 1200px)/2 + 32px));--hw:.864979;--tx:.49;--ty:.45;--P:1200;--pw:2000;--t0:54deg;--h0:11deg;--h1:17deg;--cx:100;--cy:.58;--sh:800px;--fog:90px}
+#page-home #towns.band{padding:0;--side:max(32px,calc((100vw - 1200px)/2 + 32px));--hw:.864979;--tx:.49;--ty:.45;--P:1200;--pw:2000;--t0:54deg;--h0:11deg;--h1:17deg;--cx:100;--cy:.58;--sh:800px;--fog:90px;--ci:var(--side)}
 .tw-card{position:absolute;z-index:3;left:var(--side);top:56px;width:470px;box-sizing:border-box;padding:28px 32px 14px;border-radius:18px;background:rgba(28,32,40,.86);border:1px solid rgba(244,239,232,.14);box-shadow:0 24px 60px rgba(0,0,0,.3)}
 #page-home #towns h2{font-size:clamp(34px,3.2vw,46px);margin-top:14px}
 .tw-links{display:flex;flex-wrap:wrap;gap:0 26px;margin-top:12px}
@@ -284,10 +286,12 @@ html{scroll-padding-top:97px}
    which would lay a lighter band over the ocean */
 .tw-scene::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,var(--navy) 0,rgba(28,32,40,.92) var(--fog),rgba(28,32,40,.5) calc(var(--fog)*2.2),rgba(28,32,40,0) calc(var(--fog)*3.6)),linear-gradient(0deg,rgba(6,8,11,.85) 0,rgba(6,8,11,0) 110px)}
 .tw-pins{list-style:none;margin:0;padding:0}
+/* the source line the Census Bureau asks for, on the map in both layouts */
+#page-home .tw-credit{position:absolute;z-index:2;right:var(--ci);top:calc(var(--sh) - 26px);margin:0;font:400 11px/18px var(--sans);letter-spacing:.02em;color:#a8a39c}
 .tw-pin .rg{display:none}
 /* without trigonometric CSS the labels cannot be placed, so the map stays a picture and the towns are a list */
 @supports not (width:calc(1px * sin(1deg))){
-.tw-deco,.tw-compass{display:none}
+.tw-deco,.tw-ctl{display:none}
 .tw-stage{height:auto}
 .tw-scene{position:relative;height:var(--sh)}
 .tw-pins{max-width:1200px;margin:0 auto;padding:16px 2rem 72px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0 28px}
@@ -306,42 +310,60 @@ html{scroll-padding-top:97px}
 .tw-pin:is(:hover,:focus-within) .rg{opacity:.8}
 /* road shields and water names, as a dark Google map draws them: water names carry a solid dark halo so they read over roads */
 .tw-deco b,.tw-deco i{position:absolute;left:0;top:0;white-space:nowrap}
+.tw-deco [data-t]::before{content:attr(data-t)}
 .tw-deco .sh b{transform:translate(-50%,-50%);font:700 10.5px/1 var(--sans);color:var(--navy);background:#f1f1f2;padding:3px 5px 4px;border-radius:3px 3px 7px 7px;box-shadow:0 1px 3px rgba(0,0,0,.45)}
 .tw-deco .sh.sc b{border-radius:9px;padding:3px 6px}
 .tw-deco .wl i{transform:translate(-50%,-50%) rotate(atan2(calc(sin(var(--a) + var(--h0))*cos(var(--t0))),cos(var(--a) + var(--h0))));will-change:transform;font:italic 400 12.5px/1 var(--sans);letter-spacing:.1em;color:#9db0c8;text-shadow:-2px -1px 0 #06080b,-2px 0 0 #06080b,-2px 1px 0 #06080b,-1px -2px 0 #06080b,-1px -1px 0 #06080b,-1px 0 0 #06080b,-1px 1px 0 #06080b,-1px 2px 0 #06080b,0 -2px 0 #06080b,0 -1px 0 #06080b,0 1px 0 #06080b,0 2px 0 #06080b,1px -2px 0 #06080b,1px -1px 0 #06080b,1px 0 0 #06080b,1px 1px 0 #06080b,1px 2px 0 #06080b,2px -1px 0 #06080b,2px 0 0 #06080b,2px 1px 0 #06080b,0 0 4px #06080b}
-/* the compass needle points at north on the tilted map */
-.tw-compass{position:absolute;z-index:2;right:var(--side);bottom:28px;width:44px;height:44px;box-sizing:border-box;border-radius:50%;background:rgba(42,48,64,.92);border:1px solid rgba(244,239,232,.16);box-shadow:0 8px 22px rgba(0,0,0,.35)}
+/* bottom right, over the ocean: the button that pauses the slow turn, and the compass, whose needle points at north on the tilted map */
+.tw-ctl{position:absolute;z-index:2;right:var(--ci);bottom:34px;display:flex;gap:10px}
+.tw-rot{background:rgba(42,48,64,.92);box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.tw-rot[hidden]{display:none}
+.tw-compass{position:relative;width:44px;height:44px;box-sizing:border-box;border-radius:50%;background:rgba(42,48,64,.92);border:1px solid rgba(244,239,232,.16);box-shadow:0 8px 22px rgba(0,0,0,.35)}
 .tw-compass i{position:absolute;left:50%;top:50%;width:10px;height:28px;margin:-14px 0 0 -5px;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);background:linear-gradient(var(--brass-2) 50%,rgba(244,239,232,.6) 50%);transform:rotate(atan2(sin(var(--h0)),cos(var(--h0))*cos(var(--t0))));will-change:transform}}
 @media (max-width:1099px){
-#page-home #towns.band{--P:1100;--sh:600px;--fog:50px}
+#page-home #towns.band{--P:1100;--sh:600px;--fog:50px;--ci:2rem}
 .tw-card{position:relative;left:auto;top:auto;width:auto;max-width:1200px;margin:0 auto;padding:clamp(72px,9vw,120px) 2rem 4px;border:0;border-radius:0;background:none;box-shadow:none}
 #page-home #towns h2{font-size:clamp(34px,4.2vw,56px);max-width:13ch}
-.tw-compass{right:2rem;bottom:20px}}
+.tw-ctl{bottom:30px}}
 @media (max-width:699px){
-#page-home #towns.band{--P:900;--pw:1200;--t0:46deg;--h0:-32deg;--h1:-28deg;--cx:20;--cy:.44;--sh:640px;--fog:40px}
+#page-home #towns.band{--P:900;--pw:1200;--t0:46deg;--h0:-32deg;--h1:-28deg;--cx:20;--cy:.44;--sh:640px;--fog:40px;--ci:1.4rem}
 .tw-card{padding-left:1.4rem;padding-right:1.4rem}
 .tw-pin a{font-size:12px;padding:7px 10px}
-.tw-compass{right:1.4rem}}
-/* label sides and water names per width, from a search over every width in the range and the whole turn:
-   no label covers another label, a pin, a road shield, a water name, the card or the compass (tests/states.js checks it) */
+.tw-ctl{flex-direction:column}}
+/* label sides and water names per width, from a search over every width in the range and the whole turn: no label
+   covers another label, a pin, a road shield, a water name, the card, the controls or the map data line (tests/states.js
+   checks it). A camera or label side changed here goes into data/cameras.json too (tests/cameras.js checks it) */
 .tw-deco .wl.icw{--px:0.5495;--py:0.3904;--a:-31.6deg}.tw-deco .wl.wac{--px:0.3776;--py:0.4685;--a:-72deg}.tw-deco .wl.sea{--px:0.5843;--py:0.5632;--a:-48.3deg}
 @media (min-width:1100px){.tw-pin:is([data-town=myrtle-beach],[data-town=north-myrtle-beach],[data-town=surfside-beach]){--ax:0;--ay:.5;--ox:12;--oy:0;--stem:0}.tw-pin:is([data-town=murrells-inlet]){--ax:1;--ay:.5;--ox:-12;--oy:0;--stem:0}.tw-pin:is([data-town=conway]){--ax:0;--ay:1;--ox:-14;--oy:-28;--stem:28}}
+/* 1100-1159px: the card reaches Conway, so the map moves right and Conway's label sits to the right of its stem */
+@media (min-width:1100px) and (max-width:1159px){#page-home #towns.band{--cx:112}#page-home .tw-pin[data-town=conway]{--ox:8}}
+/* a short laptop screen: the stage is 120px shorter and the map moves up as much, so all nine towns and the controls
+   show with the card. The Waccamaw River name moves along the river, and from 1381px has no room left beside the card */
+@media (min-width:1150px) and (max-height:880px){#page-home #towns.band{--sh:680px;--cy:.505}.tw-deco .wl.wac{--px:0.3503;--py:0.5389;--a:-84.1deg}}
+@media (min-width:1381px) and (max-height:880px){.tw-deco .wl.wac{display:none}}
 @media (min-width:900px) and (max-width:1099px){.tw-deco .sh[data-r="31"]{display:none}#page-home #towns.band{--pw:1700;--t0:54deg;--h0:10deg;--h1:16deg;--cx:80;--cy:.5}.tw-pin:is([data-town=myrtle-beach],[data-town=carolina-forest],[data-town=surfside-beach],[data-town=pawleys-island]){--ax:0;--ay:.5;--ox:12;--oy:0;--stem:0}.tw-pin:is([data-town=murrells-inlet]){--ax:1;--ay:.5;--ox:-12;--oy:0;--stem:0}.tw-pin:is([data-town=north-myrtle-beach],[data-town=garden-city]){--ax:1;--ay:1;--ox:14;--oy:-28;--stem:28}.tw-deco .wl.icw{display:none}.tw-deco .wl.wac{--px:0.3771;--py:0.4333;--a:-96.3deg}}
 @media (min-width:700px) and (max-width:899px){.tw-deco .sh[data-r="31"]{display:none}#page-home #towns.band{--pw:1300;--t0:48deg;--h0:7deg;--h1:13deg;--cx:20;--cy:.5}.tw-pin:is([data-town=myrtle-beach],[data-town=carolina-forest],[data-town=surfside-beach],[data-town=pawleys-island]){--ax:0;--ay:.5;--ox:12;--oy:0;--stem:0}.tw-pin:is([data-town=murrells-inlet]){--ax:1;--ay:.5;--ox:-12;--oy:0;--stem:0}.tw-pin:is([data-town=north-myrtle-beach],[data-town=garden-city]){--ax:1;--ay:1;--ox:14;--oy:-28;--stem:28}.tw-pin:is([data-town=little-river]){--ax:0;--ay:1;--ox:-14;--oy:-28;--stem:28}.tw-deco .wl.icw{display:none}.tw-deco .wl.wac{--px:0.3689;--py:0.4093;--a:-93deg}}
 @media (max-width:699px){.tw-pin:is([data-town=myrtle-beach],[data-town=surfside-beach],[data-town=murrells-inlet]){--ax:0;--ay:.5;--ox:12;--oy:0;--stem:0}.tw-pin:is([data-town=north-myrtle-beach],[data-town=garden-city]){--ax:1;--ay:.5;--ox:-12;--oy:0;--stem:0}.tw-pin:is([data-town=conway]){--ax:0;--ay:1;--ox:-14;--oy:-28;--stem:28}.tw-deco .wl.icw{display:none}.tw-deco .wl.wac{--px:0.3787;--py:0.4481;--a:89.7deg}.tw-deco .wl.sea{--px:0.6247;--py:0.4169;--a:-48.3deg}}
-@media (max-width:359px){#page-home #towns.band{--pw:1150;--h0:-38deg;--h1:-34deg;--cx:30;--sh:620px}.tw-pin:is([data-town=conway]){--ax:0;--ay:.5;--ox:12;--oy:0;--stem:0}.tw-pin[data-town=surfside-beach]{--ax:0;--ay:1;--ox:-14;--oy:-28;--stem:28}.tw-deco .sh[data-r="501"]{display:none}.tw-deco .wl.wac{--px:0.3784;--py:0.4352;--a:83.8deg}}
+@media (max-width:359px){#page-home #towns.band{--pw:1150;--h0:-38deg;--h1:-34deg;--cx:30;--cy:.41;--sh:620px}.tw-pin[data-town=pawleys-island]{--ax:1;--ay:.5;--ox:-12;--oy:0;--stem:0}.tw-pin:is([data-town=conway]){--ax:0;--ay:.5;--ox:12;--oy:0;--stem:0}.tw-pin[data-town=surfside-beach]{--ax:0;--ay:1;--ox:-14;--oy:-28;--stem:28}.tw-deco .sh[data-r="501"]{display:none}.tw-deco .wl.wac{--px:0.3784;--py:0.4352;--a:83.8deg}}
 /* motion: just before the map scrolls into view fx.html sets .pre and the camera looks straight down (the first frame of
    the flight it then plays): it tilts down into 3D and turns, the pins land one by one, then the map turns slowly while
-   it is on screen. Nothing is hidden unless the script has seen the map coming, so text never waits on an observer. */
+   it is on screen, until the pause button stops it. Nothing is hidden unless the script has seen the map coming, so text
+   never waits on an observer. */
 @media (prefers-reduced-motion:no-preference){
 .m .tw-stage.pre .tw-plane{transform:rotateX(0deg) rotateZ(calc(var(--h0) - 28deg)) scale(.78)}
-.m .tw-stage.pre :is(.tw-pin,.tw-deco,.tw-compass){opacity:0}
+.m .tw-stage.pre :is(.tw-pin,.tw-deco,.tw-ctl){opacity:0}
 .m .tw-stage.pre .tw-pin a{translate:0 -10px}
+/* going overhead is instant: only the landing is staged, so no label shows early or stops half faded */
+.m .tw-stage.pre :is(.tw-pin,.tw-deco,.tw-ctl),.m .tw-stage.pre .tw-pin a{transition:none}
 .tw-pin{transition:opacity .45s ease calc(1.5s + var(--i)*80ms)}
 .tw-pin a{transition:background .2s,color .2s,border-color .2s,translate .6s var(--ease-out) calc(1.5s + var(--i)*80ms)}
-.tw-deco,.tw-compass{transition:opacity .8s ease 1.2s}
+.tw-deco,.tw-ctl{transition:opacity .8s ease 1.2s}
+/* whatever keyboard focus lands on shows at once (fx.html also brings the map to rest) */
+.m .tw-stage :is(.tw-pin,.tw-ctl):focus-within{opacity:1;transition:none}
+.m .tw-stage .tw-pin:focus-within a{translate:none;transition:background .2s,color .2s,border-color .2s}
 .tw-stage.in .tw-pin .rg{animation:tw-ring 1.2s var(--ease-out) calc(1.6s + var(--i)*80ms) 1 both}
 .tw-stage .tw-pin:is(:hover,:focus-within) .rg{animation:tw-ring 1.4s var(--ease-out) infinite}
 @keyframes tw-ring{from{opacity:.9;transform:scaleY(cos(var(--t0))) scale(.35)}to{opacity:0;transform:scaleY(cos(var(--t0))) scale(1.3)}}}
+@media (forced-colors:active){#page-home .tw-pin a:focus-visible{forced-color-adjust:none;background:Highlight;color:HighlightText;border-color:HighlightText}}
 </style>
 <script>(function(h){h.classList.add('js');if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;h.classList.add('m');window.__c3T=setTimeout(function(){h.classList.remove('m')},3000)})(document.documentElement)</script>
