@@ -2387,7 +2387,15 @@ built from commit b020a20): the zoom from the whole United States he asked for.
 Loaded before sending, wrapped the way the viewer wraps it, at 390 and 1440: the
 film plays, the map starts on the whole country and lands, no script errors, no
 missing files; the twelve zoom images were added to the artifact, the other
-media files kept.
+media files kept. **Preview 5 sent 2026-09-30 at the same link** (artifact
+version 5, built from commit b7f0c3c): the map as the landing page, flying in
+from the eastern United States with the camera tilted, the house video gone, the
+reviews in a band under the map. Loaded before sending, wrapped the way the
+viewer wraps it, at 390 and 1440: the flight starts on the eastern United States
+and lands with all nine towns, no script errors, no failed requests. The ten
+`media/hero/` files were removed from the artifact (21 files now: the page and
+the 20 map images). In the viewer the eyebrow wraps to two lines on a phone,
+because the preview uses Google's DM Sans; the site's own font keeps it on one.
 
 **On accept.** Copy `design/homepage-v2/index.html` over
 `chapter3realty/index.html` and `design/homepage-v2/media/map/` to
