@@ -2292,7 +2292,14 @@ the old value; the tools switch transitions off first.
 He replied with the two notes above. **Preview 2 sent 2026-09-29 at the same
 link** (artifact version 2, built from commit fa19ee6 by `preview.js`; loaded
 before sending at 390 and 1440: the film plays, the map loads and flies in, no
-script errors, no missing files).
+script errors, no missing files). **Preview 3 sent 2026-09-30 at the same link**
+(artifact version 3, built from commit 17da147): the fixes from a third review
+(the H1's missing "e" crossbar, the film behind the whole hero on phones and
+tablets, the map's pause button, flight and focus fixes, the map data line,
+short laptop screens). Loaded before sending, wrapped the way the viewer wraps
+it, at 390 and 1440: the film plays, the map loads and flies in, no script
+errors, no missing files. The media files did not change, so only the page was
+republished.
 
 **On accept.** Copy `design/homepage-v2/index.html` over
 `chapter3realty/index.html`, `design/homepage-v2/media/hero/` to
@@ -2312,8 +2319,9 @@ undoing.
 ## Suggested order for the next session
 
 00000. **Homepage redesign candidate** (section above). Waiting for his accept
-   or decline on the second preview (words over the film, dark 3D map). Do not
-   touch `chapter3realty/index.html` before he says yes.
+   or decline on the third preview (words over the film, dark 3D map, review
+   fixes). The map data line is new copy he may reword. Do not touch
+   `chapter3realty/index.html` before he says yes.
 0000. **The returns page round 2 is on the branch** (section above). Expect his
    reaction to the new cap rates, the satellite map and the rebuilt
    calculator. If he wants the short-term figures on the investor price too,
