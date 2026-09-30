@@ -2343,7 +2343,12 @@ tablets, the map's pause button, flight and focus fixes, the map data line,
 short laptop screens). Loaded before sending, wrapped the way the viewer wraps
 it, at 390 and 1440: the film plays, the map loads and flies in, no script
 errors, no missing files. The media files did not change, so only the page was
-republished.
+republished. **Preview 4 sent 2026-09-30 at the same link** (artifact version 4,
+built from commit b020a20): the zoom from the whole United States he asked for.
+Loaded before sending, wrapped the way the viewer wraps it, at 390 and 1440: the
+film plays, the map starts on the whole country and lands, no script errors, no
+missing files; the twelve zoom images were added to the artifact, the other
+media files kept.
 
 **On accept.** Copy `design/homepage-v2/index.html` over
 `chapter3realty/index.html`, `design/homepage-v2/media/hero/` to
@@ -2363,9 +2368,9 @@ undoing.
 ## Suggested order for the next session
 
 00000. **Homepage redesign candidate** (section above). Waiting for his accept
-   or decline on the third preview (words over the film, dark 3D map, review
-   fixes). The map data line is new copy he may reword. Do not touch
-   `chapter3realty/index.html` before he says yes.
+   or decline on the fourth preview (words over the film, the dark 3D map that
+   now zooms in from the whole United States). The map data line is new copy he
+   may reword. Do not touch `chapter3realty/index.html` before he says yes.
 0000. **The returns page round 2 is on the branch** (section above). Expect his
    reaction to the new cap rates, the satellite map and the rebuilt
    calculator. If he wants the short-term figures on the investor price too,
