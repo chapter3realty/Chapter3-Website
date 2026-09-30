@@ -6,7 +6,7 @@ Browser measurements for the redesign. Run with Playwright's Chromium. `states.j
     export NODE_PATH=$(npm root -g)
     node check.js  http://localhost:8124/            # every width: sideways scroll, H1, hidden text, contrast, errors
     node check.js  http://localhost:8124/ --reduced  # same, reduced motion
-    node states.js http://localhost:8124/            # 196 behaviour checks: video gates, reviews, fold, fonts, CLS, the towns map
+    node states.js http://localhost:8124/            # 204 behaviour checks: video gates, reviews, fold, fonts, CLS, the towns map
     node perf.js   http://localhost:8124/ mobile     # throttled LCP, CLS, blocking time
     node holes.js  http://localhost:8124/ 768 1024   # transparent pixels at the film edge while it scales
     node mediacontrast.js http://localhost:8124/ 1440 '.tl'   # contrast from pixels
@@ -22,6 +22,8 @@ The towns map (a tilted basemap with CSS-placed labels) has its own tools. They 
     node twmotion.js http://localhost:8124/ 1440 900           # labels stay on their towns during the flight and the turn
     node twperf.js   http://localhost:8124/ 390 844 4          # main-thread cost while the map moves (4x CPU slowdown)
     node twsearch.js '<json>'                                  # searches cameras and label sides for a range of widths
+    node zoomframes.js http://localhost:8124/ 1440x900 out/d   # the zoom from the whole country, frozen at set moments
+    node flightfps.js  http://localhost:8124/ 390 844 4 3      # frame intervals across the flight (4x CPU slowdown, 3x screen)
 
 `twsearch.js` is how the per-width cameras, label sides and water-name spots in
 `src/head.html` were chosen. A camera or label side changed there goes into

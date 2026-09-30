@@ -283,15 +283,31 @@ html{scroll-padding-top:97px}
 .tw-plane{position:absolute;left:calc(50% + var(--cx)*1px);top:calc(var(--cy)*100%);width:calc(var(--pw)*1px);height:calc(var(--pw)*var(--hw)*1px);margin:calc(var(--ty)*var(--pw)*var(--hw)*-1px) 0 0 calc(var(--tx)*var(--pw)*-1px);transform-origin:calc(var(--tx)*100%) calc(var(--ty)*100%);transform:rotateX(var(--t0)) rotateZ(var(--h0));will-change:transform;background:#1a2536;-webkit-mask-image:radial-gradient(closest-side at calc(var(--tx)*100%) calc(var(--ty)*100%),#000 62%,transparent 100%);mask-image:radial-gradient(closest-side at calc(var(--tx)*100%) calc(var(--ty)*100%),#000 62%,transparent 100%)}
 .tw-plane picture,.tw-plane img{display:block;width:100%;height:100%}
 /* haze toward the horizon in the page's navy; the near edge darkens toward the map's black water, not toward navy,
-   which would lay a lighter band over the ocean */
-.tw-scene::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,var(--navy) 0,rgba(28,32,40,.92) var(--fog),rgba(28,32,40,.5) calc(var(--fog)*2.2),rgba(28,32,40,0) calc(var(--fog)*3.6)),linear-gradient(0deg,rgba(6,8,11,.85) 0,rgba(6,8,11,0) 110px)}
+   which would lay a lighter band over the ocean. An element, not ::after, so the zoom from the whole country can fade it
+   in as the camera tilts */
+.tw-fog{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,var(--navy) 0,rgba(28,32,40,.92) var(--fog),rgba(28,32,40,.5) calc(var(--fog)*2.2),rgba(28,32,40,0) calc(var(--fog)*3.6)),linear-gradient(0deg,rgba(6,8,11,.85) 0,rgba(6,8,11,0) 110px)}
 .tw-pins{list-style:none;margin:0;padding:0}
+/* the zoom from the whole country: three Mercator maps under the basemap (the United States, the Southeast, the Carolina
+   coast), shown only while fx.html flies the camera down through them, each with soft edges */
+.tw-lod,.tw-dest{display:none}
+.tw-stage.lod :is(.tw-lod,.tw-dest){display:block}
+.tw-lod{position:absolute;left:calc(50% + var(--cx)*1px);top:calc(var(--cy)*100%);transform-origin:0 0;opacity:0;will-change:transform,opacity;-webkit-mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent),linear-gradient(transparent,#000 3%,#000 97%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent),linear-gradient(transparent,#000 3%,#000 97%,transparent);mask-composite:intersect}
+/* the country map is the first thing seen, floating on the navy: its edges fade over a longer distance */
+.tw-lod[data-lod=us]{-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent),linear-gradient(transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent),linear-gradient(transparent,#000 14%,#000 86%,transparent)}
+.tw-lod picture,.tw-lod img{display:block}
+.tw-lod img{width:1600px;height:auto;max-width:none}
+/* a brass point on the Grand Strand for the camera to fly to */
+.tw-dest{position:absolute;z-index:1;left:calc(50% + var(--cx)*1px);top:calc(var(--cy)*100%);width:0;height:0;opacity:0;will-change:transform,opacity;pointer-events:none}
+.tw-dest i{position:absolute;left:-6px;top:-6px;width:12px;height:12px;box-sizing:border-box;border-radius:50%;background:var(--brass-2);border:2px solid var(--navy);box-shadow:0 0 0 1px rgba(212,137,74,.6),0 0 18px 6px rgba(212,137,74,.45)}
+.tw-dest i::after{content:"";position:absolute;left:-12px;top:-12px;width:32px;height:32px;box-sizing:border-box;border-radius:50%;border:1.5px solid var(--brass-2);opacity:0}
+.tw-stage.lod .tw-dest i::after{animation:tw-dest 1.4s var(--ease-out) infinite}
+@keyframes tw-dest{from{transform:scale(.35);opacity:.95}to{transform:scale(1.5);opacity:0}}
 /* the source line the Census Bureau asks for, on the map in both layouts */
 #page-home .tw-credit{position:absolute;z-index:2;right:var(--ci);top:calc(var(--sh) - 26px);margin:0;font:400 11px/18px var(--sans);letter-spacing:.02em;color:#a8a39c}
 .tw-pin .rg{display:none}
 /* without trigonometric CSS the labels cannot be placed, so the map stays a picture and the towns are a list */
 @supports not (width:calc(1px * sin(1deg))){
-.tw-deco,.tw-ctl{display:none}
+.tw-deco,.tw-ctl,.tw-stage.lod :is(.tw-lod,.tw-dest){display:none}
 .tw-stage{height:auto}
 .tw-scene{position:relative;height:var(--sh)}
 .tw-pins{max-width:1200px;margin:0 auto;padding:16px 2rem 72px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0 28px}
@@ -355,13 +371,17 @@ html{scroll-padding-top:97px}
 .m .tw-stage.pre .tw-pin a{translate:0 -10px}
 /* going overhead is instant: only the landing is staged, so no label shows early or stops half faded */
 .m .tw-stage.pre :is(.tw-pin,.tw-deco,.tw-ctl),.m .tw-stage.pre .tw-pin a{transition:none}
-.tw-pin{transition:opacity .45s ease calc(1.5s + var(--i)*80ms)}
-.tw-pin a{transition:background .2s,color .2s,border-color .2s,translate .6s var(--ease-out) calc(1.5s + var(--i)*80ms)}
-.tw-deco,.tw-ctl{transition:opacity .8s ease 1.2s}
+.tw-stage{--land:1.5s}
+.tw-stage.z{--land:3.7s}
+.tw-pin{transition:opacity .45s ease calc(var(--land) + var(--i)*80ms)}
+.tw-pin a{transition:background .2s,color .2s,border-color .2s,translate .6s var(--ease-out) calc(var(--land) + var(--i)*80ms)}
+.tw-deco,.tw-ctl{transition:opacity .8s ease calc(var(--land) - .3s)}
+/* a flight ended early (keyboard focus, a new breakpoint, the pause button) shows every label at once */
+.m .tw-stage.now :is(.tw-pin,.tw-deco,.tw-ctl),.m .tw-stage.now .tw-pin a{transition:none}
 /* whatever keyboard focus lands on shows at once (fx.html also brings the map to rest) */
 .m .tw-stage :is(.tw-pin,.tw-ctl):focus-within{opacity:1;transition:none}
 .m .tw-stage .tw-pin:focus-within a{translate:none;transition:background .2s,color .2s,border-color .2s}
-.tw-stage.in .tw-pin .rg{animation:tw-ring 1.2s var(--ease-out) calc(1.6s + var(--i)*80ms) 1 both}
+.tw-stage.in .tw-pin .rg{animation:tw-ring 1.2s var(--ease-out) calc(var(--land) + .1s + var(--i)*80ms) 1 both}
 .tw-stage .tw-pin:is(:hover,:focus-within) .rg{animation:tw-ring 1.4s var(--ease-out) infinite}
 @keyframes tw-ring{from{opacity:.9;transform:scaleY(cos(var(--t0))) scale(.35)}to{opacity:0;transform:scaleY(cos(var(--t0))) scale(1.3)}}}
 @media (forced-colors:active){#page-home .tw-pin a:focus-visible{forced-color-adjust:none;background:Highlight;color:HighlightText;border-color:HighlightText}}

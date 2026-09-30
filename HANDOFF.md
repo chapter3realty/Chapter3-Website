@@ -2182,6 +2182,11 @@ Where on the Grand Strand are you looking? Can you make it look like A dark mode
 3d version of google maps that like default maps not satellite." Both are done
 in the second preview (below).
 
+**His request after the third preview, verbatim (2026-09-30).** "can you ahve the
+3d night mode map zoom out from the united states into what it is now on the
+website". Done in the fourth preview: the map now starts on the whole United
+States and zooms down to the Grand Strand (below).
+
 **Where it is.** `design/homepage-v2/`, outside `chapter3realty/`, so
 `deploy.ps1` cannot ship it. `chapter3realty/index.html` is unchanged.
 `node design/homepage-v2/assemble.js` builds `design/homepage-v2/index.html`
@@ -2198,9 +2203,13 @@ get a 9:16 cut). That holds at every width: below 1100px the film runs behind
 the whole hero, and the paths and the reviews card are translucent over it. The
 analyzer is an ivory sheet over the hero. Badge icons draw themselves. The towns
 section is a dark road map in the style of today's Google Maps dark mode
-(near-black water, slate land, blue-grey roads, teal parks), tilted in 3D: it
-flies in from overhead when it scrolls into view, the nine town pins land one by
-one, then the map turns slowly while it is on screen. It holds still while the
+(near-black water, slate land, blue-grey roads, teal parks), tilted in 3D. When
+it scrolls into view the camera starts on the whole United States (beside the
+card on a wide screen), slides east toward South Carolina while it zooms down
+through the Southeast and the Carolina coast to the Grand Strand, with a brass
+point on Myrtle Beach to fly to, then tilts into 3D and turns; the nine town
+pins land one by one as it arrives (4.6s in all), then the map turns slowly
+while it is on screen. It holds still while the
 pointer or keyboard focus is on a town label, and a pause button next to the
 compass stops it (WCAG 2.2.2: moving content that runs past five seconds needs a
 stop control). The FAQ is always open. No ticker, count-up, call bar or
@@ -2237,6 +2246,34 @@ the turn costs about 6ms per second. Browsers without CSS trigonometry
 (Safari before 15.4, Chrome before 111) get the tilted picture with the towns
 as a plain list under it.
 
+**The zoom from the whole country, so nobody re-derives it.** Three more maps sit
+under the basemap in the same 3D scene: the United States, the Southeast and the
+Carolina coast (`media/map/zoom-{us,se,coast}-{1600,3200}.{avif,webp}`), drawn by
+`map/build_zoom.py` in the same palette from Census states, urban areas,
+counties, water and roads, PAD-US parks, and Natural Earth (public domain) for
+the other countries, the Great Lakes, lakes and rivers. They are Web Mercator and
+the basemap is an equirectangular plane; `src/fx.html` places all four with the
+one camera, and they agree at the camera target's latitude to within a pixel
+over the basemap. The flight is baked into 96 frames of transform and opacity
+keyframes, as before, so the compositor plays it. A level fades in once it is
+detailed enough to add something, and the one under it fades out once the level
+above covers the whole stage; the coast fades as the camera lands, so the final
+view is exactly the one before this change. The haze at the horizon is now an
+element (`.tw-fog`) so it can fade in with the tilt. The three maps load only
+when motion is allowed and the map is within two and a half screens (the page
+sets their `srcset` then): 180 KB on a phone or an ordinary screen, 414 KB on a
+high-density desktop. On Save-Data, a 2G or 3G link, or if the maps have not
+arrived 1.5s after the map comes into view, the flight is the old short one (the
+camera tilts down from overhead) and the maps are not downloaded or not used.
+Measured on a phone-sized screen at 3x (`tests/flightfps.js`): 58 fps across the
+whole flight (the old flight 60), 55 fps at 4x CPU slowdown (the old 58); the one
+long frame is where the flight is set up, which on an ordinary scroll happens
+before the map is on screen. On a 1440px screen this sandbox draws in software,
+and both the old flight and the zoom run at 31 to 38 fps there; main-thread work
+during the flight is about the same (110 against 89 ms per second), so a real
+graphics chip should hold full speed for both. Checked in WebKit and Firefox as well. `tests/zoomframes.js` freezes the
+flight at set moments and screenshots it, to look at every hand-off.
+
 **A font fact, so nobody re-derives it.** Fraunces at optical size 144 (its
 display end) draws the roman "e" with so thin a crossbar that at 100px and up it
 disappears on screen and "Myrtle Beach" reads "Myrtlc Bcach". The hero H1 uses
@@ -2260,7 +2297,7 @@ map" / "Play the map" for the new one, read by screen readers only).
 labels measure 7.3:1 or better from pixels, the water names 5.6:1 or better next
 to their letters, the map data line 7.4:1 or better, all over the map); no
 sideways scroll from 320 to 1920 except 800 to 979, which is the header defect
-in the 2026-09-11 section (the live page does the same at 900). 196 behaviour
+in the 2026-09-11 section (the live page does the same at 900). 204 behaviour
 checks pass (`tests/states.js`): reduced motion, JavaScript off,
 IntersectionObserver never firing, every video gate, reviews, fold budgets,
 fallback fonts, layout shift, and the map: label collisions at 28 sizes through
@@ -2269,18 +2306,25 @@ at the start of the flight whether the map is scrolled to or jumped to, the
 pause button, the turn holding with the pointer or focus on a town label but not
 on the map background, a height-only resize leaving the turn alone, a breakpoint
 crossed mid-flight, keyboard focus arriving while the map waits overhead, a slow
-map image, stopping off screen, and the plain list a browser without CSS
-trigonometry gets. `tests/twcheck.js` with labels 4.5% wider is clean at 42
+map image, stopping off screen, the zoom starting on the whole country beside the
+card with the basemap hidden and leaving only the basemap when it lands, the short
+flight with no zoom maps downloaded on Save-Data, the map stopping at rest and
+turning again when the motion setting changes mid-visit, and the plain list a
+browser without CSS trigonometry gets. `tests/twcheck.js` with labels 4.5% wider is clean at 42
 sizes. The map checks also pass in WebKit and Firefox at nine sizes (labels
 within 0.15px of their towns at rest, 0.65px while moving). The hero text
 measures 4.5:1 or better from pixels at twelve moments of the film, at ten sizes
 from 320 to 1920. Throttled phone (4x CPU, 9 Mbps, 60ms), five interleaved runs
 each, medians: LCP 0.73s (live 0.57s; the LCP element is the hero poster),
-blocking time 315ms (live 151ms), CLS 0. An earlier build used
+blocking time 315ms (live 151ms), CLS 0. After a container restart on 2026-09-30
+the same test measured everything slower (the live page: blocking time 434ms);
+interleaved there, the build with the zoom matched the build before it (blocking
+time 620 against 629ms, LCP within the noise, CLS 0), because the zoom maps are
+not part of the page load. An earlier build used
 `content-visibility:auto` on the lower sections; it hid Team, Towns and FAQ from
 Safari/VoiceOver and Firefox screen readers, so it is gone and must not come
 back. In a clean copy of the branch
-with the page and media in place, `tests/media.js` finds all 23 local files and
+with the page and media in place, `tests/media.js` finds all 35 local files and
 `build.js preflight` exits 0; the audit's 487 advisory warnings are the same
 count as the live site's, so the page adds none. The test scripts are in
 `design/homepage-v2/tests/` (README there). One measurement trap: this site's

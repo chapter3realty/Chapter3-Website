@@ -1,5 +1,5 @@
-// Every local file a page points at exists: src, poster, srcset, href of preload links and data-* URLs that start with
-// "/". node media.js [page.html ...] (default: chapter3realty/index.html). Exits 1 when one is missing.
+// Every local file a page points at exists: src, poster, srcset (and data-srcset, which the page's script turns into
+// srcset), href of preload links and data-* URLs that start with "/". node media.js [page.html ...] (default: chapter3realty/index.html). Exits 1 when one is missing.
 // build.js preflight checks asset links but not /media/, so this runs in the accept steps (HANDOFF.md).
 const fs = require('fs'), path = require('path');
 const REPO = path.resolve(__dirname, '..', '..', '..'), SITE = process.env.SITE || path.join(REPO, 'chapter3realty');
@@ -8,8 +8,8 @@ let missing = 0, checked = 0;
 for (const page of pages) {
   const html = fs.readFileSync(page, 'utf-8').replace(/<!--[\s\S]*?-->/g, '');
   const urls = new Set();
-  for (const m of html.matchAll(/\s(?:src|poster|data-[a-z-]+)="(\/[^"#?]+)/g)) urls.add(m[1]);
-  for (const m of html.matchAll(/\s(?:srcset|imagesrcset)="([^"]+)"/g)) for (const c of m[1].split(',')) { const u = c.trim().split(/\s+/)[0]; if (u.startsWith('/')) urls.add(u.split(/[?#]/)[0]); }
+  for (const m of html.matchAll(/\s(?:src|poster|data-(?!srcset)[a-z-]+)="(\/[^"#?\s]+)/g)) urls.add(m[1]);
+  for (const m of html.matchAll(/\s(?:srcset|imagesrcset|data-srcset)="([^"]+)"/g)) for (const c of m[1].split(',')) { const u = c.trim().split(/\s+/)[0]; if (u.startsWith('/')) urls.add(u.split(/[?#]/)[0]); }
   for (const m of html.matchAll(/<link[^>]+rel="preload"[^>]*>/g)) { const h = m[0].match(/href="(\/[^"#?]+)/); if (h) urls.add(h[1]); }
   for (const u of urls) {
     if (u.startsWith('//')) continue;

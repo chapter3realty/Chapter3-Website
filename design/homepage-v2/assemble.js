@@ -29,6 +29,7 @@ const baseSrc = s;
 function grab(re, label) { const m = baseSrc.match(re); if (!m) throw new Error("copy not found in base: " + label); return m[1]; }
 function grabAll(re, label, n) { const m = [...baseSrc.matchAll(re)]; if (m.length !== n) throw new Error(`${label}: expected ${n}, found ${m.length}`); return m; }
 const plane = JSON.parse(fs.readFileSync(path.join(DIR, "data", "strand-plane.json"), "utf-8"));
+const zoomLv = JSON.parse(fs.readFileSync(path.join(DIR, "data", "strand-zoom.json"), "utf-8")).levels;
 const fill = {};
 fill.EYEBROW = grab(/<p class="eyebrow" style="color:var\(--brass-2\);margin-bottom:\.9rem">([^<]+)<\/p>/, "hero eyebrow");
 fill.SUB = grab(/<\/h1><p style="color:rgba\(244,239,232,\.65\)[^"]*">([^<]+)<\/p>/, "hero sub");
@@ -64,6 +65,14 @@ fill.AN_P = grab(/Try our investor analysis tool<\/h2><p style="[^"]*">([^<]+)<\
   // head.html hides a shield at a width where it would sit under a label (data-r names the route). CSS draws the shield and
   // water text from data-t, so this decoration, hidden from assistive tech, adds no loose lines to llms-full.txt
   fill.SHIELDS = plane.shields.map((s) => `<span class="tw-pt sh ${s.kind === "sc" ? "sc" : "us"}" data-r="${s.label}" style="--px:${f(s.px)};--py:${f(s.py)}"><b data-t="${s.label}"></b></span>`).join("\n");
+  // the zoom levels the map flies down through (map/build_zoom.py): the United States, the Southeast, the Carolina coast.
+  // No srcset until fx.html decides the flight will use them (motion allowed, no Save-Data, not a 2G or 3G link).
+  fill.PLANE = [plane.lon0, plane.lat1, plane.K, plane.S, plane.W, plane.H].join(",");
+  fill.ZOOM = zoomLv.map((l) => {
+    const set = (ext) => `/media/map/zoom-${l.key}-1600.${ext} 1600w,/media/map/zoom-${l.key}-3200.${ext} 3200w`;
+    for (const w of [1600, 3200]) for (const ext of ["avif", "webp"]) if (!fs.existsSync(path.join(DIR, "media", "map", `zoom-${l.key}-${w}.${ext}`))) throw new Error("no zoom image " + l.key + " " + w + " " + ext);
+    return `<div class="tw-lod" data-lod="${l.key}" data-ext="${l.lon0},${l.lon1},${l.lat0},${l.lat1}"><picture><source type="image/avif" data-srcset="${set("avif")}" sizes="(max-width:699px) 530px,1600px"><img data-srcset="${set("webp")}" sizes="(max-width:699px) 530px,1600px" width="1600" height="${l.files["1600"].h}" alt="" decoding="async"></picture></div>`;
+  }).join("\n");
   // water names: where each sits, and at which angle, is set per width in head.html; these are the names the basemap carries
   const cls = { "Intracoastal Waterway": "icw", "Waccamaw River": "wac", "Atlantic Ocean": "sea" };
   fill.WATER = plane.water.map((w) => {

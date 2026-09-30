@@ -286,7 +286,7 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
       await page.waitForTimeout(t - (worst.length ? [400, 1600, 3200, 7000][worst.length - 1] : 0));
       await page.evaluate(TW);
       const r = await page.evaluate(() => {
-        const an = window.__twan(), running = an.filter((a) => a.playState === 'running').length;
+        const an = window.__twan(), running = an.filter((a) => a.playState === 'running' && a.effect.target.matches('.tw-plane, .tw-pt, .tw-deco .wl i, .tw-compass i')).length;
         an.forEach((a) => a.pause()); const e = window.__tw.projErr(); an.forEach((a) => a.play());
         return { e: e.worst, running };
       });
@@ -355,6 +355,72 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     const off = await page.evaluate(() => window.__twan().map((a) => a.playState));
     ok(`map ${w}: stops turning off screen`, off.every((s) => s !== 'running'), [...new Set(off)].join());
     ok(`map ${w}: no script errors`, errs.length === 0, errs.join(' | '));
+    await ctx.close();
+  }
+  // the zoom from the whole United States: its first frame shows the country, framed beside the card on a wide screen,
+  // with the basemap hidden; after it lands the zoom levels are gone and the basemap is the only map
+  for (const [w, h] of [[1440, 900], [390, 844]]) {
+    const { ctx, page, errs } = await ctxPage(browser, { w, h }, twInit);
+    await page.goto(URL0, { waitUntil: 'load' });
+    await page.evaluate(() => { const r = document.querySelector('.tw-stage').getBoundingClientRect(); scrollTo({ top: r.top + scrollY - innerHeight * 1.4, behavior: 'instant' }); });
+    await page.waitForFunction(() => [...document.querySelectorAll('.tw-lod img')].every((i) => i.complete && i.naturalWidth > 0), null, { timeout: 30000 }).catch(() => {});
+    await imgReady(page);
+    await centreMap(page);
+    await page.waitForFunction(() => document.querySelector('.tw-stage').classList.contains('in'));
+    const f0 = await page.evaluate(() => {
+      const an = document.getAnimations().filter((a) => a.effect && a.effect.target && a.effect.target.closest && a.effect.target.closest('.tw-stage') && !(a instanceof CSSTransition) && !(a instanceof CSSAnimation));
+      an.forEach((a) => { a.pause(); a.currentTime = 0; });
+      const st = document.querySelector('.tw-stage').getBoundingClientRect(), us = document.querySelector('.tw-lod[data-lod=us]'), r = us.getBoundingClientRect(), e = us.dataset.ext.split(',').map(Number);
+      const ym = (lat) => Math.log(Math.tan(Math.PI / 4 + lat * Math.PI / 360)) * 180 / Math.PI;
+      // where the middle of the contiguous states sits, from the level's own rectangle (flat in the first frame)
+      const mx = r.left + (-95.85 - e[0]) / (e[1] - e[0]) * r.width, my = r.top + (ym(e[3]) - ym(38)) / (ym(e[3]) - ym(e[2])) * r.height;
+      const usW = (124.8 - 66.9) / (e[1] - e[0]) * r.width;
+      const card = document.querySelector('.tw-card').getBoundingClientRect(), abs = getComputedStyle(document.querySelector('.tw-card')).position === 'absolute';
+      const west = mx - usW / 2;
+      const o = (sel) => +getComputedStyle(document.querySelector(sel)).opacity;
+      const out = { lod: document.querySelector('.tw-stage').classList.contains('lod'), us: o('.tw-lod[data-lod=us]'), plane: o('.tw-plane'), fog: o('.tw-fog'),
+        usW: Math.round(usW), stageW: Math.round(st.width), westOfCard: abs ? Math.round(west - card.right) : null, inside: west >= st.left - 1 && west + usW <= st.right + 1 };
+      an.forEach((a) => { a.currentTime = 400; });
+      out.dest = o('.tw-dest');
+      an.forEach((a) => a.play());
+      return out;
+    });
+    ok(`map ${w}: the flight starts on the whole country, the basemap hidden`, f0.lod && f0.us === 1 && f0.plane === 0 && f0.fog === 0 && f0.dest > 0.9 && f0.inside && (f0.westOfCard === null || f0.westOfCard > 0) && f0.usW > f0.stageW * (w > 1099 ? 0.4 : 0.8), JSON.stringify(f0));
+    await page.waitForTimeout(5400);
+    const end = await page.evaluate(() => ({ lod: document.querySelector('.tw-stage').classList.contains('lod'), shown: [...document.querySelectorAll('.tw-lod, .tw-dest')].filter((e) => e.getClientRects().length).length, plane: getComputedStyle(document.querySelector('.tw-plane')).opacity, fog: getComputedStyle(document.querySelector('.tw-fog')).opacity, pins: window.__shown() }));
+    ok(`map ${w}: after the zoom lands, only the basemap is left`, !end.lod && end.shown === 0 && end.plane === '1' && end.fog === '1' && end.pins === 9, JSON.stringify(end));
+    ok(`map ${w}: zoom without script errors`, errs.length === 0, errs.join(' | '));
+    await ctx.close();
+  }
+  // the motion preference changing while the page is open: the map stops at rest with every label shown, then turns again
+  {
+    const { ctx, page } = await ctxPage(browser, { w: 1440, h: 900 }, twInit);
+    await page.goto(URL0, { waitUntil: 'load' });
+    await imgReady(page);
+    await centreMap(page);
+    await page.waitForTimeout(6000);
+    const a = await flightState(page);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.waitForTimeout(400);
+    const b = await page.evaluate(() => ({ running: window.__twan().filter((x) => x.playState === 'running').length, shown: window.__shown(), lod: document.querySelector('.tw-stage').classList.contains('lod') }));
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    await page.waitForTimeout(400);
+    const c = await flightState(page);
+    ok('map: turning off motion while open stops it at rest, turning it back on turns it again', a.turn > 0 && b.running === 0 && b.shown === 9 && !b.lod && c.turn > 0, JSON.stringify({ a, b, c }));
+    await ctx.close();
+  }
+  // Save-Data: the short flight, and the zoom maps are never requested
+  {
+    const { ctx, page } = await ctxPage(browser, { w: 1440, h: 900 }, () => { Object.defineProperty(navigator, 'connection', { value: { saveData: true, effectiveType: '4g' }, configurable: true }); });
+    const zoomReqs = []; page.on('request', (r) => { if (/zoom-(us|se|coast)/.test(r.url())) zoomReqs.push(r.url()); });
+    await page.goto(URL0, { waitUntil: 'load' });
+    await imgReady(page);
+    await page.evaluate(() => { const r = document.querySelector('.tw-stage').getBoundingClientRect(); scrollTo({ top: r.top + scrollY - innerHeight * 1.4, behavior: 'instant' }); });
+    await page.waitForTimeout(300);
+    await centreMap(page);
+    await page.waitForTimeout(400);
+    const r = await page.evaluate(() => ({ lod: document.querySelector('.tw-stage').classList.contains('lod'), flight: document.getAnimations().filter((a) => a.effect && a.effect.target && a.effect.target.matches && a.effect.target.matches('.tw-plane') && a.effect.getTiming().iterations !== Infinity).map((a) => a.effect.getTiming().duration) }));
+    ok('map, Save-Data: the short flight, no zoom maps downloaded', !r.lod && r.flight.join() === '2600' && zoomReqs.length === 0, JSON.stringify(r) + ' requests ' + zoomReqs.length);
     await ctx.close();
   }
   // a jump straight to the map (a link, a reload with the scroll restored): both observers report in one frame. The flight

@@ -22,7 +22,7 @@ const { chromium } = require('playwright');
   await p.waitForTimeout(1500);
   await win('top of page (hero film)', 4000);
   await p.evaluate(() => { const el = document.querySelector('#towns .tw-stage'); const r = el.getBoundingClientRect(); window.scrollTo({ top: r.top + scrollY - Math.max(0, (innerHeight - r.height) / 2), behavior: 'instant' }); });
-  await win('map: fly-in', 3000);
+  await win('map: fly-in', +(process.env.FLY || 5000));
   await win('map: turning', 5000);
   await p.click('.tw-rot');
   await win('map: paused by its button', 4000);
