@@ -97,10 +97,11 @@
 
   /* ---- the map in the hero: as the page opens, the camera flies down to it from the eastern United States, tilted a
      little. It glides toward South Carolina as it zooms, from the country map to the Southeast to the Carolina coast to
-     the basemap, and tilts further and turns as it lands; then it rests. All of it ends within 5s of its start, so it
-     needs no pause button (WCAG 2.2.2). The compositor plays it: keyframes computed here with the projection head.html
-     uses, so no style work per frame. With no motion allowed the CSS draws the map at rest. On Save-Data, a 2G or 3G link, or if the zoom maps are late, the flight is
-     the short one: the camera tilts down from overhead. ---- */
+     the basemap, tilts further and, in its second half, spins 24 degrees onto the city; then it rests. All of it ends
+     within 5s of its start, so it needs no pause button (WCAG 2.2.2). The compositor plays it: keyframes computed here
+     with the projection head.html uses, so no style work per frame. With no motion allowed the CSS draws the map at
+     rest. On Save-Data, a 2G or 3G link, or if the zoom maps are late, the flight is the short one: the camera tilts
+     down from overhead. ---- */
   var tw = $('#home'), tst = tw && $('.tw-stage', tw);
   var towns = { stop: function () {} };
   /* only where CSS places the labels on the map: without trigonometric CSS they are a plain list, which must not move */
@@ -218,7 +219,7 @@
       return f;
     }
     function zoomPath(c, geo) {
-      var w = world(c), f = frame(c), E = [-98, -66.5, 24.5, 47.5], ta = Math.min(28, c.t0), ha = c.h0 * .4, s0 = { t: ta, h: ha };
+      var w = world(c), f = frame(c), E = [-98, -66.5, 24.5, 47.5], ta = Math.min(28, c.t0), ha = c.h0 + 24, s0 = { t: ta, h: ha };
       var box = [w.at(E[0], E[3]), w.at(E[1], E[3]), w.at(E[1], E[2]), w.at(E[0], E[2])], m = w.at((E[0] + E[1]) / 2, (E[2] + E[3]) / 2);
       var fx = f.x + f.w / 2 - f.cx, fy = f.y + f.h / 2 - f.cy, ch = Math.cos(ha * R), sh = Math.sin(ha * R), ct = Math.cos(ta * R);
       s0.z = Math.min(f.w / (box[1][0] - box[0][0]), f.h / (box[2][1] - box[1][1])); s0.dx = m[0]; s0.dy = m[1];
@@ -235,7 +236,7 @@
       var z0 = s0.z, qx = s0.dx * z0, qy = s0.dy * z0, out = [];
       for (var i = 0; i <= ZN; i++) {
         var u = i / ZN, z = Math.exp(Math.log(z0) * (1 - eio(cl((u - .05) / .83)))), g = 1 - eio(cl((u - .03) / .33));
-        out.push({ u: u, z: z, dx: qx * g / z, dy: qy * g / z, h: ha + (c.h0 - ha) * eio(cl((u - .3) / .7)), t: ta + (c.t0 - ta) * (1 - Math.pow(1 - cl((u - .4) / .6), 3)) });
+        out.push({ u: u, z: z, dx: qx * g / z, dy: qy * g / z, h: ha + (c.h0 - ha) * eio(cl((u - .45) / .55)), t: ta + (c.t0 - ta) * (1 - Math.pow(1 - cl((u - .4) / .6), 3)) });
       }
       /* a level fades in once detailed enough to add something; the one under it fades out over nine frames once it is in
          and covers the stage (its corners, back through the camera onto the ground). The coast fades as the camera lands */

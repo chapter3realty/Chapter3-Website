@@ -2324,8 +2324,10 @@ background: when it is first shown; a page opened further down shows the map at
 rest). Its first frame is the eastern United States (98W to 66.5W, 24.5N to
 47.5N) filling 94% of the part of the hero the words leave free (beside them on
 a wide screen, under them on a narrow one, on screen only), seen with the camera
-tilted 28 degrees (or the landing tilt if that is less) at 40% of the landing
-heading; the fit is solved through the tilted camera by moving it by the error a
+tilted 28 degrees (or the landing tilt if that is less), turned 24 degrees off the
+landing heading, which it spins through in the flight's second half (faster at
+the owner's request, 2026-10-01: "Make the spin it has on the city a bit
+faster"); the fit is solved through the tilted camera by moving it by the error a
 few times. The Grand Strand then glides to the camera target while the camera
 zooms, tilts further and turns. The flight is baked into 96 frames of transform
 and opacity keyframes, so the compositor plays it. A level fades in once it is
@@ -2448,7 +2450,10 @@ and lands with all nine towns, no script errors, no failed requests. The ten
 `media/hero/` files were removed from the artifact (21 files now: the page and
 the 20 map images). In the viewer the eyebrow wraps to two lines on a phone,
 because the preview uses Google's DM Sans; the site's own font keeps it on one.
-**Preview 6 sent 2026-10-01 at the same link** (artifact version 6, built from
+**Preview 7 sent 2026-10-01 at the same link:** the landing spin is faster, a
+24-degree turn on every screen packed into the flight's second half (it was 6
+to 25 degrees, spread over the last 70%). 210/210 behaviour checks pass; the
+motion still ends within 5s. **Preview 6 sent 2026-10-01 at the same link** (artifact version 6, built from
 commit 3981a97): his 2026-10-01 edits (above). Loaded before sending, wrapped
 the way the viewer wraps it, at 390 and 1440: the flight starts on the eastern
 United States and lands with all nine towns, the H1 reads "Myrtle Beach Homes",
