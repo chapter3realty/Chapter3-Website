@@ -2448,6 +2448,12 @@ and lands with all nine towns, no script errors, no failed requests. The ten
 `media/hero/` files were removed from the artifact (21 files now: the page and
 the 20 map images). In the viewer the eyebrow wraps to two lines on a phone,
 because the preview uses Google's DM Sans; the site's own font keeps it on one.
+**Preview 6 sent 2026-10-01 at the same link** (artifact version 6, built from
+commit 3981a97): his 2026-10-01 edits (above). Loaded before sending, wrapped
+the way the viewer wraps it, at 390 and 1440: the flight starts on the eastern
+United States and lands with all nine towns, the H1 reads "Myrtle Beach Homes",
+no script errors, no failed requests. Only the page changed; the 20 map images
+were kept.
 
 **On accept.** Copy `design/homepage-v2/index.html` over
 `chapter3realty/index.html` and `design/homepage-v2/media/map/` to
