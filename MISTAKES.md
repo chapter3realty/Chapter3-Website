@@ -700,3 +700,28 @@ phone, and I treated a correct diagnosis as a mandate.
 the options and stop. A fix goes in when he asks for it. This is narrower than
 a normal page edit: he reviews page copy after the fact and expects drafts, and
 he does not expect a working piece of the site to be rebuilt underneath him.
+
+## 91. I sped up the wrong spin (2026-10-01)
+
+**What happened.** He wrote "Make the spin it has on the city a bit faster i
+like that." The homepage map had had two motions he could call a spin: the
+turn the camera makes as the flight lands, and a slow turn after the landing,
+which had gone two previews earlier with the pause buttons he removed. I read
+it as the landing turn, the only one in the preview in front of him, and the
+seventh preview shipped a faster landing turn. He meant the other: "oh im sorry
+i meant after the animation is done the city spins a little which is cool i
+wanted more of that after the animation was over." A preview round went to the
+wrong change.
+
+**Why the existing rules did not stop it.** Nothing asks for a request's
+reading to be checked when its words fit two things he has seen. "The spin it
+has on the city" fit both. I picked the one on screen, which looked like the
+safe reading, and missed that "i like that" pointed at something he had enjoyed
+and then lost.
+
+**What stops it recurring.** When a request could name either of two parts of
+the page, say which one before building, in one line ("the turn as it lands, or
+the slow turn after it?"), or build the cheaper reading and say plainly which
+one it is and that the other is a short change. Read his words against every
+preview he has seen, not only the latest: a thing he liked that has since gone
+is the likelier subject of "more of that".

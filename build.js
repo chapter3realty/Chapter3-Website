@@ -260,6 +260,20 @@ function check() {
           }
         }
 
+        // the homepage's town cards (the pins on the map in the hero) must match each market's row too. Inert until the
+        // homepage has the pins; design/homepage-v2/map/towncards.js rewrites them from this file
+        {
+          const home = path.join(ROOT, "index.html");
+          const html = fs.existsSync(home) ? fs.readFileSync(home, "utf-8") : "";
+          for (const m of d.markets || []) {
+            const li = (html.match(new RegExp(`<li class="tw-pt tw-pin" data-town="${m.slug}"[^>]*>[\\s\\S]*?</li>`)) || [])[0];
+            if (!li) continue;
+            if (!li.includes(`data-adr="${m.adr}"`) || !li.includes(`data-occ="${m.occupancy}"`))
+              errors.push(`the homepage's ${m.name} card disagrees with data/str-market.json (expected ${usd(m.adr)} a night, ${m.occupancy}%). `
+                + `Run 'node design/homepage-v2/map/towncards.js'.`);
+          }
+        }
+
         // each submarket page must match its own row
         for (const m of d.markets || []) {
           const p = path.join(ROOT, "submarkets", m.slug, "index.html");

@@ -264,7 +264,7 @@
       lods.forEach(function (l) { $$('source,img', l.el).forEach(function (e) { var v = e.getAttribute('data-srcset'); if (v && !e.getAttribute('srcset')) e.setAttribute('srcset', v); }); });
     }
     function ok(im) { return im.complete && im.naturalWidth > 0; }
-    function land() { landed = true; tst.classList.remove('lod'); tst.classList.add('in'); }
+    function land() { landed = true; tst.classList.remove('lod'); tst.classList.add('in'); hook(); }
     /* the flight, from the layout of the moment; the zoom only if all three maps are in. Three tasks, each short on a slow
        phone: the path; the map's keyframes, and it moves; then what is drawn on it, hidden until the landing, from 70% of
        the flight on (50% of the short one), on the map's clock */
@@ -281,7 +281,7 @@
         tst.classList.add('in');
         fly.forEach(function (a) { a.play(); });
         if (!fly.length) { land(); return; }
-        fly[0].finished.then(function () { landed = true; tst.classList.remove('lod'); }, function () {});
+        fly[0].finished.then(function () { landed = true; tst.classList.remove('lod'); hook(); }, function () {});
         setTimeout(function () {
           if (landed || fly !== mine) return;
           var h = play(c, path, geo, opts, 'h', Math.floor((zoom ? .7 : .5) * (path.length - 1)));
@@ -311,6 +311,12 @@
       fly.forEach(function (a) { a.cancel(); }); fly = []; land();
       if (tst.getAnimations) tst.getAnimations({ subtree: true }).forEach(function (a) { if (a.transitionProperty) a.finish(); });
     };
+
+    /* the next script turns the map after the landing, on this camera and projection */
+    var hooks = [];
+    function hook() { hooks.forEach(function (f) { f(); }); }
+    tst.c3 = { camera: camera, pose: pose, play: play, end: end, words: words, plane: plane, pts: pts, wls: wls,
+      landed: function () { return landed; }, onLand: function (f) { hooks.push(f); } };
     /* the flight plays once, as the page opens with the map on screen (a background tab: when first shown). A page opened
        further down, or with no motion allowed, shows the map at rest */
     var r = tst.getBoundingClientRect();
@@ -337,5 +343,257 @@
   /* ---- the motion preference can change while the page is open: a flight under way stops at rest ---- */
   var onRm = function () { if (rm.matches) towns.stop(); };
   if (rm.addEventListener) rm.addEventListener('change', onRm); else if (rm.addListener) rm.addListener(onRm);
+})();
+</script>
+<script>
+/* Homepage map, 2026-09 redesign, once it has landed: the slow turn, turning it by hand, and the town cards. Its own
+   script, on the flight script's camera and projection (tst.c3, which that script sets). Without it, it does nothing. */
+(function () {
+  'use strict';
+  var html = document.documentElement;
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var tw = $('#home'), tst = tw && $('.tw-stage', tw), M = tst && tst.c3;
+  if (!M) return;
+  var camera = M.camera, pose = M.pose, play = M.play, plane = M.plane, pts = M.pts, wls = M.wls, words = M.words, cam = '';
+
+    /* ---- after the landing the map keeps turning, slowly, one way and back between the two headings the cameras were
+       searched over (--h0, where it lands, and --h1), on the compositor. It waits while a town's label or card is under
+       the pointer or a card is open, and while the map is off screen, and it stops for good, where it is, once the
+       visitor drags the map, taps it or tabs into it. It runs on past 5s, so those are the way to stop it (WCAG 2.2.2).
+       With no motion allowed it never starts. ---- */
+    var turn = [], still = false, seen = true, hov = false, TT = 12000;
+    function spin() {
+      if (!M.landed()) return;
+      var c = camera(), s = [];
+      tst.classList.toggle('turnable', c.h1 !== c.h0);
+      if (still || turn.length || rm.matches || !html.classList.contains('m') || c.h1 === c.h0) return;
+      for (var i = 0; i <= 18; i++) s.push({ t: c.t0, h: c.h0 + (c.h1 - c.h0) * i / 18, z: 1, dx: 0, dy: 0 });
+      turn = play(c, s, null, { duration: TT, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' });
+      sync();
+    }
+    function sync() {
+      var on = seen && !hov && !open && !still && !document.hidden;
+      turn.forEach(function (a) { if (on) a.play(); else a.pause(); });
+    }
+    /* the heading the map shows now: where the visitor left it, or where the turn has it */
+    var hNow = null;
+    function heading(c) {
+      if (hNow !== null) return hNow;
+      var p = turn.length && turn[0].effect.getComputedTiming().progress;
+      return turn.length && p !== null ? c.h0 + (c.h1 - c.h0) * p : c.h0;
+    }
+    /* the map at one heading, set on the elements themselves (the turn's keyframes, if any, are gone by then) */
+    function setAt(c, h) {
+      var f = pose(c, { t: c.t0, h: h, z: 1, dx: 0, dy: 0 });
+      plane.style.transform = f.plane;
+      pts.forEach(function (el, i) { el.style.transform = c.on[i] ? f.pts[i] : ''; });
+      wls.forEach(function (el, i) { el.style.transform = c.on[pts.length + i] ? f.wls[i] : ''; });
+      hNow = h; cam = JSON.stringify(c);
+    }
+    function freeze() {
+      if (still) return;
+      still = true;
+      if (!turn.length) return;
+      var c = camera(), h = heading(c);
+      turn.forEach(function (a) { a.cancel(); }); turn = [];
+      setAt(c, h);
+    }
+    new IntersectionObserver(function (es) { seen = es[es.length - 1].intersectionRatio > .15; sync(); }, { threshold: [0, .15, .3] }).observe(tst);
+    document.addEventListener('visibilitychange', sync);
+    tst.addEventListener('pointerover', function (e) { var on = !dg && !!e.target.closest('.tw-pin a, .tw-card'); if (on !== hov) { hov = on; sync(); } });
+    tst.addEventListener('pointerleave', function () { if (hov) { hov = false; sync(); } });
+
+    /* ---- the visitor turns the map by dragging it sideways, with a mouse, a pen or a finger (an up-and-down swipe
+       still scrolls the page). It turns between the same two headings, so no label ever covers another, slowing to a
+       stop at each end. A drag that starts on a label turns the map and does not follow the link ---- */
+    var dg = null, coast = 0, dragged = 0;
+    /* in the last 2 degrees at each end the map turns ever slower, so it never leaves the range the labels were checked over */
+    function give(h, lo, hi) { var e = Math.min(2, (hi - lo) / 4); return h < lo + e ? lo + e * Math.exp((h - lo - e) / e) : h > hi - e ? hi - e * Math.exp((hi - e - h) / e) : h; }
+    function ungive(h, lo, hi) { var e = Math.min(2, (hi - lo) / 4); h = Math.max(lo + .01, Math.min(hi - .01, h)); return h < lo + e ? lo + e + e * Math.log((h - lo) / e) : h > hi - e ? hi - e - e * Math.log((hi - h) / e) : h; }
+    tst.addEventListener('pointerdown', function (e) {
+      if (!M.landed() || !e.isPrimary || e.button > 0 || e.target.closest('.tw-card')) return;
+      var c = camera();
+      if (c.h1 === c.h0) return;
+      /* grabbed above the camera target the map turns with the pointer; below it, against it */
+      var y = tst.getBoundingClientRect().bottom - c.cb;
+      dg = { id: e.pointerId, x: e.clientX, y: e.clientY, c: c, k: (e.clientY < y ? 1 : -1) * 0.09, on: false, v: 0, lx: e.clientX, lt: e.timeStamp };
+    });
+    tst.addEventListener('pointermove', function (e) {
+      /* a pointer dragged out of the window: Firefox reports it at x 0, which would throw the map to one end */
+      if (!dg || e.pointerId !== dg.id || e.clientX <= 0 || e.clientX >= innerWidth) return;
+      var dx = e.clientX - dg.x;
+      if (!dg.on) {
+        if (Math.abs(dx) < 8 || Math.abs(dx) < Math.abs(e.clientY - dg.y)) return;
+        cancelAnimationFrame(coast); freeze(); shut();
+        dg.on = true; dg.h = ungive(heading(dg.c), Math.min(dg.c.h0, dg.c.h1), Math.max(dg.c.h0, dg.c.h1)); dg.x = e.clientX; dx = 0;
+        tst.classList.add('dragging');
+        try { tst.setPointerCapture(e.pointerId); } catch (x) {}
+      }
+      var lo = Math.min(dg.c.h0, dg.c.h1), hi = Math.max(dg.c.h0, dg.c.h1), dt = e.timeStamp - dg.lt;
+      setAt(dg.c, give(dg.h + dx * dg.k, lo, hi));
+      if (dt > 0) { dg.v = .7 * (e.clientX - dg.lx) * dg.k / dt + .3 * dg.v; dg.lx = e.clientX; dg.lt = e.timeStamp; }
+    });
+    function release(e) {
+      if (!dg || e.pointerId !== dg.id) return;
+      var d = dg; dg = null;
+      if (!d.on) { freeze(); return; }
+      tst.classList.remove('dragging'); dragged = e.timeStamp;
+      /* the map coasts at the speed it was let go and slows to a stop, at the latest at either end */
+      var c = d.c, lo = Math.min(c.h0, c.h1), hi = Math.max(c.h0, c.h1), v = rm.matches || e.timeStamp - d.lt > 80 ? 0 : d.v, t0 = performance.now();
+      (function step(now) {
+        var dt = Math.min(40, now - t0), h = hNow; t0 = now;
+        v *= Math.pow(.93, dt / 16); h += v * dt;
+        if (h <= lo || h >= hi) v = 0;
+        setAt(c, Math.max(lo, Math.min(hi, h)));
+        if (Math.abs(v) > .0004) coast = requestAnimationFrame(step);
+      })(t0);
+    }
+    tst.addEventListener('pointerup', release);
+    tst.addEventListener('pointercancel', function (e) { if (dg && e.pointerId === dg.id) { dg.v = 0; release(e); } });
+    tst.addEventListener('click', function (e) { if (e.timeStamp - dragged < 400) { e.preventDefault(); e.stopPropagation(); } }, true);
+    tst.addEventListener('dragstart', function (e) { e.preventDefault(); });
+
+    /* ---- town cards: hovering a town's label, tabbing to it or tapping it once opens a card beside it with the town's
+       home value and short-term rentals; the card's link, or a second tap on the label, opens the town's page. Escape
+       closes it. The card is decoration (aria-hidden): the label's description carries the same facts ---- */
+    var card = $('.tw-card', tw), ol = $('.tw-pins', tst), hdr = $('body > header, header'), open = null, tOpen = 0, tShut = 0, down = null, y0 = 0, byHover = false;
+    function usd(n) { return '$' + Number(n).toLocaleString('en-US'); }
+    function chg(n, dp, what) { return (n < 0 ? 'Down ' : 'Up ') + Math.abs(n).toFixed(dp) + '% ' + what; }
+    function draw(li) {
+      var d = li.dataset, a = $('a', li), n = a.textContent, s = d.s.split(',').map(Number), lo = Math.min.apply(0, s), hi = Math.max.apply(0, s);
+      var p = s.map(function (v, i) { return (i * 248 / (s.length - 1)).toFixed(1) + ',' + (29 - (v - lo) / (hi - lo || 1) * 18).toFixed(1); });
+      var e = p[p.length - 1].split(',');
+      card.innerHTML = '<a class="tc-n" href="' + a.getAttribute('href') + '" tabindex="-1">' + n + ' <span class="arr" aria-hidden="true">&rarr;</span></a>' +
+        '<p class="tc-k">Typical home value' + (d.zip ? ', ZIP ' + d.zip : '') + '</p>' +
+        '<p class="tc-v"><b>' + usd(d.v) + '</b> <span class="tc-d' + (+d.y < 0 ? ' dn' : '') + '">' + chg(+d.y, 1, 'in a year') + '</span></p>' +
+        '<svg class="tc-g" viewBox="0 0 248 32" width="248" height="32" focusable="false"><defs><linearGradient id="tcg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4894a" stop-opacity=".34"/><stop offset="1" stop-color="#d4894a" stop-opacity="0"/></linearGradient></defs>' +
+        '<path class="ar" d="M' + p.join('L') + 'L248,32L0,32Z"/><path class="ln" pathLength="1" d="M' + p.join('L') + '"/><circle class="dt" r="3.5" cx="' + e[0] + '" cy="' + e[1] + '"/>' +
+        '<text class="tc-c" x="0" y="9">' + chg(+d.t, 0, 'since ' + ol.dataset.zs.slice(-4)) + '</text></svg>' +
+        (d.adr ? '<p class="tc-k">Short-term rentals, on average</p><p class="tc-r">' + usd(d.adr) + ' a night, ' + d.occ + '% of nights booked</p>' : '') +
+        '<p class="tc-s">Zillow, ' + ol.dataset.zm + (d.adr ? '. AirROI, ' + ol.dataset.am : '') + '.</p>';
+    }
+    /* each label's description for assistive tech: the card's facts, in sentences (the card itself is decoration) */
+    $$('.tw-pin', tst).forEach(function (li) {
+      var d = li.dataset, sp = document.createElement('span'), up = function (n, dp) { return (n < 0 ? 'down ' : 'up ') + Math.abs(n).toFixed(dp) + '%'; };
+      sp.id = 'twd-' + d.town; sp.hidden = true;
+      sp.textContent = 'Typical home value' + (d.zip ? ' in ZIP ' + d.zip : '') + ': ' + usd(d.v) + ' in ' + ol.dataset.zm + ', ' + up(+d.y, 1) + ' in a year and ' + up(+d.t, 0) + ' since ' + ol.dataset.zs + '. Source: Zillow.' +
+        (d.adr ? ' Short-term rentals: ' + usd(d.adr) + ' a night on average, ' + d.occ + '% of nights booked. Source: AirROI, ' + ol.dataset.am + '.' : '');
+      li.appendChild(sp); $('a', li).setAttribute('aria-describedby', sp.id);
+    });
+    /* where the card goes: a grid of spots over the hero, never over the town's own label or pin or the words over the
+       map; on a narrow screen it may cover the sub-header under the map. A card over most of another town's label or
+       over its pin hides it from the next hover, so the spot covering least of them wins, then the one nearest the pin */
+    function place(li) {
+      var H = tw.getBoundingClientRect(), st = tst.getBoundingClientRect(), w = card.offsetWidth, h = card.offsetHeight, u = null;
+      var rel = function (r, m) { return { l: r.left - H.left - m, t: r.top - H.top - m, r: r.right - H.left + m, b: r.bottom - H.top + m }; };
+      words.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.height && r.bottom > st.top && r.top < st.bottom) u = u ? { r: Math.max(u.r, r.right), b: Math.max(u.b, r.bottom) } : { r: r.right, b: r.bottom };
+      });
+      var b = { x0: 10, y0: 10, x1: H.width - 10, y1: H.height - 10 };
+      if (u && st.right - u.r > st.width / 3) { b.x0 = u.r - H.left + 16; b.y1 = st.bottom - H.top - 10; } else if (u) b.y0 = Math.max(b.y0, u.b - H.top + 12);
+      var P = li.getBoundingClientRect(), px = P.left - H.left, py = P.top - H.top;
+      /* the part of the hero on screen, under the sticky header: a card partly off it costs more than one it hides */
+      var vt = Math.max(0, hdr ? hdr.getBoundingClientRect().bottom : 0) - H.top + 8, vb = innerHeight - H.top - 8;
+      var own = rel($('a', li).getBoundingClientRect(), 6), dot = { l: px - 14, t: py - 14, r: px + 14, b: py + 14 };
+      var others = $$('.tw-pin', tst).filter(function (o) { return o !== li && o.getClientRects().length; }).map(function (o) { var r = rel($('a', o).getBoundingClientRect(), 4), q = o.getBoundingClientRect(); r.x = q.left - H.left; r.y = q.top - H.top; return r; });
+      var hit = function (x, y, r) { return x < r.r && x + w > r.l && y < r.b && y + h > r.t; };
+      var best = null, bs = -1e9, sx = Math.max(1, Math.floor((b.x1 - w - b.x0) / 12)), sy = Math.max(1, Math.floor((b.y1 - h - b.y0) / 12));
+      for (var i = 0; i <= sx; i++) for (var j = 0; j <= sy; j++) {
+        var x = b.x0 + (b.x1 - w - b.x0) * i / sx, y = b.y0 + (b.y1 - h - b.y0) * j / sy;
+        if (hit(x, y, own) || hit(x, y, dot)) continue;
+        var dx = Math.max(0, x - px, px - x - w), dy = Math.max(0, y - py, py - y - h), sc = -2 * Math.sqrt(dx * dx + dy * dy) - 600 * (Math.max(0, vt - y) + Math.max(0, y + h - vb));
+        others.forEach(function (r) {
+          var f = Math.max(0, Math.min(x + w, r.r) - Math.max(x, r.l)) * Math.max(0, Math.min(y + h, r.b) - Math.max(y, r.t)) / ((r.r - r.l) * (r.b - r.t));
+          sc -= f > .6 ? 1e4 : 1e3 * f;
+          if (r.x > x - 8 && r.x < x + w + 8 && r.y > y - 8 && r.y < y + h + 8) sc -= 2e3;
+        });
+        if (sc > bs) { bs = sc; best = [x, y]; }
+      }
+      if (!best) best = [b.x0, py > (b.y0 + b.y1) / 2 ? b.y0 : b.y1 - h];
+      card.style.setProperty('--x', Math.round(best[0]) + 'px'); card.style.setProperty('--y', Math.round(best[1]) + 'px');
+      card.style.setProperty('--ox', Math.round(px - best[0]) + 'px'); card.style.setProperty('--oy', Math.round(py - best[1]) + 'px');
+    }
+    function show(li, hover) {
+      clearTimeout(tOpen); clearTimeout(tShut); byHover = !!hover;
+      if (!M.landed()) { M.end(); tOpen = setTimeout(function () { show(li, hover); }, 0); return; }
+      if (open === li) return;
+      var was = !!open;
+      card.hidden = false;
+      if (open) open.classList.remove('on');
+      open = li; li.classList.add('on');
+      draw(li);
+      if (!was) card.classList.add('no-t');
+      place(li);
+      if (!was) { void card.offsetWidth; card.classList.remove('no-t'); }
+      card.classList.add('on');
+      y0 = scrollY;
+      sync();
+      /* a card a tap or the keyboard opened, partly off screen, scrolls into view (never under the pointer's hover) */
+      if (!hover) {
+        /* its final box, not the one mid-way through its opening scale */
+        var y1 = tw.getBoundingClientRect().top + parseFloat(card.style.getPropertyValue('--y')), y2 = y1 + card.offsetHeight, top = Math.max(0, hdr ? hdr.getBoundingClientRect().bottom : 0);
+        if (y2 > innerHeight || y1 < top) scrollBy({ top: y2 > innerHeight ? y2 - innerHeight + 12 : y1 - top - 12, behavior: rm.matches ? 'auto' : 'smooth' });
+      }
+    }
+    function shut() {
+      clearTimeout(tOpen); clearTimeout(tShut);
+      if (!open) return;
+      open.classList.remove('on'); open = null;
+      card.classList.remove('on');
+      sync();
+    }
+    ol.addEventListener('pointerover', function (e) {
+      var a = e.target.closest('.tw-pin a');
+      if (!a || e.pointerType === 'touch' || dg) return;
+      clearTimeout(tShut); clearTimeout(tOpen);
+      /* with a card open, another label must hold the pointer a moment, so it can cross labels on its way to the card */
+      tOpen = setTimeout(function () { show(a.parentNode, true); }, open ? 220 : 90);
+    });
+    ol.addEventListener('pointerout', function (e) {
+      var a = e.target.closest('.tw-pin a'), to = e.relatedTarget;
+      if (!a || e.pointerType === 'touch' || (to && to.closest && (to.closest('.tw-card') || to.closest('.tw-pin a') === a))) return;
+      clearTimeout(tOpen); tShut = setTimeout(shut, 500);
+    });
+    card.addEventListener('pointerenter', function () { clearTimeout(tShut); clearTimeout(tOpen); });
+    card.addEventListener('pointerleave', function (e) { if (e.pointerType !== 'touch') tShut = setTimeout(shut, 500); });
+    /* a tap opens the card first; the second tap on the same label follows it */
+    ol.addEventListener('pointerdown', function (e) { var a = e.target.closest('.tw-pin a'); down = { touch: e.pointerType === 'touch', was: !!a && open === a.parentNode }; }, true);
+    ol.addEventListener('click', function (e) {
+      var a = e.target.closest('.tw-pin a');
+      if (a && down && down.touch && !down.was) { e.preventDefault(); show(a.parentNode); }
+      down = null;
+    });
+    ol.addEventListener('focusin', function (e) { var a = e.target.closest('.tw-pin a'); if (a) show(a.parentNode); });
+    ol.addEventListener('focusout', function (e) { var to = e.relatedTarget; if (!to || !to.closest || !to.closest('.tw-pin a, .tw-card')) shut(); });
+    /* a press anywhere but the card or a label closes it, and so does scrolling the page under a card the pointer opened
+       (a card opened by a tap or the keyboard stays, so it can be scrolled into view and read) */
+    document.addEventListener('pointerdown', function (e) { if (open && !(e.target.closest && e.target.closest('.tw-pin a, .tw-card'))) shut(); }, true);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && open) shut(); });
+    window.addEventListener('scroll', function () { if (open && byHover && Math.abs(scrollY - y0) > 40) shut(); }, { passive: true });
+
+    /* a resize that crosses a breakpoint changes the camera: the turn starts again from the new camera, and a map the
+       visitor turned keeps its place in the range. A card closes */
+    var rz = 0;
+    window.addEventListener('resize', function () {
+      if (rz || !(turn.length || hNow !== null || open)) return;
+      rz = requestAnimationFrame(function () {
+        rz = 0;
+        var c = camera(), was = cam;
+        if (JSON.stringify(c) === was) return;
+        shut();
+        if (turn.length) { turn.forEach(function (a) { a.cancel(); }); turn = []; spin(); }
+        else if (hNow !== null) { var o = JSON.parse(was); setAt(c, c.h0 + (c.h1 - c.h0) * Math.max(0, Math.min(1, (hNow - o.h0) / ((o.h1 - o.h0) || 1)))); }
+      });
+    });
+    /* keyboard focus in the map: the turn stops where it is */
+    tst.addEventListener('focusin', freeze);
+    /* motion turned off while the page is open: the turn stops */
+    var onRm = function () { if (rm.matches) { still = true; turn.forEach(function (a) { a.cancel(); }); turn = []; cancelAnimationFrame(coast); } };
+    if (rm.addEventListener) rm.addEventListener('change', onRm); else if (rm.addListener) rm.addListener(onRm);
+    M.onLand(spin);
+    spin();
 })();
 </script>

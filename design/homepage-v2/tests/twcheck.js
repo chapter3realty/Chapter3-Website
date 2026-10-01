@@ -1,4 +1,4 @@
-// node twcheck.js <url> [w x h ...]: hero map collisions over the whole turn, and label-to-map projection error.
+// node twcheck.js <url> [w x h ...]: hero map collisions over the whole turn (13 headings, --h0 to --h1), and label-to-map projection error.
 // GROW=0.045 widens every label as Firefox draws it; SPACING=1 applies the WCAG 1.4.12 text spacing. Exits 1 on any problem.
 const { chromium } = require('playwright'), fs = require('fs');
 (async () => {
@@ -22,7 +22,7 @@ const { chromium } = require('playwright'), fs = require('fs');
     await p.evaluate((g) => { window.__grow = g; }, +(process.env.GROW || 0));
     const r = await p.evaluate(() => {
       const T = window.__tw, [h0, h1] = T.heads(), all = new Set();
-      for (let k = 0; k <= 6; k++) { const h = h0 + (h1 - h0) * k / 6; T.setHead(h); T.problems(+(window.__grow || 0)).forEach((x) => all.add(x)); }
+      for (let k = 0; k <= 12; k++) { const h = h0 + (h1 - h0) * k / 12; T.setHead(h); T.problems(+(window.__grow || 0)).forEach((x) => all.add(x)); }
       T.setHead(h0); document.querySelector('#home').style.removeProperty('--h0');
       return { probs: [...all], proj: T.projErr() };
     });

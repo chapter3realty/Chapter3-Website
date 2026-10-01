@@ -1,7 +1,8 @@
 // Search the hero map layout in the real page, one breakpoint range at a time.
-//   node twsearch.js '<json>'  { url, widths:[..], vh, grid:{P,pw,t0,hc,cx,cb}, drift, order:[..], prefs:[..], top, grow, ma, col }
+//   node twsearch.js '<json>'  { url, widths:[..], vh, grid:{P,pw,t0,hc,cx,cb}, drift, steps, tilts:[..], order:[..], prefs:[..], top, grow, ma, col }
 // For every camera: measure pins, shields and candidate water-label spots (relative to the camera target) over the turn,
-// then greedily give each town a label side that clears every width and every step of the turn. Shields a label cannot
+// then greedily give each town a label side that clears every width and every step of the turn. The turn is hc - drift to
+// hc + drift in steps headings (default 5); tilts (degrees added to t0, default [0]) checks the range a drag can tilt to. Shields a label cannot
 // avoid are hidden; each water label takes the first candidate spot that clears everything, or is hidden.
 // The words over the map (eyebrow, H1, sub-header, paths, map links) are one obstacle, the box round those that overlap the
 // map's stage; col:true stretches it to the stage's full height (the words are centred, so they move with the screen's
@@ -49,7 +50,8 @@ const { chromium } = require('playwright'), fs = require('fs');
     for (const [name, key] of water) probes[name] = cands[key].map(([x, y, a]) => { const e = document.createElement('span'); e.className = 'tw-pt'; e.style.cssText = `--px:${x};--py:${y}`; deco.appendChild(e); return { e, a }; });
     const keys = Object.keys(cfg.grid); let combos = [[]];
     for (const k of keys) { const n = []; for (const c of combos) for (const v of cfg.grid[k]) n.push([...c, v]); combos = n; }
-    const steps = [-1, -0.5, 0, 0.5, 1];
+    const steps = cfg.steps ? Array.from({ length: cfg.steps }, (_, i) => -1 + 2 * i / (cfg.steps - 1)) : [-1, -0.5, 0, 0.5, 1];
+    const poses = []; for (const dt of cfg.tilts || [0]) for (const s of steps) poses.push({ s, dt });
     const hitR = (a, b, pad) => a[0] < b[2] + pad && b[0] < a[2] + pad && a[1] < b[3] + pad && b[1] < a[3] + pad;
     const corners = (cx, cy, hw, hh, ang) => { const c = Math.cos(ang), s = Math.sin(ang); return [[-1, -1], [1, -1], [1, 1], [-1, 1]].map(([i, j]) => [cx + i * hw * c - j * hh * s, cy + i * hw * s + j * hh * c]); };
     const obb = (cx, cy, hw, hh, ang) => ({ cx, cy, hw, hh, a: ang, pts: corners(cx, cy, hw, hh, ang) });
@@ -73,14 +75,14 @@ const { chromium } = require('playwright'), fs = require('fs');
       const rel = (e) => { const r = R(e); return [r.left - C0[0], r.top - C0[1]]; };
       // positions relative to the camera target, per step
       const P = {}, SH = shields.map(() => []), WP = {};
-      steps.forEach((s, si) => {
-        const h = cam.hc + s * cfg.drift; sec.style.setProperty('--h0', h + 'deg');
+      poses.forEach(({ s, dt }, si) => {
+        const h = cam.hc + s * cfg.drift; sec.style.setProperty('--h0', h + 'deg'); sec.style.setProperty('--t0', (cam.t0 + dt) + 'deg');
         for (const li of pins) (P[li.dataset.town] ||= [])[si] = rel(li);
         shields.forEach((sh, k) => { SH[k][si] = rel(sh.el); });
-        const t = cam.t0 * Math.PI / 180, hh = h * Math.PI / 180;
+        const t = (cam.t0 + dt) * Math.PI / 180, hh = h * Math.PI / 180;
         for (const [name] of water) (WP[name] ||= probes[name].map(() => []), probes[name].forEach((pr, k) => { const a = pr.a * Math.PI / 180; WP[name][k][si] = [...rel(pr.e), Math.atan2(Math.sin(a + hh) * Math.cos(t), Math.cos(a + hh))]; }));
       });
-      sec.style.setProperty('--h0', (cam.hc - cfg.drift) + 'deg');
+      sec.style.setProperty('--h0', (cam.hc - cfg.drift) + 'deg'); sec.style.setProperty('--t0', cam.t0 + 'deg');
       // absolute (stage coordinates) for width index wi
       const at = (v, wi) => [W[wi].w / 2 + cam.cx + v[0], W[wi].h - cam.cb + v[1]];
       const fixed = W.map((w) => [w.card && rectO(w.card)].filter(Boolean));
@@ -89,15 +91,15 @@ const { chromium } = require('playwright'), fs = require('fs');
       const shOn = shields.map((s) => !(cfg.hideShields || []).includes(s.id));
       const shBox = (k, wi, si) => { const [x, y] = at(SH[k][si], wi); return obb(x, y, shields[k].w / 2 + 1, shields[k].h / 2 + 1, 0); };
       // pins first can never sit under the words, and must stay on the stage
-      for (const [t, v] of Object.entries(P)) for (let wi = 0; wi < W.length; wi++) for (let si = 0; si < steps.length; si++) { const [x, y] = at(v[si], wi); const d = obb(x, y, 8, 8, 0); if (!inside(d, W[wi], 10) || fixed[wi].some((f) => sat(d, f))) { fails++; choice[t] = 'PIN'; } }
+      for (const [t, v] of Object.entries(P)) for (let wi = 0; wi < W.length; wi++) for (let si = 0; si < poses.length; si++) { const [x, y] = at(v[si], wi); const d = obb(x, y, 8, 8, 0); if (!inside(d, W[wi], 10) || fixed[wi].some((f) => sat(d, f))) { fails++; choice[t] = 'PIN'; } }
       const tryPlace = (t, pl, useSh) => {
         const [w, h] = size[t], boxes = [];
-        for (let wi = 0; wi < W.length; wi++) for (let si = 0; si < steps.length; si++) {
+        for (let wi = 0; wi < W.length; wi++) for (let si = 0; si < poses.length; si++) {
           const [x, y] = at(P[t][si], wi), [lx, ly] = PL[pl](x, y, w, h), o = obb(lx + w / 2, ly + h / 2, w / 2 + 2, h / 2 + 2, 0);
           if (!inside(o, W[wi], 8)) return null;
           if (fixed[wi].some((f) => sat(o, f))) return null;
           if (dots(wi, si, t).some((d) => sat(o, d))) return null;
-          if (placed.some((q) => sat(o, q.b[wi * steps.length + si]))) return null;
+          if (placed.some((q) => sat(o, q.b[wi * poses.length + si]))) return null;
           if (useSh && shields.some((_, k) => shOn[k] && sat(o, shBox(k, wi, si)))) return null;
           boxes.push(o);
         }
@@ -111,10 +113,10 @@ const { chromium } = require('playwright'), fs = require('fs');
         if (!got) { fails++; choice[t] = 'X'; continue; }
         choice[t] = got[0]; placed.push({ t, b: got[1] });
         // shields this label covers are hidden
-        shields.forEach((_, k) => { if (!shOn[k]) return; for (let wi = 0; wi < W.length; wi++) for (let si = 0; si < steps.length; si++) if (sat(got[1][wi * steps.length + si], shBox(k, wi, si))) { shOn[k] = false; return; } });
+        shields.forEach((_, k) => { if (!shOn[k]) return; for (let wi = 0; wi < W.length; wi++) for (let si = 0; si < poses.length; si++) if (sat(got[1][wi * poses.length + si], shBox(k, wi, si))) { shOn[k] = false; return; } });
       }
       // shields must clear pins, the words and the stage edge
-      shields.forEach((_, k) => { if (!shOn[k]) return; for (let wi = 0; wi < W.length; wi++) for (let si = 0; si < steps.length; si++) { const o = shBox(k, wi, si); if (!inside(o, W[wi], 4) || fixed[wi].some((f) => sat(o, f)) || dots(wi, si).some((d) => sat(o, d))) { shOn[k] = false; return; } } });
+      shields.forEach((_, k) => { if (!shOn[k]) return; for (let wi = 0; wi < W.length; wi++) for (let si = 0; si < poses.length; si++) { const o = shBox(k, wi, si); if (!inside(o, W[wi], 4) || fixed[wi].some((f) => sat(o, f)) || dots(wi, si).some((d) => sat(o, d))) { shOn[k] = false; return; } } });
       // water labels: the first candidate spot that clears everything placed so far
       const wat = {}, watBoxes = [];
       for (const [name, key] of water) {
@@ -122,9 +124,9 @@ const { chromium } = require('playwright'), fs = require('fs');
         const pref = [...WP[name].keys()].sort((a, b2) => Math.abs(a - WP[name].length / 2) - Math.abs(b2 - WP[name].length / 2));
         for (const k of pref) {
           let ok = true; const bx = [];
-          for (let wi = 0; wi < W.length && ok; wi++) for (let si = 0; si < steps.length && ok; si++) {
+          for (let wi = 0; wi < W.length && ok; wi++) for (let si = 0; si < poses.length && ok; si++) {
             const v = WP[name][k][si], [x, y] = at(v, wi), o = obb(x, y, w / 2 + 2, h / 2 + 2, v[2]);
-            if (!inside(o, W[wi], 6) || fixed[wi].some((f) => sat(o, f)) || dots(wi, si).some((d) => sat(o, d)) || placed.some((q) => sat(o, q.b[wi * steps.length + si])) || shields.some((_, j) => shOn[j] && sat(o, shBox(j, wi, si))) || watBoxes.some((q) => sat(o, q[wi * steps.length + si]))) ok = false;
+            if (!inside(o, W[wi], 6) || fixed[wi].some((f) => sat(o, f)) || dots(wi, si).some((d) => sat(o, d)) || placed.some((q) => sat(o, q.b[wi * poses.length + si])) || shields.some((_, j) => shOn[j] && sat(o, shBox(j, wi, si))) || watBoxes.some((q) => sat(o, q[wi * poses.length + si]))) ok = false;
             bx.push(o);
           }
           if (ok) { pick = k; watBoxes.push(bx); break; }

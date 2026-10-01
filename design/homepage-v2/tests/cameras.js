@@ -18,7 +18,8 @@ const { chromium } = require('playwright'), fs = require('fs');
       for (const li of document.querySelectorAll('.tw-pin')) { const s = getComputedStyle(li); sides[li.dataset.town] = ['--ax', '--ay', '--ox', '--oy', '--stem'].map((k) => parseFloat(s.getPropertyValue(k))); }
       const water = {};
       for (const k of ['icw', 'wac', 'sea']) { const el = document.querySelector('.tw-deco .wl.' + k), s = getComputedStyle(el); water[k] = s.display === 'none' ? null : ['--px', '--py', '--a'].map((v) => parseFloat(s.getPropertyValue(v))); }
-      const hiddenShields = [...document.querySelectorAll('.tw-deco .sh')].filter((e) => getComputedStyle(e).display === 'none').map((e) => e.dataset.r);
+      // a route's shields hide together (head.html hides by route), so compare routes
+      const hiddenShields = [...new Set([...document.querySelectorAll('.tw-deco .sh')].filter((e) => getComputedStyle(e).display === 'none').map((e) => e.dataset.r))];
       return { P: n('--P'), pw: n('--pw'), tilt: n('--t0'), h0: n('--h0'), h1: n('--h1'), cx: n('--cx'), cb: n('--cb'), ma: n('--ma'), fog: n('--fog'),
         font: parseFloat(getComputedStyle(document.querySelector('.tw-pin a')).fontSize), layout: getComputedStyle(document.querySelector('.cine-copy')).display === 'contents' ? 'above' : 'beside',
         sides, water, hiddenShields };

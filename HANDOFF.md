@@ -2237,6 +2237,125 @@ the sixth preview. How each was read, for him to correct:
   This corrects what this section said before (that the credit was a condition
   of using the Census data).
 
+**His requests after the seventh preview, verbatim (2026-10-01).** First: "Make
+the spin it has on the city a bit faster i like that. Any more ideas to make the
+home page better designed and engaging and modern?" (read as the flight's
+landing spin, made faster in the seventh preview; he was sent seven ideas).
+Then: "oh im sorry i meant after the animation is done the city spins a little
+which is cool i wanted more of that after the animation was over. / Lets do the
+town preview please thats so cool / and yeah show me what the free preview of
+the analysis would look like make sure the house we preview is performing well.
+/ yeah make the map interactable / and yeah lets get some scroll moments in
+here." All done in the eighth preview. How each was read, for him to correct:
+- **The turn after the landing is back, and bigger.** He saw it in the fifth
+  preview: the camera turned 6 degrees one way and back, 18s each way, and it
+  went in the sixth because it needed the pause button he removed. Now it turns
+  18 degrees, 12s each way (about four and a half times the speed), without
+  end. The seventh preview's faster landing spin stays; it flows into the turn.
+  An 18-degree turn needed new cameras: with the old ones the labels collided
+  past about 12 degrees at most widths, so `tests/twsearch.js` searched every
+  band again over the whole range (24 and 30 degrees fail in three bands). The
+  map's resting angle and size moved a little at each width; the labels' sides
+  were chosen again. Tilting the map was tried for the drag below and dropped:
+  even 4 degrees of tilt makes labels collide in nearly every band.
+- **No pause button, so the turn stops other ways (WCAG 2.2.2).** Motion that
+  starts on its own and runs past 5 seconds needs a way to pause or stop it. He
+  had the pause buttons removed, so: the turn waits while a town's label or
+  card is under the pointer and while the map is off screen, and it stops for
+  good, where it is, once the visitor drags the map, clicks or taps it, or tabs
+  into it. With reduced motion it never starts. A strict auditor may still want
+  a visible control; one small pause button on the map would settle it. His call.
+- **The map turns by hand.** Drag it sideways with a mouse, a pen or a finger.
+  It turns between the same two headings as the slow turn, slowing to a stop
+  at each end, so no label ever covers another; on a phone an up-and-down
+  swipe still scrolls the page. A drag that starts on a label turns the map and
+  does not open the link.
+- **Town cards.** Hovering a town's label, tabbing to it, or tapping it once
+  opens a card: the town's typical home value with its change over a year, a
+  ten-year line of it ("Up 90% since 2016"), the short-term rental average
+  nightly rate and share of nights booked, a sources line, and the town's name
+  as the link to its page (a second tap on the label also opens the page).
+  Escape or a tap elsewhere closes it, and so does scrolling. The card goes
+  where it covers neither its own label and pin nor the words, and as little of
+  the other towns as the screen allows (none at 1000px and wider, by test); on
+  a phone a card opened by a tap scrolls itself fully on screen. While a card
+  is open, another label must hold the pointer for a moment before the card
+  switches, so the pointer can cross labels on its way to the card's link. The
+  page script writes the same facts as each label's description for screen
+  readers; the card itself is decoration. (Written into the page instead,
+  those 300 words made the audit read the homepage as an article page and
+  count their dates as dates in body copy.) The idea list offered "homes for sale" too: left out, because
+  the only town-level count is Redfin's, last published for May 2026.
+- **The free preview of the analysis.** Beside the analyzer form, a sample
+  report: what the long-term rental analyzer returns for an example house, a
+  3-bed, 2-bath house in Conway at $250,000 renting for $1,950 a month, bought
+  with cash, 8% management, the analyzer's own defaults for tax (0.82%),
+  upkeep (0.85%) and insurance ($1,800). It scores "Strong deal": $1,296 a
+  month, 6.2% cap rate. `tests/sample.js` runs the analyzer's own code on those
+  inputs and matches every figure, pill and the badge. Cash, so it shows no
+  loan, payment or rate (non-negotiable 3). The rent and price are grounded:
+  Zillow's typical asking rent for Conway, all homes, was $1,897 in August
+  2026, and its typical home value $288,359, so this is a house bought below the
+  middle. The appreciation figure (3.0% a year, marked "Estimate") is the
+  example's own; the real tool's comes from its model. On a wide screen the form
+  stays in view beside the report as it scrolls.
+- **Scroll moments.** As the hero scrolls away the map sinks behind the words
+  (wide screens); the sample report rises and straightens as it comes up, then
+  its cost bars, its tiles' top lines and its signal dots draw in; each of the
+  eight reasons rises into place; the team portraits drift inside their frames;
+  each question rises in. They are tied to scrolling by the browser (Chrome,
+  Edge, Safari 26; Firefox shows everything still), they move only things
+  already shown (no text is hidden at any scroll position, by test), and with
+  reduced motion there are none.
+
+**Measured on the eighth preview's final build (2026-10-01).** `tests/after.js`
+63/63 (the turn, the drag, the cards, the sample report, the scroll moments),
+`states.js` 210/210, `sample.js` 13/13, `cardcontrast.js` worst 5.88:1 from
+pixels over every town's card at 1440 and 390, `twcheck.js` clean at all 18
+sizes, `cameras.js` agrees with the CSS, `twmotion.js` OK. `check.js`, normal
+and reduced motion: no hidden or low-contrast text at any width; sideways scroll
+only at 900, the header defect noted in the sixth preview's measurements. In
+WebKit and Firefox at 1440 and 390: the turn runs, a hover or a tap opens a
+card, Escape closes it, a drag turns the map, the report shows "Strong deal", no
+script errors (Firefox has no scroll timelines, so it shows everything still).
+A phone profile with the CPU slowed 4 times, median of 5 loads: largest paint
+708ms (800ms while the cards' styles sat in the head; they now follow the
+hero), blocking time about 448ms (46ms more than the seventh preview), layout
+shift 0. The turn costs about 20ms of style work a second on that profile, at
+62 frames a second. In a clean copy of the branch with the page in place:
+`preflight` exit 0 with 487 advisory warnings, the live site's count, and
+`tests/media.js` 27/27.
+
+**The town cards' data, so nobody re-derives it.** Home values: the Zillow Home
+Value Index (all homes, middle tier, smoothed, seasonally adjusted, which Zillow
+calls the typical home value), from Zillow's public research files, August 2026,
+written to `design/homepage-v2/data/towns.json` by
+`design/homepage-v2/map/build_towns.py`. Zillow publishes a value for seven of
+the nine towns. Garden City and Carolina Forest have none of their own (Zillow's
+towns here are postal areas: its Murrells Inlet, for one, matches ZIP 29576 to
+within $200), so their cards show their ZIP and say so: Carolina Forest lies
+wholly in 29579 (a third of the ZIP's land) and Garden City mostly in 29576,
+which it shares with Murrells Inlet (Census 2020 ZIP-to-place relationship
+file). Short-term rentals: `data/str-market.json`, the site's one source for
+them, so a card always matches its town page; all eight markets were re-opened
+on AirROI on 2026-10-01 and match the file exactly. The cards date them as the
+town pages do, "data through August 8, 2026" (the file's `dataAsOf`); AirROI's
+pages now give the window as August 2025 to July 2026, with the same figures.
+Carolina Forest has no AirROI market, as the file says, so its card shows no
+rental line. Found while re-checking, not changed: the Pawleys Island page says
+Zillow's index was "near $514,000 in mid-2026, up about 5 percent" (Zillow now
+has $553,403 for August, up 0.7% in a year), and the Myrtle Beach page "near
+$315,000 in early 2026, down about 3 percent" ($323,058, up 0.3%). Also: the
+`build.js` gate for those figures tells the reader to run `node build.js
+strdata`, a command `build.js` does not have; the refresh is by hand.
+**Refreshing them:** after `data/str-market.json` changes, run `node
+design/homepage-v2/map/towncards.js` (it rewrites the pins in
+`chapter3realty/index.html` in place); `build.js check` now fails while the
+homepage's cards disagree with that file (checked both ways: the live page and
+the redesign pass, a card with a changed figure fails, and the tool repairs
+it). For Zillow's monthly values, run `python3
+design/homepage-v2/map/build_towns.py`, then the same tool.
+
 **The data's terms, re-checked 2026-10-01 from the sources, so nobody re-derives
 it.** TIGER/Line: a work of the U.S. Government, so no copyright (17 U.S.C.
 105); the 2024 TIGER/Line Technical Documentation, section 2 "Citation
@@ -2320,21 +2439,22 @@ the other countries, the Great Lakes, lakes and rivers. They are Web Mercator an
 the basemap is an equirectangular plane; `src/fx.html` places all four with the
 one camera, and they agree at the camera target's latitude to within a pixel
 over the basemap. The flight starts as the page opens (a tab opened in the
-background: when it is first shown; a page opened further down shows the map at
-rest). Its first frame is the eastern United States (98W to 66.5W, 24.5N to
+background: when it is first shown; a page opened further down gets no flight,
+and the map starts its slow turn when it comes into view). Its first frame is the eastern United States (98W to 66.5W, 24.5N to
 47.5N) filling 94% of the part of the hero the words leave free (beside them on
 a wide screen, under them on a narrow one, on screen only), seen with the camera
 tilted 28 degrees (or the landing tilt if that is less), turned 24 degrees off the
 landing heading, which it spins through in the flight's second half (faster at
 the owner's request, 2026-10-01: "Make the spin it has on the city a bit
-faster"); the fit is solved through the tilted camera by moving it by the error a
+faster", which he then said he meant for the slow turn after the landing; both
+are in, see "His requests after the seventh preview"); the fit is solved through the tilted camera by moving it by the error a
 few times. The Grand Strand then glides to the camera target while the camera
 zooms, tilts further and turns. The flight is baked into 96 frames of transform
 and opacity keyframes, so the compositor plays it. A level fades in once it is
 detailed enough to add something, and the one under it fades out once the level
 above covers the whole stage, tested by projecting the stage's corners back
 through the tilted camera; the coast fades as the camera lands, so the final
-view is the map at rest. The haze at the top (`.tw-fog`) is at half strength at
+view is the basemap at the landing heading, where the slow turn takes over. The haze at the top (`.tw-fog`) is at half strength at
 the start. Until the flight starts, the map is not drawn: the hero shows its
 words over the navy stage (a 3s timer in the head boot shows the map at rest if
 the page script never runs). The three maps load as the page opens when motion
@@ -2377,6 +2497,26 @@ and text (with the punctuation noted above). Gone: the eyebrow "Chapter3 Realty
 · Myrtle Beach, SC" (his approved copy, removed at his request), the map data
 line, the pause button labels, and earlier the towns section's eyebrow and H2
 and the video's button labels.
+
+Added in the eighth preview, his to approve: the town cards' wording ("Typical
+home value", "ZIP 29576" where a town has no value of its own, "Up 0.7% in a
+year", "Up 90% since 2016", "Short-term rentals, on average", "$392 a night,
+33.4% of nights booked", the sources line "Zillow, August 2026. AirROI, data
+through August 8, 2026.", and the town's name with an arrow as the link), each
+label's description for screen readers (the same facts in sentences), and the
+sample report: "Sample report", "3 bed, 2 bath house · Conway, SC", "The rent
+pays every cost and leaves $1,296 a month.", "Strong deal", "Estimated value",
+the tiles "Monthly cash flow" ("Cash flowing"), "Cap rate" ("Strong yield",
+"Net income as a share of the price"), "Monthly rent", "Net income a year",
+"Appreciation" ("3.0% a year", "Estimate"), "Costs a year" with "Property tax,
+at the 6 percent rate a rental pays", "Insurance", "Management, 8% of the
+rent", "Maintenance reserve" and "Total", three signals ("The rent is about
+three times the costs.", "Property tax is figured at the 6 percent rate a
+rental pays.", "Insurance quotes vary street to street. Get one before you
+offer.") and the note "A sample house with example numbers, figured the way
+the analyzer figures them. Bought with cash, so no loan is shown. Your report
+uses the address you enter." The pills' words follow the analyzer's own
+("Cash Flowing", "Strong Yield", "Strong Deal"), in sentence case.
 
 **Measured in Chromium (sixth preview).** One H1; no hidden or low-contrast text
 (`tests/check.js`, 126 text elements at every width, normal and reduced motion);
@@ -2460,6 +2600,15 @@ United States and lands with all nine towns, the H1 reads "Myrtle Beach Homes",
 no script errors, no failed requests. Only the page changed; the 20 map images
 were kept.
 
+**On accept (eighth preview).** As below, and keep `design/homepage-v2/map/`
+(with `towncards.js` and `build_towns.py`), `data/` and `tests/`: the town
+cards' figures are refreshed with them after acceptance (see "The town cards'
+data"). The `build.js` change (the homepage cards' gate) is already on the
+branch; it does nothing until the homepage has the cards. In a clean copy of
+the branch with the page and `media/map/` in place, the steps below give
+`preflight` exit 0 with 487 advisory warnings, the same count as the live site,
+and `tests/media.js` finds all 27 local files.
+
 **On accept.** Copy `design/homepage-v2/index.html` over
 `chapter3realty/index.html` and `design/homepage-v2/media/map/` to
 `chapter3realty/media/map/`, and `git add chapter3realty/media`. The fifth
@@ -2479,13 +2628,13 @@ undoing.
 ## Suggested order for the next session
 
 00000. **Homepage redesign candidate** (section above). Waiting for his accept
-   or decline on the sixth preview (his 2026-10-01 edits: H1 "Myrtle Beach
-   Homes", the sub-header as an H2, no eyebrow, no arrows, no map buttons or
-   source line, no pause buttons, so the map rests after landing and the reviews
-   move only when stepped; the analyzer's new heading, text and example values).
+   or decline on the eighth preview: his 2026-10-01 edits, then the slow turn
+   after the landing (18 degrees, stops on a drag, click, tap or tab), turning
+   the map by hand, the town cards, the sample report and the scroll moments.
    Open questions for him: whether the analyzer's eyebrow "Grand Investor Tool"
-   and button "See the investor analysis" should say "property" too. Do not touch
-   `chapter3realty/index.html` before he says yes.
+   and button "See the investor analysis" should say "property" too; whether he
+   wants one small pause button on the map for WCAG 2.2.2; the new copy listed
+   in the section. Do not touch `chapter3realty/index.html` before he says yes.
 0000. **The returns page round 2 is on the branch** (section above). Expect his
    reaction to the new cap rates, the satellite map and the rebuilt
    calculator. If he wants the short-term figures on the investor price too,

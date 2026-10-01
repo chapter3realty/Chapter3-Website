@@ -1,8 +1,9 @@
-// labels stay on their towns while the map flies in: freeze every animation at several moments and compare
-// each label anchor with a probe placed at the same spot inside the (animated) plane. node twmotion.js <url> <w> <h>
-// The labels are hidden until the landing and move only in the flight's last 30%, so before 3.45s only the labels that
-// can be seen count. After the flight (6s) the map is at rest: nothing may move. Exits 1 when a label is more than 1px
-// off its town, when nothing moved during the flight, or when something still moves after it.
+// labels stay on their towns while the map flies in and while it turns after the landing: freeze every animation at
+// several moments and compare each label anchor with a probe placed at the same spot inside the (animated) plane.
+// node twmotion.js <url> <w> <h>. The labels are hidden until the landing and move only in the flight's last 30%, so
+// before 3.45s only the labels that can be seen count. After the flight (6s) only the slow turn moves the map: endless
+// back-and-forth keyframes. Exits 1 when a label is more than 1px off its town, when nothing moved during the flight,
+// or when after it anything but the turn moves, or nothing does.
 const { chromium } = require('playwright'), fs = require('fs');
 (async () => {
   const [url, w, h] = process.argv.slice(2);
@@ -23,18 +24,19 @@ const { chromium } = require('playwright'), fs = require('fs');
     const r = await p.evaluate((seen) => {
       const an = document.getAnimations().filter((a) => a.effect && a.effect.target && a.effect.target.closest && a.effect.target.closest('.tw-stage'));
       // what is still running (a finished landing ring that holds its last frame is not moving)
-      const moving = an.filter((a) => a.playState === 'running' && a.effect.getKeyframes().some((k) => k.transform)).length;
+      const run = an.filter((a) => a.playState === 'running' && a.effect.getKeyframes().some((k) => k.transform) && !(a instanceof CSSAnimation));
+      const moving = run.length, turn = run.filter((a) => a.effect.getTiming().iterations === Infinity && a.effect.getTiming().direction === 'alternate').length;
       an.forEach((a) => a.pause());
       const e = window.__tw.projErr(seen);
       const plane = getComputedStyle(document.querySelector('.tw-plane')).transform;
-      return { moving, err: e.worst, who: e.who, plane: plane.slice(0, 60) };
+      return { moving, turn, err: e.worst, who: e.who, plane: plane.slice(0, 60) };
     }, at < 3450);
-    console.log(`t+${at}ms: ${r.moving} transform animations, worst label offset ${r.err}px (${r.who})`);
-    worst = Math.max(worst, r.err); if (at < 6000 && !r.moving) still++; if (at >= 6000 && r.moving) after++;
+    console.log(`t+${at}ms: ${r.moving} transform animations (${r.turn} of them the turn), worst label offset ${r.err}px (${r.who})`);
+    worst = Math.max(worst, r.err); if (at < 6000 && !r.moving) still++; if (at >= 6000 && (!r.turn || r.moving !== r.turn)) after++;
     await ctx.close();
   }
   await b.close();
   const bad = worst > 1 || still > 0 || after > 0;
-  console.log(bad ? `FAIL: worst ${worst}px, ${still} moments with nothing moving during the flight, ${after} with something moving after it` : `ok: worst ${worst}px, at rest after the flight`);
+  console.log(bad ? `FAIL: worst ${worst}px, ${still} moments with nothing moving during the flight, ${after} after it with anything but the turn moving, or nothing` : `ok: worst ${worst}px, only the turn moving after the flight`);
   process.exitCode = bad ? 1 : 0;
 })().catch((e) => { console.error(e); process.exit(1); });

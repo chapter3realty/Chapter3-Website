@@ -289,8 +289,10 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     ok(`map ${w}: labels stay on their towns while it moves, whenever they can be seen`, Math.max(...worst) <= 1, worst.join(', ') + 'px (3.5s: all labels, seen or not)');
     const movers = await page.evaluate(() => [...document.querySelectorAll('.tw-plane, .tw-pt, .tw-deco .wl i')].filter((e) => e.getClientRects().length).length);
     ok(`map ${w}: the flight moves every drawn element`, mv.slice(0, 4).every((n) => n === movers), mv.join(', ') + ' of ' + movers);
+    // after the landing the map turns slowly, one way and back, without end: every drawn element, nothing else (after.js
+    // checks how the turn waits and stops)
     const done = await flightState(page);
-    ok(`map ${w}: after the flight the map is at rest, every label shown`, done.flight === 0 && done.turn === 0 && mv[4] === 0 && done.shown === 9, JSON.stringify(done) + ' running at 7s: ' + mv[4]);
+    ok(`map ${w}: after the flight every label shows and the map turns`, done.flight === 0 && done.turn === movers && mv[4] === movers && done.shown === 9, JSON.stringify(done) + ' running at 7s: ' + mv[4] + ' of ' + movers);
     if (w > 430) {
       // a resize across a breakpoint at rest: CSS draws the new camera at once, labels on their towns
       await page.setViewportSize({ width: 1000, height: h });
@@ -304,8 +306,9 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     ok(`map ${w}: no script errors`, errs.length === 0, errs.join(' | '));
     await ctx.close();
   }
-  // all the hero's motion (the flight, the landing pins, rings and labels) ends within 5s of the flight's start, so it needs
-  // no pause button (WCAG 2.2.2). Read from the animations' own timing, a second into the flight, when all of them exist
+  // the flight and its landing (the pins, rings and labels) end within 5s of the flight's start. Read from the animations'
+  // own timing, a second into the flight, when all of them exist. The turn after it runs on; after.js checks that it waits
+  // and stops (WCAG 2.2.2)
   for (const [w, h] of [[1440, 900], [390, 844]]) {
     const { ctx, page } = await ctxPage(browser, { w, h }, twInit);
     await page.goto(URL0, { waitUntil: 'load' });
@@ -318,7 +321,7 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
       const worst = ends.filter((e) => !e.dest).reduce((x, y) => (y.end > x.end ? y : x), { end: 0 });
       return { n: ends.length, worst, otherInfinite: ends.filter((e) => e.end === Infinity && !e.dest).map((e) => e.el), lands: document.querySelector('#home .tw-stage').classList.contains('z') ? 4600 : 2600 };
     });
-    ok(`map ${w}: all the hero's motion ends within 5s of the flight's start`, r.n > 20 && r.worst.end <= 5000 && r.otherInfinite.length === 0, JSON.stringify(r));
+    ok(`map ${w}: the flight and its landing end within 5s of the flight's start`, r.n > 20 && r.worst.end <= 5000 && r.otherInfinite.length === 0, JSON.stringify(r));
     await ctx.close();
   }
   // the zoom: at 400ms the camera looks at the eastern United States (98W to 66.5W, 24.5N to 47.5N), tilted, inside the part of
@@ -357,7 +360,8 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     ok(`map ${w}x${h}: zoom without script errors`, errs.length === 0, errs.join(' | '));
     await ctx.close();
   }
-  // the motion preference changing while the page is open: the map stops at rest with every label shown, then turns again
+  // the motion preference changing while the page is open: the turn stops, the map at rest with every label shown, and it
+  // does not start again when motion is allowed again
   {
     const { ctx, page } = await ctxPage(browser, { w: 1440, h: 900 }, twInit);
     await page.goto(URL0, { waitUntil: 'load' });
@@ -368,7 +372,7 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     await page.emulateMedia({ reducedMotion: 'no-preference' });
     await page.waitForTimeout(400);
     const c = await flightState(page);
-    ok('map: the motion setting changing after the landing leaves it at rest, every label shown', b.running === 0 && b.shown === 9 && !b.lod && c.flight === 0 && c.turn === 0 && c.shown === 9, JSON.stringify({ b, c }));
+    ok('map: the motion setting changing after the landing stops the turn at rest, every label shown', b.running === 0 && b.shown === 9 && !b.lod && c.flight === 0 && c.turn === 0 && c.shown === 9, JSON.stringify({ b, c }));
     await ctx.close();
   }
   // motion turned off during the flight: it stops at once, at rest, every label shown
@@ -382,7 +386,8 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     ok('map: turning off motion mid-flight stops it at rest', b.running === 0 && b.shown === 9 && !b.lod, JSON.stringify(b));
     await ctx.close();
   }
-  // a reload further down the page (the browser restores the scroll): back at the top, the map is at rest, every label shown
+  // a reload further down the page (the browser restores the scroll): no flight, and back at the top every label shows and
+  // the map turns
   {
     const { ctx, page } = await ctxPage(browser, { w: 1440, h: 900 }, twInit);
     await page.goto(URL0, { waitUntil: 'load' });
@@ -391,7 +396,7 @@ const scrollAll = page => page.evaluate(async () => { for (let y = 0; y < docume
     const y = await page.evaluate(() => Math.round(scrollY));
     await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' })); await page.waitForTimeout(600);
     const r = await flightState(page);
-    ok('map: after a reload further down, the map is at rest at the top', y > 900 && r.flight === 0 && r.in && r.shown === 9, JSON.stringify({ y, ...r }));
+    ok('map: after a reload further down, no flight; at the top every label shows and the map turns', y > 900 && r.flight === 0 && r.turn > 0 && r.in && r.shown === 9, JSON.stringify({ y, ...r }));
     await ctx.close();
   }
   // a crossing of a breakpoint during the flight: the flight jumps to its end, labels on their towns

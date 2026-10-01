@@ -55,11 +55,8 @@ fill.AN_EB = grab(/<section id="ltr-teaser"[\s\S]*?<p style="[^"]*">([^<]+)<\/p>
 {
   // the towns map: every label is placed over the tilted map by CSS from its spot on the plane (fractions of its width and height)
   const f = (n) => +(n / 100).toFixed(4);
-  const towns = Object.entries(plane.towns).sort((a, b) => b[1].y - a[1].y);   // south to north, the order a visitor reads the coast
-  fill.PINS = towns.map(([slug, t], k) => {
-    if (!fs.existsSync(path.join(REPO, "chapter3realty", "submarkets", slug, "index.html"))) throw new Error("no page for town " + slug);
-    return `<li class="tw-pt tw-pin" data-town="${slug}" style="--px:${f(t.px)};--py:${f(t.py)};--i:${k}"><a href="/submarkets/${slug}/">${t.n}</a><i class="rg"></i></li>`;
-  }).join("\n");
+  // the pins and each town's card facts: map/towncards.js, which also updates them in the live page after a data refresh
+  Object.assign(fill, require("./map/towncards.js").pins({ plane, zv: JSON.parse(fs.readFileSync(path.join(DIR, "data", "towns.json"), "utf-8")), str: JSON.parse(fs.readFileSync(path.join(REPO, "data", "str-market.json"), "utf-8")) }));
   // head.html hides a shield at a width where it would sit under a label (data-r names the route). CSS draws the shield and
   // water text from data-t, so this decoration, hidden from assistive tech, adds no loose lines to llms-full.txt
   fill.SHIELDS = plane.shields.map((s) => `<span class="tw-pt sh ${s.kind === "sc" ? "sc" : "us"}" data-r="${s.label}" style="--px:${f(s.px)};--py:${f(s.py)}"><b data-t="${s.label}"></b></span>`).join("\n");
@@ -77,6 +74,51 @@ fill.AN_EB = grab(/<section id="ltr-teaser"[\s\S]*?<p style="[^"]*">([^<]+)<\/p>
     if (!cls[w.label]) throw new Error("no place set for water label " + w.label);
     return `<span class="tw-pt wl ${cls[w.label]}"><i data-t="${w.label}"></i></span>`;
   }).join("\n");
+}
+{
+  // the sample report beside the analyzer: an example house, figured with the analyzer's own formulas (recalcLtr in the
+  // long-term rental analyzer's script, for a cash purchase with no county record: tax 0.82% and upkeep 0.85% of the
+  // price, its $1,800 insurance default, the tenant paying utilities, no vacancy, no association). Bought with cash, so
+  // the report shows no loan, no payment and no rate. tests/sample.js runs the analyzer's own code on these inputs and
+  // checks every figure here. Rent and price: Zillow's typical asking rent for Conway, all homes, was $1,897 in August
+  // 2026 (a three-bedroom house asks more) and its typical home value $288,359, so this is a house bought below the middle.
+  const ex = { price: 250000, rent: 1950, ins: 1800, mgmt: 0.08, appr: 3.0 };
+  const gross = ex.rent * 12, tax = Math.round(ex.price * 0.0082), maint = Math.round(ex.price * 0.0085), mgmt = Math.round(gross * ex.mgmt);
+  const opex = tax + ex.ins + mgmt + maint, noi = gross - opex, cap = noi / ex.price * 100, mo = noi / 12;
+  const good = cap >= 5.5 && mo >= 100 && cap >= 5;                     // the analyzer's "Strong Deal": cap, cash flow, cash-on-cash
+  if (!good || mo < 200) throw new Error("the sample house no longer scores as a strong deal");
+  const usd = (n) => "$" + Math.round(n).toLocaleString("en-US");
+  const rows = [["Property tax, at the 6 percent rate a rental pays", tax], ["Insurance", ex.ins], [`Management, ${ex.mgmt * 100}% of the rent`, mgmt], ["Maintenance reserve", maint]];
+  const top = Math.max(...rows.map((r) => r[1]));
+  fill.SAMPLE = `<article class="an-rep" aria-labelledby="rep-h" data-io>
+<div class="rep-top">
+<h3 class="rep-tag" id="rep-h">Sample report</h3>
+<p class="rep-addr">3 bed, 2 bath house &middot; Conway, SC</p>
+<p class="rep-verdict">The rent pays every cost and leaves ${usd(mo)} a month.</p>
+<p class="rep-badge">Strong deal</p>
+<p class="rep-val"><span>Estimated value</span> <b>${usd(ex.price)}</b></p>
+</div>
+<div class="rep-kpis">
+<p class="kpi good" style="--i:0"><span class="k">Monthly cash flow</span> <b>${usd(mo)}</b> <i>Cash flowing</i></p>
+<p class="kpi good" style="--i:1"><span class="k">Cap rate</span> <b>${cap.toFixed(1)}%</b> <i>Strong yield</i> <span class="d">Net income as a share of the price</span></p>
+<p class="kpi" style="--i:2"><span class="k">Monthly rent</span> <b>${usd(ex.rent)}</b></p>
+<p class="kpi" style="--i:3"><span class="k">Net income a year</span> <b>${usd(noi)}</b></p>
+<p class="kpi grow" style="--i:4"><span class="k">Appreciation</span> <b>${ex.appr.toFixed(1)}% a year</b> <i>Estimate</i></p>
+</div>
+<div class="rep-exp">
+<p class="k">Costs a year</p>
+<ul role="list">
+${rows.map(([l, v], k) => `<li style="--w:${(v / top).toFixed(3)};--i:${k}"><span>${l}</span> <b>${usd(v)}</b></li>`).join("\n")}
+</ul>
+<p class="tot"><span>Total</span> <b>${usd(opex)}</b></p>
+</div>
+<ul class="rep-sig" role="list">
+<li class="g">The rent is about ${["one", "two", "three", "four", "five"][Math.round(gross / opex) - 1]} times the costs.</li>
+<li class="g">Property tax is figured at the 6 percent rate a rental pays.</li>
+<li class="a">Insurance quotes vary street to street. Get one before you offer.</li>
+</ul>
+<p class="rep-note">A sample house with example numbers, figured the way the analyzer figures them. Bought with cash, so no loan is shown. Your report uses the address you enter.</p>
+</article>`;
 }
 let mainHtml = src("main.tpl.html").replace(/\{\{([A-Z_]+)\}\}/g, (m, k) => { if (!(k in fill)) throw new Error("no fill for " + k); return fill[k]; });
 
