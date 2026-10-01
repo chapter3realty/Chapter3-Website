@@ -2590,6 +2590,12 @@ and lands with all nine towns, no script errors, no failed requests. The ten
 `media/hero/` files were removed from the artifact (21 files now: the page and
 the 20 map images). In the viewer the eyebrow wraps to two lines on a phone,
 because the preview uses Google's DM Sans; the site's own font keeps it on one.
+**Preview 8 sent 2026-10-01 at the same link** (artifact version 8, built from
+commit e72be87): the turn after the landing, the map turned by hand, the town
+cards, the sample report and the scroll moments. Loaded before sending, wrapped
+the way the viewer wraps it, at 390 and 1440: the flight lands, the map turns, a
+card opens and its link works, the report shows, no script errors, no failed
+requests. Only the page changed; the 20 map images were kept.
 **Preview 7 sent 2026-10-01 at the same link:** the landing spin is faster, a
 24-degree turn on every screen packed into the flight's second half (it was 6
 to 25 degrees, spread over the last 70%). 210/210 behaviour checks pass; the
