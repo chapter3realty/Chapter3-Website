@@ -21,57 +21,28 @@
   } else revealAll();
   window.addEventListener('beforeprint', revealAll);
 
-  /* ---- the gate: one place decides whether the reviews may rotate ---- */
-  var stage = $('#home.cine'), rvBox = $('#home-reviews'), pop = document.getElementById('c3-pop');
-  /* rvStopped: the visitor stopped the reviews */
-  var G = { vis: !document.hidden, pop: pop ? pop.hidden : true, rv: false, hov: false, rvStopped: false };
-  var rv = { run: function () {} };
-  function sync() { rv.run(G.vis && G.pop && G.rv && !G.hov && !G.rvStopped && !rm.matches); }
-  document.addEventListener('visibilitychange', function () { G.vis = !document.hidden; sync(); });
-  if (pop && 'MutationObserver' in window) {
-    new MutationObserver(function () { G.pop = pop.hidden; sync(); }).observe(pop, { attributes: true, attributeFilter: ['hidden'] });
-  }
-  if (hasIO && rvBox) new IntersectionObserver(function (es) { G.rv = es[es.length - 1].intersectionRatio >= 0.5; sync(); }, { threshold: [0, 0.5] }).observe(rvBox);
+  var stage = $('#home.cine');
 
-  /* ---- reviews: dissolve in place every 7s while visible; any manual step stops rotation ---- */
+  /* ---- reviews: one at a time. The visitor steps through them (the arrows, a dot or a swipe); they never move on their
+     own, so they need no pause button (WCAG 2.2.2) ---- */
+  var rvBox = $('#home-reviews');
   if (rvBox) (function () {
-    var stack = $('.rv-stack', rvBox), slides = $$('.rv-slide', rvBox), dots = $$('.rv-dots button', rvBox);
-    var rot = $('.rv-rot', rvBox), i = 0, t = 0;
+    var stack = $('.rv-stack', rvBox), slides = $$('.rv-slide', rvBox), dots = $$('.rv-dots button', rvBox), i = 0;
     if (slides.length < 2) return;
-    if (rm.matches) stack.setAttribute('aria-live', 'polite');
     function show(n) {
       i = (n + slides.length) % slides.length;
       slides.forEach(function (s, k) { s.classList.toggle('on', k === i); });
       dots.forEach(function (d, k) { d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
     }
-    function setRot(stopped) {
-      G.rvStopped = stopped;
-      rot.classList.toggle('is-paused', stopped);
-      rot.setAttribute('aria-label', stopped ? 'Play reviews' : 'Pause reviews');
-      stack.setAttribute('aria-live', stopped || rm.matches ? 'polite' : 'off');
-      sync();
-    }
-    var rmLive = function () { stack.setAttribute('aria-live', G.rvStopped || rm.matches ? 'polite' : 'off'); };
-    if (rm.addEventListener) rm.addEventListener('change', rmLive); else if (rm.addListener) rm.addListener(rmLive);
-    function manual(n) { show(n); setRot(true); }
-    rv.run = function (on) { clearTimeout(t); if (on) t = setTimeout(function () { show(i + 1); sync(); }, 7000); };
-    rot.addEventListener('click', function () { setRot(!G.rvStopped); });
-    $('.rv-prev', rvBox).addEventListener('click', function () { manual(i - 1); });
-    $('.rv-next', rvBox).addEventListener('click', function () { manual(i + 1); });
-    dots.forEach(function (d, k) { d.addEventListener('click', function () { manual(k); }); });
-    rvBox.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { G.hov = true; sync(); } });
-    rvBox.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { G.hov = false; sync(); } });
-    /* WAI APG carousel: keyboard focus entering the carousel stops rotation until the visitor presses play */
-    rvBox.addEventListener('focusin', function (e) {
-      var kb = false; try { kb = e.target.matches(':focus-visible'); } catch (x) {}
-      if (!G.rvStopped && kb && !rvBox.contains(e.relatedTarget)) setRot(true);
-    });
+    $('.rv-prev', rvBox).addEventListener('click', function () { show(i - 1); });
+    $('.rv-next', rvBox).addEventListener('click', function () { show(i + 1); });
+    dots.forEach(function (d, k) { d.addEventListener('click', function () { show(k); }); });
     var sx = 0, sy = 0, sw = false;
     stack.addEventListener('pointerdown', function (e) { if (e.pointerType === 'mouse') return; sw = true; sx = e.clientX; sy = e.clientY; });
     stack.addEventListener('pointerup', function (e) {
       if (!sw) return; sw = false;
       var dx = e.clientX - sx, dy = e.clientY - sy;
-      if (Math.abs(dx) > 40 && Math.abs(dx) > 1.5 * Math.abs(dy)) manual(i + (dx < 0 ? 1 : -1));
+      if (Math.abs(dx) > 40 && Math.abs(dx) > 1.5 * Math.abs(dy)) show(i + (dx < 0 ? 1 : -1));
     });
     stack.addEventListener('pointercancel', function () { sw = false; });
   })();
@@ -102,7 +73,6 @@
   var onRm = function () {
     if (rm.matches) { html.classList.remove('m'); revealAll(); }
     else if (hasIO) html.classList.add('m');
-    sync();
   };
   if (rm.addEventListener) rm.addEventListener('change', onRm); else if (rm.addListener) rm.addListener(onRm);
 
@@ -115,8 +85,8 @@
 })();
 </script>
 <script>
-/* Homepage map, 2026-09 redesign: the flight in from the eastern United States and the slow turn. Its own script because
-   it is its own piece: it needs only the page's motion class (html.m), which the head boot sets. */
+/* Homepage map, 2026-09 redesign: the flight in from the eastern United States. Its own script because it is its own
+   piece: it needs only the page's motion class (html.m), which the head boot sets. */
 (function () {
   'use strict';
   var html = document.documentElement;
@@ -127,24 +97,23 @@
 
   /* ---- the map in the hero: as the page opens, the camera flies down to it from the eastern United States, tilted a
      little. It glides toward South Carolina as it zooms, from the country map to the Southeast to the Carolina coast to
-     the basemap, and tilts further and turns as it lands. Then it turns slowly while on screen; it holds still while the
-     pointer or keyboard focus is on a town label, and the button by the compass stops it. The compositor plays both
-     motions: keyframes computed here with the projection head.html uses, so no style work per frame. With no motion
-     allowed the CSS draws the map at rest. On Save-Data, a 2G or 3G link, or if the zoom maps are late, the flight is
+     the basemap, and tilts further and turns as it lands; then it rests. All of it ends within 5s of its start, so it
+     needs no pause button (WCAG 2.2.2). The compositor plays it: keyframes computed here with the projection head.html
+     uses, so no style work per frame. With no motion allowed the CSS draws the map at rest. On Save-Data, a 2G or 3G link, or if the zoom maps are late, the flight is
      the short one: the camera tilts down from overhead. ---- */
   var tw = $('#home'), tst = tw && $('.tw-stage', tw);
-  var towns = { stop: function () {}, sync: function () {} };
+  var towns = { stop: function () {} };
   /* only where CSS places the labels on the map: without trigonometric CSS they are a plain list, which must not move */
   var trig = window.CSS && CSS.supports && CSS.supports('width', 'calc(1px * sin(1deg))');
   if (tst && hasIO && tst.animate && trig) (function () {
     var plane = $('.tw-plane', tst), img = $('img', plane), pts = $$('.tw-pt', tst), wls = $$('.tw-deco .wl i', tst);
-    var needle = $('.tw-compass i', tst), btn = $('.tw-rot', tst), fog = $('.tw-fog', tst), dest = $('.tw-dest', tst);
+    var fog = $('.tw-fog', tst), dest = $('.tw-dest', tst);
     var words = $$('.cine-copy > *', tw), pl = (tst.getAttribute('data-plane') || '').split(',').map(Number);
     var lods = $$('.tw-lod', tst).map(function (el) { return { el: el, img: $('img', el), ext: el.getAttribute('data-ext').split(',').map(Number) }; });
     var conn = navigator.connection || {};
     var canZoom = lods.length === 3 && pl.length === 6 && !conn.saveData && !/(^|-)[23]g$/.test(conn.effectiveType || '');
     var R = Math.PI / 180, landed = false, started = false;
-    var vis = false, hov = false, foc = false, stopped = false, fly = [], turn = [], cam = '', ZT = 4600, ZN = 96;
+    var fly = [], cam = '', ZT = 4600, ZN = 96;
     function num(cs, k) { return parseFloat(cs.getPropertyValue(k)) || 0; }
     function cl(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
     function eio(x) { return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
@@ -167,9 +136,9 @@
       return [up * k, vp * Math.cos(s.t * R) * k];
     }
     /* one frame of the scene, the map (part 'v': the plane, the zoom levels, the brass point) or what is drawn on it
-       (part 'h': pins, shields, water names, compass), or both. A zoom level is placed by the same camera */
+       (part 'h': pins, shields, water names), or both. A zoom level is placed by the same camera */
     function pose(c, s, geo, part) {
-      var ct = Math.cos(s.t * R), sh = Math.sin(s.h * R), ch = Math.cos(s.h * R), f = {};
+      var ct = Math.cos(s.t * R), f = {};
       var head = 'rotateX(' + s.t.toFixed(3) + 'deg) rotateZ(' + s.h.toFixed(3) + 'deg) scale(' + s.z.toPrecision(6) + ')';
       var at = function (u, v) { var p = scr(c, s, u, v); return 'translate(' + p[0].toFixed(2) + 'px,' + p[1].toFixed(2) + 'px)'; };
       if (part !== 'h') {
@@ -180,7 +149,6 @@
       if (part !== 'v') {
         f.pts = c.at.map(function (p) { return at((p[0] - c.tx) * c.pw, (p[1] - c.ty) * c.pw * c.hw); });
         f.wls = c.a.map(function (a) { var r = (a + s.h) * R; return 'translate(-50%,-50%) rotate(' + (Math.atan2(Math.sin(r) * ct, Math.cos(r)) / R).toFixed(3) + 'deg)'; });
-        f.needle = 'rotate(' + (Math.atan2(sh, ch * ct) / R).toFixed(3) + 'deg)';
       }
       return f;
     }
@@ -210,7 +178,6 @@
       if (part !== 'v') {
         pts.forEach(function (el, i) { put(el, '', function (f) { return { transform: f.pts[i] }; }); });
         wls.forEach(function (el, i) { put(el, '', function (f) { return { transform: f.wls[i] }; }); });
-        if (needle) put(needle, '', function (f) { return { transform: f.needle }; });
       }
       return out;
     }
@@ -312,8 +279,8 @@
         tst.classList.toggle('z', zoom);
         tst.classList.add('in');
         fly.forEach(function (a) { a.play(); });
-        if (!fly.length) { land(); sync(); return; }
-        fly[0].finished.then(function () { landed = true; tst.classList.remove('lod'); sync(); }, function () {});
+        if (!fly.length) { land(); return; }
+        fly[0].finished.then(function () { landed = true; tst.classList.remove('lod'); }, function () {});
         setTimeout(function () {
           if (landed || fly !== mine) return;
           var h = play(c, path, geo, opts, 'h', Math.floor((zoom ? .7 : .5) * (path.length - 1)));
@@ -330,7 +297,7 @@
       var n = need.length, t = setTimeout(go, 2500), done = function () { if (--n <= 0) { clearTimeout(t); go(); } };
       need.forEach(function (im) { im.decode().then(done, done); });
     }
-    /* the flight jumps to its last frame: keyboard focus in the map, the pause button, a new breakpoint, printing */
+    /* the flight jumps to its last frame: keyboard focus in the map, a new breakpoint, printing */
     function end() {
       if (landed) return;
       tst.classList.add('now');
@@ -338,19 +305,9 @@
       if (fly.length) fly.forEach(function (a) { a.finish(); });
       else land();
     }
-    function sync() {
-      var on = landed && vis && !hov && !foc && !stopped && !rm.matches;
-      if (on && !turn.length) {
-        var c = camera(), s = [];
-        for (var i = 0; i <= 12; i++) s.push({ t: c.t0, h: c.h0 + (c.h1 - c.h0) * i / 12, z: 1, dx: 0, dy: 0 });
-        turn = play(c, s, null, { duration: 18000, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' });
-      }
-      turn.forEach(function (a) { if (on) a.play(); else a.pause(); });
-    }
-    towns.sync = sync;
     /* motion turned off: the map stops at rest, and labels still waiting for the landing show now, not when it was due */
     towns.stop = function () {
-      fly.concat(turn).forEach(function (a) { a.cancel(); }); fly = []; turn = []; land();
+      fly.forEach(function (a) { a.cancel(); }); fly = []; land();
       if (tst.getAnimations) tst.getAnimations({ subtree: true }).forEach(function (a) { if (a.transitionProperty) a.finish(); });
     };
     /* the flight plays once, as the page opens with the map on screen (a background tab: when first shown). A page opened
@@ -360,49 +317,24 @@
       if (!document.hidden) takeOff();
       else document.addEventListener('visibilitychange', function wake() { if (!document.hidden) { document.removeEventListener('visibilitychange', wake); takeOff(); } });
     } else land();
-    /* the slow turn runs only while the map is on screen */
-    new IntersectionObserver(function (es) { vis = es[es.length - 1].isIntersecting; sync(); }, { rootMargin: '0px 0px -12% 0px' }).observe(tst);
-    /* the turn holds while the pointer is on a town label, not anywhere over the map */
-    $$('.tw-pin a', tst).forEach(function (a) {
-      a.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hov = true; sync(); } });
-      a.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hov = false; sync(); } });
-    });
     /* keyboard focus in the map brings it to rest at once, so the focused label is visible and on its town */
-    tst.addEventListener('focusin', function (e) {
-      foc = !!(e.target.closest && e.target.closest('.tw-pin'));
-      end();
-      sync();
-    });
-    tst.addEventListener('focusout', function (e) { if (!tst.contains(e.relatedTarget)) { foc = false; sync(); } });
-    if (btn) {
-      btn.hidden = false;
-      btn.addEventListener('click', function () {
-        stopped = !stopped;
-        btn.classList.toggle('is-paused', stopped);
-        btn.setAttribute('aria-label', stopped ? 'Play the map' : 'Pause the map');
-        if (stopped) end();
-        sync();
-      });
-    }
-    /* a resize that crosses a breakpoint changes the camera: the flight jumps to its end, or the turn restarts from rest with
-       new frames. Any other resize, such as a phone's address bar showing or hiding, changes nothing the frames use */
+    tst.addEventListener('focusin', end);
+    /* a resize that crosses a breakpoint during the flight changes the camera: the flight jumps to its end. Any other resize,
+       such as a phone's address bar showing or hiding, changes nothing the frames use */
     var rz = 0;
     window.addEventListener('resize', function () {
       if (rz) return;
       rz = requestAnimationFrame(function () {
         rz = 0;
-        if (!fly.length && !turn.length) return;
-        if (JSON.stringify(camera()) === cam) return;
-        if (!landed) { end(); return; }
-        turn.forEach(function (a) { a.cancel(); }); turn = []; sync();
+        if (fly.length && !landed && JSON.stringify(camera()) !== cam) end();
       });
     });
     window.addEventListener('beforeprint', function () { end(); tst.classList.add('in'); });
   })();
   else if (tst) tst.classList.add('in');
 
-  /* ---- the motion preference can change while the page is open: the map stops, or starts turning again ---- */
-  var onRm = function () { if (rm.matches) towns.stop(); else towns.sync(); };
+  /* ---- the motion preference can change while the page is open: a flight under way stops at rest ---- */
+  var onRm = function () { if (rm.matches) towns.stop(); };
   if (rm.addEventListener) rm.addEventListener('change', onRm); else if (rm.addListener) rm.addListener(onRm);
 })();
 </script>

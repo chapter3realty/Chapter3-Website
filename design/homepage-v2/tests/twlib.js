@@ -44,11 +44,6 @@ window.__tw = (function () {
     const { pins, deco } = items();
     const obs = [], wb = words();
     if (wb) obs.push({ n: 'words', b: rbox(wb, 8) });
-    // the controls over the map: the pause button, the compass and the map data line
-    for (const [n, sel] of [['compass', '.tw-compass'], ['pause', '.tw-rot'], ['credit', '.tw-credit']]) {
-      const el = st.querySelector(sel);
-      if (el && el.getClientRects().length) obs.push({ n, b: rbox(R(el), 6) });
-    }
     const dots = pins.map((p) => ({ n: p.n, b: { cx: p.x, cy: p.y, hw: 8, hh: 8, a: 0 } }));
     const pills = pins.map((p) => {
       const b = obox(p.a, 2);

@@ -18,15 +18,12 @@ const { chromium } = require('playwright'), fs = require('fs');
   await p.addStyleTag({ content: '*,*::before,*::after{transition:none!important;animation:none!important} .tw-deco .wl,.tw-deco .sh{display:block!important}' });
   await p.evaluate(() => document.fonts.ready);
   if (cfg.ma) await p.evaluate((ma) => document.querySelector('#home').style.setProperty('--ma', ma + 'px'), cfg.ma);
-  // phase A: per width, the stage size and the fixed obstacles (the words, the controls, the map data line) in stage coordinates
+  // phase A: per width, the stage size and the fixed obstacle (the words over the map) in stage coordinates
   const W = [];
   for (const w of cfg.widths) {
     await p.setViewportSize({ width: w, height: cfg.vh || 900 });
     W.push(await p.evaluate((col) => {
       const st = document.querySelector('#home .tw-stage').getBoundingClientRect(), R = (e) => e.getBoundingClientRect();
-      // the controls: the pause button and the compass (shown here even with reduced motion), and the map data line
-      const ctl = document.querySelector('.tw-ctl'), credit = document.querySelector('.tw-credit');
-      document.querySelector('.tw-rot').style.setProperty('display', 'grid', 'important');
       const rel = (r, pad) => [r.left - st.left - pad, r.top - st.top - pad, r.right - st.left + pad, r.bottom - st.top + pad];
       let u = null;
       for (const el of document.querySelectorAll('.cine-copy > *')) {
@@ -34,7 +31,7 @@ const { chromium } = require('playwright'), fs = require('fs');
         u = u ? { left: Math.min(u.left, r.left), top: Math.min(u.top, r.top), right: Math.max(u.right, r.right), bottom: Math.max(u.bottom, r.bottom) } : { left: r.left, top: r.top, right: r.right, bottom: r.bottom };
       }
       if (u && col) { u.top = st.top; u.bottom = st.bottom; }
-      return { w: st.width, h: st.height, card: u ? rel(u, 8) : null, comp: rel(R(ctl), 6), credit: rel(R(credit), 6) };
+      return { w: st.width, h: st.height, card: u ? rel(u, 8) : null };
     }, !!cfg.col));
   }
   await p.setViewportSize({ width: cfg.widths[0], height: cfg.vh || 900 });
@@ -86,12 +83,12 @@ const { chromium } = require('playwright'), fs = require('fs');
       sec.style.setProperty('--h0', (cam.hc - cfg.drift) + 'deg');
       // absolute (stage coordinates) for width index wi
       const at = (v, wi) => [W[wi].w / 2 + cam.cx + v[0], W[wi].h - cam.cb + v[1]];
-      const fixed = W.map((w) => [w.card && rectO(w.card), rectO(w.comp), rectO(w.credit)].filter(Boolean));
+      const fixed = W.map((w) => [w.card && rectO(w.card)].filter(Boolean));
       const dots = (wi, si, except) => Object.entries(P).filter(([t]) => t !== except).map(([t, v]) => { const [x, y] = at(v[si], wi); return obb(x, y, 8, 8, 0); });
       let fails = 0; const choice = {}, placed = [];   // placed[i] = array over (wi,si) of obb
       const shOn = shields.map((s) => !(cfg.hideShields || []).includes(s.id));
       const shBox = (k, wi, si) => { const [x, y] = at(SH[k][si], wi); return obb(x, y, shields[k].w / 2 + 1, shields[k].h / 2 + 1, 0); };
-      // pins first can never sit under the words or the controls, and must stay on the stage
+      // pins first can never sit under the words, and must stay on the stage
       for (const [t, v] of Object.entries(P)) for (let wi = 0; wi < W.length; wi++) for (let si = 0; si < steps.length; si++) { const [x, y] = at(v[si], wi); const d = obb(x, y, 8, 8, 0); if (!inside(d, W[wi], 10) || fixed[wi].some((f) => sat(d, f))) { fails++; choice[t] = 'PIN'; } }
       const tryPlace = (t, pl, useSh) => {
         const [w, h] = size[t], boxes = [];
@@ -116,7 +113,7 @@ const { chromium } = require('playwright'), fs = require('fs');
         // shields this label covers are hidden
         shields.forEach((_, k) => { if (!shOn[k]) return; for (let wi = 0; wi < W.length; wi++) for (let si = 0; si < steps.length; si++) if (sat(got[1][wi * steps.length + si], shBox(k, wi, si))) { shOn[k] = false; return; } });
       }
-      // shields must clear pins, the words, the controls and the stage edge
+      // shields must clear pins, the words and the stage edge
       shields.forEach((_, k) => { if (!shOn[k]) return; for (let wi = 0; wi < W.length; wi++) for (let si = 0; si < steps.length; si++) { const o = shBox(k, wi, si); if (!inside(o, W[wi], 4) || fixed[wi].some((f) => sat(o, f)) || dots(wi, si).some((d) => sat(o, d))) { shOn[k] = false; return; } } });
       // water labels: the first candidate spot that clears everything placed so far
       const wat = {}, watBoxes = [];

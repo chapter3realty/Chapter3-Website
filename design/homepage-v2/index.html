@@ -137,32 +137,25 @@ html{scroll-padding-top:97px}
 #home>.tw-stage{grid-area:1/1}
 .cine-copy{grid-area:1/1;align-self:center;position:relative;z-index:3;width:var(--cw);margin-left:var(--side);padding-block:40px;text-shadow:0 1px 24px rgba(28,32,40,.45)}
 .rb svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.rb .i-play{fill:currentColor;stroke:none}
-.is-paused>.i-pause{display:none}
-.is-paused>.i-play{display:block}
-.cine-eyebrow{display:flex;align-items:center;font:500 11.5px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--brass-2);text-wrap:balance}
-.cine-eyebrow::before{content:"";flex:0 0 28px;height:1px;margin-right:12px;background:var(--brass-2);transform-origin:0 50%}
-#page-home .cine-h1{font-family:var(--disp);font-weight:300;font-synthesis:none;font-variation-settings:'wght' 300,'opsz' 80;font-size:clamp(64px,min(8.5vw,15svh),100px);line-height:.95;letter-spacing:-.02em;color:var(--ivory);margin:18px 0 0}
+#page-home .cine-h1{font-family:var(--disp);font-weight:300;font-synthesis:none;font-variation-settings:'wght' 300,'opsz' 80;font-size:clamp(64px,min(8.5vw,15svh),100px);line-height:.95;letter-spacing:-.02em;color:var(--ivory);margin:0}
 .cine-h1 .l1,.cine-h1 .l2{display:block;white-space:normal;padding-bottom:.18em;margin-bottom:-.18em}
 .cine-h1 .l1>span,.cine-h1 .l2>span{display:inline-block}
 .cine-h1 .l2{font-style:italic;color:var(--ivory-3);padding-inline-start:1em}
-#page-home .cine-sub{font-size:clamp(17px,1.2vw,19px);line-height:1.6;max-width:34rem;margin:24px 0 0}
+/* the sub-header is the H2: the site stylesheet sets every h2 in the serif at line-height 1, so the face is set here */
+#page-home .cine-sub{font:400 clamp(17px,1.2vw,19px)/1.6 var(--sans);letter-spacing:0;max-width:34rem;margin:24px 0 0}
 .cine-paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:32px 0 0;padding:0;list-style:none}
-.cine-path{position:relative;isolation:isolate;overflow:hidden;overflow:clip;display:grid;grid-template:"k a" auto "r r" 1fr/1fr 28px;align-items:start;min-height:92px;padding:14px 16px;border-radius:14px;border:1px solid rgba(244,239,232,.45);background:rgba(244,239,232,.04);color:var(--ivory);text-decoration:none;transition:border-color .5s var(--ease-out)}
+.cine-path{position:relative;isolation:isolate;overflow:hidden;overflow:clip;display:grid;grid-template:"k" auto "r" 1fr/1fr;align-items:start;min-height:92px;padding:14px 16px;border-radius:14px;border:1px solid rgba(244,239,232,.45);background:rgba(244,239,232,.04);color:var(--ivory);text-decoration:none;transition:border-color .5s var(--ease-out)}
 .cine-path::before{content:"";position:absolute;inset:0;background:var(--navy-2);transform:scaleX(0);transform-origin:0 50%;transition:transform .5s var(--ease-out);z-index:-1}
 .cine-path .pk{grid-area:k;font:500 11px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,.82);padding-top:5px}
 .cine-path .pr{grid-area:r;align-self:end;position:relative;font-family:var(--serif);font-style:italic;font-weight:300;font-variation-settings:'wght' 300;font-size:clamp(22px,1.9vw,28px);line-height:1.1;color:var(--ivory);margin-top:10px;white-space:nowrap}
-.cine-path .pa{grid-area:a;width:28px;height:28px;border-radius:50%;border:1px solid var(--brass-2);display:grid;place-items:center;transition:background .3s var(--ease-out)}
-.cine-path .pa svg{width:12px;height:12px;fill:none;stroke:var(--ivory);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s var(--ease-out),stroke .3s}
 @supports (content:"a" / ""){
 .cine-path .pr::before{content:attr(data-r) / "";position:absolute;left:0;bottom:0;font-style:normal;font-variation-settings:'wght' 500,'opsz' 36;color:var(--ivory);opacity:0;transition:opacity .45s var(--ease-out)}
 .cine-path:focus-visible .pr{color:transparent}.cine-path:focus-visible .pr::before{opacity:1}
 @media (hover:hover){.cine-path:hover .pr{color:transparent}.cine-path:hover .pr::before{opacity:1}}}
 .cine-path:focus-visible::before{transform:scaleX(1)}
 .cine-path:focus-visible{border-color:var(--brass-2);outline:2px solid var(--ivory-3);outline-offset:3px}
-.cine-path:focus-visible .pa{background:var(--brass-2)}.cine-path:focus-visible .pa svg{stroke:var(--navy);transform:translateX(3px)}
-@media (hover:hover){.cine-path:hover::before{transform:scaleX(1)}.cine-path:hover{border-color:var(--brass-2)}.cine-path:hover .pa{background:var(--brass-2)}.cine-path:hover .pa svg{stroke:var(--navy);transform:translateX(3px)}}
-@media (hover:none){.cine-path .pa{background:var(--brass-2)}.cine-path .pa svg{stroke:var(--navy)}.cine-path:active::before{transform:scaleX(1);transition:none}}
+@media (hover:hover){.cine-path:hover::before{transform:scaleX(1)}.cine-path:hover{border-color:var(--brass-2)}}
+@media (hover:none){.cine-path:active::before{transform:scaleX(1);transition:none}}
 
 /* reviews, a band of their own under the map; the analyzer sheet rises over its last 28px */
 #page-home #reviews.band{padding:clamp(48px,6vw,72px) 0 calc(clamp(48px,6vw,72px) + 28px);border-top:1px solid rgba(244,239,232,.12)}
@@ -173,14 +166,12 @@ html{scroll-padding-top:97px}
 .js .rv-ctl{display:flex}
 .rb{flex:0 0 44px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(244,239,232,.3);background:transparent;color:var(--ivory);display:grid;place-items:center;cursor:pointer;transition:border-color .25s}
 .rb:hover{border-color:var(--brass-2)}
-.rb:not(.is-paused)>.i-play{display:none}
 .rv-dots{display:flex}
 .rv-dots button{width:24px;height:24px;border-radius:12px;display:grid;place-items:center;background:none;border:0;padding:0;cursor:pointer;transition:width .35s var(--ease-out)}
 .rv-dots button::before{content:"";width:8px;height:8px;border-radius:4px;background:rgba(244,239,232,.5);transition:width .35s var(--ease-out),background .35s}
 .rv-dots button[aria-current="true"]{width:32px}
 .rv-dots button[aria-current="true"]::before{width:16px;background:var(--brass-2)}
 @media (max-width:359px){#page-home .rv-dots{display:none}}
-@media (max-width:379px){.cine-eyebrow{letter-spacing:.14em}}
 
 .rv-slide{margin:0}
 .rv-slide+.rv-slide{margin-top:22px}
@@ -202,6 +193,7 @@ html{scroll-padding-top:97px}
 .an-f{display:block}
 .an-l{display:block;margin-bottom:6px;font:500 11px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--brass-ink)}
 .an-card input{display:block;width:100%;height:52px;border-radius:10px;border:1px solid rgba(28,32,40,.62);background:#fff;color:var(--navy);font:16px var(--sans);padding:0 14px;transition:border-color .16s,box-shadow .16s}
+.an-card input::placeholder{color:#6b6f78;opacity:1}
 #page-home .an-card input:focus,#page-home .an-card input:focus-visible{outline:2px solid transparent;outline-offset:0;border-color:var(--brass-ink);box-shadow:0 0 0 2px var(--brass-ink)}
 .an-row{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:10px;margin-top:12px}
 .an-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:14px}
@@ -253,8 +245,6 @@ html{scroll-padding-top:97px}
 
 /* ---------- MOTION (only when the visitor allows it) ---------- */
 @media (prefers-reduced-motion:no-preference){
-.cine-eyebrow::before{animation:line-in .52s var(--ease-out) .15s both}
-@keyframes line-in{from{transform:scaleX(0)}}
 .cine-h1 .l1>span,.cine-h1 .l2>span{animation:h1-rise 1s var(--ease-out) .1s both}
 .cine-h1 .l2>span{animation-delay:.22s}
 .cine-h1 .l1,.cine-h1 .l2{overflow-x:visible;overflow-y:clip}
@@ -265,20 +255,18 @@ html{scroll-padding-top:97px}
 .m .tm-grid[data-io]:not(.in) .tp img{transform:scale(1.08)}
 @media (hover:hover){#page-home .why-stat:hover .why-ico :is(path,rect,circle){animation:redraw .9s var(--ease-io)}}
 @keyframes redraw{from{stroke-dashoffset:1.01}}}
-@media (prefers-reduced-motion:reduce){.rv-rot,.tw-rot{display:none!important}}
 
-/* ---------- TABLET AND PHONE: the words at the top, the map under them (--ma tall), then the sub-header and the map links.
+/* ---------- TABLET AND PHONE: the H1 and the paths at the top, the map under them (--ma tall), then the H2 and the map links.
    The words are laid out in the hero's own grid rows, so the map's stage reaches from the top of the hero to the bottom of --ma ---------- */
 @media (max-width:1099px){
-#page-home #home.cine{--mx:2rem;min-height:0;grid-template-rows:auto auto auto var(--ma) auto auto}
+#page-home #home.cine{--mx:2rem;min-height:0;grid-template-rows:auto auto var(--ma) auto auto}
 .cine-copy{display:contents}
 #page-home .cine-copy>*{grid-column:1;position:relative;z-index:3;margin-inline:var(--mx)}
-.cine-eyebrow{grid-row:1;padding-top:clamp(28px,5vw,44px)}
-.cine-h1{grid-row:2}
-.cine-paths{grid-row:3}
-#home>.tw-stage{grid-area:1/1/5/2}
-.cine-sub{grid-row:5}
-.cine-copy .tw-links{grid-row:6;padding-bottom:28px}
+#page-home .cine-h1{grid-row:1;margin-top:clamp(28px,5vw,44px)}
+.cine-paths{grid-row:2}
+#home>.tw-stage{grid-area:1/1/4/2}
+.cine-sub{grid-row:4}
+.cine-copy .tw-links{grid-row:5;padding-bottom:28px}
 .cine-paths .cine-path{background:rgba(28,32,40,.4);min-height:84px}
 #page-home .rv-slide blockquote p{max-width:32em}
 #page-home .qa p{max-width:36em}
@@ -298,17 +286,13 @@ html{scroll-padding-top:97px}
 #page-home #ltr-teaser.sheet{margin-top:-24px;border-radius:24px 24px 0 0;padding-top:64px}
 #page-home #reviews.band{padding-bottom:calc(clamp(48px,6vw,72px) + 24px)}
 #page-home #home.cine{--mx:1.4rem}
-.cine-eyebrow{padding-top:24px}
-#page-home .cine-path .pa{display:none}
-#page-home .cine-paths .cine-path{grid-template:"k" auto "r" 1fr/1fr}
 #page-home .cine-h1{font-size:clamp(40px,calc((100vw - 2.8rem)/5.25),96px);line-height:.95}
 .cine-h1 .l2{padding-inline-start:0}
 #page-home .cine-sub{font-size:17px;margin-top:16px}
 .cine-paths{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:22px}
-.cine-paths .cine-path{min-height:76px;grid-template:"k a" auto "r r" 1fr/1fr 22px;padding:10px 10px 10px 12px;border-radius:12px}
+.cine-paths .cine-path{min-height:76px;padding:10px 10px 10px 12px;border-radius:12px}
 .cine-path .pk{font-size:10.5px;letter-spacing:.12em;padding-top:3px}
 .cine-path .pr{font-size:clamp(18px,5.4vw,21px);margin-top:6px}
-.cine-path .pa{width:22px;height:22px}
 .rv-head{align-items:flex-start;flex-direction:column}
 .an-row{grid-template-columns:minmax(0,1fr) 104px}
 .an-card{padding:20px}
@@ -327,7 +311,8 @@ html{scroll-padding-top:97px}
 /* ---------- THE MAP IN THE HERO: a dark road map of the Grand Strand, tilted in 3D ----------
    The plane is one image. Each town label is an ordinary link outside the 3D scene, so its text stays sharp.
    CSS projects the town's spot on the plane to the screen with the same perspective, tilt and heading as the plane:
-   --P perspective, --pw plane width, --t0 tilt, --h0 heading (the slow turn runs to --h1), --cx/--cb where the camera
+   --P perspective, --pw plane width, --t0 tilt, --h0 heading (the map rests there; the cameras were searched over the
+   range to --h1, where an earlier version turned slowly), --cx/--cb where the camera
    target sits in the stage (--cx px right of the middle, --cb px above the bottom), --tx/--ty the target on the plane. The motion is not CSS: fx.html computes transform
    keyframes with the same projection and the compositor plays them. tests/states.js checks labels against the image. */
 @property --tw-u{syntax:'<number>';inherits:false;initial-value:0}
@@ -335,7 +320,7 @@ html{scroll-padding-top:97px}
 @property --tw-up{syntax:'<number>';inherits:false;initial-value:0}
 @property --tw-vp{syntax:'<number>';inherits:false;initial-value:0}
 @property --tw-k{syntax:'<number>';inherits:false;initial-value:1}
-#page-home #home.cine{--hw:.864979;--tx:.49;--ty:.45;--P:1200;--pw:1500;--t0:54deg;--h0:-25deg;--h1:-19deg;--cx:240;--cb:360;--fog:90px;--ci:var(--side)}
+#page-home #home.cine{--hw:.864979;--tx:.49;--ty:.45;--P:1200;--pw:1500;--t0:54deg;--h0:-25deg;--h1:-19deg;--cx:240;--cb:360;--fog:90px}
 .tw-links{display:flex;flex-wrap:wrap;gap:0 26px;margin-top:14px}
 .tw-stage{position:relative;overflow:hidden;overflow:clip}
 .tw-scene{position:absolute;inset:0;overflow:hidden;background:linear-gradient(180deg,var(--navy) 35%,#0b0e14 100%);perspective:calc(var(--P)*1px);perspective-origin:calc(50% + var(--cx)*1px) calc(100% - var(--cb)*1px)}
@@ -363,18 +348,14 @@ html{scroll-padding-top:97px}
 .tw-dest i::after{content:"";position:absolute;left:-12px;top:-12px;width:32px;height:32px;box-sizing:border-box;border-radius:50%;border:1.5px solid var(--brass-2);opacity:0}
 .tw-stage.lod .tw-dest i::after{animation:tw-dest 1.4s var(--ease-out) infinite}
 @keyframes tw-dest{from{transform:scale(.35);opacity:.95}to{transform:scale(1.5);opacity:0}}
-/* the source line the Census Bureau asks for, on the map in both layouts */
-#page-home .tw-credit{position:absolute;z-index:2;right:var(--ci);bottom:8px;margin:0;font:400 11px/18px var(--sans);letter-spacing:.02em;color:#a8a39c}
 .tw-pin .rg{display:none}
 /* without trigonometric CSS the labels cannot be placed, so the map stays a picture and the towns are a list under it,
-   in the hero's next grid rows, with the map data line after them */
+   in the hero's next grid row */
 @supports not (width:calc(1px * sin(1deg))){
-.tw-deco,.tw-ctl,.tw-stage.lod :is(.tw-lod,.tw-dest){display:none}
+.tw-deco,.tw-stage.lod :is(.tw-lod,.tw-dest){display:none}
 #home>.tw-stage{display:contents}
 .tw-scene{position:relative;grid-area:1/1}
-.tw-pins,#page-home .tw-credit{grid-column:1;position:static}
-.tw-pins{box-sizing:border-box;width:100%;max-width:1200px;margin:0 auto;padding:16px 2rem 8px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0 28px}
-#page-home .tw-credit{padding:0 var(--ci) 16px;text-align:right}
+.tw-pins{grid-column:1;position:static;box-sizing:border-box;width:100%;max-width:1200px;margin:0 auto;padding:16px 2rem 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0 28px}
 .tw-pin a{display:flex;align-items:center;min-height:56px;border-bottom:1px solid var(--line);font:400 20px/1.3 var(--serif);color:var(--ivory);text-decoration:none}}
 @supports (width:calc(1px * sin(1deg))){
 .tw-deco,.tw-pins{position:absolute;inset:0;pointer-events:none}
@@ -394,25 +375,18 @@ html{scroll-padding-top:97px}
 .tw-deco .sh b{transform:translate(-50%,-50%);font:700 10.5px/1 var(--sans);color:var(--navy);background:#f1f1f2;padding:3px 5px 4px;border-radius:3px 3px 7px 7px;box-shadow:0 1px 3px rgba(0,0,0,.45)}
 .tw-deco .sh.sc b{border-radius:9px;padding:3px 6px}
 .tw-deco .wl i{transform:translate(-50%,-50%) rotate(atan2(calc(sin(var(--a) + var(--h0))*cos(var(--t0))),cos(var(--a) + var(--h0))));will-change:transform;font:italic 400 12.5px/1 var(--sans);letter-spacing:.1em;color:#9db0c8;text-shadow:-2px -1px 0 #06080b,-2px 0 0 #06080b,-2px 1px 0 #06080b,-1px -2px 0 #06080b,-1px -1px 0 #06080b,-1px 0 0 #06080b,-1px 1px 0 #06080b,-1px 2px 0 #06080b,0 -2px 0 #06080b,0 -1px 0 #06080b,0 1px 0 #06080b,0 2px 0 #06080b,1px -2px 0 #06080b,1px -1px 0 #06080b,1px 0 0 #06080b,1px 1px 0 #06080b,1px 2px 0 #06080b,2px -1px 0 #06080b,2px 0 0 #06080b,2px 1px 0 #06080b,0 0 4px #06080b}
-/* bottom right, over the ocean: the button that pauses the slow turn, and the compass, whose needle points at north on the tilted map */
-.tw-ctl{position:absolute;z-index:2;right:var(--ci);bottom:34px;display:flex;gap:10px}
-.tw-rot{background:rgba(42,48,64,.92);box-shadow:0 8px 22px rgba(0,0,0,.35)}
-.tw-rot[hidden]{display:none}
-.tw-compass{position:relative;width:44px;height:44px;box-sizing:border-box;border-radius:50%;background:rgba(42,48,64,.92);border:1px solid rgba(244,239,232,.16);box-shadow:0 8px 22px rgba(0,0,0,.35)}
-.tw-compass i{position:absolute;left:50%;top:50%;width:10px;height:28px;margin:-14px 0 0 -5px;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);background:linear-gradient(var(--brass-2) 50%,rgba(244,239,232,.6) 50%);transform:rotate(atan2(sin(var(--h0)),cos(var(--h0))*cos(var(--t0))));will-change:transform}}
+}
 @media (max-width:1099px){
-#page-home #home.cine{--fog:50px;--ci:2rem}
+#page-home #home.cine{--fog:50px}
 .tw-scene::after{background:linear-gradient(180deg,rgba(28,32,40,.9) 0,rgba(28,32,40,.84) calc(100% - var(--ma) - 40px),rgba(28,32,40,0) calc(100% - var(--ma) + 60px))}
 /* the map's near edge fades into the navy the sub-header sits on */
 .tw-fog{background:linear-gradient(180deg,var(--navy) 0,rgba(28,32,40,.92) var(--fog),rgba(28,32,40,.5) calc(var(--fog)*2.2),rgba(28,32,40,0) calc(var(--fog)*3.6)),linear-gradient(0deg,var(--navy) 0,rgba(28,32,40,.7) 40px,rgba(28,32,40,0) 120px)}
-.tw-ctl{bottom:30px}
-@supports not (width:calc(1px * sin(1deg))){.tw-scene{grid-area:1/1/5/2}}}
+@supports not (width:calc(1px * sin(1deg))){.tw-scene{grid-area:1/1/4/2}}}
 @media (max-width:699px){
-#page-home #home.cine{--fog:40px;--ci:1.4rem}
-.tw-pin a{font-size:12px;padding:7px 10px}
-.tw-ctl{flex-direction:column}}
-/* label sides and water names per width, from a search over every width in the range and the whole turn: no label
-   covers another label, a pin, a road shield, a water name, the words over the map, the controls or the map data line (tests/states.js
+#page-home #home.cine{--fog:40px}
+.tw-pin a{font-size:12px;padding:7px 10px}}
+/* label sides and water names per width, from a search over every width in the range and the heading range: no label
+   covers another label, a pin, a road shield or a water name, or the words over the map (tests/states.js
    checks it). A camera or label side changed here goes into data/cameras.json too (tests/cameras.js checks it) */
 @media (min-width:1100px){.tw-pin:is([data-town=pawleys-island],[data-town=carolina-forest],[data-town=conway]){--ax:.5;--ay:1;--ox:0;--oy:-28;--stem:28}.tw-pin:is([data-town=murrells-inlet],[data-town=surfside-beach],[data-town=myrtle-beach],[data-town=north-myrtle-beach],[data-town=little-river]){--ax:0;--ay:.5;--ox:12;--oy:0;--stem:0}.tw-pin:is([data-town=garden-city]){--ax:1;--ay:.5;--ox:-12;--oy:0;--stem:0}.tw-deco .wl.icw{display:none}.tw-deco .wl.wac{--px:.3781;--py:.4556;--a:-81.4deg}.tw-deco .wl.sea{--px:.5843;--py:.5632;--a:-48.3deg}}
 @media (min-width:1100px) and (min-height:800px){#page-home #home.cine{--P:1200;--pw:1750;--t0:54deg;--h0:-21deg;--h1:-15deg;--cx:260;--cb:450}.tw-pin:is([data-town=carolina-forest],[data-town=conway],[data-town=little-river]){--ax:.5;--ay:1;--ox:0;--oy:-28;--stem:28}.tw-pin:is([data-town=pawleys-island],[data-town=murrells-inlet],[data-town=surfside-beach],[data-town=myrtle-beach]){--ax:0;--ay:.5;--ox:12;--oy:0;--stem:0}.tw-pin:is([data-town=garden-city]){--ax:1;--ay:.5;--ox:-12;--oy:0;--stem:0}.tw-pin:is([data-town=north-myrtle-beach]){--ax:1;--ay:1;--ox:14;--oy:-28;--stem:28}.tw-deco .wl.icw{display:inline;--px:.4061;--py:.4774;--a:-14.6deg}.tw-deco .wl.wac{--px:.3502;--py:.5056;--a:-64.6deg}.tw-deco .wl.sea{--px:.5843;--py:.5632;--a:-48.3deg}}
@@ -423,25 +397,25 @@ html{scroll-padding-top:97px}
 @media (max-width:699px){#page-home #home.cine{--P:900;--pw:1200;--t0:50deg;--h0:-42deg;--h1:-38deg;--cx:20;--cb:360;--ma:520px}.tw-pin:is([data-town=surfside-beach],[data-town=carolina-forest]){--ax:.5;--ay:1;--ox:0;--oy:-28;--stem:28}.tw-pin:is([data-town=murrells-inlet],[data-town=myrtle-beach],[data-town=little-river]){--ax:0;--ay:.5;--ox:12;--oy:0;--stem:0}.tw-pin:is([data-town=pawleys-island],[data-town=garden-city],[data-town=north-myrtle-beach]){--ax:1;--ay:.5;--ox:-12;--oy:0;--stem:0}.tw-pin:is([data-town=conway]){--ax:0;--ay:1;--ox:-14;--oy:-28;--stem:28}.tw-deco .wl.icw{display:none}.tw-deco .wl.wac{--px:.3838;--py:.4426;--a:86.4deg}.tw-deco .wl.sea{--px:.5641;--py:.5424;--a:-48.3deg}}
 @media (max-width:359px){#page-home #home.cine{--P:900;--pw:1050;--t0:50deg;--h0:-38deg;--h1:-34deg;--cx:20;--cb:330;--ma:520px}.tw-pin:is([data-town=murrells-inlet],[data-town=surfside-beach],[data-town=myrtle-beach],[data-town=conway]){--ax:0;--ay:.5;--ox:12;--oy:0;--stem:0}.tw-pin:is([data-town=pawleys-island],[data-town=garden-city],[data-town=little-river]){--ax:1;--ay:.5;--ox:-12;--oy:0;--stem:0}.tw-pin:is([data-town=carolina-forest]){--ax:0;--ay:1;--ox:-14;--oy:-28;--stem:28}.tw-pin:is([data-town=north-myrtle-beach]){--ax:.5;--ay:1;--ox:0;--oy:-60;--stem:60}.tw-deco .wl.icw{display:none}.tw-deco .wl.wac{--px:.3713;--py:.4259;--a:83.4deg}.tw-deco .wl.sea{--px:.6408;--py:.396;--a:-48.3deg}.tw-deco .sh[data-r="501"]{display:none}.tw-deco .sh[data-r="31"]{display:none}}
 /* motion: the camera flies in as the page opens (fx.html). Until the script sets the flight going (.in) the map is not
-   drawn, and the labels, road shields and controls wait for the landing: the pins land one by one, then the map turns
-   slowly while it is on screen, until the pause button stops it. If the script never runs, the head boot's timer removes
-   .m after 3s and the map shows at rest. */
+   drawn, and the labels and road shields wait for the landing: the pins land one by one and the map comes to rest. All of
+   it ends within 5s of the flight's start, so it needs no pause button (WCAG 2.2.2). If the script never runs, the head
+   boot's timer removes .m after 3s and the map shows at rest. */
 @media (prefers-reduced-motion:no-preference){
-.m .tw-stage:not(.in) :is(.tw-plane,.tw-pin,.tw-deco,.tw-ctl){opacity:0}
+.m .tw-stage:not(.in) :is(.tw-plane,.tw-pin,.tw-deco){opacity:0}
 .m .tw-stage:not(.in) .tw-pin a{translate:0 -10px}
 /* only the landing is staged, so no label shows early or stops half faded */
-.m .tw-stage:not(.in) :is(.tw-pin,.tw-deco,.tw-ctl),.m .tw-stage:not(.in) .tw-pin a{transition:none}
+.m .tw-stage:not(.in) :is(.tw-pin,.tw-deco),.m .tw-stage:not(.in) .tw-pin a{transition:none}
 .tw-stage{--land:1.5s}
 .tw-stage.z{--land:3.7s}
-.tw-pin{transition:opacity .45s ease calc(var(--land) + var(--i)*80ms)}
-.tw-pin a{transition:background .2s,color .2s,border-color .2s,translate .6s var(--ease-out) calc(var(--land) + var(--i)*80ms)}
-.tw-deco,.tw-ctl{transition:opacity .8s ease calc(var(--land) - .3s)}
-/* a flight ended early (keyboard focus, a new breakpoint, the pause button) shows every label at once */
-.m .tw-stage.now :is(.tw-pin,.tw-deco,.tw-ctl),.m .tw-stage.now .tw-pin a{transition:none}
+.tw-pin{transition:opacity .45s ease calc(var(--land) + var(--i)*60ms)}
+.tw-pin a{transition:background .2s,color .2s,border-color .2s,translate .6s var(--ease-out) calc(var(--land) + var(--i)*60ms)}
+.tw-deco{transition:opacity .8s ease calc(var(--land) - .3s)}
+/* a flight ended early (keyboard focus, a new breakpoint, printing) shows every label at once */
+.m .tw-stage.now :is(.tw-pin,.tw-deco),.m .tw-stage.now .tw-pin a{transition:none}
 /* whatever keyboard focus lands on shows at once (fx.html also brings the map to rest) */
-.m .tw-stage :is(.tw-pin,.tw-ctl):focus-within{opacity:1;transition:none}
+.m .tw-stage .tw-pin:focus-within{opacity:1;transition:none}
 .m .tw-stage .tw-pin:focus-within a{translate:none;transition:background .2s,color .2s,border-color .2s}
-.tw-stage.in .tw-pin .rg{animation:tw-ring 1.2s var(--ease-out) calc(var(--land) + .1s + var(--i)*80ms) 1 both}
+.tw-stage.in .tw-pin .rg{animation:tw-ring .7s var(--ease-out) calc(var(--land) + var(--i)*60ms) 1 both}
 .tw-stage .tw-pin:is(:hover,:focus-within) .rg{animation:tw-ring 1.4s var(--ease-out) infinite}
 @keyframes tw-ring{from{opacity:.9;transform:scaleY(cos(var(--t0))) scale(.35)}to{opacity:0;transform:scaleY(cos(var(--t0))) scale(1.3)}}}
 @media (forced-colors:active){#page-home .tw-pin a:focus-visible{forced-color-adjust:none;background:Highlight;color:HighlightText;border-color:HighlightText}}
@@ -483,18 +457,17 @@ html{scroll-padding-top:97px}
 
 <main id="main">
 <div class="page-section active" id="page-home">
-<!-- HERO: a dark road map of the Grand Strand, tilted in 3D, fills the hero, and the title, the paths and the map links sit over it.
+<!-- HERO: a dark road map of the Grand Strand, tilted in 3D, fills the hero, and the H1, the H2, the paths and the map links sit over it.
      On load the camera flies in from the eastern United States (fx.html). Each town label is a link that CSS places over its spot on the map.
      The cine- prefix names the hero's own pieces: the site stylesheet already uses hero-. -->
 <section id="home" class="cine band-navy" aria-labelledby="home-h1">
 <div class="cine-copy">
-<p class="cine-eyebrow">Chapter3 Realty &middot; Myrtle Beach, SC</p>
-<h1 class="cine-h1" id="home-h1"><span class="l1"><span>Myrtle Beach</span></span> <span class="l2"><span>Real Estate</span></span></h1>
-<p style="color:rgba(244,239,232,.86)" class="cine-sub">Buy, sell and invest from Pawleys Island to the North Carolina line, with a specialized real estate agent.</p>
+<h1 class="cine-h1" id="home-h1"><span class="l1"><span>Myrtle Beach</span></span> <span class="l2"><span>Homes</span></span></h1>
+<h2 style="color:rgba(244,239,232,.86)" class="cine-sub">Buy, sell and invest in Myrtle Beach real estate with a specialized real estate agent.</h2>
 <ul class="cine-paths" role="list">
-<li><a class="cine-path" href="/sell/"><span class="pk">I am a</span> <span class="pr" data-r="Seller">Seller</span><span class="pa" aria-hidden="true"><svg viewBox="0 0 12 12" focusable="false"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></span></a></li>
-<li><a class="cine-path" href="/invest/"><span class="pk">I am an</span> <span class="pr" data-r="Investor">Investor</span><span class="pa" aria-hidden="true"><svg viewBox="0 0 12 12" focusable="false"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></span></a></li>
-<li><a class="cine-path" href="/buyers/buying-in-myrtle-beach/"><span class="pk">I am a</span> <span class="pr" data-r="Buyer">Buyer</span><span class="pa" aria-hidden="true"><svg viewBox="0 0 12 12" focusable="false"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></span></a></li>
+<li><a class="cine-path" href="/sell/"><span class="pk">I am a</span> <span class="pr" data-r="Seller">Seller</span></a></li>
+<li><a class="cine-path" href="/invest/"><span class="pk">I am an</span> <span class="pr" data-r="Investor">Investor</span></a></li>
+<li><a class="cine-path" href="/buyers/buying-in-myrtle-beach/"><span class="pk">I am a</span> <span class="pr" data-r="Buyer">Buyer</span></a></li>
 </ul>
 <p class="tw-links"><a class="tl" href="/submarkets/"><span class="tl-t">All neighborhoods</span> <span class="arr" aria-hidden="true">&rarr;</span></a><a class="tl" href="/map/"><span class="tl-t">3D map search</span> <span class="arr" aria-hidden="true">&rarr;</span></a></p>
 </div>
@@ -531,28 +504,22 @@ html{scroll-padding-top:97px}
 <li class="tw-pt tw-pin" data-town="conway" style="--px:0.3806;--py:0.3384;--i:7"><a href="/submarkets/conway/">Conway</a><i class="rg"></i></li>
 <li class="tw-pt tw-pin" data-town="little-river" style="--px:0.653;--py:0.2957;--i:8"><a href="/submarkets/little-river/">Little River</a><i class="rg"></i></li>
 </ol>
-<div class="tw-ctl">
-<button class="rb tw-rot" type="button" aria-label="Pause the map" hidden><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 7v10M15 7v10"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6.5v11l8.5-5.5z"/></svg></button>
-<span class="tw-compass" aria-hidden="true"><i></i></span>
-</div>
-<p class="tw-credit">Map data: U.S. Census Bureau, USGS</p>
 </div>
 </section>
 
-<!-- REVIEWS: five reviews that dissolve in place, in a band of their own under the map -->
+<!-- REVIEWS: five reviews that dissolve in place when the visitor steps through them, in a band of their own under the map -->
 <section id="reviews" class="band band-navy">
 <div class="w">
 <div id="home-reviews" class="rv" role="region" aria-roledescription="carousel" aria-labelledby="rv-h">
 <div class="rv-head">
 <p id="rv-h" class="rv-label">What people say</p>
 <div class="rv-ctl">
-<button class="rb rv-rot" type="button" aria-label="Pause reviews"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 7v10M15 7v10"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6.5v11l8.5-5.5z"/></svg></button>
 <button class="rb rv-prev" type="button" aria-label="Previous review"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.5 6l-6 6 6 6"/></svg></button>
 <span class="rv-dots"><button type="button" aria-label="Review 1 of 5" aria-current="true"></button><button type="button" aria-label="Review 2 of 5" aria-current="false"></button><button type="button" aria-label="Review 3 of 5" aria-current="false"></button><button type="button" aria-label="Review 4 of 5" aria-current="false"></button><button type="button" aria-label="Review 5 of 5" aria-current="false"></button></span>
 <button class="rb rv-next" type="button" aria-label="Next review"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.5 6l6 6-6 6"/></svg></button>
 </div>
 </div>
-<div class="rv-stack" aria-live="off">
+<div class="rv-stack" aria-live="polite">
 <figure class="rv-slide on" role="group" aria-roledescription="slide" aria-label="Review 1 of 5"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><blockquote><p>"We were buying from 800 miles away. They did video walkthroughs and a huge investor report, so we knew the house was in a good location, and told us a new HOA was being built nearby because permits had just been applied for. Highly recommend."</p></blockquote><figcaption>Out-of-state buyer</figcaption></figure>
 <figure class="rv-slide" role="group" aria-roledescription="slide" aria-label="Review 2 of 5"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><blockquote><p>"They talked me out of a unit that looked great on paper. An agent who tells you when not to buy is one who earns your trust."</p></blockquote><figcaption>First-time buyer</figcaption></figure>
 <figure class="rv-slide" role="group" aria-roledescription="slide" aria-label="Review 3 of 5"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><blockquote><p>"They flagged active building permits and a development two streets over that no other agent mentioned. We bought knowing exactly what was coming."</p></blockquote><figcaption>Relocated from Ohio</figcaption></figure>
@@ -568,14 +535,14 @@ html{scroll-padding-top:97px}
 <div class="w an">
 <div class="an-head">
 <p class="eb" data-io>Grand Investor Tool &middot; Free</p>
-<h2 id="ltr-h">Try our <span class="it">investor analysis</span> tool</h2>
-<p class="an-text">Enter any address to see a real investor analysis on the house: DSCR, NOI, cap rate, cash flow, and projected appreciation. Free, no signup.</p>
+<h2 id="ltr-h">Try our <span class="it">property analysis</span> tool</h2>
+<p class="an-text">Enter any address to see a real estate analysis on the house: expected profit, appreciation and much more. Free, no signup.</p>
 </div>
 <form class="an-card" action="/invest/long-term-rental/" method="get" onsubmit="shouldIBuy();return false" novalidate>
-<label class="an-f"><span class="an-l">Street address</span><input id="sbh-street" name="street" type="text" autocomplete="address-line1"></label>
+<label class="an-f"><span class="an-l">Street address</span><input id="sbh-street" name="street" type="text" autocomplete="address-line1" placeholder="123 Main St"></label>
 <div class="an-row">
-<label class="an-f"><span class="an-l">City</span><input id="sbh-city" name="city" type="text" autocomplete="address-level2"></label>
-<label class="an-f"><span class="an-l">ZIP</span><input id="sbh-zip" name="zip" type="text" inputmode="numeric" maxlength="10" autocomplete="postal-code"></label>
+<label class="an-f"><span class="an-l">City</span><input id="sbh-city" name="city" type="text" autocomplete="address-level2" placeholder="Myrtle Beach"></label>
+<label class="an-f"><span class="an-l">ZIP</span><input id="sbh-zip" name="zip" type="text" inputmode="numeric" maxlength="10" autocomplete="postal-code" placeholder="29577"></label>
 </div>
 <div class="an-rail" aria-hidden="true"><i data-for="sbh-street"></i><i data-for="sbh-city"></i><i data-for="sbh-zip"></i></div>
 <button class="btn btn-brass btn-lg an-go" type="submit"><span class="btn-t">See the investor analysis <span class="arr" aria-hidden="true">&rarr;</span></span></button>
@@ -1215,57 +1182,28 @@ function c3SendForm(fields, pageName) {
   } else revealAll();
   window.addEventListener('beforeprint', revealAll);
 
-  /* ---- the gate: one place decides whether the reviews may rotate ---- */
-  var stage = $('#home.cine'), rvBox = $('#home-reviews'), pop = document.getElementById('c3-pop');
-  /* rvStopped: the visitor stopped the reviews */
-  var G = { vis: !document.hidden, pop: pop ? pop.hidden : true, rv: false, hov: false, rvStopped: false };
-  var rv = { run: function () {} };
-  function sync() { rv.run(G.vis && G.pop && G.rv && !G.hov && !G.rvStopped && !rm.matches); }
-  document.addEventListener('visibilitychange', function () { G.vis = !document.hidden; sync(); });
-  if (pop && 'MutationObserver' in window) {
-    new MutationObserver(function () { G.pop = pop.hidden; sync(); }).observe(pop, { attributes: true, attributeFilter: ['hidden'] });
-  }
-  if (hasIO && rvBox) new IntersectionObserver(function (es) { G.rv = es[es.length - 1].intersectionRatio >= 0.5; sync(); }, { threshold: [0, 0.5] }).observe(rvBox);
+  var stage = $('#home.cine');
 
-  /* ---- reviews: dissolve in place every 7s while visible; any manual step stops rotation ---- */
+  /* ---- reviews: one at a time. The visitor steps through them (the arrows, a dot or a swipe); they never move on their
+     own, so they need no pause button (WCAG 2.2.2) ---- */
+  var rvBox = $('#home-reviews');
   if (rvBox) (function () {
-    var stack = $('.rv-stack', rvBox), slides = $$('.rv-slide', rvBox), dots = $$('.rv-dots button', rvBox);
-    var rot = $('.rv-rot', rvBox), i = 0, t = 0;
+    var stack = $('.rv-stack', rvBox), slides = $$('.rv-slide', rvBox), dots = $$('.rv-dots button', rvBox), i = 0;
     if (slides.length < 2) return;
-    if (rm.matches) stack.setAttribute('aria-live', 'polite');
     function show(n) {
       i = (n + slides.length) % slides.length;
       slides.forEach(function (s, k) { s.classList.toggle('on', k === i); });
       dots.forEach(function (d, k) { d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
     }
-    function setRot(stopped) {
-      G.rvStopped = stopped;
-      rot.classList.toggle('is-paused', stopped);
-      rot.setAttribute('aria-label', stopped ? 'Play reviews' : 'Pause reviews');
-      stack.setAttribute('aria-live', stopped || rm.matches ? 'polite' : 'off');
-      sync();
-    }
-    var rmLive = function () { stack.setAttribute('aria-live', G.rvStopped || rm.matches ? 'polite' : 'off'); };
-    if (rm.addEventListener) rm.addEventListener('change', rmLive); else if (rm.addListener) rm.addListener(rmLive);
-    function manual(n) { show(n); setRot(true); }
-    rv.run = function (on) { clearTimeout(t); if (on) t = setTimeout(function () { show(i + 1); sync(); }, 7000); };
-    rot.addEventListener('click', function () { setRot(!G.rvStopped); });
-    $('.rv-prev', rvBox).addEventListener('click', function () { manual(i - 1); });
-    $('.rv-next', rvBox).addEventListener('click', function () { manual(i + 1); });
-    dots.forEach(function (d, k) { d.addEventListener('click', function () { manual(k); }); });
-    rvBox.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { G.hov = true; sync(); } });
-    rvBox.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { G.hov = false; sync(); } });
-    /* WAI APG carousel: keyboard focus entering the carousel stops rotation until the visitor presses play */
-    rvBox.addEventListener('focusin', function (e) {
-      var kb = false; try { kb = e.target.matches(':focus-visible'); } catch (x) {}
-      if (!G.rvStopped && kb && !rvBox.contains(e.relatedTarget)) setRot(true);
-    });
+    $('.rv-prev', rvBox).addEventListener('click', function () { show(i - 1); });
+    $('.rv-next', rvBox).addEventListener('click', function () { show(i + 1); });
+    dots.forEach(function (d, k) { d.addEventListener('click', function () { show(k); }); });
     var sx = 0, sy = 0, sw = false;
     stack.addEventListener('pointerdown', function (e) { if (e.pointerType === 'mouse') return; sw = true; sx = e.clientX; sy = e.clientY; });
     stack.addEventListener('pointerup', function (e) {
       if (!sw) return; sw = false;
       var dx = e.clientX - sx, dy = e.clientY - sy;
-      if (Math.abs(dx) > 40 && Math.abs(dx) > 1.5 * Math.abs(dy)) manual(i + (dx < 0 ? 1 : -1));
+      if (Math.abs(dx) > 40 && Math.abs(dx) > 1.5 * Math.abs(dy)) show(i + (dx < 0 ? 1 : -1));
     });
     stack.addEventListener('pointercancel', function () { sw = false; });
   })();
@@ -1296,7 +1234,6 @@ function c3SendForm(fields, pageName) {
   var onRm = function () {
     if (rm.matches) { html.classList.remove('m'); revealAll(); }
     else if (hasIO) html.classList.add('m');
-    sync();
   };
   if (rm.addEventListener) rm.addEventListener('change', onRm); else if (rm.addListener) rm.addListener(onRm);
 
@@ -1309,8 +1246,8 @@ function c3SendForm(fields, pageName) {
 })();
 </script>
 <script>
-/* Homepage map, 2026-09 redesign: the flight in from the eastern United States and the slow turn. Its own script because
-   it is its own piece: it needs only the page's motion class (html.m), which the head boot sets. */
+/* Homepage map, 2026-09 redesign: the flight in from the eastern United States. Its own script because it is its own
+   piece: it needs only the page's motion class (html.m), which the head boot sets. */
 (function () {
   'use strict';
   var html = document.documentElement;
@@ -1321,24 +1258,23 @@ function c3SendForm(fields, pageName) {
 
   /* ---- the map in the hero: as the page opens, the camera flies down to it from the eastern United States, tilted a
      little. It glides toward South Carolina as it zooms, from the country map to the Southeast to the Carolina coast to
-     the basemap, and tilts further and turns as it lands. Then it turns slowly while on screen; it holds still while the
-     pointer or keyboard focus is on a town label, and the button by the compass stops it. The compositor plays both
-     motions: keyframes computed here with the projection head.html uses, so no style work per frame. With no motion
-     allowed the CSS draws the map at rest. On Save-Data, a 2G or 3G link, or if the zoom maps are late, the flight is
+     the basemap, and tilts further and turns as it lands; then it rests. All of it ends within 5s of its start, so it
+     needs no pause button (WCAG 2.2.2). The compositor plays it: keyframes computed here with the projection head.html
+     uses, so no style work per frame. With no motion allowed the CSS draws the map at rest. On Save-Data, a 2G or 3G link, or if the zoom maps are late, the flight is
      the short one: the camera tilts down from overhead. ---- */
   var tw = $('#home'), tst = tw && $('.tw-stage', tw);
-  var towns = { stop: function () {}, sync: function () {} };
+  var towns = { stop: function () {} };
   /* only where CSS places the labels on the map: without trigonometric CSS they are a plain list, which must not move */
   var trig = window.CSS && CSS.supports && CSS.supports('width', 'calc(1px * sin(1deg))');
   if (tst && hasIO && tst.animate && trig) (function () {
     var plane = $('.tw-plane', tst), img = $('img', plane), pts = $$('.tw-pt', tst), wls = $$('.tw-deco .wl i', tst);
-    var needle = $('.tw-compass i', tst), btn = $('.tw-rot', tst), fog = $('.tw-fog', tst), dest = $('.tw-dest', tst);
+    var fog = $('.tw-fog', tst), dest = $('.tw-dest', tst);
     var words = $$('.cine-copy > *', tw), pl = (tst.getAttribute('data-plane') || '').split(',').map(Number);
     var lods = $$('.tw-lod', tst).map(function (el) { return { el: el, img: $('img', el), ext: el.getAttribute('data-ext').split(',').map(Number) }; });
     var conn = navigator.connection || {};
     var canZoom = lods.length === 3 && pl.length === 6 && !conn.saveData && !/(^|-)[23]g$/.test(conn.effectiveType || '');
     var R = Math.PI / 180, landed = false, started = false;
-    var vis = false, hov = false, foc = false, stopped = false, fly = [], turn = [], cam = '', ZT = 4600, ZN = 96;
+    var fly = [], cam = '', ZT = 4600, ZN = 96;
     function num(cs, k) { return parseFloat(cs.getPropertyValue(k)) || 0; }
     function cl(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
     function eio(x) { return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
@@ -1361,9 +1297,9 @@ function c3SendForm(fields, pageName) {
       return [up * k, vp * Math.cos(s.t * R) * k];
     }
     /* one frame of the scene, the map (part 'v': the plane, the zoom levels, the brass point) or what is drawn on it
-       (part 'h': pins, shields, water names, compass), or both. A zoom level is placed by the same camera */
+       (part 'h': pins, shields, water names), or both. A zoom level is placed by the same camera */
     function pose(c, s, geo, part) {
-      var ct = Math.cos(s.t * R), sh = Math.sin(s.h * R), ch = Math.cos(s.h * R), f = {};
+      var ct = Math.cos(s.t * R), f = {};
       var head = 'rotateX(' + s.t.toFixed(3) + 'deg) rotateZ(' + s.h.toFixed(3) + 'deg) scale(' + s.z.toPrecision(6) + ')';
       var at = function (u, v) { var p = scr(c, s, u, v); return 'translate(' + p[0].toFixed(2) + 'px,' + p[1].toFixed(2) + 'px)'; };
       if (part !== 'h') {
@@ -1374,7 +1310,6 @@ function c3SendForm(fields, pageName) {
       if (part !== 'v') {
         f.pts = c.at.map(function (p) { return at((p[0] - c.tx) * c.pw, (p[1] - c.ty) * c.pw * c.hw); });
         f.wls = c.a.map(function (a) { var r = (a + s.h) * R; return 'translate(-50%,-50%) rotate(' + (Math.atan2(Math.sin(r) * ct, Math.cos(r)) / R).toFixed(3) + 'deg)'; });
-        f.needle = 'rotate(' + (Math.atan2(sh, ch * ct) / R).toFixed(3) + 'deg)';
       }
       return f;
     }
@@ -1404,7 +1339,6 @@ function c3SendForm(fields, pageName) {
       if (part !== 'v') {
         pts.forEach(function (el, i) { put(el, '', function (f) { return { transform: f.pts[i] }; }); });
         wls.forEach(function (el, i) { put(el, '', function (f) { return { transform: f.wls[i] }; }); });
-        if (needle) put(needle, '', function (f) { return { transform: f.needle }; });
       }
       return out;
     }
@@ -1506,8 +1440,8 @@ function c3SendForm(fields, pageName) {
         tst.classList.toggle('z', zoom);
         tst.classList.add('in');
         fly.forEach(function (a) { a.play(); });
-        if (!fly.length) { land(); sync(); return; }
-        fly[0].finished.then(function () { landed = true; tst.classList.remove('lod'); sync(); }, function () {});
+        if (!fly.length) { land(); return; }
+        fly[0].finished.then(function () { landed = true; tst.classList.remove('lod'); }, function () {});
         setTimeout(function () {
           if (landed || fly !== mine) return;
           var h = play(c, path, geo, opts, 'h', Math.floor((zoom ? .7 : .5) * (path.length - 1)));
@@ -1524,7 +1458,7 @@ function c3SendForm(fields, pageName) {
       var n = need.length, t = setTimeout(go, 2500), done = function () { if (--n <= 0) { clearTimeout(t); go(); } };
       need.forEach(function (im) { im.decode().then(done, done); });
     }
-    /* the flight jumps to its last frame: keyboard focus in the map, the pause button, a new breakpoint, printing */
+    /* the flight jumps to its last frame: keyboard focus in the map, a new breakpoint, printing */
     function end() {
       if (landed) return;
       tst.classList.add('now');
@@ -1532,19 +1466,9 @@ function c3SendForm(fields, pageName) {
       if (fly.length) fly.forEach(function (a) { a.finish(); });
       else land();
     }
-    function sync() {
-      var on = landed && vis && !hov && !foc && !stopped && !rm.matches;
-      if (on && !turn.length) {
-        var c = camera(), s = [];
-        for (var i = 0; i <= 12; i++) s.push({ t: c.t0, h: c.h0 + (c.h1 - c.h0) * i / 12, z: 1, dx: 0, dy: 0 });
-        turn = play(c, s, null, { duration: 18000, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' });
-      }
-      turn.forEach(function (a) { if (on) a.play(); else a.pause(); });
-    }
-    towns.sync = sync;
     /* motion turned off: the map stops at rest, and labels still waiting for the landing show now, not when it was due */
     towns.stop = function () {
-      fly.concat(turn).forEach(function (a) { a.cancel(); }); fly = []; turn = []; land();
+      fly.forEach(function (a) { a.cancel(); }); fly = []; land();
       if (tst.getAnimations) tst.getAnimations({ subtree: true }).forEach(function (a) { if (a.transitionProperty) a.finish(); });
     };
     /* the flight plays once, as the page opens with the map on screen (a background tab: when first shown). A page opened
@@ -1554,49 +1478,24 @@ function c3SendForm(fields, pageName) {
       if (!document.hidden) takeOff();
       else document.addEventListener('visibilitychange', function wake() { if (!document.hidden) { document.removeEventListener('visibilitychange', wake); takeOff(); } });
     } else land();
-    /* the slow turn runs only while the map is on screen */
-    new IntersectionObserver(function (es) { vis = es[es.length - 1].isIntersecting; sync(); }, { rootMargin: '0px 0px -12% 0px' }).observe(tst);
-    /* the turn holds while the pointer is on a town label, not anywhere over the map */
-    $$('.tw-pin a', tst).forEach(function (a) {
-      a.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hov = true; sync(); } });
-      a.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hov = false; sync(); } });
-    });
     /* keyboard focus in the map brings it to rest at once, so the focused label is visible and on its town */
-    tst.addEventListener('focusin', function (e) {
-      foc = !!(e.target.closest && e.target.closest('.tw-pin'));
-      end();
-      sync();
-    });
-    tst.addEventListener('focusout', function (e) { if (!tst.contains(e.relatedTarget)) { foc = false; sync(); } });
-    if (btn) {
-      btn.hidden = false;
-      btn.addEventListener('click', function () {
-        stopped = !stopped;
-        btn.classList.toggle('is-paused', stopped);
-        btn.setAttribute('aria-label', stopped ? 'Play the map' : 'Pause the map');
-        if (stopped) end();
-        sync();
-      });
-    }
-    /* a resize that crosses a breakpoint changes the camera: the flight jumps to its end, or the turn restarts from rest with
-       new frames. Any other resize, such as a phone's address bar showing or hiding, changes nothing the frames use */
+    tst.addEventListener('focusin', end);
+    /* a resize that crosses a breakpoint during the flight changes the camera: the flight jumps to its end. Any other resize,
+       such as a phone's address bar showing or hiding, changes nothing the frames use */
     var rz = 0;
     window.addEventListener('resize', function () {
       if (rz) return;
       rz = requestAnimationFrame(function () {
         rz = 0;
-        if (!fly.length && !turn.length) return;
-        if (JSON.stringify(camera()) === cam) return;
-        if (!landed) { end(); return; }
-        turn.forEach(function (a) { a.cancel(); }); turn = []; sync();
+        if (fly.length && !landed && JSON.stringify(camera()) !== cam) end();
       });
     });
     window.addEventListener('beforeprint', function () { end(); tst.classList.add('in'); });
   })();
   else if (tst) tst.classList.add('in');
 
-  /* ---- the motion preference can change while the page is open: the map stops, or starts turning again ---- */
-  var onRm = function () { if (rm.matches) towns.stop(); else towns.sync(); };
+  /* ---- the motion preference can change while the page is open: a flight under way stops at rest ---- */
+  var onRm = function () { if (rm.matches) towns.stop(); };
   if (rm.addEventListener) rm.addEventListener('change', onRm); else if (rm.addListener) rm.addListener(onRm);
 })();
 </script>

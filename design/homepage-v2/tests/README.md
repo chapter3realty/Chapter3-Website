@@ -13,12 +13,12 @@ Browser measurements for the redesign. Run with Playwright's Chromium. `states.j
 
 The hero map (a tilted basemap with CSS-placed labels) has its own tools. They share `twlib.js`:
 
-    node twcheck.js  http://localhost:8124/ 1440x900 390x844   # label collisions over the whole turn, and label-to-map error
+    node twcheck.js  http://localhost:8124/ 1440x900 390x844   # label collisions over the camera's heading range, and label-to-map error
     GROW=0.045 node twcheck.js http://localhost:8124/          # the same with labels 4.5% wider, as Firefox draws them
     SPACING=1 node twcheck.js http://localhost:8124/ 1100x900  # with the WCAG 1.4.12 text spacing (labels then widen too)
     CSS='...' node twcheck.js http://localhost:8124/ 1100x900  # try a placement before writing it into src/head.html
     node cameras.js  http://localhost:8124/                    # the page's cameras match data/cameras.json
-    node twmotion.js http://localhost:8124/ 1440 900           # labels stay on their towns during the flight and the turn
+    node twmotion.js http://localhost:8124/ 1440 900           # labels stay on their towns during the flight; nothing moves after it
     node twperf.js   http://localhost:8124/ 390 844 4          # main-thread cost while the map moves (4x CPU slowdown)
     node twsearch.js '<json>'                                  # searches cameras and label sides for a range of widths
     node zoomframes.js http://localhost:8124/ 1440x900 out/d   # the flight in from the eastern United States, frozen at set moments

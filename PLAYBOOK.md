@@ -238,6 +238,11 @@ H2s get light rules in the same block: 2 to 16 words, no generic label
 ("Overview", "Details", "Summary"), and at least one H2 outside the FAQ carries a
 page keyword or a place name.
 
+The sub is a paragraph on every page but one: on the homepage it is an H2 in
+the same inline ivory style, at the owner's request (2026-10-01). The gate
+reads an ivory H2 straight after the H1 as the sub and holds it to the eight
+rules above, and to the H2 rules as well.
+
 Sources read for this rule set: Nielsen Norman Group on scanning behavior and
 front-loading; Copyblogger and CXL on subheadline structure (one specific
 benefit or proof, a number, reader-facing, at most two lines); Google's

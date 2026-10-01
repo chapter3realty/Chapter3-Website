@@ -960,7 +960,9 @@ const subHasToken = (kwTok, text) => {
 };
 /* Returns { text, markup } for the hero sub-header, or null. Two markups
  * exist: <p class="detail-sub"> on ivory heroes, and on navy heroes the first
- * inline-styled ivory paragraph after </h1> that is not the byline. */
+ * inline-styled ivory paragraph after </h1> that is not the byline. On the
+ * homepage the sub is an H2 in the same inline ivory style (owner, 2026-10-01),
+ * so an ivory H2 counts too, and the same rules measure it. */
 function heroSub(mainHtml) {
   const d = mainHtml.match(/<p class="detail-sub">([\s\S]*?)<\/p>/);
   const clean = (x) => decodeEnt(x.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
@@ -968,8 +970,8 @@ function heroSub(mainHtml) {
   const h1 = mainHtml.indexOf("</h1>");
   if (h1 < 0) return null;
   const after = mainHtml.slice(h1 + 5, h1 + 2000);
-  for (const m of after.matchAll(/<p style="color:rgba\(244,239,232,[^"]*"[^>]*>([\s\S]*?)<\/p>/g)) {
-    const t = clean(m[1]);
+  for (const m of after.matchAll(/<(p|h2) style="color:rgba\(244,239,232,[^"]*"[^>]*>([\s\S]*?)<\/\1>/g)) {
+    const t = clean(m[2]);
     if (!/^By\b/.test(t)) return { text: t, markup: "navy inline" };
   }
   return null;

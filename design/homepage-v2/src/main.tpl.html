@@ -1,15 +1,14 @@
-<!-- HERO: a dark road map of the Grand Strand, tilted in 3D, fills the hero, and the title, the paths and the map links sit over it.
+<!-- HERO: a dark road map of the Grand Strand, tilted in 3D, fills the hero, and the H1, the H2, the paths and the map links sit over it.
      On load the camera flies in from the eastern United States (fx.html). Each town label is a link that CSS places over its spot on the map.
      The cine- prefix names the hero's own pieces: the site stylesheet already uses hero-. -->
 <section id="home" class="cine band-navy" aria-labelledby="home-h1">
 <div class="cine-copy">
-<p class="cine-eyebrow">{{EYEBROW}}</p>
-<h1 class="cine-h1" id="home-h1"><span class="l1"><span>Myrtle Beach</span></span> <span class="l2"><span>Real Estate</span></span></h1>
-<p style="color:rgba(244,239,232,.86)" class="cine-sub">{{SUB}}</p>
+<h1 class="cine-h1" id="home-h1"><span class="l1"><span>Myrtle Beach</span></span> <span class="l2"><span>Homes</span></span></h1>
+<h2 style="color:rgba(244,239,232,.86)" class="cine-sub">Buy, sell and invest in Myrtle Beach real estate with a specialized real estate agent.</h2>
 <ul class="cine-paths" role="list">
-<li><a class="cine-path" href="/sell/"><span class="pk">I am a</span> <span class="pr" data-r="Seller">Seller</span><span class="pa" aria-hidden="true"><svg viewBox="0 0 12 12" focusable="false"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></span></a></li>
-<li><a class="cine-path" href="/invest/"><span class="pk">I am an</span> <span class="pr" data-r="Investor">Investor</span><span class="pa" aria-hidden="true"><svg viewBox="0 0 12 12" focusable="false"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></span></a></li>
-<li><a class="cine-path" href="/buyers/buying-in-myrtle-beach/"><span class="pk">I am a</span> <span class="pr" data-r="Buyer">Buyer</span><span class="pa" aria-hidden="true"><svg viewBox="0 0 12 12" focusable="false"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></span></a></li>
+<li><a class="cine-path" href="/sell/"><span class="pk">I am a</span> <span class="pr" data-r="Seller">Seller</span></a></li>
+<li><a class="cine-path" href="/invest/"><span class="pk">I am an</span> <span class="pr" data-r="Investor">Investor</span></a></li>
+<li><a class="cine-path" href="/buyers/buying-in-myrtle-beach/"><span class="pk">I am a</span> <span class="pr" data-r="Buyer">Buyer</span></a></li>
 </ul>
 <p class="tw-links"><a class="tl" href="/submarkets/"><span class="tl-t">All neighborhoods</span> <span class="arr" aria-hidden="true">&rarr;</span></a><a class="tl" href="/map/"><span class="tl-t">3D map search</span> <span class="arr" aria-hidden="true">&rarr;</span></a></p>
 </div>
@@ -30,28 +29,22 @@
 <ol class="tw-pins" role="list" aria-label="Towns on the map">
 {{PINS}}
 </ol>
-<div class="tw-ctl">
-<button class="rb tw-rot" type="button" aria-label="Pause the map" hidden><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 7v10M15 7v10"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6.5v11l8.5-5.5z"/></svg></button>
-<span class="tw-compass" aria-hidden="true"><i></i></span>
-</div>
-<p class="tw-credit">Map data: U.S. Census Bureau, USGS</p>
 </div>
 </section>
 
-<!-- REVIEWS: five reviews that dissolve in place, in a band of their own under the map -->
+<!-- REVIEWS: five reviews that dissolve in place when the visitor steps through them, in a band of their own under the map -->
 <section id="reviews" class="band band-navy">
 <div class="w">
 <div id="home-reviews" class="rv" role="region" aria-roledescription="carousel" aria-labelledby="rv-h">
 <div class="rv-head">
 <p id="rv-h" class="rv-label">What people say</p>
 <div class="rv-ctl">
-<button class="rb rv-rot" type="button" aria-label="Pause reviews"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 7v10M15 7v10"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6.5v11l8.5-5.5z"/></svg></button>
 <button class="rb rv-prev" type="button" aria-label="Previous review"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.5 6l-6 6 6 6"/></svg></button>
 <span class="rv-dots"><button type="button" aria-label="Review 1 of 5" aria-current="true"></button><button type="button" aria-label="Review 2 of 5" aria-current="false"></button><button type="button" aria-label="Review 3 of 5" aria-current="false"></button><button type="button" aria-label="Review 4 of 5" aria-current="false"></button><button type="button" aria-label="Review 5 of 5" aria-current="false"></button></span>
 <button class="rb rv-next" type="button" aria-label="Next review"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.5 6l6 6-6 6"/></svg></button>
 </div>
 </div>
-<div class="rv-stack" aria-live="off">
+<div class="rv-stack" aria-live="polite">
 {{REVIEWS}}
 </div>
 </div>
@@ -63,14 +56,14 @@
 <div class="w an">
 <div class="an-head">
 <p class="eb" data-io>{{AN_EB}}</p>
-<h2 id="ltr-h">Try our <span class="it">investor analysis</span> tool</h2>
-<p class="an-text">{{AN_P}}</p>
+<h2 id="ltr-h">Try our <span class="it">property analysis</span> tool</h2>
+<p class="an-text">Enter any address to see a real estate analysis on the house: expected profit, appreciation and much more. Free, no signup.</p>
 </div>
 <form class="an-card" action="/invest/long-term-rental/" method="get" onsubmit="shouldIBuy();return false" novalidate>
-<label class="an-f"><span class="an-l">Street address</span><input id="sbh-street" name="street" type="text" autocomplete="address-line1"></label>
+<label class="an-f"><span class="an-l">Street address</span><input id="sbh-street" name="street" type="text" autocomplete="address-line1" placeholder="123 Main St"></label>
 <div class="an-row">
-<label class="an-f"><span class="an-l">City</span><input id="sbh-city" name="city" type="text" autocomplete="address-level2"></label>
-<label class="an-f"><span class="an-l">ZIP</span><input id="sbh-zip" name="zip" type="text" inputmode="numeric" maxlength="10" autocomplete="postal-code"></label>
+<label class="an-f"><span class="an-l">City</span><input id="sbh-city" name="city" type="text" autocomplete="address-level2" placeholder="Myrtle Beach"></label>
+<label class="an-f"><span class="an-l">ZIP</span><input id="sbh-zip" name="zip" type="text" inputmode="numeric" maxlength="10" autocomplete="postal-code" placeholder="29577"></label>
 </div>
 <div class="an-rail" aria-hidden="true"><i data-for="sbh-street"></i><i data-for="sbh-city"></i><i data-for="sbh-zip"></i></div>
 <button class="btn btn-brass btn-lg an-go" type="submit"><span class="btn-t">See the investor analysis <span class="arr" aria-hidden="true">&rarr;</span></span></button>

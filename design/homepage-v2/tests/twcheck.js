@@ -8,13 +8,13 @@ const { chromium } = require('playwright'), fs = require('fs');
   let bad = 0;
   for (const s of (sizes.length ? sizes : ['1920x1080', '1680x1050', '1440x900', '1280x800', '1100x800', '1099x800', '1024x768', '900x1000', '899x1000', '820x1180', '768x1024', '700x900', '699x900', '430x932', '390x844', '375x667', '360x740', '320x568'])) {
     const [w, h] = s.split('x').map(Number);
-    // motion allowed, so the pause button shows; pressing it lands the flight at once and stops the turn
+    // motion allowed; keyboard focus on a town label lands the flight at once
     const ctx = await b.newContext({ viewport: { width: w, height: h }, reducedMotion: 'no-preference', isMobile: w <= 430, hasTouch: w <= 430 });
     if (process.env.SPACING) await ctx.addInitScript(() => addEventListener('DOMContentLoaded', () => { const s = document.createElement('style'); s.textContent = '*{line-height:1.5!important;letter-spacing:.12em!important;word-spacing:.16em!important}p{margin-bottom:2em!important}'; document.head.appendChild(s); }));
     const p = await ctx.newPage();
     await p.addInitScript(() => { try { localStorage.c3PopDone = 1; } catch (e) {} });
     await p.goto(url, { waitUntil: 'load' });
-    await p.evaluate(() => document.querySelector('.tw-rot').click());
+    await p.evaluate(() => { const a = document.querySelector('.tw-pin a'); a.focus(); a.blur(); });
     // CSS=... adds rules on top, to try a placement before writing it into head.html
     await p.addStyleTag({ content: '*,*::before,*::after{transition:none!important;animation:none!important}' + (process.env.CSS || '') });
     await p.evaluate(() => document.fonts.ready);

@@ -1,4 +1,4 @@
-// main-thread cost of the hero map while it flies in and turns, versus paused, versus scrolled away.
+// main-thread cost of the hero map while it flies in, versus at rest after it, versus scrolled away.
 // node twperf.js <url> <w> <h> [cpu slowdown]. FLY=ms sets the first window (the flight starts as the page opens)
 const { chromium } = require('playwright');
 (async () => {
@@ -20,10 +20,7 @@ const { chromium } = require('playwright');
     console.log(`${label.padEnd(26)} per second: style ${d('RecalcStyleDuration')}ms layout ${d('LayoutDuration')}ms script ${d('ScriptDuration')}ms task ${d('TaskDuration')}ms  styleCount ${((c.RecalcStyleCount - a.RecalcStyleCount) / (ms / 1000)).toFixed(0)}  fps~${f0}`);
   };
   await win('map: fly-in', +(process.env.FLY || 5000));
-  await win('map: turning', 5000);
-  await p.click('.tw-rot');
-  await win('map: paused by its button', 4000);
-  await p.click('.tw-rot');
+  await win('map: at rest after the flight', 5000);
   await p.evaluate(() => window.scrollTo({ top: document.querySelector('#faq').getBoundingClientRect().top + scrollY + 400, behavior: 'instant' }));
   await win('scrolled past the map', 4000);
   await b.close();

@@ -13,6 +13,9 @@ const { chromium } = require('playwright');
   await page.goto(url, { waitUntil: 'load' });
   await page.waitForFunction(() => document.querySelector('#home .tw-stage').classList.contains('in'), null, { timeout: 10000 });
   await page.evaluate(() => document.fonts.ready);
+  // the H1 rises in over its first second: an animated layer keeps its old pixels for a frame after the glyphs are hidden,
+  // which would measure the text against itself, so the words' own animations finish first
+  await page.waitForFunction(() => document.getAnimations().filter((a) => a.effect && a.effect.target && a.effect.target.closest && a.effect.target.closest('.cine-copy')).every((a) => a.playState === 'finished'), null, { timeout: 10000 });
   const cdp = await ctx.newCDPSession(page);
   const worst = {};
   for (const t of timesArg.split(',')) {

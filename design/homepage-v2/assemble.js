@@ -24,22 +24,20 @@ const once = (str, needle, label) => {
   if (n !== 1) throw new Error(`${label}: expected 1 match, found ${n}`);
 };
 
-// 0. fill the content template with the owner-approved copy, byte for byte from the base page
+// 0. fill the content template with the owner-approved copy, byte for byte from the base page. The hero's H1 and H2 and
+// the analyzer's heading and text are in src/main.tpl.html itself: the owner rewrote them for the redesign (2026-10-01)
 const baseSrc = s;
 function grab(re, label) { const m = baseSrc.match(re); if (!m) throw new Error("copy not found in base: " + label); return m[1]; }
 function grabAll(re, label, n) { const m = [...baseSrc.matchAll(re)]; if (m.length !== n) throw new Error(`${label}: expected ${n}, found ${m.length}`); return m; }
 const plane = JSON.parse(fs.readFileSync(path.join(DIR, "data", "strand-plane.json"), "utf-8"));
 const zoomLv = JSON.parse(fs.readFileSync(path.join(DIR, "data", "strand-zoom.json"), "utf-8")).levels;
 const fill = {};
-fill.EYEBROW = grab(/<p class="eyebrow" style="color:var\(--brass-2\);margin-bottom:\.9rem">([^<]+)<\/p>/, "hero eyebrow");
-fill.SUB = grab(/<\/h1><p style="color:rgba\(244,239,232,\.65\)[^"]*">([^<]+)<\/p>/, "hero sub");
 {
   const stars = grab(/<div class="c3-review"><div style="[^"]*">([^<]+)<\/div>/, "stars");
   const rv = grabAll(/<div class="c3-review"><div style="[^"]*">[^<]+<\/div><p style="font-family:var\(--serif\)[^"]*">([^<]+)<\/p><p style="[^"]*">([^<]+)<\/p><\/div>/g, "reviews", 5);
   fill.REVIEWS = rv.map((m, k) => `<figure class="rv-slide${k ? "" : " on"}" role="group" aria-roledescription="slide" aria-label="Review ${k + 1} of 5"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">${stars}</span><blockquote><p>${m[1]}</p></blockquote><figcaption>${m[2]}</figcaption></figure>`).join("\n");
 }
 fill.AN_EB = grab(/<section id="ltr-teaser"[\s\S]*?<p style="[^"]*">([^<]+)<\/p><h2/, "analyzer eyebrow");
-fill.AN_P = grab(/Try our investor analysis tool<\/h2><p style="[^"]*">([^<]+)<\/p>/, "analyzer text");
 {
   const why = grab(/<div class="why-stats why-stats-8">([\s\S]*?)<\/div>\n<div style="display:flex;justify-content:center;margin-top:3rem">/, "badges");
   const b = [...why.matchAll(/<div class="why-stat"><div class="why-ico">(<svg[\s\S]*?<\/svg>)<\/div><div><div class="stat-kpi">([^<]+)<\/div><div class="stat-label">([^<]+)<\/div><\/div><\/div>/g)];

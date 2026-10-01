@@ -526,7 +526,7 @@ def pick_webp(png, out, target_db, limit):
 # (design/homepage-v2/src/head.html, #home). Each anchor sits on its feature; where the brief
 # leaves room ("near", "midway"), it slides along the feature to the spot nearest the nominal
 # one that stays clear of the town pins, the town labels, the other anchors, the words over the map,
-# the map controls and data line, and the fogged edges, at every heading of the slow turn.
+# and the fogged edges, at every heading in the camera's range.
 # The cameras and label sides come from data/cameras.json, which tests/cameras.js keeps equal
 # to the page. The page places the water names itself (head.html); here they only steer.
 TX, TY, HW = 0.49, 0.45, H / W                 # camera target on the plane (fractions), height/width
@@ -541,7 +541,7 @@ TOWN_LABEL_W = {"pawleys-island": 117.5, "murrells-inlet": 107.7, "garden-city":
                 "little-river": 93.5}
 SHIELD_W = {"17": 19.1, "501": 27.1, "31": 21.5, "22": 24.1}
 WATER_W = {"Atlantic Ocean": 103, "Intracoastal Waterway": 155, "Waccamaw River": 116}
-SHIELD_H, WATER_H, PIN_R, BUTTON, CREDIT_W = 17.5, 13, 9, 44, 191
+SHIELD_H, WATER_H, PIN_R = 17.5, 13, 9
 CLEAR = 6                                      # CSS px between an anchor's box and anything else
 MASK_MIN = 0.5                                 # the plane fades out toward its edges; stay where it is at least half visible
 
@@ -576,7 +576,7 @@ def mask_alpha(x, y):
     return 1.0 if e <= 0.62 else max(0.0, (1 - e) / 0.38)
 
 def fixed_obstacles(cam, vw, head):
-    """Town pins, their stems and labels, the words, the controls and the map data line, in stage px."""
+    """Town pins, their stems and labels, and the words, in stage px."""
     out = []
     for slug, n, lat, lon in TOWNS:
         X, Y = screen(cam, vw, plane_x(lon), plane_y(lat), head)
@@ -591,11 +591,6 @@ def fixed_obstacles(cam, vw, head):
     # height); over a narrow screen, everything above the map's bottom --ma px
     if cam["layout"] == "beside": out.append(box(side - 8, 0, side + min(544, (vw - 2 * side - 48) / 2) + 8, sh))
     else: out.append(box(0, 0, vw, sh - cam["ma"] + 8))
-    # the pause button and the compass, side by side (a column on phones), with the map data line under them
-    right = side if cam["ci"] == "side" else cam["ci"]
-    cw, ch = (2 * BUTTON + 10, BUTTON) if cam["ctl"] == "row" else (BUTTON, 2 * BUTTON + 10)
-    out.append(box(vw - right - cw, sh - cam["ctlBottom"] - ch, vw - right, sh - cam["ctlBottom"]))
-    out.append(box(vw - right - CREDIT_W, sh - 26, vw - right, sh - 8))
     return out
 
 def anchor_box(cam, vw, head, a):

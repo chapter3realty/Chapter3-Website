@@ -2197,6 +2197,54 @@ consequences he was told about and can reverse: the reviews moved to a band of
 their own under the hero, and the separate towns section is gone (its "All
 neighborhoods" and "3D map search" links moved under the three paths).
 
+**His edits after the fifth preview, verbatim (2026-10-01).** "Map data: U.S.
+Census Bureau, USGS Delete / Remove all pause buttons and compass buttons /
+Chapter3 Realty · Myrtle Beach, SC Remove / make our h1 myrtle beach homes / h2 -
+Buy, sell and invest in myrtle beach real estate  with a specialized real
+estate agent. / Remove the arrows in the i am a buttons. / try our property
+analysis tool instead / Enter any address to see a real estate analysis on the
+house expected profit, appreciation and much more for Free, no signup. / Put the
+street address city and zip inside of the text box as an example." All done in
+the sixth preview. How each was read, for him to correct:
+- The H1 is "Myrtle Beach Homes"; the old sub-header paragraph is replaced by
+  an H2, "Buy, sell and invest in Myrtle Beach real estate with a specialized
+  real estate agent." (capitals added, the double space dropped). It keeps the
+  sub-header's look. `build.js` read only a paragraph as the hero sub-header
+  (PLAYBOOK A14), so the homepage failed preflight with "no hero sub-header";
+  the gate now also reads an ivory H2 straight after the H1, and holds it to
+  the same rules. Checked both ways: the H2 passes, the same line as an h3
+  fails, and the live site's preflight result is unchanged.
+- "Try our property analysis tool" is the analyzer's H2. Its text reads "Enter
+  any address to see a real estate analysis on the house: expected profit,
+  appreciation and much more. Free, no signup." His words, with a colon after
+  "house" and "Free, no signup." as its own sentence, the way the old text
+  ended; "for Free" became "Free". The analysis page does show appreciation,
+  cap rate and cash flow. Not changed, because he did not ask: the analyzer's
+  eyebrow still reads "Grand Investor Tool · Free" and its button "See the
+  investor analysis".
+- The three boxes show example values, "123 Main St", "Myrtle Beach" and
+  "29577", in grey (5:1 on white); the labels above the boxes stay, for screen
+  readers and so the boxes say what they want once filled.
+- "All pause buttons" read as both the map's and the reviews'. Moving content
+  that starts on its own and runs past five seconds needs a pause control (WCAG
+  2.2.2), so with the buttons gone the two things they paused no longer move:
+  the map no longer turns after it lands, and the reviews no longer rotate on
+  their own (the arrows, dots and a swipe still step through them, read out to
+  screen readers). The flight and the landing all end within five seconds of
+  the flight's start (the landing rings and labels were shortened to fit: the
+  last ring ends at 4.88s), so the flight needs no button.
+- The map data line is gone. It was not required: see "The data's terms" below.
+  This corrects what this section said before (that the credit was a condition
+  of using the Census data).
+
+**The data's terms, re-checked 2026-10-01 from the sources, so nobody re-derives
+it.** TIGER/Line: a work of the U.S. Government, so no copyright (17 U.S.C.
+105); the 2024 TIGER/Line Technical Documentation, section 2 "Citation
+Information" (page 12): "We would ask, however, that you cite the Census Bureau
+as the source." A request, not a condition. PAD-US 4.1: public domain (CC0);
+USGS encourages a citation. Natural Earth: public domain, no credit needed. The
+citation lives in `design/homepage-v2/map/README.md`.
+
 **Where it is.** `design/homepage-v2/`, outside `chapter3realty/`, so
 `deploy.ps1` cannot ship it. `chapter3realty/index.html` is unchanged.
 `node design/homepage-v2/assemble.js` builds `design/homepage-v2/index.html`
@@ -2209,20 +2257,20 @@ the preview folder (page plus `media/map/`).
 **What it is.** Hero: a dark road map of the Grand Strand in the style of
 today's Google Maps dark mode (near-black water, slate land, blue-grey roads,
 teal parks), tilted in 3D, fills the first screen. On a wide screen (1100px and
-up) the eyebrow, H1, sub-header, the three "I am a" paths and the two map links
-("All neighborhoods", "3D map search") sit in a column on the left over a
-scrim, and the towns are on the right. Below 1100px the eyebrow, H1 and paths
-sit at the top over the map's dark sky, the map is under them, and the
-sub-header and the map links follow the map. As the page opens the camera
-starts over the eastern half of the United States, tilted, with a brass point
-on the Grand Strand, glides and zooms down through the Southeast and the
-Carolina coast to the Grand Strand, then tilts further and turns; the nine town
-pins land one by one as it arrives (4.6s in all), then the map turns slowly
-while it is on screen. It holds still while the pointer or keyboard focus is on
-a town label, and a pause button next to the compass stops it (WCAG 2.2.2:
-moving content that runs past five seconds needs a stop control). The reviews
-are a band of their own under the hero; the analyzer is an ivory sheet over
-their last 28px. Badge icons draw themselves. The FAQ is always open. No
+up) the H1 "Myrtle Beach Homes", the H2 under it, the three "I am a" paths and
+the two map links ("All neighborhoods", "3D map search") sit in a column on the
+left over a scrim, and the towns are on the right. Below 1100px the H1 and the
+paths sit at the top over the map's dark sky, the map is under them, and the
+H2 and the map links follow the map. As the page opens the camera starts over
+the eastern half of the United States, tilted, with a brass point on the Grand
+Strand, glides and zooms down through the Southeast and the Carolina coast to
+the Grand Strand, then tilts further and turns; the nine town pins land one by
+one as it arrives (4.6s in all), and the map comes to rest. All of it ends
+within five seconds of the flight's start, so it needs no pause button (WCAG
+2.2.2); keyboard focus on a town label lands it at once. The map has no buttons
+and no source line. The reviews are a band of their own under the hero; the
+visitor steps through them (arrows, dots, a swipe). The analyzer is an ivory
+sheet over their last 28px. Badge icons draw themselves. The FAQ is always open. No
 ticker, count-up, call bar or particles. The house video and its posters are no
 longer used; they stay in `design/homepage-v2/media/hero/` and in commit
 b020a20 (the fourth preview) in case he wants the video back.
@@ -2232,19 +2280,17 @@ b020a20 (the fourth preview) in case he wants the video back.
 222 and 284 KB; the page picks by screen density, so a 1x desktop loads the
 2048, a phone the 2048 or 3072, a retina desktop the 4096) drawn by
 `map/build_basemap.py` from U.S. Census TIGER/Line 2024 roads and water and
-USGS PAD-US parks and refuges; it carries no text. TIGER/Line is free to use on
-the condition that the Census Bureau is credited as the source, so the map
-carries the line "Map data: U.S. Census Bureau, USGS" in its bottom right
-corner; it must stay while the map is on the page (see `map/README.md`). CSS tilts it (`rotateX`, `rotateZ`,
-perspective). Every label is an ordinary HTML link, not part of the 3D scene,
+USGS PAD-US parks and refuges; it carries no text, and the page shows no source
+line (the data's terms do not require one; see above). CSS tilts it
+(`rotateX`, `rotateZ`, perspective). Every label is an ordinary HTML link, not part of the 3D scene,
 so it stays sharp; CSS places it with `sin()`/`cos()` in `calc()` at the
 screen point where its town lands. `tests/twcheck.js` compares each label
 with a probe inside the tilted plane: under 0.2px off in Chromium, WebKit and
 Firefox. The camera, label sides and water-name spots are set per band in
 `src/head.html` (`<style id="c3-home-map">`); they were chosen by
 `tests/twsearch.js` so that no label covers another label, a pin, a shield, a
-water name, the words over the map, the controls or the map data line at any
-width and at any point of the turn, even with labels 4.5% wider (Firefox draws
+water name or the words over the map at any width and over the camera's whole
+heading range (the old slow turn's), even with labels 4.5% wider (Firefox draws
 DM Sans about 3.5% wider). There are eight bands: four for wide screens (1100
 to 1399px and 1400px up, each for a screen under 800px tall and from 800px),
 tablet (900 to 1099), small tablet (700 to 899), phone, and small phone (under
@@ -2261,8 +2307,7 @@ Intracoastal Waterway name below 1100px and on screens under 800px tall; the
 501 and 31 shields under 360px).
 The motion is not CSS: `src/fx.html` computes transform keyframes with the same
 projection and the compositor plays them, because animating the CSS variables
-cost 12ms of style work per frame and dropped a throttled phone to 21fps; now
-the turn costs about 6ms per second. Browsers without CSS trigonometry
+cost 12ms of style work per frame and dropped a throttled phone to 21fps. Browsers without CSS trigonometry
 (Safari before 15.4, Chrome before 111) get the tilted picture with the towns
 as a plain list under it.
 
@@ -2295,8 +2340,8 @@ is allowed (the page script sets their `srcset`): with the basemap, 300 KB on a
 2x phone or a 1x desktop, 393 KB on a 3x phone, 621 to 681 KB on a 2x tablet or
 desktop. The flight waits for them up to 2.5s. On Save-Data or a 2G or 3G link
 they are never requested and the flight is the short one (the camera tilts down
-from overhead); if they are late, it is the short one too. The labels, shields,
-water names and compass are hidden until the landing, so they get keyframes only
+from overhead); if they are late, it is the short one too. The labels, shields
+and water names are hidden until the landing, so they get keyframes only
 for the flight's last 30%, created in a second task on the map's clock (synced
 on the first animation's `ready`); with the path in a first task, each setup
 task is about 50ms at 4x CPU slowdown instead of one of 120ms. Measured on a
@@ -2305,8 +2350,8 @@ and at 4x CPU slowdown, with one long frame where it starts. On a 1440px screen
 this sandbox draws in software and the flight runs at 28 to 31 fps (the old
 flight and the whole-country zoom ran at 31 to 38 there); main-thread work
 during it is 12ms of style per second, so a real graphics chip should hold full
-speed. The slow turn costs about 3ms of main-thread time per second on a 4x
-throttled phone, the same as before. Checked in WebKit and Firefox as well.
+speed. After the landing nothing runs: the map is at rest. Checked in WebKit and
+Firefox as well.
 `tests/zoomframes.js` freezes the flight at set moments and screenshots the first
 screen, to look at every hand-off.
 
@@ -2317,49 +2362,56 @@ optical size 80 and tops out at 100px; keep any large Fraunces text at 80 or
 below.
 
 **New copy, his to approve.** The map links "All neighborhoods" and "3D map
-search" (now under the three paths), the nine place names, and on the map the
-water names "Atlantic Ocean", "Intracoastal Waterway", "Waccamaw River", the
-road numbers 17, 501, 31 and 22 (501 and 31 are hidden under 360px, where a
-label would cover them), and the source line "Map data: U.S. Census Bureau,
-USGS" (the Census Bureau's terms require a credit; the wording is his to change,
-the credit is not optional). The town list's name for screen readers, "Towns on
-the map" (new in the fifth preview). The analyzer's field labels "Street
-address", "City", "ZIP" (they were placeholders). Control labels for the review
-and map buttons ("Pause the map" / "Play the map" for the map's, read by screen
-readers only). The towns section's eyebrow "Pawleys Island to Little River" and
-H2 "Where on the Grand Strand are you looking?" went with the section; the
-video's button labels went with the video.
+search" (under the three paths), the nine place names, and on the map the water
+names "Atlantic Ocean", "Intracoastal Waterway", "Waccamaw River" and the road
+numbers 17, 501, 31 and 22 (501 and 31 are hidden under 360px, where a label
+would cover them). The town list's name for screen readers, "Towns on the map".
+The analyzer's field labels "Street address", "City", "ZIP" (they were
+placeholders on the live page) and the example values in the boxes, "123 Main
+St", "Myrtle Beach", "29577". The labels on the review buttons ("Previous
+review", "Next review", "Review 1 of 5"), read by screen readers only. His own
+words, as he gave them on 2026-10-01: the H1, the hero H2, the analyzer's H2
+and text (with the punctuation noted above). Gone: the eyebrow "Chapter3 Realty
+· Myrtle Beach, SC" (his approved copy, removed at his request), the map data
+line, the pause button labels, and earlier the towns section's eyebrow and H2
+and the video's button labels.
 
-**Measured in Chromium (fifth preview).** One H1; no hidden or low-contrast text
-(`tests/check.js`, 128 text elements at every width, normal and reduced motion);
+**Measured in Chromium (sixth preview).** One H1; no hidden or low-contrast text
+(`tests/check.js`, 126 text elements at every width, normal and reduced motion);
 no sideways scroll from 320 to 1920 except 800 to 979, which is the header
 defect in the 2026-09-11 section (the live page does the same at 900). The
-hero's words over the map measure 5.5:1 or better from pixels
+hero's words over the map measure 5.7:1 or better from pixels
 (`tests/mediacontrast.js`) at eleven moments of the flight and at rest, at 1440,
-1100, 820, 390 and 320px wide. 225 behaviour checks pass (`tests/states.js`):
-reduced motion, JavaScript off, IntersectionObserver never firing, the map's
-loading gates (the zoom maps with the page; none on Save-Data or 2G; the short
-flight when they stall), reviews in their band, fold budgets (the words, the
-paths, all nine towns and the map controls in the first screen on a wide screen,
-the paths and the flight's landing point on a narrow one), fallback fonts, layout
-shift, and the map: label collisions at 31 sizes through the whole turn, labels
-on their towns at rest and whenever they can be seen while it moves, the flight
-starting as the page opens with no label shown, the first frame on the eastern
+1100, 820, 390 and 320px wide (the tool now waits for the H1's one-second
+rise before it measures: during the rise an animated layer briefly kept the old
+glyphs, and the tool measured "Homes" against itself). 210 behaviour checks pass
+(`tests/states.js`): reduced motion, JavaScript off, IntersectionObserver never
+firing, the map's loading gates (the zoom maps with the page; none on Save-Data
+or 2G; the short flight when they stall), the reviews (they never move on their
+own; the arrows, a dot and a swipe step through them, announced politely), his
+2026-10-01 edits as the page carries them, fold budgets (the words, the paths
+and all nine towns in the first screen on a wide screen; the paths and the
+flight's landing point on a narrow one), fallback fonts, layout shift, and the
+map: label collisions at 31 sizes over the heading range, labels on their towns
+at rest and whenever they can be seen while it moves, the flight starting as the
+page opens with no label shown, all the hero's motion over within 5s of the
+flight's start (the last landing ring at 4.88s), the first frame on the eastern
 United States, tilted, where the words leave room (at 1440, 1100, 820 and 390),
-only the basemap left after landing, the pause button, the turn holding with the
-pointer or focus on a town label but not on the map background, a height-only
-resize leaving the turn alone, a breakpoint crossed mid-flight, keyboard focus
-arriving mid-flight, a slow basemap, the page script missing, motion turned off
-mid-flight and mid-visit, a reload further down the page, stopping off screen,
-and the plain list a browser without CSS trigonometry gets. `tests/twcheck.js`
-with labels 4.5% wider is clean at 29 sizes; `tests/cameras.js` agrees at all 24
-of its sizes. WebKit and Firefox at ten sizes: clean at rest, labels within
-0.15px of their towns at rest and once shown. On a phone-sized screen only Safari's
-toolbars (about 390x664) or a small phone put Pawleys Island and Murrells Inlet
-under the fold; the flight's landing point stays on screen. Throttled phone (4x
-CPU, 9 Mbps, 60ms), interleaved with the fourth preview: LCP 0.85s (the eyebrow;
-the fourth preview 0.75s on its poster, live 0.63s), blocking time about 500ms
-(the fourth preview about 440ms, live about 230ms), CLS 0. An earlier build used
+only the basemap left and nothing moving after the landing, a breakpoint crossed
+mid-flight and at rest, keyboard focus arriving mid-flight, a slow basemap, the
+page script missing, motion turned off mid-flight and after the landing, a
+reload further down the page, and the plain list a browser without CSS
+trigonometry gets. `tests/twcheck.js` with labels 4.5% wider is clean at 29
+sizes; `tests/cameras.js` agrees at all 24 of its sizes; `tests/twmotion.js`:
+labels within 0.05px while seen, nothing moving after the flight. WebKit and
+Firefox at ten sizes: clean at rest, labels within 0.15px of their towns at rest
+and while seen in the flight. With the eyebrow gone the phone's map sits 33px
+higher: at 390x844 all nine towns are in the first screen; Safari's toolbars
+(about 390x664) put Pawleys Island and Murrells Inlet just under the fold, and a
+360x740 phone Pawleys Island; the flight's landing point stays on screen.
+Throttled phone (4x CPU, 9 Mbps, 60ms), three interleaved runs with the live
+page: LCP 0.67 to 0.84s (now the H1), blocking time about 500ms median (live
+about 280ms), CLS 0. An earlier build used
 `content-visibility:auto` on the lower sections; it hid Team, Towns and FAQ from
 Safari/VoiceOver and Firefox screen readers, so it is gone and must not come
 back. In a clean copy of the branch with the page and `media/map/` in place,
@@ -2416,11 +2468,13 @@ undoing.
 ## Suggested order for the next session
 
 00000. **Homepage redesign candidate** (section above). Waiting for his accept
-   or decline on the fifth preview (the dark 3D map is the landing page and flies
-   in from the eastern United States, tilted; the house video is gone; the
-   reviews are a band under the map). The map data line and the town list's
-   screen-reader name "Towns on the map" are new copy he may reword. Do not
-   touch `chapter3realty/index.html` before he says yes.
+   or decline on the sixth preview (his 2026-10-01 edits: H1 "Myrtle Beach
+   Homes", the sub-header as an H2, no eyebrow, no arrows, no map buttons or
+   source line, no pause buttons, so the map rests after landing and the reviews
+   move only when stepped; the analyzer's new heading, text and example values).
+   Open questions for him: whether the analyzer's eyebrow "Grand Investor Tool"
+   and button "See the investor analysis" should say "property" too. Do not touch
+   `chapter3realty/index.html` before he says yes.
 0000. **The returns page round 2 is on the branch** (section above). Expect his
    reaction to the new cap rates, the satellite map and the rebuilt
    calculator. If he wants the short-term figures on the investor price too,

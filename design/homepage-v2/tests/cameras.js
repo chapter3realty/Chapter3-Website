@@ -1,6 +1,6 @@
 // The hero map cameras in the page match data/cameras.json, which map/build_basemap.py places the road shields for.
 // node cameras.js <url>. Loads the page at each width (and the height) the file lists and compares the computed camera,
-// the layout, the controls, every town's label side, the water names and the hidden road shields. Exits 1 on any difference.
+// the layout, every town's label side, the water names and the hidden road shields. Exits 1 on any difference.
 const { chromium } = require('playwright'), fs = require('fs');
 (async () => {
   const url = process.argv[2] || 'http://localhost:8124/';
@@ -14,7 +14,6 @@ const { chromium } = require('playwright'), fs = require('fs');
     await p.goto(url, { waitUntil: 'load' });
     const got = await p.evaluate(() => {
       const sec = document.querySelector('#home'), cs = getComputedStyle(sec), n = (k) => parseFloat(cs.getPropertyValue(k));
-      const st = document.querySelector('#home .tw-stage').getBoundingClientRect(), ctl = document.querySelector('.tw-ctl'), cr = ctl.getBoundingClientRect();
       const sides = {};
       for (const li of document.querySelectorAll('.tw-pin')) { const s = getComputedStyle(li); sides[li.dataset.town] = ['--ax', '--ay', '--ox', '--oy', '--stem'].map((k) => parseFloat(s.getPropertyValue(k))); }
       const water = {};
@@ -22,10 +21,9 @@ const { chromium } = require('playwright'), fs = require('fs');
       const hiddenShields = [...document.querySelectorAll('.tw-deco .sh')].filter((e) => getComputedStyle(e).display === 'none').map((e) => e.dataset.r);
       return { P: n('--P'), pw: n('--pw'), tilt: n('--t0'), h0: n('--h0'), h1: n('--h1'), cx: n('--cx'), cb: n('--cb'), ma: n('--ma'), fog: n('--fog'),
         font: parseFloat(getComputedStyle(document.querySelector('.tw-pin a')).fontSize), layout: getComputedStyle(document.querySelector('.cine-copy')).display === 'contents' ? 'above' : 'beside',
-        ci: +(st.right - cr.right).toFixed(1), ctl: getComputedStyle(ctl).flexDirection === 'column' ? 'column' : 'row', ctlBottom: +(st.bottom - cr.bottom).toFixed(1), sides, water, hiddenShields };
+        sides, water, hiddenShields };
     });
-    const want = { P: cam.P, pw: cam.pw, tilt: cam.tilt, h0: cam.heads[0], h1: cam.heads[2], cx: cam.cx, cb: cam.cb, fog: cam.fog, font: cam.font, layout: cam.layout,
-      ci: cam.ci === 'side' ? Math.max(32, (vw - 1200) / 2 + 32) : cam.ci, ctl: cam.ctl, ctlBottom: cam.ctlBottom };
+    const want = { P: cam.P, pw: cam.pw, tilt: cam.tilt, h0: cam.heads[0], h1: cam.heads[2], cx: cam.cx, cb: cam.cb, fog: cam.fog, font: cam.font, layout: cam.layout };
     if (cam.ma !== undefined) want.ma = cam.ma;
     const diff = [];
     for (const k of Object.keys(want)) if (typeof want[k] === 'number' ? Math.abs(want[k] - got[k]) > 0.05 : want[k] !== got[k]) diff.push(`${k} page ${got[k]} file ${want[k]}`);
