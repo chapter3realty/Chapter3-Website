@@ -903,7 +903,8 @@ function submitContact(e) {
     phone: phone,
     interest: interest,
     message: notes,
-    page: window.location.pathname
+    page: window.location.pathname,
+    consent: (f.querySelector('[name=consent]') || {}).checked ? 'yes' : 'no'
   }, 'Contact Form');
   f.style.display = 'none';
   var s = document.getElementById('contactSuccess');

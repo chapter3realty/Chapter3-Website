@@ -37,6 +37,15 @@ for (const abbr of Object.keys(T.RULES)) {
   check(`${abbr} std single`, R.std.s, J.stdDeductionSingle || 0);
   check(`${abbr} std joint`, R.std.m, J.stdDeductionMFJ || 0);
   if (abbr !== 'SC') check(`${abbr} property rate`, R.propRate, J.effectivePropertyTaxRate);
+  if (abbr === 'SC') {
+    // the 2026 SC Income Adjusted Deduction: [amount, start, span] against the data file
+    for (const [k, j] of [['s', 'single'], ['m', 'mfj']]) {
+      const D = J.sciad[j];
+      check(`SC SCIAD ${j} amount`, R.sciad[k][0], D.amount);
+      check(`SC SCIAD ${j} start`, R.sciad[k][1], D.fullUpToAgi);
+      check(`SC SCIAD ${j} zero point`, R.sciad[k][1] + R.sciad[k][2], D.zeroAtAgi);
+    }
+  }
 }
 
 // ---------- 2. hand-computed cases -----------------------------------------
@@ -48,8 +57,26 @@ const run = o => T.calc(Object.assign({}, base, o));
 check('PA wages 100k', run({ state: 'PA', wages: 100000 }).now.income, 3070);
 // PA taxes no retirement income at all.
 check('PA retiree pension 60k + SS 30k', run({ state: 'PA', pension: 60000, ss: 30000, is65: true }).now.income, 0);
-// SC joint wages 100k: (100k - 30k std) -> 30k @1.99% + 40k @5.21%.
-check('SC joint wages 100k', run({ state: 'PA', wages: 100000, mfj: true }).here.income, 597 + 2084);
+// SC joint wages 100k, tax year 2026: no standard deduction; the SCIAD is 30,000
+// reduced by 20,000/110,000 of itself = 5,454.55, rounded down to 5,450 -> 24,550.
+// Taxable 75,450 -> 30,000 @1.99% (597) + 45,450 @5.21% (2,367.95).
+check('SC joint wages 100k', run({ state: 'PA', wages: 100000, mfj: true }).here.income, 597 + 45450 * 0.0521);
+// The SCIAD itself, SCDOR IL 26-20 worked values (re-derived 2026-10-04).
+for (const [agi, mfj, want] of [[40000, false, 15000], [50000, false, 12280], [60000, false, 9550], [67500, false, 7500],
+  [94999, false, 10], [95000, false, 0], [80000, true, 30000], [100000, true, 24550], [120000, true, 19100],
+  [135000, true, 15000], [150000, true, 10910], [189999, true, 10], [190000, true, 0]])
+  check(`SC SCIAD ${mfj ? 'joint' : 'single'} at ${agi}`, T.sciad(agi, mfj ? T.RULES.SC.sciad.m : T.RULES.SC.sciad.s), want);
+// The example household every relocation calculator opens on: a couple on 120,000
+// of wages. SCIAD 19,100, taxable 100,900 -> 0.0521 x 100,900 - 966 = 4,290.89.
+check('SC example couple 120k wages', run({ state: 'PA', wages: 120000, mfj: true }).here.income, 0.0521 * 100900 - 966);
+// The SCIAD shrinks on FEDERAL AGI, so the federally taxable part of Social
+// Security counts even though South Carolina exempts it. Joint 65+, pension
+// 60,000, SS 40,000: provisional income 80,000; taxable SS min(34,000, 0.85 x
+// 36,000 + 6,000) = 34,000; federal AGI 94,000; SCIAD 30,000 - 3,810 = 26,190.
+// SC: retirement deduction 20,000 leaves 40,000 of pension; the age-65 deduction
+// is 30,000 - 20,000 = 10,000. Taxable 40,000 - 26,190 - 10,000 = 3,810 at 1.99%.
+check('SC taxable SS at provisional 80k joint', T.taxableSS(60000, 40000, true), 34000);
+check('SC retired couple pension 60k + SS 40k', run({ state: 'PA', pension: 60000, ss: 40000, mfj: true, is65: true }).here.income, 3810 * 0.0199);
 // SC property, 342k home, under 65: 342000 * .04 * .0919
 check('SC property 342k', run({ state: 'PA', homeHere: 342000 }).here.property, 342000 * 0.04 * 0.0919);
 // SC property with the 65+ homestead exemption on the first $50,000.

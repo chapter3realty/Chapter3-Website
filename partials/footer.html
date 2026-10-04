@@ -6,7 +6,7 @@
 <a class="logo" href="/">
 <span class="logo-word">Chapter<span class="logo-num">3</span></span>
 </a>
-<p class="footer-desc">The Myrtle Beach investor-focused brokerage. DSCR financing, STR analysis, and condo-by-condo ROI data for serious real estate investors.</p>
+<p class="footer-desc">The Myrtle Beach investor-focused brokerage. DSCR analysis, STR analysis, and condo-by-condo ROI data for serious real estate investors.</p>
 <address class="footer-address">
 <strong style="color:var(--ivory);font-style:normal">Chapter3 Realty Corp</strong><br/>
           573 Vista Drive<br/>
@@ -144,7 +144,7 @@
          only ever set after a frame has been keyed successfully. -->
     <div id="c3-pop-media">
       <video id="c3-pop-video" width="1920" height="1080" muted playsinline preload="none"
-             poster="/popup-poster.jpg" aria-label="Chapter3 Realty, Myrtle Beach">
+             data-poster="/popup-poster.jpg" aria-label="Chapter3 Realty, Myrtle Beach">
         <source src="/popup.mp4" type="video/mp4"/>
       </video>
       <canvas id="c3-pop-canvas" aria-hidden="true"></canvas>
@@ -336,6 +336,14 @@
     } catch (e) { finish(false); }
   }
 
+  /* The still is in data-poster, not poster, because a poster downloads on
+     every page view even when the popup never opens (82 KB). It is put back
+     only when the blue clip or the still will actually be shown. */
+  function usePoster(v) {
+    if (v && !greenReady && !v.getAttribute('poster') && v.getAttribute('data-poster'))
+      v.setAttribute('poster', v.getAttribute('data-poster'));
+  }
+
   /* preload="none" meant the 3.6MB only started downloading when the popup
      opened, so on a phone the backstop fired first and the clip never played -
      which is what "the video is slower" was. Start fetching WARM ms before the
@@ -355,7 +363,7 @@
         v.removeAttribute('poster');
         var s = v.querySelector('source');
         if (s) s.setAttribute('src', GREEN_SRC); else v.setAttribute('src', GREEN_SRC);
-      }
+      } else usePoster(v);
       v.preload = 'auto';
       try { v.load(); } catch (e) {}
     });
@@ -377,6 +385,7 @@
       ov.style.pointerEvents = 'auto';
       var n = document.getElementById('c3-pop-name'); if (n) n.focus();
     }
+    usePoster(v);
     if (!v || LIGHT) { reveal(); return; }
     try { v.defaultPlaybackRate = RATE; v.playbackRate = RATE; } catch (e) {}
     startKeyer();                             /* no-op unless WebGL and the green file are both there */

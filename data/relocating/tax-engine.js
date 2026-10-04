@@ -127,7 +127,13 @@
     SC: {
       name: 'South Carolina',
       bS: [[30000, .0199], [null, .0521]], bM: [[30000, .0199], [null, .0521]],
-      std: { s: 15000, m: 30000 }, exempt: { s: 0, m: 0 },
+      /* No standard deduction from tax year 2026 (Act 110 of 2026, H.4216). In its
+       * place the SC Income Adjusted Deduction, 12-6-1140(15): [amount, federal AGI
+       * where it starts to shrink, the span over which it reaches zero]. SCDOR
+       * Information Letter 26-20 (2026-08-31): single $15,000, full to $40,000 of
+       * federal AGI, zero at $95,000; joint $30,000, full to $80,000, zero at
+       * $190,000. A reduction is rounded down to the next $10. Not indexed. */
+      std: { s: 0, m: 0 }, sciad: { s: [15000, 40000, 55000], m: [30000, 80000, 110000] }, exempt: { s: 0, m: 0 },
       propRate: null,   // computed from Horry County millage instead
       local: null,
       ret: 'sc',
@@ -175,6 +181,30 @@
   // Horry County, tax year 2025 certified millage, unincorporated (the same
   // constants as the calculator on /buyers/property-taxes/).
   var HORRY_MILLS = 201.0, SCHOOL_OPS = 109.1, HOMESTEAD = 50000, RES_RATIO = .04;
+
+  /* South Carolina Income Adjusted Deduction. p = [amount, start, span]. The
+   * statute reduces the amount by (AGI - start) / span and rounds the reduction
+   * DOWN to the next lowest $10 (12-6-1140(15)(c)), so the result is always a
+   * multiple of $10. Checked against the worked values in test-tax.js. */
+  function sciad(fedAgi, p) {
+    var over = fedAgi - p[1];
+    if (over <= 0) return p[0];
+    if (over >= p[2]) return 0;
+    return p[0] - Math.floor(p[0] * over / p[2] / 10) * 10;
+  }
+
+  /* The part of Social Security that federal AGI counts (IRS Publication 915
+   * worksheet: provisional income is other income plus half the benefit; 0, 50
+   * or up to 85 percent taxable above $25,000 / $34,000 single, $32,000 /
+   * $44,000 joint). South Carolina exempts all of it, but the SCIAD shrinks on
+   * federal AGI, so the taxable part still matters here. */
+  function taxableSS(other, ss, mfj) {
+    if (!(ss > 0)) return 0;
+    var b1 = mfj ? 32000 : 25000, b2 = mfj ? 44000 : 34000, pi = other + ss / 2;
+    if (pi <= b1) return 0;
+    if (pi <= b2) return Math.min(ss / 2, (pi - b1) / 2);
+    return Math.min(0.85 * ss, 0.85 * (pi - b2) + Math.min(ss / 2, (b2 - b1) / 2));
+  }
 
   function bracketTax(taxable, brackets) {
     var t = 0, prev = 0;
@@ -299,6 +329,10 @@
         if (agiFull > start) exempt = Math.max(0, exempt - 1000 * Math.ceil((agiFull - start) / 1000));
       }
       var ded = (inp.mfj ? R.std.m : R.std.s) + exempt + r.extraDeduction;
+      if (R.sciad) {
+        var other = inc.wages + inc.pension + inc.military;
+        ded += sciad(other + taxableSS(other, inc.ss, !!inp.mfj), inp.mfj ? R.sciad.m : R.sciad.s);
+      }
       var taxable = Math.max(0, gross - ded);
       var income = Math.max(0, bracketTax(taxable, inp.mfj ? R.bM : R.bS) - r.credit);
       if (R.addBack) {
@@ -359,5 +393,5 @@
              homeNow: e.homeNow, homeHere: 342000, localChoice: undefined };
   }
 
-  root.C3TAX = { RULES: RULES, calc: calc, bracketTax: bracketTax, retirement: retirement, example: example, EXAMPLES: EXAMPLES, CHEAPER: CHEAPER };
+  root.C3TAX = { RULES: RULES, calc: calc, bracketTax: bracketTax, retirement: retirement, example: example, EXAMPLES: EXAMPLES, CHEAPER: CHEAPER, sciad: sciad, taxableSS: taxableSS };
 })(typeof window !== 'undefined' ? window : globalThis);

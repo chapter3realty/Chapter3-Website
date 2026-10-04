@@ -56,8 +56,9 @@
      "rate": 0.0521
     }
    ],
-   "stdDeductionSingle": 15000,
-   "stdDeductionMFJ": 30000,
+   "stdDeductionSingle": 0,
+   "stdDeductionMFJ": 0,
+   "sciad": { "single": { "amount": 15000, "fullUpToAgi": 40000, "zeroAtAgi": 95000 }, "mfj": { "amount": 30000, "fullUpToAgi": 80000, "zeroAtAgi": 190000 }, "headOfHousehold": { "amount": 22500, "fullUpToAgi": 60000, "zeroAtAgi": 142500 }, "note": "From tax year 2026 South Carolina has no standard deduction (Act 110 of 2026, H.4216). The SC Income Adjusted Deduction (12-6-1140(15)) is reduced by (federal AGI - start) / (zero point - start), the reduction rounded down to the next $10. Not indexed.", "sources": ["https://dor.sc.gov/sites/dor/files/policies/IL26-20.pdf", "https://www.scstatehouse.gov/sess126_2025-2026/bills/4216.htm"], "verified": "2026-10-04" },
    "taxesSocialSecurity": false,
    "socialSecurityNote": "Fully exempt. SC DOR: 'Social Security benefits and railroad retirement taxed for federal purposes are exempt from Individual Income Tax in South Carolina.'",
    "retirementExclusionNote": "Retirement income deduction under SC Code 12-6-1170(A): up to $3,000/yr of qualified retirement income before age 65, up to $10,000/yr at 65 and after, per taxpayer. Separate age-65 deduction under 12-6-1170(B): $15,000 against any SC income per qualifying spouse ($30,000 when both are 65+), reduced by any retirement or military deduction claimed. All military retirement pay is fully exempt at any age (12-6-1171). H.4216 did not change any of these.",

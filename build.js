@@ -1305,6 +1305,56 @@ const CARRY_REGEX = /\bcarr(?:y|ies|ied|ying)\s+(?:a |an |the |its |their |your 
  * claim is illegal. Whole file, every page, schema included. A loan fact that
  * needs a source says "according to a loan officer at our preferred lender". */
 const NMLS_NUMBER_REGEX = /\b2721275\b/;
+/* Owner, 2026-10-02: Tim's loan-originator licence comes off the site until counsel
+ * has reviewed the dual role (the brokerage is not a lender). Whole file, schema too. */
+const TIM_NMLS_REGEX = /\b252563\b/;
+/* The 2026-10-01 audit found "From a licensed agent and MLO." in a meta description:
+ * no name, so MLO_CLAIM_REGEX missed it, and in an attribute, which the tag-stripped
+ * scan never read. This one reads titles, descriptions and schema too. */
+const MLO_UNNAMED_REGEX = /\blicensed\s+(?:real\s+estate\s+)?(?:agents?|brokers?|realtors?)\s+(?:and|&|&amp;|\/|plus)\s+(?:an?\s+)?(?:licensed\s+)?(?:MLOs?|loan\s+officers?|(?:mortgage\s+)?loan\s+originators?)\b/i;
+/* One business (owner, 2026-10-02; audit 2026-10-01). Chapter3 Realty and BrickWood
+ * Mortgage are separate companies with a referral relationship. Pages said otherwise
+ * in words the "under one roof" gate did not know, and AI answers repeated them:
+ * "the same company", "our own mortgage team", "one team for real estate and
+ * financing", "a real deal we underwrote", "the investor loan menu at BrickWood".
+ * This holds the claim, not one phrasing. [pattern, needs a lending word in the same
+ * sentence]. Positive controls: every one of those sentences; they all fire. */
+const ONE_BUSINESS = [
+  [/\b(?:the\s+)?same\s+(?:company|firm|business|office|building)\b/i, true],
+  [/\bshare\s+(?:an?|the\s+same)\s+office\b/i, true],
+  [/\bsit\s+inside\s+the\s+same\b/i, true],
+  [/\bour\s+own\s+(?:mortgage|lending|loan|financing|VA\s+loan)\s+(?:team|department|division|company|officers?|staff|lender)\b/i, false],
+  [/\bour\s+(?:mortgage|lending|loan|VA\s+loan)\s+(?:team|department|division)\b/i, false],
+  [/\bone\s+(?:team|company|firm|business|office)\s+for\s+(?:both\s+)?(?:the\s+)?(?:real\s+estate|buying|the\s+home|the\s+property|your\s+home)\s+and\s+(?:the\s+)?(?:financing|lending|loan|mortgage)/i, false],
+  [/\bwe\s+underwr(?:ote|ite|iting)\b/i, false],
+  [/\bloan\s+menu\b/i, false],
+  [/\bEqual\s+Housing\s+Lender\b/i, false],
+];
+const ONE_BUSINESS_LENDING = /\b(?:lender|lending|loans?|mortgage|financ\w*|BrickWood|underwrit\w*|pre-?approval)\b/i;
+/* A calculator that opens with a rate, a down payment or a loan payment filled in
+ * states one (owner rule: never a payment amount or an interest rate, anywhere;
+ * down payments only on the four investor-financing pages). The audit gate strips
+ * calculator inputs before it scans prose, so this reads the inputs themselves. */
+/* ids end in the term (coRate, cc-down, dscrPay); labels name it ("Monthly loan payment").
+ * Controls: coRate, coDown, cc-rate, cc-down, ltr-rate, ltr-down and dscrPay fire;
+ * flipPaid ("What you pay"), nsPayoff, cc-comm and every vacancy or tax rate do not. */
+const CALC_TERM_ID = /(?:^|[-_])(?:rate|interest|apr|down|pay)$|[a-z0-9](?:Rate|Down|Pay|Apr)$/;
+const CALC_TERM_LABEL = /\b(?:interest rate|mortgage rate|loan rate|down payment|loan payment|monthly payment|mortgage payment)\b/i;
+const CALC_TERM_NOT = /vacan|occup|appreci|growth|tax|\bcap\b|mgmt|manage|insur|hoa|rent|payoff|commission/i;
+/* Lead forms (owner, 2026-10-02). c3SendForm drops any lead without consent, after
+ * the visitor has been shown "thank you": four forms did that for months. Every call
+ * must pass consent, and every phone field needs the locked consent checkbox. */
+const LEAD_CALL = /c3SendForm\(\s*\{/g;
+function leadCallsWithoutConsent(src) {
+  const bad = [];
+  for (const m of src.matchAll(LEAD_CALL)) {
+    let i = m.index + m[0].length, depth = 1;
+    while (i < src.length && depth) { const c = src[i++]; if (c === "{") depth++; else if (c === "}") depth--; }
+    const obj = src.slice(m.index, i);
+    if (!/\bconsent\s*:/.test(obj)) bad.push(obj.replace(/\s+/g, " ").slice(0, 90));
+  }
+  return bad;
+}
 const MLO_SCHEMA_REGEX = /Licensed Mortgage Loan Originator/;
 const MLO_CLAIM_REGEX = /\bDevin(?: Day)?\b[^.<"]{0,120}\b(?:MLO|loan originator|loan officer|NMLS)\b|\b(?:MLO|loan originator|loan officer|NMLS)\b[^.<"]{0,120}\bDevin\b|Chapter3(?:'s|&#39;s|&#x27;s|\u2019s)?\s+(?:own\s+)?licensed\s+(?:mortgage\s+)?loan\s+(?:originator|officer)|\bour licensed (?:mortgage )?loan (?:originator|officer)\b/i;
 
@@ -1951,6 +2001,47 @@ function audit() {
           if (m) { E(`banned construction: "${m[0].slice(0, 50)}" - ${msg}`); break; }
         }
       }
+      /* ---- one business: Chapter3 and BrickWood are separate (owner, 2026-10-02) ---- */
+      {
+        const seenOB = new Set();
+        for (const sent of claims.split(/(?<=[.!?])\s+|\n/)) {
+          for (const [re, needLend] of ONE_BUSINESS) {
+            if (!re.test(sent) || (needLend && !ONE_BUSINESS_LENDING.test(sent))) continue;
+            const k = sent.trim().slice(0, 60);
+            if (!seenOB.has(k)) { seenOB.add(k); E(`one-business claim: "${sent.trim().slice(0, 110)}" - Chapter3 and BrickWood are separate companies with a referral relationship; say "our lending partner" (owner, 2026-10-02)`); }
+            break;
+          }
+        }
+        const unnamed = claims.match(MLO_UNNAMED_REGEX);
+        if (unnamed) E(`licence claim: "${unnamed[0]}" - nobody at Chapter3 is presented as a loan originator, in copy, titles, descriptions or schema (owner rules 2026-09-07 and 2026-10-02)`);
+        if (TIM_NMLS_REGEX.test(s)) E("licence claim: NMLS 252563 is in the file - Tim's loan-originator licence stays off the site until counsel has reviewed the dual role (owner, 2026-10-02)");
+      }
+      /* ---- calculators open empty for rate, down payment and loan payment (owner, 2026-10-02) ---- */
+      for (const m of s.matchAll(/<input\b[^>]*>/gi)) {
+        const tag = m[0];
+        const ids = [(tag.match(/\bid="([^"]*)"/i) || [, ""])[1], (tag.match(/\bname="([^"]*)"/i) || [, ""])[1]].filter(Boolean);
+        const lab = (tag.match(/\baria-label="([^"]*)"/i) || [, ""])[1];
+        const key = [...ids, lab].join(" ").trim();
+        if (!(ids.some(x => CALC_TERM_ID.test(x)) || CALC_TERM_LABEL.test(lab)) || CALC_TERM_NOT.test(key)) continue;
+        if (/down/i.test(key) && !/rate|interest|apr|pay/i.test(key) && DOWN_PAYMENT_OK_PAGES.has(rel)) continue;
+        const val = (tag.match(/\bvalue="([^"]*)"/i) || [, ""])[1], ph = (tag.match(/\bplaceholder="([^"]*)"/i) || [, ""])[1];
+        const states = (x) => /\d/.test(x) && !/^\s*0+(?:\.0+)?\s*$/.test(x);   // 0 states no payment, and "0% down" is allowed
+        if (states(val) || states(ph))
+          E(`calculator opens with a loan term filled in (${key.trim()}: ${val || ph}) - leave rate, down payment and loan payment empty for the visitor's own numbers (owner rule, non-negotiable 3)`);
+      }
+      /* ---- lead forms send consent, and a phone field carries the consent box (owner, 2026-10-02) ---- */
+      for (const bad of leadCallsWithoutConsent(s.replace(/function\s+c3SendForm\s*\(/g, "")))
+        E(`lead form sends no consent: ${bad}... - c3SendForm drops it after showing "thank you"; pass consent from the box`);
+      for (const m of s.matchAll(/<input\b[^>]*>/gi)) {
+        const tag = m[0];
+        if (!/type="tel"|\b(?:name|id)="[^"]*phone[^"]*"/i.test(tag) || /type="(?:hidden|checkbox)"/i.test(tag)) continue;
+        let win = s.slice(m.index, m.index + 6000);
+        const fe = win.indexOf("</form>"); if (fe > 0) win = win.slice(0, fe);
+        const cb = win.search(/<input\b[^>]*type="checkbox"/i);
+        const tc = cb < 0 ? -1 : win.indexOf(TCPA, cb);
+        if (cb < 0 || tc < 0 || tc - cb > 1500)
+          E(`phone field ${(tag.match(/\bid="([^"]*)"/) || [, tag.slice(0, 40)])[1]} has no consent checkbox with the locked TCPA text after it (PLAYBOOK A15)`);
+      }
       /* ---- SOURCES + NAMED VOICE (owner rules 2026-09-03, PLAYBOOK A19/A20) ----
        * The Princeton GEO study (Aggarwal et al., KDD 2024) measured citation
        * lift from citing sources inline and from quoting named experts. Both
@@ -2465,6 +2556,30 @@ function audit() {
       if (/grid-template/.test(body) && !/display:\s*grid/.test(body))
         warns.push(`/assets/${a}: .${cls} sets grid-template but never display:grid, so the class does nothing`);
     }
+  }
+
+  /* ---- shared surfaces: assets, chrome partials and llms.txt (owner, 2026-10-02) ----
+   * A claim in the footer is on every page, and AI answers quoted the footer's
+   * "DSCR financing" back as a Chapter3 service. A lead call in a shared script
+   * runs on every page that loads it. Read once here. */
+  for (const a of assetFiles().filter(n => n.endsWith(".js")))
+    for (const bad of leadCallsWithoutConsent(fs.readFileSync(path.join(ASSETS, a), "utf-8")))
+      errors.push(`/assets/${a}  lead form sends no consent: ${bad}...`);
+  {
+    const chrome = ["header.html", "footer.html"].map(n => path.join(__dirname, "partials", n)).filter(f => fs.existsSync(f))
+      .map(f => [path.basename(f), decodeEnt(fs.readFileSync(f, "utf-8").replace(/<(script|style)[\s\S]*?<\/\1>/g, " ").replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ")]);
+    for (const [name, body] of [...chrome, ["llms.txt", llms]]) {
+      for (const sent of body.split(/(?<=[.!?])\s+|\n/))
+        for (const [re, needLend] of ONE_BUSINESS)
+          if (re.test(sent) && (!needLend || ONE_BUSINESS_LENDING.test(sent))) { errors.push(`${name}  one-business claim: "${sent.trim().slice(0, 110)}"`); break; }
+      const offer = body.match(/\b(?:DSCR|investor|investment|portfolio|bridge|hard money)\s+(?:financing|loans?|lending|loan qualification)\s*(?:,|\.| and )/i);
+      if (offer && (name === "footer.html" || /Specialt|differentiat|we (?:offer|provide)/i.test(body.slice(Math.max(0, offer.index - 300), offer.index))))
+        errors.push(`${name}  offers financing as a Chapter3 service: "${offer[0].trim()}" - a page may explain loans; a service list may not offer one (owner A17b, 2026-10-02)`);
+    }
+    const hdrs = path.join(ROOT, "_headers");
+    if (fs.existsSync(hdrs))
+      for (const m of fs.readFileSync(hdrs, "utf-8").matchAll(/<(\/assets\/[^>]+)>;\s*rel=preload/g))
+        if (!fs.existsSync(path.join(ROOT, m[1]))) errors.push(`_headers  preloads ${m[1]}, which does not exist - every page would fetch a 404 first`);
   }
 
   console.log(`Audited ${pages.length} pages against the PLAYBOOK.md rules.`);

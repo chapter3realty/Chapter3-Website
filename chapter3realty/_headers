@@ -3,6 +3,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), camera=(), microphone=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Link: </assets/fonts/dmsans.c57593e0ad.woff2>; rel=preload; as=font; type=font/woff2; crossorigin, </assets/fonts/fraunces.48642176d9.woff2>; rel=preload; as=font; type=font/woff2; crossorigin, </assets/fonts/fraunces.b58654dd4f.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
 
 # HTML always revalidates so deploys show immediately (edge still serves fast 304s)
 /*.html
@@ -26,6 +27,14 @@
 /icon-512.png
   Cache-Control: public, max-age=31536000, immutable
 /site.webmanifest
+  Cache-Control: public, max-age=604800
+
+# Popup media is not fingerprinted: cache for a week, not the 4-hour default
+/popup-green.mp4
+  Cache-Control: public, max-age=604800
+/popup-poster.jpg
+  Cache-Control: public, max-age=604800
+/popup.mp4
   Cache-Control: public, max-age=604800
 
 # Hashed, fingerprint-stable shared assets: cache hard for a year

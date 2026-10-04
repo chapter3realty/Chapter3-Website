@@ -791,6 +791,10 @@ function ltrGateSubmit(ev) {
   var em = document.getElementById('ltr-gate-email');
   var email = em ? em.value.trim() : '';
   if (!email || email.indexOf('@') < 1) { if (em) em.focus(); return false; }
+  /* The CRM refuses a lead without call and text consent, so an unticked box
+     would show the visitor a download and quietly lose the lead. */
+  var cb = document.getElementById('ltr-gate-consent');
+  if (cb && !cb.checked) { cb.focus(); if (cb.reportValidity) cb.reportValidity(); return false; }
   function val(id) { var e = document.getElementById(id); return e ? e.value.trim() : ''; }
   ltrStore('c3_ltr_email', email);
   ltrStore('c3_ltr_asked', '1');
@@ -801,7 +805,8 @@ function ltrGateSubmit(ev) {
       name: val('ltr-gate-name'),
       email: email,
       phone: val('ltr-gate-phone'),
-      deal: ltrGateSnapshot()
+      message: 'Investor report request. ' + ltrGateSnapshot(),
+      consent: cb && cb.checked ? 'yes' : 'no'
     }, 'Investor Report Request');
   }
   // generate_lead is fired by the sitewide c3SendForm wrapper in the footer.
@@ -882,7 +887,8 @@ function sellerSubmit() {
     name: name, email: email, phone: phone,
     address: address, property_type: propType, bedrooms: beds, timeline: timeline,
     message: 'Seller valuation request',
-    page: window.location.pathname
+    page: window.location.pathname,
+    consent: (document.getElementById('sellerConsent') || {}).checked ? 'yes' : 'no'
   }, 'Seller Valuation Form');
   var _s=document.getElementById('seller-form-steps'); if(_s)_s.style.display='none';
   var _p=document.getElementById('seller-form-progress'); if(_p)_p.style.display='none';
@@ -898,7 +904,8 @@ function finalSellerSubmit() {
   c3SendForm({
     name: name, email: email, phone: phone, address: address,
     message: 'Seller follow-up form submission',
-    page: window.location.pathname
+    page: window.location.pathname,
+    consent: (document.getElementById('finalConsent') || {}).checked ? 'yes' : 'no'
   }, 'Seller Follow-up Form');
   document.getElementById('final-seller-success').style.display = 'block';
   document.getElementById('final-seller-success').previousElementSibling.style.display = 'none';

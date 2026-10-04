@@ -41,9 +41,15 @@ if (canvas && !isTouch) {
   const BRASS = '196,120,58';
   const SLATE = '92,107,120';
 
+  /* Reduced motion: one still frame, no animation loop. The dots stay where
+     they are; nothing moves for a visitor who asked for less motion. */
+  const stillMq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  let running = false;
+
   function resize() {
     canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;
+    if (!running && particles.length) frame();
   }
   resize();
   window.addEventListener('resize', resize);
@@ -100,13 +106,19 @@ if (canvas && !isTouch) {
     }
   }
 
-  function animParticles() {
+  function frame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); });
+    particles.forEach(p => { if (running) p.update(); p.draw(); });
     drawLines();
+  }
+  function animParticles() {
+    if (stillMq && stillMq.matches) { running = false; frame(); return; }
+    frame();
     requestAnimationFrame(animParticles);
   }
-  animParticles();
+  function start() { if (!running) { running = !(stillMq && stillMq.matches); animParticles(); } }
+  start();
+  if (stillMq && stillMq.addEventListener) stillMq.addEventListener('change', () => { if (!stillMq.matches) start(); });
 }
 
 // ── 4. SCROLL PROGRESS ──────────────────────────────────
@@ -310,9 +322,11 @@ function initOrbs() {
   orbDefs.forEach(({ w, h, x, y, color, dur }, i) => {
     const orb = document.createElement('div');
     orb.className = 'hero-orb';
+    /* top in pixels, fixed once: a percentage of the hero moved the orb when the
+       web font arrived and the hero grew, which counts as layout shift */
     orb.style.cssText = `
       width:${w}px;height:${h}px;
-      left:${x};top:${y};
+      left:${x};top:${Math.round(parseFloat(y) / 100 * hero.offsetHeight)}px;
       background:${color};
       animation-duration:${dur}s;
       animation-delay:${-i*3}s;

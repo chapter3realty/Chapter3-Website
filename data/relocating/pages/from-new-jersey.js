@@ -58,7 +58,7 @@ const spec = {
 <tr><td style="${S.td}">Top income tax rate</td><td style="${S.td}">10.75%, eight brackets; almost nobody pays it</td><td style="${S.td}">5.21%, two brackets</td></tr>
 <tr><td style="${S.td}">Local income tax</td><td style="${S.td}">None</td><td style="${S.td}">None</td></tr>
 <tr><td style="${S.td}">Social Security</td><td style="${S.td}">Not taxed</td><td style="${S.td}">Not taxed</td></tr>
-<tr><td style="${S.td}">Retirement income exclusion</td><td style="${S.td}">Up to $100,000 joint at 62 and older; nothing above $150,000 of income</td><td style="${S.td}">Deductions up to $10,000 from 65, plus an age-65 deduction</td></tr>
+<tr><td style="${S.td}">Retirement income exclusion</td><td style="${S.td}">Up to $100,000 joint at 62 and older; nothing above $150,000 of income</td><td style="${S.td}">Up to $15,000 per person at 65, retirement deduction included</td></tr>
 <tr><td style="${S.td}">Property tax, effective rate</td><td style="${S.td}">Bergen County about 1.89%</td><td style="${S.td}">Horry County about 0.38% on a primary home</td></tr>
 <tr><td style="${S.td}">Annual tax on your car</td><td style="${S.td}">No</td><td style="${S.td}">Yes, every year</td></tr>
 <tr><td style="${S.td}">Estate and inheritance tax</td><td style="${S.td}">No estate tax; inheritance tax on some heirs</td><td style="${S.td}">Neither</td></tr>
