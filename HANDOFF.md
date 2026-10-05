@@ -2714,6 +2714,13 @@ version; the site carries the checked one.
   rate cut test under Act 110 (the 5.21 percent may change for 2027).
 - March 28, 2027: the wind pool territory order expires unless renewed.
 
+**Reminders.** The weekly reminder for his three research answers (the
+house-hack story, the multifamily story, and who rents multifamily units besides
+J-1 students) fired for the last time on 2026-10-05. It was a one-shot and was
+not re-armed, because he was active that week. All three are still unanswered.
+The "107 low-contrast brand elements" question it also carried is settled: the
+contrast fix in this round covers them (0 failing text elements on 131 pages).
+
 **Found while fixing, not changed (each needs him or its own task).**
 - **Every page scrolls sideways between about 860 and 979 pixels wide**: the
   header's buttons and phone number end at 980px. Present at 04fb120 too, so not
