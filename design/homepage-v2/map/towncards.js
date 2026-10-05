@@ -1,5 +1,5 @@
 // The town pins on the homepage map, with each town's card facts. One place for them, used two ways:
-//   require: assemble.js builds the pins into the redesign from this module (pins())
+//   require: pins() returns them (assemble.js used it while the page was a preview; the page went live 2026-10-05)
 //   node design/homepage-v2/map/towncards.js [page]   rewrites the pins in a built page in place, chapter3realty/index.html
 //     by default. Run it after a refresh of data/str-market.json (the short-term rental figures, every 90 days) or of
 //     data/towns.json (Zillow's home values: python3 design/homepage-v2/map/build_towns.py). build.js check fails while the

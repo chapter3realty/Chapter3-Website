@@ -1,5 +1,6 @@
 # The hero map's camera table: writes each width band's camera, label sides, water-name spots and hidden road shields into
-# src/head.html (between the label-sides comment and the motion comment, and the base camera rule) and data/cameras.json.
+# chapter3realty/index.html (between the label-sides comment and the motion comment, and the base camera rule) and data/cameras.json.
+# The homepage went live 2026-10-05; its styles now live in the page itself, so this writes the page in place.
 #   python3 design/homepage-v2/tests/gencams.py
 # Each band came from tests/twsearch.js: hc is the middle of the turn and drift half its range, so the map rests at
 # hc - drift (--h0) and turns to hc + drift (--h1) and back; the search kept every label clear over the whole range.
@@ -75,7 +76,7 @@ for c in CAMS:
         elif r in shid: body += f'.tw-deco .sh[data-r="{r}"]{{display:inline}}'
     shid |= set(c['shields'])
     css.append(f"@media {c['media']}{{{body}}}")
-p = HP + '/src/head.html'; s = open(p).read()
+p = os.path.join(os.path.dirname(os.path.dirname(HP)), 'chapter3realty', 'index.html'); s = open(p).read()
 a = s.index('/* label sides and water names per width')
 b = s.index('/* motion: the camera flies in')
 head = s[a:s.index('*/', a) + 2]
@@ -85,7 +86,7 @@ s, n = re.subn(r"#page-home #home\.cine\{--hw:\.864979;--tx:\.49;--ty:\.45;[^}]*
 assert n == 1, n
 open(p, 'w').write(s)
 # data/cameras.json
-note = ("The hero map camera for each width band, as src/head.html sets it (#home, style c3-home-map): P perspective, pw plane width, "
+note = ("The hero map camera for each width band, as the homepage sets it (#home, style c3-home-map): P perspective, pw plane width, "
         "tilt, heads (the map rests at the first; the search kept the labels clear over the whole range, the middle halfway), cx px right of the stage's middle, cb px above the stage's bottom, "
         "ma the map's height under the words on a narrow screen, fog, font (label px), layout (the words beside the map or above it), "
         "sides: a town's label corner at its pin, [ax, ay, ox, oy, stem] as the CSS custom properties, or a name from sideNames; a town not listed uses 'up'. "
@@ -114,4 +115,4 @@ lines += [' ]', '}']
 txt = '\n'.join(lines)
 assert json.loads(txt) == json.loads(json.dumps(out))
 open(HP + '/data/cameras.json', 'w').write(txt + '\n')
-print('wrote src/head.html and data/cameras.json:', len(CAMS), 'bands')
+print('wrote chapter3realty/index.html and data/cameras.json:', len(CAMS), 'bands')

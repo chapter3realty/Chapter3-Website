@@ -2168,7 +2168,18 @@ from 768px up to 979px, in `chapter3realty/assets/app.*.css`, then
 `node build.js rehash` and re-verify. It changes every page, so it is its own
 change and it needs his yes first. Nothing in this round depends on it.
 
-## 2026-09-28: homepage redesign candidate, waiting for his accept or decline
+## 2026-09-28: homepage redesign, accepted 2026-10-05 and put in the site
+
+**Accepted, verbatim (2026-10-05):** "lets get the new homepage live". Done by the
+"On accept" steps at the end of this section: `design/homepage-v2/index.html` is now
+`chapter3realty/index.html`, the 20 map images are in `chapter3realty/media/map/`
+(`tests/media.js`: all 27 local files present), and `assemble.js`, `preview.js`,
+`index.html`, `src/` and `media/` were removed from `design/homepage-v2/` (`map/`,
+`data/` and `tests/` stay; `gencams.py` now writes the camera table into the page
+itself). He did not answer the two open questions, so they stay as previewed: the
+analyzer still says "Grand Investor Tool" and "See the investor analysis", and there
+is no pause button (the map's motion ends within 5 seconds). Change the homepage in
+`chapter3realty/index.html` from now on; there is no preview copy any more.
 
 **His request, verbatim.** "You full freedom do whatever you want to make the
 homepage Dynamic as fuck go all out make it look as pretty as you can without
@@ -2771,14 +2782,10 @@ on the two local rules, and the healthcare hero.
    to 10-04" above). Still his: the four owner-only actions, the two counsel
    questions and the found-not-fixed list. Then the dated facts in that section,
    in date order.
-00000. **Homepage redesign candidate** (section above). Waiting for his accept
-   or decline on the eighth preview: his 2026-10-01 edits, then the slow turn
-   after the landing (18 degrees, stops on a drag, click, tap or tab), turning
-   the map by hand, the town cards, the sample report and the scroll moments.
-   Open questions for him: whether the analyzer's eyebrow "Grand Investor Tool"
-   and button "See the investor analysis" should say "property" too; whether he
-   wants one small pause button on the map for WCAG 2.2.2; the new copy listed
-   in the section. Do not touch `chapter3realty/index.html` before he says yes.
+00000. **The homepage redesign is accepted and in the site** (section above,
+   2026-10-05). Expect his reaction once it is live. The two questions he left
+   open (the analyzer's "investor" wording, a pause button) stay as previewed
+   until he raises them.
 0000. **The returns page round 2 is on the branch** (section above). Expect his
    reaction to the new cap rates, the satellite map and the rebuilt
    calculator. If he wants the short-term figures on the investor price too,

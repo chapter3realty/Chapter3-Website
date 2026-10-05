@@ -54,7 +54,7 @@ IMG_W = 2048
 IMG_H = round(IMG_W * H / W)                 # 1771
 SX, SY = IMG_W / W, IMG_H / H                # plane units -> 2048 px
 # width, AVIF byte ceiling. The page's plane is wider than the screen (1500 to 1850 CSS px on desktop, 1200 on phones), so
-# 2x and 3x screens need the two larger files to stay sharp; srcset in src/main.tpl.html picks one by density.
+# 2x and 3x screens need the two larger files to stay sharp; srcset in the homepage (chapter3realty/index.html) picks one by density.
 SIZES = [(4096, 450_000), (3072, 320_000), (2048, 320_000), (1400, 170_000)]
 
 def plane_x(lon): return (lon - LON0) * K * S
@@ -523,7 +523,7 @@ def pick_webp(png, out, target_db, limit):
 
 # ---- 5. anchors -----------------------------------------------------------------
 # Shields and water labels are HTML on the page, placed over the tilted plane by CSS
-# (design/homepage-v2/src/head.html, #home). Each anchor sits on its feature; where the brief
+# (the homepage, chapter3realty/index.html, #home). Each anchor sits on its feature; where the brief
 # leaves room ("near", "midway"), it slides along the feature to the spot nearest the nominal
 # one that stays clear of the town pins, the town labels, the other anchors, the words over the map,
 # and the fogged edges, at every heading in the camera's range.

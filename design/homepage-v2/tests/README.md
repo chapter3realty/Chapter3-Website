@@ -19,18 +19,18 @@ The hero map (a tilted basemap with CSS-placed labels) has its own tools. They s
     node twcheck.js  http://localhost:8124/ 1440x900 390x844   # label collisions over the turn (13 headings, --h0 to --h1), and label-to-map error
     GROW=0.045 node twcheck.js http://localhost:8124/          # the same with labels 4.5% wider, as Firefox draws them
     SPACING=1 node twcheck.js http://localhost:8124/ 1100x900  # with the WCAG 1.4.12 text spacing (labels then widen too)
-    CSS='...' node twcheck.js http://localhost:8124/ 1100x900  # try a placement before writing it into src/head.html
+    CSS='...' node twcheck.js http://localhost:8124/ 1100x900  # try a placement before writing it into the page
     node cameras.js  http://localhost:8124/                    # the page's cameras match data/cameras.json
     node twmotion.js http://localhost:8124/ 1440 900           # labels stay on their towns during the flight and the turn; only the turn moves after it
     node twperf.js   http://localhost:8124/ 390 844 4          # main-thread cost while the map moves (4x CPU slowdown)
     node twsearch.js '<json>'                                  # searches cameras and label sides for a range of widths
-    python3 gencams.py                                         # writes the chosen cameras into src/head.html and data/cameras.json
+    python3 gencams.py                                         # writes the chosen cameras into chapter3realty/index.html and data/cameras.json
     node zoomframes.js http://localhost:8124/ 1440x900 out/d   # the flight in from the eastern United States, frozen at set moments
     node flightfps.js  http://localhost:8124/ 390 844 4 3      # frame intervals across the flight (4x CPU slowdown, 3x screen)
 
 `twsearch.js` is how the per-width cameras, label sides and water-name spots in
-`src/head.html` were chosen, and `gencams.py` holds the chosen table and writes it
-into `src/head.html` and `data/cameras.json` (which `map/build_basemap.py` places
+the homepage were chosen, and `gencams.py` holds the chosen table and writes it
+into `chapter3realty/index.html` and `data/cameras.json` (which `map/build_basemap.py` places
 the road shields for). The map rests at `hc - drift` (`--h0`) and, once it has
 landed, turns to `hc + drift` (`--h1`) and back; the search keeps every label clear
 over that whole range, at `steps` headings (`"drift":9,"steps":13` for the 18-degree
@@ -55,7 +55,9 @@ basemap's own geometry. If `data/strand-plane.json` moves a shield, rerun
 The site's reduced-motion rule (app.css) gives every element a .01ms
 transition, so these tools switch transitions off before reading positions.
 
-Serve the page first: copy `design/homepage-v2/index.html` into a scratch copy of
-`chapter3realty/` as `index.html`, copy `media/hero/` and `media/map/` beside it, and run
-`python3 -m http.server 8124` in that folder. The live homepage on another port
-is the baseline.
+Serve the page first. The redesign went live on 2026-10-05 and is now
+`chapter3realty/index.html` itself, with its map images in `chapter3realty/media/map/`,
+so serve the site folder (`python3 -m http.server 8124 -d chapter3realty`) and point
+the tools at it. Change the page in place: `assemble.js` and `src/` were removed at
+go-live because their anchors were the old homepage's. `gencams.py` now writes the
+camera table into the page.

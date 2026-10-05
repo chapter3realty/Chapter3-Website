@@ -11,7 +11,7 @@ Natural Earth (public domain) for the other countries, the Great Lakes, lakes an
 to use on the condition that the Census Bureau is credited, which the map's "Map data" line does.
 
 Writes media/map/zoom-{us,se,coast}-{1600,3200}.{avif,webp} and data/strand-zoom.json (each level's extent).
-The page (src/fx.html) places each level with the same camera as the basemap: a level is Mercator, the basemap is
+The homepage places each level with the same camera as the basemap: a level is Mercator, the basemap is
 an equirectangular plane, and the two agree at the camera target's latitude to within a pixel over the plane.
 """
 import argparse, collections, json, math, os, subprocess, sys, time, urllib.parse, zipfile

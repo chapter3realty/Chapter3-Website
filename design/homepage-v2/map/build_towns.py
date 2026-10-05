@@ -1,8 +1,9 @@
 # Build data/towns.json: the home values the town cards on the homepage map show.
 #   python3 design/homepage-v2/map/build_towns.py [zillow-city.csv zillow-zip.csv]
 # With no arguments it downloads Zillow's two public files. Refresh it when Zillow publishes a new month (mid-month),
-# then run assemble.js. The short-term rental figures on the same cards are not here: assemble.js reads them from
-# data/str-market.json, the site's one source for them, so the cards always match the town pages.
+# then run node design/homepage-v2/map/towncards.js, which rewrites the pins in chapter3realty/index.html. The short-term
+# rental figures on the same cards are not here: towncards.js reads them from data/str-market.json, the site's one source
+# for them, so the cards always match the town pages.
 #
 # The figure is the Zillow Home Value Index (ZHVI): all homes, middle tier, smoothed and seasonally adjusted, which
 # Zillow calls the typical home value. Zillow publishes it for seven of the nine towns. For the other two it publishes
