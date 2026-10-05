@@ -2631,7 +2631,7 @@ old page's; keep `map/`, `data/` and `tests/`, delete the rest of
 `design/homepage-v2/`. **On decline,** nothing in `chapter3realty/` needs
 undoing.
 
-## 2026-10-02 to 10-04: the Blog-Brain audit, fixed, not deployed
+## 2026-10-02 to 10-04: the Blog-Brain audit, fixed, deployed 2026-10-05
 
 **His request, verbatim (2026-10-02):** "Fix all of this ask me questions when
 you need", followed by the audit's summary (four lead forms that drop leads; pages
@@ -2657,6 +2657,13 @@ read line by line and applied by hand.
   RESPA Section 8 question the audit raised (Compliance C2). Wording cannot fix it.
   Do not edit that sentence without counsel's written answer.
 - The welcome pop-up stays as it is on phones (opens at 10 seconds).
+
+**Deployed 2026-10-05, measured live the same day:** every sampled page serves
+`app.8e7fe83324.css`; 7 of 7 lead forms send with consent (tested against the live
+site with the form endpoint answered inside the browser, so no test lead reached
+the CRM); blog pages render #fbf8f2 with #1c2028 text; contrast 0 failing on ten
+sampled live pages at 1280 and 375. The homepage is still the original design: the
+redesign was not in this deploy and still waits for his yes.
 
 **What is done (commits 78d618e and the one after it).** Part 1 is listed in the
 78d618e message: lead forms, the search pop-up, one-business wording, licences and
@@ -2760,10 +2767,10 @@ on the two local rules, and the healthcare hero.
 
 ## Suggested order for the next session
 
-000000. **The audit round is on the branch, not deployed** (section "2026-10-02
-   to 10-04" above). Give him the deploy command, the four owner-only actions,
-   the two counsel questions and the found-not-fixed list. Then the dated facts
-   in that section, in date order.
+000000. **The audit round is live (deployed 2026-10-05)** (section "2026-10-02
+   to 10-04" above). Still his: the four owner-only actions, the two counsel
+   questions and the found-not-fixed list. Then the dated facts in that section,
+   in date order.
 00000. **Homepage redesign candidate** (section above). Waiting for his accept
    or decline on the eighth preview: his 2026-10-01 edits, then the slow turn
    after the landing (18 degrees, stops on a drag, click, tap or tab), turning
