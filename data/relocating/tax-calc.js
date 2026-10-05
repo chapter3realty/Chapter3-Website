@@ -47,7 +47,9 @@ const CALC_JS = _calcSrc;
 // authorities can never disagree about this file's name.
 const CALC_HASH = crypto.createHash('md5').update(CALC_JS).digest('hex').slice(0, 10);
 const CALC_REL = `/assets/taxcalc.${CALC_HASH}.js`;
-{
+/* C3_NO_WRITE: a drift check (assemble-page.js --check) must not rename or delete
+ * assets while it only compares. */
+if (!process.env.C3_NO_WRITE) {
   const assetsDir = path.join(__dirname, '..', '..', 'chapter3realty', 'assets');
   const target = path.join(assetsDir, `taxcalc.${CALC_HASH}.js`);
   for (const f of fs.readdirSync(assetsDir)) {
@@ -176,7 +178,7 @@ ${CSS}
     <div class="txc-stale"><p>Press Calculate to see your own numbers.</p></div>
   </div>
 </div>
-<p class="txc-src" id="txcSrc">An estimate, not a fact. Rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026, and the Myrtle Beach property tax uses Horry County&#39;s 2025 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. Left out on both sides: federal tax, car taxes, insurance, and any credit that depends on your own return. Where a state rule is too detailed to model we leave it out, and almost every one of those left out would RAISE the bill in the state you are leaving, not lower it: Connecticut&#39;s tax recapture, New York&#39;s supplemental tax, and the exemption phase-outs in Maryland and Ohio. Three would LOWER it, and we name them: Pennsylvania&#39;s tax forgiveness and the Massachusetts senior circuit breaker are low-income credits we do not apply, and Florida caps how fast a homesteaded home&#39;s assessed value can rise, so a long-held Florida home&#39;s real bill is below our estimate. If one of those is you, your bill in the state you are leaving is lower than we show. Insurance is a separate cost to check on this coast, usually higher here than in the states up north; coming from coastal Florida it is priced address by address, in both directions. The ${A('/buyers/coastal-insurance/', 'coastal insurance page')} has the real numbers. Your accountant gives you the final answer, and we will sit down and go through it with you.</p>
+<p class="txc-src" id="txcSrc">An estimate, not a fact. Rates, brackets and retirement rules come from each state&#39;s own department of revenue and statutes for 2026, and the Myrtle Beach property tax uses Horry County&#39;s 2026 certified millage for an owner-occupied home outside the city limits, with the 4 percent residential ratio, the school operating exemption and the 65 and older homestead exemption. Left out on both sides: federal tax, car taxes, insurance, and any credit that depends on your own return. Where a state rule is too detailed to model we leave it out, and almost every one of those left out would RAISE the bill in the state you are leaving, not lower it: Connecticut&#39;s tax recapture, New York&#39;s supplemental tax, and the exemption phase-outs in Maryland and Ohio. Three would LOWER it, and we name them: Pennsylvania&#39;s tax forgiveness and the Massachusetts senior circuit breaker are low-income credits we do not apply, and Florida caps how fast a homesteaded home&#39;s assessed value can rise, so a long-held Florida home&#39;s real bill is below our estimate. If one of those is you, your bill in the state you are leaving is lower than we show. Insurance is a separate cost to check on this coast, usually higher here than in the states up north; coming from coastal Florida it is priced address by address, in both directions. The ${A('/buyers/coastal-insurance/', 'coastal insurance page')} has the real numbers. Your accountant gives you the final answer, and we will sit down and go through it with you.</p>
 </div></section>
 
 <script src="${CALC_REL}" defer></script>`;

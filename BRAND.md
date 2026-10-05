@@ -79,6 +79,6 @@ COMPLIANCE, ALWAYS
 - Never a payment amount or an interest rate in copy. Down-payment percentages only on the four business-purpose financing pages, with the lender named.
 - Never a conclusion about a named building, HOA or builder. Observable dated facts only.
 - BrickWood Mortgage, NMLS 189497: any body mention carries the affiliated-business disclosure on that page.
-- Tim Nash: SC broker licence 43182, NMLS 252563. Devin Day: NMLS 2721275 on financing content.
+- Tim Nash: SC broker licence 43182. His NMLS number is not shown on the site (owner, 2026-10-02, pending counsel). Devin Day: no licence number and no MLO claim anywhere on the site (owner, 2026-09-07).
 - The phone-consent sentence is locked and identical on every form that collects a number.
 - Fair housing statement lives at /fair-housing/.

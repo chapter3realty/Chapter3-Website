@@ -560,6 +560,7 @@ const T_STOP = h.table(["The number", "When we walk", "Why we walk"], [
 
 module.exports = {
   url: "/invest/rental-returns/",
+  datePublished: "2026-09-11",
   title: "What Return Should a Myrtle Beach Rental Make? | Chapter3",
   description: "What a Myrtle Beach rental returns: cap rates by area with and without a property manager, short-term returns, appreciation, four dealbreakers and a calculator.",
   ogTitle: "What return should a Myrtle Beach rental make?",

@@ -2,7 +2,7 @@
 
 What a new session needs that is not in the code.
 
-`CLAUDE.md` has the rules, `PLAYBOOK.md` the procedure, `MISTAKES.md` the 41
+`CLAUDE.md` has the rules, `PLAYBOOK.md` the procedure, `MISTAKES.md` the 99
 logged mistakes and what now prevents each. **Read those first.** This file is
 only the things they do not say: who you are working with, real-world facts you
 cannot infer, what is in flight, and what is unresolved.
@@ -2631,8 +2631,132 @@ old page's; keep `map/`, `data/` and `tests/`, delete the rest of
 `design/homepage-v2/`. **On decline,** nothing in `chapter3realty/` needs
 undoing.
 
+## 2026-10-02 to 10-04: the Blog-Brain audit, fixed, not deployed
+
+**His request, verbatim (2026-10-02):** "Fix all of this ask me questions when
+you need", followed by the audit's summary (four lead forms that drop leads; pages
+that say Chapter3 and BrickWood are one business; licence and rate items for
+counsel; the Maps key and the public repos; contrast, the search pop-up and phone
+speed; the speed patch; 15 wrong facts and 5 out-of-date items) and "Make the
+background on blog pages a very light creme off white with the black lettering."
+The audit itself is in the Blog-Brain repo (`audit/AUDIT.md`, `audit/FIX-LIST.md`,
+`audit/SPEED-AND-CONTRAST.md`, `website-patches/`). Its scripts were not run here
+(the session's safety check blocks running another repo's code); its patches were
+read line by line and applied by hand.
+
+**His answers (2026-10-02), so nobody asks again:**
+- Google Analytics loads on the first scroll, tap, mouse move or key press, not on
+  the 4-second timer. This reverses his 2026-08-31 "no" (bounce data); he chose
+  speed knowing a visitor who never touches the page is not counted.
+- Tim's NMLS number and loan-originator line come off the site until counsel has
+  reviewed the dual role. Done on /about/; `build.js` errors on 252563 anywhere.
+- Does Chapter3, Tim or anyone at Chapter3 get anything of value from BrickWood
+  when a client uses BrickWood? **"Yes, something of value."** So the footer's
+  "this referral may provide Chapter3 Realty a financial or other benefit" stays,
+  and it is for counsel: without common ownership, a benefit for a referral is the
+  RESPA Section 8 question the audit raised (Compliance C2). Wording cannot fix it.
+  Do not edit that sentence without counsel's written answer.
+- The welcome pop-up stays as it is on phones (opens at 10 seconds).
+
+**What is done (commits 78d618e and the one after it).** Part 1 is listed in the
+78d618e message: lead forms, the search pop-up, one-business wording, licences and
+calculator defaults, speed, contrast and the creme ground, and the first four
+facts. Measured on the rendered pages: 7 of 7 lead forms send with consent and
+nothing without it (`tools/verify-lead-delivery.js`; the baseline fails 5); the
+search pop-up passes every keyboard and screen-reader check
+(`tools/verify-idx-a11y.js`); contrast fails on 0 of 131 pages at 1280 and 375
+(`tools/contrast-scan.js`; the audit counted 130 of 132). The investor report
+gate now asks for the consent box before it sends, which is new for a visitor.
+
+**The 15 facts and 5 out-of-date items.** Every one was re-checked at its primary
+source on 2026-10-04 (four research groups; the evidence and quotes are in this
+session's transcript). What the site says now:
+
+| # | Now true | Where it changed |
+|---|---|---|
+| 1 | North Myrtle Beach: a city business license, renewed yearly; no permit, inspection or local agent | NMB submarket, which-town, str-tools |
+| 2 | A rental's tax is about 2.5 to 3.8 times a primary home's on the same house (2026 levy): NMB 3, Surfside 3.1, Garden City 3.2, Conway 2.5, Little River 3.3, Myrtle Beach 3.8, Pawleys 3.1 on Georgetown's 2025 rates | 8 submarkets, /invest/, condos, airbnb-income, inherited-house, property-taxes |
+| 3, 4 | SC's income-adjusted deduction replaces the standard deduction; the age-65 deduction is reduced by the retirement deduction | relocation pages and the tax engine |
+| 5 | The wind pool territory reaches inland to Carolina Bays Parkway and River Oaks Drive around Myrtle Beach (Order 2007-003, renewed to March 28, 2027); most of Carolina Forest is outside it | coastal-insurance, Carolina Forest |
+| 6 | The 48-hour notice applies only to an HOA that is not a nonprofit corporation | hoa-laws, benefits, developer-control |
+| 7, 8 | Myrtle Beach lodging taxes total 13 percent; the state line is 90 days, the same as the city's | Myrtle Beach submarket |
+| 9 | Town of Pawleys Island entirely in Georgetown County | which-town (where-to-buy was already right) |
+| 10 | The seller pays the deed recording fee | common-mistakes |
+| 11 | The buyer must withhold for a nonresident seller; 5 percent is for corporations | /sell/, capital-gains |
+| 12 | The written agreement before a tour is an industry rule, not state law | common-mistakes |
+| 13 | The overlay is a rule for buildings of more than two units between Kings Highway and the ocean; no date in copy | str-tools |
+| 14 | McLeod Carolina Forest held its ribbon cutting August 27, 2026; two hospitals under construction | healthcare, pros-and-cons, from-florida, jobs, strategies |
+| 15 | Free tuition only if the veteran died in or of service, was a POW or MIA, is permanently and totally disabled, or holds the Medal of Honor or a combat Purple Heart; since-birth residency added by Act 135 of 2026 | retirees, student-rentals |
+| A | Palmetto Heroes 2026 round closed April 13; next round expected spring 2027 | va-loans |
+| B | SC Housing's mortgage tax credit ended June 30 | first-time-buyer page |
+| C | No rates stated anywhere in the July report | july-2026 |
+| D | 2026 levy in every calculator: NMB 221.2, Conway 272.5, Myrtle Beach credit 53.4 percent | property-taxes, cost-to-own, closing-costs, rental-returns, Carolina Forest, the relocation tax block |
+| E | No monthly-report promise | july-2026, market-reports, guides, buying-in-myrtle-beach, Carolina Forest, where-to-buy |
+
+Each old sentence is now a `KNOWN_WRONG` entry in `build.js` (it fires on every
+one of them at 04fb120 and on nothing now), and `RATE_NUM_MORE` catches a rate
+quoted as news (MISTAKES 98).
+
+**Where the audit's own correction was wrong (MISTAKES 97).** "3.3 to 4.3 times"
+is the 2025 figure for two districts only; for 2026 bills it is 2.5 to 3.8 by
+town. "McLeod Carolina Forest opened" is not yet true: ribbon cut August 27,
+opening "this fall", no opening announced by October 4. He was told the audit's
+version; the site carries the checked one.
+
+**Dated facts that will need a session soon.**
+- McLeod announces the opening: the healthcare page's table then has seven
+  hospitals (add McLeod Carolina Forest, 48 beds, 1,133 total), and "being built
+  or opening" becomes "being built" on four pages.
+- Georgetown County posts 2026 millage (normally mid-October): update Pawleys
+  Island's 233.9 in `research/invest-next/data/submarkets.json` and the Pawleys
+  sentence "On Georgetown County's 2025 rates".
+- Spring 2027: Palmetto Heroes' next round. February 15, 2027: SC's automatic
+  rate cut test under Act 110 (the 5.21 percent may change for 2027).
+- March 28, 2027: the wind pool territory order expires unless renewed.
+
+**Found while fixing, not changed (each needs him or its own task).**
+- **Every page scrolls sideways between about 860 and 979 pixels wide**: the
+  header's buttons and phone number end at 980px. Present at 04fb120 too, so not
+  from this work. A breakpoint change in `app.css`; it changes the header on
+  every page, so it waits for his yes.
+- `/invest/accommodations-tax/` says a short stay is "under 30 days in Georgetown
+  County". The state's 7 percent applies under 90 days in every county; a
+  Georgetown local rule may use 30. Not verified.
+- The search pop-up promises "off-market homes before they hit the public sites"
+  (audit: conflicts with MLS Clear Cooperation, high). The pop-up says "An agent
+  will reach out shortly" while /contact/ says 24 hours. /why-chapter-3/ promises
+  monthly post-closing reports. All three are his to decide.
+- `/invest/where-to-buy/` has a hand-added link inside an FAQ answer that its
+  spec cannot produce (MISTAKES 99); a rebuild drops it.
+- Six spec pages carry `datePublished` 2026-09-16, probably the day they were
+  rebuilt. The real dates come from his deploy history, not git.
+
+**Owner-only actions (no code can do these).**
+1. Google Maps keys: restrict the browser key by HTTP referrer to
+   chapter3realty.com and its subdomains, limit each key to the APIs it calls,
+   set daily quotas and a budget alert in Google Cloud billing.
+2. Make both GitHub repos private (the website repo holds his private notes). His
+   clone at `C:\c3` then needs a GitHub sign-in on the next fetch; Cloudflare
+   deploys come from his machine, so they are unaffected.
+3. Cloudflare: turn off JavaScript Detections (Security, Bots) if he does not use
+   bot rules, and keep one analytics product (GA4 or Cloudflare Web Analytics).
+4. Counsel: the footer's referral-benefit sentence (RESPA Section 8) and Tim's
+   dual role (broker-in-charge with an NMLS licence).
+
+**New copy he has not seen.** The rewritten sentences on the pages in the table
+above, the July report's closing box ("Get Grand Strand market numbers for any
+address." / "Ask for the numbers"), the VA hero ("No down payment, no PMI and
+reusable entitlement on a VA loan in Myrtle Beach."), the str-tools paragraph
+on the two local rules, and the healthcare hero.
+
+---
+
 ## Suggested order for the next session
 
+000000. **The audit round is on the branch, not deployed** (section "2026-10-02
+   to 10-04" above). Give him the deploy command, the four owner-only actions,
+   the two counsel questions and the found-not-fixed list. Then the dated facts
+   in that section, in date order.
 00000. **Homepage redesign candidate** (section above). Waiting for his accept
    or decline on the eighth preview: his 2026-10-01 edits, then the slow turn
    after the landing (18 degrees, stops on a drag, click, tap or tab), turning

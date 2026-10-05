@@ -725,3 +725,166 @@ the slow turn after it?"), or build the cheaper reading and say plainly which
 one it is and that the other is a short change. Read his words against every
 preview he has seen, not only the latest: a thing he liked that has since gone
 is the likelier subject of "more of that".
+
+## 92. Four lead forms said "thank you" and sent nothing (found 2026-10-01, fixed 2026-10-02)
+
+**What happened.** The listings search pop-up on every page, the "Get a
+specialized agent" form on /invest/ and /why-chapter-3/, the off-market form on
+/buyers/buying-in-myrtle-beach/ and the investor report gate on
+/invest/long-term-rental/ called `c3SendForm` without a `consent` field.
+`c3SendForm` refuses to send a lead without consent, because the CRM refuses it
+and alarms Slack. The refusal is a `console.warn`. The visitor saw the thank-you
+message every time, and no lead ever arrived. The report gate also took a phone
+number with the consent text as a plain paragraph and no box to tick.
+
+**Why the existing rules did not stop it.** `build.js` checked that a page with
+a lead form carried the TCPA text somewhere. It never checked that a form sends
+anything. The pop-up's form showed the box and refused to submit until it was
+ticked, so it looked compliant; the call itself dropped the answer.
+
+**What stops it recurring.** `build.js audit` errors on any `c3SendForm({...})`
+call without `consent`, in every page and every shared script, and on any phone
+field with no checkbox carrying the locked TCPA text after it.
+`tools/verify-lead-delivery.js` fills every lead form in a real browser, with the
+CRM answered inside the browser so no test lead is created: unticked must send
+nothing, ticked must send one lead with `consent: true`. On the old pages it
+fails five; on the fixed ones it passes all seven. The search criteria and the
+report's deal summary had the same silent loss (keys `c3SendForm` does not
+forward); they now travel in `message`.
+
+## 93. "The same company" got past a gate that knew only "under one roof" (found 2026-10-01)
+
+**What happened.** Pages said the brokerage and BrickWood were one business:
+"the same company" (four times on /buyers/relocating/), "our own mortgage team",
+"One team for real estate and financing", "A Real Deal We Underwrote", "The
+investor loan menu at BrickWood", "Equal Housing Lender". The footer on every
+page listed "DSCR financing" as a service and AI answers repeated it. A meta
+description said "From a licensed agent and MLO."
+
+**Why the existing rules did not stop it.** The gates matched phrasings, not the
+claim, and read only `<main>`. The footer, `llms.txt` and meta descriptions were
+not read for these, and the MLO check stripped tags first, which threw away
+every attribute, so a claim inside `content="..."` could never match.
+
+**What stops it recurring.** `ONE_BUSINESS` in `build.js` holds the claim in
+nine shapes and reads body, title, descriptions and schema on every page, plus
+the header and footer partials and `llms.txt`; a service list that offers
+financing is an error. `MLO_UNNAMED_REGEX` reads titles and descriptions. Every
+pattern fires on the sentence that shipped (run against the baseline commit
+04fb120) and on nothing on the fixed site.
+
+## 94. Calculators opened with a 7% rate (found 2026-10-01)
+
+**What happened.** /buyers/cost-to-own/ opened with 20% down and a 7% rate,
+/buyers/closing-costs/ with 10% and 6.5%, the DSCR calculator with a $1,650 loan
+payment, and the rental analyzer showed 25 and 7.5 as hint text. Non-negotiable
+3 says the site never states a rate or a payment.
+
+**Why the existing rules did not stop it.** The Reg Z gate strips calculator
+inputs before it reads the prose, on purpose, so a visitor's typed numbers never
+trip it. That also hid the numbers the page typed in for them.
+
+**What stops it recurring.** `build.js audit` reads the inputs themselves: a
+rate, down payment or loan payment field that opens with a number (value or
+placeholder, zero excepted) is an error, down payments allowed only on the four
+investor-financing pages. The calculators ask for the visitor's own numbers
+before they show a loan line.
+
+## 95. Rebuilding a relocation page put Devin's NMLS back (2026-10-02)
+
+**What happened.** After editing two sentences in a relocation spec I rebuilt
+the page, and the rebuilt page carried "licensed MLO, NMLS 2721275" twice, Tim's
+schema name without "Timothy", and three older copy fixes undone. On 2026-09-07
+the built pages had been corrected by hand and the 22 specs never were, so every
+rebuild quietly reverted them. The same class Blog-Brain's study found ("8 of
+23 specs cannot rebuild their pages").
+
+**Why the existing rules did not stop it.** The rule "a spec-generated page is
+only ever fixed in its spec" was broken under time pressure on 2026-09-07, and
+nothing compares a spec's output with the page it built. Preflight would have
+caught the NMLS number, but not the reverted copy.
+
+**What stops it recurring.** All 22 specs and the generator now match the built
+pages: rebuilding every spec changes no page that was not edited. Before you
+rebuild, and after you hand-fix any generated page, rebuild every spec in that
+family and diff against git: a page you did not edit must come out identical.
+
+## 96. Brass text failed contrast on every page, and my first fix broke the navy heroes (2026-10-02)
+
+**What happened.** Brass `#c4783a` on the light grounds measures about 3:1;
+body-size text needs 4.5:1. It sat in "Known accepted exceptions" since August,
+on 131 of 131 pages (about 2,175 text elements at each width, measured with
+`tools/contrast-scan.js`). The fix moves brass text to brass ink on light
+grounds and brass-2 on navy. My first pass of that rule turned the breadcrumbs
+on the navy heroes (`.path-hero`, a section with an inline navy background) to
+brass ink, 2.85:1, worse than before. Rule 3 again: a fix for one ground made
+the other ground fail.
+
+**Also, rule 4.** The scanner's first runs reported invisible text that was not
+there: carousel slides clipped out of view, white chart labels on SVG bars (the
+bar is a fill, not a background), and a button in a sticky panel measured where
+it had been, not where it was. Each was fixed in the scanner and checked against
+a case that must fail.
+
+**What stops it recurring.** `tools/contrast-scan.js` measures every visible
+text element on every page at 1280 and 375, compositing what the browser
+actually stacks behind the text. Run it after any colour change; it must report
+0 failing elements. PLAYBOOK: brass ink for text on light grounds, brass-2 on
+navy, never text below 72% opacity.
+
+## 97. The audit's corrections were partly wrong too (2026-10-04)
+
+**What happened.** The audit gave a "what is true" for each of its 15 facts, and
+two of those were themselves wrong or out of date by the time they were checked.
+"A rental's tax is 3.3 to 4.3 times a primary home's": 4.3 was the 2025 Myrtle
+Beach figure; the city cut its primary-home credit for 2026 (67.45 to 53.4 percent
+of the city tax), so it is 3.8, and North Myrtle Beach (3.0) and Conway (2.5) were
+never in the range. "McLeod Carolina Forest opened": it held a ribbon cutting on
+August 27, 2026 and had not announced an opening by October 4. My own research
+brief also described the Myrtle Beach conversion overlay backwards; the source
+(Ordinance 2024-69, Section 1808) caught it.
+
+**Why it nearly shipped.** An audit reads as a source. It is not one: it is a
+second-hand summary with its own read date.
+
+**What stops it recurring.** Rule 8 covers the corrector as well as the site:
+re-open the primary source behind every correction before writing it, and write
+the town-by-town number rather than the range. Each corrected fact is now a
+`KNOWN_WRONG` entry in `build.js` that fires on the old sentence (checked on the
+04fb120 baseline, where every entry fires) and on nothing on the fixed site.
+
+## 98. A weekly mortgage rate shipped as news, past the rate gate (found 2026-10-01)
+
+**What happened.** The July market report said "the national 30-year fixed
+averaged 6.55 percent", in the body, the FAQ and the schema. The VA page said a
+loan "might otherwise qualify at 6.5%" and that help "raises your interest rate
+by an average of 2 percentage points". Non-negotiable 3 bans every one of them.
+
+**Why the existing rules did not stop it.** The rate gate knew two shapes, "N%
+interest" and "interest rate of/at/from N". A rate quoted as market news, or
+after "qualify at" or "by", has neither shape.
+
+**What stops it recurring.** `RATE_NUM_MORE` in `build.js`: a percentage near
+"30-year fixed", a decimal percentage in a sentence about mortgage or interest
+rates, "interest rate by N", and "qualify at N%". It fires on both pages at
+04fb120 and on nothing now. A market report says rates are published weekly and
+sends the reader to a lender for a quote.
+
+## 99. Regenerating a spec page would have moved its publication date and dropped two links (2026-10-04)
+
+**What happened.** `tools/mkpage.js` sets `datePublished` to today when the spec
+has none, and 20 of 23 specs had none. Six pages already carry 2026-09-16, the
+day they were rebuilt, as their publication date. Separately, `/invest/where-to-buy/`
+had two links added by hand in later batches that its spec could not produce
+(one sits inside an FAQ answer, which the generator keeps plain), and the
+generator now refuses a word ("sets") that the spec still used. A blind rebuild
+would have dropped both links. And my own hand edit there sliced the page at a
+position found before an earlier replacement shortened it, which wrote `<<a` and
+`./p>`; the diff against the spec output showed it.
+
+**What stops it recurring.** `mkpage.js` now keeps the `datePublished` of the
+page already on disk. Before rebuilding any spec page, rebuild it unchanged and
+diff it against git: a page you did not edit must come out identical, and any
+difference is a hand edit to port into the spec first. The six 2026-09-16 dates
+are left as they are: the real first-publication dates come from his deploy
+history, not from git (rule 5).

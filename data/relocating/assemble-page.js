@@ -111,7 +111,8 @@ replaceLd('Article', {
   '@context': 'https://schema.org', '@type': 'Article', '@id': url + '#article',
   headline: deEnt(spec.headline), description: deEnt(spec.description), url,
   author: { '@id': ORIGIN + '/about/#devin-day' },
-  reviewedBy: { '@type': 'Person', name: 'Tim Nash', jobTitle: 'Broker-in-Charge' },
+  /* formal name in schema, the byline form as alternateName (owner, 2026-09-03) */
+  reviewedBy: { '@type': 'Person', name: 'Timothy Nash', alternateName: 'Tim Nash', jobTitle: 'Broker-in-Charge' },
   publisher: { '@id': ORIGIN + '/#org' },
   datePublished, dateModified, inLanguage: 'en-US', image: ORIGIN + '/og-image.jpg',
   mainEntityOfPage: { '@id': url + '#webpage' },
@@ -160,6 +161,18 @@ if (s.includes(`'cost-to-own')`)) leaks.push("donor c3SendForm page name");
 if (leaks.length) { console.error('Donor identity survived: ' + leaks.join(', ')); process.exit(1); }
 if (!s.includes(`<link rel="canonical" href="${url}">`)) throw new Error('canonical not set');
 
+/* --check: compare with the page on disk instead of writing it. A page that was
+ * fixed by hand and not in its spec reverts on the next rebuild; on 2026-10-02 a
+ * rebuild put back a banned licence claim that way (MISTAKES 95). build.js check
+ * runs this for every spec. */
+if (process.argv.includes('--check')) {
+  const cur = fs.existsSync(outFile) ? fs.readFileSync(outFile, 'utf8').replace(/\r\n/g, '\n') : '';
+  const want = s.replace(/\r\n/g, '\n');
+  if (cur === want) { console.log(`in sync ${path.relative(ROOT, outFile)}`); process.exit(0); }
+  let i = 0; while (i < cur.length && cur[i] === want[i]) i++;
+  console.log(`DRIFT ${path.relative(ROOT, outFile)} at char ${i}: page "${cur.slice(i, i + 70).replace(/\s+/g, ' ')}" spec "${want.slice(i, i + 70).replace(/\s+/g, ' ')}"`);
+  process.exit(1);
+}
 fs.mkdirSync(path.dirname(outFile), { recursive: true });
 fs.writeFileSync(outFile, s);
 console.log(`Wrote ${path.relative(ROOT, outFile)} (${(s.length / 1024).toFixed(0)}KB) datePublished=${datePublished} dateModified=${dateModified}`);

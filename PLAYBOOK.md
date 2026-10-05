@@ -554,6 +554,14 @@ advertisement.
 string byte-for-byte (see Locked strings below), as an unchecked checkbox.
 → *Verify:* `audit` fails if a form exists without the exact string.
 
+**A15a. Every lead call sends consent (2026-10-02, MISTAKES 92).** `c3SendForm`
+drops a lead without `consent` after the visitor has seen "thank you". Pass it
+from the box: `consent: box.checked ? 'yes' : 'no'`. Anything else you want the
+team to read goes in `message`; other keys never reach the CRM.
+→ *Verify:* `audit` errors on any `c3SendForm({...})` call without `consent` and
+on any phone field without the consent checkbox after it. Then run
+`tools/verify-lead-delivery.js`: unticked sends nothing, ticked sends one lead.
+
 **A16. RESPA AfBA.** Any page referring to BrickWood in the body carries the
 affiliated-business disclosure inline, not only in the footer.
 → *Verify:* `audit` fails on a BrickWood body link with no disclosure.
@@ -859,7 +867,16 @@ construction" for the interstate (it has no contract).
 # LANE B — editing an existing page
 
 1. State what you are changing and why, in one sentence.
-2. Make the edit.
+2. Make the edit. **A generated page is edited in its spec**
+   (`specs/*.js` with `tools/mkpage.js`, `data/relocating/pages/*.js` with
+   `data/relocating/assemble-page.js`). Before the edit, rebuild the page from
+   its unchanged spec and diff it against git: a page you did not edit must come
+   out identical. A difference is a hand edit; port it into the spec first, or
+   record why it cannot be (MISTAKES 95, 99). `build.js check` does this for the
+   relocation family; for `specs/*.js` you do it by hand.
+   **A fact correction is checked at its primary source, not taken from the
+   report that flagged it** (MISTAKES 97), and gets a `KNOWN_WRONG` entry in
+   `build.js` that fires on the old sentence and on nothing else.
 3. **Blast radius:** did you touch `partials/*` or `assets/*`? If yes, you just
    changed *every page*. Run `stitch` and/or `rehash`, then verify a sample of
    at least three pages in the browser, not just the one you were thinking about.
@@ -882,9 +899,16 @@ construction" for the interstate (it has no contract).
 > rates may apply. Reply HELP for help, STOP to opt out. Consent is not a
 > condition of any purchase.
 
-**Identity:** Chapter3 Realty LLC · BrickWood Mortgage NMLS #189497 ·
-Devin Day NMLS 2721275 · Timothy Nash, BIC, SC licence 43182,
-NMLS 252563 · Paul Hankins NMLS 281393 · 854.333.2135 · Murrells Inlet, SC 29576
+**Identity:** Chapter3 Realty Corp, SC real estate company licence 28849 ·
+BrickWood Mortgage NMLS #189497 · Timothy Nash, Broker-in-Charge, SC licence
+43182 · 854.333.2135 · 573 Vista Drive, Murrells Inlet, SC 29576
+
+Never on the site: the Operations Officer's NMLS number or any MLO claim (A17);
+Tim's NMLS number 252563 (owner, 2026-10-02, off until counsel has reviewed the
+dual role). Paul Hankins is off the site (RESTORE-PAUL.md). `build.js` errors on
+both numbers anywhere in a page. Chapter3 and BrickWood are separate companies:
+"our lending partner", never "the same company", "our own mortgage team" or
+"one team for real estate and financing" (MISTAKES 93).
 
 **Colour contrast traps.** `--ivory #f4efe8` and `--navy #1c2028` are the two
 backgrounds, and **the site uses BOTH for heroes**:
@@ -902,7 +926,18 @@ afterwards. The static gate only pins the two known-bad `.detail-hero`
 patterns; the browser check in Phase 8 is what covers the general case.
 
 `--brass #c4783a` on ivory measures 3.01:1 — acceptable for large bold text,
-below AA for body text.
+below AA for body text. **Text colour by ground (2026-10-02, MISTAKES 96):**
+on a light ground write `color:var(--brass-ink)` (#91592b, 4.6 to 5.7:1); on navy
+write `color:var(--brass-2)` (#d4894a, 5.8:1); keep `--brass` for large headline
+words, rules, icons and button fills; never set text below 72% opacity. The
+stylesheet now catches the old inline `color:var(--brass)` on both grounds, but
+the spec should still be right. Measure with `tools/contrast-scan.js` (every
+page, 1280 and 375); it must report 0 failing elements.
+
+**The ground (owner, 2026-10-02).** Every page but the homepage sits on a very
+light creme, `--ivory #fbf8f2` and `--ivory-2 #f4efe5`, with the ink `#1c2028`
+for body text. The homepage keeps the warm cream `#f4efe8`. Both are set once,
+on `body:not(.home)`, in the stylesheet.
 
 **Dates.** Every page shows `Updated <date>` in its byline, and that date equals
 the page's schema `dateModified` and its sitemap `lastmod`. All three come from
@@ -919,8 +954,6 @@ These are current `audit` warnings that are deliberately not fixed. Do not
 - **11 legacy pages state a down-payment percentage** (`/buyers/programs/`,
   `/buyers/va-loans/`, `/invest/strategies/dscr-loans/`, and others). Reg Z
   exposure. Pending attorney review. New pages must not add to this list.
-- **`--brass` link colour fails AA at body size sitewide.** Brand-level
-  decision, not a page defect.
 - **`/sell/` ships a stale duplicate JS bundle** (`s.c7400d9a1d.js`, 35KB)
   containing an old `recalcLtr` with the vacancy double-subtraction bug. The
   page renders no calculator UI, so no wrong number is shown to a user, but the

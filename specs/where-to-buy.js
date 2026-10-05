@@ -26,6 +26,7 @@ const SC61 = "https://www.scstatehouse.gov/code/t06c001.php";
 
 module.exports = {
   url: "/invest/where-to-buy/",
+  datePublished: "2026-09-06",
   title: "Where to Buy a Rental on the Grand Strand | Chapter3",
   description: "Nine Grand Strand areas compared for a rental investor: which county, whether nightly rentals are allowed, who licenses it, and what local taxes apply. By strategy.",
   ogTitle: "Where to buy a rental on the Grand Strand, by strategy",
@@ -53,7 +54,7 @@ module.exports = {
       ]) +
       h.p(`Two things hold across every row. ${h.ext(SC61, "State law caps")} the combined county and city accommodations tax at 3 percent in any one place. The state's own tax on stays under 90 days applies everywhere. ${h.a("/invest/str-rules/", "The rules by city, in full")}. ${h.a("/invest/accommodations-tax/", "Who remits which tax")}.`) },
     { h2: "What decides the nightly rental rule at an address?", html: (bg) =>
-      h.p("Three layers, checked in this order. The state sets the tax and the 90-day line, and it does not ban nightly rentals anywhere. The city or the county sets the zoning. The recorded covenants of the subdivision or the building can bar what the zoning allows, and often do.") +
+      h.p("Three layers, checked in this order. The state taxes stays under 90 days, and it does not ban nightly rentals anywhere. The zoning comes from the city or the county. The recorded covenants of the subdivision or the building can bar what the zoning allows, and often do.") +
       h.p(`The state layer could change. ${h.ext("https://www.scstatehouse.gov/sess126_2025-2026/bills/3861.htm", "One bill in committee")} would stop cities and counties from banning short-term rentals. ${h.ext("https://www.scstatehouse.gov/sess126_2025-2026/bills/442.htm", "Another")} would confirm their power to ban them. Either one rewrites the table. North Myrtle Beach has held workshops on its own rules since late 2024 and adopted none by the date on this page.`) +
       h.cta("Want the row checked for one address?", "Send the address and the plan. We check the zoning, the covenants, the license and the tax lines for that property.", "Send the address", RTN, bg) },
     { h2: "Which county is the address in, and why does it matter?", html:
@@ -63,8 +64,8 @@ module.exports = {
       h.p(`By address, never by area. ${h.ext("https://msc.fema.gov/portal/home", "The federal flood map service")} takes an address and returns the map. ${h.ext("https://www.horrycountysc.gov/online-services/fema-flood-maps/", "Horry County")} links the same maps and runs a parcel search. ${h.ext("https://gtcountysc.gov/424/Flood-Protection", "Georgetown County")} lists four ways, including its building department at 129 Screven Street. Two houses on one street can sit in different zones. ${h.a("/buyers/coastal-insurance/", "What the zone does to the insurance bill")}.`) },
     { h2: "Where does each strategy fit?", html: (bg) =>
       h.p(`Nightly: North Myrtle Beach, the resort zones of Myrtle Beach, Garden City Beach and Pawleys Island, in a building or a subdivision whose documents allow it. ${h.a("/submarkets/north-myrtle-beach/", "North Myrtle Beach")}. ${h.a("/submarkets/garden-city/", "Garden City")}. ${h.a("/submarkets/pawleys-island/", "Pawleys Island")}.`) +
-      h.p(`Monthly, furnished: within a short drive of a hospital. Carolina Forest and Socastee serve Grand Strand Medical Center, and Murrells Inlet serves Tidelands Waccamaw. Little River serves McLeod Health Seacoast, and Conway serves Conway Medical Center and ${h.a("/invest/student-rentals/", "the university")}. ${h.a("/submarkets/carolina-forest/", "Carolina Forest")}. ${h.a("/submarkets/murrells-inlet/", "Murrells Inlet")}. ${h.a("/submarkets/little-river/", "Little River")}.`) +
-      h.p(`Yearly, unfurnished: Conway, Carolina Forest, Socastee, Little River and Longs, where the price of entry is lowest and the tenants stay year round. ${h.a("/submarkets/conway/", "Conway")}. ${h.a("/market-reports/", "The market report")} lists the median sale price by area each month.`) +
+      h.p(`Monthly, furnished: within a short drive of a hospital. Carolina Forest and Socastee serve Grand Strand Medical Center, and Murrells Inlet serves Tidelands Waccamaw. Little River serves McLeod Health Seacoast, and Conway serves Conway Medical Center and <a href="/invest/student-rentals/" style="color:var(--brass);font-weight:600;text-decoration:none">the university</a>. ${h.a("/submarkets/carolina-forest/", "Carolina Forest")}. ${h.a("/submarkets/murrells-inlet/", "Murrells Inlet")}. ${h.a("/submarkets/little-river/", "Little River")}.`) +
+      h.p(`Yearly, unfurnished: Conway, Carolina Forest, Socastee, Little River and Longs, where the price of entry is lowest and the tenants stay year round. ${h.a("/submarkets/conway/", "Conway")}. ${h.a("/market-reports/july-2026/", "The July 2026 market report")} lists the median sale price by area.`) +
       h.cta("Choosing between two areas?", "Send both addresses. We run the numbers for each under your plan and show which row wins.", "Send the addresses", RTN, bg) },
   ],
   faqTitle: "Where-to-buy FAQ",

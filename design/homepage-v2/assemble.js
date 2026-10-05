@@ -174,7 +174,7 @@ for (const needle of ['<div id="idxModal"', "function c3SendForm(", "var MAP={",
   if (!s.includes(needle)) throw new Error("lost: " + needle);
 }
 { // modal byte-identical
-  const grab = (x) => { const i = x.indexOf('<div id="idxModal"'); return x.slice(i, x.indexOf('<script src="/assets/s.6af7c2078d.js">', i)); };
+  const grab = (x) => { const i = x.indexOf('<div id="idxModal"'); return x.slice(i, x.indexOf('<script src="/assets/s.', i)); };   // up to the modal's script, whatever its hash
   if (grab(s) !== grab(baseLf)) throw new Error("idx modal drifted");
 }
 const TCPA = (x) => [...x.matchAll(/I consent to receive calls[^<]*/g)].map((m) => m[0]);

@@ -90,7 +90,12 @@ function build(spec) {
   if (mainStart < 0 || mainEnd < 7) throw new Error("donor main not found");
   let head = donor.slice(0, mainStart), tail = donor.slice(mainEnd);
 
-  const url = SITE + spec.url, iso = spec.datePublished || todayISO(), shown = longDate(iso);
+  /* datePublished is set once. A spec without one used to get today's date on every rebuild, so
+     regenerating a page moved its publication date (found 2026-10-04: 20 of 23 specs had none).
+     The page already on disk wins, the same rule data/relocating/assemble-page.js follows. */
+  const onDisk = path.join(ROOT, ...spec.url.split("/").filter(Boolean), "index.html");
+  const prevPub = fs.existsSync(onDisk) ? (fs.readFileSync(onDisk, "utf8").match(/"datePublished":\s*"(\d{4}-\d{2}-\d{2})"/) || [])[1] : null;
+  const url = SITE + spec.url, iso = spec.datePublished || prevPub || todayISO(), shown = longDate(iso);
   const hub = spec.hub || { name: "Invest", url: "/invest/" };
 
   /* ---- head identity ---- */

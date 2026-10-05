@@ -290,6 +290,26 @@ function check() {
     }
   }
 
+  /* ---- every relocation spec rebuilds its page exactly (MISTAKES 95) ----
+   * A generated page fixed by hand and not in its spec reverts on the next
+   * rebuild: on 2026-10-02 a rebuild put back the Operations Officer's NMLS
+   * number and three reverted copy fixes. Compare without writing anything. */
+  {
+    const specDir = path.join(__dirname, "data", "relocating", "pages");
+    const gen = path.join(__dirname, "data", "relocating", "assemble-page.js");
+    if (fs.existsSync(specDir) && fs.existsSync(gen)) {
+      const { execFileSync } = require("child_process");
+      for (const f of fs.readdirSync(specDir).filter(n => n.endsWith(".js")).sort()) {
+        try {
+          execFileSync(process.execPath, [gen, path.join(specDir, f), "--check"], { stdio: "pipe", env: Object.assign({}, process.env, { C3_NO_WRITE: "1" }) });
+        } catch (e) {
+          const out = ((e.stdout || "") + (e.stderr || "")).toString().trim().split("\n").pop();
+          errors.push(`data/relocating/pages/${f}: the spec no longer builds its page - ${out.slice(0, 220)}. Port the page's hand fix into the spec, or rebuild the page from the spec.`);
+        }
+      }
+    }
+  }
+
   let total = 0; for (const f of pages) total += fs.statSync(f).size;
   console.log(`Pages: ${pages.length} | Assets: ${assets.size} | Avg page: ${(total / pages.length / 1024).toFixed(0)}KB`);
   if (warns.length) { console.log(`\nWARN (${warns.length}) - heavy pages, not broken:`); warns.forEach((w) => console.log("  ~  " + w)); }
@@ -1331,6 +1351,50 @@ const ONE_BUSINESS = [
   [/\bEqual\s+Housing\s+Lender\b/i, false],
 ];
 const ONE_BUSINESS_LENDING = /\b(?:lender|lending|loans?|mortgage|financ\w*|BrickWood|underwrit\w*|pre-?approval)\b/i;
+/* Known-wrong facts (owner, 2026-10-02; audit 2026-10-01, each re-checked against its
+ * primary source on 2026-10-04 and recorded in HANDOFF). A wrong version that was
+ * corrected once must never be copied back from an old page or an old spec.
+ * [pattern, what is true, a pattern that makes the sentence right after all]. */
+const KNOWN_WRONG = [
+  [/Responsible Local Agent|(?:annual|short-term[- ]rental) permit[^.]{0,80}North Myrtle|North Myrtle Beach requires an annual permit/i,
+    "North Myrtle Beach requires a city business license for a short-term rental, renewed every year; there is no rental permit, inspection or local-agent rule (nmb.us/833)", /draft|proposed|workshop|not adopted|has not adopted/i],
+  [/\bstandard deduction every filer|South Carolina(?:'s|&#39;s)?\s+(?:\$[\d,]+\s+(?:joint\s+)?)?standard deduction|\$30,000 (?:joint )?standard deduction/i,
+    "South Carolina has no standard deduction: its own deduction (up to $15,000 single, $30,000 joint) shrinks above $40,000 / $80,000 of federal AGI and is zero at $95,000 / $190,000"],
+  [/plus (?:a separate |an )?age-65 deduction|\$10,000 plus \$15,000 at 65|on top of the (?:standard|retirement) deduction/i,
+    "the age-65 deduction ($15,000) is reduced by any retirement deduction claimed: the two do not stack"],
+  [/Pawleys Island straddles?|Murrells Inlet and Pawleys Island straddle/i,
+    "the Town of Pawleys Island is entirely in Georgetown County; a Murrells Inlet mailing address (29576) can be in either county"],
+  [/^(?=.*\b(?:6 ?percent|6%|second homes?|investment property|investments|not your primary residence|owner-occupant)\b)(?=.*\bdouble\b)/i,
+    "a rental's Horry County property tax is about 2.5 to 3.8 times a primary home's on the same house (2026 levy): the 6 percent ratio is 1.5 times, and a rental also pays the school operating tax"],
+  [/\b(?:the\s+)?10(?: percent|%) lodging tax/i,
+    "lodging taxes and fees on a short-term rental inside the City of Myrtle Beach total 13 percent: 10 state-collected, 1.5 county hospitality, 1 city hospitality, 0.5 city accommodations"],
+  [/\bnot the state 30\b|\b(?:South Carolina|the state)(?:'s)?\s+(?:general\s+)?30-day/i,
+    "South Carolina's lodging tax line is 90 days (12-36-920), the same as the City of Myrtle Beach's"],
+  [/\bin deed stamps alone\b|\bbuyers?\s+(?:pays?|owes?)\s+(?:the\s+)?(?:SC\s+|South Carolina(?:'s)?\s+)?deed\s+(?:stamps|recording fee)/i,
+    "the seller pays the deed recording fee in a normal sale (12-24-20); the buyer pays it on a master-in-equity, government or retirement-plan deed", /master-in-equity|foreclosure|government|retirement/i],
+  [/\b(?:closing\s+)?attorneys?\s+(?:are|is)\s+required\s+to\s+withhold|\battorney\s+(?:must|has to)\s+withhold|\bclosing attorney remits it\b/i,
+    "the buyer must withhold for a nonresident seller (12-8-580); a closing attorney is not liable for it but sends in what it withholds"],
+  [/\b5(?:%| percent)\s+for\s+(?:entities|an entity|a company|companies)\b/i,
+    "the 5 percent nonresident withholding rate is for corporations; partnerships, trusts and estates use the top individual rate (12-8-580)"],
+  [/South Carolina\s+(?:law\s+)?requires\s+a\s+written\s+buyer(?:\s+representation)?\s+agreement|state law requires a written buyer|requires? a written[^.]{0,40}agreement before[^.]{0,30}(?:tour|show)/i,
+    "the written agreement before a tour is an industry rule applied through the MLS, not South Carolina law", /does not require|not state law|not from/i],
+  [/\b2025 ordinance\b[^.]{0,120}\b(?:convert|long-term|lodging)|\bpassed to protect lodging taxes\b/i,
+    "Myrtle Beach's short-term rental conversion overlay is Ordinance 2024-69, adopted December 10, 2024"],
+  [/Palmetto Heroes\s+(?:adds|provides|offers|gives)\b/i,
+    "the 2026 Palmetto Heroes round closed April 13, 2026; SC Housing expects the next round in the spring of 2027", /2026 round|closed|in 2026|2027/i],
+  [/\braises your (?:interest )?rate by\b|\bDPA-adjusted rate\b/i,
+    "no SC Housing source puts a number on how down payment help changes the rate, and the site never states a rate"],
+  [/\bmortgage tax credit\b|\bMortgage Credit Certificate\b|\bMCC\b/i,
+    "SC Housing's mortgage tax credit (MCC) ended June 30, 2026", /ended|no longer|ends\b/i],
+  [/\bthree (?:more )?hospitals (?:are|is) (?:being built|under construction|in progress)|\bthree more hospitals\b|\bthree more under construction\b|\bslated to open\b[^.]{0,60}(?:2026|hospital)|\bon schedule to open in 2026\b/i,
+    "McLeod's 48-bed Carolina Forest hospital held its ribbon cutting on August 27, 2026; two hospitals are under construction (South Strand, 59 beds, late 2027; Tidelands Carolina Bays, 36 beds, late 2028)", /or opening/i],
+  [/\beast of (?:US |U\.S\. |US-)?(?:Highway )?17 Business\b|\b(?:Highway|US|US-) ?17 Business\b[^.]{0,80}\b(?:wind|insur\w*|exclude)|\bwind\b[^.]{0,80}\b(?:Highway|US|US-) ?17 Business\b|\b(?:entirely )?west of the (?:Intracoastal )?(?:Waterway|waterway)\b[^.]{0,80}\b(?:outside|wind pool)|east of the Intracoastal Waterway's west bank/i,
+    "the wind pool territory where an insurer may leave wind out reaches inland to Carolina Bays Parkway and River Oaks Drive around Myrtle Beach and to the Intracoastal Waterway farther south (Order 2007-003, renewed to March 2027); the statutory line is US 17 or Bypass 17, whichever is farther west"],
+  [/\b48 hours\b[^.]{0,80}\b(?:budget|meeting|dues|raise|increase)|\b(?:budget|dues|raise|increase)\b[^.]{0,80}\b48 hours\b|\bsets that floor at 48\b|\bas little as 48 hours\b/i,
+    "the 48-hour notice before a budget vote (27-30-140) does not apply to an HOA incorporated as a nonprofit corporation; a nonprofit HOA follows its bylaws", /nonprofit/i],
+  [/\bBecause (?:they|he|she) (?:were|was) (?:a )?veterans?\b[^.]{0,80}tuition|\bEligibility depends on the service era\b/i,
+    "veterans' children get free tuition only if the veteran died in or of service, was a POW or MIA, is rated permanently and totally disabled, or holds the Medal of Honor or a combat Purple Heart (59-111-20, Act 135 of 2026)"],
+];
 /* A calculator that opens with a rate, a down payment or a loan payment filled in
  * states one (owner rule: never a payment amount or an interest rate, anywhere;
  * down payments only on the four investor-financing pages). The audit gate strips
@@ -1393,6 +1457,9 @@ const LEND_VOICE = [
 // "44% Apr" for April, and a case-insensitive match flagged all eight of them.
 const RATE_NUM_I = /\b\d+(?:\.\d+)?\s*(?:%|percent)\s*interest\b|\b(?:interest\s+rates?|mortgage\s+rates?|loan\s+rates?)\s+(?:of|at|from|as\s+low\s+as|around|near|about)\s+\d/i;
 const RATE_NUM_APR = /\b\d+(?:\.\d+)?\s*(?:%|percent)\s*APR\b|\bAPR\s+(?:of|at|from|as low as|around|near|about)\s+\d/;
+// A weekly average quoted as news is still a stated rate (the July 2026 report, the VA page's
+// "qualify at 6.5%" and "raises your interest rate by ... 2 percentage points"): 2026-10-04.
+const RATE_NUM_MORE = /\b30-year fixed\b[^.!?]{0,60}\b\d+(?:\.\d+)?\s*(?:%|percent)|\b(?:mortgage|interest)\s+rates?\b[^.!?]{0,80}\b\d+\.\d+\s*(?:%|percent)|\binterest\s+rates?\s+by\s+(?:an\s+average\s+of\s+)?\d|\bqualify\s+at\s+\d+(?:\.\d+)?\s*(?:%|percent)/i;
 const PAY_NUM = /\b(?:mortgage|loan)\s+payments?[^.!?]{0,60}\$[\d,]+|\$[\d,]+[^.!?]{0,60}\b(?:mortgage|loan)\s+payments?\b/i;
 
 // Decode named AND numeric entities. Pages use a mix of &#39; and &#x27; for the
@@ -2016,6 +2083,10 @@ function audit() {
         if (unnamed) E(`licence claim: "${unnamed[0]}" - nobody at Chapter3 is presented as a loan originator, in copy, titles, descriptions or schema (owner rules 2026-09-07 and 2026-10-02)`);
         if (TIM_NMLS_REGEX.test(s)) E("licence claim: NMLS 252563 is in the file - Tim's loan-originator licence stays off the site until counsel has reviewed the dual role (owner, 2026-10-02)");
       }
+      /* ---- known-wrong facts (owner, 2026-10-02) ---- */
+      for (const sent of claims.split(/(?<=[.!?])\s+|\n/))
+        for (const [re, truth, unless] of KNOWN_WRONG)
+          if (re.test(sent) && !(unless && unless.test(sent))) { E(`known-wrong fact: "${sent.trim().slice(0, 110)}" - ${truth}`); break; }
       /* ---- calculators open empty for rate, down payment and loan payment (owner, 2026-10-02) ---- */
       for (const m of s.matchAll(/<input\b[^>]*>/gi)) {
         const tag = m[0];
@@ -2273,7 +2344,7 @@ function audit() {
         if (sOpen !== sClose) W(`${sOpen} <section> against ${sClose} </section> inside <main>`);
       }
 
-      const rm = mainProse.match(RATE_NUM_I) || mainProse.match(RATE_NUM_APR);
+      const rm = mainProse.match(RATE_NUM_I) || mainProse.match(RATE_NUM_APR) || mainProse.match(RATE_NUM_MORE);
       if (rm) E(`stated interest rate in copy: "${rm[0]}" - never state a rate (non-negotiable 3); keep financing qualitative`);
       // $0 is a calculator's zero state, not an advertised payment.
       const pm = [...mainProse.matchAll(new RegExp(PAY_NUM.source, "gi"))]

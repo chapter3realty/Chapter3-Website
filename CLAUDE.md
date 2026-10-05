@@ -112,7 +112,9 @@ matter, not sentence length. That has happened here. See PLAYBOOK A11a.
 
 - **Chapter3 Realty Corp** — South Carolina real estate company licence **28849**.
   Shown in the footer partial and on /about/.
-- **Timothy Nash** — Broker-in-Charge, SC licence 43182, NMLS 252563.
+- **Timothy Nash** — Broker-in-Charge, SC licence 43182, NMLS 252563. **His NMLS
+  number and any loan-originator line stay off the site until counsel has
+  reviewed the dual role (owner, 2026-10-02); `build.js` errors on the number.**
   30+ years on the Grand Strand. Does the CMAs. **Formal name in schema and
   in the footer licence line only. Every visible byline and every mention in
   body copy says "Tim Nash"; the schema carries `alternateName: "Tim Nash"`

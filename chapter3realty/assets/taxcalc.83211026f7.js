@@ -395,3 +395,121 @@
 
   root.C3TAX = { RULES: RULES, calc: calc, bracketTax: bracketTax, retirement: retirement, example: example, EXAMPLES: EXAMPLES, CHEAPER: CHEAPER, sciad: sciad, taxableSS: taxableSS };
 })(typeof window !== 'undefined' ? window : globalThis);
+
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var wrap=$('txcWrap'), st=$('txcState');
+  if(!wrap||!st||!window.C3TAX){return;}
+  var T=window.C3TAX, mfj=true, is65=false, localChoice=null, touched={};
+  var FIELDS=['txcWages','txcPension','txcSS','txcMil','txcHomeNow','txcHomeHere'];
+  var KEYS={txcWages:'wages',txcPension:'pension',txcSS:'ss',txcMil:'military',txcHomeNow:'homeNow',txcHomeHere:'homeHere'};
+
+  function money(x){return '$'+Math.round(x).toLocaleString('en-US');}
+  function num(el){return parseFloat((el.value||'').replace(/[^0-9.]/g,''))||0;}
+  function commas(el){var v=num(el);el.value=v?v.toLocaleString('en-US'):'';}
+  function stale(on){wrap.classList.toggle('is-stale',!!on);}
+
+  function localSeg(){
+    var L=T.RULES[st.value].local, w=$('txcLocalWrap'), seg=$('txcLocalSeg');
+    seg.innerHTML='';
+    if(!L||L.kind==='auto'){w.hidden=true;localChoice=null;return;}
+    w.hidden=false;
+    $('txcLocalQ').textContent=L.question;
+    var opts=L.kind==='yesno'?[['yes','Yes'],['no','No']]:L.options;
+    if(localChoice===null){localChoice=L.preset;}
+    opts.forEach(function(o){
+      var b=document.createElement('button');
+      b.type='button';b.textContent=o[1];b.setAttribute('aria-pressed',String(o[0]===localChoice));
+      b.addEventListener('click',function(){
+        localChoice=o[0];
+        Array.prototype.forEach.call(seg.children,function(c){c.setAttribute('aria-pressed',String(c===b));});
+        stale(true);
+      });
+      seg.appendChild(b);
+    });
+  }
+
+  function read(){
+    var v={state:st.value,mfj:mfj,is65:is65,localChoice:localChoice};
+    FIELDS.forEach(function(id){v[KEYS[id]]=num($(id));});
+    return v;
+  }
+
+  function fill(ex){
+    FIELDS.forEach(function(id){
+      var el=$(id), val=ex[KEYS[id]];
+      el.value=val?val.toLocaleString('en-US'):'';
+      el.classList.add('is-example');
+    });
+    touched={};
+  }
+
+  function render(v,isExample){
+    var r=T.calc(v), R=T.RULES[v.state];
+    $('txcCap').textContent=isExample?('Example: a couple leaving '+R.name):'Your numbers, estimated';
+    $('txcNowH').textContent=R.name;
+    $('txcNowInc').textContent=money(r.now.income);
+    $('txcHereInc').textContent=money(r.here.income);
+    $('txcNowProp').textContent=money(r.now.property);
+    $('txcHereProp').textContent=money(r.here.property);
+    $('txcNowTot').textContent=money(r.now.total);
+    $('txcHereTot').textContent=money(r.here.total);
+    var row=$('txcLocalRow');
+    if(r.now.local>0){row.hidden=false;$('txcLocalLab').textContent=r.now.localLabel;$('txcNowLocal').textContent=money(r.now.local);}
+    else{row.hidden=true;}
+    var d=r.difference;
+    if(d>0){
+      $('txcBig').textContent=money(d)+' less a year';
+      $('txcMo').textContent='About '+money(d/12)+' a month, in tax alone.';
+    }else if(d<0){
+      $('txcBig').textContent=money(-d)+' more a year';
+      $('txcMo').textContent='Not every move saves tax money. We would rather show you that now than after you buy.';
+    }else{
+      $('txcBig').textContent='About the same';
+      $('txcMo').textContent='The tax side is a wash here. The house price is usually where the difference shows up.';
+    }
+    var ten=$('txcTen');
+    if(d>0&&r.tenYear>0){ten.hidden=false;
+      ten.innerHTML='Ten years at today&#39;s rates: about <b>'+money(r.tenYear)+'</b>'+(r.equity>0?', tax and the house together.':'.');}
+    else{ten.hidden=true;}
+    var parts=[], pp=r.now.property-r.here.property, pi=r.now.income-r.here.income, pl=r.now.local;
+    if(pp>0)parts.push('property tax '+money(pp));
+    if(pi>0)parts.push('income tax '+money(pi));
+    if(pl>0){var ll=r.now.localLabel||'Local income tax';
+      if(!/^(New York|Yonkers)/.test(ll))ll=ll.charAt(0).toLowerCase()+ll.slice(1);
+      parts.push(ll+' '+money(pl));}
+    var line='';
+    if(parts.length)line='Where you save: '+parts.join(', ')+' a year';
+    if(r.equity>0)line+=(line?', plus about ':'Where you save: about ')+'<b>'+money(r.equity)+'</b> on the house, and a smaller loan with it';
+    if(line)line+='.';
+    if(r.cheaper.gas&&r.cheaper.goods)line+=' Groceries and the gas tax are lower here too.';
+    else if(r.cheaper.goods)line+=' Groceries cost less here too.';
+    else if(r.cheaper.gas)line+=' The gas tax is lower here too.';
+    if(r.propNote)line+=(line?' ':'')+r.propNote;
+    $('txcFrom').innerHTML=line;
+    var note=R.local&&R.local.note?' '+R.local.note:'';
+    var src=$('txcSrc');
+    if(note&&src.getAttribute('data-base')===null){src.setAttribute('data-base',src.textContent);}
+    stale(false);
+  }
+
+  function calculate(){render(read(),false);}
+
+  st.addEventListener('change',function(){localChoice=null;localSeg();fill(T.example(st.value));stale(true);});
+  $('txcSingle').addEventListener('click',function(){mfj=false;this.setAttribute('aria-pressed','true');$('txcJoint').setAttribute('aria-pressed','false');stale(true);});
+  $('txcJoint').addEventListener('click',function(){mfj=true;this.setAttribute('aria-pressed','true');$('txcSingle').setAttribute('aria-pressed','false');stale(true);});
+  $('txcAgeNo').addEventListener('click',function(){is65=false;this.setAttribute('aria-pressed','true');$('txcAgeYes').setAttribute('aria-pressed','false');stale(true);});
+  $('txcAgeYes').addEventListener('click',function(){is65=true;this.setAttribute('aria-pressed','true');$('txcAgeNo').setAttribute('aria-pressed','false');stale(true);});
+  FIELDS.forEach(function(id){
+    var el=$(id);
+    el.addEventListener('input',function(){el.classList.remove('is-example');touched[id]=true;stale(true);});
+    el.addEventListener('blur',function(){commas(el);});
+  });
+  $('txcGo').addEventListener('click',calculate);
+  $('txcReset').addEventListener('click',function(){localChoice=null;localSeg();fill(T.example(st.value));render(T.example(st.value),true);});
+
+  localSeg();
+  var ex=T.example(st.value);
+  fill(ex);
+  render(ex,true);
+})();

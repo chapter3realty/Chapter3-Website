@@ -184,6 +184,7 @@ const T_STRAT = h.table(["Strategy", "The waiting period"], [
 
 module.exports = {
   url: "/invest/how-long-to-hold/",
+  datePublished: "2026-09-16",
   title: "How Long to Hold a Myrtle Beach Rental | Chapter3",
   description: "How long to hold a Myrtle Beach rental: the appreciation that pays the costs back, Zillow price history by area since 2001, and the tax and loan waiting periods.",
   ogTitle: "How long should you hold a Myrtle Beach rental before selling?",
