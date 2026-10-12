@@ -1,0 +1,482 @@
+{
+  "_comment": "Map points for the four 55+ community pages, batch 2026-10-a. Researched 2026-10-07. Coordinates are WGS84 (lat, lon). Community points are the same reference points the fact ledgers use for every distance. Drive times are OSRM (router.project-osrm.org, OpenStreetMap roads) estimates without traffic; minutes over 10 are rounded to the nearest 5. The drive rows are in each ledger as '(added 2026-10-07, drive)' and are not verified yet. OpenStreetMap data (c) OpenStreetMap contributors, ODbL.",
+  "as_of": "2026-10-07",
+  "communities": [
+    {
+      "slug": "del-webb-north-myrtle-beach",
+      "name": "Del Webb North Myrtle Beach",
+      "town": "North Myrtle Beach",
+      "lat": 33.821769,
+      "lon": -78.700908,
+      "point": "Amenity center and HOA office, 1285 Possum Trot Road, North Myrtle Beach, SC 29582",
+      "source": "Horry County GIS address points (layer 22), county address point for 1285 POSSUM TROT RD; same point as the ledger reference point",
+      "source_url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/22/query?where=ADDRESS%3D%271285+POSSUM+TROT+RD%27&outFields=ADDRESS%2CCITY%2CZIPCODE%2CPIN&returnGeometry=true&outSR=4326&f=json",
+      "drives": [
+        {
+          "to": "14th Avenue South beach access, North Myrtle Beach",
+          "to_id": "beach_dwnmb",
+          "kind": "beach",
+          "minutes": 4,
+          "miles": 1.0,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.700908,33.821769;-78.693492,33.810597?overview=false"
+        },
+        {
+          "to": "Kroger, 781 Main Street, North Myrtle Beach",
+          "to_id": "groc_dwnmb",
+          "kind": "grocery",
+          "minutes": 6,
+          "miles": 2.2,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.700908,33.821769;-78.679975,33.826528?overview=false"
+        },
+        {
+          "to": "McLeod Health Seacoast, Little River",
+          "to_id": "hosp_mcleod",
+          "kind": "hospital",
+          "minutes": 10,
+          "miles": 5.6,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.700908,33.821769;-78.663522,33.86567?overview=false"
+        },
+        {
+          "to": "Myrtle Beach International Airport (1100 Jetport Road)",
+          "to_id": "airport",
+          "kind": "airport",
+          "minutes": 35,
+          "miles": 19.3,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.700908,33.821769;-78.924023,33.6825?overview=false"
+        },
+        {
+          "to": "Myrtle Beach Boardwalk",
+          "to_id": "boardwalk",
+          "kind": "boardwalk",
+          "minutes": 30,
+          "miles": 15.0,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.700908,33.821769;-78.881111,33.689765?overview=false"
+        },
+        {
+          "to": "Barefoot Landing",
+          "to_id": "barefoot",
+          "kind": "town",
+          "minutes": 9,
+          "miles": 3.5,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.700908,33.821769;-78.74244,33.799875?overview=false"
+        }
+      ]
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "name": "Del Webb at Grande Dunes",
+      "town": "Myrtle Beach",
+      "lat": 33.749305,
+      "lon": -78.842661,
+      "point": "Welcome center and amenity center, 6201 Marina Parkway, Myrtle Beach, SC 29572",
+      "source": "Horry County GIS address points (layer 22), county address point for 6201 MARINA PKY, on the association's amenity parcel (PIN 42101020001)",
+      "source_url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/22/query?where=ADDRESS%3D%276201+MARINA+PKY%27&outFields=ADDRESS%2CCITY%2CZIPCODE%2CPIN&returnGeometry=true&outSR=4326&f=json",
+      "drives": [
+        {
+          "to": "Highland Way beach access, Myrtle Beach",
+          "to_id": "beach_dwgd",
+          "kind": "beach",
+          "minutes": 4,
+          "miles": 1.4,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.842661,33.749305;-78.82957,33.73355?overview=false"
+        },
+        {
+          "to": "Food Lion, 6103 N Kings Hwy, Myrtle Beach",
+          "to_id": "groc_dwgd",
+          "kind": "grocery",
+          "minutes": 4,
+          "miles": 1.2,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.842661,33.749305;-78.832923,33.736318?overview=false"
+        },
+        {
+          "to": "Grand Strand Medical Center, Myrtle Beach",
+          "to_id": "hosp_gsmc",
+          "kind": "hospital",
+          "minutes": 6,
+          "miles": 2.3,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.842661,33.749305;-78.820016,33.758542?overview=false"
+        },
+        {
+          "to": "Myrtle Beach International Airport (1100 Jetport Road)",
+          "to_id": "airport",
+          "kind": "airport",
+          "minutes": 20,
+          "miles": 9.4,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.842661,33.749305;-78.924023,33.6825?overview=false"
+        },
+        {
+          "to": "Myrtle Beach Boardwalk",
+          "to_id": "boardwalk",
+          "kind": "boardwalk",
+          "minutes": 15,
+          "miles": 6.3,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.842661,33.749305;-78.881111,33.689765?overview=false"
+        },
+        {
+          "to": "Broadway at the Beach",
+          "to_id": "broadway",
+          "kind": "town",
+          "minutes": 8,
+          "miles": 3.7,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.842661,33.749305;-78.880761,33.71627?overview=false"
+        }
+      ]
+    },
+    {
+      "slug": "myrtle-trace",
+      "name": "Myrtle Trace",
+      "town": "Conway",
+      "lat": 33.778502,
+      "lon": -78.996618,
+      "point": "HOA address, 101 Myrtle Trace Drive, Conway, SC 29526 (beside the HOA's recreation parcel)",
+      "source": "U.S. Census Bureau Geocoder, match for 101 MYRTLE TRACE DR, CONWAY, SC, 29526 (an address-range estimate). The county address layer has no point for 101; its nearest, 106 and 107 Myrtle Trace Dr, are about 60 m away.",
+      "source_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=101+Myrtle+Trace+Dr%2C+Conway%2C+SC+29526&benchmark=Public_AR_Current&format=json",
+      "drives": [
+        {
+          "to": "City of Myrtle Beach access 'MYRTLE BEACH 40' (state list)",
+          "to_id": "beach_mt",
+          "kind": "beach",
+          "minutes": 15,
+          "miles": 9.8,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.996618,33.778502;-78.880438,33.690692?overview=false"
+        },
+        {
+          "to": "Walmart Supercenter, 151 Myrtle Ridge Drive, Conway",
+          "to_id": "groc_mt",
+          "kind": "grocery",
+          "minutes": 3,
+          "miles": 1.0,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.996618,33.778502;-78.989089,33.777583?overview=false"
+        },
+        {
+          "to": "Conway Medical Center",
+          "to_id": "hosp_cmc",
+          "kind": "hospital",
+          "minutes": 3,
+          "miles": 0.8,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.996618,33.778502;-79.001894,33.785483?overview=false"
+        },
+        {
+          "to": "Myrtle Beach International Airport (1100 Jetport Road)",
+          "to_id": "airport",
+          "kind": "airport",
+          "minutes": 20,
+          "miles": 10.4,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.996618,33.778502;-78.924023,33.6825?overview=false"
+        },
+        {
+          "to": "Myrtle Beach Boardwalk",
+          "to_id": "boardwalk",
+          "kind": "boardwalk",
+          "minutes": 15,
+          "miles": 9.9,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.996618,33.778502;-78.881111,33.689765?overview=false"
+        },
+        {
+          "to": "Conway Riverwalk (Riverwalk Park)",
+          "to_id": "riverwalk",
+          "kind": "town",
+          "minutes": 15,
+          "miles": 6.0,
+          "query": "https://router.project-osrm.org/route/v1/driving/-78.996618,33.778502;-79.043907,33.828865?overview=false"
+        }
+      ]
+    },
+    {
+      "slug": "seasons-at-prince-creek-west",
+      "name": "Seasons at Prince Creek West",
+      "town": "Murrells Inlet",
+      "lat": 33.586369,
+      "lon": -79.07094,
+      "point": "Clubhouse parcel, 130 Grand Cypress Way, Murrells Inlet, SC 29576",
+      "source": "Horry County GIS address points (layer 22), county address point for 130 GRAND CYPRESS WAY, on the amenity parcel (PIN 46802030007)",
+      "source_url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/22/query?where=ADDRESS%3D%27130+GRAND+CYPRESS+WAY%27&outFields=ADDRESS%2CCITY%2CZIPCODE%2CPIN&returnGeometry=true&outSR=4326&f=json",
+      "drives": [
+        {
+          "to": "Atlantic Avenue boardwalk access, Garden City",
+          "to_id": "beach_spcw",
+          "kind": "beach",
+          "minutes": 10,
+          "miles": 6.0,
+          "query": "https://router.project-osrm.org/route/v1/driving/-79.07094,33.586369;-79.000967,33.578363?overview=false"
+        },
+        {
+          "to": "Publix, 11920 Highway 707 (Prince Creek Village Center) (Prince Creek Village), Murrells Inlet",
+          "to_id": "groc_spcw",
+          "kind": "grocery",
+          "minutes": 5,
+          "miles": 1.4,
+          "query": "https://router.project-osrm.org/route/v1/driving/-79.07094,33.586369;-79.054739,33.585804?overview=false"
+        },
+        {
+          "to": "Tidelands Waccamaw Community Hospital, Murrells Inlet",
+          "to_id": "hosp_tidelands",
+          "kind": "hospital",
+          "minutes": 8,
+          "miles": 4.0,
+          "query": "https://router.project-osrm.org/route/v1/driving/-79.07094,33.586369;-79.041426,33.559617?overview=false"
+        },
+        {
+          "to": "Myrtle Beach International Airport (1100 Jetport Road)",
+          "to_id": "airport",
+          "kind": "airport",
+          "minutes": 25,
+          "miles": 15.7,
+          "query": "https://router.project-osrm.org/route/v1/driving/-79.07094,33.586369;-78.924023,33.6825?overview=false"
+        },
+        {
+          "to": "Myrtle Beach Boardwalk",
+          "to_id": "boardwalk",
+          "kind": "boardwalk",
+          "minutes": 25,
+          "miles": 16.6,
+          "query": "https://router.project-osrm.org/route/v1/driving/-79.07094,33.586369;-78.881111,33.689765?overview=false"
+        },
+        {
+          "to": "Murrells Inlet MarshWalk",
+          "to_id": "marshwalk",
+          "kind": "town",
+          "minutes": 10,
+          "miles": 4.4,
+          "query": "https://router.project-osrm.org/route/v1/driving/-79.07094,33.586369;-79.031823,33.557878?overview=false"
+        }
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "beach_dwnmb",
+      "name": "14th Avenue South beach access, North Myrtle Beach",
+      "kind": "beach access",
+      "nearest_for": [
+        "del-webb-north-myrtle-beach"
+      ],
+      "lat": 33.810597,
+      "lon": -78.693492,
+      "source": "City of North Myrtle Beach beach access parking list (names the access); seaward end of 14th Ave S in Horry County GIS roads layer 18 (point). Del Webb NMB ledger row 41, verified.",
+      "source_url": "https://www.nmb.us/339/Beach-Accesses-Amenities"
+    },
+    {
+      "id": "beach_dwgd",
+      "name": "Highland Way beach access, Myrtle Beach",
+      "kind": "beach access",
+      "nearest_for": [
+        "del-webb-grande-dunes"
+      ],
+      "lat": 33.73355,
+      "lon": -78.82957,
+      "source": "City of Myrtle Beach public beach access list (names Highland Way); seaward end in Horry County GIS roads layer 18 (point), per the verifier's note on Del Webb at Grande Dunes ledger row 64.",
+      "source_url": "https://www.cityofmyrtlebeach.com/services/accessibility_information/index.php"
+    },
+    {
+      "id": "beach_mt",
+      "name": "City of Myrtle Beach public beach access 'MYRTLE BEACH 40' (near the downtown Boardwalk)",
+      "kind": "beach access",
+      "nearest_for": [
+        "myrtle-trace"
+      ],
+      "lat": 33.6906919,
+      "lon": -78.8804377,
+      "source": "S.C. Department of Environmental Services beach access layer, record OBJECTID 156 (last updated 2014-03-18). Myrtle Trace ledger row 67, verified.",
+      "source_url": "https://gis.des.sc.gov/gisserver/rest/services/BeachAccess/MapServer/0/query?where=OBJECTID%3D156&outFields=*&returnGeometry=true&outSR=4326&f=json"
+    },
+    {
+      "id": "beach_spcw",
+      "name": "Atlantic Avenue boardwalk beach access, Garden City",
+      "kind": "beach access",
+      "nearest_for": [
+        "seasons-at-prince-creek-west"
+      ],
+      "lat": 33.578363,
+      "lon": -79.000967,
+      "source": "Horry County beach access layer, AtlanticAveBoardWalk. Seasons ledger row 64, verified.",
+      "source_url": "https://gisportal.horrycounty.org/server/rest/services/Beach_Accesses_MIL1/MapServer/0/query?where=BeachAccessName%3D%27AtlanticAveBoardWalk%27&outFields=BeachAccessName%2CBeachAccessNumber%2CParkingSpaces&returnGeometry=true&outSR=4326&f=json"
+    },
+    {
+      "id": "boardwalk",
+      "name": "Myrtle Beach Boardwalk",
+      "kind": "landmark",
+      "lat": 33.6897648,
+      "lon": -78.8811109,
+      "source": "OpenStreetMap via Nominatim, way 931425864 'Myrtle Beach Boardwalk' (a point on the boardwalk near the SkyWheel; the boardwalk runs about 1.2 miles along the ocean)",
+      "source_url": "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&q=Myrtle+Beach+Boardwalk"
+    },
+    {
+      "id": "airport",
+      "name": "Myrtle Beach International Airport",
+      "kind": "airport",
+      "lat": 33.6825,
+      "lon": -78.924023,
+      "source": "Horry County GIS address point for 1100 JETPORT RD (the airport's address on its FAQ page). OpenStreetMap puts the terminal building at 33.68147, -78.92279.",
+      "source_url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/22/query?where=ADDRESS%3D%271100+JETPORT+RD%27&outFields=ADDRESS%2CCITY%2CZIPCODE%2CPIN&returnGeometry=true&outSR=4326&f=json"
+    },
+    {
+      "id": "broadway",
+      "name": "Broadway at the Beach",
+      "kind": "landmark",
+      "lat": 33.7162695,
+      "lon": -78.8807609,
+      "source": "OpenStreetMap via Nominatim, way 24816290 (center of the retail area)",
+      "source_url": "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&q=Broadway+at+the+Beach%2C+Myrtle+Beach"
+    },
+    {
+      "id": "barefoot",
+      "name": "Barefoot Landing (North Myrtle Beach)",
+      "kind": "landmark",
+      "lat": 33.7998752,
+      "lon": -78.7424398,
+      "source": "OpenStreetMap via Nominatim, relation 12571211 (center of the retail area)",
+      "source_url": "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&q=Barefoot+Landing%2C+North+Myrtle+Beach"
+    },
+    {
+      "id": "market_common",
+      "name": "The Market Common (Myrtle Beach)",
+      "kind": "landmark",
+      "lat": 33.6706705,
+      "lon": -78.9402132,
+      "source": "OpenStreetMap via Nominatim, relation 12559392 (center of the retail area)",
+      "source_url": "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&q=The+Market+Common"
+    },
+    {
+      "id": "riverwalk",
+      "name": "Conway Riverwalk (Riverwalk Park, downtown Conway)",
+      "kind": "landmark",
+      "lat": 33.8288646,
+      "lon": -79.0439071,
+      "source": "OpenStreetMap via Nominatim, way 606550198 'Riverwalk Park'",
+      "source_url": "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&q=Conway+Riverwalk"
+    },
+    {
+      "id": "marshwalk",
+      "name": "Murrells Inlet MarshWalk",
+      "kind": "landmark",
+      "lat": 33.5578779,
+      "lon": -79.0318225,
+      "source": "OpenStreetMap via Nominatim, way 427575453 'Murrells Inlet Marshwalk' (Georgetown County side of Murrells Inlet)",
+      "source_url": "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&q=MarshWalk%2C+Murrells+Inlet"
+    },
+    {
+      "id": "brookgreen",
+      "name": "Brookgreen Gardens",
+      "kind": "landmark",
+      "lat": 33.5211073,
+      "lon": -79.0921611,
+      "source": "OpenStreetMap via Nominatim, way 427566713",
+      "source_url": "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&q=Brookgreen+Gardens"
+    },
+    {
+      "id": "huntington",
+      "name": "Huntington Beach State Park",
+      "kind": "landmark",
+      "lat": 33.513189,
+      "lon": -79.062282,
+      "source": "OpenStreetMap via Nominatim, way 196215409",
+      "source_url": "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&q=Huntington+Beach+State+Park"
+    },
+    {
+      "id": "gd_marina",
+      "name": "Grande Dunes Marina",
+      "kind": "landmark",
+      "lat": 33.7635764,
+      "lon": -78.817664,
+      "source": "OpenStreetMap via Nominatim, node 4409794190",
+      "source_url": "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&q=Grande+Dunes+Marina"
+    },
+    {
+      "id": "hosp_mcleod",
+      "name": "McLeod Health Seacoast (hospital), 4000 Highway 9 East, Little River",
+      "kind": "hospital",
+      "nearest_for": [
+        "del-webb-north-myrtle-beach"
+      ],
+      "lat": 33.86567,
+      "lon": -78.663522,
+      "source": "Horry County GIS address point for 4000 E HWY 9 (address from McLeod Health). Del Webb NMB ledger row 43, verified. The nearer North Strand ER (row 53) is an emergency room, not a hospital.",
+      "source_url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/22/query?where=ADDRESS%3D%274000+E+HWY+9%27&outFields=ADDRESS%2CCITY%2CZIPCODE%2CPIN&returnGeometry=true&outSR=4326&f=json"
+    },
+    {
+      "id": "hosp_gsmc",
+      "name": "Grand Strand Medical Center, 809 82nd Parkway, Myrtle Beach",
+      "kind": "hospital",
+      "nearest_for": [
+        "del-webb-grande-dunes"
+      ],
+      "lat": 33.758542,
+      "lon": -78.820016,
+      "source": "Horry County GIS address point for 809 82ND PKY (the layer has two points; this is the one the ledgers use). Grande Dunes ledger row 66.",
+      "source_url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/22/query?where=ADDRESS%3D%27809+82ND+PKY%27&outFields=ADDRESS%2CCITY%2CZIPCODE%2CPIN&returnGeometry=true&outSR=4326&f=json"
+    },
+    {
+      "id": "hosp_cmc",
+      "name": "Conway Medical Center, 300 Singleton Ridge Road, Conway",
+      "kind": "hospital",
+      "nearest_for": [
+        "myrtle-trace"
+      ],
+      "lat": 33.785483,
+      "lon": -79.001894,
+      "source": "Horry County GIS address point for 300 SINGLETON RIDGE RD (address from Conway Medical Center). Myrtle Trace ledger row 65, verified.",
+      "source_url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/22/query?where=ADDRESS%3D%27300+SINGLETON+RIDGE+RD%27&outFields=ADDRESS%2CCITY%2CZIPCODE%2CPIN&returnGeometry=true&outSR=4326&f=json"
+    },
+    {
+      "id": "hosp_tidelands",
+      "name": "Tidelands Waccamaw Community Hospital, 4070 Highway 17, Murrells Inlet",
+      "kind": "hospital",
+      "nearest_for": [
+        "seasons-at-prince-creek-west"
+      ],
+      "lat": 33.559617,
+      "lon": -79.041426,
+      "source": "U.S. Census Geocoder address-range estimate for 4070 US HWY 17 (address from CMS). Seasons ledger row 65, verified.",
+      "source_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=4070+Highway+17+Bypass%2C+Murrells+Inlet%2C+SC+29576&benchmark=Public_AR_Current&format=json"
+    },
+    {
+      "id": "groc_dwnmb",
+      "name": "Kroger, 781 Main Street, North Myrtle Beach",
+      "kind": "grocery",
+      "nearest_for": [
+        "del-webb-north-myrtle-beach"
+      ],
+      "lat": 33.8265277,
+      "lon": -78.6799751,
+      "source": "OpenStreetMap via Nominatim, relation 19221700 (shop=supermarket). Chosen as the shortest drive of 6 supermarkets of the listed chains within about 6 miles (OSRM table). Kroger's own store page refused the connection; not confirmed on the chain's site.",
+      "source_url": "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&q=Kroger&viewbox=-78.790908,33.911769,-78.610908,33.731769&bounded=1"
+    },
+    {
+      "id": "groc_dwgd",
+      "name": "Food Lion, 6103 N Kings Hwy, Myrtle Beach",
+      "kind": "grocery",
+      "nearest_for": [
+        "del-webb-grande-dunes"
+      ],
+      "lat": 33.7363184,
+      "lon": -78.8329232,
+      "source": "Food Lion store page (address and map point). Shortest drive of 11 supermarkets of the listed chains within about 6 miles (OSRM table).",
+      "source_url": "https://stores.foodlion.com/sc/myrtle-beach/6103-n-kings-hwy"
+    },
+    {
+      "id": "groc_mt",
+      "name": "Walmart Supercenter, 151 Myrtle Ridge Drive, Conway",
+      "kind": "grocery",
+      "nearest_for": [
+        "myrtle-trace"
+      ],
+      "lat": 33.777583,
+      "lon": -78.989089,
+      "source": "OpenStreetMap via Nominatim, node 5315597965 (shop=supermarket). Shortest drive of 7 supermarkets of the listed chains within about 6 miles (OSRM table). Walmart's store page blocked the request; not confirmed on the chain's site. The nearest grocery-only store is Food Lion, 1904 SC 544, about 2.8 miles.",
+      "source_url": "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&q=Walmart&viewbox=-79.086618,33.868502,-78.906618,33.688502&bounded=1"
+    },
+    {
+      "id": "groc_spcw",
+      "name": "Publix, 11920 Highway 707 (Prince Creek Village Center) (Prince Creek Village), Murrells Inlet",
+      "kind": "grocery",
+      "nearest_for": [
+        "seasons-at-prince-creek-west"
+      ],
+      "lat": 33.5858041,
+      "lon": -79.0547393,
+      "source": "OpenStreetMap via Nominatim, way 1079893614 (shop=supermarket). Shortest drive of 13 supermarkets of the listed chains within about 6 miles (OSRM table). Lowes Foods, 11903 Craven Swamp Drive, is next at 1.7 miles. Not confirmed on Publix's site (its store pages need JavaScript).",
+      "source_url": "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&q=Publix&viewbox=-79.16094,33.676369,-78.98094,33.496369&bounded=1"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "_comment": "The comparison table on the four 55+ community pages. All four specs require this file, so each cell has one source. Every cell comes from a verified row in the Blog-Brain batch 2026-10-a ledgers (batches/2026-10-a/facts/); ledger names the rows. Plain words and round numbers only (voice/RULES.md PLAIN; REWRITE-PLAIN.md). Review 4 and buyer read v6 (2026-10-10): the town column became 'In or near', because two of the four are outside any town, and the price column says resale, because every price here is a resale price. Minutes are drive times by car from the community reference point to its nearest public beach access. Prices are the middle sale in the 12 months from October 2025 to September 2026, from Horry County deed records, rounded to the thousand. Change a cell here, then rebuild all four pages. 2026-10-11: the Grande Dunes price cell shows houses and villas apart, the same two figures as its page body (grader: $665,000 in the body beside $630,000 in the table read as a contradiction). 2026-10-11 (version 9): an 'HOA fee a month' column. Three cells are the fee sellers entered on listings (the orchestrator allows listings for the HOA fee only, until MLS data arrives), so each says '(listings)'; Myrtle Trace's $95 is the HOA's own figure. Version 10 (2026-10-11): the HOA fee is stated plainly with no '(listings)' (coordinator's decision; the pages' sources lines name recent MLS listings), and each box holds one number: Grande Dunes shows the house figures, and its page body gives the villa figures.",
+  "head": [
+    "Community",
+    "Area",
+    "Minutes to the beach by car",
+    "HOA fee a month",
+    "Resale homes usually sell for"
+  ],
+  "rows": [
+    {
+      "url": "/buyers/55-plus-communities/del-webb-north-myrtle-beach/",
+      "cells": [
+        "Del Webb North Myrtle Beach",
+        "North Myrtle Beach",
+        "About 4",
+        "About $315",
+        "About $535,000"
+      ],
+      "ledger": "del-webb-north-myrtle-beach-facts.md row 62 (beach drive), row 58 (resale middle sale $534,900); HOA fee: del-webb-north-myrtle-beach-facts.md row 70 (listings show $315 on most homes for sale or sold in 2026)"
+    },
+    {
+      "url": "/buyers/55-plus-communities/del-webb-grande-dunes/",
+      "cells": [
+        "Del Webb at Grande Dunes",
+        "Myrtle Beach",
+        "About 4",
+        "About $400 for a house",
+        "About $665,000 for a house"
+      ],
+      "ledger": "del-webb-grande-dunes-facts.md row 84 (beach drive); row 80 split by county tract name, without the sale on an unclear parcel (4999/1319): houses, 29 resales, middle $665,000; Villas at Heel Tract, 14 resales, middle $432,500. Shown apart (grader, 2026-10-11) so the cell matches the page body, which gives the same two figures.; HOA fee: del-webb-grande-dunes-facts.md rows 95 and 96 (listings entered in 2026 mostly show $401 for houses and $445 for villas)"
+    },
+    {
+      "url": "/buyers/55-plus-communities/myrtle-trace/",
+      "cells": [
+        "Myrtle Trace",
+        "Conway",
+        "About 15",
+        "$95",
+        "About $300,000"
+      ],
+      "ledger": "myrtle-trace-facts.md row 85 (beach drive), row 81 (middle sale $300,000); outside Conway city limits with a Conway mailing address (row 15); HOA fee: myrtle-trace-facts.md row 30 (HOA minutes and newsletter: $95 a month from January 1, 2026)"
+    },
+    {
+      "url": "/buyers/55-plus-communities/seasons-at-prince-creek-west/",
+      "cells": [
+        "Seasons at Prince Creek West",
+        "Murrells Inlet",
+        "About 10",
+        "About $340",
+        "About $500,000"
+      ],
+      "ledger": "seasons-at-prince-creek-west-facts.md row 76 (beach drive), row 73 (middle sale $499,000); Murrells Inlet mailing address (row 17); HOA fee: seasons-at-prince-creek-west-facts.md row 86 (listings show $342 a month in 2026)"
+    }
+  ]
+}

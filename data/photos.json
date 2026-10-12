@@ -1,0 +1,2173 @@
+{
+  "_comment": "Photos for the four 55+ community pages, batch 2026-10-a. Found on Wikimedia Commons: 18 on 2026-10-07, 19 more on 2026-10-10. Only CC0, public domain, CC BY and CC BY-SA. None shows a community itself: Commons has no photo of any of the four. Each photo shows the area around it; the 'what' line says where. Each record has a 600w and a 1200w WebP file (variants, made with tools/photos.js from the Commons 1920 or 1280 px thumbnail; resized, nothing else changed), width and height of the 1200w file, default alt text, the photo's Commons title, and how it reached Commons (provenance). 'file' is the older single 1200 px file that the 2026-10-07 specs use; the 2026-10-10 photos have only the variants. A photo with 'hold' may not be used; tools/photos.js refuses it. Use tools/photos.js (heroPhoto, gallery, featureCards, creditsList), which links the license and the source. Rules: rules/images.md. CC BY-SA: if a photo is cropped or edited, the edited version carries the same license. Each record also has 'place' (IPTC Location Shown and schema contentLocation; the state is South Carolina). The four heroes have 'crops' (1x1, 4x3, 16x9) for Article.image. Every file holds its credit, license and alt text as embedded IPTC/XMP metadata (tools/photos.js embed; rules/image-metadata.md). On 2026-10-11, 6 aerial photos of the communities themselves were added: USDA NAIP 2023 (public domain) from the USGS National Map, with the outline and labels drawn by Chapter3 Realty ('changes'; digital_source_type 'composite'). Each record keeps the exact export request (source_request) and the NAIP tiles under it. Version 10 (2026-10-11): 4 close aerial views of a street of homes, one per community (scratchpad aerial/scripts/build10.js), no drawing, colors adjusted. Version 11 (2026-10-11): the Del Webb North Myrtle Beach street view cut tighter to the houses; the Grande Dunes street view labelled Houses, and a new labelled villas view (scratchpad aerial/scripts/build11.js). Version 12 (2026-10-11): Del Webb North Myrtle Beach from NOAA's 2026 pre-event aerial photos (public domain, flown 2026-01-12, about 0.25 to 0.30 m a pixel against NAIP's 0.6 m, every street built): a labelled overview, a street view, a view from the community to the beach, and Cherry Grove's marsh; plus the Cherry Grove Pier from the ocean (Commons, public domain). The NAIP 2023 records stay for the other pages' history; the 2026 ones replace them on this page (scratchpad eri/scripts/build12.js). Version 13b (2026-10-11): labels on the Del Webb North Myrtle Beach beach view (placed from county geometry through the raw frame's corner coordinates), a new labelled close aerial of its clubhouse, pools and courts, and the Cherry Grove Pier photo cropped to 16:9 (scratchpad eri/scripts/build13b.js). Version 13c (2026-10-11): the beach view's \"Beach\" dot moved onto the sand (14th Ave S extended to the TIGER coastline) and the pier photo cropped around the pier (scratchpad eri/scripts/build13c.js). Version 13b (2026-10-11): labels on the Del Webb North Myrtle Beach beach view (placed from county geometry through the raw frame's corner coordinates), a new labelled close aerial of its clubhouse, pools and courts, and the Cherry Grove Pier photo cropped to 16:9 (scratchpad eri/scripts/build13b.js).",
+  "as_of": "2026-10-07",
+  "image_root": "/tmp/claude-0/-home-user-Blog-Brain/8900fb2a-1006-5ba7-88a3-019838e5433c/scratchpad/draft/chapter3realty/",
+  "photos": [
+    {
+      "slug": "del-webb-north-myrtle-beach",
+      "file": "images/55-plus/del-webb-north-myrtle-beach/north-myrtle-beach-beach-umbrellas.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-north-myrtle-beach/north-myrtle-beach-beach-umbrellas-600w.webp",
+        "1200": "images/55-plus/del-webb-north-myrtle-beach/north-myrtle-beach-beach-umbrellas-1200w.webp"
+      },
+      "width": 1200,
+      "height": 800,
+      "title": "North Myrtle Beach, SC",
+      "what": "Rows of beach chairs and umbrellas on the wide sand beach in North Myrtle Beach.",
+      "alt": "Rows of beach chairs and blue, green and yellow umbrellas on the wide sand beach in North Myrtle Beach",
+      "place": {
+        "city": "North Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:North_Myrtle_Beach,_SC.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:North_Myrtle_Beach,_SC.jpg",
+      "author": "JefferyGoldman",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: JefferyGoldman, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2016-08-11",
+      "original_size": "6000x4000",
+      "share_alike": true,
+      "crops": {
+        "1x1": {
+          "path": "images/55-plus/del-webb-north-myrtle-beach/north-myrtle-beach-beach-umbrellas-1x1.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        "4x3": {
+          "path": "images/55-plus/del-webb-north-myrtle-beach/north-myrtle-beach-beach-umbrellas-4x3.webp",
+          "width": 1200,
+          "height": 900
+        },
+        "16x9": {
+          "path": "images/55-plus/del-webb-north-myrtle-beach/north-myrtle-beach-beach-umbrellas-16x9.webp",
+          "width": 1200,
+          "height": 675
+        }
+      },
+      "crops_note": "The hero of its page. For Article.image (Google: 16x9, 4x3 and 1x1), Chapter3 cut a center crop in each ratio, 1200 px wide, from the Commons 1920 px thumbnail (tools/photos.js makeCrops). A cut file is adapted material, so each crop is shared under the photo's own license, CC BY-SA 4.0 (rules/images.md)."
+    },
+    {
+      "slug": "del-webb-north-myrtle-beach",
+      "file": "images/55-plus/del-webb-north-myrtle-beach/north-myrtle-beach-dunes-sunrise.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-north-myrtle-beach/north-myrtle-beach-dunes-sunrise-600w.webp",
+        "1200": "images/55-plus/del-webb-north-myrtle-beach/north-myrtle-beach-dunes-sunrise-1200w.webp"
+      },
+      "width": 1200,
+      "height": 800,
+      "title": "Double sun fs - Flickr - SteveWPhotos",
+      "what": "Sea oats and a sand fence on the dunes in North Myrtle Beach, with the sun low over the ocean.",
+      "alt": "Sea oats and a sand fence on the dunes in North Myrtle Beach at sunrise",
+      "place": {
+        "city": "North Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Double_sun_fs_-_Flickr_-_SteveWPhotos.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Double_sun_fs_-_Flickr_-_SteveWPhotos.jpg",
+      "author": "Steve Walker (Flickr: SteveWPhotos)",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "credit": "Photo: Steve Walker (Flickr: SteveWPhotos), CC BY-SA 2.0, via Wikimedia Commons",
+      "provenance": "Flickr, copied to Commons by another user; a Commons reviewer checked the license. The uploader is not the author: replace when a photo that meets the own-work rule is found.",
+      "taken": "2009-12-20",
+      "original_size": "4500x3000",
+      "share_alike": true,
+      "hold": "On hold 2026-10-10: copied to Commons from Flickr by another user, so the uploader is not the author (rules/images.md). Not used in batch 2026-10-a."
+    },
+    {
+      "slug": "del-webb-north-myrtle-beach",
+      "file": "images/55-plus/del-webb-north-myrtle-beach/cherry-grove-pier.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-north-myrtle-beach/cherry-grove-pier-600w.webp",
+        "1200": "images/55-plus/del-webb-north-myrtle-beach/cherry-grove-pier-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "Cherry Grove Pier",
+      "what": "The beach, beach houses and Cherry Grove Pier in North Myrtle Beach, seen from high above.",
+      "alt": "The beach, beach houses and Cherry Grove Pier in North Myrtle Beach, seen from high above",
+      "place": {
+        "sublocation": "Cherry Grove Pier",
+        "city": "North Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Cherry_Grove_Pier.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Cherry_Grove_Pier.jpg",
+      "author": "Melikamp",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "credit": "Photo: Melikamp, CC BY-SA 3.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2012-04-29",
+      "original_size": "4320x3240",
+      "share_alike": true
+    },
+    {
+      "slug": "del-webb-north-myrtle-beach",
+      "file": "images/55-plus/del-webb-north-myrtle-beach/alabama-theatre-barefoot-landing.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-north-myrtle-beach/alabama-theatre-barefoot-landing-600w.webp",
+        "1200": "images/55-plus/del-webb-north-myrtle-beach/alabama-theatre-barefoot-landing-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "The Alabama Theatre",
+      "what": "The road sign for the Alabama Theatre, a show theater at Barefoot Landing in North Myrtle Beach, at dusk.",
+      "alt": "The road sign for the Alabama Theatre at Barefoot Landing at dusk",
+      "place": {
+        "sublocation": "Barefoot Landing",
+        "city": "North Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:The_Alabama_Theatre.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:The_Alabama_Theatre.jpg",
+      "author": "Video81",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "credit": "Photo: Video81, CC0 (public domain dedication), via Wikimedia Commons. Credit not required; give it anyway.",
+      "provenance": "own work",
+      "taken": "2025-07-21",
+      "original_size": "4608x3456",
+      "share_alike": false,
+      "hold": "On hold 2026-10-10: the subject is a brand sign (the theater's road sign advertising a show). rules/images.md: never a photo whose subject is a logo or a brand sign."
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/myrtle-beach-beach-from-above.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/myrtle-beach-beach-from-above-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/myrtle-beach-beach-from-above-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "Myrtle Beach, South Carolina, Thanksgiving 2018",
+      "what": "The beach and ocean in Myrtle Beach, seen from a high floor, in late November.",
+      "alt": "The wide sand beach, the dunes and the ocean in Myrtle Beach, seen from a high floor",
+      "place": {
+        "city": "Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Myrtle_Beach,_South_Carolina,_Thanksgiving_2018.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Myrtle_Beach,_South_Carolina,_Thanksgiving_2018.jpg",
+      "author": "28bytes",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: 28bytes, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2018-11-22",
+      "original_size": "3264x2448",
+      "share_alike": true,
+      "crops": {
+        "1x1": {
+          "path": "images/55-plus/del-webb-grande-dunes/myrtle-beach-beach-from-above-1x1.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        "4x3": {
+          "path": "images/55-plus/del-webb-grande-dunes/myrtle-beach-beach-from-above-4x3.webp",
+          "width": 1200,
+          "height": 900
+        },
+        "16x9": {
+          "path": "images/55-plus/del-webb-grande-dunes/myrtle-beach-beach-from-above-16x9.webp",
+          "width": 1200,
+          "height": 675
+        }
+      },
+      "crops_note": "The hero of its page. For Article.image (Google: 16x9, 4x3 and 1x1), Chapter3 cut a center crop in each ratio, 1200 px wide, from the Commons 1920 px thumbnail (tools/photos.js makeCrops). A cut file is adapted material, so each crop is shared under the photo's own license, CC BY-SA 4.0 (rules/images.md)."
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/myrtle-beach-sunrise.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/myrtle-beach-sunrise-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/myrtle-beach-sunrise-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "Myrtle Beach Ocean Front",
+      "what": "The sun coming up over the ocean in Myrtle Beach, seen from the sand.",
+      "alt": "The sun coming up over the ocean in Myrtle Beach, seen from the sand",
+      "place": {
+        "city": "Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Myrtle_Beach_Ocean_Front.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Myrtle_Beach_Ocean_Front.jpg",
+      "author": "Punker1999",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "credit": "Photo: Punker1999, CC0 (public domain dedication), via Wikimedia Commons. Credit not required; give it anyway.",
+      "provenance": "own work",
+      "taken": "2026-08-02",
+      "original_size": "4000x3000",
+      "share_alike": false
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/myrtle-beach-skywheel-boardwalk.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/myrtle-beach-skywheel-boardwalk-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/myrtle-beach-skywheel-boardwalk-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "SkyWheel Myrtle Beach in August 2022",
+      "what": "The SkyWheel, the big Ferris wheel on the Myrtle Beach Boardwalk, seen from the beach.",
+      "alt": "The SkyWheel, the big Ferris wheel on the Myrtle Beach Boardwalk, seen from the beach",
+      "place": {
+        "sublocation": "Myrtle Beach Boardwalk",
+        "city": "Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:SkyWheel_Myrtle_Beach_in_August_2022.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:SkyWheel_Myrtle_Beach_in_August_2022.jpg",
+      "author": "DiscoA340",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: DiscoA340, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2022-08-14",
+      "original_size": "3264x2448",
+      "share_alike": true
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/broadway-at-the-beach-night.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/broadway-at-the-beach-night-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/broadway-at-the-beach-night-1200w.webp"
+      },
+      "width": 1200,
+      "height": 730,
+      "title": "Broadway at the Beach in Myrtle Beach, S. Carolina",
+      "what": "Lit-up rides at Broadway at the Beach, a shopping, dining and entertainment area in Myrtle Beach, at night.",
+      "alt": "Lit-up rides at Broadway at the Beach, a shopping, dining and entertainment area in Myrtle Beach, at night",
+      "place": {
+        "sublocation": "Broadway at the Beach",
+        "city": "Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Broadway_at_the_Beach_in_Myrtle_Beach,_S._Carolina.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Broadway_at_the_Beach_in_Myrtle_Beach,_S._Carolina.jpg",
+      "author": "David (Flickr)",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "credit": "Photo: David (Flickr), CC BY 2.0, via Wikimedia Commons",
+      "provenance": "Flickr, copied to Commons by another user; a Commons reviewer checked the license. The uploader is not the author: replace when a photo that meets the own-work rule is found.",
+      "taken": "2014-08-28",
+      "original_size": "4927x2997",
+      "share_alike": false,
+      "hold": "On hold 2026-10-10: copied to Commons from Flickr by another user, so the uploader is not the author (rules/images.md). Not used in batch 2026-10-a."
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/market-common-lake.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/market-common-lake-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/market-common-lake-1200w.webp"
+      },
+      "width": 1200,
+      "height": 800,
+      "title": "The Market Common, Myrtle Beach (13 May 2023) 35",
+      "what": "The lake and lawn at The Market Common, a shopping and dining district in Myrtle Beach, in the evening.",
+      "alt": "The lake and lawn at The Market Common in Myrtle Beach in the evening",
+      "place": {
+        "sublocation": "The Market Common",
+        "city": "Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:The_Market_Common,_Myrtle_Beach_(13_May_2023)_35.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:The_Market_Common,_Myrtle_Beach_(13_May_2023)_35.jpg",
+      "author": "DiscoA340",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: DiscoA340, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2023-05-13",
+      "original_size": "6000x4000",
+      "share_alike": true
+    },
+    {
+      "slug": "myrtle-trace",
+      "file": "images/55-plus/myrtle-trace/conway-riverwalk.webp",
+      "variants": {
+        "600": "images/55-plus/myrtle-trace/conway-riverwalk-600w.webp",
+        "1200": "images/55-plus/myrtle-trace/conway-riverwalk-1200w.webp"
+      },
+      "width": 1200,
+      "height": 1200,
+      "title": "Conway Marina",
+      "what": "The riverwalk boardwalk and boat docks on the Waccamaw River in downtown Conway, seen from the bridge.",
+      "alt": "The riverwalk boardwalk and boat docks on the Waccamaw River in downtown Conway",
+      "place": {
+        "sublocation": "Waccamaw River",
+        "city": "Conway"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Conway_Marina.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Conway_Marina.jpg",
+      "author": "Carson True",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "credit": "Photo: Carson True, CC0 (public domain dedication), via Wikimedia Commons. Credit not required; give it anyway.",
+      "provenance": "own work",
+      "taken": "2008-01-10",
+      "original_size": "1938x1938",
+      "share_alike": false
+    },
+    {
+      "slug": "myrtle-trace",
+      "file": "images/55-plus/myrtle-trace/conway-main-street.webp",
+      "variants": {
+        "600": "images/55-plus/myrtle-trace/conway-main-street-600w.webp",
+        "1200": "images/55-plus/myrtle-trace/conway-main-street-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "Conway Downtown Historic District Jun 10",
+      "what": "Main Street in downtown Conway, with old brick shop buildings.",
+      "alt": "Main Street in downtown Conway, South Carolina, lined with old brick shop buildings",
+      "place": {
+        "sublocation": "Main Street",
+        "city": "Conway"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Conway_Downtown_Historic_District_Jun_10.JPG",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Conway_Downtown_Historic_District_Jun_10.JPG",
+      "author": "Pubdog",
+      "license": "Public domain",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "credit": "Photo: Pubdog, public domain, via Wikimedia Commons. Credit not required; give it anyway.",
+      "provenance": "own work",
+      "taken": "2010-06-20",
+      "original_size": "2592x1944",
+      "share_alike": false
+    },
+    {
+      "slug": "myrtle-trace",
+      "file": "images/55-plus/myrtle-trace/conway-city-hall.webp",
+      "variants": {
+        "600": "images/55-plus/myrtle-trace/conway-city-hall-600w.webp",
+        "1200": "images/55-plus/myrtle-trace/conway-city-hall-1200w.webp"
+      },
+      "width": 1200,
+      "height": 800,
+      "title": "Conway city hall 0782",
+      "what": "Conway City Hall, a white building with columns and a clock, in downtown Conway.",
+      "alt": "Conway City Hall, a white building with columns and a clock",
+      "place": {
+        "sublocation": "Conway City Hall",
+        "city": "Conway"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Conway_city_hall_0782.JPG",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Conway_city_hall_0782.JPG",
+      "author": "Pollinator (English Wikipedia)",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "credit": "Photo: Pollinator (English Wikipedia), CC BY-SA 3.0, via Wikimedia Commons",
+      "provenance": "own work, moved from English Wikipedia",
+      "taken": "2006 or earlier (uploaded 2006-11-23)",
+      "original_size": "2100x1400",
+      "share_alike": true
+    },
+    {
+      "slug": "myrtle-trace",
+      "file": "images/55-plus/myrtle-trace/conway-historic-home.webp",
+      "variants": {
+        "600": "images/55-plus/myrtle-trace/conway-historic-home-600w.webp",
+        "1200": "images/55-plus/myrtle-trace/conway-historic-home-1200w.webp"
+      },
+      "width": 1200,
+      "height": 800,
+      "title": "Home in the historic district, Conway, South Carolina (18 November 2006)",
+      "what": "A white house under large oak trees in Conway's historic district.",
+      "alt": "A white house under large oak trees in Conway's historic district",
+      "place": {
+        "sublocation": "Historic district",
+        "city": "Conway"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Home_in_the_historic_district,_Conway,_South_Carolina_(18_November_2006).jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Home_in_the_historic_district,_Conway,_South_Carolina_(18_November_2006).jpg",
+      "author": "Pollinator",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "credit": "Photo: Pollinator, CC BY-SA 3.0, via Wikimedia Commons",
+      "provenance": "own work, moved from English Wikipedia",
+      "taken": "2006-11-18",
+      "original_size": "2100x1400",
+      "share_alike": true
+    },
+    {
+      "slug": "seasons-at-prince-creek-west",
+      "file": "images/55-plus/seasons-at-prince-creek-west/huntington-beach-state-park-sunset.webp",
+      "variants": {
+        "600": "images/55-plus/seasons-at-prince-creek-west/huntington-beach-state-park-sunset-600w.webp",
+        "1200": "images/55-plus/seasons-at-prince-creek-west/huntington-beach-state-park-sunset-1200w.webp"
+      },
+      "width": 1200,
+      "height": 800,
+      "title": "A Multitude of Evening Colors - Flickr - fran.trudeau",
+      "what": "Sunset over the marsh at Huntington Beach State Park, south of Murrells Inlet.",
+      "alt": "Sunset over the salt marsh at Huntington Beach State Park, south of Murrells Inlet",
+      "place": {
+        "sublocation": "Huntington Beach State Park"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:A_Multitude_of_Evening_Colors_-_Flickr_-_fran.trudeau.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:A_Multitude_of_Evening_Colors_-_Flickr_-_fran.trudeau.jpg",
+      "author": "Fran Trudeau (Flickr: fran.trudeau)",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "credit": "Photo: Fran Trudeau (Flickr: fran.trudeau), CC BY-SA 2.0, via Wikimedia Commons",
+      "provenance": "Flickr, copied to Commons by another user; a Commons reviewer checked the license. The uploader is not the author: replace when a photo that meets the own-work rule is found.",
+      "taken": "2014-09-30",
+      "original_size": "5809x3872",
+      "share_alike": true,
+      "hold": "On hold 2026-10-10: copied to Commons from Flickr by another user, so the uploader is not the author (rules/images.md). Replaced by huntington-beach-state-park-lake-sunset."
+    },
+    {
+      "slug": "seasons-at-prince-creek-west",
+      "file": "images/55-plus/seasons-at-prince-creek-west/marsh-houses-murrells-inlet.webp",
+      "variants": {
+        "600": "images/55-plus/seasons-at-prince-creek-west/marsh-houses-murrells-inlet-600w.webp",
+        "1200": "images/55-plus/seasons-at-prince-creek-west/marsh-houses-murrells-inlet-1200w.webp"
+      },
+      "width": 1200,
+      "height": 800,
+      "title": "Houses by the marsh - panoramio",
+      "what": "Salt marsh and homes along a creek near the Huntington Beach State Park causeway, south of Murrells Inlet.",
+      "alt": "Salt marsh and homes along a creek near the Huntington Beach State Park causeway",
+      "place": {
+        "sublocation": "Huntington Beach State Park causeway"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Houses_by_the_marsh_-_panoramio.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Houses_by_the_marsh_-_panoramio.jpg",
+      "author": "Thomson M",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "credit": "Photo: Thomson M, CC BY 3.0, via Wikimedia Commons",
+      "provenance": "Panoramio, copied to Commons by another user; a Commons reviewer checked the license. The uploader is not the author: replace when a photo that meets the own-work rule is found.",
+      "taken": "2015-06-12",
+      "original_size": "3456x2304",
+      "share_alike": false,
+      "hold": "On hold 2026-10-10: copied to Commons from Panoramio by another user, so the uploader is not the author (rules/images.md). Not used in batch 2026-10-a."
+    },
+    {
+      "slug": "seasons-at-prince-creek-west",
+      "file": "images/55-plus/seasons-at-prince-creek-west/surfside-beach-shoreline.webp",
+      "variants": {
+        "600": "images/55-plus/seasons-at-prince-creek-west/surfside-beach-shoreline-600w.webp",
+        "1200": "images/55-plus/seasons-at-prince-creek-west/surfside-beach-shoreline-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "Surfside Beach Shoreline",
+      "what": "The sand beach and beach houses at Surfside Beach, a few miles north of Garden City.",
+      "alt": "The sand beach and beach houses at Surfside Beach",
+      "place": {
+        "city": "Surfside Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Surfside_Beach_Shoreline.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Surfside_Beach_Shoreline.jpg",
+      "author": "BullDawg2021",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: BullDawg2021, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2023-07-16",
+      "original_size": "4032x3024",
+      "share_alike": true
+    },
+    {
+      "slug": "seasons-at-prince-creek-west",
+      "file": "images/55-plus/seasons-at-prince-creek-west/murrells-inlet-boats.webp",
+      "variants": {
+        "600": "images/55-plus/seasons-at-prince-creek-west/murrells-inlet-boats-600w.webp",
+        "1200": "images/55-plus/seasons-at-prince-creek-west/murrells-inlet-boats-1200w.webp"
+      },
+      "width": 1200,
+      "height": 759,
+      "title": "Murrells inlet2473",
+      "what": "Fishing boats tied up at a marina on the water in Murrells Inlet.",
+      "alt": "White fishing boats tied up at a marina on calm water in Murrells Inlet, South Carolina",
+      "place": {
+        "city": "Murrells Inlet"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Murrells_inlet2473.JPG",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Murrells_inlet2473.JPG",
+      "author": "Pollinator",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "credit": "Photo: Pollinator, CC BY-SA 3.0, via Wikimedia Commons",
+      "provenance": "own work, moved from English Wikipedia",
+      "taken": "unknown (uploaded 2017-07-01)",
+      "original_size": "1800x1139",
+      "share_alike": true
+    },
+    {
+      "slug": "seasons-at-prince-creek-west",
+      "file": "images/55-plus/seasons-at-prince-creek-west/murrells-inlet-marina-sky.webp",
+      "variants": {
+        "600": "images/55-plus/seasons-at-prince-creek-west/murrells-inlet-marina-sky-600w.webp",
+        "1200": "images/55-plus/seasons-at-prince-creek-west/murrells-inlet-marina-sky-1200w.webp"
+      },
+      "width": 1200,
+      "height": 516,
+      "title": "Myrtle Beach Clouds @ Murrells Inlet",
+      "what": "Boats at a marina in Murrells Inlet under a pink evening sky.",
+      "alt": "Boats at a marina in Murrells Inlet under a pink evening sky",
+      "place": {
+        "city": "Murrells Inlet"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Myrtle_Beach_Clouds_@_Murrells_Inlet.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Myrtle_Beach_Clouds_@_Murrells_Inlet.jpg",
+      "author": "Cprintz20",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: Cprintz20, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2016-07-05",
+      "original_size": "7270x3124",
+      "share_alike": true
+    },
+    {
+      "slug": "del-webb-north-myrtle-beach",
+      "file": "images/55-plus/del-webb-north-myrtle-beach/north-myrtle-beach-lake-shops.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-north-myrtle-beach/north-myrtle-beach-lake-shops-600w.webp",
+        "1200": "images/55-plus/del-webb-north-myrtle-beach/north-myrtle-beach-lake-shops-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "Prices Swamp Run (December 2022)",
+      "what": "A calm lake in North Myrtle Beach on a cloudy winter day, with restaurants and shops along the far shore.",
+      "alt": "A calm lake reflecting the clouds, with restaurants and shops along the far shore in North Myrtle Beach",
+      "place": {
+        "city": "North Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Prices_Swamp_Run_(December_2022).jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Prices_Swamp_Run_(December_2022).jpg",
+      "author": "DiscoA340",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: DiscoA340, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2022-12-31",
+      "original_size": "4000x3000",
+      "share_alike": true
+    },
+    {
+      "slug": "del-webb-north-myrtle-beach",
+      "file": "images/55-plus/del-webb-north-myrtle-beach/intracoastal-waterway-north-myrtle-beach.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-north-myrtle-beach/intracoastal-waterway-north-myrtle-beach-600w.webp",
+        "1200": "images/55-plus/del-webb-north-myrtle-beach/intracoastal-waterway-north-myrtle-beach-1200w.webp"
+      },
+      "width": 1200,
+      "height": 800,
+      "title": "Intracoastal Waterway in North Myrtle Beach",
+      "what": "The Intracoastal Waterway in North Myrtle Beach, lined with homes and docks, seen from a bridge on a cloudy day.",
+      "alt": "The Intracoastal Waterway in North Myrtle Beach, lined with homes and docks, under a gray sky",
+      "place": {
+        "sublocation": "Intracoastal Waterway",
+        "city": "North Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Intracoastal_Waterway_in_North_Myrtle_Beach.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Intracoastal_Waterway_in_North_Myrtle_Beach.jpg",
+      "author": "DiscoA340",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: DiscoA340, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2022-12-31",
+      "original_size": "6000x4000",
+      "share_alike": true
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/myrtle-beach-incoming-tide.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/myrtle-beach-incoming-tide-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/myrtle-beach-incoming-tide-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "Incoming Tide",
+      "what": "Waves coming in over the sand at Myrtle Beach in the evening.",
+      "alt": "Small waves rolling in over smooth sand at Myrtle Beach in the evening",
+      "place": {
+        "city": "Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Incoming_Tide.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Incoming_Tide.jpg",
+      "author": "Islandsislands",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "credit": "Photo: Islandsislands, CC0 (public domain dedication), via Wikimedia Commons. Credit not required; give it anyway.",
+      "provenance": "own work",
+      "taken": "2023-05-06",
+      "original_size": "2048x1536",
+      "share_alike": false
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/myrtle-beach-sea-oats.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/myrtle-beach-sea-oats-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/myrtle-beach-sea-oats-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "Sea oats at Myrtle Beach, SC IMG 4499",
+      "what": "Sea oats and a sand fence on the beach at Myrtle Beach.",
+      "alt": "Tall sea oats and a wooden sand fence on the beach at Myrtle Beach",
+      "place": {
+        "city": "Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Sea_oats_at_Myrtle_Beach,_SC_IMG_4499.JPG",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Sea_oats_at_Myrtle_Beach,_SC_IMG_4499.JPG",
+      "author": "Billy Hathorn",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "credit": "Photo: Billy Hathorn, CC BY-SA 3.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2012-07-16",
+      "original_size": "4608x3456",
+      "share_alike": true
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/myrtle-beach-pier-from-above.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/myrtle-beach-pier-from-above-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/myrtle-beach-pier-from-above-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "Myrtle Beach Pier in August 2022",
+      "what": "The beach, the dunes and a fishing pier in Myrtle Beach, seen from a high balcony.",
+      "alt": "A long fishing pier over the ocean in Myrtle Beach, with the beach and palm trees below",
+      "place": {
+        "city": "Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Myrtle_Beach_Pier_in_August_2022.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Myrtle_Beach_Pier_in_August_2022.jpg",
+      "author": "DiscoA340",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: DiscoA340, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2022-08-14",
+      "original_size": "3264x2448",
+      "share_alike": true
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/myrtle-beach-ocean-clouds.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/myrtle-beach-ocean-clouds-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/myrtle-beach-ocean-clouds-1200w.webp"
+      },
+      "width": 1200,
+      "height": 853,
+      "title": "Ocean at Myrtle Beach, August 2022",
+      "what": "The ocean at Myrtle Beach under a sky full of clouds.",
+      "alt": "Blue ocean and small waves at Myrtle Beach under a wide sky of clouds",
+      "place": {
+        "city": "Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Ocean_at_Myrtle_Beach,_August_2022.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Ocean_at_Myrtle_Beach,_August_2022.jpg",
+      "author": "DiscoA340",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: DiscoA340, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2022-08-14",
+      "original_size": "3234x2298",
+      "share_alike": true
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/market-common-fountain.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/market-common-fountain-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/market-common-fountain-1200w.webp"
+      },
+      "width": 1200,
+      "height": 800,
+      "title": "The Market Common, Myrtle Beach (13 May 2023) 11",
+      "what": "A fountain in front of shops at The Market Common, a shopping and dining district in Myrtle Beach.",
+      "alt": "A fountain in a round pool in front of shops and palm trees at The Market Common in Myrtle Beach",
+      "place": {
+        "sublocation": "The Market Common",
+        "city": "Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:The_Market_Common,_Myrtle_Beach_(13_May_2023)_11.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:The_Market_Common,_Myrtle_Beach_(13_May_2023)_11.jpg",
+      "author": "DiscoA340",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: DiscoA340, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2023-05-13",
+      "original_size": "6000x4000",
+      "share_alike": true
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/market-common-walkway.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/market-common-walkway-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/market-common-walkway-1200w.webp"
+      },
+      "width": 1200,
+      "height": 800,
+      "title": "The Market Common, Myrtle Beach (13 May 2023) 03",
+      "what": "A shaded walkway with small palms and a table at The Market Common in Myrtle Beach.",
+      "alt": "A shaded sidewalk with small palms, trees and a table at The Market Common in Myrtle Beach",
+      "place": {
+        "sublocation": "The Market Common",
+        "city": "Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:The_Market_Common,_Myrtle_Beach_(13_May_2023)_03.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:The_Market_Common,_Myrtle_Beach_(13_May_2023)_03.jpg",
+      "author": "DiscoA340",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: DiscoA340, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2023-05-13",
+      "original_size": "6000x4000",
+      "share_alike": true
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/myrtle-beach-golf-green.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/myrtle-beach-golf-green-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/myrtle-beach-golf-green-1200w.webp"
+      },
+      "width": 1200,
+      "height": 558,
+      "title": "The Wizard Golf Club No 17",
+      "what": "A golf hole with its green on an island in a pond, at a golf course in Myrtle Beach.",
+      "alt": "A golf green on an island in a pond, with pine trees behind, at a golf course in Myrtle Beach",
+      "place": {
+        "city": "Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:The_Wizard_Golf_Club_No_17.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:The_Wizard_Golf_Club_No_17.jpg",
+      "author": "Bernard Gagnon",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: Bernard Gagnon, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2019-03-12",
+      "original_size": "5017x2333",
+      "share_alike": true
+    },
+    {
+      "slug": "myrtle-trace",
+      "file": "images/55-plus/myrtle-trace/waccamaw-river-cypress-near-conway.webp",
+      "variants": {
+        "600": "images/55-plus/myrtle-trace/waccamaw-river-cypress-near-conway-600w.webp",
+        "1200": "images/55-plus/myrtle-trace/waccamaw-river-cypress-near-conway-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "Thorofare Island (Horry County, SC)",
+      "what": "Cypress trees along the Waccamaw River near Conway, in early November.",
+      "alt": "Cypress trees in fall colors along the dark water of the Waccamaw River near Conway",
+      "place": {
+        "sublocation": "Waccamaw River, near Conway"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Thorofare_Island_(Horry_County,_SC).jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Thorofare_Island_(Horry_County,_SC).jpg",
+      "author": "LittleT889",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: LittleT889, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2020-11-08",
+      "original_size": "4032x3024",
+      "share_alike": true,
+      "crops": {
+        "1x1": {
+          "path": "images/55-plus/myrtle-trace/waccamaw-river-cypress-near-conway-1x1.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        "4x3": {
+          "path": "images/55-plus/myrtle-trace/waccamaw-river-cypress-near-conway-4x3.webp",
+          "width": 1200,
+          "height": 900
+        },
+        "16x9": {
+          "path": "images/55-plus/myrtle-trace/waccamaw-river-cypress-near-conway-16x9.webp",
+          "width": 1200,
+          "height": 675
+        }
+      },
+      "crops_note": "The hero of its page. For Article.image (Google: 16x9, 4x3 and 1x1), Chapter3 cut a center crop in each ratio, 1200 px wide, from the Commons 1920 px thumbnail (tools/photos.js makeCrops). A cut file is adapted material, so each crop is shared under the photo's own license, CC BY-SA 4.0 (rules/images.md)."
+    },
+    {
+      "slug": "myrtle-trace",
+      "file": "images/55-plus/myrtle-trace/conway-riverwalk-boardwalk.webp",
+      "variants": {
+        "600": "images/55-plus/myrtle-trace/conway-riverwalk-boardwalk-600w.webp",
+        "1200": "images/55-plus/myrtle-trace/conway-riverwalk-boardwalk-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "Waccamaw River Warehouse Historic District Jun 10",
+      "what": "A shaded boardwalk in Conway's old riverfront warehouse district, on the Waccamaw River.",
+      "alt": "A wooden boardwalk with a black railing, shaded by trees, beside old wooden buildings in Conway",
+      "place": {
+        "sublocation": "Waccamaw River Warehouse Historic District",
+        "city": "Conway"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Waccamaw_River_Warehouse_Historic_District_Jun_10.JPG",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Waccamaw_River_Warehouse_Historic_District_Jun_10.JPG",
+      "author": "Pubdog",
+      "license": "Public domain",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "credit": "Photo: Pubdog, public domain, via Wikimedia Commons. Credit not required; give it anyway.",
+      "provenance": "own work",
+      "taken": "2010-06-20",
+      "original_size": "2592x1944",
+      "share_alike": false
+    },
+    {
+      "slug": "myrtle-trace",
+      "file": "images/55-plus/myrtle-trace/coastal-carolina-university-library.webp",
+      "variants": {
+        "600": "images/55-plus/myrtle-trace/coastal-carolina-university-library-600w.webp",
+        "1200": "images/55-plus/myrtle-trace/coastal-carolina-university-library-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "Kimbel Library",
+      "what": "A large oak tree in front of Kimbel Library at Coastal Carolina University in Conway.",
+      "alt": "A large oak tree spreading over Kimbel Library, a red brick building at Coastal Carolina University in Conway",
+      "place": {
+        "sublocation": "Kimbel Library, Coastal Carolina University",
+        "city": "Conway"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Kimbel_Library.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Kimbel_Library.jpg",
+      "author": "LittleT889",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: LittleT889, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2020-11-08",
+      "original_size": "4032x3024",
+      "share_alike": true
+    },
+    {
+      "slug": "myrtle-trace",
+      "file": "images/55-plus/myrtle-trace/conway-historic-district-arbor.webp",
+      "variants": {
+        "600": "images/55-plus/myrtle-trace/conway-historic-district-arbor-600w.webp",
+        "1200": "images/55-plus/myrtle-trace/conway-historic-district-arbor-1200w.webp"
+      },
+      "width": 1200,
+      "height": 850,
+      "title": "Arbor in the historic district, Conway, South Carolina (18 November 2006)",
+      "what": "A white garden arbor in front of a house in Conway's historic district.",
+      "alt": "A white wooden arbor with flowering bushes in front of a house in Conway's historic district",
+      "place": {
+        "sublocation": "Historic district",
+        "city": "Conway"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Arbor_in_the_historic_district,_Conway,_South_Carolina_(18_November_2006).jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Arbor_in_the_historic_district,_Conway,_South_Carolina_(18_November_2006).jpg",
+      "author": "Pollinator",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "credit": "Photo: Pollinator, CC BY-SA 3.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2006-11-18",
+      "original_size": "2400x1700",
+      "share_alike": true
+    },
+    {
+      "slug": "seasons-at-prince-creek-west",
+      "file": "images/55-plus/seasons-at-prince-creek-west/huntington-beach-state-park-lake-sunset.webp",
+      "variants": {
+        "600": "images/55-plus/seasons-at-prince-creek-west/huntington-beach-state-park-lake-sunset-600w.webp",
+        "1200": "images/55-plus/seasons-at-prince-creek-west/huntington-beach-state-park-lake-sunset-1200w.webp"
+      },
+      "width": 1200,
+      "height": 797,
+      "title": "HBSP at sunset 2",
+      "what": "The sun setting over still water at Huntington Beach State Park, south of Murrells Inlet.",
+      "alt": "The setting sun and clouds reflected in still water, with a dark line of trees, at Huntington Beach State Park",
+      "place": {
+        "sublocation": "Huntington Beach State Park"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:HBSP_at_sunset_2.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:HBSP_at_sunset_2.jpg",
+      "author": "Gareth Rasberry",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "credit": "Photo: Gareth Rasberry, CC BY-SA 3.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2013-01-19",
+      "original_size": "4288x2848",
+      "share_alike": true
+    },
+    {
+      "slug": "seasons-at-prince-creek-west",
+      "file": "images/55-plus/seasons-at-prince-creek-west/atalaya-huntington-beach-state-park.webp",
+      "variants": {
+        "600": "images/55-plus/seasons-at-prince-creek-west/atalaya-huntington-beach-state-park-600w.webp",
+        "1200": "images/55-plus/seasons-at-prince-creek-west/atalaya-huntington-beach-state-park-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "Atalaya1",
+      "what": "Atalaya, the old Spanish-style house at Huntington Beach State Park, with palmetto trees.",
+      "alt": "Palmetto trees in front of Atalaya, a long stucco house with barred windows at Huntington Beach State Park",
+      "place": {
+        "sublocation": "Atalaya, Huntington Beach State Park"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Atalaya1.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Atalaya1.jpg",
+      "author": "Ron Osborne (Rono359)",
+      "license": "Public domain",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "credit": "Photo: Ron Osborne (Rono359), public domain, via Wikimedia Commons. Credit not required; give it anyway.",
+      "provenance": "own work",
+      "taken": "2006-10-31",
+      "original_size": "2048x1536",
+      "share_alike": false
+    },
+    {
+      "slug": "seasons-at-prince-creek-west",
+      "file": "images/55-plus/seasons-at-prince-creek-west/huntington-beach-state-park-driftwood.webp",
+      "variants": {
+        "600": "images/55-plus/seasons-at-prince-creek-west/huntington-beach-state-park-driftwood-600w.webp",
+        "1200": "images/55-plus/seasons-at-prince-creek-west/huntington-beach-state-park-driftwood-1200w.webp"
+      },
+      "width": 1200,
+      "height": 800,
+      "title": "Driftwood at the Huntington Beach State Park beach 1",
+      "what": "A driftwood log on the wide sand beach at Huntington Beach State Park.",
+      "alt": "A driftwood log lying on soft sand, with waves behind it, on the beach at Huntington Beach State Park",
+      "place": {
+        "sublocation": "Huntington Beach State Park"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Driftwood_at_the_Huntington_Beach_State_Park_beach_1.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Driftwood_at_the_Huntington_Beach_State_Park_beach_1.jpg",
+      "author": "DogsRNice",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: DogsRNice, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2021-11-27",
+      "original_size": "6000x4000",
+      "share_alike": true
+    },
+    {
+      "slug": "seasons-at-prince-creek-west",
+      "file": "images/55-plus/seasons-at-prince-creek-west/huntington-beach-state-park-ghost-crab.webp",
+      "variants": {
+        "600": "images/55-plus/seasons-at-prince-creek-west/huntington-beach-state-park-ghost-crab-600w.webp",
+        "1200": "images/55-plus/seasons-at-prince-creek-west/huntington-beach-state-park-ghost-crab-1200w.webp"
+      },
+      "width": 1200,
+      "height": 474,
+      "title": "Ghost Crab1",
+      "what": "A ghost crab on the sand at Huntington Beach State Park.",
+      "alt": "A pale ghost crab with raised claws on the sand at Huntington Beach State Park",
+      "place": {
+        "sublocation": "Huntington Beach State Park"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Ghost_Crab1.JPG",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Ghost_Crab1.JPG",
+      "author": "Gareth Rasberry",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "credit": "Photo: Gareth Rasberry, CC BY-SA 3.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2014-05-24",
+      "original_size": "3675x1452",
+      "share_alike": true
+    },
+    {
+      "slug": "seasons-at-prince-creek-west",
+      "file": "images/55-plus/seasons-at-prince-creek-west/pawleys-island-beach-walkway.webp",
+      "variants": {
+        "600": "images/55-plus/seasons-at-prince-creek-west/pawleys-island-beach-walkway-600w.webp",
+        "1200": "images/55-plus/seasons-at-prince-creek-west/pawleys-island-beach-walkway-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "Pawleys beach walkway",
+      "what": "A wooden walkway over the dunes to the beach on Pawleys Island, south of Murrells Inlet.",
+      "alt": "A wooden walkway over green dunes leading to the ocean on Pawleys Island",
+      "place": {
+        "city": "Pawleys Island"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Pawleys_beach_walkway.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Pawleys_beach_walkway.jpg",
+      "author": "Phoebe",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: Phoebe, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2019-07-28",
+      "original_size": "4032x3024",
+      "share_alike": true,
+      "crops": {
+        "1x1": {
+          "path": "images/55-plus/seasons-at-prince-creek-west/pawleys-island-beach-walkway-1x1.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        "4x3": {
+          "path": "images/55-plus/seasons-at-prince-creek-west/pawleys-island-beach-walkway-4x3.webp",
+          "width": 1200,
+          "height": 900
+        },
+        "16x9": {
+          "path": "images/55-plus/seasons-at-prince-creek-west/pawleys-island-beach-walkway-16x9.webp",
+          "width": 1200,
+          "height": 675
+        }
+      },
+      "crops_note": "The hero of its page. For Article.image (Google: 16x9, 4x3 and 1x1), Chapter3 cut a center crop in each ratio, 1200 px wide, from the Commons 1920 px thumbnail (tools/photos.js makeCrops). A cut file is adapted material, so each crop is shared under the photo's own license, CC BY-SA 4.0 (rules/images.md)."
+    },
+    {
+      "slug": "seasons-at-prince-creek-west",
+      "file": "images/55-plus/seasons-at-prince-creek-west/brookgreen-gardens-oaks.webp",
+      "variants": {
+        "600": "images/55-plus/seasons-at-prince-creek-west/brookgreen-gardens-oaks-600w.webp",
+        "1200": "images/55-plus/seasons-at-prince-creek-west/brookgreen-gardens-oaks-1200w.webp"
+      },
+      "width": 1200,
+      "height": 626,
+      "title": "Pathway in Brookgreen Gardens",
+      "what": "Live oaks hung with Spanish moss, a bench and a path at Brookgreen Gardens, near Murrells Inlet.",
+      "alt": "Old oak trees hung with Spanish moss, with a bench and a wooden path, at Brookgreen Gardens",
+      "place": {
+        "sublocation": "Brookgreen Gardens"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Pathway_in_Brookgreen_Gardens.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Pathway_in_Brookgreen_Gardens.jpg",
+      "author": "DiscoA340",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Photo: DiscoA340, CC BY-SA 4.0, via Wikimedia Commons",
+      "provenance": "own work",
+      "taken": "2022-06-05",
+      "original_size": "6053x3157",
+      "share_alike": true
+    },
+    {
+      "slug": "del-webb-north-myrtle-beach",
+      "file": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-from-above.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-from-above-600w.webp",
+        "1200": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-from-above-1200w.webp"
+      },
+      "title": "Del Webb North Myrtle Beach, NAIP 2023 aerial",
+      "what": "Del Webb North Myrtle Beach from above on April 10, 2023, with its outline and the clubhouse marked. Homes and ponds fill the west side. The east side was still graded land, being made ready for streets and homes.",
+      "caption": "Del Webb North Myrtle Beach from above in April 2023. The orange line is the edge of the neighborhood. The east side was still being built.",
+      "alt": "Del Webb North Myrtle Beach from above, with its edge drawn in orange: rows of new homes and ponds on the west side, graded land on the east side, and the clubhouse marked",
+      "place": {
+        "city": "North Myrtle Beach",
+        "sublocation": "Del Webb North Myrtle Beach"
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "source_name": "The National Map (USGS)",
+      "author": "USDA Farm Service Agency, NAIP",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+      "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS). Outline and labels by Chapter3 Realty.",
+      "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (the date in the tile names). Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023); the exact request is in source_request.",
+      "license_note": "The USGS service page says The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\". The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\". Read 2026-10-11.",
+      "terms_urls": [
+        "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+        "https://www.fsa.usda.gov/help/policies-and-links/",
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+      ],
+      "taken": "2023-04-10",
+      "digital_source_type": "composite",
+      "changes": "Chapter3 Realty drew the outline from Horry County GIS parcels, added the labels and adjusted the colors",
+      "annotation_sources": {
+        "outline": "Horry County GIS parcels layer 24, the same outline tools/area-map.js draws (tools/geo/grand-strand-v2.json)",
+        "clubhouse": "Horry County GIS building footprints layer 27 (largest Commercial / Public building on the HOA's amenity parcel), https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/27",
+        "entrance": "tools/geo/grand-strand-v2.json entrance point (Horry County roads layer 18)",
+        "pool": "read from the photo: the blue pool beside the clubhouse, on the pool deck the county maps as a patio (layer 27)"
+      },
+      "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8762043.504263418%2C4004289.967281299%2C-8759546.385445945%2C4005694.5966161275&bboxSR=3857&imageSR=3857&size=2400%2C1350&format=png&pixelType=U8&interpolation=RSP_CubicConvolution&noData=&compression=&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+      "naip_tiles": [
+        "m_3307811_ne_17_060_20230410",
+        "m_3307811_nw_17_060_20230410"
+      ],
+      "frame": {
+        "bbox_wgs84": [
+          -78.710776,
+          33.817254,
+          -78.688344,
+          33.827736
+        ],
+        "ground_m_per_px_1200w": 1.73
+      },
+      "labels": [
+        "Clubhouse"
+      ],
+      "width": 1200,
+      "height": 675,
+      "original_size": "2400x1350 (NAIP export at 2x, drawn on, then resized)",
+      "crops": {
+        "1x1": {
+          "path": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-from-above-1x1.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        "4x3": {
+          "path": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-from-above-4x3.webp",
+          "width": 1200,
+          "height": 900
+        },
+        "16x9": {
+          "path": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-from-above-16x9.webp",
+          "width": 1200,
+          "height": 675
+        }
+      },
+      "crops_note": "For Article.image (Google: 16x9, 4x3 and 1x1). Not center cuts: Chapter3 exported each ratio from the same NAIP 2023 imagery and placed the outline and labels for that frame, 1200 px wide. In the 16x9 and 4x3 files the outline and labels sit inside the part the page keeps when it shows the photo 4:3 on a phone or 16:9 on a wide screen.",
+      "display_credit": "U.S. government aerial photo"
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/del-webb-grande-dunes-from-above.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/del-webb-grande-dunes-from-above-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/del-webb-grande-dunes-from-above-1200w.webp"
+      },
+      "title": "Del Webb at Grande Dunes, NAIP 2023 aerial",
+      "what": "Del Webb at Grande Dunes from above on April 10, 2023, with its outline, the clubhouse and the Intracoastal Waterway marked. A few streets at the north-east end were still being built.",
+      "caption": "Del Webb at Grande Dunes from above in April 2023, beside the Intracoastal Waterway. The orange line is the edge of the neighborhood.",
+      "alt": "Del Webb at Grande Dunes from above, with its edge drawn in orange beside the Intracoastal Waterway, streets of homes around ponds, and the clubhouse marked",
+      "place": {
+        "city": "Myrtle Beach",
+        "sublocation": "Del Webb at Grande Dunes"
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "source_name": "The National Map (USGS)",
+      "author": "USDA Farm Service Agency, NAIP",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+      "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS). Outline and labels by Chapter3 Realty.",
+      "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (the date in the tile names). Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023); the exact request is in source_request.",
+      "license_note": "The USGS service page says The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\". The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\". Read 2026-10-11.",
+      "terms_urls": [
+        "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+        "https://www.fsa.usda.gov/help/policies-and-links/",
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+      ],
+      "taken": "2023-04-10",
+      "digital_source_type": "composite",
+      "changes": "Chapter3 Realty drew the outline from Horry County GIS parcels, added the labels and adjusted the colors",
+      "annotation_sources": {
+        "outline": "Horry County GIS parcels layer 24, the same outline tools/area-map.js draws (tools/geo/grand-strand-v2.json)",
+        "clubhouse": "Horry County GIS building footprints layer 27 (largest Commercial / Public building on the HOA's amenity parcel), https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/27",
+        "entrance": "tools/geo/grand-strand-v2.json entrance point (Horry County roads layer 18)",
+        "pool": "read from the photo: the blue pool beside the clubhouse, on the pool deck the county maps as a patio (layer 27)"
+      },
+      "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8778601.006692627%2C3993777.2961958577%2C-8774082.64318511%2C3996318.875668839&bboxSR=3857&imageSR=3857&size=2400%2C1350&format=png&pixelType=U8&interpolation=RSP_CubicConvolution&noData=&compression=&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+      "naip_tiles": [
+        "m_3307810_sw_17_060_20230410",
+        "m_3307818_nw_17_060_20230410"
+      ],
+      "frame": {
+        "bbox_wgs84": [
+          -78.859515,
+          33.738758,
+          -78.818925,
+          33.757742
+        ],
+        "ground_m_per_px_1200w": 3.13
+      },
+      "labels": [
+        "Clubhouse",
+        "Intracoastal Waterway"
+      ],
+      "width": 1200,
+      "height": 675,
+      "original_size": "2400x1350 (NAIP export at 2x, drawn on, then resized)",
+      "crops": {
+        "1x1": {
+          "path": "images/55-plus/del-webb-grande-dunes/del-webb-grande-dunes-from-above-1x1.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        "4x3": {
+          "path": "images/55-plus/del-webb-grande-dunes/del-webb-grande-dunes-from-above-4x3.webp",
+          "width": 1200,
+          "height": 900
+        },
+        "16x9": {
+          "path": "images/55-plus/del-webb-grande-dunes/del-webb-grande-dunes-from-above-16x9.webp",
+          "width": 1200,
+          "height": 675
+        }
+      },
+      "crops_note": "For Article.image (Google: 16x9, 4x3 and 1x1). Not center cuts: Chapter3 exported each ratio from the same NAIP 2023 imagery and placed the outline and labels for that frame, 1200 px wide. In the 16x9 and 4x3 files the outline and labels sit inside the part the page keeps when it shows the photo 4:3 on a phone or 16:9 on a wide screen.",
+      "display_credit": "U.S. government aerial photo"
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/del-webb-grande-dunes-clubhouse-from-above.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/del-webb-grande-dunes-clubhouse-from-above-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/del-webb-grande-dunes-clubhouse-from-above-1200w.webp"
+      },
+      "title": "Del Webb at Grande Dunes clubhouse, NAIP 2023 aerial",
+      "what": "The clubhouse at Del Webb at Grande Dunes from above on April 10, 2023: the building, its outdoor pool, the parking circle, the courts, a pond, and the entrance on Marina Parkway.",
+      "caption": "The clubhouse and its outdoor pool from above, April 2023.",
+      "alt": "The Del Webb at Grande Dunes clubhouse from above, with its large outdoor pool, parking, courts and a pond beside it, and the entrance marked",
+      "place": {
+        "city": "Myrtle Beach",
+        "sublocation": "Del Webb at Grande Dunes"
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "source_name": "The National Map (USGS)",
+      "author": "USDA Farm Service Agency, NAIP",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+      "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS). Outline and labels by Chapter3 Realty.",
+      "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (the date in the tile names). Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023); the exact request is in source_request.",
+      "license_note": "The USGS service page says The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\". The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\". Read 2026-10-11.",
+      "terms_urls": [
+        "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+        "https://www.fsa.usda.gov/help/policies-and-links/",
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+      ],
+      "taken": "2023-04-10",
+      "digital_source_type": "composite",
+      "changes": "Chapter3 Realty drew the outline from Horry County GIS parcels, added the labels and adjusted the colors",
+      "annotation_sources": {
+        "outline": "Horry County GIS parcels layer 24, the same outline tools/area-map.js draws (tools/geo/grand-strand-v2.json)",
+        "clubhouse": "Horry County GIS building footprints layer 27 (largest Commercial / Public building on the HOA's amenity parcel), https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/27",
+        "entrance": "tools/geo/grand-strand-v2.json entrance point (Horry County roads layer 18)",
+        "pool": "read from the photo: the blue pool beside the clubhouse, on the pool deck the county maps as a patio (layer 27)"
+      },
+      "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8777060.599378439%2C3995047.7381337327%2C-8776531.417544173%2C3995444.6245094296&bboxSR=3857&imageSR=3857&size=2400%2C1800&format=png&pixelType=U8&interpolation=RSP_CubicConvolution&noData=&compression=&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+      "naip_tiles": [
+        "m_3307810_sw_17_060_20230410",
+        "m_3307818_nw_17_060_20230410"
+      ],
+      "frame": {
+        "bbox_wgs84": [
+          -78.845677,
+          33.748248,
+          -78.840923,
+          33.751212
+        ],
+        "ground_m_per_px_1200w": 0.37
+      },
+      "labels": [
+        "Clubhouse",
+        "Outdoor pool",
+        "Entrance"
+      ],
+      "width": 1200,
+      "height": 900,
+      "original_size": "2400x1800 (NAIP export at 2x, drawn on, then resized)",
+      "display_credit": "U.S. government aerial photo"
+    },
+    {
+      "slug": "myrtle-trace",
+      "file": "images/55-plus/myrtle-trace/myrtle-trace-from-above.webp",
+      "variants": {
+        "600": "images/55-plus/myrtle-trace/myrtle-trace-from-above-600w.webp",
+        "1200": "images/55-plus/myrtle-trace/myrtle-trace-from-above-1200w.webp"
+      },
+      "title": "Myrtle Trace, NAIP 2023 aerial",
+      "what": "Myrtle Trace from above on April 10, 2023, with its outline, the clubhouse, the main entrance on Burning Ridge Road and the golf course next door marked. The houses sit among tall pines and ponds.",
+      "caption": "Myrtle Trace from above in April 2023. The orange line is the edge of the neighborhood. The golf course next door is not part of it.",
+      "alt": "Myrtle Trace from above, with its edge drawn in orange: houses among tall pines and ponds, the clubhouse and main entrance marked, and the golf course next door",
+      "place": {
+        "city": "Conway",
+        "sublocation": "Myrtle Trace"
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "source_name": "The National Map (USGS)",
+      "author": "USDA Farm Service Agency, NAIP",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+      "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS). Outline and labels by Chapter3 Realty.",
+      "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (the date in the tile names). Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023); the exact request is in source_request.",
+      "license_note": "The USGS service page says The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\". The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\". Read 2026-10-11.",
+      "terms_urls": [
+        "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+        "https://www.fsa.usda.gov/help/policies-and-links/",
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+      ],
+      "taken": "2023-04-10",
+      "digital_source_type": "composite",
+      "changes": "Chapter3 Realty drew the outline from Horry County GIS parcels, added the labels and adjusted the colors",
+      "annotation_sources": {
+        "outline": "Horry County GIS parcels layer 24, the same outline tools/area-map.js draws (tools/geo/grand-strand-v2.json)",
+        "clubhouse": "Horry County GIS building footprints layer 27 (largest Commercial / Public building on the HOA's amenity parcel), https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/27",
+        "entrance": "tools/geo/grand-strand-v2.json entrance point (Horry County roads layer 18)",
+        "pool": "read from the photo: the blue pool beside the clubhouse, on the pool deck the county maps as a patio (layer 27)"
+      },
+      "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8795568.287429636%2C3997866.543820924%2C-8791796.949804747%2C3999987.9212349243&bboxSR=3857&imageSR=3857&size=2400%2C1350&format=png&pixelType=U8&interpolation=RSP_CubicConvolution&noData=&compression=&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+      "naip_tiles": [
+        "m_3307809_sw_17_060_20230410",
+        "m_3307916_se_17_060_20230410"
+      ],
+      "frame": {
+        "bbox_wgs84": [
+          -79.011934,
+          33.7693,
+          -78.978056,
+          33.78514
+        ],
+        "ground_m_per_px_1200w": 2.61
+      },
+      "labels": [
+        "Clubhouse",
+        "Main entrance",
+        "Golf course next door"
+      ],
+      "width": 1200,
+      "height": 675,
+      "original_size": "2400x1350 (NAIP export at 2x, drawn on, then resized)",
+      "crops": {
+        "1x1": {
+          "path": "images/55-plus/myrtle-trace/myrtle-trace-from-above-1x1.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        "4x3": {
+          "path": "images/55-plus/myrtle-trace/myrtle-trace-from-above-4x3.webp",
+          "width": 1200,
+          "height": 900
+        },
+        "16x9": {
+          "path": "images/55-plus/myrtle-trace/myrtle-trace-from-above-16x9.webp",
+          "width": 1200,
+          "height": 675
+        }
+      },
+      "crops_note": "For Article.image (Google: 16x9, 4x3 and 1x1). Not center cuts: Chapter3 exported each ratio from the same NAIP 2023 imagery and placed the outline and labels for that frame, 1200 px wide. In the 16x9 and 4x3 files the outline and labels sit inside the part the page keeps when it shows the photo 4:3 on a phone or 16:9 on a wide screen.",
+      "display_credit": "U.S. government aerial photo"
+    },
+    {
+      "slug": "seasons-at-prince-creek-west",
+      "file": "images/55-plus/seasons-at-prince-creek-west/seasons-at-prince-creek-west-from-above.webp",
+      "variants": {
+        "600": "images/55-plus/seasons-at-prince-creek-west/seasons-at-prince-creek-west-from-above-600w.webp",
+        "1200": "images/55-plus/seasons-at-prince-creek-west/seasons-at-prince-creek-west-from-above-1200w.webp"
+      },
+      "title": "Seasons at Prince Creek West, NAIP 2023 aerial",
+      "what": "Seasons at Prince Creek West from above on April 10, 2023, with its outline, the clubhouse and the entrance on TPC Boulevard marked. Curving streets of homes surround ponds, with woods along the east side.",
+      "caption": "Seasons at Prince Creek West from above in April 2023. The orange line is the edge of the neighborhood.",
+      "alt": "Seasons at Prince Creek West from above, with its long, narrow edge drawn in orange, curving streets of homes around ponds, woods on the east side, and the clubhouse and entrance marked",
+      "place": {
+        "city": "Murrells Inlet",
+        "sublocation": "Seasons at Prince Creek West"
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "source_name": "The National Map (USGS)",
+      "author": "USDA Farm Service Agency, NAIP",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+      "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS). Outline and labels by Chapter3 Realty.",
+      "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (the date in the tile names). Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023); the exact request is in source_request.",
+      "license_note": "The USGS service page says The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\". The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\". Read 2026-10-11.",
+      "terms_urls": [
+        "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+        "https://www.fsa.usda.gov/help/policies-and-links/",
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+      ],
+      "taken": "2023-04-10",
+      "digital_source_type": "composite",
+      "changes": "Chapter3 Realty drew the outline from Horry County GIS parcels, added the labels and adjusted the colors",
+      "annotation_sources": {
+        "outline": "Horry County GIS parcels layer 24, the same outline tools/area-map.js draws (tools/geo/grand-strand-v2.json)",
+        "clubhouse": "Horry County GIS building footprints layer 27 (largest Commercial / Public building on the HOA's amenity parcel), https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/27",
+        "entrance": "tools/geo/grand-strand-v2.json entrance point (Horry County roads layer 18)",
+        "pool": "read from the photo: the blue pool beside the clubhouse, on the pool deck the county maps as a patio (layer 27)"
+      },
+      "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8804569.819574144%2C3972933.026090655%2C-8799654.75454088%2C3975697.750171868&bboxSR=3857&imageSR=3857&size=2400%2C1350&format=png&pixelType=U8&interpolation=RSP_CubicConvolution&noData=&compression=&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+      "naip_tiles": [
+        "m_3307932_ne_17_060_20230410",
+        "m_3307932_nw_17_060_20230410"
+      ],
+      "frame": {
+        "bbox_wgs84": [
+          -79.092796,
+          33.582906,
+          -79.048644,
+          33.603594
+        ],
+        "ground_m_per_px_1200w": 3.41
+      },
+      "labels": [
+        "Clubhouse",
+        "Entrance"
+      ],
+      "width": 1200,
+      "height": 675,
+      "original_size": "2400x1350 (NAIP export at 2x, drawn on, then resized)",
+      "crops": {
+        "1x1": {
+          "path": "images/55-plus/seasons-at-prince-creek-west/seasons-at-prince-creek-west-from-above-1x1.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        "4x3": {
+          "path": "images/55-plus/seasons-at-prince-creek-west/seasons-at-prince-creek-west-from-above-4x3.webp",
+          "width": 1200,
+          "height": 900
+        },
+        "16x9": {
+          "path": "images/55-plus/seasons-at-prince-creek-west/seasons-at-prince-creek-west-from-above-16x9.webp",
+          "width": 1200,
+          "height": 675
+        }
+      },
+      "crops_note": "For Article.image (Google: 16x9, 4x3 and 1x1). Not center cuts: Chapter3 exported each ratio from the same NAIP 2023 imagery and placed the outline and labels for that frame, 1200 px wide. In the 16x9 and 4x3 files the outline and labels sit inside the part the page keeps when it shows the photo 4:3 on a phone or 16:9 on a wide screen.",
+      "display_credit": "U.S. government aerial photo"
+    },
+    {
+      "slug": "seasons-at-prince-creek-west",
+      "file": "images/55-plus/seasons-at-prince-creek-west/seasons-at-prince-creek-west-clubhouse-from-above.webp",
+      "variants": {
+        "600": "images/55-plus/seasons-at-prince-creek-west/seasons-at-prince-creek-west-clubhouse-from-above-600w.webp",
+        "1200": "images/55-plus/seasons-at-prince-creek-west/seasons-at-prince-creek-west-clubhouse-from-above-1200w.webp"
+      },
+      "title": "Seasons at Prince Creek West clubhouse, NAIP 2023 aerial",
+      "what": "The clubhouse at Seasons at Prince Creek West from above on April 10, 2023: the building, its outdoor pool, the parking lot, the tennis courts, two ponds and the entrance road from TPC Boulevard.",
+      "caption": "The clubhouse, its outdoor pool and the tennis courts from above, April 2023.",
+      "alt": "The Seasons at Prince Creek West clubhouse from above, with its outdoor pool, parking lot and tennis courts among the trees, and the entrance road marked",
+      "place": {
+        "city": "Murrells Inlet",
+        "sublocation": "Seasons at Prince Creek West"
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "source_name": "The National Map (USGS)",
+      "author": "USDA Farm Service Agency, NAIP",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+      "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS). Outline and labels by Chapter3 Realty.",
+      "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (the date in the tile names). Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023); the exact request is in source_request.",
+      "license_note": "The USGS service page says The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\". The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\". Read 2026-10-11.",
+      "terms_urls": [
+        "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+        "https://www.fsa.usda.gov/help/policies-and-links/",
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+      ],
+      "taken": "2023-04-10",
+      "digital_source_type": "composite",
+      "changes": "Chapter3 Realty drew the outline from Horry County GIS parcels, added the labels and adjusted the colors",
+      "annotation_sources": {
+        "outline": "Horry County GIS parcels layer 24, the same outline tools/area-map.js draws (tools/geo/grand-strand-v2.json)",
+        "clubhouse": "Horry County GIS building footprints layer 27 (largest Commercial / Public building on the HOA's amenity parcel), https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/27",
+        "entrance": "tools/geo/grand-strand-v2.json entrance point (Horry County roads layer 18)",
+        "pool": "read from the photo: the blue pool beside the clubhouse, on the pool deck the county maps as a patio (layer 27)"
+      },
+      "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8802474.335500883%2C3973128.378764009%2C-8801946.16091794%2C3973524.509701219&bboxSR=3857&imageSR=3857&size=2400%2C1800&format=png&pixelType=U8&interpolation=RSP_CubicConvolution&noData=&compression=&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+      "naip_tiles": [
+        "m_3307932_nw_17_060_20230410"
+      ],
+      "frame": {
+        "bbox_wgs84": [
+          -79.073972,
+          33.584368,
+          -79.069228,
+          33.587332
+        ],
+        "ground_m_per_px_1200w": 0.37
+      },
+      "labels": [
+        "Clubhouse",
+        "Outdoor pool",
+        "Entrance"
+      ],
+      "width": 1200,
+      "height": 900,
+      "original_size": "2400x1800 (NAIP export at 2x, drawn on, then resized)",
+      "display_credit": "U.S. government aerial photo"
+    },
+    {
+      "slug": "myrtle-trace",
+      "file": "images/55-plus/myrtle-trace/myrtle-trace-homes-from-above.webp",
+      "variants": {
+        "600": "images/55-plus/myrtle-trace/myrtle-trace-homes-from-above-600w.webp",
+        "1200": "images/55-plus/myrtle-trace/myrtle-trace-homes-from-above-1200w.webp"
+      },
+      "title": "Homes in Myrtle Trace, NAIP 2023 aerial",
+      "what": "Houses with yards and tall trees along two streets and a pond in Myrtle Trace, seen from above on April 10, 2023.",
+      "caption": "Houses along two streets and a pond in Myrtle Trace, from above.",
+      "alt": "Houses with dark roofs, green yards and trees along two curving streets and a pond in Myrtle Trace, seen from above",
+      "place": {
+        "city": "Conway",
+        "sublocation": "Myrtle Trace"
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "source_name": "The National Map (USGS)",
+      "author": "USDA Farm Service Agency, NAIP",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+      "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+      "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (the date in the tile names). Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023); the exact request is in source_request.",
+      "license_note": "The USGS service page says The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\". The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\". Read 2026-10-11.",
+      "terms_urls": [
+        "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+        "https://www.fsa.usda.gov/help/policies-and-links/",
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+      ],
+      "taken": "2023-04-10",
+      "digital_source_type": "composite",
+      "changes": "Chapter3 Realty cut a close view of one street from the NAIP export and adjusted the colors",
+      "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8794184.784754362%2C3999430.6533789607%2C-8793871.969156832%2C3999665.265077108&bboxSR=3857&imageSR=3857&size=2400%2C1800&format=png&pixelType=U8&interpolation=RSP_CubicConvolution&noData=&compression=&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+      "naip_tiles": [
+        "m_3307809_sw_17_060_20230410",
+        "m_3307916_se_17_060_20230410"
+      ],
+      "frame": {
+        "bbox_wgs84": [
+          -78.999506,
+          33.780979,
+          -78.996696,
+          33.782731
+        ],
+        "ground_m_per_px_1200w": 0.22
+      },
+      "width": 1200,
+      "height": 900,
+      "original_size": "2400x1800 (NAIP export at 2x, colors adjusted, then resized)",
+      "display_credit": "U.S. government aerial photo"
+    },
+    {
+      "slug": "seasons-at-prince-creek-west",
+      "file": "images/55-plus/seasons-at-prince-creek-west/seasons-at-prince-creek-west-homes-from-above.webp",
+      "variants": {
+        "600": "images/55-plus/seasons-at-prince-creek-west/seasons-at-prince-creek-west-homes-from-above-600w.webp",
+        "1200": "images/55-plus/seasons-at-prince-creek-west/seasons-at-prince-creek-west-homes-from-above-1200w.webp"
+      },
+      "title": "Homes in Seasons at Prince Creek West, NAIP 2023 aerial",
+      "what": "One-story homes with wide lawns around a pond and a curving street in Seasons at Prince Creek West, seen from above on April 10, 2023.",
+      "caption": "Homes around a pond in Seasons at Prince Creek West, from above.",
+      "alt": "One-story homes with gray and tan roofs and wide lawns around a pond and a curving street in Seasons at Prince Creek West, seen from above",
+      "place": {
+        "city": "Murrells Inlet",
+        "sublocation": "Seasons at Prince Creek West"
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "source_name": "The National Map (USGS)",
+      "author": "USDA Farm Service Agency, NAIP",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+      "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+      "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (the date in the tile names). Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023); the exact request is in source_request.",
+      "license_note": "The USGS service page says The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\". The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\". Read 2026-10-11.",
+      "terms_urls": [
+        "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+        "https://www.fsa.usda.gov/help/policies-and-links/",
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+      ],
+      "taken": "2023-04-10",
+      "digital_source_type": "composite",
+      "changes": "Chapter3 Realty cut a close view of one street from the NAIP export and adjusted the colors",
+      "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8802116.501450699%2C3974650.0696131494%2C-8801780.348083433%2C3974902.1846386003&bboxSR=3857&imageSR=3857&size=2400%2C1800&format=png&pixelType=U8&interpolation=RSP_CubicConvolution&noData=&compression=&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+      "naip_tiles": [
+        "m_3307932_nw_17_060_20230410"
+      ],
+      "frame": {
+        "bbox_wgs84": [
+          -79.070758,
+          33.595755,
+          -79.067738,
+          33.597641
+        ],
+        "ground_m_per_px_1200w": 0.23
+      },
+      "width": 1200,
+      "height": 900,
+      "original_size": "2400x1800 (NAIP export at 2x, colors adjusted, then resized)",
+      "display_credit": "U.S. government aerial photo"
+    },
+    {
+      "slug": "del-webb-north-myrtle-beach",
+      "file": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-homes-from-above.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-homes-from-above-600w.webp",
+        "1200": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-homes-from-above-1200w.webp"
+      },
+      "title": "Homes in Del Webb North Myrtle Beach, NAIP 2023 aerial",
+      "what": "Two rows of finished one-story homes with driveways on a street in Del Webb North Myrtle Beach, seen from above on April 10, 2023.",
+      "caption": "A street of homes in Del Webb North Myrtle Beach, from above.",
+      "alt": "Two rows of one-story homes with gray roofs and driveways along a street in Del Webb North Myrtle Beach, seen from above",
+      "place": {
+        "city": "North Myrtle Beach",
+        "sublocation": "Del Webb North Myrtle Beach"
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "source_name": "The National Map (USGS)",
+      "author": "USDA Farm Service Agency, NAIP",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+      "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+      "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (the date in the tile names). Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023); the exact request is in source_request.",
+      "license_note": "The USGS service page says The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\". The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\". Read 2026-10-11.",
+      "terms_urls": [
+        "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+        "https://www.fsa.usda.gov/help/policies-and-links/",
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+      ],
+      "taken": "2023-04-10",
+      "digital_source_type": "composite",
+      "changes": "Chapter3 Realty cut a close view of one street from the NAIP export and adjusted the colors",
+      "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8761051.643221015%2C4004619.727772249%2C-8760871.09176582%2C4004755.141363643&bboxSR=3857&imageSR=3857&size=2400%2C1800&format=png&pixelType=U8&interpolation=RSP_CubicConvolution&noData=&compression=&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+      "naip_tiles": [
+        "m_3307811_nw_17_060_20230410"
+      ],
+      "frame": {
+        "bbox_wgs84": [
+          -78.701866,
+          33.819715,
+          -78.700244,
+          33.820725
+        ],
+        "ground_m_per_px_1200w": 0.13
+      },
+      "width": 1200,
+      "height": 900,
+      "original_size": "2400x1800 (NAIP export at 2x, colors adjusted, then resized)",
+      "crops": {
+        "1x1": {
+          "path": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-homes-from-above-1x1.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        "4x3": {
+          "path": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-homes-from-above-4x3.webp",
+          "width": 1200,
+          "height": 900
+        },
+        "16x9": {
+          "path": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-homes-from-above-16x9.webp",
+          "width": 1200,
+          "height": 675
+        }
+      },
+      "crops_note": "For Article.image (Google: 16x9, 4x3 and 1x1). Each ratio is its own NAIP 2023 export of the same street, 1200 px wide, colors adjusted.",
+      "display_credit": "U.S. government aerial photo"
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/del-webb-grande-dunes-homes-from-above.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/del-webb-grande-dunes-homes-from-above-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/del-webb-grande-dunes-homes-from-above-1200w.webp"
+      },
+      "title": "Houses in Del Webb at Grande Dunes, NAIP 2023 aerial",
+      "what": "Curving streets of single-family houses with small yards and driveways in Del Webb at Grande Dunes, seen from above on April 10, 2023, labelled Houses.",
+      "caption": "Houses in Del Webb at Grande Dunes, from above.",
+      "alt": "Curving streets lined with single-family houses with gray roofs, small yards and driveways in Del Webb at Grande Dunes, seen from above, with the label Houses",
+      "place": {
+        "city": "Myrtle Beach",
+        "sublocation": "Del Webb at Grande Dunes"
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "source_name": "The National Map (USGS)",
+      "author": "USDA Farm Service Agency, NAIP",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+      "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+      "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (the date in the tile names). Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023); the exact request is in source_request.",
+      "license_note": "The USGS service page says The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\". The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\". Read 2026-10-11.",
+      "terms_urls": [
+        "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+        "https://www.fsa.usda.gov/help/policies-and-links/",
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+      ],
+      "taken": "2023-04-10",
+      "digital_source_type": "composite",
+      "changes": "Chapter3 Realty cut a close view of one street from the aerial photo, added one label and adjusted the colors",
+      "annotation_sources": {
+        "label": "Horry County GIS parcels layer 24: the lots in this frame are recorded as Villas at Heel Tract (villas) or Marina Tract P-2 (houses)"
+      },
+      "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8777063.005105766%2C3994827.2894526953%2C-8776750.314964542%2C3995061.8070586114&bboxSR=3857&imageSR=3857&size=2400%2C1800&format=png&pixelType=U8&interpolation=RSP_CubicConvolution&noData=&compression=&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+      "naip_tiles": [
+        "m_3307810_sw_17_060_20230410",
+        "m_3307818_nw_17_060_20230410"
+      ],
+      "frame": {
+        "bbox_wgs84": [
+          -78.845698,
+          33.746601,
+          -78.84289,
+          33.748353
+        ],
+        "ground_m_per_px_1200w": 0.22
+      },
+      "width": 1200,
+      "height": 900,
+      "original_size": "2400x1800 (NAIP export at 2x, colors adjusted, then resized)",
+      "display_credit": "U.S. government aerial photo"
+    },
+    {
+      "slug": "del-webb-grande-dunes",
+      "file": "images/55-plus/del-webb-grande-dunes/del-webb-grande-dunes-villas-from-above.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-grande-dunes/del-webb-grande-dunes-villas-from-above-600w.webp",
+        "1200": "images/55-plus/del-webb-grande-dunes/del-webb-grande-dunes-villas-from-above-1200w.webp"
+      },
+      "title": "Villas in Del Webb at Grande Dunes, NAIP 2023 aerial",
+      "what": "Streets of villas, each building two homes that share a wall, in Del Webb at Grande Dunes, seen from above on April 10, 2023, labelled Villas. Horry County parcel records name these lots Villas at Heel Tract.",
+      "caption": "Villas in Del Webb at Grande Dunes, from above.",
+      "alt": "Streets of villas in Del Webb at Grande Dunes, each building two homes joined by a shared wall, seen from above, with the label Villas",
+      "place": {
+        "city": "Myrtle Beach",
+        "sublocation": "Del Webb at Grande Dunes"
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "source_name": "The National Map (USGS)",
+      "author": "USDA Farm Service Agency, NAIP",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+      "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+      "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (the date in the tile names). Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023); the exact request is in source_request.",
+      "license_note": "The USGS service page says The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\". The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\". Read 2026-10-11.",
+      "terms_urls": [
+        "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+        "https://www.fsa.usda.gov/help/policies-and-links/",
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+      ],
+      "taken": "2023-04-10",
+      "digital_source_type": "composite",
+      "changes": "Chapter3 Realty cut a close view of one street from the aerial photo, added one label and adjusted the colors",
+      "annotation_sources": {
+        "label": "Horry County GIS parcels layer 24: the lots in this frame are recorded as Villas at Heel Tract (villas) or Marina Tract P-2 (houses)"
+      },
+      "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8777197.250984665%2C3994428.7430318543%2C-8776884.571697436%2C3994663.2524972735&bboxSR=3857&imageSR=3857&size=2400%2C1800&format=png&pixelType=U8&interpolation=RSP_CubicConvolution&noData=&compression=&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+      "naip_tiles": [
+        "m_3307818_nw_17_060_20230410"
+      ],
+      "frame": {
+        "bbox_wgs84": [
+          -78.846904,
+          33.743624,
+          -78.844096,
+          33.745376
+        ],
+        "ground_m_per_px_1200w": 0.22
+      },
+      "width": 1200,
+      "height": 900,
+      "original_size": "2400x1800 (NAIP export at 2x, colors adjusted, then resized)",
+      "display_credit": "U.S. government aerial photo"
+    },
+    {
+      "slug": "del-webb-north-myrtle-beach",
+      "file": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-from-above-2026.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-from-above-2026-600w.webp",
+        "1200": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-from-above-2026-1200w.webp"
+      },
+      "title": "Del Webb North Myrtle Beach, NOAA aerial, January 2026",
+      "what": "Del Webb North Myrtle Beach from above on January 12, 2026, with its outline and the clubhouse marked. Homes line the curving streets around the ponds. The clubhouse, pools and courts sit in the middle, by Possum Trot Road.",
+      "caption": "Del Webb North Myrtle Beach from above. The orange line is the edge of the neighborhood.",
+      "alt": "Del Webb North Myrtle Beach from above in winter, with its edge drawn in orange: curving streets of homes around ponds, and the clubhouse with its pools and courts marked in the middle",
+      "place": {
+        "city": "North Myrtle Beach",
+        "sublocation": "Del Webb North Myrtle Beach"
+      },
+      "source": "https://noaa-eri-pds.s3.amazonaws.com/index.html#2026_Pre_Event/EC2601a_OB_N_RGB/",
+      "source_name": "NOAA Emergency Response Imagery",
+      "author": "NOAA National Geodetic Survey",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+      "credit": "Photo: NOAA National Geodetic Survey, public domain. Outline and label by Chapter3 Realty.",
+      "provenance": "U.S. government aerial photo: NOAA National Geodetic Survey (NGS), Remote Sensing Division, Emergency Response Imagery, 2026 pre-event coastal collection, East Coast group EC2601a. Flown 2026-01-12: the exterior orientation file raw/0122026_RGB_2_Oblique_EO.txt (day 012 of 2026) is the only flight file with frames within 6 km of the community, and the frame names carry 011226 (frames 185092 to 185108, about 16:45 UTC, about 2,300 m up). The group was posted 2026-03-19. Downloaded from the public S3 bucket noaa-eri-pds; the exact files are in source_files.",
+      "license_note": "17 U.S.C. 105(a): \"Copyright protection under this title is not available for any work of the United States Government\". NOAA's terms on the Registry of Open Data (https://registry.opendata.aws/noaa-eri/): \"NOAA data disseminated through NODD are open to the public and can be used as desired.\" ... \"NOAA requests attribution for the use or dissemination of unaltered NOAA data. However, it is not permissible to state or imply endorsement by or affiliation with NOAA. If you modify NOAA data, you may not state or imply that it is original, unaltered NOAA data.\" The NOAA InPort record for the NGS coastal imagery (item 67562) gives \"Data access constraints: None\" and says the missions \"were conducted by NOAA's National Geodetic Survey, Remote Sensing Division\". So: credit NOAA, say what Chapter3 changed (changes), never suggest NOAA endorses Chapter3. Read 2026-10-11.",
+      "terms_urls": [
+        "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+        "https://registry.opendata.aws/noaa-eri/",
+        "https://www.fisheries.noaa.gov/inport/item/67562"
+      ],
+      "taken": "2026-01-12",
+      "digital_source_type": "composite",
+      "changes": "Chapter3 Realty joined four NOAA map tiles, drew the outline from Horry County GIS parcels, added one label and adjusted the colors",
+      "annotation_sources": {
+        "outline": "Horry County GIS parcels layer 24, the same outline tools/area-map.js draws (tools/geo/grand-strand-v2.json)",
+        "clubhouse": "Horry County GIS building footprints layer 27 (largest Commercial / Public building on the HOA's amenity parcel), https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/27"
+      },
+      "source_files": [
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784200w334845n.tif",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784200w334930n.tif",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784200w335015n.tif",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784245w334845n.tif",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784245w334930n.tif",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784245w335015n.tif"
+      ],
+      "frame": {
+        "bbox_wgs84": [
+          -78.70855,
+          33.8164,
+          -78.690138,
+          33.827872
+        ],
+        "ground_m_per_px_1200w": 1.42
+      },
+      "original_size": "2400x1800 (cut from the four NOAA tiles, Web Mercator, Lanczos, colors adjusted, then resized)",
+      "method": "scratchpad eri/scripts/mosaic.py (tiles joined at their GeoTIFF tie points) and eri_fetch.py (frame in Web Mercator), drawn by eri/scripts/render_eri.py (aerial/scripts/render.py reading the NOAA mosaic in place of NAIP)",
+      "width": 1200,
+      "height": 900,
+      "crops": {
+        "1x1": {
+          "path": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-from-above-2026-1x1.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        "4x3": {
+          "path": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-from-above-2026-4x3.webp",
+          "width": 1200,
+          "height": 900
+        },
+        "16x9": {
+          "path": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-from-above-2026-16x9.webp",
+          "width": 1200,
+          "height": 675
+        }
+      },
+      "crops_note": "For Article.image (Google: 16x9, 4x3 and 1x1). Each ratio is its own frame cut from the NOAA 2026 mosaic, 1200 px wide, colors adjusted.",
+      "display_credit": "U.S. government aerial photo"
+    },
+    {
+      "slug": "del-webb-north-myrtle-beach",
+      "file": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-homes-from-above-2026.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-homes-from-above-2026-600w.webp",
+        "1200": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-homes-from-above-2026-1200w.webp"
+      },
+      "title": "Homes in Del Webb North Myrtle Beach, NOAA aerial, January 2026",
+      "what": "Two rows of one-story homes with driveways on a street in Del Webb North Myrtle Beach, a pond with a walking path behind them, seen from above on January 12, 2026.",
+      "caption": "A street of homes in Del Webb North Myrtle Beach, from above.",
+      "alt": "Two rows of homes with gray roofs and short driveways along a straight street in Del Webb North Myrtle Beach, with a pond and a paved walking path behind them, seen from above",
+      "place": {
+        "city": "North Myrtle Beach",
+        "sublocation": "Del Webb North Myrtle Beach"
+      },
+      "source": "https://noaa-eri-pds.s3.amazonaws.com/index.html#2026_Pre_Event/EC2601a_OB_N_RGB/",
+      "source_name": "NOAA Emergency Response Imagery",
+      "author": "NOAA National Geodetic Survey",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+      "credit": "Photo: NOAA National Geodetic Survey, public domain.",
+      "provenance": "U.S. government aerial photo: NOAA National Geodetic Survey (NGS), Remote Sensing Division, Emergency Response Imagery, 2026 pre-event coastal collection, East Coast group EC2601a. Flown 2026-01-12: the exterior orientation file raw/0122026_RGB_2_Oblique_EO.txt (day 012 of 2026) is the only flight file with frames within 6 km of the community, and the frame names carry 011226 (frames 185092 to 185108, about 16:45 UTC, about 2,300 m up). The group was posted 2026-03-19. Downloaded from the public S3 bucket noaa-eri-pds; the exact files are in source_files.",
+      "license_note": "17 U.S.C. 105(a): \"Copyright protection under this title is not available for any work of the United States Government\". NOAA's terms on the Registry of Open Data (https://registry.opendata.aws/noaa-eri/): \"NOAA data disseminated through NODD are open to the public and can be used as desired.\" ... \"NOAA requests attribution for the use or dissemination of unaltered NOAA data. However, it is not permissible to state or imply endorsement by or affiliation with NOAA. If you modify NOAA data, you may not state or imply that it is original, unaltered NOAA data.\" The NOAA InPort record for the NGS coastal imagery (item 67562) gives \"Data access constraints: None\" and says the missions \"were conducted by NOAA's National Geodetic Survey, Remote Sensing Division\". So: credit NOAA, say what Chapter3 changed (changes), never suggest NOAA endorses Chapter3. Read 2026-10-11.",
+      "terms_urls": [
+        "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+        "https://registry.opendata.aws/noaa-eri/",
+        "https://www.fisheries.noaa.gov/inport/item/67562"
+      ],
+      "taken": "2026-01-12",
+      "digital_source_type": "compositeCapture",
+      "changes": "Chapter3 Realty joined four NOAA map tiles, cut a close view of one street and adjusted the colors",
+      "source_files": [
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784200w334845n.tif",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784200w334930n.tif",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784200w335015n.tif",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784245w334845n.tif",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784245w334930n.tif",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784245w335015n.tif"
+      ],
+      "frame": {
+        "bbox_wgs84": [
+          -78.702353,
+          33.819629,
+          -78.699757,
+          33.821245
+        ],
+        "ground_m_per_px_1200w": 0.2
+      },
+      "original_size": "2400x1800 (cut from the four NOAA tiles, Web Mercator, Lanczos, colors adjusted, then resized)",
+      "method": "scratchpad eri/scripts/mosaic.py (tiles joined at their GeoTIFF tie points) and eri_fetch.py (frame in Web Mercator), drawn by eri/scripts/render_eri.py (aerial/scripts/render.py reading the NOAA mosaic in place of NAIP)",
+      "width": 1200,
+      "height": 900,
+      "crops": {
+        "1x1": {
+          "path": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-homes-from-above-2026-1x1.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        "4x3": {
+          "path": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-homes-from-above-2026-4x3.webp",
+          "width": 1200,
+          "height": 900
+        },
+        "16x9": {
+          "path": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-homes-from-above-2026-16x9.webp",
+          "width": 1200,
+          "height": 675
+        }
+      },
+      "crops_note": "For Article.image (Google: 16x9, 4x3 and 1x1). Each ratio is its own frame cut from the NOAA 2026 mosaic, 1200 px wide, colors adjusted.",
+      "display_credit": "U.S. government aerial photo"
+    },
+    {
+      "slug": "del-webb-north-myrtle-beach",
+      "file": "images/55-plus/del-webb-north-myrtle-beach/cherry-grove-marsh-from-above-2026.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-north-myrtle-beach/cherry-grove-marsh-from-above-2026-600w.webp",
+        "1200": "images/55-plus/del-webb-north-myrtle-beach/cherry-grove-marsh-from-above-2026-1200w.webp"
+      },
+      "title": "Cherry Grove from the air, NOAA, January 2026",
+      "what": "Cherry Grove in North Myrtle Beach from the air on January 12, 2026: the beach and the Cherry Grove Pier at the left, homes along canals, and the salt marsh and its creeks behind them.",
+      "caption": "Cherry Grove from the air: the beach and part of the pier, canal homes and the salt marsh.",
+      "alt": "Cherry Grove in North Myrtle Beach from the air: the beach and part of a fishing pier at the left, rows of homes on canals, and a wide salt marsh with winding creeks",
+      "place": {
+        "city": "North Myrtle Beach",
+        "sublocation": "Cherry Grove"
+      },
+      "source": "https://noaa-eri-pds.s3.amazonaws.com/index.html#2026_Pre_Event/EC2601a_OB_N_RGB/",
+      "source_name": "NOAA Emergency Response Imagery",
+      "author": "NOAA National Geodetic Survey",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+      "credit": "Photo: NOAA National Geodetic Survey, public domain.",
+      "provenance": "U.S. government aerial photo: NOAA National Geodetic Survey (NGS), Remote Sensing Division, Emergency Response Imagery, 2026 pre-event coastal collection, East Coast group EC2601a. Flown 2026-01-12: the exterior orientation file raw/0122026_RGB_2_Oblique_EO.txt (day 012 of 2026) is the only flight file with frames within 6 km of the community, and the frame names carry 011226 (frames 185092 to 185108, about 16:45 UTC, about 2,300 m up). The group was posted 2026-03-19. Downloaded from the public S3 bucket noaa-eri-pds; the exact files are in source_files.",
+      "license_note": "17 U.S.C. 105(a): \"Copyright protection under this title is not available for any work of the United States Government\". NOAA's terms on the Registry of Open Data (https://registry.opendata.aws/noaa-eri/): \"NOAA data disseminated through NODD are open to the public and can be used as desired.\" ... \"NOAA requests attribution for the use or dissemination of unaltered NOAA data. However, it is not permissible to state or imply endorsement by or affiliation with NOAA. If you modify NOAA data, you may not state or imply that it is original, unaltered NOAA data.\" The NOAA InPort record for the NGS coastal imagery (item 67562) gives \"Data access constraints: None\" and says the missions \"were conducted by NOAA's National Geodetic Survey, Remote Sensing Division\". So: credit NOAA, say what Chapter3 changed (changes), never suggest NOAA endorses Chapter3. Read 2026-10-11.",
+      "terms_urls": [
+        "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+        "https://registry.opendata.aws/noaa-eri/",
+        "https://www.fisheries.noaa.gov/inport/item/67562"
+      ],
+      "taken": "2026-01-12",
+      "digital_source_type": "digitalCapture",
+      "changes": "Chapter3 Realty cut this view from one NOAA aerial photo, resized it and adjusted the colors",
+      "source_files": [
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/raw/185092_0112261645026_037_RGB2.jpg",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/raw/185092_0112261645026_037_RGB2.geom"
+      ],
+      "frame": {
+        "raw_pixels": [
+          0,
+          0,
+          7360,
+          5520
+        ],
+        "raw_size": "14204x10652",
+        "ground_m_per_px_raw_center": 0.195,
+        "note": "a raw frame, tilted about 20 degrees from straight down, not a map: the ocean is at the left, north is up and to the right"
+      },
+      "original_size": "7360x5520 pixels of the raw frame, resized to 2400 wide, colors adjusted (eri/scripts/rawcrop.py)",
+      "width": 1200,
+      "height": 900,
+      "display_credit": "U.S. government aerial photo"
+    },
+    {
+      "slug": "del-webb-north-myrtle-beach",
+      "file": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-to-the-beach-2026.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-to-the-beach-2026-600w.webp",
+        "1200": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-to-the-beach-2026-1200w.webp"
+      },
+      "title": "North Myrtle Beach from the air, NOAA, January 2026",
+      "what": "North Myrtle Beach from the air on January 12, 2026, with three labels: the beach at the 14th Avenue South access at the left, US 17 in the middle, and Del Webb North Myrtle Beach, with its ponds, at the right.",
+      "caption": "From the air: the beach, US 17 and Del Webb North Myrtle Beach.",
+      "alt": "North Myrtle Beach from the air with three labels: the beach and ocean at the left, US 17 running down the middle past blocks of beach houses and ball fields, and Del Webb North Myrtle Beach with its curving streets and ponds at the right",
+      "place": {
+        "city": "North Myrtle Beach"
+      },
+      "source": "https://noaa-eri-pds.s3.amazonaws.com/index.html#2026_Pre_Event/EC2601a_OB_N_RGB/",
+      "source_name": "NOAA Emergency Response Imagery",
+      "author": "NOAA National Geodetic Survey",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+      "credit": "Photo: NOAA National Geodetic Survey, public domain. Labels by Chapter3 Realty.",
+      "provenance": "U.S. government aerial photo: NOAA National Geodetic Survey (NGS), Remote Sensing Division, Emergency Response Imagery, 2026 pre-event coastal collection, East Coast group EC2601a. Flown 2026-01-12: the exterior orientation file raw/0122026_RGB_2_Oblique_EO.txt (day 012 of 2026) is the only flight file with frames within 6 km of the community, and the frame names carry 011226 (frames 185092 to 185108, about 16:45 UTC, about 2,300 m up). The group was posted 2026-03-19. Downloaded from the public S3 bucket noaa-eri-pds; the exact files are in source_files.",
+      "license_note": "17 U.S.C. 105(a): \"Copyright protection under this title is not available for any work of the United States Government\". NOAA's terms on the Registry of Open Data (https://registry.opendata.aws/noaa-eri/): \"NOAA data disseminated through NODD are open to the public and can be used as desired.\" ... \"NOAA requests attribution for the use or dissemination of unaltered NOAA data. However, it is not permissible to state or imply endorsement by or affiliation with NOAA. If you modify NOAA data, you may not state or imply that it is original, unaltered NOAA data.\" The NOAA InPort record for the NGS coastal imagery (item 67562) gives \"Data access constraints: None\" and says the missions \"were conducted by NOAA's National Geodetic Survey, Remote Sensing Division\". So: credit NOAA, say what Chapter3 changed (changes), never suggest NOAA endorses Chapter3. Read 2026-10-11.",
+      "terms_urls": [
+        "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+        "https://registry.opendata.aws/noaa-eri/",
+        "https://www.fisheries.noaa.gov/inport/item/67562"
+      ],
+      "taken": "2026-01-12",
+      "digital_source_type": "composite",
+      "changes": "Chapter3 Realty cut this view from one NOAA aerial photo, resized it, adjusted the colors and added three labels placed from Horry County map data",
+      "source_files": [
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/raw/185102_0112261646125_037_RGB2.jpg",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/raw/185102_0112261646125_037_RGB2.geom"
+      ],
+      "frame": {
+        "raw_pixels": [
+          2537,
+          1725,
+          13697,
+          8003
+        ],
+        "raw_size": "14204x10652",
+        "ground_m_per_px_raw_center": 0.195,
+        "note": "a raw frame, tilted about 20 degrees from straight down, not a map: the ocean is at the left, north is up and to the right"
+      },
+      "original_size": "11160x6278 pixels of the raw frame, resized to 2400 wide, colors adjusted (eri/scripts/rawcrop.py)",
+      "width": 1200,
+      "height": 675,
+      "display_credit": "U.S. government aerial photo",
+      "annotation_sources": {
+        "method": "The raw frame's .geom file gives the ground point of each of its four corners. For flat ground near sea level a plane-to-plane homography from those corners maps any lon/lat to its raw pixel; the frame's own check point (ref_point, 7102, 5326) lands within 0.7 px. Checked by eye against US 17, the community outline and the clubhouse footprint drawn on the same frame (scratchpad eri/scripts/label_oblique.py, homog.py).",
+        "beach": "dot on the sand at (-78.692919, 33.809655): 14th Ave S (Horry County GIS roads layer 18), the street of the 14th Avenue South beach access (places.json beach_dwnmb; ledger row 41), extended seaward along its own bearing (153 degrees) from its end at Ocean Blvd (-78.693492, 33.810597) to the TIGER/Line 2026 coastline (tools/geo/grand-strand-v2.json), 117 m",
+        "us17": "a point on the S HWY 17 centerline, Horry County GIS highways layer 17 (-78.697702, 33.814926)",
+        "community": "centered on the part of the community outline in view (Horry County GIS parcels layer 24, the outline tools/area-map.js draws)"
+      },
+      "method": "scratchpad eri/scripts/rawcrop.py (crop and colors), then eri/scripts/label_oblique.py (labels)"
+    },
+    {
+      "slug": "del-webb-north-myrtle-beach",
+      "file": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-clubhouse-from-above-2026.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-clubhouse-from-above-2026-600w.webp",
+        "1200": "images/55-plus/del-webb-north-myrtle-beach/del-webb-north-myrtle-beach-clubhouse-from-above-2026-1200w.webp"
+      },
+      "title": "Del Webb North Myrtle Beach clubhouse, NOAA aerial, January 2026",
+      "what": "The clubhouse of Del Webb North Myrtle Beach from above on January 12, 2026, with three labels: the clubhouse, the outdoor pool beside it, and the sports courts by the parking lot. A pond lies to the south and homes line the streets around it. The lawns are brown in January.",
+      "caption": "The clubhouse, the outdoor pool and the courts, from above.",
+      "alt": "The Del Webb North Myrtle Beach clubhouse from above, labelled: a large gray-roofed building, an outdoor pool with a deck behind it, a row of green sports courts by the parking lot, and a pond and rows of homes around them",
+      "place": {
+        "city": "North Myrtle Beach",
+        "sublocation": "Del Webb North Myrtle Beach"
+      },
+      "source": "https://noaa-eri-pds.s3.amazonaws.com/index.html#2026_Pre_Event/EC2601a_OB_N_RGB/",
+      "source_name": "NOAA Emergency Response Imagery",
+      "author": "NOAA National Geodetic Survey",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+      "provenance": "U.S. government aerial photo: NOAA National Geodetic Survey (NGS), Remote Sensing Division, Emergency Response Imagery, 2026 pre-event coastal collection, East Coast group EC2601a. Flown 2026-01-12: the exterior orientation file raw/0122026_RGB_2_Oblique_EO.txt (day 012 of 2026) is the only flight file with frames within 6 km of the community, and the frame names carry 011226 (frames 185092 to 185108, about 16:45 UTC, about 2,300 m up). The group was posted 2026-03-19. Downloaded from the public S3 bucket noaa-eri-pds; the exact files are in source_files.",
+      "license_note": "17 U.S.C. 105(a): \"Copyright protection under this title is not available for any work of the United States Government\". NOAA's terms on the Registry of Open Data (https://registry.opendata.aws/noaa-eri/): \"NOAA data disseminated through NODD are open to the public and can be used as desired.\" ... \"NOAA requests attribution for the use or dissemination of unaltered NOAA data. However, it is not permissible to state or imply endorsement by or affiliation with NOAA. If you modify NOAA data, you may not state or imply that it is original, unaltered NOAA data.\" The NOAA InPort record for the NGS coastal imagery (item 67562) gives \"Data access constraints: None\" and says the missions \"were conducted by NOAA's National Geodetic Survey, Remote Sensing Division\". So: credit NOAA, say what Chapter3 changed (changes), never suggest NOAA endorses Chapter3. Read 2026-10-11.",
+      "terms_urls": [
+        "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+        "https://registry.opendata.aws/noaa-eri/",
+        "https://www.fisheries.noaa.gov/inport/item/67562"
+      ],
+      "taken": "2026-01-12",
+      "display_credit": "U.S. government aerial photo",
+      "credit": "Photo: NOAA National Geodetic Survey, public domain. Labels by Chapter3 Realty.",
+      "digital_source_type": "composite",
+      "changes": "Chapter3 Realty joined NOAA map tiles, cut a close view of the clubhouse, adjusted the colors and added three labels placed from Horry County building footprints",
+      "annotation_sources": {
+        "clubhouse": "Horry County GIS building footprints layer 27, object 152238 (Commercial / Industrial / Public, the largest building on the HOA's amenity parcel), its center (-78.700954, 33.822105). https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/27",
+        "outdoor_pool": "Horry County GIS building footprints layer 27, object 415897 (Pool Inground), its east edge (-78.700629, 33.821795); label to its right. Ledger rows 32 and 69 name the indoor and outdoor pools.",
+        "courts": "Horry County GIS building footprints layer 27, object 152239 (a rectangle the county codes Commercial / Industrial / Public; the photo shows eight courts with pickleball lines), its east edge (-78.70127, 33.82243); label to its right. Ledger row 76 lists \"sports courts including pickleball and bocce\"."
+      },
+      "source_files": [
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784200w334845n.tif",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784200w334930n.tif",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784200w335015n.tif",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784245w334845n.tif",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784245w334930n.tif",
+        "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0784245w335015n.tif"
+      ],
+      "frame": {
+        "bbox_wgs84": [
+          -78.702306,
+          33.821214,
+          -78.699494,
+          33.822966
+        ],
+        "ground_m_per_px_1200w": 0.22
+      },
+      "original_size": "2400x1800 (cut from the NOAA tiles, Web Mercator, Lanczos, colors adjusted, then resized)",
+      "method": "scratchpad eri/scripts/mosaic.py and eri_fetch.py, drawn by eri/scripts/render_eri.py (config eri/v13b/config-club.json)",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "slug": "del-webb-north-myrtle-beach",
+      "file": "images/55-plus/del-webb-north-myrtle-beach/cherry-grove-pier-from-the-ocean.webp",
+      "variants": {
+        "600": "images/55-plus/del-webb-north-myrtle-beach/cherry-grove-pier-from-the-ocean-600w.webp",
+        "1200": "images/55-plus/del-webb-north-myrtle-beach/cherry-grove-pier-from-the-ocean-1200w.webp"
+      },
+      "title": "Cherrygrovepier",
+      "what": "The Cherry Grove Pier in North Myrtle Beach, seen from the ocean, with beach houses and a water tower behind it.",
+      "caption": "The Cherry Grove Pier, seen from the ocean.",
+      "alt": "The long wooden Cherry Grove Pier reaching into the ocean in North Myrtle Beach, with beach houses, a water tower and a tall hotel behind it",
+      "place": {
+        "sublocation": "Cherry Grove Pier",
+        "city": "North Myrtle Beach"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Cherrygrovepier.jpg",
+      "source_name": "Wikimedia Commons",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Cherrygrovepier.jpg",
+      "author": "Festiva76",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-user-w",
+      "credit": "Photo: Festiva76, public domain, via Wikimedia Commons. Credit not required; give it anyway.",
+      "provenance": "own work, uploaded by its author to the English Wikipedia on 2008-10-14 (\"I created this work entirely by myself\", 3264x2448, 1,372,306 bytes) and released into the public domain (PD-user-w: \"released into the public domain by its author, Festiva76, at the English Wikipedia project\"). Moved to Commons on 2014-05-04 by Rcbutcher (\"Transferred from en.wikipedia\"). The file downloaded on 2026-10-11 is 1,372,306 bytes, the same size as the author's upload. Not a Flickr copy: the uploader of the original is the author.",
+      "taken": "2008-10-07",
+      "original_size": "3264x2448",
+      "share_alike": false,
+      "width": 1200,
+      "height": 675,
+      "changes": "Chapter3 Realty cropped the photo to 16:9 around the pier, cutting the hotel tower at the right, most of the sky and the near water, and resized it",
+      "crop": {
+        "original_pixels": [
+          540,
+          880,
+          1920,
+          1656
+        ],
+        "note": "16:9, 1380x776 of the 3264x2448 original: the pier and the water tower, without the hotel tower (version 13c; version 13b was full width, rows 230 to 2066)"
+      }
+    }
+  ],
+  "updated": "2026-10-11"
+}
