@@ -28,6 +28,8 @@
  * the real site while everyone else sees the notice. Crawlers never get it.
  */
 
+import { withNearBlocks } from "../idx-lib/near.js";
+
 /* =======================================================================
  *  TURN MAINTENANCE ON AND OFF HERE. Change this one word, then deploy.
  *
@@ -50,8 +52,10 @@ const BYPASS_WORD = "letmein";
 export async function onRequest(context) {
   const { request, env, next } = context;
 
-  // env var still works, so the dashboard remains an option if you prefer it
-  if (!MAINTENANCE_ON && env.MAINTENANCE !== "1") return next();
+  // env var still works, so the dashboard remains an option if you prefer it.
+  // Live site: the page, plus "Homes near X" listings at the bottom of the
+  // pages the CRM's place catalog names (idx-lib/near.js; off until IDX_LIVE=1).
+  if (!MAINTENANCE_ON && env.MAINTENANCE !== "1") return withNearBlocks(context, await next());
 
   const url = new URL(request.url);
   const secret = env.MAINTENANCE_BYPASS || BYPASS_WORD;
