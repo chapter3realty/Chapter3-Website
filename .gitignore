@@ -9,3 +9,6 @@ data/relocating/raw/zillow_*.csv
 # Census place, delineation and population files are 9MB and refreshed yearly;
 # build-cities.js re-downloads them
 data/relocating/raw/census_*
+
+# Listing search development key (contract v1 §2, §10): never commit it
+.dev.vars

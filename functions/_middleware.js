@@ -47,11 +47,17 @@ const BYPASS_COOKIE = "c3_bypass";
 // https://chapter3realty.com/?preview=<word>
 const BYPASS_WORD = "letmein";
 
+/* The listing search (CRM contract v1): fills the guide pages' homes strips and points the
+   header's "Search Listings" button at /homes/ while IDX_LIVE=1. Off, it changes nothing. */
+import { withIdx } from "../idx-lib/edge.js";
+
 export async function onRequest(context) {
   const { request, env, next } = context;
 
   // env var still works, so the dashboard remains an option if you prefer it
-  if (!MAINTENANCE_ON && env.MAINTENANCE !== "1") return next();
+  // The page shell is drawn only by /homes/*; it is never a page of its own.
+  if (new URL(request.url).pathname.startsWith("/homes-shell")) return new Response("Not found", { status: 404 });
+  if (!MAINTENANCE_ON && env.MAINTENANCE !== "1") return withIdx(context, await next());
 
   const url = new URL(request.url);
   const secret = env.MAINTENANCE_BYPASS || BYPASS_WORD;
@@ -62,7 +68,7 @@ export async function onRequest(context) {
     return new Response(null, {
       status: 302,
       headers: {
-        Location: url.pathname + url.search,
+        Location: "/" + url.pathname.replace(/^\/+/, "") + url.search, // never "//other-site"
         "Set-Cookie": `${BYPASS_COOKIE}=${secret}; Path=/; Max-Age=86400; HttpOnly; Secure; SameSite=Lax`,
       },
     });

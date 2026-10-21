@@ -1,0 +1,139 @@
+/**
+ * What the listing search adds to the site's own pages, at the edge (functions/_middleware.js).
+ * Only while the search is on (IDX_LIVE, or the owner's preview cookie):
+ *
+ * 1. The header's "Search Listings" buttons open /homes/ instead of the old pop-up.
+ * 2. A guide page's homes strips are filled. A page carries empty slots,
+ *    <div class="hx-strip" data-place="<slug>" data-name="<Name>"></div> (Blog-Brain
+ *    tools/glass.js homes()), one per community, where the community's photo was. Each slot
+ *    gets one row that pans sideways: up to 10 homes spread across the place's price range,
+ *    photos first, each a photo, the price and the listing firm, then "See all N homes".
+ *    A place with fewer than 3 homes keeps its empty slot, and the page shows the place's
+ *    photo instead. If the MLS copy is stale (503), no listings show at all (CCMLS 16.7).
+ * 3. Where listings show, the notice (16.16, 16.17), the sign-up and tour dialogs and the
+ *    page script are added once.
+ */
+import { crm, idxOn, visitorToken } from "./crm.js";
+import { PLACES } from "./places.js";
+import { STYLE, STRIP_STYLE, SCRIPT, disclaimer, esc, safeUrl, signupDialog, stripCard, tourDialog } from "./render.js";
+
+const SLOT = /<div class="hx-strip" data-place="([a-z0-9-]+)" data-name="([^"<>]*)"><\/div>/g;
+const STRIP_CARDS = 10;
+const STRIP_MIN = 3;
+const STRIP_BUDGET_MS = 3000; // a slow CRM never holds up a guide page: past this, no strips
+const TYPES = ["house", "condo", "townhouse", "manufactured", "multi", "land"];
+
+/** The CRM search for a place, from validated parts only (contract §3, §5). Null if a part is bad. */
+export function placeParams(q) {
+  const p = new URLSearchParams();
+  if (q.subdivision !== undefined) {
+    if (!/^[A-Za-z0-9 .,'&()\/-]{2,80}$/.test(q.subdivision)) return null;
+    p.set("subdivision", q.subdivision);
+  }
+  if (q.near !== undefined) {
+    const m = /^(-?\d+(?:\.\d+)?),\s?(-?\d+(?:\.\d+)?)$/.exec(q.near);
+    if (!m) return null;
+    const lat = +m[1], lng = +m[2];
+    if (lat < 31 || lat > 37 || lng < -82 || lng > -75) return null;
+    p.set("near", `${lat.toFixed(6)},${lng.toFixed(6)}`);
+    const miles = Math.min(25, Math.max(0.1, Number(q.miles) || 1));
+    p.set("miles", String(miles));
+  }
+  if (!p.has("subdivision") && !p.has("near")) return null; // never "every listing in the MLS"
+  if (q.type !== undefined) {
+    if (!TYPES.includes(q.type)) return null;
+    p.set("type", q.type);
+  }
+  // hoa=0: only homes whose listing says there is no HOA (CRM ticket 415). The only value there is.
+  if (q.hoa !== undefined) {
+    if (String(q.hoa) !== "0") return null;
+    p.set("hoa", "0");
+  }
+  return p;
+}
+
+/** Up to n homes across the price range: lowest, highest and evenly between, photos first. */
+export function spread(listings, n = STRIP_CARDS) {
+  const withPhoto = listings.filter((l) => safeUrl(l.photo));
+  const pool = (withPhoto.length >= STRIP_MIN ? withPhoto : listings).slice().sort((a, b) => (a.listPrice || 0) - (b.listPrice || 0));
+  if (pool.length <= n) return pool;
+  const out = [];
+  for (let i = 0; i < n; i++) out.push(pool[Math.round((i * (pool.length - 1)) / (n - 1))]);
+  return [...new Set(out)];
+}
+
+/** Required wherever homes are shown as having no HOA (CRM ticket 415): where that fact comes from. */
+export const NO_HOA_NOTE = "No HOA, as listed by the listing agent. Confirm before you buy.";
+
+function strip(slug, name, listings, total, noHoa) {
+  const all = `/homes/near/${slug}/`;
+  // name is our own markup from the page (already escaped there): print it as it is.
+  const n = typeof total === "number" ? total : listings.length;
+  return `<p class="hx-s-head"><b>Homes for sale in ${name} now</b><a href="${all}">See all ${esc(String(n))}</a></p>`
+    + (noHoa ? `<p class="hx-s-note">${NO_HOA_NOTE}</p>` : "")
+    + `<div class="hx-s-row">${spread(listings).map((l) => stripCard(l, false)).join("")}`
+    + `<a class="hx-s-all" href="${all}" draggable="false">See all ${esc(String(n))} homes in ${name}</a></div>`;
+}
+
+const switchHeader = (html) => html.replace(/onclick="openIdx\(\)"/g, `onclick="location.href='/homes/'"`);
+
+/** The response with the listing search's additions, or untouched. Never throws. */
+export async function withIdx(context, response) {
+  let text = null;
+  try {
+    const { request, env } = context;
+    if (request.method !== "GET" || response.status !== 200) return response;
+    if (!(response.headers.get("content-type") || "").includes("text/html")) return response;
+    const gate = idxOn(env, request);
+    if (!gate.on) return response;
+    const url = new URL(request.url);
+    text = await response.text();
+    let html = switchHeader(text);
+    const headers = new Headers(response.headers);
+    headers.delete("content-length");
+    // The body changes, so the static file's validators no longer describe it (a 304 would bring back old strips).
+    headers.delete("etag");
+    headers.delete("last-modified");
+    const slots = url.pathname.startsWith("/homes") ? [] : [...html.matchAll(SLOT)];
+    if (!slots.length) return new Response(html, { status: 200, headers });
+
+    const slugs = [...new Set(slots.map((m) => m[1]))].filter((s) => PLACES[s]);
+    const calls = Promise.all(slugs.map((s) => {
+      const p = placeParams(PLACES[s].q);
+      if (!p) return null;
+      p.set("sort", "price_asc");
+      p.set("size", "48");
+      return crm(env, request, `/api/idx/listings?${p.toString()}`, { anonymous: true, timeoutMs: STRIP_BUDGET_MS - 500 }).catch(() => null);
+    }));
+    let timer;
+    const late = new Promise((done) => { timer = setTimeout(() => done(null), STRIP_BUDGET_MS); });
+    const answers = await Promise.race([calls, late]);
+    clearTimeout(timer);
+    if (!answers) return new Response(html, { status: 200, headers });
+    // A stale MLS copy means no listings anywhere on the page (16.7).
+    if (answers.some((r) => r && r.status === 503 && r.json && r.json.error === "stale")) return new Response(html, { status: 200, headers });
+    const filled = new Map();
+    let meta = null;
+    slugs.forEach((s, i) => {
+      const r = answers[i];
+      const ls = r && r.status === 200 && r.json && r.json.ok ? r.json.listings || [] : [];
+      if (ls.length >= STRIP_MIN) { filled.set(s, [ls, r.json.total]); meta = meta || r.json.meta; }
+    });
+    if (!filled.size) return new Response(html, { status: 200, headers });
+
+    html = html.replace(SLOT, (whole, slug, name) => {
+      const f = filled.get(slug);
+      return f ? `<div class="hx-strip" data-place="${slug}" data-name="${name}">${strip(slug, name, f[0], f[1], PLACES[slug].q.hoa !== undefined)}</div>` : whole;
+    });
+    const signed = Boolean(visitorToken(request));
+    html = html
+      .replace("</head>", () => `${STYLE}${STRIP_STYLE}</head>`)
+      .replace(/<body([^>]*)>/, (m, a) => `<body${a} data-hx-signed="${signed ? "1" : "0"}">`)
+      .replace("</main>", () => `<div class="hx-wrap" style="padding-top:0">${disclaimer(meta)}</div></main>`)
+      .replace("</body>", () => `${signupDialog(env.TURNSTILE_SITE_KEY)}${tourDialog()}${SCRIPT}</body>`);
+    headers.set("cache-control", signed || gate.preview ? "private, no-store" : "public, max-age=300");
+    return new Response(html, { status: 200, headers });
+  } catch {
+    return text === null ? response : new Response(text, { status: response.status, headers: response.headers });
+  }
+}
