@@ -121,7 +121,7 @@ module.exports = {
   h1em: "A 55+ neighborhood with two pools.",
   sub: "Seasons has about 440 homes, most on one level, on curving streets around ponds near Murrells Inlet.",
   heroMedia: glance([
-    { icon: "beach", label: "Beach", text: "About 10 minutes" },
+    { icon: "beach", label: "Beach", text: "About 13 minutes" },
     { icon: "grocery", label: "Publix", text: "About 5 minutes" },
     { icon: "hospital", label: "Hospital", text: "About 8 minutes" },
     { icon: "lawn", label: "Lawn care", text: "In the HOA fee" },
@@ -217,7 +217,7 @@ module.exports = {
     { q: "Are there new homes for sale in Seasons at Prince Creek West?", a: "No. The builder has finished, so every home for sale in Seasons is a resale." },
     { q: "Can someone under 55 live in Seasons at Prince Creek West?", a: "Yes, if a resident 55 or older also lives in the home. No one under 18 can live there." },
     { q: "How old are the homes in Seasons at Prince Creek West?", a: "The homes were built from 2006 to 2016. Most are on one level, with 3 bedrooms." },
-    { q: "How far is Seasons at Prince Creek West from the beach?", a: "About 10 minutes by car without traffic, to the nearest public beach access in Garden City." },
+    { q: "How far is Seasons at Prince Creek West from the beach?", a: "About 13 minutes by car without traffic, to the nearest public beach access with parking, in Garden City." },
   ],
   sources: [
     { name: "HOA rules", href: CHARTER },

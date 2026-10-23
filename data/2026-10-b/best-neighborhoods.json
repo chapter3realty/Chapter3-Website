@@ -1,0 +1,255 @@
+{
+ "_comment": "The neighborhoods, map points and table cells on /buyers/best-neighborhoods/ (batch 2026-10-b, page 1). Every cell comes from a verified row in batches/2026-10-b/facts/neighborhoods-facts.md (the verifier's 'OK to use on the page as' wording and the corrected beach rows), except The Farm (batches/2026-10-b/facts/the-farm-facts.md, rows 5, 28, 47, 48, 71), Tidewater's price and fee (batches/2026-10-b/facts/gated-communities-facts.md rows 20 and 43, so the gated page and this page show one value) and the four 55+ communities (batches/2026-10-a/data/55-plus-communities.json, by reference). Prices: the middle recorded resale, October 2025 to September 2026, rounded; a range (the verifier's middle half or full range) where fewer than 20 sold; houses and other types apart where one figure blends them. Fees: the fee sellers entered on listings in October 2026 (The Farm: the HOA's 2026 budget). Beach: minutes by car with no traffic from the neighborhood's middle to the nearest public beach access (The Farm: from the Farmers Rest Drive entrance). Map points: the reference point of each neighborhood (a county address point near the middle of its homes; the address is never shown), The Farm at the middle of its 1,634 parcels. Round 2 (2026-10-13): fees rounded to one figure where the verifier's 'most often' value exists (ROUND-2 item 5); 'Ask us' replaced by rows 177 and 178; the beach column says 'by car, no traffic' in its heading. Round 3 (2026-10-13): Grande Dunes uses the gated page's group and values (one fact, one value); the Cherry Grove HOA cell in the yearly cost table reads 'None on most homes' (row 177: 52 of 89 listed with no fee). Round 14 (2026-10-15): the neighborhoods are in the order of the selection guide (walk to the beach, golf, the water, a town center, new homes and big pools, room and value), which is the order of the entries and the map numbers. Round 14d (2026-10-15): Berkshire Forest replaced by Avalon (rows 270 to 274, pending verification); Grande Dunes is the whole community in this page's own shape; Prince Creek without Bellwood Landing; order: walk to the beach, golf, a boat, a town center, lower prices. The yearly cost table is replaced by the yearly HOA fee by guide group (fee_by_group, row 275). Round 14l (2026-10-21): order follows the new guide groups (golf close by, new houses, more house for the money); Grande Dunes moved to new houses, Deerfield before Avalon; fee cells say 'for sale' (v10 N23). Round 14n (2026-10-21): Forestbrook Estates cut (OWNER-EYE-14m H1: nothing a buyer could not guess). Grande Dunes cut too (OWNER-EYE-14m re-check: no day there that the gated page does not own).",
+ "as_of": "2026-10-13",
+ "ledger": "batches/2026-10-b/facts/neighborhoods-facts.md",
+ "neighborhoods": [
+  {
+   "id": "cherry-grove",
+   "name": "Cherry Grove",
+   "short": "Cherry Grove",
+   "area": "north-myrtle-beach",
+   "lat": 33.834345,
+   "lon": -78.627983,
+   "cells": {
+    "price": "About $695,000 for a house",
+    "fee": "None on most homes listed for sale",
+    "beach": "A short walk, about 0.1 mile"
+   },
+   "rows": "price: row 94 (92 house resales, middle $695,000); fee: none gathered (row 175 wrong); beach: row 97 (0.1 mile; no parking at that access; on-street pay parking 0.3 mile); flood: row 100; no-HOA share: no-hoa-facts.md row 18 corrected; round 2: fee cell from row 177 (52 of 89 homes for sale with no fee)"
+  },
+  {
+   "id": "surfside-beach",
+   "name": "Surfside Beach, ocean side",
+   "short": "Surfside Beach",
+   "area": "surfside",
+   "lat": 33.60635,
+   "lon": -78.977108,
+   "cells": {
+    "price": "Houses $705,000, condos $405,000",
+    "fee": "None on most homes listed for sale",
+    "beach": "A 9-minute walk"
+   },
+   "rows": "group: the streets between US 17 Business and the ocean (row 134); price: row 136 (125 houses middle $705,000; 44 condos middle $405,000); fee: none gathered (Not verified 10); beach: row 140 (0.4 mile to a pay lot, 58 spaces); grocery: row 141; flood: row 143 (1,001 of 3,670 in AE or VE); round 2: fee cell from row 178 (36 of 42 homes for sale with no fee)"
+  },
+  {
+   "id": "pine-lakes",
+   "name": "Pine Lakes",
+   "short": "Pine Lakes",
+   "area": "myrtle-beach",
+   "lat": 33.736161,
+   "lon": -78.846794,
+   "cells": {
+    "price": "About $600,000",
+    "fee": "About $95 for a house",
+    "beach": "About 6 minutes"
+   },
+   "rows": "group: The Preserve at Pine Lakes and Pine Lakes Estates (row 1); price: row 3 (17 resales, middle half $539,500 to $670,000); fee: row 4; older streets no fee: row 169; golf: row 168; beach: row 6; hospital: row 8; flood: row 10"
+  },
+  {
+   "id": "tidewater",
+   "name": "Tidewater Plantation",
+   "short": "Tidewater",
+   "area": "north-myrtle-beach",
+   "lat": 33.850463,
+   "lon": -78.623511,
+   "cells": {
+    "price": "About $625,000 for a house",
+    "fee": "About $230 for a house",
+    "beach": "About 8 minutes"
+   },
+   "rows": "price: gated-communities-facts.md row 43 (24 house sales, middle $625,000); fee: gated row 20 and neighborhoods row 106 ($231 on most houses); beach: row 108 corrected (7.7 min, 3.1 mi); gate: gated row 20; golf: row 170; hospital: row 110; flood: row 111"
+  },
+  {
+   "id": "barefoot-resort",
+   "name": "Barefoot Resort",
+   "short": "Barefoot Resort",
+   "area": "north-myrtle-beach",
+   "lat": 33.804058,
+   "lon": -78.749383,
+   "cells": {
+    "price": "About $430,000, mostly condos",
+    "fee": "About $680 for a condo",
+    "beach": "About 6 minutes"
+   },
+   "rows": "price: row 115 (23 resales in these sections, 19 condos, middle $430,000); fee: row 116; beach: row 118; golf: row 171; flood: row 121; gated sections: gated row 9; round 14h: beach cell \"About 6 minutes\", the condos the entry describes (OWNER-EYE-14e L4)"
+  },
+  {
+   "id": "prince-creek",
+   "name": "Prince Creek",
+   "short": "Prince Creek",
+   "area": "surfside",
+   "lat": 33.588187,
+   "lon": -79.059731,
+   "cells": {
+    "price": "About $490,000",
+    "fee": "About $100 to $390, by section",
+    "beach": "About 11 minutes"
+   },
+   "rows": "group: named sections outside Seasons at Prince Creek (row 145 corrected); price: row 147 (10 resales $315,000 to $620,000; new townhomes $300,000 to $356,000); fee: row 149; beach: row 151 (a free lot); grocery: row 152; hospital: row 153; flood: row 154; round 14d (2026-10-15): Bellwood Landing's price and time cut (the gated page owns Bellwood); price cell per v7 D9 (row 147: five house resales, middle $558,000); round 14e (2026-10-15): price is all of Prince Creek outside Seasons, 57 resales, middle $490,000 (row 278, from the note of row 147, v8 N5)"
+  },
+  {
+   "id": "wild-wing",
+   "name": "Wild Wing Plantation",
+   "short": "Wild Wing",
+   "area": "inland",
+   "lat": 33.794918,
+   "lon": -78.978745,
+   "cells": {
+    "price": "About $600,000",
+    "fee": "About $135",
+    "beach": "About 20 minutes"
+   },
+   "rows": "price: row 158 (28 resales, middle $602,500); new homes: row 159 (middle $430,000); fee: row 161; beach: row 163 corrected (20.9 min, 10.6 mi); grocery: row 164; hospital: row 165; flood: row 166"
+  },
+  {
+   "id": "plantation-lakes",
+   "name": "Plantation Lakes",
+   "short": "Plantation Lakes",
+   "area": "inland",
+   "lat": 33.750331,
+   "lon": -78.917538,
+   "cells": {
+    "price": "About $740,000",
+    "fee": "About $125",
+    "beach": "About 15 to 20 minutes"
+   },
+   "rows": "price: row 59 (40 resales, middle $739,131); fee: row 61; beach: row 63 corrected (17.3 min, 7.8 mi; nearest access has no parking); flood: row 67"
+  },
+  {
+   "id": "waterbridge",
+   "name": "Waterbridge",
+   "short": "Waterbridge",
+   "area": "inland",
+   "lat": 33.768498,
+   "lon": -78.904092,
+   "cells": {
+    "price": "About $630,000; new about $550,000",
+    "fee": "About $150",
+    "beach": "About 15 to 20 minutes"
+   },
+   "rows": "price: row 71 (58 resales, middle $632,500); new homes: row 72 (middle $553,220); fee: row 74; beach: row 76 (nearest access has no parking); flood: row 80"
+  },
+  {
+   "id": "market-common",
+   "name": "The Market Common",
+   "short": "Market Common",
+   "area": "myrtle-beach",
+   "lat": 33.666315,
+   "lon": -78.939592,
+   "cells": {
+    "price": "Houses $540,000, townhomes $398,000",
+    "fee": "About $300 to $680 for a townhome",
+    "beach": "About 5 minutes"
+   },
+   "rows": "price: row 26 (26 houses middle $540,000; 20 townhomes middle $398,400); fee: row 28 (townhomes $300 to $683; one house $101); beach: row 30; grocery: row 31; flood: row 33 (11 of 838 in AE)"
+  },
+  {
+   "id": "deerfield",
+   "name": "Deerfield Plantation area",
+   "short": "Deerfield",
+   "area": "surfside",
+   "lat": 33.63038,
+   "lon": -78.977526,
+   "cells": {
+    "price": "About $355,000, older streets",
+    "fee": "Under $90 for a house",
+    "beach": "About 7 minutes"
+   },
+   "rows": "price: row 125 (41 resales, middle $354,900); fee: row 127; beach: row 129 (nearest access golf-cart parking only; the next, a pay lot, 7.8 min); grocery: row 130; flood: row 132"
+  },
+  {
+   "id": "avalon",
+   "name": "Avalon",
+   "short": "Avalon",
+   "area": "inland",
+   "lat": 33.768138,
+   "lon": -78.916767,
+   "cells": {
+    "price": "About $290,000 for a house",
+    "fee": "About $84 for a house",
+    "beach": "About 20 minutes"
+   },
+   "rows": "Round 14d (2026-10-15), replaces Berkshire Forest. neighborhoods-facts.md rows 270 to 274, pending verification (round 14d): group, lots and reference point row 270 (729 houses, median lot 0.16 acre, 2513 Sugar Creek Ct); price row 271 (27 resales, middle $292,000); fee and homes row 272 (13 detached listings, most often $84); amenity area row 273; beach row 274 (18.2 min).; round 14e: price $290,000 in the entry and the table (L1); fee $84, the most common (O5); beach about 20 minutes, 18.2 rounded to the nearest 5 (v8 N6)"
+  },
+  {
+   "id": "the-farm",
+   "name": "The Farm at Carolina Forest",
+   "short": "The Farm",
+   "area": "inland",
+   "lat": 33.7635,
+   "lon": -78.8765,
+   "cells": {
+    "price": "About $350,000 for a house",
+    "fee": "$107",
+    "beach": "About 12 minutes"
+   },
+   "rows": "the-farm-facts.md: price row 48 (61 detached, middle $352,000; Orchards townhomes $228,500; Planters Point condos $237,500); fee row 5 ($107 for every home; Orchards and Planters Point pay a second association, row 6); beach row 28 (about 10 minutes from the Farmers Rest Drive entrance); amenities: verifier's completeness wording; flood row 71"
+  }
+ ],
+ "fifty_five_plus": {
+  "_comment": "By reference: the cells of batches/2026-10-a/data/55-plus-communities.json, the same words as the four 55+ pages and their hub.",
+  "rows": [
+   {
+    "name": "Del Webb North Myrtle Beach",
+    "href": "/buyers/55-plus-communities/del-webb-north-myrtle-beach/",
+    "cells": {
+     "price": "About $535,000",
+     "fee": "About $315",
+     "beach": "About 4 minutes"
+    }
+   },
+   {
+    "name": "Del Webb at Grande Dunes",
+    "href": "/buyers/55-plus-communities/del-webb-grande-dunes/",
+    "cells": {
+     "price": "About $665,000 for a house",
+     "fee": "About $400 for a house",
+     "beach": "About 4 minutes"
+    }
+   },
+   {
+    "name": "Seasons at Prince Creek West",
+    "href": "/buyers/55-plus-communities/seasons-at-prince-creek-west/",
+    "cells": {
+     "price": "About $500,000",
+     "fee": "About $340",
+     "beach": "About 13 minutes"
+    }
+   },
+   {
+    "name": "Myrtle Trace",
+    "href": "/buyers/55-plus-communities/myrtle-trace/",
+    "cells": {
+     "price": "About $300,000",
+     "fee": "$95",
+     "beach": "About 15 minutes"
+    }
+   }
+  ]
+ },
+ "fee_by_group": {
+  "_comment": "Round 14d: the yearly HOA fee for a house, by guide group: the monthly listing fees of each neighborhood's verified fee row (and row 272 for Avalon) times 12, rounded to the hundred. Working in neighborhoods-facts.md row 275.",
+  "rows": [
+   {
+    "group": "Walk to the beach",
+    "fee": "None on most homes"
+   },
+   {
+    "group": "Golf course neighborhoods",
+    "fee": "About $1,100 to $4,800 for a house; about $8,200 for a Barefoot condo"
+   },
+   {
+    "group": "A boat or a paddle",
+    "fee": "About $1,500 to $1,800"
+   },
+   {
+    "group": "A town center you can walk",
+    "fee": "About $3,600 to $8,200 for a townhome"
+   },
+   {
+    "group": "Lower prices",
+    "fee": "About $800 to $1,300"
+   }
+  ]
+ }
+}

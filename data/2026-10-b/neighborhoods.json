@@ -1,0 +1,1899 @@
+{
+  "_comment": "Batch 2026-10-b neighborhood dataset for /buyers/best-neighborhoods/ (and pages 2, 3, 5). Every value points to a row in batches/2026-10-b/facts/neighborhoods-facts.md; rows are not verified yet, so the writer may use none of this until a verifier marks the row 'verified'. Prices: Horry County AcclaimWeb deed index, deeds recorded 2025-10-01 to 2026-09-30, resales only (builder sales apart). HOA fees: listings (MLS field), the brief's exception. Minutes: OSRM without traffic from the named reference point; under 10 rounded to the minute, over 10 to the nearest 5. Null means not found.",
+  "as_of": "2026-10-13",
+  "neighborhoods": [
+    {
+      "id": "pine-lakes",
+      "name": "The Preserve at Pine Lakes and Pine Lakes Estates",
+      "area": "Myrtle Beach (Pine Lakes area)",
+      "city_limits": "Myrtle Beach",
+      "reference_point": {
+        "address": "5708 Lacebark Trl, Myrtle Beach, SC 29577",
+        "lat": 33.736161,
+        "lon": -78.846794
+      },
+      "homes_in_county_records": 252,
+      "parcels": 266,
+      "typical_price": {
+        "median": 600000.0,
+        "n": 17,
+        "low": 70000.0,
+        "high": 1140000.0,
+        "middle_half": [
+          539500,
+          670000
+        ],
+        "period": "2025-10-01 to 2026-09-30 (deed recording dates)",
+        "kind": "resales, all home types",
+        "by_type": {
+          "house": {
+            "n": 17,
+            "median": 600000.0
+          }
+        }
+      },
+      "builder_sales": null,
+      "hoa_fee": {
+        "monthly_most_common": 96,
+        "home_type": "Detached",
+        "listings": 12,
+        "range_all_types": [
+          95,
+          313
+        ],
+        "source": "listings (MLS field on Real Geeks and Beach Pro Team), 2026-10-13"
+      },
+      "beach": {
+        "minutes": 6,
+        "miles": 1.8,
+        "to": "MYRTLE BEACH 101"
+      },
+      "grocery": {
+        "minutes": 5,
+        "miles": 1.8,
+        "to": "Food Lion, 1241 38th Avenue North"
+      },
+      "hospital": {
+        "minutes": 8,
+        "miles": 3.3,
+        "to": "Grand Strand Medical Center, 809 82nd Parkway, Myrtle Beach"
+      },
+      "amenities": [
+        "golf: Pine Lakes Country Club, opened 1927 (club page; course parcel in the Pine Lakes plat)"
+      ],
+      "gated": null,
+      "gated_note": "not verified from a primary source",
+      "age_55_plus": null,
+      "age_note": "no age rule found in the sources read; not researched as 55+",
+      "flood": {
+        "address_points": 254,
+        "outside_high_risk": 254,
+        "share_outside": 1.0
+      },
+      "schools": {
+        "elementary": [
+          "Myrtle Beach Early Childhood",
+          "Myrtle Beach Elementary",
+          "Myrtle Beach Primary"
+        ],
+        "middle": [
+          "Myrtle Beach Middle School"
+        ],
+        "high": [
+          "Myrtle Beach High School"
+        ],
+        "for_address": "5708 Lacebark Trl"
+      },
+      "ledger_rows": {
+        "extent": [
+          1
+        ],
+        "refpoint": [
+          2
+        ],
+        "price": [
+          3
+        ],
+        "hoa": [
+          4
+        ],
+        "assoc": [
+          5
+        ],
+        "beach": [
+          6
+        ],
+        "grocery": [
+          7
+        ],
+        "hospital": [
+          8
+        ],
+        "mcleod_cf": [
+          9
+        ],
+        "flood": [
+          10
+        ],
+        "schools": [
+          11
+        ],
+        "golf": [
+          168
+        ],
+        "nohoa_old": [
+          169
+        ]
+      }
+    },
+    {
+      "id": "grande-dunes",
+      "name": "Grande Dunes (the sections whose county description names Grande Dunes)",
+      "area": "Myrtle Beach",
+      "city_limits": "Myrtle Beach",
+      "reference_point": {
+        "address": "1663 Serena Dr, Myrtle Beach, SC 29579",
+        "lat": 33.768492,
+        "lon": -78.813809
+      },
+      "homes_in_county_records": 258,
+      "parcels": 443,
+      "typical_price": {
+        "median": 1632000.0,
+        "n": 7,
+        "low": 1190000.0,
+        "high": 2910000.0,
+        "middle_half": [
+          1550750,
+          1827500
+        ],
+        "period": "2025-10-01 to 2026-09-30 (deed recording dates)",
+        "kind": "resales, all home types",
+        "by_type": {
+          "house": {
+            "n": 7,
+            "median": 1632000.0
+          }
+        }
+      },
+      "builder_sales": {
+        "n": 54,
+        "median": 678500.0,
+        "sellers": {
+          "AG EHC II LEN MULTI STATE 4 LLC": 9,
+          "BEACON BLUE LAND HOLDINGS LLC": 4,
+          "DREAM FINDERS HOMES LLC": 27,
+          "LENNAR CAROLINAS LLC": 28
+        }
+      },
+      "hoa_fee": {
+        "monthly_most_common": 347,
+        "home_type": "Detached",
+        "listings": 29,
+        "range_all_types": [
+          199,
+          400
+        ],
+        "source": "listings (MLS field on Real Geeks and Beach Pro Team), 2026-10-13"
+      },
+      "beach": {
+        "minutes": 9,
+        "miles": 3.1,
+        "to": "MYRTLE BEACH 136"
+      },
+      "grocery": {
+        "minutes": 9,
+        "miles": 3.0,
+        "to": "Kroger, 1 North Kings Highway"
+      },
+      "hospital": {
+        "minutes": 9,
+        "miles": 2.3,
+        "to": "Grand Strand Medical Center, 809 82nd Parkway, Myrtle Beach"
+      },
+      "amenities": null,
+      "gated": null,
+      "gated_note": "not verified from a primary source",
+      "age_55_plus": null,
+      "age_note": "no age rule found in the sources read; not researched as 55+",
+      "flood": {
+        "address_points": 407,
+        "outside_high_risk": 406,
+        "share_outside": 0.998
+      },
+      "schools": {
+        "elementary": [
+          "Myrtle Beach Early Childhood",
+          "Myrtle Beach Elementary",
+          "Myrtle Beach Primary"
+        ],
+        "middle": [
+          "Myrtle Beach Middle School"
+        ],
+        "high": [
+          "Myrtle Beach High School"
+        ],
+        "for_address": "1663 Serena Dr"
+      },
+      "ledger_rows": {
+        "extent": [
+          12
+        ],
+        "refpoint": [
+          13
+        ],
+        "price": [
+          14
+        ],
+        "builder": [
+          15
+        ],
+        "land": [
+          16
+        ],
+        "hoa": [
+          17
+        ],
+        "assoc": [
+          18
+        ],
+        "beach": [
+          19
+        ],
+        "grocery": [
+          20
+        ],
+        "hospital": [
+          21
+        ],
+        "flood": [
+          22
+        ],
+        "schools": [
+          23
+        ]
+      }
+    },
+    {
+      "id": "market-common",
+      "name": "The Market Common (home parcels named Market Common)",
+      "area": "Myrtle Beach",
+      "city_limits": "Myrtle Beach",
+      "reference_point": {
+        "address": "846 Sharpe Ln, Myrtle Beach, SC 29577",
+        "lat": 33.666315,
+        "lon": -78.939592
+      },
+      "homes_in_county_records": 693,
+      "parcels": 818,
+      "typical_price": {
+        "median": 503750.0,
+        "n": 46,
+        "low": 285000.0,
+        "high": 850000.0,
+        "middle_half": [
+          408125,
+          554750
+        ],
+        "period": "2025-10-01 to 2026-09-30 (deed recording dates)",
+        "kind": "resales, all home types",
+        "by_type": {
+          "house": {
+            "n": 26,
+            "median": 540000.0
+          },
+          "townhouse": {
+            "n": 20,
+            "median": 398400.0
+          }
+        }
+      },
+      "builder_sales": {
+        "n": 16,
+        "median": 582500.0,
+        "sellers": {
+          "SANDS BUILDING GROUP INC": 16
+        }
+      },
+      "hoa_fee": {
+        "monthly_most_common": 450,
+        "home_type": "Townhouse",
+        "listings": 14,
+        "range_all_types": [
+          101,
+          683
+        ],
+        "source": "listings (MLS field on Real Geeks and Beach Pro Team), 2026-10-13"
+      },
+      "beach": {
+        "minutes": 5,
+        "miles": 1.9,
+        "to": "MYRTLE BEACH 1"
+      },
+      "grocery": {
+        "minutes": 4,
+        "miles": 1.0,
+        "to": "Food Lion"
+      },
+      "hospital": {
+        "minutes": 15,
+        "miles": 10.9,
+        "to": "Tidelands Waccamaw Community Hospital, 4070 Highway 17, Murrells Inlet"
+      },
+      "amenities": null,
+      "gated": null,
+      "gated_note": "not verified from a primary source",
+      "age_55_plus": null,
+      "age_note": "no age rule found in the sources read; not researched as 55+",
+      "flood": {
+        "address_points": 838,
+        "outside_high_risk": 827,
+        "share_outside": 0.987
+      },
+      "schools": {
+        "elementary": [
+          "Myrtle Beach Early Childhood",
+          "Myrtle Beach Elementary",
+          "Myrtle Beach Primary"
+        ],
+        "middle": [
+          "Myrtle Beach Middle School"
+        ],
+        "high": [
+          "Myrtle Beach High School"
+        ],
+        "for_address": "846 Sharpe Ln"
+      },
+      "ledger_rows": {
+        "extent": [
+          24
+        ],
+        "refpoint": [
+          25
+        ],
+        "price": [
+          26
+        ],
+        "builder": [
+          27
+        ],
+        "hoa": [
+          28
+        ],
+        "assoc": [
+          29
+        ],
+        "beach": [
+          30
+        ],
+        "grocery": [
+          31
+        ],
+        "hospital": [
+          32
+        ],
+        "flood": [
+          33
+        ],
+        "schools": [
+          34
+        ]
+      }
+    },
+    {
+      "id": "the-farm",
+      "name": "The Farm at Carolina Forest",
+      "area": "Carolina Forest",
+      "city_limits": null,
+      "reference_point": {
+        "address": "2884 Scarecrow Way, Myrtle Beach, SC 29579",
+        "lat": 33.767565,
+        "lon": -78.877978
+      },
+      "homes_in_county_records": 262,
+      "parcels": 273,
+      "typical_price": {
+        "median": 368500.0,
+        "n": 16,
+        "low": 140000.0,
+        "high": 463000.0,
+        "middle_half": [
+          322425,
+          382425
+        ],
+        "period": "2025-10-01 to 2026-09-30 (deed recording dates)",
+        "kind": "resales, all home types",
+        "by_type": {
+          "house": {
+            "n": 16,
+            "median": 368500.0
+          }
+        }
+      },
+      "builder_sales": null,
+      "hoa_fee": {
+        "monthly_most_common": 107,
+        "home_type": "Detached",
+        "listings": 15,
+        "range_all_types": [
+          100,
+          110
+        ],
+        "source": "listings (MLS field on Real Geeks and Beach Pro Team), 2026-10-13"
+      },
+      "beach": {
+        "minutes": 10,
+        "miles": 5.1,
+        "to": "MYRTLE BEACH 116"
+      },
+      "grocery": {
+        "minutes": 6,
+        "miles": 1.8,
+        "to": "Lowes Foods"
+      },
+      "hospital": {
+        "minutes": 15,
+        "miles": 5.9,
+        "to": "Grand Strand Medical Center, 809 82nd Parkway, Myrtle Beach"
+      },
+      "amenities": null,
+      "gated": null,
+      "gated_note": "not verified from a primary source",
+      "age_55_plus": null,
+      "age_note": "no age rule found in the sources read; not researched as 55+",
+      "flood": {
+        "address_points": 271,
+        "outside_high_risk": 271,
+        "share_outside": 1.0
+      },
+      "schools": {
+        "elementary": [
+          "Ocean Bay Elementary School"
+        ],
+        "middle": [
+          "Ocean Bay Middle School"
+        ],
+        "high": [
+          "Carolina Forest High School"
+        ],
+        "for_address": "2884 Scarecrow Way"
+      },
+      "ledger_rows": {
+        "extent": [
+          35
+        ],
+        "refpoint": [
+          36
+        ],
+        "price": [
+          37
+        ],
+        "hoa": [
+          38
+        ],
+        "assoc": [
+          39
+        ],
+        "beach": [
+          40
+        ],
+        "grocery": [
+          41
+        ],
+        "hospital": [
+          42
+        ],
+        "mcleod_cf": [
+          43
+        ],
+        "flood": [
+          44
+        ],
+        "schools": [
+          45
+        ]
+      }
+    },
+    {
+      "id": "berkshire-forest",
+      "name": "Berkshire Forest",
+      "area": "Carolina Forest",
+      "city_limits": null,
+      "reference_point": {
+        "address": "1009 Balmore Dr, Myrtle Beach, SC 29579",
+        "lat": 33.742759,
+        "lon": -78.90081
+      },
+      "homes_in_county_records": 868,
+      "parcels": 953,
+      "typical_price": {
+        "median": 388000.0,
+        "n": 24,
+        "low": 310000.0,
+        "high": 795000.0,
+        "middle_half": [
+          346750,
+          439500
+        ],
+        "period": "2025-10-01 to 2026-09-30 (deed recording dates)",
+        "kind": "resales, all home types",
+        "by_type": {
+          "house": {
+            "n": 24,
+            "median": 388000.0
+          }
+        }
+      },
+      "builder_sales": null,
+      "hoa_fee": {
+        "monthly_most_common": 116,
+        "home_type": "Detached",
+        "listings": 18,
+        "range_all_types": [
+          94,
+          515
+        ],
+        "source": "listings (MLS field on Real Geeks and Beach Pro Team), 2026-10-13"
+      },
+      "beach": {
+        "minutes": 15,
+        "miles": 7.0,
+        "to": "MYRTLE BEACH 99"
+      },
+      "grocery": {
+        "minutes": 7,
+        "miles": 2.8,
+        "to": "Publix, 136 Sapwood Road"
+      },
+      "hospital": {
+        "minutes": 15,
+        "miles": 7.9,
+        "to": "Grand Strand Medical Center, 809 82nd Parkway, Myrtle Beach"
+      },
+      "amenities": null,
+      "gated": null,
+      "gated_note": "not verified from a primary source",
+      "age_55_plus": null,
+      "age_note": "no age rule found in the sources read; not researched as 55+",
+      "flood": {
+        "address_points": 983,
+        "outside_high_risk": 983,
+        "share_outside": 1.0
+      },
+      "schools": {
+        "elementary": [
+          "River Oaks Elementary School"
+        ],
+        "middle": [
+          "Ocean Bay Middle School"
+        ],
+        "high": [
+          "Carolina Forest High School"
+        ],
+        "for_address": "1009 Balmore Dr"
+      },
+      "ledger_rows": {
+        "extent": [
+          46
+        ],
+        "refpoint": [
+          47
+        ],
+        "price": [
+          48
+        ],
+        "hoa": [
+          49
+        ],
+        "assoc": [
+          50
+        ],
+        "beach": [
+          51
+        ],
+        "grocery": [
+          52
+        ],
+        "hospital": [
+          53
+        ],
+        "mcleod_cf": [
+          54
+        ],
+        "flood": [
+          55
+        ],
+        "schools": [
+          56
+        ]
+      }
+    },
+    {
+      "id": "plantation-lakes",
+      "name": "Plantation Lakes",
+      "area": "Carolina Forest",
+      "city_limits": null,
+      "reference_point": {
+        "address": "249 Shoreward Dr, Myrtle Beach, SC 29579",
+        "lat": 33.750331,
+        "lon": -78.917538
+      },
+      "homes_in_county_records": 715,
+      "parcels": 774,
+      "typical_price": {
+        "median": 739131.25,
+        "n": 40,
+        "low": 500000.0,
+        "high": 1550000.0,
+        "middle_half": [
+          637475,
+          909125
+        ],
+        "period": "2025-10-01 to 2026-09-30 (deed recording dates)",
+        "kind": "resales, all home types",
+        "by_type": {
+          "house": {
+            "n": 40,
+            "median": 739131.25
+          }
+        }
+      },
+      "builder_sales": null,
+      "hoa_fee": {
+        "monthly_most_common": 125,
+        "home_type": "Detached",
+        "listings": 15,
+        "range_all_types": [
+          108,
+          145
+        ],
+        "source": "listings (MLS field on Real Geeks and Beach Pro Team), 2026-10-13"
+      },
+      "beach": {
+        "minutes": 20,
+        "miles": 8.2,
+        "to": "MYRTLE BEACH 94"
+      },
+      "grocery": {
+        "minutes": 9,
+        "miles": 3.8,
+        "to": "Food Lion, 4030 River Oaks Drive"
+      },
+      "hospital": {
+        "minutes": 15,
+        "miles": 7.6,
+        "to": "Conway Medical Center, 300 Singleton Ridge Road, Conway"
+      },
+      "amenities": null,
+      "gated": null,
+      "gated_note": "not verified from a primary source",
+      "age_55_plus": null,
+      "age_note": "no age rule found in the sources read; not researched as 55+",
+      "flood": {
+        "address_points": 766,
+        "outside_high_risk": 766,
+        "share_outside": 1.0
+      },
+      "schools": {
+        "elementary": [
+          "Ten Oaks Elementary School"
+        ],
+        "middle": [
+          "Ten Oaks Middle School"
+        ],
+        "high": [
+          "Carolina Forest High School"
+        ],
+        "for_address": "249 Shoreward Dr"
+      },
+      "ledger_rows": {
+        "extent": [
+          57
+        ],
+        "refpoint": [
+          58
+        ],
+        "price": [
+          59
+        ],
+        "land": [
+          60
+        ],
+        "hoa": [
+          61
+        ],
+        "assoc": [
+          62
+        ],
+        "beach": [
+          63
+        ],
+        "grocery": [
+          64
+        ],
+        "hospital": [
+          65
+        ],
+        "mcleod_cf": [
+          66
+        ],
+        "flood": [
+          67
+        ],
+        "schools": [
+          68
+        ]
+      }
+    },
+    {
+      "id": "waterbridge",
+      "name": "Waterbridge",
+      "area": "Carolina Forest",
+      "city_limits": null,
+      "reference_point": {
+        "address": "840 Waterbridge Blvd, Myrtle Beach, SC 29579",
+        "lat": 33.768498,
+        "lon": -78.904092
+      },
+      "homes_in_county_records": 994,
+      "parcels": 1178,
+      "typical_price": {
+        "median": 632500.0,
+        "n": 58,
+        "low": 435000.0,
+        "high": 1383000.0,
+        "middle_half": [
+          552500,
+          767250
+        ],
+        "period": "2025-10-01 to 2026-09-30 (deed recording dates)",
+        "kind": "resales, all home types",
+        "by_type": {
+          "house": {
+            "n": 58,
+            "median": 632500.0
+          }
+        }
+      },
+      "builder_sales": {
+        "n": 89,
+        "median": 553220.0,
+        "sellers": {
+          "DR HORTON INC": 51,
+          "WATERBRIDGE SC LLC": 37
+        }
+      },
+      "hoa_fee": {
+        "monthly_most_common": 150,
+        "home_type": "Detached",
+        "listings": 27,
+        "range_all_types": [
+          145,
+          449
+        ],
+        "source": "listings (MLS field on Real Geeks and Beach Pro Team), 2026-10-13"
+      },
+      "beach": {
+        "minutes": 15,
+        "miles": 7.5,
+        "to": "MYRTLE BEACH 116"
+      },
+      "grocery": {
+        "minutes": 9,
+        "miles": 3.4,
+        "to": "Food Lion, 4030 River Oaks Drive"
+      },
+      "hospital": {
+        "minutes": 15,
+        "miles": 8.2,
+        "to": "Conway Medical Center, 300 Singleton Ridge Road, Conway"
+      },
+      "amenities": [
+        "association-owned amenity area, 4.57 acres (county)"
+      ],
+      "gated": null,
+      "gated_note": "not verified from a primary source",
+      "age_55_plus": null,
+      "age_note": "no age rule found in the sources read; not researched as 55+",
+      "flood": {
+        "address_points": 1252,
+        "outside_high_risk": 1238,
+        "share_outside": 0.989
+      },
+      "schools": {
+        "elementary": [
+          "Ten Oaks Elementary School"
+        ],
+        "middle": [
+          "Ten Oaks Middle School"
+        ],
+        "high": [
+          "Carolina Forest High School"
+        ],
+        "for_address": "840 Waterbridge Blvd"
+      },
+      "ledger_rows": {
+        "extent": [
+          69
+        ],
+        "refpoint": [
+          70
+        ],
+        "price": [
+          71
+        ],
+        "builder": [
+          72
+        ],
+        "land": [
+          73
+        ],
+        "hoa": [
+          74
+        ],
+        "assoc": [
+          75
+        ],
+        "beach": [
+          76
+        ],
+        "grocery": [
+          77
+        ],
+        "hospital": [
+          78
+        ],
+        "mcleod_cf": [
+          79
+        ],
+        "flood": [
+          80
+        ],
+        "schools": [
+          81
+        ],
+        "amenity_parcel": [
+          172
+        ]
+      }
+    },
+    {
+      "id": "forestbrook-estates",
+      "name": "Forestbrook Estates",
+      "area": "Forestbrook",
+      "city_limits": null,
+      "reference_point": {
+        "address": "464 Harbison Cir, Myrtle Beach, SC 29579",
+        "lat": 33.719322,
+        "lon": -78.971412
+      },
+      "homes_in_county_records": 608,
+      "parcels": 642,
+      "typical_price": {
+        "median": 381750.0,
+        "n": 34,
+        "low": 172000.0,
+        "high": 459500.0,
+        "middle_half": [
+          347375,
+          421500
+        ],
+        "period": "2025-10-01 to 2026-09-30 (deed recording dates)",
+        "kind": "resales, all home types",
+        "by_type": {
+          "house": {
+            "n": 29,
+            "median": 395000.0
+          },
+          "townhouse": {
+            "n": 5,
+            "median": 255000.0
+          }
+        }
+      },
+      "builder_sales": null,
+      "hoa_fee": {
+        "monthly_most_common": 86,
+        "home_type": "Detached",
+        "listings": 8,
+        "range_all_types": [
+          65,
+          226
+        ],
+        "source": "listings (MLS field on Real Geeks and Beach Pro Team), 2026-10-13"
+      },
+      "beach": {
+        "minutes": 15,
+        "miles": 7.0,
+        "to": "MYRTLE BEACH 38"
+      },
+      "grocery": {
+        "minutes": 6,
+        "miles": 2.2,
+        "to": "Food Lion, 3501 Belle Terre Boulevard"
+      },
+      "hospital": {
+        "minutes": 15,
+        "miles": 7.7,
+        "to": "Conway Medical Center, 300 Singleton Ridge Road, Conway"
+      },
+      "amenities": null,
+      "gated": null,
+      "gated_note": "not verified from a primary source",
+      "age_55_plus": null,
+      "age_note": "no age rule found in the sources read; not researched as 55+",
+      "flood": {
+        "address_points": 669,
+        "outside_high_risk": 669,
+        "share_outside": 1.0
+      },
+      "schools": {
+        "elementary": [
+          "Forestbrook Elementary School"
+        ],
+        "middle": [
+          "Forestbrook Middle School"
+        ],
+        "high": [
+          "Socastee High School"
+        ],
+        "for_address": "464 Harbison Cir"
+      },
+      "ledger_rows": {
+        "extent": [
+          82
+        ],
+        "refpoint": [
+          83
+        ],
+        "price": [
+          84
+        ],
+        "hoa": [
+          85
+        ],
+        "assoc": [
+          86
+        ],
+        "beach": [
+          87
+        ],
+        "grocery": [
+          88
+        ],
+        "hospital": [
+          89
+        ],
+        "flood": [
+          90
+        ],
+        "schools": [
+          91
+        ]
+      }
+    },
+    {
+      "id": "cherry-grove",
+      "name": "Cherry Grove (the streets named Cherry Grove in county records)",
+      "area": "North Myrtle Beach",
+      "city_limits": "North Myrtle Beach",
+      "reference_point": {
+        "address": "313 42Nd Ave N, North Myrtle Beach, SC 29582",
+        "lat": 33.834345,
+        "lon": -78.627983
+      },
+      "homes_in_county_records": 1863,
+      "parcels": 2094,
+      "typical_price": {
+        "median": 677500.0,
+        "n": 100,
+        "low": 55000.0,
+        "high": 2725000.0,
+        "middle_half": [
+          539975,
+          852500
+        ],
+        "period": "2025-10-01 to 2026-09-30 (deed recording dates)",
+        "kind": "resales, all home types",
+        "by_type": {
+          "house": {
+            "n": 92,
+            "median": 695000.0
+          },
+          "condo": {
+            "n": 8,
+            "median": 477500.0
+          }
+        }
+      },
+      "builder_sales": null,
+      "hoa_fee": null,
+      "beach": {
+        "minutes": 1,
+        "miles": 0.1,
+        "to": "NORTH MYRTLE BEACH 129"
+      },
+      "grocery": {
+        "minutes": 9,
+        "miles": 3.5,
+        "to": "Publix, 1576 US Highway 17 North"
+      },
+      "hospital": {
+        "minutes": 10,
+        "miles": 4.0,
+        "to": "McLeod Health Seacoast, 4000 Highway 9 East, Little River"
+      },
+      "amenities": null,
+      "gated": null,
+      "gated_note": "not verified from a primary source",
+      "age_55_plus": null,
+      "age_note": "no age rule found in the sources read; not researched as 55+",
+      "flood": {
+        "address_points": 2057,
+        "outside_high_risk": 44,
+        "share_outside": 0.021
+      },
+      "schools": {
+        "elementary": [
+          "Ocean Drive Elementary School"
+        ],
+        "middle": [
+          "North Myrtle Beach Middle School"
+        ],
+        "high": [
+          "North Myrtle Beach High School"
+        ],
+        "for_address": "313 42Nd Ave N"
+      },
+      "ledger_rows": {
+        "extent": [
+          92
+        ],
+        "refpoint": [
+          93
+        ],
+        "price": [
+          94
+        ],
+        "land": [
+          95
+        ],
+        "assoc": [
+          96
+        ],
+        "beach": [
+          97
+        ],
+        "grocery": [
+          98
+        ],
+        "hospital": [
+          99
+        ],
+        "flood": [
+          100
+        ],
+        "schools": [
+          101
+        ],
+        "hoa": [
+          175
+        ]
+      }
+    },
+    {
+      "id": "tidewater",
+      "name": "Tidewater Plantation",
+      "area": "North Myrtle Beach",
+      "city_limits": "North Myrtle Beach",
+      "reference_point": {
+        "address": "1200 Tidewater Dr, North Myrtle Beach, SC 29582",
+        "lat": 33.850463,
+        "lon": -78.623511
+      },
+      "homes_in_county_records": 627,
+      "parcels": 692,
+      "typical_price": {
+        "median": 596000.0,
+        "n": 28,
+        "low": 315000.0,
+        "high": 1058000.0,
+        "middle_half": [
+          530500,
+          675000
+        ],
+        "period": "2025-10-01 to 2026-09-30 (deed recording dates)",
+        "kind": "resales, all home types",
+        "by_type": {
+          "house": {
+            "n": 25,
+            "median": 615000.0
+          },
+          "condo": {
+            "n": 3,
+            "median": 325000.0
+          }
+        }
+      },
+      "builder_sales": null,
+      "hoa_fee": {
+        "monthly_most_common": 231,
+        "home_type": "Detached",
+        "listings": 17,
+        "range_all_types": [
+          175,
+          800
+        ],
+        "source": "listings (MLS field on Real Geeks and Beach Pro Team), 2026-10-13"
+      },
+      "beach": {
+        "minutes": 10,
+        "miles": 3.8,
+        "to": "NORTH MYRTLE BEACH 125"
+      },
+      "grocery": {
+        "minutes": 7,
+        "miles": 3.1,
+        "to": "Publix, 1576 US Highway 17 North"
+      },
+      "hospital": {
+        "minutes": 10,
+        "miles": 3.8,
+        "to": "McLeod Health Seacoast, 4000 Highway 9 East, Little River"
+      },
+      "amenities": [
+        "golf: Tidewater Golf Club, public (club page)",
+        "association-owned amenity parcel, 4.24 acres (county)"
+      ],
+      "gated": null,
+      "gated_note": "not verified from a primary source",
+      "age_55_plus": null,
+      "age_note": "no age rule found in the sources read; not researched as 55+",
+      "flood": {
+        "address_points": 653,
+        "outside_high_risk": 643,
+        "share_outside": 0.985
+      },
+      "schools": {
+        "elementary": [
+          "Ocean Drive Elementary School"
+        ],
+        "middle": [
+          "North Myrtle Beach Middle School"
+        ],
+        "high": [
+          "North Myrtle Beach High School"
+        ],
+        "for_address": "1200 Tidewater Dr"
+      },
+      "ledger_rows": {
+        "extent": [
+          102
+        ],
+        "refpoint": [
+          103
+        ],
+        "price": [
+          104
+        ],
+        "land": [
+          105
+        ],
+        "hoa": [
+          106
+        ],
+        "assoc": [
+          107
+        ],
+        "beach": [
+          108
+        ],
+        "grocery": [
+          109
+        ],
+        "hospital": [
+          110
+        ],
+        "flood": [
+          111
+        ],
+        "schools": [
+          112
+        ],
+        "golf": [
+          170
+        ],
+        "amenity_parcel": [
+          173
+        ]
+      }
+    },
+    {
+      "id": "barefoot-resort",
+      "name": "Barefoot Resort (parcels named Barefoot Resort or Barefoot Village)",
+      "area": "North Myrtle Beach",
+      "city_limits": "North Myrtle Beach",
+      "reference_point": {
+        "address": "2200 Tidewatch Way, North Myrtle Beach, SC 29582",
+        "lat": 33.804058,
+        "lon": -78.749383
+      },
+      "homes_in_county_records": 497,
+      "parcels": 548,
+      "typical_price": {
+        "median": 430000.0,
+        "n": 23,
+        "low": 338000.0,
+        "high": 591500.0,
+        "middle_half": [
+          369000,
+          498500
+        ],
+        "period": "2025-10-01 to 2026-09-30 (deed recording dates)",
+        "kind": "resales, all home types",
+        "by_type": {
+          "house": {
+            "n": 1,
+            "median": 591500.0
+          },
+          "townhouse": {
+            "n": 3,
+            "median": 430000.0
+          },
+          "condo": {
+            "n": 19,
+            "median": 424000.0
+          }
+        }
+      },
+      "builder_sales": null,
+      "hoa_fee": {
+        "monthly_most_common": 681,
+        "home_type": "Condominium",
+        "listings": 8,
+        "range_all_types": [
+          335,
+          704
+        ],
+        "source": "listings (MLS field on Real Geeks and Beach Pro Team), 2026-10-13"
+      },
+      "beach": {
+        "minutes": 6,
+        "miles": 1.7,
+        "to": "NORTH MYRTLE BEACH 2"
+      },
+      "grocery": {
+        "minutes": 6,
+        "miles": 1.5,
+        "to": "Food Lion"
+      },
+      "hospital": {
+        "minutes": 15,
+        "miles": 6.9,
+        "to": "Grand Strand Medical Center, 809 82nd Parkway, Myrtle Beach"
+      },
+      "amenities": [
+        "golf: four courses, Norman, Love, Fazio, Dye (Barefoot golf page)"
+      ],
+      "gated": null,
+      "gated_note": "not verified from a primary source",
+      "age_55_plus": null,
+      "age_note": "no age rule found in the sources read; not researched as 55+",
+      "flood": {
+        "address_points": 236,
+        "outside_high_risk": 236,
+        "share_outside": 1.0
+      },
+      "schools": {
+        "elementary": [
+          "Ocean Drive Elementary School"
+        ],
+        "middle": [
+          "North Myrtle Beach Middle School"
+        ],
+        "high": [
+          "North Myrtle Beach High School"
+        ],
+        "for_address": "2200 Tidewatch Way"
+      },
+      "ledger_rows": {
+        "extent": [
+          113
+        ],
+        "refpoint": [
+          114
+        ],
+        "price": [
+          115
+        ],
+        "hoa": [
+          116
+        ],
+        "assoc": [
+          117
+        ],
+        "beach": [
+          118
+        ],
+        "grocery": [
+          119
+        ],
+        "hospital": [
+          120
+        ],
+        "flood": [
+          121
+        ],
+        "schools": [
+          122
+        ],
+        "golf": [
+          171
+        ]
+      }
+    },
+    {
+      "id": "deerfield",
+      "name": "Deerfield Plantation area",
+      "area": "Surfside Beach",
+      "city_limits": null,
+      "reference_point": {
+        "address": "1436 Bay Tree Ln, Surfside Beach, SC 29575",
+        "lat": 33.63038,
+        "lon": -78.977526
+      },
+      "homes_in_county_records": 863,
+      "parcels": 895,
+      "typical_price": {
+        "median": 354900.0,
+        "n": 41,
+        "low": 70000.0,
+        "high": 603000.0,
+        "middle_half": [
+          280000,
+          410000
+        ],
+        "period": "2025-10-01 to 2026-09-30 (deed recording dates)",
+        "kind": "resales, all home types",
+        "by_type": {
+          "house": {
+            "n": 40,
+            "median": 359950.0
+          },
+          "townhouse": {
+            "n": 1,
+            "median": 180000.0
+          }
+        }
+      },
+      "builder_sales": null,
+      "hoa_fee": {
+        "monthly_most_common": 67,
+        "home_type": "Detached",
+        "listings": 6,
+        "range_all_types": [
+          40,
+          489
+        ],
+        "source": "listings (MLS field on Real Geeks and Beach Pro Team), 2026-10-13"
+      },
+      "beach": {
+        "minutes": 7,
+        "miles": 2.7,
+        "to": "SURFSIDE BEACH 31"
+      },
+      "grocery": {
+        "minutes": 5,
+        "miles": 1.5,
+        "to": "Walmart Neighborhood Market, 125 Maryport Drive"
+      },
+      "hospital": {
+        "minutes": 15,
+        "miles": 9.2,
+        "to": "Tidelands Waccamaw Community Hospital, 4070 Highway 17, Murrells Inlet"
+      },
+      "amenities": null,
+      "gated": null,
+      "gated_note": "not verified from a primary source",
+      "age_55_plus": null,
+      "age_note": "no age rule found in the sources read; not researched as 55+",
+      "flood": {
+        "address_points": 877,
+        "outside_high_risk": 877,
+        "share_outside": 1.0
+      },
+      "schools": {
+        "elementary": [
+          "Lakewood Elementary School"
+        ],
+        "middle": [
+          "Socastee Middle School"
+        ],
+        "high": [
+          "Socastee High School"
+        ],
+        "for_address": "1436 Bay Tree Ln"
+      },
+      "ledger_rows": {
+        "extent": [
+          123
+        ],
+        "refpoint": [
+          124
+        ],
+        "price": [
+          125
+        ],
+        "land": [
+          126
+        ],
+        "hoa": [
+          127
+        ],
+        "assoc": [
+          128
+        ],
+        "beach": [
+          129
+        ],
+        "grocery": [
+          130
+        ],
+        "hospital": [
+          131
+        ],
+        "flood": [
+          132
+        ],
+        "schools": [
+          133
+        ]
+      }
+    },
+    {
+      "id": "surfside-beach",
+      "name": "Surfside Beach, the streets between US 17 Business and the ocean",
+      "area": "Surfside Beach",
+      "city_limits": "Surfside Beach",
+      "reference_point": {
+        "address": "115 S Myrtle Dr, Surfside Beach, SC 29575",
+        "lat": 33.60635,
+        "lon": -78.977108
+      },
+      "homes_in_county_records": 4237,
+      "parcels": 4574,
+      "typical_price": {
+        "median": 545000.0,
+        "n": 183,
+        "low": 110000.0,
+        "high": 1935000.0,
+        "middle_half": [
+          402500,
+          802500
+        ],
+        "period": "2025-10-01 to 2026-09-30 (deed recording dates)",
+        "kind": "resales, all home types",
+        "by_type": {
+          "house": {
+            "n": 125,
+            "median": 705000.0
+          },
+          "townhouse": {
+            "n": 14,
+            "median": 252500.0
+          },
+          "condo": {
+            "n": 44,
+            "median": 405000.0
+          }
+        }
+      },
+      "builder_sales": {
+        "n": 16,
+        "median": 359950.0,
+        "sellers": {
+          "GO FOR LAUNCH LLC": 10,
+          "RKB INVESTMENTS LLC": 5
+        }
+      },
+      "hoa_fee": null,
+      "beach": {
+        "minutes": 1,
+        "miles": 0.4,
+        "to": "SURFSIDE BEACH 17"
+      },
+      "grocery": {
+        "minutes": 3,
+        "miles": 0.8,
+        "to": "Piggly Wiggly, 122 Highway 17 North"
+      },
+      "hospital": {
+        "minutes": 10,
+        "miles": 5.6,
+        "to": "Tidelands Waccamaw Community Hospital, 4070 Highway 17, Murrells Inlet"
+      },
+      "amenities": null,
+      "gated": null,
+      "gated_note": "not verified from a primary source",
+      "age_55_plus": null,
+      "age_note": "no age rule found in the sources read; not researched as 55+",
+      "flood": {
+        "address_points": 3670,
+        "outside_high_risk": 2669,
+        "share_outside": 0.727
+      },
+      "schools": {
+        "elementary": [
+          "Seaside Elementary School"
+        ],
+        "middle": [
+          "St James Intermediate School",
+          "St. James Middle School"
+        ],
+        "high": [
+          "St. James High School"
+        ],
+        "for_address": "115 S Myrtle Dr"
+      },
+      "ledger_rows": {
+        "extent": [
+          134
+        ],
+        "refpoint": [
+          135
+        ],
+        "price": [
+          136
+        ],
+        "builder": [
+          137
+        ],
+        "land": [
+          138
+        ],
+        "assoc": [
+          139
+        ],
+        "beach": [
+          140
+        ],
+        "grocery": [
+          141
+        ],
+        "hospital": [
+          142
+        ],
+        "flood": [
+          143
+        ],
+        "schools": [
+          144
+        ]
+      }
+    },
+    {
+      "id": "prince-creek",
+      "name": "Prince Creek (outside Seasons at Prince Creek)",
+      "area": "Murrells Inlet",
+      "city_limits": null,
+      "reference_point": {
+        "address": "436 Fountain Grass Ct, Murrells Inlet, SC 29576",
+        "lat": 33.588187,
+        "lon": -79.059731
+      },
+      "homes_in_county_records": 258,
+      "parcels": 300,
+      "typical_price": {
+        "median": 422450.0,
+        "n": 10,
+        "low": 315000.0,
+        "high": 620000.0,
+        "middle_half": [
+          360625,
+          542250
+        ],
+        "period": "2025-10-01 to 2026-09-30 (deed recording dates)",
+        "kind": "resales, all home types",
+        "by_type": {
+          "house": {
+            "n": 5,
+            "median": 558000.0
+          },
+          "townhouse": {
+            "n": 5,
+            "median": 354000.0
+          }
+        }
+      },
+      "builder_sales": {
+        "n": 53,
+        "median": 320370.0,
+        "sellers": {
+          "NVR INC": 52,
+          "RS PARKER HOMES LLC": 5
+        }
+      },
+      "hoa_fee": {
+        "monthly_most_common": 102,
+        "home_type": "Detached",
+        "listings": 6,
+        "range_all_types": [
+          102,
+          385
+        ],
+        "source": "listings (MLS field on Real Geeks and Beach Pro Team), 2026-10-13"
+      },
+      "beach": {
+        "minutes": 10,
+        "miles": 5.3,
+        "to": "GARDEN CITY 45"
+      },
+      "grocery": {
+        "minutes": 2,
+        "miles": 0.5,
+        "to": "Publix, 11920 Highway 707"
+      },
+      "hospital": {
+        "minutes": 6,
+        "miles": 3.0,
+        "to": "Tidelands Waccamaw Community Hospital, 4070 Highway 17, Murrells Inlet"
+      },
+      "amenities": null,
+      "gated": null,
+      "gated_note": "not verified from a primary source",
+      "age_55_plus": null,
+      "age_note": "no age rule found in the sources read; not researched as 55+",
+      "flood": {
+        "address_points": 276,
+        "outside_high_risk": 275,
+        "share_outside": 0.996
+      },
+      "schools": {
+        "elementary": [
+          "St. James Elementary School"
+        ],
+        "middle": [
+          "St James Intermediate School",
+          "St. James Middle School"
+        ],
+        "high": [
+          "St. James High School"
+        ],
+        "for_address": "436 Fountain Grass Ct"
+      },
+      "ledger_rows": {
+        "extent": [
+          145
+        ],
+        "refpoint": [
+          146
+        ],
+        "price": [
+          147
+        ],
+        "builder": [
+          148
+        ],
+        "hoa": [
+          149
+        ],
+        "assoc": [
+          150
+        ],
+        "beach": [
+          151
+        ],
+        "grocery": [
+          152
+        ],
+        "hospital": [
+          153
+        ],
+        "flood": [
+          154
+        ],
+        "schools": [
+          155
+        ]
+      }
+    },
+    {
+      "id": "wild-wing",
+      "name": "Wild Wing Plantation",
+      "area": "Conway",
+      "city_limits": "Conway",
+      "reference_point": {
+        "address": "1219 Wood Stork Dr, Conway, SC 29526",
+        "lat": 33.794918,
+        "lon": -78.978745
+      },
+      "homes_in_county_records": 687,
+      "parcels": 783,
+      "typical_price": {
+        "median": 602500.0,
+        "n": 28,
+        "low": 340000.0,
+        "high": 975000.0,
+        "middle_half": [
+          526250,
+          701000
+        ],
+        "period": "2025-10-01 to 2026-09-30 (deed recording dates)",
+        "kind": "resales, all home types",
+        "by_type": {
+          "house": {
+            "n": 28,
+            "median": 602500.0
+          }
+        }
+      },
+      "builder_sales": {
+        "n": 15,
+        "median": 430000.0,
+        "sellers": {
+          "DR HORTON INC": 15
+        }
+      },
+      "hoa_fee": {
+        "monthly_most_common": 135,
+        "home_type": "Detached",
+        "listings": 25,
+        "range_all_types": [
+          66,
+          169
+        ],
+        "source": "listings (MLS field on Real Geeks and Beach Pro Team), 2026-10-13"
+      },
+      "beach": {
+        "minutes": 20,
+        "miles": 11.1,
+        "to": "MYRTLE BEACH 51"
+      },
+      "grocery": {
+        "minutes": 6,
+        "miles": 1.5,
+        "to": "Aldi, 101 Wild Wing Boulevard"
+      },
+      "hospital": {
+        "minutes": 8,
+        "miles": 2.3,
+        "to": "Conway Medical Center, 300 Singleton Ridge Road, Conway"
+      },
+      "amenities": [
+        "association-owned amenity area in The Sanctuary at Wild Wing, 6.09 acres (county)"
+      ],
+      "gated": null,
+      "gated_note": "not verified from a primary source",
+      "age_55_plus": null,
+      "age_note": "no age rule found in the sources read; not researched as 55+",
+      "flood": {
+        "address_points": 719,
+        "outside_high_risk": 719,
+        "share_outside": 1.0
+      },
+      "schools": {
+        "elementary": [
+          "Carolina Forest Elementary School"
+        ],
+        "middle": [
+          "Ten Oaks Middle School"
+        ],
+        "high": [
+          "Carolina Forest High School"
+        ],
+        "for_address": "1219 Wood Stork Dr"
+      },
+      "ledger_rows": {
+        "extent": [
+          156
+        ],
+        "refpoint": [
+          157
+        ],
+        "price": [
+          158
+        ],
+        "builder": [
+          159
+        ],
+        "land": [
+          160
+        ],
+        "hoa": [
+          161
+        ],
+        "assoc": [
+          162
+        ],
+        "beach": [
+          163
+        ],
+        "grocery": [
+          164
+        ],
+        "hospital": [
+          165
+        ],
+        "flood": [
+          166
+        ],
+        "schools": [
+          167
+        ],
+        "amenity_parcel": [
+          174
+        ]
+      }
+    }
+  ],
+  "fifty_five_plus_by_reference": [
+    {
+      "id": "del-webb-north-myrtle-beach",
+      "name": "Del Webb North Myrtle Beach",
+      "area": "North Myrtle Beach",
+      "reference_point": {
+        "address": "Amenity center and HOA office, 1285 Possum Trot Road, North Myrtle Beach, SC 29582",
+        "lat": 33.821769,
+        "lon": -78.700908
+      },
+      "beach_minutes_cell": "About 4",
+      "hoa_fee_cell": "About $315",
+      "typical_price_cell": "About $535,000",
+      "age_55_plus": true,
+      "ledger": "batches/2026-10-a/facts/del-webb-north-myrtle-beach-facts.md",
+      "ledger_rows_note": "del-webb-north-myrtle-beach-facts.md row 62 (beach drive), row 58 (resale middle sale $534,900); HOA fee: del-webb-north-myrtle-beach-facts.md row 70 (listings show $315 on most homes for sale or sold in 2026)",
+      "page": "/buyers/55-plus-communities/del-webb-north-myrtle-beach/"
+    },
+    {
+      "id": "del-webb-grande-dunes",
+      "name": "Del Webb at Grande Dunes",
+      "area": "Myrtle Beach",
+      "reference_point": {
+        "address": "Welcome center and amenity center, 6201 Marina Parkway, Myrtle Beach, SC 29572",
+        "lat": 33.749305,
+        "lon": -78.842661
+      },
+      "beach_minutes_cell": "About 4",
+      "hoa_fee_cell": "About $400 for a house",
+      "typical_price_cell": "About $665,000 for a house",
+      "age_55_plus": true,
+      "ledger": "batches/2026-10-a/facts/del-webb-grande-dunes-facts.md",
+      "ledger_rows_note": "del-webb-grande-dunes-facts.md row 84 (beach drive); row 80 split by county tract name, without the sale on an unclear parcel (4999/1319): houses, 29 resales, middle $665,000; Villas at Heel Tract, 14 resales, middle $432,500. Shown apart (grader, 2026-10-11) so the cell matches the page body, which gives the same two figures.; HOA fee: del-webb-grande-dunes-facts.md rows 95 and 96 (listings entered in 2026 mostly show $401 for houses and $445 for villas)",
+      "page": "/buyers/55-plus-communities/del-webb-grande-dunes/"
+    },
+    {
+      "id": "myrtle-trace",
+      "name": "Myrtle Trace",
+      "area": "Conway",
+      "reference_point": {
+        "address": "HOA address, 101 Myrtle Trace Drive, Conway, SC 29526 (beside the HOA's recreation parcel)",
+        "lat": 33.778502,
+        "lon": -78.996618
+      },
+      "beach_minutes_cell": "About 15",
+      "hoa_fee_cell": "$95",
+      "typical_price_cell": "About $300,000",
+      "age_55_plus": true,
+      "ledger": "batches/2026-10-a/facts/myrtle-trace-facts.md",
+      "ledger_rows_note": "myrtle-trace-facts.md row 85 (beach drive), row 81 (middle sale $300,000); outside Conway city limits with a Conway mailing address (row 15); HOA fee: myrtle-trace-facts.md row 30 (HOA minutes and newsletter: $95 a month from January 1, 2026)",
+      "page": "/buyers/55-plus-communities/myrtle-trace/"
+    },
+    {
+      "id": "seasons-at-prince-creek-west",
+      "name": "Seasons at Prince Creek West",
+      "area": "Murrells Inlet",
+      "reference_point": {
+        "address": "Clubhouse parcel, 130 Grand Cypress Way, Murrells Inlet, SC 29576",
+        "lat": 33.586369,
+        "lon": -79.07094
+      },
+      "beach_minutes_cell": "About 10",
+      "hoa_fee_cell": "About $340",
+      "typical_price_cell": "About $500,000",
+      "age_55_plus": true,
+      "ledger": "batches/2026-10-a/facts/seasons-at-prince-creek-west-facts.md",
+      "ledger_rows_note": "seasons-at-prince-creek-west-facts.md row 76 (beach drive), row 73 (middle sale $499,000); Murrells Inlet mailing address (row 17); HOA fee: seasons-at-prince-creek-west-facts.md row 86 (listings show $342 a month in 2026)",
+      "page": "/buyers/55-plus-communities/seasons-at-prince-creek-west/"
+    }
+  ]
+}

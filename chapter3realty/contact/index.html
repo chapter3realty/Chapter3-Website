@@ -800,5 +800,24 @@ function submitContact(e){
   return false;
 }
 </script>
+<script>
+/* Each place on a guide page ends with its own offer, a link to /contact/?place=<place> (Blog-Brain
+   tools/glass.js offer, batch 2026-10-b). The place starts the message, so the agent knows which place
+   the reader tapped. It is read with URLSearchParams and set as the textarea's value, never as markup,
+   with control characters removed and at most 80 characters. A message already typed is kept. */
+(function(){
+  try{
+    var p=new URLSearchParams(window.location.search).get('place');
+    if(!p) return;
+    p=p.replace(/[\u0000-\u001f\u007f]+/g,' ').replace(/\s+/g,' ').trim().slice(0,80).trim();
+    if(!p) return;
+    var f=document.getElementById('contactForm');
+    var t=f&&f.elements['notes'];
+    if(t&&!t.value) t.value=p+': ';
+    var buy=f&&f.querySelector('input[name="interest"][value="Buying a home"]');
+    if(buy&&!f.querySelector('input[name="interest"]:checked')) buy.checked=true;
+  }catch(e){}
+})();
+</script>
 </body>
 </html>

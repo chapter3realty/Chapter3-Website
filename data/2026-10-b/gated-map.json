@@ -1,0 +1,357 @@
+{
+ "page": "/buyers/gated-communities/",
+ "about": "The points on the page's map of gated neighborhoods, north to south, one numbered marker each. A map of many places shows 15 at most (tools/area-map.js), so four pairs of neighbors that share a road share a marker. Points are the average position of the community's home address points (Horry County) or home parcel centers (Georgetown County) from gated-communities.json; a pair is the midpoint of its two points (each pair is under 1.5 km apart). Round 2 (2026-10-13): the page draws two maps, the places with an area other than pawleys-island on the first and 'pawleys' (each neighborhood its own marker) on the second.",
+ "ledger": "batches/2026-10-b/facts/gated-communities-facts.md",
+ "places": [
+  {
+   "name": "Tidewater Plantation",
+   "short": "Tidewater",
+   "lat": 33.85093,
+   "lon": -78.62229,
+   "area": "north-myrtle-beach",
+   "rows": [
+    20
+   ],
+   "from": "gated-communities.json"
+  },
+  {
+   "name": "Seaside Plantation",
+   "short": "Seaside",
+   "lat": 33.82688,
+   "lon": -78.66809,
+   "area": "north-myrtle-beach",
+   "rows": [
+    15,
+    17
+   ],
+   "from": "gated-communities.json"
+  },
+  {
+   "name": "Barefoot Resort (gated neighborhoods)",
+   "short": "Barefoot",
+   "lat": 33.80788,
+   "lon": -78.7403,
+   "area": "north-myrtle-beach",
+   "rows": [
+    9
+   ],
+   "from": "gated-communities.json (average of Dye Estates and Leatherleaf)"
+  },
+  {
+   "name": "Grande Dunes (gated sections)",
+   "short": "Grande Dunes",
+   "lat": 33.75879,
+   "lon": -78.82911,
+   "area": "myrtle-beach",
+   "rows": [
+    11,
+    34
+   ],
+   "from": "gated-communities.json (Calais, Palermo and Villa Venezia)"
+  },
+  {
+   "name": "Waterway Palms Plantation and The Bluffs on the Waterway",
+   "short": "Waterway Palms, The Bluffs",
+   "lat": 33.743975,
+   "lon": -78.87211,
+   "area": "myrtle-beach",
+   "rows": [
+    30,
+    31
+   ],
+   "from": "midpoint of the two gated-communities.json points (0.8 km apart)"
+  },
+  {
+   "name": "Covington Lake East",
+   "short": "Covington Lake",
+   "lat": 33.75485,
+   "lon": -78.94557,
+   "area": "myrtle-beach",
+   "rows": [
+    29
+   ],
+   "from": "gated-communities.json"
+  },
+  {
+   "name": "Myrtle Trace (back gate only)",
+   "short": "Myrtle Trace",
+   "lat": 33.77765,
+   "lon": -78.99495,
+   "area": "myrtle-beach",
+   "rows": [
+    13
+   ],
+   "from": "gated-communities.json"
+  },
+  {
+   "name": "Prestwick",
+   "short": "Prestwick",
+   "lat": 33.64245,
+   "lon": -78.95602,
+   "area": "murrells-inlet",
+   "rows": [
+    19
+   ],
+   "from": "gated-communities.json"
+  },
+  {
+   "name": "Seasons at Prince Creek West and Bellwood Landing",
+   "short": "Seasons, Bellwood",
+   "lat": 33.588105,
+   "lon": -79.071695,
+   "area": "murrells-inlet",
+   "rows": [
+    14,
+    16,
+    18
+   ],
+   "from": "midpoint of the two gated-communities.json points (1.4 km apart)"
+  },
+  {
+   "name": "Wachesaw Plantation and Wachesaw East",
+   "short": "Wachesaw",
+   "lat": 33.55949,
+   "lon": -79.065955,
+   "area": "murrells-inlet",
+   "rows": [
+    21,
+    22
+   ],
+   "from": "midpoint of the two gated-communities.json points (1.4 km apart)"
+  },
+  {
+   "name": "The Reserve",
+   "short": "The Reserve",
+   "lat": 33.49467,
+   "lon": -79.1133,
+   "area": "pawleys-island",
+   "rows": [
+    23
+   ],
+   "from": "gated-communities.json"
+  },
+  {
+   "name": "Litchfield Plantation and Willbrook Plantation",
+   "short": "Litchfield, Willbrook",
+   "lat": 33.4794,
+   "lon": -79.133245,
+   "area": "pawleys-island",
+   "rows": [
+    26,
+    27
+   ],
+   "from": "midpoint of the two gated-communities.json points (0.7 km apart)"
+  },
+  {
+   "name": "Litchfield by the Sea",
+   "short": "Litchfield by the Sea",
+   "lat": 33.471219,
+   "lon": -79.126112,
+   "area": "pawleys-island",
+   "rows": [
+    4,
+    5,
+    6
+   ],
+   "from": "U.S. Census geocoder, 11 Club Circle, Pawleys Island, SC 29585 (the River Club gate, ledger row 6), read 2026-10-13: https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=11+Club+Circle%2C+Pawleys+Island%2C+SC+29585&benchmark=Public_AR_Current&format=json"
+  },
+  {
+   "name": "Heritage Plantation",
+   "short": "Heritage",
+   "lat": 33.44215,
+   "lon": -79.16353,
+   "area": "pawleys-island",
+   "rows": [
+    24
+   ],
+   "from": "gated-communities.json"
+  },
+  {
+   "name": "DeBordieu Colony",
+   "short": "DeBordieu",
+   "lat": 33.3744,
+   "lon": -79.17446,
+   "area": "pawleys-island",
+   "rows": [
+    28
+   ],
+   "from": "gated-communities.json"
+  }
+ ],
+ "prices": {
+  "about": "The price chart (round 2): the typical (middle) recorded sale for each gated neighborhood with a front gate whose verified row allows one, rounded as the page says it. Leatherleaf and The Bluffs on the Waterway (ranges only) and Myrtle Trace (back gate only) are said in the text; Georgetown County rows are not used. Round 5: the seven Georgetown County neighborhoods use MLS closed sales of detached homes in the same 12 months (ledger rows 83 to 89, pending verification), because the county's sales server refuses connections.",
+  "rows": [
+   {
+    "name": "Prestwick",
+    "value": 480000,
+    "row": 42,
+    "sales": 19,
+    "exact": 482000
+   },
+   {
+    "name": "Seasons at Prince Creek West",
+    "value": 500000,
+    "row": 51,
+    "sales": 19,
+    "exact": 499000,
+    "note": "seasons ledger row 73; facts/registry wording 'about $500,000' on its page"
+   },
+   {
+    "name": "Covington Lake East",
+    "value": 570000,
+    "row": 47,
+    "sales": 13
+   },
+   {
+    "name": "Tidewater Plantation",
+    "value": 625000,
+    "row": 43,
+    "sales": 24
+   },
+   {
+    "name": "Waterway Palms Plantation",
+    "value": 780000,
+    "row": 48,
+    "sales": 50,
+    "note": "verifier: about $780,000"
+   },
+   {
+    "name": "Bellwood Landing",
+    "value": 850000,
+    "row": 41,
+    "sales": 8,
+    "exact": 846575,
+    "note": "verifier: 'about $850,000' for the middle sale at most"
+   },
+   {
+    "name": "Grande Dunes, three gated sections",
+    "value": 1500000,
+    "row": 46,
+    "sales": 11,
+    "note": "verifier: about $1.5 million"
+   },
+   {
+    "name": "Seaside Plantation",
+    "value": 740000,
+    "row": 40,
+    "sales": 6,
+    "exact": 738500,
+    "note": "verifier safe wording gives the middle sale, $738,500"
+   },
+   {
+    "name": "DeBordieu Colony",
+    "value": 2000000,
+    "row": 83,
+    "sales": 38,
+    "source": "MLS closed sales (verified, round 5 check)"
+   },
+   {
+    "name": "Heritage Plantation",
+    "value": 710000,
+    "row": 84,
+    "sales": 24,
+    "source": "MLS closed sales (verified, round 5 check)"
+   },
+   {
+    "name": "Litchfield Plantation",
+    "value": 1000000,
+    "row": 85,
+    "sales": 8,
+    "source": "MLS closed sales (verified, round 5 check)"
+   },
+   {
+    "name": "The Reserve",
+    "value": 1350000,
+    "row": 86,
+    "sales": 13,
+    "source": "MLS closed sales (verified, round 5 check)"
+   },
+   {
+    "name": "Wachesaw East",
+    "value": 500000,
+    "row": 87,
+    "sales": 17,
+    "source": "MLS closed sales (verified, round 5 check)"
+   },
+   {
+    "name": "Wachesaw Plantation",
+    "value": 650000,
+    "row": 88,
+    "sales": 16,
+    "source": "MLS closed sales (verified, round 5 check)"
+   },
+   {
+    "name": "Willbrook Plantation",
+    "value": 1000000,
+    "row": 89,
+    "sales": 7,
+    "source": "MLS closed sales (verified, round 5 check)"
+   }
+  ]
+ },
+ "pawleys": [
+  {
+   "name": "The Reserve",
+   "short": "The Reserve",
+   "lat": 33.49467,
+   "lon": -79.1133,
+   "rows": [
+    23
+   ],
+   "from": "gated-communities.json"
+  },
+  {
+   "name": "Willbrook Plantation",
+   "short": "Willbrook",
+   "lat": 33.48206,
+   "lon": -79.13519,
+   "rows": [
+    27,
+    75
+   ],
+   "from": "gated-communities.json (Census geocode of 49 Red Squirrel Ln, row 75)"
+  },
+  {
+   "name": "Litchfield Plantation",
+   "short": "Litchfield Plantation",
+   "lat": 33.47674,
+   "lon": -79.1313,
+   "rows": [
+    26
+   ],
+   "from": "gated-communities.json"
+  },
+  {
+   "name": "Litchfield by the Sea (River Club gate)",
+   "short": "Litchfield by the Sea, River Club gate",
+   "lat": 33.471219,
+   "lon": -79.126112,
+   "rows": [
+    4,
+    5,
+    6
+   ],
+   "from": "U.S. Census geocoder, 11 Club Circle, Pawleys Island, SC 29585 (the River Club gate, ledger row 6), read 2026-10-13 The dot marks the River Club gate, west of US 17; the community's ocean side is east of US 17 (round 4: labelled so the dot is not read as the beach)."
+  },
+  {
+   "name": "Heritage Plantation",
+   "short": "Heritage",
+   "lat": 33.44215,
+   "lon": -79.16353,
+   "rows": [
+    24
+   ],
+   "from": "gated-communities.json"
+  },
+  {
+   "name": "DeBordieu Colony",
+   "short": "DeBordieu",
+   "lat": 33.3744,
+   "lon": -79.17446,
+   "rows": [
+    28
+   ],
+   "from": "gated-communities.json"
+  }
+ ]
+}

@@ -193,12 +193,12 @@
       "source_url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/22/query?where=ADDRESS%3D%27130+GRAND+CYPRESS+WAY%27&outFields=ADDRESS%2CCITY%2CZIPCODE%2CPIN&returnGeometry=true&outSR=4326&f=json",
       "drives": [
         {
-          "to": "Atlantic Avenue boardwalk access, Garden City",
+          "to": "GARDEN CITY 45 beach access (free lot), Garden City",
           "to_id": "beach_spcw",
           "kind": "beach",
-          "minutes": 10,
-          "miles": 6.0,
-          "query": "https://router.project-osrm.org/route/v1/driving/-79.07094,33.586369;-79.000967,33.578363?overview=false"
+          "minutes": 13,
+          "miles": 6.3,
+          "query": "https://router.project-osrm.org/route/v1/driving/-79.07094,33.586369;-78.99770899718891,33.577839583628425?overview=false"
         },
         {
           "to": "Publix, 11920 Highway 707 (Prince Creek Village Center) (Prince Creek Village), Murrells Inlet",
@@ -282,15 +282,15 @@
     },
     {
       "id": "beach_spcw",
-      "name": "Atlantic Avenue boardwalk beach access, Garden City",
+      "name": "Horry County public beach access 'GARDEN CITY 45' (free lot, 33 spaces), Garden City",
       "kind": "beach access",
       "nearest_for": [
         "seasons-at-prince-creek-west"
       ],
-      "lat": 33.578363,
-      "lon": -79.000967,
-      "source": "Horry County beach access layer, AtlanticAveBoardWalk. Seasons ledger row 64, verified.",
-      "source_url": "https://gisportal.horrycounty.org/server/rest/services/Beach_Accesses_MIL1/MapServer/0/query?where=BeachAccessName%3D%27AtlanticAveBoardWalk%27&outFields=BeachAccessName%2CBeachAccessNumber%2CParkingSpaces&returnGeometry=true&outSR=4326&f=json"
+      "lat": 33.5778396,
+      "lon": -78.997709,
+      "source": "S.C. Department of Environmental Services beach access layer, record OBJECTID 89 (PARKING Yes, Free Lot, 33 spaces). The nearest public beach access with parking: the Atlantic Avenue boardwalk walkover used before (Seasons ledger row 64) lists no parking. Batch 2026-10-b gated ledger row 176, verified 2026-10-14: 788.5 s (13 minutes), 6.3 miles from the clubhouse.",
+      "source_url": "https://gis.des.sc.gov/gisserver/rest/services/BeachAccess/MapServer/0/query?where=OBJECTID%3D89&outFields=*&returnGeometry=true&outSR=4326&f=json"
     },
     {
       "id": "boardwalk",

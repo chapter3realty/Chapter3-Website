@@ -1,0 +1,653 @@
+{
+ "_comment": "Places for the CRM's IDX place catalog (src/lib/idx/places-catalog.ts), one per homes strip on the batch 2026-10-b pages (tools/glass.js homes(); website-patches/idx-strips.patch). 'pages' lists where each strip appears. Match rules are drafts: confirm each subdivision name against the MLS feed before going live. Never invent a map point; the strips need no point. Round 15 (contract v1): each place has the search it runs: subdivision words, or near a point with miles. Confirm each against the MLS on day one. Contract v1 hoa=0 (CRM ticket 415, 22 Oct 2026): the no-HOA places search only homes whose listing says there is no HOA; every such strip and page says where that fact comes from.",
+ "places": [
+  {
+   "slug": "cherry-grove",
+   "name": "Cherry Grove",
+   "pages": [
+    "/buyers/best-neighborhoods/"
+   ],
+   "q": {
+    "near": "33.83434,-78.62798",
+    "miles": 0.8
+   }
+  },
+  {
+   "slug": "surfside-beach",
+   "name": "Surfside Beach, ocean side",
+   "pages": [
+    "/buyers/best-neighborhoods/"
+   ],
+   "q": {
+    "near": "33.60635,-78.97711",
+    "miles": 0.8
+   }
+  },
+  {
+   "slug": "pine-lakes",
+   "name": "Pine Lakes",
+   "pages": [
+    "/buyers/best-neighborhoods/"
+   ],
+   "q": {
+    "subdivision": "Pine Lakes"
+   }
+  },
+  {
+   "slug": "tidewater",
+   "name": "Tidewater Plantation",
+   "pages": [
+    "/buyers/best-neighborhoods/"
+   ],
+   "q": {
+    "subdivision": "Tidewater"
+   }
+  },
+  {
+   "slug": "barefoot-resort",
+   "name": "Barefoot Resort",
+   "pages": [
+    "/buyers/best-neighborhoods/",
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Barefoot"
+   }
+  },
+  {
+   "slug": "prince-creek",
+   "name": "Prince Creek",
+   "pages": [
+    "/buyers/best-neighborhoods/"
+   ],
+   "q": {
+    "subdivision": "Prince Creek"
+   }
+  },
+  {
+   "slug": "wild-wing",
+   "name": "Wild Wing Plantation",
+   "pages": [
+    "/buyers/best-neighborhoods/"
+   ],
+   "q": {
+    "subdivision": "Wild Wing"
+   }
+  },
+  {
+   "slug": "plantation-lakes",
+   "name": "Plantation Lakes",
+   "pages": [
+    "/buyers/best-neighborhoods/"
+   ],
+   "q": {
+    "subdivision": "Plantation Lakes"
+   }
+  },
+  {
+   "slug": "waterbridge",
+   "name": "Waterbridge",
+   "pages": [
+    "/buyers/best-neighborhoods/"
+   ],
+   "q": {
+    "subdivision": "Waterbridge"
+   }
+  },
+  {
+   "slug": "market-common",
+   "name": "The Market Common",
+   "pages": [
+    "/buyers/best-neighborhoods/"
+   ],
+   "q": {
+    "subdivision": "Market Common"
+   }
+  },
+  {
+   "slug": "deerfield",
+   "name": "Deerfield Plantation area",
+   "pages": [
+    "/buyers/best-neighborhoods/"
+   ],
+   "q": {
+    "subdivision": "Deerfield"
+   }
+  },
+  {
+   "slug": "avalon",
+   "name": "Avalon",
+   "pages": [
+    "/buyers/best-neighborhoods/"
+   ],
+   "q": {
+    "subdivision": "Avalon"
+   }
+  },
+  {
+   "slug": "the-farm",
+   "name": "The Farm at Carolina Forest",
+   "pages": [
+    "/buyers/best-neighborhoods/",
+    "/submarkets/carolina-forest/the-farm/"
+   ],
+   "q": {
+    "subdivision": "The Farm"
+   }
+  },
+  {
+   "slug": "tidewater-plantation",
+   "name": "Tidewater Plantation",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Tidewater Plantation"
+   }
+  },
+  {
+   "slug": "seaside-plantation",
+   "name": "Seaside Plantation",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Seaside Plantation"
+   }
+  },
+  {
+   "slug": "grande-dunes",
+   "name": "Grande Dunes",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Grande Dunes"
+   }
+  },
+  {
+   "slug": "waterway-palms-plantation",
+   "name": "Waterway Palms Plantation",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Waterway Palms Plantation"
+   }
+  },
+  {
+   "slug": "the-bluffs-on-the-waterway",
+   "name": "The Bluffs on the Waterway",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Bluffs on the Waterway"
+   }
+  },
+  {
+   "slug": "myrtle-beach-golf-and-yacht-club",
+   "name": "Myrtle Beach Golf and Yacht Club",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Golf and Yacht"
+   }
+  },
+  {
+   "slug": "prestwick",
+   "name": "Prestwick",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Prestwick"
+   }
+  },
+  {
+   "slug": "prince-creek-55",
+   "name": "Seasons at Prince Creek West",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Seasons at Prince Creek"
+   }
+  },
+  {
+   "slug": "bellwood-landing",
+   "name": "Bellwood Landing",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Bellwood Landing"
+   }
+  },
+  {
+   "slug": "wachesaw-plantation",
+   "name": "Wachesaw Plantation",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Wachesaw Plantation"
+   }
+  },
+  {
+   "slug": "wachesaw-east",
+   "name": "Wachesaw East",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Wachesaw East"
+   }
+  },
+  {
+   "slug": "the-reserve",
+   "name": "The Reserve",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Reserve"
+   }
+  },
+  {
+   "slug": "willbrook-plantation",
+   "name": "Willbrook Plantation",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Willbrook Plantation"
+   }
+  },
+  {
+   "slug": "litchfield-plantation",
+   "name": "Litchfield Plantation",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Litchfield Plantation"
+   }
+  },
+  {
+   "slug": "litchfield-by-the-sea",
+   "name": "Litchfield by the Sea",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Litchfield by the Sea"
+   }
+  },
+  {
+   "slug": "heritage-plantation",
+   "name": "Heritage Plantation",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "Heritage Plantation"
+   }
+  },
+  {
+   "slug": "debordieu-colony",
+   "name": "DeBordieu Colony",
+   "pages": [
+    "/buyers/gated-communities/"
+   ],
+   "q": {
+    "subdivision": "DeBordieu Colony"
+   }
+  },
+  {
+   "slug": "nohoa-downtown-myrtle-beach",
+   "name": "Downtown Myrtle Beach",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "33.69000,-78.89200",
+    "miles": 1.0,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "nohoa-myrtle-heights",
+   "name": "Myrtle Heights",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "33.71300,-78.85750",
+    "miles": 0.5,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "nohoa-pine-lakes",
+   "name": "Pine Lakes' older streets",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "33.73376,-78.84034",
+    "miles": 0.5,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "nohoa-windy-hill",
+   "name": "Windy Hill",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "33.79736,-78.73093",
+    "miles": 0.7,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "nohoa-crescent-beach",
+   "name": "Crescent Beach",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "33.81095,-78.69740",
+    "miles": 1.2,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "nohoa-ocean-drive",
+   "name": "Ocean Drive",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "33.82231,-78.67907",
+    "miles": 1.6,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "nohoa-cherry-grove",
+   "name": "Cherry Grove",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "33.84011,-78.63629",
+    "miles": 2.0,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "nohoa-little-river",
+   "name": "Little River",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "33.87200,-78.61500",
+    "miles": 0.5,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "nohoa-socastee",
+   "name": "Socastee",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "33.68300,-79.00000",
+    "miles": 0.7,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "nohoa-surfside-beach",
+   "name": "Surfside Beach",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "33.60774,-78.97766",
+    "miles": 1.4,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "nohoa-garden-city-beach",
+   "name": "Garden City Beach",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "33.58525,-78.99623",
+    "miles": 3,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "nohoa-murrells-inlet",
+   "name": "Murrells Inlet's north end",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "33.57338,-79.01772",
+    "miles": 0.7,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "nohoa-conway",
+   "name": "Conway",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "33.83600,-79.04700",
+    "miles": 1.5,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "nohoa-loris",
+   "name": "Loris",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "34.05700,-78.88800",
+    "miles": 1.0,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "nohoa-country-around-loris",
+   "name": "The country around Loris",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "34.02373,-78.90696",
+    "miles": 3,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "nohoa-aynor",
+   "name": "Aynor",
+   "pages": [
+    "/buyers/no-hoa-homes/"
+   ],
+   "q": {
+    "near": "33.96868,-79.13202",
+    "miles": 3,
+    "type": "house",
+    "hoa": "0"
+   },
+   "note": "Houses around the area. Ask the CRM for an HOA-fee filter so the row shows only homes with no fee."
+  },
+  {
+   "slug": "parkview",
+   "name": "Parkview",
+   "pages": [
+    "/buyers/affordable-places-to-live/"
+   ],
+   "q": {
+    "subdivision": "Parkview"
+   }
+  },
+  {
+   "slug": "fairways-at-wild-wing",
+   "name": "The Fairways at Wild Wing",
+   "pages": [
+    "/buyers/affordable-places-to-live/"
+   ],
+   "q": {
+    "subdivision": "Fairways"
+   }
+  },
+  {
+   "slug": "sawgrass-east",
+   "name": "Sawgrass East",
+   "pages": [
+    "/buyers/affordable-places-to-live/"
+   ],
+   "q": {
+    "subdivision": "Sawgrass East"
+   }
+  },
+  {
+   "slug": "birchwood",
+   "name": "Birchwood",
+   "pages": [
+    "/buyers/affordable-places-to-live/"
+   ],
+   "q": {
+    "subdivision": "Birchwood"
+   }
+  },
+  {
+   "slug": "golf-and-yacht-club",
+   "name": "Myrtle Beach Golf and Yacht Club",
+   "pages": [
+    "/buyers/affordable-places-to-live/"
+   ],
+   "q": {
+    "subdivision": "Golf and Yacht"
+   }
+  },
+  {
+   "slug": "forestbrook-village",
+   "name": "Forestbrook Village",
+   "pages": [
+    "/buyers/affordable-places-to-live/"
+   ],
+   "q": {
+    "subdivision": "Forestbrook Village"
+   }
+  },
+  {
+   "slug": "victory-point",
+   "name": "Victory Point",
+   "pages": [
+    "/buyers/affordable-places-to-live/"
+   ],
+   "q": {
+    "subdivision": "Victory Point"
+   }
+  },
+  {
+   "slug": "amber-bluff",
+   "name": "The Townes at Amber Bluff",
+   "pages": [
+    "/buyers/affordable-places-to-live/"
+   ],
+   "q": {
+    "subdivision": "Townes at Amber Bluff"
+   }
+  },
+  {
+   "slug": "villas-at-sandridge",
+   "name": "Villas at Sandridge",
+   "pages": [
+    "/buyers/affordable-places-to-live/"
+   ],
+   "q": {
+    "subdivision": "Villas at Sandridge"
+   }
+  },
+  {
+   "slug": "indigo-grove",
+   "name": "Indigo Grove",
+   "pages": [
+    "/buyers/affordable-places-to-live/"
+   ],
+   "q": {
+    "subdivision": "Indigo Grove"
+   }
+  },
+  {
+   "slug": "wynbrooke",
+   "name": "Wynbrooke",
+   "pages": [
+    "/buyers/affordable-places-to-live/"
+   ],
+   "q": {
+    "subdivision": "Wynbrooke"
+   }
+  },
+  {
+   "slug": "polo-farms",
+   "name": "Polo Farms",
+   "pages": [
+    "/buyers/affordable-places-to-live/"
+   ],
+   "q": {
+    "subdivision": "Polo Farms"
+   }
+  }
+ ]
+}

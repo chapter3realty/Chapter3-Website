@@ -1,0 +1,2100 @@
+{
+ "title": "Areas with homes for sale with no HOA fee, round 14",
+ "page": "/buyers/no-hoa-homes/",
+ "batch": "2026-10-b",
+ "asOf": "2026-10-13",
+ "status": "pending verification (round 14)",
+ "source": "data/no-hoa.json (listings, MLS region and neighborhood, fee field) and data/no-hoa-lots.json (detached houses: county parcel, lot, year built); map points from Horry County address points (layer 22) for each listing PIN; flood zone from Horry County GIS layer 19 (Flood Zones, SFHA_TF) at each address point; shore distance is a straight line to the coastline of tools/geo/grand-strand-v2.json.",
+ "method": [
+  "Homes: the site's Home type, owned land only (leased-land homes left out), as ledger rows 1 to 11. Share = homes with no HOA fee / all homes in the area.",
+  "An area is measured one of three ways (measure): MLS regions (regions), MLS neighborhoods (nbhds), the Aynor mailing address (area), or a circle (circle: lat, lon, radius in miles) over detached houses matched to a county address point (no-hoa-lots.json PIN). For a circle, kind = detached and only matched houses count.",
+  "Price: median list price of detached houses with no HOA fee in the measured set. Lot: median county parcel acres of those houses (matched only). Year built: from the listing page (no-hoa-lots.json).",
+  "mapShapes: what the page map draws. A circle (radius in meters) or a polygon (the convex hull of the area's matched houses, pushed out 250 m). For region areas the map shape shows where the measured houses are; the share is the measured set's, not every house inside the shape."
+ ],
+ "areas": [
+  {
+   "name": "Downtown Myrtle Beach",
+   "spec": {
+    "circle": [
+     33.69,
+     -78.892,
+     1.0
+    ]
+   },
+   "kind": "detached",
+   "noFee": 17,
+   "total": 20,
+   "share": 85,
+   "medianNoFeeHousePrice": 435000.0,
+   "noFeeHouses": 17,
+   "lotAcresMedian": 0.206,
+   "lotMatched": 17,
+   "yearBuiltMedian": 2026.0,
+   "since2024": 10,
+   "before1990": 6,
+   "yearKnown": 17,
+   "key": "mb-downtown",
+   "measure": {
+    "circle": [
+     33.69,
+     -78.892,
+     1.0
+    ]
+   },
+   "mapShapes": [
+    {
+     "name": "Downtown Myrtle Beach",
+     "lat": 33.69,
+     "lon": -78.892,
+     "radius": 1609
+    }
+   ],
+   "noFeeMls": [
+    "2528552",
+    "2528553",
+    "2528554",
+    "2528556",
+    "2528557",
+    "2528559",
+    "2528560",
+    "2603245",
+    "2605162",
+    "2609258",
+    "2611085",
+    "2617108",
+    "2620690",
+    "2622184",
+    "2623002",
+    "2624450",
+    "2624596"
+   ],
+   "withFeeMls": [
+    "2613890",
+    "2614716",
+    "2623079"
+   ],
+   "floodHighRisk": [
+    0,
+    17
+   ],
+   "withinHalfMileOfShore": [
+    13,
+    17
+   ]
+  },
+  {
+   "name": "Myrtle Heights",
+   "spec": {
+    "nbhds": [
+     "Myrtle Heights - MB 31st-40th Ave North"
+    ]
+   },
+   "kind": "res",
+   "noFee": 4,
+   "total": 4,
+   "share": 100,
+   "medianNoFeeHousePrice": 1632500.0,
+   "noFeeHouses": 4,
+   "lotAcresMedian": 0.37,
+   "lotMatched": 4,
+   "yearBuiltMedian": 1965.0,
+   "since2024": 1,
+   "before1990": 3,
+   "yearKnown": 4,
+   "key": "mb-myrtle-heights",
+   "measure": {
+    "nbhds": [
+     "Myrtle Heights - MB 31st-40th Ave North"
+    ]
+   },
+   "mapShapes": [
+    {
+     "name": "Myrtle Heights",
+     "lat": 33.713,
+     "lon": -78.8575,
+     "radius": 700
+    }
+   ],
+   "noFeeMls": [
+    "2529233",
+    "2618544",
+    "2623815",
+    "2624037"
+   ],
+   "withFeeMls": [],
+   "floodHighRisk": [
+    0,
+    4
+   ],
+   "withinHalfMileOfShore": [
+    4,
+    4
+   ]
+  },
+  {
+   "name": "Pine Lakes",
+   "spec": {
+    "nbhds": [
+     "Pine Lakes"
+    ]
+   },
+   "kind": "res",
+   "noFee": 6,
+   "total": 6,
+   "share": 100,
+   "medianNoFeeHousePrice": 929950.0,
+   "noFeeHouses": 6,
+   "lotAcresMedian": 0.448,
+   "lotMatched": 5,
+   "yearBuiltMedian": 1996.0,
+   "since2024": 0,
+   "before1990": 3,
+   "yearKnown": 6,
+   "key": "mb-pine-lakes",
+   "measure": {
+    "nbhds": [
+     "Pine Lakes"
+    ]
+   },
+   "mapShapes": [
+    {
+     "name": "Pine Lakes",
+     "polygon": [
+      [
+       -78.8442,
+       33.7334
+      ],
+      [
+       -78.83772,
+       33.72626
+      ],
+      [
+       -78.83909,
+       33.74162
+      ]
+     ]
+    }
+   ],
+   "noFeeMls": [
+    "2529749",
+    "2619121",
+    "2619701",
+    "2622128",
+    "2623977",
+    "2624074"
+   ],
+   "withFeeMls": [],
+   "floodHighRisk": [
+    0,
+    5
+   ],
+   "withinHalfMileOfShore": [
+    3,
+    5
+   ]
+  },
+  {
+   "name": "Plantation Point",
+   "spec": {
+    "nbhds": [
+     "Plantation Point"
+    ]
+   },
+   "kind": "res",
+   "noFee": 7,
+   "total": 7,
+   "share": 100,
+   "medianNoFeeHousePrice": 1199000.0,
+   "noFeeHouses": 7,
+   "lotAcresMedian": 0.458,
+   "lotMatched": 7,
+   "yearBuiltMedian": 1998.0,
+   "since2024": 0,
+   "before1990": 1,
+   "yearKnown": 7,
+   "key": "mb-plantation-point",
+   "measure": {
+    "nbhds": [
+     "Plantation Point"
+    ]
+   },
+   "mapShapes": [
+    {
+     "name": "Plantation Point",
+     "polygon": [
+      [
+       -78.89256,
+       33.72245
+      ],
+      [
+       -78.88771,
+       33.71876
+      ],
+      [
+       -78.87988,
+       33.73305
+      ],
+      [
+       -78.88084,
+       33.7346
+      ],
+      [
+       -78.89156,
+       33.73188
+      ]
+     ]
+    }
+   ],
+   "noFeeMls": [
+    "2611539",
+    "2612037",
+    "2615400",
+    "2620279",
+    "2621303",
+    "2623603",
+    "2624780"
+   ],
+   "withFeeMls": [],
+   "floodHighRisk": [
+    0,
+    7
+   ],
+   "withinHalfMileOfShore": [
+    0,
+    7
+   ],
+   "offPage": "Cut from the page in round 14f (coordinator's decision 1): the county parcel record shows an HOA owning the common areas (ledger rows 148 and 171), and no source settles what owners pay. Kept here for the record."
+  },
+  {
+   "name": "Windy Hill",
+   "spec": {
+    "regions": [
+     "11e"
+    ]
+   },
+   "kind": "res",
+   "noFee": 24,
+   "total": 40,
+   "share": 60,
+   "medianNoFeeHousePrice": 746450.0,
+   "noFeeHouses": 20,
+   "lotAcresMedian": 0.1805,
+   "lotMatched": 18,
+   "yearBuiltMedian": 1982.5,
+   "since2024": 2,
+   "before1990": 11,
+   "yearKnown": 20,
+   "key": "windy-hill",
+   "measure": {
+    "regions": [
+     "11e"
+    ]
+   },
+   "mapShapes": [
+    {
+     "name": "Windy Hill",
+     "polygon": [
+      [
+       -78.7431,
+       33.79481
+      ],
+      [
+       -78.73987,
+       33.78985
+      ],
+      [
+       -78.73556,
+       33.79064
+      ],
+      [
+       -78.72023,
+       33.79729
+      ],
+      [
+       -78.71979,
+       33.80075
+      ],
+      [
+       -78.72372,
+       33.80328
+      ],
+      [
+       -78.72733,
+       33.80299
+      ],
+      [
+       -78.73785,
+       33.79924
+      ]
+     ]
+    }
+   ],
+   "noFeeMls": [
+    "2505554",
+    "2600730",
+    "2602004",
+    "2605621",
+    "2607200",
+    "2608868",
+    "2612794",
+    "2614290",
+    "2614780",
+    "2615487",
+    "2615499",
+    "2617251",
+    "2617268",
+    "2617307",
+    "2619288",
+    "2621452",
+    "2622230",
+    "2622507",
+    "2622801",
+    "2622845",
+    "2622980",
+    "2622981",
+    "2623561",
+    "2624558"
+   ],
+   "withFeeMls": [
+    "2515603",
+    "2525590",
+    "2607191",
+    "2610031",
+    "2611265",
+    "2611824",
+    "2614749",
+    "2617788",
+    "2618759",
+    "2620643",
+    "2620675",
+    "2621703",
+    "2621991",
+    "2623689",
+    "2623718",
+    "2624192"
+   ],
+   "floodHighRisk": [
+    9,
+    18
+   ],
+   "withinHalfMileOfShore": [
+    17,
+    18
+   ]
+  },
+  {
+   "name": "Crescent Beach",
+   "spec": {
+    "regions": [
+     "11c"
+    ]
+   },
+   "kind": "res",
+   "noFee": 34,
+   "total": 39,
+   "share": 87,
+   "medianNoFeeHousePrice": 754900.0,
+   "noFeeHouses": 34,
+   "lotAcresMedian": 0.175,
+   "lotMatched": 25,
+   "yearBuiltMedian": 1984.0,
+   "since2024": 1,
+   "before1990": 21,
+   "yearKnown": 34,
+   "key": "crescent-beach",
+   "measure": {
+    "regions": [
+     "11c"
+    ]
+   },
+   "mapShapes": [
+    {
+     "name": "Crescent Beach",
+     "polygon": [
+      [
+       -78.71749,
+       33.80562
+      ],
+      [
+       -78.71703,
+       33.80513
+      ],
+      [
+       -78.71321,
+       33.80171
+      ],
+      [
+       -78.68563,
+       33.81341
+      ],
+      [
+       -78.68314,
+       33.81482
+      ],
+      [
+       -78.68212,
+       33.81755
+      ],
+      [
+       -78.6832,
+       33.8184
+      ]
+     ]
+    }
+   ],
+   "noFeeMls": [
+    "2524503",
+    "2526487",
+    "2603033",
+    "2605033",
+    "2607065",
+    "2607068",
+    "2607425",
+    "2608324",
+    "2609652",
+    "2609713",
+    "2610456",
+    "2610638",
+    "2611353",
+    "2611894",
+    "2611953",
+    "2614248",
+    "2614711",
+    "2614975",
+    "2615393",
+    "2616456",
+    "2618668",
+    "2619551",
+    "2619873",
+    "2620233",
+    "2620915",
+    "2620941",
+    "2620984",
+    "2621316",
+    "2621506",
+    "2622923",
+    "2622952",
+    "2623232",
+    "2623558",
+    "2623679"
+   ],
+   "withFeeMls": [
+    "2610123",
+    "2613644",
+    "2613755",
+    "2618577",
+    "2622530"
+   ],
+   "floodHighRisk": [
+    2,
+    25
+   ],
+   "withinHalfMileOfShore": [
+    25,
+    25
+   ]
+  },
+  {
+   "name": "Ocean Drive",
+   "spec": {
+    "regions": [
+     "11b"
+    ]
+   },
+   "kind": "res",
+   "noFee": 23,
+   "total": 41,
+   "share": 56,
+   "medianNoFeeHousePrice": 664450.0,
+   "noFeeHouses": 22,
+   "lotAcresMedian": 0.197,
+   "lotMatched": 15,
+   "yearBuiltMedian": 1984.5,
+   "since2024": 3,
+   "before1990": 13,
+   "yearKnown": 22,
+   "key": "ocean-drive",
+   "measure": {
+    "regions": [
+     "11b"
+    ]
+   },
+   "mapShapes": [
+    {
+     "name": "Ocean Drive",
+     "polygon": [
+      [
+       -78.69339,
+       33.82566
+      ],
+      [
+       -78.69138,
+       33.81503
+      ],
+      [
+       -78.68981,
+       33.81269
+      ],
+      [
+       -78.68894,
+       33.81216
+      ],
+      [
+       -78.68696,
+       33.81218
+      ],
+      [
+       -78.66103,
+       33.82419
+      ],
+      [
+       -78.65755,
+       33.83786
+      ],
+      [
+       -78.66351,
+       33.83869
+      ]
+     ]
+    }
+   ],
+   "noFeeMls": [
+    "2521873",
+    "2600381",
+    "2602951",
+    "2604450",
+    "2607066",
+    "2607067",
+    "2607283",
+    "2610813",
+    "2613519",
+    "2619329",
+    "2619672",
+    "2620438",
+    "2620521",
+    "2621049",
+    "2621161",
+    "2621296",
+    "2621974",
+    "2622038",
+    "2622937",
+    "2623195",
+    "2624312",
+    "2624432",
+    "2624914"
+   ],
+   "withFeeMls": [
+    "2520036",
+    "2602048",
+    "2607082",
+    "2607122",
+    "2611468",
+    "2613414",
+    "2615039",
+    "2615464",
+    "2617255",
+    "2618439",
+    "2620773",
+    "2621272",
+    "2622153",
+    "2623051",
+    "2623199",
+    "2624413",
+    "2624745",
+    "2624760"
+   ],
+   "floodHighRisk": [
+    0,
+    15
+   ],
+   "withinHalfMileOfShore": [
+    12,
+    15
+   ]
+  },
+  {
+   "name": "Cherry Grove",
+   "spec": {
+    "regions": [
+     "11a"
+    ]
+   },
+   "kind": "res",
+   "noFee": 52,
+   "total": 89,
+   "share": 58,
+   "medianNoFeeHousePrice": 847700.0,
+   "noFeeHouses": 51,
+   "lotAcresMedian": 0.1435,
+   "lotMatched": 50,
+   "yearBuiltMedian": 1980.0,
+   "since2024": 4,
+   "before1990": 37,
+   "yearKnown": 51,
+   "key": "cherry-grove",
+   "measure": {
+    "regions": [
+     "11a"
+    ]
+   },
+   "mapShapes": [
+    {
+     "name": "Cherry Grove",
+     "polygon": [
+      [
+       -78.65701,
+       33.84342
+      ],
+      [
+       -78.65157,
+       33.83597
+      ],
+      [
+       -78.64433,
+       33.82993
+      ],
+      [
+       -78.64146,
+       33.82787
+      ],
+      [
+       -78.6375,
+       33.82697
+      ],
+      [
+       -78.63506,
+       33.82755
+      ],
+      [
+       -78.61889,
+       33.83389
+      ],
+      [
+       -78.60204,
+       33.84113
+      ],
+      [
+       -78.61443,
+       33.85859
+      ],
+      [
+       -78.64725,
+       33.85813
+      ],
+      [
+       -78.6496,
+       33.85771
+      ]
+     ]
+    }
+   ],
+   "noFeeMls": [
+    "2517674",
+    "2524197",
+    "2527704",
+    "2527936",
+    "2528276",
+    "2602172",
+    "2603235",
+    "2604025",
+    "2605209",
+    "2606846",
+    "2608898",
+    "2609374",
+    "2609505",
+    "2609963",
+    "2610265",
+    "2610909",
+    "2611952",
+    "2612441",
+    "2613820",
+    "2614010",
+    "2615205",
+    "2615378",
+    "2615413",
+    "2616498",
+    "2617022",
+    "2617569",
+    "2617866",
+    "2618589",
+    "2618830",
+    "2619578",
+    "2620489",
+    "2620491",
+    "2620810",
+    "2620968",
+    "2621393",
+    "2621917",
+    "2621997",
+    "2622318",
+    "2622449",
+    "2622743",
+    "2623143",
+    "2623382",
+    "2623996",
+    "2624078",
+    "2624096",
+    "2624530",
+    "2624835",
+    "2624881",
+    "2624915",
+    "2624940",
+    "2624960",
+    "2624982"
+   ],
+   "withFeeMls": [
+    "2502011",
+    "2518501",
+    "2524561",
+    "2524616",
+    "2601049",
+    "2602842",
+    "2608760",
+    "2611720",
+    "2612245",
+    "2612906",
+    "2616622",
+    "2617555",
+    "2618004",
+    "2618338",
+    "2618712",
+    "2619621",
+    "2620093",
+    "2620186",
+    "2620209",
+    "2620276",
+    "2620676",
+    "2621003",
+    "2621317",
+    "2621564",
+    "2621983",
+    "2622240",
+    "2622284",
+    "2622623",
+    "2623148",
+    "2623452",
+    "2623616",
+    "2624216",
+    "2624285",
+    "2624286",
+    "2624320",
+    "2624620",
+    "2624822"
+   ],
+   "floodHighRisk": [
+    42,
+    50
+   ],
+   "withinHalfMileOfShore": [
+    37,
+    50
+   ]
+  },
+  {
+   "name": "Little River waterfront",
+   "spec": {
+    "circle": [
+     33.872,
+     -78.615,
+     0.45
+    ]
+   },
+   "kind": "detached",
+   "noFee": 8,
+   "total": 8,
+   "share": 100,
+   "medianNoFeeHousePrice": 419250.0,
+   "noFeeHouses": 8,
+   "lotAcresMedian": 0.23,
+   "lotMatched": 8,
+   "yearBuiltMedian": 2019.0,
+   "since2024": 4,
+   "before1990": 0,
+   "yearKnown": 8,
+   "key": "little-river",
+   "measure": {
+    "circle": [
+     33.872,
+     -78.615,
+     0.45
+    ]
+   },
+   "mapShapes": [
+    {
+     "name": "Little River waterfront",
+     "lat": 33.872,
+     "lon": -78.615,
+     "radius": 724
+    }
+   ],
+   "noFeeMls": [
+    "2610800",
+    "2614432",
+    "2615610",
+    "2620341",
+    "2620346",
+    "2620350",
+    "2620353",
+    "2624918"
+   ],
+   "withFeeMls": [],
+   "floodHighRisk": [
+    0,
+    8
+   ],
+   "withinHalfMileOfShore": [
+    0,
+    8
+   ]
+  },
+  {
+   "name": "Socastee older streets",
+   "spec": {
+    "circle": [
+     33.683,
+     -79.0,
+     0.7
+    ]
+   },
+   "kind": "detached",
+   "noFee": 11,
+   "total": 14,
+   "share": 79,
+   "medianNoFeeHousePrice": 249900.0,
+   "noFeeHouses": 11,
+   "lotAcresMedian": 0.22,
+   "lotMatched": 11,
+   "yearBuiltMedian": 1984.0,
+   "since2024": 1,
+   "before1990": 9,
+   "yearKnown": 11,
+   "key": "socastee",
+   "measure": {
+    "circle": [
+     33.683,
+     -79.0,
+     0.7
+    ]
+   },
+   "mapShapes": [
+    {
+     "name": "Socastee",
+     "lat": 33.683,
+     "lon": -79.0,
+     "radius": 1126
+    }
+   ],
+   "noFeeMls": [
+    "2523832",
+    "2612032",
+    "2614061",
+    "2614232",
+    "2618470",
+    "2619520",
+    "2620626",
+    "2621291",
+    "2621398",
+    "2621833",
+    "2624442"
+   ],
+   "withFeeMls": [
+    "2604422",
+    "2610190",
+    "2623223"
+   ],
+   "floodHighRisk": [
+    4,
+    11
+   ],
+   "withinHalfMileOfShore": [
+    0,
+    11
+   ]
+  },
+  {
+   "name": "Surfside Beach, ocean side",
+   "spec": {
+    "regions": [
+     "29a",
+     "29b"
+    ]
+   },
+   "kind": "res",
+   "noFee": 36,
+   "total": 42,
+   "share": 86,
+   "medianNoFeeHousePrice": 939450.0,
+   "noFeeHouses": 34,
+   "lotAcresMedian": 0.174,
+   "lotMatched": 20,
+   "yearBuiltMedian": 2000.0,
+   "since2024": 7,
+   "before1990": 11,
+   "yearKnown": 34,
+   "key": "surfside",
+   "measure": {
+    "regions": [
+     "29a",
+     "29b"
+    ]
+   },
+   "mapShapes": [
+    {
+     "name": "Surfside Beach",
+     "polygon": [
+      [
+       -78.9931,
+       33.59998
+      ],
+      [
+       -78.98266,
+       33.59473
+      ],
+      [
+       -78.98224,
+       33.59458
+      ],
+      [
+       -78.98097,
+       33.59517
+      ],
+      [
+       -78.95984,
+       33.61965
+      ],
+      [
+       -78.9655,
+       33.62601
+      ],
+      [
+       -78.97152,
+       33.62165
+      ],
+      [
+       -78.98545,
+       33.61015
+      ]
+     ]
+    }
+   ],
+   "noFeeMls": [
+    "2522779",
+    "2529895",
+    "2601050",
+    "2605991",
+    "2607223",
+    "2607353",
+    "2609283",
+    "2610079",
+    "2610173",
+    "2610947",
+    "2611849",
+    "2613368",
+    "2613639",
+    "2613842",
+    "2613942",
+    "2614950",
+    "2615144",
+    "2616131",
+    "2616419",
+    "2618075",
+    "2618488",
+    "2618547",
+    "2619576",
+    "2620080",
+    "2620452",
+    "2620551",
+    "2621514",
+    "2622739",
+    "2622968",
+    "2623260",
+    "2623575",
+    "2623586",
+    "2624416",
+    "2624451",
+    "2624547",
+    "2624548"
+   ],
+   "withFeeMls": [
+    "2612225",
+    "2613303",
+    "2613757",
+    "2615391",
+    "2619703",
+    "2625038"
+   ],
+   "floodHighRisk": [
+    6,
+    20
+   ],
+   "withinHalfMileOfShore": [
+    17,
+    20
+   ]
+  },
+  {
+   "name": "Garden City Beach",
+   "spec": {
+    "regions": [
+     "27a"
+    ]
+   },
+   "kind": "res",
+   "noFee": 41,
+   "total": 55,
+   "share": 75,
+   "medianNoFeeHousePrice": 1442000.0,
+   "noFeeHouses": 36,
+   "lotAcresMedian": 0.172,
+   "lotMatched": 15,
+   "yearBuiltMedian": 1994.0,
+   "since2024": 3,
+   "before1990": 14,
+   "yearKnown": 36,
+   "key": "garden-city",
+   "measure": {
+    "regions": [
+     "27a"
+    ]
+   },
+   "mapShapes": [
+    {
+     "name": "Garden City Beach",
+     "polygon": [
+      [
+       -79.00607,
+       33.58548
+      ],
+      [
+       -79.00572,
+       33.58228
+      ],
+      [
+       -79.00277,
+       33.57388
+      ],
+      [
+       -79.00182,
+       33.5716
+      ],
+      [
+       -79.00128,
+       33.57216
+      ],
+      [
+       -78.99839,
+       33.57523
+      ],
+      [
+       -78.98815,
+       33.5864
+      ],
+      [
+       -78.96436,
+       33.62248
+      ],
+      [
+       -78.99748,
+       33.59771
+      ]
+     ]
+    }
+   ],
+   "noFeeMls": [
+    "2418372",
+    "2515980",
+    "2516254",
+    "2525660",
+    "2527455",
+    "2600378",
+    "2601060",
+    "2603697",
+    "2604157",
+    "2606923",
+    "2608684",
+    "2609124",
+    "2609208",
+    "2610374",
+    "2610482",
+    "2610642",
+    "2611487",
+    "2611965",
+    "2612922",
+    "2613547",
+    "2613612",
+    "2613652",
+    "2614485",
+    "2616673",
+    "2617371",
+    "2618972",
+    "2619781",
+    "2621236",
+    "2621548",
+    "2621666",
+    "2621693",
+    "2622947",
+    "2623380",
+    "2624211",
+    "2624291",
+    "2624292",
+    "2624337",
+    "2624344",
+    "2624415",
+    "2624549",
+    "2624905"
+   ],
+   "withFeeMls": [
+    "2516528",
+    "2603067",
+    "2608143",
+    "2609509",
+    "2617123",
+    "2619056",
+    "2619489",
+    "2620402",
+    "2620540",
+    "2621684",
+    "2622010",
+    "2622492",
+    "2623123",
+    "2623807"
+   ],
+   "floodHighRisk": [
+    15,
+    18
+   ],
+   "withinHalfMileOfShore": [
+    15,
+    18
+   ]
+  },
+  {
+   "name": "Murrells Inlet, north end",
+   "spec": {
+    "circle": [
+     33.5784294,
+     -79.013078,
+     1.0
+    ],
+    "regions": [
+     "27b",
+     "40a"
+    ],
+    "mailing": "Murrells Inlet"
+   },
+   "kind": "detached",
+   "noFee": 12,
+   "total": 13,
+   "share": 92,
+   "medianNoFeeHousePrice": 822000.0,
+   "noFeeHouses": 12,
+   "lotAcresMedian": 0.242,
+   "lotMatched": 7,
+   "yearBuiltMedian": 1990.0,
+   "since2024": 3,
+   "before1990": 6,
+   "yearKnown": 12,
+   "key": "murrells-inlet",
+   "measure": {
+    "circle": [
+     33.5784294,
+     -79.013078,
+     1.0
+    ],
+    "regions": [
+     "27b",
+     "40a"
+    ],
+    "mailing": "Murrells Inlet",
+    "points": "listing map points (each property page's schema geo, re-opened 2026-10-15), not county address points: 5 of the 13 are in Georgetown County, which the Horry address layer does not cover"
+   },
+   "status": "pending verification (round 14f)",
+   "mapShapes": [
+    {
+     "name": "Murrells Inlet",
+     "polygon": [
+      [
+       -79.02806,
+       33.56985
+      ],
+      [
+       -79.02797,
+       33.56926
+      ],
+      [
+       -79.0277,
+       33.56872
+      ],
+      [
+       -79.02727,
+       33.56825
+      ],
+      [
+       -79.02578,
+       33.5672
+      ],
+      [
+       -79.02522,
+       33.56684
+      ],
+      [
+       -79.02457,
+       33.56662
+      ],
+      [
+       -79.02388,
+       33.56654
+      ],
+      [
+       -79.02318,
+       33.56662
+      ],
+      [
+       -79.02253,
+       33.56684
+      ],
+      [
+       -79.0199,
+       33.568
+      ],
+      [
+       -79.0078,
+       33.57389
+      ],
+      [
+       -79.00724,
+       33.57425
+      ],
+      [
+       -79.00706,
+       33.57442
+      ],
+      [
+       -79.00663,
+       33.57489
+      ],
+      [
+       -79.00636,
+       33.57543
+      ],
+      [
+       -79.00627,
+       33.57602
+      ],
+      [
+       -79.00636,
+       33.5766
+      ],
+      [
+       -79.00663,
+       33.57715
+      ],
+      [
+       -79.00706,
+       33.57762
+      ],
+      [
+       -79.00762,
+       33.57798
+      ],
+      [
+       -79.00827,
+       33.5782
+      ],
+      [
+       -79.01675,
+       33.58069
+      ],
+      [
+       -79.01744,
+       33.58077
+      ],
+      [
+       -79.01814,
+       33.58069
+      ],
+      [
+       -79.01879,
+       33.58047
+      ],
+      [
+       -79.01935,
+       33.58011
+      ],
+      [
+       -79.02471,
+       33.57497
+      ],
+      [
+       -79.02514,
+       33.57451
+      ],
+      [
+       -79.0277,
+       33.57098
+      ],
+      [
+       -79.02797,
+       33.57043
+      ]
+     ]
+    }
+   ],
+   "noFeeMls": [
+    "2605257",
+    "2606223",
+    "2614966",
+    "2616244",
+    "2619248",
+    "2619706",
+    "2620104",
+    "2620142",
+    "2620203",
+    "2621457",
+    "2621585",
+    "2621659"
+   ],
+   "withFeeMls": [
+    "2610388"
+   ],
+   "floodHighRisk": [
+    7,
+    12
+   ],
+   "floodNote": "Horry County layer 19 for the 8 Horry houses (AE: 2605257, 2606223, 2619248, 2621585); FEMA NFHL layer 28 for the 4 Georgetown houses (AE: 2614966, 2621659, 2621457; X: 2619706)",
+   "lotNote": "county parcel acres for the 7 Horry houses matched in no-hoa-lots.json (0.173 to 0.626, middle 0.242); the 5 Georgetown houses and 2 First Avenue South houses have no matched parcel"
+  },
+  {
+   "name": "Conway in town",
+   "spec": {
+    "circle": [
+     33.836,
+     -79.047,
+     1.5
+    ]
+   },
+   "kind": "detached",
+   "noFee": 20,
+   "total": 23,
+   "share": 87,
+   "medianNoFeeHousePrice": 287000.0,
+   "noFeeHouses": 20,
+   "lotAcresMedian": 0.33999999999999997,
+   "lotMatched": 20,
+   "yearBuiltMedian": 1969.5,
+   "since2024": 2,
+   "before1990": 13,
+   "yearKnown": 20,
+   "key": "conway",
+   "measure": {
+    "circle": [
+     33.836,
+     -79.047,
+     1.5
+    ]
+   },
+   "mapShapes": [
+    {
+     "name": "Conway",
+     "lat": 33.836,
+     "lon": -79.047,
+     "radius": 2414
+    }
+   ],
+   "noFeeMls": [
+    "2527339",
+    "2604030",
+    "2607521",
+    "2612540",
+    "2612665",
+    "2614285",
+    "2616027",
+    "2618375",
+    "2618640",
+    "2619285",
+    "2619675",
+    "2619870",
+    "2621719",
+    "2622210",
+    "2622245",
+    "2622793",
+    "2622926",
+    "2623844",
+    "2624640",
+    "2624973"
+   ],
+   "withFeeMls": [
+    "2620338",
+    "2624532",
+    "2624887"
+   ],
+   "floodHighRisk": [
+    1,
+    20
+   ],
+   "withinHalfMileOfShore": [
+    0,
+    20
+   ]
+  },
+  {
+   "name": "Loris town",
+   "spec": {
+    "circle": [
+     34.057,
+     -78.888,
+     1.0
+    ]
+   },
+   "kind": "detached",
+   "noFee": 15,
+   "total": 16,
+   "share": 94,
+   "medianNoFeeHousePrice": 319000.0,
+   "noFeeHouses": 15,
+   "lotAcresMedian": 0.3735,
+   "lotMatched": 14,
+   "yearBuiltMedian": 1964.0,
+   "since2024": 5,
+   "before1990": 10,
+   "yearKnown": 15,
+   "key": "loris",
+   "measure": {
+    "circle": [
+     34.057,
+     -78.888,
+     1.0
+    ]
+   },
+   "mapShapes": [
+    {
+     "name": "Loris",
+     "lat": 34.057,
+     "lon": -78.888,
+     "radius": 1609
+    }
+   ],
+   "noFeeMls": [
+    "2522074",
+    "2525927",
+    "2526357",
+    "2601830",
+    "2613254",
+    "2613892",
+    "2613903",
+    "2614794",
+    "2615034",
+    "2615617",
+    "2616111",
+    "2619059",
+    "2620180",
+    "2624093",
+    "2624855"
+   ],
+   "withFeeMls": [
+    "2623708"
+   ],
+   "floodHighRisk": [
+    0,
+    15
+   ],
+   "withinHalfMileOfShore": [
+    0,
+    15
+   ]
+  },
+  {
+   "name": "Country around Loris",
+   "spec": {
+    "regions": [
+     "01a",
+     "05a",
+     "06a"
+    ]
+   },
+   "kind": "res",
+   "noFee": 74,
+   "total": 82,
+   "share": 90,
+   "medianNoFeeHousePrice": 414100.0,
+   "noFeeHouses": 74,
+   "lotAcresMedian": 0.89,
+   "lotMatched": 27,
+   "yearBuiltMedian": 2026.0,
+   "since2024": 65,
+   "before1990": 5,
+   "yearKnown": 74,
+   "key": "loris-country",
+   "measure": {
+    "regions": [
+     "01a",
+     "05a",
+     "06a"
+    ]
+   },
+   "mapShapes": [
+    {
+     "name": "Around Loris",
+     "polygon": [
+      [
+       -79.05095,
+       34.05151
+      ],
+      [
+       -79.01278,
+       34.02017
+      ],
+      [
+       -78.93819,
+       33.97746
+      ],
+      [
+       -78.81867,
+       33.954
+      ],
+      [
+       -78.81802,
+       33.95406
+      ],
+      [
+       -78.81739,
+       33.95418
+      ],
+      [
+       -78.83929,
+       34.09563
+      ],
+      [
+       -78.87301,
+       34.10242
+      ],
+      [
+       -78.99433,
+       34.10414
+      ]
+     ]
+    }
+   ],
+   "noFeeMls": [
+    "2403876",
+    "2404279",
+    "2525927",
+    "2601075",
+    "2601076",
+    "2601078",
+    "2601079",
+    "2601205",
+    "2601206",
+    "2601208",
+    "2601209",
+    "2601211",
+    "2601213",
+    "2601214",
+    "2601217",
+    "2601219",
+    "2601220",
+    "2601223",
+    "2601224",
+    "2601226",
+    "2601227",
+    "2601228",
+    "2604042",
+    "2604043",
+    "2604044",
+    "2604045",
+    "2607346",
+    "2607628",
+    "2608779",
+    "2611099",
+    "2615954",
+    "2617430",
+    "2618411",
+    "2618412",
+    "2618413",
+    "2619205",
+    "2620019",
+    "2620166",
+    "2620344",
+    "2620563",
+    "2620624",
+    "2620631",
+    "2620633",
+    "2620637",
+    "2620639",
+    "2620645",
+    "2620646",
+    "2620647",
+    "2620648",
+    "2621270",
+    "2621461",
+    "2622399",
+    "2622400",
+    "2622491",
+    "2622511",
+    "2623154",
+    "2623419",
+    "2623481",
+    "2623612",
+    "2623714",
+    "2623746",
+    "2623949",
+    "2623950",
+    "2623952",
+    "2623953",
+    "2623954",
+    "2624336",
+    "2624339",
+    "2624340",
+    "2624361",
+    "2624363",
+    "2624595",
+    "2625025",
+    "2625026"
+   ],
+   "withFeeMls": [
+    "2611143",
+    "2611213",
+    "2611220",
+    "2611221",
+    "2613281",
+    "2613282",
+    "2618392",
+    "2622719"
+   ],
+   "floodHighRisk": [
+    0,
+    29
+   ],
+   "withinHalfMileOfShore": [
+    0,
+    29
+   ],
+   "byRegion": {
+    "01a": [
+     25,
+     25
+    ],
+    "05a": [
+     13,
+     13
+    ],
+    "06a": [
+     36,
+     44
+    ]
+   }
+  },
+  {
+   "name": "Aynor and around",
+   "spec": {
+    "area": "Aynor"
+   },
+   "kind": "res",
+   "noFee": 30,
+   "total": 45,
+   "share": 67,
+   "medianNoFeeHousePrice": 372000.0,
+   "noFeeHouses": 30,
+   "lotAcresMedian": 1.057,
+   "lotMatched": 23,
+   "yearBuiltMedian": 2024.0,
+   "since2024": 17,
+   "before1990": 6,
+   "yearKnown": 30,
+   "key": "aynor",
+   "measure": {
+    "area": "Aynor"
+   },
+   "mapShapes": [
+    {
+     "name": "Aynor",
+     "polygon": [
+      [
+       -79.21361,
+       33.99438
+      ],
+      [
+       -79.14683,
+       33.93408
+      ],
+      [
+       -79.14267,
+       33.93225
+      ],
+      [
+       -79.04057,
+       33.93231
+      ],
+      [
+       -79.03237,
+       33.98839
+      ],
+      [
+       -79.13649,
+       33.99904
+      ],
+      [
+       -79.21163,
+       34.00028
+      ]
+     ]
+    }
+   ],
+   "noFeeMls": [
+    "2520484",
+    "2606642",
+    "2609477",
+    "2610904",
+    "2611163",
+    "2611471",
+    "2611914",
+    "2613758",
+    "2614157",
+    "2615898",
+    "2617303",
+    "2617972",
+    "2618034",
+    "2618057",
+    "2619063",
+    "2619139",
+    "2619203",
+    "2619463",
+    "2620355",
+    "2621499",
+    "2621517",
+    "2621667",
+    "2621767",
+    "2622983",
+    "2623818",
+    "2624181",
+    "2624483",
+    "2624809",
+    "2624908",
+    "2625028"
+   ],
+   "withFeeMls": [
+    "2618184",
+    "2618469",
+    "2620222",
+    "2620224",
+    "2620798",
+    "2620834",
+    "2620944",
+    "2621418",
+    "2621454",
+    "2621467",
+    "2622381",
+    "2622936",
+    "2623933",
+    "2624230",
+    "2624949"
+   ],
+   "floodHighRisk": [
+    0,
+    23
+   ],
+   "withinHalfMileOfShore": [
+    0,
+    23
+   ],
+   "centralAynor17a": [
+    15,
+    15
+   ]
+  }
+ ],
+ "guide": {
+  "builtBefore1990": [
+   278,
+   360
+  ],
+  "built1990OrLater": [
+   410,
+   2254
+  ],
+  "notInNamedSubdivision": [
+   446,
+   460
+  ],
+  "almostAllWithFee": {
+   "Carolina Forest": [
+    0,
+    258
+   ],
+   "Grande Dunes (MLS neighborhoods named Grande Dunes)": [
+    0,
+    101
+   ],
+   "The Market Common (MLS neighborhoods named Market Common)": [
+    0,
+    49
+   ],
+   "Burgess (MLS region 26a)": [
+    6,
+    170
+   ],
+   "Little River named subdivisions": [
+    13,
+    192
+   ],
+   "Forestbrook (MLS neighborhoods named Forestbrook)": [
+    1,
+    16
+   ]
+  }
+ },
+ "drives": {
+  "cherry-grove -> Cherry Grove Boat Ramp": [
+   [
+    33.837159936057525,
+    -78.63409849604528
+   ],
+   [
+    33.8420331,
+    -78.6175078
+   ],
+   [
+    5.3,
+    1.65
+   ]
+  ],
+  "windy-hill -> Barefoot Landing": [
+   [
+    33.79679585037143,
+    -78.7307788687554
+   ],
+   [
+    33.7998752,
+    -78.7424398
+   ],
+   [
+    3.1,
+    0.89
+   ]
+  ],
+  "crescent-beach -> Barefoot Landing": [
+   [
+    33.81045701196518,
+    -78.69730862195854
+   ],
+   [
+    33.7998752,
+    -78.7424398
+   ],
+   [
+    7.7,
+    3.15
+   ]
+  ],
+  "crescent-beach -> Ingram Dunes": [
+   [
+    33.81045701196518,
+    -78.69730862195854
+   ],
+   [
+    33.8153434,
+    -78.6875378
+   ],
+   [
+    2.3,
+    0.78
+   ]
+  ],
+  "socastee -> Rosewood Landing": [
+   [
+    33.6859477213846,
+    -78.99329100168346
+   ],
+   [
+    33.6924289,
+    -78.9924888
+   ],
+   [
+    2.3,
+    0.54
+   ]
+  ],
+  "socastee -> Socastee Landing and Park": [
+   [
+    33.6859477213846,
+    -78.99329100168346
+   ],
+   [
+    33.68815,
+    -79.00777
+   ],
+   [
+    4.8,
+    2.29
+   ]
+  ],
+  "little-river -> T. Craig Campbell Landing": [
+   [
+    33.87304228429174,
+    -78.61405505827256
+   ],
+   [
+    33.85396,
+    -78.65419
+   ],
+   [
+    9.0,
+    4.83
+   ]
+  ],
+  "conway -> Billy Witherspoon Landing": [
+   [
+    33.8428847834666,
+    -79.05386326204813
+   ],
+   [
+    33.81666,
+    -79.04181
+   ],
+   [
+    5.8,
+    2.65
+   ]
+  ],
+  "conway -> Conway Medical Center": [
+   [
+    33.8428847834666,
+    -79.05386326204813
+   ],
+   [
+    33.78548,
+    -79.00189
+   ],
+   [
+    11.7,
+    5.9
+   ]
+  ],
+  "loris-country -> McLeod Loris": [
+   [
+    34.02036334886969,
+    -78.92945627610752
+   ],
+   [
+    34.05738,
+    -78.89841
+   ],
+   [
+    9.1,
+    4.6
+   ]
+  ],
+  "loris-country -> Causey Landing": [
+   [
+    34.02036334886969,
+    -78.92945627610752
+   ],
+   [
+    34.2931012,
+    -79.0747479
+   ],
+   [
+    52.1,
+    30.06
+   ]
+  ],
+  "garden-city -> Stanley Drive": [
+   [
+    33.5855489387255,
+    -78.99714009922428
+   ],
+   [
+    33.5784294,
+    -79.013078
+   ],
+   [
+    5.5,
+    2.11
+   ]
+  ],
+  "mb-north -> Pine Lakes Country Club": [
+   [
+    33.73036143354704,
+    -78.85840179329547
+   ],
+   [
+    33.73174,
+    -78.84307
+   ],
+   [
+    4.3,
+    1.1
+   ]
+  ],
+  "mb-downtown -> 2nd Avenue Pier": [
+   [
+    33.68010685715235,
+    -78.901571223046
+   ],
+   [
+    33.6833252,
+    -78.8850536
+   ],
+   [
+    3.5,
+    1.2
+   ]
+  ],
+  "ocean-drive -> Barefoot Landing": [
+   [
+    33.820568592147715,
+    -78.68198228446121
+   ],
+   [
+    33.7998752,
+    -78.7424398
+   ],
+   [
+    9.4,
+    4.29
+   ]
+  ],
+  "murrells-inlet -> Stanley Drive Landing": [
+   [
+    33.573485,
+    -79.018298
+   ],
+   [
+    33.5784294,
+    -79.013078
+   ],
+   [
+    4.25,
+    1.16
+   ]
+  ],
+  "murrells-inlet -> MarshWalk": [
+   [
+    33.573485,
+    -79.018298
+   ],
+   [
+    33.5578779,
+    -79.0318225
+   ],
+   [
+    6.28,
+    2.14
+   ]
+  ],
+  "murrells-inlet -> Brookgreen Gardens": [
+   [
+    33.573485,
+    -79.018298
+   ],
+   [
+    33.5211073,
+    -79.0921611
+   ],
+   [
+    18.67,
+    8.25
+   ]
+  ]
+ }
+}

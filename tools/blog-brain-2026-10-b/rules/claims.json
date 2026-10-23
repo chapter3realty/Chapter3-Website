@@ -1,0 +1,180 @@
+{
+  "_comment": "Claims Chapter3 may not make, on ANY surface: body, header, footer, title, meta and social descriptions, JSON-LD, calculator default values, llms.txt. Built from the 2026-10-01 audit (audit/AUDIT.md). The website build.js matched phrasings inside <main> only, so the same claim came back in new words ('under one roof' banned; 'same company', 'own mortgage team' not) and lived on in meta tags and the footer. Each rule has a passing and failing control in tools/claims-scan.test.js. Patterns are case-insensitive JavaScript regex source. 'allowPages' exempts a page by path; 'unless' skips a sentence that also matches it. Not legal advice: counsel sets the final list.",
+  "rules": [
+    {
+      "id": "lender-identity",
+      "severity": "critical",
+      "why": "Chapter3 and BrickWood are affiliated but are not the same company, and Chapter3 does no financing work at all (owner 2026-07-30, 2026-09-07, 2026-10-04). Saying otherwise implies mortgage activity without a licence.",
+      "patterns": [
+        "\\bsame company\\b",
+        "\\bown (?:mortgage|lending|loan|financing) (?:team|company|division|arm)\\b",
+        "\\bone team for (?:real estate|homes?) and (?:financing|lending|mortgages?)\\b",
+        "\\bunder one roof\\b",
+        "\\bin-house (?:lender|lending|mortgage|financing|loan)",
+        "\\bour (?:mortgage|loan|lending|financing) (?:team|officers?|department|division|menu)\\b",
+        "\\bwe underwr(?:ote|ite)\\b",
+        "\\bloan menu\\b",
+        "\\b(?:we|Chapter ?(?:3|III)(?: Realty)?) (?:offers?|provides?|arranges?|originates?) (?:financing|loans|mortgages)\\b",
+        "\\bthe brokerage and the lender are\\b"
+      ],
+      "fix": "Keep the affiliation, drop the ownership: \"our affiliated lender, BrickWood Mortgage (NMLS #189497), a separate company\". Chapter3 analyses; BrickWood lends."
+    },
+    {
+      "id": "lender-possessive",
+      "severity": "high",
+      "why": "BrickWood Mortgage is an affiliate, not part of Chapter3 (owner 2026-10-04). A bare \"our lender\" reads as ownership. \"Equal Housing Lender\" is a lender's mark, and Chapter3 does no financing work.",
+      "patterns": [
+        "\\bour (?:in-house )?lender\\b(?!s? relationship)",
+        "\\bEqual Housing Lender\\b"
+      ],
+      "fix": "Write \"our affiliated lender, BrickWood Mortgage (NMLS #189497)\" or \"your lender\". \"Equal Housing Opportunity\" for the logo line."
+    },
+    {
+      "id": "financing-as-service",
+      "severity": "critical",
+      "why": "Owner A17b: a page may be ABOUT loans; no headline, tagline or service list may OFFER one. The footer on 131 pages lists 'DSCR financing' as a service, and AI answers repeat it as Chapter3 'offering DSCR financing' (off-site audit).",
+      "patterns": [
+        "^(?:DSCR|investor|condotel|portfolio) financing, (?!explained|which|compared)",
+        "\\b(?:with|through|get) (?:DSCR|investor|condotel|portfolio) financing\\b",
+        "\\b(?:we|Chapter ?(?:3|III)(?: Realty)?|our team) (?:offers?|provides?|handles?|arranges?|does) (?:DSCR|investor|condotel|portfolio|bridge|fix-and-flip) (?:financing|loans)\\b",
+        "\\bDSCR loan qualification\\b",
+        "\\bbrokerage that has its own lender\\b",
+        "\\bloans through BrickWood\\b"
+      ],
+      "fix": "Name what Chapter3 does: 'DSCR analysis', 'rent and coverage numbers'. BrickWood Mortgage, the affiliated lender, does the financing."
+    },
+    {
+      "id": "licence-claim",
+      "severity": "critical",
+      "why": "Owner 2026-09-07: never call anyone at Chapter3 a loan originator or show an NMLS number for Chapter3 staff (compliance C3, C4).",
+      "patterns": [
+        "\\bMLOs?\\b",
+        "\\bloan originator\\b",
+        "\\bNMLS\\s*#?\\s*(?:2721275|252563)\\b",
+        "\\blicensed (?:mortgage )?loan officer\\b"
+      ],
+      "fix": "Remove. A loan fact that needs a source says 'according to a loan officer at our preferred lender'."
+    },
+    {
+      "id": "interest-rate",
+      "severity": "high",
+      "why": "Non-negotiable 3: never state an interest rate or a payment amount (Reg Z trigger terms; rates go stale).",
+      "patterns": [
+        "\\b(?:mortgage|interest|loan) rates?\\b[^.]{0,60}?\\b\\d{1,2}(?:\\.\\d{1,3})?\\s?(?:percent|%)",
+        "\\b\\d{1,2}(?:\\.\\d{1,3})?\\s?(?:percent|%)\\s(?:interest|mortgage|APR|fixed)\\b",
+        "\\b30-year fixed\\b[^.]{0,40}\\d",
+        "\\braises? your (?:interest )?rate\\b",
+        "\\bqualify at \\d{1,2}(?:\\.\\d{1,3})?\\s?(?:%|percent)",
+        "\\brate could be \\d{1,2}(?:\\.\\d{1,3})?\\s?(?:%|percent)",
+        "\\brates? (?:touched|dipped|fell|rose|climbed|sit|sat|hit|reached|averaged|drifted)\\b[^.]{0,40}\\b\\d\\.\\d{1,2}\\b"
+      ],
+      "unless": "\\b(?:no|zero|0%?) (?:interest|down)\\b|\\bcap rate|\\btax rate|\\boccupancy|\\bvacancy",
+      "fix": "Write financing qualitatively: 'a higher rate than a primary-residence loan; your lender quotes the real number'."
+    },
+    {
+      "id": "superlative",
+      "severity": "high",
+      "why": "Unsupported comparative claims (compliance H8; SC 40-57-135 misleading advertising; brand handoff: no best/#1/top without broker sign-off).",
+      "patterns": [
+        "\\b(?:the )?(?:best|top|top-rated|leading|#1|number one|premier) (?:real estate )?(?:brokerage|agency|agent|realtor|team|firm)\\b",
+        "\\bno other (?:local )?(?:brokerage|agency|agent|firm|team)\\b",
+        "\\bthe only (?:local )?(?:brokerage|agency|firm|team)\\b",
+        "\\b(?:unmatched|world-class|industry-leading|award-winning)\\b"
+      ],
+      "fix": "State the specific, checkable fact instead, or cut the sentence."
+    },
+    {
+      "id": "firm-experience",
+      "severity": "high",
+      "why": "Chapter3 Realty was formed in 2026. Tim Nash's career is Tim's (PLAYBOOK A11e; compliance H7). BrickWood's history is BrickWood's.",
+      "patterns": [
+        "\\bwe(?:'ve| have)? closed (?:in )?every\\b",
+        "\\bour (?:\\d+|thirty|twenty|fifteen|ten)\\+? years\\b",
+        "\\b\\d+ years of (?:local )?(?:loan|lending|mortgage) (?:files|data|experience)\\b",
+        "\\bour track record\\b"
+      ],
+      "fix": "Attribute it: 'Tim Nash has sold in every town from Little River to Pawleys Island over 30 years.'",
+      "unless": "\\bthrough BrickWood\\b|\\bBrickWood(?:'s)? \\d+ years\\b"
+    },
+    {
+      "id": "off-market-promise",
+      "severity": "high",
+      "why": "Promising the public off-market listings conflicts with MLS Clear Cooperation rules (compliance H12).",
+      "patterns": [
+        "\\boff-market (?:homes|listings|properties|deals|sources|opportunities|inventory)\\b"
+      ],
+      "fix": "Remove the promise."
+    },
+    {
+      "id": "fair-housing",
+      "severity": "medium",
+      "why": "42 USC 3604(c) and HUD advertising guidance: describe property and geography, never who an area suits (compliance M3).",
+      "patterns": [
+        "\\b(?:best|good|great|top) schools\\b",
+        "\\bfamily-friendly\\b",
+        "\\bperfect for (?:families|retirees|young|couples|singles|kids)\\b",
+        "\\bsuits? (?:retirees|families|young|couples)\\b",
+        "\\bsafe (?:neighborhood|area|community|place)\\b",
+        "\\blanding spot for families\\b",
+        "\\bquiet neighborhood\\b",
+        "\\b(?:top-rated|high-performing|flagship|best|good|great|top|excellent) school (?:district|zone|system)s?\\b",
+        "\\bfamilies (?:tour|choose|pick|prefer|love|flock|gravitate)\\b"
+      ],
+      "allowPages": [
+        "/fair-housing/",
+        "/buyers/55-plus-communities/"
+      ],
+      "fix": "Describe the property, the commute, the distance, the zoning. Link the district's own school-assignment page instead of rating schools.",
+      "unless": "\\bphrases like\\b|\\bsteer|\\bfair housing\\b|\\bcourts\\b"
+    },
+    {
+      "id": "agent-free",
+      "severity": "medium",
+      "why": "After the 2024 commission changes a buyer may owe their agent; 'costs you nothing' is misleading (compliance M4).",
+      "patterns": [
+        "\\b(?:your |an |the |buyer'?s? )?agent\\b[^.]{0,40}\\bcosts? you nothing\\b",
+        "\\bcosts? you nothing\\b[^.]{0,40}\\bagent\\b",
+        "\\bfree to (?:the )?buyers?\\b",
+        "\\bat no cost to buyers?\\b"
+      ],
+      "fix": "Say who pays and that it is negotiable."
+    },
+    {
+      "id": "individual-named",
+      "severity": "high",
+      "why": "Devin Day may appear only as the page's author: the byline, the author note and the schema author (owner 2026-10-05). Never in the copy, a story, a CTA or as a contact; he is not a licensee, so never a pricing or advice contact (SC 40-57-30). Paul is never named on the site yet (owner 2026-10-05).",
+      "patterns": [
+        "\\bDevin\\b",
+        "\\bPaul\\b"
+      ],
+      "fix": "Keep the name in the byline or author note only. In the copy write \"Chapter3\", \"our team\" or \"one of our agents\". Remove Paul's name.",
+      "ignore": "\\b(?:By|Reviewed by)\\s+Devin Day\\b|\\bDevin Day wrote this page\\b",
+      "skipSurfaces": [
+        "json-ld"
+      ]
+    },
+    {
+      "id": "template-residue",
+      "severity": "critical",
+      "why": "A failed substitution shown to readers (two HOA pages, 2026-10-01).",
+      "patterns": [
+        "(?<![0-9])%[sd]\\b",
+        "\\{\\{|\\}\\}",
+        "\\[object Object\\]",
+        "\\blorem ipsum\\b"
+      ],
+      "fix": "Write the missing copy or delete the element."
+    }
+  ],
+  "inputDefaults": {
+    "_comment": "Calculator defaults are copy: a pre-filled 7 in a rate box is a stated rate (compliance H4; build.js stripped inputs before scanning). Flags any input whose id, name or label says rate, APR or down payment and that ships with a value or placeholder number.",
+    "fieldPattern": "(?:^|[-_ ]|\\b)(?:rate|apr|interest|down)(?:[-_ ]|\\b|$)|^(?:co|cc)?(?:Rate|Down)$",
+    "notFieldPattern": "cap|tax|vacancy|occupancy|appreciation|growth|mgmt|management|withhold|millage|inflation|discount|turnover|return|grow|rent|night|adr|\\$|nightly|str",
+    "allowDownPaymentPages": [
+      "/invest/strategies/dscr-loans/",
+      "/invest/strategies/brrrr/",
+      "/invest/strategies/fix-and-flip/"
+    ],
+    "severity": "high"
+  }
+}

@@ -1,0 +1,202 @@
+{
+ "page": "/submarkets/carolina-forest/the-farm/",
+ "name": "The Farm at Carolina Forest",
+ "added": "2026-10-13",
+ "status": "researcher draft; not verified",
+ "reference_point": {
+  "label": "Farmers Rest Drive entrance from Carolina Forest Boulevard",
+  "lon": -78.875215,
+  "lat": 33.754869,
+  "source": "Horry County GIS Roads layer (HorryCountyGISApp MapServer layer 18): the shared end point of FARMERS REST DR and CAROLINA FOREST BLVD segments (also STONEY LANDING RD, across the boulevard).",
+  "source_url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/18/query?geometry=-78.890,33.752,-78.862,33.774&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=FULLNAME,OWNER,SPEEDLIMIT&returnGeometry=true&outSR=4326&f=json",
+  "note": "No source names a 'main' entrance. This is the entrance nearest the large pool (201 Carolina Farms Blvd) and the activity center (190 Farmers Rest Dr). Other road connections: Mill Street at Carolina Forest Blvd and Wheatfield Drive at International Drive."
+ },
+ "other_entrances": [
+  {
+   "label": "Mill Street at Carolina Forest Boulevard",
+   "lon": -78.883857,
+   "lat": 33.75808
+  },
+  {
+   "label": "Wheatfield Drive at International Drive",
+   "lon": -78.866827,
+   "lat": 33.768257
+  }
+ ],
+ "amenity_points": [
+  {
+   "label": "Large pool, 201 Carolina Farms Blvd (HOA amenity parcel HOA OS #3 & AMNTY)",
+   "lon": -78.8757,
+   "lat": 33.759522,
+   "pin": 39600000019,
+   "source": "Horry County Addresses layer 22"
+  },
+  {
+   "label": "Small pool, 389 Carolina Farms Blvd",
+   "lon": -78.873458,
+   "lat": 33.767339,
+   "pin": 39607040047,
+   "source": "Horry County Addresses layer 22"
+  },
+  {
+   "label": "Activity center, 190 Farmers Rest Dr",
+   "lon": -78.877181,
+   "lat": 33.758833,
+   "pin": 39609030003,
+   "source": "Horry County Addresses layer 22"
+  }
+ ],
+ "parcel_outline_source": {
+  "layer": "Horry County GIS parcels, HorryCountyGISApp MapServer layer 24",
+  "where": "(LegalDescr LIKE 'FARM @%' OR LegalDescr LIKE 'FARM AT%' OR LegalDescr LIKE 'THE FARM%' OR LegalDescr LIKE 'BROOKBERRY%' OR LegalDescr LIKE 'THE ORCHARDS PH 2%' OR LegalDescr LIKE 'PLANTERS POINT%') AND LegalDescr NOT LIKE '%TIMBERLAKE%' AND LegalDescr NOT LIKE '%FOX BAY%'",
+  "geojson_url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=%28LegalDescr+LIKE+%27FARM+%40%25%27+OR+LegalDescr+LIKE+%27FARM+AT%25%27+OR+LegalDescr+LIKE+%27THE+FARM%25%27+OR+LegalDescr+LIKE+%27BROOKBERRY%25%27+OR+LegalDescr+LIKE+%27THE+ORCHARDS+PH+2%25%27+OR+LegalDescr+LIKE+%27PLANTERS+POINT%25%27%29+AND+LegalDescr+NOT+LIKE+%27%25TIMBERLAKE%25%27+AND+LegalDescr+NOT+LIKE+%27%25FOX+BAY%25%27&outFields=PIN%2CLegalDescr%2CLandUseCode%2CTaxDistrict&returnGeometry=true&outSR=4326&f=geojson",
+  "counts": {
+   "all_parcels": 1634,
+   "homes_landuse_101_107_109": 1571,
+   "detached_101": 1292,
+   "orchards_townhouse_109": 207,
+   "planters_point_condo_107": 72
+  },
+  "note": "The filter excludes 'The Farm at Timberlake' (near Hwy 707) and 'The Farm at Fox Bay' (near Loris), which are other places. 'THE ORCHARDS PH 2' and 'PLANTERS POINT' are inside The Farm and are billed by its HOA (2026 budget). Roads are not parcels, so the union of parcels has gaps at streets.",
+  "bbox": [
+   -78.885905,
+   33.754309,
+   -78.866796,
+   33.773421
+  ]
+ },
+ "imagery": {
+  "noaa_2026_pre_event": {
+   "collection": "NOAA NGS Emergency Response Imagery, 2026_Pre_Event, group EC2601a (flown 2026-01-12)",
+   "tiles": [
+    "EC2601a_OB_N_C0785230w334545n.tif",
+    "EC2601a_OB_N_C0785315w334545n.tif",
+    "EC2601a_OB_N_C0785230w334630n.tif"
+   ],
+   "bucket": "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/",
+   "coverage": "Partial. Image data (non-transparent pixels) at 462 of 1,571 home parcel centroids, all in the southern part. Covers the Farmers Rest entrance, the clubhouse and large pool and the activity center. Does not cover the small pool or the northern phases (10 to 12, 17 to 21, 23B, Brookberry, Planters Point). Tile C0785230w334630n is 11.5 percent data.",
+   "raw_oblique_frames": "Flight 0122026 RGB1/RGB2 camera stations 185127 to 185130 (16:49) pass about 2.9 to 3.2 km from the center of The Farm; whether any frame shows it was not checked."
+  },
+  "naip_fallback": {
+   "source": "USGS National Map USGSNAIPImagery ImageServer (identify at -78.876, 33.763)",
+   "rasters": [
+    "m_3307809_se_17_060_20230410",
+    "m_3307810_sw_17_060_20230410"
+   ],
+   "date": "2023-04-10",
+   "resolution_m": 0.6,
+   "coverage": "Full"
+  }
+ },
+ "drive": {
+  "beach_MB101": {
+   "min": 10.1,
+   "mi": 4.63,
+   "straight_mi": 2.94,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.846516,33.719685?overview=false"
+  },
+  "beach_MB116": {
+   "min": 10.1,
+   "mi": 4.74,
+   "straight_mi": 3.05,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.829052,33.733063?overview=false"
+  },
+  "publix": {
+   "min": 1.5,
+   "mi": 0.5,
+   "straight_mi": 0.35,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.870501,33.751759?overview=false"
+  },
+  "foodlion_riveroaks": {
+   "min": 2.2,
+   "mi": 0.76,
+   "straight_mi": 0.62,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.864416,33.754064?overview=false"
+  },
+  "mcleod_cf_er": {
+   "min": 5.2,
+   "mi": 1.77,
+   "straight_mi": 1.33,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.852256,33.757293?overview=false"
+  },
+  "gsmc": {
+   "min": 11.5,
+   "mi": 5.62,
+   "straight_mi": 3.18,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.820016,33.758542?overview=false"
+  },
+  "cmc": {
+   "min": 16.7,
+   "mi": 9.13,
+   "straight_mi": 7.58,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-79.001894,33.785483?overview=false"
+  },
+  "myr": {
+   "min": 20.2,
+   "mi": 9.09,
+   "straight_mi": 5.73,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.924023,33.6825?overview=false"
+  },
+  "tanger501": {
+   "min": 12.9,
+   "mi": 8.26,
+   "straight_mi": 4.85,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.959526,33.750395?overview=false"
+  },
+  "coastal_grand": {
+   "min": 16.0,
+   "mi": 8.29,
+   "straight_mi": 4.56,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.923261,33.702315?overview=false"
+  },
+  "boardwalk": {
+   "min": 15.5,
+   "mi": 7.84,
+   "straight_mi": 4.51,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.881111,33.689765?overview=false"
+  },
+  "cf_rec": {
+   "min": 3.3,
+   "mi": 1.4,
+   "straight_mi": 0.93,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.890061,33.760247?overview=false"
+  },
+  "obe": {
+   "min": 6.1,
+   "mi": 2.2,
+   "straight_mi": 1.07,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.865751,33.768153?overview=false"
+  },
+  "obm": {
+   "min": 4.1,
+   "mi": 1.78,
+   "straight_mi": 0.96,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.865901,33.766381?overview=false"
+  },
+  "cfhs": {
+   "min": 15.7,
+   "mi": 7.52,
+   "straight_mi": 5.7,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.970179,33.779049?overview=false"
+  },
+  "gs_cf_er": {
+   "min": 11.1,
+   "mi": 5.61,
+   "straight_mi": 5.0,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.962052,33.758605?overview=false"
+  },
+  "bike_run": {
+   "min": 3.6,
+   "mi": 1.69,
+   "straight_mi": 1.34,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.852219,33.751357?overview=false"
+  },
+  "intl_fields": {
+   "min": 5.0,
+   "mi": 1.78,
+   "straight_mi": 1.04,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.87521,33.75487;-78.864262,33.766833?overview=false"
+  }
+ },
+ "drive_start": "reference_point (OSRM start -78.87521,33.75487)"
+}

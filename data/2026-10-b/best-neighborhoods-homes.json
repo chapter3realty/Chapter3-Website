@@ -1,0 +1,2882 @@
+{
+ "title": "Homes for sale in the 15 neighborhoods: year built, heated size and kind (round 7b)",
+ "page": "/buyers/best-neighborhoods/",
+ "asOf": "2026-10-13 (12 neighborhoods) and 2026-10-14 (Cherry Grove, Surfside Beach)",
+ "method": [
+  "13 neighborhoods: every listing in the researcher's Real Geeks search for the neighborhood (the search_urls below; the same listings as the HOA-fee rows 4, 17, 28 and so on), fields 'Year Built', 'Total Heated SqFt' and 'Property Type' from each property page.",
+  "Cherry Grove and the ocean side of Surfside Beach: the Real Geeks neighborhood searches return almost nothing, so the set is the detached houses for sale in data/no-hoa-lots.json (the no-HOA page's set, row 69 of no-hoa-facts.md) whose county PIN is in the neighborhood's parcel set (Cherry Grove: parcels whose county description contains 'CHERRY GROVE'; Surfside: the parcel set of neighborhoods-facts row 134). Each property page re-read on 2026-10-14 for the same three fields.",
+  "Land and industrial listings dropped. 'main' is the most common kind; the year and size figures are for that kind only. Medians; q1 and q3 are the 25th and 75th percentile years."
+ ],
+ "stats": {
+  "tidewater": {
+   "n": 22,
+   "types": {
+    "Detached": 17,
+    "Condominium": 5
+   },
+   "main": "Detached",
+   "n_main": 17,
+   "yb_med": 2002,
+   "yb_q1": 1999,
+   "yb_q3": 2006,
+   "decades": {
+    "1990": 5,
+    "2000": 10,
+    "2010": 1,
+    "2020": 1
+   },
+   "sq_med": 2688,
+   "sq_n": 17
+  },
+  "cherry-grove": {
+   "n": 38,
+   "types": {
+    "Detached": 38
+   },
+   "main": "Detached",
+   "n_main": 38,
+   "yb_med": 1980.0,
+   "yb_q1": 1970,
+   "yb_q3": 1989,
+   "decades": {
+    "1940": 1,
+    "1960": 7,
+    "1970": 9,
+    "1980": 12,
+    "1990": 2,
+    "2000": 4,
+    "2010": 3
+   },
+   "sq_med": 1863.5,
+   "sq_n": 38
+  },
+  "barefoot-resort": {
+   "n": 10,
+   "types": {
+    "Detached": 1,
+    "Condominium": 8,
+    "Townhouse": 1
+   },
+   "main": "Condominium",
+   "n_main": 8,
+   "yb_med": 2022.0,
+   "yb_q1": 2002,
+   "yb_q3": 2023,
+   "decades": {
+    "2000": 3,
+    "2020": 5
+   },
+   "sq_med": 2518.5,
+   "sq_n": 8
+  },
+  "wild-wing": {
+   "n": 25,
+   "types": {
+    "Detached": 25
+   },
+   "main": "Detached",
+   "n_main": 25,
+   "yb_med": 2021,
+   "yb_q1": 2014,
+   "yb_q3": 2024,
+   "decades": {
+    "1990": 1,
+    "2000": 4,
+    "2010": 6,
+    "2020": 14
+   },
+   "sq_med": 2850,
+   "sq_n": 25
+  },
+  "waterbridge": {
+   "n": 27,
+   "types": {
+    "Detached": 27
+   },
+   "main": "Detached",
+   "n_main": 27,
+   "yb_med": 2023,
+   "yb_q1": 2023,
+   "yb_q3": 2024,
+   "decades": {
+    "2010": 5,
+    "2020": 22
+   },
+   "sq_med": 3086,
+   "sq_n": 27
+  },
+  "grande-dunes": {
+   "n": 40,
+   "types": {
+    "Detached": 29,
+    "Townhouse": 11
+   },
+   "main": "Detached",
+   "n_main": 29,
+   "yb_med": 2026,
+   "yb_q1": 2024,
+   "yb_q3": 2026,
+   "decades": {
+    "2000": 6,
+    "2010": 1,
+    "2020": 22
+   },
+   "sq_med": 2860,
+   "sq_n": 29
+  },
+  "the-farm": {
+   "n": 15,
+   "types": {
+    "Detached": 15
+   },
+   "main": "Detached",
+   "n_main": 15,
+   "yb_med": 2006,
+   "yb_q1": 2005,
+   "yb_q3": 2017,
+   "decades": {
+    "2000": 10,
+    "2010": 5
+   },
+   "sq_med": 2160,
+   "sq_n": 15
+  },
+  "plantation-lakes": {
+   "n": 15,
+   "types": {
+    "Detached": 15
+   },
+   "main": "Detached",
+   "n_main": 15,
+   "yb_med": 2007,
+   "yb_q1": 2006,
+   "yb_q3": 2013,
+   "decades": {
+    "2000": 10,
+    "2010": 4,
+    "2020": 1
+   },
+   "sq_med": 3385,
+   "sq_n": 15
+  },
+  "berkshire-forest": {
+   "n": 19,
+   "types": {
+    "Detached": 18,
+    "Condominium": 1
+   },
+   "main": "Detached",
+   "n_main": 18,
+   "yb_med": 2012.0,
+   "yb_q1": 2009,
+   "yb_q3": 2016,
+   "decades": {
+    "2000": 5,
+    "2010": 10,
+    "2020": 3
+   },
+   "sq_med": 2394.0,
+   "sq_n": 18
+  },
+  "pine-lakes": {
+   "n": 19,
+   "types": {
+    "Detached": 18,
+    "Townhouse": 1
+   },
+   "main": "Detached",
+   "n_main": 18,
+   "yb_med": 2022.0,
+   "yb_q1": 2015,
+   "yb_q3": 2023,
+   "decades": {
+    "1960": 2,
+    "1970": 1,
+    "2010": 3,
+    "2020": 12
+   },
+   "sq_med": 2419.5,
+   "sq_n": 18
+  },
+  "forestbrook-estates": {
+   "n": 10,
+   "types": {
+    "Detached": 8,
+    "Townhouse": 2
+   },
+   "main": "Detached",
+   "n_main": 8,
+   "yb_med": 2022.5,
+   "yb_q1": 2021,
+   "yb_q3": 2023,
+   "decades": {
+    "2010": 1,
+    "2020": 7
+   },
+   "sq_med": 2345.0,
+   "sq_n": 8
+  },
+  "market-common": {
+   "n": 15,
+   "types": {
+    "Townhouse": 14,
+    "Detached": 1
+   },
+   "main": "Townhouse",
+   "n_main": 14,
+   "yb_med": 2020.5,
+   "yb_q1": 2008,
+   "yb_q3": 2026,
+   "decades": {
+    "2000": 5,
+    "2010": 2,
+    "2020": 7
+   },
+   "sq_med": 1664.5,
+   "sq_n": 14
+  },
+  "deerfield": {
+   "n": 8,
+   "types": {
+    "Detached": 6,
+    "Semi-Detached": 2
+   },
+   "main": "Detached",
+   "n_main": 6,
+   "yb_med": 1983.0,
+   "yb_q1": 1979,
+   "yb_q3": 1989,
+   "decades": {
+    "1970": 2,
+    "1980": 3,
+    "1990": 1
+   },
+   "sq_med": 2045.5,
+   "sq_n": 6
+  },
+  "surfside-beach": {
+   "n": 27,
+   "types": {
+    "Detached": 27
+   },
+   "main": "Detached",
+   "n_main": 27,
+   "yb_med": 2000,
+   "yb_q1": 1974,
+   "yb_q3": 2011,
+   "decades": {
+    "1960": 3,
+    "1970": 5,
+    "1980": 1,
+    "1990": 3,
+    "2000": 8,
+    "2010": 3,
+    "2020": 4
+   },
+   "sq_med": 1938,
+   "sq_n": 27
+  },
+  "prince-creek": {
+   "n": 8,
+   "types": {
+    "Detached": 6,
+    "Townhouse": 2
+   },
+   "main": "Detached",
+   "n_main": 6,
+   "yb_med": 2010.0,
+   "yb_q1": 2008,
+   "yb_q3": 2012,
+   "decades": {
+    "2000": 3,
+    "2010": 3
+   },
+   "sq_med": 2427.0,
+   "sq_n": 6
+  }
+ },
+ "listings": {
+  "tidewater": {
+   "search": [
+    "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Tidewater+Plantation&neighborhood=Tidewater+-+Clubhouse+Villas&type=all&list_price_min=all&list_price_max=all&area_min=all&beds_min=all&baths_min=all"
+   ],
+   "props": [
+    {
+     "MLS#": "2623148",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623148/",
+     "Year Built": "2007",
+     "Total Heated SqFt": "4580",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620209",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620209/",
+     "Year Built": "2019",
+     "Total Heated SqFt": "3678",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621983",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621983/",
+     "Year Built": "2001",
+     "Total Heated SqFt": "3281",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620276",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620276/",
+     "Year Built": "2002",
+     "Total Heated SqFt": "3507",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622240",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622240/",
+     "Year Built": "2004",
+     "Total Heated SqFt": "2966",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623452",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623452/",
+     "Year Built": "2005",
+     "Total Heated SqFt": "2822",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2608760",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2608760/",
+     "Year Built": "1999",
+     "Total Heated SqFt": "2998",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620186",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620186/",
+     "Year Built": "2002",
+     "Total Heated SqFt": "2688",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620093",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620093/",
+     "Year Built": "2006",
+     "Total Heated SqFt": "2710",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624285",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624285/",
+     "Year Built": "2027",
+     "Total Heated SqFt": "1927",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618338",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618338/",
+     "Year Built": "2007",
+     "Total Heated SqFt": "2300",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621003",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621003/",
+     "Year Built": "1992",
+     "Total Heated SqFt": "2144",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2518501",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2518501/",
+     "Year Built": "1997",
+     "Total Heated SqFt": "2043",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621317",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621317/",
+     "Year Built": "1999",
+     "Total Heated SqFt": "2398",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624620",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624620/",
+     "Year Built": "2000",
+     "Total Heated SqFt": "1795",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618004",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618004/",
+     "Year Built": "2000",
+     "Total Heated SqFt": "2042",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2502011",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2502011/",
+     "Year Built": "1994",
+     "Total Heated SqFt": "2017",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2615167",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615167/",
+     "Year Built": "1999",
+     "Total Heated SqFt": "1226",
+     "Property Type": "Condominium",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624395",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624395/",
+     "Year Built": null,
+     "Total Heated SqFt": null,
+     "Property Type": "Land",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2616881",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2616881/",
+     "Year Built": "2001",
+     "Total Heated SqFt": "1226",
+     "Property Type": "Condominium",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621449",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621449/",
+     "Year Built": "2000",
+     "Total Heated SqFt": "1250",
+     "Property Type": "Condominium",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620384",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620384/",
+     "Year Built": "1999",
+     "Total Heated SqFt": "1226",
+     "Property Type": "Condominium",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624572",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624572/",
+     "Year Built": "1999",
+     "Total Heated SqFt": "1226",
+     "Property Type": "Condominium",
+     "Status": "ACTIVE"
+    }
+   ]
+  },
+  "cherry-grove": {
+   "search": "no-hoa-lots.json PIN match",
+   "props": [
+    {
+     "mls": "2612906",
+     "Year Built": "2006",
+     "Total Heated SqFt": "1799",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Cherry Grove Cottages"
+    },
+    {
+     "mls": "2624822",
+     "Year Built": "2006",
+     "Total Heated SqFt": "1779",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Cherry Grove Cottages"
+    },
+    {
+     "mls": "2620676",
+     "Year Built": "2006",
+     "Total Heated SqFt": "1780",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Cherry Grove Cottages"
+    },
+    {
+     "mls": "2615413",
+     "Year Built": "1965",
+     "Total Heated SqFt": "1470",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2615378",
+     "Year Built": "1968",
+     "Total Heated SqFt": "1064",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2624078",
+     "Year Built": "1987",
+     "Total Heated SqFt": "1100",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2527936",
+     "Year Built": "1982",
+     "Total Heated SqFt": "1836",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2612441",
+     "Year Built": "1976",
+     "Total Heated SqFt": "960",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2609374",
+     "Year Built": "1976",
+     "Total Heated SqFt": "1291",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2622743",
+     "Year Built": "1973",
+     "Total Heated SqFt": "1344",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2609505",
+     "Year Built": "1978",
+     "Total Heated SqFt": "1853",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2615205",
+     "Year Built": "1973",
+     "Total Heated SqFt": "1587",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2620810",
+     "Year Built": "1985",
+     "Total Heated SqFt": "1550",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2622318",
+     "Year Built": "1973",
+     "Total Heated SqFt": "2154",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2602172",
+     "Year Built": "1940",
+     "Total Heated SqFt": "2280",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2617569",
+     "Year Built": "1980",
+     "Total Heated SqFt": "1808",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2524197",
+     "Year Built": "1980",
+     "Total Heated SqFt": "1247",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2624982",
+     "Year Built": "1989",
+     "Total Heated SqFt": "2548",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2620489",
+     "Year Built": "1970",
+     "Total Heated SqFt": "2052",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2618589",
+     "Year Built": "1965",
+     "Total Heated SqFt": "2976",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2623382",
+     "Year Built": "1984",
+     "Total Heated SqFt": "2128",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2624940",
+     "Year Built": "2013",
+     "Total Heated SqFt": "2492",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2624096",
+     "Year Built": "1965",
+     "Total Heated SqFt": "1534",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2610265",
+     "Year Built": "1980",
+     "Total Heated SqFt": "1478",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2605209",
+     "Year Built": "1970",
+     "Total Heated SqFt": "2064",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2609963",
+     "Year Built": "1987",
+     "Total Heated SqFt": "1874",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2624530",
+     "Year Built": "1960",
+     "Total Heated SqFt": "1034",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2623996",
+     "Year Built": "1977",
+     "Total Heated SqFt": "2364",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2618830",
+     "Year Built": "1968",
+     "Total Heated SqFt": "1663",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2604025",
+     "Year Built": "1962",
+     "Total Heated SqFt": "3356",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2622449",
+     "Year Built": "1985",
+     "Total Heated SqFt": "2260",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Cherry Grove Cottages"
+    },
+    {
+     "mls": "2528276",
+     "Year Built": "2003",
+     "Total Heated SqFt": "3542",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2608898",
+     "Year Built": "1985",
+     "Total Heated SqFt": "2458",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2606846",
+     "Year Built": "1991",
+     "Total Heated SqFt": "2394",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2617866",
+     "Year Built": "1994",
+     "Total Heated SqFt": "2016",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2617022",
+     "Year Built": "1980",
+     "Total Heated SqFt": "3701",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2603235",
+     "Year Built": "2014",
+     "Total Heated SqFt": "4924",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2527704",
+     "Year Built": "2014",
+     "Total Heated SqFt": "4920",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    }
+   ]
+  },
+  "barefoot-resort": {
+   "search": [
+    "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Barefoot+Resort&neighborhood=North+Tower+Barefoot+Resort&neighborhood=The+Retreat+at+Barefoot+Village&neighborhood=The+Dye+Townhomes+-+Barefoot+Resort&type=all&list_price_min=all&list_price_max=all&area_min=all&beds_min=all&baths_min=all"
+   ],
+   "props": [
+    {
+     "MLS#": "2609494",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2609494/",
+     "Year Built": null,
+     "Total Heated SqFt": null,
+     "Property Type": "Land",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618307",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618307/",
+     "Year Built": "2019",
+     "Total Heated SqFt": "2568",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619704",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619704/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "2804",
+     "Property Type": "Condominium",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2610448",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2610448/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "2700",
+     "Property Type": "Condominium",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2613151",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2613151/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "2712",
+     "Property Type": "Condominium",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621018",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621018/",
+     "Year Built": "2022",
+     "Total Heated SqFt": "2667",
+     "Property Type": "Condominium",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2614615",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2614615/",
+     "Year Built": "2002",
+     "Total Heated SqFt": "1817",
+     "Property Type": "Condominium",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2611975",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2611975/",
+     "Year Built": "2002",
+     "Total Heated SqFt": "1801",
+     "Property Type": "Condominium",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2613238",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2613238/",
+     "Year Built": "2022",
+     "Total Heated SqFt": "2370",
+     "Property Type": "Condominium",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621112",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621112/",
+     "Year Built": "2022",
+     "Total Heated SqFt": "2209",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621880",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621880/",
+     "Year Built": "2002",
+     "Total Heated SqFt": "1825",
+     "Property Type": "Condominium",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2614779",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2614779/",
+     "Year Built": null,
+     "Total Heated SqFt": null,
+     "Property Type": "Land",
+     "Status": "ACTIVE"
+    }
+   ]
+  },
+  "wild-wing": {
+   "search": [
+    "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Wild+Wing+Plantation&neighborhood=The+Sanctuary+at+Wild+Wing+Plantation&type=all&list_price_min=all&list_price_max=all&area_min=all&beds_min=all&baths_min=all"
+   ],
+   "props": [
+    {
+     "MLS#": "2618206",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618206/",
+     "Year Built": "2013",
+     "Total Heated SqFt": "5615",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623178",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623178/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2896",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2604732",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2604732/",
+     "Year Built": "2025",
+     "Total Heated SqFt": "3809",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2616680",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2616680/",
+     "Year Built": "2024",
+     "Total Heated SqFt": "3402",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2603221",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2603221/",
+     "Year Built": "2025",
+     "Total Heated SqFt": "3493",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2617274",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2617274/",
+     "Year Built": "2024",
+     "Total Heated SqFt": "2651",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619135",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619135/",
+     "Year Built": "2022",
+     "Total Heated SqFt": "3489",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624653",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624653/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "3072",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620411",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620411/",
+     "Year Built": "2016",
+     "Total Heated SqFt": "3266",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2608071",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2608071/",
+     "Year Built": "2022",
+     "Total Heated SqFt": "3229",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622028",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622028/",
+     "Year Built": "2022",
+     "Total Heated SqFt": "3360",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2615173",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615173/",
+     "Year Built": "2009",
+     "Total Heated SqFt": "2234",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2625019",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2625019/",
+     "Year Built": "2020",
+     "Total Heated SqFt": "2850",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622506",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622506/",
+     "Year Built": "1999",
+     "Total Heated SqFt": "3140",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618238",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618238/",
+     "Year Built": "2014",
+     "Total Heated SqFt": "2982",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2617347",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2617347/",
+     "Year Built": "2018",
+     "Total Heated SqFt": "2498",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2513220",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2513220/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2547",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2526943",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2526943/",
+     "Year Built": "2021",
+     "Total Heated SqFt": "2467",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620137",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620137/",
+     "Year Built": "2017",
+     "Total Heated SqFt": "2068",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618187",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618187/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "2506",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622607",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622607/",
+     "Year Built": "2017",
+     "Total Heated SqFt": "2323",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624919",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624919/",
+     "Year Built": "2021",
+     "Total Heated SqFt": "1829",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2616094",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2616094/",
+     "Year Built": "2005",
+     "Total Heated SqFt": "2252",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623074",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623074/",
+     "Year Built": "2008",
+     "Total Heated SqFt": "2322",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2617115",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2617115/",
+     "Year Built": "2006",
+     "Total Heated SqFt": "2167",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618254",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618254/",
+     "Year Built": null,
+     "Total Heated SqFt": null,
+     "Property Type": "Land",
+     "Status": "ACTIVE"
+    }
+   ]
+  },
+  "waterbridge": {
+   "search": [
+    "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Waterbridge&type=all&list_price_min=all&list_price_max=all&area_min=all&beds_min=all&baths_min=all"
+   ],
+   "props": [
+    {
+     "MLS#": "2620084",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620084/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "3573",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2613216",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2613216/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "3489",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621705",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621705/",
+     "Year Built": "2016",
+     "Total Heated SqFt": "4795",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621701",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621701/",
+     "Year Built": "2017",
+     "Total Heated SqFt": "3939",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622082",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622082/",
+     "Year Built": "2024",
+     "Total Heated SqFt": "3577",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622625",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622625/",
+     "Year Built": "2024",
+     "Total Heated SqFt": "2815",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2613739",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2613739/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "3407",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621608",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621608/",
+     "Year Built": "2024",
+     "Total Heated SqFt": "3250",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2617437",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2617437/",
+     "Year Built": "2025",
+     "Total Heated SqFt": "3329",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2613187",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2613187/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "3820",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2617230",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2617230/",
+     "Year Built": "2014",
+     "Total Heated SqFt": "3939",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618849",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618849/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "3086",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2603569",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2603569/",
+     "Year Built": "2017",
+     "Total Heated SqFt": "3482",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621941",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621941/",
+     "Year Built": "2024",
+     "Total Heated SqFt": "2430",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621149",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621149/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2244",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2617778",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2617778/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "2815",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621787",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621787/",
+     "Year Built": "2025",
+     "Total Heated SqFt": "3128",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2617179",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2617179/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "2643",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622940",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622940/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "2435",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623682",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623682/",
+     "Year Built": "2024",
+     "Total Heated SqFt": "3126",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623375",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623375/",
+     "Year Built": "2022",
+     "Total Heated SqFt": "2643",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2615470",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615470/",
+     "Year Built": "2019",
+     "Total Heated SqFt": "1931",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2607879",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2607879/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "1868",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619543",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619543/",
+     "Year Built": "2024",
+     "Total Heated SqFt": "2361",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2604799",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2604799/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "1867",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2615840",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615840/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "2361",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2602550",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2602550/",
+     "Year Built": "2025",
+     "Total Heated SqFt": "1867",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624703",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624703/",
+     "Year Built": null,
+     "Total Heated SqFt": null,
+     "Property Type": "Land",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623269",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623269/",
+     "Year Built": null,
+     "Total Heated SqFt": null,
+     "Property Type": "Land",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619985",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619985/",
+     "Year Built": null,
+     "Total Heated SqFt": null,
+     "Property Type": "Land",
+     "Status": "ACTIVE"
+    }
+   ]
+  },
+  "grande-dunes": {
+   "search": [
+    "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Grande+Dunes+-+Bal+Harbor&neighborhood=Grande+Dunes+-+Villa+Venezia&neighborhood=Grande+Dunes+-+Promenade&neighborhood=Grande+Dunes+-+North+Village&neighborhood=Grande+Dunes+-+Tuscany+Village&neighborhood=Grande+Dunes+-+Riviera+Village&neighborhood=Grande+Dunes+-+Capri+Village&type=all&list_price_min=all&list_price_max=all&area_min=all&beds_min=all&baths_min=all",
+    "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Grande+Dunes+-+Bal+Harbor&neighborhood=Grande+Dunes+-+Villa+Venezia&neighborhood=Grande+Dunes+-+Promenade&neighborhood=Grande+Dunes+-+North+Village&neighborhood=Grande+Dunes+-+Tuscany+Village&neighborhood=Grande+Dunes+-+Riviera+Village&neighborhood=Grande+Dunes+-+Capri+Village&type=all&list_price_min=all&list_price_max=all&area_min=all&beds_min=all&baths_min=all&page=2"
+   ],
+   "props": [
+    {
+     "MLS#": "2526317",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2526317/",
+     "Year Built": "2007",
+     "Total Heated SqFt": "3258",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2609339",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2609339/",
+     "Year Built": "2027",
+     "Total Heated SqFt": "4694",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619575",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619575/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "4250",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623158",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623158/",
+     "Year Built": "2004",
+     "Total Heated SqFt": "5956",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2603205",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2603205/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "5485",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620718",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620718/",
+     "Year Built": "2025",
+     "Total Heated SqFt": "3509",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2615383",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615383/",
+     "Year Built": "2005",
+     "Total Heated SqFt": "4754",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624578",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624578/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2911",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2615905",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615905/",
+     "Year Built": "2004",
+     "Total Heated SqFt": "3254",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2616566",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2616566/",
+     "Year Built": "2007",
+     "Total Heated SqFt": "3611",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2611300",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2611300/",
+     "Year Built": "2007",
+     "Total Heated SqFt": "3505",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2607360",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2607360/",
+     "Year Built": "2017",
+     "Total Heated SqFt": "2251",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2611144",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2611144/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2528",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2611138",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2611138/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2197",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2611152",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2611152/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2177",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2611141",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2611141/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2106",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623041",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623041/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2466",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2612363",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2612363/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2466",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2612250",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2612250/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2466",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2611002",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2611002/",
+     "Year Built": "2024",
+     "Total Heated SqFt": "3016",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2613258",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2613258/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2466",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2613270",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2613270/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2466",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621299",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621299/",
+     "Year Built": "2024",
+     "Total Heated SqFt": "2928",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624512",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624512/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2626",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623241",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623241/",
+     "Year Built": "2025",
+     "Total Heated SqFt": "2626",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2612809",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2612809/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "1513",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623035",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623035/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2319",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2613381",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2613381/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2319",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623032",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623032/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2180",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624705",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624705/",
+     "Year Built": "2025",
+     "Total Heated SqFt": "1987",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618065",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618065/",
+     "Year Built": "2025",
+     "Total Heated SqFt": "2180",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622763",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622763/",
+     "Year Built": "2025",
+     "Total Heated SqFt": "2180",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622912",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622912/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2626",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622909",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622909/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "3010",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622904",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622904/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2626",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622906",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622906/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2739",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618062",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618062/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "1601",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618058",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618058/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2860",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618063",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618063/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "1601",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624502",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624502/",
+     "Year Built": "2025",
+     "Total Heated SqFt": "2059",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    }
+   ]
+  },
+  "the-farm": {
+   "search": [
+    "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Carolina+Forest+-+The+Farm&neighborhood=Carolina+Forest-The+Farm-Brookberry&type=all&list_price_min=all&list_price_max=all&area_min=all&beds_min=all&baths_min=all"
+   ],
+   "props": [
+    {
+     "MLS#": "2611928",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2611928/",
+     "Year Built": "2006",
+     "Total Heated SqFt": "3202",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620680",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620680/",
+     "Year Built": "2017",
+     "Total Heated SqFt": "3224",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622821",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622821/",
+     "Year Built": "2016",
+     "Total Heated SqFt": "2563",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2609840",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2609840/",
+     "Year Built": "2017",
+     "Total Heated SqFt": "2338",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624198",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624198/",
+     "Year Built": "2008",
+     "Total Heated SqFt": "2720",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618245",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618245/",
+     "Year Built": "2018",
+     "Total Heated SqFt": "2402",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2616877",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2616877/",
+     "Year Built": "2006",
+     "Total Heated SqFt": "2137",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621312",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621312/",
+     "Year Built": "2018",
+     "Total Heated SqFt": "1815",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621182",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621182/",
+     "Year Built": "2008",
+     "Total Heated SqFt": "2160",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2615405",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615405/",
+     "Year Built": "2005",
+     "Total Heated SqFt": "1623",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622232",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622232/",
+     "Year Built": "2005",
+     "Total Heated SqFt": "2328",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621757",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621757/",
+     "Year Built": "2005",
+     "Total Heated SqFt": "1510",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624617",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624617/",
+     "Year Built": "2005",
+     "Total Heated SqFt": "1545",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623710",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623710/",
+     "Year Built": "2005",
+     "Total Heated SqFt": "1204",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2600097",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2600097/",
+     "Year Built": "2005",
+     "Total Heated SqFt": "1600",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    }
+   ]
+  },
+  "plantation-lakes": {
+   "search": [
+    "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Plantation+Lakes&neighborhood=Plantation+Lakes+-+CF&type=all&list_price_min=all&list_price_max=all&area_min=all&beds_min=all&baths_min=all"
+   ],
+   "props": [
+    {
+     "MLS#": "2624356",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624356/",
+     "Year Built": "2007",
+     "Total Heated SqFt": "3866",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620139",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620139/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "4730",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621920",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621920/",
+     "Year Built": "2008",
+     "Total Heated SqFt": "3628",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2617526",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2617526/",
+     "Year Built": "2005",
+     "Total Heated SqFt": "4278",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620340",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620340/",
+     "Year Built": "2014",
+     "Total Heated SqFt": "3707",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624626",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624626/",
+     "Year Built": "2007",
+     "Total Heated SqFt": "3385",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2608148",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2608148/",
+     "Year Built": "2005",
+     "Total Heated SqFt": "3650",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624753",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624753/",
+     "Year Built": "2012",
+     "Total Heated SqFt": "3254",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620086",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620086/",
+     "Year Built": "2013",
+     "Total Heated SqFt": "3300",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619686",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619686/",
+     "Year Built": "2006",
+     "Total Heated SqFt": "3457",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622820",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622820/",
+     "Year Built": "2003",
+     "Total Heated SqFt": "3310",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624289",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624289/",
+     "Year Built": "2007",
+     "Total Heated SqFt": "2675",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2616727",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2616727/",
+     "Year Built": "2013",
+     "Total Heated SqFt": "2450",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2617456",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2617456/",
+     "Year Built": "2007",
+     "Total Heated SqFt": "3050",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624764",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624764/",
+     "Year Built": "2006",
+     "Total Heated SqFt": "2895",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2617183",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2617183/",
+     "Year Built": null,
+     "Total Heated SqFt": null,
+     "Property Type": "Land",
+     "Status": "ACTIVE"
+    }
+   ]
+  },
+  "berkshire-forest": {
+   "search": [
+    "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Berkshire+Forest-Carolina+Forest&neighborhood=Hawthorne+-+Berkshire+Forest&type=all&list_price_min=all&list_price_max=all&area_min=all&beds_min=all&baths_min=all"
+   ],
+   "props": [
+    {
+     "MLS#": "2624222",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624222/",
+     "Year Built": "2020",
+     "Total Heated SqFt": "3250",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2615908",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615908/",
+     "Year Built": "2005",
+     "Total Heated SqFt": "2986",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2612177",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2612177/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "3205",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2615736",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615736/",
+     "Year Built": "2011",
+     "Total Heated SqFt": "2718",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623112",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623112/",
+     "Year Built": "2014",
+     "Total Heated SqFt": "3360",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2603833",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2603833/",
+     "Year Built": "2011",
+     "Total Heated SqFt": "3252",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2613078",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2613078/",
+     "Year Built": "2016",
+     "Total Heated SqFt": "3077",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622478",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622478/",
+     "Year Built": "2014",
+     "Total Heated SqFt": "2396",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624912",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624912/",
+     "Year Built": "2015",
+     "Total Heated SqFt": "2432",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2607727",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2607727/",
+     "Year Built": "2010",
+     "Total Heated SqFt": "2354",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624510",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624510/",
+     "Year Built": "2005",
+     "Total Heated SqFt": "1720",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618591",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618591/",
+     "Year Built": "2009",
+     "Total Heated SqFt": "2267",
+     "Property Type": "Detached",
+     "Status": "ACTIVE UNDER CONTRACT"
+    },
+    {
+     "MLS#": "2619290",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619290/",
+     "Year Built": "2008",
+     "Total Heated SqFt": "1972",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623674",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623674/",
+     "Year Built": "2009",
+     "Total Heated SqFt": "1840",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2521327",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2521327/",
+     "Year Built": "2022",
+     "Total Heated SqFt": "1919",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2615485",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615485/",
+     "Year Built": "2011",
+     "Total Heated SqFt": "2392",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622723",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622723/",
+     "Year Built": "2013",
+     "Total Heated SqFt": "2392",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2612659",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2612659/",
+     "Year Built": "2017",
+     "Total Heated SqFt": "2363",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622563",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622563/",
+     "Year Built": "2008",
+     "Total Heated SqFt": "2001",
+     "Property Type": "Condominium",
+     "Status": "ACTIVE"
+    }
+   ]
+  },
+  "pine-lakes": {
+   "search": [
+    "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=The+Preserve+at+Pine+Lakes&neighborhood=Pine+Lakes&type=all&list_price_min=all&list_price_max=all&area_min=all&beds_min=all&baths_min=all"
+   ],
+   "props": [
+    {
+     "MLS#": "2619701",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619701/",
+     "Year Built": "2015",
+     "Total Heated SqFt": "5845",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2529749",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2529749/",
+     "Year Built": "2016",
+     "Total Heated SqFt": "3521",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622128",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622128/",
+     "Year Built": "1961",
+     "Total Heated SqFt": "3400",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624074",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624074/",
+     "Year Built": "1969",
+     "Total Heated SqFt": "3123",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623977",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623977/",
+     "Year Built": "1977",
+     "Total Heated SqFt": "2559",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619121",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619121/",
+     "Year Built": "2015",
+     "Total Heated SqFt": "2326",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2604354",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2604354/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "2705",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623263",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623263/",
+     "Year Built": "2022",
+     "Total Heated SqFt": "2717",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620686",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620686/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "2028",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2615311",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615311/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "2449",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621305",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621305/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "2148",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619880",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619880/",
+     "Year Built": "2022",
+     "Total Heated SqFt": "2148",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2604133",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2604133/",
+     "Year Built": "2022",
+     "Total Heated SqFt": "2740",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619164",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619164/",
+     "Year Built": "2022",
+     "Total Heated SqFt": "2390",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2617396",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2617396/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "1787",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619426",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619426/",
+     "Year Built": "2022",
+     "Total Heated SqFt": "1801",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621633",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621633/",
+     "Year Built": "2022",
+     "Total Heated SqFt": "1804",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2609089",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2609089/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "1804",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624469",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624469/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "2043",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    }
+   ]
+  },
+  "forestbrook-estates": {
+   "search": [
+    "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Forestbrook+Estates&neighborhood=Forestbrook+Estates+Townhomes&type=all&list_price_min=all&list_price_max=all&area_min=all&beds_min=all&baths_min=all"
+   ],
+   "props": [
+    {
+     "MLS#": "2612019",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2612019/",
+     "Year Built": "2021",
+     "Total Heated SqFt": "2988",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2621935",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2621935/",
+     "Year Built": "2018",
+     "Total Heated SqFt": "2656",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2617572",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2617572/",
+     "Year Built": "2022",
+     "Total Heated SqFt": "2471",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2617507",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2617507/",
+     "Year Built": "2021",
+     "Total Heated SqFt": "2012",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622560",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622560/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "2345",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2613076",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2613076/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "2345",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619794",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619794/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "1773",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618800",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618800/",
+     "Year Built": "2023",
+     "Total Heated SqFt": "1903",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620665",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620665/",
+     "Year Built": "2024",
+     "Total Heated SqFt": "1437",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623003",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623003/",
+     "Year Built": "2024",
+     "Total Heated SqFt": "1430",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    }
+   ]
+  },
+  "market-common": {
+   "search": [
+    "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Market+Common%2C+The&neighborhood=The+Market+Common&neighborhood=Market+Common+-+Market+View&neighborhood=The+Reserve+-+Market+Common&type=all&list_price_min=all&list_price_max=all&area_min=all&beds_min=all&baths_min=all"
+   ],
+   "props": [
+    {
+     "MLS#": "2616737",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2616737/",
+     "Year Built": "2027",
+     "Total Heated SqFt": "2701",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2529462",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2529462/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2640",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE UNDER CONTRACT"
+    },
+    {
+     "MLS#": "2623288",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623288/",
+     "Year Built": "2009",
+     "Total Heated SqFt": "2018",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2529465",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2529465/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "1713",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618169",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618169/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "1713",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618167",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618167/",
+     "Year Built": "2026",
+     "Total Heated SqFt": "1713",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623360",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623360/",
+     "Year Built": "2016",
+     "Total Heated SqFt": "1726",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619948",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619948/",
+     "Year Built": "2015",
+     "Total Heated SqFt": "1764",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619547",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619547/",
+     "Year Built": "2007",
+     "Total Heated SqFt": "1344",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623349",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623349/",
+     "Year Built": "2008",
+     "Total Heated SqFt": "1616",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2600183",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2600183/",
+     "Year Built": "2013",
+     "Total Heated SqFt": "1383",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623900",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623900/",
+     "Year Built": "2027",
+     "Total Heated SqFt": "1347",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2615344",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615344/",
+     "Year Built": "2007",
+     "Total Heated SqFt": "1200",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623903",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623903/",
+     "Year Built": "2027",
+     "Total Heated SqFt": "1347",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624402",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624402/",
+     "Year Built": "2007",
+     "Total Heated SqFt": "1184",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2617141",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2617141/",
+     "Year Built": "1954",
+     "Total Heated SqFt": "10000",
+     "Property Type": "Industrial",
+     "Status": "ACTIVE"
+    }
+   ]
+  },
+  "deerfield": {
+   "search": [
+    "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Deerfield&neighborhood=Deerfield+Links&type=all&list_price_min=all&list_price_max=all&area_min=all&beds_min=all&baths_min=all"
+   ],
+   "props": [
+    {
+     "MLS#": "1902797",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/1902797/",
+     "Year Built": null,
+     "Total Heated SqFt": null,
+     "Property Type": "Land",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2515256",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2515256/",
+     "Year Built": null,
+     "Total Heated SqFt": null,
+     "Property Type": "Land",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2609804",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2609804/",
+     "Year Built": "1979",
+     "Total Heated SqFt": "4000",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624742",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624742/",
+     "Year Built": "1981",
+     "Total Heated SqFt": "1991",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620207",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620207/",
+     "Year Built": "1989",
+     "Total Heated SqFt": "1775",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622441",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622441/",
+     "Year Built": "1985",
+     "Total Heated SqFt": "2100",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620882",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620882/",
+     "Year Built": "1975",
+     "Total Heated SqFt": "2250",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2615409",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615409/",
+     "Year Built": "1995",
+     "Total Heated SqFt": "1567",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2515243",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2515243/",
+     "Year Built": null,
+     "Total Heated SqFt": null,
+     "Property Type": "Land",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619735",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619735/",
+     "Year Built": "2006",
+     "Total Heated SqFt": "1436",
+     "Property Type": "Semi-Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618168",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618168/",
+     "Year Built": "2006",
+     "Total Heated SqFt": "1369",
+     "Property Type": "Semi-Detached",
+     "Status": "ACTIVE"
+    }
+   ]
+  },
+  "surfside-beach": {
+   "search": "no-hoa-lots.json PIN match",
+   "props": [
+    {
+     "mls": "2624451",
+     "Year Built": "2025",
+     "Total Heated SqFt": "3224",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "North Garden City"
+    },
+    {
+     "mls": "2609283",
+     "Year Built": "2005",
+     "Total Heated SqFt": "2577",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Bella Vista II"
+    },
+    {
+     "mls": "2610079",
+     "Year Built": "1995",
+     "Total Heated SqFt": "2382",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2529895",
+     "Year Built": "2026",
+     "Total Heated SqFt": "2006",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2615144",
+     "Year Built": "2016",
+     "Total Heated SqFt": "2350",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "North Garden City"
+    },
+    {
+     "mls": "2613842",
+     "Year Built": "2011",
+     "Total Heated SqFt": "2000",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2614950",
+     "Year Built": "1972",
+     "Total Heated SqFt": "2723",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Ocean Terrace"
+    },
+    {
+     "mls": "2618488",
+     "Year Built": "2022",
+     "Total Heated SqFt": "3163",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Lakewood"
+    },
+    {
+     "mls": "2625038",
+     "Year Built": "2003",
+     "Total Heated SqFt": "1938",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Myrtle Oaks"
+    },
+    {
+     "mls": "2613639",
+     "Year Built": "2026",
+     "Total Heated SqFt": "1867",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Sparrow"
+    },
+    {
+     "mls": "2622739",
+     "Year Built": "1974",
+     "Total Heated SqFt": "1714",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Lakewood Terrace"
+    },
+    {
+     "mls": "2621666",
+     "Year Built": "1996",
+     "Total Heated SqFt": "2327",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2612225",
+     "Year Built": "2011",
+     "Total Heated SqFt": "2372",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Harbor Lights"
+    },
+    {
+     "mls": "2624416",
+     "Year Built": "1997",
+     "Total Heated SqFt": "1700",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Lakewood Terrace"
+    },
+    {
+     "mls": "2616419",
+     "Year Built": "2009",
+     "Total Heated SqFt": "1440",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2622968",
+     "Year Built": "1962",
+     "Total Heated SqFt": "2000",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Floral Lake"
+    },
+    {
+     "mls": "2615391",
+     "Year Built": "2002",
+     "Total Heated SqFt": "2025",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Ocean Oaks Surfside"
+    },
+    {
+     "mls": "2605991",
+     "Year Built": "1965",
+     "Total Heated SqFt": "1800",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Ocean Pine (Surfside Beach)"
+    },
+    {
+     "mls": "2624548",
+     "Year Built": "2000",
+     "Total Heated SqFt": "1400",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    },
+    {
+     "mls": "2619703",
+     "Year Built": "2004",
+     "Total Heated SqFt": "2323",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Ocean Breezes"
+    },
+    {
+     "mls": "2613757",
+     "Year Built": "2000",
+     "Total Heated SqFt": "1574",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Camellia Park"
+    },
+    {
+     "mls": "2613303",
+     "Year Built": "2006",
+     "Total Heated SqFt": "1751",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "The Palms"
+    },
+    {
+     "mls": "2624547",
+     "Year Built": "1971",
+     "Total Heated SqFt": "1741",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Lakewood Terrace"
+    },
+    {
+     "mls": "2616131",
+     "Year Built": "1982",
+     "Total Heated SqFt": "1543",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Lakewood"
+    },
+    {
+     "mls": "2619576",
+     "Year Built": "1960",
+     "Total Heated SqFt": "1496",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Ocean Terrace"
+    },
+    {
+     "mls": "2618075",
+     "Year Built": "1976",
+     "Total Heated SqFt": "1400",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Ocean Terrace"
+    },
+    {
+     "mls": "2623586",
+     "Year Built": "1971",
+     "Total Heated SqFt": "1750",
+     "Property Type": "Detached",
+     "Status": "ACTIVE",
+     "Neighborhood": "Not within a Subdivision"
+    }
+   ]
+  },
+  "prince-creek": {
+   "search": [
+    "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Course+Club+Villas+at+Prince+Creek&neighborhood=Johns+Bay+%40+Prince+Creek&neighborhood=Prince+Creek+-+Highwood&neighborhood=Prince+Creek+-+The+Garden+Homes+at+Stonegate&neighborhood=Prince+Creek+West+-+Creekhaven&type=all&list_price_min=all&list_price_max=all&area_min=all&beds_min=all&baths_min=all"
+   ],
+   "props": [
+    {
+     "MLS#": "2622279",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622279/",
+     "Year Built": "2007",
+     "Total Heated SqFt": "2642",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2620107",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620107/",
+     "Year Built": "2008",
+     "Total Heated SqFt": "2801",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2623138",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2623138/",
+     "Year Built": "2008",
+     "Total Heated SqFt": "2212",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2624083",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2624083/",
+     "Year Built": "2012",
+     "Total Heated SqFt": "2752",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619762",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619762/",
+     "Year Built": "2015",
+     "Total Heated SqFt": "1956",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2622781",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2622781/",
+     "Year Built": "2012",
+     "Total Heated SqFt": "2038",
+     "Property Type": "Detached",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2619515",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2619515/",
+     "Year Built": "2007",
+     "Total Heated SqFt": "1571",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    },
+    {
+     "MLS#": "2618174",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618174/",
+     "Year Built": "2024",
+     "Total Heated SqFt": "1634",
+     "Property Type": "Townhouse",
+     "Status": "ACTIVE"
+    }
+   ]
+  }
+ }
+}

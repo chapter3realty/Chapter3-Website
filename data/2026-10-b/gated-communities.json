@@ -1,0 +1,889 @@
+{
+ "page": "/buyers/gated-communities/",
+ "ledger": "batches/2026-10-b/facts/gated-communities-facts.md",
+ "as_of": "2026-10-13",
+ "notes": [
+  "Every value points to a ledger row; use only rows the verifier marks verified.",
+  "Fees are from listings for sale on 2026-10-13 (listing sites, not a primary source).",
+  "age_55_plus is null where no age rule was read; it does not mean the community has no age rule.",
+  "lat and lon: the average position of the community's home address points (Horry) or home parcel centers (Georgetown); for Wachesaw Plantation and Willbrook Plantation the Census geocode of the start address.",
+  "beach: minutes by car without traffic (OSRM) to the nearest public beach access with car parking (S.C. DES layer); minutes over 10 rounded to the nearest 5."
+ ],
+ "not_gated_by_listings": [
+  {
+   "name": "Wild Wing Plantation",
+   "row": 35
+  },
+  {
+   "name": "Del Webb North Myrtle Beach",
+   "row": 36
+  },
+  {
+   "name": "Plantation Lakes",
+   "row": 37
+  },
+  {
+   "name": "Del Webb at Grande Dunes",
+   "row": 38
+  }
+ ],
+ "communities": [
+  {
+   "name": "Barefoot Resort (gated neighborhoods: Dye Estates, Leatherleaf, Oak Pointe, and five townhome or condo neighborhoods)",
+   "area": "North Myrtle Beach",
+   "gate": {
+    "kind": "staffed guardhouse at Dye Estates (association's site); other gated neighborhoods: kind not stated",
+    "coverage": "some neighborhoods only",
+    "row": 9,
+    "basis": "association's own site (rows 8, 9)"
+   },
+   "fee": {
+    "monthly_low": 385,
+    "monthly_high": 398,
+    "basis": "listings for sale 2026-10-13",
+    "row": 33,
+    "note": "Leatherleaf listings only"
+   },
+   "price": {
+    "by_neighborhood": {
+     "Dye Estates": {
+      "median": 1925854.29,
+      "n_sales": 3,
+      "low": 1400000.0,
+      "high": 2525000.0,
+      "q1": null,
+      "q3": null,
+      "period": "2025-10-01 to 2026-09-30",
+      "basis": "Horry County deed records (AcclaimWeb)",
+      "row": 44
+     },
+     "Leatherleaf": {
+      "median": 845000.0,
+      "n_sales": 5,
+      "low": 700000.0,
+      "high": 975000.0,
+      "q1": 840000.0,
+      "q3": 960000.0,
+      "period": "2025-10-01 to 2026-09-30",
+      "basis": "Horry County deed records (AcclaimWeb)",
+      "row": 45
+     },
+     "Oak Pointe": null
+    }
+   },
+   "age_55_plus": null,
+   "golf": {
+    "value": true,
+    "row": 10,
+    "basis": "association's site: four golf courses"
+   },
+   "beach": {
+    "Dye Estates": {
+     "minutes": 8,
+     "miles": 2.4,
+     "access": "NORTH MYRTLE BEACH 2",
+     "start": "2112 SANDERLING DR",
+     "row": 61
+    },
+    "Leatherleaf": {
+     "minutes": 10,
+     "miles": 3.6,
+     "access": "NORTH MYRTLE BEACH 2",
+     "start": "5418 PHEASANT DR",
+     "row": 62
+    }
+   },
+   "lat": 33.80788,
+   "lon": -78.7403
+  },
+  {
+   "name": "Grande Dunes (gated sections)",
+   "area": "Myrtle Beach",
+   "gate": {
+    "kind": "staffed 24 hours (builder, Cascadia section); other sections: listings mark gated, kind not stated",
+    "coverage": "some sections only: Calais, Palermo, Tuscany Village, Villa Venezia, Cascadia; Members Club and Seville mixed; Living Dunes and Siena Park not marked",
+    "row": 11,
+    "basis": "builder's page (row 11) and listings (row 34)"
+   },
+   "fee": {
+    "monthly_low": 199,
+    "monthly_high": 375,
+    "basis": "listings for sale 2026-10-13",
+    "row": 34,
+    "note": "listings in the sections read; varies by section"
+   },
+   "price": {
+    "median": 1501500.0,
+    "n_sales": 11,
+    "low": 743000.0,
+    "high": 2590000.0,
+    "q1": 1242500.0,
+    "q3": 1800000.0,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Horry County deed records (AcclaimWeb)",
+    "row": 46,
+    "note": "Calais, Palermo and Villa Venezia combined; Cascadia has no resale (row 12)"
+   },
+   "age_55_plus": null,
+   "golf": {
+    "value": true,
+    "row": 11,
+    "basis": "builder: golf course views; listings 10 of 18 (row 39)"
+   },
+   "beach": {
+    "minutes": 10,
+    "miles": 3.7,
+    "access": "MYRTLE BEACH 135",
+    "start": "9367 VENEZIA CIR",
+    "row": 63
+   },
+   "lat": 33.75879,
+   "lon": -78.82911
+  },
+  {
+   "name": "Litchfield by the Sea",
+   "area": "Pawleys Island (Litchfield)",
+   "gate": {
+    "kind": "staffed: main gate 24/7, vendor gate 6 a.m. to 6 p.m., River Club gate 6 a.m. to 10 p.m.",
+    "coverage": "whole community (association: private, gated community)",
+    "row": 6,
+    "basis": "association's own guide (rows 4 to 7)"
+   },
+   "fee": null,
+   "price": null,
+   "age_55_plus": null,
+   "golf": null,
+   "beach": null,
+   "lat": null,
+   "lon": null
+  },
+  {
+   "name": "Myrtle Trace",
+   "area": "Conway",
+   "gate": {
+    "kind": "gates at the back entrance only; front entrance not gated",
+    "coverage": "back entrance only",
+    "row": 13,
+    "basis": "HOA gates policy (verified 2026-10-a row 16)"
+   },
+   "fee": {
+    "monthly_low": 95,
+    "monthly_high": 95,
+    "basis": "HOA dues from January 1, 2026 (batch 2026-10-a myrtle-trace ledger row 30, verified)",
+    "row": null
+   },
+   "price": {
+    "median": 300000,
+    "n_sales": 35,
+    "low": 160000,
+    "high": 394900,
+    "q1": 250000,
+    "q3": 326970,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Horry County deed records (verified 2026-10-a row 81)",
+    "row": 51
+   },
+   "age_55_plus": {
+    "value": true,
+    "row": 13,
+    "basis": "batch 2026-10-a"
+   },
+   "golf": null,
+   "beach": {
+    "minutes": 15,
+    "miles": 9.8,
+    "access": "MYRTLE BEACH 40",
+    "start": "101 Myrtle Trace Dr",
+    "row": 76
+   },
+   "lat": 33.77765,
+   "lon": -78.99495
+  },
+  {
+   "name": "Seasons at Prince Creek West",
+   "area": "Murrells Inlet",
+   "gate": {
+    "kind": "call box at the main gate (listings); guard part of the day per two 2025 listings, hours not to be published",
+    "coverage": "main entrance on TPC Blvd; second entrance residents only (listings)",
+    "row": 14,
+    "basis": "listings (verified 2026-10-a rows 92 to 95)"
+   },
+   "fee": {
+    "monthly_low": 324,
+    "monthly_high": 342,
+    "basis": "listings; $342 the common figure (batch 2026-10-a seasons ledger row 86, marked wrong on scope and range; its verifier says $342 as the common figure stands)",
+    "row": null
+   },
+   "price": {
+    "median": 499000,
+    "n_sales": 19,
+    "low": 380000,
+    "high": 580000,
+    "q1": 455000,
+    "q3": 532500,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Horry County deed records (verified 2026-10-a row 73)",
+    "row": 51
+   },
+   "age_55_plus": {
+    "value": true,
+    "row": 14,
+    "basis": "batch 2026-10-a"
+   },
+   "golf": null,
+   "beach": {
+    "minutes": 10,
+    "miles": 6.0,
+    "access": "Atlantic Ave boardwalk, Garden City",
+    "start": "130 Grand Cypress Way",
+    "row": 76
+   },
+   "lat": 33.594,
+   "lon": -79.06979
+  },
+  {
+   "name": "Seaside Plantation",
+   "area": "North Myrtle Beach",
+   "gate": {
+    "kind": null,
+    "coverage": "not stated",
+    "row": 17,
+    "basis": "recorded gate access rules (row 15) and listings (row 17)"
+   },
+   "fee": {
+    "monthly_low": 206,
+    "monthly_high": 208,
+    "basis": "listings for sale 2026-10-13",
+    "row": 17
+   },
+   "price": {
+    "median": 738500.0,
+    "n_sales": 6,
+    "low": 650000.0,
+    "high": 885000.0,
+    "q1": 721750.0,
+    "q3": 793875.0,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Horry County deed records (AcclaimWeb)",
+    "row": 40
+   },
+   "age_55_plus": null,
+   "golf": {
+    "value": false,
+    "row": 39,
+    "basis": "0 of 3 listings mark golf"
+   },
+   "beach": {
+    "minutes": 2,
+    "miles": 0.6,
+    "access": "NORTH MYRTLE BEACH 76",
+    "start": "504 SEAFARER WAY",
+    "row": 59
+   },
+   "lat": 33.82688,
+   "lon": -78.66809
+  },
+  {
+   "name": "Bellwood Landing",
+   "area": "Murrells Inlet (Prince Creek West)",
+   "gate": {
+    "kind": "main gate on TPC Blvd (listings); kind not stated",
+    "coverage": "main gate; separate delivery and construction entrance (listings)",
+    "row": 18,
+    "basis": "recorded gate policy (row 16) and listings (row 18)"
+   },
+   "fee": {
+    "monthly_low": 157,
+    "monthly_high": 157,
+    "basis": "listings for sale 2026-10-13",
+    "row": 18
+   },
+   "price": {
+    "median": 846575.0,
+    "n_sales": 8,
+    "low": 730000.0,
+    "high": 1200000.0,
+    "q1": 753750.0,
+    "q3": 938500.0,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Horry County deed records (AcclaimWeb)",
+    "row": 41
+   },
+   "age_55_plus": null,
+   "golf": null,
+   "beach": {
+    "minutes": 15,
+    "miles": 6.5,
+    "access": "GARDEN CITY 45",
+    "start": "139 LOW COUNTRY LP",
+    "row": 60
+   },
+   "lat": 33.58221,
+   "lon": -79.0736
+  },
+  {
+   "name": "Prestwick",
+   "area": "Myrtle Beach (Highway 544, near Surfside Beach)",
+   "gate": {
+    "kind": "guarded main gate off Highway 544, side gate (listings)",
+    "coverage": "main gate and side gate",
+    "row": 19,
+    "basis": "listings"
+   },
+   "fee": {
+    "monthly_low": 185,
+    "monthly_high": 197,
+    "basis": "listings for sale 2026-10-13",
+    "row": 19
+   },
+   "price": {
+    "median": 482000.0,
+    "n_sales": 19,
+    "low": 239000.0,
+    "high": 830000.0,
+    "q1": 384500.0,
+    "q3": 609000.0,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Horry County deed records (AcclaimWeb)",
+    "row": 42
+   },
+   "age_55_plus": null,
+   "golf": {
+    "value": true,
+    "row": 39,
+    "basis": "listings 5 of 5"
+   },
+   "beach": {
+    "minutes": 7,
+    "miles": 2.9,
+    "access": "SURFSIDE BEACH 32",
+    "start": "1344 ROYAL DEVON DR",
+    "row": 57
+   },
+   "lat": 33.64245,
+   "lon": -78.95602
+  },
+  {
+   "name": "Tidewater Plantation",
+   "area": "North Myrtle Beach",
+   "gate": {
+    "kind": "guard house on Little River Neck Road (listings)",
+    "coverage": "not stated",
+    "row": 20,
+    "basis": "listings"
+   },
+   "fee": {
+    "monthly_low": 192,
+    "monthly_high": 270,
+    "basis": "listings for sale 2026-10-13",
+    "row": 20,
+    "note": "6 of 8 show $231"
+   },
+   "price": {
+    "median": 625000.0,
+    "n_sales": 24,
+    "low": 320000.0,
+    "high": 1058000.0,
+    "q1": 564062.5,
+    "q3": 681250.0,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Horry County deed records (AcclaimWeb)",
+    "row": 43,
+    "note": "houses named Tidewater Plantation; condos not included"
+   },
+   "age_55_plus": null,
+   "golf": {
+    "value": true,
+    "row": 39,
+    "basis": "listings 5 of 8"
+   },
+   "beach": {
+    "minutes": 8,
+    "miles": 3.1,
+    "access": "NORTH MYRTLE BEACH 97",
+    "start": "1200 TIDEWATER DR",
+    "row": 58
+   },
+   "lat": 33.85093,
+   "lon": -78.62229
+  },
+  {
+   "name": "Wachesaw Plantation",
+   "area": "Murrells Inlet (Georgetown County)",
+   "gate": {
+    "kind": "main guard gate off Riverwood Dr (listings)",
+    "coverage": "not stated",
+    "row": 21,
+    "basis": "listings"
+   },
+   "fee": {
+    "monthly_low": 151,
+    "monthly_high": 280,
+    "basis": "listings for sale 2026-10-13",
+    "row": 21,
+    "note": "houses; a Carriage Run cottage shows $1,099"
+   },
+   "price": null,
+   "age_55_plus": null,
+   "golf": {
+    "value": true,
+    "row": 39,
+    "basis": "listings, Wachesaw Plantation and Wachesaw East together 6 of 7"
+   },
+   "beach": {
+    "minutes": 15,
+    "miles": 5.9,
+    "access": "GARDEN CITY 45",
+    "start": "4333 HUNTERS WOOD DR",
+    "row": 71
+   },
+   "lat": 33.5608,
+   "lon": -79.0731
+  },
+  {
+   "name": "Wachesaw East",
+   "area": "Murrells Inlet (Georgetown County)",
+   "gate": {
+    "kind": "gate guard at the main entrance; back gate on Wachesaw Rd card key only (listings)",
+    "coverage": "main and back gate",
+    "row": 22,
+    "basis": "listings"
+   },
+   "fee": {
+    "monthly_low": 141,
+    "monthly_high": 149,
+    "basis": "listings for sale 2026-10-13",
+    "row": 22
+   },
+   "price": {
+    "median": 518250.0,
+    "n_sales": 16,
+    "low": 380000,
+    "high": 705000,
+    "q1": 462500.0,
+    "q3": 573750.0,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Georgetown County parcel table, last sale per house only, builder sales not removed",
+    "row": 55
+   },
+   "age_55_plus": null,
+   "golf": {
+    "value": true,
+    "row": 39,
+    "basis": "listings, with Wachesaw Plantation 6 of 7"
+   },
+   "beach": {
+    "minutes": 10,
+    "miles": 4.9,
+    "access": "GARDEN CITY 45",
+    "start": "4520 FIRETHORNE DR",
+    "row": 72
+   },
+   "lat": 33.55818,
+   "lon": -79.05881
+  },
+  {
+   "name": "The Reserve",
+   "area": "Pawleys Island (Litchfield)",
+   "gate": {
+    "kind": null,
+    "coverage": "not stated",
+    "row": 23,
+    "basis": "listings"
+   },
+   "fee": {
+    "monthly_low": 318,
+    "monthly_high": 437,
+    "basis": "listings for sale 2026-10-13",
+    "row": 23
+   },
+   "price": {
+    "median": 944042.24,
+    "n_sales": 5,
+    "low": 866277.9,
+    "high": 1855000,
+    "q1": 866277.9,
+    "q3": 1350000.0,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Georgetown County parcel table, last sale per house only, builder sales not removed",
+    "row": 56
+   },
+   "age_55_plus": null,
+   "golf": {
+    "value": true,
+    "row": 39,
+    "basis": "listings 3 of 3"
+   },
+   "beach": {
+    "minutes": 8,
+    "miles": 3.9,
+    "access": "LITCHFIELD BEACH 7",
+    "start": "545 RESERVE DR",
+    "row": 74
+   },
+   "lat": 33.49467,
+   "lon": -79.1133
+  },
+  {
+   "name": "Heritage Plantation",
+   "area": "Pawleys Island",
+   "gate": {
+    "kind": "guard gate, main gate off Kings River Rd (listings)",
+    "coverage": "not stated",
+    "row": 24,
+    "basis": "listings"
+   },
+   "fee": {
+    "monthly_low": 317,
+    "monthly_high": 332,
+    "basis": "listings for sale 2026-10-13",
+    "row": 24
+   },
+   "price": {
+    "median": 684000.0,
+    "n_sales": 22,
+    "low": 420000,
+    "high": 1200000,
+    "q1": 561250.0,
+    "q3": 786875.0,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Georgetown County parcel table, last sale per house only, builder sales not removed",
+    "row": 53
+   },
+   "age_55_plus": null,
+   "golf": {
+    "value": true,
+    "row": 39,
+    "basis": "listings 6 of 7"
+   },
+   "beach": {
+    "minutes": 10,
+    "miles": 4.1,
+    "access": "PAWLEYS ISLAND 5",
+    "start": "90 BERWICK DR",
+    "row": 69
+   },
+   "lat": 33.44215,
+   "lon": -79.16353
+  },
+  {
+   "name": "Pawleys Plantation",
+   "area": "Pawleys Island",
+   "gate": {
+    "kind": "guard gate (listings)",
+    "coverage": "not stated; 1 of 3 listings not marked",
+    "row": 25,
+    "basis": "listings"
+   },
+   "fee": {
+    "monthly_low": 144,
+    "monthly_high": 235,
+    "basis": "listings for sale 2026-10-13",
+    "row": 25
+   },
+   "price": {
+    "median": 840000,
+    "n_sales": 23,
+    "low": 485000,
+    "high": 1550000,
+    "q1": 670000.0,
+    "q3": 933150.0,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Georgetown County parcel table, last sale per house only, builder sales not removed",
+    "row": 52
+   },
+   "age_55_plus": null,
+   "golf": {
+    "value": true,
+    "row": 39,
+    "basis": "listings 3 of 3"
+   },
+   "beach": {
+    "minutes": 8,
+    "miles": 3.3,
+    "access": "PAWLEYS ISLAND 5",
+    "start": "94 CAMERON CT",
+    "row": 68
+   },
+   "lat": 33.42063,
+   "lon": -79.15293
+  },
+  {
+   "name": "Litchfield Plantation",
+   "area": "Pawleys Island",
+   "gate": {
+    "kind": "gate house at the main entrance (listings)",
+    "coverage": "not stated",
+    "row": 26,
+    "basis": "listings"
+   },
+   "fee": {
+    "monthly_low": 230,
+    "monthly_high": 275,
+    "basis": "listings for sale 2026-10-13",
+    "row": 26,
+    "note": "houses; a townhouse shows $395"
+   },
+   "price": null,
+   "age_55_plus": null,
+   "golf": {
+    "value": false,
+    "row": 39,
+    "basis": "0 of 6 listings mark golf"
+   },
+   "beach": {
+    "minutes": 8,
+    "miles": 4.3,
+    "access": "LITCHFIELD BEACH 7",
+    "start": "307 TUCKERS RD",
+    "row": 73
+   },
+   "lat": 33.47674,
+   "lon": -79.1313
+  },
+  {
+   "name": "Willbrook Plantation",
+   "area": "Pawleys Island (Litchfield)",
+   "gate": {
+    "kind": "guard gate off Willbrook Blvd (listings)",
+    "coverage": "not stated",
+    "row": 27,
+    "basis": "listings"
+   },
+   "fee": {
+    "monthly_low": 339,
+    "monthly_high": 346,
+    "basis": "listings for sale 2026-10-13",
+    "row": 27,
+    "note": "houses"
+   },
+   "price": null,
+   "age_55_plus": null,
+   "golf": {
+    "value": true,
+    "row": 39,
+    "basis": "listings 3 of 4"
+   },
+   "beach": {
+    "minutes": 9,
+    "miles": 4.2,
+    "access": "LITCHFIELD BEACH 7",
+    "start": "49 RED SQUIRREL LN",
+    "row": 75
+   },
+   "lat": 33.48206,
+   "lon": -79.13519
+  },
+  {
+   "name": "DeBordieu Colony",
+   "area": "Near Pawleys Island (Georgetown County)",
+   "gate": {
+    "kind": "guard gate on Luvan Blvd (listings)",
+    "coverage": "not stated",
+    "row": 28,
+    "basis": "listings"
+   },
+   "fee": {
+    "monthly_low": 302,
+    "monthly_high": 379,
+    "basis": "listings for sale 2026-10-13",
+    "row": 28
+   },
+   "price": {
+    "median": 1725000,
+    "n_sales": 19,
+    "low": 830000,
+    "high": 2900000,
+    "q1": 1535000.0,
+    "q3": 2215000.0,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Georgetown County parcel table, last sale per house only, builder sales not removed",
+    "row": 54
+   },
+   "age_55_plus": null,
+   "golf": {
+    "value": true,
+    "row": 39,
+    "basis": "listings 5 of 6"
+   },
+   "beach": {
+    "minutes": 20,
+    "miles": 11.0,
+    "access": "PAWLEYS ISLAND 5",
+    "start": "280 SANDERLING AVE",
+    "row": 70
+   },
+   "lat": 33.3744,
+   "lon": -79.17446
+  },
+  {
+   "name": "Covington Lake East",
+   "area": "Carolina Forest",
+   "gate": {
+    "kind": null,
+    "coverage": "not stated",
+    "row": 29,
+    "basis": "listings"
+   },
+   "fee": {
+    "monthly_low": 80,
+    "monthly_high": 95,
+    "basis": "listings for sale 2026-10-13",
+    "row": 29
+   },
+   "price": {
+    "median": 570000.0,
+    "n_sales": 13,
+    "low": 252050.0,
+    "high": 834450.0,
+    "q1": 560000.0,
+    "q3": 625000.0,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Horry County deed records (AcclaimWeb)",
+    "row": 47
+   },
+   "age_55_plus": null,
+   "golf": {
+    "value": false,
+    "row": 39,
+    "basis": "0 of 5 listings mark golf"
+   },
+   "beach": {
+    "minutes": 15,
+    "miles": 8.7,
+    "access": "MYRTLE BEACH 40",
+    "start": "805 CELENE CT",
+    "row": 64
+   },
+   "lat": 33.75485,
+   "lon": -78.94557
+  },
+  {
+   "name": "Waterway Palms Plantation",
+   "area": "Carolina Forest",
+   "gate": {
+    "kind": "main gates with call-in to be buzzed in (one listing)",
+    "coverage": "not stated",
+    "row": 30,
+    "basis": "listings"
+   },
+   "fee": {
+    "monthly_low": 137,
+    "monthly_high": 157,
+    "basis": "listings for sale 2026-10-13",
+    "row": 30
+   },
+   "price": {
+    "median": 778000.0,
+    "n_sales": 51,
+    "low": 533000.0,
+    "high": 1875000.0,
+    "q1": 712500.0,
+    "q3": 1035000.0,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Horry County deed records (AcclaimWeb)",
+    "row": 48
+   },
+   "age_55_plus": null,
+   "golf": {
+    "value": false,
+    "row": 39,
+    "basis": "0 of 8 listings mark golf"
+   },
+   "beach": {
+    "minutes": 10,
+    "miles": 5.3,
+    "access": "MYRTLE BEACH 101",
+    "start": "7004 LEGARE PL",
+    "row": 65
+   },
+   "lat": 33.74187,
+   "lon": -78.87622
+  },
+  {
+   "name": "The Bluffs on the Waterway",
+   "area": "Carolina Forest",
+   "gate": {
+    "kind": "main gate on Royal Bluff Dr (listings); kind not stated",
+    "coverage": "not stated",
+    "row": 31,
+    "basis": "listings"
+   },
+   "fee": {
+    "monthly_low": 154,
+    "monthly_high": 308,
+    "basis": "listings for sale 2026-10-13",
+    "row": 31,
+    "note": "5 of 6 show $154"
+   },
+   "price": {
+    "median": 835000.0,
+    "n_sales": 4,
+    "low": 730000.0,
+    "high": 975000.0,
+    "q1": 805000.0,
+    "q3": 873750.0,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Horry County deed records (AcclaimWeb)",
+    "row": 49
+   },
+   "age_55_plus": null,
+   "golf": {
+    "value": false,
+    "row": 39,
+    "basis": "0 of 6 listings mark golf"
+   },
+   "beach": {
+    "minutes": 10,
+    "miles": 4.8,
+    "access": "MYRTLE BEACH 101",
+    "start": "7069 TURTLE COVE DR",
+    "row": 66
+   },
+   "lat": 33.74608,
+   "lon": -78.868
+  },
+  {
+   "name": "Indigo Bay",
+   "area": "Carolina Forest",
+   "gate": {
+    "kind": null,
+    "coverage": "shown on new homes on Indigo Bay Circle; whole community not shown",
+    "row": 32,
+    "basis": "listings"
+   },
+   "fee": {
+    "monthly_low": 127,
+    "monthly_high": 127,
+    "basis": "listings for sale 2026-10-13",
+    "row": 32
+   },
+   "price": {
+    "median": 625000.0,
+    "n_sales": 9,
+    "low": 445000.0,
+    "high": 720000.0,
+    "q1": 572500.0,
+    "q3": 655000.0,
+    "period": "2025-10-01 to 2026-09-30",
+    "basis": "Horry County deed records (AcclaimWeb)",
+    "row": 50
+   },
+   "age_55_plus": null,
+   "golf": {
+    "value": false,
+    "row": 39,
+    "basis": "0 of 5 listings mark golf"
+   },
+   "beach": {
+    "minutes": 15,
+    "miles": 6.4,
+    "access": "MYRTLE BEACH 101",
+    "start": "5027 AZUL LP",
+    "row": 67
+   },
+   "lat": 33.765,
+   "lon": -78.89373
+  }
+ ]
+}

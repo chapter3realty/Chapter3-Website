@@ -225,10 +225,23 @@ function build(spec) {
      playbook, 2026-10-11): in the hero it came before the answer and pushed the answer
      further down the first phone screen. spec.heroCta.text, when set, is one sentence
      before the button. */
-  const heroCta = `${spec.heroCta.text ? `<p ${P}>${spec.heroCta.text}</p>` : ""}<div style="margin-top:1.4rem"><a class="btn btn-brass btn-lg" href="${spec.heroCta.href}">${spec.heroCta.label}</a></div>`;
+  /* The offer band: the navy band with a large serif headline, one sentence and the large
+     button. It closes every page (spec.bottomCta) and, when spec.heroCta has a title, it is
+     also the first offer, right after the short answer (owner, 2026-10-14: "make the first CTA
+     more of a CTA"; Blog-Brain CRAFT 3: "Use the same box component as the last offer"). Both
+     come from this one function, so they look the same. The first offer's headline is a <p>
+     with the H2's style, so the page outline keeps one heading per section. */
+  const offerBand = (o, tag) => `<section style="background:var(--navy);padding:3rem 0"><div class="wrap" style="text-align:center;max-width:720px;margin:0 auto"><${tag} style="font-family:var(--serif);font-size:1.7rem;color:var(--ivory);margin-bottom:1rem">${o.title}</${tag}>${tag === "h2" || o.text ? `<p style="color:rgba(244,239,232,.75);line-height:1.7;margin-bottom:1.6rem">${o.text}</p>` : ""}<a class="btn btn-brass btn-lg" href="${o.href}">${o.label}</a></div></section>`;
+  /* spec.heroCta: false (owner, 2026-10-21): no offer under the short answer; on a page whose
+     listings strips are the offer, the page moves from the short answer into its guide. */
+  const heroBand = spec.heroCta && spec.heroCta.title ? offerBand(spec.heroCta, "p") : "";
+  const heroCta = heroBand || !spec.heroCta ? "" : `${spec.heroCta.text ? `<p ${P}>${spec.heroCta.text}</p>` : ""}<div style="margin-top:1.4rem"><a class="btn btn-brass btn-lg" href="${spec.heroCta.href}">${spec.heroCta.label}</a></div>`;
   const parts = [];
   parts.push(`<main id="main"><div class="detail-hero bg-grid"><div class="wrap"><div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="${hub.url}">${hub.name}</a><span>/</span><span style="color:var(--muted)">${spec.crumb}</span></div><p class="eyebrow" style="margin-bottom:1rem">${spec.eyebrow}</p><h1 class="detail-h1">${spec.h1}<br/><em style="font-style:italic;color:var(--brass)">${spec.h1em}</em></h1>${heroMedia}<p style="color:var(--muted);font-size:.9rem;margin-bottom:1rem">${byline}</p><p class="detail-sub">${spec.sub}</p></div></div>`);
-  parts.push(`<section style="background:var(--${saBg})"><div class="wrap"><p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">The short answer</p>${(Array.isArray(spec.shortAnswer) ? spec.shortAnswer : [spec.shortAnswer]).map(t => `<p ${P}>${t}</p>`).join("")}${heroCta}${toc}</div></section>`);
+  parts.push(`<section style="background:var(--${saBg})"><div class="wrap"><p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">The short answer</p>${(Array.isArray(spec.shortAnswer) ? spec.shortAnswer : [spec.shortAnswer]).map(t => `<p ${P}>${t}</p>`).join("")}${heroCta}${heroBand ? "" : toc}</div></section>`);
+  /* With the band after the short answer, the contents list follows the band, on the short
+     answer's background, with less space above it. */
+  if (heroBand) parts.push(heroBand + (toc ? `<section style="background:var(--${saBg});padding-top:2.5rem"><div class="wrap">${toc.replace('style="margin-top:2rem;', 'style="margin-top:0;')}</div></section>` : ""));
   for (const x of secs) parts.push(`<section style="background:var(--${x.bg})"${x.id ? ` id="${x.id}"` : ""}><div class="wrap">${x.s.h2 ? `<h2 ${H2}${x.s.toc ? ` data-toc="${String(x.s.toc).replace(/&/g, "&amp;").replace(/"/g, "&quot;")}"` : ""}>${x.s.h2}</h2>` : ""}${x.body}</div></section>`);
   const srcLinks = spec.sources.map(x => `<a href="${x.href}" ${EXT}>${x.name}</a>`).join(", ");
   /* Optional spec.afterSources: small print that belongs with the sources line, such as the
@@ -237,7 +250,7 @@ function build(spec) {
      no longer sit between the last section and the FAQ (Blog-Brain playbook, component 19). */
   const afterSources = typeof spec.afterSources === "function" ? spec.afterSources() : (spec.afterSources || "");
   parts.push(`<section style="background:var(--${faqBg})" id="${faqId}"><div class="wrap"><p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">Common questions</p><h2 ${H2}>${spec.faqTitle}</h2>${spec.faq.map(f => `<h3 ${H3}>${f.q}</h3><p ${P}>${f.a}</p>`).join("")}<p style="font-size:.78rem;color:var(--muted);line-height:1.7;max-width:760px;margin-top:1.6rem"><strong style="color:var(--navy)">Sources:</strong> ${srcLinks}. ${spec.sourcesNote || "Educational only, not legal or tax advice."}</p>${afterSources}</div></section>`);
-  parts.push(`<section style="background:var(--navy);padding:3rem 0"><div class="wrap" style="text-align:center;max-width:720px;margin:0 auto"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--ivory);margin-bottom:1rem">${spec.bottomCta.h2}</h2><p style="color:rgba(244,239,232,.75);line-height:1.7;margin-bottom:1.6rem">${spec.bottomCta.p}</p><a class="btn btn-brass btn-lg" href="${spec.bottomCta.href}">${spec.bottomCta.label}</a></div></section></main>`);
+  parts.push(offerBand({ title: spec.bottomCta.h2, text: spec.bottomCta.p, href: spec.bottomCta.href, label: spec.bottomCta.label }, "h2") + "</main>");
   const main = parts.join("");
   const out = head + main + tail;
 

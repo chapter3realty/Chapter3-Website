@@ -2210,7 +2210,14 @@ function audit() {
         for (const h of h2s)
           if (/\b(?:this page|the page|we|it|this article) (?:will not|does not|cannot|won't|can't|will never) (?:tell|do|answer|say|show)\b|what (?:this|the) page (?:will|does|can)(?:not|n't| not)\b/i.test(h))
             E(`disclaimer section "${h.slice(0, 50)}" - a section whose job is to say what the page will not do is a hedge; the disclaimer belongs in the sources line (PLAYBOOK A22)`);
-        const sectionH2 = h2s.filter(h => !/faq|frequently asked|find your property|^sources|^data sources/i.test(h) && !/\.$/.test(h));
+        /* A list of places (owner, 2026-10-14: "it counts 1. 2. 3. 4. 5. all the way to 15"): each
+         * place gets a numbered headline, "1. Georgetown: a harbor town with the lowest prices". A run
+         * of 3 or more such headlines numbered in order is one list, not section questions, so it is
+         * left out of the question count. Every other heading still counts. */
+        const entryRun = [];
+        for (const h of h2s) { const m = h.match(/^(\d{1,2})\.\s+[^:]{2,60}:\s+\S/); if (m && +m[1] === entryRun.length + 1) entryRun.push(h); }
+        const placeEntry = new Set(entryRun.length >= 3 ? entryRun : []);
+        const sectionH2 = h2s.filter(h => !placeEntry.has(h) && !/faq|frequently asked|find your property|^sources|^data sources/i.test(h) && !/\.$/.test(h));
         const qH2 = sectionH2.filter(h => /\?$/.test(h));
         if (sectionH2.length >= 3) {
           const qr = qH2.length / sectionH2.length;

@@ -1,0 +1,1694 @@
+{
+ "about": "Closed sales of detached homes (MLS property type Detached) with a closing date from 2025-10-01 to 2026-09-30, read 2026-10-13 from RE/MAX Southern Shores' public MLS site (Coastal Carolinas Association of REALTORS MLS; robots.txt names Claude-User under Allow: /). Search: /search/results/?city=all&neighborhood=<MLS neighborhood>&type=all&status=sold; each listing opened at /property/<MLS#>/ for Sold Price, Closing Date, Property Type, Neighborhood and Project/Section. Wachesaw Plantation's search returns only listings whose section is Wachesaw Plantation; Wachesaw East is its own MLS neighborhood. Litchfield by the Sea returned no listings under that name. The site's sold search may not list every closed sale; the counts are what it showed. Pending verification (round 5), ledger rows 83 to 89.",
+ "window": [
+  "2025-10-01",
+  "2026-09-30"
+ ],
+ "communities": [
+  {
+   "name": "DeBordieu Colony",
+   "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Debordieu%20Colony&type=all&status=sold&page=5",
+   "shown": 149,
+   "n": 38,
+   "median": 2000000.0,
+   "low": 830000,
+   "high": 4000000,
+   "q1": 1661250.0,
+   "q3": 2631250.0,
+   "hoa_monthly_closed": {
+    "n": 38,
+    "median": 363.0,
+    "low": 285,
+    "high": 499
+   },
+   "sales": [
+    {
+     "mls": "2518252",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2518252/",
+     "sold": "$2,200,000",
+     "close": "Oct 15, 2025",
+     "section": "Debordieu Colony",
+     "hoa": "348"
+    },
+    {
+     "mls": "2510797",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2510797/",
+     "sold": "$3,675,000",
+     "close": "Oct 24, 2025",
+     "section": "Debordieu Colony",
+     "hoa": "294"
+    },
+    {
+     "mls": "2526548",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2526548/",
+     "sold": "$1,400,000",
+     "close": "Nov 03, 2025",
+     "section": "Debordieu Colony",
+     "hoa": "367"
+    },
+    {
+     "mls": "2520215",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2520215/",
+     "sold": "$2,675,000",
+     "close": "Dec 03, 2025",
+     "section": "Debordieu Colony",
+     "hoa": "367"
+    },
+    {
+     "mls": "2525996",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2525996/",
+     "sold": "$3,025,000",
+     "close": "Dec 11, 2025",
+     "section": "Debordieu Colony",
+     "hoa": "392"
+    },
+    {
+     "mls": "2520977",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2520977/",
+     "sold": "$1,695,000",
+     "close": "Dec 19, 2025",
+     "section": "Debordieu Colony",
+     "hoa": "294"
+    },
+    {
+     "mls": "2520999",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2520999/",
+     "sold": "$830,000",
+     "close": "Dec 22, 2025",
+     "section": "Debordieu Colony",
+     "hoa": "293"
+    },
+    {
+     "mls": "2525241",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2525241/",
+     "sold": "$2,430,000",
+     "close": "Dec 23, 2025",
+     "section": "Debordieu Colony",
+     "hoa": "293"
+    },
+    {
+     "mls": "2520833",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2520833/",
+     "sold": "$2,100,000",
+     "close": "Dec 30, 2025",
+     "section": "Debordieu Colony",
+     "hoa": "285"
+    },
+    {
+     "mls": "2526049",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2526049/",
+     "sold": "$1,768,250",
+     "close": "Dec 30, 2025",
+     "section": "Debordieu Colony",
+     "hoa": "366"
+    },
+    {
+     "mls": "2524319",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2524319/",
+     "sold": "$1,630,000",
+     "close": "Jan 09, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "366"
+    },
+    {
+     "mls": "2526458",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2526458/",
+     "sold": "$1,925,000",
+     "close": "Jan 12, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "392"
+    },
+    {
+     "mls": "2527303",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2527303/",
+     "sold": "$1,750,000",
+     "close": "Jan 13, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "367"
+    },
+    {
+     "mls": "2523138",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2523138/",
+     "sold": "$2,500,000",
+     "close": "Mar 18, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "366"
+    },
+    {
+     "mls": "2528339",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2528339/",
+     "sold": "$3,500,000",
+     "close": "Mar 23, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "404"
+    },
+    {
+     "mls": "2605249",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2605249/",
+     "sold": "$1,725,000",
+     "close": "Mar 31, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "306"
+    },
+    {
+     "mls": "2605100",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2605100/",
+     "sold": "$2,500,000",
+     "close": "Apr 20, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "306"
+    },
+    {
+     "mls": "2609159",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2609159/",
+     "sold": "$3,450,000",
+     "close": "May 27, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "360"
+    },
+    {
+     "mls": "2605246",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2605246/",
+     "sold": "$2,850,000",
+     "close": "May 27, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "369"
+    },
+    {
+     "mls": "2603314",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2603314/",
+     "sold": "$2,325,000",
+     "close": "Jun 05, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "379"
+    },
+    {
+     "mls": "2607781",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2607781/",
+     "sold": "$2,000,000",
+     "close": "Jun 05, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "306"
+    },
+    {
+     "mls": "2608817",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2608817/",
+     "sold": "$1,780,000",
+     "close": "Jun 05, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "386"
+    },
+    {
+     "mls": "2512908",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2512908/",
+     "sold": "$1,700,000",
+     "close": "Jun 09, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "378"
+    },
+    {
+     "mls": "2610217",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2610217/",
+     "sold": "$3,300,000",
+     "close": "Jun 19, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "499"
+    },
+    {
+     "mls": "2528418",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2528418/",
+     "sold": "$2,000,000",
+     "close": "Jun 22, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "335"
+    },
+    {
+     "mls": "2612990",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2612990/",
+     "sold": "$2,495,000",
+     "close": "Jul 02, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "379"
+    },
+    {
+     "mls": "2524358",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2524358/",
+     "sold": "$1,600,000",
+     "close": "Jul 02, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "379"
+    },
+    {
+     "mls": "2612045",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2612045/",
+     "sold": "$2,900,000",
+     "close": "Jul 07, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "306"
+    },
+    {
+     "mls": "2609657",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2609657/",
+     "sold": "$2,300,000",
+     "close": "Jul 24, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "470"
+    },
+    {
+     "mls": "2604879",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2604879/",
+     "sold": "$1,420,000",
+     "close": "Jul 27, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "379"
+    },
+    {
+     "mls": "2610323",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2610323/",
+     "sold": "$1,385,000",
+     "close": "Jul 27, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "379"
+    },
+    {
+     "mls": "2609464",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2609464/",
+     "sold": "$1,600,000",
+     "close": "Aug 04, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "306"
+    },
+    {
+     "mls": "2605522",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2605522/",
+     "sold": "$2,850,000",
+     "close": "Aug 24, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "306"
+    },
+    {
+     "mls": "2613466",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2613466/",
+     "sold": "$4,000,000",
+     "close": "Sep 09, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "306"
+    },
+    {
+     "mls": "2616441",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2616441/",
+     "sold": "$1,650,000",
+     "close": "Sep 10, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "306"
+    },
+    {
+     "mls": "2620095",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620095/",
+     "sold": "$1,975,000",
+     "close": "Sep 11, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "306"
+    },
+    {
+     "mls": "2602667",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2602667/",
+     "sold": "$1,375,000",
+     "close": "Sep 16, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "294"
+    },
+    {
+     "mls": "2615975",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615975/",
+     "sold": "$1,650,000",
+     "close": "Sep 21, 2026",
+     "section": "Debordieu Colony",
+     "hoa": "306"
+    }
+   ]
+  },
+  {
+   "name": "Heritage Plantation",
+   "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Heritage%20Plantation&type=all&status=sold&page=3",
+   "shown": 77,
+   "n": 24,
+   "median": 709000.0,
+   "low": 420000,
+   "high": 1200000,
+   "q1": 573750.0,
+   "q3": 790375.0,
+   "hoa_monthly_closed": {
+    "n": 24,
+    "median": 331.5,
+    "low": 318,
+    "high": 354
+   },
+   "sales": [
+    {
+     "mls": "2516738",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2516738/",
+     "sold": "$1,040,000",
+     "close": "Oct 07, 2025",
+     "section": "Heritage Plantation",
+     "hoa": "338"
+    },
+    {
+     "mls": "2506981",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2506981/",
+     "sold": "$477,000",
+     "close": "Oct 10, 2025",
+     "section": "Heritage Plantation",
+     "hoa": "354"
+    },
+    {
+     "mls": "2520171",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2520171/",
+     "sold": "$730,000",
+     "close": "Oct 14, 2025",
+     "section": "Heritage Plantation",
+     "hoa": "318"
+    },
+    {
+     "mls": "2501242",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2501242/",
+     "sold": "$525,000",
+     "close": "Oct 22, 2025",
+     "section": "Heritage Plantation",
+     "hoa": "318"
+    },
+    {
+     "mls": "2523036",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2523036/",
+     "sold": "$1,200,000",
+     "close": "Nov 17, 2025",
+     "section": "Heritage Plantation",
+     "hoa": "338"
+    },
+    {
+     "mls": "2520082",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2520082/",
+     "sold": "$850,000",
+     "close": "Dec 02, 2025",
+     "section": "Heritage Plantation",
+     "hoa": "332"
+    },
+    {
+     "mls": "2522225",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2522225/",
+     "sold": "$555,000",
+     "close": "Dec 04, 2025",
+     "section": "Heritage Plantation",
+     "hoa": "332"
+    },
+    {
+     "mls": "2525461",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2525461/",
+     "sold": "$825,000",
+     "close": "Dec 10, 2025",
+     "section": "Heritage Plantation",
+     "hoa": "331"
+    },
+    {
+     "mls": "2525180",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2525180/",
+     "sold": "$750,000",
+     "close": "Dec 10, 2025",
+     "section": "Heritage Plantation",
+     "hoa": "332"
+    },
+    {
+     "mls": "2523521",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2523521/",
+     "sold": "$787,500",
+     "close": "Feb 03, 2026",
+     "section": "Heritage Plantation",
+     "hoa": "318"
+    },
+    {
+     "mls": "2600198",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2600198/",
+     "sold": "$680,000",
+     "close": "Feb 12, 2026",
+     "section": "Heritage Plantation",
+     "hoa": "320"
+    },
+    {
+     "mls": "2602639",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2602639/",
+     "sold": "$895,000",
+     "close": "Apr 01, 2026",
+     "section": "Heritage Plantation",
+     "hoa": "334"
+    },
+    {
+     "mls": "2600872",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2600872/",
+     "sold": "$420,000",
+     "close": "Apr 09, 2026",
+     "section": "Heritage Plantation",
+     "hoa": "320"
+    },
+    {
+     "mls": "2610652",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2610652/",
+     "sold": "$799,000",
+     "close": "Apr 23, 2026",
+     "section": "Heritage Plantation",
+     "hoa": "332"
+    },
+    {
+     "mls": "2525316",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2525316/",
+     "sold": "$730,000",
+     "close": "May 15, 2026",
+     "section": "Heritage Plantation",
+     "hoa": "332"
+    },
+    {
+     "mls": "2605677",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2605677/",
+     "sold": "$785,000",
+     "close": "May 20, 2026",
+     "section": "Heritage Plantation",
+     "hoa": "318"
+    },
+    {
+     "mls": "2527706",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2527706/",
+     "sold": "$649,999",
+     "close": "Jun 17, 2026",
+     "section": "Heritage Plantation",
+     "hoa": "345"
+    },
+    {
+     "mls": "2612437",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2612437/",
+     "sold": "$615,000",
+     "close": "Jun 26, 2026",
+     "section": "Heritage Plantation",
+     "hoa": "320"
+    },
+    {
+     "mls": "2608878",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2608878/",
+     "sold": "$549,900",
+     "close": "Jun 26, 2026",
+     "section": "Heritage Plantation",
+     "hoa": "320"
+    },
+    {
+     "mls": "2614725",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2614725/",
+     "sold": "$665,000",
+     "close": "Jul 28, 2026",
+     "section": "Heritage Plantation",
+     "hoa": "320"
+    },
+    {
+     "mls": "2611455",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2611455/",
+     "sold": "$688,000",
+     "close": "Aug 10, 2026",
+     "section": "Heritage Plantation",
+     "hoa": "320"
+    },
+    {
+     "mls": "2616472",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2616472/",
+     "sold": "$731,000",
+     "close": "Aug 18, 2026",
+     "section": "Heritage Plantation",
+     "hoa": "337"
+    },
+    {
+     "mls": "2618339",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618339/",
+     "sold": "$580,000",
+     "close": "Sep 03, 2026",
+     "section": "Heritage Plantation",
+     "hoa": "340"
+    },
+    {
+     "mls": "2618770",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2618770/",
+     "sold": "$520,000",
+     "close": "Sep 21, 2026",
+     "section": "Heritage Plantation",
+     "hoa": "331"
+    }
+   ]
+  },
+  {
+   "name": "Litchfield Plantation",
+   "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Litchfield%20Plantation&type=all&status=sold&page=2",
+   "shown": 43,
+   "n": 8,
+   "median": 1015000.0,
+   "low": 800000,
+   "high": 1800000,
+   "q1": 895000.0,
+   "q3": 1559250.0,
+   "hoa_monthly_closed": {
+    "n": 8,
+    "median": 230.0,
+    "low": 200,
+    "high": 274
+   },
+   "sales": [
+    {
+     "mls": "2522169",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2522169/",
+     "sold": "$1,737,000",
+     "close": "Dec 01, 2025",
+     "section": "Litchfield Plantation",
+     "hoa": "200"
+    },
+    {
+     "mls": "2525398",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2525398/",
+     "sold": "$1,030,000",
+     "close": "Dec 18, 2025",
+     "section": "Litchfield Plantation",
+     "hoa": "200"
+    },
+    {
+     "mls": "2514543",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2514543/",
+     "sold": "$1,000,000",
+     "close": "Mar 11, 2026",
+     "section": "Litchfield Plantation",
+     "hoa": "200"
+    },
+    {
+     "mls": "2528842",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2528842/",
+     "sold": "$1,500,000",
+     "close": "Apr 09, 2026",
+     "section": "Litchfield Plantation",
+     "hoa": "259"
+    },
+    {
+     "mls": "2607202",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2607202/",
+     "sold": "$800,000",
+     "close": "May 22, 2026",
+     "section": "Litchfield Plantation",
+     "hoa": "230"
+    },
+    {
+     "mls": "2611244",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2611244/",
+     "sold": "$1,800,000",
+     "close": "Jun 01, 2026",
+     "section": "Litchfield Plantation",
+     "hoa": "230"
+    },
+    {
+     "mls": "2608603",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2608603/",
+     "sold": "$915,000",
+     "close": "Jun 10, 2026",
+     "section": "Litchfield Plantation",
+     "hoa": "274"
+    },
+    {
+     "mls": "2614449",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2614449/",
+     "sold": "$835,000",
+     "close": "Aug 27, 2026",
+     "section": "Litchfield Plantation",
+     "hoa": "252"
+    }
+   ]
+  },
+  {
+   "name": "The Reserve",
+   "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=The%20Reserve&type=all&status=sold&page=2",
+   "shown": 49,
+   "n": 13,
+   "median": 1350000,
+   "low": 850000,
+   "high": 2690000,
+   "q1": 1175000.0,
+   "q3": 1725000.0,
+   "hoa_monthly_closed": {
+    "n": 13,
+    "median": 318,
+    "low": 254,
+    "high": 451
+   },
+   "sales": [
+    {
+     "mls": "2520262",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2520262/",
+     "sold": "$850,000",
+     "close": "Oct 20, 2025",
+     "section": "The Reserve",
+     "hoa": "304"
+    },
+    {
+     "mls": "2522181",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2522181/",
+     "sold": "$1,725,000",
+     "close": "Oct 31, 2025",
+     "section": "The Reserve",
+     "hoa": "450"
+    },
+    {
+     "mls": "2520192",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2520192/",
+     "sold": "$1,350,000",
+     "close": "Nov 12, 2025",
+     "section": "The Reserve",
+     "hoa": "254"
+    },
+    {
+     "mls": "2527850",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2527850/",
+     "sold": "$1,855,000",
+     "close": "Dec 30, 2025",
+     "section": "The Reserve",
+     "hoa": "306"
+    },
+    {
+     "mls": "2522684",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2522684/",
+     "sold": "$1,650,000",
+     "close": "Apr 14, 2026",
+     "section": "The Reserve",
+     "hoa": "306"
+    },
+    {
+     "mls": "2526087",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2526087/",
+     "sold": "$1,275,000",
+     "close": "Jun 25, 2026",
+     "section": "The Reserve",
+     "hoa": "306"
+    },
+    {
+     "mls": "2609831",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2609831/",
+     "sold": "$1,175,000",
+     "close": "Jul 01, 2026",
+     "section": "The Reserve",
+     "hoa": "318"
+    },
+    {
+     "mls": "2612070",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2612070/",
+     "sold": "$1,132,500",
+     "close": "Jul 23, 2026",
+     "section": "The Reserve",
+     "hoa": "318"
+    },
+    {
+     "mls": "2612852",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2612852/",
+     "sold": "$1,450,000",
+     "close": "Aug 12, 2026",
+     "section": "The Reserve",
+     "hoa": "339"
+    },
+    {
+     "mls": "2604986",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2604986/",
+     "sold": "$2,020,000",
+     "close": "Aug 27, 2026",
+     "section": "The Reserve",
+     "hoa": "318"
+    },
+    {
+     "mls": "2602560",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2602560/",
+     "sold": "$1,295,000",
+     "close": "Sep 10, 2026",
+     "section": "The Reserve",
+     "hoa": "269"
+    },
+    {
+     "mls": "2615613",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615613/",
+     "sold": "$1,125,000",
+     "close": "Sep 21, 2026",
+     "section": "The Reserve",
+     "hoa": "330"
+    },
+    {
+     "mls": "2616797",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2616797/",
+     "sold": "$2,690,000",
+     "close": "Sep 24, 2026",
+     "section": "The Reserve",
+     "hoa": "451"
+    }
+   ]
+  },
+  {
+   "name": "Wachesaw East",
+   "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Wachesaw%20East&type=all&status=sold&page=2",
+   "shown": 44,
+   "n": 17,
+   "median": 506000,
+   "low": 335000,
+   "high": 705000,
+   "q1": 405000.0,
+   "q3": 550000.0,
+   "hoa_monthly_closed": {
+    "n": 17,
+    "median": 149,
+    "low": 108,
+    "high": 150
+   },
+   "sales": [
+    {
+     "mls": "2516307",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2516307/",
+     "sold": "$600,000",
+     "close": "Oct 10, 2025",
+     "section": "Wachesaw East",
+     "hoa": "149"
+    },
+    {
+     "mls": "2515047",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2515047/",
+     "sold": "$340,000",
+     "close": "Oct 30, 2025",
+     "section": "Wachesaw East",
+     "hoa": "108"
+    },
+    {
+     "mls": "2521134",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2521134/",
+     "sold": "$524,000",
+     "close": "Dec 04, 2025",
+     "section": "Wachesaw East",
+     "hoa": "149"
+    },
+    {
+     "mls": "2516131",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2516131/",
+     "sold": "$335,000",
+     "close": "Dec 05, 2025",
+     "section": "Wachesaw East",
+     "hoa": "149"
+    },
+    {
+     "mls": "2522934",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2522934/",
+     "sold": "$454,000",
+     "close": "Dec 09, 2025",
+     "section": "Wachesaw East",
+     "hoa": "149"
+    },
+    {
+     "mls": "2514866",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2514866/",
+     "sold": "$506,000",
+     "close": "Dec 12, 2025",
+     "section": "Wachesaw East",
+     "hoa": "149"
+    },
+    {
+     "mls": "2515172",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2515172/",
+     "sold": "$405,000",
+     "close": "Dec 16, 2025",
+     "section": "Wachesaw East",
+     "hoa": "149"
+    },
+    {
+     "mls": "2602057",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2602057/",
+     "sold": "$361,000",
+     "close": "Apr 16, 2026",
+     "section": "Wachesaw East",
+     "hoa": "150"
+    },
+    {
+     "mls": "2607363",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2607363/",
+     "sold": "$550,000",
+     "close": "May 18, 2026",
+     "section": "Wachesaw East",
+     "hoa": "141"
+    },
+    {
+     "mls": "2607853",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2607853/",
+     "sold": "$476,000",
+     "close": "May 20, 2026",
+     "section": "Wachesaw East",
+     "hoa": "141"
+    },
+    {
+     "mls": "2604582",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2604582/",
+     "sold": "$512,500",
+     "close": "May 22, 2026",
+     "section": "Wachesaw East",
+     "hoa": "141"
+    },
+    {
+     "mls": "2609354",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2609354/",
+     "sold": "$550,000",
+     "close": "Jun 10, 2026",
+     "section": "Wachesaw East",
+     "hoa": "149"
+    },
+    {
+     "mls": "2612369",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2612369/",
+     "sold": "$380,000",
+     "close": "Jun 17, 2026",
+     "section": "Wachesaw East",
+     "hoa": "141"
+    },
+    {
+     "mls": "2614398",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2614398/",
+     "sold": "$689,000",
+     "close": "Jul 14, 2026",
+     "section": "Wachesaw East",
+     "hoa": "141"
+    },
+    {
+     "mls": "2616547",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2616547/",
+     "sold": "$465,000",
+     "close": "Aug 04, 2026",
+     "section": "Wachesaw East",
+     "hoa": "149"
+    },
+    {
+     "mls": "2617662",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2617662/",
+     "sold": "$705,000",
+     "close": "Aug 25, 2026",
+     "section": "Wachesaw East",
+     "hoa": "141"
+    },
+    {
+     "mls": "2620196",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2620196/",
+     "sold": "$619,000",
+     "close": "Sep 16, 2026",
+     "section": "Wachesaw East",
+     "hoa": "141"
+    }
+   ]
+  },
+  {
+   "name": "Wachesaw Plantation",
+   "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Wachesaw%20Plantation&type=all&status=sold&page=2",
+   "shown": 49,
+   "n": 16,
+   "median": 657500.0,
+   "low": 370000,
+   "high": 1100000,
+   "q1": 604875.0,
+   "q3": 798675.0,
+   "hoa_monthly_closed": {
+    "n": 16,
+    "median": 151.0,
+    "low": 114,
+    "high": 1109
+   },
+   "sales": [
+    {
+     "mls": "2516469",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2516469/",
+     "sold": "$650,000",
+     "close": "Oct 02, 2025",
+     "section": "Wachesaw Plantation",
+     "hoa": "137"
+    },
+    {
+     "mls": "2521958",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2521958/",
+     "sold": "$825,000",
+     "close": "Oct 28, 2025",
+     "section": "Wachesaw Plantation",
+     "hoa": "144"
+    },
+    {
+     "mls": "2522401",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2522401/",
+     "sold": "$915,000",
+     "close": "Dec 08, 2025",
+     "section": "Wachesaw Plantation",
+     "hoa": "212"
+    },
+    {
+     "mls": "2522486",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2522486/",
+     "sold": "$625,000",
+     "close": "Dec 15, 2025",
+     "section": "Wachesaw Plantation",
+     "hoa": "169"
+    },
+    {
+     "mls": "2528051",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2528051/",
+     "sold": "$577,500",
+     "close": "Dec 18, 2025",
+     "section": "Wachesaw Plantation",
+     "hoa": "190"
+    },
+    {
+     "mls": "2601011",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2601011/",
+     "sold": "$480,000",
+     "close": "Feb 24, 2026",
+     "section": "Wachesaw Plantation",
+     "hoa": "152"
+    },
+    {
+     "mls": "2607064",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2607064/",
+     "sold": "$550,000",
+     "close": "Mar 31, 2026",
+     "section": "Wachesaw Plantation",
+     "hoa": "1039"
+    },
+    {
+     "mls": "2602260",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2602260/",
+     "sold": "$740,000",
+     "close": "May 05, 2026",
+     "section": "Wachesaw Plantation",
+     "hoa": "151"
+    },
+    {
+     "mls": "2605946",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2605946/",
+     "sold": "$625,000",
+     "close": "May 05, 2026",
+     "section": "Wachesaw Plantation",
+     "hoa": "151"
+    },
+    {
+     "mls": "2519754",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2519754/",
+     "sold": "$735,000",
+     "close": "May 08, 2026",
+     "section": "Wachesaw Plantation",
+     "hoa": "151"
+    },
+    {
+     "mls": "2615300",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2615300/",
+     "sold": "$665,000",
+     "close": "Jun 03, 2026",
+     "section": "Wachesaw Plantation",
+     "hoa": "151"
+    },
+    {
+     "mls": "2608540",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2608540/",
+     "sold": "$900,000",
+     "close": "Jun 15, 2026",
+     "section": "Wachesaw Plantation",
+     "hoa": "151"
+    },
+    {
+     "mls": "2605738",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2605738/",
+     "sold": "$789,900",
+     "close": "Jun 25, 2026",
+     "section": "Wachesaw Plantation",
+     "hoa": "144"
+    },
+    {
+     "mls": "2613228",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2613228/",
+     "sold": "$370,000",
+     "close": "Jul 08, 2026",
+     "section": "Wachesaw Plantation",
+     "hoa": "1109"
+    },
+    {
+     "mls": "2602322",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2602322/",
+     "sold": "$1,100,000",
+     "close": "Jul 09, 2026",
+     "section": "Wachesaw Plantation",
+     "hoa": "114"
+    },
+    {
+     "mls": "2613222",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2613222/",
+     "sold": "$614,000",
+     "close": "Aug 31, 2026",
+     "section": "Wachesaw Plantation",
+     "hoa": "151"
+    }
+   ]
+  },
+  {
+   "name": "Willbrook Plantation",
+   "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Willbrook%20Plantation&type=all&status=sold",
+   "shown": 19,
+   "n": 7,
+   "median": 1005000,
+   "low": 630000,
+   "high": 1525000,
+   "q1": 830000.0,
+   "q3": 1187500.0,
+   "hoa_monthly_closed": {
+    "n": 7,
+    "median": 317,
+    "low": 276,
+    "high": 376
+   },
+   "sales": [
+    {
+     "mls": "2512535",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2512535/",
+     "sold": "$1,525,000",
+     "close": "Oct 16, 2025",
+     "section": "Willbrook Plantation",
+     "hoa": "376"
+    },
+    {
+     "mls": "2526667",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2526667/",
+     "sold": "$1,220,000",
+     "close": "Dec 15, 2025",
+     "section": "Willbrook Plantation",
+     "hoa": "317"
+    },
+    {
+     "mls": "2517758",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2517758/",
+     "sold": "$630,000",
+     "close": "Jan 15, 2026",
+     "section": "Willbrook Plantation",
+     "hoa": "276"
+    },
+    {
+     "mls": "2513738",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2513738/",
+     "sold": "$885,000",
+     "close": "Feb 03, 2026",
+     "section": "Willbrook Plantation",
+     "hoa": "317"
+    },
+    {
+     "mls": "2528263",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2528263/",
+     "sold": "$1,005,000",
+     "close": "Feb 12, 2026",
+     "section": "Willbrook Plantation",
+     "hoa": "332"
+    },
+    {
+     "mls": "2509990",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2509990/",
+     "sold": "$775,000",
+     "close": "Feb 12, 2026",
+     "section": "Willbrook Plantation",
+     "hoa": "317"
+    },
+    {
+     "mls": "2612529",
+     "url": "https://mbcoastalhomes.realgeeks.com/property/2612529/",
+     "sold": "$1,155,000",
+     "close": "Jul 31, 2026",
+     "section": "Willbrook Plantation",
+     "hoa": "332"
+    }
+   ]
+  }
+ ],
+ "litchfield_by_the_sea": {
+  "about": "Litchfield by the Sea, round 6. Closed sales with a closing date from 2025-10-01 to 2026-09-30, read 2026-10-13 from the same MLS site (RE/MAX Southern Shores, mbcoastalhomes.realgeeks.com). Sections found by scanning the newest 240 Pawleys Island sold listings for 'Litchfield by the Sea' in their text, then searching each section's MLS neighborhood name. Every counted listing names Litchfield by the Sea or LBTS on its page. Excluded: the MLS neighborhood 'Litchfield By the Sea' itself and Osprey Watch, whose closed listings in the window are interval (shared-week) ownership or have no description (listed under excluded). No keyword search exists on the site, so a house section whose listings do not mention Litchfield by the Sea may be missing.",
+  "window": [
+   "2025-10-01",
+   "2026-09-30"
+  ],
+  "read": "2026-10-13",
+  "sections": {
+   "Bridgewater - Litchfield By The Sea": {
+    "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Bridgewater%20-%20Litchfield%20By%20The%20Sea&type=all&status=sold",
+    "sold_search_total": 21,
+    "sales": [
+     {
+      "mls": "2610778",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2610778/",
+      "sold": 672000,
+      "close": "Jun 12, 2026",
+      "type": "Condominium",
+      "neighborhood": "Bridgewater - Litchfield By The Sea",
+      "section": "Bridgewater - Litchfield By The Sea",
+      "hoa_monthly": 1708
+     },
+     {
+      "mls": "2613620",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2613620/",
+      "sold": 660000,
+      "close": "Jul 10, 2026",
+      "type": "Condominium",
+      "neighborhood": "Bridgewater - Litchfield By The Sea",
+      "section": "Bridgewater - Litchfield By The Sea",
+      "hoa_monthly": 1876
+     },
+     {
+      "mls": "2618200",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2618200/",
+      "sold": 645000,
+      "close": "Aug 31, 2026",
+      "type": "Condominium",
+      "neighborhood": "Bridgewater - Litchfield By The Sea",
+      "section": "Bridgewater - Litchfield By The Sea",
+      "hoa_monthly": 1708
+     },
+     {
+      "mls": "2525273",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2525273/",
+      "sold": 605000,
+      "close": "Apr 09, 2026",
+      "type": "Condominium",
+      "neighborhood": "Bridgewater - Litchfield By The Sea",
+      "section": "Bridgewater - Litchfield By The Sea",
+      "hoa_monthly": 1786
+     },
+     {
+      "mls": "2519354",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2519354/",
+      "sold": 567000,
+      "close": "Feb 03, 2026",
+      "type": "Condominium",
+      "neighborhood": "Bridgewater - Litchfield By The Sea",
+      "section": "Bridgewater - Litchfield By The Sea",
+      "hoa_monthly": 1786
+     },
+     {
+      "mls": "2610984",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2610984/",
+      "sold": 569000,
+      "close": "May 15, 2026",
+      "type": "Condominium",
+      "neighborhood": "Bridgewater - Litchfield By The Sea",
+      "section": "Bridgewater - Litchfield By The Sea",
+      "hoa_monthly": 1708
+     },
+     {
+      "mls": "2513948",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2513948/",
+      "sold": 550000,
+      "close": "Jun 25, 2026",
+      "type": "Condominium",
+      "neighborhood": "Bridgewater - Litchfield By The Sea",
+      "section": "Bridgewater - Litchfield By The Sea",
+      "hoa_monthly": 1786
+     },
+     {
+      "mls": "2424430",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2424430/",
+      "sold": 550000,
+      "close": "Jun 15, 2026",
+      "type": "Condominium",
+      "neighborhood": "Bridgewater - Litchfield By The Sea",
+      "section": "Bridgewater - Litchfield By The Sea",
+      "hoa_monthly": 1786
+     },
+     {
+      "mls": "2513611",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2513611/",
+      "sold": 340000,
+      "close": "Oct 27, 2025",
+      "type": "Condominium",
+      "neighborhood": "Bridgewater - Litchfield By The Sea",
+      "section": "Bridgewater - Litchfield By The Sea",
+      "hoa_monthly": 1054
+     },
+     {
+      "mls": "2600780",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2600780/",
+      "sold": 330000,
+      "close": "Mar 18, 2026",
+      "type": "Condominium",
+      "neighborhood": "Bridgewater - Litchfield By The Sea",
+      "section": "Bridgewater - Litchfield By The Sea",
+      "hoa_monthly": 1054
+     }
+    ]
+   },
+   "SEASIDE INN - LITCHFIELD AREA": {
+    "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=SEASIDE%20INN%20-%20LITCHFIELD%20AREA&type=all&status=sold",
+    "sold_search_total": 16,
+    "sales": [
+     {
+      "mls": "2606829",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2606829/",
+      "sold": 418000,
+      "close": "Jul 08, 2026",
+      "type": "Condominium",
+      "neighborhood": "SEASIDE INN - LITCHFIELD AREA",
+      "section": "SEASIDE INN - LITCHFIELD AREA",
+      "hoa_monthly": 736
+     }
+    ]
+   },
+   "Summerhouse at LBTS": {
+    "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Summerhouse%20at%20LBTS&type=all&status=sold",
+    "sold_search_total": 28,
+    "sales": [
+     {
+      "mls": "2601204",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2601204/",
+      "sold": 207000,
+      "close": "Mar 09, 2026",
+      "type": "Condominium",
+      "neighborhood": "Summerhouse at LBTS",
+      "section": "Summerhouse at LBTS",
+      "hoa_monthly": 618
+     },
+     {
+      "mls": "2517518",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2517518/",
+      "sold": 200000,
+      "close": "Dec 15, 2025",
+      "type": "Condominium",
+      "neighborhood": "Summerhouse at LBTS",
+      "section": "Summerhouse at LBTS",
+      "hoa_monthly": 796
+     },
+     {
+      "mls": "2600059",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2600059/",
+      "sold": 195000,
+      "close": "Mar 17, 2026",
+      "type": "Condominium",
+      "neighborhood": "Summerhouse at LBTS",
+      "section": "Summerhouse at LBTS",
+      "hoa_monthly": 804
+     },
+     {
+      "mls": "2510952",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2510952/",
+      "sold": 210000,
+      "close": "Nov 20, 2025",
+      "type": "Condominium",
+      "neighborhood": "Summerhouse at LBTS",
+      "section": "Summerhouse at LBTS",
+      "hoa_monthly": 660
+     },
+     {
+      "mls": "2602808",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2602808/",
+      "sold": 200000,
+      "close": "Mar 30, 2026",
+      "type": "Condominium",
+      "neighborhood": "Summerhouse at LBTS",
+      "section": "Summerhouse at LBTS",
+      "hoa_monthly": 804
+     },
+     {
+      "mls": "2424774",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2424774/",
+      "sold": 193900,
+      "close": "Nov 11, 2025",
+      "type": "Condominium",
+      "neighborhood": "Summerhouse at LBTS",
+      "section": "Summerhouse at LBTS",
+      "hoa_monthly": 660
+     },
+     {
+      "mls": "2605707",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2605707/",
+      "sold": 183000,
+      "close": "Sep 28, 2026",
+      "type": "Condominium",
+      "neighborhood": "Summerhouse at LBTS",
+      "section": "Summerhouse at LBTS",
+      "hoa_monthly": 808
+     }
+    ]
+   },
+   "Lakeside Villas": {
+    "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Lakeside%20Villas&type=all&status=sold",
+    "sold_search_total": 10,
+    "sales": [
+     {
+      "mls": "2618909",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2618909/",
+      "sold": 741000,
+      "close": "Sep 15, 2026",
+      "type": "Condominium",
+      "neighborhood": "Lakeside Villas",
+      "section": "Lakeside Villas",
+      "hoa_monthly": 808
+     },
+     {
+      "mls": "2603904",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2603904/",
+      "sold": 675000,
+      "close": "May 21, 2026",
+      "type": "Condominium",
+      "neighborhood": "Lakeside Villas",
+      "section": null,
+      "hoa_monthly": 808
+     },
+     {
+      "mls": "2521982",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2521982/",
+      "sold": 492000,
+      "close": "Jul 23, 2026",
+      "type": "Condominium",
+      "neighborhood": "Lakeside Villas",
+      "section": "Lakeside Villas",
+      "hoa_monthly": 680
+     }
+    ]
+   },
+   "Sandpiper Run": {
+    "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Sandpiper%20Run&type=all&status=sold",
+    "sold_search_total": 8,
+    "sales": [
+     {
+      "mls": "2609857",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2609857/",
+      "sold": 885000,
+      "close": "May 29, 2026",
+      "type": "Condominium",
+      "neighborhood": "Sandpiper Run",
+      "section": "Sandpiper Run",
+      "hoa_monthly": 1130
+     }
+    ]
+   },
+   "Sandpiper Run - The Crescent": {
+    "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Sandpiper%20Run%20-%20The%20Crescent&type=all&status=sold",
+    "sold_search_total": 5,
+    "sales": [
+     {
+      "mls": "2613343",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2613343/",
+      "sold": 1100000,
+      "close": "Jun 30, 2026",
+      "type": "Condominium",
+      "neighborhood": "Sandpiper Run - The Crescent",
+      "section": "Sandpiper Run - The Crescent",
+      "hoa_monthly": 1323
+     },
+     {
+      "mls": "2608791",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2608791/",
+      "sold": 1000000,
+      "close": "May 14, 2026",
+      "type": "Condominium",
+      "neighborhood": "Sandpiper Run - The Crescent",
+      "section": "Sandpiper Run - The Crescent",
+      "hoa_monthly": 1254
+     }
+    ]
+   },
+   "Cambridge, The": {
+    "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Cambridge%2C%20The&type=all&status=sold",
+    "sold_search_total": 4,
+    "sales": [
+     {
+      "mls": "2612802",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2612802/",
+      "sold": 1575000,
+      "close": "Jul 07, 2026",
+      "type": "Condominium",
+      "neighborhood": "Cambridge, The",
+      "section": "Cambridge, The",
+      "hoa_monthly": 1284
+     },
+     {
+      "mls": "2525113",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2525113/",
+      "sold": 1300000,
+      "close": "Nov 24, 2025",
+      "type": "Condominium",
+      "neighborhood": "Cambridge, The",
+      "section": "Cambridge, The",
+      "hoa_monthly": 1140
+     },
+     {
+      "mls": "2513333",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2513333/",
+      "sold": 835000,
+      "close": "Oct 31, 2025",
+      "type": "Condominium",
+      "neighborhood": "Cambridge, The",
+      "section": "Cambridge, The",
+      "hoa_monthly": 855
+     }
+    ]
+   },
+   "WARWICK, THE": {
+    "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=WARWICK%2C%20THE&type=all&status=sold",
+    "sold_search_total": 8,
+    "sales": [
+     {
+      "mls": "2610234",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2610234/",
+      "sold": 1300000,
+      "close": "Jun 17, 2026",
+      "type": "Condominium",
+      "neighborhood": "WARWICK, THE",
+      "section": "WARWICK, THE",
+      "hoa_monthly": 1276
+     },
+     {
+      "mls": "2600502",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2600502/",
+      "sold": 1045000,
+      "close": "Jul 20, 2026",
+      "type": "Condominium",
+      "neighborhood": "WARWICK, THE",
+      "section": "WARWICK, THE",
+      "hoa_monthly": 1276
+     }
+    ]
+   },
+   "Breakers Reef": {
+    "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Breakers%20Reef&type=all&status=sold",
+    "sold_search_total": 5,
+    "sales": [
+     {
+      "mls": "2610212",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2610212/",
+      "sold": 2178000,
+      "close": "May 13, 2026",
+      "type": "Condominium",
+      "neighborhood": "Breakers Reef",
+      "section": null,
+      "hoa_monthly": 1394
+     },
+     {
+      "mls": "2603630",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2603630/",
+      "sold": 1795000,
+      "close": "Mar 18, 2026",
+      "type": "Townhouse",
+      "neighborhood": "Breakers Reef",
+      "section": null,
+      "hoa_monthly": 1394
+     },
+     {
+      "mls": "2524745",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2524745/",
+      "sold": 1570000,
+      "close": "Nov 24, 2025",
+      "type": "Townhouse",
+      "neighborhood": "Breakers Reef",
+      "section": null,
+      "hoa_monthly": 1386
+     },
+     {
+      "mls": "2607269",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2607269/",
+      "sold": 1490000,
+      "close": "Jun 05, 2026",
+      "type": "Condominium",
+      "neighborhood": "Breakers Reef",
+      "section": null,
+      "hoa_monthly": 1394
+     }
+    ]
+   },
+   "Oystercatcher Island": {
+    "search": "https://mbcoastalhomes.realgeeks.com/search/results/?city=all&neighborhood=Oystercatcher%20Island&type=all&status=sold",
+    "sold_search_total": 9,
+    "sales": [
+     {
+      "mls": "2525110",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2525110/",
+      "sold": 780000,
+      "close": "Feb 23, 2026",
+      "type": "Detached",
+      "neighborhood": "Oystercatcher Island",
+      "section": "Oystercatcher Island",
+      "hoa_monthly": 1357
+     },
+     {
+      "mls": "2524594",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2524594/",
+      "sold": 770000,
+      "close": "Mar 12, 2026",
+      "type": "Detached",
+      "neighborhood": "Oystercatcher Island",
+      "section": "Oystercatcher Island",
+      "hoa_monthly": 1050
+     },
+     {
+      "mls": "2606158",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2606158/",
+      "sold": 742000,
+      "close": "May 14, 2026",
+      "type": "Detached",
+      "neighborhood": "Oystercatcher Island",
+      "section": "Oystercatcher Island",
+      "hoa_monthly": 1065
+     },
+     {
+      "mls": "2607902",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2607902/",
+      "sold": 750000,
+      "close": "Jul 17, 2026",
+      "type": "Detached",
+      "neighborhood": "Oystercatcher Island",
+      "section": "Oystercatcher Island",
+      "hoa_monthly": 1150
+     },
+     {
+      "mls": "2602108",
+      "url": "https://mbcoastalhomes.realgeeks.com/property/2602108/",
+      "sold": 720000,
+      "close": "Mar 30, 2026",
+      "type": "Detached",
+      "neighborhood": "Oystercatcher Island",
+      "section": "Oystercatcher Island",
+      "hoa_monthly": 1069
+     }
+    ]
+   }
+  },
+  "condos_and_townhouses": {
+   "count": 33,
+   "median": 645000,
+   "low": 183000,
+   "high": 2178000,
+   "middle_half": [
+    340000.0,
+    1045000.0
+   ]
+  },
+  "detached": {
+   "count": 5,
+   "median": 750000,
+   "low": 720000,
+   "high": 780000,
+   "middle_half": [
+    742000.0,
+    770000.0
+   ]
+  },
+  "excluded": [
+   {
+    "mls": "2610727",
+    "nb": "Litchfield By the Sea",
+    "sold": "$220,000",
+    "close": "Jun 03, 2026"
+   },
+   {
+    "mls": "2500435",
+    "nb": "Litchfield By the Sea",
+    "sold": "$150,000",
+    "close": "Jun 24, 2026"
+   },
+   {
+    "mls": "2613853",
+    "nb": "Litchfield By the Sea",
+    "sold": "$140,000",
+    "close": "Jun 25, 2026"
+   },
+   {
+    "mls": "2613816",
+    "nb": "Litchfield By the Sea",
+    "sold": "$140,000",
+    "close": "Jul 15, 2026"
+   },
+   {
+    "mls": "2520023",
+    "nb": "Litchfield By the Sea",
+    "sold": "$125,000",
+    "close": "Dec 17, 2025"
+   },
+   {
+    "mls": "2519692",
+    "nb": "Litchfield By the Sea",
+    "sold": "$125,000",
+    "close": "Dec 19, 2025"
+   },
+   {
+    "mls": "2619889",
+    "nb": "Litchfield By the Sea",
+    "sold": "$110,000",
+    "close": "Aug 26, 2026"
+   },
+   {
+    "mls": "2528694",
+    "nb": "Litchfield By the Sea",
+    "sold": "$110,000",
+    "close": "Dec 31, 2025"
+   },
+   {
+    "mls": "2614798",
+    "nb": "Litchfield By the Sea",
+    "sold": "$110,000",
+    "close": "Jul 13, 2026"
+   },
+   {
+    "mls": "2610972",
+    "nb": "Litchfield By the Sea",
+    "sold": "$105,000",
+    "close": "May 28, 2026"
+   },
+   {
+    "mls": "2615667",
+    "nb": "Litchfield By the Sea",
+    "sold": "$94,000",
+    "close": "Aug 06, 2026"
+   },
+   {
+    "mls": "2614067",
+    "nb": "Litchfield By the Sea",
+    "sold": "$67,500",
+    "close": "Jun 18, 2026"
+   },
+   {
+    "mls": "2615776",
+    "nb": "Litchfield By the Sea",
+    "sold": "$27,000",
+    "close": "Jul 27, 2026"
+   },
+   {
+    "mls": "2530086",
+    "nb": "Litchfield By the Sea",
+    "sold": "$20,000",
+    "close": "Feb 17, 2026"
+   },
+   {
+    "mls": "2522062",
+    "nb": "Litchfield By the Sea",
+    "sold": "$19,500",
+    "close": "Oct 20, 2025"
+   },
+   {
+    "mls": "2608321",
+    "nb": "Osprey Watch",
+    "sold": "$74,000",
+    "close": "May 08, 2026"
+   }
+  ]
+ }
+}
