@@ -19,8 +19,8 @@ import { PLACES } from "../../idx-lib/places.js";
 import { NO_HOA_NOTE, placeParams } from "../../idx-lib/edge.js";
 import { SMS_CONSENT_TEXT, TERMS_PARAGRAPHS, TERMS_TITLE, TERMS_VERSION, termsText } from "../../idx-lib/terms.js";
 import {
-  STYLE, SCRIPT, addressLine, dayLong, disclaimer, esc, factsLine, grid, headlinePrice, heartButton,
-  listingPath, money, safeUrl, signupDialog, spaced, statusWord, tourButton, tourDialog,
+  ICONS, STRIP_STYLE, STYLE, SCRIPT, addressLine, dayLong, disclaimer, esc, factsLine, grid, headlinePrice, heartButton,
+  listingPath, listingToast, money, safeUrl, signupDialog, spaced, statusWord, stripCard, tourButton, tourDialog,
 } from "../../idx-lib/render.js";
 
 const SITE = "https://chapter3realty.com";
@@ -126,10 +126,10 @@ async function page(context, gate, o) {
     .replace(/(<meta property="og:title" content=")[^"]*/, (_, a) => a + esc(full))
     .replace(/(<meta property="og:description" content=")[^"]*/, (_, a) => a + esc(o.description))
     .replace(/(<meta property="og:url" content=")[^"]*/, (_, a) => a + esc(o.canonical))
-    .replace("</head>", () => `${STYLE}${ld}</head>`)
+    .replace("</head>", () => `${STYLE}${o.extraHead || ""}${ld}</head>`)
     .replace(/<body([^>]*)>/, (mm, a) => `<body${a} data-hx-signed="${signed ? "1" : "0"}">`)
     .replace(/<div class="wrap hx-wrap" id="hx-root">[\s\S]*?<\/div>/, () => `<div class="wrap hx-wrap" id="hx-root"${o.rootAttrs || ""}>${o.body}</div>`)
-    .replace("</body>", () => `${signupDialog(env.TURNSTILE_SITE_KEY)}${tourDialog()}${SCRIPT}</body>`);
+    .replace("</body>", () => `${o.extraBody || ""}${signupDialog(env.TURNSTILE_SITE_KEY)}${tourDialog()}${SCRIPT}</body>`);
   const headers = new Headers({ "content-type": "text/html; charset=utf-8", "x-robots-tag": robots });
   headers.set("cache-control", signed || gate.preview || o.private ? "private, no-store" : "public, max-age=300");
   return new Response(html, { status: o.status || 200, headers });
@@ -268,31 +268,72 @@ async function listingPageWith(context, mls, slugPart, gate, r, hearts) {
   const canonical = `${SITE}${own}`;
   const photo = safeUrl(l.photo);
   const photos = registered && Array.isArray(l.photos) ? l.photos.filter((p) => p && safeUrl(p.url)) : [];
-  const gallery = photos.length
-    ? `<div class="hx-gallery">${photos.map((p, i) => `<img src="${esc(p.url)}" alt="${esc(p.caption || `Photo ${i + 1} of ${addressLine(l)}`)}" loading="${i < 2 ? "eager" : "lazy"}" referrerpolicy="no-referrer">`).join("")}</div>`
-    : photo ? `<div class="hx-hero-photo"><img src="${esc(photo)}" alt="${esc(addressLine(l))}" referrerpolicy="no-referrer"></div>${l.photoCount > 1 ? `<p class="hx-small">1 of ${esc(l.photoCount)} photos. <button type="button" class="hx-more-photos" data-hx-signup>See them all</button></p>` : ""}` : "";
-  const basics = `<table class="hx-table"><tbody>
-${row("Status", statusWord(l.status))}${row("Type", spaced(l.propertySubType || l.propertyType))}${row("Bedrooms", l.beds)}${row("Bathrooms", l.baths)}
-${row("Living area", typeof l.sqft === "number" ? `${l.sqft.toLocaleString("en-US")} sq ft` : "")}${row("Lot", typeof l.lotAcres === "number" ? `${l.lotAcres} acres` : "")}
-${row("Year built", l.yearBuilt)}${row("Subdivision", l.subdivision)}${row("Waterfront", l.waterfront ? "Yes" : "")}${row("MLS number", l.mlsNumber)}
-${registered ? row("Listed on", dayLong(l.listedOn)) + row("Days on market", l.daysOnMarket) + row("Original list price", money(l.originalListPrice)) + row("Sold on", dayLong(l.soldOn)) + row("Sold price", money(l.soldPrice)) : ""}
-</tbody></table>`;
+  const hearted = (hearts || []).includes(l.mlsNumber);
+  const status = statusWord(l.status);
+  const count = typeof l.photoCount === "number" && l.photoCount > 0 ? l.photoCount : photos.length;
+  const img = (u, alt, eager) => `<img src="${esc(u)}" alt="${esc(alt)}" loading="${eager ? "eager" : "lazy"}" decoding="async" referrerpolicy="no-referrer">`;
+  const chip = status ? `<span class="hx-l-chip">${esc(status)}</span>` : "";
+
+  // The photos: one large, two beside it on a wide screen. Not signed up: the same photo,
+  // blurred, says how many more there are, and the second tile asks for a tour.
+  let media;
+  if (registered && photos.length) {
+    const alt = (p, i) => p.caption || `Photo ${i + 1} of ${addressLine(l)}`;
+    media = `<div class="hx-l-media${photos.length < 3 ? " hx-one" : ""}"><div class="hx-l-hero">${img(photos[0].url, alt(photos[0], 0), true)}${chip}${heartButton(l, hearted)}`
+      + `${photos.length > 1 ? `<a class="hx-l-count" href="#hx-photos">${ICONS.camera}All ${esc(photos.length)} photos</a>` : ""}</div>`
+      + (photos.length >= 3 ? photos.slice(1, 3).map((p, i) => `<a class="hx-l-tile" href="#hx-photos">${img(p.url, alt(p, i + 1))}</a>`).join("") : "")
+      + `</div>`;
+  } else if (photo) {
+    const more = count > 1 ? `<button type="button" class="hx-l-count" data-hx-signup>${ICONS.camera}1 of ${esc(count)} photos</button>` : "";
+    media = `<div class="hx-l-media"><div class="hx-l-hero">${img(photo, addressLine(l), true)}${chip}${heartButton(l, hearted)}${more}</div>`
+      + `<div class="hx-l-tile hx-blur">${img(photo, "")}<button type="button" class="hx-l-tilebtn" data-hx-signup>${ICONS.lock}<span>${count > 1 ? `See all ${esc(count)} photos` : "See full details"}</span><small>Free sign-up</small></button></div>`
+      + `<div class="hx-l-tile hx-soft">${img(photo, "")}<button type="button" class="hx-l-tilebtn hx-l-ask hx-tour" data-mls="${esc(l.mlsNumber)}" data-addr="${esc(addressLine(l))}" data-interest="tour">${ICONS.home}<span>Tour this home</span><small>An agent sets it up</small></button></div></div>`;
+  } else {
+    media = `<div class="hx-l-media hx-one"><div class="hx-l-hero"><div class="hx-nophoto">No photo yet</div>${chip}${heartButton(l, hearted)}</div></div>`;
+  }
+
+  const pill = (icon, text) => (text ? `<li class="hx-pill">${ICONS[icon]}${esc(text)}</li>` : "");
+  const pills = `<ul class="hx-pills">${pill("bed", typeof l.beds === "number" ? `${l.beds} bed${l.beds === 1 ? "" : "s"}` : "")}${pill("bath", typeof l.baths === "number" ? `${l.baths} bath${l.baths === 1 ? "" : "s"}` : "")}`
+    + `${pill("area", typeof l.sqft === "number" ? `${l.sqft.toLocaleString("en-US")} sq ft` : "")}${pill("lot", typeof l.lotAcres === "number" ? `${l.lotAcres} acres` : "")}${pill("year", l.yearBuilt ? `Built ${l.yearBuilt}` : "")}</ul>`;
+  // The MLS often writes names in capitals; show them in title case (format only, never different words).
+  const title = (v) => (typeof v === "string" && v === v.toUpperCase() ? v.toLowerCase().replace(/\b([a-z])/g, (c) => c.toUpperCase()) : v);
+  const fact = (label, value) => (value === null || value === undefined || value === "" ? "" : `<div class="hx-fact hx-glass"><span>${esc(label)}</span><b>${esc(value)}</b></div>`);
+  const facts = `<div class="hx-facts-grid">${fact("Status", status)}${fact("Type", spaced(l.propertySubType || l.propertyType))}${fact("Subdivision", title(l.subdivision))}`
+    + `${fact("Waterfront", l.waterfront ? "Yes" : "")}${fact("Year built", l.yearBuilt)}${fact("MLS number", l.mlsNumber)}`
+    + (registered ? `${fact("Listed on", dayLong(l.listedOn))}${fact("Days on market", l.daysOnMarket)}${fact("Original list price", money(l.originalListPrice))}${fact("Sold on", dayLong(l.soldOn))}${fact("Sold price", money(l.soldPrice))}` : "")
+    + `</div>`;
+
   const details = registered && l.details ? DETAIL_LABELS.filter(([k]) => l.details[k] !== undefined && l.details[k] !== null && l.details[k] !== "").map(([k, label]) => row(label, detailValue(l.details[k]))).join("") : "";
   const openList = registered && Array.isArray(l.openHouses) ? l.openHouses.filter((o) => o && !isNaN(Date.parse(o.startsAt))) : [];
   const open = openList.length ? `<h2>Open houses</h2><ul>${openList.map((o) => `<li>${esc(new Date(o.startsAt).toLocaleString("en-US", { timeZone: "America/New_York", weekday: "long", month: "long", day: "numeric", hour: "numeric", minute: "2-digit" }))}${o.endsAt && !isNaN(Date.parse(o.endsAt)) ? ` to ${esc(new Date(o.endsAt).toLocaleString("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit" }))}` : ""}</li>`).join("")}</ul>` : "";
+  const teaser = (icon, text) => `<li>${ICONS[icon]}<span>${esc(text)}</span><em aria-hidden="true"></em></li>`;
   const more = registered
-    ? `${l.remarks ? `<h2>Description</h2><p class="hx-remarks">${esc(l.remarks)}</p>` : ""}
+    ? `${l.remarks ? `<h2>About this home</h2><p class="hx-remarks">${esc(l.remarks)}</p>` : ""}
 ${details ? `<h2>Details</h2><table class="hx-table"><tbody>${details}</tbody></table>` : ""}${open}
+${photos.length > 1 ? `<h2 id="hx-photos">All ${esc(photos.length)} photos</h2><div class="hx-gallery">${photos.map((p, i) => img(p.url, p.caption || `Photo ${i + 1} of ${addressLine(l)}`, i < 2)).join("")}</div>` : ""}
 ${safeUrl(l.virtualTour) ? `<p><a href="${esc(l.virtualTour)}" rel="nofollow noopener" target="_blank">Virtual tour</a></p>` : ""}
 ${l.listingAgent ? `<p class="hx-firm-line">Listing agent: ${esc(l.listingAgent)}, ${esc(l.listingFirm || "")}</p>` : ""}
 <p class="hx-small">School names come from the listing. Being near a school does not mean a home is zoned for it; confirm the zone with Horry County Schools.</p>`
-    : `<div class="hx-locked">${signupPrompt("See every photo, the description, the HOA fee, the taxes and the price history.")}</div>`;
+    : `<section class="hx-teaser hx-glass"><h2>Free: everything else about this home</h2><p class="hx-small">Sign up once with your name, email and phone.</p><ul>`
+      + `${teaser("camera", count > 1 ? `All ${count} photos` : "Every photo")}${teaser("home", "The description")}${teaser("lock", "The HOA fee and what it covers")}`
+      + `${teaser("year", "Property taxes")}${teaser("area", "Days on market and the price history")}${teaser("lot", "Recent sales nearby")}</ul>`
+      + `<button type="button" class="btn btn-brass" data-hx-signup>See full details</button></section>`;
+
+  const side = `<aside class="hx-side hx-glass" aria-label="Tour or ask about this home"><p class="hx-l-price">${esc(headlinePrice(l))}</p><p class="hx-small">${esc(addressLine(l))}</p>`
+    + `${tourButton(l, "Tour this home", "tour", "hx-primary")}${tourButton(l, "Ask a question", "question")}`
+    + `<div class="hx-side-row">${heartButton(l, hearted)}<span>${registered ? "Save it to your homes" : "Save it with a free sign-up"}</span></div></aside>`;
+
+  const nearby = await homesNearby(context, l);
   const body = `${crumbs([["/", "Home"], ["/homes/", "Homes for sale"], [null, l.city || "Listing"]])}
-<h1>${esc(addressLine(l))}</h1>
-<p class="hx-keyfacts"><strong>${esc(headlinePrice(l))}</strong><span>${esc(factsLine(l))}</span></p>
+${media}
+<div class="hx-l-grid"><div class="hx-l-info">
+<p class="hx-l-price">${esc(headlinePrice(l))}</p>
+<h1 class="hx-l-addr">${esc(addressLine(l))}</h1>
+${pills}
 <p class="hx-firm-line">Listed by ${esc(l.listingFirm || "the listing brokerage")}</p>
-<div class="hx-actions" style="padding:0;gap:.6rem;justify-content:flex-start">${heartButton(l, (hearts || []).includes(l.mlsNumber))}${tourButton(l, "Tour this home")}</div>
-${signedBar(r.json.tier)}${gallery}${basics}${more}
+${signedBar(r.json.tier)}${facts}${more}
+</div>${side}</div>
+${nearby}
 ${disclaimer(r.json.meta)}`;
   const ld = { "@context": "https://schema.org", "@type": "RealEstateListing", name: addressLine(l), url: canonical, ...(photo ? { image: photo } : {}), offers: typeof l.listPrice === "number" && l.status !== "Closed" ? { "@type": "Offer", price: l.listPrice, priceCurrency: "USD" } : undefined };
   return page(context, gate, {
@@ -304,7 +345,29 @@ ${disclaimer(r.json.meta)}`;
     ld,
     rootAttrs: ` data-hx-mls="${esc(l.mlsNumber)}"${r.json.viewId ? ` data-view-id="${esc(r.json.viewId)}"` : ""}`,
     private: registered,
+    extraHead: nearby ? STRIP_STYLE : "",
+    extraBody: listingToast(l),
   });
+}
+
+/** "More homes in <subdivision>": a strip of up to 10 other homes there, closest in price. Empty on any trouble. */
+async function homesNearby(context, l) {
+  try {
+    const sub = typeof l.subdivision === "string" ? l.subdivision.trim() : "";
+    if (!/^[A-Za-z0-9 .,'&()\/-]{2,80}$/.test(sub)) return "";
+    const p = new URLSearchParams({ subdivision: sub, size: "24" });
+    const r = await crm(context.env, context.request, `/api/idx/listings?${p.toString()}`, { anonymous: true, timeoutMs: 2500 });
+    const ls = r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? r.json.listings.filter((x) => x && x.mlsNumber !== l.mlsNumber) : [];
+    if (ls.length < 3) return "";
+    const price = typeof l.listPrice === "number" ? l.listPrice : 0;
+    const pick = ls.slice().sort((a, b) => Math.abs((a.listPrice || 0) - price) - Math.abs((b.listPrice || 0) - price)).slice(0, 10).sort((a, b) => (a.listPrice || 0) - (b.listPrice || 0));
+    const name = sub.toLowerCase().replace(/\b([a-z])/g, (c) => c.toUpperCase());
+    // The page sits inside the shell's <main id="main">, so the guide pages' strip style applies.
+    return `<div class="hx-strip" data-place="nearby" data-name="${esc(name)}"><p class="hx-s-head"><b>More homes for sale in ${esc(name)}</b></p>`
+      + `<div class="hx-s-row">${pick.map((x) => stripCard(x, false)).join("")}</div></div>`;
+  } catch {
+    return "";
+  }
 }
 
 // ── a community from our guide pages ────────────────────────────────────────

@@ -24,7 +24,7 @@ Built to the CRM's contract v1 (21 Oct 2026, `docs/website-listing-api.md` in th
 - `functions/sitemap-homes.xml.js`.
 - `idx-lib/crm.js` (the only door to the CRM; caching rules), `render.js` (all HTML; everything from the CRM escaped), `edge.js`, `places.js` (generated from Blog-Brain), `terms.js` (terms and the locked TCPA string).
 - `chapter3realty/homes-shell/index.html`: the page shell, stitched like every page. Never served on its own.
-- `tools/idx-test.mjs`: 69 controls against a mock CRM. `node tools/idx-test.mjs` must print "all controls pass".
+- `tools/idx-test.mjs`: 75 controls against a mock CRM. `node tools/idx-test.mjs` must print "all controls pass".
 - `tools/idx-check-places.mjs`: checks every community's search against the real MLS (development key).
 
 ## Settings (Cloudflare Pages, Production env)

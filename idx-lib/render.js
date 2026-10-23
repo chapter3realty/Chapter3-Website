@@ -3,8 +3,9 @@
  * number format and layout is made here. Everything from the CRM is untrusted
  * text: every string goes through esc(), and only https URLs are used (§10).
  *
- * MLS display rules (§8) this file carries: the listing firm on every listing, no
- * smaller than the listing's own text (16.14); source, disclaimer and "Updated"
+ * MLS display rules (§8) this file carries: the listing firm on every results card and
+ * listing page, no smaller than the listing's own text (16.14); the guide-page strip cards
+ * show the price only (owner's decision, 2026-10-23); source, disclaimer and "Updated"
  * on every page with listings (16.16, 16.17); our full firm name linked home
  * (16.9); a way to report a mistake (16.11); format, never change (16.13);
  * address null = town only, no street (16.5).
@@ -58,8 +59,12 @@ const TOUR = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"
 export function heartButton(l, hearted, small) {
   return `<button type="button" class="hx-heart${small ? " hx-heart-sm" : ""}" data-mls="${esc(l.mlsNumber)}" aria-pressed="${hearted ? "true" : "false"}" aria-label="Save ${esc(addressLine(l))}">${HEART}</button>`;
 }
-export function tourButton(l, label) {
-  return `<button type="button" class="hx-tour" data-mls="${esc(l.mlsNumber)}" data-addr="${esc(addressLine(l))}">${TOUR}<span>${esc(label || "Tour")}</span></button>`;
+const ASK = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/></svg>';
+
+/** Opens the tour form. interest "question" opens the same form as "Ask about this home" (§7e). */
+export function tourButton(l, label, interest, cls) {
+  const q = interest === "question";
+  return `<button type="button" class="hx-tour${cls ? ` ${cls}` : ""}" data-mls="${esc(l.mlsNumber)}" data-addr="${esc(addressLine(l))}" data-interest="${q ? "question" : "tour"}">${q ? ASK : TOUR}<span>${esc(label || "Tour")}</span></button>`;
 }
 
 /** A results card: photo, status, price, facts, address, the listing firm, a heart and a tour button. */
@@ -81,16 +86,15 @@ export function grid(listings, hearts) {
 }
 
 /**
- * A strip card on a guide page: the photo, the price, and the listing firm under the price.
- * The owner asked for the price alone. CCMLS 16.14 requires the listing firm on every
- * listing in type no smaller than the listing's own text, and here the price is that
- * text, so the firm sits under it at the same size, in a lighter weight.
+ * A strip card on a guide page: the photo and the price, nothing else (owner, 2026-10-23:
+ * the strip cards need no listing firm). The firm shows on the results cards and on the
+ * listing page each card opens.
  */
 export function stripCard(l, hearted) {
   const photo = safeUrl(l.photo);
   return `<div class="hx-s-card"><a class="hx-s-link" href="${esc(listingPath(l))}" draggable="false"><span class="hx-s-photo">`
     + (photo ? `<img src="${esc(photo)}" alt="${esc(addressLine(l))}" width="480" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false">` : "")
-    + `<span class="hx-s-chip"><b>${esc(headlinePrice(l))}</b><span>${esc(l.listingFirm || "Listing brokerage")}</span></span></span></a>`
+    + `<span class="hx-s-chip"><b>${esc(headlinePrice(l))}</b></span></span></a>`
     + `${heartButton(l, hearted, true)}</div>`;
 }
 
@@ -139,12 +143,34 @@ export function tourDialog() {
 <label>Name<input name="name" autocomplete="name" required maxlength="120"></label>
 <label>Phone<input name="phone" type="tel" autocomplete="tel" required maxlength="40"></label>
 <label>Email<input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+<label><span id="hx-tour-msg-label">Anything we should know? (optional)</span><textarea name="message" rows="3" maxlength="1000"></textarea></label>
 <label class="hx-check form-consent"><input type="checkbox" name="consent"><span>${esc(SMS_CONSENT_TEXT)}</span></label>
 <input name="website" class="hx-hp" tabindex="-1" autocomplete="off" aria-hidden="true" value="">
 <p class="hx-error" role="alert" hidden></p>
 <button class="btn btn-brass" type="submit">Request a tour</button>
 </form></dialog>`;
 }
+
+/** After 5 seconds on a listing page: a small card, bottom right, offering more information or a tour. */
+export function listingToast(l) {
+  return `<div class="hx-toast" id="hx-toast" role="complementary" aria-label="Questions about this home" hidden>
+<button type="button" class="hx-x" data-hx-toast-close aria-label="Close">&times;</button>
+<p class="hx-toast-t">Want more information or a tour?</p>
+<p class="hx-toast-s">A Chapter3 agent can answer your questions about this home or set up a showing.</p>
+<div class="hx-toast-b">${tourButton(l, "Tour this home", "tour", "hx-primary")}${tourButton(l, "Ask a question", "question")}</div></div>`;
+}
+
+const I = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${d}</svg>`;
+export const ICONS = {
+  bed: I('<path d="M3 18V7"/><path d="M3 14h18v4"/><path d="M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.6"/>'),
+  bath: I('<path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M6 12V6a2 2 0 0 1 3.5-1.3"/><path d="M7 19l-1 2M17 19l1 2"/>'),
+  area: I('<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h5V4M20 15h-5v5"/>'),
+  lot: I('<path d="M3 20h18"/><path d="M6 20v-6l4-3 4 3v6"/><path d="M17 20v-4a2 2 0 1 1 4 0"/>'),
+  year: I('<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/>'),
+  home: I('<path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/>'),
+  lock: I('<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>'),
+  camera: I('<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>'),
+};
 
 export const STYLE = `<style>
 .hx-wrap{max-width:1180px;margin:0 auto;padding:1.5rem 1.25rem 3rem;color:var(--navy)}
@@ -189,6 +215,45 @@ button.hx-heart{border-radius:999px}
 .hx-hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
 .hx-x{position:absolute;top:.5rem;right:.6rem;border:0;background:none;font-size:1.6rem;cursor:pointer;color:var(--muted)}
 .hx-error{color:#a3361f;font-size:.85rem;margin:0}.hx-ok{color:#2c6b3f;font-size:.9rem}
+.hx-dialog textarea{padding:.55rem .6rem;border-radius:8px;border:1px solid var(--rule,#d9d2c6);font:inherit;resize:vertical}
+.hx-tour.hx-primary{background:var(--brass-ink,#91592b);border-color:var(--brass-ink,#91592b);color:#fff}
+.hx-glass{background:rgba(255,255,255,.64);border:1px solid rgba(255,255,255,.85);box-shadow:0 10px 30px rgba(28,32,40,.08);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3)}
+.hx-l-media{display:grid;gap:.6rem;margin:.7rem 0 1.4rem}
+.hx-l-hero,.hx-l-tile{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#e8e1d6,#d9cfc1)}
+.hx-l-hero{aspect-ratio:4/3}.hx-l-hero img,.hx-l-tile img{width:100%;height:100%;object-fit:cover;display:block}
+.hx-l-tile{display:none}.hx-l-tile.hx-blur img{filter:blur(16px) saturate(1.15);transform:scale(1.2)}
+.hx-l-tilebtn{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.45rem;border:0;background:rgba(28,32,40,.30);color:#fff;font:inherit;font-weight:600;font-size:1.05rem;cursor:pointer;text-align:center;padding:1rem;text-decoration:none}
+.hx-l-tilebtn svg,.hx-l-count svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8}
+.hx-l-tilebtn.hx-l-ask{border-radius:0;border:0;background:rgba(255,255,255,.58);color:var(--navy);font-size:1.05rem}
+.hx-l-tilebtn small{font-weight:500;font-size:.85rem;opacity:.9}.hx-l-tile.hx-soft img{filter:blur(22px) saturate(1.1);transform:scale(1.3);object-position:20% 80%}
+.hx-l-chip{position:absolute;top:.8rem;left:.8rem;padding:.3rem .75rem;border-radius:999px;font-size:.85rem;font-weight:600;color:#fff;background:rgba(28,32,40,.45);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hx-l-count{position:absolute;right:.8rem;bottom:.8rem;display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .85rem;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(28,32,40,.5);color:#fff;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hx-l-hero .hx-heart{position:absolute;top:.8rem;right:.8rem}
+@media (min-width:900px){.hx-l-media{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;height:min(64vh,540px)}.hx-l-hero{grid-row:1/3;aspect-ratio:auto}.hx-l-tile{display:block}.hx-l-media.hx-one{grid-template-columns:1fr}.hx-l-media.hx-one .hx-l-hero{grid-row:auto}}
+.hx-l-grid{display:grid;gap:1.6rem}@media (min-width:900px){.hx-l-grid{grid-template-columns:minmax(0,1fr) 330px;gap:2.6rem}}
+.hx-l-price{font-family:var(--serif);font-size:clamp(2rem,5vw,2.9rem);font-weight:600;line-height:1.05;margin:0;letter-spacing:-.01em}
+.hx-wrap h1.hx-l-addr{font-family:var(--sans);font-size:1.15rem;font-weight:500;line-height:1.4;margin:.35rem 0 .9rem;color:var(--slate,#5c6b78)}
+.hx-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 .9rem;padding:0;list-style:none}
+.hx-pill{display:inline-flex;align-items:center;gap:.45rem;padding:.5rem .85rem;border-radius:999px;background:#fff;border:1px solid var(--rule,#e6dfd3);font-size:1rem}
+.hx-pill svg,.hx-fact svg,.hx-teaser svg{width:18px;height:18px;flex:none;fill:none;stroke:var(--brass-ink,#91592b);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.hx-facts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;margin:1.3rem 0}@media (min-width:600px){.hx-facts-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.hx-fact{padding:.85rem .95rem;border-radius:16px}.hx-fact span{display:block;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate,#5c6b78)}.hx-fact b{display:block;font-size:1.05rem;font-weight:600;margin-top:.15rem;overflow-wrap:anywhere}
+.hx-side{position:sticky;top:9rem;align-self:start;padding:1.3rem;border-radius:22px;display:flex;flex-direction:column;gap:.7rem}
+.hx-side .hx-l-price{font-size:1.9rem}.hx-side p{margin:0}
+.hx-side .hx-tour{justify-content:center;padding:.75rem 1rem;font-size:1rem;font-weight:600}
+.hx-side-row{display:flex;align-items:center;gap:.6rem;font-size:.9rem;color:var(--slate,#5c6b78)}.hx-side-row .hx-heart{border:1px solid var(--rule,#e6dfd3)}
+.hx-teaser{margin:1.6rem 0;padding:1.3rem 1.3rem 1.1rem;border-radius:22px}
+.hx-teaser h2{font-family:var(--serif);font-size:1.35rem;margin:0 0 .3rem}.hx-teaser ul{list-style:none;margin:.6rem 0 1rem;padding:0}
+.hx-teaser li{display:flex;align-items:center;gap:.6rem;padding:.7rem 0;border-bottom:1px solid var(--rule,#e6dfd3);font-size:1rem}
+.hx-teaser li em{margin-left:auto;display:inline-block;width:6.5rem;height:.8rem;border-radius:6px;background:linear-gradient(90deg,#d9cfc1,#efe8dd);filter:blur(1.5px)}
+.hx-wrap h2{font-family:var(--serif);font-size:1.45rem;margin:2rem 0 .6rem}
+.hx-gallery img{height:360px}
+.hx-toast{position:fixed;right:1rem;bottom:1rem;z-index:60;width:min(23rem,calc(100% - 2rem));padding:1.05rem 1.1rem 1rem;border-radius:20px;background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.9);box-shadow:0 18px 50px rgba(28,32,40,.22);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);transform:translateY(16px);opacity:0;transition:transform .45s ease,opacity .45s ease}
+.hx-toast.hx-in{transform:none;opacity:1}.hx-toast p{margin:0}.hx-toast-t{font-family:var(--serif);font-size:1.15rem;font-weight:600;padding-right:1.6rem}.hx-toast-s{font-size:.88rem;color:var(--slate,#5c6b78);margin:.25rem 0 .75rem!important;line-height:1.45}
+.hx-toast-b{display:flex;gap:.5rem;flex-wrap:wrap}.hx-toast .hx-x{top:.35rem;right:.5rem}
+@media (max-width:600px){.hx-toast{left:.75rem;right:.75rem;bottom:.75rem;width:auto;padding:.7rem .8rem .75rem;border-radius:16px}.hx-toast-t{font-size:1rem}.hx-toast-s{display:none}.hx-toast-b{margin-top:.5rem}.hx-toast .hx-tour{padding:.4rem .75rem;font-size:.85rem}}
+@media (prefers-reduced-motion:reduce){.hx-toast{transition:opacity .2s;transform:none}}
+@media (prefers-reduced-transparency:reduce){.hx-glass,.hx-toast{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}}
 </style>`;
 
 /* The strip on a guide page: one row that pans sideways, no scroll bar; drag with a mouse,
@@ -251,15 +316,24 @@ $$(".hx-heart").forEach(function(b){b.addEventListener("click",function(e){e.pre
  if(!signed){askSignup(m);return}var on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",on?"true":"false");
  post("/homes/api/hearts",{mlsNumber:m,loved:on}).then(function(j){if(j._status===401){location.reload()}})})});
 /* Tour this home: the site's ordinary lead form, with the home's MLS number. */
-var td=$("#hx-tourd"),tf=$("#hx-tour-form"),tm=null,ta="";
-$$(".hx-tour[data-mls]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();tm=b.getAttribute("data-mls");ta=b.getAttribute("data-addr")||"";var a=$("#hx-tour-addr");if(a)a.textContent=ta;openD(td)})});
+var td=$("#hx-tourd"),tf=$("#hx-tour-form"),tm=null,ta="",ti="tour";
+function hideToast(){var t=$("#hx-toast");if(t){t.classList.remove("hx-in");t.hidden=true}}
+$$(".hx-tour[data-mls]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();tm=b.getAttribute("data-mls");ta=b.getAttribute("data-addr")||"";ti=b.getAttribute("data-interest")==="question"?"question":"tour";
+ var a=$("#hx-tour-addr");if(a)a.textContent=ta;var h=$("#hx-tour-title");if(h)h.textContent=ti==="question"?"Ask about this home":"Tour this home";
+ var l=$("#hx-tour-msg-label");if(l)l.textContent=ti==="question"?"Your question":"Anything we should know? (optional)";
+ var s=tf&&tf.querySelector("button[type=submit]");if(s)s.textContent=ti==="question"?"Send my question":"Request a tour";hideToast();openD(td)})});
 if(tf){tf.addEventListener("submit",function(e){e.preventDefault();var err=tf.querySelector(".hx-error");err.hidden=true;
  if(!tf.elements.consent.checked){err.textContent="Please tick the box so an agent can reach you about the tour.";err.hidden=false;return}
  var ct=(tf.querySelector(".form-consent span").textContent||"").replace(/\\s+/g," ").trim();
  fetch("https://app.chapter3realty.com/api/forms/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({formType:"contact",name:tf.elements.name.value,phone:tf.elements.phone.value,email:tf.elements.email.value,
-  consent:true,consentText:ct,website:tf.elements.website.value,page:location.pathname,formName:"Tour this home",interest:"tour",mls_number:tm,message:"I'd like to tour "+ta})})
- .then(function(r){return r.json().catch(function(){return{}}).then(function(j){if(r.ok&&j.ok){tf.innerHTML="";var p=document.createElement("p");p.className="hx-ok";p.textContent="Thank you. An agent will contact you to set up the tour.";tf.appendChild(p)}
+  consent:true,consentText:ct,website:tf.elements.website.value,page:location.pathname,formName:ti==="question"?"Ask about this home":"Tour this home",interest:ti,mls_number:tm,
+  message:(ti==="question"?"Question about ":"I'd like to tour ")+ta+(tf.elements.message.value.trim()?": "+tf.elements.message.value.trim().slice(0,1000):"")})})
+ .then(function(r){return r.json().catch(function(){return{}}).then(function(j){if(r.ok&&j.ok){tf.innerHTML="";var p=document.createElement("p");p.className="hx-ok";p.textContent=ti==="question"?"Thank you. An agent will answer your question soon.":"Thank you. An agent will contact you to set up the tour.";tf.appendChild(p);try{sessionStorage.setItem("c3_toast_off","1")}catch(x){}}
   else{err.textContent="Please check your name, phone and email.";err.hidden=false}})}).catch(function(){err.textContent="Please call (854) 333-2135 and we will set up the tour.";err.hidden=false})})}
+/* After 5 seconds on a listing page: the small card bottom right, once a visit, never over an open form. */
+var toast=$("#hx-toast");if(toast){var off=false;try{off=sessionStorage.getItem("c3_toast_off")==="1"}catch(x){}
+ var tc=toast.querySelector("[data-hx-toast-close]");if(tc)tc.addEventListener("click",function(){hideToast();try{sessionStorage.setItem("c3_toast_off","1")}catch(x){}});
+ if(!off)setTimeout(function(){if(document.querySelector("dialog[open]"))return;toast.hidden=false;requestAnimationFrame(function(){requestAnimationFrame(function(){toast.classList.add("hx-in")})})},5000)}
 /* Seconds on a listing page (contract 7c, 7d). */
 var main=$("[data-hx-mls]");if(main){var vid=main.getAttribute("data-view-id"),mls=main.getAttribute("data-hx-mls"),secs=0,since=document.visibilityState==="visible"?Date.now():null;
  function total(){return Math.min(3600,Math.floor(secs+(since?(Date.now()-since)/1000:0)))}

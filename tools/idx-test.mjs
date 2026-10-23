@@ -99,7 +99,8 @@ check("listing: firm line on the page", t.includes("Listed by Firm 1"));
 check("listing: RealEstateListing schema with the price", t.includes('"@type":"RealEstateListing"') && t.includes('"price":225000'));
 check("listing: noindex by default", t.includes("noindex, follow"));
 r = await run(homes, req("/homes/2611111"));
-check("address withheld: town only, no street in the URL", r.status === 200 && !(await r.text()).includes("Test St"));
+t = await r.text();
+check("address withheld: town only, no street in the URL", r.status === 200 && t.includes('<h1 class="hx-l-addr">Myrtle Beach, SC</h1>') && !/<title>[^<]*Test St/.test(t) && !t.split('class="hx-strip"')[0].includes("Test St"));
 r = await run(homes, req("/homes/404404-gone/"));
 check("listing: not found is a 404 page", r.status === 404);
 
@@ -125,7 +126,7 @@ const strips = (t.match(/class="hx-s-row"/g) || []).length;
 check("strips: filled on a guide page", strips >= 10);
 check("strips: Tidewater (2 homes) keeps its empty slot", /data-place="tidewater" data-name="[^"]*"><\/div>/.test(t));
 check("strips: at most 10 cards a row, spread across price", (t.split('data-place="cherry-grove"')[1].split("hx-s-all")[0].match(/class="hx-s-card"/g) || []).length === 10);
-check("strips: firm under the price on every card", (t.match(/<span class="hx-s-chip"><b>/g) || []).length === (t.match(/class="hx-s-card"/g) || []).length);
+check("strips: the price alone on every card (owner, 2026-10-23)", (t.match(/<span class="hx-s-chip"><b>\$[0-9,]+<\/b><\/span>/g) || []).length === (t.match(/class="hx-s-card"/g) || []).length && !/class="hx-s-chip">[^]*?Firm \d/.test(t.split("hx-s-row")[1] || ""));
 check("strips: one notice, the dialogs and the script", (t.match(/class="hx-disclaimer"/g) || []).length === 1 && t.includes('id="hx-signup"'));
 check("header: Search Listings opens /homes/", t.includes("location.href='/homes/'") && !t.includes('onclick="openIdx()"'));
 STALE = true;
@@ -205,6 +206,16 @@ check("no HOA: other pages carry no such note", !(await r.text()).includes('clas
 r = await run(homes, req("/homes/near/nohoa-conway/"));
 check("no HOA: the place page says where the fact comes from", (await r.text()).includes("No HOA, as listed by the listing agent. Confirm before you buy."));
 check("no HOA: any value but 0 is never sent", placeParams({ near: "33.7,-78.9", hoa: "1" }) === null && placeParams({ near: "33.7,-78.9", hoa: "" }) === null && placeParams({ near: "33.7,-78.9", hoa: 0 }).get("hoa") === "0");
+
+// The listing page (2026-10-23).
+r = await run(homes, req("/homes/2600005-101-test-st-myrtle-beach/"));
+t = await r.text();
+check("listing: the firm stays on the listing page", t.includes('<p class="hx-firm-line">Listed by Firm 1</p>'));
+check("listing: tour and ask buttons, and the 5-second card", t.includes('data-interest="tour"') && t.includes('data-interest="question"') && t.includes('id="hx-toast"') && t.includes('Want more information or a tour?') && t.includes("5000"));
+check("listing: the card starts hidden", /<div class="hx-toast" id="hx-toast"[^>]*hidden>/.test(t));
+check("listing: public page shows no locked data (no HOA fee, taxes, remarks, sold price)", !t.includes("AssociationFee") && !t.includes("614") && !t.includes('<p class="hx-remarks">') && !t.includes("Sold price") && t.includes("Free: everything else about this home"));
+check("listing: more homes in the subdivision, closest in price, never this one", t.includes("More homes for sale in Test") && !t.split("More homes for sale in Test")[1].split("hx-disclaimer")[0].includes("/homes/2600005-") && (t.split("More homes for sale in Test")[1].match(/class="hx-s-card"/g) || []).length === 10);
+check("listing: blurred tile and photo count open the sign-up", /hx-l-tile hx-blur[^]*?data-hx-signup/.test(t) && t.includes("1 of 20 photos"));
 
 // Sitemap and the shell.
 r = await run(sitemap, req("/sitemap-homes.xml"), { ...ENV, IDX_INDEX_LISTINGS: "1" });
