@@ -8,6 +8,7 @@ import { onRequest as homes } from "../functions/homes/[[path]].js";
 import { onRequest as mw } from "../functions/_middleware.js";
 import { onRequest as sitemap } from "../functions/sitemap-homes.xml.js";
 import { placeParams } from "../idx-lib/edge.js";
+import { SCRIPT } from "../idx-lib/render.js";
 
 const ROOT = path.resolve("chapter3realty");
 let fails = 0;
@@ -20,6 +21,7 @@ const mk = (i, extra = {}) => ({ mlsNumber: String(2600000 + i), status: "Active
 const DEV_TOKEN = "eyJ2aXNpdG9ySWQiOiJ2MSIsInRlcm1zVmVyc2lvbiI6InYxLWRyYWZ0LTEiLCJleHBpcmVzQXQiOjk5OTk5OTk5OTl9.c2ln";
 const calls = [];
 let STALE = false;
+let sent2 = "";
 let HANG = false;
 let INVALID = false;
 globalThis.fetch = async (input, init = {}) => {
@@ -67,13 +69,13 @@ const run = (fn, r, env = ENV) => fn({ request: r, env, next: async () => ASSETS
 
 // Off by default.
 check("off: /homes/ is a 404 without IDX_LIVE", (await run(homes, req("/homes/"), { ...ENV, IDX_LIVE: "" })).status === 404);
-check("off: a guide page is untouched", !(await (await run(mw, req("/buyers/best-neighborhoods/"), { ...ENV, IDX_LIVE: "" })).text()).includes('class="hx-s-card"'));
+check("off: a guide page is untouched", !(await (await run(mw, req("/buyers/best-neighborhoods/"), { ...ENV, IDX_LIVE: "" })).text()).includes('<article class="hx-c">'));
 
 // Search.
 let r = await run(homes, req("/homes/"));
 let t = await r.text();
-check("search: 200 with cards", r.status === 200 && (t.match(/class="hx-card"/g) || []).length === 24);
-check("search: every card names its listing firm", (t.match(/Listed by Firm/g) || []).length === 24);
+check("search: 200 with cards", r.status === 200 && (t.match(/<article class="hx-c">/g) || []).length === 24);
+check("search: every card names its listing firm and the source", (t.match(/MLS #\d+, Firm \d+\. Listing provided by CCMLS\./g) || []).length === 24);
 check("search: source, disclaimer and Updated", t.includes("CCMLS") && t.includes("Listing information is provided by the MLS.") && t.includes("Updated October"));
 check("search: our full firm name linked home", t.includes('<a href="/">Chapter3 Realty, Corp.</a>'));
 check("search: indexed when unfiltered", t.includes('<meta name="robots" content="index, follow">'));
@@ -125,13 +127,13 @@ t = await r.text();
 const strips = (t.match(/class="hx-s-row"/g) || []).length;
 check("strips: filled on a guide page", strips >= 10);
 check("strips: Tidewater (2 homes) keeps its empty slot", /data-place="tidewater" data-name="[^"]*"><\/div>/.test(t));
-check("strips: at most 10 cards a row, spread across price", (t.split('data-place="cherry-grove"')[1].split("hx-s-all")[0].match(/class="hx-s-card"/g) || []).length === 10);
-check("strips: the price alone on every card (owner, 2026-10-23)", (t.match(/<span class="hx-s-chip"><b>\$[0-9,]+<\/b><\/span>/g) || []).length === (t.match(/class="hx-s-card"/g) || []).length && !/class="hx-s-chip">[^]*?Firm \d/.test(t.split("hx-s-row")[1] || ""));
+check("strips: at most 10 cards a row, spread across price", (t.split('data-place="cherry-grove"')[1].split("hx-s-all")[0].match(/<article class="hx-c">/g) || []).length === 10);
+check("strips: the owner's card template on every card (price, facts, address, MLS line)", (t.match(/<article class="hx-c">/g) || []).length > 0 && (t.match(/<article class="hx-c">/g) || []).length === (t.match(/class="hx-c-price">\$[0-9,]+</g) || []).length && (t.match(/<article class="hx-c">/g) || []).length === (t.match(/Listing provided by CCMLS\./g) || []).length);
 check("strips: one notice, the dialogs and the script", (t.match(/class="hx-disclaimer"/g) || []).length === 1 && t.includes('id="hx-signup"'));
 check("header: Search Listings opens /homes/", t.includes("location.href='/homes/'") && !t.includes('onclick="openIdx()"'));
 STALE = true;
 t = await (await run(mw, req("/buyers/best-neighborhoods/"))).text();
-check("stale MLS copy: no listings anywhere on the page", !t.includes('class="hx-s-card"'));
+check("stale MLS copy: no listings anywhere on the page", !t.includes('<article class="hx-c">'));
 r = await run(homes, req("/homes/"));
 check("stale MLS copy: the search says it is refreshing", r.status === 503 && (await r.text()).includes("being refreshed"));
 STALE = false;
@@ -168,7 +170,7 @@ HANG = true;
 let t0 = Date.now();
 r = await run(mw, req("/buyers/best-neighborhoods/"));
 t = await r.text();
-check("slow CRM: a guide page comes back unchanged within the budget", Date.now() - t0 < 4000 && r.status === 200 && !t.includes('class="hx-s-card"'));
+check("slow CRM: a guide page comes back unchanged within the budget", Date.now() - t0 < 4000 && r.status === 200 && !t.includes('<article class="hx-c">'));
 HANG = false;
 check("guide page: no stale ETag or Last-Modified", !r.headers.get("etag") && !r.headers.get("last-modified"));
 INVALID = true;
@@ -211,11 +213,28 @@ check("no HOA: any value but 0 is never sent", placeParams({ near: "33.7,-78.9",
 r = await run(homes, req("/homes/2600005-101-test-st-myrtle-beach/"));
 t = await r.text();
 check("listing: the firm stays on the listing page", t.includes('<p class="hx-firm-line">Listed by Firm 1</p>'));
-check("listing: tour and ask buttons, and the 5-second card", t.includes('data-interest="tour"') && t.includes('data-interest="question"') && t.includes('id="hx-toast"') && t.includes('Want more information or a tour?') && t.includes("5000"));
-check("listing: the card starts hidden", /<div class="hx-toast" id="hx-toast"[^>]*hidden>/.test(t));
+check("listing: one tour and one ask button, no pop-up (owner, 2026-10-25)", (t.match(/data-interest="tour"/g) || []).length === 1 && (t.match(/data-interest="question"/g) || []).length === 1 && !t.includes("hx-toast") && !t.includes(",5000)"));
+check("listing: the tour form carries the photo for its header, and day choices", /class="hx-tour hx-primary"[^>]*data-photo="https:/.test(t) && t.includes('name="day" value="This weekend"'));
 check("listing: public page shows no locked data (no HOA fee, taxes, remarks, sold price)", !t.includes("AssociationFee") && !t.includes("614") && !t.includes('<p class="hx-remarks">') && !t.includes("Sold price") && t.includes("Free: everything else about this home"));
-check("listing: more homes in the subdivision, closest in price, never this one", t.includes("More homes for sale in Test") && !t.split("More homes for sale in Test")[1].split("hx-disclaimer")[0].includes("/homes/2600005-") && (t.split("More homes for sale in Test")[1].match(/class="hx-s-card"/g) || []).length === 10);
+check("listing: more homes in the subdivision, closest in price, never this one", t.includes("More homes for sale in Test") && !t.split("More homes for sale in Test")[1].split("hx-disclaimer")[0].includes("/homes/2600005-") && (t.split("More homes for sale in Test")[1].match(/<article class="hx-c">/g) || []).length === 10);
 check("listing: blurred tile and photo count open the sign-up", /hx-l-tile hx-blur[^]*?data-hx-signup/.test(t) && t.includes("1 of 20 photos"));
+
+// The search box in plain words (2026-10-25).
+r = await run(homes, req("/homes/?q=" + encodeURIComponent("3 bed house under 400k in Conway")));
+check("search box: plain words become filters, then the clean address", r.status === 302 && r.headers.get("location") === "https://chapter3realty.com/homes/?max=400000&beds=3&city=Conway&type=house");
+r = await run(homes, req("/homes/?q=" + encodeURIComponent("Cherry Grove")));
+check("search box: an area from our guides opens its page", r.status === 302 && r.headers.get("location") === "https://chapter3realty.com/homes/near/cherry-grove/");
+r = await run(homes, req("/homes/?q=" + encodeURIComponent("<script>alert(1)</script> $$$")));
+check("search box: unreadable words never reach the CRM", r.status === 302 && !/script|alert|%3C/.test(r.headers.get("location")));
+r = await run(homes, req("/homes/?city=Conway&beds=3&subdivision=Market%20Common"));
+t = await r.text();
+sent2 = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
+check("search: subdivision words reach the CRM, validated", sent2.includes("subdivision=Market+Common"));
+check("search: the filters in force are chips that remove themselves", t.includes('href="/homes/?beds=3&amp;subdivision=Market+Common"') && t.includes(">Conway<") && t.includes("Clear all"));
+check("search: the title names the town", t.includes("<h1>Homes for sale in Conway</h1>"));
+check("search: quick filters apply at once, a sort menu, a search box", t.includes("data-hx-instant") && t.includes("data-hx-go") && t.includes('name="q"'));
+
+check("page script: it parses (a syntax error would break every button)", (() => { try { new Function(SCRIPT.replace(/^<script>|<\/script>$/g, "")); return true; } catch (e) { console.log(e.message); return false; } })());
 
 // Sitemap and the shell.
 r = await run(sitemap, req("/sitemap-homes.xml"), { ...ENV, IDX_INDEX_LISTINGS: "1" });

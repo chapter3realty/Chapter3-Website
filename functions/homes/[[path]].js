@@ -17,16 +17,17 @@
 import { PREVIEW_COOKIE, clearCookie, crm, idxOn, sameOrigin, setCookie, visitorToken } from "../../idx-lib/crm.js";
 import { PLACES } from "../../idx-lib/places.js";
 import { NO_HOA_NOTE, placeParams } from "../../idx-lib/edge.js";
+import { CITIES, readQuery } from "../../idx-lib/query.js";
 import { SMS_CONSENT_TEXT, TERMS_PARAGRAPHS, TERMS_TITLE, TERMS_VERSION, termsText } from "../../idx-lib/terms.js";
 import {
   ICONS, STRIP_STYLE, STYLE, SCRIPT, addressLine, dayLong, disclaimer, esc, factsLine, grid, headlinePrice, heartButton,
-  listingPath, listingToast, money, safeUrl, signupDialog, spaced, statusWord, stripCard, tourButton, tourDialog,
+  listingPath, money, safeUrl, signupDialog, spaced, statusWord, stripCard, tourButton, tourDialog,
 } from "../../idx-lib/render.js";
 
 const SITE = "https://chapter3realty.com";
 const PHONE = "(854) 333-2135";
 const TYPES = [["", "Any type"], ["house", "House"], ["condo", "Condo"], ["townhouse", "Townhouse"], ["manufactured", "Manufactured"], ["multi", "2 to 4 units"], ["land", "Land"]];
-const CITIES = ["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Garden City", "Murrells Inlet", "Pawleys Island", "Little River", "Conway", "Longs", "Loris", "Aynor", "Calabash"];
+// CITIES comes from idx-lib/query.js, so the search box and the town filter agree.
 const PRICES = [100000, 150000, 200000, 250000, 300000, 350000, 400000, 500000, 600000, 750000, 1000000, 1500000, 2000000];
 const DETAIL_LABELS = [
   ["PropertyCondition", "Condition"], ["NewConstructionYN", "New construction"], ["StoriesTotal", "Stories"], ["Levels", "Levels"],
@@ -164,7 +165,8 @@ async function heartsOf(context) {
 // ── search ──────────────────────────────────────────────────────────────────
 
 function select(name, label, options, current) {
-  return `<label>${esc(label)}<select name="${name}">${options.map(([v, t]) => `<option value="${esc(v)}"${String(current ?? "") === String(v) ? " selected" : ""}>${esc(t)}</option>`).join("")}</select></label>`;
+  const on = current !== null && current !== undefined && current !== "";
+  return `<label class="hx-chip${on ? " hx-on" : ""}"><span class="hx-vh">${esc(label)}</span><select name="${name}" aria-label="${esc(label)}">${options.map(([v, t]) => `<option value="${esc(v)}"${String(current ?? "") === String(v) ? " selected" : ""}>${esc(t)}</option>`).join("")}</select></label>`;
 }
 
 /** The visitor's filters, validated; anything else is dropped (contract §3: never pass a query through). */
@@ -182,6 +184,8 @@ function searchParams(q, signed) {
   const baths = q.get("baths");
   if (baths && /^\d{1,2}(\.5)?$/.test(baths)) p.set("baths", baths);
   if (q.get("waterfront") === "1") p.set("waterfront", "1");
+  const sub = (q.get("subdivision") || "").trim();
+  if (/^[A-Za-z0-9 .,'&()\/-]{2,80}$/.test(sub)) p.set("subdivision", sub);
   if (signed && q.get("sold") === "1") p.set("sold", "1");
   const sort = q.get("sort");
   if (sort && ["newest", "price_asc", "price_desc"].includes(sort)) p.set("sort", sort);
@@ -190,39 +194,67 @@ function searchParams(q, signed) {
   return p;
 }
 
+const TYPE_WORD = Object.fromEntries(TYPES.filter(([v]) => v));
+const title = (v) => String(v).toLowerCase().replace(/\b([a-z])/g, (c) => c.toUpperCase());
+/** The filters in force, each a chip that removes itself. */
+function appliedChips(p) {
+  const label = { city: (v) => v, zip: (v) => v, type: (v) => TYPE_WORD[v], min: (v) => `From ${money(+v)}`, max: (v) => `Up to ${money(+v)}`,
+    beds: (v) => `${v}+ beds`, baths: (v) => `${v}+ baths`, sqft: (v) => `${(+v).toLocaleString("en-US")}+ sq ft`, waterfront: () => "Waterfront", subdivision: (v) => title(v), sold: () => "Sold" };
+  const chips = [...p.keys()].filter((k) => label[k]).map((k) => {
+    const x = new URLSearchParams(p); x.delete(k); x.delete("page"); x.delete("size");
+    return `<a class="hx-applied-chip" href="${esc(`/homes/${x.toString() ? `?${x.toString()}` : ""}`)}" aria-label="Remove ${esc(label[k](p.get(k)))}">${esc(label[k](p.get(k)))}<span aria-hidden="true">&times;</span></a>`;
+  });
+  return chips.length ? `<div class="hx-applied">${chips.join("")}<a class="hx-clear" href="/homes/">Clear all</a></div>` : "";
+}
+
 async function searchPage(context, url, gate, anonymous = false) {
   const q = url.searchParams;
+  // Plain words in the box: read them into filters, then show the clean address of that search.
+  if (q.has("q")) {
+    const read = readQuery(q.get("q"));
+    if (read.place) return Response.redirect(`${SITE}/homes/near/${read.place}/`, 302);
+    const keep = searchParams(q, true);
+    for (const [k, v] of read.params) keep.set(k, v);
+    keep.delete("page");
+    return Response.redirect(`${SITE}/homes/${keep.toString() ? `?${keep.toString()}` : ""}`, 302);
+  }
   const p = searchParams(q, !anonymous && Boolean(visitorToken(context.request)));
-  const filtered = [...p.keys()].length > 0;
+  const filtered = [...p.keys()].some((k) => k !== "sort" && k !== "page");
   p.set("size", "24");
   const [r, hearts] = await Promise.all([crm(context.env, context.request, `/api/idx/listings?${p.toString()}`, { anonymous }), anonymous ? [] : heartsOf(context)]);
   if (!anonymous && badToken(r)) return publicView(context, (c) => searchPage(c, url, gate, true));
   if (r.status !== 200 || !r.json || !r.json.ok) return trouble(context, gate, r, "Grand Strand homes for sale");
   const j = r.json;
-  const priceOpts = [["", "Any"], ...PRICES.map((v) => [String(v), money(v)])];
-  const form = `<form class="hx-form" method="get" action="/homes/">
-${select("city", "Town", [["", "All Grand Strand"], ...CITIES.map((c) => [c, c])], q.get("city"))}
-${select("type", "Type", TYPES, q.get("type"))}
-${select("min", "Min price", priceOpts, q.get("min"))}
-${select("max", "Max price", priceOpts, q.get("max"))}
-${select("beds", "Beds", [["", "Any"], ["1", "1+"], ["2", "2+"], ["3", "3+"], ["4", "4+"], ["5", "5+"]], q.get("beds"))}
-${select("baths", "Baths", [["", "Any"], ["1", "1+"], ["2", "2+"], ["3", "3+"]], q.get("baths"))}
-${select("waterfront", "Water", [["", "Any"], ["1", "Waterfront"]], q.get("waterfront"))}
-${select("sort", "Sort", [["newest", "Newest"], ["price_asc", "Price, low to high"], ["price_desc", "Price, high to low"]], q.get("sort"))}
-${j.tier === "registered" ? select("sold", "Show", [["", "For sale"], ["1", "Sold, last 24 months"]], q.get("sold")) : ""}
-<button class="btn btn-brass" type="submit">Search</button></form>`;
+  const priceOpts = (lead) => [["", lead], ...PRICES.map((v) => [String(v), money(v)])];
+  const hidden = ["zip", "sqft", "subdivision"].filter((k) => p.get(k)).map((k) => `<input type="hidden" name="${k}" value="${esc(p.get(k))}">`).join("");
+  const form = `<form class="hx-search" method="get" action="/homes/" role="search">
+<div class="hx-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input name="q" type="search" enterkeyhint="search" autocomplete="off" maxlength="200" aria-label="Search homes" placeholder="Try &quot;3 bed in Conway under $400k&quot;"><button type="submit">Search</button></div>
+</form>
+<form class="hx-chips" method="get" action="/homes/" data-hx-instant>${hidden}
+${select("city", "Town", [["", "Any town"], ...CITIES.map((c) => [c, c])], p.get("city"))}
+${select("type", "Type", TYPES, p.get("type"))}
+${select("min", "Min price", priceOpts("Min price"), p.get("min"))}
+${select("max", "Max price", priceOpts("Max price"), p.get("max"))}
+${select("beds", "Beds", [["", "Beds"], ["1", "1+ beds"], ["2", "2+ beds"], ["3", "3+ beds"], ["4", "4+ beds"], ["5", "5+ beds"]], p.get("beds"))}
+${select("baths", "Baths", [["", "Baths"], ["1", "1+ baths"], ["2", "2+ baths"], ["3", "3+ baths"]], p.get("baths"))}
+${select("waterfront", "Water", [["", "Any water"], ["1", "Waterfront"]], p.get("waterfront"))}
+${j.tier === "registered" ? select("sold", "Show", [["", "For sale"], ["1", "Sold, last 24 months"]], p.get("sold")) : ""}
+<noscript><button class="hx-chip" type="submit">Apply</button></noscript></form>`;
   const pageNo = Number.isInteger(j.page) && j.page > 0 ? j.page : 1;
   const pages = Math.min(100, Math.max(1, Math.ceil((j.total || 0) / (j.pageSize || 24))));
   const link = (n) => { const x = new URLSearchParams(p); x.delete("size"); x.set("page", String(n)); return `/homes/?${x.toString()}`; };
   const pager = pages > 1 ? `<nav class="hx-pager" aria-label="Pages">${pageNo > 1 ? `<a href="${esc(link(pageNo - 1))}">Previous</a>` : ""}<span>Page ${pageNo} of ${pages}</span>${pageNo < pages ? `<a href="${esc(link(pageNo + 1))}">Next</a>` : ""}</nav>` : "";
+  const sortLink = (v, t) => { const x = new URLSearchParams(p); x.delete("size"); x.delete("page"); if (v) x.set("sort", v); else x.delete("sort"); return `<option value="${esc(`/homes/?${x.toString()}`)}"${(p.get("sort") || "") === v ? " selected" : ""}>${esc(t)}</option>`; };
+  const where = p.get("city") ? ` in ${p.get("city")}` : p.get("subdivision") ? ` in ${title(p.get("subdivision"))}` : "";
   const body = `${crumbs([["/", "Home"], [null, "Homes for sale"]])}
-<h1>Grand Strand homes for sale</h1>
-<p class="hx-lead">Homes for sale from Little River to Pawleys Island, from the Coastal Carolinas MLS, refreshed every few minutes. ${esc(String((j.total || 0).toLocaleString("en-US")))} homes match. Each card names its listing firm.</p>
-${signedBar(j.tier)}${form}${grid(Array.isArray(j.listings) ? j.listings : [], hearts)}${pager}
+<h1>${esc(`${p.get("sold") ? "Sold homes" : "Homes for sale"}${where || " on the Grand Strand"}`)}</h1>
+${signedBar(j.tier)}${form}${appliedChips(p)}
+<div class="hx-count"><p><b>${esc((j.total || 0).toLocaleString("en-US"))}</b> ${j.total === 1 ? "home" : "homes"}</p><label class="hx-sort">Sort<select data-hx-go aria-label="Sort">${sortLink("", "Newest")}${sortLink("price_asc", "Price, low to high")}${sortLink("price_desc", "Price, high to low")}</select></label></div>
+${grid(Array.isArray(j.listings) ? j.listings : [], hearts)}${pager}
 ${j.tier === "public" ? signupPrompt("Want every photo, the HOA fee and the taxes?") : ""}
 ${disclaimer(j.meta)}`;
   return page(context, gate, {
-    title: "Grand Strand homes for sale",
+    title: `${p.get("sold") ? "Sold homes" : "Homes for sale"}${where || " on the Grand Strand"}`,
     description: "Search Grand Strand homes for sale from the Coastal Carolinas MLS: Myrtle Beach, North Myrtle Beach, Surfside, Murrells Inlet, Pawleys Island and Conway.",
     canonical: `${SITE}/homes/`,
     robots: filtered ? "noindex, follow" : "index, follow",
@@ -286,8 +318,7 @@ async function listingPageWith(context, mls, slugPart, gate, r, hearts) {
   } else if (photo) {
     const more = count > 1 ? `<button type="button" class="hx-l-count" data-hx-signup>${ICONS.camera}1 of ${esc(count)} photos</button>` : "";
     media = `<div class="hx-l-media"><div class="hx-l-hero">${img(photo, addressLine(l), true)}${chip}${heartButton(l, hearted)}${more}</div>`
-      + `<div class="hx-l-tile hx-blur">${img(photo, "")}<button type="button" class="hx-l-tilebtn" data-hx-signup>${ICONS.lock}<span>${count > 1 ? `See all ${esc(count)} photos` : "See full details"}</span><small>Free sign-up</small></button></div>`
-      + `<div class="hx-l-tile hx-soft">${img(photo, "")}<button type="button" class="hx-l-tilebtn hx-l-ask hx-tour" data-mls="${esc(l.mlsNumber)}" data-addr="${esc(addressLine(l))}" data-interest="tour">${ICONS.home}<span>Tour this home</span><small>An agent sets it up</small></button></div></div>`;
+      + `<div class="hx-l-tile hx-blur hx-tall">${img(photo, "")}<button type="button" class="hx-l-tilebtn" data-hx-signup>${ICONS.lock}<span>${count > 1 ? `See all ${esc(count)} photos` : "See full details"}</span><small>Free sign-up</small></button></div></div>`;
   } else {
     media = `<div class="hx-l-media hx-one"><div class="hx-l-hero"><div class="hx-nophoto">No photo yet</div>${chip}${heartButton(l, hearted)}</div></div>`;
   }
@@ -320,18 +351,17 @@ ${l.listingAgent ? `<p class="hx-firm-line">Listing agent: ${esc(l.listingAgent)
       + `<button type="button" class="btn btn-brass" data-hx-signup>See full details</button></section>`;
 
   const side = `<aside class="hx-side hx-glass" aria-label="Tour or ask about this home"><p class="hx-l-price">${esc(headlinePrice(l))}</p><p class="hx-small">${esc(addressLine(l))}</p>`
-    + `${tourButton(l, "Tour this home", "tour", "hx-primary")}${tourButton(l, "Ask a question", "question")}`
-    + `<div class="hx-side-row">${heartButton(l, hearted)}<span>${registered ? "Save it to your homes" : "Save it with a free sign-up"}</span></div></aside>`;
+    + `${tourButton(l, "Tour this home", "tour", "hx-primary")}${tourButton(l, "Ask a question", "question")}</aside>`;
 
   const nearby = await homesNearby(context, l);
   const body = `${crumbs([["/", "Home"], ["/homes/", "Homes for sale"], [null, l.city || "Listing"]])}
 ${media}
-<div class="hx-l-grid"><div class="hx-l-info">
+<div class="hx-l-grid"><div class="hx-l-info"><div class="hx-l-top">
 <p class="hx-l-price">${esc(headlinePrice(l))}</p>
 <h1 class="hx-l-addr">${esc(addressLine(l))}</h1>
 ${pills}
 <p class="hx-firm-line">Listed by ${esc(l.listingFirm || "the listing brokerage")}</p>
-${signedBar(r.json.tier)}${facts}${more}
+${signedBar(r.json.tier)}</div><div class="hx-l-rest">${facts}${more}</div>
 </div>${side}</div>
 ${nearby}
 ${disclaimer(r.json.meta)}`;
@@ -346,7 +376,6 @@ ${disclaimer(r.json.meta)}`;
     rootAttrs: ` data-hx-mls="${esc(l.mlsNumber)}"${r.json.viewId ? ` data-view-id="${esc(r.json.viewId)}"` : ""}`,
     private: registered,
     extraHead: nearby ? STRIP_STYLE : "",
-    extraBody: listingToast(l),
   });
 }
 

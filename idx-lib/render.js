@@ -64,19 +64,43 @@ const ASK = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" 
 /** Opens the tour form. interest "question" opens the same form as "Ask about this home" (§7e). */
 export function tourButton(l, label, interest, cls) {
   const q = interest === "question";
-  return `<button type="button" class="hx-tour${cls ? ` ${cls}` : ""}" data-mls="${esc(l.mlsNumber)}" data-addr="${esc(addressLine(l))}" data-interest="${q ? "question" : "tour"}">${q ? ASK : TOUR}<span>${esc(label || "Tour")}</span></button>`;
+  const photo = safeUrl(l.photo);
+  return `<button type="button" class="hx-tour${cls ? ` ${cls}` : ""}" data-mls="${esc(l.mlsNumber)}" data-addr="${esc(addressLine(l))}" data-interest="${q ? "question" : "tour"}"${photo ? ` data-photo="${esc(photo)}"` : ""}>${q ? ASK : TOUR}<span>${esc(label || "Tour")}</span></button>`;
 }
 
-/** A results card: photo, status, price, facts, address, the listing firm, a heart and a tour button. */
+/**
+ * One home card everywhere a few homes are shown: results, place pages, guide-page strips
+ * and "more homes" (owner's template, 2026-10-25). The photo with one tag and a heart; the
+ * price; beds | baths | sq ft | status; the address; then, small, the MLS number, the listing
+ * firm and the source. The tag is a fact from the card, never an opinion.
+ */
+const THIS_YEAR = new Date().getUTCFullYear();
+export function cardTag(l) {
+  if (l.status === "ActiveUnderContract") return "Under contract";
+  if (l.status === "Pending") return "Pending";
+  if (l.waterfront === true) return "Waterfront";
+  if (typeof l.yearBuilt === "number" && l.yearBuilt >= THIS_YEAR - 1) return `Built ${l.yearBuilt}`;
+  if (typeof l.lotAcres === "number" && l.lotAcres >= 1) return `${l.lotAcres >= 10 ? Math.round(l.lotAcres) : Math.round(l.lotAcres * 10) / 10}-acre lot`;
+  return "";
+}
+
 export function card(l, opts = {}) {
   const photo = safeUrl(l.photo);
-  const miles = typeof l.miles === "number" ? `<span class="hx-miles">${esc(l.miles)} mi</span>` : "";
-  return `<article class="hx-card"><a class="hx-card-link" href="${esc(listingPath(l))}">`
-    + `<div class="hx-photo">${photo ? `<img src="${esc(photo)}" alt="${esc(addressLine(l))}" width="480" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : `<div class="hx-nophoto">No photo</div>`}`
-    + `<span class="hx-status">${esc(statusWord(l.status))}</span>${miles}</div>`
-    + `<div class="hx-card-body"><p class="hx-price">${esc(headlinePrice(l))}</p><p class="hx-facts">${esc(factsLine(l))}</p>`
-    + `<p class="hx-addr">${esc(addressLine(l))}</p><p class="hx-firm">Listed by ${esc(l.listingFirm || "the listing brokerage")}</p></div></a>`
-    + `<div class="hx-actions">${heartButton(l, opts.hearted)}${tourButton(l)}</div></article>`;
+  const tag = cardTag(l);
+  const miles = typeof l.miles === "number" ? `<span class="hx-c-miles">${esc(l.miles)} mi</span>` : "";
+  const bits = [];
+  if (typeof l.beds === "number") bits.push(`<b>${esc(l.beds)}</b> bds`);
+  if (typeof l.baths === "number") bits.push(`<b>${esc(l.baths)}</b> ba`);
+  if (typeof l.sqft === "number") bits.push(`<b>${esc(num(l.sqft))}</b> sqft`);
+  if (statusWord(l.status)) bits.push(esc(statusWord(l.status)));
+  const addr = l.address ? `${addressLine(l)}${l.postalCode ? `, ${l.postalCode}` : ""}` : addressLine(l);
+  return `<article class="hx-c"><a class="hx-c-link" href="${esc(listingPath(l))}" draggable="false"><span class="hx-c-photo">`
+    + (photo ? `<img src="${esc(photo)}" alt="${esc(addressLine(l))}" width="480" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false">` : `<span class="hx-nophoto">No photo yet</span>`)
+    + `${tag ? `<span class="hx-c-tag">${esc(tag)}</span>` : ""}${miles}</span>`
+    + `<span class="hx-c-body"><span class="hx-c-price">${esc(headlinePrice(l))}</span><span class="hx-c-facts">${bits.join('<i aria-hidden="true"></i>')}</span>`
+    + `<span class="hx-c-addr">${esc(addr)}</span>`
+    + `<span class="hx-c-firm">MLS #${esc(l.mlsNumber)}, ${esc(l.listingFirm || "listing brokerage")}. Listing provided by CCMLS.</span></span></a>`
+    + `${heartButton(l, opts.hearted, true)}</article>`;
 }
 
 export function grid(listings, hearts) {
@@ -85,18 +109,8 @@ export function grid(listings, hearts) {
   return `<div class="hx-grid">${listings.map((l) => card(l, { hearted: h.has(l.mlsNumber) })).join("")}</div>`;
 }
 
-/**
- * A strip card on a guide page: the photo and the price, nothing else (owner, 2026-10-23:
- * the strip cards need no listing firm). The firm shows on the results cards and on the
- * listing page each card opens.
- */
-export function stripCard(l, hearted) {
-  const photo = safeUrl(l.photo);
-  return `<div class="hx-s-card"><a class="hx-s-link" href="${esc(listingPath(l))}" draggable="false"><span class="hx-s-photo">`
-    + (photo ? `<img src="${esc(photo)}" alt="${esc(addressLine(l))}" width="480" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false">` : "")
-    + `<span class="hx-s-chip"><b>${esc(headlinePrice(l))}</b></span></span></a>`
-    + `${heartButton(l, hearted, true)}</div>`;
-}
+/** The same card in a strip that pans sideways (guide pages, "more homes"). */
+export const stripCard = (l, hearted) => card(l, { hearted });
 
 const tz = (iso, o) => {
   try { return new Date(iso).toLocaleString("en-US", { timeZone: "America/New_York", ...o }); } catch { return ""; }
@@ -118,11 +132,11 @@ export function signupDialog(siteKey) {
   return `<dialog id="hx-signup" class="hx-dialog" aria-labelledby="hx-signup-title">
 <form id="hx-signup-form" novalidate>
 <button type="button" class="hx-x" data-hx-close aria-label="Close">&times;</button>
-<h2 id="hx-signup-title">See every photo and the full details</h2>
-<p class="hx-small">Free. Sign up once to see every photo, the description, HOA fees, taxes, days on market and recent sales, and to save homes.</p>
+<div class="hx-d-head"><div><h2 id="hx-signup-title">See every photo and detail</h2><p class="hx-d-sub">Free. Sign up once for every home on the site.</p></div></div>
+<ul class="hx-d-perks"><li>All photos</li><li>HOA fee and taxes</li><li>Price history</li><li>Recent sales</li><li>Save homes</li></ul>
 <div class="hx-row2"><label>First name<input name="firstName" autocomplete="given-name" required maxlength="80"></label><label>Last name<input name="lastName" autocomplete="family-name" required maxlength="80"></label></div>
-<label>Email<input name="email" type="email" autocomplete="email" required maxlength="200"></label>
-<label>Phone<input name="phone" type="tel" autocomplete="tel" required maxlength="40"></label>
+<label>Email<input name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200"></label>
+<label>Phone<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="40"></label>
 <input name="website" class="hx-hp" tabindex="-1" autocomplete="off" aria-hidden="true" value="">
 <label class="hx-check"><input type="checkbox" name="termsAccepted"><span>I agree to the <a href="/homes/terms/" target="_blank" rel="noopener">listing search terms of use</a>.</span></label>
 <details class="hx-terms"><summary>Read the terms here</summary><h3>${esc(TERMS_TITLE)}</h3>${TERMS_PARAGRAPHS.map((p) => `<p>${esc(p)}</p>`).join("")}</details>
@@ -130,34 +144,26 @@ export function signupDialog(siteKey) {
 ${siteKey ? `<div class="cf-turnstile" data-sitekey="${esc(siteKey)}"></div>` : ""}
 <p class="hx-error" role="alert" hidden></p>
 <button class="btn btn-brass" type="submit" disabled>See full details</button>
+<p class="hx-d-fine">We never sell your information.</p>
 </form></dialog>`;
 }
 
-/** "Tour this home": an ordinary lead form, straight to the CRM's /api/forms/lead (§7e). */
+/** "Tour this home" and "Ask a question": the site's ordinary lead form, straight to the CRM's /api/forms/lead (§7e). */
 export function tourDialog() {
+  const day = (v) => `<label><input type="radio" name="day" value="${v}"><span>${v}</span></label>`;
   return `<dialog id="hx-tourd" class="hx-dialog" aria-labelledby="hx-tour-title">
 <form id="hx-tour-form" novalidate>
 <button type="button" class="hx-x" data-hx-close aria-label="Close">&times;</button>
-<h2 id="hx-tour-title">Tour this home</h2>
-<p class="hx-small" id="hx-tour-addr"></p>
+<div class="hx-d-head"><img class="hx-d-thumb" id="hx-tour-thumb" alt="" referrerpolicy="no-referrer" hidden><div><h2 id="hx-tour-title">Tour this home</h2><p class="hx-d-sub" id="hx-tour-addr"></p></div></div>
+<fieldset class="hx-days" id="hx-tour-days"><legend>When works best?</legend>${["Today", "Tomorrow", "This weekend", "Next week"].map(day).join("")}</fieldset>
 <label>Name<input name="name" autocomplete="name" required maxlength="120"></label>
-<label>Phone<input name="phone" type="tel" autocomplete="tel" required maxlength="40"></label>
-<label>Email<input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+<div class="hx-row2"><label>Phone<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="40"></label><label>Email<input name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200"></label></div>
 <label><span id="hx-tour-msg-label">Anything we should know? (optional)</span><textarea name="message" rows="3" maxlength="1000"></textarea></label>
 <label class="hx-check form-consent"><input type="checkbox" name="consent"><span>${esc(SMS_CONSENT_TEXT)}</span></label>
 <input name="website" class="hx-hp" tabindex="-1" autocomplete="off" aria-hidden="true" value="">
 <p class="hx-error" role="alert" hidden></p>
 <button class="btn btn-brass" type="submit">Request a tour</button>
 </form></dialog>`;
-}
-
-/** After 5 seconds on a listing page: a small card, bottom right, offering more information or a tour. */
-export function listingToast(l) {
-  return `<div class="hx-toast" id="hx-toast" role="complementary" aria-label="Questions about this home" hidden>
-<button type="button" class="hx-x" data-hx-toast-close aria-label="Close">&times;</button>
-<p class="hx-toast-t">Want more information or a tour?</p>
-<p class="hx-toast-s">A Chapter3 agent can answer your questions about this home or set up a showing.</p>
-<div class="hx-toast-b">${tourButton(l, "Tour this home", "tour", "hx-primary")}${tourButton(l, "Ask a question", "question")}</div></div>`;
 }
 
 const I = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${d}</svg>`;
@@ -180,15 +186,7 @@ export const STYLE = `<style>
 .hx-form{display:flex;flex-wrap:wrap;gap:.6rem .8rem;align-items:flex-end;margin:1rem 0 1.4rem;padding:.9rem 1rem;border-radius:16px;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.8);box-shadow:0 6px 18px rgba(28,32,40,.08)}
 .hx-form label{display:flex;flex-direction:column;font-size:.8rem;gap:.2rem}.hx-form select,.hx-form input{padding:.45rem .5rem;border-radius:8px;border:1px solid var(--rule,#d9d2c6);background:#fff;font:inherit}
 .hx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
-.hx-card{position:relative;background:#fff;border:1px solid var(--rule,#e6dfd3);border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(28,32,40,.06)}
-.hx-card-link{color:inherit;text-decoration:none;display:block}
-.hx-photo{position:relative;aspect-ratio:4/3;background:#e8e1d6}.hx-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .hx-nophoto{display:flex;align-items:center;justify-content:center;height:100%;color:var(--muted);font-size:.85rem}
-.hx-status,.hx-miles{position:absolute;top:.6rem;background:rgba(28,32,40,.72);color:#f4efe8;font-size:.72rem;padding:.2rem .55rem;border-radius:999px;backdrop-filter:blur(6px)}
-.hx-status{left:.6rem}.hx-miles{right:3rem}
-.hx-card-body{padding:.75rem .9rem .4rem}.hx-card-body p{margin:0 0 .25rem;font-size:.85rem;line-height:1.4}
-.hx-price{font-size:1.15rem!important;font-weight:650}.hx-addr{color:var(--muted)}
-.hx-actions{display:flex;justify-content:space-between;align-items:center;padding:.2rem .7rem .7rem}
 .hx-heart{border:0;background:rgba(255,255,255,.85);border-radius:999px;width:2.2rem;height:2.2rem;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:#1c2028}
 .hx-heart svg{fill:none;stroke:currentColor;stroke-width:1.8}.hx-heart[aria-pressed="true"] svg{fill:#c4553a;stroke:#c4553a}
 .hx-tour{display:inline-flex;align-items:center;gap:.35rem;border:1px solid var(--rule,#d9d2c6);background:#fff;border-radius:999px;padding:.35rem .8rem;font:inherit;font-size:.85rem;cursor:pointer;color:var(--navy)}
@@ -206,16 +204,76 @@ button.hx-heart{border-radius:999px}
 .hx-table{border-collapse:collapse;width:100%;max-width:760px;font-size:.92rem}.hx-table th{text-align:left;font-weight:600;padding:.4rem .6rem .4rem 0;width:40%;vertical-align:top}.hx-table td{padding:.4rem 0}.hx-table tr{border-bottom:1px solid var(--rule,#e6dfd3)}
 .hx-remarks{white-space:pre-line;line-height:1.65;max-width:760px}
 .hx-disclaimer{margin-top:2rem;font-size:.78rem;color:var(--muted);line-height:1.55;max-width:900px}.hx-disclaimer a{color:var(--navy)}
-.hx-dialog{border:0;border-radius:18px;padding:0;max-width:30rem;width:calc(100% - 2rem);box-shadow:0 20px 60px rgba(28,32,40,.3)}.hx-dialog::backdrop{background:rgba(28,32,40,.45);backdrop-filter:blur(3px)}
-.hx-dialog form{position:relative;padding:1.4rem 1.3rem 1.2rem;display:flex;flex-direction:column;gap:.6rem;max-height:90vh;overflow:auto}
-.hx-dialog h2{font-family:var(--serif);font-size:1.35rem;margin:0}.hx-dialog label{display:flex;flex-direction:column;gap:.2rem;font-size:.85rem}
-.hx-dialog input:not([type=checkbox]){padding:.55rem .6rem;border-radius:8px;border:1px solid var(--rule,#d9d2c6);font:inherit}
-.hx-row2{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}.hx-check{flex-direction:row!important;align-items:flex-start;gap:.5rem!important;font-size:.78rem!important;line-height:1.45}
 .hx-terms{font-size:.78rem;line-height:1.5}.hx-terms h3{font-size:.85rem;margin:.4rem 0}
 .hx-hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
-.hx-x{position:absolute;top:.5rem;right:.6rem;border:0;background:none;font-size:1.6rem;cursor:pointer;color:var(--muted)}
-.hx-error{color:#a3361f;font-size:.85rem;margin:0}.hx-ok{color:#2c6b3f;font-size:.9rem}
-.hx-dialog textarea{padding:.55rem .6rem;border-radius:8px;border:1px solid var(--rule,#d9d2c6);font:inherit;resize:vertical}
+.hx-error{color:#a3361f;font-size:.85rem;margin:0}.hx-ok{color:#2c6b3f;font-size:.95rem;padding:2rem 0;text-align:center}
+main#main .hx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.1rem}
+main#main .hx-c{position:relative;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(28,32,40,.06),0 6px 18px rgba(28,32,40,.08);transition:box-shadow .2s ease,transform .2s ease}
+main#main .hx-c:hover{box-shadow:0 2px 4px rgba(28,32,40,.08),0 14px 30px rgba(28,32,40,.14);transform:translateY(-2px)}
+main#main .hx-c-link{display:block;color:var(--ink,#1c2028);text-decoration:none}
+main#main .hx-c-photo{position:relative;display:block;aspect-ratio:16/10;background:linear-gradient(135deg,#e8e1d6,#d9cfc1)}
+main#main .hx-c-photo img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+main#main .hx-c-photo .hx-nophoto{display:flex;align-items:center;justify-content:center;height:100%;color:var(--slate,#5c6b78);font-size:.85rem}
+main#main .hx-c-tag{position:absolute;top:.6rem;left:.6rem;padding:.22rem .62rem;border-radius:999px;background:#b54a1a;color:#fff;font-size:.78rem;font-weight:700;line-height:1.35}
+main#main .hx-c-miles{position:absolute;bottom:.6rem;left:.6rem;padding:.18rem .55rem;border-radius:999px;background:rgba(28,32,40,.6);color:#fff;font-size:.75rem;font-weight:600}
+main#main .hx-c-body{display:block;padding:.7rem .95rem .85rem}
+main#main .hx-c-price{display:block;font-family:var(--sans);font-size:1.4rem;font-weight:800;letter-spacing:-.01em;line-height:1.2}
+main#main .hx-c-facts{display:flex;flex-wrap:wrap;align-items:center;gap:0 .45rem;margin:.2rem 0 .25rem;font-size:.95rem;line-height:1.4}
+main#main .hx-c-facts b{font-weight:700}main#main .hx-c-facts i{display:inline-block;width:1px;height:1em;background:rgba(28,32,40,.3)}
+main#main .hx-c-addr{display:block;font-size:.92rem;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+main#main .hx-c-firm{display:block;margin-top:.4rem;font-size:.72rem;line-height:1.4;color:var(--slate,#5c6b78)}
+main#main .hx-c .hx-heart{position:absolute;top:.45rem;right:.45rem;width:2.6rem;height:2.6rem;background:none!important;color:#fff;filter:drop-shadow(0 1px 3px rgba(0,0,0,.5))}
+main#main .hx-c .hx-heart svg{width:30px;height:30px;stroke-width:2}
+main#main .hx-s-row>.hx-c{flex:0 0 min(80%,19.5rem);scroll-snap-align:start}
+main#main .hx-s-row>.hx-c:hover{transform:none}
+.hx-dialog{position:fixed;inset:0;margin:auto;border:0;border-radius:22px;padding:0;max-width:27rem;width:calc(100% - 2rem);height:fit-content;max-height:calc(100% - 2rem);background:#fff;color:var(--ink,#1c2028);box-shadow:0 30px 80px rgba(28,32,40,.35)}
+.hx-dialog[open]{animation:hx-pop .22s ease-out}@keyframes hx-pop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+.hx-dialog::backdrop{background:rgba(28,32,40,.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.hx-dialog form{position:relative;padding:1.6rem 1.5rem 1.4rem;display:flex;flex-direction:column;gap:.75rem;max-height:calc(100vh - 2rem);overflow:auto}
+.hx-dialog .hx-d-head{display:flex;align-items:center;gap:.8rem;padding-right:2.4rem}
+.hx-dialog .hx-d-thumb{width:3.6rem;height:3.6rem;flex:none;border-radius:12px;object-fit:cover;background:#e8e1d6}
+.hx-dialog .hx-d-thumb[hidden]{display:none}
+.hx-dialog h2{font-family:var(--serif);font-size:1.45rem;line-height:1.2;margin:0}
+.hx-dialog .hx-d-sub{margin:.15rem 0 0;font-size:.88rem;color:var(--slate,#5c6b78)}
+.hx-dialog label{display:flex;flex-direction:column;gap:.3rem;font-size:.82rem;font-weight:600;color:var(--slate,#5c6b78)}
+.hx-dialog input:not([type=checkbox]):not([type=radio]),.hx-dialog textarea{width:100%;min-height:3rem;padding:.7rem .85rem;border-radius:12px;border:1px solid rgba(28,32,40,.16);background:#faf8f4;font:inherit;font-size:1rem;font-weight:400;color:var(--ink,#1c2028);transition:border-color .15s,box-shadow .15s,background .15s}
+.hx-dialog textarea{min-height:5rem;resize:vertical}
+.hx-dialog input:not([type=checkbox]):not([type=radio]):focus,.hx-dialog textarea:focus{outline:none;background:#fff;border-color:var(--brass-ink,#91592b);box-shadow:0 0 0 3px rgba(196,120,58,.18)}
+.hx-row2{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.hx-check{flex-direction:row!important;align-items:flex-start;gap:.6rem!important;font-size:.74rem!important;line-height:1.45}
+.hx-dialog .hx-check{font-weight:400;color:var(--slate,#5c6b78)}.hx-dialog .hx-check input{width:1.1rem;height:1.1rem;margin-top:.1rem;accent-color:var(--brass-ink,#91592b);flex:none}
+.hx-dialog button[type=submit]{width:100%;min-height:3.1rem;border-radius:999px;font-size:1rem;font-weight:700;letter-spacing:0;text-transform:none;margin-top:.2rem}
+.hx-dialog button[type=submit]:disabled{opacity:.5;cursor:not-allowed}
+.hx-days{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;border:0;margin:0;padding:0}@media (max-width:420px){.hx-days{grid-template-columns:repeat(2,1fr)}}.hx-days legend{font-size:.82rem;font-weight:600;color:var(--slate,#5c6b78);margin-bottom:.3rem;padding:0}
+.hx-days label{position:relative}.hx-days legend{grid-column:1/-1}
+.hx-days input{position:absolute;opacity:0;pointer-events:none}
+.hx-days span{display:block;text-align:center;white-space:nowrap;padding:.6rem .3rem;border-radius:12px;border:1px solid rgba(28,32,40,.16);background:#faf8f4;font-weight:600;font-size:.88rem;color:var(--ink,#1c2028);cursor:pointer}
+.hx-days input:checked+span{background:var(--ink,#1c2028);border-color:var(--ink,#1c2028);color:#fff}.hx-days input:focus-visible+span{box-shadow:0 0 0 3px rgba(196,120,58,.35)}
+.hx-x{position:absolute;top:.8rem;right:.8rem;width:2.2rem;height:2.2rem;border:0;border-radius:999px;background:#f1ece4;font-size:1.3rem;line-height:1;cursor:pointer;color:var(--ink,#1c2028);z-index:1}
+.hx-x:hover{background:#e7dfd2}
+.hx-vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hx-search{margin:1rem 0 .7rem}
+.hx-q{display:flex;align-items:center;gap:.5rem;padding:.35rem .35rem .35rem 1rem;border-radius:999px;background:#fff;border:1px solid rgba(28,32,40,.14);box-shadow:0 8px 26px rgba(28,32,40,.10);max-width:760px}
+.hx-q:focus-within{border-color:var(--brass-ink,#91592b);box-shadow:0 0 0 3px rgba(196,120,58,.18),0 8px 26px rgba(28,32,40,.10)}
+.hx-q svg{width:20px;height:20px;flex:none;fill:none;stroke:var(--slate,#5c6b78);stroke-width:2;stroke-linecap:round}
+.hx-q input{flex:1;min-width:0;border:0;outline:none;background:none;font:inherit;font-size:1.02rem;padding:.6rem 0;color:var(--ink,#1c2028)}
+.hx-q button{border:0;border-radius:999px;background:var(--ink,#1c2028);color:#fff;font:inherit;font-weight:700;padding:.7rem 1.3rem;cursor:pointer}
+.hx-chips{display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;padding:.2rem .1rem .6rem;margin:0 -.1rem}.hx-chips::-webkit-scrollbar{display:none}
+.hx-chip{position:relative;flex:none;display:inline-flex;align-items:center;border-radius:999px;border:1px solid rgba(28,32,40,.18);background:#fff;font-size:.9rem;font-weight:600;color:var(--ink,#1c2028)}
+.hx-chip.hx-on{background:var(--ink,#1c2028);border-color:var(--ink,#1c2028);color:#fff}
+.hx-chip select{appearance:none;-webkit-appearance:none;border:0;background:transparent;font:inherit;color:inherit;padding:.55rem 2rem .55rem .95rem;cursor:pointer;border-radius:999px}
+.hx-chip::after{content:"";position:absolute;right:.85rem;top:50%;width:.4rem;height:.4rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.hx-chip select option{color:#1c2028;background:#fff}
+.hx-applied{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:.2rem 0 .4rem}
+.hx-applied-chip{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .45rem .3rem .75rem;border-radius:999px;background:#f1ece4;color:var(--ink,#1c2028);font-size:.85rem;font-weight:600;text-decoration:none}
+.hx-applied-chip span{display:inline-flex;align-items:center;justify-content:center;width:1.2rem;height:1.2rem;border-radius:999px;background:rgba(28,32,40,.12);font-size:.9rem}
+.hx-clear{font-size:.85rem;color:var(--brass-ink,#91592b);margin-left:.3rem}
+.hx-count{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:.6rem 0 1rem}.hx-count p{margin:0;font-size:1.05rem}.hx-count b{font-weight:800}
+.hx-sort{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;color:var(--slate,#5c6b78)}.hx-sort select{border:1px solid rgba(28,32,40,.18);border-radius:999px;background:#fff;font:inherit;font-size:.9rem;padding:.4rem .8rem;color:var(--ink,#1c2028)}
+.hx-pager a,.hx-pager span{padding:.55rem 1rem;border-radius:999px;border:1px solid rgba(28,32,40,.15);background:#fff;text-decoration:none;color:var(--ink,#1c2028);font-weight:600}.hx-pager span{border:0;background:none}
+.hx-d-fine{font-size:.72rem;color:var(--slate,#5c6b78);line-height:1.45;margin:0;text-align:center}
+.hx-d-perks{display:flex;flex-wrap:wrap;gap:.35rem;list-style:none;margin:0;padding:0}.hx-d-perks li{padding:.28rem .65rem;border-radius:999px;background:#f4efe8;font-size:.8rem;font-weight:600}
+.hx-dialog .hx-terms summary{cursor:pointer;color:var(--slate,#5c6b78)}
 .hx-tour.hx-primary{background:var(--brass-ink,#91592b);border-color:var(--brass-ink,#91592b);color:#fff}
 .hx-glass{background:rgba(255,255,255,.64);border:1px solid rgba(255,255,255,.85);box-shadow:0 10px 30px rgba(28,32,40,.08);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3)}
 .hx-l-media{display:grid;gap:.6rem;margin:.7rem 0 1.4rem}
@@ -229,8 +287,9 @@ button.hx-heart{border-radius:999px}
 .hx-l-chip{position:absolute;top:.8rem;left:.8rem;padding:.3rem .75rem;border-radius:999px;font-size:.85rem;font-weight:600;color:#fff;background:rgba(28,32,40,.45);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .hx-l-count{position:absolute;right:.8rem;bottom:.8rem;display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .85rem;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(28,32,40,.5);color:#fff;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .hx-l-hero .hx-heart{position:absolute;top:.8rem;right:.8rem}
-@media (min-width:900px){.hx-l-media{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;height:min(64vh,540px)}.hx-l-hero{grid-row:1/3;aspect-ratio:auto}.hx-l-tile{display:block}.hx-l-media.hx-one{grid-template-columns:1fr}.hx-l-media.hx-one .hx-l-hero{grid-row:auto}}
-.hx-l-grid{display:grid;gap:1.6rem}@media (min-width:900px){.hx-l-grid{grid-template-columns:minmax(0,1fr) 330px;gap:2.6rem}}
+@media (min-width:900px){.hx-l-media{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;height:min(64vh,540px)}.hx-l-hero{grid-row:1/3;aspect-ratio:auto}.hx-l-tile{display:block}.hx-l-tile.hx-tall{grid-row:1/3}.hx-l-media.hx-one{grid-template-columns:1fr}.hx-l-media.hx-one .hx-l-hero{grid-row:auto}}
+.hx-l-grid{display:flex;flex-direction:column;gap:1.4rem}.hx-l-info{display:contents}.hx-l-top{order:1}.hx-side{order:2}.hx-l-rest{order:3}
+@media (min-width:900px){.hx-l-grid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:0 2.6rem}.hx-l-info{display:block;grid-column:1}.hx-side{grid-column:2;grid-row:1}}
 .hx-l-price{font-family:var(--serif);font-size:clamp(2rem,5vw,2.9rem);font-weight:600;line-height:1.05;margin:0;letter-spacing:-.01em}
 .hx-wrap h1.hx-l-addr{font-family:var(--sans);font-size:1.15rem;font-weight:500;line-height:1.4;margin:.35rem 0 .9rem;color:var(--slate,#5c6b78)}
 .hx-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 .9rem;padding:0;list-style:none}
@@ -240,6 +299,7 @@ button.hx-heart{border-radius:999px}
 .hx-fact{padding:.85rem .95rem;border-radius:16px}.hx-fact span{display:block;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate,#5c6b78)}.hx-fact b{display:block;font-size:1.05rem;font-weight:600;margin-top:.15rem;overflow-wrap:anywhere}
 .hx-side{position:sticky;top:9rem;align-self:start;padding:1.3rem;border-radius:22px;display:flex;flex-direction:column;gap:.7rem}
 .hx-side .hx-l-price{font-size:1.9rem}.hx-side p{margin:0}
+@media (max-width:899px){.hx-side .hx-l-price,.hx-side .hx-small{display:none}.hx-side{position:static;padding:1rem}}
 .hx-side .hx-tour{justify-content:center;padding:.75rem 1rem;font-size:1rem;font-weight:600}
 .hx-side-row{display:flex;align-items:center;gap:.6rem;font-size:.9rem;color:var(--slate,#5c6b78)}.hx-side-row .hx-heart{border:1px solid var(--rule,#e6dfd3)}
 .hx-teaser{margin:1.6rem 0;padding:1.3rem 1.3rem 1.1rem;border-radius:22px}
@@ -248,12 +308,7 @@ button.hx-heart{border-radius:999px}
 .hx-teaser li em{margin-left:auto;display:inline-block;width:6.5rem;height:.8rem;border-radius:6px;background:linear-gradient(90deg,#d9cfc1,#efe8dd);filter:blur(1.5px)}
 .hx-wrap h2{font-family:var(--serif);font-size:1.45rem;margin:2rem 0 .6rem}
 .hx-gallery img{height:360px}
-.hx-toast{position:fixed;right:1rem;bottom:1rem;z-index:60;width:min(23rem,calc(100% - 2rem));padding:1.05rem 1.1rem 1rem;border-radius:20px;background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.9);box-shadow:0 18px 50px rgba(28,32,40,.22);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);transform:translateY(16px);opacity:0;transition:transform .45s ease,opacity .45s ease}
-.hx-toast.hx-in{transform:none;opacity:1}.hx-toast p{margin:0}.hx-toast-t{font-family:var(--serif);font-size:1.15rem;font-weight:600;padding-right:1.6rem}.hx-toast-s{font-size:.88rem;color:var(--slate,#5c6b78);margin:.25rem 0 .75rem!important;line-height:1.45}
-.hx-toast-b{display:flex;gap:.5rem;flex-wrap:wrap}.hx-toast .hx-x{top:.35rem;right:.5rem}
-@media (max-width:600px){.hx-toast{left:.75rem;right:.75rem;bottom:.75rem;width:auto;padding:.7rem .8rem .75rem;border-radius:16px}.hx-toast-t{font-size:1rem}.hx-toast-s{display:none}.hx-toast-b{margin-top:.5rem}.hx-toast .hx-tour{padding:.4rem .75rem;font-size:.85rem}}
-@media (prefers-reduced-motion:reduce){.hx-toast{transition:opacity .2s;transform:none}}
-@media (prefers-reduced-transparency:reduce){.hx-glass,.hx-toast{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}}
+@media (prefers-reduced-transparency:reduce){.hx-glass{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}}
 </style>`;
 
 /* The strip on a guide page: one row that pans sideways, no scroll bar; drag with a mouse,
@@ -266,17 +321,8 @@ main#main .hx-s-head a{color:var(--brass);font-size:.9rem;white-space:nowrap}
 .hx-s-note{margin:-.3rem 0 .55rem;font-size:.85rem;color:var(--muted,#5a5f6a)}
 main#main .hx-s-row{display:flex;align-items:flex-start;gap:.75rem;overflow-x:auto;scroll-behavior:auto;scroll-snap-type:x proximity;padding:.15rem .15rem .6rem;margin:0 -.15rem;scrollbar-width:none;-ms-overflow-style:none;cursor:grab;user-select:none;-webkit-user-select:none}
 main#main .hx-s-row::-webkit-scrollbar{display:none}main#main .hx-s-row.hx-dragging{cursor:grabbing;scroll-snap-type:none}
-main#main .hx-s-card{position:relative;flex:0 0 62%;max-width:16rem;scroll-snap-align:start;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px rgba(28,32,40,.10)}
-@media (min-width:700px){main#main .hx-s-card{flex-basis:24%}}
-main#main .hx-s-link{display:block;color:inherit;text-decoration:none}
-main#main .hx-s-photo{position:relative;display:block;aspect-ratio:4/3;background:linear-gradient(135deg,#e8e1d6,#d9cfc1)}
-main#main .hx-s-photo img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
-main#main .hx-s-chip{position:absolute;left:.5rem;right:.5rem;bottom:.5rem;display:flex;flex-direction:column;padding:.35rem .65rem;border-radius:12px;font-size:.95rem;line-height:1.3;color:#fff;background:rgba(28,32,40,.42);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-main#main .hx-s-chip b{font-weight:700}main#main .hx-s-chip span{font-weight:400;opacity:.95;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-main#main .hx-heart-sm{position:absolute;top:.5rem;right:.5rem;width:2rem;height:2rem}
 main#main .hx-s-all{flex:0 0 40%;max-width:12rem;align-self:stretch;display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;border-radius:16px;font-weight:600;color:var(--navy);background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.75);text-decoration:none}
 @media (min-width:700px){main#main .hx-s-all{flex-basis:18%}}
-@media (prefers-reduced-transparency:reduce){main#main .hx-s-chip{backdrop-filter:none;-webkit-backdrop-filter:none;background:#1c2028}}
 </style>`;
 
 /**
@@ -296,6 +342,9 @@ $$(".hx-s-row").forEach(function(row){var down=false,moved=false,x0=0,s0=0;
  function up(){down=false;setTimeout(function(){row.classList.remove("hx-dragging")},0)}
  row.addEventListener("pointerup",up);row.addEventListener("pointerleave",up);
  row.addEventListener("click",function(e){if(moved){e.preventDefault();e.stopPropagation();moved=false}},true)});
+/* The quick filters apply at once; empty choices stay out of the address. The sort menu goes to its link. */
+$$("form[data-hx-instant]").forEach(function(f){f.addEventListener("change",function(){var u=new URLSearchParams();Array.prototype.forEach.call(f.elements,function(el){if(el.name&&el.value)u.set(el.name,el.value)});location.href="/homes/"+(u.toString()?"?"+u.toString():"")})});
+$$("select[data-hx-go]").forEach(function(s){s.addEventListener("change",function(){if(s.value.indexOf("/homes/")===0)location.href=s.value})});
 /* Sign-up */
 var sd=$("#hx-signup"),sf=$("#hx-signup-form");var tsLoaded=false;
 function askSignup(pending){if(pending)try{sessionStorage.setItem("c3_idx_heart",pending)}catch(e){}
@@ -317,23 +366,19 @@ $$(".hx-heart").forEach(function(b){b.addEventListener("click",function(e){e.pre
  post("/homes/api/hearts",{mlsNumber:m,loved:on}).then(function(j){if(j._status===401){location.reload()}})})});
 /* Tour this home: the site's ordinary lead form, with the home's MLS number. */
 var td=$("#hx-tourd"),tf=$("#hx-tour-form"),tm=null,ta="",ti="tour";
-function hideToast(){var t=$("#hx-toast");if(t){t.classList.remove("hx-in");t.hidden=true}}
 $$(".hx-tour[data-mls]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();tm=b.getAttribute("data-mls");ta=b.getAttribute("data-addr")||"";ti=b.getAttribute("data-interest")==="question"?"question":"tour";
  var a=$("#hx-tour-addr");if(a)a.textContent=ta;var h=$("#hx-tour-title");if(h)h.textContent=ti==="question"?"Ask about this home":"Tour this home";
  var l=$("#hx-tour-msg-label");if(l)l.textContent=ti==="question"?"Your question":"Anything we should know? (optional)";
- var s=tf&&tf.querySelector("button[type=submit]");if(s)s.textContent=ti==="question"?"Send my question":"Request a tour";hideToast();openD(td)})});
+ var s=tf&&tf.querySelector("button[type=submit]");if(s)s.textContent=ti==="question"?"Send my question":"Request a tour";
+ var dy=$("#hx-tour-days");if(dy)dy.hidden=ti==="question";var th=$("#hx-tour-thumb"),ph=b.getAttribute("data-photo")||"";if(th){if(ph.indexOf("https://")===0){th.src=ph;th.hidden=false}else th.hidden=true}openD(td)})});
 if(tf){tf.addEventListener("submit",function(e){e.preventDefault();var err=tf.querySelector(".hx-error");err.hidden=true;
  if(!tf.elements.consent.checked){err.textContent="Please tick the box so an agent can reach you about the tour.";err.hidden=false;return}
  var ct=(tf.querySelector(".form-consent span").textContent||"").replace(/\\s+/g," ").trim();
  fetch("https://app.chapter3realty.com/api/forms/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({formType:"contact",name:tf.elements.name.value,phone:tf.elements.phone.value,email:tf.elements.email.value,
   consent:true,consentText:ct,website:tf.elements.website.value,page:location.pathname,formName:ti==="question"?"Ask about this home":"Tour this home",interest:ti,mls_number:tm,
-  message:(ti==="question"?"Question about ":"I'd like to tour ")+ta+(tf.elements.message.value.trim()?": "+tf.elements.message.value.trim().slice(0,1000):"")})})
- .then(function(r){return r.json().catch(function(){return{}}).then(function(j){if(r.ok&&j.ok){tf.innerHTML="";var p=document.createElement("p");p.className="hx-ok";p.textContent=ti==="question"?"Thank you. An agent will answer your question soon.":"Thank you. An agent will contact you to set up the tour.";tf.appendChild(p);try{sessionStorage.setItem("c3_toast_off","1")}catch(x){}}
+  message:(ti==="question"?"Question about ":"I'd like to tour ")+ta+(ti!=="question"&&tf.querySelector("[name=day]:checked")?" ("+tf.querySelector("[name=day]:checked").value+")":"")+(tf.elements.message.value.trim()?": "+tf.elements.message.value.trim().slice(0,1000):"")})})
+ .then(function(r){return r.json().catch(function(){return{}}).then(function(j){if(r.ok&&j.ok){tf.innerHTML="";var p=document.createElement("p");p.className="hx-ok";p.textContent=ti==="question"?"Thank you. An agent will answer your question soon.":"Thank you. An agent will contact you to set up the tour.";tf.appendChild(p)}
   else{err.textContent="Please check your name, phone and email.";err.hidden=false}})}).catch(function(){err.textContent="Please call (854) 333-2135 and we will set up the tour.";err.hidden=false})})}
-/* After 5 seconds on a listing page: the small card bottom right, once a visit, never over an open form. */
-var toast=$("#hx-toast");if(toast){var off=false;try{off=sessionStorage.getItem("c3_toast_off")==="1"}catch(x){}
- var tc=toast.querySelector("[data-hx-toast-close]");if(tc)tc.addEventListener("click",function(){hideToast();try{sessionStorage.setItem("c3_toast_off","1")}catch(x){}});
- if(!off)setTimeout(function(){if(document.querySelector("dialog[open]"))return;toast.hidden=false;requestAnimationFrame(function(){requestAnimationFrame(function(){toast.classList.add("hx-in")})})},5000)}
 /* Seconds on a listing page (contract 7c, 7d). */
 var main=$("[data-hx-mls]");if(main){var vid=main.getAttribute("data-view-id"),mls=main.getAttribute("data-hx-mls"),secs=0,since=document.visibilityState==="visible"?Date.now():null;
  function total(){return Math.min(3600,Math.floor(secs+(since?(Date.now()-since)/1000:0)))}
