@@ -272,6 +272,7 @@ main#main .hx-s-row>.hx-c:hover{transform:none}
 .hx-count-r{display:inline-flex;align-items:center;gap:.6rem}.hx-maplink{display:inline-flex;align-items:center;padding:.42rem .95rem;border-radius:999px;background:#1a73e8;color:#fff!important;font-weight:700;font-size:.9rem;text-decoration:none}
 .hx-sort{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;color:var(--slate,#5c6b78)}.hx-sort select{border:1px solid rgba(28,32,40,.18);border-radius:999px;background:#fff;font:inherit;font-size:.9rem;padding:.4rem .8rem;color:var(--ink,#1c2028)}
 .hx-pager a,.hx-pager span{padding:.55rem 1rem;border-radius:999px;border:1px solid rgba(28,32,40,.15);background:#fff;text-decoration:none;color:var(--ink,#1c2028);font-weight:600}.hx-pager span{border:0;background:none}
+.hx-maplist{color:var(--brass-ink,#91592b);font-weight:600}
 .hx-d-fine{font-size:.72rem;color:var(--slate,#5c6b78);line-height:1.45;margin:0;text-align:center}
 .hx-d-perks{display:flex;flex-wrap:wrap;gap:.35rem;list-style:none;margin:0;padding:0}.hx-d-perks li{padding:.28rem .65rem;border-radius:999px;background:#f4efe8;font-size:.8rem;font-weight:600}
 .hx-dialog .hx-terms summary{cursor:pointer;color:var(--slate,#5c6b78)}

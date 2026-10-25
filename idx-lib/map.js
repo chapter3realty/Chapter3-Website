@@ -11,7 +11,7 @@
 import { addressLine, cardTag, headlinePrice, listingPath, safeUrl, statusWord } from "./render.js";
 
 /** The Google Maps browser key: a public key, locked to our domain in Google Cloud. A setting can replace it. */
-export const mapsKey = (env) => (/^AIza[0-9A-Za-z_-]{35}$/.test(env.MAPS_BROWSER_KEY || "") ? env.MAPS_BROWSER_KEY : "AIzaSyCt5l9sq_5t1bq9uNWRIoUjty41A-NW0HY");
+export const mapsKey = (env) => (/^AIza[0-9A-Za-z_-]{35}$/.test(env.MAPS_BROWSER_KEY || "") ? env.MAPS_BROWSER_KEY : "AIzaSyAFTNMGh-PmVFTl3S0ViiM9zNYicFrgGfs");
 
 /** "$425K", "$1.2M": the short price on a map pin. */
 export function shortPrice(l) {

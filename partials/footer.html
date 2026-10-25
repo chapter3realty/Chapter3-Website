@@ -198,6 +198,9 @@
      every page navigation, which is what a visitor reads as spam. It clears
      when the browser tab closes, so a genuine return visit gets one more. */
   function shouldSkip() {
+    /* Never on the listing search: the homes, the maps, and the guide pages that
+       carry homes strips. There the listings are the offer (owner, 2026-10-25). */
+    if (/^\/(homes|map)(\/|$)/.test(location.pathname) || document.querySelector('.hx-strip,[data-hx-map]')) return true;
     try {
       if (localStorage.getItem(DONE)) return true;
       if (sessionStorage.getItem(SEEN)) return true;
@@ -243,7 +246,7 @@
       gl = cv.getContext('webgl', { premultipliedAlpha: false, alpha: true, antialias: false })
         || cv.getContext('experimental-webgl', { premultipliedAlpha: false, alpha: true });
     } catch (e) { gl = null; }
-    if (!gl) return;                          /* no WebGL: plain video stays */
+    if (!gl) { media.classList.add('c3-nokey'); return; }   /* no WebGL: never show the raw green backdrop */
 
     function sh(type, src) {
       var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);

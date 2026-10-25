@@ -2473,6 +2473,9 @@ function audit() {
     for (const m of s.matchAll(/href="(\/[a-zA-Z0-9\-/]*)"/g)) {
       const target = m[1].split("#")[0].replace(/^\/|\/$/g, "");
       if (!target) continue;
+      // /homes/ and everything under it is the listing search, served by
+      // functions/homes/[[path]].js, not by a file in this folder.
+      if (target === "homes" || target.startsWith("homes/")) continue;
       if (!fs.existsSync(path.join(ROOT, target.split("/").join(path.sep))))
         E(`dead internal link ${m[1]}`);
     }

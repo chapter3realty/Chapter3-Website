@@ -59,6 +59,7 @@ export async function onRequest(context) {
   if (path.startsWith("/homes/api/")) {
     const name = path.replace(/^\/homes\/api\/|\/$/g, "");
     if (name === "map" && (request.method === "GET" || request.method === "HEAD")) return mapData(context, url);
+    if (name === "lookup" && request.method === "GET") return lookup(context, url);
     if (request.method !== "POST") return json({ ok: false, error: "method" }, 405);
     if (!sameOrigin(request)) return json({ ok: false, error: "forbidden" }, 403);
     if (name === "signout") return new Response(null, { status: 303, headers: { Location: "/homes/", "Set-Cookie": clearCookie(), "Cache-Control": "no-store" } });
@@ -325,6 +326,55 @@ ${appliedChips(s.p).replace(/href="\/homes\//g, 'href="/homes/map/')}<p class="h
   });
 }
 
+// ── the rental analyzer's MLS lookup ────────────────────────────────────────
+
+/** The house number and the first word of the street name, for matching an address. */
+function streetKey(a) {
+  const m = /^\s*(\d+[a-z]?)\s+(?:(?:n|s|e|w|north|south|east|west)\.?\s+)?([a-z0-9]+)/i.exec(String(a || ""));
+  return m ? `${m[1].toLowerCase()} ${m[2].toLowerCase()}` : "";
+}
+
+/**
+ * GET /homes/api/lookup?mls=<MLS#>, or ?street=<address>&lat=&lng=: the listing's facts for
+ * /invest/long-term-rental/, so a visitor never types the beds or baths. A home for sale
+ * only (the public search has no sold homes). The visitor's own tier decides what comes
+ * back: the public card for everyone; the HOA fee, taxes, flood zone, stories and the
+ * description only for a signed-up visitor (the same rule as the listing page).
+ */
+async function lookup(context, url) {
+  const q = url.searchParams;
+  let mls = /^[A-Za-z0-9]{3,20}$/.test(q.get("mls") || "") ? q.get("mls") : null;
+  if (!mls) {
+    const key = streetKey(q.get("street"));
+    const n = nearOf(`${q.get("lat")},${q.get("lng")}`, 0.2);
+    if (!key || !n) return json({ ok: true, found: false });
+    const r = await crm(context.env, context.request, `/api/idx/listings?near=${encodeURIComponent(n.near)}&miles=0.2&size=48`, { anonymous: true });
+    const ls = r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? r.json.listings : [];
+    const hit = ls.find((l) => l.address && streetKey(l.address) === key);
+    if (!hit) return json({ ok: true, found: false }, 200, { "cache-control": "public, max-age=300" });
+    mls = hit.mlsNumber;
+  }
+  const r = await crm(context.env, context.request, `/api/idx/listings/${encodeURIComponent(mls)}?track=0`);
+  if (badToken(r)) return json({ ok: true, found: false }, 200, { "set-cookie": clearCookie() });
+  if (r.status !== 200 || !r.json || !r.json.ok || !r.json.listing) return json({ ok: true, found: false });
+  const l = r.json.listing;
+  const d = r.json.tier === "registered" && l.details ? l.details : {};
+  const n = (v) => (typeof v === "number" && isFinite(v) ? v : null);
+  const fee = n(d.AssociationFee), freq = String(d.AssociationFeeFrequency || "").toLowerCase();
+  const hoaMonthly = fee === null ? null : /annual|year/.test(freq) ? Math.round(fee / 12) : /quarter/.test(freq) ? Math.round(fee / 3) : fee;
+  const facts = {
+    mlsNumber: l.mlsNumber, url: listingPath(l), status: statusWord(l.status), listPrice: n(l.listPrice),
+    beds: n(l.beds), baths: n(l.baths), sqft: n(l.sqft), lotAcres: n(l.lotAcres), yearBuilt: n(l.yearBuilt),
+    type: spaced(l.propertySubType || l.propertyType || ""), subdivision: l.subdivision || null, waterfront: l.waterfront === true,
+    address: l.address || null, city: l.city || null, zip: l.postalCode || null, listingFirm: l.listingFirm || null,
+    tier: r.json.tier === "registered" ? "registered" : "public",
+    hoaMonthly, taxAnnual: n(d.TaxAnnualAmount), floodZone: typeof d.FloodZone === "string" ? d.FloodZone : null,
+    stories: n(d.StoriesTotal), newConstruction: d.NewConstructionYN === true,
+    remarks: r.json.tier === "registered" && typeof l.remarks === "string" ? l.remarks.slice(0, 900) : null,
+  };
+  return json({ ok: true, found: true, facts, meta: r.json.meta || null }, 200, { "cache-control": "private, no-store" });
+}
+
 // ── one listing ─────────────────────────────────────────────────────────────
 
 async function bareListing(context, mls, gate) {
@@ -424,6 +474,7 @@ ${media}
 <h1 class="hx-l-addr">${esc(addressLine(l))}</h1>
 ${pills}
 <p class="hx-firm-line">Listed by ${esc(l.listingFirm || "the listing brokerage")}</p>
+<p class="hx-small"><a class="hx-maplist" href="/invest/long-term-rental/?mls=${esc(encodeURIComponent(l.mlsNumber))}">Run the rental numbers on this home</a></p>
 ${signedBar(r.json.tier)}</div><div class="hx-l-rest">${facts}${more}</div>
 </div>${side}</div>
 ${nearby}

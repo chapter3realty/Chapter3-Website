@@ -261,6 +261,22 @@ check("map page: pins in the page as data, with < escaped", /<script type="appli
 MAPPOINTS = false;
 check("map script: it parses", (() => { try { new Function(MAP_SCRIPT.replace(/^<script>|<\/script>$/g, "")); return true; } catch { return false; } })());
 
+// The rental analyzer's MLS lookup (2026-10-25).
+r = await run(homes, req("/homes/api/lookup?mls=2600005"));
+let lk = JSON.parse(await r.text());
+check("lookup: by MLS number, the public facts and the firm", lk.ok && lk.found && lk.facts.beds === 3 && lk.facts.listingFirm === "Firm 1" && lk.facts.tier === "public" && lk.facts.hoaMonthly === null && lk.facts.remarks === null);
+r = await run(homes, req("/homes/api/lookup?mls=2600005", cookie));
+lk = JSON.parse(await r.text());
+check("lookup: a signed-up visitor's facts add the HOA fee and the description", lk.facts.tier === "registered" && lk.facts.hoaMonthly === 614 && typeof lk.facts.remarks === "string");
+r = await run(homes, req("/homes/api/lookup?street=" + encodeURIComponent("103 Test St") + "&lat=33.7&lng=-78.9"));
+lk = JSON.parse(await r.text());
+check("lookup: by address near a point, the matching home", lk.found && lk.facts.mlsNumber === "2600003");
+r = await run(homes, req("/homes/api/lookup?street=" + encodeURIComponent("999 Nowhere Rd") + "&lat=33.7&lng=-78.9"));
+check("lookup: no match is not found, never a guess", JSON.parse(await r.text()).found === false);
+check("lookup: a point off the coast is refused", JSON.parse(await (await run(homes, req("/homes/api/lookup?street=1%20A%20St&lat=0&lng=0"))).text()).found === false);
+t = await (await run(homes, req("/homes/2600005-101-test-st-myrtle-beach/"))).text();
+check("listing page: a link to run the rental numbers on this home", t.includes('href="/invest/long-term-rental/?mls=2600005"'));
+
 // Sitemap and the shell.
 r = await run(sitemap, req("/sitemap-homes.xml"), { ...ENV, IDX_INDEX_LISTINGS: "1" });
 t = await r.text();

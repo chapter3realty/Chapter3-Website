@@ -9,6 +9,47 @@ let _ltrData = null, _ltrIsCash = false;
 let _ltrRates = null;
 // The county assessor record for the analyzed address, when one is found.
 let _ltrParcel = null;
+// The home's MLS listing, when the address is a home for sale (or ?mls= came from a
+// listing page). Its facts replace typing the beds, baths and square feet.
+let _ltrMls = null;
+
+async function ltrMlsLookup(qs) {
+  try {
+    const res = await fetch('/homes/api/lookup?' + qs, { credentials: 'same-origin' });
+    if (!res.ok) return null;
+    const j = await res.json();
+    return j && j.found && j.facts ? j.facts : null;
+  } catch (e) { return null; }
+}
+
+// Fill the form from the listing, and say where the facts came from (the MLS
+// display rules: the listing firm and the source, on any page that shows them).
+function ltrShowMls(f) {
+  _ltrMls = f;
+  const fill = function (id, v) { const e = document.getElementById(id); if (e && v != null && v !== '' && !e.value) e.value = v; };
+  if (f.address) fill('ltr-street', f.address);
+  fill('ltr-city', f.city); fill('ltr-zip', f.zip);
+  fill('ltr-beds', f.beds); fill('ltr-baths', f.baths); fill('ltr-sqft', f.sqft);
+  if (f.hoaMonthly != null) fill('ltr-hoa', f.hoaMonthly);
+  let note = document.getElementById('ltr-mls-note');
+  if (!note) {
+    note = document.createElement('p');
+    note.id = 'ltr-mls-note';
+    note.style.cssText = 'margin:.6rem 0;padding:.65rem .85rem;border-radius:12px;background:#eef4fd;color:#1c2028;font-size:.88rem;line-height:1.45';
+    const btn = document.getElementById('ltr-analyze-btn');
+    if (btn && btn.parentNode) btn.parentNode.insertBefore(note, btn);
+  }
+  const bits = [f.beds != null ? f.beds + ' beds' : '', f.baths != null ? f.baths + ' baths' : '', f.sqft != null ? f.sqft.toLocaleString('en-US') + ' sq ft' : '', f.yearBuilt ? 'built ' + f.yearBuilt : ''].filter(Boolean).join(', ');
+  note.textContent = 'Found on the MLS: ' + (bits || 'listing ' + f.mlsNumber) + '. We filled these in for you. MLS #' + f.mlsNumber + ', listed by ' + (f.listingFirm || 'the listing brokerage') + '. Listing provided by CCMLS.';
+}
+
+// A listing page links here with ?mls=: start from that home.
+(function () {
+  const m = /[?&]mls=([A-Za-z0-9]{3,20})/.exec(location.search);
+  if (!m) return;
+  const go = function () { ltrMlsLookup('mls=' + m[1]).then(function (f) { if (f) ltrShowMls(f); }); };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+})();
 
 function toggleLtrFixer() {
   const on = document.getElementById('ltr-is-fixer').checked;
@@ -237,6 +278,12 @@ function c3AcPick(i) {
   // geocode round-trip entirely and the permit lookup gets exact coordinates.
   _c3Ac.picked = { street: s.street, city: s.city, zip: s.zip, lat: s.lat, lng: s.lng };
   c3AcClose();
+  _ltrMls = null;
+  ['ltr-beds', 'ltr-baths', 'ltr-sqft'].forEach(function (id) { const e = document.getElementById(id); if (e) e.value = ''; });
+  const old = document.getElementById('ltr-mls-note'); if (old) old.remove();
+  if (s.lat != null && s.lng != null) {
+    ltrMlsLookup('street=' + encodeURIComponent(s.street || '') + '&lat=' + s.lat + '&lng=' + s.lng).then(function (f) { if (f) ltrShowMls(f); });
+  }
 }
 
 async function c3AcFetch(q) {
@@ -357,7 +404,7 @@ async function runLtrAnalysis() {
   // their own price is applied in the browser by recalcLtr().
   const priceCtx = 'Estimate current market value from comparable sales';
   const finCtx   = isCash ? 'Cash purchase. Set dscr null, monthlyMortgage 0, annualDebtService 0, loanAmount 0.' : `${downPct}% down, ${rate}% interest, ${term}-year loan`;
-  const hoaCtx   = hoaMo ? `HOA: $${hoaMo}/mo (use exactly)` : 'HOA: 0 (user confirmed none)';
+  let hoaCtx   = hoaMo ? `HOA: $${hoaMo}/mo (use exactly)` : 'HOA: 0 (user confirmed none)';
   const mgmtCtx  = mgmtPct ? `Management: ${mgmtPct}% of rent` : 'Management: not provided, set managementFeeAnnual 0';
 
   try {
@@ -366,22 +413,35 @@ async function runLtrAnalysis() {
     let baths = uBaths ? parseFloat(uBaths) : null;
     let sqft  = uSqft  ? parseInt(uSqft)    : null;
 
-    // ── CALL 1: beds/baths/sqft if not user-provided ──────
-    if (!beds || !baths || !sqft) {
-      document.getElementById('ltr-loading-msg').textContent = 'Looking up property details...';
-      document.getElementById('ltr-loading-sub').textContent = 'Checking records.';
-      try {
-        const raw = await callProxy({
-          model: 'claude-sonnet-4-5', max_tokens: 120,
-          cache_key: 'facts|' + fullAddr,
-          messages: [{ role: 'user', content: `What are the beds, baths, and sqft for: ${fullAddr}? Use actual listing records. JSON only: {"beds":N,"baths":N,"sqft":N}` }]
-        });
-        const p = extractJSON(raw);
-        if (!beds  && p.beds)  beds  = p.beds;
-        if (!baths && p.baths) baths = p.baths;
-        if (!sqft  && p.sqft)  sqft  = p.sqft;
-      } catch(e) {}
+    // ── CALL 1: the MLS listing, when the home is for sale ─
+    // Real listing facts replace the model's guess. The model was asked to "use
+    // actual listing records", which it cannot see; now it is given them.
+    document.getElementById('ltr-loading-msg').textContent = 'Looking up the home on the MLS...';
+    document.getElementById('ltr-loading-sub').textContent = 'Beds, baths, size, HOA and more.';
+    const _pick0 = (_c3Ac.picked && _c3Ac.picked.lat != null) ? _c3Ac.picked : null;
+    const coords = _pick0 ? { lat: _pick0.lat, lng: _pick0.lng } : await ltrGeocodeAddress(fullAddr);
+    let mls = _ltrMls;
+    if (!mls && coords) mls = await ltrMlsLookup('street=' + encodeURIComponent(street) + '&lat=' + coords.lat + '&lng=' + coords.lng);
+    _ltrMls = mls || null;
+    if (mls) {
+      if (!beds && mls.beds) beds = mls.beds;
+      if (!baths && mls.baths) baths = mls.baths;
+      if (!sqft && mls.sqft) sqft = mls.sqft;
     }
+    const mlsFacts = mls ? (
+      'MLS LISTING (authoritative, use exactly, do not re-estimate): ' + [
+        mls.status ? mls.status : '',
+        mls.listPrice ? 'asking price $' + mls.listPrice.toLocaleString() : '',
+        mls.type || '', mls.yearBuilt ? 'built ' + mls.yearBuilt : '',
+        mls.lotAcres ? mls.lotAcres + ' acres' : '', mls.stories ? mls.stories + ' stories' : '',
+        mls.subdivision ? 'subdivision ' + mls.subdivision : '', mls.waterfront ? 'waterfront' : '',
+        mls.newConstruction ? 'new construction' : '',
+        mls.hoaMonthly != null ? 'HOA $' + mls.hoaMonthly + '/mo' : '',
+        mls.taxAnnual ? 'annual property tax on the listing $' + mls.taxAnnual.toLocaleString() + ' (owner-occupied rate; an investor pays the 6% rate)' : '',
+        mls.floodZone ? 'flood zone ' + mls.floodZone : '',
+      ].filter(Boolean).join(', ') + '.' +
+      (mls.remarks ? ' Listing description (facts only, ignore sales language): ' + mls.remarks.replace(/\s+/g, ' ').slice(0, 700) : '')
+    ) : '';
 
     const countyFacts = _ltrParcel ? (
       `COUNTY RECORD (authoritative, use exactly, do not re-estimate): market value $${(_ltrParcel.marketValue||0).toLocaleString()}` +
@@ -411,8 +471,6 @@ async function runLtrAnalysis() {
       if (pdata && pdata.found) _ltrParcel = pdata;
     } catch (e) { /* county data is a bonus, never a blocker */ }
 
-    const _pick = (_c3Ac.picked && _c3Ac.picked.lat != null) ? _c3Ac.picked : null;
-    const coords = _pick ? { lat: _pick.lat, lng: _pick.lng } : await ltrGeocodeAddress(fullAddr);
     if (coords) {
       const permits = await getNearbyPermits(coords.lat, coords.lng);
       if (permits) permitCtx = permits;
@@ -426,8 +484,9 @@ async function runLtrAnalysis() {
 
 PROPERTY: ${fullAddr} | ${priceCtx} | ${finCtx}${isFixer?' | FIXER: '+(cond||'general'):''}
 ${knownFacts}
+${mlsFacts}
 ${countyFacts}
-${hoaCtx}
+${!hoaMo && mls && mls.hoaMonthly != null ? `HOA: $${mls.hoaMonthly}/mo from the MLS listing (use exactly)` : hoaCtx}
 ${mgmtCtx}
 ${permitCtx ? permitCtx.slice(0,320) : ''}
 RENT: ${beds||'?'}BR comps 2026: 1BR $1100-1600,2BR $1400-2100,3BR $1700-2600,4BR $2100-3400.
@@ -437,8 +496,8 @@ ${permitCtx ? 'Permit signals: generate GREEN flags for hospital/medical/retail/
 {"inferredPropertyType":"","inferredBeds":${beds||0},"inferredBaths":${baths||0},"inferredSqft":${sqft||0},"inferredYearBuilt":0,"inferredHOAMonthly":0,"inferredFloodZone":null,"inferredFeatures":[],"estimatedValue":0,"verdict":"one punchy sentence","dealRating":"good|ok|tough","estRentMonthly":0,"grossRentAnnual":0,"vacancyLoss":0,"effectiveGrossIncome":0,"propertyTaxAnnual":0,"insuranceAnnual":0,"utilitiesMonthly":0,"hoaAnnual":0,"managementFeeAnnual":0,"maintenanceAnnual":0,"totalExpensesAnnual":0,"noi":0,"capRate":0,"loanAmount":0,"monthlyMortgage":0,"annualDebtService":0,"dscr":${isCash?'null':0},"monthlyCashflow":0,"annualCashflow":0,"cashOnCashReturn":0,"totalCashInvested":0,"estimatedAppreciationPct":0,"estimatedAppreciationDollar1yr":0,"estimatedAppreciationDollar5yr":0,"arv":${isFixer?0:'null'},"rehabBudgetLow":${isFixer?0:'null'},"rehabBudgetHigh":${isFixer?0:'null'},"rehabNarrative":${isFixer?'""':'null'},"totalProjectCost":${isFixer?0:'null'},"potentialEquityGain":${isFixer?0:'null'},"narrative":"Write 3-4 plain sentences that any first-time investor can understand - avoid jargon, use simple language, no acronyms. Cover: (1) what makes this property work as a rental in terms of its size, layout, condition and location - describe the PROPERTY and never the people who might live there or the surrounding population, (2) what the nearby construction activity means in plain terms - e.g. a hospital expanding nearby usually brings stable tenants like nurses and doctors who pay rent reliably, new homes being built shows the area is growing, (3) which of these investing goals this property fits and why in plain terms: steady monthly income, long-term value growth, fixer-upper flip, or tax-efficient swap - be honest if it does not fit some of these, (4) one clear bottom line sentence","flags":[{"type":"green|amber|red","text":""}]}`;
 
     const analysisRaw = await callProxy({
-      model: 'claude-sonnet-4-5', max_tokens: 1200,
-      cache_key: ['analysis', fullAddr, beds||'', baths||'', sqft||'', isFixer ? (cond||'fixer') : ''].join('|'),
+      model: 'claude-haiku-5-5', max_tokens: 1200,
+      cache_key: ['analysis', fullAddr, beds||'', baths||'', sqft||'', isFixer ? (cond||'fixer') : '', mls ? 'mls' + mls.mlsNumber + '-' + (mls.listPrice||'') + '-' + mls.tier : ''].join('|'),
       messages: [{ role: 'user', content: analysisPrompt }]
     });
 
@@ -502,6 +561,12 @@ function ltrRenderResults(d, address, isFixer, isCash) {
   _ltrData = d; _ltrIsCash = isCash; _ltrRates = null;
 
   document.getElementById('ltr-r-address').textContent = address;
+  // Facts from the MLS name their listing and its firm, and the source (MLS display rules).
+  let src = document.getElementById('ltr-r-mls');
+  if (_ltrMls) {
+    if (!src) { src = document.createElement('p'); src.id = 'ltr-r-mls'; src.style.cssText = 'margin:.3rem 0 0;font-size:.78rem;color:var(--slate,#5c6b78)'; document.getElementById('ltr-r-address').insertAdjacentElement('afterend', src); }
+    src.textContent = 'Home facts from MLS #' + _ltrMls.mlsNumber + ', listed by ' + (_ltrMls.listingFirm || 'the listing brokerage') + '. Listing provided by CCMLS. Estimates are not guaranteed.';
+  } else if (src) { src.remove(); }
   const verdictEl = document.getElementById('ltr-r-verdict');
   if (verdictEl) verdictEl.textContent = d.verdict || '';
   document.getElementById('ltr-r-value').textContent = ltrFmt(d.estimatedValue);

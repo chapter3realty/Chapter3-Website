@@ -42,12 +42,16 @@ const ALLOWED_ORIGINS = [
 
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
 const ANTHROPIC_VERSION = '2023-06-01';
-const MODEL = 'claude-sonnet-4-5';
-const MAX_TOKENS_CAP = 2000;
+// Claude Haiku 5.5 (owner, 2026-10-25). It thinks before it answers (adaptive
+// thinking is on by default) and the thinking counts toward max_tokens, so the
+// ceiling below leaves room for it; effort sets how much it thinks.
+const MODEL = 'claude-haiku-5-5';
+const EFFORT = 'medium';
+const MAX_TOKENS_CAP = 8000;
 const MAX_BODY_BYTES = 24 * 1024;
 
 // Bump this string to invalidate every stored answer at once.
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v2'; // v2: Claude Haiku 5.5 and MLS facts; every stored answer is new
 const CACHE_TTL_SECONDS = 60 * 60 * 24 * 365; // 1 year
 
 const CENSUS_GEOCODER =
@@ -402,7 +406,9 @@ async function handleAnalysis(incoming, env, origin) {
   // ceiling, or point this at a different API path.
   const body = {
     model: MODEL,
-    max_tokens: Math.min(Number(incoming.max_tokens) || 1200, MAX_TOKENS_CAP),
+    // The browser asks for room for the answer; thinking needs room too.
+    max_tokens: Math.min(Math.max(Number(incoming.max_tokens) || 1200, 1200) * 3, MAX_TOKENS_CAP),
+    output_config: { effort: EFFORT },
     messages: incoming.messages,
   };
   if (typeof incoming.system === 'string') body.system = incoming.system;
@@ -461,7 +467,19 @@ async function handleAnalysis(incoming, env, origin) {
     return deny(502, 'Upstream request failed.', origin);
   }
 
-  const text = await upstream.text();
+  let text = await upstream.text();
+  // Keep only the answer. The thinking blocks come back empty (their text is
+  // omitted by default) and the browser reads only text blocks; dropping them
+  // keeps the stored answer small.
+  if (upstream.ok) {
+    try {
+      const parsed = JSON.parse(text);
+      if (parsed && Array.isArray(parsed.content)) {
+        parsed.content = parsed.content.filter((b) => b && b.type === 'text');
+        text = JSON.stringify(parsed);
+      }
+    } catch (e) { /* not JSON: passed on unchanged, and never cached below */ }
+  }
 
   // Only complete, successful answers are stored. A 200 is not enough: a reply
   // cut off at the token ceiling, or declined by a safety classifier, still
