@@ -14,15 +14,15 @@
  * Off until IDX_LIVE=1 (idx-lib/crm.js). Pages are drawn into the stitched shell
  * /homes-shell/, which carries the site's own header, footer and assets.
  */
-import { PREVIEW_COOKIE, clearCookie, crm, idxOn, sameOrigin, setCookie, visitorToken } from "../../idx-lib/crm.js";
+import { COOKIE as COOKIE_NAME, PREVIEW_COOKIE, clearCookie, crm, idxOn, sameOrigin, setCookie, visitorToken } from "../../idx-lib/crm.js";
 import { PLACES } from "../../idx-lib/places.js";
 import { NO_HOA_NOTE, placeParams } from "../../idx-lib/edge.js";
 import { CITIES, readQuery } from "../../idx-lib/query.js";
-import { MAP_SCRIPT, MAP_STYLE, mapsKey, nearOf, pinOf } from "../../idx-lib/map.js";
+import { MAP_SCRIPT, MAP_STYLE, geocode, mapsKey, nearOf, pinOf, withPoints } from "../../idx-lib/map.js";
 import { SMS_CONSENT_TEXT, TERMS_PARAGRAPHS, TERMS_TITLE, TERMS_VERSION, termsText } from "../../idx-lib/terms.js";
 import {
   ICONS, STRIP_STYLE, STYLE, SCRIPT, addressLine, card, dayLong, disclaimer, esc, factsLine, grid, headlinePrice, heartButton,
-  listingPath, money, safeUrl, signupDialog, spaced, statusWord, stripCard, tourButton, tourDialog,
+  listingPath, money, safeUrl, signupDialog, welcomeDialog, spaced, statusWord, stripCard, tourButton, tourDialog,
 } from "../../idx-lib/render.js";
 
 const SITE = "https://chapter3realty.com";
@@ -65,6 +65,8 @@ export async function onRequest(context) {
     if (name === "signout") return new Response(null, { status: 303, headers: { Location: "/homes/", "Set-Cookie": clearCookie(), "Cache-Control": "no-store" } });
     if (!(request.headers.get("content-type") || "").includes("application/json")) return json({ ok: false, error: "invalid_body" }, 400);
     if (name === "register") return register(context);
+    if (name === "claim") return claimApi(context);
+    if (name === "returning") return returning(context);
     if (name === "views") return views(context);
     if (name === "hearts") return hearts(context);
     return json({ ok: false, error: "not_found" }, 404);
@@ -72,10 +74,96 @@ export async function onRequest(context) {
   if (request.method !== "GET" && request.method !== "HEAD") return new Response("Method not allowed", { status: 405 });
 
   try {
+    if (url.searchParams.has("k")) return await withClaim(context, url, path, gate);
     return await route(context, url, path, gate);
   } catch {
     return trouble(context, gate, null, "Grand Strand homes for sale");
   }
+}
+
+// ── returning clients (contract §7g) ────────────────────────────────────────
+
+const K = /^[A-Za-z0-9]{12}$/;
+
+/** POST the CRM's claim. Returns the CRM's answer, or null on any trouble. */
+async function postClaim(context, body) {
+  const r = await crm(context.env, context.request, "/api/idx/claim", { method: "POST", anonymous: true, userAgent: true, body });
+  return r;
+}
+
+/**
+ * A /homes page whose address carries our emails' sign-in code. A visitor with a valid
+ * cookie is left alone. Otherwise the code asks the CRM for a token: with one, the page is
+ * drawn signed in and the cookie set; when the CRM needs the terms first, the page opens a
+ * "Welcome back" box. Whatever the answer, the page takes k out of the address bar before
+ * analytics loads, and nothing about it is cached.
+ */
+async function withClaim(context, url, path, gate) {
+  const k = url.searchParams.get("k") || "";
+  // A redirect keeps k for the page it leads to; only that page claims. A listing's address
+  // may 301 (a bare MLS number, an old slug) or may not (a withheld address has no slug), so
+  // a listing is drawn first and claims only when it is the page itself.
+  const claimable = path.endsWith("/") && K.test(k) && !visitorToken(context.request);
+  const listing = /^\/homes\/[A-Za-z0-9]{3,20}(-[a-z0-9-]{1,120})?\/$/.test(path) && !/^\/homes\/(terms|near|api|map)\/$/i.test(path);
+  let res = claimable && listing ? await route(context, url, path, gate) : null;
+  let cookie = null, welcome = null;
+  if (claimable && !(res && res.status >= 300 && res.status < 400)) {
+    const r = await postClaim(context, { k, page: path });
+    if (r.status === 200 && r.json && r.json.ok && typeof r.json.token === "string") {
+      cookie = setCookie(r.json.token);
+      const h = new Headers(context.request.headers);
+      h.set("Cookie", `${h.get("Cookie") ? `${h.get("Cookie")}; ` : ""}${COOKIE_NAME}=${encodeURIComponent(r.json.token)}`);
+      res = await route({ ...context, request: new Request(context.request.url, { method: "GET", headers: h }) }, url, path, gate);
+    } else if (r.status === 200 && r.json && r.json.ok && r.json.needsTerms) {
+      welcome = { k, firstName: typeof r.json.firstName === "string" ? r.json.firstName.slice(0, 40) : null };
+    }
+  }
+  if (!res) res = await route(context, url, path, gate);
+  const headers = new Headers(res.headers);
+  headers.set("cache-control", "private, no-store");
+  if (cookie) headers.append("set-cookie", cookie);
+  if (!(headers.get("content-type") || "").includes("text/html")) return new Response(res.body, { status: res.status, headers });
+  let html = await res.text();
+  html = html.replace(/<head([^>]*)>/, (m) => `${m}${STRIP_K}`);
+  // At the top of <body>: the page script runs as soon as it is read and looks for the box then.
+  if (welcome) html = html.replace(/<body([^>]*)>/, (m) => `${m}${welcomeDialog(welcome)}`);
+  headers.delete("content-length");
+  return new Response(html, { status: res.status, headers });
+}
+
+/* First thing in <head>, before any analytics tag: the code leaves the address bar. */
+const STRIP_K = `<script>try{var u=new URL(location.href);if(u.searchParams.has("k")){u.searchParams.delete("k");history.replaceState(history.state,"",u.pathname+u.search+u.hash)}}catch(e){}</script>`;
+
+async function claimApi(context) {
+  const { request } = context;
+  const { body: b, tooLarge } = await readBody(request, 4 * 1024);
+  if (tooLarge) return json({ ok: false, error: "too_large" }, 413);
+  if (!b || typeof b !== "object" || !K.test(String(b.k || ""))) return json({ ok: false, error: "link_expired" });
+  if (visitorToken(request)) return json({ ok: true, already: true });
+  if (b.termsAccepted !== true) return json({ ok: false, field: "termsAccepted", message: FIELD_WORDS.termsAccepted }, 400);
+  const page = typeof b.page === "string" && b.page.startsWith("/homes") ? b.page.slice(0, 200) : "/homes/";
+  const r = await postClaim(context, { k: b.k, termsAccepted: true, termsVersion: TERMS_VERSION, termsText: termsText(), page });
+  if (r.status === 200 && r.json && r.json.ok && typeof r.json.token === "string") return json({ ok: true }, 200, { "set-cookie": setCookie(r.json.token) });
+  if (r.status === 400 && r.json && r.json.error === "invalid") return json({ ok: false, field: r.json.field, message: FIELD_WORDS[r.json.field] || "Please check the form." }, 400);
+  return json({ ok: false, error: "link_expired" });
+}
+
+async function returning(context) {
+  const { request } = context;
+  const { body: b, tooLarge } = await readBody(request, 8 * 1024);
+  if (tooLarge) return json({ ok: false, error: "too_large" }, 413);
+  if (!b || typeof b !== "object") return json({ ok: false, error: "invalid_body" }, 400);
+  if (visitorToken(request)) return json({ ok: true, already: true });
+  const str = (v, n) => (typeof v === "string" ? v.trim().slice(0, n) : "");
+  const r = await crm(context.env, request, "/api/idx/returning", {
+    method: "POST", anonymous: true, userAgent: true,
+    body: { phone: str(b.phone, 40), firstName: str(b.firstName, 80), termsAccepted: b.termsAccepted === true, termsVersion: TERMS_VERSION, termsText: termsText(), turnstileToken: str(b.turnstileToken, 4096), page: typeof b.page === "string" && b.page.startsWith("/homes") ? b.page.slice(0, 200) : "/homes/" },
+  });
+  if (r.status === 200 && r.json && r.json.ok && typeof r.json.token === "string") return json({ ok: true }, 200, { "set-cookie": setCookie(r.json.token) });
+  if (r.status === 200 && r.json && r.json.error === "not_found") return json({ ok: false, notFound: true });
+  if (r.status === 400 && r.json && r.json.error === "invalid") return json({ ok: false, field: r.json.field, message: FIELD_WORDS[r.json.field] || "Please check the form." }, 400);
+  if (r.status === 429) return json({ ok: false, message: "Too many tries, please wait a minute." }, 429);
+  return json({ ok: false, message: `Sign-in is unavailable right now. Please call ${PHONE}.` }, 503);
 }
 
 async function route(context, url, path, gate) {
@@ -288,6 +376,7 @@ async function mapSearch(context, q) {
     const more = await Promise.all([2, 3].filter((pg) => (pg - 1) * 48 < total).map(get));
     for (const m of more) if (m.status === 200 && m.json && m.json.ok && Array.isArray(m.json.listings)) listings = listings.concat(m.json.listings);
   }
+  await withPoints(listings);
   return { r: first, p, listings, pins: listings.map(pinOf).filter(Boolean), total };
 }
 
@@ -303,12 +392,21 @@ async function mapPage(context, url, gate) {
   const keep = new URLSearchParams(s.p); keep.delete("size");
   const where = s.p.get("city") ? ` in ${s.p.get("city")}` : "";
   const cards = s.listings.slice(0, 48).map((l) => `<div data-mls="${esc(l.mlsNumber)}">${card(l)}</div>`).join("");
+  const view = url.searchParams.get("view") === "3d" ? "3d" : "2d";
+  const focus = /^[A-Za-z0-9]{3,20}$/.test(url.searchParams.get("focus") || "") ? url.searchParams.get("focus") : "";
+  // The home a listing page sent us here from is always on the map, even if it is not among the newest.
+  if (focus && !s.pins.some((p) => p.mls === focus)) {
+    const one = await crm(context.env, context.request, `/api/idx/listings/${encodeURIComponent(focus)}?track=0`, { anonymous: true });
+    const l = one.status === 200 && one.json && one.json.ok ? one.json.listing : null;
+    if (l && l.address) { if (!l.point) l.point = await geocode(l); const pin = pinOf(l); if (pin) s.pins.unshift(pin); }
+  }
   const pinsJson = JSON.stringify(s.pins).replace(/</g, "\\u003c");
-  const body = `<div data-hx-map data-key="${esc(mapsKey(context.env))}" data-params="${esc(keep.toString())}">
+  const body = `<div data-hx-map data-key="${esc(mapsKey(context.env))}" data-params="${esc(keep.toString())}" data-view="${view}"${focus ? ` data-focus="${esc(focus)}"` : ""}>
 <div class="hx-map-top">${crumbs([["/", "Home"], ["/homes/", "Homes for sale"], [null, "Map"]])}<h1>${esc(`Map of homes for sale${where}`)}</h1>
 <form class="hx-search" method="get" action="/homes/map/" role="search"><div class="hx-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input name="q" type="search" enterkeyhint="search" autocomplete="off" maxlength="200" aria-label="Search homes on the map" placeholder="Try &quot;waterfront condo in North Myrtle Beach&quot;"><button type="submit">Search</button></div></form>
 ${appliedChips(s.p).replace(/href="\/homes\//g, 'href="/homes/map/')}<p class="hx-small"><a class="hx-maplist" href="${esc(`/homes/${keep.toString() ? `?${keep.toString()}` : ""}`)}">See these homes as a list</a></p></div>
 <div class="hx-map-body"><div id="hx-map" class="hx-map" role="region" aria-label="Map of the homes"><button type="button" id="hx-area" class="hx-area" hidden>Search this area</button>
+<div class="hx-mode" role="group" aria-label="Map view"><button type="button" data-mode="2d" aria-pressed="${view === "2d" ? "true" : "false"}">2D</button><button type="button" data-mode="3d" aria-pressed="${view === "3d" ? "true" : "false"}">3D</button></div>
 <p id="hx-map-note" class="hx-map-note"${s.pins.length ? " hidden" : ""}>${s.pins.length ? "" : "Map pins arrive when the MLS feed adds each home's location. Every home is in the list."}</p></div>
 <aside class="hx-map-list" aria-label="The homes"><p class="hx-map-count" id="hx-map-count"><b>${esc(s.total.toLocaleString("en-US"))}</b> homes${s.total > s.listings.length ? `, the newest ${esc(s.listings.length)} here` : ""}</p><div id="hx-map-cards" class="hx-map-cards">${cards}</div></aside>
 <button type="button" class="hx-map-toggle">List</button></div>
@@ -350,8 +448,16 @@ async function lookup(context, url) {
     if (!key || !n) return json({ ok: true, found: false });
     const r = await crm(context.env, context.request, `/api/idx/listings?near=${encodeURIComponent(n.near)}&miles=0.2&size=48`, { anonymous: true });
     const ls = r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? r.json.listings : [];
-    const hit = ls.find((l) => l.address && streetKey(l.address) === key);
-    if (!hit) return json({ ok: true, found: false }, 200, { "cache-control": "public, max-age=300" });
+    let hit = ls.find((l) => l.address && streetKey(l.address) === key);
+    // Not for sale: a signed-up visitor can study a home that sold in the last 24 months
+    // (sold records are for signed-up visitors only, contract §5).
+    const signed = Boolean(visitorToken(context.request));
+    if (!hit && signed) {
+      const s = await crm(context.env, context.request, `/api/idx/listings?near=${encodeURIComponent(n.near)}&miles=0.2&sold=1&size=48`);
+      const sl = s.status === 200 && s.json && s.json.ok && Array.isArray(s.json.listings) ? s.json.listings : [];
+      hit = sl.find((l) => l.address && streetKey(l.address) === key);
+    }
+    if (!hit) return json({ ok: true, found: false, soldNeedsSignup: !signed }, 200, { "cache-control": "private, no-store" });
     mls = hit.mlsNumber;
   }
   const r = await crm(context.env, context.request, `/api/idx/listings/${encodeURIComponent(mls)}?track=0`);
@@ -371,6 +477,8 @@ async function lookup(context, url) {
     hoaMonthly, taxAnnual: n(d.TaxAnnualAmount), floodZone: typeof d.FloodZone === "string" ? d.FloodZone : null,
     stories: n(d.StoriesTotal), newConstruction: d.NewConstructionYN === true,
     remarks: r.json.tier === "registered" && typeof l.remarks === "string" ? l.remarks.slice(0, 900) : null,
+    soldPrice: r.json.tier === "registered" ? n(l.soldPrice) : null, soldOn: r.json.tier === "registered" && /^\d{4}-\d{2}-\d{2}$/.test(l.soldOn || "") ? l.soldOn : null,
+    daysOnMarket: r.json.tier === "registered" ? n(l.daysOnMarket) : null, originalListPrice: r.json.tier === "registered" ? n(l.originalListPrice) : null,
   };
   return json({ ok: true, found: true, facts, meta: r.json.meta || null }, 200, { "cache-control": "private, no-store" });
 }
@@ -383,7 +491,8 @@ async function bareListing(context, mls, gate) {
   if (r.status !== 200 || !r.json || !r.json.ok || !r.json.listing || typeof r.json.listing !== "object") return trouble(context, gate, r, "Home for sale");
   const to = listingPath(r.json.listing);
   if (to === `/homes/${mls}/`) return listingPage(context, mls, null, gate);
-  return Response.redirect(`${SITE}${to}`, 301);
+  // The query string goes along: our emails' sign-in code (k, contract §7g) must survive the 301.
+  return Response.redirect(`${SITE}${to}${new URL(context.request.url).search}`, 301);
 }
 
 const row = (label, value) => (value === null || value === undefined || value === "" ? "" : `<tr><th scope="row">${esc(label)}</th><td>${esc(value)}</td></tr>`);
@@ -408,7 +517,7 @@ async function listingPageWith(context, mls, slugPart, gate, r, hearts) {
   if (r.status !== 200 || !r.json || !r.json.ok || !r.json.listing) return trouble(context, gate, r, "Home for sale");
   const l = r.json.listing;
   const own = listingPath(l);
-  if (slugPart !== null && `/homes/${slugPart}/` !== own) return Response.redirect(`${SITE}${own}`, 301);
+  if (slugPart !== null && `/homes/${slugPart}/` !== own) return Response.redirect(`${SITE}${own}${new URL(context.request.url).search}`, 301);
   const registered = r.json.tier === "registered";
   const canonical = `${SITE}${own}`;
   const photo = safeUrl(l.photo);
@@ -466,7 +575,13 @@ ${l.listingAgent ? `<p class="hx-firm-line">Listing agent: ${esc(l.listingAgent)
   const side = `<aside class="hx-side hx-glass" aria-label="Tour or ask about this home"><p class="hx-l-price">${esc(headlinePrice(l))}</p><p class="hx-small">${esc(addressLine(l))}</p>`
     + `${tourButton(l, "Tour this home", "tour", "hx-primary")}${tourButton(l, "Ask a question", "question")}</aside>`;
 
-  const nearby = await homesNearby(context, l);
+  const [nearby, where] = await Promise.all([homesNearby(context, l), l.address ? (pinOf(l) ? { lat: pinOf(l).lat, lng: pinOf(l).lng } : geocode(l)) : null]);
+  // Where the home is: a map with its pin. A click opens every home for sale in its town on
+  // the full map, this one lit (owner, 2026-10-25). Never for a withheld address (16.5).
+  const mapHref = `/homes/map/?${new URLSearchParams({ ...(l.city && CITIES.includes(l.city) ? { city: l.city } : {}), focus: l.mlsNumber }).toString()}`;
+  const located = where ? `<section class="hx-loc"><h2>Where it is</h2><a class="hx-loc-map" href="${esc(mapHref)}">`
+    + `<img src="${esc(`https://maps.googleapis.com/maps/api/staticmap?center=${where.lat},${where.lng}&zoom=15&size=640x280&scale=2&markers=color:0x1a73e8%7C${where.lat},${where.lng}&key=${mapsKey(context.env)}`)}" alt="${esc(`Map of ${addressLine(l)}`)}" width="640" height="280" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">`
+    + `<span class="hx-loc-cta">${esc(l.city ? `See every home for sale in ${l.city} on the map` : "See the homes around it on the map")}</span></a></section>` : "";
   const body = `${crumbs([["/", "Home"], ["/homes/", "Homes for sale"], [null, l.city || "Listing"]])}
 ${media}
 <div class="hx-l-grid"><div class="hx-l-info"><div class="hx-l-top">
@@ -475,7 +590,7 @@ ${media}
 ${pills}
 <p class="hx-firm-line">Listed by ${esc(l.listingFirm || "the listing brokerage")}</p>
 <p class="hx-small"><a class="hx-maplist" href="/invest/long-term-rental/?mls=${esc(encodeURIComponent(l.mlsNumber))}">Run the rental numbers on this home</a></p>
-${signedBar(r.json.tier)}</div><div class="hx-l-rest">${facts}${more}</div>
+${signedBar(r.json.tier)}</div><div class="hx-l-rest">${facts}${located}${more}</div>
 </div>${side}</div>
 ${nearby}
 ${disclaimer(r.json.meta)}`;
@@ -557,7 +672,7 @@ function termsPage(context, gate) {
 
 // ── data back to the CRM (contract §7) ──────────────────────────────────────
 
-const FIELD_WORDS = { name: "Please enter your first and last name.", email: "Please check your email.", phone: "Please check your phone number.", termsAccepted: "Please tick the box to accept the terms.", turnstileToken: "Please complete the check above the button." };
+const FIELD_WORDS = { phone: "Please check your phone number.", termsText: "Please reload the page and try again.", name: "Please enter your first and last name.", email: "Please check your email.", phone: "Please check your phone number.", termsAccepted: "Please tick the box to accept the terms.", turnstileToken: "Please complete the check above the button." };
 
 async function register(context) {
   const { request, env } = context;

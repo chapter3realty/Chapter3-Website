@@ -15,6 +15,7 @@
  */
 import { crm, idxOn, visitorToken } from "./crm.js";
 import { PLACES } from "./places.js";
+import { FEEDS, feedParams, postFilter } from "./feeds.js";
 import { STYLE, STRIP_STYLE, SCRIPT, disclaimer, esc, safeUrl, signupDialog, stripCard, tourDialog } from "./render.js";
 
 const SLOT = /<div class="hx-strip" data-place="([a-z0-9-]+)" data-name="([^"<>]*)"><\/div>/g;
@@ -75,7 +76,73 @@ function strip(slug, name, listings, total, noHoa) {
     + `<a class="hx-s-all" href="${all}" draggable="false">See all ${esc(String(n))} homes in ${name}</a></div>`;
 }
 
+/** Run a feed's searches at once, merged and de-duplicated. "stale", or [listings, total, meta], or null. */
+async function runFeed(env, request, feed) {
+  const calls = (feed.q || []).map((q) => {
+    const p = feedParams(q);
+    if (!p) return null;
+    p.set("size", feed.q.length > 1 ? "24" : "48");
+    return crm(env, request, `/api/idx/listings?${p.toString()}`, { anonymous: true, timeoutMs: STRIP_BUDGET_MS - 500 }).catch(() => null);
+  });
+  let timer;
+  const late = new Promise((done) => { timer = setTimeout(() => done(null), STRIP_BUDGET_MS); });
+  const answers = await Promise.race([Promise.all(calls), late]);
+  clearTimeout(timer);
+  if (!answers) return null;
+  if (answers.some((r) => r && r.status === 503 && r.json && r.json.error === "stale")) return "stale";
+  const seen = new Set(), out = [];
+  let total = 0, meta = null;
+  for (const r of answers) {
+    if (!r || r.status !== 200 || !r.json || !r.json.ok || !Array.isArray(r.json.listings)) continue;
+    meta = meta || r.json.meta;
+    total += typeof r.json.total === "number" ? r.json.total : r.json.listings.length;
+    for (const l of r.json.listings) if (l && !seen.has(l.mlsNumber)) { seen.add(l.mlsNumber); out.push(l); }
+  }
+  const kept = postFilter(out, feed.post);
+  return [kept, feed.post ? kept.length : total, meta];
+}
+
+/** The article's feed: a section like the page's own, placed after its second section. */
+function feedSection(feed, listings, total) {
+  const all = `/homes/${feed.link ? `?${feed.link}` : ""}`;
+  const n = esc(total.toLocaleString("en-US"));
+  return `<section class="hx-feed"><div class="wrap"><div class="hx-strip hx-feed-strip" data-feed="1">`
+    + `<p class="hx-feed-eb">Live from the MLS</p>`
+    + `<p class="hx-s-head"><b class="hx-feed-h">${esc(feed.head)}</b><a href="${esc(all)}">See all ${n}</a></p>`
+    + `<div class="hx-s-row">${spread(listings).map((l) => stripCard(l, false)).join("")}`
+    + `<a class="hx-s-all" href="${esc(all)}" draggable="false">See all ${n} homes</a></div></div></div></section>`;
+}
+
+/** Where the feed goes: before the third section of the article, else before its second <h2>, else at the end. */
+export function placeFeed(html, block) {
+  const a = html.indexOf("<main"), z = html.indexOf("</main>");
+  if (a < 0 || z < 0) return html;
+  const main = html.slice(a, z);
+  const secs = [...main.matchAll(/<section\b/g)].map((m) => m.index);
+  let at = secs.length >= 3 ? secs[2] : -1;
+  if (at < 0) {
+    const h2 = [...main.matchAll(/<h2\b/g)].map((m) => m.index);
+    at = h2.length >= 2 ? h2[1] : main.length;
+    // An h2 inside a section that is still open: go before that section, never inside it.
+    const open = main.lastIndexOf("<section", at);
+    if (open >= 0 && main.indexOf("</section>", open) > at) at = open;
+  }
+  return html.slice(0, a + at) + block + html.slice(a + at);
+}
+
 const switchHeader = (html) => html.replace(/onclick="openIdx\(\)"/g, `onclick="location.href='/homes/'"`);
+
+/** The styles, the notice, the dialogs and the script, once, on a page that now shows listings. */
+function finish(env, request, gate, html, meta, headers) {
+  const signed = Boolean(visitorToken(request));
+  html = html
+    .replace("</head>", () => `${STYLE}${STRIP_STYLE}</head>`)
+    .replace(/<body([^>]*)>/, (m, a) => `<body${a} data-hx-signed="${signed ? "1" : "0"}">`)
+    .replace("</main>", () => `<div class="hx-wrap" style="padding-top:0">${disclaimer(meta)}</div></main>`)
+    .replace("</body>", () => `${signupDialog(env.TURNSTILE_SITE_KEY)}${tourDialog()}${SCRIPT}</body>`);
+  headers.set("cache-control", signed || gate.preview ? "private, no-store" : "public, max-age=300");
+  return new Response(html, { status: 200, headers });
+}
 
 /** The response with the listing search's additions, or untouched. Never throws. */
 export async function withIdx(context, response) {
@@ -95,6 +162,19 @@ export async function withIdx(context, response) {
     headers.delete("etag");
     headers.delete("last-modified");
     const slots = url.pathname.startsWith("/homes") ? [] : [...html.matchAll(SLOT)];
+    const feed = !slots.length && !html.includes('class="hx-strip"') ? FEEDS[url.pathname] : null;
+    if (feed) {
+      // Too few homes for the topic: the fallback, or the Grand Strand's newest, under its own title.
+      let used = feed;
+      let got = await runFeed(env, request, used);
+      if (got && got !== "stale" && got[0].length < STRIP_MIN) {
+        const wider = feed.fallback || FEEDS["/buyers/"];
+        if (wider !== used) { used = wider; got = await runFeed(env, request, used); }
+      }
+      if (!got || got === "stale" || got[0].length < STRIP_MIN) return new Response(html, { status: 200, headers });
+      html = placeFeed(html, feedSection(used, got[0], got[1]));
+      return finish(env, request, gate, html, got[2], headers);
+    }
     if (!slots.length) return new Response(html, { status: 200, headers });
 
     const slugs = [...new Set(slots.map((m) => m[1]))].filter((s) => PLACES[s]);
@@ -125,14 +205,7 @@ export async function withIdx(context, response) {
       const f = filled.get(slug);
       return f ? `<div class="hx-strip" data-place="${slug}" data-name="${name}">${strip(slug, name, f[0], f[1], PLACES[slug].q.hoa !== undefined)}</div>` : whole;
     });
-    const signed = Boolean(visitorToken(request));
-    html = html
-      .replace("</head>", () => `${STYLE}${STRIP_STYLE}</head>`)
-      .replace(/<body([^>]*)>/, (m, a) => `<body${a} data-hx-signed="${signed ? "1" : "0"}">`)
-      .replace("</main>", () => `<div class="hx-wrap" style="padding-top:0">${disclaimer(meta)}</div></main>`)
-      .replace("</body>", () => `${signupDialog(env.TURNSTILE_SITE_KEY)}${tourDialog()}${SCRIPT}</body>`);
-    headers.set("cache-control", signed || gate.preview ? "private, no-store" : "public, max-age=300");
-    return new Response(html, { status: 200, headers });
+    return finish(env, request, gate, html, meta, headers);
   } catch {
     return text === null ? response : new Response(text, { status: response.status, headers: response.headers });
   }

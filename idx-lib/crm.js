@@ -72,7 +72,8 @@ export function visitorToken(request) {
 }
 
 export const clearCookie = () => `${COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax`;
-export const setCookie = (token) => `${COOKIE}=${encodeURIComponent(token)}; Path=/; Max-Age=7776000; HttpOnly; Secure; SameSite=Lax`;
+/* A year (contract §7a, since 25 Oct 2026; it was 90 days). */
+export const setCookie = (token) => `${COOKIE}=${encodeURIComponent(token)}; Path=/; Max-Age=31536000; HttpOnly; Secure; SameSite=Lax`;
 
 /** Is the search on for this request: live, or the owner's preview cookie? */
 export function idxOn(env, request) {

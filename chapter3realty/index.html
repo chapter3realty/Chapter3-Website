@@ -421,6 +421,16 @@ html{scroll-padding-top:97px}
 @media (forced-colors:active){#page-home .tw-pin a:focus-visible{forced-color-adjust:none;background:Highlight;color:HighlightText;border-color:HighlightText}}
 </style>
 <script>(function(h){h.classList.add('js');if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;h.classList.add('m');window.__c3T=setTimeout(function(){h.classList.remove('m')},3000)})(document.documentElement)</script>
+<style>
+.hero-search{display:flex;align-items:center;gap:.5rem;width:min(100%,36rem);margin:1.4rem 0 .4rem;padding:.4rem .4rem .4rem 1.1rem;border-radius:999px;background:#fff;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.hero-search svg{width:21px;height:21px;flex:none;fill:none;stroke:#5c6b78;stroke-width:2;stroke-linecap:round}
+.hero-search input{flex:1;min-width:0;border:0;outline:none;background:none;font:inherit;font-size:1.05rem;padding:.75rem 0;color:#1c2028}
+.hero-search button{flex:none;border:0;border-radius:999px;background:#c4783a;color:#1c2028;font:inherit;font-weight:800;font-size:1rem;padding:.85rem 1.4rem;cursor:pointer;transition:background .15s}
+.hero-search button:hover{background:#d88a4a}
+.hero-search:focus-within{box-shadow:0 0 0 3px rgba(196,120,58,.55),0 18px 50px rgba(0,0,0,.35)}
+.hero-or{margin:.9rem 0 .2rem;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,239,232,.7)}
+@media(max-width:560px){.hero-search{padding-left:.9rem}.hero-search button{padding:.8rem 1rem;font-size:.92rem}}
+</style>
 </head>
 <body class="home">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -469,12 +479,18 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
 <div class="cine-copy">
 <h1 class="cine-h1" id="home-h1"><span class="l1"><span>Myrtle Beach</span></span> <span class="l2"><span>Homes</span></span></h1>
 <h2 style="color:rgba(244,239,232,.86)" class="cine-sub">Buy, sell and invest in Myrtle Beach real estate with a specialized real estate agent.</h2>
+<form class="hero-search" action="/homes/" method="get" role="search" aria-label="Search homes for sale">
+<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+<input name="q" type="search" enterkeyhint="search" autocomplete="off" maxlength="200" aria-label="Search homes for sale" placeholder="Town, neighborhood, or &quot;3 bed under $400k&quot;">
+<button type="submit">Search listings</button>
+</form>
+<p class="hero-or">Or start with what you need</p>
 <ul class="cine-paths" role="list">
 <li><a class="cine-path" href="/sell/"><span class="pk">I am a</span> <span class="pr" data-r="Seller">Seller</span></a></li>
 <li><a class="cine-path" href="/invest/"><span class="pk">I am an</span> <span class="pr" data-r="Investor">Investor</span></a></li>
 <li><a class="cine-path" href="/buyers/buying-in-myrtle-beach/"><span class="pk">I am a</span> <span class="pr" data-r="Buyer">Buyer</span></a></li>
 </ul>
-<p class="tw-links"><a class="tl" href="/submarkets/"><span class="tl-t">All neighborhoods</span> <span class="arr" aria-hidden="true">&rarr;</span></a><a class="tl" href="/map/"><span class="tl-t">3D map search</span> <span class="arr" aria-hidden="true">&rarr;</span></a></p>
+<p class="tw-links"><a class="tl" href="/submarkets/"><span class="tl-t">All neighborhoods</span> <span class="arr" aria-hidden="true">&rarr;</span></a><a class="tl" href="/homes/map/"><span class="tl-t">Map search, 2D and 3D</span> <span class="arr" aria-hidden="true">&rarr;</span></a></p>
 </div>
 <div class="tw-stage" data-plane="-79.62,34.2,0.832389639,1483.161062,1851.852,1601.814">
 <div class="tw-scene" aria-hidden="true">
@@ -806,7 +822,7 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
 <li><a href="/sell/capital-gains/">Capital Gains Calculator</a></li>
 <li><a href="/buyers/property-taxes/">Property Tax Estimator</a></li>
 <li><a href="/hoa/">HOA Fees Guide</a></li>
-<li><a href="/map/">3D Map Search</a></li>
+<li><a href="/homes/map/">Map of homes for sale</a></li>
 </ul>
 </div>
 <div>

@@ -18,6 +18,7 @@ async function ltrMlsLookup(qs) {
     const res = await fetch('/homes/api/lookup?' + qs, { credentials: 'same-origin' });
     if (!res.ok) return null;
     const j = await res.json();
+    if (j && !j.found && j.soldNeedsSignup) ltrSoldHint();
     return j && j.found && j.facts ? j.facts : null;
   } catch (e) { return null; }
 }
@@ -40,7 +41,23 @@ function ltrShowMls(f) {
     if (btn && btn.parentNode) btn.parentNode.insertBefore(note, btn);
   }
   const bits = [f.beds != null ? f.beds + ' beds' : '', f.baths != null ? f.baths + ' baths' : '', f.sqft != null ? f.sqft.toLocaleString('en-US') + ' sq ft' : '', f.yearBuilt ? 'built ' + f.yearBuilt : ''].filter(Boolean).join(', ');
-  note.textContent = 'Found on the MLS: ' + (bits || 'listing ' + f.mlsNumber) + '. We filled these in for you. MLS #' + f.mlsNumber + ', listed by ' + (f.listingFirm || 'the listing brokerage') + '. Listing provided by CCMLS.';
+  const sold = f.soldPrice ? ' Sold for $' + f.soldPrice.toLocaleString('en-US') + (f.soldOn ? ' on ' + f.soldOn : '') + '.' : '';
+  note.textContent = (f.soldPrice ? 'Found its sale on the MLS: ' : 'Found on the MLS: ') + (bits || 'listing ' + f.mlsNumber) + '.' + sold + ' We filled these in for you. MLS #' + f.mlsNumber + ', listed by ' + (f.listingFirm || 'the listing brokerage') + '. Listing provided by CCMLS.';
+}
+
+// Not for sale and not signed up: a sold home's MLS record needs the free sign-up.
+function ltrSoldHint() {
+  if (document.getElementById('ltr-mls-note')) return;
+  const note = document.createElement('p');
+  note.id = 'ltr-mls-note';
+  note.style.cssText = 'margin:.6rem 0;padding:.65rem .85rem;border-radius:12px;background:#f4efe8;color:#1c2028;font-size:.88rem;line-height:1.45';
+  note.appendChild(document.createTextNode('Not for sale right now. If it sold in the last two years, '));
+  const a = document.createElement('a');
+  a.href = '/homes/?signup=1'; a.textContent = 'sign up free on our home search'; a.style.fontWeight = '700';
+  note.appendChild(a);
+  note.appendChild(document.createTextNode(', then come back: we pull its sale from the MLS.'));
+  const btn = document.getElementById('ltr-analyze-btn');
+  if (btn && btn.parentNode) btn.parentNode.insertBefore(note, btn);
 }
 
 // A listing page links here with ?mls=: start from that home.
@@ -431,7 +448,10 @@ async function runLtrAnalysis() {
     const mlsFacts = mls ? (
       'MLS LISTING (authoritative, use exactly, do not re-estimate): ' + [
         mls.status ? mls.status : '',
-        mls.listPrice ? 'asking price $' + mls.listPrice.toLocaleString() : '',
+        mls.soldPrice ? 'SOLD for $' + mls.soldPrice.toLocaleString() + (mls.soldOn ? ' on ' + mls.soldOn : '') + ' (a recorded sale: the strongest value signal)' : '',
+        mls.listPrice && !mls.soldPrice ? 'asking price $' + mls.listPrice.toLocaleString() : '',
+        mls.originalListPrice && mls.listPrice && mls.originalListPrice !== mls.listPrice ? 'first listed at $' + mls.originalListPrice.toLocaleString() : '',
+        mls.daysOnMarket != null ? mls.daysOnMarket + ' days on market' : '',
         mls.type || '', mls.yearBuilt ? 'built ' + mls.yearBuilt : '',
         mls.lotAcres ? mls.lotAcres + ' acres' : '', mls.stories ? mls.stories + ' stories' : '',
         mls.subdivision ? 'subdivision ' + mls.subdivision : '', mls.waterfront ? 'waterfront' : '',

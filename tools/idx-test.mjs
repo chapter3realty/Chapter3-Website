@@ -7,7 +7,8 @@ import path from "node:path";
 import { onRequest as homes } from "../functions/homes/[[path]].js";
 import { onRequest as mw } from "../functions/_middleware.js";
 import { onRequest as sitemap } from "../functions/sitemap-homes.xml.js";
-import { placeParams } from "../idx-lib/edge.js";
+import { placeFeed, placeParams } from "../idx-lib/edge.js";
+import { postFilter } from "../idx-lib/feeds.js";
 import { SCRIPT } from "../idx-lib/render.js";
 import { MAP_SCRIPT } from "../idx-lib/map.js";
 
@@ -22,6 +23,7 @@ const mk = (i, extra = {}) => ({ mlsNumber: String(2600000 + i), status: "Active
 const DEV_TOKEN = "eyJ2aXNpdG9ySWQiOiJ2MSIsInRlcm1zVmVyc2lvbiI6InYxLWRyYWZ0LTEiLCJleHBpcmVzQXQiOjk5OTk5OTk5OTl9.c2ln";
 const calls = [];
 let STALE = false;
+let CENSUS = false, CENSUS_CALLS = 0;
 let MAPPOINTS = false;
 let sent2 = "";
 let HANG = false;
@@ -32,7 +34,21 @@ globalThis.fetch = async (input, init = {}) => {
   const auth = (init.headers || {}).authorization;
   const tier = auth ? "registered" : "public";
   const J = (b, s = 200) => new Response(JSON.stringify(b), { status: s, headers: { "content-type": "application/json" } });
+  if (u.hostname === "geocoding.geo.census.gov") {
+    CENSUS_CALLS++;
+    return CENSUS ? J({ result: { addressMatches: [{ coordinates: { x: -78.9, y: 33.71 } }] } }) : J({ result: { addressMatches: [] } });
+  }
   if ((init.headers || {})["x-idx-key"] !== "devkey") return J({ ok: false, error: "forbidden" }, 403);
+  if (u.pathname === "/api/idx/claim") {
+    const b = JSON.parse(init.body);
+    if (b.k === "Good12345678") return J({ ok: true, token: DEV_TOKEN, firstName: "Sam", dryRun: true });
+    if (b.k === "Terms1234567") return b.termsAccepted ? J({ ok: true, token: DEV_TOKEN, firstName: "Sam" }) : J({ ok: true, needsTerms: true, firstName: "Sam" });
+    return J({ ok: false, error: "link_expired" });
+  }
+  if (u.pathname === "/api/idx/returning") {
+    const b = JSON.parse(init.body);
+    return b.phone === "8435550199" && b.firstName === "Sam" ? J({ ok: true, token: DEV_TOKEN, dryRun: true }) : J({ ok: false, error: "not_found" });
+  }
   if (STALE) return J({ ok: false, error: "stale" }, 503);
   if (HANG) return new Promise((_, no) => init.signal && init.signal.addEventListener("abort", () => no(new Error("aborted"))));
   if (INVALID && auth) return J({ ok: false, error: "unauthorized", visitor: "invalid" }, 401);
@@ -276,6 +292,75 @@ check("lookup: no match is not found, never a guess", JSON.parse(await r.text())
 check("lookup: a point off the coast is refused", JSON.parse(await (await run(homes, req("/homes/api/lookup?street=1%20A%20St&lat=0&lng=0"))).text()).found === false);
 t = await (await run(homes, req("/homes/2600005-101-test-st-myrtle-beach/"))).text();
 check("listing page: a link to run the rental numbers on this home", t.includes('href="/invest/long-term-rental/?mls=2600005"'));
+
+// Every article's homes feed (2026-10-25).
+t = await (await run(mw, req("/buyers/waterfront-homes/"))).text();
+sent2 = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
+check("feed: an article gets its own homes, filtered to its topic", t.includes('class="hx-feed"') && t.includes("Waterfront homes for sale now") && sent2.includes("waterfront=1"));
+check("feed: placed as a section of the article, with the notice and the dialogs", t.indexOf('class="hx-feed"') < t.indexOf("</main>") && t.includes('class="hx-disclaimer"') && t.includes('id="hx-signup"') && (t.match(/class="hx-feed"/g) || []).length === 1);
+check("feed: See all opens the same search", t.includes('href="/homes/?waterfront=1"'));
+t = await (await run(mw, req("/buyers/55-plus-communities/"))).text();
+check("feed: a page about several communities searches each of them", ["Del+Webb", "Myrtle+Trace", "Seasons+at+Prince+Creek"].every((w) => calls.slice(-6).some((c) => c.url.includes("subdivision=" + w))) && t.includes("Homes for sale in 55+ communities"));
+t = await (await run(mw, req("/buyers/new-construction/"))).text();
+check("feed: a topic with no search filter falls back to the newest homes when too few match", t.includes("Homes for sale on the Grand Strand now") || t.includes("Homes built in the last two years"));
+t = await (await run(mw, req("/buyers/best-neighborhoods/"))).text();
+check("feed: pages with their own strips get no second feed", !t.includes('class="hx-feed"'));
+t = await (await run(mw, req("/about/"))).text();
+check("feed: pages not on the list get none", !t.includes('class="hx-feed"'));
+check("feed: never placed inside a section that is still open", placeFeed('<main><section class="x"><div class="wrap"><p>E</p><h2>A</h2><p>t</p><h2>B</h2></div></section></main>', "[F]") === '<main>[F]<section class="x"><div class="wrap"><p>E</p><h2>A</h2><p>t</p><h2>B</h2></div></section></main>');
+check("feed: built in the last two years is this year's two years, read per request", (() => { const y = new Date().getUTCFullYear(); const out = postFilter([{ yearBuilt: y }, { yearBuilt: y - 1 }, { yearBuilt: y - 2 }, { yearBuilt: 1970 }], { builtWithin: 2 }); return out.length === 2 && out[1].yearBuilt === y - 1; })());
+
+// Returning clients (contract §7g).
+r = await run(homes, req("/homes/2600005-101-test-st-myrtle-beach/?k=Good12345678"));
+t = await r.text();
+check("k: a good code signs the visitor in, the cookie a year", /c3_idx=.+Max-Age=31536000; HttpOnly; Secure; SameSite=Lax/.test(r.headers.get("set-cookie") || "") && t.includes('data-hx-signed="1"'));
+check("k: never cached, and taken out of the address bar before analytics", r.headers.get("cache-control") === "private, no-store" && /<head[^>]*><script>try\{var u=new URL\(location.href\);if\(u.searchParams.has\("k"\)\)/.test(t));
+r = await run(homes, req("/homes/2600005-101-test-st-myrtle-beach/?k=Terms1234567"));
+t = await r.text();
+check("k: when the terms come first, the Welcome back box", t.includes('id="hx-welcome"') && t.includes("Welcome back, Sam") && !(r.headers.get("set-cookie") || "").includes("Max-Age=31536000"));
+check("k: the Welcome back box comes before the page script that opens it", t.indexOf('id="hx-welcome"') > 0 && t.indexOf('id="hx-welcome"') < t.indexOf(SCRIPT.slice(0, 60)));
+r = await run(homes, req("/homes/2611111/?k=Good12345678"));
+check("k: a home with a withheld address (no slug, no 301) still signs the visitor in", r.status === 200 && /Max-Age=31536000/.test(r.headers.get("set-cookie") || ""));
+const beforeSlug = calls.length;
+r = await run(homes, req("/homes/2600005-old-slug/?k=Terms1234567"));
+check("k: a listing's old slug 301s with k and does not claim", r.status === 301 && r.headers.get("location").endsWith("?k=Terms1234567") && !calls.slice(beforeSlug).some((c) => c.url.endsWith("/api/idx/claim")));
+r = await run(homes, post("/homes/api/claim", { k: "Terms1234567", termsAccepted: true, page: "/homes/" }));
+check("k: the box's button signs in with the terms", r.status === 200 && /Max-Age=31536000/.test(r.headers.get("set-cookie") || ""));
+r = await run(homes, req("/homes/2600005-101-test-st-myrtle-beach/?k=Old123456789"));
+t = await r.text();
+check("k: an expired code is the normal page, no message", r.status === 200 && !t.includes('id="hx-welcome"') && !(r.headers.get("set-cookie") || "").includes("c3_idx=e"));
+const before = calls.length;
+r = await run(homes, req("/homes/2600005-101-test-st-myrtle-beach/?k=Good12345678", cookie));
+check("k: a visitor with a cookie is never claimed again", !calls.slice(before).some((c) => c.url.endsWith("/api/idx/claim")));
+r = await run(homes, req("/homes/2600005?k=Good12345678"));
+check("k: /homes/<MLS#> keeps k through its 301", r.status === 301 && r.headers.get("location").endsWith("?k=Good12345678"));
+r = await run(homes, post("/homes/api/returning", { phone: "8435550199", firstName: "Sam", termsAccepted: true, turnstileToken: "t", page: "/homes/" }));
+check("returning: phone and first name sign a client in", r.status === 200 && /Max-Age=31536000/.test(r.headers.get("set-cookie") || ""));
+r = await run(homes, post("/homes/api/returning", { phone: "1", firstName: "X", termsAccepted: true, turnstileToken: "t" }));
+check("returning: not found opens the full sign-up", JSON.parse(await r.text()).notFound === true);
+t = await (await run(homes, req("/homes/"))).text();
+check("returning: the sign-up offers Already working with us?", t.includes("data-hx-returning") && t.includes('id="hx-returning-form"'));
+
+// The map: dots from the address until the CRM sends points; the home's own map; 2D and 3D.
+CENSUS = true;
+r = await run(homes, req("/homes/api/map?city=Conway"));
+mj = JSON.parse(await r.text());
+check("map: homes without a CRM point are placed from their address", mj.pins.length > 0 && mj.pins.every((x) => x.lat === 33.71));
+t = await (await run(homes, req("/homes/2600005-101-test-st-myrtle-beach/"))).text();
+check("listing: a map of where the home is, opening its town on the full map with it lit", t.includes('class="hx-loc-map"') && t.includes("staticmap?center=33.71,-78.9") && t.includes('href="/homes/map/?city=Myrtle+Beach&amp;focus=2600005"'));
+t = await (await run(homes, req("/homes/2611111/"))).text();
+check("listing: a withheld address gets no map", !t.includes('class="hx-loc-map"'));
+t = await (await run(homes, req("/homes/map/?city=Conway&focus=2699999"))).text();
+check("map page: the home a listing page sent us from is among the pins sent to the browser", t.includes('"mls":"2699999"'));
+CENSUS = false;
+t = await (await run(homes, req("/homes/map/?city=Conway&view=3d&focus=2600005"))).text();
+check("map page: one page, a 2D and 3D switch, opened in 3D, the home lit", t.includes('data-mode="3d" aria-pressed="true"') && t.includes('data-view="3d"') && t.includes('data-focus="2600005"'));
+
+// Sold homes in the analyzer, for signed-up visitors only.
+r = await run(homes, req("/homes/api/lookup?street=" + encodeURIComponent("999 Nowhere Rd") + "&lat=33.7&lng=-78.9"));
+check("lookup: not for sale, not signed up: the sign-up is offered", JSON.parse(await r.text()).soldNeedsSignup === true);
+r = await run(homes, req("/homes/api/lookup?street=" + encodeURIComponent("999 Nowhere Rd") + "&lat=33.7&lng=-78.9", cookie));
+check("lookup: a signed-up visitor's search includes sold homes", calls.some((c) => c.url.includes("sold=1") && c.url.includes("near=")) && JSON.parse(await r.text()).soldNeedsSignup === false);
 
 // Sitemap and the shell.
 r = await run(sitemap, req("/sitemap-homes.xml"), { ...ENV, IDX_INDEX_LISTINGS: "1" });

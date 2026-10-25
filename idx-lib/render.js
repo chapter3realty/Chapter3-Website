@@ -144,7 +144,29 @@ export function signupDialog(siteKey) {
 ${siteKey ? `<div class="cf-turnstile" data-sitekey="${esc(siteKey)}"></div>` : ""}
 <p class="hx-error" role="alert" hidden></p>
 <button class="btn btn-brass" type="submit" disabled>See full details</button>
-<p class="hx-d-fine">We never sell your information.</p>
+<p class="hx-d-fine">We never sell your information. <button type="button" class="hx-linkbtn" data-hx-returning>Already working with us?</button></p>
+</form>
+<form id="hx-returning-form" novalidate hidden>
+<button type="button" class="hx-x" data-hx-close aria-label="Close">&times;</button>
+<div class="hx-d-head"><div><h2>Already working with us?</h2><p class="hx-d-sub">Your mobile number and first name are enough.</p></div></div>
+<div class="hx-row2"><label>Mobile phone<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="40"></label><label>First name<input name="firstName" autocomplete="given-name" required maxlength="80"></label></div>
+<label class="hx-check"><input type="checkbox" name="termsAccepted"><span>I agree to the <a href="/homes/terms/" target="_blank" rel="noopener">listing search terms of use</a>.</span></label>
+${siteKey ? `<div class="cf-turnstile" data-sitekey="${esc(siteKey)}"></div>` : ""}
+<p class="hx-error" role="alert" hidden></p>
+<button class="btn btn-brass" type="submit" disabled>Sign in</button>
+<p class="hx-d-fine"><button type="button" class="hx-linkbtn" data-hx-newsignup>New here? Sign up instead</button></p>
+</form></dialog>`;
+}
+
+/** Our emails' links sign a client in; when the CRM needs the terms first, this one-tap box (contract §7g). */
+export function welcomeDialog(w) {
+  return `<dialog id="hx-welcome" class="hx-dialog" aria-labelledby="hx-welcome-title" data-k="${esc(w.k)}">
+<form id="hx-welcome-form" novalidate>
+<button type="button" class="hx-x" data-hx-close aria-label="Close">&times;</button>
+<div class="hx-d-head"><div><h2 id="hx-welcome-title">${esc(w.firstName ? `Welcome back, ${w.firstName}` : "Welcome back")}</h2><p class="hx-d-sub">One tap and you see every photo and detail.</p></div></div>
+<label class="hx-check"><input type="checkbox" name="termsAccepted"><span>I agree to the <a href="/homes/terms/" target="_blank" rel="noopener">listing search terms of use</a>.</span></label>
+<p class="hx-error" role="alert" hidden></p>
+<button class="btn btn-brass" type="submit" disabled>Continue</button>
 </form></dialog>`;
 }
 
@@ -273,7 +295,13 @@ main#main .hx-s-row>.hx-c:hover{transform:none}
 .hx-sort{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;color:var(--slate,#5c6b78)}.hx-sort select{border:1px solid rgba(28,32,40,.18);border-radius:999px;background:#fff;font:inherit;font-size:.9rem;padding:.4rem .8rem;color:var(--ink,#1c2028)}
 .hx-pager a,.hx-pager span{padding:.55rem 1rem;border-radius:999px;border:1px solid rgba(28,32,40,.15);background:#fff;text-decoration:none;color:var(--ink,#1c2028);font-weight:600}.hx-pager span{border:0;background:none}
 .hx-maplist{color:var(--brass-ink,#91592b);font-weight:600}
+.hx-loc h2{margin-top:1.6rem}
+.hx-loc-map{position:relative;display:block;border-radius:18px;overflow:hidden;box-shadow:0 6px 20px rgba(28,32,40,.10);text-decoration:none}
+.hx-loc-map img{display:block;width:100%;height:auto;aspect-ratio:640/280;object-fit:cover;background:#e9e5dc}
+.hx-loc-cta{position:absolute;left:.8rem;bottom:.8rem;padding:.55rem 1rem;border-radius:999px;background:#1c2028;color:#fff;font-weight:700;font-size:.9rem;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.hx-loc-map:hover .hx-loc-cta{background:#1a73e8}
 .hx-d-fine{font-size:.72rem;color:var(--slate,#5c6b78);line-height:1.45;margin:0;text-align:center}
+.hx-linkbtn{border:0;background:none;padding:0;font:inherit;font-weight:700;color:var(--brass-ink,#91592b);text-decoration:underline;cursor:pointer}
 .hx-d-perks{display:flex;flex-wrap:wrap;gap:.35rem;list-style:none;margin:0;padding:0}.hx-d-perks li{padding:.28rem .65rem;border-radius:999px;background:#f4efe8;font-size:.8rem;font-weight:600}
 .hx-dialog .hx-terms summary{cursor:pointer;color:var(--slate,#5c6b78)}
 .hx-tour.hx-primary{background:var(--brass-ink,#91592b);border-color:var(--brass-ink,#91592b);color:#fff}
@@ -320,6 +348,12 @@ main#main .hx-strip:empty{display:none}main#main .hx-strip:not(:empty)+.hx-fallb
 main#main .hx-strip{margin:1.2rem 0 .4rem;max-width:760px;position:relative}
 main#main .hx-s-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin:0 0 .55rem;font-size:.95rem;color:var(--navy)}
 main#main .hx-s-head a{color:var(--brass);font-size:.9rem;white-space:nowrap}
+main#main .hx-feed{background:var(--ivory-2,#f1ece4)}
+main#main .hx-feed .hx-strip.hx-feed-strip{max-width:none;margin:0}
+main#main .hx-feed-eb{font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin:0 0 .45rem;font-weight:600}
+main#main .hx-feed .hx-s-head{align-items:flex-end;margin-bottom:.9rem}
+main#main .hx-feed-h{font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.65rem);font-weight:600;line-height:1.25;color:var(--navy)}
+@media (min-width:900px){main#main .hx-feed .hx-s-row>.hx-c{flex-basis:calc((100% - 2.25rem) / 3.4)}}
 .hx-s-note{margin:-.3rem 0 .55rem;font-size:.85rem;color:var(--muted,#5a5f6a)}
 main#main .hx-s-row{display:flex;align-items:flex-start;gap:.75rem;overflow-x:auto;scroll-behavior:auto;scroll-snap-type:x proximity;padding:.15rem .15rem .6rem;margin:0 -.15rem;scrollbar-width:none;-ms-overflow-style:none;cursor:grab;user-select:none;-webkit-user-select:none}
 main#main .hx-s-row::-webkit-scrollbar{display:none}main#main .hx-s-row.hx-dragging{cursor:grabbing;scroll-snap-type:none}
@@ -352,6 +386,7 @@ var sd=$("#hx-signup"),sf=$("#hx-signup-form");var tsLoaded=false;
 function askSignup(pending){if(pending)try{sessionStorage.setItem("c3_idx_heart",pending)}catch(e){}
  if(!tsLoaded&&$(".cf-turnstile",sd)){tsLoaded=true;var s=document.createElement("script");s.src="https://challenges.cloudflare.com/turnstile/v0/api.js";s.async=true;document.head.appendChild(s)}openD(sd)}
 $$("[data-hx-signup]").forEach(function(b){b.addEventListener("click",function(){askSignup()})});
+if(!signed&&/[?&]signup=1/.test(location.search))askSignup();
 if(sf){var tb=sf.elements.termsAccepted,sb=sf.querySelector("button[type=submit]");tb.addEventListener("change",function(){sb.disabled=!tb.checked});
  sf.addEventListener("submit",function(e){e.preventDefault();var err=sf.querySelector(".hx-error");err.hidden=true;sb.disabled=true;
   var prior=[];try{prior=JSON.parse(localStorage.getItem("c3_idx_prior")||"[]")}catch(x){}
@@ -362,6 +397,24 @@ if(sf){var tb=sf.elements.termsAccepted,sb=sf.querySelector("button[type=submit]
     return (h?post("/homes/api/hearts",{mlsNumber:h,loved:true}):Promise.resolve()).then(function(){location.reload()})}
    err.textContent=j.message||"Please check the form and try again.";err.hidden=false;sb.disabled=!tb.checked;if(window.turnstile)try{turnstile.reset()}catch(x){}})
   .catch(function(){err.textContent="Sign-up is unavailable right now. Please call (854) 333-2135.";err.hidden=false;sb.disabled=!tb.checked})})}
+/* Already working with us? (contract §7g) */
+var rf=$("#hx-returning-form");
+function swap(toReturning){if(!sf||!rf)return;sf.hidden=toReturning;rf.hidden=!toReturning}
+$$("[data-hx-returning]").forEach(function(b){b.addEventListener("click",function(){swap(true)})});
+$$("[data-hx-newsignup]").forEach(function(b){b.addEventListener("click",function(){swap(false)})});
+if(rf){var rt=rf.elements.termsAccepted,rb=rf.querySelector("button[type=submit]");rt.addEventListener("change",function(){rb.disabled=!rt.checked});
+ rf.addEventListener("submit",function(e){e.preventDefault();var err=rf.querySelector(".hx-error");err.hidden=true;rb.disabled=true;var t=rf.querySelector("[name=cf-turnstile-response]");
+  post("/homes/api/returning",{phone:rf.elements.phone.value,firstName:rf.elements.firstName.value,termsAccepted:rt.checked,turnstileToken:t?t.value:"",page:location.pathname})
+  .then(function(j){if(j.ok){location.reload();return}
+   if(j.notFound&&sf){sf.elements.phone.value=rf.elements.phone.value;sf.elements.firstName.value=rf.elements.firstName.value;swap(false);var se=sf.querySelector(".hx-error");se.textContent="We could not find you. Finish this short sign-up and you are in.";se.hidden=false;return}
+   err.textContent=j.message||"Please check the form and try again.";err.hidden=false;rb.disabled=!rt.checked;if(window.turnstile)try{turnstile.reset()}catch(x){}})
+  .catch(function(){err.textContent="Sign-in is unavailable right now. Please call (854) 333-2135.";err.hidden=false;rb.disabled=!rt.checked})})}
+/* Welcome back: a link from our emails, the terms first */
+var wd=$("#hx-welcome"),wf=$("#hx-welcome-form");
+if(wd&&wf){var wt=wf.elements.termsAccepted,wb=wf.querySelector("button[type=submit]");wt.addEventListener("change",function(){wb.disabled=!wt.checked});openD(wd);
+ wf.addEventListener("submit",function(e){e.preventDefault();var err=wf.querySelector(".hx-error");err.hidden=true;wb.disabled=true;
+  post("/homes/api/claim",{k:wd.getAttribute("data-k"),termsAccepted:true,page:location.pathname}).then(function(j){if(j.ok){location.reload();return}
+   if(j.error==="link_expired"){wd.close();return}err.textContent=j.message||"Please try again.";err.hidden=false;wb.disabled=false}).catch(function(){wd.close()})})}
 /* Hearts */
 $$(".hx-heart").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();var m=b.getAttribute("data-mls");
  if(!signed){askSignup(m);return}var on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",on?"true":"false");
