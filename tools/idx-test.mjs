@@ -9,6 +9,7 @@ import { onRequest as mw } from "../functions/_middleware.js";
 import { onRequest as sitemap } from "../functions/sitemap-homes.xml.js";
 import { placeParams } from "../idx-lib/edge.js";
 import { SCRIPT } from "../idx-lib/render.js";
+import { MAP_SCRIPT } from "../idx-lib/map.js";
 
 const ROOT = path.resolve("chapter3realty");
 let fails = 0;
@@ -17,10 +18,11 @@ const check = (name, ok) => { console.log(`${ok ? "ok  " : "FAIL"} ${name}`); if
 const META = { source: "Coastal Carolinas Association of REALTORS® Multiple Listing Service (CCMLS)", disclaimer: "Listing information is provided by the MLS.", refreshedAt: "2026-10-21T01:50:53.606Z", fresh: true };
 const mk = (i, extra = {}) => ({ mlsNumber: String(2600000 + i), status: "Active", listPrice: 200000 + i * 25000, beds: 3, baths: 2, sqft: 1500, lotAcres: null, yearBuilt: 2005,
   propertyType: "Residential", propertySubType: "SingleFamilyResidence", address: `${100 + i} Test St`, city: "Myrtle Beach", state: "SC", postalCode: "29577",
-  subdivision: "TEST", waterfront: null, photo: `https://photos.example.com/${i}.jpg`, photoCount: 20, listingFirm: `Firm ${i}`, ...extra });
+  subdivision: "TEST", waterfront: null, photo: `https://photos.example.com/${i}.jpg`, photoCount: 20, listingFirm: `Firm ${i}`, ...(MAPPOINTS && i % 3 ? { point: { lat: 33.7 + i / 1000, lng: -78.9 } } : {}), ...extra });
 const DEV_TOKEN = "eyJ2aXNpdG9ySWQiOiJ2MSIsInRlcm1zVmVyc2lvbiI6InYxLWRyYWZ0LTEiLCJleHBpcmVzQXQiOjk5OTk5OTk5OTl9.c2ln";
 const calls = [];
 let STALE = false;
+let MAPPOINTS = false;
 let sent2 = "";
 let HANG = false;
 let INVALID = false;
@@ -235,6 +237,29 @@ check("search: the title names the town", t.includes("<h1>Homes for sale in Conw
 check("search: quick filters apply at once, a sort menu, a search box", t.includes("data-hx-instant") && t.includes("data-hx-go") && t.includes('name="q"'));
 
 check("page script: it parses (a syntax error would break every button)", (() => { try { new Function(SCRIPT.replace(/^<script>|<\/script>$/g, "")); return true; } catch (e) { console.log(e.message); return false; } })());
+
+// The map (2026-10-25).
+r = await run(homes, req("/homes/api/map?city=Conway"));
+let mj = JSON.parse(await r.text());
+check("map data: no points from the CRM yet, so no pins, and the page says so", r.status === 200 && mj.ok && mj.pins.length === 0 && mj.total === 30);
+t = await (await run(homes, req("/homes/map/?city=Conway"))).text();
+check("map page: the list of homes, the note, the disclaimer, noindex", t.includes("data-hx-map") && (t.match(/<article class="hx-c">/g) || []).length === 30 && t.includes("Map pins arrive when the MLS feed") && t.includes('class="hx-disclaimer"') && t.includes("noindex"));
+MAPPOINTS = true;
+r = await run(homes, req("/homes/api/map?near=33.7,-78.9&miles=2&beds=3"));
+mj = JSON.parse(await r.text());
+sent2 = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
+check("map data: a pin only for homes with a point and an address", mj.pins.length === 9 && mj.pins.every((x) => typeof x.lat === "number" && x.addr && x.url.startsWith("/homes/")));
+check("map data: the area search reaches the CRM validated", sent2.includes("near=33.700000%2C-78.900000") && sent2.includes("miles=2") && sent2.includes("beds=3"));
+r = await run(homes, req("/homes/api/map?near=0,0&miles=900"));
+sent2 = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
+check("map data: a point off the coast is never sent", !sent2.includes("near="));
+r = await run(homes, req("/homes/api/map?q=" + encodeURIComponent("3 bed under 400k in Conway")));
+sent2 = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
+check("map data: plain words work on the map too", sent2.includes("city=Conway") && sent2.includes("beds=3") && sent2.includes("max=400000"));
+t = await (await run(homes, req("/homes/map/?city=Conway"))).text();
+check("map page: pins in the page as data, with < escaped", /<script type="application\/json" id="hx-pins">\[\{/.test(t) && !/id="hx-pins">[^<]*<(?!\/script)/.test(t));
+MAPPOINTS = false;
+check("map script: it parses", (() => { try { new Function(MAP_SCRIPT.replace(/^<script>|<\/script>$/g, "")); return true; } catch { return false; } })());
 
 // Sitemap and the shell.
 r = await run(sitemap, req("/sitemap-homes.xml"), { ...ENV, IDX_INDEX_LISTINGS: "1" });

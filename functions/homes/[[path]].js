@@ -18,9 +18,10 @@ import { PREVIEW_COOKIE, clearCookie, crm, idxOn, sameOrigin, setCookie, visitor
 import { PLACES } from "../../idx-lib/places.js";
 import { NO_HOA_NOTE, placeParams } from "../../idx-lib/edge.js";
 import { CITIES, readQuery } from "../../idx-lib/query.js";
+import { MAP_SCRIPT, MAP_STYLE, mapsKey, nearOf, pinOf } from "../../idx-lib/map.js";
 import { SMS_CONSENT_TEXT, TERMS_PARAGRAPHS, TERMS_TITLE, TERMS_VERSION, termsText } from "../../idx-lib/terms.js";
 import {
-  ICONS, STRIP_STYLE, STYLE, SCRIPT, addressLine, dayLong, disclaimer, esc, factsLine, grid, headlinePrice, heartButton,
+  ICONS, STRIP_STYLE, STYLE, SCRIPT, addressLine, card, dayLong, disclaimer, esc, factsLine, grid, headlinePrice, heartButton,
   listingPath, money, safeUrl, signupDialog, spaced, statusWord, stripCard, tourButton, tourDialog,
 } from "../../idx-lib/render.js";
 
@@ -57,6 +58,7 @@ export async function onRequest(context) {
 
   if (path.startsWith("/homes/api/")) {
     const name = path.replace(/^\/homes\/api\/|\/$/g, "");
+    if (name === "map" && (request.method === "GET" || request.method === "HEAD")) return mapData(context, url);
     if (request.method !== "POST") return json({ ok: false, error: "method" }, 405);
     if (!sameOrigin(request)) return json({ ok: false, error: "forbidden" }, 403);
     if (name === "signout") return new Response(null, { status: 303, headers: { Location: "/homes/", "Set-Cookie": clearCookie(), "Cache-Control": "no-store" } });
@@ -79,11 +81,12 @@ async function route(context, url, path, gate) {
   // /homes/<MLS#> as the CRM's emails write it: find the listing's own URL.
   // "terms", "near" and "api" are our own pages, never MLS numbers.
   const bare = /^\/homes\/([A-Za-z0-9]{3,20})\/?$/.exec(path);
-  if (bare && !["terms", "near", "api"].includes(bare[1].toLowerCase())) return bareListing(context, bare[1], gate);
+  if (bare && !["terms", "near", "api", "map"].includes(bare[1].toLowerCase())) return bareListing(context, bare[1], gate);
   if (!path.endsWith("/")) return Response.redirect(`${SITE}${path}/${url.search}`, 301);
 
   const parts = path.split("/").filter(Boolean);
   if (parts.length === 1) return searchPage(context, url, gate);
+  if (parts[1] === "map" && parts.length === 2) return mapPage(context, url, gate);
   if (parts[1] === "terms" && parts.length === 2) return termsPage(context, gate);
   if (parts[1] === "near" && parts.length === 3) return placePage(context, parts[2], gate);
   const m = /^([A-Za-z0-9]{3,20})-[a-z0-9-]{1,120}$/.exec(parts[1] || "");
@@ -249,7 +252,7 @@ ${j.tier === "registered" ? select("sold", "Show", [["", "For sale"], ["1", "Sol
   const body = `${crumbs([["/", "Home"], [null, "Homes for sale"]])}
 <h1>${esc(`${p.get("sold") ? "Sold homes" : "Homes for sale"}${where || " on the Grand Strand"}`)}</h1>
 ${signedBar(j.tier)}${form}${appliedChips(p)}
-<div class="hx-count"><p><b>${esc((j.total || 0).toLocaleString("en-US"))}</b> ${j.total === 1 ? "home" : "homes"}</p><label class="hx-sort">Sort<select data-hx-go aria-label="Sort">${sortLink("", "Newest")}${sortLink("price_asc", "Price, low to high")}${sortLink("price_desc", "Price, high to low")}</select></label></div>
+<div class="hx-count"><p><b>${esc((j.total || 0).toLocaleString("en-US"))}</b> ${j.total === 1 ? "home" : "homes"}</p><span class="hx-count-r"><a class="hx-maplink" href="${esc(`/homes/map/${(() => { const x = new URLSearchParams(p); x.delete("size"); x.delete("page"); return x.toString() ? `?${x.toString()}` : ""; })()}`)}">Map</a><label class="hx-sort">Sort<select data-hx-go aria-label="Sort">${sortLink("", "Newest")}${sortLink("price_asc", "Price, low to high")}${sortLink("price_desc", "Price, high to low")}</select></label></span></div>
 ${grid(Array.isArray(j.listings) ? j.listings : [], hearts)}${pager}
 ${j.tier === "public" ? signupPrompt("Want every photo, the HOA fee and the taxes?") : ""}
 ${disclaimer(j.meta)}`;
@@ -259,6 +262,66 @@ ${disclaimer(j.meta)}`;
     canonical: `${SITE}/homes/`,
     robots: filtered ? "noindex, follow" : "index, follow",
     body,
+  });
+}
+
+// ── the map ─────────────────────────────────────────────────────────────────
+
+/** The map's search: the validated filters, plain words in "q", or a point and radius. Up to 144 homes. */
+async function mapSearch(context, q) {
+  let p = searchParams(q, false);
+  if (q.get("q")) {
+    const read = readQuery(q.get("q"));
+    p = searchParams(read.params, false);
+    if (read.place && PLACES[read.place]) for (const [k, v] of placeParams(PLACES[read.place].q) || []) p.set(k, v);
+  }
+  const n = nearOf(q.get("near"), q.get("miles"));
+  if (n) { p.delete("city"); p.delete("zip"); p.set("near", n.near); p.set("miles", n.miles); }
+  p.delete("page"); p.set("size", "48");
+  const get = (pg) => { const x = new URLSearchParams(p); if (pg > 1) x.set("page", String(pg)); return crm(context.env, context.request, `/api/idx/listings?${x.toString()}`, { anonymous: true }); };
+  const first = await get(1);
+  if (first.status !== 200 || !first.json || !first.json.ok) return { r: first, p, listings: [], pins: [], total: 0 };
+  let listings = Array.isArray(first.json.listings) ? first.json.listings : [];
+  const total = typeof first.json.total === "number" ? first.json.total : listings.length;
+  if (total > 48) {
+    const more = await Promise.all([2, 3].filter((pg) => (pg - 1) * 48 < total).map(get));
+    for (const m of more) if (m.status === 200 && m.json && m.json.ok && Array.isArray(m.json.listings)) listings = listings.concat(m.json.listings);
+  }
+  return { r: first, p, listings, pins: listings.map(pinOf).filter(Boolean), total };
+}
+
+async function mapData(context, url) {
+  const s = await mapSearch(context, url.searchParams);
+  if (!s.r.json || !s.r.json.ok) return json({ ok: false, error: s.r.json && s.r.json.error === "stale" ? "stale" : "unavailable" }, s.r.status === 429 ? 429 : 503);
+  return json({ ok: true, total: s.total, pins: s.pins, meta: s.r.json.meta || null }, 200, { "cache-control": "public, max-age=300" });
+}
+
+async function mapPage(context, url, gate) {
+  const s = await mapSearch(context, url.searchParams);
+  if (!s.r.json || !s.r.json.ok) return trouble(context, gate, s.r, "Map of homes for sale");
+  const keep = new URLSearchParams(s.p); keep.delete("size");
+  const where = s.p.get("city") ? ` in ${s.p.get("city")}` : "";
+  const cards = s.listings.slice(0, 48).map((l) => `<div data-mls="${esc(l.mlsNumber)}">${card(l)}</div>`).join("");
+  const pinsJson = JSON.stringify(s.pins).replace(/</g, "\\u003c");
+  const body = `<div data-hx-map data-key="${esc(mapsKey(context.env))}" data-params="${esc(keep.toString())}">
+<div class="hx-map-top">${crumbs([["/", "Home"], ["/homes/", "Homes for sale"], [null, "Map"]])}<h1>${esc(`Map of homes for sale${where}`)}</h1>
+<form class="hx-search" method="get" action="/homes/map/" role="search"><div class="hx-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input name="q" type="search" enterkeyhint="search" autocomplete="off" maxlength="200" aria-label="Search homes on the map" placeholder="Try &quot;waterfront condo in North Myrtle Beach&quot;"><button type="submit">Search</button></div></form>
+${appliedChips(s.p).replace(/href="\/homes\//g, 'href="/homes/map/')}<p class="hx-small"><a class="hx-maplist" href="${esc(`/homes/${keep.toString() ? `?${keep.toString()}` : ""}`)}">See these homes as a list</a></p></div>
+<div class="hx-map-body"><div id="hx-map" class="hx-map" role="region" aria-label="Map of the homes"><button type="button" id="hx-area" class="hx-area" hidden>Search this area</button>
+<p id="hx-map-note" class="hx-map-note"${s.pins.length ? " hidden" : ""}>${s.pins.length ? "" : "Map pins arrive when the MLS feed adds each home's location. Every home is in the list."}</p></div>
+<aside class="hx-map-list" aria-label="The homes"><p class="hx-map-count" id="hx-map-count"><b>${esc(s.total.toLocaleString("en-US"))}</b> homes${s.total > s.listings.length ? `, the newest ${esc(s.listings.length)} here` : ""}</p><div id="hx-map-cards" class="hx-map-cards">${cards}</div></aside>
+<button type="button" class="hx-map-toggle">List</button></div>
+<script type="application/json" id="hx-pins">${pinsJson}</script>
+<div class="hx-wrap">${disclaimer(s.r.json.meta)}</div></div>`;
+  return page(context, gate, {
+    title: `Map of homes for sale${where}`,
+    description: "Grand Strand homes for sale on a map, from the Coastal Carolinas MLS, with Chapter3 Realty.",
+    canonical: `${SITE}/homes/map/`,
+    robots: "noindex, follow",
+    body,
+    rootAttrs: ' data-wide="1"',
+    extraHead: MAP_STYLE,
+    extraBody: MAP_SCRIPT,
   });
 }
 

@@ -37,6 +37,14 @@
   #card a.cta{display:inline-block;background:var(--c-brass);color:#fff;text-decoration:none;font-size:.82rem;font-weight:600;padding:8px 14px;border-radius:8px}
   #card .close{position:absolute;top:8px;right:12px;background:none;border:none;color:rgba(244,239,232,.6);font-size:1.5rem;line-height:1;cursor:pointer}
   #status{bottom:12px;left:14px;padding:6px 10px;font-size:.72rem;color:rgba(244,239,232,.7)}
+  /* Homes for sale: the search bar, top centre */
+  #homesbar{top:14px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:6px;padding:6px;width:min(560px,calc(100% - 28px));border-radius:999px}
+  #homesbar input{flex:1;min-width:0;border:0;outline:none;background:transparent;color:var(--c-ivory,#f4efe8);font:inherit;font-size:.9rem;padding:8px 10px}
+  #homesbar input::placeholder{color:rgba(244,239,232,.6)}
+  #homesbar button{border:0;border-radius:999px;background:#1a73e8;color:#fff;font:inherit;font-weight:700;font-size:.85rem;padding:8px 16px;cursor:pointer}
+  #homes-count{position:absolute;top:58px;left:50%;transform:translateX(-50%);padding:5px 12px;border-radius:999px;font-size:.75rem;color:rgba(244,239,232,.85);white-space:nowrap}
+  #homes-count:empty{display:none}
+  @media(max-width:720px){#homesbar{top:auto;bottom:70px}#homes-count{top:auto;bottom:124px}}
 </style>
 </head>
 <body>
@@ -101,6 +109,8 @@
     <p class="price" id="c-price"></p>
     <a class="cta" id="c-link" href="#" style="display:none">See the full report</a>
   </div>
+  <form class="overlay" id="homesbar" role="search" aria-label="Homes for sale on the map"><input id="homes-q" type="search" enterkeyhint="search" maxlength="200" autocomplete="off" aria-label="Search homes for sale" placeholder="Homes for sale: try &quot;3 bed under $400k in Conway&quot;"><button type="submit">Search</button></form>
+  <div class="overlay" id="homes-count" aria-live="polite"></div>
   <div class="overlay" id="status">loading...</div>
 </div>
 
@@ -284,12 +294,56 @@ async function init(){
     }
     setInterval(fillsByRange, 400);
     status.style.display='none';
+    loadHomes('near=33.70,-78.92&miles=25');
   }catch(err){
     status.textContent = "Map error: " + err.message;
     console.error(err);
   }
 }
+// Homes for sale: a blue dot for each home the MLS gives a map point (from /homes/api/map).
+// The search bar narrows them with plain words. Nothing from the listing feed is written
+// as HTML: every word goes in with textContent.
+let homeMarks = [];
+async function loadHomes(qs){
+  const count = document.getElementById('homes-count');
+  try{
+    const r = await fetch('/homes/api/map?' + qs, { credentials:'same-origin' });
+    if(!r.ok){ count.textContent = ''; return; }
+    const j = await r.json();
+    if(!j.ok){ count.textContent = ''; return; }
+    const { Marker3DInteractiveElement, AltitudeMode } = await google.maps.importLibrary("maps3d");
+    let Pin = null;
+    try{ Pin = (await google.maps.importLibrary("marker")).PinElement; }catch(_){}
+    homeMarks.forEach(m => m.remove()); homeMarks = [];
+    j.pins.forEach(p => {
+      const m = new Marker3DInteractiveElement({ position:{ lat:p.lat, lng:p.lng, altitude:0 }, altitudeMode: AltitudeMode.CLAMP_TO_GROUND, title: p.price + ', ' + p.addr });
+      if(Pin){ try{ m.append(new Pin({ background:'#1a73e8', borderColor:'#ffffff', glyphColor:'#ffffff', scale:0.65 })); }catch(_){} }
+      m.addEventListener('gmp-click', () => showHome(p));
+      map.append(m); homeMarks.push(m);
+    });
+    count.textContent = j.pins.length
+      ? j.pins.length + ' homes on the map' + (j.total > j.pins.length ? ', the newest of ' + j.total.toLocaleString('en-US') : '')
+      : (j.total ? j.total.toLocaleString('en-US') + ' homes match. Map dots arrive when the MLS feed adds each home\'s location.' : 'No homes match. Try a town, a price or bedrooms.');
+  }catch(e){ count.textContent = ''; }
+}
+document.getElementById('homesbar').addEventListener('submit', function(e){
+  e.preventDefault();
+  const v = document.getElementById('homes-q').value.trim();
+  loadHomes(v ? 'q=' + encodeURIComponent(v) : 'near=33.70,-78.92&miles=25');
+});
+function showHome(p){
+  const facts = [p.beds != null ? p.beds + ' bds' : '', p.baths != null ? p.baths + ' ba' : '', p.sqft != null ? p.sqft.toLocaleString('en-US') + ' sqft' : ''].filter(Boolean).join(' | ');
+  document.querySelector('#card .eyebrow').textContent = p.tag || p.status || 'For sale';
+  document.getElementById('c-name').textContent = p.price;
+  document.getElementById('c-desc').textContent = (facts ? facts + '. ' : '') + p.addr;
+  document.getElementById('c-price').textContent = 'MLS #' + p.mls + ', ' + p.firm + '. Listing provided by CCMLS.';
+  const link = document.getElementById('c-link');
+  link.href = p.url; link.textContent = 'See this home'; link.style.display = 'inline-block';
+  document.getElementById('card').style.display = 'block';
+}
 function showCard(area){
+  document.querySelector('#card .eyebrow').textContent = 'Area';
+  document.getElementById('c-link').textContent = 'See the full report';
   document.getElementById('c-name').textContent = area.name;
   document.getElementById('c-desc').textContent = area.blurb;
   document.getElementById('c-price').innerHTML = area.price ? ("Price range: <b>"+area.price+"</b>") : "Price range: <b>we confirm the current figure</b>";
