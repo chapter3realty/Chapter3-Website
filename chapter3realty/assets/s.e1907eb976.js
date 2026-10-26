@@ -42,7 +42,7 @@ function ltrShowMls(f) {
   }
   const bits = [f.beds != null ? f.beds + ' beds' : '', f.baths != null ? f.baths + ' baths' : '', f.sqft != null ? f.sqft.toLocaleString('en-US') + ' sq ft' : '', f.yearBuilt ? 'built ' + f.yearBuilt : ''].filter(Boolean).join(', ');
   const sold = f.soldPrice ? ' Sold for $' + f.soldPrice.toLocaleString('en-US') + (f.soldOn ? ' on ' + f.soldOn : '') + '.' : '';
-  note.textContent = (f.soldPrice ? 'Found its sale on the MLS: ' : 'Found on the MLS: ') + (bits || 'listing ' + f.mlsNumber) + '.' + sold + ' We filled these in for you. MLS #' + f.mlsNumber + ', listed by ' + (f.listingFirm || 'the listing brokerage') + '. Listing provided by CCMLS.';
+  note.textContent = (f.soldPrice ? 'Found its sale on the MLS: ' : 'Found on the MLS: ') + (bits || 'listing ' + f.mlsNumber) + '.' + sold + ' We filled these in for you. MLS #' + f.mlsNumber + ', listed by ' + (f.listingFirm || 'the listing brokerage') + '.';
 }
 
 // Not for sale and not signed up: a sold home's MLS record needs the free sign-up.
@@ -142,16 +142,30 @@ function ltrSetBadge(cap, moCF, coc) {
   el.innerHTML = `<span style="display:inline-flex;align-items:center;padding:.3rem .85rem;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;background:${bc};color:#fff">${bt}</span>`;
 }
 
+// What each number means, in one plain line shown under it (owner, 2026-10-26: no hidden boxes).
+const LTR_SAYS = {
+  cashflow: 'What is left each month after every cost and the loan.',
+  rent: 'What a home like this rents for here, a month.',
+  capRate: 'A year of profit before the loan, as a share of the price.',
+  coc: 'A year of cash flow, as a share of the cash you put in.',
+  annualCF: 'What is left over a year, after every cost and the loan.',
+  noi: 'Rent a year, less every cost except the loan.',
+  cashIn: 'Down payment, about 3 percent closing costs and repairs.',
+  dscr: 'Rent profit divided by the loan payments. Over 1 means the rent covers the loan.',
+  cash100: 'You pay the whole price, so there is no loan payment.',
+  appreciation: 'How much homes here may gain in value each year.',
+};
 function ltrCard(label, displayValue, metric, topColor, tipKey, rawScore) {
   // rawScore is the numeric value used for color - displayValue may be a formatted string
   const score = (rawScore !== undefined && rawScore !== null) ? rawScore : parseFloat(String(displayValue).replace(/[^0-9.-]/g,''));
   const color = metric ? ltrScoreColor(metric, score) : (topColor||'var(--brass)');
   const pill  = metric ? ltrPillLabel(metric, score)  : null;
-  const tip   = tipKey ? ltrTip(tipKey) : (metric ? ltrTip(metric) : '');
+  const says  = LTR_SAYS[tipKey || metric] || '';
   return `<div class="ltr-m"><div class="ltr-m-bar" style="background:${color}"></div>
-    <div class="ltr-m-l">${label}${tip}</div>
+    <div class="ltr-m-l">${label}</div>
     <div class="ltr-m-v">${displayValue}</div>
     ${pill?`<span class="ltr-m-p" style="background:${pill[1]};color:${pill[2]}">${pill[0]}</span>`:''}
+    ${says?`<p class="ltr-m-s">${says}</p>`:''}
   </div>`;
 }
 
@@ -589,9 +603,12 @@ async function ltrRun() {
       (mls.remarks ? ' Listing description (facts only, ignore sales language): ' + mls.remarks.replace(/\s+/g, ' ').slice(0, 700) : '')
     ) : '';
 
+    // The county's figure is its tax appraisal. It lags sales (Horry County reappraises every few
+    // years) and a new house may carry only its land: a $400,000 listing read $118,000 (owner,
+    // 2026-10-26). It is never the home's value; the tax figure is still the county's own.
     const countyFacts = _ltrParcel ? (
-      `COUNTY RECORD (authoritative, use exactly, do not re-estimate): market value $${(_ltrParcel.marketValue||0).toLocaleString()}` +
-      `, annual property tax at the 6% investment rate $${(_ltrParcel.investorAnnualTax||0).toLocaleString()}` +
+      `COUNTY TAX RECORD: the county's tax appraisal is $${(_ltrParcel.marketValue||0).toLocaleString()}. It is often far below what the home would sell for, so do NOT use it as estimatedValue` +
+      `; annual property tax at the 6% investment rate $${(_ltrParcel.investorAnnualTax||0).toLocaleString()} (use exactly)` +
       (_ltrParcel.acreage ? `, ${_ltrParcel.acreage} acres` : '') +
       (_ltrParcel.isCondo ? ', condominium' : '') + '.'
     ) : '';
@@ -643,7 +660,7 @@ ${permitCtx ? 'Permit signals: generate GREEN flags for hospital/medical/retail/
 
     const analysisRaw = await callProxy({
       model: 'claude-haiku-5-5', max_tokens: 1200,
-      cache_key: ['analysis2', fullAddr, beds||'', baths||'', sqft||'', isFixer ? (cond||'fixer') : '', mls ? 'mls' + mls.mlsNumber + '-' + (mls.listPrice||'') + '-' + mls.tier : ''].join('|'),
+      cache_key: ['analysis3', fullAddr, beds||'', baths||'', sqft||'', isFixer ? (cond||'fixer') : '', mls ? 'mls' + mls.mlsNumber + '-' + (mls.listPrice||'') + '-' + mls.tier : ''].join('|'),
       messages: [{ role: 'user', content: analysisPrompt }]
     });
 
@@ -651,8 +668,10 @@ ${permitCtx ? 'Permit signals: generate GREEN flags for hospital/medical/retail/
 
     // The county's own numbers override the model's estimate. Value and property
     // tax are matters of public record, not something worth guessing at.
+    // A home for sale is worth about its asking price to a buyer: the MLS price, not a guess.
+    if (_ltrMls && !_ltrMls.soldPrice && _ltrMls.listPrice > 0) { d.estimatedValue = _ltrMls.listPrice; d.valueFrom = 'asking'; }
     if (_ltrParcel) {
-      if (_ltrParcel.marketValue) d.estimatedValue = _ltrParcel.marketValue;
+      if (_ltrParcel.marketValue) d.countyValue = _ltrParcel.marketValue;
       if (_ltrParcel.investorAnnualTax) d.propertyTaxAnnual = _ltrParcel.investorAnnualTax;
       d.flags = d.flags || [];
       if (_ltrParcel.currentlyOwnerOccupied) {
@@ -719,11 +738,15 @@ function ltrRenderResults(d, address, isFixer, isCash) {
   let src = document.getElementById('ltr-r-mls');
   if (_ltrMls) {
     if (!src) { src = document.createElement('p'); src.id = 'ltr-r-mls'; src.style.cssText = 'margin:.3rem 0 0;font-size:.78rem;color:var(--slate,#5c6b78)'; document.getElementById('ltr-r-address').insertAdjacentElement('afterend', src); }
-    src.textContent = 'Home facts from MLS #' + _ltrMls.mlsNumber + ', listed by ' + (_ltrMls.listingFirm || 'the listing brokerage') + '. Listing provided by CCMLS. Estimates are not guaranteed.';
+    src.textContent = 'MLS #' + _ltrMls.mlsNumber + ', listed by ' + (_ltrMls.listingFirm || 'the listing brokerage') + '.';
   } else if (src) { src.remove(); }
   const verdictEl = document.getElementById('ltr-r-verdict');
   if (verdictEl) verdictEl.textContent = ltrSafeNarrative(d.overview || d.verdict || '') || ltrSafeNarrative(d.verdict || '');
   document.getElementById('ltr-r-value').textContent = ltrFmt(d.estimatedValue);
+  const go = document.getElementById('ltr-cta-go'); if (go) go.href = '/contact/?topic=investment' + (_ltrMls ? '&mls=' + encodeURIComponent(_ltrMls.mlsNumber) : '');
+  const vk = document.getElementById('ltr-r-vk'); if (vk) vk.textContent = d.valueFrom === 'asking' ? 'Asking price' : 'Estimated value';
+  const cv = document.getElementById('ltr-r-county');
+  if (cv) cv.textContent = d.countyValue ? 'County value for tax: ' + ltrFmt(d.countyValue) : '';
 
   // The badge is set by recalcLtr() below, off the recomputed numbers. It used to
   // be scored here from the model's own financing guess, which is never displayed
@@ -758,50 +781,23 @@ function ltrRenderResults(d, address, isFixer, isCash) {
     // would actually pay is personal to them.
     // Left blank: the MLS asking price, else the estimate (owner, 2026-10-26).
     const priceVal = ltrMoney(document.getElementById('ltr-price')?.value) || (_ltrMls && !_ltrMls.soldPrice && _ltrMls.listPrice) || d.estimatedValue || '';
+    const box = (id, label, val, unit, extra) => `<label class="ltr-in"><span>${label}</span><span class="ltr-in-b${unit === '$' ? ' ltr-in-d' : ' ltr-in-p'}">${unit === '$' ? '<i>$</i>' : ''}<input id="${id}" type="text" inputmode="decimal" value="${val}" oninput="recalcLtr()"${extra || ''}/>${unit === '%' ? '<i>%</i>' : unit === '/mo' ? '<i>a month</i>' : unit === '/yr' ? '<i>a year</i>' : ''}</span></label>`;
     adj.innerHTML = `
-      <div style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;padding-bottom:.6rem;border-bottom:1px solid var(--rule)">Adjust Assumptions <span style="font-size:.7rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);margin-left:.5rem">recalculates instantly</span></div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem" class="adj-grid">
-        <div>
-          <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Monthly Rent ($)</div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-rent" type="text" inputmode="decimal" value="${d.estRentMonthly||''}" oninput="recalcLtr()"/>
-        </div>
-        <div>
-          <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Purchase Price ($)</div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-price" type="text" inputmode="decimal" value="${priceVal}" oninput="recalcLtr()"/>
-        </div>
-        <div>
-          <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">HOA ($/mo)</div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-hoa" type="text" inputmode="decimal" value="${hoaMoVal}" oninput="recalcLtr()"/>
-        </div>
-        <div>
-          <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Insurance ($/yr)</div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-insurance" type="text" inputmode="decimal" value="${d.insuranceAnnual||1800}" oninput="recalcLtr()"/>
-        </div>
-        <div>
-          <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Repair budget ($)</div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-rehab" type="text" inputmode="decimal" value="${d.rehabBudgetHigh||0}" oninput="recalcLtr()"/>
-        </div>
-        ${!isCash?`
-        <div>
-          <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Down Payment (%)</div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-down" type="text" inputmode="decimal" value="${downVal}" oninput="recalcLtr()"/>
-        </div>
-        <div>
-          <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Interest Rate (%)</div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-rate" type="text" inputmode="decimal" step="0.1" value="${rateVal}" oninput="recalcLtr()"/>
-        </div>`:''}
-        <div>
-          <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Vacancy % <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted);font-size:.58rem">optional</span></div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-vacancy" type="text" inputmode="decimal" placeholder="0" min="0" max="20" value="0" oninput="recalcLtr()"/>
-        </div>
-        <div>
-          <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Utilities Paid By</div>
-          <select style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);-webkit-appearance:none" id="adj-utilities" onchange="recalcLtr()">
-            <option value="landlord" ${utPaid==='landlord'?'selected':''}>Landlord</option>
-            <option value="tenant" ${utPaid==='tenant'?'selected':''}>Tenant</option>
-          </select>
-        </div>
-      </div>`;
+      <div class="ltr-edit-h"><div><p class="ltr-edit-t"><svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM14 6l4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Your numbers</p><p class="ltr-edit-s">Change any box. Every result below updates as you type.</p></div>
+        <div class="ltr-pay" role="radiogroup" aria-label="How you pay"><button type="button" role="radio" data-pay="cash" aria-checked="${isCash}" onclick="ltrPay(true)">Cash</button><button type="button" role="radio" data-pay="loan" aria-checked="${!isCash}" onclick="ltrPay(false)">Loan</button></div></div>
+      <div class="ltr-grid">
+        ${box('adj-price', d.valueFrom === 'asking' ? 'Asking price' : 'Price', priceVal, '$')}
+        ${box('adj-rent', 'Rent a month', d.estRentMonthly || '', '$', '')}
+        <span class="ltr-loanbox"${isCash ? ' hidden' : ''}>${box('adj-down', 'Down payment', downVal >= 0 ? downVal : '', '%', ' placeholder="Your %"')}</span>
+        <span class="ltr-loanbox"${isCash ? ' hidden' : ''}>${box('adj-rate', 'Interest rate', rateVal >= 0 ? rateVal : '', '%', ' placeholder="Your rate"')}</span>
+        ${box('adj-hoa', 'HOA fee a month', hoaMoVal, '$')}
+        ${box('adj-insurance', 'Insurance a year', d.insuranceAnnual || 1800, '$')}
+        ${box('adj-rehab', 'Repairs', d.rehabBudgetHigh || 0, '$')}
+        ${box('adj-vacancy', 'Vacancy', 0, '%', ' placeholder="0"')}
+        ${box('adj-mgmt', 'Property manager', ltrNum('ltr-mgmt', 0) || Math.round(((d.managementFeeAnnual || 0) / ((d.estRentMonthly || 1) * 12)) * 100) || 0, '%')}
+        <label class="ltr-in"><span>Utilities paid by</span><span class="ltr-in-b"><select id="adj-utilities" onchange="recalcLtr()"><option value="tenant" ${utPaid==='tenant'?'selected':''}>Tenant</option><option value="landlord" ${utPaid==='landlord'?'selected':''}>Landlord</option></select></span></label>
+      </div>
+      <p class="ltr-edit-n" id="ltr-loan-note"${isCash ? ' hidden' : ''}>Enter your own down payment and rate to see the loan.</p>`;
     adj.style.display = 'block';
   }
 
@@ -825,6 +821,15 @@ function ltrRenderResults(d, address, isFixer, isCash) {
   recalcLtr();
   window.scrollTo({top:0,behavior:'smooth'});
   setTimeout(initLtrTips, 150);
+}
+
+// Cash or a loan, from the switch in "Your numbers". A loan needs the buyer's own terms; we state none.
+function ltrPay(cash) {
+  _ltrIsCash = !!cash;
+  document.querySelectorAll('.ltr-pay [data-pay]').forEach(function (b) { b.setAttribute('aria-checked', String((b.getAttribute('data-pay') === 'cash') === _ltrIsCash)); });
+  document.querySelectorAll('.ltr-loanbox, #ltr-loan-note').forEach(function (el) { el.hidden = _ltrIsCash; });
+  const c = document.getElementById('ltr-is-cash'); if (c) { c.checked = _ltrIsCash; toggleLtrCash(); }
+  recalcLtr();
 }
 
 // Homes like this one for sale now, near it: the listing search's own cards, from the server.
@@ -878,8 +883,10 @@ function recalcLtr() {
     _ltrRates = {
       // With a county record the tax is a known dollar amount tied to the county's
       // assessment, so it must not drift with whatever price the buyer types.
-      tax:   (_ltrParcel && _ltrParcel.investorAnnualTax && basePrice > 0)
-               ? _ltrParcel.investorAnnualTax / basePrice
+      // A sale resets the county's value to the price, so the tax follows the price at the county's
+      // own rate: its 6 percent tax over its own appraisal (never over our value, which differs).
+      tax:   (_ltrParcel && _ltrParcel.investorAnnualTax && _ltrParcel.marketValue > 0)
+               ? _ltrParcel.investorAnnualTax / _ltrParcel.marketValue
                : (basePrice > 0 && d.propertyTaxAnnual ? d.propertyTaxAnnual / basePrice : 0.0082),
       maint: basePrice > 0 && d.maintenanceAnnual   ? d.maintenanceAnnual   / basePrice : 0.0085,
       // Management is a pure user input, but it is not part of the cache key, so a
@@ -895,7 +902,8 @@ function recalcLtr() {
   const utBase  = d.utilitiesMonthly || Math.round((d.inferredSqft || _ltrData?.inferredSqft || 1200) * 0.20 / 12);
   const utAnn   = utPay === 'landlord' ? utBase * 12 : 0;
   const hoaAnn  = hoaMo * 12;
-  const mgmt    = Math.round(gross * _ltrRates.mgmt);
+  const mgmtBox = document.getElementById('adj-mgmt');
+  const mgmt    = mgmtBox && mgmtBox.value.trim() !== '' ? Math.round(gross * ltrNum('adj-mgmt', 0) / 100) : Math.round(gross * _ltrRates.mgmt);
   const opEx    = tax + ins + utAnn + hoaAnn + mgmt + maint + vac;
   const noi     = egi - opEx + vac; // NOI excludes vacancy
   const noiTrue = egi - (tax + ins + utAnn + hoaAnn + mgmt + maint);
@@ -930,38 +938,38 @@ function recalcLtr() {
     ltrCard('Cash flow a month', ltrFmt(moCF), 'cashflow', null, null, moCF) +
     ltrCard('Rent a month', ltrFmt(rent), null, 'var(--slate)', 'rent') +
     ltrCard('Cap rate', ltrFmtPct(cap), 'capRate', null, null, cap) +
-    ltrCard('Cash-on-cash', ltrFmtPct(coc), 'coc', null, null, coc);
-
-  document.getElementById('ltr-income-metrics').innerHTML =
-    dscrCard +
-    ltrCard('Net operating income a year', ltrFmt(noiTrue), null, 'var(--slate)', 'noi') +
+    ltrCard('Cash-on-cash', ltrFmtPct(coc), 'coc', null, null, coc) +
     ltrCard('Cash flow a year', ltrFmt(cf), 'cashflow', 'var(--slate)', 'annualCF', cf/12) +
-    ltrCard('Appreciation', ltrFmtPct(d.estimatedAppreciationPct) + ' a year', null, 'var(--brass)', 'appreciation');
-
-  document.getElementById('ltr-return-metrics').innerHTML = '';
+    ltrCard('Profit before the loan, a year', ltrFmt(noiTrue), null, 'var(--slate)', 'noi') +
+    ltrCard('Cash to buy it', ltrFmt(cash), null, 'var(--slate)', 'cashIn') +
+    (effectiveCash ? ltrCard('Value growth', ltrFmtPct(d.estimatedAppreciationPct) + ' a year', null, 'var(--brass)', 'appreciation') : dscrCard);
 
   // Expense table
   const rows = [
-    ['Property Tax (6% SC investment rate)', tax],
+    ['Property tax (the 6 percent rental rate)', tax],
     ['Insurance', ins],
     ...(utPay === 'landlord' ? [['Utilities', utAnn]] : []),
-    ...(hoaAnn > 0 ? [['HOA Fees', hoaAnn]] : []),
-    ...(mgmt > 0   ? [['Management', mgmt]] : []),
-    ['Maintenance Reserve', maint],
+    ...(hoaAnn > 0 ? [['HOA fee', hoaAnn]] : []),
+    ...(mgmt > 0   ? [['Property manager', mgmt]] : []),
+    ['Upkeep and repairs set aside', maint],
   ];
   // Vacancy is a reduction in gross income, not an operating expense, so it is
   // listed below the total. Inside the list it made the rows not sum to the total.
   const rowStyle = 'display:flex;justify-content:space-between;align-items:baseline;padding:.3rem 0;border-bottom:1px solid rgba(0,0,0,.04)';
   const divStyle = 'display:flex;justify-content:space-between;align-items:baseline;padding:.45rem 0;border-top:1.5px solid var(--rule);margin-top:.2rem';
   document.getElementById('ltr-expense-table').innerHTML =
-    `<div style="display:flex;flex-direction:column;width:100%;font-size:.83rem">` +
+    `<div style="display:flex;flex-direction:column;width:100%;font-size:.92rem">` +
+    `<div style="${rowStyle}"><span style="color:var(--navy);font-weight:600">Rent a year</span><span style="font-weight:600;font-variant-numeric:tabular-nums">${ltrFmt(gross)}</span></div>` +
     rows.map(([l,v]) => `<div style="${rowStyle}"><span style="color:var(--muted)">${l}</span><span style="font-weight:500;font-variant-numeric:tabular-nums">${ltrFmt(v)}</span></div>`).join('') +
-    `<div style="${divStyle}"><span style="font-weight:600">Total Operating Expenses</span><span style="font-weight:700;font-variant-numeric:tabular-nums">${ltrFmt(opEx - vac)}</span></div>` +
+    `<div style="${divStyle}"><span style="font-weight:600">Costs a year</span><span style="font-weight:700;font-variant-numeric:tabular-nums">${ltrFmt(opEx - vac)}</span></div>` +
     (vac > 0 ? `<div style="${rowStyle}"><span style="color:var(--muted)">Vacancy allowance (${vacPct}%)</span><span style="font-weight:500;font-variant-numeric:tabular-nums">${ltrFmt(vac)}</span></div>` : '') +
-    (!effectiveCash ? `<div style="${rowStyle}"><span style="color:var(--muted)">Annual Mortgage</span><span style="font-weight:500;font-variant-numeric:tabular-nums">${ltrFmt(debt)}</span></div>` : '') +
+    (!effectiveCash ? `<div style="${rowStyle}"><span style="color:var(--muted)">Loan payments a year</span><span style="font-weight:500;font-variant-numeric:tabular-nums">${ltrFmt(debt)}</span></div>` : '') +
+    `<div style="${divStyle}"><span style="font-weight:700;color:var(--navy)">Left over a year</span><span style="font-weight:700;font-variant-numeric:tabular-nums;color:${cf >= 0 ? '#2d7a4f' : '#c0392b'}">${ltrFmt(cf)}</span></div>` +
     `</div>`;
 
   ltrSetBadge(cap, moCF, coc);
+  // The loan note only while a loan is chosen and its terms are missing.
+  const ln = document.getElementById('ltr-loan-note'); if (ln) ln.hidden = _ltrIsCash || !effectiveCash;
   setTimeout(initLtrTips, 50);
 }
 
