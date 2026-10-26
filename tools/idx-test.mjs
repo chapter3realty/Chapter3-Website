@@ -9,7 +9,8 @@ import { onRequest as mw } from "../functions/_middleware.js";
 import { onRequest as sitemap } from "../functions/sitemap-homes.xml.js";
 import { placeFeed, placeParams } from "../idx-lib/edge.js";
 import { postFilter } from "../idx-lib/feeds.js";
-import { SCRIPT } from "../idx-lib/render.js";
+import { SCRIPT, STYLE } from "../idx-lib/render.js";
+const STYLE_OK = () => STYLE.includes(".hx-dialog form[hidden]{display:none}");
 import { MAP_SCRIPT } from "../idx-lib/map.js";
 
 const ROOT = path.resolve("chapter3realty");
@@ -297,18 +298,40 @@ r = await run(homes, req("/homes/api/lookup?street=" + encodeURIComponent("999 N
 check("lookup: no match is not found, never a guess", JSON.parse(await r.text()).found === false);
 check("lookup: a point off the coast is refused", JSON.parse(await (await run(homes, req("/homes/api/lookup?street=1%20A%20St&lat=0&lng=0"))).text()).found === false);
 t = await (await run(homes, req("/homes/2600005-101-test-st-myrtle-beach/"))).text();
-check("listing page: a link to run the rental numbers on this home", t.includes('href="/invest/long-term-rental/?mls=2600005"'));
+check("listing page: Analyze it as a rental opens the analyzer with this home and starts it", t.includes('<a class="hx-analyze" href="/invest/long-term-rental/?mls=2600005&amp;go=1">'));
+check("cards: no \"Built\" tag on a home built years ago (the year is read per request)", !t.includes('class="hx-c-tag">Built 2005'));
 
 // Every article's homes feed (2026-10-25).
 t = await (await run(mw, req("/buyers/waterfront-homes/"))).text();
 sent2 = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
-check("feed: an article gets its own homes, filtered to its topic", t.includes('class="hx-feed"') && t.includes("Waterfront homes for sale now") && sent2.includes("waterfront=1"));
-check("feed: placed as a section of the article, with the notice and the dialogs", t.indexOf('class="hx-feed"') < t.indexOf("</main>") && t.includes('class="hx-disclaimer"') && t.includes('id="hx-signup"') && (t.match(/class="hx-feed"/g) || []).length === 1);
+check("feed: an article gets its own homes, filtered to its topic", t.includes('class="hx-feed hx-feed-top"') && t.includes("Waterfront homes for sale now") && sent2.includes("waterfront=1"));
+check("feed: placed as a section of the article, with the notice and the dialogs", t.indexOf('class="hx-feed') < t.indexOf("</main>") && t.includes('class="hx-disclaimer"') && t.includes('id="hx-signup"') && (t.match(/class="hx-feed[ "]/g) || []).length === 1);
+{
+  const main = t.slice(t.indexOf("<main"));
+  check("feed: near the top, right under the part with the H1, before the article's first heading", main.indexOf('class="hx-feed') > main.indexOf("<h1") && main.indexOf('class="hx-feed') < main.indexOf("<h2"));
+}
+check("feed: a search to make it yours, kept to the feed's own filter", t.includes('<form class="hx-feed-q" action="/homes/" method="get"') && t.includes('<input type="hidden" name="waterfront" value="1">') && t.includes('name="beds"') && t.includes('name="city"'));
 check("feed: See all opens the same search", t.includes('href="/homes/?waterfront=1"'));
 t = await (await run(mw, req("/buyers/55-plus-communities/"))).text();
-check("feed: a page about several communities searches each of them", ["Del+Webb", "Myrtle+Trace", "Seasons+at+Prince+Creek"].every((w) => calls.slice(-6).some((c) => c.url.includes("subdivision=" + w))) && t.includes("Homes for sale in 55+ communities"));
+check("feed: a page about several communities searches each of them", ["Del+Webb", "Myrtle+Trace", "Seasons+at+Prince+Creek"].every((w) => calls.slice(-6).some((c) => c.url.includes("subdivision=" + w))) && t.includes("Homes for sale in 55+ communities") && t.includes("Del Webb, Myrtle Trace and Seasons at Prince Creek."));
 t = await (await run(mw, req("/buyers/new-construction/"))).text();
-check("feed: a topic with no search filter falls back to the newest homes when too few match", t.includes("Homes for sale on the Grand Strand now") || t.includes("Homes built in the last two years"));
+check("feed: a topic with no search filter falls back to the newest homes when too few match", t.includes("The newest listings on the Grand Strand") || t.includes("Brand-new homes, built in the last two years"));
+t = await (await run(mw, req("/invest/strategies/dscr-loans/"))).text();
+{
+  const prices = [...t.slice(t.indexOf('class="hx-feed')).matchAll(/class="hx-c-price">\$([\d,]+)/g)].map((m) => +m[1].replace(/,/g, ""));
+  check("feed: DSCR candidates, lowest price per bedroom first, 3+ bed houses and townhouses", t.includes("DSCR candidates: the lowest price per bedroom") && prices.length >= 3 && prices.every((v, i) => !i || v >= prices[i - 1]) && calls.slice(-4).some((c) => c.url.includes("type=townhouse") && c.url.includes("beds=3")));
+}
+t = await (await run(mw, req("/buyers/relocating/from-maryland/"))).text();
+check("feed: a moving-from page shows homes under that state's typical home value, from our own data", t.includes("Homes priced under the typical Maryland home") && t.includes("about $433,000 (Zillow, July 2026)") && calls.slice(-2).some((c) => c.url.includes("max=433000")));
+t = await (await run(mw, req("/hoa/benefits/"))).text();
+check("feed: a no-HOA feed asks the CRM for hoa=0 and says where the fact comes from", t.includes("Houses with no HOA fee") && t.includes("No HOA, as listed by the listing agent. Confirm before you buy.") && calls.slice(-2).some((c) => c.url.includes("hoa=0")));
+t = await (await run(mw, req("/invest/run-the-numbers/"))).text();
+check("feed: a tool page keeps its feed under the tool", t.includes('<section class="hx-feed">') && !t.includes('class="hx-feed hx-feed-top"'));
+{
+  const col = JSON.parse(fs.readFileSync(path.join(path.dirname(new URL(import.meta.url).pathname), "../data/relocating/col-places.json"), "utf8"));
+  const { STATE_PRICES } = await import("../idx-lib/state-prices.js");
+  check("feed: the states' typical home values match data/relocating/col-places.json", Object.entries(STATE_PRICES).every(([slug, v]) => { const p = col.places.find((x) => x.id === `state-${slug}`); return p && Math.round(p.zhvi / 1000) * 1000 === v.zhvi; }));
+}
 t = await (await run(mw, req("/buyers/best-neighborhoods/"))).text();
 check("feed: pages with their own strips get no second feed", !t.includes('class="hx-feed"'));
 t = await (await run(mw, req("/about/"))).text();
@@ -344,6 +367,13 @@ r = await run(homes, post("/homes/api/returning", { phone: "8435550199", firstNa
 check("returning: phone and first name sign a client in", r.status === 200 && /Max-Age=31536000/.test(r.headers.get("set-cookie") || ""));
 r = await run(homes, post("/homes/api/returning", { phone: "1", firstName: "X", termsAccepted: true, turnstileToken: "t" }));
 check("returning: not found opens the full sign-up", JSON.parse(await r.text()).notFound === true);
+check("returning: Turnstile is reset after every answer, before the prefilled sign-up can post", (() => { const i = SCRIPT.indexOf('post("/homes/api/returning"'); const seg = SCRIPT.slice(i, i + 900); return seg.indexOf("turnstile.reset()") > 0 && seg.indexOf("turnstile.reset()") < seg.indexOf("j.notFound"); })());
+r = await run(homes, post("/homes/api/claim", { k: "Terms1234567", page: "/homes/", pad: "x".repeat(20000) }));
+check("claim: a body up to 48 KB is read (contract §10)", r.status !== 413);
+r = await run(homes, post("/homes/api/claim", { k: "Terms1234567", pad: "x".repeat(50000) }));
+check("claim: a body over 48 KB is refused", r.status === 413);
+r = await run(homes, new Request("https://chapter3realty.com/homes/api/claim", { method: "POST", headers: { "content-type": "application/json", origin: "https://evil.example" }, body: JSON.stringify({ k: "Terms1234567" }) }));
+check("claim: a foreign Origin is refused", r.status === 403);
 t = await (await run(homes, req("/homes/"))).text();
 check("returning: the sign-up offers Already working with us?", t.includes("data-hx-returning") && t.includes('id="hx-returning-form"'));
 
@@ -382,6 +412,47 @@ r = await run(sitemap, req("/sitemap-homes.xml"), { ...ENV, IDX_INDEX_LISTINGS: 
 t = await r.text();
 check("sitemap: search, places and listings with lastmod", t.includes("/homes/near/cherry-grove/") && t.includes("2600001-1-a-st-myrtle-beach/</loc><lastmod>2026-10-20") && t.includes("/homes/2600002/"));
 check("shell: /homes-shell/ is never served", (await run(mw, req("/homes-shell/"))).status === 404);
+
+// Round 21 (2026-10-26).
+r = await run(homes, req("/homes/api/similar?near=33.7,-78.9&beds=2&min=200000&max=400000&not=2600003"));
+{
+  const j = JSON.parse(await r.text());
+  check("similar: homes like it near it, as strip cards with the source and disclaimer, no hearts, not the home itself", j.ok && j.html.includes('class="hx-c"') && j.html.includes('class="hx-disclaimer"') && !j.html.includes("hx-heart\"") && !j.html.includes("MLS #2600003,") && calls.some((c) => c.url.includes("near=33.700000%2C-78.900000") && c.url.includes("beds=2")));
+}
+r = await run(homes, req("/homes/api/similar?near=1,2"));
+check("similar: a point off the Carolinas coast is refused", JSON.parse(await r.text()).ok === false);
+t = await (await run(homes, req("/homes/"))).text();
+check("sign-up: the Already have an account form stays hidden until asked for (display:flex no longer beats hidden)", STYLE_OK());
+check("sign-up: one full name box, email, phone, Continue to photos, Already have an account?", t.includes('name="name" autocomplete="name"') && !t.includes('name="lastName"') && t.includes("Continue to photos") && t.includes("Already have an account?") && t.includes('name="termsAccepted"') && t.includes('name="smsConsent"'));
+{
+  const home = fs.readFileSync(path.join(path.dirname(new URL(import.meta.url).pathname), "../chapter3realty/index.html"), "utf8");
+  check("homepage: Search listings is a button like the I am buttons, above them, and no search bar", /<ul class="cine-paths" role="list">\s*<li class="cine-main"><a class="cine-path" href="\/homes\/">[^]*?Search listings/.test(home) && !home.includes('class="hero-search"'));
+  const ltr = fs.readFileSync(path.join(path.dirname(new URL(import.meta.url).pathname), "../chapter3realty/invest/long-term-rental/index.html"), "utf8");
+  check("analyzer: no box for beds, baths, size or HOA; a cash box; the cash or loan question ready", ["ltr-beds", "ltr-baths", "ltr-sqft", "ltr-hoa"].every((id) => new RegExp(`<input id="${id}" type="hidden"/>`).test(ltr)) && ltr.includes('id="ltr-is-cash"') && ltr.includes('<dialog id="ltr-fin"'));
+  check("analyzer: no rate or down payment is typed in for the visitor", !/id="ltr-(rate|down)"[^>]*value=/.test(ltr) && !/name="(rate|down)"[^>]*value=/.test(ltr));
+  check("analyzer and homepage: no number box the scroll wheel can change, and the guard for every other page", !/type="number"/.test(ltr) && !/type="number"/.test(home) && home.includes("a.type === 'number' && e.target === a) a.blur()"));
+  // The analyzer's own script: the one the analyzer page loads that defines ltrMoney.
+  const assetsDir = path.join(path.dirname(new URL(import.meta.url).pathname), "../chapter3realty/assets");
+  const ltrAsset = [...ltr.matchAll(/src="\/assets\/(s\.[0-9a-f]+\.js)"/g)].map((m) => m[1]).find((f) => fs.readFileSync(path.join(assetsDir, f), "utf8").includes("function ltrMoney"));
+  const js = fs.readFileSync(path.join(assetsDir, ltrAsset), "utf8");
+  check("analyzer script: no default rate or down payment in the math", !/ltrNum\('adj-rate',\s*[\d.]+\)/.test(js) && !/\|\|\s*7\.5/.test(js) && !/\?\.value\s*\|\|\s*25/.test(js) && !/\?\s*25\s*:/.test(js) && /isNaN\(rawDown\) \|\| rawDown >= 100 \|\| isNaN\(ratePct\)/.test(js));
+  check("analyzer script: the AI's answer is cleaned (numbers, known flag colours) and its text escaped before it goes in as HTML", js.includes("ltrSanitize(extractJSON(analysisRaw))") && js.includes("${c3Esc(f.text)}") && js.includes("${c3Esc(d.inferredPropertyType)}") && !/\$\{f\.text\}/.test(js));
+  check("analyzer script: a new address forgets the old home's facts; one run at a time; the cash-or-loan box closes on any end", js.includes("function ltrForgetHome()") && js.includes("if (_ltrRunning) return;") && js.includes("dlg.onclose = function () { finish({ cash: true }); };"));
+  check("analyzer script: an address from a link is limited to address characters", js.includes("replace(/[^A-Za-z0-9 #.,'\\/-]/g, '')"));
+  check("analyzer script: parses", (() => { try { new Function(js); return true; } catch { return false; } })());
+  check("footer: address suggestions on every address box", home.includes("places.googleapis.com/v1/places:autocomplete") && home.includes("#ltr-street,#ldCtx,#rnAddr,#sbh-street"));
+}
+
+r = await run(homes, req("/homes/?hoa=0&near=33.7951%2C-79.0112&miles=3&type=house"));
+t = await r.text();
+{
+  const sentH = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
+  check("search: no-HOA and near-a-point searches reach the CRM, with the no-HOA source note and chips", sentH.includes("hoa=0") && sentH.includes("near=33.795100%2C-79.011200") && sentH.includes("miles=3") && t.includes("No HOA, as listed by the listing agent. Confirm before you buy.") && t.includes("Within 3 miles"));
+}
+t = await (await run(mw, req("/invest/strategies/dscr-loans/"))).text();
+check("feed: a feed that promises an order asks the CRM for the lowest prices first, and See all keeps it", calls.slice(-3).every((c) => c.url.includes("sort=price_asc")) && t.includes("sort=price_asc"));
+t = await (await run(homes, req("/homes/2611111/"))).text();
+check("listing: no Analyze it as a rental on a home whose address is withheld", !t.includes('class="hx-analyze"'));
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");
 process.exit(fails ? 1 : 0);

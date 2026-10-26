@@ -60,11 +60,22 @@ function ltrSoldHint() {
   if (btn && btn.parentNode) btn.parentNode.insertBefore(note, btn);
 }
 
-// A listing page links here with ?mls=: start from that home.
+// A listing page links here with ?mls=, the homepage with the address and terms. With go=1
+// the analysis starts at once: no second form (owner, 2026-10-26).
 (function () {
-  const m = /[?&]mls=([A-Za-z0-9]{3,20})/.exec(location.search);
-  if (!m) return;
-  const go = function () { ltrMlsLookup('mls=' + m[1]).then(function (f) { if (f) ltrShowMls(f); }); };
+  const q = new URLSearchParams(location.search);
+  const mls = /^[A-Za-z0-9]{3,20}$/.test(q.get('mls') || '') ? q.get('mls') : null;
+  const go = function () {
+    const set = function (id, v) { const el = document.getElementById(id); if (el && v != null && v !== '') el.value = String(v).slice(0, 120); };
+    // An address from a link goes into the AI's prompt: letters, digits and address marks only.
+    const addr = function (v) { return v == null ? v : String(v).replace(/[^A-Za-z0-9 #.,'\/-]/g, '').slice(0, 120); };
+    set('ltr-street', addr(q.get('street'))); set('ltr-city', addr(q.get('city'))); set('ltr-price', q.get('price'));
+    set('ltr-down', q.get('down')); set('ltr-rate', q.get('rate')); set('ltr-term', /^(15|20|30)$/.test(q.get('term') || '') ? q.get('term') : null);
+    if (q.get('cash') === '1') { document.getElementById('ltr-is-cash').checked = true; toggleLtrCash(); }
+    if (mls) set('ltr-street', mls);
+    if (q.get('go') === '1' && document.getElementById('ltr-street').value) { runLtrAnalysis(); return; }
+    if (mls) ltrMlsLookup('mls=' + mls).then(function (f) { if (f) ltrShowMls(f); });
+  };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
 })();
 
@@ -81,7 +92,7 @@ function ltrNum(id, fallback) {
   const el = document.getElementById(id);
   const raw = el ? el.value : '';
   if (raw === '' || raw == null) return fallback;
-  const n = parseFloat(raw);
+  const n = ltrMoney(raw);
   return isNaN(n) ? fallback : n;
 }
 function ltrFmt(n) { return (n==null||isNaN(n)) ? '--' : '$'+Math.round(n).toLocaleString(); }
@@ -137,11 +148,10 @@ function ltrCard(label, displayValue, metric, topColor, tipKey, rawScore) {
   const color = metric ? ltrScoreColor(metric, score) : (topColor||'var(--brass)');
   const pill  = metric ? ltrPillLabel(metric, score)  : null;
   const tip   = tipKey ? ltrTip(tipKey) : (metric ? ltrTip(metric) : '');
-  return `<div style="background:#fff;border:1px solid var(--rule);padding:1.5rem 1.75rem;position:relative;overflow:visible">
-    <div style="position:absolute;top:0;left:0;width:100%;height:3px;background:${color};transition:background .3s"></div>
-    <div style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;display:flex;align-items:center">${label}${tip}</div>
-    <div style="font-family:var(--serif);font-size:1.9rem;line-height:1;margin-bottom:.35rem;color:var(--navy)">${displayValue}</div>
-    ${pill?`<span style="display:inline-block;margin-top:.4rem;padding:.2rem .6rem;font-size:.68rem;font-weight:500;background:${pill[1]};color:${pill[2]};transition:background .3s,color .3s">${pill[0]}</span>`:''}
+  return `<div class="ltr-m"><div class="ltr-m-bar" style="background:${color}"></div>
+    <div class="ltr-m-l">${label}${tip}</div>
+    <div class="ltr-m-v">${displayValue}</div>
+    ${pill?`<span class="ltr-m-p" style="background:${pill[1]};color:${pill[2]}">${pill[0]}</span>`:''}
   </div>`;
 }
 
@@ -167,6 +177,20 @@ async function callProxy(body) {
   const textBlock = data.content?.filter(b => b.type==='text').pop();
   if (!textBlock) throw new Error('No response received.');
   return textBlock.text.trim();
+}
+
+// The model's answer is untrusted, and it is cached for every visitor to the same address:
+// every number becomes a number, flags keep only a known colour, and text that goes into
+// HTML is escaped where it is printed (review, 2026-10-26).
+const LTR_NUM = ['inferredBeds','inferredBaths','inferredSqft','inferredYearBuilt','inferredHOAMonthly','estimatedValue','estRentMonthly','grossRentAnnual','vacancyLoss','effectiveGrossIncome','propertyTaxAnnual','insuranceAnnual','utilitiesMonthly','hoaAnnual','managementFeeAnnual','maintenanceAnnual','totalExpensesAnnual','noi','capRate','loanAmount','monthlyMortgage','annualDebtService','monthlyCashflow','annualCashflow','cashOnCashReturn','totalCashInvested','estimatedAppreciationPct','estimatedAppreciationDollar1yr','estimatedAppreciationDollar5yr','arv','rehabBudgetLow','rehabBudgetHigh','totalProjectCost','potentialEquityGain'];
+function ltrSanitize(d) {
+  if (!d || typeof d !== 'object') throw new Error('No analysis received');
+  LTR_NUM.forEach(function (k) { if (d[k] != null) { const n = Number(d[k]); d[k] = isFinite(n) ? n : 0; } });
+  if (d.dscr != null) { const n = Number(d.dscr); d.dscr = isFinite(n) ? n : null; }
+  ['inferredPropertyType', 'verdict', 'overview', 'narrative', 'rehabNarrative', 'dealRating'].forEach(function (k) { if (d[k] != null && typeof d[k] !== 'string') d[k] = ''; });
+  d.inferredFeatures = Array.isArray(d.inferredFeatures) ? d.inferredFeatures.filter(function (f) { return typeof f === 'string'; }).slice(0, 8) : [];
+  d.flags = Array.isArray(d.flags) ? d.flags.filter(function (f) { return f && typeof f.text === 'string'; }).map(function (f) { return { type: ['green', 'amber', 'red'].indexOf(f.type) >= 0 ? f.type : 'amber', text: f.text }; }).slice(0, 8) : [];
+  return d;
 }
 
 function extractJSON(raw) {
@@ -368,10 +392,83 @@ function c3InitAddressAutocomplete() {
   input.addEventListener('blur', function () { setTimeout(c3AcClose, 120); });
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', c3InitAddressAutocomplete);
-} else {
-  c3InitAddressAutocomplete();
+// The site-wide address suggestions (Google Places, in the footer) replace the
+// OpenStreetMap ones, which knew few Grand Strand house numbers (2026-10-26). A pick
+// arrives as "c3:address": fill the town and look the home up on the MLS.
+document.addEventListener('c3:address', function (e) {
+  if (!e.target || e.target.id !== 'ltr-street') return;
+  const d = e.detail || {};
+  const set = function (id, v) { const el = document.getElementById(id); if (el) el.value = v || ''; };
+  set('ltr-city', d.city); set('ltr-zip', '');
+  _ltrMls = null;
+  ['ltr-beds', 'ltr-baths', 'ltr-sqft', 'ltr-hoa'].forEach(function (id) { set(id, ''); });
+  const old = document.getElementById('ltr-mls-note'); if (old) old.remove();
+  ltrGeocodeAddress([d.street, d.city, d.state || 'SC'].filter(Boolean).join(', ')).then(function (c) {
+    // The visitor typed again while this ran: these coordinates are for the old text.
+    if (document.getElementById('ltr-street').value !== d.street) return;
+    _c3Ac.picked = { street: d.street, city: d.city, zip: '', lat: c ? c.lat : null, lng: c ? c.lng : null };
+    if (c) ltrMlsLookup('street=' + encodeURIComponent(d.street || '') + '&lat=' + c.lat + '&lng=' + c.lng).then(function (f) { if (f) ltrShowMls(f); });
+  });
+});
+// Typing again after a pick: the old pick no longer describes the box.
+function ltrForgetHome() {
+  _ltrMls = null; _c3Ac.picked = null;
+  ['ltr-city', 'ltr-zip', 'ltr-beds', 'ltr-baths', 'ltr-sqft', 'ltr-hoa'].forEach(function (id) { const el = document.getElementById(id); if (el) el.value = ''; });
+  const note = document.getElementById('ltr-mls-note'); if (note) note.remove();
+}
+document.addEventListener('input', function (e) { if (e.target && e.target.id === 'ltr-street') ltrForgetHome(); });
+
+// Money and percents as people type them: "$350,000", "350k", "6.5%".
+function ltrMoney(v) {
+  const t = String(v == null ? '' : v).toLowerCase().replace(/[$,%\s]/g, '');
+  if (!t) return NaN;
+  const m = /^(\d+(?:\.\d+)?)(k|m)?$/.exec(t);
+  if (!m) return NaN;
+  return parseFloat(m[1]) * (m[2] === 'k' ? 1e3 : m[2] === 'm' ? 1e6 : 1);
+}
+
+// Buying with cash or a loan? Asked while the analysis runs, when the form left it open
+// (owner, 2026-10-26: "midway while loading ... as an impossible to miss pop up").
+// The answer only changes the math done here in the browser, never the AI's answer,
+// which is cached by address for every visitor.
+let _ltrFinCancel = null;
+function ltrAskFinancing() {
+  let cancel = function () {};
+  const promise = new Promise(function (done) {
+    const dlg = document.getElementById('ltr-fin');
+    if (!dlg || !dlg.showModal) { done({ cash: true }); return; }
+    const form = document.getElementById('ltr-fin-form'), loan = document.getElementById('ltr-fin-loan'), go = form.querySelector('.ltr-fin-go');
+    let mode = null, settled = false;
+    const btns = form.querySelectorAll('[data-fin]');
+    // A fresh box on every run.
+    btns.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+    loan.hidden = true; go.disabled = true;
+    const finish = function (answer) { if (settled) return; settled = true; clearTimeout(timer); if (dlg.open) dlg.close(); done(answer); };
+    const ready = function () {
+      go.disabled = !(mode === 'cash' || (mode === 'loan' && ltrMoney(form.elements.down.value) >= 0 && ltrMoney(form.elements.rate.value) >= 0));
+    };
+    btns.forEach(function (b) {
+      b.onclick = function () {
+        mode = b.getAttribute('data-fin');
+        btns.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        loan.hidden = mode !== 'loan';
+        if (mode === 'loan') form.elements.down.focus();
+        ready();
+      };
+    });
+    form.oninput = ready;
+    form.onsubmit = function (ev) {
+      ev.preventDefault();
+      if (go.disabled) return;
+      finish(mode === 'cash' ? { cash: true } : { cash: false, down: ltrMoney(form.elements.down.value), rate: ltrMoney(form.elements.rate.value), term: form.elements.term.value });
+    };
+    // Closed without an answer (Escape, or the page closing it): figured as a cash purchase.
+    dlg.oncancel = function () { finish({ cash: true }); };
+    dlg.onclose = function () { finish({ cash: true }); };
+    const timer = setTimeout(function () { if (!settled && !dlg.open) dlg.showModal(); }, 1200);
+    cancel = function () { finish({ cash: true }); };
+  });
+  return { promise: promise, cancel: function () { cancel(); } };
 }
 
 // Geocoding runs through our own worker, which uses the free US Census
@@ -391,15 +488,38 @@ async function ltrGeocodeAddress(addr) {
   } catch(e) { return null; }
 }
 
+let _ltrRunning = false;
 async function runLtrAnalysis() {
-  const street = document.getElementById('ltr-street').value.trim();
-  const city   = document.getElementById('ltr-city').value.trim();
-  const zip    = document.getElementById('ltr-zip').value.trim();
+  // One run at a time: a double click never starts two analyses.
+  if (_ltrRunning) return;
+  _ltrRunning = true;
+  try { await ltrRun(); } finally { _ltrRunning = false; if (_ltrFinCancel) { _ltrFinCancel(); _ltrFinCancel = null; } }
+}
+async function ltrRun() {
+  let typed  = document.getElementById('ltr-street').value.trim();
+  let street = typed;
+  let city   = document.getElementById('ltr-city').value.trim();
+  let zip    = document.getElementById('ltr-zip').value.trim();
   const price  = document.getElementById('ltr-price').value.trim();
-  const isCash = document.getElementById('ltr-is-cash').checked;
+  let isCash = document.getElementById('ltr-is-cash').checked;
   const downPct= isCash ? null : document.getElementById('ltr-down').value;
   const rate   = isCash ? null : document.getElementById('ltr-rate').value;
   const term   = isCash ? null : document.getElementById('ltr-term').value;
+  // An MLS number: the listing gives the address.
+  if (/^\d{5,9}$/.test(typed)) {
+    const f = (_ltrMls && String(_ltrMls.mlsNumber) === typed) ? _ltrMls : await ltrMlsLookup('mls=' + typed);
+    if (!f) { ltrShowError('We could not find MLS #' + typed + ' among homes for sale. Check the number, or type the address.'); return; }
+    if (_ltrMls && String(_ltrMls.mlsNumber) !== typed) { const keep = typed; ltrForgetHome(); document.getElementById('ltr-street').value = keep; }
+    if (!f.address) { ltrShowError('The seller of MLS #' + typed + ' does not show its address online, so we cannot analyze it here. Call us at (854) 333-2135.'); return; }
+    ltrShowMls(f);
+    street = f.address; city = f.city || city; zip = f.zip || zip;
+  } else if (!city && typed.indexOf(',') > 0) {
+    // "123 Main St, Conway, SC": the town is the second part.
+    const parts = typed.split(',').map(function (x) { return x.trim(); });
+    street = parts[0]; city = parts[1] || '';
+    const z = /\b(29\d{3}|28\d{3})\b/.exec(typed); if (z && !zip) zip = z[1];
+  }
+  const needFin = !isCash && (!(ltrMoney(downPct) >= 0) || !(ltrMoney(rate) >= 0));
   const isFixer= document.getElementById('ltr-is-fixer').checked;
   const cond   = isFixer ? document.getElementById('ltr-condition').value.trim() : '';
   const hoaMo  = document.getElementById('ltr-hoa').value.trim();
@@ -408,20 +528,26 @@ async function runLtrAnalysis() {
   const uBaths = document.getElementById('ltr-baths')?.value.trim();
   const uSqft  = document.getElementById('ltr-sqft')?.value.trim();
 
-  if (!street || !city) { ltrShowError('Please enter a street address and city.'); return; }
-  if (!isCash && (!downPct || !rate)) { ltrShowError('Please enter a down payment % and interest rate.'); return; }
+  if (!street) { ltrShowError('Please enter the address or the MLS number.'); return; }
+  // Without a town the address is a guess, and a guess becomes the cached answer for everyone.
+  if (!city) { ltrShowError('Pick the address from the list, or add the town after a comma: "123 Main St, Conway".'); return; }
 
   ltrHideError();
   document.getElementById('ltr-form').style.display = 'none';
   document.getElementById('ltr-loading').style.display = 'block';
+  const fin0 = needFin ? ltrAskFinancing() : null;
+  _ltrFinCancel = fin0 ? fin0.cancel : null;
+  const finAnswer = fin0 ? fin0.promise : Promise.resolve(null);
 
   const fullAddr = [street, city, zip||'SC'].filter(Boolean).join(', ');
   // The buyer's price is deliberately NOT sent to the model. Market value has to
   // be a property fact so the same house returns the same estimate to everyone;
   // their own price is applied in the browser by recalcLtr().
   const priceCtx = 'Estimate current market value from comparable sales';
-  const finCtx   = isCash ? 'Cash purchase. Set dscr null, monthlyMortgage 0, annualDebtService 0, loanAmount 0.' : `${downPct}% down, ${rate}% interest, ${term}-year loan`;
-  let hoaCtx   = hoaMo ? `HOA: $${hoaMo}/mo (use exactly)` : 'HOA: 0 (user confirmed none)';
+  // Financing is applied in the browser by recalcLtr(), for each visitor's own terms. The
+  // answer is cached by address for everyone, so the model never sees anyone's loan.
+  const finCtx   = 'Financing is applied separately: set dscr null, monthlyMortgage 0, annualDebtService 0, loanAmount 0';
+  let hoaCtx   = hoaMo ? `HOA: $${hoaMo}/mo (use exactly)` : 'HOA: not known. Estimate it from the property type and subdivision; a house outside a planned community is often 0';
   const mgmtCtx  = mgmtPct ? `Management: ${mgmtPct}% of rent` : 'Management: not provided, set managementFeeAnnual 0';
 
   try {
@@ -513,15 +639,15 @@ RENT: ${beds||'?'}BR comps 2026: 1BR $1100-1600,2BR $1400-2100,3BR $1700-2600,4B
 EXP: Tax=0.82% of value (SC 6% investment assessment×Horry millage),Ins=$1500SFH/$3000condo/$5000ocean,Utils=$0.20/sqft/yr (e.g. 1200sqft=$240/yr=$20/mo),Maint=0.85%/yr,Vac=6%.
 ${permitCtx ? 'Permit signals: generate GREEN flags for hospital/medical/retail/school growth, AMBER for new residential supply, RED for industrial or demolition near subject. Farther = less weight.' : ''}
 
-{"inferredPropertyType":"","inferredBeds":${beds||0},"inferredBaths":${baths||0},"inferredSqft":${sqft||0},"inferredYearBuilt":0,"inferredHOAMonthly":0,"inferredFloodZone":null,"inferredFeatures":[],"estimatedValue":0,"verdict":"one punchy sentence","dealRating":"good|ok|tough","estRentMonthly":0,"grossRentAnnual":0,"vacancyLoss":0,"effectiveGrossIncome":0,"propertyTaxAnnual":0,"insuranceAnnual":0,"utilitiesMonthly":0,"hoaAnnual":0,"managementFeeAnnual":0,"maintenanceAnnual":0,"totalExpensesAnnual":0,"noi":0,"capRate":0,"loanAmount":0,"monthlyMortgage":0,"annualDebtService":0,"dscr":${isCash?'null':0},"monthlyCashflow":0,"annualCashflow":0,"cashOnCashReturn":0,"totalCashInvested":0,"estimatedAppreciationPct":0,"estimatedAppreciationDollar1yr":0,"estimatedAppreciationDollar5yr":0,"arv":${isFixer?0:'null'},"rehabBudgetLow":${isFixer?0:'null'},"rehabBudgetHigh":${isFixer?0:'null'},"rehabNarrative":${isFixer?'""':'null'},"totalProjectCost":${isFixer?0:'null'},"potentialEquityGain":${isFixer?0:'null'},"narrative":"Write 3-4 plain sentences that any first-time investor can understand - avoid jargon, use simple language, no acronyms. Cover: (1) what makes this property work as a rental in terms of its size, layout, condition and location - describe the PROPERTY and never the people who might live there or the surrounding population, (2) what the nearby construction activity means in plain terms - e.g. a hospital expanding nearby usually brings stable tenants like nurses and doctors who pay rent reliably, new homes being built shows the area is growing, (3) which of these investing goals this property fits and why in plain terms: steady monthly income, long-term value growth, fixer-upper flip, or tax-efficient swap - be honest if it does not fit some of these, (4) one clear bottom line sentence","flags":[{"type":"green|amber|red","text":""}]}`;
+{"inferredPropertyType":"","inferredBeds":${beds||0},"inferredBaths":${baths||0},"inferredSqft":${sqft||0},"inferredYearBuilt":0,"inferredHOAMonthly":0,"inferredFloodZone":null,"inferredFeatures":[],"estimatedValue":0,"verdict":"one plain sentence","overview":"Your honest opinion of this home as a long-term rental in 2 short sentences, 40 words or fewer: whether it works, and the one number or fact that decides it. Describe the property, never people. No rates or loan terms.","dealRating":"good|ok|tough","estRentMonthly":0,"grossRentAnnual":0,"vacancyLoss":0,"effectiveGrossIncome":0,"propertyTaxAnnual":0,"insuranceAnnual":0,"utilitiesMonthly":0,"hoaAnnual":0,"managementFeeAnnual":0,"maintenanceAnnual":0,"totalExpensesAnnual":0,"noi":0,"capRate":0,"loanAmount":0,"monthlyMortgage":0,"annualDebtService":0,"dscr":${isCash?'null':0},"monthlyCashflow":0,"annualCashflow":0,"cashOnCashReturn":0,"totalCashInvested":0,"estimatedAppreciationPct":0,"estimatedAppreciationDollar1yr":0,"estimatedAppreciationDollar5yr":0,"arv":${isFixer?0:'null'},"rehabBudgetLow":${isFixer?0:'null'},"rehabBudgetHigh":${isFixer?0:'null'},"rehabNarrative":${isFixer?'""':'null'},"totalProjectCost":${isFixer?0:'null'},"potentialEquityGain":${isFixer?0:'null'},"narrative":"Write 3-4 plain sentences that any first-time investor can understand - avoid jargon, use simple language, no acronyms. Cover: (1) what makes this property work as a rental in terms of its size, layout, condition and location - describe the PROPERTY and never the people who might live there or the surrounding population, (2) what the nearby construction activity means in plain terms - e.g. a hospital expanding nearby usually brings stable tenants like nurses and doctors who pay rent reliably, new homes being built shows the area is growing, (3) which of these investing goals this property fits and why in plain terms: steady monthly income, long-term value growth, fixer-upper flip, or tax-efficient swap - be honest if it does not fit some of these, (4) one clear bottom line sentence","flags":[{"type":"green|amber|red","text":""}]}`;
 
     const analysisRaw = await callProxy({
       model: 'claude-haiku-5-5', max_tokens: 1200,
-      cache_key: ['analysis', fullAddr, beds||'', baths||'', sqft||'', isFixer ? (cond||'fixer') : '', mls ? 'mls' + mls.mlsNumber + '-' + (mls.listPrice||'') + '-' + mls.tier : ''].join('|'),
+      cache_key: ['analysis2', fullAddr, beds||'', baths||'', sqft||'', isFixer ? (cond||'fixer') : '', mls ? 'mls' + mls.mlsNumber + '-' + (mls.listPrice||'') + '-' + mls.tier : ''].join('|'),
       messages: [{ role: 'user', content: analysisPrompt }]
     });
 
-    const d = extractJSON(analysisRaw);
+    const d = ltrSanitize(extractJSON(analysisRaw));
 
     // The county's own numbers override the model's estimate. Value and property
     // tax are matters of public record, not something worth guessing at.
@@ -551,7 +677,15 @@ ${permitCtx ? 'Permit signals: generate GREEN flags for hospital/medical/retail/
       }
     }
 
+    // The financing answer, when it was asked while this ran.
+    const fin = await finAnswer;
+    if (fin) {
+      const set = function (id, v) { const el = document.getElementById(id); if (el) el.value = v; };
+      if (fin.cash) { isCash = true; document.getElementById('ltr-is-cash').checked = true; toggleLtrCash(); }
+      else { set('ltr-down', fin.down); set('ltr-rate', fin.rate); set('ltr-term', fin.term); }
+    }
     ltrRenderResults(d, fullAddr, isFixer, isCash);
+    ltrSimilar(coords, beds, mls);
 
   } catch(err) {
     document.getElementById('ltr-loading').style.display = 'none';
@@ -588,7 +722,7 @@ function ltrRenderResults(d, address, isFixer, isCash) {
     src.textContent = 'Home facts from MLS #' + _ltrMls.mlsNumber + ', listed by ' + (_ltrMls.listingFirm || 'the listing brokerage') + '. Listing provided by CCMLS. Estimates are not guaranteed.';
   } else if (src) { src.remove(); }
   const verdictEl = document.getElementById('ltr-r-verdict');
-  if (verdictEl) verdictEl.textContent = d.verdict || '';
+  if (verdictEl) verdictEl.textContent = ltrSafeNarrative(d.overview || d.verdict || '') || ltrSafeNarrative(d.verdict || '');
   document.getElementById('ltr-r-value').textContent = ltrFmt(d.estimatedValue);
 
   // The badge is set by recalcLtr() below, off the recomputed numbers. It used to
@@ -601,12 +735,12 @@ function ltrRenderResults(d, address, isFixer, isCash) {
     const strip = document.getElementById('ltr-inferred-strip');
     strip.style.display = 'flex';
     const chips = [
-      d.inferredPropertyType && `<span style="font-size:.75rem;color:var(--muted)">Type <strong style="color:var(--navy);margin-left:.3rem">${d.inferredPropertyType}</strong></span>`,
+      d.inferredPropertyType && `<span style="font-size:.75rem;color:var(--muted)">Type <strong style="color:var(--navy);margin-left:.3rem">${c3Esc(d.inferredPropertyType)}</strong></span>`,
       d.inferredBeds  && `<span style="font-size:.75rem;color:var(--muted)">Beds <strong style="color:var(--navy);margin-left:.3rem">${d.inferredBeds}</strong></span>`,
       d.inferredBaths && `<span style="font-size:.75rem;color:var(--muted)">Baths <strong style="color:var(--navy);margin-left:.3rem">${d.inferredBaths}</strong></span>`,
       d.inferredSqft  && `<span style="font-size:.75rem;color:var(--muted)">Sq Ft <strong style="color:var(--navy);margin-left:.3rem">${d.inferredSqft.toLocaleString()}</strong></span>`,
     ].filter(Boolean);
-    const features = (d.inferredFeatures||[]).length ? `<div style="flex-basis:100%;display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.35rem">${d.inferredFeatures.map(f=>`<span style="font-size:.68rem;padding:.15rem .5rem;background:rgba(196,120,58,.1);color:var(--brass);border:1px solid rgba(196,120,58,.2)">${f}</span>`).join('')}</div>` : '';
+    const features = (d.inferredFeatures||[]).length ? `<div style="flex-basis:100%;display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.35rem">${d.inferredFeatures.map(f=>`<span style="font-size:.68rem;padding:.15rem .5rem;background:rgba(196,120,58,.1);color:var(--brass);border:1px solid rgba(196,120,58,.2)">${c3Esc(f)}</span>`).join('')}</div>` : '';
     strip.innerHTML = `<span style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);flex-basis:100%;margin-bottom:.35rem">Property Details</span>${chips.join('')}${features}`;
   }
 
@@ -615,47 +749,50 @@ function ltrRenderResults(d, address, isFixer, isCash) {
   if (adj) {
     const hoaMoVal = document.getElementById('ltr-hoa')?.value || Math.round((d.hoaAnnual||0)/12);
     const utPaid   = (d.utilitiesMonthly||0)>0 ? 'landlord' : 'tenant';
-    const downVal  = document.getElementById('ltr-down')?.value || 25;
-    const rateVal  = document.getElementById('ltr-rate')?.value || 7.5;
+    // No made-up loan terms: the visitor's own, or none (the site states no rate, PLAYBOOK).
+    const downVal  = ltrMoney(document.getElementById('ltr-down')?.value);
+    const rateVal  = ltrMoney(document.getElementById('ltr-rate')?.value);
+    if (!(downVal >= 0) || !(rateVal >= 0)) { isCash = true; _ltrIsCash = true; }
     // The buyer's own purchase price wins over the model's market estimate.
     // The estimate is a property fact shared by every visitor; the price they
     // would actually pay is personal to them.
-    const priceVal = parseFloat(document.getElementById('ltr-price')?.value) || d.estimatedValue || '';
+    // Left blank: the MLS asking price, else the estimate (owner, 2026-10-26).
+    const priceVal = ltrMoney(document.getElementById('ltr-price')?.value) || (_ltrMls && !_ltrMls.soldPrice && _ltrMls.listPrice) || d.estimatedValue || '';
     adj.innerHTML = `
       <div style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;padding-bottom:.6rem;border-bottom:1px solid var(--rule)">Adjust Assumptions <span style="font-size:.7rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);margin-left:.5rem">recalculates instantly</span></div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem" class="adj-grid">
         <div>
           <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Monthly Rent ($)</div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-rent" type="number" value="${d.estRentMonthly||''}" oninput="recalcLtr()"/>
+          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-rent" type="text" inputmode="decimal" value="${d.estRentMonthly||''}" oninput="recalcLtr()"/>
         </div>
         <div>
           <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Purchase Price ($)</div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-price" type="number" value="${priceVal}" oninput="recalcLtr()"/>
+          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-price" type="text" inputmode="decimal" value="${priceVal}" oninput="recalcLtr()"/>
         </div>
         <div>
           <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">HOA ($/mo)</div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-hoa" type="number" value="${hoaMoVal}" oninput="recalcLtr()"/>
+          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-hoa" type="text" inputmode="decimal" value="${hoaMoVal}" oninput="recalcLtr()"/>
         </div>
         <div>
           <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Insurance ($/yr)</div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-insurance" type="number" value="${d.insuranceAnnual||1800}" oninput="recalcLtr()"/>
+          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-insurance" type="text" inputmode="decimal" value="${d.insuranceAnnual||1800}" oninput="recalcLtr()"/>
         </div>
         <div>
           <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Repair budget ($)</div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-rehab" type="number" value="${d.rehabBudgetHigh||0}" oninput="recalcLtr()"/>
+          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-rehab" type="text" inputmode="decimal" value="${d.rehabBudgetHigh||0}" oninput="recalcLtr()"/>
         </div>
         ${!isCash?`
         <div>
           <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Down Payment (%)</div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-down" type="number" value="${downVal}" oninput="recalcLtr()"/>
+          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-down" type="text" inputmode="decimal" value="${downVal}" oninput="recalcLtr()"/>
         </div>
         <div>
           <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Interest Rate (%)</div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-rate" type="number" step="0.1" value="${rateVal}" oninput="recalcLtr()"/>
+          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-rate" type="text" inputmode="decimal" step="0.1" value="${rateVal}" oninput="recalcLtr()"/>
         </div>`:''}
         <div>
           <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Vacancy % <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted);font-size:.58rem">optional</span></div>
-          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-vacancy" type="number" placeholder="0" min="0" max="20" value="0" oninput="recalcLtr()"/>
+          <input style="width:100%;padding:.55rem .75rem;font-family:var(--sans);font-size:.9rem;font-weight:500;background:var(--ivory-2);border:1.5px solid var(--rule);outline:none;color:var(--navy);transition:border-color .15s" id="adj-vacancy" type="text" inputmode="decimal" placeholder="0" min="0" max="20" value="0" oninput="recalcLtr()"/>
         </div>
         <div>
           <div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Utilities Paid By</div>
@@ -680,14 +817,31 @@ function ltrRenderResults(d, address, isFixer, isCash) {
   }
 
   document.getElementById('ltr-narrative-text').textContent = ltrSafeNarrative(d.narrative || '');
-  document.getElementById('ltr-flags').innerHTML = (d.flags||[]).map(f=>{
+  document.getElementById('ltr-flags').innerHTML = (d.flags||[]).map(f=>({ type: f.type, text: ltrSafeNarrative(f.text) })).filter(f=>f.text).map(f=>{
     const c={green:'#2d7a4f',amber:'#d97706',red:'#c0392b'};
-    return `<div style="display:flex;gap:.75rem;align-items:flex-start;padding:.7rem 0;border-bottom:1px solid var(--rule);font-size:.87rem;line-height:1.6;color:var(--navy)"><div style="width:8px;height:8px;border-radius:50%;background:${c[f.type]||c.amber};flex-shrink:0;margin-top:5px"></div><div>${f.text}</div></div>`;
+    return `<div style="display:flex;gap:.75rem;align-items:flex-start;padding:.7rem 0;border-bottom:1px solid var(--rule);font-size:.87rem;line-height:1.6;color:var(--navy)"><div style="width:8px;height:8px;border-radius:50%;background:${c[f.type]||c.amber};flex-shrink:0;margin-top:5px"></div><div>${c3Esc(f.text)}</div></div>`;
   }).join('') || '<div style="font-size:.85rem;color:var(--muted)">No specific flags noted.</div>';
 
   recalcLtr();
   window.scrollTo({top:0,behavior:'smooth'});
   setTimeout(initLtrTips, 150);
+}
+
+// Homes like this one for sale now, near it: the listing search's own cards, from the server.
+async function ltrSimilar(coords, beds, mls) {
+  const box = document.getElementById('ltr-similar'); if (!box) return;
+  box.innerHTML = '';
+  const price = ltrNum('adj-price', 0);
+  const q = new URLSearchParams();
+  if (coords) { q.set('near', coords.lat.toFixed(5) + ',' + coords.lng.toFixed(5)); q.set('miles', '3'); }
+  if (beds) q.set('beds', String(Math.max(1, beds - 1)));
+  if (price > 0) { q.set('min', String(Math.round(price * 0.7 / 1000) * 1000)); q.set('max', String(Math.round(price * 1.3 / 1000) * 1000)); }
+  if (mls && mls.mlsNumber) q.set('not', mls.mlsNumber);
+  try {
+    const r = await fetch('/homes/api/similar?' + q.toString(), { credentials: 'same-origin' });
+    const j = r.ok ? await r.json() : null;
+    if (j && j.ok && j.html) box.innerHTML = j.html;
+  } catch (e) { /* no strip; the analysis stands on its own */ }
 }
 
 function recalcLtr() {
@@ -698,18 +852,19 @@ function recalcLtr() {
   // while the 0 stayed visible on screen.
   const rent    = ltrNum('adj-rent',  d.estRentMonthly || 0);
   const price   = ltrNum('adj-price', d.estimatedValue || 0);
-  const hoaMo   = parseFloat(document.getElementById('adj-hoa')?.value)       || 0;
+  const hoaMo   = ltrNum('adj-hoa', 0);
   const utPay   = document.getElementById('adj-utilities')?.value             || 'landlord';
-  const vacPct  = parseFloat(document.getElementById('adj-vacancy')?.value)   || 0; // 0 = off by default
+  const vacPct  = ltrNum('adj-vacancy', 0); // 0 = off by default
   const _downRaw = document.getElementById('adj-down')?.value;
-  const rawDown = (_downRaw === '' || _downRaw == null) ? NaN : parseFloat(_downRaw);
-  const ratePct = ltrNum('adj-rate', 7.5);
+  const rawDown = (_downRaw === '' || _downRaw == null) ? NaN : ltrMoney(_downRaw);
+  const ratePct = ltrNum('adj-rate', NaN);
   const termYrs = parseFloat(document.getElementById('ltr-term')?.value)      || 30;
 
   // 100% down = cash purchase regardless of isCash toggle
-  const effectiveCash = _ltrIsCash || rawDown >= 100;
-  // Blank field falls back to 25%. An explicit 0 stays 0 (VA and USDA are zero down).
-  const downPct       = effectiveCash ? 100 : (isNaN(rawDown) ? 25 : rawDown);
+  // Blank down payment or rate: figured as cash. The site states no loan terms (PLAYBOOK).
+  const effectiveCash = _ltrIsCash || isNaN(rawDown) || rawDown >= 100 || isNaN(ratePct);
+  // An explicit 0 stays 0 (VA and USDA are zero down).
+  const downPct       = effectiveCash ? 100 : rawDown;
 
   // SC investment property tax: 6% assessment ratio × Horry County millage 0.1367 = ~0.82% of value
   const gross   = rent * 12;
@@ -772,18 +927,18 @@ function recalcLtr() {
     : ltrCard('DSCR', dscr != null ? dscr.toFixed(2) : '0.00', 'dscr', null, null, dscr||0);
 
   document.getElementById('ltr-core-metrics').innerHTML =
-    ltrCard('Monthly Cash Flow', ltrFmt(moCF), 'cashflow', null, null, moCF) +
-    dscrCard +
-    ltrCard('Cap Rate', ltrFmtPct(cap), 'capRate', null, null, cap);
+    ltrCard('Cash flow a month', ltrFmt(moCF), 'cashflow', null, null, moCF) +
+    ltrCard('Rent a month', ltrFmt(rent), null, 'var(--slate)', 'rent') +
+    ltrCard('Cap rate', ltrFmtPct(cap), 'capRate', null, null, cap) +
+    ltrCard('Cash-on-cash', ltrFmtPct(coc), 'coc', null, null, coc);
 
   document.getElementById('ltr-income-metrics').innerHTML =
-    ltrCard('Monthly Rent',    ltrFmt(rent), null, 'var(--slate)', 'rent') +
-    ltrCard('Annual NOI',      ltrFmt(noiTrue),null, 'var(--slate)', 'noi') +
-    ltrCard('Annual Cash Flow', ltrFmt(cf),   'cashflow', 'var(--slate)', 'annualCF', cf/12);
+    dscrCard +
+    ltrCard('Net operating income a year', ltrFmt(noiTrue), null, 'var(--slate)', 'noi') +
+    ltrCard('Cash flow a year', ltrFmt(cf), 'cashflow', 'var(--slate)', 'annualCF', cf/12) +
+    ltrCard('Appreciation', ltrFmtPct(d.estimatedAppreciationPct) + ' a year', null, 'var(--brass)', 'appreciation');
 
-  document.getElementById('ltr-return-metrics').innerHTML =
-    ltrCard('Cash-on-Cash', ltrFmtPct(coc), 'coc', null, null, coc) +
-    ltrCard('Appreciation', ltrFmtPct(d.estimatedAppreciationPct) + '/yr', null, 'var(--brass)', 'appreciation');
+  document.getElementById('ltr-return-metrics').innerHTML = '';
 
   // Expense table
   const rows = [

@@ -15,7 +15,8 @@
  */
 import { crm, idxOn, visitorToken } from "./crm.js";
 import { PLACES } from "./places.js";
-import { FEEDS, feedParams, postFilter } from "./feeds.js";
+import { FEEDS, feedParams, postFilter, rankHomes } from "./feeds.js";
+import { CITIES } from "./query.js";
 import { STYLE, STRIP_STYLE, SCRIPT, disclaimer, esc, safeUrl, signupDialog, stripCard, tourDialog } from "./render.js";
 
 const SLOT = /<div class="hx-strip" data-place="([a-z0-9-]+)" data-name="([^"<>]*)"><\/div>/g;
@@ -82,6 +83,8 @@ async function runFeed(env, request, feed) {
     const p = feedParams(q);
     if (!p) return null;
     p.set("size", feed.q.length > 1 ? "24" : "48");
+    // A title that promises an order ("lowest price per bedroom") asks for the cheapest first, not the newest.
+    if (feed.rank) { p.set("sort", "price_asc"); p.set("size", "48"); }
     return crm(env, request, `/api/idx/listings?${p.toString()}`, { anonymous: true, timeoutMs: STRIP_BUDGET_MS - 500 }).catch(() => null);
   });
   let timer;
@@ -98,19 +101,71 @@ async function runFeed(env, request, feed) {
     total += typeof r.json.total === "number" ? r.json.total : r.json.listings.length;
     for (const l of r.json.listings) if (l && !seen.has(l.mlsNumber)) { seen.add(l.mlsNumber); out.push(l); }
   }
-  const kept = postFilter(out, feed.post);
+  // Narrowed and put in the promised order here, so the "at least 3 homes" check counts what will show.
+  const kept = rankHomes(postFilter(out, feed.post), feed.rank);
   return [kept, feed.post ? kept.length : total, meta];
 }
 
-/** The article's feed: a section like the page's own, placed after its second section. */
+/** The homes the title promises, in its order (photos first), or spread across the price range. */
+function feedHomes(feed, listings) {
+  if (!feed.rank) return spread(listings);
+  const ranked = listings; // already in the promised order (runFeed)
+  const withPhoto = ranked.filter((l) => safeUrl(l.photo));
+  return (withPhoto.length >= STRIP_MIN ? withPhoto : ranked).slice(0, STRIP_CARDS);
+}
+
+const PRICES = [200000, 250000, 300000, 350000, 400000, 450000, 500000, 750000, 1000000];
+/**
+ * "Make it yours": the feed's own search, with a price, bedrooms and a town to change, sent
+ * to /homes/ (a plain form: it works without the page script).
+ */
+function feedSearch(feed) {
+  const keep = new URLSearchParams([feed.link, feed.rank ? "sort=price_asc" : ""].filter(Boolean).join("&"));
+  const max = keep.get("max"), beds = keep.get("beds"), city = keep.get("city");
+  ["max", "beds", "city"].forEach((k) => keep.delete(k));
+  const hidden = [...keep].map(([k, v]) => `<input type="hidden" name="${esc(k)}" value="${esc(v)}">`).join("");
+  const opt = (v, label, on) => `<option value="${esc(v)}"${on ? " selected" : ""}>${esc(label)}</option>`;
+  const prices = [...new Set([...PRICES, ...(max ? [+max] : [])])].sort((a, b) => a - b);
+  return `<form class="hx-feed-q" action="/homes/" method="get" aria-label="Make this search yours">${hidden}`
+    + `<select name="max" aria-label="Highest price">${opt("", "Any price", !max)}${prices.map((p) => opt(p, `Up to $${p >= 1e6 ? `${p / 1e6}M` : `${p / 1000}K`}`, String(p) === max)).join("")}</select>`
+    + `<select name="beds" aria-label="Bedrooms">${opt("", "Any beds", !beds)}${[1, 2, 3, 4, 5].map((b) => opt(b, `${b}+ beds`, String(b) === beds)).join("")}</select>`
+    + `<select name="city" aria-label="Town">${opt("", "Every town", !city)}${CITIES.map((c) => opt(c, c, c === city)).join("")}</select>`
+    + `<button type="submit">Search</button></form>`;
+}
+
+/** The article's feed: near the top, its title, how the homes were picked, a search to change, the homes. */
 function feedSection(feed, listings, total) {
-  const all = `/homes/${feed.link ? `?${feed.link}` : ""}`;
+  const link = [feed.link, feed.rank ? "sort=price_asc" : ""].filter(Boolean).join("&");
+  const all = `/homes/${link ? `?${link}` : ""}`;
   const n = esc(total.toLocaleString("en-US"));
-  return `<section class="hx-feed"><div class="wrap"><div class="hx-strip hx-feed-strip" data-feed="1">`
+  return `<section class="hx-feed${feed.low ? "" : " hx-feed-top"}"><div class="wrap"><div class="hx-strip hx-feed-strip" data-feed="1">`
     + `<p class="hx-feed-eb">Live from the MLS</p>`
     + `<p class="hx-s-head"><b class="hx-feed-h">${esc(feed.head)}</b><a href="${esc(all)}">See all ${n}</a></p>`
-    + `<div class="hx-s-row">${spread(listings).map((l) => stripCard(l, false)).join("")}`
-    + `<a class="hx-s-all" href="${esc(all)}" draggable="false">See all ${n} homes</a></div></div></div></section>`;
+    + (feed.sub ? `<p class="hx-feed-sub">${esc(feed.sub)}</p>` : "")
+    + (feed.noHoa && !(feed.sub || "").includes(NO_HOA_NOTE) ? `<p class="hx-s-note">${NO_HOA_NOTE}</p>` : "")
+    + `<div class="hx-s-row">${feedHomes(feed, listings).map((l) => stripCard(l, false)).join("")}`
+    + `<a class="hx-s-all" href="${esc(all)}" draggable="false">See all ${n} homes</a></div>`
+    + feedSearch(feed) + `</div></div></section>`;
+}
+
+/**
+ * Near the top (owner, 2026-10-26: "close to the top so that there's no scrolling then get
+ * into the blog"): right after the part of the page that holds the H1, before the article's
+ * first section. Without an H1, or on a tool page (`low`), the old place lower down.
+ */
+export function placeFeedTop(html, block) {
+  const a = html.indexOf("<main"), z = html.indexOf("</main>");
+  if (a < 0 || z < 0) return html;
+  const main = html.slice(a, z);
+  const h1 = main.search(/<h1\b/);
+  if (h1 < 0) return placeFeed(html, block);
+  let at = -1;
+  const open = main.lastIndexOf("<section", h1);
+  const closeOpen = open >= 0 ? main.indexOf("</section>", open) : -1;
+  if (open >= 0 && closeOpen > h1) at = closeOpen + "</section>".length; // the H1's own section: after it
+  else { const next = main.indexOf("<section", h1); if (next >= 0) at = next; }
+  if (at < 0) return placeFeed(html, block);
+  return html.slice(0, a + at) + block + html.slice(a + at);
 }
 
 /** Where the feed goes: before the third section of the article, else before its second <h2>, else at the end. */
@@ -172,7 +227,7 @@ export async function withIdx(context, response) {
         if (wider !== used) { used = wider; got = await runFeed(env, request, used); }
       }
       if (!got || got === "stale" || got[0].length < STRIP_MIN) return new Response(html, { status: 200, headers });
-      html = placeFeed(html, feedSection(used, got[0], got[1]));
+      html = (feed.low ? placeFeed : placeFeedTop)(html, feedSection({ ...used, low: feed.low }, got[0], got[1]));
       return finish(env, request, gate, html, got[2], headers);
     }
     if (!slots.length) return new Response(html, { status: 200, headers });

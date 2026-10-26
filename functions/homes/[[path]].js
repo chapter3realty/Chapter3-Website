@@ -68,6 +68,7 @@ async function handle(context) {
     const name = path.replace(/^\/homes\/api\/|\/$/g, "");
     if (name === "map" && (request.method === "GET" || request.method === "HEAD")) return mapData(context, url);
     if (name === "lookup" && request.method === "GET") return lookup(context, url);
+    if (name === "similar" && request.method === "GET") return similar(context, url);
     if (request.method !== "POST") return json({ ok: false, error: "method" }, 405);
     if (!sameOrigin(request)) return json({ ok: false, error: "forbidden" }, 403);
     if (name === "signout") return new Response(null, { status: 303, headers: { Location: "/homes/", "Set-Cookie": clearCookie(), "Cache-Control": "no-store" } });
@@ -144,7 +145,8 @@ const STRIP_K = `<script>try{var u=new URL(location.href);if(u.searchParams.has(
 
 async function claimApi(context) {
   const { request } = context;
-  const { body: b, tooLarge } = await readBody(request, 4 * 1024);
+  // Bodies up to 48 KB, as the sign-up (contract §10).
+  const { body: b, tooLarge } = await readBody(request, 48 * 1024);
   if (tooLarge) return json({ ok: false, error: "too_large" }, 413);
   if (!b || typeof b !== "object" || !K.test(String(b.k || ""))) return json({ ok: false, error: "link_expired" });
   if (visitorToken(request)) return json({ ok: true, already: true });
@@ -158,7 +160,7 @@ async function claimApi(context) {
 
 async function returning(context) {
   const { request } = context;
-  const { body: b, tooLarge } = await readBody(request, 8 * 1024);
+  const { body: b, tooLarge } = await readBody(request, 48 * 1024);
   if (tooLarge) return json({ ok: false, error: "too_large" }, 413);
   if (!b || typeof b !== "object") return json({ ok: false, error: "invalid_body" }, 400);
   if (visitorToken(request)) return json({ ok: true, already: true });
@@ -284,11 +286,15 @@ function searchParams(q, signed) {
   const baths = q.get("baths");
   if (baths && /^\d{1,2}(\.5)?$/.test(baths)) p.set("baths", baths);
   if (q.get("waterfront") === "1") p.set("waterfront", "1");
+  // No HOA (contract §5, CRM ticket 415) and homes near a point, as the article feeds link them.
+  if (q.get("hoa") === "0") p.set("hoa", "0");
+  const n = nearOf(q.get("near"), q.get("miles"));
+  if (n) { p.set("near", n.near); p.set("miles", n.miles); }
   const sub = (q.get("subdivision") || "").trim();
   if (/^[A-Za-z0-9 .,'&()\/-]{2,80}$/.test(sub)) p.set("subdivision", sub);
   if (signed && q.get("sold") === "1") p.set("sold", "1");
   const sort = q.get("sort");
-  if (sort && ["newest", "price_asc", "price_desc"].includes(sort)) p.set("sort", sort);
+  if (sort && (["newest", "price_asc", "price_desc"].includes(sort) || (sort === "nearest" && n))) p.set("sort", sort);
   const pg = q.get("page");
   if (pg && /^\d{1,3}$/.test(pg)) p.set("page", String(Math.min(100, Math.max(1, +pg))));
   return p;
@@ -299,9 +305,10 @@ const title = (v) => String(v).toLowerCase().replace(/\b([a-z])/g, (c) => c.toUp
 /** The filters in force, each a chip that removes itself. */
 function appliedChips(p) {
   const label = { city: (v) => v, zip: (v) => v, type: (v) => TYPE_WORD[v], min: (v) => `From ${money(+v)}`, max: (v) => `Up to ${money(+v)}`,
-    beds: (v) => `${v}+ beds`, baths: (v) => `${v}+ baths`, sqft: (v) => `${(+v).toLocaleString("en-US")}+ sq ft`, waterfront: () => "Waterfront", subdivision: (v) => title(v), sold: () => "Sold" };
+    beds: (v) => `${v}+ beds`, baths: (v) => `${v}+ baths`, sqft: (v) => `${(+v).toLocaleString("en-US")}+ sq ft`, waterfront: () => "Waterfront", subdivision: (v) => title(v), sold: () => "Sold",
+    hoa: () => "No HOA", near: () => `Within ${p.get("miles")} miles` };
   const chips = [...p.keys()].filter((k) => label[k]).map((k) => {
-    const x = new URLSearchParams(p); x.delete(k); x.delete("page"); x.delete("size");
+    const x = new URLSearchParams(p); x.delete(k); x.delete("page"); x.delete("size"); if (k === "near") { x.delete("miles"); if (x.get("sort") === "nearest") x.delete("sort"); }
     return `<a class="hx-applied-chip" href="${esc(`/homes/${x.toString() ? `?${x.toString()}` : ""}`)}" aria-label="Remove ${esc(label[k](p.get(k)))}">${esc(label[k](p.get(k)))}<span aria-hidden="true">&times;</span></a>`;
   });
   return chips.length ? `<div class="hx-applied">${chips.join("")}<a class="hx-clear" href="/homes/">Clear all</a></div>` : "";
@@ -349,7 +356,7 @@ ${j.tier === "registered" ? select("sold", "Show", [["", "For sale"], ["1", "Sol
   const body = `${crumbs([["/", "Home"], [null, "Homes for sale"]])}
 <h1>${esc(`${p.get("sold") ? "Sold homes" : "Homes for sale"}${where || " on the Grand Strand"}`)}</h1>
 ${signedBar(j.tier)}${form}${appliedChips(p)}
-<div class="hx-count"><p><b>${esc((j.total || 0).toLocaleString("en-US"))}</b> ${j.total === 1 ? "home" : "homes"}</p><span class="hx-count-r"><a class="hx-maplink" href="${esc(`/homes/map/${(() => { const x = new URLSearchParams(p); x.delete("size"); x.delete("page"); return x.toString() ? `?${x.toString()}` : ""; })()}`)}">Map</a><label class="hx-sort">Sort<select data-hx-go aria-label="Sort">${sortLink("", "Newest")}${sortLink("price_asc", "Price, low to high")}${sortLink("price_desc", "Price, high to low")}</select></label></span></div>
+<div class="hx-count"><p><b>${esc((j.total || 0).toLocaleString("en-US"))}</b> ${j.total === 1 ? "home" : "homes"}</p><span class="hx-count-r"><a class="hx-maplink" href="${esc(`/homes/map/${(() => { const x = new URLSearchParams(p); x.delete("size"); x.delete("page"); return x.toString() ? `?${x.toString()}` : ""; })()}`)}">Map</a><label class="hx-sort">Sort<select data-hx-go aria-label="Sort">${sortLink("", "Newest")}${sortLink("price_asc", "Price, low to high")}${sortLink("price_desc", "Price, high to low")}</select></label></span></div>${p.get("hoa") === "0" ? `<p class="hx-s-note">${NO_HOA_NOTE}</p>` : ""}
 ${grid(Array.isArray(j.listings) ? j.listings : [], hearts)}${pager}
 ${j.tier === "public" ? signupPrompt("Want every photo, the HOA fee and the taxes?") : ""}
 ${disclaimer(j.meta)}`;
@@ -491,6 +498,32 @@ async function lookup(context, url) {
   return json({ ok: true, found: true, facts, meta: r.json.meta || null }, 200, { "cache-control": "private, no-store" });
 }
 
+/**
+ * GET /homes/api/similar?near=<lat,lng>&beds=&min=&max=&not=<MLS#>: homes like the one the
+ * rental analyzer just ran, for sale now near it, as the listing search's own strip (cards,
+ * the source and the disclaimer). Validated parameters only; nearer and wider when too few.
+ */
+async function similar(context, url) {
+  const q = url.searchParams;
+  const n = nearOf(q.get("near"), q.get("miles") || 3);
+  if (!n) return json({ ok: false });
+  const p = new URLSearchParams({ near: n.near, miles: n.miles, size: "24" });
+  for (const k of ["beds", "min", "max"]) if (/^\d{1,9}$/.test(q.get(k) || "")) p.set(k, q.get(k));
+  const not = /^[A-Za-z0-9]{3,20}$/.test(q.get("not") || "") ? q.get("not") : null;
+  const get = async (params) => {
+    const r = await crm(context.env, context.request, `/api/idx/listings?${params.toString()}`, { anonymous: true });
+    return r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? { ls: r.json.listings.filter((l) => l && l.mlsNumber !== not), meta: r.json.meta } : { ls: [], meta: null };
+  };
+  let got = await get(p);
+  if (got.ls.length < 3) got = await get(new URLSearchParams({ near: n.near, miles: "5", size: "24" }));
+  if (got.ls.length < 3) return json({ ok: true, html: "" }, 200, { "cache-control": "public, max-age=300" });
+  const all = `/homes/?${new URLSearchParams({ near: n.near, miles: "3" }).toString()}`;
+  const cards = got.ls.slice(0, 10).map((l) => stripCard(l, false).replace(/<button type="button" class="hx-heart[\s\S]*?<\/button>/, "")).join("");
+  const html = `${STYLE}${STRIP_STYLE}<div class="hx-strip"><p class="hx-s-head"><b>Homes like it for sale nearby</b><a href="${esc(all)}">See all</a></p>`
+    + `<div class="hx-s-row">${cards}<a class="hx-s-all" href="${esc(all)}" draggable="false">See all homes nearby</a></div>${disclaimer(got.meta)}</div>`;
+  return json({ ok: true, html }, 200, { "cache-control": "public, max-age=300" });
+}
+
 // ── one listing ─────────────────────────────────────────────────────────────
 
 async function bareListing(context, mls, gate) {
@@ -581,7 +614,9 @@ ${l.listingAgent ? `<p class="hx-firm-line">Listing agent: ${esc(l.listingAgent)
       + `<button type="button" class="btn btn-brass" data-hx-signup>See full details</button></section>`;
 
   const side = `<aside class="hx-side hx-glass" aria-label="Tour or ask about this home"><p class="hx-l-price">${esc(headlinePrice(l))}</p><p class="hx-small">${esc(addressLine(l))}</p>`
-    + `${tourButton(l, "Tour this home", "tour", "hx-primary")}${tourButton(l, "Ask a question", "question")}</aside>`;
+    + `${tourButton(l, "Tour this home", "tour", "hx-primary")}${tourButton(l, "Ask a question", "question")}`
+    // For investors: the rental analyzer, filled in with this home and started at once (owner, 2026-10-26).
+    + (!l.address ? "" : `<a class="hx-analyze" href="/invest/long-term-rental/?mls=${esc(encodeURIComponent(l.mlsNumber))}&amp;go=1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h16M8 15l3-4 3 2 4-6"/></svg>Analyze it as a rental</a>`) + `</aside>`;
 
   const [nearby, where] = await Promise.all([homesNearby(context, l), l.address ? (pinOf(l) ? { lat: pinOf(l).lat, lng: pinOf(l).lng } : geocode(l)) : null]);
   // Where the home is: a map with its pin. A click opens every home for sale in its town on
@@ -597,7 +632,6 @@ ${media}
 <h1 class="hx-l-addr">${esc(addressLine(l))}</h1>
 ${pills}
 <p class="hx-firm-line">Listed by ${esc(l.listingFirm || "the listing brokerage")}</p>
-<p class="hx-small"><a class="hx-maplist" href="/invest/long-term-rental/?mls=${esc(encodeURIComponent(l.mlsNumber))}">Run the rental numbers on this home</a></p>
 ${signedBar(r.json.tier)}</div><div class="hx-l-rest">${facts}${located}${more}</div>
 </div>${side}</div>
 ${nearby}

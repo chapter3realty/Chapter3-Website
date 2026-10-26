@@ -10,7 +10,7 @@
  * (16.9); a way to report a mistake (16.11); format, never change (16.13);
  * address null = town only, no street (16.5).
  */
-import { SMS_CONSENT_TEXT, TERMS_TITLE, TERMS_PARAGRAPHS } from "./terms.js";
+import { SMS_CONSENT_TEXT } from "./terms.js";
 
 export function esc(v) {
   return String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -74,8 +74,10 @@ export function tourButton(l, label, interest, cls) {
  * price; beds | baths | sq ft | status; the address; then, small, the MLS number, the listing
  * firm and the source. The tag is a fact from the card, never an opinion.
  */
-const THIS_YEAR = new Date().getUTCFullYear();
 export function cardTag(l) {
+  // The year is read here, per request: at module scope a Worker's clock reads 1970, and
+  // every home built since 1969 was tagged "Built <year>" (fixed 2026-10-26).
+  const THIS_YEAR = new Date().getUTCFullYear();
   if (l.status === "ActiveUnderContract") return "Under contract";
   if (l.status === "Pending") return "Pending";
   if (l.waterfront === true) return "Waterfront";
@@ -124,31 +126,31 @@ export function disclaimer(meta) {
   return `<aside class="hx-disclaimer" aria-label="Listing data notice">`
     + `<p>${esc(updatedLine(m.refreshedAt))} Source: ${esc(m.source || "Coastal Carolinas Association of REALTORS® Multiple Listing Service (CCMLS)")}.</p>`
     + (m.disclaimer ? `<p>${esc(m.disclaimer)}</p>` : "")
-    + `<p><a href="/">Chapter3 Realty, Corp.</a>, Myrtle Beach, SC. (854) 333-2135. See something wrong in a listing? <a href="mailto:hello@chapter3realty.com?subject=Listing%20error">Email us</a>. <a href="/fair-housing/">Equal Housing Opportunity</a>. <a href="/homes/terms/">Listing search terms</a>.</p></aside>`;
+    + `<p><a href="/">Chapter3 Realty, Corp.</a>, Myrtle Beach, SC. (854) 333-2135. See something wrong in a listing? <a href="mailto:info@chapter3realty.com?subject=Listing%20error">Email us</a>. <a href="/fair-housing/">Equal Housing Opportunity</a>. <a href="/homes/terms/">Listing search terms</a>.</p></aside>`;
 }
 
-/** The free sign-up: name, email and phone; the terms box unticked and required; texts optional. */
+/** The free sign-up, as short as the owner's model (2026-10-26): full name, email, phone; the terms box unticked and required; texts optional. */
 export function signupDialog(siteKey) {
   return `<dialog id="hx-signup" class="hx-dialog" aria-labelledby="hx-signup-title">
 <form id="hx-signup-form" novalidate>
 <button type="button" class="hx-x" data-hx-close aria-label="Close">&times;</button>
-<div class="hx-d-head"><div><h2 id="hx-signup-title">See every photo and detail</h2><p class="hx-d-sub">Free. Sign up once for every home on the site.</p></div></div>
-<ul class="hx-d-perks"><li>All photos</li><li>HOA fee and taxes</li><li>Price history</li><li>Recent sales</li><li>Save homes</li></ul>
-<div class="hx-row2"><label>First name<input name="firstName" autocomplete="given-name" required maxlength="80"></label><label>Last name<input name="lastName" autocomplete="family-name" required maxlength="80"></label></div>
-<label>Email<input name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200"></label>
-<label>Phone<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="40"></label>
+<h2 id="hx-signup-title" class="hx-d-center">Free access</h2>
+<p class="hx-d-sub hx-d-center">Every photo and detail, on every home.</p>
+<input name="name" autocomplete="name" required maxlength="160" aria-label="Full name" placeholder="Full name">
+<input name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200" aria-label="Email" placeholder="Email">
+<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="40" aria-label="Phone" placeholder="Phone">
 <input name="website" class="hx-hp" tabindex="-1" autocomplete="off" aria-hidden="true" value="">
 <label class="hx-check"><input type="checkbox" name="termsAccepted"><span>I agree to the <a href="/homes/terms/" target="_blank" rel="noopener">listing search terms of use</a>.</span></label>
-<details class="hx-terms"><summary>Read the terms here</summary><h3>${esc(TERMS_TITLE)}</h3>${TERMS_PARAGRAPHS.map((p) => `<p>${esc(p)}</p>`).join("")}</details>
-<label class="hx-check"><input type="checkbox" name="smsConsent"><span>Optional. ${esc(SMS_CONSENT_TEXT)}</span></label>
+<label class="hx-check hx-check-fine"><input type="checkbox" name="smsConsent"><span>Optional. ${esc(SMS_CONSENT_TEXT)}</span></label>
 ${siteKey ? `<div class="cf-turnstile" data-sitekey="${esc(siteKey)}"></div>` : ""}
 <p class="hx-error" role="alert" hidden></p>
-<button class="btn btn-brass" type="submit" disabled>See full details</button>
-<p class="hx-d-fine">We never sell your information. <button type="button" class="hx-linkbtn" data-hx-returning>Already working with us?</button></p>
+<button class="btn btn-brass" type="submit" disabled>Continue to photos &rsaquo;</button>
+<p class="hx-d-center"><button type="button" class="hx-linkbtn" data-hx-returning>Already have an account?</button></p>
+<p class="hx-d-fine hx-d-center">Free. We never sell your information.</p>
 </form>
 <form id="hx-returning-form" novalidate hidden>
 <button type="button" class="hx-x" data-hx-close aria-label="Close">&times;</button>
-<div class="hx-d-head"><div><h2>Already working with us?</h2><p class="hx-d-sub">Your mobile number and first name are enough.</p></div></div>
+<h2 class="hx-d-center">Welcome back</h2><p class="hx-d-sub hx-d-center">Your mobile number and first name are enough.</p>
 <div class="hx-row2"><label>Mobile phone<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="40"></label><label>First name<input name="firstName" autocomplete="given-name" required maxlength="80"></label></div>
 <label class="hx-check"><input type="checkbox" name="termsAccepted"><span>I agree to the <a href="/homes/terms/" target="_blank" rel="noopener">listing search terms of use</a>.</span></label>
 ${siteKey ? `<div class="cf-turnstile" data-sitekey="${esc(siteKey)}"></div>` : ""}
@@ -204,7 +206,7 @@ export const STYLE = `<style>
 .hx-wrap{max-width:1180px;margin:0 auto;padding:1.5rem 1.25rem 3rem;color:var(--navy)}
 .hx-wrap h1{font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.15;margin:.4rem 0 .6rem}
 .hx-lead{font-size:1.02rem;line-height:1.6;max-width:760px}.hx-small{font-size:.85rem;color:var(--muted);line-height:1.5}
-.hx-crumbs{font-size:.8rem;margin:.2rem 0}.hx-crumbs a{color:var(--brass)}
+.hx-crumbs{font-size:.8rem;margin:.2rem 0}.hx-crumbs a{color:var(--brass-ink,#91592b)}
 .hx-form{display:flex;flex-wrap:wrap;gap:.6rem .8rem;align-items:flex-end;margin:1rem 0 1.4rem;padding:.9rem 1rem;border-radius:16px;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.8);box-shadow:0 6px 18px rgba(28,32,40,.08)}
 .hx-form label{display:flex;flex-direction:column;font-size:.8rem;gap:.2rem}.hx-form select,.hx-form input{padding:.45rem .5rem;border-radius:8px;border:1px solid var(--rule,#d9d2c6);background:#fff;font:inherit}
 .hx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
@@ -252,6 +254,7 @@ main#main .hx-s-row>.hx-c:hover{transform:none}
 .hx-dialog[open]{animation:hx-pop .22s ease-out}@keyframes hx-pop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
 .hx-dialog::backdrop{background:rgba(28,32,40,.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
 .hx-dialog form{position:relative;padding:1.6rem 1.5rem 1.4rem;display:flex;flex-direction:column;gap:.75rem;max-height:calc(100vh - 2rem);overflow:auto}
+.hx-dialog form[hidden]{display:none}
 .hx-dialog .hx-d-head{display:flex;align-items:center;gap:.8rem;padding-right:2.4rem}
 .hx-dialog .hx-d-thumb{width:3.6rem;height:3.6rem;flex:none;border-radius:12px;object-fit:cover;background:#e8e1d6}
 .hx-dialog .hx-d-thumb[hidden]{display:none}
@@ -302,7 +305,8 @@ main#main .hx-s-row>.hx-c:hover{transform:none}
 .hx-loc-map:hover .hx-loc-cta{background:#1a73e8}
 .hx-d-fine{font-size:.72rem;color:var(--slate,#5c6b78);line-height:1.45;margin:0;text-align:center}
 .hx-linkbtn{border:0;background:none;padding:0;font:inherit;font-weight:700;color:var(--brass-ink,#91592b);text-decoration:underline;cursor:pointer}
-.hx-d-perks{display:flex;flex-wrap:wrap;gap:.35rem;list-style:none;margin:0;padding:0}.hx-d-perks li{padding:.28rem .65rem;border-radius:999px;background:#f4efe8;font-size:.8rem;font-weight:600}
+.hx-dialog .hx-d-center{text-align:center;margin:0}.hx-dialog h2.hx-d-center{padding:0 2rem}
+.hx-dialog .hx-check-fine{font-size:.72rem;line-height:1.45}
 .hx-dialog .hx-terms summary{cursor:pointer;color:var(--slate,#5c6b78)}
 .hx-tour.hx-primary{background:var(--brass-ink,#91592b);border-color:var(--brass-ink,#91592b);color:#fff}
 .hx-glass{background:rgba(255,255,255,.64);border:1px solid rgba(255,255,255,.85);box-shadow:0 10px 30px rgba(28,32,40,.08);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3)}
@@ -328,6 +332,9 @@ main#main .hx-s-row>.hx-c:hover{transform:none}
 .hx-facts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;margin:1.3rem 0}@media (min-width:600px){.hx-facts-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .hx-fact{padding:.85rem .95rem;border-radius:16px}.hx-fact span{display:block;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate,#5c6b78)}.hx-fact b{display:block;font-size:1.05rem;font-weight:600;margin-top:.15rem;overflow-wrap:anywhere}
 .hx-side{position:sticky;top:9rem;align-self:start;padding:1.3rem;border-radius:22px;display:flex;flex-direction:column;gap:.7rem}
+.hx-analyze{display:flex;align-items:center;justify-content:center;gap:.5rem;min-height:2.9rem;border-radius:999px;border:1.5px dashed rgba(28,32,40,.25);color:var(--ink,#1c2028);font-weight:700;font-size:.92rem;text-decoration:none}
+.hx-analyze:hover{border-style:solid;border-color:var(--brass-ink,#91592b);background:#fbf6ef}
+.hx-analyze svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .hx-side .hx-l-price{font-size:1.9rem}.hx-side p{margin:0}
 @media (max-width:899px){.hx-side .hx-l-price,.hx-side .hx-small{display:none}.hx-side{position:static;padding:1rem}}
 .hx-side .hx-tour{justify-content:center;padding:.75rem 1rem;font-size:1rem;font-weight:600}
@@ -347,13 +354,22 @@ export const STRIP_STYLE = `<style>
 main#main .hx-strip:empty{display:none}main#main .hx-strip:not(:empty)+.hx-fallback{display:none}
 main#main .hx-strip{margin:1.2rem 0 .4rem;max-width:760px;position:relative}
 main#main .hx-s-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin:0 0 .55rem;font-size:.95rem;color:var(--navy)}
-main#main .hx-s-head a{color:var(--brass);font-size:.9rem;white-space:nowrap}
+main#main .hx-s-head a{color:var(--brass-ink,#91592b);font-size:.9rem;white-space:nowrap}
 main#main .hx-feed{background:var(--ivory-2,#f1ece4)}
 main#main .hx-feed .hx-strip.hx-feed-strip{max-width:none;margin:0}
-main#main .hx-feed-eb{font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin:0 0 .45rem;font-weight:600}
+main#main .hx-feed-eb{font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-ink,#91592b);margin:0 0 .45rem;font-weight:600}
 main#main .hx-feed .hx-s-head{align-items:flex-end;margin-bottom:.9rem}
 main#main .hx-feed-h{font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.65rem);font-weight:600;line-height:1.25;color:var(--navy)}
 @media (min-width:900px){main#main .hx-feed .hx-s-row>.hx-c{flex-basis:calc((100% - 2.25rem) / 3.4)}}
+main#main section.hx-feed{padding:2rem 0 1.9rem!important}
+@media (max-width:640px){main#main section.hx-feed{padding:1.5rem 0 1.4rem!important}}
+main#main .hx-feed .hx-s-head{margin-bottom:.25rem}
+main#main .hx-feed-sub{margin:0 0 .85rem;font-size:.9rem;line-height:1.45;color:var(--slate,#5c6b78);max-width:46rem}
+main#main .hx-feed-q{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:.9rem}
+main#main .hx-feed-q select{min-height:2.6rem;padding:0 2rem 0 .85rem;border-radius:999px;border:1px solid rgba(28,32,40,.16);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%235c6b78' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right .8rem center;-webkit-appearance:none;appearance:none;font:inherit;font-size:.88rem;color:var(--ink,#1c2028);cursor:pointer}
+main#main .hx-feed-q button{min-height:2.6rem;padding:0 1.2rem;border:0;border-radius:999px;background:var(--navy,#1c2028);color:#fff;font:inherit;font-size:.88rem;font-weight:700;cursor:pointer}
+main#main .hx-feed-q button:hover{background:#2a3040}
+@media (max-width:560px){main#main .hx-feed-q select{flex:1 1 calc(50% - .5rem);min-width:0}main#main .hx-feed-q button{flex:1 1 100%}}
 .hx-s-note{margin:-.3rem 0 .55rem;font-size:.85rem;color:var(--muted,#5a5f6a)}
 main#main .hx-s-row{display:flex;align-items:flex-start;gap:.75rem;overflow-x:auto;scroll-behavior:auto;scroll-snap-type:x proximity;padding:.15rem .15rem .6rem;margin:0 -.15rem;scrollbar-width:none;-ms-overflow-style:none;cursor:grab;user-select:none;-webkit-user-select:none}
 main#main .hx-s-row::-webkit-scrollbar{display:none}main#main .hx-s-row.hx-dragging{cursor:grabbing;scroll-snap-type:none}
@@ -391,7 +407,9 @@ if(sf){var tb=sf.elements.termsAccepted,sb=sf.querySelector("button[type=submit]
  sf.addEventListener("submit",function(e){e.preventDefault();var err=sf.querySelector(".hx-error");err.hidden=true;sb.disabled=true;
   var prior=[];try{prior=JSON.parse(localStorage.getItem("c3_idx_prior")||"[]")}catch(x){}
   var t=sf.querySelector("[name=cf-turnstile-response]");
-  post("/homes/api/register",{firstName:sf.elements.firstName.value,lastName:sf.elements.lastName.value,email:sf.elements.email.value,phone:sf.elements.phone.value,
+  var nm=sf.elements.name.value.trim().split(/\s+/),first=nm.shift()||"",last=nm.join(" ");
+  if(!last){err.textContent="Please enter your first and last name.";err.hidden=false;sb.disabled=!tb.checked;sf.elements.name.focus();return}
+  post("/homes/api/register",{firstName:first,lastName:last,email:sf.elements.email.value,phone:sf.elements.phone.value,
    termsAccepted:tb.checked,smsConsent:sf.elements.smsConsent.checked,website:sf.elements.website.value,page:location.pathname,priorViews:prior,turnstileToken:t?t.value:""})
   .then(function(j){if(j.ok){try{localStorage.removeItem("c3_idx_prior")}catch(x){}var h=null;try{h=sessionStorage.getItem("c3_idx_heart");sessionStorage.removeItem("c3_idx_heart")}catch(x){}
     return (h?post("/homes/api/hearts",{mlsNumber:h,loved:true}):Promise.resolve()).then(function(){location.reload()})}
@@ -406,8 +424,11 @@ if(rf){var rt=rf.elements.termsAccepted,rb=rf.querySelector("button[type=submit]
  rf.addEventListener("submit",function(e){e.preventDefault();var err=rf.querySelector(".hx-error");err.hidden=true;rb.disabled=true;var t=rf.querySelector("[name=cf-turnstile-response]");
   post("/homes/api/returning",{phone:rf.elements.phone.value,firstName:rf.elements.firstName.value,termsAccepted:rt.checked,turnstileToken:t?t.value:"",page:location.pathname})
   .then(function(j){if(j.ok){location.reload();return}
-   if(j.notFound&&sf){sf.elements.phone.value=rf.elements.phone.value;sf.elements.firstName.value=rf.elements.firstName.value;swap(false);var se=sf.querySelector(".hx-error");se.textContent="We could not find you. Finish this short sign-up and you are in.";se.hidden=false;return}
-   err.textContent=j.message||"Please check the form and try again.";err.hidden=false;rb.disabled=!rt.checked;if(window.turnstile)try{turnstile.reset()}catch(x){}})
+   // A Turnstile token works once, and the CRM may have spent it: a fresh one before the prefilled sign-up posts (§7g).
+   if(window.turnstile)try{turnstile.reset()}catch(x){}
+   rb.disabled=!rt.checked;
+   if(j.notFound&&sf){sf.elements.phone.value=rf.elements.phone.value;sf.elements.name.value=rf.elements.firstName.value+" ";swap(false);var se=sf.querySelector(".hx-error");se.textContent="We could not find you. Finish this short sign-up and you are in.";se.hidden=false;return}
+   err.textContent=j.message||"Please check the form and try again.";err.hidden=false;rb.disabled=!rt.checked})
   .catch(function(){err.textContent="Sign-in is unavailable right now. Please call (854) 333-2135.";err.hidden=false;rb.disabled=!rt.checked})})}
 /* Welcome back: a link from our emails, the terms first */
 var wd=$("#hx-welcome"),wf=$("#hx-welcome-form");
