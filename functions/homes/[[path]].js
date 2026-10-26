@@ -45,6 +45,14 @@ const DETAIL_LABELS = [
 ];
 
 export async function onRequest(context) {
+  // Never Cloudflare's error page: anything unexpected is our own "try again" page.
+  try { return await handle(context); } catch (e) {
+    console.error("homes:", e && e.stack ? e.stack : e);
+    return new Response(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Homes for sale | Chapter3 Realty</title></head><body style="font-family:system-ui,sans-serif;max-width:34rem;margin:4rem auto;padding:0 1rem;line-height:1.5"><h1>This page did not load</h1><p>Please try again in a minute. <a href="/homes/">Search homes for sale</a>, or call ${PHONE}.</p></body></html>`, { status: 503, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store", "retry-after": "60" } });
+  }
+}
+
+async function handle(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   const path = url.pathname;

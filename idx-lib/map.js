@@ -60,14 +60,45 @@ export async function geocode(l) {
   } catch { return null; }
 }
 
-/** Fill in missing map points from the geocoder, within a time budget; the rest stay without a pin. */
-export async function withPoints(listings, budgetMs = 3000, max = 48) {
-  const need = listings.filter((l) => l && !l.point && l.address).slice(0, max);
+/**
+ * Fill in missing map points, all homes in one call to the Census batch geocoder. Cloudflare
+ * allows 50 outside calls per request, and one call per home (with its cache read and write)
+ * passed that and broke the map page (2026-10-25). This makes at most three: a cache read,
+ * the geocoder, a cache write. A home that is not found, or a slow geocoder, leaves no pin.
+ */
+const BATCH = "https://geocoding.geo.census.gov/geocoder/locations/addressbatch";
+const csvField = (v) => `"${String(v ?? "").replace(/[\r\n]+/g, " ").replace(/"/g, "'")}"`;
+export async function withPoints(listings, budgetMs = 4000, max = 144) {
+  const need = listings.filter((l) => l && !l.point && l.address && l.city).slice(0, max);
   if (!need.length) return listings;
-  let timer;
-  const late = new Promise((done) => { timer = setTimeout(done, budgetMs); });
-  await Promise.race([Promise.all(need.map(async (l) => { const pt = await geocode(l); if (pt && !l.point) l.point = pt; })), late]);
-  clearTimeout(timer);
+  const csv = need.map((l, i) => [i, l.address, l.city, l.state || "SC", l.postalCode || ""].map(csvField).join(",")).join("\n");
+  const cache = typeof caches !== "undefined" ? caches.default : null;
+  try {
+    let text = null, key = null;
+    if (cache) {
+      const hash = [...new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(csv)))].map((b) => b.toString(16).padStart(2, "0")).join("");
+      key = new Request(`https://chapter3realty.com/__geo-batch/${hash}`);
+      const hit = await cache.match(key);
+      if (hit) text = await hit.text();
+    }
+    if (text === null) {
+      const form = new FormData();
+      form.append("addressFile", new Blob([csv], { type: "text/csv" }), "homes.csv");
+      form.append("benchmark", "Public_AR_Current");
+      const r = await fetch(BATCH, { method: "POST", body: form, signal: AbortSignal.timeout(budgetMs) });
+      if (!r.ok) return listings;
+      text = await r.text();
+      if (key) await cache.put(key, new Response(text, { headers: { "content-type": "text/csv", "cache-control": "public, max-age=86400" } }));
+    }
+    // "id","input","Match","Exact","matched address","lng,lat","tiger id","side"
+    for (const line of text.split("\n")) {
+      const f = [...line.matchAll(/"([^"]*)"/g)].map((m) => m[1]);
+      if (f[2] !== "Match") continue;
+      const l = need[Number(f[0])];
+      const [lng, lat] = String(f[5] || "").split(",").map(Number);
+      if (l && !l.point && lat >= 31 && lat <= 37 && lng >= -82 && lng <= -75) l.point = { lat, lng };
+    }
+  } catch { /* no pins this time; the list still shows every home */ }
   return listings;
 }
 

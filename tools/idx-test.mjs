@@ -25,6 +25,7 @@ const calls = [];
 let STALE = false;
 let CENSUS = false, CENSUS_CALLS = 0;
 let MAPPOINTS = false;
+let BIG = false;
 let sent2 = "";
 let HANG = false;
 let INVALID = false;
@@ -34,6 +35,11 @@ globalThis.fetch = async (input, init = {}) => {
   const auth = (init.headers || {}).authorization;
   const tier = auth ? "registered" : "public";
   const J = (b, s = 200) => new Response(JSON.stringify(b), { status: s, headers: { "content-type": "application/json" } });
+  if (u.hostname === "geocoding.geo.census.gov" && u.pathname.endsWith("/addressbatch")) {
+    CENSUS_CALLS++;
+    const rows = (await init.body.get("addressFile").text()).split("\n");
+    return new Response(rows.map((r) => { const id = /^"(\d+)"/.exec(r)[1]; return CENSUS ? `"${id}","x","Match","Exact","X","-78.9,33.71","1","L"` : `"${id}","x","No_Match"`; }).join("\n"));
+  }
   if (u.hostname === "geocoding.geo.census.gov") {
     CENSUS_CALLS++;
     return CENSUS ? J({ result: { addressMatches: [{ coordinates: { x: -78.9, y: 33.71 } }] } }) : J({ result: { addressMatches: [] } });
@@ -54,8 +60,8 @@ globalThis.fetch = async (input, init = {}) => {
   if (INVALID && auth) return J({ ok: false, error: "unauthorized", visitor: "invalid" }, 401);
   if (u.pathname === "/api/idx/listings") {
     const sub = u.searchParams.get("subdivision"), near = u.searchParams.get("near");
-    const n = sub === "Tidewater" ? 2 : sub || near ? 14 : 30;
-    const ls = Array.from({ length: n }, (_, i) => mk(i, near ? { miles: 0.4 } : {}));
+    const n = BIG ? 4041 : sub === "Tidewater" ? 2 : sub || near ? 14 : 30;
+    const ls = Array.from({ length: Math.min(n, 48) }, (_, i) => mk(i + 48 * ((+u.searchParams.get("page") || 1) - 1), near ? { miles: 0.4 } : {}));
     return J({ ok: true, tier, visitor: auth ? "valid" : "none", meta: META, listings: ls.slice(0, +u.searchParams.get("size") || 24), total: n, page: 1, pageSize: 24 });
   }
   const one = /^\/api\/idx\/listings\/(\w+)$/.exec(u.pathname);
@@ -352,6 +358,15 @@ t = await (await run(homes, req("/homes/2611111/"))).text();
 check("listing: a withheld address gets no map", !t.includes('class="hx-loc-map"'));
 t = await (await run(homes, req("/homes/map/?city=Conway&focus=2699999"))).text();
 check("map page: the home a listing page sent us from is among the pins sent to the browser", t.includes('"mls":"2699999"'));
+BIG = true;
+const beforeBig = calls.length, censusBig = CENSUS_CALLS;
+r = await run(homes, req("/homes/map/?city=Myrtle+Beach"));
+t = await r.text();
+check("map page: 4,041 homes, 144 placed in one geocoder call, under Cloudflare's 50 outside calls", r.status === 200 && CENSUS_CALLS - censusBig === 1 && calls.length - beforeBig <= 8 && (t.match(/"lat":33.71/g) || []).length === 144);
+BIG = false;
+r = await run(homes, req("/homes/map/"), { ...ENV, ASSETS: { fetch: async () => { throw new Error("Too many subrequests."); } } });
+t = await r.text();
+check("homes: an unexpected error is our own try-again page, never Cloudflare's", r.status === 503 && t.includes("This page did not load") && r.headers.get("cache-control") === "no-store");
 CENSUS = false;
 t = await (await run(homes, req("/homes/map/?city=Conway&view=3d&focus=2600005"))).text();
 check("map page: one page, a 2D and 3D switch, opened in 3D, the home lit", t.includes('data-mode="3d" aria-pressed="true"') && t.includes('data-view="3d"') && t.includes('data-focus="2600005"'));
