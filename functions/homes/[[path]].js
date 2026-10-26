@@ -518,15 +518,15 @@ async function similar(context, url) {
   const q = url.searchParams;
   const n = nearOf(q.get("near"), q.get("miles") || 3);
   if (!n) return json({ ok: false });
-  const p = new URLSearchParams({ near: n.near, miles: n.miles, size: "24" });
+  const p = new URLSearchParams({ near: n.near, miles: n.miles, size: "24", status: "active" });
   for (const k of ["beds", "min", "max"]) if (/^\d{1,9}$/.test(q.get(k) || "")) p.set(k, q.get(k));
   const not = /^[A-Za-z0-9]{3,20}$/.test(q.get("not") || "") ? q.get("not") : null;
   const get = async (params) => {
     const r = await crm(context.env, context.request, `/api/idx/listings?${params.toString()}`, { anonymous: true });
-    return r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? { ls: r.json.listings.filter((l) => l && l.mlsNumber !== not), meta: r.json.meta } : { ls: [], meta: null };
+    return r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? { ls: r.json.listings.filter((l) => forSale(l) && l.mlsNumber !== not), meta: r.json.meta } : { ls: [], meta: null };
   };
   let got = await get(p);
-  if (got.ls.length < 3) got = await get(new URLSearchParams({ near: n.near, miles: "5", size: "24" }));
+  if (got.ls.length < 3) got = await get(new URLSearchParams({ near: n.near, miles: "5", size: "24", status: "active" }));
   if (got.ls.length < 3) return json({ ok: true, html: "" }, 200, { "cache-control": "public, max-age=300" });
   const all = `/homes/?${new URLSearchParams({ near: n.near, miles: "3" }).toString()}`;
   const cards = got.ls.slice(0, 10).map((l) => stripCard(l, false).replace(/<button type="button" class="hx-heart[\s\S]*?<\/button>/, "")).join("");
@@ -657,7 +657,9 @@ ${l.listingAgent ? `<p class="hx-firm-line">Listing agent: ${esc(l.listingAgent)
     // For investors: the rental analyzer, filled in with this home and started at once (owner, 2026-10-26).
     + (!l.address ? "" : `<a class="hx-analyze" href="/invest/long-term-rental/?mls=${esc(encodeURIComponent(l.mlsNumber))}&amp;go=1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h16M8 15l3-4 3 2 4-6"/></svg>Analyze it as a rental</a>`) + `</aside>`;
 
-  const [nearby, where] = await Promise.all([homesNearby(context, l), l.address ? (pinOf(l) ? { lat: pinOf(l).lat, lng: pinOf(l).lng } : geocode(l)) : null]);
+  const where = l.address ? (pinOf(l) ? { lat: pinOf(l).lat, lng: pinOf(l).lng } : await geocode(l)) : null;
+  // Homes like this one (owner, 2026-10-26: "the idx inside of that should be similar homes").
+  const nearby = await homesLike(context, l, where);
   // Where the home is: a map with its pin. A click opens every home for sale in its town on
   // the full map, this one lit (owner, 2026-10-25). Never for a withheld address (16.5).
   const mapHref = `/homes/map/?${new URLSearchParams({ ...(l.city && CITIES.includes(l.city) ? { city: l.city } : {}), focus: l.mlsNumber }).toString()}`;
@@ -689,20 +691,36 @@ ${disclaimer(r.json.meta)}`;
   });
 }
 
-/** "More homes in <subdivision>": a strip of up to 10 other homes there, closest in price. Empty on any trouble. */
-async function homesNearby(context, l) {
+/** True when a listing is for sale now (owner, 2026-10-26: no pending homes in a strip of homes for sale). */
+const forSale = (x) => x && (!x.status || x.status === "Active");
+const condoLike = (x) => /condo|apartment|townho/i.test(`${x.propertySubType || ""} ${x.propertyType || ""}`);
+
+/**
+ * "Homes like this one for sale": up to 10 other homes for sale now, of the same kind (a condo
+ * for a condo, a house for a house), within about a quarter of its price and a bedroom of its
+ * size, nearest first: around its pin when we have one, else in its subdivision, else its town.
+ * Empty on any trouble.
+ */
+async function homesLike(context, l, where) {
   try {
+    const price = typeof l.listPrice === "number" && l.listPrice > 0 ? l.listPrice : 0;
+    const p = new URLSearchParams({ size: "48", status: "active" });
     const sub = typeof l.subdivision === "string" ? l.subdivision.trim() : "";
-    if (!/^[A-Za-z0-9 .,'&()\/-]{2,80}$/.test(sub)) return "";
-    const p = new URLSearchParams({ subdivision: sub, size: "24" });
+    if (where) { p.set("near", `${where.lat.toFixed(5)},${where.lng.toFixed(5)}`); p.set("miles", "3"); p.set("sort", "nearest"); }
+    else if (/^[A-Za-z0-9 .,'&()\/-]{2,80}$/.test(sub)) p.set("subdivision", sub);
+    else if (l.city && CITIES.includes(l.city)) p.set("city", l.city);
+    else return "";
+    if (price) { p.set("min", String(Math.round(price * 0.75 / 1000) * 1000)); p.set("max", String(Math.round(price * 1.25 / 1000) * 1000)); }
+    if (typeof l.beds === "number" && l.beds > 1) p.set("beds", String(l.beds - 1));
     const r = await crm(context.env, context.request, `/api/idx/listings?${p.toString()}`, { anonymous: true, timeoutMs: 2500 });
-    const ls = r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? r.json.listings.filter((x) => x && x.mlsNumber !== l.mlsNumber) : [];
+    const all = r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? r.json.listings : [];
+    let ls = all.filter((x) => forSale(x) && x.mlsNumber !== l.mlsNumber && safeUrl(x.photo));
+    const same = ls.filter((x) => condoLike(x) === condoLike(l));
+    if (same.length >= 3) ls = same;
     if (ls.length < 3) return "";
-    const price = typeof l.listPrice === "number" ? l.listPrice : 0;
-    const pick = ls.slice().sort((a, b) => Math.abs((a.listPrice || 0) - price) - Math.abs((b.listPrice || 0) - price)).slice(0, 10).sort((a, b) => (a.listPrice || 0) - (b.listPrice || 0));
-    const name = sub.toLowerCase().replace(/\b([a-z])/g, (c) => c.toUpperCase());
-    // The page sits inside the shell's <main id="main">, so the guide pages' strip style applies.
-    return `<div class="hx-strip" data-place="nearby" data-name="${esc(name)}"><p class="hx-s-head"><b>More homes for sale in ${esc(name)}</b></p>`
+    const pick = ls.slice(0, 10);
+    const link = new URLSearchParams(p); link.delete("size"); link.delete("sort");
+    return `<div class="hx-strip" data-place="nearby" data-name="homes like it"><p class="hx-s-head"><b>Homes like this one for sale</b><a href="/homes/?${esc(link.toString())}">See all</a></p>`
       + `<div class="hx-s-row">${pick.map((x) => stripCard(x, false)).join("")}</div></div>`;
   } catch {
     return "";

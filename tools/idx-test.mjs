@@ -246,7 +246,11 @@ check("listing: the firm stays on the listing page", t.includes('<p class="hx-fi
 check("listing: one tour and one ask button, no pop-up (owner, 2026-10-25)", (t.match(/data-interest="tour"/g) || []).length === 1 && (t.match(/data-interest="question"/g) || []).length === 1 && !t.includes("hx-toast") && !t.includes(",5000)"));
 check("listing: the tour form carries the photo for its header, and day choices", /class="hx-tour hx-primary"[^>]*data-photo="https:/.test(t) && t.includes('name="day" value="This weekend"'));
 check("listing: public page shows no locked data (no HOA fee, taxes, remarks, sold price)", !t.includes("AssociationFee") && !t.includes("614") && !t.includes('<p class="hx-remarks">') && !t.includes("Sold price") && t.includes("Free: everything else about this home"));
-check("listing: more homes in the subdivision, closest in price, never this one", t.includes("More homes for sale in Test") && !t.split("More homes for sale in Test")[1].split("hx-disclaimer")[0].includes("/homes/2600005-") && (t.split("More homes for sale in Test")[1].match(/<article class="hx-c">/g) || []).length === 10);
+{
+  const part = t.includes("Homes like this one for sale") ? t.split("Homes like this one for sale")[1].split("hx-disclaimer")[0] : "";
+  const ask = calls.filter((c) => c.url.includes("/api/idx/listings?") && c.url.includes("subdivision=")).pop();
+  check("listing: homes like this one, for sale, about its price and size, never this one (owner, 2026-10-26)", part && !part.includes("/homes/2600005-") && (part.match(/<article class="hx-c">/g) || []).length >= 3 && ask && ask.url.includes("status=active") && ask.url.includes("min=") && ask.url.includes("max="));
+}
 check("listing: blurred tile and photo count open the sign-up", /hx-l-tile hx-blur[^]*?data-hx-signup/.test(t) && t.includes("1 of 20 photos"));
 
 // The search box in plain words (2026-10-25).
@@ -515,6 +519,10 @@ check("search: the HOA select sent with no script still means no HOA", calls.fil
 r = await run(mw, req("/buyers/second-home/"));
 t = await r.text();
 check("place strips: filled, and never asked for cheapest first (owner, 2026-10-26)", (t.match(/data-place="second-home-[a-z-]+"/g) || []).length === 5 && t.includes('class="hx-c"') && !calls.slice(-8).some((c) => c.url.includes("sort=price_asc")));
+r = await run(homes, req("/homes/api/similar?near=33.70000,-78.90000&beds=2"));
+await r.text();
+check("similar: asks for homes for sale only, never pending (owner, 2026-10-26)", calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url.includes("status=active"));
+check("rows: every homes row scrolls by itself, stops for the reader, never with reduced motion", SCRIPT.includes("prefers-reduced-motion") && SCRIPT.includes("requestAnimationFrame") && SCRIPT.includes("MutationObserver"));
 APPLIED = false;
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");

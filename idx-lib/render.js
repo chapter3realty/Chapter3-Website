@@ -374,7 +374,7 @@ main#main .hx-feed-q button:hover{background:#2a3040}
 @media (max-width:560px){main#main .hx-feed-q select{flex:1 1 calc(50% - .5rem);min-width:0}main#main .hx-feed-q button{flex:1 1 100%}}
 .hx-s-note{margin:-.3rem 0 .55rem;font-size:.85rem;color:var(--muted,#5a5f6a)}
 main#main .hx-s-row{display:flex;align-items:flex-start;gap:.75rem;overflow-x:auto;scroll-behavior:auto;scroll-snap-type:x proximity;padding:.15rem .15rem .6rem;margin:0 -.15rem;scrollbar-width:none;-ms-overflow-style:none;cursor:grab;user-select:none;-webkit-user-select:none}
-main#main .hx-s-row::-webkit-scrollbar{display:none}main#main .hx-s-row.hx-dragging{cursor:grabbing;scroll-snap-type:none}
+main#main .hx-s-row::-webkit-scrollbar{display:none}main#main .hx-s-row.hx-dragging{cursor:grabbing;scroll-snap-type:none}main#main .hx-s-row.hx-auto{scroll-snap-type:none}
 main#main .hx-s-all{flex:0 0 40%;max-width:12rem;align-self:stretch;display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;border-radius:16px;font-weight:600;color:var(--navy);background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.75);text-decoration:none}
 @media (min-width:700px){main#main .hx-s-all{flex-basis:18%}}
 </style>`;
@@ -389,13 +389,33 @@ function $(s,r){return (r||document).querySelector(s)}function $$(s,r){return Ar
 function post(u,b){return fetch(u,{method:"POST",headers:{"content-type":"application/json"},credentials:"same-origin",body:JSON.stringify(b)}).then(function(r){return r.json().catch(function(){return{}}).then(function(j){j._status=r.status;return j})})}
 function openD(d){if(!d)return;if(d.showModal)d.showModal();else d.setAttribute("open","")}
 $$("[data-hx-close]").forEach(function(b){b.addEventListener("click",function(){var d=b.closest("dialog");if(d)d.close()})});
-/* Pan the strips with a mouse; a phone swipes them natively. A drag never opens a card. */
-$$(".hx-s-row").forEach(function(row){var down=false,moved=false,x0=0,s0=0;
- row.addEventListener("pointerdown",function(e){if(e.pointerType!=="mouse")return;down=true;moved=false;x0=e.clientX;s0=row.scrollLeft});
+/* Every row of homes scrolls slowly by itself (owner, 2026-10-26), and the reader can still drag it with a
+   mouse or swipe it. It stops while a pointer is over it, while it is touched or has focus, and for a few
+   seconds after the reader moves it; at the end it waits, then goes back to the start. Never with reduced motion. */
+var still=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+function rig(row){if(row.hxRig)return;row.hxRig=1;var down=false,moved=false,x0=0,s0=0,hold=0,over=false,seen=false,pos=row.scrollLeft,wait=0;
+ function rest(ms){hold=Date.now()+ms}
+ row.addEventListener("pointerdown",function(e){rest(5000);if(e.pointerType!=="mouse")return;down=true;moved=false;x0=e.clientX;s0=row.scrollLeft});
  row.addEventListener("pointermove",function(e){if(!down)return;var dx=e.clientX-x0;if(Math.abs(dx)>4){moved=true;row.classList.add("hx-dragging")}row.scrollTo({left:s0-dx,behavior:"instant"})});
- function up(){down=false;setTimeout(function(){row.classList.remove("hx-dragging")},0)}
- row.addEventListener("pointerup",up);row.addEventListener("pointerleave",up);
- row.addEventListener("click",function(e){if(moved){e.preventDefault();e.stopPropagation();moved=false}},true)});
+ function up(){down=false;rest(5000);setTimeout(function(){row.classList.remove("hx-dragging")},0)}
+ row.addEventListener("pointerup",up);row.addEventListener("pointerleave",function(){over=false;up()});
+ row.addEventListener("pointerenter",function(e){if(e.pointerType==="mouse")over=true});
+ row.addEventListener("touchstart",function(){rest(6000)},{passive:true});
+ row.addEventListener("wheel",function(){rest(5000)},{passive:true});
+ row.addEventListener("focusin",function(){rest(8000)});
+ row.addEventListener("click",function(e){if(moved){e.preventDefault();e.stopPropagation();moved=false}},true);
+ if(still||!window.requestAnimationFrame)return;
+ if(window.IntersectionObserver)new IntersectionObserver(function(es){seen=es[0].isIntersecting}).observe(row);else seen=true;
+ var last=0;function step(t){var dt=last?Math.min(64,t-last):16;last=t;
+  if(seen&&!over&&!down&&Date.now()>hold&&!row.contains(document.activeElement)){var max=row.scrollWidth-row.clientWidth;
+   if(max>8){if(Math.abs(row.scrollLeft-pos)>2)pos=row.scrollLeft;
+    if(pos>=max-1){if(!wait)wait=Date.now()+1800;else if(Date.now()>wait){wait=0;pos=0;row.scrollTo({left:0,behavior:"smooth"});rest(1200)}}
+    else{pos=Math.min(max,pos+dt*0.03);row.scrollLeft=pos}}}
+  requestAnimationFrame(step)}
+ /* No snapping on a row that moves by itself: a snap back to a card's edge reads as a jump. */
+ row.classList.add("hx-auto");requestAnimationFrame(step)}
+$$(".hx-s-row").forEach(rig);
+if(window.MutationObserver)new MutationObserver(function(){$$(".hx-s-row").forEach(rig)}).observe(document.body,{childList:true,subtree:true});
 /* The quick filters apply at once; empty choices stay out of the address. The sort menu goes to its link. */
 $$("form[data-hx-instant]").forEach(function(f){f.addEventListener("change",function(){var u=new URLSearchParams();Array.prototype.forEach.call(f.elements,function(el){if(el.name&&el.value)u.set(el.name,el.value)});location.href="/homes/"+(u.toString()?"?"+u.toString():"")})});
 $$("select[data-hx-go]").forEach(function(s){s.addEventListener("change",function(){if(s.value.indexOf("/homes/")===0)location.href=s.value})});
