@@ -292,6 +292,10 @@ function searchParams(q, signed) {
   if (q.get("waterfront") === "1") p.set("waterfront", "1");
   // No HOA (contract §5, CRM ticket 415) and homes near a point, as the article feeds link them.
   if (q.get("hoa") === "0") p.set("hoa", "0");
+  // The filter bar's HOA select, when the form is sent with no script: 0 is no HOA, else a cap.
+  const pick = q.get("hoaPick");
+  if (pick === "0") p.set("hoa", "0");
+  else if (pick && /^\d{1,6}$/.test(pick) && !q.get("hoaMax")) p.set("hoaMax", pick);
   const n = nearOf(q.get("near"), q.get("miles"));
   if (n) { p.set("near", n.near); p.set("miles", n.miles); }
   const sub = (q.get("subdivision") || "").trim();
@@ -543,16 +547,20 @@ async function stripApi(context, url) {
   const r = await crm(context.env, context.request, `/api/idx/listings?${p.toString()}`, { anonymous: true });
   if (r.status !== 200 || !r.json || !r.json.ok || !Array.isArray(r.json.listings)) return json({ ok: false }, r.status === 429 ? 429 : 503);
   const asked = p.get("type");
-  const homes = rankHomes(postFilter(r.json.listings, { yearMin: p.get("yearMin") ? +p.get("yearMin") : 1950, minPhotos: 6 }, { allowTypes: ["land", "manufactured", "multi"].includes(asked) }), "appeal")
+  const allow = ["land", "manufactured", "multi"].includes(asked);
+  // What the reader picked wins over the feeds' bar: land, mobile homes or a low max keep only status and photos.
+  const low = +p.get("max") > 0 && +p.get("max") <= 150000;
+  const homes = rankHomes(postFilter(r.json.listings, { yearMin: p.get("yearMin") ? +p.get("yearMin") : 1950, minPhotos: 6, floors: !(allow || low) }, { allowTypes: allow }), "appeal")
     .filter((l) => safeUrl(l.photo)).slice(0, 10);
   const keep = new URLSearchParams(p); keep.delete("size");
   const link = `/homes/${keep.toString() ? `?${keep.toString()}` : ""}`;
   const total = typeof r.json.total === "number" ? r.json.total : homes.length;
   const html = homes.length
-    ? `${homes.map((l) => stripCard(l, false)).join("")}<a class="hx-s-all" href="${esc(link)}" draggable="false">See all ${esc(total.toLocaleString("en-US"))} homes</a>`
+    // No heart buttons: this answer is cached for everyone, and the page bound its hearts at load (as similar()).
+    ? `${homes.map((l) => stripCard(l, false).replace(/<button type="button" class="hx-heart[\s\S]*?<\/button>/, "")).join("")}<a class="hx-s-all" href="${esc(link)}" draggable="false">See all ${esc(total.toLocaleString("en-US"))} homes</a>`
     : `<p class="hx-s-empty">No homes match those filters right now. <a href="${esc(link)}">Open the full search</a> to widen them.</p>`;
   const L = filterLabels(p);
-  return json({ ok: true, html, total, link, labels: { price: L.price, beds: L.bb, type: L.type, town: L.town, more: L.more } }, 200, { "cache-control": "public, max-age=120" });
+  return json({ ok: true, html, total, link, labels: { price: L.price, beds: L.bb, type: L.type, town: L.town, more: L.more }, note: p.get("hoa") === "0" ? NO_HOA_NOTE : "" }, 200, { "cache-control": "public, max-age=120" });
 }
 
 // ── one listing ─────────────────────────────────────────────────────────────

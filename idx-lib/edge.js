@@ -103,7 +103,7 @@ async function runFeed(env, request, feed) {
   }
   // Narrowed to the quality bar and put in order here, so the "at least 3 homes" check counts what will show.
   const kept = rankHomes(postFilter(out, feed.post, feed), feed.rank);
-  return [kept, Math.max(kept.length, total), meta, applied];
+  return [kept, total, meta, applied];
 }
 
 /** The homes the title promises, in its order (photos first), or spread across the price range. */
@@ -116,15 +116,14 @@ function feedHomes(feed, listings) {
 function feedSection(feed, listings, total, applied) {
   const link = feed.link || "";
   const all = `/homes/${link ? `?${link}` : ""}`;
-  const n = esc(total.toLocaleString("en-US"));
   const head = feed.needs === "has" && !applied && feed.headToday ? feed.headToday : feed.head;
   return `<section class="hx-feed${feed.low ? "" : " hx-feed-top"}"><div class="wrap"><div class="hx-strip hx-feed-strip" data-feed="1">`
     + `<p class="hx-feed-eb">Live from the MLS</p>`
-    + `<p class="hx-s-head"><b class="hx-feed-h">${esc(head)}</b><a href="${esc(all)}">See all ${n}</a></p>`
+    + `<p class="hx-s-head"><b class="hx-feed-h">${esc(head)}</b><a href="${esc(all)}">See all</a></p>`
     + (feed.noHoa ? `<p class="hx-s-note">${NO_HOA_NOTE}</p>` : "")
     + filterBar({ action: "/homes/", params: new URLSearchParams(link), features: applied, compact: true })
     + `<div class="hx-s-row" data-hx-row>${feedHomes(feed, listings).map((l) => stripCard(l, false)).join("")}`
-    + `<a class="hx-s-all" href="${esc(all)}" draggable="false">See all ${n} homes</a></div></div></div></section>`;
+    + `<a class="hx-s-all" href="${esc(all)}" draggable="false">See all homes</a></div></div></div></section>`;
 }
 
 /**

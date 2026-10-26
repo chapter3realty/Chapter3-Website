@@ -9,6 +9,8 @@ import { onRequest as mw } from "../functions/_middleware.js";
 import { onRequest as sitemap } from "../functions/sitemap-homes.xml.js";
 import { placeFeed, placeParams } from "../idx-lib/edge.js";
 import { postFilter, rankHomes } from "../idx-lib/feeds.js";
+import { filterBar } from "../idx-lib/filters.js";
+import { featureList } from "../idx-lib/features.js";
 import { SCRIPT, STYLE } from "../idx-lib/render.js";
 const STYLE_OK = () => STYLE.includes(".hx-dialog form[hidden]{display:none}");
 import { MAP_SCRIPT } from "../idx-lib/map.js";
@@ -314,7 +316,7 @@ check("feed: placed as a section of the article, with the notice and the dialogs
   check("feed: near the top, right under the part with the H1, before the article's first heading", main.indexOf('class="hx-feed') > main.indexOf("<h1") && main.indexOf('class="hx-feed') < main.indexOf("<h2"));
 }
 check("feed: the filter bar on the strip, opened on the feed's own filters, refreshing the strip in place", t.includes('data-hx-strip-fb') && /name="waterfront" value="1" checked/.test(t) && t.includes('data-hx-row'));
-check("feed: See all opens the same search", t.includes('href="/homes/?waterfront=1"'));
+check("feed: See all opens the same search, with no count from other searches", t.includes('href="/homes/?waterfront=1">See all</a>'));
 t = await (await run(mw, req("/buyers/55-plus-communities/"))).text();
 check("feed: a page about several communities searches each of them", ["Del+Webb", "Myrtle+Trace", "Seasons+at+Prince+Creek"].every((w) => calls.slice(-6).some((c) => c.url.includes("subdivision=" + w))) && t.includes("Homes for sale in 55+ communities"));
 t = await (await run(mw, req("/buyers/new-construction/"))).text();
@@ -322,7 +324,7 @@ check("feed: a topic falls back to the newest homes when too few match", t.inclu
 t = await (await run(mw, req("/invest/strategies/dscr-loans/"))).text();
 {
   const prices = [...t.slice(t.indexOf('class="hx-feed')).matchAll(/class="hx-c-price">\$([\d,]+)/g)].map((m) => +m[1].replace(/,/g, ""));
-  check("feed: Top DSCR picks, 3+ bed houses and townhouses in the rental areas, lowest price per bedroom first", t.includes("Top DSCR picks") && prices.length >= 3 && prices.every((v, i) => !i || v >= prices[i - 1]) && calls.slice(-6).some((c) => c.url.includes("type=townhouse") && c.url.includes("beds=3")) && calls.slice(-6).some((c) => c.url.includes("has=long_term_rental_allowed")));
+  check("feed: DSCR picks, 3+ bed houses and townhouses in the rental areas, lowest price per bedroom first", t.includes("DSCR picks, lowest price per bedroom") && prices.length >= 3 && prices.every((v, i) => !i || v >= prices[i - 1]) && calls.slice(-6).some((c) => c.url.includes("type=townhouse") && c.url.includes("beds=3")) && calls.slice(-6).some((c) => c.url.includes("has=long_term_rental_allowed")));
 }
 t = await (await run(mw, req("/buyers/relocating/from-maryland/"))).text();
 check("feed: a moving-from page: Homes people from Maryland love, on the water, with no subtitle", t.includes("Homes people from Maryland love") && !t.includes("Zillow, July") && calls.slice(-5).some((c) => c.url.includes("waterfront=1") && c.url.includes("has=private_dock")));
@@ -479,7 +481,7 @@ r = await run(homes, req("/homes/?has=pool&has=garage&has=evil&yearMin=2010&stat
 t = await r.text();
 {
   const sentF = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
-  check("search: MLS features and ranges reach the CRM, an unknown key drops the list, and the panel offers every feature once the CRM applies them", !sentF.includes("has=") && sentF.includes("yearMin=2010") && sentF.includes("status=active") && t.includes('name="has" value="pool"'));
+  check("search: MLS features and ranges reach the CRM, an unknown key drops alone, and the panel offers every feature once the CRM applies them", sentF.includes("has=pool%2Cgarage&") && sentF.includes("yearMin=2010") && sentF.includes("status=active") && t.includes('name="has" value="pool"'));
 }
 r = await run(homes, req("/homes/?has=pool&has=garage"));
 t = await r.text();
@@ -492,6 +494,24 @@ r = await run(homes, req("/homes/api/strip?type=condo&max=500000&city=Conway"));
   const j = JSON.parse(await r.text());
   check("strip: the strip's homes after a filter change, cards, the count, the search link and the pills' words", j.ok && j.html.includes('class="hx-c"') && j.link.includes("type=condo") && j.labels.type === "Condo" && j.labels.town === "Conway" && j.labels.price === "Up to $500K");
 }
+// Review of v1.7 (2026-10-26): what the reader or the feed picked is kept and obeyed.
+{
+  const fb = filterBar({ params: "min=230000&max=460000&baths=2.5&yearMax=1999&not=flood_zone", features: true, compact: true });
+  check("filters: a feed's own price that is not a step is shown and kept, not dropped on the next change", fb.includes('<option value="230000" selected>') && fb.includes('<option value="460000" selected>') && fb.includes('value="2.5" checked'));
+  check("filters: what has no control (year built up to, features left out) rides along", fb.includes('name="yearMax" value="1999"') && fb.includes('name="not" value="flood_zone"'));
+  check("filters: one unknown feature drops alone; the first 8 known stay", JSON.stringify(featureList(["pool,bogus", "garage"])) === '["pool","garage"]');
+  const y0 = { status: "Active", photo: "https://p/x.jpg", photoCount: 20, listPrice: 380000, sqft: 1800, beds: 3, propertySubType: "SingleFamilyResidence", city: "Conway" };
+  check("feed: a title that names a year shows no home without one", postFilter([y0], { yearMin: 2010, strictYear: true }).length === 0 && postFilter([y0], { yearMin: 2010 }).length === 1);
+  check("feed: land or a low price the reader asked for keeps only status and photos", postFilter([{ ...y0, propertySubType: "UnimprovedLand", listPrice: 40000, sqft: 0 }], { floors: false }, { allowTypes: true }).length === 1);
+}
+r = await run(homes, req("/homes/api/strip?hoa=0&city=Conway"));
+{
+  const j = JSON.parse(await r.text());
+  check("strip: a no-HOA refresh brings its source note, and no heart buttons in the cached answer", j.ok && j.note === "No HOA, as listed by the listing agent. Confirm before you buy." && !j.html.includes('class="hx-heart'));
+}
+r = await run(homes, req("/homes/?hoaPick=0&city=Conway"));
+await r.text();
+check("search: the HOA select sent with no script still means no HOA", calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url.includes("hoa=0"));
 APPLIED = false;
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");

@@ -47,7 +47,7 @@ const RENTAL_Q = [
   { type: "townhouse", status: "active", city: "Myrtle Beach", beds: "3", min: "220000", max: "400000", yearMin: "2005", has: "long_term_rental_allowed" },
 ];
 const RENTAL = { head: "Top long-term rental picks", q: RENTAL_Q, post: { yearMin: 2000, minSqft: 1300 }, rank: "rental", link: "beds=3&min=230000&max=460000" };
-const DSCR = { head: "Top DSCR picks", q: RENTAL_Q, post: { yearMin: 2000, minSqft: 1300 }, rank: "ppb", link: "beds=3&min=230000&max=460000" };
+const DSCR = { head: "DSCR picks, lowest price per bedroom", q: RENTAL_Q, post: { yearMin: 2000, minSqft: 1300 }, rank: "ppb", link: "beds=3&min=230000&max=460000" };
 /* Short-term rentals: condos in the beach towns' resort areas, in buildings that allow them. */
 const VACATION = {
   head: "Prime vacation-rental condos", headToday: "Waterfront condos in Myrtle Beach and North Myrtle Beach",
@@ -57,12 +57,12 @@ const VACATION = {
 };
 const OCEAN_UNITS = { ...VACATION, head: "Oceanfront condo picks", headToday: VACATION.headToday, q: towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", waterfront: "1", min: "160000", max: "600000", yearMin: "1980", has: "oceanfront_unit" }), post: { yearMin: 1980 } };
 const MULTI = { head: "Duplexes, triplexes and fourplexes", q: [{ type: "multi", status: "active", min: "250000" }], allowTypes: true, link: "type=multi", fallback: RENTAL };
-const NEWER = { head: "Brand-new homes", q: towns(["Myrtle Beach", "Conway", "Little River", "Longs", "North Myrtle Beach"], H({ min: "280000", has: "new_construction" })), post: { builtWithin: 2 }, link: "type=house", fallback: NEWEST };
-const SINCE_2010 = { head: "Newer homes, built 2010 or later", q: towns(["Myrtle Beach", "Conway", "Little River", "Murrells Inlet", "North Myrtle Beach"], H({ min: "280000", yearMin: "2010", not: "flood_zone" })), post: { yearMin: 2010 }, link: "type=house", fallback: NEWEST };
+const NEWER = { head: "Brand-new homes", q: towns(["Myrtle Beach", "Conway", "Little River", "Longs", "North Myrtle Beach"], H({ min: "280000", has: "new_construction" })), post: { builtWithin: 2, strictYear: true }, link: "type=house", fallback: NEWEST };
+const SINCE_2010 = { head: "Newer homes, built 2010 or later", q: towns(["Myrtle Beach", "Conway", "Little River", "Murrells Inlet", "North Myrtle Beach"], H({ min: "280000", yearMin: "2010", not: "flood_zone" })), post: { yearMin: 2010, strictYear: true }, link: "type=house", fallback: NEWEST };
 /* Value-add: solid older houses in established towns, never the $50,000 shells. */
 const VALUE_ADD = { head: "Value-add picks", q: towns(["Myrtle Beach", "Surfside Beach", "North Myrtle Beach", "Conway", "Murrells Inlet"], H({ min: "170000", max: "340000", yearMin: "1975", yearMax: "1999" })), post: { yearMin: 1975, yearMax: 1999, minSqft: 1100 }, rank: "ppb", link: "type=house&min=170000&max=340000", fallback: RENTAL };
 const FIFTY_FIVE = { head: "Homes for sale in 55+ communities", q: [{ subdivision: "Del Webb", status: "active" }, { subdivision: "Myrtle Trace", status: "active" }, { subdivision: "Seasons at Prince Creek", status: "active" }], post: { minPhotos: 6 }, link: "subdivision=Del%20Webb" };
-const GOLF = { head: "Golf community homes", q: [H({ subdivision: "Barefoot", has: "golf_community" }), H({ subdivision: "Grande Dunes" }), H({ subdivision: "Prestwick" }), H({ subdivision: "Tidewater" }), H({ subdivision: "Carolina Forest", has: "on_golf_course" })], link: "" };
+const GOLF = { head: "Golf community homes", q: [H({ subdivision: "Barefoot", has: "golf_community" }), H({ subdivision: "Grande Dunes" }), H({ subdivision: "Prestwick" }), H({ subdivision: "Tidewater" })], link: "" };
 const WATER = { head: "Waterfront homes for sale", q: towns(["Murrells Inlet", "Little River", "North Myrtle Beach", "Myrtle Beach", "Pawleys Island"], H({ waterfront: "1", min: "400000" })), link: "waterfront=1" };
 const BIG = { head: "Homes with 4 or more bedrooms", q: towns(["Myrtle Beach", "Conway", "Murrells Inlet", "Little River", "North Myrtle Beach"], H({ beds: "4", min: "350000", yearMin: "2000" })), post: { yearMin: 2000 }, link: "type=house&beds=4" };
 const COMPETITION = { head: "Your competition: homes for sale now", q: NEWEST.q, link: "" };
@@ -246,6 +246,8 @@ export function postFilter(listings, post = {}, feed = {}) {
   const yearMin = post.builtWithin ? new Date().getUTCFullYear() - post.builtWithin + 1 : post.yearMin ?? QUALITY.yearMin;
   const minPhotos = post.minPhotos ?? QUALITY.minPhotos;
   const minSqft = post.minSqft ?? QUALITY.minSqft;
+  // floors: false (the reader asked for land, mobile homes or a low price): only status and photos.
+  const floors = post.floors !== false;
   return listings.filter((l) => {
     if (!l) return false;
     if (l.status && l.status !== "Active") return false;
@@ -253,11 +255,13 @@ export function postFilter(listings, post = {}, feed = {}) {
     const condo = isType(l, /condo|apartment/i);
     if (!feed.allowTypes && isType(l, /land|lot|farm|manufactured|mobile/i)) return false;
     const price = num(l.listPrice) ? l.listPrice : null;
-    if (price !== null && price < (condo ? QUALITY.minPriceCondo : QUALITY.minPrice)) return false;
+    if (floors && price !== null && price < (condo ? QUALITY.minPriceCondo : QUALITY.minPrice)) return false;
+    // A title that names a year (strictYear) shows no home without one.
+    if (post.strictYear && !num(l.yearBuilt)) return false;
     if (num(l.yearBuilt) && l.yearBuilt < yearMin) return false;
     if (post.yearMax !== undefined && num(l.yearBuilt) && l.yearBuilt > post.yearMax) return false;
-    if (!condo && num(l.sqft) && l.sqft < minSqft) return false;
-    if (price !== null && num(l.sqft) && l.sqft > 0) {
+    if (floors && !condo && num(l.sqft) && l.sqft < minSqft) return false;
+    if (floors && price !== null && num(l.sqft) && l.sqft > 0) {
       const ppsf = price / l.sqft;
       if (ppsf < QUALITY.ppsfMin || ppsf > QUALITY.ppsfMax) return false;
     }

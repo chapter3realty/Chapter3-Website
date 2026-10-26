@@ -327,5 +327,6 @@ export const FEATURE_LABEL = Object.fromEntries(FEATURE_GROUPS.flatMap((g) => g.
 /** Up to 8 known keys from "a,b" or several values, or [] when any is unknown. */
 export function featureList(values) {
   const keys = [...new Set(values.flatMap((v) => String(v || "").split(",")).map((k) => k.trim()).filter(Boolean))];
-  return keys.length <= 8 && keys.every((k) => FEATURE_KEYS.includes(k)) ? keys : [];
+  // An unknown key is dropped on its own; the first 8 known keys stay.
+  return keys.filter((k) => FEATURE_KEYS.includes(k)).slice(0, 8);
 }
