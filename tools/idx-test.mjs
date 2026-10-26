@@ -30,6 +30,7 @@ let BIG = false;
 let sent2 = "";
 let HANG = false;
 let INVALID = false;
+let INVALID_TS = false;
 globalThis.fetch = async (input, init = {}) => {
   const u = new URL(typeof input === "string" ? input : input.url);
   calls.push({ url: u.toString(), init });
@@ -74,6 +75,7 @@ globalThis.fetch = async (input, init = {}) => {
   }
   if (u.pathname === "/api/idx/hearts" && (init.method || "GET") === "GET") return J({ ok: true, visitor: "valid", hearts: ["2600001"] });
   if (u.pathname === "/api/idx/register") {
+    if (INVALID_TS) return J({ ok: false, error: "invalid", field: "turnstileToken", message: "x" }, 400);
     const b = JSON.parse(init.body);
     if (!b.termsAccepted) return J({ ok: false, error: "invalid", field: "termsAccepted", message: "x" }, 400);
     return J({ ok: true, token: DEV_TOKEN, dryRun: true });
@@ -453,6 +455,17 @@ t = await (await run(mw, req("/invest/strategies/dscr-loans/"))).text();
 check("feed: a feed that promises an order asks the CRM for the lowest prices first, and See all keeps it", calls.slice(-3).every((c) => c.url.includes("sort=price_asc")) && t.includes("sort=price_asc"));
 t = await (await run(homes, req("/homes/2611111/"))).text();
 check("listing: no Analyze it as a rental on a home whose address is withheld", !t.includes('class="hx-analyze"'));
+
+check("sign-up: the full name splits on spaces (a template string had eaten the \\s)", !SCRIPT.includes("split(/s+/)") && SCRIPT.includes('split(" ").filter(Boolean)'));
+{
+  const saved = INVALID_TS; INVALID_TS = true;
+  r = await run(homes, post("/homes/api/register", { firstName: "Chapter3", lastName: "Realty", email: "a@b.com", phone: "8543332135", termsAccepted: true, page: "/homes/" }), { ...ENV, TURNSTILE_SITE_KEY: undefined });
+  const j1 = JSON.parse(await r.text());
+  r = await run(homes, post("/homes/api/register", { firstName: "Chapter3", lastName: "Realty", email: "a@b.com", phone: "8543332135", termsAccepted: true, page: "/homes/" }));
+  const j2 = JSON.parse(await r.text());
+  INVALID_TS = saved;
+  check("sign-up: with no Turnstile widget on the site, the message says sign-up is not on yet, not \"complete the check\"", /not switched on yet/.test(j1.message) && /complete the check/.test(j2.message));
+}
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");
 process.exit(fails ? 1 : 0);

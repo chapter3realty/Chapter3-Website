@@ -407,7 +407,7 @@ if(sf){var tb=sf.elements.termsAccepted,sb=sf.querySelector("button[type=submit]
  sf.addEventListener("submit",function(e){e.preventDefault();var err=sf.querySelector(".hx-error");err.hidden=true;sb.disabled=true;
   var prior=[];try{prior=JSON.parse(localStorage.getItem("c3_idx_prior")||"[]")}catch(x){}
   var t=sf.querySelector("[name=cf-turnstile-response]");
-  var nm=sf.elements.name.value.trim().split(/\s+/),first=nm.shift()||"",last=nm.join(" ");
+  var nm=sf.elements.name.value.trim().split(" ").filter(Boolean),first=nm.shift()||"",last=nm.join(" ");
   if(!last){err.textContent="Please enter your first and last name.";err.hidden=false;sb.disabled=!tb.checked;sf.elements.name.focus();return}
   post("/homes/api/register",{firstName:first,lastName:last,email:sf.elements.email.value,phone:sf.elements.phone.value,
    termsAccepted:tb.checked,smsConsent:sf.elements.smsConsent.checked,website:sf.elements.website.value,page:location.pathname,priorViews:prior,turnstileToken:t?t.value:""})

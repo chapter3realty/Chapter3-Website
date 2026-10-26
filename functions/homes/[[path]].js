@@ -154,7 +154,7 @@ async function claimApi(context) {
   const page = typeof b.page === "string" && b.page.startsWith("/homes") ? b.page.slice(0, 200) : "/homes/";
   const r = await postClaim(context, { k: b.k, termsAccepted: true, termsVersion: TERMS_VERSION, termsText: termsText(), page });
   if (r.status === 200 && r.json && r.json.ok && typeof r.json.token === "string") return json({ ok: true }, 200, { "set-cookie": setCookie(r.json.token) });
-  if (r.status === 400 && r.json && r.json.error === "invalid") return json({ ok: false, field: r.json.field, message: FIELD_WORDS[r.json.field] || "Please check the form." }, 400);
+  if (r.status === 400 && r.json && r.json.error === "invalid") return json({ ok: false, field: r.json.field, message: fieldWord(context.env, r.json.field) }, 400);
   return json({ ok: false, error: "link_expired" });
 }
 
@@ -171,7 +171,7 @@ async function returning(context) {
   });
   if (r.status === 200 && r.json && r.json.ok && typeof r.json.token === "string") return json({ ok: true }, 200, { "set-cookie": setCookie(r.json.token) });
   if (r.status === 200 && r.json && r.json.error === "not_found") return json({ ok: false, notFound: true });
-  if (r.status === 400 && r.json && r.json.error === "invalid") return json({ ok: false, field: r.json.field, message: FIELD_WORDS[r.json.field] || "Please check the form." }, 400);
+  if (r.status === 400 && r.json && r.json.error === "invalid") return json({ ok: false, field: r.json.field, message: fieldWord(context.env, r.json.field) }, 400);
   if (r.status === 429) return json({ ok: false, message: "Too many tries, please wait a minute." }, 429);
   return json({ ok: false, message: `Sign-in is unavailable right now. Please call ${PHONE}.` }, 503);
 }
@@ -715,6 +715,9 @@ function termsPage(context, gate) {
 // ── data back to the CRM (contract §7) ──────────────────────────────────────
 
 const FIELD_WORDS = { phone: "Please check your phone number.", termsText: "Please reload the page and try again.", name: "Please enter your first and last name.", email: "Please check your email.", phone: "Please check your phone number.", termsAccepted: "Please tick the box to accept the terms.", turnstileToken: "Please complete the check above the button." };
+/* The CRM refuses a live sign-up without a Turnstile token. With no widget on the page (no
+   TURNSTILE_SITE_KEY yet), "complete the check" points at nothing: say what is true instead. */
+const fieldWord = (env, field) => (field === "turnstileToken" && !env.TURNSTILE_SITE_KEY ? `Sign-up is not switched on yet. Please call ${PHONE} and we will get you in.` : FIELD_WORDS[field] || "Please check the form.");
 
 async function register(context) {
   const { request, env } = context;
@@ -737,7 +740,7 @@ async function register(context) {
   if (r.status === 200 && r.json && r.json.ok) {
     return json({ ok: true }, 200, r.json.token ? { "set-cookie": setCookie(r.json.token) } : {});
   }
-  if (r.status === 400 && r.json && r.json.error === "invalid") return json({ ok: false, field: r.json.field, message: FIELD_WORDS[r.json.field] || "Please check the form." }, 400);
+  if (r.status === 400 && r.json && r.json.error === "invalid") return json({ ok: false, field: r.json.field, message: fieldWord(context.env, r.json.field) }, 400);
   if (r.status === 429) return json({ ok: false, message: "Too many tries, please wait a minute." }, 429);
   return json({ ok: false, message: `Sign-up is unavailable right now. Please call ${PHONE}.` }, 503);
 }
