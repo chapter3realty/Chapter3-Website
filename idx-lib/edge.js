@@ -6,7 +6,7 @@
  * 2. A guide page's homes strips are filled. A page carries empty slots,
  *    <div class="hx-strip" data-place="<slug>" data-name="<Name>"></div> (Blog-Brain
  *    tools/glass.js homes()), one per community, where the community's photo was. Each slot
- *    gets one row that pans sideways: up to 10 homes spread across the place's price range,
+ *    gets one row that pans sideways: up to 10 homes, the most appealing first (never by price),
  *    photos first, each a photo, the price and the listing firm, then "See all N homes".
  *    A place with fewer than 3 homes keeps its empty slot, and the page shows the place's
  *    photo instead. If the MLS copy is stale (503), no listings show at all (CCMLS 16.7).
@@ -54,18 +54,10 @@ export function placeParams(q) {
   return p;
 }
 
-/** Up to n homes across the price range: lowest, highest and evenly between, photos first. */
-export function spread(listings, n = STRIP_CARDS) {
-  const withPhoto = listings.filter((l) => safeUrl(l.photo));
-  const pool = (withPhoto.length >= STRIP_MIN ? withPhoto : listings).slice().sort((a, b) => (a.listPrice || 0) - (b.listPrice || 0));
-  if (pool.length <= n) return pool;
-  const out = [];
-  for (let i = 0; i < n; i++) out.push(pool[Math.round((i * (pool.length - 1)) / (n - 1))]);
-  return [...new Set(out)];
-}
-
 /** Required wherever homes are shown as having no HOA (CRM ticket 415): where that fact comes from. */
 export const NO_HOA_NOTE = "No HOA, as listed by the listing agent. Confirm before you buy.";
+
+const PLACE_BAR = { minPhotos: 6, yearMin: 1800, minSqft: 0 };
 
 function strip(slug, name, listings, total, noHoa) {
   const all = `/homes/near/${slug}/`;
@@ -73,7 +65,7 @@ function strip(slug, name, listings, total, noHoa) {
   const n = typeof total === "number" ? total : listings.length;
   return `<p class="hx-s-head"><b>Homes for sale in ${name} now</b><a href="${all}">See all ${esc(String(n))}</a></p>`
     + (noHoa ? `<p class="hx-s-note">${NO_HOA_NOTE}</p>` : "")
-    + `<div class="hx-s-row">${spread(listings).map((l) => stripCard(l, false)).join("")}`
+    + `<div class="hx-s-row">${listings.filter((l) => safeUrl(l.photo)).slice(0, STRIP_CARDS).map((l) => stripCard(l, false)).join("")}`
     + `<a class="hx-s-all" href="${all}" draggable="false">See all ${esc(String(n))} homes in ${name}</a></div>`;
 }
 
@@ -106,7 +98,7 @@ async function runFeed(env, request, feed) {
   return [kept, total, meta, applied];
 }
 
-/** The homes the title promises, in its order (photos first), or spread across the price range. */
+/** The homes the title promises, in its order, photos first. */
 function feedHomes(feed, listings) {
   // Already narrowed and in order (runFeed): the first STRIP_CARDS with a photo.
   return listings.filter((l) => safeUrl(l.photo)).slice(0, STRIP_CARDS);
@@ -214,7 +206,6 @@ export async function withIdx(context, response) {
     const calls = Promise.all(slugs.map((s) => {
       const p = placeParams(PLACES[s].q);
       if (!p) return null;
-      p.set("sort", "price_asc");
       p.set("size", "48");
       return crm(env, request, `/api/idx/listings?${p.toString()}`, { anonymous: true, timeoutMs: STRIP_BUDGET_MS - 500 }).catch(() => null);
     }));
@@ -229,7 +220,9 @@ export async function withIdx(context, response) {
     let meta = null;
     slugs.forEach((s, i) => {
       const r = answers[i];
-      const ls = r && r.status === 200 && r.json && r.json.ok ? r.json.listings || [] : [];
+      // The same bar and order as the feeds (owner, 2026-10-26: never "the cheapest dump" first), with no
+      // year or size floor: a place's older houses and small beach cottages are what its page is about.
+      const ls = r && r.status === 200 && r.json && r.json.ok ? rankHomes(postFilter(r.json.listings || [], PLACE_BAR), "appeal") : [];
       if (ls.length >= STRIP_MIN) { filled.set(s, [ls, r.json.total]); meta = meta || r.json.meta; }
     });
     if (!filled.size) return new Response(html, { status: 200, headers });

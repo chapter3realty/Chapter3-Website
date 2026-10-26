@@ -579,5 +579,55 @@ export const PLACES = {
   "pages": [
    "/buyers/affordable-places-to-live/"
   ]
+ },
+ "second-home-north-myrtle-beach": {
+  "name": "North Myrtle Beach",
+  "q": {
+   "near": "33.82231,-78.67907",
+   "miles": 3
+  },
+  "pages": [
+   "/buyers/second-home/"
+  ]
+ },
+ "second-home-myrtle-beach-oceanfront": {
+  "name": "Myrtle Beach oceanfront",
+  "q": {
+   "near": "33.69379,-78.87788",
+   "miles": 1.5
+  },
+  "pages": [
+   "/buyers/second-home/"
+  ]
+ },
+ "second-home-garden-city-beach": {
+  "name": "Garden City Beach",
+  "q": {
+   "near": "33.57659,-78.99876",
+   "miles": 1.5
+  },
+  "pages": [
+   "/buyers/second-home/"
+  ]
+ },
+ "second-home-murrells-inlet": {
+  "name": "Murrells Inlet",
+  "q": {
+   "near": "33.55664,-79.03429",
+   "miles": 1.5
+  },
+  "pages": [
+   "/buyers/second-home/"
+  ]
+ },
+ "second-home-pawleys-island": {
+  "name": "Pawleys Island",
+  "q": {
+   "near": "33.43324,-79.12137",
+   "miles": 2
+  },
+  "pages": [
+   "/buyers/second-home/"
+  ]
  }
 };

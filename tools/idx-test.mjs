@@ -512,6 +512,9 @@ r = await run(homes, req("/homes/api/strip?hoa=0&city=Conway"));
 r = await run(homes, req("/homes/?hoaPick=0&city=Conway"));
 await r.text();
 check("search: the HOA select sent with no script still means no HOA", calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url.includes("hoa=0"));
+r = await run(mw, req("/buyers/second-home/"));
+t = await r.text();
+check("place strips: filled, and never asked for cheapest first (owner, 2026-10-26)", (t.match(/data-place="second-home-[a-z-]+"/g) || []).length === 5 && t.includes('class="hx-c"') && !calls.slice(-8).some((c) => c.url.includes("sort=price_asc")));
 APPLIED = false;
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");
