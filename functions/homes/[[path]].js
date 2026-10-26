@@ -18,6 +18,9 @@ import { COOKIE as COOKIE_NAME, PREVIEW_COOKIE, clearCookie, crm, idxOn, sameOri
 import { PLACES } from "../../idx-lib/places.js";
 import { NO_HOA_NOTE, placeParams } from "../../idx-lib/edge.js";
 import { CITIES, readQuery } from "../../idx-lib/query.js";
+import { FEATURE_LABEL, featureList } from "../../idx-lib/features.js";
+import { filterBar, labels as filterLabels } from "../../idx-lib/filters.js";
+import { postFilter, rankHomes } from "../../idx-lib/feeds.js";
 import { MAP_SCRIPT, MAP_STYLE, geocode, mapsKey, nearOf, pinOf, withPoints } from "../../idx-lib/map.js";
 import { SMS_CONSENT_TEXT, TERMS_PARAGRAPHS, TERMS_TITLE, TERMS_VERSION, termsText } from "../../idx-lib/terms.js";
 import {
@@ -69,6 +72,7 @@ async function handle(context) {
     if (name === "map" && (request.method === "GET" || request.method === "HEAD")) return mapData(context, url);
     if (name === "lookup" && request.method === "GET") return lookup(context, url);
     if (name === "similar" && request.method === "GET") return similar(context, url);
+    if (name === "strip" && request.method === "GET") return stripApi(context, url);
     if (request.method !== "POST") return json({ ok: false, error: "method" }, 405);
     if (!sameOrigin(request)) return json({ ok: false, error: "forbidden" }, 403);
     if (name === "signout") return new Response(null, { status: 303, headers: { Location: "/homes/", "Set-Cookie": clearCookie(), "Cache-Control": "no-store" } });
@@ -292,6 +296,13 @@ function searchParams(q, signed) {
   if (n) { p.set("near", n.near); p.set("miles", n.miles); }
   const sub = (q.get("subdivision") || "").trim();
   if (/^[A-Za-z0-9 .,'&()\/-]{2,80}$/.test(sub)) p.set("subdivision", sub);
+  // The MLS features and ranges (CRM branch website/idx-filters; an older CRM ignores them).
+  for (const name of ["has", "not"]) { const keys = featureList(q.getAll(name)); if (keys.length) p.set(name, keys.join(",")); }
+  for (const [name, lo, hi] of [["yearMin", 1800, 2100], ["yearMax", 1800, 2100], ["hoaMax", 0, 100000], ["garage", 1, 10], ["domMax", 0, 10000]]) {
+    const v = q.get(name); if (v && /^\d{1,6}$/.test(v) && +v >= lo && +v <= hi) p.set(name, v);
+  }
+  const lot = q.get("lotMin"); if (lot && /^\d{1,4}(\.\d{1,3})?$/.test(lot)) p.set("lotMin", lot);
+  if (q.get("status") === "active") p.set("status", "active");
   if (signed && q.get("sold") === "1") p.set("sold", "1");
   const sort = q.get("sort");
   if (sort && (["newest", "price_asc", "price_desc"].includes(sort) || (sort === "nearest" && n))) p.set("sort", sort);
@@ -306,11 +317,20 @@ const title = (v) => String(v).toLowerCase().replace(/\b([a-z])/g, (c) => c.toUp
 function appliedChips(p) {
   const label = { city: (v) => v, zip: (v) => v, type: (v) => TYPE_WORD[v], min: (v) => `From ${money(+v)}`, max: (v) => `Up to ${money(+v)}`,
     beds: (v) => `${v}+ beds`, baths: (v) => `${v}+ baths`, sqft: (v) => `${(+v).toLocaleString("en-US")}+ sq ft`, waterfront: () => "Waterfront", subdivision: (v) => title(v), sold: () => "Sold",
-    hoa: () => "No HOA", near: () => `Within ${p.get("miles")} miles` };
+    hoa: () => "No HOA", near: () => `Within ${p.get("miles")} miles`,
+    yearMin: (v) => `Built ${v}+`, yearMax: (v) => `Built by ${v}`, lotMin: (v) => `${v}+ acres`, hoaMax: (v) => `HOA up to ${money(+v)}`, garage: (v) => `${v}+ car garage`,
+    domMax: (v) => `Listed in the last ${v} days`, status: () => "For sale only" };
   const chips = [...p.keys()].filter((k) => label[k]).map((k) => {
     const x = new URLSearchParams(p); x.delete(k); x.delete("page"); x.delete("size"); if (k === "near") { x.delete("miles"); if (x.get("sort") === "nearest") x.delete("sort"); }
     return `<a class="hx-applied-chip" href="${esc(`/homes/${x.toString() ? `?${x.toString()}` : ""}`)}" aria-label="Remove ${esc(label[k](p.get(k)))}">${esc(label[k](p.get(k)))}<span aria-hidden="true">&times;</span></a>`;
   });
+  for (const name of ["has", "not"]) for (const key of (p.get(name) || "").split(",").filter(Boolean)) {
+    const x = new URLSearchParams(p); x.delete("page"); x.delete("size");
+    const rest = (p.get(name) || "").split(",").filter((y) => y && y !== key);
+    if (rest.length) x.set(name, rest.join(",")); else x.delete(name);
+    const word = `${name === "not" ? "No " : ""}${FEATURE_LABEL[key] || key}`;
+    chips.push(`<a class="hx-applied-chip" href="${esc(`/homes/${x.toString() ? `?${x.toString()}` : ""}`)}" aria-label="Remove ${esc(word)}">${esc(word)}<span aria-hidden="true">&times;</span></a>`);
+  }
   return chips.length ? `<div class="hx-applied">${chips.join("")}<a class="hx-clear" href="/homes/">Clear all</a></div>` : "";
 }
 
@@ -332,21 +352,8 @@ async function searchPage(context, url, gate, anonymous = false) {
   if (!anonymous && badToken(r)) return publicView(context, (c) => searchPage(c, url, gate, true));
   if (r.status !== 200 || !r.json || !r.json.ok) return trouble(context, gate, r, "Grand Strand homes for sale");
   const j = r.json;
-  const priceOpts = (lead) => [["", lead], ...PRICES.map((v) => [String(v), money(v)])];
-  const hidden = ["zip", "sqft", "subdivision"].filter((k) => p.get(k)).map((k) => `<input type="hidden" name="${k}" value="${esc(p.get(k))}">`).join("");
-  const form = `<form class="hx-search" method="get" action="/homes/" role="search">
-<div class="hx-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input name="q" type="search" enterkeyhint="search" autocomplete="off" maxlength="200" aria-label="Search homes" placeholder="Try &quot;3 bed in Conway under $400k&quot;"><button type="submit">Search</button></div>
-</form>
-<form class="hx-chips" method="get" action="/homes/" data-hx-instant>${hidden}
-${select("city", "Town", [["", "Any town"], ...CITIES.map((c) => [c, c])], p.get("city"))}
-${select("type", "Type", TYPES, p.get("type"))}
-${select("min", "Min price", priceOpts("Min price"), p.get("min"))}
-${select("max", "Max price", priceOpts("Max price"), p.get("max"))}
-${select("beds", "Beds", [["", "Beds"], ["1", "1+ beds"], ["2", "2+ beds"], ["3", "3+ beds"], ["4", "4+ beds"], ["5", "5+ beds"]], p.get("beds"))}
-${select("baths", "Baths", [["", "Baths"], ["1", "1+ baths"], ["2", "2+ baths"], ["3", "3+ baths"]], p.get("baths"))}
-${select("waterfront", "Water", [["", "Any water"], ["1", "Waterfront"]], p.get("waterfront"))}
-${j.tier === "registered" ? select("sold", "Show", [["", "For sale"], ["1", "Sold, last 24 months"]], p.get("sold")) : ""}
-<noscript><button class="hx-chip" type="submit">Apply</button></noscript></form>`;
+  // The filter bar (idx-lib/filters.js); the MLS features only when this CRM applies them.
+  const form = filterBar({ action: "/homes/", params: p, features: Array.isArray(j.applied) });
   const pageNo = Number.isInteger(j.page) && j.page > 0 ? j.page : 1;
   const pages = Math.min(100, Math.max(1, Math.ceil((j.total || 0) / (j.pageSize || 24))));
   const link = (n) => { const x = new URLSearchParams(p); x.delete("size"); x.set("page", String(n)); return `/homes/?${x.toString()}`; };
@@ -522,6 +529,30 @@ async function similar(context, url) {
   const html = `${STYLE}${STRIP_STYLE}<div class="hx-strip"><p class="hx-s-head"><b>Homes like it for sale nearby</b><a href="${esc(all)}">See all</a></p>`
     + `<div class="hx-s-row">${cards}<a class="hx-s-all" href="${esc(all)}" draggable="false">See all homes nearby</a></div>${disclaimer(got.meta)}</div>`;
   return json({ ok: true, html }, 200, { "cache-control": "public, max-age=300" });
+}
+
+/**
+ * GET /homes/api/strip?<filters>: an article strip's homes after its filter bar changed
+ * (idx-lib/filters.js), without leaving the article. The same validated filters as /homes/,
+ * the same quality bar and order as the feeds (no land or mobile homes unless asked for,
+ * never the cheapest first). Cards only, the strip's own notice is already on the page.
+ */
+async function stripApi(context, url) {
+  const p = searchParams(url.searchParams, false);
+  p.delete("page"); p.set("size", "48");
+  const r = await crm(context.env, context.request, `/api/idx/listings?${p.toString()}`, { anonymous: true });
+  if (r.status !== 200 || !r.json || !r.json.ok || !Array.isArray(r.json.listings)) return json({ ok: false }, r.status === 429 ? 429 : 503);
+  const asked = p.get("type");
+  const homes = rankHomes(postFilter(r.json.listings, { yearMin: p.get("yearMin") ? +p.get("yearMin") : 1950, minPhotos: 6 }, { allowTypes: ["land", "manufactured", "multi"].includes(asked) }), "appeal")
+    .filter((l) => safeUrl(l.photo)).slice(0, 10);
+  const keep = new URLSearchParams(p); keep.delete("size");
+  const link = `/homes/${keep.toString() ? `?${keep.toString()}` : ""}`;
+  const total = typeof r.json.total === "number" ? r.json.total : homes.length;
+  const html = homes.length
+    ? `${homes.map((l) => stripCard(l, false)).join("")}<a class="hx-s-all" href="${esc(link)}" draggable="false">See all ${esc(total.toLocaleString("en-US"))} homes</a>`
+    : `<p class="hx-s-empty">No homes match those filters right now. <a href="${esc(link)}">Open the full search</a> to widen them.</p>`;
+  const L = filterLabels(p);
+  return json({ ok: true, html, total, link, labels: { price: L.price, beds: L.bb, type: L.type, town: L.town, more: L.more } }, 200, { "cache-control": "public, max-age=120" });
 }
 
 // ── one listing ─────────────────────────────────────────────────────────────

@@ -8,7 +8,7 @@ import { onRequest as homes } from "../functions/homes/[[path]].js";
 import { onRequest as mw } from "../functions/_middleware.js";
 import { onRequest as sitemap } from "../functions/sitemap-homes.xml.js";
 import { placeFeed, placeParams } from "../idx-lib/edge.js";
-import { postFilter } from "../idx-lib/feeds.js";
+import { postFilter, rankHomes } from "../idx-lib/feeds.js";
 import { SCRIPT, STYLE } from "../idx-lib/render.js";
 const STYLE_OK = () => STYLE.includes(".hx-dialog form[hidden]{display:none}");
 import { MAP_SCRIPT } from "../idx-lib/map.js";
@@ -31,6 +31,7 @@ let sent2 = "";
 let HANG = false;
 let INVALID = false;
 let INVALID_TS = false;
+let APPLIED = false;
 globalThis.fetch = async (input, init = {}) => {
   const u = new URL(typeof input === "string" ? input : input.url);
   calls.push({ url: u.toString(), init });
@@ -64,7 +65,7 @@ globalThis.fetch = async (input, init = {}) => {
     const sub = u.searchParams.get("subdivision"), near = u.searchParams.get("near");
     const n = BIG ? 4041 : sub === "Tidewater" ? 2 : sub || near ? 14 : 30;
     const ls = Array.from({ length: Math.min(n, 48) }, (_, i) => mk(i + 48 * ((+u.searchParams.get("page") || 1) - 1), near ? { miles: 0.4 } : {}));
-    return J({ ok: true, tier, visitor: auth ? "valid" : "none", meta: META, listings: ls.slice(0, +u.searchParams.get("size") || 24), total: n, page: 1, pageSize: 24 });
+    return J({ ok: true, tier, visitor: auth ? "valid" : "none", meta: META, ...(APPLIED ? { applied: ["has"].filter((x) => u.searchParams.has(x)) } : {}), listings: ls.slice(0, +u.searchParams.get("size") || 24), total: n, page: 1, pageSize: 24 });
   }
   const one = /^\/api\/idx\/listings\/(\w+)$/.exec(u.pathname);
   if (one) {
@@ -261,7 +262,7 @@ check("search: the filters in force are chips that remove themselves", t.include
 check("search: the title names the town", t.includes("<h1>Homes for sale in Conway</h1>"));
 check("search: quick filters apply at once, a sort menu, a search box", t.includes("data-hx-instant") && t.includes("data-hx-go") && t.includes('name="q"'));
 
-check("page script: it parses (a syntax error would break every button)", (() => { try { new Function(SCRIPT.replace(/^<script>|<\/script>$/g, "")); return true; } catch (e) { console.log(e.message); return false; } })());
+check("page scripts: each parses (a syntax error would break every button)", (() => { try { for (const m of SCRIPT.matchAll(/<script>([\s\S]*?)<\/script>/g)) new Function(m[1]); return SCRIPT.includes("data-hx-fb"); } catch (e) { console.log(e.message); return false; } })());
 
 // The map (2026-10-25).
 r = await run(homes, req("/homes/api/map?city=Conway"));
@@ -306,40 +307,43 @@ check("cards: no \"Built\" tag on a home built years ago (the year is read per r
 // Every article's homes feed (2026-10-25).
 t = await (await run(mw, req("/buyers/waterfront-homes/"))).text();
 sent2 = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
-check("feed: an article gets its own homes, filtered to its topic", t.includes('class="hx-feed hx-feed-top"') && t.includes("Waterfront homes for sale now") && sent2.includes("waterfront=1"));
+check("feed: an article gets its own homes, filtered to its topic, one line of title and no subtitle", t.includes('class="hx-feed hx-feed-top"') && t.includes("Waterfront homes for sale<") && sent2.includes("waterfront=1") && !t.includes('class="hx-feed-sub"'));
 check("feed: placed as a section of the article, with the notice and the dialogs", t.indexOf('class="hx-feed') < t.indexOf("</main>") && t.includes('class="hx-disclaimer"') && t.includes('id="hx-signup"') && (t.match(/class="hx-feed[ "]/g) || []).length === 1);
 {
   const main = t.slice(t.indexOf("<main"));
   check("feed: near the top, right under the part with the H1, before the article's first heading", main.indexOf('class="hx-feed') > main.indexOf("<h1") && main.indexOf('class="hx-feed') < main.indexOf("<h2"));
 }
-check("feed: a search to make it yours, kept to the feed's own filter", t.includes('<form class="hx-feed-q" action="/homes/" method="get"') && t.includes('<input type="hidden" name="waterfront" value="1">') && t.includes('name="beds"') && t.includes('name="city"'));
+check("feed: the filter bar on the strip, opened on the feed's own filters, refreshing the strip in place", t.includes('data-hx-strip-fb') && /name="waterfront" value="1" checked/.test(t) && t.includes('data-hx-row'));
 check("feed: See all opens the same search", t.includes('href="/homes/?waterfront=1"'));
 t = await (await run(mw, req("/buyers/55-plus-communities/"))).text();
-check("feed: a page about several communities searches each of them", ["Del+Webb", "Myrtle+Trace", "Seasons+at+Prince+Creek"].every((w) => calls.slice(-6).some((c) => c.url.includes("subdivision=" + w))) && t.includes("Homes for sale in 55+ communities") && t.includes("Del Webb, Myrtle Trace and Seasons at Prince Creek."));
+check("feed: a page about several communities searches each of them", ["Del+Webb", "Myrtle+Trace", "Seasons+at+Prince+Creek"].every((w) => calls.slice(-6).some((c) => c.url.includes("subdivision=" + w))) && t.includes("Homes for sale in 55+ communities"));
 t = await (await run(mw, req("/buyers/new-construction/"))).text();
-check("feed: a topic with no search filter falls back to the newest homes when too few match", t.includes("The newest listings on the Grand Strand") || t.includes("Brand-new homes, built in the last two years"));
+check("feed: a topic falls back to the newest homes when too few match", t.includes("The newest listings on the Grand Strand") || t.includes("Brand-new homes"));
 t = await (await run(mw, req("/invest/strategies/dscr-loans/"))).text();
 {
   const prices = [...t.slice(t.indexOf('class="hx-feed')).matchAll(/class="hx-c-price">\$([\d,]+)/g)].map((m) => +m[1].replace(/,/g, ""));
-  check("feed: DSCR candidates, lowest price per bedroom first, 3+ bed houses and townhouses", t.includes("DSCR candidates: the lowest price per bedroom") && prices.length >= 3 && prices.every((v, i) => !i || v >= prices[i - 1]) && calls.slice(-4).some((c) => c.url.includes("type=townhouse") && c.url.includes("beds=3")));
+  check("feed: Top DSCR picks, 3+ bed houses and townhouses in the rental areas, lowest price per bedroom first", t.includes("Top DSCR picks") && prices.length >= 3 && prices.every((v, i) => !i || v >= prices[i - 1]) && calls.slice(-6).some((c) => c.url.includes("type=townhouse") && c.url.includes("beds=3")) && calls.slice(-6).some((c) => c.url.includes("has=long_term_rental_allowed")));
 }
 t = await (await run(mw, req("/buyers/relocating/from-maryland/"))).text();
-check("feed: a moving-from page shows homes under that state's typical home value, from our own data", t.includes("Homes priced under the typical Maryland home") && t.includes("about $433,000 (Zillow, July 2026)") && calls.slice(-2).some((c) => c.url.includes("max=433000")));
+check("feed: a moving-from page: Homes people from Maryland love, on the water, with no subtitle", t.includes("Homes people from Maryland love") && !t.includes("Zillow, July") && calls.slice(-5).some((c) => c.url.includes("waterfront=1") && c.url.includes("has=private_dock")));
 t = await (await run(mw, req("/hoa/benefits/"))).text();
-check("feed: a no-HOA feed asks the CRM for hoa=0 and says where the fact comes from", t.includes("Houses with no HOA fee") && t.includes("No HOA, as listed by the listing agent. Confirm before you buy.") && calls.slice(-2).some((c) => c.url.includes("hoa=0")));
+check("feed: a no-HOA feed asks the CRM for hoa=0 and says where the fact comes from", t.includes("Homes with no HOA fee") && t.includes("No HOA, as listed by the listing agent. Confirm before you buy.") && calls.slice(-5).some((c) => c.url.includes("hoa=0")));
 t = await (await run(mw, req("/invest/run-the-numbers/"))).text();
 check("feed: a tool page keeps its feed under the tool", t.includes('<section class="hx-feed">') && !t.includes('class="hx-feed hx-feed-top"'));
-{
-  const col = JSON.parse(fs.readFileSync(path.join(path.dirname(new URL(import.meta.url).pathname), "../data/relocating/col-places.json"), "utf8"));
-  const { STATE_PRICES } = await import("../idx-lib/state-prices.js");
-  check("feed: the states' typical home values match data/relocating/col-places.json", Object.entries(STATE_PRICES).every(([slug, v]) => { const p = col.places.find((x) => x.id === `state-${slug}`); return p && Math.round(p.zhvi / 1000) * 1000 === v.zhvi; }));
-}
 t = await (await run(mw, req("/buyers/best-neighborhoods/"))).text();
 check("feed: pages with their own strips get no second feed", !t.includes('class="hx-feed"'));
 t = await (await run(mw, req("/about/"))).text();
 check("feed: pages not on the list get none", !t.includes('class="hx-feed"'));
 check("feed: never placed inside a section that is still open", placeFeed('<main><section class="x"><div class="wrap"><p>E</p><h2>A</h2><p>t</p><h2>B</h2></div></section></main>', "[F]") === '<main>[F]<section class="x"><div class="wrap"><p>E</p><h2>A</h2><p>t</p><h2>B</h2></div></section></main>');
-check("feed: built in the last two years is this year's two years, read per request", (() => { const y = new Date().getUTCFullYear(); const out = postFilter([{ yearBuilt: y }, { yearBuilt: y - 1 }, { yearBuilt: y - 2 }, { yearBuilt: 1970 }], { builtWithin: 2 }); return out.length === 2 && out[1].yearBuilt === y - 1; })());
+{
+  const y = new Date().getUTCFullYear();
+  const good = (o) => ({ status: "Active", photo: "https://p/x.jpg", photoCount: 20, listPrice: 380000, sqft: 1800, beds: 3, yearBuilt: 2012, propertySubType: "SingleFamilyResidence", city: "Conway", ...o });
+  check("feed: built in the last two years is this year's two years, read per request", (() => { const out = postFilter([good({ yearBuilt: y }), good({ yearBuilt: y - 1 }), good({ yearBuilt: y - 2 })], { builtWithin: 2 }); return out.length === 2 && out[1].yearBuilt === y - 1; })());
+  const junk = [good({ listPrice: 49000 }), good({ propertySubType: "ManufacturedHome" }), good({ propertySubType: "UnimprovedLand" }), good({ photoCount: 4 }), good({ status: "ActiveUnderContract" }), good({ yearBuilt: 1962 }), good({ listPrice: 90000, sqft: 1500 })];
+  check("feed: the quality bar: no shells under $150,000, mobile homes, land, few photos, under contract, very old or teardown prices", postFilter([good({}), ...junk], {}).length === 1);
+  const row = rankHomes([good({ listPrice: 160000, yearBuilt: 1980, sqft: 1000, photoCount: 12 }), good({ listPrice: 420000, yearBuilt: 2018, sqft: 2200, city: "Myrtle Beach" }), good({ listPrice: 395000, yearBuilt: 2016, sqft: 2000 })], "appeal");
+  check("feed: never the cheapest first: newer, roomier, better photographed homes lead, and the towns take turns", row[0].listPrice !== 160000 && row[0].city !== row[1].city);
+}
 
 // Returning clients (contract §7g).
 r = await run(homes, req("/homes/2600005-101-test-st-myrtle-beach/?k=Good12345678"));
@@ -452,7 +456,7 @@ t = await r.text();
   check("search: no-HOA and near-a-point searches reach the CRM, with the no-HOA source note and chips", sentH.includes("hoa=0") && sentH.includes("near=33.795100%2C-79.011200") && sentH.includes("miles=3") && t.includes("No HOA, as listed by the listing agent. Confirm before you buy.") && t.includes("Within 3 miles"));
 }
 t = await (await run(mw, req("/invest/strategies/dscr-loans/"))).text();
-check("feed: a feed that promises an order asks the CRM for the lowest prices first, and See all keeps it", calls.slice(-3).every((c) => c.url.includes("sort=price_asc")) && t.includes("sort=price_asc"));
+check("feed: every feed search asks for homes for sale only, and the quality floor reaches the CRM", calls.slice(-5).every((c) => c.url.includes("status=active")) && calls.slice(-5).some((c) => /min=2\d{5}/.test(c.url)));
 t = await (await run(homes, req("/homes/2611111/"))).text();
 check("listing: no Analyze it as a rental on a home whose address is withheld", !t.includes('class="hx-analyze"'));
 
@@ -466,6 +470,29 @@ check("sign-up: the full name splits on spaces (a template string had eaten the 
   INVALID_TS = saved;
   check("sign-up: with no Turnstile widget on the site, the message says sign-up is not on yet, not \"complete the check\"", /not switched on yet/.test(j1.message) && /complete the check/.test(j2.message));
 }
+
+// The filter bar (2026-10-26).
+t = await (await run(homes, req("/homes/"))).text();
+check("search: the filter bar (price, beds and baths, type, town, more), no MLS features while the CRM does not apply them", t.includes('class="hx-fb"') && ["price", "beds", "type", "town", "more"].every((k2) => t.includes(`data-k="${k2}"`)) && !t.includes('name="has" value="pool"') && t.includes('name="hoa" value="0"'));
+APPLIED = true;
+r = await run(homes, req("/homes/?has=pool&has=garage&has=evil&yearMin=2010&status=active"));
+t = await r.text();
+{
+  const sentF = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
+  check("search: MLS features and ranges reach the CRM, an unknown key drops the list, and the panel offers every feature once the CRM applies them", !sentF.includes("has=") && sentF.includes("yearMin=2010") && sentF.includes("status=active") && t.includes('name="has" value="pool"'));
+}
+r = await run(homes, req("/homes/?has=pool&has=garage"));
+t = await r.text();
+{
+  const sentF = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
+  check("search: features reach the CRM as one list, with a removable chip each", sentF.includes("has=pool%2Cgarage") && t.includes(">Private pool<span") && t.includes(">Garage<span"));
+}
+r = await run(homes, req("/homes/api/strip?type=condo&max=500000&city=Conway"));
+{
+  const j = JSON.parse(await r.text());
+  check("strip: the strip's homes after a filter change, cards, the count, the search link and the pills' words", j.ok && j.html.includes('class="hx-c"') && j.link.includes("type=condo") && j.labels.type === "Condo" && j.labels.town === "Conway" && j.labels.price === "Up to $500K");
+}
+APPLIED = false;
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");
 process.exit(fails ? 1 : 0);

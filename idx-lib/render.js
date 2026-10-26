@@ -11,6 +11,7 @@
  * address null = town only, no street (16.5).
  */
 import { SMS_CONSENT_TEXT } from "./terms.js";
+import { FILTER_SCRIPT, FILTER_STYLE } from "./filters.js";
 
 export function esc(v) {
   return String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -346,6 +347,7 @@ main#main .hx-s-row>.hx-c:hover{transform:none}
 .hx-wrap h2{font-family:var(--serif);font-size:1.45rem;margin:2rem 0 .6rem}
 .hx-gallery img{height:360px}
 @media (prefers-reduced-transparency:reduce){.hx-glass{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}}
+${FILTER_STYLE}
 </style>`;
 
 /* The strip on a guide page: one row that pans sideways, no scroll bar; drag with a mouse,
@@ -463,4 +465,4 @@ var main=$("[data-hx-mls]");if(main){var vid=main.getAttribute("data-view-id"),m
    L.unshift({mlsNumber:mls,seconds:total(),viewedAt:new Date().toISOString()});localStorage.setItem("c3_idx_prior",JSON.stringify(L.slice(0,20)))}catch(x){}}}
  document.addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden"){secs=total();since=null;send()}else since=Date.now()});
  addEventListener("pagehide",send);setInterval(function(){if(since)send()},60000)}
-})();</script>`;
+})();</script>` + FILTER_SCRIPT;
