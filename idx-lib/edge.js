@@ -19,7 +19,7 @@ import { FEEDS, feedParams, postFilter, rankHomes } from "./feeds.js";
 import { filterBar } from "./filters.js";
 import { STYLE, STRIP_STYLE, SCRIPT, disclaimer, esc, safeUrl, signupDialog, stripCard, tourDialog } from "./render.js";
 
-const SLOT = /<div class="hx-strip" data-place="([a-z0-9-]+)" data-name="([^"<>]*)"><\/div>/g;
+const SLOT = /<div class="hx-strip" data-place="([a-z0-9-]+)" data-name="([^"<>]*)"(?: data-head="([^"<>]*)")?><\/div>/g;
 const STRIP_CARDS = 10;
 const STRIP_MIN = 3;
 const STRIP_BUDGET_MS = 3000; // a slow CRM never holds up a guide page: past this, no strips
@@ -59,11 +59,12 @@ export const NO_HOA_NOTE = "No HOA, as listed by the listing agent. Confirm befo
 
 const PLACE_BAR = { minPhotos: 6, yearMin: 1800, minSqft: 0 };
 
-function strip(slug, name, listings, total, noHoa) {
+function strip(slug, name, listings, total, noHoa, head) {
   const all = `/homes/near/${slug}/`;
   // name is our own markup from the page (already escaped there): print it as it is.
   const n = typeof total === "number" ? total : listings.length;
-  return `<p class="hx-s-head"><b>Homes for sale in ${name} now</b><a href="${all}">See all ${esc(String(n))}</a></p>`
+  // head, like name, is our own escaped markup from the page (glass.js homes()).
+  return `<p class="hx-s-head"><b>${head || `Homes for sale in ${name} now`}</b><a href="${all}">See all ${esc(String(n))}</a></p>`
     + (noHoa ? `<p class="hx-s-note">${NO_HOA_NOTE}</p>` : "")
     + `<div class="hx-s-row">${listings.filter((l) => safeUrl(l.photo)).slice(0, STRIP_CARDS).map((l) => stripCard(l, false)).join("")}`
     + `<a class="hx-s-all" href="${all}" draggable="false">See all ${esc(String(n))} homes in ${name}</a></div>`;
@@ -227,9 +228,9 @@ export async function withIdx(context, response) {
     });
     if (!filled.size) return new Response(html, { status: 200, headers });
 
-    html = html.replace(SLOT, (whole, slug, name) => {
+    html = html.replace(SLOT, (whole, slug, name, head) => {
       const f = filled.get(slug);
-      return f ? `<div class="hx-strip" data-place="${slug}" data-name="${name}">${strip(slug, name, f[0], f[1], PLACES[slug].q.hoa !== undefined)}</div>` : whole;
+      return f ? `<div class="hx-strip" data-place="${slug}" data-name="${name}">${strip(slug, name, f[0], f[1], PLACES[slug].q.hoa !== undefined, head)}</div>` : whole;
     });
     return finish(env, request, gate, html, meta, headers);
   } catch {

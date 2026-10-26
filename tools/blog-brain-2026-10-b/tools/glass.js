@@ -396,11 +396,13 @@ function offer(place, o = {}) {
    listing firm (CCMLS 16.14), then a "See all homes in X" card. With the search off, or under 3
    homes, the slot stays empty and takes no space. A page never carries listing data in its source.
    slug  the CRM place slug (batches/<batch>/data/idx-places.json); name  the place as the entry says it. */
-function homes(slug, name, fallback = "") {
+function homes(slug, name, fallback = "", head = "") {
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error(`glass.js: homes slug "${slug}" must be lowercase words joined by hyphens`);
   const n = plainText("the homes strip's place", name, 60);
+  /* head: the strip's own title, a true fact its search makes (owner, 2026-10-26); else "Homes for sale in <name> now". */
+  const hd = head ? ` data-head="${esc(plainText("the homes strip's title", head, 70))}"` : "";
   /* fallback: the place's photo, shown until the strip fills (owner, 2026-10-21: the feed "will act as the photos"). */
-  return `<div class="hx-strip" data-place="${esc(slug)}" data-name="${esc(n)}"></div>` + (fallback ? `<div class="hx-fallback">${fallback}</div>` : "");
+  return `<div class="hx-strip" data-place="${esc(slug)}" data-name="${esc(n)}"${hd}></div>` + (fallback ? `<div class="hx-fallback">${fallback}</div>` : "");
 }
 
 /* The strip's look: one row that scrolls sideways with snap, glass price chips on the photos, the

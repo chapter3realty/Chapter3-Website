@@ -57,161 +57,170 @@ const CSS = `<style>
 @media(max-width:640px){.c3s-t td:first-child{white-space:normal}}
 </style>`;
 
-/* The guide: what the reader wants, then where. */
-const GUIDE = G.guideCards([
-  { icon: "dock", label: "A canal and your own dock", items: ["north-myrtle-beach"] },
-  { icon: "beach", label: "A condo on the boardwalk", items: ["myrtle-beach-oceanfront"] },
-  { icon: "town", label: "A town pier and beach streets", items: ["surfside-beach"] },
-  { icon: "pond", label: "The ocean and the marsh", items: ["garden-city-beach"] },
-  { icon: "dollar", label: "Seafood and boats", items: ["murrells-inlet"] },
-  { icon: "clubhouse", label: "Old beach houses, no hotels", items: ["pawleys-island"] },
-].map((g) => ({ icon: g.icon, label: g.label, items: g.items.map((id) => `<a href="#${id}">${byId[id].n}. ${byId[id].name}</a>`) })))
-  + "<style>main#main .detail-hero .detail-sub{display:none}</style>";
+/* What a nightly rental took in, from the site's one source for these numbers (data/str-market.json, AirROI,
+   trailing twelve months, average per active listing, before costs). Refresh it, then rebuild this page. */
+const STR = require("../data/str-market.json");
+const MARKET = { "north-myrtle-beach": "north-myrtle-beach", "myrtle-beach-oceanfront": "myrtle-beach", "surfside-beach": "surfside-beach",
+  "garden-city-beach": "garden-city", "murrells-inlet": "murrells-inlet", "pawleys-island": "pawleys-island" };
+const take = (id) => {
+  const m = STR.markets.find((x) => x.slug === MARKET[id]);
+  if (!m) throw new Error(`second-home: no STR market for ${id}`);
+  return `About $${(Math.round(m.revenue / 1000) * 1000).toLocaleString("en-US")}`;
+};
+const PRICE = { "north-myrtle-beach": "About $395,000", "myrtle-beach-oceanfront": "About $325,000", "surfside-beach": "About $360,000",
+  "garden-city-beach": "About $400,000 (ZIP 29576)", "murrells-inlet": "About $400,000", "pawleys-island": "About $550,000 (the whole Pawleys Island address)" };
 
 const MAP = placesMap("Second-home beach towns near Myrtle Beach", E.map((e) => ({ name: e.map || e.name, lat: e.lat, lon: e.lon, href: `#${e.id}` })), {
-  caption: "Map of the six places on this page, from North Myrtle Beach south to Pawleys Island.",
+  caption: "Map of the six places on this page, from North Myrtle Beach south to Pawleys Island. Tap a name to read about it.",
 });
 
 const ph = photoSetB({ aerialWidth: "720px" });
 ph.share("myrtle-beach-beach-from-above");
-function entry(id, head, paras, price, photo) {
+/* The place's photo first, then its homes (owner's eye r17: the strip had hidden the photo), then the rest. */
+function entry(id, head, strip, paras, price, photo) {
   const e = byId[id];
   const [first, ...rest] = paras;
   return { h2: `${e.n}. ${e.name}: ${head}`, toc: `${e.n}. ${e.name}`, id, html: () =>
-    h.p(first) + G.homes(STRIP[id], e.name, photo ? ph.aerial(photo[0], photo[1], { closeUp: true }) : "") + rest.map((t) => h.p(t)).join("")
-    + `<p class="c3-place-price">${price}</p>` };
+    h.p(first) + (photo ? ph.aerial(photo[0], photo[1], { closeUp: true }) : "") + G.homes(STRIP[id], e.name, "", strip)
+    + rest.map((t) => h.p(t)).join("") + `<p class="c3-place-price">${price}</p>` };
 }
 
 const PLACES = [
-  entry("north-myrtle-beach", "canals, docks and the shag", [
+  entry("north-myrtle-beach", "a dock behind the house, the shag on Main Street", "Homes for sale from Ocean Drive to Cherry Grove", [
     "In Cherry Grove, at the north end of North Myrtle Beach, the streets from 32nd Avenue North to the end of Cherry Grove back onto canals with boat docks. The canals run out to Hog Inlet and the marsh. Cherry Grove was an island until its inlet filled in around 1950.",
-    "A few miles south, Ocean Drive is where the shag began. In the 1940s, visitors came to dance at the beach music clubs on Main Street and Ocean Drive. The shag became South Carolina's state dance in 1984.",
-    "North Myrtle Beach became a city in 1968. Its four wards are Cherry Grove, Ocean Drive, Crescent Beach and Windy Hill, and it has 9 miles of beach. A nightly rental here needs a city business license, renewed each year, and no other permit.",
-    "The canals silt in. Owners of lots on them in east Cherry Grove pay up to $2,400 a year toward dredging, through a district set to last 10 years. The city has also held public meetings on new rental rules since 2024, with nothing adopted yet.",
+    "A few miles south, Ocean Drive is where the shag began. In the 1940s, visitors came to dance at the beach music clubs on Main Street and Ocean Drive. Each spring and fall, the Society of Stranders brings its shag festivals back to the same streets.",
+    "North Myrtle Beach has 9 miles of beach. A nightly rental here needs only a city business license, renewed each year.",
+    "The canals fill with mud over time. Owners of lots on them in east Cherry Grove pay up to $2,400 a year toward digging them out, through a district set to last 10 years. The city has also held public meetings on new rental rules since 2024, with nothing adopted yet.",
   ], "Homes in North Myrtle Beach usually sell for about $395,000.",
   ["cherry-grove-canals-from-the-ocean-2011", "Cherry Grove from over the ocean: houses on the canals, many with their own docks, and the marsh behind."]),
 
-  entry("myrtle-beach-oceanfront", "condos on the boardwalk", [
+  entry("myrtle-beach-oceanfront", "condos on the boardwalk", "Condos for sale near the boardwalk", [
     "The Myrtle Beach Boardwalk runs 1.3 miles along the ocean, from Pier 14 to 16th Avenue North. From a condo on this stretch, you walk out to the beach, the piers and the restaurants along the boardwalk.",
     "The city took its name from the wax myrtle, a shrub that grows wild here. The name won a contest in 1900, and Edgewater came second. South of the towers, Myrtle Beach State Park keeps about a mile of beach with no buildings on it. It opened in 1936 as the first park in the state system.",
     "The city allows nightly rentals only where the zoning allows them, and most of its neighborhoods of houses are zoned against them. The fine is up to $500 for each offense.",
-    `Some oceanfront buildings run like hotels, with a registration desk and daily rentals. Fannie Mae does not buy loans in those buildings, so many lenders will not lend on them. The loans that do exist are on our ${h.a("/invest/condotel-financing/", "condotel financing")} page.`,
+    `Some oceanfront buildings run like hotels, with a registration desk and daily rentals. Those buildings are harder to finance, as the ${h.a("#loan", "loan section")} explains.`,
   ], "Homes across the City of Myrtle Beach usually sell for about $325,000.",
   ["myrtle-beach-beach-from-above", "The wide beach and the dunes in Myrtle Beach, seen from a high floor of an oceanfront building."]),
 
-  entry("surfside-beach", "a town pier and streets of beach houses", [
+  entry("surfside-beach", "a town pier and streets of beach houses", "Homes for sale near the Surfside Beach pier", [
     "Surfside Beach owns its fishing pier. It is concrete and 814 feet long. Walking on it is free, and a day of fishing costs $14, with the state fishing license included.",
     "Much of the town was once The Ark Plantation. In the 1920s George J. Holiday named it Floral Beach, after his wife Flora and his daughter Floramay. It became Surfside Beach in 1952. When Hurricane Hazel came in 1954, it destroyed 18 of the 65 houses on the beach.",
     "The town has 36 beach access points and 12 parking lots near the beach. Parking by the pier costs $4 an hour.",
-    "Stays under 30 days are allowed in only two of the town's zoning districts, R3 and C3. The town's single-family neighborhoods do not allow them.",
+    "Stays under 30 days are allowed in only two of the town's zoning districts, called R3 and C3. The town's single-family neighborhoods do not allow them, and we tell you which district a house is in.",
   ], "Homes in Surfside Beach usually sell for about $360,000.",
   ["surfside-beach-houses-from-the-sand", "Beach houses behind the low dunes on the ocean side of Surfside Beach."]),
 
-  entry("garden-city-beach", "the ocean on one side, the inlet on the other", [
+  entry("garden-city-beach", "the ocean on one side, the inlet on the other", "Homes for sale near the Garden City pier", [
     "Garden City Beach is a strip of land between the ocean and the marsh of Murrells Inlet. Houses on the marsh side have docks on the tidal creeks.",
     "On the Fourth of July, the Murrells Inlet boat parade starts from the point of Garden City. People watch it from the MarshWalk across the water.",
-    "Garden City is not a town. It is split between two counties, and its south end is in Georgetown County. On the Horry County side, the county's zoning has no rule on nightly stays, but an HOA's recorded rules can still forbid them. We read those rules, and check the zoning on the Georgetown County side, before you make an offer.",
+    `Garden City is not a town. It is split between two counties, and its south end is in Georgetown County. On the Horry County side you may rent by the night, unless the house's HOA forbids it, and many houses there have ${h.a("/buyers/no-hoa-homes/", "no HOA")}. We read the HOA's rules, and check the zoning on the Georgetown County side, before you make an offer.`,
   ], "Homes in the 29576 ZIP code, which covers Garden City and Murrells Inlet, usually sell for about $400,000.",
   ["garden-city-beach-and-marsh-from-the-ocean-2011", "Garden City Beach from over the ocean: rows of houses between the beach and the marsh, with docks on the creeks behind."]),
 
-  entry("murrells-inlet", "seafood on the boardwalk, boats in the creek", [
-    "Murrells Inlet calls itself the Seafood Capital of South Carolina. It began as a fishing village on a sheltered inlet. The MarshWalk, a half-mile boardwalk along the water, has restaurants and the docks for fishing trips.",
-    "Huntington Beach State Park, beside the inlet, has 3 miles of beach. In the park is Atalaya, the Moorish-style winter home of Archer and Anna Hyatt Huntington, now a National Historic Landmark. Brookgreen Gardens, across the highway, holds one of the largest collections of American figurative sculpture in the country.",
-    "The waterway along the inlet is in a VE flood zone, the zone where storms bring waves. A home there with a mortgage needs flood insurance. We get a flood quote for any home there.",
+  entry("murrells-inlet", "seafood on the boardwalk, boats in the creek", "Homes for sale near the MarshWalk", [
+    "Murrells Inlet began as a fishing village on a sheltered inlet. Its MarshWalk, a half-mile boardwalk along the water, has seafood restaurants and the docks for fishing trips.",
+    "Huntington Beach State Park, beside the inlet, has 3 miles of beach. In the park is Atalaya, the Moorish-style winter home of Archer and Anna Hyatt Huntington, now a National Historic Landmark. Brookgreen Gardens, across the highway, has one of the country's largest collections of American statues of people and animals.",
+    "Murrells Inlet is not a town either. On the Horry County side, the county has no rule on nightly stays, so only an HOA can forbid them.",
+    "The waterway along the inlet is in the highest-risk flood zone on the coast, where storms bring waves. A home there with a mortgage needs flood insurance, and we get a flood quote for any home you like.",
   ], "Homes in Murrells Inlet usually sell for about $400,000."),
 
-  entry("pawleys-island", "America's oldest seaside resort", [
-    "Rice planters built summer houses on Pawleys Island in the early 1700s, to get away from the rivers in summer. The island calls itself America's oldest seaside resort. Its historic district, in the middle of the island, has houses from about 1780 to 1866.",
+  entry("pawleys-island", "summer houses since the 1700s", "Homes for sale on and near Pawleys Island", [
+    "Rice planters built summer houses on Pawleys Island in the early 1700s, to get away from the rivers in summer, so it is one of the oldest beach resorts in America. Its historic district, in the middle of the island, has houses from about 1780 to 1866.",
     "The town incorporated in 1985 to keep out a large hotel, and it forbids commercial businesses. Apart from two historic inns, the island has no commercial buildings. The Pawleys Island rope hammock was first made here. Pawleys Creek, the tidal creek behind the island's salt marsh, is a wildlife sanctuary with no hunting.",
-    "Tourism is the island's main business, and the town plans to keep encouraging rentals. About 300 homes on the island were for rent in 2020. The town requires no business license to rent one out.",
+    "Pawleys Island allows rentals, and the town requires no business license to rent a home out.",
     "Parts of the island flood when heavy rain comes with a high tide, including near both causeways. The streets are narrow, with 20 feet of pavement or less.",
   ], "Homes with a Pawleys Island address, on the island and the mainland side, usually sell for about $550,000.",
   ["pawleys-island-beach-walkway", "A wooden walkway over the dunes to the ocean on Pawleys Island."]),
 ];
 
-const RENT_TABLE = `<div class="c3s-t"><table><thead><tr><th>Where</th><th>Nightly and weekly rentals</th><th>What we check</th></tr></thead><tbody>`
-  + [
-    ["City of Myrtle Beach", "Only where the zoning allows them. Most streets of houses do not.", "The unit's zoning"],
-    ["North Myrtle Beach", "Allowed with a city business license, renewed each year.", "New rules, if the city adopts them"],
-    ["Surfside Beach", "Only in the R3 and C3 districts.", "The house's district"],
-    ["Horry County outside the cities", "No county rule.", "The HOA's recorded rules"],
-    ["Pawleys Island", "Tourism is the main business, and no license is needed.", "The town's rules for the house"],
-    ["Georgetown County outside the towns", "A house rented for 30 days or less is allowed in the resort districts.", "The zoning"],
-  ].map((r) => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("") + `</tbody></table></div>`;
+const table = (head, rows) => `<div class="c3s-t"><table><thead><tr>${head.map((c) => `<th>${c}</th>`).join("")}</tr></thead><tbody>`
+  + rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("") + `</tbody></table></div>`;
 
-const TAX_TABLE = `<div class="c3s-t"><table><thead><tr><th>A $400,000 home, 2026</th><th>Your home</th><th>Your second home</th></tr></thead><tbody>`
-  + `<tr><td>City of Myrtle Beach</td><td>About $1,615 a year</td><td>About $6,110 a year</td></tr>`
-  + `<tr><td>Horry County outside the cities</td><td>About $1,470 a year</td><td>About $4,820 a year</td></tr>`
-  + `</tbody></table></div>`;
+const RENT_TABLE = table(["Where", "Nightly and weekly rentals", "What we check"], [
+  ["City of Myrtle Beach", "Only where the zoning allows them. Most neighborhoods of houses do not.", "The unit's zoning"],
+  ["North Myrtle Beach", "Allowed with a city business license, renewed each year.", "New rules, if the city adopts them"],
+  ["Surfside Beach", "Only in the R3 and C3 zoning districts.", "The house's district"],
+  ["Horry County outside the cities, including Garden City and Murrells Inlet", "Allowed. The county has no rule.", "The HOA's rules, if there is an HOA"],
+  ["Pawleys Island", "Allowed. No town business license is needed.", "The house's own papers"],
+  ["Georgetown County outside the towns", "A house rented for 30 days or less is allowed in the resort districts.", "The zoning"],
+]);
+
+const TAKE_TABLE = table(["Place", "What a nightly rental took in, past year", "Homes usually sell for"], E.map((e) => [e.id === "myrtle-beach-oceanfront" ? "City of Myrtle Beach, all of it" : e.name, take(e.id), PRICE[e.id]]));
+
+const TAX_TABLE = table(["A $400,000 home, 2026", "If you lived in it", "As a second home"], [
+  ["City of Myrtle Beach", "About $1,615 a year", "About $6,110 a year"],
+  ["Horry County outside the cities", "About $1,470 a year", "About $4,820 a year"],
+]);
 
 module.exports = G.page({
   theme: "glass",
   url: SELF,
   hub: { name: "Buyers", url: "/buyers/" },
   pageImages: () => ph.pageImages(),
-  title: "Second Homes Near Myrtle Beach: 6 Beach Towns | Chapter3",
-  description: "Six beach towns for a second home near Myrtle Beach, where you may rent it by the night, which loan fits, and the tax bill on a $400,000 home.",
-  ogTitle: "Buying a second home near Myrtle Beach: six towns, the rental rules and the yearly cost",
+  title: "Second Homes Near Myrtle Beach: 6 Beach Places | Chapter3",
+  description: "Six places on the beach for a second home near Myrtle Beach, where you may rent it by the night, what rentals take in, and the tax on a $400,000 home.",
+  ogTitle: "Buying a second home near Myrtle Beach: six places, the rental rules and the yearly cost",
   crumb: "Second Home",
   eyebrow: "Second homes",
   h1: "Where should you buy a second home near Myrtle Beach?",
-  h1em: "Six beach towns, from Cherry Grove to Pawleys Island.",
-  sub: "Six beach towns, their rental rules and the yearly tax on a second home.",
+  h1em: "Six places on the beach, from Cherry Grove to Pawleys Island.",
+  sub: "Six places on the beach, their rental rules and the yearly tax on a second home.",
   heroCta: false,
   author: "devin",
   toc: false,
   shortAnswer: [
-    `The beach towns differ most in one thing: whether you may rent your place by the night when you are away. North Myrtle Beach allows it with a city license. The City of Myrtle Beach and Surfside Beach allow it only in some zones. Property tax on a $400,000 second home is about $4,800 to $6,100 a year, three to four times a full-time owner's bill.`,
+    `For a boat at your back door, buy on the Cherry Grove canals in North Myrtle Beach. For a condo on the sand with the boardwalk outside, buy on the Myrtle Beach oceanfront. For an old beach house on an island with no hotels, buy on Pawleys Island.`,
+    `North Myrtle Beach, Pawleys Island and the county outside the cities allow nightly rentals. The City of Myrtle Beach and Surfside Beach allow them only in some zones. Property tax on a $400,000 second home is about $4,800 to $6,100 a year.`,
   ],
   sections: [
-    { id: "choose", html: () =>
-      CSS + G.homesCss() + ph.css() +
-      `<p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">Choose by what you want</p>` +
-      GUIDE + `<div class="c3s-map">${MAP.html}</div>` },
+    { id: "where", html: () => CSS + G.homesCss() + ph.css() + `<div class="c3s-map">${MAP.html}</div>`
+      + "<style>main#main .detail-hero .detail-sub{display:none}</style>" },
 
     ...PLACES,
 
     { h2: "Can you rent it out when you are not there?", toc: "Renting it", id: "renting", html: () =>
-      h.p("Yes, in most of these places. Each town makes its own rule, an HOA can forbid what the town allows, and your loan has its own limits. Here is each town's rule for nightly and weekly stays.") +
+      h.p("Yes, in most of these places. Each town makes its own rule, an HOA can forbid what the town allows, and your loan has its own limits.") +
       RENT_TABLE +
-      h.p("Every rental is also a business here. Guests pay lodging tax on any stay under 90 days: about 13 percent in the City of Myrtle Beach, about 12 percent elsewhere in Horry County, and about 11 percent on Pawleys Island. A stay of 90 days or more in a row is not taxed as lodging.") +
-      h.p(`If you use it yourself for more than 14 days, or more than 10 percent of the days it is rented, the IRS treats it as a home, and that limits what you can deduct. If it counts as a home and you rent it fewer than 15 days in a year, the IRS does not count the rent as income. The day count is on our ${h.a("/invest/14-day-rule/", "14-day rule")} page.`) },
+      TAKE_TABLE +
+      h.p("The rental figures are averages for the past year, before the manager, cleaning, taxes and the HOA fee. Your own place can earn more or less, depending on the home, its view and how it is run.") +
+      h.cta("Want the numbers for one home?", "Send us the listing. We check whether you may rent it by the night, read its HOA rules, and give you its tax bill as a second home.", "Send us the home", "/contact/?topic=second-home", "ivory-2") +
+      h.p("Guests pay lodging tax on any stay under 90 days: about 13 percent in the City of Myrtle Beach, about 12 percent elsewhere in Horry County, and about 11 percent on Pawleys Island. You or your rental manager collect it from guests and send it in.") +
+      h.p(`The IRS has a rule for a home you both use and rent. Use it yourself for more than 14 days a year, or more than 10 percent of the days it is rented, whichever is more, and the IRS treats it as a home. Then rent from fewer than 15 days a year is tax-free, and your rental deductions cannot be more than the rent. Our ${h.a("/invest/14-day-rule/", "14-day rule")} page has examples.`) },
 
     { h2: "Is it a second home or an investment property?", toc: "Which loan", id: "loan", html: () =>
-      h.p("Decide this before you apply for a loan. Most lenders follow Fannie Mae's rules, and Fannie Mae calls a home a second home only when:") +
+      h.p("Decide this before you apply for a loan. Most lenders follow the rules of Fannie Mae, which buys home loans from lenders. Fannie Mae calls a home a second home only when:") +
       h.ul([
         "you live in it yourself for part of the year;",
         "it is one home, not a duplex;",
         "it can be lived in all year;",
-        "you alone control it, so no management company decides who stays there;",
+        "no agreement gives a management company control over who stays there;",
         "the rent from it is not used to qualify you for the loan.",
       ]) +
       h.p("Some rent is allowed. If the lender sees rental income, the loan can still be a second-home loan, as long as the rent did not help you qualify and every other rule is met. A home you will not live in is an investment property, and lenders price that loan differently.") +
-      h.p(`A condo in a building run like a hotel, with a rental pool or daily rentals, fails Fannie Mae's rules for the building itself. Our lending partner can lay out both kinds of loan for the home you choose. For a building like that, see ${h.a("/invest/non-warrantable-condos/", "condos most lenders will not finance")}.`) },
+      h.p(`Fannie Mae does not buy loans in a condo building run like a hotel, with a rental pool or daily rentals, so many lenders will not finance a unit there. Other loans exist for those buildings: see ${h.a("/invest/condotel-financing/", "loans for hotel-style condos")}. Our lending partner can lay out both kinds of loan for the home you choose.`) },
 
     { h2: "What does a second home cost to hold each year?", toc: "Yearly cost", id: "cost", html: () =>
-      h.p("South Carolina taxes a second home on 6 percent of its value, and the home you live in on 4 percent. Your own home also pays no school operating tax, the largest part of the bill. Together, the two rules make a second home's bill three to four times larger.") +
+      h.p("South Carolina taxes a second home on 6 percent of its value, and the home you live in on 4 percent. A home you live in also pays no school operating tax, the largest part of the bill. Together, the two rules make a second home's bill three to four times larger.") +
       TAX_TABLE +
-      h.p(`The 4 percent rate is only for the home your household lives in, and the owner certifies that no one in the household is a legal resident of another state. The bill for any town is in our ${h.a("/buyers/property-taxes/", "property tax calculator")}.`) +
-      h.p("Insurance is the other large cost. On a beach house, you insure the house against wind and often flood. In a condo, the association insures the building and puts the cost in the monthly fee, and your own policy covers the inside of the unit and your things.") +
-      h.p(`A federal flood policy has a $250 yearly surcharge when the home is no one's main home. For a main home, the surcharge is $25. Renting the home out will likely raise the premium. What each policy costs here is on our ${h.a("/buyers/coastal-insurance/", "coastal insurance")} page.`) },
+      h.p(`In North Myrtle Beach and Surfside Beach, the bill on a $400,000 second home falls between these two. Every town's bill is in our ${h.a("/buyers/property-taxes/", "property tax calculator")}.`) +
+      h.p(`Insurance is the other large cost, and the condo and beach house table below shows who insures what. A federal flood policy has a $250 yearly surcharge when the home is no one's main home. For a main home, the surcharge is $25. Renting the home out will likely raise the premium. What each policy costs here is on our ${h.a("/buyers/coastal-insurance/", "coastal insurance")} page.`) +
+      h.p("We get the insurance quotes and the HOA fee for any home you like before you make an offer, so you know the whole yearly cost.") },
 
     { h2: "Should you buy a condo or a beach house?", toc: "Condo or house", id: "condo-or-house", html: () =>
-      `<div class="c3s-t"><table><thead><tr><th></th><th>A condo</th><th>A beach house</th></tr></thead><tbody>`
-      + [
+      table(["", "A condo", "A beach house"], [
         ["The building", "The association insures it and keeps up the outside. The cost is in the monthly fee.", "You insure it against wind and often flood, and the roof is yours."],
         ["Your own policy", "Covers the inside of the unit and your things.", "Covers the whole house."],
-        ["Big repairs", "An older building can charge every owner a special assessment.", "You pay for them when they come."],
-        ["The loan", "A building run like a hotel fails Fannie Mae's rules, so fewer lenders finance it.", "Any second-home or investment loan."],
-      ].map((r) => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("") + `</tbody></table></div>`
+        ["Big repairs", "An older building can send every owner a one-time bill, called a special assessment.", "You pay for them when they come."],
+        ["The loan", `Harder in a building run like a hotel (see ${h.a("#loan", "the loan")}).`, "Any second-home or investment loan."],
+      ])
       + h.p(`We read a building's budget and its ${h.a("/hoa/special-assessments/", "special assessments")} before you make an offer on a condo.`) },
   ],
   faqTitle: "Second home FAQ",
   faq: [
-    { q: "Can I get the 4 percent tax rate on a second home in South Carolina?", a: "No. South Carolina gives the 4 percent rate only to the home your household lives in. A second home is taxed on 6 percent of its value and also pays the school operating tax." },
-    { q: "Can I rent out my second home in Myrtle Beach?", a: "Yes, in some places. North Myrtle Beach allows nightly rentals with a city license. The City of Myrtle Beach and Surfside Beach allow them only in some zones. A second-home loan also expects you to live in it part of the year and keep control of it." },
-    { q: "Do my guests pay lodging tax?", a: "Yes, on any stay under 90 days: about 11 to 13 percent, depending on the town. A stay of 90 days or more in a row is not taxed as lodging." },
-    { q: "What if I rent it for less than two weeks a year?", a: "If you also use it yourself for more than 14 days, the IRS does not count the rent as income, and you deduct no rental costs." },
+    { q: "Can I get the 4 percent tax rate on a second home in South Carolina?", a: "No. South Carolina gives the 4 percent rate only to the home your household lives in, and the owner certifies that no one in the household is a legal resident of another state. A second home is taxed on 6 percent of its value." },
+    { q: "Can I use a rental manager with a second-home loan?", a: "Yes, as long as no agreement gives the manager control over who stays in the home and when. The lender also cannot count the rent toward qualifying you for a second-home loan." },
+    { q: "Who looks after a second home while I am away?", a: "A local property manager can check on the home, handle repairs and, if you rent it, run the bookings. Chapter3 sells homes and does not manage them, and our property management page explains what managers here charge." },
+    { q: "What about hurricane season?", a: "The Atlantic hurricane season runs from June 1 to November 30. A beach house needs a wind policy and usually flood coverage, and a condo owner relies on the building's master policy. We check the flood zone of any home before you make an offer." },
   ],
   sources: [
     { name: "Fannie Mae Selling Guide, occupancy types", href: FANNIE },
@@ -222,7 +231,7 @@ module.exports = G.page({
     { name: "SC Department of Revenue, lodging tax rates", href: DOR },
     { name: "IRS Publication 527", href: IRS },
   ],
-  sourcesNote: "Also the towns' own pages, the Surfside and Georgetown County zoning codes, SC State Parks and Zillow's home value index for September 2026. Tax figures are estimates from 2026 millage. Not legal or tax advice.",
+  sourcesNote: "Also the towns' own pages, the Surfside and Georgetown County zoning codes, SC State Parks, AirROI's rental data and Zillow's home value index for September 2026 (condos and houses together). Tax figures are estimates from 2026 tax rates. Not legal or tax advice.",
   afterSources: () => ph.credits(),
   bottomCta: { h2: "Found a place you like?", p: "Send it to us. We check its rental rules, its HOA papers and its tax bill before you make an offer.", label: "Send us the home", href: "/contact/?topic=second-home" },
   keywords: "second home Myrtle Beach, vacation homes for sale Myrtle Beach, beach house for sale Myrtle Beach, oceanfront condo Myrtle Beach, second home North Myrtle Beach, second home Pawleys Island, second home property tax South Carolina, can I rent my second home Myrtle Beach",
