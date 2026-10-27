@@ -11,6 +11,7 @@ import { placeFeed, placeParams } from "../idx-lib/edge.js";
 import { postFilter, rankHomes } from "../idx-lib/feeds.js";
 import { filterBar } from "../idx-lib/filters.js";
 import { featureList } from "../idx-lib/features.js";
+import { resetCatalog } from "../idx-lib/catalog.js";
 import { SCRIPT, STYLE } from "../idx-lib/render.js";
 const STYLE_OK = () => STYLE.includes(".hx-dialog form[hidden]{display:none}");
 import { MAP_SCRIPT } from "../idx-lib/map.js";
@@ -34,6 +35,7 @@ let HANG = false;
 let INVALID = false;
 let INVALID_TS = false;
 let APPLIED = false;
+let CATALOG = false;
 globalThis.fetch = async (input, init = {}) => {
   const u = new URL(typeof input === "string" ? input : input.url);
   calls.push({ url: u.toString(), init });
@@ -50,6 +52,13 @@ globalThis.fetch = async (input, init = {}) => {
     return CENSUS ? J({ result: { addressMatches: [{ coordinates: { x: -78.9, y: 33.71 } }] } }) : J({ result: { addressMatches: [] } });
   }
   if ((init.headers || {})["x-idx-key"] !== "devkey") return J({ ok: false, error: "forbidden" }, 403);
+  if (u.pathname === "/api/idx/filters") {
+    if (!CATALOG) return J({ ok: false, error: "unavailable" }, 503);
+    const f = (key, label, group, n) => ({ key, label, group, params: ["has", "not"], forSale: n });
+    return J({ ok: true, meta: META, countedAt: "2026-10-27T10:00:00Z", forSale: 9000, filters: [f("pool", "Private pool", "outside", 900), f("walk_to_beach", "Walk to the beach", "place", 700),
+      f("marshwalk_1mi", "Within 1 mi of the MarshWalk", "place", 80), f("private_dock", "Private dock", "water", 300), f("golf_cart_ok", "Golf carts allowed", "community", 120),
+      f("never_listed", "Nothing", "inside", 0), { key: "price", label: "Price", group: "price", params: ["min", "max"], forSale: null }] });
+  }
   if (u.pathname === "/api/idx/claim") {
     const b = JSON.parse(init.body);
     if (b.k === "Good12345678") return J({ ok: true, token: DEV_TOKEN, firstName: "Sam", dryRun: true });
@@ -487,7 +496,7 @@ r = await run(homes, req("/homes/?has=pool&has=garage&has=evil&yearMin=2010&stat
 t = await r.text();
 {
   const sentF = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
-  check("search: MLS features and ranges reach the CRM, an unknown key drops alone, and the panel offers every feature once the CRM applies them", sentF.includes("has=pool%2Cgarage&") && sentF.includes("yearMin=2010") && sentF.includes("status=active") && t.includes('name="has" value="pool"'));
+  check("search: MLS features and ranges reach the CRM, an unknown key drops alone, and the panel offers every feature once the CRM applies them", sentF.includes("has=pool%2Cgarage&") && sentF.includes("yearMin=2010") && sentF.includes("status=active") && t.includes('data-hx-feats data-has="pool,garage"'));
 }
 r = await run(homes, req("/homes/?has=pool&has=garage"));
 t = await r.text();
@@ -525,6 +534,25 @@ r = await run(homes, req("/homes/api/similar?near=33.70000,-78.90000&beds=2"));
 await r.text();
 check("similar: asks for homes for sale only, never pending (owner, 2026-10-26)", calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url.includes("status=active"));
 check("rows: every homes row scrolls by itself, stops for the reader, never with reduced motion", SCRIPT.includes("prefers-reduced-motion") && SCRIPT.includes("requestAnimationFrame") && SCRIPT.includes("MutationObserver"));
+r = await run(homes, req("/homes/?city=Conway")); await r.text();
+{ const u1 = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
+  r = await run(homes, req("/homes/?city=Conway&all=1")); t = await r.text(); const u2 = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
+  check("search: homes for sale only unless the reader adds those under contract (owner, 2026-10-26)", u1.includes("status=active") && !u2.includes("status=") && !u2.includes("all=") && t.includes("With homes under contract")); }
+// The CRM's live feature list (Ticket 471): the panel draws from it, and searches are checked against it.
+CATALOG = true; resetCatalog();
+r = await run(homes, req("/homes/api/filters"));
+{
+  const j = JSON.parse(await r.text());
+  const keys = j.ok ? j.groups.flatMap((g) => g.items.map((x) => x.k)) : [];
+  check("filters: the panel's list is the CRM's, grouped, most homes first, distances marked, no feature that no home has", j.ok && keys.includes("walk_to_beach") && !keys.includes("never_listed") && j.groups.some((g) => g.items.some((x) => x.k === "marshwalk_1mi" && x.d === 1)) && j.groups[0].items.length >= 1);
+}
+r = await run(homes, req("/homes/?has=walk_to_beach,golf_cart_ok,bogus&not=marshwalk_1mi"));
+t = await r.text();
+{
+  const sent = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
+  check("filters: a search keeps the CRM's keys, drops an unknown one, and the panel loads every feature", sent.includes("has=walk_to_beach%2Cgolf_cart_ok&") && sent.includes("not=marshwalk_1mi") && !sent.includes("bogus") && t.includes("data-hx-feats"));
+}
+CATALOG = false; resetCatalog();
 APPLIED = false;
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");

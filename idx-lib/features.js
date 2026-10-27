@@ -324,9 +324,42 @@ export const FEATURE_GROUPS = [
 ];
 export const FEATURE_KEYS = FEATURE_GROUPS.flatMap((g) => g.keys.map(([k]) => k));
 export const FEATURE_LABEL = Object.fromEntries(FEATURE_GROUPS.flatMap((g) => g.keys));
-/** Up to 8 known keys from "a,b" or several values, or [] when any is unknown. */
-export function featureList(values) {
+
+/*
+ * The live list (CRM Ticket 471, contract §5 GET /api/idx/filters): about 490 features, Katie's and the
+ * distances included, each with how many homes for sale match it. idx-lib/catalog.js loads it (cached an
+ * hour) and hands it here. While it is not loaded, the keys above and the ones the feeds use are trusted.
+ */
+let LIVE = null;
+/** Keys the article feeds ask for (idx-lib/feeds.js), all in the CRM's vocabulary on 27 Oct 2026. */
+const FEED_KEYS = ["walk_to_beach", "beach_1mi", "near_beach", "east_of_17", "second_row", "oceanfront_building", "oceanfront_unit",
+  "oceanview_unit", "ocean_or_ocean_view", "str_allowed", "long_term_rental_allowed", "rentals_allowed", "vacation_rental_program",
+  "golf_cart_ok", "golf_community", "on_golf_course", "golf_view", "private_dock", "boat_slip", "boat_access", "deep_water", "water_icw",
+  "marsh_view", "pool", "rv_boat_parking", "fenced_yard", "one_level", "main_level_primary", "new_construction", "quick_move_in",
+  "still_being_built", "price_reduced", "open_house", "foreclosure", "short_sale", "distressed_sale", "assumable_loan", "va_accepted",
+  "fha_accepted", "cash_only_listing", "furnished", "elevator", "elevator_building", "first_floor_unit", "high_floor_unit", "top_floor",
+  "gated", "community_pool", "clubhouse", "pets_allowed", "garage", "acreage_lot", "workshop", "in_law_suite", "detached_guest_house",
+  "home_office", "screened_porch", "hot_tub", "outdoor_kitchen", "flood_zone", "inside_city_limits", "outside_city_limits",
+  "hoa_includes_internet", "hoa_includes_insurance", "lawn_care_included", "has_rental_income", "multi_family", "icw_1mi", "near_icw",
+  "marshwalk_1mi", "barefoot_landing_2mi", "market_common_2mi", "nmb_main_street_1mi", "downtown_conway_2mi", "myrtle_beach_boardwalk_1mi",
+  "grand_strand_medical_center_5mi", "mcleod_carolina_forest_5mi", "myrtle_beach_airport_5mi", "huntington_beach_state_park_5mi"];
+const STATIC = new Set([...FEATURE_KEYS, ...FEED_KEYS]);
+/** A feature that is a distance from a place: the CRM takes at most 2 in one search (has and not together). */
+export const isDistance = (k) => /^(walk_to_beach|near_beach|beach_\d+mi|near_icw|icw_\d+mi)$|_\d+mi$/.test(k);
+export const DISTANCE_MAX = 2;
+
+/** The live list, or null to go back to the built-in keys. Features no home for sale has are left out. */
+export function useCatalog(features) {
+  LIVE = Array.isArray(features) && features.length ? new Map(features.filter((f) => f && f.forSale > 0).map((f) => [f.key, f])) : null;
+}
+export const catalogLoaded = () => !!LIVE;
+export const isFeature = (k) => (LIVE ? LIVE.has(k) : STATIC.has(k));
+/** The words for a key: ours, else the CRM's, else the key spelled out. */
+export const featureLabel = (k) => FEATURE_LABEL[k] || (LIVE && LIVE.get(k) && LIVE.get(k).label) || String(k).replace(/_/g, " ").replace(/^./, (c) => c.toUpperCase());
+
+/** Up to 8 known keys from "a,b" or several values; an unknown key is dropped on its own, and past 2 distances the rest. */
+export function featureList(values, distancesUsed = 0) {
   const keys = [...new Set(values.flatMap((v) => String(v || "").split(",")).map((k) => k.trim()).filter(Boolean))];
-  // An unknown key is dropped on its own; the first 8 known keys stay.
-  return keys.filter((k) => FEATURE_KEYS.includes(k)).slice(0, 8);
+  let d = distancesUsed;
+  return keys.filter((k) => isFeature(k)).filter((k) => !isDistance(k) || ++d <= DISTANCE_MAX).slice(0, 8);
 }

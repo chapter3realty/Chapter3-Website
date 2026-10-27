@@ -135,18 +135,32 @@
 #ltr-results .ltr-two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 #ltr-results .ltr-box{background:#fff;border:1px solid var(--rule);border-radius:18px;padding:1.2rem 1.3rem;margin-bottom:1rem}
 #ltr-results .ltr-box-h{margin:0 0 .6rem;font-family:var(--sans);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);font-weight:700}
-#ltr-results .ltr-cta{display:grid;grid-template-columns:1fr auto;gap:1rem 1.5rem;align-items:center;margin:1.4rem 0 1.6rem;padding:1.6rem 1.7rem;border-radius:22px;background:linear-gradient(135deg,#1c2028 0%,#2b3242 100%);color:var(--ivory);box-shadow:0 18px 40px rgba(28,32,40,.22)}
-#ltr-results .ltr-cta-h{margin:0 0 .3rem;font-family:var(--serif);font-size:1.5rem;color:var(--ivory)}
-#ltr-results .ltr-cta-p{margin:0;font-size:.95rem;line-height:1.55;color:rgba(244,239,232,.78)}
-#ltr-results .ltr-cta-b{display:flex;gap:.6rem;flex-wrap:wrap}
-#ltr-results .ltr-cta-go,#ltr-results .ltr-cta-call{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:0 1.4rem;border-radius:999px;font-weight:700;font-size:.95rem;text-decoration:none}
-#ltr-results .ltr-cta-go{background:var(--brass-2,#d4894a);color:#1c2028}
-#ltr-results .ltr-cta-call{border:1.5px solid rgba(244,239,232,.5);color:var(--ivory)}
-#ltr-results .ltr-cta-x{grid-column:1/-1;display:flex;gap:1.2rem;border-top:1px solid rgba(244,239,232,.14);padding-top:.9rem}
-#ltr-results .ltr-cta-x button{border:0;background:none;color:rgba(244,239,232,.8);font:inherit;font-size:.88rem;text-decoration:underline;text-underline-offset:.2em;cursor:pointer;padding:.2rem 0}
-#ltr-results #ltr-inferred-strip{gap:.5rem 1.4rem;flex-wrap:wrap;align-items:baseline;margin-top:.9rem;padding-top:.8rem;border-top:1px solid var(--rule)}#ltr-results #ltr-inferred-strip>span{font-size:.85rem!important}
+#ltr-results .ltr-cta{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;gap:1.1rem 2rem;align-items:center;margin:1.6rem 0 1.4rem;padding:1.8rem 2rem 1.3rem;border-radius:24px;background:#151a22;color:var(--ivory);box-shadow:0 24px 60px rgba(21,26,34,.28)}
+#ltr-results .ltr-cta::before{content:"";position:absolute;inset:-40% -10% auto auto;width:22rem;height:22rem;border-radius:50%;background:radial-gradient(circle,rgba(212,137,74,.35),rgba(212,137,74,0) 70%);pointer-events:none}
+#ltr-results .ltr-cta>*{position:relative}
+#ltr-results .ltr-cta-k{margin:0 0 .2rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-2,#d4894a);font-weight:700}
+#ltr-results .ltr-cta-h{margin:0 0 .35rem;font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.1;color:#fff}
+#ltr-results .ltr-cta-p{margin:0;font-size:.98rem;line-height:1.55;color:rgba(244,239,232,.72);max-width:34rem}
+#ltr-results .ltr-cta-b{display:flex;flex-direction:column;gap:.55rem;min-width:15rem}
+#ltr-results .ltr-cta-go,#ltr-results .ltr-cta-call{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:3.2rem;padding:0 1.5rem;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;transition:transform .15s,background .15s,border-color .15s}
+#ltr-results .ltr-cta-go{background:linear-gradient(180deg,#e09a5c,#c4783a);color:#151a22;box-shadow:0 8px 20px rgba(196,120,58,.35)}
+#ltr-results .ltr-cta-go:hover{transform:translateY(-1px)}
+#ltr-results .ltr-cta-go svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+#ltr-results .ltr-cta-call{background:rgba(255,255,255,.06);border:1px solid rgba(244,239,232,.22);color:#fff}
+#ltr-results .ltr-cta-call:hover{border-color:rgba(244,239,232,.5)}
+#ltr-results .ltr-cta-call svg{width:17px;height:17px;fill:currentColor}
+#ltr-results .ltr-cta-x{grid-column:1/-1;display:flex;gap:1.4rem;border-top:1px solid rgba(244,239,232,.1);padding-top:.9rem}
+#ltr-results .ltr-cta-x button{border:0;background:none;color:rgba(244,239,232,.62);font:inherit;font-size:.86rem;cursor:pointer;padding:.2rem 0}
+#ltr-results .ltr-cta-x button:hover{color:#fff}
+#ltr-results .ltr-m-l{gap:.4rem}
+#ltr-results .ltr-q{position:relative;display:inline-flex;align-items:center;justify-content:center;width:1.15rem;height:1.15rem;border-radius:50%;border:0;background:rgba(28,32,40,.08);color:var(--slate,#5c6b78);font:inherit;font-size:.68rem;font-weight:700;letter-spacing:0;cursor:help;padding:0;flex:none}
+#ltr-results .ltr-q:hover,#ltr-results .ltr-q:focus-visible{background:var(--navy);color:#fff;outline:none}
+#ltr-results .ltr-q::after{content:attr(data-tip);position:absolute;z-index:30;left:50%;bottom:calc(100% + 8px);transform:translate(-50%,4px);width:max-content;max-width:15rem;padding:.6rem .75rem;border-radius:10px;background:#151a22;color:#f4efe8;font-size:.8rem;font-weight:500;line-height:1.45;letter-spacing:0;text-transform:none;text-align:left;white-space:normal;box-shadow:0 12px 30px rgba(21,26,34,.3);opacity:0;pointer-events:none;transition:opacity .12s,transform .12s}
+#ltr-results .ltr-q:hover::after,#ltr-results .ltr-q:focus::after{opacity:1;transform:translate(-50%,0)}
+#ltr-results .ltr-m:first-child .ltr-q::after,#ltr-results .ltr-m:nth-child(4n+1) .ltr-q::after{left:0;transform:translate(-10%,4px)}
+#ltr-results .ltr-m:first-child .ltr-q:hover::after,#ltr-results .ltr-m:nth-child(4n+1) .ltr-q:hover::after,#ltr-results .ltr-m:nth-child(4n+1) .ltr-q:focus::after{transform:translate(-10%,0)}
 #ltr-results .ltr-fine{font-size:.78rem;color:var(--muted);line-height:1.6;margin:1rem 0 0}
-@media(max-width:860px){#ltr-results .ltr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#ltr-results .ltr-two{grid-template-columns:1fr}#ltr-results .ltr-cta{grid-template-columns:1fr}}
+@media(max-width:860px){#ltr-results .ltr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#ltr-results .ltr-two{grid-template-columns:1fr}#ltr-results .ltr-cta{grid-template-columns:1fr;padding:1.5rem 1.3rem 1.1rem}#ltr-results .ltr-cta-b{min-width:0}#ltr-results .ltr-m:nth-child(2n+1) .ltr-q::after{left:0;transform:translate(-10%,0)}#ltr-results .ltr-m:nth-child(2n) .ltr-q::after{left:auto;right:0;transform:none}}
 #ltr-results .ltr-exp{background:var(--ivory-2);border-radius:12px;padding:1rem 1.2rem}
 #ltr-results .ltr-exp .ltr-k{color:var(--muted)}
 #ltr-results .ltr-narr{font-size:.95rem;line-height:1.7;color:var(--navy)}
@@ -281,8 +295,8 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
 <div id="ltr-arv-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08)"></div>
 <div id="ltr-arv-note" style="margin-top:1rem;font-size:.85rem;color:rgba(244,239,232,.6);line-height:1.7"></div>
 </div>
-<section class="ltr-cta"><div class="ltr-cta-t"><p class="ltr-cta-h">Want to buy this home?</p><p class="ltr-cta-p">An agent can tour it with you, pull the recent sales next to it and help you write the offer.</p></div>
-<div class="ltr-cta-b"><a class="ltr-cta-go" href="/contact/?topic=investment" id="ltr-cta-go">Talk to an agent</a><a class="ltr-cta-call" href="tel:8543332135">Call 854.333.2135</a></div>
+<section class="ltr-cta" aria-label="Talk to an agent about this home"><div class="ltr-cta-t"><p class="ltr-cta-k">Like the numbers?</p><p class="ltr-cta-h">Let's go see it.</p><p class="ltr-cta-p">An agent tours it with you, pulls the sales next door and writes the offer.</p></div>
+<div class="ltr-cta-b"><a class="ltr-cta-go" href="/contact/?topic=investment" id="ltr-cta-go">Talk to an agent<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a><a class="ltr-cta-call" href="tel:8543332135"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>854.333.2135</a></div>
 <div class="ltr-cta-x"><button type="button" onclick="ltrSavePDF()">Download the PDF</button><button type="button" onclick="resetLtr()">Analyze another home</button></div></section>
 <div id="ltr-similar"></div>
 <p class="ltr-fine">These are estimates from Grand Strand market data, not an appraisal and not guaranteed. Check them with an appraiser, a tax adviser and an insurance agent before you buy.</p>
@@ -915,7 +929,7 @@ if (GOOGLE_MAPS_KEY !== 'YOUR_GOOGLE_MAPS_KEY') {
 }
 </script>
 
-<script src="/assets/s.e1907eb976.js"></script>
+<script src="/assets/s.179d3dec57.js"></script>
 
 <!-- ══════════════════════════════════════
      DYNAMIC LAYER v2 ELEMENTS

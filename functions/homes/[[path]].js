@@ -18,7 +18,8 @@ import { COOKIE as COOKIE_NAME, PREVIEW_COOKIE, clearCookie, crm, idxOn, sameOri
 import { PLACES } from "../../idx-lib/places.js";
 import { NO_HOA_NOTE, placeParams } from "../../idx-lib/edge.js";
 import { CITIES, readQuery } from "../../idx-lib/query.js";
-import { FEATURE_LABEL, featureList } from "../../idx-lib/features.js";
+import { featureLabel, featureList, catalogLoaded, isDistance } from "../../idx-lib/features.js";
+import { filterCatalog, panelGroups } from "../../idx-lib/catalog.js";
 import { filterBar, labels as filterLabels } from "../../idx-lib/filters.js";
 import { postFilter, rankHomes } from "../../idx-lib/feeds.js";
 import { MAP_SCRIPT, MAP_STYLE, geocode, mapsKey, nearOf, pinOf, withPoints } from "../../idx-lib/map.js";
@@ -73,6 +74,7 @@ async function handle(context) {
     if (name === "lookup" && request.method === "GET") return lookup(context, url);
     if (name === "similar" && request.method === "GET") return similar(context, url);
     if (name === "strip" && request.method === "GET") return stripApi(context, url);
+    if (name === "filters" && request.method === "GET") return filtersApi(context);
     if (request.method !== "POST") return json({ ok: false, error: "method" }, 405);
     if (!sameOrigin(request)) return json({ ok: false, error: "forbidden" }, 403);
     if (name === "signout") return new Response(null, { status: 303, headers: { Location: "/homes/", "Set-Cookie": clearCookie(), "Cache-Control": "no-store" } });
@@ -276,6 +278,18 @@ function select(name, label, options, current) {
 }
 
 /** The visitor's filters, validated; anything else is dropped (contract §3: never pass a query through). */
+/**
+ * The search as the CRM reads it: homes for sale only unless the reader asked for those under contract
+ * too (owner, 2026-10-26: "we want homes for sale to be shown"), never with a sold search, and without
+ * the site's own "all". The page's links keep the reader's words; only the call adds status.
+ */
+function forCrm(p) {
+  const x = new URLSearchParams(p);
+  if (x.get("all") !== "1" && x.get("sold") !== "1") x.set("status", "active");
+  x.delete("all");
+  return x;
+}
+
 function searchParams(q, signed) {
   const p = new URLSearchParams();
   const city = q.get("city");
@@ -301,12 +315,17 @@ function searchParams(q, signed) {
   const sub = (q.get("subdivision") || "").trim();
   if (/^[A-Za-z0-9 .,'&()\/-]{2,80}$/.test(sub)) p.set("subdivision", sub);
   // The MLS features and ranges (CRM branch website/idx-filters; an older CRM ignores them).
-  for (const name of ["has", "not"]) { const keys = featureList(q.getAll(name)); if (keys.length) p.set(name, keys.join(",")); }
+  // At most 2 distance features in one search, has and not together (contract §5).
+  const hasKeys = featureList(q.getAll("has"));
+  const notKeys = featureList(q.getAll("not"), hasKeys.filter(isDistance).length);
+  if (hasKeys.length) p.set("has", hasKeys.join(","));
+  if (notKeys.length) p.set("not", notKeys.join(","));
   for (const [name, lo, hi] of [["yearMin", 1800, 2100], ["yearMax", 1800, 2100], ["hoaMax", 0, 100000], ["garage", 1, 10], ["domMax", 0, 10000]]) {
     const v = q.get(name); if (v && /^\d{1,6}$/.test(v) && +v >= lo && +v <= hi) p.set(name, v);
   }
   const lot = q.get("lotMin"); if (lot && /^\d{1,4}(\.\d{1,3})?$/.test(lot)) p.set("lotMin", lot);
-  if (q.get("status") === "active") p.set("status", "active");
+  // "Also show homes under contract" (all=1). Without it every search is homes for sale only (forCrm).
+  if (q.get("all") === "1") p.set("all", "1");
   if (signed && q.get("sold") === "1") p.set("sold", "1");
   const sort = q.get("sort");
   if (sort && (["newest", "price_asc", "price_desc"].includes(sort) || (sort === "nearest" && n))) p.set("sort", sort);
@@ -319,7 +338,7 @@ const TYPE_WORD = Object.fromEntries(TYPES.filter(([v]) => v));
 const title = (v) => String(v).toLowerCase().replace(/\b([a-z])/g, (c) => c.toUpperCase());
 /** The filters in force, each a chip that removes itself. */
 function appliedChips(p) {
-  const label = { city: (v) => v, zip: (v) => v, type: (v) => TYPE_WORD[v], min: (v) => `From ${money(+v)}`, max: (v) => `Up to ${money(+v)}`,
+  const label = { all: () => "With homes under contract", city: (v) => v, zip: (v) => v, type: (v) => TYPE_WORD[v], min: (v) => `From ${money(+v)}`, max: (v) => `Up to ${money(+v)}`,
     beds: (v) => `${v}+ beds`, baths: (v) => `${v}+ baths`, sqft: (v) => `${(+v).toLocaleString("en-US")}+ sq ft`, waterfront: () => "Waterfront", subdivision: (v) => title(v), sold: () => "Sold",
     hoa: () => "No HOA", near: () => `Within ${p.get("miles")} miles`,
     yearMin: (v) => `Built ${v}+`, yearMax: (v) => `Built by ${v}`, lotMin: (v) => `${v}+ acres`, hoaMax: (v) => `HOA up to ${money(+v)}`, garage: (v) => `${v}+ car garage`,
@@ -332,7 +351,7 @@ function appliedChips(p) {
     const x = new URLSearchParams(p); x.delete("page"); x.delete("size");
     const rest = (p.get(name) || "").split(",").filter((y) => y && y !== key);
     if (rest.length) x.set(name, rest.join(",")); else x.delete(name);
-    const word = `${name === "not" ? "No " : ""}${FEATURE_LABEL[key] || key}`;
+    const word = `${name === "not" ? "No " : ""}${featureLabel(key)}`;
     chips.push(`<a class="hx-applied-chip" href="${esc(`/homes/${x.toString() ? `?${x.toString()}` : ""}`)}" aria-label="Remove ${esc(word)}">${esc(word)}<span aria-hidden="true">&times;</span></a>`);
   }
   return chips.length ? `<div class="hx-applied">${chips.join("")}<a class="hx-clear" href="/homes/">Clear all</a></div>` : "";
@@ -340,6 +359,7 @@ function appliedChips(p) {
 
 async function searchPage(context, url, gate, anonymous = false) {
   const q = url.searchParams;
+  await filterCatalog(context.env, context.request);
   // Plain words in the box: read them into filters, then show the clean address of that search.
   if (q.has("q")) {
     const read = readQuery(q.get("q"));
@@ -352,12 +372,12 @@ async function searchPage(context, url, gate, anonymous = false) {
   const p = searchParams(q, !anonymous && Boolean(visitorToken(context.request)));
   const filtered = [...p.keys()].some((k) => k !== "sort" && k !== "page");
   p.set("size", "24");
-  const [r, hearts] = await Promise.all([crm(context.env, context.request, `/api/idx/listings?${p.toString()}`, { anonymous }), anonymous ? [] : heartsOf(context)]);
+  const [r, hearts] = await Promise.all([crm(context.env, context.request, `/api/idx/listings?${forCrm(p).toString()}`, { anonymous }), anonymous ? [] : heartsOf(context)]);
   if (!anonymous && badToken(r)) return publicView(context, (c) => searchPage(c, url, gate, true));
   if (r.status !== 200 || !r.json || !r.json.ok) return trouble(context, gate, r, "Grand Strand homes for sale");
   const j = r.json;
   // The filter bar (idx-lib/filters.js); the MLS features only when this CRM applies them.
-  const form = filterBar({ action: "/homes/", params: p, features: Array.isArray(j.applied) });
+  const form = filterBar({ action: "/homes/", params: p, features: catalogLoaded() || Array.isArray(j.applied) });
   const pageNo = Number.isInteger(j.page) && j.page > 0 ? j.page : 1;
   const pages = Math.min(100, Math.max(1, Math.ceil((j.total || 0) / (j.pageSize || 24))));
   const link = (n) => { const x = new URLSearchParams(p); x.delete("size"); x.set("page", String(n)); return `/homes/?${x.toString()}`; };
@@ -393,7 +413,7 @@ async function mapSearch(context, q) {
   const n = nearOf(q.get("near"), q.get("miles"));
   if (n) { p.delete("city"); p.delete("zip"); p.set("near", n.near); p.set("miles", n.miles); }
   p.delete("page"); p.set("size", "48");
-  const get = (pg) => { const x = new URLSearchParams(p); if (pg > 1) x.set("page", String(pg)); return crm(context.env, context.request, `/api/idx/listings?${x.toString()}`, { anonymous: true }); };
+  const get = (pg) => { const x = forCrm(p); if (pg > 1) x.set("page", String(pg)); return crm(context.env, context.request, `/api/idx/listings?${x.toString()}`, { anonymous: true }); };
   const first = await get(1);
   if (first.status !== 200 || !first.json || !first.json.ok) return { r: first, p, listings: [], pins: [], total: 0 };
   let listings = Array.isArray(first.json.listings) ? first.json.listings : [];
@@ -542,9 +562,10 @@ async function similar(context, url) {
  * never the cheapest first). Cards only, the strip's own notice is already on the page.
  */
 async function stripApi(context, url) {
+  await filterCatalog(context.env, context.request);
   const p = searchParams(url.searchParams, false);
   p.delete("page"); p.set("size", "48");
-  const r = await crm(context.env, context.request, `/api/idx/listings?${p.toString()}`, { anonymous: true });
+  const r = await crm(context.env, context.request, `/api/idx/listings?${forCrm(p).toString()}`, { anonymous: true });
   if (r.status !== 200 || !r.json || !r.json.ok || !Array.isArray(r.json.listings)) return json({ ok: false }, r.status === 429 ? 429 : 503);
   const asked = p.get("type");
   const allow = ["land", "manufactured", "multi"].includes(asked);
@@ -561,6 +582,18 @@ async function stripApi(context, url) {
     : `<p class="hx-s-empty">No homes match those filters right now. <a href="${esc(link)}">Open the full search</a> to widen them.</p>`;
   const L = filterLabels(p);
   return json({ ok: true, html, total, link, labels: { price: L.price, beds: L.bb, type: L.type, town: L.town, more: L.more }, note: p.get("hoa") === "0" ? NO_HOA_NOTE : "" }, 200, { "cache-control": "public, max-age=120" });
+}
+
+/**
+ * GET /homes/api/filters: the MLS features for the filter panel, grouped, most homes first, each with
+ * how many homes for sale have it (the CRM's list, contract §5). Short keys keep it small: k key,
+ * l label, n homes for sale, d a distance (at most 2 in a search).
+ */
+async function filtersApi(context) {
+  const list = await filterCatalog(context.env, context.request);
+  if (!list) return json({ ok: false }, 503);
+  const groups = panelGroups(list).map((g) => ({ name: g.name, items: g.items.map((f) => ({ k: f.key, l: f.label, n: f.forSale, ...(f.distance ? { d: 1 } : {}) })) }));
+  return json({ ok: true, countedAt: list.countedAt, groups }, 200, { "cache-control": "public, max-age=3600" });
 }
 
 // ── one listing ─────────────────────────────────────────────────────────────
@@ -735,7 +768,7 @@ async function placePage(context, slug, gate, anonymous = false) {
   const p = placeParams(place.q);
   if (!p) return notFound(context);
   p.set("size", "48");
-  const [r, hearts] = await Promise.all([crm(context.env, context.request, `/api/idx/listings?${p.toString()}`, { anonymous }), anonymous ? [] : heartsOf(context)]);
+  const [r, hearts] = await Promise.all([crm(context.env, context.request, `/api/idx/listings?${forCrm(p).toString()}`, { anonymous }), anonymous ? [] : heartsOf(context)]);
   if (!anonymous && badToken(r)) return publicView(context, (c) => placePage(c, slug, gate, true));
   if (r.status !== 200 || !r.json || !r.json.ok) return trouble(context, gate, r, `Homes for sale in ${place.name}`);
   const j = r.json;

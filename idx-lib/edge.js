@@ -17,6 +17,8 @@ import { crm, idxOn, visitorToken } from "./crm.js";
 import { PLACES } from "./places.js";
 import { FEEDS, feedParams, postFilter, rankHomes } from "./feeds.js";
 import { filterBar } from "./filters.js";
+import { filterCatalog } from "./catalog.js";
+import { catalogLoaded } from "./features.js";
 import { STYLE, STRIP_STYLE, SCRIPT, disclaimer, esc, safeUrl, signupDialog, stripCard, tourDialog } from "./render.js";
 
 const SLOT = /<div class="hx-strip" data-place="([a-z0-9-]+)" data-name="([^"<>]*)"(?: data-head="([^"<>]*)")?><\/div>/g;
@@ -114,7 +116,7 @@ function feedSection(feed, listings, total, applied) {
     + `<p class="hx-feed-eb">Live from the MLS</p>`
     + `<p class="hx-s-head"><b class="hx-feed-h">${esc(head)}</b><a href="${esc(all)}">See all</a></p>`
     + (feed.noHoa ? `<p class="hx-s-note">${NO_HOA_NOTE}</p>` : "")
-    + filterBar({ action: "/homes/", params: new URLSearchParams(link), features: applied, compact: true })
+    + filterBar({ action: "/homes/", params: new URLSearchParams(link), features: applied || catalogLoaded(), compact: true })
     + `<div class="hx-s-row" data-hx-row>${feedHomes(feed, listings).map((l) => stripCard(l, false)).join("")}`
     + `<a class="hx-s-all" href="${esc(all)}" draggable="false">See all homes</a></div></div></div></section>`;
 }
@@ -192,6 +194,8 @@ export async function withIdx(context, response) {
     if (feed) {
       // Too few homes for the topic: the fallback, or the Grand Strand's newest, under its own title.
       let used = feed;
+      // The CRM's live feature list first (cached an hour): a feed whose key it no longer lists is skipped.
+      await filterCatalog(env, request);
       let got = await runFeed(env, request, used);
       if (got && got !== "stale" && got[0].length < STRIP_MIN) {
         const wider = feed.fallback || FEEDS["/buyers/"];
@@ -207,6 +211,7 @@ export async function withIdx(context, response) {
     const calls = Promise.all(slugs.map((s) => {
       const p = placeParams(PLACES[s].q);
       if (!p) return null;
+      p.set("status", "active");
       p.set("size", "48");
       return crm(env, request, `/api/idx/listings?${p.toString()}`, { anonymous: true, timeoutMs: STRIP_BUDGET_MS - 500 }).catch(() => null);
     }));

@@ -13,7 +13,7 @@
  * No backslash anywhere in FILTER_SCRIPT: it lives in a template string, which eats them.
  */
 import { CITIES } from "./query.js";
-import { FEATURE_GROUPS, FEATURE_LABEL } from "./features.js";
+import { featureLabel } from "./features.js";
 
 const esc = (v) => String(v ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 const k = (n) => (n >= 1e6 ? `$${(n / 1e6).toLocaleString("en-US", { maximumFractionDigits: 2 })}M` : `$${Math.round(n / 1000)}K`);
@@ -38,7 +38,7 @@ export function labels(p) {
   const beds = p.get("beds"), baths = p.get("baths");
   const bb = [beds ? `${beds}+ bd` : "", baths ? `${baths}+ ba` : ""].filter(Boolean).join(", ");
   const type = (TYPES.find(([v]) => v && v === p.get("type")) || [])[1] || "";
-  const more = ["yearMin", "lotMin", "hoaMax", "garage", "domMax", "status", "waterfront"].filter((x) => p.get(x)).length
+  const more = ["yearMin", "lotMin", "hoaMax", "garage", "domMax", "all", "waterfront"].filter((x) => p.get(x)).length
     + (p.get("hoa") === "0" ? 1 : 0) + (p.get("has") ? p.get("has").split(",").length : 0) + (p.get("not") ? p.get("not").split(",").length : 0);
   return { price, bb, type, town: p.get("city") || "", more: more ? `More (${more})` : "" };
 }
@@ -52,7 +52,7 @@ export function filterBar({ action = "/homes/", params, features = false, compac
   const L = labels(p);
   const has = new Set((p.get("has") || "").split(",").filter(Boolean));
   // Kept as is: what has no control in this bar (with the CRM's ranges, "not" still has none).
-  const keep = ["subdivision", "near", "miles", "zip", "sort", "sqft", "yearMax", "sold", "not", ...(features ? [] : ["has", "yearMin", "lotMin", "hoaMax", "garage", "domMax", "status"])]
+  const keep = ["subdivision", "near", "miles", "zip", "sort", "sqft", "yearMax", "sold", "not", ...(features ? [] : ["has", "yearMin", "lotMin", "hoaMax", "garage", "domMax", "all"])]
     .filter((x) => p.get(x)).map((x) => `<input type="hidden" name="${x}" value="${esc(p.get(x))}">`).join("");
   const prices = (name, cur) => `<select name="${name}" aria-label="${name === "min" ? "Lowest price" : "Highest price"}">${opt("", name === "min" ? "No min" : "No max", cur)}${[...new Set([...PRICE_STEPS, +cur || 0])].filter(Boolean).sort((a, b) => a - b).map((v) => opt(v, k(v), cur)).join("")}</select>`;
   const quick = [["", "300000", "Under $300K"], ["300000", "500000", "$300K to $500K"], ["500000", "1000000", "$500K to $1M"], ["1000000", "", "$1M+"]]
@@ -68,10 +68,14 @@ export function filterBar({ action = "/homes/", params, features = false, compac
       + `<label>HOA fee<select name="hoaPick" data-hx-hoa>${withCur(HOA, hoaCur, (v) => `Up to $${(+v).toLocaleString("en-US")} a month`).map(([v, l]) => opt(v, l, hoaCur)).join("")}</select></label>`
       + `<label>Garage<select name="garage">${withCur(GARAGE, p.get("garage"), (v) => `${v}+ car`).map(([v, l]) => opt(v, l, p.get("garage"))).join("")}</select></label>`
       + `<label>Listed<select name="domMax">${withCur(DOM, p.get("domMax"), (v) => `Last ${v} days`).map(([v, l]) => opt(v, l, p.get("domMax"))).join("")}</select></label></div>`
-      + `<label class="hx-tick"><input type="checkbox" name="status" value="active"${p.get("status") === "active" ? " checked" : ""}><span>For sale only, not under contract</span></label>`
+      + `<label class="hx-tick"><input type="checkbox" name="all" value="1"${p.get("all") === "1" ? " checked" : ""}><span>Also show homes under contract</span></label>`
     : `<label class="hx-tick"><input type="checkbox" name="hoa" value="0"${p.get("hoa") === "0" ? " checked" : ""}><span>No HOA, as listed by the listing agent</span></label>`;
   const waterTick = `<label class="hx-tick"><input type="checkbox" name="waterfront" value="1"${p.get("waterfront") === "1" ? " checked" : ""}><span>Waterfront</span></label>`;
-  const groups = features ? FEATURE_GROUPS.map((g) => `<p class="hx-pop-h">${esc(g.name)}</p><div class="hx-feats">${g.keys.filter(([key]) => key !== "waterfront").map(([key, label]) => `<label><input type="checkbox" name="has" value="${esc(key)}"${has.has(key) ? " checked" : ""}><span>${esc(label)}</span></label>`).join("")}</div>`).join("") : "";
+  /* Every MLS feature the CRM lists (about 490): drawn by the script when "More" first opens, from
+     /homes/api/filters, so a page with five strips does not carry 490 boxes five times. Until then the
+     features in force ride in one hidden box. */
+  const groups = features ? `<p class="hx-pop-h">Features</p><label class="hx-fsearch"><input type="search" data-hx-fsearch placeholder="Pool, dock, walk to the beach, golf cart..." aria-label="Find a feature" autocomplete="off"></label>`
+    + `<div class="hx-feats-live" data-hx-feats data-has="${esc([...has].join(","))}">${has.size ? `<input type="hidden" name="has" value="${esc([...has].join(","))}">` : ""}<p class="hx-feats-wait">Loading every MLS feature...</p></div>` : "";
   const moreP = `<p class="hx-pop-h">More filters</p>${waterTick}${ranges}${groups}`;
   return `<form class="hx-fb${compact ? " hx-fb-c" : ""}" action="${esc(action)}" method="get" data-hx-fb${compact ? " data-hx-strip-fb" : ""} aria-label="Filters">${keep}`
     + (compact ? "" : `<label class="hx-fb-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input name="q" type="search" enterkeyhint="search" autocomplete="off" maxlength="200" aria-label="Search homes" placeholder="Town, neighborhood, ZIP, or &quot;3 bed under $400k&quot;"></label>`)
@@ -80,7 +84,7 @@ export function filterBar({ action = "/homes/", params, features = false, compac
 }
 
 /** Chips for the features in force (the search page's removable chips). */
-export const featureChipLabel = (key) => FEATURE_LABEL[key] || key;
+export const featureChipLabel = (key) => featureLabel(key);
 
 export const FILTER_STYLE = `
 .hx-fb{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin:.9rem 0 1rem;position:relative;z-index:5}
@@ -116,9 +120,15 @@ export const FILTER_STYLE = `
 .hx-seg input:checked+span{background:var(--ink,#1c2028);color:#fff}
 .hx-list{display:grid;gap:.3rem}.hx-list-2{grid-template-columns:1fr 1fr}
 .hx-list label,.hx-feats label{position:relative;display:block}
+.hx-feats label[hidden],.hx-feats[hidden],.hx-feats-live .hx-pop-h[hidden]{display:none!important}
 .hx-list span{display:block;padding:.55rem .75rem;border-radius:10px;font-size:.92rem;font-weight:500;color:var(--ink,#1c2028);cursor:pointer;background:#faf8f4}
 .hx-list input:checked+span{background:var(--ink,#1c2028);color:#fff}
 .hx-feats{display:flex;flex-wrap:wrap;gap:.35rem}
+.hx-fsearch{display:block!important;margin:0 0 .6rem}.hx-fsearch input{width:100%;min-height:2.6rem;padding:0 .8rem;border-radius:10px;border:1px solid rgba(28,32,40,.18);background:#faf8f4;font:inherit;font-size:.92rem}
+.hx-feats-wait{font-size:.85rem;color:var(--slate,#5c6b78);margin:.2rem 0}
+.hx-feats-live .hx-pop-h{margin-top:.8rem}
+.hx-feats span small{color:var(--slate,#5c6b78);font-weight:400;margin-left:.3rem}.hx-feats input:checked+span small{color:rgba(255,255,255,.7)}
+.hx-feats-note{font-size:.8rem;color:#8a2d1c;margin:.4rem 0 0}
 .hx-feats span{display:inline-block;padding:.42rem .72rem;border-radius:999px;border:1px solid rgba(28,32,40,.16);font-size:.84rem;font-weight:500;color:var(--ink,#1c2028);cursor:pointer;background:#fff}
 .hx-feats input:checked+span{background:var(--ink,#1c2028);border-color:var(--ink,#1c2028);color:#fff}
 .hx-seg input:focus-visible+span,.hx-list input:focus-visible+span,.hx-feats input:focus-visible+span{outline:2px solid var(--brass-ink,#91592b);outline-offset:2px}
@@ -165,11 +175,24 @@ function go(f){var p=paramsOf(f);
   if(j.note)note.textContent=j.note;else if(note)note.remove();var all=strip.querySelector(".hx-s-head a");if(all){all.href=j.link;all.textContent=j.total?"See all "+j.total.toLocaleString("en-US"):"See all"}
   Array.prototype.forEach.call(f.querySelectorAll("details.hx-pop"),function(d){var k=d.getAttribute("data-k");if(j.labels&&k in j.labels)label(d,j.labels[k]||d.getAttribute("data-label"),j.labels[k])});
  }).catch(function(){if(n!==f.hxSeq)return;strip.removeAttribute("data-loading");say(f,"Could not refresh the homes. Please try again.")})}
+var featsP=null;function feats(){if(!featsP)featsP=fetch("/homes/api/filters",{credentials:"same-origin"}).then(function(r){return r.json()}).catch(function(){return null});return featsP}
+function drawFeats(f){var box=f.querySelector("[data-hx-feats]");if(!box||box.getAttribute("data-done"))return;box.setAttribute("data-done","1");
+ var on={};(box.getAttribute("data-has")||"").split(",").forEach(function(k){if(k)on[k]=1});
+ feats().then(function(j){if(!j||!j.ok||!j.groups){box.querySelector(".hx-feats-wait").textContent="The feature list is not available right now.";return}
+  var h=box.querySelector("input[type=hidden][name=has]");if(h)h.remove();box.innerHTML="";
+  j.groups.forEach(function(g){var hd=document.createElement("p");hd.className="hx-pop-h";hd.textContent=g.name;var w=document.createElement("div");w.className="hx-feats";
+   g.items.forEach(function(it){var l=document.createElement("label");l.setAttribute("data-words",(it.l+" "+it.k).toLowerCase());var i=document.createElement("input");i.type="checkbox";i.name="has";i.value=it.k;if(it.d)i.setAttribute("data-d","1");if(on[it.k])i.checked=true;
+    var sp=document.createElement("span");sp.textContent=it.l;var sm=document.createElement("small");sm.textContent=it.n.toLocaleString("en-US");sp.appendChild(sm);l.appendChild(i);l.appendChild(sp);w.appendChild(l)});
+   box.appendChild(hd);box.appendChild(w)});
+  var note=document.createElement("p");note.className="hx-feats-note";note.hidden=true;note.textContent="Pick at most 2 distances at a time.";box.appendChild(note);
+  box.addEventListener("change",function(e){var t=e.target;if(t.getAttribute("data-d")&&t.checked&&box.querySelectorAll("input[data-d]:checked").length>2){t.checked=false;note.hidden=false}else note.hidden=true});
+  var q=f.querySelector("[data-hx-fsearch]");if(q)q.addEventListener("input",function(){var v=q.value.trim().toLowerCase();Array.prototype.forEach.call(box.querySelectorAll("label[data-words]"),function(l){l.hidden=!!v&&l.getAttribute("data-words").indexOf(v)<0});
+   Array.prototype.forEach.call(box.querySelectorAll(".hx-feats"),function(w){var any=w.querySelector("label:not([hidden])");w.hidden=!any;w.previousSibling.hidden=!any})})})}
 Array.prototype.forEach.call(forms,function(f){
  Array.prototype.forEach.call(f.querySelectorAll("details.hx-pop"),function(d){d.setAttribute("data-label",{price:"Price",beds:"Beds & baths",type:"Home type",town:"Town",more:"More"}[d.getAttribute("data-k")]||"");
-  d.addEventListener("toggle",function(){if(d.open)closeAll(d)})});
+  d.addEventListener("toggle",function(){if(d.open){closeAll(d);if(d.getAttribute("data-k")==="more")drawFeats(f)}})});
  f.addEventListener("submit",function(e){e.preventDefault();go(f)});
- f.addEventListener("change",function(e){var t=e.target;if(t.closest("details[data-k=more]"))return;if(t.name==="q")return;go(f)});
+ f.addEventListener("change",function(e){var t=e.target;if(t.closest("details[data-k=more]"))return;if(t.name==="q"||t.hasAttribute("data-hx-fsearch"))return;go(f)});
  Array.prototype.forEach.call(f.querySelectorAll(".hx-quick"),function(b){b.addEventListener("click",function(){f.elements.min.value=b.getAttribute("data-min");f.elements.max.value=b.getAttribute("data-max");go(f)})});
 });
 })();</script>`;

@@ -23,7 +23,7 @@
  * Pages that already carry homes strips (batch 2026-10-b) are left out: edge.js fills their own
  * slots. A page not listed here gets no feed.
  */
-import { FEATURE_KEYS } from "./features.js";
+import { isFeature, isDistance, DISTANCE_MAX } from "./features.js";
 
 /** The quality bar every feed card meets unless the feed says otherwise (see postFilter). */
 export const QUALITY = { minPhotos: 12, minPrice: 150000, minPriceCondo: 120000, yearMin: 1975, minSqft: 900, ppsfMin: 110, ppsfMax: 2500 };
@@ -222,9 +222,11 @@ export function feedParams(q) {
   if (q.status !== undefined) { if (q.status !== "active") return null; p.set("status", "active"); }
   for (const k of ["has", "not"]) if (q[k] !== undefined) {
     const keys = q[k].split(",");
-    if (!keys.length || keys.length > 8 || !keys.every((x) => FEATURE_KEYS.includes(x))) return null;
+    // A key the CRM does not list today drops the whole search: the title promises it.
+    if (!keys.length || keys.length > 8 || !keys.every((x) => isFeature(x))) return null;
     p.set(k, keys.join(","));
   }
+  if ([...(p.get("has") || "").split(","), ...(p.get("not") || "").split(",")].filter((k) => k && isDistance(k)).length > DISTANCE_MAX) return null;
   if (q.near !== undefined) {
     const m = /^(-?\d{1,2}\.\d{1,6}),(-?\d{1,3}\.\d{1,6})$/.exec(q.near);
     if (!m || +m[1] < 31 || +m[1] > 37 || +m[2] < -82 || +m[2] > -75 || !/^\d{1,2}(\.\d)?$/.test(q.miles || "")) return null;

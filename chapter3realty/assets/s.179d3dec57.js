@@ -142,7 +142,7 @@ function ltrSetBadge(cap, moCF, coc) {
   el.innerHTML = `<span style="display:inline-flex;align-items:center;padding:.3rem .85rem;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;background:${bc};color:#fff">${bt}</span>`;
 }
 
-// What each number means, in one plain line shown under it (owner, 2026-10-26: no hidden boxes).
+// What each number means, behind the "?" beside its name: hover, tap or tab to it (owner, 2026-10-27).
 const LTR_SAYS = {
   cashflow: 'What is left each month after every cost and the loan.',
   rent: 'What a home like this rents for here, a month.',
@@ -161,11 +161,11 @@ function ltrCard(label, displayValue, metric, topColor, tipKey, rawScore) {
   const color = metric ? ltrScoreColor(metric, score) : (topColor||'var(--brass)');
   const pill  = metric ? ltrPillLabel(metric, score)  : null;
   const says  = LTR_SAYS[tipKey || metric] || '';
+  const q = says ? `<button type="button" class="ltr-q" aria-label="What is ${label.toLowerCase()}?" data-tip="${c3Esc(says)}">?</button>` : '';
   return `<div class="ltr-m"><div class="ltr-m-bar" style="background:${color}"></div>
-    <div class="ltr-m-l">${label}</div>
+    <div class="ltr-m-l">${label}${q}</div>
     <div class="ltr-m-v">${displayValue}</div>
     ${pill?`<span class="ltr-m-p" style="background:${pill[1]};color:${pill[2]}">${pill[0]}</span>`:''}
-    ${says?`<p class="ltr-m-s">${says}</p>`:''}
   </div>`;
 }
 
