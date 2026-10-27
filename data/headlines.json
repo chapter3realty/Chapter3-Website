@@ -1,0 +1,332 @@
+{
+  "_readme": "Article headlines (owner, 2026-10-26: 'make their headlines better for marketing more clickbait and better filters to back up my click bait'). Each hook is a fact the page itself states, and the page's homes feed (idx-lib/feeds.js) shows homes that make it true. Applied by tools/headlines.js: hand-made pages directly, relocating pages through their data files. Spec pages keep their titles in their specs.",
+  "/buyers/": {
+    "title": "Every Myrtle Beach Home Buyer Guide in One Place | Chapter3",
+    "h1": [
+      "Every Myrtle Beach buyer guide,",
+      "in one place."
+    ]
+  },
+  "/buyers/buying-in-myrtle-beach/": {
+    "title": "Buying in Myrtle Beach: It's a Buyer's Market Now | Chapter3",
+    "h1": [
+      "Buying in Myrtle Beach:",
+      "it's a buyer's market."
+    ]
+  },
+  "/buyers/common-mistakes/": {
+    "title": "Myrtle Beach Buyer Mistakes That Cost the Most | Chapter3",
+    "h1": [
+      "The Myrtle Beach buyer mistakes",
+      "that cost the most."
+    ]
+  },
+  "/buyers/first-time-home-buyer-myrtle-beach/": {
+    "title": "First Home in Myrtle Beach? You May Need Less Cash | Chapter3",
+    "h1": [
+      "Your first home in Myrtle Beach",
+      "may take less cash than you think."
+    ]
+  },
+  "/buyers/programs/": {
+    "title": "SC Down Payment Help: What It Is and Isn't | Chapter3",
+    "h1": [
+      "South Carolina down payment help:",
+      "what it is, and what it is not."
+    ]
+  },
+  "/buyers/va-loans/": {
+    "title": "VA Loans in Myrtle Beach: What the Appraisal Checks | Chapter3",
+    "h1": [
+      "VA loans in Myrtle Beach:",
+      "what the VA appraisal checks here."
+    ]
+  },
+  "/buyers/retirees/": {
+    "title": "Retire to Myrtle Beach: The Costs People Miss | Chapter3",
+    "h1": [
+      "Retiring to Myrtle Beach:",
+      "the costs retirees underestimate."
+    ]
+  },
+  "/buyers/new-construction/": {
+    "title": "New Builds in Myrtle Beach: What Builders Won't Say | Chapter3",
+    "h1": [
+      "New construction in Myrtle Beach:",
+      "the defect problem nobody advertises."
+    ]
+  },
+  "/buyers/cost-to-own/": {
+    "title": "The Real Monthly Cost to Own in Myrtle Beach | Chapter3",
+    "h1": [
+      "The real monthly cost to own",
+      "a home in Myrtle Beach."
+    ]
+  },
+  "/buyers/waterfront-homes/": {
+    "title": "Waterfront Homes in Myrtle Beach: The Dock Sets the Value",
+    "h1": [
+      "Waterfront homes in Myrtle Beach:",
+      "the dock decides the value."
+    ]
+  },
+  "/buyers/golf-communities/": {
+    "title": "Myrtle Beach Golf Communities: Membership Optional | Chapter3",
+    "h1": [
+      "Myrtle Beach golf communities,",
+      "where membership is optional."
+    ]
+  },
+  "/buyers/condo-in-litigation/": {
+    "title": "A Myrtle Beach Condo in Litigation Can Be the Best Deal",
+    "h1": [
+      "A condo in litigation",
+      "can be the best deal in Myrtle Beach."
+    ]
+  },
+  "/buyers/undisclosed-flooding/": {
+    "title": "Did This Myrtle Beach House Flood? How to Find Out | Chapter3",
+    "h1": [
+      "Did the house flood before?",
+      "How to find out in Myrtle Beach."
+    ]
+  },
+  "/buyers/property-taxes/": {
+    "title": "Horry Property Tax: Why Rentals Pay 3-4x More | Chapter3",
+    "h1": [
+      "Horry County property taxes:",
+      "why a rental pays three to four times more."
+    ]
+  },
+  "/buyers/coastal-insurance/": {
+    "title": "Myrtle Beach Home Insurance: What It Costs, 6 Ways to Cut It",
+    "h1": [
+      "What home insurance costs in Myrtle Beach,",
+      "and six ways to lower it."
+    ]
+  },
+  "/buyers/closing-costs/": {
+    "title": "SC Closing Costs, Calculated: Who Pays What | Chapter3",
+    "h1": [
+      "South Carolina closing costs:",
+      "who pays what, calculated."
+    ]
+  },
+  "/buyers/55-plus-communities/": {
+    "title": "Myrtle Beach 55+ Communities: Real HOA Fees Compared",
+    "h1": [
+      "Myrtle Beach 55+ communities,",
+      "with their real prices and HOA fees."
+    ]
+  },
+  "/buyers/relocating/": {
+    "title": "Relocating to Myrtle Beach: Close in One Trip | Chapter3",
+    "h1": [
+      "Relocating to Myrtle Beach?",
+      "Most clients close in one trip."
+    ]
+  },
+  "/buyers/relocating/cost-of-living/": {
+    "title": "Myrtle Beach Cost of Living: Your Money Buys More House",
+    "h1": [
+      "Cost of living in Myrtle Beach:",
+      "your money buys a lot more house."
+    ]
+  },
+  "/buyers/relocating/pros-and-cons/": {
+    "title": "Living in Myrtle Beach Year-Round: The Honest Pros and Cons",
+    "h1": [
+      "Living in Myrtle Beach year-round:",
+      "the honest pros and cons."
+    ]
+  },
+  "/buyers/relocating/jobs/": {
+    "title": "Myrtle Beach Jobs: What the Average Job Pays | Chapter3",
+    "h1": [
+      "Jobs in Myrtle Beach:",
+      "what the average job pays."
+    ]
+  },
+  "/buyers/relocating/healthcare/": {
+    "title": "Myrtle Beach Healthcare: 6 Hospitals Now, 3 More Coming",
+    "h1": [
+      "Healthcare in Myrtle Beach:",
+      "six hospitals now, and three more on the way."
+    ]
+  },
+  "/buyers/relocating/hurricanes/": {
+    "title": "Myrtle Beach Hurricanes: Every Damaging Storm Since 1989",
+    "h1": [
+      "Hurricanes in Myrtle Beach:",
+      "every damaging storm since 1989."
+    ]
+  },
+  "/buyers/relocating/weather/": {
+    "title": "Myrtle Beach Weather: It Snows About an Inch a Year",
+    "h1": [
+      "Myrtle Beach weather, season by season:",
+      "it snows about an inch a year."
+    ]
+  },
+  "/buyers/relocating/getting-around/": {
+    "title": "Getting Around Myrtle Beach: The 4 Road Names to Learn",
+    "h1": [
+      "Getting around Myrtle Beach:",
+      "learn these four road names first."
+    ]
+  },
+  "/buyers/relocating/why-myrtle-beach/": {
+    "title": "Why Is Everyone Moving to Myrtle Beach? 4 Reasons, in Numbers",
+    "h1": [
+      "Why everyone is moving to Myrtle Beach:",
+      "four reasons, told with numbers."
+    ]
+  },
+  "/buyers/relocating/which-town/": {
+    "title": "Which Grand Strand Town Fits You? Prices and Rules Compared",
+    "h1": [
+      "Which Grand Strand town fits you?",
+      "Prices and rules, compared."
+    ]
+  },
+  "/submarkets/conway/": {
+    "title": "Conway, SC: The Grand Strand's Inland Value Market | Chapter3",
+    "h1": [
+      "Conway, SC:",
+      "the Grand Strand's inland value market."
+    ]
+  },
+  "/submarkets/garden-city/": {
+    "title": "Garden City, SC: Beach Rentals With No City Ordinance",
+    "h1": [
+      "Garden City, SC:",
+      "beach rentals with no city ordinance."
+    ]
+  },
+  "/submarkets/little-river/": {
+    "title": "Little River, SC: The Boating End of the Grand Strand",
+    "h1": [
+      "Little River, SC:",
+      "the boating end of the Grand Strand."
+    ]
+  },
+  "/submarkets/murrells-inlet/": {
+    "title": "Murrells Inlet, SC Real Estate: Room for Patient Buyers",
+    "h1": [
+      "Murrells Inlet real estate:",
+      "room for patient buyers."
+    ]
+  },
+  "/submarkets/north-myrtle-beach/": {
+    "title": "North Myrtle Beach: Short-Term Rentals Allowed Citywide",
+    "h1": [
+      "North Myrtle Beach real estate:",
+      "short-term rentals allowed citywide."
+    ]
+  },
+  "/submarkets/pawleys-island/": {
+    "title": "Pawleys Island Real Estate: The Upscale South End | Chapter3",
+    "h1": [
+      "Pawleys Island real estate:",
+      "the upscale south end of the Strand."
+    ]
+  },
+  "/submarkets/surfside-beach/": {
+    "title": "Surfside Beach, SC: Where Short-Term Rentals Are Allowed",
+    "h1": [
+      "Surfside Beach real estate:",
+      "where short-term rentals are allowed."
+    ]
+  },
+  "/submarkets/carolina-forest/": {
+    "title": "Carolina Forest: No City Tax, 11 Subdivisions | Chapter3",
+    "h1": [
+      "Carolina Forest:",
+      "no city tax, eleven subdivisions."
+    ]
+  },
+  "/invest/str-vs-ltr/": {
+    "title": "Airbnb vs Long-Term Rental in Myrtle Beach: 2-3x the Gross",
+    "h1": [
+      "Short-term or long-term rental in Myrtle Beach?",
+      "Two to three times the gross, and the costs."
+    ]
+  },
+  "/invest/condotel-financing/": {
+    "title": "Condotel Loans in Myrtle Beach: Most Banks Say No | Chapter3",
+    "h1": [
+      "Condotel financing in Myrtle Beach:",
+      "most banks say no, and the loans exist anyway."
+    ]
+  },
+  "/invest/non-warrantable-condos/": {
+    "title": "Non-Warrantable Condos: When the Label Means a Deal | Chapter3",
+    "h1": [
+      "Non-warrantable condos in Myrtle Beach:",
+      "when the label means a good deal."
+    ]
+  },
+  "/invest/condo-buildings/": {
+    "title": "Myrtle Beach Oceanfront Condo Buildings: HOA Fees Compared",
+    "h1": [
+      "Myrtle Beach oceanfront condo buildings,",
+      "with their HOA fees compared."
+    ]
+  },
+  "/invest/airbnb-income/": {
+    "title": "Myrtle Beach Airbnbs Gross $20,900 to $42,000: 2026 Data",
+    "h1": [
+      "How much do Airbnbs make in Myrtle Beach?",
+      "$20,900 to $42,000 a year, gross."
+    ]
+  },
+  "/invest/str-rules/": {
+    "title": "Where Airbnb Is Legal in Myrtle Beach, City by City | Chapter3",
+    "h1": [
+      "Where short-term rentals are legal in Myrtle Beach,",
+      "city by city."
+    ]
+  },
+  "/invest/strategies/dscr-loans/": {
+    "title": "DSCR Loans in Myrtle Beach: Qualify on the Rent | Chapter3",
+    "h1": [
+      "DSCR loans in Myrtle Beach:",
+      "the loan qualifies on the rent."
+    ]
+  },
+  "/invest/strategies/brrrr/": {
+    "title": "BRRRR in Myrtle Beach: Bank-Owned Homes 17% Under Market",
+    "h1": [
+      "The BRRRR method in Myrtle Beach:",
+      "bank-owned houses about 17 percent under market."
+    ]
+  },
+  "/invest/strategies/fix-and-flip/": {
+    "title": "Fix and Flip Myrtle Beach: Sold the Day Work Ended | Chapter3",
+    "h1": [
+      "Fix and flip in Myrtle Beach:",
+      "the costs, and a house that sold the day work ended."
+    ]
+  },
+  "/invest/strategies/small-multifamily/": {
+    "title": "How to Buy a Duplex or Fourplex in Myrtle Beach | Chapter3",
+    "h1": [
+      "How to buy a duplex or fourplex",
+      "in Myrtle Beach."
+    ]
+  },
+  "/hoa/": {
+    "title": "Myrtle Beach HOA Fees, and What Each One Covers | Chapter3",
+    "h1": [
+      "Myrtle Beach HOA fees,",
+      "and what each one covers."
+    ]
+  },
+  "/sell/home-value/": {
+    "title": "What Is My Myrtle Beach Home Worth? Free, Same Day | Chapter3",
+    "h1": [
+      "What is my home worth",
+      "in Myrtle Beach?"
+    ]
+  }
+}

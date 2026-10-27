@@ -333,7 +333,7 @@ check("feed: See all opens the same search, with no count from other searches", 
 t = await (await run(mw, req("/buyers/55-plus-communities/"))).text();
 check("feed: a page about several communities searches each of them", ["Del+Webb", "Myrtle+Trace", "Seasons+at+Prince+Creek"].every((w) => calls.slice(-6).some((c) => c.url.includes("subdivision=" + w))) && t.includes("Homes for sale in 55+ communities"));
 t = await (await run(mw, req("/buyers/new-construction/"))).text();
-check("feed: a topic falls back to the newest homes when too few match", t.includes("The newest listings on the Grand Strand") || t.includes("Brand-new homes"));
+check("feed: a feature title the CRM did not apply falls back, never shows over homes that may not have it", t.includes("Just listed on the Grand Strand") || t.includes("Brand-new homes"));
 t = await (await run(mw, req("/invest/strategies/dscr-loans/"))).text();
 {
   const prices = [...t.slice(t.indexOf('class="hx-feed')).matchAll(/class="hx-c-price">\$([\d,]+)/g)].map((m) => +m[1].replace(/,/g, ""));
@@ -553,6 +553,11 @@ t = await r.text();
   check("filters: a search keeps the CRM's keys, drops an unknown one, and the panel loads every feature", sent.includes("has=walk_to_beach%2Cgolf_cart_ok&") && sent.includes("not=marshwalk_1mi") && !sent.includes("bogus") && t.includes("data-hx-feats"));
 }
 CATALOG = false; resetCatalog();
+APPLIED = true;
+t = await (await run(mw, req("/buyers/common-mistakes/"))).text();
+check("feed: a hook the filters make true: 'Price just cut' asks the CRM for price_reduced", t.includes("Price just cut on these homes") && calls.slice(-6).some((c) => c.url.includes("has=price_reduced")));
+t = await (await run(mw, req("/buyers/waterfront-homes/"))).text();
+check("feed: 'Homes with their own dock' asks for private_dock", t.includes("Homes with their own dock") && calls.slice(-6).some((c) => c.url.includes("has=private_dock")));
 APPLIED = false;
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");

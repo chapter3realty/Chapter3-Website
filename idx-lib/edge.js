@@ -92,7 +92,7 @@ async function runFeed(env, request, feed) {
     if (!r || r.status !== 200 || !r.json || !r.json.ok || !Array.isArray(r.json.listings)) continue;
     meta = meta || r.json.meta;
     // The CRM names the wider filters it read (branch website/idx-filters); an older CRM does not.
-    if (Array.isArray(r.json.applied) && r.json.applied.includes("has")) applied = true;
+    if (Array.isArray(r.json.applied) && (r.json.applied.includes("has") || r.json.applied.includes("not"))) applied = true;
     total += typeof r.json.total === "number" ? r.json.total : r.json.listings.length;
     for (const l of r.json.listings) if (l && !seen.has(l.mlsNumber)) { seen.add(l.mlsNumber); out.push(l); }
   }
@@ -197,9 +197,13 @@ export async function withIdx(context, response) {
       // The CRM's live feature list first (cached an hour): a feed whose key it no longer lists is skipped.
       await filterCatalog(env, request);
       let got = await runFeed(env, request, used);
-      if (got && got !== "stale" && got[0].length < STRIP_MIN) {
+      // A title the CRM's features make true, from a CRM that did not apply them, would be a false title: fall back.
+      const untrue = (f, g) => g && g !== "stale" && f.needs === "has" && !f.headToday && !g[3];
+      if (got && got !== "stale" && (got[0].length < STRIP_MIN || untrue(used, got))) {
         const wider = feed.fallback || FEEDS["/buyers/"];
         if (wider !== used) { used = wider; got = await runFeed(env, request, used); }
+        // One more step down when the fallback is itself a feature title that cannot be shown.
+        if (got && got !== "stale" && (got[0].length < STRIP_MIN || untrue(used, got)) && used.fallback && used.fallback !== used) { used = used.fallback; got = await runFeed(env, request, used); }
       }
       if (!got || got === "stale" || got[0].length < STRIP_MIN) return new Response(html, { status: 200, headers });
       html = (feed.low ? placeFeed : placeFeedTop)(html, feedSection({ ...used, low: feed.low }, got[0], got[1], got[3]));
