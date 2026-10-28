@@ -10,7 +10,7 @@ import { useCatalog, isDistance } from "./features.js";
 const HOUR = 3600 * 1000;
 let memo = null; // { at, list }
 let pending = null;
-let failedAt = 0; // after a failure, no new try for 10 minutes: a page never waits on a list that is down
+let failedAt = 0; // after a failure, no new try for 2 minutes: a page never waits long on a list that is down
 
 /** The words the filter panel uses for the CRM's groups, in the panel's order. */
 export const GROUP_NAME = { water: "Water and boats", place: "Beach and places nearby", outside: "Outside", inside: "Inside",
@@ -29,7 +29,7 @@ function shape(j) {
 /** The list, or null. Never throws. */
 export async function filterCatalog(env, request) {
   if (memo && Date.now() - memo.at < HOUR) return memo.list;
-  if (!pending && Date.now() - failedAt < 10 * 60 * 1000) return memo ? memo.list : null;
+  if (!pending && Date.now() - failedAt < 2 * 60 * 1000) return memo ? memo.list : null;
   if (!pending) pending = (async () => {
     try {
       const r = await crm(env, request, "/api/idx/filters", { anonymous: true, cacheSeconds: 3600, timeoutMs: 4000 });
