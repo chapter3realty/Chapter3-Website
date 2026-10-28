@@ -190,7 +190,10 @@ export async function withIdx(context, response) {
     headers.delete("etag");
     headers.delete("last-modified");
     const slots = url.pathname.startsWith("/homes") ? [] : [...html.matchAll(SLOT)];
-    const feed = !slots.length && !html.includes('class="hx-strip"') ? FEEDS[url.pathname] : null;
+    // A page with its own strips gets no feed, unless its feed says it goes on top of them (withStrips).
+    const own = FEEDS[url.pathname];
+    const feed = own && (own.withStrips || (!slots.length && !html.includes('class="hx-strip"'))) ? own : null;
+    let feedMeta = null;
     if (feed) {
       // Too few homes for the topic: the fallback, or the Grand Strand's newest, under its own title.
       let used = feed;
@@ -205,11 +208,14 @@ export async function withIdx(context, response) {
         // One more step down when the fallback is itself a feature title that cannot be shown.
         if (got && got !== "stale" && (got[0].length < STRIP_MIN || untrue(used, got)) && used.fallback && used.fallback !== used) { used = used.fallback; got = await runFeed(env, request, used); }
       }
-      if (!got || got === "stale" || got[0].length < STRIP_MIN) return new Response(html, { status: 200, headers });
-      html = (feed.low ? placeFeed : placeFeedTop)(html, feedSection({ ...used, low: feed.low }, got[0], got[1], got[3]));
-      return finish(env, request, gate, html, got[2], headers);
+      if (got && got !== "stale" && got[0].length >= STRIP_MIN) {
+        html = (feed.low ? placeFeed : placeFeedTop)(html, feedSection({ ...used, low: feed.low }, got[0], got[1], got[3]));
+        feedMeta = got[2];
+      }
+      if (!slots.length) return feedMeta ? finish(env, request, gate, html, feedMeta, headers) : new Response(html, { status: 200, headers });
     }
     if (!slots.length) return new Response(html, { status: 200, headers });
+    const early = () => (feedMeta ? finish(env, request, gate, html, feedMeta, headers) : new Response(html, { status: 200, headers }));
 
     const slugs = [...new Set(slots.map((m) => m[1]))].filter((s) => PLACES[s]);
     const calls = Promise.all(slugs.map((s) => {
@@ -223,7 +229,7 @@ export async function withIdx(context, response) {
     const late = new Promise((done) => { timer = setTimeout(() => done(null), STRIP_BUDGET_MS); });
     const answers = await Promise.race([calls, late]);
     clearTimeout(timer);
-    if (!answers) return new Response(html, { status: 200, headers });
+    if (!answers) return early();
     // A stale MLS copy means no listings anywhere on the page (16.7).
     if (answers.some((r) => r && r.status === 503 && r.json && r.json.error === "stale")) return new Response(html, { status: 200, headers });
     const filled = new Map();
@@ -235,13 +241,13 @@ export async function withIdx(context, response) {
       const ls = r && r.status === 200 && r.json && r.json.ok ? rankHomes(postFilter(r.json.listings || [], PLACE_BAR), "appeal") : [];
       if (ls.length >= STRIP_MIN) { filled.set(s, [ls, r.json.total]); meta = meta || r.json.meta; }
     });
-    if (!filled.size) return new Response(html, { status: 200, headers });
+    if (!filled.size) return early();
 
     html = html.replace(SLOT, (whole, slug, name, head) => {
       const f = filled.get(slug);
       return f ? `<div class="hx-strip" data-place="${slug}" data-name="${name}">${strip(slug, name, f[0], f[1], PLACES[slug].q.hoa !== undefined, head)}</div>` : whole;
     });
-    return finish(env, request, gate, html, meta, headers);
+    return finish(env, request, gate, html, meta || feedMeta, headers);
   } catch {
     return text === null ? response : new Response(text, { status: response.status, headers: response.headers });
   }

@@ -33,7 +33,10 @@ const towns = (list, base) => list.map((city) => ({ ...base, city }));
 
 const NEWEST = { head: "Just listed on the Grand Strand", q: towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet", "Conway"], { status: "active", min: "250000", domMax: "21" }), link: "domMax=21" };
 const NO_HOA = { head: "Homes with no HOA fee", q: towns(["Myrtle Beach", "Conway", "Little River", "Surfside Beach", "Murrells Inlet"], H({ hoa: "0", min: "220000" })), link: "hoa=0", noHoa: true, fallback: NEWEST };
-const CONDOS = { head: "Condos for sale on the Grand Strand", q: towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet"], { type: "condo", status: "active", min: "180000", yearMin: "1985" }), link: "type=condo" };
+/* A condo page never falls back to houses (owner, 2026-10-27: "there's some single family and townhomes in there"). */
+const CONDOS_WIDE = { head: "Condos for sale on the Grand Strand", q: towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet", "Little River"], { type: "condo", status: "active", min: "120000" }), link: "type=condo" };
+CONDOS_WIDE.fallback = CONDOS_WIDE;
+const CONDOS = { head: "Condos for sale on the Grand Strand", q: towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet"], { type: "condo", status: "active", min: "180000", yearMin: "1985" }), link: "type=condo", fallback: CONDOS_WIDE };
 const town = (city) => ({ head: `Just listed in ${city}`, q: [{ city, status: "active", min: "200000", domMax: "30" }], link: `city=${encodeURIComponent(city)}&domMax=30`, fallback: NEWEST });
 const STARTER = { head: "Starter homes under $300,000", q: towns(["Myrtle Beach", "Conway", "Longs", "Little River", "Surfside Beach"], H({ min: "190000", max: "300000", yearMin: "1995" })), post: { yearMin: 1995 }, link: "max=300000", fallback: NEWEST };
 
@@ -53,7 +56,7 @@ const VACATION = {
   head: "Condos where nightly rentals are allowed", headToday: "Waterfront condos in Myrtle Beach and North Myrtle Beach",
   needs: "has",
   q: towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", waterfront: "1", min: "200000", max: "850000", yearMin: "1985", has: "str_allowed,east_of_17" }),
-  post: { yearMin: 1985 }, link: "type=condo&waterfront=1",
+  post: { yearMin: 1985 }, link: "type=condo&waterfront=1", fallback: CONDOS,
 };
 const OCEAN_UNITS = { ...VACATION, head: "Oceanfront condos for sale", headToday: VACATION.headToday, q: towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", waterfront: "1", min: "160000", max: "600000", yearMin: "1980", has: "oceanfront_unit" }), post: { yearMin: 1980 } };
 const MULTI = { head: "Duplexes, triplexes and fourplexes", q: [{ type: "multi", status: "active", min: "250000" }], allowTypes: true, link: "type=multi", fallback: RENTAL };
@@ -73,7 +76,6 @@ const COMPETITION = { head: "Your competition: homes for sale now", q: towns(["M
  */
 const cut = (head, q, link, fallback) => ({ head, q, link, needs: "has", fallback });
 const PRICE_CUT = cut("Price just cut on these homes", towns(["Myrtle Beach", "North Myrtle Beach", "Conway", "Surfside Beach", "Murrells Inlet"], { status: "active", min: "220000", has: "price_reduced" }), "has=price_reduced", NEWEST);
-const townCut = (city) => cut(`Price cuts in ${city} right now`, [{ city, status: "active", min: "180000", has: "price_reduced" }], `city=${encodeURIComponent(city)}&has=price_reduced`, town(city));
 const CUT_300 = cut("Price cut, and under $300,000", towns(["Myrtle Beach", "Conway", "Longs", "Little River", "Surfside Beach"], H({ min: "180000", max: "300000", yearMin: "1990", has: "price_reduced" })), "max=300000&has=price_reduced", STARTER);
 const CONDO_CUT = cut("Condos with a fresh price cut", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet"], { type: "condo", status: "active", min: "150000", has: "price_reduced" }), "type=condo&has=price_reduced", CONDOS);
 const FHA_FIRST = cut("Under $300,000, and the seller takes FHA", towns(["Myrtle Beach", "Conway", "Longs", "Little River", "Surfside Beach"], H({ min: "180000", max: "300000", yearMin: "1990", has: "fha_accepted" })), "max=300000&has=fha_accepted", STARTER);
@@ -108,6 +110,22 @@ const AMENITIES = cut("Homes with a community pool and clubhouse", towns(["Myrtl
  * retirees, golf, low taxes and more house for the money) and from our own pages (most of our
  * Pennsylvania buyers are retirees; Florida movers come for lower insurance and taxes).
  */
+
+/* Owner, 2026-10-27: town pages show the best homes there, not price cuts ("we don't want it to seem like
+   we are showing budget homes"): the quality bar and the appeal order. */
+const townTop = (city) => ({ head: `Top homes in ${city}`, q: [{ city, status: "active", min: "250000" }], link: `city=${encodeURIComponent(city)}`, fallback: town(city) });
+/* Second homes: the best homes near the beach from Cherry Grove to Pawleys Island, on top of the page's own town rows. */
+const TOP_VACATION = { ...cut("Top vacation homes", towns(["North Myrtle Beach", "Myrtle Beach", "Surfside Beach", "Garden City", "Murrells Inlet", "Pawleys Island"], { status: "active", min: "250000", has: "walk_to_beach" }), "has=walk_to_beach", VACATION), withStrips: true };
+/* Jobs: homes within 5 miles (about a 15 to 20 minute drive) of the largest employers the page names: the hospitals, the mall and the airport. */
+const EMPLOYERS = { ...cut("Homes near major employers", ["grand_strand_medical_center_5mi", "conway_medical_center_5mi", "mcleod_seacoast_5mi", "tidelands_waccamaw_5mi", "coastal_grand_mall_5mi", "myrtle_beach_airport_5mi"].map((k) => ({ status: "active", min: "200000", has: k })), "has=grand_strand_medical_center_5mi", NEWEST) };
+/* Fix and flip: the most equity to capture, distressed sales and older houses in the beach-side areas east of 17. */
+const FIXERS = { ...cut("Older and distressed homes east of 17", [H({ has: "distressed_sale,east_of_17" }), H({ has: "east_of_17", yearMax: "1985", min: "180000" })], "type=house&has=east_of_17&yearMax=1985", VALUE_ADD), post: { floors: false, yearMin: 1900, minPhotos: 6 } };
+/* The HOA guides, each with the homes its reader is weighing. */
+const NEWER_CONDOS = { head: "Condos in buildings built since 2005", q: towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet"], { type: "condo", status: "active", min: "150000", yearMin: "2005" }), post: { yearMin: 2005, strictYear: true }, link: "type=condo&yearMin=2005", fallback: CONDOS };
+const LOW_FEE = { head: "Condos with an HOA fee under $300 a month", q: towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet", "Little River"], { type: "condo", status: "active", min: "120000", hoaMax: "300" }), link: "type=condo&hoaMax=300", fallback: CONDOS };
+const HOA_INTERNET = cut("Condos whose HOA fee includes internet", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"], { type: "condo", status: "active", min: "120000", has: "hoa_includes_internet" }), "type=condo&has=hoa_includes_internet", CONDOS);
+const BANK_CONDOS = cut("Bank-owned and foreclosure condos", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Little River"], { type: "condo", status: "active", min: "80000", has: "foreclosure" }), "type=condo&has=foreclosure", CONDOS);
+const NO_FINES = { ...NO_HOA, head: "No HOA, no fines: homes with no HOA fee" };
 const love = (state, q, extra = {}) => ({ head: `Homes people from ${state} love`, q, link: "type=house", fallback: NEWEST, ...extra });
 const FROM = {
   // More house than New York money buys: newer, a garage, near the beach towns.
@@ -140,7 +158,7 @@ export const FEEDS = {
   "/buyers/programs/": FHA_FIRST,
   "/buyers/va-loans/": VA_FEED,
   "/buyers/retirees/": ONE_LEVEL,
-  "/buyers/second-home/": VACATION,
+  "/buyers/second-home/": TOP_VACATION,
   "/buyers/new-construction/": QUICK,
   "/buyers/cost-to-own/": NO_HOA,
   "/buyers/waterfront-homes/": DOCK,
@@ -161,7 +179,7 @@ export const FEEDS = {
   "/buyers/relocating/moving-checklist/": NEWEST,
   "/buyers/relocating/schools/": BIG,
   "/buyers/relocating/which-town/": NEWEST,
-  "/buyers/relocating/jobs/": STARTER,
+  "/buyers/relocating/jobs/": EMPLOYERS,
   "/buyers/relocating/healthcare/": NEAR_HOSPITAL,
   "/buyers/relocating/hurricanes/": SINCE_2010,
   "/buyers/relocating/weather/": WALK_BEACH,
@@ -170,15 +188,15 @@ export const FEEDS = {
   "/buyers/relocating/beaches/": WALK_BEACH,
   ...Object.fromEntries(Object.entries(FROM).map(([s, f]) => [`/buyers/relocating/from-${s}/`, f])),
   "/submarkets/": NEWEST,
-  "/submarkets/conway/": townCut("Conway"),
-  "/submarkets/garden-city/": townCut("Garden City"),
-  "/submarkets/little-river/": townCut("Little River"),
-  "/submarkets/murrells-inlet/": townCut("Murrells Inlet"),
-  "/submarkets/myrtle-beach/": townCut("Myrtle Beach"),
-  "/submarkets/north-myrtle-beach/": townCut("North Myrtle Beach"),
-  "/submarkets/pawleys-island/": townCut("Pawleys Island"),
-  "/submarkets/surfside-beach/": townCut("Surfside Beach"),
-  "/submarkets/carolina-forest/": cut("Price cuts in Carolina Forest right now", [{ subdivision: "Carolina Forest", status: "active", min: "200000", has: "price_reduced" }], "subdivision=Carolina%20Forest&has=price_reduced", { head: "Just listed in Carolina Forest", q: [{ subdivision: "Carolina Forest", status: "active", min: "220000" }], link: "subdivision=Carolina%20Forest", fallback: town("Myrtle Beach") }),
+  "/submarkets/conway/": townTop("Conway"),
+  "/submarkets/garden-city/": townTop("Garden City"),
+  "/submarkets/little-river/": townTop("Little River"),
+  "/submarkets/murrells-inlet/": townTop("Murrells Inlet"),
+  "/submarkets/myrtle-beach/": townTop("Myrtle Beach"),
+  "/submarkets/north-myrtle-beach/": townTop("North Myrtle Beach"),
+  "/submarkets/pawleys-island/": townTop("Pawleys Island"),
+  "/submarkets/surfside-beach/": townTop("Surfside Beach"),
+  "/submarkets/carolina-forest/": { head: "Top homes in Carolina Forest", q: [{ subdivision: "Carolina Forest", status: "active", min: "250000" }], link: "subdivision=Carolina%20Forest", fallback: townTop("Myrtle Beach") },
   "/invest/": RENTAL,
   "/invest/str-vs-ltr/": VACATION,
   "/invest/condos/": VACATION,
@@ -217,12 +235,20 @@ export const FEEDS = {
   "/invest/strategies/": RENTAL,
   "/invest/strategies/dscr-loans/": DSCR,
   "/invest/strategies/brrrr/": FORECLOSURE,
-  "/invest/strategies/fix-and-flip/": VALUE_ADD,
+  "/invest/strategies/fix-and-flip/": FIXERS,
   "/invest/strategies/1031-exchange/": MULTI,
   "/invest/strategies/dst/": MULTI,
   "/invest/strategies/small-multifamily/": MULTI,
   "/hoa/": NO_HOA,
-  ...Object.fromEntries(["special-assessments", "reserves", "documents", "liens-and-foreclosure", "south-carolina-hoa-laws", "violations-and-fines", "estoppel-and-transfer-fees", "dues-increases", "tax-deductible"].map((s) => [`/hoa/${s}/`, CONDO_CUT])),
+  "/hoa/special-assessments/": NEWER_CONDOS,
+  "/hoa/reserves/": NEWER_CONDOS,
+  "/hoa/documents/": HOA_INTERNET,
+  "/hoa/liens-and-foreclosure/": BANK_CONDOS,
+  "/hoa/south-carolina-hoa-laws/": NO_HOA,
+  "/hoa/violations-and-fines/": NO_FINES,
+  "/hoa/estoppel-and-transfer-fees/": LOW_FEE,
+  "/hoa/dues-increases/": LOW_FEE,
+  "/hoa/tax-deductible/": RENTALS_OK,
   "/hoa/rental-restrictions/": RENTALS_OK,
   "/hoa/master-insurance-ho6/": HOA_INSURED,
   "/hoa/who-pays-for-damage/": HOA_INSURED,

@@ -699,6 +699,81 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
   document.addEventListener('focusin', function (e) { var t = e.target; if (t && t.matches && t.matches(SEL)) attach(t); });
 })();
 </script>
+<div id="c3a" class="c3a" role="dialog" aria-modal="true" aria-labelledby="c3a-t" hidden><div class="c3a-card"><button type="button" class="c3a-x" data-c3a-close aria-label="Close">&times;</button>
+<form id="c3a-form" novalidate><p class="c3a-k">Talk to an agent</p><h2 id="c3a-t" class="c3a-t">We'll call you back today.</h2><p class="c3a-about" id="c3a-about" hidden></p>
+<label class="c3a-l" for="c3a-name">Name</label><input class="c3a-i" id="c3a-name" autocomplete="name" required maxlength="120">
+<label class="c3a-l" for="c3a-phone">Phone</label><input class="c3a-i" id="c3a-phone" type="tel" autocomplete="tel" required maxlength="30">
+<label class="c3a-l" for="c3a-email">Email</label><input class="c3a-i" id="c3a-email" type="email" autocomplete="email" required maxlength="160">
+<label class="form-consent c3a-c" for="c3a-consent"><input id="c3a-consent" type="checkbox"><span>I consent to receive calls and text messages from Chapter 3 Realty about my property inquiry, showing appointments, and listing information I requested, at the phone number provided, including calls placed using an automated system or an artificial or prerecorded voice. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase.</span></label>
+<p class="c3a-err" id="c3a-err" hidden></p><button type="submit" class="c3a-go">Talk to an agent</button></form>
+<div id="c3a-done" class="c3a-done" hidden><p class="c3a-k">Sent</p><h2 class="c3a-t">Thanks. An agent will call you today.</h2><p class="c3a-p">Prefer to talk now? Call <a href="tel:+18543332135">854.333.2135</a>.</p><button type="button" class="c3a-go" data-c3a-close>Close</button></div></div></div>
+<style>
+.c3a{position:fixed;inset:0;z-index:10050;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(18,22,30,.72);backdrop-filter:blur(3px)}.c3a[hidden]{display:none}
+.c3a-card{position:relative;width:100%;max-width:26rem;max-height:calc(100vh - 2rem);overflow:auto;background:#fdfbf7;border-radius:22px;padding:1.7rem 1.6rem 1.4rem;box-shadow:0 30px 80px rgba(18,22,30,.45);border-top:3px solid var(--brass,#c4783a)}
+.c3a-x{position:absolute;top:.6rem;right:.8rem;border:0;background:none;font-size:1.6rem;line-height:1;color:#5c6b78;cursor:pointer;padding:.3rem}
+.c3a-k{margin:0 0 .3rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass,#c4783a);font-weight:700}
+.c3a-t{margin:0 0 .8rem;font-family:var(--serif,Georgia,serif);font-size:1.45rem;line-height:1.2;color:var(--navy,#1c2028)}
+.c3a-about{margin:-.3rem 0 .9rem;font-size:.88rem;color:#5c6b78}
+.c3a-l{display:block;margin:.5rem 0 .25rem;font-size:.74rem;font-weight:700;color:#5c6b78}
+.c3a-i{width:100%;min-height:2.9rem;padding:0 .85rem;border:1.5px solid rgba(28,32,40,.2);border-radius:12px;background:#fff;font:inherit;font-size:1rem;color:var(--navy,#1c2028)}
+.c3a-i:focus{outline:none;border-color:var(--brass,#c4783a);box-shadow:0 0 0 3px rgba(196,120,58,.18)}
+.c3a-c{display:flex;gap:.55rem;align-items:flex-start;margin:.9rem 0 .4rem;font-size:.68rem;line-height:1.45;color:#5c6b78;cursor:pointer}.c3a-c input{margin-top:.15rem;width:16px;height:16px;flex:none;accent-color:var(--brass,#c4783a)}
+.c3a-err{margin:.4rem 0 0;font-size:.85rem;color:#8a2d1c}
+.c3a-go{display:block;width:100%;min-height:3.1rem;margin-top:.9rem;border:0;border-radius:999px;background:linear-gradient(180deg,#e09a5c,#c4783a);color:#151a22;font:inherit;font-weight:700;font-size:1rem;cursor:pointer}
+.c3a-p{color:#5c6b78;font-size:.95rem}.c3a-p a{color:var(--navy,#1c2028);font-weight:700}
+</style>
+<script>
+/* Talk to an agent (owner, 2026-10-27): every call to action that means "talk to an agent" opens this one
+   short form (name, phone, email) instead of the contact page, and sends what the visitor was looking at:
+   the home on a listing page or in the analyzer (window.c3AgentContext), else the page. */
+(function () {
+  var box = document.getElementById('c3a'); if (!box) return;
+  var form = document.getElementById('c3a-form'), done = document.getElementById('c3a-done'), err = document.getElementById('c3a-err');
+  var ctx = null, last = null;
+  function context(el) {
+    var c = { address: '', note: '' };
+    if (el && el.getAttribute('data-address')) c.address = el.getAttribute('data-address');
+    if (!c.address && typeof window.c3AgentContext === 'function') { try { var x = window.c3AgentContext() || {}; c.address = x.address || ''; c.note = x.note || ''; } catch (e) {} }
+    var addr = document.querySelector('.hx-l-addr'); if (!c.address && addr) c.address = addr.textContent.trim();
+    var mls = document.documentElement.getAttribute('data-hx-mls'); if (mls) c.note = (c.note ? c.note + ' ' : '') + 'MLS #' + mls + '.';
+    return c;
+  }
+  function open(el) {
+    ctx = context(el); last = document.activeElement;
+    var about = document.getElementById('c3a-about');
+    about.hidden = !ctx.address; about.textContent = ctx.address ? 'About ' + ctx.address : '';
+    form.hidden = false; done.hidden = true; err.hidden = true; box.hidden = false;
+    setTimeout(function () { document.getElementById('c3a-name').focus(); }, 30);
+    return true;
+  }
+  function close() { box.hidden = true; if (last && last.focus) last.focus(); }
+  window.c3AgentOpen = open;
+  box.addEventListener('click', function (e) { if (e.target === box || e.target.closest('[data-c3a-close]')) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !box.hidden) close(); });
+  /* Every link to the contact page, and anything marked data-agent, opens the form. The contact page itself still works when opened directly. */
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[href^="/contact"],[data-agent]');
+    if (!a || a.hasAttribute('data-no-agent') || /^\/contact\/?$/.test(location.pathname)) return;
+    e.preventDefault(); e.stopPropagation(); open(a);
+  }, true);
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); err.hidden = true;
+    function v(id) { return document.getElementById(id).value.trim(); }
+    var name = v('c3a-name'), phone = v('c3a-phone'), email = v('c3a-email'), cb = document.getElementById('c3a-consent');
+    var digits = phone.replace(/[^0-9]/g, '');
+    if (!name) { err.textContent = 'Please add your name.'; err.hidden = false; return; }
+    if (digits.length < 10) { err.textContent = 'Please add a phone number we can call.'; err.hidden = false; return; }
+    if (email.indexOf('@') < 1) { err.textContent = 'Please add your email.'; err.hidden = false; return; }
+    if (!cb.checked) { err.textContent = 'Please tick the box so we may call and text you.'; err.hidden = false; return; }
+    if (typeof window.c3SendForm === 'function') {
+      window.c3SendForm({ name: name, phone: phone, email: email, consent: 'yes', property_address: (ctx && ctx.address) || '',
+        message: 'Talk to an agent. ' + ((ctx && ctx.address) ? 'About ' + ctx.address + '. ' : '') + ((ctx && ctx.note) || '') + ' Page: ' + document.title }, 'Talk to an Agent');
+    }
+    form.hidden = true; done.hidden = false;
+  });
+})();
+</script>
 </footer>
 
 

@@ -525,6 +525,9 @@ async function lookup(context, url) {
     remarks: r.json.tier === "registered" && typeof l.remarks === "string" ? l.remarks.slice(0, 900) : null,
     soldPrice: r.json.tier === "registered" ? n(l.soldPrice) : null, soldOn: r.json.tier === "registered" && /^\d{4}-\d{2}-\d{2}$/.test(l.soldOn || "") ? l.soldOn : null,
     daysOnMarket: r.json.tier === "registered" ? n(l.daysOnMarket) : null, originalListPrice: r.json.tier === "registered" ? n(l.originalListPrice) : null,
+    // For the analyzer's repair check: the links only, never saved (contract: photos are hotlinked).
+    // Every photo for a signed-up visitor, as the listing page shows; the first one otherwise.
+    photos: (r.json.tier === "registered" && Array.isArray(l.photos) ? l.photos.map((p) => p && p.url) : [l.photo]).filter((u) => safeUrl(u)).slice(0, 40),
   };
   return json({ ok: true, found: true, facts, meta: r.json.meta || null }, 200, { "cache-control": "private, no-store" });
 }

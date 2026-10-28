@@ -23,8 +23,8 @@ async function ltrMlsLookup(qs) {
   } catch (e) { return null; }
 }
 
-// Fill the form from the listing, and say where the facts came from (the MLS
-// display rules: the listing firm and the source, on any page that shows them).
+// Fill the form from the listing, quietly (owner, 2026-10-28: no note on the form). The results
+// name the listing and its firm, as the MLS display rules ask of a page that shows its facts.
 function ltrShowMls(f) {
   _ltrMls = f;
   const fill = function (id, v) { const e = document.getElementById(id); if (e && v != null && v !== '' && !e.value) e.value = v; };
@@ -32,17 +32,6 @@ function ltrShowMls(f) {
   fill('ltr-city', f.city); fill('ltr-zip', f.zip);
   fill('ltr-beds', f.beds); fill('ltr-baths', f.baths); fill('ltr-sqft', f.sqft);
   if (f.hoaMonthly != null) fill('ltr-hoa', f.hoaMonthly);
-  let note = document.getElementById('ltr-mls-note');
-  if (!note) {
-    note = document.createElement('p');
-    note.id = 'ltr-mls-note';
-    note.style.cssText = 'margin:.6rem 0;padding:.65rem .85rem;border-radius:12px;background:#eef4fd;color:#1c2028;font-size:.88rem;line-height:1.45';
-    const btn = document.getElementById('ltr-analyze-btn');
-    if (btn && btn.parentNode) btn.parentNode.insertBefore(note, btn);
-  }
-  const bits = [f.beds != null ? f.beds + ' beds' : '', f.baths != null ? f.baths + ' baths' : '', f.sqft != null ? f.sqft.toLocaleString('en-US') + ' sq ft' : '', f.yearBuilt ? 'built ' + f.yearBuilt : ''].filter(Boolean).join(', ');
-  const sold = f.soldPrice ? ' Sold for $' + f.soldPrice.toLocaleString('en-US') + (f.soldOn ? ' on ' + f.soldOn : '') + '.' : '';
-  note.textContent = (f.soldPrice ? 'Found its sale on the MLS: ' : 'Found on the MLS: ') + (bits || 'listing ' + f.mlsNumber) + '.' + sold + ' We filled these in for you. MLS #' + f.mlsNumber + ', listed by ' + (f.listingFirm || 'the listing brokerage') + '.';
 }
 
 // Not for sale and not signed up: a sold home's MLS record needs the free sign-up.
@@ -82,6 +71,7 @@ function ltrSoldHint() {
 function toggleLtrFixer() {
   const on = document.getElementById('ltr-is-fixer').checked;
   document.getElementById('ltr-fixer-fields').style.display = on ? 'block' : 'none';
+  if (on) { const c = document.getElementById('ltr-condition'); if (c) c.focus(); }
 }
 function toggleLtrCash() {
   const on = document.getElementById('ltr-is-cash').checked;
@@ -155,17 +145,50 @@ const LTR_SAYS = {
   cash100: 'You pay the whole price, so there is no loan payment.',
   appreciation: 'How much homes here may gain in value each year.',
 };
-function ltrCard(label, displayValue, metric, topColor, tipKey, rawScore) {
+// What is good in this town, under each "?" (owner, 2026-10-28). The figures are the rental
+// returns page's own (research/invest-next/data: Zillow typical rent and values, July 2026; a
+// rental in the cheaper third of homes in the ZIP, with a manager, 10 percent vacancy and upkeep):
+// ZIP: [area, typical rent, price of a rental, its cap rate, kept a month bought with cash, value growth a year over 5 years].
+const LTR_AREA = {"29526":["Conway",1892,214000,5.1,910,5.1],"29527":["Conway",1892,214000,5.1,910,5.1],"29566":["Little River",1502,209000,5.7,990,4.3],"29575":["Surfside Beach",1607,184000,6.6,1010,5.6],"29576":["Murrells Inlet and Garden City",1943,264000,4.2,930,5.4],"29577":["Myrtle Beach",1680,161000,7.5,1000,4.7],"29572":["Myrtle Beach",1680,161000,7.5,1000,4.7],"29588":["Myrtle Beach",1680,161000,7.5,1000,4.7],"29579":["Carolina Forest",1736,234000,5,970,4.2],"29582":["North Myrtle Beach",1627,247000,4.5,930,5.3],"29585":["Pawleys Island",1926,320000,1.8,470,6.7]};
+let _ltrArea = null;
+function ltrFindArea(zip, city) {
+  if (zip && LTR_AREA[zip]) return LTR_AREA[zip];
+  const c = String(city || '').toLowerCase();
+  for (const k in LTR_AREA) { const n = LTR_AREA[k][0].toLowerCase(); if (c && (n === c || n.indexOf(c) === 0 || (c === 'garden city' && n.indexOf('garden city') > 0))) return LTR_AREA[k]; }
+  return null;
+}
+function ltrGood(key) {
+  const a = _ltrArea, $ = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+  const cheap = a ? 'a rental in the cheaper third of ' + a[0] + ' homes' : '';
+  const inA = a ? 'In ' + a[0] + ', a rental in the cheaper third of homes' : '';
+  switch (key) {
+    case 'cashflow': return 'Good: $200 or more a month.' + (a ? ' Bought with cash, ' + cheap + ' keeps about ' + $(a[4]) + ' a month.' : '');
+    case 'annualCF': return 'Good: $2,400 or more a year.' + (a ? ' Bought with cash, ' + cheap + ' keeps about ' + $(a[4] * 12) + '.' : '');
+    case 'rent': return a ? 'The typical rent in ' + a[0] + ' is about ' + $(a[1]) + ' a month (Zillow).' : '';
+    case 'capRate': return 'Good: 6 percent or more, our target.' + (a ? ' ' + inA + ' makes about ' + a[3] + ' percent.' : '');
+    case 'coc': return 'Good: 8 percent or more.' + (a ? ' Paid in cash it equals the cap rate: about ' + a[3] + ' percent on ' + cheap + '.' : '');
+    case 'noi': return a ? inA + ' keeps about ' + $(a[4] * 12) + ' a year.' : '';
+    case 'cashIn': return a ? inA + ' costs about ' + $(a[2]) + '.' : '';
+    case 'dscr': return 'Good: 1.25 or more, our target anywhere on the Grand Strand.';
+    case 'appreciation': return a ? 'Homes in ' + a[0] + ' gained about ' + a[5] + ' percent a year over the last five years (Zillow).' : '';
+  }
+  return '';
+}
+// other: the same number in the other scenario, shown small under this one while comparing.
+function ltrCard(label, displayValue, metric, topColor, tipKey, rawScore, other) {
   // rawScore is the numeric value used for color - displayValue may be a formatted string
   const score = (rawScore !== undefined && rawScore !== null) ? rawScore : parseFloat(String(displayValue).replace(/[^0-9.-]/g,''));
   const color = metric ? ltrScoreColor(metric, score) : (topColor||'var(--brass)');
   const pill  = metric ? ltrPillLabel(metric, score)  : null;
   const says  = LTR_SAYS[tipKey || metric] || '';
-  const q = says ? `<button type="button" class="ltr-q" aria-label="What is ${label.toLowerCase()}?" data-tip="${c3Esc(says)}">?</button>` : '';
+  const good  = ltrGood(tipKey || metric);
+  const tip   = good ? says + '\n' + good : says;
+  const q = says ? `<button type="button" class="ltr-q" aria-label="What is ${label.toLowerCase()}?" data-tip="${c3Esc(tip)}">?</button>` : '';
   return `<div class="ltr-m"><div class="ltr-m-bar" style="background:${color}"></div>
     <div class="ltr-m-l">${label}${q}</div>
     <div class="ltr-m-v">${displayValue}</div>
     ${pill?`<span class="ltr-m-p" style="background:${pill[1]};color:${pill[2]}">${pill[0]}</span>`:''}
+    ${other != null ? `<span class="ltr-m-o">${other}</span>` : ''}
   </div>`;
 }
 
@@ -639,6 +662,9 @@ async function ltrRun() {
       if (permits) permitCtx = permits;
     }
 
+    // The listing's photos and description, read for repairs while the numbers run.
+    const repairs = ltrRepairCheck(mls, fullAddr, isFixer ? cond : '');
+
     // ── CALL 3: Full investment analysis ──────────────────
     document.getElementById('ltr-loading-msg').textContent = 'Running investment analysis...';
     document.getElementById('ltr-loading-sub').textContent = 'Calculating all the numbers.';
@@ -656,11 +682,11 @@ RENT: ${beds||'?'}BR comps 2026: 1BR $1100-1600,2BR $1400-2100,3BR $1700-2600,4B
 EXP: Tax=0.82% of value (SC 6% investment assessment×Horry millage),Ins=$1500SFH/$3000condo/$5000ocean,Utils=$0.20/sqft/yr (e.g. 1200sqft=$240/yr=$20/mo),Maint=0.85%/yr,Vac=6%.
 ${permitCtx ? 'Permit signals: generate GREEN flags for hospital/medical/retail/school growth, AMBER for new residential supply, RED for industrial or demolition near subject. Farther = less weight.' : ''}
 
-{"inferredPropertyType":"","inferredBeds":${beds||0},"inferredBaths":${baths||0},"inferredSqft":${sqft||0},"inferredYearBuilt":0,"inferredHOAMonthly":0,"inferredFloodZone":null,"inferredFeatures":[],"estimatedValue":0,"verdict":"one plain sentence","overview":"Your honest opinion of this home as a long-term rental in 2 short sentences, 40 words or fewer: whether it works, and the one number or fact that decides it. Describe the property, never people. No rates or loan terms.","dealRating":"good|ok|tough","estRentMonthly":0,"grossRentAnnual":0,"vacancyLoss":0,"effectiveGrossIncome":0,"propertyTaxAnnual":0,"insuranceAnnual":0,"utilitiesMonthly":0,"hoaAnnual":0,"managementFeeAnnual":0,"maintenanceAnnual":0,"totalExpensesAnnual":0,"noi":0,"capRate":0,"loanAmount":0,"monthlyMortgage":0,"annualDebtService":0,"dscr":${isCash?'null':0},"monthlyCashflow":0,"annualCashflow":0,"cashOnCashReturn":0,"totalCashInvested":0,"estimatedAppreciationPct":0,"estimatedAppreciationDollar1yr":0,"estimatedAppreciationDollar5yr":0,"arv":${isFixer?0:'null'},"rehabBudgetLow":${isFixer?0:'null'},"rehabBudgetHigh":${isFixer?0:'null'},"rehabNarrative":${isFixer?'""':'null'},"totalProjectCost":${isFixer?0:'null'},"potentialEquityGain":${isFixer?0:'null'},"narrative":"Write 3-4 plain sentences that any first-time investor can understand - avoid jargon, use simple language, no acronyms. Cover: (1) what makes this property work as a rental in terms of its size, layout, condition and location - describe the PROPERTY and never the people who might live there or the surrounding population, (2) what the nearby construction activity means in plain terms - e.g. a hospital expanding nearby usually brings stable tenants like nurses and doctors who pay rent reliably, new homes being built shows the area is growing, (3) which of these investing goals this property fits and why in plain terms: steady monthly income, long-term value growth, fixer-upper flip, or tax-efficient swap - be honest if it does not fit some of these, (4) one clear bottom line sentence","flags":[{"type":"green|amber|red","text":""}]}`;
+{"inferredPropertyType":"","inferredBeds":${beds||0},"inferredBaths":${baths||0},"inferredSqft":${sqft||0},"inferredYearBuilt":0,"inferredHOAMonthly":0,"inferredFloodZone":null,"inferredFeatures":[],"estimatedValue":0,"verdict":"one plain sentence","overview":"Your honest opinion of this home as a long-term rental in 2 short sentences, 40 words or fewer: whether it works, and the one number or fact that decides it. Describe the property, never people. No rates or loan terms.","dealRating":"good|ok|tough","estRentMonthly":0,"grossRentAnnual":0,"vacancyLoss":0,"effectiveGrossIncome":0,"propertyTaxAnnual":0,"insuranceAnnual":0,"utilitiesMonthly":0,"hoaAnnual":0,"managementFeeAnnual":0,"maintenanceAnnual":0,"totalExpensesAnnual":0,"noi":0,"capRate":0,"loanAmount":0,"monthlyMortgage":0,"annualDebtService":0,"dscr":${isCash?'null':0},"monthlyCashflow":0,"annualCashflow":0,"cashOnCashReturn":0,"totalCashInvested":0,"estimatedAppreciationPct":0,"estimatedAppreciationDollar1yr":0,"estimatedAppreciationDollar5yr":0,"arv":${isFixer?0:'null'},"rehabBudgetLow":${isFixer?0:'null'},"rehabBudgetHigh":${isFixer?0:'null'},"rehabNarrative":${isFixer?'""':'null'},"totalProjectCost":${isFixer?0:'null'},"potentialEquityGain":${isFixer?0:'null'},"narrative":"3 plain sentences that add what the overview and the flags leave out. Never repeat a sentence, a number or a point from them. (1) What about this home itself, its size, layout, age, lot or building, helps or hurts it as a yearly rental. (2) The one thing a landlord should check on this home before buying, such as the roof age, the heating and air system, the flood zone or the HOA rules on rentals, whichever fits it. (3) The goal it fits best, steady monthly income, long-term value growth, a fix-and-flip or a 1031 exchange, and why in one plain reason. Describe the property, never people. No jargon, no acronyms except HOA","flags":[{"type":"green|amber|red","text":""}]}`;
 
     const analysisRaw = await callProxy({
       model: 'claude-haiku-5-5', max_tokens: 1200,
-      cache_key: ['analysis3', fullAddr, beds||'', baths||'', sqft||'', isFixer ? (cond||'fixer') : '', mls ? 'mls' + mls.mlsNumber + '-' + (mls.listPrice||'') + '-' + mls.tier : ''].join('|'),
+      cache_key: ['analysis4', fullAddr, beds||'', baths||'', sqft||'', isFixer ? (cond||'fixer') : '', mls ? 'mls' + mls.mlsNumber + '-' + (mls.listPrice||'') + '-' + mls.tier : ''].join('|'),
       messages: [{ role: 'user', content: analysisPrompt }]
     });
 
@@ -703,14 +729,62 @@ ${permitCtx ? 'Permit signals: generate GREEN flags for hospital/medical/retail/
       if (fin.cash) { isCash = true; document.getElementById('ltr-is-cash').checked = true; toggleLtrCash(); }
       else { set('ltr-down', fin.down); set('ltr-rate', fin.rate); set('ltr-term', fin.term); }
     }
+    _ltrArea = ltrFindArea(mls && mls.zip || zip || (/\b(29\d{3})\b/.exec(fullAddr) || [])[1], mls && mls.city || city);
     ltrRenderResults(d, fullAddr, isFixer, isCash);
     ltrSimilar(coords, beds, mls);
+    ltrShowRepairs(await repairs, isFixer);
 
   } catch(err) {
     document.getElementById('ltr-loading').style.display = 'none';
     document.getElementById('ltr-form').style.display = 'block';
     ltrShowError('Analysis failed: ' + err.message + '. Please try again.');
   }
+}
+
+// The listing's photos and description, read for repairs (owner, 2026-10-28: "I look for items
+// that need repaired"). It runs on every home with a listing, ticked or not, and shows only when
+// it sees work. The photos are passed by their link and never saved; the answer is cached per
+// listing, so a home is read once. Never throws: the analysis stands without it.
+async function ltrRepairCheck(mls, fullAddr, said) {
+  try {
+    const all = mls && Array.isArray(mls.photos) ? mls.photos.filter(function (u) { return /^https:\/\//.test(u); }) : [];
+    // Spread across the listing: the front, the kitchen and the baths are rarely the first six.
+    const pick = all.length <= 8 ? all : [0, 1, 2, 3, 4, 5, 6, 7].map(function (i) { return all[Math.round(i * (all.length - 1) / 7)]; });
+    const notes = mls && mls.remarks ? mls.remarks.replace(/\s+/g, ' ').slice(0, 700) : '';
+    const asked = String(said || '').replace(/\s+/g, ' ').slice(0, 300);
+    if (!pick.length && !notes && !asked) return null;
+    const prompt = `Repair check for ${fullAddr}${mls && mls.yearBuilt ? ', built ' + mls.yearBuilt : ''}${mls && mls.sqft ? ', ' + mls.sqft + ' sq ft' : ''}. JSON only, start { end }.
+Look at the listing photos${notes ? ' and read the listing description' : ''}. List only repairs you can SEE in a photo or READ in the description: damaged or dated roof, siding, windows, floors, kitchen, baths, ceilings with stains, missing fixtures, overgrown or damaged exterior, "as is", "needs TLC", "investor special", "handyman". Never guess at what you cannot see. A clean, updated home needs nothing: say so.${asked ? '\nThe buyer says: ' + asked + ' (include it, priced).' : ''}
+${notes ? 'Description: ' + notes : ''}
+Cost each item as a 2026 Myrtle Beach area contractor range in whole dollars.
+{"needsWork":true,"items":[{"item":"short plain name","seen":"photo|description|buyer","low":0,"high":0}],"summary":"one plain sentence on the home's condition"}`;
+    const content = [{ type: 'text', text: prompt }].concat(pick.map(function (u) { return { type: 'image', source: { type: 'url', url: u } }; }));
+    const raw = await callProxy({
+      model: 'claude-haiku-5-5', max_tokens: 700,
+      cache_key: ['repair1', fullAddr, mls ? 'mls' + mls.mlsNumber + '-' + pick.length : '', asked].join('|'),
+      messages: [{ role: 'user', content: content }]
+    });
+    const r = extractJSON(raw);
+    const items = (Array.isArray(r.items) ? r.items : []).filter(function (x) { return x && x.item && x.high > 0 && x.high >= (x.low || 0); }).slice(0, 8);
+    return { needsWork: r.needsWork === true && items.length > 0, items: items, summary: ltrSafeNarrative(r.summary || '') };
+  } catch (e) { return null; }
+}
+
+// "Work it needs": shown only when the photos, the description or the buyer show work. Its total
+// goes into the Repairs box, so the cash to buy and the returns count it.
+function ltrShowRepairs(r, asked) {
+  const box = document.getElementById('ltr-repairs'); if (!box) return;
+  if (!r || !r.needsWork) { box.hidden = true; return; }
+  const lo = r.items.reduce(function (s, x) { return s + (x.low || 0); }, 0), hi = r.items.reduce(function (s, x) { return s + x.high; }, 0);
+  const mid = Math.round((lo + hi) / 2 / 100) * 100;
+  const rep = document.getElementById('adj-rehab'), fill = rep && !(ltrMoney(rep.value) > 0);
+  document.getElementById('ltr-repairs-list').innerHTML =
+    (r.summary ? `<p class="ltr-narr" style="margin:0 0 .6rem">${c3Esc(r.summary)}</p>` : '') +
+    r.items.map(function (x) { return `<div class="ltr-rep"><span>${c3Esc(x.item)}</span><span>${ltrFmt(x.low || 0)} to ${ltrFmt(x.high)}</span></div>`; }).join('') +
+    `<div class="ltr-rep ltr-rep-t"><span>About</span><span>${ltrFmt(lo)} to ${ltrFmt(hi)}</span></div>` +
+    `<p class="ltr-edit-n">${asked ? 'From the photos, the description and what you told us.' : 'From the listing photos and description.'} A contractor's bid is the real number.${fill ? ' We put ' + ltrFmt(mid) + ' in Repairs above; change it there.' : ''}</p>`;
+  box.hidden = false;
+  if (fill) { rep.value = mid; recalcLtr(); }
 }
 
 // Fair housing backstop. The prompt is written to describe the property, not the
@@ -753,53 +827,31 @@ function ltrRenderResults(d, address, isFixer, isCash) {
   // anywhere else, so the header could read STRONG DEAL directly above a negative
   // cash flow, and it never moved when the buyer edited price or terms.
 
-  // Inferred strip
-  if (d.inferredBeds || d.inferredSqft) {
-    const strip = document.getElementById('ltr-inferred-strip');
-    strip.style.display = 'flex';
-    const chips = [
-      d.inferredPropertyType && `<span style="font-size:.75rem;color:var(--muted)">Type <strong style="color:var(--navy);margin-left:.3rem">${c3Esc(d.inferredPropertyType)}</strong></span>`,
-      d.inferredBeds  && `<span style="font-size:.75rem;color:var(--muted)">Beds <strong style="color:var(--navy);margin-left:.3rem">${d.inferredBeds}</strong></span>`,
-      d.inferredBaths && `<span style="font-size:.75rem;color:var(--muted)">Baths <strong style="color:var(--navy);margin-left:.3rem">${d.inferredBaths}</strong></span>`,
-      d.inferredSqft  && `<span style="font-size:.75rem;color:var(--muted)">Sq Ft <strong style="color:var(--navy);margin-left:.3rem">${d.inferredSqft.toLocaleString()}</strong></span>`,
-    ].filter(Boolean);
-    const features = (d.inferredFeatures||[]).length ? `<div style="flex-basis:100%;display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.35rem">${d.inferredFeatures.map(f=>`<span style="font-size:.68rem;padding:.15rem .5rem;background:rgba(196,120,58,.1);color:var(--brass);border:1px solid rgba(196,120,58,.2)">${c3Esc(f)}</span>`).join('')}</div>` : '';
-    strip.innerHTML = `<span style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);flex-basis:100%;margin-bottom:.35rem">Property Details</span>${chips.join('')}${features}`;
-  }
-
-  // Adjustment panel
+  // "Your numbers": the buyer's own inputs. Loan terms show in a second row of the same box,
+  // only when Loan is chosen (owner, 2026-10-28).
   const adj = document.getElementById('ltr-adj-panel');
   if (adj) {
-    const hoaMoVal = document.getElementById('ltr-hoa')?.value || Math.round((d.hoaAnnual||0)/12);
-    const utPaid   = (d.utilitiesMonthly||0)>0 ? 'landlord' : 'tenant';
     // No made-up loan terms: the visitor's own, or none (the site states no rate, PLAYBOOK).
     const downVal  = ltrMoney(document.getElementById('ltr-down')?.value);
     const rateVal  = ltrMoney(document.getElementById('ltr-rate')?.value);
     if (!(downVal >= 0) || !(rateVal >= 0)) { isCash = true; _ltrIsCash = true; }
     // The buyer's own purchase price wins over the model's market estimate.
-    // The estimate is a property fact shared by every visitor; the price they
-    // would actually pay is personal to them.
     // Left blank: the MLS asking price, else the estimate (owner, 2026-10-26).
     const priceVal = ltrMoney(document.getElementById('ltr-price')?.value) || (_ltrMls && !_ltrMls.soldPrice && _ltrMls.listPrice) || d.estimatedValue || '';
-    const box = (id, label, val, unit, extra) => `<label class="ltr-in"><span>${label}</span><span class="ltr-in-b${unit === '$' ? ' ltr-in-d' : ' ltr-in-p'}">${unit === '$' ? '<i>$</i>' : ''}<input id="${id}" type="text" inputmode="decimal" value="${val}" oninput="recalcLtr()"${extra || ''}/>${unit === '%' ? '<i>%</i>' : unit === '/mo' ? '<i>a month</i>' : unit === '/yr' ? '<i>a year</i>' : ''}</span></label>`;
-    adj.innerHTML = `
-      <div class="ltr-edit-h"><div><p class="ltr-edit-t"><svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM14 6l4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Your numbers</p><p class="ltr-edit-s">Change any box. Every result below updates as you type.</p></div>
-        <div class="ltr-pay" role="radiogroup" aria-label="How you pay"><button type="button" role="radio" data-pay="cash" aria-checked="${isCash}" onclick="ltrPay(true)">Cash</button><button type="button" role="radio" data-pay="loan" aria-checked="${!isCash}" onclick="ltrPay(false)">Loan</button></div></div>
-      <div class="ltr-grid">
-        ${box('adj-price', d.valueFrom === 'asking' ? 'Asking price' : 'Price', priceVal, '$')}
-        ${box('adj-rent', 'Rent a month', d.estRentMonthly || '', '$', '')}
-        <span class="ltr-loanbox"${isCash ? ' hidden' : ''}>${box('adj-down', 'Down payment', downVal >= 0 ? downVal : '', '%', ' placeholder="Your %"')}</span>
-        <span class="ltr-loanbox"${isCash ? ' hidden' : ''}>${box('adj-rate', 'Interest rate', rateVal >= 0 ? rateVal : '', '%', ' placeholder="Your rate"')}</span>
-        ${box('adj-hoa', 'HOA fee a month', hoaMoVal, '$')}
-        ${box('adj-insurance', 'Insurance a year', d.insuranceAnnual || 1800, '$')}
-        ${box('adj-rehab', 'Repairs', d.rehabBudgetHigh || 0, '$')}
-        ${box('adj-vacancy', 'Vacancy', 0, '%', ' placeholder="0"')}
-        ${box('adj-mgmt', 'Property manager', ltrNum('ltr-mgmt', 0) || Math.round(((d.managementFeeAnnual || 0) / ((d.estRentMonthly || 1) * 12)) * 100) || 0, '%')}
-        <label class="ltr-in"><span>Utilities paid by</span><span class="ltr-in-b"><select id="adj-utilities" onchange="recalcLtr()"><option value="tenant" ${utPaid==='tenant'?'selected':''}>Tenant</option><option value="landlord" ${utPaid==='landlord'?'selected':''}>Landlord</option></select></span></label>
-      </div>
-      <p class="ltr-edit-n" id="ltr-loan-note"${isCash ? ' hidden' : ''}>Enter your own down payment and rate to see the loan.</p>`;
+    _ltrPayOf.adj = isCash;
+    adj.innerHTML = ltrPanel('adj', {
+      cash: isCash, priceLabel: d.valueFrom === 'asking' ? 'Asking price' : 'Price', price: priceVal, rent: d.estRentMonthly || '',
+      down: downVal >= 0 ? downVal : '', rate: rateVal >= 0 ? rateVal : '', term: document.getElementById('ltr-term')?.value || '30',
+      hoa: document.getElementById('ltr-hoa')?.value || Math.round((d.hoaAnnual||0)/12), ins: d.insuranceAnnual || 1800,
+      rehab: d.rehabBudgetHigh || 0, vac: 0,
+      mgmt: ltrNum('ltr-mgmt', 0) || Math.round(((d.managementFeeAnnual || 0) / ((d.estRentMonthly || 1) * 12)) * 100) || 0,
+      ut: (d.utilitiesMonthly||0)>0 ? 'landlord' : 'tenant',
+    });
     adj.style.display = 'block';
   }
+  ltrCompare(false);
+  // "Talk to an agent" opens the sitewide popup, which sends the home with the lead (footer).
+  window.c3AgentContext = function () { return { address: address, note: (_ltrMls ? 'MLS #' + _ltrMls.mlsNumber + '. ' : '') + 'From the rental analyzer.' }; };
 
   // ARV
   if (isFixer && d.arv) {
@@ -823,13 +875,89 @@ function ltrRenderResults(d, address, isFixer, isCash) {
   setTimeout(initLtrTips, 150);
 }
 
-// Cash or a loan, from the switch in "Your numbers". A loan needs the buyer's own terms; we state none.
-function ltrPay(cash) {
-  _ltrIsCash = !!cash;
-  document.querySelectorAll('.ltr-pay [data-pay]').forEach(function (b) { b.setAttribute('aria-checked', String((b.getAttribute('data-pay') === 'cash') === _ltrIsCash)); });
-  document.querySelectorAll('.ltr-loanbox, #ltr-loan-note').forEach(function (el) { el.hidden = _ltrIsCash; });
-  const c = document.getElementById('ltr-is-cash'); if (c) { c.checked = _ltrIsCash; toggleLtrCash(); }
+// One scenario's inputs. p is the id prefix: 'adj' for the first, 'adjb' for the one beside it.
+function ltrPanel(p, v) {
+  const a = p === 'adj';
+  const box = (k, label, val, unit, extra) => `<label class="ltr-in"><span>${label}</span><span class="ltr-in-b${unit === '$' ? ' ltr-in-d' : ' ltr-in-p'}">${unit === '$' ? '<i>$</i>' : ''}<input id="${p}-${k}" type="text" inputmode="decimal" value="${c3Esc(String(val))}" oninput="recalcLtr()"${extra || ''}/>${unit === '%' ? '<i>%</i>' : ''}</span></label>`;
+  const sel = (k, label, opts, val) => `<label class="ltr-in"><span>${label}</span><span class="ltr-in-b"><select id="${p}-${k}" onchange="${a && k === 'term' ? "document.getElementById('ltr-term').value=this.value;" : ''}recalcLtr()">${opts.map(o => `<option value="${o[0]}"${String(val) === o[0] ? ' selected' : ''}>${o[1]}</option>`).join('')}</select></span></label>`;
+  return `<div class="ltr-edit-h"><div><p class="ltr-edit-t"><svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM14 6l4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span id="${p}-name">${a ? 'Your numbers' : 'Second scenario'}</span></p><p class="ltr-edit-s">${a ? 'Change any box. Every result below updates as you type.' : 'Change any box to compare.'}</p></div>
+    <div class="ltr-edit-r"><div class="ltr-pay" role="radiogroup" aria-label="How you pay"><button type="button" role="radio" data-pay="cash" aria-checked="${v.cash}" onclick="ltrPay(true,'${p}')">Cash</button><button type="button" role="radio" data-pay="loan" aria-checked="${!v.cash}" onclick="ltrPay(false,'${p}')">Loan</button></div>
+    ${a ? `<button type="button" class="ltr-cmp-b" id="ltr-cmp-b" onclick="ltrCompare(!_ltrCmp)" aria-pressed="false"><img src="/images/brand/chapter-iii-mark.svg" alt="" width="11" height="22">Compare</button>` : `<button type="button" class="ltr-cmp-b" onclick="ltrCompare(false)">Close</button>`}</div></div>
+    <div class="ltr-grid">
+      ${box('price', v.priceLabel || 'Price', v.price, '$')}
+      ${box('rent', 'Rent a month', v.rent, '$')}
+      ${box('hoa', 'HOA fee a month', v.hoa, '$')}
+      ${box('insurance', 'Insurance a year', v.ins, '$')}
+    </div>
+    <div class="ltr-loanrow" id="${p}-loanrow"${v.cash ? ' hidden' : ''}>
+      <div class="ltr-grid">
+        ${box('down', 'Down payment', v.down, '%', ' placeholder="Your %"')}
+        ${box('rate', 'Interest rate', v.rate, '%', ' placeholder="Your rate"')}
+        ${sel('term', 'Loan term', [['30', '30 years'], ['20', '20 years'], ['15', '15 years']], v.term)}
+        <div class="ltr-in"><span>Loan amount</span><span class="ltr-in-b ltr-in-o"><output id="${p}-loanamt">--</output></span></div>
+      </div>
+      <p class="ltr-edit-n" id="${p}-loan-note">Enter your own down payment and rate to see the loan. We are not a lender.</p>
+    </div>
+    <div class="ltr-grid">
+      ${box('rehab', 'Repairs', v.rehab, '$')}
+      ${box('vacancy', 'Vacancy', v.vac, '%', ' placeholder="0"')}
+      ${box('mgmt', 'Property manager', v.mgmt, '%')}
+      ${sel('utilities', 'Utilities paid by', [['tenant', 'Tenant'], ['landlord', 'Landlord']], v.ut)}
+    </div>`;
+}
+
+// What one scenario's boxes hold right now, to start the second from.
+function ltrPanelValues(p) {
+  const g = function (k) { const e = document.getElementById(p + '-' + k); return e ? e.value : ''; };
+  return { cash: _ltrPayOf[p], priceLabel: 'Price', price: g('price'), rent: g('rent'), down: g('down'), rate: g('rate'), term: g('term') || '30',
+           hoa: g('hoa'), ins: g('insurance'), rehab: g('rehab'), vac: g('vacancy'), mgmt: g('mgmt'), ut: g('utilities') || 'tenant' };
+}
+
+// Cash or a loan, from the switch in a scenario. A loan needs the buyer's own terms; we state none.
+const _ltrPayOf = { adj: false, adjb: false };
+function ltrPay(cash, p) {
+  p = p || 'adj';
+  _ltrPayOf[p] = !!cash;
+  const panel = document.getElementById(p === 'adj' ? 'ltr-adj-panel' : 'ltr-adj-panel-b');
+  if (panel) panel.querySelectorAll('.ltr-pay [data-pay]').forEach(function (b) { b.setAttribute('aria-checked', String((b.getAttribute('data-pay') === 'cash') === !!cash)); });
+  const row = document.getElementById(p + '-loanrow'); if (row) row.hidden = !!cash;
+  if (p === 'adj') {
+    _ltrIsCash = !!cash;
+    const c = document.getElementById('ltr-is-cash'); if (c) { c.checked = _ltrIsCash; toggleLtrCash(); }
+    if (!cash) { const dn = document.getElementById('adj-down'); if (dn && !dn.value) dn.focus(); }
+  }
   recalcLtr();
+}
+
+// Two scenarios side by side, our bookmark between them (owner, 2026-10-28): two loans, or cash
+// against a loan. The second starts as a copy of the first; from cash it starts as a loan.
+let _ltrCmp = false;
+function ltrCompare(on) {
+  _ltrCmp = !!on;
+  const wrap = document.getElementById('ltr-cmp'), b = document.getElementById('ltr-sc-b'), mid = document.getElementById('ltr-cmp-mid');
+  if (!wrap || !b) return;
+  const pb = document.getElementById('ltr-adj-panel-b');
+  if (_ltrCmp) {
+    const v = ltrPanelValues('adj');
+    if (v.cash) { v.cash = false; v.down = document.getElementById('ltr-down')?.value || ''; v.rate = document.getElementById('ltr-rate')?.value || ''; }
+    _ltrPayOf.adjb = v.cash;
+    pb.innerHTML = ltrPanel('adjb', v);
+  } else if (pb) { pb.innerHTML = ''; document.getElementById('ltr-core-metrics-b').innerHTML = ''; }
+  wrap.classList.toggle('on', _ltrCmp);
+  wrap.classList.remove('show-b'); wrap.classList.add('show-a');
+  b.hidden = !_ltrCmp; if (mid) mid.hidden = !_ltrCmp;
+  const nm = document.getElementById('adj-name'); if (nm) nm.textContent = _ltrCmp ? 'First scenario' : 'Your numbers';
+  const btn = document.getElementById('ltr-cmp-b'); if (btn) { btn.setAttribute('aria-pressed', String(_ltrCmp)); btn.lastChild.textContent = _ltrCmp ? 'Stop comparing' : 'Compare'; }
+  // Room for two: the results widen while comparing.
+  const w = document.getElementById('ltr-results').closest('.wrap'); if (w) w.style.maxWidth = _ltrCmp ? '1180px' : '800px';
+  ltrCmpTab('a');
+  recalcLtr();
+}
+// On a phone the scenarios take turns: a tap on either side of the bookmark.
+function ltrCmpTab(s) {
+  const wrap = document.getElementById('ltr-cmp'); if (!wrap) return;
+  wrap.classList.toggle('show-a', s === 'a'); wrap.classList.toggle('show-b', s === 'b');
+  document.querySelectorAll('#ltr-cmp-mid [data-sc]').forEach(function (t) { t.setAttribute('aria-pressed', String(t.getAttribute('data-sc') === s)); });
 }
 
 // Homes like this one for sale now, near it: the listing search's own cards, from the server.
@@ -845,113 +973,151 @@ async function ltrSimilar(coords, beds, mls) {
   try {
     const r = await fetch('/homes/api/similar?' + q.toString(), { credentials: 'same-origin' });
     const j = r.ok ? await r.json() : null;
-    if (j && j.ok && j.html) box.innerHTML = j.html;
+    if (j && j.ok && j.html) { box.innerHTML = j.html; box.querySelectorAll('.hx-s-row').forEach(ltrRig); }
   } catch (e) { /* no strip; the analysis stands on its own */ }
 }
 
-function recalcLtr() {
-  const d = _ltrData; if (!d) return;
+// The row scrolls slowly by itself and drags with a mouse or a finger, as every row of homes
+// on the site does (idx-lib/render.js rig; that script is not on this page). It stops while
+// a pointer is over it, while it is touched or has focus, and a few seconds after it is moved.
+function ltrRig(row) {
+  if (row.hxRig) return; row.hxRig = 1;
+  let down = false, moved = false, x0 = 0, s0 = 0, hold = 0, over = false, seen = false, pos = row.scrollLeft, wait = 0, last = 0;
+  const rest = function (ms) { hold = Date.now() + ms; };
+  row.addEventListener('pointerdown', function (e) { rest(5000); if (e.pointerType !== 'mouse') return; down = true; moved = false; x0 = e.clientX; s0 = row.scrollLeft; });
+  row.addEventListener('pointermove', function (e) { if (!down) return; const dx = e.clientX - x0; if (Math.abs(dx) > 4) { moved = true; row.classList.add('hx-dragging'); } row.scrollTo({ left: s0 - dx, behavior: 'instant' }); });
+  const up = function () { down = false; rest(5000); setTimeout(function () { row.classList.remove('hx-dragging'); }, 0); };
+  row.addEventListener('pointerup', up); row.addEventListener('pointerleave', function () { over = false; up(); });
+  row.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') over = true; });
+  row.addEventListener('touchstart', function () { rest(6000); }, { passive: true });
+  row.addEventListener('wheel', function () { rest(5000); }, { passive: true });
+  row.addEventListener('focusin', function () { rest(8000); });
+  row.addEventListener('click', function (e) { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+  row.querySelectorAll('img, a').forEach(function (el) { el.setAttribute('draggable', 'false'); });
+  if ((window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) || !window.requestAnimationFrame) return;
+  if (window.IntersectionObserver) new IntersectionObserver(function (es) { seen = es[0].isIntersecting; }).observe(row); else seen = true;
+  const step = function (t) {
+    const dt = last ? Math.min(64, t - last) : 16; last = t;
+    if (!row.isConnected) return;
+    if (seen && !over && !down && Date.now() > hold && !row.contains(document.activeElement)) {
+      const max = row.scrollWidth - row.clientWidth;
+      if (max > 8) {
+        if (Math.abs(row.scrollLeft - pos) > 2) pos = row.scrollLeft;
+        if (pos >= max - 1) { if (!wait) wait = Date.now() + 1800; else if (Date.now() > wait) { wait = 0; pos = 0; row.scrollTo({ left: 0, behavior: 'smooth' }); rest(1200); } }
+        else { pos = Math.min(max, pos + dt * 0.03); row.scrollLeft = pos; }
+      }
+    }
+    requestAnimationFrame(step);
+  };
+  row.classList.add('hx-auto'); requestAnimationFrame(step);
+}
 
-  // A typed 0 is a real value, not a blank. The || pattern treated 0 as missing,
-  // so entering 0 rent or 0 insurance silently reverted to the model's estimate
-  // while the 0 stayed visible on screen.
-  const rent    = ltrNum('adj-rent',  d.estRentMonthly || 0);
-  const price   = ltrNum('adj-price', d.estimatedValue || 0);
-  const hoaMo   = ltrNum('adj-hoa', 0);
-  const utPay   = document.getElementById('adj-utilities')?.value             || 'landlord';
-  const vacPct  = ltrNum('adj-vacancy', 0); // 0 = off by default
-  const _downRaw = document.getElementById('adj-down')?.value;
+// One scenario's numbers, from its boxes. p is 'adj' or 'adjb'.
+function ltrCalc(p) {
+  const d = _ltrData;
+  // A typed 0 is a real value, not a blank.
+  const rent    = ltrNum(p + '-rent',  d.estRentMonthly || 0);
+  const price   = ltrNum(p + '-price', d.estimatedValue || 0);
+  const hoaMo   = ltrNum(p + '-hoa', 0);
+  const utPay   = document.getElementById(p + '-utilities')?.value || 'landlord';
+  const vacPct  = ltrNum(p + '-vacancy', 0); // 0 = off by default
+  const _downRaw = document.getElementById(p + '-down')?.value;
   const rawDown = (_downRaw === '' || _downRaw == null) ? NaN : ltrMoney(_downRaw);
-  const ratePct = ltrNum('adj-rate', NaN);
-  const termYrs = parseFloat(document.getElementById('ltr-term')?.value)      || 30;
+  const ratePct = ltrNum(p + '-rate', NaN);
+  const termYrs = parseFloat(document.getElementById(p + '-term')?.value) || 30;
 
-  // 100% down = cash purchase regardless of isCash toggle
-  // Blank down payment or rate: figured as cash. The site states no loan terms (PLAYBOOK).
-  const effectiveCash = _ltrIsCash || isNaN(rawDown) || rawDown >= 100 || isNaN(ratePct);
+  // Blank down payment or rate, or 100% down: figured as cash. The site states no loan terms (PLAYBOOK).
+  const effectiveCash = _ltrPayOf[p] || isNaN(rawDown) || rawDown >= 100 || isNaN(ratePct);
   // An explicit 0 stays 0 (VA and USDA are zero down).
-  const downPct       = effectiveCash ? 100 : rawDown;
+  const downPct = effectiveCash ? 100 : rawDown;
 
-  // SC investment property tax: 6% assessment ratio × Horry County millage 0.1367 = ~0.82% of value
-  const gross   = rent * 12;
-  const vac     = Math.round(gross * vacPct / 100);
-  const egi     = gross - vac;
+  const gross = rent * 12;
+  const vac   = Math.round(gross * vacPct / 100);
+  const egi   = gross - vac;
   // Capture the implied rates once, off the values the analysis returned, then
-  // derive from the live price and rent so the Adjust panel actually recalculates.
+  // derive from the live price and rent so the boxes actually recalculate.
   if (!_ltrRates) {
     const basePrice = d.estimatedValue || price || 0;
     const baseRent  = (d.estRentMonthly || rent || 0) * 12;
     _ltrRates = {
-      // With a county record the tax is a known dollar amount tied to the county's
-      // assessment, so it must not drift with whatever price the buyer types.
       // A sale resets the county's value to the price, so the tax follows the price at the county's
       // own rate: its 6 percent tax over its own appraisal (never over our value, which differs).
       tax:   (_ltrParcel && _ltrParcel.investorAnnualTax && _ltrParcel.marketValue > 0)
                ? _ltrParcel.investorAnnualTax / _ltrParcel.marketValue
                : (basePrice > 0 && d.propertyTaxAnnual ? d.propertyTaxAnnual / basePrice : 0.0082),
-      maint: basePrice > 0 && d.maintenanceAnnual   ? d.maintenanceAnnual   / basePrice : 0.0085,
-      // Management is a pure user input, but it is not part of the cache key, so a
-      // cached answer from someone who left it blank would otherwise zero it out
-      // for everyone after them. The typed percentage wins.
+      maint: basePrice > 0 && d.maintenanceAnnual ? d.maintenanceAnnual / basePrice : 0.0085,
+      // The typed management percentage wins over a cached answer's.
       mgmt:  (ltrNum('ltr-mgmt', 0) / 100) ||
              (baseRent > 0 && d.managementFeeAnnual ? d.managementFeeAnnual / baseRent : 0)
     };
   }
-  const tax     = Math.round(price * _ltrRates.tax);
-  const ins     = ltrNum('adj-insurance', d.insuranceAnnual || 1800);
-  const maint   = Math.round(price * _ltrRates.maint);
-  const utBase  = d.utilitiesMonthly || Math.round((d.inferredSqft || _ltrData?.inferredSqft || 1200) * 0.20 / 12);
-  const utAnn   = utPay === 'landlord' ? utBase * 12 : 0;
-  const hoaAnn  = hoaMo * 12;
-  const mgmtBox = document.getElementById('adj-mgmt');
-  const mgmt    = mgmtBox && mgmtBox.value.trim() !== '' ? Math.round(gross * ltrNum('adj-mgmt', 0) / 100) : Math.round(gross * _ltrRates.mgmt);
-  const opEx    = tax + ins + utAnn + hoaAnn + mgmt + maint + vac;
-  const noi     = egi - opEx + vac; // NOI excludes vacancy
-  const noiTrue = egi - (tax + ins + utAnn + hoaAnn + mgmt + maint);
+  const tax    = Math.round(price * _ltrRates.tax);
+  const ins    = ltrNum(p + '-insurance', d.insuranceAnnual || 1800);
+  const maint  = Math.round(price * _ltrRates.maint);
+  const utBase = d.utilitiesMonthly || Math.round((d.inferredSqft || 1200) * 0.20 / 12);
+  const utAnn  = utPay === 'landlord' ? utBase * 12 : 0;
+  const hoaAnn = hoaMo * 12;
+  const mgmtBox = document.getElementById(p + '-mgmt');
+  const mgmt   = mgmtBox && mgmtBox.value.trim() !== '' ? Math.round(gross * ltrNum(p + '-mgmt', 0) / 100) : Math.round(gross * _ltrRates.mgmt);
+  const costs  = tax + ins + utAnn + hoaAnn + mgmt + maint;
+  // NOI is net of vacancy (egi = gross - vac); vacancy is never subtracted twice.
+  const noi    = egi - costs;
 
-  let mort = 0, debt = 0, loan = 0, dscr = null;
+  let debt = 0, loan = 0, dscr = null;
   if (!effectiveCash && ratePct >= 0) {
     loan = price * (1 - downPct / 100);
     const mo = ratePct / 100 / 12, n = termYrs * 12;
     // A genuine 0% note (seller or family financing) is straight-line principal.
-    // The standard annuity formula divides by zero at a 0% rate.
-    mort = mo === 0 ? (n > 0 ? loan / n : 0)
-                    : loan * (mo * Math.pow(1+mo,n)) / (Math.pow(1+mo,n) - 1);
+    const mort = mo === 0 ? (n > 0 ? loan / n : 0) : loan * (mo * Math.pow(1+mo,n)) / (Math.pow(1+mo,n) - 1);
     debt = mort * 12;
-    dscr = debt > 0 ? noiTrue / debt : null;
+    dscr = debt > 0 ? noi / debt : null;
   }
+  const cf    = noi - debt;
+  const rehab = ltrNum(p + '-rehab', 0);
+  const cash  = (effectiveCash ? price : price * downPct / 100 + price * 0.03) + rehab;
+  return { rent, price, gross, vac, vacPct, tax, ins, utAnn, utPay, hoaAnn, mgmt, maint, costs, noi, debt, loan, dscr, cf,
+           moCF: cf / 12, cash, coc: cash > 0 ? (cf / cash) * 100 : 0, cap: price > 0 ? (noi / price) * 100 : 0, effectiveCash };
+}
 
-  // noiTrue is already net of vacancy (egi = gross - vac), so vacancy must NOT
-  // be subtracted again here. Doing so double-counted it and overstated losses.
-  const cf   = noiTrue - debt;
-  const moCF = cf / 12;
-  const rehab = ltrNum('adj-rehab', 0);
-  const cash = (effectiveCash ? price : price * downPct / 100 + price * 0.03) + rehab;
-  const coc  = cash > 0 ? (cf / cash) * 100 : 0;
-  const cap  = price > 0 ? (noiTrue / price) * 100 : 0;
+// The eight numbers for one scenario. o is the other scenario while comparing, shown small under each.
+function ltrMetrics(r, o, tag) {
+  const d = _ltrData;
+  const vs = function (txt) { return o ? tag + ': ' + txt : null; };
+  const dscrTxt = function (x) { return x.effectiveCash ? 'cash' : 'DSCR ' + (x.dscr != null ? x.dscr.toFixed(2) : '0.00'); };
+  const last = r.effectiveCash
+    ? ltrCard('Value growth', ltrFmtPct(d.estimatedAppreciationPct) + ' a year', null, 'var(--brass)', 'appreciation', null, o ? vs(o.effectiveCash ? ltrFmtPct(d.estimatedAppreciationPct) : dscrTxt(o)) : null)
+    : ltrCard('DSCR', r.dscr != null ? r.dscr.toFixed(2) : '0.00', 'dscr', null, null, r.dscr || 0, o ? vs(dscrTxt(o)) : null);
+  return ltrCard('Cash flow a month', ltrFmt(r.moCF), 'cashflow', null, null, r.moCF, o ? vs(ltrFmt(o.moCF)) : null) +
+    ltrCard('Rent a month', ltrFmt(r.rent), null, 'var(--slate)', 'rent', null, o ? vs(ltrFmt(o.rent)) : null) +
+    ltrCard('Cap rate', ltrFmtPct(r.cap), 'capRate', null, null, r.cap, o ? vs(ltrFmtPct(o.cap)) : null) +
+    ltrCard('Cash-on-cash', ltrFmtPct(r.coc), 'coc', null, null, r.coc, o ? vs(ltrFmtPct(o.coc)) : null) +
+    ltrCard('Cash flow a year', ltrFmt(r.cf), 'cashflow', 'var(--slate)', 'annualCF', r.cf / 12, o ? vs(ltrFmt(o.cf)) : null) +
+    ltrCard('Profit before the loan, a year', ltrFmt(r.noi), null, 'var(--slate)', 'noi', null, o ? vs(ltrFmt(o.noi)) : null) +
+    ltrCard('Cash to buy it', ltrFmt(r.cash), null, 'var(--slate)', 'cashIn', null, o ? vs(ltrFmt(o.cash)) : null) +
+    last;
+}
 
-  // Render - colors update automatically since ltrCard reads live values
-  const dscrCard = effectiveCash
-    ? ltrCard('Cash Purchase','100%',null,'#2d7a4f','cash100')
-    : ltrCard('DSCR', dscr != null ? dscr.toFixed(2) : '0.00', 'dscr', null, null, dscr||0);
+function recalcLtr() {
+  const d = _ltrData; if (!d) return;
+  const a = ltrCalc('adj');
+  const b = _ltrCmp && document.getElementById('adjb-price') ? ltrCalc('adjb') : null;
+  document.getElementById('ltr-core-metrics').innerHTML = ltrMetrics(a, b, 'Second');
+  if (b) document.getElementById('ltr-core-metrics-b').innerHTML = ltrMetrics(b, a, 'First');
+  [['adj', a], ['adjb', b]].forEach(function (x) {
+    if (!x[1]) return;
+    const out = document.getElementById(x[0] + '-loanamt'); if (out) out.textContent = x[1].loan > 0 ? ltrFmt(x[1].loan) : '--';
+    // The loan note only while a loan is chosen and its terms are missing.
+    const ln = document.getElementById(x[0] + '-loan-note'); if (ln) ln.hidden = _ltrPayOf[x[0]] || !x[1].effectiveCash;
+  });
 
-  document.getElementById('ltr-core-metrics').innerHTML =
-    ltrCard('Cash flow a month', ltrFmt(moCF), 'cashflow', null, null, moCF) +
-    ltrCard('Rent a month', ltrFmt(rent), null, 'var(--slate)', 'rent') +
-    ltrCard('Cap rate', ltrFmtPct(cap), 'capRate', null, null, cap) +
-    ltrCard('Cash-on-cash', ltrFmtPct(coc), 'coc', null, null, coc) +
-    ltrCard('Cash flow a year', ltrFmt(cf), 'cashflow', 'var(--slate)', 'annualCF', cf/12) +
-    ltrCard('Profit before the loan, a year', ltrFmt(noiTrue), null, 'var(--slate)', 'noi') +
-    ltrCard('Cash to buy it', ltrFmt(cash), null, 'var(--slate)', 'cashIn') +
-    (effectiveCash ? ltrCard('Value growth', ltrFmtPct(d.estimatedAppreciationPct) + ' a year', null, 'var(--brass)', 'appreciation') : dscrCard);
-
-  // Expense table
+  // Where the money goes, for the first scenario.
   const rows = [
-    ['Property tax (the 6 percent rental rate)', tax],
-    ['Insurance', ins],
-    ...(utPay === 'landlord' ? [['Utilities', utAnn]] : []),
-    ...(hoaAnn > 0 ? [['HOA fee', hoaAnn]] : []),
-    ...(mgmt > 0   ? [['Property manager', mgmt]] : []),
-    ['Upkeep and repairs set aside', maint],
+    ['Property tax (the 6 percent rental rate)', a.tax],
+    ['Insurance', a.ins],
+    ...(a.utPay === 'landlord' ? [['Utilities', a.utAnn]] : []),
+    ...(a.hoaAnn > 0 ? [['HOA fee', a.hoaAnn]] : []),
+    ...(a.mgmt > 0   ? [['Property manager', a.mgmt]] : []),
+    ['Upkeep and repairs set aside', a.maint],
   ];
   // Vacancy is a reduction in gross income, not an operating expense, so it is
   // listed below the total. Inside the list it made the rows not sum to the total.
@@ -959,18 +1125,15 @@ function recalcLtr() {
   const divStyle = 'display:flex;justify-content:space-between;align-items:baseline;padding:.45rem 0;border-top:1.5px solid var(--rule);margin-top:.2rem';
   document.getElementById('ltr-expense-table').innerHTML =
     `<div style="display:flex;flex-direction:column;width:100%;font-size:.92rem">` +
-    `<div style="${rowStyle}"><span style="color:var(--navy);font-weight:600">Rent a year</span><span style="font-weight:600;font-variant-numeric:tabular-nums">${ltrFmt(gross)}</span></div>` +
+    `<div style="${rowStyle}"><span style="color:var(--navy);font-weight:600">Rent a year</span><span style="font-weight:600;font-variant-numeric:tabular-nums">${ltrFmt(a.gross)}</span></div>` +
     rows.map(([l,v]) => `<div style="${rowStyle}"><span style="color:var(--muted)">${l}</span><span style="font-weight:500;font-variant-numeric:tabular-nums">${ltrFmt(v)}</span></div>`).join('') +
-    `<div style="${divStyle}"><span style="font-weight:600">Costs a year</span><span style="font-weight:700;font-variant-numeric:tabular-nums">${ltrFmt(opEx - vac)}</span></div>` +
-    (vac > 0 ? `<div style="${rowStyle}"><span style="color:var(--muted)">Vacancy allowance (${vacPct}%)</span><span style="font-weight:500;font-variant-numeric:tabular-nums">${ltrFmt(vac)}</span></div>` : '') +
-    (!effectiveCash ? `<div style="${rowStyle}"><span style="color:var(--muted)">Loan payments a year</span><span style="font-weight:500;font-variant-numeric:tabular-nums">${ltrFmt(debt)}</span></div>` : '') +
-    `<div style="${divStyle}"><span style="font-weight:700;color:var(--navy)">Left over a year</span><span style="font-weight:700;font-variant-numeric:tabular-nums;color:${cf >= 0 ? '#2d7a4f' : '#c0392b'}">${ltrFmt(cf)}</span></div>` +
+    `<div style="${divStyle}"><span style="font-weight:600">Costs a year</span><span style="font-weight:700;font-variant-numeric:tabular-nums">${ltrFmt(a.costs)}</span></div>` +
+    (a.vac > 0 ? `<div style="${rowStyle}"><span style="color:var(--muted)">Vacancy allowance (${a.vacPct}%)</span><span style="font-weight:500;font-variant-numeric:tabular-nums">${ltrFmt(a.vac)}</span></div>` : '') +
+    (!a.effectiveCash ? `<div style="${rowStyle}"><span style="color:var(--muted)">Loan payments a year</span><span style="font-weight:500;font-variant-numeric:tabular-nums">${ltrFmt(a.debt)}</span></div>` : '') +
+    `<div style="${divStyle}"><span style="font-weight:700;color:var(--navy)">Left over a year</span><span style="font-weight:700;font-variant-numeric:tabular-nums;color:${a.cf >= 0 ? '#2d7a4f' : '#c0392b'}">${ltrFmt(a.cf)}</span></div>` +
     `</div>`;
 
-  ltrSetBadge(cap, moCF, coc);
-  // The loan note only while a loan is chosen and its terms are missing.
-  const ln = document.getElementById('ltr-loan-note'); if (ln) ln.hidden = _ltrIsCash || !effectiveCash;
-  setTimeout(initLtrTips, 50);
+  ltrSetBadge(a.cap, a.moCF, a.coc);
 }
 
 // ── INVESTOR REPORT EMAIL GATE ────────────────────────
@@ -1103,8 +1266,6 @@ function ltrDoReset() {
   document.getElementById('ltr-results').style.display = 'none';
   document.getElementById('ltr-form').style.display = 'block';
   document.getElementById('ltr-arv-section').style.display = 'none';
-  const strip = document.getElementById('ltr-inferred-strip');
-  if (strip) { strip.style.display='none'; strip.innerHTML=''; }
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function ltrShowError(m) { const e=document.getElementById('ltr-error'); e.textContent=m; e.style.display='block'; }
