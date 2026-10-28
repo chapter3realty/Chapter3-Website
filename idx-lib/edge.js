@@ -19,7 +19,7 @@ import { FEEDS, feedParams, postFilter, rankHomes } from "./feeds.js";
 import { filterBar } from "./filters.js";
 import { filterCatalog } from "./catalog.js";
 import { catalogLoaded } from "./features.js";
-import { STYLE, STRIP_STYLE, SCRIPT, disclaimer, esc, safeUrl, signupDialog, stripCard, tourDialog } from "./render.js";
+import { PHOTO_HINT, STYLE, STRIP_STYLE, SCRIPT, disclaimer, esc, safeUrl, signupDialog, stripCard, tourDialog } from "./render.js";
 
 const SLOT = /<div class="hx-strip" data-place="([a-z0-9-]+)" data-name="([^"<>]*)"(?: data-head="([^"<>]*)")?><\/div>/g;
 const STRIP_CARDS = 10;
@@ -165,7 +165,7 @@ const switchHeader = (html) => html.replace(/onclick="openIdx\(\)"/g, `onclick="
 function finish(env, request, gate, html, meta, headers) {
   const signed = Boolean(visitorToken(request));
   html = html
-    .replace("</head>", () => `${STYLE}${STRIP_STYLE}</head>`)
+    .replace("</head>", () => `${PHOTO_HINT}${STYLE}${STRIP_STYLE}</head>`)
     .replace(/<body([^>]*)>/, (m, a) => `<body${a} data-hx-signed="${signed ? "1" : "0"}">`)
     .replace("</main>", () => `<div class="hx-wrap" style="padding-top:0">${disclaimer(meta)}</div></main>`)
     .replace("</body>", () => `${signupDialog(env.TURNSTILE_SITE_KEY)}${tourDialog()}${SCRIPT}</body>`);

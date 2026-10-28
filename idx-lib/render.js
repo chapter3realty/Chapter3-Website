@@ -87,6 +87,9 @@ export function cardTag(l) {
   return "";
 }
 
+/** "0.25", "1.5", "12": a lot size for a card, or "" when the listing has none. */
+export const acres = (v) => (typeof v === "number" && isFinite(v) && v > 0 ? String(v >= 10 ? Math.round(v) : Math.round(v * 100) / 100) : "");
+
 export function card(l, opts = {}) {
   const photo = safeUrl(l.photo);
   const tag = cardTag(l);
@@ -95,6 +98,8 @@ export function card(l, opts = {}) {
   if (typeof l.beds === "number") bits.push(`<b>${esc(l.beds)}</b> bds`);
   if (typeof l.baths === "number") bits.push(`<b>${esc(l.baths)}</b> ba`);
   if (typeof l.sqft === "number") bits.push(`<b>${esc(num(l.sqft))}</b> sqft`);
+  // The lot, on every card (owner, 2026-10-28).
+  if (acres(l.lotAcres)) bits.push(`<b>${esc(acres(l.lotAcres))}</b> ${l.lotAcres === 1 ? "acre" : "acres"}`);
   if (statusWord(l.status)) bits.push(esc(statusWord(l.status)));
   const addr = l.address ? `${addressLine(l)}${l.postalCode ? `, ${l.postalCode}` : ""}` : addressLine(l);
   return `<article class="hx-c"><a class="hx-c-link" href="${esc(listingPath(l))}" draggable="false"><span class="hx-c-photo">`
@@ -223,8 +228,20 @@ export const STYLE = `<style>
 .hx-signout{display:inline;margin-left:.4rem}
 .hx-signout button,.hx-more-photos{border:0;background:none;padding:0;font:inherit;color:var(--navy);text-decoration:underline;cursor:pointer}
 button.hx-heart{border-radius:999px}
-.hx-gallery{display:flex;gap:.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.hx-gallery::-webkit-scrollbar{display:none}
-.hx-gallery img{height:340px;width:auto;max-width:90vw;object-fit:cover;border-radius:12px;scroll-snap-align:start}
+/* Every photo has a fixed box before it loads: a photo with no size counts as in view, and a gallery of
+   33 then asked the MLS for all 33 at once, past its limit of 240 a minute for every visitor (2026-10-28). */
+.hx-keys{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:.6rem;margin:0 0 1.4rem}
+.hx-key{padding:.85rem 1rem;border-radius:14px;background:#fff;border:1px solid var(--rule,#e6dfd3)}
+.hx-key span{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate,#5c6b78);font-weight:700}
+.hx-key b{display:block;margin-top:.2rem;font-size:1.2rem;color:var(--ink,#1c2028)}
+.hx-key small{display:block;margin-top:.25rem;font-size:.78rem;line-height:1.4;color:var(--slate,#5c6b78)}
+.hx-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.5rem}.hx-gallery::-webkit-scrollbar{display:none}
+.hx-gallery img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block}
+.hx-gallery img:first-child{grid-column:1/-1;aspect-ratio:16/9}
+/* A photo that has not come yet shows a calm panel, never its caption squeezed into a strip. */
+.hx-gallery img,.hx-c-photo img,.hx-l-hero img,.hx-l-tile img{color:transparent;font-size:0;background:linear-gradient(135deg,#ece6dc,#ddd3c4)}
+.hx-imgwait{position:relative}.hx-imgwait::after{content:"Photo loading";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.85rem;color:#6b7480;pointer-events:none}
+.hx-gallery .hx-imgwait-i{outline:0}
 .hx-hero-photo img{width:100%;max-height:520px;object-fit:cover;border-radius:16px}
 .hx-table{border-collapse:collapse;width:100%;max-width:760px;font-size:.92rem}.hx-table th{text-align:left;font-weight:600;padding:.4rem .6rem .4rem 0;width:40%;vertical-align:top}.hx-table td{padding:.4rem 0}.hx-table tr{border-bottom:1px solid var(--rule,#e6dfd3)}
 .hx-remarks{white-space:pre-line;line-height:1.65;max-width:760px}
@@ -345,7 +362,7 @@ main#main .hx-s-row>.hx-c:hover{transform:none}
 .hx-teaser li{display:flex;align-items:center;gap:.6rem;padding:.7rem 0;border-bottom:1px solid var(--rule,#e6dfd3);font-size:1rem}
 .hx-teaser li em{margin-left:auto;display:inline-block;width:6.5rem;height:.8rem;border-radius:6px;background:linear-gradient(90deg,#d9cfc1,#efe8dd);filter:blur(1.5px)}
 .hx-wrap h2{font-family:var(--serif);font-size:1.45rem;margin:2rem 0 .6rem}
-.hx-gallery img{height:360px}
+
 @media (prefers-reduced-transparency:reduce){.hx-glass{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}}
 ${FILTER_STYLE}
 </style>`;
@@ -383,8 +400,17 @@ main#main .hx-s-all{flex:0 0 40%;max-width:12rem;align-self:stretch;display:flex
  * The page script. It touches only our own elements; nothing from the CRM is ever
  * written with innerHTML. data-hx-signed on <body> says whether the visitor is signed up.
  */
+/** The photo server's connection opens while the page is still arriving: about a third of a second sooner. */
+export const PHOTO_HINT = `<link rel="preconnect" href="https://api.cotality.com"><link rel="dns-prefetch" href="https://api.cotality.com">`;
+
 export const SCRIPT = `<script>(function(){
 var signed=document.body.getAttribute("data-hx-signed")==="1";
+/* A listing photo that fails (the MLS photo server allows 240 a minute for every visitor together) is
+   asked for once more a minute later, when its count starts over; until then a calm panel shows. */
+document.addEventListener("error",function(e){var im=e.target;if(!im||im.tagName!=="IMG"||im.src.indexOf("https://api.cotality.com/")!==0)return;
+ var box=im.parentNode;if(box&&box.classList&&!box.classList.contains("hx-gallery"))box.classList.add("hx-imgwait");
+ if(im.getAttribute("data-retry"))return;im.setAttribute("data-retry","1");var u=im.src;setTimeout(function(){im.src=u+(u.indexOf("?")<0?"?r=1":"&r=1")},61000)},true);
+document.addEventListener("load",function(e){var im=e.target;if(im&&im.tagName==="IMG"&&im.parentNode&&im.parentNode.classList)im.parentNode.classList.remove("hx-imgwait")},true);
 function $(s,r){return (r||document).querySelector(s)}function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
 function post(u,b){return fetch(u,{method:"POST",headers:{"content-type":"application/json"},credentials:"same-origin",body:JSON.stringify(b)}).then(function(r){return r.json().catch(function(){return{}}).then(function(j){j._status=r.status;return j})})}
 function openD(d){if(!d)return;if(d.showModal)d.showModal();else d.setAttribute("open","")}

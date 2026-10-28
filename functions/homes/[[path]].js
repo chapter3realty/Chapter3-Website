@@ -25,7 +25,7 @@ import { postFilter, rankHomes } from "../../idx-lib/feeds.js";
 import { MAP_SCRIPT, MAP_STYLE, geocode, mapsKey, nearOf, pinOf, withPoints } from "../../idx-lib/map.js";
 import { SMS_CONSENT_TEXT, TERMS_PARAGRAPHS, TERMS_TITLE, TERMS_VERSION, termsText } from "../../idx-lib/terms.js";
 import {
-  ICONS, STRIP_STYLE, STYLE, SCRIPT, addressLine, card, dayLong, disclaimer, esc, factsLine, grid, headlinePrice, heartButton,
+  ICONS, PHOTO_HINT, STRIP_STYLE, STYLE, SCRIPT, addressLine, card, dayLong, disclaimer, esc, factsLine, grid, headlinePrice, heartButton,
   listingPath, money, safeUrl, signupDialog, welcomeDialog, spaced, statusWord, stripCard, tourButton, tourDialog,
 } from "../../idx-lib/render.js";
 
@@ -235,7 +235,7 @@ async function page(context, gate, o) {
     .replace(/(<meta property="og:title" content=")[^"]*/, (_, a) => a + esc(full))
     .replace(/(<meta property="og:description" content=")[^"]*/, (_, a) => a + esc(o.description))
     .replace(/(<meta property="og:url" content=")[^"]*/, (_, a) => a + esc(o.canonical))
-    .replace("</head>", () => `${STYLE}${o.extraHead || ""}${ld}</head>`)
+    .replace("</head>", () => `${PHOTO_HINT}${STYLE}${o.extraHead || ""}${ld}</head>`)
     .replace(/<body([^>]*)>/, (mm, a) => `<body${a} data-hx-signed="${signed ? "1" : "0"}">`)
     .replace(/<div class="wrap hx-wrap" id="hx-root">[\s\S]*?<\/div>/, () => `<div class="wrap hx-wrap" id="hx-root"${o.rootAttrs || ""}>${o.body}</div>`)
     .replace("</body>", () => `${o.extraBody || ""}${signupDialog(env.TURNSTILE_SITE_KEY)}${tourDialog()}${SCRIPT}</body>`);
@@ -481,7 +481,7 @@ async function mapPage(context, url, gate) {
   const body = `<div class="hx-mapapp" data-hx-map data-key="${esc(mapsKey(context.env))}" data-params="${esc(keep.toString())}" data-view="${view}" data-total="${esc(s.total)}" data-hearts="${esc(JSON.stringify([...h]))}"${focus ? ` data-focus="${esc(focus)}"` : ""}${s.left ? ` data-left="${esc(s.left)}" data-q="${esc(s.words)}"` : ""}>
 <div class="hx-mtop">${filterBar({ action: "/homes/map/", params: keep, features: catalogLoaded(), map: true })}<div class="hx-applied hx-mchips" id="hx-chips"${chips ? "" : " hidden"}>${chips}<a class="hx-clear" href="/homes/map/" data-x="">Clear all</a></div><p class="hx-ai-note" id="hx-ai-note" hidden></p></div>
 <div class="hx-map-body hx-show-list">
-<div id="hx-map" class="hx-map" role="region" aria-label="Map of the homes">
+<div class="hx-mapbox" id="hx-mapbox"><div id="hx-map" class="hx-map" role="region" aria-label="Map of the homes"></div>
 <div class="hx-mode" role="group" aria-label="Map view"><button type="button" data-mode="2d" aria-pressed="${view === "2d" ? "true" : "false"}">2D</button><button type="button" data-mode="3d" aria-pressed="${view === "3d" ? "true" : "false"}">3D</button></div>
 <p id="hx-map-note" class="hx-map-note"${s.pins.length ? " hidden" : ""}>${s.pins.length ? "" : "No homes with a map location match this search. Change a filter or move the map."}</p></div>
 <aside class="hx-map-list" id="hx-map-list" aria-label="The homes"><div class="hx-list-h"><h1>${esc(`Homes for sale${where}`)}</h1><p class="hx-map-count" id="hx-map-count"><b>${esc(s.total.toLocaleString("en-US"))}</b> ${s.total === 1 ? "home" : "homes"}</p></div>
@@ -708,10 +708,28 @@ async function listingPageWith(context, mls, slugPart, gate, r, hearts) {
   const openList = registered && Array.isArray(l.openHouses) ? l.openHouses.filter((o) => o && !isNaN(Date.parse(o.startsAt))) : [];
   const open = openList.length ? `<h2>Open houses</h2><ul>${openList.map((o) => `<li>${esc(new Date(o.startsAt).toLocaleString("en-US", { timeZone: "America/New_York", weekday: "long", month: "long", day: "numeric", hour: "numeric", minute: "2-digit" }))}${o.endsAt && !isNaN(Date.parse(o.endsAt)) ? ` to ${esc(new Date(o.endsAt).toLocaleString("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit" }))}` : ""}</li>`).join("")}</ul>` : "";
   const teaser = (icon, text) => `<li>${ICONS[icon]}<span>${esc(text)}</span><em aria-hidden="true"></em></li>`;
+  /* What a signed-up visitor came for, first (owner, 2026-10-28; NAR 2025 Profile of Home Buyers and Sellers:
+     photos 81 percent "very useful", detailed property information 77, floor plans 57). Under the price: what
+     the home costs to own and how the listing is moving, then the description and every photo, then the rest. */
+  const d = registered && l.details ? l.details : {};
+  const numOf = (v) => (typeof v === "number" && isFinite(v) ? v : null);
+  const fee = numOf(d.AssociationFee), freq = String(d.AssociationFeeFrequency || "").toLowerCase();
+  const feeMonth = fee === null ? null : /annual|year/.test(freq) ? Math.round(fee / 12) : /quarter/.test(freq) ? Math.round(fee / 3) : fee;
+  const noHoa = d.AssociationYN === false || feeMonth === 0;
+  const covers = Array.isArray(d.AssociationFeeIncludes) ? d.AssociationFeeIncludes.join(", ") : typeof d.AssociationFeeIncludes === "string" ? d.AssociationFeeIncludes : "";
+  const cut = numOf(l.originalListPrice) && numOf(l.listPrice) && l.originalListPrice > l.listPrice ? l.originalListPrice - l.listPrice : 0;
+  const key = (label, value, note) => (value ? `<div class="hx-key"><span>${esc(label)}</span><b>${esc(value)}</b>${note ? `<small>${esc(note)}</small>` : ""}</div>` : "");
+  const keys = registered ? `<div class="hx-keys">`
+    + (noHoa ? key("HOA fee", "No HOA", NO_HOA_NOTE) : key("HOA fee", feeMonth !== null ? `${money(feeMonth)} a month` : "", covers ? `Covers ${covers.slice(0, 120)}` : ""))
+    + key("Property tax", numOf(d.TaxAnnualAmount) ? `${money(d.TaxAnnualAmount)} a year` : "", d.TaxYear ? `As listed for ${d.TaxYear}; it can change after a sale` : "As listed; it can change after a sale")
+    + key("Flood zone", typeof d.FloodZone === "string" ? d.FloodZone : "", "From the listing; confirm with your insurance agent")
+    + key("On the market", numOf(l.daysOnMarket) !== null ? `${l.daysOnMarket} day${l.daysOnMarket === 1 ? "" : "s"}` : "", cut ? `Price cut ${money(cut)} from ${money(l.originalListPrice)}` : "")
+    + (openList.length ? key("Next open house", new Date(openList[0].startsAt).toLocaleString("en-US", { timeZone: "America/New_York", weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }), "") : "")
+    + `</div>` : "";
   const more = registered
-    ? `${l.remarks ? `<h2>About this home</h2><p class="hx-remarks">${esc(l.remarks)}</p>` : ""}
+    ? `${keys}${l.remarks ? `<h2>About this home</h2><p class="hx-remarks">${esc(l.remarks)}</p>` : ""}
+${photos.length > 1 ? `<h2 id="hx-photos">All ${esc(photos.length)} photos</h2><div class="hx-gallery">${photos.map((p, i) => img(p.url, p.caption || `Photo ${i + 1} of ${addressLine(l)}`, false)).join("")}</div>` : ""}
 ${details ? `<h2>Details</h2><table class="hx-table"><tbody>${details}</tbody></table>` : ""}${open}
-${photos.length > 1 ? `<h2 id="hx-photos">All ${esc(photos.length)} photos</h2><div class="hx-gallery">${photos.map((p, i) => img(p.url, p.caption || `Photo ${i + 1} of ${addressLine(l)}`, i < 2)).join("")}</div>` : ""}
 ${safeUrl(l.virtualTour) ? `<p><a href="${esc(l.virtualTour)}" rel="nofollow noopener" target="_blank">Virtual tour</a></p>` : ""}
 ${l.listingAgent ? `<p class="hx-firm-line">Listing agent: ${esc(l.listingAgent)}, ${esc(l.listingFirm || "")}</p>` : ""}
 <p class="hx-small">School names come from the listing. Being near a school does not mean a home is zoned for it; confirm the zone with Horry County Schools.</p>`
@@ -741,7 +759,7 @@ ${media}
 <h1 class="hx-l-addr">${esc(addressLine(l))}</h1>
 ${pills}
 <p class="hx-firm-line">Listed by ${esc(l.listingFirm || "the listing brokerage")}</p>
-${signedBar(r.json.tier)}</div><div class="hx-l-rest">${facts}${located}${more}</div>
+${signedBar(r.json.tier)}</div><div class="hx-l-rest">${registered ? `${more}${facts}${located}` : `${facts}${located}${more}`}</div>
 </div>${side}</div>
 ${nearby}
 ${disclaimer(r.json.meta)}`;

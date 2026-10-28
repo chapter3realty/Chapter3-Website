@@ -178,6 +178,19 @@
 #ltr-results .ltr-q::after{white-space:pre-line;max-width:18rem}
 #ltr-results .ltr-rep{display:flex;justify-content:space-between;gap:1rem;padding:.35rem 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:.92rem;color:var(--navy);font-variant-numeric:tabular-nums}
 #ltr-results .ltr-rep-t{font-weight:700;border-bottom:0;border-top:1.5px solid var(--rule)}
+#ltr-results .ltr-cmp-table{margin:0 0 1rem;padding:1rem 1.1rem;border-radius:18px;background:#fff;border:1px solid var(--rule)}
+#ltr-results .ltr-cmp-table[hidden],#ltr-results .ltr-metrics[hidden]{display:none}
+#ltr-results .ltr-cmpt{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+#ltr-results .ltr-cmpt th,#ltr-results .ltr-cmpt td{padding:.65rem .5rem;border-bottom:1px solid var(--rule);text-align:right;font-size:1rem}
+#ltr-results .ltr-cmpt thead th{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);font-weight:700}
+#ltr-results .ltr-cmpt tbody th{text-align:left;font-weight:600;color:var(--navy);font-size:.92rem}
+#ltr-results .ltr-cmpt tbody th .ltr-q{margin-left:.35rem;vertical-align:middle}
+#ltr-results .ltr-cmpt td{font-family:var(--serif);font-size:1.15rem;color:var(--navy);width:28%}
+#ltr-results .ltr-cmpt td.ltr-win{color:#2d7a4f;font-weight:700}
+#ltr-results .ltr-cmpt td.ltr-win::before{content:"\2713  ";font-family:var(--sans);font-size:.8rem}
+#ltr-results .ltr-cmpt .ltr-q::after{left:0;transform:translate(-10%,4px)}#ltr-results .ltr-cmpt .ltr-q:hover::after,#ltr-results .ltr-cmpt .ltr-q:focus::after{transform:translate(-10%,0)}
+.ltr-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media(max-width:760px){#ltr-results .ltr-cmpt td{font-size:1rem;width:30%}#ltr-results .ltr-cmpt th,#ltr-results .ltr-cmpt td{padding:.55rem .3rem}}
 #ltr-repairs[hidden],#ltr-cmp-mid[hidden],#ltr-sc-b[hidden]{display:none}
 #ltr-cmp.on{display:grid;grid-template-columns:minmax(0,1fr) 3rem minmax(0,1fr);gap:.6rem;align-items:start}
 #ltr-cmp.on .ltr-grid,#ltr-cmp.on .ltr-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -314,14 +327,14 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
 <div class="ltr-metrics" id="ltr-core-metrics"></div></div>
 <div class="ltr-mid" id="ltr-cmp-mid" hidden><button type="button" data-sc="a" aria-pressed="true" onclick="ltrCmpTab('a')">First</button><img src="/images/brand/chapter-iii-mark.svg" alt="" width="22" height="44"><button type="button" data-sc="b" aria-pressed="false" onclick="ltrCmpTab('b')">Second</button></div>
 <div class="ltr-sc" id="ltr-sc-b" hidden><section class="ltr-edit" aria-label="Second scenario"><div id="ltr-adj-panel-b"></div></section>
-<div class="ltr-metrics" id="ltr-core-metrics-b"></div></div>
+<div class="ltr-metrics" id="ltr-core-metrics-b" hidden></div></div>
 </div>
+<div id="ltr-cmp-table" class="ltr-cmp-table" hidden></div>
 <section class="ltr-box" id="ltr-repairs" hidden><h3 class="ltr-box-h">Work it needs</h3><div id="ltr-repairs-list"></div></section>
 <div class="ltr-two">
 <section class="ltr-box"><h3 class="ltr-box-h">Where the money goes</h3><div id="ltr-expense-table"></div></section>
 <section class="ltr-box"><h3 class="ltr-box-h">What we noticed</h3><div id="ltr-flags"></div></section>
 </div>
-<section class="ltr-box"><h3 class="ltr-box-h">About this home</h3><p id="ltr-narrative-text" class="ltr-narr"></p></section>
 <div id="ltr-arv-section" style="display:none;background:var(--navy);padding:2rem 2.5rem;margin-bottom:.5rem">
 <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-2);margin-bottom:1rem">🔨 Fixer-Upper Analysis</div>
 <div id="ltr-arv-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08)"></div>
@@ -1036,7 +1049,7 @@ if (GOOGLE_MAPS_KEY !== 'YOUR_GOOGLE_MAPS_KEY') {
 }
 </script>
 
-<script src="/assets/s.0d508812ef.js"></script>
+<script src="/assets/s.c61c21aa71.js"></script>
 
 <!-- ══════════════════════════════════════
      DYNAMIC LAYER v2 ELEMENTS

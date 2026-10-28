@@ -682,11 +682,12 @@ RENT: ${beds||'?'}BR comps 2026: 1BR $1100-1600,2BR $1400-2100,3BR $1700-2600,4B
 EXP: Tax=0.82% of value (SC 6% investment assessment×Horry millage),Ins=$1500SFH/$3000condo/$5000ocean,Utils=$0.20/sqft/yr (e.g. 1200sqft=$240/yr=$20/mo),Maint=0.85%/yr,Vac=6%.
 ${permitCtx ? 'Permit signals: generate GREEN flags for hospital/medical/retail/school growth, AMBER for new residential supply, RED for industrial or demolition near subject. Farther = less weight.' : ''}
 
-{"inferredPropertyType":"","inferredBeds":${beds||0},"inferredBaths":${baths||0},"inferredSqft":${sqft||0},"inferredYearBuilt":0,"inferredHOAMonthly":0,"inferredFloodZone":null,"inferredFeatures":[],"estimatedValue":0,"verdict":"one plain sentence","overview":"Your honest opinion of this home as a long-term rental in 2 short sentences, 40 words or fewer: whether it works, and the one number or fact that decides it. Describe the property, never people. No rates or loan terms.","dealRating":"good|ok|tough","estRentMonthly":0,"grossRentAnnual":0,"vacancyLoss":0,"effectiveGrossIncome":0,"propertyTaxAnnual":0,"insuranceAnnual":0,"utilitiesMonthly":0,"hoaAnnual":0,"managementFeeAnnual":0,"maintenanceAnnual":0,"totalExpensesAnnual":0,"noi":0,"capRate":0,"loanAmount":0,"monthlyMortgage":0,"annualDebtService":0,"dscr":${isCash?'null':0},"monthlyCashflow":0,"annualCashflow":0,"cashOnCashReturn":0,"totalCashInvested":0,"estimatedAppreciationPct":0,"estimatedAppreciationDollar1yr":0,"estimatedAppreciationDollar5yr":0,"arv":${isFixer?0:'null'},"rehabBudgetLow":${isFixer?0:'null'},"rehabBudgetHigh":${isFixer?0:'null'},"rehabNarrative":${isFixer?'""':'null'},"totalProjectCost":${isFixer?0:'null'},"potentialEquityGain":${isFixer?0:'null'},"narrative":"3 plain sentences that add what the overview and the flags leave out. Never repeat a sentence, a number or a point from them. (1) What about this home itself, its size, layout, age, lot or building, helps or hurts it as a yearly rental. (2) The one thing a landlord should check on this home before buying, such as the roof age, the heating and air system, the flood zone or the HOA rules on rentals, whichever fits it. (3) The goal it fits best, steady monthly income, long-term value growth, a fix-and-flip or a 1031 exchange, and why in one plain reason. Describe the property, never people. No jargon, no acronyms except HOA","flags":[{"type":"green|amber|red","text":""}]}`;
+{"inferredPropertyType":"","inferredBeds":${beds||0},"inferredBaths":${baths||0},"inferredSqft":${sqft||0},"inferredYearBuilt":0,"inferredHOAMonthly":0,"inferredFloodZone":null,"inferredFeatures":[],"estimatedValue":0,"verdict":"one plain sentence","overview":"Your honest opinion of this home as a long-term rental in 2 short sentences, 40 words or fewer: whether it works, and the one number or fact that decides it. Describe the property, never people. No rates or loan terms.","dealRating":"good|ok|tough","estRentMonthly":0,"grossRentAnnual":0,"vacancyLoss":0,"effectiveGrossIncome":0,"propertyTaxAnnual":0,"insuranceAnnual":0,"utilitiesMonthly":0,"hoaAnnual":0,"managementFeeAnnual":0,"maintenanceAnnual":0,"totalExpensesAnnual":0,"noi":0,"capRate":0,"loanAmount":0,"monthlyMortgage":0,"annualDebtService":0,"dscr":${isCash?'null':0},"monthlyCashflow":0,"annualCashflow":0,"cashOnCashReturn":0,"totalCashInvested":0,"estimatedAppreciationPct":0,"estimatedAppreciationDollar1yr":0,"estimatedAppreciationDollar5yr":0,"arv":${isFixer?0:'null'},"rehabBudgetLow":${isFixer?0:'null'},"rehabBudgetHigh":${isFixer?0:'null'},"rehabNarrative":${isFixer?'""':'null'},"totalProjectCost":${isFixer?0:'null'},"potentialEquityGain":${isFixer?0:'null'},"flags":[{"type":"green|amber|red","text":"one plain sentence"}]}
+FLAGS: 5 to 7 insights, each ONE plain sentence of 30 words or fewer, each a different point, none repeating the overview. Pick from: the rent against what homes like it rent for here; the price against the asking price or recent sales; property tax and insurance; flood zone or storm exposure when it applies; the HOA, its fee and its rules on rentals; building permits nearby (growth, or new supply competing for tenants); tenant demand and resale for this size and type of home; its age and what that means for upkeep. green helps the investment, amber is worth checking, red hurts it. Describe the property, never people. No rates or loan terms.`;
 
     const analysisRaw = await callProxy({
       model: 'claude-haiku-5-5', max_tokens: 1200,
-      cache_key: ['analysis4', fullAddr, beds||'', baths||'', sqft||'', isFixer ? (cond||'fixer') : '', mls ? 'mls' + mls.mlsNumber + '-' + (mls.listPrice||'') + '-' + mls.tier : ''].join('|'),
+      cache_key: ['analysis5', fullAddr, beds||'', baths||'', sqft||'', isFixer ? (cond||'fixer') : '', mls ? 'mls' + mls.mlsNumber + '-' + (mls.listPrice||'') + '-' + mls.tier : ''].join('|'),
       messages: [{ role: 'user', content: analysisPrompt }]
     });
 
@@ -749,7 +750,9 @@ async function ltrRepairCheck(mls, fullAddr, said) {
   try {
     const all = mls && Array.isArray(mls.photos) ? mls.photos.filter(function (u) { return /^https:\/\//.test(u); }) : [];
     // Spread across the listing: the front, the kitchen and the baths are rarely the first six.
-    const pick = all.length <= 8 ? all : [0, 1, 2, 3, 4, 5, 6, 7].map(function (i) { return all[Math.round(i * (all.length - 1) / 7)]; });
+    // Four photos, spread through the listing (front, kitchen, a bath, the back): enough to see work, and each
+    // photo the AI opens also counts against the MLS photo server's limit of 240 a minute (owner, 2026-10-28).
+    const pick = all.length <= 4 ? all : [0, 1, 2, 3].map(function (i) { return all[Math.round(i * (all.length - 1) / 3)]; });
     const notes = mls && mls.remarks ? mls.remarks.replace(/\s+/g, ' ').slice(0, 700) : '';
     const asked = String(said || '').replace(/\s+/g, ' ').slice(0, 300);
     if (!pick.length && !notes && !asked) return null;
@@ -761,7 +764,7 @@ Cost each item as a 2026 Myrtle Beach area contractor range in whole dollars.
     const content = [{ type: 'text', text: prompt }].concat(pick.map(function (u) { return { type: 'image', source: { type: 'url', url: u } }; }));
     const raw = await callProxy({
       model: 'claude-haiku-5-5', max_tokens: 700,
-      cache_key: ['repair1', fullAddr, mls ? 'mls' + mls.mlsNumber + '-' + pick.length : '', asked].join('|'),
+      cache_key: ['repair2', fullAddr, mls ? 'mls' + mls.mlsNumber + '-' + pick.length : '', asked].join('|'),
       messages: [{ role: 'user', content: content }]
     });
     const r = extractJSON(raw);
@@ -864,7 +867,6 @@ function ltrRenderResults(d, address, isFixer, isCash) {
     if (d.rehabNarrative) document.getElementById('ltr-arv-note').textContent = d.rehabNarrative;
   }
 
-  document.getElementById('ltr-narrative-text').textContent = ltrSafeNarrative(d.narrative || '');
   document.getElementById('ltr-flags').innerHTML = (d.flags||[]).map(f=>({ type: f.type, text: ltrSafeNarrative(f.text) })).filter(f=>f.text).map(f=>{
     const c={green:'#2d7a4f',amber:'#d97706',red:'#c0392b'};
     return `<div style="display:flex;gap:.75rem;align-items:flex-start;padding:.7rem 0;border-bottom:1px solid var(--rule);font-size:.87rem;line-height:1.6;color:var(--navy)"><div style="width:8px;height:8px;border-radius:50%;background:${c[f.type]||c.amber};flex-shrink:0;margin-top:5px"></div><div>${c3Esc(f.text)}</div></div>`;
@@ -1097,12 +1099,44 @@ function ltrMetrics(r, o, tag) {
     last;
 }
 
+// The two scenarios row by row; the better number in each row is marked.
+function ltrCmpTable(a, b) {
+  const d = _ltrData;
+  const dscr = function (x) { return x.effectiveCash ? 'Cash' : (x.dscr != null ? x.dscr.toFixed(2) : '0.00'); };
+  const rows = [
+    ['Cash flow a month', 'cashflow', ltrFmt(a.moCF), ltrFmt(b.moCF), a.moCF, b.moCF, 1],
+    ['Cash flow a year', 'annualCF', ltrFmt(a.cf), ltrFmt(b.cf), a.cf, b.cf, 1],
+    ['Cash-on-cash', 'coc', ltrFmtPct(a.coc), ltrFmtPct(b.coc), a.coc, b.coc, 1],
+    ['Cap rate', 'capRate', ltrFmtPct(a.cap), ltrFmtPct(b.cap), a.cap, b.cap, 1],
+    ['Cash to buy it', 'cashIn', ltrFmt(a.cash), ltrFmt(b.cash), a.cash, b.cash, -1],
+    ['Loan amount', '', a.loan > 0 ? ltrFmt(a.loan) : 'None', b.loan > 0 ? ltrFmt(b.loan) : 'None', null, null, 0],
+    ['Loan payments a year', '', a.debt > 0 ? ltrFmt(a.debt) : 'None', b.debt > 0 ? ltrFmt(b.debt) : 'None', null, null, 0],
+    ['DSCR', 'dscr', dscr(a), dscr(b), null, null, 0],
+    ['Rent a month', 'rent', ltrFmt(a.rent), ltrFmt(b.rent), null, null, 0],
+    ['Profit before the loan, a year', 'noi', ltrFmt(a.noi), ltrFmt(b.noi), null, null, 0],
+  ];
+  const q = function (label, k) {
+    const says = LTR_SAYS[k] || '', good = k ? ltrGood(k) : '';
+    return says ? `<button type="button" class="ltr-q" aria-label="What is ${label.toLowerCase()}?" data-tip="${c3Esc(good ? says + '\n' + good : says)}">?</button>` : '';
+  };
+  const cell = function (v, win) { return `<td${win ? ' class="ltr-win"' : ''}>${v}</td>`; };
+  return `<table class="ltr-cmpt"><thead><tr><th scope="col"><span class="ltr-vh">Number</span></th><th scope="col">First</th><th scope="col">Second</th></tr></thead><tbody>` +
+    rows.map(function (r) {
+      const aw = r[6] && r[4] !== r[5] && (r[6] > 0 ? r[4] > r[5] : r[4] < r[5]);
+      const bw = r[6] && r[4] !== r[5] && !aw;
+      return `<tr><th scope="row">${r[0]}${q(r[0], r[1])}</th>${cell(r[2], aw)}${cell(r[3], bw)}</tr>`;
+    }).join('') + `</tbody></table><p class="ltr-edit-n">The better number in each row is in green. Change either scenario above; the table follows.</p>`;
+}
+
 function recalcLtr() {
   const d = _ltrData; if (!d) return;
   const a = ltrCalc('adj');
   const b = _ltrCmp && document.getElementById('adjb-price') ? ltrCalc('adjb') : null;
-  document.getElementById('ltr-core-metrics').innerHTML = ltrMetrics(a, b, 'Second');
-  if (b) document.getElementById('ltr-core-metrics-b').innerHTML = ltrMetrics(b, a, 'First');
+  // Comparing: one table, the two scenarios in lined-up columns (owner, 2026-10-28: "the stats need to line up").
+  const tbl = document.getElementById('ltr-cmp-table');
+  document.getElementById('ltr-core-metrics').hidden = !!b;
+  if (tbl) { tbl.hidden = !b; tbl.innerHTML = b ? ltrCmpTable(a, b) : ''; }
+  if (!b) document.getElementById('ltr-core-metrics').innerHTML = ltrMetrics(a, null, '');
   [['adj', a], ['adjb', b]].forEach(function (x) {
     if (!x[1]) return;
     const out = document.getElementById(x[0] + '-loanamt'); if (out) out.textContent = x[1].loan > 0 ? ltrFmt(x[1].loan) : '--';

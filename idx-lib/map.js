@@ -8,7 +8,7 @@
  * carries no point yet (REQUEST FOR THE CRM, batches/2026-10-b/IDX-STUDY.md, request 2):
  * until it does, the map page shows the list and says the pins are coming.
  */
-import { addressLine, cardTag, headlinePrice, listingPath, safeUrl, statusWord } from "./render.js";
+import { acres, addressLine, cardTag, headlinePrice, listingPath, safeUrl, statusWord } from "./render.js";
 
 /** The Google Maps browser key: a public key, locked to our domain in Google Cloud. A setting can replace it. */
 export const mapsKey = (env) => (/^AIza[0-9A-Za-z_-]{35}$/.test(env.MAPS_BROWSER_KEY || "") ? env.MAPS_BROWSER_KEY : "AIzaSyAFTNMGh-PmVFTl3S0ViiM9zNYicFrgGfs");
@@ -31,7 +31,7 @@ export function pinOf(l) {
   return {
     mls: String(l.mlsNumber || ""), url: listingPath(l), lat, lng,
     price: headlinePrice(l), short: shortPrice(l), photo: safeUrl(l.photo),
-    beds: num(l.beds), baths: num(l.baths), sqft: num(l.sqft), status: statusWord(l.status), tag: cardTag(l),
+    beds: num(l.beds), baths: num(l.baths), sqft: num(l.sqft), acres: acres(l.lotAcres), status: statusWord(l.status), tag: cardTag(l),
     addr: `${addressLine(l)}${l.postalCode ? `, ${l.postalCode}` : ""}`, firm: String(l.listingFirm || "listing brokerage"),
   };
 }
@@ -122,7 +122,7 @@ html.hx-fit,html.hx-fit body,body:has(.hx-mapapp){overflow:hidden}
 .hx-mchips{display:flex;flex-wrap:wrap;gap:.35rem;margin:.45rem 0 0}.hx-mchips[hidden]{display:none}
 .hx-ai-note{margin:.35rem 0 0;font-size:.82rem;color:var(--slate,#5c6b78)}.hx-ai-note[hidden]{display:none}
 .hx-map-body{position:relative;flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) min(50vw,720px)}
-.hx-map{position:relative;background:#e9e5dc;min-height:0}
+.hx-mapbox{position:relative;min-height:0;background:#e9e5dc}.hx-map{position:absolute;inset:0}
 .hx-map-list{overflow:auto;min-height:0;padding:.9rem 1rem 0;background:#fff;border-left:1px solid rgba(28,32,40,.1)}
 .hx-list-h h1{font-family:var(--serif,Georgia,serif)!important;font-size:1.3rem!important;line-height:1.2!important;margin:0 0 .15rem!important}
 .hx-map-count{margin:0 0 .8rem;font-size:.9rem;color:var(--slate,#5c6b78)}.hx-map-count b{font-weight:800;color:var(--ink,#1c2028)}
@@ -148,6 +148,7 @@ main#main .hx-mpop .hx-c-body{padding:.6rem .8rem;padding-right:2.4rem}main#main
 .hx-mpop.hx-mpop-top{bottom:auto;top:4rem}
 .hx-mpop-x{position:absolute;top:.35rem;right:.35rem;z-index:2;width:2rem;height:2rem;border:0;border-radius:999px;background:rgba(255,255,255,.95);font-size:1.25rem;line-height:1;cursor:pointer}
 .hx-mpop-go{display:block;margin:0;padding:.45rem .8rem .6rem;font-size:.8rem;color:var(--slate,#5c6b78);text-align:center;border-top:1px solid rgba(28,32,40,.08)}
+.hx-list-sent{height:1px}
 @media (max-width:1100px){.hx-map-body{grid-template-columns:minmax(0,1fr) min(46vw,420px)}.hx-map-cards{grid-template-columns:1fr}}
 @media (max-width:899px){.hx-mtop{padding:.5rem .75rem .4rem}.hx-mtop .hx-fb{flex-wrap:wrap}.hx-mtop .hx-fb-q{flex:1 1 100%}
  .hx-map-body{grid-template-columns:1fr}
@@ -181,10 +182,14 @@ function heart(p){var b=el("button","hx-heart hx-heart-sm");b.type="button";b.se
 function card(p,withHeart){var a=el("article","hx-c"),l=el("a","hx-c-link");l.href=p.url;l.setAttribute("draggable","false");a.setAttribute("data-mls",p.mls);
  var ph=el("span","hx-c-photo");if(p.photo&&p.photo.indexOf("https://")===0){var im=el("img");im.src=p.photo;im.alt=p.addr;im.loading="lazy";im.referrerPolicy="no-referrer";im.width=480;im.height=300;ph.appendChild(im)}else ph.appendChild(el("span","hx-nophoto","No photo yet"));
  if(p.tag)ph.appendChild(el("span","hx-c-tag",p.tag));l.appendChild(ph);var b=el("span","hx-c-body");b.appendChild(el("span","hx-c-price",p.price));
- var f=el("span","hx-c-facts"),bits=[];if(p.beds!=null)bits.push([p.beds," bds"]);if(p.baths!=null)bits.push([p.baths," ba"]);if(p.sqft!=null)bits.push([p.sqft.toLocaleString("en-US")," sqft"]);
+ var f=el("span","hx-c-facts"),bits=[];if(p.beds!=null)bits.push([p.beds," bds"]);if(p.baths!=null)bits.push([p.baths," ba"]);if(p.sqft!=null)bits.push([p.sqft.toLocaleString("en-US")," sqft"]);if(p.acres)bits.push([p.acres,p.acres==="1"?" acre":" acres"]);
  bits.forEach(function(x,i){if(i)f.appendChild(el("i"));f.appendChild(el("b",null,String(x[0])));f.appendChild(document.createTextNode(x[1]))});if(p.status){if(bits.length)f.appendChild(el("i"));f.appendChild(document.createTextNode(p.status))}
  b.appendChild(f);b.appendChild(el("span","hx-c-addr",p.addr));b.appendChild(el("span","hx-c-firm","MLS #"+p.mls+", "+p.firm+". Listing provided by CCMLS."));l.appendChild(b);a.appendChild(l);if(withHeart)a.appendChild(heart(p));return a}
-function render(ps){while(list.firstChild)list.removeChild(list.firstChild);ps.slice(0,120).forEach(function(p){list.appendChild(card(p,true))});
+/* The list draws 24 homes, and 24 more as the reader nears the end: fewer photos asked for at once. */
+var shown=[],drawn=0,sent=null,io=null;
+function more24(){shown.slice(drawn,drawn+24).forEach(function(p){list.appendChild(card(p,true))});drawn=Math.min(shown.length,drawn+24);if(sent)list.appendChild(sent)}
+if(window.IntersectionObserver){sent=el("div","hx-list-sent");io=new IntersectionObserver(function(es){if(es[0].isIntersecting&&drawn<shown.length)more24()},{root:document.getElementById("hx-map-list"),rootMargin:"600px"});io.observe(sent)}
+function render(ps){while(list.firstChild)list.removeChild(list.firstChild);shown=ps;drawn=0;more24();if(!io){while(drawn<shown.length&&drawn<120)more24()}
  count.textContent="";count.appendChild(el("b",null,ps.length.toLocaleString("en-US")));count.appendChild(document.createTextNode(ps.length===1?" home in this area":" homes in this area"));
  if(total>ps.length){count.appendChild(document.createTextNode(", of "+total.toLocaleString("en-US")+" that match"))}
  more.hidden=!(total>all.length);if(!more.hidden)more.textContent="Zoom in or move the map to see more of the "+total.toLocaleString("en-US")+" homes."}
@@ -209,7 +214,11 @@ function syncForm(p){if(!form)return;var has=(p.get("has")||"").split(",").filte
  ["city","subdivision","near","miles","zip","sort","yearMax","not"].forEach(function(n){if(p.get(n)){var h=el("input");h.type="hidden";h.name=n;h.value=p.get(n);form.appendChild(h)}});
  if(rest.length){var h=el("input");h.type="hidden";h.name="has";h.value=rest.join(",");form.appendChild(h)}}
 var map=null,marks=[],pop=null,popFor=null,hot=null,user=false,timer=0,seq=0,map3=null,box3=null,marks3=[],L3=null,Pin3=null;
-function inView(p){if(!map||!map.getBounds())return true;return map.getBounds().contains({lat:p.lat,lng:p.lng})}
+function in3d(){return !!(map3&&box3&&!box3.hidden)}
+function miles(a,b,c,d){var R=3958.8,r=Math.PI/180;return 2*R*Math.asin(Math.sqrt(Math.pow(Math.sin((c-a)*r/2),2)+Math.cos(a*r)*Math.cos(c*r)*Math.pow(Math.sin((d-b)*r/2),2)))}
+/* In 3D the view is a circle around the camera's center: about 0.7 of its distance, in miles. */
+function view3(){var c=map3.center||{};return{lat:c.lat,lng:c.lng,mi:Math.max(0.3,Math.min(25,(map3.range||5000)*0.7/1609))}}
+function inView(p){if(in3d()){var v=view3();return v.lat==null||miles(v.lat,v.lng,p.lat,p.lng)<=v.mi}if(!map||!map.getBounds())return true;return map.getBounds().contains({lat:p.lat,lng:p.lng})}
 var searched=false;
 function listView(){if(!all.length&&!searched)return;render(all.filter(inView));if(hot)hilite(hot)}
 function msg(j){return j&&j.error==="stale"?"The listing search is being refreshed. Please try again in a few minutes.":"Please try again in a minute."}
@@ -249,7 +258,7 @@ function tap(p){if(popFor===p.mls){location.href=p.url;return}
  pop.appendChild(card(p,false));pop.appendChild(el("p","hx-mpop-go","Click the dot again, or the card, to open it."));
  /* The card never covers its own dot: a dot low on the map gets the card at the top. */
  var bd=map&&map.getBounds();if(bd){var ne=bd.getNorthEast(),sw=bd.getSouthWest();if((ne.lat()-p.lat)/((ne.lat()-sw.lat())||1)>0.5)pop.classList.add("hx-mpop-top")}
- document.getElementById("hx-map").appendChild(pop);popFor=p.mls;hilite(p.mls);
+ document.getElementById("hx-mapbox").appendChild(pop);popFor=p.mls;hilite(p.mls);
  if(!phone.matches){var c=list.querySelector("[data-mls='"+p.mls+"']");if(c)c.scrollIntoView({behavior:"smooth",block:"nearest"})}}
 function dot(on){return{path:google.maps.SymbolPath.CIRCLE,scale:on?9:6.5,fillColor:on?"#0b57d0":"#1a73e8",fillOpacity:1,strokeColor:"#fff",strokeWeight:2}}
 function pill(p,on){var w=Math.max(46,p.short.length*8+16);var svg="<svg xmlns='http://www.w3.org/2000/svg' width='"+w+"' height='26'><rect x='1' y='1' width='"+(w-2)+"' height='24' rx='12' fill='"+(on?"#0b57d0":"#1a73e8")+"' stroke='#fff' stroke-width='2'/></svg>";
@@ -259,12 +268,13 @@ function draw(fit){if(!map)return;marks.forEach(function(m){m.setMap(null)});mar
  all.forEach(function(p){var m=new google.maps.Marker({position:{lat:p.lat,lng:p.lng},map:map,title:p.price+", "+p.addr});m.p=p;style(m,false);bounds.extend(m.getPosition());m.addListener("click",function(){tap(p)});marks.push(m)});
  if(fit&&all.length){user=false;map.fitBounds(bounds,48);google.maps.event.addListenerOnce(map,"idle",function(){if(map.getZoom()>15)map.setZoom(15);user=false;listView()})}
  note.hidden=all.length>0;if(!all.length)note.textContent="No homes with a map location match this search. Change a filter or move the map.";
- if(map3)dots3()}
+ if(map3)dots3();
+ if(fit&&in3d()&&all.length){var la=0,ln=0,far=0;all.forEach(function(p){la+=p.lat;ln+=p.lng});la/=all.length;ln/=all.length;all.forEach(function(p){far=Math.max(far,miles(la,ln,p.lat,p.lng))});
+  map3.center={lat:la,lng:ln,altitude:0};map3.range=Math.max(1500,Math.min(60000,far*1609*1.6))}}
 /* Moving the map: the list shows the dots in view at once, then the homes in that area are fetched. */
-function areaSearch(){var c=map.getCenter(),b=map.getBounds();if(!b)return;var ne=b.getNorthEast(),R=3958.8,r=Math.PI/180;
- var d=2*R*Math.asin(Math.sqrt(Math.pow(Math.sin((ne.lat()-c.lat())*r/2),2)+Math.cos(c.lat()*r)*Math.cos(ne.lat()*r)*Math.pow(Math.sin((ne.lng()-c.lng())*r/2),2)));
+function areaSearch(){var lat,lng,d;if(in3d()){var v=view3();if(v.lat==null)return;lat=v.lat;lng=v.lng;d=v.mi}else{var c=map.getCenter(),b=map.getBounds();if(!b)return;var ne=b.getNorthEast();lat=c.lat();lng=c.lng();d=miles(c.lat(),c.lng(),ne.lat(),ne.lng())}
  var u=new URLSearchParams(state);["city","zip","subdivision","near","miles"].forEach(function(k){u.delete(k)});if(u.get("sort")==="nearest")u.delete("sort");
- u.set("near",c.lat().toFixed(5)+","+c.lng().toFixed(5));u.set("miles",String(Math.min(25,Math.max(0.3,Math.round(d*10)/10))));search(u,{fit:false,ai:false})}
+ u.set("near",lat.toFixed(5)+","+lng.toFixed(5));u.set("miles",String(Math.min(25,Math.max(0.3,Math.round(d*10)/10))));search(u,{fit:false,ai:false})}
 if(!key){render(all);return}
 (function(g){var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=function(){return h||(h=new Promise(function(f,n){a=m.createElement("script");e.set("libraries",Array.from(r)+"");for(k in g)e.set(k.replace(/[A-Z]/g,function(t){return"_"+t[0].toLowerCase()}),g[k]);e.set("callback",c+".maps."+q);a.src="https://maps.googleapis.com/maps/api/js?"+e;d[q]=f;a.onerror=function(){h=n(Error(p+" could not load."))};m.head.append(a)}))};d[l]?0:d[l]=function(f){var n=Array.prototype.slice.call(arguments,1);r.add(f);return u().then(function(){return d[l].apply(d,[f].concat(n))})}})({key:key,v:"beta"});
 google.maps.importLibrary("maps").then(function(lib){
@@ -281,12 +291,14 @@ google.maps.importLibrary("maps").then(function(lib){
  /* 2D or 3D in the top right (owner, 2026-10-28): the same dots, clickable, and the same list. */
  var btns=Array.prototype.slice.call(app.querySelectorAll("[data-mode]"));
  function setMode(m){btns.forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-mode")===m?"true":"false")});
-  if(m==="2d"){if(box3)box3.hidden=true;return}
-  if(box3){box3.hidden=false;return}
-  box3=el("div","hx-map3d");document.getElementById("hx-map").insertBefore(box3,document.getElementById("hx-map").firstChild);
+  if(m==="2d"){if(box3&&!box3.hidden&&map3&&map3.center&&map3.center.lat!=null){map.setCenter({lat:map3.center.lat,lng:map3.center.lng})}if(box3)box3.hidden=true;setTimeout(listView,300);return}
+  if(box3){if(map3){var cc=map.getCenter();map3.center={lat:cc.lat(),lng:cc.lng(),altitude:0}}box3.hidden=false;setTimeout(listView,300);return}
+  box3=el("div","hx-map3d");document.getElementById("hx-mapbox").insertBefore(box3,document.getElementById("hx-map").nextSibling);
   Promise.all([google.maps.importLibrary("maps3d"),google.maps.importLibrary("marker").catch(function(){return{}})]).then(function(libs){L3=libs[0];Pin3=libs[1].PinElement;
    var c=map.getCenter();map3=new L3.Map3DElement({center:{lat:c.lat(),lng:c.lng(),altitude:0},range:Math.max(1500,Math.min(60000,40000/Math.pow(2,map.getZoom()-10))),tilt:62,heading:20,mode:"HYBRID"});
-   box3.appendChild(map3);dots3()}).catch(function(){box3.textContent="The 3D map could not load here. The 2D map still works.";box3.className="hx-map3d hx-map3d-off"})}
+   box3.appendChild(map3);dots3();
+   var t3=0;function moved3(){if(!in3d())return;clearTimeout(t3);t3=setTimeout(function(){listView();clearTimeout(timer);timer=setTimeout(areaSearch,700)},400)}
+   ["gmp-centerchange","gmp-rangechange"].forEach(function(n){map3.addEventListener(n,moved3)})}).catch(function(){box3.textContent="The 3D map could not load here. The 2D map still works.";box3.className="hx-map3d hx-map3d-off"})}
  btns.forEach(function(b){b.addEventListener("click",function(){setMode(b.getAttribute("data-mode"))})});
  if(app.getAttribute("data-view")==="3d")setMode("3d");
 }).catch(function(){note.hidden=false;note.textContent="The map could not load. Every home is in the list.";render(all)});
