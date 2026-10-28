@@ -8,6 +8,7 @@
  * carries no point yet (REQUEST FOR THE CRM, batches/2026-10-b/IDX-STUDY.md, request 2):
  * until it does, the map page shows the list and says the pins are coming.
  */
+import { photoUrl } from "./photo.js";
 import { acres, addressLine, cardTag, headlinePrice, listingPath, safeUrl, statusWord } from "./render.js";
 
 /** The Google Maps browser key: a public key, locked to our domain in Google Cloud. A setting can replace it. */
@@ -30,7 +31,7 @@ export function pinOf(l) {
   if (!l.address || lat === null || lng === null || lat < 31 || lat > 37 || lng < -82 || lng > -75) return null;
   return {
     mls: String(l.mlsNumber || ""), url: listingPath(l), lat, lng,
-    price: headlinePrice(l), short: shortPrice(l), photo: safeUrl(l.photo),
+    price: headlinePrice(l), short: shortPrice(l), photo: photoUrl(safeUrl(l.photo), "card"),
     beds: num(l.beds), baths: num(l.baths), sqft: num(l.sqft), acres: acres(l.lotAcres), status: statusWord(l.status), tag: cardTag(l),
     addr: `${addressLine(l)}${l.postalCode ? `, ${l.postalCode}` : ""}`, firm: String(l.listingFirm || "listing brokerage"),
   };
@@ -180,7 +181,7 @@ var NS="http://www.w3.org/2000/svg";
 function heart(p){var b=el("button","hx-heart hx-heart-sm");b.type="button";b.setAttribute("data-mls",p.mls);b.setAttribute("aria-pressed",hearts[p.mls]?"true":"false");b.setAttribute("aria-label","Save "+p.addr);
  var s=document.createElementNS(NS,"svg");s.setAttribute("viewBox","0 0 24 24");s.setAttribute("width","22");s.setAttribute("height","22");s.setAttribute("aria-hidden","true");var pa=document.createElementNS(NS,"path");pa.setAttribute("d","M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z");s.appendChild(pa);b.appendChild(s);return b}
 function card(p,withHeart){var a=el("article","hx-c"),l=el("a","hx-c-link");l.href=p.url;l.setAttribute("draggable","false");a.setAttribute("data-mls",p.mls);
- var ph=el("span","hx-c-photo");if(p.photo&&p.photo.indexOf("https://")===0){var im=el("img");im.src=p.photo;im.alt=p.addr;im.loading="lazy";im.referrerPolicy="no-referrer";im.width=480;im.height=300;ph.appendChild(im)}else ph.appendChild(el("span","hx-nophoto","No photo yet"));
+ var ph=el("span","hx-c-photo");if(p.photo&&(p.photo.indexOf("https://")===0||p.photo.indexOf("/homes/p/")===0)){var im=el("img");im.src=p.photo;im.alt=p.addr;im.loading="lazy";im.referrerPolicy="no-referrer";im.width=480;im.height=300;ph.appendChild(im)}else ph.appendChild(el("span","hx-nophoto","No photo yet"));
  if(p.tag)ph.appendChild(el("span","hx-c-tag",p.tag));l.appendChild(ph);var b=el("span","hx-c-body");b.appendChild(el("span","hx-c-price",p.price));
  var f=el("span","hx-c-facts"),bits=[];if(p.beds!=null)bits.push([p.beds," bds"]);if(p.baths!=null)bits.push([p.baths," ba"]);if(p.sqft!=null)bits.push([p.sqft.toLocaleString("en-US")," sqft"]);if(p.acres)bits.push([p.acres,p.acres==="1"?" acre":" acres"]);
  bits.forEach(function(x,i){if(i)f.appendChild(el("i"));f.appendChild(el("b",null,String(x[0])));f.appendChild(document.createTextNode(x[1]))});if(p.status){if(bits.length)f.appendChild(el("i"));f.appendChild(document.createTextNode(p.status))}

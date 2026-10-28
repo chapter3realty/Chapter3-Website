@@ -12,6 +12,7 @@ import { postFilter, rankHomes } from "../idx-lib/feeds.js";
 import { filterBar } from "../idx-lib/filters.js";
 import { featureList } from "../idx-lib/features.js";
 import { readQuery } from "../idx-lib/query.js";
+import { photo, photoUrl } from "../idx-lib/photo.js";
 import { resetCatalog } from "../idx-lib/catalog.js";
 import { SCRIPT, STYLE } from "../idx-lib/render.js";
 const STYLE_OK = () => STYLE.includes(".hx-dialog form[hidden]{display:none}");
@@ -576,6 +577,24 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
 {
   const j = await r.json();
   check("map api: a sentence adds to the search, a town in it replaces the map area, and the answer carries the chips and the pill labels", j.ok && j.params === "city=Conway&type=house&beds=3" && j.chips.some((c) => c.t === "Conway" && c.x === "type=house&beds=3") && j.labels.beds === "3+ bd" && j.labels.type === "House");
+}
+
+// Listing photos from our own address, sized and kept 30 days (owners, 2026-10-28).
+{
+  const T = "https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1193779983/1/MTIxOTIvMTMxMTAvMjA/MjAvMjM1MjIvMTc5MzA0ODQxMw/rk7ui3qA6hhAAwXMPS8mKxo37OMddDRo853Go-1Jz88";
+  const other = "https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1/1/T1RIRVJGRUVE/x/y";
+  check("photos: our feed's photos load from our address, sized for the card or the listing page; any other link is left alone", photoUrl(T) === `/homes/p/card?u=${encodeURIComponent(T)}` && photoUrl(T, "big").startsWith("/homes/p/big?u=") && photoUrl(other) === other && photoUrl("https://photos.test/1.jpg") === "https://photos.test/1.jpg");
+  const saved = globalThis.fetch; const asked = [];
+  const ctx = (accept) => ({ request: new Request("https://chapter3realty.com/homes/p/card", { headers: { accept } }), waitUntil: () => {} });
+  globalThis.fetch = async (u, init) => { asked.push([String(u), init && init.cf ? init.cf.image : null]); return new Response("img", { status: 200, headers: { "content-type": "image/webp" } }); };
+  const ok = await photo(ctx("image/webp,*/*"), new URL(`https://chapter3realty.com/homes/p/card?u=${encodeURIComponent(T)}`), "card");
+  const no = await photo(ctx("*/*"), new URL(`https://chapter3realty.com/homes/p/card?u=${encodeURIComponent(other)}`), "card");
+  globalThis.fetch = async () => new Response("quota", { status: 429, headers: { "content-type": "text/plain" } });
+  const busy = await photo(ctx("*/*"), new URL(`https://chapter3realty.com/homes/p/big?u=${encodeURIComponent(T)}`), "big");
+  globalThis.fetch = saved;
+  check("photos: a copy is resized (480 wide, webp when the browser takes it) and kept 30 days; a foreign link is refused; when the MLS says no, the browser is sent to the MLS and nothing is kept",
+    ok.status === 200 && /max-age=2592000/.test(ok.headers.get("cache-control")) && asked[0][1] && asked[0][1].width === 480 && asked[0][1].format === "webp"
+    && no.status === 404 && busy.status === 302 && busy.headers.get("location") === T && busy.headers.get("cache-control") === "no-store");
 }
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");

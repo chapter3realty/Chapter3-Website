@@ -22,6 +22,7 @@ import { featureLabel, featureList, catalogLoaded, isDistance } from "../../idx-
 import { filterCatalog, panelGroups } from "../../idx-lib/catalog.js";
 import { filterBar, labels as filterLabels } from "../../idx-lib/filters.js";
 import { postFilter, rankHomes } from "../../idx-lib/feeds.js";
+import { photo, photoUrl } from "../../idx-lib/photo.js";
 import { MAP_SCRIPT, MAP_STYLE, geocode, mapsKey, nearOf, pinOf, withPoints } from "../../idx-lib/map.js";
 import { SMS_CONSENT_TEXT, TERMS_PARAGRAPHS, TERMS_TITLE, TERMS_VERSION, termsText } from "../../idx-lib/terms.js";
 import {
@@ -68,6 +69,8 @@ async function handle(context) {
   const gate = idxOn(env, request);
   if (!gate.on) return notFound(context);
 
+  // Listing photos, sized and kept 30 days (idx-lib/photo.js).
+  if (path === "/homes/p/card" || path === "/homes/p/big") return photo(context, url, path.slice(9));
   if (path.startsWith("/homes/api/")) {
     const name = path.replace(/^\/homes\/api\/|\/$/g, "");
     if (name === "map" && (request.method === "GET" || request.method === "HEAD")) return mapData(context, url);
@@ -673,7 +676,7 @@ async function listingPageWith(context, mls, slugPart, gate, r, hearts) {
   const hearted = (hearts || []).includes(l.mlsNumber);
   const status = statusWord(l.status);
   const count = typeof l.photoCount === "number" && l.photoCount > 0 ? l.photoCount : photos.length;
-  const img = (u, alt, eager) => `<img src="${esc(u)}" alt="${esc(alt)}" loading="${eager ? "eager" : "lazy"}" decoding="async" referrerpolicy="no-referrer">`;
+  const img = (u, alt, eager) => `<img src="${esc(photoUrl(u, "big"))}" alt="${esc(alt)}" loading="${eager ? "eager" : "lazy"}" decoding="async" referrerpolicy="no-referrer">`;
   const chip = status ? `<span class="hx-l-chip">${esc(status)}</span>` : "";
 
   // The photos: one large, two beside it on a wide screen. Not signed up: the same photo,

@@ -12,6 +12,7 @@
  */
 import { SMS_CONSENT_TEXT } from "./terms.js";
 import { FILTER_SCRIPT, FILTER_STYLE } from "./filters.js";
+import { photoUrl } from "./photo.js";
 
 export function esc(v) {
   return String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -103,7 +104,7 @@ export function card(l, opts = {}) {
   if (statusWord(l.status)) bits.push(esc(statusWord(l.status)));
   const addr = l.address ? `${addressLine(l)}${l.postalCode ? `, ${l.postalCode}` : ""}` : addressLine(l);
   return `<article class="hx-c"><a class="hx-c-link" href="${esc(listingPath(l))}" draggable="false"><span class="hx-c-photo">`
-    + (photo ? `<img src="${esc(photo)}" alt="${esc(addressLine(l))}" width="480" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false">` : `<span class="hx-nophoto">No photo yet</span>`)
+    + (photo ? `<img src="${esc(photoUrl(photo, "card"))}" alt="${esc(addressLine(l))}" width="480" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false">` : `<span class="hx-nophoto">No photo yet</span>`)
     + `${tag ? `<span class="hx-c-tag">${esc(tag)}</span>` : ""}${miles}</span>`
     + `<span class="hx-c-body"><span class="hx-c-price">${esc(headlinePrice(l))}</span><span class="hx-c-facts">${bits.join('<i aria-hidden="true"></i>')}</span>`
     + `<span class="hx-c-addr">${esc(addr)}</span>`
@@ -407,7 +408,7 @@ export const SCRIPT = `<script>(function(){
 var signed=document.body.getAttribute("data-hx-signed")==="1";
 /* A listing photo that fails (the MLS photo server allows 240 a minute for every visitor together) is
    asked for once more a minute later, when its count starts over; until then a calm panel shows. */
-document.addEventListener("error",function(e){var im=e.target;if(!im||im.tagName!=="IMG"||im.src.indexOf("https://api.cotality.com/")!==0)return;
+document.addEventListener("error",function(e){var im=e.target;if(!im||im.tagName!=="IMG"||(im.src.indexOf("https://api.cotality.com/")!==0&&im.src.indexOf("/homes/p/")<0))return;
  var box=im.parentNode;if(box&&box.classList&&!box.classList.contains("hx-gallery"))box.classList.add("hx-imgwait");
  if(im.getAttribute("data-retry"))return;im.setAttribute("data-retry","1");var u=im.src;setTimeout(function(){im.src=u+(u.indexOf("?")<0?"?r=1":"&r=1")},61000)},true);
 document.addEventListener("load",function(e){var im=e.target;if(im&&im.tagName==="IMG"&&im.parentNode&&im.parentNode.classList)im.parentNode.classList.remove("hx-imgwait")},true);
