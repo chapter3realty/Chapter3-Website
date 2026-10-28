@@ -11,6 +11,7 @@ import { placeFeed, placeParams } from "../idx-lib/edge.js";
 import { postFilter, rankHomes } from "../idx-lib/feeds.js";
 import { filterBar } from "../idx-lib/filters.js";
 import { featureList } from "../idx-lib/features.js";
+import { readQuery } from "../idx-lib/query.js";
 import { resetCatalog } from "../idx-lib/catalog.js";
 import { SCRIPT, STYLE } from "../idx-lib/render.js";
 const STYLE_OK = () => STYLE.includes(".hx-dialog form[hidden]{display:none}");
@@ -169,7 +170,7 @@ check("strips: Tidewater (2 homes) keeps its empty slot", /data-place="tidewater
 check("strips: at most 10 cards a row, spread across price", (t.split('data-place="cherry-grove"')[1].split("hx-s-all")[0].match(/<article class="hx-c">/g) || []).length === 10);
 check("strips: the owner's card template on every card (price, facts, address, MLS line)", (t.match(/<article class="hx-c">/g) || []).length > 0 && (t.match(/<article class="hx-c">/g) || []).length === (t.match(/class="hx-c-price">\$[0-9,]+</g) || []).length && (t.match(/<article class="hx-c">/g) || []).length === (t.match(/Listing provided by CCMLS\./g) || []).length);
 check("strips: one notice, the dialogs and the script", (t.match(/class="hx-disclaimer"/g) || []).length === 1 && t.includes('id="hx-signup"'));
-check("header: Search Listings opens /homes/", t.includes("location.href='/homes/'") && !t.includes('onclick="openIdx()"'));
+check("header: Search Listings opens the map page (owner, 2026-10-28)", t.includes("location.href='/homes/map/'") && !t.includes('onclick="openIdx()"'));
 STALE = true;
 t = await (await run(mw, req("/buyers/best-neighborhoods/"))).text();
 check("stale MLS copy: no listings anywhere on the page", !t.includes('<article class="hx-c">'));
@@ -284,7 +285,7 @@ r = await run(homes, req("/homes/api/map?city=Conway"));
 let mj = JSON.parse(await r.text());
 check("map data: no points from the CRM yet, so no pins, and the page says so", r.status === 200 && mj.ok && mj.pins.length === 0 && mj.total === 30);
 t = await (await run(homes, req("/homes/map/?city=Conway"))).text();
-check("map page: the list of homes, the note, the disclaimer, noindex", t.includes("data-hx-map") && (t.match(/<article class="hx-c">/g) || []).length === 30 && t.includes("Map pins arrive when the MLS feed") && t.includes('class="hx-disclaimer"') && t.includes("noindex"));
+check("map page: fills the screen, the describe box, the list of homes, the MLS notice once at the end of the list, noindex", t.includes("data-hx-map") && t.includes('class="hx-mapapp"') && t.includes('placeholder="Describe your home in a sentence"') && (t.match(/<article class="hx-c">/g) || []).length === 30 && (t.match(/class="hx-disclaimer"/g) || []).length === 1 && t.indexOf('class="hx-disclaimer"') > t.indexOf('id="hx-map-cards"') && t.includes("noindex"));
 MAPPOINTS = true;
 r = await run(homes, req("/homes/api/map?near=33.7,-78.9&miles=2&beds=3"));
 mj = JSON.parse(await r.text());
@@ -328,8 +329,8 @@ check("feed: placed as a section of the article, with the notice and the dialogs
   const main = t.slice(t.indexOf("<main"));
   check("feed: near the top, right under the part with the H1, before the article's first heading", main.indexOf('class="hx-feed') > main.indexOf("<h1") && main.indexOf('class="hx-feed') < main.indexOf("<h2"));
 }
-check("feed: the filter bar on the strip, opened on the feed's own filters, refreshing the strip in place", t.includes('data-hx-strip-fb') && /name="waterfront" value="1" checked/.test(t) && t.includes('data-hx-row'));
-check("feed: See all opens the same search, with no count from other searches", t.includes('href="/homes/?waterfront=1">See all</a>'));
+check("feed: the search bar and filters on the strip, opened on the feed's own filters; a search opens the map (owner, 2026-10-28)", t.includes('data-hx-fb-c') && t.includes('action="/homes/map/"') && /name="waterfront" value="1" checked/.test(t) && t.includes('data-hx-row'));
+check("feed: See all opens the same search on the map, with no count from other searches", t.includes('href="/homes/map/?waterfront=1">See all</a>'));
 t = await (await run(mw, req("/buyers/55-plus-communities/"))).text();
 check("feed: a page about several communities searches each of them", ["Del+Webb", "Myrtle+Trace", "Seasons+at+Prince+Creek"].every((w) => calls.slice(-6).some((c) => c.url.includes("subdivision=" + w))) && t.includes("Homes for sale in 55+ communities"));
 t = await (await run(mw, req("/buyers/new-construction/"))).text();
@@ -447,7 +448,7 @@ check("sign-up: the Already have an account form stays hidden until asked for (d
 check("sign-up: one full name box, email, phone, Continue to photos, Already have an account?", t.includes('name="name" autocomplete="name"') && !t.includes('name="lastName"') && t.includes("Continue to photos") && t.includes("Already have an account?") && t.includes('name="termsAccepted"') && t.includes('name="smsConsent"'));
 {
   const home = fs.readFileSync(path.join(path.dirname(new URL(import.meta.url).pathname), "../chapter3realty/index.html"), "utf8");
-  check("homepage: Search listings is a button like the I am buttons, above them, and no search bar", /<ul class="cine-paths" role="list">\s*<li class="cine-main"><a class="cine-path" href="\/homes\/">[^]*?Search listings/.test(home) && !home.includes('class="hero-search"'));
+  check("homepage: Search listings is a button like the I am buttons, above them, and no search bar", /<ul class="cine-paths" role="list">\s*<li class="cine-main"><a class="cine-path" href="\/homes\/map\/">[^]*?Search listings/.test(home) && !home.includes('class="hero-search"'));
   const ltr = fs.readFileSync(path.join(path.dirname(new URL(import.meta.url).pathname), "../chapter3realty/invest/long-term-rental/index.html"), "utf8");
   check("analyzer: no box for beds, baths, size or HOA; a cash box; the cash or loan question ready", ["ltr-beds", "ltr-baths", "ltr-sqft", "ltr-hoa"].every((id) => new RegExp(`<input id="${id}" type="hidden"/>`).test(ltr)) && ltr.includes('id="ltr-is-cash"') && ltr.includes('<dialog id="ltr-fin"'));
   check("analyzer: no rate or down payment is typed in for the visitor", !/id="ltr-(rate|down)"[^>]*value=/.test(ltr) && !/name="(rate|down)"[^>]*value=/.test(ltr));
@@ -492,13 +493,13 @@ check("sign-up: the full name splits on spaces (a template string had eaten the 
 
 // The filter bar (2026-10-26).
 t = await (await run(homes, req("/homes/"))).text();
-check("search: the filter bar (price, beds and baths, type, town, more), no MLS features while the CRM does not apply them", t.includes('class="hx-fb"') && ["price", "beds", "type", "town", "more"].every((k2) => t.includes(`data-k="${k2}"`)) && !t.includes('name="has" value="pool"') && t.includes('name="hoa" value="0"'));
+check("search: the filter bar (for sale, price, beds and baths, type, filters), no MLS features while the CRM does not apply them", t.includes('class="hx-fb"') && ["sale", "price", "beds", "type", "more"].every((k2) => t.includes(`data-k="${k2}"`)) && !t.includes('name="has" value="pool"') && t.includes('name="hoa" value="0"'));
 APPLIED = true;
 r = await run(homes, req("/homes/?has=pool&has=garage&has=evil&yearMin=2010&status=active"));
 t = await r.text();
 {
   const sentF = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
-  check("search: MLS features and ranges reach the CRM, an unknown key drops alone, and the panel offers every feature once the CRM applies them", sentF.includes("has=pool%2Cgarage&") && sentF.includes("yearMin=2010") && sentF.includes("status=active") && t.includes('data-hx-feats data-has="pool,garage"'));
+  check("search: MLS features and ranges reach the CRM, an unknown key drops alone, and the panel offers every feature once the CRM applies them", sentF.includes("has=pool%2Cgarage&") && sentF.includes("yearMin=2010") && sentF.includes("status=active") && t.includes('name="has" value="pool" data-cur checked') && t.includes('data-hx-feats data-has="garage"'));
 }
 r = await run(homes, req("/homes/?has=pool&has=garage"));
 t = await r.text();
@@ -561,6 +562,21 @@ check("feed: a hook the filters make true: 'Price just cut' asks the CRM for pri
 t = await (await run(mw, req("/buyers/waterfront-homes/"))).text();
 check("feed: 'Homes with their own dock' asks for private_dock", t.includes("Homes with their own dock") && calls.slice(-6).some((c) => c.url.includes("has=private_dock")));
 APPLIED = false;
+
+// The search box as a sentence (owner, 2026-10-28): buyer phrases, employers, and what is left for the AI.
+{
+  const rq = (x) => readQuery(x);
+  check("sentence: 'fixer upper in conway under 300k' is a distressed sale in Conway up to $300K", rq("fixer upper in conway under 300k").params.toString() === "max=300000&city=Conway&has=distressed_sale");
+  check("sentence: 'rental homes near the beach' and 'single story ranch with no hoa and a 2 car garage'", rq("rental homes near the beach").params.get("has") === "rentals_allowed,near_beach" && rq("single story ranch with no hoa and a 2 car garage").params.toString() === "hoa=0&garage=2&has=one_level");
+  check("sentence: a named employer wins over a line of work, within 10 miles (about 20 minutes)", rq("nurse at mcleod").params.get("has") === "mcleod_seacoast_10mi" && rq("nurse").params.get("has") === "grand_strand_medical_center_10mi");
+  check("sentence: north myrtle beach is one town, not 'north myrtle' and a stray word", rq("oceanfront condo north myrtle beach").params.get("city") === "North Myrtle Beach" && rq("oceanfront condo north myrtle beach").left === "");
+  check("sentence: a description the rules cannot read is left for the AI, never searched as a neighborhood", !rq("quiet cul de sac with mountain views").params.has("subdivision") && rq("quiet cul de sac with mountain views").left === "cul de sac mountain views");
+}
+r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9&miles=4"));
+{
+  const j = await r.json();
+  check("map api: a sentence adds to the search, a town in it replaces the map area, and the answer carries the chips and the pill labels", j.ok && j.params === "city=Conway&type=house&beds=3" && j.chips.some((c) => c.t === "Conway" && c.x === "type=house&beds=3") && j.labels.beds === "3+ bd" && j.labels.type === "House");
+}
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");
 process.exit(fails ? 1 : 0);

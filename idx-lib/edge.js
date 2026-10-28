@@ -110,13 +110,14 @@ function feedHomes(feed, listings) {
 /** The article's feed: near the top, one line of title, the homes, and the filters to change them. */
 function feedSection(feed, listings, total, applied) {
   const link = feed.link || "";
-  const all = `/homes/${link ? `?${link}` : ""}`;
+  // "See all" and every search open the map (owner, 2026-10-28: Search listings is the map page).
+  const all = `/homes/map/${link ? `?${link}` : ""}`;
   const head = feed.needs === "has" && !applied && feed.headToday ? feed.headToday : feed.head;
   return `<section class="hx-feed${feed.low ? "" : " hx-feed-top"}"><div class="wrap"><div class="hx-strip hx-feed-strip" data-feed="1">`
     + `<p class="hx-feed-eb">Live from the MLS</p>`
     + `<p class="hx-s-head"><b class="hx-feed-h">${esc(head)}</b><a href="${esc(all)}">See all</a></p>`
     + (feed.noHoa ? `<p class="hx-s-note">${NO_HOA_NOTE}</p>` : "")
-    + filterBar({ action: "/homes/", params: new URLSearchParams(link), features: applied || catalogLoaded(), compact: true })
+    + filterBar({ action: "/homes/map/", params: new URLSearchParams(link), features: applied || catalogLoaded(), compact: true, ask: feed.ask || "" })
     + `<div class="hx-s-row" data-hx-row>${feedHomes(feed, listings).map((l) => stripCard(l, false)).join("")}`
     + `<a class="hx-s-all" href="${esc(all)}" draggable="false">See all homes</a></div></div></div></section>`;
 }
@@ -158,7 +159,7 @@ export function placeFeed(html, block) {
   return html.slice(0, a + at) + block + html.slice(a + at);
 }
 
-const switchHeader = (html) => html.replace(/onclick="openIdx\(\)"/g, `onclick="location.href='/homes/'"`);
+const switchHeader = (html) => html.replace(/onclick="openIdx\(\)"/g, `onclick="location.href='/homes/map/'"`);
 
 /** The styles, the notice, the dialogs and the script, once, on a page that now shows listings. */
 function finish(env, request, gate, html, meta, headers) {

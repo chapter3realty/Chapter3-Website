@@ -13,7 +13,7 @@
  * No backslash anywhere in FILTER_SCRIPT: it lives in a template string, which eats them.
  */
 import { CITIES } from "./query.js";
-import { featureLabel } from "./features.js";
+import { featureLabel, isFeature } from "./features.js";
 
 const esc = (v) => String(v ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 const k = (n) => (n >= 1e6 ? `$${(n / 1e6).toLocaleString("en-US", { maximumFractionDigits: 2 })}M` : `$${Math.round(n / 1000)}K`);
@@ -38,49 +38,64 @@ export function labels(p) {
   const beds = p.get("beds"), baths = p.get("baths");
   const bb = [beds ? `${beds}+ bd` : "", baths ? `${baths}+ ba` : ""].filter(Boolean).join(", ");
   const type = (TYPES.find(([v]) => v && v === p.get("type")) || [])[1] || "";
-  const more = ["yearMin", "lotMin", "hoaMax", "garage", "domMax", "all", "waterfront"].filter((x) => p.get(x)).length
+  const more = ["yearMin", "lotMin", "hoaMax", "garage", "domMax", "sqft", "waterfront"].filter((x) => p.get(x)).length
     + (p.get("hoa") === "0" ? 1 : 0) + (p.get("has") ? p.get("has").split(",").length : 0) + (p.get("not") ? p.get("not").split(",").length : 0);
-  return { price, bb, type, town: p.get("city") || "", more: more ? `More (${more})` : "" };
+  return { price, bb, type, town: p.get("city") || "", more: more ? `Filters (${more})` : "" };
 }
+
+/* The Filters window, house first (owner, 2026-10-28: "House filters come first; a See more button
+   early for listing, commute and geographic filters"). Each tick is shown only when the CRM lists it. */
+const HOUSE_TICKS = [["one_level", "One level"], ["pool", "Private pool"], ["private_dock", "Private dock"], ["attached_garage", "Attached garage"], ["screened_porch", "Screened porch"], ["fenced_yard", "Fenced yard"]];
+const LISTING_TICKS = [["price_reduced", "Price just cut"], ["open_house", "Open house coming up"], ["new_construction", "New construction"], ["quick_move_in", "Ready to move in"], ["foreclosure", "Foreclosure"], ["short_sale", "Short sale"], ["distressed_sale", "Distressed sale"], ["fha_accepted", "Seller takes FHA"], ["va_accepted", "Seller takes VA"], ["assumable_loan", "Assumable loan"]];
+const AREA_TICKS = [["walk_to_beach", "Walk to the beach"], ["near_beach", "Near the beach"], ["east_of_17", "East of 17"], ["outside_city_limits", "Outside city limits"], ["golf_cart_ok", "Golf carts allowed"], ["str_allowed", "Nightly rentals allowed"], ["rentals_allowed", "Rentals allowed"], ["gated", "Gated"]];
+const SQFT = [["", "Any size"], ["1000", "1,000+ sq ft"], ["1500", "1,500+ sq ft"], ["2000", "2,000+ sq ft"], ["2500", "2,500+ sq ft"], ["3000", "3,000+ sq ft"]];
 
 /**
  * The bar. `params`: the search in force. `features`: the CRM applies the MLS features and
- * ranges. `compact`: an article strip (no words box; the strip refreshes in place).
+ * ranges. `compact`: an article's strip, scaled down. `map`: the map page, which applies a
+ * change at once without leaving the page. `ask`: the words in the search box (the jobs guide
+ * asks for an employer). Everywhere else, a search opens the map with it (owner, 2026-10-28).
  */
-export function filterBar({ action = "/homes/", params, features = false, compact = false }) {
+export function filterBar({ action = "/homes/map/", params, features = false, compact = false, map = false, ask = "" }) {
   const p = new URLSearchParams(params);
   const L = labels(p);
   const has = new Set((p.get("has") || "").split(",").filter(Boolean));
-  // Kept as is: what has no control in this bar (with the CRM's ranges, "not" still has none).
-  const keep = ["subdivision", "near", "miles", "zip", "sort", "sqft", "yearMax", "sold", "not", ...(features ? [] : ["has", "yearMin", "lotMin", "hoaMax", "garage", "domMax", "all"])]
+  const ticks = (list) => list.filter(([key]) => isFeature(key)).map(([key, word]) => `<label class="hx-tick"><input type="checkbox" name="has" value="${esc(key)}" data-cur${has.has(key) ? " checked" : ""}><span>${esc(word)}</span></label>`).join("");
+  const curated = new Set([...HOUSE_TICKS, ...LISTING_TICKS, ...AREA_TICKS].map(([key]) => key).filter(isFeature));
+  // Kept as is: what has no control in this bar.
+  const keep = ["city", "subdivision", "near", "miles", "zip", "sort", "yearMax", "sold", "not", ...(features ? [] : ["has", "yearMin", "lotMin", "hoaMax", "garage", "domMax", "sqft"])]
     .filter((x) => p.get(x)).map((x) => `<input type="hidden" name="${x}" value="${esc(p.get(x))}">`).join("");
   const prices = (name, cur) => `<select name="${name}" aria-label="${name === "min" ? "Lowest price" : "Highest price"}">${opt("", name === "min" ? "No min" : "No max", cur)}${[...new Set([...PRICE_STEPS, +cur || 0])].filter(Boolean).sort((a, b) => a - b).map((v) => opt(v, k(v), cur)).join("")}</select>`;
   const quick = [["", "300000", "Under $300K"], ["300000", "500000", "$300K to $500K"], ["500000", "1000000", "$500K to $1M"], ["1000000", "", "$1M+"]]
     .map(([a, b, t]) => `<button type="button" class="hx-quick" data-min="${a}" data-max="${b}">${t}</button>`).join("");
+  const saleP = `<p class="hx-pop-h">Show</p><div class="hx-list"><label><input type="radio" name="all" value=""${p.get("all") === "1" ? "" : " checked"}><span>For sale</span></label><label><input type="radio" name="all" value="1"${p.get("all") === "1" ? " checked" : ""}><span>For sale and under contract</span></label></div>`;
   const priceP = `<p class="hx-pop-h">Price</p><div class="hx-pop-2"><label>Min${prices("min", p.get("min"))}</label><label>Max${prices("max", p.get("max"))}</label></div><div class="hx-quicks">${quick}</div>`;
   const bedsP = `<p class="hx-pop-h">Bedrooms</p>${seg("beds", [["", "Any"], ["1", "1+"], ["2", "2+"], ["3", "3+"], ["4", "4+"], ["5", "5+"]], p.get("beds"))}<p class="hx-pop-h">Bathrooms</p>${seg("baths", [["", "Any"], ["1", "1+"], ["2", "2+"], ["3", "3+"], ["4", "4+"]], p.get("baths"))}`;
   const typeP = `<p class="hx-pop-h">Home type</p><div class="hx-list">${TYPES.map(([v, l]) => `<label><input type="radio" name="type" value="${esc(v)}"${(p.get("type") || "") === v ? " checked" : ""}><span>${esc(l)}</span></label>`).join("")}</div>`;
-  const townP = `<p class="hx-pop-h">Town</p><div class="hx-list hx-list-2"><label><input type="radio" name="city" value=""${p.get("city") ? "" : " checked"}><span>Every town</span></label>${CITIES.map((c) => `<label><input type="radio" name="city" value="${esc(c)}"${p.get("city") === c ? " checked" : ""}><span>${esc(c)}</span></label>`).join("")}</div>`;
   const hoaCur = p.get("hoa") === "0" ? "0" : p.get("hoaMax") || "";
-  const ranges = features
-    ? `<div class="hx-pop-3"><label>Year built<select name="yearMin">${withCur(YEARS, p.get("yearMin"), (v) => `${v} or newer`).map(([v, l]) => opt(v, l, p.get("yearMin"))).join("")}</select></label>`
-      + `<label>Lot size<select name="lotMin">${withCur(LOTS, p.get("lotMin"), (v) => `${v} acres or more`).map(([v, l]) => opt(v, l, p.get("lotMin"))).join("")}</select></label>`
-      + `<label>HOA fee<select name="hoaPick" data-hx-hoa>${withCur(HOA, hoaCur, (v) => `Up to $${(+v).toLocaleString("en-US")} a month`).map(([v, l]) => opt(v, l, hoaCur)).join("")}</select></label>`
-      + `<label>Garage<select name="garage">${withCur(GARAGE, p.get("garage"), (v) => `${v}+ car`).map(([v, l]) => opt(v, l, p.get("garage"))).join("")}</select></label>`
-      + `<label>Listed<select name="domMax">${withCur(DOM, p.get("domMax"), (v) => `Last ${v} days`).map(([v, l]) => opt(v, l, p.get("domMax"))).join("")}</select></label></div>`
-      + `<label class="hx-tick"><input type="checkbox" name="all" value="1"${p.get("all") === "1" ? " checked" : ""}><span>Also show homes under contract</span></label>`
-    : `<label class="hx-tick"><input type="checkbox" name="hoa" value="0"${p.get("hoa") === "0" ? " checked" : ""}><span>No HOA, as listed by the listing agent</span></label>`;
+  const sel = (name, list, cur, word, attr) => `<select name="${name}"${attr || ""}>${withCur(list, cur, word).map(([v, l]) => opt(v, l, cur)).join("")}</select>`;
   const waterTick = `<label class="hx-tick"><input type="checkbox" name="waterfront" value="1"${p.get("waterfront") === "1" ? " checked" : ""}><span>Waterfront</span></label>`;
-  /* Every MLS feature the CRM lists (about 490): drawn by the script when "More" first opens, from
-     /homes/api/filters, so a page with five strips does not carry 490 boxes five times. Until then the
-     features in force ride in one hidden box. */
-  const groups = features ? `<p class="hx-pop-h">Features</p><label class="hx-fsearch"><input type="search" data-hx-fsearch placeholder="Pool, dock, walk to the beach, golf cart..." aria-label="Find a feature" autocomplete="off"></label>`
-    + `<div class="hx-feats-live" data-hx-feats data-has="${esc([...has].join(","))}">${has.size ? `<input type="hidden" name="has" value="${esc([...has].join(","))}">` : ""}<p class="hx-feats-wait">Loading every MLS feature...</p></div>` : "";
-  const moreP = `<p class="hx-pop-h">More filters</p>${waterTick}${ranges}${groups}`;
-  return `<form class="hx-fb${compact ? " hx-fb-c" : ""}" action="${esc(action)}" method="get" data-hx-fb${compact ? " data-hx-strip-fb" : ""} aria-label="Filters">${keep}`
-    + (compact ? "" : `<label class="hx-fb-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input name="q" type="search" enterkeyhint="search" autocomplete="off" maxlength="200" aria-label="Search homes" placeholder="Town, neighborhood, ZIP, or &quot;3 bed under $400k&quot;"></label>`)
-    + `<div class="hx-fb-pills">${pop("price", "Price", L.price, priceP)}${pop("beds", "Beds & baths", L.bb, bedsP)}${pop("type", "Home type", L.type, typeP)}${pop("town", "Town", L.town, townP, true)}${pop("more", "More", L.more, moreP, true)}</div>`
-    + `<noscript><button type="submit" class="hx-pop-go">Show homes</button></noscript></form>`;
+  const groups = `<p class="hx-pop-h">Every MLS feature</p><label class="hx-fsearch"><input type="search" data-hx-fsearch placeholder="Pool, dock, walk to the beach, golf cart..." aria-label="Find a feature" autocomplete="off"></label>`
+    + `<div class="hx-feats-live" data-hx-feats data-has="${esc([...has].filter((x) => !curated.has(x)).join(","))}">${[...has].filter((x) => !curated.has(x)).length ? `<input type="hidden" name="has" value="${esc([...has].filter((x) => !curated.has(x)).join(","))}">` : ""}<p class="hx-feats-wait">Loading every MLS feature...</p></div>`;
+  const moreP = features
+    ? `<div class="hx-mod-h"><p>Filters</p><button type="button" class="hx-mod-x" data-hx-close-pop aria-label="Close">&times;</button></div><div class="hx-mod-b">`
+      + `<p class="hx-pop-h">The home</p>${bedsP}${typeP}`
+      + `<div class="hx-pop-3"><label>Size${sel("sqft", SQFT, p.get("sqft"), (v) => `${(+v).toLocaleString("en-US")}+ sq ft`)}</label><label>Lot size${sel("lotMin", LOTS, p.get("lotMin"), (v) => `${v} acres or more`)}</label>`
+      + `<label>Year built${sel("yearMin", YEARS, p.get("yearMin"), (v) => `${v} or newer`)}</label><label>Garage${sel("garage", GARAGE, p.get("garage"), (v) => `${v}+ car`)}</label>`
+      + `<label>HOA fee${sel("hoaPick", HOA, hoaCur, (v) => `Up to $${(+v).toLocaleString("en-US")} a month`, " data-hx-hoa")}</label></div>`
+      + `<div class="hx-ticks">${waterTick}${ticks(HOUSE_TICKS)}</div>`
+      + `<button type="button" class="hx-seemore" data-hx-seemore aria-expanded="false">See more filters: the listing, commute and area</button><div class="hx-more-rest" hidden>`
+      + `<p class="hx-pop-h">The listing</p><div class="hx-pop-3"><label>Listed${sel("domMax", DOM, p.get("domMax"), (v) => `Last ${v} days`)}</label></div><div class="hx-ticks">${ticks(LISTING_TICKS)}</div>`
+      + `<p class="hx-pop-h">Commute and places</p><p class="hx-mod-n">Homes within a few miles of a place you go every day. Two at most.</p>`
+      + `<div class="hx-commute" data-hx-commute data-has="${esc([...has].join(","))}">${[0, 1].map((i) => `<div class="hx-pop-2"><label>Near<select data-lm="${i}" aria-label="Place"><option value="">Pick a place</option></select></label><label>Within<select data-mi="${i}" aria-label="Miles"><option value="10">10 miles, about 20 minutes</option><option value="5">5 miles</option><option value="2">2 miles</option><option value="1">1 mile</option></select></label></div>`).join("")}<input type="hidden" name="has" value="" data-hx-commute-out></div>`
+      + `<p class="hx-pop-h">The area</p><div class="hx-ticks">${ticks(AREA_TICKS)}</div>${groups}</div></div>`
+      + `<div class="hx-mod-f"><button type="button" class="hx-mod-reset" data-hx-reset>Reset all</button><button type="submit" class="hx-pop-go">Show homes</button></div>`
+    : `<p class="hx-pop-h">More filters</p>${waterTick}<label class="hx-tick"><input type="checkbox" name="hoa" value="0"${p.get("hoa") === "0" ? " checked" : ""}><span>No HOA, as listed by the listing agent</span></label>`;
+  const more = pop("more", "Filters", L.more, moreP, true).replace('<details class="hx-pop', `<details class="hx-pop${features ? " hx-modal" : ""}`).replace(/<button type="submit" class="hx-pop-go">Show homes<\/button><\/div><\/details>$/, features ? "</div></details>" : '<button type="submit" class="hx-pop-go">Show homes</button></div></details>');
+  return `<form class="hx-fb${compact ? " hx-fb-c" : ""}${map ? " hx-fb-map" : ""}" action="${esc(action)}" method="get" data-hx-fb${map ? " data-hx-map-fb" : ""}${compact ? " data-hx-fb-c" : ""} aria-label="Search homes">${keep}`
+    + `<label class="hx-fb-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input name="q" type="search" enterkeyhint="search" autocomplete="off" maxlength="200" aria-label="${esc(ask || "Describe your home in a sentence")}" placeholder="${esc(ask || "Describe your home in a sentence")}" value="${esc(p.get("q") || "")}"><button type="submit" class="hx-fb-go" aria-label="Search">Search</button></label>`
+    + `<div class="hx-fb-pills">${pop("sale", "For sale", p.get("all") === "1" ? "With under contract" : "", saleP)}${pop("price", "Price", L.price, priceP)}${pop("beds", "Beds & baths", L.bb, bedsP)}${pop("type", "Home type", L.type, typeP)}${more}</div>`
+    + `</form>`;
 }
 
 /** Chips for the features in force (the search page's removable chips). */
@@ -140,6 +155,30 @@ export const FILTER_STYLE = `
 .hx-fb-c .hx-pop>summary{min-height:2.35rem;font-size:.85rem;padding:0 .85rem}
 .hx-strip[data-loading] .hx-s-row{opacity:.45;transition:opacity .15s}
 .hx-s-empty{padding:1.4rem;border-radius:14px;background:#fff;color:var(--slate,#5c6b78);font-size:.92rem}
+.hx-fb-go{flex:none;border:0;border-radius:999px;background:var(--ink,#1c2028);color:#fff;font:inherit;font-weight:700;font-size:.85rem;padding:.5rem 1rem;cursor:pointer;margin-right:-.55rem}
+.hx-fb-q input::placeholder{color:#6b7480}
+/* The Filters window (owner, 2026-10-28: Zillow's, with our look): the house first, then See more. */
+.hx-fb .hx-modal>.hx-pop-p{position:fixed;left:50%;right:auto;top:calc(var(--hx-top,0px) + 1rem);bottom:1rem;transform:translateX(-50%);width:min(40rem,calc(100vw - 2rem))!important;max-height:52rem;padding:0;display:flex;flex-direction:column;overflow:hidden;z-index:10002;border-radius:20px}
+.hx-modal[open]>summary::before{content:"";position:fixed;inset:0;background:rgba(21,26,34,.5);z-index:10001;cursor:default}
+.hx-mod-h{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border-bottom:1px solid rgba(28,32,40,.1)}
+.hx-mod-h p{margin:0;font-family:var(--serif,Georgia,serif);font-size:1.35rem;color:var(--ink,#1c2028)}
+.hx-mod-x{width:2.4rem;height:2.4rem;border:0;border-radius:999px;background:#f1ede6;font-size:1.5rem;line-height:1;cursor:pointer;color:var(--ink,#1c2028)}
+.hx-mod-b{flex:1;overflow:auto;padding:1rem 1.25rem 1.25rem}
+.hx-mod-b>.hx-pop-h:first-child{margin-top:0}
+.hx-mod-b .hx-list{grid-template-columns:repeat(3,minmax(0,1fr))}
+.hx-mod-b .hx-pop-3{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:.9rem}
+.hx-ticks{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem;margin:.6rem 0 .2rem}
+.hx-seemore{display:block;width:100%;margin:1rem 0 .4rem;padding:.8rem 1rem;border:1.5px dashed rgba(196,120,58,.55);border-radius:14px;background:rgba(196,120,58,.06);color:var(--brass-ink,#91592b);font:inherit;font-weight:700;font-size:.92rem;cursor:pointer;text-align:left}
+.hx-more-rest[hidden]{display:none}
+.hx-mod-n{margin:-.2rem 0 .6rem;font-size:.85rem;color:var(--slate,#5c6b78)}
+.hx-commute .hx-pop-2{margin-bottom:.5rem}
+.hx-mod-f{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.85rem 1.25rem;border-top:1px solid rgba(28,32,40,.1);background:#fff}
+.hx-mod-f .hx-pop-go{width:auto;margin:0;padding:0 1.6rem;background:var(--brass,#c4783a);color:#151a22}
+.hx-mod-reset{border:0;background:none;font:inherit;font-weight:600;color:var(--ink,#1c2028);text-decoration:underline;cursor:pointer}
+html.hx-modal-open{overflow:hidden}
+.hx-fb-c .hx-fb-q{flex-basis:16rem;min-height:2.6rem}.hx-fb-c .hx-fb-q input{font-size:.92rem}.hx-fb-c .hx-fb-go{padding:.4rem .85rem;font-size:.8rem}
+@media (max-width:640px){.hx-fb-go{display:none}.hx-fb .hx-modal>.hx-pop-p{left:0!important;right:0!important;top:var(--hx-top,0px);bottom:0;transform:none;width:100%!important;max-height:none;border-radius:0}
+ .hx-mod-b .hx-list{grid-template-columns:1fr 1fr}.hx-mod-b .hx-pop-3{grid-template-columns:1fr 1fr}.hx-ticks{grid-template-columns:1fr}}
 @media (max-width:640px){.hx-fb-pills{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;width:100%;padding-bottom:.2rem}.hx-fb-pills::-webkit-scrollbar{display:none}
 .hx-pop{position:static}.hx-fb .hx-pop-p{position:fixed;left:.75rem!important;right:.75rem!important;top:auto;bottom:.75rem;width:auto!important;max-height:72vh;border-radius:20px;z-index:1000;box-shadow:0 -10px 60px rgba(28,32,40,.35)}
 body:has(.hx-fb details[open]) #c3-fab{display:none}}
@@ -153,46 +192,57 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll(nul
 function paramsOf(f){var p=new URLSearchParams();var has=[];
  Array.prototype.forEach.call(f.elements,function(x){if(!x.name||x.disabled)return;
   if((x.type==="radio"||x.type==="checkbox")&&!x.checked)return;
-  if(x.name==="has"){has.push(x.value);return}
+  if(x.name==="has"){x.value.split(",").forEach(function(k){if(k&&has.indexOf(k)<0)has.push(k)});return}
   if(x.name==="hoaPick"){if(x.value==="0")p.set("hoa","0");else if(x.value)p.set("hoaMax",x.value);return}
+  if(x.name==="q"){var v=x.value.trim();if(v)p.set("q",v);return}
   if(x.value!=="")p.set(x.name,x.value)});
  if(has.length)p.set("has",has.join(","));return p}
-function label(d,text,on){var s=d.querySelector("summary span");s.textContent=text;d.classList.toggle("hx-on",!!on)}
-function say(f,text){var e=f.querySelector(".hx-fb-err");if(!text){if(e)e.remove();return}
- if(!e){e=document.createElement("p");e.className="hx-fb-err";e.setAttribute("role","status");f.appendChild(e)}e.textContent=text}
-function go(f){var p=paramsOf(f);
- if(!f.hasAttribute("data-hx-strip-fb")){location.href=f.getAttribute("action")+(p.toString()?"?"+p.toString():"");return}
- var strip=f.closest(".hx-strip"),row=strip&&strip.querySelector("[data-hx-row]");if(!row)return;
- strip.setAttribute("data-loading","1");closeAll(null);
- var n=f.hxSeq=(f.hxSeq||0)+1;
- fetch("/homes/api/strip?"+p.toString(),{credentials:"same-origin"}).then(function(r){return r.json()}).then(function(j){
-  if(n!==f.hxSeq)return;strip.removeAttribute("data-loading");
-  if(!j||!j.ok){say(f,"Could not refresh the homes. Please try again.");return}
-  say(f,"");row.innerHTML=j.html;
-  var h=strip.querySelector(".hx-feed-h");if(h)h.textContent="Homes for sale that match your filters";
-  var note=strip.querySelector(".hx-s-note");
-  if(j.note&&!note){note=document.createElement("p");note.className="hx-s-note";strip.querySelector(".hx-s-head").insertAdjacentElement("afterend",note)}
-  if(j.note)note.textContent=j.note;else if(note)note.remove();var all=strip.querySelector(".hx-s-head a");if(all){all.href=j.link;all.textContent=j.total?"See all "+j.total.toLocaleString("en-US"):"See all"}
-  Array.prototype.forEach.call(f.querySelectorAll("details.hx-pop"),function(d){var k=d.getAttribute("data-k");if(j.labels&&k in j.labels)label(d,j.labels[k]||d.getAttribute("data-label"),j.labels[k])});
- }).catch(function(){if(n!==f.hxSeq)return;strip.removeAttribute("data-loading");say(f,"Could not refresh the homes. Please try again.")})}
+/* The map page applies a search where it is; anywhere else a search opens the map with it (owner, 2026-10-28). */
+function go(f){var p=paramsOf(f);closeAll(null);
+ if(f.hasAttribute("data-hx-map-fb")){document.dispatchEvent(new CustomEvent("hx-search",{detail:p}));return}
+ location.href=(f.getAttribute("action")||"/homes/map/")+(p.toString()?"?"+p.toString():"")}
+window.hxParamsOf=paramsOf;
 var featsP=null;function feats(){if(!featsP)featsP=fetch("/homes/api/filters",{credentials:"same-origin"}).then(function(r){return r.json()}).catch(function(){return null});return featsP}
+window.hxFeats=feats;
+var WORD={nmb:"NMB",mcleod:"McLeod",icw:"ICW",at:"at",the:"the",of:"of"};
+var NAME={beach:"The beach",icw:"The Intracoastal Waterway"};
+function place(id){if(NAME[id])return NAME[id];return id.split("_").map(function(w,i){return WORD[w]&&(i||w.length<4)?WORD[w]:w.charAt(0).toUpperCase()+w.slice(1)}).join(" ")}
+/* Commute and places: two pickers that make one distance feature each, from the CRM's list. */
+function commute(f,j){var box=f.querySelector("[data-hx-commute]");if(!box||box.getAttribute("data-done"))return;box.setAttribute("data-done","1");
+ var lm={},keys={};j.groups.forEach(function(g){g.items.forEach(function(it){keys[it.k]=1;if(!it.d)return;var m=it.k.split("_"),last=m[m.length-1];
+  if(last.slice(-2)!=="mi"||isNaN(+last.slice(0,-2)))return;lm[m.slice(0,-1).join("_")]=1})});
+ var ids=Object.keys(lm).sort(function(a,b){return place(a)<place(b)?-1:1}),cur=(box.getAttribute("data-has")||"").split(",").filter(function(k){var m=k.split("_");return lm[m.slice(0,-1).join("_")]});
+ var out=box.querySelector("[data-hx-commute-out]");
+ [0,1].forEach(function(i){var s=box.querySelector("[data-lm='"+i+"']"),mi=box.querySelector("[data-mi='"+i+"']");ids.forEach(function(id){var o=document.createElement("option");o.value=id;o.textContent=place(id);s.appendChild(o)});
+  if(cur[i]){var m=cur[i].split("_");s.value=m.slice(0,-1).join("_");mi.value=m[m.length-1].slice(0,-2)}});
+ function sync(){var v=[];[0,1].forEach(function(i){var s=box.querySelector("[data-lm='"+i+"']").value,mi=box.querySelector("[data-mi='"+i+"']").value;if(!s)return;
+  var k=[mi,"10","5","2","1"].map(function(n){return s+"_"+n+"mi"}).filter(function(x){return keys[x]})[0];if(k&&v.indexOf(k)<0)v.push(k)});out.value=v.join(",")}
+ box.addEventListener("change",sync);sync();
+ /* The same places are not drawn twice in the full list below. */
+ cur.forEach(function(k){var t=f.querySelector("[data-hx-feats] input[type=hidden][name=has]");if(t)t.value=t.value.split(",").filter(function(x){return x!==k}).join(",")})}
 function drawFeats(f){var box=f.querySelector("[data-hx-feats]");if(!box||box.getAttribute("data-done"))return;box.setAttribute("data-done","1");
  var on={};(box.getAttribute("data-has")||"").split(",").forEach(function(k){if(k)on[k]=1});
+ var skip={};Array.prototype.forEach.call(f.querySelectorAll("input[data-cur]"),function(x){skip[x.value]=1});
  feats().then(function(j){if(!j||!j.ok||!j.groups){box.querySelector(".hx-feats-wait").textContent="The feature list is not available right now.";return}
+  commute(f,j);
   var h=box.querySelector("input[type=hidden][name=has]");if(h)h.remove();box.innerHTML="";
   j.groups.forEach(function(g){var hd=document.createElement("p");hd.className="hx-pop-h";hd.textContent=g.name;var w=document.createElement("div");w.className="hx-feats";
-   g.items.forEach(function(it){var l=document.createElement("label");l.setAttribute("data-words",(it.l+" "+it.k).toLowerCase());var i=document.createElement("input");i.type="checkbox";i.name="has";i.value=it.k;if(it.d)i.setAttribute("data-d","1");if(on[it.k])i.checked=true;
+   g.items.forEach(function(it){if(skip[it.k]||it.d)return;var l=document.createElement("label");l.setAttribute("data-words",(it.l+" "+it.k).toLowerCase());var i=document.createElement("input");i.type="checkbox";i.name="has";i.value=it.k;if(on[it.k])i.checked=true;
     var sp=document.createElement("span");sp.textContent=it.l;var sm=document.createElement("small");sm.textContent=it.n.toLocaleString("en-US");sp.appendChild(sm);l.appendChild(i);l.appendChild(sp);w.appendChild(l)});
-   box.appendChild(hd);box.appendChild(w)});
-  var note=document.createElement("p");note.className="hx-feats-note";note.hidden=true;note.textContent="Pick at most 2 distances at a time.";box.appendChild(note);
-  box.addEventListener("change",function(e){var t=e.target;if(t.getAttribute("data-d")&&t.checked&&box.querySelectorAll("input[data-d]:checked").length>2){t.checked=false;note.hidden=false}else note.hidden=true});
+   if(w.children.length){box.appendChild(hd);box.appendChild(w)}});
   var q=f.querySelector("[data-hx-fsearch]");if(q)q.addEventListener("input",function(){var v=q.value.trim().toLowerCase();Array.prototype.forEach.call(box.querySelectorAll("label[data-words]"),function(l){l.hidden=!!v&&l.getAttribute("data-words").indexOf(v)<0});
    Array.prototype.forEach.call(box.querySelectorAll(".hx-feats"),function(w){var any=w.querySelector("label:not([hidden])");w.hidden=!any;w.previousSibling.hidden=!any})})})}
-Array.prototype.forEach.call(forms,function(f){
- Array.prototype.forEach.call(f.querySelectorAll("details.hx-pop"),function(d){d.setAttribute("data-label",{price:"Price",beds:"Beds & baths",type:"Home type",town:"Town",more:"More"}[d.getAttribute("data-k")]||"");
-  d.addEventListener("toggle",function(){if(d.open){closeAll(d);if(d.getAttribute("data-k")==="more")drawFeats(f)}})});
+function reset(f){Array.prototype.forEach.call(f.elements,function(x){if(!x.name&&!x.hasAttribute("data-lm"))return;
+ if(x.type==="radio")x.checked=x.value==="";else if(x.type==="checkbox")x.checked=false;else if(x.type==="hidden"){if(x.name==="has"||x.hasAttribute("data-hx-commute-out"))x.value="";else x.remove()}else if(x.tagName==="SELECT")x.selectedIndex=0;else x.value=""})}
+Array.prototype.forEach.call(forms,function(f){var compact=f.hasAttribute("data-hx-fb-c");
+ Array.prototype.forEach.call(f.querySelectorAll("details.hx-pop"),function(d){d.setAttribute("data-label",{sale:"For sale",price:"Price",beds:"Beds & baths",type:"Home type",more:"Filters"}[d.getAttribute("data-k")]||"");
+  d.addEventListener("toggle",function(){if(d.open){closeAll(d);if(d.getAttribute("data-k")==="more"){drawFeats(f);var hd=document.querySelector("header");document.documentElement.style.setProperty("--hx-top",(hd?Math.max(0,Math.round(hd.getBoundingClientRect().bottom)):0)+"px")}}document.documentElement.classList.toggle("hx-modal-open",!!f.querySelector("details.hx-modal[open]"))})});
  f.addEventListener("submit",function(e){e.preventDefault();go(f)});
- f.addEventListener("change",function(e){var t=e.target;if(t.closest("details[data-k=more]"))return;if(t.name==="q"||t.hasAttribute("data-hx-fsearch"))return;go(f)});
- Array.prototype.forEach.call(f.querySelectorAll(".hx-quick"),function(b){b.addEventListener("click",function(){f.elements.min.value=b.getAttribute("data-min");f.elements.max.value=b.getAttribute("data-max");go(f)})});
+ f.addEventListener("change",function(e){var t=e.target;if(compact)return;if(t.closest("details[data-k=more]"))return;if(t.name==="q"||t.hasAttribute("data-hx-fsearch"))return;go(f)});
+ f.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-hx-close-pop],[data-hx-seemore],[data-hx-reset]");if(!t)return;
+  if(t.hasAttribute("data-hx-close-pop")){closeAll(null);document.documentElement.classList.remove("hx-modal-open");return}
+  if(t.hasAttribute("data-hx-seemore")){var r=f.querySelector(".hx-more-rest");r.hidden=!r.hidden;t.setAttribute("aria-expanded",r.hidden?"false":"true");t.textContent=r.hidden?"See more filters: the listing, commute and area":"Fewer filters";return}
+  reset(f);if(!compact)go(f)});
+ Array.prototype.forEach.call(f.querySelectorAll(".hx-quick"),function(b){b.addEventListener("click",function(){f.elements.min.value=b.getAttribute("data-min");f.elements.max.value=b.getAttribute("data-max");if(!compact)go(f)})});
 });
 })();</script>`;

@@ -459,9 +459,10 @@ if(wd&&wf){var wt=wf.elements.termsAccepted,wb=wf.querySelector("button[type=sub
   post("/homes/api/claim",{k:wd.getAttribute("data-k"),termsAccepted:true,page:location.pathname}).then(function(j){if(j.ok){location.reload();return}
    if(j.error==="link_expired"){wd.close();return}err.textContent=j.message||"Please try again.";err.hidden=false;wb.disabled=false}).catch(function(){wd.close()})})}
 /* Hearts */
-$$(".hx-heart").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();var m=b.getAttribute("data-mls");
+/* One listener for every heart, also those drawn later (the map page's list). Saved hearts need the free sign-up. */
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".hx-heart");if(!b||!b.getAttribute("data-mls"))return;e.preventDefault();e.stopPropagation();var m=b.getAttribute("data-mls");
  if(!signed){askSignup(m);return}var on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",on?"true":"false");
- post("/homes/api/hearts",{mlsNumber:m,loved:on}).then(function(j){if(j._status===401){location.reload()}})})});
+ post("/homes/api/hearts",{mlsNumber:m,loved:on}).then(function(j){if(j._status===401){location.reload()}})});
 /* Tour this home: the site's ordinary lead form, with the home's MLS number. */
 var td=$("#hx-tourd"),tf=$("#hx-tour-form"),tm=null,ta="",ti="tour";
 $$(".hx-tour[data-mls]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();tm=b.getAttribute("data-mls");ta=b.getAttribute("data-addr")||"";ti=b.getAttribute("data-interest")==="question"?"question":"tour";

@@ -113,97 +113,185 @@ export function nearOf(near, miles) {
 }
 
 export const MAP_STYLE = `<style>
+/* The map page fills the screen under our header (owner, 2026-10-28): no footer to scroll into. */
+html.hx-fit,html.hx-fit body,body:has(.hx-mapapp){overflow:hidden}
 #hx-root[data-wide]{max-width:none!important;width:100%!important;padding:0!important;margin:0!important}
-.hx-map-top{padding:.8rem 1.25rem .2rem;max-width:1600px;margin:0 auto}
-.hx-map-top .hx-search{margin:.2rem 0 .5rem}.hx-map-top h1{font-size:1.5rem!important;margin:.2rem 0 .5rem!important}
-.hx-map-body{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 440px;height:calc(100vh - 15rem);min-height:520px;border-top:1px solid rgba(28,32,40,.1)}
-.hx-map{position:relative;background:#e9e5dc}
-.hx-map-list{overflow:auto;padding:1rem;background:#faf8f4;border-left:1px solid rgba(28,32,40,.1)}
-.hx-map-count{margin:0 0 .8rem;font-size:.95rem}.hx-map-count b{font-weight:800}
-.hx-map-cards{display:grid;gap:1rem}
+.hx-mapapp{position:fixed;left:0;right:0;bottom:0;top:7.5rem;z-index:20;display:flex;flex-direction:column;background:#fff}
+.hx-mtop{flex:none;padding:.6rem 1rem .45rem;border-bottom:1px solid rgba(28,32,40,.1);background:#fff;position:relative;z-index:30}
+.hx-mtop .hx-fb{margin:0;flex-wrap:nowrap}.hx-mtop .hx-fb-q{flex:0 1 26rem;min-height:2.75rem}
+.hx-mchips{display:flex;flex-wrap:wrap;gap:.35rem;margin:.45rem 0 0}.hx-mchips[hidden]{display:none}
+.hx-ai-note{margin:.35rem 0 0;font-size:.82rem;color:var(--slate,#5c6b78)}.hx-ai-note[hidden]{display:none}
+.hx-map-body{position:relative;flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) min(50vw,720px)}
+.hx-map{position:relative;background:#e9e5dc;min-height:0}
+.hx-map-list{overflow:auto;min-height:0;padding:.9rem 1rem 0;background:#fff;border-left:1px solid rgba(28,32,40,.1)}
+.hx-list-h h1{font-family:var(--serif,Georgia,serif)!important;font-size:1.3rem!important;line-height:1.2!important;margin:0 0 .15rem!important}
+.hx-map-count{margin:0 0 .8rem;font-size:.9rem;color:var(--slate,#5c6b78)}.hx-map-count b{font-weight:800;color:var(--ink,#1c2028)}
+.hx-map-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+.hx-map-cards .hx-c{position:relative}
 .hx-map-cards .hx-hot{outline:3px solid #1a73e8;outline-offset:2px;border-radius:14px}
-.hx-area{position:absolute;top:1rem;left:50%;transform:translateX(-50%);z-index:5;border:0;border-radius:999px;background:#1c2028;color:#fff;font:inherit;font-weight:700;padding:.65rem 1.2rem;box-shadow:0 8px 24px rgba(28,32,40,.3);cursor:pointer}
-.hx-map-note{position:absolute;left:1rem;right:1rem;bottom:1rem;z-index:5;max-width:30rem;margin:0 auto;padding:.8rem 1rem;border-radius:14px;background:rgba(255,255,255,.92);box-shadow:0 8px 24px rgba(28,32,40,.18);font-size:.9rem;text-align:center}
+.hx-list-more{margin:1rem 0 0;font-size:.88rem;color:var(--slate,#5c6b78);text-align:center}.hx-list-more[hidden]{display:none}
+.hx-list-foot{margin:1.2rem -1rem 0;padding:.9rem 1rem 1.2rem;background:#faf8f4;border-top:1px solid rgba(28,32,40,.08)}
+.hx-list-foot .hx-disclaimer{margin:0}
+.hx-map-note{position:absolute;left:1rem;right:1rem;bottom:1rem;z-index:5;max-width:30rem;margin:0 auto;padding:.8rem 1rem;border-radius:14px;background:rgba(255,255,255,.95);box-shadow:0 8px 24px rgba(28,32,40,.18);font-size:.9rem;text-align:center}
+.hx-map-note[hidden]{display:none}
 .hx-map-toggle{display:none}
-.hx-mode{position:absolute;top:1rem;right:1rem;z-index:6;display:flex;padding:3px;border-radius:999px;background:rgba(255,255,255,.95);box-shadow:0 6px 20px rgba(28,32,40,.2)}
+.hx-mode{position:absolute;top:.8rem;right:.8rem;z-index:6;display:flex;padding:3px;border-radius:999px;background:rgba(255,255,255,.96);box-shadow:0 6px 20px rgba(28,32,40,.2)}
 .hx-mode button{border:0;background:none;font:inherit;font-weight:700;font-size:.88rem;padding:.45rem .95rem;border-radius:999px;cursor:pointer;color:#1c2028}
 .hx-mode button[aria-pressed="true"]{background:#1c2028;color:#fff}
 .hx-map3d{position:absolute;inset:0;z-index:3;background:#1c2028}.hx-map3d[hidden]{display:none}.hx-map3d gmp-map-3d{width:100%;height:100%;display:block}
 .hx-map3d-off{display:flex;align-items:center;justify-content:center;color:#f4efe8;padding:2rem;text-align:center}
-.hx-pop{position:absolute;left:50%;bottom:1rem;transform:translateX(-50%);z-index:6;width:min(22rem,calc(100% - 2rem))}
-.hx-pop .hx-x{top:.4rem;right:.4rem;z-index:2;background:rgba(255,255,255,.9)}
-.hx-pop .hx-c-link{display:grid;grid-template-columns:7.5rem minmax(0,1fr)}.hx-pop .hx-c-photo{aspect-ratio:auto;height:100%;min-height:7rem}.hx-pop .hx-c-body{padding:.6rem .8rem;padding-right:2.4rem}.hx-pop .hx-c-price{font-size:1.15rem}.hx-pop .hx-c-firm,.hx-pop .hx-c-tag{display:none}
-.hx-maplist{color:var(--brass-ink,#91592b);font-weight:600}
-@media (max-width:899px){.hx-map-body{grid-template-columns:1fr;height:calc(100vh - 13rem)}.hx-map-list{display:none;position:absolute;inset:0;z-index:7;border:0}
+.hx-mpop{position:absolute;left:50%;bottom:1rem;transform:translateX(-50%);z-index:7;width:min(23rem,calc(100% - 2rem));border-radius:16px;background:#fff;box-shadow:0 14px 40px rgba(28,32,40,.32)}
+main#main .hx-mpop .hx-c{margin:0;box-shadow:none;border-radius:16px 16px 0 0;transform:none}main#main .hx-mpop .hx-c-link{display:grid;grid-template-columns:8.5rem minmax(0,1fr)}
+main#main .hx-mpop .hx-c-photo{aspect-ratio:auto;height:100%;min-height:7.5rem}
+main#main .hx-mpop .hx-c-body{padding:.6rem .8rem;padding-right:2.4rem}main#main .hx-mpop .hx-c-price{font-size:1.15rem}main#main .hx-mpop .hx-c-facts{font-size:.85rem}main#main .hx-mpop .hx-c-addr{font-size:.85rem}main#main .hx-mpop .hx-c-firm{font-size:.72rem}main#main .hx-mpop .hx-c-tag{display:none}
+.hx-mpop .hx-heart{display:none}
+.hx-mpop.hx-mpop-top{bottom:auto;top:4rem}
+.hx-mpop-x{position:absolute;top:.35rem;right:.35rem;z-index:2;width:2rem;height:2rem;border:0;border-radius:999px;background:rgba(255,255,255,.95);font-size:1.25rem;line-height:1;cursor:pointer}
+.hx-mpop-go{display:block;margin:0;padding:.45rem .8rem .6rem;font-size:.8rem;color:var(--slate,#5c6b78);text-align:center;border-top:1px solid rgba(28,32,40,.08)}
+@media (max-width:1100px){.hx-map-body{grid-template-columns:minmax(0,1fr) min(46vw,420px)}.hx-map-cards{grid-template-columns:1fr}}
+@media (max-width:899px){.hx-mtop{padding:.5rem .75rem .4rem}.hx-mtop .hx-fb{flex-wrap:wrap}.hx-mtop .hx-fb-q{flex:1 1 100%}
+ .hx-map-body{grid-template-columns:1fr}
+ .hx-map-list{position:absolute;inset:0;z-index:8;border:0;display:none}.hx-map-cards{grid-template-columns:1fr}
  .hx-map-body.hx-show-list .hx-map-list{display:block}
- .hx-map-toggle{display:inline-flex;position:absolute;right:1rem;bottom:1rem;z-index:8;border:0;border-radius:999px;background:#1c2028;color:#fff;font:inherit;font-weight:700;padding:.65rem 1.1rem;box-shadow:0 8px 24px rgba(28,32,40,.3)}
- .hx-pop{bottom:4.5rem}}
+ .hx-map-toggle{display:inline-flex;align-items:center;gap:.4rem;position:absolute;left:50%;transform:translateX(-50%);bottom:1rem;z-index:9;border:0;border-radius:999px;background:#1c2028;color:#fff;font:inherit;font-weight:700;padding:.75rem 1.4rem;box-shadow:0 8px 24px rgba(28,32,40,.35);cursor:pointer}
+ .hx-mpop{bottom:4.6rem}.hx-mpop.hx-mpop-top{bottom:auto;top:3.6rem}}
 </style>`;
 
 /**
- * The 2D map. Blue dots far out, price pills close in (zoom 14 and nearer), like Zillow.
- * "Search this area" after the visitor moves the map runs the search around the new view.
- * Nothing from the CRM is written with innerHTML: every card is built with textContent.
+ * The map page (owner, 2026-10-28, Zillow's): a click on a blue dot shows the home, a second click
+ * opens it; the list shows only the homes with a dot in view, and moving the map searches there; 3D
+ * keeps the dots and the list. A search from the bar runs here without leaving the page. Words the
+ * search box cannot read go to the AI once (cached per sentence), and come back as filters the
+ * reader can see and remove. Nothing from the CRM is written with innerHTML. No backslash here.
  */
 export const MAP_SCRIPT = `<script>(function(){
 var app=document.querySelector("[data-hx-map]");if(!app)return;
-var key=app.getAttribute("data-key"),base=app.getAttribute("data-params")||"",pins=[];
-try{pins=JSON.parse(document.getElementById("hx-pins").textContent)||[]}catch(e){}
-var list=document.getElementById("hx-map-cards"),count=document.getElementById("hx-map-count"),area=document.getElementById("hx-area"),note=document.getElementById("hx-map-note"),body=document.querySelector(".hx-map-body");
-var tg=document.querySelector(".hx-map-toggle");if(tg)tg.addEventListener("click",function(){var on=body.classList.toggle("hx-show-list");tg.textContent=on?"Map":"List"});
+document.documentElement.classList.add("hx-fit");
+function fitTop(){var h=document.querySelector("header");app.style.top=(h?Math.max(0,Math.round(h.getBoundingClientRect().bottom)):0)+"px"}
+fitTop();addEventListener("resize",fitTop);setTimeout(fitTop,400);
+var key=app.getAttribute("data-key"),state=new URLSearchParams(app.getAttribute("data-params")||""),all=[],total=+app.getAttribute("data-total")||0,hearts={};
+try{all=JSON.parse(document.getElementById("hx-pins").textContent)||[]}catch(e){}
+try{JSON.parse(app.getAttribute("data-hearts")||"[]").forEach(function(m){hearts[m]=1})}catch(e){}
+var list=document.getElementById("hx-map-cards"),count=document.getElementById("hx-map-count"),more=document.getElementById("hx-list-more"),note=document.getElementById("hx-map-note"),body=app.querySelector(".hx-map-body"),tg=document.getElementById("hx-map-toggle"),chipsBox=document.getElementById("hx-chips"),aiNote=document.getElementById("hx-ai-note"),form=app.querySelector("form[data-hx-map-fb]");
+var phone=window.matchMedia?matchMedia("(max-width: 899px)"):{matches:false};
 function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e}
-function card(p){var a=el("article","hx-c"),l=el("a","hx-c-link");l.href=p.url;a.setAttribute("data-mls",p.mls);
- var ph=el("span","hx-c-photo");if(p.photo&&p.photo.indexOf("https://")===0){var im=el("img");im.src=p.photo;im.alt=p.addr;im.loading="lazy";im.referrerPolicy="no-referrer";ph.appendChild(im)}
+var NS="http://www.w3.org/2000/svg";
+function heart(p){var b=el("button","hx-heart hx-heart-sm");b.type="button";b.setAttribute("data-mls",p.mls);b.setAttribute("aria-pressed",hearts[p.mls]?"true":"false");b.setAttribute("aria-label","Save "+p.addr);
+ var s=document.createElementNS(NS,"svg");s.setAttribute("viewBox","0 0 24 24");s.setAttribute("width","22");s.setAttribute("height","22");s.setAttribute("aria-hidden","true");var pa=document.createElementNS(NS,"path");pa.setAttribute("d","M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z");s.appendChild(pa);b.appendChild(s);return b}
+function card(p,withHeart){var a=el("article","hx-c"),l=el("a","hx-c-link");l.href=p.url;l.setAttribute("draggable","false");a.setAttribute("data-mls",p.mls);
+ var ph=el("span","hx-c-photo");if(p.photo&&p.photo.indexOf("https://")===0){var im=el("img");im.src=p.photo;im.alt=p.addr;im.loading="lazy";im.referrerPolicy="no-referrer";im.width=480;im.height=300;ph.appendChild(im)}else ph.appendChild(el("span","hx-nophoto","No photo yet"));
  if(p.tag)ph.appendChild(el("span","hx-c-tag",p.tag));l.appendChild(ph);var b=el("span","hx-c-body");b.appendChild(el("span","hx-c-price",p.price));
  var f=el("span","hx-c-facts"),bits=[];if(p.beds!=null)bits.push([p.beds," bds"]);if(p.baths!=null)bits.push([p.baths," ba"]);if(p.sqft!=null)bits.push([p.sqft.toLocaleString("en-US")," sqft"]);
  bits.forEach(function(x,i){if(i)f.appendChild(el("i"));f.appendChild(el("b",null,String(x[0])));f.appendChild(document.createTextNode(x[1]))});if(p.status){if(bits.length)f.appendChild(el("i"));f.appendChild(document.createTextNode(p.status))}
- b.appendChild(f);b.appendChild(el("span","hx-c-addr",p.addr));b.appendChild(el("span","hx-c-firm","MLS #"+p.mls+", "+p.firm+". Listing provided by CCMLS."));l.appendChild(b);a.appendChild(l);return a}
-function showList(ps,total){while(list.firstChild)list.removeChild(list.firstChild);ps.forEach(function(p){list.appendChild(card(p))});
- count.textContent="";var bb=el("b",null,(total||ps.length).toLocaleString("en-US"));count.appendChild(bb);count.appendChild(document.createTextNode(" homes"+(total>ps.length?", "+ps.length+" on the map":"")))}
-if(!key)return;
+ b.appendChild(f);b.appendChild(el("span","hx-c-addr",p.addr));b.appendChild(el("span","hx-c-firm","MLS #"+p.mls+", "+p.firm+". Listing provided by CCMLS."));l.appendChild(b);a.appendChild(l);if(withHeart)a.appendChild(heart(p));return a}
+function render(ps){while(list.firstChild)list.removeChild(list.firstChild);ps.slice(0,120).forEach(function(p){list.appendChild(card(p,true))});
+ count.textContent="";count.appendChild(el("b",null,ps.length.toLocaleString("en-US")));count.appendChild(document.createTextNode(ps.length===1?" home in this area":" homes in this area"));
+ if(total>ps.length){count.appendChild(document.createTextNode(", of "+total.toLocaleString("en-US")+" that match"))}
+ more.hidden=!(total>all.length);if(!more.hidden)more.textContent="Zoom in or move the map to see more of the "+total.toLocaleString("en-US")+" homes."}
+/* The list and the map on a phone, like Zillow's app: the list first, a Map button. */
+if(tg)tg.addEventListener("click",function(){var showList=!body.classList.contains("hx-show-list");body.classList.toggle("hx-show-list",showList);tg.textContent=showList?"Map":"List";if(!showList&&map)google.maps.event.trigger(map,"resize")});
+/* Chips: each removes itself; Clear all starts over. */
+function drawChips(cs){while(chipsBox.firstChild)chipsBox.removeChild(chipsBox.firstChild);(cs||[]).forEach(function(c){var a=el("a","hx-applied-chip",c.t);a.href="/homes/map/"+(c.x?"?"+c.x:"");a.setAttribute("data-x",c.x);a.appendChild(el("span",null," ×"));chipsBox.appendChild(a)});
+ var cl=el("a","hx-clear","Clear all");cl.href="/homes/map/";cl.setAttribute("data-x","");chipsBox.appendChild(cl);chipsBox.hidden=!(cs&&cs.length)}
+chipsBox.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-x]");if(!a)return;e.preventDefault();aiNote.hidden=true;search(new URLSearchParams(a.getAttribute("data-x")),{fit:true})});
+/* The bar shows the search in force after every search, including what a sentence or the AI added. */
+var NAMES={sale:"For sale",price:"Price",beds:"Beds & baths",type:"Home type",more:"Filters"};
+function pills(L){if(!form||!L)return;Array.prototype.forEach.call(form.querySelectorAll("details.hx-pop"),function(d){var k=d.getAttribute("data-k");if(!(k in L))return;d.querySelector("summary span").textContent=L[k]||NAMES[k];d.classList.toggle("hx-on",!!L[k])})}
+function syncForm(p){if(!form)return;var has=(p.get("has")||"").split(",").filter(Boolean),hoa=p.get("hoa")==="0"?"0":(p.get("hoaMax")||"");
+ Array.prototype.forEach.call(form.elements,function(x){if(!x.name)return;
+  if(x.name==="q"){x.value="";return}
+  if(x.type==="radio"){x.checked=x.value===(p.get(x.name)||"");return}
+  if(x.type==="checkbox"){x.checked=x.name==="has"?has.indexOf(x.value)>=0:p.get(x.name)===x.value;return}
+  if(x.tagName==="SELECT"){var v=x.name==="hoaPick"?hoa:(p.get(x.name)||"");if(v&&!Array.prototype.some.call(x.options,function(o){return o.value===v})){var o=el("option",null,v);o.value=v;x.appendChild(o)}x.value=v;return}});
+ Array.prototype.forEach.call(form.querySelectorAll("input[type=hidden]"),function(x){if(x.hasAttribute("data-hx-commute-out")){var keep=x.value.split(",").filter(function(k){return has.indexOf(k)>=0});x.value=keep.join(",");if(!keep.length)Array.prototype.forEach.call(form.querySelectorAll("[data-lm]"),function(s){s.value=""});return}x.remove()});
+ var shown={};Array.prototype.forEach.call(form.querySelectorAll("input[name=has]"),function(x){if(x.type==="checkbox"&&x.checked)shown[x.value]=1;if(x.type==="hidden")x.value.split(",").forEach(function(k){if(k)shown[k]=1})});
+ var rest=has.filter(function(k){return !shown[k]});
+ ["city","subdivision","near","miles","zip","sort","yearMax","not"].forEach(function(n){if(p.get(n)){var h=el("input");h.type="hidden";h.name=n;h.value=p.get(n);form.appendChild(h)}});
+ if(rest.length){var h=el("input");h.type="hidden";h.name="has";h.value=rest.join(",");form.appendChild(h)}}
+var map=null,marks=[],pop=null,popFor=null,hot=null,user=false,timer=0,seq=0,map3=null,box3=null,marks3=[],L3=null,Pin3=null;
+function inView(p){if(!map||!map.getBounds())return true;return map.getBounds().contains({lat:p.lat,lng:p.lng})}
+var searched=false;
+function listView(){if(!all.length&&!searched)return;render(all.filter(inView));if(hot)hilite(hot)}
+function msg(j){return j&&j.error==="stale"?"The listing search is being refreshed. Please try again in a few minutes.":"Please try again in a minute."}
+function search(p,o){o=o||{};state=new URLSearchParams(p);var n=++seq;count.textContent="Searching...";
+ return fetch("/homes/api/map?"+state.toString(),{credentials:"same-origin"}).then(function(r){return r.json()}).then(function(j){if(n!==seq)return;
+  if(!j||!j.ok){count.textContent=msg(j);return}
+  searched=true;all=j.pins||[];total=j.total||0;state=new URLSearchParams(j.params||"");
+  try{history.replaceState(null,"","/homes/map/"+(state.toString()?"?"+state.toString():""))}catch(e){}
+  drawChips(j.chips);pills(j.labels);syncForm(state);
+  var h1=app.querySelector(".hx-list-h h1");if(h1)h1.textContent="Homes for sale"+(state.get("city")?" in "+state.get("city"):state.get("subdivision")?" in "+state.get("subdivision"):state.get("near")?" in this area":" on the Grand Strand");
+  if(popFor){closePop()}
+  draw(o.fit!==false);listView();
+  if(j.left&&o.ai!==false)ai(j.q,j.left)}).catch(function(){if(n===seq)count.textContent="Please try again in a minute."})}
+document.addEventListener("hx-search",function(e){aiNote.hidden=true;search(e.detail,{fit:true})});
+/* Words the rules could not read: the AI picks filters from the CRM's own list, once per sentence. */
+var ALLOW=["min","max","beds","baths","type","city","sqft","yearMin","yearMax","lotMin","hoaMax","garage","hoa"];
+function ai(q,left){if(!q||!window.hxFeats)return;aiNote.hidden=false;aiNote.textContent="Reading the rest of your words...";
+ window.hxFeats().then(function(j){if(!j||!j.ok||!j.groups){aiNote.hidden=true;return}var keys=[];j.groups.forEach(function(g){g.items.forEach(function(it){keys.push(it.k)})});
+  var prompt="Home search on the Grand Strand, South Carolina. The buyer typed: "+JSON.stringify(q)+". These words were not understood yet: "+JSON.stringify(left)+". Turn only those words into filters. JSON only, start { end }. "+
+   "Keys you may use: has (a list of feature keys, from this list only, at most 3, at most 2 ending in mi), min, max (dollars), beds, baths, type (house|condo|townhouse|multi|land|manufactured), city (Myrtle Beach|North Myrtle Beach|Surfside Beach|Garden City|Murrells Inlet|Pawleys Island|Little River|Conway|Longs|Loris|Aynor|Calabash), sqft, yearMin, yearMax, lotMin (acres), hoaMax, garage, hoa (0 for no HOA). "+
+   "Leave out anything you are not sure of. Never use a person's traits (age, family, race, religion, disability, origin). For a job or employer, use the nearest place key ending in _10mi. "+
+   "Feature keys: "+keys.join(",")+". Answer like "+JSON.stringify({has:[],why:"one short plain sentence"})+".";
+  return fetch("https://api-proxy.chapter3realty.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-haiku-5-5",max_tokens:300,cache_key:["search1",q].join("|"),messages:[{role:"user",content:prompt}]})})
+   .then(function(r){return r.json()}).then(function(d){var t=d&&d.content&&d.content.filter(function(b){return b.type==="text"}).pop();if(!t){aiNote.hidden=true;return}
+    var a=t.text.indexOf("{"),z=t.text.lastIndexOf("}");var o=JSON.parse(t.text.slice(a,z+1));var p=new URLSearchParams(state),added=0;
+    var known={};keys.forEach(function(k){known[k]=1});var has=(p.get("has")||"").split(",").filter(Boolean);
+    (Array.isArray(o.has)?o.has:[]).slice(0,3).forEach(function(k){if(known[k]&&has.indexOf(k)<0){has.push(k);added++}});if(has.length)p.set("has",has.join(","));
+    ALLOW.forEach(function(k){if(o[k]!=null&&o[k]!==""&&!p.get(k)){p.set(k,String(o[k]));added++}});
+    if(!added){aiNote.textContent="We searched what we could read. Try other words, or use the filters.";return}
+    aiNote.textContent=(o.why?String(o.why).slice(0,160)+" ":"")+"Remove any filter you do not want.";
+    search(p,{fit:true,ai:false})})}).catch(function(){aiNote.hidden=true})}
+function hilite(mls){hot=mls;marks.forEach(function(m){style(m,m.p.mls===mls)});Array.prototype.forEach.call(list.children,function(c){c.classList.toggle("hx-hot",c.getAttribute("data-mls")===mls)})}
+function closePop(){if(pop)pop.remove();pop=null;popFor=null}
+/* The first click on a dot shows the home; a second click on the same dot opens it. */
+function tap(p){if(popFor===p.mls){location.href=p.url;return}
+ closePop();pop=el("div","hx-mpop");var x=el("button","hx-mpop-x","×");x.type="button";x.setAttribute("aria-label","Close");x.addEventListener("click",closePop);pop.appendChild(x);
+ pop.appendChild(card(p,false));pop.appendChild(el("p","hx-mpop-go","Click the dot again, or the card, to open it."));
+ /* The card never covers its own dot: a dot low on the map gets the card at the top. */
+ var bd=map&&map.getBounds();if(bd){var ne=bd.getNorthEast(),sw=bd.getSouthWest();if((ne.lat()-p.lat)/((ne.lat()-sw.lat())||1)>0.5)pop.classList.add("hx-mpop-top")}
+ document.getElementById("hx-map").appendChild(pop);popFor=p.mls;hilite(p.mls);
+ if(!phone.matches){var c=list.querySelector("[data-mls='"+p.mls+"']");if(c)c.scrollIntoView({behavior:"smooth",block:"nearest"})}}
+function dot(on){return{path:google.maps.SymbolPath.CIRCLE,scale:on?9:6.5,fillColor:on?"#0b57d0":"#1a73e8",fillOpacity:1,strokeColor:"#fff",strokeWeight:2}}
+function pill(p,on){var w=Math.max(46,p.short.length*8+16);var svg="<svg xmlns='http://www.w3.org/2000/svg' width='"+w+"' height='26'><rect x='1' y='1' width='"+(w-2)+"' height='24' rx='12' fill='"+(on?"#0b57d0":"#1a73e8")+"' stroke='#fff' stroke-width='2'/></svg>";
+ return{url:"data:image/svg+xml;charset=UTF-8,"+encodeURIComponent(svg),scaledSize:new google.maps.Size(w,26),anchor:new google.maps.Point(w/2,13),labelOrigin:new google.maps.Point(w/2,13)}}
+function style(m,on){var close=map.getZoom()>=14;m.setIcon(close?pill(m.p,on):dot(on));m.setLabel(close?{text:m.p.short||"Home",color:"#fff",fontSize:"12px",fontWeight:"700"}:null);m.setZIndex(on?1000:1)}
+function draw(fit){if(!map)return;marks.forEach(function(m){m.setMap(null)});marks=[];var bounds=new google.maps.LatLngBounds();
+ all.forEach(function(p){var m=new google.maps.Marker({position:{lat:p.lat,lng:p.lng},map:map,title:p.price+", "+p.addr});m.p=p;style(m,false);bounds.extend(m.getPosition());m.addListener("click",function(){tap(p)});marks.push(m)});
+ if(fit&&all.length){user=false;map.fitBounds(bounds,48);google.maps.event.addListenerOnce(map,"idle",function(){if(map.getZoom()>15)map.setZoom(15);user=false;listView()})}
+ note.hidden=all.length>0;if(!all.length)note.textContent="No homes with a map location match this search. Change a filter or move the map.";
+ if(map3)dots3()}
+/* Moving the map: the list shows the dots in view at once, then the homes in that area are fetched. */
+function areaSearch(){var c=map.getCenter(),b=map.getBounds();if(!b)return;var ne=b.getNorthEast(),R=3958.8,r=Math.PI/180;
+ var d=2*R*Math.asin(Math.sqrt(Math.pow(Math.sin((ne.lat()-c.lat())*r/2),2)+Math.cos(c.lat()*r)*Math.cos(ne.lat()*r)*Math.pow(Math.sin((ne.lng()-c.lng())*r/2),2)));
+ var u=new URLSearchParams(state);["city","zip","subdivision","near","miles"].forEach(function(k){u.delete(k)});if(u.get("sort")==="nearest")u.delete("sort");
+ u.set("near",c.lat().toFixed(5)+","+c.lng().toFixed(5));u.set("miles",String(Math.min(25,Math.max(0.3,Math.round(d*10)/10))));search(u,{fit:false,ai:false})}
+if(!key){render(all);return}
 (function(g){var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=function(){return h||(h=new Promise(function(f,n){a=m.createElement("script");e.set("libraries",Array.from(r)+"");for(k in g)e.set(k.replace(/[A-Z]/g,function(t){return"_"+t[0].toLowerCase()}),g[k]);e.set("callback",c+".maps."+q);a.src="https://maps.googleapis.com/maps/api/js?"+e;d[q]=f;a.onerror=function(){h=n(Error(p+" could not load."))};m.head.append(a)}))};d[l]?0:d[l]=function(f){var n=Array.prototype.slice.call(arguments,1);r.add(f);return u().then(function(){return d[l].apply(d,[f].concat(n))})}})({key:key,v:"beta"});
 google.maps.importLibrary("maps").then(function(lib){
- var map=new lib.Map(document.getElementById("hx-map"),{center:{lat:33.70,lng:-78.92},zoom:10,mapTypeControl:false,streetViewControl:false,fullscreenControl:false,clickableIcons:false,gestureHandling:"greedy"});
- var marks=[],pop=null,moved=false,hot=null,lastPins=null;
- function dot(on){return{path:google.maps.SymbolPath.CIRCLE,scale:on?9:6.5,fillColor:on?"#0b57d0":"#1a73e8",fillOpacity:1,strokeColor:"#fff",strokeWeight:2}}
- function pill(p,on){var w=Math.max(46,p.short.length*8+16);var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="26"><rect x="1" y="1" width="'+(w-2)+'" height="24" rx="12" fill="'+(on?"#0b57d0":"#1a73e8")+'" stroke="#fff" stroke-width="2"/></svg>';
-  return{url:"data:image/svg+xml;charset=UTF-8,"+encodeURIComponent(svg),scaledSize:new google.maps.Size(w,26),anchor:new google.maps.Point(w/2,13),labelOrigin:new google.maps.Point(w/2,13)}}
- function style(m,on){var close=map.getZoom()>=14;m.setIcon(close?pill(m.p,on):dot(on));m.setLabel(close?{text:m.p.short||"Home",color:"#fff",fontSize:"12px",fontWeight:"700"}:null);m.setZIndex(on?1000:1)}
- function hilite(mls){marks.forEach(function(m){style(m,m.p.mls===mls)});Array.prototype.forEach.call(list.children,function(c){c.classList.toggle("hx-hot",c.getAttribute("data-mls")===mls)})}
- function popup(p){if(pop)pop.remove();pop=el("div","hx-pop");var x=el("button","hx-x","\\u00d7");x.type="button";x.setAttribute("aria-label","Close");x.addEventListener("click",function(){pop.remove();pop=null});pop.appendChild(x);var cd=card(p);var ht=cd.querySelector(".hx-heart");if(ht)ht.remove();pop.appendChild(cd);document.getElementById("hx-map").appendChild(pop)}
- function draw(ps,fit){lastPins=ps;marks.forEach(function(m){m.setMap(null)});marks=[];var bounds=new google.maps.LatLngBounds();
-  ps.forEach(function(p){var m=new google.maps.Marker({position:{lat:p.lat,lng:p.lng},map:map,title:p.price+", "+p.addr});m.p=p;style(m,false);bounds.extend(m.getPosition());
-   m.addListener("click",function(){hilite(p.mls);var c=list.querySelector('[data-mls="'+p.mls+'"]');if(c&&window.innerWidth>=900)c.scrollIntoView({behavior:"smooth",block:"nearest"});if(window.innerWidth<900)popup(p)});marks.push(m)});
-  if(fit&&ps.length){map.fitBounds(bounds,48);google.maps.event.addListenerOnce(map,"idle",function(){if(map.getZoom()>15)map.setZoom(15);moved=false;area.hidden=true})}
-  note.hidden=ps.length>0}
- list.addEventListener("mouseover",function(e){var c=e.target.closest&&e.target.closest("[data-mls]");if(c&&c.getAttribute("data-mls")!==hot){hot=c.getAttribute("data-mls");hilite(hot)}});
- map.addListener("zoom_changed",function(){marks.forEach(function(m){style(m,m.p.mls===hot)})});
- map.addListener("dragend",function(){moved=true;area.hidden=false});map.addListener("zoom_changed",function(){if(marks.length&&moved)area.hidden=false});
- area.addEventListener("click",function(){var c=map.getCenter(),ne=map.getBounds().getNorthEast(),R=3958.8,r=Math.PI/180;
-  var d=2*R*Math.asin(Math.sqrt(Math.pow(Math.sin((ne.lat()-c.lat())*r/2),2)+Math.cos(c.lat()*r)*Math.cos(ne.lat()*r)*Math.pow(Math.sin((ne.lng()-c.lng())*r/2),2)));
-  var u=new URLSearchParams(base);u.delete("city");u.delete("zip");u.delete("subdivision");u.set("near",c.lat().toFixed(5)+","+c.lng().toFixed(5));u.set("miles",String(Math.min(25,Math.max(0.3,Math.round(d*10)/10))));
-  area.hidden=true;count.textContent="Searching this area...";
-  fetch("/homes/api/map?"+u.toString(),{credentials:"same-origin"}).then(function(r){return r.json()}).then(function(j){if(!j.ok){count.textContent=j.error==="stale"?"The listing search is being refreshed. Please try again in a few minutes.":"Please try again in a minute.";return}showList(j.pins,j.total);draw(j.pins,false)}).catch(function(){count.textContent="Please try again in a minute."})});
- draw(pins,true);
- /* A home from a listing page: light it and fly to it. */
+ map=new lib.Map(document.getElementById("hx-map"),{center:{lat:33.70,lng:-78.92},zoom:10,mapTypeControl:false,streetViewControl:false,fullscreenControl:false,clickableIcons:false,gestureHandling:"greedy"});
+ map.addListener("dragstart",function(){user=true});map.addListener("zoom_changed",function(){marks.forEach(function(m){style(m,m.p.mls===hot)})});
+ document.getElementById("hx-map").addEventListener("wheel",function(){user=true},{passive:true});document.getElementById("hx-map").addEventListener("touchstart",function(){user=true},{passive:true});
+ map.addListener("idle",function(){if(!user)return;user=false;listView();clearTimeout(timer);timer=setTimeout(areaSearch,700)});
+ map.addListener("click",closePop);
+ list.addEventListener("mouseover",function(e){var c=e.target.closest&&e.target.closest("[data-mls]");if(c&&c.getAttribute("data-mls")!==hot)hilite(c.getAttribute("data-mls"))});
+ draw(true);
  var focus=app.getAttribute("data-focus");if(focus){var fm=null;marks.forEach(function(m){if(m.p.mls===focus)fm=m});
-  if(fm){google.maps.event.addListenerOnce(map,"idle",function(){map.setCenter(fm.getPosition());map.setZoom(15);hot=focus;hilite(focus)})}}
- /* 2D or 3D, one page (owner, 2026-10-25). 3D is Google's photorealistic map with the same blue dots. */
- var box3=null,map3=null,marks3=[],btns=$$("[data-mode]");
- function $$(q){return Array.prototype.slice.call(document.querySelectorAll(q))}
+  if(fm){google.maps.event.addListenerOnce(map,"idle",function(){map.setCenter(fm.getPosition());map.setZoom(15);hilite(focus);listView()})}}
+ if(app.getAttribute("data-left"))ai(app.getAttribute("data-q"),app.getAttribute("data-left"));
+ /* 2D or 3D in the top right (owner, 2026-10-28): the same dots, clickable, and the same list. */
+ var btns=Array.prototype.slice.call(app.querySelectorAll("[data-mode]"));
  function setMode(m){btns.forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-mode")===m?"true":"false")});
   if(m==="2d"){if(box3)box3.hidden=true;return}
-  area.hidden=true;
   if(box3){box3.hidden=false;return}
-  box3=el("div","hx-map3d");document.getElementById("hx-map").appendChild(box3);
-  Promise.all([google.maps.importLibrary("maps3d"),google.maps.importLibrary("marker").catch(function(){return{}})]).then(function(libs){var L=libs[0],Pin=libs[1].PinElement;
-   var c=map.getCenter();map3=new L.Map3DElement({center:{lat:c.lat(),lng:c.lng(),altitude:0},range:Math.max(1500,Math.min(60000,40000/Math.pow(2,map.getZoom()-10))),tilt:62,heading:20,mode:"HYBRID"});
-   box3.appendChild(map3);
-   (lastPins||pins).forEach(function(p){var mk=new L.Marker3DInteractiveElement({position:{lat:p.lat,lng:p.lng,altitude:0},altitudeMode:L.AltitudeMode.CLAMP_TO_GROUND,title:p.price+", "+p.addr});
-    if(Pin){try{mk.append(new Pin({background:"#1a73e8",borderColor:"#ffffff",glyphColor:"#ffffff",scale:.7}))}catch(x){}}
-    mk.addEventListener("gmp-click",function(){popup(p)});map3.append(mk);marks3.push(mk)});
-  }).catch(function(){box3.textContent="The 3D map could not load here. The 2D map still works.";box3.className="hx-map3d hx-map3d-off"})}
+  box3=el("div","hx-map3d");document.getElementById("hx-map").insertBefore(box3,document.getElementById("hx-map").firstChild);
+  Promise.all([google.maps.importLibrary("maps3d"),google.maps.importLibrary("marker").catch(function(){return{}})]).then(function(libs){L3=libs[0];Pin3=libs[1].PinElement;
+   var c=map.getCenter();map3=new L3.Map3DElement({center:{lat:c.lat(),lng:c.lng(),altitude:0},range:Math.max(1500,Math.min(60000,40000/Math.pow(2,map.getZoom()-10))),tilt:62,heading:20,mode:"HYBRID"});
+   box3.appendChild(map3);dots3()}).catch(function(){box3.textContent="The 3D map could not load here. The 2D map still works.";box3.className="hx-map3d hx-map3d-off"})}
  btns.forEach(function(b){b.addEventListener("click",function(){setMode(b.getAttribute("data-mode"))})});
  if(app.getAttribute("data-view")==="3d")setMode("3d");
-}).catch(function(){note.hidden=false;note.textContent="The map could not load. The list of homes is on the right."});
+}).catch(function(){note.hidden=false;note.textContent="The map could not load. Every home is in the list.";render(all)});
+function dots3(){if(!map3||!L3)return;marks3.forEach(function(m){m.remove()});marks3=[];
+ all.forEach(function(p){var mk=new L3.Marker3DInteractiveElement({position:{lat:p.lat,lng:p.lng,altitude:0},altitudeMode:L3.AltitudeMode.CLAMP_TO_GROUND,title:p.price+", "+p.addr});
+  if(Pin3){try{mk.append(new Pin3({background:"#1a73e8",borderColor:"#ffffff",glyphColor:"#ffffff",scale:.7}))}catch(x){}}
+  mk.addEventListener("gmp-click",function(){tap(p)});map3.append(mk);marks3.push(mk)})}
 })();</script>`;
