@@ -158,6 +158,7 @@ function ltrFindArea(zip, city) {
   return null;
 }
 function ltrGood(key) {
+  if (_ltrCommercial) return key === 'dscr' ? 'Lenders on commercial property often ask 1.25 or more.' : '';
   const a = _ltrArea, $ = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
   const cheap = a ? 'a rental in the cheaper third of ' + a[0] + ' homes' : '';
   const inA = a ? 'In ' + a[0] + ', a rental in the cheaper third of homes' : '';
@@ -530,6 +531,8 @@ async function runLtrAnalysis() {
   // One run at a time: a double click never starts two analyses.
   if (_ltrRunning) return;
   _ltrRunning = true;
+  // The booking popup never opens while the analyzer works or shows its numbers (footer, owner 2026-10-28).
+  window.c3Busy = true;
   try { await ltrRun(); } finally { _ltrRunning = false; if (_ltrFinCancel) { _ltrFinCancel(); _ltrFinCancel = null; } }
 }
 async function ltrRun() {
@@ -542,6 +545,7 @@ async function ltrRun() {
   const downPct= isCash ? null : document.getElementById('ltr-down').value;
   const rate   = isCash ? null : document.getElementById('ltr-rate').value;
   const term   = isCash ? null : document.getElementById('ltr-term').value;
+  let use = (document.getElementById('ltr-use') || {}).value || 'home';
   // An MLS number: the listing gives the address.
   if (/^\d{5,9}$/.test(typed)) {
     const f = (_ltrMls && String(_ltrMls.mlsNumber) === typed) ? _ltrMls : await ltrMlsLookup('mls=' + typed);
@@ -608,6 +612,12 @@ async function ltrRun() {
       if (!baths && mls.baths) baths = mls.baths;
       if (!sqft && mls.sqft) sqft = mls.sqft;
     }
+    // A commercial listing is analyzed as one, whatever the box says (owner, 2026-10-28: offices,
+    // warehouses, stores and other business property).
+    if (use === 'home' && mls && mls.type) use = ltrUseOf(mls.type);
+    const useBox = document.getElementById('ltr-use'); if (useBox) useBox.value = use;
+    const commercial = use !== 'home';
+    _ltrCommercial = commercial;
     const mlsFacts = mls ? (
       'MLS LISTING (authoritative, use exactly, do not re-estimate): ' + [
         mls.status ? mls.status : '',
@@ -669,7 +679,7 @@ async function ltrRun() {
     document.getElementById('ltr-loading-msg').textContent = 'Running investment analysis...';
     document.getElementById('ltr-loading-sub').textContent = 'Calculating all the numbers.';
 
-    const analysisPrompt = `LTR analyst. JSON only, start { end }.
+    const analysisPrompt = `${commercial ? 'Commercial real estate investment analyst' : 'LTR analyst'}. JSON only, start { end }.
 
 PROPERTY: ${fullAddr} | ${priceCtx} | ${finCtx}${isFixer?' | FIXER: '+(cond||'general'):''}
 ${knownFacts}
@@ -678,16 +688,16 @@ ${countyFacts}
 ${!hoaMo && mls && mls.hoaMonthly != null ? `HOA: $${mls.hoaMonthly}/mo from the MLS listing (use exactly)` : hoaCtx}
 ${mgmtCtx}
 ${permitCtx ? permitCtx.slice(0,320) : ''}
-RENT: ${beds||'?'}BR comps 2026: 1BR $1100-1600,2BR $1400-2100,3BR $1700-2600,4BR $2100-3400.
-EXP: Tax=0.82% of value (SC 6% investment assessment×Horry millage),Ins=$1500SFH/$3000condo/$5000ocean,Utils=$0.20/sqft/yr (e.g. 1200sqft=$240/yr=$20/mo),Maint=0.85%/yr,Vac=6%.
+${commercial ? LTR_COMMERCIAL(use, sqft) : `RENT: ${beds||'?'}BR comps 2026: 1BR $1100-1600,2BR $1400-2100,3BR $1700-2600,4BR $2100-3400.
+EXP: Tax=0.82% of value (SC 6% investment assessment×Horry millage),Ins=$1500SFH/$3000condo/$5000ocean,Utils=$0.20/sqft/yr (e.g. 1200sqft=$240/yr=$20/mo),Maint=0.85%/yr,Vac=6%.`}
 ${permitCtx ? 'Permit signals: generate GREEN flags for hospital/medical/retail/school growth, AMBER for new residential supply, RED for industrial or demolition near subject. Farther = less weight.' : ''}
 
-{"inferredPropertyType":"","inferredBeds":${beds||0},"inferredBaths":${baths||0},"inferredSqft":${sqft||0},"inferredYearBuilt":0,"inferredHOAMonthly":0,"inferredFloodZone":null,"inferredFeatures":[],"estimatedValue":0,"verdict":"one plain sentence","overview":"Your honest opinion of this home as a long-term rental in 2 short sentences, 40 words or fewer: whether it works, and the one number or fact that decides it. Describe the property, never people. No rates or loan terms.","dealRating":"good|ok|tough","estRentMonthly":0,"grossRentAnnual":0,"vacancyLoss":0,"effectiveGrossIncome":0,"propertyTaxAnnual":0,"insuranceAnnual":0,"utilitiesMonthly":0,"hoaAnnual":0,"managementFeeAnnual":0,"maintenanceAnnual":0,"totalExpensesAnnual":0,"noi":0,"capRate":0,"loanAmount":0,"monthlyMortgage":0,"annualDebtService":0,"dscr":${isCash?'null':0},"monthlyCashflow":0,"annualCashflow":0,"cashOnCashReturn":0,"totalCashInvested":0,"estimatedAppreciationPct":0,"estimatedAppreciationDollar1yr":0,"estimatedAppreciationDollar5yr":0,"arv":${isFixer?0:'null'},"rehabBudgetLow":${isFixer?0:'null'},"rehabBudgetHigh":${isFixer?0:'null'},"rehabNarrative":${isFixer?'""':'null'},"totalProjectCost":${isFixer?0:'null'},"potentialEquityGain":${isFixer?0:'null'},"flags":[{"type":"green|amber|red","text":"one plain sentence"}]}
+{"inferredPropertyType":"","commercialUse":"","rentPerSqftYear":0,"leaseType":"","vacancyPct":0,"inferredBeds":${beds||0},"inferredBaths":${baths||0},"inferredSqft":${sqft||0},"inferredYearBuilt":0,"inferredHOAMonthly":0,"inferredFloodZone":null,"inferredFeatures":[],"estimatedValue":0,"verdict":"one plain sentence","overview":"Your honest opinion of this ${commercial ? 'property as a commercial investment' : 'home as a long-term rental'} in 2 short sentences, 40 words or fewer: whether it works, and the one number or fact that decides it. Describe the property, never people. No rates or loan terms.","dealRating":"good|ok|tough","estRentMonthly":0,"grossRentAnnual":0,"vacancyLoss":0,"effectiveGrossIncome":0,"propertyTaxAnnual":0,"insuranceAnnual":0,"utilitiesMonthly":0,"hoaAnnual":0,"managementFeeAnnual":0,"maintenanceAnnual":0,"totalExpensesAnnual":0,"noi":0,"capRate":0,"loanAmount":0,"monthlyMortgage":0,"annualDebtService":0,"dscr":${isCash?'null':0},"monthlyCashflow":0,"annualCashflow":0,"cashOnCashReturn":0,"totalCashInvested":0,"estimatedAppreciationPct":0,"estimatedAppreciationDollar1yr":0,"estimatedAppreciationDollar5yr":0,"arv":${isFixer?0:'null'},"rehabBudgetLow":${isFixer?0:'null'},"rehabBudgetHigh":${isFixer?0:'null'},"rehabNarrative":${isFixer?'""':'null'},"totalProjectCost":${isFixer?0:'null'},"potentialEquityGain":${isFixer?0:'null'},"flags":[{"type":"green|amber|red","text":"one plain sentence"}]}
 FLAGS: 5 to 7 insights, each ONE plain sentence of 30 words or fewer, each a different point, none repeating the overview. Pick from: the rent against what homes like it rent for here; the price against the asking price or recent sales; property tax and insurance; flood zone or storm exposure when it applies; the HOA, its fee and its rules on rentals; building permits nearby (growth, or new supply competing for tenants); tenant demand and resale for this size and type of home; its age and what that means for upkeep. green helps the investment, amber is worth checking, red hurts it. Describe the property, never people. No rates or loan terms.`;
 
     const analysisRaw = await callProxy({
       model: 'claude-haiku-5-5', max_tokens: 1200,
-      cache_key: ['analysis5', fullAddr, beds||'', baths||'', sqft||'', isFixer ? (cond||'fixer') : '', mls ? 'mls' + mls.mlsNumber + '-' + (mls.listPrice||'') + '-' + mls.tier : ''].join('|'),
+      cache_key: ['analysis5', fullAddr, commercial ? 'com-' + use : '', beds||'', baths||'', sqft||'', isFixer ? (cond||'fixer') : '', mls ? 'mls' + mls.mlsNumber + '-' + (mls.listPrice||'') + '-' + mls.tier : ''].join('|'),
       messages: [{ role: 'user', content: analysisPrompt }]
     });
 
@@ -730,14 +740,16 @@ FLAGS: 5 to 7 insights, each ONE plain sentence of 30 words or fewer, each a dif
       if (fin.cash) { isCash = true; document.getElementById('ltr-is-cash').checked = true; toggleLtrCash(); }
       else { set('ltr-down', fin.down); set('ltr-rate', fin.rate); set('ltr-term', fin.term); }
     }
-    _ltrArea = ltrFindArea(mls && mls.zip || zip || (/\b(29\d{3})\b/.exec(fullAddr) || [])[1], mls && mls.city || city);
+    _ltrArea = commercial ? null : ltrFindArea(mls && mls.zip || zip || (/\b(29\d{3})\b/.exec(fullAddr) || [])[1], mls && mls.city || city);
     ltrRenderResults(d, fullAddr, isFixer, isCash);
-    ltrSimilar(coords, beds, mls);
+    // Homes for sale are no comparison for a store or a warehouse.
+    if (commercial) { const sb = document.getElementById('ltr-similar'); if (sb) sb.innerHTML = ''; } else ltrSimilar(coords, beds, mls);
     ltrShowRepairs(await repairs, isFixer);
 
   } catch(err) {
     document.getElementById('ltr-loading').style.display = 'none';
     document.getElementById('ltr-form').style.display = 'block';
+    window.c3Busy = false;
     ltrShowError('Analysis failed: ' + err.message + '. Please try again.');
   }
 }
@@ -796,6 +808,29 @@ function ltrShowRepairs(r, asked) {
 // narrative mentioning a protected class or family status is dropped rather than
 // published under the brokerage's license.
 const FH_BLOCK = /\b(famil(y|ies)|children|kids|child|singles?|couples?|retirees?|elderly|seniors?|young|old(er)?\s+(people|folks|residents)|race|racial|ethnic|religio(n|us)|christian|jewish|muslim|church|disab(led|ility)|handicap|nationality|immigrant|student body|gender|male|female)\b/i;
+let _ltrCommercial = false;
+/** The kind of commercial property an MLS type names, or 'home'. */
+function ltrUseOf(type) {
+  const t = String(type || '').toLowerCase();
+  if (/office|medical/.test(t)) return 'office';
+  if (/retail|store|shop/.test(t)) return 'retail';
+  if (/warehouse|industrial|flex|manufactur|storage/.test(t)) return 'warehouse';
+  if (/restaurant|food|bar/.test(t)) return 'restaurant';
+  if (/commercial|business|mixed|hotel|motel|church|special purpose|investment/.test(t)) return 'business';
+  return 'home';
+}
+// How a commercial property is figured: rent by the square foot and the lease type, not by bedrooms.
+function LTR_COMMERCIAL(use, sqft) {
+  const word = { office: 'office', retail: 'retail store', warehouse: 'warehouse or industrial building', restaurant: 'restaurant', business: 'business property' }[use] || 'commercial property';
+  return `COMMERCIAL: analyze it as a ${word} on the Grand Strand, never as a home.${sqft ? ' Building ' + sqft + ' sq ft.' : ''}
+RENT: estimate market rent per square foot per year for this use, size, condition and location (traffic, frontage, parking, access); rentPerSqftYear = that; estRentMonthly = rentPerSqftYear x building sq ft / 12. If the listing says it is leased, or gives rent, NOI or a cap rate, use those and say so in a flag.
+LEASE: leaseType = the usual lease for this use here: NNN (tenant pays tax, insurance and upkeep), modified gross or gross. Under NNN set the owner's costs to what the tenant does not pay: management about 4-6% of rent, reserves for roof, structure and parking. Under gross the owner pays tax, insurance and upkeep.
+VACANCY: vacancyPct = expected vacancy and downtime between tenants for this use (commercial space takes longer to lease than a home); usually 8-12 unless leased.
+VALUE: estimatedValue from commercial sales and income (rent less costs, divided by a cap rate for this use), never from home prices.
+EXP: Tax = SC 6% assessment x Horry millage, about 0.82% of value (the county figure wins). Insurance for a commercial building of this size and use.
+FLAGS for commercial: lease type and who pays what; leased or vacant and tenant quality of the space (describe the space, never people); zoning and permitted uses; parking, signage, access and traffic; building age, roof and HVAC; environmental risk for warehouses, auto, gas or dry cleaning uses; demand for this use nearby; ADA and fire code upgrades a new tenant may need.`;
+}
+
 function ltrSafeNarrative(text) {
   const t = String(text || '');
   if (!t) return '';
@@ -817,6 +852,13 @@ function ltrRenderResults(d, address, isFixer, isCash) {
     if (!src) { src = document.createElement('p'); src.id = 'ltr-r-mls'; src.style.cssText = 'margin:.3rem 0 0;font-size:.78rem;color:var(--slate,#5c6b78)'; document.getElementById('ltr-r-address').insertAdjacentElement('afterend', src); }
     src.textContent = 'MLS #' + _ltrMls.mlsNumber + ', listed by ' + (_ltrMls.listingFirm || 'the listing brokerage') + '.';
   } else if (src) { src.remove(); }
+  // A commercial property says what it was figured as: its use, rent by the square foot and the lease.
+  let com = document.getElementById('ltr-r-com');
+  if (_ltrCommercial) {
+    if (!com) { com = document.createElement('p'); com.id = 'ltr-r-com'; com.style.cssText = 'margin:.35rem 0 0;font-size:.85rem;color:rgba(244,239,232,.85)'; document.getElementById('ltr-r-address').insertAdjacentElement('afterend', com); }
+    const psf = d.rentPerSqftYear > 0 ? ' Market rent about $' + (Math.round(d.rentPerSqftYear * 100) / 100) + ' a square foot a year' : '';
+    com.textContent = 'Figured as ' + String(d.commercialUse || 'commercial property').slice(0, 60) + '.' + psf + (d.leaseType ? ', usually ' + String(d.leaseType).slice(0, 40) + '.' : psf ? '.' : '');
+  } else if (com) com.remove();
   const verdictEl = document.getElementById('ltr-r-verdict');
   if (verdictEl) verdictEl.textContent = ltrSafeNarrative(d.overview || d.verdict || '') || ltrSafeNarrative(d.verdict || '');
   document.getElementById('ltr-r-value').textContent = ltrFmt(d.estimatedValue);
@@ -846,7 +888,8 @@ function ltrRenderResults(d, address, isFixer, isCash) {
       cash: isCash, priceLabel: d.valueFrom === 'asking' ? 'Asking price' : 'Price', price: priceVal, rent: d.estRentMonthly || '',
       down: downVal >= 0 ? downVal : '', rate: rateVal >= 0 ? rateVal : '', term: document.getElementById('ltr-term')?.value || '30',
       hoa: document.getElementById('ltr-hoa')?.value || Math.round((d.hoaAnnual||0)/12), ins: d.insuranceAnnual || 1800,
-      rehab: d.rehabBudgetHigh || 0, vac: 0,
+      rehab: d.rehabBudgetHigh || 0, vac: _ltrCommercial ? (d.vacancyPct > 0 && d.vacancyPct < 40 ? d.vacancyPct : 10) : 0,
+      hoaLabel: _ltrCommercial ? 'Association or CAM a month' : 'HOA fee a month',
       mgmt: ltrNum('ltr-mgmt', 0) || Math.round(((d.managementFeeAnnual || 0) / ((d.estRentMonthly || 1) * 12)) * 100) || 0,
       ut: (d.utilitiesMonthly||0)>0 ? 'landlord' : 'tenant',
     });
@@ -888,7 +931,7 @@ function ltrPanel(p, v) {
     <div class="ltr-grid">
       ${box('price', v.priceLabel || 'Price', v.price, '$')}
       ${box('rent', 'Rent a month', v.rent, '$')}
-      ${box('hoa', 'HOA fee a month', v.hoa, '$')}
+      ${box('hoa', v.hoaLabel || 'HOA fee a month', v.hoa, '$')}
       ${box('insurance', 'Insurance a year', v.ins, '$')}
     </div>
     <div class="ltr-loanrow" id="${p}-loanrow"${v.cash ? ' hidden' : ''}>
@@ -911,7 +954,7 @@ function ltrPanel(p, v) {
 // What one scenario's boxes hold right now, to start the second from.
 function ltrPanelValues(p) {
   const g = function (k) { const e = document.getElementById(p + '-' + k); return e ? e.value : ''; };
-  return { cash: _ltrPayOf[p], priceLabel: 'Price', price: g('price'), rent: g('rent'), down: g('down'), rate: g('rate'), term: g('term') || '30',
+  return { cash: _ltrPayOf[p], priceLabel: 'Price', hoaLabel: _ltrCommercial ? 'Association or CAM a month' : 'HOA fee a month', price: g('price'), rent: g('rent'), down: g('down'), rate: g('rate'), term: g('term') || '30',
            hoa: g('hoa'), ins: g('insurance'), rehab: g('rehab'), vac: g('vacancy'), mgmt: g('mgmt'), ut: g('utilities') || 'tenant' };
 }
 
@@ -1297,6 +1340,7 @@ function resetLtr() {
 }
 
 function ltrDoReset() {
+  window.c3Busy = false;
   document.getElementById('ltr-results').style.display = 'none';
   document.getElementById('ltr-form').style.display = 'block';
   document.getElementById('ltr-arv-section').style.display = 'none';

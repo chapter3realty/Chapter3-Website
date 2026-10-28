@@ -485,6 +485,7 @@ async function mapPage(context, url, gate) {
 <div class="hx-mtop">${filterBar({ action: "/homes/map/", params: keep, features: catalogLoaded(), map: true })}<div class="hx-applied hx-mchips" id="hx-chips"${chips ? "" : " hidden"}>${chips}<a class="hx-clear" href="/homes/map/" data-x="">Clear all</a></div><p class="hx-ai-note" id="hx-ai-note" hidden></p></div>
 <div class="hx-map-body hx-show-list">
 <div class="hx-mapbox" id="hx-mapbox"><div id="hx-map" class="hx-map" role="region" aria-label="Map of the homes"></div>
+<button type="button" class="hx-full-b" id="hx-full-b" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>Full map</button>
 <div class="hx-mode" role="group" aria-label="Map view"><button type="button" data-mode="2d" aria-pressed="${view === "2d" ? "true" : "false"}">2D</button><button type="button" data-mode="3d" aria-pressed="${view === "3d" ? "true" : "false"}">3D</button></div>
 <p id="hx-map-note" class="hx-map-note"${s.pins.length ? " hidden" : ""}>${s.pins.length ? "" : "No homes with a map location match this search. Change a filter or move the map."}</p></div>
 <aside class="hx-map-list" id="hx-map-list" aria-label="The homes"><div class="hx-list-h"><h1>${esc(`Homes for sale${where}`)}</h1><p class="hx-map-count" id="hx-map-count"><b>${esc(s.total.toLocaleString("en-US"))}</b> ${s.total === 1 ? "home" : "homes"}</p></div>

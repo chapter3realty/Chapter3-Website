@@ -123,7 +123,9 @@ html.hx-fit,html.hx-fit body,body:has(.hx-mapapp){overflow:hidden}
 .hx-mchips{display:flex;flex-wrap:wrap;gap:.35rem;margin:.45rem 0 0}.hx-mchips[hidden]{display:none}
 .hx-ai-note{margin:.35rem 0 0;font-size:.82rem;color:var(--slate,#5c6b78)}.hx-ai-note[hidden]{display:none}
 .hx-map-body{position:relative;flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) min(50vw,720px)}
-.hx-mapbox{position:relative;min-height:0;background:#e9e5dc}.hx-map{position:absolute;inset:0}
+.hx-mapbox{position:relative;min-height:0;background:#e9e5dc}
+/* The map is its own layer, so Google's tiles never cover the buttons on top of it. */
+.hx-map{position:absolute;inset:0;z-index:0}
 .hx-map-list{overflow:auto;min-height:0;padding:.9rem 1rem 0;background:#fff;border-left:1px solid rgba(28,32,40,.1)}
 .hx-list-h h1{font-family:var(--serif,Georgia,serif)!important;font-size:1.3rem!important;line-height:1.2!important;margin:0 0 .15rem!important}
 .hx-map-count{margin:0 0 .8rem;font-size:.9rem;color:var(--slate,#5c6b78)}.hx-map-count b{font-weight:800;color:var(--ink,#1c2028)}
@@ -136,12 +138,16 @@ html.hx-fit,html.hx-fit body,body:has(.hx-mapapp){overflow:hidden}
 .hx-map-note{position:absolute;left:1rem;right:1rem;bottom:1rem;z-index:5;max-width:30rem;margin:0 auto;padding:.8rem 1rem;border-radius:14px;background:rgba(255,255,255,.95);box-shadow:0 8px 24px rgba(28,32,40,.18);font-size:.9rem;text-align:center}
 .hx-map-note[hidden]{display:none}
 .hx-map-toggle{display:none}
-.hx-mode{position:absolute;top:.8rem;right:.8rem;z-index:6;display:flex;padding:3px;border-radius:999px;background:rgba(255,255,255,.96);box-shadow:0 6px 20px rgba(28,32,40,.2)}
+.hx-mode{position:absolute;top:.8rem;right:.8rem;z-index:10;display:flex;padding:3px;border-radius:999px;background:rgba(255,255,255,.96);box-shadow:0 6px 20px rgba(28,32,40,.2)}
 .hx-mode button{border:0;background:none;font:inherit;font-weight:700;font-size:.88rem;padding:.45rem .95rem;border-radius:999px;cursor:pointer;color:#1c2028}
 .hx-mode button[aria-pressed="true"]{background:#1c2028;color:#fff}
+.hx-full-b{position:absolute;top:3.9rem;right:.8rem;z-index:10;display:inline-flex;align-items:center;gap:.4rem;border:0;border-radius:999px;background:rgba(255,255,255,.96);box-shadow:0 6px 20px rgba(28,32,40,.2);font:inherit;font-weight:700;font-size:.85rem;padding:.5rem .9rem;cursor:pointer;color:#1c2028}
+.hx-full-b svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+.hx-map-body.hx-full{grid-template-columns:1fr}.hx-map-body.hx-full .hx-map-list{display:none}
+.hx-mapapp:fullscreen{top:0!important}
 .hx-map3d{position:absolute;inset:0;z-index:3;background:#1c2028}.hx-map3d[hidden]{display:none}.hx-map3d gmp-map-3d{width:100%;height:100%;display:block}
 .hx-map3d-off{display:flex;align-items:center;justify-content:center;color:#f4efe8;padding:2rem;text-align:center}
-.hx-mpop{position:absolute;left:50%;bottom:1rem;transform:translateX(-50%);z-index:7;width:min(23rem,calc(100% - 2rem));border-radius:16px;background:#fff;box-shadow:0 14px 40px rgba(28,32,40,.32)}
+.hx-mpop{position:absolute;left:50%;bottom:1rem;transform:translateX(-50%);z-index:11;width:min(23rem,calc(100% - 2rem));border-radius:16px;background:#fff;box-shadow:0 14px 40px rgba(28,32,40,.32)}
 main#main .hx-mpop .hx-c{margin:0;box-shadow:none;border-radius:16px 16px 0 0;transform:none}main#main .hx-mpop .hx-c-link{display:grid;grid-template-columns:8.5rem minmax(0,1fr)}
 main#main .hx-mpop .hx-c-photo{aspect-ratio:auto;height:100%;min-height:7.5rem}
 main#main .hx-mpop .hx-c-body{padding:.6rem .8rem;padding-right:2.4rem}main#main .hx-mpop .hx-c-price{font-size:1.15rem}main#main .hx-mpop .hx-c-facts{font-size:.85rem}main#main .hx-mpop .hx-c-addr{font-size:.85rem}main#main .hx-mpop .hx-c-firm{font-size:.72rem}main#main .hx-mpop .hx-c-tag{display:none}
@@ -156,7 +162,7 @@ main#main .hx-mpop .hx-c-body{padding:.6rem .8rem;padding-right:2.4rem}main#main
  .hx-map-list{position:absolute;inset:0;z-index:8;border:0;display:none}.hx-map-cards{grid-template-columns:1fr}
  .hx-map-body.hx-show-list .hx-map-list{display:block}
  .hx-map-toggle{display:inline-flex;align-items:center;gap:.4rem;position:absolute;left:50%;transform:translateX(-50%);bottom:1rem;z-index:9;border:0;border-radius:999px;background:#1c2028;color:#fff;font:inherit;font-weight:700;padding:.75rem 1.4rem;box-shadow:0 8px 24px rgba(28,32,40,.35);cursor:pointer}
- .hx-mpop{bottom:4.6rem}.hx-mpop.hx-mpop-top{bottom:auto;top:3.6rem}}
+ .hx-mpop{bottom:4.6rem}.hx-full-b{display:none}.hx-mpop.hx-mpop-top{bottom:auto;top:3.6rem}}
 </style>`;
 
 /**
@@ -195,6 +201,13 @@ function render(ps){while(list.firstChild)list.removeChild(list.firstChild);show
  if(total>ps.length){count.appendChild(document.createTextNode(", of "+total.toLocaleString("en-US")+" that match"))}
  more.hidden=!(total>all.length);if(!more.hidden)more.textContent="Zoom in or move the map to see more of the "+total.toLocaleString("en-US")+" homes."}
 /* The list and the map on a phone, like Zillow's app: the list first, a Map button. */
+/* Full-size map (owner, 2026-10-28): the list steps aside and the map fills the screen; again to come back. */
+var fb=document.getElementById("hx-full-b");
+function full(on){body.classList.toggle("hx-full",on);if(fb){fb.lastChild.textContent=on?"Show the list":"Full map";fb.setAttribute("aria-pressed",String(on))}
+ if(map)setTimeout(function(){google.maps.event.trigger(map,"resize");listView()},60)}
+if(fb)fb.addEventListener("click",function(){var on=!body.classList.contains("hx-full");full(on);
+ try{if(on&&app.requestFullscreen&&!document.fullscreenElement)app.requestFullscreen().catch(function(){});else if(!on&&document.fullscreenElement)document.exitFullscreen()}catch(e){}});
+document.addEventListener("fullscreenchange",function(){if(!document.fullscreenElement&&body.classList.contains("hx-full"))full(false)});
 if(tg)tg.addEventListener("click",function(){var showList=!body.classList.contains("hx-show-list");body.classList.toggle("hx-show-list",showList);tg.textContent=showList?"Map":"List";if(!showList&&map)google.maps.event.trigger(map,"resize")});
 /* Chips: each removes itself; Clear all starts over. */
 function drawChips(cs){while(chipsBox.firstChild)chipsBox.removeChild(chipsBox.firstChild);(cs||[]).forEach(function(c){var a=el("a","hx-applied-chip",c.t);a.href="/homes/map/"+(c.x?"?"+c.x:"");a.setAttribute("data-x",c.x);a.appendChild(el("span",null," ×"));chipsBox.appendChild(a)});

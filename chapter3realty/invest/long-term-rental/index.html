@@ -282,6 +282,7 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
 <div class="form-group"><label class="form-label" for="ltr-street">Address or MLS number</label><input class="form-input" id="ltr-street" placeholder="Start typing an address" type="text" autocomplete="off" enterkeyhint="go"/></div>
 <input id="ltr-city" type="hidden"/><input id="ltr-zip" type="hidden"/>
 <div class="form-group"><label class="form-label" for="ltr-price">Purchase price <span class="ltr-opt">optional</span></label><input class="form-input" id="ltr-price" placeholder="Blank uses the list price" type="text" inputmode="numeric"/></div>
+<div class="form-group"><label class="form-label" for="ltr-use">Kind of property</label><select class="form-select" id="ltr-use"><option value="home">A home to rent out</option><option value="office">Office</option><option value="retail">Retail store</option><option value="warehouse">Warehouse or industrial</option><option value="restaurant">Restaurant</option><option value="business">Other business property</option></select></div>
 <label class="ltr-check" for="ltr-is-cash"><input id="ltr-is-cash" onchange="toggleLtrCash()" type="checkbox"/><span>Paying cash</span></label>
 <label class="ltr-check" for="ltr-is-fixer" id="ltr-fixer-toggle"><input id="ltr-is-fixer" onchange="toggleLtrFixer()" type="checkbox"/><span>Needs work</span></label>
 <div id="ltr-fixer-fields" style="display:none"><div class="form-group"><label class="form-label" for="ltr-condition">What needs work? <span class="ltr-opt">optional</span></label><textarea class="form-input" id="ltr-condition" rows="2" maxlength="300" placeholder="I look for items that need repaired"></textarea></div></div>
@@ -802,6 +803,9 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
   }
 
   function open() {
+    /* Never while the rental analyzer is working or showing its results (owner, 2026-10-28):
+       window.c3Busy is set by the analyzer. Not marked seen, so a later page may still show it. */
+    if (window.c3Busy) return;
     pop = document.getElementById('c3-pop');
     if (!pop) return;
     /* never stack on top of another dialog */
@@ -1049,7 +1053,7 @@ if (GOOGLE_MAPS_KEY !== 'YOUR_GOOGLE_MAPS_KEY') {
 }
 </script>
 
-<script src="/assets/s.c61c21aa71.js"></script>
+<script src="/assets/s.9e94100995.js"></script>
 
 <!-- ══════════════════════════════════════
      DYNAMIC LAYER v2 ELEMENTS

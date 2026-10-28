@@ -231,6 +231,16 @@ export const STYLE = `<style>
 button.hx-heart{border-radius:999px}
 /* Every photo has a fixed box before it loads: a photo with no size counts as in view, and a gallery of
    33 then asked the MLS for all 33 at once, past its limit of 240 a minute for every visitor (2026-10-28). */
+.hx-lb{position:fixed;inset:0;z-index:2147483000;background:#0c0e12;display:flex;align-items:center;justify-content:center}
+.hx-lb[hidden]{display:none}html.hx-lb-on{overflow:hidden}
+.hx-lb-img{max-width:100vw;max-height:calc(100vh - 4rem);object-fit:contain;display:block;user-select:none}
+.hx-lb button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;cursor:pointer;font:inherit;line-height:1;border-radius:999px}
+.hx-lb button:hover,.hx-lb button:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.hx-lb-x{top:1rem;right:1rem;width:3rem;height:3rem;font-size:2rem}
+.hx-lb-p,.hx-lb-n{top:50%;transform:translateY(-50%);width:3.4rem;height:3.4rem;font-size:2.6rem}
+.hx-lb-p{left:1rem}.hx-lb-n{right:1rem}
+.hx-lb-c{position:absolute;bottom:1rem;left:0;right:0;margin:0;pointer-events:none;text-align:center;color:rgba(255,255,255,.85);font-size:.95rem}
+@media (max-width:640px){.hx-lb-p,.hx-lb-n{width:2.8rem;height:2.8rem;font-size:2rem;top:auto;bottom:.6rem;transform:none}.hx-lb-p{left:.6rem}.hx-lb-n{right:.6rem}}
 .hx-keys{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:.6rem;margin:0 0 1.4rem}
 .hx-key{padding:.85rem 1rem;border-radius:14px;background:#fff;border:1px solid var(--rule,#e6dfd3)}
 .hx-key span{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate,#5c6b78);font-weight:700}
@@ -409,6 +419,8 @@ var signed=document.body.getAttribute("data-hx-signed")==="1";
 /* A listing photo that fails (the MLS photo server allows 240 a minute for every visitor together) is
    asked for once more a minute later, when its count starts over; until then a calm panel shows. */
 document.addEventListener("error",function(e){var im=e.target;if(!im||im.tagName!=="IMG"||(im.src.indexOf("https://api.cotality.com/")!==0&&im.src.indexOf("/homes/p/")<0))return;
+ /* Our copy failed: load the photo from the MLS at once. */
+ if(im.src.indexOf("/homes/p/")>=0){var q=im.src.split("u=")[1];if(q){im.src=decodeURIComponent(q.split("&")[0]);return}}
  var box=im.parentNode;if(box&&box.classList&&!box.classList.contains("hx-gallery"))box.classList.add("hx-imgwait");
  if(im.getAttribute("data-retry"))return;im.setAttribute("data-retry","1");var u=im.src;setTimeout(function(){im.src=u+(u.indexOf("?")<0?"?r=1":"&r=1")},61000)},true);
 document.addEventListener("load",function(e){var im=e.target;if(im&&im.tagName==="IMG"&&im.parentNode&&im.parentNode.classList)im.parentNode.classList.remove("hx-imgwait")},true);
@@ -486,6 +498,28 @@ if(wd&&wf){var wt=wf.elements.termsAccepted,wb=wf.querySelector("button[type=sub
   post("/homes/api/claim",{k:wd.getAttribute("data-k"),termsAccepted:true,page:location.pathname}).then(function(j){if(j.ok){location.reload();return}
    if(j.error==="link_expired"){wd.close();return}err.textContent=j.message||"Please try again.";err.hidden=false;wb.disabled=false}).catch(function(){wd.close()})})}
 /* Hearts */
+/* The photos, full screen (owner, 2026-10-28): a click on any photo of a listing opens it; arrows,
+   a swipe or the keyboard move through them; Escape or the X closes. Signed-up visitors only: the
+   gallery is on the page only for them. */
+(function(){var g=$(".hx-gallery");if(!g)return;var ims=$$(".hx-gallery img");if(!ims.length)return;
+ var box=document.createElement("div");box.className="hx-lb";box.hidden=true;box.setAttribute("role","dialog");box.setAttribute("aria-modal","true");box.setAttribute("aria-label","Photos");
+ var pic=document.createElement("img");pic.className="hx-lb-img";pic.referrerPolicy="no-referrer";pic.decoding="async";
+ function btn(c,t,l){var b=document.createElement("button");b.type="button";b.className=c;b.textContent=t;b.setAttribute("aria-label",l);return b}
+ var x=btn("hx-lb-x","×","Close"),pv=btn("hx-lb-p","‹","Previous photo"),nx=btn("hx-lb-n","›","Next photo"),ct=document.createElement("p");ct.className="hx-lb-c";
+ box.appendChild(pic);box.appendChild(pv);box.appendChild(nx);box.appendChild(x);box.appendChild(ct);document.body.appendChild(box);
+ var at=0,back=null;function src(i){return ims[i].currentSrc||ims[i].src}
+ function show(i){at=(i+ims.length)%ims.length;pic.src=src(at);pic.alt=ims[at].alt||"";ct.textContent=(at+1)+" of "+ims.length;
+  [at+1,at-1].forEach(function(j){j=(j+ims.length)%ims.length;var k=new Image();k.referrerPolicy="no-referrer";k.src=src(j)})}
+ function open(i){back=document.activeElement;box.hidden=false;document.documentElement.classList.add("hx-lb-on");show(i);nx.focus()}
+ function close(){box.hidden=true;document.documentElement.classList.remove("hx-lb-on");if(back&&back.focus)back.focus()}
+ ims.forEach(function(im,i){im.style.cursor="zoom-in";im.addEventListener("click",function(){open(i)})});
+ $$(".hx-l-hero img,.hx-l-tile,.hx-l-count").forEach(function(el,i){el.addEventListener("click",function(e){e.preventDefault();var t=el.closest(".hx-l-tile");open(t?Array.prototype.indexOf.call($$(".hx-l-tile"),t)+1:0)})});
+ x.addEventListener("click",close);pv.addEventListener("click",function(){show(at-1)});nx.addEventListener("click",function(){show(at+1)});
+ box.addEventListener("click",function(e){if(e.target===box)close()});
+ document.addEventListener("keydown",function(e){if(box.hidden)return;if(e.key==="Escape")close();else if(e.key==="ArrowRight")show(at+1);else if(e.key==="ArrowLeft")show(at-1)});
+ var sx=null;box.addEventListener("touchstart",function(e){sx=e.touches[0].clientX},{passive:true});
+ box.addEventListener("touchend",function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>45)show(at+(dx<0?1:-1))});
+})();
 /* One listener for every heart, also those drawn later (the map page's list). Saved hearts need the free sign-up. */
 document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".hx-heart");if(!b||!b.getAttribute("data-mls"))return;e.preventDefault();e.stopPropagation();var m=b.getAttribute("data-mls");
  if(!signed){askSignup(m);return}var on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",on?"true":"false");

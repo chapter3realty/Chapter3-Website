@@ -465,6 +465,7 @@ check("sign-up: one full name box, email, phone, Continue to photos, Already hav
   check("analyzer script: a new address forgets the old home's facts; one run at a time; the cash-or-loan box closes on any end", js.includes("function ltrForgetHome()") && js.includes("if (_ltrRunning) return;") && js.includes("dlg.onclose = function () { finish({ cash: true }); };"));
   check("analyzer script: an address from a link is limited to address characters", js.includes("replace(/[^A-Za-z0-9 #.,'\\/-]/g, '')"));
   check("analyzer (owner, 2026-10-28): loan terms in a second row of the same box, a second scenario beside the first, what is good in the town under each ?, the similar row moves and drags, no MLS note on the form", js.includes('id="${p}-loanrow"') && js.includes("function ltrCompare(") && js.includes("const LTR_AREA = ") && js.includes("box.querySelectorAll('.hx-s-row').forEach(ltrRig)") && !js.includes("We filled these in for you") && !ltr.includes("Nothing else to type") && ltr.includes('id="ltr-sc-b"'));
+  check("analyzer (owner, 2026-10-28): offices, stores, warehouses and other business property are figured by the square foot and the lease, from the form or the MLS type; the booking popup waits while it works", js.includes("function LTR_COMMERCIAL(") && js.includes("function ltrUseOf(") && js.includes("window.c3Busy = true;") && ltr.includes('id="ltr-use"') && ltr.includes("if (window.c3Busy) return;"));
   check("analyzer: the repair check reads the listing's photos by link and is cached per listing; it shows only when it sees work", js.includes("type: 'image', source: { type: 'url', url: u }") && js.includes("cache_key: ['repair2'") && js.includes("if (!r || !r.needsWork) { box.hidden = true; return; }"));
   check("analyzer script: parses", (() => { try { new Function(js); return true; } catch { return false; } })());
   check("footer: address suggestions on every address box", home.includes("places.googleapis.com/v1/places:autocomplete") && home.includes("#ltr-street,#ldCtx,#rnAddr,#sbh-street"));
@@ -586,15 +587,24 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
   check("photos: our feed's photos load from our address, sized for the card or the listing page; any other link is left alone", photoUrl(T) === `/homes/p/card?u=${encodeURIComponent(T)}` && photoUrl(T, "big").startsWith("/homes/p/big?u=") && photoUrl(other) === other && photoUrl("https://photos.test/1.jpg") === "https://photos.test/1.jpg");
   const saved = globalThis.fetch; const asked = [];
   const ctx = (accept) => ({ request: new Request("https://chapter3realty.com/homes/p/card", { headers: { accept } }), waitUntil: () => {} });
-  globalThis.fetch = async (u, init) => { asked.push([String(u), init && init.cf ? init.cf.image : null]); return new Response("img", { status: 200, headers: { "content-type": "image/webp" } }); };
-  const ok = await photo(ctx("image/webp,*/*"), new URL(`https://chapter3realty.com/homes/p/card?u=${encodeURIComponent(T)}`), "card");
+  const fs = await import("node:fs");
+  const jpg = fs.readFileSync(new URL("./fixtures/listing-photo.jpg", import.meta.url));
+  globalThis.fetch = async (u) => { asked.push(String(u)); return new Response(jpg, { status: 200, headers: { "content-type": "image/jpeg" } }); };
+  const ok = await photo(ctx("*/*"), new URL(`https://chapter3realty.com/homes/p/card?u=${encodeURIComponent(T)}`), "card");
+  const okBytes = (await ok.clone().arrayBuffer()).byteLength;
   const no = await photo(ctx("*/*"), new URL(`https://chapter3realty.com/homes/p/card?u=${encodeURIComponent(other)}`), "card");
   globalThis.fetch = async () => new Response("quota", { status: 429, headers: { "content-type": "text/plain" } });
   const busy = await photo(ctx("*/*"), new URL(`https://chapter3realty.com/homes/p/big?u=${encodeURIComponent(T)}`), "big");
   globalThis.fetch = saved;
-  check("photos: a copy is resized (480 wide, webp when the browser takes it) and kept 30 days; a foreign link is refused; when the MLS says no, the browser is sent to the MLS and nothing is kept",
-    ok.status === 200 && /max-age=2592000/.test(ok.headers.get("cache-control")) && asked[0][1] && asked[0][1].width === 480 && asked[0][1].format === "webp"
+  check("photos: our resizer makes a card photo small (a drawn 1600 px test photo comes back smaller, as a JPEG) and it is kept 30 days; a foreign link is refused; when the MLS says no, the browser is sent to the MLS and nothing is kept",
+    ok.status === 200 && ok.headers.get("content-type") === "image/jpeg" && okBytes < jpg.length && /max-age=2592000/.test(ok.headers.get("cache-control"))
     && no.status === 404 && busy.status === 302 && busy.headers.get("location") === T && busy.headers.get("cache-control") === "no-store");
+}
+
+{
+  const { SCRIPT: S } = await import("../idx-lib/render.js");
+  const { MAP_SCRIPT: M, MAP_STYLE: MS } = await import("../idx-lib/map.js");
+  check("listing photos open full screen and page through (arrows, swipe, keys); the map has a Full map button and its 2D and 3D buttons sit above Google's layers", S.includes('box.className="hx-lb"') && S.includes('e.key==="ArrowRight"') && M.includes('getElementById("hx-full-b")') && MS.includes(".hx-map{position:absolute;inset:0;z-index:0}"));
 }
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");

@@ -706,6 +706,9 @@ function ldSubmit(){
   }
 
   function open() {
+    /* Never while the rental analyzer is working or showing its results (owner, 2026-10-28):
+       window.c3Busy is set by the analyzer. Not marked seen, so a later page may still show it. */
+    if (window.c3Busy) return;
     pop = document.getElementById('c3-pop');
     if (!pop) return;
     /* never stack on top of another dialog */
