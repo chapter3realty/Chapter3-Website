@@ -113,7 +113,21 @@ export function nearOf(near, miles) {
   return { near: `${lat.toFixed(6)},${lng.toFixed(6)}`, miles: String(Math.round(mi * 10) / 10) };
 }
 
+/* Nothing matches (owner, 2026-10-29: "a nice image ... saying im sorry and then show the closest options").
+   Our own drawing: a house under a magnifying glass. */
+export const SORRY_SVG = '<svg viewBox="0 0 160 120" aria-hidden="true" class="hx-sorry-i"><circle cx="80" cy="60" r="54" fill="#f4efe8"/><path d="M44 64 L72 40 L100 64 V92 H44 Z" fill="#fff" stroke="#1c2028" stroke-width="3" stroke-linejoin="round"/><rect x="64" y="72" width="14" height="20" rx="2" fill="#ede5d8" stroke="#1c2028" stroke-width="3"/><circle cx="104" cy="54" r="17" fill="rgba(196,120,58,.12)" stroke="#c4783a" stroke-width="5"/><path d="M116 66 L130 80" stroke="#c4783a" stroke-width="7" stroke-linecap="round"/><path d="M97 50 q7 -6 14 0" fill="none" stroke="#91592b" stroke-width="2.5" stroke-linecap="round"/></svg>';
+const SORRY_STYLE = `.hx-sorry{display:flex;gap:1rem;align-items:center;margin:.2rem 0 1rem;padding:1rem 1.1rem;border-radius:18px;background:#fff;border:1px solid rgba(196,120,58,.35);box-shadow:0 8px 24px rgba(28,32,40,.08)}.hx-sorry[hidden]{display:none}.hx-sorry-i{flex:none;width:96px;height:72px}.hx-sorry h2{margin:0 0 .25rem;font-family:var(--serif,Georgia,serif);font-size:1.2rem;color:var(--ink,#1c2028)}.hx-sorry p{margin:0;font-size:.92rem;line-height:1.45;color:var(--slate,#5c6b78)}`;
+const escS = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+/** The sorry box above the list: closest is the server's { dropped, total } or null; total is the exact count. */
+export function sorryHtml(closest, total) {
+  if (total > 0) return '<div class="hx-sorry" id="hx-sorry" hidden></div>';
+  const why = closest ? (closest.dropped && closest.dropped.length ? `These are the closest homes, without ${escS(closest.dropped.join(", "))}.` : "These are the closest homes.") : "Try fewer filters, or tell the AI search what matters most.";
+  return `<div class="hx-sorry" id="hx-sorry">${SORRY_SVG}<div><h2>I'm sorry, no homes match all of that.</h2><p>${why}</p></div></div>`;
+}
+
 export const MAP_STYLE = `<style>
+${SORRY_STYLE}
+.hx-ring-ctl{position:absolute;left:50%;top:.8rem;transform:translateX(-50%);z-index:6;display:flex;align-items:center;gap:.35rem;padding:.3rem .4rem;border-radius:999px;background:rgba(255,255,255,.96);box-shadow:0 6px 20px rgba(28,32,40,.2);font-size:.85rem;font-weight:700;color:#1c2028}.hx-ring-ctl[hidden]{display:none}.hx-ring-ctl button{width:2rem;height:2rem;border:0;border-radius:999px;background:#f4efe8;font:inherit;font-size:1.1rem;line-height:1;cursor:pointer;color:#1c2028}.hx-ring-ctl button:hover{background:rgba(196,120,58,.18)}.hx-ring-ctl span{min-width:4.6rem;text-align:center}
 /* The map page fills the screen under our header (owner, 2026-10-28): no footer to scroll into. */
 html.hx-fit,html.hx-fit body,body:has(.hx-mapapp){overflow:hidden}
 #hx-root[data-wide]{max-width:none!important;width:100%!important;padding:0!important;margin:0!important}
@@ -197,6 +211,9 @@ function card(p,withHeart){var a=el("article","hx-c"),l=el("a","hx-c-link");l.hr
 var shown=[],drawn=0,sent=null,io=null;
 function more24(){shown.slice(drawn,drawn+24).forEach(function(p){list.appendChild(card(p,true))});drawn=Math.min(shown.length,drawn+24);if(sent)list.appendChild(sent)}
 if(window.IntersectionObserver){sent=el("div","hx-list-sent");io=new IntersectionObserver(function(es){if(es[0].isIntersecting&&drawn<shown.length)more24()},{root:document.getElementById("hx-map-list"),rootMargin:"600px"});io.observe(sent)}
+function sorry(c,exact){var b=document.getElementById("hx-sorry");if(!b)return;while(b.firstChild)b.removeChild(b.firstChild);if(exact>0){b.hidden=true;return}
+ b.insertAdjacentHTML("afterbegin",'${SORRY_SVG}');var d=el("div");d.appendChild(el("h2",null,"I'm sorry, no homes match all of that."));
+ d.appendChild(el("p",null,c?(c.dropped&&c.dropped.length?"These are the closest homes, without "+c.dropped.join(", ")+".":"These are the closest homes."):"Try fewer filters, or tell the AI search what matters most."));b.appendChild(d);b.hidden=false}
 function render(ps){while(list.firstChild)list.removeChild(list.firstChild);shown=ps;drawn=0;more24();if(!io){while(drawn<shown.length&&drawn<120)more24()}
  count.textContent="";count.appendChild(el("b",null,ps.length.toLocaleString("en-US")));count.appendChild(document.createTextNode(ps.length===1?" home in this area":" homes in this area"));
  if(total>ps.length){count.appendChild(document.createTextNode(", of "+total.toLocaleString("en-US")+" that match"))}
@@ -240,7 +257,7 @@ function msg(j){return j&&j.error==="stale"?"The listing search is being refresh
 function search(p,o){o=o||{};state=new URLSearchParams(p);var n=++seq;count.textContent="Searching...";
  return fetch("/homes/api/map?"+state.toString(),{credentials:"same-origin"}).then(function(r){return r.json()}).then(function(j){if(n!==seq)return;
   if(!j||!j.ok){count.textContent=msg(j);return}
-  searched=true;all=j.pins||[];total=j.total||0;state=new URLSearchParams(j.params||"");
+  searched=true;all=j.pins||[];total=j.closest?j.closest.total:(j.total||0);state=new URLSearchParams(j.params||"");sorry(j.closest,j.total||0);
   try{history.replaceState(null,"","/homes/map/"+(state.toString()?"?"+state.toString():""))}catch(e){}
   drawChips(j.chips);pills(j.labels);syncForm(state);
   var h1=app.querySelector(".hx-list-h h1");if(h1)h1.textContent="Homes for sale"+(state.get("city")?" in "+state.get("city"):state.get("subdivision")?" in "+state.get("subdivision"):state.get("near")?" in this area":" on the Grand Strand");
@@ -255,29 +272,44 @@ var ALLOW=["min","max","beds","baths","type","city","sqft","yearMin","yearMax","
    what the buyer wants, and why (their goal: rental income, a boat, retiring, work, a flip), and turns it
    into filters from the CRM's own list (owner, 2026-10-29). It says in one line what it understood. It never
    filters on who a person is (fair housing). The answer for one sentence is saved (cache_key). */
-function wantsAi(q,left){return!!(q&&(left||String(q).trim().split(/ +/).length>=5))}
+/* The AI keeps a short memory of this visit's searches (sessionStorage), so "cheaper" or "what about Conway"
+   changes the last search, and a different request starts over (owner, 2026-10-29). */
+function hist(){try{return JSON.parse(sessionStorage.getItem("hx_ai_hist")||"[]")}catch(e){return[]}}
+function remember(q,params){try{var h=hist();h.push({q:String(q).slice(0,200),f:String(params).slice(0,300)});sessionStorage.setItem("hx_ai_hist",JSON.stringify(h.slice(-4)))}catch(e){}}
+function wantsAi(q,left){return!!(q&&(left||String(q).trim().split(/ +/).length>=4||hist().length))}
+var ASK_KEYS=["min","max","beds","baths","type","city","zip","subdivision","sqft","yearMin","yearMax","lotMin","hoaMax","garage","hoa","domMax","waterfront","sort"];
+/* Filters about renting the land itself or renting to own are used only when the buyer says so: a search
+   for "land" once came back as land leases (owner, 2026-10-29). */
+var ONLY_IF={land_lease:/lease|lot rent/i,lease_to_own:/lease|rent to own/i,has_rental_income:/rent|tenant|income/i};
 function ai(q,left){if(!q||!window.hxFeats)return;aiNote.hidden=false;aiNote.classList.add("hx-ai-on");aiNote.textContent="AI is reading what you want and why...";
+ var before=hist();
  window.hxFeats().then(function(j){if(!j||!j.ok||!j.groups){aiNote.hidden=true;return}var keys=[],names={};j.groups.forEach(function(g){g.items.forEach(function(it){keys.push(it.k);names[it.k]=it.l})});
-  var prompt="You are the home search for Chapter3 Realty on the Grand Strand, South Carolina. A buyer wrote: "+JSON.stringify(q)+". "+
-   "Filters already set from their words: "+JSON.stringify(state.toString())+". Words the simple reader could not use: "+JSON.stringify(left||"")+". "+
-   "Read what they want AND why they want it, and choose the filters that find the right homes for that goal. Examples of goals: rental income by the night means homes where short-term rentals are allowed; renting to tenants means long-term rentals allowed; a boat means a private dock, waterfront or a boat ramp nearby; retiring or no stairs means one level; golf means a golf community; the beach every day means walk to the beach; a job or a hospital means the nearest place key ending in _10mi; a flip or fixer means a distressed sale or an older house (yearMax 1999); room to spread out means a bigger lot; a tight budget means a max price. "+
-   "Never filter on who a person is or who lives nearby: age, children or family, race, religion, disability, sex, origin. Use their numbers when they give them. Leave out anything you are not sure of. JSON only, start { end }. "+
-   "Keys you may use: has (feature keys from this list only, at most 4, at most 2 ending in mi), min, max (dollars), beds, baths, type (house|condo|townhouse|multi|land|manufactured), city (Myrtle Beach|North Myrtle Beach|Surfside Beach|Garden City|Murrells Inlet|Pawleys Island|Little River|Conway|Longs|Loris|Aynor|Calabash), sqft, yearMin, yearMax, lotMin (acres), hoaMax, garage, hoa (0 for no HOA). "+
-   "Feature keys: "+keys.join(",")+". Answer like "+JSON.stringify({has:[],why:"Looking for ... because you want ...: one plain sentence, under 25 words, about the homes and the goal, never about the person"})+".";
-  return fetch("https://api-proxy.chapter3realty.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-haiku-5-5",max_tokens:350,cache_key:["search2",q,state.toString()].join("|"),messages:[{role:"user",content:prompt}]})})
+  var prompt="You are the home search for Chapter3 Realty on the Grand Strand, South Carolina. The buyer just wrote: "+JSON.stringify(q)+". "+
+   "Their earlier searches this visit, oldest first: "+JSON.stringify(before)+". The filters in force now: "+JSON.stringify(state.toString())+". Words the simple reader could not use: "+JSON.stringify(left||"")+". "+
+   "First decide the mode. refine: the new words change the last search (cheaper, bigger, add a pool, what about Conway, not in a flood zone). new: they ask for something different (a different kind of home, place or goal); then start over and ignore the old filters. "+
+   "Then read what they want AND why, and give the complete set of filters for the search to run. Goals: rental income by the night means short-term rentals allowed; renting to tenants means long-term rentals allowed; a boat means a private dock, waterfront or a boat ramp nearby; retiring or no stairs means one level; golf means a golf community; the beach every day means walk to the beach; a job or a hospital means the nearest place key ending in _10mi; a flip or fixer means a distressed sale or an older house (yearMax 1999); land to build on means type land; room to spread out means a bigger lot; a tight budget means a max price; just listed means domMax 14. "+
+   "Use not for what they want to avoid (not: flood_zone). land_lease means the land itself is rented (lot rent): never use it unless they say lease or lot rent. "+
+   "Never filter on who a person is or who lives nearby: age, children or family, race, religion, disability, sex, origin. Use their numbers when they give them. Leave out what you are not sure of. JSON only, start { end }. "+
+   "Keys: mode (new|refine), has and not (feature keys from this list only, at most 4 each, at most 2 ending in mi), remove (filter names to drop when refining), min, max (dollars), beds, baths, type (house|condo|townhouse|multi|land|manufactured), city (Myrtle Beach|North Myrtle Beach|Surfside Beach|Garden City|Murrells Inlet|Pawleys Island|Little River|Conway|Longs|Loris|Aynor|Calabash), zip, subdivision (a neighborhood name), sqft, yearMin, yearMax, lotMin (acres), hoaMax, garage, hoa (0 for no HOA), domMax (days listed), waterfront (1), sort (newest|price_asc|price_desc). "+
+   "Feature keys: "+keys.join(",")+". Answer like "+JSON.stringify({mode:"new",has:[],not:[],why:"Looking for ... because you want ...: one plain sentence, under 25 words, about the homes and the goal, never about the person"})+".";
+  return fetch("https://api-proxy.chapter3realty.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-haiku-5-5",max_tokens:400,cache_key:["search3",q,state.toString(),JSON.stringify(before)].join("|"),messages:[{role:"user",content:prompt}]})})
    .then(function(r){return r.json()}).then(function(d){var t=d&&d.content&&d.content.filter(function(b){return b.type==="text"}).pop();if(!t){aiNote.hidden=true;return}
-    var a=t.text.indexOf("{"),z=t.text.lastIndexOf("}");var o=JSON.parse(t.text.slice(a,z+1));var p=new URLSearchParams(state),added=0;
-    var has=(p.get("has")||"").split(",").filter(Boolean),dist=has.filter(function(k){return/mi$/.test(k)}).length;
-    (Array.isArray(o.has)?o.has:[]).slice(0,4).forEach(function(k){if(!names[k]||has.indexOf(k)>=0)return;if(/mi$/.test(k)){if(dist>=2)return;dist++}has.push(k);added++});if(has.length)p.set("has",has.join(","));
-    ALLOW.forEach(function(k){if(o[k]!=null&&o[k]!==""&&!p.get(k)){p.set(k,String(o[k]));added++}});
+    var a=t.text.indexOf("{"),z=t.text.lastIndexOf("}");var o=JSON.parse(t.text.slice(a,z+1));var fresh=o.mode==="new"&&before.length>0;
+    var p=fresh?new URLSearchParams():new URLSearchParams(state);if(fresh&&state.get("all"))p.set("all",state.get("all"));
+    (Array.isArray(o.remove)?o.remove:[]).forEach(function(k){if(ASK_KEYS.indexOf(k)>=0||k==="has"||k==="not")p.delete(k)});
+    function pick(list,cur){var out=(cur||"").split(",").filter(Boolean),dist=out.filter(function(k){return/mi$/.test(k)}).length;
+     (Array.isArray(list)?list:[]).slice(0,4).forEach(function(k){if(!names[k]||out.indexOf(k)>=0)return;if(ONLY_IF[k]&&!ONLY_IF[k].test(q))return;if(/mi$/.test(k)){if(dist>=2)return;dist++}out.push(k)});return out}
+    var has=pick(o.has,p.get("has")),not=pick(o.not,p.get("not")).filter(function(k){return has.indexOf(k)<0});
+    if(has.length)p.set("has",has.join(","));else p.delete("has");if(not.length)p.set("not",not.join(","));else p.delete("not");
+    ASK_KEYS.forEach(function(k){if(o[k]!=null&&o[k]!=="")p.set(k,String(o[k]))});
     var why=o.why?String(o.why).replace(/[<>]/g,"").slice(0,180):"";
-    if(!added){aiNote.textContent=why?"AI: "+why+" The filters above already match.":"We searched what we could read. Add a detail, or use the filters.";return}
-    aiNote.textContent="AI: "+(why?why+" ":"")+"Remove any filter you do not want.";
-    search(p,{fit:true,ai:false})})}).catch(function(){aiNote.hidden=true})}
+    if(p.toString()===state.toString()){remember(q,state);aiNote.textContent=why?"AI: "+why+" The filters above already match.":"We searched what we could read. Add a detail, or use the filters.";return}
+    remember(q,p);aiNote.textContent="AI: "+(why?why+" ":"")+(fresh?"A new search. ":"")+"Remove any filter you do not want.";
+    clearRing();search(p,{fit:true,ai:false})})}).catch(function(){aiNote.hidden=true})}
 function hilite(mls){hot=mls;marks.forEach(function(m){style(m,m.p.mls===mls)});marks3.forEach(function(m){if(m.pin)try{m.pin.background=m.p.mls===mls?"#c4783a":"#1a73e8"}catch(x){}});Array.prototype.forEach.call(list.children,function(c){c.classList.toggle("hx-hot",c.getAttribute("data-mls")===mls)})}
 function closePop(){if(pop)pop.remove();pop=null;popFor=null}
 /* The first click on a dot shows the home; a second click on the same dot opens it. */
-function tap(p){if(popFor===p.mls){location.href=p.url;return}
+function tap(p){if(popFor===p.mls){if(window.hxGo)window.hxGo();location.href=p.url;return}
  closePop();pop=el("div","hx-mpop");var x=el("button","hx-mpop-x","×");x.type="button";x.setAttribute("aria-label","Close");x.addEventListener("click",closePop);pop.appendChild(x);
  pop.appendChild(card(p,false));pop.appendChild(el("p","hx-mpop-go","Click the dot again, or the card, to open it."));
  /* The card never covers its own dot: a dot low on the map gets the card at the top. */
@@ -300,12 +332,23 @@ function draw(fit){if(!map)return;marks.forEach(function(m){m.setMap(null)});mar
    visitor can zoom in on a house (owner, 2026-10-29). A click on the map searches around that spot,
    about half the width of the view, and a brass ring shows the area searched. */
 var ring=null,tapped3=0;
-function clearRing(){if(ring){ring.setMap(null);ring=null}}
+function clearRing(){if(ring){ring.setMap(null);ring=null}if(ringCtl)ringCtl.hidden=true}
+/* The ring's size is the visitor's to change (owner, 2026-10-29): drag its edge or its middle on the map, or
+   use - and + above the map. Each change searches again, a moment after the visitor lets go. */
+var ringCtl=null,ringT=0,ringLat=0,ringLng=0,ringMi=1;
+function ringSearch(){var u=new URLSearchParams(state);["city","zip","subdivision","near","miles"].forEach(function(k){u.delete(k)});if(u.get("sort")==="nearest")u.delete("sort");
+ u.set("near",ringLat.toFixed(5)+","+ringLng.toFixed(5));u.set("miles",String(ringMi));if(ringCtl)ringCtl.querySelector("span").textContent=ringMi+" mi";search(u,{fit:false,ai:false,ring:true})}
+function ringControl(){if(ringCtl)return ringCtl;ringCtl=el("div","hx-ring-ctl");ringCtl.setAttribute("role","group");ringCtl.setAttribute("aria-label","Search area size");
+ var m=el("button",null,"-"),v=el("span",null,""),pl=el("button",null,"+"),x=el("button",null,"×");m.type=pl.type=x.type="button";m.setAttribute("aria-label","Smaller area");pl.setAttribute("aria-label","Bigger area");x.setAttribute("aria-label","Remove the area");
+ function size(f){ringMi=Math.min(25,Math.max(0.3,Math.round(ringMi*f*10)/10));if(ring)ring.setRadius(ringMi*1609);else ringSearch()}
+ m.addEventListener("click",function(){size(1/1.5)});pl.addEventListener("click",function(){size(1.5)});x.addEventListener("click",function(){clearRing();var u=new URLSearchParams(state);u.delete("near");u.delete("miles");search(u,{fit:true,ai:false})});
+ [m,v,pl,x].forEach(function(b){ringCtl.appendChild(b)});document.getElementById("hx-mapbox").appendChild(ringCtl);return ringCtl}
 function clickSearch(lat,lng){var d;if(in3d()){d=view3().mi*0.6}else{var c=map.getCenter(),b=map.getBounds();if(!b)return;var ne=b.getNorthEast();d=miles(c.lat(),c.lng(),ne.lat(),ne.lng())*0.45}
- d=Math.min(15,Math.max(0.5,Math.round(d*10)/10));
- if(map&&!in3d()){clearRing();ring=new google.maps.Circle({map:map,center:{lat:lat,lng:lng},radius:d*1609,strokeColor:"#c4783a",strokeOpacity:.95,strokeWeight:2,fillColor:"#c4783a",fillOpacity:.08,clickable:false})}
- var u=new URLSearchParams(state);["city","zip","subdivision","near","miles"].forEach(function(k){u.delete(k)});if(u.get("sort")==="nearest")u.delete("sort");
- u.set("near",lat.toFixed(5)+","+lng.toFixed(5));u.set("miles",String(d));search(u,{fit:false,ai:false,ring:true})}
+ ringLat=lat;ringLng=lng;ringMi=Math.min(15,Math.max(0.5,Math.round(d*10)/10));
+ if(map&&!in3d()){clearRing();ring=new google.maps.Circle({map:map,center:{lat:lat,lng:lng},radius:ringMi*1609,strokeColor:"#c4783a",strokeOpacity:.95,strokeWeight:2,fillColor:"#c4783a",fillOpacity:.08,clickable:false,editable:true,draggable:true});
+  var changed=function(){clearTimeout(ringT);ringT=setTimeout(function(){if(!ring)return;var c=ring.getCenter();ringLat=c.lat();ringLng=c.lng();ringMi=Math.min(25,Math.max(0.3,Math.round(ring.getRadius()/1609*10)/10));ringSearch()},500)};
+  if(ring.addListener){ring.addListener("radius_changed",changed);ring.addListener("center_changed",changed)}}
+ ringControl().hidden=false;ringSearch()}
 if(!key){render(all);return}
 (function(g){var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=function(){return h||(h=new Promise(function(f,n){a=m.createElement("script");e.set("libraries",Array.from(r)+"");for(k in g)e.set(k.replace(/[A-Z]/g,function(t){return"_"+t[0].toLowerCase()}),g[k]);e.set("callback",c+".maps."+q);a.src="https://maps.googleapis.com/maps/api/js?"+e;d[q]=f;a.onerror=function(){h=n(Error(p+" could not load."))};m.head.append(a)}))};d[l]?0:d[l]=function(f){var n=Array.prototype.slice.call(arguments,1);r.add(f);return u().then(function(){return d[l].apply(d,[f].concat(n))})}})({key:key,v:"beta"});
 google.maps.importLibrary("maps").then(function(lib){

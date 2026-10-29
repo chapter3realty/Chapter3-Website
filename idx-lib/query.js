@@ -9,6 +9,8 @@ import { PLACES } from "./places.js";
 export const CITIES = ["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Garden City", "Murrells Inlet", "Pawleys Island", "Little River", "Conway", "Longs", "Loris", "Aynor", "Calabash"];
 const ALIAS = { nmb: "North Myrtle Beach", "n myrtle beach": "North Myrtle Beach", "north myrtle": "North Myrtle Beach", surfside: "Surfside Beach", pawleys: "Pawleys Island", "murrells": "Murrells Inlet" };
 const TYPE_WORDS = [
+  /* Land to build on is land, though the sentence names a house (owner, 2026-10-29: "I want land to build a house on" found houses). */
+  [/\b(land|lots?|acreage)\b[a-z ]{0,40}\b(build|building)\b|\b(build|building)\b[a-z ]{0,40}\b(land|lots?|acreage)\b/, "land"],
   [/\b(single[- ]family|houses?)\b/, "house"],
   [/\b(condos?|condominiums?)\b/, "condo"],
   [/\b(town ?houses?|town ?homes?)\b/, "townhouse"],
@@ -152,7 +154,10 @@ export function readQuery(raw) {
   // Nothing else read: the words may be a neighborhood's name as the MLS writes it.
   const rest = t.replace(/\b(in|near|for sale|homes?|for|the|a|with|and|sale)\b/g, " ").replace(/\s+/g, " ").trim();
   // A sentence longer than a name is a description, for the AI, not a neighborhood.
-  if (!understood.length && !place && /^[a-z0-9 .,'&-]{3,60}$/.test(rest) && /[a-z]{3}/.test(rest) && rest.split(" ").length <= 3) { params.set("subdivision", rest); understood.push("subdivision"); }
+  /* A word that changes the last search ("cheaper", "bigger", "closer to the beach") is never a neighborhood's
+     name; the AI search reads it against the search before (owner, 2026-10-29). */
+  const CHANGE = /\b(cheaper|less|lower|more|bigger|larger|smaller|newer|older|nicer|closer|further|farther|instead|else|other|different|also|too|again|same|similar|like that|any|show|me|what about|how about)\b/;
+  if (!understood.length && !place && !CHANGE.test(rest) && /^[a-z0-9 .,'&-]{3,60}$/.test(rest) && /[a-z]{3}/.test(rest) && rest.split(" ").length <= 3) { params.set("subdivision", rest); understood.push("subdivision"); }
   if (/\b(cheapest|lowest price|least expensive)\b/.test(t)) params.set("sort", "price_asc");
   else if (/\b(most expensive|highest price|luxury)\b/.test(t)) params.set("sort", "price_desc");
   const left = t.replace(/\b(in|near|for sale|homes?|houses?|for|the|a|an|with|and|or|sale|to|of|my|i|want|looking|need|buy|some|that|is|on|at|by|best|good|nice|great|close|area|work|works|working|job|jobs|employer|employed|live|living|place|quiet|home|style|type|kind|really|very|please|show|find|me|we|our|family)\b/g, " ").replace(/[^a-z ]/g, " ").replace(/\s+/g, " ").trim();

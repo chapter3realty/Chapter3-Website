@@ -79,6 +79,7 @@ globalThis.fetch = async (input, init = {}) => {
   if (HANG) return new Promise((_, no) => init.signal && init.signal.addEventListener("abort", () => no(new Error("aborted"))));
   if (INVALID && auth) return J({ ok: false, error: "unauthorized", visitor: "invalid" }, 401);
   if (u.pathname === "/api/idx/listings") {
+    if ((u.searchParams.get("has") || "").includes("walk_to_beach") && u.searchParams.get("city") === "Loris") return J({ ok: true, tier, visitor: "none", meta: META, listings: [], total: 0 });
     const sub = u.searchParams.get("subdivision"), near = u.searchParams.get("near");
     const n = BIG ? 4041 : sub === "Tidewater" ? 2 : sub || near ? 14 : 30;
     const ls = Array.from({ length: Math.min(n, 48) }, (_, i) => mk(i + 48 * ((+u.searchParams.get("page") || 1) - 1), near ? { miles: 0.4 } : {}));
@@ -666,6 +667,16 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
   SIGNED_DOWN = false;
   check("CRM hiccup: one 502 is retried; two still fail; retry: false does not retry; a signed-in listing that fails shows the public copy, not 'back soon'",
     once.status === 200 && twice.status === 502 && noRetry.status === 502 && page.includes("101 Test St") && !page.includes("back soon"));
+}
+
+// Nothing matches (owner, 2026-10-29): the closest homes, with what was left out; the sorry box on the page.
+{
+  const j = JSON.parse(await (await run(homes, req("/homes/api/map?city=Loris&has=walk_to_beach"))).text());
+  const t = await (await run(homes, req("/homes/map/?city=Loris&has=walk_to_beach"))).text();
+  const r2 = readQuery("I want land to build a house on");
+  check("no match: the closest homes come back with what was left out, the page says sorry with its drawing; land to build a house on is land",
+    j.ok && j.total === 0 && j.closest && j.closest.total > 0 && j.pins.length >= 0 && j.closest.dropped.some((d) => /beach/i.test(d))
+    && t.includes("I'm sorry, no homes match all of that.") && t.includes("hx-sorry-i") && r2.params.get("type") === "land");
 }
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");

@@ -24,7 +24,7 @@ import { filterBar, labels as filterLabels } from "../../idx-lib/filters.js";
 import { postFilter, rankHomes } from "../../idx-lib/feeds.js";
 import { photo, photoUrl, warm } from "../../idx-lib/photo.js";
 import { DEALS_SCRIPT, FLIP_DEFAULTS, findFlips, flipSettings } from "../../idx-lib/deals.js";
-import { MAP_SCRIPT, MAP_STYLE, geocode, mapsKey, nearOf, pinOf, withPoints } from "../../idx-lib/map.js";
+import { MAP_SCRIPT, MAP_STYLE, geocode, mapsKey, nearOf, pinOf, sorryHtml, withPoints } from "../../idx-lib/map.js";
 import { SMS_CONSENT_TEXT, TERMS_PARAGRAPHS, TERMS_TITLE, TERMS_VERSION, termsText } from "../../idx-lib/terms.js";
 import {
   ICONS, PHOTO_HINT, STRIP_STYLE, STYLE, SCRIPT, addressLine, card, dayLong, disclaimer, esc, factsLine, grid, headlinePrice, heartButton,
@@ -231,6 +231,11 @@ const signupPrompt = (what) => `<div class="hx-signup-cta"><p><strong>${esc(what
 const signedBar = (tier) => (tier === "registered" ? `<div class="hx-small">You are signed up and see full listing details. <form method="post" action="/homes/api/signout" class="hx-signout"><button type="submit">Sign out</button></form></div>` : "");
 
 /** The shell with the page drawn in. */
+/* For a visitor who is not signed in, the browser starts loading a home's page while the pointer rests on
+   its link (owner, 2026-10-29: "clicks seem to take a while"). Those pages are the same for everyone and
+   cached; a signed-in visitor's are not, and each view is recorded, so they are never fetched ahead. */
+const PREFETCH = `<script type="speculationrules">${JSON.stringify({ prefetch: [{ where: { and: [{ href_matches: "/homes/*" }, { not: { href_matches: "/homes/api/*" } }, { not: { href_matches: "/homes/p/*" } }] }, eagerness: "moderate" }] })}</script>`;
+
 async function page(context, gate, o) {
   const { env, request } = context;
   const shell = await (await env.ASSETS.fetch(new Request(new URL("/homes-shell/", request.url)))).text();
@@ -246,12 +251,14 @@ async function page(context, gate, o) {
     .replace(/(<meta property="og:title" content=")[^"]*/, (_, a) => a + esc(full))
     .replace(/(<meta property="og:description" content=")[^"]*/, (_, a) => a + esc(o.description))
     .replace(/(<meta property="og:url" content=")[^"]*/, (_, a) => a + esc(o.canonical))
-    .replace("</head>", () => `${PHOTO_HINT}${STYLE}${o.extraHead || ""}${ld}</head>`)
+    .replace("</head>", () => `${PHOTO_HINT}${STYLE}${o.extraHead || ""}${ld}${signed ? "" : PREFETCH}</head>`)
     .replace(/<body([^>]*)>/, (mm, a) => `<body${a} data-hx-signed="${signed ? "1" : "0"}">`)
     .replace(/<div class="wrap hx-wrap" id="hx-root">[\s\S]*?<\/div>/, () => `<div class="wrap hx-wrap" id="hx-root"${o.rootAttrs || ""}>${o.body}</div>`)
     .replace("</body>", () => `${o.extraBody || ""}${signupDialog(env.TURNSTILE_SITE_KEY)}${tourDialog()}${SCRIPT}</body>`);
   const headers = new Headers({ "content-type": "text/html; charset=utf-8", "x-robots-tag": robots });
-  headers.set("cache-control", signed || gate.preview || o.private ? "private, no-store" : "public, max-age=300");
+  /* A signed-in page is private but not "no-store": no-store keeps the browser from holding the page, so the
+     back button had to load it again (owner, 2026-10-29: "the back button takes a while"). */
+  headers.set("cache-control", gate.preview || o.private ? "private, no-store" : signed ? "private, no-cache" : "public, max-age=300");
   return new Response(html, { status: o.status || 200, headers });
 }
 
@@ -454,8 +461,44 @@ async function mapSearch(context, q) {
     const more = await Promise.all([2, 3].filter((pg) => (pg - 1) * 48 < total).map(get));
     for (const m of more) if (m.status === 200 && m.json && m.json.ok && Array.isArray(m.json.listings)) listings = listings.concat(m.json.listings);
   }
+  /* Nothing matches (owner, 2026-10-29: "show the closest options possible"): loosen the search one step
+     at a time, at most three more asks, and say what was left out. */
+  let closest = null;
+  if (total === 0 && !p.get("sold")) {
+    const relax = closestSteps(p);
+    for (const v of relax) {
+      const x = forCrm(v);
+      const r = await crm(context.env, context.request, `/api/idx/listings?${x.toString()}`, { anonymous: true });
+      if (r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) && r.json.listings.length) {
+        const had = new Set(chipList(v).map((c) => c.t));
+        closest = { dropped: chipList(p).map((c) => c.t).filter((t) => !had.has(t)), total: typeof r.json.total === "number" ? r.json.total : r.json.listings.length };
+        listings = r.json.listings;
+        break;
+      }
+    }
+  }
   await withPoints(listings);
-  return { r: first, p, listings, pins: listings.map(pinOf).filter(Boolean), total, left, words };
+  return { r: first, p, listings, pins: listings.map(pinOf).filter(Boolean), total, left, words, closest };
+}
+
+/** The looser searches tried, in order, when a search finds nothing: the features first, then the
+    numbers (price widened by a quarter, one fewer bed and bath), then everything but the kind of home
+    and the place. Each is a copy; the visitor's own search is kept as it was. */
+function closestSteps(p) {
+  const out = [], copy = () => new URLSearchParams(p);
+  const a = copy(); let changed = false;
+  for (const k of ["has", "not", "waterfront", "hoa", "hoaMax", "garage", "domMax"]) if (a.get(k)) { a.delete(k); changed = true; }
+  if (changed) out.push(a);
+  const b = new URLSearchParams(a); let more = false;
+  if (b.get("max")) { b.set("max", String(Math.round(+b.get("max") * 1.25 / 1000) * 1000)); more = true; }
+  if (b.get("min")) { b.set("min", String(Math.round(+b.get("min") * 0.75 / 1000) * 1000)); more = true; }
+  for (const k of ["beds", "baths"]) if (+b.get(k) > 1) { b.set(k, String(+b.get(k) - 1)); more = true; }
+  for (const k of ["yearMin", "yearMax", "sqft", "lotMin"]) if (b.get(k)) { b.delete(k); more = true; }
+  if (more) out.push(b);
+  const c = new URLSearchParams();
+  for (const k of ["type", "city", "zip", "subdivision", "near", "miles", "size", "all"]) if (p.get(k)) c.set(k, p.get(k));
+  if (c.toString() !== b.toString() && c.toString() !== a.toString()) out.push(c);
+  return out.slice(0, 3);
 }
 
 async function mapData(context, url) {
@@ -463,7 +506,7 @@ async function mapData(context, url) {
   if (!s.r.json || !s.r.json.ok) return json({ ok: false, error: s.r.json && s.r.json.error === "stale" ? "stale" : "unavailable" }, s.r.status === 429 ? 429 : 503);
   const keep = new URLSearchParams(s.p); keep.delete("size"); keep.delete("page");
   return json({ ok: true, total: s.total, pins: s.pins, meta: s.r.json.meta || null, params: keep.toString(), chips: chipList(keep), labels: pillLabels(keep),
-    left: s.left, q: s.words }, 200, { "cache-control": s.words ? "private, no-store" : "public, max-age=300" });
+    left: s.left, q: s.words, closest: s.closest }, 200, { "cache-control": s.words ? "private, no-store" : "public, max-age=300" });
 }
 
 async function mapPage(context, url, gate) {
@@ -489,7 +532,7 @@ async function mapPage(context, url, gate) {
   /* Search listings is this page (owner, 2026-10-28): Zillow's layout without its left menu. The map and
      two columns of homes fill the screen below our header; nothing to scroll past, and the MLS notice
      sits once at the end of the list. On a phone: the list, and a Map button, as in Zillow's app. */
-  const body = `<div class="hx-mapapp" data-hx-map data-key="${esc(mapsKey(context.env))}" data-params="${esc(keep.toString())}" data-view="${view}" data-total="${esc(s.total)}" data-hearts="${esc(JSON.stringify([...h]))}"${focus ? ` data-focus="${esc(focus)}"` : ""}${s.left ? ` data-left="${esc(s.left)}" data-q="${esc(s.words)}"` : ""}>
+  const body = `<div class="hx-mapapp" data-hx-map data-key="${esc(mapsKey(context.env))}" data-params="${esc(keep.toString())}" data-view="${view}" data-total="${esc(s.closest ? s.closest.total : s.total)}" data-hearts="${esc(JSON.stringify([...h]))}"${focus ? ` data-focus="${esc(focus)}"` : ""}${s.left ? ` data-left="${esc(s.left)}" data-q="${esc(s.words)}"` : ""}>
 <div class="hx-mtop">${filterBar({ action: "/homes/map/", params: keep, features: catalogLoaded(), map: true })}<div class="hx-applied hx-mchips" id="hx-chips"${chips ? "" : " hidden"}>${chips}<a class="hx-clear" href="/homes/map/" data-x="">Clear all</a></div><p class="hx-ai-note" id="hx-ai-note" hidden></p></div>
 <div class="hx-map-body hx-show-list">
 <div class="hx-mapbox" id="hx-mapbox"><div id="hx-map" class="hx-map" role="region" aria-label="Map of the homes"></div>
@@ -498,7 +541,7 @@ async function mapPage(context, url, gate) {
 <p class="hx-map-hint" aria-hidden="true">Click the map to search that spot</p>
 <p id="hx-map-note" class="hx-map-note"${s.pins.length ? " hidden" : ""}>${s.pins.length ? "" : "No homes with a map location match this search. Change a filter, or click another spot on the map."}</p></div>
 <aside class="hx-map-list" id="hx-map-list" aria-label="The homes"><div class="hx-list-h"><h1>${esc(`Homes for sale${where}`)}</h1><p class="hx-map-count" id="hx-map-count"><b>${esc(s.total.toLocaleString("en-US"))}</b> ${s.total === 1 ? "home" : "homes"}</p></div>
-<div id="hx-map-cards" class="hx-map-cards">${cards}</div><p class="hx-list-more" id="hx-list-more"${s.total > s.pins.length ? "" : " hidden"}>Zoom in or move the map to see more of the ${esc(s.total.toLocaleString("en-US"))} homes.</p>
+${sorryHtml(s.closest, s.total)}<div id="hx-map-cards" class="hx-map-cards">${cards}</div><p class="hx-list-more" id="hx-list-more"${s.total > s.pins.length ? "" : " hidden"}>Zoom in or move the map to see more of the ${esc(s.total.toLocaleString("en-US"))} homes.</p>
 <div class="hx-list-foot">${disclaimer(s.r.json.meta)}</div></aside>
 <button type="button" class="hx-map-toggle" id="hx-map-toggle" aria-controls="hx-map">Map</button></div>
 <script type="application/json" id="hx-pins">${pinsJson}</script></div>`;

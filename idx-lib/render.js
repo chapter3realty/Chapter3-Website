@@ -210,6 +210,7 @@ export const ICONS = {
 };
 
 export const STYLE = `<style>
+.hx-go{position:fixed;left:0;top:0;z-index:2147483646;height:3px;width:0;background:#c4783a;box-shadow:0 0 8px rgba(196,120,58,.6);pointer-events:none}.hx-go-on{width:88%;transition:width 5s cubic-bezier(.08,.8,.2,1)}
 .hx-wrap{max-width:1180px;margin:0 auto;padding:1.5rem 1.25rem 3rem;color:var(--navy)}
 .hx-wrap h1{font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.15;margin:.4rem 0 .6rem}
 .hx-lead{font-size:1.02rem;line-height:1.6;max-width:760px}.hx-small{font-size:.85rem;color:var(--muted);line-height:1.5}
@@ -415,6 +416,12 @@ main#main .hx-s-all{flex:0 0 40%;max-width:12rem;align-self:stretch;display:flex
 export const PHOTO_HINT = `<link rel="preconnect" href="https://api.cotality.com"><link rel="dns-prefetch" href="https://api.cotality.com">`;
 
 export const SCRIPT = `<script>(function(){
+/* A thin brass bar the moment a link to another page is clicked, so a slow answer never looks like nothing
+   happened; it goes away when the page comes back from the back button. */
+(function(){var bar=null;function go(){if(!bar){bar=document.createElement("div");bar.className="hx-go";document.body.appendChild(bar)}bar.classList.remove("hx-go-on");void bar.offsetWidth;bar.classList.add("hx-go-on")}
+ document.addEventListener("click",function(e){if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;var a=e.target.closest&&e.target.closest("a[href]");if(!a||a.target==="_blank"||a.hasAttribute("download"))return;
+  var u;try{u=new URL(a.href,location.href)}catch(x){return}if(u.origin!==location.origin||(u.pathname===location.pathname&&u.search===location.search))return;go()});
+ addEventListener("pageshow",function(){if(bar)bar.classList.remove("hx-go-on")});window.hxGo=go})();
 var signed=document.body.getAttribute("data-hx-signed")==="1";
 /* A listing photo that fails (the MLS photo server allows 240 a minute for every visitor together) is
    asked for once more a minute later, when its count starts over; until then a calm panel shows. */
