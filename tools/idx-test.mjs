@@ -12,6 +12,7 @@ import { postFilter, rankHomes } from "../idx-lib/feeds.js";
 import { filterBar } from "../idx-lib/filters.js";
 import { featureList } from "../idx-lib/features.js";
 import { readQuery } from "../idx-lib/query.js";
+import { nearbySales, flipMath, FLIP_DEFAULTS, repairTier } from "../idx-lib/deals.js";
 import { photo, photoUrl, warm } from "../idx-lib/photo.js";
 import { resetCatalog } from "../idx-lib/catalog.js";
 import { SCRIPT, STYLE } from "../idx-lib/render.js";
@@ -634,6 +635,20 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
   check("photo warmer: only with the secret; 12 photos a call, both sizes kept; the next call takes the next 12; then nothing is fetched again; it stops when the MLS has under 40 left this minute; a visitor's photo then comes from the bucket",
     noKey.status === 404 && wrong.status === 404 && a.fetched === 12 && a.stored === 12 && b.fetched === 12 && b.kept === 12 && c.fetched === 0 && c.kept === 24 && keptCopies === 48
     && d.fetched === 1 && d.stop === "mls_limit" && viaBucket.status === 200 && mlsCalls === callsBefore);
+}
+
+// The deal finder's fix-and-flip math (owners, 2026-10-29). It never values the house (no AVM licence):
+// it reports the nearby sales and how far the asking price a square foot sits under the middle one.
+{
+  const subj = { mlsNumber: "1", sqft: 1500, yearBuilt: 1975, listPrice: 150000 };
+  const comps = [180, 190, 200, 210, 220, 230].map((psf, i) => ({ mlsNumber: "c" + i, sqft: 1500, soldPrice: psf * 1500 }));
+  const v = nearbySales(subj, comps), thin = nearbySales(subj, comps.slice(0, 2)), far = nearbySales(subj, comps.map((c) => ({ ...c, sqft: 3000 })));
+  const m = flipMath(150000, 300000, 30000, FLIP_DEFAULTS);
+  const noValue = !Object.keys(v).some((k) => /arv|value|estimate/i.test(k));
+  check("deal finder: nearby sales of about the same size (3 needed): low, high, middle a square foot and how far under the middle; no value field; repairs by age and distress; profit on the agent's value less price, repairs, buying, selling and holding; the 70% rule's offer",
+    v.n === 6 && v.low === 180 && v.high === 230 && v.mid === 205 && v.own === 100 && v.under === 51 && noValue && thin.under === null && far.under === null
+    && repairTier(subj, new Set(["distressed"])) === "heavy" && repairTier({ yearBuilt: 2010 }, new Set()) === "light"
+    && m.profit === 300000 - (150000 + 30000 + 3000 + 24000 + 5400) && m.maxOffer === 180000);
 }
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");

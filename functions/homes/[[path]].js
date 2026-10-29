@@ -23,6 +23,7 @@ import { filterCatalog, panelGroups } from "../../idx-lib/catalog.js";
 import { filterBar, labels as filterLabels } from "../../idx-lib/filters.js";
 import { postFilter, rankHomes } from "../../idx-lib/feeds.js";
 import { photo, photoUrl, warm } from "../../idx-lib/photo.js";
+import { DEALS_SCRIPT, FLIP_DEFAULTS, findFlips, flipSettings } from "../../idx-lib/deals.js";
 import { MAP_SCRIPT, MAP_STYLE, geocode, mapsKey, nearOf, pinOf, withPoints } from "../../idx-lib/map.js";
 import { SMS_CONSENT_TEXT, TERMS_PARAGRAPHS, TERMS_TITLE, TERMS_VERSION, termsText } from "../../idx-lib/terms.js";
 import {
@@ -74,6 +75,7 @@ async function handle(context) {
   if (path.startsWith("/homes/api/")) {
     const name = path.replace(/^\/homes\/api\/|\/$/g, "");
     if (name === "map" && (request.method === "GET" || request.method === "HEAD")) return mapData(context, url);
+    if (name === "deals" && request.method === "GET") return dealsApi(context, url);
     // The photo warmer's call (idx-lib/photo.js): a page of homes for sale, 24 at a time, from the CRM.
     if (name === "warm" && request.method === "GET") return warm(context, url, async (pg) => {
       const r = await crm(env, request, `/api/idx/listings?status=active&size=24&page=${pg}`, { anonymous: true });
@@ -194,13 +196,14 @@ async function route(context, url, path, gate) {
   // /homes/<MLS#> as the CRM's emails write it: find the listing's own URL.
   // "terms", "near" and "api" are our own pages, never MLS numbers.
   const bare = /^\/homes\/([A-Za-z0-9]{3,20})\/?$/.exec(path);
-  if (bare && !["terms", "near", "api", "map"].includes(bare[1].toLowerCase())) return bareListing(context, bare[1], gate);
+  if (bare && !["terms", "near", "api", "map", "deals"].includes(bare[1].toLowerCase())) return bareListing(context, bare[1], gate);
   if (!path.endsWith("/")) return Response.redirect(`${SITE}${path}/${url.search}`, 301);
 
   const parts = path.split("/").filter(Boolean);
   if (parts.length === 1) return searchPage(context, url, gate);
   if (parts[1] === "map" && parts.length === 2) return mapPage(context, url, gate);
   if (parts[1] === "terms" && parts.length === 2) return termsPage(context, gate);
+  if (parts[1] === "deals" && parts.length === 2) return dealsPage(context, gate);
   if (parts[1] === "near" && parts.length === 3) return placePage(context, parts[2], gate);
   const m = /^([A-Za-z0-9]{3,20})-[a-z0-9-]{1,120}$/.exec(parts[1] || "");
   if (m && parts.length === 2) return listingPage(context, m[1], parts[1], gate);
@@ -510,6 +513,81 @@ async function mapPage(context, url, gate) {
     private: signed,
   });
 }
+
+// ── the deal finder (idx-lib/deals.js), for agents ──────────────────────────
+
+const dealsKeyOk = (env, request) => { const want = String(env.DEALS_KEY || "").trim(); return want.length >= 12 && (request.headers.get("x-deals-key") || "").trim() === want; };
+
+/** GET /homes/api/deals?kind=flip&<settings>: the first pass, with the agent's own signed-up account. */
+async function dealsApi(context, url) {
+  const { env, request } = context;
+  if (!dealsKeyOk(env, request)) return json({ ok: false, error: "not_found" }, 404);
+  if (!visitorToken(request)) return json({ ok: false, error: "sign_in" }, 200, { "cache-control": "private, no-store" });
+  await filterCatalog(env, request);
+  const search = async (p) => {
+    const r = await crm(env, request, `/api/idx/listings?${new URLSearchParams(p).toString()}`);
+    return r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? r.json.listings : [];
+  };
+  const out = await findFlips(search, (ls) => withPoints(ls), flipSettings(url.searchParams));
+  return json({ ok: true, ...out }, 200, { "cache-control": "private, no-store" });
+}
+
+/** /homes/deals/: three buttons; fix and flip first. Not in search, not in the sitemap. */
+function dealsPage(context, gate) {
+  const f = FLIP_DEFAULTS;
+  const box = (k, label, unit) => `<label class="dl-in"><span>${esc(label)}</span><span class="dl-in-b">${unit === "$" ? "<i>$</i>" : ""}<input id="dl-${k}" type="number" inputmode="decimal" value="${f[k]}">${unit && unit !== "$" ? `<i>${esc(unit)}</i>` : ""}</span></label>`;
+  const body = `<div id="dl-app" class="dl">
+<h1>Deal finder</h1>
+<p class="hx-lead">For our agents. One press looks through every home for sale for a reason to be cheap, and ranks them by how far their asking price a square foot sits under what houses like them sold for nearby. You type the after-repair value; the page does the math. It is a list to work, not advice.</p>
+<p id="dl-signin" class="dl-warn" hidden>Sign in to your account on this site first: the nearby sales are for signed-up accounts only. <button type="button" class="btn btn-outline" data-hx-signup>Sign in</button></p>
+<label class="dl-in dl-key"><span>Deal finder password</span><span class="dl-in-b"><input id="dl-key" type="password" autocomplete="off"></span></label>
+<div class="dl-btns">
+<button type="button" id="dl-flip" class="dl-btn dl-on"><b>Fix and flip</b><span>Cheap for a reason, under its nearby sales</span></button>
+<button type="button" class="dl-btn" disabled><b>Long-term rentals</b><span>Coming next</span></button>
+<button type="button" class="dl-btn" disabled><b>Short-term rentals</b><span>Coming next</span></button>
+</div>
+<details class="dl-set"><summary>Your figures (saved on this computer)</summary><div class="dl-set-g">
+${box("maxPrice", "Highest asking price", "$")}${box("minPrice", "Lowest asking price", "$")}
+${box("light", "Light repairs, a sq ft", "$")}${box("medium", "Medium repairs, a sq ft", "$")}${box("heavy", "Heavy repairs, a sq ft", "$")}
+${box("buyPct", "Buying costs", "%")}${box("sellPct", "Selling costs (commission and closing)", "%")}${box("holdMonths", "Months held", "months")}${box("holdPerMonth", "Holding cost a month (tax, insurance, utilities, loan)", "$")}
+</div><p class="dl-small">The nearby sales are houses within 30 percent of its size that sold within a mile (two if too few) in the last 12 months. The page never puts a value on a house: an automated value is a separate MLS licence we do not have. Repairs start from your figures by the house's age and distress; the AI then looks at the photos of the first 12 and replaces them with its own estimate.</p></details>
+<p id="dl-status" class="dl-status" role="status"></p>
+<div id="dl-list" class="dl-list"></div>
+${disclaimer(null)}
+</div>`;
+  return page(context, gate, {
+    title: "Deal finder", description: "For Chapter3 agents.", canonical: `${SITE}/homes/deals/`, robots: "noindex, nofollow", body, private: true,
+    extraHead: DEALS_STYLE, extraBody: DEALS_SCRIPT,
+  });
+}
+
+const DEALS_STYLE = `<style>
+.dl h1{margin-bottom:.3rem}.dl-warn{padding:.8rem 1rem;border-radius:12px;background:#fdf0ee;display:flex;gap:1rem;align-items:center;flex-wrap:wrap}.dl-warn[hidden]{display:none}
+.dl-in{display:flex;flex-direction:column;gap:.3rem;font-size:.8rem;font-weight:600;color:var(--slate,#5c6b78)}
+.dl-in-b{display:flex;align-items:center;gap:.3rem;min-height:2.8rem;padding:0 .8rem;border:1.5px solid rgba(28,32,40,.2);border-radius:12px;background:#faf8f4}
+.dl-in-b input{flex:1;min-width:0;border:0;outline:none;background:none;font:inherit;font-size:1rem;font-weight:600;color:var(--ink,#1c2028)}.dl-in-b i{font-style:normal;color:var(--slate,#5c6b78)}
+.dl-key{max-width:22rem;margin:1rem 0}
+.dl-btns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin:1rem 0}
+.dl-btn{display:flex;flex-direction:column;align-items:flex-start;gap:.2rem;padding:1.1rem 1.2rem;border-radius:16px;border:1.5px solid rgba(28,32,40,.15);background:#fff;font:inherit;text-align:left;cursor:pointer}
+.dl-btn b{font-size:1.15rem;color:var(--ink,#1c2028)}.dl-btn span{font-size:.85rem;color:var(--slate,#5c6b78)}
+.dl-btn.dl-on{background:#151a22;border-color:#151a22}.dl-btn.dl-on b{color:#fff}.dl-btn.dl-on span{color:rgba(244,239,232,.75)}
+.dl-btn:disabled{opacity:.55;cursor:default}.dl-btn.dl-on:disabled{opacity:.7;cursor:progress}
+.dl-set{margin:.5rem 0 1rem;padding:.8rem 1rem;border-radius:14px;background:#fff;border:1px solid rgba(28,32,40,.1)}.dl-set summary{cursor:pointer;font-weight:700}
+.dl-set-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.7rem;margin:.8rem 0}
+.dl-small{font-size:.85rem;color:var(--slate,#5c6b78)}.dl-status{font-weight:600;min-height:1.5rem}
+.dl-list{display:grid;gap:1rem;margin:1rem 0 2rem}.dl-none{padding:1rem;background:#fff;border-radius:12px}
+.dl-c{padding:1rem;border-radius:18px;background:#fff;border:1px solid rgba(28,32,40,.1)}
+.dl-top{display:grid;grid-template-columns:12rem minmax(0,1fr);gap:1rem}.dl-photo{display:block;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#ece6dc}.dl-photo img{width:100%;height:100%;object-fit:cover}
+.dl-rank{margin:0;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brass-ink,#91592b);font-weight:700}
+.dl-addr{display:block;font-family:var(--serif,Georgia,serif);font-size:1.3rem;color:var(--ink,#1c2028);margin:.2rem 0}.dl-facts{margin:0;color:var(--slate,#5c6b78);font-size:.9rem}
+.dl-profit{margin:.4rem 0 0;font-size:1.25rem;font-weight:800;color:#2d7a4f}
+.dl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem;margin:.9rem 0 .5rem}
+.dl-r{padding:.55rem .7rem;border-radius:10px;background:#faf8f4}.dl-r span{display:block;font-size:.75rem;color:var(--slate,#5c6b78)}.dl-r b{font-size:1rem}.dl-r-s{background:#eef6f0}
+.dl-check{font-size:.9rem;margin:.4rem 0;padding:.5rem .7rem;border-radius:10px;background:#fef3cd}.dl-note{font-size:.9rem;margin:.4rem 0}.dl-comps{margin:.4rem 0}.dl-comps summary{cursor:pointer;font-size:.9rem;font-weight:600}.dl-comps table{width:100%;font-size:.85rem;border-collapse:collapse;margin-top:.4rem}.dl-comps td{padding:.3rem .4rem;border-bottom:1px solid rgba(28,32,40,.08)}
+.dl-arv{max-width:22rem;margin:.6rem 0 0}.dl-flipbox .dl-small{grid-column:1/-1;margin:0}
+.dl-go{display:inline-block;margin-top:.5rem;font-weight:700;color:var(--brass-ink,#91592b)}.dl-firm{font-size:.75rem;color:var(--slate,#5c6b78);margin:.4rem 0 0}
+@media (max-width:760px){.dl-btns{grid-template-columns:1fr}.dl-top{grid-template-columns:1fr}.dl-grid{grid-template-columns:1fr 1fr}}
+</style>`;
 
 // ── the rental analyzer's MLS lookup ────────────────────────────────────────
 
