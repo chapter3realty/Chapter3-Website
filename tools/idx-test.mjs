@@ -12,7 +12,7 @@ import { postFilter, rankHomes } from "../idx-lib/feeds.js";
 import { filterBar } from "../idx-lib/filters.js";
 import { featureList } from "../idx-lib/features.js";
 import { readQuery } from "../idx-lib/query.js";
-import { photo, photoUrl } from "../idx-lib/photo.js";
+import { photo, photoUrl, warm } from "../idx-lib/photo.js";
 import { resetCatalog } from "../idx-lib/catalog.js";
 import { SCRIPT, STYLE } from "../idx-lib/render.js";
 const STYLE_OK = () => STYLE.includes(".hx-dialog form[hidden]{display:none}");
@@ -605,6 +605,35 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
   const { SCRIPT: S } = await import("../idx-lib/render.js");
   const { MAP_SCRIPT: M, MAP_STYLE: MS } = await import("../idx-lib/map.js");
   check("listing photos open full screen and page through (arrows, swipe, keys); the map has a Full map button and its 2D and 3D buttons sit above Google's layers", S.includes('box.className="hx-lb"') && S.includes('e.key==="ArrowRight"') && M.includes('getElementById("hx-full-b")') && MS.includes(".hx-map{position:absolute;inset:0;z-index:0}"));
+}
+
+// The photo warmer: every home's first photo kept in the bucket, at most 12 an MLS call each, stopping when the MLS runs low.
+{
+  const fs = await import("node:fs");
+  const jpg = fs.readFileSync(new URL("./fixtures/listing-photo.jpg", import.meta.url));
+  const bucket = new Map();
+  const R2 = { head: async (k) => (bucket.has(k) ? {} : null), get: async (k) => (bucket.has(k) ? { body: bucket.get(k).body, httpMetadata: bucket.get(k).meta } : null), put: async (k, body, o) => { bucket.set(k, { body, meta: o.httpMetadata }); } };
+  const link = (i) => `https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/${1000 + i}/1/MTIxOTIvMTMxMTAvMjA/x/sig${i}`;
+  const homes = Array.from({ length: 24 }, (_, i) => ({ photo: link(i) }));
+  const listPage = async () => ({ total: 24, listings: homes });
+  const saved = globalThis.fetch; let mlsCalls = 0, left = 200;
+  globalThis.fetch = async () => { mlsCalls++; left--; return new Response(jpg, { status: 200, headers: { "content-type": "image/jpeg", "minute-quota-available": String(left), "hour-quota-available": "8000" } }); };
+  const call = (key, envX) => warm({ env: envX, request: new Request("https://chapter3realty.com/homes/api/warm?slot=0&slots=1", { headers: key ? { "x-warm-key": key } : {} }), waitUntil() {} }, new URL("https://chapter3realty.com/homes/api/warm?slot=0&slots=1"), listPage);
+  const env1 = { WARM_KEY: "k".repeat(32), PHOTOS: R2 };
+  const noKey = await call("", env1), wrong = await call("nope", env1);
+  const a = await (await call("k".repeat(32), env1)).json();
+  const b = await (await call("k".repeat(32), env1)).json();
+  const c = await (await call("k".repeat(32), env1)).json();
+  const keptCopies = bucket.size; left = 40;
+  bucket.clear(); const d = await (await call("k".repeat(32), env1)).json();
+  // A visitor's photo now comes from the bucket, not the MLS.
+  bucket.clear(); left = 200; await (await call("k".repeat(32), env1)).json();
+  const callsBefore = mlsCalls;
+  const viaBucket = await photo({ env: env1, request: new Request("https://chapter3realty.com/homes/p/card"), waitUntil() {} }, new URL(`https://chapter3realty.com/homes/p/card?u=${encodeURIComponent(link(0))}`), "card");
+  globalThis.fetch = saved;
+  check("photo warmer: only with the secret; 12 photos a call, both sizes kept; the next call takes the next 12; then nothing is fetched again; it stops when the MLS has under 40 left this minute; a visitor's photo then comes from the bucket",
+    noKey.status === 404 && wrong.status === 404 && a.fetched === 12 && a.stored === 12 && b.fetched === 12 && b.kept === 12 && c.fetched === 0 && c.kept === 24 && keptCopies === 48
+    && d.fetched === 1 && d.stop === "mls_limit" && viaBucket.status === 200 && mlsCalls === callsBefore);
 }
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");

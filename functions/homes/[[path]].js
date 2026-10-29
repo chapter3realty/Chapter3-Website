@@ -22,7 +22,7 @@ import { featureLabel, featureList, catalogLoaded, isDistance } from "../../idx-
 import { filterCatalog, panelGroups } from "../../idx-lib/catalog.js";
 import { filterBar, labels as filterLabels } from "../../idx-lib/filters.js";
 import { postFilter, rankHomes } from "../../idx-lib/feeds.js";
-import { photo, photoUrl } from "../../idx-lib/photo.js";
+import { photo, photoUrl, warm } from "../../idx-lib/photo.js";
 import { MAP_SCRIPT, MAP_STYLE, geocode, mapsKey, nearOf, pinOf, withPoints } from "../../idx-lib/map.js";
 import { SMS_CONSENT_TEXT, TERMS_PARAGRAPHS, TERMS_TITLE, TERMS_VERSION, termsText } from "../../idx-lib/terms.js";
 import {
@@ -74,6 +74,11 @@ async function handle(context) {
   if (path.startsWith("/homes/api/")) {
     const name = path.replace(/^\/homes\/api\/|\/$/g, "");
     if (name === "map" && (request.method === "GET" || request.method === "HEAD")) return mapData(context, url);
+    // The photo warmer's call (idx-lib/photo.js): a page of homes for sale, 24 at a time, from the CRM.
+    if (name === "warm" && request.method === "GET") return warm(context, url, async (pg) => {
+      const r = await crm(env, request, `/api/idx/listings?status=active&size=24&page=${pg}`, { anonymous: true });
+      return r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? { total: typeof r.json.total === "number" ? r.json.total : r.json.listings.length, listings: r.json.listings } : null;
+    });
     if (name === "lookup" && request.method === "GET") return lookup(context, url);
     if (name === "similar" && request.method === "GET") return similar(context, url);
     if (name === "strip" && request.method === "GET") return stripApi(context, url);
