@@ -118,8 +118,13 @@ const townTop = (city) => ({ head: `Top homes in ${city}`, q: [{ city, status: "
 const TOP_VACATION = { ...cut("Top vacation homes", towns(["North Myrtle Beach", "Myrtle Beach", "Surfside Beach", "Garden City", "Murrells Inlet", "Pawleys Island"], { status: "active", min: "250000", has: "walk_to_beach" }), "has=walk_to_beach", VACATION), withStrips: true };
 /* Jobs: homes within 5 miles (about a 15 to 20 minute drive) of the largest employers the page names: the hospitals, the mall and the airport. */
 const EMPLOYERS = { ask: "Name your industry or employer to see homes nearby", ...cut("Homes nearby major employers", ["grand_strand_medical_center_10mi", "conway_medical_center_10mi", "mcleod_seacoast_10mi", "tidelands_waccamaw_10mi", "coastal_grand_mall_10mi", "myrtle_beach_airport_10mi"].map((k) => ({ status: "active", min: "200000", has: k })), "has=grand_strand_medical_center_10mi", NEWEST) };
-/* Fix and flip: the most equity to capture, distressed sales and older houses in the beach-side areas east of 17. */
-const FIXERS = { ...cut("Older and distressed homes east of 17", [H({ has: "distressed_sale,east_of_17" }), H({ has: "east_of_17", yearMax: "1985", min: "180000" })], "type=house&has=east_of_17&yearMax=1985", VALUE_ADD), post: { floors: false, yearMin: 1900, minPhotos: 6 } };
+/* Fix and flip: the page's own best areas for house flips (batch 2026-10-c, the county's deeds: Conway,
+   Carolina Forest and Little River had the biggest middle gains on houses). Distressed sales and older
+   houses there; the owner, 2026-10-27: the feed backs up the page's headline. */
+const FLIP_AREAS = [["city", "Conway"], ["subdivision", "Carolina Forest"], ["city", "Little River"]];
+const FIXERS = { ...cut("Distressed and older houses in Conway, Carolina Forest and Little River",
+  FLIP_AREAS.map(([k, v]) => H({ [k]: v, has: "distressed_sale" })).concat(FLIP_AREAS.map(([k, v]) => H({ [k]: v, yearMax: "1999", min: "150000" }))),
+  "type=house&yearMax=1999", VALUE_ADD), post: { floors: false, yearMin: 1900, yearMax: 1999, minPhotos: 6 } };
 /* The HOA guides, each with the homes its reader is weighing. */
 const NEWER_CONDOS = { head: "Condos in buildings built since 2005", q: towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet"], { type: "condo", status: "active", min: "150000", yearMin: "2005" }), post: { yearMin: 2005, strictYear: true }, link: "type=condo&yearMin=2005", fallback: CONDOS };
 const LOW_FEE = { head: "Condos with an HOA fee under $300 a month", q: towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet", "Little River"], { type: "condo", status: "active", min: "120000", hoaMax: "300" }), link: "type=condo&hoaMax=300", fallback: CONDOS };
