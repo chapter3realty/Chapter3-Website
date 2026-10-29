@@ -429,7 +429,7 @@ async function mapSearch(context, q) {
   await filterCatalog(context.env, context.request);
   let p = searchParams(q, false), left = "", placed = false;
   // A sentence ("describe your home") adds to the filters in force; it is read once, then gone.
-  const words = String(q.get("q") || "").trim().slice(0, 200);
+  const words = String(q.get("q") || "").trim().slice(0, 400);
   if (words) {
     const read = readQuery(words);
     const add = searchParams(read.params, false);
@@ -495,7 +495,8 @@ async function mapPage(context, url, gate) {
 <div class="hx-mapbox" id="hx-mapbox"><div id="hx-map" class="hx-map" role="region" aria-label="Map of the homes"></div>
 <button type="button" class="hx-full-b" id="hx-full-b" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>Full map</button>
 <div class="hx-mode" role="group" aria-label="Map view"><button type="button" data-mode="2d" aria-pressed="${view === "2d" ? "true" : "false"}">2D</button><button type="button" data-mode="3d" aria-pressed="${view === "3d" ? "true" : "false"}">3D</button></div>
-<p id="hx-map-note" class="hx-map-note"${s.pins.length ? " hidden" : ""}>${s.pins.length ? "" : "No homes with a map location match this search. Change a filter or move the map."}</p></div>
+<p class="hx-map-hint" aria-hidden="true">Click the map to search that spot</p>
+<p id="hx-map-note" class="hx-map-note"${s.pins.length ? " hidden" : ""}>${s.pins.length ? "" : "No homes with a map location match this search. Change a filter, or click another spot on the map."}</p></div>
 <aside class="hx-map-list" id="hx-map-list" aria-label="The homes"><div class="hx-list-h"><h1>${esc(`Homes for sale${where}`)}</h1><p class="hx-map-count" id="hx-map-count"><b>${esc(s.total.toLocaleString("en-US"))}</b> ${s.total === 1 ? "home" : "homes"}</p></div>
 <div id="hx-map-cards" class="hx-map-cards">${cards}</div><p class="hx-list-more" id="hx-list-more"${s.total > s.pins.length ? "" : " hidden"}>Zoom in or move the map to see more of the ${esc(s.total.toLocaleString("en-US"))} homes.</p>
 <div class="hx-list-foot">${disclaimer(s.r.json.meta)}</div></aside>
@@ -525,7 +526,7 @@ async function dealsApi(context, url) {
   if (!visitorToken(request)) return json({ ok: false, error: "sign_in" }, 200, { "cache-control": "private, no-store" });
   await filterCatalog(env, request);
   const search = async (p) => {
-    const r = await crm(env, request, `/api/idx/listings?${new URLSearchParams(p).toString()}`);
+    const r = await crm(env, request, `/api/idx/listings?${new URLSearchParams(p).toString()}`, { retry: false });
     return r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? r.json.listings : [];
   };
   const out = await findFlips(search, (ls) => withPoints(ls), flipSettings(url.searchParams));
@@ -742,6 +743,12 @@ async function listingPage(context, mls, slugPart, gate) {
   const { request, env } = context;
   const [r, hearts] = await Promise.all([crm(env, request, `/api/idx/listings/${encodeURIComponent(mls)}`), heartsOf(context)]);
   if (badToken(r)) return publicView(context, async (c) => listingPageWith(c, mls, slugPart, gate, await crm(env, request, `/api/idx/listings/${encodeURIComponent(mls)}`, { anonymous: true }), []));
+  /* The signed-in answer failed (a CRM hiccup, not a missing home): show the public copy, usually from the
+     edge cache, rather than "back soon". The visitor stays signed in; the next page view asks again. */
+  if (r.status !== 404 && (r.status !== 200 || !r.json || !r.json.ok || !r.json.listing) && visitorToken(request)) {
+    const pub = await crm(env, request, `/api/idx/listings/${encodeURIComponent(mls)}`, { anonymous: true });
+    if (pub.status === 200 && pub.json && pub.json.ok && pub.json.listing) return listingPageWith(context, mls, slugPart, gate, pub, hearts);
+  }
   return listingPageWith(context, mls, slugPart, gate, r, hearts);
 }
 

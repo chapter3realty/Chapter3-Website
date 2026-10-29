@@ -89,7 +89,7 @@ const PLACE_NAMES = Object.entries(PLACES)
 export function readQuery(raw) {
   const params = new URLSearchParams();
   const understood = [];
-  let t = ` ${String(raw || "").toLowerCase().slice(0, 200).replace(/[^a-z0-9$.,+\- ]/g, " ").replace(/\s+/g, " ")} `;
+  let t = ` ${String(raw || "").toLowerCase().slice(0, 400).replace(/[^a-z0-9$.,+\- ]/g, " ").replace(/\s+/g, " ")} `;
   // Remove what was read, so one word never counts twice; only when it was read.
   const take = (re, ok) => { const m = re.exec(t); if (m && (!ok || ok(m))) { t = t.replace(m[0], " "); return m; } return null; };
 

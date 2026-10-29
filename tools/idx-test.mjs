@@ -39,6 +39,7 @@ let INVALID = false;
 let INVALID_TS = false;
 let APPLIED = false;
 let CATALOG = false;
+let FLAKY = 0, SIGNED_DOWN = false;
 globalThis.fetch = async (input, init = {}) => {
   const u = new URL(typeof input === "string" ? input : input.url);
   calls.push({ url: u.toString(), init });
@@ -73,6 +74,8 @@ globalThis.fetch = async (input, init = {}) => {
     return b.phone === "8435550199" && b.firstName === "Sam" ? J({ ok: true, token: DEV_TOKEN, dryRun: true }) : J({ ok: false, error: "not_found" });
   }
   if (STALE) return J({ ok: false, error: "stale" }, 503);
+  if (FLAKY > 0) { FLAKY--; return new Response("bad gateway", { status: 502 }); }
+  if (SIGNED_DOWN && auth && /^\/api\/idx\/listings\/\w+$/.test(u.pathname)) return new Response("bad gateway", { status: 502 });
   if (HANG) return new Promise((_, no) => init.signal && init.signal.addEventListener("abort", () => no(new Error("aborted"))));
   if (INVALID && auth) return J({ ok: false, error: "unauthorized", visitor: "invalid" }, 401);
   if (u.pathname === "/api/idx/listings") {
@@ -287,7 +290,7 @@ r = await run(homes, req("/homes/api/map?city=Conway"));
 let mj = JSON.parse(await r.text());
 check("map data: no points from the CRM yet, so no pins, and the page says so", r.status === 200 && mj.ok && mj.pins.length === 0 && mj.total === 30);
 t = await (await run(homes, req("/homes/map/?city=Conway"))).text();
-check("map page: fills the screen, the describe box, the list of homes, the MLS notice once at the end of the list, noindex", t.includes("data-hx-map") && t.includes('class="hx-mapapp"') && t.includes('placeholder="Describe your home in a sentence"') && (t.match(/<article class="hx-c">/g) || []).length === 30 && (t.match(/class="hx-disclaimer"/g) || []).length === 1 && t.indexOf('class="hx-disclaimer"') > t.indexOf('id="hx-map-cards"') && t.includes("noindex"));
+check("map page: fills the screen, the AI search first (labelled AI, the owner's words), price the first filter, the list of homes, the MLS notice once at the end of the list, noindex", t.includes("data-hx-map") && t.includes('class="hx-mapapp"') && t.includes("AI-powered search") && t.includes("Tell me everything you want and why.") && t.indexOf('data-k="price"') > 0 && t.indexOf('data-k="price"') < t.indexOf('data-k="sale"') && (t.match(/<article class="hx-c">/g) || []).length === 30 && (t.match(/class="hx-disclaimer"/g) || []).length === 1 && t.indexOf('class="hx-disclaimer"') > t.indexOf('id="hx-map-cards"') && t.includes("noindex"));
 MAPPOINTS = true;
 r = await run(homes, req("/homes/api/map?near=33.7,-78.9&miles=2&beds=3"));
 mj = JSON.parse(await r.text());
@@ -649,6 +652,20 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
     v.n === 6 && v.low === 180 && v.high === 230 && v.mid === 205 && v.own === 100 && v.under === 51 && noValue && thin.under === null && far.under === null
     && repairTier(subj, new Set(["distressed"])) === "heavy" && repairTier({ yearBuilt: 2010 }, new Set()) === "light"
     && m.profit === 300000 - (150000 + 30000 + 3000 + 24000 + 5400) && m.maxOffer === 180000);
+}
+
+// A CRM hiccup (2026-10-29: a listing showed "back soon"). One 502 on a GET is tried again; a signed-in
+// listing that still fails shows the public copy; two 502s in a row still read as a failure.
+{
+  const { crm } = await import("../idx-lib/crm.js");
+  FLAKY = 1; const once = await crm(ENV, req("/homes/"), "/api/idx/listings?city=Conway", { anonymous: true, cacheSeconds: 1 });
+  FLAKY = 2; const twice = await crm(ENV, req("/homes/"), "/api/idx/listings?city=Loris", { anonymous: true });
+  FLAKY = 1; const noRetry = await crm(ENV, req("/homes/"), "/api/idx/listings?city=Aynor", { anonymous: true, retry: false });
+  FLAKY = 0; SIGNED_DOWN = true;
+  const page = await (await run(homes, req("/homes/2600007-101-test-st-myrtle-beach/", cookie))).text();
+  SIGNED_DOWN = false;
+  check("CRM hiccup: one 502 is retried; two still fail; retry: false does not retry; a signed-in listing that fails shows the public copy, not 'back soon'",
+    once.status === 200 && twice.status === 502 && noRetry.status === 502 && page.includes("101 Test St") && !page.includes("back soon"));
 }
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");

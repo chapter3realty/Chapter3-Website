@@ -120,11 +120,17 @@ export async function crm(env, request, path, opts = {}) {
   if (token) headers.authorization = `Bearer ${token}`;
   if (opts.userAgent) headers["x-idx-user-agent"] = (request.headers.get("user-agent") || "").slice(0, 400);
   if (opts.body) headers["content-type"] = "application/json";
+  /* A GET that fails at the network or with a 502, 503 or 504 is tried once more (2026-10-29: a listing
+     page showed "back soon" during a short CRM hiccup). opts.retry: false turns it off for bulk callers. */
   let res;
+  const once = () => fetch(url, { method, headers, body: opts.body ? JSON.stringify(opts.body) : undefined, signal: AbortSignal.timeout(opts.timeoutMs || 8000) });
+  const retry = method === "GET" && opts.retry !== false;
   try {
-    res = await fetch(url, { method, headers, body: opts.body ? JSON.stringify(opts.body) : undefined, signal: AbortSignal.timeout(opts.timeoutMs || 8000) });
+    res = await once();
+    if (retry && [502, 503, 504].includes(res.status)) { await new Promise((r) => setTimeout(r, 300)); res = await once(); }
   } catch {
-    return { status: 502, json: null };
+    if (!retry) return { status: 502, json: null };
+    try { res = await once(); } catch { return { status: 502, json: null }; }
   }
   let json = null;
   try {

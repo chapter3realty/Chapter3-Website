@@ -56,6 +56,9 @@ const SQFT = [["", "Any size"], ["1000", "1,000+ sq ft"], ["1500", "1,500+ sq ft
  * change at once without leaving the page. `ask`: the words in the search box (the jobs guide
  * asks for an employer). Everywhere else, a search opens the map with it (owner, 2026-10-28).
  */
+/** What the AI search bar asks. */
+export const AI_ASK = "Tell me everything you want and why. I'll find you houses.";
+
 export function filterBar({ action = "/homes/map/", params, features = false, compact = false, map = false, ask = "" }) {
   const p = new URLSearchParams(params);
   const L = labels(p);
@@ -93,8 +96,12 @@ export function filterBar({ action = "/homes/map/", params, features = false, co
     : `<p class="hx-pop-h">More filters</p>${waterTick}<label class="hx-tick"><input type="checkbox" name="hoa" value="0"${p.get("hoa") === "0" ? " checked" : ""}><span>No HOA, as listed by the listing agent</span></label>`;
   const more = pop("more", "Filters", L.more, moreP, true).replace('<details class="hx-pop', `<details class="hx-pop${features ? " hx-modal" : ""}`).replace(/<button type="submit" class="hx-pop-go">Show homes<\/button><\/div><\/details>$/, features ? "</div></details>" : '<button type="submit" class="hx-pop-go">Show homes</button></div></details>');
   return `<form class="hx-fb${compact ? " hx-fb-c" : ""}${map ? " hx-fb-map" : ""}" action="${esc(action)}" method="get" data-hx-fb${map ? " data-hx-map-fb" : ""}${compact ? " data-hx-fb-c" : ""} aria-label="Search homes">${keep}`
-    + `<label class="hx-fb-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input name="q" type="search" enterkeyhint="search" autocomplete="off" maxlength="200" aria-label="${esc(ask || "Describe your home in a sentence")}" placeholder="${esc(ask || "Describe your home in a sentence")}" value="${esc(p.get("q") || "")}"><button type="submit" class="hx-fb-go" aria-label="Search">Search</button></label>`
-    + `<div class="hx-fb-pills">${pop("sale", "For sale", p.get("all") === "1" ? "With under contract" : "", saleP)}${pop("price", "Price", L.price, priceP)}${pop("beds", "Beds & baths", L.bb, bedsP)}${pop("type", "Home type", L.type, typeP)}${more}</div>`
+    /* The AI search comes first, on its own row, and says it is AI (owner, 2026-10-29: "tell me everything you
+       want and why I'll find you houses"). It reads goals as well as features (map.js ai()). The filters
+       follow, price first. */
+    + `<div class="hx-fb-ai"><p class="hx-ai-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>AI-powered search</p>`
+    + `<label class="hx-fb-q"><textarea name="q" rows="1" enterkeyhint="search" autocomplete="off" maxlength="400" aria-label="${esc(ask || AI_ASK)}" placeholder="${esc(ask || AI_ASK)}">${esc(p.get("q") || "")}</textarea><button type="submit" class="hx-fb-go">Find houses</button></label></div>`
+    + `<div class="hx-fb-pills">${pop("price", "Price", L.price, priceP)}${pop("beds", "Beds & baths", L.bb, bedsP)}${pop("type", "Home type", L.type, typeP)}${pop("sale", "For sale", p.get("all") === "1" ? "With under contract" : "", saleP)}${more}</div>`
     + `</form>`;
 }
 
@@ -103,19 +110,22 @@ export const featureChipLabel = (key) => featureLabel(key);
 
 export const FILTER_STYLE = `
 .hx-fb{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin:.9rem 0 1rem;position:relative;z-index:5}
-.hx-fb-q{display:flex;align-items:center;gap:.5rem;flex:1 1 22rem;min-height:3rem;padding:0 1rem;border-radius:999px;background:#fff;border:1px solid rgba(28,32,40,.14);box-shadow:0 1px 2px rgba(28,32,40,.05)}
+.hx-fb-ai{flex:1 1 100%;display:flex;flex-direction:column;gap:.4rem}.hx-fb-ai .hx-fb-q{flex:none}
+.hx-ai-badge{display:inline-flex;align-items:center;gap:.35rem;margin:0;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brass-ink,#91592b)}
+.hx-ai-badge svg{width:16px;height:16px;fill:#c4783a}
+.hx-fb-q{display:flex;align-items:center;gap:.5rem;min-height:3.4rem;padding:0 .45rem 0 1.15rem;border-radius:999px;background:#fff;border:1.5px solid rgba(196,120,58,.55);box-shadow:0 6px 22px rgba(196,120,58,.14)}
 .hx-fb-q:focus-within{border-color:var(--brass-ink,#91592b);box-shadow:0 0 0 3px rgba(196,120,58,.18)}
-.hx-fb-q svg{width:19px;height:19px;flex:none;fill:none;stroke:#5c6b78;stroke-width:2;stroke-linecap:round}
-.hx-fb-q input{flex:1;min-width:0;border:0;outline:none;background:none;font:inherit;font-size:1rem;color:var(--ink,#1c2028)}
+.hx-fb-q textarea{flex:1;min-width:0;height:2.9rem;padding:.72rem 0;border:0;outline:none;background:none;font:inherit;font-size:1.02rem;line-height:1.4;color:var(--ink,#1c2028);resize:none;overflow:hidden}
 .hx-fb-pills{display:flex;flex-wrap:wrap;gap:.45rem}
 .hx-pop{position:relative}
-.hx-pop>summary{list-style:none;display:flex;align-items:center;gap:.45rem;min-height:2.6rem;padding:0 .95rem;border-radius:999px;background:#fff;border:1px solid rgba(28,32,40,.16);font-size:.9rem;font-weight:600;color:var(--ink,#1c2028);cursor:pointer;white-space:nowrap;user-select:none}
+.hx-pop>summary{list-style:none;display:flex;align-items:center;gap:.5rem;min-height:2.75rem;padding:0 1rem;border-radius:999px;background:#fff;border:1px solid rgba(28,32,40,.14);box-shadow:0 1px 3px rgba(28,32,40,.08);font-size:.92rem;font-weight:600;color:var(--ink,#1c2028);cursor:pointer;white-space:nowrap;user-select:none;transition:border-color .15s,box-shadow .15s}
 .hx-pop>summary::-webkit-details-marker{display:none}
-.hx-pop>summary svg{width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.6;transition:transform .15s}
+.hx-pop>summary svg{width:11px;height:8px;fill:none;stroke:#c4783a;stroke-width:1.8;transition:transform .15s}
 .hx-pop[open]>summary svg{transform:rotate(180deg)}
-.hx-pop>summary:hover{border-color:rgba(28,32,40,.35)}
+.hx-pop>summary:hover{border-color:rgba(196,120,58,.6);box-shadow:0 4px 14px rgba(28,32,40,.1)}
+.hx-pop[open]>summary{border-color:#c4783a;box-shadow:0 0 0 3px rgba(196,120,58,.18)}
 .hx-pop.hx-on>summary{background:var(--ink,#1c2028);border-color:var(--ink,#1c2028);color:#fff}
-.hx-pop-p{position:absolute;top:calc(100% + .45rem);left:0;width:min(21rem,calc(100vw - 2rem));max-height:min(70vh,34rem);overflow:auto;padding:1rem 1.05rem 1.05rem;border-radius:16px;background:#fff;box-shadow:0 20px 50px rgba(28,32,40,.22);border:1px solid rgba(28,32,40,.08)}
+.hx-pop-p{position:absolute;top:calc(100% + .55rem);left:0;width:min(22rem,calc(100vw - 2rem));max-height:min(70vh,34rem);overflow:auto;padding:1.15rem 1.2rem 1.2rem;border-radius:20px;background:#fff;box-shadow:0 24px 60px rgba(28,32,40,.24),0 2px 6px rgba(28,32,40,.06);border:1px solid rgba(28,32,40,.07)}
 .hx-pop-w .hx-pop-p{width:min(30rem,calc(100vw - 2rem))}.hx-pop[data-k=more] .hx-pop-p{left:auto;right:0}
 .hx-fb:has(details[open]){z-index:10000}
 .hx-fb-err{flex-basis:100%;margin:.1rem 0 0;font-size:.85rem;color:#8a2d1c}
@@ -123,10 +133,11 @@ export const FILTER_STYLE = `
 .hx-pop-h~.hx-pop-h{margin-top:.95rem}
 .hx-pop-2,.hx-pop-3{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}.hx-pop-3{margin:.2rem 0 .7rem}
 .hx-pop-p label{display:flex;flex-direction:column;gap:.25rem;font-size:.78rem;font-weight:600;color:var(--slate,#5c6b78)}
-.hx-pop-2>*,.hx-pop-3>*{min-width:0}.hx-pop-p select{width:100%;min-width:0;min-height:2.6rem;padding:0 .7rem;border-radius:10px;border:1px solid rgba(28,32,40,.18);background:#faf8f4;font:inherit;font-size:.92rem;color:var(--ink,#1c2028)}
+.hx-pop-2>*,.hx-pop-3>*{min-width:0}.hx-pop-p select{width:100%;min-width:0;min-height:2.85rem;padding:0 2.2rem 0 .85rem;border-radius:12px;border:1px solid rgba(28,32,40,.16);background:#faf8f4 url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%278%27 viewBox=%270 0 12 8%27%3E%3Cpath d=%27M1 1.5l5 5 5-5%27 fill=%27none%27 stroke=%27%23c4783a%27 stroke-width=%271.8%27/%3E%3C/svg%3E") no-repeat right .85rem center;-webkit-appearance:none;appearance:none;font:inherit;font-size:.95rem;font-weight:600;color:var(--ink,#1c2028);cursor:pointer}
+.hx-pop-p select:hover{border-color:rgba(196,120,58,.6)}.hx-pop-p select:focus{outline:none;border-color:#c4783a;box-shadow:0 0 0 3px rgba(196,120,58,.18)}
 .hx-quicks{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.6rem}
-.hx-quick{padding:.4rem .7rem;border-radius:999px;border:1px solid rgba(28,32,40,.16);background:#faf8f4;font:inherit;font-size:.82rem;font-weight:600;color:var(--ink,#1c2028);cursor:pointer}
-.hx-quick:hover{border-color:var(--ink,#1c2028)}
+.hx-quick{padding:.5rem .8rem;border-radius:999px;border:1px solid rgba(28,32,40,.14);background:#fff;font:inherit;font-size:.85rem;font-weight:600;color:var(--ink,#1c2028);cursor:pointer;transition:background .15s,border-color .15s}
+.hx-quick:hover{border-color:#c4783a;background:rgba(196,120,58,.08)}
 .hx-seg{display:flex;border:1px solid rgba(28,32,40,.16);border-radius:12px;overflow:hidden}
 .hx-seg label{flex:1;display:block;position:relative}
 .hx-seg input,.hx-list input,.hx-feats input{position:absolute;opacity:0;pointer-events:none}
@@ -155,8 +166,9 @@ export const FILTER_STYLE = `
 .hx-fb-c .hx-pop>summary{min-height:2.35rem;font-size:.85rem;padding:0 .85rem}
 .hx-strip[data-loading] .hx-s-row{opacity:.45;transition:opacity .15s}
 .hx-s-empty{padding:1.4rem;border-radius:14px;background:#fff;color:var(--slate,#5c6b78);font-size:.92rem}
-.hx-fb-go{flex:none;border:0;border-radius:999px;background:var(--ink,#1c2028);color:#fff;font:inherit;font-weight:700;font-size:.85rem;padding:.5rem 1rem;cursor:pointer;margin-right:-.55rem}
-.hx-fb-q input::placeholder{color:#6b7480}
+.hx-fb-go{flex:none;border:0;border-radius:999px;background:linear-gradient(180deg,#d4894a,#c4783a);color:#151a22;font:inherit;font-weight:700;font-size:.9rem;padding:.7rem 1.15rem;cursor:pointer;white-space:nowrap}
+.hx-fb-go:hover{background:#c4783a}
+.hx-fb-q textarea::placeholder{color:#6b7480}
 /* The Filters window (owner, 2026-10-28: Zillow's, with our look): the house first, then See more. */
 .hx-fb .hx-modal>.hx-pop-p{position:fixed;left:50%;right:auto;top:calc(var(--hx-top,0px) + 1rem);bottom:1rem;transform:translateX(-50%);width:min(40rem,calc(100vw - 2rem))!important;max-height:52rem;padding:0;display:flex;flex-direction:column;overflow:hidden;z-index:10002;border-radius:20px}
 .hx-modal[open]>summary::before{content:"";position:fixed;inset:0;background:rgba(21,26,34,.5);z-index:10001;cursor:default}
@@ -176,8 +188,8 @@ export const FILTER_STYLE = `
 .hx-mod-f .hx-pop-go{width:auto;margin:0;padding:0 1.6rem;background:var(--brass,#c4783a);color:#151a22}
 .hx-mod-reset{border:0;background:none;font:inherit;font-weight:600;color:var(--ink,#1c2028);text-decoration:underline;cursor:pointer}
 html.hx-modal-open{overflow:hidden}
-.hx-fb-c .hx-fb-q{flex-basis:16rem;min-height:2.6rem}.hx-fb-c .hx-fb-q input{font-size:.92rem}.hx-fb-c .hx-fb-go{padding:.4rem .85rem;font-size:.8rem}
-@media (max-width:640px){.hx-fb-go{display:none}.hx-fb .hx-modal>.hx-pop-p{left:0!important;right:0!important;top:var(--hx-top,0px);bottom:0;transform:none;width:100%!important;max-height:none;border-radius:0}
+.hx-fb-c .hx-fb-q{min-height:2.9rem}.hx-fb-c .hx-fb-q textarea{font-size:.95rem}.hx-fb-c .hx-fb-go{padding:.4rem .85rem;font-size:.8rem}
+@media (max-width:640px){.hx-fb-q{border-radius:22px;align-items:flex-end;padding:.2rem .4rem .4rem 1rem}.hx-fb-q textarea{height:4.4rem;padding:.6rem 0}.hx-fb-go{padding:.6rem .9rem;font-size:.85rem}.hx-fb .hx-modal>.hx-pop-p{left:0!important;right:0!important;top:var(--hx-top,0px);bottom:0;transform:none;width:100%!important;max-height:none;border-radius:0}
  .hx-mod-b .hx-list{grid-template-columns:1fr 1fr}.hx-mod-b .hx-pop-3{grid-template-columns:1fr 1fr}.hx-ticks{grid-template-columns:1fr}}
 @media (max-width:640px){.hx-fb-pills{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;width:100%;padding-bottom:.2rem}.hx-fb-pills::-webkit-scrollbar{display:none}
 .hx-pop{position:static}.hx-fb .hx-pop-p{position:fixed;left:.75rem!important;right:.75rem!important;top:auto;bottom:.75rem;width:auto!important;max-height:72vh;border-radius:20px;z-index:1000;box-shadow:0 -10px 60px rgba(28,32,40,.35)}
@@ -188,7 +200,7 @@ export const FILTER_SCRIPT = `<script>(function(){
 var forms=document.querySelectorAll("form[data-hx-fb]");
 function closeAll(except){document.querySelectorAll("details.hx-pop[open]").forEach(function(d){if(d!==except)d.removeAttribute("open")})}
 document.addEventListener("click",function(e){if(!e.target.closest||!e.target.closest("details.hx-pop"))closeAll(null)});
-document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll(null)});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll(null);var t=e.target;if(e.key==="Enter"&&!e.shiftKey&&t&&t.tagName==="TEXTAREA"&&t.name==="q"&&t.form){e.preventDefault();if(t.form.requestSubmit)t.form.requestSubmit();else t.form.submit()}});
 function paramsOf(f){var p=new URLSearchParams();var has=[];
  Array.prototype.forEach.call(f.elements,function(x){if(!x.name||x.disabled)return;
   if((x.type==="radio"||x.type==="checkbox")&&!x.checked)return;
