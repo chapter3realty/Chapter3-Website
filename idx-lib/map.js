@@ -127,6 +127,14 @@ export function sorryHtml(closest, total) {
 
 export const MAP_STYLE = `<style>
 ${SORRY_STYLE}
+.hx-ai-picks{margin:0 0 1rem;padding:.85rem .9rem 1rem;border-radius:18px;background:rgba(196,120,58,.07);border:1px solid rgba(196,120,58,.32)}.hx-ai-picks[hidden]{display:none}
+.hx-ai-picks-h{display:flex;align-items:center;gap:.35rem;margin:0;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#91592b}.hx-ai-picks-h svg{width:15px;height:15px;fill:#c4783a}
+.hx-ai-picks-n{margin:.25rem 0 .6rem;font-size:.9rem;color:var(--ink,#1c2028)}.hx-ai-picks-g:empty{display:none}
+.hx-ai-picks .hx-ai-picks-g{display:flex;grid-template-columns:none;gap:.7rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.3rem;scrollbar-width:thin}
+.hx-ai-picks .hx-ai-picks-g>.hx-c{flex:0 0 46%;scroll-snap-align:start}.hx-ai-picks .hx-c-photo{aspect-ratio:16/10}
+@media (max-width:899px){.hx-ai-picks .hx-ai-picks-g>.hx-c{flex-basis:78%}.hx-ai-picks{padding:.7rem .7rem .8rem}}
+.hx-ai-picks-su{border:0;border-radius:999px;background:linear-gradient(180deg,#d4894a,#c4783a);color:#151a22;font:inherit;font-weight:700;padding:.6rem 1.1rem;cursor:pointer}
+.hx-c-ai{display:block;margin:.3rem 0 .1rem;font-size:.82rem;font-weight:600;color:#91592b}
 .hx-ring-ctl{position:absolute;left:50%;top:.8rem;transform:translateX(-50%);z-index:6;display:flex;align-items:center;gap:.35rem;padding:.3rem .4rem;border-radius:999px;background:rgba(255,255,255,.96);box-shadow:0 6px 20px rgba(28,32,40,.2);font-size:.85rem;font-weight:700;color:#1c2028}.hx-ring-ctl[hidden]{display:none}.hx-ring-ctl button{width:2rem;height:2rem;border:0;border-radius:999px;background:#f4efe8;font:inherit;font-size:1.1rem;line-height:1;cursor:pointer;color:#1c2028}.hx-ring-ctl button:hover{background:rgba(196,120,58,.18)}.hx-ring-ctl span{min-width:4.6rem;text-align:center}
 /* The map page fills the screen under our header (owner, 2026-10-28): no footer to scroll into. */
 html.hx-fit,html.hx-fit body,body:has(.hx-mapapp){overflow:hidden}
@@ -172,7 +180,22 @@ main#main .hx-mpop .hx-c-body{padding:.6rem .8rem;padding-right:2.4rem}main#main
 .hx-mpop-go{display:block;margin:0;padding:.45rem .8rem .6rem;font-size:.8rem;color:var(--slate,#5c6b78);text-align:center;border-top:1px solid rgba(28,32,40,.08)}
 .hx-list-sent{height:1px}
 @media (max-width:1100px){.hx-map-body{grid-template-columns:minmax(0,1fr) min(46vw,420px)}.hx-map-cards{grid-template-columns:1fr}}
-@media (max-width:899px){.hx-mtop{padding:.5rem .75rem .4rem}.hx-mtop .hx-fb{flex-wrap:wrap}.hx-mtop .hx-fb-ai{flex:1 1 100%}.hx-mtop .hx-fb-pills{flex-wrap:wrap}
+@media (max-width:899px){.hx-mtop{padding:.45rem .75rem .35rem}.hx-mtop .hx-fb{flex-wrap:wrap;gap:.4rem}.hx-mtop .hx-fb-ai{flex:1 1 100%;gap:.25rem}
+ /* The phone (owner, 2026-10-30: "optimize the UI for mobile"): the search takes one short block, the filters one
+    row that scrolls sideways, the map's buttons never cover the list, and the call bar steps aside on the map
+    (the header keeps its phone button). */
+ html.hx-fit .hdr-callbar{display:none}
+ .hx-mtop .hx-ai-badge{font-size:.66rem}.hx-mtop .hx-ai-badge svg{width:13px;height:13px}
+ .hx-mtop .hx-fb-q{min-height:0;padding:.15rem .3rem .3rem .85rem;border-radius:18px}.hx-mtop .hx-fb-q textarea{height:3.1rem;padding:.45rem 0;font-size:.95rem;line-height:1.3}
+ .hx-mtop .hx-fb-go{padding:.5rem .8rem;font-size:.82rem}
+ .hx-mtop .hx-fb-pills{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;width:100%;margin:0 -.75rem;padding:0 .75rem .1rem;width:calc(100% + 1.5rem)}.hx-mtop .hx-fb-pills::-webkit-scrollbar{display:none}
+ .hx-mtop .hx-pop>summary{min-height:2.3rem;padding:0 .8rem;font-size:.85rem}
+ .hx-mtop .hx-applied{margin:.15rem 0 0}.hx-ai-note.hx-ai-on{font-size:.85rem;padding:.45rem .65rem}
+ .hx-map-body.hx-show-list .hx-mode,.hx-map-body.hx-show-list .hx-map-hint,.hx-map-body.hx-show-list .hx-ring-ctl{display:none}
+ .hx-map-hint{top:.8rem;bottom:auto;left:.8rem;font-size:.78rem}
+ .hx-ring-ctl{top:3.3rem;left:.8rem;transform:none}
+ .hx-list-h h1{font-size:1.3rem;line-height:1.2}.hx-list-h{padding-right:0}
+ .hx-map-toggle{padding:.6rem 1.2rem;font-size:.92rem}
  .hx-map-body{grid-template-columns:1fr}
  .hx-map-list{position:absolute;inset:0;z-index:8;border:0;display:none}.hx-map-cards{grid-template-columns:1fr}
  .hx-map-body.hx-show-list .hx-map-list{display:block}
@@ -206,7 +229,7 @@ function card(p,withHeart){var a=el("article","hx-c"),l=el("a","hx-c-link");l.hr
  if(p.tag)ph.appendChild(el("span","hx-c-tag",p.tag));l.appendChild(ph);var b=el("span","hx-c-body");b.appendChild(el("span","hx-c-price",p.price));
  var f=el("span","hx-c-facts"),bits=[];if(p.beds!=null)bits.push([p.beds," bds"]);if(p.baths!=null)bits.push([p.baths," ba"]);if(p.sqft!=null)bits.push([p.sqft.toLocaleString("en-US")," sqft"]);if(p.acres)bits.push([p.acres,p.acres==="1"?" acre":" acres"]);
  bits.forEach(function(x,i){if(i)f.appendChild(el("i"));f.appendChild(el("b",null,String(x[0])));f.appendChild(document.createTextNode(x[1]))});if(p.status){if(bits.length)f.appendChild(el("i"));f.appendChild(document.createTextNode(p.status))}
- b.appendChild(f);b.appendChild(el("span","hx-c-addr",p.addr));b.appendChild(el("span","hx-c-firm","MLS #"+p.mls+", "+p.firm+". Listing provided by CCMLS."));l.appendChild(b);a.appendChild(l);if(withHeart)a.appendChild(heart(p));return a}
+ b.appendChild(f);if(rd.why[p.mls])b.appendChild(el("span","hx-c-ai","AI: "+rd.why[p.mls]));b.appendChild(el("span","hx-c-addr",p.addr));b.appendChild(el("span","hx-c-firm","MLS #"+p.mls+", "+p.firm+". Listing provided by CCMLS."));l.appendChild(b);a.appendChild(l);if(withHeart)a.appendChild(heart(p));return a}
 /* The list draws 24 homes, and 24 more as the reader nears the end: fewer photos asked for at once. */
 var shown=[],drawn=0,sent=null,io=null;
 function more24(){shown.slice(drawn,drawn+24).forEach(function(p){list.appendChild(card(p,true))});drawn=Math.min(shown.length,drawn+24);if(sent)list.appendChild(sent)}
@@ -252,7 +275,37 @@ function miles(a,b,c,d){var R=3958.8,r=Math.PI/180;return 2*R*Math.asin(Math.sqr
 function view3(){var c=map3.center||{};return{lat:c.lat,lng:c.lng,mi:Math.max(0.3,Math.min(25,(map3.range||5000)*0.7/1609))}}
 function inView(p){if(in3d()){var v=view3();return v.lat==null||miles(v.lat,v.lng,p.lat,p.lng)<=v.mi}if(!map||!map.getBounds())return true;return map.getBounds().contains({lat:p.lat,lng:p.lng})}
 var searched=false;
-function listView(){if(!all.length&&!searched)return;render(all.filter(inView));if(hot)hilite(hot)}
+/* The AI reads the homes' descriptions in the background (owner, 2026-10-30: "have it read a few descriptions
+   and show those houses ... as people are looking ... keep running"). The list shows at once; the homes in view
+   are read first, six at a time, and the ones whose description fits what the buyer asked for gather at the
+   top, each with the reason in a few words. A home whose description rules it out (a lease, another kind of
+   property, a must-have it lacks) leaves the list. Descriptions are for signed-up visitors only. */
+var rd={tok:0,yes:{},no:{},why:{},n:0,of:0},picks=null,picksGrid=null,picksNote=null;
+function picksBox(){if(picks)return picks;picks=el("section","hx-ai-picks");picks.setAttribute("aria-live","polite");
+ var h=el("p","hx-ai-picks-h");h.insertAdjacentHTML("afterbegin",'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>');h.appendChild(document.createTextNode("Read by AI"));picks.appendChild(h);
+ picksNote=el("p","hx-ai-picks-n");picks.appendChild(picksNote);picksGrid=el("div","hx-map-cards hx-ai-picks-g");picks.appendChild(picksGrid);list.parentNode.insertBefore(picks,list);return picks}
+function stopReader(){rd.tok++;if(picks)picks.hidden=true}
+function readNote(done){if(!picksNote)return;var y=Object.keys(rd.yes).length;picksNote.textContent=(done?"The AI read all "+rd.n+" descriptions":"The AI is reading the descriptions: "+rd.n+" of "+rd.of)+". "+(y?y+(y===1?" home fits":" homes fit")+" what you asked"+(done?".":" so far."):done?"None stood out; the homes below match your filters.":"")}
+function startReader(q){var t=++rd.tok;rd.yes={};rd.no={};rd.why={};rd.n=0;picksBox();picks.hidden=false;while(picksGrid.firstChild)picksGrid.removeChild(picksGrid.firstChild);
+ if(document.body.getAttribute("data-hx-signed")!=="1"){picksNote.textContent="Sign up free and the AI reads every home's description for you while you look.";var su=el("button","hx-ai-picks-su","Sign up free");su.type="button";su.setAttribute("data-hx-signup","");picksGrid.appendChild(su);return}
+ var seen={},order=[];all.filter(inView).concat(all).forEach(function(p){if(!seen[p.mls]){seen[p.mls]=1;order.push(p)}});order=order.slice(0,96);rd.of=order.length;var i=0;readNote(false);
+ function next(){if(t!==rd.tok)return;var batch=order.slice(i,i+6);i+=6;if(!batch.length){readNote(true);return}
+  fetch("/homes/api/remarks?mls="+batch.map(function(p){return p.mls}).join(","),{credentials:"same-origin"}).then(function(r){return r.json()}).then(function(j){if(t!==rd.tok)return;
+   var rows=(j&&j.ok&&j.rows||[]).filter(function(r){return r.remarks});if(!rows.length){rd.n+=batch.length;readNote(false);return next()}
+   var by={};batch.forEach(function(p){by[p.mls]=p});
+   var homes=rows.map(function(r){var p=by[r.mls]||{};return{mls:r.mls,price:p.price,beds:p.beds,baths:p.baths,sqft:p.sqft,acres:p.acres,kind:r.type,status:r.status,description:r.remarks}});
+   var prompt="A home buyer on the Grand Strand, South Carolina, asked for: "+JSON.stringify(q)+". Filters in force: "+JSON.stringify(state.toString())+". Read each home's listing description and judge only the home against what they asked. "+
+    "fit yes: the description shows it has what they want or suits their goal. fit no: the description clearly rules it out (it is for lease or rent, not for sale; a different kind of property; it lacks a must-have they named). Otherwise fit maybe. "+
+    "why: at most 12 plain words, from the description, about the home (never about people or who lives nearby). JSON only, start { end }, like "+JSON.stringify({r:[{m:"MLS number",fit:"yes",why:"new roof and a fenced yard for the dog"}]})+". Homes: "+JSON.stringify(homes);
+   return fetch("https://api-proxy.chapter3realty.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-haiku-5-5",max_tokens:500,cache_key:["read1",q,state.toString(),homes.map(function(h){return h.mls}).join(",")].join("|"),messages:[{role:"user",content:prompt}]})})
+    .then(function(r){return r.json()}).then(function(d){if(t!==rd.tok)return;var tx=d&&d.content&&d.content.filter(function(b){return b.type==="text"}).pop();var out=[];
+     if(tx){try{var a=tx.text.indexOf("{"),z=tx.text.lastIndexOf("}");out=JSON.parse(tx.text.slice(a,z+1)).r||[]}catch(e){}}
+     var gone=false;out.forEach(function(x){var m=String(x&&x.m||"");if(!by[m])return;var why=String(x.why||"").replace(/[<>]/g,"").slice(0,90);
+      if(x.fit==="yes"){rd.yes[m]=1;rd.why[m]=why;if(picksGrid.children.length<12)picksGrid.appendChild(card(by[m],true));var c=list.querySelector("[data-mls='"+m+"'] .hx-c-addr");if(c&&!c.previousSibling.classList.contains("hx-c-ai"))c.parentNode.insertBefore(el("span","hx-c-ai","AI: "+why),c)}
+      else if(x.fit==="no"){rd.no[m]=1;gone=true}});
+     if(gone)listView();rd.n+=batch.length;readNote(false);next()})}).catch(function(){if(t===rd.tok)setTimeout(next,1500)})}
+ next()}
+function listView(){if(!all.length&&!searched)return;render(all.filter(function(p){return inView(p)&&!rd.no[p.mls]}));if(hot)hilite(hot)}
 function msg(j){return j&&j.error==="stale"?"The listing search is being refreshed. Please try again in a few minutes.":"Please try again in a minute."}
 function search(p,o){o=o||{};state=new URLSearchParams(p);var n=++seq;count.textContent="Searching...";
  return fetch("/homes/api/map?"+state.toString(),{credentials:"same-origin"}).then(function(r){return r.json()}).then(function(j){if(n!==seq)return;
@@ -264,7 +317,7 @@ function search(p,o){o=o||{};state=new URLSearchParams(p);var n=++seq;count.text
   if(popFor){closePop()}
   if(!o.ring)clearRing();
   draw(o.fit!==false);listView();
-  if(o.ai!==false&&wantsAi(j.q,j.left))ai(j.q,j.left)}).catch(function(){if(n===seq)count.textContent="Please try again in a minute."})}
+  if(o.ai!==false&&wantsAi(j.q,j.left))ai(j.q,j.left);else if(o.read||j.q)startReader(o.read||j.q);else stopReader()}).catch(function(){if(n===seq)count.textContent="Please try again in a minute."})}
 document.addEventListener("hx-search",function(e){aiNote.hidden=true;search(e.detail,{fit:true})});
 /* Words the rules could not read: the AI picks filters from the CRM's own list, once per sentence. */
 var ALLOW=["min","max","beds","baths","type","city","sqft","yearMin","yearMax","lotMin","hoaMax","garage","hoa"];
@@ -303,9 +356,9 @@ function ai(q,left){if(!q||!window.hxFeats)return;aiNote.hidden=false;aiNote.cla
     if(has.length)p.set("has",has.join(","));else p.delete("has");if(not.length)p.set("not",not.join(","));else p.delete("not");
     ASK_KEYS.forEach(function(k){if(o[k]!=null&&o[k]!=="")p.set(k,String(o[k]))});
     var why=o.why?String(o.why).replace(/[<>]/g,"").slice(0,180):"";
-    if(p.toString()===state.toString()){remember(q,state);aiNote.textContent=why?"AI: "+why+" The filters above already match.":"We searched what we could read. Add a detail, or use the filters.";return}
+    if(p.toString()===state.toString()){remember(q,state);aiNote.textContent=why?"AI: "+why+" The filters above already match.":"We searched what we could read. Add a detail, or use the filters.";startReader(q);return}
     remember(q,p);aiNote.textContent="AI: "+(why?why+" ":"")+(fresh?"A new search. ":"")+"Remove any filter you do not want.";
-    clearRing();search(p,{fit:true,ai:false})})}).catch(function(){aiNote.hidden=true})}
+    clearRing();search(p,{fit:true,ai:false,read:q})})}).catch(function(){aiNote.hidden=true;startReader(q)})}
 function hilite(mls){hot=mls;marks.forEach(function(m){style(m,m.p.mls===mls)});marks3.forEach(function(m){if(m.pin)try{m.pin.background=m.p.mls===mls?"#c4783a":"#1a73e8"}catch(x){}});Array.prototype.forEach.call(list.children,function(c){c.classList.toggle("hx-hot",c.getAttribute("data-mls")===mls)})}
 function closePop(){if(pop)pop.remove();pop=null;popFor=null}
 /* The first click on a dot shows the home; a second click on the same dot opens it. */
@@ -361,7 +414,7 @@ google.maps.importLibrary("maps").then(function(lib){
  draw(true);
  var focus=app.getAttribute("data-focus");if(focus){var fm=null;marks.forEach(function(m){if(m.p.mls===focus)fm=m});
   if(fm){google.maps.event.addListenerOnce(map,"idle",function(){map.setCenter(fm.getPosition());map.setZoom(15);hilite(focus);listView()})}}
- if(wantsAi(app.getAttribute("data-q"),app.getAttribute("data-left")))ai(app.getAttribute("data-q"),app.getAttribute("data-left"));
+ if(wantsAi(app.getAttribute("data-q"),app.getAttribute("data-left")))ai(app.getAttribute("data-q"),app.getAttribute("data-left"));else if(app.getAttribute("data-q"))startReader(app.getAttribute("data-q"));
  /* 2D or 3D in the top right (owner, 2026-10-28): the same dots, clickable, and the same list. */
  var btns=Array.prototype.slice.call(app.querySelectorAll("[data-mode]"));
  function setMode(m){btns.forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-mode")===m?"true":"false")});

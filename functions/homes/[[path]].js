@@ -76,6 +76,7 @@ async function handle(context) {
     const name = path.replace(/^\/homes\/api\/|\/$/g, "");
     if (name === "map" && (request.method === "GET" || request.method === "HEAD")) return mapData(context, url);
     if (name === "deals" && request.method === "GET") return dealsApi(context, url);
+    if (name === "remarks" && request.method === "GET") return remarksApi(context, url);
     // The photo warmer's call (idx-lib/photo.js): a page of homes for sale, 24 at a time, from the CRM.
     if (name === "warm" && request.method === "GET") return warm(context, url, async (pg) => {
       const r = await crm(env, request, `/api/idx/listings?status=active&size=24&page=${pg}`, { anonymous: true });
@@ -556,6 +557,29 @@ ${sorryHtml(s.closest, s.total)}<div id="hx-map-cards" class="hx-map-cards">${ca
     extraBody: MAP_SCRIPT,
     private: signed,
   });
+}
+
+// ── descriptions for the AI search to read (map.js reader) ───────────────────
+
+/**
+ * GET /homes/api/remarks?mls=a,b,c (at most 6): each home's description, cut to 600 letters, for the AI search
+ * to read in the background (owner, 2026-10-30: "have it read a few descriptions and show those houses ... and
+ * keep running"). Descriptions are for signed-up visitors only (contract: remarks on the registered tier), so a
+ * visitor who is not signed in gets sign_in. The views are not recorded (track=0): reading is not looking.
+ */
+async function remarksApi(context, url) {
+  const { env, request } = context;
+  if (!visitorToken(request)) return json({ ok: false, error: "sign_in" }, 200, { "cache-control": "private, no-store" });
+  const ids = String(url.searchParams.get("mls") || "").split(",").filter((m) => /^[A-Za-z0-9]{3,20}$/.test(m)).slice(0, 6);
+  if (!ids.length) return json({ ok: false, error: "no_mls" }, 400);
+  const rows = await Promise.all(ids.map(async (m) => {
+    const r = await crm(env, request, `/api/idx/listings/${encodeURIComponent(m)}?track=0`, { timeoutMs: 6000 });
+    const l = r.status === 200 && r.json && r.json.ok && r.json.listing;
+    if (!l) return { mls: m, remarks: null };
+    const text = typeof l.remarks === "string" ? l.remarks.replace(/\s+/g, " ").trim().slice(0, 600) : null;
+    return { mls: m, remarks: text, type: l.propertySubType || l.propertyType || null, status: l.status || null };
+  }));
+  return json({ ok: true, rows }, 200, { "cache-control": "private, no-store" });
 }
 
 // ── the deal finder (idx-lib/deals.js), for agents ──────────────────────────

@@ -210,6 +210,7 @@ export const ICONS = {
 };
 
 export const STYLE = `<style>
+@media (max-width:640px){.hx-count{flex-wrap:wrap;gap:.5rem .8rem}.hx-count-r{flex:1 1 auto;justify-content:space-between;min-width:0}.hx-sort select{max-width:10.5rem}.hx-fb-q textarea{font-size:.95rem}}
 .hx-go{position:fixed;left:0;top:0;z-index:2147483646;height:3px;width:0;background:#c4783a;box-shadow:0 0 8px rgba(196,120,58,.6);pointer-events:none}.hx-go-on{width:88%;transition:width 5s cubic-bezier(.08,.8,.2,1)}
 .hx-wrap{max-width:1180px;margin:0 auto;padding:1.5rem 1.25rem 3rem;color:var(--navy)}
 .hx-wrap h1{font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.15;margin:.4rem 0 .6rem}
@@ -324,7 +325,7 @@ main#main .hx-s-row>.hx-c:hover{transform:none}
 .hx-applied-chip span{display:inline-flex;align-items:center;justify-content:center;width:1.2rem;height:1.2rem;border-radius:999px;background:rgba(28,32,40,.12);font-size:.9rem}
 .hx-clear{font-size:.85rem;color:var(--brass-ink,#91592b);margin-left:.3rem}
 .hx-count{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:.6rem 0 1rem}.hx-count p{margin:0;font-size:1.05rem}.hx-count b{font-weight:800}
-.hx-count-r{display:inline-flex;align-items:center;gap:.6rem}.hx-maplink{display:inline-flex;align-items:center;padding:.42rem .95rem;border-radius:999px;background:#1a73e8;color:#fff!important;font-weight:700;font-size:.9rem;text-decoration:none}
+.hx-count-r{display:inline-flex;align-items:center;gap:.6rem}.hx-maplink{display:inline-flex;align-items:center;padding:.42rem .95rem;border-radius:999px;background:#1c2028;color:#fff!important;font-weight:700;font-size:.9rem;text-decoration:none}
 .hx-sort{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;color:var(--slate,#5c6b78)}.hx-sort select{border:1px solid rgba(28,32,40,.18);border-radius:999px;background:#fff;font:inherit;font-size:.9rem;padding:.4rem .8rem;color:var(--ink,#1c2028)}
 .hx-pager a,.hx-pager span{padding:.55rem 1rem;border-radius:999px;border:1px solid rgba(28,32,40,.15);background:#fff;text-decoration:none;color:var(--ink,#1c2028);font-weight:600}.hx-pager span{border:0;background:none}
 .hx-maplist{color:var(--brass-ink,#91592b);font-weight:600}

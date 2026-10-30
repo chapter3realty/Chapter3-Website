@@ -679,5 +679,16 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
     && t.includes("I'm sorry, no homes match all of that.") && t.includes("hx-sorry-i") && r2.params.get("type") === "land");
 }
 
+// The AI reads descriptions in the background (owner, 2026-10-30): signed-up visitors only, six at most, never a recorded view.
+{
+  const anon = JSON.parse(await (await run(homes, req("/homes/api/remarks?mls=2600001,2600002"))).text());
+  const before = calls.length;
+  const signed = JSON.parse(await (await run(homes, req("/homes/api/remarks?mls=2600001,2600002,2600003,2600004,2600005,2600006,2600007", cookie))).text());
+  const asked = calls.slice(before).filter((c) => /\/api\/idx\/listings\/\w+/.test(c.url));
+  check("description reader: sign_in for a visitor not signed up; six at most for a signed-up one, with the description, and never a recorded view (track=0)",
+    anon.ok === false && anon.error === "sign_in" && signed.ok && signed.rows.length === 6 && signed.rows.every((r) => typeof r.remarks === "string" && r.remarks.length > 0)
+    && asked.length === 6 && asked.every((c) => c.url.includes("track=0")));
+}
+
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");
 process.exit(fails ? 1 : 0);
