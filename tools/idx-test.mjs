@@ -290,8 +290,18 @@ check("page scripts: each parses (a syntax error would break every button)", (()
 r = await run(homes, req("/homes/api/map?city=Conway"));
 let mj = JSON.parse(await r.text());
 check("map data: no points from the CRM yet, so no pins, and the page says so", r.status === 200 && mj.ok && mj.pins.length === 0 && mj.total === 30);
+let beforeMap = calls.filter((c) => c.url.includes("/api/idx/listings")).length;
 t = await (await run(homes, req("/homes/map/?city=Conway"))).text();
-check("map page: fills the screen, the AI search first (labelled AI, the owner's words), price the first filter, the list of homes, the MLS notice once at the end of the list, noindex", t.includes("data-hx-map") && t.includes('class="hx-mapapp"') && t.includes("AI-powered search") && t.includes("Tell me everything you want and why.") && t.indexOf('data-k="price"') > 0 && t.indexOf('data-k="price"') < t.indexOf('data-k="sale"') && (t.match(/<article class="hx-c">/g) || []).length === 30 && (t.match(/class="hx-disclaimer"/g) || []).length === 1 && t.indexOf('class="hx-disclaimer"') > t.indexOf('id="hx-map-cards"') && t.includes("noindex"));
+check("map page: fills the screen, the AI search first (labelled AI, the owner's words), price the first filter, grey cards where the homes go, the MLS notice once at the end of the list, noindex", t.includes("data-hx-map") && t.includes('class="hx-mapapp"') && t.includes("AI-powered search") && t.includes("Tell me everything you want and why.") && t.indexOf('data-k="price"') > 0 && t.indexOf('data-k="price"') < t.indexOf('data-k="sale"') && (t.match(/class="hx-c hx-skel-c"/g) || []).length === 6 && (t.match(/class="hx-disclaimer"/g) || []).length === 1 && t.indexOf('class="hx-disclaimer"') > t.indexOf('id="hx-map-cards"') && t.includes("noindex"));
+check("map page: it comes back at once, without asking the CRM for homes; the browser asks /homes/api/map (data-defer)", calls.filter((c) => c.url.includes("/api/idx/listings")).length === beforeMap && t.includes('data-defer="1"') && t.includes('id="hx-pins">[]') && MAP_SCRIPT.includes("first:true") && MAP_SCRIPT.includes('"&hearts=1"'));
+t = await (await run(homes, req("/homes/map/?city=Conway&q=" + encodeURIComponent("3 bed near the beach")))).text();
+check("map page: a sentence is kept for the browser's first search, and shown in the AI box", t.includes("q=3+bed+near+the+beach") && t.includes(">3 bed near the beach</textarea>"));
+r = await run(homes, req("/homes/api/map?city=Conway&hearts=1", cookie));
+mj = JSON.parse(await r.text());
+check("map data: the first call brings a signed-up visitor's hearts, privately, and the MLS notice's date and source", mj.hearts && mj.hearts[0] === "2600001" && r.headers.get("cache-control") === "private, no-store" && /Source: /.test(mj.foot.line));
+r = await run(homes, req("/homes/api/map?city=Conway&hearts=1"));
+mj = JSON.parse(await r.text());
+check("map data: no hearts for a visitor who is not signed up, and the answer may be cached", mj.hearts === undefined && r.headers.get("cache-control") === "public, max-age=300");
 MAPPOINTS = true;
 r = await run(homes, req("/homes/api/map?near=33.7,-78.9&miles=2&beds=3"));
 mj = JSON.parse(await r.text());
@@ -304,9 +314,10 @@ check("map data: a point off the coast is never sent", !sent2.includes("near="))
 r = await run(homes, req("/homes/api/map?q=" + encodeURIComponent("3 bed under 400k in Conway")));
 sent2 = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
 check("map data: plain words work on the map too", sent2.includes("city=Conway") && sent2.includes("beds=3") && sent2.includes("max=400000"));
-t = await (await run(homes, req("/homes/map/?city=Conway"))).text();
-check("map page: pins in the page as data, with < escaped", /<script type="application\/json" id="hx-pins">\[\{/.test(t) && !/id="hx-pins">[^<]*<(?!\/script)/.test(t));
+t = await (await run(homes, req("/homes/api/map?city=Conway"))).text();
+check("map data: pins as data, with < escaped", /"pins":\[\{/.test(t) && !/</.test(t));
 MAPPOINTS = false;
+check("click layout: the footer shows the next page's grey layout (a home, the map, a list, an article) after the page's own handlers, never for a cancelled click, and clears it on the back button; render.js has no second bar", (() => { const f = fs.readFileSync(path.join(path.dirname(new URL(import.meta.url).pathname), "../partials/footer.html"), "utf8"); return f.includes("window.c3Skel") && f.includes("if (!e.defaultPrevented) go(u.href)") && ["home:", "map:", "list:", "page:"].every((k) => f.includes(k)) && f.includes("addEventListener('pageshow', clear)") && f.includes("window.hxGo = go"); })() && !SCRIPT.includes("hx-go-on") && MAP_SCRIPT.includes("window.hxGo(p.url)"));
 check("map script: it parses", (() => { try { new Function(MAP_SCRIPT.replace(/^<script>|<\/script>$/g, "")); return true; } catch { return false; } })());
 
 // The rental analyzer's MLS lookup (2026-10-25).
@@ -414,13 +425,13 @@ t = await (await run(homes, req("/homes/2600005-101-test-st-myrtle-beach/"))).te
 check("listing: a map of where the home is, opening its town on the full map with it lit", t.includes('class="hx-loc-map"') && t.includes("staticmap?center=33.71,-78.9") && t.includes('href="/homes/map/?city=Myrtle+Beach&amp;focus=2600005"'));
 t = await (await run(homes, req("/homes/2611111/"))).text();
 check("listing: a withheld address gets no map", !t.includes('class="hx-loc-map"'));
-t = await (await run(homes, req("/homes/map/?city=Conway&focus=2699999"))).text();
+t = await (await run(homes, req("/homes/api/map?city=Conway&focus=2699999"))).text();
 check("map page: the home a listing page sent us from is among the pins sent to the browser", t.includes('"mls":"2699999"'));
 BIG = true;
 const beforeBig = calls.length, censusBig = CENSUS_CALLS;
-r = await run(homes, req("/homes/map/?city=Myrtle+Beach"));
+r = await run(homes, req("/homes/api/map?city=Myrtle+Beach"));
 t = await r.text();
-check("map page: 4,041 homes, 144 placed in one geocoder call, under Cloudflare's 50 outside calls", r.status === 200 && CENSUS_CALLS - censusBig === 1 && calls.length - beforeBig <= 8 && (t.match(/"lat":33.71/g) || []).length === 144);
+check("map data: 4,041 homes, 144 placed in one geocoder call, under Cloudflare's 50 outside calls", r.status === 200 && CENSUS_CALLS - censusBig === 1 && calls.length - beforeBig <= 8 && (t.match(/"lat":33.71/g) || []).length === 144);
 BIG = false;
 r = await run(homes, req("/homes/map/"), { ...ENV, ASSETS: { fetch: async () => { throw new Error("Too many subrequests."); } } });
 t = await r.text();

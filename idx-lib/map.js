@@ -154,6 +154,11 @@ html.hx-fit,html.hx-fit body,body:has(.hx-mapapp){overflow:hidden}
 .hx-map-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
 .hx-map-cards .hx-c{position:relative}
 .hx-map-cards .hx-hot{outline:3px solid #1a73e8;outline-offset:2px;border-radius:14px}
+.hx-skel{background:linear-gradient(100deg,#ece6dc 30%,#f6f2ec 50%,#ece6dc 70%);background-size:300% 100%;animation:hx-sh 1.3s linear infinite}
+@keyframes hx-sh{from{background-position:100% 0}to{background-position:0 0}}
+main#main .hx-skel-c{box-shadow:0 1px 2px rgba(28,32,40,.06)}.hx-skel-l{padding:.8rem .9rem 1rem}.hx-skel-l i{display:block;height:.8rem;border-radius:6px;margin:.45rem 0}
+.hx-skel-l i:first-child{height:1.15rem;width:45%}.hx-skel-l i:nth-child(2){width:80%}.hx-skel-l i:nth-child(3){width:60%}
+@media (prefers-reduced-motion:reduce){.hx-skel{animation:none}}
 .hx-list-more{margin:1rem 0 0;font-size:.88rem;color:var(--slate,#5c6b78);text-align:center}.hx-list-more[hidden]{display:none}
 .hx-list-foot{margin:1.2rem -1rem 0;padding:.9rem 1rem 1.2rem;background:#faf8f4;border-top:1px solid rgba(28,32,40,.08)}
 .hx-list-foot .hx-disclaimer{margin:0}
@@ -308,16 +313,29 @@ function startReader(q){var t=++rd.tok;rd.yes={};rd.no={};rd.why={};rd.n=0;picks
 function listView(){if(!all.length&&!searched)return;render(all.filter(function(p){return inView(p)&&!rd.no[p.mls]}));if(hot)hilite(hot)}
 function msg(j){return j&&j.error==="stale"?"The listing search is being refreshed. Please try again in a few minutes.":"Please try again in a minute."}
 function search(p,o){o=o||{};state=new URLSearchParams(p);var n=++seq;count.textContent="Searching...";
- return fetch("/homes/api/map?"+state.toString(),{credentials:"same-origin"}).then(function(r){return r.json()}).then(function(j){if(n!==seq)return;
-  if(!j||!j.ok){count.textContent=msg(j);return}
+ var extra=o.first?"&hearts=1"+(app.getAttribute("data-focus")?"&focus="+encodeURIComponent(app.getAttribute("data-focus")):""):"";
+ return fetch("/homes/api/map?"+state.toString()+extra,{credentials:"same-origin"}).then(function(r){return r.json()}).then(function(j){if(n!==seq)return;
+  if(!j||!j.ok){count.textContent=msg(j);if(o.first)unskel(msg(j));return}
+  if(o.first)firstLoad(j);
   searched=true;all=j.pins||[];total=j.closest?j.closest.total:(j.total||0);state=new URLSearchParams(j.params||"");sorry(j.closest,j.total||0);
   try{history.replaceState(null,"","/homes/map/"+(state.toString()?"?"+state.toString():""))}catch(e){}
   drawChips(j.chips);pills(j.labels);syncForm(state);
   var h1=app.querySelector(".hx-list-h h1");if(h1)h1.textContent="Homes for sale"+(state.get("city")?" in "+state.get("city"):state.get("subdivision")?" in "+state.get("subdivision"):state.get("near")?" in this area":" on the Grand Strand");
   if(popFor){closePop()}
   if(!o.ring)clearRing();
-  draw(o.fit!==false);listView();
-  if(o.ai!==false&&wantsAi(j.q,j.left))ai(j.q,j.left);else if(o.read||j.q)startReader(o.read||j.q);else stopReader()}).catch(function(){if(n===seq)count.textContent="Please try again in a minute."})}
+  draw(o.fit!==false);listView();if(o.first)focusOn();
+  if(o.ai!==false&&wantsAi(j.q,j.left))ai(j.q,j.left);else if(o.read||j.q)startReader(o.read||j.q);else stopReader()}).catch(function(){if(n===seq){count.textContent="Please try again in a minute.";if(o.first)unskel("Please try again in a minute.")}})}
+/* The page came without homes (data-defer): the first answer brings the hearts and the MLS notice's date
+   and wording, which are set as text. If it fails, the grey cards go and a short line says so. */
+function firstLoad(j){(j.hearts||[]).forEach(function(m){hearts[m]=1});list.removeAttribute("aria-busy");
+ var f=j.foot||{},src=app.querySelector(".hx-d-src");if(src&&f.line)src.textContent=f.line;
+ if(src&&f.disclaimer){var d=el("p",null,f.disclaimer);src.parentNode.insertBefore(d,src.nextSibling)}}
+function unskel(t){list.removeAttribute("aria-busy");while(list.firstChild)list.removeChild(list.firstChild);list.appendChild(el("p","hx-list-more",t))}
+/* The home a listing page sent the visitor to see: centred and in brass, once the map and the homes are both here. */
+var focused=false;
+function focusOn(){var f=app.getAttribute("data-focus");if(!f||focused||!map||!searched)return;var fm=null;marks.forEach(function(m){if(m.p.mls===f)fm=m});if(!fm)return;focused=true;
+ var done=false,go=function(){if(done)return;done=true;map.setCenter(fm.getPosition());map.setZoom(15);hilite(f);listView()};
+ google.maps.event.addListenerOnce(map,"idle",go);setTimeout(go,700)}
 document.addEventListener("hx-search",function(e){aiNote.hidden=true;search(e.detail,{fit:true})});
 /* Words the rules could not read: the AI picks filters from the CRM's own list, once per sentence. */
 var ALLOW=["min","max","beds","baths","type","city","sqft","yearMin","yearMax","lotMin","hoaMax","garage","hoa"];
@@ -362,7 +380,7 @@ function ai(q,left){if(!q||!window.hxFeats)return;aiNote.hidden=false;aiNote.cla
 function hilite(mls){hot=mls;marks.forEach(function(m){style(m,m.p.mls===mls)});marks3.forEach(function(m){if(m.pin)try{m.pin.background=m.p.mls===mls?"#c4783a":"#1a73e8"}catch(x){}});Array.prototype.forEach.call(list.children,function(c){c.classList.toggle("hx-hot",c.getAttribute("data-mls")===mls)})}
 function closePop(){if(pop)pop.remove();pop=null;popFor=null}
 /* The first click on a dot shows the home; a second click on the same dot opens it. */
-function tap(p){if(popFor===p.mls){if(window.hxGo)window.hxGo();location.href=p.url;return}
+function tap(p){if(popFor===p.mls){if(window.hxGo)window.hxGo(p.url);location.href=p.url;return}
  closePop();pop=el("div","hx-mpop");var x=el("button","hx-mpop-x","×");x.type="button";x.setAttribute("aria-label","Close");x.addEventListener("click",closePop);pop.appendChild(x);
  pop.appendChild(card(p,false));pop.appendChild(el("p","hx-mpop-go","Click the dot again, or the card, to open it."));
  /* The card never covers its own dot: a dot low on the map gets the card at the top. */
@@ -377,7 +395,7 @@ function style(m,on){var close=map.getZoom()>=14;m.setIcon(close?pill(m.p,on):do
 function draw(fit){if(!map)return;marks.forEach(function(m){m.setMap(null)});marks=[];var bounds=new google.maps.LatLngBounds();
  all.forEach(function(p){var m=new google.maps.Marker({position:{lat:p.lat,lng:p.lng},map:map,title:p.price+", "+p.addr});m.p=p;style(m,false);bounds.extend(m.getPosition());m.addListener("click",function(){tap(p)});marks.push(m)});
  if(fit&&all.length){user=false;map.fitBounds(bounds,48);google.maps.event.addListenerOnce(map,"idle",function(){if(map.getZoom()>15)map.setZoom(15);user=false;listView()})}
- note.hidden=all.length>0;if(!all.length)note.textContent="No homes with a map location match this search. Change a filter, or click another spot on the map.";
+ note.hidden=all.length>0||!searched;if(!all.length)note.textContent="No homes with a map location match this search. Change a filter, or click another spot on the map.";
  if(map3)dots3();
  if(fit&&in3d()&&all.length){var la=0,ln=0,far=0;all.forEach(function(p){la+=p.lat;ln+=p.lng});la/=all.length;ln/=all.length;all.forEach(function(p){far=Math.max(far,miles(la,ln,p.lat,p.lng))});
   map3.center={lat:la,lng:ln,altitude:0};map3.range=Math.max(1500,Math.min(60000,far*1609*1.6))}}
@@ -402,7 +420,8 @@ function clickSearch(lat,lng){var d;if(in3d()){d=view3().mi*0.6}else{var c=map.g
   var changed=function(){clearTimeout(ringT);ringT=setTimeout(function(){if(!ring)return;var c=ring.getCenter();ringLat=c.lat();ringLng=c.lng();ringMi=Math.min(25,Math.max(0.3,Math.round(ring.getRadius()/1609*10)/10));ringSearch()},500)};
   if(ring.addListener){ring.addListener("radius_changed",changed);ring.addListener("center_changed",changed)}}
  ringControl().hidden=false;ringSearch()}
-if(!key){render(all);return}
+search(state,{fit:true,first:true});
+if(!key)return;
 (function(g){var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=function(){return h||(h=new Promise(function(f,n){a=m.createElement("script");e.set("libraries",Array.from(r)+"");for(k in g)e.set(k.replace(/[A-Z]/g,function(t){return"_"+t[0].toLowerCase()}),g[k]);e.set("callback",c+".maps."+q);a.src="https://maps.googleapis.com/maps/api/js?"+e;d[q]=f;a.onerror=function(){h=n(Error(p+" could not load."))};m.head.append(a)}))};d[l]?0:d[l]=function(f){var n=Array.prototype.slice.call(arguments,1);r.add(f);return u().then(function(){return d[l].apply(d,[f].concat(n))})}})({key:key,v:"beta"});
 google.maps.importLibrary("maps").then(function(lib){
  map=new lib.Map(document.getElementById("hx-map"),{center:{lat:33.70,lng:-78.92},zoom:10,mapTypeControl:false,streetViewControl:false,fullscreenControl:false,clickableIcons:false,gestureHandling:"greedy"});
@@ -411,10 +430,7 @@ google.maps.importLibrary("maps").then(function(lib){
  map.addListener("idle",function(){if(!user)return;user=false;listView()});
  map.addListener("click",function(e){if(pop){closePop();return}if(e&&e.latLng)clickSearch(e.latLng.lat(),e.latLng.lng())});
  list.addEventListener("mouseover",function(e){var c=e.target.closest&&e.target.closest("[data-mls]");if(c&&c.getAttribute("data-mls")!==hot)hilite(c.getAttribute("data-mls"))});
- draw(true);
- var focus=app.getAttribute("data-focus");if(focus){var fm=null;marks.forEach(function(m){if(m.p.mls===focus)fm=m});
-  if(fm){google.maps.event.addListenerOnce(map,"idle",function(){map.setCenter(fm.getPosition());map.setZoom(15);hilite(focus);listView()})}}
- if(wantsAi(app.getAttribute("data-q"),app.getAttribute("data-left")))ai(app.getAttribute("data-q"),app.getAttribute("data-left"));else if(app.getAttribute("data-q"))startReader(app.getAttribute("data-q"));
+ draw(true);focusOn();
  /* 2D or 3D in the top right (owner, 2026-10-28): the same dots, clickable, and the same list. */
  var btns=Array.prototype.slice.call(app.querySelectorAll("[data-mode]"));
  function setMode(m){btns.forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-mode")===m?"true":"false")});
@@ -429,7 +445,7 @@ google.maps.importLibrary("maps").then(function(lib){
    ["gmp-centerchange","gmp-rangechange"].forEach(function(n){map3.addEventListener(n,moved3)})}).catch(function(){box3.textContent="The 3D map could not load here. The 2D map still works.";box3.className="hx-map3d hx-map3d-off"})}
  btns.forEach(function(b){b.addEventListener("click",function(){setMode(b.getAttribute("data-mode"))})});
  if(app.getAttribute("data-view")==="3d")setMode("3d");
-}).catch(function(){note.hidden=false;note.textContent="The map could not load. Every home is in the list.";render(all)});
+}).catch(function(){note.hidden=false;note.textContent="The map could not load. Every home is in the list.";if(searched)render(all)});
 function dots3(){if(!map3||!L3)return;marks3.forEach(function(m){m.remove()});marks3=[];
  all.forEach(function(p){var mk=new L3.Marker3DInteractiveElement({position:{lat:p.lat,lng:p.lng,altitude:0},altitudeMode:L3.AltitudeMode.CLAMP_TO_GROUND,title:p.price+", "+p.addr});
   mk.p=p;if(Pin3){try{mk.pin=new Pin3({background:p.mls===hot?"#c4783a":"#1a73e8",borderColor:"#ffffff",glyphColor:"#ffffff",scale:.7});mk.append(mk.pin)}catch(x){}}

@@ -28,11 +28,14 @@ import { MAP_SCRIPT, MAP_STYLE, geocode, mapsKey, nearOf, pinOf, sorryHtml, with
 import { SMS_CONSENT_TEXT, TERMS_PARAGRAPHS, TERMS_TITLE, TERMS_VERSION, termsText } from "../../idx-lib/terms.js";
 import {
   ICONS, PHOTO_HINT, STRIP_STYLE, STYLE, SCRIPT, addressLine, card, dayLong, disclaimer, esc, factsLine, grid, headlinePrice, heartButton,
-  listingPath, money, safeUrl, signupDialog, welcomeDialog, spaced, statusWord, stripCard, tourButton, tourDialog,
+  listingPath, money, safeUrl, signupDialog, welcomeDialog, spaced, statusWord, stripCard, tourButton, tourDialog, updatedLine,
 } from "../../idx-lib/render.js";
 
 const SITE = "https://chapter3realty.com";
 const PHONE = "(854) 333-2135";
+const MLS_NAME = "Coastal Carolinas Association of REALTORS® Multiple Listing Service (CCMLS)";
+// Grey cards with a soft shimmer, in the shape of a home card, while the map page asks for the homes.
+const SKELETON_CARDS = Array.from({ length: 6 }, () => '<div class="hx-c hx-skel-c" aria-hidden="true"><div class="hx-c-photo hx-skel"></div><div class="hx-skel-l"><i class="hx-skel"></i><i class="hx-skel"></i><i class="hx-skel"></i></div></div>').join("");
 const TYPES = [["", "Any type"], ["house", "House"], ["condo", "Condo"], ["townhouse", "Townhouse"], ["manufactured", "Manufactured"], ["multi", "2 to 4 units"], ["land", "Land"]];
 // CITIES comes from idx-lib/query.js, so the search box and the town filter agree.
 const PRICES = [100000, 150000, 200000, 250000, 300000, 350000, 400000, 500000, 600000, 750000, 1000000, 1500000, 2000000];
@@ -503,47 +506,58 @@ function closestSteps(p) {
 }
 
 async function mapData(context, url) {
-  const s = await mapSearch(context, url.searchParams);
+  /* The map page's first call (data-defer) also asks for the visitor's hearts and the home it was sent to
+     see (focus); neither is a search filter, so both come off before the search. */
+  const q = new URLSearchParams(url.searchParams), withHearts = q.get("hearts") === "1", focus = /^[A-Za-z0-9]{3,20}$/.test(q.get("focus") || "") ? q.get("focus") : "";
+  q.delete("hearts"); q.delete("focus");
+  const signed = withHearts && Boolean(visitorToken(context.request));
+  const [s, hearts] = await Promise.all([mapSearch(context, q), signed ? heartsOf(context) : []]);
   if (!s.r.json || !s.r.json.ok) return json({ ok: false, error: s.r.json && s.r.json.error === "stale" ? "stale" : "unavailable" }, s.r.status === 429 ? 429 : 503);
+  if (focus && !s.pins.some((p) => p.mls === focus)) await addFocus(context, s, focus);
   const keep = new URLSearchParams(s.p); keep.delete("size"); keep.delete("page");
+  const m = s.r.json.meta || {};
   return json({ ok: true, total: s.total, pins: s.pins, meta: s.r.json.meta || null, params: keep.toString(), chips: chipList(keep), labels: pillLabels(keep),
-    left: s.left, q: s.words, closest: s.closest }, 200, { "cache-control": s.words ? "private, no-store" : "public, max-age=300" });
+    left: s.left, q: s.words, closest: s.closest, hearts: signed ? hearts : undefined,
+    foot: { line: `${updatedLine(m.refreshedAt)} Source: ${m.source || MLS_NAME}.`.trim(), disclaimer: m.disclaimer || "" } },
+  200, { "cache-control": s.words || signed ? "private, no-store" : "public, max-age=300" });
+}
+
+// The home a listing page sent the map to is always on it, even if it is not among the newest.
+async function addFocus(context, s, focus) {
+  const one = await crm(context.env, context.request, `/api/idx/listings/${encodeURIComponent(focus)}?track=0`, { anonymous: true });
+  const l = one.status === 200 && one.json && one.json.ok ? one.json.listing : null;
+  if (l && l.address) { if (!l.point) l.point = await geocode(l); const pin = pinOf(l); if (pin) s.pins.unshift(pin); }
 }
 
 async function mapPage(context, url, gate) {
-  const signed = Boolean(visitorToken(context.request));
-  const [s, hearts] = await Promise.all([mapSearch(context, url.searchParams), signed ? heartsOf(context) : []]);
-  if (!s.r.json || !s.r.json.ok) return trouble(context, gate, s.r, "Map of homes for sale");
-  const keep = new URLSearchParams(s.p); keep.delete("size"); keep.delete("page");
-  const where = s.p.get("city") ? ` in ${s.p.get("city")}` : s.p.get("subdivision") ? ` in ${title(s.p.get("subdivision"))}` : " on the Grand Strand";
-  const h = new Set(hearts);
-  // The homes with a dot; before the feed carries map points, every home, so the list is never empty.
-  const cards = (s.pins.length ? s.listings.filter((l) => s.pins.some((p) => p.mls === String(l.mlsNumber))) : s.listings).slice(0, 60)
-    .map((l) => card(l, { hearted: h.has(l.mlsNumber) })).join("");
+  /* The page comes back at once, without waiting for the CRM (owner, 2026-10-30: "instantly gets to the page
+     and shows the layout"): the map, the search bar and grey cards show, and map.js asks /homes/api/map for the
+     homes (data-defer). Only the filter list is waited for, and never more than a moment. The page is noindex. */
+  await Promise.race([filterCatalog(context.env, context.request), new Promise((r) => setTimeout(r, 700))]);
+  const keep = searchParams(url.searchParams, false); keep.delete("size"); keep.delete("page");
+  const words = String(url.searchParams.get("q") || "").trim().slice(0, 400);
+  if (words) keep.set("q", words);
+  const where = keep.get("city") ? ` in ${keep.get("city")}` : keep.get("subdivision") ? ` in ${title(keep.get("subdivision"))}` : " on the Grand Strand";
   const view = url.searchParams.get("view") === "3d" ? "3d" : "2d";
   const focus = /^[A-Za-z0-9]{3,20}$/.test(url.searchParams.get("focus") || "") ? url.searchParams.get("focus") : "";
-  // The home a listing page sent us here from is always on the map, even if it is not among the newest.
-  if (focus && !s.pins.some((p) => p.mls === focus)) {
-    const one = await crm(context.env, context.request, `/api/idx/listings/${encodeURIComponent(focus)}?track=0`, { anonymous: true });
-    const l = one.status === 200 && one.json && one.json.ok ? one.json.listing : null;
-    if (l && l.address) { if (!l.point) l.point = await geocode(l); const pin = pinOf(l); if (pin) s.pins.unshift(pin); }
-  }
+  const s = { pins: [], total: 0 };
+  const cards = SKELETON_CARDS;
   const pinsJson = JSON.stringify(s.pins).replace(/</g, "\\u003c");
   const chips = chipList(keep).map((c) => `<a class="hx-applied-chip" href="${esc(`/homes/map/${c.x ? `?${c.x}` : ""}`)}" data-x="${esc(c.x)}">${esc(c.t)}<span aria-hidden="true">&times;</span></a>`).join("");
   /* Search listings is this page (owner, 2026-10-28): Zillow's layout without its left menu. The map and
      two columns of homes fill the screen below our header; nothing to scroll past, and the MLS notice
      sits once at the end of the list. On a phone: the list, and a Map button, as in Zillow's app. */
-  const body = `<div class="hx-mapapp" data-hx-map data-key="${esc(mapsKey(context.env))}" data-params="${esc(keep.toString())}" data-view="${view}" data-total="${esc(s.closest ? s.closest.total : s.total)}" data-hearts="${esc(JSON.stringify([...h]))}"${focus ? ` data-focus="${esc(focus)}"` : ""}${s.left ? ` data-left="${esc(s.left)}" data-q="${esc(s.words)}"` : ""}>
+  const body = `<div class="hx-mapapp" data-hx-map data-key="${esc(mapsKey(context.env))}" data-params="${esc(keep.toString())}" data-view="${view}" data-total="0" data-hearts="[]" data-defer="1"${focus ? ` data-focus="${esc(focus)}"` : ""}>
 <div class="hx-mtop">${filterBar({ action: "/homes/map/", params: keep, features: catalogLoaded(), map: true })}<div class="hx-applied hx-mchips" id="hx-chips"${chips ? "" : " hidden"}>${chips}<a class="hx-clear" href="/homes/map/" data-x="">Clear all</a></div><p class="hx-ai-note" id="hx-ai-note" hidden></p></div>
 <div class="hx-map-body hx-show-list">
 <div class="hx-mapbox" id="hx-mapbox"><div id="hx-map" class="hx-map" role="region" aria-label="Map of the homes"></div>
 <button type="button" class="hx-full-b" id="hx-full-b" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>Full map</button>
 <div class="hx-mode" role="group" aria-label="Map view"><button type="button" data-mode="2d" aria-pressed="${view === "2d" ? "true" : "false"}">2D</button><button type="button" data-mode="3d" aria-pressed="${view === "3d" ? "true" : "false"}">3D</button></div>
 <p class="hx-map-hint" aria-hidden="true">Click the map to search that spot</p>
-<p id="hx-map-note" class="hx-map-note"${s.pins.length ? " hidden" : ""}>${s.pins.length ? "" : "No homes with a map location match this search. Change a filter, or click another spot on the map."}</p></div>
-<aside class="hx-map-list" id="hx-map-list" aria-label="The homes"><div class="hx-list-h"><h1>${esc(`Homes for sale${where}`)}</h1><p class="hx-map-count" id="hx-map-count"><b>${esc(s.total.toLocaleString("en-US"))}</b> ${s.total === 1 ? "home" : "homes"}</p></div>
-${sorryHtml(s.closest, s.total)}<div id="hx-map-cards" class="hx-map-cards">${cards}</div><p class="hx-list-more" id="hx-list-more"${s.total > s.pins.length ? "" : " hidden"}>Zoom in or move the map to see more of the ${esc(s.total.toLocaleString("en-US"))} homes.</p>
-<div class="hx-list-foot">${disclaimer(s.r.json.meta)}</div></aside>
+<p id="hx-map-note" class="hx-map-note" hidden></p></div>
+<aside class="hx-map-list" id="hx-map-list" aria-label="The homes"><div class="hx-list-h"><h1>${esc(`Homes for sale${where}`)}</h1><p class="hx-map-count" id="hx-map-count">Searching...</p></div>
+${sorryHtml(null, 1)}<div id="hx-map-cards" class="hx-map-cards" aria-busy="true">${cards}</div><noscript><p class="hx-list-more"><a href="/homes/">See the homes as a list</a></p></noscript><p class="hx-list-more" id="hx-list-more" hidden></p>
+<div class="hx-list-foot">${disclaimer(null)}</div></aside>
 <button type="button" class="hx-map-toggle" id="hx-map-toggle" aria-controls="hx-map">Map</button></div>
 <script type="application/json" id="hx-pins">${pinsJson}</script></div>`;
   return page(context, gate, {
@@ -555,7 +569,6 @@ ${sorryHtml(s.closest, s.total)}<div id="hx-map-cards" class="hx-map-cards">${ca
     rootAttrs: ' data-wide="1"',
     extraHead: MAP_STYLE,
     extraBody: MAP_SCRIPT,
-    private: signed,
   });
 }
 

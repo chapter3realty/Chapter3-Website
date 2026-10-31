@@ -936,6 +936,94 @@ function ldSubmit(){
   });
 })();
 </script>
+<script>
+/* The next page's layout at once (owner, 2026-10-30: "instantly gets to the page and shows the layout while
+   the visitor waits"). When a link to another page on this site is clicked, a thin brass bar starts and, if
+   the page has not come in a moment later, grey blocks in the shape of that page show below the header with a
+   soft shimmer: a home, the map, a list of homes, or an article. They go when the page arrives, or when the
+   back button brings this page back. Nothing is shown for links that open elsewhere or a file. */
+(function () {
+  if (window.c3Skel) return; window.c3Skel = 1;
+  var css = '.c3-go{position:fixed;left:0;top:0;z-index:2147483646;height:3px;width:0;background:#c4783a;box-shadow:0 0 8px rgba(196,120,58,.6);pointer-events:none}'
+    + '.c3-go-on{width:88%;transition:width 5s cubic-bezier(.08,.8,.2,1)}'
+    + '.c3-sk{position:fixed;left:0;right:0;bottom:0;z-index:99;background:var(--ivory,#f4efe8);overflow:hidden;opacity:0;transition:opacity .15s ease}.c3-sk-on{opacity:1}'
+    + '.c3-sk-w{max-width:1200px;margin:0 auto;padding:1.6rem 2rem}'
+    + '.c3-sk b{display:block;border-radius:10px;background:linear-gradient(100deg,#e9e2d7 30%,#f6f2ec 50%,#e9e2d7 70%);background-size:300% 100%;animation:c3-sh 1.3s linear infinite}'
+    + '@keyframes c3-sh{from{background-position:100% 0}to{background-position:0 0}}'
+    + '.c3-sk .l{height:.85rem;margin:.7rem 0}.c3-sk .h{height:2.1rem;width:70%;margin:.4rem 0 .9rem}.c3-sk .s{width:35%}.c3-sk .m{width:85%}'
+    + '.c3-sk .ph{aspect-ratio:16/9;max-height:52vh;width:100%;border-radius:16px;margin:1rem 0}'
+    + '.c3-sk .row{display:flex;gap:.6rem;margin:.9rem 0}.c3-sk .row b{height:2.4rem;width:7rem;border-radius:999px}.c3-sk .row b.q{flex:1;width:auto}'
+    + '.c3-sk .g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1rem}.c3-sk .c{background:#fff;border-radius:14px;overflow:hidden}'
+    + '.c3-sk .c b.p{aspect-ratio:16/10;border-radius:0}.c3-sk .c i{display:block;padding:.4rem .9rem .9rem}'
+    + '.c3-sk .gal{display:grid;grid-template-columns:2fr 1fr;gap:.6rem;height:min(54vh,540px);margin:1rem 0 1.2rem}.c3-sk .gal>b{height:100%;border-radius:16px}.c3-sk .gal span{display:grid;grid-template-rows:1fr 1fr;gap:.6rem}.c3-sk .gal span b{border-radius:16px}'
+    + '.c3-sk .two{display:grid;grid-template-columns:minmax(0,1fr) 22rem;gap:2rem}.c3-sk .box{height:16rem;border-radius:16px;margin-top:1rem}'
+    + '.c3-sk .mp{display:grid;grid-template-columns:minmax(0,1fr) min(46vw,560px);gap:0;height:calc(100% - 4.4rem)}.c3-sk .mp>b{height:100%;border-radius:0}.c3-sk .mp .g{grid-template-columns:repeat(2,minmax(0,1fr));margin:0;padding:1rem;align-content:start}'
+    + '.c3-sk-full .c3-sk-w{max-width:none;padding:.7rem 1rem 0;height:100%}'
+    + '@media (max-width:899px){.c3-sk-w{padding:1rem}.c3-sk .g,.c3-sk .mp .g{grid-template-columns:1fr}.c3-sk .two{grid-template-columns:1fr}.c3-sk .box{display:none}.c3-sk .gal{grid-template-columns:1fr;height:auto;aspect-ratio:4/3}.c3-sk .gal span{display:none}.c3-sk .mp{grid-template-columns:1fr}.c3-sk .mp>b{display:none}.c3-sk .mp .g{padding:.6rem 0}.c3-sk .row b{width:5rem}}'
+    + '@media (prefers-reduced-motion:reduce){.c3-sk b{animation:none}.c3-go-on{transition:none}}';
+  var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
+  function lines(n) { var s = ''; for (var i = 0; i < n; i++) s += '<b class="l' + (i % 3 === 2 ? ' m' : '') + '"></b>'; return s; }
+  function cards(n) { var s = ''; for (var i = 0; i < n; i++) s += '<div class="c"><b class="p"></b><i><b class="l s"></b><b class="l m"></b><b class="l"></b></i></div>'; return s; }
+  var pills = '<div class="row"><b class="q"></b><b></b><b></b><b></b></div>';
+  function kind(u) {
+    var p = u.pathname;
+    if (/^\/homes\/(api|p|deals)\//.test(p)) return '';
+    if (/\.[a-z0-9]{2,5}$/i.test(p) && !/\.html$/i.test(p)) return '';
+    if (/^\/homes\/map\//.test(p)) return 'map';
+    if (/^\/homes\/[A-Za-z]{0,3}[0-9]{4,}[A-Za-z0-9]*(-[^\/]*)?\/?$/.test(p)) return 'home';
+    if (/^\/homes(\/|$)/.test(p)) return 'list';
+    return 'page';
+  }
+  var shapes = {
+    home: '<div class="c3-sk-w"><b class="l s"></b><div class="gal"><b></b><span><b></b><b></b></span></div><div class="two"><div><b class="h s"></b><b class="l m"></b><div class="row"><b></b><b></b><b></b></div>' + lines(6) + '</div><b class="box"></b></div></div>',
+    map: '<div class="c3-sk-w">' + pills + '<div class="mp"><b></b><div class="g">' + cards(4) + '</div></div></div>',
+    list: '<div class="c3-sk-w"><b class="h"></b>' + pills + '<div class="g">' + cards(6) + '</div></div>',
+    page: '<div class="c3-sk-w"><b class="l s"></b><b class="h"></b><b class="h s"></b><b class="l s"></b><b class="ph"></b>' + lines(9) + '</div>'
+  };
+  var bar = null, sk = null, timer = 0, gone = 0;
+  function clear() {
+    clearTimeout(timer); clearTimeout(gone);
+    if (bar) bar.classList.remove('c3-go-on');
+    if (sk) { sk.parentNode && sk.parentNode.removeChild(sk); sk = null; }
+  }
+  function show(k) {
+    if (!shapes[k]) return;
+    sk = document.createElement('div'); sk.className = 'c3-sk' + (k === 'map' ? ' c3-sk-full' : ''); sk.setAttribute('aria-hidden', 'true');
+    var h = document.querySelector('header'); sk.style.top = (h ? Math.max(0, Math.round(h.getBoundingClientRect().bottom)) : 0) + 'px';
+    sk.innerHTML = shapes[k]; document.body.appendChild(sk);
+    requestAnimationFrame(function () { if (sk) sk.classList.add('c3-sk-on'); });
+  }
+  /* go(url): start the bar, and the layout of the page at url if it is slow. Also used by the map. */
+  function go(href) {
+    clear();
+    var u; try { u = new URL(href || location.href, location.href); } catch (x) { u = null; }
+    var k = u ? kind(u) : '';
+    if (!bar) { bar = document.createElement('div'); bar.className = 'c3-go'; document.body.appendChild(bar); }
+    void bar.offsetWidth; bar.classList.add('c3-go-on');
+    // Our own pages come in quickly; the home search asks the MLS, so its layout shows sooner.
+    if (k) timer = setTimeout(function () { show(k); }, k === 'page' ? 260 : 90);
+    gone = setTimeout(clear, 15000);
+  }
+  window.hxGo = go;
+  function ours(u) { return u.origin === location.origin && !(u.pathname === location.pathname && u.search === location.search); }
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a || (a.target && a.target !== '_self') || a.hasAttribute('download')) return;
+    var u; try { u = new URL(a.href, location.href); } catch (x) { return; }
+    if (!/^https?:$/.test(u.protocol) || !ours(u)) return;
+    // After the page's own handlers: a click one of them cancels (a heart, a popup) shows nothing.
+    setTimeout(function () { if (!e.defaultPrevented) go(u.href); }, 0);
+  });
+  document.addEventListener('submit', function (e) {
+    var f = e.target;
+    if (e.defaultPrevented || !f || (f.method || 'get').toLowerCase() !== 'get' || (f.target && f.target !== '_self')) return;
+    var u; try { u = new URL(f.action || location.href, location.href); } catch (x) { return; }
+    if (u.origin === location.origin) setTimeout(function () { if (!e.defaultPrevented) go(u.href); }, 0);
+  });
+  addEventListener('pageshow', clear);
+})();
+</script>
 </footer>
 
 
