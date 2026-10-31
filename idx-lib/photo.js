@@ -20,11 +20,19 @@ const FEED = "/MTIxOTIvMTMxMTAvMjA/";
 const WIDTH = { card: 480, big: 1280 };
 const KEEP = 30 * 24 * 3600;
 
-export const ourPhoto = (u) => typeof u === "string" && u.startsWith(ORIGIN) && u.includes(FEED) && u.length <= 600 && /^[A-Za-z0-9:/._~%=-]+$/.test(u);
+const trestle = (u) => typeof u === "string" && u.startsWith(ORIGIN) && u.includes(FEED) && u.length <= 600 && /^[A-Za-z0-9:/._~%=-]+$/.test(u);
+// The CRM's own photo links (app.chapter3realty.com/api/idx/photo/..., already sized, on the live site
+// since 2026-10): our listings too. Its photo server answers 503 for a photo it has not fetched yet, and
+// a card then showed an empty panel (2 of 10 cards on a guide page, 2026-10-31). The page shows these
+// links as they are; a copy kept here is what the page asks for when one fails.
+export const CRM_PHOTO = "https://app.chapter3realty.com/api/idx/photo/";
+export const crmPhoto = (u) => typeof u === "string" && u.startsWith(CRM_PHOTO) && u.length <= 300 && /^[A-Za-z0-9:/._~-]+$/.test(u) && !u.includes("..");
+/** A link this store keeps a copy of: our Trestle feed's, or the CRM's. Never a photo service for others. */
+export const ourPhoto = (u) => trestle(u) || crmPhoto(u);
 
-/** The link a page uses: our copy for a Trestle photo, the link itself for anything else. */
+/** The link a page uses: our copy for a Trestle photo, the link itself for anything else (the CRM's included). */
 export function photoUrl(u, size = "card") {
-  return ourPhoto(u) ? `/homes/p/${size === "big" ? "big" : "card"}?u=${encodeURIComponent(u)}` : u;
+  return trestle(u) ? `/homes/p/${size === "big" ? "big" : "card"}?u=${encodeURIComponent(u)}` : u;
 }
 
 /* The copies live in R2 (the PHOTOS bucket, bound to the site), one store for every visitor
@@ -60,6 +68,8 @@ export async function photo(context, url, size) {
   }
   let r = null;
   try { r = await fetch(u); } catch { r = null; }
+  // The CRM's photo server says 503 while it fetches a photo for the first time: ask once more, a moment later.
+  if (crmPhoto(u) && (!r || r.status >= 500)) { await new Promise((z) => setTimeout(z, 700)); try { r = await fetch(u); } catch { r = null; } }
   const type = r ? r.headers.get("content-type") || "" : "";
   // The MLS said no (its limit, most often): the browser asks it directly, and nothing is kept.
   if (!r || !r.ok || !/^image\//.test(type)) return new Response(null, { status: 302, headers: { Location: u, "cache-control": "no-store" } });

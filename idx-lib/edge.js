@@ -19,7 +19,7 @@ import { FEEDS, feedParams, postFilter, rankHomes } from "./feeds.js";
 import { filterBar } from "./filters.js";
 import { filterCatalog } from "./catalog.js";
 import { catalogLoaded } from "./features.js";
-import { PHOTO_HINT, STYLE, STRIP_STYLE, SCRIPT, disclaimer, esc, safeUrl, signupDialog, stripCard, tourDialog } from "./render.js";
+import { PHOTO_HINT, STYLE, STRIP_STYLE, SCRIPT, disclaimer, esc, hasPhoto, signupDialog, stripCards, tourDialog } from "./render.js";
 
 const SLOT = /<div class="hx-strip" data-place="([a-z0-9-]+)" data-name="([^"<>]*)"(?: data-head="([^"<>]*)")?><\/div>/g;
 const STRIP_CARDS = 10;
@@ -68,7 +68,7 @@ function strip(slug, name, listings, total, noHoa, head) {
   // head, like name, is our own escaped markup from the page (glass.js homes()).
   return `<p class="hx-s-head"><b>${head || `Homes for sale in ${name} now`}</b><a href="${all}">See all ${esc(String(n))}</a></p>`
     + (noHoa ? `<p class="hx-s-note">${NO_HOA_NOTE}</p>` : "")
-    + `<div class="hx-s-row">${listings.filter((l) => safeUrl(l.photo)).slice(0, STRIP_CARDS).map((l) => stripCard(l, false)).join("")}`
+    + `<div class="hx-s-row">${stripCards(listings, STRIP_CARDS)}`
     + `<a class="hx-s-all" href="${all}" draggable="false">See all ${esc(String(n))} homes in ${name}</a></div>`;
 }
 
@@ -97,14 +97,14 @@ async function runFeed(env, request, feed) {
     for (const l of r.json.listings) if (l && !seen.has(l.mlsNumber)) { seen.add(l.mlsNumber); out.push(l); }
   }
   // Narrowed to the quality bar and put in order here, so the "at least 3 homes" check counts what will show.
-  const kept = rankHomes(postFilter(out, feed.post, feed), feed.rank);
+  const kept = rankHomes(postFilter(out, feed.post, feed), feed.rank).filter(hasPhoto);
   return [kept, total, meta, applied];
 }
 
-/** The homes the title promises, in its order, photos first. */
+/** The homes the title promises, in its order: only homes with a photo (render.js stripCards keeps the first STRIP_CARDS and spares). */
 function feedHomes(feed, listings) {
-  // Already narrowed and in order (runFeed): the first STRIP_CARDS with a photo.
-  return listings.filter((l) => safeUrl(l.photo)).slice(0, STRIP_CARDS);
+  // Already narrowed and in order (runFeed).
+  return listings.filter(hasPhoto);
 }
 
 /** The article's feed: near the top, one line of title, the homes, and the filters to change them. */
@@ -118,7 +118,7 @@ function feedSection(feed, listings, total, applied) {
     + `<p class="hx-s-head"><b class="hx-feed-h">${esc(head)}</b><a href="${esc(all)}">See all</a></p>`
     + (feed.noHoa ? `<p class="hx-s-note">${NO_HOA_NOTE}</p>` : "")
     + filterBar({ action: "/homes/map/", params: new URLSearchParams(link), features: applied || catalogLoaded(), compact: true, ask: feed.ask || "" })
-    + `<div class="hx-s-row" data-hx-row>${feedHomes(feed, listings).map((l) => stripCard(l, false)).join("")}`
+    + `<div class="hx-s-row" data-hx-row>${stripCards(feedHomes(feed, listings), STRIP_CARDS)}`
     + `<a class="hx-s-all" href="${esc(all)}" draggable="false">See all homes</a></div></div></div></section>`;
 }
 
@@ -142,12 +142,25 @@ export function placeFeedTop(html, block) {
   return html.slice(0, a + at) + block + html.slice(a + at);
 }
 
+/** The article's own sections: not inside another section, and not inside a box that starts hidden (a tool's
+    results), so the feed is never placed where no one sees it. */
+function shownSections(main) {
+  const out = [], stack = [];
+  for (const m of main.matchAll(/<(\/?)(div|section)\b([^>]*)>/g)) {
+    if (m[1]) { stack.pop(); continue; }
+    const hidden = /\shidden\b|display:\s*none/.test(m[3]);
+    if (m[2] === "section" && !hidden && !stack.some((t) => t.hidden || t.tag === "section")) out.push(m.index);
+    stack.push({ tag: m[2], hidden });
+  }
+  return out;
+}
+
 /** Where the feed goes: before the third section of the article, else before its second <h2>, else at the end. */
 export function placeFeed(html, block) {
   const a = html.indexOf("<main"), z = html.indexOf("</main>");
   if (a < 0 || z < 0) return html;
   const main = html.slice(a, z);
-  const secs = [...main.matchAll(/<section\b/g)].map((m) => m.index);
+  const secs = shownSections(main);
   let at = secs.length >= 3 ? secs[2] : -1;
   if (at < 0) {
     const h2 = [...main.matchAll(/<h2\b/g)].map((m) => m.index);
@@ -239,7 +252,7 @@ export async function withIdx(context, response) {
       const r = answers[i];
       // The same bar and order as the feeds (owner, 2026-10-26: never "the cheapest dump" first), with no
       // year or size floor: a place's older houses and small beach cottages are what its page is about.
-      const ls = r && r.status === 200 && r.json && r.json.ok ? rankHomes(postFilter(r.json.listings || [], PLACE_BAR), "appeal") : [];
+      const ls = r && r.status === 200 && r.json && r.json.ok ? rankHomes(postFilter(r.json.listings || [], PLACE_BAR), "appeal").filter(hasPhoto) : [];
       if (ls.length >= STRIP_MIN) { filled.set(s, [ls, r.json.total]); meta = meta || r.json.meta; }
     });
     if (!filled.size) return early();

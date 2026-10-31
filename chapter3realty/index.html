@@ -417,11 +417,14 @@ html{scroll-padding-top:97px}
 /* a flight ended early (keyboard focus, a new breakpoint, printing) shows every label at once */
 .m .tw-stage.now :is(.tw-pin,.tw-deco),.m .tw-stage.now .tw-pin a{transition:none}
 /* whatever keyboard focus lands on shows at once (fx.html also brings the map to rest) */
-.m .tw-stage .tw-pin:focus-within{opacity:1;transition:none}
-.m .tw-stage .tw-pin:focus-within a{translate:none;transition:background .2s,color .2s,border-color .2s}
+.m .tw-stage .tw-pin:has(a:focus-visible){opacity:1;transition:none}
+.m .tw-stage .tw-pin:has(a:focus-visible) a{translate:none;transition:background .2s,color .2s,border-color .2s}
 .tw-stage.in .tw-pin .rg{animation:tw-ring .7s var(--ease-out) calc(var(--land) + var(--i)*60ms) 1 both}
-.tw-stage .tw-pin:is(:hover,:focus-within) .rg{animation:tw-ring 1.4s var(--ease-out) infinite}
-@keyframes tw-ring{from{opacity:.9;transform:scaleY(cos(var(--t0))) scale(.35)}to{opacity:0;transform:scaleY(cos(var(--t0))) scale(1.3)}}}
+/* a label under the pointer or with focus sends out rings from its pin (.pulse, set by the card script): a new animation
+   beside the landing one, so it starts at its first frame, and the landing ring never plays again (owner, 2026-10-31) */
+.tw-stage.in .tw-pin.pulse .rg{animation:tw-ring .7s var(--ease-out) calc(var(--land) + var(--i)*60ms) 1 both,tw-pulse 1.4s var(--ease-out) infinite}
+@keyframes tw-ring{from{opacity:.9;transform:scaleY(cos(var(--t0))) scale(.35)}to{opacity:0;transform:scaleY(cos(var(--t0))) scale(1.3)}}
+@keyframes tw-pulse{from{opacity:.9;transform:scaleY(cos(var(--t0))) scale(.35)}to{opacity:0;transform:scaleY(cos(var(--t0))) scale(1.3)}}}
 @media (forced-colors:active){#page-home .tw-pin a:focus-visible{forced-color-adjust:none;background:Highlight;color:HighlightText;border-color:HighlightText}}
 </style>
 <script>(function(h){h.classList.add('js');if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;h.classList.add('m');window.__c3T=setTimeout(function(){h.classList.remove('m')},3000)})(document.documentElement)</script>
@@ -1916,8 +1919,9 @@ function c3SendForm(fields, pageName) {
       if (!document.hidden) takeOff();
       else document.addEventListener('visibilitychange', function wake() { if (!document.hidden) { document.removeEventListener('visibilitychange', wake); takeOff(); } });
     } else land();
-    /* keyboard focus in the map brings it to rest at once, so the focused label is visible and on its town */
-    tst.addEventListener('focusin', end);
+    /* keyboard focus in the map brings it to rest at once, so the focused label is visible and on its town. A tap or a
+       click also focuses a label; that lets the flight play out (owner, 2026-10-31) */
+    tst.addEventListener('focusin', function (e) { var t = e.target; try { if (t.matches && !t.matches(':focus-visible')) return; } catch (x) {} end(); });
     /* a resize that crosses a breakpoint during the flight changes the camera: the flight jumps to its end. Any other resize,
        such as a phone's address bar showing or hiding, changes nothing the frames use */
     var rz = 0;
@@ -1965,9 +1969,28 @@ function c3SendForm(fields, pageName) {
       turn = play(c, s, null, { duration: TT, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' });
       sync();
     }
+    /* under a label or a card the turn slows to a stop in half a second, and once the pointer leaves it picks up again
+       the same way, from where it stopped (owner, 2026-10-31). Off screen or in a background tab it stops at once */
+    var rate = 1, ramp = 0, RD = 500;
     function sync() {
-      var on = seen && !hov && !open && !still && !document.hidden;
-      turn.forEach(function (a) { if (on) a.play(); else a.pause(); });
+      var on = seen && !hov && !open && !still && !document.hidden, to = on ? 1 : 0;
+      cancelAnimationFrame(ramp);
+      if (!turn.length) return;
+      if (!seen || document.hidden || rate === to) {
+        rate = to;
+        turn.forEach(function (a) { if (on) { a.playbackRate = 1; a.play(); } else a.pause(); });
+        return;
+      }
+      var from = rate, t0 = null;
+      if (on) turn.forEach(function (a) { a.playbackRate = rate; a.play(); });
+      ramp = requestAnimationFrame(function step(now) {
+        if (t0 === null) t0 = now;
+        var k = Math.min(1, (now - t0) / RD);
+        rate = from + (to - from) * k * k * (3 - 2 * k);
+        turn.forEach(function (a) { a.playbackRate = rate; });
+        if (k < 1) ramp = requestAnimationFrame(step);
+        else if (!on) turn.forEach(function (a) { a.pause(); });
+      });
     }
     /* the heading the map shows now: where the visitor left it, or where the turn has it */
     var hNow = null;
@@ -1989,6 +2012,7 @@ function c3SendForm(fields, pageName) {
       still = true;
       if (!turn.length) return;
       var c = camera(), h = heading(c);
+      cancelAnimationFrame(ramp);
       turn.forEach(function (a) { a.cancel(); }); turn = [];
       setAt(c, h);
     }
@@ -2050,7 +2074,7 @@ function c3SendForm(fields, pageName) {
     /* ---- town cards: hovering a town's label, tabbing to it or tapping it once opens a card beside it with the town's
        home value and short-term rentals; the card's link, or a second tap on the label, opens the town's page. Escape
        closes it. The card is decoration (aria-hidden): the label's description carries the same facts ---- */
-    var card = $('.tw-card', tw), ol = $('.tw-pins', tst), hdr = $('body > header, header'), open = null, tOpen = 0, tShut = 0, down = null, y0 = 0, byHover = false;
+    var card = $('.tw-card', tw), ol = $('.tw-pins', tst), hdr = $('body > header, header'), open = null, want = null, tOpen = 0, tShut = 0, down = null, y0 = 0, byHover = false;
     function usd(n) { return '$' + Number(n).toLocaleString('en-US'); }
     function chg(n, dp, what) { return (n < 0 ? 'Down ' : 'Up ') + Math.abs(n).toFixed(dp) + '% ' + what; }
     function draw(li) {
@@ -2110,7 +2134,10 @@ function c3SendForm(fields, pageName) {
     }
     function show(li, hover) {
       clearTimeout(tOpen); clearTimeout(tShut); byHover = !!hover;
-      if (!M.landed()) { M.end(); tOpen = setTimeout(function () { show(li, hover); }, 0); return; }
+      /* during the flight a label under the pointer or a tap does not cut it short (owner, 2026-10-31): the card waits
+         for the landing. Keyboard focus still ends the flight at once (the flight script's focusin) */
+      if (!M.landed()) { want = [li, !!hover]; return; }
+      want = null;
       if (open === li) return;
       var was = !!open;
       card.hidden = false;
@@ -2131,7 +2158,7 @@ function c3SendForm(fields, pageName) {
       }
     }
     function shut() {
-      clearTimeout(tOpen); clearTimeout(tShut);
+      clearTimeout(tOpen); clearTimeout(tShut); want = null;
       if (!open) return;
       open.classList.remove('on'); open = null;
       card.classList.remove('on');
@@ -2158,6 +2185,14 @@ function c3SendForm(fields, pageName) {
       if (a && down && down.touch && !down.was) { e.preventDefault(); show(a.parentNode); }
       down = null;
     });
+    /* the rings a label sends out while it is under the pointer or has focus start at their beginning; once the pointer
+       and focus have left, the ring under way finishes before they stop, so none jumps or cuts off (owner, 2026-10-31) */
+    function ring(li, k, on) { li[k] = on; if (on && M.landed()) li.classList.add('pulse'); }
+    ol.addEventListener('pointerover', function (e) { var a = e.target.closest('.tw-pin a'); if (a) ring(a.parentNode, 'c3h', true); });
+    ol.addEventListener('pointerout', function (e) { var a = e.target.closest('.tw-pin a'), to = e.relatedTarget; if (a && !(to && to.closest && to.closest('.tw-pin a') === a)) ring(a.parentNode, 'c3h', false); });
+    ol.addEventListener('focusin', function (e) { var a = e.target.closest('.tw-pin a'); if (a) ring(a.parentNode, 'c3f', true); });
+    ol.addEventListener('focusout', function (e) { var a = e.target.closest('.tw-pin a'); if (a) ring(a.parentNode, 'c3f', false); });
+    ol.addEventListener('animationiteration', function (e) { var li = e.target.parentNode; if (e.animationName === 'tw-pulse' && !li.c3h && !li.c3f) li.classList.remove('pulse'); });
     ol.addEventListener('focusin', function (e) { var a = e.target.closest('.tw-pin a'); if (a) show(a.parentNode); });
     ol.addEventListener('focusout', function (e) { var to = e.relatedTarget; if (!to || !to.closest || !to.closest('.tw-pin a, .tw-card')) shut(); });
     /* a press anywhere but the card or a label closes it, and so does scrolling the page under a card the pointer opened
@@ -2176,16 +2211,21 @@ function c3SendForm(fields, pageName) {
         var c = camera(), was = cam;
         if (JSON.stringify(c) === was) return;
         shut();
-        if (turn.length) { turn.forEach(function (a) { a.cancel(); }); turn = []; spin(); }
+        if (turn.length) { cancelAnimationFrame(ramp); turn.forEach(function (a) { a.cancel(); }); turn = []; spin(); }
         else if (hNow !== null) { var o = JSON.parse(was); setAt(c, c.h0 + (c.h1 - c.h0) * Math.max(0, Math.min(1, (hNow - o.h0) / ((o.h1 - o.h0) || 1)))); }
       });
     });
     /* keyboard focus in the map: the turn stops where it is */
     tst.addEventListener('focusin', freeze);
     /* motion turned off while the page is open: the turn stops */
-    var onRm = function () { if (rm.matches) { still = true; turn.forEach(function (a) { a.cancel(); }); turn = []; cancelAnimationFrame(coast); } };
+    var onRm = function () { if (rm.matches) { still = true; cancelAnimationFrame(ramp); turn.forEach(function (a) { a.cancel(); }); turn = []; cancelAnimationFrame(coast); } };
     if (rm.addEventListener) rm.addEventListener('change', onRm); else if (rm.addListener) rm.addListener(onRm);
     M.onLand(spin);
+    /* a card asked for during the flight opens as it lands, if the pointer is still on that label */
+    M.onLand(function () {
+      $$('.tw-pin', tst).forEach(function (li) { if (li.c3h || li.c3f) li.classList.add('pulse'); });
+      var w = want; want = null; if (w && (!w[1] || $('a', w[0]).matches(':hover'))) show(w[0], w[1]);
+    });
     spin();
 })();
 </script>

@@ -91,8 +91,15 @@ export function cardTag(l) {
 /** "0.25", "1.5", "12": a lot size for a card, or "" when the listing has none. */
 export const acres = (v) => (typeof v === "number" && isFinite(v) && v > 0 ? String(v >= 10 ? Math.round(v) : Math.round(v * 100) / 100) : "");
 
+/** A home with a real photo to show: an https photo link, and not a listing that says it has none. */
+export const hasPhoto = (l) => Boolean(l && safeUrl(l.photo) && !(typeof l.photoCount === "number" && l.photoCount < 1));
+
+/* What a card shows where the listing has no photo yet (results and the map only; strips leave such a home out).
+   A drawn panel, not an empty box. The same words in idx-lib/map.js. */
+export const NO_PHOTO = "No photos posted yet";
+
 export function card(l, opts = {}) {
-  const photo = safeUrl(l.photo);
+  const photo = hasPhoto(l) ? safeUrl(l.photo) : null;
   const tag = cardTag(l);
   const miles = typeof l.miles === "number" ? `<span class="hx-c-miles">${esc(l.miles)} mi</span>` : "";
   const bits = [];
@@ -104,9 +111,9 @@ export function card(l, opts = {}) {
   if (statusWord(l.status)) bits.push(esc(statusWord(l.status)));
   const addr = l.address ? `${addressLine(l)}${l.postalCode ? `, ${l.postalCode}` : ""}` : addressLine(l);
   return `<article class="hx-c"><a class="hx-c-link" href="${esc(listingPath(l))}" draggable="false"><span class="hx-c-photo">`
-    + (photo ? `<img src="${esc(photoUrl(photo, "card"))}" alt="${esc(addressLine(l))}" width="480" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false">` : `<span class="hx-nophoto">No photo yet</span>`)
+    + (photo ? `<img src="${esc(photoUrl(photo, "card"))}" alt="${esc(addressLine(l))}" width="480" height="300" loading="lazy" decoding="async" referrerpolicy="no-referrer" draggable="false">` : `<span class="hx-nophoto">${NO_PHOTO}</span>`)
     + `${tag ? `<span class="hx-c-tag">${esc(tag)}</span>` : ""}${miles}</span>`
-    + `<span class="hx-c-body"><span class="hx-c-price">${esc(headlinePrice(l))}</span><span class="hx-c-facts">${bits.join('<i aria-hidden="true"></i>')}</span>`
+    + `<span class="hx-c-body"><span class="hx-c-price">${esc(headlinePrice(l))}</span><span class="hx-c-facts">${bits.map((b) => `<span>${b}</span>`).join("")}</span>`
     + `<span class="hx-c-addr">${esc(addr)}</span>`
     + `<span class="hx-c-firm">MLS #${esc(l.mlsNumber)}, ${esc(l.listingFirm || "listing brokerage")}. Listing provided by CCMLS.</span></span></a>`
     + `${heartButton(l, opts.hearted, true)}</article>`;
@@ -120,6 +127,20 @@ export function grid(listings, hearts) {
 
 /** The same card in a strip that pans sideways (guide pages, "more homes"). */
 export const stripCard = (l, hearted) => card(l, { hearted });
+
+/**
+ * A strip's cards: only homes with a photo (owner, 2026-10-31: no "no photo" blocks in a row of homes),
+ * up to n, and up to 4 more kept in a <template>. A card whose photo fails twice (its link, then our
+ * copy) is taken out of the row and the next kept home takes its place (PHOTO_FIX), so the row stays
+ * full. A template's photos are not asked for until a card is used. each: a change to every card's HTML.
+ */
+export const STRIP_SPARES = 4;
+export function stripCards(listings, n = 10, each = (h) => h) {
+  const ls = (listings || []).filter(hasPhoto);
+  const html = (x) => each(stripCard(x, false));
+  const spare = ls.slice(n, n + STRIP_SPARES);
+  return ls.slice(0, n).map(html).join("") + (spare.length ? `<template class="hx-spare">${spare.map(html).join("")}</template>` : "");
+}
 
 const tz = (iso, o) => {
   try { return new Date(iso).toLocaleString("en-US", { timeZone: "America/New_York", ...o }); } catch { return ""; }
@@ -218,7 +239,13 @@ export const STYLE = `<style>
 .hx-form{display:flex;flex-wrap:wrap;gap:.6rem .8rem;align-items:flex-end;margin:1rem 0 1.4rem;padding:.9rem 1rem;border-radius:16px;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.8);box-shadow:0 6px 18px rgba(28,32,40,.08)}
 .hx-form label{display:flex;flex-direction:column;font-size:.8rem;gap:.2rem}.hx-form select,.hx-form input{padding:.45rem .5rem;border-radius:8px;border:1px solid var(--rule,#d9d2c6);background:#fff;font:inherit}
 .hx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
-.hx-nophoto{display:flex;align-items:center;justify-content:center;height:100%;color:var(--muted);font-size:.85rem}
+/* A home with no photo yet, and a photo that would not load: a drawn panel, never an empty box (owner, 2026-10-31). */
+.hx-nophoto,.hx-ph-off::before{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;width:100%;box-sizing:border-box;padding:2.4rem .8rem .6rem;text-align:center;font-size:.8rem;font-weight:600;line-height:1.3;color:#6b5a48;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a3825f' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 11.5 12 4l9 7.5'/%3E%3Cpath d='M5 10v10h14V10'/%3E%3Cpath d='M10 20v-6h4v6'/%3E%3C/svg%3E") no-repeat center calc(50% - .95rem)/32px 32px,linear-gradient(135deg,#f3eee6,#e4dbcc)}
+.hx-ph-off{position:relative}.hx-ph-off::before{content:"Photo unavailable right now";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a3825f' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 8h3l2-3h6l2 3h3v11H4z'/%3E%3Ccircle cx='12' cy='13' r='3.5'/%3E%3C/svg%3E"),linear-gradient(135deg,#f3eee6,#e4dbcc)}
+.hx-l-tile.hx-ph-off::before{content:"";background-image:linear-gradient(135deg,#f3eee6,#e4dbcc)}
+.hx-gallery img.hx-ph-off{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a3825f' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 8h3l2-3h6l2 3h3v11H4z'/%3E%3Ccircle cx='12' cy='13' r='3.5'/%3E%3C/svg%3E") no-repeat center/40px 40px,linear-gradient(135deg,#f3eee6,#e4dbcc)}
+.hx-l-hero .hx-nophoto{font-size:.98rem;padding-top:3.4rem;background-size:46px 46px,auto;background-position:center calc(50% - 1.4rem),0 0}
+.hx-l-media.hx-none{height:auto!important;grid-template-rows:auto!important}.hx-l-media.hx-none .hx-l-hero{aspect-ratio:auto;height:clamp(12rem,34vw,17rem);grid-row:auto}
 .hx-heart{border:0;background:rgba(255,255,255,.85);border-radius:999px;width:2.2rem;height:2.2rem;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:#1c2028}
 .hx-heart svg{fill:none;stroke:currentColor;stroke-width:1.8}.hx-heart[aria-pressed="true"] svg{fill:#c4553a;stroke:#c4553a}
 .hx-tour{display:inline-flex;align-items:center;gap:.35rem;border:1px solid var(--rule,#d9d2c6);background:#fff;border-radius:999px;padding:.35rem .8rem;font:inherit;font-size:.85rem;cursor:pointer;color:var(--navy)}
@@ -252,8 +279,6 @@ button.hx-heart{border-radius:999px}
 .hx-gallery img:first-child{grid-column:1/-1;aspect-ratio:16/9}
 /* A photo that has not come yet shows a calm panel, never its caption squeezed into a strip. */
 .hx-gallery img,.hx-c-photo img,.hx-l-hero img,.hx-l-tile img{color:transparent;font-size:0;background:linear-gradient(135deg,#ece6dc,#ddd3c4)}
-.hx-imgwait{position:relative}.hx-imgwait::after{content:"Photo loading";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.85rem;color:#6b7480;pointer-events:none}
-.hx-gallery .hx-imgwait-i{outline:0}
 .hx-hero-photo img{width:100%;max-height:520px;object-fit:cover;border-radius:16px}
 .hx-table{border-collapse:collapse;width:100%;max-width:760px;font-size:.92rem}.hx-table th{text-align:left;font-weight:600;padding:.4rem .6rem .4rem 0;width:40%;vertical-align:top}.hx-table td{padding:.4rem 0}.hx-table tr{border-bottom:1px solid var(--rule,#e6dfd3)}
 .hx-remarks{white-space:pre-line;line-height:1.65;max-width:760px}
@@ -267,13 +292,15 @@ main#main .hx-c:hover{box-shadow:0 2px 4px rgba(28,32,40,.08),0 14px 30px rgba(2
 main#main .hx-c-link{display:block;color:var(--ink,#1c2028);text-decoration:none}
 main#main .hx-c-photo{position:relative;display:block;aspect-ratio:16/10;background:linear-gradient(135deg,#e8e1d6,#d9cfc1)}
 main#main .hx-c-photo img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
-main#main .hx-c-photo .hx-nophoto{display:flex;align-items:center;justify-content:center;height:100%;color:var(--slate,#5c6b78);font-size:.85rem}
 main#main .hx-c-tag{position:absolute;top:.6rem;left:.6rem;padding:.22rem .62rem;border-radius:999px;background:#b54a1a;color:#fff;font-size:.78rem;font-weight:700;line-height:1.35}
 main#main .hx-c-miles{position:absolute;bottom:.6rem;left:.6rem;padding:.18rem .55rem;border-radius:999px;background:rgba(28,32,40,.6);color:#fff;font-size:.75rem;font-weight:600}
 main#main .hx-c-body{display:block;padding:.7rem .95rem .85rem}
 main#main .hx-c-price{display:block;font-family:var(--sans);font-size:1.4rem;font-weight:800;letter-spacing:-.01em;line-height:1.2}
-main#main .hx-c-facts{display:flex;flex-wrap:wrap;align-items:center;gap:0 .45rem;margin:.2rem 0 .25rem;font-size:.95rem;line-height:1.4}
-main#main .hx-c-facts b{font-weight:700}main#main .hx-c-facts i{display:inline-block;width:1px;height:1em;background:rgba(28,32,40,.3)}
+/* Each fact stays whole ("2,462 sqft", never "2,462" on one line and "sqft" on the next), and the thin rule between
+   facts sits only between them: the one a wrapped line would start with is clipped (owner, 2026-10-31: words ran together). */
+main#main .hx-c-facts{display:flex;flex-wrap:wrap;align-items:center;margin:.2rem 0 .25rem calc(-.9rem - 1px);clip-path:inset(0 0 0 calc(.45rem + 1px));font-size:.95rem;line-height:1.4}
+main#main .hx-c-facts>span{white-space:nowrap;padding-left:.45rem}main#main .hx-c-facts>span::before{content:"";display:inline-block;width:1px;height:1em;margin-right:.45rem;vertical-align:-.12em;background:rgba(28,32,40,.3)}
+main#main .hx-c-facts b{font-weight:700}
 main#main .hx-c-addr{display:block;font-size:.92rem;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 main#main .hx-c-firm{display:block;margin-top:.4rem;font-size:.72rem;line-height:1.4;color:var(--slate,#5c6b78)}
 main#main .hx-c .hx-heart{position:absolute;top:.45rem;right:.45rem;width:2.6rem;height:2.6rem;background:none!important;color:#fff;filter:drop-shadow(0 1px 3px rgba(0,0,0,.5))}
@@ -412,20 +439,40 @@ main#main .hx-s-all{flex:0 0 40%;max-width:12rem;align-self:stretch;display:flex
  * The page script. It touches only our own elements; nothing from the CRM is ever
  * written with innerHTML. data-hx-signed on <body> says whether the visitor is signed up.
  */
-/** The photo server's connection opens while the page is still arriving: about a third of a second sooner. */
-export const PHOTO_HINT = `<link rel="preconnect" href="https://api.cotality.com"><link rel="dns-prefetch" href="https://api.cotality.com">`;
+/**
+ * A listing photo that fails (owner, 2026-10-31: "no photo yet" blocks in the feed). The CRM's photo
+ * server answers 503 for a photo it has not fetched yet, and the MLS's allows 240 a minute for every
+ * visitor together. First the other copy: our store (/homes/p/) for a link, the link itself when our
+ * copy failed. If that fails too: in a row of homes (a strip, a feed, the AI picks), the card leaves the
+ * row and the next kept home (<template class="hx-spare">) takes its place; a guide-page strip left with
+ * no card goes empty, and the page shows the place's own photo. Anywhere else (results, the map, a
+ * listing's photos) a drawn panel shows, and the photo is asked for once more a minute later, when the
+ * MLS's count starts over. In the head, so a photo that fails before the page's script arrives is caught.
+ */
+export const PHOTO_FIX = `<script>(function(){
+window.hxPhotoFix=1;var ROW=["hx-s-row","hx-ai-picks-g"];
+function inRow(c){var r=c&&c.parentNode;if(!r||!r.classList)return null;for(var i=0;i<ROW.length;i++)if(r.classList.contains(ROW[i]))return r;return null}
+function next(row){var t=row.querySelector("template.hx-spare");return t&&t.content?t.content.querySelector(".hx-c"):null}
+function drop(c,row){var n=next(row);if(n)row.replaceChild(n,c);else row.removeChild(c);
+ if(!row.querySelector(".hx-c")){var s=row.closest(".hx-strip[data-place]");if(s&&s.getAttribute("data-place")!=="nearby")while(s.firstChild)s.removeChild(s.firstChild)}}
+document.addEventListener("error",function(e){var im=e.target;if(!im||im.tagName!=="IMG"||!im.closest)return;
+ var box=im.closest(".hx-c-photo,.hx-l-hero,.hx-l-tile,.hx-gallery");if(!box)return;
+ var s=im.getAttribute("src")||"",n=+(im.getAttribute("data-hx-try")||0);im.setAttribute("data-hx-try",String(n+1));
+ if(n===0){if(s.indexOf("/homes/p/")===0){var q=s.split("u=")[1];if(q){im.src=decodeURIComponent(q.split("&")[0]);return}}
+  else if(s.indexOf("https://")===0){im.src="/homes/p/"+(im.closest(".hx-c")?"card":"big")+"?u="+encodeURIComponent(s);return}}
+ var c=im.closest(".hx-c"),row=inRow(c);if(row){drop(c,row);return}
+ (box.classList.contains("hx-gallery")?im:box).classList.add("hx-ph-off");
+ if(n<2){var u=im.getAttribute("src")||s;setTimeout(function(){im.src=u+(u.indexOf("?")<0?"?r=1":"&r=1")},61000)}},true);
+document.addEventListener("load",function(e){var im=e.target;if(!im||im.tagName!=="IMG"||!im.closest)return;var b=im.closest(".hx-ph-off");if(b)b.classList.remove("hx-ph-off");im.classList.remove("hx-ph-off")},true);
+})();</script>`;
+
+/** The photo server's connection opens while the page is still arriving: about a third of a second sooner. Then PHOTO_FIX. */
+export const PHOTO_HINT = `<link rel="preconnect" href="https://api.cotality.com"><link rel="dns-prefetch" href="https://api.cotality.com">${PHOTO_FIX}`;
 
 export const SCRIPT = `<script>(function(){
 /* The brass bar and the next page's grey layout on a click are in the site footer (window.hxGo). */
 var signed=document.body.getAttribute("data-hx-signed")==="1";
-/* A listing photo that fails (the MLS photo server allows 240 a minute for every visitor together) is
-   asked for once more a minute later, when its count starts over; until then a calm panel shows. */
-document.addEventListener("error",function(e){var im=e.target;if(!im||im.tagName!=="IMG"||(im.src.indexOf("https://api.cotality.com/")!==0&&im.src.indexOf("/homes/p/")<0))return;
- /* Our copy failed: load the photo from the MLS at once. */
- if(im.src.indexOf("/homes/p/")>=0){var q=im.src.split("u=")[1];if(q){im.src=decodeURIComponent(q.split("&")[0]);return}}
- var box=im.parentNode;if(box&&box.classList&&!box.classList.contains("hx-gallery"))box.classList.add("hx-imgwait");
- if(im.getAttribute("data-retry"))return;im.setAttribute("data-retry","1");var u=im.src;setTimeout(function(){im.src=u+(u.indexOf("?")<0?"?r=1":"&r=1")},61000)},true);
-document.addEventListener("load",function(e){var im=e.target;if(im&&im.tagName==="IMG"&&im.parentNode&&im.parentNode.classList)im.parentNode.classList.remove("hx-imgwait")},true);
+/* A listing photo that fails: PHOTO_FIX, in the head. */
 function $(s,r){return (r||document).querySelector(s)}function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
 function post(u,b){return fetch(u,{method:"POST",headers:{"content-type":"application/json"},credentials:"same-origin",body:JSON.stringify(b)}).then(function(r){return r.json().catch(function(){return{}}).then(function(j){j._status=r.status;return j})})}
 function openD(d){if(!d)return;if(d.showModal)d.showModal();else d.setAttribute("open","")}

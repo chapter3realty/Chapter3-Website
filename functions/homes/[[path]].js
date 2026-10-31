@@ -29,6 +29,7 @@ import { SMS_CONSENT_TEXT, TERMS_PARAGRAPHS, TERMS_TITLE, TERMS_VERSION, termsTe
 import {
   ICONS, PHOTO_HINT, STRIP_STYLE, STYLE, SCRIPT, addressLine, card, dayLong, disclaimer, esc, factsLine, grid, headlinePrice, heartButton,
   listingPath, money, safeUrl, signupDialog, welcomeDialog, spaced, statusWord, stripCard, tourButton, tourDialog, updatedLine,
+  hasPhoto, stripCards, NO_PHOTO,
 } from "../../idx-lib/render.js";
 
 const SITE = "https://chapter3realty.com";
@@ -732,6 +733,10 @@ async function lookup(context, url) {
   return json({ ok: true, found: true, facts, meta: r.json.meta || null }, 200, { "cache-control": "private, no-store" });
 }
 
+/* The rental analyzer's page has no PHOTO_FIX (its strip comes from this answer, as HTML), so its cards carry
+   the same steps themselves: our copy of a failed photo, then the next kept home in its place. */
+const OWN_FIX = "if(window.hxPhotoFix)return;var i=this,s=i.getAttribute('src')||'';if(!i.dataset.t){i.dataset.t=1;if(s.indexOf('https://')===0){i.src='/homes/p/card?u='+encodeURIComponent(s);return}if(s.indexOf('/homes/p/')===0&&s.indexOf('u=')>0){i.src=decodeURIComponent(s.split('u=')[1].split('&')[0]);return}}i.onerror=null;var c=i.closest('.hx-c'),r=c&&c.parentNode,t=r&&r.querySelector('template.hx-spare'),n=t&&t.content.querySelector('.hx-c');if(c&&r){if(n)r.replaceChild(n,c);else r.removeChild(c)}";
+
 /**
  * GET /homes/api/similar?near=<lat,lng>&beds=&min=&max=&not=<MLS#>: homes like the one the
  * rental analyzer just ran, for sale now near it, as the listing search's own strip (cards,
@@ -746,13 +751,13 @@ async function similar(context, url) {
   const not = /^[A-Za-z0-9]{3,20}$/.test(q.get("not") || "") ? q.get("not") : null;
   const get = async (params) => {
     const r = await crm(context.env, context.request, `/api/idx/listings?${params.toString()}`, { anonymous: true });
-    return r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? { ls: r.json.listings.filter((l) => forSale(l) && l.mlsNumber !== not), meta: r.json.meta } : { ls: [], meta: null };
+    return r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? { ls: r.json.listings.filter((l) => forSale(l) && l.mlsNumber !== not && hasPhoto(l)), meta: r.json.meta } : { ls: [], meta: null };
   };
   let got = await get(p);
   if (got.ls.length < 3) got = await get(new URLSearchParams({ near: n.near, miles: "5", size: "24", status: "active" }));
   if (got.ls.length < 3) return json({ ok: true, html: "" }, 200, { "cache-control": "public, max-age=300" });
   const all = `/homes/?${new URLSearchParams({ near: n.near, miles: "3" }).toString()}`;
-  const cards = got.ls.slice(0, 10).map((l) => stripCard(l, false).replace(/<button type="button" class="hx-heart[\s\S]*?<\/button>/, "")).join("");
+  const cards = stripCards(got.ls, 10, (h) => h.replace(/<button type="button" class="hx-heart[\s\S]*?<\/button>/, "").replace("<img ", `<img onerror="${OWN_FIX}" `));
   const html = `${STYLE}${STRIP_STYLE}<div class="hx-strip"><p class="hx-s-head"><b>Homes like it for sale nearby</b><a href="${esc(all)}">See all</a></p>`
     + `<div class="hx-s-row">${cards}<a class="hx-s-all" href="${esc(all)}" draggable="false">See all homes nearby</a></div>${disclaimer(got.meta)}</div>`;
   return json({ ok: true, html }, 200, { "cache-control": "public, max-age=300" });
@@ -775,13 +780,13 @@ async function stripApi(context, url) {
   // What the reader picked wins over the feeds' bar: land, mobile homes or a low max keep only status and photos.
   const low = +p.get("max") > 0 && +p.get("max") <= 150000;
   const homes = rankHomes(postFilter(r.json.listings, { yearMin: p.get("yearMin") ? +p.get("yearMin") : 1950, minPhotos: 6, floors: !(allow || low) }, { allowTypes: allow }), "appeal")
-    .filter((l) => safeUrl(l.photo)).slice(0, 10);
+    .filter(hasPhoto);
   const keep = new URLSearchParams(p); keep.delete("size");
   const link = `/homes/${keep.toString() ? `?${keep.toString()}` : ""}`;
   const total = typeof r.json.total === "number" ? r.json.total : homes.length;
   const html = homes.length
     // No heart buttons: this answer is cached for everyone, and the page bound its hearts at load (as similar()).
-    ? `${homes.map((l) => stripCard(l, false).replace(/<button type="button" class="hx-heart[\s\S]*?<\/button>/, "")).join("")}<a class="hx-s-all" href="${esc(link)}" draggable="false">See all ${esc(total.toLocaleString("en-US"))} homes</a>`
+    ? `${stripCards(homes, 10, (h) => h.replace(/<button type="button" class="hx-heart[\s\S]*?<\/button>/, ""))}<a class="hx-s-all" href="${esc(link)}" draggable="false">See all ${esc(total.toLocaleString("en-US"))} homes</a>`
     : `<p class="hx-s-empty">No homes match those filters right now. <a href="${esc(link)}">Open the full search</a> to widen them.</p>`;
   const L = filterLabels(p);
   return json({ ok: true, html, total, link, labels: { price: L.price, beds: L.bb, type: L.type, town: L.town, more: L.more }, note: p.get("hoa") === "0" ? NO_HOA_NOTE : "" }, 200, { "cache-control": "public, max-age=120" });
@@ -842,7 +847,7 @@ async function listingPageWith(context, mls, slugPart, gate, r, hearts) {
   if (slugPart !== null && `/homes/${slugPart}/` !== own) return Response.redirect(`${SITE}${own}${new URL(context.request.url).search}`, 301);
   const registered = r.json.tier === "registered";
   const canonical = `${SITE}${own}`;
-  const photo = safeUrl(l.photo);
+  const photo = hasPhoto(l) ? safeUrl(l.photo) : null;
   const photos = registered && Array.isArray(l.photos) ? l.photos.filter((p) => p && safeUrl(p.url)) : [];
   const hearted = (hearts || []).includes(l.mlsNumber);
   const status = statusWord(l.status);
@@ -864,7 +869,8 @@ async function listingPageWith(context, mls, slugPart, gate, r, hearts) {
     media = `<div class="hx-l-media"><div class="hx-l-hero">${img(photo, addressLine(l), true)}${chip}${heartButton(l, hearted)}${more}</div>`
       + `<div class="hx-l-tile hx-blur hx-tall">${img(photo, "")}<button type="button" class="hx-l-tilebtn" data-hx-signup>${ICONS.lock}<span>${count > 1 ? `See all ${esc(count)} photos` : "See full details"}</span><small>Free sign-up</small></button></div></div>`;
   } else {
-    media = `<div class="hx-l-media hx-one"><div class="hx-l-hero"><div class="hx-nophoto">No photo yet</div>${chip}${heartButton(l, hearted)}</div></div>`;
+    // No photo yet: a drawn panel, shorter than a photo (owner, 2026-10-31: never a "no photo" block).
+    media = `<div class="hx-l-media hx-one hx-none"><div class="hx-l-hero"><div class="hx-nophoto">${NO_PHOTO}</div>${chip}${heartButton(l, hearted)}</div></div>`;
   }
 
   const pill = (icon, text) => (text ? `<li class="hx-pill">${ICONS[icon]}${esc(text)}</li>` : "");
@@ -908,7 +914,7 @@ ${safeUrl(l.virtualTour) ? `<p><a href="${esc(l.virtualTour)}" rel="nofollow noo
 ${l.listingAgent ? `<p class="hx-firm-line">Listing agent: ${esc(l.listingAgent)}, ${esc(l.listingFirm || "")}</p>` : ""}
 <p class="hx-small">School names come from the listing. Being near a school does not mean a home is zoned for it; confirm the zone with Horry County Schools.</p>`
     : `<section class="hx-teaser hx-glass"><h2>Free: everything else about this home</h2><p class="hx-small">Sign up once with your name, email and phone.</p><ul>`
-      + `${teaser("camera", count > 1 ? `All ${count} photos` : "Every photo")}${teaser("home", "The description")}${teaser("lock", "The HOA fee and what it covers")}`
+      + `${count > 1 || photo ? teaser("camera", count > 1 ? `All ${count} photos` : "Every photo") : ""}${teaser("home", "The description")}${teaser("lock", "The HOA fee and what it covers")}`
       + `${teaser("year", "Property taxes")}${teaser("area", "Days on market and the price history")}${teaser("lot", "Recent sales nearby")}</ul>`
       + `<button type="button" class="btn btn-brass" data-hx-signup>See full details</button></section>`;
 
@@ -974,14 +980,14 @@ async function homesLike(context, l, where) {
     if (typeof l.beds === "number" && l.beds > 1) p.set("beds", String(l.beds - 1));
     const r = await crm(context.env, context.request, `/api/idx/listings?${p.toString()}`, { anonymous: true, timeoutMs: 2500 });
     const all = r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? r.json.listings : [];
-    let ls = all.filter((x) => forSale(x) && x.mlsNumber !== l.mlsNumber && safeUrl(x.photo));
+    let ls = all.filter((x) => forSale(x) && x.mlsNumber !== l.mlsNumber && hasPhoto(x));
     const same = ls.filter((x) => condoLike(x) === condoLike(l));
     if (same.length >= 3) ls = same;
     if (ls.length < 3) return "";
-    const pick = ls.slice(0, 10);
+    const pick = ls.slice(0, 10 + 4);
     const link = new URLSearchParams(p); link.delete("size"); link.delete("sort");
     return `<div class="hx-strip" data-place="nearby" data-name="homes like it"><p class="hx-s-head"><b>Homes like this one for sale</b><a href="/homes/?${esc(link.toString())}">See all</a></p>`
-      + `<div class="hx-s-row">${pick.map((x) => stripCard(x, false)).join("")}</div></div>`;
+      + `<div class="hx-s-row">${stripCards(pick, 10)}</div></div>`;
   } catch {
     return "";
   }

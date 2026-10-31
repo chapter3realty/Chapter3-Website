@@ -342,7 +342,11 @@ const FEED_KEYS = ["walk_to_beach", "beach_1mi", "near_beach", "east_of_17", "se
   "home_office", "screened_porch", "hot_tub", "outdoor_kitchen", "flood_zone", "inside_city_limits", "outside_city_limits",
   "hoa_includes_internet", "hoa_includes_insurance", "lawn_care_included", "has_rental_income", "multi_family", "icw_1mi", "near_icw",
   "marshwalk_1mi", "barefoot_landing_2mi", "market_common_2mi", "nmb_main_street_1mi", "downtown_conway_2mi", "myrtle_beach_boardwalk_1mi",
-  "grand_strand_medical_center_5mi", "mcleod_carolina_forest_5mi", "myrtle_beach_airport_5mi", "huntington_beach_state_park_5mi"];
+  "grand_strand_medical_center_5mi", "mcleod_carolina_forest_5mi", "myrtle_beach_airport_5mi", "huntington_beach_state_park_5mi",
+  // Used by the guide feeds of 2026-10-31; all in the CRM list that day.
+  "area_garden_city", "area_socastee", "county_georgetown", "raised_home", "new_roof", "move_in_ready", "carolina_room", "virtual_tour",
+  "home_warranty", "brick", "hoa_includes_water_sewer", "grand_strand_medical_center_10mi", "conway_medical_center_10mi", "mcleod_seacoast_10mi",
+  "tidelands_waccamaw_10mi", "coastal_grand_mall_10mi", "myrtle_beach_airport_10mi"];
 const STATIC = new Set([...FEATURE_KEYS, ...FEED_KEYS]);
 /** A feature that is a distance from a place: the CRM takes at most 2 in one search (has and not together). */
 export const isDistance = (k) => /^(walk_to_beach|near_beach|beach_\d+mi|near_icw|icw_\d+mi)$|_\d+mi$/.test(k);

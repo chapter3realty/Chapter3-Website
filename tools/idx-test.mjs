@@ -8,14 +8,14 @@ import { onRequest as homes } from "../functions/homes/[[path]].js";
 import { onRequest as mw } from "../functions/_middleware.js";
 import { onRequest as sitemap } from "../functions/sitemap-homes.xml.js";
 import { placeFeed, placeParams } from "../idx-lib/edge.js";
-import { postFilter, rankHomes } from "../idx-lib/feeds.js";
+import { FEEDS, postFilter, rankHomes } from "../idx-lib/feeds.js";
 import { filterBar } from "../idx-lib/filters.js";
 import { featureList } from "../idx-lib/features.js";
 import { readQuery } from "../idx-lib/query.js";
 import { nearbySales, flipMath, FLIP_DEFAULTS, repairTier } from "../idx-lib/deals.js";
-import { photo, photoUrl, warm } from "../idx-lib/photo.js";
+import { photo, photoUrl, warm, ourPhoto } from "../idx-lib/photo.js";
 import { resetCatalog } from "../idx-lib/catalog.js";
-import { SCRIPT, STYLE } from "../idx-lib/render.js";
+import { SCRIPT, STYLE, PHOTO_FIX, PHOTO_HINT, hasPhoto, stripCards, NO_PHOTO } from "../idx-lib/render.js";
 const STYLE_OK = () => STYLE.includes(".hx-dialog form[hidden]{display:none}");
 import { MAP_SCRIPT } from "../idx-lib/map.js";
 
@@ -40,6 +40,7 @@ let INVALID_TS = false;
 let APPLIED = false;
 let CATALOG = false;
 let FLAKY = 0, SIGNED_DOWN = false;
+let NOPHOTO = false; // every third home has no photo (photo null, photoCount 0)
 globalThis.fetch = async (input, init = {}) => {
   const u = new URL(typeof input === "string" ? input : input.url);
   calls.push({ url: u.toString(), init });
@@ -82,13 +83,14 @@ globalThis.fetch = async (input, init = {}) => {
     if ((u.searchParams.get("has") || "").includes("walk_to_beach") && u.searchParams.get("city") === "Loris") return J({ ok: true, tier, visitor: "none", meta: META, listings: [], total: 0 });
     const sub = u.searchParams.get("subdivision"), near = u.searchParams.get("near");
     const n = BIG ? 4041 : sub === "Tidewater" ? 2 : sub || near ? 14 : 30;
-    const ls = Array.from({ length: Math.min(n, 48) }, (_, i) => mk(i + 48 * ((+u.searchParams.get("page") || 1) - 1), near ? { miles: 0.4 } : {}));
+    const ls = Array.from({ length: Math.min(n, 48) }, (_, i) => mk(i + 48 * ((+u.searchParams.get("page") || 1) - 1), near ? { miles: 0.4 } : {}))
+      .map((l, i) => (NOPHOTO && i % 3 === 0 ? { ...l, photo: null, photoCount: 0 } : l));
     return J({ ok: true, tier, visitor: auth ? "valid" : "none", meta: META, ...(APPLIED ? { applied: ["has"].filter((x) => u.searchParams.has(x)) } : {}), listings: ls.slice(0, +u.searchParams.get("size") || 24), total: n, page: 1, pageSize: 24 });
   }
   const one = /^\/api\/idx\/listings\/(\w+)$/.exec(u.pathname);
   if (one) {
     if (one[1] === "404404") return J({ ok: false, error: "not_found" }, 404);
-    const l = mk(1, { mlsNumber: one[1], ...(one[1] === "2611111" ? { address: null } : {}), ...(one[1] === "2622222" ? { address: "1 $' $` $& Way" } : {}) });
+    const l = mk(1, { mlsNumber: one[1], ...(one[1] === "2611111" ? { address: null } : {}), ...(one[1] === "2622222" ? { address: "1 $' $` $& Way" } : {}), ...(NOPHOTO ? { photo: null, photoCount: 0 } : {}) });
     const full = auth ? { ...l, photos: [{ url: "https://photos.example.com/a.jpg", caption: "Front <b>" }], remarks: "Line one\n<script>x</script>", details: { Appliances: ["Dishwasher", "Range"], PoolPrivateYN: false, AssociationFee: 614 }, openHouses: [], listingAgent: "Pat Agent", point: null, virtualTour: "javascript:alert(1)" } : l;
     return J({ ok: true, tier, visitor: auth ? "valid" : "none", meta: META, listing: full, viewId: auth && u.searchParams.get("track") !== "0" ? "4f6c0f0e-6a53-4f3a-9a8e-0b9b5b9d2c11" : null });
   }
@@ -173,7 +175,7 @@ t = await r.text();
 const strips = (t.match(/class="hx-s-row"/g) || []).length;
 check("strips: filled on a guide page", strips >= 10);
 check("strips: Tidewater (2 homes) keeps its empty slot", /data-place="tidewater" data-name="[^"]*"><\/div>/.test(t));
-check("strips: at most 10 cards a row, spread across price", (t.split('data-place="cherry-grove"')[1].split("hx-s-all")[0].match(/<article class="hx-c">/g) || []).length === 10);
+check("strips: at most 10 cards a row, spread across price (the kept spares in a <template> not counted)", (t.split('data-place="cherry-grove"')[1].split("hx-s-all")[0].replace(/<template class="hx-spare">[\s\S]*?<\/template>/g, "").match(/<article class="hx-c">/g) || []).length === 10);
 check("strips: the owner's card template on every card (price, facts, address, MLS line)", (t.match(/<article class="hx-c">/g) || []).length > 0 && (t.match(/<article class="hx-c">/g) || []).length === (t.match(/class="hx-c-price">\$[0-9,]+</g) || []).length && (t.match(/<article class="hx-c">/g) || []).length === (t.match(/Listing provided by CCMLS\./g) || []).length);
 check("strips: one notice, the dialogs and the script", (t.match(/class="hx-disclaimer"/g) || []).length === 1 && t.includes('id="hx-signup"'));
 check("header: Search Listings opens the map page (owner, 2026-10-28)", t.includes("location.href='/homes/map/'") && !t.includes('onclick="openIdx()"'));
@@ -367,6 +369,20 @@ t = await (await run(mw, req("/buyers/best-neighborhoods/"))).text();
 check("feed: pages with their own strips get no second feed", !t.includes('class="hx-feed"'));
 t = await (await run(mw, req("/about/"))).text();
 check("feed: pages not on the list get none", !t.includes('class="hx-feed"'));
+{
+  // Owner, 2026-10-31: no repeated homes titles. Each page's own feed has a title no other page's feed has.
+  const seen = new Map(), dup = [];
+  for (const [p, f] of Object.entries(FEEDS)) { if (seen.has(f.head)) dup.push(`${f.head} (${seen.get(f.head)}, ${p})`); else seen.set(f.head, p); }
+  check("feed: no two pages share a feed title", Object.keys(FEEDS).length > 100 && dup.length === 0 || (console.log(dup), false));
+  // Every title a reader can see, fallbacks included: no fair-housing steering words, no promise of money.
+  const all = new Set(), walk = (f) => { if (!f || all.has(f)) return; all.add(f); walk(f.fallback); };
+  Object.values(FEEDS).forEach(walk);
+  const heads = [...all].flatMap((f) => [f.head, f.headToday]).filter(Boolean);
+  const bad = heads.filter((h) => /\b(famil(y|ies)|kids?|children|safe|exclusive|retirees?|seniors?|churche?s?|perfect|cash flow|returns?|apprecia\w*|guarantee\w*|payments?|interest|rates?|best)\b/i.test(h));
+  check("feed: no title steers a reader or promises money", heads.length > 100 && bad.length === 0 || (console.log(bad), false));
+  // Garden City Beach finds no homes as a city (2026-10-31): every feed reads it as the CRM's area.
+  check("feed: no feed searches Garden City as a city", [...all].every((f) => (f.q || []).every((q) => q.city !== "Garden City")) && FEEDS["/submarkets/garden-city/"].q[0].has === "area_garden_city" && FEEDS["/submarkets/garden-city/"].needs === "has");
+}
 check("feed: never placed inside a section that is still open", placeFeed('<main><section class="x"><div class="wrap"><p>E</p><h2>A</h2><p>t</p><h2>B</h2></div></section></main>', "[F]") === '<main>[F]<section class="x"><div class="wrap"><p>E</p><h2>A</h2><p>t</p><h2>B</h2></div></section></main>');
 {
   const y = new Date().getUTCFullYear();
@@ -699,6 +715,134 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
   check("description reader: sign_in for a visitor not signed up; six at most for a signed-up one, with the description, and never a recorded view (track=0)",
     anon.ok === false && anon.error === "sign_in" && signed.ok && signed.rows.length === 6 && signed.rows.every((r) => typeof r.remarks === "string" && r.remarks.length > 0)
     && asked.length === 6 && asked.every((c) => c.url.includes("track=0")));
+}
+
+
+// No "no photo" blocks in a row of homes (owner, 2026-10-31: "I see some 'no photo yet' blocks in the IDX feed").
+{
+  const h = (o) => ({ ...mk(1), ...o });
+  check("photos: a home has a photo only with an https link and not a count of 0 (fires on null, http and 0; quiet on a normal home and on a missing count)",
+    !hasPhoto(h({ photo: null })) && !hasPhoto(h({ photo: "http://x.test/1.jpg" })) && !hasPhoto(h({ photoCount: 0 })) && hasPhoto(h({})) && hasPhoto(h({ photoCount: undefined })));
+  const many = Array.from({ length: 16 }, (_, i) => mk(i, i % 4 === 0 ? { photo: null } : {}));
+  const s = stripCards(many, 10), few = stripCards(many.slice(0, 6), 10);
+  const shown = s.split('<template class="hx-spare">')[0];
+  check("strip cards: homes without a photo are left out; 10 show and the next ones wait in a template (fires with 16 homes, 4 without a photo); quiet with 6: no template",
+    !s.includes("hx-nophoto") && (shown.match(/<article class="hx-c">/g) || []).length === 10 && (s.split('<template class="hx-spare">')[1] || "").split("</template>")[0].includes('<article class="hx-c">')
+    && !few.includes("<template") && (few.match(/<article class="hx-c">/g) || []).length === 4);
+  NOPHOTO = true;
+  const g = await (await run(mw, req("/buyers/best-neighborhoods/"))).text();
+  const rows = g.split('class="hx-s-row"').slice(1).map((x) => x.split("hx-s-all")[0]);
+  const sr = await (await run(homes, req("/homes/"))).text();
+  const sim = JSON.parse(await (await run(homes, req("/homes/api/similar?near=33.7,-78.9&beds=3"))).text());
+  const st = JSON.parse(await (await run(homes, req("/homes/api/strip?city=Conway"))).text());
+  const one = await (await run(homes, req("/homes/2600003-101-test-st-myrtle-beach/"))).text();
+  NOPHOTO = false;
+  check("guide page: with every third home lacking a photo, no strip shows a card without one (fires: the results page still lists those homes, with the drawn panel)",
+    rows.length > 0 && rows.every((x) => !x.includes("hx-nophoto") && x.includes('<article class="hx-c">')) && sr.includes(`<span class="hx-nophoto">${NO_PHOTO}</span>`) && !sr.includes("No photo yet"));
+  check("similar homes and a strip's filter answer: no card without a photo; the analyzer's cards carry their own photo fix (that page has no PHOTO_FIX)",
+    sim.ok && !!sim.html && !sim.html.includes('class="hx-nophoto"') && sim.html.includes('<img onerror="if(window.hxPhotoFix)return;') && st.ok && !st.html.includes('class="hx-nophoto"'));
+  check("listing with no photo: a short drawn panel, no 'Every photo' promise, never 'No photo yet'",
+    !one.includes("No photo yet") && one.includes('class="hx-l-media hx-one hx-none"') && one.includes(`<div class="hx-nophoto">${NO_PHOTO}</div>`) && !one.includes("<span>Every photo</span>") && !one.includes("photos</span>"));
+  const ok1 = await (await run(homes, req("/homes/2600001-101-test-st-myrtle-beach/"))).text();
+  check("listing with a photo: no panel, the photo (quiet)", !ok1.includes('class="hx-nophoto"') && !ok1.includes('hx-one hx-none"') && ok1.includes('<div class="hx-l-media"><div class="hx-l-hero"><img'));
+}
+
+// A photo that fails: our copy, then out of the row (strips) or a drawn panel (results, the map, a listing).
+{
+  check("photo fix: in the head of every page with listings, before any photo; it parses and has no backslash",
+    PHOTO_HINT.includes(PHOTO_FIX) && !PHOTO_FIX.includes(String.fromCharCode(92)) && (() => { try { new Function(PHOTO_FIX.replace(/^<script>|<\/script>$/g, "")); return true; } catch { return false; } })()
+    && !SCRIPT.includes('document.addEventListener("error"'));
+  // A small stand-in for the page, enough for PHOTO_FIX's two listeners.
+  const fakePage = () => {
+    const L = {};
+    const mkEl = (tag, cls, parent) => {
+      const e = { tagName: tag.toUpperCase(), className: cls || "", attrs: {}, children: [], parentNode: null, style: {},
+        classList: { contains: (c) => e.className.split(" ").includes(c), add: (c) => { if (!e.classList.contains(c)) e.className = (e.className + " " + c).trim(); }, remove: (c) => { e.className = e.className.split(" ").filter((x) => x !== c).join(" "); } },
+        getAttribute: (k) => (k in e.attrs ? e.attrs[k] : null), setAttribute: (k, v) => { e.attrs[k] = String(v); },
+        matches: (sel) => sel.split(",").some((s) => { s = s.trim(); const m = /^([a-z]*)((?:\.[\w-]+)*)(\[data-place\])?$/.exec(s); if (!m) return false; if (m[1] && e.tagName !== m[1].toUpperCase()) return false; if (m[3] && !("data-place" in e.attrs)) return false; return (m[2] || "").split(".").filter(Boolean).every((c) => e.classList.contains(c)); }),
+        closest: (sel) => { for (let x = e; x; x = x.parentNode) if (x.matches && x.matches(sel)) return x; return null; },
+        querySelector: (sel) => { const walk = (x) => { for (const c of x.children) { if (c.matches(sel)) return c; const f = walk(c); if (f) return f; } return null; }; return walk(e); },
+        replaceChild: (n, o) => { const i = e.children.indexOf(o); if (n.parentNode) n.parentNode.children.splice(n.parentNode.children.indexOf(n), 1); e.children[i] = n; n.parentNode = e; o.parentNode = null; },
+        removeChild: (o) => { e.children.splice(e.children.indexOf(o), 1); o.parentNode = null; },
+        get firstChild() { return e.children[0] || null; },
+        set src(v) { e.attrs.src = v; }, get src() { return e.attrs.src; } };
+      if (parent) { parent.children.push(e); e.parentNode = parent; }
+      return e;
+    };
+    const card = (row, src) => { const a = mkEl("article", "hx-c", row), ph = mkEl("span", "hx-c-photo", a), im = mkEl("img", "", ph); im.attrs.src = src; return { a, ph, im }; };
+    const doc = { addEventListener: (k, f) => { L[k] = f; } };
+    const win = {};
+    new Function("document", "window", "setTimeout", PHOTO_FIX.replace(/^<script>|<\/script>$/g, ""))(doc, win, () => {});
+    return { L, mkEl, card, win };
+  };
+  const P = fakePage();
+  const strip = P.mkEl("div", "hx-strip"); strip.attrs["data-place"] = "cherry-grove";
+  const row = P.mkEl("div", "hx-s-row", strip);
+  const first = P.card(row, "https://app.chapter3realty.com/api/idx/photo/1/a/0/480/x.webp");
+  const tpl = P.mkEl("template", "hx-spare", row); tpl.content = P.mkEl("div", "");
+  const spare = P.card(tpl.content, "https://app.chapter3realty.com/api/idx/photo/2/b/0/480/y.webp");
+  P.L.error({ target: first.im });
+  const triedOurs = first.im.attrs.src === `/homes/p/card?u=${encodeURIComponent("https://app.chapter3realty.com/api/idx/photo/1/a/0/480/x.webp")}` && row.children[0] === first.a;
+  P.L.error({ target: first.im });
+  check("photo fix in a strip: a failed photo is asked for from our copy first, then its card leaves the row and the next kept home takes its place (fires)",
+    P.win.hxPhotoFix === 1 && triedOurs && row.children[0] === spare.a && !row.children.includes(first.a));
+  const only = P.card(row, "/homes/p/card?u=" + encodeURIComponent("https://api.cotality.com/trestle/Media/x"));
+  row.children.splice(0, 1); // only this card is left
+  P.L.error({ target: only.im }); const direct = only.im.attrs.src === "https://api.cotality.com/trestle/Media/x";
+  P.L.error({ target: only.im });
+  check("photo fix: our copy failed, so the MLS link is tried; a guide strip left with no card goes empty and the page shows the place's photo", direct && strip.children.length === 0);
+  const grid = P.mkEl("div", "hx-grid"), g1 = P.card(grid, "https://app.chapter3realty.com/api/idx/photo/3/c/0/480/z.webp");
+  P.L.error({ target: g1.im }); P.L.error({ target: g1.im });
+  const okImg = P.card(grid, "https://app.chapter3realty.com/api/idx/photo/4/d/0/480/w.webp");
+  P.L.load({ target: g1.im });
+  check("photo fix in search results (quiet): the card stays, with the drawn panel until the photo loads; a photo that loads is left alone",
+    grid.children.includes(g1.a) && g1.ph.className.includes("hx-c-photo") && !g1.ph.classList.contains("hx-ph-off") && okImg.im.attrs["data-hx-try"] === undefined && STYLE.includes('.hx-ph-off::before{content:"Photo unavailable right now"'));
+  const g2 = P.card(grid, "https://app.chapter3realty.com/api/idx/photo/5/e/0/480/v.webp"); P.L.error({ target: g2.im }); P.L.error({ target: g2.im });
+  check("photo fix in search results: after our copy fails too, the drawn panel shows (fires)", g2.ph.classList.contains("hx-ph-off") && grid.children.includes(g2.a));
+}
+
+// The CRM's photo links (live since 2026-10): kept in our store too, and its first 503 is asked once more.
+{
+  const C = "https://app.chapter3realty.com/api/idx/photo/1193398589/ttn5mv0/0/480/6FGpCJWlQzo3f770oaSDnH.webp";
+  check("photo store: the CRM's photo links are ours (left as they are on the page); lookalikes are refused",
+    ourPhoto(C) && photoUrl(C) === C && !ourPhoto("https://app.chapter3realty.com.evil.test/api/idx/photo/1/x.webp") && !ourPhoto("https://app.chapter3realty.com/api/idx/photo/../../x") && !ourPhoto("https://app.chapter3realty.com/api/idx/listings/1"));
+  const saved = globalThis.fetch; let n = 0;
+  globalThis.fetch = async () => (++n === 1 ? new Response("", { status: 503 }) : new Response(new Uint8Array([82, 73, 70, 70]), { status: 200, headers: { "content-type": "image/webp" } }));
+  const ctx = { request: new Request("https://chapter3realty.com/homes/p/card"), waitUntil: () => {}, env: {} };
+  const got = await photo(ctx, new URL(`https://chapter3realty.com/homes/p/card?u=${encodeURIComponent(C)}`), "card");
+  const twice = n;
+  n = 0; globalThis.fetch = async () => { n++; return new Response("", { status: 503 }); };
+  const down = await photo(ctx, new URL(`https://chapter3realty.com/homes/p/card?u=${encodeURIComponent(C)}`), "card");
+  globalThis.fetch = saved;
+  check("photo store: a CRM photo that says 503 once is asked again and served (fires); still 503: the browser is sent to the link, nothing kept",
+    got.status === 200 && got.headers.get("content-type") === "image/webp" && twice === 2 && down.status === 302 && down.headers.get("location") === C && n === 2);
+}
+
+// The map: no "No photo yet"; the AI picks row shows homes with a photo; the hint never runs under the 2D and 3D buttons on a phone.
+{
+  const { MAP_SCRIPT: M, MAP_STYLE: MS, pinOf } = await import("../idx-lib/map.js");
+  const pin = (o) => pinOf({ ...mk(1), point: { lat: 33.7, lng: -78.9 }, ...o });
+  check("map: a pin without a photo carries none, its card says the drawn panel's words; the picks row takes homes with a photo only",
+    pin({ photo: null }).photo === null && pin({ photoCount: 0 }).photo === null && !!pin({}).photo && !M.includes("No photo yet") && M.includes('"hx-nophoto","No photos posted yet"') && M.includes("picksGrid.children.length<12&&by[m].photo"));
+}
+
+// Words that ran together on a card (owner, 2026-10-31): each fact whole, no rule left at a line's start; the map's popup and hint on a phone.
+{
+  const { card: cardHtml } = await import("../idx-lib/render.js");
+  const { MAP_SCRIPT: M, MAP_STYLE: MS } = await import("../idx-lib/map.js");
+  const facts = (o) => (cardHtml({ ...mk(1), ...o }).match(/<span class="hx-c-facts">([\s\S]*?)<\/span><span class="hx-c-addr">/) || [])[1] || "";
+  const big = facts({ beds: 7, baths: 6.5, sqft: 12345, lotAcres: 2.75 });
+  const land = facts({ beds: undefined, baths: undefined, sqft: undefined, lotAcres: 12.5, propertySubType: "UnimprovedLand" });
+  check("card facts: each fact is one unbreakable piece ('12,345 sqft'), with no divider element to dangle (fires on a home with every fact; land with no beds has only its lot and status)",
+    big === "<span><b>7</b> bds</span><span><b>6.5</b> ba</span><span><b>12,345</b> sqft</span><span><b>2.75</b> acres</span><span>For sale</span>"
+    && land === "<span><b>13</b> acres</span><span>For sale</span>" && !cardHtml(mk(1)).includes('<i aria-hidden="true"></i>')
+    && STYLE.includes("main#main .hx-c-facts>span{white-space:nowrap;") && STYLE.includes("clip-path:inset(0 0 0 calc(.45rem + 1px))"));
+  check("a failed photo under the sign-up tile shows no words of its own (the tile's button has its words there); on a card or the main photo it does",
+    STYLE.includes('.hx-l-tile.hx-ph-off::before{content:"";') && STYLE.includes('.hx-ph-off::before{content:"Photo unavailable right now"'));
+  check("map: its cards build the same whole facts; the popup's photo column narrows on a phone and its price keeps clear of the X; the hint never runs under the 2D and 3D buttons",
+    M.includes('var s=el("span");s.appendChild(el("b",null,String(x[0])))') && !M.includes('f.appendChild(el("i"))')
+    && MS.includes("grid-template-columns:clamp(6.5rem,34%,8.5rem) minmax(0,1fr)") && MS.includes("main#main .hx-mpop .hx-c-price{padding-right:1.9rem}")
+    && MS.includes(".hx-map-hint{top:.8rem;bottom:auto;left:.8rem;font-size:.78rem;max-width:calc(100% - 9rem)") && MS.includes(".hx-mpop.hx-mpop-top{bottom:auto;top:4.4rem}"));
 }
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");

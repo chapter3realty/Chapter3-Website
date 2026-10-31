@@ -9,7 +9,7 @@
  * until it does, the map page shows the list and says the pins are coming.
  */
 import { photoUrl } from "./photo.js";
-import { acres, addressLine, cardTag, headlinePrice, listingPath, safeUrl, statusWord } from "./render.js";
+import { acres, addressLine, cardTag, hasPhoto, headlinePrice, listingPath, safeUrl, statusWord } from "./render.js";
 
 /** The Google Maps browser key: a public key, locked to our domain in Google Cloud. A setting can replace it. */
 export const mapsKey = (env) => (/^AIza[0-9A-Za-z_-]{35}$/.test(env.MAPS_BROWSER_KEY || "") ? env.MAPS_BROWSER_KEY : "AIzaSyAFTNMGh-PmVFTl3S0ViiM9zNYicFrgGfs");
@@ -31,7 +31,7 @@ export function pinOf(l) {
   if (!l.address || lat === null || lng === null || lat < 31 || lat > 37 || lng < -82 || lng > -75) return null;
   return {
     mls: String(l.mlsNumber || ""), url: listingPath(l), lat, lng,
-    price: headlinePrice(l), short: shortPrice(l), photo: photoUrl(safeUrl(l.photo), "card"),
+    price: headlinePrice(l), short: shortPrice(l), photo: hasPhoto(l) ? photoUrl(safeUrl(l.photo), "card") : null,
     beds: num(l.beds), baths: num(l.baths), sqft: num(l.sqft), acres: acres(l.lotAcres), status: statusWord(l.status), tag: cardTag(l),
     addr: `${addressLine(l)}${l.postalCode ? `, ${l.postalCode}` : ""}`, firm: String(l.listingFirm || "listing brokerage"),
   };
@@ -163,6 +163,8 @@ main#main .hx-skel-c{box-shadow:0 1px 2px rgba(28,32,40,.06)}.hx-skel-l{padding:
 .hx-list-foot{margin:1.2rem -1rem 0;padding:.9rem 1rem 1.2rem;background:#faf8f4;border-top:1px solid rgba(28,32,40,.08)}
 .hx-list-foot .hx-disclaimer{margin:0}
 .hx-map-hint{position:absolute;left:.8rem;bottom:.8rem;z-index:4;margin:0;padding:.35rem .75rem;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 2px 10px rgba(0,0,0,.15);font-size:.82rem;font-weight:600;color:#1c2028;pointer-events:none}
+/* While a home's card is open on the map, the hint steps aside: the card lay over its words (2026-10-31) */
+.hx-mapbox:has(.hx-mpop) .hx-map-hint{visibility:hidden}
 .hx-map-note{position:absolute;left:1rem;right:1rem;bottom:1rem;z-index:5;max-width:30rem;margin:0 auto;padding:.8rem 1rem;border-radius:14px;background:rgba(255,255,255,.95);box-shadow:0 8px 24px rgba(28,32,40,.18);font-size:.9rem;text-align:center}
 .hx-map-note[hidden]{display:none}
 .hx-map-toggle{display:none}
@@ -176,12 +178,12 @@ main#main .hx-skel-c{box-shadow:0 1px 2px rgba(28,32,40,.06)}.hx-skel-l{padding:
 .hx-map3d{position:absolute;inset:0;z-index:3;background:#1c2028}.hx-map3d[hidden]{display:none}.hx-map3d gmp-map-3d{width:100%;height:100%;display:block}
 .hx-map3d-off{display:flex;align-items:center;justify-content:center;color:#f4efe8;padding:2rem;text-align:center}
 .hx-mpop{position:absolute;left:50%;bottom:1rem;transform:translateX(-50%);z-index:11;width:min(23rem,calc(100% - 2rem));border-radius:16px;background:#fff;box-shadow:0 14px 40px rgba(28,32,40,.32)}
-main#main .hx-mpop .hx-c{margin:0;box-shadow:none;border-radius:16px 16px 0 0;transform:none}main#main .hx-mpop .hx-c-link{display:grid;grid-template-columns:8.5rem minmax(0,1fr)}
+main#main .hx-mpop .hx-c{margin:0;box-shadow:none;border-radius:16px 16px 0 0;transform:none}main#main .hx-mpop .hx-c-link{display:grid;grid-template-columns:clamp(6.5rem,34%,8.5rem) minmax(0,1fr)}
 main#main .hx-mpop .hx-c-photo{aspect-ratio:auto;height:100%;min-height:7.5rem}
-main#main .hx-mpop .hx-c-body{padding:.6rem .8rem;padding-right:2.4rem}main#main .hx-mpop .hx-c-price{font-size:1.15rem}main#main .hx-mpop .hx-c-facts{font-size:.85rem}main#main .hx-mpop .hx-c-addr{font-size:.85rem}main#main .hx-mpop .hx-c-firm{font-size:.72rem}main#main .hx-mpop .hx-c-tag{display:none}
+main#main .hx-mpop .hx-c-body{padding:.6rem .8rem}main#main .hx-mpop .hx-c-price{padding-right:1.9rem}main#main .hx-mpop .hx-c-price{font-size:1.15rem}main#main .hx-mpop .hx-c-facts{font-size:.85rem}main#main .hx-mpop .hx-c-addr{font-size:.85rem}main#main .hx-mpop .hx-c-firm{font-size:.72rem}main#main .hx-mpop .hx-c-tag{display:none}
 .hx-mpop .hx-heart{display:none}
 .hx-mpop.hx-mpop-top{bottom:auto;top:4rem}
-.hx-mpop-x{position:absolute;top:.35rem;right:.35rem;z-index:2;width:2rem;height:2rem;border:0;border-radius:999px;background:rgba(255,255,255,.95);font-size:1.25rem;line-height:1;cursor:pointer}
+.hx-mpop-x{position:absolute;top:.3rem;right:.3rem;z-index:2;width:1.8rem;height:1.8rem;border:0;border-radius:999px;background:rgba(255,255,255,.95);font-size:1.25rem;line-height:1;cursor:pointer}
 .hx-mpop-go{display:block;margin:0;padding:.45rem .8rem .6rem;font-size:.8rem;color:var(--slate,#5c6b78);text-align:center;border-top:1px solid rgba(28,32,40,.08)}
 .hx-list-sent{height:1px}
 @media (max-width:1100px){.hx-map-body{grid-template-columns:minmax(0,1fr) min(46vw,420px)}.hx-map-cards{grid-template-columns:1fr}}
@@ -197,7 +199,7 @@ main#main .hx-mpop .hx-c-body{padding:.6rem .8rem;padding-right:2.4rem}main#main
  .hx-mtop .hx-pop>summary{min-height:2.3rem;padding:0 .8rem;font-size:.85rem}
  .hx-mtop .hx-applied{margin:.15rem 0 0}.hx-ai-note.hx-ai-on{font-size:.85rem;padding:.45rem .65rem}
  .hx-map-body.hx-show-list .hx-mode,.hx-map-body.hx-show-list .hx-map-hint,.hx-map-body.hx-show-list .hx-ring-ctl{display:none}
- .hx-map-hint{top:.8rem;bottom:auto;left:.8rem;font-size:.78rem}
+ .hx-map-hint{top:.8rem;bottom:auto;left:.8rem;font-size:.78rem;max-width:calc(100% - 9rem);border-radius:14px;line-height:1.3}
  .hx-ring-ctl{top:3.3rem;left:.8rem;transform:none}
  .hx-list-h h1{font-size:1.3rem;line-height:1.2}.hx-list-h{padding-right:0}
  .hx-map-toggle{padding:.6rem 1.2rem;font-size:.92rem}
@@ -205,7 +207,7 @@ main#main .hx-mpop .hx-c-body{padding:.6rem .8rem;padding-right:2.4rem}main#main
  .hx-map-list{position:absolute;inset:0;z-index:8;border:0;display:none}.hx-map-cards{grid-template-columns:1fr}
  .hx-map-body.hx-show-list .hx-map-list{display:block}
  .hx-map-toggle{display:inline-flex;align-items:center;gap:.4rem;position:absolute;left:50%;transform:translateX(-50%);bottom:1rem;z-index:9;border:0;border-radius:999px;background:#1c2028;color:#fff;font:inherit;font-weight:700;padding:.75rem 1.4rem;box-shadow:0 8px 24px rgba(28,32,40,.35);cursor:pointer}
- .hx-mpop{bottom:4.6rem}.hx-full-b{display:none}.hx-mpop.hx-mpop-top{bottom:auto;top:3.6rem}}
+ .hx-mpop{bottom:4.6rem}.hx-full-b{display:none}.hx-mpop.hx-mpop-top{bottom:auto;top:4.4rem}}
 </style>`;
 
 /**
@@ -230,10 +232,10 @@ var NS="http://www.w3.org/2000/svg";
 function heart(p){var b=el("button","hx-heart hx-heart-sm");b.type="button";b.setAttribute("data-mls",p.mls);b.setAttribute("aria-pressed",hearts[p.mls]?"true":"false");b.setAttribute("aria-label","Save "+p.addr);
  var s=document.createElementNS(NS,"svg");s.setAttribute("viewBox","0 0 24 24");s.setAttribute("width","22");s.setAttribute("height","22");s.setAttribute("aria-hidden","true");var pa=document.createElementNS(NS,"path");pa.setAttribute("d","M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z");s.appendChild(pa);b.appendChild(s);return b}
 function card(p,withHeart){var a=el("article","hx-c"),l=el("a","hx-c-link");l.href=p.url;l.setAttribute("draggable","false");a.setAttribute("data-mls",p.mls);
- var ph=el("span","hx-c-photo");if(p.photo&&(p.photo.indexOf("https://")===0||p.photo.indexOf("/homes/p/")===0)){var im=el("img");im.src=p.photo;im.alt=p.addr;im.loading="lazy";im.referrerPolicy="no-referrer";im.width=480;im.height=300;ph.appendChild(im)}else ph.appendChild(el("span","hx-nophoto","No photo yet"));
+ var ph=el("span","hx-c-photo");if(p.photo&&(p.photo.indexOf("https://")===0||p.photo.indexOf("/homes/p/")===0)){var im=el("img");im.src=p.photo;im.alt=p.addr;im.loading="lazy";im.referrerPolicy="no-referrer";im.width=480;im.height=300;ph.appendChild(im)}else ph.appendChild(el("span","hx-nophoto","No photos posted yet"));
  if(p.tag)ph.appendChild(el("span","hx-c-tag",p.tag));l.appendChild(ph);var b=el("span","hx-c-body");b.appendChild(el("span","hx-c-price",p.price));
  var f=el("span","hx-c-facts"),bits=[];if(p.beds!=null)bits.push([p.beds," bds"]);if(p.baths!=null)bits.push([p.baths," ba"]);if(p.sqft!=null)bits.push([p.sqft.toLocaleString("en-US")," sqft"]);if(p.acres)bits.push([p.acres,p.acres==="1"?" acre":" acres"]);
- bits.forEach(function(x,i){if(i)f.appendChild(el("i"));f.appendChild(el("b",null,String(x[0])));f.appendChild(document.createTextNode(x[1]))});if(p.status){if(bits.length)f.appendChild(el("i"));f.appendChild(document.createTextNode(p.status))}
+ bits.forEach(function(x){var s=el("span");s.appendChild(el("b",null,String(x[0])));s.appendChild(document.createTextNode(x[1]));f.appendChild(s)});if(p.status)f.appendChild(el("span",null,p.status));
  b.appendChild(f);if(rd.why[p.mls])b.appendChild(el("span","hx-c-ai","AI: "+rd.why[p.mls]));b.appendChild(el("span","hx-c-addr",p.addr));b.appendChild(el("span","hx-c-firm","MLS #"+p.mls+", "+p.firm+". Listing provided by CCMLS."));l.appendChild(b);a.appendChild(l);if(withHeart)a.appendChild(heart(p));return a}
 /* The list draws 24 homes, and 24 more as the reader nears the end: fewer photos asked for at once. */
 var shown=[],drawn=0,sent=null,io=null;
@@ -306,7 +308,7 @@ function startReader(q){var t=++rd.tok;rd.yes={};rd.no={};rd.why={};rd.n=0;picks
     .then(function(r){return r.json()}).then(function(d){if(t!==rd.tok)return;var tx=d&&d.content&&d.content.filter(function(b){return b.type==="text"}).pop();var out=[];
      if(tx){try{var a=tx.text.indexOf("{"),z=tx.text.lastIndexOf("}");out=JSON.parse(tx.text.slice(a,z+1)).r||[]}catch(e){}}
      var gone=false;out.forEach(function(x){var m=String(x&&x.m||"");if(!by[m])return;var why=String(x.why||"").replace(/[<>]/g,"").slice(0,90);
-      if(x.fit==="yes"){rd.yes[m]=1;rd.why[m]=why;if(picksGrid.children.length<12)picksGrid.appendChild(card(by[m],true));var c=list.querySelector("[data-mls='"+m+"'] .hx-c-addr");if(c&&!c.previousSibling.classList.contains("hx-c-ai"))c.parentNode.insertBefore(el("span","hx-c-ai","AI: "+why),c)}
+      if(x.fit==="yes"){rd.yes[m]=1;rd.why[m]=why;if(picksGrid.children.length<12&&by[m].photo)picksGrid.appendChild(card(by[m],true));var c=list.querySelector("[data-mls='"+m+"'] .hx-c-addr");if(c&&!c.previousSibling.classList.contains("hx-c-ai"))c.parentNode.insertBefore(el("span","hx-c-ai","AI: "+why),c)}
       else if(x.fit==="no"){rd.no[m]=1;gone=true}});
      if(gone)listView();rd.n+=batch.length;readNote(false);next()})}).catch(function(){if(t===rd.tok)setTimeout(next,1500)})}
  next()}
