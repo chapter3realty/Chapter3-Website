@@ -1,0 +1,98 @@
+{
+ "label": "Example with round numbers, not a real building",
+ "units": 80,
+ "dues_month": 600,
+ "components": [
+  {
+   "part": "Flat roof",
+   "hud": "3.3.4.2.1 Low slope built-up roof, with gravel finish",
+   "life_years": 20,
+   "age_years": 15,
+   "years_left": 5,
+   "cost": 480000,
+   "fully_funded_share": 360000
+  },
+  {
+   "part": "Elevator machinery (two elevators)",
+   "hud": "3.5.1.6 Elevator, machinery",
+   "life_years": 20,
+   "age_years": 17,
+   "years_left": 3,
+   "cost": 360000,
+   "fully_funded_share": 306000
+  },
+  {
+   "part": "Exterior paint and coatings",
+   "hud": "3.3.2.4.5 Paints and stains, exterior",
+   "life_years": 8,
+   "age_years": 6,
+   "years_left": 2,
+   "cost": 240000,
+   "fully_funded_share": 180000
+  },
+  {
+   "part": "Concrete balconies",
+   "hud": "3.3.2.7.8 Balcony/Porch, steel frame or concrete",
+   "life_years": 40,
+   "age_years": 30,
+   "years_left": 10,
+   "cost": 800000,
+   "fully_funded_share": 600000
+  },
+  {
+   "part": "Parking lot paving",
+   "hud": "3.2.4.1 Asphalt Pavement",
+   "life_years": 25,
+   "age_years": 12,
+   "years_left": 13,
+   "cost": 120000,
+   "fully_funded_share": 57600
+  },
+  {
+   "part": "Pool pumps and equipment",
+   "hud": "3.2.7.8 Pool/Spa pumps and equipment",
+   "life_years": 10,
+   "age_years": 4,
+   "years_left": 6,
+   "cost": 30000,
+   "fully_funded_share": 12000
+  }
+ ],
+ "cost_total": 2030000,
+ "fully_funded_balance": 1515600,
+ "due_within_years": 5,
+ "due_parts": [
+  "Flat roof",
+  "Elevator machinery (two elevators)",
+  "Exterior paint and coatings"
+ ],
+ "weak": {
+  "balance": 400000,
+  "percent_funded": 26.4,
+  "cash_in_5_years": 700000,
+  "due_in_5_years": 1080000,
+  "gap": 380000,
+  "gap_per_unit_80": 4750,
+  "gap_per_unit_40": 9500,
+  "gap_per_unit_200": 1900
+ },
+ "strong": {
+  "balance": 1140000.0,
+  "percent_funded": 75.2,
+  "cash_in_5_years": 1440000.0,
+  "due_in_5_years": 1080000,
+  "gap": 0,
+  "gap_per_unit_80": 0,
+  "gap_per_unit_40": 0,
+  "gap_per_unit_200": 0
+ },
+ "budget": {
+  "assessment_income_year": 576000,
+  "reserve_line": 60000,
+  "reserve_share_pct": 10.4,
+  "needed_at_10pct": 57600,
+  "needed_at_15pct": 86400,
+  "extra_per_unit_month_for_15pct": 28
+ },
+ "notes": "Gap split equally per unit for simplicity; in a real condo each owner's share is the unit's percentage in the master deed. Same gap divided by 40 and 200 units shows how size changes the per-unit bill."
+}

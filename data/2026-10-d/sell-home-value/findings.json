@@ -1,0 +1,1117 @@
+{
+ "meta": {
+  "sales_source": "Horry County Register of Deeds index (AcclaimWeb, DEED 001), recorded 2025-10-01 to 2026-09-30, home sales as filtered in data/2026-10-d/sell-out-of-state-buyers (13,194). Resale = seller not matched as a builder.",
+  "condo_rule": "condo = county land use code 107 or legal description contains HPR; every other residential parcel with a building is 'house' (houses, townhomes, manufactured homes on their own lot)."
+ },
+ "area_coverage": {
+  "resales": 11047,
+  "with_area": 9395,
+  "from_group": 424,
+  "condo_resales": 4181,
+  "condo_with_area": 2847
+ },
+ "counts": {
+  "sales": 13194,
+  "resales": 11047,
+  "builder": 2147,
+  "resale_condo": 4181,
+  "resale_house": 6866
+ },
+ "county_all": {
+  "resale_house": {
+   "n": 6866,
+   "median": 350000,
+   "iqr": [
+    266000,
+    500000
+   ]
+  },
+  "resale_condo": {
+   "n": 4181,
+   "median": 215000,
+   "iqr": [
+    147000,
+    310000
+   ]
+  },
+  "new_house": {
+   "n": 2010,
+   "median": 337000,
+   "iqr": [
+    280000,
+    427000
+   ]
+  },
+  "new_condo": {
+   "n": 137,
+   "median": 260000,
+   "iqr": [
+    225000,
+    385000
+   ]
+  }
+ },
+ "by_area": [
+  {
+   "area": "Myrtle Beach (city)",
+   "house": {
+    "n": 705,
+    "median": 430000,
+    "iqr": [
+     230000,
+     615000
+    ]
+   },
+   "condo": {
+    "n": 1039,
+    "median": 172000,
+    "iqr": [
+     109000,
+     268000
+    ]
+   }
+  },
+  {
+   "area": "North Myrtle Beach (city)",
+   "house": {
+    "n": 655,
+    "median": 535000,
+    "iqr": [
+     385000,
+     725000
+    ]
+   },
+   "condo": {
+    "n": 987,
+    "median": 300000,
+    "iqr": [
+     220000,
+     419000
+    ]
+   }
+  },
+  {
+   "area": "Myrtle Beach mailing address, outside the city",
+   "house": {
+    "n": 1073,
+    "median": 378000,
+    "iqr": [
+     295000,
+     500000
+    ]
+   },
+   "condo": {
+    "n": 15,
+    "median": 420000,
+    "iqr": [
+     289000,
+     498000
+    ]
+   }
+  },
+  {
+   "area": "Little River",
+   "house": {
+    "n": 332,
+    "median": 350000,
+    "iqr": [
+     286000,
+     475000
+    ]
+   },
+   "condo": {
+    "n": 260,
+    "median": 155000,
+    "iqr": [
+     128000,
+     214000
+    ]
+   }
+  },
+  {
+   "area": "Conway mailing address, outside the city",
+   "house": {
+    "n": 549,
+    "median": 295000,
+    "iqr": [
+     249000,
+     367000
+    ]
+   },
+   "condo": {
+    "n": 0,
+    "median": null,
+    "iqr": null
+   }
+  },
+  {
+   "area": "Carolina Forest",
+   "house": {
+    "n": 444,
+    "median": 395000,
+    "iqr": [
+     299000,
+     574000
+    ]
+   },
+   "condo": {
+    "n": 89,
+    "median": 172000,
+    "iqr": [
+     160000,
+     190000
+    ]
+   }
+  },
+  {
+   "area": "Garden City",
+   "house": {
+    "n": 163,
+    "median": 385000,
+    "iqr": [
+     325000,
+     648000
+    ]
+   },
+   "condo": {
+    "n": 259,
+    "median": 220000,
+    "iqr": [
+     164000,
+     332000
+    ]
+   }
+  },
+  {
+   "area": "Murrells Inlet (Horry County side)",
+   "house": {
+    "n": 385,
+    "median": 402000,
+    "iqr": [
+     320000,
+     502000
+    ]
+   },
+   "condo": {
+    "n": 1,
+    "median": 322000,
+    "iqr": null
+   }
+  },
+  {
+   "area": "Socastee",
+   "house": {
+    "n": 297,
+    "median": 292000,
+    "iqr": [
+     240000,
+     335000
+    ]
+   },
+   "condo": {
+    "n": 65,
+    "median": 178000,
+    "iqr": [
+     154000,
+     267000
+    ]
+   }
+  },
+  {
+   "area": "Conway (city)",
+   "house": {
+    "n": 328,
+    "median": 265000,
+    "iqr": [
+     220000,
+     340000
+    ]
+   },
+   "condo": {
+    "n": 21,
+    "median": 164000,
+    "iqr": [
+     134000,
+     192000
+    ]
+   }
+  },
+  {
+   "area": "Longs",
+   "house": {
+    "n": 341,
+    "median": 290000,
+    "iqr": [
+     250000,
+     340000
+    ]
+   },
+   "condo": {
+    "n": 0,
+    "median": null,
+    "iqr": null
+   }
+  },
+  {
+   "area": "Red Hill",
+   "house": {
+    "n": 223,
+    "median": 310000,
+    "iqr": [
+     249000,
+     380000
+    ]
+   },
+   "condo": {
+    "n": 56,
+    "median": 164000,
+    "iqr": [
+     114000,
+     211000
+    ]
+   }
+  },
+  {
+   "area": "Little River mailing address, outside Little River",
+   "house": {
+    "n": 229,
+    "median": 330000,
+    "iqr": [
+     260000,
+     385000
+    ]
+   },
+   "condo": {
+    "n": 2,
+    "median": 370000,
+    "iqr": null
+   }
+  },
+  {
+   "area": "Surfside Beach mailing address, outside the town",
+   "house": {
+    "n": 206,
+    "median": 395000,
+    "iqr": [
+     321000,
+     475000
+    ]
+   },
+   "condo": {
+    "n": 1,
+    "median": 135000,
+    "iqr": null
+   }
+  },
+  {
+   "area": "Surfside Beach",
+   "house": {
+    "n": 138,
+    "median": 620000,
+    "iqr": [
+     450000,
+     910000
+    ]
+   },
+   "condo": {
+    "n": 50,
+    "median": 370000,
+    "iqr": [
+     297000,
+     478000
+    ]
+   }
+  },
+  {
+   "area": "Loris mailing address, outside the city",
+   "house": {
+    "n": 176,
+    "median": 285000,
+    "iqr": [
+     225000,
+     355000
+    ]
+   },
+   "condo": {
+    "n": 0,
+    "median": null,
+    "iqr": null
+   }
+  },
+  {
+   "area": "Forestbrook",
+   "house": {
+    "n": 136,
+    "median": 331000,
+    "iqr": [
+     264000,
+     390000
+    ]
+   },
+   "condo": {
+    "n": 2,
+    "median": 100000,
+    "iqr": null
+   }
+  },
+  {
+   "area": "Aynor mailing address, outside the town",
+   "house": {
+    "n": 62,
+    "median": 300000,
+    "iqr": [
+     241000,
+     415000
+    ]
+   },
+   "condo": {
+    "n": 0,
+    "median": null,
+    "iqr": null
+   }
+  },
+  {
+   "area": "Galivants Ferry",
+   "house": {
+    "n": 52,
+    "median": 300000,
+    "iqr": [
+     165000,
+     404000
+    ]
+   },
+   "condo": {
+    "n": 0,
+    "median": null,
+    "iqr": null
+   }
+  },
+  {
+   "area": "Loris (city)",
+   "house": {
+    "n": 36,
+    "median": 234000,
+    "iqr": [
+     207000,
+     280000
+    ]
+   },
+   "condo": {
+    "n": 0,
+    "median": null,
+    "iqr": null
+   }
+  }
+ ],
+ "by_area_rule": "Area = the Census place (city, town or CDP) containing the parcel's center point; outside any place, the mailing city of the county address point; a sale with neither takes its building's or subdivision's area when 2+ and 80%+ of that group's placed sales share one area. Areas with 30+ resales. A cell with fewer than 20 sales should not be printed.",
+ "by_month": {
+  "2025-10": {
+   "house": {
+    "n": 648,
+    "median": 350000
+   },
+   "condo": {
+    "n": 401,
+    "median": 218000
+   }
+  },
+  "2025-11": {
+   "house": {
+    "n": 507,
+    "median": 345000
+   },
+   "condo": {
+    "n": 305,
+    "median": 225000
+   }
+  },
+  "2025-12": {
+   "house": {
+    "n": 528,
+    "median": 359000
+   },
+   "condo": {
+    "n": 348,
+    "median": 215000
+   }
+  },
+  "2026-01": {
+   "house": {
+    "n": 427,
+    "median": 340000
+   },
+   "condo": {
+    "n": 251,
+    "median": 217000
+   }
+  },
+  "2026-02": {
+   "house": {
+    "n": 430,
+    "median": 335000
+   },
+   "condo": {
+    "n": 293,
+    "median": 210000
+   }
+  },
+  "2026-03": {
+   "house": {
+    "n": 556,
+    "median": 333000
+   },
+   "condo": {
+    "n": 364,
+    "median": 197000
+   }
+  },
+  "2026-04": {
+   "house": {
+    "n": 578,
+    "median": 360000
+   },
+   "condo": {
+    "n": 388,
+    "median": 200000
+   }
+  },
+  "2026-05": {
+   "house": {
+    "n": 641,
+    "median": 345000
+   },
+   "condo": {
+    "n": 410,
+    "median": 220000
+   }
+  },
+  "2026-06": {
+   "house": {
+    "n": 670,
+    "median": 368000
+   },
+   "condo": {
+    "n": 386,
+    "median": 215000
+   }
+  },
+  "2026-07": {
+   "house": {
+    "n": 639,
+    "median": 355000
+   },
+   "condo": {
+    "n": 404,
+    "median": 219000
+   }
+  },
+  "2026-08": {
+   "house": {
+    "n": 624,
+    "median": 365000
+   },
+   "condo": {
+    "n": 319,
+    "median": 216000
+   }
+  },
+  "2026-09": {
+   "house": {
+    "n": 618,
+    "median": 355000
+   },
+   "condo": {
+    "n": 312,
+    "median": 213000
+   }
+  }
+ },
+ "methods_test": {
+  "rule": "Each 2026 resale (recorded Jan-Sep 2026) with a parcel point and a county value. neighbors_median = median price of the 6 nearest resales of the same type (condo or house) recorded before it in the pull (from Oct 2025). county_value = the parcel's county market value (2024 reassessment value; ATI reset only takes effect at Dec 31 of the sale year, so 2026 sales still show the pre-sale value). neighbors_adjusted_by_county_value = the home's county value times the median of (price / county value) for the same 6 sales. Miss = estimate / recorded price - 1.",
+  "median_distance_to_6th_sale_km": 0.34,
+  "all": {
+   "neighbors_median": {
+    "n": 7865,
+    "median_miss_pct": 16.1,
+    "within_5_pct": 19.0,
+    "within_10_pct": 35.2,
+    "over_20_pct": 42.3,
+    "estimate_above_price_pct": 49.0,
+    "median_signed_pct": -0.3
+   },
+   "county_value": {
+    "n": 7865,
+    "median_miss_pct": 10.2,
+    "within_5_pct": 27.7,
+    "within_10_pct": 49.3,
+    "over_20_pct": 26.0,
+    "estimate_above_price_pct": 51.4,
+    "median_signed_pct": 0.5
+   },
+   "neighbors_adjusted_by_county_value": {
+    "n": 7865,
+    "median_miss_pct": 9.5,
+    "within_5_pct": 29.9,
+    "within_10_pct": 51.7,
+    "over_20_pct": 23.4,
+    "estimate_above_price_pct": 50.2,
+    "median_signed_pct": 0.1
+   }
+  },
+  "house": {
+   "neighbors_median": {
+    "n": 4919,
+    "median_miss_pct": 16.1,
+    "within_5_pct": 18.6,
+    "within_10_pct": 35.5,
+    "over_20_pct": 42.5,
+    "estimate_above_price_pct": 49.4,
+    "median_signed_pct": -0.1
+   },
+   "county_value": {
+    "n": 4919,
+    "median_miss_pct": 8.8,
+    "within_5_pct": 31.0,
+    "within_10_pct": 54.1,
+    "over_20_pct": 20.7,
+    "estimate_above_price_pct": 39.9,
+    "median_signed_pct": -2.6
+   },
+   "neighbors_adjusted_by_county_value": {
+    "n": 4919,
+    "median_miss_pct": 8.7,
+    "within_5_pct": 31.5,
+    "within_10_pct": 54.7,
+    "over_20_pct": 20.7,
+    "estimate_above_price_pct": 43.0,
+    "median_signed_pct": -2.1
+   }
+  },
+  "condo": {
+   "neighbors_median": {
+    "n": 2946,
+    "median_miss_pct": 16.2,
+    "within_5_pct": 19.6,
+    "within_10_pct": 34.8,
+    "over_20_pct": 41.9,
+    "estimate_above_price_pct": 48.4,
+    "median_signed_pct": -0.7
+   },
+   "county_value": {
+    "n": 2946,
+    "median_miss_pct": 13.1,
+    "within_5_pct": 22.2,
+    "within_10_pct": 41.1,
+    "over_20_pct": 34.8,
+    "estimate_above_price_pct": 70.4,
+    "median_signed_pct": 9.1
+   },
+   "neighbors_adjusted_by_county_value": {
+    "n": 2946,
+    "median_miss_pct": 11.2,
+    "within_5_pct": 27.2,
+    "within_10_pct": 46.5,
+    "over_20_pct": 28.1,
+    "estimate_above_price_pct": 62.2,
+    "median_signed_pct": 4.4
+   }
+  }
+ },
+ "worked_example": {
+  "rule": "A Carolina Forest house resale recorded in 2026, chosen as the one whose three misses are closest to the median misses for all houses (typical, not best). Identity kept out of the public file.",
+  "price": 482000,
+  "county_value": 515000,
+  "recorded_month": "2026/03",
+  "same_subdivision_as_sale": 1,
+  "six_sales": [
+   {
+    "price": 393000,
+    "county_value": 390000,
+    "distance_mi": 0.1,
+    "months_before": 3,
+    "same_group": true,
+    "price_to_county": 1.007
+   },
+   {
+    "price": 720000,
+    "county_value": 720000,
+    "distance_mi": 0.21,
+    "months_before": 5,
+    "same_group": false,
+    "price_to_county": 1.0
+   },
+   {
+    "price": 599000,
+    "county_value": 597000,
+    "distance_mi": 0.34,
+    "months_before": 4,
+    "same_group": false,
+    "price_to_county": 1.003
+   },
+   {
+    "price": 650000,
+    "county_value": 648000,
+    "distance_mi": 0.41,
+    "months_before": 5,
+    "same_group": false,
+    "price_to_county": 1.002
+   },
+   {
+    "price": 270000,
+    "county_value": 265000,
+    "distance_mi": 0.42,
+    "months_before": 5,
+    "same_group": false,
+    "price_to_county": 1.018
+   },
+   {
+    "price": 514000,
+    "county_value": 512000,
+    "distance_mi": 0.43,
+    "months_before": 3,
+    "same_group": false,
+    "price_to_county": 1.004
+   }
+  ],
+  "neighbors_median": 556000,
+  "adjusted": 517000,
+  "miss_neighbors_pct": 15.6,
+  "miss_county_pct": 6.9,
+  "miss_adjusted_pct": 7.3
+ },
+ "county_value_vs_price_2026_by_type_and_ocean": {
+  "condo": {
+   "under 0.1 mile": {
+    "n": 990,
+    "median_miss_pct": 13.5,
+    "within_5_pct": 23.0,
+    "within_10_pct": 40.4,
+    "over_20_pct": 38.1,
+    "estimate_above_price_pct": 68.0,
+    "median_signed_pct": 8.2
+   },
+   "0.1 to 0.5 mile": {
+    "n": 464,
+    "median_miss_pct": 13.8,
+    "within_5_pct": 20.5,
+    "within_10_pct": 39.7,
+    "over_20_pct": 35.8,
+    "estimate_above_price_pct": 62.1,
+    "median_signed_pct": 6.8
+   },
+   "0.5 to 2 miles": {
+    "n": 750,
+    "median_miss_pct": 11.0,
+    "within_5_pct": 24.3,
+    "within_10_pct": 46.1,
+    "over_20_pct": 27.3,
+    "estimate_above_price_pct": 69.5,
+    "median_signed_pct": 7.7
+   },
+   "over 2 miles": {
+    "n": 742,
+    "median_miss_pct": 14.9,
+    "within_5_pct": 20.1,
+    "within_10_pct": 38.0,
+    "over_20_pct": 37.5,
+    "estimate_above_price_pct": 79.9,
+    "median_signed_pct": 13.7
+   }
+  },
+  "house": {
+   "under 0.1 mile": {
+    "n": 130,
+    "median_miss_pct": 16.0,
+    "within_5_pct": 20.8,
+    "within_10_pct": 36.9,
+    "over_20_pct": 43.1,
+    "estimate_above_price_pct": 53.1,
+    "median_signed_pct": 1.3
+   },
+   "0.1 to 0.5 mile": {
+    "n": 349,
+    "median_miss_pct": 12.4,
+    "within_5_pct": 20.9,
+    "within_10_pct": 42.1,
+    "over_20_pct": 27.2,
+    "estimate_above_price_pct": 43.8,
+    "median_signed_pct": -3.2
+   },
+   "0.5 to 2 miles": {
+    "n": 957,
+    "median_miss_pct": 9.8,
+    "within_5_pct": 27.9,
+    "within_10_pct": 51.4,
+    "over_20_pct": 21.2,
+    "estimate_above_price_pct": 35.3,
+    "median_signed_pct": -4.1
+   },
+   "over 2 miles": {
+    "n": 3483,
+    "median_miss_pct": 8.4,
+    "within_5_pct": 33.2,
+    "within_10_pct": 56.7,
+    "over_20_pct": 19.1,
+    "estimate_above_price_pct": 40.3,
+    "median_signed_pct": -2.3
+   }
+  }
+ },
+ "flood": {
+  "rule": "FEMA high-risk zone (SFHA) polygons from Horry County GIS layer 19 (SFHA_TF = T); parcel center point inside.",
+  "resales_with_point": 10366,
+  "in_sfha": 1384,
+  "pct": 13.4,
+  "by_type": {
+   "condo": {
+    "n": 3901,
+    "in_sfha": 956
+   },
+   "house": {
+    "n": 6465,
+    "in_sfha": 428
+   }
+  },
+  "zones": {
+   "AE": 1304,
+   "VE": 80
+  },
+  "same_subdivision_houses": {
+   "groups": 14,
+   "in_sfha": {
+    "n": 52,
+    "median_vs_neighbors": 1.116
+   },
+   "outside": {
+    "n": 84,
+    "median_vs_neighbors": 0.927
+   },
+   "rule": "house resales in a subdivision (legal description before ';') with 6+ sales and 2+ each side; each price over the median of the other sales in the group"
+  }
+ },
+ "cap": {
+  "residential_with_building": 227000,
+  "taxable_below_market": 148622,
+  "pct_below": 65.5,
+  "below_taxable_over_market": 0.679,
+  "all_taxable_over_market": 0.79,
+  "legal_res_4pct": {
+   "n": 124430,
+   "below": 83853,
+   "pct_below": 67.4
+  },
+  "other_6pct": {
+   "n": 102570,
+   "below": 64769,
+   "pct_below": 63.1
+  },
+  "rule": "Horry County GIS layer 24, land use 1xx with a building value. 4% vs 6% split by AssessedProp / TaxableProp (parcels with no assessed value are in 'all' only)."
+ },
+ "listings": {
+  "pulled": "2026-11-01T01:36:51.422596Z",
+  "in_horry": 6453,
+  "by_type": {
+   "house": 3017,
+   "townhouse": 311,
+   "condo": 2700,
+   "manufactured": 425
+  },
+  "rule": "CRM public map API, active for-sale listings, aggregate only; inside the Census Horry County boundary; price per square foot uses listings with 250+ sq ft.",
+  "condo_by_ocean": {
+   "under 0.1 mile": {
+    "n": 1236,
+    "median_asking_per_sqft": 322,
+    "median_asking": 212000,
+    "median_sqft": 640
+   },
+   "0.1 to 0.5 mile": {
+    "n": 429,
+    "median_asking_per_sqft": 270,
+    "median_asking": 262000,
+    "median_sqft": 1015
+   },
+   "0.5 to 2 miles": {
+    "n": 570,
+    "median_asking_per_sqft": 204,
+    "median_asking": 225000,
+    "median_sqft": 1102
+   },
+   "over 2 miles": {
+    "n": 464,
+    "median_asking_per_sqft": 168,
+    "median_asking": 185000,
+    "median_sqft": 1108
+   }
+  },
+  "house_by_ocean": {
+   "under 0.1 mile": {
+    "n": 58,
+    "median_asking_per_sqft": 501,
+    "median_asking": 988000,
+    "median_sqft": 1942
+   },
+   "0.1 to 0.5 mile": {
+    "n": 321,
+    "median_asking_per_sqft": 364,
+    "median_asking": 690000,
+    "median_sqft": 1829
+   },
+   "0.5 to 2 miles": {
+    "n": 460,
+    "median_asking_per_sqft": 278,
+    "median_asking": 595000,
+    "median_sqft": 2146
+   },
+   "over 2 miles": {
+    "n": 2178,
+    "median_asking_per_sqft": 198,
+    "median_asking": 368000,
+    "median_sqft": 1900
+   }
+  }
+ },
+ "fhfa_myrtle_beach_msa": {
+  "series": [
+   [
+    2016,
+    1,
+    179.7
+   ],
+   [
+    2016,
+    2,
+    181.05
+   ],
+   [
+    2016,
+    3,
+    186.37
+   ],
+   [
+    2016,
+    4,
+    183.32
+   ],
+   [
+    2017,
+    1,
+    186.36
+   ],
+   [
+    2017,
+    2,
+    190.57
+   ],
+   [
+    2017,
+    3,
+    192.9
+   ],
+   [
+    2017,
+    4,
+    193.63
+   ],
+   [
+    2018,
+    1,
+    198.55
+   ],
+   [
+    2018,
+    2,
+    197.83
+   ],
+   [
+    2018,
+    3,
+    201.61
+   ],
+   [
+    2018,
+    4,
+    204.85
+   ],
+   [
+    2019,
+    1,
+    205.78
+   ],
+   [
+    2019,
+    2,
+    211.61
+   ],
+   [
+    2019,
+    3,
+    213.15
+   ],
+   [
+    2019,
+    4,
+    215.11
+   ],
+   [
+    2020,
+    1,
+    220.67
+   ],
+   [
+    2020,
+    2,
+    220.81
+   ],
+   [
+    2020,
+    3,
+    223.17
+   ],
+   [
+    2020,
+    4,
+    229.88
+   ],
+   [
+    2021,
+    1,
+    234.89
+   ],
+   [
+    2021,
+    2,
+    248.97
+   ],
+   [
+    2021,
+    3,
+    265.68
+   ],
+   [
+    2021,
+    4,
+    279.53
+   ],
+   [
+    2022,
+    1,
+    294.13
+   ],
+   [
+    2022,
+    2,
+    312.88
+   ],
+   [
+    2022,
+    3,
+    332.75
+   ],
+   [
+    2022,
+    4,
+    331.12
+   ],
+   [
+    2023,
+    1,
+    327.5
+   ],
+   [
+    2023,
+    2,
+    343.26
+   ],
+   [
+    2023,
+    3,
+    349.82
+   ],
+   [
+    2023,
+    4,
+    359.27
+   ],
+   [
+    2024,
+    1,
+    355.14
+   ],
+   [
+    2024,
+    2,
+    357.03
+   ],
+   [
+    2024,
+    3,
+    357.95
+   ],
+   [
+    2024,
+    4,
+    363.3
+   ],
+   [
+    2025,
+    1,
+    370.52
+   ],
+   [
+    2025,
+    2,
+    375.61
+   ],
+   [
+    2025,
+    3,
+    379.06
+   ],
+   [
+    2025,
+    4,
+    374.1
+   ],
+   [
+    2026,
+    1,
+    378.93
+   ],
+   [
+    2026,
+    2,
+    378.71
+   ]
+  ],
+  "rule": "FHFA All-Transactions House Price Index, Myrtle Beach-Conway-North Myrtle Beach MSA (CBSA 34820), 1995Q1 = 100, not seasonally adjusted.",
+  "latest": {
+   "quarter": "2026Q2",
+   "index": 378.71,
+   "one_year_pct": 0.8,
+   "five_year_pct": 52.1,
+   "peak": [
+    2025,
+    3,
+    379.06
+   ]
+  }
+ },
+ "redfin_horry": {
+  "classic": {
+   "transactionCount": 5144,
+   "estimateCount": 345168,
+   "medianError": 0.06623155405405398,
+   "errorsWithin5": 0.400272161742,
+   "errorsWithin10": 0.642496111975,
+   "errorsWithin20": 0.860419906687
+  },
+  "lavm": {
+   "transactionCount": 5096,
+   "estimateCount": 12502,
+   "medianError": 0.0165,
+   "errorsWithin5": 0.8477,
+   "errorsWithin10": 0.9472,
+   "errorsWithin20": 0.9833
+  }
+ }
+}

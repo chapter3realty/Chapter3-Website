@@ -1,0 +1,70 @@
+{
+ "source": "horry_dst_parcels.json (Horry County GIS, Parcels layer 24, pulled 2026-11-01)",
+ "parcels": 11,
+ "owners": 10,
+ "market_total": 201747318.0,
+ "bought_since_2024_11": 6,
+ "home_parcels": 0,
+ "points": [
+  {
+   "kind": "other",
+   "code": "401",
+   "lat": 33.80508,
+   "lon": -79.0093
+  },
+  {
+   "kind": "other",
+   "code": "373",
+   "lat": 33.79884,
+   "lon": -78.98841
+  },
+  {
+   "kind": "res_17",
+   "code": "213",
+   "lat": 33.69523,
+   "lon": -78.938
+  },
+  {
+   "kind": "other",
+   "code": "398",
+   "lat": 33.80397,
+   "lon": -78.80254
+  },
+  {
+   "kind": "apt_cp",
+   "code": "211",
+   "lat": 33.79707,
+   "lon": -78.94443
+  },
+  {
+   "kind": "apt_cf",
+   "code": "211",
+   "lat": 33.76431,
+   "lon": -78.88914
+  },
+  {
+   "kind": "other",
+   "code": "397",
+   "lat": 33.80687,
+   "lon": -78.7981
+  },
+  {
+   "kind": "other",
+   "code": "373",
+   "lat": 33.68673,
+   "lon": -78.9798
+  },
+  {
+   "kind": "other",
+   "code": "349",
+   "lat": 33.76282,
+   "lon": -78.95637
+  },
+  {
+   "kind": "other",
+   "code": "373",
+   "lat": 33.87262,
+   "lon": -79.10523
+  }
+ ]
+}

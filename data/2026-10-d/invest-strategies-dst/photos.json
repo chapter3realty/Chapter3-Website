@@ -1,0 +1,59 @@
+{
+ "photos": [
+  {
+   "slug": "invest-strategies-dst",
+   "file": "images/2026-10-d/invest-strategies-dst/dst-apartments-carolina-forest-from-above.webp",
+   "variants": {
+    "600": "images/2026-10-d/invest-strategies-dst/dst-apartments-carolina-forest-from-above-600w.webp",
+    "1200": "images/2026-10-d/invest-strategies-dst/dst-apartments-carolina-forest-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "A DST-owned apartment community near Carolina Forest Boulevard, NAIP aerial, April 2023",
+   "what": "An apartment community in Carolina Forest seen from straight above on April 10, 2023: thirteen large apartment buildings, rows of garages, parking lots and a pool, with a pond in the northeast corner, all inside an orange outline of the parcel the trust owns. Woods to the south, a street of houses to the north.",
+   "caption": "An apartment community a DST owns near Carolina Forest Boulevard, from above. The orange line is the trust's parcel.",
+   "alt": "An apartment community from above: large apartment buildings, garages, parking lots and a pool inside an orange outline, with woods to the south and a street of houses to the north",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Carolina Forest Boulevard, Carolina Forest"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (tile m_3307809_se_17_060_20230410; the service gives acquisition_date 2023-04-10). Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023); the exact request is in source_request. The NOAA 2026 pre-event tiles (EC2601a) do not reach this parcel, so the 2023 NAIP frame is used.",
+   "license_note": "The USGS service page says The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\". The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Same source and terms as the NAIP records of batches 2026-10-a and 2026-10-b (data/2026-10-b/photos.json, tidewater-from-above).",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/",
+    "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+   ],
+   "taken": "2023-04-10",
+   "naip_tiles": [
+    "m_3307809_se_17_060_20230410"
+   ],
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS). Outline by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP service, adjusted the colors and drew the parcel outline from county data",
+   "subject_check": "The outline is the parcel owned by RK HAVEN POINTE AT CAROLINA FOREST DST (land use 211, apartments, 18.94 acres, legal description CAROLINA FOREST BLVD; REM OF TRACT 19B), from Horry County GIS parcels layer 24 in horry_dst_parcels.json (ledger rows 25 and 30), drawn through the export bbox, never by eye. The trust bought it on 2021-03-02 (county SaleDate), before the photo was taken. Checked at full size on 2026-11-01: the outline encloses the apartment buildings, garages, parking, pool and pond and no other buildings.",
+   "annotation_sources": {
+    "outline": "Horry County GIS parcels layer 24, https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24 (ring in horry_dst_parcels.json)"
+   },
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8782139.343515068%2C3996971.7675377466%2C-8781485.658994082%2C3997462.030928487&bboxSR=3857&imageSR=3857&size=2400%2C1800&format=png&pixelType=U8&interpolation=RSP_CubicConvolution&noData=&compression=&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+   "frame": {
+    "bbox_wgs84": [
+     -78.8913,
+     33.762618,
+     -78.885428,
+     33.766279
+    ],
+    "ground_m_per_px_1200w": 0.45
+   },
+   "original_size": "2400x1800 (NAIP export, colors adjusted, outline drawn at 9 px, then resized)",
+   "method": "data/2026-10-d/invest-strategies-dst/naip_hp.py (export) and render_hp.py (colors, outline, sizes)"
+  }
+ ]
+}

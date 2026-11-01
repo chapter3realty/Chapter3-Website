@@ -1,0 +1,571 @@
+﻿
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="robots" content="noimageindex">
+	    <meta charset="iso-8859-1">
+	    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	    	    <title>Code of Laws - Title 23 - Chapter 43- - LAW ENFORCEMENT AND PUBLIC SAFETY</title>
+	    <link rel="SHORTCUT ICON" href="/images/stateflagsmall.ico" />
+		<link rel="icon" href="/images/stateflagsmall.ico" type="image/ico" />
+		<link rel="SHORTCUT ICON" href="/images/South-Carolina-Flag2.ico" />
+
+		<link type="text/css" rel="stylesheet" href="/css/main.css" media="all" />
+				
+		<!--[if lte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/ie7main.css" media="all" />
+		<![endif]-->
+		<!--[if gte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/iemain.css" media="all" />
+		<![endif]-->
+		<link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+		<link type="text/css" rel="stylesheet" href="/css/supplement.css" media="screen" />
+		<!--<link type="text/css" rel="stylesheet" href="/css/zipsearch.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/vote.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/contact.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/navwrap.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/linkbar.css" media="screen" />-->
+	
+		<!--<script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>-->
+		<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+				<script type="text/javascript" src="/js/main_linux.js"></script>
+		
+
+		
+
+
+
+		<!--<script type="text/javascript" src="/js/common.js"></script>
+		<script type="text/javascript" src="/js/utils.js"></script>
+		<script type="text/javascript" src="/js/date.js"></script>
+		<script type="text/javascript" src="/js/lightbox.js"></script>
+		<script type="text/javascript" src="/js/legislation.js"></script>
+		<script type="text/javascript" src="/js/logon_lits.js"></script>
+		<script type="text/javascript" src="/js/message.js"></script>
+		<script type="text/javascript" src="/js/comm_meeting.js"></script>-->
+		<script type="text/vbscript" src="/vbs/comm_meeting.vbs"></script>
+		<!--<script type="text/javascript" src="/js/regs.js"></script>-->
+				
+	   	<script type="text/javascript">
+	    //document.onclick = function () { document.getElementById('transbox').style.display= 'none' };
+	    	var xmlhttp=false;
+			xmlhttp = create_xml_object();
+	
+			function getElement(ele)
+			{
+				var theobj = false;
+				if(typeof ele == 'string')
+					theobj = (document.getElementById)?document.getElementById(ele):document.all[ele];
+				else
+					theobj = ele;
+			
+				return theobj;
+			}
+		
+			function checkreader(friendlyalert)
+			{
+			 	/*friendlyalert=friendlyalert||false;
+			 	
+			 	var browser_info = perform_acrobat_detection();
+				if (!browser_info.acrobat)
+				{
+				 	loadadobebox('adobebox', '/adobe.php');
+					return false;
+				}
+				else if (friendlyalert)
+				{
+			 		alert(friendlyalert);
+				}*/
+				return true;
+			}
+				
+			function loadadobebox(boxname, url)
+			{
+				var response = false;
+	
+				doRequest(xmlhttp, "GET", url, false, null, null);
+				if (xmlhttp.status == 200)
+				{
+		         	response = xmlhttp.responseText;
+				}
+	
+				if(response)
+				{
+			 		var ele = document.getElementById(boxname);
+				 	if (ele)
+				 	{
+				 		ele.style.visibility = 'hidden';
+		 				ele.style.display = 'block';
+	
+		 				positionElement(ele, 'center', 'center', true);
+	
+						ele.innerHTML = response;
+					    ele.style.visibility = 'visible';
+					    ele.style.display = 'block';
+	//				    ele.scrollIntoView(true);
+					}
+				}
+				return response;
+			}
+	
+	
+			function init()
+			{
+		 		var ld=document.getElementById("loading");
+				if(ld)
+				{
+					ld.style.display = 'none';
+				}
+			}
+			
+			function openmore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				 	var pos = findPos(id);
+				 	id.style.zIndex = 10;
+		//		 	id.style.left = pos[0]+'px';
+		//		  	id.style.top = pos[1]+'px';
+				  	id.style.height = '295px';
+				  	id.style.position = 'absolute';
+				  	id.style.backgroundColor = '#f7f4ec';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'none';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = 'none';
+				  	}
+				}
+			}
+		
+			function closemore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				  	id.style.height = '135px';
+				  	id.style.position = '';
+				  	id.style.backgroundColor = 'transparent';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'block';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = '';
+				  	}
+				}		 	
+			}
+		
+		<!-- This script and many more are available free online at -->
+		<!-- The JavaScript Source!! http://javascript.internet.com -->
+		
+		<!-- Begin
+		function right(e) {
+		var msg = "Use of this image is strictly prohibited unless express written permission is given to the user by South Carolina Legislative Services Agency.";
+		if (navigator.appName == 'Netscape' && e.which == 3) {
+		alert(msg);
+		return false;
+		stopEvent(e);
+		}
+		if (navigator.appName == 'Microsoft Internet Explorer' && event.button==2) {
+		alert(msg);
+		return false;
+			stopEvent(event);
+		}
+		else return true;
+		}
+		
+	function trap() 
+	{
+		if(document.images)
+		{
+			for(i=0;i<document.images.length;i++)
+			{
+				if(document.images[i].className == 'allowcontextmenu')
+				{
+					// this should have no scripting
+				}
+				else
+				{
+				 	document.images[i].onmousedown = right;
+					document.images[i].oncontextmenu = function(){ return false; };
+					//document.images[i].onmouseup = right;
+				}
+			}
+		}
+	}
+
+	function findfwtext(texttofind) 
+	{
+	 	var fwtextele = document.getElementById('fwtext');
+		if(fwtextele)
+		{
+			fwtextele.value = texttofind;
+		}
+	}	
+		// End -->
+		</script>
+
+		<!-- ADDED FOR V4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJY6FMNQKH"></script>
+
+
+<script type="text/javascript">
+
+//ADDED FOR V4
+//Google tag (gtag.js) 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LJY6FMNQKH');
+
+ 
+ /* COMMENTING OUT UPGRADING TO V4 -A
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36207109-1']);
+  _gaq.push(['_setDomainName', 'scstatehouse.gov']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+*/
+  
+      $(document).ready(function(){
+        // COMMENTING THIS OUT NO LONGER BEING ACTIVELY USED TO MONITOR FOR TRAFFIC TO SPECIFIC LINKS - A
+        /*
+          var anchors = $('div#contentsection a');
+
+          //console.log('anchors...'+anchors.length);
+          if(anchors.length > 0){
+            //console.log('setting up event handler...');
+            anchors.click(function(){
+              var a = $(this).attr('href');
+              if(_gaq && (a.substr(-3) == 'htm' || a.substr(-4) == 'html' || a.substr(-3) == 'doc' || a.substr(-4) == 'docx' || a.substr(-3) == 'pdf' || a.substr(-3) == 'xls' || a.substr(-4) == 'xlsx')) {
+                //console.log(a);
+                _gaq.push(['_trackPageview', $(this).attr('href')]);
+              }
+              
+              var aText = $(this).text().toLowerCase();
+              if (a.indexOf('getfile.php') > -1 && aText === 'word'){
+                    _gaq.push(['_trackEvent', 'Word Doc', 'Download', ('from page: ' + document.location + ' - href: ' + a)]);
+              }
+
+            });
+          }
+          */
+      });
+
+</script>
+	</head>
+	
+		
+	<body class="home"  onload="init(); trap();">
+	<noscript>Your browser does not support JavaScript!  This page will not render correctly.</noscript> 
+
+
+	
+	<div id="adobebox" style="position:absolute; width:400px; height:150px; border:2px solid #555555; background-color:#cccccc; display:none;"></div>
+	<div id="container" >	
+				<div id="header" class="nodisplay" style="text-align:center; height:100px;" >
+									<img id="headerimg" class="nodisplay" alt="South Carolina Legislature" title="South Carolina Legislature" src="/images/header8.png" />
+								
+							<!--	<div class="award"><span style="color:#831224; font-weight:bold; font-size:1.5em;">*</span> Recipient of<br>the Notable State Documents Award<br>by the<br>South Carolina<br>State Library.</div>-->
+				
+				
+			</div>
+			<div class="printdisplay"><img border="0" src="/images/titleprint.jpg" alt="South Carolina Legislature" title="South Carolina Legislature" alt="South Carolina Legislature" title="South Carolina State Legislature" /><br /><hr /><br /></div>
+	
+			<div id="pagebody" >
+	
+	
+<!--<div id="topmessage">
+<br style="display:block; margin-top:10px;">
+Searches and data queries will be unavailable beginning Friday, August 19, 2016, from 8:00 PM until Saturday, August 20th at 8:00 AM<br>due to scheduled maintenance.</div>-->
+				<!-- Prompt IE 8/7/6 users to upgrade to a newer browser. -->
+				<!--[if lte IE 8]>
+				<div class="oldframe">In order to improve your experience using this website, please <a href="http://browsehappy.com/">upgrade your browser</a>.</div>
+				<![endif]-->
+			
+			
+			
+			<div id="menu" class="nodisplay">
+				<ul class="nodisplay">
+				<li><a href="/index.php">Home</a></li>
+<li><a href="/senate.php">Senate</a></li>
+<li><a href="/house.php">House</a></li>
+<li><a href="/committeeinfo.php">Committee&nbsp;Postings&nbsp;and&nbsp;Reports</a></li>
+<li><a href="/council.php">Legislative Council</a></li>
+<li><a href="/citizens.php">Citizens&#39; Interest</a></li>
+<li><a href="/publications.php">Publications</a></li>
+		    	</ul>
+			</div>
+			<div id="search" class="nodisplay" style="height: 28px;"><div class="nodisplay" style="float:right; margin:6px 20px 0px 0;">
+							<!--<a style="color:#f7f4ec; height:15px;" href="#" onClick="rsswindow();"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+<!--				<a style="color:#f7f4ec; height:15px;" href="/splashpage/splashpage.html"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a> -->
+				<a style="color:#f7f4ec; height:15px;" href="/onlineservices/index.php"><img border="0" src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>
+			<!--	<a style="color:#f7f4ec; height:15px;" href="/maintenance_portal.php"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+						</div></div>
+			
+	
+					<div id="sidebar" class="nodisplay">
+	<div id="vidlinks" style="height: 50px;">
+						<!--<img src="/images/videobutton12d.png">-->
+											<ul id="vidsidemenu">
+	<li id="vidinnermenu" style="font-size:16px; margin: 0 0 5px 0;">Chamber Video</li>
+<li id="sbroadcast" style="float: left; width:50%;">
+<a id="liveS" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('S', false, false, '0')">Senate</a><br><a id="liveaudioS" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('S', false, false, '1');">(Audio Only)</a>
+</li>
+<li id="hbroadcast" style="float: left; width:50%;">
+<a id="liveH" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('H', false, false, '0')">House</a><br><a id="liveaudioH" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('H', false, false, '1');">(Audio Only)</a>
+</li>
+						</ul>
+					</div>
+					<div id="commvidlinks"><a href="/video/schedule.php">Video&nbsp;Schedule</a><a style="border-top:1px solid #fff; padding-top:12px;" href="/video/archives.php">Video Archives</a></div>
+										<div id="sidemenu">
+						<ul id="innermenu">
+		
+							<li><a href="/howdoi.php">How do I...</a></li>
+										
+							
+								<li class="nolink" onMouseOver="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='block'; document.sidesearchform.searchtext.focus();}" onMouseOut="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Quick Search</div>
+								<div id="sidesearch" class="sidesubmenu">
+									<form id="sidesearchform" name="sidesearchform" method="POST" action="/search.php">
+									<input type="hidden" name="search" value="side" />
+									<div class="topelement"><label for="searchtext"><span class="label">Search for:</span></label><input id="searchtext" name="searchtext" type="text"/><a id="searchlink2" href="javascript:void(0);" onClick="document.sidesearchform.submit();"><img id="searchicon" src="/images/searchbutton.png" alt="Search" title="Search"/></a></div>
+			<!--						<div><input type="checkbox" id="searchchoice_all" name="searchchoice_all" value="all" /><label for="searchchoice_all">All</label></div>-->
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_fullsite" name="category" value="FULLSITE" /><label for="searchchoice_fullsite">&nbsp;Full Site Search</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_billnumber" name="category" value="BILL" /><label for="searchchoice_billnumber">&nbsp;Bill Number</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_legislation" name="category" value="LEGISLATION" CHECKED /><label for="searchchoice_legislation">&nbsp;Legislation</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_budget" name="category" value="BUDGET" /><label for="searchchoice_budget">&nbsp;Budget</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeoflaws" name="category" value="CODEOFLAWS" /><label for="searchchoice_codeoflaws">&nbsp;Code of Laws</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeofregs" name="category" value="CODEOFREGS" /><label for="searchchoice_codeofregs">&nbsp;Code of Regulations</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_constitution" name="category" value="CONSTITUTION" /><label for="searchchoice_constitution">&nbsp;Constitution</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_housejournals" name="category" value="HOUSEJOURNALS" /><label for="searchchoice_housejournals">&nbsp;House Journals</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_senatejournals" name="category" value="SENATEJOURNALS" /><label for="searchchoice_senatejournals">&nbsp;Senate Journals</label></div>
+									<div class="bottomelement" style="padding-left:20px;"><input type="radio" id="searchchoice_billsummary" name="category" value="SUMMARY" /><label for="searchchoice_billsummary">&nbsp;LSA Bill Summary</label></div>
+								</form>
+									
+								</div>
+							</li>
+							<li><a href="/legislatorssearch.php">Find Your Legislators</a></li>
+							<li id="contactLegislatorLink"><a href="/email.php?chamber=B">Contact Your Legislator</a></li>
+									
+							<li><a href="/legislation.php">Legislation</a></li>
+							<li><a href="/listtracking/main.php" target="LTS">Track Legislation</a></li>
+							<li><a href="/multicriteria2/search.php" target="MCS">Multi-Criteria Search</a></li>
+									<!--<li><a href="#" onclick="multisearchwindow('INTROBOTH');">Multi-Criteria Search</a></li>-->
+									<!--<li><a href="#" onclick="multisearchwindow('INTROMANUAL');">Multi-Criteria Search</a></li>-->
+									<li><a href="/research.php">Research</a></li>
+	
+								<li class="nolink" onMouseOver="var ele=document.getElementById('law'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('law'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">South Carolina Law</div> 
+								<div id="law" class="sidesubmenu">
+									<div class="sidediv topelement"><a href="/newlaws.php">Ratifications &amp; Acts</a></div>
+									<div class="sidediv"><a href="/code/statmast.php">Code of Laws</a></div>
+									<div class="sidediv"><a href="/coderegs/statmast.php">Code of Regulations</a></div>
+									<div class="sidediv"><a href="/scconstitution/scconst.php">Constitution</a></div>
+									<div class="sidediv bottomelement"><a href="/state_register.php">State Register</a></div>
+								</div>
+							</li>
+										<li class="nolink" onMouseOver="var ele=document.getElementById('manual'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('manual'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Legislative Manual</div>
+								<div id="manual" class="sidesubmenu">
+								
+<!--									<div class="sidediv topelement"><a href="https://web.sc.gov/LSAShoppingcart/Default.aspx" target="_blank">Purchase Manual</a></div>-->
+								
+<!--									<div class="sidediv topelement"><a href="https://secure.scstatehouse.gov/cgi-bin/webstore.exe" target="_blank">Purchase Manual</a></div>-->
+									<div class="sidediv topelement"><a href="javascript:#" onClick="alert('We are sorry, but we are unable to process online transactions at this time.\n\nIf you would still like to make a purchase, please contact us directly at (803) 212-4490 during normal business hours (8:30am - 5:00pm EST).');">Purchase Manual</a></div>
+									<div class="sidediv bottomelement"><a href="/man26/manual26.php">View Manual Online</a></div>
+								</div>
+							</li>
+							<li><a href="http://www.studentconnection.scstatehouse.gov">Student Connection</a></li>
+							<li><a href="/visit.php">Visiting the State House</a></li>
+							<li><a href="/archives.php">Archives</a></li>
+							<li><a href="http://www.sc.gov/Agency-Listing" target="_blank">State Agency Websites</a></li>
+							<!--<li><a href="/stateagencysites.php">State Agency Websites</a></li>-->
+							<li><a href="/citizensinterestpage/media.php">Media Links</a></li>
+				 		</ul>
+			    	</div>
+	
+					<div id="side_ad">
+						<A href="http://www.sc.gov/" target="_blank"><img border=0 src="/images/scgov3.jpg" alt="SC.gov" title="SC.gov" /></a>
+													<A href="http://www.statelibrary.sc.gov" target="_blank"><img border=0 src="/images/scsl_logo_rgb_web.png" alt="StateLibrary.SC.gov" title="StateLibrary.SC.gov" /></a>
+											</div>	    	
+			</div>
+
+	
+	<script type="text/javascript"> 
+		if ( '' === '1'){
+		 	
+			var link = document.getElementById('contactLegislatorLink');
+			if (link != 'undefined' && link != null){
+				link.style.display = 'none'; 
+				link.style.visibility = 'hidden';
+			}
+		}
+		if ( '' === '1'){
+		 	setTimeout(function(){
+				var link2 = document.getElementById('sendMsgLink');
+				if (link2 != 'undefined' && link2 != null){
+					link2.style.display = 'none'; 
+					link2.style.visibility = 'hidden';
+				};
+			}, 20);
+			
+		}  
+	</script>
+<div class="mainwidepanel">
+
+				<div id="breadcrumbs">
+						South Carolina Law &gt; <a href="/code/statmast.php">Code of Laws</a> &gt; <a href="/code/title23.php">Title 23</a>
+				</div>
+
+					<h2 class="barheader">South Carolina Code of Laws<br />
+									Unannotated<br />
+					</h2>
+
+				<div id="contentsection">
+<div style="font-weight: bold; text-align: center;">Title 23 - LAW ENFORCEMENT AND PUBLIC SAFETY</div>
+<br />
+
+<div style="text-align: center;">CHAPTER 43</div>
+<div style="text-align: center;">Modular Buildings Construction Act</div><br />
+<span style="font-weight: bold;"> SECTION 23-43-10.</span> Short title.<br /><br />
+	This chapter may be cited as The South Carolina Modular Buildings Construction Act.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-20.</span> Definitions.<br /><br />
+	As used in this chapter:<br /><br />
+	(1) &quot;Council&quot; means the South Carolina Building Codes Council as established by Section 6-9-60.<br /><br />
+	(2) &quot;Modular building unit&quot; means any building of closed construction, regardless of type of construction or occupancy classification, other than a mobile or manufactured home, constructed off-site in accordance with the applicable codes, and transported to the point of use for installation or erection.<br /><br />
+	(3) &quot;Installation&quot; means the assembly of modular building structures on-site and the process of affixing modular buildings related components to land, a foundation, footings, utilities, or an existing building.<br /><br />
+	(4) &quot;Local government&quot; means any political subdivision of the State with authority to establish standards and requirements applicable to the construction, installation, alteration, and repair of buildings.<br /><br />
+	(5) &quot;Mobile home&quot; or &quot;manufactured home&quot; means any residential dwelling unit constructed to standards and codes as promulgated by the United States Department of Housing and Urban Development.<br /><br />
+	(6) &quot;Approved inspection agency&quot; means an agency approved by the council to provide plan review and approval, evaluation, and inspection in addition to adequate follow-up services at the point of manufacture to insure that production units are in full compliance with the provisions of this chapter. An approved inspection agency must retain a building construction-oriented South Carolina registered professional engineer or architect who must be responsible for compliance with this chapter and regulations of the council.<br /><br />
+	(7) &quot;Point of manufacture&quot; means the place of business at which machinery, equipment, and other capital goods are assembled and operated for the purpose of fabricating, constructing, or assembling modular building units.<br /><br />
+	(8) &quot;Fees&quot; means monies to be paid to the council from any person engaged in the manufacture, inspection, or installation of modular building units.<br /><br />
+	(9) &quot;Certification&quot; means conforming to the regulations of the Council.<br /><br />
+	(10) &quot;Certification label&quot; means the approved form of certification by the council issued to the manufacturer that is permanently affixed to each transportable section of each factory-built modular structure for sale within the State.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1; 1993 Act No. 181, SECTION 368; 2014 Act No. 179 (H.4578), SECTION 1, eff May 16, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 179, SECTION 1, in subsection (6), added the last sentence.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-30.</span> Policy and purpose.<br /><br />
+	It is the policy and purpose of this State to provide protection to the public against possible hazards and to promote sound building construction and for that purpose to forbid the sales, rental, and use of new modular building units which are not so constructed as to provide safety and protection to their owners and users. Because of the nature of the construction of modular building units, their assembly and use and that of their systems, including heating, cooling, plumbing, and electrical which may have concealed parts, there may exist hazards to the health, life, and safety of persons or property which are not easily ascertainable by purchasers, users, and local building officials.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-40.</span> Promulgation of regulations.<br /><br />
+	The council may promulgate regulations for the proper enforcement and implementation of this chapter. Promulgated regulations must incorporate the codes enumerated in Section 6-9-50.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1; 1999 Act No. 45, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-60.</span> Building Code Council to hear appeals; variances.<br /><br />
+	The council shall hear appeals and approve or disapprove requested variances from this chapter&#39;s provisions. Variances are limited to those instances which are ruled to be equivalent or meet the intent of this chapter. The basis of the decision must be published with the variance order.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1; 1999 Act No. 45, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-70.</span> Publication of standards.<br /><br />
+	The council shall have printed all regulations prescribing standards for modular building units, and they must be furnished upon request to the public.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1; 1993 Act No. 181, SECTION 369.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-80.</span> Certification by South Carolina Building Codes Council.<br /><br />
+	Modular buildings must be certified by the council, as complying with this chapter and the regulations promulgated by authority of this chapter, if they have been manufactured in accordance with approved building systems and passed inspection in accordance with an approved compliance assurance program in Section 23-43-90. Certification is evidenced by the attachment to each modular building, a label issued by the council. Certification labels can only be attached to a modular building by the manufacturer under the supervision of the approved inspection agency. A certified modular building may not be altered in any way prior to the issuance of all permits required by local government without the council&#39;s approval.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1; 2014 Act No. 179 (H.4578), SECTION 3, eff May 16, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 179, SECTION 3, inserted &quot;in Section 23-43-90&quot; in the first sentence.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-85.</span> Standards for placement of modular homes; display models.<br /><br />
+	(A) A single-family on-frame modular home manufactured after January 1, 2005, must meet the following standards to be certified for placement in this State:<br /><br />
+	(1) Roof pitch. For homes with a single predominant roofline, the pitch of the roof must be at least five feet rise for every twelve feet of run;<br /><br />
+	(2) Eave projections. The eave projections of the roof must be at least ten inches, not including a gutter around the perimeter of the home unless the roof pitch is at least seven feet rise for every twelve feet of run;<br /><br />
+	(3) Exterior wall. The height of the exterior wall must be at least seven feet six inches for the first story;<br /><br />
+	(4) Siding and roofing materials. The materials and texture of the exterior materials must be compatible in composition, appearance, and durability to the exterior materials commonly used in standard residential construction.<br /><br />
+	(B) A single-family modular home placed in the State after January 1, 2005, must meet the foundation requirements provided by the State in this subsection:<br /><br />
+	(1) A perimeter wall located under the exterior walls of the home, whether load-bearing or nonload-bearing, must be constructed of brick, masonry, or other permanent material commonly used in standard residential construction, consistent with surrounding residential structures, and in accordance with the International Residential Code as adopted by the South Carolina Department of Labor, Licensing and Regulation. All modular manufacturers shall submit with the plan set for each building to the department&#39;s Modular Buildings Program a minimum foundation design.<br /><br />
+	(2) A home located in a coastal or flood plain area may require piling or other special foundation designs. These foundations must be designed by a registered professional engineer or architect and are subject to review and approval by the local jurisdiction and not by the Modular Buildings Program. A perimeter wall constructed of brick, masonry, or other materials to enclose the foundation of the home may be a requirement of the design.<br /><br />
+	(C) An appeal for a variance from a certification standard or a foundation requirement described in this section may be taken in the same manner as provided in Section 23-43-120.<br /><br />
+	(D) A single-family modular home used as a display model may be placed for its first residential use in this State if:<br /><br />
+	(1) it bears a valid modular home label issued pursuant to this chapter;<br /><br />
+	(2) it meets the appropriate wind and seismic requirements in effect when the label was issued;<br /><br />
+	(3) it has not been altered from its original design; and<br /><br />
+	(4) the seller provides the purchaser with written notice that the home meets the appropriate code requirements in effect at the time of manufacture, and may or may not meet the code requirements in effect at the time of placement for residential use.<br /><br />
+HISTORY: 2005 Act No. 12, SECTION 1; 2012 Act No. 108, SECTION 1, eff February 1, 2012; 2026 Act No. 241 (H.5113), SECTION 2, eff May 19, 2026.<br /><br />
+Effect of Amendment<br /><br />
+	The 2012 amendment added subsection (D).<br /><br />
+	2026 Act No. 241, SECTION 2, in (A), inserted &quot;on-frame&quot; following &quot;single-family&quot;; and in (D), added a new (4) and made conforming and nonsubstantive changes.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-90.</span> Family residential modular building; final plan review; commercial or multifamily modular buildings.<br /><br />
+	(A) An approved inspection agency shall perform final plan review and approval, inspection, and certification of a single family residential modular building. Upon final plan review and approval by an approved inspection agency of a plan as meeting the requirements of this chapter and the regulations of the council, a copy of the approved plan must be filed with the Department of Labor, Licensing and Regulation. Upon filing of an approved plan with the department by an approved inspection agency, a manufacturer may request from the department certification labels for units manufactured to the approved plan. Each certification label must bear the serial number of the unit for which it is issued and only may be attached upon final inspection by an approved inspection agency.<br /><br />
+	(B) An approved inspection agency shall perform plan approval, inspection, and certification of commercial or multifamily modular buildings. Upon review by the approved inspection agency, the plans must be submitted to the Department of Labor, Licensing and Regulation for final plan review and approval.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1; 2014 Act No. 179 (H.4578), SECTION 2, eff May 16, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 179, SECTION 2, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-100.</span> Effect of certification; responsibilities of local enforcement agencies.<br /><br />
+	Modular building units certified pursuant to this chapter are considered to comply with the requirements of all laws, ordinances, and regulations of this State or of local governments which govern the matters within the scope of the approval and certification applicable to modular building units, including those bearing upon technologies, techniques, and materials, or the safety of buildings or building components. Local codes enforcement agencies shall issue building permits for certified modular building units, prior to installation, and issue certificates of occupancy after they have been installed and inspected pursuant to this chapter. Any modular building unit found not to comply with this chapter must be brought into compliance before the certificate of occupancy is issued. In the absence of a local building official, the certificate must be issued by the chief administrative officer of the local government.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-110.</span> Certification, suspension or revocation.<br /><br />
+	The council shall suspend or revoke, or cause to be suspended or revoked, the certification of any modular building unit which the council finds not to comply with this chapter or regulations promulgated by authority of this chapter, or which has been manufactured pursuant to a building system or compliance assurance program as to which approval has been suspended or revoked, or which has been altered after certification. If the manufacturer fails to comply with a corrective order, labels of certification must be removed from any modular building unit and no new labels issued until it is brought into compliance with this chapter and applicable regulations. Notice of suspension or revocation of certification must be in writing with the reasons for suspension or revocation set forth. Suspensions or revocations may be appealed to the council. Any decision by the board to suspend, revoke, or otherwise restrict the certification of any modular building unit shall be by majority vote and shall be subject to review by an administrative law judge as provided under Article 5 of Chapter 23 of Title 1.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1; 1993 Act No. 181, SECTION 370; 1999 Act No. 45, SECTION 3.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-120.</span> Variance orders.<br /><br />
+	The council may upon appeal in specific cases authorize variance from regulations to permit certain specified alternatives where the objectives of this chapter may be fulfilled by other means. The basis of its decision must be incorporated into its variance orders.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1; 1999 Act No. 45, SECTION 4.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-130.</span> Reservation of local authority; enforcement by local officials.<br /><br />
+	Modular building units bearing evidence of approval must be acceptable in all localities as meeting the requirements of this chapter and must be considered and accepted equivalent to a site-built structure as meeting the requirements of safety to life, health, and property imposed by any ordinance of any local government if the units are erected or installed in accordance with all conditions of the approval. Local land use and zoning requirements, fire zones, building setback requirements, site development requirements, subdivision control, and on-site installation requirements, as well as the review and regulation of aesthetic requirements, are specifically and entirely reserved to local authorities. Those local requirements and rules which may be enacted by local authorities must be reasonable and uniformly applied and enforced without any distinction as to whether a building is a modular or constructed on site in a conventional manner. All local building officials shall enforce the provisions of this chapter and applicable regulations.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1; 1999 Act No. 45, SECTION 5.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-150.</span> Sellers of modular building units, licensing requirements.<br /><br />
+	No person may engage in the business of selling wholesale or retail as a manufacturer or manufacturer&#39;s representative of modular building units without being licensed by the council. All license applications must be accompanied by the required fee and a surety bond or other security approved by the council and in an amount set by the council. A separate license and bond or security is required for each manufacturing facility.<br /><br />
+	All licenses must be granted or refused within forty days after proper application. All licenses expire June thirtieth of each odd-numbered year, unless sooner revoked or suspended.<br /><br />
+	Each manufacturer&#39;s license must be issued in the business name of the manufacturer. Each manufacturer&#39;s representative&#39;s license must be issued in the name of the representative.<br /><br />
+	The council shall prescribe the form of license. All manufacturer&#39;s licenses must be sent to the address of that place of business.<br /><br />
+	Pursuant to its regulations, the council may deny the issuance of or revoke or suspend any license.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1; 1999 Act No. 45, SECTION 6.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-160.</span> Establishment of fees for enforcement and implementation of chapter.<br /><br />
+	The council may establish various fees for the proper enforcement and implementation of this chapter. These fees must be established by regulations promulgated by the council in accordance with the Administrative Procedures Act. Fees may be charged to any person engaged in the manufacture, inspection, or installation of modular building units. All funds derived from fees must be deposited in the general fund of the State.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 386, SECTION 1; 1990 Act No. 560, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-170.</span> Certification by other states.<br /><br />
+	(A) If the council finds that the standards for the manufacture and inspection of modular building units prescribed by statute or rules and regulations of another state, or other governmental agency, meet the objectives of this chapter and applicable regulations and are enforced satisfactorily by the other state, or other governmental agency, or by their agents, the council shall enter into product reciprocity with and accept modular building units which have been certified by the other state or governmental agency. The standards of another state are not considered to be satisfactorily enforced unless the other state provides for notification to the council of suspensions or revocations of approvals issued by the other state.<br /><br />
+	(B) The council shall suspend or revoke, or cause to be suspended or revoked, its acceptance or certification, or both, of certified modular building units if it determines that the standards for the manufacture and inspection of the modular building units of another state or other governmental agency do not meet the objectives of this chapter and applicable regulations, or that the standards are not being enforced to the satisfaction of the council. Notice of the suspension or revocation must be in writing with the reasons set forth. Appeals from suspension or revocations must receive timely review.<br /><br />
+	(C) If another state or governmental agency or its agent suspends or revokes its approval or certification, the acceptance or certification, or both, granted under this section must be suspended or revoked accordingly.<br /><br />
+	(D) The council shall cooperate with similar authorities in other jurisdictions and with nationally recognized codes and standards organizations in developing mutually acceptable methods and procedures for testing, evaluating, approving, and inspecting modular building units and otherwise encouraging their production and acceptance.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-180.</span> Injunctive relief.<br /><br />
+	The council may obtain injunctive relief from an administrative law judge as provided under Article 5 of Chapter 23 of Title 1 to enjoin the sale, delivery, or installation of modular building units or of buildings utilizing such components, for which certification is required under this chapter, upon an affidavit of the council specifying the manner in which the modular building units do not conform to the requirements of this chapter or applicable regulations.<br /><br />
+	The council may obtain injunctive relief from an administrative law judge as provided under Article 5 of Chapter 23 of Title 1 to enjoin any local government from promulgating, adopting, or enforcing any ordinance, rules, regulations, or construction codes and standards for modular building units which are not consistent with this chapter.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1; 1993 Act No. 181, SECTION 372.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-190.</span> Private suits.<br /><br />
+	Any person in an individual capacity, or on behalf of a class of persons, damaged as a result of a violation of this chapter or applicable regulations has a cause of action in any court of competent jurisdiction against the person to whom the label evidencing certification has been issued with respect to the pertinent modular building units, or, if it is not certified, against the manufacturer of the pertinent modular building units. An award may include damages and the cost of litigation including reasonable attorneys&#39; fees. The cause of action created by this section is subject to the same limitations period applicable in this State for causes of action of similar nature.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 23-43-200.</span> Violations; penalties.<br /><br />
+	Any person violating any of the provisions of this chapter or regulations made by its authority is guilty of a misdemeanor and, upon conviction, must be punished by a fine of not more than five hundred dollars for each violation a day. All funds derived from fines must be deposited in the general fund of the State.<br /><br />
+HISTORY: 1984 Act No. 481, SECTION 1; 1985 Act No. 111, SECTION 1; 1990 Act No. 560, SECTION 1.<br /><br />
+
+</div>
+
+
+					</div>		 <!-- mainwidepanel -->
+					
+				</div>		 <!-- pagebody -->
+				
+				<div id="footer" class="nodisplay" style="height: 30px;" onContextMenu="return false;">
+			<div id="footerdiv" style="margin:0;">
+				South Carolina Legislative Services Agency * 223 Blatt Building * 1105 Pendleton Street * Columbia, SC 29201<!-- * 803-212-4420--><br>
+				
+								<a href="/disclaimer.php">Disclaimer</a> * <a href="/policies.php">Policies</a> * <a href="/credits.php">Photo Credits</a> * <a href="/contact.php">Contact Us</a>
+							</div>
+		</div>
+		<div id="printfooter" class="printdisplay serifNormal" align=center style="font-size: 8pt;">
+			<br>
+			<br>
+			<hr>
+			Legislative Services Agency
+			<br>
+			h t t p : / / w w w . s c s t a t e h o u s e . g o v
+		</div>
+	
+		</div>	<!-- container or main in mobile page-->
+</body>
+</html>
+

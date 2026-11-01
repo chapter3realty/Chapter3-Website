@@ -1,0 +1,81 @@
+{
+ "meta": {
+  "note": "Recovered 2026-11-01 after fix3-findings.json was lost in a container restart before it was saved. worked_example_group.prices: read back from the published dot chart (each value is a $1,000-rounded deed price; the chart's 0.1 px positions identify it exactly). by_month_counts: the house and condo counts in findings.json by_month. listings_houses: ledger row 28 (VERIFIED-BY-FIXER, review 3). fix3.py was not recovered.",
+  "recovered_from": [
+   "chapter3realty/sell/home-value/index.html (round 3 build)",
+   "findings.json by_month",
+   "Blog-Brain batches/2026-10-d/sell-home-value/facts.md row 28"
+  ]
+ },
+ "worked_example_group": {
+  "n": 4,
+  "sold_for_less_than_example": 4,
+  "example_price": 482000,
+  "prices": [
+   356000,
+   393000,
+   400000,
+   425000
+  ]
+ },
+ "listings_houses": {
+  "over_2_miles": {
+   "new_not_waterfront": {
+    "median_asking_per_sqft": 194
+   },
+   "older_not_waterfront": {
+    "median_asking_per_sqft": 200
+   }
+  }
+ },
+ "by_month_counts": {
+  "2025-10": {
+   "house": 648,
+   "condo": 401
+  },
+  "2025-11": {
+   "house": 507,
+   "condo": 305
+  },
+  "2025-12": {
+   "house": 528,
+   "condo": 348
+  },
+  "2026-01": {
+   "house": 427,
+   "condo": 251
+  },
+  "2026-02": {
+   "house": 430,
+   "condo": 293
+  },
+  "2026-03": {
+   "house": 556,
+   "condo": 364
+  },
+  "2026-04": {
+   "house": 578,
+   "condo": 388
+  },
+  "2026-05": {
+   "house": 641,
+   "condo": 410
+  },
+  "2026-06": {
+   "house": 670,
+   "condo": 386
+  },
+  "2026-07": {
+   "house": 639,
+   "condo": 404
+  },
+  "2026-08": {
+   "house": 624,
+   "condo": 319
+  },
+  "2026-09": {
+   "house": 618,
+   "condo": 312
+  }
+ }
+}

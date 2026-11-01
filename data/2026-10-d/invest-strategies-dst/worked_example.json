@@ -1,0 +1,20 @@
+{
+ "sale": 400000,
+ "bought": 250000,
+ "depreciation": 60000,
+ "selling_costs": 24000.0,
+ "amount_realized": 376000.0,
+ "adjusted_basis": 190000,
+ "gain": 186000.0,
+ "federal_recapture_at_25": 15000.0,
+ "federal_ltcg_at_15": 18900.0,
+ "federal_total": 33900.0,
+ "sc_tax": 5426.74,
+ "tax_before_niit": 39326.74,
+ "niit_if_over_threshold": 7068.0,
+ "tax_with_niit": 46394.74,
+ "cash_after_tax_before_niit": 336673.26,
+ "dst_commission_share_median": 0.06,
+ "dst_commission_on_realized": 22560.0,
+ "commission_as_share_of_tax_before_niit": 0.574
+}

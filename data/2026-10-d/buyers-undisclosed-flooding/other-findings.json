@@ -1,0 +1,224 @@
+{
+ "multiple_loss": {
+  "source": "https://www.fema.gov/api/open/v1/NfipMultipleLossProperties",
+  "pulled": "2026-11-01T01:58:11.472Z",
+  "asOfDate": "2026-10-21T00:00:00.000Z",
+  "properties": 1094,
+  "zone_high": 883,
+  "zone_outside": 203,
+  "zone_unknown": 8,
+  "pct_outside_of_known": 18.7,
+  "severe_repetitive_loss": 196,
+  "mitigated": 31,
+  "insured_now": 517,
+  "not_insured_now": 577,
+  "losses_distribution": {
+   "1": 1,
+   "2": 540,
+   "3": 285,
+   "4": 140,
+   "5": 55,
+   "6": 39,
+   "7": 16,
+   "8": 7,
+   "9": 5,
+   "10": 1,
+   "11": 1,
+   "12": 2,
+   "13": 2
+  },
+  "most_recent_loss_2015_or_later": 846,
+  "by_city_top": [
+   [
+    "NORTH MYRTLE BEACH",
+    349
+   ],
+   [
+    "MYRTLE BEACH",
+    247
+   ],
+   [
+    "CONWAY",
+    231
+   ],
+   [
+    "MURRELLS INLET",
+    114
+   ],
+   [
+    "SURFSIDE BEACH",
+    36
+   ],
+   [
+    "LONGS",
+    31
+   ],
+   [
+    "GARDEN CITY",
+    14
+   ],
+   [
+    "LITTLE RIVER",
+    13
+   ]
+  ]
+ },
+ "hma_projects": [
+  {
+   "subapplicationIdentifier": "DR-4286-0063-R",
+   "program": "Hazard Mitigation Grant Program",
+   "disasterNumber": "4286",
+   "fiscalYear": 2017,
+   "subapplicantName": "Conway",
+   "status": "Closed",
+   "primaryActivity": "Acquisition",
+   "numberBuildingLocations": 11,
+   "totalSubapplicationAmount": 807561.86
+  },
+  {
+   "subapplicationIdentifier": "DR-4241-0043-R",
+   "program": "Hazard Mitigation Grant Program",
+   "disasterNumber": "4241",
+   "fiscalYear": 2016,
+   "subapplicantName": "Horry (County)",
+   "status": "Closed",
+   "primaryActivity": "Elevation",
+   "numberBuildingLocations": 1,
+   "totalSubapplicationAmount": 0
+  },
+  {
+   "subapplicationIdentifier": "DR-1299-0017-R",
+   "program": "Hazard Mitigation Grant Program",
+   "disasterNumber": "1299",
+   "fiscalYear": 1999,
+   "subapplicantName": "Conway",
+   "status": "Closed",
+   "primaryActivity": "Acquisition",
+   "numberBuildingLocations": 9,
+   "totalSubapplicationAmount": 1670324
+  },
+  {
+   "subapplicationIdentifier": "DR-4286-0062-R",
+   "program": "Hazard Mitigation Grant Program",
+   "disasterNumber": "4286",
+   "fiscalYear": 2017,
+   "subapplicantName": "Conway",
+   "status": "Closed",
+   "primaryActivity": "Acquisition",
+   "numberBuildingLocations": 41,
+   "totalSubapplicationAmount": 3077197.81
+  },
+  {
+   "subapplicationIdentifier": "DR-4394-0028-R",
+   "program": "Hazard Mitigation Grant Program",
+   "disasterNumber": "4394",
+   "fiscalYear": 2018,
+   "subapplicantName": "DUCKS UNLIMITED",
+   "status": "Approved",
+   "primaryActivity": "Acquisition",
+   "numberBuildingLocations": 8,
+   "totalSubapplicationAmount": 579200
+  },
+  {
+   "subapplicationIdentifier": "DR-4241-0023-R",
+   "program": "Hazard Mitigation Grant Program",
+   "disasterNumber": "4241",
+   "fiscalYear": 2016,
+   "subapplicantName": "Horry (County)",
+   "status": "Closed",
+   "primaryActivity": "Elevation",
+   "numberBuildingLocations": 1,
+   "totalSubapplicationAmount": 105102.54
+  },
+  {
+   "subapplicationIdentifier": "DR-1299-0015-R",
+   "program": "Hazard Mitigation Grant Program",
+   "disasterNumber": "1299",
+   "fiscalYear": 1999,
+   "subapplicantName": "Conway",
+   "status": "Closed",
+   "primaryActivity": "Acquisition",
+   "numberBuildingLocations": 3,
+   "totalSubapplicationAmount": 190122
+  },
+  {
+   "subapplicationIdentifier": "DR-1299-0014-R",
+   "program": "Hazard Mitigation Grant Program",
+   "disasterNumber": "1299",
+   "fiscalYear": 1999,
+   "subapplicantName": "Horry (County)",
+   "status": "Closed",
+   "primaryActivity": "Elevation",
+   "numberBuildingLocations": 5,
+   "totalSubapplicationAmount": 81042
+  },
+  {
+   "subapplicationIdentifier": "DR-1299-0021-R",
+   "program": "Hazard Mitigation Grant Program",
+   "disasterNumber": "1299",
+   "fiscalYear": 1999,
+   "subapplicantName": "Horry (County)",
+   "status": "Closed",
+   "primaryActivity": "Acquisition",
+   "numberBuildingLocations": 9,
+   "totalSubapplicationAmount": 794179
+  },
+  {
+   "subapplicationIdentifier": "DR-1299-0010-R",
+   "program": "Hazard Mitigation Grant Program",
+   "disasterNumber": "1299",
+   "fiscalYear": 1999,
+   "subapplicantName": "Horry (County)",
+   "status": "Closed",
+   "primaryActivity": "Acquisition",
+   "numberBuildingLocations": 40,
+   "totalSubapplicationAmount": 2180250
+  },
+  {
+   "subapplicationIdentifier": "DR-1299-0005-R",
+   "program": "Hazard Mitigation Grant Program",
+   "disasterNumber": "1299",
+   "fiscalYear": 1999,
+   "subapplicantName": "Conway",
+   "status": "Closed",
+   "primaryActivity": "Acquisition",
+   "numberBuildingLocations": 2,
+   "totalSubapplicationAmount": 165361
+  },
+  {
+   "subapplicationIdentifier": "DR-4286-0064-R",
+   "program": "Hazard Mitigation Grant Program",
+   "disasterNumber": "4286",
+   "fiscalYear": 2017,
+   "subapplicantName": "Conway",
+   "status": "Closed",
+   "primaryActivity": "Acquisition",
+   "numberBuildingLocations": 34,
+   "totalSubapplicationAmount": 2427401.17
+  }
+ ],
+ "hma_buildings_by_disaster_activity": {
+  "1299 Acquisition": 63,
+  "1299 Elevation": 5,
+  "4241 Elevation": 2,
+  "4286 Acquisition": 86,
+  "4394 Acquisition": 8
+ },
+ "hma_note": "Disaster numbers: 1299 Hurricane Floyd (1999), 4241 October 2015 floods, 4286 Hurricane Matthew (2016), 4394 Hurricane Florence (2018). numberBuildingLocations is the count in the application; status Closed means the project is finished.",
+ "penetration": {
+  "state": "South Carolina",
+  "county": "Horry",
+  "resPenetrationRateSfha": null,
+  "resPenetrationRate": 0.1463,
+  "resContractsInForceSfha": 5861,
+  "resContractsInForce": 20388,
+  "totalResStructuresSfha": 0,
+  "totalResStructures": 139337,
+  "fipsCode": "45051",
+  "asOfDate": "2026-08-03T00:00:00.000Z",
+  "id": "84f5baad-b2af-4674-937c-5d01158c6f04",
+  "contracts_outside_sfha": 14527,
+  "pct_structures_with_policy": 14.6,
+  "pct_contracts_outside_sfha": 71.3
+ }
+}

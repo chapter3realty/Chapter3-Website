@@ -1,0 +1,66 @@
+[
+ {
+  "last_sale": "before 2005",
+  "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND SaleDate < DATE '2005-01-01'",
+  "n": 17408,
+  "market": 5673942900.0,
+  "taxable": 3338744820.0,
+  "taxable_over_market": 0.588
+ },
+ {
+  "last_sale": "2005-2014",
+  "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND SaleDate >= DATE '2005-01-01' AND SaleDate < DATE '2015-01-01'",
+  "n": 34994,
+  "market": 12222969166.0,
+  "taxable": 7640742326.0,
+  "taxable_over_market": 0.625
+ },
+ {
+  "last_sale": "2015-2019",
+  "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND SaleDate >= DATE '2015-01-01' AND SaleDate < DATE '2020-01-01'",
+  "n": 41291,
+  "market": 15080356796.0,
+  "taxable": 10438032445.0,
+  "taxable_over_market": 0.692
+ },
+ {
+  "last_sale": "2020-2022",
+  "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND SaleDate >= DATE '2020-01-01' AND SaleDate < DATE '2023-01-01'",
+  "n": 48511,
+  "market": 18216863450.0,
+  "taxable": 15717874550.0,
+  "taxable_over_market": 0.863
+ },
+ {
+  "last_sale": "2023-2024",
+  "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND SaleDate >= DATE '2023-01-01' AND SaleDate < DATE '2025-01-01'",
+  "n": 37130,
+  "market": 13657393594.0,
+  "taxable": 13004059569.0,
+  "taxable_over_market": 0.952
+ },
+ {
+  "last_sale": "2025",
+  "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND SaleDate >= DATE '2025-01-01' AND SaleDate < DATE '2026-01-01'",
+  "n": 22769,
+  "market": 8536095236.0,
+  "taxable": 8086832411.0,
+  "taxable_over_market": 0.947
+ },
+ {
+  "last_sale": "2026",
+  "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND SaleDate >= DATE '2026-01-01'",
+  "n": 17125,
+  "market": 6296346049.0,
+  "taxable": 5176903160.0,
+  "taxable_over_market": 0.822
+ },
+ {
+  "last_sale": "no sale date",
+  "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND SaleDate IS NULL",
+  "n": 7772,
+  "market": 2161508119.0,
+  "taxable": 1242246904.0,
+  "taxable_over_market": 0.575
+ }
+]

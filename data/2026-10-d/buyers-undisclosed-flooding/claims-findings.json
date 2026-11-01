@@ -1,0 +1,1590 @@
+{
+ "source": "https://www.fema.gov/api/open/v3/NfipClaims",
+ "filter": "countyCode eq '45051'",
+ "pulled": "2026-11-01T01:57:35.129Z",
+ "records": 12525,
+ "asOfDate": "2026-09-08T00:00:00.000Z",
+ "all_paid": {
+  "paid": 8815,
+  "high": 6686,
+  "outside": 2047,
+  "unknown": 82,
+  "pct_outside_of_known": 23.4,
+  "median_net_building_payment": 11097,
+  "n_building_payments": 8556
+ },
+ "all_paid_residential": {
+  "paid": 8121,
+  "high": 6208,
+  "outside": 1832,
+  "unknown": 81,
+  "pct_outside_of_known": 22.8,
+  "median_net_building_payment": 10354,
+  "n_building_payments": 7942
+ },
+ "since_2015": {
+  "paid": 3671,
+  "high": 2525,
+  "outside": 1096,
+  "unknown": 50,
+  "pct_outside_of_known": 30.3,
+  "median_net_building_payment": 19469,
+  "n_building_payments": 3602
+ },
+ "events": {
+  "Hurricane Hugo": {
+   "paid": 2598,
+   "high": 2366,
+   "outside": 232,
+   "unknown": 0,
+   "pct_outside_of_known": 8.9,
+   "median_net_building_payment": 14390,
+   "n_building_payments": 2531,
+   "years": {
+    "1989": 2598
+   },
+   "cause": {
+    "1": 2428,
+    "2": 55,
+    "0": 76,
+    "4": 29,
+    "3": 10
+   },
+   "top_communities": [
+    [
+     "NORTH MYRTLE BEACH, CITY OF",
+     1122
+    ],
+    [
+     "HORRY COUNTY *",
+     526
+    ],
+    [
+     "MYRTLE BEACH, CITY OF",
+     322
+    ],
+    [
+     "GEORGETOWN COUNTY *",
+     315
+    ],
+    [
+     "SURFSIDE BEACH, TOWN OF",
+     300
+    ],
+    [
+     "GEORGETOWN, CITY OF",
+     3
+    ]
+   ],
+   "top_zips": [
+    [
+     "29582",
+     1072
+    ],
+    [
+     "29576",
+     658
+    ],
+    [
+     "29577",
+     448
+    ],
+    [
+     "29575",
+     225
+    ],
+    [
+     "29572",
+     61
+    ],
+    [
+     "",
+     26
+    ],
+    [
+     "29587",
+     20
+    ],
+    [
+     "29578",
+     19
+    ]
+   ]
+  },
+  "Hurricane Floyd": {
+   "paid": 767,
+   "high": 485,
+   "outside": 281,
+   "unknown": 1,
+   "pct_outside_of_known": 36.7,
+   "median_net_building_payment": 8613,
+   "n_building_payments": 732,
+   "years": {
+    "1999": 767
+   },
+   "cause": {
+    "4": 537,
+    "2": 130,
+    "1": 95,
+    "0": 2,
+    "3": 2,
+    "9": 1
+   },
+   "top_communities": [
+    [
+     "HORRY COUNTY *",
+     375
+    ],
+    [
+     "MYRTLE BEACH, CITY OF",
+     155
+    ],
+    [
+     "NORTH MYRTLE BEACH, CITY OF",
+     145
+    ],
+    [
+     "CONWAY, CITY OF",
+     48
+    ],
+    [
+     "SURFSIDE BEACH, TOWN OF",
+     35
+    ],
+    [
+     "GEORGETOWN COUNTY *",
+     4
+    ]
+   ],
+   "top_zips": [
+    [
+     "29582",
+     148
+    ],
+    [
+     "29577",
+     135
+    ],
+    [
+     "29526",
+     134
+    ],
+    [
+     "29575",
+     99
+    ],
+    [
+     "29579",
+     64
+    ],
+    [
+     "29588",
+     43
+    ],
+    [
+     "29572",
+     40
+    ],
+    [
+     "29576",
+     35
+    ]
+   ]
+  },
+  "Hurricane Matthew": {
+   "paid": 1033,
+   "high": 818,
+   "outside": 202,
+   "unknown": 13,
+   "pct_outside_of_known": 19.8,
+   "median_net_building_payment": 16184,
+   "n_building_payments": 1013,
+   "years": {
+    "2016": 1033
+   },
+   "cause": {
+    "0": 190,
+    "1": 417,
+    "2": 278,
+    "4": 146,
+    "3": 2
+   },
+   "top_communities": [
+    [
+     "HORRY COUNTY *",
+     565
+    ],
+    [
+     "NORTH MYRTLE BEACH, CITY OF",
+     330
+    ],
+    [
+     "CONWAY, CITY OF",
+     58
+    ],
+    [
+     "SURFSIDE BEACH, TOWN OF",
+     39
+    ],
+    [
+     "MYRTLE BEACH, CITY OF",
+     24
+    ],
+    [
+     "LORIS, CITY OF",
+     8
+    ]
+   ],
+   "top_zips": [
+    [
+     "29582",
+     336
+    ],
+    [
+     "29576",
+     169
+    ],
+    [
+     "29526",
+     148
+    ],
+    [
+     "29588",
+     125
+    ],
+    [
+     "29575",
+     51
+    ],
+    [
+     "29527",
+     44
+    ],
+    [
+     "29579",
+     37
+    ],
+    [
+     "29568",
+     30
+    ]
+   ]
+  },
+  "Hurricane Florence": {
+   "paid": 895,
+   "high": 472,
+   "outside": 391,
+   "unknown": 32,
+   "pct_outside_of_known": 45.3,
+   "median_net_building_payment": 71850,
+   "n_building_payments": 876,
+   "years": {
+    "2018": 895
+   },
+   "cause": {
+    "4": 208,
+    "2": 551,
+    "0": 103,
+    "1": 31,
+    "9": 1,
+    "3": 1
+   },
+   "top_communities": [
+    [
+     "HORRY COUNTY *",
+     732
+    ],
+    [
+     "CONWAY, CITY OF",
+     109
+    ],
+    [
+     "LORIS, CITY OF",
+     27
+    ],
+    [
+     "MYRTLE BEACH, CITY OF",
+     12
+    ],
+    [
+     "NORTH MYRTLE BEACH, CITY OF",
+     10
+    ],
+    [
+     "SURFSIDE BEACH, TOWN OF",
+     4
+    ]
+   ],
+   "top_zips": [
+    [
+     "29526",
+     270
+    ],
+    [
+     "29588",
+     220
+    ],
+    [
+     "29568",
+     182
+    ],
+    [
+     "29527",
+     87
+    ],
+    [
+     "29577",
+     36
+    ],
+    [
+     "29569",
+     34
+    ],
+    [
+     "29579",
+     13
+    ],
+    [
+     "29544",
+     11
+    ]
+   ]
+  },
+  "Hurricane Ian": {
+   "paid": 422,
+   "high": 399,
+   "outside": 23,
+   "unknown": 0,
+   "pct_outside_of_known": 5.5,
+   "median_net_building_payment": 21376,
+   "n_building_payments": 420,
+   "years": {
+    "2022": 422
+   },
+   "cause": {
+    "4": 109,
+    "1": 276,
+    "0": 13,
+    "2": 18,
+    "null": 4,
+    "3": 2
+   },
+   "top_communities": [
+    [
+     "NORTH MYRTLE BEACH, CITY OF",
+     190
+    ],
+    [
+     "HORRY COUNTY *",
+     174
+    ],
+    [
+     "SURFSIDE BEACH, TOWN OF",
+     35
+    ],
+    [
+     "MYRTLE BEACH, CITY OF",
+     23
+    ]
+   ],
+   "top_zips": [
+    [
+     "29582",
+     190
+    ],
+    [
+     "29576",
+     135
+    ],
+    [
+     "29575",
+     45
+    ],
+    [
+     "29572",
+     29
+    ],
+    [
+     "29577",
+     16
+    ],
+    [
+     "29566",
+     4
+    ],
+    [
+     "29526",
+     1
+    ],
+    [
+     "29587",
+     1
+    ]
+   ]
+  },
+  "Hurricane Isaias": {
+   "paid": 245,
+   "high": 241,
+   "outside": 4,
+   "unknown": 0,
+   "pct_outside_of_known": 1.6,
+   "median_net_building_payment": 10000,
+   "n_building_payments": 239,
+   "years": {
+    "2020": 245
+   },
+   "cause": {
+    "4": 43,
+    "1": 148,
+    "0": 39,
+    "2": 9,
+    "null": 3,
+    "D": 3
+   },
+   "top_communities": [
+    [
+     "NORTH MYRTLE BEACH, CITY OF",
+     184
+    ],
+    [
+     "HORRY COUNTY *",
+     57
+    ],
+    [
+     "MYRTLE BEACH, CITY OF",
+     3
+    ],
+    [
+     "SURFSIDE BEACH, TOWN OF",
+     1
+    ]
+   ],
+   "top_zips": [
+    [
+     "29582",
+     183
+    ],
+    [
+     "29576",
+     53
+    ],
+    [
+     "29577",
+     4
+    ],
+    [
+     "29566",
+     3
+    ],
+    [
+     "29575",
+     1
+    ],
+    [
+     "29526",
+     1
+    ]
+   ]
+  },
+  "October severe storms": {
+   "paid": 581,
+   "high": 287,
+   "outside": 294,
+   "unknown": 0,
+   "pct_outside_of_known": 50.6,
+   "median_net_building_payment": 9606,
+   "n_building_payments": 572,
+   "years": {
+    "2015": 581
+   },
+   "cause": {
+    "4": 312,
+    "2": 113,
+    "0": 105,
+    "1": 50,
+    "A": 1
+   },
+   "top_communities": [
+    [
+     "HORRY COUNTY *",
+     305
+    ],
+    [
+     "NORTH MYRTLE BEACH, CITY OF",
+     142
+    ],
+    [
+     "MYRTLE BEACH, CITY OF",
+     73
+    ],
+    [
+     "CONWAY, CITY OF",
+     28
+    ],
+    [
+     "SURFSIDE BEACH, TOWN OF",
+     26
+    ],
+    [
+     "BRIARCLIFFE ACRES, TOWN OF",
+     3
+    ]
+   ],
+   "top_zips": [
+    [
+     "29582",
+     144
+    ],
+    [
+     "29526",
+     113
+    ],
+    [
+     "29575",
+     62
+    ],
+    [
+     "29566",
+     49
+    ],
+    [
+     "29577",
+     45
+    ],
+    [
+     "29572",
+     39
+    ],
+    [
+     "29588",
+     36
+    ],
+    [
+     "29579",
+     28
+    ]
+   ]
+  },
+  "Flooding": {
+   "paid": 525,
+   "high": 510,
+   "outside": 15,
+   "unknown": 0,
+   "pct_outside_of_known": 2.9,
+   "median_net_building_payment": 2020,
+   "n_building_payments": 511,
+   "years": {
+    "1987": 494,
+    "1986": 30,
+    "1994": 1
+   },
+   "cause": {
+    "1": 420,
+    "0": 8,
+    "2": 87,
+    "3": 2,
+    "4": 8
+   },
+   "top_communities": [
+    [
+     "NORTH MYRTLE BEACH, CITY OF",
+     302
+    ],
+    [
+     "HORRY COUNTY *",
+     113
+    ],
+    [
+     "GEORGETOWN COUNTY *",
+     64
+    ],
+    [
+     "MYRTLE BEACH, CITY OF",
+     20
+    ],
+    [
+     "SURFSIDE BEACH, TOWN OF",
+     14
+    ],
+    [
+     "GEORGETOWN, CITY OF",
+     2
+    ]
+   ],
+   "top_zips": [
+    [
+     "29582",
+     289
+    ],
+    [
+     "29576",
+     176
+    ],
+    [
+     "29577",
+     27
+    ],
+    [
+     "29575",
+     10
+    ],
+    [
+     "",
+     9
+    ],
+    [
+     "29526",
+     5
+    ],
+    [
+     "29578",
+     3
+    ],
+    [
+     "29528",
+     1
+    ]
+   ]
+  }
+ },
+ "by_year": {
+  "1979": 95,
+  "1981": 21,
+  "1982": 1,
+  "1983": 51,
+  "1984": 5,
+  "1985": 26,
+  "1986": 78,
+  "1987": 549,
+  "1988": 3,
+  "1989": 2613,
+  "1990": 2,
+  "1991": 7,
+  "1992": 24,
+  "1993": 111,
+  "1994": 73,
+  "1995": 13,
+  "1996": 216,
+  "1997": 4,
+  "1998": 141,
+  "1999": 847,
+  "2000": 57,
+  "2001": 72,
+  "2002": 1,
+  "2003": 20,
+  "2004": 29,
+  "2005": 12,
+  "2006": 2,
+  "2007": 4,
+  "2008": 11,
+  "2009": 6,
+  "2010": 15,
+  "2011": 3,
+  "2012": 6,
+  "2013": 23,
+  "2014": 3,
+  "2015": 613,
+  "2016": 1087,
+  "2017": 11,
+  "2018": 942,
+  "2019": 36,
+  "2020": 309,
+  "2021": 83,
+  "2022": 468,
+  "2023": 82,
+  "2024": 32,
+  "2025": 6,
+  "2026": 2
+ },
+ "by_year_outside": {
+  "1979": 8,
+  "1981": 3,
+  "1983": 10,
+  "1984": 1,
+  "1985": 12,
+  "1986": 16,
+  "1987": 33,
+  "1988": 3,
+  "1989": 236,
+  "1990": 2,
+  "1991": 3,
+  "1992": 8,
+  "1993": 5,
+  "1994": 29,
+  "1995": 4,
+  "1996": 47,
+  "1997": 2,
+  "1998": 39,
+  "1999": 314,
+  "2000": 40,
+  "2001": 62,
+  "2002": 1,
+  "2003": 12,
+  "2004": 20,
+  "2005": 8,
+  "2006": 2,
+  "2007": 1,
+  "2008": 1,
+  "2009": 2,
+  "2010": 14,
+  "2011": 2,
+  "2012": 2,
+  "2013": 6,
+  "2014": 3,
+  "2015": 301,
+  "2016": 232,
+  "2017": 3,
+  "2018": 403,
+  "2019": 17,
+  "2020": 38,
+  "2021": 38,
+  "2022": 34,
+  "2023": 20,
+  "2024": 4,
+  "2025": 4,
+  "2026": 2
+ },
+ "tracts": {
+  "37037020702": {
+   "paid": 1,
+   "high": 1,
+   "since2015": 1,
+   "since2015_high": 1
+  },
+  "45043920510": {
+   "paid": 1,
+   "high": 1,
+   "since2015": 1,
+   "since2015_high": 1
+  },
+  "45051010100": {
+   "paid": 20,
+   "high": 11,
+   "since2015": 16,
+   "since2015_high": 7,
+   "florence": 8,
+   "florence_high": 2,
+   "unknown": 6,
+   "florence_unknown": 6,
+   "since2015_unknown": 6,
+   "outside": 3,
+   "since2015_outside": 3
+  },
+  "45051020100": {
+   "paid": 10,
+   "outside": 8,
+   "florence": 6,
+   "florence_outside": 6,
+   "since2015": 10,
+   "since2015_outside": 8,
+   "unknown": 2,
+   "since2015_unknown": 2
+  },
+  "45051020200": {
+   "paid": 35,
+   "high": 18,
+   "florence": 19,
+   "florence_high": 13,
+   "since2015": 27,
+   "since2015_high": 16,
+   "outside": 15,
+   "florence_outside": 5,
+   "since2015_outside": 10,
+   "unknown": 2,
+   "florence_unknown": 1,
+   "since2015_unknown": 1
+  },
+  "45051020201": {
+   "paid": 3,
+   "outside": 3,
+   "florence": 1,
+   "florence_outside": 1,
+   "since2015": 3,
+   "since2015_outside": 3
+  },
+  "45051020202": {
+   "paid": 17,
+   "outside": 5,
+   "florence": 7,
+   "florence_outside": 2,
+   "since2015": 17,
+   "since2015_outside": 5,
+   "high": 12,
+   "since2015_high": 12,
+   "florence_high": 5
+  },
+  "45051020300": {
+   "paid": 4,
+   "outside": 3,
+   "florence": 2,
+   "florence_outside": 2,
+   "since2015": 3,
+   "since2015_outside": 3,
+   "high": 1
+  },
+  "45051020301": {
+   "paid": 1,
+   "high": 1,
+   "florence": 1,
+   "florence_high": 1,
+   "since2015": 1,
+   "since2015_high": 1
+  },
+  "45051020302": {
+   "paid": 1,
+   "outside": 1,
+   "since2015": 1,
+   "since2015_outside": 1
+  },
+  "45051030102": {
+   "paid": 85,
+   "high": 33,
+   "florence": 78,
+   "florence_high": 31,
+   "since2015": 83,
+   "since2015_high": 32,
+   "outside": 52,
+   "florence_outside": 47,
+   "since2015_outside": 51
+  },
+  "45051030103": {
+   "paid": 105,
+   "outside": 79,
+   "florence": 68,
+   "florence_outside": 57,
+   "since2015": 91,
+   "since2015_outside": 73,
+   "high": 22,
+   "since2015_high": 14,
+   "florence_high": 8,
+   "unknown": 4,
+   "florence_unknown": 3,
+   "since2015_unknown": 4
+  },
+  "45051030104": {
+   "paid": 15,
+   "outside": 12,
+   "florence": 15,
+   "florence_outside": 12,
+   "since2015": 15,
+   "since2015_outside": 12,
+   "high": 3,
+   "florence_high": 3,
+   "since2015_high": 3
+  },
+  "45051040101": {
+   "paid": 49,
+   "outside": 30,
+   "since2015": 40,
+   "since2015_outside": 23,
+   "florence": 14,
+   "florence_outside": 3,
+   "high": 19,
+   "since2015_high": 17,
+   "florence_high": 11
+  },
+  "45051040102": {
+   "paid": 20,
+   "outside": 17,
+   "since2015": 16,
+   "since2015_outside": 13,
+   "high": 3,
+   "since2015_high": 3
+  },
+  "45051040103": {
+   "paid": 44,
+   "outside": 44,
+   "since2015": 30,
+   "since2015_outside": 30
+  },
+  "45051040104": {
+   "paid": 9,
+   "outside": 6,
+   "since2015": 7,
+   "since2015_outside": 5,
+   "high": 3,
+   "since2015_high": 2
+  },
+  "45051040105": {
+   "paid": 41,
+   "high": 27,
+   "since2015": 27,
+   "since2015_high": 20,
+   "outside": 14,
+   "since2015_outside": 7,
+   "florence": 2,
+   "florence_high": 1,
+   "florence_outside": 1
+  },
+  "45051040200": {
+   "paid": 1810,
+   "high": 1753,
+   "since2015": 670,
+   "since2015_high": 650,
+   "outside": 52,
+   "since2015_outside": 19,
+   "unknown": 5,
+   "since2015_unknown": 1
+  },
+  "45051040300": {
+   "paid": 479,
+   "outside": 56,
+   "since2015": 170,
+   "since2015_outside": 39,
+   "high": 423,
+   "since2015_high": 131,
+   "florence": 2,
+   "florence_high": 1,
+   "florence_outside": 1
+  },
+  "45051040400": {
+   "paid": 195,
+   "outside": 37,
+   "high": 158,
+   "since2015": 57,
+   "since2015_high": 34,
+   "since2015_outside": 23,
+   "florence": 7,
+   "florence_high": 6,
+   "florence_outside": 1
+  },
+  "45051040500": {
+   "paid": 227,
+   "outside": 55,
+   "since2015": 83,
+   "since2015_outside": 36,
+   "high": 172,
+   "florence": 2,
+   "florence_high": 1,
+   "since2015_high": 47,
+   "florence_outside": 1
+  },
+  "45051050102": {
+   "paid": 7,
+   "outside": 7,
+   "since2015": 5,
+   "since2015_outside": 5,
+   "florence": 1,
+   "florence_outside": 1
+  },
+  "45051050200": {
+   "paid": 73,
+   "high": 58,
+   "since2015": 23,
+   "since2015_high": 18,
+   "outside": 15,
+   "since2015_outside": 5
+  },
+  "45051050303": {
+   "paid": 114,
+   "high": 50,
+   "since2015": 34,
+   "since2015_high": 12,
+   "outside": 64,
+   "since2015_outside": 22,
+   "florence": 2,
+   "florence_outside": 2
+  },
+  "45051050401": {
+   "paid": 50,
+   "high": 19,
+   "since2015": 9,
+   "since2015_high": 5,
+   "outside": 31,
+   "since2015_outside": 4
+  },
+  "45051050402": {
+   "paid": 212,
+   "high": 145,
+   "since2015": 39,
+   "since2015_high": 26,
+   "outside": 67,
+   "since2015_outside": 13,
+   "florence": 2,
+   "florence_high": 2
+  },
+  "45051050500": {
+   "paid": 139,
+   "outside": 82,
+   "high": 57,
+   "since2015": 15,
+   "since2015_outside": 11,
+   "since2015_high": 4,
+   "florence": 1,
+   "florence_outside": 1
+  },
+  "45051050600": {
+   "paid": 101,
+   "outside": 47,
+   "high": 54,
+   "since2015": 14,
+   "since2015_high": 8,
+   "since2015_outside": 6
+  },
+  "45051050700": {
+   "paid": 52,
+   "outside": 11,
+   "high": 41,
+   "since2015": 8,
+   "since2015_high": 7,
+   "since2015_outside": 1
+  },
+  "45051050900": {
+   "paid": 85,
+   "high": 64,
+   "outside": 21,
+   "since2015": 14,
+   "since2015_outside": 6,
+   "florence": 3,
+   "florence_outside": 2,
+   "since2015_high": 8,
+   "florence_high": 1
+  },
+  "45051050901": {
+   "paid": 1,
+   "outside": 1,
+   "since2015": 1,
+   "since2015_outside": 1
+  },
+  "45051050902": {
+   "paid": 1,
+   "high": 1,
+   "since2015": 1,
+   "since2015_high": 1
+  },
+  "45051051000": {
+   "paid": 16,
+   "high": 3,
+   "since2015": 1,
+   "since2015_high": 1,
+   "outside": 13
+  },
+  "45051051100": {
+   "paid": 1,
+   "high": 1
+  },
+  "45051051201": {
+   "paid": 231,
+   "high": 211,
+   "since2015": 53,
+   "since2015_high": 46,
+   "outside": 20,
+   "since2015_outside": 7
+  },
+  "45051051202": {
+   "paid": 238,
+   "high": 195,
+   "since2015": 57,
+   "since2015_high": 47,
+   "outside": 43,
+   "since2015_outside": 10,
+   "florence": 4,
+   "florence_outside": 2,
+   "florence_high": 2
+  },
+  "45051051300": {
+   "paid": 6,
+   "outside": 4,
+   "high": 2
+  },
+  "45051051301": {
+   "paid": 333,
+   "outside": 31,
+   "since2015": 122,
+   "since2015_outside": 10,
+   "high": 300,
+   "since2015_high": 111,
+   "florence": 1,
+   "florence_outside": 1,
+   "unknown": 2,
+   "since2015_unknown": 1
+  },
+  "45051051302": {
+   "paid": 1030,
+   "high": 995,
+   "since2015": 353,
+   "since2015_high": 341,
+   "outside": 33,
+   "since2015_outside": 12,
+   "unknown": 2,
+   "florence": 1,
+   "florence_high": 1
+  },
+  "45051051401": {
+   "paid": 2,
+   "high": 2
+  },
+  "45051051403": {
+   "paid": 44,
+   "outside": 44,
+   "since2015": 17,
+   "since2015_outside": 17
+  },
+  "45051051404": {
+   "paid": 73,
+   "outside": 67,
+   "high": 6,
+   "since2015": 4,
+   "since2015_outside": 4
+  },
+  "45051051405": {
+   "paid": 71,
+   "outside": 53,
+   "since2015": 18,
+   "since2015_outside": 18,
+   "high": 18,
+   "florence": 2,
+   "florence_outside": 2
+  },
+  "45051051406": {
+   "paid": 92,
+   "high": 71,
+   "outside": 20,
+   "since2015": 4,
+   "since2015_outside": 4,
+   "unknown": 1
+  },
+  "45051051501": {
+   "paid": 414,
+   "high": 157,
+   "florence": 152,
+   "florence_high": 51,
+   "since2015": 353,
+   "since2015_high": 119,
+   "outside": 256,
+   "florence_outside": 100,
+   "since2015_outside": 233,
+   "unknown": 1,
+   "florence_unknown": 1,
+   "since2015_unknown": 1
+  },
+  "45051051502": {
+   "paid": 31,
+   "outside": 28,
+   "since2015": 10,
+   "since2015_outside": 10,
+   "high": 3,
+   "florence": 1,
+   "florence_outside": 1
+  },
+  "45051051503": {
+   "paid": 58,
+   "outside": 23,
+   "since2015": 45,
+   "since2015_outside": 14,
+   "high": 35,
+   "florence": 35,
+   "florence_high": 26,
+   "since2015_high": 31,
+   "florence_outside": 9
+  },
+  "45051051601": {
+   "paid": 56,
+   "outside": 22,
+   "since2015": 30,
+   "since2015_outside": 12,
+   "high": 34,
+   "since2015_high": 18,
+   "florence": 12,
+   "florence_outside": 6,
+   "florence_high": 6
+  },
+  "45051051603": {
+   "paid": 15,
+   "outside": 12,
+   "florence": 9,
+   "florence_outside": 7,
+   "since2015": 12,
+   "since2015_outside": 10,
+   "high": 3,
+   "florence_high": 2,
+   "since2015_high": 2
+  },
+  "45051051604": {
+   "paid": 8,
+   "outside": 8,
+   "florence": 3,
+   "florence_outside": 3,
+   "since2015": 4,
+   "since2015_outside": 4
+  },
+  "45051051605": {
+   "paid": 28,
+   "outside": 27,
+   "florence": 2,
+   "florence_outside": 2,
+   "since2015": 10,
+   "since2015_outside": 9,
+   "high": 1,
+   "since2015_high": 1
+  },
+  "45051051606": {
+   "paid": 3,
+   "outside": 1,
+   "since2015": 3,
+   "since2015_outside": 1,
+   "high": 2,
+   "florence": 2,
+   "florence_high": 2,
+   "since2015_high": 2
+  },
+  "45051051607": {
+   "paid": 4,
+   "outside": 4,
+   "since2015": 4,
+   "since2015_outside": 4
+  },
+  "45051051608": {
+   "paid": 3,
+   "high": 3,
+   "florence": 3,
+   "florence_high": 3,
+   "since2015": 3,
+   "since2015_high": 3
+  },
+  "45051051609": {
+   "paid": 3,
+   "outside": 3,
+   "since2015": 3,
+   "since2015_outside": 3
+  },
+  "45051051700": {
+   "paid": 281,
+   "outside": 82,
+   "high": 199,
+   "since2015": 67,
+   "since2015_high": 52,
+   "since2015_outside": 15,
+   "florence": 1,
+   "florence_high": 1
+  },
+  "45051060101": {
+   "paid": 156,
+   "high": 135,
+   "florence": 31,
+   "florence_high": 22,
+   "since2015": 80,
+   "since2015_high": 68,
+   "unknown": 6,
+   "florence_unknown": 3,
+   "since2015_unknown": 5,
+   "outside": 15,
+   "florence_outside": 6,
+   "since2015_outside": 7
+  },
+  "45051060102": {
+   "paid": 20,
+   "high": 11,
+   "since2015": 16,
+   "since2015_high": 7,
+   "outside": 9,
+   "florence": 6,
+   "florence_outside": 4,
+   "since2015_outside": 9,
+   "florence_high": 2
+  },
+  "45051060203": {
+   "paid": 68,
+   "outside": 57,
+   "since2015": 15,
+   "since2015_outside": 15,
+   "high": 10,
+   "florence": 3,
+   "florence_outside": 3,
+   "unknown": 1
+  },
+  "45051060204": {
+   "paid": 194,
+   "high": 141,
+   "since2015": 106,
+   "since2015_high": 82,
+   "florence": 30,
+   "florence_high": 21,
+   "outside": 49,
+   "since2015_outside": 20,
+   "florence_outside": 8,
+   "unknown": 4,
+   "since2015_unknown": 4,
+   "florence_unknown": 1
+  },
+  "45051060206": {
+   "paid": 2,
+   "outside": 1,
+   "since2015": 1,
+   "since2015_outside": 1,
+   "high": 1
+  },
+  "45051060207": {
+   "paid": 3,
+   "outside": 3,
+   "since2015": 3,
+   "since2015_outside": 3
+  },
+  "45051060208": {
+   "paid": 9,
+   "outside": 6,
+   "high": 3
+  },
+  "45051060209": {
+   "paid": 7,
+   "outside": 7,
+   "since2015": 7,
+   "since2015_outside": 7,
+   "florence": 1,
+   "florence_outside": 1
+  },
+  "45051060301": {
+   "paid": 314,
+   "high": 290,
+   "since2015": 198,
+   "since2015_high": 185,
+   "florence": 87,
+   "florence_high": 81,
+   "outside": 15,
+   "since2015_outside": 6,
+   "florence_outside": 3,
+   "unknown": 9,
+   "florence_unknown": 3,
+   "since2015_unknown": 7
+  },
+  "45051060308": {
+   "paid": 4,
+   "outside": 2,
+   "since2015": 2,
+   "since2015_outside": 2,
+   "high": 2
+  },
+  "45051060309": {
+   "paid": 2,
+   "outside": 2,
+   "florence": 1,
+   "florence_outside": 1,
+   "since2015": 2,
+   "since2015_outside": 2
+  },
+  "45051060310": {
+   "paid": 1,
+   "outside": 1,
+   "since2015": 1,
+   "since2015_outside": 1
+  },
+  "45051060403": {
+   "paid": 84,
+   "high": 80,
+   "florence": 26,
+   "florence_high": 25,
+   "since2015": 47,
+   "since2015_high": 44,
+   "outside": 4,
+   "florence_outside": 1,
+   "since2015_outside": 3
+  },
+  "45051060404": {
+   "paid": 2,
+   "outside": 2,
+   "since2015": 1,
+   "since2015_outside": 1
+  },
+  "45051060405": {
+   "paid": 12,
+   "outside": 12,
+   "florence": 3,
+   "florence_outside": 3,
+   "since2015": 8,
+   "since2015_outside": 8
+  },
+  "45051060406": {
+   "paid": 33,
+   "outside": 31,
+   "since2015": 29,
+   "since2015_outside": 29,
+   "florence": 5,
+   "florence_outside": 5,
+   "high": 2
+  },
+  "45051070101": {
+   "paid": 19,
+   "outside": 9,
+   "florence": 10,
+   "florence_outside": 5,
+   "since2015": 19,
+   "since2015_outside": 9,
+   "high": 9,
+   "since2015_high": 9,
+   "florence_high": 4,
+   "unknown": 1,
+   "florence_unknown": 1,
+   "since2015_unknown": 1
+  },
+  "45051070102": {
+   "paid": 52,
+   "unknown": 3,
+   "florence": 21,
+   "florence_unknown": 2,
+   "since2015": 38,
+   "since2015_unknown": 3,
+   "high": 34,
+   "florence_high": 10,
+   "since2015_high": 21,
+   "outside": 15,
+   "florence_outside": 9,
+   "since2015_outside": 14
+  },
+  "45051070200": {
+   "paid": 218,
+   "high": 149,
+   "florence": 92,
+   "florence_high": 55,
+   "since2015": 156,
+   "since2015_high": 93,
+   "outside": 69,
+   "florence_outside": 37,
+   "since2015_outside": 63
+  },
+  "45051070300": {
+   "paid": 42,
+   "high": 19,
+   "since2015": 23,
+   "since2015_high": 13,
+   "outside": 21,
+   "since2015_outside": 10,
+   "florence": 10,
+   "florence_high": 6,
+   "unknown": 2,
+   "florence_outside": 4
+  },
+  "45051070400": {
+   "paid": 14,
+   "outside": 5,
+   "since2015": 11,
+   "since2015_outside": 3,
+   "high": 9,
+   "since2015_high": 8
+  },
+  "45051070500": {
+   "paid": 8,
+   "outside": 6,
+   "since2015": 5,
+   "since2015_outside": 4,
+   "high": 2,
+   "florence": 2,
+   "florence_high": 1,
+   "since2015_high": 1,
+   "florence_outside": 1
+  },
+  "45051070601": {
+   "paid": 3,
+   "outside": 1,
+   "florence": 3,
+   "florence_outside": 1,
+   "since2015": 3,
+   "since2015_outside": 1,
+   "high": 2,
+   "florence_high": 2,
+   "since2015_high": 2
+  },
+  "45051070602": {
+   "paid": 207,
+   "high": 165,
+   "since2015": 152,
+   "since2015_high": 117,
+   "outside": 26,
+   "florence": 81,
+   "florence_outside": 18,
+   "since2015_outside": 25,
+   "florence_high": 55,
+   "unknown": 16,
+   "florence_unknown": 8,
+   "since2015_unknown": 10
+  },
+  "45051070701": {
+   "paid": 1,
+   "outside": 1,
+   "since2015": 1,
+   "since2015_outside": 1
+  },
+  "45051070702": {
+   "paid": 8,
+   "outside": 6,
+   "since2015": 5,
+   "since2015_outside": 5,
+   "high": 2,
+   "florence": 1,
+   "florence_outside": 1
+  },
+  "45051080102": {
+   "paid": 9,
+   "outside": 7,
+   "since2015": 9,
+   "since2015_outside": 7,
+   "high": 2,
+   "since2015_high": 2,
+   "florence": 1,
+   "florence_high": 1
+  },
+  "45051080200": {
+   "paid": 27,
+   "unknown": 6,
+   "florence": 11,
+   "florence_unknown": 3,
+   "since2015": 23,
+   "since2015_unknown": 4,
+   "high": 16,
+   "florence_high": 6,
+   "since2015_high": 15,
+   "outside": 5,
+   "florence_outside": 2,
+   "since2015_outside": 4
+  },
+  "45051990100": {
+   "paid": 2,
+   "high": 2
+  },
+  "45067950400": {
+   "paid": 2,
+   "high": 2,
+   "since2015": 2,
+   "since2015_high": 2,
+   "florence": 1,
+   "florence_high": 1
+  }
+ },
+ "n_tracts_with_paid": 87,
+ "tracts_with_outside_claims": 78,
+ "primary_residence_share_paid": 33.9,
+ "current_map": {
+  "note": "Current FIRMs for Horry County and its towns took effect 12/16/21 (FEMA Community Status Book).",
+  "florence": {
+   "with_current_zone": 863,
+   "current_high": 430,
+   "current_outside": 433,
+   "current_unknown": 32,
+   "pct_outside_today_of_known": 50.2,
+   "rated_outside_and_outside_today": 376
+  },
+  "matthew": {
+   "with_current_zone": 883,
+   "current_high": 709,
+   "current_outside": 174,
+   "current_unknown": 150,
+   "pct_outside_today_of_known": 19.7,
+   "rated_outside_and_outside_today": 161
+  },
+  "since_2015": {
+   "with_current_zone": 3200,
+   "current_high": 2182,
+   "current_outside": 1018,
+   "current_unknown": 471,
+   "pct_outside_today_of_known": 31.8,
+   "rated_outside_and_outside_today": 920
+  },
+  "all": {
+   "with_current_zone": 3314,
+   "current_high": 2264,
+   "current_outside": 1050,
+   "current_unknown": 5501,
+   "pct_outside_today_of_known": 31.7,
+   "rated_outside_and_outside_today": 950
+  }
+ }
+}

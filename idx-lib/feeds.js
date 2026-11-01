@@ -149,6 +149,8 @@ const MB_CUT = { ...cut("Myrtle Beach sellers who already cut their price", [H({
 const FIRST_3 = { head: "3+ bedrooms under $300,000, built since 2005", q: towns(["Conway", "Myrtle Beach", "Longs", "Little River", "Loris"], H({ beds: "3", min: "200000", max: "299999", yearMin: "2005" })), post: { yearMin: 2005, strictYear: true }, link: "type=house&beds=3&max=300000&yearMin=2005", fallback: STARTER };
 const COST_TO_OWN = { head: "No HOA dues, built since 2015", q: towns(["Conway", "Myrtle Beach", "Longs", "Little River", "Murrells Inlet"], H({ hoa: "0", min: "230000", yearMin: "2015" })), post: { yearMin: 2015, strictYear: true }, link: "hoa=0&yearMin=2015", noHoa: true, fallback: NO_HOA };
 const OCEAN_CUT = { ...cut("Oceanfront condos with a price cut", towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", min: "150000", yearMin: "1980", has: "oceanfront_unit,price_reduced" }), "type=condo&has=oceanfront_unit%2Cprice_reduced", CONDO_CUT), post: { yearMin: 1980 } };
+/* Flood history: the owner (2026-11-01) wants homes close to the beach but outside a flood zone. "No flood zone listed" is what the MLS field says, not a FEMA ruling. */
+const BEACH_DRY = cut("Houses within a mile of the beach, no flood zone listed", towns(["North Myrtle Beach", "Myrtle Beach", "Surfside Beach", "Garden City", "Murrells Inlet", "Pawleys Island"], H({ min: "250000", has: "beach_1mi", not: "flood_zone" })), "type=house&has=beach_1mi&not=flood_zone", SINCE_2010);
 const RAISED = cut("Houses raised on pilings", towns(["Murrells Inlet", "Garden City", "Surfside Beach", "North Myrtle Beach", "Little River", "Pawleys Island"], H({ min: "250000", has: "raised_home" })), "type=house&has=raised_home", SINCE_2010);
 const NEW_ROOF = cut("Houses with a new roof", towns(["Myrtle Beach", "Conway", "Murrells Inlet", "Little River", "North Myrtle Beach", "Surfside Beach"], H({ min: "220000", has: "new_roof" })), "type=house&has=new_roof", SINCE_2010);
 const DEL_WEBB_NMB = { head: "Del Webb North Myrtle Beach, and one-level homes within 2 miles", needs: "has", q: [{ subdivision: "Del Webb", city: "North Myrtle Beach", status: "active" }, H({ near: "33.8252,-78.7000", miles: "2", min: "300000", yearMin: "2005", has: "one_level" })], post: { minPhotos: 6, yearMin: 2005 }, link: "type=house&near=33.8252%2C-78.7000&miles=2&has=one_level", fallback: FIFTY_FIVE };
@@ -244,7 +246,7 @@ export const FEEDS = {
   "/buyers/waterfront-homes/": DOCK,
   "/buyers/golf-communities/": ON_COURSE,
   "/buyers/condo-in-litigation/": OCEAN_CUT,
-  "/buyers/undisclosed-flooding/": RAISED,
+  "/buyers/undisclosed-flooding/": BEACH_DRY,
   "/buyers/property-taxes/": OUTSIDE_CITY,
   "/buyers/coastal-insurance/": NEW_ROOF,
   "/buyers/closing-costs/": CUT_300,

@@ -1,0 +1,150 @@
+{
+ "file": "raw/countyinflow2223-horry.csv",
+ "summary_rows": {
+  "Horry County Total Migration-US and Foreign": {
+   "returns": 15075,
+   "people": 25856
+  },
+  "Horry County Total Migration-US": {
+   "returns": 15027,
+   "people": 25782
+  },
+  "Horry County Total Migration-Same State": {
+   "returns": 2150,
+   "people": 3711
+  },
+  "Horry County Total Migration-Different State": {
+   "returns": 12877,
+   "people": 22071
+  },
+  "Horry County Total Migration-Foreign": {
+   "returns": 48,
+   "people": 74
+  },
+  "Foreign - Overseas": {
+   "returns": 28,
+   "people": 41
+  },
+  "Other flows - Same State": {
+   "returns": 165,
+   "people": 277
+  },
+  "Other flows - Different State": {
+   "returns": 4443,
+   "people": 7714
+  },
+  "Other flows - Northeast": {
+   "returns": 795,
+   "people": 1350
+  },
+  "Other flows - Midwest": {
+   "returns": 961,
+   "people": 1683
+  },
+  "Other flows - South": {
+   "returns": 2163,
+   "people": 3740
+  },
+  "Other flows - West": {
+   "returns": 524,
+   "people": 941
+  },
+  "Foreign - Other flows": {
+   "returns": 20,
+   "people": 33
+  }
+ },
+ "sum_of_named_county_rows_returns": 10419,
+ "by_state": [
+  {
+   "state": "SC",
+   "returns": 1985,
+   "people": 3434,
+   "share_of_named": 19.1
+  },
+  {
+   "state": "NC",
+   "returns": 1740,
+   "people": 2984,
+   "share_of_named": 16.7
+  },
+  {
+   "state": "NY",
+   "returns": 1485,
+   "people": 2586,
+   "share_of_named": 14.3
+  },
+  {
+   "state": "NJ",
+   "returns": 937,
+   "people": 1617,
+   "share_of_named": 9.0
+  },
+  {
+   "state": "PA",
+   "returns": 793,
+   "people": 1343,
+   "share_of_named": 7.6
+  },
+  {
+   "state": "FL",
+   "returns": 550,
+   "people": 885,
+   "share_of_named": 5.3
+  },
+  {
+   "state": "MD",
+   "returns": 543,
+   "people": 926,
+   "share_of_named": 5.2
+  },
+  {
+   "state": "VA",
+   "returns": 413,
+   "people": 700,
+   "share_of_named": 4.0
+  },
+  {
+   "state": "MA",
+   "returns": 392,
+   "people": 665,
+   "share_of_named": 3.8
+  },
+  {
+   "state": "CT",
+   "returns": 385,
+   "people": 653,
+   "share_of_named": 3.7
+  },
+  {
+   "state": "CA",
+   "returns": 170,
+   "people": 291,
+   "share_of_named": 1.6
+  },
+  {
+   "state": "GA",
+   "returns": 162,
+   "people": 265,
+   "share_of_named": 1.6
+  },
+  {
+   "state": "OH",
+   "returns": 117,
+   "people": 182,
+   "share_of_named": 1.1
+  },
+  {
+   "state": "AZ",
+   "returns": 102,
+   "people": 169,
+   "share_of_named": 1.0
+  },
+  {
+   "state": "CO",
+   "returns": 88,
+   "people": 149,
+   "share_of_named": 0.8
+  }
+ ]
+}

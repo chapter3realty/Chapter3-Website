@@ -1,0 +1,1114 @@
+﻿
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="robots" content="noimageindex">
+	    <meta charset="iso-8859-1">
+	    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	    	    <title>Code of Laws - Title 40 - Chapter 60- - PROFESSIONS AND OCCUPATIONS</title>
+	    <link rel="SHORTCUT ICON" href="/images/stateflagsmall.ico" />
+		<link rel="icon" href="/images/stateflagsmall.ico" type="image/ico" />
+		<link rel="SHORTCUT ICON" href="/images/South-Carolina-Flag2.ico" />
+
+		<link type="text/css" rel="stylesheet" href="/css/main.css" media="all" />
+				
+		<!--[if lte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/ie7main.css" media="all" />
+		<![endif]-->
+		<!--[if gte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/iemain.css" media="all" />
+		<![endif]-->
+		<link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+		<link type="text/css" rel="stylesheet" href="/css/supplement.css" media="screen" />
+		<!--<link type="text/css" rel="stylesheet" href="/css/zipsearch.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/vote.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/contact.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/navwrap.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/linkbar.css" media="screen" />-->
+	
+		<!--<script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>-->
+		<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+				<script type="text/javascript" src="/js/main_linux.js"></script>
+		
+
+		
+
+
+
+		<!--<script type="text/javascript" src="/js/common.js"></script>
+		<script type="text/javascript" src="/js/utils.js"></script>
+		<script type="text/javascript" src="/js/date.js"></script>
+		<script type="text/javascript" src="/js/lightbox.js"></script>
+		<script type="text/javascript" src="/js/legislation.js"></script>
+		<script type="text/javascript" src="/js/logon_lits.js"></script>
+		<script type="text/javascript" src="/js/message.js"></script>
+		<script type="text/javascript" src="/js/comm_meeting.js"></script>-->
+		<script type="text/vbscript" src="/vbs/comm_meeting.vbs"></script>
+		<!--<script type="text/javascript" src="/js/regs.js"></script>-->
+				
+	   	<script type="text/javascript">
+	    //document.onclick = function () { document.getElementById('transbox').style.display= 'none' };
+	    	var xmlhttp=false;
+			xmlhttp = create_xml_object();
+	
+			function getElement(ele)
+			{
+				var theobj = false;
+				if(typeof ele == 'string')
+					theobj = (document.getElementById)?document.getElementById(ele):document.all[ele];
+				else
+					theobj = ele;
+			
+				return theobj;
+			}
+		
+			function checkreader(friendlyalert)
+			{
+			 	/*friendlyalert=friendlyalert||false;
+			 	
+			 	var browser_info = perform_acrobat_detection();
+				if (!browser_info.acrobat)
+				{
+				 	loadadobebox('adobebox', '/adobe.php');
+					return false;
+				}
+				else if (friendlyalert)
+				{
+			 		alert(friendlyalert);
+				}*/
+				return true;
+			}
+				
+			function loadadobebox(boxname, url)
+			{
+				var response = false;
+	
+				doRequest(xmlhttp, "GET", url, false, null, null);
+				if (xmlhttp.status == 200)
+				{
+		         	response = xmlhttp.responseText;
+				}
+	
+				if(response)
+				{
+			 		var ele = document.getElementById(boxname);
+				 	if (ele)
+				 	{
+				 		ele.style.visibility = 'hidden';
+		 				ele.style.display = 'block';
+	
+		 				positionElement(ele, 'center', 'center', true);
+	
+						ele.innerHTML = response;
+					    ele.style.visibility = 'visible';
+					    ele.style.display = 'block';
+	//				    ele.scrollIntoView(true);
+					}
+				}
+				return response;
+			}
+	
+	
+			function init()
+			{
+		 		var ld=document.getElementById("loading");
+				if(ld)
+				{
+					ld.style.display = 'none';
+				}
+			}
+			
+			function openmore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				 	var pos = findPos(id);
+				 	id.style.zIndex = 10;
+		//		 	id.style.left = pos[0]+'px';
+		//		  	id.style.top = pos[1]+'px';
+				  	id.style.height = '295px';
+				  	id.style.position = 'absolute';
+				  	id.style.backgroundColor = '#f7f4ec';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'none';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = 'none';
+				  	}
+				}
+			}
+		
+			function closemore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				  	id.style.height = '135px';
+				  	id.style.position = '';
+				  	id.style.backgroundColor = 'transparent';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'block';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = '';
+				  	}
+				}		 	
+			}
+		
+		<!-- This script and many more are available free online at -->
+		<!-- The JavaScript Source!! http://javascript.internet.com -->
+		
+		<!-- Begin
+		function right(e) {
+		var msg = "Use of this image is strictly prohibited unless express written permission is given to the user by South Carolina Legislative Services Agency.";
+		if (navigator.appName == 'Netscape' && e.which == 3) {
+		alert(msg);
+		return false;
+		stopEvent(e);
+		}
+		if (navigator.appName == 'Microsoft Internet Explorer' && event.button==2) {
+		alert(msg);
+		return false;
+			stopEvent(event);
+		}
+		else return true;
+		}
+		
+	function trap() 
+	{
+		if(document.images)
+		{
+			for(i=0;i<document.images.length;i++)
+			{
+				if(document.images[i].className == 'allowcontextmenu')
+				{
+					// this should have no scripting
+				}
+				else
+				{
+				 	document.images[i].onmousedown = right;
+					document.images[i].oncontextmenu = function(){ return false; };
+					//document.images[i].onmouseup = right;
+				}
+			}
+		}
+	}
+
+	function findfwtext(texttofind) 
+	{
+	 	var fwtextele = document.getElementById('fwtext');
+		if(fwtextele)
+		{
+			fwtextele.value = texttofind;
+		}
+	}	
+		// End -->
+		</script>
+
+		<!-- ADDED FOR V4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJY6FMNQKH"></script>
+
+
+<script type="text/javascript">
+
+//ADDED FOR V4
+//Google tag (gtag.js) 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LJY6FMNQKH');
+
+ 
+ /* COMMENTING OUT UPGRADING TO V4 -A
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36207109-1']);
+  _gaq.push(['_setDomainName', 'scstatehouse.gov']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+*/
+  
+      $(document).ready(function(){
+        // COMMENTING THIS OUT NO LONGER BEING ACTIVELY USED TO MONITOR FOR TRAFFIC TO SPECIFIC LINKS - A
+        /*
+          var anchors = $('div#contentsection a');
+
+          //console.log('anchors...'+anchors.length);
+          if(anchors.length > 0){
+            //console.log('setting up event handler...');
+            anchors.click(function(){
+              var a = $(this).attr('href');
+              if(_gaq && (a.substr(-3) == 'htm' || a.substr(-4) == 'html' || a.substr(-3) == 'doc' || a.substr(-4) == 'docx' || a.substr(-3) == 'pdf' || a.substr(-3) == 'xls' || a.substr(-4) == 'xlsx')) {
+                //console.log(a);
+                _gaq.push(['_trackPageview', $(this).attr('href')]);
+              }
+              
+              var aText = $(this).text().toLowerCase();
+              if (a.indexOf('getfile.php') > -1 && aText === 'word'){
+                    _gaq.push(['_trackEvent', 'Word Doc', 'Download', ('from page: ' + document.location + ' - href: ' + a)]);
+              }
+
+            });
+          }
+          */
+      });
+
+</script>
+	</head>
+	
+		
+	<body class="home"  onload="init(); trap();">
+	<noscript>Your browser does not support JavaScript!  This page will not render correctly.</noscript> 
+
+
+	
+	<div id="adobebox" style="position:absolute; width:400px; height:150px; border:2px solid #555555; background-color:#cccccc; display:none;"></div>
+	<div id="container" >	
+				<div id="header" class="nodisplay" style="text-align:center; height:100px;" >
+									<img id="headerimg" class="nodisplay" alt="South Carolina Legislature" title="South Carolina Legislature" src="/images/header8.png" />
+								
+							<!--	<div class="award"><span style="color:#831224; font-weight:bold; font-size:1.5em;">*</span> Recipient of<br>the Notable State Documents Award<br>by the<br>South Carolina<br>State Library.</div>-->
+				
+				
+			</div>
+			<div class="printdisplay"><img border="0" src="/images/titleprint.jpg" alt="South Carolina Legislature" title="South Carolina Legislature" alt="South Carolina Legislature" title="South Carolina State Legislature" /><br /><hr /><br /></div>
+	
+			<div id="pagebody" >
+	
+	
+<!--<div id="topmessage">
+<br style="display:block; margin-top:10px;">
+Searches and data queries will be unavailable beginning Friday, August 19, 2016, from 8:00 PM until Saturday, August 20th at 8:00 AM<br>due to scheduled maintenance.</div>-->
+				<!-- Prompt IE 8/7/6 users to upgrade to a newer browser. -->
+				<!--[if lte IE 8]>
+				<div class="oldframe">In order to improve your experience using this website, please <a href="http://browsehappy.com/">upgrade your browser</a>.</div>
+				<![endif]-->
+			
+			
+			
+			<div id="menu" class="nodisplay">
+				<ul class="nodisplay">
+				<li><a href="/index.php">Home</a></li>
+<li><a href="/senate.php">Senate</a></li>
+<li><a href="/house.php">House</a></li>
+<li><a href="/committeeinfo.php">Committee&nbsp;Postings&nbsp;and&nbsp;Reports</a></li>
+<li><a href="/council.php">Legislative Council</a></li>
+<li><a href="/citizens.php">Citizens&#39; Interest</a></li>
+<li><a href="/publications.php">Publications</a></li>
+		    	</ul>
+			</div>
+			<div id="search" class="nodisplay" style="height: 28px;"><div class="nodisplay" style="float:right; margin:6px 20px 0px 0;">
+							<!--<a style="color:#f7f4ec; height:15px;" href="#" onClick="rsswindow();"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+<!--				<a style="color:#f7f4ec; height:15px;" href="/splashpage/splashpage.html"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a> -->
+				<a style="color:#f7f4ec; height:15px;" href="/onlineservices/index.php"><img border="0" src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>
+			<!--	<a style="color:#f7f4ec; height:15px;" href="/maintenance_portal.php"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+						</div></div>
+			
+	
+					<div id="sidebar" class="nodisplay">
+	<div id="vidlinks" style="height: 50px;">
+						<!--<img src="/images/videobutton12d.png">-->
+											<ul id="vidsidemenu">
+	<li id="vidinnermenu" style="font-size:16px; margin: 0 0 5px 0;">Chamber Video</li>
+<li id="sbroadcast" style="float: left; width:50%;">
+<a id="liveS" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('S', false, false, '0')">Senate</a><br><a id="liveaudioS" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('S', false, false, '1');">(Audio Only)</a>
+</li>
+<li id="hbroadcast" style="float: left; width:50%;">
+<a id="liveH" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('H', false, false, '0')">House</a><br><a id="liveaudioH" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('H', false, false, '1');">(Audio Only)</a>
+</li>
+						</ul>
+					</div>
+					<div id="commvidlinks"><a href="/video/schedule.php">Video&nbsp;Schedule</a><a style="border-top:1px solid #fff; padding-top:12px;" href="/video/archives.php">Video Archives</a></div>
+										<div id="sidemenu">
+						<ul id="innermenu">
+		
+							<li><a href="/howdoi.php">How do I...</a></li>
+										
+							
+								<li class="nolink" onMouseOver="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='block'; document.sidesearchform.searchtext.focus();}" onMouseOut="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Quick Search</div>
+								<div id="sidesearch" class="sidesubmenu">
+									<form id="sidesearchform" name="sidesearchform" method="POST" action="/search.php">
+									<input type="hidden" name="search" value="side" />
+									<div class="topelement"><label for="searchtext"><span class="label">Search for:</span></label><input id="searchtext" name="searchtext" type="text"/><a id="searchlink2" href="javascript:void(0);" onClick="document.sidesearchform.submit();"><img id="searchicon" src="/images/searchbutton.png" alt="Search" title="Search"/></a></div>
+			<!--						<div><input type="checkbox" id="searchchoice_all" name="searchchoice_all" value="all" /><label for="searchchoice_all">All</label></div>-->
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_fullsite" name="category" value="FULLSITE" /><label for="searchchoice_fullsite">&nbsp;Full Site Search</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_billnumber" name="category" value="BILL" /><label for="searchchoice_billnumber">&nbsp;Bill Number</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_legislation" name="category" value="LEGISLATION" CHECKED /><label for="searchchoice_legislation">&nbsp;Legislation</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_budget" name="category" value="BUDGET" /><label for="searchchoice_budget">&nbsp;Budget</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeoflaws" name="category" value="CODEOFLAWS" /><label for="searchchoice_codeoflaws">&nbsp;Code of Laws</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeofregs" name="category" value="CODEOFREGS" /><label for="searchchoice_codeofregs">&nbsp;Code of Regulations</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_constitution" name="category" value="CONSTITUTION" /><label for="searchchoice_constitution">&nbsp;Constitution</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_housejournals" name="category" value="HOUSEJOURNALS" /><label for="searchchoice_housejournals">&nbsp;House Journals</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_senatejournals" name="category" value="SENATEJOURNALS" /><label for="searchchoice_senatejournals">&nbsp;Senate Journals</label></div>
+									<div class="bottomelement" style="padding-left:20px;"><input type="radio" id="searchchoice_billsummary" name="category" value="SUMMARY" /><label for="searchchoice_billsummary">&nbsp;LSA Bill Summary</label></div>
+								</form>
+									
+								</div>
+							</li>
+							<li><a href="/legislatorssearch.php">Find Your Legislators</a></li>
+							<li id="contactLegislatorLink"><a href="/email.php?chamber=B">Contact Your Legislator</a></li>
+									
+							<li><a href="/legislation.php">Legislation</a></li>
+							<li><a href="/listtracking/main.php" target="LTS">Track Legislation</a></li>
+							<li><a href="/multicriteria2/search.php" target="MCS">Multi-Criteria Search</a></li>
+									<!--<li><a href="#" onclick="multisearchwindow('INTROBOTH');">Multi-Criteria Search</a></li>-->
+									<!--<li><a href="#" onclick="multisearchwindow('INTROMANUAL');">Multi-Criteria Search</a></li>-->
+									<li><a href="/research.php">Research</a></li>
+	
+								<li class="nolink" onMouseOver="var ele=document.getElementById('law'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('law'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">South Carolina Law</div> 
+								<div id="law" class="sidesubmenu">
+									<div class="sidediv topelement"><a href="/newlaws.php">Ratifications &amp; Acts</a></div>
+									<div class="sidediv"><a href="/code/statmast.php">Code of Laws</a></div>
+									<div class="sidediv"><a href="/coderegs/statmast.php">Code of Regulations</a></div>
+									<div class="sidediv"><a href="/scconstitution/scconst.php">Constitution</a></div>
+									<div class="sidediv bottomelement"><a href="/state_register.php">State Register</a></div>
+								</div>
+							</li>
+										<li class="nolink" onMouseOver="var ele=document.getElementById('manual'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('manual'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Legislative Manual</div>
+								<div id="manual" class="sidesubmenu">
+								
+<!--									<div class="sidediv topelement"><a href="https://web.sc.gov/LSAShoppingcart/Default.aspx" target="_blank">Purchase Manual</a></div>-->
+								
+<!--									<div class="sidediv topelement"><a href="https://secure.scstatehouse.gov/cgi-bin/webstore.exe" target="_blank">Purchase Manual</a></div>-->
+									<div class="sidediv topelement"><a href="javascript:#" onClick="alert('We are sorry, but we are unable to process online transactions at this time.\n\nIf you would still like to make a purchase, please contact us directly at (803) 212-4490 during normal business hours (8:30am - 5:00pm EST).');">Purchase Manual</a></div>
+									<div class="sidediv bottomelement"><a href="/man26/manual26.php">View Manual Online</a></div>
+								</div>
+							</li>
+							<li><a href="http://www.studentconnection.scstatehouse.gov">Student Connection</a></li>
+							<li><a href="/visit.php">Visiting the State House</a></li>
+							<li><a href="/archives.php">Archives</a></li>
+							<li><a href="http://www.sc.gov/Agency-Listing" target="_blank">State Agency Websites</a></li>
+							<!--<li><a href="/stateagencysites.php">State Agency Websites</a></li>-->
+							<li><a href="/citizensinterestpage/media.php">Media Links</a></li>
+				 		</ul>
+			    	</div>
+	
+					<div id="side_ad">
+						<A href="http://www.sc.gov/" target="_blank"><img border=0 src="/images/scgov3.jpg" alt="SC.gov" title="SC.gov" /></a>
+													<A href="http://www.statelibrary.sc.gov" target="_blank"><img border=0 src="/images/scsl_logo_rgb_web.png" alt="StateLibrary.SC.gov" title="StateLibrary.SC.gov" /></a>
+											</div>	    	
+			</div>
+
+	
+	<script type="text/javascript"> 
+		if ( '' === '1'){
+		 	
+			var link = document.getElementById('contactLegislatorLink');
+			if (link != 'undefined' && link != null){
+				link.style.display = 'none'; 
+				link.style.visibility = 'hidden';
+			}
+		}
+		if ( '' === '1'){
+		 	setTimeout(function(){
+				var link2 = document.getElementById('sendMsgLink');
+				if (link2 != 'undefined' && link2 != null){
+					link2.style.display = 'none'; 
+					link2.style.visibility = 'hidden';
+				};
+			}, 20);
+			
+		}  
+	</script>
+<div class="mainwidepanel">
+
+				<div id="breadcrumbs">
+						South Carolina Law &gt; <a href="/code/statmast.php">Code of Laws</a> &gt; <a href="/code/title40.php">Title 40</a>
+				</div>
+
+					<h2 class="barheader">South Carolina Code of Laws<br />
+									Unannotated<br />
+					</h2>
+
+				<div id="contentsection">
+<div style="font-weight: bold; text-align: center;">Title 40 - PROFESSIONS AND OCCUPATIONS</div>
+<br />
+
+<div style="text-align: center;">CHAPTER 60</div>
+<div style="text-align: center;">Real Estate Appraisers and Appraisal Management Companies</div><br />
+<div style="text-align: center;">ARTICLE 1</div>
+<div style="text-align: center;">South Carolina Real Estate Appraiser License and Certification Act</div><br />
+Code Commissioner&#39;s Note<br /><br />
+	At the direction of the Code Commissioner, the new title designation for Article 1, provided by 2017 Act No. 32, SECTION 4, was used instead of the general provision of Section 3 of that act.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTIONS 3 and 4, provide as follows:<br /><br />
+	&quot;SECTION 3. Sections 40-60-5 through Section 40-60-230 are designated as Article 1, General Provisions. The Code Commissioner is directed to make appropriate changes in the 1976 Code to reflect this designation.<br /><br />
+	&quot;SECTION 4. The existing sections of Chapter 60, Title 40 [Sections 40-60-5 through 40-60-230] are designated the &#39;South Carolina Real Estate Appraiser License and Certification Act&#39;. Chapter 60, Title 40 is redesignated &#39;Real Estate Appraisers and Appraisal Management Companies&#39;.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-5.</span> Citation and application of chapter; conflict with Article 1, Chapter 1, Title 40.<br /><br />
+	(A) This chapter may be cited as the &quot;South Carolina Real Estate Appraiser License and Certification Act&quot;.<br /><br />
+	(B) Unless otherwise provided for in this chapter, Article 1, Chapter 1 of Title 40 applies to real estate appraisers; however, if there is a conflict between this chapter and Article 1, Chapter 1 of Title 40, the provisions of this chapter control.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:2000 Act No. 335, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-10.</span> South Carolina Real Estate Appraisers Board.<br /><br />
+	(A) There is created the South Carolina Real Estate Appraisers Board under the administration of the Department of Labor, Licensing and Regulation. The purpose of this board is to regulate the real estate appraisal industry so as to protect the public&#39;s interest regarding real estate appraisal transactions.<br /><br />
+	(B) The South Carolina Real Estate Appraisers Board consists of eight members who must be residents of this State and appointed by the Governor with the advice and consent of the Senate and with consideration given to appropriate geographic representation and to areas of appraisal expertise as follows:<br /><br />
+	(1) One member must be a public member who may not be connected in any way with the practice of real estate appraisal, real estate brokerage, or mortgage lending. The member from the general public may be nominated by an individual, group, or association and must be appointed by the Governor in accordance with Section 40-1-45.<br /><br />
+	(2) One member must be a licensed real estate broker.<br /><br />
+	(3) One member must be actively engaged in mortgage lending, representing supervised financial institutions, who is not a real estate licensee or a real estate appraiser and who also must not be connected in any way with the brokerage of real estate, the appraisal of real estate, or the review of real estate appraisals.<br /><br />
+	(4) Four members must be licensed or certified appraisers, actively engaged in real estate appraisal for at least three years, one of whom must be a certified general appraiser and one of whom must be a certified residential appraiser. In appointing real estate appraisers to the board, the Governor, while not automatically excluding other appraisers, shall give preference to real estate appraisers whose primary source of income is derived from appraising real estate and not real estate brokerage.<br /><br />
+	(5) One member must represent an appraisal management company registered with the board.<br /><br />
+	(C) Members shall serve terms of three years and until their successors are appointed and qualified.<br /><br />
+	(D) Members of the board are entitled to per diem, subsistence, and mileage as is provided by law for members of state boards, committees, and commissions.<br /><br />
+	(E) The board shall meet at least once each calendar quarter, or as often as necessary, and shall remain in session as long as the chairman considers it necessary to give full consideration to the business before the board.<br /><br />
+	(F) The board annually shall elect from its total membership a chairman, vice-chairman, and other officers the board determines necessary. The board may adopt an official seal and shall adopt rules and procedures reasonably necessary for the performance of its duties and the governance of its operations and proceedings.<br /><br />
+	(G) A board member is required to attend meetings or to provide proper notice and justification of his or her inability to do so. The Governor may remove a member of the board pursuant to Section 1-3-240.<br /><br />
+	(H) Vacancies on the board must be filled for the unexpired portion of the term in the manner of the original appointment.<br /><br />
+	(I) In addition to the powers and duties provided in Section 40-1-70, the board may:<br /><br />
+	(1) determine the standards and qualifications for issuance of permits, licenses, and certifications;<br /><br />
+	(2) conduct disciplinary hearings on alleged violations of this chapter and regulations promulgated under this chapter and decide disciplinary actions as provided in this chapter for those found to be in violation;<br /><br />
+	(3) recommend changes in legislation and promulgate regulations pursuant to this chapter;<br /><br />
+	(4) approve and regulate educational courses, providers, and instructors;<br /><br />
+	(5) establish standards for real estate appraisals consistent with the standards recognized by the Appraisal Standards Board.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2016 Act No. 243 (H.5023), SECTION 1, eff June 5, 2016; 2017 Act No. 32 (S.279), SECTION 2, eff May 10, 2017; 2024 Act No. 196 (H.3278), SECTION 1, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:1991 Act No. 12, SECTION 1; 2000 Act No. 335, SECTION 1; 1976 Code SECTION 40-60-50.<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+Effect of Amendment<br /><br />
+	2016 Act No. 243, SECTION 1, in (B)(4), inserted &quot;and at least one of whom must be a certified residential appraiser&quot;.<br /><br />
+	2017 Act No. 32, SECTION 2, in (B), substituted &quot;eight members&quot; for &quot;seven members&quot;, and added (B)(5), relating to the requirement that one board member must represent an appraisal management company registered with the board.<br /><br />
+	2024 Act No. 196, SECTION 1, in (B), in (2), deleted &quot;who is not a real estate appraiser&quot; from the end, and in (4), in the first sentence, substituted &quot;one of whom must be a certified general appraiser&quot; for &quot;at least two of whom must be certified general appraisers and at least&quot;.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-20.</span> Definitions.<br /><br />
+	As used in this chapter unless the context requires otherwise:<br /><br />
+	(1) &quot;Analysis&quot; means a study of real estate or real property other than one estimating value.<br /><br />
+	(2) &quot;Appraisal&quot;, as a noun, means the act or process of developing an opinion of value; as an adjective, &quot;appraisal&quot; means of or pertaining to appraising and related functions including, but not limited to, appraisal practice and appraisal services.<br /><br />
+	(3) &quot;Appraisal assignment&quot; or &quot;valuation assignment&quot; means an engagement for which an appraiser is employed or retained to act, or would be perceived by third parties or the public as acting, as a disinterested third party in rendering an unbiased analysis, opinion, or conclusion that estimates the value of real estate.<br /><br />
+	(4) &quot;Appraisal Foundation&quot; means the Appraisal Foundation established on November 30, 1987, as a not-for-profit corporation under the laws of Illinois, containing the Appraisal Standards Board (ASB), Appraiser Qualifications Board (AQB), a board of trustees, and other advisory bodies.<br /><br />
+	(5) &quot;Appraisal report&quot; means any communication, written or oral, of an appraisal or appraisal review. The testimony of an individual dealing with the analyses, conclusions, or opinions concerning identified real estate or real property is considered to be an oral appraisal report.<br /><br />
+	(6) &quot;Appraisal subcommittee&quot; means the designees of the heads of the federal financial institutions regulatory agencies established by the Federal Financial Institutions Examination Council Act of 1978 (12 U.S.C. Section 3301, et seq.), as amended, as well as the Secretary of the Department of Housing and Urban Development, or the secretary&#39;s designee, under the Department of Housing and Urban Development Reform Act of 1989 (12 U.S.C. Section 1708(g)).<br /><br />
+	(7) &quot;Appraiser&quot; means a person who holds a license or certification issued by the board to perform valuation services competently and in a manner that is independent, impartial, and objective, and in accordance with all applicable laws.<br /><br />
+	(8) &quot;Apprentice appraiser&quot; means an individual who holds a credential issued by the board to assist a state-certified appraiser in the performance of an appraisal if the apprentice is actively supervised by the certified appraiser.<br /><br />
+	(9) &quot;Board&quot; means the South Carolina Real Estate Appraisers Board established pursuant to the provisions of this chapter.<br /><br />
+	(10) &quot;Complex residential property appraisal&quot; means one in which the property to be appraised, the form of ownership, or market conditions are atypical.<br /><br />
+	(11) &quot;Federally related transaction&quot; means any real estate-related financial transaction which a federal financial institution regulatory agency engages in, contracts for, or regulates and which requires the services of an appraiser.<br /><br />
+	(12) &quot;Mass appraisal&quot; means the process of valuing a universe of properties as of a given date using standard methodology, employing common data, and allowing for statistical testing.<br /><br />
+	(13) &quot;Mass appraiser&quot; means any appraiser who is employed in the office of a tax assessor to appraise real property for ad valorem tax purposes and who is licensed or certified as a mass appraiser.<br /><br />
+	(14) &quot;Noncomplex residential property appraisal&quot; means one in which the property to be appraised, the form of ownership, and market conditions are those which are typically found in the subject market.<br /><br />
+	(15) &quot;Person&quot; means an individual, corporation, partnership, or association, foreign and domestic.<br /><br />
+	(16) &quot;Price&quot; means the amount asked, offered, or paid for a property.<br /><br />
+	(17) &quot;Real estate&quot; means an identified parcel or tract of land including improvements, if any.<br /><br />
+	(18) &quot;Real estate appraisal activity&quot; means the act or process of performing an appraisal and preparing an appraisal report.<br /><br />
+	(19) &quot;Real property&quot; means the interests, benefits, and rights inherent in the ownership of real estate.<br /><br />
+	(20) &quot;Residential appraisal&quot; is an appraisal of a vacant or improved parcel of land that is devoted to or available for use as a one-to-four family abode including, but not limited to, a single-family home, apartment, or rooming house.<br /><br />
+	(21) &quot;Standards of professional appraisal practice&quot; or &quot;USPAP&quot; means the National Uniform Standards of Professional Appraisal Practice as adopted by the Appraisal Standards Board of the Appraisal Foundation and adopted by the board.<br /><br />
+	(22) &quot;State-certified general appraiser&quot; means an appraiser authorized to engage in the appraisal of all types of real property.<br /><br />
+	(23) &quot;State-certified general mass appraiser&quot; means an appraiser authorized to engage in all types of real estate mass appraisal activity for ad valorem purposes.<br /><br />
+	(24) &quot;State-certified residential appraiser&quot; means an appraiser authorized to engage in the appraisal of one to four residential units without regard to transaction value or complexity and nonresidential appraisals with a transaction value less than five hundred thousand dollars.<br /><br />
+	(25) &quot;State-certified residential mass appraiser&quot; means an appraiser authorized to engage in the mass appraisal of one to four residential units without regard to value or complexity and nonresidential appraisals with a transaction value less than five hundred thousand dollars.<br /><br />
+	(26) &quot;State-licensed appraiser&quot; means an appraiser authorized to engage in the appraisal of noncomplex one to four residential units having a transaction value less than one million dollars and complex one to four residential units and nonresidential appraisals having a transaction value less than five hundred thousand dollars.<br /><br />
+	(27) &quot;State-licensed mass appraiser&quot; means an appraiser authorized to engage in the mass appraisal of noncomplex one to four residential units having a transaction value less than one million dollars and complex one to four residential units and nonresidential appraisals having a transaction value less than five hundred thousand dollars.<br /><br />
+	(28) &quot;Timberland&quot; means forestland that is producing or is capable of producing timber as a crop.<br /><br />
+	(29) &quot;Valuation services&quot; means the value of real estate or real property based on assignment instructions of the client in accordance with federal law or regulations.<br /><br />
+	(30) &quot;Value&quot; means the monetary relationship between properties and those who buy, sell, or use those properties, expressed as an opinion of the worth of the property at a given time.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2014 Act No. 180 (H.4644), SECTION 1, eff May 16, 2014; 2016 Act No. 243 (H.5023), SECTION 2, eff June 5, 2016; 2024 Act No. 196 (H.3278), SECTION 2, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:1991 Act No. 12, SECTION 1; 1993 Act No. 143, SECTION 1; 1994 Act No. 385, SECTION 19; 2000 Act No. 335, SECTION 1.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 180, SECTION 1, in the introductory paragraph, deleted &quot;In addition to the definitions provided in Section 40-1-20,&quot;; in subsection (2), deleted &quot;for or in expectation of compensation, fee, or other consideration&quot; following &quot;value&quot;; in subsection (4), added the acronyms; in subsection (5), substituted &quot;an individual dealing with the analyses&quot; for &quot;an appraiser dealing with the appraiser&#39;s analyses&quot;; in subsection (8), substituted &quot;Apprentice appraiser&quot; for &quot;Appraiser apprentice&quot;; deleted former subsection (13), definition of &quot;Independent appraisal assignment&quot;; redesignated the remaining subsections accordingly; in subsection (19), substituted &quot;an oral or written report&quot; for &quot;an appraisal report&quot;; and made other nonsubstantive changes.<br /><br />
+	2016 Act No. 243, SECTION 2, in (5), definition of &quot;appraisal report&quot;, substituted &quot;may be considered&quot; for &quot;is considered&quot;; in (8), definition of &quot;apprentice appraiser&quot;, added a hyphen between &quot;state&quot; and &quot;certified&quot;; deleted former (11) and (22), definitions of &quot;evaluation&quot; and &quot;specialized services&quot;; in (18), definition of &quot;real estate appraisal activity&quot;, substituted &quot;performing an appraisal and preparing an appraisal report&quot; for &quot;valuing real estate or real property and preparing an oral or written report&quot;; and redesignated the paragraphs accordingly.<br /><br />
+	2024 Act No. 196, SECTION 2, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-30.</span> License requirement; exceptions.<br /><br />
+	It is unlawful for an individual to assume or use a title, designation, or abbreviation likely to create the impression that the person is a real estate appraiser or to engage in real estate appraisal activity or advertise as an appraiser without a valid license issued by the department. However, nothing in this chapter may be construed to apply to:<br /><br />
+	(1) A real estate licensee licensed in accordance with Chapter 57, Title 40 who performs valuation services of real estate for a client or customer on the condition that the valuation service is not referred to as an appraisal. In performing a valuation service, which federal law or regulation does not require a license or certified appraiser, the real estate licensee must disclose to the requesting party: &quot;This valuation service may not be used for the purposes of obtaining financing in a federally related transaction.&quot;.<br /><br />
+	(2) A forester registered pursuant to Chapter 27, Title 48 who performs valuation services on standing or growing timber or timberland located in this State and issues a valuation service on the timber or timberland, as permitted by Chapter 27, Title 48 and Regulation 53-13. When a valuation service is to be used in a federally related transaction, the registered forester must be licensed or certified under this chapter if required by federal law or regulation.<br /><br />
+	(3) A person employed by a lender in the performance of valuation services, with respect to which federal law or regulations does not require a licensed or certified appraiser.<br /><br />
+	(4) A person, credentialed by this board in the performance of valuation services, with respect to which federal law or regulation does not require a licensed or certified appraiser.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2016 Act No. 243 (H.5023), SECTION 3, eff June 5, 2016; 2024 Act No. 196 (H.3278), SECTION 3, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:1991 Act No. 12, SECTION 1; 1993 Act No. 143, SECTION 1; 2000 Act No. 335, SECTION 1.<br /><br />
+Effect of Amendment<br /><br />
+	2016 Act No. 243, SECTION 3, in the first paragraph, inserted &quot;real estate&quot; before &quot;appraisal activity&quot;; in (1), deleted a hyphen between &quot;federally&quot; and &quot;related&quot;; rewrote (2), substituting &quot;values&quot; and &quot;valuation&quot; for &quot;evaluates&quot; and &quot;evaluation&quot;, adding reference to Chapter 27, Title 48 and Regulation 53-13 at the end of the first sentence, and deleting a hyphen between &quot;federally&quot; and &quot;related&quot;; and added (3), relating to an exception.<br /><br />
+	2024 Act No. 196, SECTION 3, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-31.</span> Qualifications.<br /><br />
+	To qualify as an appraiser, an applicant shall:<br /><br />
+	(1) have attained the age of eighteen years;<br /><br />
+	(2) satisfy educational requirements of having:<br /><br />
+	(a) as an apprentice, state-licensed, or mass appraiser:<br /><br />
+	(i) a high school diploma; or<br /><br />
+	(ii) hold a certificate of equivalency;<br /><br />
+	(b) as a state-certified residential appraiser:<br /><br />
+	(i) a high school diploma or certificate of equivalency; and<br /><br />
+	(ii) additional education as required by the Appraiser Qualifications Board of the Appraisal Foundation or as promulgated by the board through regulation;<br /><br />
+	(3) submit proof of completion of appraiser qualifying education as required by the Appraiser Qualifications Board and experience requirements as specified in this chapter or promulgated by the board through regulation;<br /><br />
+	(4) submit certificates of licensure from all jurisdictions where presently or previously certified;<br /><br />
+	(5) submit to a state fingerprint-based criminal records check, to be conducted by the State Law Enforcement Division, a national criminal records check, supported by fingerprints, conducted by the FBI, and, if required by the Appraiser Qualifications Board, undergo a criminal background check in compliance with AQB requirements to be submitted by the applicant with his application; and<br /><br />
+	(6) pass an examination, if applicable. An applicant who does not become licensed or certified within two years after passing the examination must retake the examination.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2014 Act No. 180 (H.4644), SECTION 2, eff May 16, 2014; 2024 Act No. 196 (H.3278), SECTION 4, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:1991 Act No. 12, SECTION 1; 1993 Act No. 143, SECTION 3; 2000 Act No. 335, SECTION 1; 1976 Code SECTIONS 40-60-70, 40-60-80.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 180, SECTION 2, rewrote subsection (2), added subsection (5); redesignated former subsection (5) as subsection (6); and rewrote subsection (6).<br /><br />
+	2024 Act No. 196, SECTION 4, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-32.</span> Application forms.<br /><br />
+	An application for examination, permit, licensure, or certification must be completed in writing on a form prescribed by the department.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:2000 Act No. 335, SECTION 1; 1976 Code SECTION 40-60-90.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-33.</span> Educational and applicable experience requirements.<br /><br />
+	In addition to the requirements of Section 40-60-31, an applicant for a permit, license, or certification shall provide proof of having met the following educational and applicable experience requirements:<br /><br />
+	(1) To qualify as an apprentice appraiser, an applicant shall:<br /><br />
+	(a) furnish evidence that the applicant will be supervised by an appraiser who is state-certified by the board;<br /><br />
+	(b) furnish evidence that the applicant has successfully completed additional education as required by the Appraiser Qualifications Board or promulgated by the board in regulation; and<br /><br />
+	(c) successfully complete a trainee/supervisor course conducted in compliance with the Appraiser Qualifications Board requirements.<br /><br />
+	(2) To qualify as a state-licensed appraiser or licensed mass appraiser, an applicant shall:<br /><br />
+	(a) furnish evidence that the applicant has successfully completed additional education as required by the Appraiser Qualifications Board or promulgated by the board in regulation;<br /><br />
+	(b) successfully complete experience as required by the Appraiser Qualifications Board or promulgated by the board in regulation. Experience may include, but is not limited to, fee and staff appraisal, ad valorem tax appraisal not to exceed fifty percent of the total hours claimed, review appraisal, appraisal analysis, highest and best use analysis, and feasibility analysis/study. Mass appraiser experience may be one hundred percent ad valorem tax appraisal. The verification for experience credit claimed by an applicant must be by affidavit on forms prescribed by the board; and<br /><br />
+	(c) pass an examination approved by the board. The prerequisites to sit for the examination are completion of the educational requirements and appraisal experience.<br /><br />
+	(3) To qualify as a state-certified residential appraiser or certified residential mass appraiser, an applicant shall:<br /><br />
+	(a) furnish evidence that the applicant has successfully completed additional education as required by the Appraiser Qualifications Board or promulgated by the board in regulation;<br /><br />
+	(b) successfully complete experience as required by the Appraiser Qualifications Board or promulgated by the board in regulation. Experience may include, but is not limited to, fee and staff appraisal, ad valorem tax appraisal not to exceed fifty percent of the total hours claimed, review appraisal, appraisal analysis, highest and best use analysis, and feasibility analysis/study. Mass appraiser experience may be one hundred percent ad valorem tax appraisal. The verification for experience credit claimed by an applicant must be by affidavit on forms prescribed by the board; and<br /><br />
+	(c) pass an examination approved by the board. The prerequisites to sit for the examination are completion of the educational requirements and appraisal experience.<br /><br />
+	(4) To qualify as a state-certified general appraiser or certified general mass appraiser, an applicant shall:<br /><br />
+	(a) furnish evidence that the applicant has successfully completed additional education required by the Appraiser Qualifications Board or promulgated by the board in regulation;<br /><br />
+	(b) successfully complete experience as required by the Appraiser Qualifications Board or promulgated by the board in regulation. Experience may include, but is not limited to, fee and staff appraisal, ad valorem tax appraisal not to exceed fifty percent of the total hours claimed, review appraisal, appraisal analysis, highest and best use analysis, and feasibility analysis/study. Mass appraiser experience may be one hundred percent ad valorem tax appraisal. The verification for experience credit claimed by an applicant must be by affidavit on forms prescribed by the board; and<br /><br />
+	(c) pass an examination approved by the board. The prerequisites to sit for the examination are completion of the educational requirements and appraisal experience.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2014 Act No. 180 (H.4644), SECTION 3, eff May 16, 2014; 2024 Act No. 196 (H.3278), SECTION 5, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:1991 Act No. 12, SECTION 1; 1993 Act No. 143, SECTION 4; 1994 Act No. 385, SECTION 22; 2000 Act No. 335, SECTION 1; 1976 Code SECTIONS 40-60-90, 40-60-100.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 180, SECTION 3, in subsection (1), substituted &quot;apprentice appraiser&quot; for &quot;appraiser apprentice&quot;; added subsection (1)(c); in subsections (2)(c), (3)(c), and (4)(c), substituted &quot;The prerequisites&quot; for &quot;The only prerequisite&quot;, and added &quot;and appraisal experience&quot;; in subsection (5), substituted &quot;state-certified residential mass appraiser, or state-certified general mass appraiser&quot; for &quot;certified mass appraiser, or certified general mass appraiser&quot;; and made other nonsubstantive changes.<br /><br />
+	2024 Act No. 196, SECTION 5, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-34.</span> Identification numbers; requirements relating to apprentice appraiser and appraiser supervising apprentice; temporary permits for appraisers licensed in another state; retaining copies of appraisals; issuance of license following revocation.<br /><br />
+	(A) The board shall prescribe the form of a license and certificate containing an identification number that the appraiser shall use when signing appraisal reports. When an appraiser advertises or executes contracts or other instruments, the appraiser&#39;s name, appraiser classification, and number assigned by the board must be printed or typed adjacent to the appraiser&#39;s signature.<br /><br />
+	(B) The apprentice appraiser performing appraisal work or seeking to establish experience for a state-licensed or state-certified designation shall:<br /><br />
+	(1) perform appraisal assignments only under the direct supervision of a state-certified appraiser;<br /><br />
+	(2) maintain, jointly with the supervising appraiser, a log containing the following for each assignment:<br /><br />
+	(a) type of property;<br /><br />
+	(b) date of report;<br /><br />
+	(c) address of appraised property;<br /><br />
+	(d) description of work performed by the apprentice and scope of review and supervision of the supervising appraiser;<br /><br />
+	(e) number of actual work hours by the apprentice on the assignment; and<br /><br />
+	(f) signature and state certification number of the supervising appraiser with a separate appraisal log maintained for each supervising appraiser, if applicable;<br /><br />
+	(3) sign or be given credit in all appraisal reports for which the apprentice acts as an appraiser;<br /><br />
+	(4) maintain or have access to complete copies of all appraisals.<br /><br />
+	(C) The apprentice appraiser performing mass appraisal work seeking to establish credit for a licensed or certified mass appraiser designation shall:<br /><br />
+	(1) perform appraisal assignments only under the direct supervision of a state-certified residential or state-certified general real estate appraiser, mass or otherwise;<br /><br />
+	(2) maintain a log on a form provided by the board.<br /><br />
+	(D) The supervisory appraiser supervising an apprentice appraiser shall:<br /><br />
+	(1) personally review appraisal reports prepared by the apprentice and sign and certify the report as being independently and impartially prepared in compliance with the National USPAP and applicable statutory requirements;<br /><br />
+	(2) provide a copy or access to final appraisal documents to any participating apprentice;<br /><br />
+	(3) directly supervise no more than three apprentice appraisers at any one given time, unless board approval is received to supervise more than three apprentices subject to required progress monitoring as approved by the board;<br /><br />
+	(4) be certified for a minimum of three years and not subject to any disciplinary action within the immediately preceding three years that affects the supervisory appraiser&#39;s legal eligibility to engage in appraisal practice; and<br /><br />
+	(5) successfully complete a trainee/supervisor course conducted in compliance with Appraiser Qualifications Board requirements.<br /><br />
+	(E) The supervisory appraiser supervising an apprentice appraiser performing mass appraisal work shall personally review and approve all work performed by the apprentice to ensure that the work is prepared in compliance with the National USPAP and applicable statutory requirements.<br /><br />
+	(F) The board may issue to an appraiser who is licensed or certified in another state a temporary permit, which is only effective for one specific appraisal assignment. If the appraisal is not completed within six months from the date of the permit, the board may grant an extension upon request from the appraiser prior to the expiration of the current temporary permit. The appraiser shall place the following notation on all statements of qualification, contracts, or other instruments: &quot;Practicing in the State of South Carolina under Temporary Permit No.&quot;.<br /><br />
+	(G) Licenses and certifications issued by the board expire biennially on June thirtieth. As a condition of renewal, an appraiser shall provide evidence satisfactory to the board of having met the continuing education requirements established by this chapter. An apprentice appraiser may maintain his license for five years before applying for an upgrade, provided continuing education requirements are satisfied biennially at renewal.<br /><br />
+	(H) Licenses and certifications not renewed by date of expiration are no longer valid but may be reinstated within twelve months after expiration upon proper application, payment of renewal fee, a late penalty, as established in the fee schedule, and proof of having met continuing education requirements as prescribed.<br /><br />
+	(I) A license or certification that has expired and has not been reinstated by the last day of the twelfth month following expiration must be canceled. Such a canceled license or certification may be considered for reinstatement as provided by the board in regulation.<br /><br />
+	(J) A license or certification may be placed on inactive status by informing the board in writing and must be renewed in the same manner as provided for active renewal. An expired or lapsed apprentice appraiser licensee can reapply for licensure if initial qualifying courses have been completed within five years of the application date.<br /><br />
+	(K) An appraiser must retain the work file for a period of at least five years after preparation or at least two years after the final disposition of any judicial proceeding in which the appraiser provided testimony related to the assignment, whichever period expires last. The work file must include the original or exact copy of each appraisal report prepared or signed by the appraiser and all supporting data assembled and formulated by the appraiser in preparing each appraisal report. The five-year period for retention of records is applicable to each engagement of the services of the appraiser and commences on the date of delivery of each appraisal report to the client.<br /><br />
+	(L) An appraiser who has had a license or certification revoked by the board may not be issued a new license or certification within two years after the date of the revocation or at any time thereafter except upon an affirmative vote of a majority of the board.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2014 Act No. 180 (H.4644), SECTION 4, eff May 16, 2014; 2016 Act No. 243 (H.5023), SECTION 4, eff June 5, 2016; 2024 Act No. 196 (H.3278), SECTION 6, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:2000 Act No. 335, SECTION 1; 1976 Code SECTION 40-60-110.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 180, SECTION 4, rewrote subsection (B); in subsections (C), (E), (G), substituted &quot;apprentice appraiser&quot; for &quot;appraiser apprentice&quot;; rewrote subsection (D); and made other nonsubstantive changes.<br /><br />
+	2016 Act No. 243, SECTION 4, amended (I) and (L), revising requirements concerning expired and revoked licenses, certifications, and permits.<br /><br />
+	2024 Act No. 196, SECTION 6, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-35.</span> Continuing education requirements; exceptions.<br /><br />
+	(A)(1) For renewal of an active license or certification, an appraiser shall present evidence biennially of satisfactory completion by the applicant of twenty-eight hours of instruction in courses or seminars that have been approved by the board, of which seven hours must be the National USPAP update course current at the time of renewal. Licensees shall report completed continuing education as required by the board.<br /><br />
+	(2) For renewal of an active license or certification, assessors and other staff responsible for the assessment of property for ad valorem taxation purposes shall receive seven hours of instruction each year in the laws applicable to assessment for ad valorem taxation, methods of valuing property, administration of the assessor&#39;s office and records of the assessor&#39;s office, and other functions related to the assessor&#39;s office. This instruction shall be received from the Department of Revenue or other providers or courses approved by the Department of Labor, Licensing and Regulation. This instruction shall satisfy fourteen of the twenty-eight hours required for renewal.<br /><br />
+	(B) A permit, license, or certification of an appraiser that has been suspended may not be reissued until the applicant presents evidence of completion of the continuing education required by this section.<br /><br />
+	(C) An appraiser who fails to complete the continuing education requirements by the date of license renewal may renew by submitting applicable fees but must immediately be placed on inactive status and may not engage in appraising while on inactive status. The appraiser seeking to activate shall pay the applicable fee and meet the continuing education required by this section.<br /><br />
+	(D) Appraisers may request to receive credit for continuing education for a course that has not been preapproved by the board. However, credit may be granted only if the appraiser provides satisfactory proof of course qualification, and the board finds that the course meets the criteria set for continuing education courses with regard to subject matter, course length, instructor qualification, and student attendance.<br /><br />
+	(E) An approved instructor may receive up to one-half of his continuing education credit for the amount of continuing education courses he teaches, subject to board approval.<br /><br />
+	(F) A nonresident appraiser who successfully satisfies the continuing education requirements of the jurisdiction of their residence must be considered to satisfy the continuing education requirements of this State.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2010 Act No. 204, SECTION 1, eff June 7, 2010; 2014 Act No. 180 (H.4644), SECTION 5, eff May 16, 2014; 2024 Act No. 196 (H.3278), SECTION 7, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:2000 Act No. 335, SECTION 1; 1976 Code SECTION 40-60-130.<br /><br />
+Effect of Amendment<br /><br />
+	The 2010 amendment, in subsection (A)(2), substituted &quot;seven&quot; for &quot;nine&quot; preceding &quot;hours of instruction&quot; in the first sentence, substituted &quot;Labor, Licensing and Regulation&quot; for &quot;Revenue&quot; at the end of the second sentence, and substituted &quot;fourteen&quot; for &quot;eighteen&quot; following &quot;instruction shall satisfy&quot; in the third sentence.<br /><br />
+	2014 Act No. 180, SECTION 5, in subsection (A), twice deleted &quot;classroom&quot; before &quot;hours&quot;; in subsection (A)(1), added text relating to National USPAP update course; and redesignated and rewrote former subsection (E) as subsections (E) and (F).<br /><br />
+	2024 Act No. 196, SECTION 7, in (A)(1), in the first sentence, substituted &quot;active license&quot; for &quot;active permit, license,&quot;, and added the second sentence.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-36.</span> Approval of courses, educational providers and instructors; instructor workshops.<br /><br />
+	(A) The board shall establish and publish standards relevant to the approval and conduct of appraiser education required by this chapter.<br /><br />
+	(B) The board shall review, approve, and regulate educational courses required by this chapter and providers and instructors of these courses including, but not limited to, accredited colleges, universities, private business entities, organizations, schools, associations, individuals, and institutions.<br /><br />
+	(C) The board may deny, publicly or privately reprimand, fine, suspend, or revoke the approval of an education provider or instructor if the board finds that the education provider or instructor has violated or failed to satisfy the provisions of this chapter or the regulations and standards promulgated pursuant to this chapter.<br /><br />
+	(D) Application by providers seeking approval to offer and conduct educational instruction or application by instructors must be made on a form prescribed by the board and accompanied by applicable fees not less than sixty days before a course offering and must be approved by the board before the commencement of any instruction.<br /><br />
+	(E) If an application for provider, instructor, or course is not approved, the reason must be detailed, and the applicant must be given thirty days to respond.<br /><br />
+	(F) Upon approval, certificates must be issued to providers, courses, and instructors to be renewed biennially.<br /><br />
+	(G) Approved courses must be taught by approved instructors who are qualified and have demonstrated knowledge of the subject matter to be taught as well as the ability to teach.<br /><br />
+	(H) Providers must report completed continuing education of licensees within fourteen days of course completion as required by the board.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2014 Act No. 180 (H.4644), SECTION 6, eff May 16, 2014; 2016 Act No. 243 (H.5023), SECTION 5, eff June 5, 2016; 2024 Act No. 196 (H.3278), SECTION 8, eff May 21, 2024.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 180, SECTION 6, substituted &quot;board&quot; for &quot;department&quot; throughout.<br /><br />
+	2016 Act No. 243, SECTION 5, in (C), inserted &quot;publicly or privately&quot;.<br /><br />
+	2024 Act No. 196, SECTION 8, rewrote (H).<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-37.</span> Reciprocal applications from appraisers from other jurisdictions; consent of nonresident appraiser to South Carolina court jurisdiction.<br /><br />
+	(A) The board must grant a reciprocal credential to an appraiser credentialed in another jurisdiction if:<br /><br />
+	(1) the appraiser holds a valid credential to value real property that is in good standing in at least one other jurisdiction; and<br /><br />
+	(2) the requirements to obtain a credential to value real property in the jurisdiction in which the appraiser is credentialed have been found by the appraisal subcommittee to conform to the qualification criteria of the Appraiser Qualifications Board.<br /><br />
+	(B) A nonresident applicant shall file an irrevocable consent that suits and actions may be commenced against the applicant in the proper court in a judicial circuit of the State in which a cause of action may arise or in which the plaintiff may reside by the service of process or pleading, authorized by the laws of the State, on the Director of the Department of Labor, Licensing and Regulation. The consent must stipulate that the service of process or pleading must be taken and held in all courts to be as valid and binding as if service had been made upon the applicant in South Carolina. If the process or pleadings mentioned in this chapter are served upon the Director of the Department of Labor, Licensing and Regulation, it must be by duplicate copies, one of which must be filed in the office of the board and the other immediately forwarded by the board by registered or certified mail to the applicant against whom the process or pleadings are directed, at the last known address of the applicant as shown by the records of the board.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2014 Act No. 180 (H.4644), SECTION 7, eff May 16, 2014; 2024 Act No. 196 (H.3278), SECTION 9, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:2000 Act No. 335, SECTION 1; 1976 Code SECTION 40-60-120.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 180, SECTION 7, in subsection (A), substituted &quot;accept reciprocal applications from appraisers from other jurisdictions. These applicants may be given&quot; for &quot;enter into reciprocal agreements with appraiser regulatory authorities of other jurisdictions which provide for&quot;.<br /><br />
+	2024 Act No. 196, SECTION 9, rewrote (A).<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-38.</span> Adoption of and conformity to national standards of professional appraiser practice.<br /><br />
+	The board shall adopt the standards and amendments to these standards of professional appraisal practice, as promulgated by the Appraisal Standards Board of the Appraisal Foundation. All apprentice appraisers and state licensed and certified appraisers shall conform their professional conduct to the National USPAP and its amendments, as promulgated by the Appraisal Standards Board.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2014 Act No. 180 (H.4644), SECTION 8, eff May 16, 2014.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:1993 Act No. 143, SECTION 6; 1994 Act No. 385, SECTION 22; 2000 Act No. 335, SECTION 1; 1976 Code SECTIONS 40-60-145, 40-60-240.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 180, SECTION 8, substituted &quot;apprentice appraisers&quot; for &quot;appraiser apprentices&quot;.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-39.</span> Conformity of education and other requirements to those established by federal statutes and regulations.<br /><br />
+	The board is authorized to waive or to modify any experience, examination, or education requirements established for appraisers in this chapter in order to bring those requirements into conformity with any requirements established by federal statutes and regulations relating to state licensure of appraisers as established by federal financial institutions regulatory agencies, as defined in Title XI of the U.S. Code, or the Department of Housing and Urban Development, or other similar agencies.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:2000 Act No. 335, SECTION 1; 1976 Code SECTION 40-60-250.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-40.</span> Appraiser contact information; notification of change of address or telephone number; service of notice.<br /><br />
+	(A) Each licensee and apprentice must maintain on file with the board a current physical address at which they may be found.<br /><br />
+	(B) Each licensee and apprentice must notify the board in writing within fifteen days of any change in residential address, office address, office telephone number, or email address.<br /><br />
+	(C) Service of any notice upon a licensee who cannot be found at the last known address provided by the licensee may be made by leaving with the director, or designee, a copy of the notice and any accompanying documents along with proof of attempted service at the last known address. The board may set aside and reopen a proceeding upon satisfactory showing by the licensee of good cause as to why the licensee did not receive service of the notice.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2024 Act No. 196 (H.3278), SECTION 10, eff May 21, 2024.<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 196, SECTION 10, in (A), substituted &quot;physical address&quot; for &quot;street address&quot;; and in (B), substituted &quot;office telephone number, or email address&quot; for &quot;or office telephone number&quot;.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-50.</span> Administrative support; lists of licensed and certified real estate appraisers; fees.<br /><br />
+	(A) The Department of Labor, Licensing and Regulation shall provide all administrative, fiscal, investigative, inspection, clerical, secretarial, and license renewal operations and activities of the board in accordance with Section 40-1-50.<br /><br />
+	(B) The board periodically shall transmit to the appraisal subcommittee as defined in Section 40-60-20(6), a roster of individuals who have become state licensed real estate appraisers and state certified real estate appraisers and shall collect and transmit any information or fees established under Public Law 101-73, Title XI, Real Estate Appraisal Reform Amendments. The board may collect a processing fee necessary to carry out its duties under this subsection.<br /><br />
+	(C) Initial fees must be established by the board in statute or regulation and shall serve as the basis for necessary adjustments in accordance with Section 40-1-50 to ensure that they are sufficient, but not excessive, to cover expenses, including the total of the direct and indirect costs to the State for the operations of the board.<br /><br />
+	(D) Application and license fees are payable to the department in advance and must accompany an application or proper documentation. Fees are nonrefundable.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2016 Act No. 243 (H.5023), SECTION 6, eff June 5, 2016; 2024 Act No. 196 (H.3278), SECTION 11, eff May 21, 2024.<br /><br />
+Effect of Amendment<br /><br />
+	2016 Act No. 243, SECTION 6, in (D), deleted the former second sentence, relating to certified funds.<br /><br />
+	2024 Act No. 196, SECTION 11, in (D), in the first sentence, substituted &quot;application or proper documentation&quot; for &quot;examination application or a license application&quot;.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-70.</span> Code of ethics.<br /><br />
+	Appraisers shall conduct themselves in accordance with a code of ethics as established in the Uniform Standards of Professional Appraisal Practice (USPAP) and adopted by the board.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2024 Act No. 196 (H.3278), SECTION 12, eff May 21, 2024.<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 196, SECTION 12, inserted &quot;as established in the Uniform Standards of Professional Appraisal Practice (USPAP) and&quot;.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-80.</span> Investigation of complaints and violations; stays; appeal.<br /><br />
+	(A) The department shall investigate complaints and violations of this chapter as provided in this chapter and Section 40-1-80.<br /><br />
+	(B) If a complaint filed with the board involves an appraisal report that varies from a sales, lease, or exchange price, the board may decline to conduct an investigation.<br /><br />
+	(C) If a complaint filed with this board is received without a stated complainant, along with contact information and supporting documentation as to potential violations, the board may decline to conduct an investigation.<br /><br />
+	(D) The board is prohibited from conducting an investigation based solely on a dispute over the value of property for ad valorem tax purposes.<br /><br />
+	(E) A person aggrieved by a final action of the board may seek review of the decision in accordance with Section 40-1-160 and the South Carolina Administrative Procedures Act.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2014 Act No. 180 (H.4644), SECTION 9, eff May 16, 2014; 2016 Act No. 243 (H.5023), SECTION 7, eff June 5, 2016; 2024 Act No. 196 (H.3278), SECTION 13, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:1991 Act No. 12, SECTION 1; 1993 Act No. 143, SECTION 7; 1993 Act No. 181, SECTION 938; 1994 Act No. 385, SECTION 22; 2000 Act No. 335, SECTION 1; 1976 Code SECTIONS 40-60-160, 40-60-150.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 180, SECTION 9, in subsection (A), inserted &quot;this chapter and&quot;.<br /><br />
+	2016 Act No. 243, SECTION 7, deleted former (D), relating to stay or supersedeas; redesignated former (E) as (D); and in (D), inserted reference to the Administrative Procedures Act.<br /><br />
+	2024 Act No. 196, SECTION 13, inserted (C), and redesignated former (C) and (D) as (D) and (E), respectively.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-90.</span> Power to administer oaths.<br /><br />
+	In addition to the powers and duties enumerated in Section 40-1-90, the presiding officer of the board may administer oaths when taking testimony upon any and all matters pertaining to the business or duties of the board.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-100.</span> Restraining orders and cease and desist orders.<br /><br />
+	Restraining orders and cease and desist orders may be issued in accordance with Section 40-1-100.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-110.</span> Grounds for denying license or taking disciplinary action.<br /><br />
+	In addition to the grounds provided in Section 40-1-110, the board may deny licensure to an applicant or may take disciplinary action against an appraiser who:<br /><br />
+	(1) fails to meet the minimum qualifications for a license or certification established by or pursuant to this chapter;<br /><br />
+	(2) procures or attempts to procure a license or certification by knowingly making a false statement, submitting false information, or making a material misrepresentation in an application filed with the board, or procures or attempts to procure a license or certification through fraud or misrepresentation;<br /><br />
+	(3) performs an act in the practice of real estate appraising that constitutes dishonest, fraudulent, or improper conduct;<br /><br />
+	(4) engages in the business of real estate appraising under an assumed or fictitious name;<br /><br />
+	(5) pays a finder&#39;s fee or a referral fee in connection with an appraisal of real estate or real property in this State;<br /><br />
+	(6) makes a false or misleading statement in that portion of a written appraisal report that deals with professional qualifications or in any testimony concerning professional qualifications;<br /><br />
+	(7) violates the confidential nature of governmental records to which an appraiser gained access through employment or engagement as an appraiser by a governmental agency;<br /><br />
+	(8) violates any of the standards for the development or communication of real estate appraisals as set forth in this chapter or regulations promulgated pursuant to this chapter;<br /><br />
+	(9) fails or refuses without good cause to exercise reasonable diligence in developing an appraisal, preparing an appraisal report, or communicating an appraisal;<br /><br />
+	(10) exhibits negligence or incompetence in developing an appraisal, in preparing an appraisal report, or in communicating an appraisal;<br /><br />
+	(11) accepts an independent appraisal assignment or valuation assignment when the employment itself or fee to be paid was contingent upon the appraiser&#39;s reporting a predetermined estimate, analysis, valuation, opinion, or conclusion or upon the award, recovery, or consequences resulting from the appraisal assignment;<br /><br />
+	(12) fails to retain records in accordance with this chapter or regulations promulgated pursuant to this chapter;<br /><br />
+	(13) fails upon reasonable request of an investigator of the board to make all records required to be maintained under this chapter available to the board for inspection and copying by the board or fails to appear upon reasonable request for an interview with an investigator of the board;<br /><br />
+	(14) demonstrates bad faith, dishonesty, untrustworthiness, or incompetency to act as an appraiser in a manner so as to endanger the interests of the public;<br /><br />
+	(15) performs or attempts to perform any real estate appraisal activity on property located in another state without first having complied with that state&#39;s laws regarding real estate appraisal activity;<br /><br />
+	(16) performs or attempts to perform, if licensed or certified as a mass appraiser, any appraisal other than those for ad valorem tax purposes and directly related to the assessor office employment duties of the mass appraiser, unless assisting and supervised by a nonmass-certified appraiser;<br /><br />
+	(17) has been convicted of or pleaded guilty or nolo contendere to a felony relating to the practice of appraisal, banking, mortgage lending, or the provision of financial services, or a crime involving fraud or misrepresentation;<br /><br />
+	(18) fails to report to the department in writing by certified mail, within ten days, notice of conviction of a crime provided for in item (17);<br /><br />
+	(19) has had a license to practice a regulated profession or occupation in this State, another state or jurisdiction canceled, revoked, suspended, or otherwise disciplined;<br /><br />
+	(20) issues a check to the board that is returned for insufficient funds or closed account;<br /><br />
+	(21) fails to comply with or obey a final order of the board or has failed to comply with an order, subpoena, or directive of the board or department;<br /><br />
+	(22) violates any provision of this chapter or any regulation promulgated under this chapter;<br /><br />
+	(23) has knowingly performed an act that in any way assists an unlicensed person to practice;<br /><br />
+	(24) has failed to cooperate with an investigation or other proceeding of the board;<br /><br />
+	(25) has failed to appear before the board after receiving a formal notice to appear.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2024 Act No. 196 (H.3278), SECTION 14, eff May 21, 2024.<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 196, SECTION 14, in (1), substituted &quot;a license&quot; for &quot;a permit, license,&quot;; in (2), substituted &quot;a license&quot; for &quot;a permit, license,&quot; in two places; in (8), substituted &quot;set forth in this chapter or regulations promulgated pursuant to this chapter&quot; for &quot;promulgated by the board in regulation&quot;; in (16), inserted &quot;, unless assisting and supervised by a nonmass-certified appraiser&quot; at the end; and rewrote (17).<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-115.</span> Board jurisdiction.<br /><br />
+	The board has jurisdiction over the actions committed or omitted by current and former licensees as provided in Section 40-1-115.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-120.</span> Fines and penalties; delivery of notice of revocation or suspension; consent orders.<br /><br />
+	(A) In addition to the powers and duties enumerated in Section 40-1-120, the board may impose a fine of up to two thousand dollars to be paid for each violation of the provisions of this chapter or of the regulations promulgated by the board, but the total penalty or fine for violations may not exceed ten thousand dollars, and may require payment of the costs of the disciplinary action. Fines are payable immediately upon the effective date of discipline unless otherwise provided by the board. Interest accrues after fines are due at the maximum rate allowed by law. No licensee against whom a fine is levied is eligible for reinstatement until the fine has been paid in full.<br /><br />
+	(B) A decision by the board to publicly or privately reprimand, fine, revoke, suspend, or otherwise restrict a license or to limit or otherwise discipline a licensee becomes effective upon delivery of a copy of the decision to the licensee.<br /><br />
+	(C) Nothing in this section prevents a licensee from voluntarily entering into a consent order with the board wherein violations are not contested and sanctions are accepted.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2016 Act No. 243 (H.5023), SECTION 8, eff June 5, 2016.<br /><br />
+Effect of Amendment<br /><br />
+	2016 Act No. 243, SECTION 8, in (B), inserted &quot;publicly or privately reprimand, fine&quot;, and deleted text relating to a petition of review operating as a supersedeas or stay.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-130.</span> Grounds for denial of license or discipline.<br /><br />
+	As provided in Section 40-1-130, the board may deny licensure to an applicant based on the same grounds for which the board may take disciplinary action against a licensee.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-140.</span> License denial based on prior criminal record.<br /><br />
+	A license may be denied based on a person&#39;s prior criminal record, only as provided for in Section 40-1-140.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-150.</span> Voluntary surrender of license.<br /><br />
+	A licensee under investigation for a violation of this chapter or a regulation promulgated under this chapter may voluntarily surrender the license to practice in accordance with and subject to the provisions of Section 40-1-150. A person whose license is voluntarily surrendered may not practice or represent himself or herself to be authorized to practice until the board takes final action in the pending disciplinary matter. The voluntary surrender of a license is subject to public disclosure in accordance with Chapter 4 of Title 30. The time that an authorization has been surrendered may be credited, in the board&#39;s discretion, toward any period of suspension or other restriction of practice.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-160.</span> Appeal.<br /><br />
+	A respondent aggrieved by a final decision of the board may seek review of the decision to the Administrative Law Court in accordance with Section 40-1-160. Motions for continuance and for other interlocutory relief are not subject to review by the Administrative Law Court until a final decision has been issued by the board.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-170.</span> Investigation and prosecution costs.<br /><br />
+	A person found in violation of this chapter or regulations promulgated under this chapter may be required to pay costs associated with the investigation and prosecution of the case, including appeals, in accordance with Section 40-1-170.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:2000 Act No. 335, SECTION 1; 1976 Code SECTION 40-60-180.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-180.</span> Collection of costs and fines.<br /><br />
+	Costs and fines imposed pursuant to this chapter must be paid in accordance with and are subject to the collection and enforcement provisions of Section 40-1-180.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:2000 Act No. 335, SECTION 1; 1976 Code SECTION 40-60-190.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-190.</span> Confidentiality of investigations and proceedings; privileged communications.<br /><br />
+	Investigations and proceedings conducted under this chapter are confidential, and all communications are privileged as provided for in Section 40-1-190.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:2000 Act No. 335, SECTION 1; 1976 Code SECTION 40-60-200.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-200.</span> Advertising or engaging in business of appraising without license; penalties.<br /><br />
+	(A) It is unlawful for a person, directly or indirectly, to engage in or conduct the business of or to advertise or hold himself out as engaging in or conducting the business of or to act in the capacity of, an appraiser within this State without first obtaining a permit, license, or certification as provided in this chapter.<br /><br />
+	(B) A person acting as an appraiser within the meaning of this chapter without a permit, license, or certification is guilty of a misdemeanor and, upon conviction, must be fined not more than five hundred dollars or imprisoned not more than six months, or both.<br /><br />
+	(C) An appraiser who fails to renew a license or certification and who continues to engage in appraisal activities or business is guilty of a misdemeanor and, upon conviction, must be fined not more than five hundred dollars or imprisoned not more than six months, or both.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:2000 Act No. 335, SECTION 1; 1976 Code SECTION 40-60-210.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-210.</span> Injunctive relief; fine.<br /><br />
+	The department, in addition to instituting a criminal proceeding, may institute a civil action through the Administrative Law Court, in the name of the State, for injunctive relief against a person or entity violating this chapter, a regulation promulgated under this chapter, or an order of the board. For each violation the administrative law judge may impose a fine of not more than ten thousand dollars.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws:2000 Act No. 335, SECTION 1; 1976 Code SECTION 40-60-220.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-220.</span> Continuation of existing licenses.<br /><br />
+	A person who is credentialed in this State as a licensed appraiser, licensed mass appraiser, certified residential appraiser, certified residential mass appraiser, certified general appraiser, or certified general mass appraiser on December 31, 2014, may continue licensure in that category without meeting the requirements of Section 40-60-31 and Section 40-60-33, so long as the person is otherwise authorized to hold the license.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1; 2014 Act No. 180 (H.4644), SECTION 10, eff May 16, 2014; 2024 Act No. 196 (H.3278), SECTION 15, eff May 21, 2024.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 180, SECTION 10, substituted &quot;state-certified residential mass appraiser&quot; for &quot;certified mass appraiser&quot;; substituted &quot;state-certified general mass appraiser&quot; for &quot;certified general mass appraiser&quot;; substituted &quot;December 31, 2014&quot; for December 31, 2007&quot;; and made other nonsubstantive changes.<br /><br />
+	2024 Act No. 196, SECTION 15, substituted &quot;A person who is credentialed in this State&quot; for &quot;A person who is licensed&quot; and &quot;certified&quot; for &quot;state-certified&quot; in four places.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-230.</span> Severability.<br /><br />
+	If any section, subsection, paragraph, subparagraph, sentence, clause, phrase, or word of this act is for any reason held to be unconstitutional or invalid, such holding shall not affect the constitutionality or validity of the remaining portions of this act, the General Assembly hereby declaring that it would have passed this section, and each and every section, subsection, paragraph, subparagraph, sentence, clause, phrase, and word thereof, irrespective of the fact that any one or more other sections, subsections, paragraphs, subparagraphs, sentences, clauses, phrases, or words hereof may be declared to be unconstitutional, invalid, or otherwise ineffective.<br /><br />
+HISTORY: 2006 Act No. 257, SECTION 1.<br /><br />
+<div style="text-align: center;">ARTICLE 3</div>
+<div style="text-align: center;">Appraisal Management Company Registration Act</div><br />
+<span style="font-weight: bold;"> SECTION 40-60-310.</span> Short title.<br /><br />
+	This article may be cited as the &quot;Appraisal Management Company Registration Act&quot;.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-320.</span> Definitions.<br /><br />
+	For the purposes of this article:<br /><br />
+	(1) &quot;Appraisal management company&quot; or &quot;AMC&quot; means a person that:<br /><br />
+	(a) provides appraisal management services to creditors or to secondary mortgage market participants, including affiliates;<br /><br />
+	(b) provides such services in connection with valuing a consumer&#39;s principal dwelling as security for a consumer credit transaction or incorporating such transactions into securitizations; and<br /><br />
+	(c) within a given twelve-month period, oversees an appraiser panel or more than fifteen state-certified or state-licensed appraisers in a state or twenty-five or more state-certified or state-licensed appraisers in two or more states.<br /><br />
+	Notwithstanding the foregoing, an AMC does not include a department or division of an entity that provides appraisal management services only to that entity.<br /><br />
+	(2) &quot;Appraisal management services&quot; means one or more of the following:<br /><br />
+	(a) recruiting, selecting, and retaining appraisers;<br /><br />
+	(b) contracting with state-certified or state-licensed appraisers to perform appraisal assignments;<br /><br />
+	(c) managing the process of having an appraisal performed, including providing administrative duties, such as receiving appraisal orders and appraisal reports, submitting completed appraisal reports to creditors and secondary market participants, collecting fees from creditors and secondary market participants for services provided, and paying appraisers for services performed; or<br /><br />
+	(d) reviewing and verifying the work of appraisers.<br /><br />
+	(3) &quot;Appraiser panel&quot; means a network, list, or roster of licensed or certified appraisers approved by an AMC to perform appraisals as independent contractors for the AMC. Appraisers on an AMC&#39;s &quot;appraiser panel&quot; under this section include both appraisers accepted by the AMC for consideration for future appraisal assignments in covered transactions or for secondary mortgage market participants in connection with covered transactions and appraisers engaged by the AMC to perform one or more appraisals in covered transactions or for secondary mortgage market participants in connection with covered transactions. An appraiser is an independent contractor for purposes of this item if the appraiser is treated as an independent contractor by the AMC for purposes of federal income taxation.<br /><br />
+	(4) &quot;Appraisal review&quot; means the act, by a certified or licensed appraiser employed by an appraisal management company, of developing and communicating an opinion about the quality of work of another appraiser that was performed as part of an appraisal assignment. Appraisal review does not include:<br /><br />
+	(a) an examination by an unlicensed employee of an appraisal management company for an appraisal solely for grammatical errors, typographical errors, or other similar errors; or<br /><br />
+	(b) a quality control examination for completeness that does not make a valuation change.<br /><br />
+	(5) &quot;Client&quot; means a person or entity that contracts with, or otherwise enters into an agreement with, an appraisal management company for the purpose of real estate appraisal services.<br /><br />
+	(6) &quot;Controlling person&quot; means:<br /><br />
+	(a) an owner, officer, or director of a corporation, partnership, limited liability company, or other business entity that seeks to offer an appraisal management service in this State;<br /><br />
+	(b) an individual employed, appointed, or authorized by an appraisal management company authorized to enter a management agreement with certified or licensed appraisers, who are independent contractors, for the performance of real estate appraisal services; or<br /><br />
+	(c) an individual who possesses, directly or indirectly, the power to direct or cause the direction of the management or policies of an appraisal management company.<br /><br />
+	(7) &quot;Covered transaction&quot; means any consumer credit transaction secured by a consumer&#39;s principal dwelling, which does not have to be a federally related transaction.<br /><br />
+	(8) &quot;Independent contractor&quot; means a person in a trade, business, or profession in which he offers his services to the general public, in which the payer has the right to control or direct only the result of the work and not what will be done and how it will be done.<br /><br />
+	(9) &quot;Real estate appraisal services&quot; means the practice of developing an opinion of the value of real property in conformance with the Uniform Standards of Professional Appraisal Practice (USPAP) published by the Appraisal Foundation.<br /><br />
+	(10) &quot;Payor&quot; means a person or entity responsible for making payment for the appraisal.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017; 2024 Act No. 196 (H.3278), SECTION 16, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 196, SECTION 16, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-330.</span> Registration; requirements.<br /><br />
+	(A)(1) A person may not directly or indirectly engage or attempt to engage in business as an appraisal management company, or directly or indirectly engage or attempt to perform appraisal management services, or advertise or hold himself out as engaging in or conducting business as an appraisal management company without first obtaining a registration issued by the board under the provisions of this chapter.<br /><br />
+	(2) To register as an appraisal management company, an applicant shall submit to the board an application on a form or forms prescribed by the board.<br /><br />
+	(B) The registration application required in subsection (A) must include:<br /><br />
+	(1) the name of the entity seeking registration;<br /><br />
+	(2) the business address of the entity seeking registration;<br /><br />
+	(3) contact information of the entity seeking registration;<br /><br />
+	(4) the name and contact information for the company&#39;s agent for service of process in this State if the entity seeking registration is not a corporation that is domiciled in this State;<br /><br />
+	(5) contact information for an individual, corporation, partnership, or other business entity that owns ten percent or more of the appraisal management company;<br /><br />
+	(6) the name, address, and contact information of a controlling person;<br /><br />
+	(7) certification that the entity seeking registration has a system and process in place to verify that a person being added to the appraiser panel of the appraisal management company holds a certification or license in good standing in this State pursuant to the South Carolina Real Estate Appraisers Act;<br /><br />
+	(8) certification that the applicant has a system in place to review the work of all certified or licensed appraisers who are independent contractors and perform real estate appraisal services for the appraisal management company on a periodic basis to validate that the real estate appraisal services are being conducted pursuant to Uniform Standards of Professional Appraisals Practice;<br /><br />
+	(9) certification that the entity maintains a detailed record of each service request that it receives and the certified or licensed appraisers who are independent contractors and who perform the real estate appraisal services for the appraisal management company;<br /><br />
+	(10) an irrevocable consent to service of process;<br /><br />
+	(11) a surety bond in the amount of twenty-five thousand dollars on a surety bond form approved by the board, provided:<br /><br />
+	(a) the registration requirement provided in this item does not apply to an individual appraiser or an individual appraiser serving on an appraisal panel of an appraisal management company, and appraisal management companies are responsible for any cost of a surety bond as required by this item;<br /><br />
+	(b) surety bond claims may be filed by the claimant in accordance with the terms of the surety bond on a bond claim form approved by the board, provided claims are limited to actual damages and do not include attorney&#39;s fees or punitive damages incurred by the claimant; and<br /><br />
+	(c) all liability on a surety bond is applicable to the surety bond in effect as of the date of occurrence which gave rise to the liability;<br /><br />
+	(12) a criminal history background check, pursuant to Section 40-60-31(5), for each controlling person and any individual who owns more than ten percent of the appraisal management company. All costs associated with obtaining a criminal history background check shall be the responsibility of the regulated individual or entity; and<br /><br />
+	(13) certification that the person has a system in place to require that appraisals are conducted independently and free from inappropriate influence and coercion, as required by the appraisal independence standards established under Section 129E of the Truth in Lending Act, 15 U.S.C. Section 1639e.<br /><br />
+	(C) A change of an entity&#39;s name, address, organizational status, or federal identification number must be reported to the department within fifteen days. Failure to do so may result in registration cancellation and the requirement of the new entity to submit an initial application and meet all requirements for registration.<br /><br />
+	(D) The board shall review and approve or deny the registration of an appraisal management company.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017; 2018 Act No. 197 (S.877), SECTIONS 1 and 3, eff May 15, 2018; 2024 Act No. 196 (H.3278), SECTION 17, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+Effect of Amendment<br /><br />
+	2018 Act No. 197, SECTION 1, in (B)(11), added &quot;or a surety bond in an amount not to exceed fifty thousand dollars, whichever the registering appraisal management company selects&quot; at the end.<br /><br />
+	2018 Act No. 197, SECTION 3, added (E), providing exceptions to registration requirements.<br /><br />
+	2024 Act No. 196, SECTION 17, in (A), deleted (3); in (B), inserted &quot;application&quot; and rewrote (11) and (12); and deleted (E).<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-340.</span> Exclusions from registration requirements.<br /><br />
+	The following are excluded from the registration requirements of an appraisal management company:<br /><br />
+	(1) a person or entity that exclusively employs appraisers on an employer and employee basis for the performance of appraisals;<br /><br />
+	(2) a department or unit within a financial institution subject to direct regulation by an agency of the United States Government or an agency of this State and that receives a request for the performance of an appraisal from one employee of the financial institution, and another employee of the same financial institution assigns the request for the appraisal to an appraiser that is a certified or licensed appraiser. However, an appraisal management company that is a subsidiary owned or controlled by a financial institution may not be considered a department or unit within a financial institution to which the provisions of this chapter do not apply;<br /><br />
+	(3) a person that enters into an agreement, whether written or otherwise, with an appraiser for the performance of an appraisal, and upon the completion of the appraisal, the report of the appraiser performing the appraisal is signed by both the appraiser who completed the appraisal and the appraiser who requested the completion of the appraisal. However, an appraisal management company may not avoid the requirements of this chapter by requiring an employee of the appraisal management company who is an appraiser to sign an appraisal that is completed by an appraiser who is part of the appraisal panel of the appraisal management company;<br /><br />
+	(4) an appraisal management company that maintains an appraiser panel that consists of:<br /><br />
+	(a) fifteen or fewer certified or licensed appraisers who are independent contractors in this State, or<br /><br />
+	(b) a total of twenty-four or fewer certified or licensed appraisers who are independent contractors in two or more states; and<br /><br />
+	(5) a federally regulated appraisal management company that is owned and controlled by an insured depository institution as defined in 12 U.S.C. Section 1813 and regulated by the Office of the Comptroller of the Currency, the Board of Governors of the Federal Reserve System, or the Federal Deposit Insurance Corporation, except that each appraisal management company exempt from registration pursuant to this subsection shall comply with the requirements of Section 40-60-360(C).<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017; 2024 Act No. 196 (H.3278), SECTION 18, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 196, SECTION 18, rewrote (5).<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-350.</span> Renewal of registrations.<br /><br />
+	(A) An initial registration granted by the board pursuant to this article is valid for one year from the date of issuance unless renewed pursuant to subsection (B).<br /><br />
+	(B) To renew annually, an entity actively registered under this article shall submit all information required by the board before June thirtieth, and the board shall review and renew or review and deny the renewal of the registration of an appraisal management company.<br /><br />
+	(C) Failure to renew registration by the renewal date must result in the loss of authority to operate under this article. An AMC that fails to renew may be subject to penalties as provided for in this chapter.<br /><br />
+	(D) A request to reinstate registration within twelve months of expiration must be accompanied by a payment penalty as promulgated by the board in regulation.<br /><br />
+	(E) A registration expired for more than twelve months must be canceled but may be considered for reinstatement by the board upon proper application and payment of the original registration fee and any late fee.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017; 2024 Act No. 196 (H.3278), SECTION 19, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 196, SECTION 19, in (A), substituted &quot;for one year from the date of issuance&quot; for &quot;from the date of issuance through expiration&quot;; in (B), substituted &quot;annually&quot; for &quot;biennially&quot;; in (C), added the second sentence; in (D), substituted &quot;as promulgated by the board in regulation&quot; for &quot;of one hundred dollars each month of delinquency&quot;; and in (E), deleted the second sentence, which provided the application must be reviewed by the board to determine reinstatement and any further required conditions of the reinstatement.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-360.</span> Promulgation of regulations to establish fees for registration, renewal, and reinstatement; national registry fees.<br /><br />
+	(A) The board shall promulgate regulations to establish fees for registration, renewal, and reinstatement and additional fees as are reasonably necessary for the administration of this chapter and as required in subsection (B) and (C). The fees must be established in consideration of the costs of administering this chapter and the actual cost of the specific service to be provided or performed. The board periodically shall review and adjust the schedule of fees as needed to cover expenses.<br /><br />
+	(B) The board also shall collect the information and national registry fees established by the Appraisal Subcommittee of the Federal Financial Institutions Examination Council pursuant to 12 U.S.C. Section 3338 and regulations adopted pursuant to it from each appraisal management company registered in this State or seeking to be registered in this State.<br /><br />
+	(C) The board shall collect the information and the national registry fees established by the Appraisal Subcommittee of the Federal Financial Institutions Examination Council pursuant to 12 U.S.C. Section 3338 and regulations adopted pursuant to it from each appraisal management company exempt from registration pursuant to Section 40-60-340(5).<br /><br />
+	(D) All appraisal management company national registry fees collected must be transferred to the appraisal subcommittee.<br /><br />
+	(E) The board shall adopt regulations regarding the determination of the size of the appraiser panel of an appraisal management company in accordance with the rules of the Appraisal Subcommittee of the Federal Financial Institutions Examination Council pursuant to 12 U.S.C. Section 3338.<br /><br />
+	(F) Notwithstanding another provision of this chapter, pursuant to 12 U.S.C. Section 3338 and regulations pursuant to it, the board must transmit to the appraisal subcommittee, on a timely basis, reports of supervisory activities involving appraisal management companies or other third-party providers of appraisals and appraisal management services, including investigations initiated and action taken.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017; 2024 Act No. 196 (H.3278), SECTION 20, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 196, SECTION 20, in (A), in the first sentence, added &quot;and as required in subsection (B) and (C)&quot; at the end; in (B), inserted &quot;information and&quot;; and added (F).<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-370.</span> Requirements for owners of appraisal management companies applying for registration.<br /><br />
+	(A) An appraisal management company shall not be registered in this State or included on the national registry if:<br /><br />
+	(1) it is owned, in whole or in part, directly or indirectly, by a person who has had an appraiser certificate or license refused, denied, canceled, surrendered in lieu of revocation, or revoked in this State or in another state for a substantive cause, as determined by the appropriate state appraiser certifying the licensing agency;<br /><br />
+	(2) any person who owns more than ten percent of the appraisal management company if the board determines he does not have good moral character, which for purposes of this section requires that the person has not been convicted of or entered a plea of nolo contendere to a felony relating to the practice of appraisal, banking, mortgage lending, or the provision of financial services, or a crime involving fraud or misrepresentation; or<br /><br />
+	(3) any controlling person or person who owns more than ten percent of the appraisal management company fails to submit to a criminal history background check as required by Section 40-60-31(5) of this chapter or regulations promulgated pursuant to it.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017; 2024 Act No. 196 (H.3278), SECTION 21, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 196, SECTION 21, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-380.</span> Designation of a controlling person; notification of changes.<br /><br />
+	(A) An appraisal management company applying to the board for registration in this State shall designate one controlling person who is to be the main contact for all communication between the board and the appraisal management company.<br /><br />
+	(B) To serve as a controlling person of an appraisal management company, a person shall certify to the board that he has never had a certificate or license issued by the appropriate board of this State or another state refused, denied, canceled, revoked, or surrendered in lieu of revocation.<br /><br />
+	(C) A registrant shall notify the board within fifteen days of a change in its controlling person or a change in the contact information of the controlling person.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-390.</span> Requirements for employees and independent contractors of appraisal management companies.<br /><br />
+	(A) An employee of the appraisal management company who is responsible for performing appraisal reviews of certified or licensed appraisers, who are independent contractors, must demonstrate knowledge of the Uniform Standards of Professional Appraisal Practice as determined by the board.<br /><br />
+	(B) An appraisal management company that applies to the board for a registration to do business in this State as an appraisal management company shall not knowingly:<br /><br />
+	(1) employ a person who has had a certificate or license to act as an appraiser in this State or in another state refused, denied, canceled, revoked, or surrendered in lieu of a pending revocation in a position in which the person has the responsibility to order appraisals or to review completed appraisals;<br /><br />
+	(2) enter into an independent contractor arrangement for appraisal services, whether in verbal, written, or other form, with a person who has had a certificate or license to act as an appraiser in this State or in another state refused, denied, canceled, revoked, or surrendered in lieu of a pending revocation; or<br /><br />
+	(3) enter into a contract, agreement, or other business relationship, whether in verbal, written, or another form, with an entity for appraisal services that employs, has entered into an independent contract arrangement, or has entered into a contract, agreement, or other business relationship, whether in verbal, written, or other form, with a person who has ever had a certificate or license to act as an appraiser in this State or in another state refused, denied, canceled, revoked, or surrendered in lieu of a pending revocation.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-400.</span> Certification or licensure required for employees and independent contractors.<br /><br />
+	An employee, or independent contractor of, the appraisal management company must be an appraiser certified or licensed in this State to perform a Uniform Standards of Professional Appraisals Practice Standards 3 and 4 appraisal review of property located in this State.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017; 2024 Act No. 196 (H.3278), SECTION 22, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 196, SECTION 22, substituted &quot;Standards 3 and 4&quot; for &quot;Standard 3&quot;.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-410.</span> Good standing with board required for certified or licensed appraisers.<br /><br />
+	An appraisal management company registered in this State pursuant to this article may not enter into contracts or agreements with a certified or licensed appraiser, who is an independent contractor, to perform a real estate appraisal service in this State unless the person performing the appraisal service is certified or licensed in good standing with the board.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-420.</span> Record-keeping requirements for registration renewal.<br /><br />
+	An appraisal management company shall:<br /><br />
+	(1) maintain a detailed record of each service request that it receives for at least the latter of:<br /><br />
+	(a) five years after the date of service request; or<br /><br />
+	(b) two years after final disposition of a judicial proceeding in which the appraisal management company provided testimony related to an assignment; and<br /><br />
+	(2) have a policy that requires a certified or licensed appraiser who is an independent contractor and who performs a real estate appraisal service for the appraisal management company to maintain those records including, but not limited to, the work file, for at least the latter of:<br /><br />
+	(a) five years after preparation; or<br /><br />
+	(b) two years after the final disposition of a judicial proceeding in which the appraiser or the appraisal management company provided testimony related to the assignment.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017; 2024 Act No. 196 (H.3278), SECTION 23, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 196, SECTION 23, in the first undesignated paragraph, substituted &quot;shall&quot; for &quot;seeking to be registered shall certify to the board, at each renewal, that it&quot;; in (1), substituted &quot;maintain&quot; for &quot;maintains&quot;, substituted &quot;receives for at least the latter of:&quot; for &quot;receives;&quot;, and inserted (a) and (b); and made nonsubstantive changes in (2).<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-430.</span> Criminal background checks for appraisers.<br /><br />
+	A registered appraisal management company that requires a real estate appraiser to submit to a criminal background check as a condition of employment, contractual relationship, or access to an appraisal portal shall accept a criminal background check performed within the preceding twelve months if it substantially conforms to the criminal background checks of the company selected by the appraisal management company.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-440.</span> Unprofessional conduct by employees, directors, or agents of appraisal management companies.<br /><br />
+	(A) It is unprofessional conduct for an employee, director, or agent of an appraisal management company registered pursuant to this article to influence or attempt to influence the development, reporting, or review of an appraisal through coercion, extortion, collusion, compensation, instruction, inducement, intimidation, bribery, or in another manner, including:<br /><br />
+	(1) withholding or threatening to withhold timely payment for an appraisal, with the exception of an appraisal noncompliant with the written terms of the agreement;<br /><br />
+	(2) withholding or threatening to withhold future business from certified or licensed appraisers, who are independent contractors, or demoting, threatening to demote, or terminating certified or licensed appraisers, who are independent contractors;<br /><br />
+	(3) expressly or impliedly promising future business, promotion, or increased compensation for certified or licensed appraisers, who are independent contractors;<br /><br />
+	(4) requesting that certified or licensed appraisers, who are independent contractors, provide an estimated, predetermined, or desired valuation in an appraisal report or provide estimated values of comparable sales at any time before the certified or licensed appraiser&#39;s completion of an appraisal service;<br /><br />
+	(5) providing to certified or licensed appraisers, who are independent contractors, an anticipated, estimated, encouraged, or desired value for a subject property or a proposed or target amount to be loaned to the borrower, excepting that a copy of the sales contract for purchase transactions may be provided;<br /><br />
+	(6) providing stock or other financial or nonfinancial benefits to certified or licensed appraisers, who are independent contractors, or an entity or person related to the appraiser;<br /><br />
+	(7) allowing the removal of certified or licensed appraisers, who are independent contractors, from an appraiser panel without prior written notice to the appraiser specifying the basis for his removal from the appraisal panel;<br /><br />
+	(8) obtaining, using, or paying for a second or subsequent appraisal or valuation in connection with a mortgage financing transaction, unless there is a reasonable basis to believe that the initial appraisal or valuation was flawed or tainted and this basis is clearly and appropriately noted in the loan file, or unless the appraisal review or quality control process written preestablished lending requirements, or unless the appraisal or valuation is required by state or federal law;<br /><br />
+	(9) engaging in another act or practice that impairs or attempts to impair the independence, objectivity, or impartiality of an appraiser;<br /><br />
+	(10) requiring an appraiser to indemnify an appraisal management company or hold an appraisal management company harmless for liability, damages, losses, or claims arising out of the services performed by the appraisal management company and not the services performed by the appraiser; and<br /><br />
+	(11) prohibiting certified or licensed appraisers, who are independent contractors, to file an initial complaint against the appraisal management company for alleged abuses of above prohibitions or other issues of misconduct. The board shall handle initial complaints in the same manner as those initial complaints against certified or licensed appraisers.<br /><br />
+	(B) The provisions of subsection (A) may not be construed to prohibit the appraisal management company from requiring certified or licensed appraisers, who are independent contractors, to:<br /><br />
+	(1) provide additional information about the basis for a valuation;<br /><br />
+	(2) correct objective factual errors in an appraisal report; and<br /><br />
+	(3) consider additional, appropriate property information, including the consideration of additional comparable priorities to make or support an appraisal.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-450.</span> Payment for completions of an appraisal or valuation assignment.<br /><br />
+	(A) An appraisal management company shall, except in cases of breach of contract or substandard performance of services, make payment to certified or licensed appraisers, who are independent contractors, for the completion of an appraisal or valuation assignment within forty-five days after the date on which the certified or licensed appraisers, who are independent contractors, transmit or otherwise provide the completed appraisal or valuation study to the appraisal management company or its assignee.<br /><br />
+	(B) An appraisal management company shall compensate appraisers at a rate that is customary and reasonable for appraisals being performed in the market area of the property being appraised, consistent with the requirements of 15 U.S.C. Section 1639e and regulations adopted pursuant to it including, but not limited to, 12 C.F.R. 1026.42.<br /><br />
+	(C) An appraiser may not be prohibited by the appraisal management company, client of the appraiser, or another third party from disclosing the fee paid to the appraiser for the performance of the appraisal in the appraisal report.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017; 2024 Act No. 196 (H.3278), SECTION 24, eff May 21, 2024.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 196, SECTION 24, in (B), inserted &quot;including, but not limited to, 12 C.F.R. 1026.42&quot; at the end.<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-460.</span> Appraiser&#39;s consent required to modify report; use of appraisal reports.<br /><br />
+	(A) An appraisal management company may not alter, modify, or otherwise change a completed appraisal report submitted by a licensed or certified independent appraiser without the appraiser&#39;s consent, except as necessary to comply with regulatory mandates or legal requirements.<br /><br />
+	(B) An appraisal management company may not use an appraisal report submitted by a licensed or certified independent appraiser, or any of the data or information contained therein, for any purpose other than its intended use without the appraiser&#39;s or the intended end user&#39;s consent, except as necessary to comply with regulatory mandates or legal requirements.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-470.</span> Disciplinary action for violations of this article.<br /><br />
+	(A) In addition to the grounds for disciplinary action pursuant to Section 40-1-110, the board may discipline, publicly or privately reprimand, or fine an appraisal management company or suspend or revoke a registration issued under this article if, in the opinion of the board, an appraisal management company is attempting to perform, has performed, or has attempted to:<br /><br />
+	(1) commit an act in violation of this article;<br /><br />
+	(2) violate a rule or regulation adopted by the board in the interest of the public and consistent with the provisions of this article;<br /><br />
+	(3) procure a registration, license, or certification by fraud, misrepresentation, or deceit; or<br /><br />
+	(4) violate the South Carolina Real Estate Appraisers Act or the federal Financial Institutions Reform Recovery and Enforcement Act of 1989.<br /><br />
+	(B) In addition to the sanctions provided in Section 40-1-120, the board may impose a fine not to exceed ten thousand dollars for an initial violation and not to exceed twenty thousand dollars for subsequent violations and may require payment of investigative costs. A fine is payable immediately upon the effective date of discipline unless otherwise provided by the board. A registrant against whom a fine is levied is not eligible for reinstatement until the fine is paid in full.<br /><br />
+	(C) A decision by the board to publicly or privately reprimand, fine, revoke, suspend, or otherwise restrict a registrant or to limit or otherwise discipline a registrant becomes effective upon delivery of a copy of the decision to the registrant.<br /><br />
+	(D) Nothing in this section prevents a registrant from voluntarily entering into a consent agreement with the board in which a violation is not contested and a sanction is accepted.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-480.</span> Investigations and disciplinary proceedings; notice requirements.<br /><br />
+	The board may conduct investigations and disciplinary proceedings in accordance with Sections 40-1-80 and 40-1-90 and the Administrative Procedures Act, provided:<br /><br />
+	(1) before disciplining a registrant by publicly or privately reprimanding, fining, or suspending or revoking a registration, the board shall notify the registrant in writing of charges made at least thirty days prior to the date set for the hearing and shall afford the registrant an opportunity to be heard in person or by counsel;<br /><br />
+	(2) the written notice requirement is satisfied by sending the notice through the United States Postal Service by regular mail or certified mail, return receipt requested, to the controlling person of the registrant to the address of the registrant on file with the board;<br /><br />
+	(3) a hearing on the charges must be held at a time and place prescribed by the board; and<br /><br />
+	(4) a registrant aggrieved by a final action of the board may seek review of the decision pursuant to Section 40-1-160 and the Administrative Procedures Act.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-490.</span> Board authorized to issue restraining orders.<br /><br />
+	The board may issue restraining orders and cease and desist orders pursuant to Section 40-1-100.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-500.</span> Jurisdiction.<br /><br />
+	The board has jurisdiction over the actions committed or omitted by current and former registrants as provided by Section 40-1-115.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-510.</span> Grounds for denial of registration.<br /><br />
+	As provided in Section 40-1-130, the board may deny registration to an applicant based on the same grounds for which the board may take disciplinary action against a registrant.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-520.</span> Denial of registration; prior criminal conviction.<br /><br />
+	A registration obtained pursuant to this chapter may not be denied solely because of a prior criminal conviction unless the criminal conviction directly relates to the profession or occupation.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-530.</span> Voluntary surrender of registration; public disclosure.<br /><br />
+	A registrant under investigation for a violation of this article or a regulation promulgated under this article may voluntarily surrender his registration to practice, in accordance with and subject to the provisions of Section 40-1-150. A person whose registration is voluntarily surrendered may not practice or represent himself as authorized to practice until the board takes final action in the pending disciplinary matter. The voluntary surrender of a registration is subject to public disclosure pursuant to Chapter 4, Title 30. The board has discretion to credit time that an authorization has been surrendered toward a period of suspension or other restriction of practice.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-540.</span> Review of board decision by the Administrative Law Court.<br /><br />
+	A respondent aggrieved by a final decision of the board may seek review of the decision by the Administrative Law Court pursuant to Section 40-1-160. Motions for continuance and for other interlocutory relief are not subject to review by the Administrative Law Court until a final decision has been issued by the board.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-550.</span> Confidentiality of investigations and proceedings; communications privileged.<br /><br />
+	Investigations and proceedings conducted under this article are confidential, and all communications are privileged as provided in Section 40-1-190.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 40-60-560.</span> Civil actions; additional penalties.<br /><br />
+	The department, in addition to instituting a criminal proceeding, may institute a civil action through the Administrative Law Court, in the name of the State, for injunctive relief against a person or entity violating this article, a regulation promulgated under this article, or an order of the board. The court may impose a fine of not more than ten thousand dollars for each violation in addition to a fine imposed by the board for the same violation.<br /><br />
+HISTORY: 2017 Act No. 32 (S.279), SECTION 1, eff May 10, 2017.<br /><br />
+Editor&#39;s Note<br /><br />
+	2017 Act No. 32, SECTION 5, provides as follows:<br /><br />
+	&quot;SECTION 5. This act takes effect upon approval by the Governor. In the event that a registration process is unavailable upon the effective date of this act, an appraisal management company already conducting business in this State may continue to conduct business until one hundred twenty days after a registration process becomes available.&quot;<br /><br />
+
+</div>
+
+
+					</div>		 <!-- mainwidepanel -->
+					
+				</div>		 <!-- pagebody -->
+				
+				<div id="footer" class="nodisplay" style="height: 30px;" onContextMenu="return false;">
+			<div id="footerdiv" style="margin:0;">
+				South Carolina Legislative Services Agency * 223 Blatt Building * 1105 Pendleton Street * Columbia, SC 29201<!-- * 803-212-4420--><br>
+				
+								<a href="/disclaimer.php">Disclaimer</a> * <a href="/policies.php">Policies</a> * <a href="/credits.php">Photo Credits</a> * <a href="/contact.php">Contact Us</a>
+							</div>
+		</div>
+		<div id="printfooter" class="printdisplay serifNormal" align=center style="font-size: 8pt;">
+			<br>
+			<br>
+			<hr>
+			Legislative Services Agency
+			<br>
+			h t t p : / / w w w . s c s t a t e h o u s e . g o v
+		</div>
+	
+		</div>	<!-- container or main in mobile page-->
+</body>
+</html>
+

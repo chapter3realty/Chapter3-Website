@@ -1,0 +1,775 @@
+{
+ "pulled": "2026-11-01T00:30:05.957172Z",
+ "rows": [
+  {
+   "city": "(all)",
+   "type": "(all)",
+   "max": null,
+   "total": 8892,
+   "url": "https://chapter3realty.com/homes/api/map?"
+  },
+  {
+   "city": "(all)",
+   "type": "(all)",
+   "max": 450000,
+   "total": 6431,
+   "url": "https://chapter3realty.com/homes/api/map?max=450000"
+  },
+  {
+   "city": "(all)",
+   "type": "house",
+   "max": null,
+   "total": 3742,
+   "url": "https://chapter3realty.com/homes/api/map?type=house"
+  },
+  {
+   "city": "(all)",
+   "type": "house",
+   "max": 450000,
+   "total": 2114,
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=450000"
+  },
+  {
+   "city": "(all)",
+   "type": "condo",
+   "max": null,
+   "total": 2866,
+   "url": "https://chapter3realty.com/homes/api/map?type=condo"
+  },
+  {
+   "city": "(all)",
+   "type": "condo",
+   "max": 450000,
+   "total": 2538,
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&max=450000"
+  },
+  {
+   "city": "(all)",
+   "type": "townhouse",
+   "max": null,
+   "total": 369,
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse"
+  },
+  {
+   "city": "(all)",
+   "type": "townhouse",
+   "max": 450000,
+   "total": 316,
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&max=450000"
+  },
+  {
+   "city": "(all)",
+   "type": "manufactured",
+   "max": null,
+   "total": 517,
+   "url": "https://chapter3realty.com/homes/api/map?type=manufactured"
+  },
+  {
+   "city": "(all)",
+   "type": "manufactured",
+   "max": 450000,
+   "total": 508,
+   "url": "https://chapter3realty.com/homes/api/map?type=manufactured&max=450000"
+  },
+  {
+   "city": "Myrtle Beach",
+   "type": "(all)",
+   "max": null,
+   "total": 3224,
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach"
+  },
+  {
+   "city": "Myrtle Beach",
+   "type": "(all)",
+   "max": 450000,
+   "total": 2386,
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&max=450000"
+  },
+  {
+   "city": "Myrtle Beach",
+   "type": "house",
+   "max": null,
+   "total": 1054,
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&type=house"
+  },
+  {
+   "city": "Myrtle Beach",
+   "type": "house",
+   "max": 450000,
+   "total": 462,
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&type=house&max=450000"
+  },
+  {
+   "city": "Myrtle Beach",
+   "type": "condo",
+   "max": null,
+   "total": 1659,
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&type=condo"
+  },
+  {
+   "city": "Myrtle Beach",
+   "type": "condo",
+   "max": 450000,
+   "total": 1522,
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&type=condo&max=450000"
+  },
+  {
+   "city": "Myrtle Beach",
+   "type": "townhouse",
+   "max": null,
+   "total": 154,
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&type=townhouse"
+  },
+  {
+   "city": "Myrtle Beach",
+   "type": "townhouse",
+   "max": 450000,
+   "total": 135,
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&type=townhouse&max=450000"
+  },
+  {
+   "city": "Myrtle Beach",
+   "type": "manufactured",
+   "max": null,
+   "total": 151,
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&type=manufactured"
+  },
+  {
+   "city": "Myrtle Beach",
+   "type": "manufactured",
+   "max": 450000,
+   "total": 149,
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&type=manufactured&max=450000"
+  },
+  {
+   "city": "North Myrtle Beach",
+   "type": "(all)",
+   "max": null,
+   "total": 997,
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach"
+  },
+  {
+   "city": "North Myrtle Beach",
+   "type": "(all)",
+   "max": 450000,
+   "total": 587,
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&max=450000"
+  },
+  {
+   "city": "North Myrtle Beach",
+   "type": "house",
+   "max": null,
+   "total": 258,
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=house"
+  },
+  {
+   "city": "North Myrtle Beach",
+   "type": "house",
+   "max": 450000,
+   "total": 46,
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=house&max=450000"
+  },
+  {
+   "city": "North Myrtle Beach",
+   "type": "condo",
+   "max": null,
+   "total": 589,
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=condo"
+  },
+  {
+   "city": "North Myrtle Beach",
+   "type": "condo",
+   "max": 450000,
+   "total": 450,
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=condo&max=450000"
+  },
+  {
+   "city": "North Myrtle Beach",
+   "type": "townhouse",
+   "max": null,
+   "total": 36,
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=townhouse"
+  },
+  {
+   "city": "North Myrtle Beach",
+   "type": "townhouse",
+   "max": 450000,
+   "total": 28,
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=townhouse&max=450000"
+  },
+  {
+   "city": "North Myrtle Beach",
+   "type": "manufactured",
+   "max": null,
+   "total": 41,
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=manufactured"
+  },
+  {
+   "city": "North Myrtle Beach",
+   "type": "manufactured",
+   "max": 450000,
+   "total": 41,
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=manufactured&max=450000"
+  },
+  {
+   "city": "Surfside Beach",
+   "type": "(all)",
+   "max": null,
+   "total": 239,
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach"
+  },
+  {
+   "city": "Surfside Beach",
+   "type": "(all)",
+   "max": 450000,
+   "total": 150,
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&max=450000"
+  },
+  {
+   "city": "Surfside Beach",
+   "type": "house",
+   "max": null,
+   "total": 84,
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=house"
+  },
+  {
+   "city": "Surfside Beach",
+   "type": "house",
+   "max": 450000,
+   "total": 24,
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=house&max=450000"
+  },
+  {
+   "city": "Surfside Beach",
+   "type": "condo",
+   "max": null,
+   "total": 86,
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=condo"
+  },
+  {
+   "city": "Surfside Beach",
+   "type": "condo",
+   "max": 450000,
+   "total": 76,
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=condo&max=450000"
+  },
+  {
+   "city": "Surfside Beach",
+   "type": "townhouse",
+   "max": null,
+   "total": 14,
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=townhouse"
+  },
+  {
+   "city": "Surfside Beach",
+   "type": "townhouse",
+   "max": 450000,
+   "total": 14,
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=townhouse&max=450000"
+  },
+  {
+   "city": "Surfside Beach",
+   "type": "manufactured",
+   "max": null,
+   "total": 30,
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=manufactured"
+  },
+  {
+   "city": "Surfside Beach",
+   "type": "manufactured",
+   "max": 450000,
+   "total": 30,
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=manufactured&max=450000"
+  },
+  {
+   "city": "Garden City",
+   "type": "(all)",
+   "max": null,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Garden+City"
+  },
+  {
+   "city": "Garden City",
+   "type": "(all)",
+   "max": 450000,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Garden+City&max=450000"
+  },
+  {
+   "city": "Garden City",
+   "type": "house",
+   "max": null,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Garden+City&type=house"
+  },
+  {
+   "city": "Garden City",
+   "type": "house",
+   "max": 450000,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Garden+City&type=house&max=450000"
+  },
+  {
+   "city": "Garden City",
+   "type": "condo",
+   "max": null,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Garden+City&type=condo"
+  },
+  {
+   "city": "Garden City",
+   "type": "condo",
+   "max": 450000,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Garden+City&type=condo&max=450000"
+  },
+  {
+   "city": "Garden City",
+   "type": "townhouse",
+   "max": null,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Garden+City&type=townhouse"
+  },
+  {
+   "city": "Garden City",
+   "type": "townhouse",
+   "max": 450000,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Garden+City&type=townhouse&max=450000"
+  },
+  {
+   "city": "Garden City",
+   "type": "manufactured",
+   "max": null,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Garden+City&type=manufactured"
+  },
+  {
+   "city": "Garden City",
+   "type": "manufactured",
+   "max": 450000,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Garden+City&type=manufactured&max=450000"
+  },
+  {
+   "city": "Murrells Inlet",
+   "type": "(all)",
+   "max": null,
+   "total": 481,
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet"
+  },
+  {
+   "city": "Murrells Inlet",
+   "type": "(all)",
+   "max": 450000,
+   "total": 262,
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&max=450000"
+  },
+  {
+   "city": "Murrells Inlet",
+   "type": "house",
+   "max": null,
+   "total": 206,
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=house"
+  },
+  {
+   "city": "Murrells Inlet",
+   "type": "house",
+   "max": 450000,
+   "total": 39,
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=house&max=450000"
+  },
+  {
+   "city": "Murrells Inlet",
+   "type": "condo",
+   "max": null,
+   "total": 131,
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=condo"
+  },
+  {
+   "city": "Murrells Inlet",
+   "type": "condo",
+   "max": 450000,
+   "total": 124,
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=condo&max=450000"
+  },
+  {
+   "city": "Murrells Inlet",
+   "type": "townhouse",
+   "max": null,
+   "total": 33,
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=townhouse"
+  },
+  {
+   "city": "Murrells Inlet",
+   "type": "townhouse",
+   "max": 450000,
+   "total": 17,
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=townhouse&max=450000"
+  },
+  {
+   "city": "Murrells Inlet",
+   "type": "manufactured",
+   "max": null,
+   "total": 58,
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=manufactured"
+  },
+  {
+   "city": "Murrells Inlet",
+   "type": "manufactured",
+   "max": 450000,
+   "total": 58,
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=manufactured&max=450000"
+  },
+  {
+   "city": "Little River",
+   "type": "(all)",
+   "max": null,
+   "total": 482,
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River"
+  },
+  {
+   "city": "Little River",
+   "type": "(all)",
+   "max": 450000,
+   "total": 394,
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&max=450000"
+  },
+  {
+   "city": "Little River",
+   "type": "house",
+   "max": null,
+   "total": 190,
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=house"
+  },
+  {
+   "city": "Little River",
+   "type": "house",
+   "max": 450000,
+   "total": 125,
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=house&max=450000"
+  },
+  {
+   "city": "Little River",
+   "type": "condo",
+   "max": null,
+   "total": 185,
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=condo"
+  },
+  {
+   "city": "Little River",
+   "type": "condo",
+   "max": 450000,
+   "total": 182,
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=condo&max=450000"
+  },
+  {
+   "city": "Little River",
+   "type": "townhouse",
+   "max": null,
+   "total": 29,
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=townhouse"
+  },
+  {
+   "city": "Little River",
+   "type": "townhouse",
+   "max": 450000,
+   "total": 29,
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=townhouse&max=450000"
+  },
+  {
+   "city": "Little River",
+   "type": "manufactured",
+   "max": null,
+   "total": 19,
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=manufactured"
+  },
+  {
+   "city": "Little River",
+   "type": "manufactured",
+   "max": 450000,
+   "total": 18,
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=manufactured&max=450000"
+  },
+  {
+   "city": "Conway",
+   "type": "(all)",
+   "max": null,
+   "total": 990,
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway"
+  },
+  {
+   "city": "Conway",
+   "type": "(all)",
+   "max": 450000,
+   "total": 798,
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&max=450000"
+  },
+  {
+   "city": "Conway",
+   "type": "house",
+   "max": null,
+   "total": 674,
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=house"
+  },
+  {
+   "city": "Conway",
+   "type": "house",
+   "max": 450000,
+   "total": 545,
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=house&max=450000"
+  },
+  {
+   "city": "Conway",
+   "type": "condo",
+   "max": null,
+   "total": 33,
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=condo"
+  },
+  {
+   "city": "Conway",
+   "type": "condo",
+   "max": 450000,
+   "total": 33,
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=condo&max=450000"
+  },
+  {
+   "city": "Conway",
+   "type": "townhouse",
+   "max": null,
+   "total": 39,
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=townhouse"
+  },
+  {
+   "city": "Conway",
+   "type": "townhouse",
+   "max": 450000,
+   "total": 39,
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=townhouse&max=450000"
+  },
+  {
+   "city": "Conway",
+   "type": "manufactured",
+   "max": null,
+   "total": 72,
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=manufactured"
+  },
+  {
+   "city": "Conway",
+   "type": "manufactured",
+   "max": 450000,
+   "total": 71,
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=manufactured&max=450000"
+  },
+  {
+   "city": "Longs",
+   "type": "(all)",
+   "max": null,
+   "total": 440,
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs"
+  },
+  {
+   "city": "Longs",
+   "type": "(all)",
+   "max": 450000,
+   "total": 348,
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&max=450000"
+  },
+  {
+   "city": "Longs",
+   "type": "house",
+   "max": null,
+   "total": 346,
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=house"
+  },
+  {
+   "city": "Longs",
+   "type": "house",
+   "max": 450000,
+   "total": 276,
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=house&max=450000"
+  },
+  {
+   "city": "Longs",
+   "type": "condo",
+   "max": null,
+   "total": 24,
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=condo"
+  },
+  {
+   "city": "Longs",
+   "type": "condo",
+   "max": 450000,
+   "total": 24,
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=condo&max=450000"
+  },
+  {
+   "city": "Longs",
+   "type": "townhouse",
+   "max": null,
+   "total": 22,
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=townhouse"
+  },
+  {
+   "city": "Longs",
+   "type": "townhouse",
+   "max": 450000,
+   "total": 21,
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=townhouse&max=450000"
+  },
+  {
+   "city": "Longs",
+   "type": "manufactured",
+   "max": null,
+   "total": 10,
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=manufactured"
+  },
+  {
+   "city": "Longs",
+   "type": "manufactured",
+   "max": 450000,
+   "total": 10,
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=manufactured&max=450000"
+  },
+  {
+   "city": "Loris",
+   "type": "(all)",
+   "max": null,
+   "total": 327,
+   "url": "https://chapter3realty.com/homes/api/map?city=Loris"
+  },
+  {
+   "city": "Loris",
+   "type": "(all)",
+   "max": 450000,
+   "total": 264,
+   "url": "https://chapter3realty.com/homes/api/map?city=Loris&max=450000"
+  },
+  {
+   "city": "Loris",
+   "type": "house",
+   "max": null,
+   "total": 155,
+   "url": "https://chapter3realty.com/homes/api/map?city=Loris&type=house"
+  },
+  {
+   "city": "Loris",
+   "type": "house",
+   "max": 450000,
+   "total": 125,
+   "url": "https://chapter3realty.com/homes/api/map?city=Loris&type=house&max=450000"
+  },
+  {
+   "city": "Loris",
+   "type": "condo",
+   "max": null,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Loris&type=condo"
+  },
+  {
+   "city": "Loris",
+   "type": "condo",
+   "max": 450000,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Loris&type=condo&max=450000"
+  },
+  {
+   "city": "Loris",
+   "type": "townhouse",
+   "max": null,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Loris&type=townhouse"
+  },
+  {
+   "city": "Loris",
+   "type": "townhouse",
+   "max": 450000,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Loris&type=townhouse&max=450000"
+  },
+  {
+   "city": "Loris",
+   "type": "manufactured",
+   "max": null,
+   "total": 16,
+   "url": "https://chapter3realty.com/homes/api/map?city=Loris&type=manufactured"
+  },
+  {
+   "city": "Loris",
+   "type": "manufactured",
+   "max": 450000,
+   "total": 15,
+   "url": "https://chapter3realty.com/homes/api/map?city=Loris&type=manufactured&max=450000"
+  },
+  {
+   "city": "Aynor",
+   "type": "(all)",
+   "max": null,
+   "total": 70,
+   "url": "https://chapter3realty.com/homes/api/map?city=Aynor"
+  },
+  {
+   "city": "Aynor",
+   "type": "(all)",
+   "max": 450000,
+   "total": 52,
+   "url": "https://chapter3realty.com/homes/api/map?city=Aynor&max=450000"
+  },
+  {
+   "city": "Aynor",
+   "type": "house",
+   "max": null,
+   "total": 44,
+   "url": "https://chapter3realty.com/homes/api/map?city=Aynor&type=house"
+  },
+  {
+   "city": "Aynor",
+   "type": "house",
+   "max": 450000,
+   "total": 37,
+   "url": "https://chapter3realty.com/homes/api/map?city=Aynor&type=house&max=450000"
+  },
+  {
+   "city": "Aynor",
+   "type": "condo",
+   "max": null,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Aynor&type=condo"
+  },
+  {
+   "city": "Aynor",
+   "type": "condo",
+   "max": 450000,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Aynor&type=condo&max=450000"
+  },
+  {
+   "city": "Aynor",
+   "type": "townhouse",
+   "max": null,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Aynor&type=townhouse"
+  },
+  {
+   "city": "Aynor",
+   "type": "townhouse",
+   "max": 450000,
+   "total": 0,
+   "url": "https://chapter3realty.com/homes/api/map?city=Aynor&type=townhouse&max=450000"
+  },
+  {
+   "city": "Aynor",
+   "type": "manufactured",
+   "max": null,
+   "total": 6,
+   "url": "https://chapter3realty.com/homes/api/map?city=Aynor&type=manufactured"
+  },
+  {
+   "city": "Aynor",
+   "type": "manufactured",
+   "max": 450000,
+   "total": 6,
+   "url": "https://chapter3realty.com/homes/api/map?city=Aynor&type=manufactured&max=450000"
+  }
+ ]
+}

@@ -1,0 +1,119 @@
+{
+ "filings": 160,
+ "date_range": [
+  "01-APR-2026",
+  "31-OCT-2025"
+ ],
+ "industry": {
+  "Commercial": 72,
+  "Residential": 32,
+  "Other Real Estate": 56
+ },
+ "exemption": {
+  "06c": 95,
+  "06b": 62,
+  "06c, 3C, 3C.5": 3
+ },
+ "has_nonaccredited": {
+  "false": 159,
+  "true": 1
+ },
+ "min_inv": {
+  "n": 156,
+  "median": 100000.0,
+  "p25": 25000.0,
+  "p75": 100000.0,
+  "min": 1000.0,
+  "max": 21930000.0,
+  "counts": [
+   [
+    100000,
+    57
+   ],
+   [
+    25000,
+    23
+   ],
+   [
+    1000,
+    21
+   ],
+   [
+    50000,
+    16
+   ],
+   [
+    500000,
+    11
+   ],
+   [
+    250000,
+    10
+   ],
+   [
+    150000,
+    6
+   ],
+   [
+    90000,
+    2
+   ],
+   [
+    1000000,
+    1
+   ],
+   [
+    474500,
+    1
+   ],
+   [
+    504800,
+    1
+   ],
+   [
+    21930000,
+    1
+   ]
+  ]
+ },
+ "offering": {
+  "n": 160,
+  "median": 40894194.0,
+  "p25": 16174455.0,
+  "p75": 59247651.75,
+  "total": 10793422254.0
+ },
+ "commission_plus_finders_share": {
+  "n": 144,
+  "median": 0.06000000470782056,
+  "p25": 0.05,
+  "p75": 0.084,
+  "min": 0.00691400982922785,
+  "max": 0.5999998680601276
+ },
+ "zero_or_blank_commission": 16,
+ "extra": {
+  "min_ge_100k": 93,
+  "min_le_25k": 44,
+  "min_eq_1000": 21,
+  "min_buckets": {
+   "under $25,000": 21,
+   "$25,000 to $99,999": 42,
+   "$100,000": 57,
+   "$100,001 to $499,999": 19,
+   "$500,000 or more": 17
+  },
+  "fee_buckets": {
+   "under 5%": 24,
+   "5% to 6.9%": 67,
+   "7% to 8.9%": 33,
+   "9% or more": 20
+  },
+  "fee_median_without_060_outlier": 0.06000000319221967,
+  "fee_n_without_outlier": 143,
+  "fee_ge_9pct": 20,
+  "sponsors_first_word": 79,
+  "residential_label": 32
+ },
+ "source": "SEC Form D data sets 2025Q4-2026Q3, https://www.sec.gov/data-research/sec-markets-data/form-d-data-sets"
+}

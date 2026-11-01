@@ -1,0 +1,148 @@
+{
+ "built": "2026-11-01",
+ "area_km2": {
+  "sfz": 407.9,
+  "sfha_in_county": 751.3,
+  "sfz_outside_sfha": 30.9,
+  "county": 2970.6,
+  "sfz_outside_sfha_without_slivers": 20.4
+ },
+ "area_sq_mi": {
+  "sfz": 157.5,
+  "sfha_in_county": 290.1,
+  "sfz_outside_sfha": 11.9,
+  "county": 1147.0,
+  "sfz_outside_sfha_without_slivers": 7.9
+ },
+ "homes": {
+  "residential_parcels_with_address_point": 151260,
+  "residential_parcels_all": 226997,
+  "in_sfha": 8489,
+  "in_sfz": 2522,
+  "in_sfz_not_sfha": 778,
+  "in_sfz_not_sfha_landuse_top": [
+   [
+    "101",
+    682
+   ],
+   [
+    "120",
+    34
+   ],
+   [
+    "121",
+    25
+   ],
+   [
+    "130",
+    16
+   ],
+   [
+    "112",
+    14
+   ],
+   [
+    "123",
+    2
+   ],
+   [
+    "113",
+    2
+   ],
+   [
+    "106",
+    1
+   ]
+  ],
+  "in_sfha_landuse_top": [
+   [
+    "101",
+    7161
+   ],
+   [
+    "120",
+    246
+   ],
+   [
+    "102",
+    228
+   ],
+   [
+    "109",
+    126
+   ],
+   [
+    "135",
+    123
+   ],
+   [
+    "123",
+    107
+   ],
+   [
+    "130",
+    90
+   ],
+   [
+    "121",
+    90
+   ]
+  ],
+  "houses": {
+   "with_point": 128358,
+   "in_sfha": 7489,
+   "in_sfz": 2133,
+   "in_sfz_not_sfha": 683
+  },
+  "houses_in_sfz_not_sfha_without_slivers": 392,
+  "manufactured_in_sfz_not_sfha_without_slivers": 36,
+  "manufactured": {
+   "with_point": 7087,
+   "in_sfha": 336,
+   "in_sfz": 221,
+   "in_sfz_not_sfha": 59
+  }
+ },
+ "listings": {
+  "pulled": "2026-11-01T02:12:15.806259Z",
+  "source_meta": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+  "in_horry": 6455,
+  "by_type": {
+   "house": 3018,
+   "townhouse": 311,
+   "condo": 2701,
+   "manufactured": 425
+  },
+  "in_sfha": {
+   "house": 249,
+   "townhouse": 3,
+   "condo": 822,
+   "manufactured": 37
+  },
+  "in_sfz": {
+   "house": 71,
+   "townhouse": 1,
+   "condo": 8,
+   "manufactured": 7
+  },
+  "in_sfz_not_sfha": {
+   "house": 16,
+   "condo": 2,
+   "manufactured": 3
+  },
+  "in_sfha_total": 1111,
+  "in_sfz_total": 87,
+  "in_sfz_not_sfha_total": 21
+ },
+ "sellers": {
+  "houses_matched_with_sale_date": 2028,
+  "no_sale_date": 20,
+  "after_florence_2018_09_14": 1549,
+  "after_matthew_2016_10_08": 1677,
+  "bought_2025_or_later": 395,
+  "no_point_within_40m": 620,
+  "skipped_new_construction_tag": 1086,
+  "pct_after_florence": 76.4,
+  "pct_after_matthew": 82.7
+ }
+}

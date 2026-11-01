@@ -1,0 +1,6 @@
+#!/bin/sh
+# Google search suggestions for the page's topic. Run: sh pull-suggestions.sh > raw/google-suggestions.txt
+for q in "what is my home worth" "what is my home worth myrtle beach" "home value myrtle beach" "myrtle beach home values" "how much is my house worth" "how much is my house worth sc" "home value estimator" "horry county property value" "horry county assessed value" "horry county property search" "horry county reassessment" "horry county market value" "myrtle beach condo values" "myrtle beach home prices" "horry county home prices" "south carolina home values" "grand strand home values" "is zillow zestimate accurate" "zestimate vs appraisal" "cma vs appraisal" "free home valuation" "how do i find the value of my home" "assessed value vs market value" "sc property tax 15 cap" "why is my home value" "home value by address" "north myrtle beach home values" "conway sc home values" "surfside beach home values" "carolina forest home values" "what is my condo worth"; do
+  printf '== %s\n' "$q"
+  curl -sS -A "Mozilla/5.0" "https://suggestqueries.google.com/complete/search?client=firefox&hl=en&gl=us&q=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$q")"; echo
+done

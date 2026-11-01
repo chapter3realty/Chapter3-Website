@@ -1,0 +1,78 @@
+{
+ "pulled": "2026-11-01T00:30:05.957172Z",
+ "note": "CRM active for-sale listings, type house, by the listing's city name. USDA columns count map points inside or outside the USDA ineligible area; points outside Horry County are left out.",
+ "rows": [
+  {
+   "town": "Aynor",
+   "houses_for_sale": 44,
+   "under_450k": 37,
+   "share_under_450k": 0.841,
+   "under_450k_usda_eligible": 37,
+   "under_450k_usda_ineligible": 0
+  },
+  {
+   "town": "Conway",
+   "houses_for_sale": 674,
+   "under_450k": 545,
+   "share_under_450k": 0.809,
+   "under_450k_usda_eligible": 534,
+   "under_450k_usda_ineligible": 10
+  },
+  {
+   "town": "Loris",
+   "houses_for_sale": 155,
+   "under_450k": 125,
+   "share_under_450k": 0.806,
+   "under_450k_usda_eligible": 125,
+   "under_450k_usda_ineligible": 0
+  },
+  {
+   "town": "Longs",
+   "houses_for_sale": 346,
+   "under_450k": 276,
+   "share_under_450k": 0.798,
+   "under_450k_usda_eligible": 256,
+   "under_450k_usda_ineligible": 20
+  },
+  {
+   "town": "Little River",
+   "houses_for_sale": 190,
+   "under_450k": 125,
+   "share_under_450k": 0.658,
+   "under_450k_usda_eligible": 29,
+   "under_450k_usda_ineligible": 95
+  },
+  {
+   "town": "Myrtle Beach",
+   "houses_for_sale": 1054,
+   "under_450k": 462,
+   "share_under_450k": 0.438,
+   "under_450k_usda_eligible": 43,
+   "under_450k_usda_ineligible": 419
+  },
+  {
+   "town": "Surfside Beach",
+   "houses_for_sale": 84,
+   "under_450k": 24,
+   "share_under_450k": 0.286,
+   "under_450k_usda_eligible": 0,
+   "under_450k_usda_ineligible": 24
+  },
+  {
+   "town": "Murrells Inlet",
+   "houses_for_sale": 206,
+   "under_450k": 39,
+   "share_under_450k": 0.189,
+   "under_450k_usda_eligible": 0,
+   "under_450k_usda_ineligible": 33
+  },
+  {
+   "town": "North Myrtle Beach",
+   "houses_for_sale": 258,
+   "under_450k": 46,
+   "share_under_450k": 0.178,
+   "under_450k_usda_eligible": 0,
+   "under_450k_usda_ineligible": 46
+  }
+ ]
+}

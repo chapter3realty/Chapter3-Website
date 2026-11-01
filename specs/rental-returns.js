@@ -587,7 +587,7 @@ module.exports = {
       T_PRICE +
       h.p(`In the Myrtle Beach city core that is the difference between ${p1(mb.midMgr.cap)} percent and ${p1(mb.lowMgr.cap)} percent, on the same rent. Divide by the wrong price and a normal market looks like a bad one.`) +
       h.p(`One caution on the costs. This page keeps insurance at ${fmt$(INS)} on every house, which is the middle of our landlord range. A smaller house usually insures for less, so the real return on a cheaper house is a little higher than the table shows.`) +
-      h.cta("Have us find you your next investment.", "Tell us the area and what you want the house to do. We send you what fits, including off-market properties that never reach the public sites, with the return run on each one.", "Have us find your next investment", "/invest/run-the-numbers/", bg) },
+      h.cta("Have us find you your next investment.", "Tell us the area and what you want the house to do. We send you what fits, with the return run on each one.", "Have us find your next investment", "/invest/run-the-numbers/", bg) },
 
     { h2: "How much does a long-term rental make in each area?", html:
       h.p(`Each area has two bars. The dark bar is the return with a property manager taking 10 percent of the rent. The light bar is the same house with you managing it. Both allow 10 percent of the rent for empty months and repairs.`) +

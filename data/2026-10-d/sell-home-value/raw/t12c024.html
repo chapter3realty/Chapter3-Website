@@ -1,0 +1,572 @@
+﻿
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="robots" content="noimageindex">
+	    <meta charset="iso-8859-1">
+	    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	    	    <title>Code of Laws - Title 12 - Chapter 24- - TAXATION</title>
+	    <link rel="SHORTCUT ICON" href="/images/stateflagsmall.ico" />
+		<link rel="icon" href="/images/stateflagsmall.ico" type="image/ico" />
+		<link rel="SHORTCUT ICON" href="/images/South-Carolina-Flag2.ico" />
+
+		<link type="text/css" rel="stylesheet" href="/css/main.css" media="all" />
+				
+		<!--[if lte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/ie7main.css" media="all" />
+		<![endif]-->
+		<!--[if gte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/iemain.css" media="all" />
+		<![endif]-->
+		<link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+		<link type="text/css" rel="stylesheet" href="/css/supplement.css" media="screen" />
+		<!--<link type="text/css" rel="stylesheet" href="/css/zipsearch.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/vote.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/contact.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/navwrap.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/linkbar.css" media="screen" />-->
+	
+		<!--<script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>-->
+		<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+				<script type="text/javascript" src="/js/main_linux.js"></script>
+		
+
+		
+
+
+
+		<!--<script type="text/javascript" src="/js/common.js"></script>
+		<script type="text/javascript" src="/js/utils.js"></script>
+		<script type="text/javascript" src="/js/date.js"></script>
+		<script type="text/javascript" src="/js/lightbox.js"></script>
+		<script type="text/javascript" src="/js/legislation.js"></script>
+		<script type="text/javascript" src="/js/logon_lits.js"></script>
+		<script type="text/javascript" src="/js/message.js"></script>
+		<script type="text/javascript" src="/js/comm_meeting.js"></script>-->
+		<script type="text/vbscript" src="/vbs/comm_meeting.vbs"></script>
+		<!--<script type="text/javascript" src="/js/regs.js"></script>-->
+				
+	   	<script type="text/javascript">
+	    //document.onclick = function () { document.getElementById('transbox').style.display= 'none' };
+	    	var xmlhttp=false;
+			xmlhttp = create_xml_object();
+	
+			function getElement(ele)
+			{
+				var theobj = false;
+				if(typeof ele == 'string')
+					theobj = (document.getElementById)?document.getElementById(ele):document.all[ele];
+				else
+					theobj = ele;
+			
+				return theobj;
+			}
+		
+			function checkreader(friendlyalert)
+			{
+			 	/*friendlyalert=friendlyalert||false;
+			 	
+			 	var browser_info = perform_acrobat_detection();
+				if (!browser_info.acrobat)
+				{
+				 	loadadobebox('adobebox', '/adobe.php');
+					return false;
+				}
+				else if (friendlyalert)
+				{
+			 		alert(friendlyalert);
+				}*/
+				return true;
+			}
+				
+			function loadadobebox(boxname, url)
+			{
+				var response = false;
+	
+				doRequest(xmlhttp, "GET", url, false, null, null);
+				if (xmlhttp.status == 200)
+				{
+		         	response = xmlhttp.responseText;
+				}
+	
+				if(response)
+				{
+			 		var ele = document.getElementById(boxname);
+				 	if (ele)
+				 	{
+				 		ele.style.visibility = 'hidden';
+		 				ele.style.display = 'block';
+	
+		 				positionElement(ele, 'center', 'center', true);
+	
+						ele.innerHTML = response;
+					    ele.style.visibility = 'visible';
+					    ele.style.display = 'block';
+	//				    ele.scrollIntoView(true);
+					}
+				}
+				return response;
+			}
+	
+	
+			function init()
+			{
+		 		var ld=document.getElementById("loading");
+				if(ld)
+				{
+					ld.style.display = 'none';
+				}
+			}
+			
+			function openmore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				 	var pos = findPos(id);
+				 	id.style.zIndex = 10;
+		//		 	id.style.left = pos[0]+'px';
+		//		  	id.style.top = pos[1]+'px';
+				  	id.style.height = '295px';
+				  	id.style.position = 'absolute';
+				  	id.style.backgroundColor = '#f7f4ec';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'none';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = 'none';
+				  	}
+				}
+			}
+		
+			function closemore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				  	id.style.height = '135px';
+				  	id.style.position = '';
+				  	id.style.backgroundColor = 'transparent';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'block';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = '';
+				  	}
+				}		 	
+			}
+		
+		<!-- This script and many more are available free online at -->
+		<!-- The JavaScript Source!! http://javascript.internet.com -->
+		
+		<!-- Begin
+		function right(e) {
+		var msg = "Use of this image is strictly prohibited unless express written permission is given to the user by South Carolina Legislative Services Agency.";
+		if (navigator.appName == 'Netscape' && e.which == 3) {
+		alert(msg);
+		return false;
+		stopEvent(e);
+		}
+		if (navigator.appName == 'Microsoft Internet Explorer' && event.button==2) {
+		alert(msg);
+		return false;
+			stopEvent(event);
+		}
+		else return true;
+		}
+		
+	function trap() 
+	{
+		if(document.images)
+		{
+			for(i=0;i<document.images.length;i++)
+			{
+				if(document.images[i].className == 'allowcontextmenu')
+				{
+					// this should have no scripting
+				}
+				else
+				{
+				 	document.images[i].onmousedown = right;
+					document.images[i].oncontextmenu = function(){ return false; };
+					//document.images[i].onmouseup = right;
+				}
+			}
+		}
+	}
+
+	function findfwtext(texttofind) 
+	{
+	 	var fwtextele = document.getElementById('fwtext');
+		if(fwtextele)
+		{
+			fwtextele.value = texttofind;
+		}
+	}	
+		// End -->
+		</script>
+
+		<!-- ADDED FOR V4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJY6FMNQKH"></script>
+
+
+<script type="text/javascript">
+
+//ADDED FOR V4
+//Google tag (gtag.js) 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LJY6FMNQKH');
+
+ 
+ /* COMMENTING OUT UPGRADING TO V4 -A
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36207109-1']);
+  _gaq.push(['_setDomainName', 'scstatehouse.gov']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+*/
+  
+      $(document).ready(function(){
+        // COMMENTING THIS OUT NO LONGER BEING ACTIVELY USED TO MONITOR FOR TRAFFIC TO SPECIFIC LINKS - A
+        /*
+          var anchors = $('div#contentsection a');
+
+          //console.log('anchors...'+anchors.length);
+          if(anchors.length > 0){
+            //console.log('setting up event handler...');
+            anchors.click(function(){
+              var a = $(this).attr('href');
+              if(_gaq && (a.substr(-3) == 'htm' || a.substr(-4) == 'html' || a.substr(-3) == 'doc' || a.substr(-4) == 'docx' || a.substr(-3) == 'pdf' || a.substr(-3) == 'xls' || a.substr(-4) == 'xlsx')) {
+                //console.log(a);
+                _gaq.push(['_trackPageview', $(this).attr('href')]);
+              }
+              
+              var aText = $(this).text().toLowerCase();
+              if (a.indexOf('getfile.php') > -1 && aText === 'word'){
+                    _gaq.push(['_trackEvent', 'Word Doc', 'Download', ('from page: ' + document.location + ' - href: ' + a)]);
+              }
+
+            });
+          }
+          */
+      });
+
+</script>
+	</head>
+	
+		
+	<body class="home"  onload="init(); trap();">
+	<noscript>Your browser does not support JavaScript!  This page will not render correctly.</noscript> 
+
+
+	
+	<div id="adobebox" style="position:absolute; width:400px; height:150px; border:2px solid #555555; background-color:#cccccc; display:none;"></div>
+	<div id="container" >	
+				<div id="header" class="nodisplay" style="text-align:center; height:100px;" >
+									<img id="headerimg" class="nodisplay" alt="South Carolina Legislature" title="South Carolina Legislature" src="/images/header8.png" />
+								
+							<!--	<div class="award"><span style="color:#831224; font-weight:bold; font-size:1.5em;">*</span> Recipient of<br>the Notable State Documents Award<br>by the<br>South Carolina<br>State Library.</div>-->
+				
+				
+			</div>
+			<div class="printdisplay"><img border="0" src="/images/titleprint.jpg" alt="South Carolina Legislature" title="South Carolina Legislature" alt="South Carolina Legislature" title="South Carolina State Legislature" /><br /><hr /><br /></div>
+	
+			<div id="pagebody" >
+	
+	
+<!--<div id="topmessage">
+<br style="display:block; margin-top:10px;">
+Searches and data queries will be unavailable beginning Friday, August 19, 2016, from 8:00 PM until Saturday, August 20th at 8:00 AM<br>due to scheduled maintenance.</div>-->
+				<!-- Prompt IE 8/7/6 users to upgrade to a newer browser. -->
+				<!--[if lte IE 8]>
+				<div class="oldframe">In order to improve your experience using this website, please <a href="http://browsehappy.com/">upgrade your browser</a>.</div>
+				<![endif]-->
+			
+			
+			
+			<div id="menu" class="nodisplay">
+				<ul class="nodisplay">
+				<li><a href="/index.php">Home</a></li>
+<li><a href="/senate.php">Senate</a></li>
+<li><a href="/house.php">House</a></li>
+<li><a href="/committeeinfo.php">Committee&nbsp;Postings&nbsp;and&nbsp;Reports</a></li>
+<li><a href="/council.php">Legislative Council</a></li>
+<li><a href="/citizens.php">Citizens&#39; Interest</a></li>
+<li><a href="/publications.php">Publications</a></li>
+		    	</ul>
+			</div>
+			<div id="search" class="nodisplay" style="height: 28px;"><div class="nodisplay" style="float:right; margin:6px 20px 0px 0;">
+							<!--<a style="color:#f7f4ec; height:15px;" href="#" onClick="rsswindow();"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+<!--				<a style="color:#f7f4ec; height:15px;" href="/splashpage/splashpage.html"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a> -->
+				<a style="color:#f7f4ec; height:15px;" href="/onlineservices/index.php"><img border="0" src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>
+			<!--	<a style="color:#f7f4ec; height:15px;" href="/maintenance_portal.php"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+						</div></div>
+			
+	
+					<div id="sidebar" class="nodisplay">
+	<div id="vidlinks" style="height: 50px;">
+						<!--<img src="/images/videobutton12d.png">-->
+											<ul id="vidsidemenu">
+	<li id="vidinnermenu" style="font-size:16px; margin: 0 0 5px 0;">Chamber Video</li>
+<li id="sbroadcast" style="float: left; width:50%;">
+<a id="liveS" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('S', false, false, '0')">Senate</a><br><a id="liveaudioS" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('S', false, false, '1');">(Audio Only)</a>
+</li>
+<li id="hbroadcast" style="float: left; width:50%;">
+<a id="liveH" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('H', false, false, '0')">House</a><br><a id="liveaudioH" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('H', false, false, '1');">(Audio Only)</a>
+</li>
+						</ul>
+					</div>
+					<div id="commvidlinks"><a href="/video/schedule.php">Video&nbsp;Schedule</a><a style="border-top:1px solid #fff; padding-top:12px;" href="/video/archives.php">Video Archives</a></div>
+										<div id="sidemenu">
+						<ul id="innermenu">
+		
+							<li><a href="/howdoi.php">How do I...</a></li>
+										
+							
+								<li class="nolink" onMouseOver="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='block'; document.sidesearchform.searchtext.focus();}" onMouseOut="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Quick Search</div>
+								<div id="sidesearch" class="sidesubmenu">
+									<form id="sidesearchform" name="sidesearchform" method="POST" action="/search.php">
+									<input type="hidden" name="search" value="side" />
+									<div class="topelement"><label for="searchtext"><span class="label">Search for:</span></label><input id="searchtext" name="searchtext" type="text"/><a id="searchlink2" href="javascript:void(0);" onClick="document.sidesearchform.submit();"><img id="searchicon" src="/images/searchbutton.png" alt="Search" title="Search"/></a></div>
+			<!--						<div><input type="checkbox" id="searchchoice_all" name="searchchoice_all" value="all" /><label for="searchchoice_all">All</label></div>-->
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_fullsite" name="category" value="FULLSITE" /><label for="searchchoice_fullsite">&nbsp;Full Site Search</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_billnumber" name="category" value="BILL" /><label for="searchchoice_billnumber">&nbsp;Bill Number</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_legislation" name="category" value="LEGISLATION" CHECKED /><label for="searchchoice_legislation">&nbsp;Legislation</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_budget" name="category" value="BUDGET" /><label for="searchchoice_budget">&nbsp;Budget</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeoflaws" name="category" value="CODEOFLAWS" /><label for="searchchoice_codeoflaws">&nbsp;Code of Laws</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeofregs" name="category" value="CODEOFREGS" /><label for="searchchoice_codeofregs">&nbsp;Code of Regulations</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_constitution" name="category" value="CONSTITUTION" /><label for="searchchoice_constitution">&nbsp;Constitution</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_housejournals" name="category" value="HOUSEJOURNALS" /><label for="searchchoice_housejournals">&nbsp;House Journals</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_senatejournals" name="category" value="SENATEJOURNALS" /><label for="searchchoice_senatejournals">&nbsp;Senate Journals</label></div>
+									<div class="bottomelement" style="padding-left:20px;"><input type="radio" id="searchchoice_billsummary" name="category" value="SUMMARY" /><label for="searchchoice_billsummary">&nbsp;LSA Bill Summary</label></div>
+								</form>
+									
+								</div>
+							</li>
+							<li><a href="/legislatorssearch.php">Find Your Legislators</a></li>
+							<li id="contactLegislatorLink"><a href="/email.php?chamber=B">Contact Your Legislator</a></li>
+									
+							<li><a href="/legislation.php">Legislation</a></li>
+							<li><a href="/listtracking/main.php" target="LTS">Track Legislation</a></li>
+							<li><a href="/multicriteria2/search.php" target="MCS">Multi-Criteria Search</a></li>
+									<!--<li><a href="#" onclick="multisearchwindow('INTROBOTH');">Multi-Criteria Search</a></li>-->
+									<!--<li><a href="#" onclick="multisearchwindow('INTROMANUAL');">Multi-Criteria Search</a></li>-->
+									<li><a href="/research.php">Research</a></li>
+	
+								<li class="nolink" onMouseOver="var ele=document.getElementById('law'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('law'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">South Carolina Law</div> 
+								<div id="law" class="sidesubmenu">
+									<div class="sidediv topelement"><a href="/newlaws.php">Ratifications &amp; Acts</a></div>
+									<div class="sidediv"><a href="/code/statmast.php">Code of Laws</a></div>
+									<div class="sidediv"><a href="/coderegs/statmast.php">Code of Regulations</a></div>
+									<div class="sidediv"><a href="/scconstitution/scconst.php">Constitution</a></div>
+									<div class="sidediv bottomelement"><a href="/state_register.php">State Register</a></div>
+								</div>
+							</li>
+										<li class="nolink" onMouseOver="var ele=document.getElementById('manual'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('manual'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Legislative Manual</div>
+								<div id="manual" class="sidesubmenu">
+								
+<!--									<div class="sidediv topelement"><a href="https://web.sc.gov/LSAShoppingcart/Default.aspx" target="_blank">Purchase Manual</a></div>-->
+								
+<!--									<div class="sidediv topelement"><a href="https://secure.scstatehouse.gov/cgi-bin/webstore.exe" target="_blank">Purchase Manual</a></div>-->
+									<div class="sidediv topelement"><a href="javascript:#" onClick="alert('We are sorry, but we are unable to process online transactions at this time.\n\nIf you would still like to make a purchase, please contact us directly at (803) 212-4490 during normal business hours (8:30am - 5:00pm EST).');">Purchase Manual</a></div>
+									<div class="sidediv bottomelement"><a href="/man26/manual26.php">View Manual Online</a></div>
+								</div>
+							</li>
+							<li><a href="http://www.studentconnection.scstatehouse.gov">Student Connection</a></li>
+							<li><a href="/visit.php">Visiting the State House</a></li>
+							<li><a href="/archives.php">Archives</a></li>
+							<li><a href="http://www.sc.gov/Agency-Listing" target="_blank">State Agency Websites</a></li>
+							<!--<li><a href="/stateagencysites.php">State Agency Websites</a></li>-->
+							<li><a href="/citizensinterestpage/media.php">Media Links</a></li>
+				 		</ul>
+			    	</div>
+	
+					<div id="side_ad">
+						<A href="http://www.sc.gov/" target="_blank"><img border=0 src="/images/scgov3.jpg" alt="SC.gov" title="SC.gov" /></a>
+													<A href="http://www.statelibrary.sc.gov" target="_blank"><img border=0 src="/images/scsl_logo_rgb_web.png" alt="StateLibrary.SC.gov" title="StateLibrary.SC.gov" /></a>
+											</div>	    	
+			</div>
+
+	
+	<script type="text/javascript"> 
+		if ( '' === '1'){
+		 	
+			var link = document.getElementById('contactLegislatorLink');
+			if (link != 'undefined' && link != null){
+				link.style.display = 'none'; 
+				link.style.visibility = 'hidden';
+			}
+		}
+		if ( '' === '1'){
+		 	setTimeout(function(){
+				var link2 = document.getElementById('sendMsgLink');
+				if (link2 != 'undefined' && link2 != null){
+					link2.style.display = 'none'; 
+					link2.style.visibility = 'hidden';
+				};
+			}, 20);
+			
+		}  
+	</script>
+<div class="mainwidepanel">
+
+				<div id="breadcrumbs">
+						South Carolina Law &gt; <a href="/code/statmast.php">Code of Laws</a> &gt; <a href="/code/title12.php">Title 12</a>
+				</div>
+
+					<h2 class="barheader">South Carolina Code of Laws<br />
+									Unannotated<br />
+					</h2>
+
+				<div id="contentsection">
+<div style="font-weight: bold; text-align: center;">Title 12 - TAXATION</div>
+<br />
+
+<div style="text-align: center;">CHAPTER 24</div>
+<div style="text-align: center;">Deed Recording Fee</div><br />
+<span style="font-weight: bold;"> SECTION 12-24-10.</span> Recording fee; exceptions.<br /><br />
+	(A) In addition to all other recording fees, a recording fee is imposed for the privilege of recording a deed in which land and improvements on the land, tenements, or other realty is transferred to another person. The fee is one dollar eighty-five cents for each five hundred dollars, or fractional part of five hundred dollars, of the realty&#39;s value as determined by Section 12-24-30.<br /><br />
+	(B) An instrument or deed of distribution assigning, transferring, or releasing real property to the distributee of a decedent&#39;s estate pursuant to Section 62-3-907 as evidence of the distributee&#39;s title to the property is not a deed subject to this chapter. In addition, a deed transferring real property from a trust to a trust distributee upon the trust settlor&#39;s death, pursuant to the trust terms, is not a deed subject to this chapter if a deed of distribution would be the appropriate instrument to transfer the subject property if the property were part of the decedent&#39;s probate estate.<br /><br />
+HISTORY: 1996 Act No. 458, Part II, SECTION 57A; 2006 Act No. 323, SECTION 1, eff June 2, 2006; 2008 Act No. 292, SECTION 1, eff June 11, 2008.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-20.</span> Liability for fee.<br /><br />
+	(A) Except as provided in subsection (B), the fee imposed by this chapter is the liability of the grantor, or the joint and several liability of the grantors, but the grantee is secondarily liable for the payment of the fee.<br /><br />
+	(B) In the case of a master-in-equity deed, a deed from the federal government, a state or any of a state&#39;s political subdivisions, or a qualified retirement plan exempt from income taxes under the Internal Revenue Code to another person, the fee imposed by this chapter is the liability of the grantee, or the joint and several liability of the grantees, and not the grantor.<br /><br />
+HISTORY: 1996 Act No. 458, Part II, SECTION 57A; 1997 Act No. 73, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-30.</span> &quot;Value&quot; defined.<br /><br />
+	(A) For purposes of this chapter, the term &quot;value&quot; means the consideration paid or to be paid in money or money&#39;s worth for the realty including other realty, personal property, stocks, bonds, partnership interests, and other intangible property, the forgiveness or cancellation of a debt, the assumption of a debt, and the surrendering of a right. The fair market value of the consideration must be used in calculating the consideration paid in money&#39;s worth. Taxpayers may elect to use the fair market value of the realty being transferred in determining fair market value of the consideration under the provisions of this section. However, in the case of realty transferred between a corporation, a partnership, or other entity and its stockholder, partner, or owner, and in the case of realty transferred to a trust or as a distribution to a trust beneficiary, &quot;value&quot; means the realty&#39;s fair market value.<br /><br />
+	(B) A deduction from value is allowed for the amount of any lien or encumbrance existing on the land, tenement, or realty before the transfer and remaining on the land, tenement, or realty after the transfer.<br /><br />
+	(C) Taxpayers may elect to use the fair market value as determined for property tax purposes in determining fair market value under the provisions of this section.<br /><br />
+HISTORY: 1996 Act No. 458, Part II, SECTION 57A; 1997 Act No. 73, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-40.</span> Exemptions.<br /><br />
+	Exempted from the fee imposed by this chapter are deeds:<br /><br />
+	(1) transferring realty in which the value of the realty, as defined in Section 12-24-30, is equal to or less than one hundred dollars;<br /><br />
+	(2) transferring realty to the federal government or to a state, its agencies and departments, and its political subdivisions, including school districts;<br /><br />
+	(3) that are otherwise exempted under the laws and Constitution of this State or of the United States;<br /><br />
+	(4) transferring realty in which no gain or loss is recognized by reason of Section 1041 of the Internal Revenue Code as defined in Section 12-6-40(A);<br /><br />
+	(5) transferring realty in order to partition realty, as long as no consideration is paid for the transfer other than the interests in the realty that are exchanged in order to effect the partition;<br /><br />
+	(6) transferring an individual grave space at a cemetery owned by a cemetery company licensed under Chapter 55, Title 39;<br /><br />
+	(7) that constitute a contract for the sale of timber to be cut;<br /><br />
+	(8) transferring realty to a corporation, a partnership, or a trust as a stockholder, partner, or trust beneficiary of the entity or so as to become a stockholder, partner, or trust beneficiary of the entity as long as no consideration is paid for the transfer other than stock in the corporation, interest in the partnership, beneficiary interest in the trust, or the increase in value in the stock or interest held by the grantor. However, except for transfers from one family trust to another family trust without consideration or transfers from a trust established for the benefit of a religious organization to the religious organization, the transfer of realty from a corporation, a partnership, or a trust to a stockholder, partner, or trust beneficiary of the entity is subject to the fee, even if the realty is transferred to another corporation, a partnership, or trust;<br /><br />
+	(9) transferring realty from a family partnership to a partner or from a family trust to a beneficiary, as long as no consideration is paid for the transfer other than a reduction in the grantee&#39;s interest in the partnership or trust. A &quot;family partnership&quot; is a partnership whose partners are all members of the same family. A &quot;family trust&quot; is a trust in which the beneficiaries are all members of the same family. &quot;Family&quot; means the grantor, the grantor&#39;s spouse, parents, grandparents, sisters, brothers, children, stepchildren, grandchildren, and the spouses and lineal descendant of any of them, and the grantor&#39;s and grantor&#39;s spouse&#39;s heirs under a statute of descent and distribution. A &quot;family partnership&quot; or &quot;family trust&quot; also includes charitable entities, other family partnerships and family trusts of the grantor, and charitable remainder and charitable lead trusts, if all the beneficiaries are charitable entities or members of the grantor&#39;s family. A &quot;charitable entity&quot; means an entity which may receive deductible contributions under Section 170 of the Internal Revenue Code as defined in Section 12-6-40(A);<br /><br />
+	(10) transferring realty in a statutory merger or consolidation from a constituent corporation to the continuing or new corporation;<br /><br />
+	(11) transferring realty in a merger or consolidation from a constituent partnership to the continuing or new partnership;<br /><br />
+	(12) that constitute a corrective deed or a quitclaim deed used to confirm title already vested in the grantee, as long as no consideration is paid or is to be paid under the corrective or quitclaim deed;<br /><br />
+	(13) transferring realty subject to a mortgage to the mortgagee whether by a deed in lieu of foreclosure executed by the mortgagor or deed executed pursuant to foreclosure proceedings;<br /><br />
+	(14) transferring realty from an agent to the agent&#39;s principal in which the realty was purchased with funds of the principal, provided that a notarized document is also filed with the deed that establishes the fact that the agent and principal relationship existed at the time of the original purchase as well as for the purpose of purchasing the realty;<br /><br />
+	(15) transferring title to facilities for transmitting electricity that is transferred, sold, or exchanged by electrical utilities, municipalities, electric cooperatives, or political subdivisions to a limited liability company which is subject to regulation under the Federal Power Act (16 U.S.C. Section 791(a)) and which is formed to operate or to take functional control of electric transmission assets as defined in the Federal Power Act.<br /><br />
+HISTORY: 1996 Act No. 458, Part II, SECTION 57A; 1997 Act No. 73, SECTION 3; 1998 Act No. 324, SECTION 1; 2000 Act No. 395, SECTION 1, eff July 20, 2000; 2001 Act No. 89, SECTION 1, eff July 20, 2001, applicable to sales or deeds made or recorded after that date; 2014 Act No. 259 (S.437), SECTION 4.B, eff June 9, 2014.<br /><br />
+Editor&#39;s Note<br /><br />
+	2000 Act No. 395, SECTION 3 provides:<br /><br />
+	&quot;This act takes effect upon approval by the Governor, and Section 1 applies with respect to deeds recorded on and after that date.&quot;<br /><br />
+	2014 Act No. 259, SECTION 4.C, provides as follows:<br /><br />
+	&quot;C. This SECTION takes effect upon approval by the Governor and applies to property tax years beginning after 2013.&quot;<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 259, SECTION 4.B, in paragraph (8), substituted &quot;consideration or transfers from a trust established for the benefit of a religious organization to the religious organization&quot; for &quot;consideration&quot;.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-50.</span> Remittance of fee.<br /><br />
+	The fee imposed by this chapter must be remitted to the clerk of court or the register of deeds in the county in which the realty is located and recorded. If the realty is located in more than one county, the person having the deed recorded in a county must state by affidavit what portion of the value of the realty is in that county and payment of the fee must be made based on the proportionate value of the realty located in that county.<br /><br />
+HISTORY: 1996 Act No. 458, Part II, SECTION 57A; 1997 Act No. 34, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-60.</span> Notations.<br /><br />
+	The clerk of court or register of deeds, before recording a deed subject to the fee imposed by this chapter, shall collect the fee and place a notation on the deed containing the following information: the date the deed was filed; the fee collected; and any other information required by the county. If the deed qualifies for an exemption under Section 12-24-40, the word &quot;exempt&quot; must be placed in the notation.<br /><br />
+HISTORY: 1996 Act No. 458, Part II, SECTION 57A; 1997 Act No. 34, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-70.</span> Affidavits.<br /><br />
+	(A)(1) The clerk of court or register of deeds shall require an affidavit showing the value of the realty to be filed with a deed. The affidavit required by this section must be signed by a responsible person connected with the transaction, and the affidavit must state that connection. The clerk of court or register of deeds, at his discretion, may waive the affidavit requirement.<br /><br />
+	(2) For deeds exempt from the provisions of this chapter, the value is not required to be stated on the affidavit, but the affidavit must state the reason the deed is exempt from the fee.<br /><br />
+	(B) The clerk of court or register of deeds shall file these affidavits in his office.<br /><br />
+	(C) A person required to furnish the affidavit who wilfully furnishes a false or fraudulent affidavit is guilty of a misdemeanor and, upon conviction, must be fined not more than one thousand dollars or imprisoned not more than one year, or both.<br /><br />
+	(D) An affidavit is not required for an instrument or deed of distribution assigning, transferring, or releasing real property to the distributee of an estate pursuant to Section 62-3-907 as evidence of the distributee&#39;s title.<br /><br />
+HISTORY: 1996 Act No. 458, Part II, SECTION 57A; 1997 Act No. 24, SECTION 2; 1997 Act No. 34, SECTION 1; 1997 Act No. 73, SECTION 4; 2006 Act No. 323, SECTION 2, eff June 2, 2006.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-80.</span> Records of fees due and collected.<br /><br />
+	Every clerk of court or register of deeds and the county shall keep and preserve suitable records to determine the amount of fee due and collected under this chapter. The clerk of court or register of deeds and the county shall keep and preserve records for five years.<br /><br />
+HISTORY: 1996 Act No. 458, Part II, SECTION 57A; 1997 Act No. 34, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-90.</span> Fee calculation.<br /><br />
+	(A) The fee imposed by this chapter is composed of two fees as follows:<br /><br />
+	(1) a state fee equal to one dollar thirty cents for each five hundred dollars, or fractional part of five hundred dollars, of the realty&#39;s value; and<br /><br />
+	(2) a county fee equal to fifty-five cents for each five hundred dollars, or fractional part of five hundred dollars, of the realty&#39;s value.<br /><br />
+	(B) The state fee must be credited as follows:<br /><br />
+	(1) ten cents of each one dollar thirty cents into the Heritage Land Trust Fund;<br /><br />
+	(2) twenty cents of each one dollar thirty cents into the South Carolina Housing Trust Fund; and<br /><br />
+	(3) one dollar of each one dollar thirty cents into the general fund of the State.<br /><br />
+	(C) The county fee must be credited to the general fund of the county.<br /><br />
+HISTORY: 1996 Act No. 458, Part II, SECTION 57A.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-95.</span> Repealed.<br /><br />
+HISTORY: Former Section, titled State deed recording fee credited to South Carolina Conservation Bank Trust Fund, had the following history: 2002 Act No. 200, SECTION 3, eff April 10, 2002. Repealed by 2018 Act No. 224, SECTION 6.A, eff July 1, 2018.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-97.</span> Repealed.<br /><br />
+HISTORY: Former Section, titled Starting date for transfers on which fee based, had the following history: 2002 Act No. 200, SECTION 4, eff April 10, 2002. Repealed by 2018 Act No. 224, SECTION 6.A, eff July 1, 2018.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-100.</span> Monthly payments to department; reports.<br /><br />
+	(A) The fees imposed by this chapter and collected by the clerk of court or register of deeds are due and payable to the department in monthly installments with a report on or before the twentieth day of the month following the month in which the fees were collected. The report required by this section must be filed by the county on a form or in the method prescribed by the department. The department, at its discretion, may require counties to remit the fee by electronic funds transfer or any other method considered appropriate.<br /><br />
+	(B) The department, at its discretion, may allow a county to file its report on a basis other than monthly.<br /><br />
+	(C) The county shall remit with each report only that portion of the fee that represents the state portion. The county portion of the fee must be retained by the county.<br /><br />
+	(D) When a return required by this section is filed and the fees due with it are paid in full on or before the final due date, including any date to which the time for making the return and paying the fees has been extended pursuant to the provisions of Section 12-54-70, the county is allowed a discount equal to three percent of the state&#39;s portion of the fees. In no case is a discount allowed if the return or fee on the return is received after the due date or after any extension granted by the department.<br /><br />
+HISTORY: 1996 Act No. 458, Part II, SECTION 57A; 1997 Act No. 34, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-110.</span> Presumption concerning titles.<br /><br />
+	When an instrument has been recorded it is presumed that all requirements of law affecting the title to the realty have been complied with.<br /><br />
+HISTORY: 1996 Act No. 458, Part II, SECTION 57A.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-120.</span> Penalties.<br /><br />
+	(A) The penalty provisions of Chapter 54 of this title apply both to the state and county portions of the fee imposed by this chapter.<br /><br />
+	(B) If the clerk of court or register of deeds fails to collect the proper fee due, or place the notation on the instrument as required by this chapter, the clerk of court or register of deeds is subject to a penalty of not less than fifty dollars nor more than five hundred dollars for each failure. This penalty may be waived or reduced by the department.<br /><br />
+	(C) If the person liable for the fee imposed by this chapter fails to pay the proper fee due, that person is subject to a penalty of not less than fifty dollars nor more than five hundred dollars for each failure. This penalty may be waived or reduced by the department.<br /><br />
+	(D) All penalties and interest collected with respect to this fee must be paid proportionately into the Heritage Land Trust Fund, the South Carolina Housing Trust Fund, the general fund of the State, and the county general fund in accordance with Section 12-24-90(B).<br /><br />
+HISTORY: 1996 Act No. 458, Part II, SECTION 57A; 1997 Act No. 34, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-130.</span> Lien for fees, penalties or interest.<br /><br />
+	The fee imposed under this chapter and any penalties and interest thereon are a debt owing to the State by the person or persons liable for the fee and are a lien on all property of these persons, but this lien is valid so as to affect the rights of purchasers for value, mortgagees, or judgement or other lien creditors only from the time when warrant is entered upon the transcript of judgments in the county, in the case of real property where the property is situate, and in the case of personal property, where the person liable for the fee resides or possesses personal property if the receiver is a resident of this State, or if the person is a nonresident, where the personal property is situate.<br /><br />
+HISTORY: 1996 Act No. 458, Part II, SECTION 57A.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-140.</span> Designation of office to collect fees.<br /><br />
+	If the governing body of a county determines that another office of the county shall administer the collecting of the fee as provided under this chapter, the county shall notify the department of this determination and provide the department a letter from the person assigned these duties stating that he is accepting this responsibility. The office designated to collect the fee is subject to all the applicable provisions of this chapter in place of the clerk of court or register of deeds.<br /><br />
+HISTORY: 1996 Act No. 458, Part II, SECTION 57A; 1997 Act No. 34, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-150.</span> Promulgation of regulations; refunds; other laws.<br /><br />
+	(A) The department may promulgate regulations, issue instructions or advisory opinions, or provide any other information to the clerks of court, registers of deeds, or fee payors to ensure uniform administration and collection of the fee imposed by this chapter.<br /><br />
+	(B) All refund requests must be filed with the department, and it is the responsibility of the department to determine if a refund is due and order the issuance of any refund due.<br /><br />
+	(C) The provisions of Chapter 54, including the provisions of Section 12-54-85, and Chapter 60 of this title are applicable to the fee imposed by this chapter, and, for purposes of applying these chapters, the fee payor is deemed the taxpayer. For purposes of applying Chapter 60, if a clerk of court or register of deeds disagrees with a fee payor as to whether or not a transaction is exempt or as to the amount of the fee due, the fee payor may do one of the following:<br /><br />
+	(1) The fee payor may pay the fee and file a claim for refund request with the department under the provisions of Section 12-60-470. If the department determines that a refund is not due, the fee payor may appeal the matter to the Administrative Law Court. If the department determines that a refund is due, the department shall refund the state portion of the fee and order the county to issue a refund for the county portion of the fee. Refund orders by the department may not be appealed by the county.<br /><br />
+	(2) The fee payor, upon filing an appeal with the department and a copy of the appeal with the clerk of court or register of deeds, may record the deed without payment of the fee. The appeal to the department must be administered in the same manner as appeals of property tax exemptions are administered by the department. If the department determines that the fee is due, the fee payor may appeal the decision to the Administrative Law Court. If the department determines that the fee is not due, the county may not appeal that determination.<br /><br />
+HISTORY: 1996 Act No. 458, Part II, SECTION 57A; 1997 Act No. 34, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-24-160.</span> Recording and filing fees; boundary clarification.<br /><br />
+	If as a result of the boundary clarification, as contained in the amendments to Section 1-1-10, effective January 1, 2017, property is considered to have changed locations from North Carolina to South Carolina and if solely as a result of this change a deed is filed in South Carolina, no deed recording fees are due on this filing and no county filing fees may be charged.<br /><br />
+HISTORY: 2016 Act No. 270 (S.667), SECTION 9, eff January 1, 2017.<br /><br />
+
+</div>
+
+
+					</div>		 <!-- mainwidepanel -->
+					
+				</div>		 <!-- pagebody -->
+				
+				<div id="footer" class="nodisplay" style="height: 30px;" onContextMenu="return false;">
+			<div id="footerdiv" style="margin:0;">
+				South Carolina Legislative Services Agency * 223 Blatt Building * 1105 Pendleton Street * Columbia, SC 29201<!-- * 803-212-4420--><br>
+				
+								<a href="/disclaimer.php">Disclaimer</a> * <a href="/policies.php">Policies</a> * <a href="/credits.php">Photo Credits</a> * <a href="/contact.php">Contact Us</a>
+							</div>
+		</div>
+		<div id="printfooter" class="printdisplay serifNormal" align=center style="font-size: 8pt;">
+			<br>
+			<br>
+			<hr>
+			Legislative Services Agency
+			<br>
+			h t t p : / / w w w . s c s t a t e h o u s e . g o v
+		</div>
+	
+		</div>	<!-- container or main in mobile page-->
+</body>
+</html>
+

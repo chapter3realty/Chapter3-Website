@@ -1,0 +1,157 @@
+{
+ "listings_pulled": "2026-11-01T00:30:05.957172Z",
+ "listings_by_type_9_cities": {
+  "(all)": {
+   "all": 7250,
+   "under_450k": 5241,
+   "share": 0.723
+  },
+  "house": {
+   "all": 3011,
+   "under_450k": 1679,
+   "share": 0.558
+  },
+  "condo": {
+   "all": 2707,
+   "under_450k": 2411,
+   "share": 0.891
+  },
+  "townhouse": {
+   "all": 327,
+   "under_450k": 283,
+   "share": 0.865
+  },
+  "manufactured": {
+   "all": 403,
+   "under_450k": 398,
+   "share": 0.988
+  }
+ },
+ "houses_by_city": {
+  "Myrtle Beach": {
+   "all": 1054,
+   "under_450k": 462,
+   "share": 0.438
+  },
+  "North Myrtle Beach": {
+   "all": 258,
+   "under_450k": 46,
+   "share": 0.178
+  },
+  "Surfside Beach": {
+   "all": 84,
+   "under_450k": 24,
+   "share": 0.286
+  },
+  "Murrells Inlet": {
+   "all": 206,
+   "under_450k": 39,
+   "share": 0.189
+  },
+  "Little River": {
+   "all": 190,
+   "under_450k": 125,
+   "share": 0.658
+  },
+  "Conway": {
+   "all": 674,
+   "under_450k": 545,
+   "share": 0.809
+  },
+  "Longs": {
+   "all": 346,
+   "under_450k": 276,
+   "share": 0.798
+  },
+  "Loris": {
+   "all": 155,
+   "under_450k": 125,
+   "share": 0.806
+  },
+  "Aynor": {
+   "all": 44,
+   "under_450k": 37,
+   "share": 0.841
+  }
+ },
+ "usda_ineligible_share_of_county_area": 0.147,
+ "points_pulled": "2026-11-01T00:35:30.336664Z",
+ "usda_listing_tally_under_450k": {
+  "condo": {
+   "usda_ineligible": 2310,
+   "usda_eligible": 61,
+   "outside_horry": 40
+  },
+  "house": {
+   "usda_ineligible": 647,
+   "usda_eligible": 1024,
+   "outside_horry": 8
+  },
+  "house_by_city_Aynor": {
+   "usda_eligible": 37
+  },
+  "house_by_city_Conway": {
+   "usda_eligible": 534,
+   "usda_ineligible": 10
+  },
+  "house_by_city_Little River": {
+   "usda_eligible": 29,
+   "usda_ineligible": 95
+  },
+  "house_by_city_Longs": {
+   "usda_eligible": 256,
+   "usda_ineligible": 20
+  },
+  "house_by_city_Loris": {
+   "usda_eligible": 125
+  },
+  "house_by_city_Murrells Inlet": {
+   "usda_ineligible": 33
+  },
+  "house_by_city_Myrtle Beach": {
+   "usda_ineligible": 419,
+   "usda_eligible": 43
+  },
+  "house_by_city_North Myrtle Beach": {
+   "usda_ineligible": 46
+  },
+  "house_by_city_Surfside Beach": {
+   "usda_ineligible": 24
+  },
+  "manufactured": {
+   "usda_ineligible": 282,
+   "outside_horry": 27,
+   "usda_eligible": 89
+  },
+  "townhouse": {
+   "usda_ineligible": 220,
+   "usda_eligible": 56,
+   "outside_horry": 7
+  }
+ },
+ "renters_acs1_2024": {
+  "renter_households": 35419,
+  "under_100k": 29475,
+  "share_under_100k": 0.832,
+  "100k_to_149k": 3943,
+  "150k_plus": 2001,
+  "share_150k_plus": 0.056,
+  "owner_households": 140964,
+  "renter_share_of_households": 0.201
+ },
+ "renters_acs5_2020_2024": {
+  "renter_households": 36099,
+  "under_100k": 29709,
+  "share_under_100k": 0.823,
+  "100k_to_149k": 4354,
+  "150k_plus": 2036,
+  "share_150k_plus": 0.056,
+  "owner_households": 122680,
+  "renter_share_of_households": 0.227
+ },
+ "median_household_income_acs1_2024": {
+  "value": 68534,
+  "moe": 3752
+ },
+ "bond_limit_vs_median": 1.68
+}

@@ -1,0 +1,717 @@
+{
+ "pulled": "2026-11-01T02:49:39.419913Z",
+ "source": "https://chapter3realty.com/homes/api/map (CRM active MLS listings, type=condo, status for sale)",
+ "notes": "yearMin/yearMax are the listing's year built. hoaMax is the listed HOA fee a month. Median found by halving to within $5.",
+ "rows": [
+  {
+   "band": "built 1986 or earlier",
+   "yearMin": null,
+   "yearMax": 1986,
+   "condos": 1094,
+   "elevator_building": 636,
+   "oceanfront_building": 514,
+   "fee_at_or_under": {
+    "200": 13,
+    "300": 50,
+    "400": 135,
+    "500": 287,
+    "600": 398,
+    "700": 564,
+    "800": 667,
+    "1000": 935,
+    "1200": 1020,
+    "1500": 1066,
+    "2000": 1081
+   },
+   "median_fee_month_within_5": 693
+  },
+  {
+   "band": "built 1987 to 1996",
+   "yearMin": 1987,
+   "yearMax": 1996,
+   "condos": 499,
+   "elevator_building": 226,
+   "oceanfront_building": 206,
+   "fee_at_or_under": {
+    "200": 3,
+    "300": 15,
+    "400": 75,
+    "500": 165,
+    "600": 207,
+    "700": 244,
+    "800": 306,
+    "1000": 389,
+    "1200": 429,
+    "1500": 482,
+    "2000": 497
+   },
+   "median_fee_month_within_5": 707
+  },
+  {
+   "band": "built 1997 to 2006",
+   "yearMin": 1997,
+   "yearMax": 2006,
+   "condos": 922,
+   "elevator_building": 434,
+   "oceanfront_building": 287,
+   "fee_at_or_under": {
+    "200": 2,
+    "300": 26,
+    "400": 139,
+    "500": 304,
+    "600": 511,
+    "700": 603,
+    "800": 663,
+    "1000": 716,
+    "1200": 785,
+    "1500": 843,
+    "2000": 914
+   },
+   "median_fee_month_within_5": 560
+  },
+  {
+   "band": "built 2007 to 2016",
+   "yearMin": 2007,
+   "yearMax": 2016,
+   "condos": 273,
+   "elevator_building": 171,
+   "oceanfront_building": 99,
+   "fee_at_or_under": {
+    "200": 6,
+    "300": 18,
+    "400": 35,
+    "500": 68,
+    "600": 105,
+    "700": 115,
+    "800": 126,
+    "1000": 166,
+    "1200": 186,
+    "1500": 220,
+    "2000": 258
+   },
+   "median_fee_month_within_5": 922
+  },
+  {
+   "band": "built 2017 or later",
+   "yearMin": 2017,
+   "yearMax": null,
+   "condos": 79,
+   "elevator_building": 23,
+   "oceanfront_building": 1,
+   "fee_at_or_under": {
+    "200": 0,
+    "300": 11,
+    "400": 25,
+    "500": 60,
+    "600": 67,
+    "700": 74,
+    "800": 74,
+    "1000": 78,
+    "1200": 78,
+    "1500": 79,
+    "2000": 79
+   },
+   "median_fee_month_within_5": 414
+  },
+  {
+   "band": "all",
+   "yearMin": null,
+   "yearMax": null,
+   "condos": 2867,
+   "elevator_building": 1490,
+   "oceanfront_building": 1107,
+   "fee_at_or_under": {
+    "200": 24,
+    "300": 120,
+    "400": 409,
+    "500": 884,
+    "600": 1288,
+    "700": 1600,
+    "800": 1836,
+    "1000": 2284,
+    "1200": 2498,
+    "1500": 2690,
+    "2000": 2829
+   },
+   "median_fee_month_within_5": 639
+  }
+ ],
+ "calls": [
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo",
+   "total": 2867
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986",
+   "total": 1094
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&has=elevator_building",
+   "total": 636
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&has=oceanfront_building",
+   "total": 514
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=200",
+   "total": 13
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=300",
+   "total": 50
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=400",
+   "total": 135
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=500",
+   "total": 287
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=600",
+   "total": 398
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=700",
+   "total": 564
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=800",
+   "total": 667
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=1000",
+   "total": 935
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=1200",
+   "total": 1020
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=1500",
+   "total": 1066
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=2000",
+   "total": 1081
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=2500",
+   "total": 1094
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=1250",
+   "total": 1030
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=625",
+   "total": 453
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=937",
+   "total": 884
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=781",
+   "total": 651
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=703",
+   "total": 565
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=664",
+   "total": 498
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=683",
+   "total": 531
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=693",
+   "total": 558
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1986&hoaMax=688",
+   "total": 544
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996",
+   "total": 499
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&has=elevator_building",
+   "total": 226
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&has=oceanfront_building",
+   "total": 206
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=200",
+   "total": 3
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=300",
+   "total": 15
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=400",
+   "total": 75
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=500",
+   "total": 165
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=600",
+   "total": 207
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=700",
+   "total": 244
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=800",
+   "total": 306
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=1000",
+   "total": 389
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=1200",
+   "total": 429
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=1500",
+   "total": 482
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=2000",
+   "total": 497
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=2500",
+   "total": 499
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=1250",
+   "total": 437
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=625",
+   "total": 212
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=937",
+   "total": 343
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=781",
+   "total": 304
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=703",
+   "total": 245
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=742",
+   "total": 284
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=722",
+   "total": 268
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=712",
+   "total": 263
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1987&yearMax=1996&hoaMax=707",
+   "total": 250
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006",
+   "total": 922
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&has=elevator_building",
+   "total": 434
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&has=oceanfront_building",
+   "total": 287
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=200",
+   "total": 2
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=300",
+   "total": 26
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=400",
+   "total": 139
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=500",
+   "total": 304
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=600",
+   "total": 511
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=700",
+   "total": 603
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=800",
+   "total": 663
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=1000",
+   "total": 716
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=1200",
+   "total": 785
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=1500",
+   "total": 843
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=2000",
+   "total": 914
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=2500",
+   "total": 918
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=1250",
+   "total": 793
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=625",
+   "total": 550
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=312",
+   "total": 29
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=468",
+   "total": 254
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=546",
+   "total": 424
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=585",
+   "total": 500
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=565",
+   "total": 466
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=555",
+   "total": 456
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1997&yearMax=2006&hoaMax=560",
+   "total": 464
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016",
+   "total": 273
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&has=elevator_building",
+   "total": 171
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&has=oceanfront_building",
+   "total": 99
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=200",
+   "total": 6
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=300",
+   "total": 18
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=400",
+   "total": 35
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=500",
+   "total": 68
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=600",
+   "total": 105
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=700",
+   "total": 115
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=800",
+   "total": 126
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=1000",
+   "total": 166
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=1200",
+   "total": 186
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=1500",
+   "total": 220
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=2000",
+   "total": 258
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=2500",
+   "total": 272
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=1250",
+   "total": 188
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=625",
+   "total": 111
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=937",
+   "total": 149
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=781",
+   "total": 121
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=859",
+   "total": 128
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=898",
+   "total": 135
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=917",
+   "total": 135
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=927",
+   "total": 145
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2007&yearMax=2016&hoaMax=922",
+   "total": 145
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017",
+   "total": 79
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&has=elevator_building",
+   "total": 23
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&has=oceanfront_building",
+   "total": 1
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=200",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=300",
+   "total": 11
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=400",
+   "total": 25
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=500",
+   "total": 60
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=600",
+   "total": 67
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=700",
+   "total": 74
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=800",
+   "total": 74
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=1000",
+   "total": 78
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=1200",
+   "total": 78
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=1500",
+   "total": 79
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=2000",
+   "total": 79
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=2500",
+   "total": 79
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=1250",
+   "total": 78
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=625",
+   "total": 67
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=312",
+   "total": 13
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=468",
+   "total": 56
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=390",
+   "total": 21
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=429",
+   "total": 48
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=409",
+   "total": 39
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=419",
+   "total": 48
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2017&hoaMax=414",
+   "total": 44
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=elevator_building",
+   "total": 1490
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building",
+   "total": 1107
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=200",
+   "total": 24
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=300",
+   "total": 120
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=400",
+   "total": 409
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=500",
+   "total": 884
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=600",
+   "total": 1288
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=700",
+   "total": 1600
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=800",
+   "total": 1836
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=1000",
+   "total": 2284
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=1200",
+   "total": 2498
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=1500",
+   "total": 2690
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=2000",
+   "total": 2829
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=2500",
+   "total": 2862
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=1250",
+   "total": 2526
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=625",
+   "total": 1393
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=937",
+   "total": 2149
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=781",
+   "total": 1805
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=703",
+   "total": 1602
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=664",
+   "total": 1496
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=644",
+   "total": 1453
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=634",
+   "total": 1414
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&hoaMax=639",
+   "total": 1437
+  }
+ ]
+}
