@@ -1,0 +1,102 @@
+{
+ "waterfront": {
+  "file": "little-river-waterfront-from-above-r1.png",
+  "size": [
+   1200,
+   900
+  ],
+  "bbox": [
+   -78.621,
+   33.86529,
+   -78.607,
+   33.87404
+  ],
+  "labels": [
+   {
+    "text": "Mariner's Pointe",
+    "lon": -78.61798,
+    "lat": 33.86831,
+    "px": [
+     259,
+     589
+    ],
+    "source": "slip parcels centre, county parcels layer 24 (map-points.json)"
+   },
+   {
+    "text": "Waterfront",
+    "lon": -78.60995,
+    "lat": 33.87075,
+    "px": [
+     947,
+     338
+    ],
+    "source": "last county address point on Mineola Avenue (layer 22), where the street meets the water"
+   },
+   {
+    "text": "Intracoastal Waterway",
+    "lon": -78.61447,
+    "lat": 33.86645,
+    "px": [
+     560,
+     781
+    ],
+    "source": "a point inside the county water outline (layer 21, Intracoastal Waterway)"
+   }
+  ]
+ },
+ "harbours": {
+  "file": "little-river-harbours-from-above-r1.png",
+  "size": [
+   1200,
+   900
+  ],
+  "bbox": [
+   -78.644,
+   33.85846,
+   -78.631,
+   33.8666
+  ],
+  "labels": [
+   {
+    "text": "US 17",
+    "lon": -78.63985,
+    "lat": 33.8662,
+    "px": [
+     383,
+     44
+    ],
+    "source": "midpoint of the US 17 centreline segment (-78.6432, 33.8650) to (-78.6365, 33.8674), Census TIGER/Line (tools/geo/grand-strand-v2.json)"
+   },
+   {
+    "text": "Coquina Harbour",
+    "lon": -78.63774,
+    "lat": 33.86453,
+    "px": [
+     578,
+     229
+    ],
+    "source": "slip parcels centre, county parcels layer 24 (map-points.json)"
+   },
+   {
+    "text": "Lightkeepers Village",
+    "lon": -78.63757,
+    "lat": 33.86081,
+    "px": [
+     594,
+     640
+    ],
+    "source": "slip parcels centre, county parcels layer 24 (map-points.json)"
+   },
+   {
+    "text": "Intracoastal Waterway",
+    "lon": -78.635,
+    "lat": 33.8598,
+    "px": [
+     831,
+     752
+    ],
+    "source": "a point inside the county water outline (layer 21, Intracoastal Waterway)"
+   }
+  ]
+ }
+}

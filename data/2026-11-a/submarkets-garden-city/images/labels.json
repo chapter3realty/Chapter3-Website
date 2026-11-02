@@ -1,0 +1,119 @@
+{
+ "point": {
+  "labels": [
+   {
+    "label": "Waccamaw Drive",
+    "lon": -79.025416,
+    "lat": 33.538638,
+    "how": "road vertex, map-layers.geojson"
+   },
+   {
+    "label": "Atlantic Ocean",
+    "lon": -79.02409,
+    "lat": 33.53704,
+    "how": "given point"
+   }
+  ],
+  "bbox_wgs84": [
+   -79.03185,
+   33.535468,
+   -79.02215,
+   33.541532
+  ],
+  "size": [
+   2400,
+   1800
+  ]
+ },
+ "pier": {
+  "labels": [
+   {
+    "label": "Garden City Pier",
+    "lon": -78.9974,
+    "lat": 33.57608,
+    "how": "given point"
+   },
+   {
+    "label": "Waccamaw Drive",
+    "lon": -78.998568,
+    "lat": 33.576963,
+    "how": "road vertex, map-layers.geojson"
+   },
+   {
+    "label": "Atlantic Avenue",
+    "lon": -79.000439,
+    "lat": 33.578156,
+    "how": "road vertex, map-layers.geojson"
+   },
+   {
+    "label": "Salt marsh",
+    "lon": -79.00102,
+    "lat": 33.57914,
+    "how": "given point"
+   }
+  ],
+  "bbox_wgs84": [
+   -79.002274,
+   33.574842,
+   -78.994726,
+   33.579558
+  ],
+  "size": [
+   1800,
+   1350
+  ]
+ },
+ "marsh": {
+  "labels": [
+   {
+    "label": "Salt marsh",
+    "lon": -79.00414,
+    "lat": 33.57758,
+    "how": "given point"
+   }
+  ],
+  "bbox_wgs84": [
+   -79.007735,
+   33.575479,
+   -79.001265,
+   33.579521
+  ],
+  "size": [
+   1800,
+   1350
+  ]
+ },
+ "streets": {
+  "labels": [
+   {
+    "label": "Salt marsh",
+    "lon": -78.99805,
+    "lat": 33.58537,
+    "how": "given point"
+   }
+  ],
+  "bbox_wgs84": [
+   -79.004274,
+   33.584142,
+   -78.996726,
+   33.588858
+  ],
+  "size": [
+   2400,
+   1800
+  ]
+ },
+ "inland": {
+  "labels": [],
+  "bbox_wgs84": [
+   -79.011775,
+   33.598642,
+   -79.004225,
+   33.603358
+  ],
+  "size": [
+   1600,
+   1200
+  ]
+ }
+}

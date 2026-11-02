@@ -1,0 +1,699 @@
+{
+ "pulled": "2026-11-02T05:00:31.754793Z",
+ "rows": [
+  {
+   "label": "all house",
+   "params": {
+    "type": "house"
+   },
+   "echo": "type=house",
+   "total": 3705,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house"
+  },
+  {
+   "label": "house flood_zone",
+   "params": {
+    "type": "house",
+    "has": "flood_zone"
+   },
+   "echo": "type=house&has=flood_zone",
+   "total": 125,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=flood_zone"
+  },
+  {
+   "label": "all condo",
+   "params": {
+    "type": "condo"
+   },
+   "echo": "type=condo",
+   "total": 2831,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo"
+  },
+  {
+   "label": "condo flood_zone",
+   "params": {
+    "type": "condo",
+    "has": "flood_zone"
+   },
+   "echo": "type=condo&has=flood_zone",
+   "total": 331,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=flood_zone"
+  },
+  {
+   "label": "house septic",
+   "params": {
+    "type": "house",
+    "has": "septic"
+   },
+   "echo": "type=house&has=septic",
+   "total": 234,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=septic"
+  },
+  {
+   "label": "house public_sewer",
+   "params": {
+    "type": "house",
+    "has": "public_sewer"
+   },
+   "echo": "type=house&has=public_sewer",
+   "total": 2820,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=public_sewer"
+  },
+  {
+   "label": "house well_water",
+   "params": {
+    "type": "house",
+    "has": "well_water"
+   },
+   "echo": "type=house&has=well_water",
+   "total": 79,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=well_water"
+  },
+  {
+   "label": "house in Myrtle Beach",
+   "params": {
+    "type": "house",
+    "city": "Myrtle Beach"
+   },
+   "echo": "city=Myrtle+Beach&type=house",
+   "total": 1036,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Myrtle+Beach"
+  },
+  {
+   "label": "house septic in Myrtle Beach",
+   "params": {
+    "type": "house",
+    "city": "Myrtle Beach",
+    "has": "septic"
+   },
+   "echo": "city=Myrtle+Beach&type=house&has=septic",
+   "total": 13,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Myrtle+Beach&has=septic"
+  },
+  {
+   "label": "house sewer in Myrtle Beach",
+   "params": {
+    "type": "house",
+    "city": "Myrtle Beach",
+    "has": "public_sewer"
+   },
+   "echo": "city=Myrtle+Beach&type=house&has=public_sewer",
+   "total": 871,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Myrtle+Beach&has=public_sewer"
+  },
+  {
+   "label": "house in North Myrtle Beach",
+   "params": {
+    "type": "house",
+    "city": "North Myrtle Beach"
+   },
+   "echo": "city=North+Myrtle+Beach&type=house",
+   "total": 255,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=North+Myrtle+Beach"
+  },
+  {
+   "label": "house septic in North Myrtle Beach",
+   "params": {
+    "type": "house",
+    "city": "North Myrtle Beach",
+    "has": "septic"
+   },
+   "echo": "city=North+Myrtle+Beach&type=house&has=septic",
+   "total": 4,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=North+Myrtle+Beach&has=septic"
+  },
+  {
+   "label": "house sewer in North Myrtle Beach",
+   "params": {
+    "type": "house",
+    "city": "North Myrtle Beach",
+    "has": "public_sewer"
+   },
+   "echo": "city=North+Myrtle+Beach&type=house&has=public_sewer",
+   "total": 199,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=North+Myrtle+Beach&has=public_sewer"
+  },
+  {
+   "label": "house in Conway",
+   "params": {
+    "type": "house",
+    "city": "Conway"
+   },
+   "echo": "city=Conway&type=house",
+   "total": 673,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Conway"
+  },
+  {
+   "label": "house septic in Conway",
+   "params": {
+    "type": "house",
+    "city": "Conway",
+    "has": "septic"
+   },
+   "echo": "city=Conway&type=house&has=septic",
+   "total": 61,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Conway&has=septic"
+  },
+  {
+   "label": "house sewer in Conway",
+   "params": {
+    "type": "house",
+    "city": "Conway",
+    "has": "public_sewer"
+   },
+   "echo": "city=Conway&type=house&has=public_sewer",
+   "total": 517,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Conway&has=public_sewer"
+  },
+  {
+   "label": "house in Murrells Inlet",
+   "params": {
+    "type": "house",
+    "city": "Murrells Inlet"
+   },
+   "echo": "city=Murrells+Inlet&type=house",
+   "total": 203,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Murrells+Inlet"
+  },
+  {
+   "label": "house septic in Murrells Inlet",
+   "params": {
+    "type": "house",
+    "city": "Murrells Inlet",
+    "has": "septic"
+   },
+   "echo": "city=Murrells+Inlet&type=house&has=septic",
+   "total": 4,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Murrells+Inlet&has=septic"
+  },
+  {
+   "label": "house sewer in Murrells Inlet",
+   "params": {
+    "type": "house",
+    "city": "Murrells Inlet",
+    "has": "public_sewer"
+   },
+   "echo": "city=Murrells+Inlet&type=house&has=public_sewer",
+   "total": 174,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Murrells+Inlet&has=public_sewer"
+  },
+  {
+   "label": "house in Little River",
+   "params": {
+    "type": "house",
+    "city": "Little River"
+   },
+   "echo": "city=Little+River&type=house",
+   "total": 189,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Little+River"
+  },
+  {
+   "label": "house septic in Little River",
+   "params": {
+    "type": "house",
+    "city": "Little River",
+    "has": "septic"
+   },
+   "echo": "city=Little+River&type=house&has=septic",
+   "total": 2,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Little+River&has=septic"
+  },
+  {
+   "label": "house sewer in Little River",
+   "params": {
+    "type": "house",
+    "city": "Little River",
+    "has": "public_sewer"
+   },
+   "echo": "city=Little+River&type=house&has=public_sewer",
+   "total": 158,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Little+River&has=public_sewer"
+  },
+  {
+   "label": "house in Longs",
+   "params": {
+    "type": "house",
+    "city": "Longs"
+   },
+   "echo": "city=Longs&type=house",
+   "total": 343,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Longs"
+  },
+  {
+   "label": "house septic in Longs",
+   "params": {
+    "type": "house",
+    "city": "Longs",
+    "has": "septic"
+   },
+   "echo": "city=Longs&type=house&has=septic",
+   "total": 3,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Longs&has=septic"
+  },
+  {
+   "label": "house sewer in Longs",
+   "params": {
+    "type": "house",
+    "city": "Longs",
+    "has": "public_sewer"
+   },
+   "echo": "city=Longs&type=house&has=public_sewer",
+   "total": 288,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Longs&has=public_sewer"
+  },
+  {
+   "label": "house in Surfside Beach",
+   "params": {
+    "type": "house",
+    "city": "Surfside Beach"
+   },
+   "echo": "city=Surfside+Beach&type=house",
+   "total": 82,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Surfside+Beach"
+  },
+  {
+   "label": "house septic in Surfside Beach",
+   "params": {
+    "type": "house",
+    "city": "Surfside Beach",
+    "has": "septic"
+   },
+   "echo": "city=Surfside+Beach&type=house&has=septic",
+   "total": 0,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Surfside+Beach&has=septic"
+  },
+  {
+   "label": "house sewer in Surfside Beach",
+   "params": {
+    "type": "house",
+    "city": "Surfside Beach",
+    "has": "public_sewer"
+   },
+   "echo": "city=Surfside+Beach&type=house&has=public_sewer",
+   "total": 61,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Surfside+Beach&has=public_sewer"
+  },
+  {
+   "label": "house in Loris",
+   "params": {
+    "type": "house",
+    "city": "Loris"
+   },
+   "echo": "city=Loris&type=house",
+   "total": 154,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Loris"
+  },
+  {
+   "label": "house septic in Loris",
+   "params": {
+    "type": "house",
+    "city": "Loris",
+    "has": "septic"
+   },
+   "echo": "city=Loris&type=house&has=septic",
+   "total": 40,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Loris&has=septic"
+  },
+  {
+   "label": "house sewer in Loris",
+   "params": {
+    "type": "house",
+    "city": "Loris",
+    "has": "public_sewer"
+   },
+   "echo": "city=Loris&type=house&has=public_sewer",
+   "total": 88,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Loris&has=public_sewer"
+  },
+  {
+   "label": "house in Aynor",
+   "params": {
+    "type": "house",
+    "city": "Aynor"
+   },
+   "echo": "city=Aynor&type=house",
+   "total": 44,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Aynor"
+  },
+  {
+   "label": "house septic in Aynor",
+   "params": {
+    "type": "house",
+    "city": "Aynor",
+    "has": "septic"
+   },
+   "echo": "city=Aynor&type=house&has=septic",
+   "total": 13,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Aynor&has=septic"
+  },
+  {
+   "label": "house sewer in Aynor",
+   "params": {
+    "type": "house",
+    "city": "Aynor",
+    "has": "public_sewer"
+   },
+   "echo": "city=Aynor&type=house&has=public_sewer",
+   "total": 20,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Aynor&has=public_sewer"
+  },
+  {
+   "label": "house in Galivants Ferry",
+   "params": {
+    "type": "house",
+    "city": "Galivants Ferry"
+   },
+   "echo": "type=house",
+   "total": 3705,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Galivants+Ferry"
+  },
+  {
+   "label": "house septic in Galivants Ferry",
+   "params": {
+    "type": "house",
+    "city": "Galivants Ferry",
+    "has": "septic"
+   },
+   "echo": "type=house&has=septic",
+   "total": 234,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Galivants+Ferry&has=septic"
+  },
+  {
+   "label": "house sewer in Galivants Ferry",
+   "params": {
+    "type": "house",
+    "city": "Galivants Ferry",
+    "has": "public_sewer"
+   },
+   "echo": "type=house&has=public_sewer",
+   "total": 2820,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Galivants+Ferry&has=public_sewer"
+  },
+  {
+   "label": "house in Green Sea",
+   "params": {
+    "type": "house",
+    "city": "Green Sea"
+   },
+   "echo": "type=house",
+   "total": 3705,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Green+Sea"
+  },
+  {
+   "label": "house septic in Green Sea",
+   "params": {
+    "type": "house",
+    "city": "Green Sea",
+    "has": "septic"
+   },
+   "echo": "type=house&has=septic",
+   "total": 234,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Green+Sea&has=septic"
+  },
+  {
+   "label": "house sewer in Green Sea",
+   "params": {
+    "type": "house",
+    "city": "Green Sea",
+    "has": "public_sewer"
+   },
+   "echo": "type=house&has=public_sewer",
+   "total": 2820,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Green+Sea&has=public_sewer"
+  },
+  {
+   "label": "house in Nichols",
+   "params": {
+    "type": "house",
+    "city": "Nichols"
+   },
+   "echo": "type=house",
+   "total": 3705,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Nichols"
+  },
+  {
+   "label": "house septic in Nichols",
+   "params": {
+    "type": "house",
+    "city": "Nichols",
+    "has": "septic"
+   },
+   "echo": "type=house&has=septic",
+   "total": 234,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Nichols&has=septic"
+  },
+  {
+   "label": "house sewer in Nichols",
+   "params": {
+    "type": "house",
+    "city": "Nichols",
+    "has": "public_sewer"
+   },
+   "echo": "type=house&has=public_sewer",
+   "total": 2820,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Nichols&has=public_sewer"
+  },
+  {
+   "label": "house in Garden City",
+   "params": {
+    "type": "house",
+    "city": "Garden City"
+   },
+   "echo": "city=Garden+City&type=house",
+   "total": 0,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Garden+City"
+  },
+  {
+   "label": "house septic in Garden City",
+   "params": {
+    "type": "house",
+    "city": "Garden City",
+    "has": "septic"
+   },
+   "echo": "city=Garden+City&type=house&has=septic",
+   "total": 0,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Garden+City&has=septic"
+  },
+  {
+   "label": "house sewer in Garden City",
+   "params": {
+    "type": "house",
+    "city": "Garden City",
+    "has": "public_sewer"
+   },
+   "echo": "city=Garden+City&type=house&has=public_sewer",
+   "total": 0,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Garden+City&has=public_sewer"
+  },
+  {
+   "label": "house in Pawleys Island",
+   "params": {
+    "type": "house",
+    "city": "Pawleys Island"
+   },
+   "echo": "city=Pawleys+Island&type=house",
+   "total": 122,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Pawleys+Island"
+  },
+  {
+   "label": "house septic in Pawleys Island",
+   "params": {
+    "type": "house",
+    "city": "Pawleys Island",
+    "has": "septic"
+   },
+   "echo": "city=Pawleys+Island&type=house&has=septic",
+   "total": 13,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Pawleys+Island&has=septic"
+  },
+  {
+   "label": "house sewer in Pawleys Island",
+   "params": {
+    "type": "house",
+    "city": "Pawleys Island",
+    "has": "public_sewer"
+   },
+   "echo": "city=Pawleys+Island&type=house&has=public_sewer",
+   "total": 92,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Pawleys+Island&has=public_sewer"
+  },
+  {
+   "label": "house in Georgetown",
+   "params": {
+    "type": "house",
+    "city": "Georgetown"
+   },
+   "echo": "type=house",
+   "total": 3705,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Georgetown"
+  },
+  {
+   "label": "house septic in Georgetown",
+   "params": {
+    "type": "house",
+    "city": "Georgetown",
+    "has": "septic"
+   },
+   "echo": "type=house&has=septic",
+   "total": 234,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Georgetown&has=septic"
+  },
+  {
+   "label": "house sewer in Georgetown",
+   "params": {
+    "type": "house",
+    "city": "Georgetown",
+    "has": "public_sewer"
+   },
+   "echo": "type=house&has=public_sewer",
+   "total": 2820,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Georgetown&has=public_sewer"
+  },
+  {
+   "label": "house septic None-300000",
+   "params": {
+    "type": "house",
+    "has": "septic",
+    "max": 300000
+   },
+   "echo": "type=house&max=300000&has=septic",
+   "total": 45,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=septic&max=300000"
+  },
+  {
+   "label": "house septic 300000-500000",
+   "params": {
+    "type": "house",
+    "has": "septic",
+    "min": 300000,
+    "max": 500000
+   },
+   "echo": "type=house&min=300000&max=500000&has=septic",
+   "total": 112,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=septic&min=300000&max=500000"
+  },
+  {
+   "label": "house septic 500000-None",
+   "params": {
+    "type": "house",
+    "has": "septic",
+    "min": 500000
+   },
+   "echo": "type=house&min=500000&has=septic",
+   "total": 81,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=septic&min=500000"
+  },
+  {
+   "label": "condo str_allowed",
+   "params": {
+    "type": "condo",
+    "has": "str_allowed"
+   },
+   "echo": "type=condo&has=str_allowed",
+   "total": 1989,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=str_allowed"
+  },
+  {
+   "label": "condo long_term_rental_allowed",
+   "params": {
+    "type": "condo",
+    "has": "long_term_rental_allowed"
+   },
+   "echo": "type=condo&has=long_term_rental_allowed",
+   "total": 2379,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=long_term_rental_allowed"
+  },
+  {
+   "label": "condo in Myrtle Beach",
+   "params": {
+    "type": "condo",
+    "city": "Myrtle Beach"
+   },
+   "echo": "city=Myrtle+Beach&type=condo",
+   "total": 1642,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Myrtle+Beach"
+  },
+  {
+   "label": "condo str_allowed in Myrtle Beach",
+   "params": {
+    "type": "condo",
+    "city": "Myrtle Beach",
+    "has": "str_allowed"
+   },
+   "echo": "city=Myrtle+Beach&type=condo&has=str_allowed",
+   "total": 1251,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Myrtle+Beach&has=str_allowed"
+  },
+  {
+   "label": "house str_allowed in Myrtle Beach",
+   "params": {
+    "type": "house",
+    "city": "Myrtle Beach",
+    "has": "str_allowed"
+   },
+   "echo": "city=Myrtle+Beach&type=house&has=str_allowed",
+   "total": 101,
+   "refreshedAt": "2026-11-02T04:51:22.128Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&city=Myrtle+Beach&has=str_allowed"
+  }
+ ]
+}

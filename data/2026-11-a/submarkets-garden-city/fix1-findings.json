@@ -1,0 +1,51 @@
+{
+ "start": [
+  -78.99795,
+  33.5769
+ ],
+ "note": "From the foot of the Garden City Pier, OSRM public router, free flow. Store points from OpenStreetMap (Nominatim search, shop=supermarket). Kroger: Kroger's store page lists 2939 S Highway 17, Murrells Inlet (Garden City Beach store 011/00025). Walmart Supercenter #5705: walmart.com/store/5705, 545 Garden City Connector, Garden City Beach, SC 29576.",
+ "kroger_business_17": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.997950,33.576900;-79.012595,33.583765?overview=false",
+  "duration_s": 223,
+  "distance_m": 1840.3,
+  "minutes": 3.7,
+  "miles": 1.1
+ },
+ "walmart_supercenter_garden_city_connector": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.997950,33.576900;-79.011766,33.588201?overview=false",
+  "duration_s": 311.4,
+  "distance_m": 2671.7,
+  "minutes": 5.2,
+  "miles": 1.7
+ },
+ "publix_highway_707": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.997950,33.576900;-79.054739,33.585804?overview=false",
+  "duration_s": 599.1,
+  "distance_m": 6522.3,
+  "minutes": 10.0,
+  "miles": 4.1
+ },
+ "census_2020_places": {
+  "Surfside Beach town": {
+   "H5_006N": "1794",
+   "NAME": "Surfside Beach town, South Carolina",
+   "H1_001N": "4317",
+   "P1_001N": "4155",
+   "pct_seasonal": 41.6
+  },
+  "Murrells Inlet CDP": {
+   "H5_006N": "780",
+   "NAME": "Murrells Inlet CDP, South Carolina",
+   "H1_001N": "5746",
+   "P1_001N": "9740",
+   "pct_seasonal": 13.6
+  },
+  "Garden City CDP": {
+   "H5_006N": "3993",
+   "NAME": "Garden City CDP, South Carolina",
+   "H1_001N": "10110",
+   "P1_001N": "10235",
+   "pct_seasonal": 39.5
+  }
+ }
+}

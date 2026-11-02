@@ -1,0 +1,42 @@
+{
+ "price": 350000,
+ "tax": {
+  "Unincorporated Horry County": {
+   "4pct": 1286.6,
+   "6pct": 4221.0,
+   "gap_per_year": 2934.4,
+   "gap_5_years": 14672.0,
+   "ratio": 3.28
+  },
+  "City of Myrtle Beach": {
+   "4pct": 1413.5,
+   "6pct": 5346.6,
+   "gap_per_year": 3933.1,
+   "gap_5_years": 19665.49,
+   "ratio": 3.78
+  }
+ },
+ "seller_bill_example": {
+  "assumption": "house worth $350,000, seller owned since about 2010 and lived in it (4%), taxable value at the 2005-2014 band's 62.5% of market",
+  "seller_taxable": 218750,
+  "seller_bill_4pct": 804.12,
+  "buyer_bill_4pct": 1286.6,
+  "buyer_bill_6pct": 4221.0,
+  "buyer_6pct_over_seller": 3416.88,
+  "times": 5.25
+ },
+ "flood": {
+  "median_paid_house_outside_high_risk_since_2015": 26402,
+  "n_outside": 945,
+  "median_paid_house_high_risk_since_2015": 15723,
+  "n_high": 1914,
+  "median_policy_house_lived_in_X": 551,
+  "n_X_lived_in": 11453,
+  "median_policy_house_lived_in_A": 1074,
+  "n_A_lived_in": 2603,
+  "median_policy_house_not_lived_in_A": 1372.0,
+  "median_policy_house_V_all": 3235,
+  "n_V": 141,
+  "years_of_X_cover_per_median_outside_claim": 47.9
+ }
+}

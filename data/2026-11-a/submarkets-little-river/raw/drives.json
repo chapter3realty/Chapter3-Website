@@ -1,0 +1,79 @@
+{
+ "cherry_grove_pier": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.623258,33.872701;-78.632676,33.828732?overview=false",
+  "duration_s": 679.6,
+  "distance_m": 9128.8,
+  "minutes": 11.3,
+  "miles": 5.7
+ },
+ "nmb_main_street_ocean_drive": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.623258,33.872701;-78.673529,33.821138?overview=false",
+  "duration_s": 666,
+  "distance_m": 9819.7,
+  "minutes": 11.1,
+  "miles": 6.1
+ },
+ "mcleod_seacoast": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.623258,33.872701;-78.663710,33.865730?overview=false",
+  "duration_s": 328.8,
+  "distance_m": 4303.4,
+  "minutes": 5.5,
+  "miles": 2.7
+ },
+ "airport_terminal": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.623258,33.872701;-78.922789,33.681467?overview=false",
+  "duration_s": 2474.6,
+  "distance_m": 43207.1,
+  "minutes": 41.2,
+  "miles": 26.8
+ },
+ "barefoot_landing": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.623258,33.872701;-78.742440,33.799875?overview=false",
+  "duration_s": 1102.5,
+  "distance_m": 15543.9,
+  "minutes": 18.4,
+  "miles": 9.7
+ },
+ "coastal_grand": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.623258,33.872701;-78.922317,33.702751?overview=false",
+  "duration_s": 2172.2,
+  "distance_m": 38174.8,
+  "minutes": 36.2,
+  "miles": 23.7
+ },
+ "little_river_waterfront_mineola": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.623258,33.872701;-78.616290,33.875290?overview=false",
+  "duration_s": 77.9,
+  "distance_m": 837.7,
+  "minutes": 1.3,
+  "miles": 0.5
+ },
+ "calabash_nc": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.623258,33.872701;-78.568345,33.890728?overview=false",
+  "duration_s": 419.4,
+  "distance_m": 5888,
+  "minutes": 7.0,
+  "miles": 3.7
+ },
+ "wilmington_nc": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.623258,33.872701;-77.948728,34.235285?overview=false",
+  "duration_s": 4350.2,
+  "distance_m": 82641.6,
+  "minutes": 72.5,
+  "miles": 51.4
+ },
+ "campbell_landing": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.623258,33.872701;-78.654290,33.853940?overview=false",
+  "duration_s": 430.3,
+  "distance_m": 6638.8,
+  "minutes": 7.2,
+  "miles": 4.1
+ },
+ "coquina_harbour": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.623258,33.872701;-78.635595,33.863394?overview=false",
+  "duration_s": 187,
+  "distance_m": 1996.8,
+  "minutes": 3.1,
+  "miles": 1.2
+ }
+}

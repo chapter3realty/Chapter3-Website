@@ -1,0 +1,78 @@
+{
+ "source": "../../2026-10-d/buyers-undisclosed-flooding/raw/nfip-claims-horry-slim.json",
+ "fields_seen": [
+  "asOfDate",
+  "causeOfDamage",
+  "censusGeoid",
+  "dateOfLoss",
+  "floodEvent",
+  "floodZoneCurrent",
+  "netBuildingPaymentAmount",
+  "netContentsPaymentAmount",
+  "netIccPaymentAmount",
+  "nfipCommunityName",
+  "occupancyType",
+  "primaryResidenceIndicator",
+  "ratedFloodZone",
+  "reportedZipCode",
+  "yearOfLoss"
+ ],
+ "by": {
+  "since_1978": {
+   "high": {
+    "n": 6520,
+    "median_building_payment": 10323
+   },
+   "outside": {
+    "n": 1957,
+    "median_building_payment": 13536
+   },
+   "unknown": {
+    "n": 79,
+    "median_building_payment": 12738
+   }
+  },
+  "since_1978_single_family": {
+   "high": {
+    "n": 4713,
+    "median_building_payment": 7987
+   },
+   "outside": {
+    "n": 1573,
+    "median_building_payment": 13189
+   },
+   "unknown": {
+    "n": 77,
+    "median_building_payment": 12763
+   }
+  },
+  "since_2015": {
+   "high": {
+    "n": 2487,
+    "median_building_payment": 17976
+   },
+   "outside": {
+    "n": 1066,
+    "median_building_payment": 26196
+   },
+   "unknown": {
+    "n": 49,
+    "median_building_payment": 25000
+   }
+  },
+  "since_2015_single_family": {
+   "high": {
+    "n": 1914,
+    "median_building_payment": 15723
+   },
+   "outside": {
+    "n": 945,
+    "median_building_payment": 26402
+   },
+   "unknown": {
+    "n": 49,
+    "median_building_payment": 25000
+   }
+  }
+ }
+}

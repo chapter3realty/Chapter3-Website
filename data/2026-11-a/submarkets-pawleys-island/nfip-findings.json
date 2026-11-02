@@ -1,0 +1,404 @@
+{
+ "source": "OpenFEMA NfipPolicies v3",
+ "filter": "reportedZipCode 29585, policyEffectiveDate 2025-06-01 to 2026-05-31",
+ "community_names": [
+  [
+   "GEORGETOWN COUNTY *",
+   3107
+  ],
+  [
+   "PAWLEYS ISLAND, TOWN OF",
+   299
+  ],
+  [
+   "HILTON HEAD ISLAND, TOWN OF",
+   1
+  ]
+ ],
+ "groups": {
+  "county/11/A/any": {
+   "what": "single-family home",
+   "policies": 947,
+   "median_cost": 1307,
+   "p25": 1083.0,
+   "p75": 2629.0,
+   "median_building_coverage": 250000
+  },
+  "county/11/A/not_primary": {
+   "what": "single-family home",
+   "policies": 397,
+   "median_cost": 1764,
+   "p25": 1272.5,
+   "p75": 4401.5,
+   "median_building_coverage": 250000
+  },
+  "county/11/A/primary": {
+   "what": "single-family home",
+   "policies": 550,
+   "median_cost": 1158.0,
+   "p25": 1034.0,
+   "p75": 1766.75,
+   "median_building_coverage": 250000.0
+  },
+  "county/11/V/any": {
+   "what": "single-family home",
+   "policies": 189,
+   "median_cost": 1837,
+   "p25": 1170.0,
+   "p75": 4560.5,
+   "median_building_coverage": 250000
+  },
+  "county/11/V/not_primary": {
+   "what": "single-family home",
+   "policies": 87,
+   "median_cost": 3333,
+   "p25": 1436.0,
+   "p75": 6737.0,
+   "median_building_coverage": 250000
+  },
+  "county/11/V/primary": {
+   "what": "single-family home",
+   "policies": 102,
+   "median_cost": 1402.5,
+   "p25": 1053.75,
+   "p75": 2413.5,
+   "median_building_coverage": 250000.0
+  },
+  "county/11/X/any": {
+   "what": "single-family home",
+   "policies": 1246,
+   "median_cost": 715.0,
+   "p25": 494.0,
+   "p75": 1004.0,
+   "median_building_coverage": 250000.0
+  },
+  "county/11/X/not_primary": {
+   "what": "single-family home",
+   "policies": 149,
+   "median_cost": 803,
+   "p25": 695.5,
+   "p75": 929.5,
+   "median_building_coverage": 250000
+  },
+  "county/11/X/primary": {
+   "what": "single-family home",
+   "policies": 1097,
+   "median_cost": 695,
+   "p25": 476.5,
+   "p75": 1013.0,
+   "median_building_coverage": 250000
+  },
+  "county/11/any/any": {
+   "what": "single-family home",
+   "policies": 2382,
+   "median_cost": 1051.0,
+   "p25": 688.0,
+   "p75": 1370.0,
+   "median_building_coverage": 250000.0
+  },
+  "county/11/any/not_primary": {
+   "what": "single-family home",
+   "policies": 633,
+   "median_cost": 1436,
+   "p25": 1093.0,
+   "p75": 3520.5,
+   "median_building_coverage": 250000
+  },
+  "county/11/any/primary": {
+   "what": "single-family home",
+   "policies": 1749,
+   "median_cost": 950,
+   "p25": 584.0,
+   "p75": 1140.5,
+   "median_building_coverage": 250000
+  },
+  "county/14/A/any": {
+   "what": "manufactured home",
+   "policies": 7,
+   "median_cost": 2324,
+   "p25": 1554.0,
+   "p75": 3196.0,
+   "median_building_coverage": 100000
+  },
+  "county/14/any/any": {
+   "what": "manufactured home",
+   "policies": 9,
+   "median_cost": 1840,
+   "p25": 884.0,
+   "p75": 2848.0,
+   "median_building_coverage": 100000
+  },
+  "county/14/any/not_primary": {
+   "what": "manufactured home",
+   "policies": 5,
+   "median_cost": 2500,
+   "p25": 1632.0,
+   "p75": 3343.5,
+   "median_building_coverage": 92000
+  },
+  "county/15/A/any": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 183,
+   "median_cost": 3336,
+   "p25": 1144.0,
+   "p75": 7010.0,
+   "median_building_coverage": 1000000
+  },
+  "county/15/A/not_primary": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 183,
+   "median_cost": 3336,
+   "p25": 1144.0,
+   "p75": 7010.0,
+   "median_building_coverage": 1000000
+  },
+  "county/15/V/any": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 31,
+   "median_cost": 10336,
+   "p25": 3174.0,
+   "p75": 18059.0,
+   "median_building_coverage": 886000
+  },
+  "county/15/V/not_primary": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 31,
+   "median_cost": 10336,
+   "p25": 3174.0,
+   "p75": 18059.0,
+   "median_building_coverage": 886000
+  },
+  "county/15/X/any": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 115,
+   "median_cost": 1538,
+   "p25": 1244.0,
+   "p75": 1734.0,
+   "median_building_coverage": 761000
+  },
+  "county/15/X/not_primary": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 115,
+   "median_cost": 1538,
+   "p25": 1244.0,
+   "p75": 1734.0,
+   "median_building_coverage": 761000
+  },
+  "county/15/any/any": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 329,
+   "median_cost": 1763,
+   "p25": 1307.5,
+   "p75": 5321.0,
+   "median_building_coverage": 782000
+  },
+  "county/15/any/not_primary": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 329,
+   "median_cost": 1763,
+   "p25": 1307.5,
+   "p75": 5321.0,
+   "median_building_coverage": 782000
+  },
+  "county/16/A/any": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 84,
+   "median_cost": 836.0,
+   "p25": 544.25,
+   "p75": 1146.75,
+   "median_building_coverage": 103000.0
+  },
+  "county/16/A/not_primary": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 33,
+   "median_cost": 979,
+   "p25": 752.5,
+   "p75": 1402.5,
+   "median_building_coverage": 75000
+  },
+  "county/16/A/primary": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 51,
+   "median_cost": 633,
+   "p25": 434.0,
+   "p75": 1070.0,
+   "median_building_coverage": 120000
+  },
+  "county/16/V/any": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 23,
+   "median_cost": 963,
+   "p25": 702.0,
+   "p75": 2047.0,
+   "median_building_coverage": 40000
+  },
+  "county/16/V/not_primary": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 15,
+   "median_cost": 1088,
+   "p25": 821.0,
+   "p75": 2485.0,
+   "median_building_coverage": 50000
+  },
+  "county/16/V/primary": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 8,
+   "median_cost": 832.5,
+   "p25": 674.5,
+   "p75": 1802.0,
+   "median_building_coverage": 12500.0
+  },
+  "county/16/X/any": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 111,
+   "median_cost": 570,
+   "p25": 448.0,
+   "p75": 719.0,
+   "median_building_coverage": 125000
+  },
+  "county/16/X/not_primary": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 32,
+   "median_cost": 668.5,
+   "p25": 594.0,
+   "p75": 901.75,
+   "median_building_coverage": 119500.0
+  },
+  "county/16/X/primary": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 79,
+   "median_cost": 512,
+   "p25": 399.0,
+   "p75": 630.0,
+   "median_building_coverage": 133000
+  },
+  "county/16/any/any": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 218,
+   "median_cost": 645.5,
+   "p25": 497.75,
+   "p75": 981.25,
+   "median_building_coverage": 107500.0
+  },
+  "county/16/any/not_primary": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 80,
+   "median_cost": 848.0,
+   "p25": 647.0,
+   "p75": 1235.0,
+   "median_building_coverage": 102500.0
+  },
+  "county/16/any/primary": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 138,
+   "median_cost": 547.5,
+   "p25": 421.25,
+   "p75": 771.75,
+   "median_building_coverage": 116500.0
+  },
+  "town/11/A/any": {
+   "what": "single-family home",
+   "policies": 139,
+   "median_cost": 2331,
+   "p25": 1306.0,
+   "p75": 6370.0,
+   "median_building_coverage": 250000
+  },
+  "town/11/A/not_primary": {
+   "what": "single-family home",
+   "policies": 107,
+   "median_cost": 3015,
+   "p25": 1386.0,
+   "p75": 7186.0,
+   "median_building_coverage": 250000
+  },
+  "town/11/A/primary": {
+   "what": "single-family home",
+   "policies": 32,
+   "median_cost": 1397.5,
+   "p25": 1062.5,
+   "p75": 4115.5,
+   "median_building_coverage": 250000.0
+  },
+  "town/11/V/any": {
+   "what": "single-family home",
+   "policies": 137,
+   "median_cost": 5163,
+   "p25": 1972.0,
+   "p75": 7514.0,
+   "median_building_coverage": 250000
+  },
+  "town/11/V/not_primary": {
+   "what": "single-family home",
+   "policies": 114,
+   "median_cost": 5279.5,
+   "p25": 2137.0,
+   "p75": 8110.75,
+   "median_building_coverage": 250000.0
+  },
+  "town/11/V/primary": {
+   "what": "single-family home",
+   "policies": 23,
+   "median_cost": 3073,
+   "p25": 1180.0,
+   "p75": 6108.0,
+   "median_building_coverage": 250000
+  },
+  "town/11/any/any": {
+   "what": "single-family home",
+   "policies": 276,
+   "median_cost": 4038.5,
+   "p25": 1448.75,
+   "p75": 7036.0,
+   "median_building_coverage": 250000.0
+  },
+  "town/11/any/not_primary": {
+   "what": "single-family home",
+   "policies": 221,
+   "median_cost": 4769,
+   "p25": 1657.0,
+   "p75": 7596.5,
+   "median_building_coverage": 250000
+  },
+  "town/11/any/primary": {
+   "what": "single-family home",
+   "policies": 55,
+   "median_cost": 1682,
+   "p25": 1121.0,
+   "p75": 4785.0,
+   "median_building_coverage": 250000
+  },
+  "town/15/V/any": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 6,
+   "median_cost": 13838.0,
+   "p25": 13464.25,
+   "p75": 18119.5,
+   "median_building_coverage": 1500000.0
+  },
+  "town/15/V/not_primary": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 6,
+   "median_cost": 13838.0,
+   "p25": 13464.25,
+   "p75": 18119.5,
+   "median_building_coverage": 1500000.0
+  },
+  "town/15/any/any": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 10,
+   "median_cost": 13837.5,
+   "p25": 12346.0,
+   "p75": 17405.25,
+   "median_building_coverage": 1500000.0
+  },
+  "town/15/any/not_primary": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 10,
+   "median_cost": 13837.5,
+   "p25": 12346.0,
+   "p75": 17405.25,
+   "median_building_coverage": 1500000.0
+  }
+ }
+}

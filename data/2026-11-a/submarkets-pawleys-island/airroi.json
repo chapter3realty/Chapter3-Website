@@ -1,0 +1,140 @@
+{
+ "source": "https://www.airroi.com/airbnb-data/united-states/south-carolina/pawleys-island",
+ "read": "2026-11-02",
+ "headline": {
+  "revenue": "$31,430",
+  "occupancy": "35.7%",
+  "adr": "$392",
+  "listings": "453",
+  "period": "12 months to September 2026",
+  "median_month": "$2,840",
+  "top25_month": "$4,880",
+  "bottom25_month": "$1,560",
+  "updated": "October 1, 2026",
+  "permit_share": "0%"
+ },
+ "months": {
+  "Sep 2025": {
+   "revenue": 3253.0,
+   "occupancy": 34.8,
+   "adr": 362.0,
+   "revpar": 108.0
+  },
+  "Oct 2025": {
+   "revenue": 3505.0,
+   "occupancy": 34.9,
+   "adr": 363.0,
+   "revpar": 113.0
+  },
+  "Nov 2025": {
+   "revenue": 3082.0,
+   "occupancy": 30.1,
+   "adr": 360.0,
+   "revpar": 103.0
+  },
+  "Dec 2025": {
+   "revenue": 2766.0,
+   "occupancy": 27.6,
+   "adr": 368.0,
+   "revpar": 89.0
+  },
+  "Jan 2026": {
+   "revenue": 2132.0,
+   "occupancy": 24.0,
+   "adr": 412.0,
+   "revpar": 69.0
+  },
+  "Feb 2026": {
+   "revenue": 2678.0,
+   "occupancy": 31.2,
+   "adr": 406.0,
+   "revpar": 96.0
+  },
+  "Mar 2026": {
+   "revenue": 3974.0,
+   "occupancy": 39.6,
+   "adr": 422.0,
+   "revpar": 128.0
+  },
+  "Apr 2026": {
+   "revenue": 3989.0,
+   "occupancy": 41.3,
+   "adr": 416.0,
+   "revpar": 133.0
+  },
+  "May 2026": {
+   "revenue": 4723.0,
+   "occupancy": 41.2,
+   "adr": 424.0,
+   "revpar": 152.0
+  },
+  "Jun 2026": {
+   "revenue": 6493.0,
+   "occupancy": 52.8,
+   "adr": 435.0,
+   "revpar": 216.0
+  },
+  "Jul 2026": {
+   "revenue": 6868.0,
+   "occupancy": 53.4,
+   "adr": 430.0,
+   "revpar": 222.0
+  },
+  "Aug 2026": {
+   "revenue": 4312.0,
+   "occupancy": 42.4,
+   "adr": 386.0,
+   "revpar": 139.0
+  }
+ },
+ "calendar_avg_2yr": {
+  "January": {
+   "season": "Low",
+   "revenue": 2110.0
+  },
+  "February": {
+   "season": "Low",
+   "revenue": 2650.0
+  },
+  "March": {
+   "season": "Shoulder",
+   "revenue": 3640.0
+  },
+  "April": {
+   "season": "Shoulder",
+   "revenue": 3760.0
+  },
+  "May": {
+   "season": "High",
+   "revenue": 4140.0
+  },
+  "June": {
+   "season": "High",
+   "revenue": 5680.0
+  },
+  "July": {
+   "season": "High",
+   "revenue": 6290.0
+  },
+  "August": {
+   "season": "High",
+   "revenue": 4180.0
+  },
+  "September": {
+   "season": "Low",
+   "revenue": 3070.0
+  },
+  "October": {
+   "season": "Low",
+   "revenue": 3210.0
+  },
+  "November": {
+   "season": "Low",
+   "revenue": 2670.0
+  },
+  "December": {
+   "season": "Low",
+   "revenue": 2360.0
+  }
+ }
+}

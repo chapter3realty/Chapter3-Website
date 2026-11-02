@@ -1,0 +1,444 @@
+{
+ "source": "NOAA NHC HURDAT2 1851-2025 (file dated 2026-09-23)",
+ "center": [
+  33.429,
+  -79.1235
+ ],
+ "radius_miles": 50,
+ "years": "1950-2025",
+ "storms": 44,
+ "hurricane_strength_at_closest": 7,
+ "tropical_storm_strength": 28,
+ "by_decade": {
+  "1950s": [
+   5,
+   2
+  ],
+  "1960s": [
+   5,
+   0
+  ],
+  "1970s": [
+   2,
+   0
+  ],
+  "1980s": [
+   4,
+   0
+  ],
+  "1990s": [
+   4,
+   0
+  ],
+  "2000s": [
+   8,
+   1
+  ],
+  "2010s": [
+   8,
+   2
+  ],
+  "2020s": [
+   8,
+   2
+  ]
+ },
+ "list": [
+  {
+   "year": 1952,
+   "name": "UNNAMED",
+   "miles": 30.6,
+   "wind_kt": 45,
+   "date": "19520828",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 1954,
+   "name": "HAZEL",
+   "miles": 27.9,
+   "wind_kt": 115,
+   "date": "19541015",
+   "class_at_closest": "hurricane",
+   "status_code": "HU"
+  },
+  {
+   "year": 1956,
+   "name": "FLOSSY",
+   "miles": 37.2,
+   "wind_kt": 45,
+   "date": "19560926",
+   "class_at_closest": "tropical storm",
+   "status_code": "EX"
+  },
+  {
+   "year": 1958,
+   "name": "HELENE",
+   "miles": 42.5,
+   "wind_kt": 120,
+   "date": "19580927",
+   "class_at_closest": "hurricane",
+   "status_code": "HU"
+  },
+  {
+   "year": 1959,
+   "name": "CINDY",
+   "miles": 40.1,
+   "wind_kt": 61,
+   "date": "19590709",
+   "class_at_closest": "tropical storm",
+   "status_code": "HU"
+  },
+  {
+   "year": 1960,
+   "name": "BRENDA",
+   "miles": 10.7,
+   "wind_kt": 60,
+   "date": "19600729",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 1964,
+   "name": "DORA",
+   "miles": 12.4,
+   "wind_kt": 60,
+   "date": "19640913",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 1966,
+   "name": "ALMA",
+   "miles": 43.0,
+   "wind_kt": 53,
+   "date": "19660611",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 1967,
+   "name": "UNNAMED",
+   "miles": 38.7,
+   "wind_kt": 35,
+   "date": "19670617",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 1968,
+   "name": "ABBY",
+   "miles": 24.4,
+   "wind_kt": 25,
+   "date": "19680611",
+   "class_at_closest": "depression or weaker",
+   "status_code": "LO"
+  },
+  {
+   "year": 1972,
+   "name": "UNNAMED",
+   "miles": 18.7,
+   "wind_kt": 35,
+   "date": "19720712",
+   "class_at_closest": "tropical storm",
+   "status_code": "SS"
+  },
+  {
+   "year": 1977,
+   "name": "CLARA",
+   "miles": 17.2,
+   "wind_kt": 20,
+   "date": "19770905",
+   "class_at_closest": "depression or weaker",
+   "status_code": "TD"
+  },
+  {
+   "year": 1981,
+   "name": "DENNIS",
+   "miles": 16.0,
+   "wind_kt": 50,
+   "date": "19810819",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 1982,
+   "name": "UNNAMED",
+   "miles": 37.7,
+   "wind_kt": 60,
+   "date": "19820619",
+   "class_at_closest": "tropical storm",
+   "status_code": "SS"
+  },
+  {
+   "year": 1985,
+   "name": "KATE",
+   "miles": 18.2,
+   "wind_kt": 45,
+   "date": "19851122",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 1987,
+   "name": "UNNAMED",
+   "miles": 35.5,
+   "wind_kt": 30,
+   "date": "19870907",
+   "class_at_closest": "depression or weaker",
+   "status_code": "TD"
+  },
+  {
+   "year": 1994,
+   "name": "UNNAMED",
+   "miles": 13.5,
+   "wind_kt": 29,
+   "date": "19940720",
+   "class_at_closest": "depression or weaker",
+   "status_code": "TD"
+  },
+  {
+   "year": 1995,
+   "name": "ALLISON",
+   "miles": 35.2,
+   "wind_kt": 37,
+   "date": "19950606",
+   "class_at_closest": "tropical storm",
+   "status_code": "EX"
+  },
+  {
+   "year": 1996,
+   "name": "JOSEPHINE",
+   "miles": 20.9,
+   "wind_kt": 45,
+   "date": "19961008",
+   "class_at_closest": "tropical storm",
+   "status_code": "EX"
+  },
+  {
+   "year": 1998,
+   "name": "EARL",
+   "miles": 46.2,
+   "wind_kt": 45,
+   "date": "19980904",
+   "class_at_closest": "tropical storm",
+   "status_code": "EX"
+  },
+  {
+   "year": 2001,
+   "name": "ALLISON",
+   "miles": 46.0,
+   "wind_kt": 25,
+   "date": "20010613",
+   "class_at_closest": "depression or weaker",
+   "status_code": "SD"
+  },
+  {
+   "year": 2002,
+   "name": "KYLE",
+   "miles": 4.6,
+   "wind_kt": 35,
+   "date": "20021011",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 2004,
+   "name": "BONNIE",
+   "miles": 0.8,
+   "wind_kt": 25,
+   "date": "20040813",
+   "class_at_closest": "depression or weaker",
+   "status_code": "TD"
+  },
+  {
+   "year": 2004,
+   "name": "CHARLEY",
+   "miles": 4.6,
+   "wind_kt": 68,
+   "date": "20040814",
+   "class_at_closest": "hurricane",
+   "status_code": "HU"
+  },
+  {
+   "year": 2004,
+   "name": "GASTON",
+   "miles": 27.5,
+   "wind_kt": 48,
+   "date": "20040829",
+   "class_at_closest": "tropical storm",
+   "status_code": "HU"
+  },
+  {
+   "year": 2006,
+   "name": "ERNESTO",
+   "miles": 44.3,
+   "wind_kt": 60,
+   "date": "20060831",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 2007,
+   "name": "BARRY",
+   "miles": 7.8,
+   "wind_kt": 40,
+   "date": "20070603",
+   "class_at_closest": "tropical storm",
+   "status_code": "EX"
+  },
+  {
+   "year": 2008,
+   "name": "HANNA",
+   "miles": 18.6,
+   "wind_kt": 60,
+   "date": "20080906",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 2012,
+   "name": "BERYL",
+   "miles": 6.9,
+   "wind_kt": 39,
+   "date": "20120530",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 2015,
+   "name": "ANA",
+   "miles": 28.8,
+   "wind_kt": 40,
+   "date": "20150510",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 2016,
+   "name": "BONNIE",
+   "miles": 17.8,
+   "wind_kt": 25,
+   "date": "20160531",
+   "class_at_closest": "depression or weaker",
+   "status_code": "LO"
+  },
+  {
+   "year": 2016,
+   "name": "COLIN",
+   "miles": 35.2,
+   "wind_kt": 45,
+   "date": "20160607",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 2016,
+   "name": "HERMINE",
+   "miles": 12.2,
+   "wind_kt": 50,
+   "date": "20160902",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 2016,
+   "name": "MATTHEW",
+   "miles": 2.3,
+   "wind_kt": 71,
+   "date": "20161008",
+   "class_at_closest": "hurricane",
+   "status_code": "HU"
+  },
+  {
+   "year": 2018,
+   "name": "FLORENCE",
+   "miles": 21.3,
+   "wind_kt": 55,
+   "date": "20180915",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 2019,
+   "name": "DORIAN",
+   "miles": 46.9,
+   "wind_kt": 94,
+   "date": "20190905",
+   "class_at_closest": "hurricane",
+   "status_code": "HU"
+  },
+  {
+   "year": 2020,
+   "name": "BERTHA",
+   "miles": 44.8,
+   "wind_kt": 40,
+   "date": "20200527",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 2020,
+   "name": "FAY",
+   "miles": 6.8,
+   "wind_kt": 20,
+   "date": "20200708",
+   "class_at_closest": "depression or weaker",
+   "status_code": "LO"
+  },
+  {
+   "year": 2020,
+   "name": "ISAIAS",
+   "miles": 19.2,
+   "wind_kt": 80,
+   "date": "20200804",
+   "class_at_closest": "hurricane",
+   "status_code": "HU"
+  },
+  {
+   "year": 2022,
+   "name": "COLIN",
+   "miles": 9.6,
+   "wind_kt": 33,
+   "date": "20220702",
+   "class_at_closest": "depression or weaker",
+   "status_code": "TS"
+  },
+  {
+   "year": 2022,
+   "name": "IAN",
+   "miles": 5.1,
+   "wind_kt": 68,
+   "date": "20220930",
+   "class_at_closest": "hurricane",
+   "status_code": "HU"
+  },
+  {
+   "year": 2023,
+   "name": "IDALIA",
+   "miles": 1.1,
+   "wind_kt": 50,
+   "date": "20230831",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  },
+  {
+   "year": 2024,
+   "name": "DEBBY",
+   "miles": 37.6,
+   "wind_kt": 40,
+   "date": "20240808",
+   "class_at_closest": "tropical storm",
+   "status_code": "SS"
+  },
+  {
+   "year": 2025,
+   "name": "CHANTAL",
+   "miles": 10.0,
+   "wind_kt": 47,
+   "date": "20250706",
+   "class_at_closest": "tropical storm",
+   "status_code": "TS"
+  }
+ ]
+}

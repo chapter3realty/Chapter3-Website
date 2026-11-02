@@ -1,0 +1,19 @@
+{
+ "source": "https://www.fema.gov/api/open/v3/NfipPolicies",
+ "community": "450109 MYRTLE BEACH, CITY OF",
+ "filter": "occupancyType 1 or 11; policyEffectiveDate 2025-09-01 to 2026-08-31",
+ "field": "policyCost",
+ "pulled": "2026-11-02",
+ "high": {
+  "n": 324,
+  "median": 833.0,
+  "q1": 712,
+  "q3": 1084
+ },
+ "x": {
+  "n": 1793,
+  "median": 571,
+  "q1": 485,
+  "q3": 720
+ }
+}

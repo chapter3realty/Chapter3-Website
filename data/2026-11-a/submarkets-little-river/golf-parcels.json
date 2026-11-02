@@ -1,0 +1,113 @@
+{
+ "query": "County GIS layer 24, LandUseCode IN (387..394) AND Acreage > 20, envelope -78.75,33.82,-78.55,33.93, run 2026-11-02 by the review-round-1 fixer",
+ "rows": [
+  {
+   "PIN": 30500000027,
+   "LandUseCode": "389",
+   "LegalDescr": "COLONIAL CHARTERS; TRS B,C,D,E,F,H & I",
+   "Acreage": 65.04
+  },
+  {
+   "PIN": 35700000015,
+   "LandUseCode": "389",
+   "LegalDescr": "N/E US 17 & 32ND AVE; S",
+   "Acreage": 122.75
+  },
+  {
+   "PIN": 35100000177,
+   "LandUseCode": "394",
+   "LegalDescr": "E/S GOLF COURSE; D, K THRU P",
+   "Acreage": 61.71
+  },
+  {
+   "PIN": 31200000002,
+   "LandUseCode": "389",
+   "LegalDescr": "RIVER HILLS GOLF COURSE; ALL G & TR D2",
+   "Acreage": 167.82
+  },
+  {
+   "PIN": 26600000026,
+   "LandUseCode": "388",
+   "LegalDescr": "; BUCK CREEK GOLF CRSE",
+   "Acreage": 385.18
+  },
+  {
+   "PIN": 31100000010,
+   "LandUseCode": "388",
+   "LegalDescr": "CLUB HOUSE TRACT;",
+   "Acreage": 24.26
+  },
+  {
+   "PIN": 35000000340,
+   "LandUseCode": "389",
+   "LegalDescr": "PAR A&B BL 85, LOT 5 BL; 84 & HWY 17",
+   "Acreage": 168.88
+  },
+  {
+   "PIN": 35900000013,
+   "LandUseCode": "394",
+   "LegalDescr": "TR 46-11,46-12.46-13,48; ,49-1,49-2,50,51-1,&",
+   "Acreage": 150.85
+  },
+  {
+   "PIN": 31300000020,
+   "LandUseCode": "389",
+   "LegalDescr": "1 MILE S OF; BROOKSVILLE X RDS",
+   "Acreage": 200.92
+  },
+  {
+   "PIN": 35700000014,
+   "LandUseCode": "394",
+   "LegalDescr": "N/E US HWY 17;",
+   "Acreage": 157.3
+  },
+  {
+   "PIN": 35100000007,
+   "LandUseCode": "389",
+   "LegalDescr": "W/S GOLF COURSE; DD THRU OO",
+   "Acreage": 96.76
+  },
+  {
+   "PIN": 31200000471,
+   "LandUseCode": "389",
+   "LegalDescr": "EASTPORT DEV PCLS 1 & 2; TRACT 1,2,3, & 4",
+   "Acreage": 98.48
+  },
+  {
+   "PIN": 35800000005,
+   "LandUseCode": "389",
+   "LegalDescr": "BAREFOOT RESORT; PARCEL 53",
+   "Acreage": 48.86
+  },
+  {
+   "PIN": 35900000008,
+   "LandUseCode": "389",
+   "LegalDescr": "BAREFOOT RESORT; PT PAR 8 &A1,A3-A5",
+   "Acreage": 342.03
+  },
+  {
+   "PIN": 26600000027,
+   "LandUseCode": "394",
+   "LegalDescr": "BUCK CREEK; RECREATIONAL AREA",
+   "Acreage": 29.96
+  },
+  {
+   "PIN": 30400000010,
+   "LandUseCode": "389",
+   "LegalDescr": "; N OF SUN COLONY BLVD",
+   "Acreage": 54.67
+  },
+  {
+   "PIN": 31300000031,
+   "LandUseCode": "388",
+   "LegalDescr": "SUNSET LANDING PH 1; O/S 1",
+   "Acreage": 23.32
+  },
+  {
+   "PIN": 31100000005,
+   "LandUseCode": "389",
+   "LegalDescr": "TRS A,1,2,3,4 & 10.8AC; INT 17 & 50",
+   "Acreage": 189.41
+  }
+ ]
+}

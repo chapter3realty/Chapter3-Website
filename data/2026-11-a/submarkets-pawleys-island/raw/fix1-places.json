@@ -1,0 +1,171 @@
+{
+ "start": [
+  -79.12152664,
+  33.43324962
+ ],
+ "places": {
+  "Hammock Shops Village": {
+   "osm": "https://www.openstreetmap.org/way/12400033",
+   "kind": "shops",
+   "lon": -79.1224807,
+   "lat": 33.4433758,
+   "part": "behind"
+  },
+  "Publix, 10225 Ocean Highway": {
+   "osm": "https://www.openstreetmap.org/node/5138543020",
+   "kind": "supermarket",
+   "lon": -79.1315625,
+   "lat": 33.4384867,
+   "part": "west17"
+  },
+  "The Fresh Market, Ocean Highway": {
+   "osm": "https://www.openstreetmap.org/node/5148415753",
+   "kind": "supermarket",
+   "lon": -79.1202931,
+   "lat": 33.4502567,
+   "part": "west17"
+  },
+  "Food Lion, 9380 Ocean Highway": {
+   "osm": "https://www.openstreetmap.org/node/1202153686",
+   "kind": "supermarket",
+   "lon": -79.1430727,
+   "lat": 33.4301517,
+   "part": "behind"
+  },
+  "Lowes Foods, 9160 Ocean Highway": {
+   "osm": "https://www.openstreetmap.org/node/5138542965",
+   "kind": "supermarket",
+   "lon": -79.1465156,
+   "lat": 33.4282826,
+   "part": "behind"
+  },
+  "Food Lion, 115 Willbrook Boulevard": {
+   "osm": "https://www.openstreetmap.org/node/5148415762",
+   "kind": "supermarket",
+   "lon": -79.0989276,
+   "lat": 33.4833811,
+   "part": "west17"
+  },
+  "The Reserve Golf Club": {
+   "osm": "https://www.openstreetmap.org/way/342217465",
+   "kind": "golf_course",
+   "lon": -79.1100171,
+   "lat": 33.4953903,
+   "part": "west17"
+  },
+  "Tradition Golf Club": {
+   "osm": "https://www.openstreetmap.org/relation/4855534",
+   "kind": "golf_course",
+   "lon": -79.1149571,
+   "lat": 33.4845647,
+   "part": "west17"
+  },
+  "True Blue Golf Plantation": {
+   "osm": "https://www.openstreetmap.org/relation/4856438",
+   "kind": "golf_course",
+   "lon": -79.1487458,
+   "lat": 33.4413104,
+   "part": "west17"
+  },
+  "Caledonia Golf & Fish Club": {
+   "osm": "https://www.openstreetmap.org/way/342296678",
+   "kind": "golf_course",
+   "lon": -79.1515069,
+   "lat": 33.4528128,
+   "part": "west17"
+  },
+  "Willbrook Plantation": {
+   "osm": "https://www.openstreetmap.org/relation/4855578",
+   "kind": "golf_course",
+   "lon": -79.1204793,
+   "lat": 33.4896526,
+   "part": "west17"
+  },
+  "Litchfield Country Club": {
+   "osm": "https://www.openstreetmap.org/relation/4855642",
+   "kind": "golf_course",
+   "lon": -79.1161444,
+   "lat": 33.4750777,
+   "part": "west17"
+  },
+  "The River Club": {
+   "osm": "https://www.openstreetmap.org/relation/4855658",
+   "kind": "golf_course",
+   "lon": -79.1311081,
+   "lat": 33.4723123,
+   "part": "west17"
+  },
+  "Pawleys Plantation (course on Pawleys Plantation Way)": {
+   "osm": "https://www.openstreetmap.org/relation/18995919",
+   "kind": "golf_course",
+   "lon": -79.1439767,
+   "lat": 33.4190769,
+   "part": "behind"
+  },
+  "Heritage Club": {
+   "osm": "https://www.openstreetmap.org/relation/4856858",
+   "kind": "golf_course",
+   "lon": -79.1607462,
+   "lat": 33.4429715,
+   "part": "west17"
+  },
+  "Founders Club at Pawleys Island": {
+   "osm": "https://www.openstreetmap.org/relation/4856975",
+   "kind": "golf_course",
+   "lon": -79.1594993,
+   "lat": 33.4283024,
+   "part": "west17"
+  },
+  "Waccamaw Neck Bikeway, south end (Pawleys Landing)": {
+   "osm": "https://www.openstreetmap.org/way/294240301",
+   "kind": "cycleway",
+   "lon": -79.1427485,
+   "lat": 33.4312906,
+   "part": "behind"
+  },
+  "Waccamaw Neck Bikeway, Litchfield": {
+   "osm": "https://www.openstreetmap.org/way/199920704",
+   "kind": "cycleway",
+   "lon": -79.10609,
+   "lat": 33.4864604,
+   "part": "west17"
+  },
+  "Waccamaw Neck Bikeway, Murrells Inlet": {
+   "osm": "https://www.openstreetmap.org/way/1037796532",
+   "kind": "cycleway",
+   "lon": -79.0600391,
+   "lat": 33.5300431,
+   "part": "litchfield"
+  }
+ },
+ "drives": {
+  "Hammock Shops Village": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.121527,33.433250;-79.122481,33.443376?overview=false",
+   "minutes": 2.5,
+   "miles": 1.0
+  },
+  "Publix, 10225 Ocean Highway": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.121527,33.433250;-79.131563,33.438487?overview=false",
+   "minutes": 2.5,
+   "miles": 0.84
+  }
+ },
+ "lodging_tax": {
+  "state_atax_2024_quarters": [
+   12261.58,
+   127127.66,
+   307942.89,
+   85085.03
+  ],
+  "state_atax_2024_total": 532417.16,
+  "state_atax_source": "https://www.townofpawleysisland.com/wp-content/uploads/2026/02/Pawleys-Island-Atax-Agenda_Packet-Nov-2025-1.pdf (memo \"2024 Accommodations Tax for 4 Quarters\", November 18, 2025)",
+  "state_atax_rate": 0.02,
+  "state_atax_law": "SC Code 12-36-2630(3): a two percent local accommodations tax, remitted quarterly to the municipality where it is collected, less the department's added cost",
+  "local_atax_2024_actual": 828307,
+  "local_atax_line": "40700-07 Pawleys Accommodations/Hospitality Tax, Local ATAX Fund, 2024 actual",
+  "local_atax_source": "https://www.townofpawleysisland.com/wp-content/uploads/2025/12/2026-Annual-Budget-FINAL.pdf (Local ATAX Fund page)",
+  "local_rates": "Town monthly form: accommodations 3 percent (line 2), food and beverage hospitality tax 2 percent (line 4)",
+  "rent_from_state_2pct": 26620858,
+  "rent_ceiling_from_local_3pct": 27610233
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "overview": {
+  "file": "pawleys-area-aerial-1000.webp",
+  "frame_px": [
+   1400,
+   1603
+  ],
+  "bbox_wgs84": [
+   -79.175,
+   33.392,
+   -79.085,
+   33.478
+  ]
+ },
+ "south": {
+  "file": "pawleys-south-end-aerial-1000.webp",
+  "frame_px": [
+   1800,
+   2021
+  ],
+  "crop_px": [
+   650,
+   250,
+   1500,
+   1150
+  ],
+  "bbox_wgs84": [
+   -79.1404,
+   33.3993,
+   -79.134,
+   33.4053
+  ]
+ },
+ "middle": {
+  "labels": [
+   {
+    "label": "North Causeway",
+    "lon": -79.122449,
+    "lat": 33.43412,
+    "how": "road vertex, map-layers.geojson"
+   },
+   {
+    "label": "Salt marsh",
+    "lon": -79.1255,
+    "lat": 33.4302,
+    "how": "given point"
+   },
+   {
+    "label": "Atlantic Ocean",
+    "lon": -79.1175,
+    "lat": 33.43,
+    "how": "given point"
+   },
+   {
+    "label": "Pawleys Island",
+    "lon": -79.1181,
+    "lat": 33.4343,
+    "how": "given point"
+   },
+   {
+    "label": "Mainland",
+    "lon": -79.1255,
+    "lat": 33.4362,
+    "how": "given point"
+   }
+  ],
+  "crop_px": [
+   0,
+   0,
+   1644,
+   1233
+  ],
+  "size": [
+   1644,
+   1233
+  ],
+  "bbox_wgs84": [
+   -79.127787,
+   33.429,
+   -79.115,
+   33.437
+  ]
+ }
+}

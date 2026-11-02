@@ -1,0 +1,357 @@
+{
+ "source": "OpenFEMA NfipPolicies v3",
+ "filter": "reportedZipCode 29576, policyEffectiveDate 2025-06-01 to 2026-05-31",
+ "groups": {
+  "all_29576/11/A": {
+   "what": "single-family home",
+   "policies": 879,
+   "median_cost": 1430,
+   "p25": 1068.0,
+   "p75": 4480.0,
+   "primary_residence": 499,
+   "median_building_coverage": 250000
+  },
+  "all_29576/11/V": {
+   "what": "single-family home",
+   "policies": 152,
+   "median_cost": 4642.5,
+   "p25": 1741.5,
+   "p75": 6444.75,
+   "primary_residence": 44,
+   "median_building_coverage": 250000.0
+  },
+  "all_29576/11/X": {
+   "what": "single-family home",
+   "policies": 2060,
+   "median_cost": 573.0,
+   "p25": 497.0,
+   "p75": 732.0,
+   "primary_residence": 1934,
+   "median_building_coverage": 250000.0
+  },
+  "all_29576/11/any": {
+   "what": "single-family home",
+   "policies": 3091,
+   "median_cost": 714,
+   "p25": 532.0,
+   "p75": 1206.0,
+   "primary_residence": 2477,
+   "median_building_coverage": 250000
+  },
+  "all_29576/14/A": {
+   "what": "manufactured home",
+   "policies": 47,
+   "median_cost": 1982,
+   "p25": 1077.0,
+   "p75": 2766.0,
+   "primary_residence": 23,
+   "median_building_coverage": 97000
+  },
+  "all_29576/14/X": {
+   "what": "manufactured home",
+   "policies": 68,
+   "median_cost": 681.5,
+   "p25": 518.0,
+   "p75": 841.25,
+   "primary_residence": 51,
+   "median_building_coverage": 100000.0
+  },
+  "all_29576/14/any": {
+   "what": "manufactured home",
+   "policies": 117,
+   "median_cost": 827,
+   "p25": 599.0,
+   "p75": 1870.0,
+   "primary_residence": 76,
+   "median_building_coverage": 100000
+  },
+  "all_29576/15/A": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 62,
+   "median_cost": 13676.5,
+   "p25": 3806.75,
+   "p75": 24568.75,
+   "primary_residence": 0,
+   "median_building_coverage": 2774000.0
+  },
+  "all_29576/15/V": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 20,
+   "median_cost": 13403.5,
+   "p25": 4838.75,
+   "p75": 32285.0,
+   "primary_residence": 0,
+   "median_building_coverage": 3172000.0
+  },
+  "all_29576/15/any": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 82,
+   "median_cost": 13676.5,
+   "p25": 4378.5,
+   "p75": 28457.0,
+   "primary_residence": 0,
+   "median_building_coverage": 2863500.0
+  },
+  "all_29576/16/A": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 39,
+   "median_cost": 1125,
+   "p25": 841.0,
+   "p75": 1781.0,
+   "primary_residence": 17,
+   "median_building_coverage": 90000
+  },
+  "all_29576/16/V": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 6,
+   "median_cost": 1435.5,
+   "p25": 670.5,
+   "p75": 2532.25,
+   "primary_residence": 1,
+   "median_building_coverage": 100000.0
+  },
+  "all_29576/16/X": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 175,
+   "median_cost": 401,
+   "p25": 355.0,
+   "p75": 517.0,
+   "primary_residence": 140,
+   "median_building_coverage": 134000
+  },
+  "all_29576/16/any": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 220,
+   "median_cost": 424.0,
+   "p25": 368.0,
+   "p75": 602.25,
+   "primary_residence": 158,
+   "median_building_coverage": 123000.0
+  },
+  "rest_29576/11/A": {
+   "what": "single-family home",
+   "policies": 466,
+   "median_cost": 1200.0,
+   "p25": 1016.25,
+   "p75": 1804.25,
+   "primary_residence": 333,
+   "median_building_coverage": 250000.0
+  },
+  "rest_29576/11/V": {
+   "what": "single-family home",
+   "policies": 55,
+   "median_cost": 3417,
+   "p25": 1499.0,
+   "p75": 5534.0,
+   "primary_residence": 21,
+   "median_building_coverage": 250000
+  },
+  "rest_29576/11/X": {
+   "what": "single-family home",
+   "policies": 2037,
+   "median_cost": 571,
+   "p25": 496.5,
+   "p75": 727.5,
+   "primary_residence": 1922,
+   "median_building_coverage": 250000
+  },
+  "rest_29576/11/any": {
+   "what": "single-family home",
+   "policies": 2558,
+   "median_cost": 620.0,
+   "p25": 513.0,
+   "p75": 1009.0,
+   "primary_residence": 2276,
+   "median_building_coverage": 250000.0
+  },
+  "rest_29576/14/A": {
+   "what": "manufactured home",
+   "policies": 34,
+   "median_cost": 1977.0,
+   "p25": 1029.75,
+   "p75": 2919.0,
+   "primary_residence": 21,
+   "median_building_coverage": 98500.0
+  },
+  "rest_29576/14/X": {
+   "what": "manufactured home",
+   "policies": 63,
+   "median_cost": 671,
+   "p25": 511.0,
+   "p75": 825.0,
+   "primary_residence": 49,
+   "median_building_coverage": 100000
+  },
+  "rest_29576/14/any": {
+   "what": "manufactured home",
+   "policies": 99,
+   "median_cost": 759,
+   "p25": 569.0,
+   "p75": 1518.0,
+   "primary_residence": 72,
+   "median_building_coverage": 100000
+  },
+  "rest_29576/15/A": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 10,
+   "median_cost": 9169.0,
+   "p25": 3006.75,
+   "p75": 18808.25,
+   "primary_residence": 0,
+   "median_building_coverage": 2158000.0
+  },
+  "rest_29576/15/V": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 11,
+   "median_cost": 7093,
+   "p25": 4332.0,
+   "p75": 16152.0,
+   "primary_residence": 0,
+   "median_building_coverage": 2000000
+  },
+  "rest_29576/15/any": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 21,
+   "median_cost": 9165,
+   "p25": 4332.0,
+   "p75": 17383.5,
+   "primary_residence": 0,
+   "median_building_coverage": 2000000
+  },
+  "rest_29576/16/A": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 23,
+   "median_cost": 1100,
+   "p25": 825.0,
+   "p75": 1515.0,
+   "primary_residence": 16,
+   "median_building_coverage": 165000
+  },
+  "rest_29576/16/X": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 174,
+   "median_cost": 401.0,
+   "p25": 354.5,
+   "p75": 513.25,
+   "primary_residence": 140,
+   "median_building_coverage": 134000.0
+  },
+  "rest_29576/16/any": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 201,
+   "median_cost": 414,
+   "p25": 360.0,
+   "p75": 568.5,
+   "primary_residence": 157,
+   "median_building_coverage": 134000
+  },
+  "strip/11/A": {
+   "what": "single-family home",
+   "policies": 413,
+   "median_cost": 3061,
+   "p25": 1260.0,
+   "p75": 6410.0,
+   "primary_residence": 166,
+   "median_building_coverage": 250000
+  },
+  "strip/11/V": {
+   "what": "single-family home",
+   "policies": 97,
+   "median_cost": 4839,
+   "p25": 1881.0,
+   "p75": 6956.5,
+   "primary_residence": 23,
+   "median_building_coverage": 250000
+  },
+  "strip/11/X": {
+   "what": "single-family home",
+   "policies": 23,
+   "median_cost": 1030,
+   "p25": 742.0,
+   "p75": 1309.0,
+   "primary_residence": 12,
+   "median_building_coverage": 250000
+  },
+  "strip/11/any": {
+   "what": "single-family home",
+   "policies": 533,
+   "median_cost": 3259,
+   "p25": 1273.0,
+   "p75": 6397.0,
+   "primary_residence": 201,
+   "median_building_coverage": 250000
+  },
+  "strip/14/A": {
+   "what": "manufactured home",
+   "policies": 13,
+   "median_cost": 2374,
+   "p25": 1056.5,
+   "p75": 2657.5,
+   "primary_residence": 2,
+   "median_building_coverage": 73000
+  },
+  "strip/14/X": {
+   "what": "manufactured home",
+   "policies": 5,
+   "median_cost": 915,
+   "p25": 688.5,
+   "p75": 1001.5,
+   "primary_residence": 2,
+   "median_building_coverage": 75000
+  },
+  "strip/14/any": {
+   "what": "manufactured home",
+   "policies": 18,
+   "median_cost": 1148.0,
+   "p25": 928.5,
+   "p75": 2652.5,
+   "primary_residence": 4,
+   "median_building_coverage": 74000.0
+  },
+  "strip/15/A": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 52,
+   "median_cost": 15800.5,
+   "p25": 3903.5,
+   "p75": 29185.0,
+   "primary_residence": 0,
+   "median_building_coverage": 2899000.0
+  },
+  "strip/15/V": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 9,
+   "median_cost": 30182,
+   "p25": 15695.5,
+   "p75": 35464.0,
+   "primary_residence": 0,
+   "median_building_coverage": 3681000
+  },
+  "strip/15/any": {
+   "what": "condo association building policy (RCBAP)",
+   "policies": 61,
+   "median_cost": 17240,
+   "p25": 4485.5,
+   "p75": 31584.0,
+   "primary_residence": 0,
+   "median_building_coverage": 3090000
+  },
+  "strip/16/A": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 16,
+   "median_cost": 1547.5,
+   "p25": 955.0,
+   "p75": 2176.0,
+   "primary_residence": 1,
+   "median_building_coverage": 38500.0
+  },
+  "strip/16/any": {
+   "what": "unit in a multi-unit building (condo unit policy)",
+   "policies": 19,
+   "median_cost": 1561,
+   "p25": 961.0,
+   "p75": 2187.0,
+   "primary_residence": 1,
+   "median_building_coverage": 50000
+  }
+ }
+}

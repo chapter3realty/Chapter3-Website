@@ -1,0 +1,368 @@
+{
+ "pulled": "2026-11-02T04:03:05.002245+00:00",
+ "api_totals": {
+  "house": 49,
+  "townhouse": 0,
+  "condo": 73,
+  "manufactured": 67,
+  "land": 3,
+  "multi": 3,
+  "all": 196
+ },
+ "feature_counts": {
+  "flood_zone": 52,
+  "private_dock": 7,
+  "str_allowed": 118,
+  "raised_home": 81,
+  "oceanfront": 195,
+  "ocean_view": 62,
+  "walk_to_beach": 134,
+  "no_hoa": 195,
+  "furnished": 142,
+  "county_georgetown": 24,
+  "waterfront": 59
+ },
+ "note": "CRM public map API, has=area_garden_city; MLS listings counted in aggregate only. The oceanfront and no_hoa flags came back on every home in this area and are not used.",
+ "groups": {
+  "all": {
+   "n": 195,
+   "median_price": 317000.0,
+   "min": 79900.0,
+   "max": 5899000.0,
+   "median_ppsf": 319,
+   "with_sqft": 192,
+   "docks": 7,
+   "str_allowed": 118
+  },
+  "beach/condo": {
+   "n": 37,
+   "median_price": 379900.0,
+   "min": 239900.0,
+   "max": 795000.0,
+   "median_ppsf": 407,
+   "with_sqft": 37,
+   "docks": 0,
+   "str_allowed": 35
+  },
+  "beach/house": {
+   "n": 10,
+   "median_price": 2499500.0,
+   "min": 1497000.0,
+   "max": 5899000.0,
+   "median_ppsf": 844,
+   "with_sqft": 10,
+   "docks": 1,
+   "str_allowed": 9
+  },
+  "condo": {
+   "n": 73,
+   "median_price": 319900.0,
+   "min": 128000.0,
+   "max": 1199000.0,
+   "median_ppsf": 383,
+   "with_sqft": 73,
+   "docks": 2,
+   "str_allowed": 51
+  },
+  "georgetown/all": {
+   "n": 24,
+   "median_price": 1450000.0,
+   "min": 115000.0,
+   "max": 5899000.0,
+   "median_ppsf": 622,
+   "with_sqft": 23,
+   "docks": 5,
+   "str_allowed": 17
+  },
+  "georgetown/beach/condo": {
+   "n": 1,
+   "median_price": 450000.0,
+   "min": 450000.0,
+   "max": 450000.0,
+   "median_ppsf": 419,
+   "with_sqft": 1,
+   "docks": 0,
+   "str_allowed": 1
+  },
+  "georgetown/beach/house": {
+   "n": 8,
+   "median_price": 2912500.0,
+   "min": 1497000.0,
+   "max": 5899000.0,
+   "median_ppsf": 891,
+   "with_sqft": 8,
+   "docks": 1,
+   "str_allowed": 7
+  },
+  "georgetown/inland/manufactured": {
+   "n": 1,
+   "median_price": 115000.0,
+   "min": 115000.0,
+   "max": 115000.0,
+   "median_ppsf": 90,
+   "with_sqft": 1,
+   "docks": 0,
+   "str_allowed": 0
+  },
+  "georgetown/middle/condo": {
+   "n": 4,
+   "median_price": 622500.0,
+   "min": 249500.0,
+   "max": 1199000.0,
+   "median_ppsf": 386,
+   "with_sqft": 4,
+   "docks": 1,
+   "str_allowed": 3
+  },
+  "georgetown/middle/house": {
+   "n": 9,
+   "median_price": 1450000.0,
+   "min": 799000.0,
+   "max": 3995000.0,
+   "median_ppsf": 559,
+   "with_sqft": 9,
+   "docks": 3,
+   "str_allowed": 6
+  },
+  "georgetown/middle/land": {
+   "n": 1,
+   "median_price": 250000.0,
+   "min": 250000.0,
+   "max": 250000.0,
+   "median_ppsf": null,
+   "with_sqft": 0,
+   "docks": 0,
+   "str_allowed": 0
+  },
+  "horry/all": {
+   "n": 171,
+   "median_price": 295000.0,
+   "min": 79900.0,
+   "max": 3000000.0,
+   "median_ppsf": 300,
+   "with_sqft": 169,
+   "docks": 2,
+   "str_allowed": 101
+  },
+  "horry/beach/condo": {
+   "n": 36,
+   "median_price": 377450.0,
+   "min": 239900.0,
+   "max": 795000.0,
+   "median_ppsf": 406,
+   "with_sqft": 36,
+   "docks": 0,
+   "str_allowed": 34
+  },
+  "horry/beach/house": {
+   "n": 2,
+   "median_price": 2299500.0,
+   "min": 2100000.0,
+   "max": 2499000.0,
+   "median_ppsf": 535,
+   "with_sqft": 2,
+   "docks": 0,
+   "str_allowed": 2
+  },
+  "horry/inland/condo": {
+   "n": 13,
+   "median_price": 199900.0,
+   "min": 128000.0,
+   "max": 228500.0,
+   "median_ppsf": 176,
+   "with_sqft": 13,
+   "docks": 0,
+   "str_allowed": 1
+  },
+  "horry/inland/house": {
+   "n": 3,
+   "median_price": 689000.0,
+   "min": 369600.0,
+   "max": 1499000.0,
+   "median_ppsf": 302,
+   "with_sqft": 3,
+   "docks": 0,
+   "str_allowed": 2
+  },
+  "horry/inland/manufactured": {
+   "n": 24,
+   "median_price": 147400.0,
+   "min": 79900.0,
+   "max": 420000.0,
+   "median_ppsf": 121,
+   "with_sqft": 24,
+   "docks": 0,
+   "str_allowed": 2
+  },
+  "horry/middle/condo": {
+   "n": 19,
+   "median_price": 229900.0,
+   "min": 169000.0,
+   "max": 599999.0,
+   "median_ppsf": 363,
+   "with_sqft": 19,
+   "docks": 1,
+   "str_allowed": 12
+  },
+  "horry/middle/house": {
+   "n": 27,
+   "median_price": 799000.0,
+   "min": 387500.0,
+   "max": 1490000.0,
+   "median_ppsf": 427,
+   "with_sqft": 27,
+   "docks": 0,
+   "str_allowed": 20
+  },
+  "horry/middle/land": {
+   "n": 2,
+   "median_price": 1587500.0,
+   "min": 175000.0,
+   "max": 3000000.0,
+   "median_ppsf": null,
+   "with_sqft": 0,
+   "docks": 0,
+   "str_allowed": 0
+  },
+  "horry/middle/manufactured": {
+   "n": 42,
+   "median_price": 257000.0,
+   "min": 80000.0,
+   "max": 349000.0,
+   "median_ppsf": 213,
+   "with_sqft": 42,
+   "docks": 1,
+   "str_allowed": 25
+  },
+  "horry/middle/multi": {
+   "n": 3,
+   "median_price": 450000.0,
+   "min": 425000.0,
+   "max": 630000.0,
+   "median_ppsf": 216,
+   "with_sqft": 3,
+   "docks": 0,
+   "str_allowed": 3
+  },
+  "house": {
+   "n": 49,
+   "median_price": 999900.0,
+   "min": 369600.0,
+   "max": 5899000.0,
+   "median_ppsf": 464,
+   "with_sqft": 49,
+   "docks": 4,
+   "str_allowed": 37
+  },
+  "inland/condo": {
+   "n": 13,
+   "median_price": 199900.0,
+   "min": 128000.0,
+   "max": 228500.0,
+   "median_ppsf": 176,
+   "with_sqft": 13,
+   "docks": 0,
+   "str_allowed": 1
+  },
+  "inland/house": {
+   "n": 3,
+   "median_price": 689000.0,
+   "min": 369600.0,
+   "max": 1499000.0,
+   "median_ppsf": 302,
+   "with_sqft": 3,
+   "docks": 0,
+   "str_allowed": 2
+  },
+  "inland/manufactured": {
+   "n": 25,
+   "median_price": 139900.0,
+   "min": 79900.0,
+   "max": 420000.0,
+   "median_ppsf": 120,
+   "with_sqft": 25,
+   "docks": 0,
+   "str_allowed": 2
+  },
+  "land": {
+   "n": 3,
+   "median_price": 250000.0,
+   "min": 175000.0,
+   "max": 3000000.0,
+   "median_ppsf": null,
+   "with_sqft": 0,
+   "docks": 0,
+   "str_allowed": 0
+  },
+  "manufactured": {
+   "n": 67,
+   "median_price": 199000.0,
+   "min": 79900.0,
+   "max": 420000.0,
+   "median_ppsf": 159,
+   "with_sqft": 67,
+   "docks": 1,
+   "str_allowed": 27
+  },
+  "middle/condo": {
+   "n": 23,
+   "median_price": 239900.0,
+   "min": 169000.0,
+   "max": 1199000.0,
+   "median_ppsf": 363,
+   "with_sqft": 23,
+   "docks": 2,
+   "str_allowed": 15
+  },
+  "middle/house": {
+   "n": 36,
+   "median_price": 877450.0,
+   "min": 387500.0,
+   "max": 3995000.0,
+   "median_ppsf": 442,
+   "with_sqft": 36,
+   "docks": 3,
+   "str_allowed": 26
+  },
+  "middle/land": {
+   "n": 3,
+   "median_price": 250000.0,
+   "min": 175000.0,
+   "max": 3000000.0,
+   "median_ppsf": null,
+   "with_sqft": 0,
+   "docks": 0,
+   "str_allowed": 0
+  },
+  "middle/manufactured": {
+   "n": 42,
+   "median_price": 257000.0,
+   "min": 80000.0,
+   "max": 349000.0,
+   "median_ppsf": 213,
+   "with_sqft": 42,
+   "docks": 1,
+   "str_allowed": 25
+  },
+  "middle/multi": {
+   "n": 3,
+   "median_price": 450000.0,
+   "min": 425000.0,
+   "max": 630000.0,
+   "median_ppsf": 216,
+   "with_sqft": 3,
+   "docks": 0,
+   "str_allowed": 3
+  },
+  "multi": {
+   "n": 3,
+   "median_price": 450000.0,
+   "min": 425000.0,
+   "max": 630000.0,
+   "median_ppsf": 216,
+   "with_sqft": 3,
+   "docks": 0,
+   "str_allowed": 3
+  }
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "pulled": "2026-11-02T09:21:06.903Z",
+ "note": "Fixer, review round 1. Houses for sale in the CRM's CCMLS feed, counted in total; hoa=0 is the map's 'No HOA' chip. Houses with an HOA fee = all minus no fee.",
+ "rows": [
+  {
+   "label": "all house",
+   "params": "type=house",
+   "echo": "type=house",
+   "chips": [
+    "House"
+   ],
+   "total": 3689,
+   "refreshedAt": "2026-11-02T09:21:06.903Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house"
+  },
+  {
+   "label": "house no HOA fee",
+   "params": "type=house&hoa=0",
+   "echo": "type=house&hoa=0",
+   "chips": [
+    "House",
+    "No HOA"
+   ],
+   "total": 1101,
+   "refreshedAt": "2026-11-02T09:21:06.903Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&hoa=0"
+  }
+ ],
+ "with_fee": 2588
+}

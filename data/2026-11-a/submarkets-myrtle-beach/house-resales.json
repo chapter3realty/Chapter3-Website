@@ -1,0 +1,128 @@
+{
+ "made": "fix2_data.py",
+ "pulled": "2026-11-02",
+ "resale_not_condo_all": {
+  "n": 1005,
+  "median": 305000.0
+ },
+ "by_land_use": {
+  "house": {
+   "n": 459,
+   "median": 539500.0
+  },
+  "condo_land_use_no_hpr": {
+   "n": 328,
+   "median": 170000.0
+  },
+  "villa_townhouse": {
+   "n": 79,
+   "median": 120000.0
+  },
+  "land_use_109": {
+   "n": 130,
+   "median": 228750.0
+  },
+  "other": {
+   "n": 9,
+   "median": 550000.0
+  }
+ },
+ "houses": {
+  "n": 459,
+  "median": 539500.0,
+  "q1": 415000.0,
+  "q3": 742500.0,
+  "at_or_under_350k": 79
+ },
+ "under_350k_top_names": [
+  [
+   "BENT OAK ESTATES",
+   11
+  ],
+  [
+   "MERIDIAN",
+   6
+  ],
+  [
+   "PELICAN HARBOR",
+   4
+  ],
+  [
+   "LONGLEAF PLACE",
+   4
+  ],
+  [
+   "GOLF COURSE",
+   3
+  ],
+  [
+   "SCOTT AC",
+   3
+  ]
+ ],
+ "neighborhoods": {
+  "BENT OAK ESTATES": {
+   "house_resales": 12,
+   "median": 245500.0,
+   "district": "BENT OAK ESTATES PUD",
+   "district_houses": 150,
+   "district_pct_main_home": 68.7,
+   "district_in_high_risk": 1,
+   "district_nightly_rentals": [
+    "pud_no"
+   ],
+   "center": [
+    -78.90913,
+    33.68351
+   ],
+   "miles_to_coastline": 0.88,
+   "miles_to_airport": 1.16,
+   "east_of_airport": true
+  },
+  "MERIDIAN": {
+   "house_resales": 12,
+   "median": 350450.0,
+   "district": "ARBOR GLENN PUD",
+   "district_houses": 513,
+   "district_pct_main_home": 79.9,
+   "district_in_high_risk": 205,
+   "district_nightly_rentals": [
+    "pud_no"
+   ],
+   "center": [
+    -78.94606,
+    33.68867
+   ],
+   "miles_to_coastline": 2.65,
+   "miles_to_airport": 1.12,
+   "east_of_airport": false
+  },
+  "SUMMIT @ MERIDIAN": {
+   "house_resales": 25,
+   "median": 419000.0,
+   "district": "ARBOR GLENN PUD",
+   "district_houses": 513,
+   "district_pct_main_home": 79.9,
+   "district_in_high_risk": 205,
+   "district_nightly_rentals": [
+    "pud_no"
+   ],
+   "center": [
+    -78.94606,
+    33.68867
+   ],
+   "miles_to_coastline": 2.65,
+   "miles_to_airport": 1.12,
+   "east_of_airport": false
+  }
+ },
+ "listings_inside_at_or_under_300k": {
+  "n": 869,
+  "by_type": {
+   "house": 8,
+   "townhouse": 41,
+   "condo": 820
+  },
+  "inside_all": 1354
+ }
+}

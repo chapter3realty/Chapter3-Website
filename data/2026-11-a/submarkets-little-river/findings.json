@@ -1,0 +1,2482 @@
+{
+ "made": "analyze.py",
+ "run": "2026-11-02T04:10:06.301034+00:00",
+ "areas_sq_mi": {
+  "zip_29566": 30.9,
+  "cdp": 10.7,
+  "county_community": 46.2,
+  "zip_inside_north_myrtle_beach": 1.4
+ },
+ "homes_zip": {
+  "all": 15613,
+  "by_kind": {
+   "house": 9995,
+   "condo": 4297,
+   "manufactured": 757,
+   "townhouse": 437,
+   "other": 127
+  },
+  "by_land_use": {
+   "101": 9602,
+   "107": 3994,
+   "109": 601,
+   "120": 434,
+   "126": 242,
+   "130": 233,
+   "135": 119,
+   "110": 109,
+   "121": 81,
+   "123": 60,
+   "102": 46,
+   "112": 37,
+   "113": 13,
+   "122": 9,
+   "117": 9,
+   "104": 8,
+   "100": 7,
+   "105": 3,
+   "127": 2,
+   "106": 2,
+   "118": 1,
+   "103": 1
+  },
+  "inside_north_myrtle_beach": 246,
+  "inside_nmb_by_kind": {
+   "condo": 170,
+   "house": 75,
+   "other": 1
+  },
+  "postal_little_river": 11433,
+  "no_address_point": 4174,
+  "by_tax_district": {
+   "500": 14360,
+   "510": 1006,
+   "550": 247
+  },
+  "in_cdp": 9388
+ },
+ "manufactured_zip": {
+  "n": 757,
+  "with_land_value": 757,
+  "by_code": {
+   "130": 233,
+   "120": 434,
+   "121": 81,
+   "122": 9
+  },
+  "county_value_median": 143245.0,
+  "largest_groups": [
+   [
+    "(no subdivision)",
+    97
+   ],
+   [
+    "NORTH POINTE",
+    94
+   ],
+   [
+    "STONES EDGE",
+    46
+   ],
+   [
+    "WOODRIDGE S/D",
+    44
+   ],
+   [
+    "CAPTAIN'S CHOICE",
+    42
+   ],
+   [
+    "BAYBERRY S-D PH II",
+    28
+   ],
+   [
+    "EAST TWISTED OAKS",
+    24
+   ],
+   [
+    "NORTH POINTE DEV PH I",
+    23
+   ]
+  ]
+ },
+ "house_lots_zip": {
+  "n": 9995,
+  "median_acres_county": 0.24,
+  "acre_or_more": 435
+ },
+ "water_homes_zip": {
+  "rule": "parcel outline within 15 m of a county hydrography polygon (parcelapp layer 21)",
+  "water_bodies": [
+   "Intracoastal Waterway",
+   "Waccamaw River",
+   "Little River",
+   "Little River",
+   "Little River",
+   "Little River",
+   "DUNN SOUND CREEK",
+   "SHEEPHEAD CREEK",
+   "(unnamed)",
+   "HOUSE CREEK",
+   "(unnamed)"
+  ],
+  "n": 531,
+  "by_kind": {
+   "house": 162,
+   "condo": 353,
+   "other": 15,
+   "manufactured": 1
+  },
+  "by_water": {
+   "Intracoastal Waterway": 524,
+   "Waccamaw River": 7
+  },
+  "houses_on_water": 162,
+  "houses": 9995
+ },
+ "sfha_zip": {
+  "homes": 15613,
+  "in_sfha": 565,
+  "by_zone": {
+   "AE": 565
+  },
+  "by_kind": {
+   "house": {
+    "n": 9995,
+    "in_sfha": 261
+   },
+   "townhouse": {
+    "n": 437,
+    "in_sfha": 0
+   },
+   "condo": {
+    "n": 4297,
+    "in_sfha": 289
+   },
+   "manufactured": {
+    "n": 757,
+    "in_sfha": 1
+   }
+  },
+  "water_homes_in_sfha": 237,
+  "water_homes": 531
+ },
+ "slips": {
+  "county": 322,
+  "with_outline": 322,
+  "in_zip": 223,
+  "in_zip_inside_nmb": 0,
+  "by_marina_zip": [
+   [
+    "Mariner's Pointe",
+    116
+   ],
+   [
+    "Coquina Harbour",
+    81
+   ],
+   [
+    "Lightkeepers Village",
+    25
+   ],
+   [
+    "(other: BRYANT DR & WHARF AV)",
+    1
+   ]
+  ],
+  "outside_zip_by_marina": [
+   [
+    "Dock Holidays Marina",
+    93
+   ],
+   [
+    "Harbourgate Yacht Club",
+    6
+   ]
+  ],
+  "outside_zip_inside_nmb": 99,
+  "county_value_by_marina_zip": {
+   "(other: BRYANT DR & WHARF AV)": {
+    "n": 1,
+    "median": 305242.0,
+    "q1": 305242.0,
+    "q3": 305242.0
+   },
+   "Coquina Harbour": {
+    "n": 81,
+    "median": 35000.0,
+    "q1": 35000.0,
+    "q3": 35000.0
+   },
+   "Lightkeepers Village": {
+    "n": 25,
+    "median": 60000.0,
+    "q1": 50000.0,
+    "q3": 70000.0
+   },
+   "Mariner's Pointe": {
+    "n": 116,
+    "median": 38000.0,
+    "q1": 38000.0,
+    "q3": 45000.0
+   }
+  },
+  "county_value_zip": {
+   "n": 223,
+   "median": 38000.0,
+   "q1": 35000.0,
+   "q3": 45000.0
+  },
+  "county_value_zip_min_max": [
+   1100.0,
+   305242.0
+  ]
+ },
+ "slip_sales": {
+  "deed_rows": 30339,
+  "kept_county": 23,
+  "kept_zip": 12,
+  "skipped_slip_deeds": {
+   "under_1000": 10,
+   "tax_or_corrective": 1
+  },
+  "price_zip": {
+   "n": 12,
+   "median": 17500.0,
+   "q1": 15000.0,
+   "q3": 31125.0
+  },
+  "min_max_zip": [
+   10000.0,
+   95000.0
+  ],
+  "by_marina_zip": {
+   "Lightkeepers Village": {
+    "n": 1,
+    "median": 95000.0,
+    "q1": 95000.0,
+    "q3": 95000.0
+   },
+   "Mariner's Pointe": {
+    "n": 11,
+    "median": 16500.0,
+    "q1": 15000.0,
+    "q3": 30250.0
+   }
+  },
+  "by_marina_county": {
+   "Dock Holidays Marina": {
+    "n": 11,
+    "median": 95000.0,
+    "q1": 80000.0,
+    "q3": 105000.0,
+    "in_nmb": 11
+   },
+   "Lightkeepers Village": {
+    "n": 1,
+    "median": 95000.0,
+    "q1": 95000.0,
+    "q3": 95000.0,
+    "in_nmb": 0
+   },
+   "Mariner's Pointe": {
+    "n": 11,
+    "median": 16500.0,
+    "q1": 15000.0,
+    "q3": 30250.0,
+    "in_nmb": 0
+   }
+  },
+  "list": [
+   {
+    "marina": "Dock Holidays Marina",
+    "month": "2025/10",
+    "price": 190000.0,
+    "county_value": 95000.0
+   },
+   {
+    "marina": "Dock Holidays Marina",
+    "month": "2025/10",
+    "price": 80000.0,
+    "county_value": 80000.0
+   },
+   {
+    "marina": "Dock Holidays Marina",
+    "month": "2025/11",
+    "price": 90000.0,
+    "county_value": 90000.0
+   },
+   {
+    "marina": "Dock Holidays Marina",
+    "month": "2025/12",
+    "price": 100000.0,
+    "county_value": 95000.0
+   },
+   {
+    "marina": "Dock Holidays Marina",
+    "month": "2026/01",
+    "price": 95000.0,
+    "county_value": 95000.0
+   },
+   {
+    "marina": "Dock Holidays Marina",
+    "month": "2026/02",
+    "price": 65000.0,
+    "county_value": 65000.0
+   },
+   {
+    "marina": "Dock Holidays Marina",
+    "month": "2026/03",
+    "price": 75000.0,
+    "county_value": 40000.0
+   },
+   {
+    "marina": "Dock Holidays Marina",
+    "month": "2026/03",
+    "price": 100000.0,
+    "county_value": 40000.0
+   },
+   {
+    "marina": "Dock Holidays Marina",
+    "month": "2026/03",
+    "price": 80000.0,
+    "county_value": 32600.0
+   },
+   {
+    "marina": "Dock Holidays Marina",
+    "month": "2026/06",
+    "price": 110000.0,
+    "county_value": 32600.0
+   },
+   {
+    "marina": "Dock Holidays Marina",
+    "month": "2026/07",
+    "price": 115000.0,
+    "county_value": 32600.0
+   },
+   {
+    "marina": "Lightkeepers Village",
+    "month": "2026/04",
+    "price": 95000.0,
+    "county_value": 80000.0
+   },
+   {
+    "marina": "Mariner's Pointe",
+    "month": "2025/10",
+    "price": 15000.0,
+    "county_value": 15000.0
+   },
+   {
+    "marina": "Mariner's Pointe",
+    "month": "2025/10",
+    "price": 16000.0,
+    "county_value": 16000.0
+   },
+   {
+    "marina": "Mariner's Pointe",
+    "month": "2025/12",
+    "price": 12000.0,
+    "county_value": 12000.0
+   },
+   {
+    "marina": "Mariner's Pointe",
+    "month": "2026/01",
+    "price": 10000.0,
+    "county_value": 45000.0
+   },
+   {
+    "marina": "Mariner's Pointe",
+    "month": "2026/03",
+    "price": 18500.0,
+    "county_value": 38000.0
+   },
+   {
+    "marina": "Mariner's Pointe",
+    "month": "2026/05",
+    "price": 16500.0,
+    "county_value": 38000.0
+   },
+   {
+    "marina": "Mariner's Pointe",
+    "month": "2026/05",
+    "price": 15000.0,
+    "county_value": 38000.0
+   },
+   {
+    "marina": "Mariner's Pointe",
+    "month": "2026/07",
+    "price": 30000.0,
+    "county_value": 45000.0
+   },
+   {
+    "marina": "Mariner's Pointe",
+    "month": "2026/07",
+    "price": 38000.0,
+    "county_value": 65000.0
+   },
+   {
+    "marina": "Mariner's Pointe",
+    "month": "2026/08",
+    "price": 30500.0,
+    "county_value": 45000.0
+   },
+   {
+    "marina": "Mariner's Pointe",
+    "month": "2026/09",
+    "price": 33000.0,
+    "county_value": 24000.0
+   }
+  ],
+  "price_to_county_value_median": 0.6722222222222223
+ },
+ "sales_zip": {
+  "window": "recorded 2025-10-01 to 2026-09-30",
+  "all": {
+   "n": 1002,
+   "median": 297000.0,
+   "q1": 214250.0,
+   "q3": 379125.0
+  },
+  "house_resale": {
+   "n": 511,
+   "median": 357000.0,
+   "q1": 303500.0,
+   "q3": 451000.0
+  },
+  "house_new_builder": {
+   "n": 80,
+   "median": 317825.0,
+   "q1": 285250.0,
+   "q3": 362998.75
+  },
+  "townhouse": {
+   "n": 34,
+   "median": 264500.0,
+   "q1": 234350.0,
+   "q3": 285990.0
+  },
+  "condo": {
+   "n": 338,
+   "median": 189250.0,
+   "q1": 136000.0,
+   "q3": 249625.0
+  },
+  "manufactured": {
+   "n": 34,
+   "median": 182500.0,
+   "q1": 124925.0,
+   "q3": 219500.0
+  },
+  "house_resale_on_water": {
+   "n": 5,
+   "median": 1325000.0,
+   "q1": 925000.0,
+   "q3": 2200000.0
+  },
+  "house_resale_not_water": {
+   "n": 506,
+   "median": 355500.0,
+   "q1": 300500.0,
+   "q3": 449125.0
+  },
+  "house_resale_in_sfha": {
+   "n": 15,
+   "median": 820000.0,
+   "q1": 545000.0,
+   "q3": 1025000.0
+  },
+  "condo_on_water": {
+   "n": 34,
+   "median": 263250.0,
+   "q1": 222875.0,
+   "q3": 305750.0
+  },
+  "condo_not_water": {
+   "n": 304,
+   "median": 180000.0,
+   "q1": 135000.0,
+   "q3": 235000.0
+  },
+  "inside_nmb": {
+   "n": 14,
+   "median": 320450.0,
+   "q1": 290625.0,
+   "q3": 453500.0
+  },
+  "out_of_state_buyer_share": 25.0,
+  "buyer_where": {
+   "SC": 751,
+   "US": 249,
+   "CANADA": 2
+  }
+ },
+ "county_resale_not_condo_median": {
+  "n": 8569,
+  "median": 324900.0
+ },
+ "listings": {
+  "pulled": "2026-11-02T03:54:49.227452+00:00",
+  "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+  "api_totals": {
+   "house": 189,
+   "townhouse": 29,
+   "condo": 184,
+   "manufactured": 19,
+   "land": 49,
+   "house+flood_zone": 3,
+   "house+new_construction": 44,
+   "house+no_hoa": 189,
+   "house+private_dock": 6,
+   "house+boat_slip": 3,
+   "house+boat_access": 29,
+   "house+water_icw": 19,
+   "house+deep_water": 8,
+   "house+golf_community": 10,
+   "house+gated": 26,
+   "house+long_term_rental_allowed": 130,
+   "house+str_allowed": 18,
+   "house+acreage_lot": 4,
+   "house+septic": 2,
+   "house+rv_boat_parking": 6
+  },
+  "kept": 469,
+  "by_type": {
+   "house": {
+    "n": 188,
+    "median": 398450.0,
+    "q1": 333775.0,
+    "q3": 494925.0,
+    "in_sfha_by_pin": 8
+   },
+   "townhouse": {
+    "n": 29,
+    "median": 239990.0,
+    "q1": 220000.0,
+    "q3": 264900.0,
+    "in_sfha_by_pin": 0
+   },
+   "condo": {
+    "n": 184,
+    "median": 192000.0,
+    "q1": 157250.0,
+    "q3": 254992.5,
+    "in_sfha_by_pin": 15
+   },
+   "manufactured": {
+    "n": 19,
+    "median": 249900.0,
+    "q1": 177000.0,
+    "q3": 279900.0,
+    "in_sfha_by_pin": 0
+   },
+   "land": {
+    "n": 49,
+    "median": 165000.0,
+    "q1": 99900.0,
+    "q3": 725000.0,
+    "in_sfha_by_pin": 9
+   }
+  },
+  "house_3bed": {
+   "n": 110,
+   "median": 377900.0,
+   "q1": 331025.0,
+   "q3": 449967.5,
+   "in_sfha_by_pin": 3
+  },
+  "house_3bed_under_400k": 68,
+  "house_under_300k": 22
+ },
+ "hud_fy2027": {
+  "29566": {
+   "1": 1450,
+   "2": 1730,
+   "3": 2100,
+   "4": 2280
+  },
+  "29582": {
+   "1": 1300,
+   "2": 1550,
+   "3": 1880,
+   "4": 2040
+  },
+  "29568": {
+   "1": 1560,
+   "2": 1870,
+   "3": 2270,
+   "4": 2460
+  },
+  "29579": {
+   "1": 1540,
+   "2": 1840,
+   "3": 2230,
+   "4": 2420
+  },
+  "29577": {
+   "1": 1190,
+   "2": 1420,
+   "3": 1720,
+   "4": 1900
+  },
+  "29576": {
+   "1": 1410,
+   "2": 1720,
+   "3": 2080,
+   "4": 2420
+  },
+  "29575": {
+   "1": 1330,
+   "2": 1590,
+   "3": 1930,
+   "4": 2090
+  },
+  "29526": {
+   "1": 1110,
+   "2": 1320,
+   "3": 1630,
+   "4": 1900
+  },
+  "29527": {
+   "1": 1110,
+   "2": 1320,
+   "3": 1630,
+   "4": 1900
+  },
+  "29588": {
+   "1": 1290,
+   "2": 1540,
+   "3": 1870,
+   "4": 2030
+  }
+ },
+ "worked_example": {
+  "price": 357000.0,
+  "rent_3br_month": 2100,
+  "rent_year": 25200,
+  "gross_rent_to_price_pct": 7.1,
+  "tax_6pct": 4395,
+  "tax_4pct": 1402,
+  "tax_6pct_share_of_rent": 17.4
+ },
+ "nfip_policies_29566": {
+  "x": {
+   "n": 968,
+   "median": 477.0,
+   "q1": 408.0,
+   "q3": 584.0,
+   "primary_residence": 903
+  },
+  "a": {
+   "n": 203,
+   "median": 1247,
+   "q1": 1037.0,
+   "q3": 1732.0,
+   "primary_residence": 167
+  }
+ },
+ "census": {
+  "Little River CDP": {
+   "units_2020": 8098,
+   "occupied_2020": 5957,
+   "seasonal_2020": 1543,
+   "seasonal_pct_2020": 19.1,
+   "occupied_pct_2020": 73.6,
+   "acs_units": 8351,
+   "acs_mobile_home_pct": 6.3,
+   "acs_one_unit_detached_pct": 45.8,
+   "acs_owner_occupied_pct": 76.6,
+   "acs_median_value": 305800,
+   "acs_median_gross_rent": 1528,
+   "acs_median_year_built": 1996,
+   "pop_2020": 11711,
+   "pop_2010": 8960,
+   "growth_2010_2020_pct": 30.7
+  },
+  "Garden City CDP": {
+   "units_2020": 10110,
+   "occupied_2020": 5272,
+   "seasonal_2020": 3993,
+   "seasonal_pct_2020": 39.5,
+   "occupied_pct_2020": 52.1,
+   "acs_units": 10506,
+   "acs_mobile_home_pct": 33.1,
+   "acs_one_unit_detached_pct": 33.8,
+   "acs_owner_occupied_pct": 85.4,
+   "acs_median_value": 217400,
+   "acs_median_gross_rent": 1472,
+   "acs_median_year_built": 1990,
+   "pop_2020": 10235,
+   "pop_2010": 9209,
+   "growth_2010_2020_pct": 11.1
+  },
+  "North Myrtle Beach city": {
+   "units_2020": 25950,
+   "occupied_2020": 9714,
+   "seasonal_2020": 12555,
+   "seasonal_pct_2020": 48.4,
+   "occupied_pct_2020": 37.4,
+   "acs_units": 27608,
+   "acs_mobile_home_pct": 4.7,
+   "acs_one_unit_detached_pct": 38.1,
+   "acs_owner_occupied_pct": 82.2,
+   "acs_median_value": 416900,
+   "acs_median_gross_rent": 1263,
+   "acs_median_year_built": 1997,
+   "pop_2020": 18790,
+   "pop_2010": 13752,
+   "growth_2010_2020_pct": 36.6
+  },
+  "Murrells Inlet CDP": {
+   "units_2020": 5746,
+   "occupied_2020": 4636,
+   "seasonal_2020": 780,
+   "seasonal_pct_2020": 13.6,
+   "occupied_pct_2020": 80.7,
+   "acs_units": 5762,
+   "acs_mobile_home_pct": 16.0,
+   "acs_one_unit_detached_pct": 57.3,
+   "acs_owner_occupied_pct": 86.0,
+   "acs_median_value": 366000,
+   "acs_median_gross_rent": 1751,
+   "acs_median_year_built": 2002,
+   "pop_2020": 9740,
+   "pop_2010": 7547,
+   "growth_2010_2020_pct": 29.1
+  },
+  "Carolina Forest CDP": {
+   "units_2020": 10179,
+   "occupied_2020": 8991,
+   "seasonal_2020": 468,
+   "seasonal_pct_2020": 4.6,
+   "occupied_pct_2020": 88.3,
+   "acs_units": 11177,
+   "acs_mobile_home_pct": 1.8,
+   "acs_one_unit_detached_pct": 66.1,
+   "acs_owner_occupied_pct": 69.6,
+   "acs_median_value": 336800,
+   "acs_median_gross_rent": 1668,
+   "acs_median_year_built": 2007,
+   "pop_2020": 23342,
+   "pop_2010": null
+  },
+  "Conway city": {
+   "units_2020": 9421,
+   "occupied_2020": 8277,
+   "seasonal_2020": 163,
+   "seasonal_pct_2020": 1.7,
+   "occupied_pct_2020": 87.9,
+   "acs_units": 9573,
+   "acs_mobile_home_pct": 0.8,
+   "acs_one_unit_detached_pct": 73.9,
+   "acs_owner_occupied_pct": 65.4,
+   "acs_median_value": 260900,
+   "acs_median_gross_rent": 866,
+   "acs_median_year_built": 2001,
+   "pop_2020": 24849,
+   "pop_2010": 17103,
+   "growth_2010_2020_pct": 45.3
+  },
+  "Horry County": {
+   "units_2020": 203702,
+   "occupied_2020": 150221,
+   "seasonal_2020": 35786,
+   "seasonal_pct_2020": 17.6,
+   "occupied_pct_2020": 73.7,
+   "acs_units": 217419,
+   "acs_mobile_home_pct": 12.9,
+   "acs_one_unit_detached_pct": 53.4,
+   "acs_owner_occupied_pct": 77.3,
+   "acs_median_value": 287700,
+   "acs_median_gross_rent": 1255,
+   "acs_median_year_built": 1999,
+   "pop_2020": 351029,
+   "pop_2010": 269291,
+   "growth_2010_2020_pct": 30.4
+  }
+ },
+ "landings": [
+  {
+   "name": "Johnny Causey Landing",
+   "access_to": "LITTLE RIVER",
+   "ramps": 2,
+   "docks": 1,
+   "parking": 52,
+   "surface": "PVD",
+   "lon": -78.65374,
+   "lat": 33.85275,
+   "in_zip": false,
+   "in_nmb": true
+  },
+  {
+   "name": "T. Craig Campbell Landing",
+   "access_to": "INTRACOASTAL WATERWAY",
+   "ramps": 2,
+   "docks": 1,
+   "parking": 31,
+   "surface": "PVD",
+   "lon": -78.65429,
+   "lat": 33.85394,
+   "in_zip": true,
+   "in_nmb": false
+  },
+  {
+   "name": "Worthams Ferry Landing",
+   "access_to": "WACCAMAW RIVER",
+   "ramps": 1,
+   "docks": null,
+   "parking": null,
+   "surface": "UNPVD",
+   "lon": -78.67144,
+   "lat": 33.92434,
+   "in_zip": true,
+   "in_nmb": false
+  },
+  {
+   "name": "Chris Anderson Landing",
+   "access_to": "WACCAMAW RIVER",
+   "ramps": 2,
+   "docks": 1,
+   "parking": 25,
+   "surface": "PVD",
+   "lon": -78.71502,
+   "lat": 33.91126,
+   "in_zip": false,
+   "in_nmb": false
+  }
+ ],
+ "permits_active_zip": {
+  "all": 72,
+  "by_type": [
+   [
+    "Residential Permit / New / NEW SFR",
+    38
+   ],
+   [
+    "Commercial Permit / New / PELICAN CROSSING APA",
+    11
+   ],
+   [
+    "Residential Permit / New / SFR",
+    3
+   ],
+   [
+    "Commercial Permit / New / RETAIL/CONVENIENCE S",
+    2
+   ],
+   [
+    "Residential Permit / New / SFR W/GARAGE/PORCH  ",
+    1
+   ],
+   [
+    "Mobile Home Permit / New / 1990 14X70 MBH",
+    1
+   ],
+   [
+    "Mobile Home Permit / New / 28x44 USED 2000 MOBI",
+    1
+   ],
+   [
+    "Mobile Home Permit / New / 32X56 NEW 2025 MBH(S",
+    1
+   ],
+   [
+    "Mobile Home Permit / New / 30X66 NEW 2024 MBH(S",
+    1
+   ],
+   [
+    "Commercial Permit / New / GARAGE #4 FOR PELICA",
+    1
+   ],
+   [
+    "Commercial Permit / New / GARAGE #6 FOR PELICA",
+    1
+   ],
+   [
+    "Commercial Permit / New / GARAGE #7 FOR PELICA",
+    1
+   ]
+  ],
+  "issued_range": [
+   "2011-03-04",
+   "2025-09-17"
+  ]
+ },
+ "developments_little_river": {
+  "rows": 174,
+  "updated": {
+   "FEBRUARY 1, 2019": 109,
+   "FEBRUARY 10, 2022": 1,
+   "JULY 14, 2022": 4,
+   "FEBRUARY 11, 2022": 2,
+   "JULY 12, 2022": 5,
+   "MAY 22, 2020": 1,
+   "MAY 11, 2020": 1,
+   "SEPTEMBER 21, 2021": 2,
+   "JANUARY 28, 2021": 1,
+   "OCTOBER 19, 2021": 2,
+   "SEPTEMBER 28, 2021": 2,
+   "OCTOBER 15, 2021": 2,
+   "SEPTEMBER 20, 2021": 1,
+   "OCTOBER 11, 2021": 2,
+   "MARCH 22, 2022": 1,
+   "JULY 13, 2022": 1,
+   "OCTOBER 31, 2022": 1,
+   "JANAUARY 11, 2023": 1,
+   "JANUARY 10, 2023": 1,
+   "JANUARY 11, 2023": 2,
+   "JANUARY 12, 2023": 1,
+   "JULY 20, 2022": 1,
+   "FEBRUARY 8, 2022": 1,
+   "JULY 5, 2023": 26,
+   "JULY 11, 2023": 2,
+   "JULY 1, 2019": 1
+  },
+  "remaining_units_by_update": {
+   "SEPTEMBER 28, 2021": 2,
+   "SEPTEMBER 21, 2021": 9,
+   "JULY 1, 2019": 160,
+   "MAY 22, 2020": 190,
+   "MAY 11, 2020": 0,
+   "OCTOBER 11, 2021": 6,
+   "FEBRUARY 11, 2022": 43,
+   "MARCH 22, 2022": 76,
+   "JANUARY 11, 2023": 20,
+   "SEPTEMBER 20, 2021": 10,
+   "JULY 13, 2022": 5,
+   "JULY 5, 2023": 2726,
+   "OCTOBER 15, 2021": 47,
+   "FEBRUARY 1, 2019": 2145,
+   "OCTOBER 31, 2022": 0,
+   "FEBRUARY 10, 2022": 5,
+   "JULY 14, 2022": 17,
+   "JULY 11, 2023": 77,
+   "FEBRUARY 8, 2022": 30,
+   "JANUARY 10, 2023": 6,
+   "JULY 12, 2022": 26,
+   "JANUARY 28, 2021": 1,
+   "JANAUARY 11, 2023": 0,
+   "OCTOBER 19, 2021": 57,
+   "JANUARY 12, 2023": 3,
+   "JULY 20, 2022": 180
+  },
+  "totals": {
+   "SF_APPROVE": 13723,
+   "MF_APPROVE": 7376,
+   "SF_CONSTRU": 11039,
+   "MF_CONSTRU": 4432,
+   "SF_REMAINI": 2726,
+   "MF_REMAINI": 3115,
+   "TOTAL_REMA": 5841
+  },
+  "largest_remaining": [
+   [
+    "VILLAGES @ WATERSIDE",
+    1003,
+    "NOT STARTED",
+    "FEBRUARY 1, 2019"
+   ],
+   [
+    "BRIDGEWATER",
+    792,
+    "INCOMPLETE",
+    "JULY 5, 2023"
+   ],
+   [
+    "HEATHER GLEN",
+    642,
+    "INCOMPLETE",
+    "JULY 5, 2023"
+   ],
+   [
+    "FARMSTEAD",
+    449,
+    "NOT STARTED",
+    "FEBRUARY 1, 2019"
+   ],
+   [
+    "SUN COLONY",
+    444,
+    "INCOMPLETE",
+    "JULY 5, 2023"
+   ],
+   [
+    "GORE ESTATES",
+    224,
+    "NOT STARTED",
+    "FEBRUARY 1, 2019"
+   ],
+   [
+    "WILSON TRACT",
+    200,
+    "NOT STARTED",
+    "FEBRUARY 1, 2019"
+   ],
+   [
+    "RIVER OAKS VILLAGE",
+    190,
+    "COMPLETE",
+    "MAY 22, 2020"
+   ],
+   [
+    "PROXIMITY POINTE",
+    180,
+    "INCOMPLETE",
+    "JULY 20, 2022"
+   ],
+   [
+    "57TH PLACE",
+    160,
+    "INCOMPLETE",
+    "JULY 1, 2019"
+   ]
+  ]
+ },
+ "evac": {
+  "center": [],
+  "waterfront_mineola": [
+   "A"
+  ],
+  "zone_descriptions": {
+   "A": "All areas east of U.S. Business 17 (Kings Hwy), up to intersection with U.S. 17 (Kings Hwy) and then all areas east of US 17 (Kings Hwy) to the Northern county line.",
+   "C": "All areas between Hwy 701 and Hwy 544, south of Brown's Chapel Avenue and Hwy 814, plus all areas east of Highway 31 (Carolina Bays Parkway) to Highway 90 and all areas east of Highway 90 to U.S. 17 to the northern county line."
+  }
+ },
+ "subdivisions": [
+  {
+   "name": "HEATHER GLEN",
+   "homes": 1124,
+   "kinds": {
+    "house": 1123,
+    "townhouse": 1
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 0.18,
+   "resales": {
+    "n": 58,
+    "median": 375000.0,
+    "q1": 331175.0,
+    "q3": 423000.0
+   },
+   "center": [
+    -78.6055,
+    33.89183
+   ],
+   "miles_from_center": 1.7
+  },
+  {
+   "name": "LAFAYETTE PARK",
+   "homes": 434,
+   "kinds": {
+    "house": 434
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 0.67,
+   "resales": {
+    "n": 20,
+    "median": 347950.0,
+    "q1": 328750.0,
+    "q3": 370218.75
+   },
+   "center": [
+    -78.63596,
+    33.89089
+   ],
+   "miles_from_center": 1.5
+  },
+  {
+   "name": "CYPRESS VILLAGE",
+   "homes": 406,
+   "kinds": {
+    "house": 341,
+    "townhouse": 65
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 23,
+    "median": 385000.0,
+    "q1": 325000.0,
+    "q3": 439000.0
+   },
+   "center": [
+    -78.62391,
+    33.87869
+   ],
+   "miles_from_center": 0.4
+  },
+  {
+   "name": "RIVER HILLS",
+   "homes": 376,
+   "kinds": {
+    "house": 376
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 15,
+    "median": 385000.0,
+    "q1": 380000.0,
+    "q3": 470000.0
+   },
+   "center": [
+    -78.64457,
+    33.88042
+   ],
+   "miles_from_center": 1.3
+  },
+  {
+   "name": "WINDJAMMER VILLAGE",
+   "homes": 368,
+   "kinds": {
+    "house": 348,
+    "manufactured": 19,
+    "other": 1
+   },
+   "on_water": 0,
+   "in_sfha": 15,
+   "median_acres_houses": 0.17,
+   "resales": {
+    "n": 15,
+    "median": 310000.0,
+    "q1": 245000.0,
+    "q3": 405500.0
+   },
+   "center": [
+    -78.591,
+    33.8817
+   ],
+   "miles_from_center": 2.0
+  },
+  {
+   "name": "BAY TREE",
+   "homes": 311,
+   "kinds": {
+    "condo": 267,
+    "townhouse": 43,
+    "other": 1
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 26,
+    "median": 165000.0,
+    "q1": 146150.0,
+    "q3": 184750.0
+   },
+   "center": [
+    -78.66474,
+    33.87099
+   ],
+   "miles_from_center": 2.4
+  },
+  {
+   "name": "HIDDEN BROOKE",
+   "homes": 302,
+   "kinds": {
+    "house": 301,
+    "other": 1
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 1.49,
+   "resales": {
+    "n": 10,
+    "median": 389500.0,
+    "q1": 375250.0,
+    "q3": 431225.0
+   },
+   "center": [
+    -78.68518,
+    33.8681
+   ],
+   "miles_from_center": 3.6
+  },
+  {
+   "name": "CAROLINA YACHT LANDING",
+   "homes": 301,
+   "kinds": {
+    "condo": 301
+   },
+   "on_water": 145,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 28,
+    "median": 252000.0,
+    "q1": 210000.0,
+    "q3": 285250.0
+   },
+   "center": [
+    -78.66454,
+    33.84969
+   ],
+   "miles_from_center": 2.9
+  },
+  {
+   "name": "PALM LAKES PLANTATION",
+   "homes": 300,
+   "kinds": {
+    "house": 296,
+    "condo": 4
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 0.14,
+   "resales": {
+    "n": 14,
+    "median": 340000.0,
+    "q1": 324350.0,
+    "q3": 359000.0
+   },
+   "center": [
+    -78.69557,
+    33.87016
+   ],
+   "miles_from_center": 4.2
+  },
+  {
+   "name": "HIDDEN LAKES VILLAGE",
+   "homes": 282,
+   "kinds": {
+    "house": 281,
+    "other": 1
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 18,
+    "median": 317500.0,
+    "q1": 308000.0,
+    "q3": 346750.0
+   },
+   "center": [
+    -78.63342,
+    33.88258
+   ],
+   "miles_from_center": 0.9
+  },
+  {
+   "name": "LIGHTKEEPERS VILLAGE",
+   "homes": 252,
+   "kinds": {
+    "condo": 252
+   },
+   "on_water": 38,
+   "in_sfha": 10,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 18,
+    "median": 247749.5,
+    "q1": 226250.0,
+    "q3": 363250.0
+   },
+   "center": [
+    -78.63972,
+    33.86225
+   ],
+   "miles_from_center": 1.2
+  },
+  {
+   "name": "WATERFALL",
+   "homes": 251,
+   "kinds": {
+    "house": 249,
+    "other": 2
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 0.16,
+   "resales": {
+    "n": 7,
+    "median": 555000.0,
+    "q1": 313950.0,
+    "q3": 619450.0
+   },
+   "center": [
+    -78.69983,
+    33.86041
+   ],
+   "miles_from_center": 4.5
+  },
+  {
+   "name": "CAROLINA CROSSING",
+   "homes": 237,
+   "kinds": {
+    "house": 236,
+    "other": 1
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 9,
+    "median": 319900.0,
+    "q1": 315000.0,
+    "q3": 338865.0
+   },
+   "center": [
+    -78.67597,
+    33.90282
+   ],
+   "miles_from_center": 3.7
+  },
+  {
+   "name": "NORTH VILLAGE",
+   "homes": 218,
+   "kinds": {
+    "house": 217,
+    "other": 1
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 10,
+    "median": 312500.0,
+    "q1": 298500.0,
+    "q3": 347475.0
+   },
+   "center": [
+    -78.67101,
+    33.89961
+   ],
+   "miles_from_center": 3.3
+  },
+  {
+   "name": "WATERSIDE VILLAGE",
+   "homes": 191,
+   "kinds": {
+    "house": 190,
+    "condo": 1
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 0.21000000000000002,
+   "resales": {
+    "n": 19,
+    "median": 559900.0,
+    "q1": 517500.0,
+    "q3": 582323.0
+   },
+   "center": [
+    -78.66084,
+    33.87414
+   ],
+   "miles_from_center": 2.2
+  },
+  {
+   "name": "SUNSET LANDING",
+   "homes": 183,
+   "kinds": {
+    "house": 183
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 0.17,
+   "resales": {
+    "n": 5,
+    "median": 400000.0,
+    "q1": 337500.0,
+    "q3": 402000.0
+   },
+   "center": [
+    -78.68247,
+    33.8808
+   ],
+   "miles_from_center": 3.4
+  },
+  {
+   "name": "HEATHER LAKES",
+   "homes": 180,
+   "kinds": {
+    "house": 180
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 0.29,
+   "resales": {
+    "n": 16,
+    "median": 375000.0,
+    "q1": 330000.0,
+    "q3": 448500.0
+   },
+   "center": [
+    -78.59723,
+    33.89399
+   ],
+   "miles_from_center": 2.1
+  },
+  {
+   "name": "GARDENS AT CYPRESS BAY",
+   "homes": 180,
+   "kinds": {
+    "condo": 180
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 11,
+    "median": 149500.0,
+    "q1": 139200.0,
+    "q3": 181450.0
+   },
+   "center": [
+    -78.62648,
+    33.87502
+   ],
+   "miles_from_center": 0.2
+  },
+  {
+   "name": "STARFISH VILLAGE",
+   "homes": 177,
+   "kinds": {
+    "house": 177
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 0.14,
+   "resales": {
+    "n": 7,
+    "median": 384000.0,
+    "q1": 376500.0,
+    "q3": 427500.0
+   },
+   "center": [
+    -78.65641,
+    33.87736
+   ],
+   "miles_from_center": 1.9
+  },
+  {
+   "name": "STONEBRIDGE FARMS",
+   "homes": 166,
+   "kinds": {
+    "house": 166
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 0.27,
+   "resales": {
+    "n": 5,
+    "median": 376500.0,
+    "q1": 356500.0,
+    "q3": 385000.0
+   },
+   "center": [
+    -78.61683,
+    33.89458
+   ],
+   "miles_from_center": 1.6
+  },
+  {
+   "name": "BELLACROFT",
+   "homes": 160,
+   "kinds": {
+    "house": 160
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 8,
+    "median": 319000.0,
+    "q1": 302500.0,
+    "q3": 328875.0
+   },
+   "center": [
+    -78.67826,
+    33.85541
+   ],
+   "miles_from_center": 3.4
+  },
+  {
+   "name": "MARINERS POINTE",
+   "homes": 145,
+   "kinds": {
+    "condo": 145
+   },
+   "on_water": 75,
+   "in_sfha": 73,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 11,
+    "median": 328000.0,
+    "q1": 292450.0,
+    "q3": 342250.0
+   },
+   "center": [
+    -78.61765,
+    33.86852
+   ],
+   "miles_from_center": 0.4
+  },
+  {
+   "name": "WOODLYN MEADOW",
+   "homes": 142,
+   "kinds": {
+    "house": 141,
+    "other": 1
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 7,
+    "median": 320000.0,
+    "q1": 301750.0,
+    "q3": 346750.0
+   },
+   "center": [
+    -78.70053,
+    33.86632
+   ],
+   "miles_from_center": 4.5
+  },
+  {
+   "name": "NORTH POINTE",
+   "homes": 134,
+   "kinds": {
+    "manufactured": 128,
+    "house": 5,
+    "other": 1
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 7,
+    "median": 180000.0,
+    "q1": 153750.0,
+    "q3": 186500.0
+   },
+   "center": [
+    -78.67359,
+    33.86577
+   ],
+   "miles_from_center": 2.9
+  },
+  {
+   "name": "VILLAGE @ THE GLENS",
+   "homes": 132,
+   "kinds": {
+    "condo": 132
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 3,
+    "median": 180000.0,
+    "q1": 177500.0,
+    "q3": 185000.0
+   },
+   "center": [
+    -78.60438,
+    33.88215
+   ],
+   "miles_from_center": 1.3
+  },
+  {
+   "name": "CYPRESS BAY G & T",
+   "homes": 120,
+   "kinds": {
+    "condo": 120
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 5,
+    "median": 135000.0,
+    "q1": 132000.0,
+    "q3": 140000.0
+   },
+   "center": [
+    -78.62378,
+    33.87635
+   ],
+   "miles_from_center": 0.3
+  },
+  {
+   "name": "THE PRESERVE",
+   "homes": 117,
+   "kinds": {
+    "house": 117
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 6,
+    "median": 242875.0,
+    "q1": 231437.5,
+    "q3": 257500.0
+   },
+   "center": [
+    -78.67323,
+    33.87578
+   ],
+   "miles_from_center": 2.9
+  },
+  {
+   "name": "LITTLE RIVER GOLF &",
+   "homes": 117,
+   "kinds": {
+    "condo": 117
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 8,
+    "median": 147250.0,
+    "q1": 107591.185,
+    "q3": 154000.0
+   },
+   "center": [
+    -78.65391,
+    33.86662
+   ],
+   "miles_from_center": 1.8
+  },
+  {
+   "name": "SHOREHAVEN VILLAGE",
+   "homes": 107,
+   "kinds": {
+    "house": 107
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 0.18,
+   "resales": {
+    "n": 7,
+    "median": 539900.0,
+    "q1": 504950.0,
+    "q3": 563949.5
+   },
+   "center": [
+    -78.66664,
+    33.87772
+   ],
+   "miles_from_center": 2.5
+  },
+  {
+   "name": "STONES EDGE",
+   "homes": 106,
+   "kinds": {
+    "house": 59,
+    "manufactured": 47
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 8,
+    "median": 230000.0,
+    "q1": 207750.0,
+    "q3": 264250.0
+   },
+   "center": [
+    -78.67482,
+    33.89767
+   ],
+   "miles_from_center": 3.4
+  },
+  {
+   "name": "PRINCETON PLACE",
+   "homes": 103,
+   "kinds": {
+    "house": 103
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 8,
+    "median": 213500.0,
+    "q1": 186250.0,
+    "q3": 218750.0
+   },
+   "center": [
+    -78.66242,
+    33.85463
+   ],
+   "miles_from_center": 2.6
+  },
+  {
+   "name": "BLUE HERON RETREAT TOWNHOMES",
+   "homes": 103,
+   "kinds": {
+    "condo": 103
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 2,
+    "median": 370120.0,
+    "q1": 370120.0,
+    "q3": 370120.0
+   },
+   "center": [
+    -78.68926,
+    33.83479
+   ],
+   "miles_from_center": 4.6
+  },
+  {
+   "name": "SAWGRASS VILLAGE @ BRIDGEWATER",
+   "homes": 102,
+   "kinds": {
+    "house": 102
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 5,
+    "median": 585000.0,
+    "q1": 510000.0,
+    "q3": 600000.0
+   },
+   "center": [
+    -78.65657,
+    33.87007
+   ],
+   "miles_from_center": 1.9
+  },
+  {
+   "name": "ASHTON ACRES",
+   "homes": 100,
+   "kinds": {
+    "house": 99,
+    "other": 1
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 0.26,
+   "resales": {
+    "n": 8,
+    "median": 290590.0,
+    "q1": 268725.0,
+    "q3": 301875.0
+   },
+   "center": [
+    -78.67664,
+    33.89485
+   ],
+   "miles_from_center": 3.4
+  },
+  {
+   "name": "ROYAL ESTATES",
+   "homes": 99,
+   "kinds": {
+    "house": 99
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 0.255,
+   "resales": {
+    "n": 6,
+    "median": 293500.0,
+    "q1": 259500.0,
+    "q3": 323750.0
+   },
+   "center": [
+    -78.69291,
+    33.85118
+   ],
+   "miles_from_center": 4.3
+  },
+  {
+   "name": "GRAHAM VILLAGE",
+   "homes": 98,
+   "kinds": {
+    "house": 98
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 3,
+    "median": 375000.0,
+    "q1": 370000.0,
+    "q3": 403500.0
+   },
+   "center": [
+    -78.67636,
+    33.86464
+   ],
+   "miles_from_center": 3.1
+  },
+  {
+   "name": "WRENS CROSSING",
+   "homes": 98,
+   "kinds": {
+    "house": 97,
+    "other": 1
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 7,
+    "median": 285000.0,
+    "q1": 277250.0,
+    "q3": 289000.0
+   },
+   "center": [
+    -78.63197,
+    33.87211
+   ],
+   "miles_from_center": 0.5
+  },
+  {
+   "name": "SANDRIDGE PARK",
+   "homes": 97,
+   "kinds": {
+    "house": 97
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 0.14,
+   "resales": {
+    "n": 3,
+    "median": 318000.0,
+    "q1": 294250.0,
+    "q3": 333500.0
+   },
+   "center": [
+    -78.69078,
+    33.84585
+   ],
+   "miles_from_center": 4.3
+  },
+  {
+   "name": "THE RETREAT",
+   "homes": 91,
+   "kinds": {
+    "house": 91
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 7,
+    "median": 238000.0,
+    "q1": 222500.0,
+    "q3": 244000.0
+   },
+   "center": [
+    -78.67942,
+    33.88549
+   ],
+   "miles_from_center": 3.3
+  },
+  {
+   "name": "MERRITT PARK",
+   "homes": 86,
+   "kinds": {
+    "condo": 86
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 3,
+    "median": 185000.0,
+    "q1": 173750.0,
+    "q3": 193500.0
+   },
+   "center": [
+    -78.6911,
+    33.85223
+   ],
+   "miles_from_center": 4.1
+  },
+  {
+   "name": "CARRIAGE LAKES PUD",
+   "homes": 84,
+   "kinds": {
+    "house": 84
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 2,
+    "median": 397760.0,
+    "q1": 368140.0,
+    "q3": 427380.0
+   },
+   "center": [
+    -78.69519,
+    33.85631
+   ],
+   "miles_from_center": 4.3
+  },
+  {
+   "name": "RIVERGATE",
+   "homes": 80,
+   "kinds": {
+    "condo": 80
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 7,
+    "median": 269000.0,
+    "q1": 231950.0,
+    "q3": 290000.0
+   },
+   "center": [
+    -78.62571,
+    33.86813
+   ],
+   "miles_from_center": 0.3
+  },
+  {
+   "name": "SHELLWOOD",
+   "homes": 80,
+   "kinds": {
+    "condo": 80
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 3,
+    "median": 269000.0,
+    "q1": 257566.655,
+    "q3": 269500.0
+   },
+   "center": [
+    -78.63038,
+    33.87987
+   ],
+   "miles_from_center": 0.6
+  },
+  {
+   "name": "RIVERVIEW HEIGHTS",
+   "homes": 79,
+   "kinds": {
+    "house": 74,
+    "other": 5
+   },
+   "on_water": 3,
+   "in_sfha": 5,
+   "median_acres_houses": 0.38,
+   "resales": {
+    "n": 2,
+    "median": 367500.0,
+    "q1": 358750.0,
+    "q3": 376250.0
+   },
+   "center": [
+    -78.60953,
+    33.87388
+   ],
+   "miles_from_center": 0.8
+  },
+  {
+   "name": "VILLAGE @ SANDRIDGE",
+   "homes": 79,
+   "kinds": {
+    "townhouse": 73,
+    "house": 6
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 4,
+    "median": 264450.0,
+    "q1": 251150.0,
+    "q3": 277250.0
+   },
+   "center": [
+    -78.69641,
+    33.85307
+   ],
+   "miles_from_center": 4.4
+  },
+  {
+   "name": "BAYBERRY",
+   "homes": 78,
+   "kinds": {
+    "house": 35,
+    "manufactured": 43
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 3,
+    "median": 215000.0,
+    "q1": 120000.0,
+    "q3": 235000.0
+   },
+   "center": [
+    -78.69818,
+    33.84997
+   ],
+   "miles_from_center": 4.6
+  },
+  {
+   "name": "GREEN ACRES",
+   "homes": 77,
+   "kinds": {
+    "house": 72,
+    "manufactured": 2,
+    "other": 3
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 0.33,
+   "resales": {
+    "n": 7,
+    "median": 300000.0,
+    "q1": 288500.0,
+    "q3": 315000.0
+   },
+   "center": [
+    -78.646,
+    33.8685
+   ],
+   "miles_from_center": 1.3
+  },
+  {
+   "name": "PARK POINTE",
+   "homes": 73,
+   "kinds": {
+    "house": 73
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": 0.215,
+   "resales": {
+    "n": 5,
+    "median": 480000.0,
+    "q1": 460000.0,
+    "q3": 535000.0
+   },
+   "center": [
+    -78.71397,
+    33.84594
+   ],
+   "miles_from_center": 5.5
+  },
+  {
+   "name": "SANDRIDGE COMMONS",
+   "homes": 73,
+   "kinds": {
+    "house": 73
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 0,
+    "median": null,
+    "q1": null,
+    "q3": null
+   },
+   "center": [
+    -78.67698,
+    33.85176
+   ],
+   "miles_from_center": 3.4
+  },
+  {
+   "name": "HARBOUR RIDGE",
+   "homes": 72,
+   "kinds": {
+    "condo": 72
+   },
+   "on_water": 0,
+   "in_sfha": 27,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 5,
+    "median": 174500.0,
+    "q1": 150000.0,
+    "q3": 213700.0
+   },
+   "center": [
+    -78.63426,
+    33.86246
+   ],
+   "miles_from_center": 0.9
+  },
+  {
+   "name": "GOLF COLONY RESORT IX",
+   "homes": 71,
+   "kinds": {
+    "condo": 70,
+    "other": 1
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 8,
+    "median": 132450.0,
+    "q1": 104000.0,
+    "q3": 142750.0
+   },
+   "center": [
+    -78.66725,
+    33.8726
+   ],
+   "miles_from_center": 2.5
+  },
+  {
+   "name": "INTERCOASTAL RESORT",
+   "homes": 71,
+   "kinds": {
+    "condo": 71
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 6,
+    "median": 115000.0,
+    "q1": 89125.0,
+    "q3": 131875.0
+   },
+   "center": [
+    -78.62416,
+    33.86797
+   ],
+   "miles_from_center": 0.3
+  },
+  {
+   "name": "BAYSHORE TOWNHOMES",
+   "homes": 70,
+   "kinds": {
+    "townhouse": 70
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 0,
+    "median": null,
+    "q1": null,
+    "q3": null
+   },
+   "center": [
+    -78.62153,
+    33.87087
+   ],
+   "miles_from_center": 0.2
+  },
+  {
+   "name": "HARBOUR FRONT VILLAS",
+   "homes": 69,
+   "kinds": {
+    "condo": 69
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 3,
+    "median": 285000.0,
+    "q1": 242500.0,
+    "q3": 317500.0
+   },
+   "center": [
+    -78.63664,
+    33.86496
+   ],
+   "miles_from_center": 0.9
+  },
+  {
+   "name": "CARRIAGE LAKE PUD",
+   "homes": 67,
+   "kinds": {
+    "house": 66,
+    "other": 1
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 3,
+    "median": 355000.0,
+    "q1": 327500.0,
+    "q3": 370000.0
+   },
+   "center": [
+    -78.69187,
+    33.85406
+   ],
+   "miles_from_center": 4.1
+  },
+  {
+   "name": "SHADOWBAY VILLAGE",
+   "homes": 65,
+   "kinds": {
+    "house": 65
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 3,
+    "median": 575000.0,
+    "q1": 542500.0,
+    "q3": 597500.0
+   },
+   "center": [
+    -78.66614,
+    33.87511
+   ],
+   "miles_from_center": 2.5
+  },
+  {
+   "name": "TYBRE DOWNS",
+   "homes": 64,
+   "kinds": {
+    "townhouse": 64
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 2,
+    "median": 219950.0,
+    "q1": 219925.0,
+    "q3": 219975.0
+   },
+   "center": [
+    -78.6307,
+    33.87718
+   ],
+   "miles_from_center": 0.5
+  },
+  {
+   "name": "MALLARD CREEK",
+   "homes": 64,
+   "kinds": {
+    "condo": 64
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 6,
+    "median": 122250.0,
+    "q1": 115425.0,
+    "q3": 132375.0
+   },
+   "center": [
+    -78.63028,
+    33.87378
+   ],
+   "miles_from_center": 0.4
+  },
+  {
+   "name": "EASTPORT",
+   "homes": 64,
+   "kinds": {
+    "condo": 56,
+    "house": 8
+   },
+   "on_water": 0,
+   "in_sfha": 56,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 8,
+    "median": 199000.0,
+    "q1": 169625.0,
+    "q3": 231372.5
+   },
+   "center": [
+    -78.63134,
+    33.86226
+   ],
+   "miles_from_center": 0.9
+  },
+  {
+   "name": "COQUINA HARBOR",
+   "homes": 64,
+   "kinds": {
+    "condo": 64
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 4,
+    "median": 377500.0,
+    "q1": 364750.0,
+    "q3": 408750.0
+   },
+   "center": [
+    -78.63555,
+    33.86325
+   ],
+   "miles_from_center": 1.0
+  },
+  {
+   "name": "GRANDE HARBOUR",
+   "homes": 64,
+   "kinds": {
+    "condo": 64
+   },
+   "on_water": 0,
+   "in_sfha": 1,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 9,
+    "median": 307500.0,
+    "q1": 275000.0,
+    "q3": 315900.0
+   },
+   "center": [
+    -78.64659,
+    33.86107
+   ],
+   "miles_from_center": 1.6
+  },
+  {
+   "name": "CLUB VILLAS AT BAY TREE",
+   "homes": 63,
+   "kinds": {
+    "condo": 63
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 10,
+    "median": 129200.0,
+    "q1": 125125.0,
+    "q3": 133975.0
+   },
+   "center": [
+    -78.6585,
+    33.86535
+   ],
+   "miles_from_center": 2.1
+  },
+  {
+   "name": "PARKWAY TOWNHOUSES",
+   "homes": 62,
+   "kinds": {
+    "condo": 62
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 3,
+    "median": 216500.0,
+    "q1": 186750.0,
+    "q3": 217750.0
+   },
+   "center": [
+    -78.65987,
+    33.85914
+   ],
+   "miles_from_center": 2.3
+  },
+  {
+   "name": "BIG LANDING PLANTATION",
+   "homes": 61,
+   "kinds": {
+    "house": 60,
+    "other": 1
+   },
+   "on_water": 0,
+   "in_sfha": 18,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 1,
+    "median": 660000.0,
+    "q1": 660000.0,
+    "q3": 660000.0
+   },
+   "center": [
+    -78.58686,
+    33.88021
+   ],
+   "miles_from_center": 2.2
+  },
+  {
+   "name": "GARDENS @ CYPRESS BAY W",
+   "homes": 60,
+   "kinds": {
+    "condo": 60
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 4,
+    "median": 168500.0,
+    "q1": 146250.0,
+    "q3": 190000.0
+   },
+   "center": [
+    -78.62947,
+    33.87841
+   ],
+   "miles_from_center": 0.5
+  },
+  {
+   "name": "PORTSIDE VILLAGE@ BRIDGEWATER PH1",
+   "homes": 60,
+   "kinds": {
+    "townhouse": 57,
+    "house": 3
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 6,
+    "median": 350250.0,
+    "q1": 336250.0,
+    "q3": 371375.0
+   },
+   "center": [
+    -78.66146,
+    33.86942
+   ],
+   "miles_from_center": 2.2
+  },
+  {
+   "name": "SEAGLASS VILLAGE",
+   "homes": 60,
+   "kinds": {
+    "house": 60
+   },
+   "on_water": 0,
+   "in_sfha": 0,
+   "median_acres_houses": null,
+   "resales": {
+    "n": 0,
+    "median": null,
+    "q1": null,
+    "q3": null
+   },
+   "center": [
+    -78.65281,
+    33.87339
+   ],
+   "miles_from_center": 1.7
+  }
+ ]
+}

@@ -1,0 +1,2902 @@
+{
+ "asof": "2026-11-02",
+ "window": [
+  "2025-10-01",
+  "2026-09-30"
+ ],
+ "groups": {
+  "debordieu/condo": {
+   "homes": 2,
+   "legal_residence": 1,
+   "pct_legal_residence": 50.0,
+   "bill_outside_sc": 0,
+   "pct_bill_outside_sc": 0.0,
+   "top_states": [
+    [
+     "SC",
+     2
+    ]
+   ],
+   "last_deed_median_years_ago": 24.2,
+   "last_deed_before_2000": 1,
+   "pct_last_deed_before_2000": 50.0,
+   "last_deed_by_decade": [
+    [
+     1980,
+     1
+    ],
+    [
+     2010,
+     1
+    ]
+   ],
+   "market_sale_last5y": 0,
+   "pct_market_sale_last5y": 0.0,
+   "any_deed_last5y": 0,
+   "pct_any_deed_last5y": 0.0,
+   "last_deed_nominal": 1,
+   "pct_last_deed_nominal": 50.0,
+   "sales_window": 0,
+   "median_window": null,
+   "p25_window": null,
+   "p75_window": null,
+   "min_window": null,
+   "max_window": null,
+   "sales_3y": 0,
+   "median_3y": null,
+   "p25_3y": null,
+   "p75_3y": null,
+   "flood": {
+    "AE": 2
+   },
+   "pct_VE": 0.0,
+   "pct_AE": 100.0,
+   "pct_special_flood_hazard": 100.0,
+   "oceanfront": 0,
+   "marsh_side": 0,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": []
+  },
+  "debordieu/house": {
+   "homes": 312,
+   "legal_residence": 189,
+   "pct_legal_residence": 60.6,
+   "bill_outside_sc": 88,
+   "pct_bill_outside_sc": 28.2,
+   "top_states": [
+    [
+     "SC",
+     224
+    ],
+    [
+     "NC",
+     45
+    ],
+    [
+     "GA",
+     9
+    ],
+    [
+     "VA",
+     8
+    ],
+    [
+     "PA",
+     5
+    ],
+    [
+     "TN",
+     4
+    ],
+    [
+     "CT",
+     2
+    ],
+    [
+     "KY",
+     2
+    ]
+   ],
+   "last_deed_median_years_ago": 6.7,
+   "last_deed_before_2000": 21,
+   "pct_last_deed_before_2000": 6.7,
+   "last_deed_by_decade": [
+    [
+     1980,
+     4
+    ],
+    [
+     1990,
+     17
+    ],
+    [
+     2000,
+     53
+    ],
+    [
+     2010,
+     79
+    ],
+    [
+     2020,
+     159
+    ]
+   ],
+   "market_sale_last5y": 53,
+   "pct_market_sale_last5y": 17.0,
+   "any_deed_last5y": 113,
+   "pct_any_deed_last5y": 36.2,
+   "last_deed_nominal": 128,
+   "pct_last_deed_nominal": 41.0,
+   "sales_window": 21,
+   "median_window": 1725000,
+   "p25_window": 1470000,
+   "p75_window": 2430000,
+   "min_window": 830000,
+   "max_window": 3450000,
+   "sales_3y": 41,
+   "median_3y": 1650000,
+   "p25_3y": 1385000,
+   "p75_3y": 1925000,
+   "flood": {
+    "AE": 260,
+    "X shaded": 49,
+    "VE": 3
+   },
+   "pct_VE": 1.0,
+   "pct_AE": 83.3,
+   "pct_special_flood_hazard": 84.3,
+   "oceanfront": 0,
+   "marsh_side": 0,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "GEORGETOWN",
+     185
+    ],
+    [
+     "COLUMBIA",
+     12
+    ],
+    [
+     "FLORENCE",
+     5
+    ]
+   ]
+  },
+  "debordieu/lot": {
+   "homes": 88,
+   "legal_residence": 3,
+   "pct_legal_residence": 3.4,
+   "bill_outside_sc": 26,
+   "pct_bill_outside_sc": 29.5,
+   "top_states": [
+    [
+     "SC",
+     62
+    ],
+    [
+     "NC",
+     12
+    ],
+    [
+     "VA",
+     4
+    ],
+    [
+     "MD",
+     2
+    ],
+    [
+     "GA",
+     1
+    ],
+    [
+     "KY",
+     1
+    ],
+    [
+     "PA",
+     1
+    ],
+    [
+     "TX",
+     1
+    ]
+   ],
+   "last_deed_median_years_ago": 5.1,
+   "last_deed_before_2000": 14,
+   "pct_last_deed_before_2000": 15.9,
+   "last_deed_by_decade": [
+    [
+     1980,
+     1
+    ],
+    [
+     1990,
+     13
+    ],
+    [
+     2000,
+     7
+    ],
+    [
+     2010,
+     13
+    ],
+    [
+     2020,
+     54
+    ]
+   ],
+   "market_sale_last5y": 36,
+   "pct_market_sale_last5y": 40.9,
+   "any_deed_last5y": 43,
+   "pct_any_deed_last5y": 48.9,
+   "last_deed_nominal": 15,
+   "pct_last_deed_nominal": 17.0,
+   "sales_window": 11,
+   "median_window": 437500,
+   "p25_window": 402250,
+   "p75_window": 500000,
+   "min_window": 200000,
+   "max_window": 1252500,
+   "sales_3y": 27,
+   "median_3y": 402250,
+   "p25_3y": 390000,
+   "p75_3y": 475000,
+   "flood": {
+    "AE": 70,
+    "X shaded": 18
+   },
+   "pct_VE": 0.0,
+   "pct_AE": 79.5,
+   "pct_special_flood_hazard": 79.5,
+   "oceanfront": 0,
+   "marsh_side": 0,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "GEORGETOWN",
+     28
+    ],
+    [
+     "MYRTLE BEACH",
+     8
+    ],
+    [
+     "PAWLEYS ISLAND",
+     8
+    ],
+    [
+     "COLUMBIA",
+     7
+    ]
+   ]
+  },
+  "east_marsh/condo": {
+   "homes": 13,
+   "legal_residence": 2,
+   "pct_legal_residence": 15.4,
+   "bill_outside_sc": 3,
+   "pct_bill_outside_sc": 23.1,
+   "top_states": [
+    [
+     "SC",
+     10
+    ],
+    [
+     "NC",
+     2
+    ],
+    [
+     "NY",
+     1
+    ]
+   ],
+   "last_deed_median_years_ago": 21.4,
+   "last_deed_before_2000": 4,
+   "pct_last_deed_before_2000": 30.8,
+   "last_deed_by_decade": [
+    [
+     1900,
+     1
+    ],
+    [
+     1980,
+     1
+    ],
+    [
+     1990,
+     2
+    ],
+    [
+     2000,
+     7
+    ],
+    [
+     2010,
+     2
+    ]
+   ],
+   "market_sale_last5y": 0,
+   "pct_market_sale_last5y": 0.0,
+   "any_deed_last5y": 0,
+   "pct_any_deed_last5y": 0.0,
+   "last_deed_nominal": 8,
+   "pct_last_deed_nominal": 61.5,
+   "sales_window": 0,
+   "median_window": null,
+   "p25_window": null,
+   "p75_window": null,
+   "min_window": null,
+   "max_window": null,
+   "sales_3y": 0,
+   "median_3y": null,
+   "p25_3y": null,
+   "p75_3y": null,
+   "flood": {
+    "X": 3,
+    "AE": 6,
+    "X shaded": 4
+   },
+   "pct_VE": 0.0,
+   "pct_AE": 46.2,
+   "pct_special_flood_hazard": 46.2,
+   "oceanfront": 0,
+   "marsh_side": 0,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     9
+    ]
+   ]
+  },
+  "east_marsh/house": {
+   "homes": 1265,
+   "legal_residence": 897,
+   "pct_legal_residence": 70.9,
+   "bill_outside_sc": 207,
+   "pct_bill_outside_sc": 16.4,
+   "top_states": [
+    [
+     "SC",
+     1058
+    ],
+    [
+     "NC",
+     59
+    ],
+    [
+     "VA",
+     19
+    ],
+    [
+     "PA",
+     15
+    ],
+    [
+     "GA",
+     14
+    ],
+    [
+     "OH",
+     12
+    ],
+    [
+     "TN",
+     12
+    ],
+    [
+     "NY",
+     11
+    ]
+   ],
+   "last_deed_median_years_ago": 6.5,
+   "last_deed_before_2000": 97,
+   "pct_last_deed_before_2000": 7.7,
+   "last_deed_by_decade": [
+    [
+     1900,
+     4
+    ],
+    [
+     1960,
+     3
+    ],
+    [
+     1970,
+     4
+    ],
+    [
+     1980,
+     10
+    ],
+    [
+     1990,
+     76
+    ],
+    [
+     2000,
+     149
+    ],
+    [
+     2010,
+     366
+    ],
+    [
+     2020,
+     653
+    ]
+   ],
+   "market_sale_last5y": 256,
+   "pct_market_sale_last5y": 20.2,
+   "any_deed_last5y": 475,
+   "pct_any_deed_last5y": 37.5,
+   "last_deed_nominal": 437,
+   "pct_last_deed_nominal": 34.5,
+   "sales_window": 59,
+   "median_window": 700000,
+   "p25_window": 555000,
+   "p75_window": 970000,
+   "min_window": 140000,
+   "max_window": 2495000,
+   "sales_3y": 151,
+   "median_3y": 690000,
+   "p25_3y": 500000,
+   "p75_3y": 898000,
+   "flood": {
+    "AE": 408,
+    "VE": 103,
+    "X shaded": 200,
+    "X": 554
+   },
+   "pct_VE": 8.1,
+   "pct_AE": 32.3,
+   "pct_special_flood_hazard": 40.4,
+   "oceanfront": 17,
+   "marsh_side": 125,
+   "building_past_setback_line": 5,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     904
+    ],
+    [
+     "GEORGETOWN",
+     38
+    ],
+    [
+     "COLUMBIA",
+     14
+    ],
+    [
+     "MURRELLS INLET",
+     8
+    ],
+    [
+     "GREENVILLE",
+     8
+    ],
+    [
+     "MT PLEASANT",
+     8
+    ],
+    [
+     "FLORENCE",
+     5
+    ],
+    [
+     "LEXINGTON",
+     5
+    ]
+   ]
+  },
+  "east_marsh/lot": {
+   "homes": 200,
+   "legal_residence": 17,
+   "pct_legal_residence": 8.5,
+   "bill_outside_sc": 68,
+   "pct_bill_outside_sc": 34.0,
+   "top_states": [
+    [
+     "SC",
+     131
+    ],
+    [
+     "NC",
+     22
+    ],
+    [
+     "CA",
+     9
+    ],
+    [
+     "VA",
+     7
+    ],
+    [
+     "PA",
+     5
+    ],
+    [
+     "GA",
+     4
+    ],
+    [
+     "OH",
+     3
+    ],
+    [
+     "NJ",
+     3
+    ]
+   ],
+   "last_deed_median_years_ago": 6.0,
+   "last_deed_before_2000": 22,
+   "pct_last_deed_before_2000": 11.0,
+   "last_deed_by_decade": [
+    [
+     1900,
+     3
+    ],
+    [
+     1970,
+     3
+    ],
+    [
+     1980,
+     4
+    ],
+    [
+     1990,
+     12
+    ],
+    [
+     2000,
+     20
+    ],
+    [
+     2010,
+     50
+    ],
+    [
+     2020,
+     108
+    ]
+   ],
+   "market_sale_last5y": 53,
+   "pct_market_sale_last5y": 26.5,
+   "any_deed_last5y": 81,
+   "pct_any_deed_last5y": 40.5,
+   "last_deed_nominal": 77,
+   "pct_last_deed_nominal": 38.5,
+   "sales_window": 13,
+   "median_window": 300000,
+   "p25_window": 252000,
+   "p75_window": 450000,
+   "min_window": 115000,
+   "max_window": 1475000,
+   "sales_3y": 35,
+   "median_3y": 375000,
+   "p25_3y": 235000,
+   "p75_3y": 472500,
+   "flood": {
+    "VE": 24,
+    "X shaded": 25,
+    "X": 47,
+    "AE": 104
+   },
+   "pct_VE": 12.0,
+   "pct_AE": 52.0,
+   "pct_special_flood_hazard": 64.0,
+   "oceanfront": 3,
+   "marsh_side": 27,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     65
+    ],
+    [
+     "MURRELLS INLET",
+     14
+    ],
+    [
+     "GEORGETOWN",
+     11
+    ],
+    [
+     "MYRTLE BEACH",
+     7
+    ],
+    [
+     "CONWAY",
+     6
+    ]
+   ]
+  },
+  "east_marsh/oceanfront/house": {
+   "homes": 17,
+   "legal_residence": 5,
+   "pct_legal_residence": 29.4,
+   "bill_outside_sc": 9,
+   "pct_bill_outside_sc": 52.9,
+   "top_states": [
+    [
+     "SC",
+     8
+    ],
+    [
+     "NC",
+     5
+    ],
+    [
+     "VA",
+     2
+    ],
+    [
+     "TN",
+     1
+    ],
+    [
+     "GA",
+     1
+    ]
+   ],
+   "last_deed_median_years_ago": 7.7,
+   "last_deed_before_2000": 2,
+   "pct_last_deed_before_2000": 11.8,
+   "last_deed_by_decade": [
+    [
+     1990,
+     2
+    ],
+    [
+     2000,
+     1
+    ],
+    [
+     2010,
+     6
+    ],
+    [
+     2020,
+     8
+    ]
+   ],
+   "market_sale_last5y": 1,
+   "pct_market_sale_last5y": 5.9,
+   "any_deed_last5y": 4,
+   "pct_any_deed_last5y": 23.5,
+   "last_deed_nominal": 5,
+   "pct_last_deed_nominal": 29.4,
+   "sales_window": 0,
+   "median_window": null,
+   "p25_window": null,
+   "p75_window": null,
+   "min_window": null,
+   "max_window": null,
+   "sales_3y": 0,
+   "median_3y": null,
+   "p25_3y": null,
+   "p75_3y": null,
+   "flood": {
+    "VE": 17
+   },
+   "pct_VE": 100.0,
+   "pct_AE": 0.0,
+   "pct_special_flood_hazard": 100.0,
+   "oceanfront": 17,
+   "marsh_side": 0,
+   "building_past_setback_line": 5,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     5
+    ]
+   ]
+  },
+  "island/between/house": {
+   "homes": 158,
+   "legal_residence": 40,
+   "pct_legal_residence": 25.3,
+   "bill_outside_sc": 43,
+   "pct_bill_outside_sc": 27.2,
+   "top_states": [
+    [
+     "SC",
+     115
+    ],
+    [
+     "GA",
+     8
+    ],
+    [
+     "VA",
+     7
+    ],
+    [
+     "NC",
+     6
+    ],
+    [
+     "TN",
+     5
+    ],
+    [
+     "CA",
+     2
+    ],
+    [
+     "DC",
+     2
+    ],
+    [
+     "NJ",
+     2
+    ]
+   ],
+   "last_deed_median_years_ago": 6.8,
+   "last_deed_before_2000": 12,
+   "pct_last_deed_before_2000": 7.6,
+   "last_deed_by_decade": [
+    [
+     1960,
+     1
+    ],
+    [
+     1980,
+     3
+    ],
+    [
+     1990,
+     8
+    ],
+    [
+     2000,
+     19
+    ],
+    [
+     2010,
+     48
+    ],
+    [
+     2020,
+     79
+    ]
+   ],
+   "market_sale_last5y": 13,
+   "pct_market_sale_last5y": 8.2,
+   "any_deed_last5y": 54,
+   "pct_any_deed_last5y": 34.2,
+   "last_deed_nominal": 91,
+   "pct_last_deed_nominal": 57.6,
+   "sales_window": 2,
+   "median_window": 1195000,
+   "p25_window": 1195000,
+   "p75_window": 2050000,
+   "min_window": 1195000,
+   "max_window": 2050000,
+   "sales_3y": 9,
+   "median_3y": 1585000,
+   "p25_3y": 1195000,
+   "p75_3y": 2100000,
+   "flood": {
+    "AE": 116,
+    "VE": 42
+   },
+   "pct_VE": 26.6,
+   "pct_AE": 73.4,
+   "pct_special_flood_hazard": 100.0,
+   "oceanfront": 0,
+   "marsh_side": 0,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     44
+    ],
+    [
+     "COLUMBIA",
+     12
+    ],
+    [
+     "GREENVILLE",
+     8
+    ],
+    [
+     "CHARLESTON",
+     6
+    ],
+    [
+     "GEORGETOWN",
+     6
+    ],
+    [
+     "FLORENCE",
+     5
+    ]
+   ]
+  },
+  "island/condo": {
+   "homes": 1,
+   "legal_residence": 0,
+   "pct_legal_residence": 0.0,
+   "bill_outside_sc": 0,
+   "pct_bill_outside_sc": 0.0,
+   "top_states": [
+    [
+     "SC",
+     1
+    ]
+   ],
+   "last_deed_median_years_ago": 36.1,
+   "last_deed_before_2000": 1,
+   "pct_last_deed_before_2000": 100.0,
+   "last_deed_by_decade": [
+    [
+     1990,
+     1
+    ]
+   ],
+   "market_sale_last5y": 0,
+   "pct_market_sale_last5y": 0.0,
+   "any_deed_last5y": 0,
+   "pct_any_deed_last5y": 0.0,
+   "last_deed_nominal": 1,
+   "pct_last_deed_nominal": 100.0,
+   "sales_window": 0,
+   "median_window": null,
+   "p25_window": null,
+   "p75_window": null,
+   "min_window": null,
+   "max_window": null,
+   "sales_3y": 0,
+   "median_3y": null,
+   "p25_3y": null,
+   "p75_3y": null,
+   "flood": {
+    "AE": 1
+   },
+   "pct_VE": 0.0,
+   "pct_AE": 100.0,
+   "pct_special_flood_hazard": 100.0,
+   "oceanfront": 1,
+   "marsh_side": 0,
+   "building_past_setback_line": 1,
+   "building_touches_baseline": 1,
+   "bill_sc_city_top": []
+  },
+  "island/house": {
+   "homes": 480,
+   "legal_residence": 99,
+   "pct_legal_residence": 20.6,
+   "bill_outside_sc": 143,
+   "pct_bill_outside_sc": 29.8,
+   "top_states": [
+    [
+     "SC",
+     337
+    ],
+    [
+     "NC",
+     38
+    ],
+    [
+     "GA",
+     26
+    ],
+    [
+     "TN",
+     15
+    ],
+    [
+     "VA",
+     14
+    ],
+    [
+     "OH",
+     6
+    ],
+    [
+     "CA",
+     5
+    ],
+    [
+     "NY",
+     4
+    ]
+   ],
+   "last_deed_median_years_ago": 8.2,
+   "last_deed_before_2000": 47,
+   "pct_last_deed_before_2000": 9.8,
+   "last_deed_by_decade": [
+    [
+     1960,
+     1
+    ],
+    [
+     1970,
+     2
+    ],
+    [
+     1980,
+     8
+    ],
+    [
+     1990,
+     36
+    ],
+    [
+     2000,
+     78
+    ],
+    [
+     2010,
+     143
+    ],
+    [
+     2020,
+     212
+    ]
+   ],
+   "market_sale_last5y": 44,
+   "pct_market_sale_last5y": 9.2,
+   "any_deed_last5y": 142,
+   "pct_any_deed_last5y": 29.6,
+   "last_deed_nominal": 295,
+   "pct_last_deed_nominal": 61.5,
+   "sales_window": 10,
+   "median_window": 2450000,
+   "p25_window": 2050000,
+   "p75_window": 2750000,
+   "min_window": 1195000,
+   "max_window": 3580000,
+   "sales_3y": 28,
+   "median_3y": 2450000,
+   "p25_3y": 1875000,
+   "p75_3y": 2650000,
+   "flood": {
+    "VE": 228,
+    "AE": 251,
+    "X shaded": 1
+   },
+   "pct_VE": 47.5,
+   "pct_AE": 52.3,
+   "pct_special_flood_hazard": 99.8,
+   "oceanfront": 217,
+   "marsh_side": 105,
+   "building_past_setback_line": 98,
+   "building_touches_baseline": 18,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     127
+    ],
+    [
+     "COLUMBIA",
+     33
+    ],
+    [
+     "GREENVILLE",
+     27
+    ],
+    [
+     "CHARLESTON",
+     20
+    ],
+    [
+     "GEORGETOWN",
+     13
+    ],
+    [
+     "MT PLEASANT",
+     12
+    ],
+    [
+     "FLORENCE",
+     10
+    ],
+    [
+     "EASLEY",
+     7
+    ]
+   ]
+  },
+  "island/lot": {
+   "homes": 102,
+   "legal_residence": 11,
+   "pct_legal_residence": 10.8,
+   "bill_outside_sc": 26,
+   "pct_bill_outside_sc": 25.5,
+   "top_states": [
+    [
+     "SC",
+     76
+    ],
+    [
+     "NC",
+     6
+    ],
+    [
+     "DC",
+     5
+    ],
+    [
+     "TN",
+     4
+    ],
+    [
+     "GA",
+     3
+    ],
+    [
+     "OH",
+     3
+    ],
+    [
+     "VA",
+     1
+    ],
+    [
+     "CA",
+     1
+    ]
+   ],
+   "last_deed_median_years_ago": 10.1,
+   "last_deed_before_2000": 20,
+   "pct_last_deed_before_2000": 19.6,
+   "last_deed_by_decade": [
+    [
+     1950,
+     1
+    ],
+    [
+     1970,
+     1
+    ],
+    [
+     1980,
+     8
+    ],
+    [
+     1990,
+     10
+    ],
+    [
+     2000,
+     10
+    ],
+    [
+     2010,
+     30
+    ],
+    [
+     2020,
+     42
+    ]
+   ],
+   "market_sale_last5y": 11,
+   "pct_market_sale_last5y": 10.8,
+   "any_deed_last5y": 26,
+   "pct_any_deed_last5y": 25.5,
+   "last_deed_nominal": 60,
+   "pct_last_deed_nominal": 58.8,
+   "sales_window": 1,
+   "median_window": 2750000,
+   "p25_window": 2750000,
+   "p75_window": 2750000,
+   "min_window": 2750000,
+   "max_window": 2750000,
+   "sales_3y": 9,
+   "median_3y": 2300000,
+   "p25_3y": 1050000,
+   "p75_3y": 3350000,
+   "flood": {
+    "VE": 29,
+    "AE": 73
+   },
+   "pct_VE": 28.4,
+   "pct_AE": 71.6,
+   "pct_special_flood_hazard": 100.0,
+   "oceanfront": 15,
+   "marsh_side": 79,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     24
+    ],
+    [
+     "GREENVILLE",
+     13
+    ],
+    [
+     "COLUMBIA",
+     9
+    ],
+    [
+     "WINNSBORO",
+     6
+    ]
+   ]
+  },
+  "island/marsh/house": {
+   "homes": 105,
+   "legal_residence": 29,
+   "pct_legal_residence": 27.6,
+   "bill_outside_sc": 28,
+   "pct_bill_outside_sc": 26.7,
+   "top_states": [
+    [
+     "SC",
+     77
+    ],
+    [
+     "NC",
+     13
+    ],
+    [
+     "GA",
+     5
+    ],
+    [
+     "NY",
+     2
+    ],
+    [
+     "TN",
+     2
+    ],
+    [
+     "IN",
+     2
+    ],
+    [
+     "VA",
+     1
+    ],
+    [
+     "DC",
+     1
+    ]
+   ],
+   "last_deed_median_years_ago": 8.3,
+   "last_deed_before_2000": 13,
+   "pct_last_deed_before_2000": 12.4,
+   "last_deed_by_decade": [
+    [
+     1980,
+     3
+    ],
+    [
+     1990,
+     10
+    ],
+    [
+     2000,
+     17
+    ],
+    [
+     2010,
+     30
+    ],
+    [
+     2020,
+     45
+    ]
+   ],
+   "market_sale_last5y": 11,
+   "pct_market_sale_last5y": 10.5,
+   "any_deed_last5y": 29,
+   "pct_any_deed_last5y": 27.6,
+   "last_deed_nominal": 59,
+   "pct_last_deed_nominal": 56.2,
+   "sales_window": 2,
+   "median_window": 2100000,
+   "p25_window": 2100000,
+   "p75_window": 3500000,
+   "min_window": 2100000,
+   "max_window": 3500000,
+   "sales_3y": 6,
+   "median_3y": 2037500,
+   "p25_3y": 1150000,
+   "p75_3y": 2100000,
+   "flood": {
+    "VE": 27,
+    "AE": 77,
+    "X shaded": 1
+   },
+   "pct_VE": 25.7,
+   "pct_AE": 73.3,
+   "pct_special_flood_hazard": 99.0,
+   "oceanfront": 0,
+   "marsh_side": 105,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     40
+    ],
+    [
+     "COLUMBIA",
+     5
+    ]
+   ]
+  },
+  "island/middle/condo": {
+   "homes": 1,
+   "legal_residence": 0,
+   "pct_legal_residence": 0.0,
+   "bill_outside_sc": 0,
+   "pct_bill_outside_sc": 0.0,
+   "top_states": [
+    [
+     "SC",
+     1
+    ]
+   ],
+   "last_deed_median_years_ago": 36.1,
+   "last_deed_before_2000": 1,
+   "pct_last_deed_before_2000": 100.0,
+   "last_deed_by_decade": [
+    [
+     1990,
+     1
+    ]
+   ],
+   "market_sale_last5y": 0,
+   "pct_market_sale_last5y": 0.0,
+   "any_deed_last5y": 0,
+   "pct_any_deed_last5y": 0.0,
+   "last_deed_nominal": 1,
+   "pct_last_deed_nominal": 100.0,
+   "sales_window": 0,
+   "median_window": null,
+   "p25_window": null,
+   "p75_window": null,
+   "min_window": null,
+   "max_window": null,
+   "sales_3y": 0,
+   "median_3y": null,
+   "p25_3y": null,
+   "p75_3y": null,
+   "flood": {
+    "AE": 1
+   },
+   "pct_VE": 0.0,
+   "pct_AE": 100.0,
+   "pct_special_flood_hazard": 100.0,
+   "oceanfront": 1,
+   "marsh_side": 0,
+   "building_past_setback_line": 1,
+   "building_touches_baseline": 1,
+   "bill_sc_city_top": []
+  },
+  "island/middle/house": {
+   "homes": 58,
+   "legal_residence": 11,
+   "pct_legal_residence": 19.0,
+   "bill_outside_sc": 21,
+   "pct_bill_outside_sc": 36.2,
+   "top_states": [
+    [
+     "SC",
+     37
+    ],
+    [
+     "NC",
+     9
+    ],
+    [
+     "GA",
+     5
+    ],
+    [
+     "TN",
+     4
+    ],
+    [
+     "KY",
+     2
+    ],
+    [
+     "NJ",
+     1
+    ]
+   ],
+   "last_deed_median_years_ago": 9.7,
+   "last_deed_before_2000": 10,
+   "pct_last_deed_before_2000": 17.2,
+   "last_deed_by_decade": [
+    [
+     1970,
+     1
+    ],
+    [
+     1980,
+     2
+    ],
+    [
+     1990,
+     7
+    ],
+    [
+     2000,
+     10
+    ],
+    [
+     2010,
+     16
+    ],
+    [
+     2020,
+     22
+    ]
+   ],
+   "market_sale_last5y": 2,
+   "pct_market_sale_last5y": 3.4,
+   "any_deed_last5y": 11,
+   "pct_any_deed_last5y": 19.0,
+   "last_deed_nominal": 35,
+   "pct_last_deed_nominal": 60.3,
+   "sales_window": 0,
+   "median_window": null,
+   "p25_window": null,
+   "p75_window": null,
+   "min_window": null,
+   "max_window": null,
+   "sales_3y": 2,
+   "median_3y": 2500000,
+   "p25_3y": 2500000,
+   "p75_3y": 3494150,
+   "flood": {
+    "AE": 36,
+    "X shaded": 1,
+    "VE": 21
+   },
+   "pct_VE": 36.2,
+   "pct_AE": 62.1,
+   "pct_special_flood_hazard": 98.3,
+   "oceanfront": 38,
+   "marsh_side": 8,
+   "building_past_setback_line": 5,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     14
+    ],
+    [
+     "CHARLESTON",
+     7
+    ]
+   ]
+  },
+  "island/middle/lot": {
+   "homes": 20,
+   "legal_residence": 6,
+   "pct_legal_residence": 30.0,
+   "bill_outside_sc": 3,
+   "pct_bill_outside_sc": 15.0,
+   "top_states": [
+    [
+     "SC",
+     17
+    ],
+    [
+     "GA",
+     2
+    ],
+    [
+     "NC",
+     1
+    ]
+   ],
+   "last_deed_median_years_ago": 9.0,
+   "last_deed_before_2000": 1,
+   "pct_last_deed_before_2000": 5.0,
+   "last_deed_by_decade": [
+    [
+     1970,
+     1
+    ],
+    [
+     2000,
+     2
+    ],
+    [
+     2010,
+     9
+    ],
+    [
+     2020,
+     8
+    ]
+   ],
+   "market_sale_last5y": 2,
+   "pct_market_sale_last5y": 10.0,
+   "any_deed_last5y": 4,
+   "pct_any_deed_last5y": 20.0,
+   "last_deed_nominal": 12,
+   "pct_last_deed_nominal": 60.0,
+   "sales_window": 0,
+   "median_window": null,
+   "p25_window": null,
+   "p75_window": null,
+   "min_window": null,
+   "max_window": null,
+   "sales_3y": 0,
+   "median_3y": null,
+   "p25_3y": null,
+   "p75_3y": null,
+   "flood": {
+    "AE": 19,
+    "VE": 1
+   },
+   "pct_VE": 5.0,
+   "pct_AE": 95.0,
+   "pct_special_flood_hazard": 100.0,
+   "oceanfront": 5,
+   "marsh_side": 12,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     6
+    ]
+   ]
+  },
+  "island/north/house": {
+   "homes": 218,
+   "legal_residence": 53,
+   "pct_legal_residence": 24.3,
+   "bill_outside_sc": 59,
+   "pct_bill_outside_sc": 27.1,
+   "top_states": [
+    [
+     "SC",
+     159
+    ],
+    [
+     "NC",
+     17
+    ],
+    [
+     "GA",
+     12
+    ],
+    [
+     "TN",
+     7
+    ],
+    [
+     "VA",
+     4
+    ],
+    [
+     "CA",
+     3
+    ],
+    [
+     "NY",
+     2
+    ],
+    [
+     "MD",
+     2
+    ]
+   ],
+   "last_deed_median_years_ago": 7.5,
+   "last_deed_before_2000": 19,
+   "pct_last_deed_before_2000": 8.7,
+   "last_deed_by_decade": [
+    [
+     1980,
+     4
+    ],
+    [
+     1990,
+     15
+    ],
+    [
+     2000,
+     39
+    ],
+    [
+     2010,
+     60
+    ],
+    [
+     2020,
+     100
+    ]
+   ],
+   "market_sale_last5y": 24,
+   "pct_market_sale_last5y": 11.0,
+   "any_deed_last5y": 71,
+   "pct_any_deed_last5y": 32.6,
+   "last_deed_nominal": 128,
+   "pct_last_deed_nominal": 58.7,
+   "sales_window": 4,
+   "median_window": 3500000,
+   "p25_window": 2100000,
+   "p75_window": 3500000,
+   "min_window": 2050000,
+   "max_window": 3580000,
+   "sales_3y": 14,
+   "median_3y": 2100000,
+   "p25_3y": 1300000,
+   "p75_3y": 2650000,
+   "flood": {
+    "VE": 17,
+    "AE": 201
+   },
+   "pct_VE": 7.8,
+   "pct_AE": 92.2,
+   "pct_special_flood_hazard": 100.0,
+   "oceanfront": 41,
+   "marsh_side": 73,
+   "building_past_setback_line": 12,
+   "building_touches_baseline": 2,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     72
+    ],
+    [
+     "COLUMBIA",
+     14
+    ],
+    [
+     "GREENVILLE",
+     9
+    ],
+    [
+     "GEORGETOWN",
+     7
+    ],
+    [
+     "EASLEY",
+     6
+    ],
+    [
+     "CHARLESTON",
+     6
+    ],
+    [
+     "FLORENCE",
+     5
+    ]
+   ]
+  },
+  "island/north/lot": {
+   "homes": 30,
+   "legal_residence": 3,
+   "pct_legal_residence": 10.0,
+   "bill_outside_sc": 5,
+   "pct_bill_outside_sc": 16.7,
+   "top_states": [
+    [
+     "SC",
+     25
+    ],
+    [
+     "TN",
+     2
+    ],
+    [
+     "GA",
+     1
+    ],
+    [
+     "VA",
+     1
+    ],
+    [
+     "NC",
+     1
+    ]
+   ],
+   "last_deed_median_years_ago": 11.5,
+   "last_deed_before_2000": 7,
+   "pct_last_deed_before_2000": 23.3,
+   "last_deed_by_decade": [
+    [
+     1980,
+     1
+    ],
+    [
+     1990,
+     6
+    ],
+    [
+     2000,
+     5
+    ],
+    [
+     2010,
+     5
+    ],
+    [
+     2020,
+     13
+    ]
+   ],
+   "market_sale_last5y": 3,
+   "pct_market_sale_last5y": 10.0,
+   "any_deed_last5y": 9,
+   "pct_any_deed_last5y": 30.0,
+   "last_deed_nominal": 19,
+   "pct_last_deed_nominal": 63.3,
+   "sales_window": 0,
+   "median_window": null,
+   "p25_window": null,
+   "p75_window": null,
+   "min_window": null,
+   "max_window": null,
+   "sales_3y": 3,
+   "median_3y": 685000,
+   "p25_3y": 500000,
+   "p75_3y": 2100000,
+   "flood": {
+    "VE": 2,
+    "AE": 28
+   },
+   "pct_VE": 6.7,
+   "pct_AE": 93.3,
+   "pct_special_flood_hazard": 100.0,
+   "oceanfront": 4,
+   "marsh_side": 21,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     11
+    ],
+    [
+     "GREENVILLE",
+     6
+    ]
+   ]
+  },
+  "island/oceanfront/house": {
+   "homes": 217,
+   "legal_residence": 30,
+   "pct_legal_residence": 13.8,
+   "bill_outside_sc": 72,
+   "pct_bill_outside_sc": 33.2,
+   "top_states": [
+    [
+     "SC",
+     145
+    ],
+    [
+     "NC",
+     19
+    ],
+    [
+     "GA",
+     13
+    ],
+    [
+     "TN",
+     8
+    ],
+    [
+     "VA",
+     6
+    ],
+    [
+     "OH",
+     6
+    ],
+    [
+     "CA",
+     3
+    ],
+    [
+     "FL",
+     2
+    ]
+   ],
+   "last_deed_median_years_ago": 9.0,
+   "last_deed_before_2000": 22,
+   "pct_last_deed_before_2000": 10.1,
+   "last_deed_by_decade": [
+    [
+     1970,
+     2
+    ],
+    [
+     1980,
+     2
+    ],
+    [
+     1990,
+     18
+    ],
+    [
+     2000,
+     42
+    ],
+    [
+     2010,
+     65
+    ],
+    [
+     2020,
+     88
+    ]
+   ],
+   "market_sale_last5y": 20,
+   "pct_market_sale_last5y": 9.2,
+   "any_deed_last5y": 59,
+   "pct_any_deed_last5y": 27.2,
+   "last_deed_nominal": 145,
+   "pct_last_deed_nominal": 66.8,
+   "sales_window": 6,
+   "median_window": 2500000,
+   "p25_window": 2450000,
+   "p75_window": 2750000,
+   "min_window": 1875000,
+   "max_window": 3580000,
+   "sales_3y": 13,
+   "median_3y": 2615000,
+   "p25_3y": 2500000,
+   "p75_3y": 3265000,
+   "flood": {
+    "VE": 159,
+    "AE": 58
+   },
+   "pct_VE": 73.3,
+   "pct_AE": 26.7,
+   "pct_special_flood_hazard": 100.0,
+   "oceanfront": 217,
+   "marsh_side": 0,
+   "building_past_setback_line": 98,
+   "building_touches_baseline": 18,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     43
+    ],
+    [
+     "GREENVILLE",
+     17
+    ],
+    [
+     "COLUMBIA",
+     16
+    ],
+    [
+     "CHARLESTON",
+     10
+    ],
+    [
+     "MT PLEASANT",
+     8
+    ]
+   ]
+  },
+  "island/south/house": {
+   "homes": 204,
+   "legal_residence": 35,
+   "pct_legal_residence": 17.2,
+   "bill_outside_sc": 63,
+   "pct_bill_outside_sc": 30.9,
+   "top_states": [
+    [
+     "SC",
+     141
+    ],
+    [
+     "NC",
+     12
+    ],
+    [
+     "VA",
+     10
+    ],
+    [
+     "GA",
+     9
+    ],
+    [
+     "OH",
+     6
+    ],
+    [
+     "TN",
+     4
+    ],
+    [
+     "IN",
+     3
+    ],
+    [
+     "CA",
+     2
+    ]
+   ],
+   "last_deed_median_years_ago": 8.2,
+   "last_deed_before_2000": 18,
+   "pct_last_deed_before_2000": 8.8,
+   "last_deed_by_decade": [
+    [
+     1960,
+     1
+    ],
+    [
+     1970,
+     1
+    ],
+    [
+     1980,
+     2
+    ],
+    [
+     1990,
+     14
+    ],
+    [
+     2000,
+     29
+    ],
+    [
+     2010,
+     67
+    ],
+    [
+     2020,
+     90
+    ]
+   ],
+   "market_sale_last5y": 18,
+   "pct_market_sale_last5y": 8.8,
+   "any_deed_last5y": 60,
+   "pct_any_deed_last5y": 29.4,
+   "last_deed_nominal": 132,
+   "pct_last_deed_nominal": 64.7,
+   "sales_window": 6,
+   "median_window": 2450000,
+   "p25_window": 1875000,
+   "p75_window": 2500000,
+   "min_window": 1195000,
+   "max_window": 2750000,
+   "sales_3y": 12,
+   "median_3y": 2500000,
+   "p25_3y": 1875000,
+   "p75_3y": 2615000,
+   "flood": {
+    "VE": 190,
+    "AE": 14
+   },
+   "pct_VE": 93.1,
+   "pct_AE": 6.9,
+   "pct_special_flood_hazard": 100.0,
+   "oceanfront": 138,
+   "marsh_side": 24,
+   "building_past_setback_line": 81,
+   "building_touches_baseline": 16,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     41
+    ],
+    [
+     "COLUMBIA",
+     16
+    ],
+    [
+     "GREENVILLE",
+     15
+    ],
+    [
+     "MT PLEASANT",
+     8
+    ],
+    [
+     "CHARLESTON",
+     7
+    ],
+    [
+     "GEORGETOWN",
+     6
+    ],
+    [
+     "FLORENCE",
+     5
+    ]
+   ]
+  },
+  "island/south/lot": {
+   "homes": 52,
+   "legal_residence": 2,
+   "pct_legal_residence": 3.8,
+   "bill_outside_sc": 18,
+   "pct_bill_outside_sc": 34.6,
+   "top_states": [
+    [
+     "SC",
+     34
+    ],
+    [
+     "DC",
+     5
+    ],
+    [
+     "NC",
+     4
+    ],
+    [
+     "OH",
+     3
+    ],
+    [
+     "TN",
+     2
+    ],
+    [
+     "CA",
+     1
+    ],
+    [
+     "NY",
+     1
+    ],
+    [
+     "NJ",
+     1
+    ]
+   ],
+   "last_deed_median_years_ago": 9.6,
+   "last_deed_before_2000": 12,
+   "pct_last_deed_before_2000": 23.1,
+   "last_deed_by_decade": [
+    [
+     1950,
+     1
+    ],
+    [
+     1980,
+     7
+    ],
+    [
+     1990,
+     4
+    ],
+    [
+     2000,
+     3
+    ],
+    [
+     2010,
+     16
+    ],
+    [
+     2020,
+     21
+    ]
+   ],
+   "market_sale_last5y": 6,
+   "pct_market_sale_last5y": 11.5,
+   "any_deed_last5y": 13,
+   "pct_any_deed_last5y": 25.0,
+   "last_deed_nominal": 29,
+   "pct_last_deed_nominal": 55.8,
+   "sales_window": 1,
+   "median_window": 2750000,
+   "p25_window": 2750000,
+   "p75_window": 2750000,
+   "min_window": 2750000,
+   "max_window": 2750000,
+   "sales_3y": 6,
+   "median_3y": 2750000,
+   "p25_3y": 2300000,
+   "p75_3y": 3350000,
+   "flood": {
+    "AE": 26,
+    "VE": 26
+   },
+   "pct_VE": 50.0,
+   "pct_AE": 50.0,
+   "pct_special_flood_hazard": 100.0,
+   "oceanfront": 6,
+   "marsh_side": 46,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "COLUMBIA",
+     7
+    ],
+    [
+     "PAWLEYS ISLAND",
+     7
+    ],
+    [
+     "WINNSBORO",
+     6
+    ]
+   ]
+  },
+  "litchfield/condo": {
+   "homes": 19,
+   "legal_residence": 6,
+   "pct_legal_residence": 31.6,
+   "bill_outside_sc": 4,
+   "pct_bill_outside_sc": 21.1,
+   "top_states": [
+    [
+     "SC",
+     15
+    ],
+    [
+     "VA",
+     2
+    ],
+    [
+     "PA",
+     1
+    ],
+    [
+     "CA",
+     1
+    ]
+   ],
+   "last_deed_median_years_ago": 11.7,
+   "last_deed_before_2000": 6,
+   "pct_last_deed_before_2000": 31.6,
+   "last_deed_by_decade": [
+    [
+     1980,
+     1
+    ],
+    [
+     1990,
+     5
+    ],
+    [
+     2010,
+     8
+    ],
+    [
+     2020,
+     5
+    ]
+   ],
+   "market_sale_last5y": 2,
+   "pct_market_sale_last5y": 10.5,
+   "any_deed_last5y": 4,
+   "pct_any_deed_last5y": 21.1,
+   "last_deed_nominal": 9,
+   "pct_last_deed_nominal": 47.4,
+   "sales_window": 0,
+   "median_window": null,
+   "p25_window": null,
+   "p75_window": null,
+   "min_window": null,
+   "max_window": null,
+   "sales_3y": 0,
+   "median_3y": null,
+   "p25_3y": null,
+   "p75_3y": null,
+   "flood": {
+    "AE": 18,
+    "VE": 1
+   },
+   "pct_VE": 5.3,
+   "pct_AE": 94.7,
+   "pct_special_flood_hazard": 100.0,
+   "oceanfront": 1,
+   "marsh_side": 0,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     10
+    ]
+   ]
+  },
+  "litchfield/house": {
+   "homes": 1214,
+   "legal_residence": 503,
+   "pct_legal_residence": 41.4,
+   "bill_outside_sc": 350,
+   "pct_bill_outside_sc": 28.8,
+   "top_states": [
+    [
+     "SC",
+     862
+    ],
+    [
+     "NC",
+     126
+    ],
+    [
+     "VA",
+     48
+    ],
+    [
+     "GA",
+     33
+    ],
+    [
+     "PA",
+     25
+    ],
+    [
+     "NY",
+     14
+    ],
+    [
+     "TN",
+     13
+    ],
+    [
+     "CT",
+     8
+    ]
+   ],
+   "last_deed_median_years_ago": 6.6,
+   "last_deed_before_2000": 82,
+   "pct_last_deed_before_2000": 6.8,
+   "last_deed_by_decade": [
+    [
+     1970,
+     7
+    ],
+    [
+     1980,
+     18
+    ],
+    [
+     1990,
+     57
+    ],
+    [
+     2000,
+     146
+    ],
+    [
+     2010,
+     365
+    ],
+    [
+     2020,
+     621
+    ]
+   ],
+   "market_sale_last5y": 224,
+   "pct_market_sale_last5y": 18.5,
+   "any_deed_last5y": 438,
+   "pct_any_deed_last5y": 36.1,
+   "last_deed_nominal": 492,
+   "pct_last_deed_nominal": 40.5,
+   "sales_window": 50,
+   "median_window": 1250000,
+   "p25_window": 910000,
+   "p75_window": 1800000,
+   "min_window": 117000,
+   "max_window": 5800000,
+   "sales_3y": 137,
+   "median_3y": 1100000,
+   "p25_3y": 765000,
+   "p75_3y": 1475000,
+   "flood": {
+    "AE": 983,
+    "X shaded": 41,
+    "VE": 190
+   },
+   "pct_VE": 15.7,
+   "pct_AE": 81.0,
+   "pct_special_flood_hazard": 96.6,
+   "oceanfront": 155,
+   "marsh_side": 222,
+   "building_past_setback_line": 71,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     560
+    ],
+    [
+     "COLUMBIA",
+     59
+    ],
+    [
+     "GREENVILLE",
+     57
+    ],
+    [
+     "FLORENCE",
+     18
+    ],
+    [
+     "SPARTANBURG",
+     12
+    ],
+    [
+     "MT PLEASANT",
+     12
+    ],
+    [
+     "CHAPIN",
+     8
+    ],
+    [
+     "GREER",
+     8
+    ]
+   ]
+  },
+  "litchfield/lot": {
+   "homes": 118,
+   "legal_residence": 6,
+   "pct_legal_residence": 5.1,
+   "bill_outside_sc": 32,
+   "pct_bill_outside_sc": 27.1,
+   "top_states": [
+    [
+     "SC",
+     85
+    ],
+    [
+     "NC",
+     9
+    ],
+    [
+     "VA",
+     5
+    ],
+    [
+     "FL",
+     3
+    ],
+    [
+     "MD",
+     3
+    ],
+    [
+     "NY",
+     2
+    ],
+    [
+     "CT",
+     2
+    ],
+    [
+     "GA",
+     2
+    ]
+   ],
+   "last_deed_median_years_ago": 5.9,
+   "last_deed_before_2000": 8,
+   "pct_last_deed_before_2000": 6.8,
+   "last_deed_by_decade": [
+    [
+     1970,
+     1
+    ],
+    [
+     1980,
+     3
+    ],
+    [
+     1990,
+     4
+    ],
+    [
+     2000,
+     15
+    ],
+    [
+     2010,
+     29
+    ],
+    [
+     2020,
+     66
+    ]
+   ],
+   "market_sale_last5y": 26,
+   "pct_market_sale_last5y": 22.0,
+   "any_deed_last5y": 50,
+   "pct_any_deed_last5y": 42.4,
+   "last_deed_nominal": 57,
+   "pct_last_deed_nominal": 48.3,
+   "sales_window": 6,
+   "median_window": 475000,
+   "p25_window": 425000,
+   "p75_window": 575000,
+   "min_window": 265000,
+   "max_window": 650000,
+   "sales_3y": 15,
+   "median_3y": 310000,
+   "p25_3y": 275000,
+   "p75_3y": 475000,
+   "flood": {
+    "AE": 76,
+    "X shaded": 5,
+    "VE": 37
+   },
+   "pct_VE": 31.4,
+   "pct_AE": 64.4,
+   "pct_special_flood_hazard": 95.8,
+   "oceanfront": 1,
+   "marsh_side": 35,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     33
+    ],
+    [
+     "GEORGETOWN",
+     8
+    ],
+    [
+     "MYRTLE BEACH",
+     6
+    ],
+    [
+     "COLUMBIA",
+     6
+    ]
+   ]
+  },
+  "litchfield/oceanfront/house": {
+   "homes": 155,
+   "legal_residence": 25,
+   "pct_legal_residence": 16.1,
+   "bill_outside_sc": 61,
+   "pct_bill_outside_sc": 39.4,
+   "top_states": [
+    [
+     "SC",
+     93
+    ],
+    [
+     "NC",
+     18
+    ],
+    [
+     "GA",
+     9
+    ],
+    [
+     "VA",
+     7
+    ],
+    [
+     "FL",
+     4
+    ],
+    [
+     "TN",
+     4
+    ],
+    [
+     "MN",
+     3
+    ],
+    [
+     "PA",
+     3
+    ]
+   ],
+   "last_deed_median_years_ago": 8.5,
+   "last_deed_before_2000": 15,
+   "pct_last_deed_before_2000": 9.7,
+   "last_deed_by_decade": [
+    [
+     1980,
+     5
+    ],
+    [
+     1990,
+     10
+    ],
+    [
+     2000,
+     22
+    ],
+    [
+     2010,
+     53
+    ],
+    [
+     2020,
+     65
+    ]
+   ],
+   "market_sale_last5y": 25,
+   "pct_market_sale_last5y": 16.1,
+   "any_deed_last5y": 47,
+   "pct_any_deed_last5y": 30.3,
+   "last_deed_nominal": 77,
+   "pct_last_deed_nominal": 49.7,
+   "sales_window": 6,
+   "median_window": 3600000,
+   "p25_window": 2846000,
+   "p75_window": 4862500,
+   "min_window": 2525000,
+   "max_window": 5800000,
+   "sales_3y": 15,
+   "median_3y": 3600000,
+   "p25_3y": 3000000,
+   "p75_3y": 3900000,
+   "flood": {
+    "VE": 72,
+    "AE": 83
+   },
+   "pct_VE": 46.5,
+   "pct_AE": 53.5,
+   "pct_special_flood_hazard": 100.0,
+   "oceanfront": 155,
+   "marsh_side": 0,
+   "building_past_setback_line": 71,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     37
+    ],
+    [
+     "GREENVILLE",
+     14
+    ],
+    [
+     "COLUMBIA",
+     12
+    ]
+   ]
+  },
+  "west17/condo": {
+   "homes": 636,
+   "legal_residence": 292,
+   "pct_legal_residence": 45.9,
+   "bill_outside_sc": 112,
+   "pct_bill_outside_sc": 17.6,
+   "top_states": [
+    [
+     "SC",
+     523
+    ],
+    [
+     "NC",
+     15
+    ],
+    [
+     "NJ",
+     14
+    ],
+    [
+     "NY",
+     10
+    ],
+    [
+     "TX",
+     9
+    ],
+    [
+     "VA",
+     8
+    ],
+    [
+     "MD",
+     8
+    ],
+    [
+     "PA",
+     8
+    ]
+   ],
+   "last_deed_median_years_ago": 7.1,
+   "last_deed_before_2000": 4,
+   "pct_last_deed_before_2000": 0.6,
+   "last_deed_by_decade": [
+    [
+     1990,
+     4
+    ],
+    [
+     2000,
+     187
+    ],
+    [
+     2010,
+     137
+    ],
+    [
+     2020,
+     308
+    ]
+   ],
+   "market_sale_last5y": 172,
+   "pct_market_sale_last5y": 27.0,
+   "any_deed_last5y": 244,
+   "pct_any_deed_last5y": 38.4,
+   "last_deed_nominal": 248,
+   "pct_last_deed_nominal": 39.0,
+   "sales_window": 34,
+   "median_window": 320000,
+   "p25_window": 250000,
+   "p75_window": 375000,
+   "min_window": 128500,
+   "max_window": 908430,
+   "sales_3y": 106,
+   "median_3y": 339500,
+   "p25_3y": 300000,
+   "p75_3y": 399500,
+   "flood": {
+    "X": 363,
+    "AE": 90,
+    "X shaded": 183
+   },
+   "pct_VE": 0.0,
+   "pct_AE": 14.2,
+   "pct_special_flood_hazard": 14.2,
+   "oceanfront": 0,
+   "marsh_side": 0,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     378
+    ],
+    [
+     "MYRTLE BEACH",
+     45
+    ],
+    [
+     "FORT MILL",
+     38
+    ],
+    [
+     "MURRELLS INLET",
+     30
+    ]
+   ]
+  },
+  "west17/house": {
+   "homes": 4849,
+   "legal_residence": 4155,
+   "pct_legal_residence": 85.7,
+   "bill_outside_sc": 389,
+   "pct_bill_outside_sc": 8.0,
+   "top_states": [
+    [
+     "SC",
+     4459
+    ],
+    [
+     "NC",
+     70
+    ],
+    [
+     "NY",
+     45
+    ],
+    [
+     "NJ",
+     43
+    ],
+    [
+     "PA",
+     35
+    ],
+    [
+     "MA",
+     26
+    ],
+    [
+     "VA",
+     24
+    ],
+    [
+     "MD",
+     21
+    ]
+   ],
+   "last_deed_median_years_ago": 7.0,
+   "last_deed_before_2000": 344,
+   "pct_last_deed_before_2000": 7.1,
+   "last_deed_by_decade": [
+    [
+     1900,
+     4
+    ],
+    [
+     1960,
+     2
+    ],
+    [
+     1970,
+     14
+    ],
+    [
+     1980,
+     41
+    ],
+    [
+     1990,
+     283
+    ],
+    [
+     2000,
+     647
+    ],
+    [
+     2010,
+     1469
+    ],
+    [
+     2020,
+     2389
+    ]
+   ],
+   "market_sale_last5y": 949,
+   "pct_market_sale_last5y": 19.6,
+   "any_deed_last5y": 1730,
+   "pct_any_deed_last5y": 35.7,
+   "last_deed_nominal": 1596,
+   "pct_last_deed_nominal": 32.9,
+   "sales_window": 220,
+   "median_window": 580000,
+   "p25_window": 477000,
+   "p75_window": 757000,
+   "min_window": 35000,
+   "max_window": 3500000,
+   "sales_3y": 570,
+   "median_3y": 570000,
+   "p25_3y": 470000,
+   "p75_3y": 727000,
+   "flood": {
+    "X": 4052,
+    "X shaded": 532,
+    "AE": 265
+   },
+   "pct_VE": 0.0,
+   "pct_AE": 5.5,
+   "pct_special_flood_hazard": 5.5,
+   "oceanfront": 0,
+   "marsh_side": 3,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     4326
+    ],
+    [
+     "GEORGETOWN",
+     32
+    ],
+    [
+     "MURRELLS INLET",
+     20
+    ],
+    [
+     "MYRTLE BEACH",
+     11
+    ],
+    [
+     "SURFSIDE BEACH",
+     8
+    ],
+    [
+     "COLUMBIA",
+     6
+    ]
+   ]
+  },
+  "west17/lot": {
+   "homes": 515,
+   "legal_residence": 68,
+   "pct_legal_residence": 13.2,
+   "bill_outside_sc": 134,
+   "pct_bill_outside_sc": 26.0,
+   "top_states": [
+    [
+     "SC",
+     381
+    ],
+    [
+     "NC",
+     25
+    ],
+    [
+     "NJ",
+     17
+    ],
+    [
+     "GA",
+     12
+    ],
+    [
+     "NY",
+     11
+    ],
+    [
+     "PA",
+     10
+    ],
+    [
+     "MD",
+     9
+    ],
+    [
+     "VA",
+     9
+    ]
+   ],
+   "last_deed_median_years_ago": 9.4,
+   "last_deed_before_2000": 104,
+   "pct_last_deed_before_2000": 20.2,
+   "last_deed_by_decade": [
+    [
+     1900,
+     8
+    ],
+    [
+     1960,
+     7
+    ],
+    [
+     1970,
+     9
+    ],
+    [
+     1980,
+     25
+    ],
+    [
+     1990,
+     55
+    ],
+    [
+     2000,
+     75
+    ],
+    [
+     2010,
+     117
+    ],
+    [
+     2020,
+     219
+    ]
+   ],
+   "market_sale_last5y": 91,
+   "pct_market_sale_last5y": 17.7,
+   "any_deed_last5y": 180,
+   "pct_any_deed_last5y": 35.0,
+   "last_deed_nominal": 255,
+   "pct_last_deed_nominal": 49.5,
+   "sales_window": 28,
+   "median_window": 216000,
+   "p25_window": 170000,
+   "p75_window": 375000,
+   "min_window": 97000,
+   "max_window": 2000000,
+   "sales_3y": 62,
+   "median_3y": 265000,
+   "p25_3y": 170000,
+   "p75_3y": 425000,
+   "flood": {
+    "X": 327,
+    "X shaded": 69,
+    "AE": 119
+   },
+   "pct_VE": 0.0,
+   "pct_AE": 23.1,
+   "pct_special_flood_hazard": 23.1,
+   "oceanfront": 0,
+   "marsh_side": 0,
+   "building_past_setback_line": 0,
+   "building_touches_baseline": 0,
+   "bill_sc_city_top": [
+    [
+     "PAWLEYS ISLAND",
+     226
+    ],
+    [
+     "MYRTLE BEACH",
+     34
+    ],
+    [
+     "GEORGETOWN",
+     25
+    ],
+    [
+     "CONWAY",
+     18
+    ],
+    [
+     "MURRELLS INLET",
+     16
+    ],
+    [
+     "FLORENCE",
+     9
+    ],
+    [
+     "CHARLESTON",
+     6
+    ],
+    [
+     "GREENVILLE",
+     6
+    ]
+   ]
+  }
+ },
+ "island_house_bfe": [
+  [
+   "AE",
+   12,
+   14
+  ],
+  [
+   "AE",
+   13,
+   47
+  ],
+  [
+   "AE",
+   14,
+   190
+  ],
+  [
+   "VE",
+   14,
+   89
+  ],
+  [
+   "VE",
+   15,
+   86
+  ],
+  [
+   "VE",
+   16,
+   53
+  ],
+  [
+   "X shaded",
+   -9999,
+   1
+  ]
+ ],
+ "island_main_road_miles": 3.53,
+ "town_lat_span_miles": 3.38,
+ "buildings_in_town": {
+  "2017": 557,
+  "2024": 561,
+  "2024_status": {
+   "existing": 527,
+   "demolished": 7,
+   "changed": 15,
+   "new": 12
+  }
+ }
+}

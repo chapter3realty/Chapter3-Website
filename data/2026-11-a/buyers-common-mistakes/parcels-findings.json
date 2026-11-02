@@ -1,0 +1,195 @@
+{
+ "method": [
+  "Who never filed for the 4 percent rate? Horry County houses bought in 2024-2025 (and, for comparison, 2018-2019),",
+  "owned by a person (not a company), whose tax bill is mailed to the house itself, split by assessment class.",
+  "Assessment class = AssessedProp / TaxableProp: about 0.04 = legal residence (4%), about 0.06 = all other (6%).",
+  "\"Mailed to the house\" = the owner mailing house number and street name (suffix, direction and spacing ignored) match the county address point, and the mailing state is SC with a 295xx ZIP.",
+  "Houses only: land use 101, not a condo (no 'HPR' in the legal description), building value > 0, one address point."
+ ],
+ "periods": {
+  "2024-2025": {
+   "houses": 25411,
+   "person": 21045,
+   "person_one_address": 19749,
+   "mailed_elsewhere": 3614,
+   "mailed_elsewhere_6%": 2848,
+   "2025_mailed_elsewhere": 2092,
+   "2025_mailed_elsewhere_6%": 1701,
+   "mailed_to_house": 16135,
+   "mailed_to_house_4%": 13210,
+   "2024_mailed_to_house": 7633,
+   "2024_mailed_to_house_4%": 6542,
+   "mailed_elsewhere_4%": 766,
+   "2024_mailed_elsewhere": 1522,
+   "2024_mailed_elsewhere_4%": 375,
+   "2025_mailed_elsewhere_4%": 391,
+   "2025_mailed_to_house": 8502,
+   "2025_mailed_to_house_4%": 6668,
+   "person_po_box_or_no_number": 164,
+   "company_or_trust": 4366,
+   "mailed_to_house_6%": 2925,
+   "2025_mailed_to_house_6%": 1834,
+   "2024_mailed_to_house_6%": 1091,
+   "2024_mailed_elsewhere_6%": 1147,
+   "person_not_one_address": 1296,
+   "mailed_to_house_share_6pct": 0.1813,
+   "mailed_elsewhere_share_6pct": 0.788,
+   "2024_mailed_to_house_share_6pct": 0.1429,
+   "2025_mailed_to_house_share_6pct": 0.2157,
+   "district100_mailed_to_house_6pct": {
+    "n": 613,
+    "median_yearly_gap": 2745,
+    "sum_yearly_gap": 1773301,
+    "rule": "gap = TaxableProp x 0.06 x 201.0/1000 - TaxableProp x 0.04 x 91.9/1000 (2026 district 100 millage, school operating 109.1 exempt at 4%)"
+   },
+   "median_taxable": {
+    "mailed_elsewhere_6%": 358150,
+    "mailed_to_house_4%": 351584,
+    "mailed_elsewhere_4%": 350000,
+    "mailed_to_house_6%": 342468
+   },
+   "mailed_to_house_6pct_by_tax_district_top": [
+    [
+     "100",
+     613
+    ],
+    [
+     "600",
+     350
+    ],
+    [
+     "500",
+     325
+    ],
+    [
+     "630",
+     296
+    ],
+    [
+     "800",
+     219
+    ],
+    [
+     "550",
+     199
+    ],
+    [
+     "110",
+     172
+    ],
+    [
+     "250",
+     148
+    ],
+    [
+     "610",
+     100
+    ],
+    [
+     "400",
+     98
+    ],
+    [
+     "880",
+     86
+    ],
+    [
+     "200",
+     60
+    ]
+   ]
+  },
+  "2018-2019": {
+   "houses": 11525,
+   "person": 10708,
+   "person_one_address": 10286,
+   "mailed_elsewhere": 1882,
+   "mailed_elsewhere_6%": 1187,
+   "2018_mailed_elsewhere": 917,
+   "2018_mailed_elsewhere_6%": 583,
+   "mailed_to_house": 8404,
+   "mailed_to_house_4%": 7921,
+   "2018_mailed_to_house": 4025,
+   "2018_mailed_to_house_4%": 3795,
+   "2019_mailed_to_house": 4379,
+   "2019_mailed_to_house_4%": 4126,
+   "mailed_elsewhere_4%": 695,
+   "2018_mailed_elsewhere_4%": 334,
+   "company_or_trust": 817,
+   "mailed_to_house_6%": 483,
+   "2018_mailed_to_house_6%": 230,
+   "2019_mailed_elsewhere": 965,
+   "2019_mailed_elsewhere_6%": 604,
+   "2019_mailed_elsewhere_4%": 361,
+   "person_po_box_or_no_number": 151,
+   "2019_mailed_to_house_6%": 253,
+   "person_not_one_address": 422,
+   "mailed_to_house_share_6pct": 0.0575,
+   "mailed_elsewhere_share_6pct": 0.6307,
+   "2018_mailed_to_house_share_6pct": 0.0571,
+   "2019_mailed_to_house_share_6pct": 0.0578,
+   "district100_mailed_to_house_6pct": {
+    "n": 109,
+    "median_yearly_gap": 1861,
+    "sum_yearly_gap": 213527,
+    "rule": "gap = TaxableProp x 0.06 x 201.0/1000 - TaxableProp x 0.04 x 91.9/1000 (2026 district 100 millage, school operating 109.1 exempt at 4%)"
+   },
+   "median_taxable": {
+    "mailed_elsewhere_6%": 250988,
+    "mailed_to_house_4%": 274367,
+    "mailed_elsewhere_4%": 266271,
+    "mailed_to_house_6%": 229310
+   },
+   "mailed_to_house_6pct_by_tax_district_top": [
+    [
+     "100",
+     109
+    ],
+    [
+     "600",
+     64
+    ],
+    [
+     "500",
+     58
+    ],
+    [
+     "630",
+     45
+    ],
+    [
+     "110",
+     41
+    ],
+    [
+     "800",
+     27
+    ],
+    [
+     "550",
+     25
+    ],
+    [
+     "880",
+     20
+    ],
+    [
+     "610",
+     20
+    ],
+    [
+     "250",
+     10
+    ],
+    [
+     "400",
+     9
+    ],
+    [
+     "200",
+     7
+    ]
+   ]
+  }
+ }
+}

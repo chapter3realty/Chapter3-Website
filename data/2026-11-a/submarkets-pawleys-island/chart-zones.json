@@ -1,0 +1,80 @@
+{
+ "note": "Houses with a 2024 county building footprint; sales are last recorded deeds of $10,000 or more, 12 months = 2025-10-01 to 2026-09-30, 3 years = 2023-10-01 to 2026-09-30. Georgetown County GIS.",
+ "rows": [
+  {
+   "zone": "island",
+   "label": "Pawleys Island (the town)",
+   "houses": 480,
+   "sales_12m": 10,
+   "median_sale_12m": 2450000,
+   "sales_3y": 28,
+   "median_sale_3y": 2450000,
+   "pct_legal_residence": 20.6,
+   "pct_bill_outside_sc": 29.8,
+   "pct_market_sale_last5y": 9.2,
+   "pct_last_deed_nominal": 61.5,
+   "pct_high_risk_flood_zone": 99.8,
+   "pct_VE": 47.5
+  },
+  {
+   "zone": "litchfield",
+   "label": "Litchfield, ocean side of US 17",
+   "houses": 1214,
+   "sales_12m": 50,
+   "median_sale_12m": 1250000,
+   "sales_3y": 137,
+   "median_sale_3y": 1100000,
+   "pct_legal_residence": 41.4,
+   "pct_bill_outside_sc": 28.8,
+   "pct_market_sale_last5y": 18.5,
+   "pct_last_deed_nominal": 40.5,
+   "pct_high_risk_flood_zone": 96.6,
+   "pct_VE": 15.7
+  },
+  {
+   "zone": "east_marsh",
+   "label": "Mainland behind the island, east of US 17",
+   "houses": 1265,
+   "sales_12m": 59,
+   "median_sale_12m": 700000,
+   "sales_3y": 151,
+   "median_sale_3y": 690000,
+   "pct_legal_residence": 70.9,
+   "pct_bill_outside_sc": 16.4,
+   "pct_market_sale_last5y": 20.2,
+   "pct_last_deed_nominal": 34.5,
+   "pct_high_risk_flood_zone": 40.4,
+   "pct_VE": 8.1
+  },
+  {
+   "zone": "west17",
+   "label": "West of US 17",
+   "houses": 4849,
+   "sales_12m": 220,
+   "median_sale_12m": 580000,
+   "sales_3y": 570,
+   "median_sale_3y": 570000,
+   "pct_legal_residence": 85.7,
+   "pct_bill_outside_sc": 8.0,
+   "pct_market_sale_last5y": 19.6,
+   "pct_last_deed_nominal": 32.9,
+   "pct_high_risk_flood_zone": 5.5,
+   "pct_VE": 0.0
+  },
+  {
+   "zone": "debordieu",
+   "label": "DeBordieu",
+   "houses": 312,
+   "sales_12m": 21,
+   "median_sale_12m": 1725000,
+   "sales_3y": 41,
+   "median_sale_3y": 1650000,
+   "pct_legal_residence": 60.6,
+   "pct_bill_outside_sc": 28.2,
+   "pct_market_sale_last5y": 17.0,
+   "pct_last_deed_nominal": 41.0,
+   "pct_high_risk_flood_zone": 84.3,
+   "pct_VE": 1.0
+  }
+ ]
+}

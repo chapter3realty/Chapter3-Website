@@ -1,0 +1,93 @@
+{
+  "count": 8,
+  "MetYearAnnualOutlook": [
+    {
+      "stnId": "8661070",
+      "stnName": "Springmaid Pier, SC",
+      "lat": "33.655",
+      "lon": "-78.9183",
+      "metYear": 2019,
+      "highConf": 8,
+      "lowConf": 3,
+      "projectDate": "2019-05-31",
+      "projectMethod": "Linear with ENSO Sensitivity"
+    },
+    {
+      "stnId": "8661070",
+      "stnName": "Springmaid Pier, SC",
+      "lat": "33.655",
+      "lon": "-78.9183",
+      "metYear": 2020,
+      "highConf": 6,
+      "lowConf": 2,
+      "projectDate": "2020-06-15",
+      "projectMethod": "Linear with ENSO Sensitivity"
+    },
+    {
+      "stnId": "8661070",
+      "stnName": "Springmaid Pier, SC",
+      "lat": "33.655",
+      "lon": "-78.9183",
+      "metYear": 2021,
+      "highConf": 9,
+      "lowConf": 4,
+      "projectDate": "2021-05-13",
+      "projectMethod": "Quadratic"
+    },
+    {
+      "stnId": "8661070",
+      "stnName": "Springmaid Pier, SC",
+      "lat": "33.655",
+      "lon": "-78.9183",
+      "metYear": 2022,
+      "highConf": 10,
+      "lowConf": 5,
+      "projectDate": "2022-05-20",
+      "projectMethod": "Quadratic"
+    },
+    {
+      "stnId": "8661070",
+      "stnName": "Springmaid Pier, SC",
+      "lat": "33.655",
+      "lon": "-78.9183",
+      "metYear": 2023,
+      "highConf": 11,
+      "lowConf": 6,
+      "projectDate": "2023-06-27",
+      "projectMethod": "Quadratic"
+    },
+    {
+      "stnId": "8661070",
+      "stnName": "Springmaid Pier, SC",
+      "lat": "33.655",
+      "lon": "-78.9183",
+      "metYear": 2024,
+      "highConf": 12,
+      "lowConf": 7,
+      "projectDate": "2024-06-20",
+      "projectMethod": "Quadratic"
+    },
+    {
+      "stnId": "8661070",
+      "stnName": "Springmaid Pier, SC",
+      "lat": "33.655",
+      "lon": "-78.9183",
+      "metYear": 2025,
+      "highConf": 13,
+      "lowConf": 8,
+      "projectDate": "2025-06-24",
+      "projectMethod": "Quadratic"
+    },
+    {
+      "stnId": "8661070",
+      "stnName": "Springmaid Pier, SC",
+      "lat": "33.655",
+      "lon": "-78.9183",
+      "metYear": 2026,
+      "highConf": 12,
+      "lowConf": 8,
+      "projectDate": "2026-06-24",
+      "projectMethod": "Quadratic"
+    }
+  ]
+}

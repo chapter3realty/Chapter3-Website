@@ -1,0 +1,274 @@
+{
+ "HIDDEN BROOKE": {
+  "airport_terminal": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.685180,33.868100;-78.922789,33.681467?overview=false&steps=true",
+   "duration_s": 2420.8,
+   "distance_m": 39140.6,
+   "minutes": 40.3,
+   "miles": 24.3,
+   "main_roads": [
+    "Flowering Branch Avenue",
+    "SC 90",
+    "SC 31",
+    "S-26-1315",
+    "US 17",
+    "S-26-1244"
+   ]
+  },
+  "barefoot_landing": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.685180,33.868100;-78.742440,33.799875?overview=false&steps=true",
+   "duration_s": 1275.4,
+   "distance_m": 14784.8,
+   "minutes": 21.3,
+   "miles": 9.2,
+   "main_roads": [
+    "Flowering Branch Avenue",
+    "SC 90",
+    "Robert Edge Parkway",
+    "US 17"
+   ]
+  },
+  "coastal_grand": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.685180,33.868100;-78.922317,33.702751?overview=false&steps=true",
+   "duration_s": 2118.4,
+   "distance_m": 34108.3,
+   "minutes": 35.3,
+   "miles": 21.2,
+   "main_roads": [
+    "Flowering Branch Avenue",
+    "SC 90",
+    "SC 31",
+    "S-26-1315",
+    "US 17"
+   ]
+  },
+  "old_village_place_point": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.685180,33.868100;-78.623258,33.872701?overview=false&steps=true",
+   "duration_s": 802.7,
+   "distance_m": 8072.9,
+   "minutes": 13.4,
+   "miles": 5.0,
+   "main_roads": [
+    "Pecan Street",
+    "S-26-20",
+    "SC 90",
+    "US 17"
+   ]
+  },
+  "little_river_waterfront_mineola": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.685180,33.868100;-78.616290,33.875290?overview=false&steps=true",
+   "duration_s": 839.7,
+   "distance_m": 8649.8,
+   "minutes": 14.0,
+   "miles": 5.4,
+   "main_roads": [
+    "Pecan Street",
+    "S-26-20",
+    "SC 90",
+    "US 17"
+   ]
+  },
+  "mcleod_seacoast": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.685180,33.868100;-78.663710,33.865730?overview=false&steps=true",
+   "duration_s": 513.1,
+   "distance_m": 3309.4,
+   "minutes": 8.6,
+   "miles": 2.1,
+   "main_roads": [
+    "Pecan Street"
+   ]
+  },
+  "cherry_grove_pier": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.685180,33.868100;-78.632676,33.828732?overview=false&steps=true",
+   "duration_s": 925.4,
+   "distance_m": 8802.2,
+   "minutes": 15.4,
+   "miles": 5.5,
+   "main_roads": [
+    "Pecan Street",
+    "S-26-20",
+    "North Ocean Boulevard"
+   ]
+  }
+ },
+ "PALM LAKES PLANTATION": {
+  "airport_terminal": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.695570,33.870160;-78.922789,33.681467?overview=false&steps=true",
+   "duration_s": 2343,
+   "distance_m": 38142.1,
+   "minutes": 39.0,
+   "miles": 23.7,
+   "main_roads": [
+    "Mount Zion Road",
+    "SC 31",
+    "S-26-1315",
+    "US 17",
+    "S-26-1244"
+   ]
+  },
+  "barefoot_landing": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.695570,33.870160;-78.742440,33.799875?overview=false&steps=true",
+   "duration_s": 1197.6,
+   "distance_m": 13786.3,
+   "minutes": 20.0,
+   "miles": 8.6,
+   "main_roads": [
+    "Mount Zion Road",
+    "Robert Edge Parkway",
+    "US 17"
+   ]
+  },
+  "coastal_grand": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.695570,33.870160;-78.922317,33.702751?overview=false&steps=true",
+   "duration_s": 2040.6,
+   "distance_m": 33109.8,
+   "minutes": 34.0,
+   "miles": 20.6,
+   "main_roads": [
+    "Mount Zion Road",
+    "SC 31",
+    "S-26-1315",
+    "US 17"
+   ]
+  },
+  "old_village_place_point": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.695570,33.870160;-78.623258,33.872701?overview=false&steps=true",
+   "duration_s": 851.6,
+   "distance_m": 11084.4,
+   "minutes": 14.2,
+   "miles": 6.9,
+   "main_roads": [
+    "Palm Lakes Boulevard",
+    "S-26-57",
+    "SC 9",
+    "S-26-20",
+    "SC 90",
+    "US 17"
+   ]
+  },
+  "little_river_waterfront_mineola": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.695570,33.870160;-78.616290,33.875290?overview=false&steps=true",
+   "duration_s": 888.6,
+   "distance_m": 11661.3,
+   "minutes": 14.8,
+   "miles": 7.2,
+   "main_roads": [
+    "Palm Lakes Boulevard",
+    "S-26-57",
+    "SC 9",
+    "S-26-20",
+    "SC 90",
+    "US 17"
+   ]
+  },
+  "mcleod_seacoast": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.695570,33.870160;-78.663710,33.865730?overview=false&steps=true",
+   "duration_s": 548.5,
+   "distance_m": 6259.4,
+   "minutes": 9.1,
+   "miles": 3.9,
+   "main_roads": [
+    "Palm Lakes Boulevard",
+    "S-26-57",
+    "SC 9"
+   ]
+  },
+  "cherry_grove_pier": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.695570,33.870160;-78.632676,33.828732?overview=false&steps=true",
+   "duration_s": 974.3,
+   "distance_m": 11813.7,
+   "minutes": 16.2,
+   "miles": 7.3,
+   "main_roads": [
+    "Palm Lakes Boulevard",
+    "S-26-57",
+    "SC 9",
+    "S-26-20",
+    "North Ocean Boulevard"
+   ]
+  }
+ },
+ "WATERFALL": {
+  "airport_terminal": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.699830,33.860410;-78.922789,33.681467?overview=false&steps=true",
+   "duration_s": 2105.9,
+   "distance_m": 36588.5,
+   "minutes": 35.1,
+   "miles": 22.7,
+   "main_roads": [
+    "SC 31",
+    "S-26-1315",
+    "US 17",
+    "S-26-1244"
+   ]
+  },
+  "barefoot_landing": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.699830,33.860410;-78.742440,33.799875?overview=false&steps=true",
+   "duration_s": 960.5,
+   "distance_m": 12232.6,
+   "minutes": 16.0,
+   "miles": 7.6,
+   "main_roads": [
+    "Robert Edge Parkway",
+    "US 17"
+   ]
+  },
+  "coastal_grand": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.699830,33.860410;-78.922317,33.702751?overview=false&steps=true",
+   "duration_s": 1803.5,
+   "distance_m": 31556.1,
+   "minutes": 30.1,
+   "miles": 19.6,
+   "main_roads": [
+    "SC 31",
+    "S-26-1315",
+    "US 17"
+   ]
+  },
+  "old_village_place_point": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.699830,33.860410;-78.623258,33.872701?overview=false&steps=true",
+   "duration_s": 662.6,
+   "distance_m": 8649.9,
+   "minutes": 11.0,
+   "miles": 5.4,
+   "main_roads": [
+    "SC 90",
+    "US 17"
+   ]
+  },
+  "little_river_waterfront_mineola": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.699830,33.860410;-78.616290,33.875290?overview=false&steps=true",
+   "duration_s": 699.6,
+   "distance_m": 9226.8,
+   "minutes": 11.7,
+   "miles": 5.7,
+   "main_roads": [
+    "SC 90",
+    "US 17"
+   ]
+  },
+  "mcleod_seacoast": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.699830,33.860410;-78.663710,33.865730?overview=false&steps=true",
+   "duration_s": 515.2,
+   "distance_m": 5891,
+   "minutes": 8.6,
+   "miles": 3.7,
+   "main_roads": [
+    "SC 90",
+    "S-26-20"
+   ]
+  },
+  "cherry_grove_pier": {
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.699830,33.860410;-78.632676,33.828732?overview=false&steps=true",
+   "duration_s": 791.5,
+   "distance_m": 9379.2,
+   "minutes": 13.2,
+   "miles": 5.8,
+   "main_roads": [
+    "SC 90",
+    "S-26-20",
+    "North Ocean Boulevard"
+   ]
+  }
+ }
+}

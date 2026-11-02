@@ -1,0 +1,176 @@
+DECENNIALPL2020.P1 160XX00US4555015 {'P1_038N': '0', 'P1_014N': '0', 'P1_026N': '0', 'P1_002N': '126', 'P1_054N': '0', 'P1_066N': '0', 'P1_030N': '0', 'P1_042N': '0', 'P1_040N': '0', 'P1_009N': '4', 'P1_049N': '0', 'P1_025N': '0', 'P1_037N': '0', 'P1_001N': '130', 'P1_013N': '3', 'P1_065N': '0', 'P1_041N': '0', 'P1_053N': '0', 'P1_051N': '0', 'P1_008N': '0', 'P1_036N': '0', 'P1_048N': '0', 'P1_012N': '0', 'P1_024N': '0', 'P1_052N': '0', 'P1_064N': '0', 'P1_050N': '0', 'P1_062N': '0', 'P1_007N': '1', 'P1_019N': '0', 'P1_047N': '0',
+DECENNIALPL2020.P1 160XX00US4541830 {'P1_038N': '0', 'P1_014N': '0', 'P1_026N': '16', 'P1_002N': '8053', 'P1_054N': '0', 'P1_066N': '0', 'P1_030N': '3', 'P1_042N': '0', 'P1_040N': '0', 'P1_009N': '317', 'P1_049N': '1', 'P1_025N': '0', 'P1_037N': '0', 'P1_001N': '8370', 'P1_013N': '16', 'P1_065N': '0', 'P1_041N': '0', 'P1_053N': '0', 'P1_051N': '0', 'P1_008N': '94', 'P1_036N': '0', 'P1_048N': '0', 'P1_012N': '83', 'P1_024N': '1', 'P1_052N': '0', 'P1_064N': '1', 'P1_050N': '0', 'P1_062N': '0', 'P1_007N': '10', 'P1_019N': '11', 'P1_0
+DECENNIALPL2020.P1 160XX00US4518810 {'P1_038N': '0', 'P1_014N': '0', 'P1_026N': '0', 'P1_002N': '839', 'P1_054N': '0', 'P1_066N': '0', 'P1_030N': '0', 'P1_042N': '0', 'P1_040N': '0', 'P1_009N': '19', 'P1_049N': '0', 'P1_025N': '0', 'P1_037N': '0', 'P1_001N': '858', 'P1_013N': '0', 'P1_065N': '0', 'P1_041N': '0', 'P1_053N': '0', 'P1_051N': '0', 'P1_008N': '2', 'P1_036N': '0', 'P1_048N': '0', 'P1_012N': '7', 'P1_024N': '0', 'P1_052N': '0', 'P1_064N': '0', 'P1_050N': '0', 'P1_062N': '0', 'P1_007N': '0', 'P1_019N': '0', 'P1_047N': '0'
+DECENNIALPL2020.P1 860XX00US29585 Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json,sys;d=json.load(open(sys.argv[1]))['response']['data'];print({k:v for k,v in zip(d[0],d[1]) if not k.endswith(('A','M','NA'))})
+                      ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/usr/local/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+DECENNIALPL2020.P1 050XX00US45043 {'P1_038N': '0', 'P1_014N': '10', 'P1_026N': '83', 'P1_002N': '61323', 'P1_054N': '1', 'P1_066N': '0', 'P1_030N': '8', 'P1_042N': '0', 'P1_040N': '2', 'P1_009N': '2081', 'P1_049N': '2', 'P1_025N': '0', 'P1_037N': '0', 'P1_001N': '63404', 'P1_013N': '86', 'P1_065N': '0', 'P1_041N': '0', 'P1_053N': '0', 'P1_051N': '4', 'P1_008N': '1181', 'P1_036N': '0', 'P1_048N': '0', 'P1_012N': '535', 'P1_024N': '2', 'P1_052N': '3', 'P1_064N': '1', 'P1_050N': '23', 'P1_062N': '0', 'P1_007N': '35', 'P1_019N': '52
+DECENNIALPL2020.H1 160XX00US4555015 {'GEO_ID': '1600000US4555015', 'H1_001N': '536', 'H1_002N': '77', 'H1_003N': '459', 'NAME': 'Pawleys Island town, South Carolina'}
+DECENNIALPL2020.H1 160XX00US4541830 {'GEO_ID': '1600000US4541830', 'H1_001N': '6444', 'H1_002N': '3988', 'H1_003N': '2456', 'NAME': 'Litchfield Beach CDP, South Carolina'}
+DECENNIALPL2020.H1 160XX00US4518810 {'GEO_ID': '1600000US4518810', 'H1_001N': '885', 'H1_002N': '387', 'H1_003N': '498', 'NAME': 'DeBordieu Colony CDP, South Carolina'}
+DECENNIALPL2020.H1 860XX00US29585 Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json,sys;d=json.load(open(sys.argv[1]))['response']['data'];print({k:v for k,v in zip(d[0],d[1]) if not k.endswith(('A','M','NA'))})
+                      ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/usr/local/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+DECENNIALPL2020.H1 050XX00US45043 {'GEO_ID': '0500000US45043', 'H1_001N': '35916', 'H1_002N': '27231', 'H1_003N': '8685', 'NAME': 'Georgetown County, South Carolina'}
+DECENNIALDHC2020.H5 160XX00US4555015 {'H5_006N': '368', 'H5_005N': '0', 'H5_008N': '8', 'H5_007N': '0', 'H5_002N': '63', 'H5_001N': '459', 'H5_004N': '5', 'NAME': 'Pawleys Island town, South Carolina', 'H5_003N': '15', 'GEO_ID': '1600000US4555015'}
+DECENNIALDHC2020.H5 160XX00US4541830 {'H5_006N': '2011', 'H5_005N': '45', 'H5_008N': '103', 'H5_007N': '0', 'H5_002N': '161', 'H5_001N': '2456', 'H5_004N': '100', 'NAME': 'Litchfield Beach CDP, South Carolina', 'H5_003N': '36', 'GEO_ID': '1600000US4541830'}
+DECENNIALDHC2020.H5 160XX00US4518810 {'H5_006N': '474', 'H5_005N': '3', 'H5_008N': '3', 'H5_007N': '0', 'H5_002N': '14', 'H5_001N': '498', 'H5_004N': '4', 'NAME': 'DeBordieu Colony CDP, South Carolina', 'H5_003N': '0', 'GEO_ID': '1600000US4518810'}
+DECENNIALDHC2020.H5 860XX00US29585 {'H5_006N': '3081', 'H5_005N': '76', 'H5_008N': '198', 'H5_007N': '0', 'H5_002N': '283', 'H5_001N': '3925', 'H5_004N': '171', 'NAME': 'ZCTA5 29585', 'H5_003N': '116', 'GEO_ID': '860Z200US29585'}
+DECENNIALDHC2020.H5 050XX00US45043 {'H5_006N': '5432', 'H5_005N': '231', 'H5_008N': '1478', 'H5_007N': '5', 'H5_002N': '867', 'H5_001N': '8685', 'H5_004N': '400', 'NAME': 'Georgetown County, South Carolina', 'H5_003N': '272', 'GEO_ID': '0500000US45043'}
+DECENNIALDHC2020.P13 160XX00US4555015 {'GEO_ID': '1600000US4555015', 'P13_001N': '66.5', 'P13_002N': '66.8', 'NAME': 'Pawleys Island town, South Carolina', 'P13_003N': '66.3'}
+DECENNIALDHC2020.P13 160XX00US4541830 {'GEO_ID': '1600000US4541830', 'P13_001N': '62.1', 'P13_002N': '61.8', 'NAME': 'Litchfield Beach CDP, South Carolina', 'P13_003N': '62.4'}
+DECENNIALDHC2020.P13 160XX00US4518810 {'GEO_ID': '1600000US4518810', 'P13_001N': '64.6', 'P13_002N': '65.0', 'NAME': 'DeBordieu Colony CDP, South Carolina', 'P13_003N': '64.3'}
+DECENNIALDHC2020.P13 860XX00US29585 {'GEO_ID': '860Z200US29585', 'P13_001N': '60.5', 'P13_002N': '60.0', 'NAME': 'ZCTA5 29585', 'P13_003N': '60.8'}
+DECENNIALDHC2020.P13 050XX00US45043 {'GEO_ID': '0500000US45043', 'P13_001N': '51.9', 'P13_002N': '50.6', 'NAME': 'Georgetown County, South Carolina', 'P13_003N': '53.1'}
+DECENNIALDHC2020.H12 160XX00US4555015 {'H12_009N': '1', 'H12_007N': '2', 'H12_005N': '3', 'H12_017N': '0', 'H12_003N': '27', 'H12_015N': '0', 'H12_001N': '77', 'H12_013N': '1', 'H12_011N': '0', 'H12_008N': '5', 'H12_016N': '1', 'H12_006N': '5', 'NAME': 'Pawleys Island town, South Carolina', 'GEO_ID': '1600000US4555015', 'H12_014N': '2', 'H12_004N': '27', 'H12_012N': '3', 'H12_002N': '70', 'H12_010N': '7'}
+DECENNIALDHC2020.H12 160XX00US4541830 {'H12_009N': '11', 'H12_007N': '94', 'H12_005N': '304', 'H12_017N': '7', 'H12_003N': '853', 'H12_015N': '19', 'H12_001N': '3988', 'H12_013N': '80', 'H12_011N': '324', 'H12_008N': '23', 'H12_016N': '7', 'H12_006N': '229', 'NAME': 'Litchfield Beach CDP, South Carolina', 'GEO_ID': '1600000US4541830', 'H12_014N': '56', 'H12_004N': '1742', 'H12_012N': '239', 'H12_002N': '3256', 'H12_010N': '732'}
+DECENNIALDHC2020.H12 160XX00US4518810 {'H12_009N': '3', 'H12_007N': '13', 'H12_005N': '30', 'H12_017N': '0', 'H12_003N': '52', 'H12_015N': '1', 'H12_001N': '387', 'H12_013N': '7', 'H12_011N': '2', 'H12_008N': '0', 'H12_016N': '0', 'H12_006N': '21', 'NAME': 'DeBordieu Colony CDP, South Carolina', 'GEO_ID': '1600000US4518810', 'H12_014N': '0', 'H12_004N': '249', 'H12_012N': '9', 'H12_002N': '368', 'H12_010N': '19'}
+DECENNIALDHC2020.H12 860XX00US29585 {'H12_009N': '31', 'H12_007N': '188', 'H12_005N': '698', 'H12_017N': '10', 'H12_003N': '1612', 'H12_015N': '34', 'H12_001N': '7648', 'H12_013N': '149', 'H12_011N': '462', 'H12_008N': '60', 'H12_016N': '15', 'H12_006N': '532', 'NAME': 'ZCTA5 29585', 'GEO_ID': '860Z200US29585', 'H12_014N': '89', 'H12_004N': '3389', 'H12_012N': '379', 'H12_002N': '6510', 'H12_010N': '1138'}
+DECENNIALDHC2020.H12 050XX00US45043 {'H12_009N': '231', 'H12_007N': '878', 'H12_005N': '2853', 'H12_017N': '78', 'H12_003N': '5575', 'H12_015N': '313', 'H12_001N': '27231', 'H12_013N': '884', 'H12_011N': '2119', 'H12_008N': '296', 'H12_016N': '137', 'H12_006N': '2034', 'NAME': 'Georgetown County, South Carolina', 'GEO_ID': '0500000US45043', 'H12_014N': '608', 'H12_004N': '9572', 'H12_012N': '1653', 'H12_002N': '21439', 'H12_010N': '5792'}
+DECENNIALSF12010.P1 160XX00US4555015 {'GEO_ID': '1600000US4555015', 'P001001ERR': None, 'P001001': '103', 'NAME': 'Pawleys Island town, South Carolina'}
+DECENNIALSF12010.P1 160XX00US4541830 Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json,sys;d=json.load(open(sys.argv[1]))['response']['data'];print({k:v for k,v in zip(d[0],d[1]) if not k.endswith(('A','M','NA'))})
+                      ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/usr/local/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+DECENNIALSF12010.P1 160XX00US4518810 Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json,sys;d=json.load(open(sys.argv[1]))['response']['data'];print({k:v for k,v in zip(d[0],d[1]) if not k.endswith(('A','M','NA'))})
+                      ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/usr/local/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+DECENNIALSF12010.P1 860XX00US29585 {'GEO_ID': '8600000US29585', 'P001001ERR': None, 'P001001': '13606', 'NAME': 'ZCTA5 29585'}
+DECENNIALSF12010.P1 050XX00US45043 {'GEO_ID': '0500000US45043', 'P001001ERR': None, 'P001001': '60158', 'NAME': 'Georgetown County, South Carolina'}
+DECENNIALSF12010.H1 160XX00US4555015 {'GEO_ID': '1600000US4555015', 'H001001ERR': None, 'H001001': '528', 'NAME': 'Pawleys Island town, South Carolina'}
+DECENNIALSF12010.H1 160XX00US4541830 Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json,sys;d=json.load(open(sys.argv[1]))['response']['data'];print({k:v for k,v in zip(d[0],d[1]) if not k.endswith(('A','M','NA'))})
+                      ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/usr/local/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+DECENNIALSF12010.H1 160XX00US4518810 Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json,sys;d=json.load(open(sys.argv[1]))['response']['data'];print({k:v for k,v in zip(d[0],d[1]) if not k.endswith(('A','M','NA'))})
+                      ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/usr/local/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+DECENNIALSF12010.H1 860XX00US29585 {'GEO_ID': '8600000US29585', 'H001001ERR': None, 'H001001': '10448', 'NAME': 'ZCTA5 29585'}
+DECENNIALSF12010.H1 050XX00US45043 {'GEO_ID': '0500000US45043', 'H001001ERR': None, 'H001001': '33672', 'NAME': 'Georgetown County, South Carolina'}
+DECENNIALSF12010.H5 160XX00US4555015 {'GEO_ID': '1600000US4555015', 'H005003': '0', 'H005004': '9', 'H005001': '470', 'H005001ERR': None, 'H005002': '224', 'H005007': '0', 'H005008': '1', 'H005005': '0', 'H005006': '236', 'NAME': 'Pawleys Island town, South Carolina'}
+DECENNIALSF12010.H5 160XX00US4541830 Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json,sys;d=json.load(open(sys.argv[1]))['response']['data'];print({k:v for k,v in zip(d[0],d[1]) if not k.endswith(('A','M','NA'))})
+                      ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/usr/local/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+DECENNIALSF12010.H5 160XX00US4518810 Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json,sys;d=json.load(open(sys.argv[1]))['response']['data'];print({k:v for k,v in zip(d[0],d[1]) if not k.endswith(('A','M','NA'))})
+                      ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/usr/local/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+DECENNIALSF12010.H5 860XX00US29585 {'GEO_ID': '8600000US29585', 'H005003': '23', 'H005004': '242', 'H005001': '4273', 'H005001ERR': None, 'H005002': '1095', 'H005007': '0', 'H005008': '199', 'H005005': '35', 'H005006': '2679', 'NAME': 'ZCTA5 29585'}
+DECENNIALSF12010.H5 050XX00US45043 {'GEO_ID': '0500000US45043', 'H005003': '68', 'H005004': '604', 'H005001': '9148', 'H005001ERR': None, 'H005002': '1985', 'H005007': '7', 'H005008': '1258', 'H005005': '114', 'H005006': '5112', 'NAME': 'Georgetown County, South Carolina'}

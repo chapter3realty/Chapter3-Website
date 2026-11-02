@@ -1,0 +1,12 @@
+[out:json][timeout:120];
+(
+  way["highway"]["ref"~"US 17"](33.36,-79.25,33.53,-79.03);
+  way["highway"]["name"~"Causeway|Myrtle Avenue|Atlantic Avenue|Springs Avenue|Waccamaw Neck|Willbrook|Kings River|Petigru|Waverly"](33.36,-79.25,33.53,-79.03);
+  way["natural"="wetland"](33.38,-79.16,33.50,-79.06);
+  way["natural"="water"](33.38,-79.16,33.50,-79.06);
+  nwr["amenity"="place_of_worship"](33.40,-79.16,33.47,-79.10);
+  nwr["historic"](33.38,-79.18,33.50,-79.06);
+  nwr["tourism"](33.38,-79.18,33.50,-79.06);
+  nwr["leisure"="park"](33.38,-79.18,33.50,-79.06);
+);
+out geom tags;

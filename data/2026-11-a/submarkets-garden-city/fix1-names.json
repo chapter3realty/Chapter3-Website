@@ -1,0 +1,833 @@
+{
+ "note": "Fix round 1: neighborhood and street names by part, for /submarkets/garden-city/. Counts only, no addresses.\nNeighborhood: the first words of each home parcel's LegalDescr (County GIS layer 24), as the county records it.\nStreet: STREETNAME of each address point (layer 22) on a home parcel. Parts from parcel-zones.json (analyze.py).\nRun: RAW=<scratch raw> python3 -I names.py <datadir>. Writes <datadir>/fix1-names.json.",
+ "neighborhoods": {
+  "beach/condo": [
+   [
+    "ROYAL GARDEN RESORT",
+    200
+   ],
+   [
+    "WATERS EDGE RESORT",
+    156
+   ],
+   [
+    "SURFMASTER",
+    144
+   ],
+   [
+    "SEAMASTER",
+    60
+   ],
+   [
+    "ONE OCEAN PLACE HPR",
+    58
+   ],
+   [
+    "ATALAYA TOWERS",
+    57
+   ],
+   [
+    "ONE OCEAN PLACE",
+    56
+   ],
+   [
+    "THE BCH HSE G CITY",
+    56
+   ],
+   [
+    "HORIZON EAST",
+    49
+   ],
+   [
+    "DUNESIDE",
+    39
+   ],
+   [
+    "CAR SHORES RESORT",
+    37
+   ],
+   [
+    "OCEAN COVE",
+    36
+   ],
+   [
+    "SEA OAKS HPR",
+    32
+   ],
+   [
+    "SEA MYSTIQUE",
+    22
+   ],
+   [
+    "MARITIME PLACE",
+    21
+   ],
+   [
+    "SEASIDER",
+    20
+   ],
+   [
+    "DOLPHIN COVE HPR",
+    18
+   ],
+   [
+    "SEABANKS",
+    18
+   ],
+   [
+    "REFLECTIONS HPR",
+    17
+   ],
+   [
+    "DUNESIDE I",
+    17
+   ]
+  ],
+  "beach/house": [
+   [
+    "GARDEN CITY",
+    31
+   ],
+   [
+    "PORTOFINO",
+    12
+   ],
+   [
+    "BEACH VILLAS",
+    2
+   ],
+   [
+    "; S OF HWY NO 17",
+    1
+   ],
+   [
+    "MYRTLE DUNES",
+    1
+   ],
+   [
+    "WOODLAND TERRACE",
+    1
+   ]
+  ],
+  "beach/other": [
+   [
+    "KINGFISHER",
+    43
+   ],
+   [
+    "ATALAYA TOWERS",
+    22
+   ],
+   [
+    "PORTOFINO",
+    12
+   ],
+   [
+    "ADMIRALS QUARTERS",
+    5
+   ],
+   [
+    "GARDEN CITY",
+    3
+   ],
+   [
+    "BLDG ONLY",
+    1
+   ],
+   [
+    "SEA WATCH VIII",
+    1
+   ]
+  ],
+  "inland/condo": [
+   [
+    "SWEETWATER INDIAN WELLS",
+    280
+   ],
+   [
+    "SOUTH BAY LAKES",
+    160
+   ],
+   [
+    "JASMINE LAKE HPR",
+    142
+   ],
+   [
+    "TUPELO BAY GOLF VILLAS",
+    123
+   ],
+   [
+    "SOUTHBRIDGE",
+    107
+   ],
+   [
+    "SOUTH BAY LAKES VI HPR",
+    96
+   ],
+   [
+    "THE ADDISON HPR",
+    90
+   ],
+   [
+    "SOUTH BAY LAKES HPR",
+    72
+   ],
+   [
+    "SOUTH BAY LAKES V HPR",
+    64
+   ],
+   [
+    "SOUTH BAY LAKES VII HPR",
+    56
+   ],
+   [
+    "TUPELO BAY GOLF VL I",
+    45
+   ],
+   [
+    "SOUTHBRIDGE VI HPR",
+    36
+   ],
+   [
+    "SOUTHBRIDGE V HPR",
+    36
+   ],
+   [
+    "SOUTHBRIDGE VII HPR",
+    36
+   ],
+   [
+    "SOUTH BAY EAST HPR",
+    36
+   ],
+   [
+    "SOUTHBRIDGE I HPR",
+    36
+   ],
+   [
+    "INDIAN WELLS GOLF",
+    34
+   ],
+   [
+    "SWEETWTR @INDIAN WELLS",
+    26
+   ],
+   [
+    "JAMESTOWNE LANDING HPR",
+    22
+   ],
+   [
+    "SWEETWTR @ INDIAN WELLS",
+    18
+   ]
+  ],
+  "inland/house": [
+   [
+    "WOODLAKE VILLAGE",
+    204
+   ],
+   [
+    "HARBOUR VILLAGE",
+    159
+   ],
+   [
+    "MALLARD LANDING VILLAGE",
+    137
+   ],
+   [
+    "WOODLAKE VLG",
+    124
+   ],
+   [
+    "WOODLAKE",
+    111
+   ],
+   [
+    "MALLARD LNDING VLG",
+    47
+   ],
+   [
+    "MALLARD LNDG VLG WEST",
+    39
+   ],
+   [
+    "SEACROFT",
+    38
+   ],
+   [
+    "WATERWAY EST",
+    33
+   ],
+   [
+    "MALLARD LANDING PARK",
+    31
+   ],
+   [
+    "REFLECTION POINTE",
+    29
+   ],
+   [
+    "LIBERTY OAKS",
+    26
+   ],
+   [
+    "JAMES ENTERPRISES",
+    24
+   ],
+   [
+    "JAMESTOWNE COLONY",
+    17
+   ],
+   [
+    "JAMESTOWN COLONY",
+    16
+   ],
+   [
+    "JAMESTOWNE",
+    11
+   ],
+   [
+    "JAMESTOWN",
+    11
+   ],
+   [
+    "MALLARD LANDING",
+    8
+   ],
+   [
+    "JESSIE MURDOCK",
+    5
+   ],
+   [
+    "OCEAN BREEZE PLANTATION",
+    5
+   ]
+  ],
+  "inland/other": [
+   [
+    "OCEAN BREEZE PLANTATION",
+    71
+   ],
+   [
+    "GLENNS BAY TOWNHOMES",
+    47
+   ],
+   [
+    "JAMESTOWNE COLONY",
+    36
+   ],
+   [
+    "JAMESTOWN",
+    35
+   ],
+   [
+    "SULLIVAN'S LANDING",
+    33
+   ],
+   [
+    "GARDEN LAKES VILLAGE",
+    20
+   ],
+   [
+    "DEVON PLACE",
+    10
+   ],
+   [
+    "GARDEN LAKES VLG LT",
+    9
+   ],
+   [
+    "GARDEN LAKES VILL LT",
+    5
+   ],
+   [
+    "GARDEN LKS VLG LT",
+    4
+   ],
+   [
+    "JAMESTOWNE",
+    4
+   ],
+   [
+    "JAMES ENTERPRISES",
+    4
+   ],
+   [
+    "WOODLAKE VILLAGE",
+    4
+   ],
+   [
+    "JAMESTOWN COLONY",
+    4
+   ],
+   [
+    "JESSIE MURDOCK",
+    2
+   ],
+   [
+    "JAMESTOWNE S/D; BL K LT 1",
+    2
+   ],
+   [
+    "GARDEN LAKES VILL",
+    2
+   ],
+   [
+    "JAMESTOWNE SD",
+    1
+   ],
+   [
+    "; GARDEN LKS LT 54",
+    1
+   ],
+   [
+    "WILLIAM ARTHUR JAMES",
+    1
+   ]
+  ],
+  "middle/condo": [
+   [
+    "SANDY SHORES",
+    70
+   ],
+   [
+    "WHISPERING SANDS",
+    50
+   ],
+   [
+    "GARDEN CITY GUEST HOUSE",
+    42
+   ],
+   [
+    "MARSH WALK VILLAS AT",
+    36
+   ],
+   [
+    "MARSHSIDE INN",
+    36
+   ],
+   [
+    "GARDEN SANDS",
+    33
+   ],
+   [
+    "SANDY SHORES HPR",
+    19
+   ],
+   [
+    "HACIENDA GARDENS",
+    16
+   ],
+   [
+    "RETREAT @ GARDEN CITY HPR",
+    16
+   ],
+   [
+    "THE DRIFTER",
+    15
+   ],
+   [
+    "PORTOBELLO",
+    10
+   ],
+   [
+    "ANGLER VILLAS HPR",
+    10
+   ],
+   [
+    "KELLY COURT VILLAS HPR",
+    8
+   ],
+   [
+    "THE CODDAGE HPR",
+    8
+   ],
+   [
+    "N WACCAMAW HPR",
+    8
+   ],
+   [
+    "WOODLAND VILLAS HPR",
+    7
+   ],
+   [
+    "QUEENS COURT COTTAGES",
+    7
+   ],
+   [
+    "CYPRESS COVE HPR",
+    6
+   ],
+   [
+    "VISTA DRIVE HPR",
+    6
+   ],
+   [
+    "CYPRESS PLACE HPR",
+    4
+   ]
+  ],
+  "middle/house": [
+   [
+    "SALTERS COVE",
+    258
+   ],
+   [
+    "GARDEN CITY",
+    187
+   ],
+   [
+    "MT GILEAD",
+    187
+   ],
+   [
+    "MYRTLE DUNES",
+    145
+   ],
+   [
+    "PENDERGRASS HAYES",
+    75
+   ],
+   [
+    "WOODLAND TERR",
+    55
+   ],
+   [
+    "MT GILEAD PLACE",
+    51
+   ],
+   [
+    "SUMMERHOUSE",
+    49
+   ],
+   [
+    "WOODLAND TERRACE",
+    44
+   ],
+   [
+    "SALTERS BAY",
+    43
+   ],
+   [
+    "STANLEY COVE",
+    32
+   ],
+   [
+    "MT GILEAD MARSH S/D; LOT ",
+    30
+   ],
+   [
+    "MT GILEAD TRACE",
+    30
+   ],
+   [
+    "THE MARSH",
+    25
+   ],
+   [
+    "SOUTH MARSH",
+    21
+   ],
+   [
+    "STANLEY",
+    19
+   ],
+   [
+    "A J BAKER",
+    18
+   ],
+   [
+    "SURF WINDS",
+    14
+   ],
+   [
+    "C M STANLEY",
+    13
+   ],
+   [
+    "MT GILEAD LAKE",
+    13
+   ]
+  ],
+  "middle/other": [
+   [
+    "OSV",
+    236
+   ],
+   [
+    "GARDEN CITY",
+    48
+   ],
+   [
+    "MYRTLE DUNES",
+    41
+   ],
+   [
+    "SEA WATCH LANDING",
+    40
+   ],
+   [
+    "A J BAKER",
+    39
+   ],
+   [
+    "WOODLAND TERR",
+    22
+   ],
+   [
+    "SURF WINDS",
+    21
+   ],
+   [
+    "WOODLAND TERRACE",
+    20
+   ],
+   [
+    "MYRTLE DUNES LT",
+    16
+   ],
+   [
+    "SUNSET SQUARE",
+    15
+   ],
+   [
+    "MT GILEAD PLACE",
+    15
+   ],
+   [
+    "OCEANSIDE VILLAGE",
+    13
+   ],
+   [
+    "SUMMER WINDS",
+    13
+   ],
+   [
+    "POINTE GILEAD",
+    12
+   ],
+   [
+    "WOODLAND",
+    10
+   ],
+   [
+    "THE KEYS",
+    7
+   ],
+   [
+    "OCEAN SIDE VILLAGE",
+    7
+   ],
+   [
+    "WOODLAND TERR LT",
+    7
+   ],
+   [
+    "WOODLAND LT",
+    7
+   ],
+   [
+    "WOODLAND PLACE",
+    5
+   ]
+  ]
+ },
+ "streets": {
+  "beach": [
+   [
+    "N WACCAMAW DR",
+    41
+   ],
+   [
+    "S WACCAMAW DR",
+    25
+   ]
+  ],
+  "inland": [
+   [
+    "PALLADIUM DR",
+    77
+   ],
+   [
+    "BLUEBIRD LN",
+    66
+   ],
+   [
+    "WOODLAKE DR",
+    51
+   ],
+   [
+    "BAYOU LP",
+    47
+   ],
+   [
+    "ORIOLE DR",
+    45
+   ],
+   [
+    "WOOD THRUSH DR",
+    40
+   ],
+   [
+    "PURPLE MARTIN DR",
+    39
+   ],
+   [
+    "LYNCO LN",
+    39
+   ],
+   [
+    "LIZZIE LN",
+    37
+   ],
+   [
+    "OLD SOUTH CIR",
+    31
+   ],
+   [
+    "SEAHOUSE CT",
+    29
+   ],
+   [
+    "LAKE POINTE DR",
+    29
+   ],
+   [
+    "COLONIAL CIR",
+    28
+   ],
+   [
+    "OLIVER DR",
+    27
+   ],
+   [
+    "MISTY BREEZE LN",
+    27
+   ]
+  ],
+  "middle": [
+   [
+    "CALHOUN DR",
+    81
+   ],
+   [
+    "RAINBOW DR",
+    70
+   ],
+   [
+    "WOODLAND DR",
+    68
+   ],
+   [
+    "SEABREEZE DR",
+    66
+   ],
+   [
+    "VISTA DR",
+    63
+   ],
+   [
+    "CYPRESS AVE",
+    58
+   ],
+   [
+    "BAY DR EXT",
+    52
+   ],
+   [
+    "KITTIWAKE LN",
+    42
+   ],
+   [
+    "OAK AVE",
+    39
+   ],
+   [
+    "JAY ST",
+    39
+   ],
+   [
+    "STANLEY DR",
+    37
+   ],
+   [
+    "BAY DR",
+    37
+   ],
+   [
+    "MOUNT GILEAD PLACE DR",
+    34
+   ],
+   [
+    "ELIZABETH DR",
+    33
+   ],
+   [
+    "EASY ST",
+    32
+   ]
+  ],
+  "middle/water": [
+   [
+    "RUM GULLY RD",
+    38
+   ],
+   [
+    "S DOGWOOD DR",
+    37
+   ],
+   [
+    "S CREEKSIDE DR",
+    28
+   ],
+   [
+    "1ST AVE S",
+    26
+   ],
+   [
+    "N DOGWOOD DR",
+    24
+   ],
+   [
+    "ELIZABETH DR",
+    22
+   ],
+   [
+    "VEREEN RD",
+    18
+   ],
+   [
+    "OLD FIELD RD",
+    18
+   ],
+   [
+    "MT GILEAD RD",
+    12
+   ],
+   [
+    "WEDGEWOOD DR",
+    12
+   ],
+   [
+    "MALLARD POND RD",
+    12
+   ],
+   [
+    "OSPREY CT",
+    11
+   ],
+   [
+    "N CREEKSIDE DR",
+    11
+   ],
+   [
+    "FERNWOOD RD",
+    9
+   ],
+   [
+    "CALHOUN DR",
+    7
+   ]
+  ]
+ }
+}

@@ -1,0 +1,145 @@
+{
+ "_comment": "Licence records for /submarkets/little-river/ (batch 2026-11-a). Each image was looked at full size; subject_check says what it shows.",
+ "photos": [
+  {
+   "slug": "submarkets-little-river",
+   "source": "https://planetarycomputer.microsoft.com/dataset/naip",
+   "source_name": "Microsoft Planetary Computer",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "license_note": "NAIP is a U.S. government work. The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\" (the same terms as batch 2026-10-a's NAIP records). Read 2026-11-02.",
+   "terms_urls": [
+    "https://www.fsa.usda.gov/help/policies-and-links/",
+    "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+   ],
+   "taken": "2023-04-10",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via Microsoft Planetary Computer. Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP image, raised the contrast a little and added labels placed from county and Census coordinates",
+   "method": "data/2026-11-a/submarkets-little-river/aerial_render_r1.py and aerial-labels-r1.json (review round 1: a 4:3 landscape cut that keeps every label inside the frame and the bottom-right corner clear for the credit; labels from ground coordinates through the crop's bbox, never by eye)",
+   "file": "images/2026-11-a/submarkets-little-river/little-river-waterfront-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-little-river/little-river-waterfront-from-above-600w.webp",
+    "1200": "images/2026-11-a/submarkets-little-river/little-river-waterfront-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Little River waterfront and Mariner's Pointe from above, NAIP aerial, April 2023",
+   "what": "The Intracoastal Waterway at Little River from straight above on April 10, 2023: the slip basin of Mariner's Pointe, ringed by red-roofed condo buildings, at the lower left; the docks and boats of the waterfront at the end of Mineola Avenue at the right; marsh and long private piers between them; the wide dark waterway across the bottom and woods and marsh on its far bank. Labels: Mariner's Pointe, Waterfront, Intracoastal Waterway.",
+   "caption": "The waterfront at the end of Mineola Avenue, and the slip basin at Mariner's Pointe, from above.",
+   "alt": "The Intracoastal Waterway at Little River from above: a slip basin full of boats ringed by condo buildings, labelled Mariner's Pointe, and docks with boats at the end of a street, labelled Waterfront",
+   "place": {
+    "city": "Little River",
+    "sublocation": "The waterfront at Mineola Avenue and Mariner's Pointe, on the Intracoastal Waterway"
+   },
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (STAC item sc_m_3307812_nw_17_060_20230410_20230712; datetime 2023-04-10T16:00:00Z). Cut by Chapter3 from the Planetary Computer data API: https://planetarycomputer.microsoft.com/api/data/v1/item/crop/-78.6210,33.8645,-78.6070,33.8755/2048x1930.png?collection=naip&item=sc_m_3307812_nw_17_060_20230410_20230712&assets=image&asset_bidx=image|1,2,3. The USGS National Map NAIP service timed out (HTTP 504) on 2026-11-02.",
+   "naip_tiles": [
+    "m_3307812_nw_17_060_20230410"
+   ],
+   "labels": [
+    "Mariner's Pointe",
+    "Waterfront",
+    "Intracoastal Waterway"
+   ],
+   "annotation_sources": {
+    "Mariner's Pointe": "centre of the 116 deeded slip parcels at Mariner's Pointe (-78.61798, 33.86831), Horry County GIS parcels layer 24, land use 306 (data map-points.json)",
+    "Waterfront": "the last county address point on Mineola Avenue (-78.60995, 33.87075), Horry County GIS layer 22, where the street meets the water",
+    "Intracoastal Waterway": "a point inside the county water outline (-78.61447, 33.86645), Horry County GIS layer 21"
+   },
+   "subject_check": "Looked at full size (1200 px) and at 600 px by the writer of /submarkets/little-river/ on 2026-11-02. The slip basin with boats at the labelled Mariner's Pointe point is the basin the county's slip parcels sit in; the docks and boats at the Waterfront label are at the south end of Mineola Avenue (county address points). No person, sign, plate or house number is readable at this scale. Review round 1: the 1200x900 cut looked at full size and at 600 px on 2026-11-02; every label is inside the frame and none is in the bottom-right corner where the credit sits. The harbours view has the seam of two NAIP flight lines in the water at the bottom (lighter water on the left); no other 2023 NAIP flight covers it.",
+   "frame": {
+    "bbox_wgs84": [
+     -78.621,
+     33.86529,
+     -78.607,
+     33.87404
+    ],
+    "ground_m_per_px_1200w": 1.0
+   },
+   "original_size": "2048x1930 (Planetary Computer crop), resized to 1200 px wide, labels drawn at 50 px, then cut to 1200x900",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-a/submarkets-little-river/little-river-waterfront-from-above-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-a/submarkets-little-river/little-river-waterfront-from-above-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-a/submarkets-little-river/little-river-waterfront-from-above-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "crop_note": "Crops cut from the center of a 1300 px render with the same labels by tools/photos.js crops; each shows the basin and the waterfront docks."
+  },
+  {
+   "slug": "submarkets-little-river",
+   "source": "https://planetarycomputer.microsoft.com/dataset/naip",
+   "source_name": "Microsoft Planetary Computer",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "license_note": "NAIP is a U.S. government work. The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\" (the same terms as batch 2026-10-a's NAIP records). Read 2026-11-02.",
+   "terms_urls": [
+    "https://www.fsa.usda.gov/help/policies-and-links/",
+    "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+   ],
+   "taken": "2023-04-10",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via Microsoft Planetary Computer. Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP image, raised the contrast a little and added labels placed from county and Census coordinates",
+   "method": "data/2026-11-a/submarkets-little-river/aerial_render_r1.py and aerial-labels-r1.json (review round 1: a 4:3 landscape cut that keeps every label inside the frame and the bottom-right corner clear for the credit; labels from ground coordinates through the crop's bbox, never by eye)",
+   "file": "images/2026-11-a/submarkets-little-river/little-river-harbours-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-little-river/little-river-harbours-from-above-600w.webp",
+    "1200": "images/2026-11-a/submarkets-little-river/little-river-harbours-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Coquina Harbour and Lightkeepers Village slips from above, NAIP aerial, April 2023",
+   "what": "One long marina basin off the Intracoastal Waterway in Little River from straight above on April 10, 2023, full of boats in rows of slips: Coquina Harbour's slips in its upper part, Lightkeepers Village's near its mouth. Condo buildings line both sides, US 17 crosses the top left corner, a golf course is at the upper right, and the wide waterway and marsh are across the bottom. Labels: US 17, Coquina Harbour, Lightkeepers Village, Intracoastal Waterway.",
+   "caption": "Coquina Harbour and Lightkeepers Village share one basin between US 17 and the waterway.",
+   "alt": "A marina basin full of boats off the Intracoastal Waterway, from above, with Coquina Harbour labelled at its upper end, Lightkeepers Village near its mouth, US 17 at the top left and a golf course at the upper right",
+   "place": {
+    "city": "Little River",
+    "sublocation": "Coquina Harbour and Lightkeepers Village, on the Intracoastal Waterway"
+   },
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (STAC item sc_m_3307811_ne_17_060_20230410_20230712; datetime 2023-04-10T16:00:00Z). Cut by Chapter3 from the Planetary Computer data API: https://planetarycomputer.microsoft.com/api/data/v1/item/crop/-78.6440,33.8570,-78.6310,33.8680/1980x2008.png?collection=naip&item=sc_m_3307811_ne_17_060_20230410_20230712&assets=image&asset_bidx=image|1,2,3. Two flight lines meet in the water at the bottom, so the water's color changes there.",
+   "naip_tiles": [
+    "m_3307811_ne_17_060_20230410"
+   ],
+   "labels": [
+    "US 17",
+    "Coquina Harbour",
+    "Lightkeepers Village",
+    "Intracoastal Waterway"
+   ],
+   "annotation_sources": {
+    "Coquina Harbour": "centre of the 81 deeded slip parcels at Coquina Harbour (-78.63774, 33.86453), Horry County GIS parcels layer 24, land use 306",
+    "Lightkeepers Village": "centre of the 25 deeded slip parcels at Lightkeepers Village (-78.63757, 33.86081), same layer",
+    "Intracoastal Waterway": "a point inside the county water outline (-78.6350, 33.8598), Horry County GIS layer 21",
+    "US 17": "midpoint of the US 17 centreline segment (-78.6432, 33.8650) to (-78.6365, 33.8674), Census TIGER/Line (tools/geo/grand-strand-v2.json)"
+   },
+   "subject_check": "Looked at full size (1200 px) and at 600 px by the writer of /submarkets/little-river/ on 2026-11-02. Both slip-parcel centres fall on rows of slips with boats in the one basin. No person, sign, plate or house number is readable at this scale. Review round 1: the 1200x900 cut looked at full size and at 600 px on 2026-11-02; every label is inside the frame and none is in the bottom-right corner where the credit sits. The harbours view has the seam of two NAIP flight lines in the water at the bottom (lighter water on the left); no other 2023 NAIP flight covers it.",
+   "frame": {
+    "bbox_wgs84": [
+     -78.644,
+     33.85846,
+     -78.631,
+     33.8666
+    ],
+    "ground_m_per_px_1200w": 1.0
+   },
+   "original_size": "1980x2008 (Planetary Computer crop), resized to 1200 px wide, labels drawn at 50 px, then cut to 1200x900"
+  }
+ ]
+}

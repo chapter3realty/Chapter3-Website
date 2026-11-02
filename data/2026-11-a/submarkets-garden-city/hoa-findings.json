@@ -1,0 +1,64 @@
+{
+ "pulled": "2026-11-02T10:03:07.902308+00:00",
+ "calls": 139,
+ "condos": 72,
+ "bracketed": 72,
+ "note": "CRM public map API, has=area_garden_city&type=condo, filter hoaMax (monthly). Each fee is known to within $10: the value is the top of its $10 bracket. Aggregate only.",
+ "meta_refreshed": "2026-11-02T09:51:06.387Z",
+ "groups": {
+  "georgetown/beach": {
+   "n": 1,
+   "with_fee": 1,
+   "median_upper": 920,
+   "q1_upper": 920,
+   "q3_upper": 920,
+   "min_upper": 920,
+   "max_upper": 920
+  },
+  "georgetown/middle": {
+   "n": 4,
+   "with_fee": 4,
+   "median_upper": 980.0,
+   "q1_upper": 600,
+   "q3_upper": 1370,
+   "min_upper": 500,
+   "max_upper": 1370
+  },
+  "horry/beach": {
+   "n": 35,
+   "with_fee": 35,
+   "median_upper": 790,
+   "q1_upper": 610,
+   "q3_upper": 910,
+   "min_upper": 500,
+   "max_upper": 1200
+  },
+  "horry/inland": {
+   "n": 13,
+   "with_fee": 13,
+   "median_upper": 430,
+   "q1_upper": 430,
+   "q3_upper": 430,
+   "min_upper": 330,
+   "max_upper": 520
+  },
+  "horry/middle": {
+   "n": 19,
+   "with_fee": 19,
+   "median_upper": 470,
+   "q1_upper": 320,
+   "q3_upper": 650,
+   "min_upper": 280,
+   "max_upper": 840
+  },
+  "all": {
+   "n": 72,
+   "with_fee": 72,
+   "median_upper": 625.0,
+   "q1_upper": 430,
+   "q3_upper": 840,
+   "min_upper": 280,
+   "max_upper": 1370
+  }
+ }
+}

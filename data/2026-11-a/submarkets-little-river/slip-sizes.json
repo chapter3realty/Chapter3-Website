@@ -1,0 +1,101 @@
+{
+ "method": "Minimum bounding rectangle of each land-use-306 parcel outline (County GIS layer 24, maxAllowableOffset 0.00001 degrees), in feet. Outlines over 120 feet long are not single slips.",
+ "by_marina": {
+  "Coquina Harbour": {
+   "n": 81,
+   "n_slip_sized": 80,
+   "len_min": 29.7,
+   "len_max": 97.7,
+   "len_median": 37.7,
+   "len_buckets": {
+    "30": 28,
+    "45": 23,
+    "40": 16,
+    "35": 12,
+    "100": 1
+   },
+   "not_slip_sized": [
+    [
+     "COQUINA HARBOR NORTH; PHASE II",
+     346.4,
+     1100.0
+    ]
+   ]
+  },
+  "Harbourgate Yacht Club": {
+   "n": 6,
+   "n_slip_sized": 6,
+   "len_min": 37.1,
+   "len_max": 97.9,
+   "len_median": 49.9,
+   "len_buckets": {
+    "50": 3,
+    "35": 1,
+    "45": 1,
+    "100": 1
+   },
+   "not_slip_sized": []
+  },
+  "Dock Holidays Marina": {
+   "n": 93,
+   "n_slip_sized": 93,
+   "len_min": 39.7,
+   "len_max": 50.6,
+   "len_median": 40.1,
+   "len_buckets": {
+    "40": 54,
+    "50": 39
+   },
+   "not_slip_sized": []
+  },
+  "Lightkeepers Village": {
+   "n": 25,
+   "n_slip_sized": 25,
+   "len_min": 28.1,
+   "len_max": 70.0,
+   "len_median": 55.1,
+   "len_buckets": {
+    "45": 9,
+    "65": 9,
+    "55": 5,
+    "30": 1,
+    "70": 1
+   },
+   "not_slip_sized": []
+  },
+  "Mariner's Pointe": {
+   "n": 116,
+   "n_slip_sized": 116,
+   "len_min": 21.1,
+   "len_max": 60.1,
+   "len_median": 33.1,
+   "len_buckets": {
+    "30": 51,
+    "35": 34,
+    "40": 20,
+    "25": 5,
+    "45": 2,
+    "20": 1,
+    "50": 1,
+    "55": 1,
+    "60": 1
+   },
+   "not_slip_sized": []
+  },
+  "other": {
+   "n": 1,
+   "n_slip_sized": 0,
+   "len_min": null,
+   "len_max": null,
+   "len_median": null,
+   "len_buckets": {},
+   "not_slip_sized": [
+    [
+     "BRYANT DR & WHARF AV;",
+     339.9,
+     305242.0
+    ]
+   ]
+  }
+ }
+}

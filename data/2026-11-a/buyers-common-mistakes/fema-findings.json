@@ -1,0 +1,150 @@
+{
+ "source": "https://www.fema.gov/api/open/v3/NfipPolicies",
+ "filter": "startswith(censusGeoid,'45051') and policyEffectiveDate ge '2025-09-01' and policyEffectiveDate lt '2026-09-01'",
+ "pulled": "2026-11-02T04:56:23.454Z",
+ "records": 21274,
+ "asOfDate": "2026-09-08T00:00:00.000Z",
+ "definition": "one-year policies on one-family houses (occupancyType 1 or 11, not a condo unit or condo association), policyCost in dollars",
+ "groups": {
+  "ratedFloodZone": {
+   "A (high risk) | all": {
+    "n": 4487,
+    "median": 1184,
+    "p25": 872,
+    "p75": 1744
+   },
+   "A (high risk) | lived in": {
+    "n": 2603,
+    "median": 1074,
+    "p25": 789,
+    "p75": 1409
+   },
+   "A (high risk) | not lived in": {
+    "n": 1884,
+    "median": 1372.0,
+    "p25": 1058,
+    "p75": 2402
+   },
+   "V (coastal high hazard) | all": {
+    "n": 141,
+    "median": 3235,
+    "p25": 1482,
+    "p75": 4676
+   },
+   "V (coastal high hazard) | lived in": {
+    "n": 42,
+    "median": 2641.5,
+    "p25": 1697,
+    "p75": 3878
+   },
+   "V (coastal high hazard) | not lived in": {
+    "n": 99,
+    "median": 3327,
+    "p25": 1465,
+    "p75": 4860
+   },
+   "X (moderate or low risk) | all": {
+    "n": 12884,
+    "median": 571.0,
+    "p25": 483,
+    "p75": 729
+   },
+   "X (moderate or low risk) | lived in": {
+    "n": 11453,
+    "median": 551,
+    "p25": 472,
+    "p75": 679
+   },
+   "X (moderate or low risk) | not lived in": {
+    "n": 1431,
+    "median": 790,
+    "p25": 689,
+    "p75": 1038
+   }
+  },
+  "floodZoneCurrent": {
+   "A (high risk) | all": {
+    "n": 1987,
+    "median": 1193,
+    "p25": 924,
+    "p75": 1570
+   },
+   "A (high risk) | lived in": {
+    "n": 1066,
+    "median": 1072.0,
+    "p25": 812,
+    "p75": 1462
+   },
+   "A (high risk) | not lived in": {
+    "n": 921,
+    "median": 1291,
+    "p25": 1084,
+    "p75": 1688
+   },
+   "V (coastal high hazard) | all": {
+    "n": 145,
+    "median": 2787,
+    "p25": 1407,
+    "p75": 4558
+   },
+   "V (coastal high hazard) | lived in": {
+    "n": 34,
+    "median": 3616.0,
+    "p25": 1677,
+    "p75": 4732
+   },
+   "V (coastal high hazard) | not lived in": {
+    "n": 111,
+    "median": 2712,
+    "p25": 1307,
+    "p75": 4520
+   },
+   "X (moderate or low risk) | all": {
+    "n": 6533,
+    "median": 599,
+    "p25": 500,
+    "p75": 798
+   },
+   "X (moderate or low risk) | lived in": {
+    "n": 5807,
+    "median": 575,
+    "p25": 487,
+    "p75": 745
+   },
+   "X (moderate or low risk) | not lived in": {
+    "n": 726,
+    "median": 832.0,
+    "p25": 710,
+    "p75": 1130
+   },
+   "other/unknown | all": {
+    "n": 8847,
+    "median": 617,
+    "p25": 498,
+    "p75": 916
+   },
+   "other/unknown | lived in": {
+    "n": 7191,
+    "median": 564,
+    "p25": 479,
+    "p75": 766
+   },
+   "other/unknown | not lived in": {
+    "n": 1656,
+    "median": 1073.5,
+    "p25": 734,
+    "p75": 2054
+   }
+  }
+ },
+ "house_policies": 17512,
+ "lender_required_by_current_zone": {
+  "A (high risk) | required=False": 1509,
+  "A (high risk) | required=True": 478,
+  "V (coastal high hazard) | required=False": 126,
+  "V (coastal high hazard) | required=True": 19,
+  "X (moderate or low risk) | required=False": 6384,
+  "X (moderate or low risk) | required=True": 149,
+  "other/unknown | required=False": 8847
+ }
+}

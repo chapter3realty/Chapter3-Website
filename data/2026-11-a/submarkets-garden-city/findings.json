@@ -1,0 +1,1210 @@
+{
+ "made": "analyze.py",
+ "stock": {
+  "beach/all": {
+   "homes": 1376,
+   "owner_occupied_4pct": 120,
+   "pct_owner_occupied": 8.7,
+   "rate_6pct": 1256,
+   "rate_other": 0,
+   "tax_bill_outside_sc": 787,
+   "pct_tax_bill_outside_sc": 57.2,
+   "blank_state": 0,
+   "top_states": [
+    [
+     "SC",
+     589
+    ],
+    [
+     "NC",
+     188
+    ],
+    [
+     "NY",
+     104
+    ],
+    [
+     "PA",
+     77
+    ],
+    [
+     "OH",
+     60
+    ],
+    [
+     "NJ",
+     41
+    ],
+    [
+     "MD",
+     39
+    ],
+    [
+     "VA",
+     35
+    ]
+   ],
+   "fema": {
+    "AE": 1318,
+    "VE": 9,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 49
+   },
+   "pct_high_risk": 96.4,
+   "pct_ve": 0.7,
+   "median_county_market_value": 382250.0
+  },
+  "beach/condo": {
+   "homes": 1241,
+   "owner_occupied_4pct": 114,
+   "pct_owner_occupied": 9.2,
+   "rate_6pct": 1127,
+   "rate_other": 0,
+   "tax_bill_outside_sc": 744,
+   "pct_tax_bill_outside_sc": 60.0,
+   "blank_state": 0,
+   "top_states": [
+    [
+     "SC",
+     497
+    ],
+    [
+     "NC",
+     177
+    ],
+    [
+     "NY",
+     99
+    ],
+    [
+     "PA",
+     75
+    ],
+    [
+     "OH",
+     58
+    ],
+    [
+     "NJ",
+     38
+    ],
+    [
+     "VA",
+     35
+    ],
+    [
+     "MD",
+     35
+    ]
+   ],
+   "fema": {
+    "AE": 1192,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 49
+   },
+   "pct_high_risk": 96.1,
+   "pct_ve": 0.0,
+   "median_county_market_value": 375900.0
+  },
+  "beach/house": {
+   "homes": 48,
+   "owner_occupied_4pct": 3,
+   "pct_owner_occupied": 6.2,
+   "rate_6pct": 45,
+   "rate_other": 0,
+   "tax_bill_outside_sc": 28,
+   "pct_tax_bill_outside_sc": 58.3,
+   "blank_state": 0,
+   "top_states": [
+    [
+     "SC",
+     20
+    ],
+    [
+     "GA",
+     4
+    ],
+    [
+     "NC",
+     4
+    ],
+    [
+     "NY",
+     3
+    ],
+    [
+     "NJ",
+     3
+    ],
+    [
+     "PA",
+     2
+    ],
+    [
+     "CA",
+     2
+    ],
+    [
+     "MD",
+     2
+    ]
+   ],
+   "fema": {
+    "AE": 40,
+    "VE": 8
+   },
+   "pct_high_risk": 100.0,
+   "pct_ve": 16.7,
+   "median_county_market_value": 1530780.5
+  },
+  "beach/other": {
+   "homes": 87,
+   "owner_occupied_4pct": 3,
+   "pct_owner_occupied": 3.4,
+   "rate_6pct": 84,
+   "rate_other": 0,
+   "tax_bill_outside_sc": 15,
+   "pct_tax_bill_outside_sc": 17.2,
+   "blank_state": 0,
+   "top_states": [
+    [
+     "SC",
+     72
+    ],
+    [
+     "NC",
+     7
+    ],
+    [
+     "NY",
+     2
+    ],
+    [
+     "MD",
+     2
+    ],
+    [
+     "MI",
+     2
+    ],
+    [
+     "NV",
+     1
+    ],
+    [
+     "KS",
+     1
+    ]
+   ],
+   "fema": {
+    "AE": 86,
+    "VE": 1
+   },
+   "pct_high_risk": 100.0,
+   "pct_ve": 1.1,
+   "median_county_market_value": 371000.0
+  },
+  "middle/all": {
+   "homes": 2957,
+   "owner_occupied_4pct": 1096,
+   "pct_owner_occupied": 37.1,
+   "rate_6pct": 1839,
+   "rate_other": 22,
+   "tax_bill_outside_sc": 903,
+   "pct_tax_bill_outside_sc": 30.5,
+   "blank_state": 1,
+   "top_states": [
+    [
+     "SC",
+     2053
+    ],
+    [
+     "NC",
+     334
+    ],
+    [
+     "PA",
+     87
+    ],
+    [
+     "VA",
+     84
+    ],
+    [
+     "NY",
+     69
+    ],
+    [
+     "OH",
+     43
+    ],
+    [
+     "NJ",
+     39
+    ],
+    [
+     "MD",
+     39
+    ]
+   ],
+   "fema": {
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 930,
+    "AE": 1411,
+    "none": 421,
+    "VE": 195
+   },
+   "pct_high_risk": 54.3,
+   "pct_ve": 6.6,
+   "median_county_market_value": 400639.0
+  },
+  "middle/condo": {
+   "homes": 470,
+   "owner_occupied_4pct": 40,
+   "pct_owner_occupied": 8.5,
+   "rate_6pct": 430,
+   "rate_other": 0,
+   "tax_bill_outside_sc": 236,
+   "pct_tax_bill_outside_sc": 50.2,
+   "blank_state": 0,
+   "top_states": [
+    [
+     "SC",
+     234
+    ],
+    [
+     "NC",
+     76
+    ],
+    [
+     "NY",
+     19
+    ],
+    [
+     "VA",
+     19
+    ],
+    [
+     "PA",
+     17
+    ],
+    [
+     "OH",
+     15
+    ],
+    [
+     "MD",
+     14
+    ],
+    [
+     "NJ",
+     13
+    ]
+   ],
+   "fema": {
+    "AE": 320,
+    "VE": 97,
+    "none": 15,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 38
+   },
+   "pct_high_risk": 88.7,
+   "pct_ve": 20.6,
+   "median_county_market_value": 250000.0
+  },
+  "middle/house": {
+   "homes": 1476,
+   "owner_occupied_4pct": 781,
+   "pct_owner_occupied": 52.9,
+   "rate_6pct": 688,
+   "rate_other": 7,
+   "tax_bill_outside_sc": 275,
+   "pct_tax_bill_outside_sc": 18.6,
+   "blank_state": 0,
+   "top_states": [
+    [
+     "SC",
+     1201
+    ],
+    [
+     "NC",
+     112
+    ],
+    [
+     "VA",
+     25
+    ],
+    [
+     "PA",
+     20
+    ],
+    [
+     "NY",
+     16
+    ],
+    [
+     "MD",
+     13
+    ],
+    [
+     "NJ",
+     12
+    ],
+    [
+     "WV",
+     12
+    ]
+   ],
+   "fema": {
+    "AE": 724,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 549,
+    "none": 155,
+    "VE": 48
+   },
+   "pct_high_risk": 52.3,
+   "pct_ve": 3.3,
+   "median_county_market_value": 548866.5
+  },
+  "middle/other": {
+   "homes": 1011,
+   "owner_occupied_4pct": 275,
+   "pct_owner_occupied": 27.2,
+   "rate_6pct": 721,
+   "rate_other": 15,
+   "tax_bill_outside_sc": 392,
+   "pct_tax_bill_outside_sc": 38.8,
+   "blank_state": 1,
+   "top_states": [
+    [
+     "SC",
+     618
+    ],
+    [
+     "NC",
+     146
+    ],
+    [
+     "PA",
+     50
+    ],
+    [
+     "VA",
+     40
+    ],
+    [
+     "NY",
+     34
+    ],
+    [
+     "OH",
+     18
+    ],
+    [
+     "NJ",
+     14
+    ],
+    [
+     "MD",
+     12
+    ]
+   ],
+   "fema": {
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 343,
+    "AE": 367,
+    "none": 251,
+    "VE": 50
+   },
+   "pct_high_risk": 41.2,
+   "pct_ve": 4.9,
+   "median_county_market_value": 274044.0
+  },
+  "inland/all": {
+   "homes": 3142,
+   "owner_occupied_4pct": 1681,
+   "pct_owner_occupied": 53.5,
+   "rate_6pct": 1460,
+   "rate_other": 1,
+   "tax_bill_outside_sc": 844,
+   "pct_tax_bill_outside_sc": 26.9,
+   "blank_state": 1,
+   "top_states": [
+    [
+     "SC",
+     2297
+    ],
+    [
+     "NY",
+     176
+    ],
+    [
+     "NC",
+     137
+    ],
+    [
+     "PA",
+     96
+    ],
+    [
+     "NJ",
+     88
+    ],
+    [
+     "VA",
+     52
+    ],
+    [
+     "MD",
+     45
+    ],
+    [
+     "CT",
+     37
+    ]
+   ],
+   "fema": {
+    "none": 3142
+   },
+   "pct_high_risk": 0.0,
+   "pct_ve": 0.0,
+   "median_county_market_value": 221045.5
+  },
+  "inland/condo": {
+   "homes": 1718,
+   "owner_occupied_4pct": 669,
+   "pct_owner_occupied": 38.9,
+   "rate_6pct": 1049,
+   "rate_other": 0,
+   "tax_bill_outside_sc": 650,
+   "pct_tax_bill_outside_sc": 37.8,
+   "blank_state": 1,
+   "top_states": [
+    [
+     "SC",
+     1067
+    ],
+    [
+     "NY",
+     156
+    ],
+    [
+     "NC",
+     89
+    ],
+    [
+     "PA",
+     73
+    ],
+    [
+     "NJ",
+     70
+    ],
+    [
+     "VA",
+     38
+    ],
+    [
+     "CT",
+     32
+    ],
+    [
+     "MD",
+     29
+    ]
+   ],
+   "fema": {
+    "none": 1718
+   },
+   "pct_high_risk": 0.0,
+   "pct_ve": 0.0,
+   "median_county_market_value": 204500.0
+  },
+  "inland/house": {
+   "homes": 1101,
+   "owner_occupied_4pct": 854,
+   "pct_owner_occupied": 77.6,
+   "rate_6pct": 247,
+   "rate_other": 0,
+   "tax_bill_outside_sc": 124,
+   "pct_tax_bill_outside_sc": 11.3,
+   "blank_state": 0,
+   "top_states": [
+    [
+     "SC",
+     977
+    ],
+    [
+     "NC",
+     23
+    ],
+    [
+     "NJ",
+     13
+    ],
+    [
+     "MD",
+     13
+    ],
+    [
+     "NY",
+     13
+    ],
+    [
+     "PA",
+     13
+    ],
+    [
+     "VA",
+     9
+    ],
+    [
+     "WV",
+     6
+    ]
+   ],
+   "fema": {
+    "none": 1101
+   },
+   "pct_high_risk": 0.0,
+   "pct_ve": 0.0,
+   "median_county_market_value": 326337.0
+  },
+  "inland/other": {
+   "homes": 323,
+   "owner_occupied_4pct": 158,
+   "pct_owner_occupied": 48.9,
+   "rate_6pct": 164,
+   "rate_other": 1,
+   "tax_bill_outside_sc": 70,
+   "pct_tax_bill_outside_sc": 21.7,
+   "blank_state": 0,
+   "top_states": [
+    [
+     "SC",
+     253
+    ],
+    [
+     "NC",
+     25
+    ],
+    [
+     "PA",
+     10
+    ],
+    [
+     "NY",
+     7
+    ],
+    [
+     "NJ",
+     5
+    ],
+    [
+     "VA",
+     5
+    ],
+    [
+     "OH",
+     3
+    ],
+    [
+     "WV",
+     3
+    ]
+   ],
+   "fema": {
+    "none": 323
+   },
+   "pct_high_risk": 0.0,
+   "pct_ve": 0.0,
+   "median_county_market_value": 234761.0
+  },
+  "middle/on_water/house": {
+   "homes": 299,
+   "owner_occupied_4pct": 177,
+   "pct_owner_occupied": 59.2,
+   "rate_6pct": 120,
+   "rate_other": 2,
+   "tax_bill_outside_sc": 39,
+   "pct_tax_bill_outside_sc": 13.0,
+   "blank_state": 0,
+   "top_states": [
+    [
+     "SC",
+     260
+    ],
+    [
+     "NC",
+     16
+    ],
+    [
+     "PA",
+     4
+    ],
+    [
+     "VA",
+     3
+    ],
+    [
+     "NJ",
+     2
+    ],
+    [
+     "GA",
+     2
+    ],
+    [
+     "TN",
+     2
+    ],
+    [
+     "MD",
+     2
+    ]
+   ],
+   "fema": {
+    "AE": 195,
+    "none": 29,
+    "VE": 31,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 44
+   },
+   "pct_high_risk": 75.6,
+   "pct_ve": 10.4,
+   "median_county_market_value": 883770.0
+  },
+  "middle/on_water/all": {
+   "homes": 429,
+   "owner_occupied_4pct": 202,
+   "pct_owner_occupied": 47.1,
+   "rate_6pct": 223,
+   "rate_other": 4,
+   "tax_bill_outside_sc": 79,
+   "pct_tax_bill_outside_sc": 18.4,
+   "blank_state": 0,
+   "top_states": [
+    [
+     "SC",
+     350
+    ],
+    [
+     "NC",
+     31
+    ],
+    [
+     "VA",
+     8
+    ],
+    [
+     "GA",
+     6
+    ],
+    [
+     "PA",
+     6
+    ],
+    [
+     "MD",
+     3
+    ],
+    [
+     "NY",
+     3
+    ],
+    [
+     "OH",
+     3
+    ]
+   ],
+   "fema": {
+    "AE": 269,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 49,
+    "none": 34,
+    "VE": 77
+   },
+   "pct_high_risk": 80.7,
+   "pct_ve": 17.9,
+   "median_county_market_value": 703200.0
+  },
+  "middle/off_water/house": {
+   "homes": 1177,
+   "owner_occupied_4pct": 604,
+   "pct_owner_occupied": 51.3,
+   "rate_6pct": 568,
+   "rate_other": 5,
+   "tax_bill_outside_sc": 236,
+   "pct_tax_bill_outside_sc": 20.1,
+   "blank_state": 0,
+   "top_states": [
+    [
+     "SC",
+     941
+    ],
+    [
+     "NC",
+     96
+    ],
+    [
+     "VA",
+     22
+    ],
+    [
+     "PA",
+     16
+    ],
+    [
+     "NY",
+     15
+    ],
+    [
+     "WV",
+     12
+    ],
+    [
+     "MD",
+     11
+    ],
+    [
+     "NJ",
+     10
+    ]
+   ],
+   "fema": {
+    "AE": 529,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 505,
+    "none": 126,
+    "VE": 17
+   },
+   "pct_high_risk": 46.4,
+   "pct_ve": 1.4,
+   "median_county_market_value": 496867.0
+  },
+  "cdp/all": {
+   "homes": 7475,
+   "owner_occupied_4pct": 2897,
+   "pct_owner_occupied": 38.8,
+   "rate_6pct": 4555,
+   "rate_other": 23,
+   "tax_bill_outside_sc": 2534,
+   "pct_tax_bill_outside_sc": 33.9,
+   "blank_state": 2,
+   "top_states": [
+    [
+     "SC",
+     4939
+    ],
+    [
+     "NC",
+     659
+    ],
+    [
+     "NY",
+     349
+    ],
+    [
+     "PA",
+     260
+    ],
+    [
+     "VA",
+     171
+    ],
+    [
+     "NJ",
+     168
+    ],
+    [
+     "OH",
+     138
+    ],
+    [
+     "MD",
+     123
+    ]
+   ],
+   "fema": {
+    "none": 3563,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 979,
+    "AE": 2729,
+    "VE": 204
+   },
+   "pct_high_risk": 39.2,
+   "pct_ve": 2.7,
+   "median_county_market_value": 314826.0
+  },
+  "east_of_bus17/all": {
+   "homes": 4333,
+   "owner_occupied_4pct": 1216,
+   "pct_owner_occupied": 28.1,
+   "rate_6pct": 3095,
+   "rate_other": 22,
+   "tax_bill_outside_sc": 1690,
+   "pct_tax_bill_outside_sc": 39.0,
+   "blank_state": 1,
+   "top_states": [
+    [
+     "SC",
+     2642
+    ],
+    [
+     "NC",
+     522
+    ],
+    [
+     "NY",
+     173
+    ],
+    [
+     "PA",
+     164
+    ],
+    [
+     "VA",
+     119
+    ],
+    [
+     "OH",
+     103
+    ],
+    [
+     "NJ",
+     80
+    ],
+    [
+     "MD",
+     78
+    ]
+   ],
+   "fema": {
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 979,
+    "AE": 2729,
+    "none": 421,
+    "VE": 204
+   },
+   "pct_high_risk": 67.7,
+   "pct_ve": 4.7,
+   "median_county_market_value": 394900.0
+  },
+  "cdp/condo": {
+   "homes": 3429,
+   "owner_occupied_4pct": 823,
+   "pct_owner_occupied": 24.0,
+   "rate_6pct": 2606,
+   "rate_other": 0,
+   "tax_bill_outside_sc": 1630,
+   "pct_tax_bill_outside_sc": 47.5,
+   "blank_state": 1,
+   "top_states": [
+    [
+     "SC",
+     1798
+    ],
+    [
+     "NC",
+     342
+    ],
+    [
+     "NY",
+     274
+    ],
+    [
+     "PA",
+     165
+    ],
+    [
+     "NJ",
+     121
+    ],
+    [
+     "OH",
+     100
+    ],
+    [
+     "VA",
+     92
+    ],
+    [
+     "MD",
+     78
+    ]
+   ],
+   "fema": {
+    "none": 1733,
+    "AE": 1512,
+    "VE": 97,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 87
+   },
+   "pct_high_risk": 46.9,
+   "pct_ve": 2.8,
+   "median_county_market_value": 250000.0
+  },
+  "cdp/house": {
+   "homes": 2625,
+   "owner_occupied_4pct": 1638,
+   "pct_owner_occupied": 62.4,
+   "rate_6pct": 980,
+   "rate_other": 7,
+   "tax_bill_outside_sc": 427,
+   "pct_tax_bill_outside_sc": 16.3,
+   "blank_state": 0,
+   "top_states": [
+    [
+     "SC",
+     2198
+    ],
+    [
+     "NC",
+     139
+    ],
+    [
+     "PA",
+     35
+    ],
+    [
+     "VA",
+     34
+    ],
+    [
+     "NY",
+     32
+    ],
+    [
+     "NJ",
+     28
+    ],
+    [
+     "MD",
+     28
+    ],
+    [
+     "WV",
+     19
+    ]
+   ],
+   "fema": {
+    "none": 1256,
+    "AE": 764,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 549,
+    "VE": 56
+   },
+   "pct_high_risk": 31.2,
+   "pct_ve": 2.1,
+   "median_county_market_value": 390118.0
+  },
+  "cdp/other": {
+   "homes": 1421,
+   "owner_occupied_4pct": 436,
+   "pct_owner_occupied": 30.7,
+   "rate_6pct": 969,
+   "rate_other": 16,
+   "tax_bill_outside_sc": 477,
+   "pct_tax_bill_outside_sc": 33.6,
+   "blank_state": 1,
+   "top_states": [
+    [
+     "SC",
+     943
+    ],
+    [
+     "NC",
+     178
+    ],
+    [
+     "PA",
+     60
+    ],
+    [
+     "VA",
+     45
+    ],
+    [
+     "NY",
+     43
+    ],
+    [
+     "OH",
+     21
+    ],
+    [
+     "NJ",
+     19
+    ],
+    [
+     "MD",
+     17
+    ]
+   ],
+   "fema": {
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 343,
+    "AE": 453,
+    "none": 574,
+    "VE": 51
+   },
+   "pct_high_risk": 35.5,
+   "pct_ve": 3.6,
+   "median_county_market_value": 262994.0
+  }
+ },
+ "sales": {
+  "beach/all": {
+   "sales": 93,
+   "median": 326000.0,
+   "p25": 265500.0,
+   "p75": 459000.0,
+   "min": 18000.0,
+   "max": 2350000.0,
+   "builder": 0,
+   "buyer_outside_sc": 57,
+   "buyer_sc": 36
+  },
+  "beach/condo": {
+   "sales": 89,
+   "median": 319900.0,
+   "p25": 265500.0,
+   "p75": 438250.0,
+   "min": 18000.0,
+   "max": 740000.0,
+   "builder": 0,
+   "buyer_outside_sc": 57,
+   "buyer_sc": 32
+  },
+  "beach/house": {
+   "sales": 3,
+   "median": 1450000.0,
+   "p25": 1325000.0,
+   "p75": 2350000.0,
+   "min": 1325000.0,
+   "max": 2350000.0,
+   "builder": 0,
+   "buyer_outside_sc": 0,
+   "buyer_sc": 3
+  },
+  "beach/other": {
+   "sales": 1,
+   "median": 260000.0,
+   "p25": 260000.0,
+   "p75": 260000.0,
+   "min": 260000.0,
+   "max": 260000.0,
+   "builder": 0,
+   "buyer_outside_sc": 0,
+   "buyer_sc": 1
+  },
+  "middle/all": {
+   "sales": 122,
+   "median": 466000.0,
+   "p25": 272500.0,
+   "p75": 741250.0,
+   "min": 60000.0,
+   "max": 2287500.0,
+   "builder": 1,
+   "buyer_outside_sc": 43,
+   "buyer_sc": 79
+  },
+  "middle/condo": {
+   "sales": 37,
+   "median": 225000.0,
+   "p25": 182500.0,
+   "p75": 335000.0,
+   "min": 80000.0,
+   "max": 1345000.0,
+   "builder": 0,
+   "buyer_outside_sc": 19,
+   "buyer_sc": 18
+  },
+  "middle/house": {
+   "sales": 70,
+   "median": 617500.0,
+   "p25": 412500.0,
+   "p75": 828750.0,
+   "min": 325000.0,
+   "max": 2287500.0,
+   "builder": 1,
+   "buyer_outside_sc": 17,
+   "buyer_sc": 53
+  },
+  "middle/other": {
+   "sales": 15,
+   "median": 280000.0,
+   "p25": 224900.0,
+   "p75": 475000.0,
+   "min": 60000.0,
+   "max": 1400000.0,
+   "builder": 0,
+   "buyer_outside_sc": 7,
+   "buyer_sc": 8
+  },
+  "inland/all": {
+   "sales": 208,
+   "median": 219950.0,
+   "p25": 162125.0,
+   "p75": 325000.0,
+   "min": 20500.0,
+   "max": 636000.0,
+   "builder": 20,
+   "buyer_outside_sc": 64,
+   "buyer_sc": 143
+  },
+  "inland/condo": {
+   "sales": 121,
+   "median": 172500.0,
+   "p25": 151500.0,
+   "p75": 199950.0,
+   "min": 20500.0,
+   "max": 469999.0,
+   "builder": 0,
+   "buyer_outside_sc": 44,
+   "buyer_sc": 76
+  },
+  "inland/house": {
+   "sales": 57,
+   "median": 340000.0,
+   "p25": 299499.5,
+   "p75": 379950.0,
+   "min": 30000.0,
+   "max": 636000.0,
+   "builder": 1,
+   "buyer_outside_sc": 10,
+   "buyer_sc": 47
+  },
+  "inland/other": {
+   "sales": 30,
+   "median": 274500.0,
+   "p25": 269000.0,
+   "p75": 284122.5,
+   "min": 117500.0,
+   "max": 365000.0,
+   "builder": 19,
+   "buyer_outside_sc": 10,
+   "buyer_sc": 20
+  },
+  "middle/on_water/house": {
+   "sales": 14,
+   "median": 1168500.0,
+   "p25": 874750.0,
+   "p75": 1942500.0,
+   "min": 534032.0,
+   "max": 2287500.0,
+   "builder": 0,
+   "buyer_outside_sc": 0,
+   "buyer_sc": 14
+  },
+  "middle/off_water/house": {
+   "sales": 56,
+   "median": 567500.0,
+   "p25": 392500.0,
+   "p75": 686250.0,
+   "min": 325000.0,
+   "max": 2100000.0,
+   "builder": 1,
+   "buyer_outside_sc": 17,
+   "buyer_sc": 39
+  },
+  "cdp/all": {
+   "sales": 423,
+   "median": 295000.0,
+   "p25": 189500.0,
+   "p75": 415000.0,
+   "min": 18000.0,
+   "max": 2350000.0,
+   "builder": 21,
+   "buyer_outside_sc": 164,
+   "buyer_sc": 258
+  }
+ },
+ "sales_note": "Horry County deeds recorded 2025-10-01 to 2026-09-30, home sales of $10,000 or more on one residential parcel with a building (filters in data/2026-10-d/sell-out-of-state-buyers/README.md), point inside the 2020 Garden City CDP."
+}

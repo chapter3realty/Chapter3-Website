@@ -1,0 +1,140 @@
+{
+ "source": "https://www.airroi.com/airbnb-data/united-states/south-carolina/garden-city-beach",
+ "read": "2026-11-02",
+ "headline": {
+  "revenue": "$41,223",
+  "occupancy": "39.6%",
+  "adr": "$371",
+  "listings": "374",
+  "period": "12 months to September 2026",
+  "median_month": "$3,470",
+  "top25_month": "$5,870",
+  "bottom25_month": "$1,930",
+  "updated": "October 1, 2026",
+  "permit_share": "0%"
+ },
+ "months": {
+  "Sep 2025": {
+   "revenue": 4248.0,
+   "occupancy": 42.5,
+   "adr": 348.0,
+   "revpar": 142.0
+  },
+  "Oct 2025": {
+   "revenue": 3740.0,
+   "occupancy": 37.0,
+   "adr": 327.0,
+   "revpar": 121.0
+  },
+  "Nov 2025": {
+   "revenue": 2959.0,
+   "occupancy": 31.0,
+   "adr": 318.0,
+   "revpar": 99.0
+  },
+  "Dec 2025": {
+   "revenue": 2752.0,
+   "occupancy": 26.6,
+   "adr": 323.0,
+   "revpar": 89.0
+  },
+  "Jan 2026": {
+   "revenue": 2400.0,
+   "occupancy": 25.3,
+   "adr": 324.0,
+   "revpar": 77.0
+  },
+  "Feb 2026": {
+   "revenue": 3212.0,
+   "occupancy": 33.7,
+   "adr": 325.0,
+   "revpar": 115.0
+  },
+  "Mar 2026": {
+   "revenue": 3713.0,
+   "occupancy": 37.1,
+   "adr": 333.0,
+   "revpar": 120.0
+  },
+  "Apr 2026": {
+   "revenue": 4313.0,
+   "occupancy": 41.2,
+   "adr": 353.0,
+   "revpar": 144.0
+  },
+  "May 2026": {
+   "revenue": 6051.0,
+   "occupancy": 47.8,
+   "adr": 410.0,
+   "revpar": 195.0
+  },
+  "Jun 2026": {
+   "revenue": 9356.0,
+   "occupancy": 61.5,
+   "adr": 475.0,
+   "revpar": 312.0
+  },
+  "Jul 2026": {
+   "revenue": 11023.0,
+   "occupancy": 64.9,
+   "adr": 482.0,
+   "revpar": 356.0
+  },
+  "Aug 2026": {
+   "revenue": 6611.0,
+   "occupancy": 50.8,
+   "adr": 418.0,
+   "revpar": 213.0
+  }
+ },
+ "calendar_avg_2yr": {
+  "January": {
+   "season": "Low",
+   "revenue": 2090.0
+  },
+  "February": {
+   "season": "Low",
+   "revenue": 2820.0
+  },
+  "March": {
+   "season": "Low",
+   "revenue": 3660.0
+  },
+  "April": {
+   "season": "Shoulder",
+   "revenue": 4390.0
+  },
+  "May": {
+   "season": "High",
+   "revenue": 5660.0
+  },
+  "June": {
+   "season": "High",
+   "revenue": 8690.0
+  },
+  "July": {
+   "season": "High",
+   "revenue": 10200.0
+  },
+  "August": {
+   "season": "High",
+   "revenue": 6540.0
+  },
+  "September": {
+   "season": "Low",
+   "revenue": 4120.0
+  },
+  "October": {
+   "season": "Low",
+   "revenue": 3490.0
+  },
+  "November": {
+   "season": "Low",
+   "revenue": 2740.0
+  },
+  "December": {
+   "season": "Low",
+   "revenue": 2670.0
+  }
+ }
+}

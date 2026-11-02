@@ -1,0 +1,275 @@
+{
+ "restaurants": {
+  "query": "Overpass: nwr[amenity=restaurant](33.40,-79.20,33.48,-79.08); US 17 = way[ref~\"US 17\"]; fetched 2026-11-02 from overpass.kumi.systems",
+  "count": 20,
+  "within_200m_of_us17": 19,
+  "list": [
+   {
+    "osm": "node/1395458938",
+    "name": "Waffle House",
+    "lat": 33.4378383,
+    "lon": -79.1297243,
+    "m_from_us17": 47
+   },
+   {
+    "osm": "node/1395458940",
+    "name": "DeRoMa's Pizzeria",
+    "lat": 33.4380532,
+    "lon": -79.129853,
+    "m_from_us17": 72
+   },
+   {
+    "osm": "node/1395460342",
+    "name": "Frank's Outback",
+    "lat": 33.4378607,
+    "lon": -79.1276107,
+    "m_from_us17": 70
+   },
+   {
+    "osm": "node/1395460350",
+    "name": "Frank's",
+    "lat": 33.4380219,
+    "lon": -79.127777,
+    "m_from_us17": 46
+   },
+   {
+    "osm": "node/2724148175",
+    "name": "Sam's Corner",
+    "lat": 33.4579164,
+    "lon": -79.1134085,
+    "m_from_us17": 38
+   },
+   {
+    "osm": "node/5810758063",
+    "name": "Village Deli",
+    "lat": 33.4417894,
+    "lon": -79.1244318,
+    "m_from_us17": 34
+   },
+   {
+    "osm": "node/6594013000",
+    "name": "Cafe Piccolo",
+    "lat": 33.4307748,
+    "lon": -79.1427792,
+    "m_from_us17": 64
+   },
+   {
+    "osm": "node/8017796744",
+    "name": "Rustic Table",
+    "lat": 33.4411367,
+    "lon": -79.1257576,
+    "m_from_us17": 26
+   },
+   {
+    "osm": "node/8204157542",
+    "name": "South End Bistro",
+    "lat": 33.4244911,
+    "lon": -79.1636736,
+    "m_from_us17": 54
+   },
+   {
+    "osm": "node/9015363322",
+    "name": "Breakfast Beach",
+    "lat": 33.4712749,
+    "lon": -79.1044585,
+    "m_from_us17": 49
+   },
+   {
+    "osm": "node/9023307218",
+    "name": "Sol Cocina",
+    "lat": 33.4578851,
+    "lon": -79.1134381,
+    "m_from_us17": 40
+   },
+   {
+    "osm": "node/9023316522",
+    "name": "The Local",
+    "lat": 33.4435794,
+    "lon": -79.1230443,
+    "m_from_us17": 46
+   },
+   {
+    "osm": "node/9023316525",
+    "name": "Sone Hibachi",
+    "lat": 33.4712004,
+    "lon": -79.1045237,
+    "m_from_us17": 47
+   },
+   {
+    "osm": "node/9023323720",
+    "name": "Moe's Original BBQ",
+    "lat": 33.468398,
+    "lon": -79.1079701,
+    "m_from_us17": 66
+   },
+   {
+    "osm": "node/9023400623",
+    "name": "R'Way",
+    "lat": 33.4711682,
+    "lon": -79.1040781,
+    "m_from_us17": 87
+   },
+   {
+    "osm": "node/9024006819",
+    "name": "SoCo Baja Grill",
+    "lat": 33.4717008,
+    "lon": -79.1053008,
+    "m_from_us17": 26
+   },
+   {
+    "osm": "node/10296102205",
+    "name": "Parlor Donuts",
+    "lat": 33.4486266,
+    "lon": -79.1208622,
+    "m_from_us17": 49
+   },
+   {
+    "osm": "node/13707017558",
+    "name": "Tide to Table",
+    "lat": 33.4688617,
+    "lon": -79.0964772,
+    "m_from_us17": 828
+   },
+   {
+    "osm": "way/125697023",
+    "name": "J Peters",
+    "lat": 33.4367715,
+    "lon": -79.1321196,
+    "m_from_us17": 49
+   },
+   {
+    "osm": "way/964341500",
+    "name": "Pawleys Island Tavern",
+    "lat": 33.440991,
+    "lon": -79.1273808,
+    "m_from_us17": 148
+   }
+  ]
+ },
+ "hammock_shops_restaurants": {
+  "url": "https://hammockshops.com/",
+  "names": [
+   "Local | Eat, Drink, Celebrate",
+   "BisQit"
+  ],
+  "pages": [
+   "https://hammockshops.com/pages/local-eat-drink-celebrate",
+   "https://hammockshops.com/pages/bisqit"
+  ]
+ },
+ "pawleys_island_tavern": {
+  "url": "https://www.pawleysislandtavern.com/",
+  "quote": "Pawleys Island Tavern, 10635 Ocean Highway, Pawleys Island, SC 29585"
+ },
+ "franks": {
+  "url": "https://www.franksandoutback.com/",
+  "osm": [
+   "Frank's",
+   "Frank's Outback"
+  ]
+ },
+ "hammock_history": {
+  "url": "https://hammockshops.com/pages/history",
+  "quote": "in 1889, the riverboat captain designed a hammock to be as breathable and comfortable as possible. His creation consisted of cotton ropes and was weaved in such a way that there were no thick knots where he would lay.",
+  "quote2": "This whole outdoor shopping complex adopted its name from the \u201cOriginal Hammock Shop,\u201d which was established in 1938.",
+  "quote3": "ferried rice and supplies between Georgetown and Waverly Mills",
+  "shops": "Explore 21 unique shops offering everything from handcrafted hammocks and gifts to stylish apparel and gourmet treats"
+ },
+ "brookgreen": {
+  "url": "https://npgallery.nps.gov/AssetDetail/NRIS/84002045",
+  "quote": "It was their idea to establish a wildlife and nature preserve which would act as a backdrop for Mrs. Huntington's sculptures and those of other modern sculptors.",
+  "quote2": "the hunt club house on Magnolia Island (present day Huntington Beach State Park) opposite the entrance to Brookgreen",
+  "nhl": "Atalaya and Brookgreen Gardens - 10/05/92 Georgetown County, SC (NPS list of NHLs by state)"
+ },
+ "town_night_life": {
+  "url": "https://www.townofpawleysisland.com/about-pawleys-island/",
+  "quote": "Night life consists of dining out, long conversations on screened porches, shopping in a mainland boutique or strolling the beach."
+ },
+ "dogs": {
+  "url": "https://www.townofpawleysisland.com/dogs-on-the-beach/",
+  "quote": "Dogs are allowed on the beach year round; owners must have a leash in hand, have their dog under voice control and pick up after them. May 1 through September 30 between 8:00 AM until 8:00 PM, dogs must be on a leash and under complete control, even in the water."
+ },
+ "hurricane_season": {
+  "url": "https://www.nhc.noaa.gov/climo/",
+  "quote": "The Atlantic hurricane season runs from June 1 to November 30."
+ },
+ "normals": {
+  "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=normals-monthly-1991-2020&stations=USC00381093&dataTypes=MLY-TMAX-NORMAL,MLY-TMIN-NORMAL&format=json&units=standard",
+  "station": "USC00381093 BROOKGREEN GARDENS, SC US (33.5214, -79.0975)",
+  "miles_from_town_hall": 6.2,
+  "rows": [
+   {
+    "DATE": "01",
+    "MLY-TMIN-NORMAL": "36.8",
+    "STATION": "USC00381093",
+    "MLY-TMAX-NORMAL": "56.8"
+   },
+   {
+    "DATE": "02",
+    "MLY-TMIN-NORMAL": "38.8",
+    "STATION": "USC00381093",
+    "MLY-TMAX-NORMAL": "59.3"
+   },
+   {
+    "DATE": "03",
+    "MLY-TMIN-NORMAL": "44.4",
+    "STATION": "USC00381093",
+    "MLY-TMAX-NORMAL": "66.2"
+   },
+   {
+    "DATE": "04",
+    "MLY-TMIN-NORMAL": "52.2",
+    "STATION": "USC00381093",
+    "MLY-TMAX-NORMAL": "73.5"
+   },
+   {
+    "DATE": "05",
+    "MLY-TMIN-NORMAL": "61.0",
+    "STATION": "USC00381093",
+    "MLY-TMAX-NORMAL": "80.0"
+   },
+   {
+    "DATE": "06",
+    "MLY-TMIN-NORMAL": "68.3",
+    "STATION": "USC00381093",
+    "MLY-TMAX-NORMAL": "85.6"
+   },
+   {
+    "DATE": "07",
+    "MLY-TMIN-NORMAL": "72.1",
+    "STATION": "USC00381093",
+    "MLY-TMAX-NORMAL": "88.4"
+   },
+   {
+    "DATE": "08",
+    "MLY-TMIN-NORMAL": "71.0",
+    "STATION": "USC00381093",
+    "MLY-TMAX-NORMAL": "86.9"
+   },
+   {
+    "DATE": "09",
+    "MLY-TMIN-NORMAL": "66.1",
+    "STATION": "USC00381093",
+    "MLY-TMAX-NORMAL": "82.6"
+   },
+   {
+    "DATE": "10",
+    "MLY-TMIN-NORMAL": "55.9",
+    "STATION": "USC00381093",
+    "MLY-TMAX-NORMAL": "75.6"
+   },
+   {
+    "DATE": "11",
+    "MLY-TMIN-NORMAL": "45.0",
+    "STATION": "USC00381093",
+    "MLY-TMAX-NORMAL": "66.4"
+   },
+   {
+    "DATE": "12",
+    "MLY-TMIN-NORMAL": "38.6",
+    "STATION": "USC00381093",
+    "MLY-TMAX-NORMAL": "59.3"
+   }
+  ]
+ }
+}

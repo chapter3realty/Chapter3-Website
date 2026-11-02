@@ -1,0 +1,26 @@
+{
+ "pulled_listings": "2026-11-02T05:06:56.334822Z",
+ "truncated_bands": 6,
+ "by_type": {
+  "house": {
+   "listings": 3701,
+   "in_horry": 2987,
+   "in_sfha": 245,
+   "in_sfha_tagged": 49,
+   "in_sfha_not_tagged": 196,
+   "outside_sfha_tagged": 22,
+   "tagged_total": 125,
+   "share_in_sfha_not_tagged": 0.8
+  },
+  "condo": {
+   "listings": 2829,
+   "in_horry": 2667,
+   "in_sfha": 814,
+   "in_sfha_tagged": 178,
+   "in_sfha_not_tagged": 636,
+   "outside_sfha_tagged": 133,
+   "tagged_total": 331,
+   "share_in_sfha_not_tagged": 0.781
+  }
+ }
+}

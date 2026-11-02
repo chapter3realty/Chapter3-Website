@@ -1,0 +1,6 @@
+[out:json][timeout:120];
+(way["natural"="water"](33.52,-79.05,33.63,-78.96); relation["natural"="water"](33.52,-79.05,33.63,-78.96);
+ way["natural"="wetland"](33.52,-79.05,33.63,-78.96); relation["natural"="wetland"](33.52,-79.05,33.63,-78.96);
+ way["natural"="coastline"](33.52,-79.05,33.63,-78.96); way["waterway"](33.52,-79.05,33.63,-78.96);
+ way["highway"]["name"](33.52,-79.03,33.58,-78.98); node["amenity"](33.52,-79.03,33.60,-78.97); way["man_made"="pier"](33.52,-79.03,33.60,-78.97););
+out geom;

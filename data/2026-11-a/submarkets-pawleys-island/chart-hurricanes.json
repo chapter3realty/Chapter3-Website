@@ -1,0 +1,89 @@
+{
+ "note": "Storm centers within 50 miles of the middle of Pawleys Island, by decade, NOAA HURDAT2. hurricane = at hurricane strength at its closest point.",
+ "decades": [
+  {
+   "decade": "1950s",
+   "storms": 5,
+   "hurricanes": 2
+  },
+  {
+   "decade": "1960s",
+   "storms": 5,
+   "hurricanes": 0
+  },
+  {
+   "decade": "1970s",
+   "storms": 2,
+   "hurricanes": 0
+  },
+  {
+   "decade": "1980s",
+   "storms": 4,
+   "hurricanes": 0
+  },
+  {
+   "decade": "1990s",
+   "storms": 4,
+   "hurricanes": 0
+  },
+  {
+   "decade": "2000s",
+   "storms": 8,
+   "hurricanes": 1
+  },
+  {
+   "decade": "2010s",
+   "storms": 8,
+   "hurricanes": 2
+  },
+  {
+   "decade": "2020s",
+   "storms": 8,
+   "hurricanes": 2
+  }
+ ],
+ "hurricanes": [
+  {
+   "year": 1954,
+   "name": "Hazel",
+   "miles": 28,
+   "wind_mph": 130
+  },
+  {
+   "year": 1958,
+   "name": "Helene",
+   "miles": 42,
+   "wind_mph": 140
+  },
+  {
+   "year": 2004,
+   "name": "Charley",
+   "miles": 5,
+   "wind_mph": 80
+  },
+  {
+   "year": 2016,
+   "name": "Matthew",
+   "miles": 2,
+   "wind_mph": 80
+  },
+  {
+   "year": 2019,
+   "name": "Dorian",
+   "miles": 47,
+   "wind_mph": 110
+  },
+  {
+   "year": 2020,
+   "name": "Isaias",
+   "miles": 19,
+   "wind_mph": 90
+  },
+  {
+   "year": 2022,
+   "name": "Ian",
+   "miles": 5,
+   "wind_mph": 80
+  }
+ ]
+}

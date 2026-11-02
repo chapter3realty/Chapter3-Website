@@ -1,0 +1,2331 @@
+{
+ "meta": {
+  "made": "analyze.py",
+  "run": "2026-11-02T04:41:47.098576+00:00"
+ },
+ "city": {
+  "county_layer_sqmi": 23.83,
+  "city_layer_sqmi": 23.91,
+  "sym_diff_sqmi": 0.25
+ },
+ "zoning": {
+  "polygons": 288,
+  "sqmi_by_class": {
+   "str": 5.12,
+   "other_no": 5.64,
+   "r_no": 5.05,
+   "pud_no": 9.48
+  },
+  "codes_str": [
+   "16TH AVE N PUD",
+   "17TH AVE N PUD",
+   "21ST AVE N GATEWAY PUD",
+   "21ST AVE N OCEANFRONT PUD",
+   "23RD AVE N PUD",
+   "26TH AVE N PUD",
+   "2ND AVE N PIER PUD",
+   "30TH AVE N PUD",
+   "6TH AVE S PUD",
+   "A",
+   "ART",
+   "BARRIER PUD",
+   "C6",
+   "C8",
+   "CS",
+   "E",
+   "HC1",
+   "HC2",
+   "LM",
+   "MP",
+   "MUH",
+   "MUM",
+   "NANCE ST RESIDENCE HALL PUD",
+   "PRC",
+   "PUD",
+   "RMV",
+   "SAND DUNES OCEAN DUNES PUD",
+   "SEA MIST PUD"
+  ],
+  "codes_partly_str": [
+   "E",
+   "HC1",
+   "LM",
+   "MP",
+   "MUM",
+   "PRC"
+  ],
+  "fit_iou": 0.853
+ },
+ "homes_in_city": {
+  "all": {
+   "homes": 31059,
+   "rate_4pct": 10835,
+   "pct_4pct": 34.9,
+   "rate_6pct": 20182,
+   "pct_6pct": 65.0,
+   "owner_mail_sc": 17620,
+   "owner_mail_not_sc": 13422,
+   "pct_owner_mail_not_sc": 43.2,
+   "in_sfha": 4902,
+   "pct_in_sfha": 15.8,
+   "in_ve": 1114,
+   "median_county_value": 276376.0
+  },
+  "condo": {
+   "homes": 16929,
+   "rate_4pct": 1993,
+   "pct_4pct": 11.8,
+   "rate_6pct": 14935,
+   "pct_6pct": 88.2,
+   "owner_mail_sc": 5968,
+   "owner_mail_not_sc": 10945,
+   "pct_owner_mail_not_sc": 64.7,
+   "in_sfha": 4212,
+   "pct_in_sfha": 24.9,
+   "in_ve": 1105,
+   "median_county_value": 220000.0
+  },
+  "house": {
+   "homes": 10326,
+   "rate_4pct": 7732,
+   "pct_4pct": 74.9,
+   "rate_6pct": 2561,
+   "pct_6pct": 24.8,
+   "owner_mail_sc": 9118,
+   "owner_mail_not_sc": 1208,
+   "pct_owner_mail_not_sc": 11.7,
+   "in_sfha": 458,
+   "pct_in_sfha": 4.4,
+   "in_ve": 5,
+   "median_county_value": 496100.0
+  },
+  "villa_townhouse": {
+   "homes": 848,
+   "rate_4pct": 147,
+   "pct_4pct": 17.3,
+   "rate_6pct": 701,
+   "pct_6pct": 82.7,
+   "owner_mail_sc": 425,
+   "owner_mail_not_sc": 423,
+   "pct_owner_mail_not_sc": 49.9,
+   "in_sfha": 194,
+   "pct_in_sfha": 22.9,
+   "in_ve": 0,
+   "median_county_value": 225000.0
+  },
+  "other": {
+   "homes": 2956,
+   "rate_4pct": 963,
+   "pct_4pct": 32.6,
+   "rate_6pct": 1985,
+   "pct_6pct": 67.2,
+   "owner_mail_sc": 2109,
+   "owner_mail_not_sc": 846,
+   "pct_owner_mail_not_sc": 28.6,
+   "in_sfha": 38,
+   "pct_in_sfha": 1.3,
+   "in_ve": 4,
+   "median_county_value": 226734.0
+  },
+  "by_zone_class": {
+   "str": {
+    "all": {
+     "homes": 14646,
+     "rate_4pct": 1173,
+     "pct_4pct": 8.0,
+     "rate_6pct": 13471,
+     "pct_6pct": 92.0,
+     "owner_mail_sc": 4637,
+     "owner_mail_not_sc": 9994,
+     "pct_owner_mail_not_sc": 68.2,
+     "in_sfha": 4164,
+     "pct_in_sfha": 28.4,
+     "in_ve": 1109,
+     "median_county_value": 224900.0
+    },
+    "condo": {
+     "homes": 13120,
+     "rate_4pct": 722,
+     "pct_4pct": 5.5,
+     "rate_6pct": 12397,
+     "pct_6pct": 94.5,
+     "owner_mail_sc": 3747,
+     "owner_mail_not_sc": 9358,
+     "pct_owner_mail_not_sc": 71.3,
+     "in_sfha": 3978,
+     "pct_in_sfha": 30.3,
+     "in_ve": 1105,
+     "median_county_value": 220000.0
+    },
+    "house": {
+     "homes": 389,
+     "rate_4pct": 257,
+     "pct_4pct": 66.1,
+     "rate_6pct": 131,
+     "pct_6pct": 33.7,
+     "owner_mail_sc": 310,
+     "owner_mail_not_sc": 79,
+     "pct_owner_mail_not_sc": 20.3,
+     "in_sfha": 11,
+     "pct_in_sfha": 2.8,
+     "in_ve": 0,
+     "median_county_value": 505000.0
+    },
+    "villa_townhouse": {
+     "homes": 527,
+     "rate_4pct": 3,
+     "pct_4pct": 0.6,
+     "rate_6pct": 524,
+     "pct_6pct": 99.4,
+     "owner_mail_sc": 192,
+     "owner_mail_not_sc": 335,
+     "pct_owner_mail_not_sc": 63.6,
+     "in_sfha": 164,
+     "pct_in_sfha": 31.1,
+     "in_ve": 0,
+     "median_county_value": 179950.0
+    }
+   },
+   "r_no": {
+    "all": {
+     "homes": 8331,
+     "rate_4pct": 3991,
+     "pct_4pct": 47.9,
+     "rate_6pct": 4306,
+     "pct_6pct": 51.7,
+     "owner_mail_sc": 6473,
+     "owner_mail_not_sc": 1856,
+     "pct_owner_mail_not_sc": 22.3,
+     "in_sfha": 395,
+     "pct_in_sfha": 4.7,
+     "in_ve": 5,
+     "median_county_value": 265900.0
+    },
+    "condo": {
+     "homes": 2464,
+     "rate_4pct": 870,
+     "pct_4pct": 35.3,
+     "rate_6pct": 1594,
+     "pct_6pct": 64.7,
+     "owner_mail_sc": 1604,
+     "owner_mail_not_sc": 859,
+     "pct_owner_mail_not_sc": 34.9,
+     "in_sfha": 168,
+     "pct_in_sfha": 6.8,
+     "in_ve": 0,
+     "median_county_value": 210000.0
+    },
+    "house": {
+     "homes": 3902,
+     "rate_4pct": 2559,
+     "pct_4pct": 65.6,
+     "rate_6pct": 1313,
+     "pct_6pct": 33.6,
+     "owner_mail_sc": 3459,
+     "owner_mail_not_sc": 443,
+     "pct_owner_mail_not_sc": 11.4,
+     "in_sfha": 172,
+     "pct_in_sfha": 4.4,
+     "in_ve": 5,
+     "median_county_value": 421642.0
+    },
+    "villa_townhouse": {
+     "homes": 248,
+     "rate_4pct": 114,
+     "pct_4pct": 46.0,
+     "rate_6pct": 134,
+     "pct_6pct": 54.0,
+     "owner_mail_sc": 176,
+     "owner_mail_not_sc": 72,
+     "pct_owner_mail_not_sc": 29.0,
+     "in_sfha": 30,
+     "pct_in_sfha": 12.1,
+     "in_ve": 0,
+     "median_county_value": 265900.0
+    }
+   },
+   "pud_no": {
+    "all": {
+     "homes": 7517,
+     "rate_4pct": 5422,
+     "pct_4pct": 72.1,
+     "rate_6pct": 2092,
+     "pct_6pct": 27.8,
+     "owner_mail_sc": 6092,
+     "owner_mail_not_sc": 1425,
+     "pct_owner_mail_not_sc": 19.0,
+     "in_sfha": 341,
+     "pct_in_sfha": 4.5,
+     "in_ve": 0,
+     "median_county_value": 490000.0
+    },
+    "condo": {
+     "homes": 1180,
+     "rate_4pct": 326,
+     "pct_4pct": 27.6,
+     "rate_6pct": 854,
+     "pct_6pct": 72.4,
+     "owner_mail_sc": 493,
+     "owner_mail_not_sc": 687,
+     "pct_owner_mail_not_sc": 58.2,
+     "in_sfha": 66,
+     "pct_in_sfha": 5.6,
+     "in_ve": 0,
+     "median_county_value": 435000.0
+    },
+    "house": {
+     "homes": 5936,
+     "rate_4pct": 4862,
+     "pct_4pct": 81.9,
+     "rate_6pct": 1073,
+     "pct_6pct": 18.1,
+     "owner_mail_sc": 5270,
+     "owner_mail_not_sc": 666,
+     "pct_owner_mail_not_sc": 11.2,
+     "in_sfha": 275,
+     "pct_in_sfha": 4.6,
+     "in_ve": 0,
+     "median_county_value": 515338.0
+    },
+    "villa_townhouse": {
+     "homes": 60,
+     "rate_4pct": 24,
+     "pct_4pct": 40.0,
+     "rate_6pct": 36,
+     "pct_6pct": 60.0,
+     "owner_mail_sc": 47,
+     "owner_mail_not_sc": 13,
+     "pct_owner_mail_not_sc": 21.7,
+     "in_sfha": 0,
+     "pct_in_sfha": 0.0,
+     "in_ve": 0,
+     "median_county_value": 205900.0
+    }
+   },
+   "other_no": {
+    "all": {
+     "homes": 564,
+     "rate_4pct": 248,
+     "pct_4pct": 44.0,
+     "rate_6pct": 313,
+     "pct_6pct": 55.5,
+     "owner_mail_sc": 417,
+     "owner_mail_not_sc": 147,
+     "pct_owner_mail_not_sc": 26.1,
+     "in_sfha": 2,
+     "pct_in_sfha": 0.4,
+     "in_ve": 0,
+     "median_county_value": 259618.0
+    },
+    "condo": {
+     "homes": 165,
+     "rate_4pct": 75,
+     "pct_4pct": 45.5,
+     "rate_6pct": 90,
+     "pct_6pct": 54.5,
+     "owner_mail_sc": 124,
+     "owner_mail_not_sc": 41,
+     "pct_owner_mail_not_sc": 24.8,
+     "in_sfha": 0,
+     "pct_in_sfha": 0.0,
+     "in_ve": 0,
+     "median_county_value": 275000.0
+    },
+    "house": {
+     "homes": 98,
+     "rate_4pct": 53,
+     "pct_4pct": 54.1,
+     "rate_6pct": 44,
+     "pct_6pct": 44.9,
+     "owner_mail_sc": 78,
+     "owner_mail_not_sc": 20,
+     "pct_owner_mail_not_sc": 20.4,
+     "in_sfha": 0,
+     "pct_in_sfha": 0.0,
+     "in_ve": 0,
+     "median_county_value": 694206.0
+    },
+    "villa_townhouse": {
+     "homes": 13,
+     "rate_4pct": 6,
+     "pct_4pct": 46.2,
+     "rate_6pct": 7,
+     "pct_6pct": 53.8,
+     "owner_mail_sc": 10,
+     "owner_mail_not_sc": 3,
+     "pct_owner_mail_not_sc": 23.1,
+     "in_sfha": 0,
+     "pct_in_sfha": 0.0,
+     "in_ve": 0,
+     "median_county_value": 293000.0
+    }
+   },
+   "none": {
+    "all": {
+     "homes": 1,
+     "rate_4pct": 1,
+     "pct_4pct": 100.0,
+     "rate_6pct": 0,
+     "pct_6pct": 0.0,
+     "owner_mail_sc": 1,
+     "owner_mail_not_sc": 0,
+     "pct_owner_mail_not_sc": 0.0,
+     "in_sfha": 0,
+     "pct_in_sfha": 0.0,
+     "in_ve": 0,
+     "median_county_value": 181509.0
+    },
+    "condo": {
+     "homes": 0,
+     "rate_4pct": 0,
+     "pct_4pct": null,
+     "rate_6pct": 0,
+     "pct_6pct": null,
+     "owner_mail_sc": 0,
+     "owner_mail_not_sc": 0,
+     "pct_owner_mail_not_sc": null,
+     "in_sfha": 0,
+     "pct_in_sfha": null,
+     "in_ve": 0,
+     "median_county_value": null
+    },
+    "house": {
+     "homes": 1,
+     "rate_4pct": 1,
+     "pct_4pct": 100.0,
+     "rate_6pct": 0,
+     "pct_6pct": 0.0,
+     "owner_mail_sc": 1,
+     "owner_mail_not_sc": 0,
+     "pct_owner_mail_not_sc": 0.0,
+     "in_sfha": 0,
+     "pct_in_sfha": 0.0,
+     "in_ve": 0,
+     "median_county_value": 181509.0
+    },
+    "villa_townhouse": {
+     "homes": 0,
+     "rate_4pct": 0,
+     "pct_4pct": null,
+     "rate_6pct": 0,
+     "pct_6pct": null,
+     "owner_mail_sc": 0,
+     "owner_mail_not_sc": 0,
+     "pct_owner_mail_not_sc": null,
+     "in_sfha": 0,
+     "pct_in_sfha": null,
+     "in_ve": 0,
+     "median_county_value": null
+    }
+   }
+  },
+  "by_zip": {
+   "29572": {
+    "all": {
+     "homes": 8295,
+     "rate_4pct": 3252,
+     "pct_4pct": 39.2,
+     "rate_6pct": 5035,
+     "pct_6pct": 60.7,
+     "owner_mail_sc": 5025,
+     "owner_mail_not_sc": 3268,
+     "pct_owner_mail_not_sc": 39.4,
+     "in_sfha": 1115,
+     "pct_in_sfha": 13.4,
+     "in_ve": 5,
+     "median_county_value": 364000.0
+    },
+    "condo": {
+     "homes": 4110,
+     "rate_4pct": 461,
+     "pct_4pct": 11.2,
+     "rate_6pct": 3649,
+     "pct_6pct": 88.8,
+     "owner_mail_sc": 1489,
+     "owner_mail_not_sc": 2619,
+     "pct_owner_mail_not_sc": 63.7,
+     "in_sfha": 1019,
+     "pct_in_sfha": 24.8,
+     "in_ve": 0,
+     "median_county_value": 220000.0
+    },
+    "house": {
+     "homes": 3256,
+     "rate_4pct": 2542,
+     "pct_4pct": 78.1,
+     "rate_6pct": 709,
+     "pct_6pct": 21.8,
+     "owner_mail_sc": 2848,
+     "owner_mail_not_sc": 408,
+     "pct_owner_mail_not_sc": 12.5,
+     "in_sfha": 62,
+     "pct_in_sfha": 1.9,
+     "in_ve": 5,
+     "median_county_value": 705898.0
+    }
+   },
+   "29576": {
+    "all": {
+     "homes": 1,
+     "rate_4pct": 0,
+     "pct_4pct": 0.0,
+     "rate_6pct": 1,
+     "pct_6pct": 100.0,
+     "owner_mail_sc": 1,
+     "owner_mail_not_sc": 0,
+     "pct_owner_mail_not_sc": 0.0,
+     "in_sfha": 0,
+     "pct_in_sfha": 0.0,
+     "in_ve": 0,
+     "median_county_value": 275000.0
+    },
+    "condo": {
+     "homes": 1,
+     "rate_4pct": 0,
+     "pct_4pct": 0.0,
+     "rate_6pct": 1,
+     "pct_6pct": 100.0,
+     "owner_mail_sc": 1,
+     "owner_mail_not_sc": 0,
+     "pct_owner_mail_not_sc": 0.0,
+     "in_sfha": 0,
+     "pct_in_sfha": 0.0,
+     "in_ve": 0,
+     "median_county_value": 275000.0
+    },
+    "house": {
+     "homes": 0,
+     "rate_4pct": 0,
+     "pct_4pct": null,
+     "rate_6pct": 0,
+     "pct_6pct": null,
+     "owner_mail_sc": 0,
+     "owner_mail_not_sc": 0,
+     "pct_owner_mail_not_sc": null,
+     "in_sfha": 0,
+     "pct_in_sfha": null,
+     "in_ve": 0,
+     "median_county_value": null
+    }
+   },
+   "29577": {
+    "all": {
+     "homes": 22474,
+     "rate_4pct": 7353,
+     "pct_4pct": 32.7,
+     "rate_6pct": 15087,
+     "pct_6pct": 67.1,
+     "owner_mail_sc": 12344,
+     "owner_mail_not_sc": 10115,
+     "pct_owner_mail_not_sc": 45.0,
+     "in_sfha": 3787,
+     "pct_in_sfha": 16.9,
+     "in_ve": 1109,
+     "median_county_value": 260000.0
+    },
+    "condo": {
+     "homes": 12812,
+     "rate_4pct": 1527,
+     "pct_4pct": 11.9,
+     "rate_6pct": 11284,
+     "pct_6pct": 88.1,
+     "owner_mail_sc": 4473,
+     "owner_mail_not_sc": 8325,
+     "pct_owner_mail_not_sc": 65.0,
+     "in_sfha": 3193,
+     "pct_in_sfha": 24.9,
+     "in_ve": 1105,
+     "median_county_value": 224900.0
+    },
+    "house": {
+     "homes": 6789,
+     "rate_4pct": 4966,
+     "pct_4pct": 73.1,
+     "rate_6pct": 1795,
+     "pct_6pct": 26.4,
+     "owner_mail_sc": 6027,
+     "owner_mail_not_sc": 762,
+     "pct_owner_mail_not_sc": 11.2,
+     "in_sfha": 396,
+     "pct_in_sfha": 5.8,
+     "in_ve": 0,
+     "median_county_value": 448945.0
+    }
+   },
+   "29579": {
+    "all": {
+     "homes": 289,
+     "rate_4pct": 230,
+     "pct_4pct": 79.6,
+     "rate_6pct": 59,
+     "pct_6pct": 20.4,
+     "owner_mail_sc": 250,
+     "owner_mail_not_sc": 39,
+     "pct_owner_mail_not_sc": 13.5,
+     "in_sfha": 0,
+     "pct_in_sfha": 0.0,
+     "in_ve": 0,
+     "median_county_value": 1423000.0
+    },
+    "condo": {
+     "homes": 6,
+     "rate_4pct": 5,
+     "pct_4pct": 83.3,
+     "rate_6pct": 1,
+     "pct_6pct": 16.7,
+     "owner_mail_sc": 5,
+     "owner_mail_not_sc": 1,
+     "pct_owner_mail_not_sc": 16.7,
+     "in_sfha": 0,
+     "pct_in_sfha": 0.0,
+     "in_ve": 0,
+     "median_county_value": 700000.0
+    },
+    "house": {
+     "homes": 281,
+     "rate_4pct": 224,
+     "pct_4pct": 79.7,
+     "rate_6pct": 57,
+     "pct_6pct": 20.3,
+     "owner_mail_sc": 243,
+     "owner_mail_not_sc": 38,
+     "pct_owner_mail_not_sc": 13.5,
+     "in_sfha": 0,
+     "pct_in_sfha": 0.0,
+     "in_ve": 0,
+     "median_county_value": 1442039.0
+    }
+   }
+  },
+  "by_part": {
+   "grande_dunes": {
+    "all": {
+     "homes": 2961,
+     "rate_4pct": 1860,
+     "pct_4pct": 62.8,
+     "rate_6pct": 1098,
+     "pct_6pct": 37.1,
+     "owner_mail_sc": 2036,
+     "owner_mail_not_sc": 925,
+     "pct_owner_mail_not_sc": 31.2,
+     "in_sfha": 70,
+     "pct_in_sfha": 2.4,
+     "in_ve": 0,
+     "median_county_value": 698938.0
+    },
+    "condo": {
+     "homes": 776,
+     "rate_4pct": 110,
+     "pct_4pct": 14.2,
+     "rate_6pct": 666,
+     "pct_6pct": 85.8,
+     "owner_mail_sc": 145,
+     "owner_mail_not_sc": 631,
+     "pct_owner_mail_not_sc": 81.3,
+     "in_sfha": 66,
+     "pct_in_sfha": 8.5,
+     "in_ve": 0,
+     "median_county_value": 490000.0
+    },
+    "house": {
+     "homes": 2151,
+     "rate_4pct": 1742,
+     "pct_4pct": 81.0,
+     "rate_6pct": 408,
+     "pct_6pct": 19.0,
+     "owner_mail_sc": 1867,
+     "owner_mail_not_sc": 284,
+     "pct_owner_mail_not_sc": 13.2,
+     "in_sfha": 4,
+     "pct_in_sfha": 0.2,
+     "in_ve": 0,
+     "median_county_value": 770125.0
+    },
+    "house_median_acres": 0.0,
+    "center": [
+     -78.82576,
+     33.75671
+    ]
+   },
+   "market_common": {
+    "all": {
+     "homes": 2997,
+     "rate_4pct": 2421,
+     "pct_4pct": 80.8,
+     "rate_6pct": 576,
+     "pct_6pct": 19.2,
+     "owner_mail_sc": 2643,
+     "owner_mail_not_sc": 354,
+     "pct_owner_mail_not_sc": 11.8,
+     "in_sfha": 65,
+     "pct_in_sfha": 2.2,
+     "in_ve": 0,
+     "median_county_value": 482136.0
+    },
+    "condo": {
+     "homes": 37,
+     "rate_4pct": 9,
+     "pct_4pct": 24.3,
+     "rate_6pct": 28,
+     "pct_6pct": 75.7,
+     "owner_mail_sc": 30,
+     "owner_mail_not_sc": 7,
+     "pct_owner_mail_not_sc": 18.9,
+     "in_sfha": 0,
+     "pct_in_sfha": 0.0,
+     "in_ve": 0,
+     "median_county_value": 295000.0
+    },
+    "house": {
+     "homes": 2491,
+     "rate_4pct": 2133,
+     "pct_4pct": 85.6,
+     "rate_6pct": 358,
+     "pct_6pct": 14.4,
+     "owner_mail_sc": 2249,
+     "owner_mail_not_sc": 242,
+     "pct_owner_mail_not_sc": 9.7,
+     "in_sfha": 65,
+     "pct_in_sfha": 2.6,
+     "in_ve": 0,
+     "median_county_value": 496481.0
+    },
+    "house_median_acres": null,
+    "center": [
+     -78.95479,
+     33.6677
+    ]
+   },
+   "arbor_glenn_meridian": {
+    "all": {
+     "homes": 513,
+     "rate_4pct": 410,
+     "pct_4pct": 79.9,
+     "rate_6pct": 103,
+     "pct_6pct": 20.1,
+     "owner_mail_sc": 450,
+     "owner_mail_not_sc": 63,
+     "pct_owner_mail_not_sc": 12.3,
+     "in_sfha": 205,
+     "pct_in_sfha": 40.0,
+     "in_ve": 0,
+     "median_county_value": 356564.0
+    },
+    "condo": {
+     "homes": 0,
+     "rate_4pct": 0,
+     "pct_4pct": null,
+     "rate_6pct": 0,
+     "pct_6pct": null,
+     "owner_mail_sc": 0,
+     "owner_mail_not_sc": 0,
+     "pct_owner_mail_not_sc": null,
+     "in_sfha": 0,
+     "pct_in_sfha": null,
+     "in_ve": 0,
+     "median_county_value": null
+    },
+    "house": {
+     "homes": 513,
+     "rate_4pct": 410,
+     "pct_4pct": 79.9,
+     "rate_6pct": 103,
+     "pct_6pct": 20.1,
+     "owner_mail_sc": 450,
+     "owner_mail_not_sc": 63,
+     "pct_owner_mail_not_sc": 12.3,
+     "in_sfha": 205,
+     "pct_in_sfha": 40.0,
+     "in_ve": 0,
+     "median_county_value": 356564.0
+    },
+    "house_median_acres": null,
+    "center": [
+     -78.94606,
+     33.68867
+    ]
+   },
+   "pine_lakes_pud": {
+    "all": {
+     "homes": 317,
+     "rate_4pct": 244,
+     "pct_4pct": 77.0,
+     "rate_6pct": 73,
+     "pct_6pct": 23.0,
+     "owner_mail_sc": 288,
+     "owner_mail_not_sc": 29,
+     "pct_owner_mail_not_sc": 9.1,
+     "in_sfha": 0,
+     "pct_in_sfha": 0.0,
+     "in_ve": 0,
+     "median_county_value": 469777.0
+    },
+    "condo": {
+     "homes": 0,
+     "rate_4pct": 0,
+     "pct_4pct": null,
+     "rate_6pct": 0,
+     "pct_6pct": null,
+     "owner_mail_sc": 0,
+     "owner_mail_not_sc": 0,
+     "pct_owner_mail_not_sc": null,
+     "in_sfha": 0,
+     "pct_in_sfha": null,
+     "in_ve": 0,
+     "median_county_value": null
+    },
+    "house": {
+     "homes": 247,
+     "rate_4pct": 199,
+     "pct_4pct": 80.6,
+     "rate_6pct": 48,
+     "pct_6pct": 19.4,
+     "owner_mail_sc": 225,
+     "owner_mail_not_sc": 22,
+     "pct_owner_mail_not_sc": 8.9,
+     "in_sfha": 0,
+     "pct_in_sfha": 0.0,
+     "in_ve": 0,
+     "median_county_value": 481840.0
+    },
+    "house_median_acres": 0.0,
+    "center": [
+     -78.84656,
+     33.73661
+    ]
+   },
+   "older_r_house_zones": {
+    "all": {
+     "homes": 3199,
+     "rate_4pct": 2244,
+     "pct_4pct": 70.1,
+     "rate_6pct": 945,
+     "pct_6pct": 29.5,
+     "owner_mail_sc": 2862,
+     "owner_mail_not_sc": 337,
+     "pct_owner_mail_not_sc": 10.5,
+     "in_sfha": 159,
+     "pct_in_sfha": 5.0,
+     "in_ve": 5,
+     "median_county_value": 473362.0
+    },
+    "condo": {
+     "homes": 5,
+     "rate_4pct": 0,
+     "pct_4pct": 0.0,
+     "rate_6pct": 5,
+     "pct_6pct": 100.0,
+     "owner_mail_sc": 1,
+     "owner_mail_not_sc": 4,
+     "pct_owner_mail_not_sc": 80.0,
+     "in_sfha": 5,
+     "pct_in_sfha": 100.0,
+     "in_ve": 0,
+     "median_county_value": 180000.0
+    },
+    "house": {
+     "homes": 3158,
+     "rate_4pct": 2239,
+     "pct_4pct": 70.9,
+     "rate_6pct": 911,
+     "pct_6pct": 28.8,
+     "owner_mail_sc": 2827,
+     "owner_mail_not_sc": 331,
+     "pct_owner_mail_not_sc": 10.5,
+     "in_sfha": 151,
+     "pct_in_sfha": 4.8,
+     "in_ve": 5,
+     "median_county_value": 478068.0
+    },
+    "house_median_acres": 0.0,
+    "center": [
+     -78.852,
+     33.72481
+    ]
+   },
+   "rest": {
+    "all": {
+     "homes": 21071,
+     "rate_4pct": 3655,
+     "pct_4pct": 17.3,
+     "rate_6pct": 17387,
+     "pct_6pct": 82.5,
+     "owner_mail_sc": 9340,
+     "owner_mail_not_sc": 11714,
+     "pct_owner_mail_not_sc": 55.6,
+     "in_sfha": 4403,
+     "pct_in_sfha": 20.9,
+     "in_ve": 1109,
+     "median_county_value": 220000.0
+    },
+    "condo": {
+     "homes": 16111,
+     "rate_4pct": 1874,
+     "pct_4pct": 11.6,
+     "rate_6pct": 14236,
+     "pct_6pct": 88.4,
+     "owner_mail_sc": 5792,
+     "owner_mail_not_sc": 10303,
+     "pct_owner_mail_not_sc": 64.0,
+     "in_sfha": 4141,
+     "pct_in_sfha": 25.7,
+     "in_ve": 1105,
+     "median_county_value": 220000.0
+    },
+    "house": {
+     "homes": 1765,
+     "rate_4pct": 1008,
+     "pct_4pct": 57.1,
+     "rate_6pct": 733,
+     "pct_6pct": 41.5,
+     "owner_mail_sc": 1499,
+     "owner_mail_not_sc": 266,
+     "pct_owner_mail_not_sc": 15.1,
+     "in_sfha": 33,
+     "pct_in_sfha": 1.9,
+     "in_ve": 0,
+     "median_county_value": 345797.0
+    },
+    "house_median_acres": 0.0,
+    "center": [
+     -78.87001,
+     33.71303
+    ]
+   }
+  },
+  "by_tax_district": [
+   [
+    "880",
+    22238
+   ],
+   [
+    "882",
+    2183
+   ],
+   [
+    "891",
+    1702
+   ],
+   [
+    "895",
+    1364
+   ],
+   [
+    "893",
+    1279
+   ],
+   [
+    "899",
+    1094
+   ],
+   [
+    "894",
+    553
+   ],
+   [
+    "898",
+    419
+   ],
+   [
+    "881",
+    167
+   ],
+   [
+    "883",
+    24
+   ],
+   [
+    "896",
+    14
+   ],
+   [
+    "500",
+    12
+   ]
+  ],
+  "zone_codes_houses": [
+   [
+    "GRANDE DUNES PUD",
+    2151
+   ],
+   [
+    "CENTER POINTE PUD",
+    1710
+   ],
+   [
+    "R10",
+    1640
+   ],
+   [
+    "R15",
+    685
+   ],
+   [
+    "R7",
+    617
+   ],
+   [
+    "ARBOR GLENN PUD",
+    513
+   ],
+   [
+    "CLEMSON TRACT PUD",
+    450
+   ],
+   [
+    "RMH",
+    411
+   ],
+   [
+    "C6",
+    331
+   ],
+   [
+    "RMM",
+    228
+   ],
+   [
+    "PINE LAKES COUNTRY CLUB PUD",
+    220
+   ],
+   [
+    "R10BTW",
+    153
+   ],
+   [
+    "BENT OAK ESTATES PUD",
+    150
+   ],
+   [
+    "ANTIGUA PUD",
+    131
+   ],
+   [
+    "SEASIDE VILLAGE PUD",
+    117
+   ],
+   [
+    "PELICAN HARBOR PUD",
+    105
+   ],
+   [
+    "SETTLERS POINT PUD",
+    80
+   ],
+   [
+    "LONGLEAF PLACE PUD",
+    65
+   ],
+   [
+    "IN",
+    61
+   ],
+   [
+    "RMHMH",
+    56
+   ],
+   [
+    "R8",
+    47
+   ],
+   [
+    "RMMBTW",
+    42
+   ],
+   [
+    "RMV",
+    42
+   ],
+   [
+    "STUART SQUARE PUD",
+    37
+   ],
+   [
+    "38TH AVE N PUD",
+    35
+   ]
+  ],
+  "subdivisions_houses": [
+   {
+    "name": "MEMBERS CLUB RESIDENTIAL",
+    "homes": 220,
+    "pct_4pct": 80.5,
+    "pct_owner_mail_not_sc": 14.1,
+    "pct_in_sfha": 0.0,
+    "median_county_value": 1722820.0,
+    "str_zone": 0,
+    "median_acres": 0.0,
+    "cx": -78.80403,
+    "cy": 33.77812
+   }
+  ]
+ },
+ "mailing_address": {
+  "note": "address points with POSTAL_CITY Myrtle Beach whose PIN is a residential parcel with a building in the box; one per PIN; condo units mostly have no own address point, so this counts buildings and houses, not units",
+  "inside_city": 13233,
+  "outside_city": 25761,
+  "pct_inside": 33.9
+ },
+ "mailing_address_countywide": {
+  "note": "one per residential parcel with a building that has its own address point; condo units mostly share their building's point, so this counts houses, villas and buildings, not condo units",
+  "inside_city": 13235,
+  "outside_city": 42744,
+  "pct_inside": 23.6,
+  "by_zip": {
+   "29579": {
+    "all": 21216,
+    "inside_city": 280,
+    "pct_inside": 1.3
+   },
+   "29588": {
+    "all": 19008,
+    "inside_city": 0,
+    "pct_inside": 0.0
+   },
+   "29577": {
+    "all": 10429,
+    "inside_city": 8898,
+    "pct_inside": 85.3
+   },
+   "29572": {
+    "all": 5250,
+    "inside_city": 4056,
+    "pct_inside": 77.3
+   },
+   "29585": {
+    "all": 70,
+    "inside_city": 0,
+    "pct_inside": 0.0
+   },
+   "29566": {
+    "all": 3,
+    "inside_city": 0,
+    "pct_inside": 0.0
+   },
+   "29576": {
+    "all": 2,
+    "inside_city": 1,
+    "pct_inside": 50.0
+   },
+   "29526": {
+    "all": 1,
+    "inside_city": 0,
+    "pct_inside": 0.0
+   }
+  }
+ },
+ "sales_in_city": {
+  "all": {
+   "n": 1712,
+   "median": 235000.0,
+   "q1": 140000.0,
+   "q3": 446838.0,
+   "matched_owner": 1686,
+   "buyer_mail_not_sc": 763,
+   "pct_buyer_mail_not_sc": 45.3,
+   "company_buyer": 344
+  },
+  "condo": {
+   "n": 661,
+   "median": 175000.0,
+   "q1": 103500.0,
+   "q3": 275000.0,
+   "matched_owner": 651,
+   "buyer_mail_not_sc": 418,
+   "pct_buyer_mail_not_sc": 64.2,
+   "company_buyer": 182
+  },
+  "not_condo": {
+   "n": 1051,
+   "median": 319900.0,
+   "q1": 175000.0,
+   "q3": 545000.0,
+   "matched_owner": 1035,
+   "buyer_mail_not_sc": 345,
+   "pct_buyer_mail_not_sc": 33.3,
+   "company_buyer": 162
+  },
+  "builder": {
+   "n": 49,
+   "median": 621460.0,
+   "q1": 557495.0,
+   "q3": 690000.0,
+   "matched_owner": 49,
+   "buyer_mail_not_sc": 16,
+   "pct_buyer_mail_not_sc": 32.7,
+   "company_buyer": 5
+  },
+  "resale_not_condo": {
+   "n": 1005,
+   "median": 305000.0,
+   "q1": 170000.0,
+   "q3": 530000.0,
+   "matched_owner": 989,
+   "buyer_mail_not_sc": 330,
+   "pct_buyer_mail_not_sc": 33.4,
+   "company_buyer": 158
+  },
+  "resale_condo": {
+   "n": 658,
+   "median": 175000.0,
+   "q1": 103750.0,
+   "q3": 275000.0,
+   "matched_owner": 648,
+   "buyer_mail_not_sc": 417,
+   "pct_buyer_mail_not_sc": 64.4,
+   "company_buyer": 181
+  },
+  "by_zone_class": {
+   "str": {
+    "condo": {
+     "n": 570,
+     "median": 155000.0,
+     "q1": 94625.0,
+     "q3": 255000.0,
+     "matched_owner": 561,
+     "buyer_mail_not_sc": 389,
+     "pct_buyer_mail_not_sc": 69.3,
+     "company_buyer": 171
+    },
+    "not_condo": {
+     "n": 335,
+     "median": 180000.0,
+     "q1": 125000.0,
+     "q3": 272000.0,
+     "matched_owner": 334,
+     "buyer_mail_not_sc": 199,
+     "pct_buyer_mail_not_sc": 59.6,
+     "company_buyer": 82
+    }
+   },
+   "r_no": {
+    "condo": {
+     "n": 54,
+     "median": 270500.0,
+     "q1": 185375.0,
+     "q3": 395000.0,
+     "matched_owner": 54,
+     "buyer_mail_not_sc": 16,
+     "pct_buyer_mail_not_sc": 29.6,
+     "company_buyer": 4
+    },
+    "not_condo": {
+     "n": 279,
+     "median": 275000.0,
+     "q1": 179050.0,
+     "q3": 540000.0,
+     "matched_owner": 270,
+     "buyer_mail_not_sc": 67,
+     "pct_buyer_mail_not_sc": 24.8,
+     "company_buyer": 64
+    }
+   },
+   "pud_no": {
+    "condo": {
+     "n": 30,
+     "median": 382500.0,
+     "q1": 223375.0,
+     "q3": 748500.0,
+     "matched_owner": 29,
+     "buyer_mail_not_sc": 12,
+     "pct_buyer_mail_not_sc": 41.4,
+     "company_buyer": 6
+    },
+    "not_condo": {
+     "n": 420,
+     "median": 525000.0,
+     "q1": 370725.0,
+     "q3": 670000.0,
+     "matched_owner": 415,
+     "buyer_mail_not_sc": 75,
+     "pct_buyer_mail_not_sc": 18.1,
+     "company_buyer": 15
+    }
+   },
+   "other_no": {
+    "condo": {
+     "n": 7,
+     "median": 197500.0,
+     "q1": 190000.0,
+     "q3": 258000.0,
+     "matched_owner": 7,
+     "buyer_mail_not_sc": 1,
+     "pct_buyer_mail_not_sc": 14.3,
+     "company_buyer": 1
+    },
+    "not_condo": {
+     "n": 17,
+     "median": 266000.0,
+     "q1": 233750.0,
+     "q3": 293000.0,
+     "matched_owner": 16,
+     "buyer_mail_not_sc": 4,
+     "pct_buyer_mail_not_sc": 25.0,
+     "company_buyer": 1
+    }
+   },
+   "none": {
+    "condo": {
+     "n": 0,
+     "median": null,
+     "q1": null,
+     "q3": null,
+     "matched_owner": 0,
+     "buyer_mail_not_sc": 0,
+     "pct_buyer_mail_not_sc": null,
+     "company_buyer": 0
+    },
+    "not_condo": {
+     "n": 0,
+     "median": null,
+     "q1": null,
+     "q3": null,
+     "matched_owner": 0,
+     "buyer_mail_not_sc": 0,
+     "pct_buyer_mail_not_sc": null,
+     "company_buyer": 0
+    }
+   }
+  },
+  "by_zip": {
+   "29572": {
+    "condo": {
+     "n": 169,
+     "median": 162500.0,
+     "q1": 127750.0,
+     "q3": 292500.0,
+     "matched_owner": 167,
+     "buyer_mail_not_sc": 107,
+     "pct_buyer_mail_not_sc": 64.1,
+     "company_buyer": 55
+    },
+    "not_condo": {
+     "n": 282,
+     "median": 532500.0,
+     "q1": 193698.0,
+     "q3": 756088.0,
+     "matched_owner": 280,
+     "buyer_mail_not_sc": 87,
+     "pct_buyer_mail_not_sc": 31.1,
+     "company_buyer": 42
+    }
+   },
+   "29577": {
+    "condo": {
+     "n": 491,
+     "median": 185000.0,
+     "q1": 93500.0,
+     "q3": 267500.0,
+     "matched_owner": 483,
+     "buyer_mail_not_sc": 311,
+     "pct_buyer_mail_not_sc": 64.4,
+     "company_buyer": 127
+    },
+    "not_condo": {
+     "n": 750,
+     "median": 284950.0,
+     "q1": 165000.0,
+     "q3": 466000.0,
+     "matched_owner": 736,
+     "buyer_mail_not_sc": 256,
+     "pct_buyer_mail_not_sc": 34.8,
+     "company_buyer": 120
+    }
+   },
+   "29579": {
+    "condo": {
+     "n": 1,
+     "median": 743000.0,
+     "q1": null,
+     "q3": null,
+     "matched_owner": 1,
+     "buyer_mail_not_sc": 0,
+     "pct_buyer_mail_not_sc": 0.0,
+     "company_buyer": 0
+    },
+    "not_condo": {
+     "n": 19,
+     "median": 1600000.0,
+     "q1": 1430000.0,
+     "q3": 1790000.0,
+     "matched_owner": 19,
+     "buyer_mail_not_sc": 2,
+     "pct_buyer_mail_not_sc": 10.5,
+     "company_buyer": 0
+    }
+   }
+  },
+  "by_part": {
+   "grande_dunes": {
+    "condo": {
+     "n": 18,
+     "median": 682500.0,
+     "q1": 403750.0,
+     "q3": 806250.0,
+     "matched_owner": 18,
+     "buyer_mail_not_sc": 10,
+     "pct_buyer_mail_not_sc": 55.6,
+     "company_buyer": 5
+    },
+    "not_condo": {
+     "n": 144,
+     "median": 784675.0,
+     "q1": 631250.0,
+     "q3": 1293250.0,
+     "matched_owner": 144,
+     "buyer_mail_not_sc": 32,
+     "pct_buyer_mail_not_sc": 22.2,
+     "company_buyer": 4
+    },
+    "resale_not_condo": {
+     "n": 108,
+     "median": 882500.0,
+     "q1": 652750.0,
+     "q3": 1422500.0,
+     "matched_owner": 108,
+     "buyer_mail_not_sc": 20,
+     "pct_buyer_mail_not_sc": 18.5,
+     "company_buyer": 2
+    }
+   },
+   "market_common": {
+    "condo": {
+     "n": 0,
+     "median": null,
+     "q1": null,
+     "q3": null,
+     "matched_owner": 0,
+     "buyer_mail_not_sc": 0,
+     "pct_buyer_mail_not_sc": null,
+     "company_buyer": 0
+    },
+    "not_condo": {
+     "n": 178,
+     "median": 502500.0,
+     "q1": 393125.0,
+     "q3": 556500.0,
+     "matched_owner": 177,
+     "buyer_mail_not_sc": 29,
+     "pct_buyer_mail_not_sc": 16.4,
+     "company_buyer": 6
+    },
+    "resale_not_condo": {
+     "n": 170,
+     "median": 498750.0,
+     "q1": 393125.0,
+     "q3": 548250.0,
+     "matched_owner": 169,
+     "buyer_mail_not_sc": 27,
+     "pct_buyer_mail_not_sc": 16.0,
+     "company_buyer": 5
+    }
+   },
+   "arbor_glenn_meridian": {
+    "condo": {
+     "n": 0,
+     "median": null,
+     "q1": null,
+     "q3": null,
+     "matched_owner": 0,
+     "buyer_mail_not_sc": 0,
+     "pct_buyer_mail_not_sc": null,
+     "company_buyer": 0
+    },
+    "not_condo": {
+     "n": 37,
+     "median": 395000.0,
+     "q1": 351250.0,
+     "q3": 439000.0,
+     "matched_owner": 37,
+     "buyer_mail_not_sc": 7,
+     "pct_buyer_mail_not_sc": 18.9,
+     "company_buyer": 0
+    },
+    "resale_not_condo": {
+     "n": 37,
+     "median": 395000.0,
+     "q1": 351250.0,
+     "q3": 439000.0,
+     "matched_owner": 37,
+     "buyer_mail_not_sc": 7,
+     "pct_buyer_mail_not_sc": 18.9,
+     "company_buyer": 0
+    }
+   },
+   "pine_lakes_pud": {
+    "condo": {
+     "n": 0,
+     "median": null,
+     "q1": null,
+     "q3": null,
+     "matched_owner": 0,
+     "buyer_mail_not_sc": 0,
+     "pct_buyer_mail_not_sc": null,
+     "company_buyer": 0
+    },
+    "not_condo": {
+     "n": 24,
+     "median": 538250.0,
+     "q1": 391750.0,
+     "q3": 647500.0,
+     "matched_owner": 23,
+     "buyer_mail_not_sc": 7,
+     "pct_buyer_mail_not_sc": 30.4,
+     "company_buyer": 0
+    },
+    "resale_not_condo": {
+     "n": 24,
+     "median": 538250.0,
+     "q1": 391750.0,
+     "q3": 647500.0,
+     "matched_owner": 23,
+     "buyer_mail_not_sc": 7,
+     "pct_buyer_mail_not_sc": 30.4,
+     "company_buyer": 0
+    }
+   },
+   "older_r_house_zones": {
+    "condo": {
+     "n": 0,
+     "median": null,
+     "q1": null,
+     "q3": null,
+     "matched_owner": 0,
+     "buyer_mail_not_sc": 0,
+     "pct_buyer_mail_not_sc": null,
+     "company_buyer": 0
+    },
+    "not_condo": {
+     "n": 116,
+     "median": 552500.0,
+     "q1": 335875.0,
+     "q3": 853750.0,
+     "matched_owner": 112,
+     "buyer_mail_not_sc": 14,
+     "pct_buyer_mail_not_sc": 12.5,
+     "company_buyer": 27
+    },
+    "resale_not_condo": {
+     "n": 116,
+     "median": 552500.0,
+     "q1": 335875.0,
+     "q3": 853750.0,
+     "matched_owner": 112,
+     "buyer_mail_not_sc": 14,
+     "pct_buyer_mail_not_sc": 12.5,
+     "company_buyer": 27
+    }
+   },
+   "rest": {
+    "condo": {
+     "n": 643,
+     "median": 170000.0,
+     "q1": 100000.0,
+     "q3": 265000.0,
+     "matched_owner": 633,
+     "buyer_mail_not_sc": 408,
+     "pct_buyer_mail_not_sc": 64.5,
+     "company_buyer": 177
+    },
+    "not_condo": {
+     "n": 552,
+     "median": 182662.0,
+     "q1": 124000.0,
+     "q3": 255000.0,
+     "matched_owner": 542,
+     "buyer_mail_not_sc": 256,
+     "pct_buyer_mail_not_sc": 47.2,
+     "company_buyer": 125
+    },
+    "resale_not_condo": {
+     "n": 550,
+     "median": 182162.0,
+     "q1": 123925.0,
+     "q3": 255000.0,
+     "matched_owner": 540,
+     "buyer_mail_not_sc": 255,
+     "pct_buyer_mail_not_sc": 47.2,
+     "company_buyer": 124
+    }
+   }
+  },
+  "by_month": [
+   [
+    "2025/10",
+    153
+   ],
+   [
+    "2025/11",
+    104
+   ],
+   [
+    "2025/12",
+    125
+   ],
+   [
+    "2026/01",
+    109
+   ],
+   [
+    "2026/02",
+    146
+   ],
+   [
+    "2026/03",
+    160
+   ],
+   [
+    "2026/04",
+    169
+   ],
+   [
+    "2026/05",
+    154
+   ],
+   [
+    "2026/06",
+    179
+   ],
+   [
+    "2026/07",
+    163
+   ],
+   [
+    "2026/08",
+    114
+   ],
+   [
+    "2026/09",
+    136
+   ]
+  ],
+  "by_month_condo": [
+   [
+    "2025/10",
+    74
+   ],
+   [
+    "2025/11",
+    42
+   ],
+   [
+    "2025/12",
+    54
+   ],
+   [
+    "2026/01",
+    49
+   ],
+   [
+    "2026/02",
+    42
+   ],
+   [
+    "2026/03",
+    60
+   ],
+   [
+    "2026/04",
+    56
+   ],
+   [
+    "2026/05",
+    55
+   ],
+   [
+    "2026/06",
+    74
+   ],
+   [
+    "2026/07",
+    69
+   ],
+   [
+    "2026/08",
+    44
+   ],
+   [
+    "2026/09",
+    42
+   ]
+  ],
+  "top_buyer_states": [
+   [
+    "NC",
+    174
+   ],
+   [
+    "PA",
+    96
+   ],
+   [
+    "NY",
+    63
+   ],
+   [
+    "VA",
+    61
+   ],
+   [
+    "MD",
+    42
+   ],
+   [
+    "OH",
+    33
+   ],
+   [
+    "NJ",
+    32
+   ],
+   [
+    "GA",
+    22
+   ]
+  ],
+  "county": {
+   "condo_resale": {
+    "n": 2478,
+    "median": 220000.0,
+    "q1": 152000.0,
+    "q3": 320000.0,
+    "matched_owner": 2290,
+    "buyer_mail_not_sc": 1264,
+    "pct_buyer_mail_not_sc": 55.2,
+    "company_buyer": 398
+   },
+   "not_condo_resale": {
+    "n": 8569,
+    "median": 324900.0,
+    "q1": 234250.0,
+    "q3": 460000.0,
+    "matched_owner": 7866,
+    "buyer_mail_not_sc": 2056,
+    "pct_buyer_mail_not_sc": 26.1,
+    "company_buyer": 886
+   }
+  }
+ },
+ "listings": {
+  "api_totals": {
+   "house": 1036,
+   "townhouse": 153,
+   "condo": 1642,
+   "house+inside_city_limits": 198,
+   "townhouse+inside_city_limits": 64,
+   "condo+inside_city_limits": 632,
+   "house+oceanfront_building": 0,
+   "townhouse+oceanfront_building": 0,
+   "condo+oceanfront_building": 808,
+   "house+str_allowed": 101,
+   "townhouse+str_allowed": 25,
+   "condo+str_allowed": 1251,
+   "house+long_term_rental_allowed": 755,
+   "townhouse+long_term_rental_allowed": 126,
+   "condo+long_term_rental_allowed": 1382,
+   "house+flood_zone": 20,
+   "townhouse+flood_zone": 1,
+   "condo+flood_zone": 219,
+   "house+vacation_rental_program": 85,
+   "townhouse+vacation_rental_program": 12,
+   "condo+vacation_rental_program": 971,
+   "house+new_construction": 191,
+   "townhouse+new_construction": 39,
+   "condo+new_construction": 18
+  },
+  "pulled": "2026-11-02T04:36:01.097253+00:00",
+  "refreshed": "2026-11-02T04:21:21.670Z",
+  "truncated": [],
+  "all_mailing": {
+   "house": {
+    "n": 1036,
+    "median_ask": 489000.0,
+    "median_ask_per_sqft": 233.0
+   },
+   "townhouse": {
+    "n": 153,
+    "median_ask": 275000.0,
+    "median_ask_per_sqft": 186.0
+   },
+   "condo": {
+    "n": 1642,
+    "median_ask": 194000.0,
+    "median_ask_per_sqft": 255.0
+   }
+  },
+  "inside": {
+   "house": {
+    "n": 264,
+    "median_ask": 675000.0,
+    "median_ask_per_sqft": 307.0
+   },
+   "townhouse": {
+    "n": 86,
+    "median_ask": 327500.0,
+    "median_ask_per_sqft": 233.0
+   },
+   "condo": {
+    "n": 1004,
+    "median_ask": 174900.0,
+    "median_ask_per_sqft": 279.0
+   }
+  },
+  "outside": {
+   "house": {
+    "n": 772,
+    "median_ask": 439950.0,
+    "median_ask_per_sqft": 215.0
+   },
+   "townhouse": {
+    "n": 67,
+    "median_ask": 264500.0,
+    "median_ask_per_sqft": 170.0
+   },
+   "condo": {
+    "n": 638,
+    "median_ask": 217650.0,
+    "median_ask_per_sqft": 211.0
+   }
+  },
+  "inside_by_zone_class": {
+   "str": {
+    "house": {
+     "n": 43,
+     "median_ask": 650000.0,
+     "median_ask_per_sqft": 375.0
+    },
+    "townhouse": {
+     "n": 33,
+     "median_ask": 345000.0,
+     "median_ask_per_sqft": 253.0
+    },
+    "condo": {
+     "n": 911,
+     "median_ask": 172500.0,
+     "median_ask_per_sqft": 287.0
+    }
+   },
+   "r_no": {
+    "house": {
+     "n": 68,
+     "median_ask": 724950.0,
+     "median_ask_per_sqft": 298.0
+    },
+    "townhouse": {
+     "n": 30,
+     "median_ask": 225000.0,
+     "median_ask_per_sqft": 187.0
+    },
+    "condo": {
+     "n": 61,
+     "median_ask": 174999.0,
+     "median_ask_per_sqft": 175.0
+    }
+   },
+   "pud_no": {
+    "house": {
+     "n": 150,
+     "median_ask": 675000.0,
+     "median_ask_per_sqft": 302.0
+    },
+    "townhouse": {
+     "n": 17,
+     "median_ask": 625000.0,
+     "median_ask_per_sqft": 268.0
+    },
+    "condo": {
+     "n": 29,
+     "median_ask": 309900.0,
+     "median_ask_per_sqft": 242.0
+    }
+   },
+   "other_no": {
+    "house": {
+     "n": 3,
+     "median_ask": 849900.0,
+     "median_ask_per_sqft": 309.0
+    },
+    "townhouse": {
+     "n": 6,
+     "median_ask": 283250.0,
+     "median_ask_per_sqft": 231.0
+    },
+    "condo": {
+     "n": 2,
+     "median_ask": 254950.0,
+     "median_ask_per_sqft": 198.0
+    }
+   },
+   "none": {
+    "house": {
+     "n": 0,
+     "median_ask": null,
+     "median_ask_per_sqft": null
+    },
+    "townhouse": {
+     "n": 0,
+     "median_ask": null,
+     "median_ask_per_sqft": null
+    },
+    "condo": {
+     "n": 1,
+     "median_ask": 57000.0,
+     "median_ask_per_sqft": 148.0
+    }
+   }
+  },
+  "api_flag_vs_ours": {
+   "api_inside_flag_and_ours": 838,
+   "api_inside_flag_not_ours": 56,
+   "ours_not_api_flag": 516
+  },
+  "inside_by_part": {
+   "grande_dunes": {
+    "house": {
+     "n": 83,
+     "median_ask": 875000.0,
+     "median_ask_per_sqft": 359.0
+    },
+    "townhouse": {
+     "n": 11,
+     "median_ask": 659990.0,
+     "median_ask_per_sqft": 274.0
+    },
+    "condo": {
+     "n": 16,
+     "median_ask": 379950.0,
+     "median_ask_per_sqft": 258.0
+    }
+   },
+   "market_common": {
+    "house": {
+     "n": 45,
+     "median_ask": 529900.0,
+     "median_ask_per_sqft": 239.0
+    },
+    "townhouse": {
+     "n": 21,
+     "median_ask": 415000.0,
+     "median_ask_per_sqft": 257.0
+    },
+    "condo": {
+     "n": 2,
+     "median_ask": 375000.0,
+     "median_ask_per_sqft": 277.0
+    }
+   },
+   "arbor_glenn_meridian": {
+    "house": {
+     "n": 5,
+     "median_ask": 424900.0,
+     "median_ask_per_sqft": 207.0
+    },
+    "townhouse": {
+     "n": 0,
+     "median_ask": null,
+     "median_ask_per_sqft": null
+    },
+    "condo": {
+     "n": 0,
+     "median_ask": null,
+     "median_ask_per_sqft": null
+    }
+   },
+   "pine_lakes_pud": {
+    "house": {
+     "n": 9,
+     "median_ask": 599000.0,
+     "median_ask_per_sqft": 279.0
+    },
+    "townhouse": {
+     "n": 1,
+     "median_ask": 399000.0,
+     "median_ask_per_sqft": 195.0
+    },
+    "condo": {
+     "n": 0,
+     "median_ask": null,
+     "median_ask_per_sqft": null
+    }
+   },
+   "older_r_house_zones": {
+    "house": {
+     "n": 45,
+     "median_ask": 995000.0,
+     "median_ask_per_sqft": 353.0
+    },
+    "townhouse": {
+     "n": 0,
+     "median_ask": null,
+     "median_ask_per_sqft": null
+    },
+    "condo": {
+     "n": 1,
+     "median_ask": 549900.0,
+     "median_ask_per_sqft": 276.0
+    }
+   },
+   "rest": {
+    "house": {
+     "n": 77,
+     "median_ask": 589900.0,
+     "median_ask_per_sqft": 309.0
+    },
+    "townhouse": {
+     "n": 53,
+     "median_ask": 254900.0,
+     "median_ask_per_sqft": 218.0
+    },
+    "condo": {
+     "n": 984,
+     "median_ask": 171950.0,
+     "median_ask_per_sqft": 280.0
+    }
+   }
+  },
+  "houses_inside": {
+   "n": 350,
+   "in_str_zone": 76,
+   "listing_says_str_allowed": 35,
+   "listing_says_str_allowed_not_str_zone": 3
+  },
+  "oceanfront_condos_inside": {
+   "n": 668,
+   "median_ask": 165000.0,
+   "median_ask_per_sqft": 298.0,
+   "str_flag": 630,
+   "in_str_zone": 667,
+   "by_beds": {
+    "0": {
+     "n": 169,
+     "median_ask": 117000.0,
+     "median_ask_per_sqft": 290.0
+    },
+    "1": {
+     "n": 346,
+     "median_ask": 159950.0,
+     "median_ask_per_sqft": 289.0
+    },
+    "2": {
+     "n": 87,
+     "median_ask": 329000.0,
+     "median_ask_per_sqft": 325.0
+    },
+    "3": {
+     "n": 52,
+     "median_ask": 389000.0,
+     "median_ask_per_sqft": 319.0
+    },
+    "4": {
+     "n": 12,
+     "median_ask": 572750.0,
+     "median_ask_per_sqft": 320.0
+    }
+   },
+   "price_bands": {
+    "under_200k": 445,
+    "200_300k": 112,
+    "300_500k": 88,
+    "500k_up": 23
+   }
+  },
+  "months_supply_inside": {
+   "condo_listings": 1004,
+   "condo_sales_12m": 661,
+   "condo_months": 18.2,
+   "house_th_listings": 350,
+   "not_condo_sales_12m": 1051,
+   "house_months": 4.0,
+   "note": "deed 'not condo' includes houses, villas and townhouses; listings here are house and townhouse types"
+  }
+ },
+ "oceanfront": {
+  "oceanfront_condo_sales": {
+   "n": 459,
+   "median": 148000.0,
+   "q1": 93500.0,
+   "q3": 245000.0,
+   "matched_owner": 450,
+   "buyer_mail_not_sc": 335,
+   "pct_buyer_mail_not_sc": 74.4,
+   "company_buyer": 140
+  },
+  "buildings_with_a_sale": 48,
+  "top_buildings": [
+   {
+    "group": "TIDES/DRIFTWD/OASIS HPR",
+    "n": 60,
+    "median": 53000.0,
+    "q1": 46995.0,
+    "q3": 59750.0,
+    "matched_owner": 58,
+    "buyer_mail_not_sc": 41,
+    "pct_buyer_mail_not_sc": 70.7,
+    "company_buyer": 19,
+    "lon": -78.8983,
+    "lat": 33.67493,
+    "listings_now": {
+     "n": 30,
+     "median_ask": 68950.0,
+     "median_ask_per_sqft": 177.0
+    }
+   },
+   {
+    "group": "CORAL BEACH HPR",
+    "n": 36,
+    "median": 85000.0,
+    "q1": 73875.0,
+    "q3": 98750.0,
+    "matched_owner": 36,
+    "buyer_mail_not_sc": 26,
+    "pct_buyer_mail_not_sc": 72.2,
+    "company_buyer": 9,
+    "lon": -78.89752,
+    "lat": 33.67587,
+    "listings_now": {
+     "n": 40,
+     "median_ask": 94950.0,
+     "median_ask_per_sqft": 180.0
+    }
+   },
+   {
+    "group": "CARAVELLE RESORT HPR",
+    "n": 28,
+    "median": 144500.0,
+    "q1": 127250.0,
+    "q3": 159375.0,
+    "matched_owner": 27,
+    "buyer_mail_not_sc": 21,
+    "pct_buyer_mail_not_sc": 77.8,
+    "company_buyer": 9,
+    "lon": -78.82094,
+    "lat": 33.73893,
+    "listings_now": {
+     "n": 42,
+     "median_ask": 144950.0,
+     "median_ask_per_sqft": 283.0
+    }
+   },
+   {
+    "group": "LANDMARK HPR PH I",
+    "n": 28,
+    "median": 119950.0,
+    "q1": 107750.0,
+    "q3": 128000.0,
+    "matched_owner": 28,
+    "buyer_mail_not_sc": 22,
+    "pct_buyer_mail_not_sc": 78.6,
+    "company_buyer": 8,
+    "lon": -78.90088,
+    "lat": 33.67336,
+    "listings_now": {
+     "n": 89,
+     "median_ask": 109800.0,
+     "median_ask_per_sqft": 226.0
+    }
+   },
+   {
+    "group": "PINNACLE OCEANFRT TOWER",
+    "n": 23,
+    "median": 150000.0,
+    "q1": 132500.0,
+    "q3": 172525.0,
+    "matched_owner": 23,
+    "buyer_mail_not_sc": 20,
+    "pct_buyer_mail_not_sc": 87.0,
+    "company_buyer": 4,
+    "lon": -78.90967,
+    "lat": 33.66569,
+    "listings_now": {
+     "n": 25,
+     "median_ask": 149900.0,
+     "median_ask_per_sqft": 307.0
+    }
+   },
+   {
+    "group": "LANDMARK HPR PH II",
+    "n": 23,
+    "median": 73500.0,
+    "q1": 65000.0,
+    "q3": 97000.0,
+    "matched_owner": 18,
+    "buyer_mail_not_sc": 10,
+    "pct_buyer_mail_not_sc": 55.6,
+    "company_buyer": 3,
+    "lon": -78.90088,
+    "lat": 33.67336,
+    "listings_now": {
+     "n": 89,
+     "median_ask": 109800.0,
+     "median_ask_per_sqft": 226.0
+    }
+   },
+   {
+    "group": "LONG BAY RESORT HPR",
+    "n": 21,
+    "median": 170000.0,
+    "q1": 116500.0,
+    "q3": 388500.0,
+    "matched_owner": 21,
+    "buyer_mail_not_sc": 14,
+    "pct_buyer_mail_not_sc": 66.7,
+    "company_buyer": 6,
+    "lon": -78.81815,
+    "lat": 33.7411,
+    "listings_now": {
+     "n": 23,
+     "median_ask": 169500.0,
+     "median_ask_per_sqft": 291.0
+    }
+   },
+   {
+    "group": "MONTEREY BAY SUITES RST",
+    "n": 19,
+    "median": 150000.0,
+    "q1": 145000.0,
+    "q3": 160000.0,
+    "matched_owner": 19,
+    "buyer_mail_not_sc": 14,
+    "pct_buyer_mail_not_sc": 73.7,
+    "company_buyer": 3,
+    "lon": -78.82231,
+    "lat": 33.73807,
+    "listings_now": {
+     "n": 27,
+     "median_ask": 150000.0,
+     "median_ask_per_sqft": 285.0
+    }
+   },
+   {
+    "group": "DUNES VILLAGE HPR",
+    "n": 17,
+    "median": 269000.0,
+    "q1": 246500.0,
+    "q3": 425000.0,
+    "matched_owner": 17,
+    "buyer_mail_not_sc": 11,
+    "pct_buyer_mail_not_sc": 64.7,
+    "company_buyer": 9,
+    "lon": -78.84142,
+    "lat": 33.72412,
+    "listings_now": {
+     "n": 12,
+     "median_ask": 427000.0,
+     "median_ask_per_sqft": 408.0
+    }
+   },
+   {
+    "group": "SAND DUNES OCEANFRONT",
+    "n": 14,
+    "median": 131000.0,
+    "q1": 121875.0,
+    "q3": 149198.0,
+    "matched_owner": 13,
+    "buyer_mail_not_sc": 12,
+    "pct_buyer_mail_not_sc": 92.3,
+    "company_buyer": 9,
+    "lon": -78.81724,
+    "lat": 33.74161,
+    "listings_now": {
+     "n": 49,
+     "median_ask": 266899.0,
+     "median_ask_per_sqft": 292.0
+    }
+   },
+   {
+    "group": "OCEANS ONE S TOWER HPR",
+    "n": 13,
+    "median": 224153.0,
+    "q1": 201250.0,
+    "q3": 393750.0,
+    "matched_owner": 13,
+    "buyer_mail_not_sc": 6,
+    "pct_buyer_mail_not_sc": 46.2,
+    "company_buyer": 2,
+    "lon": -78.88864,
+    "lat": 33.68249,
+    "listings_now": {
+     "n": 10,
+     "median_ask": 224450.0,
+     "median_ask_per_sqft": 358.0
+    }
+   },
+   {
+    "group": "CAMELOT BY THE SEA HPR",
+    "n": 12,
+    "median": 220000.0,
+    "q1": 201250.0,
+    "q3": 240750.0,
+    "matched_owner": 12,
+    "buyer_mail_not_sc": 10,
+    "pct_buyer_mail_not_sc": 83.3,
+    "company_buyer": 4,
+    "lon": -78.87121,
+    "lat": 33.69966,
+    "listings_now": {
+     "n": 10,
+     "median_ask": 224500.0,
+     "median_ask_per_sqft": 408.0
+    }
+   },
+   {
+    "group": "BAYVIEW HPR PH I",
+    "n": 12,
+    "median": 188200.0,
+    "q1": 133944.0,
+    "q3": 358750.0,
+    "matched_owner": 12,
+    "buyer_mail_not_sc": 10,
+    "pct_buyer_mail_not_sc": 83.3,
+    "company_buyer": 2,
+    "lon": -78.88324,
+    "lat": 33.68804,
+    "listings_now": {
+     "n": 9,
+     "median_ask": 149900.0,
+     "median_ask_per_sqft": 242.0
+    }
+   },
+   {
+    "group": "CARIBBEAN OCEANFRT TWR",
+    "n": 11,
+    "median": 210000.0,
+    "q1": 195000.0,
+    "q3": 216900.0,
+    "matched_owner": 11,
+    "buyer_mail_not_sc": 7,
+    "pct_buyer_mail_not_sc": 63.6,
+    "company_buyer": 4,
+    "lon": -78.86146,
+    "lat": 33.70749,
+    "listings_now": {
+     "n": 26,
+     "median_ask": 347002.0,
+     "median_ask_per_sqft": 375.0
+    }
+   },
+   {
+    "group": "CAROLINIAN RESORT HPR",
+    "n": 11,
+    "median": 225000.0,
+    "q1": 187000.0,
+    "q3": 338000.0,
+    "matched_owner": 11,
+    "buyer_mail_not_sc": 10,
+    "pct_buyer_mail_not_sc": 90.9,
+    "company_buyer": 3,
+    "lon": -78.86523,
+    "lat": 33.70454,
+    "listings_now": {
+     "n": 16,
+     "median_ask": 274950.0,
+     "median_ask_per_sqft": 287.0
+    }
+   }
+  ]
+ },
+ "tax": {
+  "per_100k_6pct": 1527.6,
+  "per_100k_4pct_net": 404.0
+ }
+}

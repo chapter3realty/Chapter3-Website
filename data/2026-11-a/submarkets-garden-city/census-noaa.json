@@ -1,0 +1,102 @@
+{
+ "strip_blocks": {
+  "horry": {
+   "blocks": 36,
+   "housing_units": 2584,
+   "vacant": 2032,
+   "seasonal": 1679,
+   "people": 920,
+   "occupied": 552,
+   "pct_occupied": 21.4,
+   "pct_seasonal": 65.0
+  },
+  "both": {
+   "blocks": 48,
+   "housing_units": 3379,
+   "vacant": 2695,
+   "seasonal": 2168,
+   "people": 1177,
+   "occupied": 684,
+   "pct_occupied": 20.2,
+   "pct_seasonal": 64.2
+  },
+  "georgetown": {
+   "blocks": 12,
+   "housing_units": 795,
+   "vacant": 663,
+   "seasonal": 489,
+   "people": 257,
+   "occupied": 132,
+   "pct_occupied": 16.6,
+   "pct_seasonal": 61.5
+  }
+ },
+ "cdp_2020": {
+  "people": 10235,
+  "housing_units": 10110,
+  "occupied": 5272,
+  "vacant": 4838,
+  "seasonal": 3993,
+  "pct_seasonal": 39.5,
+  "pct_occupied": 52.1
+ },
+ "horry_2020": {
+  "people": 351029,
+  "housing_units": 203702,
+  "occupied": 150221,
+  "vacant": 53481,
+  "seasonal": 35786,
+  "pct_seasonal": 17.6,
+  "pct_occupied": 73.7
+ },
+ "sea_level": {
+  "inches_per_decade": 1.32,
+  "error": 0.09,
+  "start": "06/15/1957",
+  "end": "12/15/2025",
+  "inches_over_record": 9.0
+ },
+ "high_tide_flood_days": {
+  "by_decade": [
+   {
+    "years": "1985-1994",
+    "years_used": 7,
+    "avg_minor_days": 1.7
+   },
+   {
+    "years": "1995-2004",
+    "years_used": 9,
+    "avg_minor_days": 1.6
+   },
+   {
+    "years": "2005-2014",
+    "years_used": 9,
+    "avg_minor_days": 3.2
+   },
+   {
+    "years": "2015-2024",
+    "years_used": 9,
+    "avg_minor_days": 8.4
+   }
+  ],
+  "rule": "years with fewer than 60 days of missing data",
+  "outlook_latest": {
+   "stnId": "8661070",
+   "stnName": "Springmaid Pier, SC",
+   "lat": "33.655",
+   "lon": "-78.9183",
+   "metYear": 2026,
+   "highConf": 12,
+   "lowConf": 8,
+   "projectDate": "2026-06-24",
+   "projectMethod": "Quadratic"
+  }
+ },
+ "tax_example": {
+  "price": 319900.0,
+  "mills": 207.3,
+  "rental_or_second_home_6pct": 3979,
+  "legal_residence_4pct": 1257,
+  "parts": "county 52.1 + schools 119.1 (debt 10.0, operation 109.1) + Murrells Inlet-Garden City fire 28.0 + waste management 8.1"
+ }
+}

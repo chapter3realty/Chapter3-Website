@@ -1,0 +1,242 @@
+{
+ "pulled": "2026-11-02T04:54:13.451921+00:00",
+ "api_totals": {
+  "house": 122,
+  "townhouse": 19,
+  "condo": 99,
+  "manufactured": 5,
+  "land": 33,
+  "multi": 5,
+  "all": 287
+ },
+ "groups": {
+  "all/all": {
+   "n": 279,
+   "median_price": 575000.0,
+   "min": 11900.0,
+   "max": 6150000.0,
+   "median_ppsf": 300
+  },
+  "all/condo_townhouse": {
+   "n": 117,
+   "median_price": 315000.0,
+   "min": 20000.0,
+   "max": 1485000.0,
+   "median_ppsf": 271
+  },
+  "all/house": {
+   "n": 122,
+   "median_price": 814450.0,
+   "min": 177000.0,
+   "max": 6150000.0,
+   "median_ppsf": 337
+  },
+  "all/land": {
+   "n": 30,
+   "median_price": 440000.0,
+   "min": 11900.0,
+   "max": 4500000.0,
+   "median_ppsf": null
+  },
+  "all/manufactured": {
+   "n": 5,
+   "median_price": 199900.0,
+   "min": 135000.0,
+   "max": 214000.0,
+   "median_ppsf": 141
+  },
+  "all/multi": {
+   "n": 5,
+   "median_price": 694900.0,
+   "min": 100000.0,
+   "max": 1375000.0,
+   "median_ppsf": 263
+  },
+  "east_marsh/all": {
+   "n": 43,
+   "median_price": 634000.0,
+   "min": 135000.0,
+   "max": 4995000.0,
+   "median_ppsf": 299
+  },
+  "east_marsh/condo_townhouse": {
+   "n": 13,
+   "median_price": 295000.0,
+   "min": 159500.0,
+   "max": 464500.0,
+   "median_ppsf": 243
+  },
+  "east_marsh/house": {
+   "n": 18,
+   "median_price": 978999.5,
+   "min": 550000.0,
+   "max": 4995000.0,
+   "median_ppsf": 414
+  },
+  "east_marsh/land": {
+   "n": 8,
+   "median_price": 699500.0,
+   "min": 250000.0,
+   "max": 4500000.0,
+   "median_ppsf": null
+  },
+  "east_marsh/manufactured": {
+   "n": 3,
+   "median_price": 189900.0,
+   "min": 135000.0,
+   "max": 199900.0,
+   "median_ppsf": 111
+  },
+  "east_marsh/multi": {
+   "n": 1,
+   "median_price": 1375000.0,
+   "min": 1375000.0,
+   "max": 1375000.0,
+   "median_ppsf": 280
+  },
+  "island/all": {
+   "n": 4,
+   "median_price": 2139995.0,
+   "min": 435000.0,
+   "max": 3450000.0,
+   "median_ppsf": 1004
+  },
+  "island/condo_townhouse": {
+   "n": 1,
+   "median_price": 435000.0,
+   "min": 435000.0,
+   "max": 435000.0,
+   "median_ppsf": 300
+  },
+  "island/house": {
+   "n": 2,
+   "median_price": 3215000.0,
+   "min": 2980000.0,
+   "max": 3450000.0,
+   "median_ppsf": 1315
+  },
+  "island/land": {
+   "n": 1,
+   "median_price": 1299990.0,
+   "min": 1299990.0,
+   "max": 1299990.0,
+   "median_ppsf": null
+  },
+  "litchfield/all": {
+   "n": 79,
+   "median_price": 585000.0,
+   "min": 11900.0,
+   "max": 6150000.0,
+   "median_ppsf": 406
+  },
+  "litchfield/condo_townhouse": {
+   "n": 46,
+   "median_price": 282450.0,
+   "min": 20000.0,
+   "max": 1485000.0,
+   "median_ppsf": 400
+  },
+  "litchfield/house": {
+   "n": 30,
+   "median_price": 784450.0,
+   "min": 210000.0,
+   "max": 6150000.0,
+   "median_ppsf": 426
+  },
+  "litchfield/land": {
+   "n": 3,
+   "median_price": 234000.0,
+   "min": 11900.0,
+   "max": 450000.0,
+   "median_ppsf": null
+  },
+  "other/all": {
+   "n": 6,
+   "median_price": 822000.0,
+   "min": 348700.0,
+   "max": 1700000.0,
+   "median_ppsf": 347
+  },
+  "other/condo_townhouse": {
+   "n": 1,
+   "median_price": 348700.0,
+   "min": 348700.0,
+   "max": 348700.0,
+   "median_ppsf": 245
+  },
+  "other/house": {
+   "n": 5,
+   "median_price": 1095000.0,
+   "min": 435000.0,
+   "max": 1700000.0,
+   "median_ppsf": 361
+  },
+  "west17/all": {
+   "n": 147,
+   "median_price": 524989.0,
+   "min": 85000.0,
+   "max": 2779000.0,
+   "median_ppsf": 275
+  },
+  "west17/condo_townhouse": {
+   "n": 56,
+   "median_price": 338499.5,
+   "min": 147000.0,
+   "max": 985000.0,
+   "median_ppsf": 261
+  },
+  "west17/house": {
+   "n": 67,
+   "median_price": 729990.0,
+   "min": 177000.0,
+   "max": 2779000.0,
+   "median_ppsf": 303
+  },
+  "west17/land": {
+   "n": 18,
+   "median_price": 412450.0,
+   "min": 85000.0,
+   "max": 1400000.0,
+   "median_ppsf": null
+  },
+  "west17/manufactured": {
+   "n": 2,
+   "median_price": 213250.0,
+   "min": 212500.0,
+   "max": 214000.0,
+   "median_ppsf": 165
+  },
+  "west17/multi": {
+   "n": 4,
+   "median_price": 572450.0,
+   "min": 100000.0,
+   "max": 989000.0,
+   "median_ppsf": 246
+  }
+ },
+ "feature_counts": {
+  "flood_zone": 35,
+  "private_dock": 7,
+  "str_allowed": 101,
+  "raised_home": 67,
+  "ocean_view": 24,
+  "walk_to_beach": 103,
+  "furnished": 105,
+  "waterfront": 53,
+  "golf_community": 63,
+  "gated": 83
+ },
+ "island_feature_counts": {
+  "flood_zone": 2,
+  "private_dock": 0,
+  "str_allowed": 2,
+  "raised_home": 2,
+  "ocean_view": 1,
+  "walk_to_beach": 4,
+  "furnished": 3,
+  "waterfront": 2,
+  "golf_community": 0,
+  "gated": 0
+ },
+ "note": "oceanfront and no_hoa flags came back on every listing and are not used"
+}

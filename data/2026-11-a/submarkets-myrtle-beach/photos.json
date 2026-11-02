@@ -1,0 +1,188 @@
+{
+ "photos": [
+  {
+   "slug": "submarkets-myrtle-beach",
+   "file": "images/2026-11-a/submarkets-myrtle-beach/houses-and-towers-from-the-ocean-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-myrtle-beach/houses-and-towers-from-the-ocean-600w.webp",
+    "1200": "images/2026-11-a/submarkets-myrtle-beach/houses-and-towers-from-the-ocean-1200w.webp"
+   },
+   "width": 1200,
+   "height": 782,
+   "title": "Myrtle Beach oceanfront, houses and condo towers side by side, USGS oblique aerial photo, August 24, 2011",
+   "what": "The Myrtle Beach oceanfront seen from a plane over the ocean: on the left, older two-story houses on lawns between the beach and Ocean Boulevard, with streets of houses under oaks behind them; on the right, two condo and hotel towers on the beach.",
+   "caption": "Houses and condo towers on the same beach in Myrtle Beach. The houses on the left are in a zone where nightly rentals are not allowed. The towers on the right are in one where they are.",
+   "alt": "Older two-story houses on lawns along the beach at left, and two tall condo towers on the beach at right, with streets of houses under oak trees behind, seen from a plane over the ocean in Myrtle Beach",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "The oceanfront"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_180143d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_180000.zip; aircraft position 33.718773 N, -78.838295 W (11CCH03-Photolocations.csv and the file's EXIF GPS; the position of the plane, not of the buildings). Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. Not the frame used on any other page (other pages use 174830, 175156, 175537, 180052, 180608 and 181208).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size (3008 px, in two halves) by the writer of /submarkets/myrtle-beach/ on 2026-11-02. Placed by testing points 500 to 600 m inland of the plane's position, 250 m either side, against map-str-zones.geojson: R zone at the left and the middle, shaded (nightly rentals) at the right, which matches houses at left and towers at right. People on the beach are too small to recognize; no readable sign, logo, plate or house number at page size.",
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty resized the photo and cut 1x1, 4x3 and 16x9 crops",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-a/submarkets-myrtle-beach/houses-and-towers-from-the-ocean-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-a/submarkets-myrtle-beach/houses-and-towers-from-the-ocean-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-a/submarkets-myrtle-beach/houses-and-towers-from-the-ocean-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   }
+  },
+  {
+   "slug": "submarkets-myrtle-beach",
+   "file": "images/2026-11-a/submarkets-myrtle-beach/oceanfront-towers-from-the-ocean-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-myrtle-beach/oceanfront-towers-from-the-ocean-600w.webp",
+    "1200": "images/2026-11-a/submarkets-myrtle-beach/oceanfront-towers-from-the-ocean-1200w.webp"
+   },
+   "width": 1200,
+   "height": 782,
+   "title": "Myrtle Beach oceanfront condo and hotel towers, south of downtown, USGS oblique aerial photo, August 24, 2011",
+   "what": "Oceanfront condo and hotel towers south of downtown Myrtle Beach, seen from a plane over the ocean, with the beach, pools and the streets behind.",
+   "caption": "Oceanfront condo towers south of downtown Myrtle Beach, near three of the busiest buildings in the table above. This stretch is in a zone where nightly rentals are allowed.",
+   "alt": "A row of oceanfront condo and hotel towers of 10 to 15 floors with pools in front, above a beach with umbrellas, seen from a plane over the ocean in Myrtle Beach",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "The oceanfront"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_175948d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_175500.zip; aircraft position 33.674683 N, -78.891968 W (11CCH03-Photolocations.csv and the file's EXIF GPS; the position of the plane, not of the buildings). Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. Not the frame used on any other page (other pages use 174830, 175156, 175537, 180052, 180608 and 181208).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size (3008 px, in two halves) by the writer on 2026-11-02. Points 350 to 450 m inland of the plane, 250 m either side, all fall in the shaded (nightly rentals) class. The plane was about 300 to 700 m from the points of the four busiest buildings in findings oceanfront.top_buildings (Tides/Driftwood/Oasis 33.67493,-78.8983; Coral Beach 33.67587,-78.89752; Landmark 33.67336,-78.90088), so the caption says 'where the busiest buildings stand', not which tower is which. A small flag hangs on one balcony; no logo or readable sign; people on the beach are too small to recognize.",
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty resized the photo"
+  },
+  {
+   "slug": "submarkets-myrtle-beach",
+   "file": "images/2026-11-a/submarkets-myrtle-beach/oceanfront-houses-from-the-ocean-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-myrtle-beach/oceanfront-houses-from-the-ocean-600w.webp",
+    "1200": "images/2026-11-a/submarkets-myrtle-beach/oceanfront-houses-from-the-ocean-1200w.webp"
+   },
+   "width": 1200,
+   "height": 782,
+   "title": "Myrtle Beach oceanfront houses, USGS oblique aerial photo, August 24, 2011",
+   "what": "Older houses on wide lawns facing the beach in Myrtle Beach, with walkways over the dunes, Ocean Boulevard behind them, and streets of houses under oaks beyond.",
+   "caption": "Houses on wide lawns facing the beach, on the older streets north of downtown Myrtle Beach. Nightly rentals are not allowed here.",
+   "alt": "Two-story houses on wide green lawns behind the dunes, with wooden walkways to the beach and oak trees behind, seen from a plane over the ocean in Myrtle Beach",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "The oceanfront"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_180133d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_180000.zip; aircraft position 33.715463 N, -78.842893 W (11CCH03-Photolocations.csv and the file's EXIF GPS; the position of the plane, not of the buildings). Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. Not the frame used on any other page (other pages use 174830, 175156, 175537, 180052, 180608 and 181208).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size by the writer on 2026-11-02. Points 525 to 550 m inland of the plane, 250 m either side, all fall in the R-zone class (no rentals under 90 days). No person, sign or readable house number at page size.",
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty resized the photo"
+  },
+  {
+   "source": "https://noaa-eri-pds.s3.amazonaws.com/index.html#2026_Pre_Event/EC2601a_OB_N_RGB/",
+   "source_name": "NOAA Emergency Response Imagery",
+   "author": "NOAA National Geodetic Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+   "credit": "Photo: NOAA National Geodetic Survey, public domain.",
+   "license_note": "17 U.S.C. 105(a): \"Copyright protection under this title is not available for any work of the United States Government\". NOAA's terms on the Registry of Open Data (https://registry.opendata.aws/noaa-eri/): \"NOAA data disseminated through NODD are open to the public and can be used as desired.\" ... \"NOAA requests attribution for the use or dissemination of unaltered NOAA data. However, it is not permissible to state or imply endorsement by or affiliation with NOAA. If you modify NOAA data, you may not state or imply that it is original, unaltered NOAA data.\" So: credit NOAA, say what Chapter3 changed (changes), never suggest NOAA endorses Chapter3. Same terms as the Cherry Grove record above.",
+   "terms_urls": [
+    "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+    "https://registry.opendata.aws/noaa-eri/",
+    "https://www.fisheries.noaa.gov/inport/item/67562"
+   ],
+   "taken": "2026-01-12",
+   "digital_source_type": "digitalCapture",
+   "display_credit": "U.S. government aerial photo",
+   "slug": "best-neighborhoods",
+   "file": "images/buyers/best-neighborhoods/market-common-valor-park.webp",
+   "variants": {
+    "600": "images/buyers/best-neighborhoods/market-common-valor-park-600w.webp",
+    "1200": "images/buyers/best-neighborhoods/market-common-valor-park-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "The Market Common from the air with labels, NOAA, January 2026",
+   "what": "The Market Common in Myrtle Beach from the air on January 12, 2026: its homes outlined in orange, Valor Park marked, and Grand Park with its ball fields and lake, each labelled.",
+   "caption": "The Market Common from the air: its homes, outlined, Valor Park, where the Saturday market is held, and Grand Park.",
+   "alt": "The Market Common from the air: streets of homes outlined in orange beside a lake, a dot labelled Valor Park at the edge of the shops, and ball fields and a lake labelled Grand Park",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "The Market Common"
+   },
+   "provenance": "U.S. government aerial photo: NOAA National Geodetic Survey (NGS), Remote Sensing Division, Emergency Response Imagery, 2026 pre-event coastal collection, East Coast group EC2601a. Frame 185148_0112261657106_036_RGB2, flown 2026-01-12 at about 16:57 UTC (exterior orientation file 0122026_RGB_2_Oblique_EO.txt, camera within 1 km of The Market Common's reference point, about 2,285 m up). Downloaded from the public S3 bucket noaa-eri-pds.",
+   "changes": "Chapter3 Realty cut this view from one NOAA aerial photo, resized it, adjusted the colors and added an outline and labels",
+   "labels": "Placed from ground coordinates through the frame's own corner coordinates (.geom), never by eye: 'The Market Common' among the outlined home parcels (layer 24); 'Valor Park' at the centroid of the county Parks polygon 'Valor Garden', 1120 Farrow Pkwy, the address of Valor Park where the farmers market is held (rows 195, 248); 'Grand Park' at the centroid of the county Parks polygon 'Grand Park' (row 195), shifted onto the park. Outline: the Market Common home parcels, The Reserve at Market Common left out. Script: scratchpad wb-best-work/eri (config.json 'market-common-valor-park').",
+   "source_files": [
+    "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/raw/185148_0112261657106_036_RGB2.jpg",
+    "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/raw/185148_0112261657106_036_RGB2.geom"
+   ],
+   "frame": {
+    "raw_pixels": [
+     1500,
+     1600,
+     13500,
+     10600
+    ],
+    "raw_size": "14204x10652",
+    "note": "a raw frame, tilted about 20 degrees from straight down, not a map"
+   },
+   "original_size": "12000x9000 pixels of the raw frame, resized to 2400 wide, colors adjusted, outline and labels drawn",
+   "crop_source": [
+    2600,
+    1700,
+    11400,
+    8300
+   ],
+   "reused_from": "data/2026-10-b/photos.json"
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "pulled": "2026-11-02",
+ "rule": "condo listings within 80 m of the building's sale points",
+ "buildings": {
+  "TIDES/DRIFTWD/OASIS HPR": {
+   "listings": 30,
+   "beds": {
+    "0": 30
+   },
+   "median_sqft": 385.0
+  },
+  "CORAL BEACH HPR": {
+   "listings": 40,
+   "beds": {
+    "0": 8,
+    "1": 32
+   },
+   "median_sqft": 581.0
+  },
+  "CARAVELLE RESORT HPR": {
+   "listings": 42,
+   "beds": {
+    "0": 12,
+    "1": 30
+   },
+   "median_sqft": 519.0
+  },
+  "LANDMARK HPR PH I": {
+   "listings": 89,
+   "beds": {
+    "0": 48,
+    "1": 41
+   },
+   "median_sqft": 431
+  },
+  "PINNACLE OCEANFRT TOWER": {
+   "listings": 25,
+   "beds": {
+    "0": 11,
+    "1": 14
+   },
+   "median_sqft": 550
+  },
+  "LANDMARK HPR PH II": {
+   "listings": 89,
+   "beds": {
+    "0": 48,
+    "1": 41
+   },
+   "median_sqft": 431
+  },
+  "LONG BAY RESORT HPR": {
+   "listings": 23,
+   "beds": {
+    "0": 9,
+    "1": 6,
+    "2": 5,
+    "3": 3
+   },
+   "median_sqft": 529
+  },
+  "MONTEREY BAY SUITES RST": {
+   "listings": 27,
+   "beds": {
+    "0": 1,
+    "1": 26
+   },
+   "median_sqft": 506
+  },
+  "DUNES VILLAGE HPR": {
+   "listings": 12,
+   "beds": {
+    "1": 4,
+    "2": 4,
+    "3": 4
+   },
+   "median_sqft": 1072.0
+  },
+  "SAND DUNES OCEANFRONT": {
+   "listings": 49,
+   "beds": {
+    "0": 17,
+    "1": 5,
+    "2": 8,
+    "3": 19
+   },
+   "median_sqft": 1050
+  }
+ }
+}
