@@ -1,0 +1,145 @@
+{
+ "method": "OSRM public router, fastest route, no traffic; minutes = duration/60",
+ "drives": [
+  {
+   "from": "Del Webb at Grande Dunes",
+   "to": "Grand Strand Medical Center",
+   "miles": 2.7,
+   "minutes": 5.5,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.842661,33.749305;-78.817112511714,33.755257431091?overview=false"
+  },
+  {
+   "from": "Del Webb at Grande Dunes",
+   "to": "Conway Medical Center",
+   "miles": 12.9,
+   "minutes": 19.7,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.842661,33.749305;-79.002614020538,33.786530436338?overview=false"
+  },
+  {
+   "from": "Del Webb at Grande Dunes",
+   "to": "Tidelands Waccamaw Community Hospital",
+   "miles": 18.5,
+   "minutes": 24.3,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.842661,33.749305;-79.041426323186,33.559617169931?overview=false"
+  },
+  {
+   "from": "Del Webb at Grande Dunes",
+   "to": "McLeod Health Seacoast",
+   "miles": 17.0,
+   "minutes": 23.2,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.842661,33.749305;-78.664052374945,33.867110999938?overview=false"
+  },
+  {
+   "from": "Del Webb at Grande Dunes",
+   "to": "McLeod Health Loris",
+   "miles": 27.2,
+   "minutes": 45.2,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.842661,33.749305;-78.898104118907,34.057310996535?overview=false"
+  },
+  {
+   "from": "Del Webb North Myrtle Beach",
+   "to": "Grand Strand Medical Center",
+   "miles": 8.9,
+   "minutes": 17.6,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.700908,33.821769;-78.817112511714,33.755257431091?overview=false"
+  },
+  {
+   "from": "Del Webb North Myrtle Beach",
+   "to": "Conway Medical Center",
+   "miles": 23.9,
+   "minutes": 35.8,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.700908,33.821769;-79.002614020538,33.786530436338?overview=false"
+  },
+  {
+   "from": "Del Webb North Myrtle Beach",
+   "to": "Tidelands Waccamaw Community Hospital",
+   "miles": 28.3,
+   "minutes": 41.4,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.700908,33.821769;-79.041426323186,33.559617169931?overview=false"
+  },
+  {
+   "from": "Del Webb North Myrtle Beach",
+   "to": "McLeod Health Seacoast",
+   "miles": 5.6,
+   "minutes": 11.8,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.700908,33.821769;-78.664052374945,33.867110999938?overview=false"
+  },
+  {
+   "from": "Del Webb North Myrtle Beach",
+   "to": "McLeod Health Loris",
+   "miles": 25.5,
+   "minutes": 40.2,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.700908,33.821769;-78.898104118907,34.057310996535?overview=false"
+  },
+  {
+   "from": "Myrtle Trace",
+   "to": "Grand Strand Medical Center",
+   "miles": 14.7,
+   "minutes": 22.2,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.996618,33.778502;-78.817112511714,33.755257431091?overview=false"
+  },
+  {
+   "from": "Myrtle Trace",
+   "to": "Conway Medical Center",
+   "miles": 0.8,
+   "minutes": 2.3,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.996618,33.778502;-79.002614020538,33.786530436338?overview=false"
+  },
+  {
+   "from": "Myrtle Trace",
+   "to": "Tidelands Waccamaw Community Hospital",
+   "miles": 20.4,
+   "minutes": 27.3,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.996618,33.778502;-79.041426323186,33.559617169931?overview=false"
+  },
+  {
+   "from": "Myrtle Trace",
+   "to": "McLeod Health Seacoast",
+   "miles": 25.5,
+   "minutes": 33.2,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.996618,33.778502;-78.664052374945,33.867110999938?overview=false"
+  },
+  {
+   "from": "Myrtle Trace",
+   "to": "McLeod Health Loris",
+   "miles": 25.6,
+   "minutes": 43.3,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.996618,33.778502;-78.898104118907,34.057310996535?overview=false"
+  },
+  {
+   "from": "Seasons at Prince Creek West",
+   "to": "Grand Strand Medical Center",
+   "miles": 21.4,
+   "minutes": 32.1,
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.07094,33.586369;-78.817112511714,33.755257431091?overview=false"
+  },
+  {
+   "from": "Seasons at Prince Creek West",
+   "to": "Conway Medical Center",
+   "miles": 18.1,
+   "minutes": 31.2,
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.07094,33.586369;-79.002614020538,33.786530436338?overview=false"
+  },
+  {
+   "from": "Seasons at Prince Creek West",
+   "to": "Tidelands Waccamaw Community Hospital",
+   "miles": 4.0,
+   "minutes": 8.0,
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.07094,33.586369;-79.041426323186,33.559617169931?overview=false"
+  },
+  {
+   "from": "Seasons at Prince Creek West",
+   "to": "McLeod Health Seacoast",
+   "miles": 34.8,
+   "minutes": 48.9,
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.07094,33.586369;-78.664052374945,33.867110999938?overview=false"
+  },
+  {
+   "from": "Seasons at Prince Creek West",
+   "to": "McLeod Health Loris",
+   "miles": 41.8,
+   "minutes": 70.2,
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.07094,33.586369;-78.898104118907,34.057310996535?overview=false"
+  }
+ ]
+}

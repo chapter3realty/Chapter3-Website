@@ -1,0 +1,623 @@
+{
+ "millage": {
+  "unincorporated": 201.0,
+  "myrtle_beach_city": 254.6
+ },
+ "houses_1pct": {
+  "n": 2975,
+  "pass12": 14,
+  "pass10": 89,
+  "pass8": 429,
+  "by_zip": [
+   {
+    "zip": "29511",
+    "name": "Aynor",
+    "houses_3plus": 42,
+    "rent3": 1630,
+    "rent4": 1900,
+    "pass_1pct": 1,
+    "pass_10pct_gross": 1,
+    "pass_8pct_gross": 6
+   },
+   {
+    "zip": "29526",
+    "name": "Conway (east)",
+    "houses_3plus": 467,
+    "rent3": 1630,
+    "rent4": 1900,
+    "pass_1pct": 0,
+    "pass_10pct_gross": 2,
+    "pass_8pct_gross": 35
+   },
+   {
+    "zip": "29527",
+    "name": "Conway (west)",
+    "houses_3plus": 195,
+    "rent3": 1630,
+    "rent4": 1900,
+    "pass_1pct": 2,
+    "pass_10pct_gross": 5,
+    "pass_8pct_gross": 24
+   },
+   {
+    "zip": "29544",
+    "name": "Galivants Ferry",
+    "houses_3plus": 63,
+    "rent3": 1630,
+    "rent4": 1900,
+    "pass_1pct": 0,
+    "pass_10pct_gross": 1,
+    "pass_8pct_gross": 6
+   },
+   {
+    "zip": "29566",
+    "name": "Little River",
+    "houses_3plus": 182,
+    "rent3": 2100,
+    "rent4": 2280,
+    "pass_1pct": 0,
+    "pass_10pct_gross": 3,
+    "pass_8pct_gross": 34
+   },
+   {
+    "zip": "29568",
+    "name": "Longs",
+    "houses_3plus": 336,
+    "rent3": 2270,
+    "rent4": 2460,
+    "pass_1pct": 8,
+    "pass_10pct_gross": 55,
+    "pass_8pct_gross": 189
+   },
+   {
+    "zip": "29569",
+    "name": "Loris",
+    "houses_3plus": 150,
+    "rent3": 1630,
+    "rent4": 1900,
+    "pass_1pct": 0,
+    "pass_10pct_gross": 2,
+    "pass_8pct_gross": 30
+   },
+   {
+    "zip": "29572",
+    "name": "Myrtle Beach (north end)",
+    "houses_3plus": 100,
+    "rent3": 1820,
+    "rent4": 1980,
+    "pass_1pct": 0,
+    "pass_10pct_gross": 0,
+    "pass_8pct_gross": 0
+   },
+   {
+    "zip": "29575",
+    "name": "Surfside Beach",
+    "houses_3plus": 161,
+    "rent3": 1930,
+    "rent4": 2090,
+    "pass_1pct": 0,
+    "pass_10pct_gross": 0,
+    "pass_8pct_gross": 2
+   },
+   {
+    "zip": "29576",
+    "name": "Murrells Inlet and Garden City",
+    "houses_3plus": 216,
+    "rent3": 2080,
+    "rent4": 2420,
+    "pass_1pct": 0,
+    "pass_10pct_gross": 0,
+    "pass_8pct_gross": 6
+   },
+   {
+    "zip": "29577",
+    "name": "Myrtle Beach",
+    "houses_3plus": 181,
+    "rent3": 1720,
+    "rent4": 1900,
+    "pass_1pct": 0,
+    "pass_10pct_gross": 0,
+    "pass_8pct_gross": 3
+   },
+   {
+    "zip": "29579",
+    "name": "Carolina Forest",
+    "houses_3plus": 365,
+    "rent3": 2230,
+    "rent4": 2420,
+    "pass_1pct": 3,
+    "pass_10pct_gross": 15,
+    "pass_8pct_gross": 66
+   },
+   {
+    "zip": "29581",
+    "name": "Nichols",
+    "houses_3plus": 14,
+    "rent3": 1630,
+    "rent4": 1900,
+    "pass_1pct": 0,
+    "pass_10pct_gross": 1,
+    "pass_8pct_gross": 2
+   },
+   {
+    "zip": "29582",
+    "name": "North Myrtle Beach",
+    "houses_3plus": 239,
+    "rent3": 1880,
+    "rent4": 2040,
+    "pass_1pct": 0,
+    "pass_10pct_gross": 0,
+    "pass_8pct_gross": 1
+   },
+   {
+    "zip": "29588",
+    "name": "Socastee",
+    "houses_3plus": 264,
+    "rent3": 1870,
+    "rent4": 2030,
+    "pass_1pct": 0,
+    "pass_10pct_gross": 4,
+    "pass_8pct_gross": 25
+   }
+  ]
+ },
+ "condos_1pct": {
+  "n": 1785,
+  "price_only": 214,
+  "after_dues_floor": 31,
+  "after_dues_ceiling": 46,
+  "by_zip": [
+   {
+    "zip": "29526",
+    "name": "Conway (east)",
+    "condos_2plus": 32,
+    "rent2": 1320,
+    "pass_on_price": 11,
+    "pass_after_dues": [
+     1,
+     4
+    ]
+   },
+   {
+    "zip": "29566",
+    "name": "Little River",
+    "condos_2plus": 167,
+    "rent2": 1730,
+    "pass_on_price": 55,
+    "pass_after_dues": [
+     10,
+     14
+    ]
+   },
+   {
+    "zip": "29568",
+    "name": "Longs",
+    "condos_2plus": 22,
+    "rent2": 1870,
+    "pass_on_price": 11,
+    "pass_after_dues": [
+     3,
+     5
+    ]
+   },
+   {
+    "zip": "29572",
+    "name": "Myrtle Beach (north end)",
+    "condos_2plus": 315,
+    "rent2": 1500,
+    "pass_on_price": 5,
+    "pass_after_dues": [
+     0,
+     0
+    ]
+   },
+   {
+    "zip": "29575",
+    "name": "Surfside Beach",
+    "condos_2plus": 116,
+    "rent2": 1590,
+    "pass_on_price": 12,
+    "pass_after_dues": [
+     0,
+     0
+    ]
+   },
+   {
+    "zip": "29576",
+    "name": "Murrells Inlet and Garden City",
+    "condos_2plus": 151,
+    "rent2": 1720,
+    "pass_on_price": 5,
+    "pass_after_dues": [
+     1,
+     1
+    ]
+   },
+   {
+    "zip": "29577",
+    "name": "Myrtle Beach",
+    "condos_2plus": 342,
+    "rent2": 1420,
+    "pass_on_price": 29,
+    "pass_after_dues": [
+     3,
+     5
+    ]
+   },
+   {
+    "zip": "29579",
+    "name": "Carolina Forest",
+    "condos_2plus": 129,
+    "rent2": 1840,
+    "pass_on_price": 68,
+    "pass_after_dues": [
+     6,
+     10
+    ]
+   },
+   {
+    "zip": "29582",
+    "name": "North Myrtle Beach",
+    "condos_2plus": 467,
+    "rent2": 1550,
+    "pass_on_price": 11,
+    "pass_after_dues": [
+     6,
+     6
+    ]
+   },
+   {
+    "zip": "29588",
+    "name": "Socastee",
+    "condos_2plus": 44,
+    "rent2": 1540,
+    "pass_on_price": 7,
+    "pass_after_dues": [
+     1,
+     1
+    ]
+   }
+  ]
+ },
+ "gross_yield_by_zip": [
+  {
+   "zip": "29526",
+   "name": "Conway (east)",
+   "type": "house, 3 bedrooms",
+   "listings": 253,
+   "median_ask": 325000,
+   "rent": 1630,
+   "gross_yield_pct": 6.0,
+   "median_dues": 75
+  },
+  {
+   "zip": "29527",
+   "name": "Conway (west)",
+   "type": "house, 3 bedrooms",
+   "listings": 121,
+   "median_ask": 285000,
+   "rent": 1630,
+   "gross_yield_pct": 6.9,
+   "median_dues": 50
+  },
+  {
+   "zip": "29566",
+   "name": "Little River",
+   "type": "house, 3 bedrooms",
+   "listings": 110,
+   "median_ask": 380000,
+   "rent": 2100,
+   "gross_yield_pct": 6.6,
+   "median_dues": 100
+  },
+  {
+   "zip": "29568",
+   "name": "Longs",
+   "type": "house, 3 bedrooms",
+   "listings": 189,
+   "median_ask": 320000,
+   "rent": 2270,
+   "gross_yield_pct": 8.5,
+   "median_dues": 100
+  },
+  {
+   "zip": "29569",
+   "name": "Loris",
+   "type": "house, 3 bedrooms",
+   "listings": 95,
+   "median_ask": 310000,
+   "rent": 1630,
+   "gross_yield_pct": 6.3,
+   "median_dues": 25
+  },
+  {
+   "zip": "29572",
+   "name": "Myrtle Beach (north end)",
+   "type": "house, 3 bedrooms",
+   "listings": 50,
+   "median_ask": 695000,
+   "rent": 1820,
+   "gross_yield_pct": 3.1,
+   "median_dues": 300
+  },
+  {
+   "zip": "29575",
+   "name": "Surfside Beach",
+   "type": "house, 3 bedrooms",
+   "listings": 71,
+   "median_ask": 450000,
+   "rent": 1930,
+   "gross_yield_pct": 5.1,
+   "median_dues": 25
+  },
+  {
+   "zip": "29576",
+   "name": "Murrells Inlet and Garden City",
+   "type": "house, 3 bedrooms",
+   "listings": 94,
+   "median_ask": 525000,
+   "rent": 2080,
+   "gross_yield_pct": 4.8,
+   "median_dues": 100
+  },
+  {
+   "zip": "29577",
+   "name": "Myrtle Beach",
+   "type": "house, 3 bedrooms",
+   "listings": 80,
+   "median_ask": 470000,
+   "rent": 1720,
+   "gross_yield_pct": 4.4,
+   "median_dues": 100
+  },
+  {
+   "zip": "29579",
+   "name": "Carolina Forest",
+   "type": "house, 3 bedrooms",
+   "listings": 133,
+   "median_ask": 390000,
+   "rent": 2230,
+   "gross_yield_pct": 6.9,
+   "median_dues": 100
+  },
+  {
+   "zip": "29582",
+   "name": "North Myrtle Beach",
+   "type": "house, 3 bedrooms",
+   "listings": 91,
+   "median_ask": 550000,
+   "rent": 1880,
+   "gross_yield_pct": 4.1,
+   "median_dues": 50
+  },
+  {
+   "zip": "29588",
+   "name": "Socastee",
+   "type": "house, 3 bedrooms",
+   "listings": 142,
+   "median_ask": 355000,
+   "rent": 1870,
+   "gross_yield_pct": 6.3,
+   "median_dues": 100
+  },
+  {
+   "zip": "29566",
+   "name": "Little River",
+   "type": "condo, 2 bedrooms",
+   "listings": 115,
+   "median_ask": 180000,
+   "rent": 1730,
+   "gross_yield_pct": 11.5,
+   "median_dues": 500,
+   "dues_share_of_rent_pct": 29
+  },
+  {
+   "zip": "29572",
+   "name": "Myrtle Beach (north end)",
+   "type": "condo, 2 bedrooms",
+   "listings": 196,
+   "median_ask": 280000,
+   "rent": 1500,
+   "gross_yield_pct": 6.4,
+   "median_dues": 725,
+   "dues_share_of_rent_pct": 48
+  },
+  {
+   "zip": "29575",
+   "name": "Surfside Beach",
+   "type": "condo, 2 bedrooms",
+   "listings": 86,
+   "median_ask": 190000,
+   "rent": 1590,
+   "gross_yield_pct": 10.0,
+   "median_dues": 500,
+   "dues_share_of_rent_pct": 31
+  },
+  {
+   "zip": "29576",
+   "name": "Murrells Inlet and Garden City",
+   "type": "condo, 2 bedrooms",
+   "listings": 53,
+   "median_ask": 250000,
+   "rent": 1720,
+   "gross_yield_pct": 8.3,
+   "median_dues": 525,
+   "dues_share_of_rent_pct": 31
+  },
+  {
+   "zip": "29577",
+   "name": "Myrtle Beach",
+   "type": "condo, 2 bedrooms",
+   "listings": 224,
+   "median_ask": 240000,
+   "rent": 1420,
+   "gross_yield_pct": 7.1,
+   "median_dues": 550,
+   "dues_share_of_rent_pct": 39
+  },
+  {
+   "zip": "29579",
+   "name": "Carolina Forest",
+   "type": "condo, 2 bedrooms",
+   "listings": 72,
+   "median_ask": 165000,
+   "rent": 1840,
+   "gross_yield_pct": 13.4,
+   "median_dues": 425,
+   "dues_share_of_rent_pct": 23
+  },
+  {
+   "zip": "29582",
+   "name": "North Myrtle Beach",
+   "type": "condo, 2 bedrooms",
+   "listings": 253,
+   "median_ask": 250000,
+   "rent": 1550,
+   "gross_yield_pct": 7.4,
+   "median_dues": 600,
+   "dues_share_of_rent_pct": 39
+  }
+ ],
+ "sheet_house": {
+  "label": "3-bedroom house, Carolina Forest (29579)",
+  "where": "unincorporated Horry County",
+  "price": 390000,
+  "rent_month": 2230,
+  "rent_year": 26760,
+  "tax_year": 4703,
+  "dues_year": 1200,
+  "management_year": 2676,
+  "repairs_and_empty_months_year": 2676,
+  "left_before_insurance_and_loan_year": 15505,
+  "left_pct_of_price": 4.0,
+  "costs_share_of_rent_before_insurance_pct": 42,
+  "gross_yield_pct": 6.9,
+  "one_pct_rule_price": 223000
+ },
+ "sheet_house_longs": {
+  "label": "3-bedroom house, Longs (29568)",
+  "where": "unincorporated Horry County",
+  "price": 320000,
+  "rent_month": 2270,
+  "rent_year": 27240,
+  "tax_year": 3859,
+  "dues_year": 1200,
+  "management_year": 2724,
+  "repairs_and_empty_months_year": 2724,
+  "left_before_insurance_and_loan_year": 16733,
+  "left_pct_of_price": 5.2,
+  "costs_share_of_rent_before_insurance_pct": 39,
+  "gross_yield_pct": 8.5,
+  "one_pct_rule_price": 227000
+ },
+ "sheet_condo": {
+  "label": "2-bedroom condo, Myrtle Beach (29577)",
+  "where": "City of Myrtle Beach",
+  "price": 240000,
+  "rent_month": 1420,
+  "rent_year": 17040,
+  "tax_year": 3666,
+  "dues_year": 6600,
+  "management_year": 1704,
+  "repairs_and_empty_months_year": 1704,
+  "left_before_insurance_and_loan_year": 3366,
+  "left_pct_of_price": 1.4,
+  "costs_share_of_rent_before_insurance_pct": 80,
+  "gross_yield_pct": 7.1,
+  "one_pct_rule_price": 142000
+ },
+ "tax_reset": {
+  "source": "Horry County AcclaimWeb DEED (001) resales recorded 2026-01-01..2026-09-30 (batch 2026-10-d pull) joined to Horry County GIS layer 24, read 2026-11-01",
+  "kept": 8310,
+  "all": {
+   "n": 8310,
+   "median_price_over_taxable": 1.169,
+   "q1": 0.997,
+   "q3": 1.48,
+   "share_price_25pct_or_more_above": 0.429,
+   "share_price_50pct_or_more_above": 0.236,
+   "share_price_double_or_more": 0.057,
+   "median_price": 300000.0,
+   "median_taxable": 253000.0
+  },
+  "house": {
+   "n": 6468,
+   "median_price_over_taxable": 1.174,
+   "q1": 1.005,
+   "q3": 1.484,
+   "share_price_25pct_or_more_above": 0.434,
+   "share_price_50pct_or_more_above": 0.238,
+   "share_price_double_or_more": 0.059,
+   "median_price": 325000.0,
+   "median_taxable": 275080.0
+  },
+  "condo": {
+   "n": 1842,
+   "median_price_over_taxable": 1.149,
+   "q1": 0.948,
+   "q3": 1.467,
+   "share_price_25pct_or_more_above": 0.413,
+   "share_price_50pct_or_more_above": 0.229,
+   "share_price_double_or_more": 0.053,
+   "median_price": 220000.0,
+   "median_taxable": 184900.0
+  },
+  "class_counts": {
+   "4": 4223,
+   "6": 4045,
+   "other": 42
+  },
+  "class_counts_house": {
+   "4": 3711,
+   "6": 2715,
+   "other": 42
+  },
+  "class_counts_condo": {
+   "4": 512,
+   "6": 1330,
+   "other": 0
+  },
+  "unincorporated_investor_bill_multiple": {
+   "seller_on_4pct": {
+    "n": 2828,
+    "median": 3.92,
+    "q1": 3.38,
+    "q3": 4.8
+   },
+   "seller_on_4pct_with_ati_exemption": {
+    "n": 2828,
+    "median": 3.58,
+    "q1": 3.28,
+    "q3": 4.48
+   },
+   "seller_on_6pct_no_ati_exemption": {
+    "n": 1777,
+    "median": 1.1
+   },
+   "seller_on_6pct_with_ati_exemption": {
+    "n": 1777,
+    "median": 1.0,
+    "rule": "12-37-3135(B)(2): exemption is 25% of the transfer value, but the exempted value may not fall below the county's current market value (MarketProp)"
+   }
+  }
+ },
+ "condo_dues_all": {
+  "listings": 2828,
+  "at_or_under": {
+   "200": 24,
+   "300": 119,
+   "400": 405,
+   "500": 882,
+   "600": 1276,
+   "700": 1582,
+   "800": 1814,
+   "1000": 2257,
+   "1500": 2656
+  }
+ },
+ "pulled": {
+  "listings": "2026-11-01T23:28:58.550813+00:00",
+  "medians": "2026-11-01T23:35:41.236590+00:00",
+  "feed_refreshed": "2026-11-01T23:11:20.056Z"
+ }
+}

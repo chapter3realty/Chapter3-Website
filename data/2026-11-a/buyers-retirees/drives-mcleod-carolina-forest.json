@@ -1,0 +1,62 @@
+{
+ "method": "OSRM public router, fastest route, no traffic; minutes = duration/60. Points: OSM amenity=hospital node 'McLeod Health Carolina Forest, 101 McLeod Health Boulevard' (Nominatim), and the Census geocoder match for 115 McLeod Health Blvd (NPI registry location address).",
+ "pulled": "2026-11-02",
+ "drives": [
+  {
+   "from": "Del Webb at Grande Dunes",
+   "to": "McLeod Health Carolina Forest (OSM hospital point)",
+   "miles": 2.7,
+   "minutes": 6.3,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.842661,33.749305;-78.8526059,33.757459?overview=false"
+  },
+  {
+   "from": "Del Webb at Grande Dunes",
+   "to": "McLeod Health Carolina Forest (Census 115 McLeod Health Blvd)",
+   "miles": 2.5,
+   "minutes": 5.6,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.842661,33.749305;-78.854495664697,33.757928434327?overview=false"
+  },
+  {
+   "from": "Del Webb North Myrtle Beach",
+   "to": "McLeod Health Carolina Forest (OSM hospital point)",
+   "miles": 13.8,
+   "minutes": 23.4,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.700908,33.821769;-78.8526059,33.757459?overview=false"
+  },
+  {
+   "from": "Del Webb North Myrtle Beach",
+   "to": "McLeod Health Carolina Forest (Census 115 McLeod Health Blvd)",
+   "miles": 13.6,
+   "minutes": 22.7,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.700908,33.821769;-78.854495664697,33.757928434327?overview=false"
+  },
+  {
+   "from": "Myrtle Trace",
+   "to": "McLeod Health Carolina Forest (OSM hospital point)",
+   "miles": 11.2,
+   "minutes": 17.2,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.996618,33.778502;-78.8526059,33.757459?overview=false"
+  },
+  {
+   "from": "Myrtle Trace",
+   "to": "McLeod Health Carolina Forest (Census 115 McLeod Health Blvd)",
+   "miles": 11.0,
+   "minutes": 16.5,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.996618,33.778502;-78.854495664697,33.757928434327?overview=false"
+  },
+  {
+   "from": "Seasons at Prince Creek West",
+   "to": "McLeod Health Carolina Forest (OSM hospital point)",
+   "miles": 20.5,
+   "minutes": 32.1,
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.07094,33.586369;-78.8526059,33.757459?overview=false"
+  },
+  {
+   "from": "Seasons at Prince Creek West",
+   "to": "McLeod Health Carolina Forest (Census 115 McLeod Health Blvd)",
+   "miles": 20.4,
+   "minutes": 31.4,
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.07094,33.586369;-78.854495664697,33.757928434327?overview=false"
+  }
+ ]
+}

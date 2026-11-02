@@ -1,0 +1,154 @@
+[
+ {
+  "label": "type=all has=-",
+  "params": {
+   "status": "active"
+  },
+  "total": 8790,
+  "refreshedAt": "2026-11-01T23:01:20.656Z"
+ },
+ {
+  "label": "type=all has=foreclosure",
+  "params": {
+   "has": "foreclosure",
+   "status": "active"
+  },
+  "total": 23,
+  "refreshedAt": "2026-11-01T23:11:20.056Z"
+ },
+ {
+  "label": "type=all has=short_sale",
+  "params": {
+   "has": "short_sale",
+   "status": "active"
+  },
+  "total": 13,
+  "refreshedAt": "2026-11-01T23:11:20.056Z"
+ },
+ {
+  "label": "type=all has=distressed_sale",
+  "params": {
+   "has": "distressed_sale",
+   "status": "active"
+  },
+  "total": 40,
+  "refreshedAt": "2026-11-01T23:11:20.056Z"
+ },
+ {
+  "label": "type=house has=-",
+  "params": {
+   "type": "house",
+   "status": "active"
+  },
+  "total": 3702,
+  "refreshedAt": "2026-11-01T23:01:20.656Z"
+ },
+ {
+  "label": "type=house has=foreclosure",
+  "params": {
+   "type": "house",
+   "has": "foreclosure",
+   "status": "active"
+  },
+  "total": 18,
+  "refreshedAt": "2026-11-01T23:11:20.056Z"
+ },
+ {
+  "label": "type=house has=short_sale",
+  "params": {
+   "type": "house",
+   "has": "short_sale",
+   "status": "active"
+  },
+  "total": 10,
+  "refreshedAt": "2026-11-01T23:11:20.056Z"
+ },
+ {
+  "label": "type=house has=distressed_sale",
+  "params": {
+   "type": "house",
+   "has": "distressed_sale",
+   "status": "active"
+  },
+  "total": 32,
+  "refreshedAt": "2026-11-01T23:11:20.056Z"
+ },
+ {
+  "label": "type=condo has=-",
+  "params": {
+   "type": "condo",
+   "status": "active"
+  },
+  "total": 2828,
+  "refreshedAt": "2026-11-01T23:01:20.656Z"
+ },
+ {
+  "label": "type=condo has=foreclosure",
+  "params": {
+   "type": "condo",
+   "has": "foreclosure",
+   "status": "active"
+  },
+  "total": 3,
+  "refreshedAt": "2026-11-01T23:11:20.056Z"
+ },
+ {
+  "label": "type=condo has=short_sale",
+  "params": {
+   "type": "condo",
+   "has": "short_sale",
+   "status": "active"
+  },
+  "total": 1,
+  "refreshedAt": "2026-11-01T23:11:20.056Z"
+ },
+ {
+  "label": "type=condo has=distressed_sale",
+  "params": {
+   "type": "condo",
+   "has": "distressed_sale",
+   "status": "active"
+  },
+  "total": 4,
+  "refreshedAt": "2026-11-01T23:11:20.056Z"
+ },
+ {
+  "label": "type=townhouse has=-",
+  "params": {
+   "type": "townhouse",
+   "status": "active"
+  },
+  "total": 365,
+  "refreshedAt": "2026-11-01T23:01:20.656Z"
+ },
+ {
+  "label": "type=townhouse has=foreclosure",
+  "params": {
+   "type": "townhouse",
+   "has": "foreclosure",
+   "status": "active"
+  },
+  "total": 2,
+  "refreshedAt": "2026-11-01T23:11:20.056Z"
+ },
+ {
+  "label": "type=townhouse has=short_sale",
+  "params": {
+   "type": "townhouse",
+   "has": "short_sale",
+   "status": "active"
+  },
+  "total": 1,
+  "refreshedAt": "2026-11-01T23:11:20.056Z"
+ },
+ {
+  "label": "type=townhouse has=distressed_sale",
+  "params": {
+   "type": "townhouse",
+   "has": "distressed_sale",
+   "status": "active"
+  },
+  "total": 3,
+  "refreshedAt": "2026-11-01T23:11:20.056Z"
+ }
+]

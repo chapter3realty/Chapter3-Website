@@ -1,0 +1,25 @@
+{
+  "_about": "Insurance estimates for /invest/run-the-numbers/ (fix round 1, VERIFIED-BY-FIXER, 2026-11-02). Source pages saved in raw/clovered-landlord-sc.txt and raw/clovered-condo-sc.txt. Clovered is an independent insurance agency; its landlord figures are its homeowner averages plus 15 to 25 percent (its own method, stated on the page). Estimates, not quotes.",
+  "landlord_myrtle_beach": {
+    "source": "https://clovered.com/landlord-insurance/south-carolina/",
+    "updated": "2024-10-04",
+    "quote_200k": "Myrtle Beach $2,338 $2,018 $2,178 (frame, masonry, average) for a $200,000 house",
+    "quote_350k": "Myrtle Beach $3,514 $3,084 $3,299 (frame, masonry, average) for a $350,000 house",
+    "house_200k_year": 2178,
+    "house_350k_year": 3299
+  },
+  "condo_unit_sc": {
+    "source": "https://clovered.com/condo-insurance/south-carolina/",
+    "updated": "2024-10-04",
+    "quote": "The average cost of condo insurance in South Carolina is $501 every year or $42 per month. Average rates depending on coverage amounts, range between $36 and $81 monthly.",
+    "quote_mb": "HO-6 insurance in Myrtle Beach will likely be on the higher end in South Carolina. ... Notify your insurer if you rent out your condo for part of the year.",
+    "average_year": 501,
+    "top_month": 81
+  },
+  "used_on_page": {
+    "house_year": 3300,
+    "house_note": "The $350,000 Myrtle Beach figure ($3,299), rounded to $3,300, for both example houses ($390,000 and $320,000).",
+    "condo_year": 972,
+    "condo_note": "The top of the state range, $81 x 12 = $972, because the agency puts Myrtle Beach on the higher end and the unit is rented."
+  }
+}

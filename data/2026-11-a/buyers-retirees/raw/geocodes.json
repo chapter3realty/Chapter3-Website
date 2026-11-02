@@ -1,0 +1,37 @@
+{
+ "Grand Strand Medical Center": {
+  "address": "809 82nd Parkway, Myrtle Beach, SC 29572",
+  "url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=809+82nd+Parkway%2C+Myrtle+Beach%2C+SC+29572&benchmark=Public_AR_Current&format=json",
+  "match": "809 82ND PKWY, MYRTLE BEACH, SC, 29572",
+  "lon": -78.817112511714,
+  "lat": 33.755257431091
+ },
+ "Conway Medical Center": {
+  "address": "300 Singleton Ridge Road, Conway, SC 29526",
+  "url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=300+Singleton+Ridge+Road%2C+Conway%2C+SC+29526&benchmark=Public_AR_Current&format=json",
+  "match": "300 SINGLETON RIDGE RD, CONWAY, SC, 29526",
+  "lon": -79.002614020538,
+  "lat": 33.786530436338
+ },
+ "Tidelands Waccamaw Community Hospital": {
+  "address": "4070 Highway 17, Murrells Inlet, SC 29576",
+  "url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=4070+Highway+17%2C+Murrells+Inlet%2C+SC+29576&benchmark=Public_AR_Current&format=json",
+  "match": "4070 US HWY 17, MURRELLS INLET, SC, 29576",
+  "lon": -79.041426323186,
+  "lat": 33.559617169931
+ },
+ "McLeod Health Seacoast": {
+  "address": "4000 Highway 9 East, Little River, SC 29566",
+  "url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=4000+Highway+9+East%2C+Little+River%2C+SC+29566&benchmark=Public_AR_Current&format=json",
+  "match": "4000 E STATE HWY 9, LITTLE RIVER, SC, 29566",
+  "lon": -78.664052374945,
+  "lat": 33.867110999938
+ },
+ "McLeod Health Loris": {
+  "address": "3655 Mitchell Street, Loris, SC 29569",
+  "url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=3655+Mitchell+Street%2C+Loris%2C+SC+29569&benchmark=Public_AR_Current&format=json",
+  "match": "3655 MITCHELL ST, LORIS, SC, 29569",
+  "lon": -78.898104118907,
+  "lat": 34.057310996535
+ }
+}

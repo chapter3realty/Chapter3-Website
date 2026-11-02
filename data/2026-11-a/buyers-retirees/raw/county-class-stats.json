@@ -1,0 +1,59 @@
+{
+ "source": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query",
+ "base": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND TaxableProp > 0",
+ "classes": {
+  "4%": "AssessedProp < TaxableProp * 0.05",
+  "6%": "AssessedProp >= TaxableProp * 0.05"
+ },
+ "pulled": "2026-11-01",
+ "stats": [
+  {
+   "set": "all",
+   "class": "4%",
+   "landuse": "all homes",
+   "n": 124430
+  },
+  {
+   "set": "all",
+   "class": "4%",
+   "landuse": "101 house",
+   "n": 95615
+  },
+  {
+   "set": "all",
+   "class": "6%",
+   "landuse": "all homes",
+   "n": 102570
+  },
+  {
+   "set": "all",
+   "class": "6%",
+   "landuse": "101 house",
+   "n": 30809
+  },
+  {
+   "set": "owned before 2026",
+   "class": "4%",
+   "landuse": "all homes",
+   "n": 113537
+  },
+  {
+   "set": "owned before 2026",
+   "class": "4%",
+   "landuse": "101 house",
+   "n": 87647
+  },
+  {
+   "set": "owned before 2026",
+   "class": "6%",
+   "landuse": "all homes",
+   "n": 88566
+  },
+  {
+   "set": "owned before 2026",
+   "class": "6%",
+   "landuse": "101 house",
+   "n": 27436
+  }
+ ]
+}

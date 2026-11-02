@@ -1,0 +1,326 @@
+ï»¿
+ Code of Laws - Title 14 - Chapter 11- - COURTS 
+ -->
+ -->
+ -->
+ -->
+ //document.onclick = function () { document.getElementById('transbox').style.display= 'none' };
+ var xmlhttp=false;
+ xmlhttp = create_xml_object();
+ function getElement(ele)
+ {
+ var theobj = false;
+ if(typeof ele == 'string')
+ theobj = (document.getElementById)?document.getElementById(ele):document.all[ele];
+ else
+ theobj = ele;
+ return theobj;
+ }
+ function checkreader(friendlyalert)
+ {
+ /*friendlyalert=friendlyalert||false;
+ var browser_info = perform_acrobat_detection();
+ if (!browser_info.acrobat)
+ {
+ loadadobebox('adobebox', '/adobe.php');
+ return false;
+ }
+ else if (friendlyalert)
+ {
+ alert(friendlyalert);
+ }*/
+ return true;
+ }
+ function loadadobebox(boxname, url)
+ {
+ var response = false;
+ doRequest(xmlhttp, "GET", url, false, null, null);
+ if (xmlhttp.status == 200)
+ {
+ response = xmlhttp.responseText;
+ }
+ if(response)
+ {
+ var ele = document.getElementById(boxname);
+ if (ele)
+ {
+ ele.style.visibility = 'hidden';
+ ele.style.display = 'block';
+ positionElement(ele, 'center', 'center', true);
+ ele.innerHTML = response;
+ ele.style.visibility = 'visible';
+ ele.style.display = 'block';
+ // ele.scrollIntoView(true);
+ }
+ }
+ return response;
+ }
+ function init()
+ {
+ var ld=document.getElementById("loading");
+ if(ld)
+ {
+ ld.style.display = 'none';
+ }
+ }
+ function openmore()
+ {
+ var id = document.getElementById('quicksearch');
+ if (id)
+ {
+ var pos = findPos(id);
+ id.style.zIndex = 10;
+ // id.style.left = pos[0]+'px';
+ // id.style.top = pos[1]+'px';
+ id.style.height = '295px';
+ id.style.position = 'absolute';
+ id.style.backgroundColor = '#f7f4ec';
+ var id2 = document.getElementById('searchmore');
+ if (id2)
+ {
+ id2.style.display = 'none';
+ }
+ var id3 = document.getElementById('contactlegislatordiv');
+ if (id3)
+ {
+ id3.style.display = 'none';
+ }
+ }
+ }
+ function closemore()
+ {
+ var id = document.getElementById('quicksearch');
+ if (id)
+ {
+ id.style.height = '135px';
+ id.style.position = '';
+ id.style.backgroundColor = 'transparent';
+ var id2 = document.getElementById('searchmore');
+ if (id2)
+ {
+ id2.style.display = 'block';
+ }
+ var id3 = document.getElementById('contactlegislatordiv');
+ if (id3)
+ {
+ id3.style.display = '';
+ }
+ } 
+ }
+//ADDED FOR V4
+//Google tag (gtag.js) 
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-LJY6FMNQKH');
+ /* COMMENTING OUT UPGRADING TO V4 -A
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-36207109-1']);
+ _gaq.push(['_setDomainName', 'scstatehouse.gov']);
+ _gaq.push(['_setAllowLinker', true]);
+ _gaq.push(['_trackPageview']);
+ (function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+*/
+ $(document).ready(function(){
+ // COMMENTING THIS OUT NO LONGER BEING ACTIVELY USED TO MONITOR FOR TRAFFIC TO SPECIFIC LINKS - A
+ /*
+ var anchors = $('div#contentsection a');
+ //console.log('anchors...'+anchors.length);
+ if(anchors.length > 0){
+ //console.log('setting up event handler...');
+ anchors.click(function(){
+ var a = $(this).attr('href');
+ if(_gaq && (a.substr(-3) == 'htm' || a.substr(-4) == 'html' || a.substr(-3) == 'doc' || a.substr(-4) == 'docx' || a.substr(-3) == 'pdf' || a.substr(-3) == 'xls' || a.substr(-4) == 'xlsx')) {
+ //console.log(a);
+ _gaq.push(['_trackPageview', $(this).attr('href')]);
+ }
+ var aText = $(this).text().toLowerCase();
+ if (a.indexOf('getfile.php') > -1 && aText === 'word'){
+ _gaq.push(['_trackEvent', 'Word Doc', 'Download', ('from page: ' + document.location + ' - href: ' + a)]);
+ }
+ });
+ }
+ */
+ });
+ Your browser does not support JavaScript! This page will not render correctly. 
+ * Recipient of the Notable State Documents Award by the South Carolina State Library. -->
+Searches and data queries will be unavailable beginning Friday, August 19, 2016, from 8:00 PM until Saturday, August 20th at 8:00 AM due to scheduled maintenance. -->
+ In order to improve your experience using this website, please upgrade your browser . 
+ Home 
+ Senate 
+ House 
+ Committee Postings and Reports 
+ Legislative Council 
+ Citizens' Interest 
+ Publications 
+  Staff Portal -->
+  Staff Portal -->
+  Staff Portal 
+  Staff Portal -->
+ -->
+ Chamber Video 
+ Senate (Audio Only) 
+ House (Audio Only) 
+ Video Schedule Video Archives 
+ How do I... 
+ Quick Search 
+ Search for: 
+ All -->
+  Full Site Search 
+  Bill Number 
+  Legislation 
+  Budget 
+  Code of Laws 
+  Code of Regulations 
+  Constitution 
+  House Journals 
+  Senate Journals 
+  LSA Bill Summary 
+ Find Your Legislators 
+ Contact Your Legislator 
+ Legislation 
+ Track Legislation 
+ Multi-Criteria Search 
+ Multi-Criteria Search -->
+ Multi-Criteria Search -->
+ Research 
+ South Carolina Law 
+ Ratifications & Acts 
+ Code of Laws 
+ Code of Regulations 
+ Constitution 
+ State Register 
+ Legislative Manual 
+ Purchase Manual -->
+ Purchase Manual -->
+ Purchase Manual 
+ View Manual Online 
+ Student Connection 
+ Visiting the State House 
+ Archives 
+ State Agency Websites 
+ State Agency Websites -->
+ Media Links 
+ if ( '' === '1'){
+ var link = document.getElementById('contactLegislatorLink');
+ if (link != 'undefined' && link != null){
+ link.style.display = 'none'; 
+ link.style.visibility = 'hidden';
+ }
+ }
+ if ( '' === '1'){
+ setTimeout(function(){
+ var link2 = document.getElementById('sendMsgLink');
+ if (link2 != 'undefined' && link2 != null){
+ link2.style.display = 'none'; 
+ link2.style.visibility = 'hidden';
+ };
+ }, 20);
+ } 
+ South Carolina Law > Code of Laws > Title 14 
+ South Carolina Code of Laws 
+ Unannotated 
+ Title 14 - COURTS 
+ CHAPTER 11 
+ Masters and Referees 
+Editor's Note 
+ 1976 Act No. 690, Article VII, SECTION 5, provides: 
+ "County courts and other similar courts with jurisdiction inferior to the circuit court and the offices of master-in-equity, standing master and special referee shall be abolished on July 1, 1979, and the jurisdiction of such courts devolved upon the unified court system; provided, however, that such county courts, other courts of similar jurisdiction, and the offices of master-in-equity, standing master and special referee shall be continued pursuant to Section 22 of Article V of the Constitution until July 1, 1979, subject, however, to the provisions of Article XI, Section 2 of this act; provided, further, that the General Assembly prior to July 1, 1979, shall provide sufficient judicial manpower to assure adequate staffing for the unified court system as provided by this act." 
+ 1976 Act No. 690, Article VIII, SECTION 4, provides: 
+ "A judge or master whose judicial office is eliminated by the provisions of this act shall be given credit for state retirement purposes for the time in which he served as judge or master under a formula to be determined by rule and regulation of the State Budget and Control Board." 
+ ARTICLE 1 
+ General Provisions 
+ SECTION 14-11-10. Establishment of master-in-equity court. 
+ As a part of the unified judicial system, there is established in each of the counties of this State having a population of at least one hundred thirty thousand, according to the latest official United States Decennial Census, a master-in-equity court. The master-in-equity for the court must be appointed pursuant to the provisions of Section 14-11-20. Nothing in this section prohibits a county or area with a population of less than one hundred thirty thousand, according to the latest official United States Decennial Census, from having a part-time master-in-equity. The governing bodies of any two or more counties may join together to fund the office of master-in-equity to serve two or more counties. Funding of this master-in-equity must be borne by each county included on a per capita population basis. 
+HISTORY: 1962 Code SECTION 15-1802; 1952 Code SECTION 15-1802; 1942 Code SECTION 3678; 1932 Code SECTION 3678; Civ. C. '22 SECTION 2219; Civ. C. '12 SECTION 1373; Civ. C. '02 SECTION 966; G. S. 782; 1910 (16) 609; 1914 (29) 26; 1916 (29) 805; 1920 (31) 764; 1921 (32) 139; 1923 (33) 131, 193; 1924 (33) 948; 1935 (39) 458; 1936 (39) 1531; 1939 (41) 230; 1979 Act No. 164 Part II SECTION 2, eff July 1, 1979; 1988 Act No. 678, Part II, SECTION 1, eff July 1, 1989. 
+ SECTION 14-11-15. Equity courts. 
+ The equity court is considered a division of the circuit court, and the master-in-equity, as judge of the equity court, is entitled to all the benefits and subject to all the requirements of the South Carolina Bar and the rules of the Supreme Court in the same respect as circuit court and family court judges. This section may not be construed as providing retirement for masters-in-equity under the provisions of Chapter 8 of Title 9. 
+HISTORY: 1988 Act No. 678, Part II, SECTION 3, eff January 1, 1989. 
+ SECTION 14-11-20. Appointment of master-in-equity; term. 
+ Pursuant to the provisions of Section 2-19-110, masters-in-equity must be appointed by the Governor with the advice and consent of the General Assembly for a term of six years and until their successors are appointed and qualify. No person is eligible to hold the office of master-in-equity who is not at the time of his appointment a citizen of the United States and of this State, has not attained the age of thirty-two years upon his appointment, has not been a licensed attorney for at least eight years upon his appointment, has not been a resident of this State for five years immediately preceding his appointment, and has not been found qualified by the Judicial Merit Selection Commission. 
+ Each master-in-equity of this State qualifies by taking the oath required by the Constitution of this State before a justice of the Supreme Court, a judge of the Court of Appeals, the President of the Senate, the Speaker of the House of Representatives, a circuit judge, the Clerk of the Supreme Court, a clerk of the court of common pleas, or a probate judge of the county and immediately enters upon his duties. The oath must be filed in the office of the Secretary of State. 
+ A full-time master-in-equity is prohibited from engaging in the practice of law. A part-time master-in-equity may practice law but is prohibited from appearing before another master-in-equity. A standing master-in-equity may not serve as the probate judge of any county. 
+HISTORY: 1962 Code SECTION 15-1808; 1952 Code SECTION 15-1808; 1942 Code SECTION 3680; 1932 Code SECTION 3687; Civ. C. '22 SECTION 2224; Civ. C. '12 SECTION 1375; Civ. C. '02 SECTION 968; G. S. 784; R. S. 838; 1898 (22) 694; 1899 (33) 85; 1901 (26) 675; 1979 Act No. 164, Part II SECTION 3, eff July 1, 1979; 1988 Act No. 678, Part II, SECTION 4, eff January 1, 1989; 1996 Act No. 391, Part V, SECTION 5, eff June 4, 1996; 1997 Act No. 35, SECTION 5, eff May 21, 1997. 
+ SECTION 14-11-30. Compensation of master-in-equity. 
+ The governing body of the county or counties in which a master-in-equity serves shall provide the salary, equipment, facilities, and supplies of the master-in-equity, together with the salaries of support personnel and all other costs for the necessary and proper operation of the master-in-equity's office. The salaries of the masters-in-equity are as follows: 
+ (1) Where the area served has a population of up to thirty-four thousand, nine hundred ninety-nine, according to the latest official United States Decennial Census, the master-in-equity serving that area is part time and must be paid a salary equal to ten percent of that of a circuit judge. 
+ (2) Where the area served has a population of between thirty-five thousand and forty-nine thousand, nine hundred ninety-nine, according to the latest official United States Decennial Census, the master-in-equity serving that area is part time and must be paid a salary equal to fifteen percent of that of a circuit judge. 
+ (3) Where the area served has a population of between fifty thousand and seventy-nine thousand, nine hundred ninety-nine, according to the latest official United States Decennial Census, the master-in-equity serving that area is part time and must be paid a salary equal to twenty-five percent of that of a circuit judge. 
+ (4) Where the area served has a population of between eighty thousand and ninety-nine thousand, nine hundred ninety-nine, according to the latest official United States Decennial Census, the master-in-equity serving that area is part time and must be paid a salary equal to forty-five percent of that of a circuit judge. 
+ (5) Where the area served has a population of between one hundred thousand and one hundred twenty-nine thousand, nine hundred ninety-nine, according to the latest official United States Decennial Census, the master-in-equity serving that area is part time and must be paid a salary equal to fifty-five percent of that of a circuit judge. 
+ (6) Where the area served has a population of between one hundred thirty thousand and one hundred forty-nine thousand, nine hundred ninety-nine, according to the latest official United States Decennial Census, the master-in-equity serving that area is full time and must be paid a salary equal to seventy-five percent of that of a circuit judge. 
+ (7) Where the area served has a population of between one hundred fifty thousand and one hundred ninety-nine thousand, nine hundred ninety-nine, according to the latest official United States Decennial Census, the master-in-equity serving that area is full time and must be paid a salary equal to eighty percent of that of a circuit judge. 
+ (8) Where the area served has a population of between two hundred thousand and two hundred forty-nine thousand, nine hundred ninety-nine, according to the latest official United States Decennial Census, the master-in-equity serving that area is full time and must be paid a salary equal to eighty-five percent of that of a circuit judge. 
+ (9) Where the area served has a population of over two hundred fifty thousand, according to the latest official United States Decennial Census, or where the area served is located in a county which generates four million dollars or more in accommodations tax revenue, the master-in-equity serving that area is full time and must be paid a salary equal to ninety percent of that of a circuit judge. 
+ No sitting master-in-equity, whether full time or part time, may have his salary reduced during his tenure in office. Tenure in office continues at the expiration of a term if the incumbent master-in-equity is reappointed. 
+HISTORY: 1962 Code SECTION 15-1809; 1952 Code SECTION 15-1809; 1942 Code SECTION 3681; 1932 Code SECTION 3688; Civ. C. '22 SECTION 2225; Civ. C. '12 SECTION 1376; Civ. C. '02 SECTION 969; G. S. 785; R. S. 839; 1898 (22) 694; 1899 (23) 85; 1901 (24) 675; 1979 Act No. 164 Part II SECTION 4, eff July 1, 1979; 1988 Act No. 678, Part II, SECTION 5, eff January 1, 1989. 
+Editor's Note 
+ 1979 Act No. 164, Part II , SECTION 22, provides as follows: 
+ "Notwithstanding the provisions of this PART the salaries of masters-in-equity serving on the effective date of this act shall not be reduced during their current terms." 
+ SECTION 14-11-40. Accounting for fees and costs received. 
+ All fees and costs received and recovered by any master-in-equity shall be accounted for and paid into the general fund of the county as directed by the governing body thereof. 
+HISTORY: 1975 (59) 173; 1979 Act No. 164 Part II SECTION 5, eff July 1, 1979. 
+ SECTION 14-11-50. Vacancies. 
+ All vacancies in the office of master from death, resignation, removal from the State or any cause whatsoever shall be filled in the manner of original appointment for the unexpired term. 
+HISTORY: 1962 Code SECTION 15-1810; 1952 Code SECTION 15-1810; 1942 Code SECTION 3682; 1932 Code SECTION 3689; Civ. C. '22 SECTION 2226; Civ. C. '12 SECTION 1377; Civ. C. '02 SECTION 970; G. S. 786; R. S. 840; 1840 (11) 154 SECTION 2; 1878 (16) 609 SECTION 7; 1882 (17) 1126; 1911 (27) 85; 1961 (52) 41; 1979 Act No. 164 Part II SECTION 6, eff July 1, 1979. 
+ SECTION 14-11-60. Appointment of special referee. 
+ In case of a vacancy in the office of master-in-equity or in case of the disqualification or disability of the master-in-equity from interest or any other reason for which cause can be shown the presiding circuit court judge, upon agreement of the parties, may appoint a special referee in any case who as to the case has all the powers of a master-in-equity. The special referee must be compensated by the parties involved in the action. 
+HISTORY: 1962 Code SECTION 15-1811; 1952 Code SECTION 15-1811; 1942 Code SECTION 3684; 1932 Code SECTION 3691; Civ. C. '22 SECTION 2228; Civ. C. '12 SECTION 1379; Civ. C. '02 SECTION 972; G. S. 789; R. S. 843; 1840 (11) 154 SECTION 2; 1885 (19) 89; 1979 Act No. 164 Part II SECTION 7, eff July 1, 1979; 1988 Act No. 678, Part II, SECTION 6, eff January 1, 1989. 
+ SECTION 14-11-70. Limitation on practice of law. 
+ No person while he holds the office of full time master shall practice or be a partner with anyone engaged in the practice of law in this State. 
+HISTORY: 1962 Code SECTION 15-1812; 1952 Code SECTION 15-1812; 1942 Code SECTION 3683; 1932 Code SECTION 3690; Civ. C. '22 SECTION 2227; Civ. C. '12 SECTION 1378; Civ. C. '02 SECTION 971; G. S. 783; R. S. 842; 1840 (11) 171 SECTION 30; 1878 (16) 609 SECTION 5; 1909 (26) 179; 1910 (26) 642; 1911 (27) 84; 1912 (27) 554; 1914 (28) 510; 1916 (29) 796, 798; 1920 (31) 964; 1925 (34) 97; 1926 (34) 1014; 1927 (35) 280; 1928 (35) 1162; 1979 Act No. 164 Part II SECTION 8, eff July 1, 1979. 
+ SECTION 14-11-80. General duties. 
+ The master shall make all such sales as the circumstances may require or as the court may order him to make in granting equitable relief and shall execute all proper conveyances thereof. Such sales shall be conducted at the county courthouse or at such other public places in the county designated in the notice of sale. He shall execute and perform all orders of the court upon references to him conformably to the practice of the court. 
+HISTORY: 1962 Code SECTION 15-1814; 1952 Code SECTION 15-1814; 1942 Code SECTION 3685; 1932 Code SECTION 3692; Civ. C. '22 SECTION 2229; Civ. C. '12 SECTION 1380; Civ. C. '02 SECTION 973; G. S. 790; R. S. 844; 1840 (11) 156; 1979 Act No. 164 Part II SECTION 9, eff July 1, 1979. 
+Editor's Note 
+ 1988 Act No. 678, Part II, SECTION 2, effective January 1, 1989, provides as follows: 
+ "The master-in-equity for each county presently holding office continues to serve as master-in-equity until the expiration of his term of office at which time his successor may be selected as provided by law." 
+ SECTION 14-11-85. Appeal from final judgment of master-in-equity. 
+ When some or all of the causes of action in a case are referred to a master-in-equity or special referee, the master or referee shall enter final judgment as to those causes of action, and an appeal from an order or judgment of the master or referee must be to the Supreme Court or the court of appeals as provided by the South Carolina Appellate Court Rules. A matter may not be referred to a master or referee for the purpose of making a report to the circuit court. 
+HISTORY: 1989 Act No. 36, SECTION 1, eff April 3, 1989. and applicable to all appeals from final judgment entered by master after July 25, 1988; 1999 Act No. 55, SECTION 17, eff June 1, 1999. 
+Editor's Note 
+ 1989 Act No. 36, SECTION 2, effective April 3, 1989, provides as follows: 
+ "This act takes effect upon approval by the Governor and is effective with respect to all appeals from final judgments entered by a master after July 25, 1988." 
+ SECTION 14-11-100. Authority to administer oaths, and to take testimony, depositions, renunciations of dower, affidavits, and other instruments; fees. 
+ The masters in this State, while in office, may administer oaths, take depositions, affidavits and renunciation of dower, probate deeds and other instruments and take testimony by commission as fully and effectually as the clerks of courts and notaries public. Their fees therefor shall be the same as allowed by law to other officers for similar services. 
+HISTORY: 1962 Code SECTION 15-1816; 1952 Code SECTION 15-1816; 1942 Code SECTION 3689; 1932 Code SECTION 3697; Civ. C. '22 SECTION 2234; Civ. C. '12 SECTION 1385; 1909 (26) 90. 
+ SECTION 14-11-110. Master shall take testimony on application of party; procedure. 
+ The master shall, upon the application of either party to any cause or proceedings in which equitable relief is demanded pending and at issue in his county, take in writing the testimony of any witness who may be produced before him by any party to the cause, ten days' notice of such application having been given to the opposite party. Such witness shall be subject to the same examination, cross-examination and reply and the same exceptions as to the admissibility of testimony may be taken as are allowed by law upon examination before the court except that in case any testimony be objected to the master shall receive the same subject to the exceptions, reporting the exceptions and his ruling thereon. 
+HISTORY: 1962 Code SECTION 15-1819; 1952 Code SECTION 15-1819; 1942 Code SECTION 3691; 1932 Code SECTION 3699; Civ. C. '22 SECTION 2236; Civ. C. '12 SECTION 1387; Civ. C. '02 SECTION 978; G. S. 793; R. S. 849; 1840 (11) 157, 158 SECTIONS 10, 11, 12; 1878 (16) 609. 
+ SECTION 14-11-120. Admission of deposition in evidence. 
+ The deposition so taken may be read in evidence at the hearing, subject to the right of either party upon good cause shown to require the personal attendance and viva voce examination of the witness at the hearing. 
+HISTORY: 1962 Code SECTION 15-1820; 1952 Code SECTION 15-1820; 1942 Code SECTION 3691; 1932 Code SECTION 3699; Civ. C. '22 SECTION 2236; Civ. C. '12 SECTION 1387; Civ. C. '02 SECTION 978; G. S. 793; R. S. 849; 1840 (11) 157, 158 SECTIONS 10, 11, 12; 1878 (16) 609. 
+ SECTION 14-11-130. Power to compel attendance of witnesses and to punish for contempt. 
+ The master may compel the attendance of witnesses before him and punish for any contempt. 
+HISTORY: 1962 Code SECTION 15-1821; 1952 Code SECTION 15-1821; 1942 Code SECTION 3691; 1932 Code SECTION 3699; Civ. C. '22 SECTION 2236; Civ. C. '12 SECTION 1387; Civ. C. '02 SECTION 978; G. S. 793; R. S. 849; 1878 (16) 609; 1840 (11) 157, 158 SECTIONS 10, 11, 12. 
+ SECTION 14-11-150. Master may sell lands in another county. 
+ Whenever the court of common pleas in any county shall have acquired jurisdiction over real estate lying in another county the master for the county in which the action is brought may sell such real estate in the county in which the land is situated and all such sales heretofore made, otherwise valid and not appealed from, are hereby confirmed. 
+HISTORY: 1962 Code SECTION 15-1823; 1952 Code SECTION 15-1823; 1942 Code SECTION 3686; 1932 Code SECTION 3693; Civ. C. '22 SECTION 2230; Civ. C. '12 SECTION 1381; Civ. C. '02 SECTION 974; R. S. 845; 1884 (18) 708. 
+ SECTION 14-11-160. Master may sell real estate in any county under order by consent. 
+ Whenever real estate is adjudged to be sold by a master such sale may take place by consent of the parties to the cause or their attorneys or, when infants are parties, by the consent of the guardians ad litem of such infants or their attorneys in any county which the court may direct. All such sales heretofore made and otherwise valid are hereby confirmed. 
+HISTORY: 1962 Code SECTION 15-1824; 1952 Code SECTION 15-1824; 1942 Code SECTION 3687; 1932 Code SECTION 3694; Civ. C. '22 SECTION 2231; Civ. C. '12 SECTION 1382; Civ. C. '02 SECTION 975; R. S. 846; 1885 (19) 7. 
+ SECTION 14-11-170. Deposit of funds. 
+ The master shall deposit all funds in his hands in some bank located in the county. 
+HISTORY: 1962 Code SECTION 15-1826; 1952 Code SECTION 15-1826; 1942 Code SECTION 3692; 1932 Code SECTION 3700; Civ. C. '22 SECTION 2237; Civ. C. '12 SECTION 1388; Civ. C. '02 SECTION 979; G. S. 794; R. S. 850; 1840 (11) 161 SECTION 16; 1868 (14) 16 SECTION 10; 1909 (26) 48; 1925 (34) 96; 1930 (36) 1233. 
+ SECTION 14-11-190. Books of office. 
+ The master shall keep a reference book in which he shall record all references held by him and the proceedings therein and a ledger in which shall be kept the account of all cases in his hands to the credit of which he may receive funds. When he shall cease to be master these books shall be deposited in the office of the clerk of the court of common pleas of his county. 
+HISTORY: 1962 Code SECTION 15-1828; 1952 Code SECTION 15-1828; 1942 Code SECTION 3694; 1932 Code SECTION 3702; Civ. C. '22 SECTION 2239; Civ. C. '12 SECTION 1390; Civ. C. '02 SECTION 981; G. S. 796; R. S. 852. 
+ ARTICLE 3 
+ Fees 
+ SECTION 14-11-310. Masters-in-equity to collect certain fees. 
+ Masters-in-equity shall collect the following fees which must be deposited in the general fund of the county: 
+ (1) in actions for partitions, foreclosure of liens upon real property, or sales of real property, either in private or by auction, a fee of one hundred dollars. If the matter requires more than one day of hearing, there is a thirty-five dollar charge for each additional day or portion of the day until the matter is concluded; 
+ (2) for the preparation of a deed, a fee of twenty-five dollars; 
+ (3) on sales of land, a fee equal to one percent of the bid or of the funds passing through the court, whichever is greater. The minimum commission collectible under this item is twenty-five dollars, and the maximum commission is two thousand, five hundred dollars; 
+ (4) for a supplemental proceeding, a fee of twenty-five dollars; 
+ (5) in all other cases, fifty dollars for the first day's hearing or any portion of the day and for each day after the first day, thirty-five dollars. The fees must be assessed at the time of the order or report of the master-in-equity. 
+ The fees provided for in this section, including the first day's fee provided for in item (5) and excluding the commission on sale, must be paid at the time the order of reference is signed and is nonrefundable unless so ordered by the master-in-equity on proper cause being shown. The cost of transcribing the record is in addition to the fees provided for in this section and must be assessed at the rate prescribed for circuit courts. 
+HISTORY: 1962 Code SECTION 27-201; 1952 Code SECTION 27-201; 1942 Code SECTION 4941; 1932 Code SECTION 4941; Civ. C. '22 SECTION 5746; Civ. C. '12 SECTION 4224; Civ. C. '02 SECTION 3113; 1894 (21) 933; 1911 (27) 85; 1921 (32) 123; 1925 (34) 76, 112; 1926 (34) 1037; 1939 (41) 173; 1948 (45) 1626; 1979 Act No. 164 Part II SECTION 11, eff July 1, 1979; 1988 Act No. 678, Part II, SECTION 7, eff July 25, 1988. 
+ South Carolina Legislative Services Agency * 223 Blatt Building * 1105 Pendleton Street * Columbia, SC 29201 
+ Disclaimer * Policies * Photo Credits * Contact Us 
+ Legislative Services Agency
+ h t t p : / / w w w . s c s t a t e h o u s e . g o v

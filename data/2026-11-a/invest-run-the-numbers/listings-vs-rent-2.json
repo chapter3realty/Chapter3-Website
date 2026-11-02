@@ -1,0 +1,1253 @@
+{
+ "pulled": "2026-11-01T23:28:58.550813+00:00",
+ "api": "https://chapter3realty.com/homes/api/map?",
+ "houses": [
+  {
+   "zip": "29511",
+   "rent3": 1630,
+   "rent4": 1900,
+   "beds3plus": 42,
+   "beds4plus": 17,
+   "pass": {
+    "0.12": {
+     "exactly3": 1,
+     "four_plus": 0,
+     "max3": 163000,
+     "max4": 190000
+    },
+    "0.1": {
+     "exactly3": 1,
+     "four_plus": 0,
+     "max3": 195600,
+     "max4": 228000
+    },
+    "0.08": {
+     "exactly3": 4,
+     "four_plus": 2,
+     "max3": 244500,
+     "max4": 285000
+    }
+   }
+  },
+  {
+   "zip": "29526",
+   "rent3": 1630,
+   "rent4": 1900,
+   "beds3plus": 467,
+   "beds4plus": 214,
+   "pass": {
+    "0.12": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 163000,
+     "max4": 190000
+    },
+    "0.1": {
+     "exactly3": 2,
+     "four_plus": 0,
+     "max3": 195600,
+     "max4": 228000
+    },
+    "0.08": {
+     "exactly3": 22,
+     "four_plus": 13,
+     "max3": 244500,
+     "max4": 285000
+    }
+   }
+  },
+  {
+   "zip": "29527",
+   "rent3": 1630,
+   "rent4": 1900,
+   "beds3plus": 195,
+   "beds4plus": 74,
+   "pass": {
+    "0.12": {
+     "exactly3": 2,
+     "four_plus": 0,
+     "max3": 163000,
+     "max4": 190000
+    },
+    "0.1": {
+     "exactly3": 3,
+     "four_plus": 2,
+     "max3": 195600,
+     "max4": 228000
+    },
+    "0.08": {
+     "exactly3": 15,
+     "four_plus": 9,
+     "max3": 244500,
+     "max4": 285000
+    }
+   }
+  },
+  {
+   "zip": "29544",
+   "rent3": 1630,
+   "rent4": 1900,
+   "beds3plus": 63,
+   "beds4plus": 26,
+   "pass": {
+    "0.12": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 163000,
+     "max4": 190000
+    },
+    "0.1": {
+     "exactly3": 1,
+     "four_plus": 0,
+     "max3": 195600,
+     "max4": 228000
+    },
+    "0.08": {
+     "exactly3": 5,
+     "four_plus": 1,
+     "max3": 244500,
+     "max4": 285000
+    }
+   }
+  },
+  {
+   "zip": "29566",
+   "rent3": 2100,
+   "rent4": 2280,
+   "beds3plus": 182,
+   "beds4plus": 72,
+   "pass": {
+    "0.12": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 210000,
+     "max4": 228000
+    },
+    "0.1": {
+     "exactly3": 3,
+     "four_plus": 0,
+     "max3": 252000,
+     "max4": 273600
+    },
+    "0.08": {
+     "exactly3": 19,
+     "four_plus": 15,
+     "max3": 315000,
+     "max4": 342000
+    }
+   }
+  },
+  {
+   "zip": "29568",
+   "rent3": 2270,
+   "rent4": 2460,
+   "beds3plus": 336,
+   "beds4plus": 147,
+   "pass": {
+    "0.12": {
+     "exactly3": 3,
+     "four_plus": 5,
+     "max3": 227000,
+     "max4": 246000
+    },
+    "0.1": {
+     "exactly3": 37,
+     "four_plus": 18,
+     "max3": 272400,
+     "max4": 295200
+    },
+    "0.08": {
+     "exactly3": 115,
+     "four_plus": 74,
+     "max3": 340500,
+     "max4": 369000
+    }
+   }
+  },
+  {
+   "zip": "29569",
+   "rent3": 1630,
+   "rent4": 1900,
+   "beds3plus": 150,
+   "beds4plus": 55,
+   "pass": {
+    "0.12": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 163000,
+     "max4": 190000
+    },
+    "0.1": {
+     "exactly3": 1,
+     "four_plus": 1,
+     "max3": 195600,
+     "max4": 228000
+    },
+    "0.08": {
+     "exactly3": 17,
+     "four_plus": 13,
+     "max3": 244500,
+     "max4": 285000
+    }
+   }
+  },
+  {
+   "zip": "29572",
+   "rent3": 1820,
+   "rent4": 1980,
+   "beds3plus": 100,
+   "beds4plus": 50,
+   "pass": {
+    "0.12": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 182000,
+     "max4": 198000
+    },
+    "0.1": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 218400,
+     "max4": 237600
+    },
+    "0.08": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 273000,
+     "max4": 297000
+    }
+   }
+  },
+  {
+   "zip": "29575",
+   "rent3": 1930,
+   "rent4": 2090,
+   "beds3plus": 161,
+   "beds4plus": 90,
+   "pass": {
+    "0.12": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 193000,
+     "max4": 209000
+    },
+    "0.1": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 231600,
+     "max4": 250800
+    },
+    "0.08": {
+     "exactly3": 2,
+     "four_plus": 0,
+     "max3": 289500,
+     "max4": 313500
+    }
+   }
+  },
+  {
+   "zip": "29576",
+   "rent3": 2080,
+   "rent4": 2420,
+   "beds3plus": 216,
+   "beds4plus": 122,
+   "pass": {
+    "0.12": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 208000,
+     "max4": 242000
+    },
+    "0.1": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 249600,
+     "max4": 290400
+    },
+    "0.08": {
+     "exactly3": 5,
+     "four_plus": 1,
+     "max3": 312000,
+     "max4": 363000
+    }
+   }
+  },
+  {
+   "zip": "29577",
+   "rent3": 1720,
+   "rent4": 1900,
+   "beds3plus": 181,
+   "beds4plus": 101,
+   "pass": {
+    "0.12": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 172000,
+     "max4": 190000
+    },
+    "0.1": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 206400,
+     "max4": 228000
+    },
+    "0.08": {
+     "exactly3": 2,
+     "four_plus": 1,
+     "max3": 258000,
+     "max4": 285000
+    }
+   }
+  },
+  {
+   "zip": "29579",
+   "rent3": 2230,
+   "rent4": 2420,
+   "beds3plus": 365,
+   "beds4plus": 232,
+   "pass": {
+    "0.12": {
+     "exactly3": 2,
+     "four_plus": 1,
+     "max3": 223000,
+     "max4": 242000
+    },
+    "0.1": {
+     "exactly3": 12,
+     "four_plus": 3,
+     "max3": 267600,
+     "max4": 290400
+    },
+    "0.08": {
+     "exactly3": 47,
+     "four_plus": 19,
+     "max3": 334500,
+     "max4": 363000
+    }
+   }
+  },
+  {
+   "zip": "29581",
+   "rent3": 1630,
+   "rent4": 1900,
+   "beds3plus": 14,
+   "beds4plus": 5,
+   "pass": {
+    "0.12": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 163000,
+     "max4": 190000
+    },
+    "0.1": {
+     "exactly3": 1,
+     "four_plus": 0,
+     "max3": 195600,
+     "max4": 228000
+    },
+    "0.08": {
+     "exactly3": 2,
+     "four_plus": 0,
+     "max3": 244500,
+     "max4": 285000
+    }
+   }
+  },
+  {
+   "zip": "29582",
+   "rent3": 1880,
+   "rent4": 2040,
+   "beds3plus": 239,
+   "beds4plus": 148,
+   "pass": {
+    "0.12": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 188000,
+     "max4": 204000
+    },
+    "0.1": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 225600,
+     "max4": 244800
+    },
+    "0.08": {
+     "exactly3": 1,
+     "four_plus": 0,
+     "max3": 282000,
+     "max4": 306000
+    }
+   }
+  },
+  {
+   "zip": "29588",
+   "rent3": 1870,
+   "rent4": 2030,
+   "beds3plus": 264,
+   "beds4plus": 122,
+   "pass": {
+    "0.12": {
+     "exactly3": 0,
+     "four_plus": 0,
+     "max3": 187000,
+     "max4": 203000
+    },
+    "0.1": {
+     "exactly3": 3,
+     "four_plus": 1,
+     "max3": 224400,
+     "max4": 243600
+    },
+    "0.08": {
+     "exactly3": 22,
+     "four_plus": 3,
+     "max3": 280500,
+     "max4": 304500
+    }
+   }
+  }
+ ],
+ "condos2": [
+  {
+   "zip": "29526",
+   "rent2": 1320,
+   "listings": 32,
+   "dues_known_upto_1500": 32,
+   "price_only_pass": 11,
+   "price_only_pass_hoa_known": 11,
+   "floor": 1,
+   "ceiling": 4,
+   "bands": [
+    {
+     "dues": [
+      0,
+      200
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      200,
+      300
+     ],
+     "floor": 1,
+     "ceiling": 4
+    },
+    {
+     "dues": [
+      300,
+      400
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      400,
+      500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      500,
+      600
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      600,
+      700
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      700,
+      800
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      800,
+      1000
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      1000,
+      1500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    }
+   ]
+  },
+  {
+   "zip": "29566",
+   "rent2": 1730,
+   "listings": 167,
+   "dues_known_upto_1500": 167,
+   "price_only_pass": 55,
+   "price_only_pass_hoa_known": 55,
+   "floor": 10,
+   "ceiling": 14,
+   "bands": [
+    {
+     "dues": [
+      0,
+      200
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      200,
+      300
+     ],
+     "floor": 9,
+     "ceiling": 11
+    },
+    {
+     "dues": [
+      300,
+      400
+     ],
+     "floor": 1,
+     "ceiling": 2
+    },
+    {
+     "dues": [
+      400,
+      500
+     ],
+     "floor": 0,
+     "ceiling": 1
+    },
+    {
+     "dues": [
+      500,
+      600
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      600,
+      700
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      700,
+      800
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      800,
+      1000
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      1000,
+      1500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    }
+   ]
+  },
+  {
+   "zip": "29568",
+   "rent2": 1870,
+   "listings": 22,
+   "dues_known_upto_1500": 22,
+   "price_only_pass": 11,
+   "price_only_pass_hoa_known": 11,
+   "floor": 3,
+   "ceiling": 5,
+   "bands": [
+    {
+     "dues": [
+      0,
+      200
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      200,
+      300
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      300,
+      400
+     ],
+     "floor": 2,
+     "ceiling": 4
+    },
+    {
+     "dues": [
+      400,
+      500
+     ],
+     "floor": 1,
+     "ceiling": 1
+    },
+    {
+     "dues": [
+      500,
+      600
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      600,
+      700
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      700,
+      800
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      800,
+      1000
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      1000,
+      1500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    }
+   ]
+  },
+  {
+   "zip": "29572",
+   "rent2": 1500,
+   "listings": 315,
+   "dues_known_upto_1500": 255,
+   "price_only_pass": 5,
+   "price_only_pass_hoa_known": 5,
+   "floor": 0,
+   "ceiling": 0,
+   "bands": [
+    {
+     "dues": [
+      0,
+      200
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      200,
+      300
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      300,
+      400
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      400,
+      500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      500,
+      600
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      600,
+      700
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      700,
+      800
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      800,
+      1000
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      1000,
+      1500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    }
+   ]
+  },
+  {
+   "zip": "29575",
+   "rent2": 1590,
+   "listings": 116,
+   "dues_known_upto_1500": 116,
+   "price_only_pass": 12,
+   "price_only_pass_hoa_known": 12,
+   "floor": 0,
+   "ceiling": 0,
+   "bands": [
+    {
+     "dues": [
+      0,
+      200
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      200,
+      300
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      300,
+      400
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      400,
+      500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      500,
+      600
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      600,
+      700
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      700,
+      800
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      800,
+      1000
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      1000,
+      1500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    }
+   ]
+  },
+  {
+   "zip": "29576",
+   "rent2": 1720,
+   "listings": 151,
+   "dues_known_upto_1500": 151,
+   "price_only_pass": 5,
+   "price_only_pass_hoa_known": 5,
+   "floor": 1,
+   "ceiling": 1,
+   "bands": [
+    {
+     "dues": [
+      0,
+      200
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      200,
+      300
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      300,
+      400
+     ],
+     "floor": 1,
+     "ceiling": 1
+    },
+    {
+     "dues": [
+      400,
+      500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      500,
+      600
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      600,
+      700
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      700,
+      800
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      800,
+      1000
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      1000,
+      1500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    }
+   ]
+  },
+  {
+   "zip": "29577",
+   "rent2": 1420,
+   "listings": 342,
+   "dues_known_upto_1500": 270,
+   "price_only_pass": 29,
+   "price_only_pass_hoa_known": 25,
+   "floor": 3,
+   "ceiling": 5,
+   "bands": [
+    {
+     "dues": [
+      0,
+      200
+     ],
+     "floor": 1,
+     "ceiling": 1
+    },
+    {
+     "dues": [
+      200,
+      300
+     ],
+     "floor": 2,
+     "ceiling": 4
+    },
+    {
+     "dues": [
+      300,
+      400
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      400,
+      500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      500,
+      600
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      600,
+      700
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      700,
+      800
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      800,
+      1000
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      1000,
+      1500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    }
+   ]
+  },
+  {
+   "zip": "29579",
+   "rent2": 1840,
+   "listings": 129,
+   "dues_known_upto_1500": 126,
+   "price_only_pass": 68,
+   "price_only_pass_hoa_known": 67,
+   "floor": 6,
+   "ceiling": 10,
+   "bands": [
+    {
+     "dues": [
+      0,
+      200
+     ],
+     "floor": 3,
+     "ceiling": 3
+    },
+    {
+     "dues": [
+      200,
+      300
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      300,
+      400
+     ],
+     "floor": 2,
+     "ceiling": 5
+    },
+    {
+     "dues": [
+      400,
+      500
+     ],
+     "floor": 1,
+     "ceiling": 2
+    },
+    {
+     "dues": [
+      500,
+      600
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      600,
+      700
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      700,
+      800
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      800,
+      1000
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      1000,
+      1500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    }
+   ]
+  },
+  {
+   "zip": "29582",
+   "rent2": 1550,
+   "listings": 467,
+   "dues_known_upto_1500": 447,
+   "price_only_pass": 11,
+   "price_only_pass_hoa_known": 11,
+   "floor": 6,
+   "ceiling": 6,
+   "bands": [
+    {
+     "dues": [
+      0,
+      200
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      200,
+      300
+     ],
+     "floor": 4,
+     "ceiling": 4
+    },
+    {
+     "dues": [
+      300,
+      400
+     ],
+     "floor": 2,
+     "ceiling": 2
+    },
+    {
+     "dues": [
+      400,
+      500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      500,
+      600
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      600,
+      700
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      700,
+      800
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      800,
+      1000
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      1000,
+      1500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    }
+   ]
+  },
+  {
+   "zip": "29588",
+   "rent2": 1540,
+   "listings": 44,
+   "dues_known_upto_1500": 44,
+   "price_only_pass": 7,
+   "price_only_pass_hoa_known": 7,
+   "floor": 1,
+   "ceiling": 1,
+   "bands": [
+    {
+     "dues": [
+      0,
+      200
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      200,
+      300
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      300,
+      400
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      400,
+      500
+     ],
+     "floor": 1,
+     "ceiling": 1
+    },
+    {
+     "dues": [
+      500,
+      600
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      600,
+      700
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      700,
+      800
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      800,
+      1000
+     ],
+     "floor": 0,
+     "ceiling": 0
+    },
+    {
+     "dues": [
+      1000,
+      1500
+     ],
+     "floor": 0,
+     "ceiling": 0
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "airport_terminal": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-79.047814,33.836003;-78.922789,33.681467?overview=false",
+  "duration_s": 1593.1,
+  "distance_m": 24163.3,
+  "minutes": 26.6,
+  "miles": 15.0
+ },
+ "ccu": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-79.047814,33.836003;-79.012682,33.795323?overview=false",
+  "duration_s": 570.2,
+  "distance_m": 6712.6,
+  "minutes": 9.5,
+  "miles": 4.2
+ },
+ "riverwalk_park": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-79.047814,33.836003;-79.043907,33.828865?overview=false",
+  "duration_s": 147,
+  "distance_m": 980.2,
+  "minutes": 2.5,
+  "miles": 0.6
+ },
+ "beach_mb40": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-79.047814,33.836003;-78.880438,33.690692?overview=false",
+  "duration_s": 1457.4,
+  "distance_m": 23370,
+  "minutes": 24.3,
+  "miles": 14.5
+ },
+ "coastal_grand": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-79.047814,33.836003;-78.923261,33.702315?overview=false",
+  "duration_s": 1383.1,
+  "distance_m": 21633.3,
+  "minutes": 23.1,
+  "miles": 13.4
+ },
+ "conway_medical": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-79.047814,33.836003;-79.001894,33.785483?overview=false",
+  "duration_s": 614.2,
+  "distance_m": 8472.4,
+  "minutes": 10.2,
+  "miles": 5.3
+ }
+}

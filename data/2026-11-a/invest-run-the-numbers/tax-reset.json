@@ -1,0 +1,233 @@
+{
+ "source": "Horry County AcclaimWeb DEED (001) resales recorded 2026-01-01..2026-09-30 (batch 2026-10-d pull) joined to Horry County GIS layer 24, read 2026-11-01",
+ "kept": 8310,
+ "resales_in_window": 8310,
+ "all": {
+  "n": 8310,
+  "median_price_over_taxable": 1.169,
+  "q1": 0.997,
+  "q3": 1.48,
+  "share_price_25pct_or_more_above": 0.429,
+  "share_price_50pct_or_more_above": 0.236,
+  "share_price_double_or_more": 0.057,
+  "median_price": 300000.0,
+  "median_taxable": 253000.0
+ },
+ "house": {
+  "n": 6468,
+  "median_price_over_taxable": 1.174,
+  "q1": 1.005,
+  "q3": 1.484,
+  "share_price_25pct_or_more_above": 0.434,
+  "share_price_50pct_or_more_above": 0.238,
+  "share_price_double_or_more": 0.059,
+  "median_price": 325000.0,
+  "median_taxable": 275080.0
+ },
+ "condo": {
+  "n": 1842,
+  "median_price_over_taxable": 1.149,
+  "q1": 0.948,
+  "q3": 1.467,
+  "share_price_25pct_or_more_above": 0.413,
+  "share_price_50pct_or_more_above": 0.229,
+  "share_price_double_or_more": 0.053,
+  "median_price": 220000.0,
+  "median_taxable": 184900.0
+ },
+ "class_counts": {
+  "4": 4223,
+  "6": 4045,
+  "other": 42
+ },
+ "class_counts_house": {
+  "4": 3711,
+  "6": 2715,
+  "other": 42
+ },
+ "class_counts_condo": {
+  "4": 512,
+  "6": 1330,
+  "other": 0
+ },
+ "six_pct_on_record": {
+  "n": 4045,
+  "median_price_over_taxable": 1.117,
+  "q1": 0.948,
+  "q3": 1.484,
+  "share_price_25pct_or_more_above": 0.394,
+  "share_price_50pct_or_more_above": 0.241,
+  "share_price_double_or_more": 0.07,
+  "median_price": 250000.0,
+  "median_taxable": 213900.0
+ },
+ "four_pct_on_record": {
+  "n": 4223,
+  "median_price_over_taxable": 1.21,
+  "q1": 1.03,
+  "q3": 1.475,
+  "share_price_25pct_or_more_above": 0.461,
+  "share_price_50pct_or_more_above": 0.228,
+  "share_price_double_or_more": 0.042,
+  "median_price": 343500.0,
+  "median_taxable": 286627.0
+ },
+ "by_place": {
+  "Carolina Forest CDP": {
+   "n": 386,
+   "median_price_over_taxable": 1.119,
+   "q1": 0.998,
+   "q3": 1.363,
+   "share_price_25pct_or_more_above": 0.363,
+   "share_price_50pct_or_more_above": 0.142,
+   "share_price_double_or_more": 0.01,
+   "median_price": 353500.0,
+   "median_taxable": 306900.0
+  },
+  "Conway city": {
+   "n": 258,
+   "median_price_over_taxable": 1.127,
+   "q1": 0.98,
+   "q3": 1.421,
+   "share_price_25pct_or_more_above": 0.38,
+   "share_price_50pct_or_more_above": 0.198,
+   "share_price_double_or_more": 0.058,
+   "median_price": 256500.0,
+   "median_taxable": 232647.0
+  },
+  "Forestbrook CDP": {
+   "n": 105,
+   "median_price_over_taxable": 1.208,
+   "q1": 1.018,
+   "q3": 1.387,
+   "share_price_25pct_or_more_above": 0.419,
+   "share_price_50pct_or_more_above": 0.162,
+   "share_price_double_or_more": 0.029,
+   "median_price": 332500.0,
+   "median_taxable": 265514.0
+  },
+  "Garden City CDP": {
+   "n": 316,
+   "median_price_over_taxable": 1.296,
+   "q1": 1.038,
+   "q3": 1.681,
+   "share_price_25pct_or_more_above": 0.538,
+   "share_price_50pct_or_more_above": 0.377,
+   "share_price_double_or_more": 0.079,
+   "median_price": 312450.0,
+   "median_taxable": 222263.5
+  },
+  "Little River CDP": {
+   "n": 400,
+   "median_price_over_taxable": 1.164,
+   "q1": 0.989,
+   "q3": 1.495,
+   "share_price_25pct_or_more_above": 0.435,
+   "share_price_50pct_or_more_above": 0.242,
+   "share_price_double_or_more": 0.095,
+   "median_price": 265000.0,
+   "median_taxable": 220000.0
+  },
+  "Myrtle Beach city": {
+   "n": 1292,
+   "median_price_over_taxable": 1.126,
+   "q1": 0.937,
+   "q3": 1.433,
+   "share_price_25pct_or_more_above": 0.383,
+   "share_price_50pct_or_more_above": 0.197,
+   "share_price_double_or_more": 0.062,
+   "median_price": 226225.0,
+   "median_taxable": 197958.0
+  },
+  "North Myrtle Beach city": {
+   "n": 1154,
+   "median_price_over_taxable": 1.219,
+   "q1": 1.013,
+   "q3": 1.536,
+   "share_price_25pct_or_more_above": 0.472,
+   "share_price_50pct_or_more_above": 0.289,
+   "share_price_double_or_more": 0.054,
+   "median_price": 378950.0,
+   "median_taxable": 306910.0
+  },
+  "Red Hill CDP": {
+   "n": 218,
+   "median_price_over_taxable": 1.314,
+   "q1": 1.041,
+   "q3": 1.599,
+   "share_price_25pct_or_more_above": 0.564,
+   "share_price_50pct_or_more_above": 0.321,
+   "share_price_double_or_more": 0.055,
+   "median_price": 290000.0,
+   "median_taxable": 215000.0
+  },
+  "Socastee CDP": {
+   "n": 266,
+   "median_price_over_taxable": 1.192,
+   "q1": 1.002,
+   "q3": 1.502,
+   "share_price_25pct_or_more_above": 0.455,
+   "share_price_50pct_or_more_above": 0.259,
+   "share_price_double_or_more": 0.064,
+   "median_price": 284200.0,
+   "median_taxable": 215896.5
+  },
+  "Surfside Beach town": {
+   "n": 132,
+   "median_price_over_taxable": 1.346,
+   "q1": 1.075,
+   "q3": 1.759,
+   "share_price_25pct_or_more_above": 0.568,
+   "share_price_50pct_or_more_above": 0.417,
+   "share_price_double_or_more": 0.098,
+   "median_price": 532000.0,
+   "median_taxable": 387634.0
+  },
+  "outside any Census place": {
+   "n": 3264,
+   "median_price_over_taxable": 1.161,
+   "q1": 1.001,
+   "q3": 1.461,
+   "share_price_25pct_or_more_above": 0.422,
+   "share_price_50pct_or_more_above": 0.22,
+   "share_price_double_or_more": 0.054,
+   "median_price": 300000.0,
+   "median_taxable": 259825.5
+  },
+  "unknown": {
+   "n": 445,
+   "median_price_over_taxable": 1.119,
+   "q1": 0.947,
+   "q3": 1.467,
+   "share_price_25pct_or_more_above": 0.387,
+   "share_price_50pct_or_more_above": 0.231,
+   "share_price_double_or_more": 0.058,
+   "median_price": 288000.0,
+   "median_taxable": 250353.0
+  }
+ },
+ "unincorporated_mills": 201.0,
+ "unincorporated_investor_bill_multiple": {
+  "seller_on_4pct": {
+   "n": 2828,
+   "median": 3.92,
+   "q1": 3.38,
+   "q3": 4.8
+  },
+  "seller_on_4pct_with_ati_exemption": {
+   "n": 2828,
+   "median": 3.58,
+   "q1": 3.28,
+   "q3": 4.48
+  },
+  "seller_on_6pct_no_ati_exemption": {
+   "n": 1777,
+   "median": 1.1
+  },
+  "seller_on_6pct_with_ati_exemption": {
+   "n": 1777,
+   "median": 1.0,
+   "rule": "12-37-3135(B)(2): exemption is 25% of the transfer value, but the exempted value may not fall below the county's current market value (MarketProp)"
+  }
+ }
+}

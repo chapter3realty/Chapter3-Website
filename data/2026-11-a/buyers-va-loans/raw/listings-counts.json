@@ -1,0 +1,635 @@
+{
+ "pulled": "2026-11-01T22:53:05.514232+00:00",
+ "rows": [
+  {
+   "label": "type=all has=-",
+   "params": "",
+   "total": 8788,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=all has=va_accepted",
+   "params": "has=va_accepted",
+   "total": 2412,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=all has=fha_accepted",
+   "params": "has=fha_accepted",
+   "total": 2814,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=all has=assumable_loan",
+   "params": "has=assumable_loan",
+   "total": 18,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=house has=-",
+   "params": "type=house",
+   "total": 3702,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=house has=va_accepted",
+   "params": "type=house&has=va_accepted",
+   "total": 1912,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=house has=fha_accepted",
+   "params": "type=house&has=fha_accepted",
+   "total": 2144,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=house has=assumable_loan",
+   "params": "type=house&has=assumable_loan",
+   "total": 11,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=condo has=-",
+   "params": "type=condo",
+   "total": 2827,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=condo has=va_accepted",
+   "params": "type=condo&has=va_accepted",
+   "total": 251,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=condo has=fha_accepted",
+   "params": "type=condo&has=fha_accepted",
+   "total": 346,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=condo has=assumable_loan",
+   "params": "type=condo&has=assumable_loan",
+   "total": 7,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=townhouse has=-",
+   "params": "type=townhouse",
+   "total": 364,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=townhouse has=va_accepted",
+   "params": "type=townhouse&has=va_accepted",
+   "total": 168,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=townhouse has=fha_accepted",
+   "params": "type=townhouse&has=fha_accepted",
+   "total": 213,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=townhouse has=assumable_loan",
+   "params": "type=townhouse&has=assumable_loan",
+   "total": 0,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=manufactured has=-",
+   "params": "type=manufactured",
+   "total": 514,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=manufactured has=va_accepted",
+   "params": "type=manufactured&has=va_accepted",
+   "total": 78,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=manufactured has=fha_accepted",
+   "params": "type=manufactured&has=fha_accepted",
+   "total": 100,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=manufactured has=assumable_loan",
+   "params": "type=manufactured&has=assumable_loan",
+   "total": 0,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=land has=-",
+   "params": "type=land",
+   "total": 1157,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=land has=va_accepted",
+   "params": "type=land&has=va_accepted",
+   "total": 0,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=land has=fha_accepted",
+   "params": "type=land&has=fha_accepted",
+   "total": 0,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "type=land has=assumable_loan",
+   "params": "type=land&has=assumable_loan",
+   "total": 0,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "condo oceanfront_building",
+   "params": "type=condo&has=oceanfront_building",
+   "total": 1088,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "condo oceanfront_building+va",
+   "params": "type=condo&has=oceanfront_building%2Cva_accepted",
+   "total": 31,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "condo oceanfront_building+fha",
+   "params": "type=condo&has=oceanfront_building%2Cfha_accepted",
+   "total": 60,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "condo vacation_rental_program",
+   "params": "type=condo&has=vacation_rental_program",
+   "total": 1384,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "condo vacation_rental_program+va",
+   "params": "type=condo&has=vacation_rental_program%2Cva_accepted",
+   "total": 54,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "condo vacation_rental_program+fha",
+   "params": "type=condo&has=vacation_rental_program%2Cfha_accepted",
+   "total": 92,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "condo oceanview_unit",
+   "params": "type=condo&has=oceanview_unit",
+   "total": 710,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "condo oceanview_unit+va",
+   "params": "type=condo&has=oceanview_unit%2Cva_accepted",
+   "total": 29,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "condo oceanview_unit+fha",
+   "params": "type=condo&has=oceanview_unit%2Cfha_accepted",
+   "total": 51,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "condo str_allowed",
+   "params": "type=condo&has=str_allowed",
+   "total": 1987,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "condo str_allowed+va",
+   "params": "type=condo&has=str_allowed%2Cva_accepted",
+   "total": 122,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "condo str_allowed+fha",
+   "params": "type=condo&has=str_allowed%2Cfha_accepted",
+   "total": 189,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "condo elevator_building",
+   "params": "type=condo&has=elevator_building",
+   "total": 1468,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "condo elevator_building+va",
+   "params": "type=condo&has=elevator_building%2Cva_accepted",
+   "total": 76,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "condo elevator_building+fha",
+   "params": "type=condo&has=elevator_building%2Cfha_accepted",
+   "total": 109,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "house flood_zone",
+   "params": "type=house&has=flood_zone",
+   "total": 125,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "house flood_zone+va",
+   "params": "type=house&has=flood_zone%2Cva_accepted",
+   "total": 35,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "house new_construction",
+   "params": "type=house&has=new_construction",
+   "total": 1261,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "house new_construction+va",
+   "params": "type=house&has=new_construction%2Cva_accepted",
+   "total": 874,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "house market_common_2mi",
+   "params": "type=house&has=market_common_2mi",
+   "total": 84,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "house market_common_2mi+va",
+   "params": "type=house&has=market_common_2mi%2Cva_accepted",
+   "total": 40,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "house near_beach",
+   "params": "type=house&has=near_beach",
+   "total": 1028,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "house near_beach+va",
+   "params": "type=house&has=near_beach%2Cva_accepted",
+   "total": 353,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house one_level",
+   "params": "type=house&has=one_level",
+   "total": 2085,
+   "refreshedAt": "2026-11-01T22:40:50.536Z"
+  },
+  {
+   "label": "house one_level+va",
+   "params": "type=house&has=one_level%2Cva_accepted",
+   "total": 1189,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Myrtle Beach house",
+   "params": "city=Myrtle+Beach&type=house",
+   "total": 1035,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Myrtle Beach house+va",
+   "params": "city=Myrtle+Beach&type=house&has=va_accepted",
+   "total": 517,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Myrtle Beach condo",
+   "params": "city=Myrtle+Beach&type=condo",
+   "total": 1639,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Myrtle Beach condo+va",
+   "params": "city=Myrtle+Beach&type=condo&has=va_accepted",
+   "total": 121,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "North Myrtle Beach house",
+   "params": "city=North+Myrtle+Beach&type=house",
+   "total": 254,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "North Myrtle Beach house+va",
+   "params": "city=North+Myrtle+Beach&type=house&has=va_accepted",
+   "total": 70,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "North Myrtle Beach condo",
+   "params": "city=North+Myrtle+Beach&type=condo",
+   "total": 578,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "North Myrtle Beach condo+va",
+   "params": "city=North+Myrtle+Beach&type=condo&has=va_accepted",
+   "total": 27,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Surfside Beach house",
+   "params": "city=Surfside+Beach&type=house",
+   "total": 82,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Surfside Beach house+va",
+   "params": "city=Surfside+Beach&type=house&has=va_accepted",
+   "total": 30,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Surfside Beach condo",
+   "params": "city=Surfside+Beach&type=condo",
+   "total": 85,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Surfside Beach condo+va",
+   "params": "city=Surfside+Beach&type=condo&has=va_accepted",
+   "total": 8,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Garden City house",
+   "params": "city=Garden+City&type=house",
+   "total": 0,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Garden City house+va",
+   "params": "city=Garden+City&type=house&has=va_accepted",
+   "total": 0,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Garden City condo",
+   "params": "city=Garden+City&type=condo",
+   "total": 0,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Garden City condo+va",
+   "params": "city=Garden+City&type=condo&has=va_accepted",
+   "total": 0,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Murrells Inlet house",
+   "params": "city=Murrells+Inlet&type=house",
+   "total": 203,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Murrells Inlet house+va",
+   "params": "city=Murrells+Inlet&type=house&has=va_accepted",
+   "total": 84,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Murrells Inlet condo",
+   "params": "city=Murrells+Inlet&type=condo",
+   "total": 130,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Murrells Inlet condo+va",
+   "params": "city=Murrells+Inlet&type=condo&has=va_accepted",
+   "total": 35,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Little River house",
+   "params": "city=Little+River&type=house",
+   "total": 189,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Little River house+va",
+   "params": "city=Little+River&type=house&has=va_accepted",
+   "total": 105,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Little River condo",
+   "params": "city=Little+River&type=condo",
+   "total": 184,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Little River condo+va",
+   "params": "city=Little+River&type=condo&has=va_accepted",
+   "total": 37,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Conway house",
+   "params": "city=Conway&type=house",
+   "total": 673,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Conway house+va",
+   "params": "city=Conway&type=house&has=va_accepted",
+   "total": 448,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Conway condo",
+   "params": "city=Conway&type=condo",
+   "total": 33,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Conway condo+va",
+   "params": "city=Conway&type=condo&has=va_accepted",
+   "total": 6,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Longs house",
+   "params": "city=Longs&type=house",
+   "total": 343,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Longs house+va",
+   "params": "city=Longs&type=house&has=va_accepted",
+   "total": 229,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Longs condo",
+   "params": "city=Longs&type=condo",
+   "total": 24,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Longs condo+va",
+   "params": "city=Longs&type=condo&has=va_accepted",
+   "total": 4,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Loris house",
+   "params": "city=Loris&type=house",
+   "total": 153,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Loris house+va",
+   "params": "city=Loris&type=house&has=va_accepted",
+   "total": 92,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Loris condo",
+   "params": "city=Loris&type=condo",
+   "total": 0,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Loris condo+va",
+   "params": "city=Loris&type=condo&has=va_accepted",
+   "total": 0,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Aynor house",
+   "params": "city=Aynor&type=house",
+   "total": 44,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Aynor house+va",
+   "params": "city=Aynor&type=house&has=va_accepted",
+   "total": 27,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Aynor condo",
+   "params": "city=Aynor&type=condo",
+   "total": 0,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "Aynor condo+va",
+   "params": "city=Aynor&type=condo&has=va_accepted",
+   "total": 0,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 0-249999",
+   "params": "type=house&min=0&max=249999",
+   "total": 307,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 0-249999+va",
+   "params": "type=house&min=0&max=249999&has=va_accepted",
+   "total": 128,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 250000-299999",
+   "params": "type=house&min=250000&max=299999",
+   "total": 472,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 250000-299999+va",
+   "params": "type=house&min=250000&max=299999&has=va_accepted",
+   "total": 322,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 300000-349999",
+   "params": "type=house&min=300000&max=349999",
+   "total": 579,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 300000-349999+va",
+   "params": "type=house&min=300000&max=349999&has=va_accepted",
+   "total": 370,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 350000-399999",
+   "params": "type=house&min=350000&max=399999",
+   "total": 427,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 350000-399999+va",
+   "params": "type=house&min=350000&max=399999&has=va_accepted",
+   "total": 254,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 400000-499999",
+   "params": "type=house&min=400000&max=499999",
+   "total": 580,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 400000-499999+va",
+   "params": "type=house&min=400000&max=499999&has=va_accepted",
+   "total": 323,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 500000-699999",
+   "params": "type=house&min=500000&max=699999",
+   "total": 648,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 500000-699999+va",
+   "params": "type=house&min=500000&max=699999&has=va_accepted",
+   "total": 286,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 700000-999999",
+   "params": "type=house&min=700000&max=999999",
+   "total": 366,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 700000-999999+va",
+   "params": "type=house&min=700000&max=999999&has=va_accepted",
+   "total": 153,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 1000000-None",
+   "params": "type=house&min=1000000",
+   "total": 323,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  },
+  {
+   "label": "house 1000000-None+va",
+   "params": "type=house&min=1000000&has=va_accepted",
+   "total": 76,
+   "refreshedAt": "2026-11-01T22:51:19.582Z"
+  }
+ ]
+}

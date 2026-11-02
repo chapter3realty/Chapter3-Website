@@ -1,0 +1,82 @@
+{
+ "property_tax": {
+  "home_value": 400000,
+  "district": "100 (unincorporated Horry County, county fire district)",
+  "mills_all": 201.0,
+  "mills_legal_residence": 91.9,
+  "legal_residence_under_65": 1470.4,
+  "legal_residence_65_homestead": 1286.6,
+  "second_home_or_rental": 4824.0,
+  "stormwater_fee": 89.4,
+  "homestead_saves": 183.8,
+  "second_home_vs_65_ratio": 3.75
+ },
+ "income_tax_2026": [
+  {
+   "name": "Married, both 66: Social Security and one private pension",
+   "joint": true,
+   "people": [
+    {
+     "age": 66,
+     "retirement": 30000
+    },
+    {
+     "age": 66
+    }
+   ],
+   "federal_agi": 41100,
+   "social_security": 40000,
+   "federally_taxable_ss": 11100,
+   "sc_income_before_deductions": 30000,
+   "retirement_deduction": 10000,
+   "age_65_deduction": 20000,
+   "military_deduction": 0,
+   "sciad": 30000,
+   "sc_taxable_income": 0,
+   "sc_income_tax_2026": 0.0
+  },
+  {
+   "name": "Single, 67: a New York public pension and Social Security",
+   "joint": false,
+   "people": [
+    {
+     "age": 67,
+     "retirement": 50000
+    }
+   ],
+   "federal_agi": 70400,
+   "social_security": 24000,
+   "federally_taxable_ss": 20400,
+   "sc_income_before_deductions": 50000,
+   "retirement_deduction": 10000,
+   "age_65_deduction": 5000,
+   "military_deduction": 0,
+   "sciad": 6710,
+   "sc_taxable_income": 28290,
+   "sc_income_tax_2026": 562.97
+  },
+  {
+   "name": "Married, 60 and 58: military retirement pay",
+   "joint": true,
+   "people": [
+    {
+     "age": 60,
+     "military": 36000
+    },
+    {
+     "age": 58
+    }
+   ],
+   "federal_agi": 36000,
+   "social_security": 0,
+   "federally_taxable_ss": 0,
+   "sc_income_before_deductions": 36000,
+   "retirement_deduction": 0,
+   "age_65_deduction": 0,
+   "military_deduction": 36000,
+   "sciad": 30000,
+   "sc_taxable_income": 0,
+   "sc_income_tax_2026": 0.0
+  }
+ ]
+}

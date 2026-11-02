@@ -1,0 +1,310 @@
+{
+ "pulled": "2026-11-01T22:52:08.689568Z",
+ "rows": [
+  {
+   "label": "all houses",
+   "params": {
+    "type": "house"
+   },
+   "echo": "type=house",
+   "total": 3702,
+   "refreshedAt": "2026-11-01T22:40:50.536Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house"
+  },
+  {
+   "label": "houses on one level",
+   "params": {
+    "type": "house",
+    "has": "one_level"
+   },
+   "echo": "type=house&has=one_level",
+   "total": 2085,
+   "refreshedAt": "2026-11-01T22:40:50.536Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level"
+  },
+  {
+   "label": "one level None-300000",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "max": 300000
+   },
+   "echo": "type=house&max=300000&has=one_level",
+   "total": 678,
+   "refreshedAt": "2026-11-01T22:40:50.536Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&max=300000"
+  },
+  {
+   "label": "one level 300000-400000",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "min": 300000,
+    "max": 400000
+   },
+   "echo": "type=house&min=300000&max=400000&has=one_level",
+   "total": 710,
+   "refreshedAt": "2026-11-01T22:40:50.536Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&min=300000&max=400000"
+  },
+  {
+   "label": "one level 400000-500000",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "min": 400000,
+    "max": 500000
+   },
+   "echo": "type=house&min=400000&max=500000&has=one_level",
+   "total": 323,
+   "refreshedAt": "2026-11-01T22:40:50.536Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&min=400000&max=500000"
+  },
+  {
+   "label": "one level 500000-700000",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "min": 500000,
+    "max": 700000
+   },
+   "echo": "type=house&min=500000&max=700000&has=one_level",
+   "total": 271,
+   "refreshedAt": "2026-11-01T22:40:50.536Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&min=500000&max=700000"
+  },
+  {
+   "label": "one level 700000-None",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "min": 700000
+   },
+   "echo": "type=house&min=700000&has=one_level",
+   "total": 113,
+   "refreshedAt": "2026-11-01T22:40:50.536Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&min=700000"
+  },
+  {
+   "label": "one level in Myrtle Beach",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "city": "Myrtle Beach"
+   },
+   "echo": "city=Myrtle+Beach&type=house&has=one_level",
+   "total": 472,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&city=Myrtle+Beach"
+  },
+  {
+   "label": "one level in Myrtle Beach under 400000",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "city": "Myrtle Beach",
+    "max": 400000
+   },
+   "echo": "city=Myrtle+Beach&type=house&max=400000&has=one_level",
+   "total": 230,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&city=Myrtle+Beach&max=400000"
+  },
+  {
+   "label": "one level in North Myrtle Beach",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "city": "North Myrtle Beach"
+   },
+   "echo": "city=North+Myrtle+Beach&type=house&has=one_level",
+   "total": 76,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&city=North+Myrtle+Beach"
+  },
+  {
+   "label": "one level in North Myrtle Beach under 400000",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "city": "North Myrtle Beach",
+    "max": 400000
+   },
+   "echo": "city=North+Myrtle+Beach&type=house&max=400000&has=one_level",
+   "total": 15,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&city=North+Myrtle+Beach&max=400000"
+  },
+  {
+   "label": "one level in Conway",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "city": "Conway"
+   },
+   "echo": "city=Conway&type=house&has=one_level",
+   "total": 474,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&city=Conway"
+  },
+  {
+   "label": "one level in Conway under 400000",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "city": "Conway",
+    "max": 400000
+   },
+   "echo": "city=Conway&type=house&max=400000&has=one_level",
+   "total": 385,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&city=Conway&max=400000"
+  },
+  {
+   "label": "one level in Murrells Inlet",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "city": "Murrells Inlet"
+   },
+   "echo": "city=Murrells+Inlet&type=house&has=one_level",
+   "total": 74,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&city=Murrells+Inlet"
+  },
+  {
+   "label": "one level in Murrells Inlet under 400000",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "city": "Murrells Inlet",
+    "max": 400000
+   },
+   "echo": "city=Murrells+Inlet&type=house&max=400000&has=one_level",
+   "total": 22,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&city=Murrells+Inlet&max=400000"
+  },
+  {
+   "label": "one level in Little River",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "city": "Little River"
+   },
+   "echo": "city=Little+River&type=house&has=one_level",
+   "total": 117,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&city=Little+River"
+  },
+  {
+   "label": "one level in Little River under 400000",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "city": "Little River",
+    "max": 400000
+   },
+   "echo": "city=Little+River&type=house&max=400000&has=one_level",
+   "total": 69,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&city=Little+River&max=400000"
+  },
+  {
+   "label": "one level in Longs",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "city": "Longs"
+   },
+   "echo": "city=Longs&type=house&has=one_level",
+   "total": 240,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&city=Longs"
+  },
+  {
+   "label": "one level in Longs under 400000",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "city": "Longs",
+    "max": 400000
+   },
+   "echo": "city=Longs&type=house&max=400000&has=one_level",
+   "total": 201,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&city=Longs&max=400000"
+  },
+  {
+   "label": "one level in Surfside Beach",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "city": "Surfside Beach"
+   },
+   "echo": "city=Surfside+Beach&type=house&has=one_level",
+   "total": 42,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&city=Surfside+Beach"
+  },
+  {
+   "label": "one level in Surfside Beach under 400000",
+   "params": {
+    "type": "house",
+    "has": "one_level",
+    "city": "Surfside Beach",
+    "max": 400000
+   },
+   "echo": "city=Surfside+Beach&type=house&max=400000&has=one_level",
+   "total": 14,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=one_level&city=Surfside+Beach&max=400000"
+  },
+  {
+   "label": "for sale in Del Webb Myrtle Beach",
+   "params": {
+    "subdivision": "Del Webb",
+    "status": "active",
+    "city": "Myrtle Beach"
+   },
+   "echo": "city=Myrtle+Beach&subdivision=Del+Webb",
+   "total": 26,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?subdivision=Del+Webb&status=active&city=Myrtle+Beach"
+  },
+  {
+   "label": "for sale in Del Webb North Myrtle Beach",
+   "params": {
+    "subdivision": "Del Webb",
+    "status": "active",
+    "city": "North Myrtle Beach"
+   },
+   "echo": "city=North+Myrtle+Beach&subdivision=Del+Webb",
+   "total": 2,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?subdivision=Del+Webb&status=active&city=North+Myrtle+Beach"
+  },
+  {
+   "label": "for sale in Myrtle Trace",
+   "params": {
+    "subdivision": "Myrtle Trace",
+    "status": "active"
+   },
+   "echo": "subdivision=Myrtle+Trace",
+   "total": 13,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?subdivision=Myrtle+Trace&status=active"
+  },
+  {
+   "label": "for sale in Seasons at Prince Creek",
+   "params": {
+    "subdivision": "Seasons at Prince Creek",
+    "status": "active"
+   },
+   "echo": "subdivision=Seasons+at+Prince+Creek",
+   "total": 4,
+   "refreshedAt": "2026-11-01T22:51:19.582Z",
+   "url": "https://chapter3realty.com/homes/api/map?subdivision=Seasons+at+Prince+Creek&status=active"
+  }
+ ]
+}

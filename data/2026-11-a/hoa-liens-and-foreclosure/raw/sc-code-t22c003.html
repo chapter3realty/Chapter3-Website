@@ -1,0 +1,748 @@
+﻿
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="robots" content="noimageindex">
+	    <meta charset="iso-8859-1">
+	    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	    	    <title>Code of Laws - Title 22 - Chapter 3- - MAGISTRATES AND CONSTABLES</title>
+	    <link rel="SHORTCUT ICON" href="/images/stateflagsmall.ico" />
+		<link rel="icon" href="/images/stateflagsmall.ico" type="image/ico" />
+		<link rel="SHORTCUT ICON" href="/images/South-Carolina-Flag2.ico" />
+
+		<link type="text/css" rel="stylesheet" href="/css/main.css" media="all" />
+				
+		<!--[if lte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/ie7main.css" media="all" />
+		<![endif]-->
+		<!--[if gte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/iemain.css" media="all" />
+		<![endif]-->
+		<link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+		<link type="text/css" rel="stylesheet" href="/css/supplement.css" media="screen" />
+		<!--<link type="text/css" rel="stylesheet" href="/css/zipsearch.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/vote.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/contact.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/navwrap.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/linkbar.css" media="screen" />-->
+	
+		<!--<script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>-->
+		<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+				<script type="text/javascript" src="/js/main_linux.js"></script>
+		
+
+		
+
+
+
+		<!--<script type="text/javascript" src="/js/common.js"></script>
+		<script type="text/javascript" src="/js/utils.js"></script>
+		<script type="text/javascript" src="/js/date.js"></script>
+		<script type="text/javascript" src="/js/lightbox.js"></script>
+		<script type="text/javascript" src="/js/legislation.js"></script>
+		<script type="text/javascript" src="/js/logon_lits.js"></script>
+		<script type="text/javascript" src="/js/message.js"></script>
+		<script type="text/javascript" src="/js/comm_meeting.js"></script>-->
+		<script type="text/vbscript" src="/vbs/comm_meeting.vbs"></script>
+		<!--<script type="text/javascript" src="/js/regs.js"></script>-->
+				
+	   	<script type="text/javascript">
+	    //document.onclick = function () { document.getElementById('transbox').style.display= 'none' };
+	    	var xmlhttp=false;
+			xmlhttp = create_xml_object();
+	
+			function getElement(ele)
+			{
+				var theobj = false;
+				if(typeof ele == 'string')
+					theobj = (document.getElementById)?document.getElementById(ele):document.all[ele];
+				else
+					theobj = ele;
+			
+				return theobj;
+			}
+		
+			function checkreader(friendlyalert)
+			{
+			 	/*friendlyalert=friendlyalert||false;
+			 	
+			 	var browser_info = perform_acrobat_detection();
+				if (!browser_info.acrobat)
+				{
+				 	loadadobebox('adobebox', '/adobe.php');
+					return false;
+				}
+				else if (friendlyalert)
+				{
+			 		alert(friendlyalert);
+				}*/
+				return true;
+			}
+				
+			function loadadobebox(boxname, url)
+			{
+				var response = false;
+	
+				doRequest(xmlhttp, "GET", url, false, null, null);
+				if (xmlhttp.status == 200)
+				{
+		         	response = xmlhttp.responseText;
+				}
+	
+				if(response)
+				{
+			 		var ele = document.getElementById(boxname);
+				 	if (ele)
+				 	{
+				 		ele.style.visibility = 'hidden';
+		 				ele.style.display = 'block';
+	
+		 				positionElement(ele, 'center', 'center', true);
+	
+						ele.innerHTML = response;
+					    ele.style.visibility = 'visible';
+					    ele.style.display = 'block';
+	//				    ele.scrollIntoView(true);
+					}
+				}
+				return response;
+			}
+	
+	
+			function init()
+			{
+		 		var ld=document.getElementById("loading");
+				if(ld)
+				{
+					ld.style.display = 'none';
+				}
+			}
+			
+			function openmore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				 	var pos = findPos(id);
+				 	id.style.zIndex = 10;
+		//		 	id.style.left = pos[0]+'px';
+		//		  	id.style.top = pos[1]+'px';
+				  	id.style.height = '295px';
+				  	id.style.position = 'absolute';
+				  	id.style.backgroundColor = '#f7f4ec';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'none';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = 'none';
+				  	}
+				}
+			}
+		
+			function closemore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				  	id.style.height = '135px';
+				  	id.style.position = '';
+				  	id.style.backgroundColor = 'transparent';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'block';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = '';
+				  	}
+				}		 	
+			}
+		
+		<!-- This script and many more are available free online at -->
+		<!-- The JavaScript Source!! http://javascript.internet.com -->
+		
+		<!-- Begin
+		function right(e) {
+		var msg = "Use of this image is strictly prohibited unless express written permission is given to the user by South Carolina Legislative Services Agency.";
+		if (navigator.appName == 'Netscape' && e.which == 3) {
+		alert(msg);
+		return false;
+		stopEvent(e);
+		}
+		if (navigator.appName == 'Microsoft Internet Explorer' && event.button==2) {
+		alert(msg);
+		return false;
+			stopEvent(event);
+		}
+		else return true;
+		}
+		
+	function trap() 
+	{
+		if(document.images)
+		{
+			for(i=0;i<document.images.length;i++)
+			{
+				if(document.images[i].className == 'allowcontextmenu')
+				{
+					// this should have no scripting
+				}
+				else
+				{
+				 	document.images[i].onmousedown = right;
+					document.images[i].oncontextmenu = function(){ return false; };
+					//document.images[i].onmouseup = right;
+				}
+			}
+		}
+	}
+
+	function findfwtext(texttofind) 
+	{
+	 	var fwtextele = document.getElementById('fwtext');
+		if(fwtextele)
+		{
+			fwtextele.value = texttofind;
+		}
+	}	
+		// End -->
+		</script>
+
+		<!-- ADDED FOR V4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJY6FMNQKH"></script>
+
+
+<script type="text/javascript">
+
+//ADDED FOR V4
+//Google tag (gtag.js) 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LJY6FMNQKH');
+
+ 
+ /* COMMENTING OUT UPGRADING TO V4 -A
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36207109-1']);
+  _gaq.push(['_setDomainName', 'scstatehouse.gov']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+*/
+  
+      $(document).ready(function(){
+        // COMMENTING THIS OUT NO LONGER BEING ACTIVELY USED TO MONITOR FOR TRAFFIC TO SPECIFIC LINKS - A
+        /*
+          var anchors = $('div#contentsection a');
+
+          //console.log('anchors...'+anchors.length);
+          if(anchors.length > 0){
+            //console.log('setting up event handler...');
+            anchors.click(function(){
+              var a = $(this).attr('href');
+              if(_gaq && (a.substr(-3) == 'htm' || a.substr(-4) == 'html' || a.substr(-3) == 'doc' || a.substr(-4) == 'docx' || a.substr(-3) == 'pdf' || a.substr(-3) == 'xls' || a.substr(-4) == 'xlsx')) {
+                //console.log(a);
+                _gaq.push(['_trackPageview', $(this).attr('href')]);
+              }
+              
+              var aText = $(this).text().toLowerCase();
+              if (a.indexOf('getfile.php') > -1 && aText === 'word'){
+                    _gaq.push(['_trackEvent', 'Word Doc', 'Download', ('from page: ' + document.location + ' - href: ' + a)]);
+              }
+
+            });
+          }
+          */
+      });
+
+</script>
+	</head>
+	
+		
+	<body class="home"  onload="init(); trap();">
+	<noscript>Your browser does not support JavaScript!  This page will not render correctly.</noscript> 
+
+
+	
+	<div id="adobebox" style="position:absolute; width:400px; height:150px; border:2px solid #555555; background-color:#cccccc; display:none;"></div>
+	<div id="container" >	
+				<div id="header" class="nodisplay" style="text-align:center; height:100px;" >
+									<img id="headerimg" class="nodisplay" alt="South Carolina Legislature" title="South Carolina Legislature" src="/images/header8.png" />
+								
+							<!--	<div class="award"><span style="color:#831224; font-weight:bold; font-size:1.5em;">*</span> Recipient of<br>the Notable State Documents Award<br>by the<br>South Carolina<br>State Library.</div>-->
+				
+				
+			</div>
+			<div class="printdisplay"><img border="0" src="/images/titleprint.jpg" alt="South Carolina Legislature" title="South Carolina Legislature" alt="South Carolina Legislature" title="South Carolina State Legislature" /><br /><hr /><br /></div>
+	
+			<div id="pagebody" >
+	
+	
+<!--<div id="topmessage">
+<br style="display:block; margin-top:10px;">
+Searches and data queries will be unavailable beginning Friday, August 19, 2016, from 8:00 PM until Saturday, August 20th at 8:00 AM<br>due to scheduled maintenance.</div>-->
+				<!-- Prompt IE 8/7/6 users to upgrade to a newer browser. -->
+				<!--[if lte IE 8]>
+				<div class="oldframe">In order to improve your experience using this website, please <a href="http://browsehappy.com/">upgrade your browser</a>.</div>
+				<![endif]-->
+			
+			
+			
+			<div id="menu" class="nodisplay">
+				<ul class="nodisplay">
+				<li><a href="/index.php">Home</a></li>
+<li><a href="/senate.php">Senate</a></li>
+<li><a href="/house.php">House</a></li>
+<li><a href="/committeeinfo.php">Committee&nbsp;Postings&nbsp;and&nbsp;Reports</a></li>
+<li><a href="/council.php">Legislative Council</a></li>
+<li><a href="/citizens.php">Citizens&#39; Interest</a></li>
+<li><a href="/publications.php">Publications</a></li>
+		    	</ul>
+			</div>
+			<div id="search" class="nodisplay" style="height: 28px;"><div class="nodisplay" style="float:right; margin:6px 20px 0px 0;">
+							<!--<a style="color:#f7f4ec; height:15px;" href="#" onClick="rsswindow();"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+<!--				<a style="color:#f7f4ec; height:15px;" href="/splashpage/splashpage.html"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a> -->
+				<a style="color:#f7f4ec; height:15px;" href="/onlineservices/index.php"><img border="0" src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>
+			<!--	<a style="color:#f7f4ec; height:15px;" href="/maintenance_portal.php"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+						</div></div>
+			
+	
+					<div id="sidebar" class="nodisplay">
+	<div id="vidlinks" style="height: 50px;">
+						<!--<img src="/images/videobutton12d.png">-->
+											<ul id="vidsidemenu">
+	<li id="vidinnermenu" style="font-size:16px; margin: 0 0 5px 0;">Chamber Video</li>
+<li id="sbroadcast" style="float: left; width:50%;">
+<a id="liveS" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('S', false, false, '0')">Senate</a><br><a id="liveaudioS" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('S', false, false, '1');">(Audio Only)</a>
+</li>
+<li id="hbroadcast" style="float: left; width:50%;">
+<a id="liveH" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('H', false, false, '0')">House</a><br><a id="liveaudioH" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('H', false, false, '1');">(Audio Only)</a>
+</li>
+						</ul>
+					</div>
+					<div id="commvidlinks"><a href="/video/schedule.php">Video&nbsp;Schedule</a><a style="border-top:1px solid #fff; padding-top:12px;" href="/video/archives.php">Video Archives</a></div>
+										<div id="sidemenu">
+						<ul id="innermenu">
+		
+							<li><a href="/howdoi.php">How do I...</a></li>
+										
+							
+								<li class="nolink" onMouseOver="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='block'; document.sidesearchform.searchtext.focus();}" onMouseOut="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Quick Search</div>
+								<div id="sidesearch" class="sidesubmenu">
+									<form id="sidesearchform" name="sidesearchform" method="POST" action="/search.php">
+									<input type="hidden" name="search" value="side" />
+									<div class="topelement"><label for="searchtext"><span class="label">Search for:</span></label><input id="searchtext" name="searchtext" type="text"/><a id="searchlink2" href="javascript:void(0);" onClick="document.sidesearchform.submit();"><img id="searchicon" src="/images/searchbutton.png" alt="Search" title="Search"/></a></div>
+			<!--						<div><input type="checkbox" id="searchchoice_all" name="searchchoice_all" value="all" /><label for="searchchoice_all">All</label></div>-->
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_fullsite" name="category" value="FULLSITE" /><label for="searchchoice_fullsite">&nbsp;Full Site Search</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_billnumber" name="category" value="BILL" /><label for="searchchoice_billnumber">&nbsp;Bill Number</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_legislation" name="category" value="LEGISLATION" CHECKED /><label for="searchchoice_legislation">&nbsp;Legislation</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_budget" name="category" value="BUDGET" /><label for="searchchoice_budget">&nbsp;Budget</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeoflaws" name="category" value="CODEOFLAWS" /><label for="searchchoice_codeoflaws">&nbsp;Code of Laws</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeofregs" name="category" value="CODEOFREGS" /><label for="searchchoice_codeofregs">&nbsp;Code of Regulations</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_constitution" name="category" value="CONSTITUTION" /><label for="searchchoice_constitution">&nbsp;Constitution</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_housejournals" name="category" value="HOUSEJOURNALS" /><label for="searchchoice_housejournals">&nbsp;House Journals</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_senatejournals" name="category" value="SENATEJOURNALS" /><label for="searchchoice_senatejournals">&nbsp;Senate Journals</label></div>
+									<div class="bottomelement" style="padding-left:20px;"><input type="radio" id="searchchoice_billsummary" name="category" value="SUMMARY" /><label for="searchchoice_billsummary">&nbsp;LSA Bill Summary</label></div>
+								</form>
+									
+								</div>
+							</li>
+							<li><a href="/legislatorssearch.php">Find Your Legislators</a></li>
+							<li id="contactLegislatorLink"><a href="/email.php?chamber=B">Contact Your Legislator</a></li>
+									
+							<li><a href="/legislation.php">Legislation</a></li>
+							<li><a href="/listtracking/main.php" target="LTS">Track Legislation</a></li>
+							<li><a href="/multicriteria2/search.php" target="MCS">Multi-Criteria Search</a></li>
+									<!--<li><a href="#" onclick="multisearchwindow('INTROBOTH');">Multi-Criteria Search</a></li>-->
+									<!--<li><a href="#" onclick="multisearchwindow('INTROMANUAL');">Multi-Criteria Search</a></li>-->
+									<li><a href="/research.php">Research</a></li>
+	
+								<li class="nolink" onMouseOver="var ele=document.getElementById('law'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('law'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">South Carolina Law</div> 
+								<div id="law" class="sidesubmenu">
+									<div class="sidediv topelement"><a href="/newlaws.php">Ratifications &amp; Acts</a></div>
+									<div class="sidediv"><a href="/code/statmast.php">Code of Laws</a></div>
+									<div class="sidediv"><a href="/coderegs/statmast.php">Code of Regulations</a></div>
+									<div class="sidediv"><a href="/scconstitution/scconst.php">Constitution</a></div>
+									<div class="sidediv bottomelement"><a href="/state_register.php">State Register</a></div>
+								</div>
+							</li>
+										<li class="nolink" onMouseOver="var ele=document.getElementById('manual'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('manual'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Legislative Manual</div>
+								<div id="manual" class="sidesubmenu">
+								
+<!--									<div class="sidediv topelement"><a href="https://web.sc.gov/LSAShoppingcart/Default.aspx" target="_blank">Purchase Manual</a></div>-->
+								
+<!--									<div class="sidediv topelement"><a href="https://secure.scstatehouse.gov/cgi-bin/webstore.exe" target="_blank">Purchase Manual</a></div>-->
+									<div class="sidediv topelement"><a href="javascript:#" onClick="alert('We are sorry, but we are unable to process online transactions at this time.\n\nIf you would still like to make a purchase, please contact us directly at (803) 212-4490 during normal business hours (8:30am - 5:00pm EST).');">Purchase Manual</a></div>
+									<div class="sidediv bottomelement"><a href="/man26/manual26.php">View Manual Online</a></div>
+								</div>
+							</li>
+							<li><a href="http://www.studentconnection.scstatehouse.gov">Student Connection</a></li>
+							<li><a href="/visit.php">Visiting the State House</a></li>
+							<li><a href="/archives.php">Archives</a></li>
+							<li><a href="http://www.sc.gov/Agency-Listing" target="_blank">State Agency Websites</a></li>
+							<!--<li><a href="/stateagencysites.php">State Agency Websites</a></li>-->
+							<li><a href="/citizensinterestpage/media.php">Media Links</a></li>
+				 		</ul>
+			    	</div>
+	
+					<div id="side_ad">
+						<A href="http://www.sc.gov/" target="_blank"><img border=0 src="/images/scgov3.jpg" alt="SC.gov" title="SC.gov" /></a>
+													<A href="http://www.statelibrary.sc.gov" target="_blank"><img border=0 src="/images/scsl_logo_rgb_web.png" alt="StateLibrary.SC.gov" title="StateLibrary.SC.gov" /></a>
+											</div>	    	
+			</div>
+
+	
+	<script type="text/javascript"> 
+		if ( '' === '1'){
+		 	
+			var link = document.getElementById('contactLegislatorLink');
+			if (link != 'undefined' && link != null){
+				link.style.display = 'none'; 
+				link.style.visibility = 'hidden';
+			}
+		}
+		if ( '' === '1'){
+		 	setTimeout(function(){
+				var link2 = document.getElementById('sendMsgLink');
+				if (link2 != 'undefined' && link2 != null){
+					link2.style.display = 'none'; 
+					link2.style.visibility = 'hidden';
+				};
+			}, 20);
+			
+		}  
+	</script>
+<div class="mainwidepanel">
+
+				<div id="breadcrumbs">
+						South Carolina Law &gt; <a href="/code/statmast.php">Code of Laws</a> &gt; <a href="/code/title22.php">Title 22</a>
+				</div>
+
+					<h2 class="barheader">South Carolina Code of Laws<br />
+									Unannotated<br />
+					</h2>
+
+				<div id="contentsection">
+<div style="font-weight: bold; text-align: center;">Title 22 - MAGISTRATES AND CONSTABLES</div>
+<br />
+
+<div style="text-align: center;">CHAPTER 3</div>
+<div style="text-align: center;">Jurisdiction and Procedure in Magistrates&#39; Courts</div><br />
+<div style="text-align: center;">ARTICLE 1</div>
+<div style="text-align: center;">Civil Jurisdiction</div><br />
+<span style="font-weight: bold;"> SECTION 22-3-10.</span> Concurrent civil jurisdiction.<br /><br />
+	Magistrates have concurrent civil jurisdiction in the following cases:<br /><br />
+	(1) in actions arising on contracts for the recovery of money only, if the sum claimed does not exceed seven thousand five hundred dollars;<br /><br />
+	(2) in actions for damages for injury to rights pertaining to the person or personal or real property, if the damages claimed do not exceed seven thousand five hundred dollars;<br /><br />
+	(3) in actions for a penalty, fine, or forfeiture, when the amount claimed or forfeited does not exceed seven thousand five hundred dollars;<br /><br />
+	(4) in actions commenced by attachment of property, as provided by statute, if the debt or damages claimed do not exceed seven thousand five hundred dollars;<br /><br />
+	(5) in actions upon a bond conditioned for the payment of money, not exceeding seven thousand five hundred dollars, though the penalty exceeds that sum, the judgment to be given for the sum actually due, and when the payments are to be made by installments an action may be brought for each installment as it becomes due;<br /><br />
+	(6) in any action upon a surety bond taken by them, when the penalty or amount claimed does not exceed seven thousand five hundred dollars;<br /><br />
+	(7) in any action upon a judgment rendered in a court of a magistrate or an inferior court when it is not prohibited by the South Carolina Rules of Civil Procedure;<br /><br />
+	(8) to take and enter judgment on the confession of a defendant in the manner prescribed by law when the amount confessed does not exceed seven thousand five hundred dollars;<br /><br />
+	(9) in any action for damages or for fraud in the sale, purchase, or exchange of personal property, if the damages claimed do not exceed seven thousand five hundred dollars;<br /><br />
+	(10) in all matters between landlord and tenant and the possession of land as provided in Chapters 33 through 41 of Title 27;<br /><br />
+	(11) in any action to recover the possession of personal property claimed, the value of which, as stated in the affidavit of the plaintiff, his agent, or attorney, does not exceed the sum of seven thousand five hundred dollars;<br /><br />
+	(12) in all actions provided for in this section when a filed counterclaim involves a sum not to exceed seven thousand five hundred dollars, except that this limitation does not apply to counterclaims filed in matters between landlord and tenant and the possession of land;<br /><br />
+	(13) in interpleader actions arising from real estate contracts for the recovery of earnest money, only if the sum claimed does not exceed seven thousand five hundred dollars; and<br /><br />
+	(14) in actions for damages arising from a person&#39;s failure to return leased or rented personal property within seventy-two hours after the expiration of the lease or rental agreement, such damages to be based on the loss of revenue or replacement value of the property, whichever is less, if the damages claimed do not exceed seven thousand five hundred dollars; however, the lease or rental agreement must set forth the manner in which the amount of the loss of revenue or replacement value of the item leased or rented is calculated.<br /><br />
+HISTORY: 1962 Code SECTION 43-51; 1952 Code SECTION 43-51; 1942 Code SECTION 257; 1932 Code SECTION 257; Civ. P. &#39;22 SECTION 213; Civ. P. &#39;12 SECTION 80; Civ. P. &#39;02 SECTION 71; 1870 (14) 74; 1879 (17) 28; 1964 (53) 2165; Const. Art. 5 SECTIONS 20, 21; 1976 Act No. 690, Art. IV, SECTIONS 1, 2; 1979 Act No. 164, Part I, SECTION 5; 1988 Act No. 681, SECTION 1; 1994 Act No. 488, SECTION 1; 1997 Act No. 48, SECTION 1; 2000 Act No. 226, SECTION 13; 2002 Act No. 184, SECTION 1; 2004 Act No. 180, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-20.</span> Civil actions when magistrate has no jurisdiction.<br /><br />
+	No magistrate shall have cognizance of a civil action:<br /><br />
+	(1) In which the State is a party, except an action for a penalty and not exceeding one hundred dollars; or<br /><br />
+	(2) When the title to real property shall come in question, except as provided in Article 11 of this chapter.<br /><br />
+HISTORY: 1962 Code SECTION 43-52; 1952 Code SECTION 43-52; 1942 Code SECTION 264; 1932 Code SECTION 264; Civ. P. &#39;22 SECTION 220; Civ. P. &#39;12 SECTION 87; Civ. P. &#39;02 SECTION 78; 1870 (14) 81; 1873 (15) 496.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-25.</span> Interpleader actions.<br /><br />
+	(A) In compliance with Section 22-3-20(2) and Article 11 of this chapter, actions in the nature of interpleader arising from real estate contracts for the recovery of earnest money, in which the value of the money that is the subject of the action does not exceed the jurisdictional limit of the magistrates court, may be filed in magistrates court under the provisions of this section. The fee for an action in the nature of interpleader filed in magistrates court is as provided in Section 8-21-1010(6) with service fees as provided by law.<br /><br />
+	(B) The failure of a competing claimant to recover in an interpleader action must not be considered as a judgment against the claimant and must not be used to impair the credit of the claimant.<br /><br />
+	(C) The Office of Court Administration must design appropriate legal forms for proceeding under this section and make those forms available for distribution.<br /><br />
+HISTORY: 2002 Act No. 184, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-30.</span> Counterclaim, transfer to court of common pleas.<br /><br />
+	When a counterclaim is filed which if successful would exceed the magistrates&#39; civil jurisdictional amount as provided in Section 22-3-10, then the initial claim and counterclaim must be transferred to the docket of the common pleas court for that judicial circuit.<br /><br />
+HISTORY: 1988 Act No. 678, Part I, SECTION 8; 1997 Act No. 48, SECTION 2.<br /><br />
+<div style="text-align: center;">ARTICLE 3</div>
+<div style="text-align: center;">Civil Procedure Filing and Execution of Judgments</div><br />
+<span style="font-weight: bold;"> SECTION 22-3-300.</span> Filing and docketing judgments.<br /><br />
+	A magistrate, on the demand of a party in whose favor he shall have rendered a judgment, shall give a transcript thereof which may be filed and docketed in the office of the circuit court of the county in which the judgment was rendered. The time of the receipt of the transcript by the clerk shall be noted thereon and entered in the abstract of judgments and from that time the judgment shall be a judgment of the circuit court, but no sale shall be made under any execution issued upon such judgment in the circuit court until the time for appeal from the judgment in the magistrates court has expired, nor pending such appeal. If the judgment is set aside in the magistrates court, it shall have the effect of setting aside the judgment filed and docketed in the circuit court. The filing and docketing of such transcript in the circuit court shall not affect the right of the magistrate to grant a new trial. A certified transcript of such judgment may be filed and docketed in the clerk&#39;s office of any other county and with like effect in every respect as in the county in which the judgment was rendered.<br /><br />
+HISTORY: 1962 Code SECTION 43-100; 1952 Code SECTION 43-100; 1942 Code SECTION 273; 1932 Code SECTION 273; Civ. P. &#39;22 SECTION 229; Civ. P. &#39;12 SECTION 96; Civ. P. &#39;02 SECTION 87; 1870 (14) 90; 1887 (19) 831; 2008 Act No. 267, SECTION 1, eff June 4, 2008.<br /><br />
+Effect of Amendment<br /><br />
+	The 2008 amendment made no apparent changes.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-310.</span> Judgments; executions; effect of appeal.<br /><br />
+	Execution may be issued on a judgment heretofore or hereafter rendered in a magistrates court at any time within three years after the rendition thereof and shall be returnable sixty days from its date. But no sale shall be made under any such execution until after the time for appeal has expired, nor pending such appeal, and in cases for the claim and delivery of personal property when bond for the property claimed has been properly given by either party, the status of such property shall not be changed until after the expiration of the time for appealing has expired or until such appeal has terminated.<br /><br />
+HISTORY: 1962 Code SECTION 43-101; 1952 Code SECTION 43-101; 1942 Code SECTION 274; 1932 Code SECTION 274; Civ. P. &#39;22 SECTION 230; Civ. P. &#39;12 SECTION 97; Civ. P. &#39;02 SECTION 88; 1887 (19) 787, 832; 1896 (22) 13; 2008 Act No. 267, SECTION 1, eff June 4, 2008.<br /><br />
+Effect of Amendment<br /><br />
+	The 2008 amendment made no apparent changes.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-320.</span> Execution when judgment docketed.<br /><br />
+	If the judgment be docketed with the clerk of the circuit court, the execution shall be issued by him to the sheriff of the county and have the same effect and be executed in the same manner as other executions and judgments of the circuit court.<br /><br />
+HISTORY: 1962 Code SECTION 43-102; 1952 Code SECTION 43-102; 1942 Code SECTION 274; 1932 Code SECTION 274; Civ. P. &#39;22 SECTION 230; Civ. P. &#39;12 SECTION 97; Civ. P. &#39;02 SECTION 88; 1887 (19) 787; 1896 (22) 13; 2008 Act No. 267, SECTION 1, eff June 4, 2008.<br /><br />
+Effect of Amendment<br /><br />
+	The 2008 amendment made no apparent changes.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-330.</span> Courtesy summons.<br /><br />
+	Notwithstanding another provision of law, a person charged with any misdemeanor offense requiring a warrant signed by nonlaw enforcement personnel to ensure the arrest of a person must be given a courtesy summons.<br /><br />
+HISTORY: 2008 Act No. 267, SECTION 1, eff June 4, 2008.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-340.</span> Assessments on filings.<br /><br />
+	Section effective until January 1, 2027. See, also, section 22-3-340 effective January 1, 2027.<br /><br />
+	An assessment equal to twenty-five dollars is imposed on all summons and complaint filings in magistrates court and an assessment equal to ten dollars is imposed on all other civil filings in magistrates court, except for restraining orders. The fees must be collected by the magistrates court and forwarded monthly to the county treasurer and remitted in turn by the county treasurer to the State Treasurer for allocation to the judicial department.<br /><br />
+HISTORY: 2008 Act No. 353, SECTION 2, Pt 23A, eff July 1, 2009.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-340.</span> Assessments on filings.<br /><br />
+	Section effective January 1, 2027. See, also, section 22-3-340 effective until January 1, 2027.<br /><br />
+	An assessment equal to forty dollars is imposed on all summons and complaint filings in magistrates court and an assessment equal to fifteen dollars is imposed on all other civil filings in magistrates court, except for restraining orders. The fees must be collected by the magistrates court and forwarded monthly to the county treasurer and remitted in turn by the county treasurer to the State Treasurer for allocation to the judicial department.<br /><br />
+HISTORY: 2008 Act No. 353, SECTION 2, Pt 23A, eff July 1, 2009; 2026 Act No. 155 (H.4813), SECTION 2, eff January 1, 2027.<br /><br />
+Effect of Amendment<br /><br />
+	2026 Act No. 155, SECTION 2, updated fees.<br /><br />
+<div style="text-align: center;">ARTICLE 5</div>
+<div style="text-align: center;">Criminal Jurisdiction</div><br />
+<span style="font-weight: bold;"> SECTION 22-3-510.</span> Criminal jurisdiction abolished in counties where county courts established.<br /><br />
+	The jurisdiction of magistrates in criminal cases in all counties wherein a county court is established under the provisions of Chapter 9 of Title 14 is hereby abolished.<br /><br />
+HISTORY: 1962 Code SECTION 43-69; 1952 Code SECTION 43-69; 1942 Code SECTION 94; 1932 Code SECTION 94; Civ. P. &#39;22 SECTION 91; Civ. C. &#39;12 SECTION 3866; Civ. C. &#39;02 SECTION 2769; 1900 (23) 322; 1963 (53) 252.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-520.</span> Jurisdiction limited to county.<br /><br />
+	Magistrates shall have and exercise within their respective counties all the powers, authority and jurisdiction in criminal cases herein set forth.<br /><br />
+HISTORY: 1962 Code SECTION 43-61; 1952 Code SECTION 43-61; 1942 Code SECTION 922; 1932 Code SECTION 922; Cr. P. &#39;22 SECTION 18; Cr. C. &#39;12 SECTION 19; Cr. C. &#39;02 SECTION 11; G. S. 822; R. S. 10; 1870 (14) 402.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-530.</span> Trial in district where offense committed.<br /><br />
+	In counties where magistrates are given separate and exclusive territorial jurisdiction, criminal cases shall be tried in the district in which the offense was committed, unless the place of trial be changed to another district in the same county in the manner prescribed by law.<br /><br />
+HISTORY: 1962 Code SECTION 43-62; 1952 Code SECTION 43-62; 1942 Code SECTION 3709; 1932 Code SECTION 3709; Civ. C. &#39;22 SECTION 2243; Civ. C. &#39;12 SECTION 1393; Civ. C. &#39;02 SECTION 985; 1897 (22) 472.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-540.</span> Exclusive and concurrent jurisdiction.<br /><br />
+	Magistrates shall have exclusive jurisdiction of all criminal cases in which the punishment does not exceed a fine of one hundred dollars or imprisonment for thirty days, except cases in which an offense within the jurisdiction of a magistrate is included in the charge of an offense beyond his jurisdiction or when it is permissible to join a charge of an offense within his jurisdiction with one or more of which the magistrate has no jurisdiction. Magistrates shall have concurrent but not exclusive jurisdiction in the excepted cases. The provisions of this section shall not be construed so as to limit the jurisdiction of any magistrate whose jurisdiction has been extended beyond that stated above.<br /><br />
+HISTORY: 1962 Code SECTION 43-68; 1952 Code SECTION 43-68; 1942 Code SECTION 3709; 1932 Code SECTION 3709; Civ. C. &#39;22 SECTION 2243; Civ. C. &#39;12 SECTION 1393; Civ. C. &#39;02 SECTION 985; 1897 (22) 472; 1951 (47) 442.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-545.</span> Transfer of certain criminal cases from general sessions court.<br /><br />
+	(A) Notwithstanding the provisions of Sections 22-3-540 and 22-3-550, a criminal case, the penalty for which the crime in the case does not exceed five thousand five hundred dollars or one year imprisonment, or both, either as originally charged or as charged pursuant to the terms of a plea agreement, may be transferred from general sessions court if the provisions of this section are followed.<br /><br />
+	(B)(1) The solicitor, upon ten days&#39; written notice to the defendant, may petition a circuit court judge in the circuit to transfer one or more cases from the general sessions court docket to a docket of a magistrates or municipal court in the circuit for disposition. The solicitor&#39;s notice must fully apprise the defendant of his right to have his case heard in general sessions court. The notice must include the difference in jury size in magistrates or municipal court and in general sessions court. The case may be transferred from the general sessions court unless the defendant objects after notification by the solicitor pursuant to the provisions of this item. The objection may be made orally or in writing at any time prior to the trial of the case or prior to the entry of a guilty plea. The objection may be made to the chief judge for administrative purposes in the judicial circuit where the charges are pending, the trial judge, or the solicitor. Before impaneling the jury or accepting the guilty plea of the defendant, the trial judge must receive an affirmative waiver by the defendant, if present, of his right to have the case tried in general sessions court. The defendant must be informed that, if tried in general sessions court, the case would be tried in front of twelve jurors who must reach a unanimous verdict before a finding of guilty of the offense can be rendered in his case, and that if tried in magistrates or municipal court, the case would be tried in front of six jurors who must reach a unanimous verdict before a finding of guilty of the offense can be reached in his case. The defendant may waive any and all of the rights provided in this subsection, in writing, prior to the impaneling of the jury or the acceptance of the defendant&#39;s guilty plea.<br /><br />
+	(2) A case transferred to a magistrates or municipal court not disposed of in one hundred eighty days from the date of transfer automatically reverts to the docket of the general sessions court.<br /><br />
+	(C) All cases transferred to the magistrates or municipal court must be prosecuted by the solicitor&#39;s office. The chief magistrate of the county or the chief municipal judge of the municipality, upon petition of the solicitor, shall set the terms of court and order the magistrates and municipal judges to hold terms of court on specific times and dates for the disposition of these cases.<br /><br />
+	(D) Provision for an adequate record must be made by the solicitor&#39;s office.<br /><br />
+	(E) Notwithstanding another provision of law, all fines and assessments imposed by a magistrate or municipal judge presiding pursuant to this section must be distributed as if the fine and assessment were imposed by a circuit court pursuant to Sections 14-1-205 and 14-1-206. This section must not result in increased compensation to a magistrate presiding over a trial or hearing pursuant to this section or in other additional or increased costs to the county.<br /><br />
+HISTORY: 1992 Act No. 310, SECTION 1; 1993 Act No. 174, SECTION 1; 1994 Act No. 497, Part II, SECTION 36K; 1994 Act No. 499, SECTIONS 1, 2; 1995 Act No. 7, Part I, SECTIONS 16, 21; 2000 Act No. 376, SECTION 2; 2004 Act No. 214, SECTION 1; 2012 Act No. 169, SECTION 1, eff May 14, 2012.<br /><br />
+Effect of Amendment<br /><br />
+	The 2012 amendment rewrote subsections (A), (B), and (C).<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-546.</span> Criminal domestic violence offenses; first offense; program to prosecute.<br /><br />
+	A circuit solicitor, in a circuit with five or more counties, may establish a program under his discretion and control, to prosecute first offense misdemeanor criminal domestic violence offenses, as defined in Section 16-25-20, in general sessions court. Whether to establish a program, and which cases may be prosecuted in general sessions court, are within the sole discretion of the solicitor. A solicitor shall report the results of the program to the Prosecution Coordination Commission.<br /><br />
+HISTORY: 2006 Act No. 366, SECTION 2, eff June 9, 2006.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-550.</span> Minor offenses; jurisdiction; restitution; contempt; maximum consecutive sentences.<br /><br />
+	(A) Magistrates have jurisdiction of all offenses which may be subject to the penalties of a fine or forfeiture not exceeding five hundred dollars, or imprisonment not exceeding thirty days, or both. In addition, a magistrate may order restitution in an amount not to exceed the civil jurisdictional amount provided in Section 22-3-10(2). In determining the amount of restitution, the judge shall determine and itemize the actual amount of damage or loss in the order. In addition, the judge may set an appropriate payment schedule.<br /><br />
+	A magistrate may hold a party in contempt for failure to pay the restitution ordered if the judge finds the party has the ability to pay. In addition, a magistrate may convert any unpaid restitution, fines, costs, fees, surcharges, and assessments to a civil judgment as provided in Section 17-25-323(C).<br /><br />
+	(B) However, a magistrate does not have the power to sentence a person to consecutive terms of imprisonment totaling more than ninety days except for convictions resulting from violations of Chapter 11, Title 34, pertaining to fraudulent checks, or violations of Section 16-13-110(B)(1), relating to shoplifting. Further, a magistrate must specify an amount of restitution in damages at the time of sentencing as an alternative to any imprisonment of more than ninety days which is lawfully imposed. The provisions of this subsection do not affect the transfer of criminal matters from the general sessions court made pursuant to Section 22-3-545.<br /><br />
+HISTORY: 1962 Code SECTION 43-63; 1952 Code SECTION 43-63; 1942 Code SECTION 923; 1932 Code SECTION 923; Cr. P. &#39;22 SECTION 19; Cr. C. &#39;12 SECTION 20; Cr. C. &#39;02 SECTION 12; G. S. 823; R. S. 11; 1870 (14) 402; 1977 Act No. 113, SECTION 1; 1993 Act No. 171, SECTION 14; 1993 Act No. 184, SECTION 261; 1994 Act No. 497, Part II, SECTION 28; 1995 Act No. 83, SECTION 21; 1995 Act No. 138, SECTION 1; 1999 Act No. 78, SECTION 2; 2010 Act No. 273, SECTION 24, eff June 2, 2010; 2013 Act No. 82, SECTION 6, eff June 13, 2013.<br /><br />
+Effect of Amendment<br /><br />
+	The 2010 amendment in the second sentence of subsection (A) substituted &quot;the civil jurisdictional amount provided in Section 22-3-10(2)&quot; for &quot;five thousand dollars&quot;.<br /><br />
+	The 2013 amendment added the second sentence in the second paragraph, relating to Section 17-25-323.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-560.</span> Breach of peace.<br /><br />
+	Magistrates may punish breaches of the peace by a fine not exceeding five hundred dollars or imprisonment for a term not exceeding thirty days, or both.<br /><br />
+HISTORY: 1962 Code SECTION 43-64; 1952 Code SECTION 43-64; 1942 Code SECTION 924; 1932 Code SECTION 924; Cr. P. &#39;22 SECTION 20; Cr. C. &#39;12 SECTION 21; Cr. C. &#39;02 SECTION 13; G. S. 824; R. S. 12; 1870 (14) 402; Const. Art. 5, SECTION 21; 1981 Act No. 76, SECTION 8; 1997 Act No. 80, SECTION 4; 2008 Act No. 346, SECTION 1, eff June 25, 2008; 2010 Act No. 273, SECTION 8, eff June 2, 2010; 2016 Act No. 154 (H.3545), SECTION 3, eff April 21, 2016.<br /><br />
+Editor&#39;s Note<br /><br />
+	2010 Act No. 273, SECTION 7.C, provides:<br /><br />
+	&quot;Wherever in the 1976 Code of Laws reference is made to the common law offense of assault and battery of a high and aggravated nature, it means assault and battery with intent to kill, as contained in repealed Section 16-3-620, and, except for references in Section 16-1-60 and Section 17-25-45, wherever in the 1976 Code reference is made to assault and battery with intent to kill, it means attempted murder as defined in Section 16-3-29.&quot;<br /><br />
+Effect of Amendment<br /><br />
+	The 2008 amendment designated subsection (A) and added subsection (B) relating to assaults and batteries against sports officials and coaches.<br /><br />
+	The 2010 amendment rewrote the section.<br /><br />
+	2016 Act No. 154, SECTION 3, substituted &quot;punish breaches of the peace by a fine&quot; for &quot;punish by fine&quot; and &quot;or both&quot; for &quot;or both, all breaches of the peace&quot;.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-570.</span> Larceny; jurisdiction.<br /><br />
+	Magistrates have jurisdiction of petit larceny and all other larcenies involving personal property including, but not limited to:<br /><br />
+	(1) money;<br /><br />
+	(2) goods or chattels;<br /><br />
+	(3) bank note, bond, promissory note, bill of exchange, or other bill;<br /><br />
+	(4) order or certificate;<br /><br />
+	(5) book of accounts;<br /><br />
+	(6) deed or writing containing a conveyance of land;<br /><br />
+	(7) other valuable contract in force;<br /><br />
+	(8) receipt;<br /><br />
+	(9) release or defeasance; or<br /><br />
+	(10) any writ, process, or public record.<br /><br />
+	The value of the property stolen must be one thousand dollars or less.<br /><br />
+HISTORY: 1962 Code SECTION 43-65; 1952 Code SECTION 43-65; 1942 Code SECTION 926; 1932 Code SECTION 926; Cr. P. &#39;22 SECTION 22; Cr. C. &#39;12 SECTION 24; Cr. C. &#39;02 SECTION 16; G. S. 826; R. S. 15; 1870 (14) 403; 1993 Act No. 171, SECTION 15; 1993 Act No. 184, SECTION 262.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-580.</span> Receiving stolen goods.<br /><br />
+	Magistrates shall have jurisdiction of the offenses of buying, receiving or aiding in the concealment of stolen goods and other property, when they would have jurisdiction of the larceny of the same goods or property.<br /><br />
+HISTORY: 1962 Code SECTION 43-66; 1952 Code SECTION 43-66; 1942 Code SECTION 927; 1932 Code SECTION 927; Cr. P. &#39;22 SECTION 23; Cr. C. &#39;12 SECTION 25; Cr. C. &#39;02 SECTION 17; G. S. 827; R. S. 16; 1870 (14) 403.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-590.</span> Obtaining property under false pretenses.<br /><br />
+	Magistrates shall have jurisdiction of the offenses of obtaining property by any false pretense, by any privy or false token or by any game, device, sleight of hand, pretensions to fortunetelling, trick or other means by the use of cards or other implements or instruments, when they would have jurisdiction of a larceny of the same property and may punish such offenses the same as larceny.<br /><br />
+HISTORY: 1962 Code SECTION 43-67; 1952 Code SECTION 43-67; 1942 Code SECTION 928; 1932 Code SECTION 928; Cr. P. &#39;22 SECTION 24; Cr. C. &#39;12 SECTION 26; Cr. C. &#39;02 SECTION 18; G. S. 828; R. S. 17; 1870 (14) 403.<br /><br />
+<div style="text-align: center;">ARTICLE 7</div>
+<div style="text-align: center;">Criminal Procedure Generally</div><br />
+<span style="font-weight: bold;"> SECTION 22-3-710.</span> Proceedings commenced on information.<br /><br />
+	All proceedings before magistrates in criminal cases shall be commenced on information under oath, plainly and substantially setting forth the offense charged, upon which, and only which, shall a warrant of arrest issue.<br /><br />
+HISTORY: 1962 Code SECTION 43-111; 1952 Code SECTION 43-111; 1942 Code SECTION 930; 1932 Code SECTION 930; Cr. P. &#39;22 SECTION 26; Cr. C. &#39;12 SECTION 28; Cr. C. &#39;02 SECTION 20; G. S. 830; R. S. 19; 1870 (14) 403.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-720.</span> Amendment of information.<br /><br />
+	The information may be amended at any time before trial.<br /><br />
+HISTORY: 1962 Code SECTION 43-112; 1952 Code SECTION 43-112; 1942 Code SECTION 930; 1932 Code SECTION 930; Cr. P. &#39;22 SECTION 26; Cr. C. &#39;12 SECTION 28; Cr. C. &#39;02 SECTION 20; G. S. 830; R. S. 19; 1870 (14) 403.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-730.</span> Proceedings are summary.<br /><br />
+	All proceedings before magistrates shall be summary or with only such delay as a fair and just examination of the case requires.<br /><br />
+HISTORY: 1962 Code SECTION 43-113; 1952 Code SECTION 43-113; 1942 Code SECTION 930; 1932 Code SECTION 930; Cr. P. &#39;22 SECTION 26; Cr. C. &#39;12 SECTION 28; Cr. C. &#39;02 SECTION 20; G. S. 830; R. S. 19; 1870 (14) 403.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-740.</span> Multiple offenses, one act.<br /><br />
+	Whenever a person be accused of committing an act which is susceptible of being designated as several different offenses the magistrate upon the trial of the person shall be required to elect which charge to prefer and a conviction or an acquittal upon such elected charge shall be a complete bar to further prosecution for such alleged act.<br /><br />
+HISTORY: 1962 Code SECTION 43-114; 1952 Code SECTION 43-114; 1942 Code SECTION 994; 1932 Code SECTION 994; 1928 (35) 1317.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-750.</span> Procedure against corporations for violating criminal laws.<br /><br />
+	Whenever any person shall make an affidavit before any magistrate that any corporation doing business in this State, whether incorporated under the laws of this State or not, has violated any of the criminal laws of the State the enforcement of which is within the jurisdiction of such magistrate, such magistrate shall issue a warrant against such offending corporation in which shall be stated the substance of the offense charged against such corporation, together with a notice to such corporation stating the time and place when and where such corporation shall appear for trial, and upon service of such warrants in the manner provided in Section 17-13-80 the magistrate shall obtain and have jurisdiction of such corporation.<br /><br />
+HISTORY: 1962 Code SECTION 43-123; 1952 Code SECTION 43-123; 1942 Code SECTION 989; 1932 Code SECTION 989; Civ. C. &#39;22 SECTION 4297; Civ. C. &#39;12 SECTION 2830; 1911 (27) 39.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-760.</span> Trial of corporation.<br /><br />
+	After the service the magistrate shall proceed with the trial as in criminal cases and if the defendant corporation is found guilty of the offense charged, whether by a verdict of a jury or by the findings of the magistrate in case a trial by jury be waived by the defendant, the magistrate shall pronounce sentence in conformity with the law in the case and the sentence may be enforced by an execution against the property of the defendant corporation in the same manner as now provided by law for enforcing the judgments of magistrates&#39; courts; provided, that nothing herein may be construed to prevent the right of appeal by either party to the Court of Common Pleas, as is now provided by law in criminal cases within the jurisdiction of magistrates.<br /><br />
+HISTORY: 1962 Code SECTION 43-124; 1952 Code SECTION 43-124; 1942 Code SECTION 990; 1932 Code SECTION 990; Civ. C. &#39;22 SECTION 4298; Civ. C. &#39;12 SECTION 2831; 1911 (27) 41; 1994 Act No. 520, SECTION 7.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-790.</span> Recording and acknowledgement of testimony by witnesses.<br /><br />
+	In the trial of any case before a magistrate the testimony of all witnesses must be taken down in writing and signed by the witnesses except when the defendant waives the taking and signing of the testimony.<br /><br />
+	In any case before any magistrate in which a stenographer takes down the testimony or in which the testimony is electronically recorded it need not be read over and signed by the witnesses.<br /><br />
+HISTORY: 1962 Code SECTION 43-122; 1952 Code SECTION 43-122; 1942 Code SECTION 932; 1936 (39) 1435; 1987 Act No. 49, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-800.</span> Suspension of imposition or execution of sentence in certain cases.<br /><br />
+	Notwithstanding the limitations of Sections 17-25-100 and 24-21-410, after a conviction or plea for an offense within a magistrate&#39;s jurisdiction the magistrate at the time of sentence may suspend the imposition or execution of a sentence upon terms and conditions the magistrate considers appropriate, including imposing or suspending up to one hundred hours of community service, except where the amount of community service is established otherwise. The magistrate shall not order community service in lieu of a sentence for offenses under Title 50, for offenses under Section 34-11-90, or for an offense of driving under suspension pursuant to Section 56-1-460 when the person&#39;s driver&#39;s license was suspended pursuant to the provisions of Section 56-5-2990. The magistrate must keep records on the community service hours ordered and served for each sentence. However, after a conviction or plea for drawing and uttering a fraudulent check or other instrument in violation of Section 34-11-60 within the magistrate&#39;s jurisdiction, at the time of sentence the magistrate may suspend the imposition or execution of a sentence only upon a showing of satisfactory proof of restitution. When a minimum sentence is provided for by statute, except in Section 34-11-90, the magistrate may not suspend that sentence below the minimum sentence provided, and penalties under Title 50 may not be suspended to an amount less than twenty-five dollars unless the minimum penalty is a fine of less than that amount. Nothing in this section may be construed to authorize or empower a magistrate to suspend a specific suspension of a right or privilege imposed under a statutory administrative penalty. Nothing in this section may be construed to give a magistrate the right to place a person on probation.<br /><br />
+HISTORY: 1962 Code SECTION 43-67.1; 1976 Act No. 699, SECTION 1; 1981 Act No. 178, Part II, SECTION 27; 1993 Act No. 183, SECTION 1.<br /><br />
+<div style="text-align: center;">ARTICLE 9</div>
+<div style="text-align: center;">Provisions Applicable to Both Civil and Criminal Cases</div><br />
+<span style="font-weight: bold;"> SECTION 22-3-910.</span> Jurisdiction when magistrate becomes incapacitated.<br /><br />
+	In the event a magistrate who has separate and exclusive territorial jurisdiction becomes incapacitated, any magistrate of an adjoining magisterial district within the same county may assume the jurisdiction of the incapacitated magistrate during such time as the incapacity continues.<br /><br />
+HISTORY: 1962 Code SECTION 43-131.1; 1973 (58) 265.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-920.</span> Change of venue.<br /><br />
+	Whenever in a case in the court of a magistrate (a) either party in a civil case, after giving to the adverse party two days&#39; notice that he intends to apply for a change of venue or (b) the prosecutor or accused in a criminal case shall file with the magistrate issuing the warrant or summons an affidavit to the effect that he does not believe he can obtain a fair trial before the magistrate and setting forth the grounds of such belief, the papers shall be turned over to the nearest magistrate not disqualified from hearing the cause in the county, who shall proceed to try the case as if he had issued the warrant or summons. But in counties in which magistrates have separate and exclusive territorial jurisdiction the change of venue shall be to another magistrate&#39;s district in the same county. One such transfer only shall be allowed each party in any case.<br /><br />
+HISTORY: 1962 Code SECTION 43-131; 1952 Code SECTION 43-131; 1942 Code SECTIONS 274, 946; 1932 Code SECTIONS 274, 946; Civ. P. &#39;22 SECTION 230; Cr. P. &#39;22 SECTION 42; Civ. P. &#39;12 SECTION 97; Cr. C. &#39;12 SECTION 42; Civ. P. &#39;02 SECTION 88; Cr. C. &#39;02 SECTION 33; R. S. 29; 1887 (19) 787; 1896 (22) 12, 13.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-930.</span> Attendance of witnesses; testimony.<br /><br />
+	Any magistrate, on the application of a party to a cause pending before the magistrate, must issue a summons citing any person whose testimony may be required in the cause and who resides in the county to appear before the magistrate at a certain time and place to give evidence. This summons must be served in a manner such that it is received by the witness at least one day before his attendance is required. If the witness fails or refuses to attend, the magistrate may issue a rule to show cause commanding the witness to be brought before the magistrate or, if any witness attending refuses to give evidence without good cause shown, the magistrate may punish the witness for contempt by imposition of a sentence up to the limits imposed on magistrates&#39; courts in Section 22-3-550.<br /><br />
+HISTORY: 1962 Code SECTION 43-132; 1952 Code SECTION 43-132; 1942 Code SECTION 3715; 1932 Code SECTION 3715; Civ. C. &#39;22 SECTION 2249; Civ. C. &#39;12 SECTION 1399; Civ. C. &#39;02 SECTION 991; G. S. 844; R. S. 887; 1839 (11) 16; 1998 Act No. 301, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-940.</span> Testimony of well-being.<br /><br />
+	In case it shall appear to the satisfaction of any magistrate that the attendance of any witness whose testimony may be required in any case before him cannot be had (a) by reason of (i) extreme age, (ii) sickness or infirmity or (iii) indispensable absence on public official duty, (b) in consequence of intended removal from the State before the cause can be otherwise ready for trial or (c) when such witness may be resident in another county or without the limits of the State, such magistrate may take the examination of such witness in writing or cause it to be done by another magistrate or other officer authorized by law to administer oaths, to be used in evidence on the trial of the case. But the parties to such cause shall have notice thereof in time to be present if they or either should choose to be present or notice may be given by either party to the other of interrogatories to be propounded to such witness, with four days&#39; time given the party notified to prepare cross-interrogatories, upon which interrogatories and cross-interrogatories, when preferred by the parties or either of them, the deposition shall be had. When such examination is so made by another, it shall be sealed up, with the title of the case endorsed, and conveyed by a disinterested person to the magistrate authorizing it or mailed and the postage prepaid.<br /><br />
+HISTORY: 1962 Code SECTION 43-133; 1952 Code SECTION 43-133; 1942 Code SECTION 3716; 1932 Code SECTION 3716; Civ. C. &#39;22 SECTION 2250; Civ. C. &#39;12 SECTION 1400; Civ. C. &#39;02 SECTION 992; G. S. 849; R. S. 891; 1883 (18) 313.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-950.</span> Contempt of court.<br /><br />
+	Every magistrate shall have power to enforce the observance of decorum in his court while holding the same and for that purpose he may punish for contempt any person who, in the presence of the court, shall offer an insult to the magistrate or a juror or who is wilfully guilty of an undue disturbance of the proceedings before the magistrate while sitting officially. A magistrate shall have the power to punish for contempt of court by imposition of sentences up to the limits imposed on magistrates&#39; courts in Section 22-3-550.<br /><br />
+HISTORY: 1962 Code SECTION 43-134; 1952 Code SECTION 43-134; 1942 Code SECTION 3713; 1932 Code SECTION 3713; Civ. C. &#39;22 SECTION 2247; Civ. C. &#39;12 SECTION 1397; Civ. C. &#39;02 SECTION 989; G. S. 844; R. S. 887; 1839 (11) 27; 1997 Act No. 64, SECTION 3.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-990.</span> New trials.<br /><br />
+	Any magistrate may grant a new trial in any case tried in his court for reasons for which new trials have usually been granted in the courts of law of this State. The granting of a new trial shall in no wise affect the right and duty of such magistrate to change the venue of a case as provided in Section 22-3-920.<br /><br />
+HISTORY: 1962 Code SECTION 43-142; 1952 Code SECTION 43-142; 1942 Code SECTION 274; 1932 Code SECTION 274; Civ. P. &#39;22 SECTION 230; Civ. P. &#39;12 SECTION 97; Civ. P. &#39;02 SECTION 88; 1876 (16) 60; 1887 (19) 787; 1896 (22) 13; 1908 (25) 1032.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1000.</span> Motion for new trial; appeal; exception.<br /><br />
+	(A) Except as provided in subsection (B), a motion for a new trial may not be heard unless made within ten days from the rendering of the judgment. The right of appeal from the judgment exists for thirty days after the rendering of the judgment. A magistrate&#39;s order of restitution may be appealed within thirty days. The order of restitution may be appealed separately from an appeal relating to the conviction.<br /><br />
+	(B) The provisions of subsection (A) do not apply to a motion for a new trial made under Chapters 37 and 40, Title 27. A motion for a new trial made under Chapters 37 and 40, Title 27 must be requested within five days from the rendering of the judgment.<br /><br />
+HISTORY: 1962 Code SECTION 43-143; 1952 Code SECTION 43-143; 1942 Code SECTION 274; 1932 Code SECTION 274; Civ. P. &#39;22 SECTION 230; Civ. P. &#39;12 SECTION 97; Civ. P. &#39;02 SECTION 88; 1887 (19) 787; 1896 (22) 13; 1989 Act No. 20, SECTION 2; 1999 Act No. 78, SECTION 3; 2014 Act No. 241 (S.176), SECTION 1, eff June 6, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 241, SECTION 1, inserted the subsection designator (A); in subsection (A), inserted the reference to subsection (B), in the first sentence, and deleted &quot;, if any,&quot; following &quot;from an appeal&quot;, at the end of the last sentence; and added subsection (B).<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1010.</span> Itemized costs.<br /><br />
+	Any person, before paying any costs in any magistrate&#39;s court, may demand of the magistrate an itemized account of such costs. Such account shall be receipted by the magistrate at the time the costs are paid and no person shall be compelled to pay any costs in any magistrate&#39;s court unless the magistrate shall furnish to such person an itemized account.<br /><br />
+HISTORY: 1962 Code SECTION 43-144; 1952 Code SECTION 43-144; 1942 Code SECTION 3720; 1932 Code SECTION 3720; Civ. C. &#39;22 SECTION 2254; Civ. C. &#39;12 SECTION 1404; Civ. C. &#39;02 SECTION 996; G. S. 854; R. S. 894; 1875 (15) 864.<br /><br />
+<div style="text-align: center;">ARTICLE 11</div>
+<div style="text-align: center;">Proceedings When Title to Real Estate is Involved</div><br />
+<span style="font-weight: bold;"> SECTION 22-3-1110.</span> Questionable title; defendant&#39;s answer.<br /><br />
+	When the title to real property shall come in question in an action brought in a court of a magistrate the defendant may, either with or without other matter of defense, set forth in his answer any matter showing that such title will come in question. Such answer shall be in writing, signed by the defendant or his attorney, and delivered to the magistrate. A copy of such answer shall be served on the plaintiff or his attorney.<br /><br />
+HISTORY: 1962 Code SECTION 43-151; 1952 Code SECTION 43-151; 1942 Code SECTION 265; 1932 Code SECTION 265; Civ. P. &#39;22 SECTION 221; Civ. P. &#39;12 SECTION 88; Civ. P. &#39;02 SECTION 79; 1870 (14) 82; 1972 (57) 2452.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1120.</span> Title to real property; written undertaking by defendant.<br /><br />
+	At the time of answering the defendant shall deliver to the magistrate a written undertaking, executed by at least one sufficient surety and approved by the magistrate, to the effect that if the plaintiff shall within twenty days thereafter deposit with the magistrate a summons and complaint in an action in the circuit court for the same cause the defendant will within twenty days after such deposit give an admission in writing to the service thereof.<br /><br />
+	When the defendant was arrested in the action before the magistrate the undertaking shall further provide that he will at all times render himself amenable to the process of the court during the pending of the action and to such as may be issued to enforce the judgment therein. In case of failure to comply with the undertaking the surety shall be liable for not exceeding one hundred dollars.<br /><br />
+HISTORY: 1962 Code SECTION 43-152; 1952 Code SECTION 43-152; 1942 Code SECTION 266; 1932 Code SECTION 266; Civ. P. &#39;22 SECTION 222; Civ. P. &#39;12 SECTION 89; Civ. P. &#39;02 SECTION 80; 1870 (14) 83.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1130.</span> Action discontinued upon delivery of undertaking; costs.<br /><br />
+	Upon the delivery of the undertaking to the magistrate the action before him shall be discontinued and each party shall pay his own costs. The costs so paid by either party shall be allowed to him if he recover costs in the action to be brought for the same cause in the circuit court. If no such action be brought within thirty days after the delivery of the undertaking the defendant&#39;s costs before the magistrate may be recovered of the plaintiff.<br /><br />
+HISTORY: 1962 Code SECTION 43-153; 1952 Code SECTION 43-153; 1942 Code SECTION 267; 1932 Code SECTION 267; Civ. P. &#39;22 SECTION 223; Civ. P. &#39;12 SECTION 90; Civ. P. &#39;02 SECTION 81; 1870 (14) 84.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1140.</span> Procedure if undertaking not delivered.<br /><br />
+	If such an undertaking be not delivered to the magistrate he shall have jurisdiction of the cause and shall proceed therein and the defendant shall be precluded, in his defense, from drawing the title in question.<br /><br />
+HISTORY: 1962 Code SECTION 43-154; 1952 Code SECTION 43-154; 1942 Code SECTION 268; 1932 Code SECTION 268; Civ. P. &#39;22 SECTION 224; Civ. P. &#39;12 SECTION 91; Civ. P. &#39;02 SECTION 82; 1870 (14) 85.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1150.</span> Plaintiff, issue with title.<br /><br />
+	If, however, it appear on the trial from the plaintiff&#39;s own showing that the title to real property is in question and such title shall be disputed by the defendant the magistrate shall dismiss the action and render judgment against the plaintiff for the costs.<br /><br />
+HISTORY: 1962 Code SECTION 43-155; 1952 Code SECTION 43-155; 1942 Code SECTION 269; 1932 Code SECTION 269; Civ. P. &#39;22 SECTION 225; Civ. P. &#39;12 SECTION 92; Civ. P. &#39;02 SECTION 83; 1870 (14) 86.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1160.</span> Title, questionable, causes of action.<br /><br />
+	If, in an action before a magistrate, the plaintiff have several causes of action, to one of which the defense of title to real property shall be interposed, and as to such cause the defendant shall deliver an answer and undertaking, as provided in Sections 22-3-1110 and 22-3-1120, the magistrate shall discontinue the proceedings as to that cause and the plaintiff may commence another action therefor in the circuit court. As to the other causes of action the magistrate may continue his proceedings.<br /><br />
+HISTORY: 1962 Code SECTION 43-156; 1952 Code SECTION 43-156; 1942 Code SECTION 272; 1932 Code SECTION 272; Civ. P. &#39;22 SECTION 228; Civ. P. &#39;12 SECTION 95; Civ. P. &#39;02 SECTION 86; 1870 (14) 89.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1170.</span> Answer and undertaking, discontinuance, new action.<br /><br />
+	When a suit before a magistrate shall be discontinued by the delivery of an answer and undertaking, as provided in Sections 22-3-1110 to 22-3-1130, the plaintiff may prosecute an action for the same cause in the circuit court.<br /><br />
+HISTORY: 1962 Code SECTION 43-157; 1952 Code SECTION 43-157; 1942 Code SECTION 270; 1932 Code SECTION 270; Civ. P. &#39;22 SECTION 226; Civ. P. &#39;12 SECTION 93; Civ. P. &#39;02 SECTION 84; 1870 (14) 87; 1972 (57) 2453.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1180.</span> Circuit court, costs.<br /><br />
+	If the judgment in the circuit court be for the plaintiff, he shall recover costs. If it be for the defendant, he shall recover costs, except that upon a verdict he shall pay costs to the plaintiff unless the judge certify that the title to real property came in question on the trial.<br /><br />
+HISTORY: 1962 Code SECTION 43-158; 1952 Code SECTION 43-158; 1942 Code SECTION 271; 1932 Code SECTION 271; Civ. P. &#39;22 SECTION 227; Civ. P. &#39;12 SECTION 94; Civ. P. &#39;02 SECTION 85; 1870 (14) 88.<br /><br />
+<div style="text-align: center;">ARTICLE 13</div>
+<div style="text-align: center;">Proceedings in Claim and Delivery</div><br />
+<span style="font-weight: bold;"> SECTION 22-3-1310.</span> Property, claim and delivery action.<br /><br />
+	The plaintiff in an action of claim and delivery before a magistrate may at the time of issuing the summons, but not afterwards, claim the immediate delivery of such property as herein provided.<br /><br />
+HISTORY: 1962 Code SECTION 43-171; 1952 Code SECTION 43-171; 1942 Code SECTION 257; 1932 Code SECTION 257; Civ. P. &#39;22 SECTION 213; Civ. P. &#39;12 SECTION 80; Civ. P. &#39;02 SECTION 71; 1870 (14) 74; 1879 (17) 28; Const. Art. 5, SECTIONS 20, 21.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1320.</span> Claim and delivery action, plaintiff affidavit.<br /><br />
+	Before any process shall be issued in an action to recover the possession of personal property, the plaintiff, his agent or attorney, shall make proof by affidavit, showing:<br /><br />
+	(1) That the plaintiff is the owner or is entitled to immediate possession of the property claimed, particularly describing such property;<br /><br />
+	(2) That such property is wrongfully withheld or detained by the defendant;<br /><br />
+	(3) The cause of such detention or withholding thereof, according to the best knowledge, information and belief of the person making the affidavit;<br /><br />
+	(4) That such personal property has not been taken for any tax, fine or assessment, pursuant to statute, or seized by virtue of an execution or attachment against the property of the plaintiff or, if so seized, that it is exempt from such seizure by statute; and<br /><br />
+	(5) The actual value of such personal property.<br /><br />
+HISTORY: 1962 Code SECTION 43-172; 1952 Code SECTION 43-172; 1942 Code SECTION 257; 1932 Code SECTION 257; Civ. P. &#39;22 SECTION 213; Civ. P. &#39;12 SECTION 80; Civ. P. &#39;02 SECTION 71; 1870 (14) 74; 1879 (17) 28; Const. Art. 5, SECTIONS 20, 21.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1330.</span> Claim and delivery, plaintiff&#39;s action, summons notice and seizure of property.<br /><br />
+	(a) On receipt of such affidavit and an undertaking in writing, executed by one or more sufficient sureties, to be approved by the magistrate before whom such action is commenced, to the effect that they are bound in double the value of such property as stated in such affidavit, for the prosecution of the action, for the return of the property to the defendant, if return thereof be adjudged, and for the payment to him of such sum as may, for any cause, be recovered against the plaintiff, the magistrate shall at the same time issue both a summons and a notice of right to preseizure hearing, with a copy of the undertaking and plaintiff&#39;s affidavit, directed to the defendant and to be served by the constable.<br /><br />
+	(b) The notice of right to a preseizure hearing so issued and served shall notify the defendant that within five days from service thereof, he may demand such hearing and present such evidence touching upon the probable validity of the plaintiff&#39;s claim for immediate possession and defendant&#39;s right to continue in possession, but if the defendant fails to make timely demand for preseizure hearing, the constable will be directed to take the property described in the affidavit.<br /><br />
+	(c) The summons so issued and served will require the defendant to appear before the magistrate at a time and place to be therein specified, not more than twenty days from the date thereof, to answer the complaint of the plaintiff. The summons shall contain a notice to the defendant that in case he shall fail to appear at the time and place therein mentioned the plaintiff will have judgment for the possession of the property described in the affidavit with the costs and disbursements of the action.<br /><br />
+	(d) If the defendant fails to demand a preseizure hearing, or, if after such hearing the magistrate shall find that plaintiff&#39;s claim for immediate possession should be allowed, then the magistrate shall endorse upon the affidavit a direction to any constable of the county in which the magistrate shall reside, requiring such constable to take the property described therein from the defendant and keep it, to be disposed of according to law. For the endorsement in such affidavit the magistrate shall receive an additional fee of twenty-five cents, which shall be included in the costs of the suit.<br /><br />
+HISTORY: 1962 Code SECTION 43-173; 1952 Code SECTION 43-173; 1942 Code SECTIONS 257, 263; 1932 Code SECTIONS 257, 263; Civ. P. &#39;22 SECTIONS 213, 1219; Civ. P. &#39;12 SECTIONS 80, 186; Civ. P. &#39;02 SECTIONS 71, 177; 1870 (14) 74, 80; 1879 (17) 28; Const. Art. 5, SECTIONS 20, 21; 1972 (57) 3080.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1340.</span> Sureties in bond or undertaking, defendant&#39;s exception.<br /><br />
+	The defendant may, at any time after such service and at least two days before the return day of the summons, serve upon the plaintiff or upon the constable who made such service a notice in writing that he excepts to the sureties in the bond or undertaking and if he fail to do so all objection thereto shall be waived. If such notice be served, the sureties shall justify or the plaintiff shall give new sureties on the return day of such summons, who shall then appear and justify, or the magistrate shall order the property delivered to the defendant and shall also render judgment for defendant&#39;s costs and disbursements.<br /><br />
+HISTORY: 1962 Code SECTION 43-178; 1952 Code SECTION 43-178; 1942 Code SECTION 257; 1932 Code SECTION 257; Civ. P. &#39;22 SECTION 213; Civ. P. &#39;12 SECTION 80; Civ. P. &#39;02 SECTION 71; 1870 (14) 74; 1879 (17) 28; Const. Art. 5, SECTIONS 20, 21.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1350.</span> Preseizure hearing; claim for immediate possession; action tried as others.<br /><br />
+	The purpose of the preseizure hearing is to protect the defendant&#39;s use and possession of property from arbitrary encroachment, and to prevent unfair or mistaken deprivations of property. If the magistrate shall, after conducting the hearing, find that the plaintiff&#39;s claim for immediate possession is probably valid and the defendant has no overriding right to continue in possession of the property, then the magistrate may allow the claim for immediate possession and endorse the affidavit accordingly.<br /><br />
+	Whether the claim for immediate possession is allowed or not, the action commenced by the service of the summons shall be tried in all respects as other actions are tried in the magistrates&#39; courts.<br /><br />
+HISTORY: 1962 Code SECTION 43-181; 1952 Code SECTION 43-181; 1942 Code SECTION 263; 1932 Code SECTION 263; Civ. P. &#39;22 SECTION 219; Civ. P. &#39;12 SECTION 86; Civ. P. &#39;02 SECTION 77; 1870 (14) 80; 1972 (57) 3080.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1360.</span> Notice and opportunity for preseizure hearing required; waiver.<br /><br />
+	No property shall be seized under the provisions of this article unless five days&#39; notice and an opportunity to be heard have been afforded the party in possession as herein provided; provided, however, any person in possession of the personal property may waive the right to a preseizure hearing, if the waiver is conspicuously displayed in the contract and includes the wording &quot;waiver of hearing prior to immediate possession.&quot; In order for the contractual waiver or any other waiver to be effective, the plaintiff by affidavit must show that the defendant has in writing by contract or separate written instrument voluntarily, intelligently and knowingly waived his right to a hearing prior to the repossession of such personal property. The magistrate may order immediate delivery of the property to the plaintiff upon receipt of such affidavit.<br /><br />
+HISTORY: 1962 Code SECTION 43-185; 1972 (57) 3080.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1370.</span> Order restraining defendant from damaging, concealing or removing property.<br /><br />
+	The magistrate shall concurrently have served on the defendant, when immediate possession of the subject property is not being taken, an order restraining the defendant from damaging, concealing or removing such property. Upon proper showing that such order has been violated, the defendant shall be subject to a fine not to exceed one hundred dollars or imprisonment for not more than thirty days.<br /><br />
+HISTORY: 1962 Code SECTION 43-186; 1972 (57) 3080.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1380.</span> Determination upon affidavit showing danger of destruction or concealment.<br /><br />
+	Upon a showing unto the magistrate supported by an affidavit containing facts sufficient to show that it is probable to believe that the property at issue is in immediate danger of being destroyed or concealed by the possessor of such property and particularly describing such property and its location, the magistrate shall make a determination as to whether or not the property may be immediately seized. Provided, that the holding of a preseizure hearing by the magistrate shall not be a condition precedent to such determination.<br /><br />
+HISTORY: 1962 Code SECTION 43-187; 1972 (57) 3080.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1390.</span> Service of copy of affidavit of waiver or probability of damage or concealment.<br /><br />
+	If either an affidavit showing that the defendant has waived his right to a preseizure hearing or an affidavit of probability of damage or concealment is filed, under the provisions of this article, a copy thereof shall be served on the defendant in lieu of serving him with notice of right to preseizure hearing.<br /><br />
+HISTORY: 1962 Code SECTION 43-188; 1972 (57) 3080.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1400.</span> Procedure when defendant cannot be found.<br /><br />
+	If it shall appear by the return of a constable that he has taken the property described in the plaintiff&#39;s affidavit and that the defendant cannot be found and has no last place of abode in the county and that no agent of defendant could be found on whom service could be made, the magistrate may proceed with the cause in the same manner as though there had been a personal service.<br /><br />
+HISTORY: 1962 Code SECTION 43-174; 1952 Code SECTION 43-174; 1942 Code SECTION 263; 1932 Code SECTION 263; Civ. P. &#39;22 SECTION 219; Civ. P. &#39;12 SECTION 86; Civ. P. &#39;02 SECTION 77; 1870 (14) 80.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1410.</span> Service of copy of affidavit, summons and notice; taking of property by constable.<br /><br />
+	The constable to whom the affidavit, endorsement, notice of preseizure hearing and summons shall be delivered, shall, without delay, serve upon the defendant a copy of the affidavit, notice and summons, by delivering them to him personally, but, if he cannot be found, to the agent of the defendant in whose possession the property shall be found and, if neither can be found, by leaving such copies at his place of business or the last or usual place of abode of the defendant with some person of suitable age and discretion. He shall forthwith make a return of his proceedings thereon and the manner of serving the documents to the magistrate who issued the summons. Upon the magistrate endorsing upon the affidavit a direction requiring the constable to take the property, the constable to whom the affidavit and endorsement is delivered shall forthwith take the property described in the affidavit, if he can find it in the county, and shall keep it in his custody.<br /><br />
+HISTORY: 1962 Code SECTION 43-175; 1952 Code SECTION 43-175; 1942 Code SECTION 257; 1932 Code SECTION 257; Civ. P. &#39;22 SECTION 213; Civ. P. &#39;12 SECTION 80; Civ. P. &#39;02 SECTION 71; 1870 (14) 74; 1879 (17) 28; Const. Art. 5, SECTIONS 20, 21; 1972 (57) 3080.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1420.</span> Taking property concealed in building or enclosure.<br /><br />
+	If the property, or any part thereof, be concealed in a building or enclosure the constable shall publicly demand its delivery. If it be not delivered he shall cause the building or enclosure to be broken open and take the property into his possession. If necessary he may call to his aid the power of his county.<br /><br />
+HISTORY: 1962 Code SECTION 43-176; 1952 Code SECTION 43-176; 1942 Code SECTION 261; 1932 Code SECTION 261; Civ. P. &#39;22 SECTION 217; Civ. P. &#39;12 SECTION 84; Civ. P. &#39;02 SECTION 75; 1870 (14) 78.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1430.</span> Care of property taken by constable.<br /><br />
+	When a constable shall have taken property as in this article provided, he shall keep it in a secure place and deliver it to the party entitled thereto, upon receiving his lawful fee for taking the property and his necessary expenses for keeping it.<br /><br />
+HISTORY: 1962 Code SECTION 43-177; 1952 Code SECTION 43-177; 1942 Code SECTION 262; 1932 Code SECTION 262; Civ. P. &#39;22 SECTION 218; Civ. P. &#39;12 SECTION 85; Civ. P. &#39;02 SECTION 76; 1870 (14) 79.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1440.</span> Return of property to defendant.<br /><br />
+	At any time before the return day of the summons the defendant may, if he has not excepted to the plaintiff&#39;s sureties, require the return of the property to him upon giving to the plaintiff and filing with the magistrate a written undertaking, with one or more sureties who shall justify before the magistrate on the return day of the summons to the effect that they are bound in double the value of the property, as stated in plaintiff&#39;s affidavit, for the delivery thereof to the plaintiff, if such delivery be adjudged, and for the payment to him of such sum as may for any cause be recovered against the defendant. If such return be not required before the return day of the summons the property shall be delivered to the plaintiff.<br /><br />
+HISTORY: 1962 Code SECTION 43-179; 1952 Code SECTION 43-179; 1942 Code SECTION 257; 1932 Code SECTION 257; Civ. P. &#39;22 SECTION 213; Civ. P. &#39;12 SECTION 80; Civ. P. &#39;02 SECTION 71; 1870 (14) 74; 1879 (17) 28; Const. Art. 5, SECTIONS 20, 21.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1450.</span> Claim to taken property by third person.<br /><br />
+	If the property taken be claimed by any other person than the defendant or his agent and such person shall make affidavit to his title thereto and right to the possession thereof, stating the grounds of such right and title, and serve such affidavit upon the constable, the constable shall not be bound to keep the property or deliver it to the plaintiff unless the plaintiff on demand of him or his agent shall indemnify the constable against such claim by an undertaking executed by two sufficient sureties, accompanied by their affidavits that they are each worth double the value of the property as specified in the affidavit of the plaintiff and are freeholders and householders of the county. No claim to such property by any other person than the defendant or his agent shall be valid against the constable unless made as aforesaid. And notwithstanding such claim, when so made, he may retain the property a reasonable time to demand such indemnity.<br /><br />
+HISTORY: 1962 Code SECTION 43-180; 1952 Code SECTION 43-180; 1942 Code SECTION 263; 1932 Code SECTION 263; Civ. P. &#39;22 SECTION 219; Civ. P. &#39;12 SECTION 86; Civ. P. &#39;02 SECTION 77; 1870 (14) 80.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1460.</span> Judgment in actions for claim and delivery.<br /><br />
+	The judgment for the plaintiff may be for the possession, the recovery of the possession or the value thereof in case a delivery cannot be had and for damages for the detention. If the property has been delivered to the plaintiff and the defendant claim a return thereof, judgment for the defendant may be for a return of the property or the value thereof in case a return cannot be had and damages for taking and withholding the property.<br /><br />
+HISTORY: 1962 Code SECTION 43-182; 1952 Code SECTION 43-182; 1942 Code SECTION 263; 1932 Code SECTION 263; Civ. P. &#39;22 SECTION 219; Civ. P. &#39;12 SECTION 86; Civ. P. &#39;02 SECTION 77; 1870 (14) 80.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1470.</span> Execution on judgment.<br /><br />
+	An execution shall be issued on any such judgment and if the judgment be for the delivery of the possession of personal property it shall require the officer to deliver the possession of such property, particularly describing it, to the party entitled thereto and may, at the same time, require the officer to satisfy any costs or damages recovered by the judgment out of the personal property of the party against whom it was rendered, to be specified therein, if a delivery thereof cannot be had. The execution shall be returnable within sixty days after its receipt by the officer to the magistrate who issued it.<br /><br />
+HISTORY: 1962 Code SECTION 43-183; 1952 Code SECTION 43-183; 1942 Code SECTION 263; 1932 Code SECTION 263; Civ. P. &#39;22 SECTION 219; Civ. P. &#39;12 SECTION 86; Civ. P. &#39;02 SECTION 77; 1870 (14) 80.<br /><br />
+<span style="font-weight: bold;"> SECTION 22-3-1480.</span> Judgment when property not delivered to plaintiff or when defendant claims return.<br /><br />
+	In all actions for the recovery of the possession of personal property, as herein provided, if the property shall not have been delivered to the plaintiff or the defendant by answer shall claim a return thereof, the magistrate or jury shall assess the value thereof and the injury sustained by the prevailing party by reason of the taking or detention thereof and the magistrate shall render judgment accordingly, with costs and disbursements.<br /><br />
+HISTORY: 1962 Code SECTION 43-184; 1952 Code SECTION 43-184; 1942 Code SECTION 263; 1932 Code SECTION 263; Civ. P. &#39;22 SECTION 219; Civ. P. &#39;12 SECTION 86; Civ. P. &#39;02 SECTION 77; 1870 (14) 80.<br /><br />
+
+</div>
+
+
+					</div>		 <!-- mainwidepanel -->
+					
+				</div>		 <!-- pagebody -->
+				
+				<div id="footer" class="nodisplay" style="height: 30px;" onContextMenu="return false;">
+			<div id="footerdiv" style="margin:0;">
+				South Carolina Legislative Services Agency * 223 Blatt Building * 1105 Pendleton Street * Columbia, SC 29201<!-- * 803-212-4420--><br>
+				
+								<a href="/disclaimer.php">Disclaimer</a> * <a href="/policies.php">Policies</a> * <a href="/credits.php">Photo Credits</a> * <a href="/contact.php">Contact Us</a>
+							</div>
+		</div>
+		<div id="printfooter" class="printdisplay serifNormal" align=center style="font-size: 8pt;">
+			<br>
+			<br>
+			<hr>
+			Legislative Services Agency
+			<br>
+			h t t p : / / w w w . s c s t a t e h o u s e . g o v
+		</div>
+	
+		</div>	<!-- container or main in mobile page-->
+</body>
+</html>
+

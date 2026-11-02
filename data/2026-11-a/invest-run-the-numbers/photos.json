@@ -1,0 +1,75 @@
+{
+ "photos": [
+  {
+   "slug": "invest-run-the-numbers",
+   "file": "images/2026-11-a/invest-run-the-numbers/carolina-forest-houses-from-above.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-run-the-numbers/carolina-forest-houses-from-above-600w.webp",
+    "1200": "images/2026-11-a/invest-run-the-numbers/carolina-forest-houses-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Streets of houses in The Parks of Carolina Forest, NOAA aerial, January 2026",
+   "what": "Three curving streets of one- and two-story houses with short driveways and small fenced back yards, in phases 3 and 4 of The Parks of Carolina Forest, seen straight down from above on January 12, 2026. A four-lane road runs along the top behind a strip of pine woods; woods and a pond edge along the bottom. Lawns are brown in January. Cars are too small to read; no person can be recognized.",
+   "caption": "Houses in The Parks of Carolina Forest, seen from above.",
+   "alt": "Rows of similar houses with gray roofs, short driveways and small fenced back yards along curving streets in Carolina Forest, seen from above",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "The Parks of Carolina Forest, Carolina Forest"
+   },
+   "source": "https://noaa-eri-pds.s3.amazonaws.com/index.html#2026_Pre_Event/EC2601a_OB_N_RGB/",
+   "source_name": "NOAA Emergency Response Imagery",
+   "author": "NOAA National Geodetic Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+   "provenance": "U.S. government aerial photo: NOAA National Geodetic Survey (NGS), Remote Sensing Division, Emergency Response Imagery, 2026 pre-event coastal collection, East Coast group EC2601a, flown 2026-01-12 (the same group as the record for /submarkets/carolina-forest/the-farm/). One map tile, EC2601a_OB_N_C0785315w334545n.tif (4707 x 4707 px, WGS 84, 2.698e-6 degrees a pixel, top left -78.8875987, 33.7625987), downloaded 2026-11-02 from the public S3 bucket noaa-eri-pds.",
+   "license_note": "17 U.S.C. 105(a): \"Copyright protection under this title is not available for any work of the United States Government\". NOAA's terms on the Registry of Open Data (https://registry.opendata.aws/noaa-eri/): \"NOAA data disseminated through NODD are open to the public and can be used as desired.\" NOAA requests attribution for unaltered data and no implied endorsement. So: credit NOAA, say what Chapter3 changed (changes), never suggest NOAA endorses Chapter3.",
+   "terms_urls": [
+    "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+    "https://registry.opendata.aws/noaa-eri/"
+   ],
+   "taken": "2026-01-12",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: NOAA National Geodetic Survey, public domain.",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty cut a 1600 x 1200 px view from one NOAA map tile, raised the contrast and color slightly, and resized it",
+   "annotation_sources": {
+    "where": "Horry County parcels layer 24 at four points inside the frame (-78.877787 33.753057; -78.879136 33.753461; -78.876438 33.752652; -78.878596 33.752517): legal descriptions 'PARKS OF CAROLINA FOREST PH 4; LOT 415', 'PH 4; LOT 444', 'PH 3; LOT 320', 'PH 3; LOT 341', land use 101, tax district 800, read 2026-11-02. https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24"
+   },
+   "source_files": [
+    "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0785315w334545n.tif"
+   ],
+   "frame": {
+    "bbox_wgs84": [
+     -78.880044,
+     33.751536,
+     -78.875727,
+     33.754774
+    ],
+    "ground_m_per_px_1200w": 0.33
+   },
+   "original_size": "1600x1200 cut from the tile at pixels 2800-4400 x 2900-4100",
+   "subject_check": "Looked at full size by the writer on 2026-11-02. The frame shows streets of houses with fenced back yards in The Parks of Carolina Forest (ZIP 29579 area, Carolina Forest). It does not show which houses are rentals, for sale, or have 3 bedrooms, so the caption says only that these are houses in Carolina Forest, the area of the page's example sheet. No person, plate, sign or house number is legible.",
+   "method": "Python PIL: crop, ImageEnhance Contrast 1.06 and Color 1.08, PNG; then Blog-Brain tools/photos.js makeVariants. No labels drawn. Metadata not embedded (exiftool is not installed in this session; see batches/2026-11-a/invest-run-the-numbers/NEEDS.md).",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-a/invest-run-the-numbers/carolina-forest-houses-from-above-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-a/invest-run-the-numbers/carolina-forest-houses-from-above-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-a/invest-run-the-numbers/carolina-forest-houses-from-above-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "crop_note": "1x1, 4x3 and 16x9 crops cut from the center of the 1600 x 1200 source with tools/photos.js makeCrops, for Article.image and the share image"
+  }
+ ]
+}

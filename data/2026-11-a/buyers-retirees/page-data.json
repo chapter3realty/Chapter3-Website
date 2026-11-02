@@ -1,0 +1,219 @@
+{
+ "communities": [
+  {
+   "name": "Del Webb at Grande Dunes",
+   "url": "/buyers/55-plus-communities/del-webb-grande-dunes/",
+   "where": "Myrtle Beach",
+   "fee": "about $400 a month (house), $445 (villa)",
+   "built": "2018 to 2026",
+   "guests": "Under 19: up to 90 nights in any 12 months",
+   "full_time": 746,
+   "homes_checked": 871,
+   "full_time_share": 0.856,
+   "evacuation_zone": "none",
+   "zone_homes": 813,
+   "hospital": {
+    "name": "Grand Strand Medical Center",
+    "minutes": 6,
+    "kind": "hospital"
+   },
+   "for_sale": "about 25",
+   "lon": -78.842661,
+   "lat": 33.749305
+  },
+  {
+   "name": "Del Webb North Myrtle Beach",
+   "url": "/buyers/55-plus-communities/del-webb-north-myrtle-beach/",
+   "where": "North Myrtle Beach",
+   "fee": "about $315 a month",
+   "built": "2022 to now",
+   "guests": "Not published",
+   "full_time": 340,
+   "homes_checked": 408,
+   "full_time_share": 0.833,
+   "evacuation_zone": "none",
+   "zone_homes": 408,
+   "hospital": {
+    "name": "McLeod Health Seacoast",
+    "minutes": 10,
+    "kind": "hospital",
+    "er": {
+     "name": "Grand Strand Health's North Strand ER",
+     "minutes": 5,
+     "lat": 33.823215,
+     "lon": -78.68749
+    }
+   },
+   "for_sale": "2",
+   "lon": -78.700908,
+   "lat": 33.821769
+  },
+  {
+   "name": "Myrtle Trace",
+   "url": "/buyers/55-plus-communities/myrtle-trace/",
+   "where": "Conway",
+   "fee": "$95 a month",
+   "built": "mostly 1980s and 1990s",
+   "guests": "No age limit for others in the home",
+   "full_time": 447,
+   "homes_checked": 515,
+   "full_time_share": 0.868,
+   "evacuation_zone": "none",
+   "zone_homes": 513,
+   "hospital": {
+    "name": "Conway Medical Center",
+    "minutes": 3,
+    "kind": "hospital"
+   },
+   "for_sale": "7",
+   "lon": -78.996618,
+   "lat": 33.778502
+  },
+  {
+   "name": "Seasons at Prince Creek West",
+   "url": "/buyers/55-plus-communities/seasons-at-prince-creek-west/",
+   "where": "near Murrells Inlet",
+   "fee": "about $340 a month",
+   "built": "2006 to 2016",
+   "guests": "Under 18: visits up to 60 days a year",
+   "full_time": 414,
+   "homes_checked": 444,
+   "full_time_share": 0.932,
+   "evacuation_zone": "C",
+   "zone_homes": 444,
+   "hospital": {
+    "name": "Tidelands Waccamaw Community Hospital",
+    "minutes": 8,
+    "kind": "hospital"
+   },
+   "for_sale": "4",
+   "lon": -79.07094,
+   "lat": 33.586369
+  }
+ ],
+ "county_full_time_share_houses": 0.756,
+ "one_level": {
+  "total": 2086,
+  "under_400k": 1383,
+  "towns": [
+   {
+    "town": "Conway",
+    "total": 475,
+    "under_400k": 386
+   },
+   {
+    "town": "Myrtle Beach",
+    "total": 472,
+    "under_400k": 230
+   },
+   {
+    "town": "Longs",
+    "total": 240,
+    "under_400k": 201
+   },
+   {
+    "town": "Little River",
+    "total": 117,
+    "under_400k": 69
+   },
+   {
+    "town": "North Myrtle Beach",
+    "total": 76,
+    "under_400k": 15
+   },
+   {
+    "town": "Murrells Inlet",
+    "total": 74,
+    "under_400k": 22
+   },
+   {
+    "town": "Surfside Beach",
+    "total": 42,
+    "under_400k": 14
+   }
+  ],
+  "pulled": "2026-11-02T01:01:47.371865Z"
+ },
+ "examples": {
+  "property_tax": {
+   "home_value": 400000,
+   "district": "100 (unincorporated Horry County, county fire district)",
+   "mills_all": 201.0,
+   "mills_legal_residence": 91.9,
+   "legal_residence_under_65": 1470.4,
+   "legal_residence_65_homestead": 1286.6,
+   "second_home_or_rental": 4824.0,
+   "stormwater_fee": 89.4,
+   "homestead_saves": 183.8,
+   "second_home_vs_65_ratio": 3.75
+  },
+  "income_tax_2026": [
+   {
+    "name": "Married, both 66: Social Security and one private pension",
+    "joint": true,
+    "people": [
+     {
+      "age": 66,
+      "retirement": 30000
+     },
+     {
+      "age": 66
+     }
+    ],
+    "federal_agi": 41100,
+    "social_security": 40000,
+    "federally_taxable_ss": 11100,
+    "sc_income_before_deductions": 30000,
+    "retirement_deduction": 10000,
+    "age_65_deduction": 20000,
+    "military_deduction": 0,
+    "sciad": 30000,
+    "sc_taxable_income": 0,
+    "sc_income_tax_2026": 0.0
+   },
+   {
+    "name": "Single, 67: a New York public pension and Social Security",
+    "joint": false,
+    "people": [
+     {
+      "age": 67,
+      "retirement": 50000
+     }
+    ],
+    "federal_agi": 70400,
+    "social_security": 24000,
+    "federally_taxable_ss": 20400,
+    "sc_income_before_deductions": 50000,
+    "retirement_deduction": 10000,
+    "age_65_deduction": 5000,
+    "military_deduction": 0,
+    "sciad": 6710,
+    "sc_taxable_income": 28290,
+    "sc_income_tax_2026": 562.97
+   },
+   {
+    "name": "Married, 60 and 58: military retirement pay",
+    "joint": true,
+    "people": [
+     {
+      "age": 60,
+      "military": 36000
+     },
+     {
+      "age": 58
+     }
+    ],
+    "federal_agi": 36000,
+    "social_security": 0,
+    "federally_taxable_ss": 0,
+    "sc_income_before_deductions": 36000,
+    "retirement_deduction": 0,
+    "age_65_deduction": 0,
+    "military_deduction": 36000,
+    "sciad": 30000,
+    "sc_taxable_income": 0,
+    "sc_income_tax_2026": 0.0
+   }
+  ]
+ }
+}

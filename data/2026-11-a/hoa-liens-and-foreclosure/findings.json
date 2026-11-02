@@ -1,0 +1,87 @@
+{
+ "mie": {
+  "source": "https://www.horrycountysc.gov/departments/master-in-equity/principal-sales/",
+  "read": "2026-11-01",
+  "sale_date": "Monday, November 2, 2026",
+  "cases": 19,
+  "hoa_cases": 4,
+  "mortgage_cases": 15,
+  "hoa_land_use": [
+   "107",
+   "107",
+   "107",
+   "110"
+  ],
+  "hoa_towns": [
+   "Conway",
+   "Myrtle Beach",
+   "Myrtle Beach",
+   "North Myrtle Beach"
+  ],
+  "hoa_judgments": [
+   11545.0,
+   14988.49,
+   24205.07,
+   36354.46
+  ],
+  "hoa_judgment_min": 11545.0,
+  "hoa_judgment_max": 36354.46,
+  "hoa_judgment_pct_of_county_value": [
+   4.5,
+   9.1,
+   9.8,
+   10.3
+  ],
+  "hoa_county_values": [
+   164900.0,
+   236000.0,
+   259425.0,
+   370000.0
+  ],
+  "hoa_deficiency_demanded": 0,
+  "hoa_special_referee": 3,
+  "mortgage_residential_judgments": [
+   67562,
+   68523,
+   107136,
+   132502,
+   140204,
+   141616,
+   206826,
+   226999,
+   239290,
+   260562,
+   294489,
+   311849,
+   420173,
+   470531
+  ],
+  "mortgage_cases_over_1m_excluded": 1
+ },
+ "winrose": {
+  "dues_owed": 250.0,
+  "interest": 80.87,
+  "litigation_costs": 542.8,
+  "attorney_fees": 2025.0,
+  "judgment": 2898.67,
+  "winning_bid": 3036.0,
+  "fair_market_value": 128000,
+  "mortgage_balance": 66004,
+  "equity_claimed": 61996,
+  "judgment_over_dues": 11.6,
+  "fees_share_of_judgment_pct": 88.6,
+  "bid_pct_of_value": 2.4,
+  "bid_pct_of_equity": 4.9
+ },
+ "listings": {
+  "all": 8790,
+  "foreclosure": 23,
+  "condo": 2828,
+  "condo_foreclosure": 3,
+  "house": 3702,
+  "house_foreclosure": 18,
+  "short_sale": 13,
+  "refreshedAt": "2026-11-01T23:01:20.656Z",
+  "foreclosure_per_1000": 2.6
+ }
+}

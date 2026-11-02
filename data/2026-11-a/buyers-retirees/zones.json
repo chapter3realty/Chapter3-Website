@@ -1,0 +1,158 @@
+{
+ "Del Webb at Grande Dunes": {
+  "2": {
+   "url": "https://www.horrycounty.org/gisweb/rest/services/Public/HazardsMap/MapServer/2/query?geometry=-78.842661%2C33.749305&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+   "attributes": []
+  },
+  "3": {
+   "url": "https://www.horrycounty.org/gisweb/rest/services/Public/HazardsMap/MapServer/3/query?geometry=-78.842661%2C33.749305&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+   "attributes": []
+  },
+  "8": {
+   "url": "https://www.horrycounty.org/gisweb/rest/services/Public/HazardsMap/MapServer/8/query?geometry=-78.842661%2C33.749305&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+   "attributes": [
+    {
+     "OBJECTID": 2546,
+     "FLD_AR_ID": "2546",
+     "FLD_ZONE": "X",
+     "FLOODWAY": " ",
+     "SFHA_TF": "F",
+     "STATIC_BFE": -9999,
+     "V_DATUM": " ",
+     "DEPTH": -9999,
+     "LEN_UNIT": " ",
+     "VELOCITY": -9999,
+     "VEL_UNIT": " ",
+     "AR_REVERT": " ",
+     "BFE_REVERT": -9999,
+     "DEP_REVERT": -9999,
+     "SOURCE_CIT": "STUDY1",
+     "Shape.STArea()": 1884574202.1798096,
+     "Shape.STLength()": 1467501.1426639166
+    }
+   ]
+  }
+ },
+ "Del Webb North Myrtle Beach": {
+  "2": {
+   "url": "https://www.horrycounty.org/gisweb/rest/services/Public/HazardsMap/MapServer/2/query?geometry=-78.700908%2C33.821769&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+   "attributes": []
+  },
+  "3": {
+   "url": "https://www.horrycounty.org/gisweb/rest/services/Public/HazardsMap/MapServer/3/query?geometry=-78.700908%2C33.821769&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+   "attributes": []
+  },
+  "8": {
+   "url": "https://www.horrycounty.org/gisweb/rest/services/Public/HazardsMap/MapServer/8/query?geometry=-78.700908%2C33.821769&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+   "attributes": [
+    {
+     "OBJECTID": 1175,
+     "FLD_AR_ID": "1175",
+     "FLD_ZONE": "X",
+     "FLOODWAY": " ",
+     "SFHA_TF": "F",
+     "STATIC_BFE": -9999,
+     "V_DATUM": " ",
+     "DEPTH": -9999,
+     "LEN_UNIT": " ",
+     "VELOCITY": -9999,
+     "VEL_UNIT": " ",
+     "AR_REVERT": " ",
+     "BFE_REVERT": -9999,
+     "DEP_REVERT": -9999,
+     "SOURCE_CIT": "STUDY1",
+     "Shape.STArea()": 172139738.80932617,
+     "Shape.STLength()": 149187.69179877784
+    }
+   ]
+  }
+ },
+ "Myrtle Trace": {
+  "2": {
+   "url": "https://www.horrycounty.org/gisweb/rest/services/Public/HazardsMap/MapServer/2/query?geometry=-78.996618%2C33.778502&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+   "attributes": []
+  },
+  "3": {
+   "url": "https://www.horrycounty.org/gisweb/rest/services/Public/HazardsMap/MapServer/3/query?geometry=-78.996618%2C33.778502&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+   "attributes": []
+  },
+  "8": {
+   "url": "https://www.horrycounty.org/gisweb/rest/services/Public/HazardsMap/MapServer/8/query?geometry=-78.996618%2C33.778502&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+   "attributes": [
+    {
+     "OBJECTID": 2564,
+     "FLD_AR_ID": "2564",
+     "FLD_ZONE": "X",
+     "FLOODWAY": " ",
+     "SFHA_TF": "F",
+     "STATIC_BFE": -9999,
+     "V_DATUM": " ",
+     "DEPTH": -9999,
+     "LEN_UNIT": " ",
+     "VELOCITY": -9999,
+     "VEL_UNIT": " ",
+     "AR_REVERT": " ",
+     "BFE_REVERT": -9999,
+     "DEP_REVERT": -9999,
+     "SOURCE_CIT": "STUDY1",
+     "Shape.STArea()": 4385729893.763672,
+     "Shape.STLength()": 1528625.0019186789
+    }
+   ]
+  }
+ },
+ "Seasons at Prince Creek West": {
+  "2": {
+   "url": "https://www.horrycounty.org/gisweb/rest/services/Public/HazardsMap/MapServer/2/query?geometry=-79.07094%2C33.586369&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+   "attributes": [
+    {
+     "OBJECTID": 3,
+     "CountyName": "Horry",
+     "State": "SC",
+     "Zone": "C",
+     "Region": "Northern Region",
+     "Population": 99133,
+     "Shape_Leng": 0,
+     "Shape_Le_1": 84096.845659,
+     "Shape_Length": 84096.84565902193,
+     "Shape_Area": 232469787.1089702
+    }
+   ]
+  },
+  "3": {
+   "url": "https://www.horrycounty.org/gisweb/rest/services/Public/HazardsMap/MapServer/3/query?geometry=-79.07094%2C33.586369&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+   "attributes": [
+    {
+     "OBJECTID": 4086,
+     "GRID_CODE": 5,
+     "Shape.STArea()": 126984558.8256836,
+     "Shape.STLength()": 305892.61858576443
+    }
+   ]
+  },
+  "8": {
+   "url": "https://www.horrycounty.org/gisweb/rest/services/Public/HazardsMap/MapServer/8/query?geometry=-79.07094%2C33.586369&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+   "attributes": [
+    {
+     "OBJECTID": 2546,
+     "FLD_AR_ID": "2546",
+     "FLD_ZONE": "X",
+     "FLOODWAY": " ",
+     "SFHA_TF": "F",
+     "STATIC_BFE": -9999,
+     "V_DATUM": " ",
+     "DEPTH": -9999,
+     "LEN_UNIT": " ",
+     "VELOCITY": -9999,
+     "VEL_UNIT": " ",
+     "AR_REVERT": " ",
+     "BFE_REVERT": -9999,
+     "DEP_REVERT": -9999,
+     "SOURCE_CIT": "STUDY1",
+     "Shape.STArea()": 1884574202.1798096,
+     "Shape.STLength()": 1467501.1426639166
+    }
+   ]
+  }
+ }
+}

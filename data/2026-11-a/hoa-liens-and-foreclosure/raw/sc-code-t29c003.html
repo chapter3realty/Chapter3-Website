@@ -1,0 +1,915 @@
+﻿
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="robots" content="noimageindex">
+	    <meta charset="iso-8859-1">
+	    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	    	    <title>Code of Laws - Title 29 - Chapter 3- - MORTGAGES AND OTHER LIENS</title>
+	    <link rel="SHORTCUT ICON" href="/images/stateflagsmall.ico" />
+		<link rel="icon" href="/images/stateflagsmall.ico" type="image/ico" />
+		<link rel="SHORTCUT ICON" href="/images/South-Carolina-Flag2.ico" />
+
+		<link type="text/css" rel="stylesheet" href="/css/main.css" media="all" />
+				
+		<!--[if lte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/ie7main.css" media="all" />
+		<![endif]-->
+		<!--[if gte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/iemain.css" media="all" />
+		<![endif]-->
+		<link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+		<link type="text/css" rel="stylesheet" href="/css/supplement.css" media="screen" />
+		<!--<link type="text/css" rel="stylesheet" href="/css/zipsearch.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/vote.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/contact.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/navwrap.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/linkbar.css" media="screen" />-->
+	
+		<!--<script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>-->
+		<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+				<script type="text/javascript" src="/js/main_linux.js"></script>
+		
+
+		
+
+
+
+		<!--<script type="text/javascript" src="/js/common.js"></script>
+		<script type="text/javascript" src="/js/utils.js"></script>
+		<script type="text/javascript" src="/js/date.js"></script>
+		<script type="text/javascript" src="/js/lightbox.js"></script>
+		<script type="text/javascript" src="/js/legislation.js"></script>
+		<script type="text/javascript" src="/js/logon_lits.js"></script>
+		<script type="text/javascript" src="/js/message.js"></script>
+		<script type="text/javascript" src="/js/comm_meeting.js"></script>-->
+		<script type="text/vbscript" src="/vbs/comm_meeting.vbs"></script>
+		<!--<script type="text/javascript" src="/js/regs.js"></script>-->
+				
+	   	<script type="text/javascript">
+	    //document.onclick = function () { document.getElementById('transbox').style.display= 'none' };
+	    	var xmlhttp=false;
+			xmlhttp = create_xml_object();
+	
+			function getElement(ele)
+			{
+				var theobj = false;
+				if(typeof ele == 'string')
+					theobj = (document.getElementById)?document.getElementById(ele):document.all[ele];
+				else
+					theobj = ele;
+			
+				return theobj;
+			}
+		
+			function checkreader(friendlyalert)
+			{
+			 	/*friendlyalert=friendlyalert||false;
+			 	
+			 	var browser_info = perform_acrobat_detection();
+				if (!browser_info.acrobat)
+				{
+				 	loadadobebox('adobebox', '/adobe.php');
+					return false;
+				}
+				else if (friendlyalert)
+				{
+			 		alert(friendlyalert);
+				}*/
+				return true;
+			}
+				
+			function loadadobebox(boxname, url)
+			{
+				var response = false;
+	
+				doRequest(xmlhttp, "GET", url, false, null, null);
+				if (xmlhttp.status == 200)
+				{
+		         	response = xmlhttp.responseText;
+				}
+	
+				if(response)
+				{
+			 		var ele = document.getElementById(boxname);
+				 	if (ele)
+				 	{
+				 		ele.style.visibility = 'hidden';
+		 				ele.style.display = 'block';
+	
+		 				positionElement(ele, 'center', 'center', true);
+	
+						ele.innerHTML = response;
+					    ele.style.visibility = 'visible';
+					    ele.style.display = 'block';
+	//				    ele.scrollIntoView(true);
+					}
+				}
+				return response;
+			}
+	
+	
+			function init()
+			{
+		 		var ld=document.getElementById("loading");
+				if(ld)
+				{
+					ld.style.display = 'none';
+				}
+			}
+			
+			function openmore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				 	var pos = findPos(id);
+				 	id.style.zIndex = 10;
+		//		 	id.style.left = pos[0]+'px';
+		//		  	id.style.top = pos[1]+'px';
+				  	id.style.height = '295px';
+				  	id.style.position = 'absolute';
+				  	id.style.backgroundColor = '#f7f4ec';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'none';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = 'none';
+				  	}
+				}
+			}
+		
+			function closemore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				  	id.style.height = '135px';
+				  	id.style.position = '';
+				  	id.style.backgroundColor = 'transparent';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'block';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = '';
+				  	}
+				}		 	
+			}
+		
+		<!-- This script and many more are available free online at -->
+		<!-- The JavaScript Source!! http://javascript.internet.com -->
+		
+		<!-- Begin
+		function right(e) {
+		var msg = "Use of this image is strictly prohibited unless express written permission is given to the user by South Carolina Legislative Services Agency.";
+		if (navigator.appName == 'Netscape' && e.which == 3) {
+		alert(msg);
+		return false;
+		stopEvent(e);
+		}
+		if (navigator.appName == 'Microsoft Internet Explorer' && event.button==2) {
+		alert(msg);
+		return false;
+			stopEvent(event);
+		}
+		else return true;
+		}
+		
+	function trap() 
+	{
+		if(document.images)
+		{
+			for(i=0;i<document.images.length;i++)
+			{
+				if(document.images[i].className == 'allowcontextmenu')
+				{
+					// this should have no scripting
+				}
+				else
+				{
+				 	document.images[i].onmousedown = right;
+					document.images[i].oncontextmenu = function(){ return false; };
+					//document.images[i].onmouseup = right;
+				}
+			}
+		}
+	}
+
+	function findfwtext(texttofind) 
+	{
+	 	var fwtextele = document.getElementById('fwtext');
+		if(fwtextele)
+		{
+			fwtextele.value = texttofind;
+		}
+	}	
+		// End -->
+		</script>
+
+		<!-- ADDED FOR V4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJY6FMNQKH"></script>
+
+
+<script type="text/javascript">
+
+//ADDED FOR V4
+//Google tag (gtag.js) 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LJY6FMNQKH');
+
+ 
+ /* COMMENTING OUT UPGRADING TO V4 -A
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36207109-1']);
+  _gaq.push(['_setDomainName', 'scstatehouse.gov']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+*/
+  
+      $(document).ready(function(){
+        // COMMENTING THIS OUT NO LONGER BEING ACTIVELY USED TO MONITOR FOR TRAFFIC TO SPECIFIC LINKS - A
+        /*
+          var anchors = $('div#contentsection a');
+
+          //console.log('anchors...'+anchors.length);
+          if(anchors.length > 0){
+            //console.log('setting up event handler...');
+            anchors.click(function(){
+              var a = $(this).attr('href');
+              if(_gaq && (a.substr(-3) == 'htm' || a.substr(-4) == 'html' || a.substr(-3) == 'doc' || a.substr(-4) == 'docx' || a.substr(-3) == 'pdf' || a.substr(-3) == 'xls' || a.substr(-4) == 'xlsx')) {
+                //console.log(a);
+                _gaq.push(['_trackPageview', $(this).attr('href')]);
+              }
+              
+              var aText = $(this).text().toLowerCase();
+              if (a.indexOf('getfile.php') > -1 && aText === 'word'){
+                    _gaq.push(['_trackEvent', 'Word Doc', 'Download', ('from page: ' + document.location + ' - href: ' + a)]);
+              }
+
+            });
+          }
+          */
+      });
+
+</script>
+	</head>
+	
+		
+	<body class="home"  onload="init(); trap();">
+	<noscript>Your browser does not support JavaScript!  This page will not render correctly.</noscript> 
+
+
+	
+	<div id="adobebox" style="position:absolute; width:400px; height:150px; border:2px solid #555555; background-color:#cccccc; display:none;"></div>
+	<div id="container" >	
+				<div id="header" class="nodisplay" style="text-align:center; height:100px;" >
+									<img id="headerimg" class="nodisplay" alt="South Carolina Legislature" title="South Carolina Legislature" src="/images/header8.png" />
+								
+							<!--	<div class="award"><span style="color:#831224; font-weight:bold; font-size:1.5em;">*</span> Recipient of<br>the Notable State Documents Award<br>by the<br>South Carolina<br>State Library.</div>-->
+				
+				
+			</div>
+			<div class="printdisplay"><img border="0" src="/images/titleprint.jpg" alt="South Carolina Legislature" title="South Carolina Legislature" alt="South Carolina Legislature" title="South Carolina State Legislature" /><br /><hr /><br /></div>
+	
+			<div id="pagebody" >
+	
+	
+<!--<div id="topmessage">
+<br style="display:block; margin-top:10px;">
+Searches and data queries will be unavailable beginning Friday, August 19, 2016, from 8:00 PM until Saturday, August 20th at 8:00 AM<br>due to scheduled maintenance.</div>-->
+				<!-- Prompt IE 8/7/6 users to upgrade to a newer browser. -->
+				<!--[if lte IE 8]>
+				<div class="oldframe">In order to improve your experience using this website, please <a href="http://browsehappy.com/">upgrade your browser</a>.</div>
+				<![endif]-->
+			
+			
+			
+			<div id="menu" class="nodisplay">
+				<ul class="nodisplay">
+				<li><a href="/index.php">Home</a></li>
+<li><a href="/senate.php">Senate</a></li>
+<li><a href="/house.php">House</a></li>
+<li><a href="/committeeinfo.php">Committee&nbsp;Postings&nbsp;and&nbsp;Reports</a></li>
+<li><a href="/council.php">Legislative Council</a></li>
+<li><a href="/citizens.php">Citizens&#39; Interest</a></li>
+<li><a href="/publications.php">Publications</a></li>
+		    	</ul>
+			</div>
+			<div id="search" class="nodisplay" style="height: 28px;"><div class="nodisplay" style="float:right; margin:6px 20px 0px 0;">
+							<!--<a style="color:#f7f4ec; height:15px;" href="#" onClick="rsswindow();"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+<!--				<a style="color:#f7f4ec; height:15px;" href="/splashpage/splashpage.html"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a> -->
+				<a style="color:#f7f4ec; height:15px;" href="/onlineservices/index.php"><img border="0" src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>
+			<!--	<a style="color:#f7f4ec; height:15px;" href="/maintenance_portal.php"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+						</div></div>
+			
+	
+					<div id="sidebar" class="nodisplay">
+	<div id="vidlinks" style="height: 50px;">
+						<!--<img src="/images/videobutton12d.png">-->
+											<ul id="vidsidemenu">
+	<li id="vidinnermenu" style="font-size:16px; margin: 0 0 5px 0;">Chamber Video</li>
+<li id="sbroadcast" style="float: left; width:50%;">
+<a id="liveS" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('S', false, false, '0')">Senate</a><br><a id="liveaudioS" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('S', false, false, '1');">(Audio Only)</a>
+</li>
+<li id="hbroadcast" style="float: left; width:50%;">
+<a id="liveH" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('H', false, false, '0')">House</a><br><a id="liveaudioH" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('H', false, false, '1');">(Audio Only)</a>
+</li>
+						</ul>
+					</div>
+					<div id="commvidlinks"><a href="/video/schedule.php">Video&nbsp;Schedule</a><a style="border-top:1px solid #fff; padding-top:12px;" href="/video/archives.php">Video Archives</a></div>
+										<div id="sidemenu">
+						<ul id="innermenu">
+		
+							<li><a href="/howdoi.php">How do I...</a></li>
+										
+							
+								<li class="nolink" onMouseOver="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='block'; document.sidesearchform.searchtext.focus();}" onMouseOut="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Quick Search</div>
+								<div id="sidesearch" class="sidesubmenu">
+									<form id="sidesearchform" name="sidesearchform" method="POST" action="/search.php">
+									<input type="hidden" name="search" value="side" />
+									<div class="topelement"><label for="searchtext"><span class="label">Search for:</span></label><input id="searchtext" name="searchtext" type="text"/><a id="searchlink2" href="javascript:void(0);" onClick="document.sidesearchform.submit();"><img id="searchicon" src="/images/searchbutton.png" alt="Search" title="Search"/></a></div>
+			<!--						<div><input type="checkbox" id="searchchoice_all" name="searchchoice_all" value="all" /><label for="searchchoice_all">All</label></div>-->
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_fullsite" name="category" value="FULLSITE" /><label for="searchchoice_fullsite">&nbsp;Full Site Search</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_billnumber" name="category" value="BILL" /><label for="searchchoice_billnumber">&nbsp;Bill Number</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_legislation" name="category" value="LEGISLATION" CHECKED /><label for="searchchoice_legislation">&nbsp;Legislation</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_budget" name="category" value="BUDGET" /><label for="searchchoice_budget">&nbsp;Budget</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeoflaws" name="category" value="CODEOFLAWS" /><label for="searchchoice_codeoflaws">&nbsp;Code of Laws</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeofregs" name="category" value="CODEOFREGS" /><label for="searchchoice_codeofregs">&nbsp;Code of Regulations</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_constitution" name="category" value="CONSTITUTION" /><label for="searchchoice_constitution">&nbsp;Constitution</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_housejournals" name="category" value="HOUSEJOURNALS" /><label for="searchchoice_housejournals">&nbsp;House Journals</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_senatejournals" name="category" value="SENATEJOURNALS" /><label for="searchchoice_senatejournals">&nbsp;Senate Journals</label></div>
+									<div class="bottomelement" style="padding-left:20px;"><input type="radio" id="searchchoice_billsummary" name="category" value="SUMMARY" /><label for="searchchoice_billsummary">&nbsp;LSA Bill Summary</label></div>
+								</form>
+									
+								</div>
+							</li>
+							<li><a href="/legislatorssearch.php">Find Your Legislators</a></li>
+							<li id="contactLegislatorLink"><a href="/email.php?chamber=B">Contact Your Legislator</a></li>
+									
+							<li><a href="/legislation.php">Legislation</a></li>
+							<li><a href="/listtracking/main.php" target="LTS">Track Legislation</a></li>
+							<li><a href="/multicriteria2/search.php" target="MCS">Multi-Criteria Search</a></li>
+									<!--<li><a href="#" onclick="multisearchwindow('INTROBOTH');">Multi-Criteria Search</a></li>-->
+									<!--<li><a href="#" onclick="multisearchwindow('INTROMANUAL');">Multi-Criteria Search</a></li>-->
+									<li><a href="/research.php">Research</a></li>
+	
+								<li class="nolink" onMouseOver="var ele=document.getElementById('law'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('law'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">South Carolina Law</div> 
+								<div id="law" class="sidesubmenu">
+									<div class="sidediv topelement"><a href="/newlaws.php">Ratifications &amp; Acts</a></div>
+									<div class="sidediv"><a href="/code/statmast.php">Code of Laws</a></div>
+									<div class="sidediv"><a href="/coderegs/statmast.php">Code of Regulations</a></div>
+									<div class="sidediv"><a href="/scconstitution/scconst.php">Constitution</a></div>
+									<div class="sidediv bottomelement"><a href="/state_register.php">State Register</a></div>
+								</div>
+							</li>
+										<li class="nolink" onMouseOver="var ele=document.getElementById('manual'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('manual'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Legislative Manual</div>
+								<div id="manual" class="sidesubmenu">
+								
+<!--									<div class="sidediv topelement"><a href="https://web.sc.gov/LSAShoppingcart/Default.aspx" target="_blank">Purchase Manual</a></div>-->
+								
+<!--									<div class="sidediv topelement"><a href="https://secure.scstatehouse.gov/cgi-bin/webstore.exe" target="_blank">Purchase Manual</a></div>-->
+									<div class="sidediv topelement"><a href="javascript:#" onClick="alert('We are sorry, but we are unable to process online transactions at this time.\n\nIf you would still like to make a purchase, please contact us directly at (803) 212-4490 during normal business hours (8:30am - 5:00pm EST).');">Purchase Manual</a></div>
+									<div class="sidediv bottomelement"><a href="/man26/manual26.php">View Manual Online</a></div>
+								</div>
+							</li>
+							<li><a href="http://www.studentconnection.scstatehouse.gov">Student Connection</a></li>
+							<li><a href="/visit.php">Visiting the State House</a></li>
+							<li><a href="/archives.php">Archives</a></li>
+							<li><a href="http://www.sc.gov/Agency-Listing" target="_blank">State Agency Websites</a></li>
+							<!--<li><a href="/stateagencysites.php">State Agency Websites</a></li>-->
+							<li><a href="/citizensinterestpage/media.php">Media Links</a></li>
+				 		</ul>
+			    	</div>
+	
+					<div id="side_ad">
+						<A href="http://www.sc.gov/" target="_blank"><img border=0 src="/images/scgov3.jpg" alt="SC.gov" title="SC.gov" /></a>
+													<A href="http://www.statelibrary.sc.gov" target="_blank"><img border=0 src="/images/scsl_logo_rgb_web.png" alt="StateLibrary.SC.gov" title="StateLibrary.SC.gov" /></a>
+											</div>	    	
+			</div>
+
+	
+	<script type="text/javascript"> 
+		if ( '' === '1'){
+		 	
+			var link = document.getElementById('contactLegislatorLink');
+			if (link != 'undefined' && link != null){
+				link.style.display = 'none'; 
+				link.style.visibility = 'hidden';
+			}
+		}
+		if ( '' === '1'){
+		 	setTimeout(function(){
+				var link2 = document.getElementById('sendMsgLink');
+				if (link2 != 'undefined' && link2 != null){
+					link2.style.display = 'none'; 
+					link2.style.visibility = 'hidden';
+				};
+			}, 20);
+			
+		}  
+	</script>
+<div class="mainwidepanel">
+
+				<div id="breadcrumbs">
+						South Carolina Law &gt; <a href="/code/statmast.php">Code of Laws</a> &gt; <a href="/code/title29.php">Title 29</a>
+				</div>
+
+					<h2 class="barheader">South Carolina Code of Laws<br />
+									Unannotated<br />
+					</h2>
+
+				<div id="contentsection">
+<div style="font-weight: bold; text-align: center;">Title 29 - MORTGAGES AND OTHER LIENS</div>
+<br />
+
+<div style="text-align: center;">CHAPTER 3</div>
+<div style="text-align: center;">Mortgages and Deeds of Trust Generally</div><br />
+<div style="text-align: center;">ARTICLE 1</div>
+<div style="text-align: center;">Validity and General Rights</div><br />
+<span style="font-weight: bold;"> SECTION 29-3-10.</span> Rights and title of mortgagor and mortgagee.<br /><br />
+	No mortgagee shall be entitled to maintain any possessory action for the real estate mortgaged, even after the time allotted for the payment of the money secured by mortgage is elapsed, but the mortgagor shall be deemed the owner of the land and the mortgagee as owner of the money lent or due and the mortgagee shall be entitled to recover satisfaction for such money out of the land by foreclosure and sale according to law. But notwithstanding the foregoing provision all releases of the equity of redemption shall be binding and effectual in law.<br /><br />
+HISTORY: 1962 Code SECTION 45-51; 1952 Code SECTION 45-51; 1942 Code SECTION 8701; 1932 Code SECTION 8701; Civ. C. &#39;22 SECTION 5223; Civ. C. &#39;12 SECTION 3460; Civ. C. &#39;02 SECTION 2374; G. S. 2299; R. S. 1893; 1791 (5) 170; 1797 (5) 311; 1879 (17) 19.<br /><br />
+Editor&#39;s Note<br /><br />
+	1984 Act No. 355, SECTION 1, provides as follows:<br /><br />
+	&quot;The provisions of Section 804 of the Alternative Mortgage Transaction Parity Act of 1982, Title VIII of P.L. 97-320 (96 Stat. 1545), known as the Garn-St. Germain Depository Institutions Act of 1982, do not apply to any alternative mortgage transaction as the term alternative mortgage transaction is defined in Section 803(1) of the Alternative Mortgage Transaction Parity Act of 1982, and that this State does not want the provisions of Section 804 of the Alternative Mortgage Transaction Parity Act of 1982 to apply with respect to any alternative mortgage transaction made in this State.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-20.</span> Prior mortgages may be redeemed by second mortgagees.<br /><br />
+	If it so happen there be more than one mortgage at the same time by any person to any person or persons of the same lands and tenements, the several mortgagees who have not registered or recorded their mortgages, their heirs, executors, administrators or assigns, may redeem any former mortgage registered upon payment of the principal debt, interest and cost of suit to the prior mortgagee, his heirs, executors, administrators or assigns.<br /><br />
+HISTORY: 1962 Code SECTION 45-52; 1952 Code SECTION 45-52; 1942 Code SECTION 8886; 1932 Code SECTION 8886; Civ. C. &#39;22 SECTION 5317; Civ. C. &#39;12 SECTION 3547; Civ. C. &#39;02 SECTION 2461; G. S. 1781; R. S. 1973; 1698 (2) 137.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-30.</span> Mortgagee may pay taxes.<br /><br />
+	Any person holding a lien by way of, or an interest in the nature of, a mortgage upon any property, the subject of taxation, upon which the mortgagor shall have failed to pay the tax or upon which there may exist a lien for taxes on any other property of the mortgagor, may at any time before the sale thereof for delinquent taxes, as provided in Title 12, pay the tax on all the property of the mortgagor, with any costs, penalties or assessments which may have accrued thereon, and thereupon he shall be entitled, as against the mortgagor, his representatives, privies or assigns, to include the amount so paid, and all interest thereafter accruing thereon, in the debt secured by the mortgage. And if a mortgagee pay such taxes he shall have a first lien on the property subject to such tax to the extent of the taxes so paid with interest from the date of payment.<br /><br />
+HISTORY: 1962 Code SECTION 45-53; 1952 Code SECTION 45-53; 1942 Code SECTION 2783; 1932 Code SECTION 2831; Civ. C. &#39;22 SECTION 506; Civ. C. &#39;12 SECTION 455; Civ. C. &#39;02 SECTION 407; G. S. 277; R. S. 334; 1882 (17) 1028; 1900 (23) 352; 1922 (32) 927; 1943 (43) 126.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-40.</span> Priority of certain advancements by mortgage.<br /><br />
+	The holder of any mortgage of real property, when the mortgage contains provisions authorizing advancements thereunder for taxes, insurance premiums, public assessments and repairs, may make such advancements and, when made, they shall be secured by the mortgage and have the same rank and priority as the principal debt thereby secured and bear interest from the date of such advancements, as provided in the mortgage. Advancements made for taxes by any such mortgage holder shall be a first lien on the mortgaged real property to the extent of the taxes so paid with interest from the date of payment, regardless of the rank and priority of the mortgage under which such taxes are advanced.<br /><br />
+HISTORY: 1962 Code SECTION 45-54; 1952 Code SECTION 45-54; 1942 Code SECTION 8712-1; 1935 (39) 307; 1982 Act No. 385, SECTION 57(2)(a).<br /><br />
+Editor&#39;s Note<br /><br />
+	1982 Act No. 385, SECTION 1, provides as follows:<br /><br />
+	&quot;Section 1. It is hereby explicitly stated by the terms of this act that the provisions of Title V Part A-Mortgage Usury Laws, Mortgages, Section 501(a)(1), and Part B-Business and Agricultural Loans, Sections 511 and 512 of Public Law No. 96-221 (94 Stat. 132) known as the Depository Institutions Deregulation and Monetary Control Act of 1980, as amended, shall not apply with respect to loans, mortgages, credit sales and advances made in this State, and that this State does not want the provisions of Title V, Part A-Mortgage Usury Laws, Mortgages, Section 501(a)(1) and Part B-Business and Agricultural Loans, Sections 511 and 512 of the Depository Institutions Deregulation and Monetary Control Act of 1980 to apply with respect to loans, mortgages, credit sales and advances made in this State.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-50.</span> Mortgage for future advances; mortgage or lien on property held by gas or electric utility or electric cooperative.<br /><br />
+	(A) Any mortgage or other instrument conveying an interest in or creating a lien on any real estate, securing existing indebtedness or future advances to be made, regardless of whether the advances are to be made at the option of the lender, are valid from the day and hour when recorded so as to affect the rights of subsequent creditors, whether lien creditors or simple contract creditors, or purchasers for valuable consideration without notice to the same extent as if the advances were made as of the date of the execution of the mortgage or other instrument for the total amount of advances made thereunder, together with all other indebtedness and sums secured thereby, the total amount of existing indebtedness and future advances outstanding at any one time may not exceed the maximum principal amount stated therein, plus interest thereon, attorney&#39;s fees and court costs. It is not necessary that the mortgage state as part of the maximum principal the amount of any deferred, accrued, or capitalized interest or discount of any nature or kind, whether the rate of interest or discount is fixed or variable pursuant to an alternative mortgage loan transaction as defined in Section 37-1-301(5), and the lien of the mortgage as to all that interest or discount shall have the same priority as the principal; provided, however, that the recorded mortgage discloses that interest or discount will be deferred, accrued, or capitalized. However, the lien of a person who has furnished labor, services, or material in connection with the construction of improvements to real property is superior to the lien of a recorded mortgage as to disbursements made after filing of the notice of the mechanic&#39;s lien required by Section 29-5-90 and service of the notice on all prior recorded mortgage holders. Service of the notice on prior recorded mortgage holders must be made pursuant to Rule 4 of the South Carolina Rules of Civil Procedure. The priority of the mechanic&#39;s lien extends only to the mortgage disbursements made after the filing of the lien and service of the notice on all prior recorded mortgage holders.<br /><br />
+	(B) Any mortgage or other instrument which by its terms creates an interest in or a lien upon any real property interest held by a gas or electrical utility or electric cooperative, securing existing indebtedness or indebtedness to be incurred in the future, is valid from the day and hour when recorded. It affects and is prior to the rights of all creditors and purchasers for valuable consideration without notice and all liens except liens of record prior to recordation of the mortgage, regardless of whether there is an actual debt outstanding at the time of recordation of the mortgage, to the same extent as if the future indebtedness were incurred as of the date of the execution of the mortgage or other instrument for the total amount of indebtedness thereafter incurred, together with all other indebtedness and sums secured thereby. However, the total amount of existing indebtedness and future indebtedness at any one time may not exceed the maximum principal amount stated therein plus interest thereon, attorney&#39;s fees and court costs, and the mortgage or other instrument must contemplate that future indebtedness may be incurred. The mortgage or other instrument shall remain a valid lien and effective as record notice thereof until satisfied or released of record even though there are periods during which no indebtedness is outstanding thereunder.<br /><br />
+	Notwithstanding the above provisions, the lien of a person who has furnished labor, services, or materials in connection with the construction of improvements to real property is superior to the lien of a recorded mortgage as to indebtedness actually incurred after filing of the notice of the mechanic&#39;s lien required by Section 29-3-90 and service of the notice on all prior recorded mortgage holders. Service of the notice on prior recorded mortgage holders must be made pursuant to Rule 4 of the South Carolina Rules of Civil Procedure. The priority of the mechanic&#39;s lien extends only to the mortgage indebtedness actually incurred after the filing of the lien and service of the notice on all prior recorded mortgage holders.<br /><br />
+HISTORY: 1962 Code SECTION 45-55; 1952 Code SECTION 45-55; 1942 Code SECTION 8712-2; 1934 (38) 1475; 1960 (51) 1731; 1982 Act No. 466, Part II, SECTION 18; 1988 Act No. 635, SECTION 1; 1993 Act No. 141, SECTION 2.<br /><br />
+Editor&#39;s Note<br /><br />
+	1993 Act No. 141, SECTION 5, effective June 14, 1993, provides as follows:<br /><br />
+	&quot;SECTION 5. The provisions provided for gas or electrical utilities or electric cooperatives in Sections 29-1-10, 29-3-50(B), 29-3-80, and 29-3-90 of this act shall be construed as cumulative authority and shall not be construed to impliedly repeal any existing laws affecting mortgages and liens of gas or electrical utilities or electric cooperatives.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-70.</span> Limitation on requirement of casualty insurance by mortgagee.<br /><br />
+	A bank, savings and loan association, financial institution, mortgage company, or any public or private mortgagee doing business in this State, when making a mortgage loan, may not require, as a condition or term of the mortgage, that the mortgagor purchase casualty insurance on property which is the subject of the mortgage in an amount in excess of the replacement cost of the buildings or appurtenances on the mortgaged premises.<br /><br />
+HISTORY: 1988 Act No. 428, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-80.</span> Effect of recording of mortgage or other instrument by gas or electric utility or electric cooperative; after-acquired property; notice.<br /><br />
+	Any mortgage or other instrument executed by a gas or electrical utility or electric cooperative transacting business in this State which by its terms creates a lien upon any real property interest then owned or thereafter acquired and which is recorded as a mortgage of real property in any county in which the property is located or is to be located shall have the same force and effect as if the mortgage or other instrument were also recorded or filed in the proper office in the county as a mortgage of personal property. Recordation of the mortgage or other instrument shall cause the lien thereof to attach to all after-acquired property of the mortgagor of the nature therein described immediately upon the acquisition thereof by mortgagor and the lien is superior to all claims of creditors of the mortgagor and purchasers of these real property interests, except prior liens of record, affecting the property. The gas or electrical utility or electric cooperative shall file a notice in every county in which the utility intends to claim the benefit of this provision of law and referencing the book and page number of the mortgage or other instrument which is entitled to the benefit of this provision of law. Thereafter, there shall be no further document necessary to create or give notice of the lien upon the real property interest thereafter acquired by the gas or electrical utility or electric cooperative.<br /><br />
+HISTORY: 1993 Act No. 141, SECTION 3.<br /><br />
+Editor&#39;s Note<br /><br />
+	1993 Act No. 141, SECTION 5, effective June 14, 1993, provides as follows:<br /><br />
+	&quot;SECTION 5. The provisions provided for gas or electrical utilities or electric cooperatives in Sections 29-1-10, 29-3-50(B), 29-3-80, and 29-3-90 of this act shall be construed as cumulative authority and shall not be construed to impliedly repeal any existing laws affecting mortgages and liens of gas or electrical utilities or electric cooperatives.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-90.</span> Description of property interests of gas or electric utility or electric cooperative.<br /><br />
+	(A) Any real property or real property interests, including, without limitation, easements and rights-of-way, of any gas or electrical utility or electric cooperative which are intended to be subjected to the lien of any mortgage, indenture, or other type of real property security agreement, may be described in general terms and are operative and effective without the necessity of description of metes and bounds, references to plats, or other methods of description as commonly utilized in mortgages of this State. Without limiting or excluding other types of general descriptions which may be utilized for these purposes, it is sufficient if the property or property interests are described in the following words or their substantial equivalent:<br /><br />
+	All real property and real property interests of __________, including, without limitation, lands, buildings, fixtures, easements, rights-of-way, leaseholds, and other interests, situate, lying, and being in any one or more of the counties of the State of South Carolina, as the same may be now or hereafter constituted or delineated, and whether now owned or acquired hereafter while the lien of this mortgage remains open and unsatisfied of record, SAVING, EXCEPTING, AND EXCLUDING THEREFROM THE FOLLOWING: __________.<br /><br />
+	(B) The provisions of Section 30-5-35 relating to derivation clauses in deeds and mortgages do not apply to mortgages granted by gas or electrical utilities or electric cooperatives.<br /><br />
+	(C) Without limiting the foregoing, it is also sufficient and effective to subject real property and real property interests of any gas or electrical utility or electric cooperative to the lien of any prior mortgage, indenture, or other similar real property security agreement executed by the utility by reference to the prior mortgage or other instrument and the inclusion of words in the deed or conveyance to the effect that the real property or real property interests will be upon acquisition by the grantee immediately and automatically subjected to the lien of the prior mortgage or other instrument.<br /><br />
+	(D) Without limiting the effect of subsections (A), (B), and (C) above, it is also operative and effective to describe the real property or real property interests of any gas or electrical utility or electric cooperative being subjected to the lien of a mortgage, indenture, or other real property security agreement by referencing the property description or descriptions contained in any prior mortgage or other real property financing agreement executed by the utility, even though that prior mortgage or other instrument may be satisfied of record and notwithstanding the fact that the prior mortgage or other instrument encumbers real property or real property interests which have been subjected thereto by reference to a description contained in another instrument.<br /><br />
+HISTORY: 1993 Act No. 141, SECTION 4.<br /><br />
+Editor&#39;s Note<br /><br />
+	1993 Act No. 141, SECTION 5, effective June 14, 1993, provides as follows:<br /><br />
+	&quot;SECTION 5. The provisions provided for gas or electrical utilities or electric cooperatives in Sections 29-1-10, 29-3-50(B), 29-3-80, and 29-3-90 of this act shall be construed as cumulative authority and shall not be construed to impliedly repeal any existing laws affecting mortgages and liens of gas or electrical utilities or electric cooperatives.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-100.</span> Validity of certain assignments of rents, issues, or profits.<br /><br />
+	(A) For purposes of this section the following definitions apply:<br /><br />
+	(1) &quot;Rents, issues, or profits&quot; means all amounts payable by or on behalf of any lessee, tenant, or other person having a possessory interest in real property on account of or pursuant to any written or oral lease or other instrument evidencing a possessory interest in real property or pursuant to any form of tenancy implied by law, and all amounts payable by or on behalf of any licensee or permittee or other person occupying or using real property under license or permission from the owner or person entitled to possession. The term shall not include farm products, timber, the proceeds from the sale of farm products or timber, or the proceeds from the recovery or severance of any mineral deposits located on or under real property.<br /><br />
+	(2) &quot;Assignment of leases, rents, issues, or profits&quot; means every document assigning, transferring, pledging, mortgaging, or conveying an interest in leases, licenses to real property, and rents, issues, or profits arising from real property, whether set forth in a separate instrument or contained in a mortgage, conditional sales contract, or other deed or instrument of conveyance.<br /><br />
+	(3) &quot;Collateral assignment&quot; means any assignment of leases, rents, issues, or profits made and delivered in connection with the grant of any mortgage, or the execution of any conditional sales contract or in connection with any extension of credit made against the security of any interest in real property, where the assignor retains the right to collect or to apply the lease revenues, rents, issues, or profits after assignment and prior to default.<br /><br />
+	(B) The recording of a written document containing an assignment of leases, rents, issues, or profits arising from real property is valid and enforceable from the time of recording to pass the interest granted, pledged assigned, or transferred as against the assignor, and is perfected from the time of recording against subsequent assignees, lien creditors, and purchasers for a valuable consideration from the assignor.<br /><br />
+	(C) Where an assignment of leases, rents, issues, or profits is a collateral assignment, after a default under the mortgage, conditional sales contract, or evidence of indebtedness which the assignment secures, the assignee is thereafter entitled, but not required, to collect and receive any accrued and unpaid or subsequently accruing lease revenues, rents, issues, or profits subject to the assignment, without need for the appointment of a receiver, any act to take possession of the property, or any further demand on the assignor. Unless otherwise agreed, after default the assignee is entitled to notify the tenant or other obligor to make payment to him and is also entitled to take control of any proceeds to which he may be entitled. The assignee must proceed in a commercially reasonable manner and may deduct his reasonable expenses of realization from the collections.<br /><br />
+	(D) This section shall not exclude other methods of creating, perfecting, collecting, sequestering, or enforcing a security interest in rents, issues, or profits provided by the law of this State.<br /><br />
+HISTORY: 1993 Act No. 66, SECTION 1.<br /><br />
+<div style="text-align: center;">ARTICLE 5</div>
+<div style="text-align: center;">Satisfaction and Release</div><br />
+<span style="font-weight: bold;"> SECTION 29-3-310.</span> Request for entry of satisfaction.<br /><br />
+	Any holder of record of a mortgage who has received full payment or satisfaction or to whom a legal tender has been made of his debts, damages, costs, and charges secured by mortgage of real estate shall, at the request by certified mail or other form of delivery with a proof of delivery of the mortgagor or of his legal representative or any other person being a creditor of the debtor or a purchaser under him or having an interest in any estate bound by the mortgage and on tender of the fees of office for entering satisfaction, within three months after the certified mail, or other form of delivery, with a proof of delivery, request is made, enter satisfaction in the proper office on the mortgage which shall forever thereafter discharge and satisfy the mortgage.<br /><br />
+HISTORY: 1962 Code SECTION 45-61; 1952 Code SECTION 45-61; 1942 Code SECTION 8703; 1932 Code SECTION 8703; Civ. C. &#39;22 SECTION 5224; Civ. C. &#39;12 SECTION 3461; Civ. C. &#39;02 SECTION 2375; G. S. 1791; R. S. 1894; 1817 (6) 61; 1928 (35) 1253; 1988 Act No. 494, SECTION 8(2); 1999 Act No. 67, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-320.</span> Liability for failure to enter satisfaction.<br /><br />
+	Any holder of record of a mortgage having received such payment, satisfaction, or tender as aforesaid who shall not, by himself or his attorney, within three months after such certified mail, or other form of delivery, with a proof of delivery, request and tender of fees of office, repair to the proper office and enter satisfaction as aforesaid shall forfeit and pay to the person aggrieved a sum of money not exceeding one-half of the amount of the debt secured by the mortgage, or twenty-five thousand dollars, whichever is less, plus actual damages, costs, and attorney&#39;s fees in the discretion of the court, to be recovered by action in any court of competent jurisdiction within the State. And on judgment being rendered for the plaintiff in any such action, the presiding judge shall order satisfaction to be entered on the judgment or mortgage aforesaid by the clerk, register, or other proper officer whose duty it shall be, on receiving such order, to record it and to enter satisfaction accordingly.<br /><br />
+	Notwithstanding any limitations under Sections 37-2-202 and 37-3-202, the holder of record of the mortgage may charge a reasonable fee at the time of the satisfaction not to exceed twenty-five dollars to cover the cost of processing and recording the satisfaction or cancellation. If the mortgagor or his legal representative instructs the holder of record of the mortgage that the mortgagor will be responsible for filing the satisfaction, the holder of the mortgage shall mail or deliver the satisfied mortgage to the mortgagor or his legal representative with no satisfaction fee charged.<br /><br />
+HISTORY: 1962 Code SECTION 45-62; 1952 Code SECTION 45-62; 1942 Code SECTION 8704; 1932 Code SECTION 8704; Civ. C. &#39;22 SECTION 5225; Civ. C. &#39;12 SECTION 3461; Civ. C. &#39;02 SECTION 2376; G. S. 1792; R. S. 1895; 1817 (6) 61; 1999 Act No. 67, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-330.</span> Methods of satisfaction or release of security interest; affidavit.<br /><br />
+	(A) In this section these words shall have the following meaning:<br /><br />
+	(1) &quot;Mortgage&quot; means a lien against real property that is granted to secure the payment of money; a deed of trust must be given the same meaning as a &quot;mortgage&quot;.<br /><br />
+	(2) &quot;Register&quot; means the official, including the register of deeds, register of mense conveyances or clerk of court charged with the recording and indexing duties in Chapter 5, Title 30.<br /><br />
+	(3) &quot;Release&quot; means an instrument releasing all real property encumbered from the lien of the mortgage.<br /><br />
+	(4) &quot;Satisfaction&quot; means a discharge signed by the mortgagee of record, the trustee of a deed of trust, or by an agent or officer, legal representative, or attorney-in-fact under a written instrument duly recorded, of either of the foregoing indicating that the property subject to the security instrument is released.<br /><br />
+	(5) &quot;Security instrument&quot; means any mortgage, deed of trust, or other written instrument securing the payment of money and being a lien upon real property.<br /><br />
+	(B) A security instrument may be satisfied or released by any of the following methods:<br /><br />
+	(1) The mortgagee of record, the owner or holder of the mortgage, the trustee of a deed of trust, or the legal representative, agent or officer, or attorney-in-fact, under a written instrument duly recorded of any of the foregoing, may exhibit the security instrument to the register who has charge of the recording of the security instrument and then in the presence of the register write across the face of the record of the security instrument the words &quot;The debt secured is paid in full and the lien of this instrument is satisfied&quot;, &quot;The lien of this instrument has been released&quot;, or words of like meaning and date the notation and sign it. The signature must be witnessed by the register.<br /><br />
+	(2) The satisfaction or release of the security instrument may be written upon or attached to the original security instrument and executed by any person above named in the presence of two witnesses and acknowledged, in which event the satisfaction or release must be recorded across the face of the record of the original instrument.<br /><br />
+	(3) The mortgagee of record, the trustee of a deed of trust, or an agent or officer, legal representative, or attorney-in-fact, under a written instrument duly recorded, of either of the foregoing, may execute a satisfaction or release of a mortgage or deed of trust. Any person executing such satisfaction or release which is false is guilty of perjury and subject to Section 16-9-10 and must be liable for damages that any person may sustain as a result of the false affidavit, including reasonable attorney&#39;s fees incurred in connection with the recovery of such damages. This satisfaction or release must be signed in the presence of two witnesses, acknowledged, and must be in substantially the same form as follows:<br /><br />
+	&quot;STATE OF SOUTH CAROLINA MORTGAGE/DEED OF TRUST SATISFACTION<br /><br />
+	PURSUANT TO SECTION 29-3-330(B)(3) OF THE SOUTH CAROLINA CODE OF LAWS, 1976<br /><br />
+	The undersigned being the mortgagee of record, the trustee of a deed of trust, or the legal representative, agent or officer, or attorney-in-fact of the mortgagee of record or the trustee of the trust, under a written agreement duly recorded, of either of the foregoing, certifies:<br /><br />
+	The debt secured by the mortgage/deed of trust recorded in the office of the Clerk of Court or Register of Deeds of ____________ County in book ______ at page ______ is:<br /><br />
+	[ ] paid in full and the lien or the foregoing instrument has been released; or<br /><br />
+	[ ] the lien of the foregoing instrument has been released.<br /><br />
+	The Clerk of Court or Register of Deeds may enter this cancellation into record.<br /><br />
+	Under penalties of perjury, I declare that I have examined this affidavit this ___day of ________ and, to the best of my knowledge and belief, it is true, correct, and complete.<br /><br />
+	WITNESS my/our hand this ___ day of ____, 20 ___.<br /><br />
+	__________________<br /><br />
+	(Signature)<br /><br />
+	__________________<br /><br />
+	(Witness Signature)<br /><br />
+	__________________<br /><br />
+	(Witness Signature)<br /><br />
+	State of ________________<br /><br />
+	County of ______________<br /><br />
+	This instrument was acknowledged before me this (date) by (name of officer/authorized signer, title of officer/authorized signer), of (name of corporation/entity acknowledging), a (type of entity and state or place of incorporation/formation), on behalf of the corporation/entity.<br /><br />
+	Signature of Notary ___________________<br /><br />
+	Notary Public, State of _________________<br /><br />
+	Printed Name of Notary _________________<br /><br />
+	My Commission Expires: _______________&quot;<br /><br />
+	This notary acknowledgment form does not preclude the use of any other form of acknowledgment permitted by South Carolina law. The filing of this satisfaction shall satisfy or release the lien of the mortgage or deed of trust. Upon presentation, the register shall record this satisfaction or release pursuant to Section 29-3-330(B)(3) and mark the mortgage or deed of trust satisfied or released of record.<br /><br />
+	(4) If the security instrument was recorded in counterparts, the original security instrument need not be presented and the satisfaction or release of it may be evidenced by an instrument of satisfaction or release, which may be executed in counterparts, by the mortgagee, the holder of the mortgage, the legal representative, agent or officer, or the attorney-in-fact under a written instrument duly recorded. Upon presentation of the instrument of satisfaction or release, or a counterpart of it, the register shall record the same.<br /><br />
+	(5) Any licensed attorney admitted to practice in the State of South Carolina who can provide proof of payment of funds by evidence of payment made payable to the mortgagee, holder of record, servicer, or other party entitled to receive payment may record, or cause to be recorded, an affidavit, in writing, duly executed in the presence of two witnesses and acknowledged pursuant to the Uniform Recognition of Acknowledgments Act in Chapter 3, Title 26, which states that full payment of the balance or payoff amount of the security instrument has been made and that evidence of payment from the mortgagee, assignee, or servicer exists. This affidavit, duly recorded in the appropriate county, shall serve as notice of satisfaction of the mortgage and release of the lien upon the real property. The filing of the affidavit must be sufficient to satisfy or release the lien. Upon presentation of the instrument of satisfaction or release, the register must record the same. This section may not be construed to require an attorney to record an affidavit pursuant to this item or to create liability for failure to file such affidavit. The licensed attorney signing any such instrument which is false is guilty of perjury and subject to Section 16-9-10 and shall be liable for damages that any person may sustain as a result of the false affidavit, including reasonable attorney&#39;s fees incurred in connection with the recovery of such damages. The affidavit referred to in this item shall be as follows:<br /><br />
+<table style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <tr>
+    <th style="padding: 4px 8px; text-align: left;">&quot;STATE OF SOUTH CAROLINA</th>
+    <th style="padding: 4px 8px; text-align: left;">MORTGAGE LIEN</th>
+  </tr>
+  <tr>
+    <td style="padding: 4px 8px; text-align: left;">COUNTY OF ___________</td>
+    <td style="padding: 4px 8px; text-align: left;">SATISFACTION AFFIDAVIT</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="padding: 4px 8px; text-align: left;">PURSUANT TO SECTION 29-3-330</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="padding: 4px 8px; text-align: left;">OF SC CODE OF LAWS, 1976</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="padding: 4px 8px; text-align: left;">FOR BOOK ____ PAGE _____</td>
+  </tr>
+</table>
+<br />
+	The undersigned on oath, being first duly sworn, hereby certifies as follows:<br /><br />
+	1. The undersigned is a licensed attorney admitted to practice in the State of South Carolina.<br /><br />
+	2. That with respect to the mortgage or deed of trust given by __________________ to ______________________ dated _______ and recorded in the offices of the Clerk of Court or Register of Deeds in book _________ at page ________:<br /><br />
+	a. [ ] That the undersigned was given written payoff information and made such payoff and is in possession of a canceled check or other evidence of payment to the mortgagee, holder of record, or representative servicer.<br /><br />
+	b. [ ] That the undersigned was given written payoff information and made such payoff by wire transfer or other electronic means to the mortgagee, holder of record, or representative servicer and has confirmation from the undersigned&#39;s bank of the transfer to the account provided by the mortgagee, holder of record, or representative servicer.<br /><br />
+	Under penalties of perjury, I declare that I have examined this affidavit this ___ day of ____ and, to the best of my knowledge and belief, it is true, correct, and complete.<br /><br />
+<table style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <tr>
+    <th style="padding: 4px 8px; text-align: left;">(Witness)</th>
+    <th></th>
+    <th style="padding: 4px 8px; text-align: left;">(Signature)</th>
+  </tr>
+  <tr>
+    <td style="padding: 4px 8px; text-align: left;">(Witness)</td>
+    <td></td>
+    <td style="padding: 4px 8px; text-align: left;">(Name—Please Print)</td>
+  </tr>
+</table>
+<br />
+<table style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <tr>
+    <th></th>
+    <th style="padding: 4px 8px; text-align: left;">(Attorney&#39;s S.C. Bar number)</th>
+  </tr>
+  <tr>
+    <td style="padding: 4px 8px; text-align: left;">STATE OF SOUTH CAROLINA</td>
+    <td style="padding: 4px 8px; text-align: left;">ACKNOWLEDGEMENT</td>
+  </tr>
+  <tr>
+    <td style="padding: 4px 8px; text-align: left;">COUNTY OF</td>
+    <td></td>
+  </tr>
+</table>
+<br />
+	The foregoing instrument was acknowledged before me this ___ day of ____________ by ________________________.<br /><br />
+	____________________________<br /><br />
+	Notary Public for South Carolina<br /><br />
+	My Commission Expires: _____________________&quot;<br /><br />
+	Upon presentation to the office of the Register of Deeds, the register is directed to record pursuant to Section 29-3-330(B)(3) and mark the mortgage or deed of trust satisfied or released of record.<br /><br />
+HISTORY: 1962 Code SECTION 45-65; 1952 Code SECTION 45-65; 1942 Code SECTION 8702; 1932 Code SECTION 8702; 1924 (33) 929; 1925 (34) 83; 1930 (36) 1283; 1940 (41) 1844; 1964 (53) 1727; 1988 Act No. 494, SECTION 8(3); 1994 Act No. 382, SECTION 2; 1994 Act No. 478, SECTION 1; 1999 Act No. 67, SECTION 3; 2005 Act No. 73, SECTION 1; 2011 Act No. 19, SECTION 1, eff May 9, 2011; 2014 Act No. 198 (H.3134), SECTION 1, eff June 2, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	The 2011 amendment in subsection (c)(i) substituted &quot;acknowledged pursuant to the Uniform Recognition of Acknowledgments Act in Chapter 3, Title 26,&quot; for &quot;probated&quot;; and in subsection (e) substituted &quot;acknowledged pursuant to the Uniform Recognition of Acknowledgments Act in Chapter 3, Title 26,&quot; for &quot;probated or acknowledged&quot;; and amended the form.<br /><br />
+	2014 Act No. 198, SECTION 1, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-340.</span> Certificate of satisfaction.<br /><br />
+	The recording officer or his deputy shall enter on the original mortgage, deed of trust, or other instrument securing the payment and being a lien upon real property when it is produced before him a certificate that a satisfaction has been entered of record and the date of the entry.<br /><br />
+HISTORY: 1962 Code SECTION 45-66; 1952 Code SECTION 45-66; 1942 Code SECTION 8702; 1932 Code SECTION 8702; 1924 (33) 929; 1925 (34) 83; 1930 (36) 1283; 1940 (41) 1844; 1988 Act No. 494, SECTION 8(4).<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-345.</span> Document of rescission.<br /><br />
+	(A) In this section, &quot;document of rescission&quot; means a document stating that an identified satisfaction or affidavit of satisfaction of a mortgage or other lien affecting real property was recorded erroneously or that a mortgage or other lien affecting real property was satisfied of record erroneously, the secured obligation remains unsatisfied, and the mortgage or other lien affecting real property remains in force.<br /><br />
+	(B) If a satisfaction or affidavit of satisfaction of a mortgage or other lien affecting real property is recorded in error or a mortgage or other lien affecting real property is satisfied of record erroneously by another means, a document of rescission that has been duly witnessed and notarized in compliance with Section 30-5-30 may be executed and recorded. Upon recording, the document of rescission rescinds the erroneously recorded satisfaction or affidavit and the erroneous satisfaction of record of the mortgage or other lien affecting real property and reinstates the mortgage or other lien affecting real property as of the mortgage&#39;s original filing date. The clerk of court, register of deeds, or registrar of mesne conveyance shall index the document of rescission as of the date of filing.<br /><br />
+	(C)(1) A recorded document of rescission has no effect and does not constitute a lien as to the rights of any grantee or lien creditor, their heirs, successors, or assigns who records an interest in the real property described in a mortgage or other lien affecting real property after the recording of the satisfaction or affidavit of satisfaction of the mortgage, or other lien affecting real property and before the recording of the document of rescission, with a grantee under deed of title taking the property free and clear of the mortgage or other lien that was erroneously satisfied if the deed of title was received during the time period between the recording of the erroneous satisfaction and the end of the next business day observed at the clerk of court, register of deeds, or registrar of mesne conveyance&#39;s office following the recording of the document of rescission; and<br /><br />
+	(2) any person or entity otherwise having priority over or taking free of the lien created by the mortgage or other lien affecting real property as reinstated.<br /><br />
+	(D) A creditor who erroneously or wrongfully records a document of rescission is liable to a person injured by the recording for a sum of money not exceeding one-half of the original face amount of the debt secured by the mortgage or twenty-five thousand dollars, whichever is less, plus actual damages, costs, and attorney&#39;s fees.<br /><br />
+	(E) The clerk of court, register of deeds, or registrar of mesne conveyance shall collect a filing fee of six dollars, and an additional one dollar per page for a document containing more than one page.<br /><br />
+	(F) The &quot;document of rescission&quot; must be in a form substantially similar to:<br /><br />
+<table style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <tr>
+    <th></th>
+    <th style="padding: 4px 8px; text-align: left;">STATE OF SOUTH CAROLINA</th>
+    <th style="padding: 4px 8px; text-align: left;">)</th>
+    <th style="padding: 4px 8px; text-align: left;">DOCUMENT OF RESCISSION</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="padding: 4px 8px; text-align: left;">COUNTY OF</td>
+    <td style="padding: 4px 8px; text-align: left;">)</td>
+    <td style="padding: 4px 8px; text-align: left;">AFFIDAVIT</td>
+  </tr>
+</table>
+<br />
+	For Book _____, Page ______<br /><br />
+	Pursuant to Section 29-3-345 of S. C. Code of Laws<br /><br />
+	The undersigned on oath, being first duly sworn, hereby certifies as follows:<br /><br />
+	1. The undersigned is an authorized representative of ________________, the identified mortgagee/lien holder of the mortgage/lien (&quot;Mortgage&quot;) filed at Book _____, Page _____ in the above-referenced County.<br /><br />
+	2. With respect to the Mortgage, given by ________________ to _________________ dated _____________ and recorded in the above County in the Office of the Register of Deeds, this is to represent and certify that the mortgagee inadvertently and mistakenly marked the Mortgage as paid and/or satisfied and filed that document in the records of the County aforesaid.<br /><br />
+	3. This is to represent and certify that such satisfaction was erroneous and inadvertent, with the obligation secured by the Mortgage remaining unsatisfied and outstanding and the referenced Mortgage remains in force and effect.<br /><br />
+	4. Pursuant to Section 29-3-345, the Mortgage is reinstated.<br /><br />
+<table style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <tr>
+    <th></th>
+    <th style="padding: 4px 8px; text-align: left;">By:</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="padding: 4px 8px; text-align: left;">Its:</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="padding: 4px 8px; text-align: left;">Street Address:</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="padding: 4px 8px; text-align: left;">City, State and Zip Code:</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="padding: 4px 8px; text-align: left;">Telephone:</td>
+  </tr>
+</table>
+<br />
+	________________________________________ Witness<br /><br />
+	________________________________________ Witness<br /><br />
+	Personally appeared before me ________________________ who with _______________________ did witness and does acknowledge the due execution of the foregoing instrument.<br /><br />
+	Witness my hand and seal<br /><br />
+	the ______ day of ___________, ____________<br /><br />
+	________________________________________(L.S.)<br /><br />
+	Notary Public for:_________________________<br /><br />
+	My Commission Expires:____________________<br /><br />
+HISTORY: 2008 Act No. 328, SECTION 1, eff June 16, 2008.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-350.</span> Entry of cancellation on indexes.<br /><br />
+	All registers of deeds and all clerks of court in counties in which the clerks are required to perform the duties of registers of deeds shall enter the word &quot;canceled&quot;, together with the signature of the officer, upon the margin or across the indexes of real estate mortgages and chattel mortgages, respectively, when the real estate mortgage or chattel mortgage is duly canceled of record by the mortgagee or his assignee. The cancelation and signature must be entered in the margin opposite the names of the mortgagor and mortgagee, respectively, or across these names. A like cancelation, on the demand of the mortgagor or legal representative, must be made on mortgages heretofore canceled of record. In lieu of the above requirements, the register of deeds or clerk of court may insert an appropriate column on the same page in these indexes showing the book and page number, if any, of the satisfaction or cancelation. Upon failure of the register of deeds or clerk of court to comply with this section, in each instance he shall forfeit and pay to the mortgagor the sum of ten dollars to be recovered in any court of competent jurisdiction.<br /><br />
+	Any clerk or other officer wilfully violating this section, upon conviction, must be fined not more than one hundred dollars or imprisoned not more than thirty days, in the discretion of the court, and the solicitor of each circuit shall see that the law is complied with or shall prosecute violators.<br /><br />
+HISTORY: 1962 Code SECTION 45-67; 1952 Code SECTION 45-67; 1942 Code SECTION 8709; 1932 Code SECTION 8709; Civ. C. &#39;22 SECTION 5230; Cr. C. &#39;22 SECTION 536; Civ. C. &#39;12 SECTION 3466; 1910 (26) 587; 1911 (27) 164; 1912 (27) 628; 1988 Act No. 494, SECTION 8(5); 1988 Act No. 585, SECTION 1.<br /><br />
+Code Commissioner&#39;s Note<br /><br />
+	1997 Act No. 34, SECTION 1, directed the Code Commissioner to change all references to &quot;Register of Mesne Conveyances&quot; to &quot;Register of Deeds&quot; wherever appearing in the 1976 Code of Laws.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-360.</span> Application for rule to show cause why satisfaction must not be entered.<br /><br />
+	Any person who is indebted by mortgage on real estate may apply to the presiding judge or any court of general sessions and common pleas to be held in the county in which the mortgage on real estate is recorded for a rule to show cause why satisfaction must not be entered thereon.<br /><br />
+HISTORY: 1962 Code SECTION 45-67.1; 1952 Code SECTION 45-67.1; 1942 Code SECTION 8705; 1932 Code SECTION 8705; Civ. C. &#39;22 SECTION 5226; Civ. C. &#39;12 SECTION 3462; Civ. C. &#39;02 SECTION 2377; G. S. 1793; R. S. 1896; 1817 (6) 61; 1988 Act No. 494, SECTION 8(6).<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-370.</span> Proceedings where rule to show cause issues.<br /><br />
+	Such judge shall grant such rule, returnable on a day to be fixed by him. The rule shall be served on the mortgagee, his legal representative or assignee or the attorney of any thereof, and if the party so served shall not attend to show cause or, attending, shall show insufficient cause and the judge shall be satisfied that the mortgage has been fully paid he shall order the proper officer to enter satisfaction on the mortgage.<br /><br />
+HISTORY: 1962 Code SECTION 45-67.2; 1952 Code SECTION 45-67.2; 1942 Code SECTION 8706; 1932 Code SECTION 8706; Civ. C. &#39;22 SECTION 5227; Civ. C. &#39;12 SECTION 3463; Civ. C. &#39;02 SECTION 2378; G. S. 1794; R. S. 1897; 1817 (6) 61.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-380.</span> Submission to jury to decide whether mortgage paid.<br /><br />
+	If, on the return of the rule, it shall appear to the presiding judge that matters proper for the decision of a jury are involved in the case he may, at the request of either party, submit it to a jury, to be decided immediately in a summary manner. If the jury shall decide that the mortgage has been paid, satisfaction shall be ordered accordingly.<br /><br />
+HISTORY: 1962 Code SECTION 45-67.3; 1952 Code SECTION 45-67.3; 1942 Code SECTION 8707; 1932 Code SECTION 8707; Civ. C. &#39;22 SECTION 5228; Civ. C. &#39;12 SECTION 3464; Civ. C. &#39;02 SECTION 2379; G. S. 1795; R.S. 1898; 1817 (6) 61.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-390.</span> Alternative procedure for rule to show cause against satisfaction.<br /><br />
+	When the debt or any other obligation secured by any mortgage on real estate has been fully paid, released, satisfied, discharged, or extinguished or when the lien of any mortgage on real estate has been released, discharged, or extinguished and for any reason the mortgage or the record of the mortgage in the office of the register of deeds or clerk of court has not been satisfied and cancelled, the mortgagor or his legal representatives may, upon a verified petition against the mortgagee, his legal representatives, assignees, pledgees of record, and any other person having any right, title, or interest in or lien upon the mortgage, reciting the facts and circumstances in relation to the mortgage and the satisfaction, release, discharge, or extinguishment of the debt or obligation secured thereby or of the lien thereof, apply to the court of common pleas or any judge of the Court of Common Pleas in open court or at chambers for a rule to show cause why an order should not be granted directing that the mortgage or record of the mortgage be satisfied and cancelled of record.<br /><br />
+HISTORY: 1962 Code SECTION 45-68; 1952 Code SECTION 45-68; 1942 Code SECTION 8707-1; 1933 (38) 467; 1988 Act No. 494, SECTION 8(7).<br /><br />
+Code Commissioner&#39;s Note<br /><br />
+	1997 Act No. 34, SECTION 1, directed the Code Commissioner to change all references to &quot;Register of Mesne Conveyances&quot; to &quot;Register of Deeds&quot; wherever appearing in the 1976 Code of Laws.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-400.</span> Entry in index to lis pendens.<br /><br />
+	Upon the filing of the petition in the office of the clerk of the court of common pleas, the clerk shall immediately enter it in the index to lis pendens affecting real property and from the time of the filing the pendency of the action or special proceedings is constructive notice to an assignee, pledgee, purchaser, or encumbrancer of the mortgage, and every person whose purchase, encumbrance, assignment, pledge, or hypothecation is subsequently executed or subsequently recorded is considered a subsequent purchaser or encumbrancer and is bound by all proceedings taken after the filing of the petition to the same extent as if he were made a party to the action or special proceeding. The filing of the petition is of no avail unless it is followed by the first publication of the rule or by the personal service thereof on a respondent within sixty days after the filing.<br /><br />
+HISTORY: 1962 Code SECTION 45-69; 1952 Code SECTION 45-69; 1942 Code SECTION 8707-1; 1933 (38) 467; 1988 Act No. 494, SECTION 8(8).<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-410.</span> Issuance of rule to show cause; service of rule.<br /><br />
+	Upon the filing of such petition, the court or judge thereof shall grant and issue a rule to show cause returnable on a day to be fixed by the court or judge. The rule and petition shall be served upon the mortgagee or his legal representatives or assignees and pledgees of record and every other party named as respondent in the petition.<br /><br />
+HISTORY: 1962 Code SECTION 45-70; 1952 Code SECTION 45-70; 1942 Code SECTION 8707-1; 1933 (38) 467.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-420.</span> Service by publication on certain parties.<br /><br />
+	If (a) the mortgagee or any of his pledgees or assignees or any other person having any right, title or interest in or lien upon the mortgage shall be dead at or before the time of the filing of the petition and no legal representatives have been appointed and qualified for such person, (b) any of such persons cannot be found within this State or (c) the mortgagee, assignee, pledgee or interested person is a domestic or foreign corporation which has been dissolved or has ceased to do business in this State and no officer or agent authorized to accept service of the petition and rule can be found in this State, the court or judge, upon proof of such facts by affidavit of the petitioner, shall grant an order for the publication of the rule to show cause, such publication to be made once a week for three consecutive weeks in some newspaper published in the county in which the mortgaged property or some part thereof is situate or, if there is no newspaper in such county, by posting a copy of the petition and rule to show cause upon the courthouse door of the county for a period of three weeks. Such constructive service shall be complete upon the expiration of twenty-one days from the time of the first publication or posting of the petition and rule to show cause.<br /><br />
+HISTORY: 1962 Code SECTION 45-71; 1952 Code SECTION 45-71; 1942 Code SECTION 8707-1; 1933 (38) 467.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-430.</span> Order to cancel mortgage or release lien upon failure to show sufficient cause.<br /><br />
+	If the parties so served with the petition and rule shall not attend to show cause or, attending, shall fail to show sufficient cause and the court or judge shall be satisfied that the debt or obligation secured by the mortgage has been fully paid, satisfied, discharged, released or extinguished or that the lien of the mortgage has been released, discharged or extinguished, the court or judge shall thereupon, by an appropriate order, direct the proper officer to satisfy and cancel the mortgage or the record thereof or to release the lien of the mortgage upon the record thereof, as the case may be.<br /><br />
+HISTORY: 1962 Code SECTION 45-72; 1952 Code SECTION 45-72; 1942 Code SECTION 8707-1; 1933 (38) 467.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-440.</span> Persons on whom satisfaction by order of court is binding.<br /><br />
+	Such satisfaction and cancellation of the mortgage or release of the lien thereof shall be effectual and binding upon the parties so served with the petition and rule and upon every assignee or pledgee of every parol or written assignment, pledge or hypothecation of such mortgage not named in and served with the petition and rule unless such pledge, hypothecation or assignment is duly recorded in the proper office at or before the time of the filing of the petition or the petitioner has actual notice or knowledge thereof.<br /><br />
+HISTORY: 1962 Code SECTION 45-73; 1952 Code SECTION 45-73; 1942 Code SECTION 8707-1; 1933 (38) 467.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-450.</span> Cumulative nature of foregoing sections.<br /><br />
+	Sections 29-3-390 to 29-3-440 shall not be taken or deemed to repeal any other laws relating to the subject matter thereof but shall be deemed and construed to be cumulative of other remedies.<br /><br />
+HISTORY: 1962 Code SECTION 45-74; 1952 Code SECTION 45-74; 1942 Code SECTION 8707-1; 1933 (38) 467.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-460.</span> Abatement of notice of lis pendens.<br /><br />
+	The court in which the action or special proceeding was commenced may, in its discretion and at any time after the action or special proceeding shall be settled, discontinued or abated as provided in SECTIONS 15-5-180 and 15-5-190, on application of any person aggrieved and on good cause shown and on such notice as shall be directed or approved by the court, order the notice authorized by SECTION 29-3-400 to be cancelled of record by the clerk of the court of common pleas of any county in whose office it may have been indexed and such cancellation shall be made by an endorsement to that effect on the margin of the index of the record, which shall refer to the order for cancellation.<br /><br />
+HISTORY: 1962 Code SECTION 45-75; 1952 Code SECTION 45-75; 1942 Code SECTION 8707-1; 1933 (38) 467.<br /><br />
+Editor&#39;s Note<br /><br />
+	Sections 15-5-180 and 15-5-190, which provided for abatement and continuance upon the death or disability of a party, were repealed by 1985 Act No. 100, $ 2, effective July 1, 1985. Provisions comparable to former section 15-5-180 may be found in South Carolina Civil Procedure Rule 25.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-470.</span> Release of portion of mortgaged premises.<br /><br />
+	Nothing provided in this title prevents the release of a portion of any mortgaged interest in real property from the lien of the mortgage by any instrument in writing duly executed in the presence of one or more witnesses and duly probated, the release to be executed by the owner or holder of the lien or his duly authorized representative as will appear by the record of the original instrument or of any assignment thereof. If the release is written upon or attached to the original mortgage no probate thereof is required.<br /><br />
+HISTORY: 1962 Code SECTION 45-76; 1952 Code SECTION 45-76; 1942 Code SECTION 8702; 1932 Code SECTION 8702; 1924 (33) 929; 1925 (34) 83; 1930 (36) 1283; 1940 (41) 1844; 1988 Act No. 494, SECTION 8(9).<br /><br />
+<div style="text-align: center;">ARTICLE 7</div>
+<div style="text-align: center;">Foreclosure</div><br />
+<span style="font-weight: bold;"> SECTION 29-3-610.</span> Personal representative of deceased mortgagor as party.<br /><br />
+	It shall not be necessary to make the personal representative of a deceased mortgagor a party to any foreclosure proceeding and no sale heretofore made under foreclosure proceedings to which the personal representative of a deceased mortgagor was not a party shall be invalid by reason of the absence of such personal representative.<br /><br />
+HISTORY: 1962 Code SECTION 45-81; 1952 Code SECTION 45-81; 1942 Code SECTIONS 487, 8707; 1932 Code SECTIONS 487, 8708, 8712; Civ. C. &#39;22 SECTIONS 5529, 5232; Civ. C. &#39;12 SECTIONS 3465, 3468; Civ. C. &#39;02 SECTIONS 2380, 2382; Civ. P. &#39;22 SECTION 430; Civ. P. &#39;12 SECTION 218; Civ. P. &#39;02 SECTION 188; 1870 (14) 190; 1894 (21) 816; 1900 (23) 349; 1935 (39) 406.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-620.</span> Mortgagor as party.<br /><br />
+	It shall not be necessary to make a mortgagor who has conveyed to another the mortgaged premises a party to any action for foreclosure when no judgment for a deficiency is demanded.<br /><br />
+HISTORY: 1962 Code SECTION 45-82; 1952 Code SECTION 45-82; 1942 Code SECTIONS 487, 8708; 1932 Code SECTIONS 487, 8708, 8712; Civ. C. &#39;22 SECTIONS 5229, 5232; Civ. C. &#39;12 SECTIONS 3465, 3468; Civ. C. &#39;02 SECTIONS 2380, 2382; Civ. P. &#39;22 SECTION 430; Civ. P. &#39;12 SECTION 218; Civ. P. &#39;02 SECTION 188; 1870 (14) 190; 1894 (21) 816; 1900 (23) 349; 1935 (39) 406.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-625.</span> Expedited mortgage foreclosures for abandoned property.<br /><br />
+	(A) For the purposes of this section, &quot;abandoned property&quot; means real property subject to a mortgage where either:<br /><br />
+	(1) the mortgaged property is not occupied and at least two of the following conditions exist:<br /><br />
+	(a) windows or entrances to the property are boarded up or closed off or multiple window panes are damaged, broken, or unrepaired;<br /><br />
+	(b) doors to the property are smashed through, broken off, unhinged, or continuously unlocked;<br /><br />
+	(c) hazardous, noxious, or unhealthy substances or materials have accumulated on the property;<br /><br />
+	(d) gas, electric, or water utility services have been terminated by the utility for at least thirty days due to failure to pay by the property owner;<br /><br />
+	(e) a risk to the health, safety, or welfare of the public exists due to acts of vandalism, loitering, criminal conduct, or the physical destruction or deterioration of the property;<br /><br />
+	(f) an uncorrected violation of a building, housing, or similar code during the preceding year that the property owner has received notice to correct and has failed to do so;<br /><br />
+	(g) an order by governmental authorities declaring the property to be unfit for occupancy and to remain vacant and unoccupied;<br /><br />
+	(h) a written statement issued by any mortgagor expressing the clear intent of all mortgagors to abandon the property;<br /><br />
+	(i) written statements of neighbors, delivery persons, or governmental employees indicating that the property is abandoned; or<br /><br />
+	(j) any other indicia of abandonment; or<br /><br />
+	(2) the mortgaged property is vacant, unimproved land and is in need of maintenance, repair, or securing;<br /><br />
+	(3) a showing under items (1) or (2) of this section must be proven by clear and convincing evidence.<br /><br />
+	(B) For the purposes of this section, real property must not be considered &quot;abandoned&quot; if, on the property, there is:<br /><br />
+	(1) an unoccupied building which is undergoing construction, renovation, or rehabilitation that is proceeding diligently to completion, and the building is in compliance with all applicable ordinances, codes, regulations, and statutes;<br /><br />
+	(2) a building occupied on a seasonal basis, but otherwise secure;<br /><br />
+	(3) a building that is secure, but is the subject of a probate action, action to quiet title, or other ownership dispute; or<br /><br />
+	(4) a building owned by a property owner who is deceased and the heirs can be identified. The mortgage holder must submit proof that efforts were made to identify and contact heirs.<br /><br />
+	(C) A mortgagee or successor in interest to a mortgagee may move the court for an expedited judgment of foreclosure and sale of real property that is considered &quot;abandoned&quot; pursuant to this section. The motion must be a motion to expedite foreclosure and sale, which:<br /><br />
+	(1) must be supported by affidavit and must set forth the facts pursuant to subsection (A) demonstrating that the mortgaged property is abandoned; and<br /><br />
+	(2) may be filed by the mortgagee at the time the Order of Reference is filed or any time thereafter.<br /><br />
+	(D) In addition to any notices required to be served by law or the South Carolina Rules of Civil Procedure, a mortgagee shall, in a motion to proceed pursuant to this section or with any rule to show cause served as original service of process, serve a notice on each defendant that the mortgagee is seeking an entry of a judgment and decree of foreclosure on the date fixed by the court or on the return date of the rule to show cause.<br /><br />
+	(E) A motion to expedite foreclosure and sale may be heard by the master-in-equity or special referee, or in those counties without a master-in-equity, by a circuit judge.<br /><br />
+	(F) A motion to expedite a foreclosure action is designated as a priority matter pursuant to the South Carolina Rules of Civil Procedure and should be heard by the court as quickly as possible.<br /><br />
+	(G) The court, after a hearing, shall grant the motion to expedite foreclosure and sale and enter a judgment of foreclosure and sale upon a finding by clear and convincing evidence that:<br /><br />
+	(1) the mortgaged property is abandoned as defined under subsection (A); and<br /><br />
+	(2) the pleadings, documents filed with the court, and testimony supports the entry of a final judgment of foreclosure and sale.<br /><br />
+	(H) The court shall not grant the motion to expedite foreclosure and sale or enter a judgment of foreclosure and sale if the court finds that:<br /><br />
+	(1) the mortgaged property is not abandoned; or<br /><br />
+	(2) the mortgagor or any other defendant has filed an answer, appearance, or other written objection that is not withdrawn and the defenses or objections asserted provide cause to preclude the entry of a judgment of foreclosure and sale.<br /><br />
+	(I) If a motion to expedite foreclosure and sale is denied, the court may direct that the foreclosure action continue pursuant to standard procedure under South Carolina law for mortgage foreclosure actions for properties that are not abandoned.<br /><br />
+	(J) Nothing in this section may be construed to supersede or limit procedures adopted by the South Carolina Supreme Court to resolve residential mortgage foreclosure actions.<br /><br />
+HISTORY: 2014 Act No. 218 (S.1007), SECTION 1, eff June 2, 2014.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-630.</span> Debt secured must be established before sale by mortgagee.<br /><br />
+	No sale under or by virtue of any mortgage or other instrument in writing intended as security for a debt, conferring a power upon the mortgagee or creditor to sell the mortgaged or pledged property while such power remains of force or has not been revoked by the death of the person executing such mortgage or instrument, shall be valid to pass the title of the land mortgaged unless the debt for which the security is given shall be first established by the judgment of some court of competent jurisdiction or unless the amount of the debt be consented to in writing by the debtor subsequently to the maturity of the debt, such consent in writing to be recorded in the office of the register of deeds or clerk of the court where the mortgage or other instrument in writing given to secure such debt is or ought to be recorded. But if the mortgagor be dead it shall not be necessary in any foreclosure proceeding first to establish the debt by the judgment of some court of competent jurisdiction in order to obtain a decree of foreclosure and sale.<br /><br />
+HISTORY: 1962 Code SECTION 45-83; 1952 Code SECTION 45-83; 1942 Code SECTIONS 487, 8708; 1932 Code SECTIONS 487, 8708, 8712; Civ. C. &#39;22 SECTIONS 5229, 5232; Civ. C. &#39;12 SECTIONS 3565, 3468; Civ. C. &#39;02 SECTIONS 2380, 2382; Civ. P. &#39;22 SECTION 430; Civ. P. &#39;12 SECTION 218; Civ. P. &#39;02 SECTION 188; 1870 (14) 190; 1894 (21) 816; 1900 (23) 349; 1935 (39) 406.<br /><br />
+Code Commissioner&#39;s Note<br /><br />
+	1997 Act No. 34, SECTION 1, directed the Code Commissioner to change all references to &quot;Register of Mesne Conveyances&quot; to &quot;Register of Deeds&quot; wherever appearing in the 1976 Code of Laws.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-640.</span> Time within which mortgagor&#39;s consent to amount of debt is valid to allow sale by mortgagee.<br /><br />
+	The consent of the mortgagor to the amount of the debt shall bear date not more than twelve months prior to any sale under any power contained in any such mortgage as referred to in SECTION 29-3-630.<br /><br />
+HISTORY: 1962 Code SECTION 45-84; 1952 Code SECTION 45-84; 1942 Code SECTION 8711; 1932 Code SECTION 8711; Civ. C. &#39;22 SECTION 5231; Civ. C. &#39;12 SECTION 3467; Civ. C. &#39;02 SECTION 2381; 1896 (22) 194.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-650.</span> Court may render judgment and order sale at same time.<br /><br />
+	The court may also render judgment against the parties liable for the payment of the debt secured by the mortgage and direct at the same time the sale of the mortgaged premises. Such judgment so rendered may be entered and docketed in the clerk&#39;s office in the same manner as other judgments. Upon the sale of the mortgaged premises the officer making the sale under the order of the court shall credit upon the judgment so rendered for the debt the amount paid to the plaintiff from the proceeds of the sale.<br /><br />
+HISTORY: 1962 Code SECTION 45-85; 1952 Code SECTION 45-85; 1942 Code SECTION 487; 1932 Code SECTIONS 487, 8712; Civ. C. &#39;22 SECTION 5232; Civ. P. &#39;22 SECTION 430; Civ. C. &#39;12 SECTION 3468; Civ. P. &#39;12 SECTION 218; Civ. C. &#39;02 SECTION 2382; Civ. P. &#39;02 SECTION 188; 1870 (14) 190; 1894 (21) 816; 1900 (23) 349; 1935 (39) 406.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-660.</span> Deficiency judgment.<br /><br />
+	In actions to foreclose mortgages the court may adjudge and direct the payment by the mortgagor of any residue of the mortgage debt that may remain unsatisfied after a sale of the mortgaged premises in cases in which the mortgagor shall be personally liable for the debt secured by such mortgage and if the mortgage debt be secured by the covenant or obligation of any person other than the mortgagor the plaintiff may make such person a party to the action and the court may adjudge payment of the residue of such debt remaining unsatisfied after a sale of the mortgaged premises against such other person and may enforce such judgment as in other cases.<br /><br />
+HISTORY: 1962 Code SECTION 45-86; 1952 Code SECTION 45-86; 1942 Code SECTION 487; 1932 Code SECTIONS 487, 8712; Civ. C. &#39;22 SECTION 5232; Civ. P. &#39;22 SECTION 430; Civ. C. &#39;12 SECTION 3468; Civ. P. &#39;12 SECTION 218; Civ. C. &#39;02 SECTION 2382; Civ. P. &#39;02 SECTION 188; 1870 (14) 190; 1894 (21) 816; 1900 (23) 349; 1935 (39) 406.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-670.</span> Deficiency shall not be extinguished on purchase by mortgagee.<br /><br />
+	When any sale of land is made under the circumstances under which such a sale is permitted by SECTION 29-3-630 any balance of the mortgage debt over the purchase price of the land at such sale shall not be extinguished by reason of the mortgagee or his assigns becoming the purchaser at such sale, whether the mortgage contained a provision to that effect or not.<br /><br />
+HISTORY: 1962 Code SECTION 45-87; 1952 Code SECTION 45-87; 1942 Code SECTION 8711; 1932 Code SECTION 8711; Civ. C. &#39;22 SECTION 5231; Civ. C. &#39;12 SECTION 3467; Civ. C. &#39;02 SECTION 2381; 1896 (22) 194.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-680.</span> Application for order of appraisal.<br /><br />
+	(A) In any real estate foreclosure proceeding a defendant against whom a personal judgment is taken or asked, whether he has theretofore appeared in the action or not, may within thirty days after the sale of the mortgaged property apply by verified petition to the clerk of court in which the decree or order of sale was taken for an order of appraisal.<br /><br />
+	(B) Except in any real estate foreclosure proceeding relating to a dwelling place, as defined in Section 12-37-250, or to a consumer credit transaction, as defined in Section 37-1-301(11), a defendant against whom a personal judgment may be taken on a real estate secured transaction may waive the appraisal rights as provided by this section if the debtors, makers, borrowers, and/or guarantors are notified in writing before the transaction that a waiver of appraisal rights will be required and upon signing a statement during the transaction similar to the following:<br /><br />
+	&quot;The laws of South Carolina provide that in any real estate foreclosure proceeding a defendant against whom a personal judgment is taken or asked may within thirty days after the sale of the mortgaged property apply to the court for an order of appraisal. The statutory appraisal value as approved by the court would be substituted for the high bid and may decrease the amount of any deficiency owing in connection with the transaction. THE UNDERSIGNED HEREBY WAIVES AND RELINQUISHES THE STATUTORY APPRAISAL RIGHTS WHICH MEANS THE HIGH BID AT THE JUDICIAL FORECLOSURE SALE WILL BE APPLIED TO THE DEBT REGARDLESS OF ANY APPRAISED VALUE OF THE MORTGAGED PROPERTY.&quot;<br /><br />
+	This waiver may be in any document relating to the transaction; however, the required language must be on a page containing the signature of the person making the waiver and the capitalized sentence must be underlined, in capital letters, or disclosed in another prominent manner.<br /><br />
+HISTORY: 1962 Code SECTION 45-88; 1952 Code SECTION 45-88; 1942 Code SECTION 8712; 1933 (38) 350; 1987 Act No. 27, SECTION 2; 1996 Act No. 430, SECTION 5.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-690.</span> Extension of time for filing for appraisal.<br /><br />
+	The time provided by SECTION 29-3-680 for filing the petition required thereunder shall not be enlarged or extended except by a written consent of the judgment creditor.<br /><br />
+HISTORY: 1962 Code SECTION 45-89; 1952 Code SECTION 45-89; 1942 Code SECTION 8712; 1933 (38) 350.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-700.</span> Order for appraisal.<br /><br />
+	Upon the filing of such petition and deposit with the clerk of a sufficient sum to pay the costs of the subsequent proceedings he shall issue an order that the property be appraised at its true value as of the date of sale by three disinterested individuals who must be state-certified general real estate appraisers as defined in Section 40-60-20, state-certified residential real estate appraisers as defined by Section 40-60-20, or state-licensed real estate appraisers as defined by Section 40-60-20, who shall not be parties to the action or connected in business with or related by blood or marriage within the sixth degree to any such party.<br /><br />
+HISTORY: 1962 Code SECTION 45-90; 1952 Code SECTION 45-90; 1942 Code SECTION 8712; 1933 (38) 350; 1996 Act No. 430, SECTION 6.<br /><br />
+Code Commissioner&#39;s Note<br /><br />
+	At the direction of the Code Commissioner, incorrect references to subsections in Section 40-60-20 were removed.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-710.</span> Appointment of appraisers.<br /><br />
+	In his petition the petitioner shall designate one appraiser and within ten days after service of a copy of the order upon the judgment creditor or his attorney of record he shall designate to the clerk another appraiser, whereupon the court having jurisdiction of the action or any judge thereof shall appoint a third, and the said court or judge shall make the appointment herein provided for the judgment creditor if he does not avail himself of his right within the time above prescribed.<br /><br />
+HISTORY: 1962 Code SECTION 45-91; 1952 Code SECTION 45-91; 1942 Code SECTION 8712; 1933 (38) 350.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-720.</span> Appraisal of the mortgaged property.<br /><br />
+	The board of appraisers as so constituted shall proceed to view and value the mortgaged property and all or a majority thereof shall make a sworn return within thirty days from their appointment of the true value of the property as of the date of sale, taking into consideration sale value, cost and replacement value of improvements, income production and all other proper elements which, in their discretion, enter into the determination of true value.<br /><br />
+HISTORY: 1962 Code SECTION 45-92; 1952 Code SECTION 45-92; 1942 Code SECTION 8712; 1933 (38) 350.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-730.</span> Effect of failure of appraisers to agree.<br /><br />
+	If a majority of the board shall not agree and make return within the time above prescribed another shall be likewise appointed of the same qualifications and with the same duties and likewise thereafter new boards shall be appointed until one shall make a return agreed to by a majority.<br /><br />
+HISTORY: 1962 Code SECTION 45-93; 1952 Code SECTION 45-93; 1942 Code SECTION 8712; 1933 (38) 350.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-740.</span> Return of appraisers; effect of return on deficiency judgment.<br /><br />
+	The return of the appraisers shall be filed and recorded by the clerk as a judgment of the court and be subject to appeal as hereinafter provided. If the value returned after deduction therefrom of the amount of the price at which the property was sold under direction of the court be equal to or exceed the amount of the deficiency remaining upon the judgment after application of the net proceeds of sale the judgment shall be thereupon extinguished and cancelled of record by the clerk and if such returned value, after deduction of the amount of the sale price, be less than the deficiency the latter shall be abated and deemed paid, pro tanto, and be thereafter enforceable for only the remainder, the amount of which will be determined by the clerk and stated in a proper order from which any party may appeal within ten days after notice of filing thereof to the court or any judge thereof in accord with the procedure prescribed in SECTION 29-3-750.<br /><br />
+HISTORY: 1962 Code SECTION 45-94; 1952 Code SECTION 45-94; 1942 Code SECTION 8712; 1933 (38) 350.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-750.</span> Appeal from return of appraisers.<br /><br />
+	The petitioner or the judgment creditor may appeal from the return of the appraisers upon notice stating the ground of such appeal served upon the other party within ten days after notice of the filing of the return, such appeal being to the court having jurisdiction of the action or any judge thereof, who shall hear the appeal without a jury in open court or at chambers upon affidavits or oral testimony as he deems advisable. Such court may confirm the return or order a new appraisal upon such terms as he may deem equitable and an appeal from his order or decree shall lie as in other equity cases.<br /><br />
+HISTORY: 1962 Code SECTION 45-95; 1952 Code SECTION 45-95; 1942 Code SECTION 8712; 1933 (38) 350.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-760.</span> Compensation and costs of appraisers and clerk.<br /><br />
+	The appraisers shall be paid two dollars each for their services and the clerk&#39;s costs for making orders, filing and recording shall be as for similar papers and pleadings.<br /><br />
+HISTORY: 1962 Code SECTION 45-96; 1952 Code SECTION 45-96; 1942 Code SECTION 8712; 1933 (38) 350.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-770.</span> Application of appraisal provisions to present and future mortgages.<br /><br />
+	The provisions of SECTIONS 29-3-680 to 29-3-760, which are intended to affect the remedy of foreclosure, shall apply to the foreclosure of all real estate mortgages now existing and those hereafter executed but, if held invalid by a court of competent jurisdiction as to the former, they shall nevertheless be fully applicable to the latter; but unless the petition required by SECTION 29-3-680 be filed within the time prescribed, no deficiency judgment shall be affected hereby.<br /><br />
+HISTORY: 1962 Code SECTION 45-96.1; 1952 Code SECTION 45-96.1; 1942 Code SECTION 8712; 1933 (38) 350.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-780.</span> Entry of release of mortgage on land sold in foreclosure sale.<br /><br />
+	Upon confirmation of the circuit court of the report of the master or the other officer making a sale of lands pursuant to decree of foreclosure, the officer of the court making the sale shall cause to be recorded in the office where the foreclosed mortgage is recorded a release, cancellation, and satisfaction of the lien in the form prescribed in Section 29-3-790. However, nothing in this section may be construed to satisfy any unpaid portion of the debt secured by the mortgage.<br /><br />
+HISTORY: 1962 Code SECTION 45-97; 1952 Code SECTION 45-97; 1942 Code SECTION 3620; 1932 Code SECTION 3620; Civ. C. &#39;22 SECTION 2164; Civ. C. &#39;12 SECTION 1340; Civ. C. &#39;02 SECTION 942; 1900 (23) 347; 1926 (34) 1013; 1929 (36) 17; 1990 Act No. 460, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-790.</span> Form of release of lien.<br /><br />
+	The release, cancellation, and satisfaction of lien required under Section 29-3-780 must be made in writing and signed by the officer and must be in the following form:<br /><br />
+<table style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <tr>
+    <th></th>
+    <th style="padding: 4px 8px; text-align: left;">&quot;Lien of mortgage recorded in</th>
+    <th style="padding: 4px 8px; text-align: left;">,</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td style="padding: 4px 8px; text-align: left;">(Mortgage Book and Page)</td>
+  </tr>
+</table>
+<br />
+<table style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th style="padding: 4px 8px; text-align: left;">is released, canceled, and satisfied by sale</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="padding: 4px 8px; text-align: left;">(Office)</td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<br />
+<table style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <tr>
+    <th></th>
+    <th style="padding: 4px 8px; text-align: left;">under foreclosure the _____ day of</th>
+    <th style="padding: 4px 8px; text-align: left;">,</th>
+    <th></th>
+    <th style="padding: 4px 8px; text-align: left;">,</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td style="padding: 4px 8px; text-align: left;">(Month)</td>
+    <td></td>
+    <td style="padding: 4px 8px; text-align: left;">(Year)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="padding: 4px 8px; text-align: left;">See Judgment Roll No. ______.&quot;</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<br />
+HISTORY: 1962 Code SECTION 45-98; 1952 Code SECTION 45-98; 1942 Code SECTION 3621; 1932 Code SECTION 3621; Civ. C. &#39;22 SECTION 2165; Civ. C. &#39;12 SECTION 1341; Civ. C. &#39;02 SECTION 943; 1926 (34) 1013; 1929 (36) 17; 1990 Act No. 460, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 29-3-800.</span> Foreclosure of liens; boundary clarification.<br /><br />
+	(A) For the counties of this State bordering North Carolina, Oconee, Pickens, Greenville, Spartanburg, Cherokee, York, Lancaster, Chesterfield, Marlboro, Dillon, and Horry, hereinafter referred to as the &quot;affected counties&quot;, the following provisions apply to the foreclosure of liens encumbering affected lands, as further defined and set forth in Section 30-5-270.<br /><br />
+	(B)(1) In the event a real estate foreclosure proceeding is instituted pursuant to Title 29, Chapter 3 to recover the payment of money secured by mortgages and other liens purporting to encumber property being identified as affected lands, the purported mortgagee, through its attorney of record, shall file with the court a copy of the recorded Notice of Boundary Clarification, along with the attorney&#39;s certification that title to the subject real property has been searched in the affected counties and the affected jurisdiction, as further defined and set forth in Section 30-5-270(B)(2) and (3) respectively, and that all parties having an interest in the subject real property pursuant to the muniments of title, as further defined and set forth in Section 30-5-270(B)(9), have been served with notice of the proceeding pursuant to the applicable procedure below. All proceedings in the foreclosure action must be stayed until the attorney&#39;s certification is filed with the court.<br /><br />
+	(2) In all mortgage foreclosure actions pending on the effective date of the boundary clarification legislation, as further defined and set forth in Section 30-5-270(B)(6), before any merits hearing in the case or if an order of foreclosure has been entered before any foreclosure sale, the mortgagee shall, through its attorney of record, serve a copy of the Notice of Boundary Clarification and filed pleadings upon any party identified on the Notice of Boundary Clarification or known to have an interest in the subject affected lands, not already a party to the action, by mailing the notice via certified mail or overnight delivery to the property addresses of the subject affected lands and to all known addresses of the parties; provided, that the notice also shall state that the party has thirty days from the date of mailing of the Notice of Boundary Clarification to file and serve an answer or other response to the mortgagee&#39;s summons and complaint.<br /><br />
+	(3) In all mortgage foreclosure actions filed after the effective date of the boundary clarification legislation, the mortgagee, through its attorney of record, shall serve along with the summons and complaint a copy of the recorded Notice of Boundary Clarification upon the mortgagor and all parties identified on the Notice of Boundary Clarification or known to have an interest in the subject affected lands.<br /><br />
+	(C) If within thirty days after having been served with Notice of Boundary Clarification as set forth in subsection (B)(1), any party served has failed, refused, or voluntarily elected not to file a response in the foreclosure proceeding, the mortgagee, through its attorney, shall certify that fact to the court, and the foreclosure action may proceed with the parties being bound as any other party in the action by the judgment and order of the court having jurisdiction over the foreclosure action; provided, however, that all parties shall receive actual notice of any hearings and sales in the foreclosure.<br /><br />
+	(D) The court having jurisdiction over the foreclosure action shall hear and determine any dispute concerning any party&#39;s right, title, or interest in the subject affected lands.<br /><br />
+HISTORY: 2016 Act No. 270 (S.667), SECTION 16, eff January 1, 2017.<br /><br />
+
+</div>
+
+
+					</div>		 <!-- mainwidepanel -->
+					
+				</div>		 <!-- pagebody -->
+				
+				<div id="footer" class="nodisplay" style="height: 30px;" onContextMenu="return false;">
+			<div id="footerdiv" style="margin:0;">
+				South Carolina Legislative Services Agency * 223 Blatt Building * 1105 Pendleton Street * Columbia, SC 29201<!-- * 803-212-4420--><br>
+				
+								<a href="/disclaimer.php">Disclaimer</a> * <a href="/policies.php">Policies</a> * <a href="/credits.php">Photo Credits</a> * <a href="/contact.php">Contact Us</a>
+							</div>
+		</div>
+		<div id="printfooter" class="printdisplay serifNormal" align=center style="font-size: 8pt;">
+			<br>
+			<br>
+			<hr>
+			Legislative Services Agency
+			<br>
+			h t t p : / / w w w . s c s t a t e h o u s e . g o v
+		</div>
+	
+		</div>	<!-- container or main in mobile page-->
+</body>
+</html>
+

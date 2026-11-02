@@ -1,0 +1,3535 @@
+{
+ "pulled": "2026-11-02T02:25:59.539441+00:00",
+ "rows": [
+  {
+   "name": "1201 N WACCAMAW",
+   "va_records": [
+    {
+     "city": "GARDEN CITY",
+     "street": "1201 N WACCAMAW",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=1201+n+waccamaw",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "ARCADIAN LAKES",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "120 GULLY BRANCH LANE #1",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=arcadian+lakes",
+   "total": 1,
+   "va_marked": 0,
+   "price_min": 300000,
+   "price_max": 300000,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.77874221,
+   "lng": -78.78458473,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "ASHLEY PARK",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "217 WANDO RIVER RD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=ashley+park",
+   "total": 1,
+   "va_marked": 1,
+   "price_min": 184000,
+   "price_max": 184000,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.765239,
+   "lng": -78.95636,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "ATLANTIC DUNES",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "929 SOUTH OCEAN BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=atlantic+dunes",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "AZALEA LAKES",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "3983 FORSYTHIA COURT",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=azalea+lakes",
+   "total": 8,
+   "va_marked": 2,
+   "price_min": 114500,
+   "price_max": 199900,
+   "beds_min": 1,
+   "beds_max": 2,
+   "lat": 33.6736185,
+   "lng": -78.97156895500001,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BAY MEADOWS",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "INNISBROOK COURT/DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=bay+meadows",
+   "total": 5,
+   "va_marked": 0,
+   "price_min": 165000,
+   "price_max": 220900,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.781669,
+   "lng": -78.96453964,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BAY TREE",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "PO BOX 811",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=bay+tree",
+   "total": 1,
+   "va_marked": 0,
+   "price_min": 214900,
+   "price_max": 214900,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.869892,
+   "lng": -78.66334309,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BAY TREE GOLF AND RACQUET",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "1025 WEST PLANTATION DRIVE, UN",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=bay+tree+golf+and+racquet",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BAY VIEW GOLF VILLAS",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "160 LAZY WILLOW LANE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=bay+view+golf+villas",
+   "total": 1,
+   "va_marked": 0,
+   "price_min": 169291,
+   "price_max": 169291,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.64768786,
+   "lng": -79.04484154,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BAYTREE GOLF COLONY II",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "3700 GOLF COLONY LN",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=baytree+golf+colony+ii",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BEACH CLUB II AT WINDY HILL",
+   "va_records": [
+    {
+     "city": "N MYRTLE BEACH",
+     "street": "4001 S OCEAN BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=beach+club+ii+at+windy+hill",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BEACH CLUB III AT WINDY HILL",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "4505 SOUTH OCEAN BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=beach+club+iii+at+windy+hill",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BEACH COVE RESORT",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "POST OFFICE BOX 70580",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=beach+cove+resort",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BELLA VITA GARDEN HOMES",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "725 SALERNO CIR UNIT A",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=bella+vita+garden+homes",
+   "total": 3,
+   "va_marked": 1,
+   "price_min": 295500,
+   "price_max": 299900,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.72898,
+   "lng": -78.93108891,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BERWICK AT WINDSOR PLANTATION",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "300-A NAIRN DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=berwick+at+windsor+plantation",
+   "total": 1,
+   "va_marked": 0,
+   "price_min": 324500,
+   "price_max": 324500,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.65542853,
+   "lng": -78.99587936,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BIRCH-N-COPPICE",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "100 BIRCH N COPPICE DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=birch-n-coppice",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BLUE HERON RETREAT TOWNHOMESS",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "500 OLD SANDERS DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=blue+heron+retreat+townhomess",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BRIARCLIFFE WATERFRONT VILLAS",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "1100 COMMONS BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=briarcliffe+waterfront+villas",
+   "total": 2,
+   "va_marked": 0,
+   "price_min": 330000,
+   "price_max": 340000,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.79833688,
+   "lng": -78.75271727,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BRIARCLIFFE WEST",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "10301 N KINGS HIGHWAY",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=briarcliffe+west",
+   "total": 5,
+   "va_marked": 0,
+   "price_min": 143900,
+   "price_max": 180000,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.79297,
+   "lng": -78.758641,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BRIGADUNE",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "9500 SHORE DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=brigadune",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BROADWAY STATION",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "3762 CITATION WAY #1018",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=broadway+station",
+   "total": 9,
+   "va_marked": 2,
+   "price_min": 152900,
+   "price_max": 215000,
+   "beds_min": 1,
+   "beds_max": 3,
+   "lat": 33.719212,
+   "lng": -78.86215564,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "BUCK CREEK GOLF VILLAS",
+   "va_records": [
+    {
+     "city": "LONGS",
+     "street": "TUPELO DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=buck+creek+golf+villas",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "CAMERON VILLAGE TOWNHOMES",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "PALMINA LOOP",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=cameron+village+townhomes",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "CANTERBURY COURT",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "CASTLEFORD CIRCLE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=canterbury+court",
+   "total": 5,
+   "va_marked": 0,
+   "price_min": 299900,
+   "price_max": 469000,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.771171,
+   "lng": -78.782123,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "CAPE COD COTTAGES",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "4425 SEA MOUNTAIN HWY",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=cape+cod+cottages",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "CAPTAIN'S HARBOUR",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "TEAGUE ROAD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=captain%27s+harbour",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "CAROLINA KEYES",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "901 W PORT DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=carolina+keyes",
+   "total": 10,
+   "va_marked": 0,
+   "price_min": 165000,
+   "price_max": 399900,
+   "beds_min": 1,
+   "beds_max": 2,
+   "lat": 33.836058969999996,
+   "lng": -78.676564815,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "CAROLINA YACHT LANDING",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "N. PLANTATION HARBOUR DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=carolina+yacht+landing",
+   "total": 23,
+   "va_marked": 2,
+   "price_min": 170000,
+   "price_max": 325000,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.85038428,
+   "lng": -78.663612,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "CHAMPIONS PARK TOWNHOMES",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "3115 NELLIE LANE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=champions+park+townhomes",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "CLEARWATER BAY",
+   "va_records": [
+    {
+     "city": "6244 CATALINA DRIVE",
+     "street": null,
+     "status": "Accepted Without Conditions"
+    },
+    {
+     "city": "6244 CATALINA DRIVE",
+     "street": null,
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=clearwater+bay",
+   "total": 1,
+   "va_marked": 0,
+   "price_min": 510000,
+   "price_max": 510000,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.800938,
+   "lng": -78.776414,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "CLOISTERS AT THE OCEAN",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "314 SURFVIEW PLACE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=cloisters+at+the+ocean",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "CLUB VILLAS AT BAYTREE",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "VILLAS DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=club+villas+at+baytree",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "COLONIAL CREEK GOLF RESORT",
+   "va_records": [
+    {
+     "city": "LONGS",
+     "street": "860 FAIRWAY DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=colonial+creek+golf+resort",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "COLONIAL GARDENS II",
+   "va_records": [
+    {
+     "city": "LONGS",
+     "street": "CHARTER DR,",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=colonial+gardens+ii",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "COLONIAL TRACE VILLAS",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "1575 HIGHWAY 17",
+     "status": "Accepted Without Conditions"
+    },
+    {
+     "city": "LONGS",
+     "street": "2126 HWY 9 E",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=colonial+trace+villas",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "COQUINA HARBOUR",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "4225 COQUINA HARBOUR DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=coquina+harbour",
+   "total": 5,
+   "va_marked": 3,
+   "price_min": 339000,
+   "price_max": 379900,
+   "beds_min": 2,
+   "beds_max": 2,
+   "lat": 33.86329491,
+   "lng": -78.63559777,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "COURTYARD HOMES AT CASCADE",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "BUILDINGS 1-23",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=courtyard+homes+at+cascade",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "COURTYARD HOMES AT CASCADES",
+   "va_records": [
+    {
+     "city": "MRTLYE BEACH",
+     "street": "556 BANKS DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=courtyard+homes+at+cascades",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "CRESCENT SHORES",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "1625 SOUTH OCEAN BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=crescent+shores",
+   "total": 14,
+   "va_marked": 0,
+   "price_min": 54400,
+   "price_max": 679900,
+   "beds_min": 2,
+   "beds_max": 4,
+   "lat": 33.807561,
+   "lng": -78.699512,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "CRESENT BEACH VILLIAS",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "1711 SOUTH OCEAN BOULEVARD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=cresent+beach+villias",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "CYPRESS BAY 1 GOLF & TENNIS",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "4286 PINEHURST CIR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=cypress+bay+1+golf+%26+tennis",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "DEERFIELD LINKS",
+   "va_records": [
+    {
+     "city": "SURFSIDE BEACH",
+     "street": null,
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=deerfield+links",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "DYE TOWNHOMES",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "PETE DYE DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=dye+townhomes",
+   "total": 4,
+   "va_marked": 0,
+   "price_min": 525000,
+   "price_max": 578000,
+   "beds_min": 4,
+   "beds_max": 4,
+   "lat": 33.811641145,
+   "lng": -78.749059,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "EAGLE LAKE AND GOLF",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "4015 FAIRWAY",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=eagle+lake+and+golf",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "EASTPORT",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "4605 EASTPORT LANDING DR,",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=eastport",
+   "total": 1,
+   "va_marked": 0,
+   "price_min": 249900,
+   "price_max": 249900,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.86378445,
+   "lng": -78.63115827,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "EDGEWATER",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "WATERVIEW DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=edgewater",
+   "total": 10,
+   "va_marked": 0,
+   "price_min": 254000,
+   "price_max": 574900,
+   "beds_min": 2,
+   "beds_max": 4,
+   "lat": 33.79733717,
+   "lng": -78.762473,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "FAIRWAY OAKS PLANTATION",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "503 20TH AVENUE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=fairway+oaks+plantation",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "FAIRWAY VILLAGE @ ISLAND GREEN",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "510 FAIRWOOD LAKE SHORE DR,",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo",
+   "total": 2830,
+   "va_marked": 251,
+   "price_min": 19975,
+   "price_max": 1549900,
+   "beds_min": 0,
+   "beds_max": 4,
+   "lat": 33.730766270000004,
+   "lng": -78.863277005,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "FAIRWOOD LAKES",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "510 FAIRWOOD LAKES DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=fairwood+lakes",
+   "total": 3,
+   "va_marked": 0,
+   "price_min": 105500,
+   "price_max": 125000,
+   "beds_min": 1,
+   "beds_max": 2,
+   "lat": 33.645347,
+   "lng": -79.05492839806,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "FIFTH & MYRTLE",
+   "va_records": [
+    {
+     "city": "SURFSIDE BEACH",
+     "street": "415 5TH ST AVE S",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=fifth+%26+myrtle",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "FOREST PINES",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "300 GOLAN CIRCLE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=forest+pines",
+   "total": 1,
+   "va_marked": 1,
+   "price_min": 259800,
+   "price_max": 259800,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.70651154,
+   "lng": -78.958672,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "FORESTBROOK",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "132 VILLA GRANDE STREET",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=forestbrook",
+   "total": 3,
+   "va_marked": 1,
+   "price_min": 210000,
+   "price_max": 270000,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.699251,
+   "lng": -78.961135,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "FOXCROFT",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "FOXCROFT LN",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=foxcroft",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "GARDEN CREEK",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "3901 N KINGS HWY",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=garden+creek",
+   "total": 4,
+   "va_marked": 0,
+   "price_min": 170000,
+   "price_max": 209900,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.675297105,
+   "lng": -78.97224923499999,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "GLENEAGLES COTTAGES",
+   "va_records": [
+    {
+     "city": "MYRLTE BEACH",
+     "street": "GIRVAN DRIVE & ABBEY PARK LOOP",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=gleneagles+cottages",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "GOLD COAST BY THE OCEAN",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "N OCEAN BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=gold+coast+by+the+ocean",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "GOLF COLONY II",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "PO BOX 14753",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=golf+colony+ii",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "GOLF COLONY RESORT",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "3700 GOLF COLONY LANE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=golf+colony+resort",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "GOLF COLONY RESORT VIII AT BAY",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "3700 GOLF COLONY LN; BLD 25&26",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=golf+colony+resort+viii+at+bay",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "GOLF COLONY XII AT DEERTRACK",
+   "va_records": [
+    {
+     "city": "SURFSIDE BEACH",
+     "street": "1930 BENTGRASS DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=golf+colony+xii+at+deertrack",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "GRANDE HARBOUR",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "4408 GRANDE HARBOUR BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=grande+harbour",
+   "total": 1,
+   "va_marked": 1,
+   "price_min": 490000,
+   "price_max": 490000,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.861939,
+   "lng": -78.646098,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "GRANDE VILLAS AT WORLD TOUR",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "108 CYPRESS POINTE COURT",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=grande+villas+at+world+tour",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "HARBOUR FRONT VILLAS II",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "P.O.BOX 395",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=harbour+front+villas+ii",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "HARBOURGATE RESORT",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "2100 SEA MOUNTAIN HWY",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=harbourgate+resort",
+   "total": 4,
+   "va_marked": 0,
+   "price_min": 233000,
+   "price_max": 280000,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.850328,
+   "lng": -78.654649,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "HAWTHORNE",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "AT BERKSHIRE FOREST",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=hawthorne",
+   "total": 1,
+   "va_marked": 1,
+   "price_min": 284900,
+   "price_max": 284900,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.741518,
+   "lng": -78.901567,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "HEATHERSTONE",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "500 WICKHAM DR UNIT 1067",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=heatherstone",
+   "total": 9,
+   "va_marked": 2,
+   "price_min": 130000,
+   "price_max": 184900,
+   "beds_min": 2,
+   "beds_max": 2,
+   "lat": 33.741098,
+   "lng": -78.904333,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "HEATHERSTONE II",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "240 CASTLE DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=heatherstone+ii",
+   "total": 3,
+   "va_marked": 1,
+   "price_min": 154900,
+   "price_max": 184900,
+   "beds_min": 2,
+   "beds_max": 2,
+   "lat": 33.741068,
+   "lng": -78.905208,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "HERON POINTE",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "223 MAISON DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=heron+pointe",
+   "total": 6,
+   "va_marked": 0,
+   "price_min": 239900,
+   "price_max": 310000,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.76356735,
+   "lng": -78.79028252,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "HIGH MARKET",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "1639 HWY 17 S, SUITE E",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=high+market",
+   "total": 2,
+   "va_marked": 0,
+   "price_min": 295000,
+   "price_max": 325000,
+   "beds_min": 2,
+   "beds_max": 2,
+   "lat": 33.663516404999996,
+   "lng": -78.94359532,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "HOPE POINTE TOWNHOME",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "1425 PLEASANT VIEW DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=hope+pointe+townhome",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "INTERCOASTAL VILLAGE RESORT",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "4350 INTERCOASTAL DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=intercoastal+village+resort",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "JUST IN VIEW",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "418 1ST AVE S",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=just+in+view",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "KINGS GRANT VILLAS",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "311 2ND AVENEUE N",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=kings+grant+villas",
+   "total": 1,
+   "va_marked": 0,
+   "price_min": 410000,
+   "price_max": 410000,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.822137,
+   "lng": -78.672287,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "KISKADEE PARKE",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "PO BOX 7706",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=kiskadee+parke",
+   "total": 7,
+   "va_marked": 2,
+   "price_min": 144900,
+   "price_max": 189900,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.78365008,
+   "lng": -78.98064808,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "LAUDERDALE BAY",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "1000 LAUDERDALE BAY",
+     "status": "Accepted Without Conditions"
+    },
+    {
+     "city": "MYRTLE BEACH",
+     "street": "1000 LAUDERDALE BAY",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=lauderdale+bay",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "LIGHTHOUSE POINT AT LIGHTKEEPE",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "4520 LIGHTHOUSE DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=lighthouse+point+at+lightkeepe",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "LIGHTHOUSE POINT VILLAS",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "1401 LIGHTHOUSE DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=lighthouse+point+villas",
+   "total": 2,
+   "va_marked": 0,
+   "price_min": 305900,
+   "price_max": 314900,
+   "beds_min": 2,
+   "beds_max": 2,
+   "lat": 33.85593618,
+   "lng": -78.62842887,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "LONGLEAF PLACE",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "4115 LITTLE RIVER RD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=longleaf+place",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "LONGWOOD LAKES",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "1991 MOSSY POINT CV",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=longwood+lakes",
+   "total": 1,
+   "va_marked": 1,
+   "price_min": 214900,
+   "price_max": 214900,
+   "beds_min": 2,
+   "beds_max": 2,
+   "lat": 33.70414,
+   "lng": -78.959213,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "LYONS COVE",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "408 CHESTERFIELD CT",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=lyons+cove",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "MAGNOLIA NORTH",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "4880 DAHLIA CT",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=magnolia+north",
+   "total": 30,
+   "va_marked": 4,
+   "price_min": 139900,
+   "price_max": 340000,
+   "beds_min": 1,
+   "beds_max": 3,
+   "lat": 33.739149499999996,
+   "lng": -78.85974582,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "MAGNOLIA PLACE",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "1201 48TH AVENUE",
+     "status": "Accepted Without Conditions"
+    },
+    {
+     "city": "MYRTLE BEACH",
+     "street": "1201 48TH AVENUE NORTH",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=magnolia+place",
+   "total": 39,
+   "va_marked": 6,
+   "price_min": 139000,
+   "price_max": 255000,
+   "beds_min": 1,
+   "beds_max": 2,
+   "lat": 33.73248385,
+   "lng": -78.866878,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "MAGNOLIA POINTE",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "4891 LUSTER LEAF CIRCLE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=magnolia+pointe",
+   "total": 36,
+   "va_marked": 15,
+   "price_min": 205900,
+   "price_max": 345000,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.7423835,
+   "lng": -78.854670905,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "MALLARD CREEK",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "4150 HORSESHOE ROAD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=mallard+creek",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "MAR VISTA GRANDE",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "603 S OCEAN BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=mar+vista+grande",
+   "total": 7,
+   "va_marked": 0,
+   "price_min": 749900,
+   "price_max": 999900,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.81550234,
+   "lng": -78.68038154,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "MARCLIFFE WEST",
+   "va_records": [
+    {
+     "city": "MURRELLS INLET",
+     "street": "11822 HIGHWAY 17 BYPASS S",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=marcliffe+west",
+   "total": 6,
+   "va_marked": 1,
+   "price_min": 219900,
+   "price_max": 379900,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.5990498,
+   "lng": -79.07285309,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "MARINERS POINTE",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "4396 BALDWIN AVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=mariners+pointe",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "MARSH HILLS",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "9553 EDGERTON DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=marsh+hills",
+   "total": 1,
+   "va_marked": 0,
+   "price_min": 359900,
+   "price_max": 359900,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.764093,
+   "lng": -78.791329,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "MERRITT PARK",
+   "va_records": [
+    {
+     "city": "MURRELLS INLET",
+     "street": "558 MACKLEN AVENUE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=merritt+park",
+   "total": 5,
+   "va_marked": 1,
+   "price_min": 167500,
+   "price_max": 208900,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.851714,
+   "lng": -78.69121336,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "MONTEREY BAY SUITES RESORT",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "6804 N OCEAN BLVD.",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=monterey+bay+suites+resort",
+   "total": 30,
+   "va_marked": 6,
+   "price_min": 99900,
+   "price_max": 205000,
+   "beds_min": 1,
+   "beds_max": 1,
+   "lat": 33.738016,
+   "lng": -78.82228409,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "MYRTLE GREENS",
+   "va_records": [
+    {
+     "city": "CONWAY",
+     "street": "251 MYRTLE GREENS DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=myrtle+greens",
+   "total": 7,
+   "va_marked": 0,
+   "price_min": 114900,
+   "price_max": 155000,
+   "beds_min": 1,
+   "beds_max": 2,
+   "lat": 33.78274646,
+   "lng": -79.00690573,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "OAK HILL",
+   "va_records": [
+    {
+     "city": "CONWAY",
+     "street": "1015 ELM STREET",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=oak+hill",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "OCEAN GREENS",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE POINT",
+     "street": "1500 CENITH DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=ocean+greens",
+   "total": 4,
+   "va_marked": 0,
+   "price_min": 179900,
+   "price_max": 234900,
+   "beds_min": 2,
+   "beds_max": 2,
+   "lat": 33.819211,
+   "lng": -78.701922,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "PARK WEST",
+   "va_records": [
+    {
+     "city": "MURRELLS INLET",
+     "street": "155 CHENOA DR UNIT B, MURRELLS",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=park+west",
+   "total": 6,
+   "va_marked": 2,
+   "price_min": 217000,
+   "price_max": 329000,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.58462659,
+   "lng": -79.04306672999999,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "PAWLEYS PAVILION",
+   "va_records": [
+    {
+     "city": "SOUTH MURRELLS INLET",
+     "street": "11822 HIGHWAY 17 BYPASS",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=pawleys+pavilion",
+   "total": 4,
+   "va_marked": 0,
+   "price_min": 219500,
+   "price_max": 240000,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.465278745,
+   "lng": -79.11382534,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "PINE ISLAND TOWNHOMES",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "1745 LOW COUNTRY PL, APT D UNI",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=pine+island+townhomes",
+   "total": 1,
+   "va_marked": 0,
+   "price_min": 214900,
+   "price_max": 214900,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.697088,
+   "lng": -78.913496,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "PLANTERS POINT",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "MYRTLE BEACH",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=planters+point",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "PORCHER COTTAGES",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "PORCHER DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=porcher+cottages",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "RICHMOND PARK",
+   "va_records": [
+    {
+     "city": "MYRTLE BECH",
+     "street": "400 MELROSE PLACE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=richmond+park",
+   "total": 12,
+   "va_marked": 0,
+   "price_min": 225000,
+   "price_max": 479900,
+   "beds_min": 1,
+   "beds_max": 3,
+   "lat": 33.770677809999995,
+   "lng": -78.77854117999999,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "RIVER OAKS",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "1039 44TH AVE N, STE 203",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=river+oaks",
+   "total": 38,
+   "va_marked": 4,
+   "price_min": 109900,
+   "price_max": 199900,
+   "beds_min": 1,
+   "beds_max": 3,
+   "lat": 33.723516925,
+   "lng": -78.92027576999999,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "RIVER OAKS GOLF& TENNIS RESORT",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "654 RIVER OAKS DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=river+oaks+golf%26+tennis+resort",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "RIVERGATE",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "4289 RIVERGATE LANE 20-D",
+     "status": "Accepted Without Conditions"
+    },
+    {
+     "city": "LITTLE RIVER",
+     "street": "4236 RIVER GATE LN UNIT 2-B",
+     "status": "Accepted With Conditions"
+    },
+    {
+     "city": "LITTLE RIVER",
+     "street": "1160 HWY 17 N",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=rivergate",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "RIVERWALK AT ARROWHEAD",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "1201 48TH AVE NORTH",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=riverwalk+at+arrowhead",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "RIVERWOOD 1",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "3081 DEVILLE STREET",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=riverwood+1",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SAN-A-BEL",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "1709 SOUTH OCEAN BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=san-a-bel",
+   "total": 1,
+   "va_marked": 0,
+   "price_min": 269900,
+   "price_max": 269900,
+   "beds_min": 2,
+   "beds_max": 2,
+   "lat": 33.8069588,
+   "lng": -78.70101944,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SANDS OCEAN CLUB",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "9550 SHORE DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=sands+ocean+club",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SAWGRASS EAST",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "PO BOX 5051",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=sawgrass+east",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SEA CASTLE",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "1425 S OCEAN BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=sea+castle",
+   "total": 4,
+   "va_marked": 0,
+   "price_min": 399500,
+   "price_max": 495000,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.809632315,
+   "lng": -78.695173945,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SEA DUNES II",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "CONDOMINIUM",
+     "status": "Accepted Without Conditions"
+    },
+    {
+     "city": "MYRTLE BEACH",
+     "street": "CONDOMINIUM",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=sea+dunes+ii",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SEA GARDEN",
+   "va_records": [
+    {
+     "city": "N MYRTLE BEACH",
+     "street": "    ",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=sea+garden",
+   "total": 4,
+   "va_marked": 1,
+   "price_min": 235000,
+   "price_max": 245000,
+   "beds_min": 2,
+   "beds_max": 2,
+   "lat": 33.825018005000004,
+   "lng": -78.680555915,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SEA GATE VILLAS",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "10200 LAKESHORE DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=sea+gate+villas",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SEA MARK TOWER",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "311 69TH AVE N",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=sea+mark+tower",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SEA POINTE",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "6100 N. OCEAN BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=sea+pointe",
+   "total": 2,
+   "va_marked": 0,
+   "price_min": 255000,
+   "price_max": 265000,
+   "beds_min": 1,
+   "beds_max": 1,
+   "lat": 33.839065,
+   "lng": -78.605722,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SEAGATE VILLAGE",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "3922 SPRUCE DR",
+     "status": "Accepted With Conditions"
+    },
+    {
+     "city": "MYRTLE BEACH",
+     "street": null,
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=seagate+village",
+   "total": 5,
+   "va_marked": 2,
+   "price_min": 250000,
+   "price_max": 295000,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.65639779,
+   "lng": -78.940898,
+   "refreshedAt": "2026-11-02T02:10:29.374Z"
+  },
+  {
+   "name": "SHADOW MOSS PLACE",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "76 SHADOW MOSS PLACE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=shadow+moss+place",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SHELLWOOD",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "3976 HIBISCOUS DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=shellwood",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SHIPWATCH POINTE",
+   "va_records": [
+    {
+     "city": "MYRTLE",
+     "street": "9621 SHORE DR,",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=shipwatch+pointe",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SHOREWOOD",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "3015 OLD BRYAN DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=shorewood",
+   "total": 11,
+   "va_marked": 0,
+   "price_min": 136900,
+   "price_max": 215000,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.725874,
+   "lng": -78.87959592,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SOUTH BAY LAKES",
+   "va_records": [
+    {
+     "city": "SURFSIDE BEACH",
+     "street": "8861 GROVE PARK DR",
+     "status": "Accepted Without Conditions"
+    },
+    {
+     "city": "MYRTLE BEACH",
+     "street": "8861 GROVEPARK DR",
+     "status": "Accepted With Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=south+bay+lakes",
+   "total": 11,
+   "va_marked": 2,
+   "price_min": 154000,
+   "price_max": 225000,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.61560392,
+   "lng": -79.001864,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SOUTH BEACH COTTAGES AT 27TH",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "2741 KASHTON DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=south+beach+cottages+at+27th",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SOUTH SHORE HOMES",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "203 26TH AVE. S",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=south+shore+homes",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SOUTHBRIDGE",
+   "va_records": [
+    {
+     "city": "SURFSIDE BEACH",
+     "street": "2265 HUNTINGDON DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=southbridge",
+   "total": 10,
+   "va_marked": 2,
+   "price_min": 149900,
+   "price_max": 229900,
+   "beds_min": 1,
+   "beds_max": 3,
+   "lat": 33.618039895,
+   "lng": -79.00286249999999,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SPA AT LITTLE RIVER",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "4369 SPA DRIVE",
+     "status": "Accepted Without Conditions"
+    },
+    {
+     "city": "LITTLE RIVER",
+     "street": "4349 SPA DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=spa+at+little+river",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SPINNAKER",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "3513 S OCEAN BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=spinnaker",
+   "total": 11,
+   "va_marked": 0,
+   "price_min": 159999,
+   "price_max": 439900,
+   "beds_min": 2,
+   "beds_max": 2,
+   "lat": 33.86230091,
+   "lng": -78.631919,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SPINNAKER BAY",
+   "va_records": [
+    {
+     "city": "LITTLE RIVER",
+     "street": "4616 GREENBRIAR DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=spinnaker+bay",
+   "total": 4,
+   "va_marked": 0,
+   "price_min": 205000,
+   "price_max": 219900,
+   "beds_min": 2,
+   "beds_max": 2,
+   "lat": 33.861939500000005,
+   "lng": -78.63266766000001,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SPINNAKER COVE",
+   "va_records": [
+    {
+     "city": "LITTLE  RIVER",
+     "street": null,
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=spinnaker+cove",
+   "total": 6,
+   "va_marked": 0,
+   "price_min": 159999,
+   "price_max": 439900,
+   "beds_min": 2,
+   "beds_max": 2,
+   "lat": 33.86284195499999,
+   "lng": -78.62844823500001,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "ST ANDREWS TOWNHOMES",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "1107 48TH AVE N",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=st+andrews+townhomes",
+   "total": 1,
+   "va_marked": 1,
+   "price_min": 265000,
+   "price_max": 265000,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.731875,
+   "lng": -78.91305,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "STERLING VILLAGE II",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "1200 BENNA DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=sterling+village+ii",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "STONE GATE AT PRINCE",
+   "va_records": [
+    {
+     "city": "MURRELLS INLET",
+     "street": "117 STONEGATE BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=stone+gate+at+prince",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "STONEWALL VILLAS II",
+   "va_records": [
+    {
+     "city": "LONGS",
+     "street": "STONEWALL CIRCL",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=stonewall+villas+ii",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "SUMMERTREE VILLAGE",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "250 MAISON DR.",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=summertree+village",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "TALL OAKS",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "857 A TALL OAKS CT",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=tall+oaks",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "TANGLEWOOD AT BAREFOOT RESORT",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "6095 CATALINA DR. #2611",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=tanglewood+at+barefoot+resort",
+   "total": 2,
+   "va_marked": 0,
+   "price_min": 389900,
+   "price_max": 399900,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.79771946,
+   "lng": -78.77033559,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE ADDISON & COTTAGES",
+   "va_records": [
+    {
+     "city": "MURRELLS INLET",
+     "street": "ADDISON COTTAGE WAY",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+addison+%26+cottages",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE BEACH & COMPANY",
+   "va_records": [
+    {
+     "city": "N. MYRTLE BEACH",
+     "street": "621 SEA MOUNTAIN HIGHWAY",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+beach+%26+company",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE CLOISTERS AT MYRTLEWOOD",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "3874 RENEE DR UNIT A",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+cloisters+at+myrtlewood",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE COTTAGES AT THE SURF",
+   "va_records": [
+    {
+     "city": "N MYRTLE BEACH",
+     "street": "CONDOMINIUM",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+cottages+at+the+surf",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE COTTAGES AT TILGHMAN BEACH",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "670 2ND AVE NORTH MYRTLE BEACH",
+     "status": "Accepted Without Conditions"
+    },
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "670 2ND AVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+cottages+at+tilghman+beach",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE COTTAGES ON FARROW PARKWAY",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "1402 POWHATON DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+cottages+on+farrow+parkway",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE FOUNTAINS",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "5055 GLENBROOK DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+fountains",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE HAVENS",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "6203 CATALINA DR UNIT 834",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+havens",
+   "total": 12,
+   "va_marked": 4,
+   "price_min": 225000,
+   "price_max": 479999,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.795892655,
+   "lng": -78.771714635,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE HAVENS AT BAREFOOT",
+   "va_records": [
+    {
+     "city": "N.MYRTLE BEACH",
+     "street": "RESORT/GOLF CONDOMINIUM",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+havens+at+barefoot",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE PARK",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "4600 ROBERT GRISSOM PARKWAY",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+park",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE PARK TERRACE",
+   "va_records": [
+    {
+     "city": "PAWLEYS ISLAND",
+     "street": "PO BOX 2308",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+park+terrace",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE POINTE",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "605 BRIARWOOD DR STE C",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+pointe",
+   "total": 2,
+   "va_marked": 0,
+   "price_min": 849900,
+   "price_max": 869575,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.763257159999995,
+   "lng": -78.79199654,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE POINTTE",
+   "va_records": [
+    {
+     "city": "SURFSIDE BEACH",
+     "street": "510 JUNIPER DRIVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+pointte",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE RENAISSANCE TOWER",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "5905 SOUTH KINGS HIGHWAY",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+renaissance+tower",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE VILLAGE AT QUEENS HARBOUR",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "SHELBY LAWSON DRIVE",
+     "status": "Accepted Without Conditions"
+    },
+    {
+     "city": "MYRTLE BEACH",
+     "street": "ELLA KINLEY CIRCLE",
+     "status": "Accepted With Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+village+at+queens+harbour",
+   "total": 14,
+   "va_marked": 3,
+   "price_min": 149900,
+   "price_max": 279000,
+   "beds_min": 1,
+   "beds_max": 3,
+   "lat": 33.64118363,
+   "lng": -78.991171315,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "THE VUES ON 4TH AVE",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "600 48TH AVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=the+vues+on+4th+ave",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "TILGHMAN BEACH AND GOLF RESORT",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "1918 N OCEAN BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=tilghman+beach+and+golf+resort",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "TILGHMAN SHORES",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": "1900 DUFFY ST",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=tilghman+shores",
+   "total": 5,
+   "va_marked": 0,
+   "price_min": 219900,
+   "price_max": 262000,
+   "beds_min": 1,
+   "beds_max": 2,
+   "lat": 33.83014037,
+   "lng": -78.64910664,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "TRADEWINDS II",
+   "va_records": [
+    {
+     "city": "SURFSIDE BEACH",
+     "street": "1200 5TH AVE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=tradewinds+ii",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "TREE TOP GOLF VILLAS",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "501-519 TREE TOP LN",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=tree+top+golf+villas",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "TREE TOP OAKS",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": null,
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=tree+top+oaks",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "TREE TOP VILLAS- ISLAND GREEN",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "512 TREE TOP LANE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=tree+top+villas-+island+green",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "TRUE BLUE GOLF &RACQUET RESORT",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "357 LAKE ARROWHEAD RD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=true+blue+golf+%26racquet+resort",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "TULLAMORE LAKES",
+   "va_records": [
+    {
+     "city": "LONGS",
+     "street": "109 S SHORE BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=tullamore+lakes",
+   "total": 4,
+   "va_marked": 1,
+   "price_min": 139000,
+   "price_max": 189990,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.899075499999995,
+   "lng": -78.695453,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "TUPELO BAY GOLF VILLAS I",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "897 MELODY LN",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=tupelo+bay+golf+villas+i",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "TURNBERRY PARK",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "4578 GIRVAN DRIVE",
+     "status": "Accepted Without Conditions"
+    },
+    {
+     "city": "MYRTLE BEACH",
+     "street": "2061 SILVERCREST DR.",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=turnberry+park",
+   "total": 7,
+   "va_marked": 2,
+   "price_min": 155000,
+   "price_max": 175000,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.76173,
+   "lng": -78.92458872,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "VILLAS AT THE GATES",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "116 TERRACINA CIRCLE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=villas+at+the+gates",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "VILLAS ON THE GREEN",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "1600 DEER CREEK RD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=villas+on+the+green",
+   "total": 3,
+   "va_marked": 0,
+   "price_min": 109000,
+   "price_max": 159900,
+   "beds_min": 1,
+   "beds_max": 2,
+   "lat": 33.6265826,
+   "lng": -78.974552,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "WAGON WHEEL",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "603 WAGON WHEEL RD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=wagon+wheel",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "WATERMARK OF MYRTLE BEACH",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "7700 PORCHER DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=watermark+of+myrtle+beach",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "WATERWAY GARDENS",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "1560-A BURCALE ROAD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=waterway+gardens",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "WATERWAY VILLAGE AT RIVER OAKS",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "613 WATERWAY VILLAGE BLVD",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=waterway+village+at+river+oaks",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "WELLINGTON AT PALMETTO",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "POINTE, PHASES 1-25",
+     "status": "HUD Accepted"
+    }
+   ],
+   "params": "type=condo&subdivision=wellington+at+palmetto",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "WELLINGTON AT PALMETTO POINTE",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "193 OLD TOWNE",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=wellington+at+palmetto+pointe",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "WEST HYDE PARK",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "218 WESTLETON DR",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=west+hyde+park",
+   "total": 7,
+   "va_marked": 0,
+   "price_min": 210000,
+   "price_max": 500000,
+   "beds_min": 1,
+   "beds_max": 3,
+   "lat": 33.769359,
+   "lng": -78.782478,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "WILLOW BEND",
+   "va_records": [
+    {
+     "city": "NORTH MYRTLE BEACH",
+     "street": null,
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=willow+bend",
+   "total": 16,
+   "va_marked": 2,
+   "price_min": 204900,
+   "price_max": 305000,
+   "beds_min": 2,
+   "beds_max": 3,
+   "lat": 33.79765123,
+   "lng": -78.77742180999999,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "WILLOW TRACE",
+   "va_records": [
+    {
+     "city": "CONWAY",
+     "street": "150 CART CROSSING DR UNIT 105",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=willow+trace",
+   "total": 2,
+   "va_marked": 0,
+   "price_min": 249000,
+   "price_max": 259900,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.779916,
+   "lng": -79.0047375,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "WINDEMERE BY THE SEA",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "713 SEASCALE LN",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=windemere+by+the+sea",
+   "total": 0,
+   "va_marked": 0,
+   "price_min": null,
+   "price_max": null,
+   "beds_min": null,
+   "beds_max": null,
+   "lat": null,
+   "lng": null,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "WINDSOR GREEN",
+   "va_records": [
+    {
+     "city": "MYRTLE BEACH",
+     "street": "WINDSOR GREEN",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "params": "type=condo&subdivision=windsor+green",
+   "total": 12,
+   "va_marked": 5,
+   "price_min": 166999,
+   "price_max": 199000,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.76669276,
+   "lng": -78.963079625,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "WYNBROOKE",
+   "va_records": [
+    {
+     "city": "MURRELLS INLET",
+     "street": "AB&D & F-O",
+     "status": "HUD Accepted"
+    },
+    {
+     "city": "MURRELLS INLET",
+     "street": "BLDG 2",
+     "status": "HUD Accepted"
+    }
+   ],
+   "params": "type=condo&subdivision=wynbrooke",
+   "total": 1,
+   "va_marked": 0,
+   "price_min": 255500,
+   "price_max": 255500,
+   "beds_min": 3,
+   "beds_max": 3,
+   "lat": 33.585106,
+   "lng": -79.049961,
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  }
+ ]
+}

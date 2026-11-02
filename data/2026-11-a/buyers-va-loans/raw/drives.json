@@ -1,0 +1,79 @@
+{
+ "pulled": "2026-11-01T22:54:40.018247+00:00",
+ "dest": {
+  "Myrtle Beach VA Clinic": {
+   "address": "1800 Airpark Dr, Myrtle Beach, SC 29577",
+   "lat": 33.67741419,
+   "lon": -78.94529931,
+   "from": "raw/va-clinic-mb.html"
+  },
+  "Ralph H. Johnson VA Medical Center": {
+   "address": "109 Bee St, Charleston, SC 29401",
+   "lat": 32.784471,
+   "lon": -79.954146,
+   "from": "raw/va-charleston-vamc.html"
+  }
+ },
+ "drives": [
+  {
+   "from": "Carolina Forest CDP",
+   "to": "Myrtle Beach VA Clinic",
+   "minutes": 21.9,
+   "miles": 12.2
+  },
+  {
+   "from": "Conway city",
+   "to": "Myrtle Beach VA Clinic",
+   "minutes": 26.7,
+   "miles": 16.3
+  },
+  {
+   "from": "Little River CDP",
+   "to": "Myrtle Beach VA Clinic",
+   "minutes": 44.0,
+   "miles": 27.5
+  },
+  {
+   "from": "Loris city",
+   "to": "Myrtle Beach VA Clinic",
+   "minutes": 55.8,
+   "miles": 35.3
+  },
+  {
+   "from": "Murrells Inlet CDP",
+   "to": "Myrtle Beach VA Clinic",
+   "minutes": 20.2,
+   "miles": 11.7
+  },
+  {
+   "from": "Myrtle Beach city",
+   "to": "Myrtle Beach VA Clinic",
+   "minutes": 11.8,
+   "miles": 6.5
+  },
+  {
+   "from": "North Myrtle Beach city",
+   "to": "Myrtle Beach VA Clinic",
+   "minutes": 33.5,
+   "miles": 19.6
+  },
+  {
+   "from": "Socastee CDP",
+   "to": "Myrtle Beach VA Clinic",
+   "minutes": 9.7,
+   "miles": 4.4
+  },
+  {
+   "from": "Surfside Beach town",
+   "to": "Myrtle Beach VA Clinic",
+   "minutes": 13.9,
+   "miles": 7.6
+  },
+  {
+   "from": "Myrtle Beach VA Clinic",
+   "to": "Ralph H. Johnson VA Medical Center",
+   "minutes": 131.5,
+   "miles": 93.4
+  }
+ ]
+}

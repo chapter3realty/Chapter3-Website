@@ -1,0 +1,2279 @@
+{
+ "made": "analyze.py",
+ "run": "2026-11-01T23:59:40.518641+00:00",
+ "city_area_sq_mi": 30.7,
+ "town_point": {
+  "lon": -79.047814,
+  "lat": 33.836003,
+  "in_city": true
+ },
+ "homes_in_city": {
+  "homes": 8935,
+  "in_sfha": 386,
+  "in_sfz": 345,
+  "in_either": 480,
+  "in_sfz_not_sfha": 94,
+  "houses": 8053,
+  "manufactured": 13,
+  "with_address_point": 8311,
+  "by_tax_district": [
+   [
+    "110",
+    8915
+   ],
+   [
+    "100",
+    14
+   ],
+   [
+    "160",
+    6
+   ]
+  ],
+  "pct_in_sfha": 4.3,
+  "pct_in_sfz": 3.9,
+  "pct_in_either": 5.4
+ },
+ "conway_mailing_homes": {
+  "all_in_box": 30264,
+  "inside_city": 8311,
+  "outside_city": 21953,
+  "pct_inside": 27.5,
+  "address_points_countywide_by_zip": {
+   "29544": 1,
+   "29572": 144,
+   "29527": 16837,
+   "29579": 8,
+   "29588": 6,
+   "29569": 4,
+   "29566": 1,
+   "29526": 35757
+  },
+  "outside_city_flood": {
+   "homes": 21953,
+   "in_sfha": 701,
+   "in_sfz": 836,
+   "in_either": 939,
+   "in_sfz_not_sfha": 238
+  }
+ },
+ "subdivisions_flood": [
+  {
+   "name": "SHERWOOD",
+   "homes": 126,
+   "in_sfz": 98,
+   "in_sfha": 79,
+   "in_either": 98,
+   "miles_from_town_point": 1.6,
+   "lon": -79.04558,
+   "lat": 33.8586,
+   "median_county_value": 294383
+  },
+  {
+   "name": "MIDTOWN VILLAGE",
+   "homes": 207,
+   "in_sfz": 0,
+   "in_sfha": 34,
+   "in_either": 34,
+   "miles_from_town_point": 2.4,
+   "lon": -79.07058,
+   "lat": 33.86507,
+   "median_county_value": 271925
+  },
+  {
+   "name": "KINGSTON VILLAGE",
+   "homes": 34,
+   "in_sfz": 0,
+   "in_sfha": 34,
+   "in_either": 34,
+   "miles_from_town_point": 1.1,
+   "lon": -79.05478,
+   "lat": 33.85146,
+   "median_county_value": 62500
+  },
+  {
+   "name": "MIDLAND",
+   "homes": 49,
+   "in_sfz": 33,
+   "in_sfha": 18,
+   "in_either": 33,
+   "miles_from_town_point": 1.1,
+   "lon": -79.04605,
+   "lat": 33.85188,
+   "median_county_value": 242096
+  },
+  {
+   "name": "PECAN GROVE",
+   "homes": 103,
+   "in_sfz": 29,
+   "in_sfha": 24,
+   "in_either": 29,
+   "miles_from_town_point": 2.1,
+   "lon": -79.06751,
+   "lat": 33.81031,
+   "median_county_value": 273226
+  },
+  {
+   "name": "COUNTRY CLUB FOREST",
+   "homes": 57,
+   "in_sfz": 21,
+   "in_sfha": 14,
+   "in_either": 21,
+   "miles_from_town_point": 2.0,
+   "lon": -79.04352,
+   "lat": 33.8642,
+   "median_county_value": 256056
+  },
+  {
+   "name": "LAKELAND",
+   "homes": 37,
+   "in_sfz": 18,
+   "in_sfha": 7,
+   "in_either": 18,
+   "miles_from_town_point": 1.0,
+   "lon": -79.04304,
+   "lat": 33.84952,
+   "median_county_value": 339140
+  },
+  {
+   "name": "N CONWAY",
+   "homes": 105,
+   "in_sfz": 3,
+   "in_sfha": 15,
+   "in_either": 16,
+   "miles_from_town_point": 1.3,
+   "lon": -79.05484,
+   "lat": 33.85384,
+   "median_county_value": 191121
+  },
+  {
+   "name": "SEDGEFIELD",
+   "homes": 94,
+   "in_sfz": 13,
+   "in_sfha": 10,
+   "in_either": 13,
+   "miles_from_town_point": 2.6,
+   "lon": -79.07519,
+   "lat": 33.80637,
+   "median_county_value": 279189
+  },
+  {
+   "name": "WILD ROSE",
+   "homes": 62,
+   "in_sfz": 8,
+   "in_sfha": 8,
+   "in_either": 8,
+   "miles_from_town_point": 1.5,
+   "lon": -79.06881,
+   "lat": 33.82217,
+   "median_county_value": 300323
+  },
+  {
+   "name": "JORDAN ESTATES",
+   "homes": 29,
+   "in_sfz": 0,
+   "in_sfha": 8,
+   "in_either": 8,
+   "miles_from_town_point": 2.5,
+   "lon": -79.08803,
+   "lat": 33.84983,
+   "median_county_value": 248525
+  },
+  {
+   "name": "PARK HILL",
+   "homes": 53,
+   "in_sfz": 7,
+   "in_sfha": 4,
+   "in_either": 7,
+   "miles_from_town_point": 1.3,
+   "lon": -79.06149,
+   "lat": 33.85039,
+   "median_county_value": 146150
+  },
+  {
+   "name": "VLG @CONWAY COUNTRY CLB",
+   "homes": 56,
+   "in_sfz": 6,
+   "in_sfha": 4,
+   "in_either": 6,
+   "miles_from_town_point": 2.6,
+   "lon": -79.03977,
+   "lat": 33.87322,
+   "median_county_value": 305275
+  },
+  {
+   "name": "MAPLEWOOD",
+   "homes": 27,
+   "in_sfz": 0,
+   "in_sfha": 6,
+   "in_either": 6,
+   "miles_from_town_point": 3.5,
+   "lon": -79.02417,
+   "lat": 33.88221,
+   "median_county_value": 434283
+  },
+  {
+   "name": "MAGNOLIA BAY",
+   "homes": 35,
+   "in_sfz": 6,
+   "in_sfha": 6,
+   "in_either": 6,
+   "miles_from_town_point": 1.7,
+   "lon": -79.07099,
+   "lat": 33.82113,
+   "median_county_value": 321868
+  },
+  {
+   "name": "NEW CASTLE",
+   "homes": 251,
+   "in_sfz": 0,
+   "in_sfha": 6,
+   "in_either": 6,
+   "miles_from_town_point": 2.7,
+   "lon": -79.09108,
+   "lat": 33.82184,
+   "median_county_value": 266548
+  },
+  {
+   "name": "PINE VIEW",
+   "homes": 34,
+   "in_sfz": 0,
+   "in_sfha": 5,
+   "in_either": 5,
+   "miles_from_town_point": 1.0,
+   "lon": -79.05234,
+   "lat": 33.8507,
+   "median_county_value": 159173
+  },
+  {
+   "name": "WINDMEADOWS",
+   "homes": 28,
+   "in_sfz": 4,
+   "in_sfha": 3,
+   "in_either": 4,
+   "miles_from_town_point": 2.5,
+   "lon": -79.03997,
+   "lat": 33.87101,
+   "median_county_value": 397802
+  },
+  {
+   "name": "GLASS HILL",
+   "homes": 25,
+   "in_sfz": 3,
+   "in_sfha": 0,
+   "in_either": 3,
+   "miles_from_town_point": 1.2,
+   "lon": -79.02832,
+   "lat": 33.84393,
+   "median_county_value": 270406
+  },
+  {
+   "name": "RIDGEWOOD WEST",
+   "homes": 104,
+   "in_sfz": 0,
+   "in_sfha": 3,
+   "in_either": 3,
+   "miles_from_town_point": 4.9,
+   "lon": -78.99838,
+   "lat": 33.89379,
+   "median_county_value": 354596
+  },
+  {
+   "name": "OAKBROOK",
+   "homes": 52,
+   "in_sfz": 0,
+   "in_sfha": 2,
+   "in_either": 2,
+   "miles_from_town_point": 2.7,
+   "lon": -79.09276,
+   "lat": 33.84685,
+   "median_county_value": 221086
+  },
+  {
+   "name": "WESTBROOK",
+   "homes": 25,
+   "in_sfz": 0,
+   "in_sfha": 2,
+   "in_either": 2,
+   "miles_from_town_point": 2.7,
+   "lon": -79.09318,
+   "lat": 33.84561,
+   "median_county_value": 224364
+  },
+  {
+   "name": "CHICORA",
+   "homes": 98,
+   "in_sfz": 1,
+   "in_sfha": 0,
+   "in_either": 1,
+   "miles_from_town_point": 2.1,
+   "lon": -79.05763,
+   "lat": 33.86466,
+   "median_county_value": 230902
+  },
+  {
+   "name": "ELMHURST",
+   "homes": 197,
+   "in_sfz": 0,
+   "in_sfha": 1,
+   "in_either": 1,
+   "miles_from_town_point": 2.1,
+   "lon": -79.07248,
+   "lat": 33.85784,
+   "median_county_value": 255587
+  },
+  {
+   "name": "MACALA ACRES",
+   "homes": 109,
+   "in_sfz": 0,
+   "in_sfha": 1,
+   "in_either": 1,
+   "miles_from_town_point": 3.2,
+   "lon": -79.10295,
+   "lat": 33.84665,
+   "median_county_value": 242760
+  },
+  {
+   "name": "CARSENS FERRY",
+   "homes": 69,
+   "in_sfz": 0,
+   "in_sfha": 1,
+   "in_either": 1,
+   "miles_from_town_point": 2.5,
+   "lon": -79.08102,
+   "lat": 33.85887,
+   "median_county_value": 247304
+  },
+  {
+   "name": "WOODCREEK",
+   "homes": 185,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 3.7,
+   "lon": -79.10559,
+   "lat": 33.85887,
+   "median_county_value": 254280
+  },
+  {
+   "name": "MAPLE HILL",
+   "homes": 46,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 4.5,
+   "lon": -79.013,
+   "lat": 33.89369,
+   "median_county_value": 491237
+  },
+  {
+   "name": "SNOWHILL",
+   "homes": 96,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 0.9,
+   "lon": -79.04877,
+   "lat": 33.84848,
+   "median_county_value": 255224
+  },
+  {
+   "name": "COLLINSWOOD",
+   "homes": 25,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 0.9,
+   "lon": -79.05808,
+   "lat": 33.84524,
+   "median_county_value": 208118
+  },
+  {
+   "name": "TURTLE CREEK",
+   "homes": 34,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.8,
+   "lon": -79.06518,
+   "lat": 33.85793,
+   "median_county_value": 190978
+  },
+  {
+   "name": "MAYFAIR",
+   "homes": 32,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 0.9,
+   "lon": -79.0513,
+   "lat": 33.84927,
+   "median_county_value": 162836
+  },
+  {
+   "name": "BRANTLEY",
+   "homes": 42,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.2,
+   "lon": -79.06825,
+   "lat": 33.83922,
+   "median_county_value": 116521
+  },
+  {
+   "name": "B G COLLINS EST",
+   "homes": 31,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 0.9,
+   "lon": -79.05576,
+   "lat": 33.84766,
+   "median_county_value": 250137
+  },
+  {
+   "name": "GREENBRIAR",
+   "homes": 42,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.1,
+   "lon": -79.06589,
+   "lat": 33.84301,
+   "median_county_value": 277578
+  },
+  {
+   "name": "BUCKWOOD #2",
+   "homes": 33,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.0,
+   "lon": -79.06258,
+   "lat": 33.8424,
+   "median_county_value": 363570
+  },
+  {
+   "name": "WEST RIDGE",
+   "homes": 41,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 2.0,
+   "lon": -79.0828,
+   "lat": 33.83834,
+   "median_county_value": 143006
+  },
+  {
+   "name": "FOREST ACRES",
+   "homes": 42,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.8,
+   "lon": -79.07694,
+   "lat": 33.82736,
+   "median_county_value": 136138
+  },
+  {
+   "name": "W A JAMES",
+   "homes": 34,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.4,
+   "lon": -79.06973,
+   "lat": 33.82755,
+   "median_county_value": 155748
+  },
+  {
+   "name": "HIGHLAND PK",
+   "homes": 26,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 0.6,
+   "lon": -79.05747,
+   "lat": 33.83645,
+   "median_county_value": 151826
+  },
+  {
+   "name": "ROLLINSON",
+   "homes": 43,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.2,
+   "lon": -79.0665,
+   "lat": 33.8295,
+   "median_county_value": 156491
+  },
+  {
+   "name": "LINCOLN PARK",
+   "homes": 50,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.8,
+   "lon": -79.07755,
+   "lat": 33.82987,
+   "median_county_value": 166744
+  },
+  {
+   "name": "PINECREST",
+   "homes": 77,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 2.3,
+   "lon": -79.07622,
+   "lat": 33.81196,
+   "median_county_value": 200673
+  },
+  {
+   "name": "WHITTEMORE PK",
+   "homes": 45,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.4,
+   "lon": -79.07298,
+   "lat": 33.83492,
+   "median_county_value": 213469
+  },
+  {
+   "name": "OAK RIDGE",
+   "homes": 55,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.5,
+   "lon": -79.0736,
+   "lat": 33.82981,
+   "median_county_value": 152831
+  },
+  {
+   "name": "JASMINE WOODS",
+   "homes": 116,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.9,
+   "lon": -79.07272,
+   "lat": 33.81724,
+   "median_county_value": 266944
+  },
+  {
+   "name": "SOUTHSIDE EST",
+   "homes": 36,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.8,
+   "lon": -79.07332,
+   "lat": 33.82028,
+   "median_county_value": 247020
+  },
+  {
+   "name": "MELSON",
+   "homes": 41,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.1,
+   "lon": -79.06488,
+   "lat": 33.82906,
+   "median_county_value": 156801
+  },
+  {
+   "name": "J E JAMES",
+   "homes": 44,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.5,
+   "lon": -79.07153,
+   "lat": 33.82695,
+   "median_county_value": 166430
+  },
+  {
+   "name": "MEADOW FARMS",
+   "homes": 45,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 2.8,
+   "lon": -79.03441,
+   "lat": 33.79709,
+   "median_county_value": 268675
+  },
+  {
+   "name": "LONGWOOD",
+   "homes": 42,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 2.1,
+   "lon": -79.07566,
+   "lat": 33.81569,
+   "median_county_value": 216288
+  },
+  {
+   "name": "QUATTLEBAUM ACS",
+   "homes": 41,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 2.1,
+   "lon": -79.07907,
+   "lat": 33.82151,
+   "median_county_value": 232198
+  },
+  {
+   "name": "COUNTRY MANOR",
+   "homes": 101,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 4.3,
+   "lon": -79.09905,
+   "lat": 33.88079,
+   "median_county_value": 263785
+  },
+  {
+   "name": "KISKADEE PARKE",
+   "homes": 222,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 5.2,
+   "lon": -78.98088,
+   "lat": 33.7842,
+   "median_county_value": 195500
+  },
+  {
+   "name": "TIGER GRAND",
+   "homes": 87,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 3.0,
+   "lon": -79.08724,
+   "lat": 33.86403,
+   "median_county_value": 299937
+  },
+  {
+   "name": "AVIARY VILLAGE",
+   "homes": 75,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 5.0,
+   "lon": -78.98172,
+   "lat": 33.78891,
+   "median_county_value": 194900
+  },
+  {
+   "name": "WILD WING",
+   "homes": 854,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 4.9,
+   "lon": -78.98037,
+   "lat": 33.79361,
+   "median_county_value": 490200
+  },
+  {
+   "name": "RIVER PALMS",
+   "homes": 48,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.3,
+   "lon": -79.06696,
+   "lat": 33.82496,
+   "median_county_value": 132900
+  },
+  {
+   "name": "IVY GLEN",
+   "homes": 38,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 2.3,
+   "lon": -79.0559,
+   "lat": 33.86885,
+   "median_county_value": 264384
+  },
+  {
+   "name": "THE THICKET",
+   "homes": 63,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 2.4,
+   "lon": -79.05505,
+   "lat": 33.87091,
+   "median_county_value": 261155
+  },
+  {
+   "name": "FOREST GLEN",
+   "homes": 84,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 4.2,
+   "lon": -79.11764,
+   "lat": 33.85651,
+   "median_county_value": 256674
+  },
+  {
+   "name": "ROSEHAVEN",
+   "homes": 266,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 1.9,
+   "lon": -79.08119,
+   "lat": 33.83371,
+   "median_county_value": 267878
+  },
+  {
+   "name": "RIVERTOWN ROW",
+   "homes": 199,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 2.7,
+   "lon": -79.08277,
+   "lat": 33.8618,
+   "median_county_value": 304135
+  },
+  {
+   "name": "COUNTRY MANOR EST",
+   "homes": 35,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 4.1,
+   "lon": -79.09469,
+   "lat": 33.8809,
+   "median_county_value": 188336
+  },
+  {
+   "name": "DUDLEY FARMS",
+   "homes": 26,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 4.1,
+   "lon": -79.01152,
+   "lat": 33.88775,
+   "median_county_value": 412850
+  },
+  {
+   "name": "MAPLE RIDGE ESTATES",
+   "homes": 35,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 4.3,
+   "lon": -79.01902,
+   "lat": 33.89307,
+   "median_county_value": 541841
+  },
+  {
+   "name": "ST JOHNS RIDGE",
+   "homes": 200,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 3.9,
+   "lon": -79.1123,
+   "lat": 33.85247,
+   "median_county_value": 242716
+  },
+  {
+   "name": "OAK GLENN",
+   "homes": 199,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 2.2,
+   "lon": -79.08375,
+   "lat": 33.82496,
+   "median_county_value": 285303
+  },
+  {
+   "name": "WOODLAND LAKES",
+   "homes": 146,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 3.1,
+   "lon": -79.10038,
+   "lat": 33.82297,
+   "median_county_value": 280218
+  },
+  {
+   "name": "COASTAL POINT WEST",
+   "homes": 184,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 3.9,
+   "lon": -78.98708,
+   "lat": 33.81038,
+   "median_county_value": 354515
+  },
+  {
+   "name": "SPRING OAKS",
+   "homes": 80,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 2.8,
+   "lon": -79.09325,
+   "lat": 33.84924,
+   "median_county_value": 313992
+  },
+  {
+   "name": "RIVERTOWN ROW N",
+   "homes": 79,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 3.0,
+   "lon": -79.08196,
+   "lat": 33.86969,
+   "median_county_value": 333801
+  },
+  {
+   "name": "WOODSIDE CROSSING",
+   "homes": 102,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 3.8,
+   "lon": -79.09321,
+   "lat": 33.87645,
+   "median_county_value": 297302
+  },
+  {
+   "name": "KINGSTON BAY",
+   "homes": 128,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 2.3,
+   "lon": -79.06314,
+   "lat": 33.86654,
+   "median_county_value": 297700
+  },
+  {
+   "name": "COLLINS WALK",
+   "homes": 56,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 2.8,
+   "lon": -79.08732,
+   "lat": 33.8608,
+   "median_county_value": 209900
+  },
+  {
+   "name": "KINGSTON OAKS",
+   "homes": 39,
+   "in_sfz": 0,
+   "in_sfha": 0,
+   "in_either": 0,
+   "miles_from_town_point": 5.9,
+   "lon": -78.9921,
+   "lat": 33.90746,
+   "median_county_value": 244501
+  }
+ ],
+ "streets_most_homes_in_sfz": [
+  [
+   "SHERWOOD DR",
+   39,
+   61
+  ],
+  [
+   "LAKELAND DR",
+   27,
+   55
+  ],
+  [
+   "BUSBEE ST",
+   26,
+   26
+  ],
+  [
+   "PECAN GROVE BLVD",
+   26,
+   58
+  ],
+  [
+   "LONG AVE",
+   16,
+   21
+  ],
+  [
+   "SNOWHILL DR",
+   14,
+   20
+  ],
+  [
+   "MAGRATH AVE",
+   12,
+   16
+  ],
+  [
+   "MERRYWOOD DR",
+   12,
+   15
+  ],
+  [
+   "PINERIDGE ST",
+   9,
+   69
+  ],
+  [
+   "JESSAMINE ST",
+   8,
+   9
+  ],
+  [
+   "ROSEHAVEN DR",
+   8,
+   50
+  ],
+  [
+   "PARK AVE",
+   7,
+   18
+  ],
+  [
+   "PARKHILL DR",
+   7,
+   43
+  ],
+  [
+   "GREENWICH DR",
+   7,
+   34
+  ],
+  [
+   "LONG AVE EXT",
+   6,
+   68
+  ],
+  [
+   "CRABTREE DR",
+   6,
+   6
+  ],
+  [
+   "CREEL ST",
+   6,
+   15
+  ],
+  [
+   "MCDERMOTT ST",
+   5,
+   23
+  ],
+  [
+   "WOODY LN",
+   5,
+   5
+  ],
+  [
+   "TWELFTH AVE",
+   4,
+   36
+  ],
+  [
+   "JACKSON LN",
+   4,
+   6
+  ],
+  [
+   "SNIDER ST",
+   4,
+   4
+  ],
+  [
+   "HWY 905",
+   4,
+   41
+  ],
+  [
+   "HARVEST VIEW AVE",
+   4,
+   4
+  ],
+  [
+   "AZALEA DR",
+   4,
+   6
+  ]
+ ],
+ "closures_florence": {
+  "segments_touching_city": 227,
+  "flood_segments": 220,
+  "flood_streets": 58,
+  "first_closed": "2018-09-15",
+  "last_opened": "2018-11-19",
+  "longest_by_street_days": [
+   [
+    "JACKSON BLUFF RD",
+    41.2
+   ],
+   [
+    "HWY 905",
+    37.2
+   ],
+   [
+    "LONG AVE EXT",
+    30.3
+   ],
+   [
+    "DEPOT RD",
+    29.3
+   ],
+   [
+    "LONG AVE",
+    29.1
+   ],
+   [
+    "NEW RD",
+    29.1
+   ],
+   [
+    "FREEMAN DR",
+    29.0
+   ],
+   [
+    "CHURCH ST",
+    28.8
+   ],
+   [
+    "THIRD AVE",
+    28.8
+   ],
+   [
+    "MARINA DR",
+    28.1
+   ],
+   [
+    "DOBROS RD",
+    27.9
+   ],
+   [
+    "ALLEN DR",
+    27.9
+   ],
+   [
+    "CRABTREE DR",
+    27.9
+   ],
+   [
+    "AZALEA DR",
+    27.9
+   ],
+   [
+    "SHERWOOD DR",
+    26.1
+   ],
+   [
+    "HAWTHORNE DR",
+    26.1
+   ],
+   [
+    "ELM ST",
+    25.8
+   ],
+   [
+    "NONAME",
+    25.8
+   ],
+   [
+    "PECAN GROVE BLVD",
+    22.9
+   ],
+   [
+    "KINGSTON ST",
+    22.8
+   ],
+   [
+    "LAUREL ST",
+    22.1
+   ],
+   [
+    "WACCAMAW DR",
+    21.9
+   ],
+   [
+    "OAK ST",
+    20.9
+   ],
+   [
+    "JESSAMINE ST",
+    17.2
+   ],
+   [
+    "BUSBEE ST",
+    17.2
+   ]
+  ],
+  "median_days_flood_segment": 14.9
+ },
+ "closures_matthew": {
+  "segments_touching_city": 110,
+  "flood_segments": 69,
+  "flood_streets": 35,
+  "first_closed": "2016-10-08",
+  "last_opened": "2016-11-14",
+  "longest_by_street_days": [
+   [
+    "WACCAMAW DR",
+    35.9
+   ],
+   [
+    "FREEMAN DR",
+    32.1
+   ],
+   [
+    "HAWTHORNE DR",
+    32.1
+   ],
+   [
+    "GODFREY AVE",
+    32.1
+   ],
+   [
+    "NONAME",
+    28.9
+   ],
+   [
+    "ELM ST",
+    28.9
+   ],
+   [
+    "LONG AVE EXT",
+    24.3
+   ],
+   [
+    "DEPOT RD",
+    24.0
+   ],
+   [
+    "NEW RD",
+    23.0
+   ],
+   [
+    "E COUNTRY CLUB DR",
+    2.9
+   ],
+   [
+    "SHERWOOD DR",
+    2.9
+   ],
+   [
+    "SNOWHILL DR",
+    2.9
+   ],
+   [
+    "MAIN ST",
+    2.7
+   ],
+   [
+    "LONG AVE",
+    2.7
+   ],
+   [
+    "LAKELAND DR",
+    2.5
+   ],
+   [
+    "BUSBEE ST",
+    2.5
+   ],
+   [
+    "100TH ST",
+    2.2
+   ],
+   [
+    "WINYAH RD",
+    2.2
+   ],
+   [
+    "OAK ST",
+    1.9
+   ],
+   [
+    "VICTORY LN",
+    1.8
+   ],
+   [
+    "ERNEST FINNEY AVE",
+    1.4
+   ],
+   [
+    "HWY 90",
+    1.4
+   ],
+   [
+    "BOUNDARY ST",
+    1.3
+   ],
+   [
+    "PADGETT LN",
+    1.2
+   ],
+   [
+    "WILD WING BLVD",
+    1.1
+   ]
+  ],
+  "median_days_flood_segment": 1.8
+ },
+ "sales_in_city": {
+  "all": {
+   "n": 470,
+   "median": 271413.5,
+   "q1": 225000,
+   "q3": 331500
+  },
+  "resales": {
+   "n": 348,
+   "median": 260000.0,
+   "q1": 215000,
+   "q3": 332750
+  },
+  "resales_not_condo": {
+   "n": 334,
+   "median": 264250.0,
+   "q1": 220000,
+   "q3": 340000
+  },
+  "resales_condo": {
+   "n": 14,
+   "median": 152500.0,
+   "q1": 134875,
+   "q3": 185375
+  },
+  "builder": {
+   "n": 122,
+   "median": 295474.5,
+   "q1": 264000,
+   "q3": 329500
+  },
+  "resales_in_flood_either": {
+   "n": 24,
+   "median": 252500.0,
+   "q1": 205750,
+   "q3": 312500
+  },
+  "resales_outside_flood": {
+   "n": 324,
+   "median": 260000.0,
+   "q1": 215000,
+   "q3": 336250
+  },
+  "buyer_mailing_state_not_sc_pct": 10.9
+ },
+ "areas": {
+  "us501": {
+   "homes": 1432,
+   "in_sfha": 0,
+   "in_sfz": 0,
+   "in_either": 0,
+   "in_sfz_not_sfha": 0,
+   "pct_in_either": 0.0,
+   "resales_not_condo": {
+    "n": 64,
+    "median": 362500.0,
+    "q1": 223075,
+    "q3": 553750
+   },
+   "median_acres_houses": 0.39,
+   "largest_subdivisions": [
+    [
+     "WILD WING",
+     854
+    ],
+    [
+     "KISKADEE PARKE",
+     222
+    ],
+    [
+     "COASTAL POINT WEST",
+     184
+    ],
+    [
+     "AVIARY VILLAGE",
+     75
+    ],
+    [
+     "COLLEGE PARK",
+     19
+    ],
+    [
+     "KISSKADEE PARKE",
+     18
+    ],
+    [
+     "QUAIL CREEK VILLAGE",
+     10
+    ],
+    [
+     "COASTAL HTS",
+     9
+    ]
+   ]
+  },
+  "crabtree": {
+   "homes": 2387,
+   "in_sfha": 203,
+   "in_sfz": 197,
+   "in_either": 253,
+   "in_sfz_not_sfha": 50,
+   "pct_in_either": 10.6,
+   "resales_not_condo": {
+    "n": 102,
+    "median": 260000.0,
+    "q1": 234000,
+    "q3": 304750
+   },
+   "median_acres_houses": 0.18,
+   "largest_subdivisions": [
+    [
+     "MIDTOWN VILLAGE",
+     207
+    ],
+    [
+     "RIVERTOWN ROW",
+     199
+    ],
+    [
+     "ELMHURST",
+     197
+    ],
+    [
+     "WOODCREEK",
+     185
+    ],
+    [
+     "KINGSTON BAY",
+     128
+    ],
+    [
+     "SHERWOOD",
+     126
+    ],
+    [
+     "ST JOHNS RIDGE",
+     118
+    ],
+    [
+     "N CONWAY",
+     100
+    ]
+   ]
+  },
+  "north": {
+   "homes": 560,
+   "in_sfha": 15,
+   "in_sfz": 0,
+   "in_either": 15,
+   "in_sfz_not_sfha": 0,
+   "pct_in_either": 2.7,
+   "resales_not_condo": {
+    "n": 25,
+    "median": 399900.0,
+    "q1": 282500,
+    "q3": 550000
+   },
+   "median_acres_houses": 0.75,
+   "largest_subdivisions": [
+    [
+     "RIDGEWOOD WEST",
+     104
+    ],
+    [
+     "COUNTRY MANOR",
+     101
+    ],
+    [
+     "MAPLE HILL",
+     46
+    ],
+    [
+     "WOODSIDE CROSSING",
+     40
+    ],
+    [
+     "KINGSTON OAKS",
+     39
+    ],
+    [
+     "COUNTRY MANOR EST",
+     35
+    ],
+    [
+     "MAPLE RIDGE ESTATES",
+     35
+    ],
+    [
+     "MAPLEWOOD",
+     27
+    ]
+   ]
+  },
+  "west": {
+   "homes": 3398,
+   "in_sfha": 137,
+   "in_sfz": 115,
+   "in_either": 176,
+   "in_sfz_not_sfha": 39,
+   "pct_in_either": 5.2,
+   "resales_not_condo": {
+    "n": 121,
+    "median": 246000.0,
+    "q1": 200000,
+    "q3": 283000
+   },
+   "median_acres_houses": 0.26,
+   "largest_subdivisions": [
+    [
+     "ROSEHAVEN",
+     266
+    ],
+    [
+     "NEW CASTLE",
+     251
+    ],
+    [
+     "OAK GLENN",
+     199
+    ],
+    [
+     "WOODLAND LAKES",
+     146
+    ],
+    [
+     "JASMINE WOODS",
+     116
+    ],
+    [
+     "MACALA ACRES",
+     109
+    ],
+    [
+     "PECAN GROVE",
+     103
+    ],
+    [
+     "SEDGEFIELD",
+     94
+    ]
+   ]
+  },
+  "downtown": {
+   "homes": 1158,
+   "in_sfha": 31,
+   "in_sfz": 33,
+   "in_either": 36,
+   "in_sfz_not_sfha": 5,
+   "pct_in_either": 3.1,
+   "resales_not_condo": {
+    "n": 22,
+    "median": 275000.0,
+    "q1": 193750,
+    "q3": 435000
+   },
+   "median_acres_houses": 0.34,
+   "largest_subdivisions": [
+    [
+     "SNOWHILL",
+     61
+    ],
+    [
+     "MAYFAIR",
+     32
+    ],
+    [
+     "BUCKWOOD #2",
+     26
+    ],
+    [
+     "HIGHLAND PK",
+     26
+    ],
+    [
+     "COLLINSWOOD",
+     25
+    ],
+    [
+     "OAK HILL CONDO",
+     24
+    ],
+    [
+     "LAKELAND",
+     21
+    ],
+    [
+     "B G COLLINS EST",
+     20
+    ]
+   ]
+  }
+ },
+ "nfip_city_of_conway": {
+  "source": "https://www.fema.gov/api/open/v3/NfipClaims",
+  "pulled": "2026-11-01T01:57:35.129Z",
+  "by_year": {
+   "1981": {
+    "claims": 2,
+    "paid_claims": 2,
+    "paid": 3182
+   },
+   "1983": {
+    "claims": 2,
+    "paid_claims": 1,
+    "paid": 9094
+   },
+   "1987": {
+    "claims": 2,
+    "paid_claims": 2,
+    "paid": 7461
+   },
+   "1988": {
+    "claims": 2,
+    "paid_claims": 2,
+    "paid": 10503
+   },
+   "1992": {
+    "claims": 2,
+    "paid_claims": 1,
+    "paid": 637
+   },
+   "1993": {
+    "claims": 6,
+    "paid_claims": 5,
+    "paid": 78842
+   },
+   "1994": {
+    "claims": 12,
+    "paid_claims": 10,
+    "paid": 77871
+   },
+   "1996": {
+    "claims": 15,
+    "paid_claims": 12,
+    "paid": 149951
+   },
+   "1998": {
+    "claims": 14,
+    "paid_claims": 13,
+    "paid": 201394
+   },
+   "1999": {
+    "claims": 55,
+    "paid_claims": 51,
+    "paid": 1797946
+   },
+   "2003": {
+    "claims": 2,
+    "paid_claims": 1,
+    "paid": 1811
+   },
+   "2004": {
+    "claims": 4,
+    "paid_claims": 4,
+    "paid": 40060
+   },
+   "2012": {
+    "claims": 1,
+    "paid_claims": 1,
+    "paid": 8246
+   },
+   "2015": {
+    "claims": 34,
+    "paid_claims": 28,
+    "paid": 933165
+   },
+   "2016": {
+    "claims": 65,
+    "paid_claims": 59,
+    "paid": 2885562
+   },
+   "2018": {
+    "claims": 113,
+    "paid_claims": 109,
+    "paid": 15012993
+   },
+   "2021": {
+    "claims": 1,
+    "paid_claims": 1,
+    "paid": 19994
+   },
+   "2022": {
+    "claims": 1,
+    "paid_claims": 1,
+    "paid": 14356
+   },
+   "2023": {
+    "claims": 3,
+    "paid_claims": 1,
+    "paid": 84734
+   },
+   "2024": {
+    "claims": 2,
+    "paid_claims": 0,
+    "paid": 0
+   },
+   "2025": {
+    "claims": 1,
+    "paid_claims": 1,
+    "paid": 48634
+   }
+  },
+  "paid_claims_all": 305,
+  "paid_all": 21386436,
+  "paid_claims_2019_on": 4,
+  "median_paid_2018": 133861
+ },
+ "hmgp_conway_acquisitions": {
+  "by_disaster": {
+   "4286": {
+    "buildings": 86,
+    "amount": 6312161
+   },
+   "1299": {
+    "buildings": 14,
+    "amount": 2025807
+   }
+  },
+  "projects": [
+   {
+    "subapplicationIdentifier": "DR-4286-0063-R",
+    "program": "Hazard Mitigation Grant Program",
+    "disasterNumber": "4286",
+    "fiscalYear": 2017,
+    "subapplicantName": "Conway",
+    "status": "Closed",
+    "primaryActivity": "Acquisition",
+    "numberBuildingLocations": 11,
+    "totalSubapplicationAmount": 807561.86
+   },
+   {
+    "subapplicationIdentifier": "DR-1299-0017-R",
+    "program": "Hazard Mitigation Grant Program",
+    "disasterNumber": "1299",
+    "fiscalYear": 1999,
+    "subapplicantName": "Conway",
+    "status": "Closed",
+    "primaryActivity": "Acquisition",
+    "numberBuildingLocations": 9,
+    "totalSubapplicationAmount": 1670324
+   },
+   {
+    "subapplicationIdentifier": "DR-4286-0062-R",
+    "program": "Hazard Mitigation Grant Program",
+    "disasterNumber": "4286",
+    "fiscalYear": 2017,
+    "subapplicantName": "Conway",
+    "status": "Closed",
+    "primaryActivity": "Acquisition",
+    "numberBuildingLocations": 41,
+    "totalSubapplicationAmount": 3077197.81
+   },
+   {
+    "subapplicationIdentifier": "DR-1299-0015-R",
+    "program": "Hazard Mitigation Grant Program",
+    "disasterNumber": "1299",
+    "fiscalYear": 1999,
+    "subapplicantName": "Conway",
+    "status": "Closed",
+    "primaryActivity": "Acquisition",
+    "numberBuildingLocations": 3,
+    "totalSubapplicationAmount": 190122
+   },
+   {
+    "subapplicationIdentifier": "DR-1299-0005-R",
+    "program": "Hazard Mitigation Grant Program",
+    "disasterNumber": "1299",
+    "fiscalYear": 1999,
+    "subapplicantName": "Conway",
+    "status": "Closed",
+    "primaryActivity": "Acquisition",
+    "numberBuildingLocations": 2,
+    "totalSubapplicationAmount": 165361
+   },
+   {
+    "subapplicationIdentifier": "DR-4286-0064-R",
+    "program": "Hazard Mitigation Grant Program",
+    "disasterNumber": "4286",
+    "fiscalYear": 2017,
+    "subapplicantName": "Conway",
+    "status": "Closed",
+    "primaryActivity": "Acquisition",
+    "numberBuildingLocations": 34,
+    "totalSubapplicationAmount": 2427401.17
+   }
+  ]
+ },
+ "river": {
+  "site": "USGS 02110704 WACCAMAW RIVER AT CONWAY MARINA AT CONWAY, SC; NWS CNWS1",
+  "flood_categories_ft": {
+   "major": 14,
+   "moderate": 12,
+   "minor": 11,
+   "action": 10
+  },
+  "florence": {
+   "peak_daily_mean": [
+    "2018-09-26",
+    21.13
+   ],
+   "above_minor": {
+    "first": "2018-09-16",
+    "last": "2018-10-14",
+    "days": 29
+   },
+   "above_major": {
+    "first": "2018-09-17",
+    "last": "2018-10-06",
+    "days": 20
+   }
+  },
+  "matthew": {
+   "peak_daily_mean": [
+    "2016-10-18",
+    17.84
+   ],
+   "above_minor": {
+    "first": "2016-10-08",
+    "last": "2016-11-02",
+    "days": 26
+   },
+   "above_major": {
+    "first": "2016-10-09",
+    "last": "2016-10-25",
+    "days": 17
+   }
+  },
+  "days_at_or_above_minor_by_year": {
+   "1994": {
+    "days_with_data": 77,
+    "days_at_or_above_minor": 9
+   },
+   "1995": {
+    "days_with_data": 365,
+    "days_at_or_above_minor": 39
+   },
+   "1996": {
+    "days_with_data": 332,
+    "days_at_or_above_minor": 28
+   },
+   "1997": {
+    "days_with_data": 354,
+    "days_at_or_above_minor": 0
+   },
+   "1998": {
+    "days_with_data": 365,
+    "days_at_or_above_minor": 69
+   },
+   "1999": {
+    "days_with_data": 321,
+    "days_at_or_above_minor": 72
+   },
+   "2000": {
+    "days_with_data": 316,
+    "days_at_or_above_minor": 8
+   },
+   "2001": {
+    "days_with_data": 346,
+    "days_at_or_above_minor": 0
+   },
+   "2002": {
+    "days_with_data": 362,
+    "days_at_or_above_minor": 0
+   },
+   "2003": {
+    "days_with_data": 353,
+    "days_at_or_above_minor": 39
+   },
+   "2004": {
+    "days_with_data": 346,
+    "days_at_or_above_minor": 8
+   },
+   "2005": {
+    "days_with_data": 343,
+    "days_at_or_above_minor": 3
+   },
+   "2006": {
+    "days_with_data": 353,
+    "days_at_or_above_minor": 0
+   },
+   "2007": {
+    "days_with_data": 273,
+    "days_at_or_above_minor": 11
+   },
+   "2014": {
+    "days_with_data": 262,
+    "days_at_or_above_minor": 0
+   },
+   "2015": {
+    "days_with_data": 364,
+    "days_at_or_above_minor": 45
+   },
+   "2016": {
+    "days_with_data": 366,
+    "days_at_or_above_minor": 66
+   },
+   "2017": {
+    "days_with_data": 364,
+    "days_at_or_above_minor": 10
+   },
+   "2018": {
+    "days_with_data": 365,
+    "days_at_or_above_minor": 48
+   },
+   "2019": {
+    "days_with_data": 365,
+    "days_at_or_above_minor": 16
+   },
+   "2020": {
+    "days_with_data": 366,
+    "days_at_or_above_minor": 64
+   },
+   "2021": {
+    "days_with_data": 365,
+    "days_at_or_above_minor": 43
+   },
+   "2022": {
+    "days_with_data": 365,
+    "days_at_or_above_minor": 0
+   },
+   "2023": {
+    "days_with_data": 365,
+    "days_at_or_above_minor": 18
+   },
+   "2024": {
+    "days_with_data": 366,
+    "days_at_or_above_minor": 38
+   },
+   "2025": {
+    "days_with_data": 365,
+    "days_at_or_above_minor": 15
+   },
+   "2026": {
+    "days_with_data": 303,
+    "days_at_or_above_minor": 0
+   }
+  },
+  "top_crests": [
+   [
+    "2018-09-26",
+    21.16
+   ],
+   [
+    "2016-10-18",
+    17.89
+   ],
+   [
+    "1928-09-30",
+    17.8
+   ],
+   [
+    "1999-09-27",
+    17.6
+   ],
+   [
+    "2015-10-10",
+    16.23
+   ],
+   [
+    "2015-10-08",
+    16.1
+   ],
+   [
+    "2021-02-27",
+    15.6
+   ],
+   [
+    "1945-09-29",
+    15.6
+   ],
+   [
+    "2018-09-18",
+    15.57
+   ],
+   [
+    "1924-10-09",
+    15.5
+   ]
+  ],
+  "crests_at_or_above_major": [
+   [
+    "1908-08-10",
+    14.1
+   ],
+   [
+    "1908-09-07",
+    14.6
+   ],
+   [
+    "1924-10-02",
+    15.4
+   ],
+   [
+    "1924-10-09",
+    15.5
+   ],
+   [
+    "1928-09-20",
+    15.3
+   ],
+   [
+    "1928-09-30",
+    17.8
+   ],
+   [
+    "1945-09-29",
+    15.6
+   ],
+   [
+    "1983-03-30",
+    14.5
+   ],
+   [
+    "1996-09-19",
+    14.4
+   ],
+   [
+    "1998-02-12",
+    14.7
+   ],
+   [
+    "1998-02-19",
+    14.8
+   ],
+   [
+    "1999-09-27",
+    17.6
+   ],
+   [
+    "2015-10-08",
+    16.1
+   ],
+   [
+    "2015-10-10",
+    16.23
+   ],
+   [
+    "2016-10-10",
+    15.11
+   ],
+   [
+    "2016-10-18",
+    17.89
+   ],
+   [
+    "2018-09-18",
+    15.57
+   ],
+   [
+    "2018-09-26",
+    21.16
+   ],
+   [
+    "2020-06-07",
+    14.08
+   ],
+   [
+    "2021-02-27",
+    15.6
+   ],
+   [
+    "2024-08-19",
+    14.9
+   ]
+  ],
+  "major_events": [
+   [
+    "1908-09-07",
+    14.6
+   ],
+   [
+    "1924-10-09",
+    15.5
+   ],
+   [
+    "1928-09-30",
+    17.8
+   ],
+   [
+    "1945-09-29",
+    15.6
+   ],
+   [
+    "1983-03-30",
+    14.5
+   ],
+   [
+    "1996-09-19",
+    14.4
+   ],
+   [
+    "1998-02-19",
+    14.8
+   ],
+   [
+    "1999-09-27",
+    17.6
+   ],
+   [
+    "2015-10-10",
+    16.23
+   ],
+   [
+    "2016-10-18",
+    17.89
+   ],
+   [
+    "2018-09-26",
+    21.16
+   ],
+   [
+    "2020-06-07",
+    14.08
+   ],
+   [
+    "2021-02-27",
+    15.6
+   ],
+   [
+    "2024-08-19",
+    14.9
+   ]
+  ],
+  "major_event_years_2015_2025": [
+   "2015",
+   "2016",
+   "2018",
+   "2020",
+   "2021",
+   "2024"
+  ],
+  "major_crests_by_decade": {
+   "1900s": 2,
+   "1920s": 4,
+   "1940s": 1,
+   "1980s": 1,
+   "1990s": 4,
+   "2010s": 6,
+   "2020s": 3
+  },
+  "impacts": {
+   "21": "Major flooding along the river and swamps in Lees Landing, Riverfront South, Pitch Landing and Savannah Bluff. Flooded areas include Waccamaw CIR, Gray Oak DR, Riverside DR, Black Moss DR, Cypress Flat Court, Depot RD, New RD, Jackson Bluff RD, Old Reaves Ferry RD, Bear Bluff RD, Cox Ferry RD, Caines Landing RD, Long AVE, Sherwood DR, Elm ST, Main ST, Pecan Grove Blvd Peachtree RD, Hwy 905, Marina DR, Old Bucksville RD, Bridgewater DR, Bradford CIR, Wildhorse DR and Cabots Creek DR. Hwy 501 BYP may flood.",
+   "20": "Major flooding along the river and swamps in Lees Landing, Riverfront South, Pitch Landing, and Savannah Bluff. Flooded areas include Waccamaw CIR, Gray Oak DR, Riverside DR, Black Moss DR, Cypress Flat Court, Depot RD, New RD, Jackson Bluff RD, Old Reaves Ferry RD, Bear Bluff RD, Cox Ferry RD, Caines Landing RD, Long Ave, Sherwood DR, Elm ST, Main ST, Pecan Grove Blvd, Peachtree RD, Hwy 905, Marina DR and Old Bucksville RD. Flooding along Bridgewater DR, Bradford CIR, Wildhorse DR and Cabots Creek DR.",
+   "19": "Major flooding along the river and swamps in Lees Landing, Riverfront South, Pitch Landing, and Savannah Bluff. Flooded areas include Waccamaw CIR, Gray Oak DR, Riverside DR, Black Moss DR, Cypress Flat Court, Depot RD, New RD, Jackson Bluff RD, Old Reaves Ferry RD, Bear Bluff RD, Cox Ferry RD, Caines Landing RD, Long Ave, Sherwood DR, Elm ST, Main ST, Pecan Grove Blvd, Peachtree RD, HWY 905, Marina DR and Old Bucksville RD. Flooding along Bridgewater DR, Bradford CIR, Wildhorse DR and Cabots Creek DR.",
+   "18": "Major flooding along the river and swamps in Lees Landing, Riverfront South, Pitch Landing and Savannah Bluff. Flooded areas include Waccamaw CIR, Gray Oak DR, Riverside DR, Black Moss DR, Cypress Flat Court, Depot RD, New RD, Jackson Bluff RD, Old Reaves Ferry RD, Bear Bluff RD, Cox Ferry RD, Caines Landing RD, Long AVE, Sherwood DR, Elm ST, Main ST, Pecan Grove Blvd, Peachtree RD, HWY 905, Marina DR and Old Bucksville RD. Flooding begins along Bridgewater DR, Bradford CIR,Wildhorse DR and Cabots Creek DR.",
+   "17": "Major flooding in Lees Landing, Riverfront South, Pitch Landing, and Savannah Bluff. East Country Club RD may begin to flood.  Flooded areas include Waccamaw CIR, Gray Oak DR, Riverside DR, Black Moss DR, Cypress Flat Court, Depot RD, New RD, Jackson Bluff RD, Old Reaves Ferry RD, Bear Bluff RD, Cox Ferry RD, Caines Landing Rd, Long Ave, Sherwood DR, Elm ST, Peachtree RD, HWY 905, Marina DR and Old Bucksville RD. Pecan Grove Blvd and Main ST may begin to flood. Railroad tracks in Conway will be flooded.",
+   "16": "Major flooding in Lees Landing, Riverfront South, Pitch Landing, and Savannah Bluff. Flooded areas include Waccamaw CIR, Gray Oak DR, Riverside DR, Black Moss DR, Cypress Flat Court, Depot RD, New RD, Jackson Bluff RD, Old Reaves Ferry RD, Bear Bluff RD, Cox Ferry RD, Caines Landing RD, Long AVE, Sherwood DR, Elm ST, Peachtree RD, Marina DR and Old Bucksville RD. Highway 905 north of Kingston Lake will begin to flood.  The Conway Marina and railroad tracks in Conway will be flooded.",
+   "15": "Flooding continues to worsen in Lees Landing, Riverfront South, Pitch Landing, and Savannah Bluff and along Waccamaw CIR, Gray Oak DR, Riverside DR, Black Moss DR, Cypress Flat Court, Depot RD, New RD, Jackson Bluff RD, Cox Ferry RD, Old Bucksville RD and Old Reaves Ferry RD. The Conway Marina, Elm ST, and Marina DR will be flooded. Flooding begins in areas along Bear Bluff RD, Long AVE, Sherwood DR, and in additional areas along Caines Landing RD. Railroad tracks in downtown Conway will begin to flood.",
+   "14": "Flooding worsens in Lees Landing, Riverfront South, Pitch Landing, and Savannah Bluff and along Waccamaw CIR, Gray Oak DR, Riverside DR, Black Moss DR, Cypress Flat Court, Depot RD, New RD, and Jackson Bluff RD. Old Reaves Ferry RD will be flooded. Elm ST will begin to flood near the Marina.  Cox Ferry RD areas off Old Bucksville RD will begin to flood. Lowland flooding near Crabtree Swamp along Long AVE and Sherwood DR. Rain when the swamp is high could produce flooding in these areas. ",
+   "13": "Flooding worsens in Lees Landing, Riverfront South, Pitch Landing, and Savannah Bluff and along Waccamaw CIR, Riverside DR, Black Moss DR, Cypress Flat Court, Depot RD, New RD, Jackson Bluff RD, and in low areas along Gray Oak DR. Some of these areas may be inaccessible via road. Old Reaves Ferry RD may begin to flood.  ",
+   "12": "Flooding will worsen in Lees Landing, Riverfront South, Pitch Landing, and Savannah Bluff. Flooding will also worsen along Waccamaw CIR, Riverside DR, and in low areas along Gray Oak DR. Flood waters will begin to affect Black Moss DR and Cypress Flat. Depot RD, New RD, and Jackson Bluff RD may begin to flood.  The lowest homes on Riverside DR north of Conway may be affected.  Witch Golf Course may begin to flood. Swamps will be heavily flooded. ",
+   "11": "Water will begin to cause minor flooding of yards and a few roads in the Lees Landing, Pitch Landing, Savannah Bluff, and Riverfront South communities. Areas along Waccamaw CIR will experience minor flooding and Riverside DR may begin to flood. Low areas along Gray Oaks Drive may begin to flood. Access to Hidden River RD may be cutoff. Overflow of vast uninhabited swamp and natural boat landings will occur. ",
+   "10.5": "Water will spread into swamps along the river and a few boat landings will begin to flood. "
+  }
+ },
+ "nfip_policies": {
+  "29526_x": {
+   "n": 1000,
+   "premium_median": 403.0,
+   "premium_q1": 302.0,
+   "premium_q3": 538.25,
+   "cost_median": 560.0,
+   "cost_q1": 432.75,
+   "cost_q3": 725.5,
+   "primary_n": 949,
+   "primary_cost_median": 549
+  },
+  "29526_a": {
+   "n": 332,
+   "premium_median": 739.0,
+   "premium_q1": 534.75,
+   "premium_q3": 953.25,
+   "cost_median": 983.0,
+   "cost_q1": 715.75,
+   "cost_q3": 1202.75,
+   "primary_n": 282,
+   "primary_cost_median": 957.5
+  },
+  "29527_x": {
+   "n": 219,
+   "premium_median": 485,
+   "premium_q1": 384.5,
+   "premium_q3": 782.5,
+   "cost_median": 679,
+   "cost_q1": 539.0,
+   "cost_q3": 1027.0,
+   "primary_n": 199,
+   "primary_cost_median": 648
+  },
+  "29527_a": {
+   "n": 137,
+   "premium_median": 762,
+   "premium_q1": 553.0,
+   "premium_q3": 900.0,
+   "cost_median": 985,
+   "cost_q1": 761.0,
+   "cost_q3": 1148.0,
+   "primary_n": 115,
+   "primary_cost_median": 988
+  }
+ },
+ "listings": {
+  "pulled": "2026-11-01T23:41:13.830908+00:00",
+  "meta_source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+  "refreshedAt": "2026-11-01T23:31:22.243Z",
+  "api_totals": {
+   "house": 673,
+   "townhouse": 37,
+   "condo": 33,
+   "manufactured": 72,
+   "land": 150,
+   "house+flood_zone": 9,
+   "house+new_construction": 368,
+   "house+no_hoa": 673
+  },
+  "by_type": {
+   "house": {
+    "n": 673,
+    "median_price": 331040.0
+   },
+   "townhouse": {
+    "n": 37,
+    "median_price": 239900.0
+   },
+   "condo": {
+    "n": 33,
+    "median_price": 149900.0
+   },
+   "manufactured": {
+    "n": 72,
+    "median_price": 207450.0
+   },
+   "land": {
+    "n": 150,
+    "median_price": 225000.0
+   }
+  },
+  "houses_inside_city": {
+   "n": 172,
+   "median_price": 327335.0
+  },
+  "houses_outside_city": {
+   "n": 501,
+   "median_price": 332400.0
+  },
+  "houses_in_sfha_or_sfz": 27,
+  "houses_one_acre_plus": 62,
+  "houses_one_acre_plus_median": 542445.0,
+  "houses_under_250k": 58,
+  "houses_new_construction_tag": 368,
+  "houses_by_beds": {
+   "2": 9,
+   "3": 374,
+   "1": 1,
+   "4": 225,
+   "5": 55,
+   "0": 1,
+   "6": 7,
+   "7": 1
+  }
+ },
+ "resale_by_place_not_condo": {
+  "Horry County (all kept sales)": {
+   "n": 8569,
+   "median": 324900.0
+  },
+  "Conway city": {
+   "n": 327,
+   "median": 264000.0
+  },
+  "Myrtle Beach city": {
+   "n": 1004,
+   "median": 305000.0
+  },
+  "North Myrtle Beach city": {
+   "n": 961,
+   "median": 418000.0
+  },
+  "Carolina Forest CDP": {
+   "n": 418,
+   "median": 397000.0
+  },
+  "Socastee CDP": {
+   "n": 296,
+   "median": 290000.0
+  },
+  "Little River CDP": {
+   "n": 427,
+   "median": 317500.0
+  },
+  "Loris city": {
+   "n": 36,
+   "median": 233700.0
+  },
+  "Aynor town": {
+   "n": 17,
+   "median": 256300.0
+  }
+ },
+ "tax_calc": {
+  "price": 265000,
+  "inside_city_4pct": 1732,
+  "inside_city_6pct": 4333,
+  "outside_city_4pct_district100": 1064,
+  "outside_city_6pct_district100": 3285,
+  "note": "4 percent inside: 171.2 + 101.3 - 109.1 = 163.4 mills; 6 percent inside: 171.2 + 101.3 = 272.5 mills; outside (district 100): 201.0 - 109.1 = 91.9 mills at 4 percent, 201.0 at 6 percent, plus the $89.40 county stormwater fee. Before any homestead exemption; tax is on the county's value, not the price."
+ },
+ "area_label_points": {
+  "us501": {
+   "lon": -78.9818,
+   "lat": 33.79164,
+   "homes": 1432
+  },
+  "crabtree": {
+   "lon": -79.07173,
+   "lat": 33.8618,
+   "homes": 2387
+  },
+  "north": {
+   "lon": -79.01717,
+   "lat": 33.88842,
+   "homes": 560
+  },
+  "west": {
+   "lon": -79.07555,
+   "lat": 33.82819,
+   "homes": 3398
+  },
+  "downtown": {
+   "lon": -79.05545,
+   "lat": 33.84055,
+   "homes": 1158
+  }
+ }
+}

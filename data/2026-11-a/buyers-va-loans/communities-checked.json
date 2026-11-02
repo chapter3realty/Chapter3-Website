@@ -1,0 +1,449 @@
+{
+ "pulled": "2026-11-02T02:29:20.537056+00:00",
+ "method": "The VA-listed condo communities the page names, checked one by one (fix round 1, 2026-11-02).\nFor each, the VA record (name and street, from raw/va-condos-HORRY-approved-true.json) is compared with the\nstreets of the condos for sale that the CRM's map API matches to the name (type=condo&subdivision=...).\nA community is kept only when at least 8 in 10 of its listings (and at least 3) are on the VA record's street (or, when the record gives only a\nPO box or no street, on a street in the community's own name). Then the middle point of its listings is\nlooked up in the Census geocoder for its Census place (a city, a town or a CDP such as Carolina Forest); a\npoint outside every place gets none, and the page then names the mailing town.\nAggregate only: the count for sale, how many are marked VA, the price range and the bedroom range.\nStreet names are kept as evidence; no house number or address is kept.\nRun: python3 -I check-communities.py <datadir>. Writes communities-checked.json.",
+ "rows": [
+  {
+   "name": "Magnolia Pointe",
+   "query": "type=condo&subdivision=magnolia+pointe",
+   "va_record": [
+    {
+     "firstLineName": "MAGNOLIA POINTE",
+     "street": "4891 LUSTER LEAF CIRCLE",
+     "city": "MYRTLE BEACH",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "for_sale": 36,
+   "va_marked": 15,
+   "listing_streets": {
+    "Luster Leaf Circle": 24,
+    "Magnolia Lake Dr.": 10,
+    "Magnolia Pointe Ln.": 1,
+    "Magnolia Point Ln.": 1
+   },
+   "on_record_street": 36,
+   "kept": true,
+   "price_min": 205900,
+   "price_max": 345000,
+   "price_median": 262450.0,
+   "beds_min": 2,
+   "beds_max": 3,
+   "census_place": [],
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "Magnolia North",
+   "query": "type=condo&subdivision=magnolia+north",
+   "va_record": [
+    {
+     "firstLineName": "MAGNOLIA NORTH",
+     "street": "4880 DAHLIA CT",
+     "city": "MYRTLE BEACH",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "for_sale": 30,
+   "va_marked": 4,
+   "listing_streets": {
+    "Orchid Way": 5,
+    "Carnation Circle": 13,
+    "Dahlia Ct.": 9,
+    "Dahila Ct.": 3
+   },
+   "on_record_street": 30,
+   "kept": true,
+   "price_min": 139900,
+   "price_max": 340000,
+   "price_median": 232450.0,
+   "beds_min": 1,
+   "beds_max": 3,
+   "census_place": [],
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "Windsor Green",
+   "query": "type=condo&subdivision=windsor+green",
+   "va_record": [
+    {
+     "firstLineName": "WINDSOR GREEN CONDOMINIUM",
+     "street": "WINDSOR GREEN",
+     "city": "MYRTLE BEACH",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "for_sale": 12,
+   "va_marked": 5,
+   "listing_streets": {
+    "Windsor Green Way": 10,
+    "Harvest Dr.": 1,
+    "Crab Pond Ct.": 1
+   },
+   "on_record_street": 10,
+   "kept": true,
+   "price_min": 166999,
+   "price_max": 199000,
+   "price_median": 180999.5,
+   "beds_min": 3,
+   "beds_max": 3,
+   "census_place": [
+    "Carolina Forest CDP"
+   ],
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "The Village at Queens Harbour",
+   "query": "type=condo&subdivision=the+village+at+queens+harbour",
+   "va_record": [
+    {
+     "firstLineName": "THE VILLAGE AT QUEENS HARBOUR",
+     "street": "SHELBY LAWSON DRIVE",
+     "city": "MYRTLE BEACH",
+     "status": "Accepted Without Conditions"
+    },
+    {
+     "firstLineName": "THE VILLAGE AT QUEENS HARBOUR",
+     "street": "ELLA KINLEY CIRCLE",
+     "city": "MYRTLE BEACH",
+     "status": "Accepted With Conditions"
+    }
+   ],
+   "for_sale": 14,
+   "va_marked": 3,
+   "listing_streets": {
+    "Ella Kinley Circle": 11,
+    "Shelby Lawson Dr.": 3
+   },
+   "on_record_street": 14,
+   "kept": true,
+   "price_min": 149900,
+   "price_max": 279000,
+   "price_median": 244950.0,
+   "beds_min": 1,
+   "beds_max": 3,
+   "census_place": [],
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "Shorewood",
+   "query": "type=condo&subdivision=shorewood",
+   "va_record": [
+    {
+     "firstLineName": "SHOREWOOD CONDO",
+     "street": "3015 OLD BRYAN DR",
+     "city": "MYRTLE BEACH",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "for_sale": 11,
+   "va_marked": 0,
+   "listing_streets": {
+    "Old Bryan Dr.": 11
+   },
+   "on_record_street": 11,
+   "kept": true,
+   "price_min": 136900,
+   "price_max": 215000,
+   "price_median": 149900,
+   "beds_min": 2,
+   "beds_max": 3,
+   "census_place": [],
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "Seagate Village",
+   "query": "type=condo&subdivision=seagate+village",
+   "va_record": [
+    {
+     "firstLineName": "SEAGATE VILLAGE",
+     "street": "3922 SPRUCE DR",
+     "city": "MYRTLE BEACH",
+     "status": "Accepted With Conditions"
+    }
+   ],
+   "for_sale": 5,
+   "va_marked": 2,
+   "listing_streets": {
+    "Mallard Lake Circle": 1,
+    "Yellowwood Ave.": 1,
+    "Cactus St.": 1,
+    "Magnolia St.": 1,
+    "Quince Ave.": 1
+   },
+   "on_record_street": 5,
+   "kept": true,
+   "price_min": 250000,
+   "price_max": 295000,
+   "price_median": 264900,
+   "beds_min": 3,
+   "beds_max": 3,
+   "census_place": [
+    "Myrtle Beach city"
+   ],
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "Monterey Bay Suites",
+   "query": "type=condo&subdivision=monterey+bay+suites+resort",
+   "va_record": [
+    {
+     "firstLineName": "MONTEREY BAY SUITES RESORT",
+     "street": "6804 N OCEAN BLVD.",
+     "city": "MYRTLE BEACH",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "for_sale": 30,
+   "va_marked": 6,
+   "listing_streets": {
+    "N Ocean Blvd.": 26,
+    "N Ocean Blvd. N": 3,
+    "Ocean Blvd. N": 1
+   },
+   "on_record_street": 30,
+   "kept": true,
+   "price_min": 99900,
+   "price_max": 205000,
+   "price_median": 151450.0,
+   "beds_min": 1,
+   "beds_max": 1,
+   "census_place": [
+    "Myrtle Beach city"
+   ],
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "The Havens at Barefoot",
+   "query": "type=condo&subdivision=the+havens",
+   "va_record": [
+    {
+     "firstLineName": "THE HAVENS",
+     "street": "6203 CATALINA DR UNIT 834",
+     "city": "NORTH MYRTLE BEACH",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "for_sale": 12,
+   "va_marked": 4,
+   "listing_streets": {
+    "Catalina Dr.": 12
+   },
+   "on_record_street": 12,
+   "kept": true,
+   "price_min": 225000,
+   "price_max": 479999,
+   "price_median": 334450.0,
+   "beds_min": 2,
+   "beds_max": 3,
+   "census_place": [
+    "North Myrtle Beach city"
+   ],
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "Edgewater",
+   "query": "type=condo&subdivision=edgewater",
+   "va_record": [
+    {
+     "firstLineName": "EDGEWATER",
+     "street": "WATERVIEW DRIVE",
+     "city": "NORTH MYRTLE BEACH",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "for_sale": 10,
+   "va_marked": 0,
+   "listing_streets": {
+    "Waterview Dr.": 10
+   },
+   "on_record_street": 10,
+   "kept": true,
+   "price_min": 254000,
+   "price_max": 574900,
+   "price_median": 404499.5,
+   "beds_min": 2,
+   "beds_max": 4,
+   "census_place": [
+    "North Myrtle Beach city"
+   ],
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "Carolina Keyes",
+   "query": "type=condo&subdivision=carolina+keyes",
+   "va_record": [
+    {
+     "firstLineName": "CAROLINA KEYES",
+     "street": "901 W PORT DRIVE",
+     "city": "NORTH MYRTLE BEACH",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "for_sale": 10,
+   "va_marked": 0,
+   "listing_streets": {
+    "West Port Dr.": 8,
+    "W Port Dr.": 2
+   },
+   "on_record_street": 10,
+   "kept": true,
+   "price_min": 165000,
+   "price_max": 399900,
+   "price_median": 244500.0,
+   "beds_min": 1,
+   "beds_max": 2,
+   "census_place": [
+    "North Myrtle Beach city"
+   ],
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "Carolina Yacht Landing",
+   "query": "type=condo&subdivision=carolina+yacht+landing",
+   "va_record": [
+    {
+     "firstLineName": "CAROLINA YACHT LANDING",
+     "street": "N. PLANTATION HARBOUR DR",
+     "city": "LITTLE RIVER",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "for_sale": 23,
+   "va_marked": 2,
+   "listing_streets": {
+    "West Harbour Ct.": 2,
+    "N Plantation Harbour Dr.": 3,
+    "W Harbour Ct.": 4,
+    "North Plantation Harbour Dr.": 3,
+    "Waypoint Ridge Ave.": 5,
+    "W Harbor Ct.": 1,
+    "Plantation Harbour Dr.": 2,
+    "West Harbor Ct.": 1,
+    "W Plantation Harbour Dr.": 1,
+    "N Planatation Harbour Dr.": 1
+   },
+   "on_record_street": 20,
+   "kept": true,
+   "price_min": 170000,
+   "price_max": 325000,
+   "price_median": 254500,
+   "beds_min": 2,
+   "beds_max": 3,
+   "census_place": [],
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "Southbridge",
+   "query": "type=condo&subdivision=southbridge",
+   "va_record": [
+    {
+     "firstLineName": "SOUTHBRIDGE",
+     "street": "2265 HUNTINGDON DR",
+     "city": "SURFSIDE BEACH",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "for_sale": 10,
+   "va_marked": 2,
+   "listing_streets": {
+    "Essex Dr.": 4,
+    "Southbridge Dr.": 2,
+    "Hopkins Circle": 1,
+    "South Bridge Dr.": 1,
+    "Andover Dr.": 2
+   },
+   "on_record_street": 10,
+   "kept": true,
+   "price_min": 149900,
+   "price_max": 229900,
+   "price_median": 185000.0,
+   "beds_min": 1,
+   "beds_max": 3,
+   "census_place": [
+    "Garden City CDP"
+   ],
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "Park West",
+   "query": "type=condo&subdivision=park+west",
+   "va_record": [
+    {
+     "firstLineName": "PARK WEST HOMEOWNERS ASSOCIATI",
+     "street": "155 CHENOA DR UNIT B, MURRELLS",
+     "city": "MURRELLS INLET",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "for_sale": 6,
+   "va_marked": 2,
+   "listing_streets": {
+    "Indigo Bunting Ln.": 1,
+    "Chenoa Dr.": 3,
+    "Painted Bunting Dr.": 2
+   },
+   "on_record_street": 6,
+   "kept": true,
+   "price_min": 217000,
+   "price_max": 329000,
+   "price_median": 264200.0,
+   "beds_min": 2,
+   "beds_max": 3,
+   "census_place": [],
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "Myrtle Greens",
+   "query": "type=condo&subdivision=myrtle+greens",
+   "va_record": [
+    {
+     "firstLineName": "MYRTLE GREENS CONDOMIMIUMS",
+     "street": "251 MYRTLE GREENS DR",
+     "city": "CONWAY",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "for_sale": 7,
+   "va_marked": 0,
+   "listing_streets": {
+    "Myrtle Greens Dr.": 7
+   },
+   "on_record_street": 7,
+   "kept": true,
+   "price_min": 114900,
+   "price_max": 155000,
+   "price_median": 135000,
+   "beds_min": 1,
+   "beds_max": 2,
+   "census_place": [
+    "Red Hill CDP"
+   ],
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  },
+  {
+   "name": "Tullamore Lakes",
+   "query": "type=condo&subdivision=tullamore+lakes",
+   "va_record": [
+    {
+     "firstLineName": "TULLAMORE LAKES",
+     "street": "109 S SHORE BLVD",
+     "city": "LONGS",
+     "status": "Accepted Without Conditions"
+    }
+   ],
+   "for_sale": 4,
+   "va_marked": 1,
+   "listing_streets": {
+    "South Shore Blvd.": 4
+   },
+   "on_record_street": 4,
+   "kept": true,
+   "price_min": 139000,
+   "price_max": 189990,
+   "price_median": 159900.0,
+   "beds_min": 2,
+   "beds_max": 3,
+   "census_place": [],
+   "refreshedAt": "2026-11-02T02:20:29.146Z"
+  }
+ ]
+}

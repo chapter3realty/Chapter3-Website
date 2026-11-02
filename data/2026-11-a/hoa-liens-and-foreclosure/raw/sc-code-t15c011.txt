@@ -1,0 +1,249 @@
+ï»¿
+ Code of Laws - Title 15 - Chapter 11- - CIVIL REMEDIES AND PROCEDURES 
+ -->
+ -->
+ -->
+ -->
+ //document.onclick = function () { document.getElementById('transbox').style.display= 'none' };
+ var xmlhttp=false;
+ xmlhttp = create_xml_object();
+ function getElement(ele)
+ {
+ var theobj = false;
+ if(typeof ele == 'string')
+ theobj = (document.getElementById)?document.getElementById(ele):document.all[ele];
+ else
+ theobj = ele;
+ return theobj;
+ }
+ function checkreader(friendlyalert)
+ {
+ /*friendlyalert=friendlyalert||false;
+ var browser_info = perform_acrobat_detection();
+ if (!browser_info.acrobat)
+ {
+ loadadobebox('adobebox', '/adobe.php');
+ return false;
+ }
+ else if (friendlyalert)
+ {
+ alert(friendlyalert);
+ }*/
+ return true;
+ }
+ function loadadobebox(boxname, url)
+ {
+ var response = false;
+ doRequest(xmlhttp, "GET", url, false, null, null);
+ if (xmlhttp.status == 200)
+ {
+ response = xmlhttp.responseText;
+ }
+ if(response)
+ {
+ var ele = document.getElementById(boxname);
+ if (ele)
+ {
+ ele.style.visibility = 'hidden';
+ ele.style.display = 'block';
+ positionElement(ele, 'center', 'center', true);
+ ele.innerHTML = response;
+ ele.style.visibility = 'visible';
+ ele.style.display = 'block';
+ // ele.scrollIntoView(true);
+ }
+ }
+ return response;
+ }
+ function init()
+ {
+ var ld=document.getElementById("loading");
+ if(ld)
+ {
+ ld.style.display = 'none';
+ }
+ }
+ function openmore()
+ {
+ var id = document.getElementById('quicksearch');
+ if (id)
+ {
+ var pos = findPos(id);
+ id.style.zIndex = 10;
+ // id.style.left = pos[0]+'px';
+ // id.style.top = pos[1]+'px';
+ id.style.height = '295px';
+ id.style.position = 'absolute';
+ id.style.backgroundColor = '#f7f4ec';
+ var id2 = document.getElementById('searchmore');
+ if (id2)
+ {
+ id2.style.display = 'none';
+ }
+ var id3 = document.getElementById('contactlegislatordiv');
+ if (id3)
+ {
+ id3.style.display = 'none';
+ }
+ }
+ }
+ function closemore()
+ {
+ var id = document.getElementById('quicksearch');
+ if (id)
+ {
+ id.style.height = '135px';
+ id.style.position = '';
+ id.style.backgroundColor = 'transparent';
+ var id2 = document.getElementById('searchmore');
+ if (id2)
+ {
+ id2.style.display = 'block';
+ }
+ var id3 = document.getElementById('contactlegislatordiv');
+ if (id3)
+ {
+ id3.style.display = '';
+ }
+ } 
+ }
+//ADDED FOR V4
+//Google tag (gtag.js) 
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-LJY6FMNQKH');
+ /* COMMENTING OUT UPGRADING TO V4 -A
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-36207109-1']);
+ _gaq.push(['_setDomainName', 'scstatehouse.gov']);
+ _gaq.push(['_setAllowLinker', true]);
+ _gaq.push(['_trackPageview']);
+ (function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+*/
+ $(document).ready(function(){
+ // COMMENTING THIS OUT NO LONGER BEING ACTIVELY USED TO MONITOR FOR TRAFFIC TO SPECIFIC LINKS - A
+ /*
+ var anchors = $('div#contentsection a');
+ //console.log('anchors...'+anchors.length);
+ if(anchors.length > 0){
+ //console.log('setting up event handler...');
+ anchors.click(function(){
+ var a = $(this).attr('href');
+ if(_gaq && (a.substr(-3) == 'htm' || a.substr(-4) == 'html' || a.substr(-3) == 'doc' || a.substr(-4) == 'docx' || a.substr(-3) == 'pdf' || a.substr(-3) == 'xls' || a.substr(-4) == 'xlsx')) {
+ //console.log(a);
+ _gaq.push(['_trackPageview', $(this).attr('href')]);
+ }
+ var aText = $(this).text().toLowerCase();
+ if (a.indexOf('getfile.php') > -1 && aText === 'word'){
+ _gaq.push(['_trackEvent', 'Word Doc', 'Download', ('from page: ' + document.location + ' - href: ' + a)]);
+ }
+ });
+ }
+ */
+ });
+ Your browser does not support JavaScript! This page will not render correctly. 
+ * Recipient of the Notable State Documents Award by the South Carolina State Library. -->
+Searches and data queries will be unavailable beginning Friday, August 19, 2016, from 8:00 PM until Saturday, August 20th at 8:00 AM due to scheduled maintenance. -->
+ In order to improve your experience using this website, please upgrade your browser . 
+ Home 
+ Senate 
+ House 
+ Committee Postings and Reports 
+ Legislative Council 
+ Citizens' Interest 
+ Publications 
+  Staff Portal -->
+  Staff Portal -->
+  Staff Portal 
+  Staff Portal -->
+ -->
+ Chamber Video 
+ Senate (Audio Only) 
+ House (Audio Only) 
+ Video Schedule Video Archives 
+ How do I... 
+ Quick Search 
+ Search for: 
+ All -->
+  Full Site Search 
+  Bill Number 
+  Legislation 
+  Budget 
+  Code of Laws 
+  Code of Regulations 
+  Constitution 
+  House Journals 
+  Senate Journals 
+  LSA Bill Summary 
+ Find Your Legislators 
+ Contact Your Legislator 
+ Legislation 
+ Track Legislation 
+ Multi-Criteria Search 
+ Multi-Criteria Search -->
+ Multi-Criteria Search -->
+ Research 
+ South Carolina Law 
+ Ratifications & Acts 
+ Code of Laws 
+ Code of Regulations 
+ Constitution 
+ State Register 
+ Legislative Manual 
+ Purchase Manual -->
+ Purchase Manual -->
+ Purchase Manual 
+ View Manual Online 
+ Student Connection 
+ Visiting the State House 
+ Archives 
+ State Agency Websites 
+ State Agency Websites -->
+ Media Links 
+ if ( '' === '1'){
+ var link = document.getElementById('contactLegislatorLink');
+ if (link != 'undefined' && link != null){
+ link.style.display = 'none'; 
+ link.style.visibility = 'hidden';
+ }
+ }
+ if ( '' === '1'){
+ setTimeout(function(){
+ var link2 = document.getElementById('sendMsgLink');
+ if (link2 != 'undefined' && link2 != null){
+ link2.style.display = 'none'; 
+ link2.style.visibility = 'hidden';
+ };
+ }, 20);
+ } 
+ South Carolina Law > Code of Laws > Title 15 
+ South Carolina Code of Laws 
+ Unannotated 
+ Title 15 - CIVIL REMEDIES AND PROCEDURES 
+ CHAPTER 11 
+ Notice of Lis Pendens 
+ SECTION 15-11-10. Time when notice of lis pendens may be filed. 
+ In an action affecting the title to real property the plaintiff (a) not more than twenty days before filing the complaint or at any time afterwards or (b) whenever a warrant of attachment under SECTIONS 15-19-10 to 15-19-560 shall be issued or at any time afterwards or a defendant when he sets up an affirmative cause of action in his answer and demands substantive relief, at the time of filing his answer or at any time afterwards if such answer be intended to affect real estate, may file with the clerk of each county in which the property is situated a notice of the pendency of the action, containing the names of the parties, the object of the action and the description of the property in that county affected thereby. If the action be for the foreclosure of a mortgage such notice must be filed twenty days before judgment and must contain the date of the mortgage, the parties thereto and the time and place of recording such mortgage. 
+HISTORY: 1962 Code SECTION 10-501; 1952 Code SECTION 10-501; 1942 Code SECTION 432; 1932 Code SECTION 432; Civ. P. '22 SECTION 388; Civ. P. '12 SECTION 182; Civ. P. '02 SECTION 153; 1870 (14) 455 SECTION 155; 1930 (36) 1218; 1931 (37) 241; 1937 (40) 335. 
+ SECTION 15-11-20. Pendency as constructive notice; effect. 
+ From the time of filing only, the pendency of the action shall be constructive notice to a purchaser or encumbrancer of the property affected thereby, and every person whose conveyance or encumbrance is subsequently executed or subsequently recorded shall be deemed a subsequent purchaser or encumbrancer and shall be bound by all proceedings taken after the filing of such notice to the same extent as if he were made a party to the action. For the purposes of this section, an action shall be deemed to be pending from the time of filing such notice. 
+HISTORY: 1962 Code SECTION 10-502; 1952 Code SECTION 10-502; 1942 Code SECTION 432; 1932 Code SECTION 432; Civ. P. '22 SECTION 388; Civ. P. '12 SECTION 182; Civ. P. '02 SECTION 153; 1870 (14) 455 SECTION 155; 1930 (36) 1218; 1931 (37) 241; 1937 (40) 335. 
+ SECTION 15-11-30. Service required. 
+ Such notice shall be of no avail unless it shall be followed by the first publication of the summons or an order therefor or by the personal service thereof on a defendant within sixty days after such filing. 
+HISTORY: 1962 Code SECTION 10-503; 1952 Code SECTION 10-503; 1942 Code SECTION 432; 1932 Code SECTION 432; Civ. P. '22 SECTION 388; Civ. P. '12 SECTION 182; Civ. P. '02 SECTION 153; 1870 (14) 455 SECTION 155; 1930 (36) 1218; 1931 (37) 241; 1937 (40) 335. 
+ SECTION 15-11-40. Cancellation of notice. 
+ The court in which the action was commenced, in its discretion at any time after the action is settled, discontinued, or abated, as provided in Section 15-5-190, on application of a person aggrieved and on good cause shown and on a notice as directed or approved by the court, may order the notice authorized by this chapter to be cancelled of record by the clerk of any county in whose office the notice was filed or recorded. The cancellation must be made by an endorsement to that effect on the margin of the record which refers to the order and for which the clerk is entitled to a fee of one dollar. 
+ The lis pendens notice, however, may be cancelled without a court order by the person who filed the notice any time after the action has been settled, discontinued, abated, or dismissed by a court of law by the submission of a written notice of cancellation to the clerk of court of each county in which a notice was filed or recorded. The clerk may require a fee of one dollar for the effectuation of a cancellation in this manner. 
+HISTORY: 1962 Code SECTION 10-504; 1952 Code SECTION 10-504; 1942 Code SECTION 432; 1932 Code SECTION 432; Civ. P. '22 SECTION 388; Civ. P. '12 SECTION 182; Civ. P. '02 SECTION 153; 1870 (14) 455 SECTION 155; 1930 (36) 1218; 1931 (37) 241; 1937 (40) 335; 1972 (57) 2603; 1989 Act No. 66, SECTION 1. 
+ SECTION 15-11-50. Limitation of effect of notice; refiling. 
+ When the summons is published or served as above provided the notice of the pendency of the action shall constitute notice for only five years from the date of the filing of such notice, and, in order to provide constructive notice to a purchaser or encumbrancer of the property affected thereby after such five-year period or any such period after a refiling, the notice shall be refiled within five years from the date of filing in the first instance and within five years from the date of any such refiling. In the event any such notice be refiled it shall be entered in the book provided therefor as required for the original entry, and the clerk shall note upon the record of the filing that it is a refiling of such notice and shall also note thereupon the date of the first entry and the book and page at which such notice is filed. 
+HISTORY: 1962 Code SECTION 10-505; 1952 Code SECTION 10-505; 1942 Code SECTION 432; 1932 Code SECTION 432; Civ. P. '22 SECTION 388; Civ. P. '12 SECTION 182; Civ. P. '02 SECTION 153; 1870 (14) 455 SECTION 155; 1930 (36) 1218; 1931 (37) 241; 1937 (40) 335. 
+ South Carolina Legislative Services Agency * 223 Blatt Building * 1105 Pendleton Street * Columbia, SC 29201 
+ Disclaimer * Policies * Photo Credits * Contact Us 
+ Legislative Services Agency
+ h t t p : / / w w w . s c s t a t e h o u s e . g o v

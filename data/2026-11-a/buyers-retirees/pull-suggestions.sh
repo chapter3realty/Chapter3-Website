@@ -1,0 +1,6 @@
+#!/bin/sh
+# Google search suggestions for /buyers/retirees/. Run: sh pull-suggestions.sh > raw/google-suggestions.txt
+for q in "retiring in myrtle beach" "retiring to myrtle beach" "retire in myrtle beach sc" "myrtle beach retirement" "myrtle beach for retirees" "is myrtle beach a good place to retire" "retiring in south carolina" "south carolina retirement taxes" "does south carolina tax pensions" "does south carolina tax social security" "sc homestead exemption 65" "sc property tax for seniors" "horry county homestead exemption" "55 communities myrtle beach" "55+ communities myrtle beach" "myrtle beach retirement communities" "cost of living myrtle beach retirees" "pros and cons of retiring in myrtle beach" "retiring in myrtle beach pros and cons" "best places to retire in south carolina" "grand strand retirement" "horry county retirees" "retire to murrells inlet" "retire in conway sc" "myrtle beach hospitals" "myrtle beach hurricanes retirees" "sc military retirement tax" "south carolina retirement income deduction" "sc car tax" "moving to myrtle beach from new york"; do
+  printf '== %s\n' "$q"
+  curl -sS -A "Mozilla/5.0" "https://suggestqueries.google.com/complete/search?client=firefox&hl=en&gl=us&q=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$q")"; echo
+done
