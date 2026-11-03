@@ -67,6 +67,12 @@ if (APP5 !== "4.8" || APP10 !== "6.1" || FALL3 !== "1.7") throw new Error("metro
 /* Row 34 (lead check): the figures hold through the extract's last month, so the page names that month, from the data. */
 const ZM_TO = new Date(ZM.latestDate + "T12:00:00Z").toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
 const APP_LINE = `Prices in the metro rose about ${APP5} percent a year in the five years to ${ZM_TO}, above our ${APP_TARGET} percent target. Over ten years they rose ${APP10} percent a year. In the three years to then they fell ${FALL3} percent in total.`;
+/* The day the 1 percent count ran: from the listings pull in findings.json, never typed (owner, 2026-11-03). */
+const RAN_ON = new Date(F.pulled.listings).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "America/New_York" });
+/* Owner, 2026-11-03: a hard call to action. We run the count again on the day you ask and send every house that passes. */
+const ONE_PCT_OFFER = `<div class="rn-hard"><p class="rn-hard-h">Get this week's houses that pass the 1 percent rule</p>`
+  + `<p>Homes come on and off the market every day, so this count is already old. Call or text us and we run it again that day, then send you every house that passes, with its numbers.</p>`
+  + `<div class="rn-hard-b"><a class="btn btn-brass" href="/contact/">Have us run the count for you</a><a class="rn-hard-tel" href="tel:+18543332135">Call or text 854.333.2135</a></div></div>`;
 const PER100K = (m) => 100000 * 0.06 * m / 1000; /* a rental's bill for each $100,000 of value (rows 1, 3) */
 const H1 = F.houses_1pct, C1 = F.condos_1pct, TR = F.tax_reset, MULT = TR.unincorporated_investor_bill_multiple, DUES = F.condo_dues_all;
 const OVER600 = DUES.listings - DUES.at_or_under["600"];
@@ -173,6 +179,12 @@ main#main .rnc-q:hover,main#main .rnc-q:focus-visible,main#main .rnc-t.on .rnc-q
 main#main .rnc-t span.rnc-tip{display:none;margin:.5rem 0 .1rem;padding:.55rem .65rem;border-radius:9px;background:#f4efe8;color:#1c2028;font-size:.92rem;line-height:1.45}
 main#main .rnc-t.on span.rnc-tip,main#main .rnc-t:has(.rnc-q:hover) span.rnc-tip,main#main .rnc-t:has(.rnc-q:focus-visible) span.rnc-tip{display:block}
 main#main .rnc-tests{grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr))}
+main#main .rn-embed{max-width:1000px;margin:1.2rem 0 1rem}
+main#main .rn-hard{max-width:760px;margin:1.6rem 0 .6rem;padding:1.3rem 1.3rem 1.4rem;border-radius:20px;background:linear-gradient(160deg,#2a3040,#1c2028);color:#f4efe8;box-shadow:0 22px 50px -28px rgba(28,32,40,.7)}
+main#main .rn-hard-h{font-family:var(--serif);font-size:1.45rem;line-height:1.2;margin:0 0 .5rem;color:#f4efe8}
+main#main .rn-hard p{color:rgba(244,239,232,.86);line-height:1.6;margin:0 0 1rem}
+main#main .rn-hard-b{display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;align-items:center}
+main#main .rn-hard-tel{color:#e6a46c;font-family:var(--sans);font-weight:600;font-size:1.05rem}
 main#main .hx-fb-ai{max-width:100%;box-sizing:border-box;flex-wrap:wrap;min-width:0}
 main#main .hx-fb-ai>.hx-ai-badge{flex-wrap:wrap;white-space:normal;max-width:100%;min-width:0}
 main#main .hx-fb-ai>.hx-fb-q{flex:1 1 100%;max-width:100%;min-width:0;flex-wrap:wrap;box-sizing:border-box}
@@ -229,6 +241,10 @@ const TIPS = {
   coc: "What is left after the loan payments in a year, divided by the cash you put in. If you pay cash, it is the same as the cap rate.",
 };
 
+/* The analyzer frame (owner, 2026-11-03). Same origin, so it can tell this page its height. */
+const ANALYZER = `<div class="rn-embed"><iframe src="/invest/long-term-rental/?embed=1" title="Chapter3 rental analyzer" loading="eager" style="display:block;width:100%;height:1100px;border:0;border-radius:20px;background:transparent"></iframe></div>`
+  + `<script>addEventListener("message",function(e){if(e.origin!==location.origin||!e.data||e.data.c3embed!=="ltr")return;var f=document.querySelector(".rn-embed iframe");if(f)f.style.height=Math.max(640,Math.min(9000,+e.data.h||0))+"px"})</script>`;
+/* The page's own calculator, kept for reference; the page now frames the analyzer instead. */
 const CALC = `<div class="rnc" id="rnc">`
   + `<div class="rnc-ex" role="group" aria-label="Load one of the three example homes"><span>Load an example:</span>${EXAMPLES.map((e, i) => `<button type="button" onclick="rncEx(${i})" aria-pressed="${i === 0}">${e.label}</button>`).join("")}</div>`
   + `<div class="rnc-grid"><div>`
@@ -407,13 +423,13 @@ module.exports = G.page({
   url: SELF,
   hub: { name: "Invest", url: "/invest/" },
   title: "Myrtle Beach Rental Property Calculator: Is It a Good Deal?",
-  description: `${H1.pass12} of ${n(H1.n)} houses for sale here pass the 1 percent rule. Our free year-round rental calculator uses the tax a rental pays, HOA dues, HUD rents and insurance.`,
+  description: `${H1.pass12} of ${n(H1.n)} houses for sale here pass the 1 percent rule. Try our free rental analyzer, with Chapter3 AI, on any Grand Strand address.`,
   ogTitle: "Is this Myrtle Beach rental a good deal? Run the numbers here",
   crumb: "Run the numbers",
   eyebrow: "Free calculator",
   h1: "Is this Myrtle Beach rental a good deal?",
   h1em: "Run the numbers here, or have us run them.",
-  sub: "For a year-round rental in Horry County. It uses the tax a rental pays in each town, HUD rents by ZIP code, condo dues from homes for sale, and insurance.",
+  sub: "A rental analyzer you can run on any Grand Strand address, the tax a rental pays in each town, and what condo dues do to the numbers.",
   heroMedia: (() => { const { glance } = require("./_kit.js"); return glance([
     { icon: "home", label: `${H1.pass12} of ${n(H1.n)}`, text: "houses for sale pass the 1% rule" },
     { icon: "tax", label: `About ${r100(PER100K(MILLS.unincorporated))}`, text: "tax a year per $100,000 on a rental" },
@@ -427,12 +443,13 @@ module.exports = G.page({
     `The tax is higher than the listing shows. A rental pays about ${r100(PER100K(MILLS.unincorporated))} a year for each $100,000 of value outside city limits, about 3 times what an owner who lives there pays. The year after you buy, the county resets the value to about what you paid.`,
   ],
   sections: [
-    { h2: "How do you run the numbers on a Myrtle Beach rental?", toc: "Calculator", id: "calculator", html: () =>
+    /* Owner, 2026-11-03: "an interactable copy of the rental analyzer with the working AI in the blog page".
+       The real analyzer (/invest/long-term-rental/) in embed mode, framed here; it reports its height. */
+    { h2: "How do you run the numbers on a Myrtle Beach rental?", toc: "Analyzer", id: "calculator", html: () =>
       CSS +
-      h.p("Enter the price and the rent. The calculator takes out the tax a rental pays in that town, the HOA dues, insurance, management, and repairs and empty months. It opens on the Carolina Forest house in the sheet below.") +
-      CALC +
-      h.raw(`<p class="rn-note">The rent fills in from HUD's fair market rent for the ZIP code and bedrooms. HUD figures it for the Myrtle Beach metro area as rent plus utilities, then adjusts it for each ZIP code. If your tenant will pay the utilities, type the rent you expect instead.</p>`) +
-      h.raw(`<p class="rn-note">We allow 10 percent of the rent for management and 10 percent for repairs and empty months. These are allowances, not what managers charge. The tool quotes no loan and no rate. For a nightly rental, use the ${h.a("/invest/str-tools/", "short-term rental tools")} and the ${h.a("/invest/str-rules/", "rules by city")}. For a full report on one address, our ${h.a("/invest/long-term-rental/", "rental analyzer")} adds the permits filed nearby.</p>`) },
+      h.p("Use our rental analyzer. Enter an address and the price, and say whether you pay cash or take a loan. It fills in the rent and the costs, and Chapter3 AI sums up what the numbers mean. Change any number and the results change with it.") +
+      ANALYZER +
+      h.raw(`<p class="rn-note">The analyzer's rent and costs are estimates for a first look. For one address we check the rent against nearby rentals and the dues against the association's papers: ${h.a("#run-form", "send it to us")}. For a nightly rental, read the ${h.a("/invest/str-rules/", "rules by city")} first.</p>`) },
 
     { h2: "What does the numbers sheet look like?", toc: "The sheet", id: "sheet", html: () =>
       h.p(`One page with every cost and where each number comes from. Here it is for the middle 3-bedroom house for sale in Carolina Forest, asking ${money(SH.price)}.`) +
@@ -443,10 +460,11 @@ module.exports = G.page({
       rentBars() },
 
     { h2: "Does the 1 percent rule work in Myrtle Beach?", toc: "The 1% rule", id: "one-percent-rule", html: () =>
-      h.p(`Almost never for a house. The rule asks for a month's rent of at least 1 percent of the price. Of ${n(H1.n)} houses with 3 or more bedrooms for sale in Horry County, ${H1.pass12} pass. Longs has ${LONGS.pass_1pct} of them.`) +
+      h.p(`Almost never for a house. The rule asks for a month's rent of at least 1 percent of the price. Of ${n(H1.n)} houses with 3 or more bedrooms for sale in Horry County, ${H1.pass12} pass. Longs has ${LONGS.pass_1pct} of them. We ran this count on ${RAN_ON}.`) +
       ONE_CHART +
       PHOTO() +
-      h.p(`Condos often pass on price alone, then fail once the dues are counted. In the ZIP codes we tested, about 1 in ${C_PRICE_ONE_IN} condos for sale passes on price. Count the dues against the rent, and fewer than ${C_DUES_PER100} in 100 still pass.`) },
+      h.p(`Condos often pass on price alone, then fail once the dues are counted. In the ZIP codes we tested, about 1 in ${C_PRICE_ONE_IN} condos for sale passes on price. Count the dues against the rent, and fewer than ${C_DUES_PER100} in 100 still pass.`) +
+      ONE_PCT_OFFER },
 
     { h2: "Why is the tax on the listing not the tax you will pay?", toc: "The tax", id: "tax", html: (bg) =>
       h.p("Because the listing shows the seller's bill. After you buy, the county resets the value to about what you paid. A rental also pays a higher rate than a home its owner lives in.") +
@@ -513,7 +531,7 @@ module.exports = G.page({
   ],
   faqTitle: "Rental numbers FAQ",
   faq: [
-    { q: "Is there a free rental property calculator for Myrtle Beach?", a: "Yes, the one on this page, for a year-round rental. It uses HUD's rent for the ZIP code and the tax a rental pays in that town. It also takes out the HOA dues, your insurance quote, and our allowances for management, repairs and empty months." },
+    { q: "Is there a free rental property calculator for Myrtle Beach?", a: "Yes, the rental analyzer on this page, for a year-round rental. Enter an address and the price, and say whether you pay cash or take a loan. It fills in the rent and the costs, and Chapter3 AI sums up what the numbers mean." },
     { q: "Is Myrtle Beach a good place to buy a rental property?", a: `For cash flow alone, usually not. The middle house for sale in Carolina Forest or Longs keeps about ${capRound(SH)} to ${capRound(SL)} percent of its price a year before insurance and a loan. Our target is ${CAP_TARGET} percent. Over five and ten years, prices in the metro rose faster than our ${APP_TARGET} percent target, though they dipped over the last three. Our agents keep a list of investors who buy for a modest cash flow plus that rise.` },
     { q: "Is a Myrtle Beach condo a good investment?", a: "Only if the rent still covers the dues, and on most condos here it does not. The middle 2-bedroom condo's dues take about a quarter to half of HUD's rent, depending on the area. A condo rented by the night has different numbers." },
     { q: "What is the property tax on a rental in Horry County?", a: `About ${TAX_OUT} a year for each $100,000 of value outside city limits, and about ${TAX_MB} in the City of Myrtle Beach. A rental is taxed on 6 percent of its value, not 4, and pays the school operating tax.` },

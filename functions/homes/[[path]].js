@@ -25,6 +25,7 @@ import { postFilter, rankHomes } from "../../idx-lib/feeds.js";
 import { photo, photoUrl, warm } from "../../idx-lib/photo.js";
 import { DEALS_SCRIPT, FLIP_DEFAULTS, findFlips, flipSettings } from "../../idx-lib/deals.js";
 import { MAP_SCRIPT, MAP_STYLE, geocode, mapsKey, nearOf, pinOf, sorryHtml, withPoints } from "../../idx-lib/map.js";
+import { AI_CSS, ASK_CSS, ASK_SCRIPT, aiChip } from "../../idx-lib/ai.js";
 import { SMS_CONSENT_TEXT, TERMS_PARAGRAPHS, TERMS_TITLE, TERMS_VERSION, termsText } from "../../idx-lib/terms.js";
 import {
   ICONS, PHOTO_HINT, STRIP_STYLE, STYLE, SCRIPT, addressLine, card, dayLong, disclaimer, esc, factsLine, grid, headlinePrice, heartButton,
@@ -906,14 +907,41 @@ async function listingPageWith(context, mls, slugPart, gate, r, hearts) {
     + key("On the market", numOf(l.daysOnMarket) !== null ? `${l.daysOnMarket} day${l.daysOnMarket === 1 ? "" : "s"}` : "", cut ? `Price cut ${money(cut)} from ${money(l.originalListPrice)}` : "")
     + (openList.length ? key("Next open house", new Date(openList[0].startsAt).toLocaleString("en-US", { timeZone: "America/New_York", weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }), "") : "")
     + `</div>` : "";
+  /* Ask Chapter3 AI about this home (owner, 2026-11-03). Signed up: the AI reads this listing's facts and
+     description, the same ones the page shows. Not signed up: the sign-up, as for the description. */
+  const askFacts = () => {
+    const keep = {};
+    for (const [k, v] of Object.entries(l.details || {})) {
+      if (v === null || v === undefined || v === "" || typeof v === "object" && !Array.isArray(v)) continue;
+      keep[k] = Array.isArray(v) ? v.slice(0, 12).join(", ") : v;
+    }
+    const f = { address: addressLine(l), status: l.status, price: l.listPrice, originalListPrice: l.originalListPrice, daysOnMarket: l.daysOnMarket,
+      type: l.propertySubType || l.propertyType, beds: l.beds, baths: l.baths, sqft: l.sqft, lotAcres: l.lotAcres, yearBuilt: l.yearBuilt,
+      subdivision: l.subdivision, city: l.city, waterfront: l.waterfront, listingFirm: l.listingFirm,
+      hoaMonth: noHoa ? 0 : feeMonth, hoaCovers: covers || undefined, taxAnnual: numOf(d.TaxAnnualAmount), taxYear: d.TaxYear, floodZone: d.FloodZone,
+      openHouses: openList.map((o) => o.startsAt), description: typeof l.remarks === "string" ? l.remarks.slice(0, 2500) : undefined, details: keep };
+    return JSON.stringify(f).slice(0, 12000).replace(/</g, "\\u003c");
+  };
+  const askChips = ["What does the HOA fee cover?", "How old are the roof and the AC?", "What is the flood zone?", "Can I rent it out?"];
+  const ask = registered
+    ? `<section class="hx-ask c3ai-panel" id="hx-ask" aria-label="Ask Chapter3 AI about this home"><h2>${aiChip()} Ask about this home</h2>`
+      + `<p>It answers from this listing only. Anything the listing does not say, a Chapter3 agent can find out.</p>`
+      + `<div class="hx-ask-chips">${askChips.map((c) => `<button type="button" data-ask="${esc(c)}">${esc(c)}</button>`).join("")}</div>`
+      + `<div class="hx-ask-log" aria-live="polite" hidden></div>`
+      + `<form><textarea id="hx-ask-q" aria-label="Your question about this home" rows="1" maxlength="400" placeholder="Your question"></textarea><button type="submit" class="hx-ask-go">Ask</button></form>`
+      + `<small>Chapter3 AI can be wrong. It reads the listing as the listing agent wrote it, and it never gives a value, a rate or a payment.</small>`
+      + `<script type="application/json" id="hx-ask-data">${askFacts()}</script></section>${ASK_SCRIPT}`
+    : `<section class="hx-ask c3ai-panel" aria-label="Ask Chapter3 AI about this home"><h2>${aiChip()} Ask about this home</h2>`
+      + `<p>Sign up free and ask anything about this home: the HOA, the roof, the flood zone, the rules. It answers from the full listing.</p>`
+      + `<button type="button" class="btn btn-brass" data-hx-signup>Sign up to ask</button></section>`;
   const more = registered
-    ? `${keys}${l.remarks ? `<h2>About this home</h2><p class="hx-remarks">${esc(l.remarks)}</p>` : ""}
+    ? `${keys}${l.remarks ? `<h2>About this home</h2><p class="hx-remarks">${esc(l.remarks)}</p>` : ""}${ask}
 ${photos.length > 1 ? `<h2 id="hx-photos">All ${esc(photos.length)} photos</h2><div class="hx-gallery">${photos.map((p, i) => img(p.url, p.caption || `Photo ${i + 1} of ${addressLine(l)}`, false)).join("")}</div>` : ""}
 ${details ? `<h2>Details</h2><table class="hx-table"><tbody>${details}</tbody></table>` : ""}${open}
 ${safeUrl(l.virtualTour) ? `<p><a href="${esc(l.virtualTour)}" rel="nofollow noopener" target="_blank">Virtual tour</a></p>` : ""}
 ${l.listingAgent ? `<p class="hx-firm-line">Listing agent: ${esc(l.listingAgent)}, ${esc(l.listingFirm || "")}</p>` : ""}
 <p class="hx-small">School names come from the listing. Being near a school does not mean a home is zoned for it; confirm the zone with Horry County Schools.</p>`
-    : `<section class="hx-teaser hx-glass"><h2>Free: everything else about this home</h2><p class="hx-small">Sign up once with your name, email and phone.</p><ul>`
+    : `${ask}<section class="hx-teaser hx-glass"><h2>Free: everything else about this home</h2><p class="hx-small">Sign up once with your name, email and phone.</p><ul>`
       + `${count > 1 || photo ? teaser("camera", count > 1 ? `All ${count} photos` : "Every photo") : ""}${teaser("home", "The description")}${teaser("lock", "The HOA fee and what it covers")}`
       + `${teaser("year", "Property taxes")}${teaser("area", "Days on market and the price history")}${teaser("lot", "Recent sales nearby")}</ul>`
       + `<button type="button" class="btn btn-brass" data-hx-signup>See full details</button></section>`;
@@ -953,7 +981,7 @@ ${disclaimer(r.json.meta)}`;
     ld,
     rootAttrs: ` data-hx-mls="${esc(l.mlsNumber)}"${r.json.viewId ? ` data-view-id="${esc(r.json.viewId)}"` : ""}`,
     private: registered,
-    extraHead: nearby ? STRIP_STYLE : "",
+    extraHead: `<style>${AI_CSS}\n${ASK_CSS}</style>` + (nearby ? STRIP_STYLE : ""),
   });
 }
 

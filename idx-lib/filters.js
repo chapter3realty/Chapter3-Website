@@ -14,6 +14,7 @@
  */
 import { CITIES } from "./query.js";
 import { featureLabel, isFeature } from "./features.js";
+import { AI_CSS, aiChip } from "./ai.js";
 
 const esc = (v) => String(v ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 const k = (n) => (n >= 1e6 ? `$${(n / 1e6).toLocaleString("en-US", { maximumFractionDigits: 2 })}M` : `$${Math.round(n / 1000)}K`);
@@ -99,7 +100,7 @@ export function filterBar({ action = "/homes/map/", params, features = false, co
     /* The AI search comes first, on its own row, and says it is AI (owner, 2026-10-29: "tell me everything you
        want and why I'll find you houses"). It reads goals as well as features (map.js ai()). The filters
        follow, price first. */
-    + `<div class="hx-fb-ai"><p class="hx-ai-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>AI-powered search</p>`
+    + `<div class="hx-fb-ai"><p class="hx-ai-badge">${aiChip()}<span>AI-powered search</span></p>`
     + `<label class="hx-fb-q"><textarea name="q" rows="1" enterkeyhint="search" autocomplete="off" maxlength="400" aria-label="${esc(ask || AI_ASK)}" placeholder="${esc(ask || AI_ASK)}">${esc(p.get("q") || "")}</textarea><button type="submit" class="hx-fb-go">Find houses</button></label></div>`
     + `<div class="hx-fb-pills">${pop("price", "Price", L.price, priceP)}${pop("beds", "Beds & baths", L.bb, bedsP)}${pop("type", "Home type", L.type, typeP)}${pop("sale", "For sale", p.get("all") === "1" ? "With under contract" : "", saleP)}${more}</div>`
     + `</form>`;
@@ -112,7 +113,7 @@ export const FILTER_STYLE = `
 .hx-fb{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin:.9rem 0 1rem;position:relative;z-index:5}
 .hx-fb-ai{flex:1 1 100%;display:flex;flex-direction:column;gap:.4rem}.hx-fb-ai .hx-fb-q{flex:none}
 .hx-ai-badge{display:inline-flex;align-items:center;gap:.35rem;margin:0;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brass-ink,#91592b)}
-.hx-ai-badge svg{width:16px;height:16px;fill:#c4783a}
+${AI_CSS}
 .hx-fb-q{display:flex;align-items:center;gap:.5rem;min-height:3.4rem;padding:0 .45rem 0 1.15rem;border-radius:999px;background:#fff;border:1.5px solid rgba(196,120,58,.55);box-shadow:0 6px 22px rgba(196,120,58,.14)}
 .hx-fb-q:focus-within{border-color:var(--brass-ink,#91592b);box-shadow:0 0 0 3px rgba(196,120,58,.18)}
 .hx-fb-q textarea{flex:1;min-width:0;height:2.9rem;padding:.72rem 0;border:0;outline:none;background:none;font:inherit;font-size:1.02rem;line-height:1.4;color:var(--ink,#1c2028);resize:none;overflow:hidden}

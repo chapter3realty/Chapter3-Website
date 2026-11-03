@@ -8,6 +8,7 @@
  * carries no point yet (REQUEST FOR THE CRM, batches/2026-10-b/IDX-STUDY.md, request 2):
  * until it does, the map page shows the list and says the pins are coming.
  */
+import { aiChip } from "./ai.js";
 import { photoUrl } from "./photo.js";
 import { acres, addressLine, cardTag, hasPhoto, headlinePrice, listingPath, safeUrl, statusWord } from "./render.js";
 
@@ -289,7 +290,7 @@ var searched=false;
    property, a must-have it lacks) leaves the list. Descriptions are for signed-up visitors only. */
 var rd={tok:0,yes:{},no:{},why:{},n:0,of:0},picks=null,picksGrid=null,picksNote=null;
 function picksBox(){if(picks)return picks;picks=el("section","hx-ai-picks");picks.setAttribute("aria-live","polite");
- var h=el("p","hx-ai-picks-h");h.insertAdjacentHTML("afterbegin",'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>');h.appendChild(document.createTextNode("Read by AI"));picks.appendChild(h);
+ var h=el("p","hx-ai-picks-h");h.insertAdjacentHTML("afterbegin",${JSON.stringify(aiChip())});h.appendChild(document.createTextNode(" read these descriptions"));picks.appendChild(h);
  picksNote=el("p","hx-ai-picks-n");picks.appendChild(picksNote);picksGrid=el("div","hx-map-cards hx-ai-picks-g");picks.appendChild(picksGrid);list.parentNode.insertBefore(picks,list);return picks}
 function stopReader(){rd.tok++;if(picks)picks.hidden=true}
 function readNote(done){if(!picksNote)return;var y=Object.keys(rd.yes).length;picksNote.textContent=(done?"The AI read all "+rd.n+" descriptions":"The AI is reading the descriptions: "+rd.n+" of "+rd.of)+". "+(y?y+(y===1?" home fits":" homes fit")+" what you asked"+(done?".":" so far."):done?"None stood out; the homes below match your filters.":"")}

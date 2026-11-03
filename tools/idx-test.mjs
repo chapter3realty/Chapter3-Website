@@ -161,6 +161,11 @@ t = await r.text();
 check("signed up: full listing, private, not cached", t.includes("hx-remarks") && r.headers.get("cache-control") === "private, no-store");
 check("signed up: remarks and captions escaped", t.includes("&lt;script&gt;x&lt;/script&gt;") && t.includes("Front &lt;b&gt;") && !t.includes("<script>x</script>"));
 check("signed up: a non-https link is never used", !t.includes("javascript:alert"));
+{
+  // Ask Chapter3 AI (owner, 2026-11-03): the listing's facts go into the page for a signed-up visitor only, and never as markup.
+  const data = (t.split('id="hx-ask-data">')[1] || "").split("</script>")[0];
+  check("signed up: Ask Chapter3 AI reads this listing (its facts, the description, the chip)", t.includes('id="hx-ask"') && t.includes("Chapter3 AI</span>") && data.includes('"description"') && data.includes("\\u003cscript") && !data.includes("<"));
+}
 check("signed up: details labelled and spaced", t.includes("Appliances") && t.includes("Dishwasher, Range") && t.includes("Private pool"));
 check("signed up: viewId on the page for the seconds report", t.includes('data-view-id="4f6c0f0e-6a53-4f3a-9a8e-0b9b5b9d2c11"'));
 check("signed up: the token goes as Bearer, never in a URL", calls.some((c) => (c.init.headers || {}).authorization === `Bearer ${DEV_TOKEN}`) && !calls.some((c) => c.url.includes(DEV_TOKEN)));
@@ -263,6 +268,7 @@ t = await r.text();
 check("listing: the firm stays on the listing page", t.includes('<p class="hx-firm-line">Listed by Firm 1</p>'));
 check("listing: one tour and one ask button, no pop-up (owner, 2026-10-25)", (t.match(/data-interest="tour"/g) || []).length === 1 && (t.match(/data-interest="question"/g) || []).length === 1 && !t.includes("hx-toast") && !t.includes(",5000)"));
 check("listing: the tour form carries the photo for its header, and day choices", /class="hx-tour hx-primary"[^>]*data-photo="https:/.test(t) && t.includes('name="day" value="This weekend"'));
+check("listing: public page offers Ask Chapter3 AI behind the sign-up, with no listing facts for it", t.includes("Sign up to ask") && !t.includes("hx-ask-data"));
 check("listing: public page shows no locked data (no HOA fee, taxes, remarks, sold price)", !t.includes("AssociationFee") && !t.includes("614") && !t.includes('<p class="hx-remarks">') && !t.includes("Sold price") && t.includes("Free: everything else about this home"));
 {
   const part = t.includes("Homes like this one for sale") ? t.split("Homes like this one for sale")[1].split("hx-disclaimer")[0] : "";

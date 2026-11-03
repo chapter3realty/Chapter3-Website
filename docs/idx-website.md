@@ -10,6 +10,7 @@ Built to the CRM's contract v1 (21 Oct 2026, `docs/website-listing-api.md` in th
 | `/homes/<MLS#>` | 301 to the listing's own URL. The CRM's emails link this form. |
 | `/homes/<MLS#>-<street>-<town>/` | One listing. Public: one photo, the key facts, the listing firm, then a sign-up wall for every photo and the full details. Signed up: all photos, the description, the details, open houses. Heart and "Tour this home" on every listing. Noindex unless `IDX_INDEX_LISTINGS=1`. |
 | `/homes/near/<place>/` | Homes in a community from our guide pages (`idx-lib/places.js`). |
+| Chapter3 AI | One look for every AI feature (`idx-lib/ai.js`): a navy chip with a brass sparkle, "Chapter3 AI". On the AI search box, the AI picks on the map, the rental analyzer's overview, and "Ask about this home" on each listing. A signed-up visitor asks questions; the AI reads that listing's facts and description only, through the AI proxy, and never gives a value, a rate or a payment. A visitor who is not signed up sees the sign-up instead (the description is for signed-up visitors). |
 | `/homes/terms/` | The listing search terms of use. **Draft for the attorney** (`idx-lib/terms.js`). |
 | `/sitemap-homes.xml` | The search and the community pages; single listings only with `IDX_INDEX_LISTINGS=1`. |
 | Guide pages | Each community's homes strip is filled at the edge: up to 10 homes across the price range, photo, price and listing firm, then "See all". It pans sideways (drag with a mouse, swipe on a phone). Fewer than 3 homes: the strip stays empty and the photo shows. |
