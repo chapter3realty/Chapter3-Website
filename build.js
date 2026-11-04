@@ -2027,7 +2027,7 @@ function audit() {
               E(`register: "${m[0].slice(0, 45)}" - ${msg} (PLAYBOOK A22)`);
           /* owner rules 2026-09-06 (PLAYBOOK A20a, A22a): no owner name, nothing "sets" anything */
           const newRules = NO_OWNER_NAME_PAGES.has(rel) || (pubDate && pubDate >= NO_OWNER_NAME_FROM);
-          const nameSrc = regSrc.replace(/\b(?:Reviewed by|By)\s+Devin Day\s*,\s*Operations Officer\b/g, " ");
+          const nameSrc = regSrc.replace(/\b(?:Reviewed by|By)\s+Devin Day\s*,\s*(?:Operations Officer|Chief Operating Officer)\b/g, " ").replace(/<strong[^>]*>Devin Day<\/strong>, Chief Operating Officer, and <strong[^>]*>Abdulla Hijazi<\/strong>, Chief Marketing Officer/g, " ");
           if (newRules && OWNER_NAME_REGEX.test(nameSrc))
             E(`owner name in page copy outside the byline - on a page built from ${NO_OWNER_NAME_FROM} a story from his files is "in Chapter3's files" (owner rule 2026-09-06, PLAYBOOK A20a)`);
           {

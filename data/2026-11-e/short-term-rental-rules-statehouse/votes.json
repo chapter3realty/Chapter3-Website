@@ -1,0 +1,24 @@
+{
+  "_about": "Seats and vote thresholds for a bill like H. 3861 in the South Carolina General Assembly. Batch 2026-11-e ledger rows in brackets. The spec computes the thresholds from the seat totals; nothing on the page is typed from here by hand.",
+  "house": {
+    "seats": 124,
+    "before": { "R": 89, "D": 35, "row": "F012", "note": "scstatehouse.gov member list, read 2026-11-04" },
+    "after": { "R": 79, "D": 45, "row": "F011", "note": "leader in each of the 124 contests, SC Election Commission report 12:00 a.m. Nov. 4, 2026; unofficial" },
+    "recount": { "districts": [27, 89], "row": "F014", "note": "margins 0.23 and 0.70 points; S.C. Code 7-17-280 requires a recount at 1% or less" }
+  },
+  "senate": { "seats": 46, "R": 34, "D": 12, "row": "F012, F013", "note": "not on the 2026 ballot except one special race" },
+  "horry_house": {
+    "row": "F015",
+    "districts": [
+      { "d": 55, "party": "D" }, { "d": 56, "party": "R" }, { "d": 57, "party": "D" }, { "d": 58, "party": "R" },
+      { "d": 61, "party": "R" }, { "d": 68, "party": "R" }, { "d": 103, "party": "D" }, { "d": 104, "party": "R", "member": "William Bailey", "pct": 66.88, "h3861_sponsor": true },
+      { "d": 105, "party": "R" }, { "d": 106, "party": "R" }, { "d": 107, "party": "R" }
+    ]
+  },
+  "rules": {
+    "quorum": "a majority of each house (SC Const. Art. III, Sec. 11)",
+    "passage": "three readings on three days in each house (Art. III, Sec. 18); in the House a tie fails (House Rule 1.6)",
+    "override": "two-thirds of each house after a veto (Art. IV, Sec. 21)",
+    "rows": "NEW-1, NEW-2 in batches/2026-11-e/short-term-rental-rules-statehouse/NEW-ROWS.md (need an independent check)"
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "batch": "2026-11-e",
+    "page": "/market-reports/2026-election/",
+    "ledger": "Blog-Brain batches/2026-11-e/facts.md, VERIFIED and CORRECTED rows only, at the corrected values (VERIFY.md)",
+    "results_note": "Unofficial count: SC Election Commission results report, 12:00 a.m. Nov. 4, 2026 (F004, F006, F009, F010, F011, F013, F014, F015). Horry local races: WMBF results page, uncertified (F016, F018). Not certified."
+  },
+  "results": {
+    "senate": {
+      "row": "F003 F004 F019 F020",
+      "winner": "Annie Andrews",
+      "party": "D",
+      "votes": 1034418,
+      "pct": 51.02,
+      "loser": "Darline Graham",
+      "loser_party": "R",
+      "loser_votes": 948133,
+      "loser_pct": 46.76,
+      "status": "AP called at 10:39 p.m. Nov. 3; CBS News projected"
+    },
+    "senate_horry": {
+      "row": "F005",
+      "graham_pct": 60.06,
+      "andrews_pct": 38.54
+    },
+    "governor": {
+      "row": "F006 F007",
+      "winner": "Alan Wilson",
+      "party": "R",
+      "running_mate": "Mike Reichenbach",
+      "votes": 1046730,
+      "pct": 51.71,
+      "loser": "Jermaine Johnson",
+      "loser_party": "D",
+      "loser_votes": 951437,
+      "loser_pct": 47.0,
+      "status": "Johnson conceded at 10:31 p.m.; no AP call found"
+    },
+    "governor_horry": {
+      "row": "F008",
+      "wilson_pct": 63.82,
+      "johnson_pct": 34.94
+    },
+    "other_statewide_min_pct": {
+      "row": "F009",
+      "value": 51.1,
+      "max": 53.1
+    },
+    "house7": {
+      "row": "F010",
+      "winner": "Russell Fry",
+      "party": "R",
+      "pct": 56.75,
+      "loser": "John Gregory Vincent",
+      "loser_pct": 43.19,
+      "status": "AP called"
+    },
+    "state_house": {
+      "row": "F011 F012 F014",
+      "seats": 124,
+      "before": {
+        "R": 89,
+        "D": 35
+      },
+      "after": {
+        "R": 79,
+        "D": 45
+      },
+      "recount_districts": [
+        27,
+        89
+      ]
+    },
+    "state_senate": {
+      "row": "F012 F013",
+      "seats": 46,
+      "R": 34,
+      "D": 12
+    },
+    "county_council_chair": {
+      "row": "F016",
+      "winner": "Johnny Gardner",
+      "party": "R",
+      "unopposed": true
+    },
+    "school_board_d7": {
+      "row": "F018",
+      "winner": "Sonya Sasser",
+      "party": "R",
+      "pct": 51.83,
+      "loser": "Janet P. Graham",
+      "loser_pct": 48.12
+    },
+    "horry_2024_trump_pct": {
+      "row": "F021",
+      "value": 68.81
+    }
+  },
+  "two_thirds": {
+    "row": "F081 F083",
+    "house_needed": 83,
+    "senate_needed": 31
+  },
+  "fhfa": {
+    "row": "F198 F199 F200",
+    "source": "FHFA all-transactions house price index, Myrtle Beach-Conway-North Myrtle Beach metro (CBSA 34820), not seasonally adjusted, hpi_at_metro.csv; each value with its standard error in index points",
+    "elections": [
+      {
+        "year": 2016,
+        "kind": "presidential",
+        "from": [
+          2016,
+          4,
+          183.32,
+          3.15
+        ],
+        "to": [
+          2017,
+          4,
+          193.63,
+          3.42
+        ]
+      },
+      {
+        "year": 2018,
+        "kind": "midterm",
+        "from": [
+          2018,
+          4,
+          204.85,
+          3.5
+        ],
+        "to": [
+          2019,
+          4,
+          215.11,
+          3.51
+        ]
+      },
+      {
+        "year": 2020,
+        "kind": "presidential",
+        "from": [
+          2020,
+          4,
+          229.88,
+          3.7
+        ],
+        "to": [
+          2021,
+          4,
+          279.53,
+          4.59
+        ]
+      },
+      {
+        "year": 2022,
+        "kind": "midterm",
+        "from": [
+          2022,
+          4,
+          331.12,
+          7.16
+        ],
+        "to": [
+          2023,
+          4,
+          359.27,
+          7.42
+        ]
+      },
+      {
+        "year": 2024,
+        "kind": "presidential",
+        "from": [
+          2024,
+          4,
+          363.3,
+          7.39
+        ],
+        "to": [
+          2025,
+          4,
+          374.1,
+          7.69
+        ]
+      }
+    ],
+    "latest": {
+      "from": [
+        2025,
+        2,
+        375.61,
+        7.75
+      ],
+      "to": [
+        2026,
+        2,
+        378.71,
+        8.18
+      ]
+    },
+    "y2008": {
+      "from": [
+        2008,
+        4,
+        211.91,
+        3.46
+      ],
+      "to": [
+        2009,
+        4,
+        191.4,
+        3.17
+      ]
+    },
+    "error_note": "VERIFY.md: FHFA gives each value a standard error of about 8 index points, or about 2%. So +3.0% and +0.8% fall inside the error band."
+  },
+  "tax_example": {
+    "row": "F144 F145 F146 F147",
+    "price": 350000,
+    "mills": {
+      "county": 52.1,
+      "school_debt": 10.0,
+      "school_operation": 109.1,
+      "myrtle_beach_city": 83.4
+    },
+    "source": "Horry County 2026 tax levy, certified July 27, 2026"
+  }
+}

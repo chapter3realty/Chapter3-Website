@@ -1,0 +1,29 @@
+{
+  "_about": "Values for /buyers/flood-insurance-after-the-election/, copied from Blog-Brain batches/2026-11-e/facts.md (VERIFIED and CORRECTED rows, read 2026-11-04). The spec checks each value against its row id before it builds.",
+  "expiry": { "row": "F120", "date": "2026-12-11", "law": "Public Law 119-103, sec. 139 and sec. 106(3)", "signed": "2026-09-02" },
+  "newTerm": { "row": "F001; F003 source (WBTV)", "date": "2027-01-03", "note": "Darline Graham's appointed term ends Jan. 3, 2027; the new term starts Jan. 3, 2027." },
+  "lapseEffects": { "row": "F121", "borrowNow": 30.425, "borrowLapse": 1, "unit": "billion dollars" },
+  "extensions": { "row": "F122", "count": 36, "since": "end of fiscal 2017" },
+  "lapses": [
+    { "row": "F124", "start": "2010-03-01", "end": "2010-03-02" },
+    { "row": "F124", "start": "2010-03-29", "end": "2010-04-15" },
+    { "row": "F124", "start": "2010-06-01", "end": "2010-07-02" },
+    { "row": "F124", "start": "2011-10-01", "end": "2011-10-05" },
+    { "row": "F123", "start": "2018-01-20", "end": "2018-01-22" },
+    { "row": "F123", "start": "2018-02-09", "hours": 8 },
+    { "row": "F123", "start": "2024-03-23", "hours": 13, "about": true },
+    { "row": "F123", "start": "2025-10-01", "end": "2025-11-12" },
+    { "row": "F123", "start": "2026-02-01", "end": "2026-02-03" }
+  ],
+  "closings2010": { "row": "F124", "perDay": 1400, "note": "over 1,400 home sale closings a day canceled or delayed nationwide, June 2010 lapse (estimates)" },
+  "counties": {
+    "row": "F126, F127",
+    "asOf": "2026-08-03",
+    "Horry": { "contracts": 20388, "sfha": 5861, "structures": 139337, "rate": 0.1463 },
+    "Georgetown": { "contracts": 5655, "rate": 0.2065 },
+    "Charleston": { "contracts": 46856, "rate": 0.3166 }
+  },
+  "national": { "row": "F130", "policies": 4.5, "unit": "million, nearly" },
+  "caps": { "row": "F128, F129", "most": 0.18, "subsidizedNonPrimary": 0.25 },
+  "senate": { "row": "F114, F020", "cloture": 60, "seats": 100, "before": { "R": 53, "D": 47 } }
+}

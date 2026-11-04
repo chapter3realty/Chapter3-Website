@@ -1,0 +1,11 @@
+{
+  "what": "Seats and the two-thirds rule (ledger F011, F012, F081, F083, F084, F014, F154, F155).",
+  "house": { "members": 124, "two_thirds": 83, "republicans_unofficial_2026": 79, "democrats_unofficial_2026": 45, "before_2026": { "republicans": 89, "democrats": 35 } },
+  "senate": { "members": 46, "two_thirds": 31, "republicans": 34, "democrats": 12, "on_2026_ballot": "one special election only (District 15)" },
+  "recount_districts": [27, 89],
+  "past_votes": [
+    { "bill": "H. 3841, 2026 Act No. 140 (the 4% ratio stays after an owner dies, for a time)", "house": ["107-0", "109-0"], "senate": "43-0", "ledger": "F154" },
+    { "bill": "S. 768 (larger senior homestead exemption)", "senate": "44-0", "status": "House Ways and Means", "ledger": "F155" }
+  ],
+  "amendment_route": "Two-thirds of the members elected to each house, then a majority of voters at the next general election (November 2028), then ratification by the next General Assembly (F084)."
+}

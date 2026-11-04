@@ -88,7 +88,7 @@ function build(spec) {
   const subWords = words(spec.sub);
   if (subWords < 8 || subWords > 30) throw new Error(`hero sub is ${subWords} words (8-30)`);
   if (/\?\s*$/.test(spec.sub)) throw new Error("hero sub must not be a question");
-  if (!["tim", "devin"].includes(spec.author)) throw new Error("author must be tim or devin");
+  if (!["tim", "devin", "devin+abdulla"].includes(spec.author)) throw new Error("author must be tim, devin or devin+abdulla");
   if (!Array.isArray(spec.faq) || spec.faq.length < 3) throw new Error("at least three FAQ entries");
   for (const f of spec.faq) if (/[<>&]/.test(f.q + f.a)) throw new Error(`FAQ text must be plain characters, no tags or entities: ${f.q}`);
 
@@ -108,8 +108,13 @@ function build(spec) {
   const PEOPLE = {
     devin: { "@type": "Person", "@id": `${SITE}/about/#devin-day`, name: "Devin Day", jobTitle: "Operations Officer", url: `${SITE}/about/`, worksFor: { "@id": `${SITE}/#org` } },
     tim: { "@type": "Person", "@id": `${SITE}/about/#timmy-nash`, name: "Timothy Nash", alternateName: "Tim Nash", jobTitle: "Broker-in-Charge", url: `${SITE}/about/`, worksFor: { "@id": `${SITE}/#org` } },
+    abdulla: { "@type": "Person", "@id": `${SITE}/about/#abdulla-hijazi`, name: "Abdulla Hijazi", jobTitle: "Chief Marketing Officer", url: `${SITE}/about/`, worksFor: { "@id": `${SITE}/#org` } },
   };
-  const authorPerson = PEOPLE[spec.author], reviewerPerson = PEOPLE[spec.author === "tim" ? "devin" : "tim"];
+  /* Two authors (owner, 2026-11-04: the election pages are "co authored by Devin Day COO and Abdulla
+     Hijazi CMO"). Both are named in the byline and the schema only, never in the copy; Tim Nash reviews. */
+  const CO = spec.author === "devin+abdulla";
+  const authorPerson = CO ? [{ ...PEOPLE.devin, jobTitle: "Chief Operating Officer" }, PEOPLE.abdulla] : PEOPLE[spec.author];
+  const reviewerPerson = PEOPLE[spec.author === "tim" ? "devin" : "tim"];
   /* Optional spec.pageImages: the page's own hero photo as ImageObjects in 1x1, 4x3 and 16x9
      (Blog-Brain tools/photos.js pageImages), or a function that returns them, called here,
      after the sections are built. Google, Article: "provide multiple high-resolution images
@@ -166,7 +171,7 @@ function build(spec) {
       { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
       { "@type": "ListItem", position: 2, name: hub.name, item: `${SITE}${hub.url}` },
       { "@type": "ListItem", position: 3, name: spec.crumb, item: url }] }),
-    WebPage: ld({ "@context": "https://schema.org", "@type": "WebPage", author: { "@id": authorPerson["@id"] }, "@id": `${url}#webpage`, url, name: spec.ogTitle, description: spec.description,
+    WebPage: ld({ "@context": "https://schema.org", "@type": "WebPage", author: CO ? authorPerson.map((a) => ({ "@id": a["@id"] })) : { "@id": authorPerson["@id"] }, "@id": `${url}#webpage`, url, name: spec.ogTitle, description: spec.description,
       isPartOf: { "@id": `${SITE}/#website` }, about: { "@id": `${SITE}/#org` },
       primaryImageOfPage: primaryImage,
       dateModified: iso, datePublished: iso, inLanguage: "en-US", breadcrumb: { "@id": `${url}#breadcrumb` },
@@ -190,7 +195,9 @@ function build(spec) {
    * nothing after it; never his NMLS number, never a licensed-loan-originator claim
    * (2026-09-06, 2026-09-07; PLAYBOOK A17, A20a). */
   const NAME = (n) => `<strong style="color:var(--navy);font-weight:600">${n}</strong>`;
-  const byline = spec.author === "devin"
+  const byline = CO
+    ? `By ${NAME("Devin Day")}, Chief Operating Officer, and ${NAME("Abdulla Hijazi")}, Chief Marketing Officer &middot; Reviewed by ${NAME("Tim Nash")}, Broker-in-Charge &middot; <span style="white-space:nowrap">Updated ${shown}</span>`
+    : spec.author === "devin"
     ? `By ${NAME("Devin Day")}, Operations Officer &middot; Reviewed by ${NAME("Tim Nash")}, Broker-in-Charge &middot; <span style="white-space:nowrap">Updated ${shown}</span>`
     : `By ${NAME("Tim Nash")}, Broker-in-Charge, 30+ years on the Grand Strand &middot; Reviewed by ${NAME("Devin Day")}, Operations Officer &middot; <span style="white-space:nowrap">Updated ${shown}</span>`;
   /* Optional spec.heroMedia: a small picture or icon row right under the H1, so a phone's

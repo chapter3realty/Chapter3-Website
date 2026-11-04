@@ -1,0 +1,12 @@
+{
+  "what": "Horry County, 2018, share of the appraised and assessed value of real property valued by the county assessor, by class (Lincoln Institute of Land Policy, 2020, Vol. 2, ch. 2, Table 2.3; ledger F149, CORRECTED wording).",
+  "source": "https://www.lincolninst.edu/app/uploads/legacy-files/pubfiles/sc_volume_2_chapter_2.pdf",
+  "study": "Lincoln Institute of Land Policy (2020). The ten case-study counties were identified by the South Carolina Chamber Foundation and South Carolina Realtors (F150).",
+  "definition_other_residential": "property which is typically rental property with an assessment ratio of 6 percent",
+  "rows": [
+    { "class": "Primary residential", "appraised": 35.5, "assessed": 30.8 },
+    { "class": "Other residential", "appraised": 36.4, "assessed": 47.2 },
+    { "class": "Commercial", "appraised": 21.4, "assessed": 21.1 }
+  ],
+  "derived": "If the Other residential class moved from 6% to 4%, its assessed value would fall by one third: 47.2 / 3 = 15.7 points of the 2018 assessed total (our arithmetic, not the study's)."
+}

@@ -1,0 +1,35 @@
+{
+  "what": "Inputs for /buyers/act-388-changes/ (batch 2026-11-e, page 5). Every value is a VERIFIED or CORRECTED row of Blog-Brain batches/2026-11-e/facts.md at the verifier's value. The spec computes every bill, share and difference from these inputs and checks them against the ledger.",
+  "ratios": { "legal_residence": 0.04, "other": 0.06, "ledger": "F080, F085" },
+  "mills_2026": { "county": 52.1, "school_debt": 10.0, "school_operation": 109.1, "myrtle_beach_city": 83.4, "ledger": "F144" },
+  "myrtle_beach_total_mills": 254.6,
+  "ledger_bills": { "rental_6": 5346.60, "home_4": 2037.00, "price": 350000, "ledger": "F145, F147" },
+  "cap": { "limit": 0.15, "years": 5, "ledger": "F142" },
+  "exemption_2011": { "share": 0.25, "act": "2011 Act No. 57", "ledger": "F143" },
+  "example": {
+    "note": "A constructed example, not a real parcel: the house was on the roll at $200,000 at one reassessment; the 15% limit lets the next one raise it to $230,000 at most; it sells for $350,000, the same price as page 4's example.",
+    "roll_before": 200000,
+    "price": 350000
+  },
+  "fhfa": { "series": "FHFA all-transactions HPI, Myrtle Beach-Conway-North Myrtle Beach, CBSA 34820", "q4_2019": 215.11, "q4_2024": 363.30, "ledger": "F198" },
+  "lincoln_horry_2018": {
+    "ledger": "F149, F150, F151",
+    "definition_other_residential": "property which is typically rental property with an assessment ratio of 6 percent",
+    "rows": [
+      { "class": "primary", "appraised": 35.5, "assessed": 30.8 },
+      { "class": "other_residential", "appraised": 36.4, "assessed": 47.2 },
+      { "class": "commercial", "appraised": 21.4, "assessed": 21.1 }
+    ]
+  },
+  "lincoln_effective_rates": { "homestead": 0.005, "apartment_rental_slightly_above": 0.015, "ledger": "F152 (rates from Kenyon and Paquin, Lincoln Institute 2020, Vol. 2, ch. 1, p. 9)" },
+  "house": { "members": 124, "two_thirds": 83, "republicans_unofficial": 79, "recounts": [27, 89], "ledger": "F011, F014, F083" },
+  "senate": { "members": 46, "two_thirds": 31, "republicans": 34, "ledger": "F012, F083" },
+  "horry_house_districts": {
+    "ledger": "F015",
+    "R": [56, 58, 61, 68, 104, 105, 106, 107],
+    "D": [55, 57, 103]
+  },
+  "act_140_votes": { "house": ["107-0", "109-0"], "senate": "43-0", "rented_days_limit": 72, "ledger": "F154" },
+  "s768": { "senate_vote": "44-0", "exemption_2025_or_10yr": 150000, "exemption_5yr": 75000, "old": 50000, "ledger": "F155" },
+  "reassessment": { "last_two": [2019, 2024], "every": 5, "postpone_years": 1, "next_inferred": 2029, "ledger": "F157 (2024 was 'scheduled'; 2029 is our inference)" }
+}

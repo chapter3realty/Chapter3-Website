@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "page": "/invest/horry-county-growth-roads-permits/",
+    "ledger": "Blog-Brain batches/2026-11-e/facts.md, VERIFIED and CORRECTED rows only, at the corrected values (VERIFY.md)",
+    "note": "Every number on the page is read from this file. Row ids are the ledger's."
+  },
+  "permits": {
+    "row": "F196 (1-unit), F197 (5+ units, values in the verifier's note included)",
+    "source": "https://www2.census.gov/econ/bps/County/co2025a.txt",
+    "what": "New privately owned housing units authorized by building permits, Horry County (state 45, county 051), Census annual county files co2005a to co2025a, estimates including imputation",
+    "single_family": { "2005": 6471, "2006": 6484, "2007": 3813, "2008": 1867, "2009": 1457, "2010": 1388, "2011": 1481, "2012": 2029, "2013": 2605, "2014": 3066, "2015": 3578, "2016": 3829, "2017": 4656, "2018": 4129, "2019": 4388, "2020": 5007, "2021": 6725, "2022": 6943, "2023": 6356, "2024": 7269, "2025": 6418 },
+    "five_plus": { "2005": 5132, "2006": 3723, "2007": 1446, "2008": 1128, "2009": 254, "2010": 108, "2011": 295, "2012": 225, "2013": 418, "2014": 340, "2015": 166, "2016": 122, "2017": 511, "2018": 379, "2019": 30, "2020": 318, "2021": 81, "2022": 87, "2023": 129, "2024": 60, "2025": 77 }
+  },
+  "fhfa": {
+    "row": "F198, F199, F200",
+    "source": "https://www.fhfa.gov/hpi/download/quarterly_datasets/hpi_at_metro.csv",
+    "what": "FHFA all-transactions house price index, Myrtle Beach-Conway-North Myrtle Beach metro (CBSA 34820), not seasonally adjusted",
+    "q": { "2008Q4": 211.91, "2012Q4": 156.16, "2016Q4": 183.32, "2017Q4": 193.63, "2018Q4": 204.85, "2019Q4": 215.11, "2020Q4": 229.88, "2021Q4": 279.53, "2022Q4": 331.12, "2023Q4": 359.27, "2024Q4": 363.30, "2025Q4": 374.10, "2025Q2": 375.61, "2026Q2": 378.71 },
+    "standard_error_note": "FHFA gives each value a standard error of about 8 index points, about 2% (VERIFY.md)"
+  },
+  "ride4": {
+    "row": "F190, F191",
+    "vote_date": "2024-11-05",
+    "yes": 109281, "yes_pct": 56.78, "no": 83171, "no_pct": 43.22,
+    "rate": "one percent",
+    "max_years": 25,
+    "max_total": 6350000000,
+    "i73_item": "a local match of up to one half (1/2) of the cost to construct I-73 from SC Hwy 22 to the Horry County line, provided that South Carolina Department of Transportation or related entity has entered into construction contract(s) for the completion of I-73 from Horry County to I-95",
+    "i73_reported_share": 450000000,
+    "i73_reported_share_by": "WIS"
+  },
+  "i73": {
+    "row": "F192, F193",
+    "cost": 1600000000,
+    "row_i95_us501_pct": 99,
+    "row_us501_littlepeedee_pct": 95,
+    "row_as_of": "February 2026"
+  },
+  "impact_fee": {
+    "row": "F194, F090",
+    "since": 2021,
+    "ordinance": "30-2026",
+    "vote": "unanimous",
+    "effective": "July 2026",
+    "home_sqft": 1500,
+    "total_fee": 1615
+  },
+  "freeboard": { "row": "F195", "from_ft": 1, "to_ft": 3, "advanced": "June 2021, second reading, unanimous", "final_vote_scheduled": "2021-07-13" },
+  "election": {
+    "row": "F003, F006, F007, F010, F015, F016, F017, F020",
+    "senate": { "winner": "Annie Andrews", "party": "D", "pct": 51.02, "call": "AP called" },
+    "governor": { "winner": "Alan Wilson", "party": "R", "pct": 51.71, "call": "Johnson conceded; no AP call" },
+    "house7": { "winner": "Russell Fry", "party": "R", "pct": 56.75, "call": "AP called" },
+    "council_chair": "Johnny Gardner",
+    "council": [["Chair", "Johnny Gardner", "unopposed"], ["District 1", "Jenna Dukes", "unopposed"], ["District 2", "Bill Howard", "74.93%"], ["District 5", "Tyler Servant", "84.80%"], ["District 7", "Tom Anderson", "69.66%"], ["District 8", "Michael \"Mash\" Masciarelli", "unopposed"], ["District 11", "Al Allen", "unopposed"]]
+  }
+}

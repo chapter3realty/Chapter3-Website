@@ -1,0 +1,24 @@
+{
+  "what": "Horry County 2026 tax levy, mills, certified by the county auditor (ledger F144, VERIFIED).",
+  "source": "https://www.horrycountysc.gov/media/kufln4qp/tax-levy-2026_2.pdf",
+  "mills": {
+    "county": 52.1,
+    "school_debt": 10.0,
+    "school_operation": 109.1,
+    "county_and_school": 171.2,
+    "myrtle_beach_city": 83.4,
+    "county_fire_district": 20.2,
+    "fire_apparatus": 1.5
+  },
+  "areas": {
+    "myrtle-beach": { "name": "Inside Myrtle Beach city limits", "parts": ["county", "school_debt", "school_operation", "myrtle_beach_city"], "total": 254.6, "ledger": "F145" },
+    "unincorporated": { "name": "Unincorporated Horry County, county fire district", "parts": ["county", "school_debt", "school_operation", "county_fire_district", "fire_apparatus"], "total": 192.9, "ledger": "F148; the 8.1-mill waste levy is left out because which parcels pay it is not confirmed" }
+  },
+  "ratios": { "rental": 0.06, "legal_residence": 0.04, "ledger": "F080, F085" },
+  "example_price": 350000,
+  "ledger_results": {
+    "myrtle-beach": { "six": 5346.60, "four_with_school": 3564.40, "like_home": 2037.00, "ledger": "F145, F146, F147" },
+    "unincorporated": { "six": 4050.90, "four_with_school": 2700.60, "ledger": "F148" }
+  },
+  "note": "All bills are before credits, fees and any special district. 'like_home' is 4% with no school operating millage (F086). The unincorporated like-home figure is not a ledger row; the spec computes it the same way as F147 (192.9 - 109.1 = 83.8 mills)."
+}
