@@ -82,15 +82,48 @@ const CSS = "<style>"
   + "main#main .ev-jump a{padding:0 .75rem!important;display:inline-flex!important;align-items:center;min-height:2.5rem;line-height:1.1!important}"
   + "main#main figure.ev-calc{background:linear-gradient(160deg,#0f2b3a,#14485a)!important;border:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;padding:1.2rem 1.1rem 1.1rem!important;margin:1.2rem 0 1.4rem!important}"
   + "main#main figure.ev-hb{padding:1rem 1.1rem!important;margin:1.2rem 0 1.4rem!important}"
-  /* tabs */
-  + "main#main .ev-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0 1rem;max-width:760px}"
-  + "main#main .ev-tabs button{flex:1 1 9.5rem;min-height:3rem;padding:.6rem .9rem;border-radius:14px;border:2px solid var(--ev-ink);background:var(--ev-card);color:var(--ev-ink);font:600 1rem/1.25 var(--sans);cursor:pointer;text-align:left;transition:background .2s,color .2s,transform .2s}"
-  + "main#main .ev-tabs button[aria-selected=true]{background:var(--ev-ink);color:#fff;transform:translateY(-2px);box-shadow:0 10px 22px -14px rgba(20,32,44,.8)}"
+  /* tabs: a segmented control */
+  + "main#main .ev-tabs{display:grid;grid-template-columns:1fr 1fr;gap:.35rem;margin:1.2rem 0 1rem;max-width:760px;padding:.35rem;border-radius:20px;background:#e4e9ee}"
+  + "@media (min-width:760px){main#main .ev-tabs.n4{grid-template-columns:repeat(4,1fr)}}"
+  + "main#main .ev-tabs button{display:flex;align-items:center;gap:.55rem;min-height:3.2rem;padding:.55rem .75rem;border-radius:15px;border:0;background:transparent;color:var(--ev-slate);font:600 .98rem/1.2 var(--sans);cursor:pointer;text-align:left;transition:background .25s,color .25s,box-shadow .25s}"
+  + "main#main .ev-tabs button svg{flex:0 0 auto;width:1.35rem;height:1.35rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}"
+  + "main#main .ev-tabs button[aria-selected=true]{background:#fff;color:var(--ev-ink);box-shadow:0 6px 16px -8px rgba(20,32,44,.45)}main#main .ev-tabs button[aria-selected=true] svg{color:var(--ev-teal)}"
+  + "@media (hover:hover){main#main .ev-tabs button:hover{color:var(--ev-ink)}}"
   + "main#main .ev-tabs button:focus-visible{outline:3px solid var(--ev-teal);outline-offset:2px}"
+  + "main#main.ev-js .ev-panel{animation:evIn .4s cubic-bezier(.2,.8,.2,1)}@keyframes evIn{from{opacity:.4;transform:translateY(8px)}to{opacity:1;transform:none}}"
+  /* section kicker from the short label */
+  + "main#main h2[data-toc]::before{content:attr(data-toc);display:block;font:700 .8rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#075a56;margin-bottom:.7rem}"
+  /* the number tiles in the hero */
+  + "main#main .ev-dash{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin:0 0 .9rem;max-width:980px}@media (min-width:800px){main#main .ev-dash{grid-template-columns:repeat(4,1fr);gap:.75rem}}"
+  + "main#main .ev-tile{position:relative;border-radius:18px;padding:.85rem .9rem .8rem;background:#fff;border:1px solid rgba(20,32,44,.08);box-shadow:0 12px 28px -20px rgba(20,32,44,.5);overflow:hidden}"
+  + "main#main .ev-tile::after{content:'';position:absolute;left:0;right:0;top:0;height:4px;background:var(--ev-slate)}main#main .ev-tile.now::after{background:var(--ev-teal)}main#main .ev-tile.idea::after{background:#f0b04a}"
+  + "main#main .ev-tile .b{display:block;font:700 clamp(1.6rem,5vw,2.2rem)/1.05 var(--serif);color:var(--ev-ink);margin:.1rem 0 .35rem;white-space:nowrap}"
+  + "main#main .ev-tile .l{display:block;font:600 .9rem/1.3 var(--sans);color:var(--ev-ink)}main#main .ev-tile .s{display:block;font:500 .85rem/1.3 var(--sans);color:var(--ev-slate);margin-top:.2rem}"
+  + "@media (max-width:699px){main#main .ev-tile{padding:.7rem .75rem}main#main .ev-tile .b{font-size:1.55rem}main#main .ev-tile .s{display:none}main#main.ev-js nav.ev-nav{display:none}}"
+  /* the sticky jump bar (made by the script) */
+  + "main#main section[id]{scroll-margin-top:11rem}"
+  + "main#main .ev-stick{position:fixed;left:0;right:0;z-index:40;background:#faf8f4;border-bottom:1px solid rgba(20,32,44,.1);box-shadow:0 8px 20px -16px rgba(20,32,44,.5);transform:translateY(-120%);visibility:hidden;transition:transform .3s,visibility .3s;pointer-events:none}"
+  + "main#main .ev-stick.on{transform:none;visibility:visible;pointer-events:auto}main#main .ev-stick ul{display:flex;gap:.35rem;margin:0 auto;padding:.5rem 16px;list-style:none;overflow-x:auto;scrollbar-width:none;max-width:1140px}main#main .ev-stick ul::-webkit-scrollbar{display:none}"
+  + "main#main .ev-stick a{display:inline-flex;align-items:center;min-height:2.2rem;padding:0 .8rem;border-radius:999px;white-space:nowrap;font:600 .88rem/1 var(--sans);color:var(--ev-ink);text-decoration:none!important;transition:background .2s,color .2s}"
+  + "main#main .ev-stick a.cur{background:var(--ev-ink);color:#fff}"
+  /* presets on the slider */
+  + "main#main .ev-pre{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1rem}main#main .ev-pre button{min-height:2.4rem;padding:0 .85rem;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;font:600 .92rem/1 var(--sans);cursor:pointer;transition:background .2s}"
+  + "main#main .ev-pre button[aria-pressed=true]{background:#f4b63f;border-color:#f4b63f;color:#1d1300}main#main .ev-pre button:focus-visible{outline:3px solid #9fe3db;outline-offset:2px}"
+  /* the price chart you can tap */
+  + "main#main .ev-hb .r[tabindex]{cursor:pointer;border-radius:10px;padding:.15rem .3rem;margin-left:-.3rem;margin-right:-.3rem;transition:background .2s}main#main .ev-hb .r[tabindex]:hover,main#main .ev-hb .r.sel{background:#eef3f6}main#main .ev-hb .r[tabindex]:focus-visible{outline:3px solid var(--ev-teal)}"
+  + "main#main .ev-read{margin:.8rem 0 0;padding:.7rem .85rem;border-radius:12px;background:var(--ev-teal-2);color:#073f3c;font:600 1rem/1.45 var(--sans)}"
+  /* the quiz */
+  + "main#main .ev-quiz{max-width:760px;margin:1.4rem 0;padding:1.1rem;border-radius:20px;background:linear-gradient(160deg,#0f2b3a,#14485a);color:#fff}"
+  + "main#main .ev-quiz .hd{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin:0 0 .8rem;font:700 .8rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#9fe3db}main#main .ev-quiz .hd b{font-size:1rem;letter-spacing:0;text-transform:none;color:#f4b63f}"
+  + "main#main .ev-q{padding:.85rem 0;border-top:1px solid rgba(255,255,255,.14)}main#main .ev-q .q{margin:0 0 .6rem;font:600 1.05rem/1.4 var(--sans);color:#fff}"
+  + "main#main .ev-q .o{display:flex;gap:.5rem}main#main .ev-q button{flex:1;min-height:2.8rem;border-radius:12px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;font:700 1rem/1 var(--sans);cursor:pointer;transition:background .2s,border-color .2s}"
+  + "main#main .ev-q button.ok{background:#1aa391;border-color:#1aa391}main#main .ev-q button.no{background:#c8452a;border-color:#c8452a}main#main .ev-q button:disabled{cursor:default}main#main .ev-q button:focus-visible{outline:3px solid #f4b63f;outline-offset:2px}"
+  + "main#main .ev-q .a{margin:.6rem 0 0;line-height:1.55;color:#e6f2f5}main#main.ev-js .ev-q:not(.done) .a{display:none}main#main .ev-q .a b{color:#f4b63f}"
   + "main#main .ev-panel{max-width:760px}main#main .ev-panel>h3{font-family:var(--sans);font-size:1.05rem;color:var(--ev-ink);margin:1.4rem 0 .6rem}"
   + "main#main.ev-js .ev-panel>h3{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}"
   + "main#main .ev-grid{display:grid;grid-template-columns:1fr;gap:.8rem}@media (min-width:700px){main#main .ev-grid{grid-template-columns:1fr 1fr}}"
-  + "main#main .ev-card{position:relative;background:var(--ev-card);border-radius:16px;padding:1rem 1.1rem 1rem 1.25rem;border:1px solid rgba(20,32,44,.1);box-shadow:0 14px 30px -24px rgba(20,32,44,.55);overflow:hidden}"
+  + "main#main .ev-card{position:relative;background:var(--ev-card);border-radius:18px;padding:1.05rem 1.15rem 1.05rem 1.3rem;border:1px solid rgba(20,32,44,.08);box-shadow:0 14px 30px -24px rgba(20,32,44,.55);overflow:hidden}"
+  + "@media (hover:hover){main#main .ev-card,main#main.ev-js .ev-card.ev-rise.ev-on{transition:transform .25s,box-shadow .25s}main#main .ev-card:hover,main#main.ev-js .ev-card.ev-rise.ev-on:hover{transform:translateY(-3px);box-shadow:0 22px 40px -24px rgba(20,32,44,.6)}}"
   + "main#main .ev-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--ev-slate)}"
   + "main#main .ev-card.now::before{background:var(--ev-teal)}main#main .ev-card.idea::before{background:var(--ev-amber)}"
   + "main#main .ev-pill{display:inline-block;font:700 .78rem/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;padding:.38rem .6rem;border-radius:999px;background:var(--ev-slate-2);color:var(--ev-slate);margin-bottom:.55rem}"
@@ -140,11 +173,11 @@ const CSS = "<style>"
   + "main#main .ev-hb .fl+.v.in{color:#fff}main#main .ev-hb .fl.a+.v.in{color:#2b1a00}main#main .ev-hb .note{max-width:640px;font-size:1rem;color:var(--ev-slate);line-height:1.5;margin:.6rem 0 0}"
   + "main#main.ev-js .ev-hb:not(.ev-on) .fl{width:0!important}"
   /* timeline */
-  + "main#main .ev-time{list-style:none;margin:1.2rem 0 1.4rem;padding:0;max-width:760px}"
+  + "main#main .ev-time{position:relative;list-style:none;margin:1.2rem 0 1.4rem;padding:0;max-width:760px}main#main .ev-time::before,main#main .ev-time .ev-tf{content:'';position:absolute;left:calc(1.1rem - 1.5px);top:.6rem;bottom:1.6rem;width:3px;border-radius:3px;background:rgba(20,32,44,.13)}main#main .ev-time .ev-tf{bottom:auto;height:0;background:var(--ev-teal);transition:height .15s linear}"
   + "main#main .ev-time li{position:relative;margin:0;padding:0 0 1rem 2.4rem}"
   + "main#main .ev-time li::before{content:'';position:absolute;left:.55rem;top:.35rem;width:1.1rem;height:1.1rem;border-radius:50%;background:var(--ev-teal);box-shadow:0 0 0 5px var(--ev-teal-2)}"
   + "main#main .ev-time li.idea::before{background:var(--ev-amber);box-shadow:0 0 0 5px var(--ev-amber-2)}"
-  + "main#main .ev-time li::after{content:'';position:absolute;left:1.05rem;top:1.8rem;bottom:.1rem;width:2px;background:rgba(20,32,44,.15)}main#main .ev-time li:last-child::after{display:none}"
+  + "main#main .ev-time li::before{z-index:1;transition:transform .3s}main#main.ev-js .ev-time li:not(.on)::before{background:#fff;box-shadow:0 0 0 3px rgba(20,32,44,.2)}main#main .ev-time li.on::before{transform:scale(1.1)}"
   + "main#main .ev-time .c{background:var(--ev-card);border:1px solid rgba(20,32,44,.1);border-radius:14px;padding:.75rem .95rem}"
   + "main#main .ev-time .d{margin:0;font-family:var(--sans);color:var(--ev-ink);line-height:1.4}"
   + "main#main .ev-time .d b{display:block;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:#075a56}main#main .ev-time li.idea .d b{color:#7a4900}"
@@ -174,6 +207,15 @@ const SCRIPT = `<script>(function(){var d=document,root=d.getElementById("main")
   + `var up=function(){var v=+s.value,a=v*0.06*m/1000,b=v*0.04*m/1000,c=v*0.04*(m-so)/1000;d.getElementById("evV").textContent="$"+v.toLocaleString("en-US");`
   + `[["evSix",a],["evFour",b],["evHome",c]].forEach(function(p){d.getElementById(p[0]).textContent=f(p[1]);d.getElementById(p[0]+"B").style.width=(p[1]/top*100).toFixed(1)+"%"});`
   + `d.getElementById("evSave").textContent=f(a-b)+" to "+f(a-c)};s.addEventListener("input",up);up()}`
+  + `var pre=d.querySelectorAll(".ev-pre button");[].forEach.call(pre,function(b){b.addEventListener("click",function(){s.value=b.getAttribute("data-v");s.dispatchEvent(new Event("input"))})});`
+  + `if(s)s.addEventListener("input",function(){[].forEach.call(pre,function(b){b.setAttribute("aria-pressed",b.getAttribute("data-v")===s.value?"true":"false")})});`
+  + `[].forEach.call(d.querySelectorAll(".ev-hb"),function(f){var rd=f.querySelector(".ev-read");if(!rd)return;var rs=f.querySelectorAll(".r[data-say]");[].forEach.call(rs,function(r){var go=function(){[].forEach.call(rs,function(x){x.classList.toggle("sel",x===r)});rd.textContent=r.getAttribute("data-say")};r.addEventListener("click",go);r.addEventListener("mouseenter",go);r.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}})})});`
+  + `var sc=d.getElementById("evScore"),qn=0,qr=0,qs=d.querySelectorAll(".ev-q");[].forEach.call(qs,function(q){var bs=q.querySelectorAll("button");[].forEach.call(bs,function(b){b.addEventListener("click",function(){var ok=b.getAttribute("data-v")===q.getAttribute("data-a");b.classList.add(ok?"ok":"no");[].forEach.call(bs,function(x){x.disabled=true;if(x.getAttribute("data-v")===q.getAttribute("data-a"))x.classList.add("ok")});q.classList.add("done");qn++;if(ok)qr++;if(sc)sc.textContent=qr+" of "+qn+" right"})})});`
+  + `var dd=d.querySelector("[data-ev-days]");if(dd){var t=new Date(dd.getAttribute("data-ev-days")+"T00:00:00"),n=Math.ceil((t-new Date())/864e5);if(n>1)dd.textContent=n+" days away, before the new senator takes office";else if(n===1)dd.textContent="Tomorrow"}`
+  + `var cnt=function(e){var to=parseFloat(e.getAttribute("data-ev-count")),dc=+(e.getAttribute("data-ev-dec")||0),t0=null;if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;var st=function(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/900),v=to*(1-Math.pow(1-k,3));e.textContent=dc?v.toFixed(dc):Math.round(v).toLocaleString("en-US");if(k<1)requestAnimationFrame(st)};requestAnimationFrame(st)};[].forEach.call(d.querySelectorAll("[data-ev-count]"),cnt);`
+  + `var tl=d.querySelector(".ev-time");if(tl){var tf=d.createElement("span");tf.className="ev-tf";tf.setAttribute("aria-hidden","true");tl.insertBefore(tf,tl.firstChild);var lis=tl.querySelectorAll("li");var tick=function(){var r=tl.getBoundingClientRect(),y=innerHeight*0.6-r.top,h=Math.max(0,Math.min(r.height-26,y));tf.style.height=h+"px";[].forEach.call(lis,function(li){li.classList.toggle("on",li.offsetTop+10<=h)})};addEventListener("scroll",tick,{passive:true});tick()}`
+  + `var jn=d.querySelector(".ev-jump");if(jn){var bar=d.createElement("div");bar.className="ev-stick";bar.innerHTML="<ul>"+[].map.call(jn.querySelectorAll("a"),function(a){return '<li><a href="'+a.getAttribute("href")+'">'+a.textContent+"</a></li>"}).join("")+"</ul>";root.appendChild(bar);var hd=d.querySelector("header"),bl=bar.querySelectorAll("a"),ids=[].map.call(bl,function(a){return a.getAttribute("href").slice(1)});`
+  + `var spy=function(){var top=hd?Math.max(0,hd.getBoundingClientRect().bottom):0;bar.style.top=top+"px";var an=jn.offsetParent?jn:d.querySelector(".ev-dash");bar.classList.toggle("on",!!an&&an.getBoundingClientRect().bottom<top);var cur=-1;ids.forEach(function(id,i){var el=d.getElementById(id);if(el&&el.getBoundingClientRect().top<top+140)cur=i});[].forEach.call(bl,function(a,i){var on=i===cur;if(on&&!a.classList.contains("cur")){var u=bar.firstChild;u.scrollLeft=a.offsetLeft-u.clientWidth/2+a.clientWidth/2}a.classList.toggle("cur",on)})};addEventListener("scroll",spy,{passive:true});addEventListener("resize",spy);spy()}`
   + `var els=root.querySelectorAll(".ev-hb,.ev-rise");if(!("IntersectionObserver" in window)){[].forEach.call(els,function(e){e.classList.add("ev-on")});return}`
   + `var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("ev-on");io.unobserve(e.target)}})},{rootMargin:"0px 0px -8% 0px"});[].forEach.call(els,function(e){io.observe(e)});`
   + `setTimeout(function(){[].forEach.call(els,function(e){var r=e.getBoundingClientRect();if(r.top<innerHeight)e.classList.add("ev-on")})},60)})();</script>`;
@@ -181,32 +223,34 @@ const SCRIPT = `<script>(function(){var d=document,root=d.getElementById("main")
 /* ---------------------------------------------------------------------------- */
 /* Pieces.                                                                         */
 const card = (kind, pill, title, body) => `<div class="ev-card ${kind} ev-rise"><span class="ev-pill">${pill}</span><strong class="t">${title}</strong>${[].concat(body).map((p) => `<p>${p}</p>`).join("")}</div>`;
-const tabs = (id, label, items) => `<div data-ev-tabs><div class="ev-tabs" role="tablist" aria-label="${label}">`
-  + items.map((t, i) => `<button type="button" role="tab" id="${id}-t${i}" aria-controls="${id}-p${i}" aria-selected="${i === 0}">${t.tab}</button>`).join("")
+const tabs = (id, label, items) => `<div data-ev-tabs><div class="ev-tabs n${items.length}" role="tablist" aria-label="${label}">`
+  + items.map((t, i) => `<button type="button" role="tab" id="${id}-t${i}" aria-controls="${id}-p${i}" aria-selected="${i === 0}">${ic(t.icon)}<span>${t.tab}</span></button>`).join("")
   + `</div>${items.map((t, i) => `<div class="ev-panel" role="tabpanel" id="${id}-p${i}" aria-labelledby="${id}-t${i}"><h3>${t.h3}</h3>${t.html}</div>`).join("")}</div>`;
+const ICONS = {"home": "<path d=\"M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z\"/>", "tag": "<path d=\"M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z\"/><circle cx=\"7.5\" cy=\"7.5\" r=\"1.5\"/>", "key": "<circle cx=\"7.5\" cy=\"15.5\" r=\"4.5\"/><path d=\"M10.7 12.3L21 2M16 7l3 3M18.5 4.5l2 2\"/>", "build": "<path d=\"M2 21h20M4 21V9l8-6 8 6v12M9 21v-6h6v6\"/>", "person": "<circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21a8 8 0 0 1 16 0\"/>"};
+const ic = (k) => k ? `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k]}</svg>` : "";
 const KEY = `<p class="ev-key"><span class="now">Set to happen</span><span class="idea">A proposal, not law</span><span>No change</span></p>`;
 
 /* V1: the picker. Four situations, each a set of cards. */
 const PICK = tabs("evr", "Pick your situation", [
-  { tab: "I'm buying", h3: "If you are buying", html: `<div class="ev-grid">`
+  { tab: "I'm buying", icon: "home", h3: "If you are buying", html: `<div class="ev-grid">`
     + card("now", "Dec. 11", "Flood insurance can lapse", [`If Congress does not extend the federal flood program by Dec. 11, it cannot write new policies. A loan on a house in a high-risk flood zone can then wait.`, `Our agents check a house's flood zone and its tax ratio before you make an offer. ${h.a(P3, "What a lapse does")}`])
     + card("idea", "Proposal", "A $50,000 first-time buyer credit", [`Annie Andrews backs one. It has had no vote in Congress, so plan a purchase this winter without it. ${h.a(P2, "What the last credit did")}`])
     + card("now", "Jan. 7", "Big investors hit a limit", [`A company that controls 350 or more houses may not buy more, with some exceptions. A family buying one rental is not affected.`])
     + card("", "No change", "A rental or second home pays the higher tax", [`It is taxed on 6 percent of its value. A home you live in is taxed on 4 percent. Price a second home on today's bill.`])
     + `</div>` },
-  { tab: "I'm selling", h3: "If you are selling", html: `<div class="ev-grid">`
+  { tab: "I'm selling", icon: "tag", h3: "If you are selling", html: `<div class="ev-grid">`
     + card("", "No change", "Prices are about flat", [`Prices here rose about ${pct1(LATEST)} percent in the latest year. We price your home from this year's sales of homes like it. ${h.a("#prices", "Prices after past elections")}`])
     + card("now", "Dec. 11", "A buyer's closing can slip", [`If your house is in a high-risk flood zone and your buyer needs a loan, a lapse can delay the closing. A private flood policy can count if it meets federal rules.`])
     + card("", "No change", "The tax on your gain", [`Up to $250,000 of gain on a home you lived in stays out of federal income tax, or $500,000 for certain married couples. Neither winner's plan changes it.`])
     + card("idea", "Proposal", "Lower taxes for rental buyers", [`If the tax on rentals fell, a buyer of a rental or second home would pay less each year. ${h.a("#rental-tax", "Try the tax slider")}`])
     + `</div>` },
-  { tab: "I own a rental or second home", h3: "If you own a rental or second home", html: `<div class="ev-grid">`
+  { tab: "I own a rental or second home", icon: "key", h3: "If you own a rental or second home", html: `<div class="ev-grid">`
     + card("idea", "Proposal", "A lower property tax", [`Alan Wilson wants to cut the higher tax on rentals. At 4 percent, a ${money(TX.price)} rental in Myrtle Beach would pay about ${r10(T6 - T4)} less a year. ${h.a("#rental-tax", "Try your price")}`])
     + card("", "No change", "Flood premiums keep rising", [`On a second home with a discounted federal flood rate, the rate rises 25 percent a year until it reaches the full-risk rate. That is current law.`])
     + card("", "No change", "Short-term rental rules", [`We found no statement on short-term rentals from either winner. City zoning still decides where they are allowed. ${h.a(P6, "What the statehouse could change")}`])
     + card("now", "Jan. 7", "The investor limit", [`It applies only to companies with 350 or more houses. Andrews wants it cut to 50.`])
     + `</div>` },
-  { tab: "I'm building or buying new", h3: "If you are building or buying new", html: `<div class="ev-grid">`
+  { tab: "I'm building or buying new", icon: "build", h3: "If you are building or buying new", html: `<div class="ev-grid">`
     + card("idea", "Proposal", "Faster permits", [`Wilson wants building permits for new homes to move faster. Horry County issued permits for 6,418 new single-family homes in 2025. ${h.a(P7, "Building in Horry County")}`])
     + card("idea", "Proposal", "Cheaper materials and builder tax cuts", [`Andrews wants to end tariffs the president imposes alone, naming building materials, and to cut taxes for home builders.`])
     + card("", "No change", "Impact fees", [`A new home of about 1,500 square feet pays $1,615 in county impact fees. County Council decides them, not the new governor or senator.`])
@@ -218,7 +262,7 @@ const PICK = tabs("evr", "Pick your situation", [
 const w = (v) => (v / tax(MAXP, 0.06, MILLS) * 100).toFixed(1) + "%";
 const CALC = `<figure class="ev-calc" id="evCalc"><div class="k">Try it: the tax on a rental inside Myrtle Beach</div>`
   + `<label for="evPrice">The county's value of the home<span class="val" id="evV">${money(TX.price)}</span></label>`
-  + `<input id="evPrice" type="range" min="${MINP}" max="${MAXP}" step="10000" value="${TX.price}" aria-label="The county's value of the home, in dollars">`
+  + `<input id="evPrice" type="range" min="${MINP}" max="${MAXP}" step="10000" value="${TX.price}" aria-label="The county's value of the home, in dollars"><div class="ev-pre" role="group" aria-label="Quick prices">${[250000, 350000, 500000, 750000].map((v) => `<button type="button" data-v="${v}" aria-pressed="${v === TX.price}">$${v / 1000}k</button>`).join("")}</div>`
   + `<div class="ev-bar"><div class="lab"><span>Today, taxed at 6 percent</span><b id="evSix">${r10(T6)}</b></div><div class="tr"><div class="fl" id="evSixB" style="width:${w(T6)}"></div></div></div>`
   + `<div class="ev-bar a"><div class="lab"><span>If rentals moved to 4 percent</span><b id="evFour">${r10(T4)}</b></div><div class="tr"><div class="fl" id="evFourB" style="width:${w(T4)}"></div></div></div>`
   + `<div class="ev-bar c"><div class="lab"><span>Taxed like a home you live in</span><b id="evHome">${r10(TH)}</b></div><div class="tr"><div class="fl" id="evHomeB" style="width:${w(TH)}"></div></div></div>`
@@ -235,7 +279,7 @@ const METER = `<div class="ev-meter ev-rise"><span class="big">${SHORT}</span><p
 const runs = (short, long) => `<ul class="ev-runs"><li class="ev-run ev-rise"><span class="h">Next 1 to 2 years</span>${short.map((p) => `<p>${p}</p>`).join("")}</li><li class="ev-run ev-rise"><span class="h">5 years and more</span>${long.map((p) => `<p>${p}</p>`).join("")}</li></ul>`;
 
 /* V3: credit size (F106, F102). */
-const hbar = (cap, rows, note) => `<figure class="ev-hb"><figcaption class="cap">${cap}</figcaption>${rows.map((r) => `<div class="r"><span>${r.name}</span><div class="tr"><div class="fl ${r.cls || ""}" style="width:${r.w}"></div><span class="v${r.inside ? " in" : ""}"${r.inside ? "" : ` style="left:calc(${r.w} + .45rem)"`}>${r.text}</span></div></div>`).join("")}${note ? `<p class="note">${note}</p>` : ""}</figure>`;
+const hbar = (cap, rows, note, read) => `<figure class="ev-hb"><figcaption class="cap">${cap}</figcaption>${rows.map((r) => `<div class="r"${r.say ? ` tabindex="0" role="button" data-say="${r.say}"` : ""}><span>${r.name}</span><div class="tr"><div class="fl ${r.cls || ""}" style="width:${r.w}"></div><span class="v${r.inside ? " in" : ""}"${r.inside ? "" : ` style="left:calc(${r.w} + .45rem)"`}>${r.text}</span></div></div>`).join("")}${read ? `<p class="ev-read" aria-live="polite">${read}</p>` : ""}${note ? `<p class="note">${note}</p>` : ""}</figure>`;
 const CREDIT = hbar("The largest first-time buyer credit, then and proposed", [
   { name: "2008 to 2010, paid", w: "16%", text: "$8,000", cls: "s" },
   { name: "Proposed now", w: "100%", text: "$50,000", cls: "a", inside: true },
@@ -245,10 +289,10 @@ const CREDIT = hbar("The largest first-time buyer credit, then and proposed", [
 const PMAX = Math.max(...EL.map((e) => e.pct));
 const pw = (v) => (Math.abs(v) / PMAX * 100).toFixed(1) + "%";
 const PRICES = hbar("Change in Myrtle Beach-area home prices in the year after each election", [
-  { name: "2008", w: pw(Y2008), text: `${pct1(Y2008).replace("-", "−")}%`, cls: "c" },
-  ...EL.map((e) => ({ name: String(e.year), w: pw(e.pct), text: `+${pct1(e.pct)}%`, inside: e.pct === PMAX })),
-  { name: "Latest year", w: pw(LATEST), text: `+${pct1(LATEST)}%`, cls: "s" },
-], `Federal Housing Finance Agency house price index, Myrtle Beach, Conway and North Myrtle Beach metro area, from the last quarter of each election year to a year later. The latest year runs to mid-2026. FHFA's margin of error is about ${Math.round(seShare)} percent, so the +3.0% and +0.8% changes may be no change at all.`);
+  { name: "2008", w: pw(Y2008), text: `${pct1(Y2008).replace("-", "−")}%`, cls: "c", say: `After the 2008 election, in the housing slump, prices fell ${pct1(-Y2008)} percent in a year.` },
+  ...EL.map((e) => ({ name: String(e.year), w: pw(e.pct), text: `+${pct1(e.pct)}%`, inside: e.pct === PMAX, say: `After the ${e.year} ${e.kind === "midterm" ? "midterm" : "presidential"} election, prices rose ${pct1(e.pct)} percent${e.pct === PMAX ? ", the largest rise" : ""}.` })),
+  { name: "Latest year", w: pw(LATEST), text: `+${pct1(LATEST)}%`, cls: "s", say: `In the latest year, to mid-2026, prices rose ${pct1(LATEST)} percent, about flat.` },
+], `Federal Housing Finance Agency house price index, Myrtle Beach, Conway and North Myrtle Beach metro area, from the last quarter of each election year to a year later. The latest year runs to mid-2026. FHFA's margin of error is about ${Math.round(seShare)} percent, so the +3.0% and +0.8% changes may be no change at all.`, "Tap a year to see what happened.");
 
 /* V5: the dates (F120-F124, F100/F101, F084, WBTV). */
 const TIMELINE = `<ol class="ev-time">`
@@ -293,9 +337,20 @@ const OTHER_W = `<div class="ev-more"><p class="h">His other plans, with no dire
      "Deny state benefits to people here illegally.", "Independent audits of state agencies, led by the lieutenant governor.", "Build the energy grid and add competition, as reported."]
     .map((t) => `<li>${t}</li>`).join("") + `</ul></div>`;
 const PLANS = tabs("evp", "Pick a winner", [
-  { tab: "Annie Andrews (D), U.S. Senate", h3: "Annie Andrews' housing plans", html: grid(ANDREWS, { all: "Needs Congress" }) + OTHER_A },
-  { tab: "Alan Wilson (R), governor", h3: "Alan Wilson's housing plans", html: grid(WILSON, { all: "Needs the legislature", first: "Needs two-thirds" }) + OTHER_W },
+  { tab: "Annie Andrews (D), U.S. Senate", icon: "person", h3: "Annie Andrews' housing plans", html: grid(ANDREWS, { all: "Needs Congress" }) + OTHER_A },
+  { tab: "Alan Wilson (R), governor", icon: "person", h3: "Alan Wilson's housing plans", html: grid(WILSON, { all: "Needs the legislature", first: "Needs two-thirds" }) + OTHER_W },
 ]);
+
+/* V7: a three-question check of what the page taught. The answers are in the HTML; the script hides
+   each one until the reader picks. */
+const QS = [
+  ["Can the new governor cut the tax on rentals by himself?", "no", `It takes two-thirds of each chamber, and Republicans are ${SHORT} House votes short.`],
+  ["Can a first-time buyer use a $50,000 federal credit this winter?", "no", "It is a proposal. It has had no vote in Congress."],
+  ["Did prices here fall in the year after any election from 2016 to 2024?", "no", "They rose every time, by 3 to 22 percent."],
+];
+const QUIZ = `<div class="ev-quiz" id="evQuiz"><p class="hd"><span>Check what you learned</span><b id="evScore"></b></p>`
+  + QS.map(([q, a, ans]) => `<div class="ev-q" data-a="${a}"><p class="q">${q}</p><div class="o"><button type="button" data-v="yes">Yes</button><button type="button" data-v="no">No</button></div><p class="a"><b>${a === "no" ? "No." : "Yes."}</b> ${ans}</p></div>`).join("")
+  + `</div>`;
 
 /* ---------------------------------------------------------------------------- */
 /* Photo (photos.json; looked at full size; subject_check in its record).          */
@@ -322,6 +377,16 @@ const FHFA = "https://www.fhfa.gov/data/hpi";
 const CRS = "https://www.congress.gov/crs_external_products/IN/HTML/IN10835.html";
 const PL101 = "https://www.govinfo.gov/content/pkg/PLAW-119publ101/html/PLAW-119publ101.htm";
 
+/* The number tiles under the H1: the four numbers a reader came for. The script counts them up and
+   turns "Dec. 11" into a live count of days; without it they read as written. */
+const tile = (kind, big, label, sub) => `<div class="ev-tile ${kind}"><span class="b">${big}</span><span class="l">${label}</span><span class="s">${sub}</span></div>`;
+const SAVE = Math.round((T6 - T4) / 10) * 10;
+const DASH = `<div class="ev-dash">`
+  + tile("now", "Dec. 11", "Flood insurance deadline", `<span data-ev-days="2026-12-11">Before the new senator takes office</span>`)
+  + tile("idea", `$<span data-ev-count="${SAVE}">${SAVE.toLocaleString("en-US")}</span>`, `Less tax a year on a ${money(TX.price)} rental`, "If rentals moved to 4 percent")
+  + tile("idea", `<span data-ev-count="${SHORT}">${SHORT}</span> votes`, "Short of the rental tax cut", "In the state House")
+  + tile("", `+<span data-ev-count="${pct1(LATEST)}" data-ev-dec="1">${pct1(LATEST)}</span>%`, "Prices here, latest year", "About flat")
+  + `</div>`;
 /* The jump list: short, in the hero, one tap to each part. */
 const JUMP = [["for-you", "Your situation"], ["rental-tax", "Rental tax"], ["buyer-credit", "Buyer credit"], ["dates", "Key dates"], ["prices", "Prices"], ["plans", "Both plans"], ["election-faq", "Election FAQ"]];
 const JUMPNAV = `<nav class="ev-nav" aria-label="On this page"><ul class="ev-jump"><li class="k">Jump to</li>${JUMP.map(([id, t]) => `<li><a href="#${id}">${t}</a></li>`).join("")}</ul></nav>`;
@@ -339,7 +404,7 @@ module.exports = G.page({
   h1: "What the 2026 Election Means for Myrtle Beach Real Estate",
   h1em: "",
   sub: `In the 2026 election's unofficial count, Annie Andrews (D) won the U.S. Senate race and Alan Wilson (R) won for governor of South Carolina.`,
-  heroMedia: "<style>main#main h1.detail-h1>br:last-of-type,main#main h1.detail-h1>em:empty{display:none}</style>" + CSS + JUMPNAV,
+  heroMedia: "<style>main#main h1.detail-h1>br:last-of-type,main#main h1.detail-h1>em:empty{display:none}</style>" + CSS + DASH + JUMPNAV,
   heroCta: false,
   toc: false,
   author: "devin+abdulla",
@@ -396,6 +461,7 @@ module.exports = G.page({
       PLANS +
       h.p(`Neither winner decides impact fees, zoning or where short-term rentals are allowed. County and city councils do.`) +
       COUNTY_PHOTO +
+      QUIZ +
       h.p(`Sources: Andrews' ${h.ext(ANDREWS_PLAN, "affordability plan")} and ${h.ext(ANDREWS_SITE, "platform")}; Wilson's ${h.ext(WILSON_SITE, "priorities")}, his agenda as ${h.ext(WILSON_FOX, "Fox Carolina reported it")}, and an ${h.ext(WILSON_WIS, "interview with WIS")}.`) +
       SCRIPT },
   ],
