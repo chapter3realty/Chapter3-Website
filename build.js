@@ -893,7 +893,9 @@ const REGISTER_REGEX = [
   // Owner, 2026-09-11: "Always use the term appreciation instead of anything
   // else when talking about it." The verb form stays legal ("the price rises"),
   // so only the noun phrases that mean appreciation are matched.
-  [/\b(?:price (?:rise|change|growth)|rise in value|value growth)\b/i, 'say "appreciation" - it is the one word this site uses for a property gaining value (owner rule 2026-09-11, PLAYBOOK A22j)'],
+  // Retired 2026-11-05 (owner: "remove ones you think are holding you back from ranking"): people search
+  // "home prices" and "home values", not "appreciation". Pages still prefer "appreciation" for a gain in
+  // value; "price change" is no longer a build failure.
   // Owner, 2026-09-16, hold page: "lets remove The rule of thumb is short. and
   // hard code it away." Announcing that a rule is coming wastes the sentence.
   // State the rule.

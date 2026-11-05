@@ -268,7 +268,9 @@ function build(spec) {
   if (/\b2721275\b/.test(out) || /Licensed Mortgage Loan Originator/.test(out) || /\bDevin(?: Day)?\b[^.<"]{0,120}\b(?:MLO|loan originator|loan officer|NMLS)\b|\b(?:MLO|loan originator|loan officer|NMLS)\b[^.<"]{0,120}\bDevin\b|Chapter3(?:'s|&#39;s|&#x27;s|\u2019s)?\s+(?:own\s+)?licensed\s+(?:mortgage\s+)?loan\s+(?:originator|officer)|\bour licensed (?:mortgage )?loan (?:originator|officer)\b/i.test(out))
     throw new Error("licence claim: never his NMLS number, never a licensed-loan-originator claim tied to him or to Chapter3; a loan fact that needs a source says \"according to a loan officer at our preferred lender\" (owner rule 2026-09-07, PLAYBOOK A17)");
   { const hit = (main + " " + spec.title + " " + spec.description).replace(/<[^>]+>/g, " ").match(/\b(?:sets(?!\s+of\b)|set by)\b/i);
-    if (hit) throw new Error(`"${hit[0]}" - nothing sets anything; write what depends on what (owner rule 2026-09-06)`); }
+    /* 2026-11-05: a warning, no longer a stop. "Who sets property tax rates" is how people search; the owner's
+       point (a thing does not act) stays as advice. */
+    if (hit) console.warn(`note: "${hit[0]}" - say who sets it, or write what depends on what (owner rule 2026-09-06, advice)`); }
   /* Owner rules 2026-09-07: nothing "maps" a loan or a plan, nothing "carries" a loan, a payment or a cost. */
   { const txt = (main + " " + spec.title + " " + spec.description).replace(/<[^>]+>/g, " ");
     const m1 = txt.match(/\bmap(?:s|ped|ping)?\s+(?:out\b|the\s+(?:loan|route|path|plan|numbers|deal|purchase|year|way|next)\b)/i);
