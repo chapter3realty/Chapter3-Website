@@ -386,7 +386,7 @@ const DASH = `<div class="ev-dash">`
   + tile("now", "Dec. 11", `<span data-ev-days="2026-12-11">Flood insurance deadline</span>`)
   + tile("idea", `$<span data-ev-count="${SAVE}">${SAVE.toLocaleString("en-US")}</span>`, `Less tax a year on a ${money(TX.price)} rental at 4 percent`)
   + tile("idea", `<span data-ev-count="${SHORT}">${SHORT}</span> votes`, "Short in the state House for that cut")
-  + tile("", `+<span data-ev-count="${pct1(LATEST)}" data-ev-dec="1">${pct1(LATEST)}</span>%`, "Price change here in the latest year")
+  + tile("", `+<span data-ev-count="${pct1(LATEST)}" data-ev-dec="1">${pct1(LATEST)}</span>%`, "Home price appreciation here in the latest year")
   + `</div>`;
 /* The jump list: short, in the hero, one tap to each part. */
 const JUMP = [["for-you", "Your situation"], ["rental-tax", "Rental tax"], ["buyer-credit", "Buyer credit"], ["dates", "Key dates"], ["prices", "Prices"], ["plans", "Both plans"], ["election-faq", "Election FAQ"]];
