@@ -93,13 +93,14 @@ const CSS = "<style>"
   + "main#main.ev-js .ev-panel{animation:evIn .4s cubic-bezier(.2,.8,.2,1)}@keyframes evIn{from{opacity:.4;transform:translateY(8px)}to{opacity:1;transform:none}}"
   /* section kicker from the short label */
   + "main#main h2[data-toc]::before{content:attr(data-toc);display:block;font:700 .8rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#075a56;margin-bottom:.7rem}"
-  /* the number tiles in the hero */
-  + "main#main .ev-dash{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin:0 0 .9rem;max-width:980px}@media (min-width:800px){main#main .ev-dash{grid-template-columns:repeat(4,1fr);gap:.75rem}}"
-  + "main#main .ev-tile{position:relative;border-radius:18px;padding:.85rem .9rem .8rem;background:#fff;border:1px solid rgba(20,32,44,.08);box-shadow:0 12px 28px -20px rgba(20,32,44,.5);overflow:hidden}"
-  + "main#main .ev-tile::after{content:'';position:absolute;left:0;right:0;top:0;height:4px;background:var(--ev-slate)}main#main .ev-tile.now::after{background:var(--ev-teal)}main#main .ev-tile.idea::after{background:#f0b04a}"
-  + "main#main .ev-tile .b{display:block;font:700 clamp(1.6rem,5vw,2.2rem)/1.05 var(--serif);color:var(--ev-ink);margin:.1rem 0 .35rem;white-space:nowrap}"
-  + "main#main .ev-tile .l{display:block;font:600 .9rem/1.3 var(--sans);color:var(--ev-ink)}main#main .ev-tile .s{display:block;font:500 .85rem/1.3 var(--sans);color:var(--ev-slate);margin-top:.2rem}"
-  + "@media (max-width:699px){main#main .ev-tile{padding:.7rem .75rem}main#main .ev-tile .b{font-size:1.55rem}main#main .ev-tile .s{display:none}main#main.ev-js nav.ev-nav{display:none}}"
+  /* the hero, calmer (owner, 2026-11-05: "very cluttered"): H1, the one results line, one strip of four numbers, a small byline */
+  + "main#main .detail-hero .wrap{display:flex;flex-direction:column;position:relative;z-index:1}main#main .detail-hero .breadcrumb{order:0}main#main .detail-hero .eyebrow{display:none}main#main h1.detail-h1{order:1}main#main .detail-sub{order:2}main#main .detail-media{order:3}"
+  + "main#main .detail-hero .wrap>p:not(.eyebrow):not(.detail-sub){order:4;font-size:.84rem!important;margin:0!important;color:var(--ev-slate)!important}main#main .detail-hero .wrap>p:not(.eyebrow):not(.detail-sub) strong{font-weight:600}"
+  + "main#main .detail-sub{font-family:var(--sans)!important;font-size:1rem!important;color:var(--ev-slate)!important;margin:0 0 1.1rem!important;max-width:640px}main#main .detail-media{margin:0 0 1rem!important}main#main.ev-js nav.ev-nav{display:none}"
+  + "main#main .ev-dash{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin:0;max-width:900px;background:rgba(20,32,44,.09);border:1px solid rgba(20,32,44,.09);border-radius:18px;overflow:hidden}@media (min-width:800px){main#main .ev-dash{grid-template-columns:repeat(4,1fr)}}"
+  + "main#main .ev-tile{padding:.85rem 1rem .9rem;background:#fff!important}main#main .detail-media::before,main#main .detail-media::after,main#main .ev-dash::before,main#main .ev-dash::after{display:none!important}"
+  + "main#main .ev-tile .b{display:block;font:700 clamp(1.5rem,4.4vw,2rem)/1.1 var(--serif);color:var(--ev-ink);margin:0 0 .25rem;white-space:nowrap}main#main .ev-tile.now .b{color:#075a56}main#main .ev-tile.idea .b{color:#7a4900}"
+  + "main#main .ev-tile .l{display:block;font:500 .9rem/1.35 var(--sans);color:var(--ev-slate)}"
   /* the sticky jump bar (made by the script) */
   + "main#main section[id]{scroll-margin-top:11rem}"
   + "main#main .ev-stick{position:fixed;left:0;right:0;z-index:40;background:#faf8f4;border-bottom:1px solid rgba(20,32,44,.1);box-shadow:0 8px 20px -16px rgba(20,32,44,.5);transform:translateY(-120%);visibility:hidden;transition:transform .3s,visibility .3s;pointer-events:none}"
@@ -211,7 +212,7 @@ const SCRIPT = `<script>(function(){var d=document,root=d.getElementById("main")
   + `if(s)s.addEventListener("input",function(){[].forEach.call(pre,function(b){b.setAttribute("aria-pressed",b.getAttribute("data-v")===s.value?"true":"false")})});`
   + `[].forEach.call(d.querySelectorAll(".ev-hb"),function(f){var rd=f.querySelector(".ev-read");if(!rd)return;var rs=f.querySelectorAll(".r[data-say]");[].forEach.call(rs,function(r){var go=function(){[].forEach.call(rs,function(x){x.classList.toggle("sel",x===r)});rd.textContent=r.getAttribute("data-say")};r.addEventListener("click",go);r.addEventListener("mouseenter",go);r.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}})})});`
   + `var sc=d.getElementById("evScore"),qn=0,qr=0,qs=d.querySelectorAll(".ev-q");[].forEach.call(qs,function(q){var bs=q.querySelectorAll("button");[].forEach.call(bs,function(b){b.addEventListener("click",function(){var ok=b.getAttribute("data-v")===q.getAttribute("data-a");b.classList.add(ok?"ok":"no");[].forEach.call(bs,function(x){x.disabled=true;if(x.getAttribute("data-v")===q.getAttribute("data-a"))x.classList.add("ok")});q.classList.add("done");qn++;if(ok)qr++;if(sc)sc.textContent=qr+" of "+qn+" right"})})});`
-  + `var dd=d.querySelector("[data-ev-days]");if(dd){var t=new Date(dd.getAttribute("data-ev-days")+"T00:00:00"),n=Math.ceil((t-new Date())/864e5);if(n>1)dd.textContent=n+" days away, before the new senator takes office";else if(n===1)dd.textContent="Tomorrow"}`
+  + `var dd=d.querySelector("[data-ev-days]");if(dd){var t=new Date(dd.getAttribute("data-ev-days")+"T00:00:00"),n=Math.ceil((t-new Date())/864e5);if(n>1)dd.textContent="Flood insurance deadline, "+n+" days away";else if(n===1)dd.textContent="Flood insurance deadline, tomorrow"}`
   + `var cnt=function(e){var to=parseFloat(e.getAttribute("data-ev-count")),dc=+(e.getAttribute("data-ev-dec")||0),t0=null;if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;var st=function(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/900),v=to*(1-Math.pow(1-k,3));e.textContent=dc?v.toFixed(dc):Math.round(v).toLocaleString("en-US");if(k<1)requestAnimationFrame(st)};requestAnimationFrame(st)};[].forEach.call(d.querySelectorAll("[data-ev-count]"),cnt);`
   + `var tl=d.querySelector(".ev-time");if(tl){var tf=d.createElement("span");tf.className="ev-tf";tf.setAttribute("aria-hidden","true");tl.insertBefore(tf,tl.firstChild);var lis=tl.querySelectorAll("li");var tick=function(){var r=tl.getBoundingClientRect(),y=innerHeight*0.6-r.top,h=Math.max(0,Math.min(r.height-26,y));tf.style.height=h+"px";[].forEach.call(lis,function(li){li.classList.toggle("on",li.offsetTop+10<=h)})};addEventListener("scroll",tick,{passive:true});tick()}`
   + `var jn=d.querySelector(".ev-jump");if(jn){var bar=d.createElement("div");bar.className="ev-stick";bar.innerHTML="<ul>"+[].map.call(jn.querySelectorAll("a"),function(a){return '<li><a href="'+a.getAttribute("href")+'">'+a.textContent+"</a></li>"}).join("")+"</ul>";root.appendChild(bar);var hd=d.querySelector("header"),bl=bar.querySelectorAll("a"),ids=[].map.call(bl,function(a){return a.getAttribute("href").slice(1)});`
@@ -379,13 +380,13 @@ const PL101 = "https://www.govinfo.gov/content/pkg/PLAW-119publ101/html/PLAW-119
 
 /* The number tiles under the H1: the four numbers a reader came for. The script counts them up and
    turns "Dec. 11" into a live count of days; without it they read as written. */
-const tile = (kind, big, label, sub) => `<div class="ev-tile ${kind}"><span class="b">${big}</span><span class="l">${label}</span><span class="s">${sub}</span></div>`;
+const tile = (kind, big, label) => `<div class="ev-tile ${kind}"><span class="b">${big}</span><span class="l">${label}</span></div>`;
 const SAVE = Math.round((T6 - T4) / 10) * 10;
 const DASH = `<div class="ev-dash">`
-  + tile("now", "Dec. 11", "Flood insurance deadline", `<span data-ev-days="2026-12-11">Before the new senator takes office</span>`)
-  + tile("idea", `$<span data-ev-count="${SAVE}">${SAVE.toLocaleString("en-US")}</span>`, `Less tax a year on a ${money(TX.price)} rental`, "If rentals moved to 4 percent")
-  + tile("idea", `<span data-ev-count="${SHORT}">${SHORT}</span> votes`, "Short of the rental tax cut", "In the state House")
-  + tile("", `+<span data-ev-count="${pct1(LATEST)}" data-ev-dec="1">${pct1(LATEST)}</span>%`, "Prices here, latest year", "About flat")
+  + tile("now", "Dec. 11", `<span data-ev-days="2026-12-11">Flood insurance deadline</span>`)
+  + tile("idea", `$<span data-ev-count="${SAVE}">${SAVE.toLocaleString("en-US")}</span>`, `Less tax a year on a ${money(TX.price)} rental at 4 percent`)
+  + tile("idea", `<span data-ev-count="${SHORT}">${SHORT}</span> votes`, "Short in the state House for that cut")
+  + tile("", `+<span data-ev-count="${pct1(LATEST)}" data-ev-dec="1">${pct1(LATEST)}</span>%`, "Price change here in the latest year")
   + `</div>`;
 /* The jump list: short, in the hero, one tap to each part. */
 const JUMP = [["for-you", "Your situation"], ["rental-tax", "Rental tax"], ["buyer-credit", "Buyer credit"], ["dates", "Key dates"], ["prices", "Prices"], ["plans", "Both plans"], ["election-faq", "Election FAQ"]];
@@ -410,7 +411,7 @@ module.exports = G.page({
   author: "devin+abdulla",
   shortAnswer: [
     `Two dates after the election matter for a Myrtle Beach home this winter. On Dec. 11, federal flood insurance can lapse and stall closings in flood zones, and on Jan. 7, companies with 350 or more houses may no longer buy more.`,
-    `The bigger changes are proposals. Wilson wants a lower tax on rentals, and at 4 percent a ${money(TX.price)} rental in Myrtle Beach would pay about ${r10(T6 - T4)} less a year. Andrews backs a $50,000 credit for first-time buyers.`,
+    `The bigger changes are proposals that still need votes. Wilson wants a lower property tax on rentals and second homes, and Andrews backs a $50,000 tax credit for first-time buyers.`,
   ],
   sections: [
     { h2: "What does the 2026 election change for my home?", toc: "Your situation", id: "for-you", html: (bg) =>
