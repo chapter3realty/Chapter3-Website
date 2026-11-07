@@ -717,6 +717,19 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
     d.params.get("words") === "dock" && !(d.params.get("has") || "").includes("private_dock") && d.params.get("city") === "Murrells Inlet"
     && sent.includes("words=dock%2Cboat+lift") && !bad.includes("words="));
 }
+{
+  // A CRM from before Ticket 556 (its applied list has no "words") searched every home: a dock becomes the MLS checkbox,
+  // and a phrase with no checkbox finds nothing, never every home for sale (no closest homes either).
+  const was = APPLIED; APPLIED = true;
+  const before = calls.length;
+  const dock = JSON.parse(await (await run(homes, req("/homes/api/map?q=homes%20with%20a%20dock"))).text());
+  const asked = calls.slice(before).map((c) => c.url).filter((u) => u.includes("/api/idx/listings?"));
+  const lift = JSON.parse(await (await run(homes, req("/homes/api/map?words=elevator"))).text());
+  APPLIED = was;
+  check("words on an older CRM: a dock falls back to private_dock; an elevator finds nothing and no closest homes",
+    asked.some((u) => u.includes("words=dock")) && asked.some((u) => u.includes("has=private_dock") && !u.includes("words=")) && dock.ok
+    && lift.ok && lift.total === 0 && !lift.closest && lift.pins.length === 0);
+}
 
 // Nothing matches (owner, 2026-10-29): the closest homes, with what was left out; the sorry box on the page.
 {

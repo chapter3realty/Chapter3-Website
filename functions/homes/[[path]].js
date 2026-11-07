@@ -463,7 +463,16 @@ async function mapSearch(context, q) {
   if (n) { p.delete("city"); p.delete("zip"); p.set("near", n.near); p.set("miles", n.miles); }
   p.delete("page"); p.set("size", "48");
   const get = (pg) => { const x = forCrm(p); if (pg > 1) x.set("page", String(pg)); return crm(context.env, context.request, `/api/idx/listings?${x.toString()}`, { anonymous: true }); };
-  const first = await get(1);
+  let first = await get(1);
+  /* A CRM from before Ticket 556 answers without "words" in its applied list: it searched every home. Then a dock is
+     the MLS checkbox (private_dock), and a phrase with no checkbox finds nothing, never every home for sale. */
+  let wordsIgnored = false;
+  if (p.get("words") && first.status === 200 && first.json && first.json.ok && Array.isArray(first.json.applied) && !first.json.applied.includes("words")) {
+    const fb = p.get("words").split(",").map((w) => ({ dock: "private_dock" })[w]);
+    p.delete("words");
+    if (fb.every(Boolean)) { p.set("has", featureList([...(p.get("has") || "").split(",").filter(Boolean), ...fb]).join(",")); first = await get(1); }
+    else { wordsIgnored = true; first = { status: 200, json: { ok: true, listings: [], total: 0, meta: first.json.meta } }; }
+  }
   if (first.status !== 200 || !first.json || !first.json.ok) return { r: first, p, listings: [], pins: [], total: 0, left, words };
   let listings = Array.isArray(first.json.listings) ? first.json.listings : [];
   const total = typeof first.json.total === "number" ? first.json.total : listings.length;
@@ -474,7 +483,7 @@ async function mapSearch(context, q) {
   /* Nothing matches (owner, 2026-10-29: "show the closest options possible"): loosen the search one step
      at a time, at most three more asks, and say what was left out. */
   let closest = null;
-  if (total === 0 && !p.get("sold")) {
+  if (total === 0 && !p.get("sold") && !wordsIgnored) {
     const relax = closestSteps(p);
     for (const v of relax) {
       const x = forCrm(v);
