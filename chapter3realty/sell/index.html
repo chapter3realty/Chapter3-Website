@@ -90,6 +90,23 @@
 .mo-chart{gap:.2rem !important}
 .mo-chart>div>div:last-child{font-size:.5rem !important}
 }</style>
+<style id="c3-form-first">
+/* Phone: the headline, then the form, then the rest (owner, 2026-11-07: the sub-header made people scroll
+   before they reached the form). */
+@media (max-width:699px){
+#page-sellers>div:first-child{padding-top:1.4rem!important;padding-bottom:2.2rem!important}
+#page-sellers>div:first-child .breadcrumb{margin-bottom:.8rem!important}
+.seller-hero-grid{display:flex!important;flex-direction:column;gap:1.1rem!important}
+.seller-hero-grid>div:first-child{display:contents}
+.seller-hero-grid>div:first-child>*{order:3;margin-bottom:0!important}
+.seller-hero-grid>*:not(:first-child){order:2}
+.seller-hero-grid h1{order:1!important;font-size:2.3rem!important;line-height:1!important}
+.seller-hero-grid .eyebrow,.seller-hero-grid a[href="#seller-cma-form"]{display:none!important}
+.seller-hero-grid>div:first-child>p{font-size:.95rem!important;line-height:1.6!important}
+.seller-hero-grid .specialist-form,.seller-hero-grid .bimb-hero-form{padding:1.2rem!important}
+.seller-hero-grid .specialist-form>p:nth-of-type(2),.seller-hero-grid .bimb-hero-form>p:nth-of-type(2){display:none}
+}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>

@@ -144,7 +144,7 @@ html.hx-fit,html.hx-fit body,body:has(.hx-mapapp){overflow:hidden}
 .hx-mtop{flex:none;padding:.6rem 1rem .45rem;border-bottom:1px solid rgba(28,32,40,.1);background:#fff;position:relative;z-index:30}
 .hx-mtop .hx-fb{margin:0;flex-wrap:nowrap;align-items:flex-end}.hx-mtop .hx-fb-ai{flex:1 1 30rem;min-width:0}.hx-mtop .hx-fb-q{min-height:2.9rem}.hx-mtop .hx-fb-pills{flex-wrap:nowrap}
 .hx-mchips{display:flex;flex-wrap:wrap;gap:.35rem;margin:.45rem 0 0}.hx-mchips[hidden]{display:none}
-.hx-ai-note{margin:.35rem 0 0;font-size:.82rem;color:var(--slate,#5c6b78)}.hx-ai-note.hx-ai-on{margin:.5rem 0 .2rem;padding:.55rem .8rem;border-radius:12px;background:rgba(196,120,58,.08);border-left:3px solid #c4783a;font-size:.9rem;color:var(--ink,#1c2028)}.hx-ai-note[hidden]{display:none}
+.hx-ai-note,.hx-ai-note.hx-ai-on{display:none!important}.hx-ai-note-x{margin:.35rem 0 0;font-size:.82rem;color:var(--slate,#5c6b78)}.hx-ai-note.hx-ai-on{margin:.5rem 0 .2rem;padding:.55rem .8rem;border-radius:12px;background:rgba(196,120,58,.08);border-left:3px solid #c4783a;font-size:.9rem;color:var(--ink,#1c2028)}.hx-ai-note[hidden]{display:none}
 .hx-map-body{position:relative;flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) min(50vw,720px)}
 .hx-mapbox{position:relative;min-height:0;background:#e9e5dc}
 /* The map is its own layer, so Google's tiles never cover the buttons on top of it. */
@@ -198,7 +198,10 @@ main#main .hx-mpop .hx-c-body{padding:.6rem .8rem}main#main .hx-mpop .hx-c-price
  .hx-mtop .hx-fb-go{padding:.5rem .8rem;font-size:.82rem}
  .hx-mtop .hx-fb-pills{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;width:100%;margin:0 -.75rem;padding:0 .75rem .1rem;width:calc(100% + 1.5rem)}.hx-mtop .hx-fb-pills::-webkit-scrollbar{display:none}
  .hx-mtop .hx-pop>summary{min-height:2.3rem;padding:0 .8rem;font-size:.85rem}
- .hx-mtop .hx-applied{margin:.15rem 0 0}.hx-ai-note.hx-ai-on{font-size:.85rem;padding:.45rem .65rem}
+ /* Owner, 2026-11-07: the filters show once, on the pill row (each pill names its value; "Filters (n)" counts the
+    rest), and the AI's own sentence and the sign-up box stay small. */
+ .hx-mtop .hx-applied{display:none}
+ .hx-ai-picks{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .7rem;padding:.55rem .75rem!important;margin-bottom:.8rem}.hx-ai-picks-h{display:none}.hx-ai-picks-n{flex:1 1 12rem;margin:0;font-size:.85rem;line-height:1.35}.hx-ai-picks .hx-ai-picks-g{flex:1 1 100%}.hx-ai-picks-su{padding:.45rem .9rem;font-size:.85rem}
  .hx-map-body.hx-show-list .hx-mode,.hx-map-body.hx-show-list .hx-map-hint,.hx-map-body.hx-show-list .hx-ring-ctl{display:none}
  .hx-map-hint{top:.8rem;bottom:auto;left:.8rem;font-size:.78rem;max-width:calc(100% - 9rem);border-radius:14px;line-height:1.3}
  .hx-ring-ctl{top:3.3rem;left:.8rem;transform:none}

@@ -347,6 +347,7 @@ main#main .hx-s-row>.hx-c:hover{transform:none}
 .hx-chip::after{content:"";position:absolute;right:.85rem;top:50%;width:.4rem;height:.4rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-70%) rotate(45deg);pointer-events:none}
 .hx-chip select option{color:#1c2028;background:#fff}
 .hx-applied{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:.2rem 0 .4rem}
+@media (max-width:699px){.hx-applied{display:none}}
 .hx-applied-chip{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .45rem .3rem .75rem;border-radius:999px;background:#f1ece4;color:var(--ink,#1c2028);font-size:.85rem;font-weight:600;text-decoration:none}
 .hx-applied-chip span{display:inline-flex;align-items:center;justify-content:center;width:1.2rem;height:1.2rem;border-radius:999px;background:rgba(28,32,40,.12);font-size:.9rem}
 .hx-clear{font-size:.85rem;color:var(--brass-ink,#91592b);margin-left:.3rem}

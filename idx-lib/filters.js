@@ -58,7 +58,7 @@ const SQFT = [["", "Any size"], ["1000", "1,000+ sq ft"], ["1500", "1,500+ sq ft
  * asks for an employer). Everywhere else, a search opens the map with it (owner, 2026-10-28).
  */
 /** What the AI search bar asks. */
-export const AI_ASK = "Tell me everything you want and why. I'll find you houses.";
+export const AI_ASK = "Describe the home you want. AI finds it.";
 
 export function filterBar({ action = "/homes/map/", params, features = false, compact = false, map = false, ask = "" }) {
   const p = new URLSearchParams(params);
@@ -101,7 +101,7 @@ export function filterBar({ action = "/homes/map/", params, features = false, co
        want and why I'll find you houses"). It reads goals as well as features (map.js ai()). The filters
        follow, price first. */
     + `<div class="hx-fb-ai"><p class="hx-ai-badge">${aiChip()}<span>AI-powered search</span></p>`
-    + `<label class="hx-fb-q"><textarea name="q" rows="1" enterkeyhint="search" autocomplete="off" maxlength="400" aria-label="${esc(ask || AI_ASK)}" placeholder="${esc(ask || AI_ASK)}">${esc(p.get("q") || "")}</textarea><button type="submit" class="hx-fb-go">Find houses</button></label></div>`
+    + `<label class="hx-fb-q"><textarea name="q" rows="1" enterkeyhint="search" autocomplete="off" maxlength="400" aria-label="${esc(ask || AI_ASK)}" placeholder="${esc(ask || AI_ASK)}">${esc(p.get("q") || "")}</textarea><button type="submit" class="hx-fb-go">Search</button></label></div>`
     + `<div class="hx-fb-pills">${pop("price", "Price", L.price, priceP)}${pop("beds", "Beds & baths", L.bb, bedsP)}${pop("type", "Home type", L.type, typeP)}${pop("sale", "For sale", p.get("all") === "1" ? "With under contract" : "", saleP)}${more}</div>`
     + `</form>`;
 }
@@ -118,6 +118,7 @@ ${AI_CSS}
 .hx-fb-q:focus-within{border-color:var(--brass-ink,#91592b);box-shadow:0 0 0 3px rgba(196,120,58,.18)}
 .hx-fb-q textarea{flex:1;min-width:0;height:2.9rem;padding:.72rem 0;border:0;outline:none;background:none;font:inherit;font-size:1.02rem;line-height:1.4;color:var(--ink,#1c2028);resize:none;overflow:hidden}
 .hx-fb-pills{display:flex;flex-wrap:wrap;gap:.45rem}
+@media (max-width:699px){.hx-ai-badge{display:none}.hx-fb{margin:.6rem 0 .7rem}}
 .hx-pop{position:relative}
 .hx-pop>summary{list-style:none;display:flex;align-items:center;gap:.5rem;min-height:2.75rem;padding:0 1rem;border-radius:999px;background:#fff;border:1px solid rgba(28,32,40,.14);box-shadow:0 1px 3px rgba(28,32,40,.08);font-size:.92rem;font-weight:600;color:var(--ink,#1c2028);cursor:pointer;white-space:nowrap;user-select:none;transition:border-color .15s,box-shadow .15s}
 .hx-pop>summary::-webkit-details-marker{display:none}
