@@ -348,6 +348,10 @@ function searchParams(q, signed) {
     const v = q.get(name); if (v && /^\d{1,6}$/.test(v) && +v >= lo && +v <= hi) p.set(name, v);
   }
   const lot = q.get("lotMin"); if (lot && /^\d{1,4}(\.\d{1,3})?$/.test(lot)) p.set("lotMin", lot);
+  // Words the description must hold (CRM Ticket 556: words=dock, up to 3 phrases). Read with the CRM's own rule, so a
+  // phrase the CRM would refuse is never sent. An older CRM ignores it.
+  const words = [...new Set(String(q.get("words") || "").split(",").map((w) => w.trim().toLowerCase().replace(/\s+/g, " ")).filter(Boolean))];
+  if (words.length && words.length <= 3 && words.every((w) => /^[a-z0-9][a-z0-9 '-]{1,38}[a-z0-9]$/.test(w))) p.set("words", words.join(","));
   // "Also show homes under contract" (all=1). Without it every search is homes for sale only (forCrm).
   if (q.get("all") === "1") p.set("all", "1");
   if (signed && q.get("sold") === "1") p.set("sold", "1");
@@ -366,7 +370,7 @@ function chipList(p) {
     beds: (v) => `${v}+ beds`, baths: (v) => `${v}+ baths`, sqft: (v) => `${(+v).toLocaleString("en-US")}+ sq ft`, waterfront: () => "Waterfront", subdivision: (v) => title(v), sold: () => "Sold",
     hoa: () => "No HOA", near: () => `Within ${p.get("miles")} miles`,
     yearMin: (v) => `Built ${v}+`, yearMax: (v) => `Built by ${v}`, lotMin: (v) => `${v}+ acres`, hoaMax: (v) => `HOA up to ${money(+v)}`, garage: (v) => `${v}+ car garage`,
-    domMax: (v) => `Listed in the last ${v} days`, status: () => "For sale only" };
+    domMax: (v) => `Listed in the last ${v} days`, status: () => "For sale only", words: (v) => `Says ${v.split(",").map((w) => `"${w}"`).join(" and ")}` };
   const out = [...p.keys()].filter((k) => label[k]).map((k) => {
     const x = new URLSearchParams(p); x.delete(k); x.delete("page"); x.delete("size"); if (k === "near") { x.delete("miles"); if (x.get("sort") === "nearest") x.delete("sort"); }
     return { t: label[k](p.get(k)), x: x.toString() };
@@ -505,7 +509,7 @@ function closestSteps(p) {
   for (const k of ["city", "zip", "subdivision", "near", "miles", "hoa", "hoaMax", "garage", "domMax"]) if (b.get(k)) { b.delete(k); less = true; }
   if (less) out.push(b);
   const c = new URLSearchParams();
-  for (const k of ["has", "not", "waterfront", "type", "size", "all"]) if (p.get(k)) c.set(k, p.get(k));
+  for (const k of ["has", "not", "waterfront", "words", "type", "size", "all"]) if (p.get(k)) c.set(k, p.get(k));
   if (c.toString() !== b.toString() && c.toString() !== a.toString() && c.toString() !== p.toString()) out.push(c);
   return out.slice(0, 3);
 }

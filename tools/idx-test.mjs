@@ -704,6 +704,20 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
     once.status === 200 && twice.status === 502 && noRetry.status === 502 && page.includes("101 Test St") && !page.includes("back soon"));
 }
 
+// A dock is a search of the descriptions (owner, 2026-11-07; CRM Ticket 556): the rules read it as words=dock, the
+// CRM is asked for it, a phrase the CRM would refuse is never sent, and it is kept when nothing matches.
+{
+  const d = readQuery("homes with a dock in Murrells Inlet");
+  const before = calls.length;
+  await run(homes, req("/homes/api/map?words=dock,boat%20lift"));
+  const sent = calls.slice(before).map((c) => c.url).find((u) => u.includes("/api/idx/listings?")) || "";
+  await run(homes, req("/homes/api/map?words=%25,x"));
+  const bad = calls.slice(before).map((c) => c.url).filter((u) => u.includes("/api/idx/listings?")).pop() || "";
+  check("words: 'homes with a dock' reads as words=dock (no checkbox key); the CRM is asked for words; a wildcard is never sent",
+    d.params.get("words") === "dock" && !(d.params.get("has") || "").includes("private_dock") && d.params.get("city") === "Murrells Inlet"
+    && sent.includes("words=dock%2Cboat+lift") && !bad.includes("words="));
+}
+
 // Nothing matches (owner, 2026-10-29): the closest homes, with what was left out; the sorry box on the page.
 {
   const j = JSON.parse(await (await run(homes, req("/homes/api/map?city=Loris&has=walk_to_beach"))).text());

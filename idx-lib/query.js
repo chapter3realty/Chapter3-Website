@@ -31,7 +31,12 @@ const PHRASES = [
   [/\b(rental homes?|rentals?|rental property|investment (homes?|property)|income property|long[- ]term rentals?)\b/, { has: ["rentals_allowed"] }],
   [/\b(one[- ](story|level)|single[- ](story|level)|ranch|no stairs)\b/, { has: ["one_level"] }],
   [/\b(private )?pools?\b/, { has: ["pool"] }],
-  [/\b(boat )?docks?\b/, { has: ["private_dock"] }],
+  /* Owner, 2026-11-07: the MLS checkbox marks only some homes with a dock; the description says it for many more,
+     so a dock (and these specific things) is a search of the description (CRM Ticket 556, words). */
+  [/\b(private |boat )?docks?\b/, { words: "dock" }],
+  [/\bboat lifts?\b/, { words: "boat lift" }],
+  [/\belevators?\b/, { words: "elevator" }],
+  [/\b(mother[- ]in[- ]law|in[- ]law) (suites?|apartments?|quarters)\b/, { words: "in-law" }],
   [/\b(walk(ing distance)? to (the )?beach|steps to the (beach|sand))\b/, { has: ["walk_to_beach"] }],
   [/\b(near|close to|by) the (beach|ocean)\b/, { has: ["near_beach"] }],
   [/\beast of (hwy |highway )?17\b/, { has: ["east_of_17"] }],
@@ -144,6 +149,7 @@ export function readQuery(raw) {
     while (take(re)) { /* "single story ranch": both words are the same wish */ }
     for (const [k, v] of Object.entries(what)) {
       if (k === "has") { for (const f of v) if (!has.includes(f)) has.push(f); }
+      else if (k === "words") { const w = (params.get("words") || "").split(",").filter(Boolean); if (!w.includes(v) && w.length < 3) params.set("words", [...w, v].join(",")); }
       else if (!params.has(k)) params.set(k, v);
     }
     understood.push("phrase");
