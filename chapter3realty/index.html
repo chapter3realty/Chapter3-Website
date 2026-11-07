@@ -488,7 +488,6 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
 .cine-ai input::placeholder{color:rgba(244,239,232,.62)}.cine-ai input::-webkit-search-cancel-button{display:none}
 .cine-ai button{flex:none;height:46px;padding:0 22px;border:0;border-radius:999px;background:var(--brass);color:#151a22;font:600 15px/1 var(--sans);cursor:pointer;text-shadow:none}
 .cine-ai button:hover{background:var(--brass-2)}.cine-ai button:focus-visible{outline:2px solid var(--ivory);outline-offset:2px}
-.cine-ai-hint{margin:9px 0 0 6px;font:400 14px/1.45 var(--sans);color:rgba(244,239,232,.8)}.cine-ai-hint a{color:var(--brass-2);text-decoration:underline;text-underline-offset:3px}
 .home-paths{background:var(--navy);padding:34px 0 40px;border-top:1px solid rgba(244,239,232,.08)}
 .home-paths-in{width:min(1136px,calc(100% - 4rem));margin:0 auto}
 .home-paths-h{margin:0;font:400 clamp(24px,2.4vw,32px)/1.15 var(--serif);color:var(--ivory)}
@@ -503,8 +502,7 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
 <h2 style="color:rgba(244,239,232,.86)" class="cine-sub">Buy, sell and invest in Myrtle Beach real estate with a specialized real estate agent.</h2>
 <form class="cine-ai" action="/homes/map/" method="get" role="search" aria-label="AI home search">
 <label class="cine-ai-k" for="home-q"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l1.9 5.6L19.5 9.5l-5.6 1.9L12 17l-1.9-5.6L4.5 9.5l5.6-1.9zM19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/></svg>AI home search</label>
-<div class="cine-ai-row"><input id="home-q" name="q" type="search" enterkeyhint="search" autocomplete="off" maxlength="400" placeholder="3 beds near the beach"><button type="submit">Search</button></div>
-<p class="cine-ai-hint">Say what you want in your own words. Or <a href="/homes/map/">browse the map</a>.</p>
+<div class="cine-ai-row"><input id="home-q" name="q" type="search" enterkeyhint="search" autocomplete="off" maxlength="400" placeholder="Describe what you want"><button type="submit">Search</button></div>
 </form>
 </div>
 <div class="tw-stage" data-plane="-79.62,34.2,0.832389639,1483.161062,1851.852,1601.814">

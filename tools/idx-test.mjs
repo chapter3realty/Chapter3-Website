@@ -709,8 +709,8 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
   const j = JSON.parse(await (await run(homes, req("/homes/api/map?city=Loris&has=walk_to_beach"))).text());
   const t = await (await run(homes, req("/homes/map/?city=Loris&has=walk_to_beach"))).text();
   const r2 = readQuery("I want land to build a house on");
-  check("no match: the closest homes come back with what was left out, the page says sorry with its drawing; land to build a house on is land",
-    j.ok && j.total === 0 && j.closest && j.closest.total > 0 && j.pins.length >= 0 && j.closest.dropped.some((d) => /beach/i.test(d))
+  check("no match: the closest homes keep the feature asked for and leave out the place (owner, 2026-11-07: a dock search came back as oceanfront condos), the page says sorry with its drawing; land to build a house on is land",
+    j.ok && j.total === 0 && j.closest && j.closest.total > 0 && j.pins.length >= 0 && j.closest.dropped.some((d) => /Loris/.test(d)) && !j.closest.dropped.some((d) => /beach/i.test(d))
     && t.includes("I'm sorry, no homes match all of that.") && t.includes("hx-sorry-i") && r2.params.get("type") === "land");
 }
 
@@ -830,8 +830,8 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
 {
   const { MAP_SCRIPT: M, MAP_STYLE: MS, pinOf } = await import("../idx-lib/map.js");
   const pin = (o) => pinOf({ ...mk(1), point: { lat: 33.7, lng: -78.9 }, ...o });
-  check("map: a pin without a photo carries none, its card says the drawn panel's words; the picks row takes homes with a photo only",
-    pin({ photo: null }).photo === null && pin({ photoCount: 0 }).photo === null && !!pin({}).photo && !M.includes("No photo yet") && M.includes('"hx-nophoto","No photos posted yet"') && M.includes("picksGrid.children.length<12&&by[m].photo"));
+  check("map: a pin without a photo carries none, its card says the drawn panel's words; no AI picks box above the results, signed up or not (owner, 2026-11-07)",
+    pin({ photo: null }).photo === null && pin({ photoCount: 0 }).photo === null && !!pin({}).photo && !M.includes("No photo yet") && M.includes('"hx-nophoto","No photos posted yet"') && !M.includes("Sign up free and the AI reads") && !M.includes("picksGrid.appendChild(card("));
 }
 
 // Words that ran together on a card (owner, 2026-10-31): each fact whole, no rule left at a line's start; the map's popup and hint on a phone.

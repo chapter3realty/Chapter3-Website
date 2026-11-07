@@ -487,23 +487,26 @@ async function mapSearch(context, q) {
   return { r: first, p, listings, pins: listings.map(pinOf).filter(Boolean), total, left, words, closest };
 }
 
-/** The looser searches tried, in order, when a search finds nothing: the features first, then the
-    numbers (price widened by a quarter, one fewer bed and bath), then everything but the kind of home
-    and the place. Each is a copy; the visitor's own search is kept as it was. */
+/** The looser searches tried, in order, when a search finds nothing. The features the buyer asked for (has, not,
+    waterfront) are never dropped (owner, 2026-11-07: "homes with a dock" came back as oceanfront condos, because the
+    first step here used to drop every feature). First the numbers widen (price by a quarter, one fewer bed and bath,
+    no year, size or lot limit); then the place and the smaller limits go; last, only the features and the kind of
+    home are kept. If none of these finds a home, the page says so and shows none. Each is a copy; the visitor's own
+    search is kept as it was. */
 function closestSteps(p) {
-  const out = [], copy = () => new URLSearchParams(p);
-  const a = copy(); let changed = false;
-  for (const k of ["has", "not", "waterfront", "hoa", "hoaMax", "garage", "domMax"]) if (a.get(k)) { a.delete(k); changed = true; }
-  if (changed) out.push(a);
-  const b = new URLSearchParams(a); let more = false;
-  if (b.get("max")) { b.set("max", String(Math.round(+b.get("max") * 1.25 / 1000) * 1000)); more = true; }
-  if (b.get("min")) { b.set("min", String(Math.round(+b.get("min") * 0.75 / 1000) * 1000)); more = true; }
-  for (const k of ["beds", "baths"]) if (+b.get(k) > 1) { b.set(k, String(+b.get(k) - 1)); more = true; }
-  for (const k of ["yearMin", "yearMax", "sqft", "lotMin"]) if (b.get(k)) { b.delete(k); more = true; }
-  if (more) out.push(b);
+  const out = [];
+  const a = new URLSearchParams(p); let more = false;
+  if (a.get("max")) { a.set("max", String(Math.round(+a.get("max") * 1.25 / 1000) * 1000)); more = true; }
+  if (a.get("min")) { a.set("min", String(Math.round(+a.get("min") * 0.75 / 1000) * 1000)); more = true; }
+  for (const k of ["beds", "baths"]) if (+a.get(k) > 1) { a.set(k, String(+a.get(k) - 1)); more = true; }
+  for (const k of ["yearMin", "yearMax", "sqft", "lotMin"]) if (a.get(k)) { a.delete(k); more = true; }
+  if (more) out.push(a);
+  const b = new URLSearchParams(a); let less = false;
+  for (const k of ["city", "zip", "subdivision", "near", "miles", "hoa", "hoaMax", "garage", "domMax"]) if (b.get(k)) { b.delete(k); less = true; }
+  if (less) out.push(b);
   const c = new URLSearchParams();
-  for (const k of ["type", "city", "zip", "subdivision", "near", "miles", "size", "all"]) if (p.get(k)) c.set(k, p.get(k));
-  if (c.toString() !== b.toString() && c.toString() !== a.toString()) out.push(c);
+  for (const k of ["has", "not", "waterfront", "type", "size", "all"]) if (p.get(k)) c.set(k, p.get(k));
+  if (c.toString() !== b.toString() && c.toString() !== a.toString() && c.toString() !== p.toString()) out.push(c);
   return out.slice(0, 3);
 }
 
