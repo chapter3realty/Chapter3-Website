@@ -290,21 +290,21 @@ var searched=false,lastQ=null;
    and show those houses ... as people are looking ... keep running"). The list shows at once; the homes in view
    are read first, six at a time, and the ones whose description fits what the buyer asked for gather at the
    top, each with the reason in a few words. A home whose description rules it out (a lease, another kind of
-   property, a must-have it lacks) leaves the list. Descriptions are for signed-up visitors only. */
+   property, a must-have it lacks) leaves the list. The CRM reads the descriptions for every visitor (CRM Ticket 557; owner, 2026-11-07). */
 var rd={tok:0,yes:{},no:{},why:{},n:0,of:0},picks=null,picksGrid=null,picksNote=null;
 function picksBox(){if(picks)return picks;picks=el("section","hx-ai-picks");picks.setAttribute("aria-live","polite");
  var h=el("p","hx-ai-picks-h");h.insertAdjacentHTML("afterbegin",${JSON.stringify(aiChip())});h.appendChild(document.createTextNode(" read these descriptions"));picks.appendChild(h);
  picksNote=el("p","hx-ai-picks-n");picks.appendChild(picksNote);picksGrid=el("div","hx-map-cards hx-ai-picks-g");picks.appendChild(picksGrid);list.parentNode.insertBefore(picks,list);return picks}
 function stopReader(){rd.tok++;if(picks)picks.hidden=true}
 function readNote(done){if(!picksNote)return;var y=Object.keys(rd.yes).length;picksNote.textContent=(done?"The AI read all "+rd.n+" descriptions":"The AI is reading the descriptions: "+rd.n+" of "+rd.of)+". "+(y?y+(y===1?" home fits":" homes fit")+" what you asked"+(done?".":" so far."):done?"None stood out; the homes below match your filters.":"")}
-/* Owner, 2026-11-07: no box above the results, signed up or not ("remove that whole sign up for free screen and
-   don't have any other box like that appear"). The reader still runs for a signed-up visitor: a home whose
-   description rules it out leaves the list, and a home that fits carries the reason on its own card. */
+/* Owner, 2026-11-07: no box above the results ("remove that whole sign up for free screen and don't have any other
+   box like that appear"), and the reader runs for every visitor, signed up or not ("do the search description for
+   not signed in users as well"): a home whose description rules it out leaves the list, and a home that fits
+   carries the reason on its own card. */
 function startReader(q){var t=++rd.tok;rd.yes={};rd.no={};rd.why={};rd.n=0;
- if(document.body.getAttribute("data-hx-signed")!=="1")return;
  var seen={},order=[];all.filter(inView).concat(all).forEach(function(p){if(!seen[p.mls]){seen[p.mls]=1;order.push(p)}});order=order.slice(0,96);rd.of=order.length;var i=0;readNote(false);
  function next(){if(t!==rd.tok)return;var batch=order.slice(i,i+6);i+=6;if(!batch.length){readNote(true);return}
-  fetch("/homes/api/remarks?mls="+batch.map(function(p){return p.mls}).join(","),{credentials:"same-origin"}).then(function(r){return r.json()}).then(function(j){if(t!==rd.tok)return;
+  fetch("/homes/api/remarks?mls="+batch.map(function(p){return p.mls}).join(","),{credentials:"same-origin"}).then(function(r){return r.json()}).then(function(j){if(t!==rd.tok)return;if(j&&j.error==="sign_in")return;
    var rows=(j&&j.ok&&j.rows||[]).filter(function(r){return r.remarks});if(!rows.length){rd.n+=batch.length;readNote(false);return next()}
    var by={};batch.forEach(function(p){by[p.mls]=p});
    var homes=rows.map(function(r){var p=by[r.mls]||{};return{mls:r.mls,price:p.price,beds:p.beds,baths:p.baths,sqft:p.sqft,acres:p.acres,kind:r.type,status:r.status,description:r.remarks}});

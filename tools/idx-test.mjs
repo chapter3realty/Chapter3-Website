@@ -38,6 +38,7 @@ let HANG = false;
 let INVALID = false;
 let INVALID_TS = false;
 let APPLIED = false;
+let REMARKS_API = false; // CRM Ticket 557: /api/idx/remarks, any visitor
 let CATALOG = false;
 let FLAKY = 0, SIGNED_DOWN = false;
 let NOPHOTO = false; // every third home has no photo (photo null, photoCount 0)
@@ -79,6 +80,9 @@ globalThis.fetch = async (input, init = {}) => {
   if (SIGNED_DOWN && auth && /^\/api\/idx\/listings\/\w+$/.test(u.pathname)) return new Response("bad gateway", { status: 502 });
   if (HANG) return new Promise((_, no) => init.signal && init.signal.addEventListener("abort", () => no(new Error("aborted"))));
   if (INVALID && auth) return J({ ok: false, error: "unauthorized", visitor: "invalid" }, 401);
+  if (REMARKS_API && u.pathname === "/api/idx/remarks") {
+    return J({ ok: true, meta: META, rows: (u.searchParams.get("mls") || "").split(",").map((m) => ({ mls: m, remarks: `A home with a private dock, ${m}.`, type: "Single Family Residence", status: "Active" })) });
+  }
   if (u.pathname === "/api/idx/listings") {
     if ((u.searchParams.get("has") || "").includes("walk_to_beach") && u.searchParams.get("city") === "Loris") return J({ ok: true, tier, visitor: "none", meta: META, listings: [], total: 0 });
     const sub = u.searchParams.get("subdivision"), near = u.searchParams.get("near");
@@ -752,6 +756,18 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
     && asked.length === 6 && asked.every((c) => c.url.includes("track=0")));
 }
 
+
+// Descriptions for every visitor (owner, 2026-11-07; CRM Ticket 557): one call to /api/idx/remarks with no token.
+{
+  REMARKS_API = true;
+  const before = calls.length;
+  const anon = JSON.parse(await (await run(homes, req("/homes/api/remarks?mls=2600001,2600002"))).text());
+  const asked = calls.slice(before).map((c) => c.url);
+  REMARKS_API = false;
+  check("description reader: a visitor not signed up gets the descriptions, in one remarks call, with no visitor token",
+    anon.ok && anon.rows.length === 2 && anon.rows.every((r) => /private dock/.test(r.remarks)) && asked.filter((u) => u.includes("/api/idx/remarks?mls=2600001,2600002")).length === 1
+    && !asked.some((u) => /\/api\/idx\/listings\/\w+/.test(u)));
+}
 
 // No "no photo" blocks in a row of homes (owner, 2026-10-31: "I see some 'no photo yet' blocks in the IDX feed").
 {

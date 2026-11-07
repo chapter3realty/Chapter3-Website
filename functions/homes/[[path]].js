@@ -600,9 +600,17 @@ ${sorryHtml(null, 1)}<div id="hx-map-cards" class="hx-map-cards" aria-busy="true
  */
 async function remarksApi(context, url) {
   const { env, request } = context;
-  if (!visitorToken(request)) return json({ ok: false, error: "sign_in" }, 200, { "cache-control": "private, no-store" });
   const ids = String(url.searchParams.get("mls") || "").split(",").filter((m) => /^[A-Za-z0-9]{3,20}$/.test(m)).slice(0, 6);
   if (!ids.length) return json({ ok: false, error: "no_mls" }, 400);
+  /* Every visitor, signed up or not (owner, 2026-11-07: "do the search description for not signed in users as
+     well"): one call to the CRM's /api/idx/remarks (CRM Ticket 557), with no visitor token. */
+  const all = await crm(env, request, `/api/idx/remarks?mls=${ids.map(encodeURIComponent).join(",")}`, { anonymous: true, timeoutMs: 6000 });
+  if (all.status === 200 && all.json && all.json.ok && Array.isArray(all.json.rows)) {
+    const rows = all.json.rows.filter((x) => x && ids.includes(String(x.mls))).map((x) => ({ mls: String(x.mls), remarks: typeof x.remarks === "string" ? x.remarks.replace(/\s+/g, " ").trim().slice(0, 600) : null, type: x.type || null, status: x.status || null }));
+    return json({ ok: true, rows }, 200, { "cache-control": "private, no-store" });
+  }
+  // A CRM from before Ticket 557: descriptions one listing at a time, for a signed-up visitor only.
+  if (!visitorToken(request)) return json({ ok: false, error: "sign_in" }, 200, { "cache-control": "private, no-store" });
   const rows = await Promise.all(ids.map(async (m) => {
     const r = await crm(env, request, `/api/idx/listings/${encodeURIComponent(m)}?track=0`, { timeoutMs: 6000 });
     const l = r.status === 200 && r.json && r.json.ok && r.json.listing;
