@@ -901,7 +901,7 @@ construction" for the interstate (it has no contract).
 
 **Identity:** Chapter3 Realty Corp, SC real estate company licence 28849 ·
 BrickWood Mortgage NMLS #189497 · Timothy Nash, Broker-in-Charge, SC licence
-43182 · 854.333.2135 · 573 Vista Drive, Murrells Inlet, SC 29576
+43182 · 854.333.2135 · Vista Drive, Murrells Inlet, SC 29576
 
 Never on the site: the Operations Officer's NMLS number or any MLO claim (A17);
 Tim's NMLS number 252563 (owner, 2026-10-02, off until counsel has reviewed the
