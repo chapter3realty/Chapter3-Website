@@ -1,0 +1,216 @@
+{
+ "source": "U.S. Census Bureau, ACS 2020-2024 5-year, B25034; ACS 2025 1-year, B25034",
+ "horry_5yr": {
+  "name": "Horry County",
+  "geo": "0500000US45051",
+  "units": 217419,
+  "built_before_1970": 15921,
+  "built_before_1980": 34775,
+  "built_1970s": 18854,
+  "built_1970s_moe": 1081,
+  "pct_before_1970": 7.3,
+  "pct_before_1980": 16.0
+ },
+ "horry_1yr_2025": {
+  "name": "Horry County",
+  "geo": "0500000US45051",
+  "units": 237850,
+  "built_before_1970": 13090,
+  "built_before_1980": 32197,
+  "built_1970s": 19107,
+  "built_1970s_moe": 2412,
+  "pct_before_1970": 5.5,
+  "pct_before_1980": 13.5
+ },
+ "places": [
+  {
+   "name": "Atlantic Beach town",
+   "geo": "1600000US4503205",
+   "units": 262,
+   "built_before_1970": 113,
+   "built_before_1980": 161,
+   "built_1970s": 48,
+   "built_1970s_moe": 26,
+   "pct_before_1970": 43.1,
+   "pct_before_1980": 61.5
+  },
+  {
+   "name": "Briarcliffe Acres town",
+   "geo": "1600000US4508830",
+   "units": 209,
+   "built_before_1970": 57,
+   "built_before_1980": 123,
+   "built_1970s": 66,
+   "built_1970s_moe": 22,
+   "pct_before_1970": 27.3,
+   "pct_before_1980": 58.9
+  },
+  {
+   "name": "Loris city",
+   "geo": "1600000US4542730",
+   "units": 1265,
+   "built_before_1970": 347,
+   "built_before_1980": 710,
+   "built_1970s": 363,
+   "built_1970s_moe": 204,
+   "pct_before_1970": 27.4,
+   "pct_before_1980": 56.1
+  },
+  {
+   "name": "Aynor town",
+   "geo": "1600000US4503430",
+   "units": 492,
+   "built_before_1970": 119,
+   "built_before_1980": 178,
+   "built_1970s": 59,
+   "built_1970s_moe": 55,
+   "pct_before_1970": 24.2,
+   "pct_before_1980": 36.2
+  },
+  {
+   "name": "Surfside Beach town",
+   "geo": "1600000US4570585",
+   "units": 4254,
+   "built_before_1970": 942,
+   "built_before_1980": 1505,
+   "built_1970s": 563,
+   "built_1970s_moe": 131,
+   "pct_before_1970": 22.1,
+   "pct_before_1980": 35.4
+  },
+  {
+   "name": "Conway city",
+   "geo": "1600000US4516405",
+   "units": 9573,
+   "built_before_1970": 2071,
+   "built_before_1980": 3089,
+   "built_1970s": 1018,
+   "built_1970s_moe": 220,
+   "pct_before_1970": 21.6,
+   "pct_before_1980": 32.3
+  },
+  {
+   "name": "Myrtle Beach city",
+   "geo": "1600000US4549075",
+   "units": 24419,
+   "built_before_1970": 3712,
+   "built_before_1980": 6798,
+   "built_1970s": 3086,
+   "built_1970s_moe": 432,
+   "pct_before_1970": 15.2,
+   "pct_before_1980": 27.8
+  },
+  {
+   "name": "North Myrtle Beach city",
+   "geo": "1600000US4551280",
+   "units": 27608,
+   "built_before_1970": 2404,
+   "built_before_1980": 5339,
+   "built_1970s": 2935,
+   "built_1970s_moe": 479,
+   "pct_before_1970": 8.7,
+   "pct_before_1980": 19.3
+  },
+  {
+   "name": "Forestbrook CDP",
+   "geo": "1600000US4526372",
+   "units": 3279,
+   "built_before_1970": 104,
+   "built_before_1980": 552,
+   "built_1970s": 448,
+   "built_1970s_moe": 210,
+   "pct_before_1970": 3.2,
+   "pct_before_1980": 16.8
+  },
+  {
+   "name": "Socastee CDP",
+   "geo": "1600000US4567390",
+   "units": 10012,
+   "built_before_1970": 234,
+   "built_before_1980": 1381,
+   "built_1970s": 1147,
+   "built_1970s_moe": 302,
+   "pct_before_1970": 2.3,
+   "pct_before_1980": 13.8
+  },
+  {
+   "name": "Garden City CDP",
+   "geo": "1600000US4528455",
+   "units": 10506,
+   "built_before_1970": 276,
+   "built_before_1980": 1152,
+   "built_1970s": 876,
+   "built_1970s_moe": 203,
+   "pct_before_1970": 2.6,
+   "pct_before_1980": 11.0
+  },
+  {
+   "name": "Red Hill CDP",
+   "geo": "1600000US4559190",
+   "units": 7234,
+   "built_before_1970": 330,
+   "built_before_1980": 710,
+   "built_1970s": 380,
+   "built_1970s_moe": 163,
+   "pct_before_1970": 4.6,
+   "pct_before_1980": 9.8
+  },
+  {
+   "name": "Murrells Inlet CDP",
+   "geo": "1600000US4548985",
+   "units": 5762,
+   "built_before_1970": 261,
+   "built_before_1980": 454,
+   "built_1970s": 193,
+   "built_1970s_moe": 100,
+   "pct_before_1970": 4.5,
+   "pct_before_1980": 7.9
+  },
+  {
+   "name": "Little River CDP",
+   "geo": "1600000US4542010",
+   "units": 8351,
+   "built_before_1970": 165,
+   "built_before_1980": 531,
+   "built_1970s": 366,
+   "built_1970s_moe": 152,
+   "pct_before_1970": 2.0,
+   "pct_before_1980": 6.4
+  },
+  {
+   "name": "Carolina Forest CDP",
+   "geo": "1600000US4511833",
+   "units": 11177,
+   "built_before_1970": 56,
+   "built_before_1980": 125,
+   "built_1970s": 69,
+   "built_1970s_moe": 76,
+   "pct_before_1970": 0.5,
+   "pct_before_1980": 1.1
+  }
+ ],
+ "compare": [
+  {
+   "name": "Georgetown city",
+   "geo": "1600000US4528870",
+   "units": 4182,
+   "built_before_1970": 1584,
+   "built_before_1980": 2287,
+   "built_1970s": 703,
+   "built_1970s_moe": 264,
+   "pct_before_1970": 37.9,
+   "pct_before_1980": 54.7
+  },
+  {
+   "name": "Pawleys Island town",
+   "geo": "1600000US4555015",
+   "units": 581,
+   "built_before_1970": 246,
+   "built_before_1980": 313,
+   "built_1970s": 67,
+   "built_1970s_moe": 30,
+   "pct_before_1970": 42.3,
+   "pct_before_1980": 53.9
+  }
+ ]
+}

@@ -96,7 +96,8 @@ export const PLACES = {
    "subdivision": "Market Common"
   },
   "pages": [
-   "/buyers/best-neighborhoods/"
+   "/buyers/best-neighborhoods/",
+   "/submarkets/myrtle-beach/market-common/"
   ]
  },
  "deerfield": {
@@ -629,5 +630,105 @@ export const PLACES = {
   "pages": [
    "/buyers/second-home/"
   ]
+ },
+ "pool-homes-east-of-17": {
+  "name": "Grand Strand, pool homes east of US 17",
+  "q": {
+   "has": "pool,east_of_17",
+   "type": "house"
+  },
+  "pages": [
+   "/buyers/pool-homes/"
+  ],
+  "listOnly": true,
+  "title": "Houses with a pool, east of US 17"
+ },
+ "pool-homes-under-400k": {
+  "name": "Grand Strand, pool homes at $400,000 or less",
+  "q": {
+   "has": "pool",
+   "type": "house",
+   "max": 400000
+  },
+  "pages": [
+   "/buyers/pool-homes/"
+  ],
+  "listOnly": true,
+  "title": "Houses with a pool at $400,000 or less"
+ },
+ "beach-walk-north-myrtle-beach": {
+  "name": "North Myrtle Beach, houses a walk from the beach",
+  "q": {
+   "has": "walk_to_beach",
+   "city": "North Myrtle Beach",
+   "type": "house"
+  },
+  "pages": [
+   "/buyers/homes-near-the-beach/"
+  ],
+  "listOnly": true,
+  "title": "Houses a walk from the beach in North Myrtle Beach"
+ },
+ "beach-walk-nmb-under-400k": {
+  "name": "North Myrtle Beach, beach-walk houses at $400,000 or less",
+  "q": {
+   "has": "walk_to_beach",
+   "city": "North Myrtle Beach",
+   "type": "house",
+   "max": 400000
+  },
+  "pages": [
+   "/buyers/homes-near-the-beach/"
+  ],
+  "listOnly": true,
+  "title": "Beach-walk houses in North Myrtle Beach at $400,000 or less"
+ },
+ "new-homes-under-300k": {
+  "name": "Grand Strand, new homes at $300,000 or less",
+  "q": {
+   "has": "new_construction",
+   "max": 300000
+  },
+  "pages": [
+   "/buyers/new-construction/builders/"
+  ],
+  "listOnly": true,
+  "title": "New homes at $300,000 or less"
+ },
+ "market-common-townhomes": {
+  "name": "The Market Common, townhomes",
+  "q": {
+   "subdivision": "Market Common",
+   "type": "townhouse"
+  },
+  "pages": [
+   "/submarkets/myrtle-beach/market-common/"
+  ],
+  "listOnly": true,
+  "title": "Townhomes for sale in The Market Common"
+ },
+ "cash-only-houses": {
+  "name": "Grand Strand, houses listed for cash buyers only",
+  "q": {
+   "has": "cash_only_listing",
+   "type": "house"
+  },
+  "pages": [
+   "/sell/cash-offer/"
+  ],
+  "listOnly": true,
+  "title": "Houses listed for cash buyers only"
+ },
+ "new-roof-houses": {
+  "name": "Grand Strand, houses listed with a new roof",
+  "q": {
+   "has": "new_roof",
+   "type": "house"
+  },
+  "pages": [
+   "/sell/repairs-before-selling/"
+  ],
+  "listOnly": true,
+  "title": "Houses for sale that list a new roof"
  }
 };

@@ -1,0 +1,40 @@
+{
+ "area": {
+  "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8792124.702343538%2C3981968.705830356%2C-8783887.060024837%2C3987319.0632796804&bboxSR=3857&imageSR=3857&size=2000%2C1299&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+  "bbox_wgs84": [
+   -78.981,
+   33.6505,
+   -78.907,
+   33.6905
+  ],
+  "bbox3857": [
+   -8792124.702343538,
+   3981968.705830356,
+   -8783887.060024837,
+   3987319.0632796804
+  ],
+  "size": [
+   2000,
+   1299
+  ]
+ },
+ "noise": {
+  "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8788673.798128948%2C3981567.5292943344%2C-8784443.657478806%2C3985847.4668891793&bboxSR=3857&imageSR=3857&size=1600%2C1619&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+  "bbox_wgs84": [
+   -78.95,
+   33.6475,
+   -78.912,
+   33.6795
+  ],
+  "bbox3857": [
+   -8788673.798128948,
+   3981567.5292943344,
+   -8784443.657478806,
+   3985847.4668891793
+  ],
+  "size": [
+   1600,
+   1619
+  ]
+ }
+}

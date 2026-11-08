@@ -1,0 +1,496 @@
+{
+ "form": "SC Residential Property Condition Disclosure Statement, Effective 6/2023; Updated 6/2025",
+ "source": "https://llr.sc.gov/re/recpdf/Property-Condition-Disclosure-Statement-06.2025.pdf",
+ "read": "2026-11-08",
+ "answers": [
+  "Yes",
+  "No",
+  "No Representation"
+ ],
+ "parts": [
+  {
+   "part": "I",
+   "name": "Water and sewer",
+   "items": [
+    {
+     "n": 1,
+     "key": "Water supply",
+     "plain": "Problems with the water supply",
+     "own": false,
+     "water": true,
+     "describe": false
+    },
+    {
+     "n": 2,
+     "key": "Water quality",
+     "plain": "Problems with water quality",
+     "own": false,
+     "water": true,
+     "describe": false
+    },
+    {
+     "n": 3,
+     "key": "Water pressure",
+     "plain": "Problems with water pressure",
+     "own": false,
+     "water": true,
+     "describe": false
+    },
+    {
+     "n": 4,
+     "key": "Sanitary sewage disposal system for any waste water",
+     "plain": "Problems with the sewer or septic system",
+     "own": false,
+     "water": false,
+     "describe": false
+    },
+    {
+     "n": "I-A",
+     "key": "Describe water supply",
+     "plain": "Where the water comes from: city, county, well or other",
+     "own": false,
+     "water": false,
+     "describe": true
+    },
+    {
+     "n": "I-B",
+     "key": "\u2610 Septic",
+     "plain": "Where waste water goes: septic, sewer or other",
+     "own": false,
+     "water": false,
+     "describe": true
+    },
+    {
+     "n": "I-C",
+     "key": "Describe water pipes",
+     "plain": "What the pipes are made of (PEX, PVC, copper, polybutylene, steel)",
+     "own": false,
+     "water": false,
+     "describe": true
+    }
+   ]
+  },
+  {
+   "part": "II",
+   "name": "Roof and structure",
+   "items": [
+    {
+     "n": 5,
+     "key": "Roof systems",
+     "plain": "Problems with the roof, the year it was put on, and any leaks or repairs while you owned it",
+     "own": true,
+     "water": false,
+     "describe": false
+    },
+    {
+     "n": 6,
+     "key": "Gutter systems",
+     "plain": "Problems with the gutters",
+     "own": false,
+     "water": false,
+     "describe": false
+    },
+    {
+     "n": 7,
+     "key": "Foundation, slab, fireplaces, chimneys",
+     "plain": "Problems with the foundation, floors, walls, windows, doors, decks or other structure, the year the house was built, and repairs while you owned it",
+     "own": true,
+     "water": false,
+     "describe": false
+    }
+   ]
+  },
+  {
+   "part": "III",
+   "name": "Plumbing, electrical, heating and cooling",
+   "items": [
+    {
+     "n": 8,
+     "key": "Plumbing system (pipes, fixtures, water heater",
+     "plain": "Problems with the plumbing or water heater",
+     "own": false,
+     "water": false,
+     "describe": false
+    },
+    {
+     "n": 9,
+     "key": "Electrical system (wiring, panel, fixtures",
+     "plain": "Problems with the wiring or electrical panel",
+     "own": false,
+     "water": false,
+     "describe": false
+    },
+    {
+     "n": 10,
+     "key": "Appliances (range, stove, ovens",
+     "plain": "Problems with the appliances",
+     "own": false,
+     "water": false,
+     "describe": false
+    },
+    {
+     "n": 11,
+     "key": "Built-in systems and fixtures (fans, irrigation, pool",
+     "plain": "Problems with built-in systems such as fans, irrigation, a pool or security",
+     "own": false,
+     "water": false,
+     "describe": false
+    },
+    {
+     "n": 12,
+     "key": "Mechanical systems (pumps, garage door opener",
+     "plain": "Problems with pumps, the garage door opener or other equipment",
+     "own": false,
+     "water": false,
+     "describe": false
+    },
+    {
+     "n": 13,
+     "key": "Heating system(s) (HVAC components)",
+     "plain": "Problems with the heating",
+     "own": false,
+     "water": false,
+     "describe": false
+    },
+    {
+     "n": 14,
+     "key": "Cooling system(s) (HVAC components)",
+     "plain": "Problems with the air conditioning, and its type and age",
+     "own": false,
+     "water": false,
+     "describe": false
+    }
+   ]
+  },
+  {
+   "part": "IV",
+   "name": "Termites and pests",
+   "items": [
+    {
+     "n": "IV-A",
+     "key": "Describe any known present wood problems caused by termites",
+     "plain": "Wood damage from termites, rot or fungus you know of now",
+     "own": false,
+     "water": false,
+     "describe": true
+    },
+    {
+     "n": "IV-B",
+     "key": "Describe any termite/pest treatment",
+     "plain": "Any termite treatment or termite bond, and who provides it",
+     "own": false,
+     "water": false,
+     "describe": true
+    },
+    {
+     "n": "IV-C",
+     "key": "Describe any known present pest infestations",
+     "plain": "Any pests in the house now",
+     "own": false,
+     "water": false,
+     "describe": true
+    }
+   ]
+  },
+  {
+   "part": "V",
+   "name": "Rules, permits, title and water",
+   "items": [
+    {
+     "n": 15,
+     "key": "Violations or variances of the following: zoning",
+     "plain": "Work done without a permit, or that breaks zoning or the neighborhood rules",
+     "own": false,
+     "water": false,
+     "describe": false
+    },
+    {
+     "n": 16,
+     "key": "Designation as a historic building",
+     "plain": "Whether the house is in a historic district",
+     "own": false,
+     "water": false,
+     "describe": false
+    },
+    {
+     "n": 17,
+     "key": "Easements (access, conservation, utility, other)",
+     "plain": "Easements, shared driveways, private roads, or a fence or building over the line",
+     "own": false,
+     "water": false,
+     "describe": false
+    },
+    {
+     "n": 18,
+     "key": "Legal actions, claims, foreclosures, bankruptcies",
+     "plain": "Lawsuits, liens, foreclosure, bankruptcy, insurance issues or government actions that could affect the title",
+     "own": false,
+     "water": false,
+     "describe": false
+    },
+    {
+     "n": 19,
+     "key": "Room additions or structural changes to the property during your ownership",
+     "plain": "Rooms added or structure changed while you owned it",
+     "own": true,
+     "water": false,
+     "describe": false
+    },
+    {
+     "n": 20,
+     "key": "Problems caused by fire, smoke, or water",
+     "plain": "Fire, smoke or water damage while you owned it, including any flooding",
+     "own": true,
+     "water": true,
+     "describe": false
+    },
+    {
+     "n": 21,
+     "key": "Drainage, soil stability, atmosphere, or underground problems",
+     "plain": "Drainage or soil problems",
+     "own": false,
+     "water": true,
+     "describe": false
+    },
+    {
+     "n": 22,
+     "key": "Erosion, erosion control, or erosion control structure",
+     "plain": "Erosion, or a seawall, bulkhead or sandbags",
+     "own": false,
+     "water": true,
+     "describe": false
+    },
+    {
+     "n": 23,
+     "key": "Flood hazards, wetlands, flood hazard designations, flood zones, or flood risk",
+     "plain": "Flood zone, wetlands or flood risk",
+     "own": false,
+     "water": true,
+     "describe": false
+    },
+    {
+     "n": 24,
+     "key": "Whether the property is currently insured through public",
+     "plain": "Whether the home has flood insurance now",
+     "own": false,
+     "water": true,
+     "describe": false
+    },
+    {
+     "n": 25,
+     "key": "Private or public flood insurance",
+     "plain": "Flood insurance claims while you owned it, with dates and amounts",
+     "own": true,
+     "water": true,
+     "describe": false
+    },
+    {
+     "n": 26,
+     "key": "Repairs made to the property as a result of flood events that were NOT filed",
+     "plain": "Flood repairs you paid for without a claim while you owned it",
+     "own": true,
+     "water": true,
+     "describe": false
+    },
+    {
+     "n": 27,
+     "key": "Has federal flood disaster assistance",
+     "plain": "Federal flood aid (FEMA, SBA or HUD) you received while you owned it",
+     "own": true,
+     "water": true,
+     "describe": false
+    },
+    {
+     "n": 28,
+     "key": "Whether the property has been assessed for a beach nourishment project",
+     "plain": "A charge for beach renourishment while you owned it",
+     "own": true,
+     "water": true,
+     "describe": false
+    },
+    {
+     "n": "V-A",
+     "key": "Describe any green energy, recycling, sustainability or disability features",
+     "plain": "Solar, energy or accessibility features",
+     "own": false,
+     "water": false,
+     "describe": true
+    },
+    {
+     "n": "V-B",
+     "key": "Describe any Department of Motor Vehicles titled manufactured housing",
+     "plain": "A manufactured home with a vehicle title on the land",
+     "own": false,
+     "water": false,
+     "describe": true
+    }
+   ]
+  },
+  {
+   "part": "VI",
+   "name": "Lead, mold and other hazards",
+   "items": [
+    {
+     "n": "VI-A",
+     "key": "Describe any known property environmental contamination problems",
+     "plain": "Lead paint, asbestos, radon, mold, storage tanks or other contamination you know of",
+     "own": false,
+     "water": false,
+     "describe": true
+    }
+   ]
+  },
+  {
+   "part": "VII",
+   "name": "Leases and vacation rentals",
+   "items": [
+    {
+     "n": "VII-A",
+     "key": "Describe the rental/lease terms",
+     "plain": "Leases and vacation rental bookings that will still be in place at closing",
+     "own": false,
+     "water": false,
+     "describe": true
+    },
+    {
+     "n": "VII-B",
+     "key": "State the name and contact information for any property management company",
+     "plain": "The rental manager, if any",
+     "own": false,
+     "water": false,
+     "describe": true
+    },
+    {
+     "n": "VII-C",
+     "key": "Describe known outstanding charges owed by tenant",
+     "plain": "Utility bills a tenant still owes",
+     "own": false,
+     "water": false,
+     "describe": true
+    }
+   ]
+  },
+  {
+   "part": "VIII",
+   "name": "Utility charges",
+   "items": [
+    {
+     "n": "VIII-A",
+     "key": "Describe any utility company financed or leased property",
+     "plain": "Equipment a utility company financed or leases on the property",
+     "own": false,
+     "water": false,
+     "describe": true
+    },
+    {
+     "n": "VIII-B",
+     "key": "Describe known delinquent charges for real property",
+     "plain": "Unpaid utility bills",
+     "own": false,
+     "water": false,
+     "describe": true
+    }
+   ]
+  },
+  {
+   "part": "IX",
+   "name": "HOA",
+   "items": [
+    {
+     "n": "IX",
+     "key": "If Yes, owner must complete the attached Residential Property Disclosure",
+     "plain": "Whether an HOA or condo association governs the home (if Yes, fill in the addendum)",
+     "own": false,
+     "water": false,
+     "describe": true
+    }
+   ]
+  }
+ ],
+ "addendum": [
+  {
+   "n": 1,
+   "key": "Are there owners association charges or common area expenses?",
+   "plain": "Association dues or shared costs"
+  },
+  {
+   "n": 2,
+   "key": "Are there any owners association or CCRBR resale or rental restrictions?",
+   "plain": "Rules on resale or renting"
+  },
+  {
+   "n": 3,
+   "key": "Has the owners association levied any special assessments",
+   "plain": "Special assessments"
+  },
+  {
+   "n": 4,
+   "key": "create guest or visitor restrictions?",
+   "plain": "Rules on guests"
+  },
+  {
+   "n": 5,
+   "key": "create animal restrictions?",
+   "plain": "Rules on pets"
+  },
+  {
+   "n": 6,
+   "key": "Does the property include assigned parking spaces",
+   "plain": "Assigned parking, storage or garages"
+  },
+  {
+   "n": 7,
+   "key": "Are keys, key fobs or access codes required",
+   "plain": "Keys, fobs or codes for shared areas"
+  },
+  {
+   "n": 8,
+   "key": "Will any membership other than owner association transfer",
+   "plain": "Other memberships that go with the home"
+  },
+  {
+   "n": 9,
+   "key": "Are there any known common area problems?",
+   "plain": "Problems in the shared areas"
+  },
+  {
+   "n": 10,
+   "key": "Coastal Zone",
+   "plain": "Whether the state's coastal zone law applies to the home or shared buildings"
+  },
+  {
+   "n": 11,
+   "key": "Is there a transfer fee levied to transfer the property?",
+   "plain": "A transfer fee"
+  }
+ ],
+ "counts": {
+  "parts": 9,
+  "numbered": 28,
+  "own_years_only": [
+   5,
+   7,
+   19,
+   20,
+   25,
+   26,
+   27,
+   28
+  ],
+  "water_or_coast": [
+   1,
+   2,
+   3,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28
+  ],
+  "addendum": 11
+ }
+}

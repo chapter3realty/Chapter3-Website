@@ -232,6 +232,18 @@ const FROM = {
   "florida": love("Florida", [...towns(["Conway", "Myrtle Beach", "Longs", "Little River"], H({ min: "320000", max: "700000", yearMin: "2015", has: "garage", not: "flood_zone" })), H({ city: "Myrtle Beach", min: "380000", max: "900000", yearMin: "2005", has: "pool" })], { post: { yearMin: 2005 } }),
 };
 
+/* Batch 2026-11-n (owner, 2026-11-08: "the buyer pages dont have a highly personalized IDX feed they definitely should"):
+   each new page's feed is the homes its reader came for; the seller pages that show homes show what a seller competes
+   with or moves to, lower on the page. The pages' own strips (idx-lib/places.js) sit where the article talks about them. */
+const POOL_HOMES = { ...cut("Houses for sale with their own pool", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet", "Conway"], H({ min: "250000", has: "pool" })), "type=house&has=pool", NEWEST), withStrips: true };
+const BEACH_WALK = { ...cut("Houses you can walk to the beach from", towns(["North Myrtle Beach", "Myrtle Beach", "Surfside Beach", "Garden City", "Murrells Inlet"], H({ min: "250000", has: "walk_to_beach" })), "type=house&has=walk_to_beach", NEWEST), withStrips: true };
+/* Owner, 2026-11-08: "instead of just listed i would say new construction on the grand strand which is closer related to the blog". */
+const NEW_BUILDS = { ...cut("New construction on the Grand Strand", towns(["Myrtle Beach", "Conway", "Little River", "Longs", "North Myrtle Beach"], H({ min: "220000", has: "new_construction" })), "has=new_construction", NEWEST), withStrips: true };
+/* Owner, 2026-11-08: "people are looking for a house in a specific spot so i say put it up top". */
+const MARKET_COMMON = { head: "For sale now in The Market Common", q: [{ subdivision: "Market Common", status: "active" }], post: { minPhotos: 6, yearMin: 1990 }, link: "subdivision=Market%20Common", withStrips: true };
+const SELLER_NEXT = { ...NEWEST, head: "Just listed: your next home", low: true };
+const SELLER_COMPETE = { ...NEWEST, head: "Your competition: listed in the last 3 weeks", low: true };
+
 export const FEEDS = {
   "/buyers/": NEWEST,
   "/buyers/buying-in-myrtle-beach/": MB_CUT,
@@ -242,6 +254,12 @@ export const FEEDS = {
   "/buyers/retirees/": ONE_LEVEL,
   "/buyers/second-home/": TOP_VACATION,
   "/buyers/new-construction/": QUICK,
+  "/buyers/new-construction/builders/": NEW_BUILDS,
+  "/buyers/pool-homes/": POOL_HOMES,
+  "/buyers/homes-near-the-beach/": BEACH_WALK,
+  "/submarkets/myrtle-beach/market-common/": MARKET_COMMON,
+  "/sell/sell-or-buy-first/": SELLER_NEXT,
+  "/sell/best-time-to-sell/": SELLER_COMPETE,
   "/buyers/cost-to-own/": COST_TO_OWN,
   "/buyers/waterfront-homes/": DOCK,
   "/buyers/golf-communities/": ON_COURSE,

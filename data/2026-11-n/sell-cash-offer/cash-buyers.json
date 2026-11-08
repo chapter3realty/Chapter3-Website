@@ -1,0 +1,358 @@
+{
+ "meta": {
+  "made": "cash_buyers.py",
+  "sales_file": "data/2026-10-d/sell-out-of-state-buyers/out-of-state-buyers.json",
+  "deeds": "Horry County Register of Deeds, AcclaimWeb DEED (001), recorded 2025-10-01..2026-09-30, first-named grantor and grantee",
+  "company": "first-named grantee's name has LLC, Inc., Corp., Company, LP, Ltd., Holdings, Properties, Investments, Group, Homes, Rentals and like words; banks, government, churches and charities counted apart",
+  "resale": "seller is not a home builder (builder list in out-of-state analyze.py)",
+  "note": "No names are written here. A deed shows who bought, not whether they paid cash."
+ },
+ "home_sales": 13194,
+ "resales": 11047,
+ "buyer_kinds_resale": [
+  [
+   "person",
+   9347
+  ],
+  [
+   "company",
+   1298
+  ],
+  [
+   "trust",
+   385
+  ],
+  [
+   "bank_or_agency",
+   17
+  ]
+ ],
+ "all_resales": {
+  "sales": 11047,
+  "company_buyer": 1298,
+  "pct_company": 11.7
+ },
+ "resales_seller_person_or_trust_or_estate": {
+  "sales": 9501,
+  "company_buyer": 955,
+  "pct_company": 10.1
+ },
+ "resales_seller_estate": {
+  "sales": 0,
+  "company_buyer": 0,
+  "pct_company": null
+ },
+ "houses_resale": {
+  "sales": 8569,
+  "company_buyer": 897,
+  "pct_company": 10.5
+ },
+ "condos_resale": {
+  "sales": 2478,
+  "company_buyer": 401,
+  "pct_company": 16.2
+ },
+ "by_band_resale": [
+  {
+   "band": "under $150,000",
+   "sales": 1485,
+   "company_buyer": 380,
+   "pct_company": 25.6
+  },
+  {
+   "band": "$150,000 to $249,999",
+   "sales": 2459,
+   "company_buyer": 332,
+   "pct_company": 13.5
+  },
+  {
+   "band": "$250,000 to $349,999",
+   "sales": 2789,
+   "company_buyer": 181,
+   "pct_company": 6.5
+  },
+  {
+   "band": "$350,000 to $499,999",
+   "sales": 2245,
+   "company_buyer": 154,
+   "pct_company": 6.9
+  },
+  {
+   "band": "$500,000 and up",
+   "sales": 2069,
+   "company_buyer": 251,
+   "pct_company": 12.1
+  }
+ ],
+ "by_band_houses_resale": [
+  {
+   "band": "under $150,000",
+   "sales": 905,
+   "company_buyer": 251,
+   "pct_company": 27.7
+  },
+  {
+   "band": "$150,000 to $249,999",
+   "sales": 1536,
+   "company_buyer": 223,
+   "pct_company": 14.5
+  },
+  {
+   "band": "$250,000 to $349,999",
+   "sales": 2350,
+   "company_buyer": 133,
+   "pct_company": 5.7
+  },
+  {
+   "band": "$350,000 to $499,999",
+   "sales": 1948,
+   "company_buyer": 96,
+   "pct_company": 4.9
+  },
+  {
+   "band": "$500,000 and up",
+   "sales": 1830,
+   "company_buyer": 194,
+   "pct_company": 10.6
+  }
+ ],
+ "by_place_resale_min150": [
+  {
+   "place": "Surfside Beach town",
+   "sales": 177,
+   "company_buyer": 40,
+   "pct_company": 22.6
+  },
+  {
+   "place": "Myrtle Beach city",
+   "sales": 1662,
+   "company_buyer": 338,
+   "pct_company": 20.3
+  },
+  {
+   "place": "Red Hill CDP",
+   "sales": 270,
+   "company_buyer": 43,
+   "pct_company": 15.9
+  },
+  {
+   "place": "unknown",
+   "sales": 681,
+   "company_buyer": 108,
+   "pct_company": 15.9
+  },
+  {
+   "place": "North Myrtle Beach city",
+   "sales": 1555,
+   "company_buyer": 240,
+   "pct_company": 15.4
+  },
+  {
+   "place": "Garden City CDP",
+   "sales": 402,
+   "company_buyer": 51,
+   "pct_company": 12.7
+  },
+  {
+   "place": "Socastee CDP",
+   "sales": 346,
+   "company_buyer": 36,
+   "pct_company": 10.4
+  },
+  {
+   "place": "Conway city",
+   "sales": 341,
+   "company_buyer": 35,
+   "pct_company": 10.3
+  },
+  {
+   "place": "outside any Census place",
+   "sales": 4345,
+   "company_buyer": 346,
+   "pct_company": 8.0
+  },
+  {
+   "place": "Little River CDP",
+   "sales": 544,
+   "company_buyer": 29,
+   "pct_company": 5.3
+  },
+  {
+   "place": "Carolina Forest CDP",
+   "sales": 505,
+   "company_buyer": 19,
+   "pct_company": 3.8
+  }
+ ],
+ "by_month_resale": [
+  {
+   "month": "2025-10",
+   "sales": 1049,
+   "company_buyer": 132,
+   "pct_company": 12.6
+  },
+  {
+   "month": "2025-11",
+   "sales": 812,
+   "company_buyer": 93,
+   "pct_company": 11.5
+  },
+  {
+   "month": "2025-12",
+   "sales": 876,
+   "company_buyer": 110,
+   "pct_company": 12.6
+  },
+  {
+   "month": "2026-01",
+   "sales": 678,
+   "company_buyer": 71,
+   "pct_company": 10.5
+  },
+  {
+   "month": "2026-02",
+   "sales": 723,
+   "company_buyer": 96,
+   "pct_company": 13.3
+  },
+  {
+   "month": "2026-03",
+   "sales": 920,
+   "company_buyer": 114,
+   "pct_company": 12.4
+  },
+  {
+   "month": "2026-04",
+   "sales": 966,
+   "company_buyer": 116,
+   "pct_company": 12.0
+  },
+  {
+   "month": "2026-05",
+   "sales": 1051,
+   "company_buyer": 131,
+   "pct_company": 12.5
+  },
+  {
+   "month": "2026-06",
+   "sales": 1056,
+   "company_buyer": 134,
+   "pct_company": 12.7
+  },
+  {
+   "month": "2026-07",
+   "sales": 1043,
+   "company_buyer": 107,
+   "pct_company": 10.3
+  },
+  {
+   "month": "2026-08",
+   "sales": 943,
+   "company_buyer": 91,
+   "pct_company": 9.7
+  },
+  {
+   "month": "2026-09",
+   "sales": 930,
+   "company_buyer": 103,
+   "pct_company": 11.1
+  }
+ ],
+ "instant_offer_company_buyers_resale": 20,
+ "company_buyers": {
+  "distinct_names": 1045,
+  "names_with_one_purchase": 922,
+  "names_with_5_or_more": 13,
+  "purchases_by_names_with_5_or_more": 120
+ },
+ "median_price_resale": {
+  "company_buyer": 225000,
+  "person_buyer": 307000,
+  "house_company_buyer": 230000,
+  "house_person_buyer": 327500,
+  "house_all": 324900
+ },
+ "vs_neighbors": {
+  "rule": "price / median price person buyers paid in the same subdivision or building, same kind, 5+ person-buyer resales; seller a person, trust or estate",
+  "house_company_buyer": {
+   "n": 215,
+   "median": 0.894,
+   "p25": 0.687,
+   "p75": 1.157,
+   "share_below_80pct": 38.1,
+   "share_below_70pct": 26.5
+  },
+  "condo_company_buyer": {
+   "n": 172,
+   "median": 0.969,
+   "p25": 0.834,
+   "p75": 1.145,
+   "share_below_80pct": 20.3,
+   "share_below_70pct": 11.0
+  }
+ },
+ "company_resold": {
+  "rule": "same parcel; deed to a company (seller not a builder), then a later deed in the window whose first-named grantor is that company (compressed name match). Both deeds must be in the 12-month window, so every hold here is under a year.",
+  "all": {
+   "n": 107,
+   "median_days": 80,
+   "median_buy": 171500,
+   "median_sell": 254900,
+   "median_buy_as_pct_of_sell": 70.0,
+   "p25_pct": 58.3,
+   "p75_pct": 83.6,
+   "median_gap": 72000,
+   "share_sold_for_more": 92.5,
+   "second_buyer_person": 75.7
+  },
+  "within_30_days": {
+   "n": 25,
+   "median_days": 3,
+   "median_buy": 142500,
+   "median_sell": 175000,
+   "median_buy_as_pct_of_sell": 77.0,
+   "p25_pct": 62.3,
+   "p75_pct": 86.4,
+   "median_gap": 35000,
+   "share_sold_for_more": 88.0,
+   "second_buyer_person": 48.0
+  },
+  "within_30_days_from_person_seller": {
+   "n": 22,
+   "median_days": 2,
+   "median_buy": 136250,
+   "median_sell": 168750,
+   "median_buy_as_pct_of_sell": 77.0,
+   "p25_pct": 62.3,
+   "p75_pct": 89.3,
+   "median_gap": 33750,
+   "share_sold_for_more": 86.4,
+   "second_buyer_person": 50.0
+  },
+  "31_to_365_days": {
+   "n": 82,
+   "median_days": 115,
+   "median_buy": 175000,
+   "median_sell": 268950,
+   "median_buy_as_pct_of_sell": 68.8,
+   "p25_pct": 56.1,
+   "p75_pct": 81.1,
+   "median_gap": 78500,
+   "share_sold_for_more": 93.9,
+   "second_buyer_person": 84.1
+  },
+  "31_to_365_days_houses_from_person_seller": {
+   "n": 67,
+   "median_days": 119,
+   "median_buy": 170000,
+   "median_sell": 260000,
+   "median_buy_as_pct_of_sell": 68.3,
+   "p25_pct": 54.9,
+   "p75_pct": 77.7,
+   "median_gap": 85000,
+   "share_sold_for_more": 97.0,
+   "second_buyer_person": 83.6
+  },
+  "left_out_under_25pct": 15
+ }
+}

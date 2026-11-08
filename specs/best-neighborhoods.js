@@ -270,7 +270,7 @@ const ENTRIES = [
   ], "Resale houses in Waterbridge usually sold for about $630,000 last year, and new ones from builders for about $550,000. The HOA fee is about $150 a month."),
 
   ENTRY("market-common", "a Saturday market you can walk to", [
-    `From the middle of The Market Common, ${h.ext(MARKET, "the farmers market")} at Valor Park is about a five-minute walk. It is held on Saturdays from April to mid-December.`,
+    `From the middle of The Market Common, ${h.ext(MARKET, "the farmers market")} at Valor Park is about a five-minute walk. It is held on Saturdays from April to mid-December. Our ${h.a("/submarkets/myrtle-beach/market-common/", "guide to The Market Common")} covers each of its neighborhoods.`,
     "The neighborhood stands on the old Myrtle Beach Air Force Base, which closed in 1993. Three Air Force jets, among them an A-10 Warthog, stand in Warbird Park, on loan to the city.",
     "Grand Park, with seven ball fields, picnic shelters and a playground, is a two-minute walk from the middle of the neighborhood. The houses and townhomes are close together, beside a district of shops and offices.",
   ], "Houses in The Market Common usually sold for about $540,000 last year, and townhomes for about $398,000."),
@@ -335,7 +335,7 @@ module.exports = G.page({
       + D.neighborhoods.map((n, i) => `<tr><th scope="row"><a href="#${n.id}">${i + 1}. ${n.short}</a></th><td>${n.cells.price}</td><td>${n.cells.fee}</td><td>${n.cells.beach}</td></tr>`).join("")
       + `</tbody></table></div>`
       + h.p("Times are by car with no traffic, except Cherry Grove and Surfside Beach, which are on foot. Each time is from the middle of the neighborhood to the nearest public beach access.")
-      + h.p(`For clubs and gates, see our ${h.a(GATED, "guide to gated communities near Myrtle Beach")}. If price matters most, see ${h.a("/buyers/affordable-places-to-live/", "the most affordable places near Myrtle Beach")}. For no HOA fee at all, see ${h.a("/buyers/no-hoa-homes/", "homes with no HOA near Myrtle Beach")}. Our ${h.a("/buyers/55-plus-communities/", "guide to 55+ communities near Myrtle Beach")} compares four with a 55+ age rule.`) },
+      + h.p(`For clubs and gates, see our ${h.a(GATED, "guide to gated communities near Myrtle Beach")}. If price matters most, see ${h.a("/buyers/affordable-places-to-live/", "the most affordable places near Myrtle Beach")}. For no HOA fee at all, see ${h.a("/buyers/no-hoa-homes/", "homes with no HOA near Myrtle Beach")}. Our ${h.a("/buyers/55-plus-communities/", "guide to 55+ communities near Myrtle Beach")} compares four with a 55+ age rule. To walk to the sand from a house, see ${h.a("/buyers/homes-near-the-beach/", "houses near the beach")}. For a pool of your own, see ${h.a("/buyers/pool-homes/", "homes with a pool near Myrtle Beach")}.`) },
   ],
   faqTitle: "Best neighborhoods in Myrtle Beach: FAQ",
   faq: [

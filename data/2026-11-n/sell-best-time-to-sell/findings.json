@@ -1,0 +1,2604 @@
+{
+ "meta": {
+  "made": "analyze.py",
+  "source": "Horry County Register of Deeds AcclaimWeb, DEED (001) index, recorded 2019-01-01 to 2026-10-31 (pulled); used from 2020-07-01, when the index starts to carry a parcel number on nearly every deed; Horry County GIS parcel layer 24 read 2026-11-08",
+  "note": "No names, no addresses, no parcel numbers in this file. Rerun pull_deeds.py and fetch_parcels.py to see the rows."
+ },
+ "summary": {
+  "filters": {
+   "under_10000": 79108,
+   "not_one_parcel": 26868,
+   "under_30pct_of_county_value": 4381,
+   "kept_resale": 87437,
+   "taxsale_foreclosure_or_corrective": 285,
+   "kept_new": 25503,
+   "not_residential_building_now": 14908,
+   "sold_to_builder_lot": 2484,
+   "not_in_parcel_layer": 1861,
+   "duplicate_row": 1
+  },
+  "rule": "Deeds of $10,000 or more on one parcel; no tax sale, sheriff, master-in-equity, foreclosure or corrective deed; the parcel is residential (land use 1xx) with a building on the county roll today; not sold to a builder; price at least 30 percent of the county's current market value. 'new' = seller matches the builder list; 'resale' = everything else. 'condo' = the county legal description has HPR (horizontal property regime).",
+  "resale_all": {
+   "by_month": {
+    "2020-07": {
+     "n": 1440,
+     "median": 192500.0
+    },
+    "2020-08": {
+     "n": 1298,
+     "median": 202000.0
+    },
+    "2020-09": {
+     "n": 1379,
+     "median": 210000.0
+    },
+    "2020-10": {
+     "n": 1500,
+     "median": 208604.0
+    },
+    "2020-11": {
+     "n": 1244,
+     "median": 218500.0
+    },
+    "2020-12": {
+     "n": 1479,
+     "median": 212000.0
+    },
+    "2021-01": {
+     "n": 1073,
+     "median": 220000.0
+    },
+    "2021-02": {
+     "n": 1053,
+     "median": 205000.0
+    },
+    "2021-03": {
+     "n": 1723,
+     "median": 215000.0
+    },
+    "2021-04": {
+     "n": 1628,
+     "median": 219900.0
+    },
+    "2021-05": {
+     "n": 1673,
+     "median": 219000.0
+    },
+    "2021-06": {
+     "n": 1785,
+     "median": 231100.0
+    },
+    "2021-07": {
+     "n": 1504,
+     "median": 230000.0
+    },
+    "2021-08": {
+     "n": 1563,
+     "median": 238000.0
+    },
+    "2021-09": {
+     "n": 1522,
+     "median": 245000.0
+    },
+    "2021-10": {
+     "n": 1531,
+     "median": 245000.0
+    },
+    "2021-11": {
+     "n": 1496,
+     "median": 250000.0
+    },
+    "2021-12": {
+     "n": 1559,
+     "median": 245000.0
+    },
+    "2022-01": {
+     "n": 1195,
+     "median": 248000.0
+    },
+    "2022-02": {
+     "n": 1115,
+     "median": 255000.0
+    },
+    "2022-03": {
+     "n": 1694,
+     "median": 264900.0
+    },
+    "2022-04": {
+     "n": 1468,
+     "median": 275000.0
+    },
+    "2022-05": {
+     "n": 1459,
+     "median": 289000.0
+    },
+    "2022-06": {
+     "n": 1467,
+     "median": 295000.0
+    },
+    "2022-07": {
+     "n": 1127,
+     "median": 280000.0
+    },
+    "2022-08": {
+     "n": 1257,
+     "median": 290000.0
+    },
+    "2022-09": {
+     "n": 1094,
+     "median": 285000.0
+    },
+    "2022-10": {
+     "n": 1038,
+     "median": 287500.0
+    },
+    "2022-11": {
+     "n": 871,
+     "median": 275000.0
+    },
+    "2022-12": {
+     "n": 814,
+     "median": 280000.0
+    },
+    "2023-01": {
+     "n": 749,
+     "median": 269500.0
+    },
+    "2023-02": {
+     "n": 722,
+     "median": 275000.0
+    },
+    "2023-03": {
+     "n": 1141,
+     "median": 289900.0
+    },
+    "2023-04": {
+     "n": 1005,
+     "median": 281000.0
+    },
+    "2023-05": {
+     "n": 1141,
+     "median": 294000.0
+    },
+    "2023-06": {
+     "n": 1137,
+     "median": 300000.0
+    },
+    "2023-07": {
+     "n": 919,
+     "median": 302000.0
+    },
+    "2023-08": {
+     "n": 1058,
+     "median": 304000.0
+    },
+    "2023-09": {
+     "n": 1041,
+     "median": 295000.0
+    },
+    "2023-10": {
+     "n": 882,
+     "median": 296500.0
+    },
+    "2023-11": {
+     "n": 789,
+     "median": 289400.0
+    },
+    "2023-12": {
+     "n": 738,
+     "median": 291000.0
+    },
+    "2024-01": {
+     "n": 637,
+     "median": 305000.0
+    },
+    "2024-02": {
+     "n": 773,
+     "median": 294900.0
+    },
+    "2024-03": {
+     "n": 896,
+     "median": 300000.0
+    },
+    "2024-04": {
+     "n": 1064,
+     "median": 305000.0
+    },
+    "2024-05": {
+     "n": 1087,
+     "median": 315000.0
+    },
+    "2024-06": {
+     "n": 977,
+     "median": 310000.0
+    },
+    "2024-07": {
+     "n": 972,
+     "median": 309000.0
+    },
+    "2024-08": {
+     "n": 975,
+     "median": 300000.0
+    },
+    "2024-09": {
+     "n": 845,
+     "median": 306997.0
+    },
+    "2024-10": {
+     "n": 903,
+     "median": 302500.0
+    },
+    "2024-11": {
+     "n": 828,
+     "median": 315000.0
+    },
+    "2024-12": {
+     "n": 829,
+     "median": 310000.0
+    },
+    "2025-01": {
+     "n": 709,
+     "median": 305000.0
+    },
+    "2025-02": {
+     "n": 734,
+     "median": 285000.0
+    },
+    "2025-03": {
+     "n": 870,
+     "median": 290000.0
+    },
+    "2025-04": {
+     "n": 965,
+     "median": 315000.0
+    },
+    "2025-05": {
+     "n": 973,
+     "median": 310000.0
+    },
+    "2025-06": {
+     "n": 1017,
+     "median": 300000.0
+    },
+    "2025-07": {
+     "n": 964,
+     "median": 310000.0
+    },
+    "2025-08": {
+     "n": 985,
+     "median": 299999.0
+    },
+    "2025-09": {
+     "n": 956,
+     "median": 309900.0
+    },
+    "2025-10": {
+     "n": 1026,
+     "median": 300000.0
+    },
+    "2025-11": {
+     "n": 794,
+     "median": 308050.0
+    },
+    "2025-12": {
+     "n": 854,
+     "median": 305000.0
+    },
+    "2026-01": {
+     "n": 659,
+     "median": 302000.0
+    },
+    "2026-02": {
+     "n": 710,
+     "median": 290000.0
+    },
+    "2026-03": {
+     "n": 894,
+     "median": 286750.0
+    },
+    "2026-04": {
+     "n": 948,
+     "median": 299900.0
+    },
+    "2026-05": {
+     "n": 1037,
+     "median": 310000.0
+    },
+    "2026-06": {
+     "n": 1049,
+     "median": 308000.0
+    },
+    "2026-07": {
+     "n": 1033,
+     "median": 310000.0
+    },
+    "2026-08": {
+     "n": 929,
+     "median": 319900.0
+    },
+    "2026-09": {
+     "n": 912,
+     "median": 310000.0
+    },
+    "2026-10": {
+     "n": 932,
+     "median": 300000.0
+    }
+   },
+   "typical_month": {
+    "1": {
+     "avg_share_of_year_pct": 6.63,
+     "avg_median_vs_year_pct": -4.4,
+     "min_share_pct": 5.91,
+     "max_share_pct": 8.19,
+     "years_above_year_median": 1,
+     "no_2021_share_pct": 6.81,
+     "no_2021_median_vs_year_pct": -4.41
+    },
+    "2": {
+     "avg_share_of_year_pct": 6.75,
+     "avg_median_vs_year_pct": -6.79,
+     "min_share_pct": 5.81,
+     "max_share_pct": 7.64,
+     "years_above_year_median": 0,
+     "no_2021_share_pct": 6.99,
+     "no_2021_median_vs_year_pct": -5.77
+    },
+    "3": {
+     "avg_share_of_year_pct": 9.5,
+     "avg_median_vs_year_pct": -3.52,
+     "min_share_pct": 8.02,
+     "max_share_pct": 11.6,
+     "years_above_year_median": 0,
+     "no_2021_share_pct": 9.5,
+     "no_2021_median_vs_year_pct": -2.77
+    },
+    "4": {
+     "avg_share_of_year_pct": 9.34,
+     "avg_median_vs_year_pct": -1.0,
+     "min_share_pct": 8.88,
+     "max_share_pct": 10.06,
+     "years_above_year_median": 1,
+     "no_2021_share_pct": 9.42,
+     "no_2021_median_vs_year_pct": -0.15
+    },
+    "5": {
+     "avg_share_of_year_pct": 9.67,
+     "avg_median_vs_year_pct": 1.15,
+     "min_share_pct": 8.97,
+     "max_share_pct": 10.08,
+     "years_above_year_median": 4,
+     "no_2021_share_pct": 9.78,
+     "no_2021_median_vs_year_pct": 2.64
+    },
+    "6": {
+     "avg_share_of_year_pct": 9.68,
+     "avg_median_vs_year_pct": 2.07,
+     "min_share_pct": 9.06,
+     "max_share_pct": 10.05,
+     "years_above_year_median": 4,
+     "no_2021_share_pct": 9.63,
+     "no_2021_median_vs_year_pct": 2.47
+    },
+    "7": {
+     "avg_share_of_year_pct": 8.41,
+     "avg_median_vs_year_pct": 1.61,
+     "min_share_pct": 7.72,
+     "max_share_pct": 9.01,
+     "years_above_year_median": 4,
+     "no_2021_share_pct": 8.43,
+     "no_2021_median_vs_year_pct": 2.01
+    },
+    "8": {
+     "avg_share_of_year_pct": 8.94,
+     "avg_median_vs_year_pct": 1.92,
+     "min_share_pct": 8.61,
+     "max_share_pct": 9.34,
+     "years_above_year_median": 3,
+     "no_2021_share_pct": 9.02,
+     "no_2021_median_vs_year_pct": 1.53
+    },
+    "9": {
+     "avg_share_of_year_pct": 8.35,
+     "avg_median_vs_year_pct": 2.66,
+     "min_share_pct": 7.49,
+     "max_share_pct": 9.19,
+     "years_above_year_median": 5,
+     "no_2021_share_pct": 8.33,
+     "no_2021_median_vs_year_pct": 1.7
+    },
+    "10": {
+     "avg_share_of_year_pct": 8.24,
+     "avg_median_vs_year_pct": 2.0,
+     "min_share_pct": 7.11,
+     "max_share_pct": 9.46,
+     "years_above_year_median": 3,
+     "no_2021_share_pct": 8.18,
+     "no_2021_median_vs_year_pct": 0.87
+    },
+    "11": {
+     "avg_share_of_year_pct": 7.24,
+     "avg_median_vs_year_pct": 2.39,
+     "min_share_pct": 5.97,
+     "max_share_pct": 8.26,
+     "years_above_year_median": 3,
+     "no_2021_share_pct": 6.98,
+     "no_2021_median_vs_year_pct": 0.81
+    },
+    "12": {
+     "avg_share_of_year_pct": 7.25,
+     "avg_median_vs_year_pct": 1.9,
+     "min_share_pct": 5.58,
+     "max_share_pct": 8.61,
+     "years_above_year_median": 4,
+     "no_2021_share_pct": 6.91,
+     "no_2021_median_vs_year_pct": 0.74
+    }
+   },
+   "by_year": {
+    "2021": {
+     "n": 18110,
+     "median": 230000.0
+    },
+    "2022": {
+     "n": 14599,
+     "median": 275001.0
+    },
+    "2023": {
+     "n": 11322,
+     "median": 292500.0
+    },
+    "2024": {
+     "n": 10786,
+     "median": 305000.0
+    },
+    "2025": {
+     "n": 10847,
+     "median": 304900.0
+    }
+   },
+   "jan_oct": {
+    "2021": {
+     "n": 15055,
+     "median": 227000.0
+    },
+    "2022": {
+     "n": 12914,
+     "median": 275000.0
+    },
+    "2023": {
+     "n": 9795,
+     "median": 293000.0
+    },
+    "2024": {
+     "n": 9129,
+     "median": 305000.0
+    },
+    "2025": {
+     "n": 9199,
+     "median": 304000.0
+    },
+    "2026": {
+     "n": 9103,
+     "median": 305000.0
+    }
+   },
+   "pooled_5yr_by_month": {
+    "1": {
+     "n": 4363,
+     "median_of_month_medians": 269500.0
+    },
+    "2": {
+     "n": 4397,
+     "median_of_month_medians": 275000.0
+    },
+    "3": {
+     "n": 6324,
+     "median_of_month_medians": 289900.0
+    },
+    "4": {
+     "n": 6130,
+     "median_of_month_medians": 281000.0
+    },
+    "5": {
+     "n": 6333,
+     "median_of_month_medians": 294000.0
+    },
+    "6": {
+     "n": 6383,
+     "median_of_month_medians": 300000.0
+    },
+    "7": {
+     "n": 5486,
+     "median_of_month_medians": 302000.0
+    },
+    "8": {
+     "n": 5838,
+     "median_of_month_medians": 299999.0
+    },
+    "9": {
+     "n": 5458,
+     "median_of_month_medians": 295000.0
+    },
+    "10": {
+     "n": 5380,
+     "median_of_month_medians": 296500.0
+    },
+    "11": {
+     "n": 4778,
+     "median_of_month_medians": 289400.0
+    },
+    "12": {
+     "n": 4794,
+     "median_of_month_medians": 291000.0
+    }
+   },
+   "centred_13mo": {
+    "1": {
+     "avg_pct": -1.06,
+     "years_above": 2,
+     "each_year_pct": [
+      2.3,
+      -3.0,
+      -6.3,
+      1.7,
+      0.0
+     ]
+    },
+    "2": {
+     "avg_pct": -4.33,
+     "years_above": 0,
+     "each_year_pct": [
+      -6.3,
+      -1.9,
+      -5.1,
+      -1.7,
+      -6.6
+     ]
+    },
+    "3": {
+     "avg_pct": -1.45,
+     "years_above": 0,
+     "each_year_pct": [
+      -2.3,
+      -0.0,
+      -0.0,
+      0.0,
+      -4.9
+     ]
+    },
+    "4": {
+     "avg_pct": 0.36,
+     "years_above": 3,
+     "each_year_pct": [
+      -2.3,
+      2.2,
+      -3.1,
+      1.7,
+      3.3
+     ]
+    },
+    "5": {
+     "avg_pct": 1.96,
+     "years_above": 4,
+     "each_year_pct": [
+      -3.5,
+      7.0,
+      1.4,
+      3.3,
+      1.6
+     ]
+    },
+    "6": {
+     "avg_pct": 2.21,
+     "years_above": 4,
+     "each_year_pct": [
+      0.5,
+      7.3,
+      3.2,
+      1.6,
+      -1.6
+     ]
+    },
+    "7": {
+     "avg_pct": 1.55,
+     "years_above": 4,
+     "each_year_pct": [
+      0.0,
+      1.8,
+      2.7,
+      1.3,
+      1.9
+     ]
+    },
+    "8": {
+     "avg_pct": 1.29,
+     "years_above": 3,
+     "each_year_pct": [
+      2.1,
+      3.6,
+      3.1,
+      -1.6,
+      -0.7
+     ]
+    },
+    "9": {
+     "avg_pct": 1.66,
+     "years_above": 4,
+     "each_year_pct": [
+      3.8,
+      1.8,
+      -0.6,
+      0.7,
+      2.6
+     ]
+    },
+    "10": {
+     "avg_pct": -0.17,
+     "years_above": 2,
+     "each_year_pct": [
+      1.2,
+      0.9,
+      -0.8,
+      -0.8,
+      -1.3
+     ]
+    },
+    "11": {
+     "avg_pct": -0.29,
+     "years_above": 3,
+     "each_year_pct": [
+      0.8,
+      -3.5,
+      -3.5,
+      2.9,
+      1.8
+     ]
+    },
+    "12": {
+     "avg_pct": -0.95,
+     "years_above": 2,
+     "each_year_pct": [
+      -2.8,
+      -2.3,
+      -3.0,
+      1.6,
+      1.7
+     ]
+    }
+   }
+  },
+  "resale_condo": {
+   "by_month": {
+    "2020-07": {
+     "n": 354,
+     "median": 145000.0
+    },
+    "2020-08": {
+     "n": 348,
+     "median": 157000.0
+    },
+    "2020-09": {
+     "n": 322,
+     "median": 145250.0
+    },
+    "2020-10": {
+     "n": 371,
+     "median": 156500.0
+    },
+    "2020-11": {
+     "n": 333,
+     "median": 155000.0
+    },
+    "2020-12": {
+     "n": 400,
+     "median": 159250.0
+    },
+    "2021-01": {
+     "n": 296,
+     "median": 160000.0
+    },
+    "2021-02": {
+     "n": 306,
+     "median": 142000.0
+    },
+    "2021-03": {
+     "n": 486,
+     "median": 158500.0
+    },
+    "2021-04": {
+     "n": 482,
+     "median": 158950.0
+    },
+    "2021-05": {
+     "n": 494,
+     "median": 164500.0
+    },
+    "2021-06": {
+     "n": 523,
+     "median": 160000.0
+    },
+    "2021-07": {
+     "n": 394,
+     "median": 165000.0
+    },
+    "2021-08": {
+     "n": 443,
+     "median": 165000.0
+    },
+    "2021-09": {
+     "n": 415,
+     "median": 165000.0
+    },
+    "2021-10": {
+     "n": 409,
+     "median": 185100.0
+    },
+    "2021-11": {
+     "n": 428,
+     "median": 190000.0
+    },
+    "2021-12": {
+     "n": 425,
+     "median": 182000.0
+    },
+    "2022-01": {
+     "n": 368,
+     "median": 190000.0
+    },
+    "2022-02": {
+     "n": 345,
+     "median": 202000.0
+    },
+    "2022-03": {
+     "n": 538,
+     "median": 215000.0
+    },
+    "2022-04": {
+     "n": 441,
+     "median": 212678.0
+    },
+    "2022-05": {
+     "n": 430,
+     "median": 230000.0
+    },
+    "2022-06": {
+     "n": 405,
+     "median": 238000.0
+    },
+    "2022-07": {
+     "n": 295,
+     "median": 224900.0
+    },
+    "2022-08": {
+     "n": 328,
+     "median": 233000.0
+    },
+    "2022-09": {
+     "n": 312,
+     "median": 239900.0
+    },
+    "2022-10": {
+     "n": 299,
+     "median": 230900.0
+    },
+    "2022-11": {
+     "n": 232,
+     "median": 225000.0
+    },
+    "2022-12": {
+     "n": 224,
+     "median": 224950.0
+    },
+    "2023-01": {
+     "n": 174,
+     "median": 205000.0
+    },
+    "2023-02": {
+     "n": 213,
+     "median": 207500.0
+    },
+    "2023-03": {
+     "n": 328,
+     "median": 230000.0
+    },
+    "2023-04": {
+     "n": 268,
+     "median": 237750.0
+    },
+    "2023-05": {
+     "n": 310,
+     "median": 248950.0
+    },
+    "2023-06": {
+     "n": 293,
+     "median": 239000.0
+    },
+    "2023-07": {
+     "n": 219,
+     "median": 240000.0
+    },
+    "2023-08": {
+     "n": 277,
+     "median": 250000.0
+    },
+    "2023-09": {
+     "n": 251,
+     "median": 238000.0
+    },
+    "2023-10": {
+     "n": 240,
+     "median": 245000.0
+    },
+    "2023-11": {
+     "n": 208,
+     "median": 232500.0
+    },
+    "2023-12": {
+     "n": 191,
+     "median": 225000.0
+    },
+    "2024-01": {
+     "n": 171,
+     "median": 240000.0
+    },
+    "2024-02": {
+     "n": 200,
+     "median": 228700.0
+    },
+    "2024-03": {
+     "n": 214,
+     "median": 240000.0
+    },
+    "2024-04": {
+     "n": 260,
+     "median": 270250.0
+    },
+    "2024-05": {
+     "n": 233,
+     "median": 249000.0
+    },
+    "2024-06": {
+     "n": 217,
+     "median": 222250.0
+    },
+    "2024-07": {
+     "n": 228,
+     "median": 233750.0
+    },
+    "2024-08": {
+     "n": 234,
+     "median": 225000.0
+    },
+    "2024-09": {
+     "n": 188,
+     "median": 240000.0
+    },
+    "2024-10": {
+     "n": 228,
+     "median": 246750.0
+    },
+    "2024-11": {
+     "n": 186,
+     "median": 240000.0
+    },
+    "2024-12": {
+     "n": 194,
+     "median": 239500.0
+    },
+    "2025-01": {
+     "n": 173,
+     "median": 235000.0
+    },
+    "2025-02": {
+     "n": 183,
+     "median": 225000.0
+    },
+    "2025-03": {
+     "n": 202,
+     "median": 216250.0
+    },
+    "2025-04": {
+     "n": 203,
+     "median": 250000.0
+    },
+    "2025-05": {
+     "n": 214,
+     "median": 243750.0
+    },
+    "2025-06": {
+     "n": 240,
+     "median": 220000.0
+    },
+    "2025-07": {
+     "n": 198,
+     "median": 223250.0
+    },
+    "2025-08": {
+     "n": 224,
+     "median": 224950.0
+    },
+    "2025-09": {
+     "n": 219,
+     "median": 219000.0
+    },
+    "2025-10": {
+     "n": 243,
+     "median": 220500.0
+    },
+    "2025-11": {
+     "n": 175,
+     "median": 220000.0
+    },
+    "2025-12": {
+     "n": 209,
+     "median": 224000.0
+    },
+    "2026-01": {
+     "n": 165,
+     "median": 219000.0
+    },
+    "2026-02": {
+     "n": 144,
+     "median": 224950.0
+    },
+    "2026-03": {
+     "n": 211,
+     "median": 200000.0
+    },
+    "2026-04": {
+     "n": 218,
+     "median": 213450.0
+    },
+    "2026-05": {
+     "n": 239,
+     "median": 227000.0
+    },
+    "2026-06": {
+     "n": 235,
+     "median": 215000.0
+    },
+    "2026-07": {
+     "n": 235,
+     "median": 225000.0
+    },
+    "2026-08": {
+     "n": 181,
+     "median": 222000.0
+    },
+    "2026-09": {
+     "n": 195,
+     "median": 222000.0
+    },
+    "2026-10": {
+     "n": 206,
+     "median": 210000.0
+    }
+   },
+   "typical_month": {
+    "1": {
+     "avg_share_of_year_pct": 6.81,
+     "avg_median_vs_year_pct": -5.0,
+     "min_share_pct": 5.8,
+     "max_share_pct": 8.73,
+     "years_above_year_median": 1,
+     "no_2021_share_pct": 7.06,
+     "no_2021_median_vs_year_pct": -5.49
+    },
+    "2": {
+     "avg_share_of_year_pct": 7.31,
+     "avg_median_vs_year_pct": -7.71,
+     "min_share_pct": 6.0,
+     "max_share_pct": 8.18,
+     "years_above_year_median": 0,
+     "no_2021_share_pct": 7.64,
+     "no_2021_median_vs_year_pct": -6.15
+    },
+    "3": {
+     "avg_share_of_year_pct": 9.97,
+     "avg_median_vs_year_pct": -2.45,
+     "min_share_pct": 8.14,
+     "max_share_pct": 12.76,
+     "years_above_year_median": 0,
+     "no_2021_share_pct": 10.08,
+     "no_2021_median_vs_year_pct": -2.07
+    },
+    "4": {
+     "avg_share_of_year_pct": 9.46,
+     "avg_median_vs_year_pct": 3.58,
+     "min_share_pct": 8.18,
+     "max_share_pct": 10.46,
+     "years_above_year_median": 3,
+     "no_2021_share_pct": 9.46,
+     "no_2021_median_vs_year_pct": 5.39
+    },
+    "5": {
+     "avg_share_of_year_pct": 9.61,
+     "avg_median_vs_year_pct": 4.45,
+     "min_share_pct": 8.62,
+     "max_share_pct": 10.43,
+     "years_above_year_median": 4,
+     "no_2021_share_pct": 9.59,
+     "no_2021_median_vs_year_pct": 5.64
+    },
+    "6": {
+     "avg_share_of_year_pct": 9.58,
+     "avg_median_vs_year_pct": -0.55,
+     "min_share_pct": 8.5,
+     "max_share_pct": 10.25,
+     "years_above_year_median": 2,
+     "no_2021_share_pct": 9.41,
+     "no_2021_median_vs_year_pct": 0.07
+    },
+    "7": {
+     "avg_share_of_year_pct": 7.8,
+     "avg_median_vs_year_pct": 0.19,
+     "min_share_pct": 7.0,
+     "max_share_pct": 8.93,
+     "years_above_year_median": 2,
+     "no_2021_share_pct": 7.82,
+     "no_2021_median_vs_year_pct": 0.24
+    },
+    "8": {
+     "avg_share_of_year_pct": 8.79,
+     "avg_median_vs_year_pct": 1.2,
+     "min_share_pct": 7.78,
+     "max_share_pct": 9.32,
+     "years_above_year_median": 2,
+     "no_2021_share_pct": 8.82,
+     "no_2021_median_vs_year_pct": 1.5
+    },
+    "9": {
+     "avg_share_of_year_pct": 8.03,
+     "avg_median_vs_year_pct": 1.53,
+     "min_share_pct": 7.36,
+     "max_share_pct": 8.82,
+     "years_above_year_median": 2,
+     "no_2021_share_pct": 8.01,
+     "no_2021_median_vs_year_pct": 1.91
+    },
+    "10": {
+     "avg_share_of_year_pct": 8.38,
+     "avg_median_vs_year_pct": 4.44,
+     "min_share_pct": 7.09,
+     "max_share_pct": 9.79,
+     "years_above_year_median": 4,
+     "no_2021_share_pct": 8.47,
+     "no_2021_median_vs_year_pct": 2.51
+    },
+    "11": {
+     "avg_share_of_year_pct": 7.04,
+     "avg_median_vs_year_pct": 2.83,
+     "min_share_pct": 5.5,
+     "max_share_pct": 8.39,
+     "years_above_year_median": 2,
+     "no_2021_share_pct": 6.71,
+     "no_2021_median_vs_year_pct": -0.25
+    },
+    "12": {
+     "avg_share_of_year_pct": 7.22,
+     "avg_median_vs_year_pct": 1.53,
+     "min_share_pct": 5.31,
+     "max_share_pct": 8.42,
+     "years_above_year_median": 2,
+     "no_2021_share_pct": 6.94,
+     "no_2021_median_vs_year_pct": -0.66
+    }
+   },
+   "by_year": {
+    "2021": {
+     "n": 5101,
+     "median": 165000.0
+    },
+    "2022": {
+     "n": 4217,
+     "median": 220000.0
+    },
+    "2023": {
+     "n": 2972,
+     "median": 235000.0
+    },
+    "2024": {
+     "n": 2553,
+     "median": 240000.0
+    },
+    "2025": {
+     "n": 2483,
+     "median": 225000.0
+    }
+   },
+   "jan_oct": {
+    "2021": {
+     "n": 4248,
+     "median": 163000.0
+    },
+    "2022": {
+     "n": 3761,
+     "median": 220000.0
+    },
+    "2023": {
+     "n": 2573,
+     "median": 235000.0
+    },
+    "2024": {
+     "n": 2173,
+     "median": 240000.0
+    },
+    "2025": {
+     "n": 2099,
+     "median": 225000.0
+    },
+    "2026": {
+     "n": 2029,
+     "median": 220000.0
+    }
+   },
+   "pooled_5yr_by_month": {
+    "1": {
+     "n": 1182,
+     "median_of_month_medians": 205000.0
+    },
+    "2": {
+     "n": 1247,
+     "median_of_month_medians": 207500.0
+    },
+    "3": {
+     "n": 1768,
+     "median_of_month_medians": 216250.0
+    },
+    "4": {
+     "n": 1654,
+     "median_of_month_medians": 237750.0
+    },
+    "5": {
+     "n": 1681,
+     "median_of_month_medians": 243750.0
+    },
+    "6": {
+     "n": 1678,
+     "median_of_month_medians": 222250.0
+    },
+    "7": {
+     "n": 1334,
+     "median_of_month_medians": 224900.0
+    },
+    "8": {
+     "n": 1506,
+     "median_of_month_medians": 225000.0
+    },
+    "9": {
+     "n": 1385,
+     "median_of_month_medians": 238000.0
+    },
+    "10": {
+     "n": 1419,
+     "median_of_month_medians": 230900.0
+    },
+    "11": {
+     "n": 1229,
+     "median_of_month_medians": 225000.0
+    },
+    "12": {
+     "n": 1243,
+     "median_of_month_medians": 224950.0
+    }
+   },
+   "centred_13mo": {
+    "1": {
+     "avg_pct": -1.96,
+     "years_above": 2,
+     "each_year_pct": [
+      2.6,
+      -2.6,
+      -10.9,
+      0.0,
+      1.1
+     ]
+    },
+    "2": {
+     "avg_pct": -5.34,
+     "years_above": 1,
+     "each_year_pct": [
+      -10.1,
+      1.0,
+      -10.8,
+      -4.7,
+      -2.2
+     ]
+    },
+    "3": {
+     "avg_pct": -0.32,
+     "years_above": 2,
+     "each_year_pct": [
+      -0.3,
+      4.9,
+      -1.4,
+      1.3,
+      -6.0
+     ]
+    },
+    "4": {
+     "avg_pct": 4.77,
+     "years_above": 4,
+     "each_year_pct": [
+      -1.4,
+      1.3,
+      2.0,
+      13.1,
+      8.9
+     ]
+    },
+    "5": {
+     "avg_pct": 5.11,
+     "years_above": 4,
+     "each_year_pct": [
+      -0.2,
+      7.5,
+      6.7,
+      4.3,
+      7.3
+     ]
+    },
+    "6": {
+     "avg_pct": -0.08,
+     "years_above": 2,
+     "each_year_pct": [
+      -3.0,
+      10.1,
+      2.1,
+      -7.4,
+      -2.2
+     ]
+    },
+    "7": {
+     "avg_pct": -0.04,
+     "years_above": 2,
+     "each_year_pct": [
+      -1.2,
+      2.2,
+      2.1,
+      -2.6,
+      -0.8
+     ]
+    },
+    "8": {
+     "avg_pct": 0.54,
+     "years_above": 2,
+     "each_year_pct": [
+      -2.4,
+      4.7,
+      6.4,
+      -6.0,
+      -0.0
+     ]
+    },
+    "9": {
+     "avg_pct": -0.06,
+     "years_above": 2,
+     "each_year_pct": [
+      -5.7,
+      6.6,
+      -0.5,
+      0.8,
+      -1.6
+     ]
+    },
+    "10": {
+     "avg_pct": 1.79,
+     "years_above": 4,
+     "each_year_pct": [
+      2.8,
+      1.9,
+      2.1,
+      2.9,
+      -0.8
+     ]
+    },
+    "11": {
+     "avg_pct": -0.58,
+     "years_above": 2,
+     "each_year_pct": [
+      2.2,
+      -2.2,
+      -4.1,
+      1.7,
+      -0.5
+     ]
+    },
+    "12": {
+     "avg_pct": -1.68,
+     "years_above": 2,
+     "each_year_pct": [
+      -4.7,
+      -2.2,
+      -6.2,
+      2.9,
+      1.8
+     ]
+    }
+   }
+  },
+  "resale_house": {
+   "by_month": {
+    "2020-07": {
+     "n": 1086,
+     "median": 214700.0
+    },
+    "2020-08": {
+     "n": 950,
+     "median": 221750.0
+    },
+    "2020-09": {
+     "n": 1057,
+     "median": 225000.0
+    },
+    "2020-10": {
+     "n": 1129,
+     "median": 225000.0
+    },
+    "2020-11": {
+     "n": 911,
+     "median": 235000.0
+    },
+    "2020-12": {
+     "n": 1079,
+     "median": 230000.0
+    },
+    "2021-01": {
+     "n": 777,
+     "median": 239000.0
+    },
+    "2021-02": {
+     "n": 747,
+     "median": 230000.0
+    },
+    "2021-03": {
+     "n": 1237,
+     "median": 229900.0
+    },
+    "2021-04": {
+     "n": 1146,
+     "median": 240000.0
+    },
+    "2021-05": {
+     "n": 1179,
+     "median": 238400.0
+    },
+    "2021-06": {
+     "n": 1262,
+     "median": 255000.0
+    },
+    "2021-07": {
+     "n": 1110,
+     "median": 254450.0
+    },
+    "2021-08": {
+     "n": 1120,
+     "median": 265730.5
+    },
+    "2021-09": {
+     "n": 1107,
+     "median": 270400.0
+    },
+    "2021-10": {
+     "n": 1122,
+     "median": 265000.0
+    },
+    "2021-11": {
+     "n": 1068,
+     "median": 269900.0
+    },
+    "2021-12": {
+     "n": 1134,
+     "median": 269900.0
+    },
+    "2022-01": {
+     "n": 827,
+     "median": 269000.0
+    },
+    "2022-02": {
+     "n": 770,
+     "median": 275000.0
+    },
+    "2022-03": {
+     "n": 1156,
+     "median": 292000.0
+    },
+    "2022-04": {
+     "n": 1027,
+     "median": 300000.0
+    },
+    "2022-05": {
+     "n": 1029,
+     "median": 315000.0
+    },
+    "2022-06": {
+     "n": 1062,
+     "median": 315000.0
+    },
+    "2022-07": {
+     "n": 832,
+     "median": 306000.0
+    },
+    "2022-08": {
+     "n": 929,
+     "median": 309000.0
+    },
+    "2022-09": {
+     "n": 782,
+     "median": 301250.0
+    },
+    "2022-10": {
+     "n": 739,
+     "median": 305000.0
+    },
+    "2022-11": {
+     "n": 639,
+     "median": 303000.0
+    },
+    "2022-12": {
+     "n": 590,
+     "median": 310000.0
+    },
+    "2023-01": {
+     "n": 575,
+     "median": 295000.0
+    },
+    "2023-02": {
+     "n": 509,
+     "median": 305000.0
+    },
+    "2023-03": {
+     "n": 813,
+     "median": 310000.0
+    },
+    "2023-04": {
+     "n": 737,
+     "median": 300000.0
+    },
+    "2023-05": {
+     "n": 831,
+     "median": 313500.0
+    },
+    "2023-06": {
+     "n": 844,
+     "median": 329000.0
+    },
+    "2023-07": {
+     "n": 700,
+     "median": 330000.0
+    },
+    "2023-08": {
+     "n": 781,
+     "median": 320000.0
+    },
+    "2023-09": {
+     "n": 790,
+     "median": 315050.0
+    },
+    "2023-10": {
+     "n": 642,
+     "median": 324450.0
+    },
+    "2023-11": {
+     "n": 581,
+     "median": 315000.0
+    },
+    "2023-12": {
+     "n": 547,
+     "median": 319900.0
+    },
+    "2024-01": {
+     "n": 466,
+     "median": 327450.0
+    },
+    "2024-02": {
+     "n": 573,
+     "median": 323000.0
+    },
+    "2024-03": {
+     "n": 682,
+     "median": 325000.0
+    },
+    "2024-04": {
+     "n": 804,
+     "median": 325000.0
+    },
+    "2024-05": {
+     "n": 854,
+     "median": 333250.0
+    },
+    "2024-06": {
+     "n": 760,
+     "median": 335000.0
+    },
+    "2024-07": {
+     "n": 744,
+     "median": 329998.5
+    },
+    "2024-08": {
+     "n": 741,
+     "median": 335000.0
+    },
+    "2024-09": {
+     "n": 657,
+     "median": 326500.0
+    },
+    "2024-10": {
+     "n": 675,
+     "median": 322500.0
+    },
+    "2024-11": {
+     "n": 642,
+     "median": 335000.0
+    },
+    "2024-12": {
+     "n": 635,
+     "median": 335000.0
+    },
+    "2025-01": {
+     "n": 536,
+     "median": 329950.0
+    },
+    "2025-02": {
+     "n": 551,
+     "median": 310900.0
+    },
+    "2025-03": {
+     "n": 668,
+     "median": 320000.0
+    },
+    "2025-04": {
+     "n": 762,
+     "median": 335000.0
+    },
+    "2025-05": {
+     "n": 759,
+     "median": 335000.0
+    },
+    "2025-06": {
+     "n": 777,
+     "median": 330000.0
+    },
+    "2025-07": {
+     "n": 766,
+     "median": 331000.0
+    },
+    "2025-08": {
+     "n": 761,
+     "median": 325000.0
+    },
+    "2025-09": {
+     "n": 737,
+     "median": 335000.0
+    },
+    "2025-10": {
+     "n": 783,
+     "median": 325000.0
+    },
+    "2025-11": {
+     "n": 619,
+     "median": 323880.0
+    },
+    "2025-12": {
+     "n": 645,
+     "median": 331900.0
+    },
+    "2026-01": {
+     "n": 494,
+     "median": 325000.0
+    },
+    "2026-02": {
+     "n": 566,
+     "median": 308450.0
+    },
+    "2026-03": {
+     "n": 683,
+     "median": 313700.0
+    },
+    "2026-04": {
+     "n": 730,
+     "median": 325000.0
+    },
+    "2026-05": {
+     "n": 798,
+     "median": 324950.0
+    },
+    "2026-06": {
+     "n": 814,
+     "median": 339450.0
+    },
+    "2026-07": {
+     "n": 798,
+     "median": 331750.0
+    },
+    "2026-08": {
+     "n": 748,
+     "median": 339450.0
+    },
+    "2026-09": {
+     "n": 717,
+     "median": 330000.0
+    },
+    "2026-10": {
+     "n": 726,
+     "median": 325000.0
+    }
+   },
+   "typical_month": {
+    "1": {
+     "avg_share_of_year_pct": 6.58,
+     "avg_median_vs_year_pct": -4.34,
+     "min_share_pct": 5.66,
+     "max_share_pct": 7.97,
+     "years_above_year_median": 1,
+     "no_2021_share_pct": 6.73,
+     "no_2021_median_vs_year_pct": -4.13
+    },
+    "2": {
+     "avg_share_of_year_pct": 6.56,
+     "avg_median_vs_year_pct": -5.45,
+     "min_share_pct": 5.74,
+     "max_share_pct": 7.42,
+     "years_above_year_median": 0,
+     "no_2021_share_pct": 6.77,
+     "no_2021_median_vs_year_pct": -4.63
+    },
+    "3": {
+     "avg_share_of_year_pct": 9.33,
+     "avg_median_vs_year_pct": -3.33,
+     "min_share_pct": 7.99,
+     "max_share_pct": 11.13,
+     "years_above_year_median": 0,
+     "no_2021_share_pct": 9.29,
+     "no_2021_median_vs_year_pct": -1.97
+    },
+    "4": {
+     "avg_share_of_year_pct": 9.28,
+     "avg_median_vs_year_pct": -1.71,
+     "min_share_pct": 8.81,
+     "max_share_pct": 9.89,
+     "years_above_year_median": 1,
+     "no_2021_share_pct": 9.4,
+     "no_2021_median_vs_year_pct": -0.95
+    },
+    "5": {
+     "avg_share_of_year_pct": 9.67,
+     "avg_median_vs_year_pct": 0.52,
+     "min_share_pct": 9.06,
+     "max_share_pct": 10.37,
+     "years_above_year_median": 3,
+     "no_2021_share_pct": 9.83,
+     "no_2021_median_vs_year_pct": 2.0
+    },
+    "6": {
+     "avg_share_of_year_pct": 9.71,
+     "avg_median_vs_year_pct": 2.62,
+     "min_share_pct": 9.23,
+     "max_share_pct": 10.23,
+     "years_above_year_median": 5,
+     "no_2021_share_pct": 9.71,
+     "no_2021_median_vs_year_pct": 2.98
+    },
+    "7": {
+     "avg_share_of_year_pct": 8.62,
+     "avg_median_vs_year_pct": 1.8,
+     "min_share_pct": 8.01,
+     "max_share_pct": 9.16,
+     "years_above_year_median": 5,
+     "no_2021_share_pct": 8.65,
+     "no_2021_median_vs_year_pct": 2.0
+    },
+    "8": {
+     "avg_share_of_year_pct": 9.0,
+     "avg_median_vs_year_pct": 2.19,
+     "min_share_pct": 8.61,
+     "max_share_pct": 9.35,
+     "years_above_year_median": 4,
+     "no_2021_share_pct": 9.1,
+     "no_2021_median_vs_year_pct": 1.38
+    },
+    "9": {
+     "avg_share_of_year_pct": 8.46,
+     "avg_median_vs_year_pct": 1.83,
+     "min_share_pct": 7.53,
+     "max_share_pct": 9.46,
+     "years_above_year_median": 4,
+     "no_2021_share_pct": 8.45,
+     "no_2021_median_vs_year_pct": 0.46
+    },
+    "10": {
+     "avg_share_of_year_pct": 8.2,
+     "avg_median_vs_year_pct": 1.39,
+     "min_share_pct": 7.12,
+     "max_share_pct": 9.36,
+     "years_above_year_median": 3,
+     "no_2021_share_pct": 8.09,
+     "no_2021_median_vs_year_pct": 0.45
+    },
+    "11": {
+     "avg_share_of_year_pct": 7.3,
+     "avg_median_vs_year_pct": 1.74,
+     "min_share_pct": 6.15,
+     "max_share_pct": 8.21,
+     "years_above_year_median": 3,
+     "no_2021_share_pct": 7.08,
+     "no_2021_median_vs_year_pct": 0.4
+    },
+    "12": {
+     "avg_share_of_year_pct": 7.28,
+     "avg_median_vs_year_pct": 3.01,
+     "min_share_pct": 5.68,
+     "max_share_pct": 8.72,
+     "years_above_year_median": 5,
+     "no_2021_share_pct": 6.91,
+     "no_2021_median_vs_year_pct": 1.98
+    }
+   },
+   "by_year": {
+    "2021": {
+     "n": 13009,
+     "median": 252000.0
+    },
+    "2022": {
+     "n": 10382,
+     "median": 300000.0
+    },
+    "2023": {
+     "n": 8350,
+     "median": 315000.0
+    },
+    "2024": {
+     "n": 8233,
+     "median": 329900.0
+    },
+    "2025": {
+     "n": 8364,
+     "median": 327000.0
+    }
+   },
+   "jan_oct": {
+    "2021": {
+     "n": 10807,
+     "median": 250000.0
+    },
+    "2022": {
+     "n": 9153,
+     "median": 300000.0
+    },
+    "2023": {
+     "n": 7222,
+     "median": 315000.0
+    },
+    "2024": {
+     "n": 6956,
+     "median": 328436.5
+    },
+    "2025": {
+     "n": 7100,
+     "median": 327748.5
+    },
+    "2026": {
+     "n": 7074,
+     "median": 325000.0
+    }
+   },
+   "pooled_5yr_by_month": {
+    "1": {
+     "n": 3181,
+     "median_of_month_medians": 295000.0
+    },
+    "2": {
+     "n": 3150,
+     "median_of_month_medians": 305000.0
+    },
+    "3": {
+     "n": 4556,
+     "median_of_month_medians": 310000.0
+    },
+    "4": {
+     "n": 4476,
+     "median_of_month_medians": 300000.0
+    },
+    "5": {
+     "n": 4652,
+     "median_of_month_medians": 315000.0
+    },
+    "6": {
+     "n": 4705,
+     "median_of_month_medians": 329000.0
+    },
+    "7": {
+     "n": 4152,
+     "median_of_month_medians": 329998.5
+    },
+    "8": {
+     "n": 4332,
+     "median_of_month_medians": 320000.0
+    },
+    "9": {
+     "n": 4073,
+     "median_of_month_medians": 315050.0
+    },
+    "10": {
+     "n": 3961,
+     "median_of_month_medians": 322500.0
+    },
+    "11": {
+     "n": 3549,
+     "median_of_month_medians": 315000.0
+    },
+    "12": {
+     "n": 3551,
+     "median_of_month_medians": 319900.0
+    }
+   },
+   "centred_13mo": {
+    "1": {
+     "avg_pct": -1.26,
+     "years_above": 3,
+     "each_year_pct": [
+      1.7,
+      -3.9,
+      -4.8,
+      0.8,
+      0.0
+     ]
+    },
+    "2": {
+     "avg_pct": -2.86,
+     "years_above": 0,
+     "each_year_pct": [
+      -3.4,
+      -3.5,
+      -1.6,
+      -0.6,
+      -5.2
+     ]
+    },
+    "3": {
+     "avg_pct": -1.25,
+     "years_above": 1,
+     "each_year_pct": [
+      -4.2,
+      0.7,
+      0.0,
+      0.0,
+      -2.7
+     ]
+    },
+    "4": {
+     "avg_pct": -0.21,
+     "years_above": 2,
+     "each_year_pct": [
+      -2.0,
+      3.1,
+      -4.0,
+      0.0,
+      1.9
+     ]
+    },
+    "5": {
+     "avg_pct": 1.22,
+     "years_above": 3,
+     "each_year_pct": [
+      -4.6,
+      6.8,
+      -0.2,
+      2.3,
+      1.8
+     ]
+    },
+    "6": {
+     "avg_pct": 2.85,
+     "years_above": 5,
+     "each_year_pct": [
+      2.0,
+      5.4,
+      4.4,
+      1.8,
+      0.6
+     ]
+    },
+    "7": {
+     "avg_pct": 1.64,
+     "years_above": 5,
+     "each_year_pct": [
+      0.2,
+      2.0,
+      4.8,
+      0.0,
+      1.2
+     ]
+    },
+    "8": {
+     "avg_pct": 1.81,
+     "years_above": 4,
+     "each_year_pct": [
+      4.2,
+      2.3,
+      0.8,
+      1.8,
+      0.0
+     ]
+    },
+    "9": {
+     "avg_pct": 0.76,
+     "years_above": 2,
+     "each_year_pct": [
+      4.0,
+      -1.2,
+      -1.5,
+      -0.5,
+      3.1
+     ]
+    },
+    "10": {
+     "avg_pct": -0.16,
+     "years_above": 1,
+     "each_year_pct": [
+      0.0,
+      0.0,
+      1.4,
+      -2.2,
+      0.0
+     ]
+    },
+    "11": {
+     "avg_pct": -0.62,
+     "years_above": 1,
+     "each_year_pct": [
+      -0.0,
+      -1.4,
+      -2.8,
+      1.5,
+      -0.3
+     ]
+    },
+    "12": {
+     "avg_pct": -0.19,
+     "years_above": 3,
+     "each_year_pct": [
+      -3.3,
+      0.2,
+      -1.6,
+      1.5,
+      2.1
+     ]
+    }
+   }
+  },
+  "new": {
+   "by_month": {
+    "2020-07": {
+     "n": 309,
+     "median": 261210.0
+    },
+    "2020-08": {
+     "n": 283,
+     "median": 259200.0
+    },
+    "2020-09": {
+     "n": 280,
+     "median": 252876.0
+    },
+    "2020-10": {
+     "n": 244,
+     "median": 253745.0
+    },
+    "2020-11": {
+     "n": 270,
+     "median": 257215.0
+    },
+    "2020-12": {
+     "n": 356,
+     "median": 261728.5
+    },
+    "2021-01": {
+     "n": 227,
+     "median": 268140.0
+    },
+    "2021-02": {
+     "n": 210,
+     "median": 272600.0
+    },
+    "2021-03": {
+     "n": 317,
+     "median": 275500.0
+    },
+    "2021-04": {
+     "n": 310,
+     "median": 273614.0
+    },
+    "2021-05": {
+     "n": 306,
+     "median": 287150.0
+    },
+    "2021-06": {
+     "n": 369,
+     "median": 289316.0
+    },
+    "2021-07": {
+     "n": 288,
+     "median": 295640.0
+    },
+    "2021-08": {
+     "n": 247,
+     "median": 322450.0
+    },
+    "2021-09": {
+     "n": 260,
+     "median": 329265.0
+    },
+    "2021-10": {
+     "n": 239,
+     "median": 332011.0
+    },
+    "2021-11": {
+     "n": 261,
+     "median": 333485.0
+    },
+    "2021-12": {
+     "n": 325,
+     "median": 334100.0
+    },
+    "2022-01": {
+     "n": 218,
+     "median": 348842.5
+    },
+    "2022-02": {
+     "n": 238,
+     "median": 341714.0
+    },
+    "2022-03": {
+     "n": 411,
+     "median": 353635.0
+    },
+    "2022-04": {
+     "n": 303,
+     "median": 360290.0
+    },
+    "2022-05": {
+     "n": 341,
+     "median": 360100.0
+    },
+    "2022-06": {
+     "n": 408,
+     "median": 353472.5
+    },
+    "2022-07": {
+     "n": 316,
+     "median": 370712.5
+    },
+    "2022-08": {
+     "n": 355,
+     "median": 374647.0
+    },
+    "2022-09": {
+     "n": 300,
+     "median": 359464.0
+    },
+    "2022-10": {
+     "n": 323,
+     "median": 373490.0
+    },
+    "2022-11": {
+     "n": 327,
+     "median": 356000.0
+    },
+    "2022-12": {
+     "n": 310,
+     "median": 381490.0
+    },
+    "2023-01": {
+     "n": 236,
+     "median": 374865.0
+    },
+    "2023-02": {
+     "n": 304,
+     "median": 370742.5
+    },
+    "2023-03": {
+     "n": 458,
+     "median": 355375.0
+    },
+    "2023-04": {
+     "n": 365,
+     "median": 356320.0
+    },
+    "2023-05": {
+     "n": 372,
+     "median": 374825.0
+    },
+    "2023-06": {
+     "n": 430,
+     "median": 364258.5
+    },
+    "2023-07": {
+     "n": 393,
+     "median": 340000.0
+    },
+    "2023-08": {
+     "n": 416,
+     "median": 357120.0
+    },
+    "2023-09": {
+     "n": 402,
+     "median": 350762.5
+    },
+    "2023-10": {
+     "n": 422,
+     "median": 345630.0
+    },
+    "2023-11": {
+     "n": 471,
+     "median": 325770.0
+    },
+    "2023-12": {
+     "n": 346,
+     "median": 341832.5
+    },
+    "2024-01": {
+     "n": 324,
+     "median": 353890.0
+    },
+    "2024-02": {
+     "n": 336,
+     "median": 332388.5
+    },
+    "2024-03": {
+     "n": 403,
+     "median": 349910.0
+    },
+    "2024-04": {
+     "n": 461,
+     "median": 352000.0
+    },
+    "2024-05": {
+     "n": 423,
+     "median": 341990.0
+    },
+    "2024-06": {
+     "n": 386,
+     "median": 347580.0
+    },
+    "2024-07": {
+     "n": 419,
+     "median": 330000.0
+    },
+    "2024-08": {
+     "n": 416,
+     "median": 335000.0
+    },
+    "2024-09": {
+     "n": 472,
+     "median": 338500.0
+    },
+    "2024-10": {
+     "n": 428,
+     "median": 345445.0
+    },
+    "2024-11": {
+     "n": 448,
+     "median": 336782.5
+    },
+    "2024-12": {
+     "n": 418,
+     "median": 338747.5
+    },
+    "2025-01": {
+     "n": 303,
+     "median": 348000.0
+    },
+    "2025-02": {
+     "n": 351,
+     "median": 329000.0
+    },
+    "2025-03": {
+     "n": 406,
+     "median": 340679.0
+    },
+    "2025-04": {
+     "n": 409,
+     "median": 340880.0
+    },
+    "2025-05": {
+     "n": 481,
+     "median": 349000.0
+    },
+    "2025-06": {
+     "n": 454,
+     "median": 355000.0
+    },
+    "2025-07": {
+     "n": 466,
+     "median": 354495.0
+    },
+    "2025-08": {
+     "n": 467,
+     "median": 351829.0
+    },
+    "2025-09": {
+     "n": 549,
+     "median": 342560.0
+    },
+    "2025-10": {
+     "n": 412,
+     "median": 350778.0
+    },
+    "2025-11": {
+     "n": 417,
+     "median": 345000.0
+    },
+    "2025-12": {
+     "n": 495,
+     "median": 349000.0
+    },
+    "2026-01": {
+     "n": 242,
+     "median": 323950.0
+    },
+    "2026-02": {
+     "n": 132,
+     "median": 324769.0
+    },
+    "2026-03": {
+     "n": 125,
+     "median": 322500.0
+    },
+    "2026-04": {
+     "n": 78,
+     "median": 327245.0
+    },
+    "2026-05": {
+     "n": 69,
+     "median": 299000.0
+    },
+    "2026-06": {
+     "n": 47,
+     "median": 274000.0
+    },
+    "2026-07": {
+     "n": 54,
+     "median": 269500.0
+    },
+    "2026-08": {
+     "n": 29,
+     "median": 300800.0
+    },
+    "2026-09": {
+     "n": 22,
+     "median": 302000.0
+    },
+    "2026-10": {
+     "n": 23,
+     "median": 525000.0
+    }
+   },
+   "typical_month": {
+    "1": {
+     "avg_share_of_year_pct": 5.98,
+     "avg_median_vs_year_pct": -0.83,
+     "min_share_pct": 5.11,
+     "max_share_pct": 6.76,
+     "years_above_year_median": 3,
+     "no_2021_share_pct": 5.79,
+     "no_2021_median_vs_year_pct": 1.61
+    },
+    "2": {
+     "avg_share_of_year_pct": 6.51,
+     "avg_median_vs_year_pct": -3.52,
+     "min_share_pct": 6.18,
+     "max_share_pct": 6.81,
+     "years_above_year_median": 1,
+     "no_2021_share_pct": 6.58,
+     "no_2021_median_vs_year_pct": -2.11
+    },
+    "3": {
+     "avg_share_of_year_pct": 9.2,
+     "avg_median_vs_year_pct": -1.84,
+     "min_share_pct": 7.79,
+     "max_share_pct": 10.68,
+     "years_above_year_median": 2,
+     "no_2021_share_pct": 9.14,
+     "no_2021_median_vs_year_pct": -0.25
+    },
+    "4": {
+     "avg_share_of_year_pct": 8.44,
+     "avg_median_vs_year_pct": -1.4,
+     "min_share_pct": 7.85,
+     "max_share_pct": 9.34,
+     "years_above_year_median": 2,
+     "no_2021_share_pct": 8.24,
+     "no_2021_median_vs_year_pct": 0.44
+    },
+    "5": {
+     "avg_share_of_year_pct": 8.77,
+     "avg_median_vs_year_pct": 0.42,
+     "min_share_pct": 8.06,
+     "max_share_pct": 9.23,
+     "years_above_year_median": 2,
+     "no_2021_share_pct": 8.68,
+     "no_2021_median_vs_year_pct": 1.59
+    },
+    "6": {
+     "avg_share_of_year_pct": 9.49,
+     "avg_median_vs_year_pct": 0.27,
+     "min_share_pct": 7.82,
+     "max_share_pct": 10.99,
+     "years_above_year_median": 3,
+     "no_2021_share_pct": 9.11,
+     "no_2021_median_vs_year_pct": 1.22
+    },
+    "7": {
+     "avg_share_of_year_pct": 8.55,
+     "avg_median_vs_year_pct": -0.79,
+     "min_share_pct": 8.21,
+     "max_share_pct": 8.94,
+     "years_above_year_median": 2,
+     "no_2021_share_pct": 8.54,
+     "no_2021_median_vs_year_pct": -0.62
+    },
+    "8": {
+     "avg_share_of_year_pct": 8.6,
+     "avg_median_vs_year_pct": 2.33,
+     "min_share_pct": 7.35,
+     "max_share_pct": 9.22,
+     "years_above_year_median": 4,
+     "no_2021_share_pct": 8.91,
+     "no_2021_median_vs_year_pct": 1.04
+    },
+    "9": {
+     "avg_share_of_year_pct": 8.87,
+     "avg_median_vs_year_pct": 1.25,
+     "min_share_pct": 7.74,
+     "max_share_pct": 10.54,
+     "years_above_year_median": 1,
+     "no_2021_share_pct": 9.15,
+     "no_2021_median_vs_year_pct": -0.87
+    },
+    "10": {
+     "avg_share_of_year_pct": 8.25,
+     "avg_median_vs_year_pct": 2.8,
+     "min_share_pct": 7.12,
+     "max_share_pct": 9.14,
+     "years_above_year_median": 4,
+     "no_2021_share_pct": 8.53,
+     "no_2021_median_vs_year_pct": 0.83
+    },
+    "11": {
+     "avg_share_of_year_pct": 8.71,
+     "avg_median_vs_year_pct": -0.03,
+     "min_share_pct": 7.77,
+     "max_share_pct": 10.21,
+     "years_above_year_median": 1,
+     "no_2021_share_pct": 8.95,
+     "no_2021_median_vs_year_pct": -2.83
+    },
+    "12": {
+     "avg_share_of_year_pct": 8.64,
+     "avg_median_vs_year_pct": 2.68,
+     "min_share_pct": 7.5,
+     "max_share_pct": 9.68,
+     "years_above_year_median": 3,
+     "no_2021_share_pct": 8.38,
+     "no_2021_median_vs_year_pct": 0.5
+    }
+   },
+   "by_year": {
+    "2021": {
+     "n": 3359,
+     "median": 300000.0
+    },
+    "2022": {
+     "n": 3850,
+     "median": 360487.5
+    },
+    "2023": {
+     "n": 4615,
+     "median": 353000.0
+    },
+    "2024": {
+     "n": 4934,
+     "median": 342000.0
+    },
+    "2025": {
+     "n": 5210,
+     "median": 347965.0
+    }
+   },
+   "jan_oct": {
+    "2021": {
+     "n": 2773,
+     "median": 292520.0
+    },
+    "2022": {
+     "n": 3213,
+     "median": 360000.0
+    },
+    "2023": {
+     "n": 3798,
+     "median": 357990.0
+    },
+    "2024": {
+     "n": 4068,
+     "median": 342502.5
+    },
+    "2025": {
+     "n": 4298,
+     "median": 347965.0
+    },
+    "2026": {
+     "n": 821,
+     "median": 315900.0
+    }
+   },
+   "pooled_5yr_by_month": {
+    "1": {
+     "n": 1308,
+     "median_of_month_medians": 348842.5
+    },
+    "2": {
+     "n": 1439,
+     "median_of_month_medians": 332388.5
+    },
+    "3": {
+     "n": 1995,
+     "median_of_month_medians": 349910.0
+    },
+    "4": {
+     "n": 1848,
+     "median_of_month_medians": 352000.0
+    },
+    "5": {
+     "n": 1923,
+     "median_of_month_medians": 349000.0
+    },
+    "6": {
+     "n": 2047,
+     "median_of_month_medians": 353472.5
+    },
+    "7": {
+     "n": 1882,
+     "median_of_month_medians": 340000.0
+    },
+    "8": {
+     "n": 1901,
+     "median_of_month_medians": 351829.0
+    },
+    "9": {
+     "n": 1983,
+     "median_of_month_medians": 342560.0
+    },
+    "10": {
+     "n": 1824,
+     "median_of_month_medians": 345630.0
+    },
+    "11": {
+     "n": 1924,
+     "median_of_month_medians": 336782.5
+    },
+    "12": {
+     "n": 1894,
+     "median_of_month_medians": 341832.5
+    }
+   }
+  },
+  "out_of_state_by_month": {
+   "rule": "Resales 2021-2025 whose buyer is still the owner on today's roll; share whose tax bill goes outside SC.",
+   "by_month": {
+    "1": {
+     "n": 2828,
+     "outside_sc": 817,
+     "pct": 28.9
+    },
+    "2": {
+     "n": 2909,
+     "outside_sc": 904,
+     "pct": 31.1
+    },
+    "3": {
+     "n": 4088,
+     "outside_sc": 1265,
+     "pct": 30.9
+    },
+    "4": {
+     "n": 4019,
+     "outside_sc": 1318,
+     "pct": 32.8
+    },
+    "5": {
+     "n": 4207,
+     "outside_sc": 1324,
+     "pct": 31.5
+    },
+    "6": {
+     "n": 4272,
+     "outside_sc": 1338,
+     "pct": 31.3
+    },
+    "7": {
+     "n": 3726,
+     "outside_sc": 1049,
+     "pct": 28.2
+    },
+    "8": {
+     "n": 4025,
+     "outside_sc": 1157,
+     "pct": 28.7
+    },
+    "9": {
+     "n": 3727,
+     "outside_sc": 1171,
+     "pct": 31.4
+    },
+    "10": {
+     "n": 3791,
+     "outside_sc": 1132,
+     "pct": 29.9
+    },
+    "11": {
+     "n": 3353,
+     "outside_sc": 1005,
+     "pct": 30.0
+    },
+    "12": {
+     "n": 3410,
+     "outside_sc": 1057,
+     "pct": 31.0
+    }
+   }
+  },
+  "storm_days": {
+   "ian_2022": {
+    "2022-09-19": 48,
+    "2022-09-20": 51,
+    "2022-09-21": 46,
+    "2022-09-22": 54,
+    "2022-09-23": 59,
+    "2022-09-24": 0,
+    "2022-09-25": 0,
+    "2022-09-26": 24,
+    "2022-09-27": 78,
+    "2022-09-28": 40,
+    "2022-09-29": 97,
+    "2022-09-30": 0,
+    "2022-10-01": 0,
+    "2022-10-02": 0,
+    "2022-10-03": 64,
+    "2022-10-04": 94,
+    "2022-10-05": 47,
+    "2022-10-06": 49,
+    "2022-10-07": 63,
+    "2022-10-08": 0,
+    "2022-10-09": 0,
+    "2022-10-10": 29,
+    "2022-10-11": 39,
+    "2022-10-12": 46,
+    "2022-10-13": 58,
+    "2022-10-14": 56
+   },
+   "debby_2024": {
+    "2024-07-29": 41,
+    "2024-07-30": 52,
+    "2024-07-31": 56,
+    "2024-08-01": 66,
+    "2024-08-02": 47,
+    "2024-08-03": 0,
+    "2024-08-04": 0,
+    "2024-08-05": 39,
+    "2024-08-06": 35,
+    "2024-08-07": 26,
+    "2024-08-08": 0,
+    "2024-08-09": 63,
+    "2024-08-10": 0,
+    "2024-08-11": 0,
+    "2024-08-12": 35,
+    "2024-08-13": 43,
+    "2024-08-14": 40,
+    "2024-08-15": 59,
+    "2024-08-16": 53
+   }
+  }
+ }
+}

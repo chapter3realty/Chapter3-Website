@@ -1,0 +1,145 @@
+{
+ "pulled_parcels": "2026-11-01 (sibling pull)",
+ "storms": {
+  "matthew": "2016-10-08",
+  "florence": "2018-09-14",
+  "ian": "2022-09-30"
+ },
+ "all_county": {
+  "other": {
+   "parcels": 16807,
+   "no_sale_date": 3285,
+   "with_sale_date": 13522,
+   "owned_before_matthew": 4516,
+   "pct_before_matthew": 33.4,
+   "owned_before_florence": 5411,
+   "pct_before_florence": 40.0,
+   "owned_before_ian": 8673,
+   "pct_before_ian": 64.1
+  },
+  "all": {
+   "parcels": 226997,
+   "no_sale_date": 7772,
+   "with_sale_date": 219225,
+   "owned_before_matthew": 63941,
+   "pct_before_matthew": 29.2,
+   "owned_before_florence": 80497,
+   "pct_before_florence": 36.7,
+   "owned_before_ian": 138673,
+   "pct_before_ian": 63.3
+  },
+  "condo": {
+   "parcels": 63765,
+   "no_sale_date": 1822,
+   "with_sale_date": 61943,
+   "owned_before_matthew": 18209,
+   "pct_before_matthew": 29.4,
+   "owned_before_florence": 22736,
+   "pct_before_florence": 36.7,
+   "owned_before_ian": 39753,
+   "pct_before_ian": 64.2
+  },
+  "house": {
+   "parcels": 130920,
+   "no_sale_date": 2123,
+   "with_sale_date": 128797,
+   "owned_before_matthew": 35538,
+   "pct_before_matthew": 27.6,
+   "owned_before_florence": 45553,
+   "pct_before_florence": 35.4,
+   "owned_before_ian": 80292,
+   "pct_before_ian": 62.3
+  },
+  "manufactured": {
+   "parcels": 7502,
+   "no_sale_date": 498,
+   "with_sale_date": 7004,
+   "owned_before_matthew": 3528,
+   "pct_before_matthew": 50.4,
+   "owned_before_florence": 3981,
+   "pct_before_florence": 56.8,
+   "owned_before_ian": 5295,
+   "pct_before_ian": 75.6
+  },
+  "townhouse": {
+   "parcels": 8003,
+   "no_sale_date": 44,
+   "with_sale_date": 7959,
+   "owned_before_matthew": 2150,
+   "pct_before_matthew": 27.0,
+   "owned_before_florence": 2816,
+   "pct_before_florence": 35.4,
+   "owned_before_ian": 4660,
+   "pct_before_ian": 58.6
+  }
+ },
+ "in_fema_high_risk_zone": {
+  "house": {
+   "parcels": 7469,
+   "no_sale_date": 142,
+   "with_sale_date": 7327,
+   "owned_before_matthew": 2157,
+   "pct_before_matthew": 29.4,
+   "owned_before_florence": 2752,
+   "pct_before_florence": 37.6,
+   "owned_before_ian": 4933,
+   "pct_before_ian": 67.3
+  },
+  "all": {
+   "parcels": 8443,
+   "no_sale_date": 179,
+   "with_sale_date": 8264,
+   "owned_before_matthew": 2497,
+   "pct_before_matthew": 30.2,
+   "owned_before_florence": 3152,
+   "pct_before_florence": 38.1,
+   "owned_before_ian": 5587,
+   "pct_before_ian": 67.6
+  },
+  "other": {
+   "parcels": 359,
+   "no_sale_date": 10,
+   "with_sale_date": 349,
+   "owned_before_matthew": 110,
+   "pct_before_matthew": 31.5,
+   "owned_before_florence": 136,
+   "pct_before_florence": 39.0,
+   "owned_before_ian": 234,
+   "pct_before_ian": 67.0
+  },
+  "manufactured": {
+   "parcels": 333,
+   "no_sale_date": 27,
+   "with_sale_date": 306,
+   "owned_before_matthew": 151,
+   "pct_before_matthew": 49.3,
+   "owned_before_florence": 167,
+   "pct_before_florence": 54.6,
+   "owned_before_ian": 236,
+   "pct_before_ian": 77.1
+  },
+  "condo": {
+   "parcels": 157,
+   "no_sale_date": 0,
+   "with_sale_date": 157,
+   "owned_before_matthew": 46,
+   "pct_before_matthew": 29.3,
+   "owned_before_florence": 53,
+   "pct_before_florence": 33.8,
+   "owned_before_ian": 98,
+   "pct_before_ian": 62.4
+  },
+  "townhouse": {
+   "parcels": 125,
+   "no_sale_date": 0,
+   "with_sale_date": 125,
+   "owned_before_matthew": 33,
+   "pct_before_matthew": 26.4,
+   "owned_before_florence": 44,
+   "pct_before_florence": 35.2,
+   "owned_before_ian": 86,
+   "pct_before_ian": 68.8
+  }
+ },
+ "note": "In-zone counts use the address point; condo units without their own point are not in the zone counts."
+}

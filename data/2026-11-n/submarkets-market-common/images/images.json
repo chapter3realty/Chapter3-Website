@@ -1,0 +1,36 @@
+{
+ "area": {
+  "file": "market-common-area-aerial.webp",
+  "frame_px": [
+   2000,
+   1299
+  ],
+  "bbox_wgs84": [
+   -78.981,
+   33.6505,
+   -78.907,
+   33.6905
+  ],
+  "file_px": [
+   1600,
+   1039
+  ]
+ },
+ "noise": {
+  "file": "market-common-noise-aerial.webp",
+  "frame_px": [
+   1600,
+   1619
+  ],
+  "bbox_wgs84": [
+   -78.95,
+   33.6475,
+   -78.912,
+   33.6795
+  ],
+  "file_px": [
+   1200,
+   1214
+  ]
+ }
+}

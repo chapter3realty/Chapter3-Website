@@ -1,0 +1,47 @@
+{
+ "photos": [
+  {
+   "slug": "sell-seller-disclosure",
+   "file": "images/2026-11-n/sell-seller-disclosure/oceanfront-condos-north-of-myrtle-beach.webp",
+   "variants": {
+    "600": "images/2026-11-n/sell-seller-disclosure/oceanfront-condos-north-of-myrtle-beach-600w.webp",
+    "1200": "images/2026-11-n/sell-seller-disclosure/oceanfront-condos-north-of-myrtle-beach-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "Oceanfront condo buildings and the beach north of Myrtle Beach, USGS oblique aerial photo, August 24, 2011",
+   "what": "Seen from a plane over the ocean: a long 13-story condo building and part of a taller tower stand at the back of a wide sandy beach, with beach umbrellas along the water. To the left, a grassy dune and a swash, a tidal creek, meet the beach. Behind the buildings are a golf course, ponds, live oaks and a few large houses. People are specks; no sign, plate or name is readable.",
+   "caption": "Oceanfront condo buildings beside a swash, a tidal creek, north of Myrtle Beach in 2011.",
+   "alt": "A long oceanfront condo building and part of a taller tower at the back of a wide beach with umbrellas, a grassy dune and a tidal creek to the left, a golf course behind, seen from over the ocean",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "The oceanfront north of the city of Myrtle Beach, in the Arcadian Shores stretch of Horry County"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "display_credit": "USGS photo, 2011",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_180321d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_180000.zip; aircraft position 33.753945 N, 78.790418 W (11CCH03-Photolocations.csv; the position of the plane, not of the buildings). Read from the zip by HTTP range request by the batch verifier on 2026-11-08 (wfn/sell-seller-disclosure/v/frames/); 3,262,408 bytes, md5 126f9ab4b0287e74051be4742bbf9f56. Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. Not a frame used on any other page (others use 174830, 175124, 175156, 175537, 175549, 175601, 175655, 175857, 175915, 175948, 180052, 180133, 180143, 180150, 180158, 180234, 180512, 180542, 180608, 180624 and 181208; 180321 appears only in a candidate list, data/2026-11-a/invest-where-to-buy/raw/places.json).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.' Cleared by the 2026-11-n verifier (VERIFY.md, Photos: 2011_0824_180321d usable).",
+   "subject_check": "Looked at full size (3008 x 1960) by the writer on 2026-11-08. The verifier placed the plane in the Arcadian Shores stretch. The caption names no building and never says a building or lot is past the setback line (VERIFY.md row 18). The towers are recognizable, so no building is named.",
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "crop_note": "Cut as one 2908 x 1636 band (x 50 to 2958, y 300 to 1936 of the frame), then resized.",
+   "changes": "Chapter3 Realty cropped and resized the frame",
+   "crops": {
+    "1x1": { "path": "images/2026-11-n/sell-seller-disclosure/oceanfront-condos-north-of-myrtle-beach-1x1.webp", "width": 1200, "height": 1200 },
+    "4x3": { "path": "images/2026-11-n/sell-seller-disclosure/oceanfront-condos-north-of-myrtle-beach-4x3.webp", "width": 1200, "height": 900 },
+    "16x9": { "path": "images/2026-11-n/sell-seller-disclosure/oceanfront-condos-north-of-myrtle-beach-16x9.webp", "width": 1200, "height": 675 }
+   }
+  }
+ ]
+}

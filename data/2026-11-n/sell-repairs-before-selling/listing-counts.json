@@ -1,0 +1,416 @@
+{
+ "pulled": "2026-11-08T06:50:49.726528Z",
+ "base_filters": "type=house, has=county_horry, not=new_construction",
+ "rows": [
+  {
+   "band": "built 1985 or earlier",
+   "yearMin": null,
+   "yearMax": 1985,
+   "houses": 298,
+   "new_roof": 39,
+   "new_hvac": 28,
+   "home_warranty": 6,
+   "renovated": 90,
+   "fixer_upper": 18,
+   "price_reduced": 186,
+   "crawlspace": 121,
+   "slab_foundation": 84,
+   "new_roof_and_price_reduced": 29,
+   "no_new_roof": 259,
+   "no_new_roof_and_price_reduced": 157
+  },
+  {
+   "band": "built 1986 to 1995",
+   "yearMin": 1986,
+   "yearMax": 1995,
+   "houses": 147,
+   "new_roof": 24,
+   "new_hvac": 28,
+   "home_warranty": 9,
+   "renovated": 40,
+   "fixer_upper": 4,
+   "price_reduced": 83,
+   "crawlspace": 27,
+   "slab_foundation": 77,
+   "new_roof_and_price_reduced": 11,
+   "no_new_roof": 123,
+   "no_new_roof_and_price_reduced": 72
+  },
+  {
+   "band": "built 1996 to 2005",
+   "yearMin": 1996,
+   "yearMax": 2005,
+   "houses": 317,
+   "new_roof": 57,
+   "new_hvac": 38,
+   "home_warranty": 3,
+   "renovated": 56,
+   "fixer_upper": 4,
+   "price_reduced": 184,
+   "crawlspace": 20,
+   "slab_foundation": 213,
+   "new_roof_and_price_reduced": 30,
+   "no_new_roof": 260,
+   "no_new_roof_and_price_reduced": 154
+  },
+  {
+   "band": "built 2006 to 2015",
+   "yearMin": 2006,
+   "yearMax": 2015,
+   "houses": 388,
+   "new_roof": 48,
+   "new_hvac": 35,
+   "home_warranty": 11,
+   "renovated": 31,
+   "fixer_upper": 8,
+   "price_reduced": 216,
+   "crawlspace": 11,
+   "slab_foundation": 290,
+   "new_roof_and_price_reduced": 29,
+   "no_new_roof": 340,
+   "no_new_roof_and_price_reduced": 187
+  },
+  {
+   "band": "built 2016 or later",
+   "yearMin": 2016,
+   "yearMax": null,
+   "houses": 852,
+   "new_roof": 8,
+   "new_hvac": 10,
+   "home_warranty": 25,
+   "renovated": 20,
+   "fixer_upper": 6,
+   "price_reduced": 484,
+   "crawlspace": 5,
+   "slab_foundation": 737,
+   "new_roof_and_price_reduced": 4,
+   "no_new_roof": 844,
+   "no_new_roof_and_price_reduced": 480
+  },
+  {
+   "houses": 2002,
+   "new_roof": 176,
+   "new_hvac": 139,
+   "home_warranty": 54,
+   "renovated": 237,
+   "fixer_upper": 40,
+   "price_reduced": 1153,
+   "crawlspace": 184,
+   "slab_foundation": 1401,
+   "new_roof_and_price_reduced": 103,
+   "no_new_roof": 1826,
+   "no_new_roof_and_price_reduced": 1050,
+   "band": "all resale houses (sum of bands)",
+   "yearMin": null,
+   "yearMax": null,
+   "whole_county_total_check": 2002
+  }
+ ],
+ "calls": [
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&not=new_construction&yearMax=1985",
+   "total": 298,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,new_roof&not=new_construction&yearMax=1985",
+   "total": 39,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,new_hvac&not=new_construction&yearMax=1985",
+   "total": 28,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,home_warranty&not=new_construction&yearMax=1985",
+   "total": 6,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,renovated&not=new_construction&yearMax=1985",
+   "total": 90,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,fixer_upper&not=new_construction&yearMax=1985",
+   "total": 18,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,price_reduced&not=new_construction&yearMax=1985",
+   "total": 186,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,crawlspace&not=new_construction&yearMax=1985",
+   "total": 121,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,slab_foundation&not=new_construction&yearMax=1985",
+   "total": 84,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,new_roof,price_reduced&not=new_construction&yearMax=1985",
+   "total": 29,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&not=new_construction,new_roof&yearMax=1985",
+   "total": 259,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,price_reduced&not=new_construction,new_roof&yearMax=1985",
+   "total": 157,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&not=new_construction&yearMin=1986&yearMax=1995",
+   "total": 147,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,new_roof&not=new_construction&yearMin=1986&yearMax=1995",
+   "total": 24,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,new_hvac&not=new_construction&yearMin=1986&yearMax=1995",
+   "total": 28,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,home_warranty&not=new_construction&yearMin=1986&yearMax=1995",
+   "total": 9,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,renovated&not=new_construction&yearMin=1986&yearMax=1995",
+   "total": 40,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,fixer_upper&not=new_construction&yearMin=1986&yearMax=1995",
+   "total": 4,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,price_reduced&not=new_construction&yearMin=1986&yearMax=1995",
+   "total": 83,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,crawlspace&not=new_construction&yearMin=1986&yearMax=1995",
+   "total": 27,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,slab_foundation&not=new_construction&yearMin=1986&yearMax=1995",
+   "total": 77,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,new_roof,price_reduced&not=new_construction&yearMin=1986&yearMax=1995",
+   "total": 11,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&not=new_construction,new_roof&yearMin=1986&yearMax=1995",
+   "total": 123,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,price_reduced&not=new_construction,new_roof&yearMin=1986&yearMax=1995",
+   "total": 72,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&not=new_construction&yearMin=1996&yearMax=2005",
+   "total": 317,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,new_roof&not=new_construction&yearMin=1996&yearMax=2005",
+   "total": 57,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,new_hvac&not=new_construction&yearMin=1996&yearMax=2005",
+   "total": 38,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,home_warranty&not=new_construction&yearMin=1996&yearMax=2005",
+   "total": 3,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,renovated&not=new_construction&yearMin=1996&yearMax=2005",
+   "total": 56,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,fixer_upper&not=new_construction&yearMin=1996&yearMax=2005",
+   "total": 4,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,price_reduced&not=new_construction&yearMin=1996&yearMax=2005",
+   "total": 184,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,crawlspace&not=new_construction&yearMin=1996&yearMax=2005",
+   "total": 20,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,slab_foundation&not=new_construction&yearMin=1996&yearMax=2005",
+   "total": 213,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,new_roof,price_reduced&not=new_construction&yearMin=1996&yearMax=2005",
+   "total": 30,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&not=new_construction,new_roof&yearMin=1996&yearMax=2005",
+   "total": 260,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,price_reduced&not=new_construction,new_roof&yearMin=1996&yearMax=2005",
+   "total": 154,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&not=new_construction&yearMin=2006&yearMax=2015",
+   "total": 388,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,new_roof&not=new_construction&yearMin=2006&yearMax=2015",
+   "total": 48,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,new_hvac&not=new_construction&yearMin=2006&yearMax=2015",
+   "total": 35,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,home_warranty&not=new_construction&yearMin=2006&yearMax=2015",
+   "total": 11,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,renovated&not=new_construction&yearMin=2006&yearMax=2015",
+   "total": 31,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,fixer_upper&not=new_construction&yearMin=2006&yearMax=2015",
+   "total": 8,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,price_reduced&not=new_construction&yearMin=2006&yearMax=2015",
+   "total": 216,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,crawlspace&not=new_construction&yearMin=2006&yearMax=2015",
+   "total": 11,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,slab_foundation&not=new_construction&yearMin=2006&yearMax=2015",
+   "total": 290,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,new_roof,price_reduced&not=new_construction&yearMin=2006&yearMax=2015",
+   "total": 29,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&not=new_construction,new_roof&yearMin=2006&yearMax=2015",
+   "total": 340,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,price_reduced&not=new_construction,new_roof&yearMin=2006&yearMax=2015",
+   "total": 187,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&not=new_construction&yearMin=2016",
+   "total": 852,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,new_roof&not=new_construction&yearMin=2016",
+   "total": 8,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,new_hvac&not=new_construction&yearMin=2016",
+   "total": 10,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,home_warranty&not=new_construction&yearMin=2016",
+   "total": 25,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,renovated&not=new_construction&yearMin=2016",
+   "total": 20,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,fixer_upper&not=new_construction&yearMin=2016",
+   "total": 6,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,price_reduced&not=new_construction&yearMin=2016",
+   "total": 484,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,crawlspace&not=new_construction&yearMin=2016",
+   "total": 5,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,slab_foundation&not=new_construction&yearMin=2016",
+   "total": 737,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,new_roof,price_reduced&not=new_construction&yearMin=2016",
+   "total": 4,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&not=new_construction,new_roof&yearMin=2016",
+   "total": 844,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry,price_reduced&not=new_construction,new_roof&yearMin=2016",
+   "total": 480,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&not=new_construction",
+   "total": 2002,
+   "refreshedAt": "2026-11-08T06:40:58.544Z"
+  }
+ ]
+}

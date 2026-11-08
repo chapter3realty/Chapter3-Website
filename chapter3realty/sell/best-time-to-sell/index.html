@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script>/* GA deferred for mobile performance: loads on first interaction (scroll, tap, mouse, key) */(function(){var l=false;function g(){if(l)return;l=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-681MKM6TCB";document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag("js",new Date());gtag("config","G-681MKM6TCB");}var e=["scroll","mousemove","touchstart","click","keydown"];function t(){g();e.forEach(function(v){window.removeEventListener(v,t);});}e.forEach(function(v){window.addEventListener(v,t,{passive:true});});})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="stylesheet" href="/assets/fonts.dcc423cfd9.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/assets/fonts.dcc423cfd9.css"></noscript>
+<link rel="stylesheet" href="/assets/app.05178939ff.css"><style>.nav-dd{position:relative;display:flex;align-items:center}.nav-caret{font-size:.6em;margin-left:.4em;opacity:.55;display:inline-block;vertical-align:middle}.nav-dd-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(5px);background:var(--ivory);border:1px solid var(--rule);border-radius:10px;box-shadow:0 12px 30px rgba(28,32,40,.14);padding:.45rem 0;min-width:185px;opacity:0;visibility:hidden;transition:opacity .17s ease,transform .17s ease;z-index:300;display:flex;flex-direction:column}.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}.nav-dd-menu a{display:block;padding:.55rem 1.25rem;font-size:.72rem;letter-spacing:.04em;text-transform:none;opacity:.85;white-space:nowrap;text-align:center}.nav-dd-menu a:hover{opacity:1;background:rgba(196,120,58,.08)}.nav-dd-menu a::after{display:none!important}.idx-modal{position:fixed;inset:0;z-index:9999;display:none}.idx-modal.open{display:block}.idx-backdrop{position:absolute;inset:0;background:rgba(28,32,40,.6)}.idx-panel{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(720px,94vw);max-height:92vh;max-height:92dvh;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:var(--ivory);border-radius:16px;box-shadow:0 30px 80px rgba(28,32,40,.45)}.idx-head{display:flex;justify-content:space-between;align-items:flex-start;padding:1.6rem 1.75rem 1.1rem;border-bottom:1px solid var(--rule);position:sticky;top:0;background:var(--ivory);z-index:2}.idx-eyebrow{font-family:var(--sans);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);margin-bottom:.35rem}.idx-title{font-family:var(--serif);font-size:1.45rem;color:var(--navy);line-height:1}.idx-close{background:none;border:none;font-size:1.9rem;line-height:1;color:var(--muted);cursor:pointer;padding:0 .25rem}.idx-body{padding:1.4rem 1.75rem}.idx-field{margin-bottom:1.3rem}.idx-field>label{display:block;font-family:var(--sans);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin-bottom:.55rem;font-weight:600}.idx-2col{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.idx-select,.idx-input{width:100%;padding:.65rem .75rem;border:1px solid var(--rule);border-radius:8px;background:#fff;font-family:var(--sans);font-size:.88rem;color:var(--navy)}.idx-pills{display:flex;flex-wrap:wrap;gap:.45rem}.idx-pill{padding:.5rem .85rem;border:1px solid var(--rule);border-radius:30px;background:#fff;font-family:var(--sans);font-size:.8rem;color:var(--muted);cursor:pointer;transition:all .15s}.idx-pill.on{background:var(--navy);color:var(--ivory);border-color:var(--navy)}.idx-checks{display:grid;grid-template-columns:1fr 1fr;gap:.5rem .75rem}.idx-check{display:flex;align-items:center;gap:.5rem;font-family:var(--sans);font-size:.84rem;color:var(--navy);cursor:pointer}.idx-check input{accent-color:var(--brass);width:16px;height:16px}.idx-foot{padding:1.2rem 1.75rem 1.5rem;border-top:1px solid var(--rule);background:var(--ivory)}.idx-note{display:block;font-family:var(--sans);font-size:.8rem;color:var(--muted);margin-bottom:.85rem;line-height:1.5}.idx-lead{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.9rem}.idx-ok{display:none;padding:1.1rem;background:rgba(196,120,58,.1);border:1px solid var(--brass);border-radius:8px;color:var(--navy);font-size:.92rem;text-align:center;line-height:1.5}@media(max-width:560px){.idx-checks,.idx-lead,.idx-2col{grid-template-columns:1fr}}.qsearch{background:var(--navy);border-radius:14px;padding:1.6rem 1.5rem 1.5rem;position:relative;overflow:hidden;box-shadow:0 22px 55px rgba(28,32,40,.22);max-width:660px;margin-top:1.85rem}.qsearch-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(244,239,232,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(244,239,232,.03) 1px,transparent 1px);background-size:46px 46px;pointer-events:none}.qs-head{font-family:var(--serif);font-size:1.18rem;color:var(--ivory);margin-bottom:1.1rem;position:relative}.qs-row{display:grid;gap:.7rem;margin-bottom:.8rem;position:relative}.qs-2{grid-template-columns:1fr 1fr}.qs-price{grid-template-columns:1fr auto 1fr;align-items:end}.qs-label{font-family:var(--sans);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-2);margin-bottom:.32rem;display:block}.qs-sel{width:100%;padding:.62rem .6rem;border:1px solid rgba(244,239,232,.2);border-radius:8px;background:rgba(244,239,232,.07);color:var(--ivory);font-family:var(--sans);font-size:.87rem}.qs-sel option{color:#1c2028}.qs-to{color:rgba(244,239,232,.5);font-size:.66rem;letter-spacing:.12em;padding:0 .3rem .68rem}.qs-types{display:flex;flex-wrap:wrap;gap:.55rem 1.1rem;margin:.55rem 0 1.2rem;position:relative}.qs-type{display:flex;align-items:center;gap:.4rem;font-family:var(--sans);font-size:.82rem;color:var(--ivory);cursor:pointer}.qs-type input{accent-color:var(--brass);width:15px;height:15px}.qs-actions{display:flex;align-items:center;gap:1.4rem;position:relative}.qs-search{background:var(--brass);color:#fff;border:none;padding:.82rem 2.4rem;border-radius:8px;font-family:var(--sans);font-size:.85rem;letter-spacing:.04em;cursor:pointer;font-weight:600;transition:background .15s}.qs-search:hover{background:#a96531}.qs-adv{color:var(--brass-2);font-size:.85rem;text-decoration:underline;cursor:pointer;background:none;border:none;font-family:var(--sans);padding:0}@media(max-width:560px){.qsearch{padding:1.3rem 1.1rem}}</style>
+<style id="c3-tap-fix">
+/* iOS Safari tap fix: non-anchor elements need cursor:pointer to receive
+   tap-generated click events. The touch cursor:auto rules strip it, killing
+   <div onclick> buttons. Restore pointer for clickables on touch only. */
+@media (hover: none), (pointer: coarse) {
+  a, button, summary, [onclick], [role="button"],
+  .btn, .chooser-card, .str-card, .invest-cta-primary, .invest-cta-secondary,
+  .tool-tab, .persona-tab, .segment-card, .program-card, .team-card, .nav-pill,
+  .rail-item, .persona-tab, .accordion-q { cursor: pointer !important; }
+}
+</style>
+<title>Best Time to Sell a House in Myrtle Beach: List in March</title>
+<meta name="description" content="The best time to sell a house in Myrtle Beach, from Horry County deeds month by month: when to list, condo or house, winter and hurricane season.">
+<link rel="canonical" href="https://chapter3realty.com/sell/best-time-to-sell/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Chapter3 Realty">
+<meta name="theme-color" content="#1c2028">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="geo.position" content="33.6891;-78.8867">
+<meta name="ICBM" content="33.6891, -78.8867">
+<meta name="geo.region" content="US-SC">
+<meta name="geo.placename" content="Myrtle Beach">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Chapter3 Realty">
+<meta property="og:title" content="The best time to sell a house in Myrtle Beach: list in March to close in May or June">
+<meta property="og:description" content="The best time to sell a house in Myrtle Beach, from Horry County deeds month by month: when to list, condo or house, winter and hurricane season.">
+<meta property="og:url" content="https://chapter3realty.com/sell/best-time-to-sell/">
+<meta property="og:image" content="https://chapter3realty.com/images/2026-11-n/sell-best-time-to-sell/myrtle-beach-beach-in-june.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:alt" content="A crowded beach in Myrtle Beach in June, with rental umbrellas, rows of blue beach chairs and oceanfront towers">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The best time to sell a house in Myrtle Beach: list in March to close in May or June">
+<meta name="twitter:description" content="The best time to sell a house in Myrtle Beach, from Horry County deeds month by month: when to list, condo or house, winter and hurricane season.">
+<meta name="twitter:image" content="https://chapter3realty.com/images/2026-11-n/sell-best-time-to-sell/myrtle-beach-beach-in-june.webp">
+<meta name="twitter:image:alt" content="A crowded beach in Myrtle Beach in June, with rental umbrellas, rows of blue beach chairs and oceanfront towers">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "RealEstateAgent", "@id": "https://chapter3realty.com/#org", "name": "Chapter3 Realty", "legalName": "Chapter3 Realty Corp", "employee": [{"@type": "Person", "name": "Devin Day", "jobTitle": "Operations Officer", "image": "https://chapter3realty.com/team/devin.webp", "url": "https://chapter3realty.com/about/"}, {"@type": "Person", "name": "Timothy Nash", "alternateName": "Tim Nash", "jobTitle": "Broker-in-Charge", "image": "https://chapter3realty.com/team/timmy.webp", "url": "https://chapter3realty.com/about/"}, {"@type": "Person", "name": "Abdulla Hijazi", "jobTitle": "Chief Marketing Officer", "image": "https://chapter3realty.com/team/abdulla.webp", "url": "https://chapter3realty.com/about/"}], "founder": {"@type": "Person", "name": "Abdulla Hijazi"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "16:00"}], "url": "https://chapter3realty.com/", "logo": {"@type": "ImageObject", "url": "https://chapter3realty.com/favicon-512.png"}, "image": "https://chapter3realty.com/og-image.jpg", "telephone": "+1-854-333-2135", "email": "info@chapter3realty.com", "priceRange": "$$", "description": "Data-forward real estate brokerage serving Myrtle Beach and the Grand Strand, buyers, sellers, and investors, with long-term and short-term rental investment analysis.", "areaServed": [{"@type": "City", "name": "Myrtle Beach"}, {"@type": "City", "name": "North Myrtle Beach"}, {"@type": "City", "name": "Surfside Beach"}, {"@type": "City", "name": "Conway"}, {"@type": "AdministrativeArea", "name": "Horry County"}, {"@type": "AdministrativeArea", "name": "Grand Strand"}, {"@type": "City", "name": "Garden City"}, {"@type": "City", "name": "Murrells Inlet"}, {"@type": "City", "name": "Pawleys Island"}, {"@type": "City", "name": "Little River"}], "address": {"@type": "PostalAddress", "streetAddress": "Vista Drive", "addressLocality": "Murrells Inlet", "addressRegion": "SC", "postalCode": "29576", "addressCountry": "US"}, "sameAs": ["https://facebook.com/chapter3realty", "https://instagram.com/chapter3realty", "https://youtube.com/@chapter3realty"], "slogan": "Myrtle Beach real estate, by the numbers.", "foundingDate": "2026", "knowsAbout": ["Myrtle Beach real estate", "Grand Strand housing market", "short-term rental investing", "long-term rental investing", "DSCR loans", "cap rate analysis", "condotel financing", "Horry County property taxes", "South Carolina down payment assistance", "VA loans", "first-time home buying", "vacation rental regulations", "relocation to South Carolina", "Myrtle Beach condo market", "real estate investment analysis"], "geo": {"@type": "GeoCoordinates", "latitude": 33.5510, "longitude": -79.0359}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://chapter3realty.com/#website", "url": "https://chapter3realty.com/", "name": "Chapter3 Realty", "publisher": {"@id": "https://chapter3realty.com/#org"}, "inLanguage": "en-US", "description": "Data-forward Myrtle Beach and Grand Strand real estate brokerage for buyers, sellers, and investors."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://chapter3realty.com/sell/best-time-to-sell/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://chapter3realty.com/"},{"@type":"ListItem","position":2,"name":"Sell","item":"https://chapter3realty.com/sell/"},{"@type":"ListItem","position":3,"name":"Best Time to Sell","item":"https://chapter3realty.com/sell/best-time-to-sell/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@id":"https://chapter3realty.com/about/#devin-day"},"@id":"https://chapter3realty.com/sell/best-time-to-sell/#webpage","url":"https://chapter3realty.com/sell/best-time-to-sell/","name":"The best time to sell a house in Myrtle Beach: list in March to close in May or June","description":"The best time to sell a house in Myrtle Beach, from Horry County deeds month by month: when to list, condo or house, winter and hurricane season.","isPartOf":{"@id":"https://chapter3realty.com/#website"},"about":{"@id":"https://chapter3realty.com/#org"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://chapter3realty.com/images/2026-11-n/sell-best-time-to-sell/myrtle-beach-beach-in-june.webp","contentUrl":"https://chapter3realty.com/images/2026-11-n/sell-best-time-to-sell/myrtle-beach-beach-in-june.webp","width":1200,"height":675},"dateModified":"2026-11-08","datePublished":"2026-11-08","inLanguage":"en-US","breadcrumb":{"@id":"https://chapter3realty.com/sell/best-time-to-sell/#breadcrumb"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1"]},"mainEntity":{"@id":"https://chapter3realty.com/sell/best-time-to-sell/#article"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://chapter3realty.com/sell/best-time-to-sell/#article","headline":"The best time to sell a house in Myrtle Beach: list in March to close in May or June","description":"The best time to sell a house in Myrtle Beach, from Horry County deeds month by month: when to list, condo or house, winter and hurricane season.","url":"https://chapter3realty.com/sell/best-time-to-sell/","author":{"@type":"Person","@id":"https://chapter3realty.com/about/#devin-day","name":"Devin Day","jobTitle":"Operations Officer","url":"https://chapter3realty.com/about/","worksFor":{"@id":"https://chapter3realty.com/#org"}},"reviewedBy":{"@type":"Person","@id":"https://chapter3realty.com/about/#timmy-nash","name":"Timothy Nash","alternateName":"Tim Nash","jobTitle":"Broker-in-Charge","url":"https://chapter3realty.com/about/","worksFor":{"@id":"https://chapter3realty.com/#org"}},"publisher":{"@id":"https://chapter3realty.com/#org"},"datePublished":"2026-11-08","dateModified":"2026-11-08","inLanguage":"en-US","image":[{"@type":"ImageObject","url":"https://chapter3realty.com/images/2026-11-n/sell-best-time-to-sell/myrtle-beach-beach-in-june.webp","contentUrl":"https://chapter3realty.com/images/2026-11-n/sell-best-time-to-sell/myrtle-beach-beach-in-june.webp","width":1200,"height":675,"description":"A crowded beach in Myrtle Beach in June, with rental umbrellas, rows of blue beach chairs and oceanfront towers"}],"mainEntityOfPage":{"@id":"https://chapter3realty.com/sell/best-time-to-sell/"},"about":{"@type":"Thing","name":"The best month to sell a house in Myrtle Beach and Horry County, South Carolina"},"keywords":"best time to sell a house in Myrtle Beach, best month to sell a house, best time to sell a condo in Myrtle Beach, when to list a house, how long from contract to closing, selling a house in winter, hurricane season home sale, Horry County home sales by month"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the worst month to sell a house in Myrtle Beach?","acceptedAnswer":{"@type":"Answer","text":"February. For houses and for condos alike, it was the lowest month of the year for price, and one of the slowest for sales."}},{"@type":"Question","name":"Do houses sell in December in Myrtle Beach?","acceptedAnswer":{"@type":"Answer","text":"Yes. Buyers sign contracts all winter. A contract signed in December closes about five weeks later, in January."}},{"@type":"Question","name":"How long does it take from contract to closing in Myrtle Beach?","acceptedAnswer":{"@type":"Answer","text":"About five weeks. The average ran from 36 days to 42 days, depending on the month."}},{"@type":"Question","name":"Is now a good time to sell a house in Myrtle Beach?","acceptedAnswer":{"@type":"Answer","text":"At this year's pace, a home listed in mid November closes around mid February, the lowest month for price. Listing in March moves the closing to May or June, at the cost of four more months of owning the home."}},{"@type":"Question","name":"When is the best time to sell a beach condo in Myrtle Beach?","acceptedAnswer":{"@type":"Answer","text":"Close in April or May, when condos sold for the most. That means listing in late January or February, before the summer rental season."}}]}</script>
+<style>#c3-transition{display:none!important}</style>
+<style>.skip-link{position:absolute;left:-9999px;background:#1c2028;color:#f4efe8;padding:.6rem 1rem;z-index:999;font-family:system-ui,sans-serif;font-size:.8rem;text-decoration:none}.skip-link:focus{left:8px;top:8px}</style>
+<style>/* mobile UX overhaul v54 (mobile-only, desktop untouched) */
+@media (max-width:640px){
+  input,select,textarea{font-size:16px!important}
+  .wrap,.wrap-sm{padding-left:1.4rem!important;padding-right:1.4rem!important}
+  a.btn,.btn,button.btn,.cta-btns a,.cta-btns button{min-height:48px;touch-action:manipulation}
+  a,button{touch-action:manipulation}
+  p{line-height:1.6}
+  img{max-width:100%;height:auto}
+  h1{line-height:1.15}
+}
+</style>
+<style>/* v55 fixes */
+.mobile-nav a.btn-primary{color:var(--ivory)!important}
+.hdr-contact-m{display:none}
+.idx-soon{display:inline-block;font-family:var(--sans);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);background:rgba(196,120,58,.12);border:1px solid rgba(196,120,58,.4);border-radius:999px;padding:.12rem .5rem;vertical-align:middle;margin-left:.4rem}
+@media (max-width:768px){
+  .hdr-contact-d{display:none}
+  .hdr-contact-m{display:inline-flex;padding:.5rem .7rem;font-size:.8rem;white-space:nowrap}
+}
+@media (max-width:640px){
+  #ltr-teaser .wrap>div{flex-direction:column;align-items:center;text-align:center}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "@id": "https://chapter3realty.com/about/#devin-day", "name": "Devin Day", "jobTitle": "Operations Officer", "description": "Operations Officer and front-end product lead", "knowsAbout": ["Mortgage financing", "DSCR loans", "Real estate investment analysis", "Myrtle Beach real estate"], "worksFor": {"@id": "https://chapter3realty.com/#org"}, "url": "https://chapter3realty.com/about/", "image": "https://chapter3realty.com/team/devin.webp"}</script><style id="c3-nohscroll">html{overflow-x:clip}#c3-fab{display:none !important}</style></head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header>
+<div class="wrap header-inner">
+<a class="logo" href="/" aria-label="Chapter III Realty, home">
+<img class="logo-img" src="/images/brand/chapter-iii-logo.svg" alt="Chapter III Realty" width="211" height="92" style="display:block;height:clamp(54px,14vw,66px);width:auto">
+</a>
+<nav class="primary"><a href="/buyers/buying-in-myrtle-beach/">Buy</a><a href="/sell/">Sell</a><a href="/invest/">Invest</a><div class="nav-mega-wrap"><a href="/guides/" class="nav-dd-trigger">Guides<span class="nav-caret">&#9662;</span></a><div class="nav-mega"><div class="nav-mega-inner"><div class="nav-mega-col"><p class="nav-mega-h">For buyers</p><a href="/buyers/buying-in-myrtle-beach/">Buying in Myrtle Beach</a><a href="/buyers/first-time-home-buyer-myrtle-beach/">First-time buyers</a><a href="/buyers/relocating/">Moving to the area</a><a href="/buyers/relocating/cost-of-living/">Cost of living calculator</a><a href="/buyers/relocating/pros-and-cons/">Pros and cons of living here</a><a href="/buyers/relocating/moving-checklist/">New resident checklist</a><a href="/buyers/relocating/schools/">Schools and zones</a><a href="/buyers/relocating/which-town/">Which town is right for you</a><a href="/buyers/relocating/jobs/">Jobs and the economy</a><a href="/buyers/relocating/healthcare/">Healthcare and hospitals</a><a href="/buyers/relocating/">Moving from your state</a><a href="/buyers/retirees/">Retiring here</a><a href="/buyers/second-home/">Second homes</a><a href="/buyers/new-construction/">New construction</a><a href="/buyers/waterfront-homes/">Waterfront homes</a><a href="/buyers/va-loans/">VA loans</a><a href="/buyers/programs/">Down payment help</a><a href="/buyers/common-mistakes/">Buyer mistakes</a></div><div class="nav-mega-col"><p class="nav-mega-h">Costs &amp; communities</p><a href="/buyers/property-taxes/">Property tax calculator</a><a href="/buyers/closing-costs/">Closing cost calculator</a><a href="/buyers/coastal-insurance/">Coastal insurance costs</a><a href="/buyers/cost-to-own/">Cost of owning calculator</a><a href="/buyers/55-plus-communities/">55+ communities</a><a href="/buyers/golf-communities/">Golf communities</a><a href="/buyers/condo-in-litigation/">Condos in litigation</a><a href="/buyers/undisclosed-flooding/">Checking for past flooding</a></div><div class="nav-mega-col"><p class="nav-mega-h">For investors</p><a href="/invest/">Investor hub</a><a href="/invest/long-term-rental/">Long-term rental analyzer</a><a href="/invest/str-tools/">Short-term rental tools</a><a href="/invest/str-vs-ltr/">Short-term vs long-term</a><a href="/invest/condos/">Are condos a good buy?</a><a href="/invest/condotel-financing/">Condotel financing</a><a href="/invest/non-warrantable-condos/">Non-warrantable condos</a><a href="/invest/str-rules/">STR rules by city</a><a href="/invest/airbnb-income/">Airbnb income report</a><a href="/invest/condo-buildings/">Condo building directory</a></div><div class="nav-mega-col"><p class="nav-mega-h">HOA guide</p><a href="/hoa/">HOA fees explained</a><a href="/hoa/special-assessments/">Special assessments</a><a href="/hoa/reserves/">Reserves &amp; studies</a><a href="/hoa/documents/">Reading HOA documents</a><a href="/hoa/rental-restrictions/">Rules &amp; restrictions</a><a href="/hoa/liens-and-foreclosure/">Liens &amp; foreclosure</a><a href="/hoa/south-carolina-hoa-laws/">South Carolina HOA law</a><a href="/hoa/hoa-vs-poa/">HOA vs POA</a><a href="/hoa/master-insurance-ho6/">Master policy vs HO-6</a><a href="/hoa/who-pays-for-damage/">Who pays for damage</a><a href="/hoa/dues-increases/">Dues increases</a><a href="/hoa/violations-and-fines/">Violations &amp; fines</a><a href="/hoa/estoppel-and-transfer-fees/">Estoppel &amp; transfer fees</a><a href="/hoa/developer-control-turnover/">Developer controlled HOAs</a><a href="/hoa/tax-deductible/">Are HOA fees deductible</a><a href="/hoa/benefits/">Are HOA dues worth it</a><p class="nav-mega-h stacked">Investor strategies</p><a href="/invest/strategies/dscr-loans/">DSCR loans</a><a href="/invest/strategies/brrrr/">BRRRR method</a><a href="/invest/strategies/fix-and-flip/">Fix and flip</a><a href="/invest/strategies/1031-exchange/">1031 exchange</a><a href="/invest/strategies/dst/">Delaware Statutory Trust</a><a href="/invest/strategies/small-multifamily/">Small multifamily</a><p class="nav-mega-h stacked">For sellers</p><a href="/sell/">Selling your home</a><a href="/sell/home-value/">What your home is worth</a><a href="/sell/net-proceeds/">Net proceeds calculator</a><a href="/sell/fsbo/">Selling it yourself (FSBO)</a><a href="/sell/out-of-state-buyers/">Out-of-state buyers</a><a href="/sell/inherited-house/">Inherited house</a><a href="/sell/sell-my-condo/">Sell a condo</a><a href="/sell/capital-gains/">Capital gains &amp; withholding</a></div><div class="nav-mega-col"><p class="nav-mega-h">Neighborhoods</p><a href="/homes/map/">Search homes</a><a href="/submarkets/myrtle-beach/">Myrtle Beach</a><a href="/submarkets/north-myrtle-beach/">North Myrtle Beach</a><a href="/submarkets/carolina-forest/">Carolina Forest</a><a href="/submarkets/surfside-beach/">Surfside Beach</a><a href="/submarkets/murrells-inlet/">Murrells Inlet</a><a href="/submarkets/pawleys-island/">Pawleys Island</a><a href="/submarkets/little-river/">Little River</a><a href="/submarkets/conway/">Conway</a><a href="/submarkets/garden-city/">Garden City</a><p class="nav-mega-h stacked">Company</p><a href="/market-reports/">Market reports</a><a href="/about/">About</a><a href="/contact/">Contact</a></div></div><div class="nav-mega-foot"><a href="/guides/">View the full directory of guides, tools, and reports &#8594;</a></div></div></div><div class="nav-dd"><a href="/about/" class="nav-dd-trigger">About<span class="nav-caret">&#9662;</span></a><div class="nav-dd-menu"><a href="/why-chapter-3/">Why Us</a><a href="/about/">Meet the Team</a><a href="/contact/">Contact</a></div></div></nav>
+<div class="header-ctas">
+<button class="btn btn-outline" style="cursor:pointer" onclick="openIdx()">Search Listings</button>
+<a class="hdr-phone" href="tel:+18543332135" aria-label="Call Chapter3 at 854.333.2135"><svg class="hdr-phone-ico" viewBox="0 0 24 24" width="21" height="21" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.24 1z"/></svg><span class="hdr-phone-num">854.333.2135</span></a>
+</div>
+<button aria-label="Menu" class="burger" id="burgerBtn" onclick="toggleMobile()">
+<span></span><span></span><span></span>
+</button>
+</div>
+<div class="mobile-nav" id="mobileNav">
+<a href="/buyers/buying-in-myrtle-beach/">Buy</a>
+<a href="/sell/">Sell</a>
+<a href="/invest/">Invest</a>
+<a href="/guides/">All Guides &amp; Tools</a>
+<a href="/submarkets/">Neighborhoods</a>
+<a href="/market-reports/">Market Reports</a>
+<a href="/about/">Meet the Team</a>
+<div class="mob-ctas">
+<button class="btn btn-outline" style="cursor:pointer" onclick="openIdx()">Search Listings</button>
+<a class="btn btn-primary" href="/contact/">Contact Us</a>
+</div>
+</div>
+<div class="hdr-callbar" style="background:var(--navy);text-align:center;padding:.4rem .75rem"><a href="tel:+18543332135" style="font-family:var(--sans);font-size:.72rem;letter-spacing:.05em;color:rgba(244,239,232,.82);text-decoration:none">Call if you have any questions: <span style="color:var(--brass-2);font-weight:600;white-space:nowrap">854.333.2135</span></a></div>
+<script>/* The Guides menu opens on a click, never on hover (owner, 2026-10-25). A second click goes to /guides/. */
+(function(){var w=document.querySelector(".nav-mega-wrap");if(!w)return;var a=w.querySelector(".nav-dd-trigger");if(!a)return;a.setAttribute("aria-expanded","false");
+a.addEventListener("click",function(e){if(!w.classList.contains("open")){e.preventDefault();w.classList.add("open");a.setAttribute("aria-expanded","true")}});
+document.addEventListener("click",function(e){if(!w.contains(e.target)){w.classList.remove("open");a.setAttribute("aria-expanded","false")}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList.remove("open");a.setAttribute("aria-expanded","false")}})})();</script>
+</header>
+
+
+<main id="main"><div class="detail-hero bg-grid"><div class="wrap"><div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/sell/">Sell</a><span>/</span><span style="color:var(--muted)">Best Time to Sell</span></div><p class="eyebrow" style="margin-bottom:1rem">Selling a home</p><h1 class="detail-h1">The best time to sell a house in Myrtle Beach<br/><em style="font-style:italic;color:var(--brass)">List in March to close in May or June.</em></h1><div class="detail-media" style="margin:0 0 1.2rem;max-width:760px"><style id="c3-glass">main#main{--g-ink:#8a5226;--g-ink-lg:#a8612c;--g-edge:rgba(255,255,255,.8);--g-hi:inset 0 1px 0 rgba(255,255,255,.95);--g-sh:0 1px 2px rgba(28,32,40,.05),0 14px 36px -20px rgba(28,32,40,.3);--g-r:20px;--g-blur:saturate(150%) blur(16px);background-color:#f8f4ee;background-image:radial-gradient(44rem 26rem at 4% 460px,rgba(232,201,154,.30),rgba(232,201,154,0) 70%),radial-gradient(40rem 26rem at 98% 1000px,rgba(196,120,58,.08),rgba(196,120,58,0) 70%),radial-gradient(46rem 26rem at 16% 1500px,rgba(232,201,154,.22),rgba(232,201,154,0) 70%),radial-gradient(40rem 24rem at 94% 1960px,rgba(42,48,64,.045),rgba(42,48,64,0) 70%);background-size:100% 2400px;background-repeat:repeat-y}main#main>section[style*="background:var(--ivory"],main#main .detail-hero{background:transparent!important}main#main .detail-hero{border-bottom:0}main#main .detail-hero.bg-grid{background-image:none}main#main>section[style*="background:var(--ivory"]+section[style*="background:var(--ivory"]{border-top:1px solid rgba(255,255,255,.7)}main#main>section[style*="background:var(--ivory"]{padding-bottom:2.25rem}main#main>section[style*="background:var(--ivory"]:not(.detail-hero+section){padding-top:2.25rem}@media (min-width:700px){main#main>section[style*="background:var(--ivory"]{padding-bottom:3.5rem}main#main>section[style*="background:var(--ivory"]:not(.detail-hero+section){padding-top:3.5rem}}main#main .eyebrow,main#main p[style*="color:var(--brass)"]{color:var(--g-ink)!important}main#main .detail-h1 em{color:var(--g-ink-lg)!important}main#main div[style^="border-left:3px solid var(--brass)"],main#main .c3-want,main#main div[style^="overflow-x:auto;margin:1.2rem 0"],main#main .c3-cc,main#main .c3-gchart{background:linear-gradient(180deg,rgba(255,255,255,.76),rgba(255,255,255,.52));border:1px solid var(--g-edge);box-shadow:var(--g-hi),var(--g-sh);-webkit-backdrop-filter:var(--g-blur);backdrop-filter:var(--g-blur);border-radius:var(--g-r)!important}main#main .c3-glance li,main#main ul[role=list]>li[style*="border-top:3px solid var(--brass)"],main#main .c3-pc>div,main#main .c3-story,main#main .c3ph-card,main#main .c3-want>li,main#main nav[aria-label="On this page"],main#main figure:not(.c3-gchart){background:linear-gradient(180deg,rgba(255,255,255,.76),rgba(255,255,255,.52));border:1px solid var(--g-edge);box-shadow:var(--g-hi),var(--g-sh);border-radius:16px!important}main#main ul[role=list]>li[style*="border-top:3px solid var(--brass)"],main#main .c3-pc>div,main#main .c3-story,main#main .c3-want>li{border-top:1px solid var(--g-edge)!important}main#main div[style^="border-left:3px solid var(--brass)"]{border-left:1px solid var(--g-edge)!important;padding:1.4rem 1.5rem!important}main#main ul[role=list]>li[style*="border-top:3px solid var(--brass)"],main#main .c3-pc>div,main#main .c3-story{background-color:transparent!important}main#main .c3-glance .i,main#main ul[role=list]>li>span[style*="border-radius:50%"],main#main .c3-want .i,main#main .c3-cc .i{background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(232,201,154,.55))!important;border:1px solid rgba(255,255,255,.9);box-shadow:inset 0 1px 0 #fff,0 3px 10px -4px rgba(145,89,43,.45);color:var(--brass-ink)}main#main .c3-cc .i{display:inline-flex;width:1.9rem;height:1.9rem;border-radius:50%;align-items:center;justify-content:center}main#main svg[viewBox="0 0 24 24"][aria-hidden="true"]{stroke-width:1.6}main#main nav[aria-label="On this page"]{padding:1.1rem 1.4rem .5rem;box-sizing:border-box}main#main .c3-want{padding:1rem;gap:.8rem}main#main .c3-want>li{box-shadow:var(--g-hi),0 6px 18px -14px rgba(28,32,40,.35)}main#main div[style^="overflow-x:auto;margin:1.2rem 0"]{padding:.4rem 1rem .6rem}main#main div[style^="overflow-x:auto;margin:1.2rem 0"] th{border-bottom:1px solid rgba(28,32,40,.22)!important}main#main .c3-cc{padding:.4rem 1rem .6rem}main#main .c3-cc thead th{border-bottom:1px solid rgba(28,32,40,.22)}main#main .c3-cc tr.c3-self>*{background:rgba(255,255,255,.7)}@media (max-width:39.999em){main#main .c3-cc{background:none;border:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;padding:0}main#main .c3-cc tbody tr{background:linear-gradient(180deg,rgba(255,255,255,.76),rgba(255,255,255,.52));border:1px solid var(--g-edge);box-shadow:var(--g-hi),var(--g-sh);border-radius:16px;border-top:1px solid var(--g-edge)!important}main#main .c3-cc tr.c3-self{border:2px solid var(--brass)!important}}@media (max-width:49.999em){main#main .c3-cc:has(thead th:nth-child(5)){background:none;border:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;padding:0}main#main .c3-cc:has(thead th:nth-child(5)) tbody tr{background:linear-gradient(180deg,rgba(255,255,255,.76),rgba(255,255,255,.52));border:1px solid var(--g-edge);box-shadow:var(--g-hi),var(--g-sh);border-radius:16px;border-top:1px solid var(--g-edge)!important}main#main .c3-cc:has(thead th:nth-child(5)) tr.c3-self{border:2px solid var(--brass)!important}}@media (max-width:59.999em){main#main .c3-cc:has(thead th:nth-child(6)){background:none;border:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;padding:0}main#main .c3-cc:has(thead th:nth-child(6)) tbody tr{background:linear-gradient(180deg,rgba(255,255,255,.76),rgba(255,255,255,.52));border:1px solid var(--g-edge);box-shadow:var(--g-hi),var(--g-sh);border-radius:16px;border-top:1px solid var(--g-edge)!important}main#main .c3-cc:has(thead th:nth-child(6)) tr.c3-self{border:2px solid var(--brass)!important}}main#main figure:not(.c3-gchart){padding:.55rem .55rem .15rem}main#main figure:not(.c3-gchart)>svg[role=img],main#main figure:not(.c3-gchart)>img,main#main figure .c3ph-f{border-radius:12px!important;border:0!important;overflow:hidden}main#main figure:not(.c3-gchart)>figcaption{padding:.55rem .45rem .5rem;margin-top:0!important}main#main .c3ph-card figure,main#main .c3ph-gal>figure .c3ph-f{box-shadow:none}main#main .c3ph-card{overflow:hidden}main#main .c3ph-card figure{background:none;border:0;padding:0}main#main>section[style^="background:var(--navy)"]{background:transparent!important;padding:.9rem 0!important}main#main>section:has(+section[style^="background:var(--navy)"]){padding-bottom:0!important}main#main>section[style^="background:var(--navy)"]+section{padding-top:.95rem!important}main#main>section[style^="background:var(--navy)"]>.wrap{background:linear-gradient(160deg,rgba(42,48,64,.95),rgba(28,32,40,.97));border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 26px 60px -30px rgba(28,32,40,.6);-webkit-backdrop-filter:var(--g-blur);backdrop-filter:var(--g-blur);border-radius:28px;padding:2.2rem 1.6rem;width:calc(100% - 32px);box-sizing:border-box}@media (max-width:699px){main#main>section[style^="background:var(--navy)"]>.wrap{padding:1.6rem 1.2rem 1.7rem;border-radius:24px}main#main>section[style^="background:var(--navy)"]>.wrap>:first-child{font-size:1.5rem!important;line-height:1.25;margin-bottom:.7rem!important}main#main>section[style^="background:var(--navy)"]>.wrap>p{margin-bottom:1.1rem!important}}main#main .btn{border-radius:999px;text-transform:none;letter-spacing:.01em;font-size:1rem;font-weight:600;line-height:1.3;white-space:normal;text-align:center;justify-content:center;max-width:100%;box-sizing:border-box}main#main .btn-brass{background:linear-gradient(180deg,#d4894a,#c4783a);border-color:rgba(255,255,255,.35);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 8px 18px -10px rgba(145,89,43,.7);color:#1c2028}@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){main#main div[style^="border-left:3px solid var(--brass)"],main#main .c3-want,main#main div[style^="overflow-x:auto;margin:1.2rem 0"],main#main .c3-cc,main#main .c3-gchart{background:#fbf8f3!important;-webkit-backdrop-filter:none;backdrop-filter:none}main#main>section[style^="background:var(--navy)"]>.wrap{background:#2a3040!important;-webkit-backdrop-filter:none;backdrop-filter:none}}@media (prefers-reduced-transparency:reduce){main#main div[style^="border-left:3px solid var(--brass)"],main#main .c3-want,main#main div[style^="overflow-x:auto;margin:1.2rem 0"],main#main .c3-cc,main#main .c3-gchart{background:#fbf8f3!important;-webkit-backdrop-filter:none;backdrop-filter:none}main#main>section[style^="background:var(--navy)"]>.wrap{background:#2a3040!important;-webkit-backdrop-filter:none;backdrop-filter:none}main#main .c3-glance li,main#main ul[role=list]>li[style*="border-top:3px solid var(--brass)"],main#main .c3-pc>div,main#main .c3-story,main#main .c3ph-card,main#main .c3-want>li,main#main nav[aria-label="On this page"],main#main figure:not(.c3-gchart){background:#fbf8f3!important}}body #c3-particles{display:none!important}@media (prefers-reduced-motion:reduce){main#main *{transition:none!important;animation:none!important}}main#main>section[style^="background:var(--navy)"]:not(:last-child){padding:.9rem 0!important}main#main>section[style^="background:var(--navy)"]:not(:last-child)>.wrap{background:linear-gradient(180deg,rgba(255,255,255,.76),rgba(255,255,255,.52));border:1px solid var(--g-edge);box-shadow:var(--g-hi),var(--g-sh);-webkit-backdrop-filter:var(--g-blur);backdrop-filter:var(--g-blur);border-radius:20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.7rem 1.2rem;text-align:left!important;padding:.9rem 1rem .9rem 1.25rem;width:calc(100% - 32px);box-sizing:border-box}main#main>section[style^="background:var(--navy)"]:not(:last-child)>.wrap>p:first-child{flex:1 1 13rem;margin:0!important;font-family:var(--sans)!important;font-size:var(--read,1.0625rem)!important;font-weight:600;line-height:1.35!important;color:var(--navy)!important}main#main>section[style^="background:var(--navy)"]:not(:last-child)>.wrap>a.btn{flex:none;margin:0;padding:.7rem 1.25rem;min-height:44px}@media (min-width:700px){main#main>section[style^="background:var(--navy)"]:not(:last-child)>.wrap{margin-left:max(16px,calc((100% - 1200px) / 2 + 2rem))!important;margin-right:auto!important}}@media (max-width:699px){main#main>section[style^="background:var(--navy)"]:not(:last-child)>.wrap{padding:.8rem 1rem .85rem;gap:.55rem 1rem;border-radius:18px}main#main>section[style^="background:var(--navy)"]:not(:last-child)>.wrap>a.btn{padding:.6rem 1.15rem}main#main>section[style^="background:var(--navy)"]:not(:last-child)>.wrap>p:first-child{font-size:var(--read,1.0625rem)!important;line-height:1.35!important}}@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){main#main>section[style^="background:var(--navy)"]:not(:last-child)>.wrap{background:#fbf8f3!important}}@media (prefers-reduced-transparency:reduce){main#main>section[style^="background:var(--navy)"]:not(:last-child)>.wrap{background:#fbf8f3!important}}main#main .c3-offer{margin:1.2rem 0 2rem;max-width:720px}main#main .c3-offer a.c3-offer-pill{display:inline-flex;align-items:center;gap:.7rem;min-height:44px;box-sizing:border-box;padding:.55rem .6rem .55rem 1.2rem;border-radius:999px;font-family:var(--sans);font-size:var(--read,1.0625rem);font-weight:600;line-height:1.3;color:var(--navy);text-decoration-line:none!important;background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.62));border:1px solid rgba(145,89,43,.35);box-shadow:inset 0 1px 0 #fff,0 8px 20px -14px rgba(28,32,40,.45);transition:background-color .15s,border-color .15s}main#main .c3-offer a.c3-offer-pill:hover{border-color:var(--brass);background:linear-gradient(180deg,#fff,rgba(232,201,154,.35))}main#main .c3-offer a.c3-offer-pill:focus-visible{outline:3px solid var(--navy);outline-offset:3px}main#main .c3-offer-ar{flex:none;display:inline-flex;width:2rem;height:2rem;border-radius:50%;align-items:center;justify-content:center;background:linear-gradient(180deg,#d4894a,#c4783a);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.4)}@media (prefers-reduced-motion:reduce){main#main .c3-offer a.c3-offer-pill{transition:none}}.c3-gchart{margin:1.6rem 0 2rem;max-width:820px;padding:1.2rem 1.25rem 1rem;box-sizing:border-box}.c3-gchart [role=table]{display:block;width:100%}.c3-gchart .cap{display:block;color:var(--navy);font-weight:600;font-size:1.1em;line-height:1.35;margin:0 0 1rem}.c3-gchart .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.c3-gchart [role=rowgroup]{display:grid;gap:1rem}.c3-gchart [role=row]{display:grid;grid-template-columns:minmax(0,1fr);gap:.4rem;align-items:center}@media (min-width:700px){.c3-gchart [role=row]{grid-template-columns:minmax(0,22rem) minmax(0,1fr);column-gap:1.4rem}}.c3-gchart [role=rowheader]{display:block;color:var(--muted);font-size:var(--read,1.0625rem);line-height:1.4}.c3-gchart .n,.c3-gchart .n a{color:var(--navy);font-weight:600}.c3-gchart .n a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}.c3-gchart .dot{color:var(--g-ink,#8a5226);padding:0 .35rem}.c3-gchart [role=cell]{display:flex;align-items:center;gap:.6rem;min-width:0}.c3-gchart .b{flex:none;height:.85rem;min-width:.85rem;width:calc((100% - 7rem) * var(--f));border-radius:999px;background:linear-gradient(90deg,#c4783a,#d4894a);box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}.c3-gchart .ref .b{background:#5c6b78}.c3-gchart .v{color:var(--navy);font-weight:600;font-size:var(--read,1.0625rem);font-variant-numeric:tabular-nums;white-space:nowrap}.c3-gchart .ref .n{font-weight:500}.c3-gchart figcaption{color:var(--muted);font-size:.95rem;line-height:1.55;margin:1.1rem 0 0;padding:0}@media (max-width:699px){.c3-gchart{padding:1rem .95rem .9rem}.c3-gchart .b{width:calc((100% - 6.2rem) * var(--f))}}</style><style>main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}main#main .detail-h1{text-wrap:balance}@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}main#main .detail-hero .detail-sub{display:none}main#main .c3-gchart,main#main div[style^="overflow-x:auto;margin:1.2rem 0"]{max-width:720px!important;box-sizing:border-box}main#main figure.bt-fig{max-width:720px;box-sizing:border-box;margin:1.4rem 0 1.6rem;padding:1.1rem 1.2rem 1rem}main#main .bt-fig .cap{color:var(--navy);font-weight:600;font-family:var(--sans);font-size:1.0625rem;line-height:1.4;margin:0 0 .9rem}main#main .bt-fig figcaption{color:var(--muted);font-size:.95rem;line-height:1.55;margin-top:.9rem!important;padding:0!important}main#main .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}main#main .bt-div [role=rowgroup]:not(.sr){display:grid;gap:.4rem}main#main .bt-div [role=row]{display:grid;grid-template-columns:2.6rem minmax(0,1fr);align-items:center;gap:.6rem}main#main .bt-div [role=rowheader]{color:var(--navy);font-family:var(--sans);font-weight:600;font-size:1rem}main#main .bt-div [role=cell]{display:grid;grid-template-columns:minmax(0,1fr) 6.4rem;align-items:center;gap:.6rem}main#main .bt-div .tr{position:relative;height:.8rem}main#main .bt-div .tr::before{content:"";position:absolute;left:50%;top:-.3rem;bottom:-.3rem;width:1px;background:rgba(28,32,40,.35)}main#main .bt-div .b{position:absolute;top:0;bottom:0;border-radius:4px}main#main .bt-div .pos .b{left:50%;background:#c4783a}main#main .bt-div .neg .b{right:50%;background:#7c8a96}main#main .bt-div .v{color:var(--muted);font-family:var(--sans);font-size:.95rem;white-space:nowrap}main#main .bt-div .pos .v{color:#8a5226;font-weight:600}main#main .bt-plan .row{margin:0 0 1.1rem}main#main .bt-plan .who{color:var(--muted);line-height:1.5;margin:0 0 .55rem;max-width:none}main#main .bt-plan .who b{display:block;color:var(--navy);font-family:var(--sans);font-size:1.05rem}main#main .bt-plan .tr{position:relative;display:block;height:.9rem;border-radius:6px;background:rgba(28,32,40,.06)}main#main .bt-plan .s{position:absolute;top:0;bottom:0}main#main .bt-plan .s.w{background:rgba(196,120,58,.38);border-radius:6px 0 0 6px}main#main .bt-plan .s.c{background:#c4783a;border-radius:0 6px 6px 0}main#main .bt-plan .d{position:absolute;top:50%;width:.8rem;height:.8rem;margin:-.4rem 0 0 -.4rem;border-radius:50%;background:#fff;border:2px solid #8a5226;box-sizing:border-box}main#main .bt-plan .d.e{background:#8a5226}main#main .bt-plan .ax{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:1px solid rgba(28,32,40,.16);margin-top:.2rem;padding-top:.35rem}main#main .bt-plan .ax span{color:var(--muted);font-family:var(--sans);font-size:.95rem;padding-left:.25rem;border-left:1px solid rgba(28,32,40,.16)}main#main .bt-plan .key{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;color:var(--muted);font-family:var(--sans);font-size:.95rem;margin:.8rem 0 0}main#main .bt-plan .sw{display:inline-block;width:1.4rem;height:.7rem;border-radius:3px;margin-right:.45rem;vertical-align:middle}main#main .bt-plan .sw.w{background:rgba(196,120,58,.38)}main#main .bt-plan .sw.c{background:#c4783a}main#main .bt-ian .wks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.5rem}main#main .bt-ian .bars{display:flex;align-items:flex-end;gap:3px;height:140px;padding-top:2.2rem;border-bottom:1px solid rgba(28,32,40,.3)}main#main .bt-ian .bar{position:relative;flex:1 1 0;background:#7c8a96;border-radius:3px 3px 0 0;min-width:0}main#main .bt-ian .bar.zero{background:none;height:calc(100% + 1.4rem);border-left:2px dashed #8a5226;border-radius:0;flex:0 0 0;margin:0 .45rem}main#main .bt-ian .lb{position:absolute;top:0;left:-1px;transform:translate(-50%,-100%);color:#8a5226;font-family:var(--sans);font-size:.9rem;font-weight:700;line-height:1.15;white-space:nowrap}main#main .bt-ian .t{margin:.45rem 0 0;font-family:var(--sans);line-height:1.3}main#main .bt-ian .t span{display:block;color:var(--muted);font-size:.85rem}main#main .bt-ian .t b{color:var(--navy);font-size:1.05rem}main#main .bt-cards{list-style:none;margin:1.1rem 0 1.4rem;padding:0;display:grid;gap:.75rem;max-width:720px;align-items:start}@media (min-width:760px){main#main .bt-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}main#main .bt-cards>li{margin:0;padding:1rem 1.1rem .3rem;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.82),rgba(255,255,255,.58));border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 10px 26px -18px rgba(28,32,40,.35);color:var(--muted);line-height:1.55}main#main .bt-cards .k{display:block;font-family:var(--sans);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#8a5226;font-weight:700;margin-bottom:.3rem}main#main .bt-cards b{display:block;color:var(--navy);font-family:var(--sans);font-size:1.1rem;line-height:1.35;margin-bottom:.55rem}main#main .bt-cards p{margin-bottom:.7rem!important;line-height:1.6!important}main#main .bt-plain{list-style:none;margin:1.1rem 0 1.4rem;padding:0;display:grid;gap:1.1rem;max-width:720px}main#main .bt-plain>li{margin:0;padding:.85rem 0 0;border-top:1px solid rgba(28,32,40,.16);color:var(--muted);line-height:1.65;font-size:1.0625rem}@media (min-width:700px){main#main .bt-plain>li{font-size:1.15rem}}main#main .bt-plain b{display:block;color:var(--navy);font-family:var(--sans);font-size:1.08rem;line-height:1.35;margin-bottom:.3rem}@media (min-width:1100px){main#main .bt-side{display:grid;grid-template-columns:minmax(0,1fr) 400px;grid-template-rows:auto auto 1fr;column-gap:2.5rem;max-width:1000px;align-items:start}main#main .bt-side>*{grid-column:1}main#main .bt-side>.c3-gchart,main#main .bt-side>.c3-aerial{grid-column:2;grid-row:1/4;margin:.3rem 0 1.2rem!important;max-width:none!important}main#main .bt-side>.c3-aerial figure{margin:0!important}main#main .bt-side>div[style^="overflow-x:auto"]{grid-column:2;grid-row:1/4;margin:.3rem 0 1.2rem!important;max-width:none!important}}main#main figure.c3ph-hero{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;max-width:720px}main#main figure.c3ph-hero .c3ph-f{border-radius:14px!important}main#main figure.c3ph-hero figcaption{padding:0!important;font-size:.95rem}main#main .bt-small{font-size:.85rem;color:var(--muted);line-height:1.7;max-width:600px;margin-top:1rem}@media (max-width:699px){main#main .bt-small{font-size:.95rem}}main#main .bt-small strong{color:var(--navy)}main#main div[style^="border-left:3px solid var(--brass)"] a.btn{font-size:1.02rem;padding:.85rem 1.4rem;min-height:48px}main#main h2,main#main h3,main#main .bt-cards b,main#main a.btn{text-wrap:balance}main#main .c3-glance li{line-height:1.4}main#main .c3-glance strong{font-size:1.1rem!important;font-weight:700;line-height:1.25}main#main .c3-glance span.t{font-size:.95rem!important;line-height:1.4!important}@media (max-width:699px){main#main .c3-glance{grid-template-columns:1fr!important;gap:0!important}main#main .c3-glance li{background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border-top:1px solid rgba(28,32,40,.16)!important;flex-direction:row!important;text-align:left!important;justify-content:flex-start!important;gap:.7rem!important;padding:.55rem 0!important}main#main .c3-glance li:last-child{border-bottom:1px solid rgba(28,32,40,.16)!important}main#main figure.bt-fig{padding:1rem .9rem .9rem}main#main .bt-ian .bars{gap:2px;height:120px}main#main .bt-ian .wks{gap:.35rem}main#main .bt-div [role=cell]{grid-template-columns:minmax(0,1fr) 5.9rem}}@media (min-width:700px){main#main nav[aria-label="On this page"]>ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.6rem}}@media (max-width:379px){main#main .hx-fb,main#main .hx-fb>*{min-width:0;max-width:100%}main#main .hx-fb-ai,main#main .hx-fb-q{min-width:0!important;max-width:100%!important;flex-wrap:wrap;box-sizing:border-box}main#main .hx-fb-q textarea{min-width:0;flex:1 1 100%;width:100%}main#main .hx-fb-go{flex:1 1 100%}}@media (min-width:1000px) and (max-width:1100px){.header-ctas .hdr-phone{display:none!important}}main#main>section[style^="background:var(--navy)"]:has(>.wrap>h2){padding:.9rem 0!important}main#main>section[style^="background:var(--navy)"]:has(>.wrap>h2)>.wrap{display:block!important;text-align:center!important;background:linear-gradient(160deg,rgba(42,48,64,.95),rgba(28,32,40,.97))!important;border:1px solid rgba(255,255,255,.14)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 26px 60px -30px rgba(28,32,40,.6)!important;border-radius:28px!important;padding:2.2rem 1.6rem!important;margin-left:auto!important;margin-right:auto!important}@media (max-width:699px){main#main>section[style^="background:var(--navy)"]:has(>.wrap>h2)>.wrap{padding:1.6rem 1.2rem 1.7rem!important;border-radius:24px!important}}</style><style>.c3-glance{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:.75rem;max-width:760px}.c3-glance li{display:flex;align-items:center;gap:.55rem;margin:0;padding:.5rem .6rem;background:rgba(255,255,255,.55);border:1px solid var(--rule);border-radius:6px;line-height:1.25}.c3-glance .i{flex:0 0 auto;display:flex;width:2rem;height:2rem;border-radius:50%;background:var(--ivory-2);color:var(--brass-ink);align-items:center;justify-content:center}.c3-glance strong{display:block;color:var(--navy);font-size:.9rem;font-weight:500}.c3-glance span.t{display:block;color:var(--muted);font-size:1rem}@media (max-width:699px){.c3-glance{gap:.3rem}.c3-glance li{flex-direction:column;justify-content:flex-start;text-align:center;gap:.2rem;padding:.4rem .1rem}.c3-glance .i{width:1.6rem;height:1.6rem}.c3-glance strong{font-size:.875rem}.c3-glance span.t{font-size:1rem;line-height:1.2}}</style><ul role="list" class="c3-glance" style="--n:3"><li><span class="i"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zM3 10h18M8 3v4M16 3v4M8 14h.01M12 14h.01M16 14h.01M8 17.5h.01M12 17.5h.01"/></svg></span><span><strong>March to June</strong><span class="t">about 38 percent of a year's home sales</span></span></li><li><span class="i"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.8 12.2 20 3M16.8 6.2l2.5 2.5M14.3 8.7l2 2"/><circle cx="7.5" cy="15.5" r="4.5"/></svg></span><span><strong>About 6 to 7 weeks</strong><span class="t">on the market before a contract, this spring</span></span></li><li><span class="i"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11.5 12 3.5l9 8M5.5 10v10.5h13V10M10 20.5V15h4v5.5"/></svg></span><span><strong>About 5 weeks</strong><span class="t">from a signed contract to closing</span></span></li></ul></div><p style="color:var(--muted);font-size:.9rem;margin-bottom:1rem">By <strong style="color:var(--navy);font-weight:600">Devin Day</strong>, Operations Officer &middot; Reviewed by <strong style="color:var(--navy);font-weight:600">Tim Nash</strong>, Broker-in-Charge &middot; <span style="white-space:nowrap">Updated November 8, 2026</span></p><p class="detail-sub">The best time to list, from five years of Horry County deed records month by month, with the weeks from listing to closing.</p></div></div><section style="background:var(--ivory)"><div class="wrap"><p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">The short answer</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The best time to sell a house in Myrtle Beach is late spring and early summer. Homes that closed in June sold for a middle price about 6 percent above homes that closed in February. About 38 percent of a year's home sales here are recorded in March through June.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">To close in those months, list a house in March and a condo in late January or February. This spring, a home had a buyer after about 6 to 7 weeks on the market. Closing took about 5 weeks more.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The month is worth a few percent of the price. <a href="#what-matters-more" style="color:var(--navy);text-decoration:underline">The year you sell in and the price you ask</a> can matter more.</p></div></section><section style="background:var(--navy);padding:3rem 0"><div class="wrap" style="text-align:center;max-width:720px;margin:0 auto"><p style="font-family:var(--serif);font-size:1.7rem;color:var(--ivory);margin-bottom:1rem">Have us pick your listing date</p><a class="btn btn-brass btn-lg" href="/contact/">Have us pick my date</a></div></section><section style="background:var(--ivory);padding-top:2.5rem"><div class="wrap"><nav aria-label="On this page" style="margin-top:0;max-width:720px"><p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.3rem;font-weight:600">On this page</p><ul style="list-style:none;margin:0;padding:0"><li><a href="#when-homes-sell" style="display:block;padding:.65rem 0;color:var(--navy);text-decoration:underline;text-underline-offset:.18em;line-height:1.35">When homes sell</a></li><li><a href="#when-to-list" style="display:block;padding:.65rem 0;color:var(--navy);text-decoration:underline;text-underline-offset:.18em;line-height:1.35">When to list</a></li><li><a href="#condo-or-house" style="display:block;padding:.65rem 0;color:var(--navy);text-decoration:underline;text-underline-offset:.18em;line-height:1.35">Condo or house</a></li><li><a href="#winter" style="display:block;padding:.65rem 0;color:var(--navy);text-decoration:underline;text-underline-offset:.18em;line-height:1.35">Winter</a></li><li><a href="#hurricane-season" style="display:block;padding:.65rem 0;color:var(--navy);text-decoration:underline;text-underline-offset:.18em;line-height:1.35">Hurricane season</a></li><li><a href="#tourists-and-school" style="display:block;padding:.65rem 0;color:var(--navy);text-decoration:underline;text-underline-offset:.18em;line-height:1.35">Tourists and school</a></li><li><a href="#what-matters-more" style="display:block;padding:.65rem 0;color:var(--navy);text-decoration:underline;text-underline-offset:.18em;line-height:1.35">What matters more</a></li><li><a href="#best-time-to-sell-faq" style="display:block;padding:.65rem 0;color:var(--navy);text-decoration:underline;text-underline-offset:.18em;line-height:1.35">Best time to sell FAQ</a></li></ul></nav></div></section><section style="background:var(--ivory-2)" id="when-homes-sell"><div class="wrap"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3" data-toc="When homes sell">When do the most homes sell in Myrtle Beach?</h2><style>.c3ph-f{position:relative;margin:0;border-radius:6px;overflow:hidden;background:var(--ivory-2)}.c3ph-f img{display:block;width:100%;height:auto;object-fit:cover}.c3ph-cr{position:absolute;right:0;bottom:0;max-width:100%;padding:1.6rem .6rem .35rem 2.6rem;font:400 .625rem/1.3 var(--sans);letter-spacing:.01em;color:#fff;text-align:right;background:radial-gradient(farthest-side at 100% 100%,rgba(28,32,40,.72),rgba(28,32,40,.4) 55%,rgba(28,32,40,0));white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none}.c3ph-cr a{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:2px;pointer-events:auto;padding:10px 0 6px}.c3ph-hero{margin:1.6rem 0 2rem}.c3ph-hero .c3ph-f{border-radius:8px}.c3ph-hero img{aspect-ratio:4/3}@media (min-width:700px){.c3ph-hero img{aspect-ratio:16/9}}.c3ph-hero figcaption{color:var(--muted);font-size:.85rem;line-height:1.5;margin-top:.55rem}.c3ph-gal{display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;margin:1.6rem 0;padding:0;list-style:none}.c3ph-gal>figure{margin:0;min-width:0}.c3ph-gal img{aspect-ratio:var(--c3ph-r,4/3)}.c3ph-gal figcaption{color:var(--muted);font-size:.85rem;line-height:1.45;margin-top:.5rem}@media (min-width:700px){.c3ph-gal{display:grid;grid-template-columns:repeat(var(--c3ph-n,3),minmax(0,1fr));gap:1rem;overflow:visible;padding:0}.c3ph-gal>figure{min-width:0}}@media (max-width:699px){.c3ph-gal.c3ph-row{display:flex;gap:.75rem;padding:0 var(--c3ph-bleed,1.4rem) .4rem;margin:1.6rem calc(-1*var(--c3ph-bleed,1.4rem)) 0;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 var(--c3ph-bleed,1.4rem);-webkit-overflow-scrolling:touch;scrollbar-width:none}.c3ph-row::-webkit-scrollbar{display:none}.c3ph-row>figure{flex:0 0 82%;scroll-snap-align:start}}.c3ph-swipe{display:flex;align-items:center;gap:.75rem;margin:.5rem 0 1.6rem;color:var(--navy);font:500 .95rem/1.3 var(--sans)}.c3ph-dots{display:inline-flex;gap:.45rem}.c3ph-dots i{display:block;width:10px;height:10px;border-radius:50%;border:1.5px solid var(--navy);box-sizing:border-box}.c3ph-dots i:first-child{background:var(--navy)}@supports (animation-timeline:view()){.c3ph-rowbox{timeline-scope:--c3ph-p1,--c3ph-p2,--c3ph-p3}.c3ph-row>figure:nth-child(1){view-timeline:--c3ph-p1 inline}.c3ph-row>figure:nth-child(2){view-timeline:--c3ph-p2 inline}.c3ph-row>figure:nth-child(3){view-timeline:--c3ph-p3 inline}.c3ph-dots i{animation:c3ph-dot linear both;animation-range:cover}.c3ph-dots i:nth-child(1){animation-timeline:--c3ph-p1}.c3ph-dots i:nth-child(2){animation-timeline:--c3ph-p2}.c3ph-dots i:nth-child(3){animation-timeline:--c3ph-p3}@keyframes c3ph-dot{0%,36%{background:transparent}42%,60%{background:var(--navy)}66%,100%{background:transparent}}}@media (min-width:700px){.c3ph-swipe{display:none}}.c3ph-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:1.4rem 0 1.8rem;padding:0;list-style:none}@media (min-width:700px){.c3ph-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}}@media (min-width:1000px){.c3ph-cards.c3ph-4{grid-template-columns:repeat(4,minmax(0,1fr))}}.c3ph-card{margin:0;background:var(--ivory);border:1px solid var(--rule);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}.c3ph-card .c3ph-f{border-radius:0}.c3ph-card img,.c3ph-card svg{display:block;width:100%;height:auto;aspect-ratio:var(--c3ph-r,4/3);object-fit:cover}.c3ph-card .c3ph-cr{font-size:.56rem;padding:1.2rem .45rem .25rem 1.6rem}.c3ph-card strong{display:block;color:var(--navy);font-size:.98rem;font-weight:500;line-height:1.3;padding:.7rem .8rem 0}.c3ph-card span.c3ph-t{display:block;color:var(--muted);font-size:.86rem;line-height:1.45;padding:.2rem .8rem .85rem}.c3ph-credits{margin:2rem 0 1rem;padding:1rem 0 0;border-top:1px solid var(--rule);color:var(--muted);font-size:.8rem;line-height:1.55;max-width:760px}.c3ph-credits .c3ph-h{font-family:var(--sans);font-size:.8rem;font-weight:500;color:var(--navy);margin:0 0 .4rem}.c3ph-credits [role=listitem]{margin:0 0 .3rem}.c3ph-credits a{color:inherit;text-decoration:underline;text-decoration-color:rgba(28,32,40,.3);text-underline-offset:2px}</style><style>section[style*="background:var(--ivory)"] .c3ph-card{background:var(--ivory-2)}.c3ph-cards{max-width:920px}.c3ph-card strong{font-family:var(--sans)}.c3ph-card span.c3ph-t{font-size:1rem!important}.c3ph-card strong{font-size:1rem!important}ul[role=list] li span[style*="font-size:.9rem"]{font-size:1rem!important}section#c3-photo{padding-top:0}section:has(+section#c3-photo){background:var(--ivory-2)!important;padding-bottom:2rem}.c3ph-hero{margin:0}.c3-aerial .c3ph-hero{max-width:900px;margin:1.4rem 0 1.6rem}.c3-aerial .c3ph-hero img{aspect-ratio:auto!important;height:auto}.c3-aerial-close .c3ph-hero{max-width:640px}.c3-aerial-ctop .c3ph-cr{top:0;bottom:auto;padding:.35rem .6rem 1.6rem 2.6rem;background:radial-gradient(farthest-side at 100% 0%,rgba(28,32,40,.72),rgba(28,32,40,.4) 55%,rgba(28,32,40,0))}@media (max-width:699px){.c3ph-cards>:last-child:nth-child(odd){grid-column:1/-1}}.c3-maps{display:grid;gap:0 1.5rem;max-width:1136px}@media (min-width:900px){.c3-maps{grid-template-columns:1fr 1fr;align-items:start}}.c3-maps figure{max-width:none!important;margin:1.4rem 0 .4rem!important}.c3-maps svg,.c3-maps img{display:block;width:100%;height:auto}.c3-map-links{row-gap:0!important}.c3-map-links a{padding:.55rem 0}ul[role=list][style*="minmax(13rem,1fr)"]{grid-template-columns:repeat(auto-fill,minmax(min(13rem,100%),1fr))!important}</style><style>.c3-aerial .c3ph-hero,.c3-aerial-close .c3ph-hero{max-width:720px}</style><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Spring and early summer are the busiest months for home sales in Horry County. From 2021 to 2025, about 38 percent of home resales were recorded in March through June. That is more than in any other four months in a row. An even spread would be 33 percent.</p><style>main#main .c3-gchart.c3-gchart-compact{padding-top:1rem;padding-bottom:.85rem}main#main .c3-gchart.c3-gchart-compact .cap{margin-bottom:.7rem}main#main .c3-gchart.c3-gchart-compact [role=rowgroup]{gap:.5rem}main#main .c3-gchart.c3-gchart-compact [role=row]{gap:.1rem .9rem}main#main .c3-gchart.c3-gchart-compact [role=rowheader]{line-height:1.3}main#main .c3-gchart.c3-gchart-compact .b{height:.5rem;min-width:.5rem}main#main .c3-gchart.c3-gchart-compact .v{line-height:1.25}main#main .c3-gchart.c3-gchart-compact figcaption{margin-top:.8rem}@media (max-width:699px){main#main .c3-gchart.c3-gchart-compact [role=rowgroup]{gap:.45rem}main#main .c3-gchart.c3-gchart-compact [role=row]{gap:.05rem}}</style><figure class="c3-gchart c3-gchart-compact"><div role="table" aria-label="Home sales recorded each month, 2021 to 2025"><span class="cap" aria-hidden="true">Home sales recorded each month, 2021 to 2025</span><div role="rowgroup" class="sr"><div role="row"><span role="columnheader">Month</span><span role="columnheader">home sales recorded</span></div></div><div role="rowgroup"><div role="row" class="ref"><span role="rowheader"><span class="n">January</span></span><span role="cell"><span class="b" style="--f:0.684" aria-hidden="true"></span><span class="v">4,363</span></span></div><div role="row" class="ref"><span role="rowheader"><span class="n">February</span></span><span role="cell"><span class="b" style="--f:0.689" aria-hidden="true"></span><span class="v">4,397</span></span></div><div role="row"><span role="rowheader"><span class="n">March</span></span><span role="cell"><span class="b" style="--f:0.991" aria-hidden="true"></span><span class="v">6,324</span></span></div><div role="row"><span role="rowheader"><span class="n">April</span></span><span role="cell"><span class="b" style="--f:0.96" aria-hidden="true"></span><span class="v">6,130</span></span></div><div role="row"><span role="rowheader"><span class="n">May</span></span><span role="cell"><span class="b" style="--f:0.992" aria-hidden="true"></span><span class="v">6,333</span></span></div><div role="row"><span role="rowheader"><span class="n">June</span></span><span role="cell"><span class="b" style="--f:1" aria-hidden="true"></span><span class="v">6,383</span></span></div><div role="row" class="ref"><span role="rowheader"><span class="n">July</span></span><span role="cell"><span class="b" style="--f:0.859" aria-hidden="true"></span><span class="v">5,486</span></span></div><div role="row" class="ref"><span role="rowheader"><span class="n">August</span></span><span role="cell"><span class="b" style="--f:0.915" aria-hidden="true"></span><span class="v">5,838</span></span></div><div role="row" class="ref"><span role="rowheader"><span class="n">September</span></span><span role="cell"><span class="b" style="--f:0.855" aria-hidden="true"></span><span class="v">5,458</span></span></div><div role="row" class="ref"><span role="rowheader"><span class="n">October</span></span><span role="cell"><span class="b" style="--f:0.843" aria-hidden="true"></span><span class="v">5,380</span></span></div><div role="row" class="ref"><span role="rowheader"><span class="n">November</span></span><span role="cell"><span class="b" style="--f:0.749" aria-hidden="true"></span><span class="v">4,778</span></span></div><div role="row" class="ref"><span role="rowheader"><span class="n">December</span></span><span role="cell"><span class="b" style="--f:0.751" aria-hidden="true"></span><span class="v">4,794</span></span></div></div></div><figcaption>Horry County, the five years added together, from our count of county deeds. Resales only: builders' sales of new homes are left out. March to June, the four busiest months, are in color.</figcaption></figure><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">January and February are the slowest months. Together they hold about 13 percent of a year's sales.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The pattern is not the same every year. In 2025, sales were spread more evenly, and October was the busiest month. Prices still followed the season that year. February was again the lowest month for price, and houses that closed in June and July still sold above the months around them.</p><h3 id="price-by-month" style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:1.6rem 0 .6rem">Which month brings the highest price?</h3><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">June brought the highest middle price, and February the lowest. Half of the homes sold for more than the middle price, and half for less.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">February was lower than the months around it in all five years. May and June were higher in four of the five.</p><figure class="bt-fig bt-div"><p class="cap" id="btDivCap">How much more or less homes sold for in each month</p><div role="table" aria-labelledby="btDivCap"><div role="rowgroup" class="sr"><div role="row"><span role="columnheader">Month</span><span role="columnheader">Middle price, higher or lower than nearby months</span></div></div><div role="rowgroup"><div role="row" class="neg"><span role="rowheader">Jan</span><span role="cell"><span class="tr" aria-hidden="true"><span class="b" style="width:10.6%"></span></span><span class="v">1.1% lower</span></span></div><div role="row" class="neg"><span role="rowheader">Feb</span><span role="cell"><span class="tr" aria-hidden="true"><span class="b" style="width:43.3%"></span></span><span class="v">4.3% lower</span></span></div><div role="row" class="neg"><span role="rowheader">Mar</span><span role="cell"><span class="tr" aria-hidden="true"><span class="b" style="width:14.5%"></span></span><span class="v">1.5% lower</span></span></div><div role="row" class="pos"><span role="rowheader">Apr</span><span role="cell"><span class="tr" aria-hidden="true"><span class="b" style="width:3.6%"></span></span><span class="v">0.4% higher</span></span></div><div role="row" class="pos"><span role="rowheader">May</span><span role="cell"><span class="tr" aria-hidden="true"><span class="b" style="width:19.6%"></span></span><span class="v">2.0% higher</span></span></div><div role="row" class="pos"><span role="rowheader">Jun</span><span role="cell"><span class="tr" aria-hidden="true"><span class="b" style="width:22.1%"></span></span><span class="v">2.2% higher</span></span></div><div role="row" class="pos"><span role="rowheader">Jul</span><span role="cell"><span class="tr" aria-hidden="true"><span class="b" style="width:15.5%"></span></span><span class="v">1.6% higher</span></span></div><div role="row" class="pos"><span role="rowheader">Aug</span><span role="cell"><span class="tr" aria-hidden="true"><span class="b" style="width:12.9%"></span></span><span class="v">1.3% higher</span></span></div><div role="row" class="pos"><span role="rowheader">Sep</span><span role="cell"><span class="tr" aria-hidden="true"><span class="b" style="width:16.6%"></span></span><span class="v">1.7% higher</span></span></div><div role="row" class="neg"><span role="rowheader">Oct</span><span role="cell"><span class="tr" aria-hidden="true"><span class="b" style="width:1.7%"></span></span><span class="v">0.2% lower</span></span></div><div role="row" class="neg"><span role="rowheader">Nov</span><span role="cell"><span class="tr" aria-hidden="true"><span class="b" style="width:2.9%"></span></span><span class="v">0.3% lower</span></span></div><div role="row" class="neg"><span role="rowheader">Dec</span><span role="cell"><span class="tr" aria-hidden="true"><span class="b" style="width:9.5%"></span></span><span class="v">1.0% lower</span></span></div></div></div><figcaption>We took out the yearly rise in prices, so only the month shows. Averages for 2021 to 2025, from county deeds.</figcaption></figure><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">From February's bar to June's bar is about 6 percent. On a home at the county's middle resale price of about $305,000, that is about $20,000. Part of that gap comes from which homes sell in each month, so one home should expect less. We could not measure how much less.</p></div></section><section style="background:var(--ivory)" id="when-to-list"><div class="wrap"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3" data-toc="When to list">When should you list to close in the best months?</h2><div class="bt-side"><div><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">List about three months before the month you want to close. A home is under contract, which agents call pending, once the buyer and the seller have both signed the purchase contract.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Homes go under contract fastest in March, April and May. This spring, the middle home had a buyer after about 6 to 7 weeks on the market. In the years before, it was about 4 weeks.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">After a buyer signs, closing took about five weeks here, in every month of the year. A buyer who pays cash has no lender to wait for. Our page on <a href="/sell/cash-offer/" style="color:var(--navy);text-decoration:underline">cash offers</a> covers that kind of sale.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The table counts back from a closing in the middle of each month, at the pace of the last 12 months. Winter closings need up to 4 months. The four busiest months are in bold.</p></div><div style="overflow-x:auto;margin:1.2rem 0;max-width:760px"><table style="width:100%;border-collapse:collapse;font-size:.92rem"><thead><tr><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">To close in the middle of</th><th style="padding:.55rem .8rem;border-bottom:2px solid var(--navy);color:var(--navy);text-align:left;font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase">Put the home on the market in</th></tr></thead><tbody><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">January</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">late September</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">February</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">late October</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)"><b>March</b></td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)"><b>early December</b></td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)"><b>April</b></td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)"><b>late January</b></td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)"><b>May</b></td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)"><b>late February</b></td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)"><b>June</b></td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)"><b>mid March</b></td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">July</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">mid April</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">August</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">mid May</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">September</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">mid June</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">October</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">mid July</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">November</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">mid August</td></tr><tr><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">December</td><td style="padding:.55rem .8rem;border-bottom:1px solid var(--rule);color:var(--muted)">mid September</td></tr></tbody></table></div></div><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">A worked example: to close in early June, count back about 5 weeks to a signed contract in late April. Count back about 6 to 7 weeks more, and the house goes on the market in mid March.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Start getting the home ready a few weeks before that. Our page on <a href="/sell/repairs-before-selling/" style="color:var(--navy);text-decoration:underline">repairs before selling</a> lists what to fix first.</p><div style="border-left:3px solid var(--brass);background:var(--ivory-2);padding:1.2rem 1.4rem;margin:1.8rem 0;max-width:720px"><p style="color:var(--navy);font-weight:600;margin-bottom:.4rem">Have us set a listing date for a May or June closing</p><p style="color:var(--muted);line-height:1.7;margin-bottom:.8rem">Tell us when you need to be out, and we will work back to the day your home should go on the market.</p><a class="btn btn-brass" href="/contact/">Have us work back from my date</a></div></div></section><section style="background:var(--ivory-2)" id="condo-or-house"><div class="wrap"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3" data-toc="Condo or house">Is the best month different for a condo?</h2><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Yes. Condos here sell for the most in April and May, a little earlier in the year than houses, which sell for the most in June.</p><ul class="bt-cards" aria-label="When a condo and a house sell for the most"><li><span class="k">A condo</span><b>Close in April or May. List in late January or February.</b><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Condos that closed in April and May sold for the highest middle prices of the year, about 9 percent above February's.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">If you rent the condo by the night, a spring sale gives up the summer. In all eight towns in our rental data, nightly rentals earn the most in July.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Renting through the summer and selling in the fall has a cost too. Condos that closed from September to November sold for about the same as the months around them, not the spring high.</p></li><li><span class="k">A house or townhome</span><b>Close in June. List in March.</b><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Houses that closed in June sold for the highest middle price of the year, about 5 percent above February's.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">July and September closings did nearly as well. All three months were above the months around them in all five years.</p></li></ul><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Our page on <a href="/sell/sell-my-condo/" style="color:var(--navy);text-decoration:underline">selling a condo</a> covers the rest of a condo sale: the HOA papers, rental programs and buyers' loans.</p></div></section><section style="background:var(--ivory)" id="winter"><div class="wrap"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3" data-toc="Winter">Is winter a bad time to sell a house in Myrtle Beach?</h2><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Winter has fewer sales and lower prices. It also has fewer homes for sale to compete with yours.</p><ul class="bt-plain" aria-label="What winter means for a seller"><li><b>Fewer sales, lower prices</b>January and February have the fewest sales of the year. February closings sold for the lowest middle price of the year.</li><li><b>Fewer homes for sale</b>In the Myrtle Beach area, December has the fewest new listings of the year, less than half of April's. Buyers still sign contracts all winter, about 640 in a typical December.</li><li><b>Out-of-state buyers buy all year</b>About 3 in 10 buyers in every month are from another state. Our page on <a href="/sell/out-of-state-buyers/" style="color:var(--navy);text-decoration:underline">out-of-state buyers</a> says where they come from.</li></ul><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">A home that goes under contract in February closes about five weeks later, in March or early April, when the busy months begin.</p></div></section><section style="background:var(--ivory-2)" id="hurricane-season"><div class="wrap"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3" data-toc="Hurricane season">Does hurricane season hurt a home sale here?</h2><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Not as a season. Atlantic <a href="https://www.nhc.noaa.gov/climo/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">hurricane season</a> is June 1 to November 30. Most of the season's activity comes between mid-August and mid-October, with the peak on September 10.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Those months are not a slow season for home sales. August, September and October each had about 8 to 9 percent of a year's home resales. August and September closings sold a little above the months around them on average.</p><h3 style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:1.6rem 0 .6rem">What happened to home sales the week Hurricane Ian came?</h3><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Hurricane Ian came ashore near Georgetown on Friday, September 30, 2022. The county recorded no home sales that day. It recorded sales again the next Monday, and the week after the storm had more sales than the week before.</p><figure class="bt-fig bt-ian"><p class="cap">Home sales recorded each working day around Hurricane Ian, 2022</p><div class="wks" role="img" aria-label="Home sales recorded each working day from September 19 to October 14, 2022. 97 on Thursday, September 29, none on Friday, September 30, the day Ian came ashore, then 64 and 94 the next Monday and Tuesday. Week totals: 258, 239, 317, 228."><div class="wk"><div class="bars"><span class="bar" style="height:49%"></span><span class="bar" style="height:53%"></span><span class="bar" style="height:47%"></span><span class="bar" style="height:56%"></span><span class="bar" style="height:61%"></span></div><p class="t"><span>Sep 19 to Sep 23</span><b>258</b></p></div><div class="wk"><div class="bars"><span class="bar" style="height:25%"></span><span class="bar" style="height:80%"></span><span class="bar" style="height:41%"></span><span class="bar" style="height:100%"></span><span class="bar zero"><b class="lb">Ian</b></span></div><p class="t"><span>Sep 26 to Sep 30</span><b>239</b></p></div><div class="wk"><div class="bars"><span class="bar" style="height:66%"></span><span class="bar" style="height:97%"></span><span class="bar" style="height:48%"></span><span class="bar" style="height:51%"></span><span class="bar" style="height:65%"></span></div><p class="t"><span>Oct 3 to Oct 7</span><b>317</b></p></div><div class="wk"><div class="bars"><span class="bar" style="height:30%"></span><span class="bar" style="height:40%"></span><span class="bar" style="height:47%"></span><span class="bar" style="height:60%"></span><span class="bar" style="height:58%"></span></div><p class="t"><span>Oct 10 to Oct 14</span><b>228</b></p></div></div><figcaption>Resales recorded by Horry County, Monday to Friday. The dashed line is Friday, September 30, when Ian came ashore and the county recorded none. The number under each week is that week's total.</figcaption></figure><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The storm Debby came ashore down the coast, near Bulls Bay, early on Thursday, August 8, 2024. The county recorded no sales that day and recorded sales again the next day.</p><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">A storm can move a closing by a few days, not by a season. What a storm means for a buyer's insurance is on our <a href="/buyers/coastal-insurance/" style="color:var(--navy);text-decoration:underline">coastal insurance page</a>.</p><div style="border-left:3px solid var(--brass);background:var(--ivory);padding:1.2rem 1.4rem;margin:1.8rem 0;max-width:720px"><p style="color:var(--navy);font-weight:600;margin-bottom:.4rem">Have us build a few spare days into a fall closing</p><p style="color:var(--muted);line-height:1.7;margin-bottom:.8rem">A storm week can push a closing back a few days. Tell us the month you hope to close, and we will plan the dates with room to spare.</p><a class="btn btn-brass" href="/contact/">Have us plan my closing dates</a></div></div></section><section style="background:var(--ivory)" id="tourists-and-school"><div class="wrap"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3" data-toc="Tourists and school">Do tourist season and the school year change the best month?</h2><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Tourist season peaks in July, after the busiest months for home sales. School lets out in early June, during one of them.</p><div class="bt-side"><div class="c3-aerial"><figure class="c3ph-hero" style=""><div class="c3ph-f"><img src="/images/2026-11-n/sell-best-time-to-sell/myrtle-beach-beach-in-june-1200w.webp" srcset="/images/2026-11-n/sell-best-time-to-sell/myrtle-beach-beach-in-june-600w.webp 600w, /images/2026-11-n/sell-best-time-to-sell/myrtle-beach-beach-in-june-1200w.webp 1200w" sizes="(max-width: 1200px) 100vw, 1136px" width="1200" height="675" alt="A crowded beach in Myrtle Beach in June, with rental umbrellas, rows of blue beach chairs and oceanfront towers" loading="lazy" decoding="async"><span class="c3ph-cr"><a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer" aria-label="Photo: Loadmaster. License: CC BY-SA 3.0" title="License: CC BY-SA 3.0">Photo: Loadmaster</a></span></div><figcaption>Myrtle Beach on a June day. Tourist season peaks in July, the month after houses here sell highest.</figcaption></figure></div><ul class="bt-plain" aria-label="Tourist season and the school year"><li><b>Tourist season</b>This year, Horry County had about 40 percent more hotel, restaurant and other leisure jobs in July than in January. Home sales do not follow the tourists: July has fewer sales than June.</li><li><b>The school year</b>Horry County public schools let out in early June and start again in mid-August. This school year ends on June 8, 2027, and the next one starts on August 18, 2027. Make-up days can move the last day.</li><li><b>Moving while school is out</b>June is one of the two busiest months for home sales. To close in June, list in March.</li></ul></div></div></section><section style="background:var(--ivory-2)" id="what-matters-more"><div class="wrap"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3" data-toc="What matters more">What matters more than the month you sell?</h2><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Prices changed far more from year to year than from month to month. The middle price rose about 20 percent from 2021 to 2022, against about 6 percent between February and June.</p><ul class="bt-plain" aria-label="What matters more than the month"><li><b>The year</b>Since 2024 the middle resale price has stayed near $305,000. So far this year it has been about the same again, with about as many sales as a year earlier. Our <a href="/sell/home-value/" style="color:var(--navy);text-decoration:underline">home value page</a> gives middle prices by area.</li><li><b>The market now</b>In September 2026, about 8,000 homes were for sale in the Myrtle Beach area, about the same as a year earlier. Homes went under contract about a week faster than a year earlier.</li><li><b>The asking price</b>That month, about 3 in 10 listings had cut their asking price. Each week a home waits for a cut moves its closing a week later, and can push a spring closing into summer. Buyers paid about 97 to 98 percent of the last asking price, whatever the month. The row of just-listed homes on this page shows what yours would compete with.</li><li><b>Tax dates</b>Owning and living in your main home for 2 of the last 5 years can mean no federal tax on up to $250,000 of your profit. If you are a few months short, selling early can cost that. A rental or second home has its own one-year date. Our <a href="/sell/capital-gains/" style="color:var(--navy);text-decoration:underline">capital gains page</a> explains both, from <a href="https://www.irs.gov/taxtopics/tc701" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">IRS Topic 701</a> and <a href="https://www.irs.gov/taxtopics/tc409" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">IRS Topic 409</a>. Ask a tax pro about your own dates.</li><li><b>Your own dates</b>You may have a date you must move by: a lease that ends, a new job, or a home you are buying. Work back from that date with the weeks above. Our pages on <a href="/sell/sell-or-buy-first/" style="color:var(--navy);text-decoration:underline">whether to sell or buy first</a> and <a href="/sell/rental-property/" style="color:var(--navy);text-decoration:underline">selling a rented home</a> cover those cases.</li></ul><div style="border-left:3px solid var(--brass);background:var(--ivory);padding:1.2rem 1.4rem;margin:1.8rem 0;max-width:720px"><p style="color:var(--navy);font-weight:600;margin-bottom:.4rem">Have us price it for the month you list</p><p style="color:var(--muted);line-height:1.7;margin-bottom:.8rem">We price your home from recorded sales near you and the homes you would compete with that month.</p><a class="btn btn-brass" href="/contact/">Have us price my home for my month</a></div></div></section><section style="background:var(--ivory)" id="best-time-to-sell-faq"><div class="wrap"><p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">Common questions</p><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--navy);margin-bottom:1rem;line-height:1.3">Best time to sell FAQ</h2><style>.c3-faq details{border-top:1px solid var(--rule,rgba(15,27,45,.14))}.c3-faq details:last-child{border-bottom:1px solid var(--rule,rgba(15,27,45,.14))}.c3-faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.2rem 0}.c3-faq summary::-webkit-details-marker{display:none}.c3-faq summary h3{margin:.9rem 0!important;flex:1}.c3-faq summary::after{content:"+";font:400 1.5rem/1 var(--sans);color:var(--brass);flex:none;width:1.5rem;text-align:center}.c3-faq details[open] summary::after{content:"\2212"}.c3-faq details p{margin:0 0 1rem!important}.c3-faq summary:focus-visible{outline:2px solid var(--brass);outline-offset:3px}</style><div class="c3-faq"><details open><summary><h3 style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:1.6rem 0 .6rem">What is the worst month to sell a house in Myrtle Beach?</h3></summary><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">February. For houses and for condos alike, it was the lowest month of the year for price, and one of the slowest for sales.</p></details><details><summary><h3 style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:1.6rem 0 .6rem">Do houses sell in December in Myrtle Beach?</h3></summary><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Yes. Buyers sign contracts all winter. A contract signed in December closes about five weeks later, in January.</p></details><details><summary><h3 style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:1.6rem 0 .6rem">How long does it take from contract to closing in Myrtle Beach?</h3></summary><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">About five weeks. The average ran from 36 days to 42 days, depending on the month.</p></details><details><summary><h3 style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:1.6rem 0 .6rem">Is now a good time to sell a house in Myrtle Beach?</h3></summary><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">At this year's pace, a home listed in mid November closes around mid February, the lowest month for price. Listing in March moves the closing to May or June, at the cost of four more months of owning the home.</p></details><details><summary><h3 style="font-family:var(--serif);font-size:1.25rem;color:var(--navy);margin:1.6rem 0 .6rem">When is the best time to sell a beach condo in Myrtle Beach?</h3></summary><p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">Close in April or May, when condos sold for the most. That means listing in late January or February, before the summer rental season.</p></details></div><p style="font-size:.78rem;color:var(--muted);line-height:1.7;max-width:760px;margin-top:1.6rem"><strong style="color:var(--navy)">Sources:</strong> <a href="https://acclaimweb.horrycounty.org/AcclaimWeb/search/SearchTypeDocType" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">County deeds</a>, <a href="https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">County parcels</a>, <a href="https://www.zillow.com/research/data/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">Zillow Research</a>, <a href="https://www.nhc.noaa.gov/climo/" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">NOAA hurricane climatology</a>, <a href="https://www.nhc.noaa.gov/data/tcr/AL092022_Ian.pdf" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">NHC Ian report</a>, <a href="https://www.nhc.noaa.gov/data/tcr/AL042024_Debby.pdf" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">NHC Debby report</a>, <a href="https://www.horrycountyschools.net/about-hcs/hcs-calendars" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">Horry County Schools calendars</a>, <a href="https://download.bls.gov/pub/time.series/sm/sm.data.42.SouthCarolina" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">BLS jobs</a>, <a href="https://www.irs.gov/taxtopics/tc701" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">IRS Topic 701</a>, <a href="https://www.irs.gov/taxtopics/tc409" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">IRS Topic 409</a>. Sales by month and middle prices: our count of county deeds, 2021 to 2025. Rental months: AirROI, in our rental data.</p><div class="bt-notes"><p class="bt-small"><strong>How we counted.</strong> We read the county's index of every deed recorded since 2019 and counted 65,664 home resales from 2021 to 2025. A resale is a deed of $10,000 or more for one home that the county lists today as residential, with a building on it.</p><p class="bt-small">We left out 21,968 sales by builders, whose closings are spread more evenly over the year. We also left out tax sales, foreclosures, corrective deeds and sales under 30 percent of the county's value.</p><p class="bt-small">Of the 65,664 resales, about 37,400 were houses and townhomes and 28,300 condos. We told a condo from a house by the county's parcel records.</p><p class="bt-small">Each sale is counted in the month the county recorded its deed, which comes after the closing. The county's index carries a parcel number on nearly every deed only from July 2020, so our count starts in 2021. The price chart compares each month's middle price with the six months before it and the six after. That takes out the rise from year to year.</p><p class="bt-small">Days to a contract and to closing, new listings and price cuts are Zillow's figures for the Myrtle Beach area. The listing table uses Zillow's figures for the latest 12 months.</p><p class="bt-small"><strong>Legal notice.</strong> Chapter3 Realty Corp is a licensed South Carolina real estate brokerage. We are not tax advisers, and nothing on this page is tax or legal advice.</p></div><div class="c3ph-credits"><div class="c3ph-h" id="photo-credits">Photo credits</div><div role="list" aria-labelledby="photo-credits"><div role="listitem">Myrtle Beach on a June day. Photo: Loadmaster (David R. Tribble), <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Atlantic_Ocean_shoreline_in_Myrtle_Beach,_South_Carolina.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>. Chapter3 Realty cropped and resized the photo.</div></div></div><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ImageObject","contentUrl":"https://chapter3realty.com/images/2026-11-n/sell-best-time-to-sell/myrtle-beach-beach-in-june-1200w.webp","url":"https://chapter3realty.com/images/2026-11-n/sell-best-time-to-sell/myrtle-beach-beach-in-june-1200w.webp","width":1200,"height":675,"encodingFormat":"image/webp","name":"Myrtle Beach on a June day","caption":"Myrtle Beach on a June day. Tourist season peaks in July, the month after houses here sell highest.","description":"A crowded beach in Myrtle Beach in June, with rental umbrellas, rows of blue beach chairs and oceanfront towers","creator":{"@type":"Person","name":"Loadmaster (David R. Tribble)"},"creditText":"Loadmaster (David R","copyrightNotice":"© Loadmaster (David R. Tribble), CC BY-SA 3.0","license":"https://creativecommons.org/licenses/by-sa/3.0/","acquireLicensePage":"https://commons.wikimedia.org/wiki/File:Atlantic_Ocean_shoreline_in_Myrtle_Beach,_South_Carolina.jpg","isBasedOn":"https://commons.wikimedia.org/wiki/File:Atlantic_Ocean_shoreline_in_Myrtle_Beach,_South_Carolina.jpg","contentLocation":{"@type":"Place","name":"Oceanfront, south Myrtle Beach, Myrtle Beach, South Carolina"},"representativeOfPage":true}]}</script></div></section><section style="background:var(--navy);padding:3rem 0"><div class="wrap" style="text-align:center;max-width:720px;margin:0 auto"><h2 style="font-family:var(--serif);font-size:1.7rem;color:var(--ivory);margin-bottom:1rem">Have us plan your sale from listing day to closing</h2><p style="color:rgba(244,239,232,.75);line-height:1.7;margin-bottom:1.6rem">Tell us when you need to move. We work out the week to list and price your home from recorded sales near it.</p><a class="btn btn-brass btn-lg" href="/contact/">Have us plan my sale</a></div></section></main>
+<footer>
+<div class="wrap">
+<div class="footer-cta" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.2rem 2rem;padding-bottom:2.2rem;margin-bottom:2.4rem;border-bottom:1px solid rgba(244,239,232,.12)"><div style="max-width:600px"><p style="font-family:var(--serif);font-size:1.6rem;color:var(--ivory);margin:0 0 .4rem;line-height:1.15">Ready to make your next move on the Grand Strand?</p><p style="color:rgba(244,239,232,.6);font-size:.92rem;line-height:1.6;margin:0">Whether you are buying, selling, or investing, talk to a licensed local agent who knows the Grand Strand. No pressure, just straight answers.</p></div><div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-primary" href="/contact/">Talk to an agent</a><a class="btn btn-outline" href="tel:+18543332135" style="color:var(--ivory);border-color:rgba(244,239,232,.4)">Call 854.333.2135</a></div></div>
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="logo" href="/" aria-label="Chapter III Realty, home">
+<img class="logo-img" src="/images/brand/chapter-iii-logo-ivory.svg" alt="Chapter III Realty" width="211" height="92" style="display:block;height:clamp(54px,14vw,66px);width:auto">
+</a>
+<p class="footer-desc">The Myrtle Beach investor-focused brokerage. DSCR analysis, STR analysis, and condo-by-condo ROI data for serious real estate investors.</p>
+<address class="footer-address">
+<strong style="color:var(--ivory);font-style:normal"><a href="/" style="color:inherit;text-decoration:none">Chapter3 Realty, Corp.</a></strong><br/>
+          Vista Drive<br/>
+          Murrells Inlet, SC 29576<br/>
+<a href="tel:+18543332135">854.333.2135</a><br/>
+<a href="/contact/">Email us</a>
+</address>
+<div class="footer-socials">
+<a href="https://facebook.com/chapter3realty" target="_blank" rel="noopener noreferrer">Facebook</a>
+<a href="https://instagram.com/chapter3realty" target="_blank" rel="noopener noreferrer">Instagram</a>
+<a href="https://youtube.com/@chapter3realty" target="_blank" rel="noopener noreferrer">YouTube</a>
+</div>
+</div>
+<div>
+<p class="footer-col-head">Invest</p>
+<ul class="footer-links">
+<li><a href="/invest/">Investor Hub</a></li>
+<li><a href="/invest/condos/">Condo Investing</a></li>
+<li><a href="/invest/condo-buildings/">Condo Buildings</a></li>
+<li><a href="/invest/str-tools/">Short-Term Rentals</a></li>
+<li><a href="/invest/airbnb-income/">Airbnb Income Data</a></li>
+<li><a href="/market-reports/">Market Report</a></li>
+</ul>
+</div>
+<div>
+<p class="footer-col-head">Strategies</p>
+<ul class="footer-links">
+<li><a href="/invest/strategies/dscr-loans/">DSCR Loans</a></li>
+<li><a href="/invest/strategies/brrrr/">BRRRR Method</a></li>
+<li><a href="/invest/strategies/fix-and-flip/">Fix &amp; Flip</a></li>
+<li><a href="/invest/strategies/1031-exchange/">1031 Exchange</a></li>
+<li><a href="/invest/strategies/small-multifamily/">Multifamily Investing</a></li>
+</ul>
+</div>
+<div>
+<p class="footer-col-head">Calculators</p>
+<ul class="footer-links">
+<li><a href="/invest/long-term-rental/">Rental Deal Analyzer</a></li>
+<li><a href="/buyers/closing-costs/">Closing Cost Calculator</a></li>
+<li><a href="/buyers/cost-to-own/">Cost to Own Calculator</a></li>
+<li><a href="/sell/net-proceeds/">Seller Net Proceeds</a></li>
+<li><a href="/sell/capital-gains/">Capital Gains Calculator</a></li>
+<li><a href="/buyers/property-taxes/">Property Tax Estimator</a></li>
+<li><a href="/hoa/">HOA Fees Guide</a></li>
+<li><a href="/homes/map/">Map of homes for sale</a></li>
+</ul>
+</div>
+<div>
+<p class="footer-col-head">Company</p>
+<ul class="footer-links">
+<li><a href="/about/">Meet the Team</a></li>
+<li><a href="/guides/">Guides &amp; Tools</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<div>
+<p class="footer-col-head">Buyers &amp; Sellers</p>
+<ul class="footer-links">
+<li><a href="/buyers/">For Buyers</a></li>
+<li><a href="/sell/">For Sellers</a></li>
+<li><a href="/sell/home-value/">What Is My Home Worth</a></li>
+<li><a href="/submarkets/">Neighborhoods</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p class="footer-copy">© 2026 Chapter3 Realty Corp. All rights reserved. South Carolina real estate company license 28849. Broker-in-Charge: Timothy Nash. <a href="/fair-housing/" style="color:inherit">Equal Housing Opportunity</a>.</p>
+<div class="footer-legal-links">
+<a href="/privacy/">Privacy</a>
+<a href="/terms/">Terms</a>
+<a href="/accessibility/">Accessibility</a>
+<a href="/fair-housing/">Fair Housing</a>
+<a href="/buyers/programs/#afba">AfBA Disclosure</a>
+</div>
+</div>
+<p class="footer-afba"><strong style="color:rgba(244,239,232,0.55)">RESPA Affiliated Business Arrangement Disclosure.</strong> Chapter3 Realty Corp has a business relationship with BrickWood Mortgage (NMLS #189497). Because of this relationship, this referral may provide Chapter3 Realty a financial or other benefit. You are NOT required to use BrickWood Mortgage as a condition for purchase, sale, or refinance of the subject property. There are frequently other providers available. You are free to shop around. <a href="/buyers/programs/#afba">See full AfBA Disclosure.</a></p>
+</div>
+<script>
+/* Chapter3 conversion tracking. Sends GA4 events for leads, calls, and tool use. */
+(function () {
+  function track(name, params) {
+    if (typeof gtag === 'function') { try { gtag('event', name, params || {}); } catch (e) {} }
+  }
+  window.c3track = track;
+  function ready(fn) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+    else fn();
+  }
+  ready(function () {
+    /* Every lead form on the site routes through c3SendForm, which is defined inline per page. */
+    if (typeof window.c3SendForm === 'function' && !window.__c3formWrapped) {
+      var original = window.c3SendForm;
+      window.c3SendForm = function (fields, pageName) {
+        track('generate_lead', { form_name: pageName || 'unknown', page_path: location.pathname });
+        return original.apply(this, arguments);
+      };
+      window.__c3formWrapped = true;
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || !el.closest) return;
+      var tel = el.closest('a[href^="tel:"]');
+      if (tel) { track('phone_click', { page_path: location.pathname }); return; }
+      var mail = el.closest('a[href^="mailto:"]');
+      if (mail) track('email_click', { page_path: location.pathname });
+    }, true);
+    /* Fires once per page the first time someone touches a calculator field. */
+    var toolUsed = false;
+    ['input', 'change'].forEach(function (evt) {
+      document.addEventListener(evt, function (e) {
+        if (toolUsed) return;
+        var t = e.target;
+        if (!t || !t.tagName) return;
+        if (['INPUT', 'SELECT', 'TEXTAREA'].indexOf(t.tagName) === -1) return;
+        if (t.closest && t.closest('form') && t.closest('#ltr-gate')) return;
+        toolUsed = true;
+        track('calculator_used', { page_path: location.pathname });
+      }, true);
+    });
+  });
+})();
+</script>
+
+<!-- timed lead popup -->
+<!-- popup styling lives in assets/app.*.css (search "#c3-pop") -->
+<div id="c3-pop" role="dialog" aria-modal="true" aria-label="Speak to an agent" hidden>
+  <div id="c3-pop-panel">
+    <button type="button" id="c3-pop-x" aria-label="Close">&times;</button>
+
+    <!-- Two paths. If popup-green.mp4 exists, a WebGL shader keys its green out
+         and paints the result into the canvas, so the book floats with no
+         backdrop at all. If it does not exist, or WebGL is unavailable, the
+         plain <video> stays visible and behaves exactly as it does today.
+         c3-keyed on the media element is what switches between them, and it is
+         only ever set after a frame has been keyed successfully. -->
+    <div id="c3-pop-media">
+      <video id="c3-pop-video" width="1920" height="1080" muted playsinline preload="none"
+             data-poster="/popup-poster.jpg" aria-label="Chapter3 Realty, Myrtle Beach">
+        <source src="/popup.mp4" type="video/mp4"/>
+      </video>
+      <canvas id="c3-pop-canvas" aria-hidden="true"></canvas>
+    </div>
+
+    <!-- the capture. Hidden until the clip ends. -->
+    <div id="c3-pop-overlay">
+      <div id="c3-pop-form">
+        <div id="c3-pop-fields">
+          <input id="c3-pop-name" type="text" autocomplete="name" placeholder="Name" aria-label="Name"/>
+          <input id="c3-pop-phone" type="tel" autocomplete="tel" placeholder="Phone" aria-label="Phone"/>
+          <input id="c3-pop-email" type="email" autocomplete="email" placeholder="Email" aria-label="Email"/>
+        </div>
+        <label class="form-consent">
+          <input id="c3-pop-consent" type="checkbox" style="margin-top:.18rem;flex:0 0 auto"/>
+          <span>I consent to receive calls and text messages from Chapter 3 Realty about my property inquiry, showing appointments, and listing information I requested, at the phone number provided, including calls placed using an automated system or an artificial or prerecorded voice. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase.</span>
+        </label>
+        <p id="c3-pop-err" role="alert"></p>
+        <button type="button" id="c3-pop-send" class="btn btn-brass">Speak to an agent</button>
+      </div>
+      <div id="c3-pop-ok">
+        <p style="font-family:var(--serif);font-size:1.3rem;color:#fff;margin:0 0 .3rem">Got it, thank you.</p>
+        <p style="color:rgba(255,255,255,.8);font-size:.95rem;margin:0">An agent will reach out shortly.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  /* Shows on every page load. The only thing that suppresses it is having
+     already submitted - see DONE below. To go back to once-per-visitor, put a
+     time check back in shouldSkip(). */
+  var DONE = 'c3PopDone', SEEN = 'c3PopSeen', DELAY = 10000, WARM = 4000;
+  /* The clip is 3.43s of footage. 1.33x runs it in 2.58s, which is the pace he
+     asked for (owner, 2026-09-13). Nothing is re-encoded: the element plays the
+     same file faster, and the keyer follows because it paints whatever frame is
+     showing. defaultPlaybackRate is set too, because load() resets
+     playbackRate to it. */
+  var RATE = 1.33;
+  var pop, lastFocus;
+
+  /* Metered or 2G: never fetch 3.6MB of video. Show the still and the form. */
+  var NET = navigator.connection || {};
+  var LIGHT = NET.saveData === true || /2g/.test(NET.effectiveType || '');
+
+  /* Two separate suppressions, and they answer different questions.
+     DONE (localStorage, permanent): they already gave us their details, so we
+     never ask again on any visit.
+     SEEN (sessionStorage, this visit only): they have already been shown it
+     once during this browsing session. Without this the popup reopened on
+     every page navigation, which is what a visitor reads as spam. It clears
+     when the browser tab closes, so a genuine return visit gets one more. */
+  function shouldSkip() {
+    /* Never on the listing search: the homes, the maps, and the guide pages that
+       carry homes strips. There the listings are the offer (owner, 2026-10-25). */
+    if (/^\/(homes|map)(\/|$)/.test(location.pathname) || document.querySelector('.hx-strip,[data-hx-map]')) return true;
+    try {
+      if (localStorage.getItem(DONE)) return true;
+      if (sessionStorage.getItem(SEEN)) return true;
+      return false;
+    }
+    catch (e) { return false; }               /* private mode: just show it */
+  }
+  function markSeen() { try { sessionStorage.setItem(SEEN, '1'); } catch (e) {} }
+  function markDone() { try { localStorage.setItem(DONE, String(Date.now())); } catch (e) {} }
+
+  /* ------------------------------------------------------------------
+     GREEN KEY, ON THE GPU.
+     Measured on this project: keying in canvas 2D costs 50-59ms per frame on
+     a fast desktop, which is ~200ms on the Moto G that PageSpeed emulates -
+     unusable. The same key as a WebGL fragment shader costs 0.10ms. That is
+     the entire reason this is WebGL and not getImageData.
+
+     The key is a chromaticity test, not a colour-distance test: how far green
+     exceeds the larger of red and blue. Call that k. Measured over five real
+     frames of this clip, k splits cleanly: 39.5% of pixels sit below 0.05 (the
+     subject) and 51.5% sit at or above 0.20 (the backdrop), with only 9% in
+     between. Shadowed backdrop lands around 0.15, which is why the upper edge
+     has to come down to 0.15 and not sit at 0.26 - swept against the real
+     frames, 0.06-0.26 left 19.9% of the frame on partial alpha, a green haze,
+     while 0.07-0.15 leaves 1.5% and that residue is the genuine matte edge on
+     the fanning paper.
+
+     It degrades in every direction: no WebGL, no shader, no green file, or a
+     lost context all leave the plain <video> on screen.
+     ------------------------------------------------------------------ */
+  var GREEN_SRC = '/popup-green.mp4';
+  var keyer = null, greenReady = false;
+
+  function startKeyer() {
+    if (keyer || LIGHT || !greenReady) return;
+    var media = document.getElementById('c3-pop-media');
+    var cv = document.getElementById('c3-pop-canvas');
+    var vid = document.getElementById('c3-pop-video');
+    if (!media || !cv || !vid) return;
+
+    var gl = null;
+    try {
+      gl = cv.getContext('webgl', { premultipliedAlpha: false, alpha: true, antialias: false })
+        || cv.getContext('experimental-webgl', { premultipliedAlpha: false, alpha: true });
+    } catch (e) { gl = null; }
+    if (!gl) { media.classList.add('c3-nokey'); return; }   /* no WebGL: never show the raw green backdrop */
+
+    function sh(type, src) {
+      var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);
+      return gl.getShaderParameter(s, gl.COMPILE_STATUS) ? s : null;
+    }
+    var vs = sh(gl.VERTEX_SHADER,
+      'attribute vec2 p;varying vec2 uv;' +
+      'void main(){uv=vec2(p.x*.5+.5,.5-p.y*.5);gl_Position=vec4(p,0.,1.);}');
+    var fs = sh(gl.FRAGMENT_SHADER,
+      'precision mediump float;uniform sampler2D t;varying vec2 uv;' +
+      'void main(){vec4 c=texture2D(t,uv);' +
+      'float g=c.g-max(c.r,c.b);' +               /* how green is it */
+      'float a=1.0-smoothstep(0.07,0.15,g);' +    /* band measured off the real clip, see below */
+      'float s=max(0.0,g)*0.85;' +                /* pull the spill off what remains */
+      'gl_FragColor=vec4(c.r,c.g-s,c.b,a);}');
+    if (!vs || !fs) return;
+    var pr = gl.createProgram();
+    gl.attachShader(pr, vs); gl.attachShader(pr, fs); gl.linkProgram(pr);
+    if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) return;
+    gl.useProgram(pr);
+
+    var buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,1]), gl.STATIC_DRAW);
+    var loc = gl.getAttribLocation(pr, 'p');
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+    var tex = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.clearColor(0, 0, 0, 0);
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+    var running = false, painted = false, raf = 0;
+
+    function size() {
+      /* never rasterise more than the box needs; the source may be 4K */
+      var r = media.getBoundingClientRect();
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var w = Math.max(2, Math.min(1600, Math.round(r.width * dpr)));
+      var h = Math.max(2, Math.round(w * 9 / 16));
+      if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
+      gl.viewport(0, 0, cv.width, cv.height);
+    }
+
+    function frame() {
+      if (!running) return;
+      if (vid.readyState >= 2) {
+        size();
+        try {
+          gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, vid);
+          gl.clear(gl.COLOR_BUFFER_BIT);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+          if (!painted) { painted = true; media.classList.add('c3-keyed'); }
+        } catch (e) { stop(); return; }
+      }
+      raf = requestAnimationFrame(frame);
+    }
+    function stop() { running = false; if (raf) cancelAnimationFrame(raf); raf = 0; }
+
+    cv.addEventListener('webglcontextlost', function (e) {
+      e.preventDefault(); stop(); media.classList.remove('c3-keyed');
+    });
+
+    keyer = {
+      start: function () { if (running) return; running = true; frame(); },
+      stop: stop,
+      /* keep the last keyed frame up after the clip ends, but stop burning rAF */
+      freeze: function () { stop(); }
+    };
+    keyer.start();
+  }
+
+  /* Swap the source to the green master only if it is actually there. A HEAD
+     that 404s leaves the existing clip and the existing behaviour untouched. */
+  function tryGreen(cb) {
+    if (LIGHT) { cb(false); return; }
+    var done = false;
+    var finish = function (ok) { if (!done) { done = true; cb(ok); } };
+    try {
+      fetch(GREEN_SRC, { method: 'HEAD' })
+        .then(function (r) { finish(r && r.ok); })
+        .catch(function () { finish(false); });
+      setTimeout(function () { finish(false); }, 2500);
+    } catch (e) { finish(false); }
+  }
+
+  /* The still is in data-poster, not poster, because a poster downloads on
+     every page view even when the popup never opens (82 KB). It is put back
+     only when the blue clip or the still will actually be shown. */
+  function usePoster(v) {
+    if (v && !greenReady && !v.getAttribute('poster') && v.getAttribute('data-poster'))
+      v.setAttribute('poster', v.getAttribute('data-poster'));
+  }
+
+  /* preload="none" meant the 3.6MB only started downloading when the popup
+     opened, so on a phone the backstop fired first and the clip never played -
+     which is what "the video is slower" was. Start fetching WARM ms before the
+     popup is due instead. Anyone still reading at 6s was going to see it at
+     10s anyway, so this costs no extra visitor the download. */
+  function warmVideo() {
+    if (LIGHT) return;
+    var v = document.getElementById('c3-pop-video');
+    if (!v || v.preload === 'auto') return;
+    tryGreen(function (ok) {
+      if (ok) {
+        greenReady = true;
+        var p = document.getElementById('c3-pop');
+        if (p) p.classList.add('c3-green');   /* switches the window to 16:9, see the css */
+        /* the keyed master replaces the source AND the poster: the poster is a
+           frame of the old blue clip and would flash behind a transparent one */
+        v.removeAttribute('poster');
+        var s = v.querySelector('source');
+        if (s) s.setAttribute('src', GREEN_SRC); else v.setAttribute('src', GREEN_SRC);
+      } else usePoster(v);
+      v.preload = 'auto';
+      try { v.load(); } catch (e) {}
+    });
+  }
+
+  /* The capture floats up over the last frame. Bound to 'ended', but also to
+     'error', to a never-started check and to a hard cap, so a blocked, slow or
+     broken video can never leave the visitor looking at a dialog with nothing
+     in it. */
+  function revealAfterVideo() {
+    var v = document.getElementById('c3-pop-video');
+    var ov = document.getElementById('c3-pop-overlay');
+    var shown = false;
+    function reveal() {
+      if (shown || !ov) return;
+      shown = true;
+      ov.style.opacity = '1';
+      ov.style.transform = 'translateY(0)';
+      ov.style.pointerEvents = 'auto';
+      var n = document.getElementById('c3-pop-name'); if (n) n.focus();
+    }
+    usePoster(v);
+    if (!v || LIGHT) { reveal(); return; }
+    try { v.defaultPlaybackRate = RATE; v.playbackRate = RATE; } catch (e) {}
+    startKeyer();                             /* no-op unless WebGL and the green file are both there */
+    v.addEventListener('ended', function () { reveal(); if (keyer) keyer.freeze(); });
+    v.addEventListener('error', reveal);
+    /* The clip runs 2.58s at this rate. The form arrives as the book finishes,
+       and these backstops cover a clip that is slow, blocked or broken. */
+    setTimeout(reveal, 2500);
+    setTimeout(function () { if (!v.currentTime) reveal(); }, 3000);  /* never started */
+    setTimeout(reveal, 8000);                                         /* hard cap */
+    try {
+      if (!v.readyState) v.load();            /* warmVideo did not get there first */
+      var p = v.play();
+      if (p && p.catch) p.catch(function () { reveal(); });   /* autoplay refused */
+    } catch (e) { reveal(); }
+  }
+
+  function close() {
+    if (!pop) return;
+    pop.style.display = 'none'; pop.hidden = true;
+    pop.classList.remove('is-open');          /* so re-opening replays the rise */
+    if (keyer) keyer.stop();                  /* never leave rAF running behind a closed dialog */
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e) {
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key !== 'Tab') return;
+    var f = pop.querySelectorAll('button, input, a[href]');
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  function open() {
+    /* Never while the rental analyzer is working or showing its results (owner, 2026-10-28):
+       window.c3Busy is set by the analyzer. Not marked seen, so a later page may still show it. */
+    if (window.c3Busy) return;
+    pop = document.getElementById('c3-pop');
+    if (!pop) return;
+    /* never stack on top of another dialog */
+    var other = document.querySelector('.idx-modal.open, #ltr-gate[style*="display:block"]');
+    if (other) return;
+    lastFocus = document.activeElement;
+    pop.hidden = false; pop.style.display = 'flex';
+    void pop.offsetWidth;                     /* flush, or the class lands in the same frame */
+    pop.classList.add('is-open');             /* starts the rise, see #c3-pop.is-open in the css */
+    markSeen();                               /* once per session, not once per page */
+    document.addEventListener('keydown', onKey);
+    revealAfterVideo();
+    if (window.c3track) window.c3track('popup_shown', { page_path: location.pathname });
+    return true;
+  }
+  /* CTA buttons on pages with no on-page form call this; true = opened, so the
+     caller cancels its /contact/ fallback navigation. */
+  window.c3PopOpen = open;
+
+  function send() {
+    var g = function (id) { var el = document.getElementById(id); return el ? String(el.value || '').trim() : ''; };
+    var name = g('c3-pop-name'), phone = g('c3-pop-phone'), email = g('c3-pop-email');
+    var consent = !!(document.getElementById('c3-pop-consent') || {}).checked;
+    var err = document.getElementById('c3-pop-err');
+    function fail(m) { if (err) { err.textContent = m; err.style.display = 'block'; } }
+    if (err) err.style.display = 'none';
+    if (!name) { fail('Please add your name.'); return; }
+    if (!phone) { fail('Please add a phone number so an agent can reach you.'); return; }
+    if (!consent) { fail('Please tick the box so we are allowed to call or text you.'); return; }
+    if (typeof c3SendForm === 'function') {
+      c3SendForm({ name: name, phone: phone, email: email, message: 'Site popup enquiry', consent: 'yes' }, 'Site popup');
+    }
+    markDone();                               /* do not ask again for details we now have */
+    document.getElementById('c3-pop-form').style.display = 'none';
+    document.getElementById('c3-pop-ok').style.display = 'block';
+    setTimeout(close, 2600);
+  }
+
+  function init() {
+    if (location.pathname.indexOf('/contact/') === 0) return;  /* already contacting us */
+    var p = document.getElementById('c3-pop');
+    if (!p) return;
+    /* wire close and send even when the timed show is skipped, because CTA
+       buttons can open the dialog through c3PopOpen at any time */
+    var x = document.getElementById('c3-pop-x'); if (x) x.addEventListener('click', close);
+    var s = document.getElementById('c3-pop-send'); if (s) s.addEventListener('click', send);
+    p.addEventListener('click', function (e) { if (e.target === p) close(); });
+    if (shouldSkip()) return;
+    setTimeout(warmVideo, Math.max(0, DELAY - WARM));
+    setTimeout(open, DELAY);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+<script>
+/* Address suggestions in every address box (owner, 2026-10-26), from Google Places with the
+   site's browser key (a public key, limited to this site). Nothing loads until someone types
+   4 characters. A pick fills the box and fires "c3:address" with the street and town, so a
+   form with a separate town box (or the rental analyzer) can fill the rest.
+   Also: no number box on the site changes when the page is scrolled over it. */
+(function () {
+  var KEY = 'AIzaSyAFTNMGh-PmVFTl3S0ViiM9zNYicFrgGfs';
+  var SEL = 'input[data-addr],#ltr-street,#ldCtx,#rnAddr,#sbh-street';
+  document.addEventListener('wheel', function (e) {
+    var a = document.activeElement;
+    if (a && a.type === 'number' && e.target === a) a.blur();
+  }, { passive: true });
+  var css = false;
+  function styles() {
+    if (css) return; css = true;
+    var s = document.createElement('style');
+    s.textContent = '.c3-addr{position:absolute;z-index:60;margin:4px 0 0;padding:6px;list-style:none;background:#fff;border-radius:14px;box-shadow:0 14px 40px rgba(28,32,40,.22);max-height:18rem;overflow:auto}'
+      + '.c3-addr li{padding:.6rem .75rem;border-radius:10px;cursor:pointer;font-size:.95rem;line-height:1.35;color:#1c2028;text-align:left}'
+      + '.c3-addr li small{display:block;font-size:.8rem;color:#5c6b78}'
+      + '.c3-addr li[aria-selected=true],.c3-addr li:hover{background:#f4efe8}'
+      + '.c3-addr .c3-addr-g{padding:.3rem .75rem 0;font-size:.7rem;color:#8a949c;cursor:default;background:none!important}';
+    document.head.appendChild(s);
+  }
+  function attach(inp) {
+    if (inp.__c3addr) return; inp.__c3addr = 1; styles();
+    var list = document.createElement('ul'), id = 'c3-addr-' + Math.random().toString(36).slice(2, 8);
+    list.className = 'c3-addr'; list.id = id; list.setAttribute('role', 'listbox'); list.hidden = true;
+    inp.setAttribute('autocomplete', 'off'); inp.setAttribute('role', 'combobox');
+    inp.setAttribute('aria-autocomplete', 'list'); inp.setAttribute('aria-controls', id); inp.setAttribute('aria-expanded', 'false');
+    inp.insertAdjacentElement('afterend', list);
+    var items = [], active = -1, timer = 0, seq = 0, token = null;
+    function hide() { list.hidden = true; inp.setAttribute('aria-expanded', 'false'); active = -1; }
+    function place() {
+      list.style.top = (inp.offsetTop + inp.offsetHeight) + 'px';
+      list.style.left = inp.offsetLeft + 'px'; list.style.width = Math.max(inp.offsetWidth, 260) + 'px';
+      var p = list.offsetParent; if (p && p !== document.body && getComputedStyle(p).position === 'static') p.style.position = 'relative';
+    }
+    function draw() {
+      list.textContent = '';
+      items.forEach(function (it, i) {
+        var li = document.createElement('li'); li.id = id + '-' + i; li.setAttribute('role', 'option');
+        li.setAttribute('aria-selected', i === active ? 'true' : 'false');
+        li.appendChild(document.createTextNode(it.main)); var sm = document.createElement('small'); sm.textContent = it.rest; li.appendChild(sm);
+        li.addEventListener('mousedown', function (e) { e.preventDefault(); pick(i); });
+        list.appendChild(li);
+      });
+      var g = document.createElement('li'); g.className = 'c3-addr-g'; g.setAttribute('aria-hidden', 'true'); g.textContent = 'Suggestions by Google'; list.appendChild(g);
+      if (items.length) { place(); list.hidden = false; inp.setAttribute('aria-expanded', 'true'); } else hide();
+      if (active >= 0) inp.setAttribute('aria-activedescendant', id + '-' + active); else inp.removeAttribute('aria-activedescendant');
+    }
+    function pick(i) {
+      var it = items[i]; if (!it) return;
+      var town = it.rest.split(',')[0].trim(), state = (it.rest.split(',')[1] || 'SC').trim();
+      var sep = inp.getAttribute('data-addr') === 'street' || inp.id === 'sbh-street' || inp.id === 'ltr-street';
+      inp.value = sep ? it.main : it.main + ', ' + town + ', ' + state;
+      hide(); token = null;
+      if (inp.id === 'sbh-street') { var c = document.getElementById('sbh-city'); if (c) c.value = town; }
+      inp.dispatchEvent(new CustomEvent('c3:address', { bubbles: true, detail: { street: it.main, city: town, state: state } }));
+    }
+    function ask(q) {
+      var my = ++seq;
+      if (!token) token = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now());
+      fetch('https://places.googleapis.com/v1/places:autocomplete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Goog-Api-Key': KEY, 'X-Goog-FieldMask': 'suggestions.placePrediction.structuredFormat' },
+        body: JSON.stringify({ input: q, sessionToken: token, includedRegionCodes: ['us'], includedPrimaryTypes: ['street_address', 'premise', 'subpremise'],
+          locationBias: { circle: { center: { latitude: 33.75, longitude: -78.95 }, radius: 50000 } } })
+      }).then(function (r) { return r.json(); }).then(function (j) {
+        if (my !== seq) return;
+        items = ((j && j.suggestions) || []).map(function (s) {
+          var f = s.placePrediction && s.placePrediction.structuredFormat;
+          return f ? { main: f.mainText ? f.mainText.text : '', rest: f.secondaryText ? f.secondaryText.text.replace(/, USA$/, '') : '' } : null;
+        }).filter(function (x) { return x && x.main; }).slice(0, 5);
+        active = -1; draw();
+      }).catch(function () { if (my === seq) hide(); });
+    }
+    inp.addEventListener('input', function () {
+      clearTimeout(timer); var v = inp.value.trim();
+      if (v.length < 4 || /^\d+$/.test(v)) { seq++; items = []; hide(); return; }
+      timer = setTimeout(function () { ask(v); }, 250);
+    });
+    inp.addEventListener('keydown', function (e) {
+      if (list.hidden) return;
+      if (e.key === 'ArrowDown') { e.preventDefault(); active = Math.min(active + 1, items.length - 1); draw(); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); active = Math.max(active - 1, 0); draw(); }
+      else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); pick(active); }
+      else if (e.key === 'Escape') hide();
+    });
+    inp.addEventListener('blur', function () { setTimeout(hide, 150); });
+  }
+  document.addEventListener('focusin', function (e) { var t = e.target; if (t && t.matches && t.matches(SEL)) attach(t); });
+})();
+</script>
+<div id="c3a" class="c3a" role="dialog" aria-modal="true" aria-labelledby="c3a-t" hidden><div class="c3a-card"><button type="button" class="c3a-x" data-c3a-close aria-label="Close">&times;</button>
+<form id="c3a-form" novalidate><p class="c3a-k">Talk to an agent</p><h2 id="c3a-t" class="c3a-t">We'll call you back today.</h2><p class="c3a-about" id="c3a-about" hidden></p>
+<label class="c3a-l" for="c3a-name">Name</label><input class="c3a-i" id="c3a-name" autocomplete="name" required maxlength="120">
+<label class="c3a-l" for="c3a-phone">Phone</label><input class="c3a-i" id="c3a-phone" type="tel" autocomplete="tel" required maxlength="30">
+<label class="c3a-l" for="c3a-email">Email</label><input class="c3a-i" id="c3a-email" type="email" autocomplete="email" required maxlength="160">
+<label class="form-consent c3a-c" for="c3a-consent"><input id="c3a-consent" type="checkbox"><span>I consent to receive calls and text messages from Chapter 3 Realty about my property inquiry, showing appointments, and listing information I requested, at the phone number provided, including calls placed using an automated system or an artificial or prerecorded voice. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase.</span></label>
+<p class="c3a-err" id="c3a-err" hidden></p><button type="submit" class="c3a-go">Talk to an agent</button></form>
+<div id="c3a-done" class="c3a-done" hidden><p class="c3a-k">Sent</p><h2 class="c3a-t">Thanks. An agent will call you today.</h2><p class="c3a-p">Prefer to talk now? Call <a href="tel:+18543332135">854.333.2135</a>.</p><button type="button" class="c3a-go" data-c3a-close>Close</button></div></div></div>
+<style>
+.c3a{position:fixed;inset:0;z-index:10050;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(18,22,30,.72);backdrop-filter:blur(3px)}.c3a[hidden]{display:none}
+.c3a-card{position:relative;width:100%;max-width:26rem;max-height:calc(100vh - 2rem);overflow:auto;background:#fdfbf7;border-radius:22px;padding:1.7rem 1.6rem 1.4rem;box-shadow:0 30px 80px rgba(18,22,30,.45);border-top:3px solid var(--brass,#c4783a)}
+.c3a-x{position:absolute;top:.6rem;right:.8rem;border:0;background:none;font-size:1.6rem;line-height:1;color:#5c6b78;cursor:pointer;padding:.3rem}
+.c3a-k{margin:0 0 .3rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass,#c4783a);font-weight:700}
+.c3a-t{margin:0 0 .8rem;font-family:var(--serif,Georgia,serif);font-size:1.45rem;line-height:1.2;color:var(--navy,#1c2028)}
+.c3a-about{margin:-.3rem 0 .9rem;font-size:.88rem;color:#5c6b78}
+.c3a-l{display:block;margin:.5rem 0 .25rem;font-size:.74rem;font-weight:700;color:#5c6b78}
+.c3a-i{width:100%;min-height:2.9rem;padding:0 .85rem;border:1.5px solid rgba(28,32,40,.2);border-radius:12px;background:#fff;font:inherit;font-size:1rem;color:var(--navy,#1c2028)}
+.c3a-i:focus{outline:none;border-color:var(--brass,#c4783a);box-shadow:0 0 0 3px rgba(196,120,58,.18)}
+.c3a-c{display:flex;gap:.55rem;align-items:flex-start;margin:.9rem 0 .4rem;font-size:.68rem;line-height:1.45;color:#5c6b78;cursor:pointer}.c3a-c input{margin-top:.15rem;width:16px;height:16px;flex:none;accent-color:var(--brass,#c4783a)}
+.c3a-err{margin:.4rem 0 0;font-size:.85rem;color:#8a2d1c}
+.c3a-go{display:block;width:100%;min-height:3.1rem;margin-top:.9rem;border:0;border-radius:999px;background:linear-gradient(180deg,#e09a5c,#c4783a);color:#151a22;font:inherit;font-weight:700;font-size:1rem;cursor:pointer}
+.c3a-p{color:#5c6b78;font-size:.95rem}.c3a-p a{color:var(--navy,#1c2028);font-weight:700}
+</style>
+<script>
+/* Talk to an agent (owner, 2026-10-27): every call to action that means "talk to an agent" opens this one
+   short form (name, phone, email) instead of the contact page, and sends what the visitor was looking at:
+   the home on a listing page or in the analyzer (window.c3AgentContext), else the page. */
+(function () {
+  var box = document.getElementById('c3a'); if (!box) return;
+  var form = document.getElementById('c3a-form'), done = document.getElementById('c3a-done'), err = document.getElementById('c3a-err');
+  var ctx = null, last = null;
+  function context(el) {
+    var c = { address: '', note: '' };
+    if (el && el.getAttribute('data-address')) c.address = el.getAttribute('data-address');
+    if (!c.address && typeof window.c3AgentContext === 'function') { try { var x = window.c3AgentContext() || {}; c.address = x.address || ''; c.note = x.note || ''; } catch (e) {} }
+    var addr = document.querySelector('.hx-l-addr'); if (!c.address && addr) c.address = addr.textContent.trim();
+    var mls = document.documentElement.getAttribute('data-hx-mls'); if (mls) c.note = (c.note ? c.note + ' ' : '') + 'MLS #' + mls + '.';
+    return c;
+  }
+  function open(el) {
+    ctx = context(el); last = document.activeElement;
+    var about = document.getElementById('c3a-about');
+    about.hidden = !ctx.address; about.textContent = ctx.address ? 'About ' + ctx.address : '';
+    form.hidden = false; done.hidden = true; err.hidden = true; box.hidden = false;
+    setTimeout(function () { document.getElementById('c3a-name').focus(); }, 30);
+    return true;
+  }
+  function close() { box.hidden = true; if (last && last.focus) last.focus(); }
+  window.c3AgentOpen = open;
+  box.addEventListener('click', function (e) { if (e.target === box || e.target.closest('[data-c3a-close]')) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !box.hidden) close(); });
+  /* Every link to the contact page, and anything marked data-agent, opens the form. The contact page itself still works when opened directly. */
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[href^="/contact"],[data-agent]');
+    if (!a || a.hasAttribute('data-no-agent') || /^\/contact\/?$/.test(location.pathname)) return;
+    e.preventDefault(); e.stopPropagation(); open(a);
+  }, true);
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); err.hidden = true;
+    function v(id) { return document.getElementById(id).value.trim(); }
+    var name = v('c3a-name'), phone = v('c3a-phone'), email = v('c3a-email'), cb = document.getElementById('c3a-consent');
+    var digits = phone.replace(/[^0-9]/g, '');
+    if (!name) { err.textContent = 'Please add your name.'; err.hidden = false; return; }
+    if (digits.length < 10) { err.textContent = 'Please add a phone number we can call.'; err.hidden = false; return; }
+    if (email.indexOf('@') < 1) { err.textContent = 'Please add your email.'; err.hidden = false; return; }
+    if (!cb.checked) { err.textContent = 'Please tick the box so we may call and text you.'; err.hidden = false; return; }
+    if (typeof window.c3SendForm === 'function') {
+      window.c3SendForm({ name: name, phone: phone, email: email, consent: 'yes', property_address: (ctx && ctx.address) || '',
+        message: 'Talk to an agent. ' + ((ctx && ctx.address) ? 'About ' + ctx.address + '. ' : '') + ((ctx && ctx.note) || '') + ' Page: ' + document.title }, 'Talk to an Agent');
+    }
+    form.hidden = true; done.hidden = false;
+  });
+})();
+</script>
+<script>
+/* The next page's layout at once (owner, 2026-10-30: "instantly gets to the page and shows the layout while
+   the visitor waits"). When a link to another page on this site is clicked, a thin brass bar starts and, if
+   the page has not come in a moment later, grey blocks in the shape of that page show below the header with a
+   soft shimmer: a home, the map, a list of homes, or an article. They go when the page arrives, or when the
+   back button brings this page back. Nothing is shown for links that open elsewhere or a file. */
+(function () {
+  if (window.c3Skel) return; window.c3Skel = 1;
+  var css = '.c3-go{position:fixed;left:0;top:0;z-index:2147483646;height:3px;width:0;background:#c4783a;box-shadow:0 0 8px rgba(196,120,58,.6);pointer-events:none}'
+    + '.c3-go-on{width:88%;transition:width 5s cubic-bezier(.08,.8,.2,1)}'
+    + '.c3-sk{position:fixed;left:0;right:0;bottom:0;z-index:99;background:var(--ivory,#f4efe8);overflow:hidden;opacity:0;transition:opacity .15s ease}.c3-sk-on{opacity:1}'
+    + '.c3-sk-w{max-width:1200px;margin:0 auto;padding:1.6rem 2rem}'
+    + '.c3-sk b{display:block;border-radius:10px;background:linear-gradient(100deg,#e9e2d7 30%,#f6f2ec 50%,#e9e2d7 70%);background-size:300% 100%;animation:c3-sh 1.3s linear infinite}'
+    + '@keyframes c3-sh{from{background-position:100% 0}to{background-position:0 0}}'
+    + '.c3-sk .l{height:.85rem;margin:.7rem 0}.c3-sk .h{height:2.1rem;width:70%;margin:.4rem 0 .9rem}.c3-sk .s{width:35%}.c3-sk .m{width:85%}'
+    + '.c3-sk .ph{aspect-ratio:16/9;max-height:52vh;width:100%;border-radius:16px;margin:1rem 0}'
+    + '.c3-sk .row{display:flex;gap:.6rem;margin:.9rem 0}.c3-sk .row b{height:2.4rem;width:7rem;border-radius:999px}.c3-sk .row b.q{flex:1;width:auto}'
+    + '.c3-sk .g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1rem}.c3-sk .c{background:#fff;border-radius:14px;overflow:hidden}'
+    + '.c3-sk .c b.p{aspect-ratio:16/10;border-radius:0}.c3-sk .c i{display:block;padding:.4rem .9rem .9rem}'
+    + '.c3-sk .gal{display:grid;grid-template-columns:2fr 1fr;gap:.6rem;height:min(54vh,540px);margin:1rem 0 1.2rem}.c3-sk .gal>b{height:100%;border-radius:16px}.c3-sk .gal span{display:grid;grid-template-rows:1fr 1fr;gap:.6rem}.c3-sk .gal span b{border-radius:16px}'
+    + '.c3-sk .two{display:grid;grid-template-columns:minmax(0,1fr) 22rem;gap:2rem}.c3-sk .box{height:16rem;border-radius:16px;margin-top:1rem}'
+    + '.c3-sk .mp{display:grid;grid-template-columns:minmax(0,1fr) min(46vw,560px);gap:0;height:calc(100% - 4.4rem)}.c3-sk .mp>b{height:100%;border-radius:0}.c3-sk .mp .g{grid-template-columns:repeat(2,minmax(0,1fr));margin:0;padding:1rem;align-content:start}'
+    + '.c3-sk-full .c3-sk-w{max-width:none;padding:.7rem 1rem 0;height:100%}'
+    + '@media (max-width:899px){.c3-sk-w{padding:1rem}.c3-sk .g,.c3-sk .mp .g{grid-template-columns:1fr}.c3-sk .two{grid-template-columns:1fr}.c3-sk .box{display:none}.c3-sk .gal{grid-template-columns:1fr;height:auto;aspect-ratio:4/3}.c3-sk .gal span{display:none}.c3-sk .mp{grid-template-columns:1fr}.c3-sk .mp>b{display:none}.c3-sk .mp .g{padding:.6rem 0}.c3-sk .row b{width:5rem}}'
+    + '@media (prefers-reduced-motion:reduce){.c3-sk b{animation:none}.c3-go-on{transition:none}}';
+  var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
+  function lines(n) { var s = ''; for (var i = 0; i < n; i++) s += '<b class="l' + (i % 3 === 2 ? ' m' : '') + '"></b>'; return s; }
+  function cards(n) { var s = ''; for (var i = 0; i < n; i++) s += '<div class="c"><b class="p"></b><i><b class="l s"></b><b class="l m"></b><b class="l"></b></i></div>'; return s; }
+  var pills = '<div class="row"><b class="q"></b><b></b><b></b><b></b></div>';
+  function kind(u) {
+    var p = u.pathname;
+    if (/^\/homes\/(api|p|deals)\//.test(p)) return '';
+    if (/\.[a-z0-9]{2,5}$/i.test(p) && !/\.html$/i.test(p)) return '';
+    if (/^\/homes\/map\//.test(p)) return 'map';
+    if (/^\/homes\/[A-Za-z]{0,3}[0-9]{4,}[A-Za-z0-9]*(-[^\/]*)?\/?$/.test(p)) return 'home';
+    if (/^\/homes(\/|$)/.test(p)) return 'list';
+    return 'page';
+  }
+  var shapes = {
+    home: '<div class="c3-sk-w"><b class="l s"></b><div class="gal"><b></b><span><b></b><b></b></span></div><div class="two"><div><b class="h s"></b><b class="l m"></b><div class="row"><b></b><b></b><b></b></div>' + lines(6) + '</div><b class="box"></b></div></div>',
+    map: '<div class="c3-sk-w">' + pills + '<div class="mp"><b></b><div class="g">' + cards(4) + '</div></div></div>',
+    list: '<div class="c3-sk-w"><b class="h"></b>' + pills + '<div class="g">' + cards(6) + '</div></div>',
+    page: '<div class="c3-sk-w"><b class="l s"></b><b class="h"></b><b class="h s"></b><b class="l s"></b><b class="ph"></b>' + lines(9) + '</div>'
+  };
+  var bar = null, sk = null, timer = 0, gone = 0;
+  function clear() {
+    clearTimeout(timer); clearTimeout(gone);
+    if (bar) bar.classList.remove('c3-go-on');
+    if (sk) { sk.parentNode && sk.parentNode.removeChild(sk); sk = null; }
+  }
+  function show(k) {
+    if (!shapes[k]) return;
+    sk = document.createElement('div'); sk.className = 'c3-sk' + (k === 'map' ? ' c3-sk-full' : ''); sk.setAttribute('aria-hidden', 'true');
+    var h = document.querySelector('header'); sk.style.top = (h ? Math.max(0, Math.round(h.getBoundingClientRect().bottom)) : 0) + 'px';
+    sk.innerHTML = shapes[k]; document.body.appendChild(sk);
+    requestAnimationFrame(function () { if (sk) sk.classList.add('c3-sk-on'); });
+  }
+  /* go(url): start the bar, and the layout of the page at url if it is slow. Also used by the map. */
+  function go(href) {
+    clear();
+    var u; try { u = new URL(href || location.href, location.href); } catch (x) { u = null; }
+    var k = u ? kind(u) : '';
+    if (!bar) { bar = document.createElement('div'); bar.className = 'c3-go'; document.body.appendChild(bar); }
+    void bar.offsetWidth; bar.classList.add('c3-go-on');
+    // Our own pages come in quickly; the home search asks the MLS, so its layout shows sooner.
+    if (k) timer = setTimeout(function () { show(k); }, k === 'page' ? 260 : 90);
+    gone = setTimeout(clear, 15000);
+  }
+  window.hxGo = go;
+  function ours(u) { return u.origin === location.origin && !(u.pathname === location.pathname && u.search === location.search); }
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a || (a.target && a.target !== '_self') || a.hasAttribute('download')) return;
+    var u; try { u = new URL(a.href, location.href); } catch (x) { return; }
+    if (!/^https?:$/.test(u.protocol) || !ours(u)) return;
+    // After the page's own handlers: a click one of them cancels (a heart, a popup) shows nothing.
+    setTimeout(function () { if (!e.defaultPrevented) go(u.href); }, 0);
+  });
+  document.addEventListener('submit', function (e) {
+    var f = e.target;
+    if (e.defaultPrevented || !f || (f.method || 'get').toLowerCase() !== 'get' || (f.target && f.target !== '_self')) return;
+    var u; try { u = new URL(f.action || location.href, location.href); } catch (x) { return; }
+    if (u.origin === location.origin) setTimeout(function () { if (!e.defaultPrevented) go(u.href); }, 0);
+  });
+  addEventListener('pageshow', clear);
+})();
+</script>
+</footer>
+
+
+
+<script src="/assets/s.9cd69313f2.js"></script>
+<!-- Google Maps: loaded only on pages that use it (STR map / LTR analyzer) -->
+<script>
+const GOOGLE_MAPS_KEY = 'AIzaSyAFTNMGh-PmVFTl3S0ViiM9zNYicFrgGfs';
+if (GOOGLE_MAPS_KEY !== 'YOUR_GOOGLE_MAPS_KEY') {
+  // The analyzer (#page-ltr) no longer loads Google. Its address autocomplete and
+  // geocoding run through our own worker with no key, so the only page that still
+  // needs the Maps library is the 3D map itself.
+  var _c3NeedsMap = document.getElementById('page-strmap');
+  if (_c3NeedsMap) {
+    const s = document.createElement('script');
+    var _c3Cb = _c3NeedsMap ? 'initSTRMap' : 'd2PlacesReady';
+    s.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_KEY}&libraries=places,geometry&callback=${_c3Cb}`;
+    s.async = true; s.defer = true;
+    document.head.appendChild(s);
+  }
+}
+</script>
+
+
+<!-- ══════════════════════════════════════
+     DYNAMIC LAYER v2 ELEMENTS
+══════════════════════════════════════ -->
+<div id="c3-cursor"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 2L17 9.5L10.5 11.5L8 18L3 2Z" fill="#1c2028" stroke="#ffffff" stroke-width="1" stroke-linejoin="round"/></svg></div>
+<div id="c3-transition"><div id="c3-transition-label">Chapter3</div></div>
+<div id="c3-progress"></div>
+<canvas id="c3-particles"></canvas>
+<button id="c3-fab" onclick="showPage('sellers')" title="Get My Home Value">
+  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+    <path d="M11 3L3 9v10h5v-5h6v5h5V9L11 3z" stroke="#f4efe8" stroke-width="1.5" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+
+<script src="/assets/s.2fd96ce52b.js"></script>
+
+<script>(function(){document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".page-section").forEach(function(p){p.classList.remove("active")});var pg=document.getElementById("page-home");if(pg)pg.classList.add("active");window.scrollTo(0,0)})})();</script>
+<style id="c3-mobile-fix-css">
+html.touch #c3-cursor, html.touch #c3-cursor-ring, html.touch #c3-cursor-outer,
+html.touch #c3-particles, html.touch #c3-transition, html.touch #c3-progress { display:none !important; }
+html.touch * { cursor:auto !important; }
+html.touch .sr, html.touch .c3-divider { opacity:1 !important; transform:none !important; }
+html.touch a, html.touch button, html.touch [onclick], html.touch [role=button],
+html.touch .btn, html.touch .chooser-card { touch-action:manipulation; -webkit-tap-highlight-color:rgba(196,120,58,.18); }
+html.touch .page-section { display:none !important; }
+html.touch .page-section.active { display:block !important; }
+html.touch #page-home.active { display:flex !important; }
+</style>
+
+
+<script>(function(){var MAP={"home": "/", "why": "/why-chapter-3/", "invest": "/invest/", "ltr": "/invest/long-term-rental/", "strmap": "/invest/str-map/", "tools": "/invest/str-tools/", "invest-chooser": "/invest/strategy/", "buyers": "/buyers/", "buyers-visual": "/buyers/guide/", "sc-housing-dpa": "/buyers/programs/", "lender-dpa": "/buyers/programs/", "program-contact": "/buyers/first-time-home-buyer-myrtle-beach/", "sellers": "/sell/", "contact": "/contact/", "journal": "/market-reports/", "about": "/about/", "submarket": "/submarkets/", "buyer-mistakes": "/buyers/common-mistakes/", "path-firsttime": "/buyers/first-time-home-buyer-myrtle-beach/", "path-military": "/buyers/va-loans/", "path-relocating": "/buyers/relocating/", "path-retiree": "/buyers/retirees/", "path-secondhome": "/buyers/second-home/", "buyinmb": "/buyers/buying-in-myrtle-beach/", "outofstate": "/sell/out-of-state-buyers/"};var CUR="invest-strrules";var _spa=window.showPage;window.showPage=function(id){if(id===CUR){if(_spa)_spa(id);}else{location.href=MAP[id]||'/';}};window.showSubmarket=function(s){location.href='/submarkets/'+s+'/';};var t=('ontouchstart' in window)||navigator.maxTouchPoints>0||(window.matchMedia&&matchMedia('(pointer:coarse)').matches);if(t)document.documentElement.classList.add('touch');document.addEventListener('DOMContentLoaded',function(){try{if(CUR)window.showPage(CUR);}catch(e){}});})();</script>
+<script>
+/* Flip to false the day Web3Forms is removed. It is the ONLY switch: it stops
+   the second send AND turns a CRM failure into a visible phone number. */
+function c3SendForm(fields, pageName) {
+  /* The disclosure EXACTLY as this page renders it. The CRM stores it verbatim
+     as proof of what the visitor saw, so it is read from the DOM, not hardcoded. */
+  var consentText = '';
+  var box = document.querySelector('.form-consent span');
+  if (box) { consentText = (box.textContent || '').replace(/\s+/g, ' ').trim(); }
+  if (!consentText) {
+    var nodes = document.querySelectorAll('.form-consent, label, span, p');
+    for (var i = 0; i < nodes.length; i++) {
+      var t = nodes[i].textContent || '';
+      if (t.indexOf('I consent to receive') > -1) { consentText = t.replace(/\s+/g, ' ').trim(); break; }
+    }
+  }
+
+  /* One of the CRM's three form types. A closed set: the page selects one of
+     theirs, it never invents a value. */
+  var p = location.pathname;
+  var formType = 'contact';
+  if (p.indexOf('/sell/home-value') === 0 || p.indexOf('/sell/net-proceeds') === 0) formType = 'valuation';
+  else if (p.indexOf('/sell/') === 0) formType = 'seller';
+
+  var crm = {
+    formType: formType,
+    name: fields.name || '',
+    phone: fields.phone || '',
+    email: fields.email || '',
+    consent: fields.consent === true || fields.consent === 'yes',
+    consentText: consentText,
+    website: '',
+    page: p,
+    formName: pageName || ''
+  };
+
+  /* The CRM's promoted keys land on the contact record itself, where the team
+     reads them. Anything else only reaches the submission. */
+  if (fields.property_address) { crm.property_address = String(fields.property_address); }
+  if (fields.building || fields.community) { crm.area = String(fields.building || fields.community); }
+  var msg = fields.message || fields.notes || fields.details || '';
+  if (msg) { crm.message = String(msg); }
+  if (fields.interest) { crm.interest = String(fields.interest); }
+
+  /* No consent box on this page means the CRM will refuse and alarm Slack.
+     Do not send it. */
+  if (!crm.consent) { console.warn('c3SendForm: no consent recorded, not sending'); return; }
+
+  function post(attempt) {
+    return fetch('https://app.chapter3realty.com/api/forms/lead', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(crm)
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (d) {
+        if (r.ok && d.ok) { console.log('CRM lead sent'); return; }
+        /* 4xx is our payload being wrong - retrying sends the same wrong thing.
+           Only a network drop or a 5xx is worth a second attempt. */
+        if (attempt === 1 && r.status >= 500) { return post(2); }
+        console.warn('CRM rejected the lead', r.status, d);
+      });
+    }).catch(function (e) {
+      if (attempt === 1) { return post(2); }
+      console.warn('CRM send failed', e);
+    });
+  }
+  post(1);
+}
+</script>
+<div id="idxModal" class="idx-modal" aria-hidden="true"><div class="idx-backdrop" onclick="closeIdx()"></div><div class="idx-panel" role="dialog" aria-modal="true" aria-label="Search Grand Strand listings"><div class="idx-head"><div><p class="idx-eyebrow">Grand Strand MLS Search <span class="idx-soon">Coming soon</span></p><h2 class="idx-title">Find your property</h2><p class="idx-soon-note" style="margin-top:.4rem;font-size:.82rem;color:var(--muted);line-height:1.5">Live MLS search is launching soon. Submit your search and we will follow up, or contact us and we will run it for you.</p></div><button class="idx-close" onclick="closeIdx()" aria-label="Close">&times;</button></div><div id="idxForm"><div class="idx-body"><div class="idx-field"><label for="idxCity">Location</label><select class="idx-select" id="idxCity"><option value="All Grand Strand">All Grand Strand</option><option value="Myrtle Beach">Myrtle Beach</option><option value="North Myrtle Beach">North Myrtle Beach</option><option value="Surfside Beach">Surfside Beach</option><option value="Garden City">Garden City</option><option value="Murrells Inlet">Murrells Inlet</option><option value="Pawleys Island">Pawleys Island</option><option value="Little River">Little River</option><option value="Conway">Conway</option><option value="Longs">Longs</option><option value="Loris">Loris</option><option value="Carolina Forest">Carolina Forest</option><option value="Socastee">Socastee</option></select></div><div class="idx-field"><label id="idxTypeLbl">Property type</label><div class="idx-pills" role="group" aria-labelledby="idxTypeLbl"><button type="button" class="idx-pill" data-type="1" aria-pressed="false" onclick="idxPill(this)">Single-Family</button><button type="button" class="idx-pill" data-type="1" aria-pressed="false" onclick="idxPill(this)">Condo</button><button type="button" class="idx-pill" data-type="1" aria-pressed="false" onclick="idxPill(this)">Townhouse</button><button type="button" class="idx-pill" data-type="1" aria-pressed="false" onclick="idxPill(this)">Manufactured</button><button type="button" class="idx-pill" data-type="1" aria-pressed="false" onclick="idxPill(this)">Multi-Family</button><button type="button" class="idx-pill" data-type="1" aria-pressed="false" onclick="idxPill(this)">Land / Lot</button><button type="button" class="idx-pill" data-type="1" aria-pressed="false" onclick="idxPill(this)">New Construction</button></div></div><div class="idx-field idx-2col"><div><label for="idxMin">Min price</label><select class="idx-select" id="idxMin"><option value="No min">No min</option><option value="$100k">$100k</option><option value="$150k">$150k</option><option value="$200k">$200k</option><option value="$250k">$250k</option><option value="$300k">$300k</option><option value="$350k">$350k</option><option value="$400k">$400k</option><option value="$450k">$450k</option><option value="$500k">$500k</option><option value="$600k">$600k</option><option value="$750k">$750k</option><option value="$1M">$1M</option><option value="$1.5M">$1.5M</option><option value="$2M">$2M</option></select></div><div><label for="idxMax">Max price</label><select class="idx-select" id="idxMax"><option value="No max">No max</option><option value="$100k">$100k</option><option value="$150k">$150k</option><option value="$200k">$200k</option><option value="$250k">$250k</option><option value="$300k">$300k</option><option value="$350k">$350k</option><option value="$400k">$400k</option><option value="$450k">$450k</option><option value="$500k">$500k</option><option value="$600k">$600k</option><option value="$750k">$750k</option><option value="$1M">$1M</option><option value="$1.5M">$1.5M</option><option value="$2M">$2M</option><option value="$2M+">$2M+</option></select></div></div><div class="idx-field idx-2col"><div><label for="idxBeds">Beds</label><select class="idx-select" id="idxBeds"><option value="Any">Any</option><option value="1+">1+</option><option value="2+">2+</option><option value="3+">3+</option><option value="4+">4+</option><option value="5+">5+</option></select></div><div><label for="idxBaths">Baths</label><select class="idx-select" id="idxBaths"><option value="Any">Any</option><option value="1+">1+</option><option value="2+">2+</option><option value="3+">3+</option><option value="4+">4+</option></select></div></div><div class="idx-field idx-2col"><div><label for="idxLot">Lot size</label><select class="idx-select" id="idxLot"><option value="Any">Any</option><option value="0.25+ acre">0.25+ acre</option><option value="0.5+ acre">0.5+ acre</option><option value="1+ acre">1+ acre</option><option value="2+ acre">2+ acre</option><option value="5+ acre">5+ acre</option></select></div><div><label for="idxSqft">Min sq ft</label><select class="idx-select" id="idxSqft"><option value="Any">Any</option><option value="1,000+">1,000+</option><option value="1,500+">1,500+</option><option value="2,000+">2,000+</option><option value="2,500+">2,500+</option><option value="3,000+">3,000+</option></select></div></div><div class="idx-field"><label id="idxAmenLbl">Amenities &amp; features</label><div class="idx-checks" role="group" aria-labelledby="idxAmenLbl"><label class="idx-check"><input type="checkbox" class="idx-amen" value="No HOA">No HOA</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Private pool">Private pool</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Community pool">Community pool</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Waterfront">Waterfront</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Water view">Water view</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Golf community">Golf community</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Gated community">Gated community</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Garage">Garage</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Boat slip / dock">Boat slip / dock</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Furnished">Furnished</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="55+ community">55+ community</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Fireplace">Fireplace</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Pet friendly">Pet friendly</label><label class="idx-check"><input type="checkbox" class="idx-amen" value="Fenced yard">Fenced yard</label></div></div></div><div class="idx-foot"><span class="idx-note">Live MLS search is launching soon. Set your criteria and we will send matching Grand Strand listings to your inbox.</span><div class="idx-lead"><input class="idx-input" id="idxName" placeholder="Name" aria-label="Name" autocomplete="name"><input class="idx-input" id="idxPhone" placeholder="Phone" aria-label="Phone" type="tel" autocomplete="tel"></div><div class="idx-lead" style="grid-template-columns:1fr"><input class="idx-input" id="idxEmail" placeholder="Email" type="email" aria-label="Email" autocomplete="email"></div><label class="idx-consent" style="display:flex;gap:.5rem;align-items:flex-start;font-family:var(--sans);font-size:.72rem;color:var(--muted);line-height:1.45;margin:0 0 .85rem;cursor:pointer"><input type="checkbox" id="idxConsent" style="margin-top:.15rem;accent-color:var(--brass);flex-shrink:0;width:15px;height:15px"><span>I consent to receive calls and text messages from Chapter 3 Realty about my property inquiry, showing appointments, and listing information I requested, at the phone number provided, including calls placed using an automated system or an artificial or prerecorded voice. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase.</span></label><button class="btn btn-brass" style="width:100%" onclick="idxSearch()">Send me matching listings</button></div></div><div class="idx-ok" id="idxOk" role="status" tabindex="-1">Thanks. A licensed agent will send Grand Strand listings that match your criteria, then keep you posted as new ones come on. Check your inbox shortly.</div></div></div><script src="/assets/s.6546f8fab3.js"></script></body>
+</html>

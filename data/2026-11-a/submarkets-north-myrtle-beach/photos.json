@@ -1,0 +1,503 @@
+{
+ "_comment": "Licence records for /submarkets/north-myrtle-beach/ (batch 2026-11-a). Each image was looked at full size; subject_check says what it shows.",
+ "photos": [
+  {
+   "slug": "submarkets-north-myrtle-beach",
+   "source": "https://commons.wikimedia.org/wiki/File:Cherry_Grove_Pier.jpg",
+   "commons_page": "https://commons.wikimedia.org/wiki/File:Cherry_Grove_Pier.jpg",
+   "source_name": "Wikimedia Commons",
+   "author": "Melikamp",
+   "author_type": "Person",
+   "license": "CC BY-SA 3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "license_note": "Commons file page: own work by Melikamp, CC BY-SA 3.0 (read by the batch verifier on 2026-11-03, VERIFY.md 'Photo candidates'). Credit is required; resized and cropped copies stay CC BY-SA 3.0.",
+   "taken": "2012-04-29",
+   "credit": "Photo: Melikamp, CC BY-SA 3.0, via Wikimedia Commons. Resized and cropped by Chapter3 Realty.",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty resized the photo and cut square, 4:3 and 16:9 crops from its center",
+   "file": "images/2026-11-a/submarkets-north-myrtle-beach/cherry-grove-from-above-2012-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-north-myrtle-beach/cherry-grove-from-above-2012-600w.webp",
+    "1200": "images/2026-11-a/submarkets-north-myrtle-beach/cherry-grove-from-above-2012-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Cherry Grove, North Myrtle Beach, from a height, 2012",
+   "what": "Looking north-east up Ocean Boulevard in Cherry Grove from a height: the wide beach and the ocean on the right, Cherry Grove Pier reaching into the ocean, a row of older low beach houses and motels beside mid-rise condo buildings, and the marsh and its channels behind them on the left. A few store signs are small and at the edge; no person is the subject.",
+   "caption": "Cherry Grove from a height: older low beach houses beside mid-rise condos, the marsh behind them, and Cherry Grove Pier.",
+   "alt": "Looking up the beach in Cherry Grove from a height: low beach houses and mid-rise condo buildings along the road, the marsh behind them, and a long fishing pier reaching into the ocean",
+   "place": {
+    "city": "North Myrtle Beach",
+    "sublocation": "Cherry Grove, Ocean Boulevard and Cherry Grove Pier"
+   },
+   "provenance": "Wikimedia Commons, File:Cherry_Grove_Pier.jpg (4320 x 3240), downloaded 2026-11-03 at 1920 x 1440 through Special:FilePath.",
+   "subject_check": "Looked at full size (1920 px) by the writer of /submarkets/north-myrtle-beach/ on 2026-11-03: the pier, the beach, low houses beside mid-rise condos and the marsh behind them are all clear. Taken in 2012, before Hurricane Ian; the caption does not describe today's buildings one by one.",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-a/submarkets-north-myrtle-beach/cherry-grove-from-above-2012-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-a/submarkets-north-myrtle-beach/cherry-grove-from-above-2012-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-a/submarkets-north-myrtle-beach/cherry-grove-from-above-2012-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   }
+  },
+  {
+   "slug": "submarkets-north-myrtle-beach",
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "USGS The National Map",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "license_note": "NAIP is a U.S. government work. The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Same terms as the Little River and batch 2026-10-a NAIP records. Read 2026-11-03.",
+   "terms_urls": [
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023-04-10",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via USGS The National Map. Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty exported this view from the NAIP image service, raised the contrast a little and added labels placed from OpenStreetMap, Horry County and Census coordinates",
+   "method": "data/2026-11-a/submarkets-north-myrtle-beach/images/aerial_render.py and aerial-labels.json (labels from ground coordinates through the export's own EPSG:3857 extent, never by eye)",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8752661.942857325,4006521.994611285,-8750658.192023048,4007953.245207197&bboxSR=3857&imageSR=3857&size=1400,1000&format=jpg&f=image",
+   "frame": {
+    "bbox_wgs84": [
+     -78.6265,
+     33.83391,
+     -78.6085,
+     33.84459
+    ],
+    "ground_m_per_px_1200w": 1.7
+   },
+   "naip_tiles": [
+    "m_3307812_nw_17_060_20230410"
+   ],
+   "labels": [
+    "Boat ramp",
+    "Heritage Shores",
+    "Channel houses",
+    "Atlantic Ocean"
+   ],
+   "annotation_sources": {
+    "Boat ramp": "OpenStreetMap point for Cherry Grove Boat Ramp (landmarks.json) (-78.6175078, 33.8420331)",
+    "Heritage Shores": "OpenStreetMap point for Heritage Shores Nature Preserve (landmarks.json) (-78.6118539, 33.8431038)",
+    "Channel houses": "a point read from the county layers (-78.6195, 33.8372)",
+    "Atlantic Ocean": "a point read from the county layers (-78.612, 33.8356)"
+   },
+   "file": "images/2026-11-a/submarkets-north-myrtle-beach/cherry-grove-channels-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-north-myrtle-beach/cherry-grove-channels-from-above-600w.webp",
+    "1200": "images/2026-11-a/submarkets-north-myrtle-beach/cherry-grove-channels-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 857,
+   "title": "The Cherry Grove channels from above, NAIP aerial, April 2023",
+   "what": "Cherry Grove in North Myrtle Beach from straight above: rows of houses on long finger lots between dug channels, most with a dock behind the house; the open marsh and its creeks to the north-west; the city boat ramp's lot on the marsh; the Heritage Shores island at the top right; Ocean Boulevard, the beach and the ocean along the bottom. Labels: Boat ramp, Heritage Shores, Channel houses, Atlantic Ocean.",
+   "caption": "Houses on the Cherry Grove channels, many with a dock behind them, the marsh, the boat ramp and Heritage Shores, from above.",
+   "alt": "Cherry Grove from above: rows of houses on narrow lots between dug channels, with docks behind them, the marsh beyond, and the ocean along the bottom, labelled Boat ramp, Heritage Shores, Channel houses and Atlantic Ocean",
+   "place": {
+    "city": "North Myrtle Beach",
+    "sublocation": "The Cherry Grove channels and marsh"
+   },
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (tile m_3307812_nw_17_060_20230410, read with the image service's identify call on 2026-11-03).",
+   "subject_check": "Looked at full size (1200 px) by the writer of /submarkets/north-myrtle-beach/ on 2026-11-03. Every label's dot or box sits on the place it names (coordinates in aerial-labels.json). No person, sign, plate or house number is readable at this scale."
+  },
+  {
+   "slug": "submarkets-north-myrtle-beach",
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "USGS The National Map",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "license_note": "NAIP is a U.S. government work. The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Same terms as the Little River and batch 2026-10-a NAIP records. Read 2026-11-03.",
+   "terms_urls": [
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023-04-10",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via USGS The National Map. Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty exported this view from the NAIP image service, raised the contrast a little and added labels placed from OpenStreetMap, Horry County and Census coordinates",
+   "method": "data/2026-11-a/submarkets-north-myrtle-beach/images/aerial_render.py and aerial-labels.json (labels from ground coordinates through the export's own EPSG:3857 extent, never by eye)",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8758951.494087145,4003841.8587367893,-8756947.743252866,4005273.1093327026&bboxSR=3857&imageSR=3857&size=1400,1000&format=jpg&f=image",
+   "frame": {
+    "bbox_wgs84": [
+     -78.683,
+     33.813909,
+     -78.665,
+     33.824591
+    ],
+    "ground_m_per_px_1200w": 1.7
+   },
+   "naip_tiles": [
+    "m_3307811_ne_17_060_20230410"
+   ],
+   "labels": [
+    "Main Street",
+    "McLean Park",
+    "Atlantic Ocean"
+   ],
+   "annotation_sources": {
+    "Main Street": "OpenStreetMap point for Main Street (Ocean Drive) (landmarks.json) (-78.6735286, 33.8211378)",
+    "McLean Park": "OpenStreetMap point for McLean Park (landmarks.json) (-78.6761145, 33.8206878)",
+    "Atlantic Ocean": "a point read from the county layers (-78.67, 33.8168)"
+   },
+   "file": "images/2026-11-a/submarkets-north-myrtle-beach/ocean-drive-main-street-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-north-myrtle-beach/ocean-drive-main-street-from-above-600w.webp",
+    "1200": "images/2026-11-a/submarkets-north-myrtle-beach/ocean-drive-main-street-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 857,
+   "title": "Ocean Drive and Main Street from above, NAIP aerial, April 2023",
+   "what": "The Ocean Drive section of North Myrtle Beach from straight above: Main Street running back from the beach, McLean Park's lake and ball field among houses and trees, oceanfront condo towers along Ocean Boulevard, the beach and the ocean. Labels: Main Street, McLean Park, Atlantic Ocean.",
+   "caption": "Ocean Drive from above: Main Street, McLean Park and its lake, and the condo towers along the beach.",
+   "alt": "Ocean Drive from above: Main Street running back from the beach, a park with a small lake labelled McLean Park, condo towers along the beach and the ocean",
+   "place": {
+    "city": "North Myrtle Beach",
+    "sublocation": "Main Street and McLean Park, Ocean Drive"
+   },
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (tile m_3307811_ne_17_060_20230410, read with the image service's identify call on 2026-11-03).",
+   "subject_check": "Looked at full size (1200 px) by the writer of /submarkets/north-myrtle-beach/ on 2026-11-03. Every label's dot or box sits on the place it names (coordinates in aerial-labels.json). No person, sign, plate or house number is readable at this scale."
+  },
+  {
+   "slug": "submarkets-north-myrtle-beach",
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "USGS The National Map",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "license_note": "NAIP is a U.S. government work. The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Same terms as the Little River and batch 2026-10-a NAIP records. Read 2026-11-03.",
+   "terms_urls": [
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023-04-10",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via USGS The National Map. Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty exported this view from the NAIP image service, raised the contrast a little and added labels placed from OpenStreetMap, Horry County and Census coordinates",
+   "method": "data/2026-11-a/submarkets-north-myrtle-beach/images/aerial_render.py and aerial-labels.json (labels from ground coordinates through the export's own EPSG:3857 extent, never by eye)",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8766743.858442673,4001095.369830301,-8764740.107608395,4002526.6204262143&bboxSR=3857&imageSR=3857&size=1400,1000&format=jpg&f=image",
+   "frame": {
+    "bbox_wgs84": [
+     -78.753,
+     33.793408,
+     -78.735,
+     33.804092
+    ],
+    "ground_m_per_px_1200w": 1.7
+   },
+   "naip_tiles": [
+    "m_3307811_sw_17_060_20230410"
+   ],
+   "labels": [
+    "Barefoot Landing",
+    "Intracoastal Waterway",
+    "US 17",
+    "Across the waterway"
+   ],
+   "annotation_sources": {
+    "Barefoot Landing": "OpenStreetMap point for Barefoot Landing (landmarks.json) (-78.7424398, 33.7998752)",
+    "Intracoastal Waterway": "a point read from the county layers (-78.74807, 33.80101)",
+    "US 17": "a point read from the county layers (-78.746, 33.7965)",
+    "Across the waterway": "a point read from the county layers (-78.75119, 33.80332)"
+   },
+   "file": "images/2026-11-a/submarkets-north-myrtle-beach/barefoot-landing-waterway-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-north-myrtle-beach/barefoot-landing-waterway-from-above-600w.webp",
+    "1200": "images/2026-11-a/submarkets-north-myrtle-beach/barefoot-landing-waterway-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 857,
+   "title": "Barefoot Landing and the Intracoastal Waterway from above, NAIP aerial, April 2023",
+   "what": "Barefoot Landing in North Myrtle Beach from straight above: the shops and boardwalks around a lake on the ocean side of the Intracoastal Waterway, US 17 crossing below it, the waterway with boats, and on the far bank a marina with condo buildings and houses. Labels: Barefoot Landing, Intracoastal Waterway, US 17, Across the waterway.",
+   "caption": "Barefoot Landing on the Intracoastal Waterway at US 17, with the neighborhoods across the waterway on the far bank.",
+   "alt": "From above: shops around a lake labelled Barefoot Landing, the wide Intracoastal Waterway with a marina on its far bank labelled Across the waterway, and US 17",
+   "place": {
+    "city": "North Myrtle Beach",
+    "sublocation": "Barefoot Landing on the Intracoastal Waterway"
+   },
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (tile m_3307811_sw_17_060_20230410, read with the image service's identify call on 2026-11-03).",
+   "subject_check": "Looked at full size (1200 px) by the writer of /submarkets/north-myrtle-beach/ on 2026-11-03. Every label's dot or box sits on the place it names (coordinates in aerial-labels.json). No person, sign, plate or house number is readable at this scale."
+  },
+  {
+   "slug": "submarkets-north-myrtle-beach",
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "USGS The National Map",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "license_note": "NAIP is a U.S. government work. The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Same terms as the Little River and batch 2026-10-a NAIP records. Read 2026-11-03.",
+   "terms_urls": [
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023-04-10",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via USGS The National Map. Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty exported this view from the NAIP image service, raised the contrast a little and added labels placed from OpenStreetMap, Horry County and Census coordinates",
+   "method": "data/2026-11-a/submarkets-north-myrtle-beach/images/aerial_render.py and aerial-labels.json (labels and the town outline from ground coordinates through the export's own EPSG:3857 extent, never by eye)",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8765329.678141298,4000638.892040695,-8760922.271842485,4003787.03939699&bboxSR=3857&imageSR=3857&size=1400,1000&format=jpg&f=image",
+   "frame": {
+    "bbox_wgs84": [
+     -78.740296,
+     33.79,
+     -78.700704,
+     33.8135
+    ],
+    "ground_m_per_px_1200w": 3.7
+   },
+   "naip_tiles": [
+    "m_3307811_sw_17_060_20230410"
+   ],
+   "labels": [
+    "Atlantic Beach",
+    "Crescent Beach",
+    "Windy Hill",
+    "Atlantic Ocean"
+   ],
+   "annotation_sources": {
+    "Atlantic Beach": "a point read from the county layers (-78.7179, 33.8038)",
+    "Crescent Beach": "the middle of our cb part (map-parts.geojson, polylabel) (-78.7114, 33.8049)",
+    "Windy Hill": "the middle of our wh part (map-parts.geojson, polylabel) (-78.7308, 33.7963)",
+    "Atlantic Ocean": "a point read from the county layers (-78.712, 33.795)",
+    "outline": "the Atlantic Beach town outline, Horry County GIS layer 31 (raw/munis-ab.json)"
+   },
+   "file": "images/2026-11-a/submarkets-north-myrtle-beach/atlantic-beach-between-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-north-myrtle-beach/atlantic-beach-between-from-above-600w.webp",
+    "1200": "images/2026-11-a/submarkets-north-myrtle-beach/atlantic-beach-between-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 857,
+   "title": "Atlantic Beach between Crescent Beach and Windy Hill, NAIP aerial, April 2023",
+   "what": "The beach side of North Myrtle Beach from straight above: the small town of Atlantic Beach, outlined in brass from the county's town outline, running from US 17 to the ocean, with Crescent Beach's streets to the north-east and Windy Hill's to the south-west; the Intracoastal Waterway and an airstrip at the top left; the beach and the ocean along the bottom. Labels: Atlantic Beach, Crescent Beach, Windy Hill, Atlantic Ocean.",
+   "caption": "Atlantic Beach, outlined, is a separate town between Crescent Beach and Windy Hill.",
+   "alt": "From above: a small town outlined in brass and labelled Atlantic Beach, running from the highway to the ocean, with streets labelled Crescent Beach on one side and Windy Hill on the other",
+   "place": {
+    "city": "North Myrtle Beach",
+    "sublocation": "Crescent Beach, Atlantic Beach and Windy Hill"
+   },
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (tile m_3307811_sw_17_060_20230410, read with the image service's identify call on 2026-11-03).",
+   "subject_check": "Looked at full size (1200 px) by the writer of /submarkets/north-myrtle-beach/ on 2026-11-03. The outline is drawn from the county's Atlantic Beach polygon through the export's own extent; the Crescent Beach and Windy Hill dots sit inside our parts. No person, sign, plate or house number is readable at this scale."
+  },
+  {
+   "slug": "submarkets-north-myrtle-beach",
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "USGS The National Map",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "license_note": "NAIP is a U.S. government work. The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Same terms as the Little River and batch 2026-10-a NAIP records. Read 2026-11-03.",
+   "terms_urls": [
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023-04-10",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via USGS The National Map. Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty exported this view from the NAIP image service, raised the contrast a little and added labels placed from OpenStreetMap, Horry County and Census coordinates",
+   "method": "data/2026-11-a/submarkets-north-myrtle-beach/images/aerial_render_fix1.py and aerial-labels-fix1.json (fix round 1; labels from ground coordinates through the export's own EPSG:3857 extent, never by eye)",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8765185.385154428,4000593.013238669,-8763181.635154428,4002024.263238669&bboxSR=3857&imageSR=3857&size=1400,1000&format=jpg&f=image",
+   "frame": {
+    "bbox_wgs84": [
+     -78.739,
+     33.789657,
+     -78.721,
+     33.800342
+    ],
+    "ground_m_per_px_1200w": 1.7
+   },
+   "naip_tiles": [
+    "m_3307811_sw_17_060_20230410"
+   ],
+   "labels": [
+    "Windy Hill",
+    "Atlantic Ocean"
+   ],
+   "annotation_sources": {
+    "Windy Hill": "the middle of our wh part (map-parts.geojson, polylabel) (-78.7308, 33.7963)",
+    "Atlantic Ocean": "a point read from the county layers (-78.7262, 33.7912)"
+   },
+   "file": "images/2026-11-a/submarkets-north-myrtle-beach/windy-hill-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-north-myrtle-beach/windy-hill-from-above-600w.webp",
+    "1200": "images/2026-11-a/submarkets-north-myrtle-beach/windy-hill-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 857,
+   "title": "Windy Hill, North Myrtle Beach, from above, NAIP aerial, April 2023",
+   "what": "Windy Hill in North Myrtle Beach from straight above: streets of houses under trees, a row of condo buildings along Ocean Boulevard and the beach, the ocean at lower right and a marsh creek at the left. Labels: Windy Hill, Atlantic Ocean.",
+   "caption": "Windy Hill from above, 2023 aerial: streets of houses under the trees, condo buildings along the ocean, and a marsh creek at the left.",
+   "alt": "From above: streets of houses among trees labelled Windy Hill, a row of condo buildings along the beach, and the Atlantic Ocean",
+   "place": {
+    "city": "North Myrtle Beach",
+    "sublocation": "Windy Hill"
+   },
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (tile m_3307811_sw_17_060_20230410, read with the image service's identify call on 2026-11-04).",
+   "subject_check": "Looked at full size (1200 px) by the fixer of /submarkets/north-myrtle-beach/ on 2026-11-04. Every label's dot or box sits on the place it names (coordinates in aerial-labels-fix1.json). No person, sign, plate or house number is readable at this scale."
+  },
+  {
+   "slug": "submarkets-north-myrtle-beach",
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "USGS The National Map",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "license_note": "NAIP is a U.S. government work. The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Same terms as the Little River and batch 2026-10-a NAIP records. Read 2026-11-03.",
+   "terms_urls": [
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023-04-10",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via USGS The National Map. Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty exported this view from the NAIP image service, raised the contrast a little and added labels placed from OpenStreetMap, Horry County and Census coordinates",
+   "method": "data/2026-11-a/submarkets-north-myrtle-beach/images/aerial_render_fix1.py and aerial-labels-fix1.json (fix round 1; labels from ground coordinates through the export's own EPSG:3857 extent, never by eye)",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8761734.480939837,4004009.3275686656,-8759730.730939837,4005440.5775686656&bboxSR=3857&imageSR=3857&size=1400,1000&format=jpg&f=image",
+   "frame": {
+    "bbox_wgs84": [
+     -78.708,
+     33.815159,
+     -78.69,
+     33.825841
+    ],
+    "ground_m_per_px_1200w": 1.7
+   },
+   "naip_tiles": [
+    "m_3307811_nw_17_060_20230410"
+   ],
+   "labels": [
+    "Central Park",
+    "US 17",
+    "West of US 17"
+   ],
+   "annotation_sources": {
+    "Central Park": "OpenStreetMap point for Central Park (landmarks.json) (-78.6969325, 33.8171504)",
+    "US 17": "a point read from the county layers (-78.6943, 33.8169)",
+    "West of US 17": "a point inside our west17 part (map-parts.geojson) (-78.6995, 33.824)"
+   },
+   "file": "images/2026-11-a/submarkets-north-myrtle-beach/west-of-us-17-new-streets-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-north-myrtle-beach/west-of-us-17-new-streets-from-above-600w.webp",
+    "1200": "images/2026-11-a/submarkets-north-myrtle-beach/west-of-us-17-new-streets-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 857,
+   "title": "West of US 17, North Myrtle Beach, from above, NAIP aerial, April 2023",
+   "what": "The mainland west of US 17 in North Myrtle Beach from straight above: new streets and ponds cleared for houses, rows of new houses on some of them, the ball fields of Central Park, and US 17 at lower right. A golf course at the lower left is not labelled. Labels: West of US 17, Central Park, US 17.",
+   "caption": "West of US 17 from above, 2023 aerial: new streets cleared for houses, Central Park's ball fields, and US 17.",
+   "alt": "From above: new streets and ponds cleared for houses labelled West of US 17, ball fields labelled Central Park, and the highway labelled US 17",
+   "place": {
+    "city": "North Myrtle Beach",
+    "sublocation": "West of US 17, Central Park"
+   },
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (tile m_3307811_nw_17_060_20230410, read with the image service's identify call on 2026-11-04).",
+   "subject_check": "Looked at full size (1200 px) by the fixer of /submarkets/north-myrtle-beach/ on 2026-11-04. Every label's dot or box sits on the place it names (coordinates in aerial-labels-fix1.json). No person, sign, plate or house number is readable at this scale."
+  },
+  {
+   "slug": "submarkets-north-myrtle-beach",
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "USGS The National Map",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "license_note": "NAIP is a U.S. government work. The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Same terms as the Little River and batch 2026-10-a NAIP records. Read 2026-11-03.",
+   "terms_urls": [
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023-04-10",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via USGS The National Map. Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty exported this view from the NAIP image service, raised the contrast a little and added labels placed from OpenStreetMap, Horry County and Census coordinates",
+   "method": "data/2026-11-a/submarkets-north-myrtle-beach/images/aerial_render_fix1.py and aerial-labels-fix1.json (fix round 1; labels from ground coordinates through the export's own EPSG:3857 extent, never by eye)",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8757838.298762074,4004411.3138567074,-8755834.548762074,4005842.5638567074&bboxSR=3857&imageSR=3857&size=1400,1000&format=jpg&f=image",
+   "frame": {
+    "bbox_wgs84": [
+     -78.673,
+     33.818159,
+     -78.655,
+     33.82884
+    ],
+    "ground_m_per_px_1200w": 1.7
+   },
+   "naip_tiles": [
+    "m_3307811_ne_17_060_20230410"
+   ],
+   "labels": [
+    "Tilghman Beach",
+    "Atlantic Ocean"
+   ],
+   "annotation_sources": {
+    "Tilghman Beach": "the middle of our til part (map-parts.geojson, polylabel) (-78.6653, 33.8253)",
+    "Atlantic Ocean": "a point read from the county layers (-78.659, 33.8203)"
+   },
+   "file": "images/2026-11-a/submarkets-north-myrtle-beach/tilghman-beach-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-north-myrtle-beach/tilghman-beach-from-above-600w.webp",
+    "1200": "images/2026-11-a/submarkets-north-myrtle-beach/tilghman-beach-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 857,
+   "title": "Tilghman Beach, North Myrtle Beach, from above, NAIP aerial, April 2023",
+   "what": "Tilghman Beach in North Myrtle Beach from straight above: a row of houses along the ocean, streets of houses and lakes behind them, and a few condo buildings at the lower left. Labels: Tilghman Beach, Atlantic Ocean.",
+   "caption": "Tilghman Beach from above, 2023 aerial: a row of houses along the ocean, and streets of houses around the lakes behind them.",
+   "alt": "From above: houses around lakes labelled Tilghman Beach, a row of houses along the beach, and the Atlantic Ocean",
+   "place": {
+    "city": "North Myrtle Beach",
+    "sublocation": "Tilghman Beach"
+   },
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (tile m_3307811_ne_17_060_20230410, read with the image service's identify call on 2026-11-04).",
+   "subject_check": "Looked at full size (1200 px) by the fixer of /submarkets/north-myrtle-beach/ on 2026-11-04. Every label's dot or box sits on the place it names (coordinates in aerial-labels-fix1.json). No person, sign, plate or house number is readable at this scale."
+  },
+  {
+   "slug": "submarkets-north-myrtle-beach",
+   "source": "https://commons.wikimedia.org/wiki/File:Ocean_Drive_Beach_-_Roberts_Pavilion.jpg",
+   "commons_page": "https://commons.wikimedia.org/wiki/File:Ocean_Drive_Beach_-_Roberts_Pavilion.jpg",
+   "source_name": "Wikimedia Commons",
+   "author": "Tichnor Brothers, Boston (publisher)",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://commons.wikimedia.org/wiki/Template:PD-US-no_notice",
+   "license_note": "Commons file page (API extmetadata read 2026-11-04): LicenseShortName 'Public domain', category 'PD US no notice', Copyrighted False; a postcard published in 1941 without a copyright notice. The batch verifier checked this file's licence on 2026-11-03 (VERIFY.md, photo candidates: 'Public domain (same rule), Tichnor Brothers postcard, 1941').",
+   "taken": "1941",
+   "display_credit": "Postcard, 1941, public domain",
+   "credit": "Postcard: Tichnor Brothers, Boston, 1941, public domain, via Wikimedia Commons. Resized by Chapter3 Realty.",
+   "digital_source_type": "print",
+   "changes": "Chapter3 Realty resized the scan",
+   "file": "images/2026-11-a/submarkets-north-myrtle-beach/ocean-drive-beach-pavilion-postcard-1941-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-north-myrtle-beach/ocean-drive-beach-pavilion-postcard-1941-600w.webp",
+    "1200": "images/2026-11-a/submarkets-north-myrtle-beach/ocean-drive-beach-pavilion-postcard-1941-1200w.webp"
+   },
+   "title": "The pavilion at Ocean Drive Beach, postcard, 1941",
+   "what": "A colored 1941 postcard titled 'Pavilion, Ocean Drive Beach, S. C.': a long two-story wooden pavilion on the sand with 'Roberts Pavilion' and 'Dancing' painted on its end wall, a bath house and cafe signs along its front, and two cars of the time parked beside it. Drink advertisements on the wall are incidental, not the subject; no person is the subject.",
+   "caption": "The pavilion at Ocean Drive Beach on a 1941 postcard, with \"Dancing\" painted on its end wall.",
+   "alt": "A postcard of a long wooden pavilion on the beach at Ocean Drive, with Roberts Pavilion and Dancing painted on its end wall and old cars parked beside it",
+   "place": {
+    "city": "North Myrtle Beach",
+    "sublocation": "Ocean Drive"
+   },
+   "provenance": "Wikimedia Commons, File:Ocean_Drive_Beach_-_Roberts_Pavilion.jpg (1489 x 936), downloaded 2026-11-04 at 1280 x 805 through the Commons thumbnail service.",
+   "subject_check": "Looked at full size (1280 px) by the fixer of /submarkets/north-myrtle-beach/ on 2026-11-04: the printed title reads 'Pavilion, Ocean Drive Beach, S. C., America's Finest Strand'; the end wall reads 'Roberts Pavilion' and 'Dancing'. Ad signs (Coca-Cola, a beer brand) are on the wall but are not the subject.",
+   "width": 1200,
+   "height": 755
+  }
+ ]
+}

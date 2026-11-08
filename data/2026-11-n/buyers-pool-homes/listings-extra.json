@@ -1,0 +1,250 @@
+{
+ "pulled": "2026-11-08T07:18:13.557502+00:00",
+ "api": "https://chapter3realty.com/homes/api/map?",
+ "community_pool_no_private": {
+  "listings": 1261,
+  "median_ask_5k": 435000,
+  "at_or_under": {
+   "300000": 168,
+   "400000": 549,
+   "500000": 827
+  },
+  "fee_listed": 1261,
+  "median_hoa_fee_5": 105
+ },
+ "private_pool": {
+  "fee_listed": 257,
+  "fee_listed_above_0": 138,
+  "median_hoa_fee_5_of_fee_listed": 30
+ },
+ "all_houses_fee_listed": 2949,
+ "all_houses_hoaMax0": 810,
+ "community_pool_no_private_east_of_17": 175,
+ "calls": [
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool",
+   "total": 1261,
+   "echo": "type=house&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool",
+   "total": 1261,
+   "echo": "type=house&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&max=5000000",
+   "total": 1261,
+   "echo": "type=house&max=5000000&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&max=2500000",
+   "total": 1261,
+   "echo": "type=house&max=2500000&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&max=1250000",
+   "total": 1246,
+   "echo": "type=house&max=1250000&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&max=625000",
+   "total": 1020,
+   "echo": "type=house&max=625000&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&max=310000",
+   "total": 193,
+   "echo": "type=house&max=310000&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&max=465000",
+   "total": 731,
+   "echo": "type=house&max=465000&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&max=385000",
+   "total": 477,
+   "echo": "type=house&max=385000&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&max=425000",
+   "total": 614,
+   "echo": "type=house&max=425000&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&max=445000",
+   "total": 664,
+   "echo": "type=house&max=445000&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&max=435000",
+   "total": 637,
+   "echo": "type=house&max=435000&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&max=430000",
+   "total": 627,
+   "echo": "type=house&max=430000&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&max=300000",
+   "total": 168,
+   "echo": "type=house&max=300000&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&max=400000",
+   "total": 549,
+   "echo": "type=house&max=400000&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&max=500000",
+   "total": 827,
+   "echo": "type=house&max=500000&has=county_horry%2Ccommunity_pool&not=pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=5000",
+   "total": 1261,
+   "echo": "type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=5000"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=5000",
+   "total": 1261,
+   "echo": "type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=5000"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=2500",
+   "total": 1261,
+   "echo": "type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=2500"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=1250",
+   "total": 1261,
+   "echo": "type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=1250"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=625",
+   "total": 1254,
+   "echo": "type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=625"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=310",
+   "total": 1188,
+   "echo": "type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=310"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=155",
+   "total": 989,
+   "echo": "type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=155"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=75",
+   "total": 259,
+   "echo": "type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=75"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=115",
+   "total": 776,
+   "echo": "type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=115"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=95",
+   "total": 549,
+   "echo": "type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=95"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=105",
+   "total": 685,
+   "echo": "type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=105"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=100",
+   "total": 618,
+   "echo": "type=house&has=county_horry%2Ccommunity_pool&not=pool&hoaMax=100"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpool&hoaMax=5000",
+   "total": 257,
+   "echo": "type=house&has=county_horry%2Cpool&hoaMax=5000"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpool&hoaMax=5000",
+   "total": 257,
+   "echo": "type=house&has=county_horry%2Cpool&hoaMax=5000"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpool&hoaMax=0",
+   "total": 119,
+   "echo": "type=house&has=county_horry%2Cpool&hoaMax=0"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpool&hoaMax=5000",
+   "total": 257,
+   "echo": "type=house&has=county_horry%2Cpool&hoaMax=5000"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpool&hoaMax=2500",
+   "total": 257,
+   "echo": "type=house&has=county_horry%2Cpool&hoaMax=2500"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpool&hoaMax=1250",
+   "total": 257,
+   "echo": "type=house&has=county_horry%2Cpool&hoaMax=1250"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpool&hoaMax=625",
+   "total": 253,
+   "echo": "type=house&has=county_horry%2Cpool&hoaMax=625"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpool&hoaMax=310",
+   "total": 233,
+   "echo": "type=house&has=county_horry%2Cpool&hoaMax=310"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpool&hoaMax=155",
+   "total": 208,
+   "echo": "type=house&has=county_horry%2Cpool&hoaMax=155"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpool&hoaMax=75",
+   "total": 155,
+   "echo": "type=house&has=county_horry%2Cpool&hoaMax=75"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpool&hoaMax=35",
+   "total": 131,
+   "echo": "type=house&has=county_horry%2Cpool&hoaMax=35"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpool&hoaMax=15",
+   "total": 122,
+   "echo": "type=house&has=county_horry%2Cpool&hoaMax=15"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpool&hoaMax=25",
+   "total": 124,
+   "echo": "type=house&has=county_horry%2Cpool&hoaMax=25"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpool&hoaMax=30",
+   "total": 129,
+   "echo": "type=house&has=county_horry%2Cpool&hoaMax=30"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&hoaMax=5000",
+   "total": 2949,
+   "echo": "type=house&has=county_horry&hoaMax=5000"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&hoaMax=0",
+   "total": 810,
+   "echo": "type=house&has=county_horry&hoaMax=0"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Ccommunity_pool%2Ceast_of_17&not=pool",
+   "total": 175,
+   "echo": "type=house&has=county_horry%2Ccommunity_pool%2Ceast_of_17&not=pool"
+  }
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "pulled": "2026-11-08T06:10:43.315501Z",
+ "note": "Whole feed (CCMLS listings the CRM carries), no county outline. median_asking only when every pin came back.",
+ "rows": {
+  "house": {
+   "all": {
+    "url": "https://chapter3realty.com/homes/api/map?type=house",
+    "total": 3676,
+    "pins_returned": 144,
+    "median_asking": null,
+    "refreshedAt": "2026-11-08T06:00:12.249Z"
+   },
+   "cash_only": {
+    "url": "https://chapter3realty.com/homes/api/map?type=house&has=cash_only_listing",
+    "total": 22,
+    "pins_returned": 22,
+    "median_asking": 174500,
+    "refreshedAt": "2026-11-08T06:00:12.249Z"
+   },
+   "cash_only_price_cut": {
+    "url": "https://chapter3realty.com/homes/api/map?type=house&has=cash_only_listing%2Cprice_reduced",
+    "total": 12,
+    "pins_returned": 12,
+    "median_asking": 174500,
+    "refreshedAt": "2026-11-08T06:10:11.195Z"
+   }
+  },
+  "townhouse": {
+   "all": {
+    "url": "https://chapter3realty.com/homes/api/map?type=townhouse",
+    "total": 361,
+    "pins_returned": 144,
+    "median_asking": null,
+    "refreshedAt": "2026-11-08T06:10:11.195Z"
+   },
+   "cash_only": {
+    "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=cash_only_listing",
+    "total": 1,
+    "pins_returned": 1,
+    "median_asking": 217900,
+    "refreshedAt": "2026-11-08T06:10:11.195Z"
+   },
+   "cash_only_price_cut": {
+    "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=cash_only_listing%2Cprice_reduced",
+    "total": 1,
+    "pins_returned": 1,
+    "median_asking": 217900,
+    "refreshedAt": "2026-11-08T06:10:11.195Z"
+   }
+  },
+  "condo": {
+   "all": {
+    "url": "https://chapter3realty.com/homes/api/map?type=condo",
+    "total": 2857,
+    "pins_returned": 144,
+    "median_asking": null,
+    "refreshedAt": "2026-11-08T06:10:11.195Z"
+   },
+   "cash_only": {
+    "url": "https://chapter3realty.com/homes/api/map?type=condo&has=cash_only_listing",
+    "total": 105,
+    "pins_returned": 105,
+    "median_asking": 109900,
+    "refreshedAt": "2026-11-08T06:10:11.195Z"
+   },
+   "cash_only_price_cut": {
+    "url": "https://chapter3realty.com/homes/api/map?type=condo&has=cash_only_listing%2Cprice_reduced",
+    "total": 51,
+    "pins_returned": 51,
+    "median_asking": 114999,
+    "refreshedAt": "2026-11-08T06:00:12.249Z"
+   }
+  },
+  "manufactured": {
+   "all": {
+    "url": "https://chapter3realty.com/homes/api/map?type=manufactured",
+    "total": 501,
+    "pins_returned": 144,
+    "median_asking": null,
+    "refreshedAt": "2026-11-08T06:10:11.195Z"
+   },
+   "cash_only": {
+    "url": "https://chapter3realty.com/homes/api/map?type=manufactured&has=cash_only_listing",
+    "total": 55,
+    "pins_returned": 55,
+    "median_asking": 108000,
+    "refreshedAt": "2026-11-08T06:10:11.195Z"
+   },
+   "cash_only_price_cut": {
+    "url": "https://chapter3realty.com/homes/api/map?type=manufactured&has=cash_only_listing%2Cprice_reduced",
+    "total": 24,
+    "pins_returned": 24,
+    "median_asking": 97400,
+    "refreshedAt": "2026-11-08T06:10:11.195Z"
+   }
+  }
+ },
+ "filter_list": {
+  "url": "https://chapter3realty.com/homes/api/filters",
+  "countedAt": "2026-11-08T05:26:45.315Z",
+  "counts": {
+   "price_reduced": 4303,
+   "cash_only_listing": 226,
+   "fixer_upper": 142
+  }
+ }
+}

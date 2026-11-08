@@ -1,0 +1,324 @@
+{
+ "pulled": "2026-11-08T07:17:37.604087+00:00",
+ "method": "Houses for sale (campground homes dropped) whose walk to the nearest public beach access is under half a mile (about 10 minutes), from walks.json and pins.json.",
+ "under_400k": {
+  "houses": 20,
+  "by_stretch": {
+   "North Myrtle Beach and Cherry Grove": 14,
+   "Myrtle Beach": 5,
+   "Surfside Beach, Garden City and Murrells Inlet": 1
+  },
+  "median_sqft": 1360,
+  "beds": {
+   "2": 6,
+   "3": 13,
+   "4": 1
+  },
+  "streets_by_stretch": {
+   "Myrtle Beach": [
+    [
+     "Collins St.",
+     2
+    ],
+    [
+     "Limerick Rd.",
+     1
+    ],
+    [
+     "Guest Ct.",
+     1
+    ],
+    [
+     "N Oak St.",
+     1
+    ]
+   ],
+   "North Myrtle Beach and Cherry Grove": [
+    [
+     "Edge Dr.",
+     3
+    ],
+    [
+     "Hillside Dr. S",
+     3
+    ],
+    [
+     "11th Ave. S",
+     2
+    ],
+    [
+     "Live Oak Dr.",
+     1
+    ],
+    [
+     "28th Ave. S",
+     1
+    ],
+    [
+     "23rd Ave. S",
+     1
+    ],
+    [
+     "43rd Ave. S",
+     1
+    ],
+    [
+     "26th Ave. S",
+     1
+    ],
+    [
+     "Madison Dr.",
+     1
+    ]
+   ],
+   "Surfside Beach, Garden City and Murrells Inlet": [
+    [
+     "Sunset Square",
+     1
+    ]
+   ]
+  }
+ },
+ "400k_to_600k": {
+  "houses": 51,
+  "by_stretch": {
+   "North Myrtle Beach and Cherry Grove": 23,
+   "Surfside Beach, Garden City and Murrells Inlet": 11,
+   "Myrtle Beach": 17
+  },
+  "median_sqft": 1460,
+  "beds": {
+   "2": 1,
+   "3": 38,
+   "4": 9,
+   "5": 3
+  },
+  "streets_by_stretch": {
+   "Myrtle Beach": [
+    [
+     "12th Ave. S",
+     8
+    ],
+    [
+     "14th Ave. S",
+     1
+    ],
+    [
+     "Lake Arrowhead Rd.",
+     1
+    ],
+    [
+     "Clearwater St.",
+     1
+    ],
+    [
+     "De Lago Ct.",
+     1
+    ],
+    [
+     "Chester St.",
+     1
+    ],
+    [
+     "Springs Ave.",
+     1
+    ],
+    [
+     "N N Kings Hwy.",
+     1
+    ],
+    [
+     "Kashton Dr.",
+     1
+    ],
+    [
+     "Queens Ct.",
+     1
+    ]
+   ],
+   "North Myrtle Beach and Cherry Grove": [
+    [
+     "43rd Ave. S",
+     4
+    ],
+    [
+     "Edge Dr.",
+     2
+    ],
+    [
+     "Havens Dr.",
+     2
+    ],
+    [
+     "Poinsett St.",
+     1
+    ],
+    [
+     "Alicia Ct.",
+     1
+    ],
+    [
+     "36th Ave. S",
+     1
+    ],
+    [
+     "22nd Ave. S",
+     1
+    ],
+    [
+     "Sandcrest Dr.",
+     1
+    ],
+    [
+     "26th Ave. S",
+     1
+    ],
+    [
+     "Beach Way Ln.",
+     1
+    ],
+    [
+     "Woodland St.",
+     1
+    ],
+    [
+     "Acorn Way",
+     1
+    ],
+    [
+     "31st Ave. N",
+     1
+    ],
+    [
+     "Eyerly St.",
+     1
+    ],
+    [
+     "25th Ave. N",
+     1
+    ],
+    [
+     "N 35th Ave. N",
+     1
+    ],
+    [
+     "34th Ave. N",
+     1
+    ],
+    [
+     "Cardinal Pl.",
+     1
+    ]
+   ],
+   "Surfside Beach, Garden City and Murrells Inlet": [
+    [
+     "Easy St.",
+     2
+    ],
+    [
+     "13th Ave. S",
+     1
+    ],
+    [
+     "3rd Ave. S",
+     1
+    ],
+    [
+     "Melody Gardens Dr.",
+     1
+    ],
+    [
+     "S Myrtle Dr.",
+     1
+    ],
+    [
+     "16th Ave. S",
+     1
+    ],
+    [
+     "17th Ave. N",
+     1
+    ],
+    [
+     "5th Ave. N",
+     1
+    ],
+    [
+     "Pine Dr. N",
+     1
+    ],
+    [
+     "Cypress Ave.",
+     1
+    ]
+   ]
+  }
+ },
+ "live_nmb_walk_under_400k": {
+  "url": "https://chapter3realty.com/homes/api/map?type=house&has=walk_to_beach&city=North%20Myrtle%20Beach&max=400000",
+  "checked": "2026-11-08",
+  "total": 19,
+  "campground_homes": 0,
+  "by_part": {
+   "Little River Neck": 1,
+   "Ocean Drive": 2,
+   "Crescent Beach": 12,
+   "Ocean Drive / Crescent Beach": 3,
+   "Windy Hill": 1
+  },
+  "streets": [
+   [
+    "Edge Dr.",
+    3
+   ],
+   [
+    "Hillside Dr. S",
+    3
+   ],
+   [
+    "9th Ave. S",
+    2
+   ],
+   [
+    "11th Ave. S",
+    2
+   ],
+   [
+    "Pelican St.",
+    1
+   ],
+   [
+    "Cedar Ave.",
+    1
+   ],
+   [
+    "23rd Ave. S",
+    1
+   ],
+   [
+    "43rd Ave. S",
+    1
+   ],
+   [
+    "Cypress Ln.",
+    1
+   ],
+   [
+    "28th Ave. S",
+    1
+   ],
+   [
+    "Madison Dr.",
+    1
+   ],
+   [
+    "26th Ave. S",
+    1
+   ],
+   [
+    "Live Oak Dr.",
+    1
+   ]
+  ]
+ }
+}

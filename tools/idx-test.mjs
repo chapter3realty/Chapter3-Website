@@ -874,6 +874,22 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
   check("photo fix in search results: after our copy fails too, the drawn panel shows (fires)", g2.ph.classList.contains("hx-ph-off") && grid.children.includes(g2.a));
 }
 
+// Strips of homes with a feature (owner, 2026-11-08): a place may be a feature search with a town and a price ceiling,
+// never a free-for-all; such a strip is never read as a place name in a sentence; each new page has its feed.
+{
+  const { placeParams } = await import("../idx-lib/edge.js");
+  const { PLACES: PL } = await import("../idx-lib/places.js");
+  const { FEEDS: FD } = await import("../idx-lib/feeds.js");
+  const { readQuery: rq } = await import("../idx-lib/query.js");
+  const pool = placeParams(PL["pool-homes-under-400k"].q);
+  check("strips: a feature strip searches its features, type and ceiling; an unknown key, a strange town or no anchor is refused; a strip name is not a place in a sentence; the new pages have feeds",
+    pool && pool.get("has") === "pool" && pool.get("type") === "house" && pool.get("max") === "400000"
+    && placeParams({ has: "not_a_key" }) === null && placeParams({ has: "pool", city: "Atlanta" }) === null && placeParams({ type: "house" }) === null
+    && Object.values(PL).filter((p) => p.listOnly).every((p) => p.title && placeParams(p.q))
+    && !rq("pool homes in conway").params.toString().includes("place=") && rq("pool homes in conway").params.get("city") === "Conway"
+    && ["/buyers/pool-homes/", "/buyers/homes-near-the-beach/", "/buyers/new-construction/builders/", "/sell/sell-or-buy-first/", "/sell/best-time-to-sell/"].every((u) => FD[u] && FD[u].head));
+}
+
 // The CRM's photo links (live since 2026-10): kept in our store too, and its first 503 is asked once more.
 {
   const C = "https://app.chapter3realty.com/api/idx/photo/1193398589/ttn5mv0/0/480/6FGpCJWlQzo3f770oaSDnH.webp";

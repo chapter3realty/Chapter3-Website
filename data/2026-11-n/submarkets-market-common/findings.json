@@ -1,0 +1,1341 @@
+{
+ "area_note": "City of Myrtle Beach zoning districts C6, CENTER POINTE PUD and CLEMSON TRACT PUD (terra.cityofmyrtlebeach.com ZONING_DISTRICTS_MB), read 2026-11-08.",
+ "area_sq_mi": {
+  "town_center": 0.25,
+  "center_pointe": 1.42,
+  "clemson_tract": 0.4
+ },
+ "vacant_res_parcels": {
+  "town_center": 107,
+  "center_pointe": 86,
+  "clemson_tract": 38
+ },
+ "stock": {
+  "all": {
+   "homes": 2999,
+   "by_kind": {
+    "townhouse": 465,
+    "house": 2478,
+    "other": 6,
+    "code100": 13,
+    "condo": 37
+   },
+   "pct_main_home": 80.8,
+   "pct_tax_bill_outside_sc": 11.8,
+   "in_fema_high_risk": 62,
+   "fema_zones": {
+    "none": 2907,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 30,
+    "AE": 62
+   },
+   "median_county_market_value": 482064.0
+  },
+  "town_center": {
+   "homes": 568,
+   "by_kind": {
+    "townhouse": 237,
+    "house": 331
+   },
+   "pct_main_home": 63.7,
+   "pct_tax_bill_outside_sc": 21.5,
+   "in_fema_high_risk": 10,
+   "fema_zones": {
+    "none": 556,
+    "AE": 10,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 2
+   },
+   "median_county_market_value": 457866.5
+  },
+  "center_pointe": {
+   "homes": 1873,
+   "by_kind": {
+    "house": 1710,
+    "townhouse": 122,
+    "other": 4,
+    "condo": 37
+   },
+   "pct_main_home": 85.1,
+   "pct_tax_bill_outside_sc": 9.9,
+   "in_fema_high_risk": 52,
+   "fema_zones": {
+    "none": 1795,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 26,
+    "AE": 52
+   },
+   "median_county_market_value": 488017.0
+  },
+  "clemson_tract": {
+   "homes": 558,
+   "by_kind": {
+    "house": 437,
+    "other": 2,
+    "townhouse": 106,
+    "code100": 13
+   },
+   "pct_main_home": 83.9,
+   "pct_tax_bill_outside_sc": 8.2,
+   "in_fema_high_risk": 0,
+   "fema_zones": {
+    "none": 556,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 2
+   },
+   "median_county_market_value": 473849.0
+  },
+  "kind/house": {
+   "homes": 2478,
+   "by_kind": {
+    "house": 2478
+   },
+   "pct_main_home": 85.8,
+   "pct_tax_bill_outside_sc": 9.7,
+   "in_fema_high_risk": 62,
+   "fema_zones": {
+    "none": 2386,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 30,
+    "AE": 62
+   },
+   "median_county_market_value": 496927.0
+  },
+  "kind/townhouse": {
+   "homes": 465,
+   "by_kind": {
+    "townhouse": 465
+   },
+   "pct_main_home": 60.0,
+   "pct_tax_bill_outside_sc": 22.2,
+   "in_fema_high_risk": 0,
+   "fema_zones": {
+    "none": 465
+   },
+   "median_county_market_value": 365000.0
+  },
+  "kind/condo": {
+   "homes": 37,
+   "by_kind": {
+    "condo": 37
+   },
+   "pct_main_home": 24.3,
+   "pct_tax_bill_outside_sc": 18.9,
+   "in_fema_high_risk": 0,
+   "fema_zones": {
+    "none": 37
+   },
+   "median_county_market_value": 295000.0
+  },
+  "kind/code100": {
+   "homes": 13,
+   "by_kind": {
+    "code100": 13
+   },
+   "pct_main_home": 61.5,
+   "pct_tax_bill_outside_sc": 7.7,
+   "in_fema_high_risk": 0,
+   "fema_zones": {
+    "none": 13
+   },
+   "median_county_market_value": 331258.0
+  }
+ },
+ "stock_by_hood": {
+  "Balmoral": {
+   "homes": 116,
+   "by_kind": {
+    "house": 116
+   },
+   "pct_main_home": 93.1,
+   "pct_tax_bill_outside_sc": 4.3,
+   "in_fema_high_risk": 14,
+   "fema_zones": {
+    "none": 96,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 6,
+    "AE": 14
+   },
+   "median_county_market_value": 644686.0,
+   "part": "center_pointe"
+  },
+  "Belle Harbor": {
+   "homes": 483,
+   "by_kind": {
+    "house": 363,
+    "other": 1,
+    "townhouse": 106,
+    "code100": 13
+   },
+   "pct_main_home": 82.6,
+   "pct_tax_bill_outside_sc": 8.5,
+   "in_fema_high_risk": 0,
+   "fema_zones": {
+    "none": 481,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 2
+   },
+   "median_county_market_value": 474828.0,
+   "part": "clemson_tract"
+  },
+  "Cresswind": {
+   "homes": 400,
+   "by_kind": {
+    "house": 400
+   },
+   "pct_main_home": 92.0,
+   "pct_tax_bill_outside_sc": 5.5,
+   "in_fema_high_risk": 38,
+   "fema_zones": {
+    "none": 347,
+    "AE": 38,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 15
+   },
+   "median_county_market_value": 512332.0,
+   "part": "center_pointe"
+  },
+  "Emmens Preserve": {
+   "homes": 732,
+   "by_kind": {
+    "house": 608,
+    "townhouse": 122,
+    "other": 2
+   },
+   "pct_main_home": 81.8,
+   "pct_tax_bill_outside_sc": 12.3,
+   "in_fema_high_risk": 0,
+   "fema_zones": {
+    "none": 731,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 1
+   },
+   "median_county_market_value": 444532.0,
+   "part": "center_pointe"
+  },
+  "Heritage of Coventry": {
+   "homes": 7,
+   "by_kind": {
+    "house": 7
+   },
+   "pct_main_home": 85.7,
+   "pct_tax_bill_outside_sc": 14.3,
+   "in_fema_high_risk": 0,
+   "fema_zones": {
+    "none": 7
+   },
+   "median_county_market_value": 381168.0,
+   "part": "center_pointe"
+  },
+  "High Market (condos)": {
+   "homes": 37,
+   "by_kind": {
+    "condo": 37
+   },
+   "pct_main_home": 24.3,
+   "pct_tax_bill_outside_sc": 18.9,
+   "in_fema_high_risk": 0,
+   "fema_zones": {
+    "none": 37
+   },
+   "median_county_market_value": 295000.0,
+   "part": "center_pointe"
+  },
+  "Park Place": {
+   "homes": 187,
+   "by_kind": {
+    "house": 186,
+    "other": 1
+   },
+   "pct_main_home": 82.4,
+   "pct_tax_bill_outside_sc": 15.5,
+   "in_fema_high_risk": 0,
+   "fema_zones": {
+    "none": 187
+   },
+   "median_county_market_value": 476458.0,
+   "part": "center_pointe"
+  },
+  "Sweetgrass Square": {
+   "homes": 66,
+   "by_kind": {
+    "house": 66
+   },
+   "pct_main_home": 68.2,
+   "pct_tax_bill_outside_sc": 22.7,
+   "in_fema_high_risk": 0,
+   "fema_zones": {
+    "none": 66
+   },
+   "median_county_market_value": 470900.0,
+   "part": "town_center"
+  },
+  "The Reserve at Market Common": {
+   "homes": 109,
+   "by_kind": {
+    "house": 109
+   },
+   "pct_main_home": 93.6,
+   "pct_tax_bill_outside_sc": 3.7,
+   "in_fema_high_risk": 0,
+   "fema_zones": {
+    "none": 109
+   },
+   "median_county_market_value": 544289.0,
+   "part": "center_pointe"
+  },
+  "Town center streets (Market Common parcels R1 to R13)": {
+   "homes": 502,
+   "by_kind": {
+    "townhouse": 237,
+    "house": 265
+   },
+   "pct_main_home": 63.1,
+   "pct_tax_bill_outside_sc": 21.3,
+   "in_fema_high_risk": 10,
+   "fema_zones": {
+    "none": 490,
+    "AE": 10,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 2
+   },
+   "median_county_market_value": 457101.0,
+   "part": "town_center"
+  },
+  "West Lake": {
+   "homes": 139,
+   "by_kind": {
+    "house": 139
+   },
+   "pct_main_home": 86.3,
+   "pct_tax_bill_outside_sc": 11.5,
+   "in_fema_high_risk": 0,
+   "fema_zones": {
+    "none": 139
+   },
+   "median_county_market_value": 497974.0,
+   "part": "center_pointe"
+  },
+  "Withers Preserve": {
+   "homes": 221,
+   "by_kind": {
+    "house": 219,
+    "other": 2
+   },
+   "pct_main_home": 89.1,
+   "pct_tax_bill_outside_sc": 7.7,
+   "in_fema_high_risk": 0,
+   "fema_zones": {
+    "none": 217,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 4
+   },
+   "median_county_market_value": 506302.0,
+   "part": "center_pointe"
+  }
+ },
+ "sales_note": "Horry County deeds recorded 2025-10-01 to 2026-09-30 in the reused file data/2026-10-d/sell-out-of-state-buyers/out-of-state-buyers.json, matched by PIN to the homes above.",
+ "sales": {
+  "all": {
+   "all/all": {
+    "n": 190,
+    "median": 492500.0,
+    "p25": 382000.0,
+    "p75": 549000.0,
+    "min": 284498.0,
+    "max": 860000.0
+   },
+   "all/resale": {
+    "n": 181,
+    "median": 488900.0,
+    "p25": 383000.0,
+    "p75": 545000.0,
+    "min": 284498.0,
+    "max": 860000.0
+   },
+   "all/builder": {
+    "n": 9,
+    "median": 580000.0,
+    "p25": 372660.0,
+    "p75": 585250.0,
+    "min": 330945.0,
+    "max": 632833.5
+   },
+   "house/all": {
+    "n": 124,
+    "median": 525000.0,
+    "p25": 474900.0,
+    "p75": 567200.0,
+    "min": 290000.0,
+    "max": 860000.0
+   },
+   "house/resale": {
+    "n": 124,
+    "median": 525000.0,
+    "p25": 474900.0,
+    "p75": 567200.0,
+    "min": 290000.0,
+    "max": 860000.0
+   },
+   "townhouse/all": {
+    "n": 48,
+    "median": 380000.0,
+    "p25": 362500.0,
+    "p75": 415000.0,
+    "min": 285000.0,
+    "max": 632833.5
+   },
+   "townhouse/resale": {
+    "n": 39,
+    "median": 375000.0,
+    "p25": 357000.0,
+    "p75": 407500.0,
+    "min": 285000.0,
+    "max": 560000.0
+   },
+   "townhouse/builder": {
+    "n": 9,
+    "median": 580000.0,
+    "p25": 372660.0,
+    "p75": 585250.0,
+    "min": 330945.0,
+    "max": 632833.5
+   },
+   "condo/all": {
+    "n": 18,
+    "median": 309900.0,
+    "p25": 294900.0,
+    "p75": 315000.0,
+    "min": 284498.0,
+    "max": 319900.0
+   },
+   "condo/resale": {
+    "n": 18,
+    "median": 309900.0,
+    "p25": 294900.0,
+    "p75": 315000.0,
+    "min": 284498.0,
+    "max": 319900.0
+   }
+  },
+  "town_center": {
+   "all/all": {
+    "n": 40,
+    "median": 422500.0,
+    "p25": 372000.0,
+    "p75": 578000.0,
+    "min": 285000.0,
+    "max": 850000.0
+   },
+   "all/resale": {
+    "n": 31,
+    "median": 414500.0,
+    "p25": 371500.0,
+    "p75": 545000.0,
+    "min": 285000.0,
+    "max": 850000.0
+   },
+   "all/builder": {
+    "n": 9,
+    "median": 580000.0,
+    "p25": 372660.0,
+    "p75": 585250.0,
+    "min": 330945.0,
+    "max": 632833.5
+   },
+   "house/all": {
+    "n": 10,
+    "median": 571500.0,
+    "p25": 540000.0,
+    "p75": 775000.0,
+    "min": 420000.0,
+    "max": 850000.0
+   },
+   "house/resale": {
+    "n": 10,
+    "median": 571500.0,
+    "p25": 540000.0,
+    "p75": 775000.0,
+    "min": 420000.0,
+    "max": 850000.0
+   },
+   "townhouse/all": {
+    "n": 30,
+    "median": 405000.0,
+    "p25": 365000.0,
+    "p75": 545000.0,
+    "min": 285000.0,
+    "max": 632833.5
+   },
+   "townhouse/resale": {
+    "n": 21,
+    "median": 399900.0,
+    "p25": 359500.0,
+    "p75": 414500.0,
+    "min": 285000.0,
+    "max": 560000.0
+   },
+   "townhouse/builder": {
+    "n": 9,
+    "median": 580000.0,
+    "p25": 372660.0,
+    "p75": 585250.0,
+    "min": 330945.0,
+    "max": 632833.5
+   }
+  },
+  "center_pointe": {
+   "all/all": {
+    "n": 121,
+    "median": 500000.0,
+    "p25": 387500.0,
+    "p75": 542000.0,
+    "min": 284498.0,
+    "max": 860000.0
+   },
+   "all/resale": {
+    "n": 121,
+    "median": 500000.0,
+    "p25": 387500.0,
+    "p75": 542000.0,
+    "min": 284498.0,
+    "max": 860000.0
+   },
+   "house/all": {
+    "n": 92,
+    "median": 525000.0,
+    "p25": 469000.0,
+    "p75": 561250.0,
+    "min": 350000.0,
+    "max": 860000.0
+   },
+   "house/resale": {
+    "n": 92,
+    "median": 525000.0,
+    "p25": 469000.0,
+    "p75": 561250.0,
+    "min": 350000.0,
+    "max": 860000.0
+   },
+   "townhouse/all": {
+    "n": 11,
+    "median": 380000.0,
+    "p25": 354000.0,
+    "p75": 385000.0,
+    "min": 310000.0,
+    "max": 415000.0
+   },
+   "townhouse/resale": {
+    "n": 11,
+    "median": 380000.0,
+    "p25": 354000.0,
+    "p75": 385000.0,
+    "min": 310000.0,
+    "max": 415000.0
+   },
+   "condo/all": {
+    "n": 18,
+    "median": 309900.0,
+    "p25": 294900.0,
+    "p75": 315000.0,
+    "min": 284498.0,
+    "max": 319900.0
+   },
+   "condo/resale": {
+    "n": 18,
+    "median": 309900.0,
+    "p25": 294900.0,
+    "p75": 315000.0,
+    "min": 284498.0,
+    "max": 319900.0
+   }
+  },
+  "clemson_tract": {
+   "all/all": {
+    "n": 29,
+    "median": 490000.0,
+    "p25": 375000.0,
+    "p75": 559000.0,
+    "min": 290000.0,
+    "max": 720000.0
+   },
+   "all/resale": {
+    "n": 29,
+    "median": 490000.0,
+    "p25": 375000.0,
+    "p75": 559000.0,
+    "min": 290000.0,
+    "max": 720000.0
+   },
+   "house/all": {
+    "n": 22,
+    "median": 520000.0,
+    "p25": 485000.0,
+    "p75": 580000.0,
+    "min": 290000.0,
+    "max": 720000.0
+   },
+   "house/resale": {
+    "n": 22,
+    "median": 520000.0,
+    "p25": 485000.0,
+    "p75": 580000.0,
+    "min": 290000.0,
+    "max": 720000.0
+   },
+   "townhouse/all": {
+    "n": 7,
+    "median": 365000.0,
+    "p25": 357000.0,
+    "p75": 375000.0,
+    "min": 351000.0,
+    "max": 375000.0
+   },
+   "townhouse/resale": {
+    "n": 7,
+    "median": 365000.0,
+    "p25": 357000.0,
+    "p75": 375000.0,
+    "min": 351000.0,
+    "max": 375000.0
+   }
+  }
+ },
+ "sales_by_hood": {
+  "Balmoral": {
+   "all/all": {
+    "n": 10,
+    "median": 685000.0,
+    "p25": 610000.0,
+    "p75": 785000.0,
+    "min": 350000.0,
+    "max": 860000.0
+   },
+   "all/resale": {
+    "n": 10,
+    "median": 685000.0,
+    "p25": 610000.0,
+    "p75": 785000.0,
+    "min": 350000.0,
+    "max": 860000.0
+   },
+   "house/all": {
+    "n": 10,
+    "median": 685000.0,
+    "p25": 610000.0,
+    "p75": 785000.0,
+    "min": 350000.0,
+    "max": 860000.0
+   },
+   "house/resale": {
+    "n": 10,
+    "median": 685000.0,
+    "p25": 610000.0,
+    "p75": 785000.0,
+    "min": 350000.0,
+    "max": 860000.0
+   }
+  },
+  "Belle Harbor": {
+   "all/all": {
+    "n": 25,
+    "median": 513000.0,
+    "p25": 375000.0,
+    "p75": 580000.0,
+    "min": 290000.0,
+    "max": 720000.0
+   },
+   "all/resale": {
+    "n": 25,
+    "median": 513000.0,
+    "p25": 375000.0,
+    "p75": 580000.0,
+    "min": 290000.0,
+    "max": 720000.0
+   },
+   "house/all": {
+    "n": 18,
+    "median": 546500.0,
+    "p25": 465000.0,
+    "p75": 590000.0,
+    "min": 290000.0,
+    "max": 720000.0
+   },
+   "house/resale": {
+    "n": 18,
+    "median": 546500.0,
+    "p25": 465000.0,
+    "p75": 590000.0,
+    "min": 290000.0,
+    "max": 720000.0
+   },
+   "townhouse/all": {
+    "n": 7,
+    "median": 365000.0,
+    "p25": 357000.0,
+    "p75": 375000.0,
+    "min": 351000.0,
+    "max": 375000.0
+   },
+   "townhouse/resale": {
+    "n": 7,
+    "median": 365000.0,
+    "p25": 357000.0,
+    "p75": 375000.0,
+    "min": 351000.0,
+    "max": 375000.0
+   }
+  },
+  "Cresswind": {
+   "all/all": {
+    "n": 16,
+    "median": 537500.0,
+    "p25": 515000.0,
+    "p75": 549000.0,
+    "min": 400000.0,
+    "max": 620000.0
+   },
+   "all/resale": {
+    "n": 16,
+    "median": 537500.0,
+    "p25": 515000.0,
+    "p75": 549000.0,
+    "min": 400000.0,
+    "max": 620000.0
+   },
+   "house/all": {
+    "n": 16,
+    "median": 537500.0,
+    "p25": 515000.0,
+    "p75": 549000.0,
+    "min": 400000.0,
+    "max": 620000.0
+   },
+   "house/resale": {
+    "n": 16,
+    "median": 537500.0,
+    "p25": 515000.0,
+    "p75": 549000.0,
+    "min": 400000.0,
+    "max": 620000.0
+   }
+  },
+  "Emmens Preserve": {
+   "all/all": {
+    "n": 38,
+    "median": 430000.0,
+    "p25": 383000.0,
+    "p75": 469000.0,
+    "min": 310000.0,
+    "max": 575000.0
+   },
+   "all/resale": {
+    "n": 38,
+    "median": 430000.0,
+    "p25": 383000.0,
+    "p75": 469000.0,
+    "min": 310000.0,
+    "max": 575000.0
+   },
+   "house/all": {
+    "n": 27,
+    "median": 440000.0,
+    "p25": 425000.0,
+    "p75": 497500.0,
+    "min": 350000.0,
+    "max": 575000.0
+   },
+   "house/resale": {
+    "n": 27,
+    "median": 440000.0,
+    "p25": 425000.0,
+    "p75": 497500.0,
+    "min": 350000.0,
+    "max": 575000.0
+   },
+   "townhouse/all": {
+    "n": 11,
+    "median": 380000.0,
+    "p25": 354000.0,
+    "p75": 385000.0,
+    "min": 310000.0,
+    "max": 415000.0
+   },
+   "townhouse/resale": {
+    "n": 11,
+    "median": 380000.0,
+    "p25": 354000.0,
+    "p75": 385000.0,
+    "min": 310000.0,
+    "max": 415000.0
+   }
+  },
+  "High Market (condos)": {
+   "all/all": {
+    "n": 18,
+    "median": 309900.0,
+    "p25": 294900.0,
+    "p75": 315000.0,
+    "min": 284498.0,
+    "max": 319900.0
+   },
+   "all/resale": {
+    "n": 18,
+    "median": 309900.0,
+    "p25": 294900.0,
+    "p75": 315000.0,
+    "min": 284498.0,
+    "max": 319900.0
+   },
+   "condo/all": {
+    "n": 18,
+    "median": 309900.0,
+    "p25": 294900.0,
+    "p75": 315000.0,
+    "min": 284498.0,
+    "max": 319900.0
+   },
+   "condo/resale": {
+    "n": 18,
+    "median": 309900.0,
+    "p25": 294900.0,
+    "p75": 315000.0,
+    "min": 284498.0,
+    "max": 319900.0
+   }
+  },
+  "Park Place": {
+   "all/all": {
+    "n": 13,
+    "median": 525000.0,
+    "p25": 505000.0,
+    "p75": 542000.0,
+    "min": 430000.0,
+    "max": 572000.0
+   },
+   "all/resale": {
+    "n": 13,
+    "median": 525000.0,
+    "p25": 505000.0,
+    "p75": 542000.0,
+    "min": 430000.0,
+    "max": 572000.0
+   },
+   "house/all": {
+    "n": 13,
+    "median": 525000.0,
+    "p25": 505000.0,
+    "p75": 542000.0,
+    "min": 430000.0,
+    "max": 572000.0
+   },
+   "house/resale": {
+    "n": 13,
+    "median": 525000.0,
+    "p25": 505000.0,
+    "p75": 542000.0,
+    "min": 430000.0,
+    "max": 572000.0
+   }
+  },
+  "Sweetgrass Square": {
+   "all/all": {
+    "n": 1,
+    "median": 525000.0,
+    "p25": 525000.0,
+    "p75": 525000.0,
+    "min": 525000.0,
+    "max": 525000.0
+   },
+   "all/resale": {
+    "n": 1,
+    "median": 525000.0,
+    "p25": 525000.0,
+    "p75": 525000.0,
+    "min": 525000.0,
+    "max": 525000.0
+   },
+   "house/all": {
+    "n": 1,
+    "median": 525000.0,
+    "p25": 525000.0,
+    "p75": 525000.0,
+    "min": 525000.0,
+    "max": 525000.0
+   },
+   "house/resale": {
+    "n": 1,
+    "median": 525000.0,
+    "p25": 525000.0,
+    "p75": 525000.0,
+    "min": 525000.0,
+    "max": 525000.0
+   }
+  },
+  "The Reserve at Market Common": {
+   "all/all": {
+    "n": 14,
+    "median": 521000.0,
+    "p25": 507500.0,
+    "p75": 558000.0,
+    "min": 465000.0,
+    "max": 570000.0
+   },
+   "all/resale": {
+    "n": 14,
+    "median": 521000.0,
+    "p25": 507500.0,
+    "p75": 558000.0,
+    "min": 465000.0,
+    "max": 570000.0
+   },
+   "house/all": {
+    "n": 14,
+    "median": 521000.0,
+    "p25": 507500.0,
+    "p75": 558000.0,
+    "min": 465000.0,
+    "max": 570000.0
+   },
+   "house/resale": {
+    "n": 14,
+    "median": 521000.0,
+    "p25": 507500.0,
+    "p75": 558000.0,
+    "min": 465000.0,
+    "max": 570000.0
+   }
+  },
+  "Town center streets (Market Common parcels R1 to R13)": {
+   "all/all": {
+    "n": 39,
+    "median": 420000.0,
+    "p25": 371500.0,
+    "p75": 578000.0,
+    "min": 285000.0,
+    "max": 850000.0
+   },
+   "all/resale": {
+    "n": 30,
+    "median": 413500.0,
+    "p25": 371500.0,
+    "p75": 545000.0,
+    "min": 285000.0,
+    "max": 850000.0
+   },
+   "all/builder": {
+    "n": 9,
+    "median": 580000.0,
+    "p25": 372660.0,
+    "p75": 585250.0,
+    "min": 330945.0,
+    "max": 632833.5
+   },
+   "house/all": {
+    "n": 9,
+    "median": 578000.0,
+    "p25": 544000.0,
+    "p75": 775000.0,
+    "min": 420000.0,
+    "max": 850000.0
+   },
+   "house/resale": {
+    "n": 9,
+    "median": 578000.0,
+    "p25": 544000.0,
+    "p75": 775000.0,
+    "min": 420000.0,
+    "max": 850000.0
+   },
+   "townhouse/all": {
+    "n": 30,
+    "median": 405000.0,
+    "p25": 365000.0,
+    "p75": 545000.0,
+    "min": 285000.0,
+    "max": 632833.5
+   },
+   "townhouse/resale": {
+    "n": 21,
+    "median": 399900.0,
+    "p25": 359500.0,
+    "p75": 414500.0,
+    "min": 285000.0,
+    "max": 560000.0
+   },
+   "townhouse/builder": {
+    "n": 9,
+    "median": 580000.0,
+    "p25": 372660.0,
+    "p75": 585250.0,
+    "min": 330945.0,
+    "max": 632833.5
+   }
+  },
+  "West Lake": {
+   "all/all": {
+    "n": 6,
+    "median": 552500.0,
+    "p25": 530000.0,
+    "p75": 650000.0,
+    "min": 525000.0,
+    "max": 675000.0
+   },
+   "all/resale": {
+    "n": 6,
+    "median": 552500.0,
+    "p25": 530000.0,
+    "p75": 650000.0,
+    "min": 525000.0,
+    "max": 675000.0
+   },
+   "house/all": {
+    "n": 6,
+    "median": 552500.0,
+    "p25": 530000.0,
+    "p75": 650000.0,
+    "min": 525000.0,
+    "max": 675000.0
+   },
+   "house/resale": {
+    "n": 6,
+    "median": 552500.0,
+    "p25": 530000.0,
+    "p75": 650000.0,
+    "min": 525000.0,
+    "max": 675000.0
+   }
+  },
+  "Withers Preserve": {
+   "all/all": {
+    "n": 10,
+    "median": 521500.0,
+    "p25": 490000.0,
+    "p75": 561250.0,
+    "min": 485000.0,
+    "max": 580000.0
+   },
+   "all/resale": {
+    "n": 10,
+    "median": 521500.0,
+    "p25": 490000.0,
+    "p75": 561250.0,
+    "min": 485000.0,
+    "max": 580000.0
+   },
+   "house/all": {
+    "n": 10,
+    "median": 521500.0,
+    "p25": 490000.0,
+    "p75": 561250.0,
+    "min": 485000.0,
+    "max": 580000.0
+   },
+   "house/resale": {
+    "n": 10,
+    "median": 521500.0,
+    "p25": 490000.0,
+    "p75": 561250.0,
+    "min": 485000.0,
+    "max": 580000.0
+   }
+  }
+ },
+ "compare_sales": {
+  "carolina_forest": {
+   "all/all": {
+    "n": 581,
+    "median": 375000.0,
+    "p25": 250000.0,
+    "p75": 553220.0,
+    "min": 20000.0,
+    "max": 1550000.0
+   },
+   "all/resale": {
+    "n": 505,
+    "median": 358000.0,
+    "p25": 245000.0,
+    "p75": 545000.0,
+    "min": 20000.0,
+    "max": 1550000.0
+   },
+   "all/builder": {
+    "n": 76,
+    "median": 493802.5,
+    "p25": 352000.0,
+    "p75": 578891.0,
+    "min": 230000.0,
+    "max": 930000.0
+   },
+   "house/all": {
+    "n": 438,
+    "median": 459700.0,
+    "p25": 340000.0,
+    "p75": 599000.0,
+    "min": 20000.0,
+    "max": 1550000.0
+   },
+   "house/resale": {
+    "n": 382,
+    "median": 439750.0,
+    "p25": 327000.0,
+    "p75": 598000.0,
+    "min": 20000.0,
+    "max": 1550000.0
+   },
+   "house/builder": {
+    "n": 56,
+    "median": 536547.5,
+    "p25": 470000.0,
+    "p75": 630272.0,
+    "min": 352000.0,
+    "max": 930000.0
+   },
+   "townhouse/all": {
+    "n": 46,
+    "median": 235950.0,
+    "p25": 228500.0,
+    "p75": 255000.0,
+    "min": 100000.0,
+    "max": 506488.0
+   },
+   "townhouse/resale": {
+    "n": 28,
+    "median": 230000.0,
+    "p25": 220000.0,
+    "p75": 241000.0,
+    "min": 100000.0,
+    "max": 280000.0
+   },
+   "townhouse/builder": {
+    "n": 18,
+    "median": 247500.0,
+    "p25": 238000.0,
+    "p75": 255500.0,
+    "min": 230000.0,
+    "max": 506488.0
+   },
+   "condo/all": {
+    "n": 88,
+    "median": 172500.0,
+    "p25": 162000.0,
+    "p75": 195000.0,
+    "min": 120000.0,
+    "max": 340000.0
+   },
+   "condo/resale": {
+    "n": 87,
+    "median": 172000.0,
+    "p25": 160000.0,
+    "p75": 195000.0,
+    "min": 120000.0,
+    "max": 340000.0
+   },
+   "condo/builder": {
+    "n": 1,
+    "median": 262000.0,
+    "p25": 262000.0,
+    "p75": 262000.0,
+    "min": 262000.0,
+    "max": 262000.0
+   },
+   "matched_sales": 581
+  },
+  "surfside_beach": {
+   "all/all": {
+    "n": 179,
+    "median": 534000.0,
+    "p25": 375000.0,
+    "p75": 805000.0,
+    "min": 110000.0,
+    "max": 1935000.0
+   },
+   "all/resale": {
+    "n": 177,
+    "median": 530000.0,
+    "p25": 375000.0,
+    "p75": 800000.0,
+    "min": 110000.0,
+    "max": 1935000.0
+   },
+   "all/builder": {
+    "n": 2,
+    "median": 925000.0,
+    "p25": 585000.0,
+    "p75": 1265000.0,
+    "min": 585000.0,
+    "max": 1265000.0
+   },
+   "house/all": {
+    "n": 113,
+    "median": 725000.0,
+    "p25": 505000.0,
+    "p75": 960000.0,
+    "min": 243300.0,
+    "max": 1935000.0
+   },
+   "house/resale": {
+    "n": 112,
+    "median": 715000.0,
+    "p25": 505000.0,
+    "p75": 960000.0,
+    "min": 243300.0,
+    "max": 1935000.0
+   },
+   "house/builder": {
+    "n": 1,
+    "median": 1265000.0,
+    "p25": 1265000.0,
+    "p75": 1265000.0,
+    "min": 1265000.0,
+    "max": 1265000.0
+   },
+   "townhouse/all": {
+    "n": 14,
+    "median": 249750.0,
+    "p25": 216000.0,
+    "p75": 315000.0,
+    "min": 150000.0,
+    "max": 422500.0
+   },
+   "townhouse/resale": {
+    "n": 14,
+    "median": 249750.0,
+    "p25": 216000.0,
+    "p75": 315000.0,
+    "min": 150000.0,
+    "max": 422500.0
+   },
+   "condo/all": {
+    "n": 49,
+    "median": 375000.0,
+    "p25": 290000.0,
+    "p75": 500000.0,
+    "min": 110000.0,
+    "max": 750000.0
+   },
+   "condo/resale": {
+    "n": 48,
+    "median": 370000.0,
+    "p25": 290000.0,
+    "p75": 500000.0,
+    "min": 110000.0,
+    "max": 750000.0
+   },
+   "condo/builder": {
+    "n": 1,
+    "median": 585000.0,
+    "p25": 585000.0,
+    "p75": 585000.0,
+    "min": 585000.0,
+    "max": 585000.0
+   },
+   "matched_sales": 179
+  },
+  "myrtle_beach_city": {
+   "all/all": {
+    "n": 1711,
+    "median": 235000.0,
+    "p25": 140000.0,
+    "p75": 445000.0,
+    "min": 15000.0,
+    "max": 5850000.0
+   },
+   "all/resale": {
+    "n": 1662,
+    "median": 226950.0,
+    "p25": 137000.0,
+    "p75": 425000.0,
+    "min": 15000.0,
+    "max": 5850000.0
+   },
+   "all/builder": {
+    "n": 49,
+    "median": 621460.0,
+    "p25": 559990.0,
+    "p75": 680000.0,
+    "min": 70000.0,
+    "max": 2675000.0
+   },
+   "house/all": {
+    "n": 476,
+    "median": 540000.0,
+    "p25": 419000.0,
+    "p75": 750000.0,
+    "min": 35000.0,
+    "max": 5850000.0
+   },
+   "house/resale": {
+    "n": 457,
+    "median": 539500.0,
+    "p25": 415000.0,
+    "p75": 740000.0,
+    "min": 35000.0,
+    "max": 5850000.0
+   },
+   "house/builder": {
+    "n": 19,
+    "median": 725000.0,
+    "p25": 663000.0,
+    "p75": 849000.0,
+    "min": 481000.0,
+    "max": 2675000.0
+   },
+   "townhouse/all": {
+    "n": 156,
+    "median": 287212.5,
+    "p25": 185000.0,
+    "p75": 399900.0,
+    "min": 60000.0,
+    "max": 730000.0
+   },
+   "townhouse/resale": {
+    "n": 130,
+    "median": 228750.0,
+    "p25": 182325.0,
+    "p75": 357000.0,
+    "min": 60000.0,
+    "max": 730000.0
+   },
+   "townhouse/builder": {
+    "n": 26,
+    "median": 585000.0,
+    "p25": 555000.0,
+    "p75": 621460.0,
+    "min": 369900.0,
+    "max": 673651.0
+   },
+   "condo/all": {
+    "n": 1003,
+    "median": 175000.0,
+    "p25": 112500.0,
+    "p75": 265000.0,
+    "min": 24000.0,
+    "max": 1925000.0
+   },
+   "condo/resale": {
+    "n": 999,
+    "median": 175000.0,
+    "p25": 112500.0,
+    "p75": 265000.0,
+    "min": 24000.0,
+    "max": 1925000.0
+   },
+   "condo/builder": {
+    "n": 4,
+    "median": 171965.0,
+    "p25": 143930.0,
+    "p75": 535000.0,
+    "min": 70000.0,
+    "max": 535000.0
+   },
+   "code100/all": {
+    "n": 1,
+    "median": 1477000.0,
+    "p25": 1477000.0,
+    "p75": 1477000.0,
+    "min": 1477000.0,
+    "max": 1477000.0
+   },
+   "code100/resale": {
+    "n": 1,
+    "median": 1477000.0,
+    "p25": 1477000.0,
+    "p75": 1477000.0,
+    "min": 1477000.0,
+    "max": 1477000.0
+   },
+   "matched_sales": 1711
+  }
+ },
+ "compare_note": "Same deed file; Census place from the file; land use code from data/2026-10-d/buyers-first-time-home-buyer-myrtle-beach/raw/parcel-attrs.json (county layer 24, read 2026-11-01)."
+}

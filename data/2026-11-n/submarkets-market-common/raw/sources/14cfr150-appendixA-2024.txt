@@ -1,0 +1,374 @@
+Federal Aviation Administration, DOT                                    Pt. 150, App. A
+uses around the airport and of pre-           (6) Impacts on flight procedures, air
+venting the introduction of additional      traffic management, or air commerce
+noncompatible land uses;                    occur which could not be foreseen at
+  (2) The program provides for revision     the time of approval.
+if made necessary by the revision of        A determination may be sooner re-
+the noise map; and                          scinded or modified for cause with at
+  (3) Those aspects of programs relat-      least 30 days written notice to the air-
+ing to the use of flight procedures for     port operator of the FAA’s intention to
+noise control can be implemented with-      rescind or modify the determination
+in the period covered by the program        for the reasons stated in the notice.
+and without—                                The airport operator may, during the
+  (i) Reducing the level of aviation        30-day period, submit to the Regional
+safety provided;                            Airports Division Manager for consid-
+  (ii) Derogating the requisite level of    eration any reasons and circumstances
+protection for aircraft, their occupants    why the determination should not be
+and persons and property on the             rescinded or modified on the basis stat-
+ground;                                     ed in the notice of intent. Thereafter,
+  (iii) Adversely affecting the efficient   the FAA either rescinds or modifies the
+use and management of the Navigable         determination consistent with the no-
+Airspace and Air Traffic Control Sys-       tice or withdraws the notice of intent
+tems; or                                    and terminates the action.
+  (iv) Adversely affecting any other          (e) Determinations may contain con-
+powers and responsibilities of the Ad-      ditions which must be satisfied prior to
+ministrator prescribed by law or any        implementation of any portion of the
+other program, standard, or require-        program relating to flight procedures
+ment established in accordance with         affecting airport or aircraft operations.
+law.                                          (f) Noise exposure maps for current
+  (c) When a determination is issued,       and forecast year map conditions that
+the Regional Airports Division Man-         are submitted and approved with noise
+ager notifies the airport operator and      compatibility programs are considered
+publishes a notice of approval or dis-      to be the new FAA accepted noise expo-
+approval in the FEDERAL REGISTER            sure maps for purposes of part 150.
+identifying the nature and extent of
+the determination.                          [Doc. No. 18691, 49 FR 49269, Dec. 18, 1984, as
+  (d) Approvals issued under this part      amended by Amdt. 150–2, 54 FR 39295, Sept.
+for a program or portion thereof be-        25, 1989; Amdt. 150–4, 69 FR 57626, Sept. 24,
+                                            2004]
+come effective as specified therein and
+may be withdrawn when one of the fol-
+lowing occurs:
+  (1) The program or portion thereof is
+                                                APPENDIX A TO PART 150—NOISE
+required to be revised under this part
+                                                      EXPOSURE MAPS
+or under its own terms, and is not so
+revised;                                                  PART A—GENERAL
+  (2) If a revision has been submitted      Sec. A150.1 Purpose.
+for approval, a determination is issued     Sec. A150.3 Noise descriptors.
+on the revised program or portion           Sec. A150.5 Noise measurement procedures
+thereof, that is inconsistent with the         and equipment.
+prior approval.
+                                            PART B—NOISE EXPOSURE MAP DEVELOPMENT
+  (3) A term or condition of the pro-
+gram, or portion thereof, or its ap-        Sec. A150.101 Noise contours and land us-
+proval is violated by the responsible          ages.
+government body.                            Sec. A150.103 Use of computer prediction
+                                               model.
+  (4) A flight procedure or other FAA       Sec. A150.105 Identification of public agen-
+action upon which the approved pro-            cies and planning agencies.
+gram or portion thereof is dependent is
+subsequently disapproved, significantly        PART C—MATHEMATICAL DESCRIPTIONS
+altered, or rescinded by the FAA.           Sec. A150.201 General.
+  (5) The airport operator requests re-     Sec. A150.203 Symbols.
+scission of the approval.                   Sec. A150.205 Mathematical computations.
+
+                                        679
+Pt. 150, App. A                                                 14 CFR Ch. I (1–1–24 Edition)
+               PART A—GENERAL                     Methods for the Measurement of Sound Pres-
+                                                  sure Levels’’; ARP No. 796, dated 1969, enti-
+              Sec. A150.1   Purpose.              tled ‘‘Measurement of Aircraft Exterior
+  (a) This appendix establishes a uniform         Noise in the Field’’; ‘‘Handbook of Noise
+methodology for the development and prepa-        Measurement,’’ Ninth Ed. 1980, by Arnold
+ration of airport noise exposure maps. That       P.G. Peterson; or ‘‘Acoustic Noise Measure-
+methodology includes a single system of           ment,’’ dated Jan., 1979, by J.R. Hassell and
+measuring noise at airports for which there       K. Zaveri. For purposes of this part, meas-
+is a highly reliable relationship between pro-    urements intended for comparison to a State
+jected noise exposure and surveyed reactions      or local standard or with another transpor-
+of people to noise along with a separate sin-     tation noise source (including other aircraft)
+gle system for determining the exposure of        must be reported in maximum A-weighted
+individuals to noise. It also identifies land     sound levels (LAM); for computation or vali-
+uses which, for the purpose of this part are      dation of the yearly day-night average level
+considered to be compatible with various ex-      (Ldn), measurements must be reported in
+posures of individuals to noise around air-       sound exposure level (LAE), as defined in Sec.
+ports.                                            A150.205 of this appendix.
+  (b) This appendix provides for the use of
+                                                  PART B—NOISE EXPOSURE MAP DEVELOPMENT
+the FAA’s Integrated Noise Model (INM) or
+an FAA approved equivalent, for developing          Sec. A150.101   Noise contours and land usages.
+standardized noise exposure maps and pre-
+dicting noise impacts. Noise monitoring may         (a) To determine the extent of the noise
+be utilized by airport operators for data ac-     impact around an airport, airport propri-
+quisition and data refinement, but is not re-     etors developing noise exposure maps in ac-
+quired by this part for the development of        cordance with this part must develop Ldn
+noise exposure maps or airport noise compat-      contours. Continuous contours must be de-
+ibility programs. Whenever noise monitoring       veloped for YDNL levels of 65, 70, and 75 (ad-
+is used, under this part, it should be accom-     ditional contours may be developed and de-
+plished in accordance with Sec. A150.5 of this    picted when appropriate). In those areas
+appendix.                                         where YDNL values are 65 YDNL or greater,
+                                                  the airport operator shall identify land uses
+        Sec. A150.3   Noise descriptors.          and determine land use compatibility in ac-
+                                                  cordance with the standards and procedures
+  (a) Airport Noise Measurement. The A-           of this appendix.
+Weighted Sound Level, measured, filtered            (b) Table 1 of this appendix describes com-
+and recorded in accordance with Sec. A150.5       patible land use information for several land
+of this appendix, must be employed as the         uses as a function of YDNL values. The
+unit for the measurement of single event          ranges of YDNL values in Table 1 reflect the
+noise at airports and in the areas sur-           statistical variability for the responses of
+rounding the airports.                            large groups of people to noise. Any par-
+  (b) Airport Noise Exposure. The yearly day-     ticular level might not, therefore, accurately
+night average sound level (YDNL) must be          assess an individual’s perception of an actual
+employed for the analysis and characteriza-       noise environment. Compatible or non-
+tion of multiple aircraft noise events and for    compatible land use is determined by com-
+determining the cumulative exposure of indi-      paring the predicted or measured YDNL val-
+viduals to noise around airports.                 ues at a site with the values given. Adjust-
+                                                  ments or modifications of the descriptions of
+Sec. A150.5   Noise measurement procedures and
+                                                  the land-use categories may be desirable
+                   equipment.
+                                                  after consideration of specific local condi-
+   (a) Sound levels must be measured or ana-      tions.
+lyzed with equipment having the ‘‘A’’ fre-          (c) Compatibility designations in Table 1
+quency weighting, filter characteristics, and     generally refer to the major use of the site.
+the ‘‘slow response’’ characteristics as de-      If other uses with greater sensitivity to
+fined in International Electrotechnical Com-      noise are permitted by local government at a
+mission (IEC) Publication No. 179, entitled       site, a determination of compatibility must
+‘‘Precision Sound Level Meters’’ as incor-        be based on that use which is most adversely
+porated by reference in part 150 under            affected by noise. When appropriate, noise
+§ 150.11. For purposes of this part, the toler-   level reduction through incorporation of
+ances allowed for general purpose, type 2         sound attenuation into the design and con-
+sound level meters in IEU 179, are accept-        struction of a structure may be necessary to
+able.                                             achieve compatibility.
+   (b) Noise measurements and documenta-            (d) For the purpose of compliance with this
+tion must be in accordance with accepted          part, all land uses are considered to be com-
+acoustical measurement methodology, such          patible with noise levels less than Ldn 65 dB.
+as those described in American National           Local needs or values may dictate further
+Standards Institute publication ANSI 51.13,       delineation based on local requirements or
+dated 1971 as revised 1979, entitled ‘‘ANS—       determinations.
+
+                                              680
+Federal Aviation Administration, DOT                                                                                                          Pt. 150, App. A
+  (e) Except as provided in (f) below, the                                                                 (9) Depiction of the required noise contours
+noise exposure maps must also contain and                                                                over a land use map of a sufficient scale and
+indentify:                                                                                               quality to discern streets and other identifi-
+  (1) Runway locations.                                                                                  able geographic features.
+  (2) Flight tracks.                                                                                       (f) Notwithstanding any other provision of
+  (3) Noise contours of Ldn 65, 70, and 75 dB                                                            this part, noise exposure maps prepared in
+resulting from aircraft operations.
+                                                                                                         connection with studies which were either
+  (4) Outline of the airport boundaries.
+                                                                                                         Federally funded or Federally approved and
+  (5) Noncompatible land uses within the
+noise contours, including those within the                                                               which commenced before October 1, 1981, are
+Ldn 65 dB contours. (No land use has to be                                                               not required to be modified to contain the
+identified as noncompatible if the self-gen-                                                             following items:
+erated noise from that use and/or the ambi-                                                                (1) Flight tracks depicted on the map.
+ent noise from other nonaircraft and nonair-                                                               (2) Use of ambient noise to determine land
+port uses is equal to or greater than the                                                                use compatibility.
+noise from aircraft and airport sources.)                                                                  (3) The Ldn 70 dB noise contour and data re-
+  (6) Location of noise sensitive public build-                                                          lated to Ldn 70 dB contour. When determina-
+ings (such as schools, hospitals, and health                                                             tions on land use compatibility using Table
+care facilities), and properties on or eligible                                                          1 differ between Ldn 65–70 dB and the Ldn 70–
+for inclusion in the National Register of His-                                                           75 dB, determinations should either use the
+toric Places.                                                                                            more conservative Ldn 70–75 dB column or re-
+  (7) Locations of any aircraft noise moni-
+                                                                                                         flect determinations based on local needs
+toring sites utilized for data acquisition and
+                                                                                                         and values.
+refinement procedures.
+  (8) Estimates of the number of people re-                                                                (4) Estimates of the number of people re-
+siding within the Ldn 65, 70, and 75 dB con-                                                             siding within the Ldn 65, 70, and 75 dB con-
+tours.                                                                                                   tours.
+
+           TABLE 1—LAND USE COMPATIBILITY* WITH YEARLY DAY-NIGHT AVERAGE SOUND LEVELS
+                                                                                                           Yearly day-night average sound level (Ldn) in decibels
+                                         Land use
+                                                                                                     Below 65      65–70      70–75     75–80      80–85     Over 85
+
+                                       RESIDENTIAL
+Residential, other than mobile homes and transient lodgings ...                                      Y            N(1)      N(1)       N          N          N
+Mobile home parks .....................................................................              Y            N         N          N          N          N
+Transient lodgings ......................................................................            Y            N(1)      N(1)       N(1)       N          N
+                                        PUBLIC USE
+Schools .......................................................................................      Y            N(1)      N(1)       N          N          N
+Hospitals and nursing homes .....................................................                    Y            25        30         N          N          N
+Churches, auditoriums, and concert halls ..................................                          Y            25        30         N          N          N
+Governmental services ...............................................................                Y            Y         25         30         N          N
+Transportation ............................................................................          Y            Y         Y(2)       Y(3)       Y(4)       Y(4)
+Parking .......................................................................................      Y            Y         Y(2)       Y(3)       Y(4)       N
+                                   COMMERCIAL USE
+Offices, business and professional ............................................                      Y            Y         25         30         N          N
+Wholesale and retail—building materials, hardware and farm                                           Y            Y         Y(2)       Y(3)       Y(4)       N
+  equipment.
+Retail trade—general .................................................................               Y            Y         25         30         N          N
+Utilities ........................................................................................   Y            Y         Y(2)       Y(3)       Y(4)       N
+Communication ...........................................................................            Y            Y         25         30         N          N
+                      MANUFACTURING AND PRODUCTION
+Manufacturing, general ...............................................................               Y            Y         Y(2)       Y(3)       Y(4)       N
+Photographic and optical ............................................................                Y            Y         25         30         N          N
+Agriculture (except livestock) and forestry .................................                        Y            Y(6)      Y(7)       Y(8)       Y(8)       Y(8)
+Livestock farming and breeding .................................................                     Y            Y(6)      Y(7)       N          N          N
+Mining and fishing, resource production and extraction ............                                  Y            Y         Y          Y          Y          Y
+                                     RECREATIONAL
+Outdoor sports arenas and spectator sports .............................                             Y            Y(5)      Y(5)       N          N          N
+Outdoor music shells, amphitheaters .........................................                        Y            N         N          N          N          N
+Nature exhibits and zoos ...........................................................                 Y            Y         N          N          N          N
+Amusements, parks, resorts and camps ...................................                             Y            Y         Y          N          N          N
+Golf courses, riding stables and water recreation .....................                              Y            Y         25         30         N          N
+   Numbers in parentheses refer to notes.
+
+
+                                                                                                681
+Pt. 150, App. A                                                                    14 CFR Ch. I (1–1–24 Edition)
+  *The designations contained in this table do not constitute a Federal determination that any use of land covered by the pro-
+gram is acceptable or unacceptable under Federal, State, or local law. The responsibility for determining the acceptable and per-
+missible land uses and the relationship between specific properties and specific noise contours rests with the local authorities.
+FAA determinations under part 150 are not intended to substitute federally determined land uses for those determined to be ap-
+propriate by local authorities in response to locally determined needs and values in achieving noise compatible land uses.
+  KEY TO TABLE 1
+  SLUCM = Standard Land Use Coding Manual.
+  Y (Yes) = Land Use and related structures compatible without restrictions.
+  N (No) = Land Use and related structures are not compatible and should be prohibited.
+  NLR = Noise Level Reduction (outdoor to indoor) to be achieved through incorporation of noise attenuation into the design and
+construction of the structure.
+  25, 30, or 35 = Land use and related structures generally compatible; measures to achieve NLR of 25, 30, or 35 dB must be
+incorporated into design and construction of structure.
+  NOTES FOR TABLE 1
+   (1) Where the community determines that residential or school uses must be allowed, measures to achieve outdoor to indoor
+Noise Level Reduction (NLR) of at least 25 dB and 30 dB should be incorporated into building codes and be considered in indi-
+vidual approvals. Normal residential construction can be expected to provide a NLR of 20 dB, thus, the reduction requirements
+are often stated as 5, 10 or 15 dB over standard construction and normally assume mechanical ventilation and closed windows
+year round. However, the use of NLR criteria will not eliminate outdoor noise problems.
+   (2) Measures to achieve NLR 25 dB must be incorporated into the design and construction of portions of these buildings
+where the public is received, office areas, noise sensitive areas or where the normal noise level is low.
+   (3) Measures to achieve NLR of 30 dB must be incorporated into the design and construction of portions of these buildings
+where the public is received, office areas, noise sensitive areas or where the normal noise level is low.
+   (4) Measures to achieve NLR 35 dB must be incorporated into the design and construction of portions of these buildings
+where the public is received, office areas, noise sensitive areas or where the normal level is low.
+  (5) Land use compatible provided special sound reinforcement systems are installed.
+  (6) Residential buildings require an NLR of 25.
+  (7) Residential buildings require an NLR of 30.
+  (8) Residential buildings not permitted.
+
+
+
+    Sec. A150.103      Use of computer prediction                 start-of-roll along with the engine power lev-
+                         model.                                   els needed to fly that takeoff profile; these
+   (a) The airport operator shall acquire the                     data must reflect the use of noise abatement
+aviation operations data necessary to de-                         departure procedures and, if applicable, the
+velop noise exposure contours using an FAA                        takeoff weight of the aircraft or some proxy
+approved methodology or computer program,                         for weight such as stage length.
+such as the Integrated Noise Model (INM) for                         (5) Existing topographical or airspace re-
+airports or the Heliport Noise Model (HNM)                        strictions which preclude the utilization of
+for heliports. In considering approval of a                       alternative flight tracks.
+methodology or computer program, key fac-                            (6) The government furnished data depict-
+tors include the demonstrated capability to                       ing aircraft noise characteristics (if not al-
+produce the required output and the public                        ready a part of the computer program’s
+availability of the program or methodology                        stored data bank).
+to provide interested parties the opportunity                        (7) Airport elevation and average tempera-
+to substantiate the results.                                      ture.
+   (b) Except as provided in paragraph (c) of                        (c) For heliports, the map scale required by
+this section, the following information must                      paragraph (b)(1) of this section shall not be
+be obtained for input to the calculation of                       less than 1 inch to 2,000 feet and shall indi-
+noise exposure contours:                                          cate heliport boundaries, takeoff and landing
+   (1) A map of the airport and its environs at                   pads, and typical flight tracks out to at least
+an adequately detailed scale (not less than 1                     4,000 feet horizontally from the landing pad.
+inch to 2,000 feet) indicating runway length,                     Where these flight tracks cannot be deter-
+alignments, landing thresholds, takeoff                           mined, obstructions or other limitations on
+start-of-roll points, airport boundary, and                       flight tracks in and out of the heliport shall
+flight tracks out to at least 30,000 feet from                    be identified within the map areas out to at
+the end of each runway.                                           least 4,000 feet horizontally from the landing
+   (2) Airport activity levels and operational                    pad. For static operation (hover), the heli-
+data which will indicate, on an annual aver-                      copter type, the number of daily operations
+age-daily-basis, the number of aircraft, by                       based on an annual average, and the dura-
+type of aircraft, which utilize each flight                       tion in minutes of the hover operation shall
+track, in both the standard daytime (0700–
+                                                                  be identified. The other information required
+2200 hours local) and nighttime (2200–0700
+                                                                  in paragraph (b) shall be furnished in a form
+hours local) periods for both landings and
+                                                                  suitable for input to the HNM or other FAA
+takeoffs.
+                                                                  approved methodology or computer program.
+   (3) For landings—glide slopes, glide slope
+intercept altitudes, and other pertinent in-                       Sec. A150.105 Identification of public agencies
+formation needed to establish approach pro-                                    and planning agencies.
+files along with the engine power levels
+needed to fly that approach profile.                                (a) The airport proprietor shall identify
+   (4) For takeoffs—the flight profile which is                   each public agency and planning agency
+the relationship of altitude to distance from                     whose jurisdiction or responsibility is either
+
+                                                             682
+Federal Aviation Administration, DOT                                                                                  Pt. 150, App. B
+wholly or partially within the Ldn 65 dB
+boundary.                                                                                           1 T         L A ( t)/10
+                                                                                                                                 
+  (b) For those agencies identified in (a) that
+have land use planning and control author-
+                                                                                     L T = 10 log10 
+                                                                                                     T O
+                                                                                                          ∫ 10                 dt 
+                                                                                                                                 
+                                                                                                                                       (1)
+ity, the supporting documentation shall
+identify their geographic areas of jurisdic-                                     where T is the length of the time period, in
+tion.                                                                            seconds, during which the average is taken;
+      PART C—MATHEMATICAL DESCRIPTIONS                                           LA(t) is the instantaneous time varying A-
+                                                                                 weighted sound level during the time period
+                    Sec. A150.201           General.                             T.
+  The following mathematical descriptions                                          NOTE: When a noise environment is caused
+provide the most precise definition of the                                       by a number of identifiable noise events,
+yearly day-night average sound level (Ldn),                                      such as aircraft flyovers, average sound level
+the data necessary for its calculation, and                                      may be conveniently calculated from the
+the methods for computing it.                                                    sound exposure levels of the individual
+                                                                                 events occurring within a time period T:
+                    Sec. A150.203           Symbols.
+  The following symbols are used in the com-                                                        1 n            L AEi /10
+                                                                                                                                 
+putation of Ldn;                                                                     L T = 10 log10       ∑10                        (2)
+                      Measure (in dB)                               Symbol                             Ti=1                    
+Average Sound Level, During Time T .....................                   LT    where LAEi is the sound exposure level of the
+Day-Night Average Sound Level (individual day) ...                        Ldni   i-th event, in a series of n events in time pe-
+Yearly Day-Night Average Sound Level .................                    Ldn    riod T, in seconds.
+Sound Exposure Level ............................................         LAE
+                                                                                   NOTE: When T is one hour, LT is referred to
+                                                                                 as one-hour average sound level.
+    Sec. A150.205           Mathematical computations.
+                                                                                   (b) Day-night average sound level (indi-
+  (a) Average sound level must be computed                                       vidual day) must be computed in accordance
+in accordance with the following formula:                                        with the following formula:
+
+
+
+                                 0700 [ L A ( t ) +10 ] / 10 dt                                   
+                          1  ∫0000 10                                                             
+         L dn = 10 log10                                                                                                            (3)
+                                  2200 L A (t) / 10               2400    [ L A ( t ) +10 ] / 10 
+                           86400 +                                                                 
+                         
+                                   ∫
+                                  0700 10                 dt +  ∫2200
+                                                                        10                       dt 
+
+
+Time is in seconds, so the limits shown in                                       where to is one second and LA(t) is the time-
+hours and minutes are actually interpreted                                       varying A-weighted sound level in the time
+in seconds. It is often convenient to compute                                    interval t1 to t2.
+day-night average sound level from the one-                                        The time interval should be sufficiently
+hour average sound levels obtained during                                        large that it encompasses all the significant
+successive hours.                                                                sound of a designated event.
+  (c) Yearly day-night average sound level                                         The requisite integral may be approxi-
+must be computed in accordance with the                                          mated with sufficient accuracy by inte-
+following formula:                                                               grating LA(t) over the time interval during
+                                                                                 which LA(t) lies within 10 decibels of its max-
+                                         365
+                                   1
+                                     ∑ 10
+                                                     L dni /10                   imum value, before and after the maximum
+     L dn = 10 log10                                                (4)          occurs.
+                                 365     i=1                                     [Doc. No. 18691, 49 FR 49269, Dec. 18, 1984; 50
+where Ldni is the day-night average sound                                        FR 5064, Feb. 6, 1985, as amended by Amdt.
+level for the i-th day out of one year.                                          150–1, 53 FR 8724, Mar. 16, 1988; Amdt. 150–4, 69
+  (d) Sound exposure level must be computed                                      FR 57626, Sept. 24, 2004]
+in accordance with the following formula:
+                                                                                      APPENDIX B TO PART 150—NOISE
+                  t2                                                                  COMPATIBILITY PROGRAMS
+                   1   L ( t ) /10
+ L AE = 10 log10  ∫ 10 A          dt  (5)                                      Sec. B150.1 Scope and purpose.
+                  to                 
+                  t1                                                           Sec. B150.3 Requirement for noise map.
+                                                                                 Sec. B150.5 Program standards.
+
+                                                                             683
+

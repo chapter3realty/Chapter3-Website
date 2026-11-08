@@ -590,7 +590,7 @@ module.exports = GL.page({
 
     { h2: "What do you give up with no HOA?", toc: "What you give up", html: () =>
       h.p("No HOA means no shared pool, clubhouse or gate, and no HOA rules for your neighbors' houses either. A home with no HOA can still have deed restrictions on what you build or keep there.") +
-      h.p(`If you want a pool, a clubhouse or a gate, you pay an HOA fee for them. Our guides to the ${h.a("/buyers/best-neighborhoods/", "best neighborhoods for what you want nearby")} and to ${h.a("/buyers/gated-communities/", "gated communities around Myrtle Beach")} show where to look. Our guide to ${h.a("/submarkets/carolina-forest/the-farm/", "The Farm at Carolina Forest")} shows one Carolina Forest neighborhood, and our guide to ${h.a("/hoa/", "what HOA fees cover")} explains each part of a fee.`) },
+      h.p(`If you want a pool, a clubhouse or a gate, you pay an HOA fee for them. A pool of your own needs no HOA: our ${h.a("/buyers/pool-homes/", "guide to homes with a pool")} shows where they are. Many houses near the sand have no HOA fee either, as our ${h.a("/buyers/homes-near-the-beach/", "guide to houses near the beach")} shows. Our guides to the ${h.a("/buyers/best-neighborhoods/", "best neighborhoods for what you want nearby")} and to ${h.a("/buyers/gated-communities/", "gated communities around Myrtle Beach")} show where to look. Our guide to ${h.a("/submarkets/carolina-forest/the-farm/", "The Farm at Carolina Forest")} shows one Carolina Forest neighborhood, and our guide to ${h.a("/hoa/", "what HOA fees cover")} explains each part of a fee.`) },
   ],
   faqTitle: "Homes with no HOA FAQ",
   faq: [

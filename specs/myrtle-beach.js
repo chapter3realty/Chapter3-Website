@@ -532,7 +532,7 @@ module.exports = G.page({
       G.homes("grande-dunes", "Grande Dunes") +
 
       partH3(P2, "shops, a lake and parks") +
-      h.p(`The Market Common is a town center with shops, restaurants and a movie theater, and apartments above the stores. It was built on land that was the Myrtle Beach Air Force Base.`) +
+      h.p(`The Market Common is a town center with shops, restaurants and a movie theater, and apartments above the stores. It was built on land that was the Myrtle Beach Air Force Base. Our ${h.a("/submarkets/myrtle-beach/market-common/", "Market Common guide")} covers its neighborhoods, what homes there cost and the airport next door.`) +
       h.p(`${h.ext(MC_PARKS, "Grand Park and Valor Park")} are next to the shops. They have a lake with a 1.1-mile path around it, sports fields, picnic areas, fishing spots and Savannah's Playground, built for children of all abilities.`) +
       G.homes("market-common", "The Market Common", photo(VALOR)) +
       h.p(`About ${near(MC.homes, 100)} houses are in the neighborhoods around it, among them Emmens Preserve, The Reserve, Sanctuary at Withers Preserve and Belle Harbor. About 6 in 7 are their owners' main homes, the highest share in this guide. Houses, villas and townhouses here resold for about ${r10k(MCs.median)} in the middle.`) +

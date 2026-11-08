@@ -1,0 +1,64 @@
+{
+ "meta": {
+  "made": "timing.py",
+  "source": "Zillow Research metro files (raw, not smoothed), med_doz_pending and mean_days_to_close, sfrcondo, files in data/2026-11-n/sell-best-time-to-sell/raw/; region 'Myrtle Beach, SC' (RegionID 394898) and 'United States'"
+ },
+ "Myrtle Beach, SC": {
+  "med_doz_pending": {
+   "months": [
+    "2025-10-31",
+    "2026-09-30"
+   ],
+   "avg_last_12": 57.5,
+   "min_last_12": 45.0,
+   "max_last_12": 78.0,
+   "latest": [
+    "2026-09-30",
+    53.0
+   ]
+  },
+  "mean_days_to_close": {
+   "months": [
+    "2025-09-30",
+    "2026-08-31"
+   ],
+   "avg_last_12": 37.2,
+   "min_last_12": 36.0,
+   "max_last_12": 42.0,
+   "latest": [
+    "2026-08-31",
+    36.0
+   ]
+  },
+  "listing_to_closing_days_last_12": 94.7
+ },
+ "United States": {
+  "med_doz_pending": {
+   "months": [
+    "2025-10-31",
+    "2026-09-30"
+   ],
+   "avg_last_12": 27.9,
+   "min_last_12": 17.0,
+   "max_last_12": 47.0,
+   "latest": [
+    "2026-09-30",
+    29.0
+   ]
+  },
+  "mean_days_to_close": {
+   "months": [
+    "2025-09-30",
+    "2026-08-31"
+   ],
+   "avg_last_12": 33.6,
+   "min_last_12": 32.0,
+   "max_last_12": 37.0,
+   "latest": [
+    "2026-08-31",
+    34.0
+   ]
+  },
+  "listing_to_closing_days_last_12": 61.5
+ }
+}

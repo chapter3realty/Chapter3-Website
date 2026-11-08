@@ -92,6 +92,8 @@ const MONEY = String.raw`\$?\s*(\d[\d,]*(?:\.\d+)?)\s*(k|m|thousand|million)?\b`
 
 /** Community names from our guide pages, longest first, so "Market Common" beats "Market". */
 const PLACE_NAMES = Object.entries(PLACES)
+  /* A strip that is a search (a feature, a price), not a community, is never read as a place in a sentence. */
+  .filter(([, p]) => !p.listOnly)
   .map(([slug, p]) => [slug, String(p.name || "").toLowerCase().replace(/,.*$/, "").trim()])
   .filter(([, n]) => n.length >= 4)
   .sort((a, b) => b[1].length - a[1].length);

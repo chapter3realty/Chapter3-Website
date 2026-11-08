@@ -18,7 +18,7 @@ import { PLACES } from "./places.js";
 import { FEEDS, feedParams, postFilter, rankHomes } from "./feeds.js";
 import { filterBar } from "./filters.js";
 import { filterCatalog } from "./catalog.js";
-import { catalogLoaded } from "./features.js";
+import { catalogLoaded, isFeature } from "./features.js";
 import { PHOTO_HINT, STYLE, STRIP_STYLE, SCRIPT, disclaimer, esc, hasPhoto, signupDialog, stripCards, tourDialog } from "./render.js";
 
 const SLOT = /<div class="hx-strip" data-place="([a-z0-9-]+)" data-name="([^"<>]*)"(?: data-head="([^"<>]*)")?><\/div>/g;
@@ -28,6 +28,7 @@ const STRIP_BUDGET_MS = 3000; // a slow CRM never holds up a guide page: past th
 const TYPES = ["house", "condo", "townhouse", "manufactured", "multi", "land"];
 
 /** The CRM search for a place, from validated parts only (contract §3, §5). Null if a part is bad. */
+const STRIP_TOWNS = ["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet", "Pawleys Island", "Little River", "Conway", "Longs", "Loris", "Aynor"];
 export function placeParams(q) {
   const p = new URLSearchParams();
   if (q.subdivision !== undefined) {
@@ -43,7 +44,23 @@ export function placeParams(q) {
     const miles = Math.min(25, Math.max(0.1, Number(q.miles) || 1));
     p.set("miles", String(miles));
   }
-  if (!p.has("subdivision") && !p.has("near")) return null; // never "every listing in the MLS"
+  /* A strip of homes with a feature (owner, 2026-11-08: "homes with a pool ... is a perfect opportunity to have a
+     personalized IDX feed"): has (keys from the CRM's own list), a town, and a price ceiling. */
+  if (q.has !== undefined) {
+    const keys = String(q.has).split(",").filter(Boolean);
+    if (!keys.length || keys.length > 4 || !keys.every((k) => isFeature(k))) return null;
+    p.set("has", keys.join(","));
+  }
+  if (q.city !== undefined) {
+    if (!STRIP_TOWNS.includes(q.city)) return null;
+    p.set("city", q.city);
+  }
+  if (q.max !== undefined) {
+    const m = Number(q.max);
+    if (!(m >= 50000 && m <= 20000000)) return null;
+    p.set("max", String(Math.round(m)));
+  }
+  if (!p.has("subdivision") && !p.has("near") && !p.has("has")) return null; // never "every listing in the MLS"
   if (q.type !== undefined) {
     if (!TYPES.includes(q.type)) return null;
     p.set("type", q.type);
@@ -69,7 +86,7 @@ function strip(slug, name, listings, total, noHoa, head) {
   return `<p class="hx-s-head"><b>${head || `Homes for sale in ${name} now`}</b><a href="${all}">See all ${esc(String(n))}</a></p>`
     + (noHoa ? `<p class="hx-s-note">${NO_HOA_NOTE}</p>` : "")
     + `<div class="hx-s-row">${stripCards(listings, STRIP_CARDS)}`
-    + `<a class="hx-s-all" href="${all}" draggable="false">See all ${esc(String(n))} homes in ${name}</a></div>`;
+    + `<a class="hx-s-all" href="${all}" draggable="false">See all ${esc(String(n))} ${PLACES[slug] && PLACES[slug].listOnly ? "" : `homes in ${name}`}</a></div>`;
 }
 
 /** Run a feed's searches at once, merged and de-duplicated. "stale", or [listings, total, meta], or null. */

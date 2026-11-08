@@ -1,0 +1,391 @@
+
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="robots" content="noimageindex">
+	    <meta charset="iso-8859-1">
+	    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	    	    <title>South Carolina Code of Laws</title>
+	    <link rel="SHORTCUT ICON" href="/images/stateflagsmall.ico" />
+		<link rel="icon" href="/images/stateflagsmall.ico" type="image/ico" />
+		<link rel="SHORTCUT ICON" href="/images/South-Carolina-Flag2.ico" />
+
+		<link type="text/css" rel="stylesheet" href="/css/main.css" media="all" />
+				
+		<!--[if lte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/ie7main.css" media="all" />
+		<![endif]-->
+		<!--[if gte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/iemain.css" media="all" />
+		<![endif]-->
+		<link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+		<link type="text/css" rel="stylesheet" href="/css/supplement.css" media="screen" />
+		<!--<link type="text/css" rel="stylesheet" href="/css/zipsearch.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/vote.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/contact.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/navwrap.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/linkbar.css" media="screen" />-->
+	
+		<!--<script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>-->
+		<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+
+		<script type="text/javascript" src="/js/main_linux.js"></script>
+		
+		
+
+
+
+		<!--<script type="text/javascript" src="/js/common.js"></script>
+		<script type="text/javascript" src="/js/utils.js"></script>
+		<script type="text/javascript" src="/js/date.js"></script>
+		<script type="text/javascript" src="/js/lightbox.js"></script>
+		<script type="text/javascript" src="/js/legislation.js"></script>
+		<script type="text/javascript" src="/js/logon_lits.js"></script>
+		<script type="text/javascript" src="/js/message.js"></script>
+		<script type="text/javascript" src="/js/comm_meeting.js"></script>-->
+		<script type="text/vbscript" src="/vbs/comm_meeting.vbs"></script>
+		<!--<script type="text/javascript" src="/js/regs.js"></script>-->
+				
+	   	<script type="text/javascript">
+	    //document.onclick = function () { document.getElementById('transbox').style.display= 'none' };
+	    	var xmlhttp=false;
+			xmlhttp = create_xml_object();
+	
+			function getElement(ele)
+			{
+				var theobj = false;
+				if(typeof ele == 'string')
+					theobj = (document.getElementById)?document.getElementById(ele):document.all[ele];
+				else
+					theobj = ele;
+			
+				return theobj;
+			}
+		
+							
+				
+	
+			function init()
+			{
+		 		var ld=document.getElementById("loading");
+				if(ld)
+				{
+					ld.style.display = 'none';
+				}
+			}
+			
+			function openmore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				 	var pos = findPos(id);
+				 	id.style.zIndex = 10;
+		//		 	id.style.left = pos[0]+'px';
+		//		  	id.style.top = pos[1]+'px';
+				  	id.style.height = '295px';
+				  	id.style.position = 'absolute';
+				  	id.style.backgroundColor = '#f7f4ec';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'none';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = 'none';
+				  	}
+				}
+			}
+		
+			function closemore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				  	id.style.height = '135px';
+				  	id.style.position = '';
+				  	id.style.backgroundColor = 'transparent';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'block';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = '';
+				  	}
+				}		 	
+			}
+		
+		
+	function findfwtext(texttofind) 
+	{
+	 	var fwtextele = document.getElementById('fwtext');
+		if(fwtextele)
+		{
+			fwtextele.value = texttofind;
+		}
+	}	
+		// End -->
+		</script>
+
+		<!-- ADDED FOR V4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJY6FMNQKH"></script>
+
+
+<script type="text/javascript">
+
+//ADDED FOR V4
+//Google tag (gtag.js) 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LJY6FMNQKH');
+
+ 
+ /* COMMENTING OUT UPGRADING TO V4 -A
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36207109-1']);
+  _gaq.push(['_setDomainName', 'scstatehouse.gov']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+*/
+  
+      $(document).ready(function(){
+        // COMMENTING THIS OUT NO LONGER BEING ACTIVELY USED TO MONITOR FOR TRAFFIC TO SPECIFIC LINKS - A
+        /*
+          var anchors = $('div#contentsection a');
+
+          //console.log('anchors...'+anchors.length);
+          if(anchors.length > 0){
+            //console.log('setting up event handler...');
+            anchors.click(function(){
+              var a = $(this).attr('href');
+              if(_gaq && (a.substr(-3) == 'htm' || a.substr(-4) == 'html' || a.substr(-3) == 'doc' || a.substr(-4) == 'docx' || a.substr(-3) == 'pdf' || a.substr(-3) == 'xls' || a.substr(-4) == 'xlsx')) {
+                //console.log(a);
+                _gaq.push(['_trackPageview', $(this).attr('href')]);
+              }
+              
+              var aText = $(this).text().toLowerCase();
+              if (a.indexOf('getfile.php') > -1 && aText === 'word'){
+                    _gaq.push(['_trackEvent', 'Word Doc', 'Download', ('from page: ' + document.location + ' - href: ' + a)]);
+              }
+
+            });
+          }
+          */
+      });
+
+</script>
+	</head>
+	
+		
+	<body class="home"  onload="init();">
+	<noscript>Your browser does not support JavaScript!  This page will not render correctly.</noscript> 
+
+
+	
+	<div id="container" >	
+				<div id="header" class="nodisplay" style="text-align:center; height:100px;" >
+									<img id="headerimg" class="nodisplay" alt="South Carolina Legislature" title="South Carolina Legislature" src="/images/header8.png" />
+								
+							<!--	<div class="award"><span style="color:#831224; font-weight:bold; font-size:1.5em;">*</span> Recipient of<br>the Notable State Documents Award<br>by the<br>South Carolina<br>State Library.</div>-->
+				
+				
+			</div>
+			<div class="printdisplay"><img border="0" src="/images/titleprint.jpg" alt="South Carolina Legislature" title="South Carolina Legislature" alt="South Carolina Legislature" title="South Carolina State Legislature" /><br /><hr /><br /></div>
+	
+			<div id="pagebody" >
+	
+	
+<!--<div id="topmessage">
+<br style="display:block; margin-top:10px;">
+Searches and data queries will be unavailable beginning Friday, August 19, 2016, from 8:00 PM until Saturday, August 20th at 8:00 AM<br>due to scheduled maintenance.</div>-->
+				<!-- Prompt IE 8/7/6 users to upgrade to a newer browser. -->
+				<!--[if lte IE 8]>
+				<div class="oldframe">In order to improve your experience using this website, please <a href="http://browsehappy.com/">upgrade your browser</a>.</div>
+				<![endif]-->
+			
+			
+			
+			<div id="menu" class="nodisplay">
+				<ul class="nodisplay">
+				<li><a href="/index.php">Home</a></li>
+<li><a href="/senate.php">Senate</a></li>
+<li><a href="/house.php">House</a></li>
+<li><a href="/committeeinfo.php">Committee&nbsp;Postings&nbsp;and&nbsp;Reports</a></li>
+<li><a href="/council.php">Legislative Council</a></li>
+<li><a href="/citizens.php">Citizens&#39; Interest</a></li>
+<li><a href="/publications.php">Publications</a></li>
+		    	</ul>
+			</div>
+			<div id="search" class="nodisplay" style="height: 28px;"><div class="nodisplay" style="float:right; margin:6px 20px 0px 0;">
+							<!--<a style="color:#f7f4ec; height:15px;" href="#" onClick="rsswindow();"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+<!--				<a style="color:#f7f4ec; height:15px;" href="/splashpage/splashpage.html"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a> -->
+				<a style="color:#f7f4ec; height:15px;" href="/onlineservices/index.php"><img border="0" src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>
+			<!--	<a style="color:#f7f4ec; height:15px;" href="/maintenance_portal.php"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+						</div></div>
+			
+	
+					<div id="sidebar" class="nodisplay">
+	<div id="vidlinks" style="height: 50px;">
+						<!--<img src="/images/videobutton12d.png">-->
+											<ul id="vidsidemenu">
+	<li id="vidinnermenu" style="font-size:16px; margin: 0 0 5px 0;">Chamber Video</li>
+<li id="sbroadcast" style="float: left; width:50%;">
+<a id="liveS" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('S', false, false, '0')">Senate</a><br><a id="liveaudioS" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('S', false, false, '1');">(Audio Only)</a>
+</li>
+<li id="hbroadcast" style="float: left; width:50%;">
+<a id="liveH" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('H', false, false, '0')">House</a><br><a id="liveaudioH" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('H', false, false, '1');">(Audio Only)</a>
+</li>
+						</ul>
+					</div>
+					<div id="commvidlinks"><a href="/video/schedule.php">Video&nbsp;Schedule</a><a style="border-top:1px solid #fff; padding-top:12px;" href="/video/archives.php">Video Archives</a></div>
+										<div id="sidemenu">
+						<ul id="innermenu">
+		
+							<li><a href="/howdoi.php">How do I...</a></li>
+										
+							
+								<li class="nolink" onMouseOver="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='block'; document.sidesearchform.searchtext.focus();}" onMouseOut="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Quick Search</div>
+								<div id="sidesearch" class="sidesubmenu">
+									<form id="sidesearchform" name="sidesearchform" method="POST" action="/search.php">
+									<input type="hidden" name="search" value="side" />
+									<div class="topelement"><label for="searchtext"><span class="label">Search for:</span></label><input id="searchtext" name="searchtext" type="text"/><a id="searchlink2" href="javascript:void(0);" onClick="document.sidesearchform.submit();"><img id="searchicon" src="/images/searchbutton.png" alt="Search" title="Search"/></a></div>
+			<!--						<div><input type="checkbox" id="searchchoice_all" name="searchchoice_all" value="all" /><label for="searchchoice_all">All</label></div>-->
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_fullsite" name="category" value="FULLSITE" /><label for="searchchoice_fullsite">&nbsp;Full Site Search</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_billnumber" name="category" value="BILL" /><label for="searchchoice_billnumber">&nbsp;Bill Number</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_legislation" name="category" value="LEGISLATION" CHECKED /><label for="searchchoice_legislation">&nbsp;Legislation</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_budget" name="category" value="BUDGET" /><label for="searchchoice_budget">&nbsp;Budget</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeoflaws" name="category" value="CODEOFLAWS" /><label for="searchchoice_codeoflaws">&nbsp;Code of Laws</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeofregs" name="category" value="CODEOFREGS" /><label for="searchchoice_codeofregs">&nbsp;Code of Regulations</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_constitution" name="category" value="CONSTITUTION" /><label for="searchchoice_constitution">&nbsp;Constitution</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_housejournals" name="category" value="HOUSEJOURNALS" /><label for="searchchoice_housejournals">&nbsp;House Journals</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_senatejournals" name="category" value="SENATEJOURNALS" /><label for="searchchoice_senatejournals">&nbsp;Senate Journals</label></div>
+									<div class="bottomelement" style="padding-left:20px;"><input type="radio" id="searchchoice_billsummary" name="category" value="SUMMARY" /><label for="searchchoice_billsummary">&nbsp;LSA Bill Summary</label></div>
+								</form>
+									
+								</div>
+							</li>
+							<li><a href="/legislatorssearch.php">Find Your Legislators</a></li>
+							<li id="contactLegislatorLink"><a href="/email.php?chamber=B">Contact Your Legislator</a></li>
+									
+							<li><a href="/legislation.php">Legislation</a></li>
+							<li><a href="/listtracking/main.php" target="LTS">Track Legislation</a></li>
+							<li><a href="/multicriteria2/search.php" target="MCS">Multi-Criteria Search</a></li>
+									<!--<li><a href="#" onclick="multisearchwindow('INTROBOTH');">Multi-Criteria Search</a></li>-->
+									<!--<li><a href="#" onclick="multisearchwindow('INTROMANUAL');">Multi-Criteria Search</a></li>-->
+									<li><a href="/research.php">Research</a></li>
+	
+								<li class="nolink" onMouseOver="var ele=document.getElementById('law'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('law'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">South Carolina Law</div> 
+								<div id="law" class="sidesubmenu">
+									<div class="sidediv topelement"><a href="/newlaws.php">Ratifications &amp; Acts</a></div>
+									<div class="sidediv"><a href="/code/statmast.php">Code of Laws</a></div>
+									<div class="sidediv"><a href="/coderegs/statmast.php">Code of Regulations</a></div>
+									<div class="sidediv"><a href="/scconstitution/scconst.php">Constitution</a></div>
+									<div class="sidediv bottomelement"><a href="/state_register.php">State Register</a></div>
+								</div>
+							</li>
+										<li class="nolink" onMouseOver="var ele=document.getElementById('manual'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('manual'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Legislative Manual</div>
+								<div id="manual" class="sidesubmenu">
+								
+<!--									<div class="sidediv topelement"><a href="https://web.sc.gov/LSAShoppingcart/Default.aspx" target="_blank">Purchase Manual</a></div>-->
+								
+<!--									<div class="sidediv topelement"><a href="https://secure.scstatehouse.gov/cgi-bin/webstore.exe" target="_blank">Purchase Manual</a></div>-->
+									<div class="sidediv topelement"><a href="javascript:#" onClick="alert('We are sorry, but we are unable to process online transactions at this time.\n\nIf you would still like to make a purchase, please contact us directly at (803) 212-4490 during normal business hours (8:30am - 5:00pm EST).');">Purchase Manual</a></div>
+									<div class="sidediv bottomelement"><a href="/man26/manual26.php">View Manual Online</a></div>
+								</div>
+							</li>
+							<li><a href="http://www.studentconnection.scstatehouse.gov">Student Connection</a></li>
+							<li><a href="/visit.php">Visiting the State House</a></li>
+							<li><a href="/archives.php">Archives</a></li>
+							<li><a href="http://www.sc.gov/Agency-Listing" target="_blank">State Agency Websites</a></li>
+							<!--<li><a href="/stateagencysites.php">State Agency Websites</a></li>-->
+							<li><a href="/citizensinterestpage/media.php">Media Links</a></li>
+				 		</ul>
+			    	</div>
+	
+					<div id="side_ad">
+						<A href="http://www.sc.gov/" target="_blank"><img border=0 src="/images/scgov3.jpg" alt="SC.gov" title="SC.gov" /></a>
+													<A href="http://www.statelibrary.sc.gov" target="_blank"><img border=0 src="/images/scsl_logo_rgb_web.png" alt="StateLibrary.SC.gov" title="StateLibrary.SC.gov" /></a>
+											</div>	    	
+			</div>
+
+	
+	<script type="text/javascript"> 
+		if ( '' === '1'){
+		 	
+			var link = document.getElementById('contactLegislatorLink');
+			if (link != 'undefined' && link != null){
+				link.style.display = 'none'; 
+				link.style.visibility = 'hidden';
+			}
+		}
+		if ( '' === '1'){
+		 	setTimeout(function(){
+				var link2 = document.getElementById('sendMsgLink');
+				if (link2 != 'undefined' && link2 != null){
+					link2.style.display = 'none'; 
+					link2.style.visibility = 'hidden';
+				};
+			}, 20);
+			
+		}  
+	</script>
+<div class="mainwidepanel">
+    <div id="breadcrumbs">
+        South Carolina Law &gt; <a href="statmast.php">Code of Laws</a>
+        &gt; <a href="statmast.php?title=63">Title 63</a>
+    </div>
+    <h2 class="barheader">South Carolina Code of Laws<br />Unannotated<br /></h2>
+    <div id="contentsection">
+            <div style="font-weight: bold; text-align: center;">Title 63 - SOUTH CAROLINA CHILDREN&#039;S CODE</div>
+        <br />
+                            <div style="text-align: right; font-size: 13px;"><a href="/code/pdfs/t63c003-unannotated.pdf" target="_blank">PDF version</a></div>
+                <div id="colbody"><div class="col-chapter" data-number="3"><h2 class="unit-title">chapter 3</h2><p class="unit-name">Family Court</p><p class="article-head">Article 1</p><p class="para">Family Court and Family Court Judges</p><p class="section-head" id="63-3-10">SECTION 63-3-10. Family courts created.</p><p class="para">There hereby are created courts of limited jurisdiction to be known and designated in this title as &quot;family courts.&quot; The number and boundaries of such family courts shall be the same as the judicial circuits. Each court shall bear the name of &quot;The Family Court of __________ Judicial Circuit.&quot;</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-20">SECTION 63-3-20. Family court judges.</p><p class="para">(A) Each family court shall have one or more family court judges who shall devote full time to their duties as judges, shall be prohibited from engaging directly or indirectly in the practice of law except in the performance of their judicial duties and shall be bound by the Code of Judicial Conduct.</p><p class="para">(B) One family court judge in each circuit shall be designated chief family court judge which designation shall be made by the Chief Justice of the Supreme Court. Such chief family court judge, in addition to his other judicial duties, shall perform such administrative duties as may be prescribed by the Chief Justice.</p><p class="para">(C) The family courts shall be courts of record, and each family court judge shall appoint a court reporter and a secretary who shall hold office at the pleasure of the judge. The court reporter shall take down and record the testimony and judge&#39;s rulings and charges, and transcribe such portion of the proceedings as may be required. The court reporter and the secretary shall perform such other duties as the judge may prescribe.</p><p class="para">(D) Records in the family court concerning juveniles shall be kept confidential as prescribed in Sections 63-7-1990 and 63-19-2020.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-30">SECTION 63-3-30. Judges&#39; qualifications and terms.</p><p class="para">(A)(1) No person shall be eligible to the office of family court judge who is not at the time of his assuming the duties of such office a citizen of the United States and of this State, and has not attained the age of thirty-two years, has not been a licensed attorney at law for at least eight years, and has not been a resident of this State for five years next preceding his election, and is not a resident of the circuit wherein the family court of which he is a judge is located. Notwithstanding any other provision of law, any former member of the General Assembly may be elected to the office of family court judge.</p><p class="para">(2) Any family court judge serving in office on the effective date of the provisions of this section requiring a family court judge to be at least thirty-two years of age and to have at least eight years of service as a licensed attorney at law who is not of that age or who has not been licensed for this required period of time may continue to serve for the remainder of his current term and is considered to have the requisite age and years of service as a licensed attorney at law for purposes of future re-elections to the office of family court judge.</p><p class="para">(B) Family court judges must be elected by the General Assembly for terms of six years and until their successors are elected and qualify.</p><p class="para">(C) The terms of all family court judges expire on the thirtieth day of June of the year in which their terms are scheduled to expire.</p><p class="para">(D) For the purpose of electing family court judges, if more than one judge is to be elected from a circuit, each judgeship in that circuit shall be serially numbered beginning with the number (1) and the General Assembly shall elect a judge for each such judgeship. Any candidate for the office of family court judge in a circuit shall specifically file and run for a serially-numbered judgeship in that circuit.</p><p class="para">(E) When a vacancy occurs for an unexpired term in an office of family court judge, the Governor, upon recommendation of the Chief Justice, shall commission a temporary family court judge to fill such vacancy until such time as the General Assembly shall elect a successor who shall serve for the remainder of the unexpired term. Such temporary family court judge shall receive as compensation for his services the salary paid to a regular family court judge and in addition thereto shall also receive the subsistence and mileage as authorized by law for family court judges.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-40">SECTION 63-3-40. Initial election.</p><p class="para">(A) The General Assembly shall elect a number of family court judges from each judicial circuit as follows:</p><p class="para">First Circuit</p><p class="para">Four Judges</p><p class="para">Second Circuit</p><p class="para">Two Judges</p><p class="para">Third Circuit</p><p class="para">Three Judges</p><p class="para">Fourth Circuit</p><p class="para">Three Judges</p><p class="para">Fifth Circuit</p><p class="para">Four Judges</p><p class="para">Sixth Circuit</p><p class="para">Two Judges</p><p class="para">Seventh Circuit</p><p class="para">Four Judges</p><p class="para">Eighth Circuit</p><p class="para">Three Judges</p><p class="para">Ninth Circuit</p><p class="para">Seven Judges</p><p class="para">Tenth Circuit</p><p class="para">Three Judges</p><p class="para">Eleventh Circuit</p><p class="para">Four Judges</p><p class="para">Twelfth Circuit</p><p class="para">Three Judges</p><p class="para">Thirteenth Circuit</p><p class="para">Six Judges</p><p class="para">Fourteenth Circuit</p><p class="para">Four Judges</p><p class="para">Fifteenth Circuit</p><p class="para">Three Judges</p><p class="para">Sixteenth Circuit</p><p class="para">Three Judges</p><p class="para">(B) In the following judicial circuits at least one family court judge must be a resident of each county in the circuit: fifth, seventh, tenth, twelfth, thirteenth, fifteenth, and sixteenth. In those judicial circuits made up of three or more counties, at least one family court judge must be a resident of one of the counties which does not have the largest population in the circuit. In the ninth circuit, both counties in the circuit must have at least two resident family court judges.</p><p class="para">(C) No county in the sixth circuit shall have more than one resident family court judge.</p><p class="para">(D) In addition to the judges authorized by this section, there must be eight additional family court judges elected by the General Assembly from the State at large for terms of office of six years. These additional judges must be elected without regard to county or circuit of residence. Each office of the at-large judges is a separate office and is assigned numerical designations of Seat No. 1 through Seat No. 8, respectively.</p><p class="para">HISTORY: 2008 Act No. 361, &#167; 2; 2012 Act No. 241, &#167; 2, eff June 18, 2012; 2016 Act No. 253 (H.4877), &#167; 1, eff June 7, 2016; 2022 Act No. 232 (H.3696), &#167; 2, eff June 17, 2022; 2025 Act No. 7 (H.3529), &#167; 1, eff April 28, 2025.</p><p class="section-head" id="63-3-50">SECTION 63-3-50. Compensation of judges.</p><p class="para">Family court judges shall receive such compensation as shall be provided by the General Assembly. The compensation of a family court judge shall not be reduced during his term of office. All family court judges shall also receive such subsistence and mileage as may be authorized by law for circuit court judges while holding court without the county in which the judge resides.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-60">SECTION 63-3-60. Retirement for abolished officers.</p><p class="para">A judge or master whose judicial office is eliminated by the provisions of this act shall be given credit for state retirement purposes for the time in which he served as judge or master under a formula to be determined by rule and regulation of the Public Employee Benefit Authority.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="article-head">Article 3</p><p class="para">Administrative Matters of the Family Court</p><p class="section-head" id="63-3-310">SECTION 63-3-310. Administration of family court system.</p><p class="para">The Supreme Court by rule shall provide for the administration of the family court system.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-320">SECTION 63-3-320. Rotation of judges.</p><p class="para">All family court judges in a circuit, including the chief family court judge, shall rotate among all counties in the circuit as directed by the chief family court judge under the direction and supervision of the Chief Justice.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-330">SECTION 63-3-330. Assignment of cases.</p><p class="para">If two or more family court judges are presiding in the same county at the same time, the chief family court judge shall make assignments of the cases in such county to those judges.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-340">SECTION 63-3-340. Temporary assignment of judges.</p><p class="para">The Chief Justice, in his discretion and based upon caseload requirements and need, may temporarily assign a family court judge to preside in another circuit other than the one in which he is a resident.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-350">SECTION 63-3-350. Physical facilities.</p><p class="para">Each county shall provide sufficient physical facilities for the operation of the statewide Family Court system in that county, including facilities necessary for the provision of intake and probation services by the Department of Juvenile Justice.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-360">SECTION 63-3-360. Expenses of family courts.</p><p class="para">The General Assembly shall in the annual general appropriations act provide for the salaries, equipment and supplies of family court judges and the court reporters and secretaries authorized by the provisions of subsection (C) of Section 63-3-20. All other costs necessary for the operation of the family court system in a county including the salaries of necessary support personnel shall be provided for by the governing body of that county.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-370">SECTION 63-3-370. Fees and costs.</p><p class="para">(A) In delinquency and neglect actions no court fee may be charged against and no witness fee is allowed to a party to a petition. No officer of this State or of a political subdivision of this State may receive a fee for the service of process or for attendance in court in the proceeding, except that in divorce proceedings the officer is allowed the fee provided by law and except when the sheriff or clerk of court has entered into a cooperative agreement with the South Carolina Department of Social Services pursuant to Title IV-D of the Social Security Act for the reimbursement of federal matching funds. All other persons acting under orders of the court may be paid for services or service of process fees provided by law for like services in cases before the circuit court, to be paid from the appropriation provided when the allowances are certified to by the judge.</p><p class="para">(B) The sheriff, municipal police, constable, or any peace officer shall serve all papers in delinquency, dependency, and neglect cases without costs, except as provided for in subsection (A).</p><p class="para">(C) In actions for support for the spouse or dependent children, when paid through the court or through a centralized wage withholding system operated by the Department of Social Services and not directly, the court shall assess costs against the party required to pay the support in the amount of five percent of the support paid, which costs must be in addition to the support money paid. The revenue from the costs must be remitted as provided in Section 14-1-203.</p><p class="para">By making the additional five percent payment on child support required by this subsection to the court or through the centralized wage withholding system operated by the Department of Social Services, the payor agrees:</p><p class="para">(1) that this payment is in satisfaction of court costs assessed;</p><p class="para">(2) that this payment is not child support under 45 CFR 302.51 but is in addition to all child support paid;</p><p class="para">(3) to the distribution of this payment to the State for court costs.</p><p class="para">(D) In actions initiated by the department pursuant to Section 63-7-1650 or 63-7-1660, the court, only after a hearing on the merits, may impose a fee of one hundred dollars against the defendant. If the court does not order removal of custody or intervention and protective services with the child remaining in the home, the fee must be waived. The court may assess the fee against any one defendant or apportion the fee among multiple defendants. The fee may be paid in installments as the court may order; however, the court may not assess a defendant a fee if the defendant&#39;s legal assistance is paid for with public funds or if the defendant is qualified for court appointment in accordance with Section 63-7-1620. The clerk of court shall collect the fee and remit it to the department. The department shall retain the fees remitted to be used to offset the expenses associated with its legal representation in child abuse and neglect cases.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="article-head">Article 5</p><p class="para">Jurisdiction and Court Powers and Procedures</p><p class="section-head" id="63-3-510">SECTION 63-3-510. Exclusive original jurisdiction.</p><p class="para">See Editor&#39;s Note for contingency.</p><p class="para">(A) Except as otherwise provided herein, the court shall have exclusive original jurisdiction and shall be the sole court for initiating action:</p><p class="para">(1) Concerning any child living or found within the geographical limits of its jurisdiction:</p><p class="para">(a) who is neglected as to proper or necessary support or education as required by law, or as to medical, psychiatric, psychological, or other care necessary to his well-being, or who is abandoned by his parent or other custodian;</p><p class="para">(b) whose occupation, behavior, condition, environment, or associations are such as to injure or endanger his welfare or that of others;</p><p class="para">(c) who is beyond the control of his parent or other custodian;</p><p class="para">(d) who is alleged to have violated or attempted to violate any state or local law or municipal ordinance, regardless of where the violation occurred except as provided in Section 63-3-520;</p><p class="para">(e) whose custody is the subject of controversy, except in those cases where the law now gives other courts concurrent jurisdiction. In the consideration of these cases, the court shall have concurrent jurisdiction to hear and determine the issue of custody and support.</p><p class="para">(2) For the treatment or commitment to any mental institution of a mentally defective or mentally disordered or emotionally disturbed child. Provided, that nothing herein is intended to conflict with the authority of probate courts in dealing with mental cases.</p><p class="para">(3) Concerning any person eighteen years of age or over, living or found within the geographical limits of the court&#39;s jurisdiction, alleged to have violated or attempted to violate any state or local law or municipal ordinance prior to having become eighteen years of age and such person shall be dealt with under the provisions of this title relating to children.</p><p class="para">(4) For the detention of a juvenile in a juvenile detention facility who is charged with committing a criminal offense when detention in a secure facility is found to be necessary pursuant to the standards set forth in Section 63-19-820 and when the facility exists in, or is otherwise available to, the county in which the crime occurred.</p><p class="para">(5) When concurrent jurisdiction has been established pursuant to Section 3-1-150(B), the court has exclusive original jurisdiction over any case involving a juvenile who is alleged to be delinquent as the result of an act committed within the boundaries of a military installation that is a crime or infraction under state law, except as provided in Section 63-19-1210 as it relates to waiver procedures to the circuit court.</p><p class="para">(B) Whenever the court has acquired the jurisdiction of any child under eighteen years of age, jurisdiction continues so long as, in the judgment of the court, it may be necessary to retain jurisdiction for the correction or education of the child, but jurisdiction shall terminate when the child attains the age of twenty-two years. Any child who has been adjudicated delinquent and placed on probation by the court remains under the authority of the court only until the expiration of the specified term of his probation. This specified term of probation may expire before but not after the twentieth birthday of the child.</p><p class="para">HISTORY: 2008 Act No. 361, &#167; 2; 2016 Act No. 268 (S.916), &#167; 1, eff July 1, 2019; 2025 Act No. 54 (H.3910), &#167; 2, eff May 13, 2025.</p><p class="section-head" id="63-3-520">SECTION 63-3-520. Traffic and wildlife jurisdiction.</p><p class="para">(A) The magistrate courts and municipal courts of this State have concurrent jurisdiction with the family courts for the trial of persons under seventeen years of age charged with traffic violations or violations of the provisions of Title 50 relating to fish, game, and watercraft when these courts would have jurisdiction of the offense charged if committed by an adult.</p><p class="para">(B) The family court shall report to the Department of Motor Vehicles all adjudications of a juvenile for moving traffic violations and other violations that affect the juvenile&#39;s privilege to operate a motor vehicle including, but not limited to, controlled substance and alcohol violations as required by other courts of this State pursuant to Section 56-1-330 and shall report to the Department of Natural Resources adjudications of the provisions of Title 50.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-530">SECTION 63-3-530. Jurisdiction in domestic matters.</p><p class="para">(A) The family court has exclusive jurisdiction:</p><p class="para">(1) to hear and determine matters which come within the provisions of the Uniform Interstate Family Support Act;</p><p class="para">(2) to hear and determine actions for divorce a vinculo matrimonii, separate support and maintenance, legal separation, and in other marital litigation between the parties, and for settlement of all legal and equitable rights of the parties in the actions in and to the real and personal property of the marriage and attorney&#39;s fees, if requested by either party in the pleadings;</p><p class="para">(3) to hear and determine actions for and related to the adoption of children and adults;</p><p class="para">(4) to hear and determine actions for termination of parental rights, whether such action is in connection with an action for adoption or apart therefrom;</p><p class="para">(5) (Reserved)</p><p class="para">(6) to hear and determine actions for the annulment of marriage;</p><p class="para">(7) (Reserved)</p><p class="para">(8) to hear and determine actions for changing names, whether in connection with a divorce or a separate support and maintenance action or apart therefrom;</p><p class="para">(9) to hear and determine actions for the correction of birth records;</p><p class="para">(10) to consent to the enlistment of a minor in the military service or the employment of a minor, if a minor has no one standing in loco parentis to do so;</p><p class="para">(11) to hear and determine proceedings within the county to compel the support of a spouse or child, whether legitimate or illegitimate;</p><p class="para">(12) for the protection, guardianship and disposition of neglected or dependent minors in proceedings properly brought before it for the support of a spouse or child;</p><p class="para">(13) in all cases or proceedings within the county against persons charged with failure to obey an order of the court made pursuant to authority conferred by law;</p><p class="para">(14) to order support of a spouse or child, or both, irrespective of whether they are likely to become a public charge;</p><p class="para">(15) to include in the requirements of an order for support the providing of necessary shelter, food, clothing, care, medical attention, expenses of confinement, both before and after the birth, the expense of educating his or her child and other proper and reasonable expenses;</p><p class="para">(16) to require of persons legally chargeable with the support of a spouse or child, who are possessed of sufficient means or who are able to earn such means, the payment weekly, or at other fixed periods, of a fair and reasonable sum for such support, or as a contribution toward such support, according to the means of the persons so chargeable;</p><p class="para">(17) To make all orders for support run until further order of the court, except that orders for child support run until the child turns eighteen years of age or until the child is married or becomes self-supporting, as determined by the court, whichever occurs first, or past the age of eighteen years if the child is enrolled and still attending high school, not to exceed high school graduation or the end of the school year after the child reaches nineteen years of age, whichever is later; or in accordance with a preexisting agreement or order to provide for child support past the age of eighteen years; or in the discretion of the court, to provide for child support past age eighteen when there are physical or mental disabilities of the child or other exceptional circumstances that warrant the continuation of child support beyond age eighteen for as long as the physical or mental disabilities or exceptional circumstances continue. When child support is terminated due to the child turning eighteen years of age, graduating from high school, or reaching the end of the school year when the child is nineteen, no arrearage may be incurred as to that child after the date of the child&#39;s eighteenth birthday, the date of the child&#39;s graduation from high school, or the last day of the school year when the child is nineteen, whichever date terminated the child support obligation.</p><p class="para">(18) to make an order for support of a husband or wife and children by his or her spouse, even though he or she may have left the home, in cases where the spouse&#39;s conduct or condition or his or her cruel or inhuman behavior made it unsafe or improper for the deserting spouse to continue to live with him or her.</p><p class="para">Such orders may require either spouse or any other party to the proceeding:</p><p class="para">(a) to stay away from the home or from the other or either spouse or children;</p><p class="para">(b) to permit either spouse to visit the children at stated periods;</p><p class="para">(c) to abstain from offensive conduct against the other spouse or either of them, or against the children;</p><p class="para">(d) to give proper attention to the care of the home;</p><p class="para">(e) to refrain from acts of commission or omission that tend to make the home not a proper place for the other, or either spouse, or the children;</p><p class="para">(19) in furtherance of the complete disposition of cases in the jurisdiction of the court, to bring in and make parties to any proceedings pending in the court any person or persons charged with or alleged to be interfering with the marital relationship between a husband and wife, in violation of the law or of the rights of either party to the marriage, or whose presence to the proceedings may be found necessary to a complete determination of the issues therein, or the relief to which the parties thereto, or any of them, may be entitled; and shall have the power to enjoin and restrain such interference and to punish for contempt of court violations of such injunctions or restraining orders;</p><p class="para">(20) to award the custody of the children, during the term of any order of protection, to either spouse, or to any other proper person or institution;</p><p class="para">(21) to determine the manner in which sums ordered paid for support shall be paid and applied, either to a person through the court, through the clerk of court, or through a centralized wage withholding system if required by federal statute or regulation;</p><p class="para">(22) to require a person ordered to support another to give security by a written undertaking that he will pay the sums ordered by the court for such support and, upon the failure of any person to give such security by a written undertaking when required by order of the court, to punish such person for contempt and, when appropriate, to discharge such undertaking;</p><p class="para">(23) in lieu of requiring an undertaking, to suspend sentence and place on probation a person who has failed to support another as required by law, and to determine the conditions of such probation and require them to be observed; to revoke such suspension of sentence and probation, where circumstances warrant it; and to discharge a respondent from probation;</p><p class="para">(24) to release on probation prior to the expiration of the full term a person committed to jail for failure to obey an order of the court, where the court is satisfied that the best interest of the family and the community will be served thereby;</p><p class="para">(25) to modify or vacate any order issued by the court;</p><p class="para">(26) to order either before, during or after a hearing a mental, physical and psychiatric examination as circumstances warrant;</p><p class="para">(27) to exclude the public from the courtroom in a proper case;</p><p class="para">(28) to send processes or any other mandates in any matter in which it has jurisdiction into any county of the State for service or execution in like manner and with the same force and effect as similar processes or mandates of the circuit courts, as provided by law;</p><p class="para">(29) to compel the attendance of witnesses;</p><p class="para">(30) to make any order necessary to carry out and enforce the provisions of this title, and to hear and determine any questions of support, custody, separation, or any other matter over which the court has jurisdiction, without the intervention of a jury; however, the court may not issue an order which prohibits a custodial parent from moving his residence to a location within the State unless the court finds a compelling reason or unless the parties have agreed to such a prohibition;</p><p class="para">(31) to require spouse to furnish support or to be liable for nonsupport, as provided above, if, at the time of the filing of the petition for supports:</p><p class="para">(a) he is residing or domiciled in the county or when such area is the matrimonial domicile of the parties; or</p><p class="para">(b) he is not residing or domiciled in the area referred to in subsection (A), but is found therein at such time, provided the petitioner is so residing or domiciled at such time; or</p><p class="para">(c) he is neither residing or domiciled nor found in such area but, prior to such time and while so residing or domiciled, he shall have failed to furnish such support, or shall have abandoned his spouse or child and thereafter shall have failed to furnish such support, provided that the petitioner is so residing or domiciled at that time;</p><p class="para">(32) the petitioner need not continue to reside or be domiciled in such area where the cause of action arose, as provided in subitems (a) and (b) of item (31) of this section, if the conduct of the respondent has been such as to make it unsafe or improper for her to so reside or be domiciled, and the petitioner may bring action in the court of the jurisdiction wherein she is residing or has become domiciled;</p><p class="para">(33) to order visitation for the grandparent of a minor child where either or both parents of the minor child is or are deceased, or are divorced, or are living separate and apart in different habitats, if the court finds that:</p><p class="para">(1) the child&#39;s parents or guardians are unreasonably depriving the grandparent of the opportunity to visit with the child, including denying visitation of the minor child to the grandparent for a period exceeding ninety days; and</p><p class="para">(2) awarding grandparent visitation would not interfere with the parent-child relationship; and:</p><p class="para">(a) the court finds by clear and convincing evidence that the child&#39;s parents or guardians are unfit; or</p><p class="para">(b) the court finds by clear and convincing evidence that there are compelling circumstances to overcome the presumption that the parental decision is in the child&#39;s best interest.</p><p class="para">The judge presiding over this matter may award attorney&#39;s fees and costs to the prevailing party.</p><p class="para">For purposes of this item, &quot;grandparent&quot; means the natural or adoptive parent of a natural or adoptive parent of a minor child.</p><p class="para">(34) to order custody with all rights of guardianship as described in Section 21-21-55;</p><p class="para">(35) to hear and determine actions for protection from domestic abuse;</p><p class="para">(36) to issue orders compelling public officials and officers to perform official acts under Title 63, the Children&#39;s Code, Protection from Domestic Abuse Act, and Chapter 35, Title 43, Omnibus Adult Protection Act;</p><p class="para">(37) to appoint guardians ad litem in actions pertaining to custody or visitation pursuant to Section 63-3-810;</p><p class="para">(38) to hear and determine an action where either party in his or her complaint, answer, counterclaim, or motion for pendente lite relief prays for the allowance of suit money pendente lite and permanently. In this action the court shall allow a reasonable sum for the claim if it appears well-founded. Suit money, including attorney&#39;s fees, may be assessed for or against a party to an action brought in or subject to the jurisdiction of the family court. An award of temporary attorney&#39;s fees or suit costs must not be stayed by an appeal of the award;</p><p class="para">(39) to require the parties to engage in court-mandated mediation pursuant to Family Court Mediation Rules or to issue consent orders authorizing parties to engage in any form of alternate dispute resolution which does not violate the rules of the court or the laws of South Carolina; provided however, the parties in consensual mediation must designate any arbiter or mediator by unanimous consent subject to the approval of the court;</p><p class="para">(40) to require the parent of a child brought before the court for adjudication of a delinquency matter and agencies providing services to the family to cooperate and participate in a plan adopted by the court to meet the needs and best interests of the child and to hold a parent or agency in contempt for failing to cooperate and participate in the plan adopted by the court. In imposing its contempt powers the Family Court must take into consideration mitigating circumstances including the parent&#39;s or legal custodian&#39;s participation in the treatment plan, the level of services being offered by the lead and participating agencies, and the level of cooperation by the lead and participating agencies as the court may deem appropriate;</p><p class="para">(41) to order a person required to pay support under a court order being enforced under Title IV-D of the Social Security Act who is unemployed or underemployed and who is the parent of a child receiving Temporary Assistance to Needy Families benefits to participate in an employment training program or public service employment pursuant to regulations promulgated by the department. The Division of Child Support Enforcement of the State Department of Social Services also has jurisdiction under this item in cases under Title IV-D of the Social Security Act brought pursuant to Article 5, Chapter 17, Title 63 of the 1976 Code;</p><p class="para">(42) to order joint or divided custody where the court finds it is in the best interests of the child;</p><p class="para">(43) to enforce an administrative subpoena or subpoena duces tecum issued by the Department of Social Services pursuant to Section 63-17-850 and to enforce fines assessed by the department pursuant to Sections 63-17-850, 63-17-2310(C), and 43-5-598(G);</p><p class="para">(44) to order sibling visitation where the court finds it is in the best interest of the children;</p><p class="para">(45) to hear and determine actions concerning control of the person of a minor, including guardianship of the minor;</p><p class="para">(46) to order custody of a minor child to the de facto custodian under the circumstances specified in Section 63-15-60.</p><p class="para">(B) Notwithstanding another provision of law, the family court and the probate court have concurrent jurisdiction to hear and determine matters relating to paternity, common-law marriage, and interpretation of marital agreements; except that the concurrent jurisdiction of the probate court extends only to matters dealing with the estate, trust, and guardianship and conservatorship actions before the probate court.</p><p class="para">HISTORY: 2008 Act No. 361, &#167; 2; 2008 Act No. 332, &#167; 7; 2010 Act No. 267, &#167; 1, eff June 24, 2010; 2012 Act No. 273, &#167; 1, eff June 26, 2012; 2014 Act No. 270 (H.4348), &#167; 1, eff June 9, 2014.</p><p class="section-head" id="63-3-540">SECTION 63-3-540. Cooperation of agencies, government entities, and institutions.</p><p class="para">The court is authorized to seek the cooperation of all societies or organizations, public or private, having for their object the protection or aid of delinquent or neglected children, to the end that the court may be assisted in every reasonable way to give to the children the care, protection, and assistance which will conserve their welfare. Every state, county, town, or municipal official or department shall assist and cooperate within his or its jurisdictional power to further the objects of this title. All institutions, associations, or other custodial agencies in which a child may be, coming within the provisions of this title, are required to give information to the court, or an officer appointed by it, the court or officer requires for the purposes of this title.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-545">SECTION 63-3-545. Clerk of family court shall report the issuance, rescission, or termination of any permanent restraining orders and orders of protection.</p><p class="para">(A) The clerk of the family court shall report to the State Law Enforcement Division, within five days, weekends and holidays excluded, the issuance, rescission, or termination of any:</p><p class="para">(1) permanent restraining orders;</p><p class="para">(2) family court orders of protection from domestic abuse act orders; or</p><p class="para">(3) any other restraining orders, orders of protection, or other orders that prohibit a person from legally purchasing or possessing a firearm, including any and all orders referenced in Section 16-25-30, but only upon being directed to transmit such orders by the appropriate judge. For any form orders provided by Court Administration that may require transmission pursuant to this subsection, Court Administration shall include within the form order a checked box option that the judge may select when appropriate to order the clerk to transmit the appropriate information to SLED.</p><p class="para">(B) The reporting required by this section must be made in a format approved by the State Law Enforcement Division and Court Administration.</p><p class="annotation-head">HISTORY: 2021 Act No. 66 (H.3094), &#167; 10.D, eff October 1, 2021.</p><p class="section-head" id="63-3-550">SECTION 63-3-550. Standing to institute a proceeding regarding neglected or delinquent child.</p><p class="para">The parent or custodian of any child, an official of a child welfare board, any public official charged by law with the care of the poor, the recognized agents of any duly authorized agency, association, society or institution, any person having knowledge or information of a nature which convinces such person that a child is neglected or delinquent or that a child, by reason of its condition, environment or its own acts, is, in accordance with the provisions of this article, subject to the jurisdiction of the court or any person who has suffered injury through the delinquency of any such child or is concerned in its guardianship or adoption or an officer having an arrested child in charge may institute a proceeding respecting such child.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-560">SECTION 63-3-560. Venue.</p><p class="para">Venue of actions in the family courts shall be in such county as may be provided by law. Trial of such actions shall be in such county unless a change of venue is granted as provided by law.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-570">SECTION 63-3-570. Service of summons.</p><p class="para">Service of summons and any process of the court shall be made as provided by law for service in the court of common pleas. Provided, that if the judge is satisfied that it is impracticable to serve personally the summons or the process, he may order service by registered or certified mail, addressed to the last known address, or by publication thereof, or both. It shall be sufficient to confer jurisdiction if service is effected at least forty-eight hours before the time fixed in the summons or process for the return thereof.</p><p class="para">Service of summons, process or notice required by this title may be made by any suitable person under the direction of the court, and upon request of the court shall be made by any peace officer.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-580">SECTION 63-3-580. Failure to obey summons.</p><p class="para">If any person summoned as herein provided shall, without reasonable cause, fail to appear, he may be proceeded against for contempt of court. In case the summons or process cannot be served, or the parties served fail to obey the same, or in any case when it shall be made to appear to the judge that the service will be ineffectual, or that the welfare of the child requires that he be brought forthwith into custody of the court, a warrant may be issued for the child, parent or guardian of the child, or any person who may have control or possession of the child, to immediately bring the child before the court.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-590">SECTION 63-3-590. Conduct of hearings.</p><p class="para">All cases of children must be dealt with as separate hearings by the court and without a jury. The hearings must be conducted in a formal manner and may be adjourned from time to time. The general public must be excluded and only persons the judge finds to have a direct interest in the case or in the work of the court may be admitted. The presence of the child in court may be waived by the court at any stage of the proceedings. Hearings may be held at any time or place within the county designated by the judge. In any case where the delinquency proceedings may result in commitment to an institution in which the child&#39;s freedom is curtailed, the privilege against self-incrimination and the right of cross-examination must be preserved. In all cases where required by law, the child must be accorded all rights enjoyed by adults, and where not required by law the child must be accorded adult rights consistent with the best interests of the child.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-600">SECTION 63-3-600. Rules for conduct of hearings.</p><p class="para">Hearings shall be conducted in accordance with the rules of court, and the court may consider and receive as evidence the result of any investigation had or made by the probation counselor; provided, that either party shall be entitled to examine the probation counselor under oath thereon. The court may adjourn the hearing from time to time for proper cause. Where a petitioner&#39;s needs are so urgent as to require it, the court may make a temporary order for support pending a final determination.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-610">SECTION 63-3-610. Prosecutorial functions.</p><p class="para">All prosecutorial functions and duties in the family courts shall be a responsibility of and be vested in the solicitor of the circuit wherein the court is located.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-620">SECTION 63-3-620. Penalties for adult violating title.</p><p class="para">An adult who wilfully violates, neglects, or refuses to obey or perform a lawful order of the court, or who violates any provision of this chapter, may be proceeded against for contempt of court. An adult found in contempt of court may be punished by a fine, by a public works sentence, or by imprisonment in a local detention facility, or by any combination of them, in the discretion of the court, but not to exceed imprisonment in a local detention facility for one year, a fine of fifteen hundred dollars, or public works sentence of more than three hundred hours, or any combination of them. An adult sentenced to a term of imprisonment under this section may earn good time credits pursuant to Section 24-13-210 and work credits pursuant to Section 24-13-230 and may participate in a work/punishment program pursuant to Section 24-13-910.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2; 2010 Act No. 237, &#167; 90, eff June 11, 2010.</p><p class="section-head" id="63-3-630">SECTION 63-3-630. Appeals.</p><p class="para">(A) Any appeal from an order, judgment, or decree of the family court shall be taken in the manner provided by the South Carolina Appellate Court Rules. The right to appeal must be governed by the same rules, practices, and procedures that govern appeals from the circuit court.</p><p class="para">(B) The pendency of an appeal or application may not suspend the order of the family court regarding a child, nor shall it discharge the child from the custody of that court or of the person, institution, or agency to whose care the child shall have been committed; nor shall it suspend payments for support and maintenance of the wife and child.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-640">SECTION 63-3-640. Post conviction proceedings.</p><p class="para">Post conviction proceedings, including habeas corpus actions, shall be instituted in the court in which the original action was concluded; provided, however, that the family courts shall also have original jurisdiction of habeas corpus actions if the person who is the subject of the action would otherwise be within the jurisdiction of the family court.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-650">SECTION 63-3-650. Power to issue writ of habeas corpus.</p><p class="para">Any judge shall have the power to issue a writ of habeas corpus to produce any person under the age of seventeen in court where necessary.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="article-head">Article 7</p><p class="para">Private Guardians ad Litem</p><p class="section-head" id="63-3-810">SECTION 63-3-810. Appointment.</p><p class="para">(A) In a private action before the family court in which custody or visitation of a minor child is an issue, the court may appoint a guardian ad litem only when it determines that:</p><p class="para">(1) without a guardian ad litem, the court will likely not be fully informed about the facts of the case and there is a substantial dispute which necessitates a guardian ad litem; or</p><p class="para">(2) both parties consent to the appointment of a guardian ad litem who is approved by the court.</p><p class="para">(B) The court has absolute discretion in determining who will be appointed as a guardian ad litem in each case. A guardian ad litem must be appointed to a case by a court order.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-820">SECTION 63-3-820. Qualifications.</p><p class="para">(A) A guardian ad litem may be either an attorney or a layperson. A person must not be appointed as a guardian ad litem pursuant to Section 63-3-810 unless he possesses the following qualifications:</p><p class="para">(1) a guardian ad litem must be twenty-five years of age or older;</p><p class="para">(2) a guardian ad litem must possess a high school diploma or its equivalent;</p><p class="para">(3) an attorney guardian ad litem must annually complete a minimum of six hours of family law continuing legal education credit in the areas of custody and visitation; however, this requirement may be waived by the court;</p><p class="para">(4) for initial qualification, a lay guardian ad litem must have completed a minimum of nine hours of continuing education in the areas of custody and visitation and three hours of continuing education related to substantive law and procedure in family court. The courses must be approved by the Supreme Court Commission on Continuing Legal Education and Specialization;</p><p class="para">(5) a lay guardian ad litem must observe three contested custody merits hearings prior to serving as a guardian ad litem. The lay guardian must maintain a certificate showing that observation of these hearings has been completed. This certificate, which shall be on a form approved by Court Administration, shall state the names of the cases, the dates and the judges involved and shall be attested to by the respective judge; and</p><p class="para">(6) lay guardians ad litem must complete annually six hours of continuing education courses in the areas of custody and visitation.</p><p class="para">(B) A person shall not be appointed as a guardian ad litem pursuant to Section 63-3-810 who has been convicted of any crime listed in Chapter 3 of Title 16, Offenses Against the Person; in Chapter 15 of Title 16, Offenses Against Morality and Decency; in Chapter 25 of Title 16, Criminal Domestic Violence; in Article 3 of Chapter 53 of Title 44, Narcotics and Controlled Substances; or convicted of the crime of contributing to the delinquency of a minor, provided for in Section 16-17-490.</p><p class="para">(C) No person may be appointed as a guardian ad litem pursuant to Section 63-3-810 if he is or has ever been on the Department of Social Services Central Registry of Abuse and Neglect.</p><p class="para">(D) Upon appointment to a case, a guardian ad litem must provide an affidavit to the court and to the parties attesting to compliance with the statutory qualifications. The affidavit must include, but is not limited to, the following:</p><p class="para">(1) a statement affirming that the guardian ad litem has completed the training requirements provided for in subsection (A);</p><p class="para">(2) a statement affirming that the guardian ad litem has complied with the requirements of this section, including a statement that the person has not been convicted of a crime enumerated in subsection (B); and</p><p class="para">(3) a statement affirming that the guardian ad litem is not nor has ever been on the Department of Social Services Central Registry of Child Abuse and Neglect pursuant to Subarticle 13, Article 3, Chapter 7.</p><p class="para">(E) The court may appoint an attorney for a lay guardian ad litem. A party or the guardian ad litem may petition the court by motion for the appointment of an attorney for the guardian ad litem. This appointment may be by consent order. The order appointing the attorney must set forth the reasons for the appointment and must establish a method for compensating the attorney.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-830">SECTION 63-3-830. Responsibilities.</p><p class="para">(A) The responsibilities and duties of a guardian ad litem include, but are not limited to:</p><p class="para">(1) representing the best interest of the child;</p><p class="para">(2) conducting an independent, balanced, and impartial investigation to determine the facts relevant to the situation of the child and the family. An investigation must include, but is not limited to:</p><p class="para">(a) obtaining and reviewing relevant documents, except that a guardian ad litem must not be compensated for reviewing documents related solely to financial matters not relevant to the suitability of the parents as to custody, visitation, or child support. The guardian ad litem shall have access to the child&#39;s school records and medical records. The guardian ad litem may petition the family court for the medical records of the parties;</p><p class="para">(b) meeting with and observing the child on at least one occasion;</p><p class="para">(c) visiting the home settings if deemed appropriate;</p><p class="para">(d) interviewing parents, caregivers, school officials, law enforcement, and others with knowledge relevant to the case;</p><p class="para">(e) obtaining the criminal history of each party when determined necessary; and</p><p class="para">(f) considering the wishes of the child, if appropriate;</p><p class="para">(3) advocating for the child&#39;s best interest by making specific and clear suggestions, when necessary, for evaluation, services, and treatment for the child and the child&#39;s family. Evaluations or other services suggested by the guardian ad litem must not be ordered by the court, except upon proper approval by the court or by consent of the parties;</p><p class="para">(4) attending all court hearings related to custody and visitation issues, except when attendance is excused by the court or the absence is stipulated by both parties. A guardian must not be compensated for attending a hearing related solely to a financial matter if the matter is not relevant to the suitability of the parents as to custody, visitation, or child support. The guardian must provide accurate, current information directly to the court, and that information must be relevant to matters pending before the court;</p><p class="para">(5) maintaining a complete file, including notes. A guardian&#39;s notes are his work product and are not subject to subpoena; and</p><p class="para">(6) presenting to the court and all parties clear and comprehensive written reports including, but not limited to, a final written report regarding the child&#39;s best interest. The final written report may contain conclusions based upon the facts contained in the report. The final written report must be submitted to the court and all parties no later than twenty days prior to the merits hearing, unless that time period is modified by the court, but in no event later than ten days prior to the merits hearing. The ten-day requirement for the submission of the final written report may only be waived by mutual consent of both parties. The final written report must not include a recommendation concerning which party should be awarded custody, nor may the guardian ad litem make a recommendation as to the issue of custody at the merits hearing unless requested by the court for reasons specifically set forth on the record. The guardian ad litem is subject to cross-examination on the facts and conclusions contained in the final written report. The final written report must include the names, addresses, and telephone numbers of those interviewed during the investigation.</p><p class="para">(B) A guardian ad litem may submit briefs, memoranda, affidavits, or other documents on behalf of the child. A guardian ad litem may also submit affidavits at the temporary hearing. Any report or recommendation of a guardian ad litem must be submitted in a manner consistent with the South Carolina Rules of Evidence and other state law.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-840">SECTION 63-3-840. Mediation prohibition.</p><p class="para">A guardian ad litem must not mediate, attempt to mediate, or act as a mediator in a case to which he has been appointed. However, nothing in this section shall prohibit a guardian ad litem from participating in a mediation or a settlement conference with the consent of the parties.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-850">SECTION 63-3-850. Compensation.</p><p class="para">(A) At the time of appointment of a guardian ad litem, the family court judge must set forth the method and rate of compensation for the guardian ad litem, including an initial authorization of a fee based on the facts of the case. If the guardian ad litem determines that it is necessary to exceed the fee initially authorized by the judge, the guardian must provide notice to both parties and obtain the judge&#39;s written authorization or the consent of both parties to charge more than the initially authorized fee.</p><p class="para">(B) A guardian appointed by the court is entitled to reasonable compensation, subject to the review and approval of the court. In determining the reasonableness of the fees and costs, the court must take into account:</p><p class="para">(1) the complexity of the issues before the court;</p><p class="para">(2) the contentiousness of the litigation;</p><p class="para">(3) the time expended by the guardian;</p><p class="para">(4) the expenses reasonably incurred by the guardian;</p><p class="para">(5) the financial ability of each party to pay fees and costs; and</p><p class="para">(6) any other factors the court considers necessary.</p><p class="para">(C) The guardian ad litem must submit an itemized billing statement of hours, expenses, costs, and fees to the parties and their attorneys pursuant to a schedule as directed by the court.</p><p class="para">(D) At any time during the action, a party may petition the court to review the reasonableness of the fees and costs submitted by the guardian ad litem or the attorney for the guardian ad litem.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-860">SECTION 63-3-860. Disclosure.</p><p class="para">A guardian ad litem appointed by the family court in a custody or visitation action must, upon notice of the appointment, provide written disclosure to each party:</p><p class="para">(1) of the nature, duration, and extent of any relationship the guardian ad litem or any member of the guardian&#39;s immediate family residing in the guardian&#39;s household has with any party;</p><p class="para">(2) of any interest adverse to any party or attorney which might cause the impartiality of the guardian ad litem to be challenged;</p><p class="para">(3) any membership or participation in any organization related to child abuse, domestic violence, or drug and alcohol abuse.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p><p class="section-head" id="63-3-870">SECTION 63-3-870. Removal.</p><p class="para">A guardian ad litem may be removed from a case at the discretion of the court.</p><p class="annotation-head">HISTORY: 2008 Act No. 361, &#167; 2.</p></div></div>
+        </div>
+    <style>
+        #colbody{ padding:6px 4px; }
+        #colbody .unit-title{ text-align:center; text-transform:uppercase; font-size:16px; font-weight:bold; margin:28px 0 4px; }
+        #colbody .unit-name{ text-align:center; font-weight:bold; margin:0 0 22px; }
+        #colbody .article-head{ text-align:center; font-weight:bold; margin:30px 0 10px; }
+        #colbody .section-head{ font-weight:bold; margin:30px 0 10px; }
+        #colbody .annotation-head, #colbody .para{ margin:0 0 16px; line-height:1.6; }
+        #colbody em[id^="m"]{ font-style:normal; font-weight:bold; color:#FF0000; }
+    </style>
+    					</div>		 <!-- mainwidepanel -->
+					
+				</div>		 <!-- pagebody -->
+				
+				<div id="footer" class="nodisplay" style="height: 30px;" onContextMenu="return false;">
+			<div id="footerdiv" style="margin:0;">
+				South Carolina Legislative Services Agency * 223 Blatt Building * 1105 Pendleton Street * Columbia, SC 29201<!-- * 803-212-4420--><br>
+				
+								<a href="/disclaimer.php">Disclaimer</a> * <a href="/policies.php">Policies</a> * <a href="/credits.php">Photo Credits</a> * <a href="/contact.php">Contact Us</a>
+							</div>
+		</div>
+		<div id="printfooter" class="printdisplay serifNormal" align=center style="font-size: 8pt;">
+			<br>
+			<br>
+			<hr>
+			Legislative Services Agency
+			<br>
+			h t t p : / / w w w . s c s t a t e h o u s e . g o v
+		</div>
+	
+		</div>	<!-- container or main in mobile page-->
+</body>
+</html>
+

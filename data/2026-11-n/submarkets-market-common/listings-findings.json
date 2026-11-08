@@ -1,0 +1,812 @@
+{
+ "pulled": "2026-11-08T08:04:12.238482+00:00",
+ "meta_source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_totals_zip_29577": {
+  "house": 187,
+  "townhouse": 57,
+  "condo": 858,
+  "manufactured": 31,
+  "land": 33,
+  "multi": 11
+ },
+ "in_area": 66,
+ "hoa_thresholds": [
+  0,
+  50,
+  100,
+  150,
+  200,
+  250,
+  300,
+  350,
+  400,
+  450,
+  500,
+  600,
+  700,
+  800,
+  1000,
+  1500
+ ],
+ "note": "CRM public map API (CCMLS listings), ZIP 29577, kept when the pin is inside C6, CENTER POINTE PUD or CLEMSON TRACT PUD. Aggregate only. HOA bracket top = the first 'HOA up to' threshold where the listing appears (so the fee is at or under it and over the threshold before).",
+ "groups": {
+  "all/all": {
+   "n": 66,
+   "median_ask": 499899.5,
+   "min_ask": 319999.0,
+   "max_ask": 1249000.0,
+   "median_ask_per_sqft": 256,
+   "median_sqft": 2031,
+   "beds": {
+    "4": 14,
+    "3": 35,
+    "5": 5,
+    "2": 11,
+    "null": 1
+   },
+   "fee_bracket_top": {
+    "100": 23,
+    "150": 12,
+    "200": 1,
+    "250": 5,
+    "300": 6,
+    "350": 2,
+    "400": 4,
+    "450": 5,
+    "500": 3,
+    "600": 3,
+    "700": 1,
+    "over_1500_or_none": 1
+   },
+   "median_fee_bracket_top": 150
+  },
+  "all/house": {
+   "n": 43,
+   "median_ask": 529900.0,
+   "min_ask": 393000.0,
+   "max_ask": 839900.0,
+   "median_ask_per_sqft": 253,
+   "median_sqft": 2188,
+   "beds": {
+    "4": 14,
+    "3": 22,
+    "5": 5,
+    "2": 2
+   },
+   "fee_bracket_top": {
+    "100": 23,
+    "150": 12,
+    "200": 1,
+    "250": 5,
+    "300": 1,
+    "350": 1
+   },
+   "median_fee_bracket_top": 100
+  },
+  "all/townhouse": {
+   "n": 20,
+   "median_ask": 419950.0,
+   "min_ask": 319999.0,
+   "max_ask": 1249000.0,
+   "median_ask_per_sqft": 264,
+   "median_sqft": 1713.0,
+   "beds": {
+    "2": 7,
+    "3": 13
+   },
+   "fee_bracket_top": {
+    "300": 4,
+    "350": 1,
+    "400": 3,
+    "450": 5,
+    "500": 3,
+    "600": 3,
+    "700": 1
+   },
+   "median_fee_bracket_top": 450.0
+  },
+  "all/condo": {
+   "n": 2,
+   "median_ask": 375000.0,
+   "min_ask": 325000.0,
+   "max_ask": 425000.0,
+   "median_ask_per_sqft": 277,
+   "median_sqft": 1350.0,
+   "beds": {
+    "2": 2
+   },
+   "fee_bracket_top": {
+    "300": 1,
+    "400": 1
+   },
+   "median_fee_bracket_top": 350.0
+  },
+  "all/land": {
+   "n": 1,
+   "median_ask": 850000.0,
+   "min_ask": 850000.0,
+   "max_ask": 850000.0,
+   "median_ask_per_sqft": null,
+   "median_sqft": null,
+   "beds": {
+    "null": 1
+   },
+   "fee_bracket_top": {
+    "over_1500_or_none": 1
+   },
+   "median_fee_bracket_top": null
+  },
+  "town_center/all": {
+   "n": 28,
+   "median_ask": 574500.0,
+   "min_ask": 319999.0,
+   "max_ask": 1249000.0,
+   "median_ask_per_sqft": 292,
+   "median_sqft": 1729.5,
+   "beds": {
+    "4": 4,
+    "3": 15,
+    "2": 9
+   },
+   "fee_bracket_top": {
+    "150": 6,
+    "250": 5,
+    "350": 1,
+    "400": 4,
+    "450": 5,
+    "500": 3,
+    "600": 3,
+    "700": 1
+   },
+   "median_fee_bracket_top": 400.0
+  },
+  "town_center/house": {
+   "n": 11,
+   "median_ask": 585000.0,
+   "min_ask": 393000.0,
+   "max_ask": 775000.0,
+   "median_ask_per_sqft": 292,
+   "median_sqft": 2031,
+   "beds": {
+    "4": 4,
+    "3": 6,
+    "2": 1
+   },
+   "fee_bracket_top": {
+    "150": 6,
+    "250": 5
+   },
+   "median_fee_bracket_top": 150
+  },
+  "town_center/townhouse": {
+   "n": 16,
+   "median_ask": 431000.0,
+   "min_ask": 319999.0,
+   "max_ask": 1249000.0,
+   "median_ask_per_sqft": 298,
+   "median_sqft": 1499.5,
+   "beds": {
+    "2": 7,
+    "3": 9
+   },
+   "fee_bracket_top": {
+    "350": 1,
+    "400": 3,
+    "450": 5,
+    "500": 3,
+    "600": 3,
+    "700": 1
+   },
+   "median_fee_bracket_top": 450.0
+  },
+  "town_center/condo": {
+   "n": 1,
+   "median_ask": 425000.0,
+   "min_ask": 425000.0,
+   "max_ask": 425000.0,
+   "median_ask_per_sqft": 283,
+   "median_sqft": 1502,
+   "beds": {
+    "2": 1
+   },
+   "fee_bracket_top": {
+    "400": 1
+   },
+   "median_fee_bracket_top": 400
+  },
+  "center_pointe/all": {
+   "n": 26,
+   "median_ask": 516950.0,
+   "min_ask": 325000.0,
+   "max_ask": 850000.0,
+   "median_ask_per_sqft": 232,
+   "median_sqft": 2335,
+   "beds": {
+    "4": 9,
+    "3": 11,
+    "5": 4,
+    "2": 1,
+    "null": 1
+   },
+   "fee_bracket_top": {
+    "100": 16,
+    "150": 4,
+    "200": 1,
+    "300": 3,
+    "350": 1,
+    "over_1500_or_none": 1
+   },
+   "median_fee_bracket_top": 100
+  },
+  "center_pointe/house": {
+   "n": 23,
+   "median_ask": 524900.0,
+   "min_ask": 419000.0,
+   "max_ask": 839900.0,
+   "median_ask_per_sqft": 232,
+   "median_sqft": 2375,
+   "beds": {
+    "4": 9,
+    "3": 10,
+    "5": 4
+   },
+   "fee_bracket_top": {
+    "100": 16,
+    "150": 4,
+    "200": 1,
+    "300": 1,
+    "350": 1
+   },
+   "median_fee_bracket_top": 100
+  },
+  "center_pointe/townhouse": {
+   "n": 1,
+   "median_ask": 424900.0,
+   "min_ask": 424900.0,
+   "max_ask": 424900.0,
+   "median_ask_per_sqft": 221,
+   "median_sqft": 1926,
+   "beds": {
+    "3": 1
+   },
+   "fee_bracket_top": {
+    "300": 1
+   },
+   "median_fee_bracket_top": 300
+  },
+  "center_pointe/condo": {
+   "n": 1,
+   "median_ask": 325000.0,
+   "min_ask": 325000.0,
+   "max_ask": 325000.0,
+   "median_ask_per_sqft": 271,
+   "median_sqft": 1198,
+   "beds": {
+    "2": 1
+   },
+   "fee_bracket_top": {
+    "300": 1
+   },
+   "median_fee_bracket_top": 300
+  },
+  "center_pointe/land": {
+   "n": 1,
+   "median_ask": 850000.0,
+   "min_ask": 850000.0,
+   "max_ask": 850000.0,
+   "median_ask_per_sqft": null,
+   "median_sqft": null,
+   "beds": {
+    "null": 1
+   },
+   "fee_bracket_top": {
+    "over_1500_or_none": 1
+   },
+   "median_fee_bracket_top": null
+  },
+  "clemson_tract/all": {
+   "n": 12,
+   "median_ask": 492450.0,
+   "min_ask": 349900.0,
+   "max_ask": 610000.0,
+   "median_ask_per_sqft": 229,
+   "median_sqft": 2096.0,
+   "beds": {
+    "3": 9,
+    "4": 1,
+    "5": 1,
+    "2": 1
+   },
+   "fee_bracket_top": {
+    "100": 7,
+    "150": 2,
+    "300": 3
+   },
+   "median_fee_bracket_top": 100.0
+  },
+  "clemson_tract/house": {
+   "n": 9,
+   "median_ask": 499899.0,
+   "min_ask": 422000.0,
+   "max_ask": 610000.0,
+   "median_ask_per_sqft": 237,
+   "median_sqft": 2149,
+   "beds": {
+    "3": 6,
+    "4": 1,
+    "5": 1,
+    "2": 1
+   },
+   "fee_bracket_top": {
+    "100": 7,
+    "150": 2
+   },
+   "median_fee_bracket_top": 100
+  },
+  "clemson_tract/townhouse": {
+   "n": 3,
+   "median_ask": 351500.0,
+   "min_ask": 349900.0,
+   "max_ask": 355000.0,
+   "median_ask_per_sqft": 171,
+   "median_sqft": 2043,
+   "beds": {
+    "3": 3
+   },
+   "fee_bracket_top": {
+    "300": 3
+   },
+   "median_fee_bracket_top": 300
+  },
+  "hood:Balmoral/all": {
+   "n": 1,
+   "median_ask": 639900.0,
+   "min_ask": 639900.0,
+   "max_ask": 639900.0,
+   "median_ask_per_sqft": 274,
+   "median_sqft": 2335,
+   "beds": {
+    "3": 1
+   },
+   "fee_bracket_top": {
+    "150": 1
+   },
+   "median_fee_bracket_top": 150
+  },
+  "hood:Balmoral/house": {
+   "n": 1,
+   "median_ask": 639900.0,
+   "min_ask": 639900.0,
+   "max_ask": 639900.0,
+   "median_ask_per_sqft": 274,
+   "median_sqft": 2335,
+   "beds": {
+    "3": 1
+   },
+   "fee_bracket_top": {
+    "150": 1
+   },
+   "median_fee_bracket_top": 150
+  },
+  "hood:Belle Harbor/all": {
+   "n": 10,
+   "median_ask": 492000.0,
+   "min_ask": 349900.0,
+   "max_ask": 610000.0,
+   "median_ask_per_sqft": 229,
+   "median_sqft": 2043.0,
+   "beds": {
+    "3": 8,
+    "4": 1,
+    "5": 1
+   },
+   "fee_bracket_top": {
+    "100": 7,
+    "300": 3
+   },
+   "median_fee_bracket_top": 100.0
+  },
+  "hood:Belle Harbor/house": {
+   "n": 7,
+   "median_ask": 499899.0,
+   "min_ask": 422000.0,
+   "max_ask": 610000.0,
+   "median_ask_per_sqft": 239,
+   "median_sqft": 1832,
+   "beds": {
+    "3": 5,
+    "4": 1,
+    "5": 1
+   },
+   "fee_bracket_top": {
+    "100": 7
+   },
+   "median_fee_bracket_top": 100
+  },
+  "hood:Belle Harbor/townhouse": {
+   "n": 3,
+   "median_ask": 351500.0,
+   "min_ask": 349900.0,
+   "max_ask": 355000.0,
+   "median_ask_per_sqft": 171,
+   "median_sqft": 2043,
+   "beds": {
+    "3": 3
+   },
+   "fee_bracket_top": {
+    "300": 3
+   },
+   "median_fee_bracket_top": 300
+  },
+  "hood:Cresswind/all": {
+   "n": 1,
+   "median_ask": 479900.0,
+   "min_ask": 479900.0,
+   "max_ask": 479900.0,
+   "median_ask_per_sqft": 270,
+   "median_sqft": 1779,
+   "beds": {
+    "3": 1
+   },
+   "fee_bracket_top": {
+    "350": 1
+   },
+   "median_fee_bracket_top": 350
+  },
+  "hood:Cresswind/house": {
+   "n": 1,
+   "median_ask": 479900.0,
+   "min_ask": 479900.0,
+   "max_ask": 479900.0,
+   "median_ask_per_sqft": 270,
+   "median_sqft": 1779,
+   "beds": {
+    "3": 1
+   },
+   "fee_bracket_top": {
+    "350": 1
+   },
+   "median_fee_bracket_top": 350
+  },
+  "hood:Emmens Preserve/all": {
+   "n": 9,
+   "median_ask": 474999.0,
+   "min_ask": 419000.0,
+   "max_ask": 559900.0,
+   "median_ask_per_sqft": 232,
+   "median_sqft": 2150,
+   "beds": {
+    "4": 4,
+    "3": 3,
+    "5": 2
+   },
+   "fee_bracket_top": {
+    "100": 6,
+    "200": 1,
+    "300": 2
+   },
+   "median_fee_bracket_top": 100
+  },
+  "hood:Emmens Preserve/house": {
+   "n": 8,
+   "median_ask": 479999.5,
+   "min_ask": 419000.0,
+   "max_ask": 559900.0,
+   "median_ask_per_sqft": 232,
+   "median_sqft": 2237.0,
+   "beds": {
+    "4": 4,
+    "3": 2,
+    "5": 2
+   },
+   "fee_bracket_top": {
+    "100": 6,
+    "200": 1,
+    "300": 1
+   },
+   "median_fee_bracket_top": 100.0
+  },
+  "hood:Emmens Preserve/townhouse": {
+   "n": 1,
+   "median_ask": 424900.0,
+   "min_ask": 424900.0,
+   "max_ask": 424900.0,
+   "median_ask_per_sqft": 221,
+   "median_sqft": 1926,
+   "beds": {
+    "3": 1
+   },
+   "fee_bracket_top": {
+    "300": 1
+   },
+   "median_fee_bracket_top": 300
+  },
+  "hood:High Market (condos)/all": {
+   "n": 1,
+   "median_ask": 325000.0,
+   "min_ask": 325000.0,
+   "max_ask": 325000.0,
+   "median_ask_per_sqft": 271,
+   "median_sqft": 1198,
+   "beds": {
+    "2": 1
+   },
+   "fee_bracket_top": {
+    "300": 1
+   },
+   "median_fee_bracket_top": 300
+  },
+  "hood:High Market (condos)/condo": {
+   "n": 1,
+   "median_ask": 325000.0,
+   "min_ask": 325000.0,
+   "max_ask": 325000.0,
+   "median_ask_per_sqft": 271,
+   "median_sqft": 1198,
+   "beds": {
+    "2": 1
+   },
+   "fee_bracket_top": {
+    "300": 1
+   },
+   "median_fee_bracket_top": 300
+  },
+  "hood:Park Place/all": {
+   "n": 1,
+   "median_ask": 649900.0,
+   "min_ask": 649900.0,
+   "max_ask": 649900.0,
+   "median_ask_per_sqft": 234,
+   "median_sqft": 2772,
+   "beds": {
+    "4": 1
+   },
+   "fee_bracket_top": {
+    "100": 1
+   },
+   "median_fee_bracket_top": 100
+  },
+  "hood:Park Place/house": {
+   "n": 1,
+   "median_ask": 649900.0,
+   "min_ask": 649900.0,
+   "max_ask": 649900.0,
+   "median_ask_per_sqft": 234,
+   "median_sqft": 2772,
+   "beds": {
+    "4": 1
+   },
+   "fee_bracket_top": {
+    "100": 1
+   },
+   "median_fee_bracket_top": 100
+  },
+  "hood:Sweetgrass Square/all": {
+   "n": 2,
+   "median_ask": 637000.0,
+   "min_ask": 499000.0,
+   "max_ask": 775000.0,
+   "median_ask_per_sqft": 283,
+   "median_sqft": 2221.5,
+   "beds": {
+    "4": 2
+   },
+   "fee_bracket_top": {
+    "150": 2
+   },
+   "median_fee_bracket_top": 150.0
+  },
+  "hood:Sweetgrass Square/house": {
+   "n": 2,
+   "median_ask": 637000.0,
+   "min_ask": 499000.0,
+   "max_ask": 775000.0,
+   "median_ask_per_sqft": 283,
+   "median_sqft": 2221.5,
+   "beds": {
+    "4": 2
+   },
+   "fee_bracket_top": {
+    "150": 2
+   },
+   "median_fee_bracket_top": 150.0
+  },
+  "hood:The Reserve at Market Common/all": {
+   "n": 3,
+   "median_ask": 570000.0,
+   "min_ask": 489900.0,
+   "max_ask": 584900.0,
+   "median_ask_per_sqft": 271,
+   "median_sqft": 2158,
+   "beds": {
+    "4": 1,
+    "3": 2
+   },
+   "fee_bracket_top": {
+    "150": 3
+   },
+   "median_fee_bracket_top": 150
+  },
+  "hood:The Reserve at Market Common/house": {
+   "n": 3,
+   "median_ask": 570000.0,
+   "min_ask": 489900.0,
+   "max_ask": 584900.0,
+   "median_ask_per_sqft": 271,
+   "median_sqft": 2158,
+   "beds": {
+    "4": 1,
+    "3": 2
+   },
+   "fee_bracket_top": {
+    "150": 3
+   },
+   "median_fee_bracket_top": 150
+  },
+  "hood:Town center streets (Market Common parcels R1 to R13)/all": {
+   "n": 26,
+   "median_ask": 574500.0,
+   "min_ask": 319999.0,
+   "max_ask": 1249000.0,
+   "median_ask_per_sqft": 292,
+   "median_sqft": 1713.0,
+   "beds": {
+    "3": 15,
+    "4": 2,
+    "2": 9
+   },
+   "fee_bracket_top": {
+    "150": 4,
+    "250": 5,
+    "350": 1,
+    "400": 4,
+    "450": 5,
+    "500": 3,
+    "600": 3,
+    "700": 1
+   },
+   "median_fee_bracket_top": 400.0
+  },
+  "hood:Town center streets (Market Common parcels R1 to R13)/house": {
+   "n": 9,
+   "median_ask": 585000.0,
+   "min_ask": 393000.0,
+   "max_ask": 650000.0,
+   "median_ask_per_sqft": 292,
+   "median_sqft": 2031,
+   "beds": {
+    "3": 6,
+    "4": 2,
+    "2": 1
+   },
+   "fee_bracket_top": {
+    "150": 4,
+    "250": 5
+   },
+   "median_fee_bracket_top": 250
+  },
+  "hood:Town center streets (Market Common parcels R1 to R13)/townhouse": {
+   "n": 16,
+   "median_ask": 431000.0,
+   "min_ask": 319999.0,
+   "max_ask": 1249000.0,
+   "median_ask_per_sqft": 298,
+   "median_sqft": 1499.5,
+   "beds": {
+    "2": 7,
+    "3": 9
+   },
+   "fee_bracket_top": {
+    "350": 1,
+    "400": 3,
+    "450": 5,
+    "500": 3,
+    "600": 3,
+    "700": 1
+   },
+   "median_fee_bracket_top": 450.0
+  },
+  "hood:Town center streets (Market Common parcels R1 to R13)/condo": {
+   "n": 1,
+   "median_ask": 425000.0,
+   "min_ask": 425000.0,
+   "max_ask": 425000.0,
+   "median_ask_per_sqft": 283,
+   "median_sqft": 1502,
+   "beds": {
+    "2": 1
+   },
+   "fee_bracket_top": {
+    "400": 1
+   },
+   "median_fee_bracket_top": 400
+  },
+  "hood:West Lake/all": {
+   "n": 4,
+   "median_ask": 559950.0,
+   "min_ask": 479900.0,
+   "max_ask": 649900.0,
+   "median_ask_per_sqft": 209,
+   "median_sqft": 2991.5,
+   "beds": {
+    "5": 1,
+    "4": 2,
+    "3": 1
+   },
+   "fee_bracket_top": {
+    "100": 4
+   },
+   "median_fee_bracket_top": 100.0
+  },
+  "hood:West Lake/house": {
+   "n": 4,
+   "median_ask": 559950.0,
+   "min_ask": 479900.0,
+   "max_ask": 649900.0,
+   "median_ask_per_sqft": 209,
+   "median_sqft": 2991.5,
+   "beds": {
+    "5": 1,
+    "4": 2,
+    "3": 1
+   },
+   "fee_bracket_top": {
+    "100": 4
+   },
+   "median_fee_bracket_top": 100.0
+  },
+  "hood:Withers Preserve/all": {
+   "n": 7,
+   "median_ask": 629000.0,
+   "min_ask": 489000.0,
+   "max_ask": 839900.0,
+   "median_ask_per_sqft": 237,
+   "median_sqft": 2375,
+   "beds": {
+    "3": 4,
+    "4": 1,
+    "2": 1,
+    "5": 1
+   },
+   "fee_bracket_top": {
+    "100": 5,
+    "150": 2
+   },
+   "median_fee_bracket_top": 100
+  },
+  "hood:Withers Preserve/house": {
+   "n": 7,
+   "median_ask": 629000.0,
+   "min_ask": 489000.0,
+   "max_ask": 839900.0,
+   "median_ask_per_sqft": 237,
+   "median_sqft": 2375,
+   "beds": {
+    "3": 4,
+    "4": 1,
+    "2": 1,
+    "5": 1
+   },
+   "fee_bracket_top": {
+    "100": 5,
+    "150": 2
+   },
+   "median_fee_bracket_top": 100
+  },
+  "hood:other/all": {
+   "n": 1,
+   "median_ask": 850000.0,
+   "min_ask": 850000.0,
+   "max_ask": 850000.0,
+   "median_ask_per_sqft": null,
+   "median_sqft": null,
+   "beds": {
+    "null": 1
+   },
+   "fee_bracket_top": {
+    "over_1500_or_none": 1
+   },
+   "median_fee_bracket_top": null
+  }
+ }
+}

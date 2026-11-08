@@ -1,0 +1,191 @@
+{
+ "method": "Shortest walk by the OpenStreetMap foot router from the house's map point to any of its 6 nearest SCDES public beach access points, plus the straight step to the nearest mapped path. Houses for sale (CRM map API, type=house) within 1.5 miles of the ocean in a straight line.",
+ "houses_routed": 800,
+ "by_walk_band": {
+  "under 1/4 mile": {
+   "houses": 186,
+   "median_ask": 950000,
+   "median_ask_per_sqft": 444,
+   "under_400k": 3,
+   "under_500k": 9,
+   "no_hoa": 147
+  },
+  "1/4 to 1/2 mile": {
+   "houses": 110,
+   "median_ask": 680000,
+   "median_ask_per_sqft": 336,
+   "under_400k": 18,
+   "under_500k": 38,
+   "no_hoa": 81
+  },
+  "1/2 to 1 mile": {
+   "houses": 104,
+   "median_ask": 650000,
+   "median_ask_per_sqft": 313,
+   "under_400k": 17,
+   "under_500k": 34,
+   "no_hoa": 49
+  },
+  "over 1 mile": {
+   "houses": 400,
+   "median_ask": 625000,
+   "median_ask_per_sqft": 308,
+   "under_400k": 48,
+   "under_500k": 106,
+   "no_hoa": 147
+  }
+ },
+ "by_stretch": {
+  "North Myrtle Beach and Cherry Grove": {
+   "under 1/4 mile": {
+    "houses": 74,
+    "median_ask": 945000,
+    "median_ask_per_sqft": 427,
+    "under_400k": 1,
+    "under_500k": 6,
+    "no_hoa": 68
+   },
+   "1/4 to 1/2 mile": {
+    "houses": 54,
+    "median_ask": 595000,
+    "median_ask_per_sqft": 326,
+    "under_400k": 13,
+    "under_500k": 21,
+    "no_hoa": 40
+   },
+   "1/2 to 1 mile": {
+    "houses": 36,
+    "median_ask": 550000,
+    "median_ask_per_sqft": 320,
+    "under_400k": 8,
+    "under_500k": 17,
+    "no_hoa": 15
+   },
+   "over 1 mile": {
+    "houses": 75,
+    "median_ask": 645000,
+    "median_ask_per_sqft": 274,
+    "under_400k": 5,
+    "under_500k": 13,
+    "no_hoa": 7
+   }
+  },
+  "Myrtle Beach": {
+   "under 1/4 mile": {
+    "houses": 47,
+    "median_ask": 800000,
+    "median_ask_per_sqft": 405,
+    "under_400k": 1,
+    "under_500k": 2,
+    "no_hoa": 27
+   },
+   "1/4 to 1/2 mile": {
+    "houses": 36,
+    "median_ask": 650000,
+    "median_ask_per_sqft": 309,
+    "under_400k": 5,
+    "under_500k": 14,
+    "no_hoa": 24
+   },
+   "1/2 to 1 mile": {
+    "houses": 45,
+    "median_ask": 700000,
+    "median_ask_per_sqft": 295,
+    "under_400k": 6,
+    "under_500k": 12,
+    "no_hoa": 17
+   },
+   "over 1 mile": {
+    "houses": 155,
+    "median_ask": 625000,
+    "median_ask_per_sqft": 312,
+    "under_400k": 18,
+    "under_500k": 42,
+    "no_hoa": 49
+   }
+  },
+  "Surfside Beach, Garden City and Murrells Inlet": {
+   "under 1/4 mile": {
+    "houses": 52,
+    "median_ask": 1115000,
+    "median_ask_per_sqft": 495,
+    "under_400k": 1,
+    "under_500k": 1,
+    "no_hoa": 43
+   },
+   "1/4 to 1/2 mile": {
+    "houses": 15,
+    "median_ask": 700000,
+    "median_ask_per_sqft": 363,
+    "under_400k": 0,
+    "under_500k": 3,
+    "no_hoa": 13
+   },
+   "1/2 to 1 mile": {
+    "houses": 17,
+    "median_ask": 570000,
+    "median_ask_per_sqft": 305,
+    "under_400k": 3,
+    "under_500k": 5,
+    "no_hoa": 11
+   },
+   "over 1 mile": {
+    "houses": 105,
+    "median_ask": 550000,
+    "median_ask_per_sqft": 315,
+    "under_400k": 23,
+    "under_500k": 43,
+    "no_hoa": 70
+   }
+  },
+  "Litchfield and Pawleys Island (Georgetown County)": {
+   "under 1/4 mile": {
+    "houses": 13,
+    "median_ask": 2980000,
+    "median_ask_per_sqft": 880,
+    "under_400k": 0,
+    "under_500k": 0,
+    "no_hoa": 9
+   },
+   "1/4 to 1/2 mile": {
+    "houses": 5,
+    "median_ask": 2450000,
+    "median_ask_per_sqft": 530,
+    "under_400k": 0,
+    "under_500k": 0,
+    "no_hoa": 4
+   },
+   "1/2 to 1 mile": {
+    "houses": 6,
+    "median_ask": 1320000,
+    "median_ask_per_sqft": 414,
+    "under_400k": 0,
+    "under_500k": 0,
+    "no_hoa": 6
+   },
+   "over 1 mile": {
+    "houses": 65,
+    "median_ask": 770000,
+    "median_ask_per_sqft": 359,
+    "under_400k": 2,
+    "under_500k": 8,
+    "no_hoa": 21
+   }
+  }
+ },
+ "walk_vs_line": {
+  "median_ratio_walk_to_line_for_line_under_half_mile": 1.15,
+  "line_under_half_mile_but_walk_over_one_mile": 90,
+  "line_under_half_mile": 420,
+  "line_under_quarter_walk_over_one_by_cell": {
+   "33.62,-78.96": 34,
+   "33.63,-78.96": 4,
+   "33.64,-78.94": 2,
+   "33.36,-79.15": 2,
+   "33.48,-79.09": 1,
+   "33.38,-79.15": 1,
+   "33.45,-79.11": 1
+  }
+ },
+ "note": "The foot router does not use roads or paths mapped as private (gated communities, campgrounds). A house in a gated place with its own beach path shows a long walk to a public access. Cells are 0.01-degree squares (about 0.7 by 0.6 mile) holding such houses."
+}

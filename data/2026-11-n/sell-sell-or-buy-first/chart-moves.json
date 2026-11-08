@@ -1,0 +1,109 @@
+{
+ "meta": {
+  "made": "build_charts.py",
+  "from": [
+   "moves.json lives_there",
+   "timing.json"
+  ],
+  "group": "Horry County owners who sold a home (deeds recorded 2021-07 to 2025-10) and, within a year before or after, bought the Horry County home they still own and live in (4 percent assessment)"
+ },
+ "n": 1749,
+ "three_ways": [
+  {
+   "key": "same_week",
+   "label": "Sold and bought within a week",
+   "n": 572,
+   "pct": 32.7,
+   "same_day_n": 199,
+   "same_day_pct": 11.4
+  },
+  {
+   "key": "bought_first",
+   "label": "Bought first",
+   "n": 593,
+   "pct": 33.9,
+   "median_days_both_owned": 91
+  },
+  {
+   "key": "sold_first",
+   "label": "Sold first",
+   "n": 584,
+   "pct": 33.4,
+   "median_days_between": 65.5
+  }
+ ],
+ "gap_bands": {
+  "bought_first": {
+   "8-30": 107,
+   "31-60": 101,
+   "61-90": 87,
+   "91-180": 173,
+   "181-365": 125
+  },
+  "sold_first": {
+   "8-30": 164,
+   "31-60": 112,
+   "61-90": 58,
+   "91-180": 129,
+   "181-365": 121
+  }
+ },
+ "by_direction": {
+  "bought_higher": {
+   "n": 1152,
+   "same_week_pct": 28.6,
+   "bought_first_pct": 39.6,
+   "sold_first_pct": 31.8
+  },
+  "bought_lower_or_same": {
+   "n": 597,
+   "same_week_pct": 40.5,
+   "bought_first_pct": 22.9,
+   "sold_first_pct": 36.5
+  }
+ },
+ "new_home_from_builder": {
+  "n": 572,
+  "bought_first_pct": 27.1,
+  "sold_first_pct": 43.7,
+  "same_week_pct": 29.2
+ },
+ "by_sale_year": {
+  "2021": {
+   "n": 264,
+   "same_week_pct": 18.9,
+   "bought_first_pct": 33.7,
+   "sold_first_pct": 47.3
+  },
+  "2022": {
+   "n": 383,
+   "same_week_pct": 30.0,
+   "bought_first_pct": 31.3,
+   "sold_first_pct": 38.6
+  },
+  "2023": {
+   "n": 388,
+   "same_week_pct": 34.5,
+   "bought_first_pct": 32.7,
+   "sold_first_pct": 32.7
+  },
+  "2024": {
+   "n": 382,
+   "same_week_pct": 38.5,
+   "bought_first_pct": 36.1,
+   "sold_first_pct": 25.4
+  },
+  "2025": {
+   "n": 332,
+   "same_week_pct": 38.0,
+   "bought_first_pct": 35.8,
+   "sold_first_pct": 26.2
+  }
+ },
+ "timing_myrtle_beach_last_12": {
+  "listing_to_contract_median_days_avg": 57.5,
+  "contract_to_closing_mean_days_avg": 37.2,
+  "listing_to_closing_days": 94.7,
+  "us_listing_to_closing_days": 61.5
+ }
+}

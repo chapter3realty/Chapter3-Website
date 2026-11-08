@@ -1,0 +1,129 @@
+{
+ "meta": {
+  "made": "cash_share.py",
+  "rule": "Share of Horry County home sales with no mortgage recorded by the buyer: a public-records stand-in for \"paid cash\".\nInputs: SALES (as cash_buyers.py), DEEDS (weekly DEED (001) pulls), MORTS = folder of weekly MORTGAGE (002) pulls made by\npull_mortgages.py for 2025-09-24..2026-10-21 (one week before and three weeks after the deed window). The mortgage index has no\nparcel number, so a sale counts as financed when a mortgage was recorded 0 to 14 days after the deed (or the same day) whose\nfirst-named borrower matches the deed's first-named buyer:\n  strict = same compressed name; loose = same first two words of the name (surname and first name), or the same surname with a\n  loan amount from 50 to 105 percent of the price; broad = ANY mortgage recorded 3 days before to 30 days after the deed whose\n  first-named borrower has the buyer's surname (first word). \"cash_pct_floor\" uses broad (the fewest sales read as cash, so a\n  floor); \"cash_pct_ceiling\" uses strict.",
+  "note": "No names are written here."
+ },
+ "mortgage_rows": 27851,
+ "all_home_sales": {
+  "sales": 13194,
+  "cash_pct_floor": 32.6,
+  "cash_pct_loose": 41.6,
+  "cash_pct_ceiling": 50.7
+ },
+ "resales": {
+  "sales": 11047,
+  "cash_pct_floor": 34.6,
+  "cash_pct_loose": 44.1,
+  "cash_pct_ceiling": 53.1
+ },
+ "resales_person_buyer": {
+  "sales": 9358,
+  "cash_pct_floor": 31.2,
+  "cash_pct_loose": 40.9,
+  "cash_pct_ceiling": 50.7
+ },
+ "resales_company_buyer": {
+  "sales": 1302,
+  "cash_pct_floor": 52.6,
+  "cash_pct_loose": 59.5,
+  "cash_pct_ceiling": 62.1
+ },
+ "resale_houses": {
+  "sales": 8569,
+  "cash_pct_floor": 32.1,
+  "cash_pct_loose": 41.2,
+  "cash_pct_ceiling": 50.6
+ },
+ "resale_condos": {
+  "sales": 2478,
+  "cash_pct_floor": 43.0,
+  "cash_pct_loose": 54.4,
+  "cash_pct_ceiling": 61.5
+ },
+ "resale_houses_by_band": [
+  {
+   "band": "under $150,000",
+   "sales": 905,
+   "cash_pct_floor": 53.6,
+   "cash_pct_loose": 70.1,
+   "cash_pct_ceiling": 75.9
+  },
+  {
+   "band": "$150,000 to $249,999",
+   "sales": 1536,
+   "cash_pct_floor": 32.6,
+   "cash_pct_loose": 42.7,
+   "cash_pct_ceiling": 50.8
+  },
+  {
+   "band": "$250,000 to $349,999",
+   "sales": 2350,
+   "cash_pct_floor": 27.5,
+   "cash_pct_loose": 35.4,
+   "cash_pct_ceiling": 45.3
+  },
+  {
+   "band": "$350,000 to $499,999",
+   "sales": 1948,
+   "cash_pct_floor": 28.9,
+   "cash_pct_loose": 35.1,
+   "cash_pct_ceiling": 46.4
+  },
+  {
+   "band": "$500,000 and up",
+   "sales": 1830,
+   "cash_pct_floor": 30.5,
+   "cash_pct_loose": 39.5,
+   "cash_pct_ceiling": 49.3
+  }
+ ],
+ "resale_condos_by_band": [
+  {
+   "band": "under $150,000",
+   "sales": 580,
+   "cash_pct_floor": 53.3,
+   "cash_pct_loose": 64.8,
+   "cash_pct_ceiling": 70.9
+  },
+  {
+   "band": "$150,000 to $249,999",
+   "sales": 923,
+   "cash_pct_floor": 39.4,
+   "cash_pct_loose": 51.1,
+   "cash_pct_ceiling": 58.9
+  },
+  {
+   "band": "$250,000 to $349,999",
+   "sales": 439,
+   "cash_pct_floor": 41.0,
+   "cash_pct_loose": 53.3,
+   "cash_pct_ceiling": 60.4
+  },
+  {
+   "band": "$350,000 to $499,999",
+   "sales": 297,
+   "cash_pct_floor": 37.7,
+   "cash_pct_loose": 46.5,
+   "cash_pct_ceiling": 55.2
+  },
+  {
+   "band": "$500,000 and up",
+   "sales": 239,
+   "cash_pct_floor": 41.8,
+   "cash_pct_loose": 53.1,
+   "cash_pct_ceiling": 58.6
+  }
+ ],
+ "no_mortgage_resales_by_buyer_kind_floor": {
+  "person": 2922,
+  "company": 685,
+  "trust": 212
+ },
+ "builder_sales": {
+  "sales": 2147,
+  "cash_pct_floor": 22.6,
+  "cash_pct_loose": 28.9,
+  "cash_pct_ceiling": 38.3
+ }
+}

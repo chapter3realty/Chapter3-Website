@@ -1,0 +1,830 @@
+{
+ "method": "straight line from the point to the nearest point of the ocean shoreline, in miles (local flat projection\nat 33.65 N; error well under 1 percent here). House = county land use 100, 101, 102, 110 or 126 (deeds: also not a condo\nor HPR unit). Writes findings.json (aggregates only: no address, PIN or MLS number).",
+ "stretch_cuts_miles_from_south_end": {
+  "Cherry Grove pier": 50.42,
+  "NMB Main Street": 47.64,
+  "Briarcliffe Acres": 43.89,
+  "Myrtle Beach State Park": 29.21,
+  "Surfside Pier": 24.78,
+  "Surfside Beach north edge (Ocean Lakes line)": 25.91,
+  "Garden City Pier": 22.26,
+  "Murrells Inlet jetty (Garden City end)": 19.31,
+  "Huntington Beach State Park": 15.86,
+  "Pawleys Island pier": 9.38
+ },
+ "shore_miles_in_line": 56.9,
+ "stock": {
+  "note": "Horry County house parcels with a building in a strip about 3.5 miles wide; the 5 to 10 and 10+ bands are partial (strip edge)",
+  "county_houses_total": 130922,
+  "by_band": {
+   "under 1/4 mile": {
+    "houses": 5099,
+    "A or AE": 2558,
+    "X or none": 2468,
+    "VE": 73,
+    "pct_high_risk": 51.6,
+    "pct_VE": 1.4
+   },
+   "1/4 to 1/2 mile": {
+    "houses": 5318,
+    "X or none": 4090,
+    "A or AE": 1145,
+    "VE": 83,
+    "pct_high_risk": 23.1,
+    "pct_VE": 1.6
+   },
+   "1/2 to 1 mile": {
+    "houses": 8256,
+    "A or AE": 554,
+    "X or none": 7694,
+    "VE": 8,
+    "pct_high_risk": 6.8,
+    "pct_VE": 0.1
+   },
+   "1 to 2 miles": {
+    "houses": 11384,
+    "A or AE": 344,
+    "X or none": 11040,
+    "pct_high_risk": 3.0,
+    "pct_VE": 0.0
+   },
+   "2 to 5 miles": {
+    "houses": 23349,
+    "not checked": 23349
+   }
+  },
+  "within_half_mile_by_stretch": {
+   "Myrtle Beach": {
+    "X or none": 2233,
+    "houses": 2453,
+    "A or AE": 217,
+    "VE": 3
+   },
+   "Surfside Beach, Garden City and Murrells Inlet": {
+    "X or none": 1259,
+    "houses": 2700,
+    "A or AE": 1370,
+    "VE": 71
+   },
+   "North Myrtle Beach and Cherry Grove": {
+    "X or none": 3066,
+    "houses": 5264,
+    "A or AE": 2116,
+    "VE": 82
+   }
+  },
+  "high_risk_by_twentieth_mile": {
+   "0.0": {
+    "houses": 351,
+    "pct_high_risk": 74.1
+   },
+   "0.05": {
+    "houses": 761,
+    "pct_high_risk": 71.5
+   },
+   "0.1": {
+    "houses": 1306,
+    "pct_high_risk": 51.7
+   },
+   "0.15": {
+    "houses": 1375,
+    "pct_high_risk": 44.4
+   },
+   "0.2": {
+    "houses": 1306,
+    "pct_high_risk": 41.4
+   },
+   "0.25": {
+    "houses": 1225,
+    "pct_high_risk": 35.9
+   },
+   "0.3": {
+    "houses": 1154,
+    "pct_high_risk": 26.6
+   },
+   "0.35": {
+    "houses": 1213,
+    "pct_high_risk": 18.8
+   },
+   "0.4": {
+    "houses": 929,
+    "pct_high_risk": 12.4
+   },
+   "0.45": {
+    "houses": 797,
+    "pct_high_risk": 17.3
+   },
+   "0.5": {
+    "houses": 777,
+    "pct_high_risk": 14.5
+   },
+   "0.55": {
+    "houses": 859,
+    "pct_high_risk": 14.0
+   },
+   "0.6": {
+    "houses": 880,
+    "pct_high_risk": 9.3
+   },
+   "0.65": {
+    "houses": 907,
+    "pct_high_risk": 10.0
+   },
+   "0.7": {
+    "houses": 854,
+    "pct_high_risk": 9.1
+   },
+   "0.75": {
+    "houses": 807,
+    "pct_high_risk": 4.6
+   },
+   "0.8": {
+    "houses": 824,
+    "pct_high_risk": 2.5
+   },
+   "0.85": {
+    "houses": 821,
+    "pct_high_risk": 0.9
+   },
+   "0.9": {
+    "houses": 787,
+    "pct_high_risk": 0.6
+   },
+   "0.95": {
+    "houses": 740,
+    "pct_high_risk": 1.1
+   }
+  }
+ },
+ "deeds": {
+  "source": "Horry County deeds recorded 2025-10-01 to 2026-09-30 (13,194 kept home sales, batch 2026-10-d), houses only",
+  "house_sales_with_point": 7192,
+  "by_band": {
+   "under 1/4 mile": {
+    "sales": 239,
+    "median": 805000,
+    "resales": 236,
+    "median_resale": 805000
+   },
+   "1/4 to 1/2 mile": {
+    "sales": 211,
+    "median": 540000,
+    "resales": 192,
+    "median_resale": 500000
+   },
+   "1/2 to 1 mile": {
+    "sales": 429,
+    "median": 510000,
+    "resales": 368,
+    "median_resale": 500000
+   },
+   "1 to 2 miles": {
+    "sales": 665,
+    "median": 500000,
+    "resales": 524,
+    "median_resale": 495000
+   },
+   "2 to 5 miles": {
+    "sales": 2339,
+    "median": 390000,
+    "resales": 2002,
+    "median_resale": 390000
+   },
+   "5 to 10 miles": {
+    "sales": 1707,
+    "median": 350000,
+    "resales": 1150,
+    "median_resale": 340000
+   },
+   "10 miles or more": {
+    "sales": 1602,
+    "median": 290000,
+    "resales": 1038,
+    "median_resale": 285000
+   }
+  },
+  "by_stretch": {
+   "North Myrtle Beach and Cherry Grove": {
+    "within 1/2 mile": {
+     "sales": 229,
+     "median": 625000,
+     "resales": 224,
+     "median_resale": 620000
+    },
+    "1/2 to 2 miles": {
+     "sales": 386,
+     "median": 555000,
+     "resales": 240,
+     "median_resale": 570000
+    },
+    "2 to 5 miles": {
+     "sales": 612,
+     "median": 350000,
+     "resales": 475,
+     "median_resale": 365000
+    },
+    "ratio_near_to_2_5": 1.79
+   },
+   "Myrtle Beach": {
+    "within 1/2 mile": {
+     "sales": 110,
+     "median": 670000,
+     "resales": 95,
+     "median_resale": 630000
+    },
+    "1/2 to 2 miles": {
+     "sales": 456,
+     "median": 535000,
+     "resales": 414,
+     "median_resale": 535000
+    },
+    "2 to 5 miles": {
+     "sales": 1192,
+     "median": 405000,
+     "resales": 1032,
+     "median_resale": 400000
+    },
+    "ratio_near_to_2_5": 1.65
+   },
+   "Surfside Beach, Garden City and Murrells Inlet": {
+    "within 1/2 mile": {
+     "sales": 111,
+     "median": 775000,
+     "resales": 109,
+     "median_resale": 770000
+    },
+    "1/2 to 2 miles": {
+     "sales": 252,
+     "median": 395000,
+     "resales": 238,
+     "median_resale": 390000
+    },
+    "2 to 5 miles": {
+     "sales": 535,
+     "median": 420000,
+     "resales": 495,
+     "median_resale": 415000
+    },
+    "ratio_near_to_2_5": 1.85
+   },
+   "Litchfield and Pawleys Island (Georgetown County)": {
+    "within 1/2 mile": {
+     "sales": 0,
+     "median": null,
+     "resales": 0,
+     "median_resale": null
+    },
+    "1/2 to 2 miles": {
+     "sales": 0,
+     "median": null,
+     "resales": 0,
+     "median_resale": null
+    },
+    "2 to 5 miles": {
+     "sales": 0,
+     "median": null,
+     "resales": 0,
+     "median_resale": null
+    }
+   }
+  },
+  "all_near_vs_2_5": {
+   "near": {
+    "sales": 450,
+    "median": 675000,
+    "resales": 428,
+    "median_resale": 670000
+   },
+   "two_to_five": {
+    "sales": 2339,
+    "median": 390000,
+    "resales": 2002,
+    "median_resale": 390000
+   }
+  },
+  "share_of_house_sales_within_half_mile_pct": 6.3,
+  "near_sales_under": {
+   "300000": 24,
+   "400000": 72,
+   "500000": 128,
+   "750000": 268,
+   "1000000": 352
+  },
+  "near_sales_under_400k_by_stretch": {
+   "Myrtle Beach": 18,
+   "North Myrtle Beach and Cherry Grove": 49,
+   "Surfside Beach, Garden City and Murrells Inlet": 5
+  },
+  "near_sales_by_stretch_zone": {
+   "North Myrtle Beach and Cherry Grove": {
+    "low or moderate": 116,
+    "high risk": 113
+   },
+   "Myrtle Beach": {
+    "low or moderate": 103,
+    "high risk": 7
+   },
+   "Surfside Beach, Garden City and Murrells Inlet": {
+    "high risk": 71,
+    "low or moderate": 40
+   },
+   "Litchfield and Pawleys Island (Georgetown County)": {}
+  },
+  "first_tenth_mile": {
+   "sales": 69,
+   "median": 1330000,
+   "resales": 67,
+   "median_resale": 1330000
+  },
+  "tenth_to_quarter": {
+   "sales": 170,
+   "median": 705000,
+   "resales": 169,
+   "median_resale": 705000
+  }
+ },
+ "listings": {
+  "pulled": "2026-11-08T07:17:37.604087+00:00",
+  "api": "https://chapter3realty.com/homes/api/map?type=house (and has= keys)",
+  "set_totals": {
+   "all": 3677,
+   "near_beach": 1024,
+   "walk_to_beach": 490,
+   "beach_1mi": 697,
+   "east_of_17": 584,
+   "second_row": 55,
+   "water_ocean": 27,
+   "flood_zone": 125,
+   "str_allowed": 462,
+   "golf_cart_ok": 1891,
+   "county_horry": 2950,
+   "county_georgetown": 385,
+   "no_hoa": 1144
+  },
+  "sc_houses_with_point": 3404,
+  "by_band": {
+   "under 1/4 mile": {
+    "listings": 202,
+    "median_ask": 960000,
+    "median_sqft": 2350,
+    "median_ask_per_sqft": 445,
+    "no_hoa": 155,
+    "under_400k": 3,
+    "under_500k": 11
+   },
+   "1/4 to 1/2 mile": {
+    "listings": 154,
+    "median_ask": 680000,
+    "median_sqft": 1800,
+    "median_ask_per_sqft": 329,
+    "no_hoa": 97,
+    "under_400k": 22,
+    "under_500k": 45
+   },
+   "1/2 to 1 mile": {
+    "listings": 163,
+    "median_ask": 650000,
+    "median_sqft": 2200,
+    "median_ask_per_sqft": 300,
+    "no_hoa": 64,
+    "under_400k": 20,
+    "under_500k": 43
+   },
+   "1 to 2 miles": {
+    "listings": 309,
+    "median_ask": 650000,
+    "median_sqft": 2350,
+    "median_ask_per_sqft": 280,
+    "no_hoa": 51,
+    "under_400k": 36,
+    "under_500k": 85
+   },
+   "2 to 5 miles": {
+    "listings": 865,
+    "median_ask": 450000,
+    "median_sqft": 2100,
+    "median_ask_per_sqft": 219,
+    "no_hoa": 91,
+    "under_400k": 342,
+    "under_500k": 537
+   },
+   "5 to 10 miles": {
+    "listings": 664,
+    "median_ask": 370000,
+    "median_sqft": 2000,
+    "median_ask_per_sqft": 194,
+    "no_hoa": 100,
+    "under_400k": 398,
+    "under_500k": 518
+   },
+   "10 miles or more": {
+    "listings": 1030,
+    "median_ask": 315000,
+    "median_sqft": 1750,
+    "median_ask_per_sqft": 186,
+    "no_hoa": 485,
+    "under_400k": 791,
+    "under_500k": 900
+   }
+  },
+  "by_stretch": {
+   "North Myrtle Beach and Cherry Grove": {
+    "within 1/2 mile": {
+     "listings": 143,
+     "median_ask": 750000,
+     "median_sqft": 1850,
+     "median_ask_per_sqft": 375,
+     "no_hoa": 111,
+     "under_400k": 16,
+     "under_500k": 33
+    },
+    "1/2 to 2 miles": {
+     "listings": 115,
+     "median_ask": 650000,
+     "median_sqft": 2350,
+     "median_ask_per_sqft": 281,
+     "no_hoa": 27,
+     "under_400k": 11,
+     "under_500k": 27
+    },
+    "2 to 5 miles": {
+     "listings": 220,
+     "median_ask": 395000,
+     "median_sqft": 1900,
+     "median_ask_per_sqft": 206,
+     "no_hoa": 22,
+     "under_400k": 122,
+     "under_500k": 171
+    }
+   },
+   "Myrtle Beach": {
+    "within 1/2 mile": {
+     "listings": 101,
+     "median_ask": 725000,
+     "median_sqft": 2350,
+     "median_ask_per_sqft": 363,
+     "no_hoa": 61,
+     "under_400k": 6,
+     "under_500k": 17
+    },
+    "1/2 to 2 miles": {
+     "listings": 196,
+     "median_ask": 650000,
+     "median_sqft": 2300,
+     "median_ask_per_sqft": 292,
+     "no_hoa": 22,
+     "under_400k": 26,
+     "under_500k": 54
+    },
+    "2 to 5 miles": {
+     "listings": 436,
+     "median_ask": 450000,
+     "median_sqft": 2200,
+     "median_ask_per_sqft": 214,
+     "no_hoa": 41,
+     "under_400k": 170,
+     "under_500k": 273
+    }
+   },
+   "Surfside Beach, Garden City and Murrells Inlet": {
+    "within 1/2 mile": {
+     "listings": 71,
+     "median_ask": 990000,
+     "median_sqft": 2100,
+     "median_ask_per_sqft": 460,
+     "no_hoa": 60,
+     "under_400k": 2,
+     "under_500k": 5
+    },
+    "1/2 to 2 miles": {
+     "listings": 95,
+     "median_ask": 570000,
+     "median_sqft": 2000,
+     "median_ask_per_sqft": 279,
+     "no_hoa": 39,
+     "under_400k": 18,
+     "under_500k": 36
+    },
+    "2 to 5 miles": {
+     "listings": 149,
+     "median_ask": 490000,
+     "median_sqft": 2150,
+     "median_ask_per_sqft": 230,
+     "no_hoa": 7,
+     "under_400k": 48,
+     "under_500k": 85
+    }
+   },
+   "Litchfield and Pawleys Island (Georgetown County)": {
+    "within 1/2 mile": {
+     "listings": 41,
+     "median_ask": 2100000,
+     "median_sqft": 3000,
+     "median_ask_per_sqft": 613,
+     "no_hoa": 20,
+     "under_400k": 1,
+     "under_500k": 1
+    },
+    "1/2 to 2 miles": {
+     "listings": 66,
+     "median_ask": 780000,
+     "median_sqft": 2450,
+     "median_ask_per_sqft": 328,
+     "no_hoa": 27,
+     "under_400k": 1,
+     "under_500k": 11
+    },
+    "2 to 5 miles": {
+     "listings": 60,
+     "median_ask": 900000,
+     "median_sqft": 2850,
+     "median_ask_per_sqft": 315,
+     "no_hoa": 21,
+     "under_400k": 2,
+     "under_500k": 8
+    }
+   }
+  },
+  "within_half_mile_by_town": {
+   "North Myrtle Beach": {
+    "listings": 143,
+    "median_ask": 750000,
+    "median_sqft": 1850,
+    "median_ask_per_sqft": 375,
+    "no_hoa": 111,
+    "under_400k": 16,
+    "under_500k": 33
+   },
+   "Myrtle Beach": {
+    "listings": 100,
+    "median_ask": 720000,
+    "median_sqft": 2300,
+    "median_ask_per_sqft": 361,
+    "no_hoa": 60,
+    "under_400k": 6,
+    "under_500k": 17
+   },
+   "Surfside Beach": {
+    "listings": 37,
+    "median_ask": 870000,
+    "median_sqft": 2000,
+    "median_ask_per_sqft": 450,
+    "no_hoa": 33,
+    "under_400k": 1,
+    "under_500k": 4
+   },
+   "Pawleys Island": {
+    "listings": 28,
+    "median_ask": 1165000,
+    "median_sqft": 2450,
+    "median_ask_per_sqft": 508,
+    "no_hoa": 14,
+    "under_400k": 1,
+    "under_500k": 1
+   },
+   "Murrells Inlet": {
+    "listings": 25,
+    "median_ask": 1450000,
+    "median_sqft": 2500,
+    "median_ask_per_sqft": 527,
+    "no_hoa": 19,
+    "under_400k": 1,
+    "under_500k": 1
+   },
+   "Garden City Beach": {
+    "listings": 18,
+    "median_ask": 1200000,
+    "median_sqft": 2400,
+    "median_ask_per_sqft": 482,
+    "no_hoa": 14,
+    "under_400k": 0,
+    "under_500k": 0
+   }
+  },
+  "search_keys_measured": {
+   "walk_to_beach": {
+    "houses": 405,
+    "median_miles": 0.25,
+    "p90_miles": 0.55,
+    "max_miles": 1.32
+   },
+   "beach_1mi": {
+    "houses": 612,
+    "median_miles": 0.4,
+    "p90_miles": 1.13,
+    "max_miles": 1.77
+   },
+   "near_beach": {
+    "houses": 931,
+    "median_miles": 0.85,
+    "p90_miles": 2.03,
+    "max_miles": 11.64
+   },
+   "east_of_17": {
+    "houses": 530,
+    "median_miles": 0.47,
+    "p90_miles": 2.08,
+    "max_miles": 107.51
+   },
+   "second_row": {
+    "houses": 51,
+    "median_miles": 0.11,
+    "p90_miles": 1.69,
+    "max_miles": 18.01
+   },
+   "water_ocean": {
+    "houses": 25,
+    "median_miles": 0.03,
+    "p90_miles": 0.08,
+    "max_miles": 1.1
+   },
+   "flood_zone": {
+    "houses": 115,
+    "median_miles": 0.41,
+    "p90_miles": 11.53,
+    "max_miles": 107.51
+   }
+  },
+  "first_tenth_mile": {
+   "listings": 51,
+   "median_ask": 1800000,
+   "median_sqft": 2700,
+   "median_ask_per_sqft": 731,
+   "no_hoa": 38,
+   "under_400k": 1,
+   "under_500k": 1
+  },
+  "tenth_to_quarter": {
+   "listings": 151,
+   "median_ask": 885000,
+   "median_sqft": 2300,
+   "median_ask_per_sqft": 414,
+   "no_hoa": 117,
+   "under_400k": 2,
+   "under_500k": 10
+  }
+ },
+ "access": {
+  "source": "SCDES Beach Access map, layer ACCESS_PTS, Horry and Georgetown counties",
+  "points": 451,
+  "by_beach": {
+   "North Myrtle Beach": 174,
+   "Myrtle Beach": 137,
+   "Unincorporated Georgetown County": 41,
+   "Surfside Beach": 32,
+   "Garden City": 17,
+   "North Litchfield Beach": 15,
+   "Pawley's Island": 8,
+   "Litchfield Beach": 7,
+   "Myrtle Beach State Park": 7,
+   "Unincorporated Horry County": 6,
+   "Atlantic Beach": 3,
+   "Huntington Beach State Park": 3,
+   "Unincorporated Horry County - Apache Family Campground": 1
+  },
+  "last_update_years": {
+   "2019": 76,
+   "2014": 199,
+   "2013": 166,
+   "2022": 10
+  },
+  "by_stretch": {
+   "North Myrtle Beach and Cherry Grove": {
+    "points": 177,
+    "shore_miles": 13.0,
+    "per_mile": 13.6
+   },
+   "Myrtle Beach": {
+    "points": 151,
+    "shore_miles": 18.0,
+    "per_mile": 8.4
+   },
+   "Surfside Beach, Garden City and Murrells Inlet": {
+    "points": 87,
+    "shore_miles": 6.6,
+    "per_mile": 13.2
+   },
+   "Litchfield and Pawleys Island (Georgetown County)": {
+    "points": 36,
+    "shore_miles": 19.3,
+    "per_mile": 1.9
+   }
+  },
+  "houses_within_half_mile_to_nearest_access_miles": {
+   "houses": 10417,
+   "median": 0.19,
+   "pct_within_quarter": 63.0
+  }
+ },
+ "chart_quarter_mile": [
+  {
+   "from_mile": 0.0,
+   "to_mile": 0.25,
+   "house_sales": 239,
+   "median_sale": 805000,
+   "listings": 202,
+   "median_ask_per_sqft": 445,
+   "median_sqft": 2350
+  },
+  {
+   "from_mile": 0.25,
+   "to_mile": 0.5,
+   "house_sales": 211,
+   "median_sale": 540000,
+   "listings": 154,
+   "median_ask_per_sqft": 329,
+   "median_sqft": 1800
+  },
+  {
+   "from_mile": 0.5,
+   "to_mile": 0.75,
+   "house_sales": 180,
+   "median_sale": 540000,
+   "listings": 78,
+   "median_ask_per_sqft": 329,
+   "median_sqft": 2200
+  },
+  {
+   "from_mile": 0.75,
+   "to_mile": 1.0,
+   "house_sales": 249,
+   "median_sale": 480000,
+   "listings": 85,
+   "median_ask_per_sqft": 281,
+   "median_sqft": 2150
+  },
+  {
+   "from_mile": 1.0,
+   "to_mile": 1.25,
+   "house_sales": 225,
+   "median_sale": 450000,
+   "listings": 124,
+   "median_ask_per_sqft": 283,
+   "median_sqft": 2100
+  },
+  {
+   "from_mile": 1.25,
+   "to_mile": 1.5,
+   "house_sales": 145,
+   "median_sale": 515000,
+   "listings": 78,
+   "median_ask_per_sqft": 287,
+   "median_sqft": 2250
+  },
+  {
+   "from_mile": 1.5,
+   "to_mile": 1.75,
+   "house_sales": 167,
+   "median_sale": 540000,
+   "listings": 54,
+   "median_ask_per_sqft": 273,
+   "median_sqft": 2800
+  },
+  {
+   "from_mile": 1.75,
+   "to_mile": 2.0,
+   "house_sales": 128,
+   "median_sale": 520000,
+   "listings": 53,
+   "median_ask_per_sqft": 274,
+   "median_sqft": 2700
+  },
+  {
+   "from_mile": 2.0,
+   "to_mile": 2.25,
+   "house_sales": 242,
+   "median_sale": 425000,
+   "listings": 90,
+   "median_ask_per_sqft": 245,
+   "median_sqft": 2350
+  },
+  {
+   "from_mile": 2.25,
+   "to_mile": 2.5,
+   "house_sales": 182,
+   "median_sale": 420000,
+   "listings": 107,
+   "median_ask_per_sqft": 244,
+   "median_sqft": 2150
+  },
+  {
+   "from_mile": 2.5,
+   "to_mile": 2.75,
+   "house_sales": 199,
+   "median_sale": 420000,
+   "listings": 59,
+   "median_ask_per_sqft": 230,
+   "median_sqft": 2000
+  },
+  {
+   "from_mile": 2.75,
+   "to_mile": 3.0,
+   "house_sales": 195,
+   "median_sale": 390000,
+   "listings": 93,
+   "median_ask_per_sqft": 227,
+   "median_sqft": 2200
+  }
+ ],
+ "verifier_note": "Campground homes dropped: 79 pins (6001 S Kings Hwy, 9700 Kings Rd)"
+}

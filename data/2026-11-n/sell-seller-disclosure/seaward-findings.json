@@ -1,0 +1,83 @@
+{
+ "band_degrees": 0.004,
+ "all_parcels_touching_band": 11660,
+ "residential_with_building_touching_band": 10917,
+ "residential_with_building": 10740,
+ "dropped_over_150m": 177,
+ "by_kind": {
+  "condo": 9609,
+  "residential other": 607,
+  "house": 515,
+  "townhouse": 9
+ },
+ "by_beach": {
+  "North Myrtle Beach": 4181,
+  "Myrtle Beach": 2952,
+  "Arcadian Shores": 1766,
+  "Garden City": 1368,
+  "Surfside": 356,
+  "Briarcliffe Acres": 117
+ },
+ "landuse_all_top": [
+  [
+   "107",
+   9781
+  ],
+  [
+   "108",
+   506
+  ],
+  [
+   "101",
+   480
+  ],
+  [
+   "500",
+   239
+  ],
+  [
+   "None",
+   112
+  ],
+  [
+   "600",
+   94
+  ],
+  [
+   "100",
+   76
+  ],
+  [
+   "106",
+   62
+  ],
+  [
+   "102",
+   40
+  ],
+  [
+   "300",
+   37
+  ],
+  [
+   "356",
+   22
+  ],
+  [
+   "355",
+   19
+  ],
+  [
+   "123",
+   19
+  ],
+  [
+   "314",
+   17
+  ],
+  [
+   "317",
+   15
+  ]
+ ]
+}

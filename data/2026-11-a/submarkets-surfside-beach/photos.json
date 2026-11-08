@@ -1,0 +1,194 @@
+{
+ "_readme": "Photo records for /submarkets/surfside-beach/ (batch 2026-11-a). The first two are new crops of NOAA ERI frame 185159_0112261658253_036_RGB1 made for this page; the last two are records of photos already on the site, copied unchanged from data/2026-10-b/photos.json (no-hoa) and data/2026-11-a/invest-where-to-buy/photos.json.",
+ "photos": [
+  {
+   "source": "https://noaa-eri-pds.s3.amazonaws.com/index.html#2026_Pre_Event/EC2601a_OB_N_RGB/",
+   "source_name": "NOAA Emergency Response Imagery",
+   "author": "NOAA National Geodetic Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+   "credit": "Photo: NOAA National Geodetic Survey, public domain.",
+   "license_note": "17 U.S.C. 105(a): \"Copyright protection under this title is not available for any work of the United States Government\". NOAA's terms on the Registry of Open Data (https://registry.opendata.aws/noaa-eri/): \"NOAA data disseminated through NODD are open to the public and can be used as desired.\" ... \"NOAA requests attribution for the use or dissemination of unaltered NOAA data. However, it is not permissible to state or imply endorsement by or affiliation with NOAA. If you modify NOAA data, you may not state or imply that it is original, unaltered NOAA data.\" So: credit NOAA, say what Chapter3 changed (changes), never suggest NOAA endorses Chapter3. Same terms as the Cherry Grove record above.",
+   "terms_urls": [
+    "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+    "https://registry.opendata.aws/noaa-eri/",
+    "https://www.fisheries.noaa.gov/inport/item/67562"
+   ],
+   "taken": "2026-01-12",
+   "digital_source_type": "digitalCapture",
+   "slug": "submarkets-surfside-beach",
+   "file": "images/2026-11-a/submarkets-surfside-beach/surfside-beach-rental-line-from-above.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-surfside-beach/surfside-beach-rental-line-from-above-600w.webp",
+    "1200": "images/2026-11-a/submarkets-surfside-beach/surfside-beach-rental-line-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Where nightly rentals stop in Surfside Beach, near the pier, NOAA aerial, January 2026",
+   "what": "Surfside Beach from the air on January 12, 2026, near the pier: tree-covered streets of houses at the left, closely set beach houses on the blocks near the ocean at the right, the beach, the ocean and the pier. Chapter3 drew a green line around the R1 and R2 zoning districts and an orange line around the R3 district, and labelled each side and the pier. Land outside both lines, around the tennis courts, the townhouses and the pier, is in other districts.",
+   "caption": "Near the pier, from the air. Inside the green line: inland streets, no rentals under 30 days. Inside the orange line: nightly rentals allowed.",
+   "alt": "Aerial photo of Surfside Beach near the pier. A green line circles the inland streets of houses under trees, labelled no nightly rentals, R1 and R2. An orange line circles the blocks of beach houses near the ocean, labelled nightly rentals allowed, R3.",
+   "place": {
+    "city": "Surfside Beach",
+    "sublocation": "between Poplar Drive and the ocean, either side of the pier (Town of Surfside Beach)"
+   },
+   "changes": "Chapter3 Realty cut this view from one NOAA aerial photo, resized it, adjusted the colors, drew the zoning district lines and added labels",
+   "labels": "Zoning lines are the town's zoning map as traced onto county parcels (data/2026-11-a/submarkets-surfside-beach/map-layers.geojson; ledger rows 3 and 4), placed through the frame's own corner coordinates (.geom; plane-to-plane fit, checked against the county road centerlines). 'Pier' at the Horry County OpenData Parks polygon 'Surfside Pier' centroid (-78.971344, 33.604653). Scripts: data/2026-11-a/submarkets-surfside-beach/images/line.py, proj.py, render.py.",
+   "frame": {
+    "raw_pixels": [
+     2800,
+     2640,
+     8800,
+     7140
+    ],
+    "raw_size": "14204x10652",
+    "note": "a raw frame, tilted about 20 degrees from straight down, not a map: the ocean is at the right"
+   },
+   "original_size": "6000x4500 pixels of the raw frame, resized to 2400 wide, colors adjusted, zoning lines and labels drawn",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-a/submarkets-surfside-beach/surfside-beach-rental-line-from-above-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-a/submarkets-surfside-beach/surfside-beach-rental-line-from-above-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-a/submarkets-surfside-beach/surfside-beach-rental-line-from-above-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "crop_source": "the same NOAA view with the zoning lines and without labels (line.py plain), cut to 1x1, 4x3 and 16x9 from the center with tools/photos.js crops",
+   "source_files": [
+    "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/raw/185159_0112261658253_036_RGB1.jpg",
+    "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/raw/185159_0112261658253_036_RGB1.geom"
+   ],
+   "provenance": "U.S. government aerial photo: NOAA National Geodetic Survey (NGS), Remote Sensing Division, Emergency Response Imagery, 2026 pre-event coastal collection, East Coast group EC2601a. Frame 185159_0112261658253_036_RGB1, flown 2026-01-12 at about 16:58 UTC (the frame name carries 011226 1658; the exterior orientation file 0122026_RGB_1_Oblique_EO.txt, event 201, puts the camera at 33.6108, -78.9802, about 2,285 m up). Downloaded again from the public S3 bucket noaa-eri-pds on 2026-11-03 for this page."
+  },
+  {
+   "source": "https://noaa-eri-pds.s3.amazonaws.com/index.html#2026_Pre_Event/EC2601a_OB_N_RGB/",
+   "source_name": "NOAA Emergency Response Imagery",
+   "author": "NOAA National Geodetic Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+   "credit": "Photo: NOAA National Geodetic Survey, public domain.",
+   "license_note": "17 U.S.C. 105(a): \"Copyright protection under this title is not available for any work of the United States Government\". NOAA's terms on the Registry of Open Data (https://registry.opendata.aws/noaa-eri/): \"NOAA data disseminated through NODD are open to the public and can be used as desired.\" ... \"NOAA requests attribution for the use or dissemination of unaltered NOAA data. However, it is not permissible to state or imply endorsement by or affiliation with NOAA. If you modify NOAA data, you may not state or imply that it is original, unaltered NOAA data.\" So: credit NOAA, say what Chapter3 changed (changes), never suggest NOAA endorses Chapter3. Same terms as the Cherry Grove record above.",
+   "terms_urls": [
+    "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+    "https://registry.opendata.aws/noaa-eri/",
+    "https://www.fisheries.noaa.gov/inport/item/67562"
+   ],
+   "taken": "2026-01-12",
+   "digital_source_type": "digitalCapture",
+   "slug": "submarkets-surfside-beach",
+   "file": "images/2026-11-a/submarkets-surfside-beach/surfside-beach-pier-from-above-2026.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-surfside-beach/surfside-beach-pier-from-above-2026-600w.webp",
+    "1200": "images/2026-11-a/submarkets-surfside-beach/surfside-beach-pier-from-above-2026-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "The Surfside Beach Pier from the air, NOAA, January 2026",
+   "what": "The concrete Surfside Beach Pier from the air on January 12, 2026, running from the beach into the ocean, labelled, with the pier buildings, the beach parking lots and streets of beach houses behind the sand.",
+   "caption": "The concrete pier from the air, with the beach parking lots and the streets of beach houses behind it.",
+   "alt": "Aerial photo of the Surfside Beach Pier, labelled, running from a wide beach into a green ocean, with parking lots and rows of beach houses behind the sand",
+   "place": {
+    "city": "Surfside Beach",
+    "sublocation": "the pier at 11 South Ocean Boulevard"
+   },
+   "changes": "Chapter3 Realty cut this view from one NOAA aerial photo, resized it, adjusted the colors and added a label",
+   "labels": "'Surfside Beach Pier' above the Horry County OpenData Parks polygon 'Surfside Pier' centroid (-78.971344, 33.604653), placed through the frame's corner coordinates. Script: data/2026-11-a/submarkets-surfside-beach/images/pier.py.",
+   "frame": {
+    "raw_pixels": [
+     5479,
+     4001,
+     9079,
+     6701
+    ],
+    "raw_size": "14204x10652",
+    "note": "a raw frame, tilted about 20 degrees from straight down: the ocean is at the right"
+   },
+   "original_size": "3600x2700 pixels of the raw frame, resized to 2400 wide, colors adjusted, label drawn",
+   "source_files": [
+    "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/raw/185159_0112261658253_036_RGB1.jpg",
+    "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/raw/185159_0112261658253_036_RGB1.geom"
+   ],
+   "provenance": "U.S. government aerial photo: NOAA National Geodetic Survey (NGS), Remote Sensing Division, Emergency Response Imagery, 2026 pre-event coastal collection, East Coast group EC2601a. Frame 185159_0112261658253_036_RGB1, flown 2026-01-12 at about 16:58 UTC (the frame name carries 011226 1658; the exterior orientation file 0122026_RGB_1_Oblique_EO.txt, event 201, puts the camera at 33.6108, -78.9802, about 2,285 m up). Downloaded again from the public S3 bucket noaa-eri-pds on 2026-11-03 for this page."
+  },
+  {
+   "slug": "no-hoa",
+   "file": "images/buyers/no-hoa/surfside-beach-houses-from-the-sand.webp",
+   "variants": {
+    "600": "images/buyers/no-hoa/surfside-beach-houses-from-the-sand-600w.webp",
+    "1200": "images/buyers/no-hoa/surfside-beach-houses-from-the-sand-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Surfside Beach Shoreline",
+   "what": "Two- and three-story beach houses in a row behind the dunes at Surfside Beach, seen from the wide sand beach.",
+   "caption": "Beach houses along the sand at Surfside Beach.",
+   "alt": "A row of two- and three-story beach houses in blue, yellow and gray behind low dunes, seen across a wide sand beach under a blue sky at Surfside Beach",
+   "place": {
+    "city": "Surfside Beach",
+    "sublocation": "Oceanfront"
+   },
+   "source": "https://commons.wikimedia.org/wiki/File:Surfside_Beach_Shoreline.jpg",
+   "source_name": "Wikimedia Commons",
+   "commons_page": "https://commons.wikimedia.org/wiki/File:Surfside_Beach_Shoreline.jpg",
+   "author": "BullDawg2021",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "credit": "Photo: BullDawg2021, CC BY-SA 4.0, via Wikimedia Commons",
+   "provenance": "own work (Commons: source 'Own work', uploaded by the author BullDawg2021). Made from the Commons 3840 px rendering. The same file is used in batch 2026-10-a (images/55-plus/seasons-at-prince-creek-west/surfside-beach-shoreline.webp).",
+   "taken": "2023-07-16",
+   "original_size": "4032x3024",
+   "share_alike": true
+  },
+  {
+   "slug": "invest-where-to-buy",
+   "file": "images/2026-11-a/invest-where-to-buy/surfside-beach-pier-and-houses-2011.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-where-to-buy/surfside-beach-pier-and-houses-2011-600w.webp",
+    "1200": "images/2026-11-a/invest-where-to-buy/surfside-beach-pier-and-houses-2011-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "The Surfside Beach pier and rows of raised beach houses, USGS oblique aerial photo, August 24, 2011",
+   "what": "The oceanfront of the Town of Surfside Beach seen from a plane over the ocean: the wooden fishing pier runs out from the beach in the middle, with a parking lot and a mid-rise building to its left and close rows of raised two- and three-story beach houses to its right. Streets of houses and trees fill the background. People on the beach are specks; no sign, plate or name is readable.",
+   "caption": "The pier and rows of raised beach houses in Surfside Beach.",
+   "alt": "The Surfside Beach fishing pier with a parking lot on one side and rows of raised beach houses on the other, seen from over the ocean",
+   "place": {
+    "city": "Surfside Beach",
+    "sublocation": "The pier and the oceanfront of the Town of Surfside Beach (Horry County tax district 660)"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "display_credit": "USGS photo, 2011",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_175655d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_175500.zip; aircraft position 33.600147 N, 78.968485 W (11CCH03-Photolocations.csv; the position of the plane, not of the buildings). Read from the zip by HTTP range request on 2026-11-02; 3,466,285 bytes, md5 585a2937b2965ba2c3e901527bc737f6. Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. Not a frame used on any other page (others use 174830, 175156, 175537, 175948, 180052, 180133, 180143, 180150, 180158, 180608 and 181208).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size (3008 x 1960) by the writer on 2026-11-02. Parcels landward of the plane's position, queried 2026-11-02: -78.9745 33.6030 to -78.9690 33.6075: 258 parcels, all tax district 660 (Town of Surfside Beach). The caption names no building and says only what the frame shows and the year.",
+   "annotation_sources": {
+    "where": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24 ; https://gis1.georgetowncountysc.org/portal/rest/services/GCGIS_Export/FeatureServer/2 (read 2026-11-02)"
+   },
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "crop_note": "Cut as one 2708 x 1523 band (x 150 to 2858, y 150 to 1673 of the frame), then resized."
+  }
+ ]
+}

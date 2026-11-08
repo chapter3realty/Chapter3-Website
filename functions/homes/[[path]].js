@@ -1155,15 +1155,15 @@ async function placePage(context, slug, gate, anonymous = false) {
   const ls = Array.isArray(j.listings) ? j.listings : [];
   const guides = (place.pages || []).map((u) => `<a href="${esc(u)}">${esc(u.split("/").filter(Boolean).pop().replace(/-/g, " "))}</a>`).join(" · ");
   const body = `${crumbs([["/", "Home"], ["/homes/", "Homes for sale"], [null, place.name]])}
-<h1>Homes for sale in ${esc(place.name)}</h1>
+<h1>${esc(place.title || `Homes for sale in ${place.name}`)}</h1>
 <p class="hx-lead">${esc(String(j.total ?? ls.length))} ${j.total === 1 ? "home" : "homes"} for sale now, from the Coastal Carolinas MLS. Each card names its listing firm.${place.q.near ? " Distances are straight-line miles." : ""}${place.q.hoa !== undefined ? ` ${NO_HOA_NOTE}` : ""}</p>
 ${signedBar(j.tier)}${grid(ls, hearts)}
 ${j.tier === "public" && ls.length ? signupPrompt(`See every photo and the HOA fee for homes in ${place.name}.`) : ""}
 ${guides ? `<p class="hx-small">Read about ${esc(place.name)}: ${guides}</p>` : ""}
 ${disclaimer(j.meta)}`;
   return page(context, gate, {
-    title: `Homes for sale in ${place.name}`,
-    description: `Homes for sale in ${place.name}, from the Coastal Carolinas MLS and refreshed every few minutes, with Chapter3 Realty.`.slice(0, 160),
+    title: place.title || `Homes for sale in ${place.name}`,
+    description: `${place.title || `Homes for sale in ${place.name}`}, from the Coastal Carolinas MLS and refreshed every few minutes, with Chapter3 Realty.`.slice(0, 160),
     canonical: `${SITE}/homes/near/${slug}/`,
     robots: ls.length ? "index, follow" : "noindex, follow",
     body,

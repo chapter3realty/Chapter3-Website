@@ -1,0 +1,553 @@
+{
+ "pulled": "2026-11-08T13:39:14.576990+00:00",
+ "api": "https://chapter3realty.com/homes/api/map?",
+ "neighborhoods": {
+  "The Farm at Carolina Forest": {
+   "subdivision_words": "Carolina Forest - The Farm",
+   "houses": 15,
+   "community_pool": 13,
+   "private_pool": 0,
+   "median_ask_5k": 350000,
+   "at_or_under_300k": 1,
+   "at_or_under_500k": 15
+  },
+  "Berkshire Forest": {
+   "subdivision_words": "Berkshire Forest",
+   "houses": 17,
+   "community_pool": 15,
+   "private_pool": 0,
+   "median_ask_5k": 450000,
+   "at_or_under_300k": 0,
+   "at_or_under_500k": 13
+  },
+  "Waterbridge": {
+   "subdivision_words": "Waterbridge",
+   "houses": 27,
+   "community_pool": 26,
+   "private_pool": 2,
+   "median_ask_5k": 680000,
+   "at_or_under_300k": 0,
+   "at_or_under_500k": 7
+  },
+  "Plantation Lakes": {
+   "subdivision_words": "Plantation Lakes",
+   "houses": 14,
+   "community_pool": 14,
+   "private_pool": 5,
+   "median_ask_5k": 800000,
+   "at_or_under_300k": 0,
+   "at_or_under_500k": 0
+  },
+  "Myrtle Beach Golf and Yacht Club": {
+   "subdivision_words": "Golf & Yacht",
+   "houses": 11,
+   "community_pool": 9,
+   "private_pool": 0,
+   "median_ask_5k": 250000,
+   "at_or_under_300k": 9,
+   "at_or_under_500k": 11
+  }
+ },
+ "townhouse_community_pool": {
+  "listings": 149,
+  "median_ask_5k": 270000,
+  "all_townhouses": 298
+ },
+ "calls": [
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry",
+   "total": 15,
+   "echo": "type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry%2Ccommunity_pool",
+   "total": 13,
+   "echo": "type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry%2Cpool",
+   "total": 0,
+   "echo": "type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry%2Cpool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry",
+   "total": 15,
+   "echo": "type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry&max=5000000",
+   "total": 15,
+   "echo": "type=house&max=5000000&subdivision=Carolina+Forest+-+The+Farm&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry&max=2500000",
+   "total": 15,
+   "echo": "type=house&max=2500000&subdivision=Carolina+Forest+-+The+Farm&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry&max=1250000",
+   "total": 15,
+   "echo": "type=house&max=1250000&subdivision=Carolina+Forest+-+The+Farm&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry&max=625000",
+   "total": 15,
+   "echo": "type=house&max=625000&subdivision=Carolina+Forest+-+The+Farm&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry&max=310000",
+   "total": 2,
+   "echo": "type=house&max=310000&subdivision=Carolina+Forest+-+The+Farm&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry&max=465000",
+   "total": 13,
+   "echo": "type=house&max=465000&subdivision=Carolina+Forest+-+The+Farm&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry&max=385000",
+   "total": 11,
+   "echo": "type=house&max=385000&subdivision=Carolina+Forest+-+The+Farm&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry&max=345000",
+   "total": 6,
+   "echo": "type=house&max=345000&subdivision=Carolina+Forest+-+The+Farm&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry&max=365000",
+   "total": 9,
+   "echo": "type=house&max=365000&subdivision=Carolina+Forest+-+The+Farm&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry&max=355000",
+   "total": 8,
+   "echo": "type=house&max=355000&subdivision=Carolina+Forest+-+The+Farm&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry&max=350000",
+   "total": 8,
+   "echo": "type=house&max=350000&subdivision=Carolina+Forest+-+The+Farm&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry&max=300000",
+   "total": 1,
+   "echo": "type=house&max=300000&subdivision=Carolina+Forest+-+The+Farm&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Carolina+Forest+-+The+Farm&has=county_horry&max=500000",
+   "total": 15,
+   "echo": "type=house&max=500000&subdivision=Carolina+Forest+-+The+Farm&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry",
+   "total": 17,
+   "echo": "type=house&subdivision=Berkshire+Forest&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry%2Ccommunity_pool",
+   "total": 15,
+   "echo": "type=house&subdivision=Berkshire+Forest&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry%2Cpool",
+   "total": 0,
+   "echo": "type=house&subdivision=Berkshire+Forest&has=county_horry%2Cpool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry",
+   "total": 17,
+   "echo": "type=house&subdivision=Berkshire+Forest&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry&max=5000000",
+   "total": 17,
+   "echo": "type=house&max=5000000&subdivision=Berkshire+Forest&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry&max=2500000",
+   "total": 17,
+   "echo": "type=house&max=2500000&subdivision=Berkshire+Forest&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry&max=1250000",
+   "total": 17,
+   "echo": "type=house&max=1250000&subdivision=Berkshire+Forest&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry&max=625000",
+   "total": 16,
+   "echo": "type=house&max=625000&subdivision=Berkshire+Forest&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry&max=310000",
+   "total": 0,
+   "echo": "type=house&max=310000&subdivision=Berkshire+Forest&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry&max=465000",
+   "total": 11,
+   "echo": "type=house&max=465000&subdivision=Berkshire+Forest&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry&max=385000",
+   "total": 3,
+   "echo": "type=house&max=385000&subdivision=Berkshire+Forest&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry&max=425000",
+   "total": 7,
+   "echo": "type=house&max=425000&subdivision=Berkshire+Forest&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry&max=445000",
+   "total": 8,
+   "echo": "type=house&max=445000&subdivision=Berkshire+Forest&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry&max=455000",
+   "total": 10,
+   "echo": "type=house&max=455000&subdivision=Berkshire+Forest&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry&max=450000",
+   "total": 10,
+   "echo": "type=house&max=450000&subdivision=Berkshire+Forest&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry&max=300000",
+   "total": 0,
+   "echo": "type=house&max=300000&subdivision=Berkshire+Forest&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Berkshire+Forest&has=county_horry&max=500000",
+   "total": 13,
+   "echo": "type=house&max=500000&subdivision=Berkshire+Forest&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry",
+   "total": 27,
+   "echo": "type=house&subdivision=Waterbridge&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry%2Ccommunity_pool",
+   "total": 26,
+   "echo": "type=house&subdivision=Waterbridge&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry%2Cpool",
+   "total": 2,
+   "echo": "type=house&subdivision=Waterbridge&has=county_horry%2Cpool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry",
+   "total": 27,
+   "echo": "type=house&subdivision=Waterbridge&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry&max=5000000",
+   "total": 27,
+   "echo": "type=house&max=5000000&subdivision=Waterbridge&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry&max=2500000",
+   "total": 27,
+   "echo": "type=house&max=2500000&subdivision=Waterbridge&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry&max=1250000",
+   "total": 26,
+   "echo": "type=house&max=1250000&subdivision=Waterbridge&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry&max=625000",
+   "total": 12,
+   "echo": "type=house&max=625000&subdivision=Waterbridge&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry&max=935000",
+   "total": 24,
+   "echo": "type=house&max=935000&subdivision=Waterbridge&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry&max=780000",
+   "total": 20,
+   "echo": "type=house&max=780000&subdivision=Waterbridge&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry&max=700000",
+   "total": 16,
+   "echo": "type=house&max=700000&subdivision=Waterbridge&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry&max=660000",
+   "total": 12,
+   "echo": "type=house&max=660000&subdivision=Waterbridge&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry&max=680000",
+   "total": 16,
+   "echo": "type=house&max=680000&subdivision=Waterbridge&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry&max=670000",
+   "total": 13,
+   "echo": "type=house&max=670000&subdivision=Waterbridge&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry&max=675000",
+   "total": 13,
+   "echo": "type=house&max=675000&subdivision=Waterbridge&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry&max=300000",
+   "total": 0,
+   "echo": "type=house&max=300000&subdivision=Waterbridge&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Waterbridge&has=county_horry&max=500000",
+   "total": 7,
+   "echo": "type=house&max=500000&subdivision=Waterbridge&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry",
+   "total": 14,
+   "echo": "type=house&subdivision=Plantation+Lakes&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry%2Ccommunity_pool",
+   "total": 14,
+   "echo": "type=house&subdivision=Plantation+Lakes&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry%2Cpool",
+   "total": 5,
+   "echo": "type=house&subdivision=Plantation+Lakes&has=county_horry%2Cpool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry",
+   "total": 14,
+   "echo": "type=house&subdivision=Plantation+Lakes&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry&max=5000000",
+   "total": 14,
+   "echo": "type=house&max=5000000&subdivision=Plantation+Lakes&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry&max=2500000",
+   "total": 14,
+   "echo": "type=house&max=2500000&subdivision=Plantation+Lakes&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry&max=1250000",
+   "total": 12,
+   "echo": "type=house&max=1250000&subdivision=Plantation+Lakes&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry&max=625000",
+   "total": 2,
+   "echo": "type=house&max=625000&subdivision=Plantation+Lakes&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry&max=935000",
+   "total": 8,
+   "echo": "type=house&max=935000&subdivision=Plantation+Lakes&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry&max=780000",
+   "total": 6,
+   "echo": "type=house&max=780000&subdivision=Plantation+Lakes&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry&max=855000",
+   "total": 8,
+   "echo": "type=house&max=855000&subdivision=Plantation+Lakes&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry&max=815000",
+   "total": 7,
+   "echo": "type=house&max=815000&subdivision=Plantation+Lakes&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry&max=795000",
+   "total": 6,
+   "echo": "type=house&max=795000&subdivision=Plantation+Lakes&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry&max=805000",
+   "total": 7,
+   "echo": "type=house&max=805000&subdivision=Plantation+Lakes&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry&max=800000",
+   "total": 7,
+   "echo": "type=house&max=800000&subdivision=Plantation+Lakes&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry&max=300000",
+   "total": 0,
+   "echo": "type=house&max=300000&subdivision=Plantation+Lakes&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Plantation+Lakes&has=county_horry&max=500000",
+   "total": 0,
+   "echo": "type=house&max=500000&subdivision=Plantation+Lakes&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry",
+   "total": 11,
+   "echo": "type=house&subdivision=Golf+%26+Yacht&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry%2Ccommunity_pool",
+   "total": 9,
+   "echo": "type=house&subdivision=Golf+%26+Yacht&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry%2Cpool",
+   "total": 0,
+   "echo": "type=house&subdivision=Golf+%26+Yacht&has=county_horry%2Cpool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry",
+   "total": 11,
+   "echo": "type=house&subdivision=Golf+%26+Yacht&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry&max=5000000",
+   "total": 11,
+   "echo": "type=house&max=5000000&subdivision=Golf+%26+Yacht&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry&max=2500000",
+   "total": 11,
+   "echo": "type=house&max=2500000&subdivision=Golf+%26+Yacht&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry&max=1250000",
+   "total": 11,
+   "echo": "type=house&max=1250000&subdivision=Golf+%26+Yacht&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry&max=625000",
+   "total": 11,
+   "echo": "type=house&max=625000&subdivision=Golf+%26+Yacht&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry&max=310000",
+   "total": 9,
+   "echo": "type=house&max=310000&subdivision=Golf+%26+Yacht&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry&max=155000",
+   "total": 0,
+   "echo": "type=house&max=155000&subdivision=Golf+%26+Yacht&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry&max=230000",
+   "total": 3,
+   "echo": "type=house&max=230000&subdivision=Golf+%26+Yacht&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry&max=270000",
+   "total": 6,
+   "echo": "type=house&max=270000&subdivision=Golf+%26+Yacht&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry&max=250000",
+   "total": 6,
+   "echo": "type=house&max=250000&subdivision=Golf+%26+Yacht&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry&max=240000",
+   "total": 5,
+   "echo": "type=house&max=240000&subdivision=Golf+%26+Yacht&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry&max=245000",
+   "total": 5,
+   "echo": "type=house&max=245000&subdivision=Golf+%26+Yacht&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry&max=300000",
+   "total": 9,
+   "echo": "type=house&max=300000&subdivision=Golf+%26+Yacht&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&subdivision=Golf+%26+Yacht&has=county_horry&max=500000",
+   "total": 11,
+   "echo": "type=house&max=500000&subdivision=Golf+%26+Yacht&has=county_horry"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Ccommunity_pool",
+   "total": 149,
+   "echo": "type=townhouse&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Ccommunity_pool",
+   "total": 149,
+   "echo": "type=townhouse&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Ccommunity_pool&max=5000000",
+   "total": 149,
+   "echo": "type=townhouse&max=5000000&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Ccommunity_pool&max=2500000",
+   "total": 149,
+   "echo": "type=townhouse&max=2500000&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Ccommunity_pool&max=1250000",
+   "total": 149,
+   "echo": "type=townhouse&max=1250000&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Ccommunity_pool&max=625000",
+   "total": 142,
+   "echo": "type=townhouse&max=625000&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Ccommunity_pool&max=310000",
+   "total": 93,
+   "echo": "type=townhouse&max=310000&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Ccommunity_pool&max=155000",
+   "total": 1,
+   "echo": "type=townhouse&max=155000&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Ccommunity_pool&max=230000",
+   "total": 44,
+   "echo": "type=townhouse&max=230000&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Ccommunity_pool&max=270000",
+   "total": 75,
+   "echo": "type=townhouse&max=270000&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Ccommunity_pool&max=250000",
+   "total": 59,
+   "echo": "type=townhouse&max=250000&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Ccommunity_pool&max=260000",
+   "total": 61,
+   "echo": "type=townhouse&max=260000&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Ccommunity_pool&max=265000",
+   "total": 66,
+   "echo": "type=townhouse&max=265000&has=county_horry%2Ccommunity_pool"
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry",
+   "total": 298,
+   "echo": "type=townhouse&has=county_horry"
+  }
+ ]
+}

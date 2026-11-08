@@ -1,0 +1,243 @@
+{
+ "meta": {
+  "made": "match_moves.py",
+  "source": "Horry County Register of Deeds AcclaimWeb DEED (001) index, recorded 2020-07-01 to 2026-10-31 (pull of data/2026-11-n/sell-best-time-to-sell/), and Horry County GIS parcel layer 24 read 2026-11-08",
+  "rule": "A home deed: $10,000 or more on one parcel, no tax sale, sheriff, master-in-equity, foreclosure or corrective deed, a residential parcel (land use 1xx) with a building on today's roll, not sold to a builder, price at least 30 percent of the county's market value. A sale: a home deed recorded 2021-07-01 to 2025-10-31 whose seller is not a builder. A move: the first-named seller on the sale deed is, letter for letter, the first-named buyer on a home deed for a different parcel recorded within 365 days before or after. Only names of one person with three or more words (first, middle or initial, last) count, and only if the name is on 4 or fewer home deeds in the whole period, so investors and common names drop out. When a seller has more than one such purchase, the nearest in time is used. Gap = purchase recording date minus sale recording date; 'same week' = 7 days or fewer apart.",
+  "limits": "Each index row carries only the first-named seller and buyer, so a couple named in a different order on the two deeds is missed, and so is anyone who sold through a trust or bought in a new name. Moves into or out of the county are not counted. The count is a floor, not a total.",
+  "note": "No names, addresses or parcel numbers in this file.",
+  "max_deeds_per_name": 4
+ },
+ "counts": {
+  "resales": 55081,
+  "resales_person_seller": 34108,
+  "resales_person_seller_name_on_4_or_fewer_deeds": 33089,
+  "pairs_before_one_sale_per_purchase": 3297
+ },
+ "matched": 3233,
+ "share_of_person_sales_matched_pct": 9.8,
+ "chance_check": {
+  "sales_2022-07_to_2024-10": 15659,
+  "with_purchase_within_365_days": 1595,
+  "with_purchase_only_366_to_730_days_away": 290,
+  "note": "If name matches were chance, a purchase 1 to 2 years away would be about as common as one within a year. Some real moves take over a year, so the second number is an upper bound on chance matches."
+ },
+ "order": {
+  "bought_first": 1081,
+  "sold_first": 1225,
+  "within_a_week": 622,
+  "same_day": 305
+ },
+ "order_pct": {
+  "bought_first": 33.4,
+  "sold_first": 37.9,
+  "within_a_week": 19.2,
+  "same_day": 9.4
+ },
+ "bought_first_days": {
+  "n": 1081,
+  "median": 96,
+  "bands": {
+   "8-30": 181,
+   "31-60": 176,
+   "61-90": 161,
+   "91-180": 296,
+   "181-365": 267
+  }
+ },
+ "sold_first_days": {
+  "n": 1225,
+  "median": 64,
+  "bands": {
+   "8-30": 347,
+   "31-60": 239,
+   "61-90": 135,
+   "91-180": 251,
+   "181-365": 253
+  }
+ },
+ "price": {
+  "bought_higher_n": 2031,
+  "bought_higher_pct": 62.8,
+  "median_purchase_over_sale": 1.143,
+  "median_sale": 324900.0,
+  "median_purchase": 369900.0
+ },
+ "by_direction": {
+  "bought_higher": {
+   "n": 2031,
+   "same_day": 170,
+   "within_a_week": 361,
+   "bought_first": 786,
+   "sold_first": 714
+  },
+  "bought_lower_or_same": {
+   "n": 1202,
+   "same_day": 135,
+   "within_a_week": 261,
+   "bought_first": 295,
+   "sold_first": 511
+  }
+ },
+ "bought_new_from_builder": {
+  "n": 831,
+  "same_day": 63,
+  "within_a_week": 163,
+  "bought_first": 215,
+  "sold_first": 390
+ },
+ "bought_resale": {
+  "n": 2402,
+  "same_day": 242,
+  "within_a_week": 459,
+  "bought_first": 866,
+  "sold_first": 835
+ },
+ "condo_house": {
+  "condo_to_condo": 248,
+  "condo_to_house": 609,
+  "house_to_condo": 261,
+  "house_to_house": 2115
+ },
+ "by_sale_year": {
+  "2021": {
+   "n": 586,
+   "same_day": 39,
+   "within_a_week": 84,
+   "bought_first": 187,
+   "sold_first": 276
+  },
+  "2022": {
+   "n": 811,
+   "same_day": 61,
+   "within_a_week": 155,
+   "bought_first": 252,
+   "sold_first": 343
+  },
+  "2023": {
+   "n": 696,
+   "same_day": 68,
+   "within_a_week": 142,
+   "bought_first": 230,
+   "sold_first": 256
+  },
+  "2024": {
+   "n": 620,
+   "same_day": 66,
+   "within_a_week": 139,
+   "bought_first": 225,
+   "sold_first": 190
+  },
+  "2025": {
+   "n": 520,
+   "same_day": 71,
+   "within_a_week": 102,
+   "bought_first": 187,
+   "sold_first": 160
+  }
+ },
+ "lives_there": {
+  "rule": "The buyer on the purchase deed still owns the home (the county's current deed book and page are that deed's) and the county assesses it at the 4 percent legal residence ratio (assessed value under 5 percent of taxable value).",
+  "status": {
+   "legal_residence_4pct": 1749,
+   "sold_again_or_changed": 934,
+   "six_pct": 550
+  },
+  "n": 1749,
+  "order": {
+   "bought_first": 593,
+   "sold_first": 584,
+   "same_day": 199,
+   "within_a_week": 373
+  },
+  "order_pct": {
+   "bought_first": 33.9,
+   "sold_first": 33.4,
+   "same_day": 11.4,
+   "within_a_week": 21.3
+  },
+  "bought_first_days": {
+   "n": 593,
+   "median": 91,
+   "bands": {
+    "8-30": 107,
+    "31-60": 101,
+    "61-90": 87,
+    "91-180": 173,
+    "181-365": 125
+   }
+  },
+  "sold_first_days": {
+   "n": 584,
+   "median": 65.5,
+   "bands": {
+    "8-30": 164,
+    "31-60": 112,
+    "61-90": 58,
+    "91-180": 129,
+    "181-365": 121
+   }
+  },
+  "bought_higher_pct": 65.9,
+  "median_purchase_over_sale": 1.161,
+  "by_direction": {
+   "bought_higher": {
+    "n": 1152,
+    "same_day": 111,
+    "within_a_week": 219,
+    "bought_first": 456,
+    "sold_first": 366
+   },
+   "bought_lower_or_same": {
+    "n": 597,
+    "same_day": 88,
+    "within_a_week": 154,
+    "bought_first": 137,
+    "sold_first": 218
+   }
+  },
+  "bought_new_from_builder": {
+   "n": 572,
+   "same_day": 52,
+   "within_a_week": 115,
+   "bought_first": 155,
+   "sold_first": 250
+  },
+  "by_sale_year": {
+   "2021": {
+    "n": 264,
+    "same_day": 16,
+    "within_a_week": 34,
+    "bought_first": 89,
+    "sold_first": 125
+   },
+   "2022": {
+    "n": 383,
+    "same_day": 35,
+    "within_a_week": 80,
+    "bought_first": 120,
+    "sold_first": 148
+   },
+   "2023": {
+    "n": 388,
+    "same_day": 48,
+    "within_a_week": 86,
+    "bought_first": 127,
+    "sold_first": 127
+   },
+   "2024": {
+    "n": 382,
+    "same_day": 50,
+    "within_a_week": 97,
+    "bought_first": 138,
+    "sold_first": 97
+   },
+   "2025": {
+    "n": 332,
+    "same_day": 50,
+    "within_a_week": 76,
+    "bought_first": 119,
+    "sold_first": 87
+   }
+  }
+ }
+}

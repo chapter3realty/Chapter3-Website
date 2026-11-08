@@ -1,0 +1,391 @@
+
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="robots" content="noimageindex">
+	    <meta charset="iso-8859-1">
+	    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	    	    <title>South Carolina Code of Laws</title>
+	    <link rel="SHORTCUT ICON" href="/images/stateflagsmall.ico" />
+		<link rel="icon" href="/images/stateflagsmall.ico" type="image/ico" />
+		<link rel="SHORTCUT ICON" href="/images/South-Carolina-Flag2.ico" />
+
+		<link type="text/css" rel="stylesheet" href="/css/main.css" media="all" />
+				
+		<!--[if lte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/ie7main.css" media="all" />
+		<![endif]-->
+		<!--[if gte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/iemain.css" media="all" />
+		<![endif]-->
+		<link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+		<link type="text/css" rel="stylesheet" href="/css/supplement.css" media="screen" />
+		<!--<link type="text/css" rel="stylesheet" href="/css/zipsearch.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/vote.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/contact.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/navwrap.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/linkbar.css" media="screen" />-->
+	
+		<!--<script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>-->
+		<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+
+		<script type="text/javascript" src="/js/main_linux.js"></script>
+		
+		
+
+
+
+		<!--<script type="text/javascript" src="/js/common.js"></script>
+		<script type="text/javascript" src="/js/utils.js"></script>
+		<script type="text/javascript" src="/js/date.js"></script>
+		<script type="text/javascript" src="/js/lightbox.js"></script>
+		<script type="text/javascript" src="/js/legislation.js"></script>
+		<script type="text/javascript" src="/js/logon_lits.js"></script>
+		<script type="text/javascript" src="/js/message.js"></script>
+		<script type="text/javascript" src="/js/comm_meeting.js"></script>-->
+		<script type="text/vbscript" src="/vbs/comm_meeting.vbs"></script>
+		<!--<script type="text/javascript" src="/js/regs.js"></script>-->
+				
+	   	<script type="text/javascript">
+	    //document.onclick = function () { document.getElementById('transbox').style.display= 'none' };
+	    	var xmlhttp=false;
+			xmlhttp = create_xml_object();
+	
+			function getElement(ele)
+			{
+				var theobj = false;
+				if(typeof ele == 'string')
+					theobj = (document.getElementById)?document.getElementById(ele):document.all[ele];
+				else
+					theobj = ele;
+			
+				return theobj;
+			}
+		
+							
+				
+	
+			function init()
+			{
+		 		var ld=document.getElementById("loading");
+				if(ld)
+				{
+					ld.style.display = 'none';
+				}
+			}
+			
+			function openmore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				 	var pos = findPos(id);
+				 	id.style.zIndex = 10;
+		//		 	id.style.left = pos[0]+'px';
+		//		  	id.style.top = pos[1]+'px';
+				  	id.style.height = '295px';
+				  	id.style.position = 'absolute';
+				  	id.style.backgroundColor = '#f7f4ec';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'none';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = 'none';
+				  	}
+				}
+			}
+		
+			function closemore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				  	id.style.height = '135px';
+				  	id.style.position = '';
+				  	id.style.backgroundColor = 'transparent';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'block';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = '';
+				  	}
+				}		 	
+			}
+		
+		
+	function findfwtext(texttofind) 
+	{
+	 	var fwtextele = document.getElementById('fwtext');
+		if(fwtextele)
+		{
+			fwtextele.value = texttofind;
+		}
+	}	
+		// End -->
+		</script>
+
+		<!-- ADDED FOR V4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJY6FMNQKH"></script>
+
+
+<script type="text/javascript">
+
+//ADDED FOR V4
+//Google tag (gtag.js) 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LJY6FMNQKH');
+
+ 
+ /* COMMENTING OUT UPGRADING TO V4 -A
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36207109-1']);
+  _gaq.push(['_setDomainName', 'scstatehouse.gov']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+*/
+  
+      $(document).ready(function(){
+        // COMMENTING THIS OUT NO LONGER BEING ACTIVELY USED TO MONITOR FOR TRAFFIC TO SPECIFIC LINKS - A
+        /*
+          var anchors = $('div#contentsection a');
+
+          //console.log('anchors...'+anchors.length);
+          if(anchors.length > 0){
+            //console.log('setting up event handler...');
+            anchors.click(function(){
+              var a = $(this).attr('href');
+              if(_gaq && (a.substr(-3) == 'htm' || a.substr(-4) == 'html' || a.substr(-3) == 'doc' || a.substr(-4) == 'docx' || a.substr(-3) == 'pdf' || a.substr(-3) == 'xls' || a.substr(-4) == 'xlsx')) {
+                //console.log(a);
+                _gaq.push(['_trackPageview', $(this).attr('href')]);
+              }
+              
+              var aText = $(this).text().toLowerCase();
+              if (a.indexOf('getfile.php') > -1 && aText === 'word'){
+                    _gaq.push(['_trackEvent', 'Word Doc', 'Download', ('from page: ' + document.location + ' - href: ' + a)]);
+              }
+
+            });
+          }
+          */
+      });
+
+</script>
+	</head>
+	
+		
+	<body class="home"  onload="init();">
+	<noscript>Your browser does not support JavaScript!  This page will not render correctly.</noscript> 
+
+
+	
+	<div id="container" >	
+				<div id="header" class="nodisplay" style="text-align:center; height:100px;" >
+									<img id="headerimg" class="nodisplay" alt="South Carolina Legislature" title="South Carolina Legislature" src="/images/header8.png" />
+								
+							<!--	<div class="award"><span style="color:#831224; font-weight:bold; font-size:1.5em;">*</span> Recipient of<br>the Notable State Documents Award<br>by the<br>South Carolina<br>State Library.</div>-->
+				
+				
+			</div>
+			<div class="printdisplay"><img border="0" src="/images/titleprint.jpg" alt="South Carolina Legislature" title="South Carolina Legislature" alt="South Carolina Legislature" title="South Carolina State Legislature" /><br /><hr /><br /></div>
+	
+			<div id="pagebody" >
+	
+	
+<!--<div id="topmessage">
+<br style="display:block; margin-top:10px;">
+Searches and data queries will be unavailable beginning Friday, August 19, 2016, from 8:00 PM until Saturday, August 20th at 8:00 AM<br>due to scheduled maintenance.</div>-->
+				<!-- Prompt IE 8/7/6 users to upgrade to a newer browser. -->
+				<!--[if lte IE 8]>
+				<div class="oldframe">In order to improve your experience using this website, please <a href="http://browsehappy.com/">upgrade your browser</a>.</div>
+				<![endif]-->
+			
+			
+			
+			<div id="menu" class="nodisplay">
+				<ul class="nodisplay">
+				<li><a href="/index.php">Home</a></li>
+<li><a href="/senate.php">Senate</a></li>
+<li><a href="/house.php">House</a></li>
+<li><a href="/committeeinfo.php">Committee&nbsp;Postings&nbsp;and&nbsp;Reports</a></li>
+<li><a href="/council.php">Legislative Council</a></li>
+<li><a href="/citizens.php">Citizens&#39; Interest</a></li>
+<li><a href="/publications.php">Publications</a></li>
+		    	</ul>
+			</div>
+			<div id="search" class="nodisplay" style="height: 28px;"><div class="nodisplay" style="float:right; margin:6px 20px 0px 0;">
+							<!--<a style="color:#f7f4ec; height:15px;" href="#" onClick="rsswindow();"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+<!--				<a style="color:#f7f4ec; height:15px;" href="/splashpage/splashpage.html"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a> -->
+				<a style="color:#f7f4ec; height:15px;" href="/onlineservices/index.php"><img border="0" src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>
+			<!--	<a style="color:#f7f4ec; height:15px;" href="/maintenance_portal.php"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+						</div></div>
+			
+	
+					<div id="sidebar" class="nodisplay">
+	<div id="vidlinks" style="height: 50px;">
+						<!--<img src="/images/videobutton12d.png">-->
+											<ul id="vidsidemenu">
+	<li id="vidinnermenu" style="font-size:16px; margin: 0 0 5px 0;">Chamber Video</li>
+<li id="sbroadcast" style="float: left; width:50%;">
+<a id="liveS" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('S', false, false, '0')">Senate</a><br><a id="liveaudioS" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('S', false, false, '1');">(Audio Only)</a>
+</li>
+<li id="hbroadcast" style="float: left; width:50%;">
+<a id="liveH" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('H', false, false, '0')">House</a><br><a id="liveaudioH" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('H', false, false, '1');">(Audio Only)</a>
+</li>
+						</ul>
+					</div>
+					<div id="commvidlinks"><a href="/video/schedule.php">Video&nbsp;Schedule</a><a style="border-top:1px solid #fff; padding-top:12px;" href="/video/archives.php">Video Archives</a></div>
+										<div id="sidemenu">
+						<ul id="innermenu">
+		
+							<li><a href="/howdoi.php">How do I...</a></li>
+										
+							
+								<li class="nolink" onMouseOver="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='block'; document.sidesearchform.searchtext.focus();}" onMouseOut="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Quick Search</div>
+								<div id="sidesearch" class="sidesubmenu">
+									<form id="sidesearchform" name="sidesearchform" method="POST" action="/search.php">
+									<input type="hidden" name="search" value="side" />
+									<div class="topelement"><label for="searchtext"><span class="label">Search for:</span></label><input id="searchtext" name="searchtext" type="text"/><a id="searchlink2" href="javascript:void(0);" onClick="document.sidesearchform.submit();"><img id="searchicon" src="/images/searchbutton.png" alt="Search" title="Search"/></a></div>
+			<!--						<div><input type="checkbox" id="searchchoice_all" name="searchchoice_all" value="all" /><label for="searchchoice_all">All</label></div>-->
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_fullsite" name="category" value="FULLSITE" /><label for="searchchoice_fullsite">&nbsp;Full Site Search</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_billnumber" name="category" value="BILL" /><label for="searchchoice_billnumber">&nbsp;Bill Number</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_legislation" name="category" value="LEGISLATION" CHECKED /><label for="searchchoice_legislation">&nbsp;Legislation</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_budget" name="category" value="BUDGET" /><label for="searchchoice_budget">&nbsp;Budget</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeoflaws" name="category" value="CODEOFLAWS" /><label for="searchchoice_codeoflaws">&nbsp;Code of Laws</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeofregs" name="category" value="CODEOFREGS" /><label for="searchchoice_codeofregs">&nbsp;Code of Regulations</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_constitution" name="category" value="CONSTITUTION" /><label for="searchchoice_constitution">&nbsp;Constitution</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_housejournals" name="category" value="HOUSEJOURNALS" /><label for="searchchoice_housejournals">&nbsp;House Journals</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_senatejournals" name="category" value="SENATEJOURNALS" /><label for="searchchoice_senatejournals">&nbsp;Senate Journals</label></div>
+									<div class="bottomelement" style="padding-left:20px;"><input type="radio" id="searchchoice_billsummary" name="category" value="SUMMARY" /><label for="searchchoice_billsummary">&nbsp;LSA Bill Summary</label></div>
+								</form>
+									
+								</div>
+							</li>
+							<li><a href="/legislatorssearch.php">Find Your Legislators</a></li>
+							<li id="contactLegislatorLink"><a href="/email.php?chamber=B">Contact Your Legislator</a></li>
+									
+							<li><a href="/legislation.php">Legislation</a></li>
+							<li><a href="/listtracking/main.php" target="LTS">Track Legislation</a></li>
+							<li><a href="/multicriteria2/search.php" target="MCS">Multi-Criteria Search</a></li>
+									<!--<li><a href="#" onclick="multisearchwindow('INTROBOTH');">Multi-Criteria Search</a></li>-->
+									<!--<li><a href="#" onclick="multisearchwindow('INTROMANUAL');">Multi-Criteria Search</a></li>-->
+									<li><a href="/research.php">Research</a></li>
+	
+								<li class="nolink" onMouseOver="var ele=document.getElementById('law'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('law'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">South Carolina Law</div> 
+								<div id="law" class="sidesubmenu">
+									<div class="sidediv topelement"><a href="/newlaws.php">Ratifications &amp; Acts</a></div>
+									<div class="sidediv"><a href="/code/statmast.php">Code of Laws</a></div>
+									<div class="sidediv"><a href="/coderegs/statmast.php">Code of Regulations</a></div>
+									<div class="sidediv"><a href="/scconstitution/scconst.php">Constitution</a></div>
+									<div class="sidediv bottomelement"><a href="/state_register.php">State Register</a></div>
+								</div>
+							</li>
+										<li class="nolink" onMouseOver="var ele=document.getElementById('manual'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('manual'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Legislative Manual</div>
+								<div id="manual" class="sidesubmenu">
+								
+<!--									<div class="sidediv topelement"><a href="https://web.sc.gov/LSAShoppingcart/Default.aspx" target="_blank">Purchase Manual</a></div>-->
+								
+<!--									<div class="sidediv topelement"><a href="https://secure.scstatehouse.gov/cgi-bin/webstore.exe" target="_blank">Purchase Manual</a></div>-->
+									<div class="sidediv topelement"><a href="javascript:#" onClick="alert('We are sorry, but we are unable to process online transactions at this time.\n\nIf you would still like to make a purchase, please contact us directly at (803) 212-4490 during normal business hours (8:30am - 5:00pm EST).');">Purchase Manual</a></div>
+									<div class="sidediv bottomelement"><a href="/man26/manual26.php">View Manual Online</a></div>
+								</div>
+							</li>
+							<li><a href="http://www.studentconnection.scstatehouse.gov">Student Connection</a></li>
+							<li><a href="/visit.php">Visiting the State House</a></li>
+							<li><a href="/archives.php">Archives</a></li>
+							<li><a href="http://www.sc.gov/Agency-Listing" target="_blank">State Agency Websites</a></li>
+							<!--<li><a href="/stateagencysites.php">State Agency Websites</a></li>-->
+							<li><a href="/citizensinterestpage/media.php">Media Links</a></li>
+				 		</ul>
+			    	</div>
+	
+					<div id="side_ad">
+						<A href="http://www.sc.gov/" target="_blank"><img border=0 src="/images/scgov3.jpg" alt="SC.gov" title="SC.gov" /></a>
+													<A href="http://www.statelibrary.sc.gov" target="_blank"><img border=0 src="/images/scsl_logo_rgb_web.png" alt="StateLibrary.SC.gov" title="StateLibrary.SC.gov" /></a>
+											</div>	    	
+			</div>
+
+	
+	<script type="text/javascript"> 
+		if ( '' === '1'){
+		 	
+			var link = document.getElementById('contactLegislatorLink');
+			if (link != 'undefined' && link != null){
+				link.style.display = 'none'; 
+				link.style.visibility = 'hidden';
+			}
+		}
+		if ( '' === '1'){
+		 	setTimeout(function(){
+				var link2 = document.getElementById('sendMsgLink');
+				if (link2 != 'undefined' && link2 != null){
+					link2.style.display = 'none'; 
+					link2.style.visibility = 'hidden';
+				};
+			}, 20);
+			
+		}  
+	</script>
+<div class="mainwidepanel">
+    <div id="breadcrumbs">
+        South Carolina Law &gt; <a href="statmast.php">Code of Laws</a>
+        &gt; <a href="statmast.php?title=6">Title 6</a>
+    </div>
+    <h2 class="barheader">South Carolina Code of Laws<br />Unannotated<br /></h2>
+    <div id="contentsection">
+            <div style="font-weight: bold; text-align: center;">Title 6 - LOCAL GOVERNMENT—PROVISIONS APPLICABLE TO SPECIAL PURPOSE DISTRICTS AND OTHER POLITICAL SUBDIVISIONS</div>
+        <br />
+                            <div style="text-align: right; font-size: 13px;"><a href="/code/pdfs/t06c009-unannotated.pdf" target="_blank">PDF version</a></div>
+                <div id="colbody"><div class="col-chapter" data-number="9"><h2 class="unit-title">chapter 9</h2><p class="unit-name">Building Codes</p><p class="section-head" id="6-9-5">SECTION 6-9-5. Public policy for building codes.</p><p class="para">(A) The public policy of South Carolina is to maintain reasonable standards of construction in buildings and other structures in the State consistent with the public health, safety, and welfare of its citizens. To secure these purposes, a person performing building codes enforcement must be certified by the South Carolina Building Codes Council, and this act is necessary to provide for certification.</p><p class="para">(B) To clarify the intent of the General Assembly and address questions which might arise or have arisen with respect to provisions of the nationally known codes which have been or are in place, only those portions or provisions of the nationally known building and safety codes which relate to building standards and safety are binding upon a state or local governmental entity or agency which adopts the building and safety codes authorized or required by this chapter.</p><p class="para">(C) To further clarify the intent of the General Assembly, Chapter 9, Title 23 continues to apply to a person who may act under authority of the State Fire Marshal and that the allocation of inspection duties among local officials is not dictated by Title 6 but remains a matter for the local authority.</p><p class="annotation-head">HISTORY: 1997 Act No. 123, &#167; 7; 2003 Act No. 83, &#167; 1, eff July 2, 2003.</p><p class="section-head" id="6-9-10">SECTION 6-9-10. Enforcement of building codes by municipalities and counties; applicability to electric cooperatives, Public Service Authority and certain public utility corporations; conflicts with federal manufactured housing construction and installation regulations.</p><p class="para">(A) All municipalities, as defined by Section 5-1-20, and counties in this State shall enforce building, energy, electrical, plumbing, mechanical, gas, and fire codes, referred to as building codes in this chapter, relating to the construction, livability, sanitation, erection, energy efficiency, installation of equipment, alteration, repair, occupancy, classification, or removal of structures located within their jurisdictions and promulgate regulations to implement their enforcement. The municipality or county shall enforce only the national building and safety codes provided in this chapter.</p><p class="para">(B) With the exception of structures used primarily for offices, storage, warehouses, shop areas, or residential housing, nothing in the building codes or regulations applies to electric cooperatives, the Public Service Authority, or to a public utility corporation subject to regulation by the authorities of the South Carolina Public Service Commission or the Liquefied Petroleum Gas Board.</p><p class="para">(C) To the extent that federal regulations preempt state and local laws, nothing in this chapter conflicts with the federal Department of Housing and Urban Development regulations regarding manufactured housing construction and installation.</p><p class="para">HISTORY: 1962 Code &#167; 14-400.581; 1972 (57) 2607; 1977 Act No. 173 &#167; 1; 1984 Act No. 481, &#167; 2; 1997 Act No. 123, &#167; 1; 2003 Act No. 83, &#167; 1, eff July 2, 2003.</p><p class="section-head" id="6-9-14">SECTION 6-9-14. Wheelchair ramps built with Medicare or Medicaid dollars; fees and permits.</p><p class="para">A municipality or county may not charge a permit fee or require a permit for a wheelchair access ramp built with Medicare or Medicaid dollars as long as the construction is performed, overseen, or inspected by an Americans with Disabilities Act inspector.</p><p class="annotation-head">HISTORY: 2006 Act No. 341, &#167; 3, eff June 10, 2006.</p><p class="section-head" id="6-9-20">SECTION 6-9-20. Agreements with other governmental entities for provision of services required by this chapter.</p><p class="para">Municipalities and counties may establish agreements with other governmental entities of the State to issue permits and enforce building codes in order to provide the services required by this chapter. The South Carolina Building Codes Council (council) may assist in arranging for municipalities, counties, or consultants to provide the services required by this chapter to other municipalities or counties if a written request from the governing body of the municipality or county is submitted to the council.</p><p class="para">HISTORY: 1962 Code &#167; 14-400.582; 1972 (57) 2607; 1984 Act No. 481, &#167; 2; 1997 Act No. 123, &#167; 1; 2003 Act No. 83, &#167; 1, eff July 2, 2003.</p><p class="section-head" id="6-9-30">SECTION 6-9-30. Appointment of building official or contractual arrangement for such services; affidavit for exemption.</p><p class="para">(A) Each county shall appoint a building official or contract with other political subdivisions as authorized in Section 6-9-20 so that the unincorporated area of the county is under the jurisdiction of a building official. Each municipality shall appoint a building official or contract for a building official within the municipal limits. Based on the needs established by each municipality or county, the building official or appointing authority may appoint and employ other personnel and assistants necessary to perform the required inspections and duties and may prescribe fees for construction permits and inspections.</p><p class="para">(B) If a municipality or county determines that it is unable to arrange for services for any annual period at costs totally within the schedule of fees recommended in the appendices to the building codes referred to in Section 6-9-50, the municipality or county shall submit an affidavit to the council to be exempt from the requirements of this chapter. The affidavit shall provide the financial reasoning as to why the municipality or county cannot provide the services. If such affidavit is submitted, the municipality or county is exempt from the requirements of this chapter, which exemption is effective until such time as it becomes financially feasible for a municipality or county to provide the services, or five years, whichever is less. A municipality or county may renew its affidavit at the end of five years and at each five-year interval thereafter if it makes another determination that it cannot arrange for services at costs totally within the schedule of fees recommended in the building codes referred to in Section 6-9-50.</p><p class="para">HISTORY: 1962 Code &#167; 14-400.583; 1972 (57) 2607; 1984 Act No. 481, &#167; 2; 1997 Act No. 123, &#167; 1; 2003 Act No. 83, &#167; 1, eff July 2, 2003.</p><p class="section-head" id="6-9-40">SECTION 6-9-40. Building code adoption procedure; notice, comments and public meetings; effective date; promulgation and readoption of modifications.</p><p class="para">(A) The council is authorized to review, adopt, modify, and promulgate the building codes referenced in Section 6-9-50, provided that:</p><p class="para">(1) a notice of intention to adopt a code, adopt a new edition of a code, or modify an existing code must be published in the State Register as a Notice of General Interest, on websites published by the Department of Labor, Licensing and Regulation, and must be provided to each local building department with instructions for its prominent display;</p><p class="para">(2) the notice must include:</p><p class="para">(a) the address to which interested persons may submit written comments; and</p><p class="para">(b) a period of not less than one hundred eighty days during which comments may be received;</p><p class="para">(3) comments must be assigned to a study committee appointed by the council which shall publish Notice of General Interest in the same manner as provided in item (1) setting out the committee&#39;s scope of review. The notice must give instructions for filing an intention to appear before or provide evidence or comments to the committee, or both. The committee must be comprised of at least three people with different technical backgrounds; and</p><p class="para">(4) the committee shall hold at least one public meeting, accept evidence and comments, and make a written recommendation to the council. Within one hundred eighty days from the end of the comment period, the council shall adopt, modify, or deny the recommendations from the committee. The council may modify or amend the code after a finding on the record that the modifications provide a reasonable degree of public health, safety, and welfare.</p><p class="para">Any amended or modified code shall be codified as provided for in Section 1-23-90. The council shall determine whether the amended or modified code becomes effective on the first day of January or July.</p><p class="para">(B)(1) If it is discovered at any time between building code cycles that an existing building code requirement constitutes a new threat to the life or safety of building occupants that was unknown when the building code was last approved, an emergency building code modification may be made by the council. An emergency building code modification shall take effect on a date established by the council.</p><p class="para">(2) The council must provide notice of a request for an emergency building code modification in the same manner as required for a regular council meeting.</p><p class="para">(3) The council must conduct a hearing to consider an emergency building code modification at an open council meeting, and all proponents and opponents must be given ample time to state their positions.</p><p class="para">(C) Modifications promulgated pursuant to this section do not require readoption by the council for subsequent editions of the building codes. Upon submission of a formal request, existing modifications shall be reconsidered each time a new edition of the building code is considered for adoption by the council.</p><p class="para">HISTORY: 1962 Code &#167; 14-400.584; 1972 (57) 2607; 1984 Act No. 481, &#167; 2; 1997 Act No. 123, &#167; 1; 2003 Act No. 83, &#167; 1, eff July 2, 2003; 2005 Act No. 28, &#167; 1, eff March 22, 2005; 2007 Act No. 54, &#167; 1, eff June 6, 2007.</p><p class="section-head" id="6-9-50">SECTION 6-9-50. Adoption by reference of nationally recognized codes and standards; outdoor burning exception.</p><p class="para">(A) The council shall adopt by reference and amend only the latest editions of the following nationally recognized codes and the standards referenced in those codes for regulation of construction within this State: building, residential, gas, plumbing, mechanical, fire, and energy codes as promulgated, published, or made available by the International Code Council, Inc. and the National Electrical Code as published by the National Fire Protection Association. The appendices of the codes provided in this section may be adopted as needed, but the specific appendix or appendices must be referenced by name or letter designation at the time of adoption. However, the provisions of the codes referenced in this section which concern the qualification, removal, dismissal, duties, responsibilities of, and administrative procedures for all building officials, deputy building officials, chief inspectors, other inspectors, and assistants do not apply unless they have been adopted by the municipal or county governing body.</p><p class="para">(B) The governing body of a county may not enforce that portion of a nationally recognized fire prevention code it has adopted which may regulate outdoor burning for forestry, wildlife, and agricultural purposes as regulated by the South Carolina Forestry Commission.</p><p class="para">HISTORY: 1962 Code &#167; 14-400.585; 1972 (57) 2607; 1984 Act No. 481, &#167; 2; 1997 Act No. 123, &#167; 1; 1998 Act No. 381, &#167; 1; 1999 Act No. 44, &#167; 2; 2003 Act No. 83, &#167; 1, eff July 2, 2003; 2009 Act No. 46, &#167; 2, eff July 1, 2009.</p><p class="section-head" id="6-9-55">SECTION 6-9-55. Council to promulgate certain regulations.</p><p class="para">(A) The council shall promulgate as regulations, in accordance with the procedure and requirements contained in Article 1, Chapter 23, Title 1, any provision of or amendment to any building code that would affect construction requirements for one-family or two-family dwellings. No building code provision that would otherwise become effective after the effective date of this section concerning construction requirements for one-family or two-family dwellings shall be enforced until the effective date of the regulations required to be promulgated by this section.</p><p class="para">(B) Notwithstanding subsection (A), a regulation mandating the installation of an automatic residential fire sprinkler system in one-family or two-family dwellings shall not become effective at any time before July 1, 2015.</p><p class="para">(C) Notwithstanding subsection (A), Section 501.3 of the 2012 International Residential Code must not be enforced.</p><p class="para">HISTORY: 2010 Act No. 232, &#167; 2, eff June 7, 2010; 2013 Act No. 65, &#167; 1, eff June 14, 2013; 2015 Act No. 17 (H.3662), &#167; 1, eff May 7, 2015.</p><p class="section-head" id="6-9-60">SECTION 6-9-60. Adoption by reference of certain nationally recognized codes and standards.</p><p class="para">Municipalities and counties may adopt by reference only the latest editions of the following nationally recognized codes and the standards referenced in those codes for regulation of construction within their respective jurisdictions: property maintenance, performance codes for buildings and facilities, existing building, and swimming pool codes as promulgated, published, or made available by the International Code Council, Inc. The appendices of the codes provided in this section may be adopted as needed by a municipality or county, but the specific appendix or appendices must be referenced by name or letter designation in the adopting ordinance. However, the provisions of the codes referenced in this section which concern the qualification, removal, dismissal, duties, responsibilities of, and the administrative procedures for all building officials, deputy building officials, chief inspectors, other inspectors, and assistants do not apply unless they have been adopted by the municipal or county governing body.</p><p class="para">HISTORY: 1962 Code &#167; 14-400.586; 1972 (57) 2607; 1977 Act No. 173 &#167; 2; 1978 Act No. 629; 1984 Act No. 481, &#167; 2; 1993 Act No. 181, &#167; 64; 1997 Act No. 123, &#167; 1; 1998 Act No. 381, &#167; 2; 1999 Act No. 44, &#167; 3; 2002 Act No. 173, &#167; 1; 2003 Act No. 83, &#167; 1, eff July 2, 2003.</p><p class="section-head" id="6-9-63">SECTION 6-9-63. South Carolina Building Codes Council; membership; function of council; per diem; meeting requirements.</p><p class="para">(A) Each member of the council must be appointed by the Governor for a term of four years and until a successor is appointed and qualifies. Each member of the council must be a resident of this State. The council consists of sixteen members composed of:</p><p class="para">(1) an architect licensed in South Carolina from a list of qualified candidates submitted to the Governor by the South Carolina Chapter of the American Institute of Architects;</p><p class="para">(2) an engineer licensed in South Carolina from a list of qualified candidates submitted to the Governor by the South Carolina Council of Engineering and Surveying Societies;</p><p class="para">(3) a residential home builder licensed in South Carolina from a list of qualified candidates submitted to the Governor by the Home Builders Association of South Carolina;</p><p class="para">(4) a general contractor licensed in South Carolina from a list of qualified candidates submitted to the Governor by the Association of General Contractors;</p><p class="para">(5) a representative of the modular building industry from a list of qualified candidates submitted to the Governor by the Manufactured Housing Institute of South Carolina;</p><p class="para">(6) a code enforcement officer registered in South Carolina;</p><p class="para">(7) a fire marshal or fire chief designated by the State Fire Marshal;</p><p class="para">(8) a municipal administrator, manager, or elected official;</p><p class="para">(9) a county administrator, manager, or elected official;</p><p class="para">(10) a representative designated by the State Engineer of the Department of Administration;</p><p class="para">(11) a representative of the general public who is not in the practice of home or commercial safety inspection, construction, or building, and who does not have any financial interest in these professions, and who does not have any immediate family member in these professions;</p><p class="para">(12) a disabled person;</p><p class="para">(13) a representative of the property and casualty insurance industry;</p><p class="para">(14) a representative of the electrical industry who is either an engineer licensed in South Carolina or a master electrician from a list of qualified candidates submitted to the Governor by the Mechanical Contractors Association of South Carolina;</p><p class="para">(15) a representative of the mechanical or gas industry who is either an engineer licensed in South Carolina or a master mechanic from a list of qualified candidates submitted to the Governor by the Mechanical Contractors Association of South Carolina; and</p><p class="para">(16) a representative of the plumbing industry who is either an engineer registered in South Carolina or a master plumber from a list of qualified candidates submitted to the Governor by the Mechanical Contractors Association of South Carolina.</p><p class="para">(B) A vacancy must be filled in the manner of the original appointment for the unexpired portion of the term.</p><p class="para">(C) The primary function of the council is to accept all requests for variation from the series of codes listed in this chapter and to determine which variations, if any, are justified by local conditions and can be enacted after a finding on the record that the modification provides a reasonable degree of public health, safety, and welfare.</p><p class="para">(D) Each member of the council shall receive mileage, subsistence, and per diem as provided for other state boards, committees, or commissions for attendance at board meetings called by the chairman.</p><p class="para">(E) The council shall elect from its members a chairman and vice chairman. The council shall adopt regulations consistent with this chapter. A meeting may be called by the chairman on his own initiative and must be called by him at the request of three or more members of the council. Each member must be notified by the chairman in writing of the time and place of the meeting at least seven days before the meeting. Nine members constitute a quorum. Each meeting is open to the public. An official decision of the council may be made only by a vote of at least two-thirds of those members in attendance at the meeting.</p><p class="para">HISTORY: 2003 Act No. 83, &#167; 1, eff July 2, 2003; 2022 Act No. 205 (S.934), &#167; 1, eff May 18, 2022.</p><p class="section-head" id="6-9-65">SECTION 6-9-65. Regulation of construction or improvement of farm structure; authority to issue building permits.</p><p class="para">(A) For purposes of this section, &quot;farm structure&quot; means a structure which is constructed on a farm, other than a residence or a structure attached to it, for use on the farm including, but not limited to, barns, sheds, and poultry houses, but not public livestock areas. For purposes of this section, &quot;farm structure&quot; does not include a structure originally qualifying as a &quot;farm structure&quot; but later converted to another use.</p><p class="para">(B) The governing body of a county or municipality may not enforce that portion of a nationally recognized building code which regulates the construction or improvement of a farm structure. The standards published by the Federal Emergency Management Agency for the National Flood Insurance Program shall apply.</p><p class="para">(C) The provisions of this section do not apply unless, before constructing a farm structure, the person owning the property on which the structure is to be constructed files an affidavit with the county or municipal official responsible for enforcing the building code stating that the structure is being constructed as a farm structure. The affidavit must include a statement of purpose or intended use of the proposed structure or addition.</p><p class="para">(D) This section does not affect the authority of the governing body of a county or municipality to issue building permits before the construction or improvement of a farm structure.</p><p class="para">HISTORY: 1987 Act No. 24 &#167; 1; 1997 Act No. 123, &#167; 1; 2003 Act No. 83, &#167; 1, eff July 2, 2003.</p><p class="section-head" id="6-9-67">SECTION 6-9-67. Classification of structures lacking commercial kitchens used in agritourism activity.</p><p class="para">Structures without a commercial kitchen used in agritourism activity as defined by Section 46-53-10 shall fall under the group A-3 classification, as defined in the latest edition of the applicable building codes pursuant to Section 6-9-50. Such structures may accommodate up to three hundred guests without installing a sprinkler system.</p><p class="annotation-head">HISTORY: 2020 Act No. 157 (H.4327), &#167; 1, eff September 28, 2020.</p><p class="section-head" id="6-9-70">SECTION 6-9-70. Omitted by 2003 Act No. 83, &#167; 1, eff July 2, 2003.</p><p class="section-head" id="6-9-80">SECTION 6-9-80. Mandamus and injunctive relief for violation of code or regulation; penalties.</p><p class="para">(A) For a violation of the building codes or regulations adopted pursuant to this chapter, the local building officials, municipal or county attorneys, or other appropriate authorities of a political subdivision, or an adjacent or neighboring property owner who would be damaged by the violation, in addition to other remedies, may apply for injunctive relief, mandamus, or other appropriate proceeding. A court may grant temporary injunctive relief upon receipt of a verified complaint of an imminent danger or emergency situation.</p><p class="para">(B) A person found to be in violation of a building code or regulation adopted pursuant to the provisions of this chapter must be cited and fined, by civil fine, in an amount not more than two hundred dollars. Before being charged with a second violation, the person must be given seven calendar days to remedy the violation or submit a plan for correcting the violation.</p><p class="para">(C) A person who fails to correct a violation or submit a plan for correcting a violation within seven calendar days after citation or written notice must be cited and fined, by civil fine, in an amount not to exceed two thousand dollars. Each day a violation continues is a separate offense.</p><p class="para">HISTORY: 1962 Code &#167; 14-400.588; 1972 (57) 2607; 1984 Act No. 481, &#167; 2; 1997 Act No. 123, &#167; 1; 2003 Act No. 83, &#167; 1, eff July 2, 2003.</p><p class="section-head" id="6-9-90">SECTION 6-9-90. Imposition of fees upon vote; exceptions.</p><p class="para">Notwithstanding any other provision of law, the governing body of a county or municipality may impose fees necessary and consistent with Section 6-9-30(B) to implement and continue the programs required by this chapter upon a vote of a simple majority of the governing body unless a super majority vote is required by local ordinance.</p><p class="para">HISTORY: 1962 Code &#167; 14-400.589; 1972 (57) 2607; 1984 Act No. 481, &#167; 2; 1997 Act No. 123, &#167; 1; 2003 Act No. 83, &#167; 1, eff July 2, 2003.</p><p class="section-head" id="6-9-100">SECTION 6-9-100. Provisions of chapter cumulative; county and municipality authority not limited.</p><p class="para">The provisions of this chapter are cumulative to other local ordinances and do not limit the authority of counties or municipalities.</p><p class="para">HISTORY: 1962 Code &#167; 14-400.590; 1972 (57) 2607; 1982 Act No. 351, &#167; 3; 1984 Act No. 481, &#167; 2; 1997 Act No. 123, &#167; 1; 2003 Act No. 83, &#167; 1, eff July 2, 2003.</p><p class="section-head" id="6-9-105">SECTION 6-9-105. Variations based on physical or climatological conditions; description of boundaries.</p><p class="para">(A) If a municipality or county contends that the codes authorized by this chapter do not meet its needs due to local physical or climatological conditions, the proposed variations and modifications must be submitted to the council.</p><p class="para">(B) The council may issue an approval after a finding on the record that the variation or modification provides a reasonable standard of public health, safety, and welfare.</p><p class="para">(C) Where a boundary for a physical or climatological condition is referenced in a code, the council, upon adoption of the code, is required to define the boundary so that it approximates the physical or climatological area, using logical geographic features such as major highways, waterbodies, or ridgelines. Political boundaries may not be used unless they approximate the physical area.</p><p class="annotation-head">HISTORY: 2003 Act No. 83, &#167; 1, eff July 2, 2003.</p><p class="section-head" id="6-9-110">SECTION 6-9-110. Ordinances or regulations requiring purchase or acquisition of permit or license; inapplicability to certain state and school district projects; jurisdiction of deputy state fire marshals and certified State Engineer&#39;s Office personnel.</p><p class="para">(A) A county, municipal, or other local ordinance or regulation which requires the purchase or acquisition of a permit, license, or other device utilized to enforce any building standard does not apply to a:</p><p class="para">(1) state department, institution, or agency permanent improvement project, construction project, renovation project, or property; or</p><p class="para">(2) school district facility, permanent improvement project, construction project, renovation project, or property which is reviewed and approved by the State Department of Education; except that the State Department of Education or a local school district may direct that the local ordinance or regulation apply to a particular facility, project, or property.</p><p class="para">(B) After successful completion of all requirements, the State Fire Marshal shall certify personnel of the State Engineer&#39;s Office of the State Fiscal Accountability Authority designated by the State Engineer. The certified personnel and deputy state fire marshals, including resident state fire marshals, have exclusive jurisdiction over state buildings, including schools, in the exercise of the powers and jurisdictional authority of the State Fire Marshal under Sections 23-9-20, 23-9-30, and 23-9-50.</p><p class="para">HISTORY: 1982 Act No. 466 Part II &#167; 28; 1984 Act No. 481, &#167; 2; 1986 Act No. 347, &#167; 6; 1997 Act No. 123, &#167; 1; 2003 Act No. 83, &#167; 1, eff July 2, 2003.</p><p class="section-head" id="6-9-120">SECTION 6-9-120. Effect on water, landscape irrigation and sewer systems.</p><p class="para">Nothing in this chapter affects landscape irrigation systems, except those where chemical concentrates are directly injected, water systems, or sewer systems in this State.</p><p class="para">HISTORY: 1997 Act No. 123, &#167; 1; 2000 Act No. 308, &#167; 1; 2003 Act No. 83, &#167; 1, eff July 2, 2003.</p><p class="section-head" id="6-9-130">SECTION 6-9-130. Codes applicable to building inspections.</p><p class="para">(A) Buildings must be inspected in accordance with the codes in effect for the locality on the date of the issuance of the original building permit, except that:</p><p class="para">(1) If no date of issuance of original building permit can be found, the date of submission of the completed application to the local authority must be used.</p><p class="para">(2) If no date of application for, or date of issuance of, building permit is available, the director of the applicable county planning and development service (or similar agency) shall determine the nearest possible date by using available documents, such as transfer of property records, mortgage records, tax records, or rent records.</p><p class="para">(B) A building inspection conducted in conjunction with any change in structure must be performed in accordance with the applicable code in effect on date of application or date of permit.</p><p class="para">(C) A building inspection conducted in conjunction with a change of use for the building or space must be performed in accordance with the applicable code in effect on the date of the inspection. This inspection should be done with the intention of avoiding extreme hardship to the owner whenever practical.</p><p class="annotation-head">HISTORY: 1997 Act No. 123, &#167; 1; 2003 Act No. 83, &#167; 1, eff July 2, 2003.</p><p class="section-head" id="6-9-135">SECTION 6-9-135. Repealed by 2010 Act No. 232, &#167; 4, eff June 7, 2010.</p></div></div>
+        </div>
+    <style>
+        #colbody{ padding:6px 4px; }
+        #colbody .unit-title{ text-align:center; text-transform:uppercase; font-size:16px; font-weight:bold; margin:28px 0 4px; }
+        #colbody .unit-name{ text-align:center; font-weight:bold; margin:0 0 22px; }
+        #colbody .article-head{ text-align:center; font-weight:bold; margin:30px 0 10px; }
+        #colbody .section-head{ font-weight:bold; margin:30px 0 10px; }
+        #colbody .annotation-head, #colbody .para{ margin:0 0 16px; line-height:1.6; }
+        #colbody em[id^="m"]{ font-style:normal; font-weight:bold; color:#FF0000; }
+    </style>
+    					</div>		 <!-- mainwidepanel -->
+					
+				</div>		 <!-- pagebody -->
+				
+				<div id="footer" class="nodisplay" style="height: 30px;" onContextMenu="return false;">
+			<div id="footerdiv" style="margin:0;">
+				South Carolina Legislative Services Agency * 223 Blatt Building * 1105 Pendleton Street * Columbia, SC 29201<!-- * 803-212-4420--><br>
+				
+								<a href="/disclaimer.php">Disclaimer</a> * <a href="/policies.php">Policies</a> * <a href="/credits.php">Photo Credits</a> * <a href="/contact.php">Contact Us</a>
+							</div>
+		</div>
+		<div id="printfooter" class="printdisplay serifNormal" align=center style="font-size: 8pt;">
+			<br>
+			<br>
+			<hr>
+			Legislative Services Agency
+			<br>
+			h t t p : / / w w w . s c s t a t e h o u s e . g o v
+		</div>
+	
+		</div>	<!-- container or main in mobile page-->
+</body>
+</html>
+

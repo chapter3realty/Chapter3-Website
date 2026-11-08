@@ -255,8 +255,15 @@ function build(spec) {
      photo credits (Blog-Brain tools/photos.js creditsList), or a function that returns it,
      called after the sections are built. It goes right after the sources line, so the credits
      no longer sit between the last section and the FAQ (Blog-Brain playbook, component 19). */
+  /* The FAQ as dropdowns (owner, 2026-11-08: "all the FAQ's should become dropdown boxes they would make the scroll bar
+     way less intimidating"). Each question stays a real h3 and each answer stays in the page, so search engines and AI
+     answers still read them; the first one is open. */
+  const FAQ_STYLE = `<style>.c3-faq details{border-top:1px solid var(--rule,rgba(15,27,45,.14))}.c3-faq details:last-child{border-bottom:1px solid var(--rule,rgba(15,27,45,.14))}`
+    + `.c3-faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.2rem 0}.c3-faq summary::-webkit-details-marker{display:none}`
+    + `.c3-faq summary h3{margin:.9rem 0!important;flex:1}.c3-faq summary::after{content:"+";font:400 1.5rem/1 var(--sans);color:var(--brass);flex:none;width:1.5rem;text-align:center}`
+    + `.c3-faq details[open] summary::after{content:"\\2212"}.c3-faq details p{margin:0 0 1rem!important}.c3-faq summary:focus-visible{outline:2px solid var(--brass);outline-offset:3px}</style>`;
   const afterSources = typeof spec.afterSources === "function" ? spec.afterSources() : (spec.afterSources || "");
-  parts.push(`<section style="background:var(--${faqBg})" id="${faqId}"><div class="wrap"><p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">Common questions</p><h2 ${H2}>${spec.faqTitle}</h2>${spec.faq.map(f => `<h3 ${H3}>${f.q}</h3><p ${P}>${f.a}</p>`).join("")}<p style="font-size:.78rem;color:var(--muted);line-height:1.7;max-width:760px;margin-top:1.6rem"><strong style="color:var(--navy)">Sources:</strong> ${srcLinks}. ${spec.sourcesNote || "Educational only, not legal or tax advice."}</p>${afterSources}</div></section>`);
+  parts.push(`<section style="background:var(--${faqBg})" id="${faqId}"><div class="wrap"><p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">Common questions</p><h2 ${H2}>${spec.faqTitle}</h2>${FAQ_STYLE}<div class="c3-faq">${spec.faq.map((f, i) => `<details${i === 0 ? " open" : ""}><summary><h3 ${H3}>${f.q}</h3></summary><p ${P}>${f.a}</p></details>`).join("")}</div><p style="font-size:.78rem;color:var(--muted);line-height:1.7;max-width:760px;margin-top:1.6rem"><strong style="color:var(--navy)">Sources:</strong> ${srcLinks}. ${spec.sourcesNote || "Educational only, not legal or tax advice."}</p>${afterSources}</div></section>`);
   parts.push(offerBand({ title: spec.bottomCta.h2, text: spec.bottomCta.p, href: spec.bottomCta.href, label: spec.bottomCta.label }, "h2") + "</main>");
   const main = parts.join("");
   const out = head + main + tail;

@@ -1,0 +1,4086 @@
+{
+ "source_deeds": "https://acclaimweb.horrycounty.org/AcclaimWeb/search/SearchTypeDocType",
+ "deeds_from": "2025-11-01",
+ "deeds_to": "2026-10-31",
+ "deeds_pulled": "2026-11-08T07:31:58.376683Z",
+ "steps": {
+  "all deeds": 30333,
+  "over $10,000": 19055,
+  "one parcel number": 18936,
+  "not tax sale, corrective or multi-parcel memo": 18375,
+  "parcel in county layer": 18278,
+  "residential land use code": 17778
+ },
+ "home_sales_kept": 17778,
+ "builder_sales": 5280,
+ "builder_share_pct": 29.7,
+ "builder_sales_to_a_company_excluded": [
+  [
+   "Lennar",
+   28
+  ],
+  [
+   "D.R. Horton",
+   4
+  ],
+  [
+   "Ryan Homes",
+   1
+  ],
+  [
+   "Starlight Homes",
+   1
+  ],
+  [
+   "Stanley Martin (Great Southern Homes)",
+   1
+  ]
+ ],
+ "builder_sales_bought_by_a_company": 147,
+ "builder_sales_bought_by_a_company_by_builder": [
+  [
+   "Lennar",
+   65
+  ],
+  [
+   "D.R. Horton",
+   57
+  ],
+  [
+   "Ryan Homes",
+   7
+  ],
+  [
+   "Chris Manning",
+   5
+  ],
+  [
+   "Chesapeake Homes (community companies)",
+   3
+  ],
+  [
+   "Ashton Woods",
+   3
+  ]
+ ],
+ "town_assigned_by": {
+  "address point": 4946,
+  "same subdivision": 139,
+  "nearest parcel": 195
+ },
+ "builder_median_price": 335000.0,
+ "other_median_price_seller_a_person": 295000.0,
+ "builders_with_50_or_more": 17,
+ "top5_share_pct": 67.0,
+ "top2_share_pct": 44.8,
+ "by_builder": [
+  {
+   "builder": "D.R. Horton",
+   "deed_seller": "D R Horton Inc / DR Horton Inc",
+   "sales": 1397,
+   "share_pct": 26.5,
+   "price": {
+    "n": 1397,
+    "median": 325000.0,
+    "p25": 279000.0,
+    "p75": 375000.0,
+    "p10": 260000.0,
+    "p90": 449937.0,
+    "min": 209000.0,
+    "max": 651000.0
+   },
+   "subdivisions_with_5_plus": 31,
+   "top_subdivisions": [
+    [
+     "AUBERON WOODS",
+     217
+    ],
+    [
+     "EDEN SPRINGS",
+     101
+    ],
+    [
+     "SANDPIPER PLACE",
+     87
+    ],
+    [
+     "no subdivision in memo",
+     66
+    ],
+    [
+     "BLACK BEAR",
+     63
+    ],
+    [
+     "SANDRIDGE PARK",
+     61
+    ]
+   ],
+   "towns": [
+    [
+     "Conway",
+     678
+    ],
+    [
+     "Longs",
+     252
+    ],
+    [
+     "Myrtle Beach",
+     219
+    ],
+    [
+     "Loris",
+     92
+    ],
+    [
+     "Little River",
+     62
+    ],
+    [
+     "Surfside Beach",
+     47
+    ],
+    [
+     "Galivants Ferry",
+     41
+    ],
+    [
+     "Murrells Inlet",
+     3
+    ],
+    [
+     "North Myrtle Beach",
+     3
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     106
+    ],
+    [
+     "2025-12",
+     103
+    ],
+    [
+     "2026-01",
+     65
+    ],
+    [
+     "2026-02",
+     84
+    ],
+    [
+     "2026-03",
+     117
+    ],
+    [
+     "2026-04",
+     94
+    ],
+    [
+     "2026-05",
+     113
+    ],
+    [
+     "2026-06",
+     196
+    ],
+    [
+     "2026-07",
+     158
+    ],
+    [
+     "2026-08",
+     122
+    ],
+    [
+     "2026-09",
+     163
+    ],
+    [
+     "2026-10",
+     76
+    ]
+   ],
+   "first_half": 569,
+   "second_half": 828
+  },
+  {
+   "builder": "Lennar",
+   "deed_seller": "Lennar Carolinas LLC",
+   "sales": 967,
+   "share_pct": 18.3,
+   "price": {
+    "n": 967,
+    "median": 258000.0,
+    "p25": 232000.0,
+    "p75": 308000.0,
+    "p10": 220000.0,
+    "p90": 419000.0,
+    "min": 194000.0,
+    "max": 1070625.0
+   },
+   "subdivisions_with_5_plus": 19,
+   "top_subdivisions": [
+    [
+     "INDIGO GROVE",
+     140
+    ],
+    [
+     "KINGSTON OAKS",
+     112
+    ],
+    [
+     "SEACHASE POINTE",
+     80
+    ],
+    [
+     "VICTORY POINT",
+     74
+    ],
+    [
+     "TUPELO PARK",
+     70
+    ],
+    [
+     "BIRCHWOOD",
+     70
+    ]
+   ],
+   "towns": [
+    [
+     "Longs",
+     298
+    ],
+    [
+     "Myrtle Beach",
+     229
+    ],
+    [
+     "Conway",
+     207
+    ],
+    [
+     "North Myrtle Beach",
+     115
+    ],
+    [
+     "Loris",
+     66
+    ],
+    [
+     "Little River",
+     35
+    ],
+    [
+     "Murrells Inlet",
+     17
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     89
+    ],
+    [
+     "2025-12",
+     112
+    ],
+    [
+     "2026-01",
+     67
+    ],
+    [
+     "2026-02",
+     102
+    ],
+    [
+     "2026-03",
+     80
+    ],
+    [
+     "2026-04",
+     57
+    ],
+    [
+     "2026-05",
+     96
+    ],
+    [
+     "2026-06",
+     62
+    ],
+    [
+     "2026-07",
+     68
+    ],
+    [
+     "2026-08",
+     98
+    ],
+    [
+     "2026-09",
+     72
+    ],
+    [
+     "2026-10",
+     64
+    ]
+   ],
+   "first_half": 507,
+   "second_half": 460
+  },
+  {
+   "builder": "Ryan Homes",
+   "deed_seller": "NVR Inc",
+   "sales": 477,
+   "share_pct": 9.0,
+   "price": {
+    "n": 477,
+    "median": 350000.0,
+    "p25": 308875.0,
+    "p75": 522945.0,
+    "p10": 249744.0,
+    "p90": 624221.0,
+    "min": 219990.0,
+    "max": 808160.0
+   },
+   "subdivisions_with_5_plus": 12,
+   "top_subdivisions": [
+    [
+     "GRANDE DUNES NORTH",
+     189
+    ],
+    [
+     "MEADOWS EDGE",
+     94
+    ],
+    [
+     "HOPE POINTE",
+     53
+    ],
+    [
+     "COURSE CLUB VILLAS AT PRINCE CREEK",
+     50
+    ],
+    [
+     "INDIGO BAY",
+     35
+    ],
+    [
+     "MCCORMICK TOWNHOMES",
+     15
+    ]
+   ],
+   "towns": [
+    [
+     "Longs",
+     196
+    ],
+    [
+     "Conway",
+     105
+    ],
+    [
+     "North Myrtle Beach",
+     63
+    ],
+    [
+     "Myrtle Beach",
+     63
+    ],
+    [
+     "Murrells Inlet",
+     50
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     47
+    ],
+    [
+     "2025-12",
+     47
+    ],
+    [
+     "2026-01",
+     50
+    ],
+    [
+     "2026-02",
+     35
+    ],
+    [
+     "2026-03",
+     35
+    ],
+    [
+     "2026-04",
+     39
+    ],
+    [
+     "2026-05",
+     41
+    ],
+    [
+     "2026-06",
+     43
+    ],
+    [
+     "2026-07",
+     35
+    ],
+    [
+     "2026-08",
+     32
+    ],
+    [
+     "2026-09",
+     39
+    ],
+    [
+     "2026-10",
+     34
+    ]
+   ],
+   "first_half": 253,
+   "second_half": 224
+  },
+  {
+   "builder": "Pulte Homes",
+   "deed_seller": "Pulte Home Company LLC",
+   "sales": 382,
+   "share_pct": 7.2,
+   "price": {
+    "n": 382,
+    "median": 487552.5,
+    "p25": 419146.25,
+    "p75": 623083.75,
+    "p10": 375270.0,
+    "p90": 721312.5,
+    "min": 318997.0,
+    "max": 958140.0
+   },
+   "subdivisions_with_5_plus": 5,
+   "top_subdivisions": [
+    [
+     "CHESTNUT GREENS",
+     114
+    ],
+    [
+     "CRESCENT COVE",
+     107
+    ],
+    [
+     "BELL",
+     74
+    ],
+    [
+     "ARCADIA",
+     35
+    ],
+    [
+     "no subdivision in memo",
+     20
+    ],
+    [
+     "SAYEBROOK RESIDENTIAL",
+     19
+    ]
+   ],
+   "towns": [
+    [
+     "Myrtle Beach",
+     177
+    ],
+    [
+     "North Myrtle Beach",
+     114
+    ],
+    [
+     "Longs",
+     91
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     36
+    ],
+    [
+     "2025-12",
+     56
+    ],
+    [
+     "2026-01",
+     31
+    ],
+    [
+     "2026-02",
+     20
+    ],
+    [
+     "2026-03",
+     23
+    ],
+    [
+     "2026-04",
+     34
+    ],
+    [
+     "2026-05",
+     28
+    ],
+    [
+     "2026-06",
+     21
+    ],
+    [
+     "2026-07",
+     33
+    ],
+    [
+     "2026-08",
+     33
+    ],
+    [
+     "2026-09",
+     31
+    ],
+    [
+     "2026-10",
+     36
+    ]
+   ],
+   "first_half": 200,
+   "second_half": 182
+  },
+  {
+   "builder": "Meritage Homes",
+   "deed_seller": "Meritage Homes of the Carolinas Inc",
+   "sales": 313,
+   "share_pct": 5.9,
+   "price": {
+    "n": 313,
+    "median": 339990.0,
+    "p25": 299990.0,
+    "p75": 382000.0,
+    "p10": 268398.0,
+    "p90": 417790.0,
+    "min": 229900.0,
+    "max": 479990.0
+   },
+   "subdivisions_with_5_plus": 5,
+   "top_subdivisions": [
+    [
+     "WATERSIDE NEIGHBORHOOD",
+     149
+    ],
+    [
+     "CYPRESS RIDGE",
+     109
+    ],
+    [
+     "CLEAR POND",
+     28
+    ],
+    [
+     "PALMETTO PLACE",
+     8
+    ],
+    [
+     "WATERSIDE",
+     7
+    ],
+    [
+     "no subdivision in memo",
+     4
+    ]
+   ],
+   "towns": [
+    [
+     "Longs",
+     282
+    ],
+    [
+     "Myrtle Beach",
+     31
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     37
+    ],
+    [
+     "2025-12",
+     34
+    ],
+    [
+     "2026-01",
+     44
+    ],
+    [
+     "2026-02",
+     18
+    ],
+    [
+     "2026-03",
+     26
+    ],
+    [
+     "2026-04",
+     24
+    ],
+    [
+     "2026-05",
+     25
+    ],
+    [
+     "2026-06",
+     38
+    ],
+    [
+     "2026-07",
+     15
+    ],
+    [
+     "2026-08",
+     20
+    ],
+    [
+     "2026-09",
+     19
+    ],
+    [
+     "2026-10",
+     13
+    ]
+   ],
+   "first_half": 183,
+   "second_half": 130
+  },
+  {
+   "builder": "Chesapeake Homes (community companies)",
+   "deed_seller": "Banbury SC, Baytree SC, Waterbridge SC, Heritage SC, Cedar Branch SC LLC",
+   "sales": 240,
+   "share_pct": 4.5,
+   "price": {
+    "n": 240,
+    "median": 525372.0,
+    "p25": 409900.0,
+    "p75": 618401.5,
+    "p10": 349447.4,
+    "p90": 703952.1,
+    "min": 36355.0,
+    "max": 1008622.0
+   },
+   "subdivisions_with_5_plus": 7,
+   "top_subdivisions": [
+    [
+     "no subdivision in memo",
+     59
+    ],
+    [
+     "WILLOWS",
+     38
+    ],
+    [
+     "WATERBRIDGE",
+     31
+    ],
+    [
+     "HERITAGE PARK",
+     31
+    ],
+    [
+     "SHOREHAVEN VILLAGE",
+     30
+    ],
+    [
+     "BANBURY",
+     19
+    ]
+   ],
+   "towns": [
+    [
+     "Myrtle Beach",
+     105
+    ],
+    [
+     "Little River",
+     65
+    ],
+    [
+     "Loris",
+     38
+    ],
+    [
+     "Longs",
+     32
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     17
+    ],
+    [
+     "2025-12",
+     30
+    ],
+    [
+     "2026-01",
+     11
+    ],
+    [
+     "2026-02",
+     15
+    ],
+    [
+     "2026-03",
+     26
+    ],
+    [
+     "2026-04",
+     22
+    ],
+    [
+     "2026-05",
+     21
+    ],
+    [
+     "2026-06",
+     18
+    ],
+    [
+     "2026-07",
+     12
+    ],
+    [
+     "2026-08",
+     25
+    ],
+    [
+     "2026-09",
+     22
+    ],
+    [
+     "2026-10",
+     21
+    ]
+   ],
+   "first_half": 121,
+   "second_half": 119
+  },
+  {
+   "builder": "Mungo Homes",
+   "deed_seller": "Mungo Homes Coastal Division Properties LLC",
+   "sales": 207,
+   "share_pct": 3.9,
+   "price": {
+    "n": 207,
+    "median": 396059.0,
+    "p25": 324900.0,
+    "p75": 491152.0,
+    "p10": 294960.0,
+    "p90": 577024.0,
+    "min": 264000.0,
+    "max": 749288.0
+   },
+   "subdivisions_with_5_plus": 5,
+   "top_subdivisions": [
+    [
+     "ARCADIA",
+     90
+    ],
+    [
+     "GARDEN GROVE",
+     50
+    ],
+    [
+     "JORDAN GROVE",
+     28
+    ],
+    [
+     "HAINER PLACE",
+     27
+    ],
+    [
+     "BALLY CASTLE GARDEN HOMES",
+     6
+    ],
+    [
+     "HALNER PLACE",
+     1
+    ]
+   ],
+   "towns": [
+    [
+     "Conway",
+     108
+    ],
+    [
+     "Myrtle Beach",
+     93
+    ],
+    [
+     "Murrells Inlet",
+     6
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     13
+    ],
+    [
+     "2025-12",
+     20
+    ],
+    [
+     "2026-01",
+     14
+    ],
+    [
+     "2026-02",
+     16
+    ],
+    [
+     "2026-03",
+     21
+    ],
+    [
+     "2026-04",
+     14
+    ],
+    [
+     "2026-05",
+     12
+    ],
+    [
+     "2026-06",
+     15
+    ],
+    [
+     "2026-07",
+     18
+    ],
+    [
+     "2026-08",
+     18
+    ],
+    [
+     "2026-09",
+     20
+    ],
+    [
+     "2026-10",
+     26
+    ]
+   ],
+   "first_half": 98,
+   "second_half": 109
+  },
+  {
+   "builder": "Stanley Martin (Great Southern Homes)",
+   "deed_seller": "Great Southern Homes Inc",
+   "sales": 182,
+   "share_pct": 3.4,
+   "price": {
+    "n": 182,
+    "median": 325990.0,
+    "p25": 299990.0,
+    "p75": 349997.5,
+    "p10": 279540.0,
+    "p90": 387290.3,
+    "min": 229000.0,
+    "max": 463467.0
+   },
+   "subdivisions_with_5_plus": 11,
+   "top_subdivisions": [
+    [
+     "WESTWOOD RESERVES",
+     28
+    ],
+    [
+     "OAK HOLLOW",
+     27
+    ],
+    [
+     "KING FARM",
+     21
+    ],
+    [
+     "BEACH GARDENS",
+     19
+    ],
+    [
+     "AVERY WOODS",
+     18
+    ],
+    [
+     "WESTFIELD",
+     18
+    ]
+   ],
+   "towns": [
+    [
+     "Conway",
+     100
+    ],
+    [
+     "Longs",
+     45
+    ],
+    [
+     "Aynor",
+     22
+    ],
+    [
+     "Loris",
+     15
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     12
+    ],
+    [
+     "2025-12",
+     21
+    ],
+    [
+     "2026-01",
+     8
+    ],
+    [
+     "2026-02",
+     14
+    ],
+    [
+     "2026-03",
+     19
+    ],
+    [
+     "2026-04",
+     16
+    ],
+    [
+     "2026-05",
+     18
+    ],
+    [
+     "2026-06",
+     18
+    ],
+    [
+     "2026-07",
+     21
+    ],
+    [
+     "2026-08",
+     10
+    ],
+    [
+     "2026-09",
+     12
+    ],
+    [
+     "2026-10",
+     13
+    ]
+   ],
+   "first_half": 90,
+   "second_half": 92
+  },
+  {
+   "builder": "Beverly Homes",
+   "deed_seller": "Beverly Homes LLC",
+   "sales": 182,
+   "share_pct": 3.4,
+   "price": {
+    "n": 182,
+    "median": 323636.0,
+    "p25": 299990.0,
+    "p75": 394266.5,
+    "p10": 282442.6,
+    "p90": 574467.1,
+    "min": 85000.0,
+    "max": 950000.0
+   },
+   "subdivisions_with_5_plus": 6,
+   "top_subdivisions": [
+    [
+     "WOODSIDE CROSSING",
+     42
+    ],
+    [
+     "no subdivision in memo",
+     31
+    ],
+    [
+     "TIDES OF LITTLE CREEK",
+     30
+    ],
+    [
+     "RIVERTOWN ROW NORTH",
+     28
+    ],
+    [
+     "KINGSWOOD ON THE WATERWAY",
+     14
+    ],
+    [
+     "COOPERS BLUFF",
+     11
+    ]
+   ],
+   "towns": [
+    [
+     "Conway",
+     85
+    ],
+    [
+     "Longs",
+     37
+    ],
+    [
+     "Myrtle Beach",
+     25
+    ],
+    [
+     "North Myrtle Beach",
+     18
+    ],
+    [
+     "Loris",
+     10
+    ],
+    [
+     "Aynor",
+     7
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     15
+    ],
+    [
+     "2025-12",
+     13
+    ],
+    [
+     "2026-01",
+     11
+    ],
+    [
+     "2026-02",
+     13
+    ],
+    [
+     "2026-03",
+     11
+    ],
+    [
+     "2026-04",
+     19
+    ],
+    [
+     "2026-05",
+     18
+    ],
+    [
+     "2026-06",
+     17
+    ],
+    [
+     "2026-07",
+     17
+    ],
+    [
+     "2026-08",
+     22
+    ],
+    [
+     "2026-09",
+     14
+    ],
+    [
+     "2026-10",
+     12
+    ]
+   ],
+   "first_half": 82,
+   "second_half": 100
+  },
+  {
+   "builder": "Beazer Homes",
+   "deed_seller": "Beazer Homes LLC",
+   "sales": 156,
+   "share_pct": 3.0,
+   "price": {
+    "n": 156,
+    "median": 393114.5,
+    "p25": 337851.25,
+    "p75": 499573.0,
+    "p10": 318271.5,
+    "p90": 587983.5,
+    "min": 279990.0,
+    "max": 783881.0
+   },
+   "subdivisions_with_5_plus": 6,
+   "top_subdivisions": [
+    [
+     "SOMERSET",
+     52
+    ],
+    [
+     "LAURET",
+     38
+    ],
+    [
+     "SUNSET LANDING",
+     22
+    ],
+    [
+     "EVANS PARK",
+     16
+    ],
+    [
+     "AMBRIDGE",
+     14
+    ],
+    [
+     "MARSHFIELD",
+     10
+    ]
+   ],
+   "towns": [
+    [
+     "Myrtle Beach",
+     53
+    ],
+    [
+     "Longs",
+     50
+    ],
+    [
+     "Little River",
+     23
+    ],
+    [
+     "Murrells Inlet",
+     16
+    ],
+    [
+     "Conway",
+     14
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     8
+    ],
+    [
+     "2025-12",
+     12
+    ],
+    [
+     "2026-01",
+     8
+    ],
+    [
+     "2026-02",
+     6
+    ],
+    [
+     "2026-03",
+     7
+    ],
+    [
+     "2026-04",
+     13
+    ],
+    [
+     "2026-05",
+     14
+    ],
+    [
+     "2026-06",
+     17
+    ],
+    [
+     "2026-07",
+     13
+    ],
+    [
+     "2026-08",
+     13
+    ],
+    [
+     "2026-09",
+     31
+    ],
+    [
+     "2026-10",
+     14
+    ]
+   ],
+   "first_half": 54,
+   "second_half": 102
+  },
+  {
+   "builder": "Starlight Homes",
+   "deed_seller": "Starlight Homes South Carolina LLC",
+   "sales": 148,
+   "share_pct": 2.8,
+   "price": {
+    "n": 148,
+    "median": 258740.0,
+    "p25": 230223.5,
+    "p75": 287615.0,
+    "p10": 213490.0,
+    "p90": 310541.0,
+    "min": 164990.0,
+    "max": 341990.0
+   },
+   "subdivisions_with_5_plus": 3,
+   "top_subdivisions": [
+    [
+     "SPRING GROVE",
+     57
+    ],
+    [
+     "ANDALUSIA",
+     47
+    ],
+    [
+     "BAYVIEW",
+     41
+    ],
+    [
+     "AFFIDAVIT OF CONSIDERATION 4A INCOMPLETE",
+     1
+    ],
+    [
+     "AUDALUSIA",
+     1
+    ],
+    [
+     "no subdivision in memo",
+     1
+    ]
+   ],
+   "towns": [
+    [
+     "Aynor",
+     57
+    ],
+    [
+     "Loris",
+     47
+    ],
+    [
+     "Conway",
+     42
+    ],
+    [
+     "Myrtle Beach",
+     2
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     8
+    ],
+    [
+     "2025-12",
+     10
+    ],
+    [
+     "2026-01",
+     8
+    ],
+    [
+     "2026-02",
+     8
+    ],
+    [
+     "2026-03",
+     6
+    ],
+    [
+     "2026-04",
+     25
+    ],
+    [
+     "2026-05",
+     31
+    ],
+    [
+     "2026-06",
+     15
+    ],
+    [
+     "2026-07",
+     7
+    ],
+    [
+     "2026-08",
+     15
+    ],
+    [
+     "2026-09",
+     9
+    ],
+    [
+     "2026-10",
+     6
+    ]
+   ],
+   "first_half": 65,
+   "second_half": 83
+  },
+  {
+   "builder": "Toll Brothers",
+   "deed_seller": "Toll Southeast LP Company Inc",
+   "sales": 100,
+   "share_pct": 1.9,
+   "price": {
+    "n": 100,
+    "median": 612308.5,
+    "p25": 503117.75,
+    "p75": 691639.25,
+    "p10": 398762.1,
+    "p90": 804978.2,
+    "min": 353925.0,
+    "max": 949000.0
+   },
+   "subdivisions_with_5_plus": 4,
+   "top_subdivisions": [
+    [
+     "WILDERNESS BLUFFS",
+     32
+    ],
+    [
+     "HILL STREET PARK VILLAS",
+     23
+    ],
+    [
+     "SAYEBROOK RESIDENTIAL",
+     20
+    ],
+    [
+     "COTTAGES AT INGRAM DUNES",
+     16
+    ],
+    [
+     "no subdivision in memo",
+     4
+    ],
+    [
+     "LONGWOOD BLUFFS",
+     4
+    ]
+   ],
+   "towns": [
+    [
+     "North Myrtle Beach",
+     39
+    ],
+    [
+     "Murrells Inlet",
+     37
+    ],
+    [
+     "Myrtle Beach",
+     24
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     4
+    ],
+    [
+     "2025-12",
+     7
+    ],
+    [
+     "2026-01",
+     10
+    ],
+    [
+     "2026-02",
+     6
+    ],
+    [
+     "2026-03",
+     8
+    ],
+    [
+     "2026-04",
+     9
+    ],
+    [
+     "2026-05",
+     8
+    ],
+    [
+     "2026-06",
+     7
+    ],
+    [
+     "2026-07",
+     10
+    ],
+    [
+     "2026-08",
+     7
+    ],
+    [
+     "2026-09",
+     9
+    ],
+    [
+     "2026-10",
+     15
+    ]
+   ],
+   "first_half": 44,
+   "second_half": 56
+  },
+  {
+   "builder": "Ashton Woods",
+   "deed_seller": "Ashton Charleston Residential LLC",
+   "sales": 94,
+   "share_pct": 1.8,
+   "price": {
+    "n": 94,
+    "median": 380000.0,
+    "p25": 255000.0,
+    "p75": 449500.0,
+    "p10": 230050.0,
+    "p90": 499997.0,
+    "min": 205000.0,
+    "max": 800000.0
+   },
+   "subdivisions_with_5_plus": 2,
+   "top_subdivisions": [
+    [
+     "BLUE HERON RETREAT",
+     55
+    ],
+    [
+     "BELLA VITA",
+     35
+    ],
+    [
+     "HERON RETREAT",
+     1
+    ],
+    [
+     "VILLAGES AT WATERSIDE",
+     1
+    ],
+    [
+     "AFFIDAVIT INCOMPLETE",
+     1
+    ],
+    [
+     "no subdivision in memo",
+     1
+    ]
+   ],
+   "towns": [
+    [
+     "Little River",
+     59
+    ],
+    [
+     "Myrtle Beach",
+     35
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     8
+    ],
+    [
+     "2025-12",
+     7
+    ],
+    [
+     "2026-01",
+     4
+    ],
+    [
+     "2026-02",
+     7
+    ],
+    [
+     "2026-03",
+     8
+    ],
+    [
+     "2026-04",
+     10
+    ],
+    [
+     "2026-05",
+     22
+    ],
+    [
+     "2026-06",
+     12
+    ],
+    [
+     "2026-07",
+     10
+    ],
+    [
+     "2026-08",
+     2
+    ],
+    [
+     "2026-09",
+     3
+    ],
+    [
+     "2026-10",
+     1
+    ]
+   ],
+   "first_half": 44,
+   "second_half": 50
+  },
+  {
+   "builder": "H&H Homes",
+   "deed_seller": "H & H Constructors of Fayetteville LLC",
+   "sales": 88,
+   "share_pct": 1.7,
+   "price": {
+    "n": 88,
+    "median": 276495.0,
+    "p25": 262750.0,
+    "p75": 305000.0,
+    "p10": 248493.0,
+    "p90": 325000.0,
+    "min": 234990.0,
+    "max": 378556.0
+   },
+   "subdivisions_with_5_plus": 4,
+   "top_subdivisions": [
+    [
+     "RIVERTOWN LANDING",
+     30
+    ],
+    [
+     "SHAFTESBURY GREENS",
+     29
+    ],
+    [
+     "SPRING OAKS",
+     13
+    ],
+    [
+     "VILLAS AT SANDRIDGE",
+     8
+    ],
+    [
+     "no subdivision in memo",
+     7
+    ],
+    [
+     "SHAFTESBURY GREEN",
+     1
+    ]
+   ],
+   "towns": [
+    [
+     "Conway",
+     80
+    ],
+    [
+     "Little River",
+     8
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-12",
+     6
+    ],
+    [
+     "2026-01",
+     11
+    ],
+    [
+     "2026-02",
+     6
+    ],
+    [
+     "2026-03",
+     13
+    ],
+    [
+     "2026-04",
+     7
+    ],
+    [
+     "2026-05",
+     6
+    ],
+    [
+     "2026-06",
+     9
+    ],
+    [
+     "2026-07",
+     9
+    ],
+    [
+     "2026-08",
+     5
+    ],
+    [
+     "2026-09",
+     10
+    ],
+    [
+     "2026-10",
+     6
+    ]
+   ],
+   "first_half": 43,
+   "second_half": 45
+  },
+  {
+   "builder": "Dream Finders Homes",
+   "deed_seller": "Dream Finders Homes LLC",
+   "sales": 61,
+   "share_pct": 1.2,
+   "price": {
+    "n": 61,
+    "median": 555000.0,
+    "p25": 440000.0,
+    "p75": 621460.0,
+    "p10": 318118.0,
+    "p90": 666415.0,
+    "min": 275000.0,
+    "max": 953830.0
+   },
+   "subdivisions_with_5_plus": 2,
+   "top_subdivisions": [
+    [
+     "PROMENADE AT GRANDE DUNES",
+     25
+    ],
+    [
+     "FURNIES PLACE",
+     12
+    ],
+    [
+     "no subdivision in memo",
+     6
+    ],
+    [
+     "SPRING OAKS",
+     4
+    ],
+    [
+     "2",
+     2
+    ],
+    [
+     "6",
+     1
+    ]
+   ],
+   "towns": [
+    [
+     "Myrtle Beach",
+     28
+    ],
+    [
+     "Conway",
+     17
+    ],
+    [
+     "Loris",
+     16
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     2
+    ],
+    [
+     "2025-12",
+     4
+    ],
+    [
+     "2026-01",
+     5
+    ],
+    [
+     "2026-02",
+     4
+    ],
+    [
+     "2026-03",
+     7
+    ],
+    [
+     "2026-04",
+     8
+    ],
+    [
+     "2026-05",
+     6
+    ],
+    [
+     "2026-06",
+     4
+    ],
+    [
+     "2026-07",
+     8
+    ],
+    [
+     "2026-08",
+     3
+    ],
+    [
+     "2026-09",
+     6
+    ],
+    [
+     "2026-10",
+     4
+    ]
+   ],
+   "first_half": 30,
+   "second_half": 31
+  },
+  {
+   "builder": "DRB Homes",
+   "deed_seller": "DRB Group South Carolina LLC",
+   "sales": 61,
+   "share_pct": 1.2,
+   "price": {
+    "n": 61,
+    "median": 327438.0,
+    "p25": 290990.0,
+    "p75": 378225.0,
+    "p10": 280990.0,
+    "p90": 424990.0,
+    "min": 249990.0,
+    "max": 506850.0
+   },
+   "subdivisions_with_5_plus": 3,
+   "top_subdivisions": [
+    [
+     "SUN COLONY",
+     25
+    ],
+    [
+     "CHESTNUT ROAD",
+     21
+    ],
+    [
+     "TOWNES AT CAROLINA FOREST",
+     10
+    ],
+    [
+     "no subdivision in memo",
+     2
+    ],
+    [
+     "INDIGO @ THE PRESERVE",
+     2
+    ],
+    [
+     "CHESTNUT FARMS",
+     1
+    ]
+   ],
+   "towns": [
+    [
+     "Longs",
+     51
+    ],
+    [
+     "Myrtle Beach",
+     10
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     5
+    ],
+    [
+     "2025-12",
+     9
+    ],
+    [
+     "2026-01",
+     2
+    ],
+    [
+     "2026-02",
+     1
+    ],
+    [
+     "2026-03",
+     2
+    ],
+    [
+     "2026-04",
+     2
+    ],
+    [
+     "2026-05",
+     4
+    ],
+    [
+     "2026-06",
+     12
+    ],
+    [
+     "2026-07",
+     5
+    ],
+    [
+     "2026-08",
+     3
+    ],
+    [
+     "2026-09",
+     6
+    ],
+    [
+     "2026-10",
+     10
+    ]
+   ],
+   "first_half": 21,
+   "second_half": 40
+  },
+  {
+   "builder": "Howell Homes",
+   "deed_seller": "Howell Homes Inc",
+   "sales": 52,
+   "share_pct": 1.0,
+   "price": {
+    "n": 52,
+    "median": 317900.0,
+    "p25": 273075.0,
+    "p75": 326600.0,
+    "p10": 228600.0,
+    "p90": 349756.74799999996,
+    "min": 85000.0,
+    "max": 1165000.0
+   },
+   "subdivisions_with_5_plus": 0,
+   "top_subdivisions": [
+    [
+     "no subdivision in memo",
+     44
+    ],
+    [
+     "WATERBRIDGE",
+     2
+    ],
+    [
+     "AC 0.51 TS DOGBLUFF",
+     1
+    ],
+    [
+     "AC 1.18 TS BUCKS",
+     1
+    ],
+    [
+     "AC 6.84 TS BUCKS",
+     1
+    ],
+    [
+     "AC 2.57 TS BAYBORO",
+     1
+    ]
+   ],
+   "towns": [
+    [
+     "Aynor",
+     31
+    ],
+    [
+     "Conway",
+     13
+    ],
+    [
+     "Loris",
+     6
+    ],
+    [
+     "Myrtle Beach",
+     2
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     4
+    ],
+    [
+     "2025-12",
+     4
+    ],
+    [
+     "2026-01",
+     2
+    ],
+    [
+     "2026-02",
+     2
+    ],
+    [
+     "2026-03",
+     4
+    ],
+    [
+     "2026-04",
+     5
+    ],
+    [
+     "2026-05",
+     7
+    ],
+    [
+     "2026-06",
+     7
+    ],
+    [
+     "2026-07",
+     7
+    ],
+    [
+     "2026-08",
+     5
+    ],
+    [
+     "2026-09",
+     1
+    ],
+    [
+     "2026-10",
+     4
+    ]
+   ],
+   "first_half": 21,
+   "second_half": 31
+  },
+  {
+   "builder": "Chris Manning",
+   "deed_seller": "Chris Manning Builders LLC / Communities",
+   "sales": 34,
+   "share_pct": 0.6,
+   "price": {
+    "n": 34,
+    "median": 650000.0,
+    "p25": 364900.0,
+    "p75": 822500.0,
+    "p10": 358600.0,
+    "p90": 1320483.539,
+    "min": 280000.0,
+    "max": 2300000.0
+   },
+   "subdivisions_with_5_plus": 3,
+   "top_subdivisions": [
+    [
+     "SOUTHWIND COVE",
+     8
+    ],
+    [
+     "PALMETTO HARBOR",
+     5
+    ],
+    [
+     "MARINA BAY COLONY",
+     5
+    ],
+    [
+     "no subdivision in memo",
+     4
+    ],
+    [
+     "CHARLESTON LANDING",
+     2
+    ],
+    [
+     "INDIGO GROVE",
+     2
+    ]
+   ],
+   "towns": [
+    [
+     "North Myrtle Beach",
+     30
+    ],
+    [
+     "Little River",
+     2
+    ],
+    [
+     "Longs",
+     2
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-12",
+     2
+    ],
+    [
+     "2026-01",
+     1
+    ],
+    [
+     "2026-02",
+     3
+    ],
+    [
+     "2026-03",
+     3
+    ],
+    [
+     "2026-04",
+     2
+    ],
+    [
+     "2026-05",
+     1
+    ],
+    [
+     "2026-06",
+     4
+    ],
+    [
+     "2026-07",
+     11
+    ],
+    [
+     "2026-08",
+     1
+    ],
+    [
+     "2026-09",
+     3
+    ],
+    [
+     "2026-10",
+     3
+    ]
+   ],
+   "first_half": 11,
+   "second_half": 23
+  },
+  {
+   "builder": "Lewis Construction Group",
+   "deed_seller": "Lewis Construction Group LLC",
+   "sales": 33,
+   "share_pct": 0.6,
+   "price": {
+    "n": 33,
+    "median": 319900.0,
+    "p25": 319900.0,
+    "p75": 359900.0,
+    "p10": 245980.0,
+    "p90": 464560.0,
+    "min": 229900.0,
+    "max": 674900.0
+   },
+   "subdivisions_with_5_plus": 0,
+   "top_subdivisions": [
+    [
+     "no subdivision in memo",
+     26
+    ],
+    [
+     "SANDY ACRES",
+     2
+    ],
+    [
+     "1",
+     1
+    ],
+    [
+     "AC 0.70 TS SIMPSON CREEK",
+     1
+    ],
+    [
+     "LOT 1 TS DOG BLUFF",
+     1
+    ],
+    [
+     "AC 0.91 TS BAYBORO",
+     1
+    ]
+   ],
+   "towns": [
+    [
+     "Conway",
+     16
+    ],
+    [
+     "Loris",
+     13
+    ],
+    [
+     "Aynor",
+     4
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-12",
+     1
+    ],
+    [
+     "2026-02",
+     6
+    ],
+    [
+     "2026-03",
+     4
+    ],
+    [
+     "2026-04",
+     3
+    ],
+    [
+     "2026-05",
+     3
+    ],
+    [
+     "2026-06",
+     5
+    ],
+    [
+     "2026-07",
+     3
+    ],
+    [
+     "2026-08",
+     3
+    ],
+    [
+     "2026-10",
+     5
+    ]
+   ],
+   "first_half": 14,
+   "second_half": 19
+  },
+  {
+   "builder": "Carolina Cottage Homes",
+   "deed_seller": "Carolina Cottage Homes LLC",
+   "sales": 18,
+   "share_pct": 0.3,
+   "price": {
+    "n": 18,
+    "median": 664198.5,
+    "p25": 613847.0,
+    "p75": 726658.75,
+    "p10": 603204.0,
+    "p90": 761002.9,
+    "min": 589900.0,
+    "max": 788580.0
+   },
+   "subdivisions_with_5_plus": 1,
+   "top_subdivisions": [
+    [
+     "SAYEBROOK RESIDENTIAL",
+     16
+    ],
+    [
+     "no subdivision in memo",
+     2
+    ]
+   ],
+   "towns": [
+    [
+     "Myrtle Beach",
+     18
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     2
+    ],
+    [
+     "2025-12",
+     2
+    ],
+    [
+     "2026-02",
+     1
+    ],
+    [
+     "2026-03",
+     1
+    ],
+    [
+     "2026-05",
+     3
+    ],
+    [
+     "2026-06",
+     4
+    ],
+    [
+     "2026-07",
+     2
+    ],
+    [
+     "2026-09",
+     3
+    ]
+   ],
+   "first_half": 6,
+   "second_half": 12
+  },
+  {
+   "builder": "Hunter Quinn Homes",
+   "deed_seller": "Hunter Quinn Homes LLC",
+   "sales": 16,
+   "share_pct": 0.3,
+   "price": {
+    "n": 16,
+    "median": 499563.5,
+    "p25": 434683.0,
+    "p75": 595985.0,
+    "p10": 399400.0,
+    "p90": 611250.0,
+    "min": 377811.0,
+    "max": 639900.0
+   },
+   "subdivisions_with_5_plus": 1,
+   "top_subdivisions": [
+    [
+     "HUCKLEBERRY ESTATES",
+     7
+    ],
+    [
+     "LONG BAY GOLF CLUB",
+     2
+    ],
+    [
+     "no subdivision in memo",
+     2
+    ],
+    [
+     "HARBOR OAKS MARINA",
+     1
+    ],
+    [
+     "TOWNHOMES AT LONG BAY CLUB",
+     1
+    ],
+    [
+     "WATERWAY PALMS PLANTATION",
+     1
+    ]
+   ],
+   "towns": [
+    [
+     "Conway",
+     8
+    ],
+    [
+     "Longs",
+     4
+    ],
+    [
+     "Myrtle Beach",
+     2
+    ],
+    [
+     "Loris",
+     1
+    ],
+    [
+     "North Myrtle Beach",
+     1
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-12",
+     2
+    ],
+    [
+     "2026-01",
+     1
+    ],
+    [
+     "2026-02",
+     2
+    ],
+    [
+     "2026-04",
+     2
+    ],
+    [
+     "2026-05",
+     4
+    ],
+    [
+     "2026-07",
+     1
+    ],
+    [
+     "2026-08",
+     2
+    ],
+    [
+     "2026-09",
+     2
+    ]
+   ],
+   "first_half": 7,
+   "second_half": 9
+  },
+  {
+   "builder": "Sands Building Group",
+   "deed_seller": "Sands Building Group Inc",
+   "sales": 15,
+   "share_pct": 0.3,
+   "price": {
+    "n": 15,
+    "median": 585000.0,
+    "p25": 462500.0,
+    "p75": 627179.25,
+    "p10": 354960.0,
+    "p90": 1138093.0,
+    "min": 330945.0,
+    "max": 1209776.3
+   },
+   "subdivisions_with_5_plus": 2,
+   "top_subdivisions": [
+    [
+     "MARKET COMMON PARCEL R6",
+     7
+    ],
+    [
+     "MARKET COMMON R6",
+     5
+    ],
+    [
+     "MARKET COMMON R 6 MYRTLE BEACH",
+     1
+    ],
+    [
+     "MARKET COMMON",
+     1
+    ],
+    [
+     "MARKET COMMON  PARCEL R6",
+     1
+    ]
+   ],
+   "towns": [
+    [
+     "Myrtle Beach",
+     15
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     2
+    ],
+    [
+     "2025-12",
+     1
+    ],
+    [
+     "2026-02",
+     1
+    ],
+    [
+     "2026-03",
+     1
+    ],
+    [
+     "2026-04",
+     1
+    ],
+    [
+     "2026-05",
+     2
+    ],
+    [
+     "2026-06",
+     1
+    ],
+    [
+     "2026-07",
+     3
+    ],
+    [
+     "2026-08",
+     3
+    ]
+   ],
+   "first_half": 6,
+   "second_half": 9
+  },
+  {
+   "builder": "Bradley Jones",
+   "deed_seller": "Bradley Jones Construction LLC",
+   "sales": 14,
+   "share_pct": 0.3,
+   "price": {
+    "n": 14,
+    "median": 371735.0,
+    "p25": 314962.5,
+    "p75": 428898.0,
+    "p10": 255865.0,
+    "p90": 455408.5,
+    "min": 169900.0,
+    "max": 516900.0
+   },
+   "subdivisions_with_5_plus": 0,
+   "top_subdivisions": [
+    [
+     "no subdivision in memo",
+     11
+    ],
+    [
+     "AC 0.66 TS BUCKS",
+     1
+    ],
+    [
+     "AC 0.75 TS BAYBORO",
+     1
+    ],
+    [
+     "4",
+     1
+    ]
+   ],
+   "towns": [
+    [
+     "Conway",
+     6
+    ],
+    [
+     "Aynor",
+     4
+    ],
+    [
+     "Nichols",
+     2
+    ],
+    [
+     "Loris",
+     1
+    ],
+    [
+     "Galivants Ferry",
+     1
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     3
+    ],
+    [
+     "2026-02",
+     1
+    ],
+    [
+     "2026-03",
+     2
+    ],
+    [
+     "2026-04",
+     1
+    ],
+    [
+     "2026-05",
+     2
+    ],
+    [
+     "2026-06",
+     2
+    ],
+    [
+     "2026-07",
+     1
+    ],
+    [
+     "2026-09",
+     1
+    ],
+    [
+     "2026-10",
+     1
+    ]
+   ],
+   "first_half": 7,
+   "second_half": 7
+  },
+  {
+   "builder": "Ocean Palms Builders",
+   "deed_seller": "Ocean Palms Builders LLC",
+   "sales": 13,
+   "share_pct": 0.2,
+   "price": {
+    "n": 13,
+    "median": 417843.0,
+    "p25": 391801.0,
+    "p75": 489702.0,
+    "p10": 389900.0,
+    "p90": 503300.0,
+    "min": 388768.0,
+    "max": 511525.0
+   },
+   "subdivisions_with_5_plus": 1,
+   "top_subdivisions": [
+    [
+     "OCEAN PALMS",
+     12
+    ],
+    [
+     "OCEAN PALMS  OLD SOUTH COURSE",
+     1
+    ]
+   ],
+   "towns": [
+    [
+     "Surfside Beach",
+     13
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-11",
+     1
+    ],
+    [
+     "2025-12",
+     4
+    ],
+    [
+     "2026-01",
+     5
+    ],
+    [
+     "2026-02",
+     1
+    ],
+    [
+     "2026-03",
+     1
+    ],
+    [
+     "2026-04",
+     1
+    ]
+   ],
+   "first_half": 13,
+   "second_half": 0
+  },
+  {
+   "builder": "Infinity Custom Built Homes",
+   "deed_seller": "Infinity Custom Built Homes LLC",
+   "sales": 13,
+   "share_pct": 0.2,
+   "price": {
+    "n": 13,
+    "median": 360000.0,
+    "p25": 315000.0,
+    "p75": 369000.0,
+    "p10": 239999.8,
+    "p90": 441800.0,
+    "min": 144000.0,
+    "max": 458000.0
+   },
+   "subdivisions_with_5_plus": 1,
+   "top_subdivisions": [
+    [
+     "VENICE LAKE",
+     5
+    ],
+    [
+     "WATERFALL",
+     3
+    ],
+    [
+     "no subdivision in memo",
+     3
+    ],
+    [
+     "1 TS BAYBORO",
+     1
+    ],
+    [
+     "WOODLAND VALLEY",
+     1
+    ]
+   ],
+   "towns": [
+    [
+     "Loris",
+     10
+    ],
+    [
+     "Little River",
+     3
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2026-01",
+     1
+    ],
+    [
+     "2026-03",
+     2
+    ],
+    [
+     "2026-04",
+     1
+    ],
+    [
+     "2026-05",
+     1
+    ],
+    [
+     "2026-06",
+     1
+    ],
+    [
+     "2026-07",
+     2
+    ],
+    [
+     "2026-08",
+     2
+    ],
+    [
+     "2026-09",
+     1
+    ],
+    [
+     "2026-10",
+     2
+    ]
+   ],
+   "first_half": 4,
+   "second_half": 9
+  },
+  {
+   "builder": "Ameri Built Homes",
+   "deed_seller": "Ameri Built Homes Inc",
+   "sales": 11,
+   "share_pct": 0.2,
+   "price": {
+    "n": 11,
+    "median": 669488.6,
+    "p25": 645496.98,
+    "p75": 754649.64,
+    "p10": 586275.0,
+    "p90": 805828.36,
+    "min": 82441.77,
+    "max": 931076.88
+   },
+   "subdivisions_with_5_plus": 1,
+   "top_subdivisions": [
+    [
+     "DEER",
+     9
+    ],
+    [
+     "DISCREPANCY IN CONSIDERATION AMOUNTS ON THE AFFIDAVIT OF CONSIDERATION 4A & 6A/6C",
+     1
+    ],
+    [
+     "RERECORD",
+     1
+    ]
+   ],
+   "towns": [
+    [
+     "Surfside Beach",
+     11
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2025-12",
+     1
+    ],
+    [
+     "2026-01",
+     1
+    ],
+    [
+     "2026-02",
+     1
+    ],
+    [
+     "2026-04",
+     2
+    ],
+    [
+     "2026-05",
+     1
+    ],
+    [
+     "2026-06",
+     3
+    ],
+    [
+     "2026-07",
+     1
+    ],
+    [
+     "2026-09",
+     1
+    ]
+   ],
+   "first_half": 5,
+   "second_half": 6
+  },
+  {
+   "builder": "Almond Quality Builders",
+   "deed_seller": "Almond Quality Builders Inc",
+   "sales": 6,
+   "share_pct": 0.1,
+   "price": {
+    "n": 6,
+    "median": 355000.0,
+    "p25": 298500.0,
+    "p75": 406501.25,
+    "p10": 284500.0,
+    "p90": 881917.5,
+    "min": 279500.0,
+    "max": 1350000.0
+   },
+   "subdivisions_with_5_plus": 0,
+   "top_subdivisions": [
+    [
+     "CYPRESS GROVE",
+     3
+    ],
+    [
+     "MARCLIFFE WEST",
+     2
+    ],
+    [
+     "HIGHWOOD AT PRINCE CREEK",
+     1
+    ]
+   ],
+   "towns": [
+    [
+     "Murrells Inlet",
+     6
+    ]
+   ],
+   "sales_by_month": [
+    [
+     "2026-06",
+     1
+    ],
+    [
+     "2026-07",
+     3
+    ],
+    [
+     "2026-08",
+     1
+    ],
+    [
+     "2026-10",
+     1
+    ]
+   ],
+   "first_half": 0,
+   "second_half": 6
+  }
+ ],
+ "by_town": [
+  {
+   "town": "Conway",
+   "sales": 1479,
+   "builders_with_10_plus": 12,
+   "top": [
+    [
+     "D.R. Horton",
+     678
+    ],
+    [
+     "Lennar",
+     207
+    ],
+    [
+     "Mungo Homes",
+     108
+    ],
+    [
+     "Ryan Homes",
+     105
+    ]
+   ],
+   "median_price": 312000.0
+  },
+  {
+   "town": "Longs",
+   "sales": 1340,
+   "builders_with_10_plus": 10,
+   "top": [
+    [
+     "Lennar",
+     298
+    ],
+    [
+     "Meritage Homes",
+     282
+    ],
+    [
+     "D.R. Horton",
+     252
+    ],
+    [
+     "Ryan Homes",
+     196
+    ]
+   ],
+   "median_price": 328170.0
+  },
+  {
+   "town": "Myrtle Beach",
+   "sales": 1131,
+   "builders_with_10_plus": 15,
+   "top": [
+    [
+     "Lennar",
+     229
+    ],
+    [
+     "D.R. Horton",
+     219
+    ],
+    [
+     "Pulte Homes",
+     177
+    ],
+    [
+     "Chesapeake Homes (community companies)",
+     105
+    ]
+   ],
+   "median_price": 418492.0
+  },
+  {
+   "town": "North Myrtle Beach",
+   "sales": 383,
+   "builders_with_10_plus": 6,
+   "top": [
+    [
+     "Lennar",
+     115
+    ],
+    [
+     "Pulte Homes",
+     114
+    ],
+    [
+     "Ryan Homes",
+     63
+    ],
+    [
+     "Toll Brothers",
+     39
+    ]
+   ],
+   "median_price": 503275.0
+  },
+  {
+   "town": "Loris",
+   "sales": 315,
+   "builders_with_10_plus": 9,
+   "top": [
+    [
+     "D.R. Horton",
+     92
+    ],
+    [
+     "Lennar",
+     66
+    ],
+    [
+     "Starlight Homes",
+     47
+    ],
+    [
+     "Chesapeake Homes (community companies)",
+     38
+    ]
+   ],
+   "median_price": 276020.0
+  },
+  {
+   "town": "Little River",
+   "sales": 257,
+   "builders_with_10_plus": 5,
+   "top": [
+    [
+     "Chesapeake Homes (community companies)",
+     65
+    ],
+    [
+     "D.R. Horton",
+     62
+    ],
+    [
+     "Ashton Woods",
+     59
+    ],
+    [
+     "Lennar",
+     35
+    ]
+   ],
+   "median_price": 327000.0
+  },
+  {
+   "town": "Murrells Inlet",
+   "sales": 135,
+   "builders_with_10_plus": 4,
+   "top": [
+    [
+     "Ryan Homes",
+     50
+    ],
+    [
+     "Toll Brothers",
+     37
+    ],
+    [
+     "Lennar",
+     17
+    ],
+    [
+     "Beazer Homes",
+     16
+    ]
+   ],
+   "median_price": 424719.0
+  },
+  {
+   "town": "Aynor",
+   "sales": 125,
+   "builders_with_10_plus": 3,
+   "top": [
+    [
+     "Starlight Homes",
+     57
+    ],
+    [
+     "Howell Homes",
+     31
+    ],
+    [
+     "Stanley Martin (Great Southern Homes)",
+     22
+    ],
+    [
+     "Beverly Homes",
+     7
+    ]
+   ],
+   "median_price": 305000.0
+  },
+  {
+   "town": "Surfside Beach",
+   "sales": 71,
+   "builders_with_10_plus": 3,
+   "top": [
+    [
+     "D.R. Horton",
+     47
+    ],
+    [
+     "Ocean Palms Builders",
+     13
+    ],
+    [
+     "Ameri Built Homes",
+     11
+    ]
+   ],
+   "median_price": 283990.0
+  },
+  {
+   "town": "Galivants Ferry",
+   "sales": 42,
+   "builders_with_10_plus": 1,
+   "top": [
+    [
+     "D.R. Horton",
+     41
+    ],
+    [
+     "Bradley Jones",
+     1
+    ]
+   ],
+   "median_price": 272250.0
+  },
+  {
+   "town": "Nichols",
+   "sales": 2,
+   "builders_with_10_plus": 0,
+   "top": [
+    [
+     "Bradley Jones",
+     2
+    ]
+   ],
+   "median_price": 316787.5
+  }
+ ],
+ "communities_two_plus_builders": [
+  [
+   "ARCADIA",
+   [
+    [
+     "Mungo Homes",
+     90
+    ],
+    [
+     "Pulte Homes",
+     35
+    ],
+    [
+     "Lennar",
+     23
+    ]
+   ]
+  ],
+  [
+   "WATERBRIDGE",
+   [
+    [
+     "D.R. Horton",
+     39
+    ],
+    [
+     "Chesapeake Homes (community companies)",
+     31
+    ],
+    [
+     "Howell Homes",
+     2
+    ]
+   ]
+  ],
+  [
+   "SAYEBROOK RESIDENTIAL",
+   [
+    [
+     "Toll Brothers",
+     20
+    ],
+    [
+     "Pulte Homes",
+     19
+    ],
+    [
+     "Carolina Cottage Homes",
+     16
+    ]
+   ]
+  ]
+ ],
+ "communities_total_with_10_plus": 104,
+ "listings": {
+  "source": "https://chapter3realty.com/homes/api/map? (CCMLS feed), has=new_construction,county_horry",
+  "pulled": "2026-11-08T07:36:09.505056Z",
+  "total_new_construction": 1086,
+  "by_type": {
+   "house": 948,
+   "townhouse": 96,
+   "condo": 42
+  },
+  "builder_named_by": {
+   "builder's own sales company": 778,
+   "builder not named": 294,
+   "listing says built by (outside agent)": 14
+  },
+  "filter_counts": {
+   "dr_horton": 198,
+   "bradley_jones": 70,
+   "lennar": 30,
+   "mungo": 34,
+   "beverly": 36,
+   "meritage": 29,
+   "stanley_martin": 51,
+   "pulte": 24,
+   "beazer": 34,
+   "chesapeake": 18,
+   "dream_finders": 24,
+   "clayton": 0,
+   "adams": 0,
+   "starlight": 18,
+   "great_southern": 9,
+   "ashton_woods": 11,
+   "ryan": 1
+  },
+  "by_builder": [
+   {
+    "builder": "D.R. Horton",
+    "for_sale": 248,
+    "types": {
+     "house": 232,
+     "townhouse": 16
+    },
+    "price": {
+     "n": 248,
+     "median": 328435.0,
+     "p25": 290173.75,
+     "p75": 364610.0,
+     "p10": 249847.0,
+     "p90": 447702.5,
+     "min": 227640.0,
+     "max": 562648.0
+    },
+    "at_or_under_300k": 83,
+    "median_sqft": 1774.0,
+    "median_price_per_sqft": 172,
+    "beds": [
+     [
+      3,
+      109
+     ],
+     [
+      4,
+      108
+     ],
+     [
+      5,
+      25
+     ],
+     [
+      2,
+      6
+     ]
+    ],
+    "towns": [
+     [
+      "Conway",
+      132
+     ],
+     [
+      "Longs",
+      48
+     ],
+     [
+      "Myrtle Beach",
+      24
+     ],
+     [
+      "Loris",
+      19
+     ],
+     [
+      "Little River",
+      13
+     ],
+     [
+      "Galivants Ferry",
+      12
+     ]
+    ]
+   },
+   {
+    "builder": "Bradley Jones",
+    "for_sale": 70,
+    "types": {
+     "house": 70
+    },
+    "price": {
+     "n": 70,
+     "median": 421900.0,
+     "p25": 378400.0,
+     "p75": 505650.0,
+     "p10": 335600.0,
+     "p90": 577300.0,
+     "min": 259900.0,
+     "max": 752900.0
+    },
+    "at_or_under_300k": 3,
+    "median_sqft": 1738.0,
+    "median_price_per_sqft": 237,
+    "beds": [
+     [
+      3,
+      32
+     ],
+     [
+      4,
+      19
+     ],
+     [
+      5,
+      19
+     ]
+    ],
+    "towns": [
+     [
+      "Conway",
+      27
+     ],
+     [
+      "Galivants Ferry",
+      19
+     ],
+     [
+      "Loris",
+      16
+     ],
+     [
+      "Nichols",
+      8
+     ]
+    ]
+   },
+   {
+    "builder": "Stanley Martin (Great Southern Homes)",
+    "for_sale": 62,
+    "types": {
+     "house": 62
+    },
+    "price": {
+     "n": 62,
+     "median": 331897.5,
+     "p25": 299755.0,
+     "p75": 354777.5,
+     "p10": 283568.5,
+     "p90": 380866.5,
+     "min": 259990.0,
+     "max": 479990.0
+    },
+    "at_or_under_300k": 16,
+    "median_sqft": 1900.0,
+    "median_price_per_sqft": 169,
+    "beds": [
+     [
+      3,
+      51
+     ],
+     [
+      4,
+      11
+     ]
+    ],
+    "towns": [
+     [
+      "Conway",
+      36
+     ],
+     [
+      "Loris",
+      12
+     ],
+     [
+      "Longs",
+      9
+     ],
+     [
+      "Aynor",
+      5
+     ]
+    ]
+   },
+   {
+    "builder": "Beverly Homes",
+    "for_sale": 60,
+    "types": {
+     "house": 55,
+     "townhouse": 5
+    },
+    "price": {
+     "n": 60,
+     "median": 339990.0,
+     "p25": 279967.5,
+     "p75": 469409.25,
+     "p10": 263450.4,
+     "p90": 601860.0,
+     "min": 227940.0,
+     "max": 1199000.0
+    },
+    "at_or_under_300k": 22,
+    "median_sqft": 1781.5,
+    "median_price_per_sqft": 203,
+    "beds": [
+     [
+      3,
+      43
+     ],
+     [
+      4,
+      17
+     ]
+    ],
+    "towns": [
+     [
+      "Conway",
+      27
+     ],
+     [
+      "Myrtle Beach",
+      13
+     ],
+     [
+      "Longs",
+      11
+     ],
+     [
+      "North Myrtle Beach",
+      4
+     ],
+     [
+      "Aynor",
+      2
+     ],
+     [
+      "Little River",
+      2
+     ],
+     [
+      "Murrells Inlet",
+      1
+     ]
+    ]
+   },
+   {
+    "builder": "Lennar",
+    "for_sale": 60,
+    "types": {
+     "house": 37,
+     "townhouse": 23
+    },
+    "price": {
+     "n": 60,
+     "median": 248750.0,
+     "p25": 231875.0,
+     "p75": 286257.5,
+     "p10": 219000.0,
+     "p90": 579044.0,
+     "min": 209000.0,
+     "max": 719900.0
+    },
+    "at_or_under_300k": 45,
+    "median_sqft": 1839.0,
+    "median_price_per_sqft": 158,
+    "beds": [
+     [
+      3,
+      33
+     ],
+     [
+      4,
+      20
+     ],
+     [
+      5,
+      7
+     ]
+    ],
+    "towns": [
+     [
+      "Longs",
+      17
+     ],
+     [
+      "Conway",
+      15
+     ],
+     [
+      "Little River",
+      15
+     ],
+     [
+      "Myrtle Beach",
+      12
+     ],
+     [
+      "North Myrtle Beach",
+      1
+     ]
+    ]
+   },
+   {
+    "builder": "Mungo Homes",
+    "for_sale": 60,
+    "types": {
+     "house": 47,
+     "condo": 13
+    },
+    "price": {
+     "n": 60,
+     "median": 402400.0,
+     "p25": 322650.0,
+     "p75": 439650.0,
+     "p10": 294900.0,
+     "p90": 512400.0,
+     "min": 264900.0,
+     "max": 615900.0
+    },
+    "at_or_under_300k": 9,
+    "median_sqft": 2053.0,
+    "median_price_per_sqft": 188,
+    "beds": [
+     [
+      4,
+      27
+     ],
+     [
+      3,
+      25
+     ],
+     [
+      5,
+      8
+     ]
+    ],
+    "towns": [
+     [
+      "Conway",
+      33
+     ],
+     [
+      "Myrtle Beach",
+      14
+     ],
+     [
+      "Murrells Inlet",
+      13
+     ]
+    ]
+   },
+   {
+    "builder": "Beazer Homes",
+    "for_sale": 40,
+    "types": {
+     "house": 36,
+     "townhouse": 4
+    },
+    "price": {
+     "n": 40,
+     "median": 379900.0,
+     "p25": 343459.0,
+     "p75": 457400.0,
+     "p10": 321340.0,
+     "p90": 508690.0,
+     "min": 289000.0,
+     "max": 577000.0
+    },
+    "at_or_under_300k": 2,
+    "median_sqft": 2118.5,
+    "median_price_per_sqft": 189,
+    "beds": [
+     [
+      3,
+      23
+     ],
+     [
+      4,
+      13
+     ],
+     [
+      5,
+      4
+     ]
+    ],
+    "towns": [
+     [
+      "Myrtle Beach",
+      18
+     ],
+     [
+      "Longs",
+      16
+     ],
+     [
+      "Conway",
+      6
+     ]
+    ]
+   },
+   {
+    "builder": "Dream Finders Homes",
+    "for_sale": 32,
+    "types": {
+     "house": 24,
+     "townhouse": 8
+    },
+    "price": {
+     "n": 32,
+     "median": 619990.0,
+     "p25": 305115.0,
+     "p75": 681240.0,
+     "p10": 274990.0,
+     "p90": 756990.0,
+     "min": 254990.0,
+     "max": 1229990.0
+    },
+    "at_or_under_300k": 7,
+    "median_sqft": 2106.5,
+    "median_price_per_sqft": 269,
+    "beds": [
+     [
+      4,
+      16
+     ],
+     [
+      3,
+      16
+     ]
+    ],
+    "towns": [
+     [
+      "Myrtle Beach",
+      19
+     ],
+     [
+      "Conway",
+      10
+     ],
+     [
+      "Loris",
+      3
+     ]
+    ]
+   },
+   {
+    "builder": "Pulte Homes",
+    "for_sale": 31,
+    "types": {
+     "house": 31
+    },
+    "price": {
+     "n": 31,
+     "median": 564890.0,
+     "p25": 416992.5,
+     "p75": 619510.0,
+     "p10": 399998.0,
+     "p90": 659965.0,
+     "min": 379590.0,
+     "max": 709990.0
+    },
+    "at_or_under_300k": 0,
+    "median_sqft": 2705,
+    "median_price_per_sqft": 219,
+    "beds": [
+     [
+      3,
+      21
+     ],
+     [
+      4,
+      6
+     ],
+     [
+      5,
+      4
+     ]
+    ],
+    "towns": [
+     [
+      "Myrtle Beach",
+      20
+     ],
+     [
+      "Longs",
+      11
+     ]
+    ]
+   },
+   {
+    "builder": "Meritage Homes",
+    "for_sale": 29,
+    "types": {
+     "house": 29
+    },
+    "price": {
+     "n": 29,
+     "median": 319990.0,
+     "p25": 307990.0,
+     "p75": 349990.0,
+     "p10": 283990.0,
+     "p90": 399990.0,
+     "min": 273990.0,
+     "max": 463990.0
+    },
+    "at_or_under_300k": 6,
+    "median_sqft": 1649,
+    "median_price_per_sqft": 185,
+    "beds": [
+     [
+      3,
+      15
+     ],
+     [
+      4,
+      14
+     ]
+    ],
+    "towns": [
+     [
+      "Longs",
+      29
+     ]
+    ]
+   },
+   {
+    "builder": "DRB Homes",
+    "for_sale": 27,
+    "types": {
+     "house": 11,
+     "townhouse": 11,
+     "condo": 5
+    },
+    "price": {
+     "n": 27,
+     "median": 309990.0,
+     "p25": 287490.0,
+     "p75": 328490.0,
+     "p10": 256190.0,
+     "p90": 337790.0,
+     "min": 239990.0,
+     "max": 384990.0
+    },
+    "at_or_under_300k": 13,
+    "median_sqft": 1888,
+    "median_price_per_sqft": 174,
+    "beds": [
+     [
+      3,
+      12
+     ],
+     [
+      4,
+      11
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "towns": [
+     [
+      "Longs",
+      16
+     ],
+     [
+      "Little River",
+      6
+     ],
+     [
+      "Myrtle Beach",
+      5
+     ]
+    ]
+   },
+   {
+    "builder": "Chesapeake Homes (community companies)",
+    "for_sale": 18,
+    "types": {
+     "house": 18
+    },
+    "price": {
+     "n": 18,
+     "median": 438025.5,
+     "p25": 404150.0,
+     "p75": 572400.0,
+     "p10": 382353.8,
+     "p90": 644900.0,
+     "min": 352798.0,
+     "max": 699900.0
+    },
+    "at_or_under_300k": 0,
+    "median_sqft": 2145.0,
+    "median_price_per_sqft": 225,
+    "beds": [
+     [
+      3,
+      11
+     ],
+     [
+      4,
+      5
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      5,
+      1
+     ]
+    ],
+    "towns": [
+     [
+      "Myrtle Beach",
+      7
+     ],
+     [
+      "Longs",
+      4
+     ],
+     [
+      "Loris",
+      4
+     ],
+     [
+      "Little River",
+      3
+     ]
+    ]
+   },
+   {
+    "builder": "Starlight Homes",
+    "for_sale": 18,
+    "types": {
+     "house": 18
+    },
+    "price": {
+     "n": 18,
+     "median": 272490.0,
+     "p25": 252490.0,
+     "p75": 285356.25,
+     "p10": 236290.0,
+     "p90": 303490.0,
+     "min": 224990.0,
+     "max": 346990.0
+    },
+    "at_or_under_300k": 16,
+    "median_sqft": 1816.5,
+    "median_price_per_sqft": 157,
+    "beds": [
+     [
+      3,
+      11
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "towns": [
+     [
+      "Conway",
+      7
+     ],
+     [
+      "Aynor",
+      6
+     ],
+     [
+      "Loris",
+      5
+     ]
+    ]
+   },
+   {
+    "builder": "Ashton Woods",
+    "for_sale": 15,
+    "types": {
+     "house": 13,
+     "townhouse": 2
+    },
+    "price": {
+     "n": 15,
+     "median": 487245.0,
+     "p25": 429825.0,
+     "p75": 505595.0,
+     "p10": 329390.0,
+     "p90": 537090.0,
+     "min": 239990.0,
+     "max": 579990.0
+    },
+    "at_or_under_300k": 2,
+    "median_sqft": 2351,
+    "median_price_per_sqft": 207,
+    "beds": [
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      5
+     ],
+     [
+      5,
+      1
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "towns": [
+     [
+      "Myrtle Beach",
+      9
+     ],
+     [
+      "Little River",
+      6
+     ]
+    ]
+   },
+   {
+    "builder": "Chris Manning",
+    "for_sale": 15,
+    "types": {
+     "house": 15
+    },
+    "price": {
+     "n": 15,
+     "median": 529900.0,
+     "p25": 419949.5,
+     "p75": 2200000.0,
+     "p10": 299900.0,
+     "p90": 3040000.0,
+     "min": 274900.0,
+     "max": 3999000.0
+    },
+    "at_or_under_300k": 3,
+    "median_sqft": 2425,
+    "median_price_per_sqft": 246,
+    "beds": [
+     [
+      5,
+      7
+     ],
+     [
+      4,
+      6
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    "towns": [
+     [
+      "North Myrtle Beach",
+      10
+     ],
+     [
+      "Longs",
+      3
+     ],
+     [
+      "Little River",
+      2
+     ]
+    ]
+   },
+   {
+    "builder": "Toll Brothers",
+    "for_sale": 6,
+    "types": {
+     "townhouse": 6
+    },
+    "price": {
+     "n": 6,
+     "median": 514000.0,
+     "p25": 501500.0,
+     "p75": 526500.0,
+     "p10": 496500.0,
+     "p90": 531500.0,
+     "min": 494000.0,
+     "max": 534000.0
+    },
+    "at_or_under_300k": 0,
+    "median_sqft": 1742.0,
+    "median_price_per_sqft": 285,
+    "beds": [
+     [
+      3,
+      6
+     ]
+    ],
+    "towns": [
+     [
+      "Murrells Inlet",
+      6
+     ]
+    ]
+   },
+   {
+    "builder": "Ryan Homes",
+    "for_sale": 1,
+    "types": {
+     "house": 1
+    },
+    "price": {
+     "n": 1,
+     "median": 599000.0,
+     "p25": null,
+     "p75": null,
+     "p10": null,
+     "p90": null,
+     "min": 599000.0,
+     "max": 599000.0
+    },
+    "at_or_under_300k": 0,
+    "median_sqft": 2324,
+    "median_price_per_sqft": 258,
+    "beds": [
+     [
+      3,
+      1
+     ]
+    ],
+    "towns": [
+     [
+      "North Myrtle Beach",
+      1
+     ]
+    ]
+   }
+  ],
+  "all_price": {
+   "n": 1086,
+   "median": 358922.5,
+   "p25": 299990.0,
+   "p75": 494900.0,
+   "p10": 260755.0,
+   "p90": 690000.0,
+   "min": 209000.0,
+   "max": 6609000.0
+  },
+  "under_300k": 280,
+  "under_300k_builder_named": 227
+ },
+ "sales_vs_listings": [
+  [
+   "D.R. Horton",
+   1397,
+   248
+  ],
+  [
+   "Lennar",
+   967,
+   60
+  ],
+  [
+   "Ryan Homes",
+   477,
+   1
+  ],
+  [
+   "Pulte Homes",
+   382,
+   31
+  ],
+  [
+   "Meritage Homes",
+   313,
+   29
+  ],
+  [
+   "Chesapeake Homes (community companies)",
+   240,
+   18
+  ],
+  [
+   "Mungo Homes",
+   207,
+   60
+  ],
+  [
+   "Stanley Martin (Great Southern Homes)",
+   182,
+   62
+  ],
+  [
+   "Beverly Homes",
+   182,
+   60
+  ],
+  [
+   "Beazer Homes",
+   156,
+   40
+  ],
+  [
+   "Starlight Homes",
+   148,
+   18
+  ],
+  [
+   "Toll Brothers",
+   100,
+   6
+  ],
+  [
+   "Ashton Woods",
+   94,
+   15
+  ],
+  [
+   "H&H Homes",
+   88,
+   0
+  ],
+  [
+   "Dream Finders Homes",
+   61,
+   32
+  ],
+  [
+   "DRB Homes",
+   61,
+   27
+  ]
+ ],
+ "top_community": {
+  "name": "AUBERON WOODS",
+  "sales": 217,
+  "lat": 33.82629,
+  "lng": -78.85293,
+  "lat_range": [
+   33.82085,
+   33.834
+  ],
+  "lng_range": [
+   -78.86133,
+   -78.84818
+  ]
+ }
+}

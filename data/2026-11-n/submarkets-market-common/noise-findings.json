@@ -1,0 +1,42 @@
+{
+ "sheet": "MYR ALP sheet 14 of 15, dated 07/11/2023",
+ "m_per_px": 1.5241,
+ "homes": 2999,
+ "nearest_home_to_65db_line_m": 441,
+ "nearest_home_to_65db_line_ft": 1447,
+ "homes_within_m": {
+  "150": 0,
+  "300": 0,
+  "500": 36,
+  "800": 351,
+  "1000": 521
+ },
+ "median_m": 2252,
+ "by_part": {
+  "town_center": {
+   "homes": 568,
+   "nearest_m": 441,
+   "within_500m": 36,
+   "within_800m": 351
+  },
+  "center_pointe": {
+   "homes": 1873,
+   "nearest_m": 1472,
+   "within_500m": 0,
+   "within_800m": 0
+  },
+  "clemson_tract": {
+   "homes": 558,
+   "nearest_m": 2846,
+   "within_500m": 0,
+   "within_800m": 0
+  }
+ },
+ "runway_centerline": {
+  "nearest_home_m": 881,
+  "nearest_home_ft": 2890,
+  "median_home_m": 2659,
+  "homes_within_half_mile": 0,
+  "homes_within_one_mile": 568
+ }
+}

@@ -1,0 +1,79 @@
+{
+ "made": "2026-11-08",
+ "lot_acres_house_median": {
+  "Emmens Preserve": 0.151,
+  "Balmoral": 0.212,
+  "Withers Preserve": 0.185,
+  "Sweetgrass Square": 0.074,
+  "Town center streets (Market Common parcels R1 to R13)": 0.075,
+  "The Reserve at Market Common": 0.151,
+  "Cresswind": 0.158,
+  "West Lake": 0.153,
+  "Park Place": 0.151,
+  "Belle Harbor": 0.166
+ },
+ "houses_counted": {
+  "Emmens Preserve": 608,
+  "Balmoral": 116,
+  "Withers Preserve": 219,
+  "Sweetgrass Square": 66,
+  "Town center streets (Market Common parcels R1 to R13)": 265,
+  "The Reserve at Market Common": 109,
+  "Cresswind": 400,
+  "West Lake": 139,
+  "Park Place": 186,
+  "Belle Harbor": 363
+ },
+ "amenity_parcels": [
+  {
+   "legal": "EMMENS PRESERVE; AMENITY AREA",
+   "code": "320",
+   "lon": -78.961373,
+   "lat": 33.669595
+  },
+  {
+   "legal": "THE RESERVE; C/A 3",
+   "code": "388",
+   "lon": -78.948179,
+   "lat": 33.673767
+  },
+  {
+   "legal": "EMMENS PESERVE; RESIDENTS CLUB",
+   "code": "388",
+   "lon": -78.955136,
+   "lat": 33.666125
+  },
+  {
+   "legal": "CRESSWIND SEC 2 PH 1A; AMENITY AREA",
+   "code": "388",
+   "lon": -78.954579,
+   "lat": 33.678128
+  },
+  {
+   "legal": "MBAFB; AMENITY AREA",
+   "code": "388",
+   "lon": -78.950967,
+   "lat": 33.668237
+  },
+  {
+   "legal": "PARK PLACE PH 1B; AMENITY AREA",
+   "code": "123",
+   "lon": -78.949251,
+   "lat": 33.663167
+  },
+  {
+   "legal": "BELLE HARBOR PH 1A; AMENITY AREA",
+   "code": "388",
+   "lon": -78.968186,
+   "lat": 33.665791
+  }
+ ],
+ "aerial_reading": {
+  "Cresswind": "a large clubhouse building, an outdoor pool, tennis and pickleball courts and a lake with a path",
+  "Emmens Preserve": "an outdoor pool with a pool house beside a lake (RESIDENTS CLUB), and a park with a pavilion and paths (AMENITY AREA)",
+  "Belle Harbor": "an outdoor pool with a small clubhouse and a sports court",
+  "Balmoral": "an outdoor pool with a pool house",
+  "Park Place": "an outdoor pool with a pool house",
+  "The Reserve at Market Common": "an outdoor pool with a pool house, beside a lake"
+ }
+}
