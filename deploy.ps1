@@ -207,10 +207,23 @@ $stamp = Join-Path $env:USERPROFILE ".c3-api-proxy.sha256"
 $hash = (Get-FileHash -LiteralPath $workerFile -Algorithm SHA256).Hash
 $last = ""
 if (Test-Path -LiteralPath $stamp) { $last = (Get-Content -LiteralPath $stamp -Raw).Trim() }
-if ($hash -eq $last) {
-  Good "The AI proxy is up to date."
+# The model the file names, and the model the live proxy says it runs (GET /version). A deploy that was declined
+# at wrangler's prompt still ended "successfully" on 2026-11-08, so the proxy's own answer is the proof, not wrangler's.
+$want = ""
+$m = [regex]::Match((Get-Content -LiteralPath $workerFile -Raw), "const MODEL = '([^']+)'")
+if ($m.Success) { $want = $m.Groups[1].Value }
+function Get-LiveModel {
+  try {
+    $v = Invoke-WebRequest -Uri "https://api-proxy.chapter3realty.workers.dev/version" -UseBasicParsing -TimeoutSec 20
+    return (($v.Content | ConvertFrom-Json).model)
+  } catch { return "" }
+}
+$live = Get-LiveModel
+if ($hash -eq $last -and $live -eq $want) {
+  Good ("The AI proxy is up to date. It runs {0}." -f $live)
 } else {
-  Say "api-proxy-worker.js changed since this computer last deployed it. Deploying the AI proxy."
+  if ($live) { Say ("The live AI proxy runs {0}; this file says {1}. Deploying the AI proxy." -f $live, $want) }
+  else { Say "The live AI proxy is an older copy (it does not say which model it runs). Deploying the AI proxy." }
   # Its saved answers live in a KV store; keep it attached. The store is found by its name.
   $kvJson = (& npx wrangler kv namespace list 2>$null | Out-String)
   $kvId = $null
@@ -244,16 +257,15 @@ if ($hash -eq $last) {
     }
     # Written without a byte-order mark: Windows PowerShell's UTF8 adds one, and a JSON reader can refuse it.
     [System.IO.File]::WriteAllText($cfg, ($conf | ConvertTo-Json -Depth 5))
+    Say "If wrangler asks whether to continue, type y. Only the code changes; the domain and settings stay as they are."
     & npx wrangler deploy --config $cfg
-    if ($LASTEXITCODE -ne 0) {
-      Write-Host "The AI proxy deploy failed. The site is live; the old proxy is still running. Send me the output above." -ForegroundColor Yellow
-    } else {
+    Start-Sleep -Seconds 8
+    $live = Get-LiveModel
+    if ($live -eq $want) {
       Set-Content -LiteralPath $stamp -Value $hash
-      Good "AI proxy deployed. It now runs the model named in api-proxy-worker.js."
-      try {
-        $pre = Invoke-WebRequest -Uri "https://api-proxy.chapter3realty.workers.dev" -Method Options -Headers @{ Origin = "https://chapter3realty.com"; "Access-Control-Request-Method" = "POST" } -UseBasicParsing -TimeoutSec 20
-        Say ("AI proxy answers: {0}" -f $pre.StatusCode)
-      } catch { Say "The AI proxy did not answer a check just now. Try a search on the site in a minute." }
+      Good ("AI proxy deployed. The live proxy now runs {0}." -f $live)
+    } else {
+      Write-Host ("The AI proxy did NOT change: it still does not answer {0}. The site is live. Send me the output above." -f $want) -ForegroundColor Yellow
     }
   }
 }

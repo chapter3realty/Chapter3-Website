@@ -527,6 +527,14 @@ export default {
     const origin = request.headers.get('Origin') || '';
     const allowed = ALLOWED_ORIGINS.includes(origin);
 
+    // Which model and cache this copy runs (2026-11-08): deploy.ps1 asks after deploying, because a deploy
+    // that was declined at wrangler's prompt still ended "successfully" and the old Sonnet copy kept running.
+    if (request.method === 'GET' && new URL(request.url).pathname === '/version') {
+      return new Response(JSON.stringify({ model: MODEL, effort: EFFORT, cache: CACHE_VERSION }), {
+        status: 200, headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
+      });
+    }
+
     if (request.method === 'OPTIONS') {
       if (!allowed) return new Response(null, { status: 403 });
       return new Response(null, { status: 204, headers: corsHeaders(origin) });

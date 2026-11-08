@@ -502,11 +502,18 @@ const loadHistory = () => {
 // git cat-file --batch: stdin one "<sha>:<path>" per line, stdout
 // "<oid> <type> <size>\n<bytes>\n" per hit or "<input> missing\n" per miss.
 // Parsed as Buffer because sizes are byte counts, not character counts.
+// Asked in batches (2026-11-08): one call for every page's history asked Windows for a 1 GB buffer,
+// and a second deploy in a row failed with "Failed to allocate memory".
 const catFile = (specs) => {
+  const out = new Map();
+  for (let k = 0; k < specs.length; k += 200) for (const [key, v] of catFileBatch(specs.slice(k, k + 200))) out.set(key, v);
+  return out;
+};
+const catFileBatch = (specs) => {
   const out = new Map();
   if (!specs.length) return out;
   const r = require("child_process").spawnSync("git", ["cat-file", "--batch"],
-    { input: specs.join("\n") + "\n", maxBuffer: 1024 * 1024 * 1024 });
+    { input: specs.join("\n") + "\n", maxBuffer: 256 * 1024 * 1024 });
   if (r.status !== 0 || !r.stdout) return out;
   const buf = r.stdout;
   let pos = 0, i = 0;
