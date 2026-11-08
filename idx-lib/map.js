@@ -317,12 +317,17 @@ function startReader(q){var t=++rd.tok;rd.yes={};rd.no={};rd.why={};rd.n=0;
      if(gone)listView();rd.n+=batch.length;readNote(false);next()}).catch(function(){if(t===rd.tok)setTimeout(next,1500)})}
  next()}
 /* Homes the AI read and found fitting come first (owner, 2026-11-08: "the results are based on the info"); the rest keep their order. */
-function listView(){if(!all.length&&!searched)return;var keep=all.filter(function(p){return inView(p)&&!rd.no[p.mls]});render(keep.filter(function(p){return rd.yes[p.mls]}).concat(keep.filter(function(p){return!rd.yes[p.mls]})));if(hot)hilite(hot)}
+function listView(){if(!all.length&&!searched)return;var keep=all.filter(function(p){return inView(p)&&!rd.no[p.mls]});
+ /* The reader never empties the list: if it ruled out every home in view, they all stay. */
+ if(!keep.length)keep=all.filter(inView);render(keep.filter(function(p){return rd.yes[p.mls]}).concat(keep.filter(function(p){return!rd.yes[p.mls]})));if(hot)hilite(hot)}
 function msg(j){return j&&j.error==="stale"?"The listing search is being refreshed. Please try again in a few minutes.":"Please try again in a minute."}
 function search(p,o){o=o||{};state=new URLSearchParams(p);var n=++seq;count.textContent="Searching...";
  var extra=o.first?"&hearts=1"+(app.getAttribute("data-focus")?"&focus="+encodeURIComponent(app.getAttribute("data-focus")):""):"";
  return fetch("/homes/api/map?"+state.toString()+extra,{credentials:"same-origin"}).then(function(r){return r.json()}).then(function(j){if(n!==seq)return;
   if(!j||!j.ok){count.textContent=msg(j);if(o.first)unskel(msg(j));return}
+  /* The AI's filters found nothing for sale: keep the homes the words found before it (owner, 2026-11-07: "it started to
+     show me perfect results then just said zero results"). */
+  if(o.back&&!(j.total>0)){return search(o.back,{fit:true,ai:false,read:o.read})}
   if(o.first)firstLoad(j);
   searched=true;all=j.pins||[];total=j.closest?j.closest.total:(j.total||0);state=new URLSearchParams(j.params||"");sorry(j.closest,j.total||0);
   try{history.replaceState(null,"","/homes/map/"+(state.toString()?"?"+state.toString():""))}catch(e){}
@@ -363,7 +368,10 @@ var ASK_KEYS=["min","max","beds","baths","type","city","zip","subdivision","sqft
    for "land" once came back as land leases (owner, 2026-10-29). */
 var ONLY_IF={land_lease:/lease|lot rent/i,lease_to_own:/lease|rent to own/i,has_rental_income:/rent|tenant|income/i};
 function ai(q,left){if(!q||!window.hxFeats)return;aiNote.hidden=false;aiNote.classList.add("hx-ai-on");aiNote.textContent="AI is reading what you want and why...";
- var before=hist();
+ /* New or refine is decided here, not by the AI (owner, 2026-11-07: from Conway homes to beach homes it searched beach
+    homes in Conway): a sentence that does not begin by changing the search on screen starts over. */
+ var refine=window.hxIsRefine?window.hxIsRefine(q):false;if(!refine){try{sessionStorage.removeItem("hx_ai_hist")}catch(e){}}
+ var before=refine?hist():[],back=new URLSearchParams(state);
  window.hxFeats().then(function(j){if(!j||!j.ok||!j.groups){aiNote.hidden=true;return}var keys=[],names={};j.groups.forEach(function(g){g.items.forEach(function(it){keys.push(it.k);names[it.k]=it.l})});
   var prompt="You are the home search for Chapter3 Realty on the Grand Strand, South Carolina. The buyer just wrote: "+JSON.stringify(q)+". "+
    "Their earlier searches this visit, oldest first: "+JSON.stringify(before)+". The filters in force now: "+JSON.stringify(state.toString())+". Words the simple reader could not use: "+JSON.stringify(left||"")+". "+
@@ -376,7 +384,7 @@ function ai(q,left){if(!q||!window.hxFeats)return;aiNote.hidden=false;aiNote.cla
    "Feature keys: "+keys.join(",")+". Answer like "+JSON.stringify({mode:"new",has:[],not:[],why:"Looking for ... because you want ...: one plain sentence, under 25 words, about the homes and the goal, never about the person"})+".";
   return fetch("https://api-proxy.chapter3realty.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-haiku-5-5",max_tokens:400,cache_key:["search3",q,state.toString(),JSON.stringify(before)].join("|"),messages:[{role:"user",content:prompt}]})})
    .then(function(r){return r.json()}).then(function(d){var t=d&&d.content&&d.content.filter(function(b){return b.type==="text"}).pop();if(!t){aiNote.hidden=true;return}
-    var a=t.text.indexOf("{"),z=t.text.lastIndexOf("}");var o=JSON.parse(t.text.slice(a,z+1));var fresh=o.mode==="new"&&before.length>0;
+    var a=t.text.indexOf("{"),z=t.text.lastIndexOf("}");var o=JSON.parse(t.text.slice(a,z+1));o.mode=refine?"refine":"new";var fresh=false;
     var p=fresh?new URLSearchParams():new URLSearchParams(state);if(fresh&&state.get("all"))p.set("all",state.get("all"));
     (Array.isArray(o.remove)?o.remove:[]).forEach(function(k){if(ASK_KEYS.indexOf(k)>=0||k==="has"||k==="not")p.delete(k)});
     function pick(list,cur){var out=(cur||"").split(",").filter(Boolean),dist=out.filter(function(k){return/mi$/.test(k)}).length;
@@ -387,7 +395,7 @@ function ai(q,left){if(!q||!window.hxFeats)return;aiNote.hidden=false;aiNote.cla
     var why=o.why?String(o.why).replace(/[<>]/g,"").slice(0,180):"";
     if(p.toString()===state.toString()){remember(q,state);aiNote.textContent=why?"AI: "+why+" The filters above already match.":"We searched what we could read. Add a detail, or use the filters.";startReader(q);return}
     remember(q,p);aiNote.textContent="AI: "+(why?why+" ":"")+(fresh?"A new search. ":"")+"Remove any filter you do not want.";
-    clearRing();search(p,{fit:true,ai:false,read:q})})}).catch(function(){aiNote.hidden=true;startReader(q)})}
+    clearRing();search(p,{fit:true,ai:false,read:q,back:back})})}).catch(function(){aiNote.hidden=true;startReader(q)})}
 function hilite(mls){hot=mls;marks.forEach(function(m){style(m,m.p.mls===mls)});marks3.forEach(function(m){if(m.pin)try{m.pin.background=m.p.mls===mls?"#c4783a":"#1a73e8"}catch(x){}});Array.prototype.forEach.call(list.children,function(c){c.classList.toggle("hx-hot",c.getAttribute("data-mls")===mls)})}
 function closePop(){if(pop)pop.remove();pop=null;popFor=null}
 /* The first click on a dot shows the home; a second click on the same dot opens it. */

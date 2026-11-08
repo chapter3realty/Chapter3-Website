@@ -119,7 +119,7 @@ main#main .c3-want.c3g-list>li:last-child{border-bottom:0!important}
 .c3g-map figcaption{color:var(--muted);font-size:.95rem;line-height:1.5;margin-top:.4rem}
 .c3-place-cta{margin:1.2rem 0 .4rem;max-width:720px}
 section:has(> .wrap > .c3g-area){padding-top:1.6rem!important;padding-bottom:0!important}
-.c3g-area{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-weight:700;margin:0;padding-top:.6rem;border-top:1px solid rgba(28,32,40,.15)}
+.c3g-area{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#8a5226;font-weight:700;margin:0;padding-top:.6rem;border-top:1px solid rgba(28,32,40,.15)}
 .c3g-area span{color:var(--muted);font-weight:600}
 .c3-place-cta>p{margin-bottom:.2rem}
 </style>`;

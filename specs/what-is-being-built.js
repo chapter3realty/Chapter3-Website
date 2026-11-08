@@ -64,7 +64,8 @@ const SVGSTYLE = 'style="display:block;max-width:640px;font-family:var(--sans)"'
 function permitChart() {
   const ms = months.filter(m => m >= "2024-01"), W = 640, H = 230, L = 44, R = 10, T = 12, B = 34, PW = W - L - R, PH = H - T - B;
   const max = 900, bw = PW / ms.length, x = (i) => L + i * bw, y = (v) => T + PH * (1 - v / max);
-  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Homes permitted each month in the Myrtle Beach metro, January 2024 to ${mName(latestM)}" ${SVGSTYLE}>`;
+  /* The legend sits on the last line: the box is 4 px taller so its letters are never cut (glitch sweep, 2026-11-08). */
+  let s = `<svg viewBox="0 0 ${W} ${H + 4}" width="100%" role="img" aria-label="Homes permitted each month in the Myrtle Beach metro, January 2024 to ${mName(latestM)}" ${SVGSTYLE}>`;
   for (const g of [300, 600, 900]) s += `<line x1="${L}" y1="${y(g)}" x2="${W - R}" y2="${y(g)}" stroke="${GRID}"/><text x="${L - 5}" y="${y(g) + 4}" font-size="11" text-anchor="end" fill="${MUTED}">${g}</text>`;
   ms.forEach((m, i) => {
     const v = monthly[m], isLatest = m === latestM, col = m.startsWith(latestY) ? BRASS : BRASS_LT;

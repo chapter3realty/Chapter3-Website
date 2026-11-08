@@ -39,6 +39,9 @@ const PHRASES = [
   [/\b(mother[- ]in[- ]law|in[- ]law) (suites?|apartments?|quarters)\b/, { words: "in-law" }],
   [/\b(walk(ing distance)? to (the )?beach|steps to the (beach|sand))\b/, { has: ["walk_to_beach"] }],
   [/\b(near|close to|by) the (beach|ocean)\b/, { has: ["near_beach"] }],
+  /* "beach homes", "a beach house", "homes at the beach": near the beach, never a neighborhood named "beach" (glitch
+     sweep, 2026-11-08: "beach homes" searched the subdivision "beach" and found nothing). */
+  [/\b(beach (homes?|houses?|condos?|propert(y|ies)|cottages?|places?)|(homes?|houses?|condos?) (at|on|by|near) the (beach|ocean))\b/, { has: ["near_beach"] }],
   [/\beast of (hwy |highway )?17\b/, { has: ["east_of_17"] }],
   [/\bgolf carts?\b/, { has: ["golf_cart_ok"] }],
   [/\b(on the )?golf( course)?\b/, { has: ["on_golf_course"] }],
@@ -162,8 +165,10 @@ export function readQuery(raw) {
   // A sentence longer than a name is a description, for the AI, not a neighborhood.
   /* A word that changes the last search ("cheaper", "bigger", "closer to the beach") is never a neighborhood's
      name; the AI search reads it against the search before (owner, 2026-10-29). */
+  /* A plain word about the kind of place is never a neighborhood's name ("beach", "golf", "lake"). */
+  const GENERIC = /^(beach|beaches|ocean|oceanfront|lake|lakes|golf|water|waterfront|pool|pools|condo|condos|house|houses|home|homes|new|cheap|luxury|big|small|land|lot|lots|rental|rentals|town|city|country|downtown|quiet|nice)( (homes?|houses?|area|areas|community|communities))?$/;
   const CHANGE = /\b(cheaper|less|lower|more|bigger|larger|smaller|newer|older|nicer|closer|further|farther|instead|else|other|different|also|too|again|same|similar|like that|any|show|me|what about|how about)\b/;
-  if (!understood.length && !place && !CHANGE.test(rest) && /^[a-z0-9 .,'&-]{3,60}$/.test(rest) && /[a-z]{3}/.test(rest) && rest.split(" ").length <= 3) { params.set("subdivision", rest); understood.push("subdivision"); }
+  if (!understood.length && !place && !CHANGE.test(rest) && !GENERIC.test(rest) && /^[a-z0-9 .,'&-]{3,60}$/.test(rest) && /[a-z]{3}/.test(rest) && rest.split(" ").length <= 3) { params.set("subdivision", rest); understood.push("subdivision"); }
   if (/\b(cheapest|lowest price|least expensive)\b/.test(t)) params.set("sort", "price_asc");
   else if (/\b(most expensive|highest price|luxury)\b/.test(t)) params.set("sort", "price_desc");
   const left = t.replace(/\b(in|near|for sale|homes?|houses?|for|the|a|an|with|and|or|sale|to|of|my|i|want|looking|need|buy|some|that|is|on|at|by|best|good|nice|great|close|area|work|works|working|job|jobs|employer|employed|live|living|place|quiet|home|style|type|kind|really|very|please|show|find|me|we|our|family)\b/g, " ").replace(/[^a-z ]/g, " ").replace(/\s+/g, " ").trim();

@@ -102,7 +102,9 @@ export function filterBar({ action = "/homes/map/", params, features = false, co
        follow, price first. */
     + `<div class="hx-fb-ai"><p class="hx-ai-badge">${aiChip()}<span>AI-powered search</span></p>`
     + `<label class="hx-fb-q"><textarea name="q" rows="1" enterkeyhint="search" autocomplete="off" maxlength="400" aria-label="${esc(ask || AI_ASK)}" placeholder="${esc(ask || AI_ASK)}">${esc(p.get("q") || "")}</textarea><button type="submit" class="hx-fb-go">Search</button></label></div>`
-    + `<div class="hx-fb-pills">${pop("price", "Price", L.price, priceP)}${pop("beds", "Beds & baths", L.bb, bedsP)}${pop("type", "Home type", L.type, typeP)}${pop("sale", "For sale", p.get("all") === "1" ? "With under contract" : "", saleP)}${more}</div>`
+    /* A plain way to start over (owner, 2026-11-07: "needs to be a way to do a new search"): it clears the filters,
+       the words and the AI's memory of this visit. */
+    + `<div class="hx-fb-pills">${map ? `<button type="button" class="hx-new" data-hx-new>New search</button>` : ""}${pop("price", "Price", L.price, priceP)}${pop("beds", "Beds & baths", L.bb, bedsP)}${pop("type", "Home type", L.type, typeP)}${pop("sale", "For sale", p.get("all") === "1" ? "With under contract" : "", saleP)}${more}</div>`
     + `</form>`;
 }
 
@@ -118,6 +120,8 @@ ${AI_CSS}
 .hx-fb-q:focus-within{border-color:var(--brass-ink,#91592b);box-shadow:0 0 0 3px rgba(196,120,58,.18)}
 .hx-fb-q textarea{flex:1;min-width:0;height:2.9rem;padding:.72rem 0;border:0;outline:none;background:none;font:inherit;font-size:1.02rem;line-height:1.4;color:var(--ink,#1c2028);resize:none;overflow:hidden}
 .hx-fb-pills{display:flex;flex-wrap:wrap;gap:.45rem}
+.hx-new{flex:none;min-height:2.75rem;padding:0 1rem;border-radius:999px;border:1.5px solid var(--brass-ink,#91592b);background:#fff;color:var(--brass-ink,#91592b);font:inherit;font-size:.92rem;font-weight:700;cursor:pointer;white-space:nowrap}.hx-new:hover{background:#fbf3ea}
+@media (max-width:899px){.hx-mtop .hx-new{min-height:2.3rem;padding:0 .8rem;font-size:.85rem}}
 @media (max-width:699px){.hx-ai-badge{display:none}.hx-fb{margin:.6rem 0 .7rem}}
 .hx-pop{position:relative}
 .hx-pop>summary{list-style:none;display:flex;align-items:center;gap:.5rem;min-height:2.75rem;padding:0 1rem;border-radius:999px;background:#fff;border:1px solid rgba(28,32,40,.14);box-shadow:0 1px 3px rgba(28,32,40,.08);font-size:.92rem;font-weight:600;color:var(--ink,#1c2028);cursor:pointer;white-space:nowrap;user-select:none;transition:border-color .15s,box-shadow .15s}
@@ -212,7 +216,15 @@ function paramsOf(f){var p=new URLSearchParams();var has=[];
   if(x.value!=="")p.set(x.name,x.value)});
  if(has.length)p.set("has",has.join(","));return p}
 /* The map page applies a search where it is; anywhere else a search opens the map with it (owner, 2026-10-28). */
+/* A sentence on the map starts a new search unless it begins by changing the one on screen ("also", "with", "cheaper",
+   "what about"...): "beach homes" after "Conway homes" is never a beach home in Conway (owner, 2026-11-07). */
+var REFINE=/^\\s*(and|also|but|plus|add|with|without|w\\/|cheaper|cheapest|bigger|smaller|larger|newer|older|nicer|more|less|lower|higher|what about|how about|instead|only|now|same|similar|make it|not |no |under|over|below|above|closer|nearer|further|farther|in that|there|those|these|that)\\b/i;
+function isRefine(q){return REFINE.test(String(q||""))}
+window.hxIsRefine=isRefine;
+function forget(){try{sessionStorage.removeItem("hx_ai_hist")}catch(e){}}
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-hx-new]");if(!b)return;e.preventDefault();forget();location.href="/homes/map/"});
 function go(f){var p=paramsOf(f);closeAll(null);
+ if(f.hasAttribute("data-hx-map-fb")&&p.get("q")&&!isRefine(p.get("q"))){var n=new URLSearchParams();n.set("q",p.get("q"));if(p.get("all"))n.set("all",p.get("all"));p=n;forget()}
  if(f.hasAttribute("data-hx-map-fb")){document.dispatchEvent(new CustomEvent("hx-search",{detail:p}));return}
  location.href=(f.getAttribute("action")||"/homes/map/")+(p.toString()?"?"+p.toString():"")}
 window.hxParamsOf=paramsOf;

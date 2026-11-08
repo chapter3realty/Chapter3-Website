@@ -195,7 +195,7 @@ async function returning(context) {
   if (r.status === 200 && r.json && r.json.ok && typeof r.json.token === "string") return json({ ok: true }, 200, { "set-cookie": setCookie(r.json.token) });
   if (r.status === 200 && r.json && r.json.error === "not_found") return json({ ok: false, notFound: true });
   if (r.status === 400 && r.json && r.json.error === "invalid") return json({ ok: false, field: r.json.field, message: fieldWord(context.env, r.json.field) }, 400);
-  if (r.status === 429) return json({ ok: false, message: "Too many tries, please wait a minute." }, 429);
+  if (r.status === 429) return json({ ok: false, message: `That was a lot of tries in a short time. Please wait a few minutes, or call ${PHONE} and we will sign you in.` }, 429);
   return json({ ok: false, message: `Sign-in is unavailable right now. Please call ${PHONE}.` }, 503);
 }
 
@@ -273,7 +273,7 @@ async function page(context, gate, o) {
 function trouble(context, gate, r, title) {
   const e = (r && r.json && r.json.error) || "unavailable";
   const msg = e === "stale" ? "The listing search is being refreshed. Please try again in a few minutes."
-    : e === "rate_limited" || (r && r.status === 429) ? "Too many tries, please wait a minute."
+    : e === "rate_limited" || (r && r.status === 429) ? `That was a lot of tries in a short time. Please wait a few minutes, or call ${PHONE} and we will sign you in.`
     : `The listing search is back soon. Call ${PHONE} and an agent will run the search for you.`;
   return page(context, gate, { title, description: "Grand Strand homes for sale from the Coastal Carolinas MLS, with Chapter3 Realty.", canonical: `${SITE}/homes/`, robots: "noindex, follow", status: r && r.status === 429 ? 429 : 503, private: true, body: `<h1>${esc(title)}</h1><p class="hx-lead">${esc(msg)}</p>` });
 }
@@ -1176,7 +1176,7 @@ async function register(context) {
     return json({ ok: true }, 200, r.json.token ? { "set-cookie": setCookie(r.json.token) } : {});
   }
   if (r.status === 400 && r.json && r.json.error === "invalid") return json({ ok: false, field: r.json.field, message: fieldWord(context.env, r.json.field) }, 400);
-  if (r.status === 429) return json({ ok: false, message: "Too many tries, please wait a minute." }, 429);
+  if (r.status === 429) return json({ ok: false, message: `That was a lot of tries in a short time. Please wait a few minutes, or call ${PHONE} and we will sign you in.` }, 429);
   return json({ ok: false, message: `Sign-up is unavailable right now. Please call ${PHONE}.` }, 503);
 }
 

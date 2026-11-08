@@ -164,6 +164,7 @@ export function signupDialog(siteKey) {
 <button type="button" class="hx-x" data-hx-close aria-label="Close">&times;</button>
 <h2 id="hx-signup-title" class="hx-d-center">Free access</h2>
 <p class="hx-d-sub hx-d-center">Every photo and detail, on every home.</p>
+<p class="hx-d-center hx-d-have">Already have an account? <button type="button" class="hx-linkbtn" data-hx-returning>Sign in</button></p>
 <input name="name" autocomplete="name" required maxlength="160" aria-label="Full name" placeholder="Full name">
 <input name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200" aria-label="Email" placeholder="Email">
 <input name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="40" aria-label="Phone" placeholder="Phone">
@@ -173,7 +174,6 @@ export function signupDialog(siteKey) {
 ${siteKey ? `<div class="cf-turnstile" data-sitekey="${esc(siteKey)}"></div>` : ""}
 <p class="hx-error" role="alert" hidden></p>
 <button class="btn btn-brass" type="submit" disabled>Continue to photos &rsaquo;</button>
-<p class="hx-d-center"><button type="button" class="hx-linkbtn" data-hx-returning>Already have an account?</button></p>
 <p class="hx-d-fine hx-d-center">Free. We never sell your information.</p>
 </form>
 <form id="hx-returning-form" novalidate hidden>
@@ -317,6 +317,7 @@ main#main .hx-s-row>.hx-c:hover{transform:none}
 .hx-dialog .hx-d-thumb[hidden]{display:none}
 .hx-dialog h2{font-family:var(--serif);font-size:1.45rem;line-height:1.2;margin:0}
 .hx-dialog .hx-d-sub{margin:.15rem 0 0;font-size:.88rem;color:var(--slate,#5c6b78)}
+.hx-dialog .hx-d-have{margin:.55rem 0 .2rem;font-size:.95rem;color:var(--ink,#1c2028)}.hx-dialog .hx-d-have .hx-linkbtn{font-weight:700}
 .hx-dialog label{display:flex;flex-direction:column;gap:.3rem;font-size:.82rem;font-weight:600;color:var(--slate,#5c6b78)}
 .hx-dialog input:not([type=checkbox]):not([type=radio]),.hx-dialog textarea{width:100%;min-height:3rem;padding:.7rem .85rem;border-radius:12px;border:1px solid rgba(28,32,40,.16);background:#faf8f4;font:inherit;font-size:1rem;font-weight:400;color:var(--ink,#1c2028);transition:border-color .15s,box-shadow .15s,background .15s}
 .hx-dialog textarea{min-height:5rem;resize:vertical}
