@@ -291,7 +291,7 @@ var searched=false,lastQ=null;
    are read first, six at a time, and the ones whose description fits what the buyer asked for gather at the
    top, each with the reason in a few words. A home whose description rules it out (a lease, another kind of
    property, a must-have it lacks) leaves the list. The CRM reads the descriptions for every visitor (CRM Ticket 557; owner, 2026-11-07). */
-var rd={tok:0,yes:{},no:{},why:{},n:0,of:0},picks=null,picksGrid=null,picksNote=null;
+var rd={tok:0,q:"",yes:{},no:{},done:{},why:{},n:0,of:0},NEED={},aiQ="",picks=null,picksGrid=null,picksNote=null;
 function picksBox(){if(picks)return picks;picks=el("section","hx-ai-picks");picks.setAttribute("aria-live","polite");
  var h=el("p","hx-ai-picks-h");h.insertAdjacentHTML("afterbegin",${JSON.stringify(aiChip())});h.appendChild(document.createTextNode(" read these descriptions"));picks.appendChild(h);
  picksNote=el("p","hx-ai-picks-n");picks.appendChild(picksNote);picksGrid=el("div","hx-map-cards hx-ai-picks-g");picks.appendChild(picksGrid);list.parentNode.insertBefore(picks,list);return picks}
@@ -301,8 +301,11 @@ function readNote(done){if(!picksNote)return;var y=Object.keys(rd.yes).length;pi
    box like that appear"), and the reader runs for every visitor, signed up or not ("do the search description for
    not signed in users as well"): a home whose description rules it out leaves the list, and a home that fits
    carries the reason on its own card. */
-function startReader(q){var t=++rd.tok;rd.yes={};rd.no={};rd.why={};rd.n=0;
- var seen={},order=[];all.filter(inView).concat(all).forEach(function(p){if(!seen[p.mls]){seen[p.mls]=1;order.push(p)}});order=order.slice(0,96);rd.of=order.length;var i=0;readNote(false);
+/* Cost (owner, 2026-11-08: "the search is WILDLY expensive"): the AI reads only the homes on screen that it has not
+   read for this sentence, at most 24 at a time. A filter change, a map move or a new area reads only the homes it
+   brings into view; what was read stays read until the sentence changes. */
+function startReader(q){var t=++rd.tok;if(q!==rd.q){rd.q=q;rd.yes={};rd.no={};rd.done={};rd.why={}}rd.n=0;
+ var order=all.filter(function(p){return inView(p)&&!rd.done[p.mls]}).slice(0,24);rd.of=order.length;var i=0;readNote(false);
  function next(){if(t!==rd.tok)return;var batch=order.slice(i,i+6);i+=6;if(!batch.length){readNote(true);return}
   var send=batch.map(function(p){return{mls:p.mls,price:p.price,beds:p.beds,baths:p.baths,sqft:p.sqft,acres:p.acres}});var by={};batch.forEach(function(p){by[p.mls]=p});
   /* The server reads each home's whole description and details with the AI and answers only which homes fit (owner,
@@ -314,7 +317,7 @@ function startReader(q){var t=++rd.tok;rd.yes={};rd.no={};rd.why={};rd.n=0;
      var gone=false;out.forEach(function(x){var m=String(x&&x.m||"");if(!by[m])return;
       if(x.fit==="yes"){rd.yes[m]=1;gone=true}
       else if(x.fit==="no"){rd.no[m]=1;gone=true}});
-     if(gone)listView();rd.n+=batch.length;readNote(false);next()}).catch(function(){if(t===rd.tok)setTimeout(next,1500)})}
+     batch.forEach(function(p){rd.done[p.mls]=1});if(gone)listView();rd.n+=batch.length;readNote(false);next()}).catch(function(){if(t===rd.tok)setTimeout(next,1500)})}
  next()}
 /* Homes the AI read and found fitting come first (owner, 2026-11-08: "the results are based on the info"); the rest keep their order. */
 function listView(){if(!all.length&&!searched)return;var keep=all.filter(function(p){return inView(p)&&!rd.no[p.mls]});
@@ -339,7 +342,7 @@ function search(p,o){o=o||{};state=new URLSearchParams(p);var n=++seq;count.text
   /* Owner, 2026-11-07: "how many searches have been made on the ai tool?" Each new sentence is a GA4 "search"
      event (Reports > Engagement > Events, and the search term report); ai_search says whether the AI read it. */
   if(j.q&&j.q!==lastQ){lastQ=j.q;try{if(typeof gtag==="function")gtag("event","search",{search_term:String(j.q).slice(0,100),ai_search:wantsAi(j.q,j.left)?"yes":"no"})}catch(e){}}
-  if(o.ai!==false&&wantsAi(j.q,j.left))ai(j.q,j.left);else if(o.read||j.q)startReader(o.read||j.q);else stopReader()}).catch(function(){if(n===seq){count.textContent="Please try again in a minute.";if(o.first)unskel("Please try again in a minute.")}})}
+  if(o.ai!==false&&j.q!==aiQ&&wantsAi(j.q,j.left))ai(j.q,j.left);else if(o.read)startReader(o.read);else if(j.q&&needRead(j.q,j.left))startReader(j.q);else stopReader()}).catch(function(){if(n===seq){count.textContent="Please try again in a minute.";if(o.first)unskel("Please try again in a minute.")}})}
 /* The page came without homes (data-defer): the first answer brings the hearts and the MLS notice's date
    and wording, which are set as text. If it fails, the grey cards go and a short line says so. */
 function firstLoad(j){(j.hearts||[]).forEach(function(m){hearts[m]=1});list.removeAttribute("aria-busy");
@@ -362,12 +365,15 @@ var ALLOW=["min","max","beds","baths","type","city","sqft","yearMin","yearMax","
    changes the last search, and a different request starts over (owner, 2026-10-29). */
 function hist(){try{return JSON.parse(sessionStorage.getItem("hx_ai_hist")||"[]")}catch(e){return[]}}
 function remember(q,params){try{var h=hist();h.push({q:String(q).slice(0,200),f:String(params).slice(0,300)});sessionStorage.setItem("hx_ai_hist",JSON.stringify(h.slice(-4)))}catch(e){}}
+/* The descriptions are read only when the sentence asks for something the filters cannot check (the AI says so in read;
+   without the AI, when some words were left over). */
+function needRead(q,left){if(!NEED.hasOwnProperty(q)&&left)NEED[q]=true;return!!NEED[q]}
 function wantsAi(q,left){return!!(q&&(left||String(q).trim().split(/ +/).length>=4||hist().length))}
 var ASK_KEYS=["min","max","beds","baths","type","city","zip","subdivision","sqft","yearMin","yearMax","lotMin","hoaMax","garage","hoa","domMax","waterfront","sort","words"];
 /* Filters about renting the land itself or renting to own are used only when the buyer says so: a search
    for "land" once came back as land leases (owner, 2026-10-29). */
 var ONLY_IF={land_lease:/lease|lot rent/i,lease_to_own:/lease|rent to own/i,has_rental_income:/rent|tenant|income/i};
-function ai(q,left){if(!q||!window.hxFeats)return;aiNote.hidden=false;aiNote.classList.add("hx-ai-on");aiNote.textContent="AI is reading what you want and why...";
+function ai(q,left){if(!q||!window.hxFeats)return;aiQ=q;aiNote.hidden=false;aiNote.classList.add("hx-ai-on");aiNote.textContent="AI is reading what you want and why...";
  /* New or refine is decided here, not by the AI (owner, 2026-11-07: from Conway homes to beach homes it searched beach
     homes in Conway): a sentence that does not begin by changing the search on screen starts over. */
  var refine=window.hxIsRefine?window.hxIsRefine(q):false;if(!refine){try{sessionStorage.removeItem("hx_ai_hist")}catch(e){}}
@@ -380,11 +386,11 @@ function ai(q,left){if(!q||!window.hxFeats)return;aiNote.hidden=false;aiNote.cla
    "Deduce what their goal needs, but think about which homes can have it: the search requires EVERY has key and every words phrase at once, so never list alternatives side by side. A deduction must be something every home they want would also have. Do not add ocean, oceanfront or waterfront beside a dock (oceanfront condos are like hotel rooms and have no dock). When they name a specific thing (a dock, a boat slip, a pool, a garage, an elevator), keep it; add a deduction only if it fits every home with that thing, and never swap a named thing for a broader one. Rule out kinds of home that cannot do what they want (a boat or a dock: type house unless they ask for a condo or townhouse; a big yard: type house). "+
    "Use not for what they want to avoid (not: flood_zone). land_lease means the land itself is rented (lot rent): never use it unless they say lease or lot rent. "+
    "Never filter on who a person is or who lives nearby: age, children or family, race, religion, disability, sex, origin. Use their numbers when they give them. Leave out what you are not sure of. JSON only, start { end }. "+
-   "Keys: mode (new|refine), has and not (feature keys from this list only, at most 4 each, at most 2 ending in mi), remove (filter names to drop when refining), min, max (dollars), beds, baths, type (house|condo|townhouse|multi|land|manufactured), city (Myrtle Beach|North Myrtle Beach|Surfside Beach|Garden City|Murrells Inlet|Pawleys Island|Little River|Conway|Longs|Loris|Aynor|Calabash), zip, subdivision (a neighborhood name), sqft, yearMin, yearMax, lotMin (acres), hoaMax, garage, hoa (0 for no HOA), domMax (days listed), waterfront (1), sort (newest|price_asc|price_desc), words (up to 3 comma-separated plain phrases the description must say, letters and spaces only: for a specific thing the feature keys do not cover or cover only partly, such as dock, boat lift, elevator, in-law, detached garage, workshop, bonus room; a dock is words dock and no has key, because the MLS checkbox marks only some homes with a dock). "+
-   "Feature keys: "+keys.join(",")+". Answer like "+JSON.stringify({mode:"new",has:[],not:[],why:"Looking for ... because you want ...: one plain sentence, under 25 words, about the homes and the goal, never about the person"})+".";
+   "Keys: mode (new|refine), has and not (feature keys from this list only, at most 4 each, at most 2 ending in mi), remove (filter names to drop when refining), min, max (dollars), beds, baths, type (house|condo|townhouse|multi|land|manufactured), city (Myrtle Beach|North Myrtle Beach|Surfside Beach|Garden City|Murrells Inlet|Pawleys Island|Little River|Conway|Longs|Loris|Aynor|Calabash), zip, subdivision (a neighborhood name), sqft, yearMin, yearMax, lotMin (acres), hoaMax, garage, hoa (0 for no HOA), domMax (days listed), waterfront (1), sort (newest|price_asc|price_desc), read (true only when part of what they asked can be checked only by reading each listing's description: a thing or a condition the keys and words do not fully cover, such as a water view, a big back yard, updated, move-in ready, quiet; false when the filters you give cover all of it), words (up to 3 comma-separated plain phrases the description must say, letters and spaces only: for a specific thing the feature keys do not cover or cover only partly, such as dock, boat lift, elevator, in-law, detached garage, workshop, bonus room; a dock is words dock and no has key, because the MLS checkbox marks only some homes with a dock). "+
+   "Feature keys: "+keys.join(",")+". Answer like "+JSON.stringify({mode:"new",has:[],not:[],read:false,why:"Looking for ... because you want ...: one plain sentence, under 25 words, about the homes and the goal, never about the person"})+".";
   return fetch("https://api-proxy.chapter3realty.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-haiku-5-5",max_tokens:400,cache_key:["search3",q,state.toString(),JSON.stringify(before)].join("|"),messages:[{role:"user",content:prompt}]})})
    .then(function(r){return r.json()}).then(function(d){var t=d&&d.content&&d.content.filter(function(b){return b.type==="text"}).pop();if(!t){aiNote.hidden=true;return}
-    var a=t.text.indexOf("{"),z=t.text.lastIndexOf("}");var o=JSON.parse(t.text.slice(a,z+1));o.mode=refine?"refine":"new";var fresh=false;
+    var a=t.text.indexOf("{"),z=t.text.lastIndexOf("}");var o=JSON.parse(t.text.slice(a,z+1));o.mode=refine?"refine":"new";var fresh=false;NEED[q]=o.read===true||!!(o.words&&String(o.words).trim());
     var p=fresh?new URLSearchParams():new URLSearchParams(state);if(fresh&&state.get("all"))p.set("all",state.get("all"));
     (Array.isArray(o.remove)?o.remove:[]).forEach(function(k){if(ASK_KEYS.indexOf(k)>=0||k==="has"||k==="not")p.delete(k)});
     function pick(list,cur){var out=(cur||"").split(",").filter(Boolean),dist=out.filter(function(k){return/mi$/.test(k)}).length;
@@ -393,9 +399,9 @@ function ai(q,left){if(!q||!window.hxFeats)return;aiNote.hidden=false;aiNote.cla
     if(has.length)p.set("has",has.join(","));else p.delete("has");if(not.length)p.set("not",not.join(","));else p.delete("not");
     ASK_KEYS.forEach(function(k){if(o[k]!=null&&o[k]!=="")p.set(k,String(o[k]))});
     var why=o.why?String(o.why).replace(/[<>]/g,"").slice(0,180):"";
-    if(p.toString()===state.toString()){remember(q,state);aiNote.textContent=why?"AI: "+why+" The filters above already match.":"We searched what we could read. Add a detail, or use the filters.";startReader(q);return}
+    if(p.toString()===state.toString()){remember(q,state);aiNote.textContent=why?"AI: "+why+" The filters above already match.":"We searched what we could read. Add a detail, or use the filters.";if(NEED[q])startReader(q);else stopReader();return}
     remember(q,p);aiNote.textContent="AI: "+(why?why+" ":"")+(fresh?"A new search. ":"")+"Remove any filter you do not want.";
-    clearRing();search(p,{fit:true,ai:false,read:q,back:back})})}).catch(function(){aiNote.hidden=true;startReader(q)})}
+    clearRing();search(p,{fit:true,ai:false,read:NEED[q]?q:"",back:back})})}).catch(function(){aiNote.hidden=true;aiQ="";if(needRead(q,left))startReader(q)})}
 function hilite(mls){hot=mls;marks.forEach(function(m){style(m,m.p.mls===mls)});marks3.forEach(function(m){if(m.pin)try{m.pin.background=m.p.mls===mls?"#c4783a":"#1a73e8"}catch(x){}});Array.prototype.forEach.call(list.children,function(c){c.classList.toggle("hx-hot",c.getAttribute("data-mls")===mls)})}
 function closePop(){if(pop)pop.remove();pop=null;popFor=null}
 /* The first click on a dot shows the home; a second click on the same dot opens it. */
@@ -446,7 +452,7 @@ google.maps.importLibrary("maps").then(function(lib){
  map=new lib.Map(document.getElementById("hx-map"),{center:{lat:33.70,lng:-78.92},zoom:10,mapTypeControl:false,streetViewControl:false,fullscreenControl:false,clickableIcons:false,gestureHandling:"greedy"});
  map.addListener("dragstart",function(){user=true});map.addListener("zoom_changed",function(){marks.forEach(function(m){style(m,m.p.mls===hot)})});
  document.getElementById("hx-map").addEventListener("wheel",function(){user=true},{passive:true});document.getElementById("hx-map").addEventListener("touchstart",function(){user=true},{passive:true});
- map.addListener("idle",function(){if(!user)return;user=false;listView()});
+ map.addListener("idle",function(){if(!user)return;user=false;listView();if(rd.q&&NEED[rd.q])startReader(rd.q)});
  map.addListener("click",function(e){if(pop){closePop();return}if(e&&e.latLng)clickSearch(e.latLng.lat(),e.latLng.lng())});
  list.addEventListener("mouseover",function(e){var c=e.target.closest&&e.target.closest("[data-mls]");if(c&&c.getAttribute("data-mls")!==hot)hilite(c.getAttribute("data-mls"))});
  draw(true);focusOn();

@@ -647,6 +647,15 @@ async function remarksApi(context, url) {
  * reason, for anyone (owner, 2026-11-08: "i dont want any ai reason ... just show them good results"). The AI's
  * answer is kept by the AI proxy for a year (same question, same homes, same text: no new cost).
  */
+/* The details as short "Field: value" lines, without empty fields: the same facts in fewer words for the AI. */
+function compactDetails(d) {
+  return Object.entries(d || {}).filter(([, v]) => v !== null && v !== "" && v !== false && !(Array.isArray(v) && !v.length))
+    .map(([k, v]) => k + ": " + String(Array.isArray(v) ? v.join(", ") : v).slice(0, 160)).join("; ").slice(0, 1800);
+}
+async function sha256Hex(t) {
+  const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t));
+  return [...new Uint8Array(b)].map((x) => x.toString(16).padStart(2, "0")).join("");
+}
 async function readApi(context) {
   const { env, request } = context;
   const raw = await request.text();
@@ -660,24 +669,47 @@ async function readApi(context) {
   const by = await descriptionsFor(env, request, homes.map((h) => h.mls));
   if (!by) return json({ ok: false, error: "sign_in" }, 200, { "cache-control": "private, no-store" });
   const read = homes.filter((h) => by[h.mls] && (by[h.mls].remarks || Object.keys(by[h.mls].details).length))
-    .map((h) => ({ ...h, kind: by[h.mls].type, status: by[h.mls].status, description: by[h.mls].remarks, details: by[h.mls].details }));
+    .map((h) => ({ ...h, kind: by[h.mls].type, status: by[h.mls].status, description: by[h.mls].remarks, details: compactDetails(by[h.mls].details) }));
   if (!read.length) return json({ ok: true, r: [] }, 200, { "cache-control": "private, no-store" });
-  const prompt = "A home buyer on the Grand Strand, South Carolina, asked for: " + JSON.stringify(q) + ". Filters in force: " + JSON.stringify(stateText) + ". "
-    + "Read each home's whole listing description and its details (the MLS fields), and judge only the home against what they asked. "
-    + "fit yes: the description or details show it has what they want or suits their goal. fit no: they clearly rule it out (it is for lease or rent, not for sale; a different kind of property; it lacks a must-have they named, such as a dock when the home is an oceanfront condo with no dock). Otherwise fit maybe. "
-    + "Judge only the home, never people, schools or who lives nearby. JSON only, start { end }, like "
-    + JSON.stringify({ r: [{ m: "MLS number", fit: "yes" }] }) + ". Homes: " + JSON.stringify(read);
-  let out = [];
-  try {
-    const ai = await fetch("https://api-proxy.chapter3realty.workers.dev", { method: "POST", headers: { "Content-Type": "application/json", Origin: "https://chapter3realty.com" },
-      body: JSON.stringify({ model: "claude-haiku-5-5", max_tokens: 400, cache_key: ["read3", q, stateText, read.map((h) => h.mls).join(",")].join("|"), messages: [{ role: "user", content: prompt }] }) });
-    const d = await ai.json();
-    const tx = d && Array.isArray(d.content) ? d.content.filter((b) => b.type === "text").pop() : null;
-    if (tx) { const a = tx.text.indexOf("{"), z = tx.text.lastIndexOf("}"); out = (JSON.parse(tx.text.slice(a, z + 1)).r || []); }
-  } catch { return json({ ok: false, error: "ai_unavailable" }, 200, { "cache-control": "private, no-store" }); }
-  const ids = new Set(read.map((h) => h.mls));
-  const r = (Array.isArray(out) ? out : []).filter((x) => x && ids.has(String(x.m)) && ["yes", "no", "maybe"].includes(x.fit))
-    .map((x) => ({ m: String(x.m), fit: x.fit }));
+  /* Cost (owner, 2026-11-08: "the search is WILDLY expensive"): each home's answer is kept per question and per home
+     (the same words asked about the same home, with the same description, is never read twice), and only the homes
+     not read before go to the AI. The filters in force are not part of the question: the homes sent already match them. */
+  const qn = q.toLowerCase().replace(/[^a-z0-9$ ]+/g, " ").replace(/ +/g, " ").trim();
+  const store = typeof caches !== "undefined" ? caches.default : null;
+  const keyOf = async (h) => "https://chapter3realty.com/__read/v1/" + (await sha256Hex(qn + "|" + h.mls + "|" + (h.description || "") + "|" + h.details));
+  const found = {}, ask = [];
+  await Promise.all(read.map(async (h) => {
+    h.key = await keyOf(h);
+    const hit = store ? await store.match(h.key).catch(() => null) : null;
+    const fit = hit ? (await hit.text().catch(() => "")) : "";
+    if (["yes", "no", "maybe"].includes(fit)) found[h.mls] = fit; else ask.push(h);
+  }));
+  if (ask.length) {
+    const homesText = ask.map((h) => JSON.stringify({ m: h.mls, kind: h.kind, price: h.price, beds: h.beds, baths: h.baths, sqft: h.sqft, acres: h.acres, description: h.description, details: h.details })).join("\n");
+    const prompt = "A home buyer on the Grand Strand, South Carolina, asked for: " + JSON.stringify(q) + ". "
+      + "Read each home's whole listing description and its details (the MLS fields), and judge only the home against what they asked. "
+      + "fit yes: the description or details show it has what they want or suits their goal. fit no: they clearly rule it out (it is for lease or rent, not for sale; a different kind of property; it lacks a must-have they named, such as a dock when the home is an oceanfront condo with no dock). Otherwise fit maybe. "
+      + "Judge only the home, never people, schools or who lives nearby. JSON only, start { end }, like "
+      + JSON.stringify({ r: [{ m: "MLS number", fit: "yes" }] }) + ". Homes, one per line:\n" + homesText;
+    let out = [];
+    try {
+      const ai = await fetch("https://api-proxy.chapter3realty.workers.dev", { method: "POST", headers: { "Content-Type": "application/json", Origin: "https://chapter3realty.com" },
+        body: JSON.stringify({ model: "claude-haiku-5-5", max_tokens: 300, effort: "low", messages: [{ role: "user", content: prompt }] }) });
+      const d = await ai.json();
+      const tx = d && Array.isArray(d.content) ? d.content.filter((b) => b.type === "text").pop() : null;
+      if (tx) { const a = tx.text.indexOf("{"), z = tx.text.lastIndexOf("}"); out = (JSON.parse(tx.text.slice(a, z + 1)).r || []); }
+    } catch { if (!Object.keys(found).length) return json({ ok: false, error: "ai_unavailable" }, 200, { "cache-control": "private, no-store" }); }
+    const byM = Object.fromEntries(ask.map((h) => [h.mls, h]));
+    const puts = [];
+    for (const x of Array.isArray(out) ? out : []) {
+      const h = x && byM[String(x.m)];
+      if (!h || !["yes", "no", "maybe"].includes(x.fit)) continue;
+      found[h.mls] = x.fit;
+      if (store) puts.push(store.put(h.key, new Response(x.fit, { headers: { "cache-control": "public, max-age=2592000" } })).catch(() => {}));
+    }
+    if (puts.length) { const w = Promise.all(puts); if (context.waitUntil) context.waitUntil(w); else await w; }
+  }
+  const r = Object.entries(found).map(([m, fit]) => ({ m, fit }));
   return json({ ok: true, r }, 200, { "cache-control": "private, no-store" });
 }
 

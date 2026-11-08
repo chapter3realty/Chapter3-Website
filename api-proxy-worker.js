@@ -48,7 +48,7 @@ const ANTHROPIC_VERSION = '2023-06-01';
 const MODEL = 'claude-haiku-5-5';
 const EFFORT = 'medium';
 const MAX_TOKENS_CAP = 8000;
-const MAX_BODY_BYTES = 24 * 1024;
+const MAX_BODY_BYTES = 64 * 1024; // the home search sends up to six whole listing descriptions
 
 // Bump this string to invalidate every stored answer at once.
 const CACHE_VERSION = 'v2'; // v2: Claude Haiku 5.5 and MLS facts; every stored answer is new
@@ -407,8 +407,10 @@ async function handleAnalysis(incoming, env, origin) {
   const body = {
     model: MODEL,
     // The browser asks for room for the answer; thinking needs room too.
-    max_tokens: Math.min(Math.max(Number(incoming.max_tokens) || 1200, 1200) * 3, MAX_TOKENS_CAP),
-    output_config: { effort: EFFORT },
+    max_tokens: Math.min(Math.max(Number(incoming.max_tokens) || 1200, 1200) * (incoming.effort === 'low' ? 2 : 3), MAX_TOKENS_CAP),
+    // A caller may ask for less thinking (the home search's yes/no reading of descriptions: owner, 2026-11-08,
+    // "the search is WILDLY expensive"), never more than the default.
+    output_config: { effort: incoming.effort === 'low' ? 'low' : EFFORT },
     messages: incoming.messages,
   };
   if (typeof incoming.system === 'string') body.system = incoming.system;

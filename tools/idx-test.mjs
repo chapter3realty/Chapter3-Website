@@ -60,7 +60,7 @@ globalThis.fetch = async (input, init = {}) => {
   if (u.hostname === "api-proxy.chapter3realty.workers.dev") {
     // The AI: every home it was given fits, with a reason from its description.
     const prompt = JSON.parse(init.body).messages[0].content;
-    const ms = [...prompt.matchAll(/"mls":"(\w+)"/g)].map((x) => x[1]);
+    const ms = [...prompt.matchAll(/"(?:mls|m)":"(\w+)"/g)].map((x) => x[1]).filter((m) => m !== "MLS");
     return J({ content: [{ type: "text", text: JSON.stringify({ r: ms.map((m) => ({ m, fit: m.endsWith("2") ? "no" : "yes", why: "private dock on a canal" })) }) }] });
   }
   if ((init.headers || {})["x-idx-key"] !== "devkey") return J({ ok: false, error: "forbidden" }, 403);
@@ -763,6 +763,14 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
 }
 
 
+// Cost (owner, 2026-11-08: "the search is WILDLY expensive"): the AI reads a sentence once, not on every filter change,
+// and reads only the homes on screen it has not read for that sentence, at most 24 at a time.
+{
+  const { MAP_SCRIPT: M } = await import("../idx-lib/map.js");
+  check("search cost: one AI reading per sentence (aiQ), descriptions only when needed (read), only unread homes in view, 24 at most",
+    /j\.q!==aiQ&&wantsAi/.test(M) && /inView\(p\)&&!rd\.done\[p\.mls\]\}\)\.slice\(0,24\)/.test(M) && !/slice\(0,96\)/.test(M) && /read \(true only when/.test(M) && /if\(q!==rd\.q\)/.test(M));
+}
+
 // Descriptions for every visitor, read on the server (owner, 2026-11-07 and 08; CRM Ticket 557): the AI gets the whole
 // description and the details; the browser gets only which homes fit, and the reason only when signed up.
 {
@@ -779,6 +787,7 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
     anon.ok && anon.r.length === 2 && anon.r.find((x) => x.m === "2600001").fit === "yes" && anon.r.find((x) => x.m === "2600002").fit === "no" && anon.r.every((x) => !("why" in x))
     && !/private dock/.test(raw) && ai && /A home with a private dock, 2600001/.test(ai.init.body) && /Boat Dock/.test(ai.init.body) && !/ElementarySchool/.test(ai.init.body)
     && (ai.init.headers || {}).Origin === "https://chapter3realty.com"
+    && JSON.parse(ai.init.body).effort === "low" && !/Filters in force/.test(ai.init.body)
     && signed.ok && signed.r.every((x) => !("why" in x)) && !/private dock/.test(JSON.stringify(signed)) && plain.ok === false && plain.error === "sign_in");
 }
 
