@@ -250,8 +250,9 @@ if ($hash -eq $last -and $live -eq $want) {
       # The dashboard's own settings (2026-11-08): the same compatibility date, and the custom domain
       # api-proxy.chapter3realty.com kept attached. Leaving either out made wrangler offer to remove it.
       compatibility_date = "2024-01-01"
-      routes = @(@{ pattern = "api-proxy.chapter3realty.com"; custom_domain = $true })
+      routes = @(@{ pattern = "api-proxy.chapter3realty.com"; zone_name = "chapter3realty.com"; custom_domain = $true })
       workers_dev = $true
+      preview_urls = $true
       keep_vars = $true
       kv_namespaces = @(@{ binding = "ANALYSIS_CACHE"; id = $kvId })
     }
