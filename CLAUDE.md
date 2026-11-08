@@ -160,3 +160,9 @@ matter, not sentence length. That has happened here. See PLAYBOOK A11a.
 - The analyzer's API worker lives in the Cloudflare dashboard, **not in this
   repo**. `wrangler pages deploy` does not update it. Source of truth is
   `api-proxy-worker.js` at the repo root.
+  Every change to that file must be pasted into the dashboard by the owner,
+  and the change is not done until he has. On 2026-11-08 the Console showed the
+  live worker still on the July version (Claude Sonnet 4.5, about 30 times the
+  price of Haiku 5.5): the October switch to Haiku 5.5 had never been pasted,
+  and $33.54 was spent in eight days. After a worker change, ask the owner to
+  check console.anthropic.com > Usage, grouped by model, a day later.
