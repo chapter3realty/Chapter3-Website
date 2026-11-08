@@ -767,8 +767,8 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
 // and reads only the homes on screen it has not read for that sentence, at most 24 at a time.
 {
   const { MAP_SCRIPT: M } = await import("../idx-lib/map.js");
-  check("search: one AI reading per sentence at high effort (aiQ), every home the search found read once per sentence, 120 at most, eight a call, best score first",
-    /j\.q!==aiQ&&wantsAi/.test(M) && /120-rd\.sent/.test(M) && /order\.slice\(i,i\+8\)/.test(M) && !/slice\(0,96\)/.test(M) && /effort:"high"/.test(M) && /if\(q!==rd\.q\)/.test(M) && /sc\(b\[0\]\)-sc\(a\[0\]\)/.test(M) && /for sale with it/.test(M));
+  check("search: one AI reading per sentence at high effort (aiQ), every home the search found read once per sentence, 120 at a time and more as the list grows, eight a call; descriptions read for anything beyond the basic filters, best score first",
+    /j\.q!==aiQ&&wantsAi/.test(M) && /order=order\.slice\(0,120\)/.test(M) && /readSoon\(\)/.test(M) && /outside basic filters/.test(M) && /order\.slice\(i,i\+8\)/.test(M) && !/slice\(0,96\)/.test(M) && /effort:"high"/.test(M) && /if\(q!==rd\.q\)/.test(M) && /sc\(b\[0\]\)-sc\(a\[0\]\)/.test(M) && /for sale with it/.test(M));
 }
 
 // Descriptions for every visitor, read on the server (owner, 2026-11-07 and 08; CRM Ticket 557): the AI gets the whole

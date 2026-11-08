@@ -243,7 +243,9 @@ function card(p,withHeart){var a=el("article","hx-c"),l=el("a","hx-c-link");l.hr
  b.appendChild(f);b.appendChild(el("span","hx-c-addr",p.addr));b.appendChild(el("span","hx-c-firm","MLS #"+p.mls+", "+p.firm+". Listing provided by CCMLS."));l.appendChild(b);a.appendChild(l);if(withHeart)a.appendChild(heart(p));return a}
 /* The list draws 24 homes, and 24 more as the reader nears the end: fewer photos asked for at once. */
 var shown=[],drawn=0,sent=null,io=null;
-function more24(){shown.slice(drawn,drawn+24).forEach(function(p){list.appendChild(card(p,true))});drawn=Math.min(shown.length,drawn+24);if(sent)list.appendChild(sent)}
+function more24(){shown.slice(drawn,drawn+24).forEach(function(p){list.appendChild(card(p,true))});drawn=Math.min(shown.length,drawn+24);if(sent)list.appendChild(sent);readSoon()}
+/* More cards drawn than the AI has read: read the next ones, once the reader is idle. */
+function readSoon(){if(typeof rd==="undefined"||rdT||!rd.q||!NEED[rd.q]||rd.run)return;if(!shown.slice(0,drawn).some(function(p){return!rd.done[p.mls]}))return;rdT=setTimeout(function(){rdT=0;if(!rd.run&&rd.q&&NEED[rd.q])startReader(rd.q)},600)}
 if(window.IntersectionObserver){sent=el("div","hx-list-sent");io=new IntersectionObserver(function(es){if(es[0].isIntersecting&&drawn<shown.length)more24()},{root:document.getElementById("hx-map-list"),rootMargin:"600px"});io.observe(sent)}
 function sorry(c,exact){var b=document.getElementById("hx-sorry");if(!b)return;while(b.firstChild)b.removeChild(b.firstChild);if(exact>0){b.hidden=true;return}
  b.insertAdjacentHTML("afterbegin",'${SORRY_SVG}');var d=el("div");d.appendChild(el("h2",null,"I'm sorry, no homes match all of that."));
@@ -291,35 +293,36 @@ var searched=false,lastQ=null;
    are read first, six at a time, and the ones whose description fits what the buyer asked for gather at the
    top, each with the reason in a few words. A home whose description rules it out (a lease, another kind of
    property, a must-have it lacks) leaves the list. The CRM reads the descriptions for every visitor (CRM Ticket 557; owner, 2026-11-07). */
-var rd={tok:0,q:"",yes:{},no:{},done:{},s:{},sent:0,why:{},n:0,of:0},NEED={},aiQ="",picks=null,picksGrid=null,picksNote=null;
+var rd={tok:0,q:"",yes:{},no:{},done:{},s:{},live:0,why:{},n:0,of:0},rdT=0,NEED={},aiQ="",picks=null,picksGrid=null,picksNote=null;
 function picksBox(){if(picks)return picks;picks=el("section","hx-ai-picks");picks.setAttribute("aria-live","polite");
  var h=el("p","hx-ai-picks-h");h.insertAdjacentHTML("afterbegin",${JSON.stringify(aiChip())});h.appendChild(document.createTextNode(" read these descriptions"));picks.appendChild(h);
  picksNote=el("p","hx-ai-picks-n");picks.appendChild(picksNote);picksGrid=el("div","hx-map-cards hx-ai-picks-g");picks.appendChild(picksGrid);list.parentNode.insertBefore(picks,list);return picks}
-function stopReader(){rd.tok++;if(picks)picks.hidden=true}
+function stopReader(){rd.tok++;rd.run=false;if(picks)picks.hidden=true}
 function readNote(done){if(!picksNote)return;var y=Object.keys(rd.yes).length;picksNote.textContent=(done?"The AI read all "+rd.n+" descriptions":"The AI is reading the descriptions: "+rd.n+" of "+rd.of)+". "+(y?y+(y===1?" home fits":" homes fit")+" what you asked"+(done?".":" so far."):done?"None stood out; the homes below match your filters.":"")}
 /* Owner, 2026-11-07: no box above the results ("remove that whole sign up for free screen and don't have any other
    box like that appear"), and the reader runs for every visitor, signed up or not ("do the search description for
    not signed in users as well"): a home whose description rules it out leaves the list, and a home that fits
    carries the reason on its own card. */
 /* Thorough and cheap (owner, 2026-11-08: "have it do a detailed search ... with it being haiku"): the AI reads every
-   home the search found, the ones on screen first, up to 120 for one sentence, eight to a call, three calls at a time,
-   and scores each 0 to 10 against what was asked; the list puts the best first. What was read stays read until the
-   sentence changes, so a filter change or a map move reads only homes it has not read. */
-function startReader(q){var t=++rd.tok;if(q!==rd.q){rd.q=q;rd.yes={};rd.no={};rd.done={};rd.s={};rd.sent=0;rd.why={}}rd.n=0;
- var seen={},order=[];all.filter(inView).concat(all).forEach(function(p){if(!seen[p.mls]&&!rd.done[p.mls]){seen[p.mls]=1;order.push(p)}});
- order=order.slice(0,Math.max(0,120-rd.sent));rd.of=order.length;var i=0,live=0;readNote(false);
- function next(){if(t!==rd.tok)return;var batch=order.slice(i,i+8);i+=8;if(!batch.length){if(!live)readNote(true);return}live++;rd.sent+=batch.length;
+   home the search found, the cards drawn and the homes on screen first, 120 at a time, eight to a call, three calls at
+   a time, and scores each 0 to 10 against what was asked; the list puts the best first. Past 120 it keeps going
+   (owner, 2026-11-08: "if they go past 120 it should read again"): more cards in the list, a map move or more homes
+   from the search start the next 120. What was read stays read until the sentence changes. */
+function startReader(q){var t=++rd.tok;if(q!==rd.q){rd.q=q;rd.yes={};rd.no={};rd.done={};rd.s={};rd.why={}}rd.n=0;rd.live=0;rd.run=true;
+ var seen={},order=[];shown.slice(0,drawn).concat(all.filter(inView),all).forEach(function(p){if(!seen[p.mls]&&!rd.done[p.mls]){seen[p.mls]=1;order.push(p)}});
+ order=order.slice(0,120);rd.of=order.length;var i=0;readNote(false);
+ function next(){if(t!==rd.tok)return;var batch=order.slice(i,i+8);i+=8;if(!batch.length){if(!rd.live){rd.run=false;readNote(true);readSoon()}return}rd.live++;
   var send=batch.map(function(p){return{mls:p.mls,price:p.price,beds:p.beds,baths:p.baths,sqft:p.sqft,acres:p.acres}});var by={};batch.forEach(function(p){by[p.mls]=p});
   /* The server reads each home's whole description and details with the AI and answers only which homes fit (owner,
      2026-11-08): the text never reaches the browser of a visitor who is not signed up. */
-  fetch("/homes/api/read",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({q:q,state:state.toString(),homes:send})}).then(function(r){return r.json()}).then(function(j){live--;if(t!==rd.tok)return;if(j&&j.error==="sign_in"){rd.tok++;return}
+  fetch("/homes/api/read",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({q:q,state:state.toString(),homes:send})}).then(function(r){return r.json()}).then(function(j){if(t!==rd.tok)return;rd.live--;if(j&&j.error==="sign_in"){rd.tok++;return}
      var out=j&&j.ok&&Array.isArray(j.r)?j.r:[];
      /* No reason on the cards (owner, 2026-11-08: "they asked you to find it they know the reason"): homes that fit
         move up, homes ruled out leave. */
      var gone=false;out.forEach(function(x){var m=String(x&&x.m||"");if(!by[m])return;if(typeof x.s==="number"){rd.s[m]=x.s;gone=true}
       if(x.fit==="yes"){rd.yes[m]=1;gone=true}
       else if(x.fit==="no"){rd.no[m]=1;gone=true}});
-     batch.forEach(function(p){rd.done[p.mls]=1});if(gone)listView();rd.n+=batch.length;readNote(false);next()}).catch(function(){live--;if(t===rd.tok)setTimeout(next,1500)})}
+     batch.forEach(function(p){rd.done[p.mls]=1});if(gone)listView();rd.n+=batch.length;readNote(false);next()}).catch(function(){if(t===rd.tok){rd.live--;setTimeout(next,1500)}})}
  next();next();next()}
 /* Homes the AI read and found fitting come first (owner, 2026-11-08: "the results are based on the info"); the rest keep their order. */
 function listView(){if(!all.length&&!searched)return;var keep=all.filter(function(p){return inView(p)&&!rd.no[p.mls]});
@@ -371,7 +374,9 @@ function hist(){try{return JSON.parse(sessionStorage.getItem("hx_ai_hist")||"[]"
 function remember(q,params){try{var h=hist();h.push({q:String(q).slice(0,200),f:String(params).slice(0,300)});sessionStorage.setItem("hx_ai_hist",JSON.stringify(h.slice(-4)))}catch(e){}}
 /* The descriptions are read only when the sentence asks for something the filters cannot check (the AI says so in read;
    without the AI, when some words were left over). */
-function needRead(q,left){if(!NEED.hasOwnProperty(q)&&left)NEED[q]=true;return!!NEED[q]}
+/* Without the AI, the descriptions are read when the search asks for more than the basic filters (owner, 2026-11-08:
+   "if they ask for something outside basic filters bed bath price so on it starts reading"). */
+function needRead(q,left){if(!NEED.hasOwnProperty(q)&&(left||["has","not","words","waterfront"].some(function(k){return state.get(k)})))NEED[q]=true;return!!NEED[q]}
 function wantsAi(q,left){return!!(q&&(left||String(q).trim().split(/ +/).length>=4||hist().length))}
 var ASK_KEYS=["min","max","beds","baths","type","city","zip","subdivision","sqft","yearMin","yearMax","lotMin","hoaMax","garage","hoa","domMax","waterfront","sort","words"];
 /* Filters about renting the land itself or renting to own are used only when the buyer says so: a search
@@ -390,11 +395,11 @@ function ai(q,left){if(!q||!window.hxFeats)return;aiQ=q;aiNote.hidden=false;aiNo
    "Deduce what their goal needs, but think about which homes can have it: the search requires EVERY has key and every words phrase at once, so never list alternatives side by side. A deduction must be something every home they want would also have. Do not add ocean, oceanfront or waterfront beside a dock (oceanfront condos are like hotel rooms and have no dock). When they name a specific thing (a dock, a boat slip, a pool, a garage, an elevator), keep it; add a deduction only if it fits every home with that thing, and never swap a named thing for a broader one. Rule out kinds of home that cannot do what they want (a boat or a dock: type house unless they ask for a condo or townhouse; a big yard: type house). "+
    "Use not for what they want to avoid (not: flood_zone). land_lease means the land itself is rented (lot rent): never use it unless they say lease or lot rent. "+
    "Never filter on who a person is or who lives nearby: age, children or family, race, religion, disability, sex, origin. Use their numbers when they give them. Leave out what you are not sure of. JSON only, start { end }. "+
-   "Keys: mode (new|refine), has and not (feature keys from this list only, at most 4 each, at most 2 ending in mi), remove (filter names to drop when refining), min, max (dollars), beds, baths, type (house|condo|townhouse|multi|land|manufactured), city (Myrtle Beach|North Myrtle Beach|Surfside Beach|Garden City|Murrells Inlet|Pawleys Island|Little River|Conway|Longs|Loris|Aynor|Calabash), zip, subdivision (a neighborhood name), sqft, yearMin, yearMax, lotMin (acres), hoaMax, garage, hoa (0 for no HOA), domMax (days listed), waterfront (1), sort (newest|price_asc|price_desc), read (true unless the filters you give express every word they wrote; true for any goal, condition, view, style or thing the keys do not fully cover, such as a water view, a big back yard, updated, move-in ready, quiet, good for a family business, room for a workshop), words (up to 3 comma-separated plain phrases the description must say, letters and spaces only: for a specific thing the feature keys do not cover or cover only partly, such as dock, boat lift, elevator, in-law, detached garage, workshop, bonus room; a dock is words dock and no has key, because the MLS checkbox marks only some homes with a dock). "+
+   "Keys: mode (new|refine), has and not (feature keys from this list only, at most 4 each, at most 2 ending in mi), remove (filter names to drop when refining), min, max (dollars), beds, baths, type (house|condo|townhouse|multi|land|manufactured), city (Myrtle Beach|North Myrtle Beach|Surfside Beach|Garden City|Murrells Inlet|Pawleys Island|Little River|Conway|Longs|Loris|Aynor|Calabash), zip, subdivision (a neighborhood name), sqft, yearMin, yearMax, lotMin (acres), hoaMax, garage, hoa (0 for no HOA), domMax (days listed), waterfront (1), sort (newest|price_asc|price_desc), read (false only when everything they asked is price, beds, baths, size, kind of home, town, zip, neighborhood, year built, lot size, HOA fee or days listed; true for anything else: any feature, view, condition, style or goal, such as a pool, a dock, a water view, a big back yard, updated, move-in ready, quiet, room for a workshop, rental income), words (up to 3 comma-separated plain phrases the description must say, letters and spaces only: for a specific thing the feature keys do not cover or cover only partly, such as dock, boat lift, elevator, in-law, detached garage, workshop, bonus room; a dock is words dock and no has key, because the MLS checkbox marks only some homes with a dock). "+
    "Feature keys, each with what it means and how many homes are for sale with it (prefer keys that many homes have; a key with very few homes will leave few results): "+keys.map(function(k){return k+" ("+names[k]+(cnt[k]!=null?", "+cnt[k]+" for sale":"")+")"}).join("; ")+". Answer like "+JSON.stringify({mode:"new",has:[],not:[],read:false,why:"Looking for ... because you want ...: one plain sentence, under 25 words, about the homes and the goal, never about the person"})+".";
   return fetch("https://api-proxy.chapter3realty.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-haiku-5-5",max_tokens:600,effort:"high",cache_key:["search4",q,state.toString(),JSON.stringify(before)].join("|"),messages:[{role:"user",content:prompt}]})})
    .then(function(r){return r.json()}).then(function(d){var t=d&&d.content&&d.content.filter(function(b){return b.type==="text"}).pop();if(!t){aiNote.hidden=true;return}
-    var a=t.text.indexOf("{"),z=t.text.lastIndexOf("}");var o=JSON.parse(t.text.slice(a,z+1));o.mode=refine?"refine":"new";var fresh=false;NEED[q]=o.read===true||!!(o.words&&String(o.words).trim());
+    var a=t.text.indexOf("{"),z=t.text.lastIndexOf("}");var o=JSON.parse(t.text.slice(a,z+1));o.mode=refine?"refine":"new";var fresh=false;NEED[q]=o.read===true||!!(o.words&&String(o.words).trim())||(Array.isArray(o.has)&&o.has.length>0)||(Array.isArray(o.not)&&o.not.length>0)||!!o.waterfront;
     var p=fresh?new URLSearchParams():new URLSearchParams(state);if(fresh&&state.get("all"))p.set("all",state.get("all"));
     (Array.isArray(o.remove)?o.remove:[]).forEach(function(k){if(ASK_KEYS.indexOf(k)>=0||k==="has"||k==="not")p.delete(k)});
     function pick(list,cur){var out=(cur||"").split(",").filter(Boolean),dist=out.filter(function(k){return/mi$/.test(k)}).length;
