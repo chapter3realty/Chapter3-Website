@@ -20,6 +20,7 @@ param(
 )
 
 $ErrorActionPreference = "Continue"
+$selfAtStart = if ($PSCommandPath) { (Get-FileHash -LiteralPath $PSCommandPath).Hash } else { "" }
 $RepoUrl = "https://github.com/chapter3realty/Chapter3-Website.git"
 
 function Say($msg)  { Write-Host $msg }
@@ -158,6 +159,18 @@ Say ""
 Say "Now on commit $head"
 Say "  $subject"
 
+# The pull may have brought a newer copy of this script. PowerShell runs the copy it read at the start,
+# so start the new one instead (only when this script is the clone's own copy).
+$selfNow = Join-Path $clone "deploy.ps1"
+if ($PSCommandPath -and (Test-Path -LiteralPath $selfNow) -and ((Resolve-Path -LiteralPath $PSCommandPath).Path -eq (Resolve-Path -LiteralPath $selfNow).Path) -and -not $env:C3_DEPLOY_RESTARTED) {
+  if ((Get-FileHash -LiteralPath $selfNow).Hash -ne $selfAtStart) {
+    Say "This script itself was updated by the pull. Starting the new copy."
+    $env:C3_DEPLOY_RESTARTED = "1"
+    & powershell -ExecutionPolicy Bypass -File $selfNow -Branch $Branch -ClonePath $clone
+    exit $LASTEXITCODE
+  }
+}
+
 if (-not (Test-Path -LiteralPath (Join-Path $clone "chapter3realty"))) {
   Fail "The site folder 'chapter3realty' is missing from the clone. Send me what you see."
 }
@@ -182,6 +195,65 @@ if ($go -ne "y") { Fail "Nothing was deployed. The clone is up to date, so you c
 
 & npx wrangler pages deploy chapter3realty --project-name chapter3realty --branch production --commit-dirty=true
 if ($LASTEXITCODE -ne 0) { Fail "Wrangler failed. Nothing shipped. Send me the output above." }
+
+# ---------------------------------------------------------------- the AI proxy
+# The AI proxy (api-proxy-worker.js) is a Cloudflare Worker, not part of the site. Until 2026-11-08 it was
+# pasted into the dashboard by hand, and the October change to Claude Haiku 5.5 never got there: $33.54 went
+# to Claude Sonnet 4.5 in eight days. Now this script deploys it with the same wrangler login as the site,
+# but only when the file changed since the last time it was deployed from this computer.
+Step "Checking the AI proxy (api-proxy-worker.js)"
+$workerFile = Join-Path $clone "api-proxy-worker.js"
+$stamp = Join-Path $env:USERPROFILE ".c3-api-proxy.sha256"
+$hash = (Get-FileHash -LiteralPath $workerFile -Algorithm SHA256).Hash
+$last = ""
+if (Test-Path -LiteralPath $stamp) { $last = (Get-Content -LiteralPath $stamp -Raw).Trim() }
+if ($hash -eq $last) {
+  Good "The AI proxy is up to date."
+} else {
+  Say "api-proxy-worker.js changed since this computer last deployed it. Deploying the AI proxy."
+  # Its saved answers live in a KV store; keep it attached. The store is found by its name.
+  $kvJson = (& npx wrangler kv namespace list 2>$null | Out-String)
+  $kvId = $null
+  try {
+    # wrangler can print a notice before the list: read from the first [ to the last ].
+    $a = $kvJson.IndexOf("[") ; $z = $kvJson.LastIndexOf("]")
+    $spaces = @()
+    if ($a -ge 0 -and $z -gt $a) { foreach ($x in ($kvJson.Substring($a, $z - $a + 1) | ConvertFrom-Json)) { $spaces += $x } }
+    $pick = @($spaces | Where-Object { $_.title -match "analysis" })
+    if ($pick.Count -ne 1) { $pick = @($spaces | Where-Object { $_.title -match "cache" }) }
+    if ($pick.Count -ne 1 -and $spaces.Count -eq 1) { $pick = $spaces }
+    if ($pick.Count -eq 1) { $kvId = $pick[0].id ; Say ("Keeping its saved answers in the KV store '{0}'." -f $pick[0].title) }
+  } catch { }
+  if (-not $kvId) {
+    Write-Host "Could not find the AI proxy's KV store, so the proxy was NOT deployed. The site is live. Send me the output above." -ForegroundColor Yellow
+  } else {
+    $cfgDir = Join-Path $env:TEMP "c3-api-proxy"
+    New-Item -ItemType Directory -Force -Path $cfgDir | Out-Null
+    $cfg = Join-Path $cfgDir "wrangler.json"
+    # keep_vars keeps any setting typed into the dashboard; secrets (the Anthropic key) are never touched by a deploy.
+    $conf = [ordered]@{
+      name = "api-proxy"
+      main = $workerFile
+      compatibility_date = "2025-01-01"
+      workers_dev = $true
+      keep_vars = $true
+      kv_namespaces = @(@{ binding = "ANALYSIS_CACHE"; id = $kvId })
+    }
+    # Written without a byte-order mark: Windows PowerShell's UTF8 adds one, and a JSON reader can refuse it.
+    [System.IO.File]::WriteAllText($cfg, ($conf | ConvertTo-Json -Depth 5))
+    & npx wrangler deploy --config $cfg
+    if ($LASTEXITCODE -ne 0) {
+      Write-Host "The AI proxy deploy failed. The site is live; the old proxy is still running. Send me the output above." -ForegroundColor Yellow
+    } else {
+      Set-Content -LiteralPath $stamp -Value $hash
+      Good "AI proxy deployed. It now runs the model named in api-proxy-worker.js."
+      try {
+        $pre = Invoke-WebRequest -Uri "https://api-proxy.chapter3realty.workers.dev" -Method Options -Headers @{ Origin = "https://chapter3realty.com"; "Access-Control-Request-Method" = "POST" } -UseBasicParsing -TimeoutSec 20
+        Say ("AI proxy answers: {0}" -f $pre.StatusCode)
+      } catch { Say "The AI proxy did not answer a check just now. Try a search on the site in a minute." }
+    }
+  }
+}
 
 # ---------------------------------------------------------------- check it is live
 Step "Checking the live site"
