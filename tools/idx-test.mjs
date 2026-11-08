@@ -57,6 +57,12 @@ globalThis.fetch = async (input, init = {}) => {
     CENSUS_CALLS++;
     return CENSUS ? J({ result: { addressMatches: [{ coordinates: { x: -78.9, y: 33.71 } }] } }) : J({ result: { addressMatches: [] } });
   }
+  if (u.hostname === "api-proxy.chapter3realty.workers.dev") {
+    // The AI: every home it was given fits, with a reason from its description.
+    const prompt = JSON.parse(init.body).messages[0].content;
+    const ms = [...prompt.matchAll(/"mls":"(\w+)"/g)].map((x) => x[1]);
+    return J({ content: [{ type: "text", text: JSON.stringify({ r: ms.map((m) => ({ m, fit: m.endsWith("2") ? "no" : "yes", why: "private dock on a canal" })) }) }] });
+  }
   if ((init.headers || {})["x-idx-key"] !== "devkey") return J({ ok: false, error: "forbidden" }, 403);
   if (u.pathname === "/api/idx/filters") {
     if (!CATALOG) return J({ ok: false, error: "unavailable" }, 503);
@@ -81,7 +87,7 @@ globalThis.fetch = async (input, init = {}) => {
   if (HANG) return new Promise((_, no) => init.signal && init.signal.addEventListener("abort", () => no(new Error("aborted"))));
   if (INVALID && auth) return J({ ok: false, error: "unauthorized", visitor: "invalid" }, 401);
   if (REMARKS_API && u.pathname === "/api/idx/remarks") {
-    return J({ ok: true, meta: META, rows: (u.searchParams.get("mls") || "").split(",").map((m) => ({ mls: m, remarks: `A home with a private dock, ${m}.`, type: "Single Family Residence", status: "Active" })) });
+    return J({ ok: true, meta: META, rows: (u.searchParams.get("mls") || "").split(",").map((m) => ({ mls: m, remarks: `A home with a private dock, ${m}.`, details: { WaterfrontFeatures: ["Boat Dock"], ElementarySchool: "X" }, type: "Single Family Residence", status: "Active" })) });
   }
   if (u.pathname === "/api/idx/listings") {
     if ((u.searchParams.get("has") || "").includes("walk_to_beach") && u.searchParams.get("city") === "Loris") return J({ ok: true, tier, visitor: "none", meta: META, listings: [], total: 0 });
@@ -757,16 +763,23 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
 }
 
 
-// Descriptions for every visitor (owner, 2026-11-07; CRM Ticket 557): one call to /api/idx/remarks with no token.
+// Descriptions for every visitor, read on the server (owner, 2026-11-07 and 08; CRM Ticket 557): the AI gets the whole
+// description and the details; the browser gets only which homes fit, and the reason only when signed up.
 {
   REMARKS_API = true;
+  const post = (c) => req("/homes/api/read", { ...(c || {}), method: "POST", headers: { ...((c && c.headers) || {}), "content-type": "application/json" }, body: JSON.stringify({ q: "homes with a dock", state: "words=dock", homes: [{ mls: "2600001", price: 500000 }, { mls: "2600002" }] }) });
   const before = calls.length;
-  const anon = JSON.parse(await (await run(homes, req("/homes/api/remarks?mls=2600001,2600002"))).text());
-  const asked = calls.slice(before).map((c) => c.url);
+  const raw = await (await run(homes, post())).text();
+  const anon = JSON.parse(raw);
+  const ai = calls.slice(before).find((c) => c.url.includes("api-proxy"));
+  const signed = JSON.parse(await (await run(homes, post(cookie))).text());
+  const plain = JSON.parse(await (await run(homes, req("/homes/api/remarks?mls=2600001"))).text());
   REMARKS_API = false;
-  check("description reader: a visitor not signed up gets the descriptions, in one remarks call, with no visitor token",
-    anon.ok && anon.rows.length === 2 && anon.rows.every((r) => /private dock/.test(r.remarks)) && asked.filter((u) => u.includes("/api/idx/remarks?mls=2600001,2600002")).length === 1
-    && !asked.some((u) => /\/api\/idx\/listings\/\w+/.test(u)));
+  check("AI read on the server: the AI gets the description and details (no schools); a visitor not signed up gets fit only, no text, no reason; signed up gets the reason; the remarks API stays signed-up only",
+    anon.ok && anon.r.length === 2 && anon.r.find((x) => x.m === "2600001").fit === "yes" && anon.r.find((x) => x.m === "2600002").fit === "no" && anon.r.every((x) => x.why === "")
+    && !/private dock/.test(raw) && ai && /A home with a private dock, 2600001/.test(ai.init.body) && /Boat Dock/.test(ai.init.body) && !/ElementarySchool/.test(ai.init.body)
+    && (ai.init.headers || {}).Origin === "https://chapter3realty.com"
+    && signed.ok && signed.r.find((x) => x.m === "2600001").why === "private dock on a canal" && plain.ok === false && plain.error === "sign_in");
 }
 
 // No "no photo" blocks in a row of homes (owner, 2026-10-31: "I see some 'no photo yet' blocks in the IDX feed").

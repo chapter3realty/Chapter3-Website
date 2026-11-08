@@ -304,22 +304,18 @@ function readNote(done){if(!picksNote)return;var y=Object.keys(rd.yes).length;pi
 function startReader(q){var t=++rd.tok;rd.yes={};rd.no={};rd.why={};rd.n=0;
  var seen={},order=[];all.filter(inView).concat(all).forEach(function(p){if(!seen[p.mls]){seen[p.mls]=1;order.push(p)}});order=order.slice(0,96);rd.of=order.length;var i=0;readNote(false);
  function next(){if(t!==rd.tok)return;var batch=order.slice(i,i+6);i+=6;if(!batch.length){readNote(true);return}
-  fetch("/homes/api/remarks?mls="+batch.map(function(p){return p.mls}).join(","),{credentials:"same-origin"}).then(function(r){return r.json()}).then(function(j){if(t!==rd.tok)return;if(j&&j.error==="sign_in")return;
-   var rows=(j&&j.ok&&j.rows||[]).filter(function(r){return r.remarks});if(!rows.length){rd.n+=batch.length;readNote(false);return next()}
-   var by={};batch.forEach(function(p){by[p.mls]=p});
-   var homes=rows.map(function(r){var p=by[r.mls]||{};return{mls:r.mls,price:p.price,beds:p.beds,baths:p.baths,sqft:p.sqft,acres:p.acres,kind:r.type,status:r.status,description:r.remarks}});
-   var prompt="A home buyer on the Grand Strand, South Carolina, asked for: "+JSON.stringify(q)+". Filters in force: "+JSON.stringify(state.toString())+". Read each home's listing description and judge only the home against what they asked. "+
-    "fit yes: the description shows it has what they want or suits their goal. fit no: the description clearly rules it out (it is for lease or rent, not for sale; a different kind of property; it lacks a must-have they named). Otherwise fit maybe. "+
-    "why: at most 12 plain words, from the description, about the home (never about people or who lives nearby). JSON only, start { end }, like "+JSON.stringify({r:[{m:"MLS number",fit:"yes",why:"new roof and a fenced yard for the dog"}]})+". Homes: "+JSON.stringify(homes);
-   return fetch("https://api-proxy.chapter3realty.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-haiku-5-5",max_tokens:500,cache_key:["read1",q,state.toString(),homes.map(function(h){return h.mls}).join(",")].join("|"),messages:[{role:"user",content:prompt}]})})
-    .then(function(r){return r.json()}).then(function(d){if(t!==rd.tok)return;var tx=d&&d.content&&d.content.filter(function(b){return b.type==="text"}).pop();var out=[];
-     if(tx){try{var a=tx.text.indexOf("{"),z=tx.text.lastIndexOf("}");out=JSON.parse(tx.text.slice(a,z+1)).r||[]}catch(e){}}
+  var send=batch.map(function(p){return{mls:p.mls,price:p.price,beds:p.beds,baths:p.baths,sqft:p.sqft,acres:p.acres}});var by={};batch.forEach(function(p){by[p.mls]=p});
+  /* The server reads each home's whole description and details with the AI and answers only which homes fit (owner,
+     2026-11-08): the text never reaches the browser of a visitor who is not signed up. */
+  fetch("/homes/api/read",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({q:q,state:state.toString(),homes:send})}).then(function(r){return r.json()}).then(function(j){if(t!==rd.tok)return;if(j&&j.error==="sign_in")return;
+     var out=j&&j.ok&&Array.isArray(j.r)?j.r:[];
      var gone=false;out.forEach(function(x){var m=String(x&&x.m||"");if(!by[m])return;var why=String(x.why||"").replace(/[<>]/g,"").slice(0,90);
-      if(x.fit==="yes"){rd.yes[m]=1;rd.why[m]=why;var c=list.querySelector("[data-mls='"+m+"'] .hx-c-addr");if(c&&!c.previousSibling.classList.contains("hx-c-ai"))c.parentNode.insertBefore(el("span","hx-c-ai","AI: "+why),c)}
+      if(x.fit==="yes"){rd.yes[m]=1;rd.why[m]=why;gone=true;var c=list.querySelector("[data-mls='"+m+"'] .hx-c-addr");if(why&&c&&!c.previousSibling.classList.contains("hx-c-ai"))c.parentNode.insertBefore(el("span","hx-c-ai","AI: "+why),c)}
       else if(x.fit==="no"){rd.no[m]=1;gone=true}});
-     if(gone)listView();rd.n+=batch.length;readNote(false);next()})}).catch(function(){if(t===rd.tok)setTimeout(next,1500)})}
+     if(gone)listView();rd.n+=batch.length;readNote(false);next()}).catch(function(){if(t===rd.tok)setTimeout(next,1500)})}
  next()}
-function listView(){if(!all.length&&!searched)return;render(all.filter(function(p){return inView(p)&&!rd.no[p.mls]}));if(hot)hilite(hot)}
+/* Homes the AI read and found fitting come first (owner, 2026-11-08: "the results are based on the info"); the rest keep their order. */
+function listView(){if(!all.length&&!searched)return;var keep=all.filter(function(p){return inView(p)&&!rd.no[p.mls]});render(keep.filter(function(p){return rd.yes[p.mls]}).concat(keep.filter(function(p){return!rd.yes[p.mls]})));if(hot)hilite(hot)}
 function msg(j){return j&&j.error==="stale"?"The listing search is being refreshed. Please try again in a few minutes.":"Please try again in a minute."}
 function search(p,o){o=o||{};state=new URLSearchParams(p);var n=++seq;count.textContent="Searching...";
  var extra=o.first?"&hearts=1"+(app.getAttribute("data-focus")?"&focus="+encodeURIComponent(app.getAttribute("data-focus")):""):"";

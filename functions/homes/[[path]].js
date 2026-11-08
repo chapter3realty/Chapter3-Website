@@ -82,6 +82,7 @@ async function handle(context) {
     if (name === "map" && (request.method === "GET" || request.method === "HEAD")) return mapData(context, url);
     if (name === "deals" && request.method === "GET") return dealsApi(context, url);
     if (name === "remarks" && request.method === "GET") return remarksApi(context, url);
+    if (name === "read" && request.method === "POST") return readApi(context);
     // The photo warmer's call (idx-lib/photo.js): a page of homes for sale, 24 at a time, from the CRM.
     if (name === "warm" && request.method === "GET") return warm(context, url, async (pg) => {
       const r = await crm(env, request, `/api/idx/listings?status=active&size=24&page=${pg}`, { anonymous: true });
@@ -598,27 +599,83 @@ ${sorryHtml(null, 1)}<div id="hx-map-cards" class="hx-map-cards" aria-busy="true
  * keep running"). Descriptions are for signed-up visitors only (contract: remarks on the registered tier), so a
  * visitor who is not signed in gets sign_in. The views are not recorded (track=0): reading is not looking.
  */
-async function remarksApi(context, url) {
-  const { env, request } = context;
-  const ids = String(url.searchParams.get("mls") || "").split(",").filter((m) => /^[A-Za-z0-9]{3,20}$/.test(m)).slice(0, 6);
-  if (!ids.length) return json({ ok: false, error: "no_mls" }, 400);
-  /* Every visitor, signed up or not (owner, 2026-11-07: "do the search description for not signed in users as
-     well"): one call to the CRM's /api/idx/remarks (CRM Ticket 557), with no visitor token. */
+/**
+ * What the AI may read about up to 6 homes, keyed by MLS number: { remarks, details, type, status }, or null when it
+ * cannot. The CRM's /api/idx/remarks (CRM Ticket 557) answers for any visitor, for this server only; a CRM from before
+ * it answers one listing at a time, for a signed-up visitor only.
+ */
+async function descriptionsFor(env, request, ids) {
   const all = await crm(env, request, `/api/idx/remarks?mls=${ids.map(encodeURIComponent).join(",")}`, { anonymous: true, timeoutMs: 6000 });
+  const clean = (x) => ({ remarks: typeof x.remarks === "string" ? x.remarks.replace(/\s+/g, " ").trim().slice(0, 4000) : null, details: x.details && typeof x.details === "object" ? Object.fromEntries(Object.entries(x.details).filter(([k]) => !/School/.test(k))) : {}, type: x.type || null, status: x.status || null });
   if (all.status === 200 && all.json && all.json.ok && Array.isArray(all.json.rows)) {
-    const rows = all.json.rows.filter((x) => x && ids.includes(String(x.mls))).map((x) => ({ mls: String(x.mls), remarks: typeof x.remarks === "string" ? x.remarks.replace(/\s+/g, " ").trim().slice(0, 600) : null, type: x.type || null, status: x.status || null }));
-    return json({ ok: true, rows }, 200, { "cache-control": "private, no-store" });
+    const by = {};
+    for (const x of all.json.rows) if (x && ids.includes(String(x.mls))) by[String(x.mls)] = clean(x);
+    return by;
   }
-  // A CRM from before Ticket 557: descriptions one listing at a time, for a signed-up visitor only.
-  if (!visitorToken(request)) return json({ ok: false, error: "sign_in" }, 200, { "cache-control": "private, no-store" });
-  const rows = await Promise.all(ids.map(async (m) => {
+  if (!visitorToken(request)) return null;
+  const by = {};
+  await Promise.all(ids.map(async (m) => {
     const r = await crm(env, request, `/api/idx/listings/${encodeURIComponent(m)}?track=0`, { timeoutMs: 6000 });
     const l = r.status === 200 && r.json && r.json.ok && r.json.listing;
-    if (!l) return { mls: m, remarks: null };
-    const text = typeof l.remarks === "string" ? l.remarks.replace(/\s+/g, " ").trim().slice(0, 600) : null;
-    return { mls: m, remarks: text, type: l.propertySubType || l.propertyType || null, status: l.status || null };
+    if (l) by[m] = clean({ remarks: l.remarks, details: l.details, type: l.propertySubType || l.propertyType, status: l.status });
   }));
+  return by;
+}
+
+/**
+ * GET /homes/api/remarks?mls=a,b,c (at most 6): each home's description, for a signed-up visitor only (contract:
+ * remarks on the registered tier). The AI search no longer uses it (readApi below reads on the server).
+ */
+async function remarksApi(context, url) {
+  const { env, request } = context;
+  if (!visitorToken(request)) return json({ ok: false, error: "sign_in" }, 200, { "cache-control": "private, no-store" });
+  const ids = String(url.searchParams.get("mls") || "").split(",").filter((m) => /^[A-Za-z0-9]{3,20}$/.test(m)).slice(0, 6);
+  if (!ids.length) return json({ ok: false, error: "no_mls" }, 400);
+  const by = (await descriptionsFor(env, request, ids)) || {};
+  const rows = ids.map((m) => ({ mls: m, remarks: by[m] && by[m].remarks ? by[m].remarks.slice(0, 600) : null, type: by[m] ? by[m].type : null, status: by[m] ? by[m].status : null }));
   return json({ ok: true, rows }, 200, { "cache-control": "private, no-store" });
+}
+
+/**
+ * POST /homes/api/read { q, state, homes: [{ mls, price, beds, baths, sqft, acres }] } (at most 6): the AI reads each
+ * home's whole description and its details, here on the server, and judges it against what the buyer typed
+ * (owner, 2026-11-08: "the descriptions still shouldn't be visible before they sign up but it should be visible to
+ * the ai ... the results are based on the info"). The answer is only which homes fit: { r: [{ m, fit, why }] }.
+ * why, a few words from the description, goes to a signed-up visitor only. The AI's answer is kept by the AI proxy
+ * for a year (same question, same homes, same text: no new cost).
+ */
+async function readApi(context) {
+  const { env, request } = context;
+  const raw = await request.text();
+  if (raw.length > 20000) return json({ ok: false, error: "too_big" }, 413);
+  let body; try { body = JSON.parse(raw); } catch { return json({ ok: false, error: "bad_body" }, 400); }
+  const q = String((body && body.q) || "").trim().slice(0, 400), stateText = String((body && body.state) || "").slice(0, 600);
+  const num = (v) => (typeof v === "number" && Number.isFinite(v) ? v : null);
+  const homes = (Array.isArray(body && body.homes) ? body.homes : []).filter((h) => h && /^[A-Za-z0-9]{3,20}$/.test(String(h.mls))).slice(0, 6)
+    .map((h) => ({ mls: String(h.mls), price: num(h.price), beds: num(h.beds), baths: num(h.baths), sqft: num(h.sqft), acres: num(h.acres) }));
+  if (!q || !homes.length) return json({ ok: false, error: "no_homes" }, 400);
+  const by = await descriptionsFor(env, request, homes.map((h) => h.mls));
+  if (!by) return json({ ok: false, error: "sign_in" }, 200, { "cache-control": "private, no-store" });
+  const read = homes.filter((h) => by[h.mls] && (by[h.mls].remarks || Object.keys(by[h.mls].details).length))
+    .map((h) => ({ ...h, kind: by[h.mls].type, status: by[h.mls].status, description: by[h.mls].remarks, details: by[h.mls].details }));
+  if (!read.length) return json({ ok: true, r: [] }, 200, { "cache-control": "private, no-store" });
+  const prompt = "A home buyer on the Grand Strand, South Carolina, asked for: " + JSON.stringify(q) + ". Filters in force: " + JSON.stringify(stateText) + ". "
+    + "Read each home's whole listing description and its details (the MLS fields), and judge only the home against what they asked. "
+    + "fit yes: the description or details show it has what they want or suits their goal. fit no: they clearly rule it out (it is for lease or rent, not for sale; a different kind of property; it lacks a must-have they named, such as a dock when the home is an oceanfront condo with no dock). Otherwise fit maybe. "
+    + "why: at most 12 plain words, from the description or details, about the home (never about people, schools or who lives nearby). JSON only, start { end }, like "
+    + JSON.stringify({ r: [{ m: "MLS number", fit: "yes", why: "private dock on a deep-water canal" }] }) + ". Homes: " + JSON.stringify(read);
+  let out = [];
+  try {
+    const ai = await fetch("https://api-proxy.chapter3realty.workers.dev", { method: "POST", headers: { "Content-Type": "application/json", Origin: "https://chapter3realty.com" },
+      body: JSON.stringify({ model: "claude-haiku-5-5", max_tokens: 700, cache_key: ["read2", q, stateText, read.map((h) => h.mls).join(",")].join("|"), messages: [{ role: "user", content: prompt }] }) });
+    const d = await ai.json();
+    const tx = d && Array.isArray(d.content) ? d.content.filter((b) => b.type === "text").pop() : null;
+    if (tx) { const a = tx.text.indexOf("{"), z = tx.text.lastIndexOf("}"); out = (JSON.parse(tx.text.slice(a, z + 1)).r || []); }
+  } catch { return json({ ok: false, error: "ai_unavailable" }, 200, { "cache-control": "private, no-store" }); }
+  const signed = !!visitorToken(request), ids = new Set(read.map((h) => h.mls));
+  const r = (Array.isArray(out) ? out : []).filter((x) => x && ids.has(String(x.m)) && ["yes", "no", "maybe"].includes(x.fit))
+    .map((x) => ({ m: String(x.m), fit: x.fit, why: signed ? String(x.why || "").replace(/[<>]/g, "").slice(0, 90) : "" }));
+  return json({ ok: true, r }, 200, { "cache-control": "private, no-store" });
 }
 
 // ── the deal finder (idx-lib/deals.js), for agents ──────────────────────────
