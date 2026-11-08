@@ -605,7 +605,10 @@ ${sorryHtml(null, 1)}<div id="hx-map-cards" class="hx-map-cards" aria-busy="true
  * it answers one listing at a time, for a signed-up visitor only.
  */
 async function descriptionsFor(env, request, ids) {
-  const all = await crm(env, request, `/api/idx/remarks?mls=${ids.map(encodeURIComponent).join(",")}`, { anonymous: true, timeoutMs: 6000 });
+  /* Kept up to a year (owner, 2026-11-08: "it can cache the data for all of that for the year"). Which homes are for
+     sale is never cached this long: the search itself asks the CRM for homes for sale only, at most 10 minutes old,
+     and the AI only judges homes that search returned, so a sold or under contract home never comes back this way. */
+  const all = await crm(env, request, `/api/idx/remarks?mls=${ids.map(encodeURIComponent).join(",")}`, { anonymous: true, timeoutMs: 6000, cacheSeconds: 31536000, longCache: true });
   const clean = (x) => ({ remarks: typeof x.remarks === "string" ? x.remarks.replace(/\s+/g, " ").trim().slice(0, 4000) : null, details: x.details && typeof x.details === "object" ? Object.fromEntries(Object.entries(x.details).filter(([k]) => !/School/.test(k))) : {}, type: x.type || null, status: x.status || null });
   if (all.status === 200 && all.json && all.json.ok && Array.isArray(all.json.rows)) {
     const by = {};
@@ -640,9 +643,9 @@ async function remarksApi(context, url) {
  * POST /homes/api/read { q, state, homes: [{ mls, price, beds, baths, sqft, acres }] } (at most 6): the AI reads each
  * home's whole description and its details, here on the server, and judges it against what the buyer typed
  * (owner, 2026-11-08: "the descriptions still shouldn't be visible before they sign up but it should be visible to
- * the ai ... the results are based on the info"). The answer is only which homes fit: { r: [{ m, fit, why }] }.
- * why, a few words from the description, goes to a signed-up visitor only. The AI's answer is kept by the AI proxy
- * for a year (same question, same homes, same text: no new cost).
+ * the ai ... the results are based on the info"). The answer is only which homes fit: { r: [{ m, fit }] }, and no
+ * reason, for anyone (owner, 2026-11-08: "i dont want any ai reason ... just show them good results"). The AI's
+ * answer is kept by the AI proxy for a year (same question, same homes, same text: no new cost).
  */
 async function readApi(context) {
   const { env, request } = context;
@@ -662,19 +665,19 @@ async function readApi(context) {
   const prompt = "A home buyer on the Grand Strand, South Carolina, asked for: " + JSON.stringify(q) + ". Filters in force: " + JSON.stringify(stateText) + ". "
     + "Read each home's whole listing description and its details (the MLS fields), and judge only the home against what they asked. "
     + "fit yes: the description or details show it has what they want or suits their goal. fit no: they clearly rule it out (it is for lease or rent, not for sale; a different kind of property; it lacks a must-have they named, such as a dock when the home is an oceanfront condo with no dock). Otherwise fit maybe. "
-    + "why: at most 12 plain words, from the description or details, about the home (never about people, schools or who lives nearby). JSON only, start { end }, like "
-    + JSON.stringify({ r: [{ m: "MLS number", fit: "yes", why: "private dock on a deep-water canal" }] }) + ". Homes: " + JSON.stringify(read);
+    + "Judge only the home, never people, schools or who lives nearby. JSON only, start { end }, like "
+    + JSON.stringify({ r: [{ m: "MLS number", fit: "yes" }] }) + ". Homes: " + JSON.stringify(read);
   let out = [];
   try {
     const ai = await fetch("https://api-proxy.chapter3realty.workers.dev", { method: "POST", headers: { "Content-Type": "application/json", Origin: "https://chapter3realty.com" },
-      body: JSON.stringify({ model: "claude-haiku-5-5", max_tokens: 700, cache_key: ["read2", q, stateText, read.map((h) => h.mls).join(",")].join("|"), messages: [{ role: "user", content: prompt }] }) });
+      body: JSON.stringify({ model: "claude-haiku-5-5", max_tokens: 400, cache_key: ["read3", q, stateText, read.map((h) => h.mls).join(",")].join("|"), messages: [{ role: "user", content: prompt }] }) });
     const d = await ai.json();
     const tx = d && Array.isArray(d.content) ? d.content.filter((b) => b.type === "text").pop() : null;
     if (tx) { const a = tx.text.indexOf("{"), z = tx.text.lastIndexOf("}"); out = (JSON.parse(tx.text.slice(a, z + 1)).r || []); }
   } catch { return json({ ok: false, error: "ai_unavailable" }, 200, { "cache-control": "private, no-store" }); }
-  const signed = !!visitorToken(request), ids = new Set(read.map((h) => h.mls));
+  const ids = new Set(read.map((h) => h.mls));
   const r = (Array.isArray(out) ? out : []).filter((x) => x && ids.has(String(x.m)) && ["yes", "no", "maybe"].includes(x.fit))
-    .map((x) => ({ m: String(x.m), fit: x.fit, why: signed ? String(x.why || "").replace(/[<>]/g, "").slice(0, 90) : "" }));
+    .map((x) => ({ m: String(x.m), fit: x.fit }));
   return json({ ok: true, r }, 200, { "cache-control": "private, no-store" });
 }
 

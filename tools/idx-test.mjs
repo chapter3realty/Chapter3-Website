@@ -775,11 +775,11 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
   const signed = JSON.parse(await (await run(homes, post(cookie))).text());
   const plain = JSON.parse(await (await run(homes, req("/homes/api/remarks?mls=2600001"))).text());
   REMARKS_API = false;
-  check("AI read on the server: the AI gets the description and details (no schools); a visitor not signed up gets fit only, no text, no reason; signed up gets the reason; the remarks API stays signed-up only",
-    anon.ok && anon.r.length === 2 && anon.r.find((x) => x.m === "2600001").fit === "yes" && anon.r.find((x) => x.m === "2600002").fit === "no" && anon.r.every((x) => x.why === "")
+  check("AI read on the server: the AI gets the description and details (no schools); every visitor gets fit only, no text and no reason (owner, 2026-11-08); the remarks API stays signed-up only",
+    anon.ok && anon.r.length === 2 && anon.r.find((x) => x.m === "2600001").fit === "yes" && anon.r.find((x) => x.m === "2600002").fit === "no" && anon.r.every((x) => !("why" in x))
     && !/private dock/.test(raw) && ai && /A home with a private dock, 2600001/.test(ai.init.body) && /Boat Dock/.test(ai.init.body) && !/ElementarySchool/.test(ai.init.body)
     && (ai.init.headers || {}).Origin === "https://chapter3realty.com"
-    && signed.ok && signed.r.find((x) => x.m === "2600001").why === "private dock on a canal" && plain.ok === false && plain.error === "sign_in");
+    && signed.ok && signed.r.every((x) => !("why" in x)) && !/private dock/.test(JSON.stringify(signed)) && plain.ok === false && plain.error === "sign_in");
 }
 
 // No "no photo" blocks in a row of homes (owner, 2026-10-31: "I see some 'no photo yet' blocks in the IDX feed").

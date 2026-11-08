@@ -240,7 +240,7 @@ function card(p,withHeart){var a=el("article","hx-c"),l=el("a","hx-c-link");l.hr
  if(p.tag)ph.appendChild(el("span","hx-c-tag",p.tag));l.appendChild(ph);var b=el("span","hx-c-body");b.appendChild(el("span","hx-c-price",p.price));
  var f=el("span","hx-c-facts"),bits=[];if(p.beds!=null)bits.push([p.beds," bds"]);if(p.baths!=null)bits.push([p.baths," ba"]);if(p.sqft!=null)bits.push([p.sqft.toLocaleString("en-US")," sqft"]);if(p.acres)bits.push([p.acres,p.acres==="1"?" acre":" acres"]);
  bits.forEach(function(x){var s=el("span");s.appendChild(el("b",null,String(x[0])));s.appendChild(document.createTextNode(x[1]));f.appendChild(s)});if(p.status)f.appendChild(el("span",null,p.status));
- b.appendChild(f);if(rd.why[p.mls])b.appendChild(el("span","hx-c-ai","AI: "+rd.why[p.mls]));b.appendChild(el("span","hx-c-addr",p.addr));b.appendChild(el("span","hx-c-firm","MLS #"+p.mls+", "+p.firm+". Listing provided by CCMLS."));l.appendChild(b);a.appendChild(l);if(withHeart)a.appendChild(heart(p));return a}
+ b.appendChild(f);b.appendChild(el("span","hx-c-addr",p.addr));b.appendChild(el("span","hx-c-firm","MLS #"+p.mls+", "+p.firm+". Listing provided by CCMLS."));l.appendChild(b);a.appendChild(l);if(withHeart)a.appendChild(heart(p));return a}
 /* The list draws 24 homes, and 24 more as the reader nears the end: fewer photos asked for at once. */
 var shown=[],drawn=0,sent=null,io=null;
 function more24(){shown.slice(drawn,drawn+24).forEach(function(p){list.appendChild(card(p,true))});drawn=Math.min(shown.length,drawn+24);if(sent)list.appendChild(sent)}
@@ -309,8 +309,10 @@ function startReader(q){var t=++rd.tok;rd.yes={};rd.no={};rd.why={};rd.n=0;
      2026-11-08): the text never reaches the browser of a visitor who is not signed up. */
   fetch("/homes/api/read",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({q:q,state:state.toString(),homes:send})}).then(function(r){return r.json()}).then(function(j){if(t!==rd.tok)return;if(j&&j.error==="sign_in")return;
      var out=j&&j.ok&&Array.isArray(j.r)?j.r:[];
-     var gone=false;out.forEach(function(x){var m=String(x&&x.m||"");if(!by[m])return;var why=String(x.why||"").replace(/[<>]/g,"").slice(0,90);
-      if(x.fit==="yes"){rd.yes[m]=1;rd.why[m]=why;gone=true;var c=list.querySelector("[data-mls='"+m+"'] .hx-c-addr");if(why&&c&&!c.previousSibling.classList.contains("hx-c-ai"))c.parentNode.insertBefore(el("span","hx-c-ai","AI: "+why),c)}
+     /* No reason on the cards (owner, 2026-11-08: "they asked you to find it they know the reason"): homes that fit
+        move up, homes ruled out leave. */
+     var gone=false;out.forEach(function(x){var m=String(x&&x.m||"");if(!by[m])return;
+      if(x.fit==="yes"){rd.yes[m]=1;gone=true}
       else if(x.fit==="no"){rd.no[m]=1;gone=true}});
      if(gone)listView();rd.n+=batch.length;readNote(false);next()}).catch(function(){if(t===rd.tok)setTimeout(next,1500)})}
  next()}

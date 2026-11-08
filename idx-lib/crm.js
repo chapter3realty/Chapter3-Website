@@ -96,7 +96,7 @@ export function sameOrigin(request) {
 /**
  * GET or POST the CRM. path is built by the caller from parameters it validated.
  * opts: { method, body, token (string|null|undefined = read the cookie), anonymous,
- *         cacheSeconds, timeoutMs (default 8000) }. Returns { status, json, retryAfter }.
+ *         cacheSeconds (at most an hour; with longCache, up to a year), longCache, timeoutMs (default 8000) }. Returns { status, json, retryAfter }.
  * A network failure or a timeout reads as { status: 502, json: null }; a non-JSON
  * answer keeps its status with json: null.
  */
@@ -139,7 +139,7 @@ export async function crm(env, request, path, opts = {}) {
     return { status: res.status === 200 ? 502 : res.status, json: null, retryAfter: res.headers.get("retry-after") };
   }
   if (cacheKey && res.status === 200 && json && json.ok === true) {
-    const seconds = Math.min(opts.cacheSeconds || 600, 3600);
+    const seconds = Math.min(opts.cacheSeconds || 600, opts.longCache ? 31536000 : 3600);
     await cache.put(cacheKey, new Response(JSON.stringify(json), { headers: { "content-type": "application/json", "cache-control": `public, max-age=${seconds}` } }));
   }
   return { status: res.status, json, retryAfter: res.headers.get("retry-after") };
