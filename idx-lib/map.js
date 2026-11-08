@@ -291,7 +291,7 @@ var searched=false,lastQ=null;
    are read first, six at a time, and the ones whose description fits what the buyer asked for gather at the
    top, each with the reason in a few words. A home whose description rules it out (a lease, another kind of
    property, a must-have it lacks) leaves the list. The CRM reads the descriptions for every visitor (CRM Ticket 557; owner, 2026-11-07). */
-var rd={tok:0,q:"",yes:{},no:{},done:{},why:{},n:0,of:0},NEED={},aiQ="",picks=null,picksGrid=null,picksNote=null;
+var rd={tok:0,q:"",yes:{},no:{},done:{},s:{},sent:0,why:{},n:0,of:0},NEED={},aiQ="",picks=null,picksGrid=null,picksNote=null;
 function picksBox(){if(picks)return picks;picks=el("section","hx-ai-picks");picks.setAttribute("aria-live","polite");
  var h=el("p","hx-ai-picks-h");h.insertAdjacentHTML("afterbegin",${JSON.stringify(aiChip())});h.appendChild(document.createTextNode(" read these descriptions"));picks.appendChild(h);
  picksNote=el("p","hx-ai-picks-n");picks.appendChild(picksNote);picksGrid=el("div","hx-map-cards hx-ai-picks-g");picks.appendChild(picksGrid);list.parentNode.insertBefore(picks,list);return picks}
@@ -301,28 +301,32 @@ function readNote(done){if(!picksNote)return;var y=Object.keys(rd.yes).length;pi
    box like that appear"), and the reader runs for every visitor, signed up or not ("do the search description for
    not signed in users as well"): a home whose description rules it out leaves the list, and a home that fits
    carries the reason on its own card. */
-/* Cost (owner, 2026-11-08: "the search is WILDLY expensive"): the AI reads only the homes on screen that it has not
-   read for this sentence, at most 24 at a time. A filter change, a map move or a new area reads only the homes it
-   brings into view; what was read stays read until the sentence changes. */
-function startReader(q){var t=++rd.tok;if(q!==rd.q){rd.q=q;rd.yes={};rd.no={};rd.done={};rd.why={}}rd.n=0;
- var order=all.filter(function(p){return inView(p)&&!rd.done[p.mls]}).slice(0,24);rd.of=order.length;var i=0;readNote(false);
- function next(){if(t!==rd.tok)return;var batch=order.slice(i,i+6);i+=6;if(!batch.length){readNote(true);return}
+/* Thorough and cheap (owner, 2026-11-08: "have it do a detailed search ... with it being haiku"): the AI reads every
+   home the search found, the ones on screen first, up to 120 for one sentence, eight to a call, three calls at a time,
+   and scores each 0 to 10 against what was asked; the list puts the best first. What was read stays read until the
+   sentence changes, so a filter change or a map move reads only homes it has not read. */
+function startReader(q){var t=++rd.tok;if(q!==rd.q){rd.q=q;rd.yes={};rd.no={};rd.done={};rd.s={};rd.sent=0;rd.why={}}rd.n=0;
+ var seen={},order=[];all.filter(inView).concat(all).forEach(function(p){if(!seen[p.mls]&&!rd.done[p.mls]){seen[p.mls]=1;order.push(p)}});
+ order=order.slice(0,Math.max(0,120-rd.sent));rd.of=order.length;var i=0,live=0;readNote(false);
+ function next(){if(t!==rd.tok)return;var batch=order.slice(i,i+8);i+=8;if(!batch.length){if(!live)readNote(true);return}live++;rd.sent+=batch.length;
   var send=batch.map(function(p){return{mls:p.mls,price:p.price,beds:p.beds,baths:p.baths,sqft:p.sqft,acres:p.acres}});var by={};batch.forEach(function(p){by[p.mls]=p});
   /* The server reads each home's whole description and details with the AI and answers only which homes fit (owner,
      2026-11-08): the text never reaches the browser of a visitor who is not signed up. */
-  fetch("/homes/api/read",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({q:q,state:state.toString(),homes:send})}).then(function(r){return r.json()}).then(function(j){if(t!==rd.tok)return;if(j&&j.error==="sign_in")return;
+  fetch("/homes/api/read",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({q:q,state:state.toString(),homes:send})}).then(function(r){return r.json()}).then(function(j){live--;if(t!==rd.tok)return;if(j&&j.error==="sign_in"){rd.tok++;return}
      var out=j&&j.ok&&Array.isArray(j.r)?j.r:[];
      /* No reason on the cards (owner, 2026-11-08: "they asked you to find it they know the reason"): homes that fit
         move up, homes ruled out leave. */
-     var gone=false;out.forEach(function(x){var m=String(x&&x.m||"");if(!by[m])return;
+     var gone=false;out.forEach(function(x){var m=String(x&&x.m||"");if(!by[m])return;if(typeof x.s==="number"){rd.s[m]=x.s;gone=true}
       if(x.fit==="yes"){rd.yes[m]=1;gone=true}
       else if(x.fit==="no"){rd.no[m]=1;gone=true}});
-     batch.forEach(function(p){rd.done[p.mls]=1});if(gone)listView();rd.n+=batch.length;readNote(false);next()}).catch(function(){if(t===rd.tok)setTimeout(next,1500)})}
- next()}
+     batch.forEach(function(p){rd.done[p.mls]=1});if(gone)listView();rd.n+=batch.length;readNote(false);next()}).catch(function(){live--;if(t===rd.tok)setTimeout(next,1500)})}
+ next();next();next()}
 /* Homes the AI read and found fitting come first (owner, 2026-11-08: "the results are based on the info"); the rest keep their order. */
 function listView(){if(!all.length&&!searched)return;var keep=all.filter(function(p){return inView(p)&&!rd.no[p.mls]});
  /* The reader never empties the list: if it ruled out every home in view, they all stay. */
- if(!keep.length)keep=all.filter(inView);render(keep.filter(function(p){return rd.yes[p.mls]}).concat(keep.filter(function(p){return!rd.yes[p.mls]})));if(hot)hilite(hot)}
+ if(!keep.length)keep=all.filter(inView);
+ /* Best fit first, by the AI's score; a home not read yet sits in the middle; ties keep the search's own order. */
+ var sc=function(p){return rd.s[p.mls]!=null?rd.s[p.mls]:rd.yes[p.mls]?8:5};render(keep.map(function(p,i){return[p,i]}).sort(function(a,b){return sc(b[0])-sc(a[0])||a[1]-b[1]}).map(function(x){return x[0]}));if(hot)hilite(hot)}
 function msg(j){return j&&j.error==="stale"?"The listing search is being refreshed. Please try again in a few minutes.":"Please try again in a minute."}
 function search(p,o){o=o||{};state=new URLSearchParams(p);var n=++seq;count.textContent="Searching...";
  var extra=o.first?"&hearts=1"+(app.getAttribute("data-focus")?"&focus="+encodeURIComponent(app.getAttribute("data-focus")):""):"";
@@ -378,7 +382,7 @@ function ai(q,left){if(!q||!window.hxFeats)return;aiQ=q;aiNote.hidden=false;aiNo
     homes in Conway): a sentence that does not begin by changing the search on screen starts over. */
  var refine=window.hxIsRefine?window.hxIsRefine(q):false;if(!refine){try{sessionStorage.removeItem("hx_ai_hist")}catch(e){}}
  var before=refine?hist():[],back=new URLSearchParams(state);
- window.hxFeats().then(function(j){if(!j||!j.ok||!j.groups){aiNote.hidden=true;return}var keys=[],names={};j.groups.forEach(function(g){g.items.forEach(function(it){keys.push(it.k);names[it.k]=it.l})});
+ window.hxFeats().then(function(j){if(!j||!j.ok||!j.groups){aiNote.hidden=true;return}var keys=[],names={},cnt={};j.groups.forEach(function(g){g.items.forEach(function(it){keys.push(it.k);names[it.k]=it.l;cnt[it.k]=it.n})});
   var prompt="You are the home search for Chapter3 Realty on the Grand Strand, South Carolina. The buyer just wrote: "+JSON.stringify(q)+". "+
    "Their earlier searches this visit, oldest first: "+JSON.stringify(before)+". The filters in force now: "+JSON.stringify(state.toString())+". Words the simple reader could not use: "+JSON.stringify(left||"")+". "+
    "First decide the mode. refine: the new words only change or add to what they are looking at now (cheaper, bigger, add a pool, also a garage, what about Conway, not in a flood zone, drop the HOA limit); use remove for what they take away. new: the words describe a whole search on their own (homes with a dock, a 3 bed house in Conway, oceanfront condos), even when they share a word with the last search; then start over and ignore the old filters. When unsure, choose new. "+
@@ -386,9 +390,9 @@ function ai(q,left){if(!q||!window.hxFeats)return;aiQ=q;aiNote.hidden=false;aiNo
    "Deduce what their goal needs, but think about which homes can have it: the search requires EVERY has key and every words phrase at once, so never list alternatives side by side. A deduction must be something every home they want would also have. Do not add ocean, oceanfront or waterfront beside a dock (oceanfront condos are like hotel rooms and have no dock). When they name a specific thing (a dock, a boat slip, a pool, a garage, an elevator), keep it; add a deduction only if it fits every home with that thing, and never swap a named thing for a broader one. Rule out kinds of home that cannot do what they want (a boat or a dock: type house unless they ask for a condo or townhouse; a big yard: type house). "+
    "Use not for what they want to avoid (not: flood_zone). land_lease means the land itself is rented (lot rent): never use it unless they say lease or lot rent. "+
    "Never filter on who a person is or who lives nearby: age, children or family, race, religion, disability, sex, origin. Use their numbers when they give them. Leave out what you are not sure of. JSON only, start { end }. "+
-   "Keys: mode (new|refine), has and not (feature keys from this list only, at most 4 each, at most 2 ending in mi), remove (filter names to drop when refining), min, max (dollars), beds, baths, type (house|condo|townhouse|multi|land|manufactured), city (Myrtle Beach|North Myrtle Beach|Surfside Beach|Garden City|Murrells Inlet|Pawleys Island|Little River|Conway|Longs|Loris|Aynor|Calabash), zip, subdivision (a neighborhood name), sqft, yearMin, yearMax, lotMin (acres), hoaMax, garage, hoa (0 for no HOA), domMax (days listed), waterfront (1), sort (newest|price_asc|price_desc), read (true only when part of what they asked can be checked only by reading each listing's description: a thing or a condition the keys and words do not fully cover, such as a water view, a big back yard, updated, move-in ready, quiet; false when the filters you give cover all of it), words (up to 3 comma-separated plain phrases the description must say, letters and spaces only: for a specific thing the feature keys do not cover or cover only partly, such as dock, boat lift, elevator, in-law, detached garage, workshop, bonus room; a dock is words dock and no has key, because the MLS checkbox marks only some homes with a dock). "+
-   "Feature keys: "+keys.join(",")+". Answer like "+JSON.stringify({mode:"new",has:[],not:[],read:false,why:"Looking for ... because you want ...: one plain sentence, under 25 words, about the homes and the goal, never about the person"})+".";
-  return fetch("https://api-proxy.chapter3realty.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-haiku-5-5",max_tokens:400,cache_key:["search3",q,state.toString(),JSON.stringify(before)].join("|"),messages:[{role:"user",content:prompt}]})})
+   "Keys: mode (new|refine), has and not (feature keys from this list only, at most 4 each, at most 2 ending in mi), remove (filter names to drop when refining), min, max (dollars), beds, baths, type (house|condo|townhouse|multi|land|manufactured), city (Myrtle Beach|North Myrtle Beach|Surfside Beach|Garden City|Murrells Inlet|Pawleys Island|Little River|Conway|Longs|Loris|Aynor|Calabash), zip, subdivision (a neighborhood name), sqft, yearMin, yearMax, lotMin (acres), hoaMax, garage, hoa (0 for no HOA), domMax (days listed), waterfront (1), sort (newest|price_asc|price_desc), read (true unless the filters you give express every word they wrote; true for any goal, condition, view, style or thing the keys do not fully cover, such as a water view, a big back yard, updated, move-in ready, quiet, good for a family business, room for a workshop), words (up to 3 comma-separated plain phrases the description must say, letters and spaces only: for a specific thing the feature keys do not cover or cover only partly, such as dock, boat lift, elevator, in-law, detached garage, workshop, bonus room; a dock is words dock and no has key, because the MLS checkbox marks only some homes with a dock). "+
+   "Feature keys, each with what it means and how many homes are for sale with it (prefer keys that many homes have; a key with very few homes will leave few results): "+keys.map(function(k){return k+" ("+names[k]+(cnt[k]!=null?", "+cnt[k]+" for sale":"")+")"}).join("; ")+". Answer like "+JSON.stringify({mode:"new",has:[],not:[],read:false,why:"Looking for ... because you want ...: one plain sentence, under 25 words, about the homes and the goal, never about the person"})+".";
+  return fetch("https://api-proxy.chapter3realty.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-haiku-5-5",max_tokens:600,effort:"high",cache_key:["search4",q,state.toString(),JSON.stringify(before)].join("|"),messages:[{role:"user",content:prompt}]})})
    .then(function(r){return r.json()}).then(function(d){var t=d&&d.content&&d.content.filter(function(b){return b.type==="text"}).pop();if(!t){aiNote.hidden=true;return}
     var a=t.text.indexOf("{"),z=t.text.lastIndexOf("}");var o=JSON.parse(t.text.slice(a,z+1));o.mode=refine?"refine":"new";var fresh=false;NEED[q]=o.read===true||!!(o.words&&String(o.words).trim());
     var p=fresh?new URLSearchParams():new URLSearchParams(state);if(fresh&&state.get("all"))p.set("all",state.get("all"));

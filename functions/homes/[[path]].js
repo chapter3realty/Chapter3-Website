@@ -663,7 +663,7 @@ async function readApi(context) {
   let body; try { body = JSON.parse(raw); } catch { return json({ ok: false, error: "bad_body" }, 400); }
   const q = String((body && body.q) || "").trim().slice(0, 400), stateText = String((body && body.state) || "").slice(0, 600);
   const num = (v) => (typeof v === "number" && Number.isFinite(v) ? v : null);
-  const homes = (Array.isArray(body && body.homes) ? body.homes : []).filter((h) => h && /^[A-Za-z0-9]{3,20}$/.test(String(h.mls))).slice(0, 6)
+  const homes = (Array.isArray(body && body.homes) ? body.homes : []).filter((h) => h && /^[A-Za-z0-9]{3,20}$/.test(String(h.mls))).slice(0, 8)
     .map((h) => ({ mls: String(h.mls), price: num(h.price), beds: num(h.beds), baths: num(h.baths), sqft: num(h.sqft), acres: num(h.acres) }));
   if (!q || !homes.length) return json({ ok: false, error: "no_homes" }, 400);
   const by = await descriptionsFor(env, request, homes.map((h) => h.mls));
@@ -676,25 +676,27 @@ async function readApi(context) {
      not read before go to the AI. The filters in force are not part of the question: the homes sent already match them. */
   const qn = q.toLowerCase().replace(/[^a-z0-9$ ]+/g, " ").replace(/ +/g, " ").trim();
   const store = typeof caches !== "undefined" ? caches.default : null;
-  const keyOf = async (h) => "https://chapter3realty.com/__read/v1/" + (await sha256Hex(qn + "|" + h.mls + "|" + (h.description || "") + "|" + h.details));
+  const keyOf = async (h) => "https://chapter3realty.com/__read/v2/" + (await sha256Hex(qn + "|" + h.mls + "|" + (h.description || "") + "|" + h.details));
   const found = {}, ask = [];
   await Promise.all(read.map(async (h) => {
     h.key = await keyOf(h);
     const hit = store ? await store.match(h.key).catch(() => null) : null;
     const fit = hit ? (await hit.text().catch(() => "")) : "";
-    if (["yes", "no", "maybe"].includes(fit)) found[h.mls] = fit; else ask.push(h);
+    const [f0, s0] = fit.split("|");
+    if (["yes", "no", "maybe"].includes(f0)) found[h.mls] = { fit: f0, s: s0 === "" || s0 == null ? null : Number(s0) }; else ask.push(h);
   }));
   if (ask.length) {
     const homesText = ask.map((h) => JSON.stringify({ m: h.mls, kind: h.kind, price: h.price, beds: h.beds, baths: h.baths, sqft: h.sqft, acres: h.acres, description: h.description, details: h.details })).join("\n");
     const prompt = "A home buyer on the Grand Strand, South Carolina, asked for: " + JSON.stringify(q) + ". "
       + "Read each home's whole listing description and its details (the MLS fields), and judge only the home against what they asked. "
       + "fit yes: the description or details show it has what they want or suits their goal. fit no: they clearly rule it out (it is for lease or rent, not for sale; a different kind of property; it lacks a must-have they named, such as a dock when the home is an oceanfront condo with no dock). Otherwise fit maybe. "
+      + "Also give s, a score from 0 to 10 for how well the home matches everything they asked and their goal, from what the description and details actually say: 10 has all of it, 5 cannot tell, 0 rules it out. Score each home on its own facts; do not guess what the description leaves out. "
       + "Judge only the home, never people, schools or who lives nearby. JSON only, start { end }, like "
-      + JSON.stringify({ r: [{ m: "MLS number", fit: "yes" }] }) + ". Homes, one per line:\n" + homesText;
+      + JSON.stringify({ r: [{ m: "MLS number", fit: "yes", s: 8 }] }) + ". Homes, one per line:\n" + homesText;
     let out = [];
     try {
       const ai = await fetch("https://api-proxy.chapter3realty.workers.dev", { method: "POST", headers: { "Content-Type": "application/json", Origin: "https://chapter3realty.com" },
-        body: JSON.stringify({ model: "claude-haiku-5-5", max_tokens: 300, effort: "low", messages: [{ role: "user", content: prompt }] }) });
+        body: JSON.stringify({ model: "claude-haiku-5-5", max_tokens: 600, messages: [{ role: "user", content: prompt }] }) });
       const d = await ai.json();
       const tx = d && Array.isArray(d.content) ? d.content.filter((b) => b.type === "text").pop() : null;
       if (tx) { const a = tx.text.indexOf("{"), z = tx.text.lastIndexOf("}"); out = (JSON.parse(tx.text.slice(a, z + 1)).r || []); }
@@ -704,12 +706,13 @@ async function readApi(context) {
     for (const x of Array.isArray(out) ? out : []) {
       const h = x && byM[String(x.m)];
       if (!h || !["yes", "no", "maybe"].includes(x.fit)) continue;
-      found[h.mls] = x.fit;
-      if (store) puts.push(store.put(h.key, new Response(x.fit, { headers: { "cache-control": "public, max-age=2592000" } })).catch(() => {}));
+      const sc = typeof x.s === "number" && x.s >= 0 && x.s <= 10 ? Math.round(x.s) : null;
+      found[h.mls] = { fit: x.fit, s: sc };
+      if (store) puts.push(store.put(h.key, new Response(x.fit + "|" + (sc == null ? "" : sc), { headers: { "cache-control": "public, max-age=2592000" } })).catch(() => {}));
     }
     if (puts.length) { const w = Promise.all(puts); if (context.waitUntil) context.waitUntil(w); else await w; }
   }
-  const r = Object.entries(found).map(([m, fit]) => ({ m, fit }));
+  const r = Object.entries(found).map(([m, v]) => (v.s == null ? { m, fit: v.fit } : { m, fit: v.fit, s: v.s }));
   return json({ ok: true, r }, 200, { "cache-control": "private, no-store" });
 }
 

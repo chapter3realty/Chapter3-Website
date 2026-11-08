@@ -767,8 +767,8 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
 // and reads only the homes on screen it has not read for that sentence, at most 24 at a time.
 {
   const { MAP_SCRIPT: M } = await import("../idx-lib/map.js");
-  check("search cost: one AI reading per sentence (aiQ), descriptions only when needed (read), only unread homes in view, 24 at most",
-    /j\.q!==aiQ&&wantsAi/.test(M) && /inView\(p\)&&!rd\.done\[p\.mls\]\}\)\.slice\(0,24\)/.test(M) && !/slice\(0,96\)/.test(M) && /read \(true only when/.test(M) && /if\(q!==rd\.q\)/.test(M));
+  check("search: one AI reading per sentence at high effort (aiQ), every home the search found read once per sentence, 120 at most, eight a call, best score first",
+    /j\.q!==aiQ&&wantsAi/.test(M) && /120-rd\.sent/.test(M) && /order\.slice\(i,i\+8\)/.test(M) && !/slice\(0,96\)/.test(M) && /effort:"high"/.test(M) && /if\(q!==rd\.q\)/.test(M) && /sc\(b\[0\]\)-sc\(a\[0\]\)/.test(M) && /for sale with it/.test(M));
 }
 
 // Descriptions for every visitor, read on the server (owner, 2026-11-07 and 08; CRM Ticket 557): the AI gets the whole
@@ -787,7 +787,7 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
     anon.ok && anon.r.length === 2 && anon.r.find((x) => x.m === "2600001").fit === "yes" && anon.r.find((x) => x.m === "2600002").fit === "no" && anon.r.every((x) => !("why" in x))
     && !/private dock/.test(raw) && ai && /A home with a private dock, 2600001/.test(ai.init.body) && /Boat Dock/.test(ai.init.body) && !/ElementarySchool/.test(ai.init.body)
     && (ai.init.headers || {}).Origin === "https://chapter3realty.com"
-    && JSON.parse(ai.init.body).effort === "low" && !/Filters in force/.test(ai.init.body)
+    && !JSON.parse(ai.init.body).effort && /score from 0 to 10/.test(ai.init.body) && !/Filters in force/.test(ai.init.body)
     && signed.ok && signed.r.every((x) => !("why" in x)) && !/private dock/.test(JSON.stringify(signed)) && plain.ok === false && plain.error === "sign_in");
 }
 

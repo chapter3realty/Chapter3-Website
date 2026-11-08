@@ -47,6 +47,8 @@ const ANTHROPIC_VERSION = '2023-06-01';
 // ceiling below leaves room for it; effort sets how much it thinks.
 const MODEL = 'claude-haiku-5-5';
 const EFFORT = 'medium';
+// The effort a caller may ask for, and how much room each needs for thinking (times what it asks for).
+const EFFORTS = { low: 2, medium: 3, high: 6 };
 const MAX_TOKENS_CAP = 8000;
 const MAX_BODY_BYTES = 64 * 1024; // the home search sends up to six whole listing descriptions
 
@@ -407,10 +409,10 @@ async function handleAnalysis(incoming, env, origin) {
   const body = {
     model: MODEL,
     // The browser asks for room for the answer; thinking needs room too.
-    max_tokens: Math.min(Math.max(Number(incoming.max_tokens) || 1200, 1200) * (incoming.effort === 'low' ? 2 : 3), MAX_TOKENS_CAP),
-    // A caller may ask for less thinking (the home search's yes/no reading of descriptions: owner, 2026-11-08,
-    // "the search is WILDLY expensive"), never more than the default.
-    output_config: { effort: incoming.effort === 'low' ? 'low' : EFFORT },
+    max_tokens: Math.min(Math.max(Number(incoming.max_tokens) || 1200, 1200) * (EFFORTS[incoming.effort] || 3), MAX_TOKENS_CAP),
+    // A caller may choose low, medium or high thinking (owner, 2026-11-08: the home search reads the buyer's
+    // sentence at high, since Haiku is cheap enough to be thorough). Anything else gets the default.
+    output_config: { effort: EFFORTS[incoming.effort] ? incoming.effort : EFFORT },
     messages: incoming.messages,
   };
   if (typeof incoming.system === 'string') body.system = incoming.system;
