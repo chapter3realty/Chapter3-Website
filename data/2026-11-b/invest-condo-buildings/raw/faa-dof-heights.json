@@ -1,0 +1,970 @@
+{
+ "method": "Building heights from the FAA Digital Obstacle File (DOF), for the wow lines on /invest/condo-buildings/.\nSource: https://aeronav.faa.gov/Obst_Data/DAILY_DOF_DAT.ZIP (DOF.DAT, currency date in its first line).\nFor each building's mean listing point (raw/building-points.json), list every DOF obstacle of type BLDG\nwithin 300 m, with its AGL height (feet above ground), AMSL height, verified flag and accuracy codes.\nRun: python3 -I dof_heights.py <DOF.DAT> <data folder> <out.json>.",
+ "currency": "CURRENCY DATE = 11/02/26",
+ "buildings": {
+  "mb-resort": {
+   "point": [
+    33.63211,
+    -78.94721
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "landmark": {
+   "point": [
+    33.67319,
+    -78.90075
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-000725",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.6725,
+     "lon": -78.901667,
+     "agl_ft": 241,
+     "amsl_ft": 253,
+     "line": "45-000725 O US SC MYRTLE BEACH     33 40 21.00N 078 54 06.00W BLDG               1 00241 00253 R 1 A N 1995ASO01891OE C 2001197",
+     "m": 114
+    }
+   ]
+  },
+  "sea-mist": {
+   "point": [
+    33.67569,
+    -78.89782
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "compass-cove": {
+   "point": [
+    33.66567,
+    -78.90971
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-052634",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.664203,
+     "lon": -78.912189,
+     "agl_ft": 200,
+     "amsl_ft": 212,
+     "line": "45-052634 U US SC MYRTLE BEACH     33 39 51.13N 078 54 43.88W BLDG               1 00200 00212 R 1 A N 2017ASO09789OE C 2018309",
+     "m": 282
+    },
+    {
+     "oas": "45-000330",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.664444,
+     "lon": -78.911111,
+     "agl_ft": 197,
+     "amsl_ft": 208,
+     "line": "45-000330 O US SC MYRTLE BEACH     33 39 52.00N 078 54 40.00W BLDG               1 00197 00208 R 1 A N 1973ASO00999OE C 2001197",
+     "m": 188
+    },
+    {
+     "oas": "45-020957",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.665689,
+     "lon": -78.909694,
+     "agl_ft": 166,
+     "amsl_ft": 175,
+     "line": "45-020957 O US SC MYRTLE BEACH     33 39 56.48N 078 54 34.90W BLDG               1 00166 00175 U 1 A U                A 2012226",
+     "m": 3
+    },
+    {
+     "oas": "45-020959",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.6674,
+     "lon": -78.9077,
+     "agl_ft": 165,
+     "amsl_ft": 176,
+     "line": "45-020959 O US SC MYRTLE BEACH     33 40 02.64N 078 54 27.72W BLDG               1 00165 00176 U 1 A U                A 2012226",
+     "m": 268
+    }
+   ]
+  },
+  "coral-beach": {
+   "point": [
+    33.67585,
+    -78.89745
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "bay-view": {
+   "point": [
+    33.69003,
+    -78.88189
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-054088",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.688342,
+     "lon": -78.8832,
+     "agl_ft": 236,
+     "amsl_ft": 252,
+     "line": "45-054088 O US SC MYRTLE BEACH     33 41 18.03N 078 52 59.52W BLDG               1 00236 00252 R 4 D N 2018ASO10348OE C 2018253",
+     "m": 223
+    }
+   ]
+  },
+  "breakers": {
+   "point": [
+    33.7003,
+    -78.87044
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-089535",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701719,
+     "lon": -78.868858,
+     "agl_ft": 287,
+     "amsl_ft": 305,
+     "line": "45-089535 U US SC MYRTLE BEACH     33 42 06.19N 078 52 07.89W BLDG               1 00287 00305 R 4 D N 2024ASO21983OE A 2026244",
+     "m": 215
+    },
+    {
+     "oas": "45-089536",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701778,
+     "lon": -78.868903,
+     "agl_ft": 287,
+     "amsl_ft": 305,
+     "line": "45-089536 U US SC MYRTLE BEACH     33 42 06.40N 078 52 08.05W BLDG               1 00287 00305 R 4 D N 2024ASO21984OE A 2026244",
+     "m": 217
+    },
+    {
+     "oas": "45-089534",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701811,
+     "lon": -78.868731,
+     "agl_ft": 287,
+     "amsl_ft": 305,
+     "line": "45-089534 U US SC MYRTLE BEACH     33 42 06.52N 078 52 07.43W BLDG               1 00287 00305 R 4 D N 2024ASO21982OE A 2026244",
+     "m": 231
+    },
+    {
+     "oas": "45-089537",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701867,
+     "lon": -78.868806,
+     "agl_ft": 287,
+     "amsl_ft": 305,
+     "line": "45-089537 U US SC MYRTLE BEACH     33 42 06.72N 078 52 07.70W BLDG               1 00287 00305 R 4 D N 2024ASO21985OE A 2026244",
+     "m": 231
+    },
+    {
+     "oas": "45-089542",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701942,
+     "lon": -78.869044,
+     "agl_ft": 281,
+     "amsl_ft": 299,
+     "line": "45-089542 U US SC MYRTLE BEACH     33 42 06.99N 078 52 08.56W BLDG               1 00281 00299 R 4 D N 2024ASO21990OE A 2026244",
+     "m": 224
+    },
+    {
+     "oas": "45-089543",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.702108,
+     "lon": -78.868861,
+     "agl_ft": 281,
+     "amsl_ft": 299,
+     "line": "45-089543 U US SC MYRTLE BEACH     33 42 07.59N 078 52 07.90W BLDG               1 00281 00299 R 4 D N 2024ASO21991OE A 2026244",
+     "m": 249
+    },
+    {
+     "oas": "45-070434",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.700458,
+     "lon": -78.870456,
+     "agl_ft": 274,
+     "amsl_ft": 289,
+     "line": "45-070434 O US SC MYRTLE BEACH     33 42 01.65N 078 52 13.64W BLDG               1 00274 00289 R 4 D N 2020ASO04474OE A 2022089",
+     "m": 18
+    },
+    {
+     "oas": "45-089540",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701611,
+     "lon": -78.868789,
+     "agl_ft": 273,
+     "amsl_ft": 291,
+     "line": "45-089540 U US SC MYRTLE BEACH     33 42 05.80N 078 52 07.64W BLDG               1 00273 00291 R 4 D N 2024ASO21988OE A 2026244",
+     "m": 211
+    },
+    {
+     "oas": "45-089539",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701806,
+     "lon": -78.868578,
+     "agl_ft": 273,
+     "amsl_ft": 291,
+     "line": "45-089539 U US SC MYRTLE BEACH     33 42 06.50N 078 52 06.88W BLDG               1 00273 00291 R 4 D N 2024ASO21987OE A 2026244",
+     "m": 240
+    },
+    {
+     "oas": "45-089541",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.70185,
+     "lon": -78.869144,
+     "agl_ft": 273,
+     "amsl_ft": 291,
+     "line": "45-089541 U US SC MYRTLE BEACH     33 42 06.66N 078 52 08.92W BLDG               1 00273 00291 R 4 D N 2024ASO21989OE A 2026244",
+     "m": 210
+    },
+    {
+     "oas": "45-089538",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701903,
+     "lon": -78.868611,
+     "agl_ft": 273,
+     "amsl_ft": 291,
+     "line": "45-089538 U US SC MYRTLE BEACH     33 42 06.85N 078 52 07.00W BLDG               1 00273 00291 R 4 D N 2024ASO21986OE A 2026244",
+     "m": 246
+    },
+    {
+     "oas": "45-089551",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701564,
+     "lon": -78.868728,
+     "agl_ft": 257,
+     "amsl_ft": 275,
+     "line": "45-089551 U US SC MYRTLE BEACH     33 42 05.63N 078 52 07.42W BLDG               1 00257 00275 R 4 D N 2024ASO21993OE A 2026246",
+     "m": 212
+    },
+    {
+     "oas": "45-021316",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701522,
+     "lon": -78.86945,
+     "agl_ft": 255,
+     "amsl_ft": 275,
+     "line": "45-021316 O US SC MYRTLE BEACH     33 42 05.48N 078 52 10.02W BLDG               1 00255 00275 R 2 D N 2014ASO01756OE A 2016116",
+     "m": 164
+    }
+   ]
+  },
+  "camelot": {
+   "point": [
+    33.69965,
+    -78.87113
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-070434",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.700458,
+     "lon": -78.870456,
+     "agl_ft": 274,
+     "amsl_ft": 289,
+     "line": "45-070434 O US SC MYRTLE BEACH     33 42 01.65N 078 52 13.64W BLDG               1 00274 00289 R 4 D N 2020ASO04474OE A 2022089",
+     "m": 109
+    },
+    {
+     "oas": "45-021316",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701522,
+     "lon": -78.86945,
+     "agl_ft": 255,
+     "amsl_ft": 275,
+     "line": "45-021316 O US SC MYRTLE BEACH     33 42 05.48N 078 52 10.02W BLDG               1 00255 00275 R 2 D N 2014ASO01756OE A 2016116",
+     "m": 260
+    }
+   ]
+  },
+  "caribbean": {
+   "point": [
+    33.70773,
+    -78.86116
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "anderson": {
+   "point": [
+    33.70506,
+    -78.86452
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "dunes-village": {
+   "point": [
+    33.72402,
+    -78.84136
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-000741",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.725,
+     "lon": -78.84,
+     "agl_ft": 205,
+     "amsl_ft": 217,
+     "line": "45-000741 O US SC MYRTLE BEACH     33 43 30.00N 078 50 24.00W BLDG               1 00205 00217 R 3 C N                C 2014152",
+     "m": 166
+    }
+   ]
+  },
+  "sand-dunes": {
+   "point": [
+    33.7452,
+    -78.81078
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "caravelle": {
+   "point": [
+    33.73885,
+    -78.82083
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "grande-cayman": {
+   "point": [
+    33.73795,
+    -78.82215
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "ocean-reef": {
+   "point": [
+    33.74023,
+    -78.81882
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "seawatch": {
+   "point": [
+    33.77049,
+    -78.77147
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "margate": {
+   "point": [
+    33.76522,
+    -78.78131
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-002357",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.765172,
+     "lon": -78.781408,
+     "agl_ft": 335,
+     "amsl_ft": 347,
+     "line": "45-002357 O US SC MYRTLE BEACH     33 45 54.62N 078 46 53.07W BLDG               1 00335 00347 R 5 D N 2001ASO04464OE C 2004270",
+     "m": 11
+    }
+   ]
+  },
+  "brighton": {
+   "point": [
+    33.76615,
+    -78.77996
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-002357",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.765172,
+     "lon": -78.781408,
+     "agl_ft": 335,
+     "amsl_ft": 347,
+     "line": "45-002357 O US SC MYRTLE BEACH     33 45 54.62N 078 46 53.07W BLDG               1 00335 00347 R 5 D N 2001ASO04464OE C 2004270",
+     "m": 172
+    },
+    {
+     "oas": "45-020062",
+     "verified": false,
+     "city": "BRIARCLIFFE ACRE",
+     "lat": 33.766975,
+     "lon": -78.778167,
+     "agl_ft": 206,
+     "amsl_ft": 215,
+     "line": "45-020062 U US SC BRIARCLIFFE ACRE 33 46 01.11N 078 46 41.40W BLDG               1 00206 00215 R 4 D N 2009ASO00675OE C 2014124",
+     "m": 189
+    }
+   ]
+  },
+  "royale-palms": {
+   "point": [
+    33.76914,
+    -78.77556
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-002668",
+     "verified": true,
+     "city": "N. MYRTLE BEACH",
+     "lat": 33.768889,
+     "lon": -78.775833,
+     "agl_ft": 255,
+     "amsl_ft": 274,
+     "line": "45-002668 O US SC N. MYRTLE BEACH  33 46 08.00N 078 46 33.00W BLDG               1 00255 00274 R 5 D M 2004ASO06292OE C 2009184",
+     "m": 38
+    }
+   ]
+  },
+  "avista": {
+   "point": [
+    33.81995,
+    -78.66802
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "bay-watch": {
+   "point": [
+    33.80173,
+    -78.7126
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-002204",
+     "verified": true,
+     "city": "N.MYRTLE BEACH",
+     "lat": 33.801667,
+     "lon": -78.712778,
+     "agl_ft": 188,
+     "amsl_ft": 202,
+     "line": "45-002204 O US SC N.MYRTLE BEACH   33 48 06.00N 078 42 46.00W BLDG               1 00188 00202 U 2 C U 2002ASO01753OE C 2003194",
+     "m": 18
+    },
+    {
+     "oas": "45-002122",
+     "verified": true,
+     "city": "N MYRTLE BEACH",
+     "lat": 33.801667,
+     "lon": -78.713333,
+     "agl_ft": 187,
+     "amsl_ft": 202,
+     "line": "45-002122 O US SC N MYRTLE BEACH   33 48 06.00N 078 42 48.00W BLDG               1 00187 00202 R 2 D N 2001ASO03729OE C 2003026",
+     "m": 68
+    }
+   ]
+  },
+  "beach-cove": {
+   "point": [
+    33.79082,
+    -78.73517
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-000817",
+     "verified": true,
+     "city": "N MYRTLE BEACH",
+     "lat": 33.790833,
+     "lon": -78.735278,
+     "agl_ft": 183,
+     "amsl_ft": 205,
+     "line": "45-000817 O US SC N MYRTLE BEACH   33 47 27.00N 078 44 07.00W BLDG               1 00183 00205 L 1 A N                C 2014152",
+     "m": 10
+    },
+    {
+     "oas": "45-020539",
+     "verified": true,
+     "city": "NORTH MYRTLE BEA",
+     "lat": 33.790558,
+     "lon": -78.738206,
+     "agl_ft": 180,
+     "amsl_ft": 189,
+     "line": "45-020539 O US SC NORTH MYRTLE BEA 33 47 26.01N 078 44 17.54W BLDG               1 00180 00189 U 1 A U                A 2012220",
+     "m": 282
+    }
+   ]
+  },
+  "prince": {
+   "point": [
+    33.83052,
+    -78.63343
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "towers-grove": {
+   "point": [
+    33.82712,
+    -78.64496
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "north-beach-towers": {
+   "point": [
+    33.79067,
+    -78.73647
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-000817",
+     "verified": true,
+     "city": "N MYRTLE BEACH",
+     "lat": 33.790833,
+     "lon": -78.735278,
+     "agl_ft": 183,
+     "amsl_ft": 205,
+     "line": "45-000817 O US SC N MYRTLE BEACH   33 47 27.00N 078 44 07.00W BLDG               1 00183 00205 L 1 A N                C 2014152",
+     "m": 112
+    },
+    {
+     "oas": "45-020539",
+     "verified": true,
+     "city": "NORTH MYRTLE BEA",
+     "lat": 33.790558,
+     "lon": -78.738206,
+     "agl_ft": 180,
+     "amsl_ft": 189,
+     "line": "45-020539 O US SC NORTH MYRTLE BEA 33 47 26.01N 078 44 17.54W BLDG               1 00180 00189 U 1 A U                A 2012220",
+     "m": 161
+    }
+   ]
+  },
+  "ocean-creek": {
+   "point": [
+    33.79041,
+    -78.73818
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-000817",
+     "verified": true,
+     "city": "N MYRTLE BEACH",
+     "lat": 33.790833,
+     "lon": -78.735278,
+     "agl_ft": 183,
+     "amsl_ft": 205,
+     "line": "45-000817 O US SC N MYRTLE BEACH   33 47 27.00N 078 44 07.00W BLDG               1 00183 00205 L 1 A N                C 2014152",
+     "m": 272
+    },
+    {
+     "oas": "45-020539",
+     "verified": true,
+     "city": "NORTH MYRTLE BEA",
+     "lat": 33.790558,
+     "lon": -78.738206,
+     "agl_ft": 180,
+     "amsl_ft": 189,
+     "line": "45-020539 O US SC NORTH MYRTLE BEA 33 47 26.01N 078 44 17.54W BLDG               1 00180 00189 U 1 A U                A 2012220",
+     "m": 17
+    }
+   ]
+  },
+  "monterey-bay": {
+   "point": [
+    33.73793,
+    -78.82216
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "bluewater": {
+   "point": [
+    33.66928,
+    -78.90548
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-052667",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.669047,
+     "lon": -78.905853,
+     "agl_ft": 223,
+     "amsl_ft": 238,
+     "line": "45-052667 O US SC MYRTLE BEACH     33 40 08.57N 078 54 21.07W BLDG               1 00223 00238 N 1 A N 2017ASO20472OE A 2017348",
+     "m": 43
+    },
+    {
+     "oas": "45-020959",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.6674,
+     "lon": -78.9077,
+     "agl_ft": 165,
+     "amsl_ft": 176,
+     "line": "45-020959 O US SC MYRTLE BEACH     33 40 02.64N 078 54 27.72W BLDG               1 00165 00176 U 1 A U                A 2012226",
+     "m": 293
+    },
+    {
+     "oas": "45-020960",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.669481,
+     "lon": -78.905808,
+     "agl_ft": 152,
+     "amsl_ft": 167,
+     "line": "45-020960 O US SC MYRTLE BEACH     33 40 10.13N 078 54 20.91W BLDG               1 00152 00167 U 1 A U                A 2012226",
+     "m": 38
+    },
+    {
+     "oas": "45-020961",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.668511,
+     "lon": -78.906353,
+     "agl_ft": 146,
+     "amsl_ft": 157,
+     "line": "45-020961 O US SC MYRTLE BEACH     33 40 06.64N 078 54 22.87W BLDG               1 00146 00157 U 1 A U                A 2012226",
+     "m": 118
+    }
+   ]
+  },
+  "beach-colony": {
+   "point": [
+    33.72318,
+    -78.84231
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-000741",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.725,
+     "lon": -78.84,
+     "agl_ft": 205,
+     "amsl_ft": 217,
+     "line": "45-000741 O US SC MYRTLE BEACH     33 43 30.00N 078 50 24.00W BLDG               1 00205 00217 R 3 C N                C 2014152",
+     "m": 294
+    }
+   ]
+  },
+  "meridian-plaza": {
+   "point": [
+    33.70303,
+    -78.86749
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-089535",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701719,
+     "lon": -78.868858,
+     "agl_ft": 287,
+     "amsl_ft": 305,
+     "line": "45-089535 U US SC MYRTLE BEACH     33 42 06.19N 078 52 07.89W BLDG               1 00287 00305 R 4 D N 2024ASO21983OE A 2026244",
+     "m": 193
+    },
+    {
+     "oas": "45-089536",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701778,
+     "lon": -78.868903,
+     "agl_ft": 287,
+     "amsl_ft": 305,
+     "line": "45-089536 U US SC MYRTLE BEACH     33 42 06.40N 078 52 08.05W BLDG               1 00287 00305 R 4 D N 2024ASO21984OE A 2026244",
+     "m": 191
+    },
+    {
+     "oas": "45-089534",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701811,
+     "lon": -78.868731,
+     "agl_ft": 287,
+     "amsl_ft": 305,
+     "line": "45-089534 U US SC MYRTLE BEACH     33 42 06.52N 078 52 07.43W BLDG               1 00287 00305 R 4 D N 2024ASO21982OE A 2026244",
+     "m": 178
+    },
+    {
+     "oas": "45-089537",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701867,
+     "lon": -78.868806,
+     "agl_ft": 287,
+     "amsl_ft": 305,
+     "line": "45-089537 U US SC MYRTLE BEACH     33 42 06.72N 078 52 07.70W BLDG               1 00287 00305 R 4 D N 2024ASO21985OE A 2026244",
+     "m": 178
+    },
+    {
+     "oas": "45-089542",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701942,
+     "lon": -78.869044,
+     "agl_ft": 281,
+     "amsl_ft": 299,
+     "line": "45-089542 U US SC MYRTLE BEACH     33 42 06.99N 078 52 08.56W BLDG               1 00281 00299 R 4 D N 2024ASO21990OE A 2026244",
+     "m": 188
+    },
+    {
+     "oas": "45-089543",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.702108,
+     "lon": -78.868861,
+     "agl_ft": 281,
+     "amsl_ft": 299,
+     "line": "45-089543 U US SC MYRTLE BEACH     33 42 07.59N 078 52 07.90W BLDG               1 00281 00299 R 4 D N 2024ASO21991OE A 2026244",
+     "m": 163
+    },
+    {
+     "oas": "45-089540",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701611,
+     "lon": -78.868789,
+     "agl_ft": 273,
+     "amsl_ft": 291,
+     "line": "45-089540 U US SC MYRTLE BEACH     33 42 05.80N 078 52 07.64W BLDG               1 00273 00291 R 4 D N 2024ASO21988OE A 2026244",
+     "m": 198
+    },
+    {
+     "oas": "45-089539",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701806,
+     "lon": -78.868578,
+     "agl_ft": 273,
+     "amsl_ft": 291,
+     "line": "45-089539 U US SC MYRTLE BEACH     33 42 06.50N 078 52 06.88W BLDG               1 00273 00291 R 4 D N 2024ASO21987OE A 2026244",
+     "m": 169
+    },
+    {
+     "oas": "45-089541",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.70185,
+     "lon": -78.869144,
+     "agl_ft": 273,
+     "amsl_ft": 291,
+     "line": "45-089541 U US SC MYRTLE BEACH     33 42 06.66N 078 52 08.92W BLDG               1 00273 00291 R 4 D N 2024ASO21989OE A 2026244",
+     "m": 202
+    },
+    {
+     "oas": "45-089538",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701903,
+     "lon": -78.868611,
+     "agl_ft": 273,
+     "amsl_ft": 291,
+     "line": "45-089538 U US SC MYRTLE BEACH     33 42 06.85N 078 52 07.00W BLDG               1 00273 00291 R 4 D N 2024ASO21986OE A 2026244",
+     "m": 163
+    },
+    {
+     "oas": "45-089551",
+     "verified": false,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701564,
+     "lon": -78.868728,
+     "agl_ft": 257,
+     "amsl_ft": 275,
+     "line": "45-089551 U US SC MYRTLE BEACH     33 42 05.63N 078 52 07.42W BLDG               1 00257 00275 R 4 D N 2024ASO21993OE A 2026246",
+     "m": 199
+    },
+    {
+     "oas": "45-021316",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.701522,
+     "lon": -78.86945,
+     "agl_ft": 255,
+     "amsl_ft": 275,
+     "line": "45-021316 O US SC MYRTLE BEACH     33 42 05.48N 078 52 10.02W BLDG               1 00255 00275 R 2 D N 2014ASO01756OE A 2016116",
+     "m": 247
+    }
+   ]
+  },
+  "sandy-beach": {
+   "point": [
+    33.68179,
+    -78.88945
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "carolina-winds": {
+   "point": [
+    33.74338,
+    -78.81433
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "maisons-sur-mer": {
+   "point": [
+    33.76188,
+    -78.78635
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-000344",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.762222,
+     "lon": -78.786111,
+     "agl_ft": 300,
+     "amsl_ft": 314,
+     "line": "45-000344 O US SC MYRTLE BEACH     33 45 44.00N 078 47 10.00W BLDG               1 00300 00314 D 2 C N 1998ASO02733OE C 2014152",
+     "m": 44
+    }
+   ]
+  },
+  "sands-ocean": {
+   "point": [
+    33.75973,
+    -78.78939
+   ],
+   "dof_bldg_within_300m": []
+  },
+  "ocean-forest-plaza": {
+   "point": [
+    33.72802,
+    -78.83655
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-000668",
+     "verified": true,
+     "city": "MYRTLE BEACH",
+     "lat": 33.728056,
+     "lon": -78.836417,
+     "agl_ft": 252,
+     "amsl_ft": 270,
+     "line": "45-000668 O US SC MYRTLE BEACH     33 43 41.00N 078 50 11.10W BLDG               1 00252 00270 D 4 D N 2024ASO05811OE C 2024128",
+     "m": 13
+    }
+   ]
+  },
+  "south-hampton": {
+   "point": [
+    33.76781,
+    -78.77694
+   ],
+   "dof_bldg_within_300m": [
+    {
+     "oas": "45-002668",
+     "verified": true,
+     "city": "N. MYRTLE BEACH",
+     "lat": 33.768889,
+     "lon": -78.775833,
+     "agl_ft": 255,
+     "amsl_ft": 274,
+     "line": "45-002668 O US SC N. MYRTLE BEACH  33 46 08.00N 078 46 33.00W BLDG               1 00255 00274 R 5 D M 2004ASO06292OE C 2009184",
+     "m": 158
+    },
+    {
+     "oas": "45-020062",
+     "verified": false,
+     "city": "BRIARCLIFFE ACRE",
+     "lat": 33.766975,
+     "lon": -78.778167,
+     "agl_ft": 206,
+     "amsl_ft": 215,
+     "line": "45-020062 U US SC BRIARCLIFFE ACRE 33 46 01.11N 078 46 41.40W BLDG               1 00206 00215 R 4 D N 2009ASO00675OE C 2014124",
+     "m": 147
+    }
+   ]
+  }
+ },
+ "strip_box": "33.50 to 33.95 N, 78.50 to 79.20 W",
+ "strip_tallest": [
+  {
+   "oas": "45-002357",
+   "agl_ft": 335,
+   "verified": true,
+   "lat": 33.765172,
+   "lon": -78.781408
+  },
+  {
+   "oas": "45-000344",
+   "agl_ft": 300,
+   "verified": true,
+   "lat": 33.762222,
+   "lon": -78.786111
+  },
+  {
+   "oas": "45-089535",
+   "agl_ft": 287,
+   "verified": false,
+   "lat": 33.701719,
+   "lon": -78.868858
+  },
+  {
+   "oas": "45-089536",
+   "agl_ft": 287,
+   "verified": false,
+   "lat": 33.701778,
+   "lon": -78.868903
+  },
+  {
+   "oas": "45-089534",
+   "agl_ft": 287,
+   "verified": false,
+   "lat": 33.701811,
+   "lon": -78.868731
+  },
+  {
+   "oas": "45-089537",
+   "agl_ft": 287,
+   "verified": false,
+   "lat": 33.701867,
+   "lon": -78.868806
+  },
+  {
+   "oas": "45-089542",
+   "agl_ft": 281,
+   "verified": false,
+   "lat": 33.701942,
+   "lon": -78.869044
+  },
+  {
+   "oas": "45-089543",
+   "agl_ft": 281,
+   "verified": false,
+   "lat": 33.702108,
+   "lon": -78.868861
+  },
+  {
+   "oas": "45-064233",
+   "agl_ft": 278,
+   "verified": true,
+   "lat": 33.696583,
+   "lon": -78.874781
+  },
+  {
+   "oas": "45-070434",
+   "agl_ft": 274,
+   "verified": true,
+   "lat": 33.700458,
+   "lon": -78.870456
+  },
+  {
+   "oas": "45-089540",
+   "agl_ft": 273,
+   "verified": false,
+   "lat": 33.701611,
+   "lon": -78.868789
+  },
+  {
+   "oas": "45-089539",
+   "agl_ft": 273,
+   "verified": false,
+   "lat": 33.701806,
+   "lon": -78.868578
+  }
+ ],
+ "strip_count": 67
+}

@@ -1,0 +1,57 @@
+{
+ "photos": [
+  {
+   "slug": "hoa-master-insurance-ho6",
+   "file": "images/2026-10-d/hoa-special-assessments/north-myrtle-beach-oceanfront-roofs-and-balconies-2011.webp",
+   "variants": {
+    "600": "images/2026-10-d/hoa-special-assessments/north-myrtle-beach-oceanfront-roofs-and-balconies-2011-600w.webp",
+    "1200": "images/2026-10-d/hoa-special-assessments/north-myrtle-beach-oceanfront-roofs-and-balconies-2011-1200w.webp"
+   },
+   "width": 1200,
+   "height": 525,
+   "title": "Oceanfront buildings in the Windy Hill section of North Myrtle Beach, USGS oblique aerial photo, August 24, 2011",
+   "what": "Two oceanfront mid-rise buildings in North Myrtle Beach, cut from a photo taken from a plane over the ocean: stacked balconies with railings on every floor, a flat white roof with rooftop equipment, a pool behind the dunes, and a beach house between the buildings. The few people on the beach are too small to recognize.",
+   "caption": "Roofs, balconies and a pool on oceanfront buildings in North Myrtle Beach, seen from a plane. A condo master policy insures parts like these.",
+   "alt": "Two oceanfront mid-rise buildings in North Myrtle Beach with stacked balconies and railings, a flat roof with rooftop equipment and a pool behind the dunes",
+   "place": {
+    "city": "North Myrtle Beach",
+    "sublocation": "Windy Hill section, oceanfront"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_180512d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_180500.zip; aircraft position 33.788893 N, 78.728317 W (11CCH03-Photolocations.csv; the position of the plane, not of the buildings). Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. The same release as the photo on /sell/out-of-state-buyers/ (a different frame).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Checked 2026-11-01 by the writer: Horry County parcel layer 24, oceanfront row between about 33.7905 N and 33.7965 N (northwest of the plane, the camera's view direction): almost every oceanfront parcel there is a condo unit parcel (land use 107 or 108, 22 to 136 unit parcels a name, several named HPR); one oceanfront parcel is a single parcel (land use 388). The caption therefore says 'oceanfront buildings', not 'condo buildings', and names no building. The page uses the photo for the parts it shows (flat roofs, balconies, pools), not as the buildings in the listing count. Fix round 3 (2026-11-01): the page photo is now a closer cut of two of those oceanfront buildings; the fixer looked at it at full size: balconies with railings, a flat roof with equipment and a pool are clear. The caption still names no building. Reused 2026-11-10 on /hoa/master-insurance-ho6/ (record copied from data/2026-10-d/hoa-special-assessments/photos.json; image files unchanged, at their 2026-10-d path). Looked at full size by the writer: roofs, stacked balconies and a pool are clear. The caption names no building and says only that a master policy insures parts like these (ledger row 28: the structure and the shared areas).",
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty cut 1600 by 700 pixels around the two buildings in the center left of the 3008 by 1960 original, and resized it for the page. The 1x1, 4x3 and 16x9 share crops are cut from the center of the full frame",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-10-d/hoa-special-assessments/north-myrtle-beach-oceanfront-roofs-and-balconies-2011-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-10-d/hoa-special-assessments/north-myrtle-beach-oceanfront-roofs-and-balconies-2011-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-10-d/hoa-special-assessments/north-myrtle-beach-oceanfront-roofs-and-balconies-2011-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   }
+  }
+ ]
+}

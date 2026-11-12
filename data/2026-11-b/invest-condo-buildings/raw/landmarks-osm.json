@@ -1,0 +1,575 @@
+{
+ "Myrtle Beach SkyWheel": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Myrtle+Beach+SkyWheel&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.6938507",
+    "lon": "-78.8773549",
+    "name": "SkyWheel",
+    "display_name": "SkyWheel, Myrtle Beach Boardwalk, Myrtle Beach, Horry County, South Carolina, United States",
+    "class": "tourism",
+    "type": "attraction",
+    "osm_type": "way",
+    "osm_id": 909403017
+   }
+  ]
+ },
+ "Second Avenue Pier, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Second+Avenue+Pier%2C+Myrtle+Beach&format=json&limit=3",
+  "results": []
+ },
+ "Pier 14, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Pier+14%2C+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.6943277",
+    "lon": "-78.8747973",
+    "name": "Pier 14",
+    "display_name": "Pier 14, Myrtle Beach Boardwalk, Myrtle Beach, Horry County, South Carolina, United States",
+    "class": "man_made",
+    "type": "pier",
+    "osm_type": "way",
+    "osm_id": 160694214
+   }
+  ]
+ },
+ "Myrtle Beach Boardwalk": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Myrtle+Beach+Boardwalk&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.6897648",
+    "lon": "-78.8811109",
+    "name": "Myrtle Beach Boardwalk",
+    "display_name": "Myrtle Beach Boardwalk, Myrtle Beach, Horry County, South Carolina, United States",
+    "class": "highway",
+    "type": "pedestrian",
+    "osm_type": "way",
+    "osm_id": 931425864
+   },
+   {
+    "lat": "33.6869190",
+    "lon": "-78.8837712",
+    "name": "Myrtle Beach Boardwalk",
+    "display_name": "Myrtle Beach Boardwalk, Ocean View MHP, Myrtle Beach, Horry County, South Carolina, United States",
+    "class": "highway",
+    "type": "footway",
+    "osm_type": "way",
+    "osm_id": 157966118
+   },
+   {
+    "lat": "33.6948389",
+    "lon": "-78.8757973",
+    "name": "Myrtle Beach Boardwalk",
+    "display_name": "Myrtle Beach Boardwalk, Carolina Oaks Village, Myrtle Beach, Horry County, South Carolina, United States",
+    "class": "highway",
+    "type": "path",
+    "osm_type": "way",
+    "osm_id": 165328741
+   }
+  ]
+ },
+ "Springmaid Pier, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Springmaid+Pier%2C+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.6559793",
+    "lon": "-78.9170387",
+    "name": "Springmaid Pier",
+    "display_name": "Springmaid Pier, Springmaid Boulevard, South Beach, Market Common District, Myrtle Beach, Horry County, South Carolina, 29577, United States",
+    "class": "man_made",
+    "type": "pier",
+    "osm_type": "way",
+    "osm_id": 927797420
+   }
+  ]
+ },
+ "Myrtle Beach State Park": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Myrtle+Beach+State+Park&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.6505854",
+    "lon": "-78.9311317",
+    "name": "Myrtle Beach State Park",
+    "display_name": "Myrtle Beach State Park, Market Common District, Myrtle Beach, Horry County, South Carolina, United States",
+    "class": "leisure",
+    "type": "park",
+    "osm_type": "way",
+    "osm_id": 135693661
+   }
+  ]
+ },
+ "Family Kingdom Amusement Park, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Family+Kingdom+Amusement+Park%2C+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.6823488",
+    "lon": "-78.8921728",
+    "name": "Family Kingdom Amusement Park",
+    "display_name": "Family Kingdom Amusement Park, 300, South Ocean Boulevard, Yaupon Circle, Myrtle Beach, Horry County, South Carolina, 29577, United States",
+    "class": "tourism",
+    "type": "theme_park",
+    "osm_type": "way",
+    "osm_id": 354372467
+   }
+  ]
+ },
+ "Broadway at the Beach, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Broadway+at+the+Beach%2C+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.7162695",
+    "lon": "-78.8807609",
+    "name": "Broadway at the Beach",
+    "display_name": "Broadway at the Beach, Myrtle Beach, Horry County, South Carolina, United States",
+    "class": "landuse",
+    "type": "retail",
+    "osm_type": "way",
+    "osm_id": 24816290
+   },
+   {
+    "lat": "33.7161150",
+    "lon": "-78.8810902",
+    "name": "Broadway at the Beach",
+    "display_name": "Broadway at the Beach, Myrtle Beach, Horry County, South Carolina, United States",
+    "class": "landuse",
+    "type": "retail",
+    "osm_type": "relation",
+    "osm_id": 12571293
+   }
+  ]
+ },
+ "Market Common, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Market+Common%2C+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.6505854",
+    "lon": "-78.9311317",
+    "name": "Myrtle Beach State Park",
+    "display_name": "Myrtle Beach State Park, Market Common District, Myrtle Beach, Horry County, South Carolina, United States",
+    "class": "leisure",
+    "type": "park",
+    "osm_type": "way",
+    "osm_id": 135693661
+   },
+   {
+    "lat": "33.6814671",
+    "lon": "-78.9227887",
+    "name": "Myrtle Beach International Airport",
+    "display_name": "Myrtle Beach International Airport, Jetport Road, Market Common District, Myrtle Beach, Horry County, South Carolina, 29577, United States",
+    "class": "aeroway",
+    "type": "terminal",
+    "osm_type": "way",
+    "osm_id": 308490784
+   },
+   {
+    "lat": "33.6566696",
+    "lon": "-78.9199085",
+    "name": "DoubleTree Resort by Hilton Myrtle Beach Oceanfront",
+    "display_name": "DoubleTree Resort by Hilton Myrtle Beach Oceanfront, 3200, South Ocean Boulevard, South Beach, Market Common District, Myrtle Beach, Horry County, South Carolina, 29577, United States",
+    "class": "tourism",
+    "type": "hotel",
+    "osm_type": "way",
+    "osm_id": 954384833
+   }
+  ]
+ },
+ "Barefoot Landing, North Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Barefoot+Landing%2C+North+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.7998752",
+    "lon": "-78.7424398",
+    "name": "Barefoot Landing",
+    "display_name": "Barefoot Landing, 4898, Windy Hill Beach, North Myrtle Beach, Horry County, South Carolina, 29582, United States",
+    "class": "landuse",
+    "type": "retail",
+    "osm_type": "relation",
+    "osm_id": 12571211
+   }
+  ]
+ },
+ "Cherry Grove Pier, North Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Cherry+Grove+Pier%2C+North+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.8287315",
+    "lon": "-78.6326763",
+    "name": "Cherry Grove Pier",
+    "display_name": "Cherry Grove Pier, North Ocean Boulevard, Futch Beach, Cherry Grove Beach, North Myrtle Beach, Horry County, South Carolina, 29582, United States",
+    "class": "man_made",
+    "type": "pier",
+    "osm_type": "way",
+    "osm_id": 164851919
+   }
+  ]
+ },
+ "Apache Pier, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Apache+Pier%2C+Myrtle+Beach&format=json&limit=3",
+  "results": []
+ },
+ "Sea Captain's House, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Sea+Captain%27s+House%2C+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.7083627",
+    "lon": "-78.8604254",
+    "name": "Sea Captain's House",
+    "display_name": "Sea Captain's House, North Ocean Boulevard, Washington Park, Myrtle Beach, Horry County, South Carolina, 29572, United States",
+    "class": "amenity",
+    "type": "restaurant",
+    "osm_type": "way",
+    "osm_id": 44706579
+   }
+  ]
+ },
+ "Plyler Park, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Plyler+Park%2C+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.6934500",
+    "lon": "-78.8778490",
+    "name": "Plyler Park",
+    "display_name": "Plyler Park, Myrtle Beach, Horry County, South Carolina, United States",
+    "class": "leisure",
+    "type": "park",
+    "osm_type": "way",
+    "osm_id": 157966119
+   }
+  ]
+ },
+ "Dunes Golf and Beach Club, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Dunes+Golf+and+Beach+Club%2C+Myrtle+Beach&format=json&limit=3",
+  "results": []
+ },
+ "Tanger Outlets, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Tanger+Outlets%2C+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.7523164",
+    "lon": "-78.9580627",
+    "name": "Tanger Outlets",
+    "display_name": "Tanger Outlets, 4635, Myrtle Beach, Horry County, South Carolina, United States",
+    "class": "landuse",
+    "type": "retail",
+    "osm_type": "way",
+    "osm_id": 23408088
+   },
+   {
+    "lat": "33.7842752",
+    "lon": "-78.7752815",
+    "name": "Tanger Outlets",
+    "display_name": "Tanger Outlets, 10835, Kings Road, Tanger Outlets, Myrtle Beach, Horry County, South Carolina, 29572, United States",
+    "class": "shop",
+    "type": "mall",
+    "osm_type": "relation",
+    "osm_id": 4119846
+   }
+  ]
+ },
+ "Arcadian Shores Golf Club, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Arcadian+Shores+Golf+Club%2C+Myrtle+Beach&format=json&limit=3",
+  "results": []
+ },
+ "Main Street, North Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Main+Street%2C+North+Myrtle+Beach&format=json&limit=3&polygon_geojson=1",
+  "results": [
+   {
+    "lat": "33.8211378",
+    "lon": "-78.6735286",
+    "name": "Main Street",
+    "display_name": "Main Street, Ocean Drive Beach, North Myrtle Beach, Horry County, South Carolina, 29566, United States",
+    "class": "highway",
+    "type": "secondary",
+    "osm_type": "way",
+    "osm_id": 1267234933,
+    "geojson": {
+     "type": "LineString",
+     "coordinates": [
+      [
+       -78.672383,
+       33.8187953
+      ],
+      [
+       -78.6723736,
+       33.8188841
+      ],
+      [
+       -78.6725273,
+       33.8191898
+      ],
+      [
+       -78.672593,
+       33.8193145
+      ],
+      [
+       -78.6727169,
+       33.8195488
+      ],
+      [
+       -78.6727934,
+       33.8196903
+      ],
+      [
+       -78.6730656,
+       33.8202246
+      ],
+      [
+       -78.6731193,
+       33.8203299
+      ],
+      [
+       -78.6732933,
+       33.8206691
+      ],
+      [
+       -78.6733204,
+       33.8207231
+      ],
+      [
+       -78.6735347,
+       33.82115
+      ],
+      [
+       -78.6737285,
+       33.8215361
+      ],
+      [
+       -78.6737508,
+       33.8215805
+      ],
+      [
+       -78.6738055,
+       33.8216802
+      ],
+      [
+       -78.6742056,
+       33.8224087
+      ],
+      [
+       -78.6742814,
+       33.8225467
+      ],
+      [
+       -78.6745603,
+       33.8230637
+      ],
+      [
+       -78.6747695,
+       33.823447
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ "Ripley's Aquarium, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Ripley%27s+Aquarium%2C+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.7159253",
+    "lon": "-78.8778523",
+    "name": "Ripley's Aquarium",
+    "display_name": "Ripley's Aquarium, Celebrity Circle, Broadway at the Beach, Myrtle Beach, Horry County, South Carolina, 29579, United States",
+    "class": "tourism",
+    "type": "aquarium",
+    "osm_type": "way",
+    "osm_id": 43532139
+   }
+  ]
+ },
+ "Myrtle Beach Pelicans": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Myrtle+Beach+Pelicans&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.7114996",
+    "lon": "-78.8842588",
+    "name": "Pelicans Ballpark",
+    "display_name": "Pelicans Ballpark, John Q. Hammons Street, Broadway at the Beach, Myrtle Beach, Horry County, South Carolina, 29579, United States",
+    "class": "leisure",
+    "type": "stadium",
+    "osm_type": "way",
+    "osm_id": 280134101
+   }
+  ]
+ },
+ "Pelicans Ballpark, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Pelicans+Ballpark%2C+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.7114996",
+    "lon": "-78.8842588",
+    "name": "Pelicans Ballpark",
+    "display_name": "Pelicans Ballpark, John Q. Hammons Street, Broadway at the Beach, Myrtle Beach, Horry County, South Carolina, 29579, United States",
+    "class": "leisure",
+    "type": "stadium",
+    "osm_type": "way",
+    "osm_id": 280134101
+   }
+  ]
+ },
+ "Grand Strand Medical Center": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Grand+Strand+Medical+Center&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.7580795",
+    "lon": "-78.8194704",
+    "name": "Grand Strand Regional Medical Center",
+    "display_name": "Grand Strand Regional Medical Center, 809, 82nd Parkway, Myrtle Beach, Horry County, South Carolina, 29572, United States",
+    "class": "amenity",
+    "type": "hospital",
+    "osm_type": "way",
+    "osm_id": 452337849
+   },
+   {
+    "lat": "33.7587184",
+    "lon": "-78.8198118",
+    "name": "Grand Strand Regional Medical Center",
+    "display_name": "Grand Strand Regional Medical Center, 809, 82nd Parkway, Living Dunes, Myrtle Beach, Horry County, South Carolina, 29572, United States",
+    "class": "building",
+    "type": "hospital",
+    "osm_type": "way",
+    "osm_id": 164200041
+   }
+  ]
+ },
+ "Coastal Grand Mall, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Coastal+Grand+Mall%2C+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.7027515",
+    "lon": "-78.9223169",
+    "name": "Coastal Grand Mall",
+    "display_name": "Coastal Grand Mall, Myrtle Beach, Horry County, South Carolina, United States",
+    "class": "landuse",
+    "type": "retail",
+    "osm_type": "way",
+    "osm_id": 24816289
+   },
+   {
+    "lat": "33.7025683",
+    "lon": "-78.9229345",
+    "name": "Coastal Grand Mall",
+    "display_name": "Coastal Grand Mall, Market Court, Coastal Grand Mall, Myrtle Beach, Horry County, South Carolina, 29577, United States",
+    "class": "building",
+    "type": "mall",
+    "osm_type": "way",
+    "osm_id": 43532396
+   }
+  ]
+ },
+ "Restaurant Row, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Restaurant+Row%2C+Myrtle+Beach&format=json&limit=3",
+  "results": []
+ },
+ "OD Pavilion, North Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=OD+Pavilion%2C+North+Myrtle+Beach&format=json&limit=3",
+  "results": []
+ },
+ "Fat Harold's Beach Club, North Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Fat+Harold%27s+Beach+Club%2C+North+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.8197859",
+    "lon": "-78.6721123",
+    "name": "Fat Harold's Beach Club",
+    "display_name": "Fat Harold's Beach Club, 212, Main Street, Ocean Drive Beach, North Myrtle Beach, Horry County, South Carolina, 29582, United States",
+    "class": "amenity",
+    "type": "nightclub",
+    "osm_type": "way",
+    "osm_id": 1088316033
+   }
+  ]
+ },
+ "_read": "2026-11-09T07:40:40Z",
+ "_licence": "Data (c) OpenStreetMap contributors, ODbL 1.0",
+ "2nd Avenue Pier, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=2nd+Avenue+Pier%2C+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.6833252",
+    "lon": "-78.8850536",
+    "name": "2nd Avenue Pier",
+    "display_name": "2nd Avenue Pier, Ocean View MHP, Myrtle Beach, Horry County, South Carolina, 29577, United States",
+    "class": "highway",
+    "type": "footway",
+    "osm_type": "way",
+    "osm_id": 164852103,
+    "geojson": null
+   },
+   {
+    "lat": "33.6833477",
+    "lon": "-78.8851010",
+    "name": "2nd Avenue Pier",
+    "display_name": "2nd Avenue Pier, Ocean View MHP, Myrtle Beach, Horry County, South Carolina, 29577, United States",
+    "class": "man_made",
+    "type": "pier",
+    "osm_type": "way",
+    "osm_id": 927796200,
+    "geojson": null
+   }
+  ]
+ },
+ "Apache Family Campground Pier": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Apache+Family+Campground+Pier&format=json&limit=3",
+  "results": []
+ },
+ "Dunes Club, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Dunes+Club%2C+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.7630390",
+    "lon": "-78.7960467",
+    "name": "Dunes Golf & Beach Club",
+    "display_name": "Dunes Golf & Beach Club, Marsh Court, Bal Harbor, Myrtle Beach, Horry County, South Carolina, 29572, United States",
+    "class": "leisure",
+    "type": "golf_course",
+    "osm_type": "way",
+    "osm_id": 793663795,
+    "geojson": null
+   }
+  ]
+ },
+ "Kingston Plantation, Myrtle Beach": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Kingston+Plantation%2C+Myrtle+Beach&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.7673834",
+    "lon": "-78.7778153",
+    "name": "Kingston Plantation Condos",
+    "display_name": "Kingston Plantation Condos, 9800, Queensway Boulevard, Kingston Plantation, Arcadian Shores, Myrtle Beach, Horry County, South Carolina, 29572, United States",
+    "class": "tourism",
+    "type": "hotel",
+    "osm_type": "way",
+    "osm_id": 360112440,
+    "geojson": null
+   },
+   {
+    "lat": "33.7676942",
+    "lon": "-78.7780105",
+    "name": "Embassy Suites by Hilton Myrtle Beach Oceanfront Resort",
+    "display_name": "Embassy Suites by Hilton Myrtle Beach Oceanfront Resort, 9800, Queensway Boulevard, Kingston Plantation, Arcadian Shores, Myrtle Beach, Horry County, South Carolina, 29572, United States",
+    "class": "tourism",
+    "type": "hotel",
+    "osm_type": "node",
+    "osm_id": 8746300535,
+    "geojson": null
+   }
+  ]
+ },
+ "Hilton Myrtle Beach Resort": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Hilton+Myrtle+Beach+Resort&format=json&limit=3",
+  "results": [
+   {
+    "lat": "33.7689994",
+    "lon": "-78.7747069",
+    "name": "Hilton Myrtle Beach Resort",
+    "display_name": "Hilton Myrtle Beach Resort, 10000, Beach Club Drive, Arcadian Shores, Myrtle Beach, Horry County, South Carolina, 29572, United States",
+    "class": "tourism",
+    "type": "hotel",
+    "osm_type": "way",
+    "osm_id": 670728425,
+    "geojson": null
+   }
+  ]
+ }
+}

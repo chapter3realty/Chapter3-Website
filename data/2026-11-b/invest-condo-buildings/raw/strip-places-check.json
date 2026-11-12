@@ -1,0 +1,572 @@
+{
+ "read": "2026-11-09T07:44:43.652633Z",
+ "api": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=<words>",
+ "places": {
+  "myrtle-beach-resort": {
+   "building": "mb-resort",
+   "words": "Mb Resort",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mb+Resort",
+   "total": 58,
+   "pins": 58,
+   "streets": [
+    [
+     "5905 S Kings Hwy. | Myrtle Beach",
+     37
+    ],
+    [
+     "5905 South Kings Hwy. | Myrtle Beach",
+     17
+    ],
+    [
+     "5905 S Kings Highway | Myrtle Beach",
+     2
+    ]
+   ],
+   "other_addresses_one_each": 2,
+   "was": 58
+  },
+  "compass-cove": {
+   "building": "compass-cove",
+   "words": "Compass Cove",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove",
+   "total": 35,
+   "pins": 35,
+   "streets": [
+    [
+     "2401 S Ocean Blvd. | Myrtle Beach",
+     23
+    ],
+    [
+     "2311 S Ocean Blvd. | Myrtle Beach",
+     8
+    ]
+   ],
+   "other_addresses_one_each": 4,
+   "was": 35
+  },
+  "bluewater-resort": {
+   "building": "bluewater",
+   "words": "Bluewater",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater",
+   "total": 37,
+   "pins": 37,
+   "streets": [
+    [
+     "2001 S Ocean Blvd. | Myrtle Beach",
+     27
+    ],
+    [
+     "1906 S Ocean Blvd. | Myrtle Beach",
+     3
+    ],
+    [
+     "2000 S Ocean Blvd. | Myrtle Beach",
+     3
+    ]
+   ],
+   "other_addresses_one_each": 4,
+   "was": 37
+  },
+  "landmark-resort": {
+   "building": "landmark",
+   "words": "Landmark",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Landmark",
+   "total": 93,
+   "pins": 93,
+   "streets": [
+    [
+     "1501 S Ocean Blvd. | Myrtle Beach",
+     78
+    ],
+    [
+     "1501 South Ocean Blvd. | Myrtle Beach",
+     5
+    ],
+    [
+     "1501 Ocean Blvd. S | Myrtle Beach",
+     5
+    ],
+    [
+     "1501 S Ocean Blvd. S | Myrtle Beach",
+     4
+    ]
+   ],
+   "other_addresses_one_each": 1,
+   "was": 93
+  },
+  "the-palace": {
+   "building": "palace",
+   "words": "Palace",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace",
+   "total": 25,
+   "pins": 25,
+   "streets": [
+    [
+     "1605 S Ocean Blvd. | Myrtle Beach",
+     22
+    ],
+    [
+     "1605 South Ocean Blvd. | Myrtle Beach",
+     2
+    ]
+   ],
+   "other_addresses_one_each": 1,
+   "was": 25
+  },
+  "sea-mist-resort": {
+   "building": "sea-mist",
+   "words": "Sea Mist",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist",
+   "total": 32,
+   "pins": 32,
+   "streets": [
+    [
+     "1207 S Ocean Blvd. | Myrtle Beach",
+     24
+    ],
+    [
+     "1205 S Ocean Blvd. | Myrtle Beach",
+     4
+    ]
+   ],
+   "other_addresses_one_each": 4,
+   "was": 32
+  },
+  "coral-beach-resort": {
+   "building": "coral-beach",
+   "words": "Coral Beach",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach",
+   "total": 40,
+   "pins": 40,
+   "streets": [
+    [
+     "1105 S Ocean Blvd. | Myrtle Beach",
+     39
+    ]
+   ],
+   "other_addresses_one_each": 1,
+   "was": 40
+  },
+  "bay-view-resort": {
+   "building": "bay-view",
+   "words": "Bay View Resort",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort",
+   "total": 10,
+   "pins": 10,
+   "streets": [
+    [
+     "504 N Ocean Blvd. | Myrtle Beach",
+     9
+    ]
+   ],
+   "other_addresses_one_each": 1,
+   "was": 10
+  },
+  "camelot-by-the-sea": {
+   "building": "camelot",
+   "words": "Camelot",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot",
+   "total": 9,
+   "pins": 9,
+   "streets": [
+    [
+     "2000 N Ocean Blvd. | Myrtle Beach",
+     9
+    ]
+   ],
+   "other_addresses_one_each": 0,
+   "was": 9
+  },
+  "breakers-resort": {
+   "building": "breakers",
+   "words": "Breakers Resort",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort",
+   "total": 4,
+   "pins": 4,
+   "streets": [
+    [
+     "2006 N Ocean Blvd. | Myrtle Beach",
+     2
+    ]
+   ],
+   "other_addresses_one_each": 2,
+   "was": 4
+  },
+  "caribbean-resort": {
+   "building": "caribbean",
+   "words": "Caribbean",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean",
+   "total": 26,
+   "pins": 26,
+   "streets": [
+    [
+     "3000 N Ocean Blvd. | Myrtle Beach",
+     16
+    ],
+    [
+     "3000 N Ocean Blvd. N | Myrtle Beach",
+     8
+    ]
+   ],
+   "other_addresses_one_each": 2,
+   "was": 26
+  },
+  "beach-colony": {
+   "building": "beach-colony",
+   "words": "Beach Colony",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony",
+   "total": 21,
+   "pins": 21,
+   "streets": [
+    [
+     "5308 N Ocean Blvd. | Myrtle Beach",
+     20
+    ]
+   ],
+   "other_addresses_one_each": 1,
+   "was": 21
+  },
+  "dunes-village-resort": {
+   "building": "dunes-village",
+   "words": "Dunes Village",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village",
+   "total": 25,
+   "pins": 25,
+   "streets": [
+    [
+     "5300 N Ocean Blvd. | Myrtle Beach",
+     13
+    ],
+    [
+     "5200 N Ocean Blvd. | Myrtle Beach",
+     10
+    ]
+   ],
+   "other_addresses_one_each": 2,
+   "was": 25
+  },
+  "monterey-bay-suites": {
+   "building": "monterey-bay",
+   "words": "Monterey Bay",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay",
+   "total": 31,
+   "pins": 31,
+   "streets": [
+    [
+     "6804 N Ocean Blvd. | Myrtle Beach",
+     27
+    ],
+    [
+     "6804 N Ocean Blvd. N | Myrtle Beach",
+     3
+    ]
+   ],
+   "other_addresses_one_each": 1,
+   "was": 31
+  },
+  "grande-cayman-resort": {
+   "building": "grande-cayman",
+   "words": "Grande Cayman",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman",
+   "total": 21,
+   "pins": 21,
+   "streets": [
+    [
+     "7200 N Ocean Blvd. | Myrtle Beach",
+     20
+    ]
+   ],
+   "other_addresses_one_each": 1,
+   "was": 21
+  },
+  "caravelle-resort": {
+   "building": "caravelle",
+   "words": "Caravelle",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle",
+   "total": 45,
+   "pins": 45,
+   "streets": [
+    [
+     "6900 N Ocean Blvd. | Myrtle Beach",
+     34
+    ],
+    [
+     "7000 N Ocean Blvd. | Myrtle Beach",
+     5
+    ],
+    [
+     "6900 Ocean Blvd. N | Myrtle Beach",
+     3
+    ]
+   ],
+   "other_addresses_one_each": 3,
+   "was": 45
+  },
+  "ocean-reef-resort": {
+   "building": "ocean-reef",
+   "words": "Ocean Reef",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef",
+   "total": 32,
+   "pins": 32,
+   "streets": [
+    [
+     "7100 N Ocean Blvd. | Myrtle Beach",
+     26
+    ],
+    [
+     "7100 Ocean Blvd. N | Myrtle Beach",
+     3
+    ],
+    [
+     "7100 N Ocean Blvd. N | Myrtle Beach",
+     2
+    ]
+   ],
+   "other_addresses_one_each": 1,
+   "was": 32
+  },
+  "sand-dunes-resort": {
+   "building": "sand-dunes",
+   "words": "Sand Dunes",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes",
+   "total": 51,
+   "pins": 51,
+   "streets": [
+    [
+     "201 74th Ave. N | Myrtle Beach",
+     26
+    ],
+    [
+     "205 74th Ave. N | Myrtle Beach",
+     15
+    ],
+    [
+     "201 N 74th Ave. N | Myrtle Beach",
+     4
+    ],
+    [
+     "208 74th Ave. N | Myrtle Beach",
+     2
+    ]
+   ],
+   "other_addresses_one_each": 4,
+   "was": 51
+  },
+  "sands-ocean-club": {
+   "building": "sands-ocean",
+   "words": "Sands Ocean",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean",
+   "total": 16,
+   "pins": 16,
+   "streets": [
+    [
+     "9550 Shore Dr. | Myrtle Beach",
+     16
+    ]
+   ],
+   "other_addresses_one_each": 0,
+   "was": 16
+  },
+  "margate-tower": {
+   "building": "margate",
+   "words": "Margate",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate",
+   "total": 8,
+   "pins": 8,
+   "streets": [
+    [
+     "8500 Margate Circle | Myrtle Beach",
+     8
+    ]
+   ],
+   "other_addresses_one_each": 0,
+   "was": 8
+  },
+  "brighton-tower": {
+   "building": "brighton",
+   "words": "Brighton",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton",
+   "total": 9,
+   "pins": 9,
+   "streets": [
+    [
+     "8560 Queensway Blvd. | Myrtle Beach",
+     9
+    ]
+   ],
+   "other_addresses_one_each": 0,
+   "was": 9
+  },
+  "south-hampton": {
+   "building": "south-hampton",
+   "words": "South Hampton",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton",
+   "total": 13,
+   "pins": 13,
+   "streets": [
+    [
+     "9820 Queensway Blvd. | Myrtle Beach",
+     13
+    ]
+   ],
+   "other_addresses_one_each": 0,
+   "was": 13
+  },
+  "royale-palms": {
+   "building": "royale-palms",
+   "words": "Royale Palms",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms",
+   "total": 14,
+   "pins": 14,
+   "streets": [
+    [
+     "9994 Beach Club Dr. | Myrtle Beach",
+     14
+    ]
+   ],
+   "other_addresses_one_each": 0,
+   "was": 14
+  },
+  "seawatch-resort": {
+   "building": "seawatch",
+   "words": "SeaWatch",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch",
+   "total": 5,
+   "pins": 5,
+   "streets": [
+    [
+     "161 Seawatch Dr. | Myrtle Beach",
+     3
+    ]
+   ],
+   "other_addresses_one_each": 2,
+   "was": 5
+  },
+  "ocean-creek-resort": {
+   "building": "ocean-creek",
+   "words": "Ocean Creek",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek",
+   "total": 34,
+   "pins": 34,
+   "streets": [
+    [
+     "415 Ocean Creek Dr. | Myrtle Beach",
+     20
+    ],
+    [
+     "100 Ocean Creek Dr. | Myrtle Beach",
+     6
+    ],
+    [
+     "101 Ocean Creek Dr. | Myrtle Beach",
+     3
+    ],
+    [
+     "415 Ocean Creek Blvd. | Myrtle Beach",
+     2
+    ]
+   ],
+   "other_addresses_one_each": 3,
+   "was": 34
+  },
+  "north-beach-towers": {
+   "building": "north-beach-towers",
+   "words": "North Beach Tower",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower",
+   "total": 10,
+   "pins": 10,
+   "streets": [
+    [
+     "100 North Beach Blvd. | North Myrtle Beach",
+     8
+    ],
+    [
+     "100 N Beach Blvd. | North Myrtle Beach",
+     2
+    ]
+   ],
+   "other_addresses_one_each": 0,
+   "was": 10
+  },
+  "beach-cove-resort": {
+   "building": "beach-cove",
+   "words": "Beach Cove",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove",
+   "total": 29,
+   "pins": 29,
+   "streets": [
+    [
+     "4800 S Ocean Blvd. | North Myrtle Beach",
+     25
+    ],
+    [
+     "4800 South Ocean Blvd. | North Myrtle Beach",
+     2
+    ]
+   ],
+   "other_addresses_one_each": 2,
+   "was": 29
+  },
+  "bay-watch-resort": {
+   "building": "bay-watch",
+   "words": "Bay Watch",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch",
+   "total": 46,
+   "pins": 46,
+   "streets": [
+    [
+     "2701 S Ocean Blvd. | North Myrtle Beach",
+     21
+    ],
+    [
+     "2801 S Ocean Blvd. | North Myrtle Beach",
+     9
+    ],
+    [
+     "2711 S Ocean Blvd. | North Myrtle Beach",
+     9
+    ],
+    [
+     "2701 S Ocean Blvd. S | North Myrtle Beach",
+     2
+    ]
+   ],
+   "other_addresses_one_each": 5,
+   "was": 46
+  },
+  "avista-resort": {
+   "building": "avista",
+   "words": "Avista",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista",
+   "total": 10,
+   "pins": 10,
+   "streets": [
+    [
+     "300 N Ocean Blvd. | North Myrtle Beach",
+     9
+    ]
+   ],
+   "other_addresses_one_each": 1,
+   "was": 10
+  },
+  "prince-resort": {
+   "building": "prince",
+   "words": "Prince Resort",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort",
+   "total": 7,
+   "pins": 7,
+   "streets": [
+    [
+     "3500 N Ocean Blvd. | North Myrtle Beach",
+     4
+    ],
+    [
+     "3601 N Ocean Blvd. | North Myrtle Beach",
+     3
+    ]
+   ],
+   "other_addresses_one_each": 0,
+   "was": 7
+  }
+ }
+}

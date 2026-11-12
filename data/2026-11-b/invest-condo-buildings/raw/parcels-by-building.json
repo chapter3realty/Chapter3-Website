@@ -1,0 +1,3831 @@
+{
+ "read": "2026-11-09T05:19:53.268754Z",
+ "source": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query",
+ "box_m": 90,
+ "buildings": {
+  "mb-resort": {
+   "point": [
+    33.63211,
+    -78.94721
+   ],
+   "regimes": [
+    {
+     "regime": "",
+     "units": 0,
+     "parcels": 144,
+     "landuse": {
+      "": 143,
+      "214": 1
+     }
+    }
+   ]
+  },
+  "landmark": {
+   "point": [
+    33.67319,
+    -78.90075
+   ],
+   "regimes": [
+    {
+     "regime": "LANDMARK HPR PH I",
+     "units": 340,
+     "parcels": 340,
+     "landuse": {
+      "107": 339,
+      "355": 1
+     }
+    },
+    {
+     "regime": "THE PALACE",
+     "units": 302,
+     "parcels": 303,
+     "landuse": {
+      "107": 298,
+      "356": 4,
+      "500": 1
+     }
+    },
+    {
+     "regime": "LANDMARK HPR PH II",
+     "units": 231,
+     "parcels": 231,
+     "landuse": {
+      "107": 231
+     }
+    },
+    {
+     "regime": "",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "317": 2
+     }
+    },
+    {
+     "regime": "WITHERS HEIGHTS SECT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "326": 1
+     }
+    },
+    {
+     "regime": "LANDMARK HPR",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "500": 1
+     }
+    },
+    {
+     "regime": "W/S S OCEAN BLVD",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "317": 1
+     }
+    },
+    {
+     "regime": "WITHERS HTS EXT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "308": 1
+     }
+    }
+   ]
+  },
+  "sea-mist": {
+   "point": [
+    33.67569,
+    -78.89782
+   ],
+   "regimes": [
+    {
+     "regime": "CORAL BEACH HPR",
+     "units": 295,
+     "parcels": 296,
+     "landuse": {
+      "107": 294,
+      "106": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "TIDES/DRIFTWD/OASIS HPR",
+     "units": 271,
+     "parcels": 272,
+     "landuse": {
+      "107": 269,
+      "106": 2,
+      "500": 1
+     }
+    },
+    {
+     "regime": "WITHERS HTS SEC",
+     "units": 3,
+     "parcels": 3,
+     "landuse": {
+      "315": 2,
+      "326": 1
+     }
+    },
+    {
+     "regime": "WITHERS HTS SECT",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "314": 1,
+      "317": 1
+     }
+    },
+    {
+     "regime": "WITHERS HTS",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "315": 1
+     }
+    },
+    {
+     "regime": "CORAL BACH HPR",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "WITHERS HGTS",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "313": 1
+     }
+    }
+   ]
+  },
+  "compass-cove": {
+   "point": [
+    33.66567,
+    -78.90971
+   ],
+   "regimes": [
+    {
+     "regime": "PINNACLE OCEANFRT TOWER",
+     "units": 293,
+     "parcels": 294,
+     "landuse": {
+      "107": 290,
+      "356": 2,
+      "106": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "HOLIDAY SANDS @ S BEACH",
+     "units": 119,
+     "parcels": 120,
+     "landuse": {
+      "107": 117,
+      "355": 2,
+      "500": 1
+     }
+    },
+    {
+     "regime": "COMPASS COVE N TOWER",
+     "units": 101,
+     "parcels": 102,
+     "landuse": {
+      "107": 99,
+      "355": 2,
+      "500": 1
+     }
+    },
+    {
+     "regime": "SCHOONER OCEANFRT TOWER",
+     "units": 92,
+     "parcels": 93,
+     "landuse": {
+      "107": 91,
+      "106": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "MIDWAY SEC",
+     "units": 1,
+     "parcels": 3,
+     "landuse": {
+      "314": 1,
+      "100": 1,
+      "326": 1
+     }
+    },
+    {
+     "regime": "VILLAS @ 24TH AVE HPR",
+     "units": 1,
+     "parcels": 2,
+     "landuse": {
+      "500": 1,
+      "135": 1
+     }
+    },
+    {
+     "regime": "MIDWAY SECTION",
+     "units": 1,
+     "parcels": 2,
+     "landuse": {
+      "300": 1,
+      "320": 1
+     }
+    },
+    {
+     "regime": "BLK 2 BETWEEN 24TH AVE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BLK 1 BETWEEN 23RD AVE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "300": 1
+     }
+    },
+    {
+     "regime": "PINNACLE OCNFRT TOWER",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "PINNACLE OCNFRNT TOWER",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MIDWAY SECT (PARCEL A)",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "326": 1
+     }
+    }
+   ]
+  },
+  "coral-beach": {
+   "point": [
+    33.67585,
+    -78.89745
+   ],
+   "regimes": [
+    {
+     "regime": "CORAL BEACH HPR",
+     "units": 295,
+     "parcels": 296,
+     "landuse": {
+      "107": 294,
+      "106": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "TIDES/DRIFTWD/OASIS HPR",
+     "units": 271,
+     "parcels": 272,
+     "landuse": {
+      "107": 269,
+      "106": 2,
+      "500": 1
+     }
+    },
+    {
+     "regime": "WITHERS HTS SECT",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "314": 1,
+      "317": 1
+     }
+    },
+    {
+     "regime": "WITHERS HTS SEC",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "315": 2
+     }
+    },
+    {
+     "regime": "WITHERS HTS",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "315": 1
+     }
+    },
+    {
+     "regime": "CORAL BACH HPR",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "WITHERS HT SECT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "315": 1
+     }
+    },
+    {
+     "regime": "WITHERS HGTS",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "313": 1
+     }
+    }
+   ]
+  },
+  "bay-view": {
+   "point": [
+    33.69003,
+    -78.88189
+   ],
+   "regimes": [
+    {
+     "regime": "HOTEL SEC",
+     "units": 12,
+     "parcels": 20,
+     "landuse": {
+      "300": 8,
+      "320": 5,
+      "315": 3,
+      "319": 1
+     }
+    },
+    {
+     "regime": "HOTEL SECT",
+     "units": 0,
+     "parcels": 2,
+     "landuse": {
+      "300": 2
+     }
+    },
+    {
+     "regime": "HOTEL SECTION",
+     "units": 1,
+     "parcels": 2,
+     "landuse": {
+      "320": 1,
+      "373": 1
+     }
+    },
+    {
+     "regime": "HOTEL SEC BL 2 BETWEEN",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "HOTEL SEC BL 1 BETWEEN",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    }
+   ]
+  },
+  "breakers": {
+   "point": [
+    33.7003,
+    -78.87044
+   ],
+   "regimes": [
+    {
+     "regime": "CAMELOT BY THE SEA HPR",
+     "units": 232,
+     "parcels": 233,
+     "landuse": {
+      "107": 231,
+      "355": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "BREAKERS CONDO TOWER",
+     "units": 179,
+     "parcels": 180,
+     "landuse": {
+      "107": 175,
+      "356": 4,
+      "500": 1
+     }
+    },
+    {
+     "regime": "SAILFISH RSRT HPR PH I",
+     "units": 41,
+     "parcels": 42,
+     "landuse": {
+      "107": 41,
+      "500": 1
+     }
+    },
+    {
+     "regime": "EASTERN SEC",
+     "units": 2,
+     "parcels": 3,
+     "landuse": {
+      "300": 1,
+      "315": 1,
+      "313": 1
+     }
+    },
+    {
+     "regime": "EASTERN SECT",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "327": 1,
+      "326": 1
+     }
+    },
+    {
+     "regime": "BHND LT 156 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BHND LT 173 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "EAST CHESTER EXT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "373": 1
+     }
+    },
+    {
+     "regime": "BHIND LTS 163,5,7 & 9",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BHND LT 171 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "313": 1
+     }
+    },
+    {
+     "regime": "E CHESTER SEC",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "326": 1
+     }
+    },
+    {
+     "regime": "BHND LT 157 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BHND LT 161 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BHND LT 159 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "E CHESTER EXT",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "326": 1
+     }
+    },
+    {
+     "regime": "ATLANTIS HPR",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "500": 1
+     }
+    },
+    {
+     "regime": "2003 N OCEAN BLVD",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "338": 1
+     }
+    },
+    {
+     "regime": "EAST CHESTER SECTION",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "314": 1
+     }
+    }
+   ]
+  },
+  "camelot": {
+   "point": [
+    33.69965,
+    -78.87113
+   ],
+   "regimes": [
+    {
+     "regime": "CAMELOT BY THE SEA HPR",
+     "units": 232,
+     "parcels": 233,
+     "landuse": {
+      "107": 231,
+      "355": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "BREAKERS CONDO TOWER",
+     "units": 179,
+     "parcels": 180,
+     "landuse": {
+      "107": 175,
+      "356": 4,
+      "500": 1
+     }
+    },
+    {
+     "regime": "EASTERN SECT",
+     "units": 5,
+     "parcels": 7,
+     "landuse": {
+      "326": 2,
+      "327": 1,
+      "300": 1,
+      "313": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 0,
+     "parcels": 4,
+     "landuse": {
+      "300": 4
+     }
+    },
+    {
+     "regime": "EASTERN SEC",
+     "units": 1,
+     "parcels": 2,
+     "landuse": {
+      "300": 1,
+      "313": 1
+     }
+    },
+    {
+     "regime": "BHND LT 156 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "E CHESTER SEC",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "326": 1
+     }
+    },
+    {
+     "regime": "EAST CHESTER EXT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "373": 1
+     }
+    },
+    {
+     "regime": "BHIND LTS 163,5,7 & 9",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BHND LT 157 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BHND LT 161 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BHND LT 159 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "2003 N OCEAN BLVD",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "338": 1
+     }
+    },
+    {
+     "regime": "EAST CHESTER SECTION",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "314": 1
+     }
+    }
+   ]
+  },
+  "caribbean": {
+   "point": [
+    33.70773,
+    -78.86116
+   ],
+   "regimes": [
+    {
+     "regime": "CARIBBEAN OCEANFRT TWR",
+     "units": 196,
+     "parcels": 197,
+     "landuse": {
+      "107": 196,
+      "500": 1
+     }
+    },
+    {
+     "regime": "CARIBBEAN TOWER HPR",
+     "units": 173,
+     "parcels": 174,
+     "landuse": {
+      "107": 169,
+      "355": 3,
+      "393": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "RIPTIDE BEACH CLUB",
+     "units": 54,
+     "parcels": 55,
+     "landuse": {
+      "108": 53,
+      "107": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "KINGS HWY SEC",
+     "units": 5,
+     "parcels": 7,
+     "landuse": {
+      "300": 2,
+      "320": 1,
+      "326": 1,
+      "353": 1
+     }
+    },
+    {
+     "regime": "KINGS HWY SECT BLK 3",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "300": 1
+     }
+    },
+    {
+     "regime": "CHELSEA HOUSE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "500": 1
+     }
+    }
+   ]
+  },
+  "anderson": {
+   "point": [
+    33.70506,
+    -78.86452
+   ],
+   "regimes": [
+    {
+     "regime": "ANDERSON OCEAN CLUB HPR",
+     "units": 314,
+     "parcels": 314,
+     "landuse": {
+      "107": 304,
+      "106": 8,
+      "356": 2
+     }
+    },
+    {
+     "regime": "CAROLINIAN RESORT HPR",
+     "units": 134,
+     "parcels": 135,
+     "landuse": {
+      "107": 129,
+      "355": 4,
+      "312": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "EASTERN SECT",
+     "units": 6,
+     "parcels": 7,
+     "landuse": {
+      "317": 2,
+      "326": 1,
+      "300": 1,
+      "313": 1
+     }
+    },
+    {
+     "regime": "EASTERN SEC",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "317": 1
+     }
+    },
+    {
+     "regime": "ANDERSON OCEAN CLB HPR",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "500": 1
+     }
+    },
+    {
+     "regime": "% COMMON INT LAND PCL",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "500": 1
+     }
+    }
+   ]
+  },
+  "dunes-village": {
+   "point": [
+    33.72402,
+    -78.84136
+   ],
+   "regimes": [
+    {
+     "regime": "DUNES VILLAGE HPR",
+     "units": 269,
+     "parcels": 269,
+     "landuse": {
+      "107": 264,
+      "106": 3,
+      "500": 1,
+      "356": 1
+     }
+    },
+    {
+     "regime": "PAN AMERICAN HPR",
+     "units": 236,
+     "parcels": 237,
+     "landuse": {
+      "107": 231,
+      "356": 3,
+      "355": 2,
+      "500": 1
+     }
+    },
+    {
+     "regime": "OCEAN VILLAGE",
+     "units": 9,
+     "parcels": 11,
+     "landuse": {
+      "101": 9,
+      "134": 1,
+      "100": 1
+     }
+    },
+    {
+     "regime": "DUNES SEC",
+     "units": 4,
+     "parcels": 5,
+     "landuse": {
+      "101": 4,
+      "100": 1
+     }
+    },
+    {
+     "regime": "BETWEEN 51 & 52 AVE N",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BETWEEN 52 & 53 AVE N",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "300": 1
+     }
+    },
+    {
+     "regime": "BETWEEN 53 & 54 AVE N",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    }
+   ]
+  },
+  "sand-dunes": {
+   "point": [
+    33.7452,
+    -78.81078
+   ],
+   "regimes": [
+    {
+     "regime": "LONG BAY EXT",
+     "units": 9,
+     "parcels": 11,
+     "landuse": {
+      "101": 9,
+      "100": 2
+     }
+    },
+    {
+     "regime": "",
+     "units": 0,
+     "parcels": 3,
+     "landuse": {
+      "600": 3
+     }
+    },
+    {
+     "regime": "LONG BAY",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "123": 1,
+      "101": 1
+     }
+    },
+    {
+     "regime": "LONG BAY EST",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "101": 1
+     }
+    }
+   ]
+  },
+  "caravelle": {
+   "point": [
+    33.73885,
+    -78.82083
+   ],
+   "regimes": [
+    {
+     "regime": "CARAVELLE RESORT HPR",
+     "units": 348,
+     "parcels": 349,
+     "landuse": {
+      "107": 343,
+      "106": 5,
+      "500": 1
+     }
+    },
+    {
+     "regime": "ST CLEMENTS",
+     "units": 66,
+     "parcels": 67,
+     "landuse": {
+      "107": 64,
+      "500": 1,
+      "356": 1,
+      "355": 1
+     }
+    },
+    {
+     "regime": "CARAVELLE TOWER HPR",
+     "units": 55,
+     "parcels": 56,
+     "landuse": {
+      "107": 54,
+      "356": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 0,
+     "parcels": 53,
+     "landuse": {
+      "": 53
+     }
+    },
+    {
+     "regime": "CAROLINA DUNES",
+     "units": 36,
+     "parcels": 37,
+     "landuse": {
+      "107": 36,
+      "500": 1
+     }
+    },
+    {
+     "regime": "CANE PATCH",
+     "units": 5,
+     "parcels": 7,
+     "landuse": {
+      "311": 2,
+      "353": 1,
+      "338": 1,
+      "313": 1
+     }
+    },
+    {
+     "regime": "PENTHSE #2",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "PENTHOUSE #4",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "PENTHOUSE #3",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "END OF 69TH AVE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BETWEN 69TH & 70TH AVE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BETWEEN 70TH & 71ST AVE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "CARAVELL RESORT HPR",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "CARAVELLE TOWER",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "CARAVELLE PROPERTIES",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    }
+   ]
+  },
+  "grande-cayman": {
+   "point": [
+    33.73795,
+    -78.82215
+   ],
+   "regimes": [
+    {
+     "regime": "CARAVELLE RESORT HPR",
+     "units": 348,
+     "parcels": 349,
+     "landuse": {
+      "107": 343,
+      "106": 5,
+      "500": 1
+     }
+    },
+    {
+     "regime": "MONTEREY BAY SUITES RST",
+     "units": 195,
+     "parcels": 196,
+     "landuse": {
+      "107": 194,
+      "106": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 0,
+     "parcels": 100,
+     "landuse": {
+      "": 99,
+      "600": 1
+     }
+    },
+    {
+     "regime": "ST JOHNS INN HPR PH I",
+     "units": 89,
+     "parcels": 89,
+     "landuse": {
+      "107": 88,
+      "355": 1
+     }
+    },
+    {
+     "regime": "CAROLINA DUNES",
+     "units": 36,
+     "parcels": 37,
+     "landuse": {
+      "107": 36,
+      "500": 1
+     }
+    },
+    {
+     "regime": "FOREST DUNES",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "101": 2
+     }
+    },
+    {
+     "regime": "PENTHSE #2",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "PENTHOUSE #4",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "CANE PATCH SEC",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "123": 1
+     }
+    },
+    {
+     "regime": "PENTHOUSE #3",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "END OF 69TH AVE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "CARAVELL RESORT HPR",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "FOREST DUNES EXT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "101": 1
+     }
+    },
+    {
+     "regime": "CANE PATCH SECT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "313": 1
+     }
+    }
+   ]
+  },
+  "ocean-reef": {
+   "point": [
+    33.74023,
+    -78.81882
+   ],
+   "regimes": [
+    {
+     "regime": "LONG BAY RESORT HPR",
+     "units": 290,
+     "parcels": 291,
+     "landuse": {
+      "107": 286,
+      "356": 3,
+      "355": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "OCEAN REEF RSRT N TOWER",
+     "units": 255,
+     "parcels": 255,
+     "landuse": {
+      "107": 254,
+      "106": 1
+     }
+    },
+    {
+     "regime": "OCEAN REEF RESORT S T",
+     "units": 92,
+     "parcels": 93,
+     "landuse": {
+      "107": 91,
+      "355": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 0,
+     "parcels": 53,
+     "landuse": {
+      "": 53
+     }
+    },
+    {
+     "regime": "THE SAVOY",
+     "units": 18,
+     "parcels": 19,
+     "landuse": {
+      "107": 18,
+      "500": 1
+     }
+    },
+    {
+     "regime": "LONG BAY",
+     "units": 6,
+     "parcels": 7,
+     "landuse": {
+      "109": 5,
+      "320": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "CANE PATCH",
+     "units": 1,
+     "parcels": 3,
+     "landuse": {
+      "313": 1,
+      "320": 1,
+      "300": 1
+     }
+    },
+    {
+     "regime": "7100 N OCEAN BLVD",
+     "units": 3,
+     "parcels": 3,
+     "landuse": {
+      "355": 3
+     }
+    },
+    {
+     "regime": "LONG BAY TOWNHOUSES",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "109": 1
+     }
+    },
+    {
+     "regime": "BETWEEN 72 & 73 AVE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BETWEEN 70TH & 71ST AVE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BETWEEN 71 & 72 AVE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "OCEAN REEF RESRT N TWR",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "500": 1
+     }
+    }
+   ]
+  },
+  "seawatch": {
+   "point": [
+    33.77049,
+    -78.77147
+   ],
+   "regimes": [
+    {
+     "regime": "SEAWATCH N TOWER HPR",
+     "units": 248,
+     "parcels": 249,
+     "landuse": {
+      "107": 245,
+      "355": 3,
+      "500": 1
+     }
+    },
+    {
+     "regime": "SEAWATCH TOWERS HPR",
+     "units": 127,
+     "parcels": 127,
+     "landuse": {
+      "107": 127
+     }
+    },
+    {
+     "regime": "SEAWATCH TOWERS HPR I",
+     "units": 97,
+     "parcels": 98,
+     "landuse": {
+      "107": 96,
+      "355": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "ARCADIAN I",
+     "units": 35,
+     "parcels": 36,
+     "landuse": {
+      "107": 35,
+      "500": 1
+     }
+    },
+    {
+     "regime": "SEAWATCH PLANTATION HPR",
+     "units": 21,
+     "parcels": 21,
+     "landuse": {
+      "107": 21
+     }
+    },
+    {
+     "regime": "",
+     "units": 1,
+     "parcels": 5,
+     "landuse": {
+      "": 4,
+      "214": 1
+     }
+    },
+    {
+     "regime": "SEAWATCH PLANTATION",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "100": 1
+     }
+    },
+    {
+     "regime": "ARCADIAN SHORES",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "338": 1
+     }
+    },
+    {
+     "regime": "PARCEL B (ARCADIAN DR)",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "134": 1
+     }
+    }
+   ]
+  },
+  "margate": {
+   "point": [
+    33.76522,
+    -78.78131
+   ],
+   "regimes": [
+    {
+     "regime": "MARGATE TOWER HPR PH I",
+     "units": 252,
+     "parcels": 253,
+     "landuse": {
+      "107": 251,
+      "106": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 0,
+     "parcels": 16,
+     "landuse": {
+      "": 14,
+      "300": 2
+     }
+    },
+    {
+     "regime": "WINDERMERE BY THE SEA",
+     "units": 8,
+     "parcels": 8,
+     "landuse": {
+      "107": 8
+     }
+    },
+    {
+     "regime": "KINGSTON PLANTATION",
+     "units": 1,
+     "parcels": 2,
+     "landuse": {
+      "338": 1,
+      "300": 1
+     }
+    },
+    {
+     "regime": "39300000001 APACHE",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "122": 1
+     }
+    },
+    {
+     "regime": "APACHE",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "214": 1
+     }
+    },
+    {
+     "regime": "ARCADIAN SHORES",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "214": 1
+     }
+    },
+    {
+     "regime": "COMMON AREA",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "320": 1
+     }
+    }
+   ]
+  },
+  "brighton": {
+   "point": [
+    33.76615,
+    -78.77996
+   ],
+   "regimes": [
+    {
+     "regime": "MARGATE TOWER HPR PH I",
+     "units": 252,
+     "parcels": 253,
+     "landuse": {
+      "107": 251,
+      "106": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "BRIGHTON KINGSTON PLANT",
+     "units": 199,
+     "parcels": 199,
+     "landuse": {
+      "107": 198,
+      "355": 1
+     }
+    },
+    {
+     "regime": "WINDERMERE BY THE SEA",
+     "units": 14,
+     "parcels": 14,
+     "landuse": {
+      "107": 14
+     }
+    },
+    {
+     "regime": "KINGSTON PLANTATION",
+     "units": 2,
+     "parcels": 3,
+     "landuse": {
+      "338": 2,
+      "300": 1
+     }
+    },
+    {
+     "regime": "BRIGHTON KINGSTON PLAN",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "BRIGHTON @ KINGSTON PL",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "300": 1
+     }
+    },
+    {
+     "regime": "COMMON AREA",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "320": 1
+     }
+    }
+   ]
+  },
+  "royale-palms": {
+   "point": [
+    33.76914,
+    -78.77556
+   ],
+   "regimes": [
+    {
+     "regime": "ROYALE PALMS HPR PH I",
+     "units": 185,
+     "parcels": 186,
+     "landuse": {
+      "107": 184,
+      "106": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "NORTH HAMPTON",
+     "units": 124,
+     "parcels": 125,
+     "landuse": {
+      "107": 124,
+      "106": 1
+     }
+    },
+    {
+     "regime": "NORTH HAMPTON COMMONS",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "338": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "314": 1
+     }
+    },
+    {
+     "regime": "RICHMOND PARK",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "320": 1
+     }
+    }
+   ]
+  },
+  "avista": {
+   "point": [
+    33.81995,
+    -78.66802
+   ],
+   "regimes": [
+    {
+     "regime": "AVISTA HPR",
+     "units": 194,
+     "parcels": 194,
+     "landuse": {
+      "107": 194
+     }
+    },
+    {
+     "regime": "AVISTA HPR PH II",
+     "units": 186,
+     "parcels": 187,
+     "landuse": {
+      "107": 186,
+      "500": 1
+     }
+    },
+    {
+     "regime": "TILGHMAN BCH&RCT CLB",
+     "units": 121,
+     "parcels": 123,
+     "landuse": {
+      "107": 121,
+      "500": 2
+     }
+    },
+    {
+     "regime": "MARITIME",
+     "units": 84,
+     "parcels": 84,
+     "landuse": {
+      "107": 76,
+      "108": 8
+     }
+    },
+    {
+     "regime": "TILGHMAN EST",
+     "units": 1,
+     "parcels": 3,
+     "landuse": {
+      "100": 1,
+      "106": 1,
+      "317": 1
+     }
+    },
+    {
+     "regime": "TILGHMAN BCH & RCT CLUB",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "TILGHMAN BCH & RCT CLB",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 201",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 200",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 298",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 399",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 800",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 898",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 901",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 900",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "": 1
+     }
+    },
+    {
+     "regime": "MARITIME 501",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 500",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 599",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 603",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 499",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 502",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 600",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 798",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 602",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 398",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 498",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 601",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARITIME 799",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    }
+   ]
+  },
+  "bay-watch": {
+   "point": [
+    33.80173,
+    -78.7126
+   ],
+   "regimes": [
+    {
+     "regime": "BAYWATCH RESORT HPR",
+     "units": 532,
+     "parcels": 535,
+     "landuse": {
+      "107": 522,
+      "106": 9,
+      "500": 3,
+      "355": 1
+     }
+    },
+    {
+     "regime": "CRESCENT TOWERS",
+     "units": 32,
+     "parcels": 33,
+     "landuse": {
+      "107": 32,
+      "500": 1
+     }
+    },
+    {
+     "regime": "CRESCENT TOWERS PH II",
+     "units": 12,
+     "parcels": 13,
+     "landuse": {
+      "107": 12,
+      "500": 1
+     }
+    },
+    {
+     "regime": "CRESCENT BEACH",
+     "units": 3,
+     "parcels": 5,
+     "landuse": {
+      "103": 1,
+      "300": 1,
+      "102": 1,
+      "101": 1
+     }
+    },
+    {
+     "regime": "CRESCENT BCH",
+     "units": 3,
+     "parcels": 3,
+     "landuse": {
+      "102": 2,
+      "101": 1
+     }
+    },
+    {
+     "regime": "BAYWATCH RESORT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "": 1
+     }
+    },
+    {
+     "regime": "SEASCAPE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "500": 1
+     }
+    },
+    {
+     "regime": "ATLANTIC BEACH",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "300": 1
+     }
+    },
+    {
+     "regime": "CRESCENT TOWER",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "CRESCENT TOWNS",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    }
+   ]
+  },
+  "beach-cove": {
+   "point": [
+    33.79082,
+    -78.73517
+   ],
+   "regimes": [
+    {
+     "regime": "NORTH BEACH TOWERS HPR",
+     "units": 339,
+     "parcels": 339,
+     "landuse": {
+      "107": 337,
+      "356": 1,
+      "355": 1
+     }
+    },
+    {
+     "regime": "BEACH COVE OCEAN RESORT",
+     "units": 149,
+     "parcels": 149,
+     "landuse": {
+      "107": 146,
+      "356": 2,
+      "355": 1
+     }
+    },
+    {
+     "regime": "BCH COVE OCN RESORT",
+     "units": 81,
+     "parcels": 81,
+     "landuse": {
+      "107": 81
+     }
+    },
+    {
+     "regime": "BEACH COVE OCN RSRT HPR",
+     "units": 72,
+     "parcels": 73,
+     "landuse": {
+      "107": 71,
+      "355": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "SEA WINDS",
+     "units": 68,
+     "parcels": 69,
+     "landuse": {
+      "107": 68,
+      "500": 1
+     }
+    },
+    {
+     "regime": "BCH COVE OC RESORT",
+     "units": 24,
+     "parcels": 24,
+     "landuse": {
+      "107": 24
+     }
+    },
+    {
+     "regime": "WINDY HILL",
+     "units": 1,
+     "parcels": 2,
+     "landuse": {
+      "339": 1,
+      "100": 1
+     }
+    },
+    {
+     "regime": "NORTH BEACH PLANTATION",
+     "units": 0,
+     "parcels": 2,
+     "landuse": {
+      "500": 1,
+      "300": 1
+     }
+    },
+    {
+     "regime": "BCH COVE OCN RESORT II",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "356": 2
+     }
+    },
+    {
+     "regime": "BEACH COVE OC RESORT",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "107": 2
+     }
+    },
+    {
+     "regime": "BCH COVE OCEAN RESORT",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "107": 2
+     }
+    },
+    {
+     "regime": "BCH COVE OCH RESORT",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "107": 2
+     }
+    },
+    {
+     "regime": "48TH PLACE",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "101": 1
+     }
+    },
+    {
+     "regime": "BEACH COVE RESORT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "BCH OC COVE RESORT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "BEACH COVE OCN RESORT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "N B TOWERS AMENTY POOL",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "500": 1
+     }
+    }
+   ]
+  },
+  "prince": {
+   "point": [
+    33.83052,
+    -78.63343
+   ],
+   "regimes": [
+    {
+     "regime": "PRINCE CONDO @ C.G.PIER",
+     "units": 163,
+     "parcels": 164,
+     "landuse": {
+      "107": 160,
+      "355": 1,
+      "393": 1,
+      "356": 1
+     }
+    },
+    {
+     "regime": "PRINCE CONDO @ C.G PIER",
+     "units": 99,
+     "parcels": 99,
+     "landuse": {
+      "107": 97,
+      "106": 1,
+      "355": 1
+     }
+    },
+    {
+     "regime": "PIER WATCH VILLAS HPR",
+     "units": 28,
+     "parcels": 30,
+     "landuse": {
+      "107": 28,
+      "500": 2
+     }
+    },
+    {
+     "regime": "CHERRY GROVE BEACH",
+     "units": 7,
+     "parcels": 9,
+     "landuse": {
+      "101": 6,
+      "100": 2,
+      "699": 1
+     }
+    },
+    {
+     "regime": "CHERRY GROVE",
+     "units": 5,
+     "parcels": 7,
+     "landuse": {
+      "101": 5,
+      "300": 2
+     }
+    },
+    {
+     "regime": "",
+     "units": 0,
+     "parcels": 2,
+     "landuse": {
+      "": 2
+     }
+    },
+    {
+     "regime": "CHERRY GROVE LOT 1 & SW",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "101": 1
+     }
+    }
+   ]
+  },
+  "towers-grove": {
+   "point": [
+    33.82712,
+    -78.64496
+   ],
+   "regimes": [
+    {
+     "regime": "TOWERS ON THE GROVE HPR",
+     "units": 236,
+     "parcels": 237,
+     "landuse": {
+      "107": 232,
+      "500": 2,
+      "106": 2,
+      "356": 1
+     }
+    },
+    {
+     "regime": "SPRINGS TOWERS",
+     "units": 54,
+     "parcels": 55,
+     "landuse": {
+      "107": 54,
+      "500": 1
+     }
+    },
+    {
+     "regime": "OCEAN TERRACE PH II",
+     "units": 24,
+     "parcels": 25,
+     "landuse": {
+      "107": 24,
+      "500": 1
+     }
+    },
+    {
+     "regime": "GRAND STRAND RESORT I",
+     "units": 9,
+     "parcels": 10,
+     "landuse": {
+      "107": 9,
+      "500": 1
+     }
+    },
+    {
+     "regime": "MID-STRAND CONDOS HPR",
+     "units": 6,
+     "parcels": 7,
+     "landuse": {
+      "107": 6,
+      "500": 1
+     }
+    },
+    {
+     "regime": "CHERRY GROVE BEACH",
+     "units": 3,
+     "parcels": 5,
+     "landuse": {
+      "101": 2,
+      "100": 1,
+      "300": 1,
+      "102": 1
+     }
+    },
+    {
+     "regime": "CHERRY GROVE BCH",
+     "units": 1,
+     "parcels": 2,
+     "landuse": {
+      "101": 1,
+      "100": 1
+     }
+    },
+    {
+     "regime": "SPRINGS TOWER",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "107": 2
+     }
+    },
+    {
+     "regime": "CHERRY GROVE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "300": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "100": 1
+     }
+    }
+   ]
+  },
+  "north-beach-towers": {
+   "point": [
+    33.79067,
+    -78.73647
+   ],
+   "regimes": [
+    {
+     "regime": "NORTH BEACH TOWERS HPR",
+     "units": 339,
+     "parcels": 339,
+     "landuse": {
+      "107": 337,
+      "356": 1,
+      "355": 1
+     }
+    },
+    {
+     "regime": "BEACH COVE OCEAN RESORT",
+     "units": 149,
+     "parcels": 149,
+     "landuse": {
+      "107": 146,
+      "356": 2,
+      "355": 1
+     }
+    },
+    {
+     "regime": "BCH COVE OCN RESORT",
+     "units": 81,
+     "parcels": 81,
+     "landuse": {
+      "107": 81
+     }
+    },
+    {
+     "regime": "BCH COVE OC RESORT",
+     "units": 24,
+     "parcels": 24,
+     "landuse": {
+      "107": 24
+     }
+    },
+    {
+     "regime": "NORTH BEACH PLANTATION",
+     "units": 0,
+     "parcels": 2,
+     "landuse": {
+      "500": 1,
+      "300": 1
+     }
+    },
+    {
+     "regime": "BCH COVE OCN RESORT II",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "356": 2
+     }
+    },
+    {
+     "regime": "BEACH COVE OC RESORT",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "107": 2
+     }
+    },
+    {
+     "regime": "BCH COVE OCEAN RESORT",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "107": 2
+     }
+    },
+    {
+     "regime": "BCH COVE OCH RESORT",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "107": 2
+     }
+    },
+    {
+     "regime": "BEACH COVE RESORT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "BCH OC COVE RESORT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "BEACH COVE OCN RESORT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "N B TOWERS AMENTY POOL",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "500": 1
+     }
+    },
+    {
+     "regime": "WHITEPOINT NB PLANTATION",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "300": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "323": 1
+     }
+    }
+   ]
+  },
+  "ocean-creek": {
+   "point": [
+    33.79041,
+    -78.73818
+   ],
+   "regimes": [
+    {
+     "regime": "NORTH BEACH TOWERS HPR",
+     "units": 339,
+     "parcels": 339,
+     "landuse": {
+      "107": 337,
+      "356": 1,
+      "355": 1
+     }
+    },
+    {
+     "regime": "THE TOWER SOUTH",
+     "units": 175,
+     "parcels": 176,
+     "landuse": {
+      "107": 175,
+      "500": 1
+     }
+    },
+    {
+     "regime": "THE TOWER",
+     "units": 130,
+     "parcels": 131,
+     "landuse": {
+      "107": 130,
+      "500": 1
+     }
+    },
+    {
+     "regime": "SALT WATER CK & M-LAND",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "106": 1
+     }
+    },
+    {
+     "regime": "THE TOWERS",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "NORTH BEACH PLANTATION",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "500": 1
+     }
+    },
+    {
+     "regime": "N B TOWERS AMENTY POOL",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "500": 1
+     }
+    },
+    {
+     "regime": "WHITEPOINT NB PLANTATION",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "300": 1
+     }
+    },
+    {
+     "regime": "OCEAN CREEK PLANTATION",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "300": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "323": 1
+     }
+    },
+    {
+     "regime": "WHITE POINT @ NB PLANTATION",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "135": 1
+     }
+    }
+   ]
+  },
+  "monterey-bay": {
+   "point": [
+    33.73793,
+    -78.82216
+   ],
+   "regimes": [
+    {
+     "regime": "CARAVELLE RESORT HPR",
+     "units": 348,
+     "parcels": 349,
+     "landuse": {
+      "107": 343,
+      "106": 5,
+      "500": 1
+     }
+    },
+    {
+     "regime": "MONTEREY BAY SUITES RST",
+     "units": 195,
+     "parcels": 196,
+     "landuse": {
+      "107": 194,
+      "106": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 0,
+     "parcels": 100,
+     "landuse": {
+      "": 99,
+      "600": 1
+     }
+    },
+    {
+     "regime": "ST JOHNS INN HPR PH I",
+     "units": 89,
+     "parcels": 89,
+     "landuse": {
+      "107": 88,
+      "355": 1
+     }
+    },
+    {
+     "regime": "CAROLINA DUNES",
+     "units": 36,
+     "parcels": 37,
+     "landuse": {
+      "107": 36,
+      "500": 1
+     }
+    },
+    {
+     "regime": "FOREST DUNES",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "101": 2
+     }
+    },
+    {
+     "regime": "PENTHSE #2",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "PENTHOUSE #4",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "CANE PATCH SEC",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "123": 1
+     }
+    },
+    {
+     "regime": "PENTHOUSE #3",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "END OF 69TH AVE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "CARAVELL RESORT HPR",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "FOREST DUNES EXT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "101": 1
+     }
+    },
+    {
+     "regime": "CANE PATCH SECT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "313": 1
+     }
+    }
+   ]
+  },
+  "bluewater": {
+   "point": [
+    33.66928,
+    -78.90548
+   ],
+   "regimes": [
+    {
+     "regime": "BLUEWATER VILLAS",
+     "units": 199,
+     "parcels": 200,
+     "landuse": {
+      "107": 198,
+      "500": 1,
+      "356": 1
+     }
+    },
+    {
+     "regime": "GRAND ATLANTIC OCEAN",
+     "units": 136,
+     "parcels": 138,
+     "landuse": {
+      "107": 133,
+      "356": 2,
+      "500": 2,
+      "355": 1
+     }
+    },
+    {
+     "regime": "BLUEWATER VILLAS PH I",
+     "units": 28,
+     "parcels": 29,
+     "landuse": {
+      "107": 28,
+      "500": 1
+     }
+    },
+    {
+     "regime": "OCEAN PARK",
+     "units": 27,
+     "parcels": 28,
+     "landuse": {
+      "107": 26,
+      "313": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "HURL ROCKS",
+     "units": 3,
+     "parcels": 5,
+     "landuse": {
+      "212": 1,
+      "338": 1,
+      "326": 1,
+      "313": 1
+     }
+    },
+    {
+     "regime": "BLUEWATER DEV CORP",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "107": 2
+     }
+    },
+    {
+     "regime": "BLUEWATER VILLAS PH II",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "BLUEWATER BILLAS",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "BLUEWATER VILLA",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    }
+   ]
+  },
+  "beach-colony": {
+   "point": [
+    33.72318,
+    -78.84231
+   ],
+   "regimes": [
+    {
+     "regime": "DUNES VILLAGE HPR",
+     "units": 269,
+     "parcels": 269,
+     "landuse": {
+      "107": 264,
+      "106": 3,
+      "500": 1,
+      "356": 1
+     }
+    },
+    {
+     "regime": "DUNES SEC",
+     "units": 11,
+     "parcels": 12,
+     "landuse": {
+      "101": 11,
+      "100": 1
+     }
+    },
+    {
+     "regime": "BETWEEN 50 & 51 AVE N",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BETWEEN 51 & 52 AVE N",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    }
+   ]
+  },
+  "meridian-plaza": {
+   "point": [
+    33.70303,
+    -78.86749
+   ],
+   "regimes": [
+    {
+     "regime": "BOARDWALK OCEANFRT TWR",
+     "units": 131,
+     "parcels": 132,
+     "landuse": {
+      "107": 130,
+      "106": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "MERIDIAN PLAZA",
+     "units": 96,
+     "parcels": 97,
+     "landuse": {
+      "107": 93,
+      "355": 2,
+      "356": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "WASHINGTON PARK",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "317": 1,
+      "320": 1
+     }
+    },
+    {
+     "regime": "EASTERN SECTION",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "314": 1,
+      "313": 1
+     }
+    },
+    {
+     "regime": "EASTERN SECT",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "317": 2
+     }
+    },
+    {
+     "regime": "BHND LT 204 & HI TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BHND LT 199 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "EASTERN SEC",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "313": 1
+     }
+    },
+    {
+     "regime": "BHND LT 193 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BEHIND LT 201 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BHND LT 195 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "STEPS TO THE BCH",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "109": 1
+     }
+    },
+    {
+     "regime": "BHND LT 189 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BHND LT 197 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "BHND LT 191 HIGH TIDE",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "600": 1
+     }
+    },
+    {
+     "regime": "RESORT MERIDIAN",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    }
+   ]
+  },
+  "sandy-beach": {
+   "point": [
+    33.68179,
+    -78.88945
+   ],
+   "regimes": [
+    {
+     "regime": "SANDY BEACH PH II C.T.",
+     "units": 152,
+     "parcels": 152,
+     "landuse": {
+      "107": 150,
+      "106": 2
+     }
+    },
+    {
+     "regime": "OCEANS ONE S TOWER HPR",
+     "units": 137,
+     "parcels": 137,
+     "landuse": {
+      "107": 135,
+      "106": 2
+     }
+    },
+    {
+     "regime": "SANDY BEACH CONDO TOWER",
+     "units": 79,
+     "parcels": 80,
+     "landuse": {
+      "107": 78,
+      "355": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "SHELLEY S/D",
+     "units": 2,
+     "parcels": 5,
+     "landuse": {
+      "300": 3,
+      "301": 2
+     }
+    },
+    {
+     "regime": "SHELLEY S-D",
+     "units": 1,
+     "parcels": 2,
+     "landuse": {
+      "300": 1,
+      "311": 1
+     }
+    },
+    {
+     "regime": "% COMMON INT LAND PCL",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "500": 1
+     }
+    },
+    {
+     "regime": "& 10.25X150 ALLEY",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "315": 1
+     }
+    },
+    {
+     "regime": "SHELLEY SD",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "308": 1
+     }
+    },
+    {
+     "regime": "SHELLEY-W 1/2 LTS 1 & 3",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "321": 1
+     }
+    },
+    {
+     "regime": "SHELLY S/D",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "373": 1
+     }
+    },
+    {
+     "regime": "SHELLY SD",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "373": 1
+     }
+    },
+    {
+     "regime": "SANDY BEACH PH II C.TWR",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "500": 1
+     }
+    },
+    {
+     "regime": "SHELLEY",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "300": 1
+     }
+    }
+   ]
+  },
+  "carolina-winds": {
+   "point": [
+    33.74338,
+    -78.81433
+   ],
+   "regimes": [
+    {
+     "regime": "THE HORIZON HPR",
+     "units": 145,
+     "parcels": 146,
+     "landuse": {
+      "107": 142,
+      "106": 3,
+      "500": 1
+     }
+    },
+    {
+     "regime": "GRANDE SHORES HPR",
+     "units": 138,
+     "parcels": 139,
+     "landuse": {
+      "107": 136,
+      "356": 2,
+      "500": 1
+     }
+    },
+    {
+     "regime": "CAROLINA WINDS",
+     "units": 123,
+     "parcels": 125,
+     "landuse": {
+      "107": 122,
+      "500": 2,
+      "355": 1
+     }
+    },
+    {
+     "regime": "JADE TREE COVE",
+     "units": 33,
+     "parcels": 34,
+     "landuse": {
+      "108": 30,
+      "123": 2,
+      "355": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "CAROLINA WINDS HPR PHII",
+     "units": 24,
+     "parcels": 24,
+     "landuse": {
+      "107": 23,
+      "356": 1
+     }
+    },
+    {
+     "regime": "OCEAN DUNES VILLAS II",
+     "units": 17,
+     "parcels": 18,
+     "landuse": {
+      "107": 17,
+      "500": 1
+     }
+    },
+    {
+     "regime": "LONG BAY DUNES",
+     "units": 15,
+     "parcels": 16,
+     "landuse": {
+      "107": 15,
+      "500": 1
+     }
+    },
+    {
+     "regime": "PARADISE VILLAS",
+     "units": 7,
+     "parcels": 8,
+     "landuse": {
+      "107": 7,
+      "500": 1
+     }
+    },
+    {
+     "regime": "OCEANS DUNES VILLAS II",
+     "units": 3,
+     "parcels": 3,
+     "landuse": {
+      "107": 3
+     }
+    },
+    {
+     "regime": "LONG BAY",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "301": 1,
+      "211": 1
+     }
+    },
+    {
+     "regime": "LONG BAY EXT",
+     "units": 0,
+     "parcels": 2,
+     "landuse": {
+      "100": 1,
+      "101": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 0,
+     "parcels": 2,
+     "landuse": {
+      "300": 2
+     }
+    },
+    {
+     "regime": "OCEAN DUNES VILLIAS II",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "CAROOLINA WINDS",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "CAROLINA WINDS PH II",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "GRANDE SHORES HPR UNIT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "312": 1
+     }
+    },
+    {
+     "regime": "GRANDE SHORES HPR SNACK",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "356": 1
+     }
+    }
+   ]
+  },
+  "maisons-sur-mer": {
+   "point": [
+    33.76188,
+    -78.78635
+   ],
+   "regimes": [
+    {
+     "regime": "MAISONS SUR MER",
+     "units": 170,
+     "parcels": 170,
+     "landuse": {
+      "107": 170
+     }
+    },
+    {
+     "regime": "A PLACE AT THE BEACH IV",
+     "units": 65,
+     "parcels": 66,
+     "landuse": {
+      "107": 65,
+      "500": 1
+     }
+    },
+    {
+     "regime": "MAISON SUR MER",
+     "units": 59,
+     "parcels": 60,
+     "landuse": {
+      "107": 59,
+      "500": 1
+     }
+    },
+    {
+     "regime": "A PLACE AT THE BEACH",
+     "units": 52,
+     "parcels": 54,
+     "landuse": {
+      "107": 52,
+      "500": 2
+     }
+    },
+    {
+     "regime": "SHIPWATCH POINTE",
+     "units": 26,
+     "parcels": 27,
+     "landuse": {
+      "107": 26,
+      "500": 1
+     }
+    },
+    {
+     "regime": "MAISON-SUR-MER",
+     "units": 22,
+     "parcels": 22,
+     "landuse": {
+      "107": 22
+     }
+    },
+    {
+     "regime": "PLACE AT BCH VI",
+     "units": 12,
+     "parcels": 12,
+     "landuse": {
+      "107": 12
+     }
+    },
+    {
+     "regime": "SHIPWATCH POINT",
+     "units": 4,
+     "parcels": 4,
+     "landuse": {
+      "107": 4
+     }
+    },
+    {
+     "regime": "",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "321": 1
+     }
+    },
+    {
+     "regime": "MAISON-SUR-MUR PROP",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "373": 1
+     }
+    },
+    {
+     "regime": "MAISONS-SUR MER",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MAISONS-SUR-MER INC",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "PLACE AT THE BEACH IV",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "A PLACE AT BCH MB VI",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "A PLACE AT THE BCH",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    }
+   ]
+  },
+  "sands-ocean": {
+   "point": [
+    33.75973,
+    -78.78939
+   ],
+   "regimes": [
+    {
+     "regime": "SANDS OCEAN CLUB",
+     "units": 212,
+     "parcels": 213,
+     "landuse": {
+      "107": 211,
+      "108": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "SANDS OCEAN CLUB PH II",
+     "units": 159,
+     "parcels": 159,
+     "landuse": {
+      "107": 158,
+      "356": 1
+     }
+    },
+    {
+     "regime": "A PLACE AT THE BEACH",
+     "units": 141,
+     "parcels": 143,
+     "landuse": {
+      "107": 141,
+      "500": 2
+     }
+    },
+    {
+     "regime": "MARINERS COVE",
+     "units": 126,
+     "parcels": 127,
+     "landuse": {
+      "107": 126,
+      "500": 1
+     }
+    },
+    {
+     "regime": "SANDS OCEAN CLUB II",
+     "units": 93,
+     "parcels": 93,
+     "landuse": {
+      "107": 93
+     }
+    },
+    {
+     "regime": "SANDS OCEAN CLUB III",
+     "units": 52,
+     "parcels": 52,
+     "landuse": {
+      "107": 51,
+      "356": 1
+     }
+    },
+    {
+     "regime": "PLACE AT THE BEACH",
+     "units": 36,
+     "parcels": 36,
+     "landuse": {
+      "107": 36
+     }
+    },
+    {
+     "regime": "PELICANS WATCH",
+     "units": 34,
+     "parcels": 35,
+     "landuse": {
+      "107": 34,
+      "500": 1
+     }
+    },
+    {
+     "regime": "PELICANS WATCH HPR",
+     "units": 31,
+     "parcels": 31,
+     "landuse": {
+      "107": 31
+     }
+    },
+    {
+     "regime": "SANDS OCN CLUB",
+     "units": 22,
+     "parcels": 22,
+     "landuse": {
+      "107": 21,
+      "356": 1
+     }
+    },
+    {
+     "regime": "MARINER COVE",
+     "units": 3,
+     "parcels": 3,
+     "landuse": {
+      "107": 3
+     }
+    },
+    {
+     "regime": "PLACE AT THE BEACHDW",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "107": 2
+     }
+    },
+    {
+     "regime": "A PL AT THE BCHMBIII",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "107": 2
+     }
+    },
+    {
+     "regime": "SANDS OCN CLUB (P-H)",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "107": 2
+     }
+    },
+    {
+     "regime": "SAND OCEAN CLUB II",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "107": 2
+     }
+    },
+    {
+     "regime": "SANDS BEACH CLUB III",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "338": 1
+     }
+    },
+    {
+     "regime": "UNIT 3-L A PLACE AT THE",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "SANDS CLUB PH II",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "A PLACE AT THE BCH III",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "SANDS BEACH CLUB",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "PL AT BCH MB III PH I",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "SANDS OCEAN CLU II",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "PLACE AT THE BCH III",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARINER'S COVE",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "MARINERS COVE PH I",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "PELICAN WATCH HPR",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "A PLACE AT THE BCH P",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    }
+   ]
+  },
+  "ocean-forest-plaza": {
+   "point": [
+    33.72802,
+    -78.83655
+   ],
+   "regimes": [
+    {
+     "regime": "OCEAN FOREST PLAZA",
+     "units": 206,
+     "parcels": 207,
+     "landuse": {
+      "107": 205,
+      "356": 1,
+      "500": 1
+     }
+    },
+    {
+     "regime": "FOREST DUNES",
+     "units": 137,
+     "parcels": 138,
+     "landuse": {
+      "107": 135,
+      "356": 1,
+      "500": 1,
+      "355": 1
+     }
+    },
+    {
+     "regime": "A PLACE AT THE BEACH",
+     "units": 99,
+     "parcels": 100,
+     "landuse": {
+      "107": 99,
+      "500": 1
+     }
+    },
+    {
+     "regime": "THE ANCHORAGE",
+     "units": 45,
+     "parcels": 46,
+     "landuse": {
+      "107": 45,
+      "500": 1
+     }
+    },
+    {
+     "regime": "SANDCASTLE",
+     "units": 7,
+     "parcels": 8,
+     "landuse": {
+      "107": 7,
+      "500": 1
+     }
+    },
+    {
+     "regime": "GOLF CRS SECT",
+     "units": 3,
+     "parcels": 7,
+     "landuse": {
+      "100": 4,
+      "101": 3
+     }
+    },
+    {
+     "regime": "GOLF CRS SEC",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "101": 2
+     }
+    },
+    {
+     "regime": "GOLF COURSE SECTION",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "101": 1
+     }
+    },
+    {
+     "regime": "GOLF COURSE SECT",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "123": 1
+     }
+    },
+    {
+     "regime": "SANDCASTLES",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "GOLF CRS SECT 25'",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "123": 1
+     }
+    },
+    {
+     "regime": "OCEAN FOREST ASSOC",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "PLACE AT BEACH",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "OCEAN FOREST",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "PLACE AT BCH",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "OCEAN ONE HPR",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "500": 1
+     }
+    }
+   ]
+  },
+  "south-hampton": {
+   "point": [
+    33.76781,
+    -78.77694
+   ],
+   "regimes": [
+    {
+     "regime": "KINGSTON LAKES CONDO",
+     "units": 254,
+     "parcels": 254,
+     "landuse": {
+      "312": 253,
+      "355": 1
+     }
+    },
+    {
+     "regime": "SOUTH HAMPTON",
+     "units": 143,
+     "parcels": 143,
+     "landuse": {
+      "107": 143
+     }
+    },
+    {
+     "regime": "NORTH HAMPTON",
+     "units": 124,
+     "parcels": 125,
+     "landuse": {
+      "107": 124,
+      "106": 1
+     }
+    },
+    {
+     "regime": "KINGSTON LAKE CONDO",
+     "units": 2,
+     "parcels": 2,
+     "landuse": {
+      "312": 2
+     }
+    },
+    {
+     "regime": "SOUTH HAMPOTN",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "107": 1
+     }
+    },
+    {
+     "regime": "BEACH CLUB",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "106": 1
+     }
+    },
+    {
+     "regime": "OCEAN FRONT",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "106": 1
+     }
+    },
+    {
+     "regime": "",
+     "units": 0,
+     "parcels": 1,
+     "landuse": {
+      "300": 1
+     }
+    },
+    {
+     "regime": "RICHMOND PARK",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "320": 1
+     }
+    },
+    {
+     "regime": "KINGSTON PLANTATION",
+     "units": 1,
+     "parcels": 1,
+     "landuse": {
+      "338": 1
+     }
+    }
+   ]
+  }
+ },
+ "read_more": "2026-11-09T06:23:07.182593Z"
+}

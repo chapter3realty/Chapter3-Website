@@ -1,0 +1,990 @@
+{
+ "pulled": "2026-11-04T12:22:47.140411+00:00",
+ "api": "https://chapter3realty.com/homes/api/map?",
+ "county": "has=county_horry, status for sale (API default)",
+ "subset_check": {
+  "condo": 0,
+  "house": 0
+ },
+ "by_type": {
+  "condo": {
+   "all": {
+    "listings": 2673,
+    "rentals_allowed": 2362,
+    "nightly": 1904,
+    "yearly_only": 458,
+    "not_marked": 311,
+    "long_term_rental_allowed": 2263,
+    "check_sum": true
+   },
+   "no_hoa_fee": {
+    "listings": 0,
+    "rentals_allowed": 0,
+    "nightly": 0,
+    "yearly_only": 0,
+    "not_marked": 0,
+    "long_term_rental_allowed": 0,
+    "check_sum": true
+   },
+   "with_hoa_fee": {
+    "listings": 2673,
+    "rentals_allowed": 2362,
+    "nightly": 1904,
+    "yearly_only": 458,
+    "not_marked": 311,
+    "long_term_rental_allowed": 2263,
+    "check_sum": 0
+   }
+  },
+  "townhouse": {
+   "all": {
+    "listings": 304,
+    "rentals_allowed": 247,
+    "nightly": 69,
+    "yearly_only": 178,
+    "not_marked": 57,
+    "long_term_rental_allowed": 236,
+    "check_sum": true
+   },
+   "no_hoa_fee": {
+    "listings": 25,
+    "rentals_allowed": 25,
+    "nightly": 6,
+    "yearly_only": 19,
+    "not_marked": 0,
+    "long_term_rental_allowed": 14,
+    "check_sum": true
+   },
+   "with_hoa_fee": {
+    "listings": 279,
+    "rentals_allowed": 222,
+    "nightly": 63,
+    "yearly_only": 159,
+    "not_marked": 57,
+    "long_term_rental_allowed": 222,
+    "check_sum": 0
+   }
+  },
+  "house": {
+   "all": {
+    "listings": 2976,
+    "rentals_allowed": 2419,
+    "nightly": 339,
+    "yearly_only": 2080,
+    "not_marked": 557,
+    "long_term_rental_allowed": 1933,
+    "check_sum": true
+   },
+   "no_hoa_fee": {
+    "listings": 793,
+    "rentals_allowed": 793,
+    "nightly": 246,
+    "yearly_only": 547,
+    "not_marked": 0,
+    "long_term_rental_allowed": 315,
+    "check_sum": true
+   },
+   "with_hoa_fee": {
+    "listings": 2183,
+    "rentals_allowed": 1626,
+    "nightly": 93,
+    "yearly_only": 1533,
+    "not_marked": 557,
+    "long_term_rental_allowed": 1618,
+    "check_sum": 0
+   }
+  }
+ },
+ "by_area": {
+  "myrtle_beach_city": {
+   "condo": {
+    "listings": 633,
+    "rentals_allowed": 603,
+    "nightly": 531,
+    "yearly_only": 72,
+    "not_marked": 30,
+    "long_term_rental_allowed": 560,
+    "check_sum": true
+   },
+   "house": {
+    "listings": 199,
+    "rentals_allowed": 177,
+    "nightly": 18,
+    "yearly_only": 159,
+    "not_marked": 22,
+    "long_term_rental_allowed": 158,
+    "check_sum": true,
+    "no_hoa_fee": 47,
+    "with_hoa_fee": 152,
+    "with_hoa_fee_not_marked": 22,
+    "with_hoa_fee_nightly": 13
+   }
+  },
+  "north_myrtle_beach": {
+   "condo": {
+    "listings": 577,
+    "rentals_allowed": 515,
+    "nightly": 470,
+    "yearly_only": 45,
+    "not_marked": 62,
+    "long_term_rental_allowed": 498,
+    "check_sum": true
+   },
+   "house": {
+    "listings": 253,
+    "rentals_allowed": 229,
+    "nightly": 110,
+    "yearly_only": 119,
+    "not_marked": 24,
+    "long_term_rental_allowed": 176,
+    "check_sum": true,
+    "no_hoa_fee": 133,
+    "with_hoa_fee": 120,
+    "with_hoa_fee_not_marked": 24,
+    "with_hoa_fee_nightly": 27
+   }
+  },
+  "surfside_beach": {
+   "condo": {
+    "listings": 85,
+    "rentals_allowed": 71,
+    "nightly": 51,
+    "yearly_only": 20,
+    "not_marked": 14,
+    "long_term_rental_allowed": 69,
+    "check_sum": true
+   },
+   "house": {
+    "listings": 82,
+    "rentals_allowed": 71,
+    "nightly": 22,
+    "yearly_only": 49,
+    "not_marked": 11,
+    "long_term_rental_allowed": 58,
+    "check_sum": true,
+    "no_hoa_fee": 41,
+    "with_hoa_fee": 41,
+    "with_hoa_fee_not_marked": 11,
+    "with_hoa_fee_nightly": 6
+   }
+  },
+  "garden_city": {
+   "condo": {
+    "listings": 70,
+    "rentals_allowed": 61,
+    "nightly": 47,
+    "yearly_only": 14,
+    "not_marked": 9,
+    "long_term_rental_allowed": 60,
+    "check_sum": true
+   },
+   "house": {
+    "listings": 34,
+    "rentals_allowed": 30,
+    "nightly": 24,
+    "yearly_only": 6,
+    "not_marked": 4,
+    "long_term_rental_allowed": 26,
+    "check_sum": true,
+    "no_hoa_fee": 25,
+    "with_hoa_fee": 9,
+    "with_hoa_fee_not_marked": 4,
+    "with_hoa_fee_nightly": 4
+   }
+  },
+  "murrells_inlet": {
+   "condo": {
+    "listings": 93,
+    "rentals_allowed": 70,
+    "nightly": 23,
+    "yearly_only": 47,
+    "not_marked": 23,
+    "long_term_rental_allowed": 70,
+    "check_sum": true
+   },
+   "house": {
+    "listings": 129,
+    "rentals_allowed": 104,
+    "nightly": 16,
+    "yearly_only": 88,
+    "not_marked": 25,
+    "long_term_rental_allowed": 93,
+    "check_sum": true,
+    "no_hoa_fee": 30,
+    "with_hoa_fee": 99,
+    "with_hoa_fee_not_marked": 25,
+    "with_hoa_fee_nightly": 1
+   }
+  },
+  "little_river": {
+   "condo": {
+    "listings": 184,
+    "rentals_allowed": 161,
+    "nightly": 73,
+    "yearly_only": 88,
+    "not_marked": 23,
+    "long_term_rental_allowed": 160,
+    "check_sum": true
+   },
+   "house": {
+    "listings": 192,
+    "rentals_allowed": 143,
+    "nightly": 18,
+    "yearly_only": 125,
+    "not_marked": 49,
+    "long_term_rental_allowed": 130,
+    "check_sum": true,
+    "no_hoa_fee": 24,
+    "with_hoa_fee": 168,
+    "with_hoa_fee_not_marked": 49,
+    "with_hoa_fee_nightly": 9
+   }
+  },
+  "carolina_forest": {
+   "condo": {
+    "listings": 110,
+    "rentals_allowed": 99,
+    "nightly": 56,
+    "yearly_only": 43,
+    "not_marked": 11,
+    "long_term_rental_allowed": 98,
+    "check_sum": true
+   },
+   "house": {
+    "listings": 296,
+    "rentals_allowed": 243,
+    "nightly": 1,
+    "yearly_only": 242,
+    "not_marked": 53,
+    "long_term_rental_allowed": 243,
+    "check_sum": true,
+    "no_hoa_fee": 0,
+    "with_hoa_fee": 296,
+    "with_hoa_fee_not_marked": 53,
+    "with_hoa_fee_nightly": 1
+   }
+  },
+  "socastee": {
+   "condo": {
+    "listings": 14,
+    "rentals_allowed": 10,
+    "nightly": 1,
+    "yearly_only": 9,
+    "not_marked": 4,
+    "long_term_rental_allowed": 10,
+    "check_sum": true
+   },
+   "house": {
+    "listings": 91,
+    "rentals_allowed": 74,
+    "nightly": 6,
+    "yearly_only": 68,
+    "not_marked": 17,
+    "long_term_rental_allowed": 66,
+    "check_sum": true,
+    "no_hoa_fee": 21,
+    "with_hoa_fee": 70,
+    "with_hoa_fee_not_marked": 17,
+    "with_hoa_fee_nightly": 0
+   }
+  },
+  "conway": {
+   "condo": {
+    "listings": 34,
+    "rentals_allowed": 28,
+    "nightly": 4,
+    "yearly_only": 24,
+    "not_marked": 6,
+    "long_term_rental_allowed": 28,
+    "check_sum": true
+   },
+   "house": {
+    "listings": 666,
+    "rentals_allowed": 508,
+    "nightly": 33,
+    "yearly_only": 475,
+    "not_marked": 158,
+    "long_term_rental_allowed": 386,
+    "check_sum": true,
+    "no_hoa_fee": 167,
+    "with_hoa_fee": 499,
+    "with_hoa_fee_not_marked": 158,
+    "with_hoa_fee_nightly": 10
+   }
+  },
+  "longs": {
+   "condo": {
+    "listings": 24,
+    "rentals_allowed": 22,
+    "nightly": 4,
+    "yearly_only": 18,
+    "not_marked": 2,
+    "long_term_rental_allowed": 22,
+    "check_sum": true
+   },
+   "house": {
+    "listings": 334,
+    "rentals_allowed": 244,
+    "nightly": 16,
+    "yearly_only": 228,
+    "not_marked": 90,
+    "long_term_rental_allowed": 229,
+    "check_sum": true,
+    "no_hoa_fee": 19,
+    "with_hoa_fee": 315,
+    "with_hoa_fee_not_marked": 90,
+    "with_hoa_fee_nightly": 11
+   }
+  }
+ },
+ "calls": [
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Cstr_allowed&not=rentals_allowed",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cstr_allowed&not=rentals_allowed",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry",
+   "total": 2673
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Cstr_allowed",
+   "total": 1904
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Crentals_allowed",
+   "total": 2362
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&not=rentals_allowed",
+   "total": 311
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Clong_term_rental_allowed",
+   "total": 2263
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Cstr_allowed&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Crentals_allowed&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoa=0&not=rentals_allowed",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Clong_term_rental_allowed&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry",
+   "total": 304
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Cstr_allowed",
+   "total": 69
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Crentals_allowed",
+   "total": 247
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&not=rentals_allowed",
+   "total": 57
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Clong_term_rental_allowed",
+   "total": 236
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&hoa=0",
+   "total": 25
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Cstr_allowed&hoa=0",
+   "total": 6
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Crentals_allowed&hoa=0",
+   "total": 25
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&hoa=0&not=rentals_allowed",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry%2Clong_term_rental_allowed&hoa=0",
+   "total": 14
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry",
+   "total": 2976
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cstr_allowed",
+   "total": 339
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Crentals_allowed",
+   "total": 2419
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&not=rentals_allowed",
+   "total": 557
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Clong_term_rental_allowed",
+   "total": 1933
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&hoa=0",
+   "total": 793
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cstr_allowed&hoa=0",
+   "total": 246
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Crentals_allowed&hoa=0",
+   "total": 793
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&hoa=0&not=rentals_allowed",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Clong_term_rental_allowed&hoa=0",
+   "total": 315
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&has=inside_city_limits%2Ccounty_horry&type=condo",
+   "total": 633
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&has=inside_city_limits%2Ccounty_horry%2Cstr_allowed&type=condo",
+   "total": 531
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&has=inside_city_limits%2Ccounty_horry%2Crentals_allowed&type=condo",
+   "total": 603
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&has=inside_city_limits%2Ccounty_horry&type=condo&not=rentals_allowed",
+   "total": 30
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&has=inside_city_limits%2Ccounty_horry%2Clong_term_rental_allowed&type=condo",
+   "total": 560
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&has=inside_city_limits%2Ccounty_horry&type=house",
+   "total": 199
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&has=inside_city_limits%2Ccounty_horry%2Cstr_allowed&type=house",
+   "total": 18
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&has=inside_city_limits%2Ccounty_horry%2Crentals_allowed&type=house",
+   "total": 177
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&has=inside_city_limits%2Ccounty_horry&type=house&not=rentals_allowed",
+   "total": 22
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&has=inside_city_limits%2Ccounty_horry%2Clong_term_rental_allowed&type=house",
+   "total": 158
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&has=inside_city_limits%2Ccounty_horry&type=house&hoa=0",
+   "total": 47
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&has=inside_city_limits%2Ccounty_horry&type=house&not=rentals_allowed&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Myrtle+Beach&has=inside_city_limits%2Ccounty_horry%2Cstr_allowed&type=house&hoa=0",
+   "total": 5
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=condo&has=county_horry",
+   "total": 577
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=condo&has=county_horry%2Cstr_allowed",
+   "total": 470
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=condo&has=county_horry%2Crentals_allowed",
+   "total": 515
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=condo&has=county_horry&not=rentals_allowed",
+   "total": 62
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=condo&has=county_horry%2Clong_term_rental_allowed",
+   "total": 498
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=house&has=county_horry",
+   "total": 253
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=house&has=county_horry%2Cstr_allowed",
+   "total": 110
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=house&has=county_horry%2Crentals_allowed",
+   "total": 229
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=house&has=county_horry&not=rentals_allowed",
+   "total": 24
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=house&has=county_horry%2Clong_term_rental_allowed",
+   "total": 176
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=house&has=county_horry&hoa=0",
+   "total": 133
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=house&has=county_horry&not=rentals_allowed&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=North+Myrtle+Beach&type=house&has=county_horry%2Cstr_allowed&hoa=0",
+   "total": 83
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=condo&has=county_horry",
+   "total": 85
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=condo&has=county_horry%2Cstr_allowed",
+   "total": 51
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=condo&has=county_horry%2Crentals_allowed",
+   "total": 71
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=condo&has=county_horry&not=rentals_allowed",
+   "total": 14
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=condo&has=county_horry%2Clong_term_rental_allowed",
+   "total": 69
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=house&has=county_horry",
+   "total": 82
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=house&has=county_horry%2Cstr_allowed",
+   "total": 22
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=house&has=county_horry%2Crentals_allowed",
+   "total": 71
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=house&has=county_horry&not=rentals_allowed",
+   "total": 11
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=house&has=county_horry%2Clong_term_rental_allowed",
+   "total": 58
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=house&has=county_horry&hoa=0",
+   "total": 41
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=house&has=county_horry&not=rentals_allowed&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Surfside+Beach&type=house&has=county_horry%2Cstr_allowed&hoa=0",
+   "total": 16
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_garden_city%2Ccounty_horry&type=condo",
+   "total": 70
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_garden_city%2Ccounty_horry%2Cstr_allowed&type=condo",
+   "total": 47
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_garden_city%2Ccounty_horry%2Crentals_allowed&type=condo",
+   "total": 61
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_garden_city%2Ccounty_horry&type=condo&not=rentals_allowed",
+   "total": 9
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_garden_city%2Ccounty_horry%2Clong_term_rental_allowed&type=condo",
+   "total": 60
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_garden_city%2Ccounty_horry&type=house",
+   "total": 34
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_garden_city%2Ccounty_horry%2Cstr_allowed&type=house",
+   "total": 24
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_garden_city%2Ccounty_horry%2Crentals_allowed&type=house",
+   "total": 30
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_garden_city%2Ccounty_horry&type=house&not=rentals_allowed",
+   "total": 4
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_garden_city%2Ccounty_horry%2Clong_term_rental_allowed&type=house",
+   "total": 26
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_garden_city%2Ccounty_horry&type=house&hoa=0",
+   "total": 25
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_garden_city%2Ccounty_horry&type=house&not=rentals_allowed&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_garden_city%2Ccounty_horry%2Cstr_allowed&type=house&hoa=0",
+   "total": 20
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=condo&has=county_horry",
+   "total": 93
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=condo&has=county_horry%2Cstr_allowed",
+   "total": 23
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=condo&has=county_horry%2Crentals_allowed",
+   "total": 70
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=condo&has=county_horry&not=rentals_allowed",
+   "total": 23
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=condo&has=county_horry%2Clong_term_rental_allowed",
+   "total": 70
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=house&has=county_horry",
+   "total": 129
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=house&has=county_horry%2Cstr_allowed",
+   "total": 16
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=house&has=county_horry%2Crentals_allowed",
+   "total": 104
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=house&has=county_horry&not=rentals_allowed",
+   "total": 25
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=house&has=county_horry%2Clong_term_rental_allowed",
+   "total": 93
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=house&has=county_horry&hoa=0",
+   "total": 30
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=house&has=county_horry&not=rentals_allowed&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Murrells+Inlet&type=house&has=county_horry%2Cstr_allowed&hoa=0",
+   "total": 15
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=condo&has=county_horry",
+   "total": 184
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=condo&has=county_horry%2Cstr_allowed",
+   "total": 73
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=condo&has=county_horry%2Crentals_allowed",
+   "total": 161
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=condo&has=county_horry&not=rentals_allowed",
+   "total": 23
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=condo&has=county_horry%2Clong_term_rental_allowed",
+   "total": 160
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=house&has=county_horry",
+   "total": 192
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=house&has=county_horry%2Cstr_allowed",
+   "total": 18
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=house&has=county_horry%2Crentals_allowed",
+   "total": 143
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=house&has=county_horry&not=rentals_allowed",
+   "total": 49
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=house&has=county_horry%2Clong_term_rental_allowed",
+   "total": 130
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=house&has=county_horry&hoa=0",
+   "total": 24
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=house&has=county_horry&not=rentals_allowed&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Little+River&type=house&has=county_horry%2Cstr_allowed&hoa=0",
+   "total": 9
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_carolina_forest%2Ccounty_horry&type=condo",
+   "total": 110
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_carolina_forest%2Ccounty_horry%2Cstr_allowed&type=condo",
+   "total": 56
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_carolina_forest%2Ccounty_horry%2Crentals_allowed&type=condo",
+   "total": 99
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_carolina_forest%2Ccounty_horry&type=condo&not=rentals_allowed",
+   "total": 11
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_carolina_forest%2Ccounty_horry%2Clong_term_rental_allowed&type=condo",
+   "total": 98
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_carolina_forest%2Ccounty_horry&type=house",
+   "total": 296
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_carolina_forest%2Ccounty_horry%2Cstr_allowed&type=house",
+   "total": 1
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_carolina_forest%2Ccounty_horry%2Crentals_allowed&type=house",
+   "total": 243
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_carolina_forest%2Ccounty_horry&type=house&not=rentals_allowed",
+   "total": 53
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_carolina_forest%2Ccounty_horry%2Clong_term_rental_allowed&type=house",
+   "total": 243
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_carolina_forest%2Ccounty_horry&type=house&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_carolina_forest%2Ccounty_horry&type=house&not=rentals_allowed&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_carolina_forest%2Ccounty_horry%2Cstr_allowed&type=house&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_socastee%2Ccounty_horry&type=condo",
+   "total": 14
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_socastee%2Ccounty_horry%2Cstr_allowed&type=condo",
+   "total": 1
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_socastee%2Ccounty_horry%2Crentals_allowed&type=condo",
+   "total": 10
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_socastee%2Ccounty_horry&type=condo&not=rentals_allowed",
+   "total": 4
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_socastee%2Ccounty_horry%2Clong_term_rental_allowed&type=condo",
+   "total": 10
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_socastee%2Ccounty_horry&type=house",
+   "total": 91
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_socastee%2Ccounty_horry%2Cstr_allowed&type=house",
+   "total": 6
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_socastee%2Ccounty_horry%2Crentals_allowed&type=house",
+   "total": 74
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_socastee%2Ccounty_horry&type=house&not=rentals_allowed",
+   "total": 17
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_socastee%2Ccounty_horry%2Clong_term_rental_allowed&type=house",
+   "total": 66
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_socastee%2Ccounty_horry&type=house&hoa=0",
+   "total": 21
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_socastee%2Ccounty_horry&type=house&not=rentals_allowed&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?has=area_socastee%2Ccounty_horry%2Cstr_allowed&type=house&hoa=0",
+   "total": 6
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=condo&has=county_horry",
+   "total": 34
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=condo&has=county_horry%2Cstr_allowed",
+   "total": 4
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=condo&has=county_horry%2Crentals_allowed",
+   "total": 28
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=condo&has=county_horry&not=rentals_allowed",
+   "total": 6
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=condo&has=county_horry%2Clong_term_rental_allowed",
+   "total": 28
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=house&has=county_horry",
+   "total": 666
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=house&has=county_horry%2Cstr_allowed",
+   "total": 33
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=house&has=county_horry%2Crentals_allowed",
+   "total": 508
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=house&has=county_horry&not=rentals_allowed",
+   "total": 158
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=house&has=county_horry%2Clong_term_rental_allowed",
+   "total": 386
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=house&has=county_horry&hoa=0",
+   "total": 167
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=house&has=county_horry&not=rentals_allowed&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Conway&type=house&has=county_horry%2Cstr_allowed&hoa=0",
+   "total": 23
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=condo&has=county_horry",
+   "total": 24
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=condo&has=county_horry%2Cstr_allowed",
+   "total": 4
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=condo&has=county_horry%2Crentals_allowed",
+   "total": 22
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=condo&has=county_horry&not=rentals_allowed",
+   "total": 2
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=condo&has=county_horry%2Clong_term_rental_allowed",
+   "total": 22
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=house&has=county_horry",
+   "total": 334
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=house&has=county_horry%2Cstr_allowed",
+   "total": 16
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=house&has=county_horry%2Crentals_allowed",
+   "total": 244
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=house&has=county_horry&not=rentals_allowed",
+   "total": 90
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=house&has=county_horry%2Clong_term_rental_allowed",
+   "total": 229
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=house&has=county_horry&hoa=0",
+   "total": 19
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=house&has=county_horry&not=rentals_allowed&hoa=0",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?city=Longs&type=house&has=county_horry%2Cstr_allowed&hoa=0",
+   "total": 5
+  }
+ ]
+}

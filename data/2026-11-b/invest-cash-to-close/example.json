@@ -1,0 +1,137 @@
+{
+ "inputs": {
+  "loan_cost_pct_of_price": 2.26,
+  "cushion_months": 2,
+  "reserve_months": 6
+ },
+ "cases": {
+  "condo": {
+   "price": 232000,
+   "where": "inside the City of Myrtle Beach",
+   "tax_year_at_6pct": 3544,
+   "dues_month": 550,
+   "lines": {
+    "loan_costs": 5243,
+    "mortgage_recording": 25,
+    "insurance_first_year": 972,
+    "insurance_escrow_cushion": 162,
+    "tax_escrow_cushion": 591
+   },
+   "lines_rounded": {
+    "loan_costs": 5240,
+    "mortgage_recording": 25,
+    "insurance_first_year": 970,
+    "insurance_escrow_cushion": 160,
+    "tax_escrow_cushion": 590
+   },
+   "total_beyond_down_payment": 6993,
+   "total_rounded": 7000,
+   "total_pct_of_price": 3.0,
+   "reserves": {
+    "months": 6,
+    "tax_insurance_dues_month": 926,
+    "tax_insurance_dues_part": 5558,
+    "tax_insurance_dues_part_rounded": 5600,
+    "plus": "6 months of your lender's loan payment (never computed here)"
+   },
+   "not_in_total": [
+    "your down payment",
+    "owner's title policy (optional; no filed schedule opened)",
+    "prepaid interest (needs a rate)",
+    "HOA statement, transfer and capital charges (set by the documents; no state cap; no published local range)",
+    "the weeks of tax and insurance escrow until the first payment date",
+    "inspection, wood report, survey",
+    "flood policy where required"
+   ]
+  },
+  "house": {
+   "price": 362000,
+   "where": "outside city limits",
+   "tax_year_at_6pct": 4366,
+   "dues_month": 85,
+   "lines": {
+    "loan_costs": 8181,
+    "mortgage_recording": 25,
+    "insurance_first_year": 3300,
+    "insurance_escrow_cushion": 550,
+    "tax_escrow_cushion": 728
+   },
+   "lines_rounded": {
+    "loan_costs": 8180,
+    "mortgage_recording": 25,
+    "insurance_first_year": 3300,
+    "insurance_escrow_cushion": 550,
+    "tax_escrow_cushion": 730
+   },
+   "total_beyond_down_payment": 12784,
+   "total_rounded": 12800,
+   "total_pct_of_price": 3.5,
+   "reserves": {
+    "months": 6,
+    "tax_insurance_dues_month": 724,
+    "tax_insurance_dues_part": 4343,
+    "tax_insurance_dues_part_rounded": 4300,
+    "plus": "6 months of your lender's loan payment (never computed here)"
+   },
+   "not_in_total": [
+    "your down payment",
+    "owner's title policy (optional; no filed schedule opened)",
+    "prepaid interest (needs a rate)",
+    "HOA statement, transfer and capital charges (set by the documents; no state cap; no published local range)",
+    "the weeks of tax and insurance escrow until the first payment date",
+    "inspection, wood report, survey",
+    "flood policy where required"
+   ]
+  }
+ },
+ "hmda_compare": {
+  "investment_median_loan_costs": 6371.85,
+  "home_median_loan_costs": 4878.06,
+  "second_home_median_loan_costs": 5450.3,
+  "difference": 1494,
+  "investment_pct_of_value": 2.26,
+  "home_pct_of_value": 1.32,
+  "second_home_pct_of_value": 1.69,
+  "investment_origination_pct": 1.59,
+  "home_origination_pct": 0.84
+ },
+ "chart_loan_costs_by_use": [
+  {
+   "label": "A home you live in",
+   "median": 4900.0,
+   "n": 4157
+  },
+  {
+   "label": "A second home",
+   "median": 5500.0,
+   "n": 1298
+  },
+  {
+   "label": "A rental",
+   "median": 6400.0,
+   "n": 287
+  }
+ ],
+ "investor_loans": {
+  "all_purchase_loans": 10096,
+  "investment": 1505,
+  "second_home": 1382,
+  "investment_share_pct": 14.9,
+  "share_not_lived_in_pct": 28.6,
+  "investment_business_purpose": 966,
+  "business_share_pct": 64.2,
+  "business_with_loan_costs_reported": 0
+ },
+ "strips": {
+  "condo_200_265k": 622,
+  "condo_200_265k_rentals_allowed": 546,
+  "condo_200_265k_oceanfront_unit": 102,
+  "condo_200_265k_oceanfront_unit_rentals_allowed": 97,
+  "condo_200_265k_str_allowed": 423,
+  "condo_200_265k_oceanfront_unit_str_allowed": 97,
+  "house_330_395k": 498,
+  "house_330_395k_str_allowed": 21,
+  "house_330_395k_rentals_allowed": 382,
+  "oceanfront_str_condo_median_dues": 765
+ }
+}

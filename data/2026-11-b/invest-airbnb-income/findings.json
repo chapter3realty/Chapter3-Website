@@ -1,0 +1,1020 @@
+{
+ "_source": "analyze.py over data/str-market.json (2026-11-03 refresh, AirROI October 1, 2026 update, 12 months to September 2026) and the same update in data/2026-10-d/invest-str-tools/raw/airroi-parsed.json; worked cases with /invest/str-tools/ arithmetic",
+ "towns": [
+  {
+   "slug": "north-myrtle-beach",
+   "name": "North Myrtle Beach",
+   "page": "/submarkets/north-myrtle-beach/",
+   "gross_avg": 34401,
+   "listings": 4564,
+   "occupancy_pct": 34.7,
+   "adr": 375,
+   "month_median": 3220,
+   "month_bottom25": 1580,
+   "month_top25": 5760,
+   "month_top10": 9850,
+   "condo_pct": 67.0,
+   "house_pct": 30.9,
+   "by_size": {
+    "1": {
+     "listings": 554,
+     "median": 16300,
+     "average": 21100,
+     "adr": 212,
+     "occupancy_pct": 39
+    },
+    "2": {
+     "listings": 1299,
+     "median": 14900,
+     "average": 20700,
+     "adr": 246,
+     "occupancy_pct": 34
+    },
+    "3": {
+     "listings": 1403,
+     "median": 21200,
+     "average": 29700,
+     "adr": 348,
+     "occupancy_pct": 34
+    },
+    "4": {
+     "listings": 644,
+     "median": 36400,
+     "average": 47800,
+     "adr": 495,
+     "occupancy_pct": 35
+    },
+    "5+": {
+     "listings": 511,
+     "median": 70000,
+     "average": 86900,
+     "adr": 853,
+     "occupancy_pct": 35
+    }
+   },
+   "two_bed_median_below_avg_pct": 28,
+   "top_quarter_gross": 61610,
+   "kept_after_running_avg": 20411,
+   "kept_cents_per_dollar": 61,
+   "summer_share_pct": 47,
+   "july": 9640,
+   "january": 1890,
+   "july_over_january": 5.1,
+   "months": [
+    {
+     "month": "January",
+     "gross": 1890
+    },
+    {
+     "month": "February",
+     "gross": 2390
+    },
+    {
+     "month": "March",
+     "gross": 3430
+    },
+    {
+     "month": "April",
+     "gross": 3840
+    },
+    {
+     "month": "May",
+     "gross": 4790
+    },
+    {
+     "month": "June",
+     "gross": 8270
+    },
+    {
+     "month": "July",
+     "gross": 9640
+    },
+    {
+     "month": "August",
+     "gross": 6080
+    },
+    {
+     "month": "September",
+     "gross": 3550
+    },
+    {
+     "month": "October",
+     "gross": 2980
+    },
+    {
+     "month": "November",
+     "gross": 2330
+    },
+    {
+     "month": "December",
+     "gross": 2230
+    }
+   ],
+   "lead_days": 68,
+   "cleaning_fee_median": 229,
+   "small": false
+  },
+  {
+   "slug": "myrtle-beach",
+   "name": "Myrtle Beach",
+   "page": "/submarkets/myrtle-beach/",
+   "gross_avg": 25807,
+   "listings": 8698,
+   "occupancy_pct": 36.3,
+   "adr": 257,
+   "month_median": 2530,
+   "month_bottom25": 1270,
+   "month_top25": 4330,
+   "month_top10": 6770,
+   "condo_pct": 80.6,
+   "house_pct": 12.1,
+   "by_size": {
+    "1": {
+     "listings": 2391,
+     "median": 17000,
+     "average": 20700,
+     "adr": 194,
+     "occupancy_pct": 38
+    },
+    "2": {
+     "listings": 2689,
+     "median": 20100,
+     "average": 25100,
+     "adr": 252,
+     "occupancy_pct": 37
+    },
+    "3": {
+     "listings": 1379,
+     "median": 31700,
+     "average": 37100,
+     "adr": 339,
+     "occupancy_pct": 38
+    },
+    "4": {
+     "listings": 357,
+     "median": 56000,
+     "average": 57400,
+     "adr": 476,
+     "occupancy_pct": 40
+    },
+    "5+": {
+     "listings": 163,
+     "median": 65300,
+     "average": 77900,
+     "adr": 767,
+     "occupancy_pct": 37
+    }
+   },
+   "two_bed_median_below_avg_pct": 20,
+   "top_quarter_gross": 44250,
+   "kept_after_running_avg": 15977,
+   "kept_cents_per_dollar": 63,
+   "summer_share_pct": 47,
+   "july": 6800,
+   "january": 1340,
+   "july_over_january": 5.1,
+   "months": [
+    {
+     "month": "January",
+     "gross": 1340
+    },
+    {
+     "month": "February",
+     "gross": 1680
+    },
+    {
+     "month": "March",
+     "gross": 2530
+    },
+    {
+     "month": "April",
+     "gross": 2800
+    },
+    {
+     "month": "May",
+     "gross": 3270
+    },
+    {
+     "month": "June",
+     "gross": 6070
+    },
+    {
+     "month": "July",
+     "gross": 6800
+    },
+    {
+     "month": "August",
+     "gross": 4400
+    },
+    {
+     "month": "September",
+     "gross": 2550
+    },
+    {
+     "month": "October",
+     "gross": 2150
+    },
+    {
+     "month": "November",
+     "gross": 1620
+    },
+    {
+     "month": "December",
+     "gross": 1590
+    }
+   ],
+   "lead_days": 52,
+   "cleaning_fee_median": 151,
+   "small": false
+  },
+  {
+   "slug": "surfside-beach",
+   "name": "Surfside Beach",
+   "page": "/submarkets/surfside-beach/",
+   "gross_avg": 42902,
+   "listings": 551,
+   "occupancy_pct": 36.9,
+   "adr": 419,
+   "month_median": 3840,
+   "month_bottom25": 1810,
+   "month_top25": 7470,
+   "month_top10": 12800,
+   "condo_pct": 47.5,
+   "house_pct": 50.5,
+   "by_size": {
+    "1": {
+     "listings": 37,
+     "median": 11100,
+     "average": 16600,
+     "adr": 175,
+     "occupancy_pct": 36
+    },
+    "2": {
+     "listings": 175,
+     "median": 15800,
+     "average": 22800,
+     "adr": 245,
+     "occupancy_pct": 35
+    },
+    "3": {
+     "listings": 106,
+     "median": 29200,
+     "average": 33600,
+     "adr": 315,
+     "occupancy_pct": 42
+    },
+    "4": {
+     "listings": 79,
+     "median": 57300,
+     "average": 73300,
+     "adr": 558,
+     "occupancy_pct": 41
+    },
+    "5+": {
+     "listings": 126,
+     "median": 54800,
+     "average": 74300,
+     "adr": 784,
+     "occupancy_pct": 35
+    }
+   },
+   "two_bed_median_below_avg_pct": 31,
+   "top_quarter_gross": 83560,
+   "kept_after_running_avg": 26382,
+   "kept_cents_per_dollar": 63,
+   "summer_share_pct": 46,
+   "july": 11600,
+   "january": 2360,
+   "july_over_january": 4.9,
+   "months": [
+    {
+     "month": "January",
+     "gross": 2360
+    },
+    {
+     "month": "February",
+     "gross": 2820
+    },
+    {
+     "month": "March",
+     "gross": 4090
+    },
+    {
+     "month": "April",
+     "gross": 5070
+    },
+    {
+     "month": "May",
+     "gross": 6310
+    },
+    {
+     "month": "June",
+     "gross": 9930
+    },
+    {
+     "month": "July",
+     "gross": 11600
+    },
+    {
+     "month": "August",
+     "gross": 7650
+    },
+    {
+     "month": "September",
+     "gross": 4650
+    },
+    {
+     "month": "October",
+     "gross": 3930
+    },
+    {
+     "month": "November",
+     "gross": 2970
+    },
+    {
+     "month": "December",
+     "gross": 2570
+    }
+   ],
+   "lead_days": 73,
+   "cleaning_fee_median": 265,
+   "small": false
+  },
+  {
+   "slug": "garden-city",
+   "name": "Garden City Beach",
+   "page": "/submarkets/garden-city/",
+   "gross_avg": 41223,
+   "listings": 374,
+   "occupancy_pct": 39.6,
+   "adr": 371,
+   "month_median": 3470,
+   "month_bottom25": 1930,
+   "month_top25": 5870,
+   "month_top10": 10700,
+   "condo_pct": 67.6,
+   "house_pct": 31.0,
+   "by_size": {
+    "1": {
+     "listings": 82,
+     "median": 14400,
+     "average": 21100,
+     "adr": 233,
+     "occupancy_pct": 37
+    },
+    "2": {
+     "listings": 125,
+     "median": 23400,
+     "average": 26900,
+     "adr": 243,
+     "occupancy_pct": 41
+    },
+    "3": {
+     "listings": 85,
+     "median": 36100,
+     "average": 38700,
+     "adr": 352,
+     "occupancy_pct": 40
+    },
+    "4": {
+     "listings": 19,
+     "median": 37200,
+     "average": 54900,
+     "adr": 545,
+     "occupancy_pct": 36
+    },
+    "5+": {
+     "listings": 60,
+     "median": 78100,
+     "average": 98400,
+     "adr": 812,
+     "occupancy_pct": 41
+    }
+   },
+   "two_bed_median_below_avg_pct": 13,
+   "top_quarter_gross": 69760,
+   "kept_after_running_avg": 25333,
+   "kept_cents_per_dollar": 63,
+   "summer_share_pct": 45,
+   "july": 10200,
+   "january": 2090,
+   "july_over_january": 4.9,
+   "months": [
+    {
+     "month": "January",
+     "gross": 2090
+    },
+    {
+     "month": "February",
+     "gross": 2820
+    },
+    {
+     "month": "March",
+     "gross": 3660
+    },
+    {
+     "month": "April",
+     "gross": 4390
+    },
+    {
+     "month": "May",
+     "gross": 5660
+    },
+    {
+     "month": "June",
+     "gross": 8690
+    },
+    {
+     "month": "July",
+     "gross": 10200
+    },
+    {
+     "month": "August",
+     "gross": 6540
+    },
+    {
+     "month": "September",
+     "gross": 4120
+    },
+    {
+     "month": "October",
+     "gross": 3490
+    },
+    {
+     "month": "November",
+     "gross": 2740
+    },
+    {
+     "month": "December",
+     "gross": 2670
+    }
+   ],
+   "lead_days": 73,
+   "cleaning_fee_median": 230,
+   "small": false
+  },
+  {
+   "slug": "murrells-inlet",
+   "name": "Murrells Inlet",
+   "page": "/submarkets/murrells-inlet/",
+   "gross_avg": 47603,
+   "listings": 478,
+   "occupancy_pct": 41.9,
+   "adr": 405,
+   "month_median": 3590,
+   "month_bottom25": 1960,
+   "month_top25": 6390,
+   "month_top10": 11600,
+   "condo_pct": 37.9,
+   "house_pct": 59.8,
+   "by_size": {
+    "1": {
+     "listings": 41,
+     "median": 22800,
+     "average": 25400,
+     "adr": 191,
+     "occupancy_pct": 45
+    },
+    "2": {
+     "listings": 121,
+     "median": 27500,
+     "average": 27900,
+     "adr": 230,
+     "occupancy_pct": 44
+    },
+    "3": {
+     "listings": 134,
+     "median": 30600,
+     "average": 32900,
+     "adr": 304,
+     "occupancy_pct": 41
+    },
+    "4": {
+     "listings": 57,
+     "median": 54100,
+     "average": 58400,
+     "adr": 454,
+     "occupancy_pct": 41
+    },
+    "5+": {
+     "listings": 98,
+     "median": 89900,
+     "average": 105000,
+     "adr": 897,
+     "occupancy_pct": 40
+    }
+   },
+   "two_bed_median_below_avg_pct": 1,
+   "top_quarter_gross": 84680,
+   "kept_after_running_avg": 28623,
+   "kept_cents_per_dollar": 62,
+   "summer_share_pct": 43,
+   "july": 9780,
+   "january": 2250,
+   "july_over_january": 4.3,
+   "months": [
+    {
+     "month": "January",
+     "gross": 2250
+    },
+    {
+     "month": "February",
+     "gross": 2660
+    },
+    {
+     "month": "March",
+     "gross": 4310
+    },
+    {
+     "month": "April",
+     "gross": 5220
+    },
+    {
+     "month": "May",
+     "gross": 6030
+    },
+    {
+     "month": "June",
+     "gross": 9300
+    },
+    {
+     "month": "July",
+     "gross": 9780
+    },
+    {
+     "month": "August",
+     "gross": 6840
+    },
+    {
+     "month": "September",
+     "gross": 4490
+    },
+    {
+     "month": "October",
+     "gross": 3900
+    },
+    {
+     "month": "November",
+     "gross": 3020
+    },
+    {
+     "month": "December",
+     "gross": 2980
+    }
+   ],
+   "lead_days": 64,
+   "cleaning_fee_median": 225,
+   "small": false
+  },
+  {
+   "slug": "pawleys-island",
+   "name": "Pawleys Island",
+   "page": "/submarkets/pawleys-island/",
+   "gross_avg": 31430,
+   "listings": 453,
+   "occupancy_pct": 35.7,
+   "adr": 392,
+   "month_median": 2840,
+   "month_bottom25": 1560,
+   "month_top25": 4880,
+   "month_top10": 8130,
+   "condo_pct": 55.4,
+   "house_pct": 42.4,
+   "by_size": {
+    "1": {
+     "listings": 43,
+     "median": 18600,
+     "average": 26500,
+     "adr": 221,
+     "occupancy_pct": 41
+    },
+    "2": {
+     "listings": 140,
+     "median": 18800,
+     "average": 22900,
+     "adr": 253,
+     "occupancy_pct": 36
+    },
+    "3": {
+     "listings": 141,
+     "median": 24000,
+     "average": 27800,
+     "adr": 325,
+     "occupancy_pct": 37
+    },
+    "4": {
+     "listings": 71,
+     "median": 29400,
+     "average": 41600,
+     "adr": 572,
+     "occupancy_pct": 32
+    },
+    "5+": {
+     "listings": 44,
+     "median": 52400,
+     "average": 64300,
+     "adr": 981,
+     "occupancy_pct": 33
+    }
+   },
+   "two_bed_median_below_avg_pct": 18,
+   "top_quarter_gross": 53990,
+   "kept_after_running_avg": 17930,
+   "kept_cents_per_dollar": 59,
+   "summer_share_pct": 37,
+   "july": 6290,
+   "january": 2110,
+   "july_over_january": 3.0,
+   "months": [
+    {
+     "month": "January",
+     "gross": 2110
+    },
+    {
+     "month": "February",
+     "gross": 2650
+    },
+    {
+     "month": "March",
+     "gross": 3640
+    },
+    {
+     "month": "April",
+     "gross": 3760
+    },
+    {
+     "month": "May",
+     "gross": 4140
+    },
+    {
+     "month": "June",
+     "gross": 5680
+    },
+    {
+     "month": "July",
+     "gross": 6290
+    },
+    {
+     "month": "August",
+     "gross": 4180
+    },
+    {
+     "month": "September",
+     "gross": 3070
+    },
+    {
+     "month": "October",
+     "gross": 3210
+    },
+    {
+     "month": "November",
+     "gross": 2670
+    },
+    {
+     "month": "December",
+     "gross": 2360
+    }
+   ],
+   "lead_days": 90,
+   "cleaning_fee_median": 217,
+   "small": false
+  },
+  {
+   "slug": "little-river",
+   "name": "Little River",
+   "page": "/submarkets/little-river/",
+   "gross_avg": 14963,
+   "listings": 169,
+   "occupancy_pct": 33.9,
+   "adr": 200,
+   "month_median": 1700,
+   "month_bottom25": 854,
+   "month_top25": 3000,
+   "month_top10": 4600,
+   "condo_pct": 63.3,
+   "house_pct": 33.7,
+   "by_size": {
+    "1": {
+     "listings": 23,
+     "median": 12000,
+     "average": 11600,
+     "adr": 135,
+     "occupancy_pct": 35
+    },
+    "2": {
+     "listings": 64,
+     "median": 9400,
+     "average": 11800,
+     "adr": 177,
+     "occupancy_pct": 34
+    },
+    "3": {
+     "listings": 47,
+     "median": 15700,
+     "average": 19100,
+     "adr": 249,
+     "occupancy_pct": 35
+    },
+    "4": {
+     "listings": 11,
+     "median": 26300,
+     "average": 31300,
+     "adr": 337,
+     "occupancy_pct": 36
+    }
+   },
+   "two_bed_median_below_avg_pct": 20,
+   "top_quarter_gross": 26480,
+   "kept_after_running_avg": 8813,
+   "kept_cents_per_dollar": 60,
+   "summer_share_pct": 40,
+   "july": 3650,
+   "january": 1330,
+   "july_over_january": 2.7,
+   "months": [
+    {
+     "month": "January",
+     "gross": 1330
+    },
+    {
+     "month": "February",
+     "gross": 1540
+    },
+    {
+     "month": "March",
+     "gross": 1770
+    },
+    {
+     "month": "April",
+     "gross": 1840
+    },
+    {
+     "month": "May",
+     "gross": 2110
+    },
+    {
+     "month": "June",
+     "gross": 3430
+    },
+    {
+     "month": "July",
+     "gross": 3650
+    },
+    {
+     "month": "August",
+     "gross": 2570
+    },
+    {
+     "month": "September",
+     "gross": 1520
+    },
+    {
+     "month": "October",
+     "gross": 1540
+    },
+    {
+     "month": "November",
+     "gross": 1300
+    },
+    {
+     "month": "December",
+     "gross": 1440
+    }
+   ],
+   "lead_days": 44,
+   "cleaning_fee_median": 172,
+   "small": true
+  },
+  {
+   "slug": "conway",
+   "name": "Conway",
+   "page": "/submarkets/conway/",
+   "gross_avg": 23426,
+   "listings": 106,
+   "occupancy_pct": 36.0,
+   "adr": 234,
+   "month_median": 1890,
+   "month_bottom25": 963,
+   "month_top25": 3640,
+   "month_top10": 5870,
+   "condo_pct": 17.0,
+   "house_pct": 59.4,
+   "by_size": {
+    "1": {
+     "listings": 18,
+     "median": 15200,
+     "average": 18400,
+     "adr": 184,
+     "occupancy_pct": 37
+    },
+    "2": {
+     "listings": 26,
+     "median": 21100,
+     "average": 24000,
+     "adr": 185,
+     "occupancy_pct": 40
+    },
+    "3": {
+     "listings": 23,
+     "median": 27900,
+     "average": 31500,
+     "adr": 257,
+     "occupancy_pct": 46
+    }
+   },
+   "two_bed_median_below_avg_pct": 12,
+   "top_quarter_gross": 44950,
+   "kept_after_running_avg": 14616,
+   "kept_cents_per_dollar": 64,
+   "summer_share_pct": 38,
+   "july": 3850,
+   "january": 1550,
+   "july_over_january": 2.5,
+   "months": [
+    {
+     "month": "January",
+     "gross": 1550
+    },
+    {
+     "month": "February",
+     "gross": 1600
+    },
+    {
+     "month": "March",
+     "gross": 2030
+    },
+    {
+     "month": "April",
+     "gross": 2170
+    },
+    {
+     "month": "May",
+     "gross": 2830
+    },
+    {
+     "month": "June",
+     "gross": 3800
+    },
+    {
+     "month": "July",
+     "gross": 3850
+    },
+    {
+     "month": "August",
+     "gross": 3300
+    },
+    {
+     "month": "September",
+     "gross": 2020
+    },
+    {
+     "month": "October",
+     "gross": 2270
+    },
+    {
+     "month": "November",
+     "gross": 1780
+    },
+    {
+     "month": "December",
+     "gross": 1830
+    }
+   ],
+   "lead_days": 42,
+   "cleaning_fee_median": 129,
+   "small": true
+  }
+ ],
+ "size": {
+  "two_bed_avg_range_excl_little_river": [
+   20700,
+   27900
+  ],
+  "three_bed_avg_range_excl_little_river": [
+   27800,
+   38700
+  ],
+  "four_bed_avg_range": [
+   31300,
+   73300
+  ],
+  "all_size_avg_range": [
+   14963,
+   47603
+  ],
+  "mi_over_mb_all_sizes": 1.84,
+  "mi_over_mb_two_bed": 1.11
+ },
+ "worked": {
+  "myrtle_beach_oceanfront_2br": {
+   "gross": 25200,
+   "cleaner": 3276,
+   "airbnb": 3528,
+   "utilities": 1260,
+   "supplies_repairs": 1260,
+   "manager": 0,
+   "before_bills": 15876,
+   "hoa": 14700,
+   "tax": 4995,
+   "ins_permit": 390,
+   "bills": 20085,
+   "kept": -4209,
+   "nights_to_pay_bills": 110,
+   "town": "myrtle-beach",
+   "price_median": 327000,
+   "hoa_month": 1225.0,
+   "rate": 252,
+   "nights": 87,
+   "for_sale_n": 48,
+   "manager_pct": 0
+  },
+  "garden_city_2br": {
+   "gross": 26843,
+   "cleaner": 3758,
+   "airbnb": 3490,
+   "utilities": 1342,
+   "supplies_repairs": 1342,
+   "manager": 0,
+   "before_bills": 16911,
+   "hoa": 6900,
+   "tax": 4272,
+   "ins_permit": 620,
+   "bills": 11792,
+   "kept": 5119,
+   "nights_to_pay_bills": 66,
+   "town": "garden-city-beach",
+   "price_median": 343500,
+   "hoa_month": 575.0,
+   "rate": 243,
+   "nights": 95,
+   "for_sale_n": 23,
+   "manager_pct": 0
+  },
+  "garden_city_2br_manager15": {
+   "gross": 26843,
+   "cleaner": 3758,
+   "airbnb": 3490,
+   "utilities": 1342,
+   "supplies_repairs": 1342,
+   "manager": 3463,
+   "before_bills": 13448,
+   "hoa": 6900,
+   "tax": 4272,
+   "ins_permit": 620,
+   "bills": 11792,
+   "kept": 1656,
+   "nights_to_pay_bills": 83,
+   "town": "garden-city-beach",
+   "price_median": 343500,
+   "hoa_month": 575.0,
+   "rate": 243,
+   "nights": 95,
+   "for_sale_n": 23,
+   "manager_pct": 15
+  }
+ },
+ "myrtle_beach_pnl_avg_and_top_quarter": {
+  "gross": [
+   25807,
+   44250
+  ],
+  "nightly": [
+   22507,
+   38600
+  ],
+  "cleaning": [
+   3300,
+   5650
+  ],
+  "airbnb_fee": [
+   3560,
+   6100
+  ],
+  "utilities": [
+   1290,
+   2210
+  ],
+  "supplies": [
+   520,
+   880
+  ],
+  "repairs": [
+   770,
+   1330
+  ],
+  "insurance": 260,
+  "permit": 130,
+  "kept": [
+   15977,
+   27690
+  ]
+ },
+ "manager_published": {
+  "low_pct": 10,
+  "high_pct": 25,
+  "on_avg_listing": [
+   2581,
+   6452
+  ]
+ }
+}

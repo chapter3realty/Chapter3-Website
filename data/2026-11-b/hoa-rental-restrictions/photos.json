@@ -1,0 +1,123 @@
+{
+ "note": "Licence records copied unchanged (slug aside) from the files named in copied_from. The images stay where those pages put them.",
+ "photos": [
+  {
+   "slug": "hoa-rental-restrictions",
+   "file": "images/2026-10-d/hoa-reserves/myrtle-beach-oceanfront-towers-2011.webp",
+   "variants": {
+    "600": "images/2026-10-d/hoa-reserves/myrtle-beach-oceanfront-towers-2011-600w.webp",
+    "1200": "images/2026-10-d/hoa-reserves/myrtle-beach-oceanfront-towers-2011-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "Oceanfront towers in Myrtle Beach, USGS oblique aerial photo, August 24, 2011",
+   "what": "A row of oceanfront high-rise and mid-rise buildings in Myrtle Beach seen from a plane over the ocean: flat roofs with rooftop boxes, stacked balconies on every floor, pools and umbrellas behind the dunes, the beach and surf in front, parking lots and trees behind. People on the beach are too small to recognize.",
+   "caption": "Oceanfront towers in Myrtle Beach, seen from a plane over the ocean in 2011.",
+   "alt": "A row of oceanfront towers in Myrtle Beach with flat roofs, stacked balconies and pools behind the dunes, seen from a plane over the ocean",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Oceanfront, central Myrtle Beach"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_180052d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_180000.zip; aircraft position 33.699958 N, 78.862068 W (11CCH03-Photolocations.csv; the position of the plane, not of the buildings). Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. The same release as the photos on /hoa/special-assessments/ and /sell/out-of-state-buyers/ (different frames).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size by the writer on 2026-11-01. The frame shows oceanfront towers with flat roofs and stacked balconies; it does not show whether each building is a condo or a hotel, so the caption says 'oceanfront towers', names no building, and says only that roofs and balconies like these are parts a condo reserve fund saves for. No sign or name is legible at page size. Reused on /buyers/va-loans/ (2026-11-02, looked at full size again): the caption there says these are oceanfront towers, names no building, and says only how few oceanfront resort buildings in our directory have an accepted VA record. Reused on /invest/condotel-financing/ (2026-11-10): the caption says these are oceanfront condo and resort towers with pools behind the dunes, names no building, and makes no claim about which of them is run as a hotel.",
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty cropped and resized the photo",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-10-d/hoa-reserves/myrtle-beach-oceanfront-towers-2011-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-10-d/hoa-reserves/myrtle-beach-oceanfront-towers-2011-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-10-d/hoa-reserves/myrtle-beach-oceanfront-towers-2011-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "crop_note": "Cut as a 16x9 band from the 3008x1960 frame (rows 230 to 1922), then resized; 1x1, 4x3 and 16x9 crops from its center for the share image",
+   "copied_from": "data/2026-11-b/invest-condotel-financing/photos.json"
+  },
+  {
+   "slug": "hoa-rental-restrictions",
+   "source": "https://planetarycomputer.microsoft.com/dataset/naip",
+   "source_name": "Microsoft Planetary Computer",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "license_note": "NAIP is a U.S. government work. The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\" (the same terms as batch 2026-10-a's NAIP records). Read 2026-11-02.",
+   "terms_urls": [
+    "https://www.fsa.usda.gov/help/policies-and-links/",
+    "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+   ],
+   "taken": "2023-04-10",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via Microsoft Planetary Computer. Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP image, raised the contrast a little and added labels placed from county and Census coordinates",
+   "method": "data/2026-11-a/submarkets-little-river/aerial_render_r1.py and aerial-labels-r1.json (review round 1: a 4:3 landscape cut that keeps every label inside the frame and the bottom-right corner clear for the credit; labels from ground coordinates through the crop's bbox, never by eye)",
+   "file": "images/2026-11-a/submarkets-little-river/little-river-harbours-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-little-river/little-river-harbours-from-above-600w.webp",
+    "1200": "images/2026-11-a/submarkets-little-river/little-river-harbours-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Coquina Harbour and Lightkeepers Village slips from above, NAIP aerial, April 2023",
+   "what": "One long marina basin off the Intracoastal Waterway in Little River from straight above on April 10, 2023, full of boats in rows of slips: Coquina Harbour's slips in its upper part, Lightkeepers Village's near its mouth. Condo buildings line both sides, US 17 crosses the top left corner, a golf course is at the upper right, and the wide waterway and marsh are across the bottom. Labels: US 17, Coquina Harbour, Lightkeepers Village, Intracoastal Waterway.",
+   "caption": "Coquina Harbour and Lightkeepers Village share one basin between US 17 and the waterway.",
+   "alt": "A marina basin full of boats off the Intracoastal Waterway, from above, with Coquina Harbour labelled at its upper end, Lightkeepers Village near its mouth, US 17 at the top left and a golf course at the upper right",
+   "place": {
+    "city": "Little River",
+    "sublocation": "Coquina Harbour and Lightkeepers Village, on the Intracoastal Waterway"
+   },
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (STAC item sc_m_3307811_ne_17_060_20230410_20230712; datetime 2023-04-10T16:00:00Z). Cut by Chapter3 from the Planetary Computer data API: https://planetarycomputer.microsoft.com/api/data/v1/item/crop/-78.6440,33.8570,-78.6310,33.8680/1980x2008.png?collection=naip&item=sc_m_3307811_ne_17_060_20230410_20230712&assets=image&asset_bidx=image|1,2,3. Two flight lines meet in the water at the bottom, so the water's color changes there.",
+   "naip_tiles": [
+    "m_3307811_ne_17_060_20230410"
+   ],
+   "labels": [
+    "US 17",
+    "Coquina Harbour",
+    "Lightkeepers Village",
+    "Intracoastal Waterway"
+   ],
+   "annotation_sources": {
+    "Coquina Harbour": "centre of the 81 deeded slip parcels at Coquina Harbour (-78.63774, 33.86453), Horry County GIS parcels layer 24, land use 306",
+    "Lightkeepers Village": "centre of the 25 deeded slip parcels at Lightkeepers Village (-78.63757, 33.86081), same layer",
+    "Intracoastal Waterway": "a point inside the county water outline (-78.6350, 33.8598), Horry County GIS layer 21",
+    "US 17": "midpoint of the US 17 centreline segment (-78.6432, 33.8650) to (-78.6365, 33.8674), Census TIGER/Line (tools/geo/grand-strand-v2.json)"
+   },
+   "subject_check": "Looked at full size (1200 px) and at 600 px by the writer of /submarkets/little-river/ on 2026-11-02. Both slip-parcel centres fall on rows of slips with boats in the one basin. No person, sign, plate or house number is readable at this scale. Review round 1: the 1200x900 cut looked at full size and at 600 px on 2026-11-02; every label is inside the frame and none is in the bottom-right corner where the credit sits. The harbours view has the seam of two NAIP flight lines in the water at the bottom (lighter water on the left); no other 2023 NAIP flight covers it.",
+   "frame": {
+    "bbox_wgs84": [
+     -78.644,
+     33.85846,
+     -78.631,
+     33.8666
+    ],
+    "ground_m_per_px_1200w": 1.0
+   },
+   "original_size": "1980x2008 (Planetary Computer crop), resized to 1200 px wide, labels drawn at 50 px, then cut to 1200x900",
+   "copied_from": "data/2026-11-a/submarkets-little-river/photos.json"
+  }
+ ]
+}

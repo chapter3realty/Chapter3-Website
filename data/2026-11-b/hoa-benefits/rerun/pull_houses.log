@@ -1,0 +1,57 @@
+all pins 3669 api total 3673
+no_fee pins 1151 api total 1154
+built_2000_plus pins 2876 api total 2877
+built_2015_plus pins 2193 api total 2193
+homes 3669 calls 278 truncated 8
+== by beach band, built 2000+
+   under 1 mile fee (109, 340, 0.12, 2196) | none (167, 417, 0.16, 1871) -18.5 39.5
+   1 to 3 miles fee (455, 255, 0.17, 2337) | none (43, 298, 0.24, 2060) -14.4 91.4
+   3 to 10 miles fee (905, 199, 0.2, 2109) | none (36, 225, 0.66, 2234) -11.6 96.2
+   over 10 miles fee (505, 178, 0.23, 1770) | none (233, 228, 1.0, 1795) -21.9 68.4
+   29577 under 1 mile 27 377 | 27 370 1.9
+   29582 under 1 mile 38 282 | 35 418 -32.5
+   29576 1 to 3 miles 70 248 | 16 353 -29.7
+   29511 over 10 miles 17 162 | 17 218 -25.7
+   29526 over 10 miles 193 173 | 68 226 -23.5
+   29527 over 10 miles 146 182 | 31 213 -14.6
+   29544 over 10 miles 18 174 | 38 242 -28.1
+   29569 over 10 miles 55 175 | 66 232 -24.6
+zip-band compared 8 fee higher 1 median -25.1
+== all ages {'with_fee': {'n': 2166, 'median_ppsf': 206, 'median_price': 397000.0, 'median_sqft': 2000, 'n_acres': 2141, 'median_acres': 0.2}, 'no_fee': {'n': 844, 'median_ppsf': 272, 'median_price': 517000.0, 'median_sqft': 1832, 'n_acres': 758, 'median_acres': 0.39}} zips 13 fee higher in 1 median diff -18.0
+   29511 Aynor fee 17 162 0.24 | none 21 217 1.1 | -25.3
+   29526 Conway (29526) fee 323 178 0.23 | none 111 217 0.61 | -18.0
+   29527 Conway (29527) fee 146 182 0.23 | none 54 211 0.7 | -13.7
+   29544 Galivants Ferry fee 18 174 0.24 | none 45 235 1.07 | -26.0
+   29566 Little River fee 163 209 0.18 | none 21 242 0.24 | -13.6
+   29568 Longs fee 309 185 0.19 | none 20 221 1.08 | -16.3
+   29569 Loris fee 55 175 0.23 | none 88 211 0.95 | -17.1
+   29572 Myrtle Beach (north end) fee 89 317 0.15 | none 19 387 0.45 | -18.1
+   29575 Surfside Beach fee 54 247 0.19 | none 125 375 0.17 | -34.1
+   29576 Murrells Inlet and Garden City fee 153 251 0.19 | none 76 409 0.24 | -38.6
+   29577 Myrtle Beach (central and south) fee 118 264 0.14 | none 65 298 0.24 | -11.4
+   29582 North Myrtle Beach fee 115 276 0.15 | none 135 385 0.15 | -28.3
+   29588 Socastee fee 241 207 0.18 | none 35 194 0.27 | 6.7
+== built 2000 or later {'with_fee': {'n': 1974, 'median_ppsf': 205, 'median_price': 400000.0, 'median_sqft': 2026, 'n_acres': 1954, 'median_acres': 0.2}, 'no_fee': {'n': 479, 'median_ppsf': 274, 'median_price': 538000.0, 'median_sqft': 1884, 'n_acres': 419, 'median_acres': 0.53}} zips 10 fee higher in 0 median diff -25.1
+   29511 Aynor fee 17 162 0.24 | none 17 218 0.92 | -25.7
+   29526 Conway (29526) fee 309 178 0.23 | none 75 226 0.61 | -21.2
+   29527 Conway (29527) fee 146 182 0.23 | none 32 212 0.69 | -14.2
+   29544 Galivants Ferry fee 18 174 0.24 | none 38 242 1.07 | -28.1
+   29566 Little River fee 138 210 0.17 | none 17 245 0.23 | -14.3
+   29569 Loris fee 55 175 0.23 | none 66 232 1.36 | -24.6
+   29575 Surfside Beach fee 33 270 0.15 | none 76 414 0.1 | -34.8
+   29576 Murrells Inlet and Garden City fee 134 251 0.19 | none 39 397 0.21 | -36.8
+   29577 Myrtle Beach (central and south) fee 106 270 0.14 | none 31 341 0.18 | -20.8
+   29582 North Myrtle Beach fee 90 275 0.16 | none 43 402 0.15 | -31.6
+== built 2015 or later {'with_fee': {'n': 1520, 'median_ppsf': 201, 'median_price': 390000.0, 'median_sqft': 2007, 'n_acres': 1512, 'median_acres': 0.2}, 'no_fee': {'n': 339, 'median_ppsf': 258, 'median_price': 499000.0, 'median_sqft': 1890, 'n_acres': 322, 'median_acres': 0.61}} zips 8 fee higher in 0 median diff -26.0
+   29511 Aynor fee 17 162 0.24 | none 16 218 0.85 | -25.7
+   29526 Conway (29526) fee 270 178 0.23 | none 62 227 0.61 | -21.6
+   29527 Conway (29527) fee 137 182 0.23 | none 25 220 0.71 | -17.3
+   29544 Galivants Ferry fee 17 173 0.24 | none 36 242 1.07 | -28.5
+   29569 Loris fee 54 175 0.23 | none 64 234 1.39 | -25.2
+   29576 Murrells Inlet and Garden City fee 66 259 0.17 | none 24 421 0.34 | -38.5
+   29577 Myrtle Beach (central and south) fee 79 277 0.14 | none 25 376 0.17 | -26.3
+   29582 North Myrtle Beach fee 45 294 0.16 | none 22 512 0.16 | -42.6
+== built 2000 or later, lot 0.10 to 0.30 acre {'with_fee': {'n': 1638, 'median_ppsf': 199, 'median_price': 378000.0, 'median_sqft': 1956, 'n_acres': 1638, 'median_acres': 0.19}, 'no_fee': {'n': 126, 'median_ppsf': 334, 'median_price': 722000.0, 'median_sqft': 1972, 'n_acres': 126, 'median_acres': 0.18}} zips 3 fee higher in 0 median diff -34.4
+   29576 Murrells Inlet and Garden City fee 101 246 0.18 | none 22 407 0.18 | -39.6
+   29577 Myrtle Beach (central and south) fee 67 250 0.16 | none 16 298 0.17 | -16.1
+   29582 North Myrtle Beach fee 60 277 0.17 | none 35 422 0.15 | -34.4

@@ -1,0 +1,226 @@
+{
+ "pulled": "2026-11-10T06:58:49.602523+00:00",
+ "api": "https://chapter3realty.com/homes/api/map?",
+ "by_year": [
+  {
+   "band": "before 1980",
+   "yearMin": null,
+   "yearMax": 1979,
+   "houses": 335,
+   "no_fee": 321,
+   "with_fee": 14,
+   "pct_with_fee": 4.2
+  },
+  {
+   "band": "1980 to 1999",
+   "yearMin": 1980,
+   "yearMax": 1999,
+   "houses": 461,
+   "no_fee": 246,
+   "with_fee": 215,
+   "pct_with_fee": 46.6
+  },
+  {
+   "band": "2000 to 2009",
+   "yearMin": 2000,
+   "yearMax": 2009,
+   "houses": 522,
+   "no_fee": 149,
+   "with_fee": 373,
+   "pct_with_fee": 71.5
+  },
+  {
+   "band": "2010 to 2019",
+   "yearMin": 2010,
+   "yearMax": 2019,
+   "houses": 510,
+   "no_fee": 80,
+   "with_fee": 430,
+   "pct_with_fee": 84.3
+  },
+  {
+   "band": "2020 or later",
+   "yearMin": 2020,
+   "yearMax": null,
+   "houses": 1845,
+   "no_fee": 358,
+   "with_fee": 1487,
+   "pct_with_fee": 80.6
+  }
+ ],
+ "features_with_fee": {
+  "community_pool": {
+   "all": 1628,
+   "no_fee": 78,
+   "with_fee": 1550,
+   "pct_of_with_fee": 61.5,
+   "pct_of_no_fee": 6.8
+  },
+  "clubhouse": {
+   "all": 1172,
+   "no_fee": 52,
+   "with_fee": 1120,
+   "pct_of_with_fee": 44.5,
+   "pct_of_no_fee": 4.5
+  },
+  "gated": {
+   "all": 504,
+   "no_fee": 79,
+   "with_fee": 425,
+   "pct_of_with_fee": 16.9,
+   "pct_of_no_fee": 6.8
+  },
+  "tennis": {
+   "all": 512,
+   "no_fee": 10,
+   "with_fee": 502,
+   "pct_of_with_fee": 19.9,
+   "pct_of_no_fee": 0.9
+  },
+  "rv_boat_parking": {
+   "all": 425,
+   "no_fee": 352,
+   "with_fee": 73,
+   "pct_of_with_fee": 2.9,
+   "pct_of_no_fee": 30.5
+  },
+  "fenced_yard": {
+   "all": 1123,
+   "no_fee": 366,
+   "with_fee": 757,
+   "pct_of_with_fee": 30.1,
+   "pct_of_no_fee": 31.7
+  },
+  "boat_ramp": {
+   "all": 247,
+   "no_fee": 23,
+   "with_fee": 224,
+   "pct_of_with_fee": 8.9,
+   "pct_of_no_fee": 2.0
+  },
+  "boat_slip": {
+   "all": 27,
+   "no_fee": 4,
+   "with_fee": 23,
+   "pct_of_with_fee": 0.9,
+   "pct_of_no_fee": 0.3
+  }
+ },
+ "house_total": 3673,
+ "house_no_fee": 1154,
+ "house_with_fee": 2519,
+ "calls": [
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&limit=1",
+   3673
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&hoaMax=0&limit=1",
+   1154
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&yearMax=1979&limit=1",
+   335
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&yearMax=1979&hoaMax=0&limit=1",
+   321
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&yearMin=1980&yearMax=1999&limit=1",
+   461
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&yearMin=1980&yearMax=1999&hoaMax=0&limit=1",
+   246
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&yearMin=2000&yearMax=2009&limit=1",
+   522
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&yearMin=2000&yearMax=2009&hoaMax=0&limit=1",
+   149
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&yearMin=2010&yearMax=2019&limit=1",
+   510
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&yearMin=2010&yearMax=2019&hoaMax=0&limit=1",
+   80
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&yearMin=2020&limit=1",
+   1845
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&yearMin=2020&hoaMax=0&limit=1",
+   358
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=community_pool&limit=1",
+   1628
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=community_pool&hoaMax=0&limit=1",
+   78
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=clubhouse&limit=1",
+   1172
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=clubhouse&hoaMax=0&limit=1",
+   52
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=gated&limit=1",
+   504
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=gated&hoaMax=0&limit=1",
+   79
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=tennis&limit=1",
+   512
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=tennis&hoaMax=0&limit=1",
+   10
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=rv_boat_parking&limit=1",
+   425
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=rv_boat_parking&hoaMax=0&limit=1",
+   352
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=fenced_yard&limit=1",
+   1123
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=fenced_yard&hoaMax=0&limit=1",
+   366
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=boat_ramp&limit=1",
+   247
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=boat_ramp&hoaMax=0&limit=1",
+   23
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=boat_slip&limit=1",
+   27
+  ],
+  [
+   "https://chapter3realty.com/homes/api/map?type=house&has=boat_slip&hoaMax=0&limit=1",
+   4
+  ]
+ ]
+}

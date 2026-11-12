@@ -1,0 +1,38 @@
+{
+ "title": "What homes for sale in Horry County say about renting",
+ "segments": [
+  "nightly",
+  "yearly_only",
+  "not_marked"
+ ],
+ "rows": [
+  {
+   "group": "Condos",
+   "listings": 2673,
+   "nightly": 1904,
+   "yearly_only": 458,
+   "not_marked": 311
+  },
+  {
+   "group": "Townhouses with an HOA fee",
+   "listings": 279,
+   "nightly": 63,
+   "yearly_only": 159,
+   "not_marked": 57
+  },
+  {
+   "group": "Houses with an HOA fee",
+   "listings": 2183,
+   "nightly": 93,
+   "yearly_only": 1533,
+   "not_marked": 557
+  },
+  {
+   "group": "Houses with no HOA fee",
+   "listings": 793,
+   "nightly": 246,
+   "yearly_only": 547,
+   "not_marked": 0
+  }
+ ]
+}

@@ -1,0 +1,430 @@
+{
+ "made": "build_findings.py",
+ "inputs": [
+  "counts.json",
+  "price-test.json",
+  "condo-fees.json",
+  "prices.json",
+  "scdca-concerns.json",
+  "../../2026-10-d/hoa-hoa-vs-poa/fees-by-type.json",
+  "../../2026-10-d/hoa-hoa-vs-poa/has-with-fee.json"
+ ],
+ "typical_fee": {
+  "condo": {
+   "median_month": 640,
+   "with_fee": 2866,
+   "year": 7680
+  },
+  "townhouse": {
+   "median_month": 275,
+   "with_fee": 339,
+   "year": 3300
+  },
+  "house": {
+   "median_month": 95,
+   "with_fee": 2589,
+   "year": 1140
+  }
+ },
+ "condo_split": {
+  "all condos": {
+   "total": 2832,
+   "fee_zero_or_blank": 1,
+   "with_fee": 2831,
+   "median_fee_5": 640,
+   "share_over_500_pct": 69.0,
+   "year": 7680
+  },
+  "oceanfront building": {
+   "total": 1090,
+   "fee_zero_or_blank": 0,
+   "with_fee": 1090,
+   "median_fee_5": 920,
+   "share_over_500_pct": 94.5,
+   "year": 11040
+  },
+  "not oceanfront": {
+   "total": 1742,
+   "fee_zero_or_blank": 1,
+   "with_fee": 1741,
+   "median_fee_5": 515,
+   "share_over_500_pct": 53.0,
+   "year": 6180
+  }
+ },
+ "includes": {
+  "pulled": "2026-11-01T02:41:59.050971Z",
+  "rows": [
+   {
+    "key": "hoa_includes_insurance",
+    "label": "Insurance",
+    "condo": 78,
+    "townhouse": 34,
+    "house": 4
+   },
+   {
+    "key": "hoa_includes_water_sewer",
+    "label": "Water and sewer",
+    "condo": 84,
+    "townhouse": 19,
+    "house": 2
+   },
+   {
+    "key": "hoa_includes_trash",
+    "label": "Trash pickup",
+    "condo": 91,
+    "townhouse": 73,
+    "house": 46
+   },
+   {
+    "key": "lawn_care_included",
+    "label": "Lawn care",
+    "condo": 91,
+    "townhouse": 83,
+    "house": 9
+   },
+   {
+    "key": "hoa_includes_internet",
+    "label": "Internet",
+    "condo": 70,
+    "townhouse": 25,
+    "house": 9
+   },
+   {
+    "key": "community_amenities",
+    "label": "Amenities (pool, clubhouse and the like)",
+    "condo": 87,
+    "townhouse": 56,
+    "house": 61
+   },
+   {
+    "key": "gated",
+    "label": "A gate",
+    "condo": 13,
+    "townhouse": 8,
+    "house": 15
+   }
+  ],
+  "with_fee": {
+   "condo": 2866,
+   "townhouse": 338,
+   "house": 2590
+  }
+ },
+ "by_year": [
+  {
+   "band": "before 1980",
+   "yearMin": null,
+   "yearMax": 1979,
+   "houses": 335,
+   "no_fee": 321,
+   "with_fee": 14,
+   "pct_with_fee": 4.2
+  },
+  {
+   "band": "1980 to 1999",
+   "yearMin": 1980,
+   "yearMax": 1999,
+   "houses": 460,
+   "no_fee": 242,
+   "with_fee": 218,
+   "pct_with_fee": 47.4
+  },
+  {
+   "band": "2000 to 2009",
+   "yearMin": 2000,
+   "yearMax": 2009,
+   "houses": 502,
+   "no_fee": 143,
+   "with_fee": 359,
+   "pct_with_fee": 71.5
+  },
+  {
+   "band": "2010 to 2019",
+   "yearMin": 2010,
+   "yearMax": 2019,
+   "houses": 504,
+   "no_fee": 80,
+   "with_fee": 424,
+   "pct_with_fee": 84.1
+  },
+  {
+   "band": "2020 or later",
+   "yearMin": 2020,
+   "yearMax": null,
+   "houses": 1891,
+   "no_fee": 354,
+   "with_fee": 1537,
+   "pct_with_fee": 81.3
+  }
+ ],
+ "house_counts": {
+  "house_total": 3692,
+  "house_no_fee": 1140,
+  "house_with_fee": 2552
+ },
+ "house_features": {
+  "community_pool": {
+   "all": 1561,
+   "no_fee": 53,
+   "with_fee": 1508,
+   "pct_of_with_fee": 59.1,
+   "pct_of_no_fee": 4.6
+  },
+  "clubhouse": {
+   "all": 1112,
+   "no_fee": 51,
+   "with_fee": 1061,
+   "pct_of_with_fee": 41.6,
+   "pct_of_no_fee": 4.5
+  },
+  "gated": {
+   "all": 434,
+   "no_fee": 59,
+   "with_fee": 375,
+   "pct_of_with_fee": 14.7,
+   "pct_of_no_fee": 5.2
+  },
+  "tennis": {
+   "all": 459,
+   "no_fee": 10,
+   "with_fee": 449,
+   "pct_of_with_fee": 17.6,
+   "pct_of_no_fee": 0.9
+  },
+  "rv_boat_parking": {
+   "all": 338,
+   "no_fee": 288,
+   "with_fee": 50,
+   "pct_of_with_fee": 2.0,
+   "pct_of_no_fee": 25.3
+  },
+  "fenced_yard": {
+   "all": 854,
+   "no_fee": 285,
+   "with_fee": 569,
+   "pct_of_with_fee": 22.3,
+   "pct_of_no_fee": 25.0
+  },
+  "boat_ramp": {
+   "all": 209,
+   "no_fee": 22,
+   "with_fee": 187,
+   "pct_of_with_fee": 7.3,
+   "pct_of_no_fee": 1.9
+  },
+  "boat_slip": {
+   "all": 26,
+   "no_fee": 4,
+   "with_fee": 22,
+   "pct_of_with_fee": 0.9,
+   "pct_of_no_fee": 0.4
+  }
+ },
+ "built_2010_plus": {
+  "houses": 2395,
+  "with_fee": 1961,
+  "pct_with_fee": 81.9
+ },
+ "price_test": {
+  "pulled": "2026-11-04T12:20:18.355949+00:00",
+  "built_2000_plus_county": {
+   "with_fee": {
+    "n": 2012,
+    "median_ppsf": 204,
+    "median_price": 400000.0,
+    "median_sqft": 2022,
+    "n_acres": 1991,
+    "median_acres": 0.2
+   },
+   "no_fee": {
+    "n": 472,
+    "median_ppsf": 272,
+    "median_price": 530000.0,
+    "median_sqft": 1868,
+    "n_acres": 414,
+    "median_acres": 0.53
+   }
+  },
+  "all_ages_zips": {
+   "zips_compared": 13,
+   "zips_fee_higher": 1,
+   "median_of_zip_diffs_pct": -17.2
+  },
+  "built_2000_zips": {
+   "zips_compared": 10,
+   "zips_fee_higher": 0,
+   "median_of_zip_diffs_pct": -25.0
+  },
+  "beach_bands": [
+   {
+    "band": "under 1 mile",
+    "with_fee": {
+     "n": 107,
+     "median_ppsf": 340,
+     "median_price": 715000.0,
+     "median_sqft": 2202,
+     "n_acres": 91,
+     "median_acres": 0.12
+    },
+    "no_fee": {
+     "n": 161,
+     "median_ppsf": 418,
+     "median_price": 799000.0,
+     "median_sqft": 1887,
+     "n_acres": 107,
+     "median_acres": 0.16
+    },
+    "share_with_fee_pct": 39.9,
+    "ppsf_diff_pct": -18.7
+   },
+   {
+    "band": "1 to 3 miles",
+    "with_fee": {
+     "n": 467,
+     "median_ppsf": 255,
+     "median_price": 580000.0,
+     "median_sqft": 2340,
+     "n_acres": 463,
+     "median_acres": 0.17
+    },
+    "no_fee": {
+     "n": 44,
+     "median_ppsf": 297,
+     "median_price": 582000.0,
+     "median_sqft": 2087,
+     "n_acres": 44,
+     "median_acres": 0.25
+    },
+    "share_with_fee_pct": 91.4,
+    "ppsf_diff_pct": -14.1
+   },
+   {
+    "band": "3 to 10 miles",
+    "with_fee": {
+     "n": 925,
+     "median_ppsf": 199,
+     "median_price": 400000.0,
+     "median_sqft": 2098,
+     "n_acres": 924,
+     "median_acres": 0.2
+    },
+    "no_fee": {
+     "n": 34,
+     "median_ppsf": 225,
+     "median_price": 564000.0,
+     "median_sqft": 2272,
+     "n_acres": 30,
+     "median_acres": 0.6
+    },
+    "share_with_fee_pct": 96.5,
+    "ppsf_diff_pct": -11.6
+   },
+   {
+    "band": "over 10 miles",
+    "with_fee": {
+     "n": 513,
+     "median_ppsf": 177,
+     "median_price": 305000.0,
+     "median_sqft": 1771,
+     "n_acres": 513,
+     "median_acres": 0.23
+    },
+    "no_fee": {
+     "n": 233,
+     "median_ppsf": 228,
+     "median_price": 422000.0,
+     "median_sqft": 1773,
+     "n_acres": 233,
+     "median_acres": 0.98
+    },
+    "share_with_fee_pct": 68.8,
+    "ppsf_diff_pct": -22.4
+   }
+  ],
+  "zip_band": {
+   "zip_band_compared": 8,
+   "zip_band_fee_higher": 1,
+   "median_of_zip_band_diffs_pct": -25.0
+  }
+ },
+ "fee_vs_pool": {
+  "house_fee_year": 1140,
+  "house_fee_month": 95,
+  "options": [
+   {
+    "label": "Myrtle Beach recreation center, one adult, city resident",
+    "year": 175,
+    "source": "https://cityofmyrtlebeach.com/departments/recreation_center_memberships.php"
+   },
+   {
+    "label": "Myrtle Beach recreation center, one adult, not a city resident",
+    "year": 295,
+    "source": "https://cityofmyrtlebeach.com/departments/recreation_center_memberships.php"
+   },
+   {
+    "label": "North Myrtle Beach Aquatic and Fitness Center, one adult",
+    "year": 555,
+    "joining_fee": 100,
+    "source": "https://afc.nmb.us/174/Membership"
+   },
+   {
+    "label": "North Myrtle Beach Aquatic and Fitness Center, a couple",
+    "year": 805,
+    "joining_fee": 100,
+    "source": "https://afc.nmb.us/174/Membership"
+   }
+  ]
+ },
+ "complaints": {
+  "horry_complaints": 416,
+  "reports": [
+   "report 2023 (calendar 2022)",
+   "report 2024 (calendar 2023)",
+   "report 2025 (calendar 2024)",
+   "report 2026 (calendar 2025)"
+  ],
+  "top": [
+   {
+    "concern": "Failure to adhere to and/or enforce covenants and bylaws",
+    "count": 150,
+    "pct": 36.1
+   },
+   {
+    "concern": "Concerns regarding maintenance or repairs",
+    "count": 126,
+    "pct": 30.3
+   },
+   {
+    "concern": "Request to access information/ view documents ignored",
+    "count": 84,
+    "pct": 20.2
+   },
+   {
+    "concern": "Concerns on Allocation of HOA funds",
+    "count": 74,
+    "pct": 17.8
+   },
+   {
+    "concern": "Consumer disagrees with HOA Fees/Special Assessments",
+    "count": 73,
+    "pct": 17.5
+   },
+   {
+    "concern": "Failure to notify residents of Board actions",
+    "count": 55,
+    "pct": 13.2
+   },
+   {
+    "concern": "Failure to produce financial statements",
+    "count": 49,
+    "pct": 11.8
+   },
+   {
+    "concern": "Issue related to Board Elections",
+    "count": 46,
+    "pct": 11.1
+   }
+  ]
+ }
+}

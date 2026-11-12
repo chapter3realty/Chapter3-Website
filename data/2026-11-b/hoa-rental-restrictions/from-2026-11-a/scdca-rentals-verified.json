@@ -1,0 +1,222 @@
+{
+ "source": "SCDCA HOA legislative report workbooks (data/2026-10-d/hoa-special-assessments/raw/)",
+ "by_year": {
+  "2022": {
+   "all": 276,
+   "horry_all": 70,
+   "mention_all": 4,
+   "mention_horry": 1,
+   "rule_all": 4,
+   "rule_horry": 1
+  },
+  "2023": {
+   "all": 365,
+   "horry_all": 89,
+   "mention_all": 5,
+   "mention_horry": 1,
+   "rule_all": 3,
+   "rule_horry": 0
+  },
+  "2024": {
+   "all": 434,
+   "horry_all": 117,
+   "mention_all": 5,
+   "mention_horry": 2,
+   "rule_all": 2,
+   "rule_horry": 0
+  },
+  "2025": {
+   "all": 452,
+   "horry_all": 140,
+   "mention_all": 4,
+   "mention_horry": 0,
+   "rule_all": 0,
+   "rule_horry": 0
+  }
+ },
+ "hits": [
+  {
+   "year": 2022,
+   "complaint": "C22-02844",
+   "horry": false,
+   "about_rental_rule": true,
+   "columns": [
+    "Other recommendations for changing provisions of governing documents"
+   ]
+  },
+  {
+   "year": 2022,
+   "complaint": "C22-01769",
+   "horry": false,
+   "about_rental_rule": true,
+   "columns": [
+    "Other recommendations for changing provisions of governing documents"
+   ]
+  },
+  {
+   "year": 2022,
+   "complaint": "C22-04112",
+   "horry": true,
+   "about_rental_rule": true,
+   "columns": [
+    "Other recommendations for changing provisions of governing documents"
+   ]
+  },
+  {
+   "year": 2022,
+   "complaint": "C22-01498",
+   "horry": false,
+   "about_rental_rule": true,
+   "columns": [
+    "Other recommendations for changing provisions of governing documents"
+   ]
+  },
+  {
+   "year": 2023,
+   "complaint": "C23-00766",
+   "horry": true,
+   "about_rental_rule": false,
+   "columns": [
+    "Complaint Description Other"
+   ]
+  },
+  {
+   "year": 2023,
+   "complaint": "C23-00986",
+   "horry": false,
+   "about_rental_rule": true,
+   "columns": [
+    "Other recommendations for changing provisions of governing documents"
+   ]
+  },
+  {
+   "year": 2023,
+   "complaint": "C23-04311",
+   "horry": false,
+   "about_rental_rule": true,
+   "columns": [
+    "Complaint Description Other"
+   ]
+  },
+  {
+   "year": 2023,
+   "complaint": "C23-04915",
+   "horry": false,
+   "about_rental_rule": false,
+   "columns": [
+    "Other recommendations for changing provisions of governing documents"
+   ]
+  },
+  {
+   "year": 2023,
+   "complaint": "C23-05451",
+   "horry": false,
+   "about_rental_rule": true,
+   "columns": [
+    "Other recommendations for changing provisions of governing documents",
+    "Complaint Description Other"
+   ]
+  },
+  {
+   "year": 2024,
+   "complaint": "C24-00006",
+   "horry": true,
+   "about_rental_rule": false,
+   "columns": [
+    "Other recommendations for changing provisions of governing documents"
+   ]
+  },
+  {
+   "year": 2024,
+   "complaint": "C24-01177",
+   "horry": true,
+   "about_rental_rule": false,
+   "columns": [
+    "Complaint Description Other"
+   ]
+  },
+  {
+   "year": 2024,
+   "complaint": "C24-02129",
+   "horry": false,
+   "about_rental_rule": false,
+   "columns": [
+    "Other recommendations for changing provisions of governing documents"
+   ]
+  },
+  {
+   "year": 2024,
+   "complaint": "C24-03943",
+   "horry": false,
+   "about_rental_rule": true,
+   "columns": [
+    "Complaint Description Other"
+   ]
+  },
+  {
+   "year": 2024,
+   "complaint": "C24-04131",
+   "horry": false,
+   "about_rental_rule": true,
+   "columns": [
+    "Explanation of your attempt to obtain documents",
+    "Complaint Description Other"
+   ]
+  },
+  {
+   "year": 2025,
+   "complaint": "C25-00285",
+   "horry": false,
+   "about_rental_rule": false,
+   "columns": [
+    "Complaint Description (Other Details)"
+   ]
+  },
+  {
+   "year": 2025,
+   "complaint": "C25-01776",
+   "horry": false,
+   "about_rental_rule": false,
+   "columns": [
+    "Complaint Description (Other Details)"
+   ]
+  },
+  {
+   "year": 2025,
+   "complaint": "C25-03254",
+   "horry": false,
+   "about_rental_rule": false,
+   "columns": [
+    "Other recommendations for enforcing governing documents, if any"
+   ]
+  },
+  {
+   "year": 2025,
+   "complaint": "C25-05925",
+   "horry": false,
+   "about_rental_rule": false,
+   "columns": [
+    "Other recommendations for enforcing governing documents, if any"
+   ]
+  }
+ ],
+ "total": {
+  "all": 1527,
+  "horry_all": 416,
+  "mention_all": 18,
+  "mention_horry": 4,
+  "rule_all": 9,
+  "rule_horry": 1
+ },
+ "text_columns": [
+  "Explanation of your attempt to obtain documents:",
+  "Recommendations for enforcing governing documents",
+  "Other recommendations for enforcing governing documents, if any",
+  "Recommendations for changing provisions of governing documents",
+  "Other recommendations for changing provisions of governing documents",
+  "Complaint Description",
+  "Complaint Description (Other Details)",
+  "Business Action Prior to Complaint",
+  "Business Response to SCDCA Complaint"
+ ]
+}

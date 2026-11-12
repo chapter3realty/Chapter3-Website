@@ -1,0 +1,788 @@
+{
+ "source": "Horry County Register of Deeds index (AcclaimWeb), RESTRICTIONS (082) and AMENDMENT DEED BOOK (069), 2012-01 to 2026-10, pulled 2026-11-04",
+ "method": "Recorded papers for named Grand Strand communities, 2012-01 to 2026-10, from the Horry County Register of Deeds index\n(the same monthly pulls as count_rental_papers.py). A row belongs to a community when a party name matches its pattern.\nKinds: amendment to the declaration or master deed (description has AMEND or RESTATE and DECLARATION, COVENANT, CHARTER,\nMASTER DEED or RESTRICTION, and not BYLAW); supplement (SUPPLEMENT, no AMEND); rules and policies (RULE, REGULATION,\nPOLIC, GUIDELINE, FINE). Counts only, with book and page so each can be opened.",
+ "counts": {
+  "The Farm at Carolina Forest": {
+   "amendment": 13,
+   "rules and policies": 7
+  },
+  "Waterbridge": {
+   "amendment": 5,
+   "rules and policies": 9
+  },
+  "Berkshire Forest": {
+   "amendment": 10,
+   "supplement": 3,
+   "rules and policies": 14
+  },
+  "Del Webb at Grande Dunes": {
+   "amendment": 4,
+   "supplement": 6,
+   "rules and policies": 6
+  },
+  "Del Webb North Myrtle Beach": {
+   "rules and policies": 13,
+   "supplement": 1
+  },
+  "Seasons at Prince Creek West": {
+   "amendment": 5,
+   "rules and policies": 5
+  },
+  "Myrtle Trace": {
+   "rules and policies": 6
+  },
+  "Plantation Lakes": {
+   "rules and policies": 9,
+   "amendment": 1
+  },
+  "Avalon at Carolina Forest": {
+   "rules and policies": 4
+  }
+ },
+ "rows": {
+  "Waterbridge": [
+   {
+    "recorded": "2012/04/16",
+    "kind": "amendment",
+    "description": "FIFTH AMENDMENT TO DECLARATION OR PROTECTIVE COVENANTS RESTRICTIONS EASEMENTS CHARGES AND LIENS",
+    "book_page": "3578/2448"
+   },
+   {
+    "recorded": "2017/09/29",
+    "kind": "amendment",
+    "description": "SIXTH AMENDMENT TO MASTER DECLARATION OF PROTECTIVE COVENANTS RESTRICTIONS EASEMENTS CHARGES AND LIENS",
+    "book_page": "4046/3228"
+   },
+   {
+    "recorded": "2019/01/10",
+    "kind": "rules and policies",
+    "description": "VIOLATION FINE SCHEDULE",
+    "book_page": "4174/2373"
+   },
+   {
+    "recorded": "2019/05/02",
+    "kind": "rules and policies",
+    "description": "RULES REGULATIONS AND POLICIES",
+    "book_page": "4204/1223"
+   },
+   {
+    "recorded": "2020/05/15",
+    "kind": "amendment",
+    "description": "SEVENTH AMENDMENT TO DECLARATION OF PROTECTIVE COVENANTS RESTRICTIONS EASEMENTS CHARGES AND LIENS",
+    "book_page": "4311/1736"
+   },
+   {
+    "recorded": "2021/05/25",
+    "kind": "rules and policies",
+    "description": "CONTRACTOR BUILDER AGREEMENT INFORMATION RULES FINES",
+    "book_page": "4423/3327"
+   },
+   {
+    "recorded": "2021/08/03",
+    "kind": "amendment",
+    "description": "SUPPLEMENT AND EIGHTH AMENDMENT TO DECLARATION OF PROTECTIVE COVENANTS RESTRICTIONS EASEMENTS CHARGES AND LIENS",
+    "book_page": "4449/2468"
+   },
+   {
+    "recorded": "2021/08/04",
+    "kind": "amendment",
+    "description": "SUPPLEMENT AND NINTH AMENDMENT TO DECLARATION OF PROTECTIVE COVENANTS RESTRICTIONS EASEMENTS CHARGES AND LIENS",
+    "book_page": "4450/1"
+   },
+   {
+    "recorded": "2022/12/02",
+    "kind": "rules and policies",
+    "description": "AMENITIES AND COMMON AREAS RULES AND REGULATIONS",
+    "book_page": "4620/39"
+   },
+   {
+    "recorded": "2022/12/19",
+    "kind": "rules and policies",
+    "description": "ARCHITECTURAL DESIGN GUIDELINES AND BUILDER RULES",
+    "book_page": "4625/2022"
+   },
+   {
+    "recorded": "2023/12/04",
+    "kind": "rules and policies",
+    "description": "AMENITIES AND COMMON AREAS RULES AND REGULATIONS",
+    "book_page": "4751/1410"
+   },
+   {
+    "recorded": "2023/12/04",
+    "kind": "rules and policies",
+    "description": "ARCHITECTURAL DESIGN GUIDELINES AND BUILDER RULES",
+    "book_page": "4751/1451"
+   },
+   {
+    "recorded": "2025/12/11",
+    "kind": "rules and policies",
+    "description": "ARCHITECTURAL DESIGN GUIDELINES AND BUILDER RULES",
+    "book_page": "5023/645"
+   },
+   {
+    "recorded": "2025/12/11",
+    "kind": "rules and policies",
+    "description": "RULES REGULATIONS AND FINES/AMENITIES COMMON AREAS AND SEASONAL LIGHTS",
+    "book_page": "5023/689"
+   }
+  ],
+  "Seasons at Prince Creek West": [
+   {
+    "recorded": "2013/03/25",
+    "kind": "amendment",
+    "description": "FIRST AMENDMENT TO COMMUNITY CHARTER",
+    "book_page": "3645/3218"
+   },
+   {
+    "recorded": "2014/09/30",
+    "kind": "amendment",
+    "description": "AMENDMENT TO COMMUNITY CHARTER",
+    "book_page": "3767/1450"
+   },
+   {
+    "recorded": "2014/10/02",
+    "kind": "amendment",
+    "description": "AMENDMENT TO COMMUNITY CHARTER FOR SEASONS AT PRINCE CREEK WEST",
+    "book_page": "3768/1088"
+   },
+   {
+    "recorded": "2015/03/03",
+    "kind": "amendment",
+    "description": "FOURTH AMENDMENT OF THE COMMUNITY CHARTER",
+    "book_page": "3802/2638"
+   },
+   {
+    "recorded": "2017/01/23",
+    "kind": "amendment",
+    "description": "FIFTH AMENDMENT OF THE COMMUNITY CHARTER/GRANTOR AND GRANTEE ARE WRONG ON TRANMSITTAL SHEET",
+    "book_page": "3981/2208"
+   },
+   {
+    "recorded": "2019/01/03",
+    "kind": "rules and policies",
+    "description": "SUPPLEMENTAL RULES AND DESIGN GUIDELINES",
+    "book_page": "4172/464"
+   },
+   {
+    "recorded": "2022/02/04",
+    "kind": "rules and policies",
+    "description": "PARKING REGULATIONS",
+    "book_page": "4512/1990"
+   },
+   {
+    "recorded": "2022/02/04",
+    "kind": "rules and policies",
+    "description": "SUPPLEMENTAL RULES AND DESIGN GUIDELINES",
+    "book_page": "4512/1995"
+   },
+   {
+    "recorded": "2025/01/09",
+    "kind": "rules and policies",
+    "description": "SUPPLEMENTAL RULES AND DESIGN GUIDELINES",
+    "book_page": "4897/3085"
+   },
+   {
+    "recorded": "2025/12/23",
+    "kind": "rules and policies",
+    "description": "SUPPLEMENTAL RULES AND DESIGN GUIDELINES",
+    "book_page": "5027/3464"
+   }
+  ],
+  "The Farm at Carolina Forest": [
+   {
+    "recorded": "2014/02/03",
+    "kind": "amendment",
+    "description": "SIXTH AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS AND RETRICTIONS FOR FARM AT CAROLINA FOREST",
+    "book_page": "3713/530"
+   },
+   {
+    "recorded": "2014/04/23",
+    "kind": "amendment",
+    "description": "SEVENTH AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "3728/2941"
+   },
+   {
+    "recorded": "2015/01/13",
+    "kind": "amendment",
+    "description": "EIGHTH AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "3791/3173"
+   },
+   {
+    "recorded": "2015/03/17",
+    "kind": "amendment",
+    "description": "EIGHTH AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONRS",
+    "book_page": "3806/869"
+   },
+   {
+    "recorded": "2015/05/28",
+    "kind": "amendment",
+    "description": "NINTH AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "3823/3084"
+   },
+   {
+    "recorded": "2016/03/16",
+    "kind": "amendment",
+    "description": "10TH AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS ANS RESRTICTIONS",
+    "book_page": "3900/810"
+   },
+   {
+    "recorded": "2017/03/01",
+    "kind": "amendment",
+    "description": "ELEVENTH AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "3991/1111"
+   },
+   {
+    "recorded": "2017/05/03",
+    "kind": "amendment",
+    "description": "TWELFTH AMENDMENT TO DECLARATION OF COVENANTS CONSITION AND RESTRICTIONS",
+    "book_page": "4007/886"
+   },
+   {
+    "recorded": "2017/10/31",
+    "kind": "amendment",
+    "description": "THIRTEENTH AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "4055/1015"
+   },
+   {
+    "recorded": "2017/11/02",
+    "kind": "amendment",
+    "description": "THIRTEENTH AMENDMENT TO DECLARATION OF CONVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "4056/1124"
+   },
+   {
+    "recorded": "2018/01/25",
+    "kind": "amendment",
+    "description": "FOURTEENTH AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "4077/1060"
+   },
+   {
+    "recorded": "2019/01/03",
+    "kind": "rules and policies",
+    "description": "RULES & REGULATIONS",
+    "book_page": "4172/239"
+   },
+   {
+    "recorded": "2019/01/18",
+    "kind": "rules and policies",
+    "description": "RESIDENTS CENTER RULES & REGULATIONS",
+    "book_page": "4177/2005"
+   },
+   {
+    "recorded": "2019/07/30",
+    "kind": "amendment",
+    "description": "NINTH AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "4229/5"
+   },
+   {
+    "recorded": "2019/08/01",
+    "kind": "amendment",
+    "description": "FIFTEENTH AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "4229/2942"
+   },
+   {
+    "recorded": "2020/08/24",
+    "kind": "rules and policies",
+    "description": "AMENDED HANDBOOK OR ARCHITECTURAL STANDARDS",
+    "book_page": "4337/1372"
+   },
+   {
+    "recorded": "2023/01/04",
+    "kind": "rules and policies",
+    "description": "RESIDENT CENTER RULES & REGULATIONS",
+    "book_page": "4630/434"
+   },
+   {
+    "recorded": "2024/04/22",
+    "kind": "rules and policies",
+    "description": "AMENITIES AND COMMON AREAS RULES AND REGULATIONS",
+    "book_page": "4800/2724"
+   },
+   {
+    "recorded": "2025/12/23",
+    "kind": "rules and policies",
+    "description": "AMENDED HANDBOOK OR ARCHITECTURAL STANDARDS",
+    "book_page": "5028/1692"
+   },
+   {
+    "recorded": "2025/12/23",
+    "kind": "rules and policies",
+    "description": "AMENITIES AND COMMON AREAS RULES AND REGULATIONS",
+    "book_page": "5028/1742"
+   }
+  ],
+  "Berkshire Forest": [
+   {
+    "recorded": "2016/04/05",
+    "kind": "amendment",
+    "description": "SECOND AMENDMENT TO THE DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "3904/2719"
+   },
+   {
+    "recorded": "2017/03/23",
+    "kind": "amendment",
+    "description": "THIRD AMENDMENT TO THE DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "3996/2010"
+   },
+   {
+    "recorded": "2018/10/03",
+    "kind": "amendment",
+    "description": "FIFTH AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS FOR BERKSHIRE FOREST",
+    "book_page": "4146/2911"
+   },
+   {
+    "recorded": "2018/11/14",
+    "kind": "amendment",
+    "description": "1ST AMENDED & RESTATED DECLARATION OF COVENANT TO SHARE COSTS",
+    "book_page": "4158/1472"
+   },
+   {
+    "recorded": "2018/11/14",
+    "kind": "supplement",
+    "description": "SUPPLEMENTAL DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "4158/1413"
+   },
+   {
+    "recorded": "2019/03/05",
+    "kind": "rules and policies",
+    "description": "RULES & REGULATIONS",
+    "book_page": "4189/45"
+   },
+   {
+    "recorded": "2019/03/05",
+    "kind": "rules and policies",
+    "description": "AMENDMENT & POLICIES",
+    "book_page": "4189/69"
+   },
+   {
+    "recorded": "2019/03/05",
+    "kind": "rules and policies",
+    "description": "DESIGN GUIDELINES STANDARDS & PROCEDURES FOR CUSTOM HOME CONSTRUCTION",
+    "book_page": "4189/98"
+   },
+   {
+    "recorded": "2019/05/28",
+    "kind": "supplement",
+    "description": "SUPPLEMENTAL DECLARATION OF COVENANTS CONDIDTIONS AND RESTRICTIONS",
+    "book_page": "4211/1946"
+   },
+   {
+    "recorded": "2020/03/12",
+    "kind": "supplement",
+    "description": "SUPPLEMENTAL DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "4295/1577"
+   },
+   {
+    "recorded": "2020/04/30",
+    "kind": "amendment",
+    "description": "AMENDED SUPPLEMENTAL DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "4308/1738"
+   },
+   {
+    "recorded": "2020/07/29",
+    "kind": "rules and policies",
+    "description": "ARCHITECTURAL GUIDELINES",
+    "book_page": "4330/1541"
+   },
+   {
+    "recorded": "2020/10/05",
+    "kind": "amendment",
+    "description": "SIXTH AMENDMENT TO THE DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "4349/1451"
+   },
+   {
+    "recorded": "2020/10/09",
+    "kind": "amendment",
+    "description": "AMENDED AND RESTATED AMHERST SUPPLEMENTAL DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "4351/722"
+   },
+   {
+    "recorded": "2021/12/14",
+    "kind": "amendment",
+    "description": "SEVENTH AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "4495/1186"
+   },
+   {
+    "recorded": "2023/06/26",
+    "kind": "amendment",
+    "description": "AMENDMENT TO THE DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "4694/3386"
+   },
+   {
+    "recorded": "2023/07/11",
+    "kind": "amendment",
+    "description": "AMENDMENT TO THE DECLARATION OF COVENANTS CONDITIONS AND RESTRICTIONS",
+    "book_page": "4699/2798"
+   },
+   {
+    "recorded": "2023/12/14",
+    "kind": "rules and policies",
+    "description": "ARCHITECTURAL GUIDELINES PURSUANT TO DECLARATION OF COVENANTS CONDITIONS RESTRICTIONS AND EASEMENTS",
+    "book_page": "4755/1767"
+   },
+   {
+    "recorded": "2024/08/09",
+    "kind": "rules and policies",
+    "description": "RULES AND REGULATIONS",
+    "book_page": "4841/769"
+   },
+   {
+    "recorded": "2025/01/09",
+    "kind": "rules and policies",
+    "description": "REASONABLE ACCOMMODATIN AND MODIFICATION POLICY",
+    "book_page": "4897/2564"
+   },
+   {
+    "recorded": "2025/01/09",
+    "kind": "rules and policies",
+    "description": "ARCHITECTURAL GUIDELINES",
+    "book_page": "4897/2571"
+   },
+   {
+    "recorded": "2025/01/09",
+    "kind": "rules and policies",
+    "description": "DESIGN GUIDELINES STANDARDS AND PROCEDURES FOR CUSTOM HOME CONSTRUCTION",
+    "book_page": "4897/2590"
+   },
+   {
+    "recorded": "2025/01/09",
+    "kind": "rules and policies",
+    "description": "ASSESSMENT COLLECTION POLICY",
+    "book_page": "4897/2656"
+   },
+   {
+    "recorded": "2025/01/09",
+    "kind": "rules and policies",
+    "description": "FINES AND REMEDY FOR VIOLATIONS",
+    "book_page": "4897/2660"
+   },
+   {
+    "recorded": "2026/04/23",
+    "kind": "rules and policies",
+    "description": "ARCHITECTURAL GUIDELINES PURSUANT TO DECLARATION OF COVENANTS CONDITIONS RESTRICTIONS AND EASEMENTS",
+    "book_page": "5070/1804"
+   },
+   {
+    "recorded": "2026/08/06",
+    "kind": "rules and policies",
+    "description": "RULES REGULATIONS AND POLICIES",
+    "book_page": "5110/3219"
+   },
+   {
+    "recorded": "2026/08/18",
+    "kind": "rules and policies",
+    "description": "RULES REGULATIONS AND POLICIES",
+    "book_page": "5115/1174"
+   }
+  ],
+  "Del Webb at Grande Dunes": [
+   {
+    "recorded": "2018/02/27",
+    "kind": "amendment",
+    "description": "FIRST AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS RESTRICTIONS EASEMENTS CHARGES AND LIENS",
+    "book_page": "4086/229"
+   },
+   {
+    "recorded": "2018/04/11",
+    "kind": "amendment",
+    "description": "SECOND AMENDMENT AND FIRST SUPPLEMENT TO DECLARATION OF COVENANTS CONDITIONS RESTRICTIONS EASEMENTS CHARGES & LIENS",
+    "book_page": "4097/2961"
+   },
+   {
+    "recorded": "2018/07/06",
+    "kind": "supplement",
+    "description": "SUPPLEMENTAL DECLARATION TO THE DECLARATION OF COVENANTS CONDITIONS RESTRICTIONS EASEMENTS CHARGES AND LIENS",
+    "book_page": "4122/2977"
+   },
+   {
+    "recorded": "2018/12/21",
+    "kind": "supplement",
+    "description": "SUPPLEMENTAL DECLARATION TO THE DECLARATION OF COVENANTS COVENANTS CONDITIONS RESTRICTIONS EASEMENTS CHARGES & LIENS",
+    "book_page": "4169/3343"
+   },
+   {
+    "recorded": "2019/01/09",
+    "kind": "rules and policies",
+    "description": "RULES AND REGULATIONS",
+    "book_page": "4174/1506"
+   },
+   {
+    "recorded": "2019/02/11",
+    "kind": "amendment",
+    "description": "3RD AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS RESTRICTIONS EASEMENTS CHARGES & LIENS",
+    "book_page": "4182/3125"
+   },
+   {
+    "recorded": "2019/02/11",
+    "kind": "supplement",
+    "description": "SUPPLEMENTAL DECLARATION TO DECLARATION OF COVENANTS CONDITIONS RESTRICTIONS EASEMENTS CHARGES & LIENS",
+    "book_page": "4182/3131"
+   },
+   {
+    "recorded": "2019/12/16",
+    "kind": "supplement",
+    "description": "SUPPLEMENTAL DECLARATION TO DECLARATION OF COVENANTS CONDITIONS RESTRICTIONS EASEMENTS CHARGES & LIENS",
+    "book_page": "4270/1864"
+   },
+   {
+    "recorded": "2020/01/10",
+    "kind": "rules and policies",
+    "description": "DESIGN GUIDELINES",
+    "book_page": "4277/1175"
+   },
+   {
+    "recorded": "2020/03/02",
+    "kind": "amendment",
+    "description": "4TH AMENDMENT & SUPPLEMENT TO DECLARATION OF COVENANTS CONDITIONS RESTRICTIONS EASEMENTS CHARGES & LIENS",
+    "book_page": "4292/703"
+   },
+   {
+    "recorded": "2020/08/24",
+    "kind": "supplement",
+    "description": "SUPPLEMENTAL DECLARATIONS TO DECLARATIONS OF COVENANTS CONDITIONS RESTRICTIONS EASEMENTS CHARGES AND LIENS",
+    "book_page": "4337/841"
+   },
+   {
+    "recorded": "2020/10/23",
+    "kind": "supplement",
+    "description": "SUPPLEMENTAL DECLARATION TO DECLARATION OF COVENANTS CONDITIONS RESTRICTIONS EASEMENTS CHARGES AND LIENS",
+    "book_page": "4355/972"
+   },
+   {
+    "recorded": "2025/01/09",
+    "kind": "rules and policies",
+    "description": "FINE POLICY AND APPEAL PROCESS",
+    "book_page": "4897/2451"
+   },
+   {
+    "recorded": "2025/01/09",
+    "kind": "rules and policies",
+    "description": "RULES AND REGULATIONS",
+    "book_page": "4897/2455"
+   },
+   {
+    "recorded": "2025/12/22",
+    "kind": "rules and policies",
+    "description": "COMMUNITY GUIDELINES / RULES & REGULATIONS",
+    "book_page": "5027/1909"
+   },
+   {
+    "recorded": "2026/04/23",
+    "kind": "rules and policies",
+    "description": "DELINQUENT ASSESSMENT COLLECTION POLICY/RECORDS INSPECTION POLICY AND PROCEDURES/RESIDENT EVENT VENDOR REQUIREMENTS POLICY",
+    "book_page": "5070/1708"
+   }
+  ],
+  "Myrtle Trace": [
+   {
+    "recorded": "2019/01/10",
+    "kind": "rules and policies",
+    "description": "BOARD/GENERAL POLICIES",
+    "book_page": "4174/3132"
+   },
+   {
+    "recorded": "2020/01/10",
+    "kind": "rules and policies",
+    "description": "NOTICE OF AMENDMENT FOR FINES RELATED TO ARC",
+    "book_page": "4277/1114"
+   },
+   {
+    "recorded": "2021/01/15",
+    "kind": "rules and policies",
+    "description": "2020 GUIDELINE & POLICY UPDATES/NEW MTHOA GUIDELINES/POLICIES",
+    "book_page": "4380/2479"
+   },
+   {
+    "recorded": "2022/01/28",
+    "kind": "rules and policies",
+    "description": "GUIDELINES AND POLICIES",
+    "book_page": "4509/2409"
+   },
+   {
+    "recorded": "2023/01/27",
+    "kind": "rules and policies",
+    "description": "GUIDELINES AND RESTRICTIONS",
+    "book_page": "4637/2673"
+   },
+   {
+    "recorded": "2026/01/14",
+    "kind": "rules and policies",
+    "description": "ASSOCIATION GUIDELINES AND RESTRICTIONS",
+    "book_page": "5034/1488"
+   }
+  ],
+  "Plantation Lakes": [
+   {
+    "recorded": "2018/12/20",
+    "kind": "rules and policies",
+    "description": "RULES REGULATIONS AND POLICIES",
+    "book_page": "4169/1454"
+   },
+   {
+    "recorded": "2018/12/20",
+    "kind": "rules and policies",
+    "description": "RULES REGULATIONS ANDA POLICIES",
+    "book_page": "4169/1499"
+   },
+   {
+    "recorded": "2019/12/12",
+    "kind": "rules and policies",
+    "description": "DESIGN GUIDELINES & ARCHITECTURAL REVIEW BOARD SUBMITTAL REQUIREMENTS",
+    "book_page": "4269/125"
+   },
+   {
+    "recorded": "2021/01/04",
+    "kind": "rules and policies",
+    "description": "DESIGN GUIDELINES & ARCHITECTURAL REVIEW BOARD SUBMITTAL REQUIREMENTS",
+    "book_page": "4377/392"
+   },
+   {
+    "recorded": "2022/01/10",
+    "kind": "rules and policies",
+    "description": "DESIGN GUIDELINES",
+    "book_page": "4503/836"
+   },
+   {
+    "recorded": "2022/12/14",
+    "kind": "rules and policies",
+    "description": "RULES REGULATIONS AND POLICIES",
+    "book_page": "4623/1908"
+   },
+   {
+    "recorded": "2024/12/18",
+    "kind": "amendment",
+    "description": "AMENDMENT TO THE DECLARATION OF PROTECTIVE COVENANTS RESTRICIATIONS EASEMENTS CHARGES AND LIENS / INCORRECT BOOK AND PAGE REFERENCED D 2492/527",
+    "book_page": "4891/2293"
+   },
+   {
+    "recorded": "2025/03/20",
+    "kind": "rules and policies",
+    "description": "DESIGN GUIDELINES & ARCHITECTURAL REVIEW BOARD SUBMITTAL REQUIREMENTS",
+    "book_page": "4923/1009"
+   },
+   {
+    "recorded": "2026/02/24",
+    "kind": "rules and policies",
+    "description": "RULES AND REGULATIONS REFERENCE DOCUMENT",
+    "book_page": "5049/1686"
+   },
+   {
+    "recorded": "2026/02/24",
+    "kind": "rules and policies",
+    "description": "DESIGN GUIDELINES & ARCHITECTURAL REVIEW BOARD SUBMITTAL REQUIREMENTS",
+    "book_page": "5049/1718"
+   }
+  ],
+  "Avalon at Carolina Forest": [
+   {
+    "recorded": "2019/01/02",
+    "kind": "rules and policies",
+    "description": "RULES REGULATIONS & POLICIES",
+    "book_page": "4171/2228"
+   },
+   {
+    "recorded": "2024/11/22",
+    "kind": "rules and policies",
+    "description": "COLLECTION POLICY",
+    "book_page": "4882/1392"
+   },
+   {
+    "recorded": "2024/11/22",
+    "kind": "rules and policies",
+    "description": "FINE POLICY AND APPEAL PROCESS",
+    "book_page": "4882/1431"
+   },
+   {
+    "recorded": "2026/01/07",
+    "kind": "rules and policies",
+    "description": "FINE POLICY",
+    "book_page": "5032/251"
+   }
+  ],
+  "Del Webb North Myrtle Beach": [
+   {
+    "recorded": "2021/11/01",
+    "kind": "rules and policies",
+    "description": "DEVELOPMENT REGULATIONS PROPOSED ENTRY FEATURE AND AMENITY CENTER",
+    "book_page": "4479/1949"
+   },
+   {
+    "recorded": "2021/11/01",
+    "kind": "rules and policies",
+    "description": "DEVELOPMENT REGULATIONS PROPOSED ENTRY FEATURE AND AMENITY CENTER",
+    "book_page": "4479/1992"
+   },
+   {
+    "recorded": "2022/06/27",
+    "kind": "rules and policies",
+    "description": "DEL WEBB NORTH MYRTLE BEACH DESIGN GUIDELINES",
+    "book_page": "4566/941"
+   },
+   {
+    "recorded": "2023/03/13",
+    "kind": "rules and policies",
+    "description": "DESIGN GUIDELINES",
+    "book_page": "4654/2069"
+   },
+   {
+    "recorded": "2023/06/26",
+    "kind": "rules and policies",
+    "description": "RULES AND REGULATIONS",
+    "book_page": "4694/3406"
+   },
+   {
+    "recorded": "2024/01/29",
+    "kind": "supplement",
+    "description": "SUPPLEMENTAL DECLARATION",
+    "book_page": "4769/1471"
+   },
+   {
+    "recorded": "2024/02/09",
+    "kind": "rules and policies",
+    "description": "DESIGN GUIDELINES",
+    "book_page": "4773/2293"
+   },
+   {
+    "recorded": "2025/01/09",
+    "kind": "rules and policies",
+    "description": "FINE POLICY & APPEAL PROCESS",
+    "book_page": "4897/2483"
+   },
+   {
+    "recorded": "2025/01/09",
+    "kind": "rules and policies",
+    "description": "ASSESSMENT COLLECTION POLICY",
+    "book_page": "4897/2486"
+   },
+   {
+    "recorded": "2025/01/09",
+    "kind": "rules and policies",
+    "description": "RESERVE EXPENDITURE POLICY",
+    "book_page": "4897/2490"
+   },
+   {
+    "recorded": "2025/01/09",
+    "kind": "rules and policies",
+    "description": "FINE POLICY & APPEAL PROCESS",
+    "book_page": "4897/2492"
+   },
+   {
+    "recorded": "2026/01/08",
+    "kind": "rules and policies",
+    "description": "RULES AND REGULATIONS",
+    "book_page": "5032/1405"
+   },
+   {
+    "recorded": "2026/01/08",
+    "kind": "rules and policies",
+    "description": "COMMUNITY DESIGN GUIDELINES",
+    "book_page": "5032/1501"
+   },
+   {
+    "recorded": "2026/04/23",
+    "kind": "rules and policies",
+    "description": "COMMON AREA CAMERA POLICY DELINQUENT ASSESSMENT COLLECTION POLICY RESIDENT EVENT VENDOR REQUIREMENTS POLICY",
+    "book_page": "5070/1758"
+   }
+  ]
+ }
+}

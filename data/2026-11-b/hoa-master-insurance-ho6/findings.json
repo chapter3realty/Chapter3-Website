@@ -1,0 +1,177 @@
+{
+ "window": "policies that started 2025-09-01 to 2026-08-31",
+ "asOfDate": "2026-09-08T00:00:00.000Z",
+ "pulled": "2026-11-10",
+ "rcbap": {
+  "policies": 1172,
+  "units": 32500,
+  "deductible_counts": {
+   "1250": 832,
+   "2000": 143,
+   "25000": 105,
+   "5000": 67,
+   "10000": 24,
+   "1000": 1
+  },
+  "with_replacement_cost": 702,
+  "meets_80pct_or_max": 701,
+  "coverage_per_unit_median": 189333,
+  "at_250k_per_unit_cap": 276,
+  "with_contents_coverage": 151
+ },
+ "replacement_cost_per_unit": {
+  "all": {
+   "n": 702,
+   "median": 148125,
+   "p25": 112500,
+   "p75": 190000,
+   "over_250k": 55
+  },
+  "ten_plus_units": {
+   "n": 343,
+   "median": 130775,
+   "p25": 98773,
+   "p75": 188929,
+   "over_250k": 30
+  },
+  "three_plus_floors": {
+   "n": 368,
+   "median": 136556,
+   "p25": 106323,
+   "p75": 191426,
+   "over_250k": 35
+  },
+  "zone_V": {
+   "n": 34,
+   "median": 151958,
+   "p25": 93333,
+   "p75": 208321,
+   "over_250k": 3
+  }
+ },
+ "unit_policies": {
+  "policies": 1078,
+  "cost_median": 494,
+  "cost_p25": 369,
+  "cost_p75": 642,
+  "building_cov_median": 92000,
+  "building_cov_zero": 165,
+  "contents_cov_median": 51000,
+  "contents_cov_zero": 66,
+  "zone": {
+   "X": 807,
+   "A": 235,
+   "V": 36
+  },
+  "primary_residence": 633
+ },
+ "claims_by_event": {
+  "Hurricane Hugo": {
+   "A_claims": 232,
+   "A_paid": 17131447,
+   "U_claims": 446,
+   "U_paid": 818521
+  },
+  "Hurricane Florence": {
+   "A_claims": 39,
+   "A_paid": 8380786,
+   "U_claims": 15,
+   "U_paid": 199880
+  },
+  "Hurricane Ian": {
+   "A_claims": 101,
+   "A_paid": 8211380,
+   "U_claims": 6,
+   "U_paid": 40890
+  },
+  "Hurricane Matthew": {
+   "A_claims": 113,
+   "A_paid": 7654476,
+   "U_claims": 16,
+   "U_paid": 52487
+  },
+  "(no event name)": {
+   "A_claims": 129,
+   "A_paid": 4112502,
+   "U_claims": 50,
+   "U_paid": 229027
+  },
+  "Hurricane Floyd": {
+   "A_claims": 67,
+   "A_paid": 2173635,
+   "U_claims": 27,
+   "U_paid": 272653
+  },
+  "October severe storms": {
+   "A_claims": 38,
+   "A_paid": 1281366,
+   "U_claims": 14,
+   "U_paid": 120858
+  },
+  "Flooding": {
+   "A_claims": 53,
+   "A_paid": 417360,
+   "U_claims": 11,
+   "U_paid": 11988
+  },
+  "Hurricane Isaias": {
+   "A_claims": 9,
+   "A_paid": 292856,
+   "U_claims": 0,
+   "U_paid": 0
+  },
+  "December Nor'easter": {
+   "A_claims": 6,
+   "A_paid": 70644,
+   "U_claims": 1,
+   "U_paid": 0
+  },
+  "Hurricane Fran": {
+   "A_claims": 28,
+   "A_paid": 34108,
+   "U_claims": 1,
+   "U_paid": 4662
+  },
+  "Hurricane Bertha": {
+   "A_claims": 32,
+   "A_paid": 0,
+   "U_claims": 1,
+   "U_paid": 0
+  },
+  "2025-10-Nor'easter": {
+   "A_claims": 1,
+   "A_paid": 0,
+   "U_claims": 0,
+   "U_paid": 0
+  },
+  "Hurricane Helene": {
+   "A_claims": 1,
+   "A_paid": 0,
+   "U_claims": 0,
+   "U_paid": 0
+  },
+  "Hurricane Diana": {
+   "A_claims": 1,
+   "A_paid": 0,
+   "U_claims": 0,
+   "U_paid": 0
+  },
+  "Hurricane Idalia": {
+   "A_claims": 0,
+   "A_paid": 0,
+   "U_claims": 1,
+   "U_paid": 16868
+  }
+ },
+ "claims_total": {
+  "rows": 1439,
+  "pulled": "2026-11-10"
+ },
+ "example": {
+  "replacement_cost_per_unit": 130775,
+  "basis": "middle replacement cost per unit, Horry condo buildings of 10+ units with a federal flood policy",
+  "share_1pct": 1310,
+  "share_2pct": 2615,
+  "share_5pct": 6540
+ }
+}

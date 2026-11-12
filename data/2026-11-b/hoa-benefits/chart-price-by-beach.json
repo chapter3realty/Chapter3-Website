@@ -1,0 +1,47 @@
+{
+ "title": "Newer houses with an HOA fee list for less a square foot than those without, at every distance from the beach",
+ "unit": "asking price per square foot, houses for sale built 2000 or later, Horry County ZIP codes",
+ "rows": [
+  {
+   "band": "under 1 mile",
+   "with_fee_ppsf": 340,
+   "no_fee_ppsf": 417,
+   "with_fee_acres": 0.12,
+   "no_fee_acres": 0.16,
+   "n_with": 109,
+   "n_none": 167,
+   "share_with_fee_pct": 39.5
+  },
+  {
+   "band": "1 to 3 miles",
+   "with_fee_ppsf": 255,
+   "no_fee_ppsf": 298,
+   "with_fee_acres": 0.17,
+   "no_fee_acres": 0.24,
+   "n_with": 455,
+   "n_none": 43,
+   "share_with_fee_pct": 91.4
+  },
+  {
+   "band": "3 to 10 miles",
+   "with_fee_ppsf": 199,
+   "no_fee_ppsf": 225,
+   "with_fee_acres": 0.2,
+   "no_fee_acres": 0.66,
+   "n_with": 905,
+   "n_none": 36,
+   "share_with_fee_pct": 96.2
+  },
+  {
+   "band": "over 10 miles",
+   "with_fee_ppsf": 178,
+   "no_fee_ppsf": 228,
+   "with_fee_acres": 0.23,
+   "no_fee_acres": 1.0,
+   "n_with": 505,
+   "n_none": 233,
+   "share_with_fee_pct": 68.4
+  }
+ ],
+ "source": "rerun/price-test.json"
+}

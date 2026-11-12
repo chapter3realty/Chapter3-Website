@@ -1,0 +1,68 @@
+{
+ "pulled": "2026-11-10T02:06:33.682059+00:00",
+ "groups": {
+  "condo": {
+   "listings": 2704,
+   "pets_allowed": 1680,
+   "rv_boat_parking": 20,
+   "home_office": 34
+  },
+  "house": {
+   "listings": 2935,
+   "pets_allowed": 1525,
+   "rv_boat_parking": 307,
+   "home_office": 706,
+   "no_hoa_fee": {
+    "listings": 795,
+    "rv_boat_parking": 254,
+    "pets_allowed": 304
+   }
+  }
+ },
+ "calls": [
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry",
+   "total": 2704
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Cpets_allowed",
+   "total": 1680
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Crv_boat_parking",
+   "total": 20
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Chome_office",
+   "total": 34
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry",
+   "total": 2935
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpets_allowed",
+   "total": 1525
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Crv_boat_parking",
+   "total": 307
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Chome_office",
+   "total": 706
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&hoa=0",
+   "total": 795
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Crv_boat_parking&hoa=0",
+   "total": 254
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry%2Cpets_allowed&hoa=0",
+   "total": 304
+  }
+ ]
+}

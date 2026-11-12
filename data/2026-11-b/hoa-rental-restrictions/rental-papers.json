@@ -1,0 +1,286 @@
+{
+ "source": "Horry County Register of Deeds index (AcclaimWeb), doc types RESTRICTIONS (082) and AMENDMENT DEED BOOK (069), pulled 2026-11-04 by data/2026-11-a/hoa-documents/pull_recorded.py",
+ "method": "Count association papers about renting recorded at the Horry County Register of Deeds, 2012-01 to 2026-10.\nReads the monthly index pulls made by data/2026-11-a/hoa-documents/pull_recorded.py (RESTRICTIONS 082 and\nAMENDMENT DEED BOOK 069; the RAW files carry party names and stay out of the repo).\nA row counts when (1) it is an association paper by the hoa-documents rule (an association party name, or a paper\nword in the description, and not a stormwater, housing-program or conservation covenant), and (2) its index\ndescription names renting: RENT, LEAS, TENANT, SHORT TERM, TRANSIENT, AIRBNB, OCCUPAN.\nCommercial lease papers are dropped: MORTGAGE, ASSIGNMENT OF (LEASES|RENTS), MEMORANDUM OF LEASE, LEASE AMENDMENT\nAGREEMENT, GROUND LEASE, RENTAL HOUSING. The index description is a clerk's short title; most papers name no subject,\nso every count is a floor (\"at least\").",
+ "by_year": {
+  "2019": {
+   "all": 2,
+   "rules or policy": 2,
+   "rental or renters": 2
+  },
+  "2020": {
+   "all": 1,
+   "rules or policy": 1,
+   "rental or renters": 1
+  },
+  "2021": {
+   "all": 1,
+   "amendment to the declaration or master deed": 1,
+   "leasing": 1
+  },
+  "2022": {
+   "all": 1,
+   "rules or policy": 1,
+   "rental or renters": 1
+  },
+  "2023": {
+   "all": 7,
+   "rules or policy": 6,
+   "rental or renters": 5,
+   "leasing": 2,
+   "amendment to the declaration or master deed": 1
+  },
+  "2024": {
+   "all": 4,
+   "rules or policy": 4,
+   "rental or renters": 3,
+   "leasing": 1
+  },
+  "2025": {
+   "all": 5,
+   "rules or policy": 5,
+   "rental or renters": 4,
+   "leasing": 1
+  },
+  "2026": {
+   "all": 2,
+   "rules or policy": 1,
+   "rental or renters": 2,
+   "amendment to the declaration or master deed": 1
+  }
+ },
+ "total_2012_to_2026_10": 23,
+ "last_12_months_2025_11_to_2026_10": 3,
+ "distinct_associations": 16,
+ "rows": [
+  {
+   "recorded": "2019/03/26",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "WILLOW CREEK HOMEOWNERS ASSOCIATION",
+   "description": "RENTAL COMPANY RULES",
+   "book_page": "4194/787",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4194/787"
+  },
+  {
+   "recorded": "2019/04/10",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "(not an association name)",
+   "description": "SEASIDER RENTAL REGULATIONS",
+   "book_page": "4198/976",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4198/976"
+  },
+  {
+   "recorded": "2020/08/07",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "HAWTHORNE CONDOMINIUM ASSOCIATION",
+   "description": "RENTAL POLICY",
+   "book_page": "4332/2775",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4332/2775"
+  },
+  {
+   "recorded": "2021/09/22",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "(not an association name)",
+   "description": "FIRST AMENDMENT TO DECLARATION OF EASEMENTS AND RESTRICTIONS AND SHORT FORM LEASE",
+   "book_page": "4466/1158",
+   "kind": "amendment to the declaration or master deed",
+   "subject": "leasing",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4466/1158"
+  },
+  {
+   "recorded": "2022/08/11",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "TIDEWATER RIDGE PROPERTY OWNERS ASSOCIATION",
+   "description": "RULES AND REGULATIONS FOR VISITORS GUESTS AND RENTERS",
+   "book_page": "4581/2332",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4581/2332"
+  },
+  {
+   "recorded": "2023/03/21",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "SHIPWATCH POINTE I HOMEOWNERS ASSOCIATION",
+   "description": "GENERAL RULES AND REGULATIONS FOR OWNERS RENTERS TENANTS AND GUESTS",
+   "book_page": "4658/989",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4658/989"
+  },
+  {
+   "recorded": "2023/05/12",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "SEABROOK PLANTATION PROPERTY OWNERS ASSOCIATION INC",
+   "description": "LEASE RULES AND REGULATIONS",
+   "book_page": "4679/430",
+   "kind": "rules or policy",
+   "subject": "leasing",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4679/430"
+  },
+  {
+   "recorded": "2023/07/19",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "BRIGHTON AT KINGSTON PLANTATION PROPERTY OWNERS ASSOCIATION INC",
+   "description": "FINE PROCESS FOR OWNERS AND RENTERS",
+   "book_page": "4703/199",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4703/199"
+  },
+  {
+   "recorded": "2023/07/19",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "BRIGHTON AT KINGSTON PLANTATION PROPERTY OWNERS ASSOCIATION INC",
+   "description": "BUILDING RULES FOR OWNERS/RENTERS",
+   "book_page": "4703/202",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4703/202"
+  },
+  {
+   "recorded": "2023/08/14",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "SEABROOK PLANTATION PROPERTY OWNERS ASSOCIATION INC",
+   "description": "AMENDED AND RESTATED LEASE RULES AND REGULATIONS",
+   "book_page": "4711/2737",
+   "kind": "amendment to the declaration or master deed",
+   "subject": "leasing",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4711/2737"
+  },
+  {
+   "recorded": "2023/09/05",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "(not an association name)",
+   "description": "RULES & REGULATIONS OWNERS GUESTS & RENTERS",
+   "book_page": "4719/2497",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4719/2497"
+  },
+  {
+   "recorded": "2023/12/18",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "GROVE POINTE HOMEOWNERS ASSOCIATION INC",
+   "description": "REGULATION 2 01 / REGULATIONS FOR VACATION RENTALS",
+   "book_page": "4756/2652",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4756/2652"
+  },
+  {
+   "recorded": "2024/01/04",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "SUMMERTREE VILLAGE HOMEOWNERS ASSOCIATION INC",
+   "description": "RULES & REGULAITONS RENTERS VERSION",
+   "book_page": "4761/1324",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4761/1324"
+  },
+  {
+   "recorded": "2024/01/08",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "(not an association name)",
+   "description": "RULES & REGULATIONS OWNERS GUESTS & RENTERS",
+   "book_page": "4762/1680",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4762/1680"
+  },
+  {
+   "recorded": "2024/02/06",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "LONGVIEW HOMEOWNERS ASSOCIATION INC",
+   "description": "LEASE POLICY",
+   "book_page": "4771/3350",
+   "kind": "rules or policy",
+   "subject": "leasing",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4771/3350"
+  },
+  {
+   "recorded": "2024/07/26",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "RIVERWALK TOWNHOMES AT ARROWHEAD PROPERTY OWNERS ASSOCIATION INC",
+   "description": "RENTAL PETS PARKING TRASH AND VIOLATIONS WARNINGS & FINES POLICY",
+   "book_page": "4836/3007",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4836/3007"
+  },
+  {
+   "recorded": "2025/01/09",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "SOUTH SHORES II HORIZONTAL PROPERTY REGIME",
+   "description": "RULES AND REGULATIONS RENTERS & GUESTS",
+   "book_page": "4898/165",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4898/165"
+  },
+  {
+   "recorded": "2025/03/20",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "LONGVIEW HOMEOWNERS ASSOCIATION INC",
+   "description": "REVISED LEASE POLICY",
+   "book_page": "4923/993",
+   "kind": "rules or policy",
+   "subject": "leasing",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4923/993"
+  },
+  {
+   "recorded": "2025/04/04",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "BRIGHTON AT KINGSTON PLANTATION PROPERTY OWNERS ASSOCIATION INC",
+   "description": "BRIGHTON BUILDING RULES FOR RENTERS/OWNERS",
+   "book_page": "4928/3454",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4928/3454"
+  },
+  {
+   "recorded": "2025/09/18",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "MAGNOLIA NORTH PROPERTY OWNERS ASSOCIATION INC",
+   "description": "RULES AND REGULATIONS FOR ALL OWNERS VISITORS AND RENTERS",
+   "book_page": "4992/332",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/4992/332"
+  },
+  {
+   "recorded": "2025/12/05",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "SHIPWATCH POINTE I HOA INC",
+   "description": "GENERAL RULES AND REGULATIONS FOR OWNERS RENTES TENANTS AND GUESTS",
+   "book_page": "5020/3292",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/5020/3292"
+  },
+  {
+   "recorded": "2026/06/09",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "FOREST PINES CONDOMINIUM ASSOCIATION INC",
+   "description": "PET RULES AND REGULATIONS TO INCLUDE DOG LIMIT/RENTAL REGISTRATION POLICY/RULES AND REGULATIONS",
+   "book_page": "5088/3191",
+   "kind": "rules or policy",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/5088/3191"
+  },
+  {
+   "recorded": "2026/07/16",
+   "doc_type": "RESTRICTIONS (082)",
+   "association": "HARBOR OAKS MARINA PROPERTY OWNERS ASSOCIATION INC",
+   "description": "SIXTH AMENDMENT TO DECLARATION OF COVENANTS CONDITIONS & RESTRICTIONS FOR BOAT SLIP UNIT RENTAL AND USE RESTRICTION",
+   "book_page": "5103/1098",
+   "kind": "amendment to the declaration or master deed",
+   "subject": "rental or renters",
+   "open": "https://acclaimweb.horrycounty.org/AcclaimWeb/details/JumpToBookPage/1/5103/1098"
+  }
+ ]
+}

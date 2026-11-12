@@ -1,0 +1,89 @@
+{
+ "pulled": "2026-11-10T11:06:00.336225Z",
+ "api": "https://chapter3realty.com/homes/api/map?",
+ "area": {
+  "near": "33.69000,-78.89200",
+  "miles": 25
+ },
+ "counts": {
+  "condo_200_265k": {
+   "params": {
+    "type": "condo",
+    "min": 200000,
+    "max": 265000
+   },
+   "total": 622
+  },
+  "condo_200_265k_rentals_allowed": {
+   "params": {
+    "type": "condo",
+    "min": 200000,
+    "max": 265000,
+    "has": "rentals_allowed"
+   },
+   "total": 546
+  },
+  "condo_200_265k_oceanfront_unit": {
+   "params": {
+    "type": "condo",
+    "min": 200000,
+    "max": 265000,
+    "has": "oceanfront_unit"
+   },
+   "total": 102
+  },
+  "condo_200_265k_oceanfront_unit_rentals_allowed": {
+   "params": {
+    "type": "condo",
+    "min": 200000,
+    "max": 265000,
+    "has": "oceanfront_unit,rentals_allowed"
+   },
+   "total": 97
+  },
+  "condo_200_265k_str_allowed": {
+   "params": {
+    "type": "condo",
+    "min": 200000,
+    "max": 265000,
+    "has": "str_allowed"
+   },
+   "total": 423
+  },
+  "condo_200_265k_oceanfront_unit_str_allowed": {
+   "params": {
+    "type": "condo",
+    "min": 200000,
+    "max": 265000,
+    "has": "oceanfront_unit,str_allowed"
+   },
+   "total": 97
+  },
+  "house_330_395k": {
+   "params": {
+    "type": "house",
+    "min": 330000,
+    "max": 395000
+   },
+   "total": 498
+  },
+  "house_330_395k_str_allowed": {
+   "params": {
+    "type": "house",
+    "min": 330000,
+    "max": 395000,
+    "has": "str_allowed"
+   },
+   "total": 21
+  },
+  "house_330_395k_rentals_allowed": {
+   "params": {
+    "type": "house",
+    "min": 330000,
+    "max": 395000,
+    "has": "rentals_allowed"
+   },
+   "total": 382
+  }
+ }
+}

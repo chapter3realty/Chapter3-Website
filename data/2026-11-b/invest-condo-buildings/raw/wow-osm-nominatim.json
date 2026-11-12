@@ -1,0 +1,145 @@
+{
+ "read": "2026-11-10",
+ "results": {
+  "bay-watch": {
+   "url": "https://nominatim.openstreetmap.org/reverse?format=json&lat=33.80173&lon=-78.7126&zoom=18",
+   "result": {
+    "place_id": 343595533,
+    "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 952258839,
+    "lat": "33.8017134",
+    "lon": "-78.7126383",
+    "class": "tourism",
+    "type": "hotel",
+    "place_rank": 30,
+    "importance": 3.8624399175967306e-05,
+    "addresstype": "tourism",
+    "name": "Bay Watch Resort & Conference Center",
+    "display_name": "Bay Watch Resort & Conference Center, 2701, South Ocean Boulevard, Crescent Beach, North Myrtle Beach, Horry County, South Carolina, 29582, United States",
+    "address": {
+     "tourism": "Bay Watch Resort & Conference Center",
+     "house_number": "2701",
+     "road": "South Ocean Boulevard",
+     "village": "Crescent Beach",
+     "town": "North Myrtle Beach",
+     "county": "Horry County",
+     "state": "South Carolina",
+     "ISO3166-2-lvl4": "US-SC",
+     "postcode": "29582",
+     "country": "United States",
+     "country_code": "us"
+    },
+    "boundingbox": [
+     "33.8014926",
+     "33.8019069",
+     "-78.7130334",
+     "-78.7123733"
+    ]
+   }
+  },
+  "north-beach-towers": {
+   "url": "https://nominatim.openstreetmap.org/reverse?format=json&lat=33.79067&lon=-78.73647&zoom=18",
+   "result": {
+    "place_id": 343382479,
+    "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 12154568294,
+    "lat": "33.7905173",
+    "lon": "-78.7365212",
+    "class": "amenity",
+    "type": "fountain",
+    "place_rank": 30,
+    "importance": 3.806744487673789e-05,
+    "addresstype": "amenity",
+    "name": "",
+    "display_name": "North Beach Boulevard, North Beach Resort, Windy Hill Beach, North Myrtle Beach, Horry County, South Carolina, 29752, United States",
+    "address": {
+     "road": "North Beach Boulevard",
+     "neighbourhood": "North Beach Resort",
+     "village": "Windy Hill Beach",
+     "town": "North Myrtle Beach",
+     "county": "Horry County",
+     "state": "South Carolina",
+     "ISO3166-2-lvl4": "US-SC",
+     "postcode": "29752",
+     "country": "United States",
+     "country_code": "us"
+    },
+    "boundingbox": [
+     "33.7904673",
+     "33.7905673",
+     "-78.7365712",
+     "-78.7364712"
+    ]
+   }
+  },
+  "north-beach-resort-office": {
+   "url": "https://nominatim.openstreetmap.org/search?q=719+North+Beach+Boulevard,+North+Myrtle+Beach&format=json&limit=1",
+   "result": [
+    {
+     "place_id": 382638176,
+     "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+     "osm_type": "way",
+     "osm_id": 267911002,
+     "lat": "33.7954644",
+     "lon": "-78.7419073",
+     "class": "place",
+     "type": "house",
+     "place_rank": 30,
+     "importance": 9.99999999995449e-06,
+     "addresstype": "place",
+     "name": "",
+     "display_name": "719, North Beach Boulevard, North Beach Resort, Windy Hill Beach, North Myrtle Beach, Horry County, South Carolina, 29582, United States",
+     "boundingbox": [
+      "33.7954144",
+      "33.7955144",
+      "-78.7419573",
+      "-78.7418573"
+     ]
+    }
+   ]
+  },
+  "sands-ocean": {
+   "url": "https://nominatim.openstreetmap.org/reverse?format=json&lat=33.75973&lon=-78.78939&zoom=18",
+   "result": {
+    "place_id": 341195048,
+    "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 480489473,
+    "lat": "33.7596432",
+    "lon": "-78.7893880",
+    "class": "tourism",
+    "type": "hotel",
+    "place_rank": 30,
+    "importance": 3.500190737769158e-05,
+    "addresstype": "tourism",
+    "name": "Sands Ocean Club Resort",
+    "display_name": "Sands Ocean Club Resort, 9550, Shore Drive, Mariner's Cove, Myrtle Beach, Horry County, South Carolina, 29572, United States",
+    "address": {
+     "tourism": "Sands Ocean Club Resort",
+     "house_number": "9550",
+     "road": "Shore Drive",
+     "neighbourhood": "Mariner's Cove",
+     "city": "Myrtle Beach",
+     "county": "Horry County",
+     "state": "South Carolina",
+     "ISO3166-2-lvl4": "US-SC",
+     "postcode": "29572",
+     "country": "United States",
+     "country_code": "us"
+    },
+    "boundingbox": [
+     "33.7592789",
+     "33.7600013",
+     "-78.7901150",
+     "-78.7888946"
+    ]
+   }
+  },
+  "dunes-club": {
+   "url": "https://nominatim.openstreetmap.org/search?q=Dunes+Golf+and+Beach+Club,+Myrtle+Beach&format=json&limit=1",
+   "result": []
+  }
+ }
+}

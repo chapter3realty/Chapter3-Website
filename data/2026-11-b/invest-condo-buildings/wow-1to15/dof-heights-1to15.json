@@ -1,0 +1,227 @@
+{
+ "method": "Tower heights for entries 1 to 15 of /invest/condo-buildings/, from two federal and county records.\n1. Footprints: Horry County parcel layer 24. Every unit parcel of a building's regimes (regimes.json) carries the\n   building's footprint polygon; the distinct polygons are the building's footprints.\n2. Heights: FAA Digital Obstacle File, https://aeronav.faa.gov/Obst_Data/DAILY_DOF_DAT.ZIP (DOF.DAT). Each obstacle of\n   type BLDG with its height above ground (AGL, feet), verified flag (O = verified, U = unverified) and accuracy codes.\nAn obstacle is matched to a building when its point is inside one of the building's footprints, or within 30 m of one\n(DOF horizontal accuracy codes 1 to 4 are 20 ft to 250 ft). Nearest footprint of any other regime is reported too, so\na match next to a neighbour can be judged by hand.\nRun: python3 -I dof_in_footprints.py <DOF.DAT> <regimes.json> <out.json>",
+ "dof_currency": "CURRENCY DATE = 11/02/26",
+ "buildings": {
+  "mb-resort": {
+   "regimes": [
+    "MYRTLE BEACH RESORT"
+   ],
+   "footprints": 4,
+   "calls": [
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27MYRTLE+BEACH+RESORT%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000"
+   ],
+   "dof_bldg": []
+  },
+  "compass-cove": {
+   "regimes": [
+    "PINNACLE OCEANFRT TOWER",
+    "COMPASS COVE N TOWER",
+    "SCHOONER OCEANFRT TOWER"
+   ],
+   "footprints": 3,
+   "calls": [
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27PINNACLE+OCEANFRT+TOWER%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27COMPASS+COVE+N+TOWER%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27SCHOONER+OCEANFRT+TOWER%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000"
+   ],
+   "dof_bldg": [
+    {
+     "oas": "45-020957",
+     "verified": true,
+     "agl_ft": 166,
+     "amsl_ft": 175,
+     "line": "45-020957 O US SC MYRTLE BEACH     33 39 56.48N 078 54 34.90W BLDG               1 00166 00175 U 1 A U                A 2012226",
+     "m_from_footprint": 0
+    }
+   ]
+  },
+  "bluewater": {
+   "regimes": [
+    "BLUEWATER VILLAS",
+    "BLUEWATER VILLAS PH I"
+   ],
+   "footprints": 4,
+   "calls": [
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27BLUEWATER+VILLAS%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27BLUEWATER+VILLAS+PH+I%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000"
+   ],
+   "dof_bldg": [
+    {
+     "oas": "45-052667",
+     "verified": true,
+     "agl_ft": 223,
+     "amsl_ft": 238,
+     "line": "45-052667 O US SC MYRTLE BEACH     33 40 08.57N 078 54 21.07W BLDG               1 00223 00238 N 1 A N 2017ASO20472OE A 2017348",
+     "m_from_footprint": 27
+    },
+    {
+     "oas": "45-020960",
+     "verified": true,
+     "agl_ft": 152,
+     "amsl_ft": 167,
+     "line": "45-020960 O US SC MYRTLE BEACH     33 40 10.13N 078 54 20.91W BLDG               1 00152 00167 U 1 A U                A 2012226",
+     "m_from_footprint": 0
+    }
+   ]
+  },
+  "palace": {
+   "regimes": [
+    "THE PALACE"
+   ],
+   "footprints": 2,
+   "calls": [
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27THE+PALACE%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000"
+   ],
+   "dof_bldg": [
+    {
+     "oas": "45-000725",
+     "verified": true,
+     "agl_ft": 241,
+     "amsl_ft": 253,
+     "line": "45-000725 O US SC MYRTLE BEACH     33 40 21.00N 078 54 06.00W BLDG               1 00241 00253 R 1 A N 1995ASO01891OE C 2001197",
+     "m_from_footprint": 0
+    }
+   ]
+  },
+  "landmark": {
+   "regimes": [
+    "LANDMARK HPR PH I",
+    "LANDMARK HPR PH II"
+   ],
+   "footprints": 2,
+   "calls": [
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27LANDMARK+HPR+PH+I%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27LANDMARK+HPR+PH+II%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000"
+   ],
+   "dof_bldg": []
+  },
+  "sea-mist": {
+   "regimes": [
+    "TIDES/DRIFTWD/OASIS HPR"
+   ],
+   "footprints": 1,
+   "calls": [
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27TIDES%2FDRIFTWD%2FOASIS+HPR%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000"
+   ],
+   "dof_bldg": []
+  },
+  "coral-beach": {
+   "regimes": [
+    "CORAL BEACH HPR"
+   ],
+   "footprints": 3,
+   "calls": [
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27CORAL+BEACH+HPR%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000"
+   ],
+   "dof_bldg": []
+  },
+  "bay-view": {
+   "regimes": [
+    "BAYVIEW HPR PH I",
+    "BAYVIEW HPR PH II",
+    "BAYVIEW HPR"
+   ],
+   "footprints": 2,
+   "calls": [
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27BAYVIEW+HPR+PH+I%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27BAYVIEW+HPR+PH+II%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27BAYVIEW+HPR%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000"
+   ],
+   "dof_bldg": [
+    {
+     "oas": "45-054088",
+     "verified": true,
+     "agl_ft": 236,
+     "amsl_ft": 252,
+     "line": "45-054088 O US SC MYRTLE BEACH     33 41 18.03N 078 52 59.52W BLDG               1 00236 00252 R 4 D N 2018ASO10348OE C 2018253",
+     "m_from_footprint": 6
+    }
+   ]
+  },
+  "camelot": {
+   "regimes": [
+    "CAMELOT BY THE SEA HPR"
+   ],
+   "footprints": 3,
+   "calls": [
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27CAMELOT+BY+THE+SEA+HPR%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000"
+   ],
+   "dof_bldg": []
+  },
+  "caribbean": {
+   "regimes": [
+    "CARIBBEAN OCEANFRT TWR",
+    "CARIBBEAN TOWER HPR"
+   ],
+   "footprints": 4,
+   "calls": [
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27CARIBBEAN+OCEANFRT+TWR%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27CARIBBEAN+TOWER+HPR%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000"
+   ],
+   "dof_bldg": []
+  },
+  "beach-colony": {
+   "regimes": [
+    "BEACH COLONY RESORT I",
+    "BEACH COLONY RESORT II"
+   ],
+   "footprints": 2,
+   "calls": [
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27BEACH+COLONY+RESORT+I%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27BEACH+COLONY+RESORT+II%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000"
+   ],
+   "dof_bldg": [
+    {
+     "oas": "45-000741",
+     "verified": true,
+     "agl_ft": 205,
+     "amsl_ft": 217,
+     "line": "45-000741 O US SC MYRTLE BEACH     33 43 30.00N 078 50 24.00W BLDG               1 00205 00217 R 3 C N                C 2014152",
+     "m_from_footprint": 0
+    }
+   ]
+  },
+  "dunes-village": {
+   "regimes": [
+    "DUNES VILLAGE HPR"
+   ],
+   "footprints": 3,
+   "calls": [
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27DUNES+VILLAGE+HPR%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000"
+   ],
+   "dof_bldg": []
+  },
+  "monterey-bay": {
+   "regimes": [
+    "MONTEREY BAY SUITES RST"
+   ],
+   "footprints": 2,
+   "calls": [
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27MONTEREY+BAY+SUITES+RST%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000"
+   ],
+   "dof_bldg": []
+  },
+  "grande-cayman": {
+   "regimes": [
+    "LONG BAY RESORT HPR"
+   ],
+   "footprints": 2,
+   "calls": [
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27LONG+BAY+RESORT+HPR%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000"
+   ],
+   "dof_bldg": []
+  },
+  "caravelle": {
+   "regimes": [
+    "CARAVELLE RESORT HPR",
+    "CARAVELLE TOWER HPR"
+   ],
+   "footprints": 4,
+   "calls": [
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27CARAVELLE+RESORT+HPR%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27CARAVELLE+TOWER+HPR%3B%25%27&outFields=OBJECTID&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000"
+   ],
+   "dof_bldg": []
+  }
+ }
+}

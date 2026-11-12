@@ -1,0 +1,1132 @@
+{
+ "read": "2026-11-09T06:23:36.887774Z",
+ "parcels": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query",
+ "deeds": "data/2026-10-d/sell-out-of-state-buyers/out-of-state-buyers.json (recorded 2025-10-01 to 2026-09-30)",
+ "buildings": {
+  "mb-resort": {
+   "regimes": {
+    "MYRTLE BEACH RESORT": {
+     "units": 244,
+     "landuse": {
+      "3xx": 2,
+      "1xx": 242,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 244,
+   "sales": 15,
+   "sales_median": 179000.0,
+   "sales_quartiles": [
+    155000.0,
+    179000.0,
+    200000.0
+   ],
+   "pct_units_sold": 6.1,
+   "residential_landuse_share": 0.99
+  },
+  "landmark": {
+   "regimes": {
+    "LANDMARK HPR PH I": {
+     "units": 340,
+     "landuse": {
+      "1xx": 339,
+      "3xx": 1
+     }
+    },
+    "LANDMARK HPR PH II": {
+     "units": 231,
+     "landuse": {
+      "1xx": 231
+     }
+    }
+   },
+   "units": 571,
+   "sales": 55,
+   "sales_median": 100000.0,
+   "sales_quartiles": [
+    73500.0,
+    100000.0,
+    120000.0
+   ],
+   "pct_units_sold": 9.6,
+   "residential_landuse_share": 1.0
+  },
+  "sea-mist": {
+   "regimes": {
+    "TIDES/DRIFTWD/OASIS HPR": {
+     "units": 271,
+     "landuse": {
+      "1xx": 271,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 271,
+   "sales": 64,
+   "sales_median": 53000.0,
+   "sales_quartiles": [
+    46248.475,
+    53000.0,
+    59000.0
+   ],
+   "pct_units_sold": 23.6,
+   "residential_landuse_share": 1.0
+  },
+  "compass-cove": {
+   "regimes": {
+    "PINNACLE OCEANFRT TOWER": {
+     "units": 293,
+     "landuse": {
+      "1xx": 291,
+      "3xx": 2,
+      "5xx": 1
+     }
+    },
+    "COMPASS COVE N TOWER": {
+     "units": 101,
+     "landuse": {
+      "1xx": 99,
+      "3xx": 2,
+      "5xx": 1
+     }
+    },
+    "SCHOONER OCEANFRT TOWER": {
+     "units": 92,
+     "landuse": {
+      "1xx": 92,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 486,
+   "sales": 39,
+   "sales_median": 149000.0,
+   "sales_quartiles": [
+    120313.0,
+    149000.0,
+    172525.0
+   ],
+   "pct_units_sold": 8.0,
+   "residential_landuse_share": 0.99
+  },
+  "coral-beach": {
+   "regimes": {
+    "CORAL BEACH HPR": {
+     "units": 295,
+     "landuse": {
+      "1xx": 295,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 295,
+   "sales": 40,
+   "sales_median": 86000.0,
+   "sales_quartiles": [
+    73875.0,
+    86000.0,
+    95000.0
+   ],
+   "pct_units_sold": 13.6,
+   "residential_landuse_share": 1.0
+  },
+  "bay-view": {
+   "regimes": {
+    "BAYVIEW HPR PH I": {
+     "units": 183,
+     "landuse": {
+      "1xx": 183
+     }
+    }
+   },
+   "units": 183,
+   "sales": 12,
+   "sales_median": 188200.0,
+   "sales_quartiles": [
+    133944.25,
+    188200.0,
+    358750.0
+   ],
+   "pct_units_sold": 6.6,
+   "residential_landuse_share": 1.0
+  },
+  "breakers": {
+   "regimes": {
+    "BREAKERS CONDO TOWER": {
+     "units": 179,
+     "landuse": {
+      "1xx": 175,
+      "3xx": 4,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 179,
+   "sales": 7,
+   "sales_median": 250000.0,
+   "sales_quartiles": [
+    225000.0,
+    250000.0,
+    425000.0
+   ],
+   "pct_units_sold": 3.9,
+   "residential_landuse_share": 0.97
+  },
+  "camelot": {
+   "regimes": {
+    "CAMELOT BY THE SEA HPR": {
+     "units": 232,
+     "landuse": {
+      "1xx": 231,
+      "3xx": 1,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 232,
+   "sales": 12,
+   "sales_median": 220000.0,
+   "sales_quartiles": [
+    201250.0,
+    220000.0,
+    240750.0
+   ],
+   "pct_units_sold": 5.2,
+   "residential_landuse_share": 0.99
+  },
+  "caribbean": {
+   "regimes": {
+    "CARIBBEAN OCEANFRT TWR": {
+     "units": 196,
+     "landuse": {
+      "1xx": 196,
+      "5xx": 1
+     }
+    },
+    "CARIBBEAN TOWER HPR": {
+     "units": 173,
+     "landuse": {
+      "1xx": 169,
+      "3xx": 4,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 369,
+   "sales": 16,
+   "sales_median": 215400.0,
+   "sales_quartiles": [
+    200250.0,
+    215400.0,
+    393750.0
+   ],
+   "pct_units_sold": 4.3,
+   "residential_landuse_share": 0.98
+  },
+  "anderson-ocean-club": {
+   "regimes": {
+    "ANDERSON OCEAN CLUB HPR": {
+     "units": 314,
+     "landuse": {
+      "1xx": 312,
+      "3xx": 2
+     }
+    },
+    "ANDERSON OCEAN CLB HPR": {
+     "units": 0,
+     "landuse": {
+      "5xx": 1
+     }
+    }
+   },
+   "units": 314,
+   "sales": 3,
+   "sales_median": 312000.0,
+   "sales_quartiles": null,
+   "pct_units_sold": 1.0,
+   "residential_landuse_share": 0.99
+  },
+  "dunes-village": {
+   "regimes": {
+    "DUNES VILLAGE HPR": {
+     "units": 269,
+     "landuse": {
+      "1xx": 267,
+      "5xx": 1,
+      "3xx": 1
+     }
+    }
+   },
+   "units": 269,
+   "sales": 18,
+   "sales_median": 302000.0,
+   "sales_quartiles": [
+    248250.0,
+    302000.0,
+    412500.0
+   ],
+   "pct_units_sold": 6.7,
+   "residential_landuse_share": 0.99
+  },
+  "sand-dunes": {
+   "regimes": {
+    "SANDS DUNES HPR PH I": {
+     "units": 61,
+     "landuse": {
+      "1xx": 61,
+      "5xx": 1
+     }
+    },
+    "SAND DUNES OCEANFRONT": {
+     "units": 175,
+     "landuse": {
+      "1xx": 172,
+      "3xx": 3,
+      "5xx": 1
+     }
+    },
+    "SAND DUNES NORTH TOWER": {
+     "units": 133,
+     "landuse": {
+      "3xx": 3,
+      "1xx": 130,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 369,
+   "sales": 32,
+   "sales_median": 267500.0,
+   "sales_quartiles": [
+    130000.0,
+    267500.0,
+    323974.25
+   ],
+   "pct_units_sold": 8.7,
+   "residential_landuse_share": 0.98
+  },
+  "caravelle": {
+   "regimes": {
+    "CARAVELLE RESORT HPR": {
+     "units": 348,
+     "landuse": {
+      "1xx": 348,
+      "5xx": 1
+     }
+    },
+    "CARAVELLE TOWER HPR": {
+     "units": 55,
+     "landuse": {
+      "1xx": 54,
+      "3xx": 1,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 403,
+   "sales": 32,
+   "sales_median": 140000.0,
+   "sales_quartiles": [
+    123250.0,
+    140000.0,
+    157375.0
+   ],
+   "pct_units_sold": 7.9,
+   "residential_landuse_share": 0.99
+  },
+  "grande-cayman": {
+   "regimes": {
+    "LONG BAY RESORT HPR": {
+     "units": 290,
+     "landuse": {
+      "1xx": 286,
+      "3xx": 4,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 290,
+   "sales": 22,
+   "sales_median": 170000.0,
+   "sales_quartiles": [
+    112475.0,
+    170000.0,
+    384250.0
+   ],
+   "pct_units_sold": 7.6,
+   "residential_landuse_share": 0.98
+  },
+  "ocean-reef": {
+   "regimes": {
+    "OCEAN REEF RESORT S T": {
+     "units": 92,
+     "landuse": {
+      "1xx": 91,
+      "3xx": 1,
+      "5xx": 1
+     }
+    },
+    "OCEAN REEF RSRT N TOWER": {
+     "units": 255,
+     "landuse": {
+      "1xx": 255
+     }
+    }
+   },
+   "units": 347,
+   "sales": 19,
+   "sales_median": 124000.0,
+   "sales_quartiles": [
+    116000.0,
+    124000.0,
+    179900.0
+   ],
+   "pct_units_sold": 5.5,
+   "residential_landuse_share": 0.99
+  },
+  "seawatch": {
+   "regimes": {
+    "SEAWATCH N TOWER HPR": {
+     "units": 248,
+     "landuse": {
+      "1xx": 245,
+      "3xx": 3,
+      "5xx": 1
+     }
+    },
+    "SEAWATCH TOWERS HPR": {
+     "units": 127,
+     "landuse": {
+      "1xx": 127
+     }
+    },
+    "SEAWATCH TOWERS HPR I": {
+     "units": 97,
+     "landuse": {
+      "1xx": 96,
+      "3xx": 1,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 472,
+   "sales": 23,
+   "sales_median": 235000.0,
+   "sales_quartiles": [
+    225000.0,
+    235000.0,
+    257500.0
+   ],
+   "pct_units_sold": 4.9,
+   "residential_landuse_share": 0.99
+  },
+  "margate": {
+   "regimes": {
+    "MARGATE TOWER HPR PH I": {
+     "units": 252,
+     "landuse": {
+      "1xx": 252,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 252,
+   "sales": 14,
+   "sales_median": 950632.185,
+   "sales_quartiles": [
+    871250.0,
+    950632.185,
+    1403750.0
+   ],
+   "pct_units_sold": 5.6,
+   "residential_landuse_share": 1.0
+  },
+  "brighton": {
+   "regimes": {
+    "BRIGHTON KINGSTON PLAN": {
+     "units": 1,
+     "landuse": {
+      "1xx": 1
+     }
+    },
+    "BRIGHTON KINGSTON PLANT": {
+     "units": 199,
+     "landuse": {
+      "1xx": 198,
+      "3xx": 1
+     }
+    }
+   },
+   "units": 200,
+   "sales": 12,
+   "sales_median": 577500.0,
+   "sales_quartiles": [
+    486250.0,
+    577500.0,
+    646250.0
+   ],
+   "pct_units_sold": 6.0,
+   "residential_landuse_share": 0.99
+  },
+  "royale-palms": {
+   "regimes": {
+    "ROYALE PALMS HPR PH I": {
+     "units": 185,
+     "landuse": {
+      "1xx": 185,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 185,
+   "sales": 9,
+   "sales_median": 550000.0,
+   "sales_quartiles": [
+    412500.0,
+    550000.0,
+    900000.0
+   ],
+   "pct_units_sold": 4.9,
+   "residential_landuse_share": 0.99
+  },
+  "avista": {
+   "regimes": {
+    "AVISTA HPR PH II": {
+     "units": 186,
+     "landuse": {
+      "1xx": 186,
+      "5xx": 1
+     }
+    },
+    "AVISTA HPR": {
+     "units": 194,
+     "landuse": {
+      "1xx": 194
+     }
+    }
+   },
+   "units": 380,
+   "sales": 15,
+   "sales_median": 260000.0,
+   "sales_quartiles": [
+    240000.0,
+    260000.0,
+    430000.0
+   ],
+   "pct_units_sold": 3.9,
+   "residential_landuse_share": 1.0
+  },
+  "bay-watch": {
+   "regimes": {
+    "BAYWATCH RESORT HPR": {
+     "units": 532,
+     "landuse": {
+      "1xx": 531,
+      "3xx": 1,
+      "5xx": 3
+     }
+    }
+   },
+   "units": 532,
+   "sales": 35,
+   "sales_median": 265000.0,
+   "sales_quartiles": [
+    220000.0,
+    265000.0,
+    362000.0
+   ],
+   "pct_units_sold": 6.6,
+   "residential_landuse_share": 0.99
+  },
+  "beach-cove": {
+   "regimes": {
+    "BEACH COVE OCN RSRT HPR": {
+     "units": 72,
+     "landuse": {
+      "1xx": 71,
+      "3xx": 1,
+      "5xx": 1
+     }
+    },
+    "BEACH COVE OCEAN RESORT": {
+     "units": 149,
+     "landuse": {
+      "1xx": 146,
+      "3xx": 3
+     }
+    },
+    "BCH COVE OCN RESORT": {
+     "units": 81,
+     "landuse": {
+      "1xx": 81
+     }
+    },
+    "BCH COVE OC RESORT": {
+     "units": 24,
+     "landuse": {
+      "1xx": 24
+     }
+    },
+    "BEACH COVE OC RESORT": {
+     "units": 2,
+     "landuse": {
+      "1xx": 2
+     }
+    }
+   },
+   "units": 328,
+   "sales": 36,
+   "sales_median": 171750.0,
+   "sales_quartiles": [
+    160000.0,
+    171750.0,
+    197500.0
+   ],
+   "pct_units_sold": 11.0,
+   "residential_landuse_share": 0.98
+  },
+  "prince": {
+   "regimes": {
+    "PRINCE CONDO @ C.G PIER": {
+     "units": 99,
+     "landuse": {
+      "1xx": 98,
+      "3xx": 1
+     }
+    },
+    "PRINCE CONDO @ C.G.PIER": {
+     "units": 163,
+     "landuse": {
+      "1xx": 160,
+      "3xx": 3,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 262,
+   "sales": 7,
+   "sales_median": 375000.0,
+   "sales_quartiles": [
+    330000.0,
+    375000.0,
+    385000.0
+   ],
+   "pct_units_sold": 2.7,
+   "residential_landuse_share": 0.98
+  },
+  "towers-on-the-grove": {
+   "regimes": {
+    "TOWERS ON THE GROVE HPR": {
+     "units": 236,
+     "landuse": {
+      "1xx": 234,
+      "5xx": 2,
+      "3xx": 1
+     }
+    }
+   },
+   "units": 236,
+   "sales": 0,
+   "sales_median": null,
+   "sales_quartiles": null,
+   "pct_units_sold": 0.0,
+   "residential_landuse_share": 0.99
+  },
+  "north-beach-towers": {
+   "regimes": {
+    "NORTH BEACH TOWERS HPR": {
+     "units": 339,
+     "landuse": {
+      "1xx": 337,
+      "3xx": 2
+     }
+    }
+   },
+   "units": 339,
+   "sales": 17,
+   "sales_median": 850000.0,
+   "sales_quartiles": [
+    727500.0,
+    850000.0,
+    870000.0
+   ],
+   "pct_units_sold": 5.0,
+   "residential_landuse_share": 0.99
+  },
+  "ocean-creek": {
+   "regimes": {
+    "LODGE AT OCEAN CREEK": {
+     "units": 163,
+     "landuse": {
+      "1xx": 163
+     }
+    }
+   },
+   "units": 163,
+   "sales": 11,
+   "sales_median": 206000.0,
+   "sales_quartiles": [
+    180000.0,
+    206000.0,
+    224800.0
+   ],
+   "pct_units_sold": 6.7,
+   "residential_landuse_share": 1.0
+  },
+  "monterey-bay": {
+   "regimes": {
+    "MONTEREY BAY SUITES RST": {
+     "units": 195,
+     "landuse": {
+      "1xx": 195,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 195,
+   "sales": 20,
+   "sales_median": 150000.0,
+   "sales_quartiles": [
+    142000.0,
+    150000.0,
+    159250.0
+   ],
+   "pct_units_sold": 10.3,
+   "residential_landuse_share": 0.99
+  },
+  "palace": {
+   "regimes": {
+    "THE PALACE": {
+     "units": 302,
+     "landuse": {
+      "1xx": 298,
+      "3xx": 4,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 302,
+   "sales": 21,
+   "sales_median": 142000.0,
+   "sales_quartiles": [
+    112500.0,
+    142000.0,
+    156950.0
+   ],
+   "pct_units_sold": 7.0,
+   "residential_landuse_share": 0.98
+  },
+  "holiday-sands": {
+   "regimes": {
+    "HOLIDAY SANDS @ S BEACH": {
+     "units": 119,
+     "landuse": {
+      "5xx": 1,
+      "1xx": 117,
+      "3xx": 2
+     }
+    }
+   },
+   "units": 119,
+   "sales": 6,
+   "sales_median": 175000.0,
+   "sales_quartiles": [
+    171500.0,
+    175000.0,
+    222500.0
+   ],
+   "pct_units_sold": 5.0,
+   "residential_landuse_share": 0.97
+  },
+  "carolinian": {
+   "regimes": {
+    "CAROLINIAN RESORT HPR": {
+     "units": 134,
+     "landuse": {
+      "1xx": 129,
+      "3xx": 5,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 134,
+   "sales": 14,
+   "sales_median": 270000.0,
+   "sales_quartiles": [
+    190000.0,
+    270000.0,
+    340400.0
+   ],
+   "pct_units_sold": 10.4,
+   "residential_landuse_share": 0.96
+  },
+  "oceans-one": {
+   "regimes": {
+    "OCEANS ONE S TOWER HPR": {
+     "units": 137,
+     "landuse": {
+      "1xx": 137
+     }
+    }
+   },
+   "units": 137,
+   "sales": 13,
+   "sales_median": 224153.0,
+   "sales_quartiles": [
+    201250.0,
+    224153.0,
+    393750.0
+   ],
+   "pct_units_sold": 9.5,
+   "residential_landuse_share": 1.0
+  },
+  "crescent-shores": {
+   "regimes": {
+    "CRESCENT SHORES HPR": {
+     "units": 232,
+     "landuse": {
+      "1xx": 232,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 232,
+   "sales": 13,
+   "sales_median": 595000.0,
+   "sales_quartiles": [
+    533750.0,
+    595000.0,
+    643000.0
+   ],
+   "pct_units_sold": 5.6,
+   "residential_landuse_share": 1.0
+  },
+  "mar-vista-grande": {
+   "regimes": {
+    "MAR VISTA GRANDE HPR": {
+     "units": 162,
+     "landuse": {
+      "1xx": 162,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 162,
+   "sales": 8,
+   "sales_median": 795000.0,
+   "sales_quartiles": [
+    688750.0,
+    795000.0,
+    867500.0
+   ],
+   "pct_units_sold": 4.9,
+   "residential_landuse_share": 0.99
+  },
+  "patricia-grand": {
+   "regimes": {
+    "PATRICIA GRAND HPR": {
+     "units": 142,
+     "landuse": {
+      "1xx": 139,
+      "3xx": 3
+     }
+    }
+   },
+   "units": 142,
+   "sales": 5,
+   "sales_median": 220000.0,
+   "sales_quartiles": [
+    182500.0,
+    220000.0,
+    242500.0
+   ],
+   "pct_units_sold": 3.5,
+   "residential_landuse_share": 0.98
+  },
+  "boardwalk": {
+   "regimes": {
+    "BOARDWALK OCEANFRT TWR": {
+     "units": 131,
+     "landuse": {
+      "1xx": 131,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 131,
+   "sales": 6,
+   "sales_median": 154250.0,
+   "sales_quartiles": [
+    149000.0,
+    154250.0,
+    191750.0
+   ],
+   "pct_units_sold": 4.6,
+   "residential_landuse_share": 0.99
+  },
+  "holiday-pavilion": {
+   "regimes": {
+    "HOLIDAY PAVILION HPR": {
+     "units": 109,
+     "landuse": {
+      "1xx": 108,
+      "3xx": 1,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 109,
+   "sales": 5,
+   "sales_median": 148000.0,
+   "sales_quartiles": [
+    143250.0,
+    148000.0,
+    151500.0
+   ],
+   "pct_units_sold": 4.6,
+   "residential_landuse_share": 0.98
+  },
+  "bluewater": {
+   "regimes": {
+    "BLUEWATER VILLAS": {
+     "units": 199,
+     "landuse": {
+      "1xx": 198,
+      "5xx": 1,
+      "3xx": 1
+     }
+    },
+    "BLUEWATER VILLAS PH I": {
+     "units": 28,
+     "landuse": {
+      "1xx": 28,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 227,
+   "sales": 22,
+   "sales_median": 94000.0,
+   "sales_quartiles": [
+    86125.0,
+    94000.0,
+    133625.0
+   ],
+   "pct_units_sold": 9.7,
+   "residential_landuse_share": 0.99
+  },
+  "beach-colony": {
+   "regimes": {
+    "BEACH COLONY RESORT II": {
+     "units": 78,
+     "landuse": {
+      "1xx": 77,
+      "3xx": 1
+     }
+    },
+    "BEACH COLONY RESORT I": {
+     "units": 166,
+     "landuse": {
+      "1xx": 166,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 244,
+   "sales": 23,
+   "sales_median": 226450.0,
+   "sales_quartiles": [
+    205000.0,
+    226450.0,
+    380000.0
+   ],
+   "pct_units_sold": 9.4,
+   "residential_landuse_share": 0.99
+  },
+  "meridian-plaza": {
+   "regimes": {
+    "MERIDIAN PLAZA": {
+     "units": 96,
+     "landuse": {
+      "1xx": 93,
+      "3xx": 3,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 96,
+   "sales": 7,
+   "sales_median": 133900.0,
+   "sales_quartiles": [
+    90000.0,
+    133900.0,
+    155000.0
+   ],
+   "pct_units_sold": 7.3,
+   "residential_landuse_share": 0.96
+  },
+  "sandy-beach": {
+   "regimes": {
+    "SANDY BEACH PH II C.T.": {
+     "units": 152,
+     "landuse": {
+      "1xx": 152
+     }
+    },
+    "SANDY BEACH CONDO TOWER": {
+     "units": 79,
+     "landuse": {
+      "1xx": 78,
+      "3xx": 1,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 231,
+   "sales": 3,
+   "sales_median": 235000.0,
+   "sales_quartiles": null,
+   "pct_units_sold": 1.3,
+   "residential_landuse_share": 0.99
+  },
+  "carolina-winds": {
+   "regimes": {
+    "CAROLINA WINDS HPR PHII": {
+     "units": 24,
+     "landuse": {
+      "3xx": 1,
+      "1xx": 23
+     }
+    },
+    "CAROLINA WINDS": {
+     "units": 123,
+     "landuse": {
+      "5xx": 2,
+      "1xx": 122,
+      "3xx": 1
+     }
+    }
+   },
+   "units": 147,
+   "sales": 6,
+   "sales_median": 215500.0,
+   "sales_quartiles": [
+    161500.0,
+    215500.0,
+    298250.0
+   ],
+   "pct_units_sold": 4.1,
+   "residential_landuse_share": 0.97
+  },
+  "maisons-sur-mer": {
+   "regimes": {
+    "MAISONS SUR MER": {
+     "units": 170,
+     "landuse": {
+      "1xx": 170
+     }
+    },
+    "MAISON SUR MER": {
+     "units": 59,
+     "landuse": {
+      "1xx": 59,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 229,
+   "sales": 14,
+   "sales_median": 587500.0,
+   "sales_quartiles": [
+    470625.0,
+    587500.0,
+    657500.0
+   ],
+   "pct_units_sold": 6.1,
+   "residential_landuse_share": 1.0
+  },
+  "sands-ocean": {
+   "regimes": {
+    "SANDS OCEAN CLUB PH II": {
+     "units": 159,
+     "landuse": {
+      "1xx": 158,
+      "3xx": 1
+     }
+    },
+    "SANDS OCEAN CLUB": {
+     "units": 212,
+     "landuse": {
+      "1xx": 212,
+      "5xx": 1
+     }
+    },
+    "SANDS OCEAN CLUB II": {
+     "units": 93,
+     "landuse": {
+      "1xx": 93
+     }
+    }
+   },
+   "units": 464,
+   "sales": 32,
+   "sales_median": 133500.0,
+   "sales_quartiles": [
+    115500.0,
+    133500.0,
+    167500.0
+   ],
+   "pct_units_sold": 6.9,
+   "residential_landuse_share": 1.0
+  },
+  "ocean-forest-plaza": {
+   "regimes": {
+    "OCEAN FOREST PLAZA": {
+     "units": 206,
+     "landuse": {
+      "1xx": 205,
+      "3xx": 1,
+      "5xx": 1
+     }
+    }
+   },
+   "units": 206,
+   "sales": 10,
+   "sales_median": 214950.0,
+   "sales_quartiles": [
+    188975.0,
+    214950.0,
+    228000.0
+   ],
+   "pct_units_sold": 4.9,
+   "residential_landuse_share": 0.99
+  },
+  "south-hampton": {
+   "regimes": {
+    "SOUTH HAMPTON": {
+     "units": 143,
+     "landuse": {
+      "1xx": 143
+     }
+    },
+    "SOUTH HAMPOTN": {
+     "units": 1,
+     "landuse": {
+      "1xx": 1
+     }
+    }
+   },
+   "units": 144,
+   "sales": 11,
+   "sales_median": 450000.0,
+   "sales_quartiles": [
+    375000.0,
+    450000.0,
+    490000.0
+   ],
+   "pct_units_sold": 7.6,
+   "residential_landuse_share": 1.0
+  }
+ }
+}

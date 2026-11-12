@@ -1,0 +1,32 @@
+{
+ "title": "A year of the typical house fee against a year at a public pool and gym",
+ "rows": [
+  {
+   "label": "The typical house HOA fee",
+   "year": 1140
+  },
+  {
+   "label": "Myrtle Beach recreation center, one adult, city resident",
+   "year": 175,
+   "source": "https://cityofmyrtlebeach.com/departments/recreation_center_memberships.php"
+  },
+  {
+   "label": "Myrtle Beach recreation center, one adult, not a city resident",
+   "year": 295,
+   "source": "https://cityofmyrtlebeach.com/departments/recreation_center_memberships.php"
+  },
+  {
+   "label": "North Myrtle Beach Aquatic and Fitness Center, one adult",
+   "year": 555,
+   "joining_fee": 100,
+   "source": "https://afc.nmb.us/174/Membership"
+  },
+  {
+   "label": "North Myrtle Beach Aquatic and Fitness Center, a couple",
+   "year": 805,
+   "joining_fee": 100,
+   "source": "https://afc.nmb.us/174/Membership"
+  }
+ ],
+ "source": "findings.json"
+}

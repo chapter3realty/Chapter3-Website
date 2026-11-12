@@ -1,0 +1,2403 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<!-- Google Tag Manager for GA4 -->
+				<script>(function(w,d,s,l,i){w.GAMeasurementID='G-M07C126YQH';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');</script>
+				<!-- End Google Tag Manager for GA4 -->
+				<script type='text/javascript'>
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				</script>
+	<script>
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	</script>
+			
+
+	<script type="text/javascript">
+		window.departmentHeader = {"DepartmentHeaderId":813,"DepartmentHeaderName":"Aquatic & Fitness Center"};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script async src="https://docaccess.com/docbox.js"></script>
+	<script async src='https://tag.simpli.fi/sifitag/bf6c8060-dc41-0139-b8d5-06a60fe5fe77'></script>
+
+	<meta name="category0" content="Home" />
+<meta name="category1" content="Government" />
+<meta name="category2" content="Departments" />
+<meta name="category3" content="Aquatic &amp; Fitness Center" />
+<meta name="category4" content="Directions &amp; Hours" />
+<meta name="category5" content="Membership" />
+
+	
+	<meta name="theme-color" content="rgb(18, 28, 67)">
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+		<title>Membership | North Myrtle Beach, SC</title>
+
+		<meta name="description" content="Membership at the North Myrtle Beach Aquatic &amp; Fitness Center is a smart investment in your health.">
+			<script src="/Assets/Scripts/jQuery/jquery-3.7.1.min.js"></script>
+	<script src="/Assets/Scripts/jQuery/jquery-migrate-3.6.0.min.js" type="text/javascript"></script>
+	
+
+	<!--[if IE 6]><script language="JavaScript" type="text/javascript"> var isie6 = true; </script><![endif]-->
+	<!--[if IE 7]><script language="JavaScript" type="text/javascript"> var isie7 = true; </script><![endif]-->
+	<!--[if IE 8]><script language="JavaScript" type="text/javascript"> var isie8 = true; </script><![endif]-->
+	<!--[if IE 9]><script language="JavaScript" type="text/javascript"> var isie8 = true; </script><![endif]-->
+	<script type="text/javascript"><!--
+	var intCountryCode = 840;
+	var order = '';
+//--></script>
+	
+	<link href="/-2140275272.css" rel="stylesheet" type="text/css" />	<link href="/846796287.css" rel="stylesheet" type="text/css" />
+
+	<link rel="stylesheet" type="text/css" href="/Assets/Styles/Print.css" media="print">
+	<script type="text/javascript">
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	</script>
+	<!--CPHeadContent-->
+	<script src="/739942322.js" type="text/javascript"></script>
+	
+	
+	
+	
+
+
+
+
+	<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="/App_Themes/ie8.css"><![endif]-->
+	<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/App_Themes/ie7.css"><![endif]-->
+	<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="/App_Themes/ie6.css"><![endif]-->
+	<!--[if lt IE 9]><script type="text/javascript" src="/Scripts/html5.js"></script><![endif]-->
+
+	<script type="text/javascript">
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	</script>
+	<script src="/Assets/Scripts/AlpineJS/3.14.1/alpine.min.js" type="text/javascript" defer="defer"></script>
+</head>
+<body class="wide " >
+
+    <script>jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});</script>
+	<div id="popoverModal" class="cp-PopOver cp-PopOver--modal cp-AdminWrap" style="position: fixed; display: none;">
+	<div class="cp-PopOver-header">
+		<h3 class="cp-PopOver-title"></h3>
+		<button class="cp-Btn cp-PopOver-close" onclick="closePopOverModal(event)">
+			<svg class="cp-Icon--close" alt="close" title="close">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconClose"></use>
+			</svg>
+		</button>
+	</div>
+	<div id="cpPopOverBody" class="cp-PopOver-body">
+		<form id="cpPopOverForm" name="cpPopOverForm" novalidate></form>
+	</div>
+	<div id="cpPopOverFooter" class="cp-PopOver-footer">
+		<div class="cp-BtnGroup" id="actionButtons">
+			<!-- Action buttons will be dynamically added here -->
+		</div>
+	</div>
+</div>
+    <div id="fb-root"></div>
+<div id=skipToContentLinks>
+<a href="#cc0229ac28-7c6d-4646-bd97-2f5a9d9ecf62" target="_self" class="skipToContentLink">Skip to Main Content</a>
+</div>
+    <form id="frmReferenceFormForTelerikEditorDialogs"></form>
+
+        <input type="hidden" id="GoogleMapsKey" value="AIza_REDACTED" />
+
+
+
+    <input type="hidden" id="cpcDomain" value="https://cp-civicplusuniversity2.civicplus.com">
+    <input type="hidden" id="hdnStructureID" value="8" />
+    <input type="hidden" id="hdnContentCollectionID" value="f951a52b-b976-4f31-8d64-b0d058674f98" />
+    <input type="hidden" id="hdnWorkingCopyID" value="00000000-0000-0000-0000-000000000000" />
+    <input type="hidden" id="hdnThemeID" value="45" />
+    <input type="hidden" id="pageIsFrontEnd" value="true" />
+    <input type="hidden" id="pageModuleID" />
+    <input type="hidden" id="pagePageID" value="174" />
+
+    <div id="stickyPlaceholder"></div>
+    <div id="outer-wrap" class="outer-wrap">
+        <div id="inner-wrap" class="inner-wrap">
+                <div id="divToolbars" class="cpToolbars newCP mui-fixed" style="">
+                    
+
+
+
+                </div>
+            <div id="bodyWrapper">
+                <div id="mainNavHolderMobile" class="mainNavHolderMobile"></div>
+                
+<div data-cpRole="structuralContainer" id="bodyContainerTS">
+<!-- Header Container --><header data-cpRole="structuralContainer" id="headerContainerTS" class="fixedTopTS"><div class="inner"><div class="inner">
+<div class="siteWrap10" id="flexHeaderTS"><div data-cpRole="banner" id="bannerLogoTS" class="bannerLogoTS empty">
+
+
+
+
+				<a id="bannerLogoTS-402" style="			display: block; text-align: center;
+" class="bannerObject" href="/813" target="_self"><img alt="North Myrtle Beach South Carolina Aquatics and Fitness Center Homepage" class="bannerObject" height="142" src="/ImageRepository/Document?documentID=5264" width="502" /></a>
+</div><nav data-cpRole="nav" id="mainNav" class="siteNav mainNav" role="navigation">
+<ol id="mainNavMenu" data-parent="813" class="rootNavMenu" role="menu"><!--
+--><li id="MainItem158" class="topMenuItem" role="none" data-pageid="158" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role = "menuitem"  aria-haspopup=true aria-expanded='false' aria-controls="mainNavMegaMenu158" id = "mainNavDirectionsHours" class="navMainItem mainNavItem mainNavItem1 " href="/158/Directions-Hours" target = "_self" >   Directions &amp; Hours  </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem184" class="topMenuItem" role="none" data-pageid="184" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role = "menuitem"  aria-haspopup=true aria-expanded='false' aria-controls="mainNavMegaMenu184" id = "mainNavAquatics" class="navMainItem mainNavItem mainNavItem2 " href="/184/Aquatics" target = "_self" >   Aquatics  </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem210" class="topMenuItem" role="none" data-pageid="210" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role = "menuitem"  aria-haspopup=true aria-expanded='false' aria-controls="mainNavMegaMenu210" id = "mainNavFitness" class="navMainItem mainNavItem mainNavItem3 " href="/210/Fitness" target = "_self" >   Fitness  </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem250" class="topMenuItem" role="none" data-pageid="250" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role = "menuitem"  aria-haspopup=true aria-expanded='false' aria-controls="mainNavMegaMenu250" id = "mainNavChildren" class="navMainItem mainNavItem mainNavItem4 " href="/250/Children" target = "_self" >   Children  </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem274" class="topMenuItem" role="none" data-pageid="274" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role = "menuitem"  aria-haspopup=true aria-expanded='false' aria-controls="mainNavMegaMenu274" id = "mainNavAboutUs" class="navMainItem mainNavItem mainNavItem5 " href="/274/About-Us" target = "_self" >   About Us  </a>			<!--
+			--><!--
+			--></li><!---->
+</ol>
+
+
+	<script type="text/javascript">
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=813&moduleID=&themeID=45&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = true;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	</script>
+
+
+<aside data-cpRole="megaMenu" id="megaMenu" class="megaMenu" style="display: none;"><input type="hidden" id="megaMenuPopupDirection" value="0"><input type="hidden" id="megaMenuWidthReference" value="1"><aside role="menu" data-cpRole="contentContainer" id="mainNavMegaMenu158" class="contentTop mainNavMegaMenu megaMenuContainer pageID_158 hidden" data-orientation="horizontal">	<div id="ccb776195a-5bd3-44f6-84ed-6f79b9003617" data-containerid="b776195a-5bd3-44f6-84ed-6f79b9003617" class="pageContent cpGrid cpGrid24">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cpRole="contentContainer" id="mainNavMegaMenu184" class="contentTop mainNavMegaMenu megaMenuContainer pageID_184 hidden" data-orientation="horizontal">	<div id="cc92367cfa-8974-4958-920f-cc335a6d08a5" data-containerid="92367cfa-8974-4958-920f-cc335a6d08a5" class="pageContent cpGrid cpGrid24">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cpRole="contentContainer" id="mainNavMegaMenu210" class="contentTop mainNavMegaMenu megaMenuContainer pageID_210 hidden" data-orientation="horizontal">	<div id="ccd5ccabac-773a-4bc9-ad62-b10f51f68a02" data-containerid="d5ccabac-773a-4bc9-ad62-b10f51f68a02" class="pageContent cpGrid cpGrid24">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cpRole="contentContainer" id="mainNavMegaMenu250" class="contentTop mainNavMegaMenu megaMenuContainer pageID_250 hidden" data-orientation="horizontal">	<div id="cc84b49771-cb08-475f-8b62-d8ddbb4b692b" data-containerid="84b49771-cb08-475f-8b62-d8ddbb4b692b" class="pageContent cpGrid cpGrid24">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cpRole="contentContainer" id="mainNavMegaMenu274" class="contentTop mainNavMegaMenu megaMenuContainer pageID_274 hidden" data-orientation="horizontal">	<div id="cc1ffc344d-55ca-467f-9f62-de8ab920a698" data-containerid="1ffc344d-55ca-467f-9f62-de8ab920a698" class="pageContent cpGrid cpGrid24">
+				                
+
+
+
+	</div>
+</aside></aside></nav><div data-cpRole="contentContainer" id="searchTS1">	<div id="cc3e8f8141-c311-4be2-bb0b-c49860c65c04" data-containerid="3e8f8141-c311-4be2-bb0b-c49860c65c04" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="ecb8b071-5700-465a-b743-3b3944710475">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last idd7bdc066-a574-48c3-83ec-0bb4bec445a0" style="" data-widgetcontainerid="d7bdc066-a574-48c3-83ec-0bb4bec445a0">	
+<div data-widget-id="010afbfe-b2fc-4fed-9676-8ff62650b7a0" data-widget-controller-path="/Layout/WidgetSearch">
+	
+	<script defer type="text/javascript" src="/Common/Controls/jquery-ui-1.14.2/jquery-ui.min.js"></script>
+	<script defer src="/Areas/Layout/Assets/Scripts/Search.js" type="text/javascript"></script>
+	<script defer type="text/javascript">
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + '010afbfe-b2fc-4fed-9676-8ff62650b7a0';
+				var checkboxSelector = "#ysnSearchOnlyDept" + '010afbfe-b2fc-4fed-9676-8ff62650b7a0';
+				var buttonSelector = ".widgetSearchButton" + '010afbfe-b2fc-4fed-9676-8ff62650b7a0';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	</script>
+
+	<section id="widgetPreviewSearch" class="widget widgetSearch skin106 widgetOptionSet58" style="display: block;" aria-label="Search">
+				<!-- For the button right and inside -->
+		<div class="widgetBody buttonRightInside">
+			<input class="widgetSearchBox widgetSearchBox010afbfe-b2fc-4fed-9676-8ff62650b7a0" cp5ph="true" id="searchField010afbfe-b2fc-4fed-9676-8ff62650b7a0" name="searchField" onchange="searchBtnApplyQuery();" placeholder="Search..." type="text" value="" />
+						<a href="/Search/Results" id="btnSearchIcon" class="widgetSearchButton widgetSearchButton010afbfe-b2fc-4fed-9676-8ff62650b7a0" role="button"><img alt="Search" class="imageHover" data-hover="/ImageRepository/Document?documentID=5301" data-image="/ImageRepository/Document?documentID=5302" src="/ImageRepository/Document?documentID=5302" /></a>
+
+			<label class="searchLabel" aria-hidden="true" for="searchField010afbfe-b2fc-4fed-9676-8ff62650b7a0">Search</label>
+		</div>
+
+	</section>
+
+
+<style scoped>
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #222222;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #222222;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #222222;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #222222;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBox010afbfe-b2fc-4fed-9676-8ff62650b7a0
+	{
+		color: #222222;
+		background-color: #fff;
+border: none;
+height: 51.5px;
+border-radius: 50px;
+font-size: 14px;
+font-family: Poppins;
+padding: 0 64px 0 25px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButton010afbfe-b2fc-4fed-9676-8ff62650b7a0
+	{
+		margin-right: 8px;
+	}
+	.widgetSearch .widgetSearch-onlyDept010afbfe-b2fc-4fed-9676-8ff62650b7a0
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDept010afbfe-b2fc-4fed-9676-8ff62650b7a0
+	{
+		position: relative;
+		top: .125em;
+	}
+
+</style>
+
+<link rel="stylesheet" href="/Common/Controls/jquery-ui-1.14.2/jquery-ui.min.css">
+<link rel="stylesheet" href="/Common/Controls/jquery-ui-1.14.2/jquery-ui.theme.min.css">
+
+
+
+<script type="text/javascript">
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchField010afbfe-b2fc-4fed-9676-8ff62650b7a0").value;
+	}
+</script>
+
+</div>
+
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div></div></div>
+</header><!-- Banner --><div data-cpRole="structuralContainer" id="bannerContainerTS" class="noOverflowTS">
+<div data-cpRole="banner" id="banner1"><div data-cpRole="structuralContainer" id="bannerSizingTS">
+<div data-cpRole="structuralContainer" id="bannerSearchTS">
+<div class="siteWrap10"></div>
+</div>
+</div>
+
+
+
+
+		<div id="bannerImagesJSON403" class="hidden"></div>
+		<div id="bannerSlideshowControls_banner1" class="bannerSlideshowControlsNew none " style="display:none">
+			<a id="arrowPrev_banner1" tabindex="0" class="arrowNew prev" aria-label="Banner Arrow Previous"><svg style=" " class=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconSlideshowArrowLeft"></use></svg></a>
+			<a id="arrowNext_banner1" tabindex="0" class="arrowNew next" aria-label="Banner Arrow Next"><svg style=" " class=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconSlideshowArrowRight"></use></svg></a>
+		</div>
+			<script type="text/javascript">
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":403,"ThemeID":45,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":false,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":646,"BannerOptionID":403,"FileName":"/ImageRepository/Document?documentID=5262","Height":400,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":647,"BannerOptionID":403,"FileName":"/ImageRepository/Document?documentID=5261","Height":400,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":648,"BannerOptionID":403,"FileName":"/ImageRepository/Document?documentID=5263","Height":400,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/2025 - Interior/Images/',
+								'Rotating');
+						});
+				});
+			</script>
+
+</div>
+</div><!-- Content container --><div data-cpRole="structuralContainer" id="backgroundOverlayTS">
+<div data-cpRole="structuralContainer" id="mainContainerTS">
+<div class="siteWrap4"><div data-cpRole="structuralContainer" id="mainWrapTS" class="mainWrap" role="main">
+<div data-cpRole="structuralContainer" id="siteSidebarTS" class="siteSidebar">
+<aside data-cpRole="contentContainer" id="sidebarContainer1TS">	<div id="ccbd8aaa86-7872-4150-84e3-14df4260852a" data-containerid="bd8aaa86-7872-4150-84e3-14df4260852a" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><nav data-cpRole="nav" id="secondaryNav" class="siteNav secondaryNav">
+
+
+
+
+
+	<ol role="menu" id="secondaryMenusecondaryNav" data-parent="158" class="rootNavMenu accordionNav">
+	<li class="topMenuItem sideNavLi hasAccordionChildren" role="menuitem" tabindex="0" id="SideItem795" data-pageid="795">
+		<div class="accordionNavItem">
+			<a href="/795/Community-CPR-Courses" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">Community CPR Courses</a>
+		</div>
+			</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" role="menuitem" tabindex="-1" id="SideItem160" data-pageid="160">
+		<div class="accordionNavItem">
+			<a href="/160/Massage-Therapy" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">Massage Therapy</a>
+		</div>
+			</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" role="menuitem" tabindex="-1" id="SideItem161" data-pageid="161">
+		<div class="accordionNavItem">
+			<a href="/161/McLeod-Seacoast" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">McLeod Seacoast</a>
+				<a href="#" role="button" class="openAccordionNav accordionSecondaryNavItem" aria-label="McLeod Seacoast Submenu" aria-expanded="false" aria-controls="submenu-lvl1-161"></a>
+		</div>
+					<ol aria-hidden="true" role="menu" class="accordionNavContainer accordionNavContainer--lvl1" id="submenu-lvl1-161" style="display: none;" data-parent="161">
+						<li class="sideNavLi subMenuItem hasAccordionChildren" role="menuitem" tabindex="0" id="SideItem172" data-pageid="172">
+			<div class="accordionNavItem">
+				<a href="/172/McLeod-Seacoast-Medical-Classes" target="_self" class="navMenuItem cpComponent" data-type="SecondaryMenuItem"><span lang="en">McLeod Seacoast Medical Classes</span></a>
+			</div>
+					</li>
+		<li class="sideNavLi subMenuItem hasAccordionChildren" role="menuitem" tabindex="-1" id="SideItem704" data-pageid="704">
+			<div class="accordionNavItem">
+				<a href="/704/McLeod-Health-Discussions" target="_self" class="navMenuItem cpComponent" data-type="SecondaryMenuItem"><span lang="en">McLeod Health Discussions</span></a>
+			</div>
+					</li>
+
+			</ol>
+	</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" role="menuitem" tabindex="-1" id="SideItem174" data-pageid="174">
+		<div class="accordionNavItem">
+			<a href="/174/Membership" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">Membership</a>
+		</div>
+			</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" role="menuitem" tabindex="-1" id="SideItem564" data-pageid="564">
+		<div class="accordionNavItem">
+			<a href="/564/Virtual-Tour" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">Virtual Tour</a>
+		</div>
+			</li>
+
+	</ol>
+
+
+	<script type="text/javascript">
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = false;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	</script>
+
+	<script type="text/javascript">
+		(function () {
+			function setupAccordionSecondaryNav() {
+				var $menuContainer = $('#secondaryNav');
+
+				$menuContainer.find('*[id^="SideItem"]').each(function () {
+					var ids = $('[id="' + this.id + '"]');
+					if (ids.length > 1)
+						$.each(ids, function (index, value) {
+							value.id = value.id + '_' + index;
+						});
+				});
+
+				$menuContainer.find('.hasAccordionChildren .openAccordionNav').off('click.secondaryNav').on('click.secondaryNav', function (e) {
+					e.preventDefault();
+					showHideAccordionMenuForSecondaryNav($(this));
+				});
+
+				$menuContainer.find(".grippy").each(function () {
+					menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+				});
+
+				$menuContainer.find("li").each(function () {
+					menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupAccordionSecondaryNav, { once: true });
+				return;
+			}
+
+			setupAccordionSecondaryNav();
+		})();
+	</script>
+
+
+
+</nav><aside data-cpRole="contentContainer" id="sidebarContainer2TS">	<div id="cc24bcd260-dbd9-4062-a47f-4e09df536976" data-containerid="24bcd260-dbd9-4062-a47f-4e09df536976" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside>
+</div><div data-cpRole="structuralContainer" id="outerContentWrapTS" class="outerContentWrap">
+<div data-cpRole="structuralContainer" id="contentWrapTS" class="contentWrap">
+<div data-cpRole="breadCrumbs" id="breadCrumbs" class="breadCrumbContainer">		<ol class="semanticList breadCrumbs">
+			<li><a class="breadCrumb" href="/">Home</a></li><li><a class="breadCrumb" href="/27/Government">Government</a></li><li><a class="breadCrumb" href="/155/Departments">Departments</a></li><li><a class="breadCrumb" href="/813/Aquatic-Fitness-Center">Aquatic & Fitness Center</a></li><li><a class="breadCrumb" href="/158/Directions-Hours">Directions & Hours</a></li><li id="currentBCPage" data-pageid="174"><a href class="breadCrumb" aria-current="page">Membership</a></li>
+		</ol>
+
+	   
+    
+</div><div data-cpRole="mainContentContainer" id="moduleContent">
+	
+	<div id="page" class="moduleContentNew">
+		
+
+	<input id="hdnPageID" name="hdnPageID" type="hidden" value="174" />
+	<input id="hdnParentID" name="hdnParentID" type="hidden" value="158" />
+	<input id="hdnVersionID" name="hdnVersionID" type="hidden" value="7636" />
+	<input id="pageMenuTitle" name="pageMenuTitle" type="hidden" value="Membership" />
+	<input id="pageShowFeatureColumn" name="pageShowFeatureColumn" type="hidden" value="True" />
+	<input id="hdnIsLayoutPage" name="hdnIsLayoutPage" type="hidden" value="False" />
+	<input id="hdnPageStatus" name="hdnPageStatus" type="hidden" value="Published" />
+
+				<h1 id="versionHeadLine" class="headline">
+
+Membership		</h1>
+	
+		<div id="cc0229ac28-7c6d-4646-bd97-2f5a9d9ecf62" data-containerid="0229ac28-7c6d-4646-bd97-2f5a9d9ecf62" class="pageContent cpGrid cpGrid24"  >
+			
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="7118ff8f-54a8-4ba4-aad3-839080f233c1">				
+	<div class="row nest first wide">
+	
+	<div class="inner col col24 first last id6826bc71-bff0-4f0d-9b52-eb750a79fd34" style="" data-widgetcontainerid="6826bc71-bff0-4f0d-9b52-eb750a79fd34">	
+<div class="widget editor pageStyles narrow" id="divEditor83ca2474-ce18-448d-826f-e8a9d57b34be" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}'>
+	    <div class="fr-view">
+
+
+        <p>Membership at the North Myrtle Beach Aquatic &amp; Fitness Center is a smart investment in your health. On behalf of the staff, we welcome your membership and hope you will consider making the Aquatic &amp; Fitness Center a regular part of your life.</p><h2 class="subhead1 ">Types of Memberships We Have to Offer</h2><ul><li>We offer a <strong>daily rate</strong> of $15 per person ages 5 and above. A valid driver&rsquo;s license must be provided in order to purchase a daily pass. For ages 4 years old and under a daily pass is $5 per person.</li><li>We offer <strong>weekly passes</strong> of $58 per person. Weekly passes are for one person only. A valid driver&rsquo;s license must be provided in order to purchase a weekly pass.</li></ul><h2 class="subhead1 ">Membership Rates</h2><p>Effective as of September 1, 2026</p>
+    </div>
+
+<script type="text/javascript">
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '83ca2474-ce18-448d-826f-e8a9d57b34be'));
+	});
+</script>
+</div>
+
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+	<div class="row nest last wide">
+	
+	<div class="inner col col24 first last idb85214e8-ffcb-4eb3-a639-9d9f95a6b240" style="" data-widgetcontainerid="b85214e8-ffcb-4eb3-a639-9d9f95a6b240">	
+
+	<div id="divTabbede3650586-5be2-4176-9ba3-6470bec726a1" class="widget widgetTabbed wide skin118 leftTabs" data-widgetid="e3650586-5be2-4176-9ba3-6470bec726a1">
+		<ol class="tabbedWidget cpTabs left " role="tablist" aria-hidden=".ToString().ToLowerInvariant()" style="width: 30%; ">
+			<!--
+					--><li class="active" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_0" class="tabButton" id="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_0" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_0" aria-selected="true" tabindex="0"><span class="tabName editable" data-sequence="0" data-tabname="Young Adult" contenteditable="false">Young Adult</span></a>
+</li><!--
+					--><li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_1" class="tabButton" id="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_1" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_1" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="1" data-tabname="Individual" contenteditable="false">Individual</span></a>
+</li><!--
+					--><li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_2" class="tabButton" id="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_2" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_2" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="2" data-tabname="Couple" contenteditable="false">Couple</span></a>
+</li><!--
+					--><li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_3" class="tabButton" id="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_3" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_3" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="3" data-tabname="Parent / Child" contenteditable="false">Parent / Child</span></a>
+</li><!--
+					--><li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_4" class="tabButton" id="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_4" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_4" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="4" data-tabname="Family" contenteditable="false">Family</span></a>
+</li><!--
+					--><li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_5" class="tabButton" id="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_5" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_5" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="5" data-tabname="Additional Child" contenteditable="false">Additional Child</span></a>
+</li><!--
+					--><li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_6" class="tabButton" id="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_6" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_6" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="6" data-tabname="Senior Individual" contenteditable="false">Senior Individual</span></a>
+</li><!--
+					--><li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_7" class="tabButton" id="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_7" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_7" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="7" data-tabname="Senior Individual (Restricted)" contenteditable="false">Senior Individual (Restricted)</span></a>
+</li><!--
+					--><li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_8" class="tabButton" id="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_8" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_8" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="8" data-tabname="Senior Couple" contenteditable="false">Senior Couple</span></a>
+</li><!--
+					--><li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_9" class="tabButton" id="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_9" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_9" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="9" data-tabname="Senior Couple (Restricted)" contenteditable="false">Senior Couple (Restricted)</span></a>
+</li><!--
+					-->
+		</ol>
+
+		<div class="cpTabPanels">
+					<ol class="tabbedWidgetNarrow cpTabs " role="tablist" aria-hidden="True.ToString().ToLowerInvariant()" style='display: none;'>
+						<li class="active" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_0" class="tabButton" id="tabBtnNarrowe3650586-5be2-4176-9ba3-6470bec726a1_0" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_0" aria-selected="true" tabindex="0"><span class="tabName editable" data-sequence="0" data-tabname="Young Adult" contenteditable="false">Young Adult</span></a>
+</li>
+					</ol>
+				<div class="tabbedWidget cpTabPanel showing" style="" id="tabe3650586-5be2-4176-9ba3-6470bec726a1_0" role="tabpanel" aria-labelledby="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_0" tabindex="-1">
+
+<div class="widget editor pageStyles narrow" id="divEditor0fa84a82-ce79-4418-b197-bec7ad7b675d" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}'>
+	    <div class="fr-view">
+
+
+        <h2 class="subhead1 ">Membership Type</h2><ul role="presentation"><li>Young Adult</li></ul><h2 class="subhead1 ">Description</h2><p>Age 15 to 23. For the young person who does not fall under a Family or Parent/Child Membership. Young adults under age 18 must have a parent or legal guardian sign as the responsible party on the membership application, waiver, and legal documents.</p><h2 class="subhead1 ">Annual Membership</h2><p>Paid in full includes a 10% discount.</p><ul><li style="font-style: italic;"><em>Joining Fee: $50</em></li><li style="font-style: italic;"><em>Paid in Full: $442</em></li><li style="font-style: italic;"><em>Bank Draft:</em><ol style="font-style: initial;"><li style="font-style: italic;"><em>First Month Fee: $43</em></li><li style="font-style: italic;"><em>Monthly Draft Fee: $40.72</em></li></ol></li></ul><p>(A voided check or bank letter with account information is required to start bank draft membership.)</p><h2 class="subhead1 ">Monthly Membership</h2><ul data-pasted="true" role="presentation"><li style="font-style: italic;"><em>Monthly Fee: $60</em></li></ul>
+    </div>
+
+<script type="text/javascript">
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '0fa84a82-ce79-4418-b197-bec7ad7b675d'));
+	});
+</script>
+</div>
+
+				</div>
+					<ol class="tabbedWidgetNarrow cpTabs " role="tablist" aria-hidden="True.ToString().ToLowerInvariant()" style='display: none;'>
+						<li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_1" class="tabButton" id="tabBtnNarrowe3650586-5be2-4176-9ba3-6470bec726a1_1" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_1" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="1" data-tabname="Individual" contenteditable="false">Individual</span></a>
+</li>
+					</ol>
+				<div class="tabbedWidget cpTabPanel " style="display: none;" id="tabe3650586-5be2-4176-9ba3-6470bec726a1_1" role="tabpanel" aria-labelledby="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_1" tabindex="-1">
+
+<div class="widget editor pageStyles narrow" id="divEditor8b39251f-95f1-46b7-b2a0-433473459bcb" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}'>
+	    <div class="fr-view">
+
+
+        <h2 class="subhead1 ">Membership Type</h2><ul role="presentation"><li>Individual</li></ul><h2 class="subhead1 ">Description</h2><p>One adult person age 24 and up.</p><h2 class="subhead1 ">Annual Membership</h2><p>Paid in full includes a 10% discount.</p><ul data-pasted="true"><li style="font-style: italic;"><em>Joining Fee: $100</em></li><li style="font-style: italic;"><em>Paid in Full: $555</em></li><li style="font-style: italic;"><em>Bank Draft:</em><ol style="font-style: initial;"><li style="font-style: italic;"><em>First Month Fee: $58</em></li><li style="font-style: italic;"><em>Monthly Draft Fee: $50.80</em></li></ol></li></ul><p>(A voided check or bank letter with account information is required to start bank draft membership.)</p><h2 class="subhead1 ">Monthly Membership</h2><ul data-pasted="true" role="presentation"><li style="font-style: italic;"><em>Monthly Fee: $72</em></li></ul>
+    </div>
+
+<script type="text/javascript">
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '8b39251f-95f1-46b7-b2a0-433473459bcb'));
+	});
+</script>
+</div>
+
+				</div>
+					<ol class="tabbedWidgetNarrow cpTabs " role="tablist" aria-hidden="True.ToString().ToLowerInvariant()" style='display: none;'>
+						<li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_2" class="tabButton" id="tabBtnNarrowe3650586-5be2-4176-9ba3-6470bec726a1_2" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_2" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="2" data-tabname="Couple" contenteditable="false">Couple</span></a>
+</li>
+					</ol>
+				<div class="tabbedWidget cpTabPanel " style="display: none;" id="tabe3650586-5be2-4176-9ba3-6470bec726a1_2" role="tabpanel" aria-labelledby="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_2" tabindex="-1">
+
+<div class="widget editor pageStyles narrow" id="divEditorf1d08a46-6998-47c7-82ca-cb2c1d9871c2" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}'>
+	    <div class="fr-view">
+
+
+        <h2 class="subhead1 ">Membership Type</h2><ul role="presentation"><li>Couple</li></ul><h2 class="subhead1 ">Description</h2><p>Married couple residing at the same address.</p><h2 class="subhead1 ">Annual Membership</h2><p>Paid in full includes a 10% discount.</p><ul><li style="font-style: italic;"><em>Joining Fee: $100</em></li><li style="font-style: italic;"><em>Paid in Full: $805</em></li><li style="font-style: italic;"><em>Bank Draft:</em><ol style="font-style: initial;"><li style="font-style: italic;"><em>First Month Fee: $77</em></li><li style="font-style: italic;"><em>Monthly Draft Fee: $74.36</em></li></ol></li></ul><p>(A voided check or bank letter with account information is required to start bank draft membership.)</p><h2 class="subhead1 ">Monthly Membership</h2><ul data-pasted="true" role="presentation"><li style="font-style: italic;"><em>Monthly Fee: $101</em></li></ul>
+    </div>
+
+<script type="text/javascript">
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'f1d08a46-6998-47c7-82ca-cb2c1d9871c2'));
+	});
+</script>
+</div>
+
+				</div>
+					<ol class="tabbedWidgetNarrow cpTabs " role="tablist" aria-hidden="True.ToString().ToLowerInvariant()" style='display: none;'>
+						<li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_3" class="tabButton" id="tabBtnNarrowe3650586-5be2-4176-9ba3-6470bec726a1_3" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_3" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="3" data-tabname="Parent / Child" contenteditable="false">Parent / Child</span></a>
+</li>
+					</ol>
+				<div class="tabbedWidget cpTabPanel " style="display: none;" id="tabe3650586-5be2-4176-9ba3-6470bec726a1_3" role="tabpanel" aria-labelledby="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_3" tabindex="-1">
+
+<div class="widget editor pageStyles narrow" id="divEditor3b27d0e3-6e17-40ae-bd41-833aae0738a2" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}'>
+	    <div class="fr-view">
+
+
+        <h2 class="subhead1 ">Membership Type</h2><ul role="presentation"><li>Parent/Child</li></ul><h2 class="subhead1 ">Description</h2><p>One parent or legal guardian and one child.</p><h2 class="subhead1 ">Annual Membership</h2><p>Paid in full includes a 10% discount.</p><ul data-pasted="true"><li style="font-style: italic;"><em>Joining Fee: $100</em></li><li style="font-style: italic;"><em>Paid in Full: $635</em></li><li style="font-style: italic;"><em>Bank Draft:</em><ol style="font-style: initial;"><li style="font-style: italic;"><em>First Month Fee: $64</em></li><li style="font-style: italic;"><em>Monthly Draft Fee: $58.36</em></li></ol></li></ul><p>(A voided check or bank letter with account information is required to start bank draft membership.)</p><h2 class="subhead1 ">Monthly Membership</h2><ul role="presentation"><li style="font-style: italic;"><em>Monthly Fee: $82</em></li></ul>
+    </div>
+
+<script type="text/javascript">
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '3b27d0e3-6e17-40ae-bd41-833aae0738a2'));
+	});
+</script>
+</div>
+
+				</div>
+					<ol class="tabbedWidgetNarrow cpTabs " role="tablist" aria-hidden="True.ToString().ToLowerInvariant()" style='display: none;'>
+						<li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_4" class="tabButton" id="tabBtnNarrowe3650586-5be2-4176-9ba3-6470bec726a1_4" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_4" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="4" data-tabname="Family" contenteditable="false">Family</span></a>
+</li>
+					</ol>
+				<div class="tabbedWidget cpTabPanel " style="display: none;" id="tabe3650586-5be2-4176-9ba3-6470bec726a1_4" role="tabpanel" aria-labelledby="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_4" tabindex="-1">
+
+<div class="widget editor pageStyles narrow" id="divEditor4c5c577e-e4fb-45dd-85c3-9c6dce1a017a" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}'>
+	    <div class="fr-view">
+
+
+        <h2 class="subhead1 ">Membership Type</h2><ul role="presentation"><li>Family</li></ul><h2 class="subhead1 ">Description</h2><p>Married couple and dependent children ages 5 through 21 years old. Up to 4 people. Children 4 and under are free.</p><h2 class="subhead1 ">Annual Membership</h2><p>Paid in full includes a 10% discount.</p><ul><li><em>Joining Fee: $100</em></li><li style="font-style: italic;"><em>Paid in Full: $919</em></li><li style="font-style: italic;"><em>Bank Draft:</em><ol style="font-style: initial;"><li style="font-style: italic;"><em>First Month Fee: $93</em></li><li style="font-style: italic;"><em>Monthly Draft Fee: $84.36</em></li></ol></li></ul><p>(A voided check or bank letter with account information is required to start bank draft membership.)</p><h2 class="subhead1 ">Monthly Membership</h2><ul role="presentation"><li style="font-style: italic;"><em>Monthly Fee: $113</em></li></ul>
+    </div>
+
+<script type="text/javascript">
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '4c5c577e-e4fb-45dd-85c3-9c6dce1a017a'));
+	});
+</script>
+</div>
+
+				</div>
+					<ol class="tabbedWidgetNarrow cpTabs " role="tablist" aria-hidden="True.ToString().ToLowerInvariant()" style='display: none;'>
+						<li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_5" class="tabButton" id="tabBtnNarrowe3650586-5be2-4176-9ba3-6470bec726a1_5" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_5" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="5" data-tabname="Additional Child" contenteditable="false">Additional Child</span></a>
+</li>
+					</ol>
+				<div class="tabbedWidget cpTabPanel " style="display: none;" id="tabe3650586-5be2-4176-9ba3-6470bec726a1_5" role="tabpanel" aria-labelledby="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_5" tabindex="-1">
+
+<div class="widget editor pageStyles narrow" id="divEditorab25cb6e-0b00-4fd1-9d26-288e6286c6da" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}'>
+	    <div class="fr-view">
+
+
+        <h2 class="subhead1 ">Membership Type</h2><ul><li>Additional Child</li></ul><h2 class="subhead1 ">Description</h2><p>Dependent children ages 5 through 21 used in conjunction with Family or Parent/Child membership.</p><h2 class="subhead1 ">Annual Membership</h2><p>Paid in full includes a 10% discount.</p><ul><li>Joining Fee: $0</li><li>Paid in Full: $55</li><li>Monthly Bank Draft: $6</li></ul><p>(A voided check or bank letter with account information is required to start bank draft membership.)</p><h2 class="subhead1 ">Monthly Membership</h2><ul><li>Monthly Fee: $10</li></ul>
+    </div>
+
+<script type="text/javascript">
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'ab25cb6e-0b00-4fd1-9d26-288e6286c6da'));
+	});
+</script>
+</div>
+
+				</div>
+					<ol class="tabbedWidgetNarrow cpTabs " role="tablist" aria-hidden="True.ToString().ToLowerInvariant()" style='display: none;'>
+						<li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_6" class="tabButton" id="tabBtnNarrowe3650586-5be2-4176-9ba3-6470bec726a1_6" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_6" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="6" data-tabname="Senior Individual" contenteditable="false">Senior Individual</span></a>
+</li>
+					</ol>
+				<div class="tabbedWidget cpTabPanel " style="display: none;" id="tabe3650586-5be2-4176-9ba3-6470bec726a1_6" role="tabpanel" aria-labelledby="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_6" tabindex="-1">
+
+<div class="widget editor pageStyles narrow" id="divEditora94041aa-8943-4e79-a6be-b762a30f63ee" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}'>
+	    <div class="fr-view">
+
+
+        <h2 class="subhead1 ">Membership Type</h2><ul role="presentation"><li>Senior Individual</li></ul><h2 class="subhead1 ">Description</h2><p>One-person age 62 or older</p><h2 class="subhead1 ">Annual Membership</h2><p>Paid in full includes a 10% discount.</p><ul><li><em>Joining Fee: $100</em></li><li style="font-style: italic;"><em>Paid in Full: $465</em></li><li style="font-style: italic;"><em>Bank Draft:</em><ol style="font-style: initial;"><li style="font-style: italic;"><em>First Month Fee: $51</em></li><li style="font-style: italic;"><em>Monthly Draft Fee: $42.36</em></li></ol></li></ul><p>(A voided check or bank letter with account information is required to start bank draft membership.)</p><h2 class="subhead1 ">Monthly Membership</h2><ul role="presentation"><li><em>Monthly Fee: $63</em></li></ul>
+    </div>
+
+<script type="text/javascript">
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'a94041aa-8943-4e79-a6be-b762a30f63ee'));
+	});
+</script>
+</div>
+
+				</div>
+					<ol class="tabbedWidgetNarrow cpTabs " role="tablist" aria-hidden="True.ToString().ToLowerInvariant()" style='display: none;'>
+						<li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_7" class="tabButton" id="tabBtnNarrowe3650586-5be2-4176-9ba3-6470bec726a1_7" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_7" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="7" data-tabname="Senior Individual (Restricted)" contenteditable="false">Senior Individual (Restricted)</span></a>
+</li>
+					</ol>
+				<div class="tabbedWidget cpTabPanel " style="display: none;" id="tabe3650586-5be2-4176-9ba3-6470bec726a1_7" role="tabpanel" aria-labelledby="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_7" tabindex="-1">
+
+<div class="widget editor pageStyles narrow" id="divEditor26dd54de-ae8f-4c1d-9334-56b03b334746" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}'>
+	    <div class="fr-view">
+
+
+        <h2 class="subhead1 ">Membership Type</h2><ul role="presentation"><li>Senior Individual Restricted (12 p<abbr>m</abbr> to 4 <abbr>pm</abbr>)</li></ul><h2 class="subhead1 ">Description</h2><p>Annual Membership <strong>only</strong>. One person 62 or older whose use of the facility is restricted to the hours of 12 p<abbr>m</abbr> to 4 <abbr>pm</abbr>.</p><h2 class="subhead1 ">Annual Membership</h2><p>Paid in full includes a 10% discount.</p><ul><li><em>Joining Fee: $100</em><ul><li style="font-style: italic;"><em>Paid in Full: $408</em></li><li style="font-style: italic;"><em>Bank Draft:</em><ol style="font-style: initial;"><li style="font-style: italic;"><em>First Month Fee: $43</em></li><li style="font-style: italic;"><em>Monthly Draft Fee: $37.36</em></li></ol></li></ul></li></ul><p>(A voided check or bank letter with account information is required to start bank draft membership.)</p>
+    </div>
+
+<script type="text/javascript">
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '26dd54de-ae8f-4c1d-9334-56b03b334746'));
+	});
+</script>
+</div>
+
+				</div>
+					<ol class="tabbedWidgetNarrow cpTabs " role="tablist" aria-hidden="True.ToString().ToLowerInvariant()" style='display: none;'>
+						<li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_8" class="tabButton" id="tabBtnNarrowe3650586-5be2-4176-9ba3-6470bec726a1_8" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_8" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="8" data-tabname="Senior Couple" contenteditable="false">Senior Couple</span></a>
+</li>
+					</ol>
+				<div class="tabbedWidget cpTabPanel " style="display: none;" id="tabe3650586-5be2-4176-9ba3-6470bec726a1_8" role="tabpanel" aria-labelledby="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_8" tabindex="-1">
+
+<div class="widget editor pageStyles narrow" id="divEditor1fb33fb0-a5c1-421a-ac53-17aaa2d12fa0" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}'>
+	    <div class="fr-view">
+
+
+        <h2 class="subhead1 ">Membership Type</h2><ul role="presentation"><li>Senior Couple</li></ul><h2 class="subhead1 ">Description</h2><p>Married couple residing at the same address with at least one person 62 or older.</p><h2 class="subhead1 ">Annual Membership</h2><p>Paid in full includes a 10% discount.</p><ul data-pasted="true"><li style="font-style: italic;"><em>Joining Fee: $100</em></li><li style="font-style: italic;"><em>Paid in Full: $692</em></li><li style="font-style: italic;"><em>Bank Draft:</em><ol style="font-style: initial;"><li style="font-style: italic;"><em>First Month Fee: $72</em></li><li style="font-style: italic;"><em>Monthly Draft Fee: $63.36</em></li></ol></li></ul><p>(A voided check or bank letter with account information is required to start bank draft membership.)</p><h2 class="subhead1 ">Monthly Membership</h2><ul data-pasted="true" role="presentation"><li style="font-style: italic;"><em>Monthly Fee: $88</em></li></ul>
+    </div>
+
+<script type="text/javascript">
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '1fb33fb0-a5c1-421a-ac53-17aaa2d12fa0'));
+	});
+</script>
+</div>
+
+				</div>
+					<ol class="tabbedWidgetNarrow cpTabs " role="tablist" aria-hidden="True.ToString().ToLowerInvariant()" style='display: none;'>
+						<li class="" role="presentation">	<a href="#tabe3650586-5be2-4176-9ba3-6470bec726a1_9" class="tabButton" id="tabBtnNarrowe3650586-5be2-4176-9ba3-6470bec726a1_9" role="tab" aria-controls="tabe3650586-5be2-4176-9ba3-6470bec726a1_9" aria-selected="false" tabindex="-1"><span class="tabName editable" data-sequence="9" data-tabname="Senior Couple (Restricted)" contenteditable="false">Senior Couple (Restricted)</span></a>
+</li>
+					</ol>
+				<div class="tabbedWidget cpTabPanel " style="display: none;" id="tabe3650586-5be2-4176-9ba3-6470bec726a1_9" role="tabpanel" aria-labelledby="tabBtne3650586-5be2-4176-9ba3-6470bec726a1_9" tabindex="-1">
+
+<div class="widget editor pageStyles narrow" id="divEditor26f5fc04-9da3-428f-ae65-0187a54a1d6d" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}'>
+	    <div class="fr-view">
+
+
+        <h2 class="subhead1 ">Membership Type</h2><ul role="presentation"><li>Senior Couple Restricted (12 p<abbr>m</abbr> to 4 <abbr>pm</abbr>)</li></ul><h2 class="subhead1 ">Description</h2><p>Annual membership <strong>only</strong>. Married couple residing at the same address with at least one person age 62 or older whose use of the facility is restricted to the hours of 12 p<abbr>m</abbr> to 4 <abbr>pm</abbr>.</p><h2 class="subhead1 ">Annual Membership</h2><p>Paid in full includes a 10% discount.</p><ul><li style="font-style: italic;"><em>Joining Fee: $100</em></li><li style="font-style: italic;"><em>Paid in Full: $635</em></li><li style="font-style: italic;"><em>Bank Draft:</em><ol style="font-style: initial;"><li style="font-style: italic;"><em>First Month Fee: $64</em></li><li style="font-style: italic;"><em>Monthly Draft Fee: $58.36</em></li></ol></li></ul><p>(A voided check or bank letter with account information is required to start bank draft membership.)</p>
+    </div>
+
+<script type="text/javascript">
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '26f5fc04-9da3-428f-ae65-0187a54a1d6d'));
+	});
+</script>
+</div>
+
+				</div>
+					</div>
+	</div>
+	<script type="text/javascript">
+		
+		$.when(window.Pages.rwdReady).done(function () {
+			var tabbedWidgetID = 'divTabbede3650586-5be2-4176-9ba3-6470bec726a1';
+			var mediaQuerySize = 25;
+			if (mediaQuerySize > 0) {
+				var mediaElementQuery = '#' + tabbedWidgetID + ':media(this-min-width:' + mediaQuerySize + 'em)';
+				var $tabbedWidget = $('#' + tabbedWidgetID);
+				
+                // Update child widget classes based on parent state
+                var updateChildWidgetClasses = function (isParentWide) {
+                    var liveEditEnabled = getCookieValue("enableLiveEdit") === "true";
+                    if (liveEditEnabled)
+                        return;
+
+                    var $childWidgets = $tabbedWidget.find('.widget').not('[data-elementqueryclasses]');
+
+                    if (isParentWide) {
+                        $childWidgets.addClass('wide').removeClass('narrow');
+                        $tabbedWidget.find('[data-event-list-row="true"]').addClass('wide').removeClass('narrow');
+                    } else {
+                        $childWidgets.addClass('narrow').removeClass('wide');
+                        $tabbedWidget.find('[data-event-list-row="true"]').addClass('narrow').removeClass('wide');
+                    }
+                };
+				
+				window.cpMedia.unregister(mediaElementQuery).register(mediaElementQuery, {
+					deferSetup: false,
+					setup: function () {
+						var liveEditEnabled = $.cookie("enableLiveEdit") === "true";
+						if (!liveEditEnabled) {
+							$tabbedWidget.addClass('narrow').removeClass('wide');
+							cpMedia.diag('$(element).addClass("narrow"), mediaQuery: ' + mediaElementQuery);
+							$tabbedWidget.find('.tabbedWidget.cpTabs').hide().attr('aria-hidden', 'true');
+							$tabbedWidget.find('.tabbedWidgetNarrow.cpTabs').show().attr('aria-hidden', 'false');
+							$tabbedWidget.data("tabHeightSet", false);
+							
+							// Update child widget classes - parent is narrow
+							updateChildWidgetClasses(false);
+						}
+					},
+					match: function () {
+						$tabbedWidget.addClass('wide').removeClass('narrow');
+						cpMedia.diag('$(element).removeClass("narrow"), mediaQuery: ' + mediaElementQuery);
+						$tabbedWidget.find('.tabbedWidget.cpTabs').show().attr('aria-hidden', 'false');
+						$tabbedWidget.find('.tabbedWidgetNarrow.cpTabs').hide().attr('aria-hidden', 'true');
+
+						if($tabbedWidget.data("tabHeightSet") == false)
+						{
+							$tabbedWidget.data("tabHeightSet", true);
+
+							var tabbedWidgetID = 'divTabbede3650586-5be2-4176-9ba3-6470bec726a1';
+							setTabbedWidgetsTabHeight(tabbedWidgetID);
+						}
+						$('.cpTabPanels').unbind('click');
+						
+						// Update child widget classes - parent is wide
+						updateChildWidgetClasses(true);
+					},
+					unmatch: function () {
+						var liveEditEnabled = $.cookie("enableLiveEdit") === "true";
+						if (!liveEditEnabled) {
+							$tabbedWidget.addClass('narrow').removeClass('wide');
+							cpMedia.diag('$(element).addClass("narrow"), mediaQuery: ' + mediaElementQuery);
+							$tabbedWidget.find('.tabbedWidget.cpTabs').hide().attr('aria-hidden', 'true');
+							$tabbedWidget.find('.tabbedWidgetNarrow.cpTabs').show().attr('aria-hidden', 'false');
+							
+							// Update child widget classes - parent is narrow
+							updateChildWidgetClasses(false);
+						}
+						$('.cpTabPanels').click(function() {
+							this.scrollIntoView();
+						});
+					}
+				});                
+            }
+        });
+		
+		//Used for when page is initially loaded
+		if($('#divTabbede3650586-5be2-4176-9ba3-6470bec726a1').hasClass('narrow'))
+		{
+			$('.cpTabPanels').click(function() {
+				this.scrollIntoView();
+			});
+		}
+		
+
+		//If responsive not enabled, execute this after a timeout
+		if(!isResponsiveEnabled)
+		{
+			window.setTimeout(function(){
+				var tabbedWidgetID = 'divTabbede3650586-5be2-4176-9ba3-6470bec726a1';
+				typeof setTabbedWidgetsTabHeight === "function" && setTabbedWidgetsTabHeight(tabbedWidgetID);
+			}, 1500);
+		}
+
+		function reinitCarousels() {
+			if (window.carouselsToInit) {
+				for (var i = 0; i < window.carouselsToInit.length; i++) {
+					carouselsToInit[i]();
+				}
+			}
+		}
+		function sizeTabbedContent(element){
+			if(window.Pages){
+				if(window.Pages.onResizeHandlers){
+					var setTabbedInterval = setInterval(function () {
+						window.Pages.onResizeHandlers.forEach(function(car){car();});
+					}, 25)
+
+
+					setTimeout(function () {
+						clearInterval(setTabbedInterval);
+						if ($.cookie("enableLiveEdit") === "true") {
+							setInterval(function () {
+								window.Pages.onResizeHandlers.forEach(function(car){car();});
+							}, 2000);
+						}
+					}, 2500);
+					element.onclick="window.setTimeout(function(){reinitCarousels();},2);"
+				}
+			}
+		}
+
+		function adjustTab(e) {
+			e.preventDefault();
+			window.setTimeout(function(){
+				reinitCarousels();
+			}, 2);
+			sizeTabbedContent(this);
+		}
+
+		var tabButtons = document.querySelectorAll("#divTabbede3650586-5be2-4176-9ba3-6470bec726a1 .tabButton");
+
+		tabButtons.forEach(function (tabButton) {
+			tabButton.addEventListener("click", adjustTab);
+		});
+
+	</script>
+
+
+
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="3ecbc85c-82f1-4700-9304-e8aa22a5b2b5">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last ida6443248-7b00-4a6f-8c8c-756a762c9dd8" style="" data-widgetcontainerid="a6443248-7b00-4a6f-8c8c-756a762c9dd8">	
+ 
+	<div data-widget-id='957f4a09-4e31-4ee0-9668-d20d4dc2cdca' data-moduleName="customHtml" id='widgetCustomHtml957f4a09-4e31-4ee0-9668-d20d4dc2cdca' class="widget widgetCustomHtml skin118 narrow" >
+	<div class="widgetBody pageStyles" id="widgetBody957f4a09-4e31-4ee0-9668-d20d4dc2cdca">
+		<div id="customHtml957f4a09-4e31-4ee0-9668-d20d4dc2cdca"><div><script async="" src='https://tag.simpli.fi/sifitag/bf6c8060-dc41-0139-b8d5-06a60fe5fe77'></script></div></div>
+	</div>
+
+	</div>
+
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+		</div>
+
+	</div>
+
+	
+	<div class="newCP">
+
+	</div>
+</div>
+</div><aside data-cpRole="contentContainer" id="featureColumn" class="secondaryContent">	<div id="cc376a19c3-1479-4f2a-bcb6-c0569fc6dcaa" data-containerid="376a19c3-1479-4f2a-bcb6-c0569fc6dcaa" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="57a6e961-2da5-47e4-9cad-4e9c719eb51a">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last idb61e0aa7-6c66-4256-998b-86eb180a4b34" style="" data-widgetcontainerid="b61e0aa7-6c66-4256-998b-86eb180a4b34">	
+
+
+
+	<section class="widget widgetRelatedDocuments skin107 narrow" id="widgetRelDocb528b2f0-400d-4b83-8b6f-97330e96319f" data-widgetid="b528b2f0-400d-4b83-8b6f-97330e96319f" data-sections="[{&quot;Title&quot;:&quot;&quot;,&quot;DocumentIDs&quot;:&quot;5821,6378,6379,&quot;,&quot;FolderIds&quot;:&quot;,&quot;,&quot;SortedDocumentIds&quot;:&quot;5821,6378,6264,&quot;}]" data-columncount="1" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-labelledby="headerb528b2f0-400d-4b83-8b6f-97330e96319f">
+			<div id="divRelatedDocuments_b528b2f0-400d-4b83-8b6f-97330e96319f" class="relatedDocuments">
+				<header class="widgetHeader" id="headerb528b2f0-400d-4b83-8b6f-97330e96319f"><div><h2>Related Documents</h2></div></header>
+		<div class="widgetBody cpGrid cpGrid1">
+			
+<div class="row narrow sortableWidgetTitle">
+        <div class="relatedDocumentsSection selfClear" data-documentids="5821,6378,6379," data-folderids="," data-sorteddocumentids="5821,6378,6264,">
+        
+	<div class=" first last">
+		<ol class="semanticList bullets" style="min-height:8px;">
+					<li class="widgetItem" data-documentid="5821"><a target="_blank" href="/DocumentCenter/View/5821/AFC-Membership-Handbook-" class="fileType pdf" aria-label="AFC Membership Handbook  pdf file">AFC Membership Handbook </a>
+					</li>
+					<li class="widgetItem" data-documentid="6378"><a target="_blank" href="/DocumentCenter/View/6378/Membership-Rates-" class="fileType pdf" aria-label="Membership Rates  pdf file">Membership Rates </a>
+					</li>
+					<li class="widgetItem" data-documentid="6379"><a target="_blank" href="/DocumentCenter/View/6379/Corporate-Membership-Rates" class="fileType pdf" aria-label="Corporate Membership Rates pdf file">Corporate Membership Rates</a>
+					</li>
+
+		</ol>
+	</div>
+                    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //Remove section heading when it is empty and live edit is off.
+        if ('false' === 'false') {
+            var jqh3Selector = $('#widgetRelDoc' + 'b528b2f0-400d-4b83-8b6f-97330e96319f').find('div.widgetBody div.row div.relatedDocumentsSection h3.widgetTitle');
+    		if (jqh3Selector.val() == "") {
+    			jqh3Selector
+                    .filter(function () {
+                        return $.trim($(this).text()) === ''
+                    })
+                    .remove();
+            }
+        }
+    });
+</script>
+		</div>
+
+</div>
+
+	</section>
+
+
+<script type="text/javascript">
+    var documentsToInsert = [];
+    var foldersToInsert = [];
+
+    $(document).ready(function () {
+        var hasEditRights = false;        
+        if (window.File && window.FileList && window.FileReader && hasEditRights) {
+            var RelatedDocumentsWidget = 5;
+            makeWidgetAreaDroppable('b528b2f0-400d-4b83-8b6f-97330e96319f', $('#widgetRelDoc' + 'b528b2f0-400d-4b83-8b6f-97330e96319f'), RelatedDocumentsWidget, true, RelatedDocumentsCallback);
+        }
+
+		if(hasEditRights)
+    		browserVersionNotCompatibleWithDragDropTextUpdate($('#addFile' + 'b528b2f0-400d-4b83-8b6f-97330e96319f'), 'Add a new file');
+    });
+
+    function RelatedDocumentsCallback(widgetID, response)
+    {
+        if (window.ContentCollectionInstance.IsWorkingCopy) {
+        	$('#widgetRelDoc' + widgetID).replaceWith(response);            
+            contentUpdated();
+            attachRelatedDocumentsHandlers();            
+        }
+        else {
+            ContentCollectionInstance.reloadContent();
+        }      
+    }
+</script>
+
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</aside>
+</div>
+</div></div>
+</div>
+</div><!-- Calendar/Carousel --><!-- <div data-cpRole="structuralContainer" id="homeContainer1">
+    <div class="siteWrap4">
+      <div data-cpRole="contentContainer" id="homeContent1a"></div>
+    </div>
+  </div> --><!-- Footer --><div data-cpRole="structuralContainer" id="footerOverlayTS">
+<footer data-cpRole="structuralContainer" id="footerContainerTS">
+<div class="siteWrap4"><div data-cpRole="contentContainer" id="footerTS">	<div id="cc7d3f6848-7e2a-4292-b295-198323281294" data-containerid="7d3f6848-7e2a-4292-b295-198323281294" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile" data-contentcontainerbreakpoint="68">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col6 first" style="" data-widgetcontainerid="25cbbdb4-f12c-4751-a999-ff36103b775f">				
+	<div class="row nest first wide">
+	
+	<div class="inner col col6 first last ida2276049-a360-4e0c-9aa9-caf927402505" style="" data-widgetcontainerid="a2276049-a360-4e0c-9aa9-caf927402505">	
+    <div data-widget-id="65a673b2-88e9-44e3-a475-11588f11ff65" data-widget-controller-path="/InfoAdvanced/Widget">
+
+
+
+
+
+	<section id="divInfoAdv65a673b2-88e9-44e3-a475-11588f11ff65" class="widget widgetInfoAdvanced skin106 widgetOptionSet5 wide" data-modulewidgettype="infoAdv" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-label="Info Advanced">
+			<header class="widgetHeader" id="header65a673b2-88e9-44e3-a475-11588f11ff65">
+		<div class="">
+								</div>
+	</header>
+	<div class="widgetBody  cpGrid cpGrid1 ">
+		<div class="row  wide">
+					<div class="col col1 first last">
+						<ol class="pageStyles semanticList">
+
+<li class="InfoAdvanced widgetItem fr-view">
+	<p><a href="/"><img src="/ImageRepository/Document?documentId=5136" class="fr-dib" alt="North Myrtle Beach South Carolina Homepage"></a></p>
+</li>						</ol>
+					</div>
+		</div>
+	</div>
+	<div class="widgetFooter">
+
+	</div>
+
+	</section>
+
+
+
+<script type="text/javascript">
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv65a673b2-88e9-44e3-a475-11588f11ff65 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+</script></div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+	<div class="row nest last wide">
+	
+	<div class="inner col col6 first last id72802894-c880-4a53-9a4e-de884f085915" style="" data-widgetcontainerid="72802894-c880-4a53-9a4e-de884f085915">	
+<div data-widget-id="ab40d2c8-01c8-4c3b-b79f-9d54186f9c53" data-widget-controller-path="/GraphicLinks/Widget">
+
+
+
+
+<div id="graphicLinkWidgetab40d2c8-01c8-4c3b-b79f-9d54186f9c53" class="widget widgetGraphicLinks skin111 widgetOptionSet41 wide" data-elementqueryclasses='{"wide-narrow":"min-width:1em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' data-modulewidgettype="graphicLinks">
+	<div class="widgetHeader">
+		<div class="">
+				</div>
+	</div>
+	<div class="widgetBody cpGrid cpGrid2 ">
+		<nav class="widgetGraphicLinksNav" aria-labelledby="GraphicLinkHeaderText">
+				<div class="row autoWidths center wide">
+					<!--
+--><div class="col col1 first "><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks"><a class="widgetDesc widgetGraphicLinksLink" href="https://www.facebook.com/nmbafc/" target="_self">
+
+<img src="/ImageRepository/Document?documentID=5138" 
+     class="graphicButtonLink" 
+     onmouseover="this.src='/ImageRepository/Document?documentID=5138'" 
+	onmouseout="this.src='/ImageRepository/Document?documentID=5138'"
+     onfocus="this.src='/ImageRepository/Document?documentID=5138'" 
+	onblur="this.src='/ImageRepository/Document?documentID=5138'"> 
+</a></li><!--
+--></ul></div><!----><div class="col col1  last"><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks"><a class="widgetDesc widgetGraphicLinksLink" href="https://www.youtube.com/@AquaticnFitness" target="_self">
+
+<img src="/ImageRepository/Document?documentID=5148" 
+     class="graphicButtonLink" 
+     onmouseover="this.src='/ImageRepository/Document?documentID=5148'" 
+	onmouseout="this.src='/ImageRepository/Document?documentID=5148'"
+     onfocus="this.src='/ImageRepository/Document?documentID=5148'" 
+	onblur="this.src='/ImageRepository/Document?documentID=5148'"> 
+</a></li><!--
+--></ul></div><!--				-->
+				</div>
+			</nav>
+		</div>
+	<div class="widgetFooter">
+			</div>
+</div>
+</div>
+
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col1" style="" data-widgetcontainerid="333014fd-7154-4fe7-a39f-19f8dfc52ffc">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col1 first last ide401c7b4-032a-4aec-b2a2-0d36c0053174" style="" data-widgetcontainerid="e401c7b4-032a-4aec-b2a2-0d36c0053174">	
+
+<div class="widget widgetSpacer" id="12231867-b514-4878-a155-79c470005eca"></div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col5" style="" data-widgetcontainerid="7dd504aa-bbee-45a5-9780-42666352d1df">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col5 first last id8a974f67-521f-40b2-956b-d2c74ec546ce" style="" data-widgetcontainerid="8a974f67-521f-40b2-956b-d2c74ec546ce">	
+    <div data-widget-id="78dc9a9f-d404-483b-bd75-a72cc0032810" data-widget-controller-path="/InfoAdvanced/Widget">
+
+
+
+
+
+	<section id="divInfoAdv78dc9a9f-d404-483b-bd75-a72cc0032810" class="widget widgetInfoAdvanced skin108 widgetOptionSet5 wide" data-modulewidgettype="infoAdv" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-labelledby="header78dc9a9f-d404-483b-bd75-a72cc0032810">
+			<header class="widgetHeader" id="header78dc9a9f-d404-483b-bd75-a72cc0032810">
+		<div class="">
+					<h3 >Contact Us</h3>
+								</div>
+	</header>
+	<div class="widgetBody  cpGrid cpGrid1 ">
+		<div class="row  wide">
+					<div class="col col1 first last">
+						<ol class="pageStyles semanticList">
+
+<li class="InfoAdvanced widgetItem fr-view">
+	<p>1100 2nd Avenue South</p>
+</li>
+<li class="InfoAdvanced widgetItem fr-view">
+	<p>North Myrtle Beach, SC 29582</p>
+</li>
+<li class="InfoAdvanced widgetItem fr-view">
+	<p>Phone: <a href="tel:8432813737">843.281.3737</a></p>
+</li>						</ol>
+					</div>
+		</div>
+	</div>
+	<div class="widgetFooter">
+
+	</div>
+
+	</section>
+
+
+
+<script type="text/javascript">
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv78dc9a9f-d404-483b-bd75-a72cc0032810 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+</script></div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col1" style="" data-widgetcontainerid="e328f1ff-3d7b-493f-9e4f-c481279b6a89">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col1 first last id258f6a3e-7cb1-4820-bb14-90dc989d7e91" style="" data-widgetcontainerid="258f6a3e-7cb1-4820-bb14-90dc989d7e91">	
+
+<div class="widget widgetSpacer" id="edca52de-5f51-4e7f-b3c0-3ac275146e63"></div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col5" style="" data-widgetcontainerid="febdaf4c-4c2c-4d13-bfc9-335bd0997cb1">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col5 first last id27e8f565-6343-45db-a8ec-6a72243d7f57" style="" data-widgetcontainerid="27e8f565-6343-45db-a8ec-6a72243d7f57">	
+	<div data-widget-id="307aeae2-6725-488d-a5e0-25d14a2c6a67" data-widget-controller-path="/QuickLinks/Widget">
+
+
+
+
+
+
+
+
+	<section id="widgetQuicklink307aeae2-6725-488d-a5e0-25d14a2c6a67" class="widget widgetQuickLinks skin108 widgetOptionSet38 narrow" data-modulewidgettype="quickLinks" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-labelledby="quickLinksHeader307aeae2-6725-488d-a5e0-25d14a2c6a67">
+			<header class="widgetHeader" id="quickLinksHeader307aeae2-6725-488d-a5e0-25d14a2c6a67">
+		<div class="">
+					<h3><a  style="" href="/QuickLinks.aspx?CID=130" >Popular Pages</a></h3>
+						</div>
+	</header>
+	<div class="widgetBody cpGrid cpGrid1 ">
+        <div class="row  narrow">
+				<div class="col col1 first last">
+					<ol class="semanticList">
+
+
+
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://my.matterport.com/show/?m=6zV3s9EQYxY" target="_self" aria-label="Virtual Tour - 2025 Aquatics - Footer - Quick Links" rel="">Virtual Tour</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+
+
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://www.nmb.us/174/Membership" target="_self" aria-label="Membership - 2025 Aquatics - Footer - Quick Links" rel="">Membership</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+
+
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://app.acuityscheduling.com/schedule/7233a6d0" target="_self" aria-label="Class &amp; Child Appointment - 2025 Aquatics - Footer - Quick Links" rel="">Class & Child Appointment</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+
+
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://www.nmb.us/290/Schedules" target="_self" aria-label="Class Schedules - 2025 Aquatics - Footer - Quick Links" rel="">Class Schedules</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+
+
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://www.nmb.us/158/Directions-Hours" target="_self" aria-label="Directions &amp; Hours - 2025 Aquatics - Footer - Quick Links" rel="">Directions & Hours</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+		</div>
+        
+	</div>
+	<div class="widgetFooter">
+	</div>
+	<div class="addItemModal hidden">
+		<div class="url hidden">/QuickLinks.aspx</div>
+	</div>
+
+	</section>
+</div>
+
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col1" style="" data-widgetcontainerid="0b99f4a0-adfd-4122-a0de-edba2f5af4db">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col1 first last idb3f86db0-6704-4005-9415-8c2103d5b3b8" style="" data-widgetcontainerid="b3f86db0-6704-4005-9415-8c2103d5b3b8">	
+
+<div class="widget widgetSpacer" id="db836410-b26b-444f-8106-c77aa24b8e99"></div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col5 last" style="" data-widgetcontainerid="c6c45a84-ed3b-4d69-80d0-1fbc633f0749">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col5 first last id4193f8da-07eb-405a-b369-239615d793d1" style="" data-widgetcontainerid="4193f8da-07eb-405a-b369-239615d793d1">	
+	<div data-widget-id="3f7f9eb7-dcff-4d63-a93f-a6f004cc9dbf" data-widget-controller-path="/QuickLinks/Widget">
+
+
+
+
+
+
+
+
+	<section id="widgetQuicklink3f7f9eb7-dcff-4d63-a93f-a6f004cc9dbf" class="widget widgetQuickLinks skin108 widgetOptionSet38 narrow" data-modulewidgettype="quickLinks" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-labelledby="quickLinksHeader3f7f9eb7-dcff-4d63-a93f-a6f004cc9dbf">
+			<header class="widgetHeader" id="quickLinksHeader3f7f9eb7-dcff-4d63-a93f-a6f004cc9dbf">
+		<div class="">
+					<h3><a  style="" href="/QuickLinks.aspx?CID=12" >Site Links</a></h3>
+						</div>
+	</header>
+	<div class="widgetBody cpGrid cpGrid1 ">
+        <div class="row  narrow">
+				<div class="col col1 first last">
+					<ol class="semanticList">
+
+
+
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/" target="_self" aria-label="Home - Footer - Helpful Links" rel="">Home</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+
+
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/sitemap" target="_self" aria-label="Site Map - Footer - Helpful Links" rel="">Site Map</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+
+
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/copyright" target="_self" aria-label="Copyright Notices - Footer - Helpful Links" rel="">Copyright Notices</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+
+
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://www.office.com/" target="_self" aria-label="Employee Email - Footer - Helpful Links" rel="">Employee Email</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+
+
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/admin" target="_self" aria-label="Employee Login - Footer - Helpful Links" rel="">Employee Login</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+		</div>
+        
+	</div>
+	<div class="widgetFooter">
+	</div>
+	<div class="addItemModal hidden">
+		<div class="url hidden">/QuickLinks.aspx</div>
+	</div>
+
+	</section>
+</div>
+
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</footer><!-- Powered By --><div data-cpRole="structuralContainer" id="poweredByContainerTS">
+<div class="siteWrap4"><div data-cpRole="contentContainer" id="poweredByTS">	<div id="cc7d20dc0b-018c-4420-b274-a1cf269cd175" data-containerid="7d20dc0b-018c-4420-b274-a1cf269cd175" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="fef632ac-7235-4b96-9e69-83c47be04572">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last id2304a6ed-dea6-4047-8086-f6c6dc41ba6c" style="" data-widgetcontainerid="2304a6ed-dea6-4047-8086-f6c6dc41ba6c">	
+ 
+	<div data-widget-id='0f61409b-a049-48df-a852-f4a988ad7219' data-moduleName="customHtml" id='widgetCustomHtml0f61409b-a049-48df-a852-f4a988ad7219' class="widget widgetCustomHtml skin112 narrow" >
+	<div class="widgetBody pageStyles" id="widgetBody0f61409b-a049-48df-a852-f4a988ad7219">
+		<div id="customHtml0f61409b-a049-48df-a852-f4a988ad7219"><div><style>
+  /* CP icon */
+  .cpBylineIconTS {
+    color: #222;
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+    color: #222;
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+</style>
+
+<div class="widgetItem cpBylineTS">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" class="cpBylineIconTS">
+    <path class="c" d="M73.4,23.2h-19v16.7h19c2.8,0,5,2.2,5,5c0,2.8-2.2,5-5,5h-19v28.4h5.5l11.3-11.7h2.2c11.9,0,21.6-9.7,21.6-21.6C95,33,85.3,23.2,73.4,23.2"></path>
+    <path class="p" d="M45.8,66.5H26.6C14.7,66.5,5,56.8,5,44.9C5,33,14.7,23.2,26.6,23.2h19.1v16.7H26.6c-2.8,0-5,2.2-5,5c0,2.8,2.2,5,5,5h19.1V66.5z"></path>
+  </svg>
+  <span class="cpBylineTextTS">Government Websites by <a href="https://connect.civicplus.com/referral">CivicPlus&reg;</a></span>
+</div>
+</div></div>
+	</div>
+
+	</div>
+
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</div>
+</div>
+</div>
+
+            </div>
+        </div>
+    </div>
+
+<link href="/745732998.css" rel="stylesheet" type="text/css" />
+
+<div id="SplashMessageWrapper" class="cp-Splash-wrapper">
+	<div role="dialog" aria-labelledby="cp-Splash-title" aria-describedby="editorContentDesc" aria-modal="true" tabindex="-1" id="SplashMessage" class="hidden cp-Splash cp-Splash--modal is-open">
+		<div class="cp-Splash-header">
+			<h2 class="cp-Splash-title" id="cp-Splash-title">Loading</h2>
+			<button class="cp-Splash-Btn cp-Splash-close" aria-label="Close this modal" title="Close this window">
+				<svg id="iconClose" viewBox="0 0 25 25">
+					<polygon style="fill:currentcolor"
+							 points="18.806,6.98 18.075,6.248 12.532,11.792 6.989,6.248 6.257,6.98 11.786,12.508 6.212,18.084 6.943,18.815 12.532,13.224 18.12,18.815 18.851,18.084 13.277,12.508"></polygon>
+				</svg>
+			</button>
+		</div>
+		<div class="cp-Splash-body">
+			<div class="cp-Splash-Prose editorContent fr-view" id="editorContentDesc">
+				<!-- Content from the Froala Editor will go here. -->
+				Loading
+			</div>
+		</div>
+		<div class="cp-Splash-footer">
+			<button class="cp-Splash-Btn cp-Splash-Btn--NoShow">Do Not Show Again</button>
+			<button class="cp-Splash-Btn cp-Splash-Btn--Close">Close</button>
+		</div>
+	</div>
+</div>
+
+<script src="/Assets/Scripts/APIClient.js"></script>
+<script src="/Assets/Mystique/Shared/Scripts/Moment/Moment.min.js"></script>
+<script src="/Assets/Scripts/SplashModal/SplashModalRender.js"></script>
+<script>
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '174',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+</script>
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+    <script src="/-1442400649.js" type="text/javascript"></script>
+    <!----------Google Translate (Mobile Friendly)--------->
+
+<style>
+  #google-translate-container {
+    float: right;
+    padding: 3px 5px 0px 0px;
+    position: fixed; 
+    bottom: 16px; 
+    right: 10px; 
+    z-index: 5;
+  }
+  
+  .goog-te-combo, .goog-te-banner *, .goog-te-ftab *, .goog-te-menu *, .goog-te-menu2 *, .goog-te-balloon * {
+    font-family: arial;
+    font-size: 10pt;
+    background-image: url("https://www.gstatic.com/images/branding/product/2x/translate_24dp.png");
+    background-position: 5px 5px;
+    background-size: 18px;
+    background-repeat: no-repeat;
+    text-indent: 16px;
+    background-color: #fff;
+    color: #000 !important;
+  }
+  
+  .goog-logo-link {
+    display: none !important;
+  }
+  
+  .goog-te-gadget {
+    color: transparent !important;
+  }
+  
+  .goog-te-gadget .goog-te-combo {
+    margin: 2px 0 !important;
+    border-radius: 15px !important;
+    }
+  
+  .goog-te-combo{
+    border: 1px solid !important;
+    border-color: #bcc9d7 #96a3b1 #96a3b1 #bcc9d7 !important;
+    border-radius: 50px !important;
+    height:31px !important;
+    padding: 0 1px 0 .25rem !important;
+                width: 156px;
+  }
+
+  #launcher-wrapper {
+    bottom: 50px !important;
+  }
+
+</style>
+
+<div id="google-translate-container">
+  <div id="google_translate_element">
+  </div>
+</div>
+
+<script>
+
+  function googleTranslateElementInit() {
+    var el = document.getElementById("google_translate_element");
+    if (el && el.innerHTML.trim() !== "") {
+        return;
+    }
+
+    new google.translate.TranslateElement({ pageLanguage: "en" }, "google_translate_element");
+    // begin accessibility compliance
+    $('img.goog-te-gadget-icon').attr('alt','Google Translate');
+    $('div#goog-gt-tt div.logo img').attr('alt','translate');
+    $('div#goog-gt-tt .original-text').css('text-align','left');
+    $('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+    $('.goog-te-combo').attr('aria-label','google translate languages');
+    $('svg.goog-te-spinner').attr('title','Google Translate Spinner');
+    $('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+  }
+
+  $(function() {
+    $.getScript("//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+  });
+
+</script>
+
+<!--------------End Google Translate----------------->
+
+
+
+<!-- Fixed Nav Adjustment -->
+<script>
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  const anchor = $("#divToolbars");
+  const anchor2 = $("#headerContainerTS")
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+</script>
+<!-- End Fixed Nav Adjustment -->
+
+
+
+
+
+<!-- Move banner to outer wrap --> 
+<script> 
+function moveBannerToOuterWrap() { 
+    if ($(".fixedBannerTS").length) { 
+		if ($("#bannerDivbanner2").length) { 
+			$("#bannerDivbanner2").appendTo("#outer-wrap"); 
+		} else { 
+			setTimeout(function() { 
+				moveBannerToOuterWrap(); 
+			}, 500); 
+		} 
+	}
+} 
+moveBannerToOuterWrap(); 
+</script> 
+<!-- end move banner to outer wrap --><!-- AudioEye --> <script type="text/javascript">!function(){var b=function(){window.__AudioEyeSiteHash="ab30149a9cdb3808dc9f77b2ce8da2a1";var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();</script> <!-- End AudioEye -->
+
+
+    <script type="text/javascript">
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    </script>
+
+    <noscript>
+        <style>
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
+
+        
+<div style="display: none;">
+	<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+
+		<symbol id="iconArrow--left" viewbox="0 0 25 25">
+			<title>Arrow Left</title>
+			<polygon style="fill:currentcolor" points="18.044,25 19.498,23.545 8.409,12.454 19.408,1.455 17.954,0 5.502,12.452"></polygon>
+		</symbol>
+
+		<symbol id="iconArrow--right" viewbox="0 0 25 25">
+			<title>Arrow Right</title>
+			<polygon style="fill:currentcolor" points="6.957,0 5.502,1.455 16.591,12.546 5.592,23.545 7.047,25 19.498,12.548"></polygon>
+		</symbol>
+
+	</svg>
+</div>
+    <script type="text/javascript">loadCSS('//fonts.googleapis.com/css?family=Crimson+Text:700,700italic,regular|Libre+Baskerville:700,italic,regular|Lobster:regular|Open+Sans:300,600,600italic,700,italic,regular|Oswald:500,600,regular|Poppins:500,500italic,600,700,800,900,italic,regular|Sorts+Mill+Goudy:italic,regular|Special+Gothic+Condensed+One:regular|');</script>
+    
+
+    <div class="hidden activeWidgetSkinComponentsOnPageJson">[]</div>
+        <div style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol id="iconSlideshowArrowLeft" viewBox="0 0 22.68 40">
+                    <title>Slideshow Left Arrow</title>
+                    <g>
+                        <path style="fill:currentcolor;" d="M20,40a2.67,2.67,0,0,1-1.9-.79L.79,21.9a2.68,2.68,0,0,1,0-3.79L18.1.79a2.68,2.68,0,1,1,3.79,3.79L6.47,20,21.89,35.42A2.68,2.68,0,0,1,20,40Z"></path>
+                    </g>
+                </symbol>
+                <symbol id="iconSlideshowArrowRight" viewBox="0 0 22.68 40">
+                    <title>Slideshow Right Arrow</title>
+                    <g>
+                        <path style="fill:currentcolor;" d="M2.68,0a2.67,2.67,0,0,1,1.9.79L21.89,18.1a2.68,2.68,0,0,1,0,3.79L4.58,39.21A2.68,2.68,0,0,1,.79,35.42L16.21,20,.79,4.58A2.68,2.68,0,0,1,2.68,0Z"></path>
+                    </g>
+                </symbol>
+            </svg>
+        </div>
+    
+	
+	
+
+    <div id="root-picker-outlet"></div>
+</body>
+</html>

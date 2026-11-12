@@ -1,0 +1,2 @@
+https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27LONG+BAY+RESORT+HPR%3B%25%27+AND+Acreage+%3E+0&outFields=LandUseCode%2CAcreage%2CLegalDescr&returnGeometry=true&outSR=4326&f=json
+{'LandUseCode': '500', 'Acreage': 2.19, 'LegalDescr': 'LONG BAY RESORT HPR; C/A'} extent along the shore (ft): 342

@@ -1,0 +1,215 @@
+{
+ "method": "Straight-line distances (miles) from each building's mean listing point to named landmarks, for the place lines on\n/invest/condo-buildings/. Building points: raw/building-points.json (the mean of each building's listing pins; The Palace\nfrom raw/oceanfront-addresses.json, 1605 S Ocean Blvd). Landmark points: raw/landmarks-osm.json (OpenStreetMap Nominatim,\nread 2026-11-09; Main Street's ocean end is the east end of its OSM line). Run: python3 -I landmark_distances.py <this folder>.",
+ "landmarks": {
+  "Myrtle Beach State Park": [
+   33.6505854,
+   -78.9311317
+  ],
+  "Springmaid Pier": [
+   33.6559793,
+   -78.9170387
+  ],
+  "Family Kingdom": [
+   33.6823488,
+   -78.8921728
+  ],
+  "2nd Avenue Pier": [
+   33.6833252,
+   -78.8850536
+  ],
+  "SkyWheel": [
+   33.6938507,
+   -78.8773549
+  ],
+  "Pier 14": [
+   33.6943277,
+   -78.8747973
+  ],
+  "Sea Captain's House": [
+   33.7083627,
+   -78.8604254
+  ],
+  "Dunes Golf and Beach Club": [
+   33.763039,
+   -78.7960467
+  ],
+  "Hilton Myrtle Beach Resort": [
+   33.7689994,
+   -78.7747069
+  ],
+  "Embassy Suites (Kingston Plantation)": [
+   33.7676942,
+   -78.7780105
+  ],
+  "Tanger Outlets, Kings Road": [
+   33.7842752,
+   -78.7752815
+  ],
+  "Barefoot Landing": [
+   33.7998752,
+   -78.7424398
+  ],
+  "Main Street, ocean end": [
+   33.8188841,
+   -78.6723736
+  ],
+  "Cherry Grove Pier": [
+   33.8287315,
+   -78.6326763
+  ]
+ },
+ "pairs": [
+  {
+   "building": "mb-resort",
+   "landmark": "Myrtle Beach State Park",
+   "miles": 1.58,
+   "side": "south of"
+  },
+  {
+   "building": "compass-cove",
+   "landmark": "Springmaid Pier",
+   "miles": 0.79,
+   "side": "north of"
+  },
+  {
+   "building": "bluewater",
+   "landmark": "Springmaid Pier",
+   "miles": 1.13,
+   "side": "north of"
+  },
+  {
+   "building": "bluewater",
+   "landmark": "Family Kingdom",
+   "miles": 1.18,
+   "side": "south of"
+  },
+  {
+   "building": "landmark",
+   "landmark": "Family Kingdom",
+   "miles": 0.8,
+   "side": "south of"
+  },
+  {
+   "building": "sea-mist",
+   "landmark": "Family Kingdom",
+   "miles": 0.56,
+   "side": "south of"
+  },
+  {
+   "building": "sea-mist",
+   "landmark": "2nd Avenue Pier",
+   "miles": 0.9,
+   "side": "south of"
+  },
+  {
+   "building": "bay-view",
+   "landmark": "SkyWheel",
+   "miles": 0.37,
+   "side": "south of"
+  },
+  {
+   "building": "bay-view",
+   "landmark": "2nd Avenue Pier",
+   "miles": 0.5,
+   "side": "north of"
+  },
+  {
+   "building": "camelot",
+   "landmark": "SkyWheel",
+   "miles": 0.54,
+   "side": "north of"
+  },
+  {
+   "building": "camelot",
+   "landmark": "Pier 14",
+   "miles": 0.42,
+   "side": "north of"
+  },
+  {
+   "building": "caribbean",
+   "landmark": "Sea Captain's House",
+   "miles": 0.06,
+   "side": "south of"
+  },
+  {
+   "building": "sands-ocean",
+   "landmark": "Dunes Golf and Beach Club",
+   "miles": 0.45,
+   "side": "south of"
+  },
+  {
+   "building": "margate",
+   "landmark": "Hilton Myrtle Beach Resort",
+   "miles": 0.46,
+   "side": "south of"
+  },
+  {
+   "building": "south-hampton",
+   "landmark": "Embassy Suites (Kingston Plantation)",
+   "miles": 0.06,
+   "side": "north of"
+  },
+  {
+   "building": "royale-palms",
+   "landmark": "Hilton Myrtle Beach Resort",
+   "miles": 0.05,
+   "side": "north of"
+  },
+  {
+   "building": "seawatch",
+   "landmark": "Tanger Outlets, Kings Road",
+   "miles": 0.98,
+   "side": "south of"
+  },
+  {
+   "building": "ocean-creek",
+   "landmark": "Barefoot Landing",
+   "miles": 0.7,
+   "side": "south of"
+  },
+  {
+   "building": "north-beach-towers",
+   "landmark": "Barefoot Landing",
+   "miles": 0.72,
+   "side": "south of"
+  },
+  {
+   "building": "bay-watch",
+   "landmark": "Main Street, ocean end",
+   "miles": 2.6,
+   "side": "south of"
+  },
+  {
+   "building": "avista",
+   "landmark": "Main Street, ocean end",
+   "miles": 0.26,
+   "side": "north of"
+  },
+  {
+   "building": "prince",
+   "landmark": "Cherry Grove Pier",
+   "miles": 0.13,
+   "side": "north of"
+  }
+ ],
+ "neighbors": [
+  {
+   "building": "palace",
+   "of": "landmark",
+   "miles": 0.06,
+   "side": "south of"
+  },
+  {
+   "building": "coral-beach",
+   "of": "sea-mist",
+   "miles": 0.02,
+   "side": "north of"
+  },
+  {
+   "building": "dunes-village",
+   "of": "beach-colony",
+   "miles": 0.08,
+   "side": "north of"
+  }
+ ]
+}

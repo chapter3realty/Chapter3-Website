@@ -1,0 +1,1162 @@
+{
+ "rule": "Do houses with an HOA fee list for more? Asking price per square foot and lot size, houses with a fee\nagainst houses with none, in the same ZIP code and of a similar age, from raw/houses-active.json (pull_houses.py).\nGroups: \"with fee\" = returned by the all-houses search and not by the no-fee search (hoaMax=0); \"no fee\" =\nreturned by the no-fee search. Age: built 2000 or later (yearMin=2000 search) and built 2015 or later. Land: a fourth cut keeps\nhouses built 2000 or later on lots of 0.10 to 0.30 acre, to compare houses on the same size of lot.\nKept: list price $50,000 or more, 600 to 6,000 square feet. Lot acres: only pins with acres above 0.\nA ZIP is compared only when each group has at least MIN homes. The county line: the 15 Horry County ZIPs\n(as in ../buyers-cost-to-own/hoa-horry.json). Asking prices, not sale prices.\nDistance: the same houses (built 2000 or later) by straight-line distance band to the beach, county-wide and\nZIP by band.\nRun: python3 -I analyze_houses.py <this dir>. Writes price-test.json.",
+ "pulled": "2026-11-10T06:58:49.484383+00:00",
+ "api_totals": {
+  "all": 3673,
+  "no_fee": 1154,
+  "built_2000_plus": 2877,
+  "built_2015_plus": 2193
+ },
+ "truncated_bands": [
+  [
+   {},
+   229689,
+   230079,
+   17,
+   16
+  ],
+  [
+   {},
+   389845,
+   390235,
+   27,
+   26
+  ],
+  [
+   {},
+   398830,
+   399219,
+   14,
+   13
+  ],
+  [
+   {},
+   528908,
+   529298,
+   4,
+   3
+  ],
+  [
+   {
+    "hoaMax": 0
+   },
+   229689,
+   230079,
+   10,
+   9
+  ],
+  [
+   {
+    "hoaMax": 0
+   },
+   389845,
+   390235,
+   3,
+   2
+  ],
+  [
+   {
+    "hoaMax": 0
+   },
+   398830,
+   399219,
+   8,
+   7
+  ],
+  [
+   {
+    "yearMin": 2000
+   },
+   528908,
+   529298,
+   2,
+   1
+  ]
+ ],
+ "kept": 3010,
+ "cuts": {
+  "all ages": {
+   "county": {
+    "with_fee": {
+     "n": 2166,
+     "median_ppsf": 206,
+     "median_price": 397000.0,
+     "median_sqft": 2000,
+     "n_acres": 2141,
+     "median_acres": 0.2
+    },
+    "no_fee": {
+     "n": 844,
+     "median_ppsf": 272,
+     "median_price": 517000.0,
+     "median_sqft": 1832,
+     "n_acres": 758,
+     "median_acres": 0.39
+    }
+   },
+   "zips": [
+    {
+     "zip": "29511",
+     "name": "Aynor",
+     "with_fee": {
+      "n": 17,
+      "median_ppsf": 162,
+      "median_price": 290000.0,
+      "median_sqft": 1900,
+      "n_acres": 17,
+      "median_acres": 0.24
+     },
+     "no_fee": {
+      "n": 21,
+      "median_ppsf": 217,
+      "median_price": 354000.0,
+      "median_sqft": 1848,
+      "n_acres": 21,
+      "median_acres": 1.1
+     },
+     "ppsf_diff_pct": -25.3
+    },
+    {
+     "zip": "29526",
+     "name": "Conway (29526)",
+     "with_fee": {
+      "n": 323,
+      "median_ppsf": 178,
+      "median_price": 339000.0,
+      "median_sqft": 1928,
+      "n_acres": 323,
+      "median_acres": 0.23
+     },
+     "no_fee": {
+      "n": 111,
+      "median_ppsf": 217,
+      "median_price": 415000.0,
+      "median_sqft": 1862,
+      "n_acres": 107,
+      "median_acres": 0.61
+     },
+     "ppsf_diff_pct": -18.0
+    },
+    {
+     "zip": "29527",
+     "name": "Conway (29527)",
+     "with_fee": {
+      "n": 146,
+      "median_ppsf": 182,
+      "median_price": 299000.0,
+      "median_sqft": 1720,
+      "n_acres": 146,
+      "median_acres": 0.23
+     },
+     "no_fee": {
+      "n": 54,
+      "median_ppsf": 211,
+      "median_price": 332000.0,
+      "median_sqft": 1660,
+      "n_acres": 54,
+      "median_acres": 0.7
+     },
+     "ppsf_diff_pct": -13.7
+    },
+    {
+     "zip": "29544",
+     "name": "Galivants Ferry",
+     "with_fee": {
+      "n": 18,
+      "median_ppsf": 174,
+      "median_price": 305000.0,
+      "median_sqft": 1618,
+      "n_acres": 18,
+      "median_acres": 0.24
+     },
+     "no_fee": {
+      "n": 45,
+      "median_ppsf": 235,
+      "median_price": 411000.0,
+      "median_sqft": 1738,
+      "n_acres": 45,
+      "median_acres": 1.07
+     },
+     "ppsf_diff_pct": -26.0
+    },
+    {
+     "zip": "29566",
+     "name": "Little River",
+     "with_fee": {
+      "n": 163,
+      "median_ppsf": 209,
+      "median_price": 390000.0,
+      "median_sqft": 1910,
+      "n_acres": 161,
+      "median_acres": 0.18
+     },
+     "no_fee": {
+      "n": 21,
+      "median_ppsf": 242,
+      "median_price": 400000.0,
+      "median_sqft": 1673,
+      "n_acres": 21,
+      "median_acres": 0.24
+     },
+     "ppsf_diff_pct": -13.6
+    },
+    {
+     "zip": "29568",
+     "name": "Longs",
+     "with_fee": {
+      "n": 309,
+      "median_ppsf": 185,
+      "median_price": 320000.0,
+      "median_sqft": 1774,
+      "n_acres": 309,
+      "median_acres": 0.19
+     },
+     "no_fee": {
+      "n": 20,
+      "median_ppsf": 221,
+      "median_price": 564000.0,
+      "median_sqft": 2324,
+      "n_acres": 20,
+      "median_acres": 1.08
+     },
+     "ppsf_diff_pct": -16.3
+    },
+    {
+     "zip": "29569",
+     "name": "Loris",
+     "with_fee": {
+      "n": 55,
+      "median_ppsf": 175,
+      "median_price": 282000.0,
+      "median_sqft": 1725,
+      "n_acres": 55,
+      "median_acres": 0.23
+     },
+     "no_fee": {
+      "n": 88,
+      "median_ppsf": 211,
+      "median_price": 374000.0,
+      "median_sqft": 1777,
+      "n_acres": 88,
+      "median_acres": 0.95
+     },
+     "ppsf_diff_pct": -17.1
+    },
+    {
+     "zip": "29572",
+     "name": "Myrtle Beach (north end)",
+     "with_fee": {
+      "n": 89,
+      "median_ppsf": 317,
+      "median_price": 720000.0,
+      "median_sqft": 2254,
+      "n_acres": 86,
+      "median_acres": 0.15
+     },
+     "no_fee": {
+      "n": 19,
+      "median_ppsf": 387,
+      "median_price": 1050000.0,
+      "median_sqft": 3200,
+      "n_acres": 18,
+      "median_acres": 0.45
+     },
+     "ppsf_diff_pct": -18.1
+    },
+    {
+     "zip": "29575",
+     "name": "Surfside Beach",
+     "with_fee": {
+      "n": 54,
+      "median_ppsf": 247,
+      "median_price": 450000.0,
+      "median_sqft": 1790,
+      "n_acres": 49,
+      "median_acres": 0.19
+     },
+     "no_fee": {
+      "n": 125,
+      "median_ppsf": 375,
+      "median_price": 575000.0,
+      "median_sqft": 1654,
+      "n_acres": 45,
+      "median_acres": 0.17
+     },
+     "ppsf_diff_pct": -34.1
+    },
+    {
+     "zip": "29576",
+     "name": "Murrells Inlet and Garden City",
+     "with_fee": {
+      "n": 153,
+      "median_ppsf": 251,
+      "median_price": 545000.0,
+      "median_sqft": 2267,
+      "n_acres": 153,
+      "median_acres": 0.19
+     },
+     "no_fee": {
+      "n": 76,
+      "median_ppsf": 409,
+      "median_price": 872000.0,
+      "median_sqft": 2408,
+      "n_acres": 76,
+      "median_acres": 0.24
+     },
+     "ppsf_diff_pct": -38.6
+    },
+    {
+     "zip": "29577",
+     "name": "Myrtle Beach (central and south)",
+     "with_fee": {
+      "n": 118,
+      "median_ppsf": 264,
+      "median_price": 572000.0,
+      "median_sqft": 2029,
+      "n_acres": 110,
+      "median_acres": 0.14
+     },
+     "no_fee": {
+      "n": 65,
+      "median_ppsf": 298,
+      "median_price": 660000.0,
+      "median_sqft": 2100,
+      "n_acres": 64,
+      "median_acres": 0.24
+     },
+     "ppsf_diff_pct": -11.4
+    },
+    {
+     "zip": "29582",
+     "name": "North Myrtle Beach",
+     "with_fee": {
+      "n": 115,
+      "median_ppsf": 276,
+      "median_price": 650000.0,
+      "median_sqft": 2220,
+      "n_acres": 109,
+      "median_acres": 0.15
+     },
+     "no_fee": {
+      "n": 135,
+      "median_ppsf": 385,
+      "median_price": 749000.0,
+      "median_sqft": 1875,
+      "n_acres": 135,
+      "median_acres": 0.15
+     },
+     "ppsf_diff_pct": -28.3
+    },
+    {
+     "zip": "29588",
+     "name": "Socastee",
+     "with_fee": {
+      "n": 241,
+      "median_ppsf": 207,
+      "median_price": 389000.0,
+      "median_sqft": 2001,
+      "n_acres": 240,
+      "median_acres": 0.18
+     },
+     "no_fee": {
+      "n": 35,
+      "median_ppsf": 194,
+      "median_price": 298000.0,
+      "median_sqft": 1680,
+      "n_acres": 35,
+      "median_acres": 0.27
+     },
+     "ppsf_diff_pct": 6.7
+    }
+   ],
+   "zips_compared": 13,
+   "zips_fee_higher": 1,
+   "median_of_zip_diffs_pct": -18.0
+  },
+  "built 2000 or later": {
+   "county": {
+    "with_fee": {
+     "n": 1974,
+     "median_ppsf": 205,
+     "median_price": 400000.0,
+     "median_sqft": 2026,
+     "n_acres": 1954,
+     "median_acres": 0.2
+    },
+    "no_fee": {
+     "n": 479,
+     "median_ppsf": 274,
+     "median_price": 538000.0,
+     "median_sqft": 1884,
+     "n_acres": 419,
+     "median_acres": 0.53
+    }
+   },
+   "zips": [
+    {
+     "zip": "29511",
+     "name": "Aynor",
+     "with_fee": {
+      "n": 17,
+      "median_ppsf": 162,
+      "median_price": 290000.0,
+      "median_sqft": 1900,
+      "n_acres": 17,
+      "median_acres": 0.24
+     },
+     "no_fee": {
+      "n": 17,
+      "median_ppsf": 218,
+      "median_price": 375000.0,
+      "median_sqft": 1846,
+      "n_acres": 17,
+      "median_acres": 0.92
+     },
+     "ppsf_diff_pct": -25.7
+    },
+    {
+     "zip": "29526",
+     "name": "Conway (29526)",
+     "with_fee": {
+      "n": 309,
+      "median_ppsf": 178,
+      "median_price": 339000.0,
+      "median_sqft": 1962,
+      "n_acres": 309,
+      "median_acres": 0.23
+     },
+     "no_fee": {
+      "n": 75,
+      "median_ppsf": 226,
+      "median_price": 438000.0,
+      "median_sqft": 1866,
+      "n_acres": 71,
+      "median_acres": 0.61
+     },
+     "ppsf_diff_pct": -21.2
+    },
+    {
+     "zip": "29527",
+     "name": "Conway (29527)",
+     "with_fee": {
+      "n": 146,
+      "median_ppsf": 182,
+      "median_price": 299000.0,
+      "median_sqft": 1720,
+      "n_acres": 146,
+      "median_acres": 0.23
+     },
+     "no_fee": {
+      "n": 32,
+      "median_ppsf": 212,
+      "median_price": 460000.0,
+      "median_sqft": 1818,
+      "n_acres": 32,
+      "median_acres": 0.69
+     },
+     "ppsf_diff_pct": -14.2
+    },
+    {
+     "zip": "29544",
+     "name": "Galivants Ferry",
+     "with_fee": {
+      "n": 18,
+      "median_ppsf": 174,
+      "median_price": 305000.0,
+      "median_sqft": 1618,
+      "n_acres": 18,
+      "median_acres": 0.24
+     },
+     "no_fee": {
+      "n": 38,
+      "median_ppsf": 242,
+      "median_price": 434000.0,
+      "median_sqft": 1767,
+      "n_acres": 38,
+      "median_acres": 1.07
+     },
+     "ppsf_diff_pct": -28.1
+    },
+    {
+     "zip": "29566",
+     "name": "Little River",
+     "with_fee": {
+      "n": 138,
+      "median_ppsf": 210,
+      "median_price": 390000.0,
+      "median_sqft": 1910,
+      "n_acres": 136,
+      "median_acres": 0.17
+     },
+     "no_fee": {
+      "n": 17,
+      "median_ppsf": 245,
+      "median_price": 445000.0,
+      "median_sqft": 1700,
+      "n_acres": 17,
+      "median_acres": 0.23
+     },
+     "ppsf_diff_pct": -14.3
+    },
+    {
+     "zip": "29569",
+     "name": "Loris",
+     "with_fee": {
+      "n": 55,
+      "median_ppsf": 175,
+      "median_price": 282000.0,
+      "median_sqft": 1725,
+      "n_acres": 55,
+      "median_acres": 0.23
+     },
+     "no_fee": {
+      "n": 66,
+      "median_ppsf": 232,
+      "median_price": 399000.0,
+      "median_sqft": 1777,
+      "n_acres": 66,
+      "median_acres": 1.36
+     },
+     "ppsf_diff_pct": -24.6
+    },
+    {
+     "zip": "29575",
+     "name": "Surfside Beach",
+     "with_fee": {
+      "n": 33,
+      "median_ppsf": 270,
+      "median_price": 490000.0,
+      "median_sqft": 1762,
+      "n_acres": 28,
+      "median_acres": 0.15
+     },
+     "no_fee": {
+      "n": 76,
+      "median_ppsf": 414,
+      "median_price": 617000.0,
+      "median_sqft": 1654,
+      "n_acres": 21,
+      "median_acres": 0.1
+     },
+     "ppsf_diff_pct": -34.8
+    },
+    {
+     "zip": "29576",
+     "name": "Murrells Inlet and Garden City",
+     "with_fee": {
+      "n": 134,
+      "median_ppsf": 251,
+      "median_price": 549000.0,
+      "median_sqft": 2342,
+      "n_acres": 134,
+      "median_acres": 0.19
+     },
+     "no_fee": {
+      "n": 39,
+      "median_ppsf": 397,
+      "median_price": 821000.0,
+      "median_sqft": 2268,
+      "n_acres": 39,
+      "median_acres": 0.21
+     },
+     "ppsf_diff_pct": -36.8
+    },
+    {
+     "zip": "29577",
+     "name": "Myrtle Beach (central and south)",
+     "with_fee": {
+      "n": 106,
+      "median_ppsf": 270,
+      "median_price": 585000.0,
+      "median_sqft": 2030,
+      "n_acres": 99,
+      "median_acres": 0.14
+     },
+     "no_fee": {
+      "n": 31,
+      "median_ppsf": 341,
+      "median_price": 740000.0,
+      "median_sqft": 2013,
+      "n_acres": 30,
+      "median_acres": 0.18
+     },
+     "ppsf_diff_pct": -20.8
+    },
+    {
+     "zip": "29582",
+     "name": "North Myrtle Beach",
+     "with_fee": {
+      "n": 90,
+      "median_ppsf": 275,
+      "median_price": 684000.0,
+      "median_sqft": 2380,
+      "n_acres": 84,
+      "median_acres": 0.16
+     },
+     "no_fee": {
+      "n": 43,
+      "median_ppsf": 402,
+      "median_price": 859000.0,
+      "median_sqft": 2549,
+      "n_acres": 43,
+      "median_acres": 0.15
+     },
+     "ppsf_diff_pct": -31.6
+    }
+   ],
+   "zips_compared": 10,
+   "zips_fee_higher": 0,
+   "median_of_zip_diffs_pct": -25.1
+  },
+  "built 2015 or later": {
+   "county": {
+    "with_fee": {
+     "n": 1520,
+     "median_ppsf": 201,
+     "median_price": 390000.0,
+     "median_sqft": 2007,
+     "n_acres": 1512,
+     "median_acres": 0.2
+    },
+    "no_fee": {
+     "n": 339,
+     "median_ppsf": 258,
+     "median_price": 499000.0,
+     "median_sqft": 1890,
+     "n_acres": 322,
+     "median_acres": 0.61
+    }
+   },
+   "zips": [
+    {
+     "zip": "29511",
+     "name": "Aynor",
+     "with_fee": {
+      "n": 17,
+      "median_ppsf": 162,
+      "median_price": 290000.0,
+      "median_sqft": 1900,
+      "n_acres": 17,
+      "median_acres": 0.24
+     },
+     "no_fee": {
+      "n": 16,
+      "median_ppsf": 218,
+      "median_price": 364000.0,
+      "median_sqft": 1808,
+      "n_acres": 16,
+      "median_acres": 0.85
+     },
+     "ppsf_diff_pct": -25.7
+    },
+    {
+     "zip": "29526",
+     "name": "Conway (29526)",
+     "with_fee": {
+      "n": 270,
+      "median_ppsf": 178,
+      "median_price": 337000.0,
+      "median_sqft": 1912,
+      "n_acres": 270,
+      "median_acres": 0.23
+     },
+     "no_fee": {
+      "n": 62,
+      "median_ppsf": 227,
+      "median_price": 460000.0,
+      "median_sqft": 1875,
+      "n_acres": 61,
+      "median_acres": 0.61
+     },
+     "ppsf_diff_pct": -21.6
+    },
+    {
+     "zip": "29527",
+     "name": "Conway (29527)",
+     "with_fee": {
+      "n": 137,
+      "median_ppsf": 182,
+      "median_price": 300000.0,
+      "median_sqft": 1725,
+      "n_acres": 137,
+      "median_acres": 0.23
+     },
+     "no_fee": {
+      "n": 25,
+      "median_ppsf": 220,
+      "median_price": 475000.0,
+      "median_sqft": 1937,
+      "n_acres": 25,
+      "median_acres": 0.71
+     },
+     "ppsf_diff_pct": -17.3
+    },
+    {
+     "zip": "29544",
+     "name": "Galivants Ferry",
+     "with_fee": {
+      "n": 17,
+      "median_ppsf": 173,
+      "median_price": 315000.0,
+      "median_sqft": 1618,
+      "n_acres": 17,
+      "median_acres": 0.24
+     },
+     "no_fee": {
+      "n": 36,
+      "median_ppsf": 242,
+      "median_price": 434000.0,
+      "median_sqft": 1767,
+      "n_acres": 36,
+      "median_acres": 1.07
+     },
+     "ppsf_diff_pct": -28.5
+    },
+    {
+     "zip": "29569",
+     "name": "Loris",
+     "with_fee": {
+      "n": 54,
+      "median_ppsf": 175,
+      "median_price": 284000.0,
+      "median_sqft": 1730,
+      "n_acres": 54,
+      "median_acres": 0.23
+     },
+     "no_fee": {
+      "n": 64,
+      "median_ppsf": 234,
+      "median_price": 406000.0,
+      "median_sqft": 1758,
+      "n_acres": 64,
+      "median_acres": 1.39
+     },
+     "ppsf_diff_pct": -25.2
+    },
+    {
+     "zip": "29576",
+     "name": "Murrells Inlet and Garden City",
+     "with_fee": {
+      "n": 66,
+      "median_ppsf": 259,
+      "median_price": 562000.0,
+      "median_sqft": 2276,
+      "n_acres": 66,
+      "median_acres": 0.17
+     },
+     "no_fee": {
+      "n": 24,
+      "median_ppsf": 421,
+      "median_price": 834000.0,
+      "median_sqft": 2319,
+      "n_acres": 24,
+      "median_acres": 0.34
+     },
+     "ppsf_diff_pct": -38.5
+    },
+    {
+     "zip": "29577",
+     "name": "Myrtle Beach (central and south)",
+     "with_fee": {
+      "n": 79,
+      "median_ppsf": 277,
+      "median_price": 600000.0,
+      "median_sqft": 2031,
+      "n_acres": 75,
+      "median_acres": 0.14
+     },
+     "no_fee": {
+      "n": 25,
+      "median_ppsf": 376,
+      "median_price": 660000.0,
+      "median_sqft": 1689,
+      "n_acres": 24,
+      "median_acres": 0.17
+     },
+     "ppsf_diff_pct": -26.3
+    },
+    {
+     "zip": "29582",
+     "name": "North Myrtle Beach",
+     "with_fee": {
+      "n": 45,
+      "median_ppsf": 294,
+      "median_price": 690000.0,
+      "median_sqft": 2425,
+      "n_acres": 43,
+      "median_acres": 0.16
+     },
+     "no_fee": {
+      "n": 22,
+      "median_ppsf": 512,
+      "median_price": 1637000.0,
+      "median_sqft": 3012,
+      "n_acres": 22,
+      "median_acres": 0.16
+     },
+     "ppsf_diff_pct": -42.6
+    }
+   ],
+   "zips_compared": 8,
+   "zips_fee_higher": 0,
+   "median_of_zip_diffs_pct": -26.0
+  },
+  "built 2000 or later, lot 0.10 to 0.30 acre": {
+   "county": {
+    "with_fee": {
+     "n": 1638,
+     "median_ppsf": 199,
+     "median_price": 378000.0,
+     "median_sqft": 1956,
+     "n_acres": 1638,
+     "median_acres": 0.19
+    },
+    "no_fee": {
+     "n": 126,
+     "median_ppsf": 334,
+     "median_price": 722000.0,
+     "median_sqft": 1972,
+     "n_acres": 126,
+     "median_acres": 0.18
+    }
+   },
+   "zips": [
+    {
+     "zip": "29576",
+     "name": "Murrells Inlet and Garden City",
+     "with_fee": {
+      "n": 101,
+      "median_ppsf": 246,
+      "median_price": 535000.0,
+      "median_sqft": 2243,
+      "n_acres": 101,
+      "median_acres": 0.18
+     },
+     "no_fee": {
+      "n": 22,
+      "median_ppsf": 407,
+      "median_price": 872000.0,
+      "median_sqft": 2301,
+      "n_acres": 22,
+      "median_acres": 0.18
+     },
+     "ppsf_diff_pct": -39.6
+    },
+    {
+     "zip": "29577",
+     "name": "Myrtle Beach (central and south)",
+     "with_fee": {
+      "n": 67,
+      "median_ppsf": 250,
+      "median_price": 525000.0,
+      "median_sqft": 2158,
+      "n_acres": 67,
+      "median_acres": 0.16
+     },
+     "no_fee": {
+      "n": 16,
+      "median_ppsf": 298,
+      "median_price": 505000.0,
+      "median_sqft": 1676,
+      "n_acres": 16,
+      "median_acres": 0.17
+     },
+     "ppsf_diff_pct": -16.1
+    },
+    {
+     "zip": "29582",
+     "name": "North Myrtle Beach",
+     "with_fee": {
+      "n": 60,
+      "median_ppsf": 277,
+      "median_price": 690000.0,
+      "median_sqft": 2437,
+      "n_acres": 60,
+      "median_acres": 0.17
+     },
+     "no_fee": {
+      "n": 35,
+      "median_ppsf": 422,
+      "median_price": 899000.0,
+      "median_sqft": 2447,
+      "n_acres": 35,
+      "median_acres": 0.15
+     },
+     "ppsf_diff_pct": -34.4
+    }
+   ],
+   "zips_compared": 3,
+   "zips_fee_higher": 0,
+   "median_of_zip_diffs_pct": -34.4
+  }
+ },
+ "beach_bands_built_2000_plus": {
+  "county_by_band": [
+   {
+    "band": "under 1 mile",
+    "with_fee": {
+     "n": 109,
+     "median_ppsf": 340,
+     "median_price": 715000.0,
+     "median_sqft": 2196,
+     "n_acres": 93,
+     "median_acres": 0.12
+    },
+    "no_fee": {
+     "n": 167,
+     "median_ppsf": 417,
+     "median_price": 765000.0,
+     "median_sqft": 1871,
+     "n_acres": 111,
+     "median_acres": 0.16
+    },
+    "share_with_fee_pct": 39.5,
+    "ppsf_diff_pct": -18.5
+   },
+   {
+    "band": "1 to 3 miles",
+    "with_fee": {
+     "n": 455,
+     "median_ppsf": 255,
+     "median_price": 573000.0,
+     "median_sqft": 2337,
+     "n_acres": 452,
+     "median_acres": 0.17
+    },
+    "no_fee": {
+     "n": 43,
+     "median_ppsf": 298,
+     "median_price": 575000.0,
+     "median_sqft": 2060,
+     "n_acres": 43,
+     "median_acres": 0.24
+    },
+    "share_with_fee_pct": 91.4,
+    "ppsf_diff_pct": -14.4
+   },
+   {
+    "band": "3 to 10 miles",
+    "with_fee": {
+     "n": 905,
+     "median_ppsf": 199,
+     "median_price": 400000.0,
+     "median_sqft": 2109,
+     "n_acres": 904,
+     "median_acres": 0.2
+    },
+    "no_fee": {
+     "n": 36,
+     "median_ppsf": 225,
+     "median_price": 564000.0,
+     "median_sqft": 2234,
+     "n_acres": 32,
+     "median_acres": 0.66
+    },
+    "share_with_fee_pct": 96.2,
+    "ppsf_diff_pct": -11.6
+   },
+   {
+    "band": "over 10 miles",
+    "with_fee": {
+     "n": 505,
+     "median_ppsf": 178,
+     "median_price": 303000.0,
+     "median_sqft": 1770,
+     "n_acres": 505,
+     "median_acres": 0.23
+    },
+    "no_fee": {
+     "n": 233,
+     "median_ppsf": 228,
+     "median_price": 430000.0,
+     "median_sqft": 1795,
+     "n_acres": 233,
+     "median_acres": 1.0
+    },
+    "share_with_fee_pct": 68.4,
+    "ppsf_diff_pct": -21.9
+   }
+  ],
+  "zip_band": [
+   {
+    "zip": "29577",
+    "name": "Myrtle Beach (central and south)",
+    "band": "under 1 mile",
+    "with_fee": {
+     "n": 27,
+     "median_ppsf": 377,
+     "median_price": 690000.0,
+     "median_sqft": 1895,
+     "n_acres": 22,
+     "median_acres": 0.05
+    },
+    "no_fee": {
+     "n": 27,
+     "median_ppsf": 370,
+     "median_price": 660000.0,
+     "median_sqft": 1689,
+     "n_acres": 26,
+     "median_acres": 0.17
+    },
+    "ppsf_diff_pct": 1.9
+   },
+   {
+    "zip": "29582",
+    "name": "North Myrtle Beach",
+    "band": "under 1 mile",
+    "with_fee": {
+     "n": 38,
+     "median_ppsf": 282,
+     "median_price": 705000.0,
+     "median_sqft": 2362,
+     "n_acres": 32,
+     "median_acres": 0.15
+    },
+    "no_fee": {
+     "n": 35,
+     "median_ppsf": 418,
+     "median_price": 875000.0,
+     "median_sqft": 2700,
+     "n_acres": 35,
+     "median_acres": 0.14
+    },
+    "ppsf_diff_pct": -32.5
+   },
+   {
+    "zip": "29576",
+    "name": "Murrells Inlet and Garden City",
+    "band": "1 to 3 miles",
+    "with_fee": {
+     "n": 70,
+     "median_ppsf": 248,
+     "median_price": 524000.0,
+     "median_sqft": 2273,
+     "n_acres": 70,
+     "median_acres": 0.19
+    },
+    "no_fee": {
+     "n": 16,
+     "median_ppsf": 353,
+     "median_price": 638000.0,
+     "median_sqft": 2121,
+     "n_acres": 16,
+     "median_acres": 0.44
+    },
+    "ppsf_diff_pct": -29.7
+   },
+   {
+    "zip": "29511",
+    "name": "Aynor",
+    "band": "over 10 miles",
+    "with_fee": {
+     "n": 17,
+     "median_ppsf": 162,
+     "median_price": 290000.0,
+     "median_sqft": 1900,
+     "n_acres": 17,
+     "median_acres": 0.24
+    },
+    "no_fee": {
+     "n": 17,
+     "median_ppsf": 218,
+     "median_price": 375000.0,
+     "median_sqft": 1846,
+     "n_acres": 17,
+     "median_acres": 0.92
+    },
+    "ppsf_diff_pct": -25.7
+   },
+   {
+    "zip": "29526",
+    "name": "Conway (29526)",
+    "band": "over 10 miles",
+    "with_fee": {
+     "n": 193,
+     "median_ppsf": 173,
+     "median_price": 315000.0,
+     "median_sqft": 1889,
+     "n_acres": 193,
+     "median_acres": 0.23
+    },
+    "no_fee": {
+     "n": 68,
+     "median_ppsf": 226,
+     "median_price": 460000.0,
+     "median_sqft": 1875,
+     "n_acres": 68,
+     "median_acres": 0.61
+    },
+    "ppsf_diff_pct": -23.5
+   },
+   {
+    "zip": "29527",
+    "name": "Conway (29527)",
+    "band": "over 10 miles",
+    "with_fee": {
+     "n": 146,
+     "median_ppsf": 182,
+     "median_price": 299000.0,
+     "median_sqft": 1720,
+     "n_acres": 146,
+     "median_acres": 0.23
+    },
+    "no_fee": {
+     "n": 31,
+     "median_ppsf": 213,
+     "median_price": 475000.0,
+     "median_sqft": 1700,
+     "n_acres": 31,
+     "median_acres": 0.71
+    },
+    "ppsf_diff_pct": -14.6
+   },
+   {
+    "zip": "29544",
+    "name": "Galivants Ferry",
+    "band": "over 10 miles",
+    "with_fee": {
+     "n": 18,
+     "median_ppsf": 174,
+     "median_price": 305000.0,
+     "median_sqft": 1618,
+     "n_acres": 18,
+     "median_acres": 0.24
+    },
+    "no_fee": {
+     "n": 38,
+     "median_ppsf": 242,
+     "median_price": 434000.0,
+     "median_sqft": 1767,
+     "n_acres": 38,
+     "median_acres": 1.07
+    },
+    "ppsf_diff_pct": -28.1
+   },
+   {
+    "zip": "29569",
+    "name": "Loris",
+    "band": "over 10 miles",
+    "with_fee": {
+     "n": 55,
+     "median_ppsf": 175,
+     "median_price": 282000.0,
+     "median_sqft": 1725,
+     "n_acres": 55,
+     "median_acres": 0.23
+    },
+    "no_fee": {
+     "n": 66,
+     "median_ppsf": 232,
+     "median_price": 399000.0,
+     "median_sqft": 1777,
+     "n_acres": 66,
+     "median_acres": 1.36
+    },
+    "ppsf_diff_pct": -24.6
+   }
+  ],
+  "zip_band_compared": 8,
+  "zip_band_fee_higher": 1,
+  "median_of_zip_band_diffs_pct": -25.1
+ }
+}

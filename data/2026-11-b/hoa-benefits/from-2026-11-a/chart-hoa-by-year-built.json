@@ -1,0 +1,31 @@
+{
+ "title": "Share of houses for sale with an HOA fee, by year built",
+ "rows": [
+  {
+   "label": "before 1980",
+   "pct": 4.2,
+   "houses": 335
+  },
+  {
+   "label": "1980 to 1999",
+   "pct": 47.4,
+   "houses": 460
+  },
+  {
+   "label": "2000 to 2009",
+   "pct": 71.5,
+   "houses": 502
+  },
+  {
+   "label": "2010 to 2019",
+   "pct": 84.1,
+   "houses": 504
+  },
+  {
+   "label": "2020 or later",
+   "pct": 81.3,
+   "houses": 1891
+  }
+ ],
+ "source": "counts.json"
+}

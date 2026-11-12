@@ -1,0 +1,309 @@
+{
+ "source": "https://www.consumer.sc.gov/HOA-reports (Legislative Report workbooks, report years 2023-2026)",
+ "method": "One row per complaint included in the report. Horry = 'HOA County' contains HORRY. Status is the agency's closing code. Recommendation cells hold one or more of the form's fixed choices; each choice found in the cell (case-insensitive substring, two spellings of dispute resolution merged) is counted once per complaint, so shares add to more than 100. Days to close = 'Date Complaint Closed' minus the complaint date, where both are dates.",
+ "by_year": {
+  "2022": {
+   "horry": {
+    "complaints": 70,
+    "status": {
+     "Satisfied - Adequate Business Response": 45,
+     "Undetermined": 15,
+     "Satisfied - Consumer Satisfied": 5,
+     "Unsatisfied": 3,
+     "Pending": 2
+    },
+    "enforce": {
+     "State agency oversight": 36,
+     "Dispute resolution within the HOA": 32,
+     "Other": 18,
+     "HOA ombudsman": 16,
+     "Magistrate's court enforcement": 14,
+     "Not noted": 1
+    },
+    "change": {
+     "Other": 38,
+     "Open meetings and notice": 22,
+     "Rules for viewing and copying records": 21,
+     "Forbid liens and foreclosure": 15,
+     "Set or change developer turnover": 14,
+     "Not noted": 4
+    },
+    "median_days_to_close": 25,
+    "n_with_days": 68
+   },
+   "statewide": {
+    "complaints": 276,
+    "status": {
+     "Satisfied - Adequate Business Response": 181,
+     "Undetermined": 52,
+     "Unsatisfied": 15,
+     "Satisfied - Consumer Satisfied": 13,
+     "Pending": 10,
+     "Abandoned": 3,
+     "Information": 2
+    },
+    "enforce": {
+     "State agency oversight": 136,
+     "Dispute resolution within the HOA": 134,
+     "Magistrate's court enforcement": 82,
+     "HOA ombudsman": 78,
+     "Other": 59,
+     "Not noted": 7
+    },
+    "change": {
+     "Other": 130,
+     "Open meetings and notice": 129,
+     "Rules for viewing and copying records": 87,
+     "Forbid liens and foreclosure": 66,
+     "Set or change developer turnover": 59,
+     "Not noted": 14
+    },
+    "median_days_to_close": 27,
+    "n_with_days": 266
+   }
+  },
+  "2023": {
+   "horry": {
+    "complaints": 89,
+    "status": {
+     "Satisfied - Adequate Business Response": 61,
+     "Undetermined": 22,
+     "Pending": 4,
+     "Unsatisfied": 2
+    },
+    "enforce": {
+     "State agency oversight": 41,
+     "Dispute resolution within the HOA": 41,
+     "HOA ombudsman": 30,
+     "Magistrate's court enforcement": 26,
+     "Other": 15,
+     "Not noted": 2
+    },
+    "change": {
+     "Other": 40,
+     "Open meetings and notice": 38,
+     "Rules for viewing and copying records": 22,
+     "Set or change developer turnover": 19,
+     "Forbid liens and foreclosure": 19,
+     "Not noted": 5,
+     "Unmatched": 1
+    },
+    "median_days_to_close": 35,
+    "n_with_days": 85
+   },
+   "statewide": {
+    "complaints": 365,
+    "status": {
+     "Satisfied - Adequate Business Response": 244,
+     "Undetermined": 79,
+     "Unsatisfied": 18,
+     "Satisfied - Consumer Satisfied": 12,
+     "Pending": 9,
+     "Abandoned": 3
+    },
+    "enforce": {
+     "State agency oversight": 185,
+     "Dispute resolution within the HOA": 180,
+     "HOA ombudsman": 129,
+     "Magistrate's court enforcement": 107,
+     "Other": 64,
+     "Not noted": 10
+    },
+    "change": {
+     "Other": 164,
+     "Open meetings and notice": 163,
+     "Forbid liens and foreclosure": 110,
+     "Rules for viewing and copying records": 91,
+     "Set or change developer turnover": 82,
+     "Not noted": 18,
+     "Unmatched": 2
+    },
+    "median_days_to_close": 38,
+    "n_with_days": 355
+   }
+  },
+  "2024": {
+   "horry": {
+    "complaints": 117,
+    "status": {
+     "Satisfied - Adequate Business Response": 77,
+     "Undetermined": 28,
+     "Unsatisfied": 6,
+     "Satisfied - Consumer Satisfied": 4,
+     "Pending": 2
+    },
+    "enforce": {
+     "State agency oversight": 52,
+     "Dispute resolution within the HOA": 48,
+     "HOA ombudsman": 42,
+     "Magistrate's court enforcement": 32,
+     "Other": 16,
+     "Not noted": 5
+    },
+    "change": {
+     "Other": 51,
+     "Open meetings and notice": 50,
+     "Rules for viewing and copying records": 30,
+     "Forbid liens and foreclosure": 23,
+     "Set or change developer turnover": 19,
+     "Not noted": 9
+    },
+    "median_days_to_close": 28,
+    "n_with_days": 116
+   },
+   "statewide": {
+    "complaints": 434,
+    "status": {
+     "Satisfied - Adequate Business Response": 292,
+     "Undetermined": 69,
+     "Unsatisfied": 42,
+     "Pending": 17,
+     "Satisfied - Consumer Satisfied": 12,
+     "Abandoned": 2
+    },
+    "enforce": {
+     "State agency oversight": 225,
+     "Dispute resolution within the HOA": 203,
+     "HOA ombudsman": 150,
+     "Magistrate's court enforcement": 125,
+     "Other": 73,
+     "Not noted": 12
+    },
+    "change": {
+     "Other": 196,
+     "Open meetings and notice": 185,
+     "Rules for viewing and copying records": 131,
+     "Forbid liens and foreclosure": 121,
+     "Set or change developer turnover": 105,
+     "Not noted": 28
+    },
+    "median_days_to_close": 29,
+    "n_with_days": 417
+   }
+  },
+  "2025": {
+   "horry": {
+    "complaints": 140,
+    "status": {
+     "Satisfied - Adequate Business Response": 86,
+     "Undetermined": 36,
+     "Unsatisfied": 8,
+     "Pending": 7,
+     "Abandoned": 2,
+     "Satisfied - Consumer Satisfied": 1
+    },
+    "enforce": {
+     "State agency oversight": 81,
+     "Dispute resolution within the HOA": 62,
+     "Magistrate's court enforcement": 47,
+     "HOA ombudsman": 42,
+     "Other": 24,
+     "Not noted": 2
+    },
+    "change": {
+     "Other": 68,
+     "Open meetings and notice": 61,
+     "Rules for viewing and copying records": 51,
+     "Forbid liens and foreclosure": 27,
+     "Set or change developer turnover": 25,
+     "Not noted": 5
+    },
+    "median_days_to_close": 40,
+    "n_with_days": 133
+   },
+   "statewide": {
+    "complaints": 452,
+    "status": {
+     "Satisfied - Adequate Business Response": 308,
+     "Undetermined": 87,
+     "Unsatisfied": 25,
+     "Pending": 25,
+     "Satisfied - Consumer Satisfied": 4,
+     "Abandoned": 2,
+     "Information": 1
+    },
+    "enforce": {
+     "State agency oversight": 262,
+     "Dispute resolution within the HOA": 219,
+     "Magistrate's court enforcement": 144,
+     "HOA ombudsman": 143,
+     "Other": 81,
+     "Not noted": 10
+    },
+    "change": {
+     "Open meetings and notice": 232,
+     "Other": 215,
+     "Rules for viewing and copying records": 153,
+     "Forbid liens and foreclosure": 119,
+     "Set or change developer turnover": 114,
+     "Not noted": 11
+    },
+    "median_days_to_close": 38,
+    "n_with_days": 427
+   }
+  }
+ },
+ "all_years": {
+  "horry": {
+   "complaints": 416,
+   "status": {
+    "Satisfied - Adequate Business Response": 269,
+    "Undetermined": 101,
+    "Unsatisfied": 19,
+    "Pending": 15,
+    "Satisfied - Consumer Satisfied": 10,
+    "Abandoned": 2
+   },
+   "enforce": {
+    "State agency oversight": 210,
+    "Dispute resolution within the HOA": 183,
+    "HOA ombudsman": 130,
+    "Magistrate's court enforcement": 119,
+    "Other": 73,
+    "Not noted": 10
+   },
+   "change": {
+    "Other": 197,
+    "Open meetings and notice": 171,
+    "Rules for viewing and copying records": 124,
+    "Forbid liens and foreclosure": 84,
+    "Set or change developer turnover": 77,
+    "Not noted": 23,
+    "Unmatched": 1
+   },
+   "median_days_to_close": 33,
+   "n_with_days": 402
+  },
+  "statewide": {
+   "complaints": 1527,
+   "status": {
+    "Satisfied - Adequate Business Response": 1025,
+    "Undetermined": 287,
+    "Unsatisfied": 100,
+    "Pending": 61,
+    "Satisfied - Consumer Satisfied": 41,
+    "Abandoned": 10,
+    "Information": 3
+   },
+   "enforce": {
+    "State agency oversight": 808,
+    "Dispute resolution within the HOA": 736,
+    "HOA ombudsman": 500,
+    "Magistrate's court enforcement": 458,
+    "Other": 277,
+    "Not noted": 39
+   },
+   "change": {
+    "Open meetings and notice": 709,
+    "Other": 705,
+    "Rules for viewing and copying records": 462,
+    "Forbid liens and foreclosure": 416,
+    "Set or change developer turnover": 360,
+    "Not noted": 71,
+    "Unmatched": 2
+   },
+   "median_days_to_close": 34,
+   "n_with_days": 1465
+  }
+ }
+}

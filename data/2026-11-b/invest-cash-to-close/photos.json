@@ -1,0 +1,41 @@
+{
+ "_comment": "Photo records for /invest/cash-to-close/ (batch 2026-11-b). Fix round 1, 2026-11-10: the record is copied unchanged from data/2026-11-a/submarkets-myrtle-beach/photos.json (USGS, public domain), whose writer looked at it full size; the file stays at its first path. It replaced the towers-against-the-sky photo, which showed no water.",
+ "photos": [
+  {
+   "slug": "submarkets-myrtle-beach",
+   "file": "images/2026-11-a/submarkets-myrtle-beach/oceanfront-towers-from-the-ocean-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-myrtle-beach/oceanfront-towers-from-the-ocean-600w.webp",
+    "1200": "images/2026-11-a/submarkets-myrtle-beach/oceanfront-towers-from-the-ocean-1200w.webp"
+   },
+   "width": 1200,
+   "height": 782,
+   "title": "Myrtle Beach oceanfront condo and hotel towers, south of downtown, USGS oblique aerial photo, August 24, 2011",
+   "what": "Oceanfront condo and hotel towers south of downtown Myrtle Beach, seen from a plane over the ocean, with the beach, pools and the streets behind.",
+   "caption": "Oceanfront condo towers south of downtown Myrtle Beach, near three of the busiest buildings in the table above. This stretch is in a zone where nightly rentals are allowed.",
+   "alt": "A row of oceanfront condo and hotel towers of 10 to 15 floors with pools in front, above a beach with umbrellas, seen from a plane over the ocean in Myrtle Beach",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "The oceanfront"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_175948d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_175500.zip; aircraft position 33.674683 N, -78.891968 W (11CCH03-Photolocations.csv and the file's EXIF GPS; the position of the plane, not of the buildings). Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. Not the frame used on any other page (other pages use 174830, 175156, 175537, 180052, 180608 and 181208).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size (3008 px, in two halves) by the writer on 2026-11-02. Points 350 to 450 m inland of the plane, 250 m either side, all fall in the shaded (nightly rentals) class. The plane was about 300 to 700 m from the points of the four busiest buildings in findings oceanfront.top_buildings (Tides/Driftwood/Oasis 33.67493,-78.8983; Coral Beach 33.67587,-78.89752; Landmark 33.67336,-78.90088), so the caption says 'where the busiest buildings stand', not which tower is which. A small flag hangs on one balcony; no logo or readable sign; people on the beach are too small to recognize.",
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty resized the photo"
+  }
+ ]
+}

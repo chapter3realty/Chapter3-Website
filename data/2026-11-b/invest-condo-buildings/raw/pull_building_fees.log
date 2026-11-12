@@ -1,0 +1,50 @@
+/tmp/claude-0/-home-user-Blog-Brain/6dac3d75-8af3-5045-bdd7-7ad0adf5395f/scratchpad/wt-live/data/2026-11-b/invest-condo-buildings/pull_building_fees.py:31: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  res["pulled" if not ONLY else "pulled_more_at"] = datetime.datetime.utcnow().isoformat() + "Z"
+/tmp/claude-0/-home-user-Blog-Brain/6dac3d75-8af3-5045-bdd7-7ad0adf5395f/scratchpad/wt-live/data/2026-11-b/invest-condo-buildings/pull_building_fees.py:38: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  r = {"words": b["words"], "url": BASE + urllib.parse.urlencode(p), "total": tot, "read": datetime.datetime.utcnow().isoformat() + "Z"}
+sea-mist 32 32 {'median': 610, 'p25': 610, 'p75': 630} 69900.0
+compass-cove 35 35 {'median': 960, 'p25': 805, 'p75': 960} 154000
+coral-beach 40 40 {'median': 1345, 'p25': 1330, 'p75': 1485} 94950.0
+bay-view 10 10 {'median': 780} 154900.0
+breakers 4 4 {'median': 885} 384900.0
+camelot 9 9 {'median': 625} 229000
+caribbean 26 26 {'median': 1395, 'p25': 765, 'p75': 1910} 347002.0
+anderson-ocean-club 5 5 {'median': 570} 315000
+dunes-village 25 25 {'median': 1690, 'p25': 1085, 'p75': 1955} 389900
+sand-dunes 51 51 {'median': 1245, 'p25': 865, 'p75': 1600} 265000
+caravelle 45 45 {'median': 750, 'p25': 695, 'p75': 875} 144000
+island-vista 0
+grande-cayman 21 21 {'median': 750, 'p25': 645, 'p75': 770} 159900
+ocean-reef 32 32 {'median': 940, 'p25': 940, 'p75': 1740} 165000.0
+seawatch 5 5 {'median': 780} 264000
+margate 8 8 {'median': 1820} 984500.0
+brighton 9 9 {'median': 1075} 649000
+royale-palms 14 14 {'median': 1600, 'p25': 1455, 'p75': 1825} 553500.0
+avista 10 10 {'median': 840} 308500.0
+ocean-drive-beach-golf 0
+bay-watch 46 46 {'median': 610, 'p25': 610, 'p75': 1065} 239900.0
+beach-cove 29 29 {'median': 785, 'p25': 785, 'p75': 1100} 217900
+prince 7 7 {'median': 1035} 237500
+towers-on-the-grove 3 3 {'median': 500} 145000
+north-beach-towers 10 10 {'median': 1295} 774000.0
+ocean-creek 34 34 {'median': 790, 'p25': 535, 'p75': 870} 223000.0
+monterey-bay 31 31 {'median': 940, 'p25': 940, 'p75': 995} 150000
+bluewater 37 37 {'median': 905, 'p25': 905, 'p75': 905} 129900
+palace 25 25 {'median': 685, 'p25': 460, 'p75': 910} 164000
+beach-colony 21 21 {'median': 595, 'p25': 590, 'p75': 740} 220000
+meridian-plaza 17 17 {'median': 850, 'p25': 850, 'p75': 850} 157900
+holiday-sands 15 15 {'median': 980, 'p25': 900, 'p75': 1345} 219000
+sandy-beach 11 11 {'median': 950} 214900
+carolina-winds 13 13 {'median': 855, 'p25': 855, 'p75': 855} 159900
+maisons-sur-mer 14 14 {'median': 1015, 'p25': 1015, 'p75': 1460} 567450.0
+sands-ocean 16 16 {'median': 425, 'p25': 425, 'p75': 635} 179250.0
+ocean-forest-plaza 14 14 {'median': 1015, 'p25': 1015, 'p75': 1015} 216450.0
+south-hampton 13 13 {'median': 1305, 'p25': 1090, 'p75': 1305} 459900
+crescent-shores 14 14 {'median': 1070, 'p25': 450, 'p75': 1380} 527450.0
+holiday-pavilion 15 15 {'median': 1055, 'p25': 580, 'p75': 1330} 155000
+boardwalk 12 12 {'median': 975, 'p25': 975, 'p75': 995} 166500.0
+carolinian 11 11 {'median': 730} 214000
+oceans-one 11 11 {'median': 1105} 229000
+patricia-grand 9 9 {'median': 980} 203500
+mar-vista-grande 6 6 {'median': 1335} 835000.0
+done 1142

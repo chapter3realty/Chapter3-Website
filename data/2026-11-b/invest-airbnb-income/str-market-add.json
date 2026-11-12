@@ -1,0 +1,440 @@
+{
+ "_for": "data/str-market.json: add to each markets[] entry (lead's decision). Same AirROI update as the file (October 1, 2026).",
+ "markets": {
+  "north-myrtle-beach": {
+   "bySize": {
+    "1": {
+     "listings": 554,
+     "median": 16300,
+     "average": 21100,
+     "adr": 212,
+     "occupancy": 39
+    },
+    "2": {
+     "listings": 1299,
+     "median": 14900,
+     "average": 20700,
+     "adr": 246,
+     "occupancy": 34
+    },
+    "3": {
+     "listings": 1403,
+     "median": 21200,
+     "average": 29700,
+     "adr": 348,
+     "occupancy": 34
+    },
+    "4": {
+     "listings": 644,
+     "median": 36400,
+     "average": 47800,
+     "adr": 495,
+     "occupancy": 35
+    },
+    "5+": {
+     "listings": 511,
+     "median": 70000,
+     "average": 86900,
+     "adr": 853,
+     "occupancy": 35
+    }
+   },
+   "months": {
+    "January": 1890,
+    "February": 2390,
+    "March": 3430,
+    "April": 3840,
+    "May": 4790,
+    "June": 8270,
+    "July": 9640,
+    "August": 6080,
+    "September": 3550,
+    "October": 2980,
+    "November": 2330,
+    "December": 2230
+   },
+   "summerShare": 47,
+   "topQuarterGross": 61610,
+   "condoPct": 67.0,
+   "housePct": 30.9
+  },
+  "myrtle-beach": {
+   "bySize": {
+    "1": {
+     "listings": 2391,
+     "median": 17000,
+     "average": 20700,
+     "adr": 194,
+     "occupancy": 38
+    },
+    "2": {
+     "listings": 2689,
+     "median": 20100,
+     "average": 25100,
+     "adr": 252,
+     "occupancy": 37
+    },
+    "3": {
+     "listings": 1379,
+     "median": 31700,
+     "average": 37100,
+     "adr": 339,
+     "occupancy": 38
+    },
+    "4": {
+     "listings": 357,
+     "median": 56000,
+     "average": 57400,
+     "adr": 476,
+     "occupancy": 40
+    },
+    "5+": {
+     "listings": 163,
+     "median": 65300,
+     "average": 77900,
+     "adr": 767,
+     "occupancy": 37
+    }
+   },
+   "months": {
+    "January": 1340,
+    "February": 1680,
+    "March": 2530,
+    "April": 2800,
+    "May": 3270,
+    "June": 6070,
+    "July": 6800,
+    "August": 4400,
+    "September": 2550,
+    "October": 2150,
+    "November": 1620,
+    "December": 1590
+   },
+   "summerShare": 47,
+   "topQuarterGross": 44250,
+   "condoPct": 80.6,
+   "housePct": 12.1
+  },
+  "surfside-beach": {
+   "bySize": {
+    "1": {
+     "listings": 37,
+     "median": 11100,
+     "average": 16600,
+     "adr": 175,
+     "occupancy": 36
+    },
+    "2": {
+     "listings": 175,
+     "median": 15800,
+     "average": 22800,
+     "adr": 245,
+     "occupancy": 35
+    },
+    "3": {
+     "listings": 106,
+     "median": 29200,
+     "average": 33600,
+     "adr": 315,
+     "occupancy": 42
+    },
+    "4": {
+     "listings": 79,
+     "median": 57300,
+     "average": 73300,
+     "adr": 558,
+     "occupancy": 41
+    },
+    "5+": {
+     "listings": 126,
+     "median": 54800,
+     "average": 74300,
+     "adr": 784,
+     "occupancy": 35
+    }
+   },
+   "months": {
+    "January": 2360,
+    "February": 2820,
+    "March": 4090,
+    "April": 5070,
+    "May": 6310,
+    "June": 9930,
+    "July": 11600,
+    "August": 7650,
+    "September": 4650,
+    "October": 3930,
+    "November": 2970,
+    "December": 2570
+   },
+   "summerShare": 46,
+   "topQuarterGross": 83560,
+   "condoPct": 47.5,
+   "housePct": 50.5
+  },
+  "garden-city": {
+   "bySize": {
+    "1": {
+     "listings": 82,
+     "median": 14400,
+     "average": 21100,
+     "adr": 233,
+     "occupancy": 37
+    },
+    "2": {
+     "listings": 125,
+     "median": 23400,
+     "average": 26900,
+     "adr": 243,
+     "occupancy": 41
+    },
+    "3": {
+     "listings": 85,
+     "median": 36100,
+     "average": 38700,
+     "adr": 352,
+     "occupancy": 40
+    },
+    "4": {
+     "listings": 19,
+     "median": 37200,
+     "average": 54900,
+     "adr": 545,
+     "occupancy": 36
+    },
+    "5+": {
+     "listings": 60,
+     "median": 78100,
+     "average": 98400,
+     "adr": 812,
+     "occupancy": 41
+    }
+   },
+   "months": {
+    "January": 2090,
+    "February": 2820,
+    "March": 3660,
+    "April": 4390,
+    "May": 5660,
+    "June": 8690,
+    "July": 10200,
+    "August": 6540,
+    "September": 4120,
+    "October": 3490,
+    "November": 2740,
+    "December": 2670
+   },
+   "summerShare": 45,
+   "topQuarterGross": 69760,
+   "condoPct": 67.6,
+   "housePct": 31.0
+  },
+  "murrells-inlet": {
+   "bySize": {
+    "1": {
+     "listings": 41,
+     "median": 22800,
+     "average": 25400,
+     "adr": 191,
+     "occupancy": 45
+    },
+    "2": {
+     "listings": 121,
+     "median": 27500,
+     "average": 27900,
+     "adr": 230,
+     "occupancy": 44
+    },
+    "3": {
+     "listings": 134,
+     "median": 30600,
+     "average": 32900,
+     "adr": 304,
+     "occupancy": 41
+    },
+    "4": {
+     "listings": 57,
+     "median": 54100,
+     "average": 58400,
+     "adr": 454,
+     "occupancy": 41
+    },
+    "5+": {
+     "listings": 98,
+     "median": 89900,
+     "average": 105000,
+     "adr": 897,
+     "occupancy": 40
+    }
+   },
+   "months": {
+    "January": 2250,
+    "February": 2660,
+    "March": 4310,
+    "April": 5220,
+    "May": 6030,
+    "June": 9300,
+    "July": 9780,
+    "August": 6840,
+    "September": 4490,
+    "October": 3900,
+    "November": 3020,
+    "December": 2980
+   },
+   "summerShare": 43,
+   "topQuarterGross": 84680,
+   "condoPct": 37.9,
+   "housePct": 59.8
+  },
+  "pawleys-island": {
+   "bySize": {
+    "1": {
+     "listings": 43,
+     "median": 18600,
+     "average": 26500,
+     "adr": 221,
+     "occupancy": 41
+    },
+    "2": {
+     "listings": 140,
+     "median": 18800,
+     "average": 22900,
+     "adr": 253,
+     "occupancy": 36
+    },
+    "3": {
+     "listings": 141,
+     "median": 24000,
+     "average": 27800,
+     "adr": 325,
+     "occupancy": 37
+    },
+    "4": {
+     "listings": 71,
+     "median": 29400,
+     "average": 41600,
+     "adr": 572,
+     "occupancy": 32
+    },
+    "5+": {
+     "listings": 44,
+     "median": 52400,
+     "average": 64300,
+     "adr": 981,
+     "occupancy": 33
+    }
+   },
+   "months": {
+    "January": 2110,
+    "February": 2650,
+    "March": 3640,
+    "April": 3760,
+    "May": 4140,
+    "June": 5680,
+    "July": 6290,
+    "August": 4180,
+    "September": 3070,
+    "October": 3210,
+    "November": 2670,
+    "December": 2360
+   },
+   "summerShare": 37,
+   "topQuarterGross": 53990,
+   "condoPct": 55.4,
+   "housePct": 42.4
+  },
+  "little-river": {
+   "bySize": {
+    "1": {
+     "listings": 23,
+     "median": 12000,
+     "average": 11600,
+     "adr": 135,
+     "occupancy": 35
+    },
+    "2": {
+     "listings": 64,
+     "median": 9400,
+     "average": 11800,
+     "adr": 177,
+     "occupancy": 34
+    },
+    "3": {
+     "listings": 47,
+     "median": 15700,
+     "average": 19100,
+     "adr": 249,
+     "occupancy": 35
+    },
+    "4": {
+     "listings": 11,
+     "median": 26300,
+     "average": 31300,
+     "adr": 337,
+     "occupancy": 36
+    }
+   },
+   "months": {
+    "January": 1330,
+    "February": 1540,
+    "March": 1770,
+    "April": 1840,
+    "May": 2110,
+    "June": 3430,
+    "July": 3650,
+    "August": 2570,
+    "September": 1520,
+    "October": 1540,
+    "November": 1300,
+    "December": 1440
+   },
+   "summerShare": 40,
+   "topQuarterGross": 26480,
+   "condoPct": 63.3,
+   "housePct": 33.7
+  },
+  "conway": {
+   "bySize": {
+    "1": {
+     "listings": 18,
+     "median": 15200,
+     "average": 18400,
+     "adr": 184,
+     "occupancy": 37
+    },
+    "2": {
+     "listings": 26,
+     "median": 21100,
+     "average": 24000,
+     "adr": 185,
+     "occupancy": 40
+    },
+    "3": {
+     "listings": 23,
+     "median": 27900,
+     "average": 31500,
+     "adr": 257,
+     "occupancy": 46
+    }
+   },
+   "months": {
+    "January": 1550,
+    "February": 1600,
+    "March": 2030,
+    "April": 2170,
+    "May": 2830,
+    "June": 3800,
+    "July": 3850,
+    "August": 3300,
+    "September": 2020,
+    "October": 2270,
+    "November": 1780,
+    "December": 1830
+   },
+   "summerShare": 38,
+   "topQuarterGross": 44950,
+   "condoPct": 17.0,
+   "housePct": 59.4
+  }
+ }
+}

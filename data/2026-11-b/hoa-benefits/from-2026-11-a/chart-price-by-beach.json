@@ -1,0 +1,50 @@
+{
+ "title": "Asking price per square foot, houses built 2000 or later, with and without an HOA fee, by distance from the beach",
+ "rows": [
+  {
+   "band": "under 1 mile",
+   "with_fee": 340,
+   "no_fee": 418,
+   "n_with": 107,
+   "n_none": 161,
+   "acres_with": 0.12,
+   "acres_none": 0.16,
+   "diff_pct": -18.7,
+   "share_with_fee_pct": 39.9
+  },
+  {
+   "band": "1 to 3 miles",
+   "with_fee": 255,
+   "no_fee": 297,
+   "n_with": 467,
+   "n_none": 44,
+   "acres_with": 0.17,
+   "acres_none": 0.25,
+   "diff_pct": -14.1,
+   "share_with_fee_pct": 91.4
+  },
+  {
+   "band": "3 to 10 miles",
+   "with_fee": 199,
+   "no_fee": 225,
+   "n_with": 925,
+   "n_none": 34,
+   "acres_with": 0.2,
+   "acres_none": 0.6,
+   "diff_pct": -11.6,
+   "share_with_fee_pct": 96.5
+  },
+  {
+   "band": "over 10 miles",
+   "with_fee": 177,
+   "no_fee": 228,
+   "n_with": 513,
+   "n_none": 233,
+   "acres_with": 0.23,
+   "acres_none": 0.98,
+   "diff_pct": -22.4,
+   "share_with_fee_pct": 68.8
+  }
+ ],
+ "source": "price-test.json"
+}

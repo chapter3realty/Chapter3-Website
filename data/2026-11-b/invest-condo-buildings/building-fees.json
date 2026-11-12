@@ -1,0 +1,3591 @@
+{
+ "source": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=<words>&hoaMax=<n>",
+ "status": "for sale (the API's default)",
+ "buildings": {
+  "mb-resort": {
+   "words": "Mb Resort",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mb+Resort",
+   "total": 58,
+   "read": "2026-11-09T05:21:58.405439Z",
+   "pins_returned": 58,
+   "asking": {
+    "median": 171500.0,
+    "p25": 125975.0,
+    "p75": 205000.0,
+    "n": 58
+   },
+   "beds": {
+    "0": 14,
+    "1": 9,
+    "2": 35
+   },
+   "streets": [
+    [
+     "5905 S Kings Hwy | Myrtle Beach",
+     54
+    ],
+    [
+     "5905 S Kings Highway | Myrtle Beach",
+     2
+    ],
+    [
+     "other addresses, one listing each",
+     2
+    ]
+   ],
+   "sqft_median": 838.5,
+   "fee_zero_or_blank": 0,
+   "with_fee": 58,
+   "quartiles": {
+    "median": {
+     "at_or_below": 835,
+     "band": [
+      830,
+      835
+     ]
+    },
+    "p25": {
+     "at_or_below": 765,
+     "band": [
+      760,
+      765
+     ]
+    },
+    "p75": {
+     "at_or_below": 915,
+     "band": [
+      910,
+      915
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 2,
+    "hoa_includes_internet": 44,
+    "hoa_includes_cable": 34,
+    "hoa_includes_insurance": 46,
+    "pets_allowed": 1,
+    "indoor_pool": 47,
+    "vacation_rental_program": 36,
+    "oceanfront_unit": 11,
+    "oceanfront_building": 36
+   }
+  },
+  "landmark": {
+   "words": "Landmark",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Landmark",
+   "total": 93,
+   "read": "2026-11-09T05:23:55.076184Z",
+   "pins_returned": 93,
+   "asking": {
+    "median": 109800,
+    "p25": 85950.0,
+    "p75": 126000.0,
+    "n": 93
+   },
+   "beds": {
+    "0": 51,
+    "1": 42
+   },
+   "streets": [
+    [
+     "1501 S Ocean Blvd | Myrtle Beach",
+     92
+    ],
+    [
+     "other addresses, one listing each",
+     1
+    ]
+   ],
+   "sqft_median": 431,
+   "fee_zero_or_blank": 0,
+   "with_fee": 93,
+   "quartiles": {
+    "median": {
+     "at_or_below": 905,
+     "band": [
+      900,
+      905
+     ]
+    },
+    "p25": {
+     "at_or_below": 620,
+     "band": [
+      615,
+      620
+     ]
+    },
+    "p75": {
+     "at_or_below": 955,
+     "band": [
+      950,
+      955
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 80,
+    "hoa_includes_internet": 84,
+    "hoa_includes_cable": 38,
+    "hoa_includes_insurance": 89,
+    "pets_allowed": 39,
+    "indoor_pool": 91,
+    "vacation_rental_program": 83,
+    "oceanfront_unit": 40,
+    "oceanfront_building": 87
+   }
+  },
+  "sea-mist": {
+   "words": "Sea Mist",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist",
+   "total": 32,
+   "read": "2026-11-09T05:26:53.032641Z",
+   "pins_returned": 32,
+   "asking": {
+    "median": 69900.0,
+    "p25": 56925.0,
+    "p75": 75000.0,
+    "n": 32
+   },
+   "beds": {
+    "0": 32
+   },
+   "streets": [
+    [
+     "1207 S Ocean Blvd | Myrtle Beach",
+     27
+    ],
+    [
+     "1205 S Ocean Blvd | Myrtle Beach",
+     4
+    ],
+    [
+     "other addresses, one listing each",
+     1
+    ]
+   ],
+   "sqft_median": 385.0,
+   "fee_zero_or_blank": 0,
+   "with_fee": 32,
+   "quartiles": {
+    "median": {
+     "at_or_below": 610,
+     "band": [
+      605,
+      610
+     ]
+    },
+    "p25": {
+     "at_or_below": 610,
+     "band": [
+      605,
+      610
+     ]
+    },
+    "p75": {
+     "at_or_below": 630,
+     "band": [
+      625,
+      630
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 22,
+    "pets_allowed": 1,
+    "indoor_pool": 7,
+    "oceanfront_building": 25
+   }
+  },
+  "compass-cove": {
+   "words": "Compass Cove",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove",
+   "total": 35,
+   "read": "2026-11-09T05:28:17.923949Z",
+   "pins_returned": 35,
+   "asking": {
+    "median": 154000,
+    "p25": 134900.0,
+    "p75": 179900.0,
+    "n": 35
+   },
+   "beds": {
+    "0": 14,
+    "1": 16,
+    "2": 1,
+    "3": 4
+   },
+   "streets": [
+    [
+     "2401 S Ocean Blvd | Myrtle Beach",
+     25
+    ],
+    [
+     "2311 S Ocean Blvd | Myrtle Beach",
+     8
+    ],
+    [
+     "2301 S Ocean Blvd | Myrtle Beach",
+     2
+    ]
+   ],
+   "sqft_median": 550,
+   "fee_zero_or_blank": 0,
+   "with_fee": 35,
+   "quartiles": {
+    "median": {
+     "at_or_below": 960,
+     "band": [
+      955,
+      960
+     ]
+    },
+    "p25": {
+     "at_or_below": 805,
+     "band": [
+      800,
+      805
+     ]
+    },
+    "p75": {
+     "at_or_below": 960,
+     "band": [
+      955,
+      960
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 34,
+    "pets_allowed": 20,
+    "indoor_pool": 30,
+    "oceanfront_building": 34
+   }
+  },
+  "coral-beach": {
+   "words": "Coral Beach",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach",
+   "total": 40,
+   "read": "2026-11-09T05:29:47.325167Z",
+   "pins_returned": 40,
+   "asking": {
+    "median": 94950.0,
+    "p25": 88000.0,
+    "p75": 114975.0,
+    "n": 40
+   },
+   "beds": {
+    "0": 8,
+    "1": 32
+   },
+   "streets": [
+    [
+     "1105 S Ocean Blvd | Myrtle Beach",
+     39
+    ],
+    [
+     "other addresses, one listing each",
+     1
+    ]
+   ],
+   "sqft_median": 581.0,
+   "fee_zero_or_blank": 0,
+   "with_fee": 40,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1345,
+     "band": [
+      1340,
+      1345
+     ]
+    },
+    "p25": {
+     "at_or_below": 1330,
+     "band": [
+      1325,
+      1330
+     ]
+    },
+    "p75": {
+     "at_or_below": 1485,
+     "band": [
+      1480,
+      1485
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 32,
+    "pets_allowed": 0,
+    "indoor_pool": 35,
+    "oceanfront_building": 38
+   }
+  },
+  "bay-view": {
+   "words": "Bay View Resort",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort",
+   "total": 10,
+   "read": "2026-11-09T05:31:15.079031Z",
+   "pins_returned": 10,
+   "asking": {
+    "median": 154900.0,
+    "p25": 137499.75,
+    "p75": 363125.0,
+    "n": 10
+   },
+   "beds": {
+    "1": 7,
+    "2": 2,
+    "3": 1
+   },
+   "streets": [
+    [
+     "504 N Ocean Blvd | Myrtle Beach",
+     10
+    ]
+   ],
+   "sqft_median": 693.0,
+   "fee_zero_or_blank": 0,
+   "with_fee": 10,
+   "quartiles": {
+    "median": {
+     "at_or_below": 780,
+     "band": [
+      775,
+      780
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 10,
+    "pets_allowed": 0,
+    "indoor_pool": 8,
+    "oceanfront_building": 10
+   }
+  },
+  "breakers": {
+   "words": "Breakers Resort",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort",
+   "total": 4,
+   "read": "2026-11-09T05:31:58.093783Z",
+   "pins_returned": 4,
+   "asking": {
+    "median": 384900.0,
+    "p25": 249600.0,
+    "p75": 519900.0,
+    "n": 4
+   },
+   "beds": {
+    "1": 2,
+    "3": 2
+   },
+   "streets": [
+    [
+     "2006 N Ocean Blvd | Myrtle Beach",
+     3
+    ],
+    [
+     "other addresses, one listing each",
+     1
+    ]
+   ],
+   "sqft_median": 857.5,
+   "fee_zero_or_blank": 0,
+   "with_fee": 4,
+   "quartiles": {
+    "median": {
+     "at_or_below": 885,
+     "band": [
+      880,
+      885
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 3,
+    "pets_allowed": 0,
+    "indoor_pool": 4,
+    "oceanfront_building": 4
+   }
+  },
+  "camelot": {
+   "words": "Camelot",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot",
+   "total": 9,
+   "read": "2026-11-09T05:32:42.893390Z",
+   "pins_returned": 9,
+   "asking": {
+    "median": 229000,
+    "p25": 210000.0,
+    "p75": 406500.0,
+    "n": 9
+   },
+   "beds": {
+    "0": 2,
+    "1": 4,
+    "2": 1,
+    "3": 2
+   },
+   "streets": [
+    [
+     "2000 N Ocean Blvd | Myrtle Beach",
+     9
+    ]
+   ],
+   "sqft_median": 554,
+   "fee_zero_or_blank": 0,
+   "with_fee": 9,
+   "quartiles": {
+    "median": {
+     "at_or_below": 625,
+     "band": [
+      620,
+      625
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 7,
+    "pets_allowed": 1,
+    "indoor_pool": 8,
+    "oceanfront_building": 8
+   }
+  },
+  "caribbean": {
+   "words": "Caribbean",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean",
+   "total": 26,
+   "read": "2026-11-09T05:33:27.537771Z",
+   "pins_returned": 26,
+   "asking": {
+    "median": 347002.0,
+    "p25": 219150.0,
+    "p75": 471175.0,
+    "n": 26
+   },
+   "beds": {
+    "1": 12,
+    "2": 5,
+    "3": 8,
+    "4": 1
+   },
+   "streets": [
+    [
+     "3000 N Ocean Blvd | Myrtle Beach",
+     25
+    ],
+    [
+     "other addresses, one listing each",
+     1
+    ]
+   ],
+   "sqft_median": 975.0,
+   "fee_zero_or_blank": 0,
+   "with_fee": 26,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1395,
+     "band": [
+      1390,
+      1395
+     ]
+    },
+    "p25": {
+     "at_or_below": 765,
+     "band": [
+      760,
+      765
+     ]
+    },
+    "p75": {
+     "at_or_below": 1910,
+     "band": [
+      1905,
+      1910
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 24,
+    "pets_allowed": 15,
+    "indoor_pool": 26,
+    "oceanfront_building": 26
+   }
+  },
+  "anderson-ocean-club": {
+   "words": "Anderson Ocean",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean",
+   "total": 5,
+   "read": "2026-11-09T05:34:52.431746Z",
+   "pins_returned": 5,
+   "asking": {
+    "median": 315000,
+    "p25": 276500.0,
+    "p75": 384400.0,
+    "n": 5
+   },
+   "beds": {
+    "1": 3,
+    "2": 2
+   },
+   "streets": [
+    [
+     "2600 N Ocean Blvd | Myrtle Beach",
+     5
+    ]
+   ],
+   "sqft_median": 675,
+   "fee_zero_or_blank": 0,
+   "with_fee": 5,
+   "quartiles": {
+    "median": {
+     "at_or_below": 570,
+     "band": [
+      565,
+      570
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 4,
+    "pets_allowed": 0,
+    "indoor_pool": 5,
+    "oceanfront_building": 5
+   }
+  },
+  "dunes-village": {
+   "words": "Dunes Village",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village",
+   "total": 25,
+   "read": "2026-11-09T05:35:34.979455Z",
+   "pins_returned": 25,
+   "asking": {
+    "median": 389900,
+    "p25": 258945.0,
+    "p75": 479000.0,
+    "n": 25
+   },
+   "beds": {
+    "0": 4,
+    "1": 5,
+    "2": 10,
+    "3": 5,
+    "4": 1
+   },
+   "streets": [
+    [
+     "5300 N Ocean Blvd | Myrtle Beach",
+     15
+    ],
+    [
+     "5200 N Ocean Blvd | Myrtle Beach",
+     10
+    ]
+   ],
+   "sqft_median": 1064,
+   "fee_zero_or_blank": 0,
+   "with_fee": 25,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1690,
+     "band": [
+      1685,
+      1690
+     ]
+    },
+    "p25": {
+     "at_or_below": 1085,
+     "band": [
+      1080,
+      1085
+     ]
+    },
+    "p75": {
+     "at_or_below": 1955,
+     "band": [
+      1950,
+      1955
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 20,
+    "pets_allowed": 11,
+    "indoor_pool": 25,
+    "oceanfront_building": 25
+   }
+  },
+  "sand-dunes": {
+   "words": "Sand Dunes",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes",
+   "total": 51,
+   "read": "2026-11-09T05:37:01.440855Z",
+   "pins_returned": 51,
+   "asking": {
+    "median": 265000,
+    "p25": 129900.0,
+    "p75": 306500.0,
+    "n": 51
+   },
+   "beds": {
+    "0": 16,
+    "1": 8,
+    "2": 7,
+    "3": 20
+   },
+   "streets": [
+    [
+     "201 74th Ave N | Myrtle Beach",
+     26
+    ],
+    [
+     "205 74th Ave N | Myrtle Beach",
+     15
+    ],
+    [
+     "201 N 74th Ave N | Myrtle Beach",
+     4
+    ],
+    [
+     "208 74th Ave N | Myrtle Beach",
+     2
+    ],
+    [
+     "other addresses, one listing each",
+     4
+    ]
+   ],
+   "sqft_median": 1050,
+   "fee_zero_or_blank": 0,
+   "with_fee": 51,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1245,
+     "band": [
+      1240,
+      1245
+     ]
+    },
+    "p25": {
+     "at_or_below": 865,
+     "band": [
+      860,
+      865
+     ]
+    },
+    "p75": {
+     "at_or_below": 1600,
+     "band": [
+      1595,
+      1600
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 37,
+    "pets_allowed": 10,
+    "indoor_pool": 45,
+    "oceanfront_building": 34
+   }
+  },
+  "caravelle": {
+   "words": "Caravelle",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle",
+   "total": 45,
+   "read": "2026-11-09T05:38:34.465322Z",
+   "pins_returned": 45,
+   "asking": {
+    "median": 144000,
+    "p25": 129700.0,
+    "p75": 157400.0,
+    "n": 45
+   },
+   "beds": {
+    "0": 14,
+    "1": 31
+   },
+   "streets": [
+    [
+     "6900 N Ocean Blvd | Myrtle Beach",
+     39
+    ],
+    [
+     "7000 N Ocean Blvd | Myrtle Beach",
+     6
+    ]
+   ],
+   "sqft_median": 519,
+   "fee_zero_or_blank": 0,
+   "with_fee": 45,
+   "quartiles": {
+    "median": {
+     "at_or_below": 750,
+     "band": [
+      745,
+      750
+     ]
+    },
+    "p25": {
+     "at_or_below": 695,
+     "band": [
+      690,
+      695
+     ]
+    },
+    "p75": {
+     "at_or_below": 875,
+     "band": [
+      870,
+      875
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 38,
+    "pets_allowed": 5,
+    "indoor_pool": 42,
+    "oceanfront_building": 39
+   }
+  },
+  "island-vista": {
+   "words": "Island Vista",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Island+Vista",
+   "total": 0,
+   "read": "2026-11-09T05:40:04.792148Z"
+  },
+  "grande-cayman": {
+   "words": "Grande Cayman",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman",
+   "total": 21,
+   "read": "2026-11-09T05:40:07.396520Z",
+   "pins_returned": 21,
+   "asking": {
+    "median": 159900,
+    "p25": 114500.0,
+    "p75": 181400.0,
+    "n": 21
+   },
+   "beds": {
+    "0": 9,
+    "1": 8,
+    "2": 1,
+    "3": 3
+   },
+   "streets": [
+    [
+     "7200 N Ocean Blvd | Myrtle Beach",
+     21
+    ]
+   ],
+   "sqft_median": 529,
+   "fee_zero_or_blank": 0,
+   "with_fee": 21,
+   "quartiles": {
+    "median": {
+     "at_or_below": 750,
+     "band": [
+      745,
+      750
+     ]
+    },
+    "p25": {
+     "at_or_below": 645,
+     "band": [
+      640,
+      645
+     ]
+    },
+    "p75": {
+     "at_or_below": 770,
+     "band": [
+      765,
+      770
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 19,
+    "pets_allowed": 6,
+    "indoor_pool": 19,
+    "oceanfront_building": 18
+   }
+  },
+  "ocean-reef": {
+   "words": "Ocean Reef",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef",
+   "total": 32,
+   "read": "2026-11-09T05:41:35.471025Z",
+   "pins_returned": 32,
+   "asking": {
+    "median": 165000.0,
+    "p25": 146150.0,
+    "p75": 304375.0,
+    "n": 32
+   },
+   "beds": {
+    "0": 17,
+    "1": 5,
+    "2": 3,
+    "3": 5,
+    "4": 2
+   },
+   "streets": [
+    [
+     "7100 N Ocean Blvd | Myrtle Beach",
+     32
+    ]
+   ],
+   "sqft_median": 440.0,
+   "fee_zero_or_blank": 0,
+   "with_fee": 32,
+   "quartiles": {
+    "median": {
+     "at_or_below": 940,
+     "band": [
+      935,
+      940
+     ]
+    },
+    "p25": {
+     "at_or_below": 940,
+     "band": [
+      935,
+      940
+     ]
+    },
+    "p75": {
+     "at_or_below": 1740,
+     "band": [
+      1735,
+      1740
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 30,
+    "pets_allowed": 14,
+    "indoor_pool": 27,
+    "oceanfront_building": 31
+   }
+  },
+  "seawatch": {
+   "words": "SeaWatch",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch",
+   "total": 5,
+   "read": "2026-11-09T05:43:05.971604Z",
+   "pins_returned": 5,
+   "asking": {
+    "median": 264000,
+    "p25": 228450.0,
+    "p75": 384000.0,
+    "n": 5
+   },
+   "beds": {
+    "0": 1,
+    "1": 2,
+    "2": 2
+   },
+   "streets": [
+    [
+     "161 Seawatch Dr | Myrtle Beach",
+     3
+    ],
+    [
+     "other addresses, one listing each",
+     2
+    ]
+   ],
+   "sqft_median": 513,
+   "fee_zero_or_blank": 0,
+   "with_fee": 5,
+   "quartiles": {
+    "median": {
+     "at_or_below": 780,
+     "band": [
+      775,
+      780
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 5,
+    "pets_allowed": 3,
+    "indoor_pool": 4,
+    "oceanfront_building": 5
+   }
+  },
+  "margate": {
+   "words": "Margate",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate",
+   "total": 8,
+   "read": "2026-11-09T05:43:50.349051Z",
+   "pins_returned": 8,
+   "asking": {
+    "median": 984500.0,
+    "p25": 743650.0,
+    "p75": 1307500.0,
+    "n": 8
+   },
+   "beds": {
+    "3": 5,
+    "4": 3
+   },
+   "streets": [
+    [
+     "8500 Margate Circle | Myrtle Beach",
+     8
+    ]
+   ],
+   "sqft_median": 2426.0,
+   "fee_zero_or_blank": 0,
+   "with_fee": 8,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1820,
+     "band": [
+      1815,
+      1820
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 8,
+    "indoor_pool": 2,
+    "oceanfront_building": 8
+   }
+  },
+  "brighton": {
+   "words": "Brighton",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton",
+   "total": 9,
+   "read": "2026-11-09T05:44:35.296596Z",
+   "pins_returned": 9,
+   "asking": {
+    "median": 649000,
+    "p25": 527500.0,
+    "p75": 677000.0,
+    "n": 9
+   },
+   "beds": {
+    "2": 4,
+    "3": 5
+   },
+   "streets": [
+    [
+     "8560 Queensway Blvd | Myrtle Beach",
+     9
+    ]
+   ],
+   "sqft_median": 1246,
+   "fee_zero_or_blank": 0,
+   "with_fee": 9,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1075,
+     "band": [
+      1070,
+      1075
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 8,
+    "indoor_pool": 2,
+    "oceanfront_building": 9
+   }
+  },
+  "royale-palms": {
+   "words": "Royale Palms",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms",
+   "total": 14,
+   "read": "2026-11-09T05:45:18.753020Z",
+   "pins_returned": 14,
+   "asking": {
+    "median": 553500.0,
+    "p25": 439900.0,
+    "p75": 671250.0,
+    "n": 14
+   },
+   "beds": {
+    "2": 4,
+    "3": 10
+   },
+   "streets": [
+    [
+     "9994 Beach Club Dr | Myrtle Beach",
+     14
+    ]
+   ],
+   "sqft_median": 1917.5,
+   "fee_zero_or_blank": 0,
+   "with_fee": 14,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1600,
+     "band": [
+      1595,
+      1600
+     ]
+    },
+    "p25": {
+     "at_or_below": 1455,
+     "band": [
+      1450,
+      1455
+     ]
+    },
+    "p75": {
+     "at_or_below": 1825,
+     "band": [
+      1820,
+      1825
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 12,
+    "indoor_pool": 1,
+    "oceanfront_building": 13
+   }
+  },
+  "avista": {
+   "words": "Avista",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista",
+   "total": 10,
+   "read": "2026-11-09T05:46:45.605271Z",
+   "pins_returned": 10,
+   "asking": {
+    "median": 308500.0,
+    "p25": 264375.0,
+    "p75": 587350.0,
+    "n": 10
+   },
+   "beds": {
+    "1": 6,
+    "2": 1,
+    "3": 3
+   },
+   "streets": [
+    [
+     "300 N Ocean Blvd | North Myrtle Beach",
+     10
+    ]
+   ],
+   "sqft_median": 735.0,
+   "fee_zero_or_blank": 0,
+   "with_fee": 10,
+   "quartiles": {
+    "median": {
+     "at_or_below": 840,
+     "band": [
+      835,
+      840
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 7,
+    "pets_allowed": 0,
+    "indoor_pool": 9,
+    "oceanfront_building": 10
+   }
+  },
+  "ocean-drive-beach-golf": {
+   "words": "Ocean Drive Beach",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Drive+Beach",
+   "total": 0,
+   "read": "2026-11-09T05:47:28.256370Z"
+  },
+  "bay-watch": {
+   "words": "Bay Watch",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch",
+   "total": 46,
+   "read": "2026-11-09T05:47:30.904321Z",
+   "pins_returned": 46,
+   "asking": {
+    "median": 239900.0,
+    "p25": 221825.0,
+    "p75": 395500.0,
+    "n": 46
+   },
+   "beds": {
+    "0": 9,
+    "1": 18,
+    "2": 15,
+    "3": 4
+   },
+   "streets": [
+    [
+     "2701 S Ocean Blvd | North Myrtle Beach",
+     25
+    ],
+    [
+     "2801 S Ocean Blvd | North Myrtle Beach",
+     10
+    ],
+    [
+     "2711 S Ocean Blvd | North Myrtle Beach",
+     10
+    ],
+    [
+     "other addresses, one listing each",
+     1
+    ]
+   ],
+   "sqft_median": 677.0,
+   "fee_zero_or_blank": 0,
+   "with_fee": 46,
+   "quartiles": {
+    "median": {
+     "at_or_below": 610,
+     "band": [
+      605,
+      610
+     ]
+    },
+    "p25": {
+     "at_or_below": 610,
+     "band": [
+      605,
+      610
+     ]
+    },
+    "p75": {
+     "at_or_below": 1065,
+     "band": [
+      1060,
+      1065
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 31,
+    "pets_allowed": 28,
+    "indoor_pool": 43,
+    "oceanfront_building": 45
+   }
+  },
+  "beach-cove": {
+   "words": "Beach Cove",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove",
+   "total": 29,
+   "read": "2026-11-09T05:48:56.886757Z",
+   "pins_returned": 29,
+   "asking": {
+    "median": 217900,
+    "p25": 193500.0,
+    "p75": 351500.0,
+    "n": 29
+   },
+   "beds": {
+    "1": 21,
+    "2": 8
+   },
+   "streets": [
+    [
+     "4800 S Ocean Blvd | North Myrtle Beach",
+     28
+    ],
+    [
+     "other addresses, one listing each",
+     1
+    ]
+   ],
+   "sqft_median": 637,
+   "fee_zero_or_blank": 0,
+   "with_fee": 29,
+   "quartiles": {
+    "median": {
+     "at_or_below": 785,
+     "band": [
+      780,
+      785
+     ]
+    },
+    "p25": {
+     "at_or_below": 785,
+     "band": [
+      780,
+      785
+     ]
+    },
+    "p75": {
+     "at_or_below": 1100,
+     "band": [
+      1095,
+      1100
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 21,
+    "pets_allowed": 18,
+    "indoor_pool": 26,
+    "oceanfront_building": 27
+   }
+  },
+  "prince": {
+   "words": "Prince Resort",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort",
+   "total": 7,
+   "read": "2026-11-09T05:50:24.988970Z",
+   "pins_returned": 7,
+   "asking": {
+    "median": 237500,
+    "p25": 215000.0,
+    "p75": 318000.0,
+    "n": 7
+   },
+   "beds": {
+    "1": 5,
+    "2": 2
+   },
+   "streets": [
+    [
+     "3500 N Ocean Blvd | North Myrtle Beach",
+     4
+    ],
+    [
+     "3601 N Ocean Blvd | North Myrtle Beach",
+     3
+    ]
+   ],
+   "sqft_median": 740,
+   "fee_zero_or_blank": 0,
+   "with_fee": 7,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1035,
+     "band": [
+      1030,
+      1035
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 7,
+    "pets_allowed": 0,
+    "indoor_pool": 2,
+    "oceanfront_building": 4
+   }
+  },
+  "towers-on-the-grove": {
+   "words": "Towers On The Grove",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove",
+   "total": 3,
+   "read": "2026-11-09T05:51:05.005030Z",
+   "pins_returned": 3,
+   "asking": {
+    "median": 145000,
+    "p25": null,
+    "p75": null,
+    "n": 3
+   },
+   "beds": {
+    "0": 2,
+    "2": 1
+   },
+   "streets": [
+    [
+     "2100 N Ocean Blvd | North Myrtle Beach",
+     3
+    ]
+   ],
+   "sqft_median": 400,
+   "fee_zero_or_blank": 0,
+   "with_fee": 3,
+   "quartiles": {
+    "median": {
+     "at_or_below": 500,
+     "band": [
+      495,
+      500
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 2,
+    "pets_allowed": 0,
+    "indoor_pool": 1,
+    "oceanfront_building": 3
+   }
+  },
+  "north-beach-towers": {
+   "words": "North Beach Tower",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower",
+   "total": 10,
+   "read": "2026-11-09T05:51:48.828660Z",
+   "pins_returned": 10,
+   "asking": {
+    "median": 774000.0,
+    "p25": 597425.0,
+    "p75": 881725.0,
+    "n": 10
+   },
+   "beds": {
+    "1": 3,
+    "2": 3,
+    "3": 3,
+    "4": 1
+   },
+   "streets": [
+    [
+     "100 N Beach Blvd | North Myrtle Beach",
+     10
+    ]
+   ],
+   "sqft_median": 1352.0,
+   "fee_zero_or_blank": 0,
+   "with_fee": 10,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1295,
+     "band": [
+      1290,
+      1295
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 8,
+    "indoor_pool": 10,
+    "oceanfront_building": 10
+   }
+  },
+  "ocean-creek": {
+   "words": "Ocean Creek",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek",
+   "total": 34,
+   "read": "2026-11-09T05:52:31.200960Z",
+   "pins_returned": 34,
+   "asking": {
+    "median": 223000.0,
+    "p25": 164750.0,
+    "p75": 506225.0,
+    "n": 34
+   },
+   "beds": {
+    "0": 4,
+    "1": 13,
+    "2": 15,
+    "3": 2
+   },
+   "streets": [
+    [
+     "415 Ocean Creek Dr | Myrtle Beach",
+     20
+    ],
+    [
+     "100 Ocean Creek Dr | Myrtle Beach",
+     6
+    ],
+    [
+     "101 Ocean Creek Dr | Myrtle Beach",
+     3
+    ],
+    [
+     "415 Ocean Creek Blvd | Myrtle Beach",
+     2
+    ],
+    [
+     "other addresses, one listing each",
+     3
+    ]
+   ],
+   "sqft_median": 827.0,
+   "fee_zero_or_blank": 0,
+   "with_fee": 34,
+   "quartiles": {
+    "median": {
+     "at_or_below": 790,
+     "band": [
+      785,
+      790
+     ]
+    },
+    "p25": {
+     "at_or_below": 535,
+     "band": [
+      530,
+      535
+     ]
+    },
+    "p75": {
+     "at_or_below": 870,
+     "band": [
+      865,
+      870
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 1,
+    "pets_allowed": 21,
+    "indoor_pool": 22,
+    "oceanfront_building": 9
+   }
+  },
+  "monterey-bay": {
+   "words": "Monterey Bay",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay",
+   "total": 31,
+   "read": "2026-11-09T05:54:02.671971Z",
+   "pins_returned": 31,
+   "asking": {
+    "median": 150000,
+    "p25": 142000.0,
+    "p75": 167900.0,
+    "n": 31
+   },
+   "beds": {
+    "1": 31
+   },
+   "streets": [
+    [
+     "6804 N Ocean Blvd | Myrtle Beach",
+     31
+    ]
+   ],
+   "sqft_median": 536,
+   "fee_zero_or_blank": 0,
+   "with_fee": 31,
+   "quartiles": {
+    "median": {
+     "at_or_below": 940,
+     "band": [
+      935,
+      940
+     ]
+    },
+    "p25": {
+     "at_or_below": 940,
+     "band": [
+      935,
+      940
+     ]
+    },
+    "p75": {
+     "at_or_below": 995,
+     "band": [
+      990,
+      995
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 29,
+    "pets_allowed": 20,
+    "indoor_pool": 29,
+    "oceanfront_building": 30
+   }
+  },
+  "bluewater": {
+   "words": "Bluewater",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater",
+   "total": 37,
+   "read": "2026-11-09T05:55:27.785971Z",
+   "pins_returned": 37,
+   "asking": {
+    "median": 129900,
+    "p25": 117450.0,
+    "p75": 164949.5,
+    "n": 37
+   },
+   "beds": {
+    "0": 1,
+    "1": 28,
+    "2": 8
+   },
+   "streets": [
+    [
+     "2001 S Ocean Blvd | Myrtle Beach",
+     29
+    ],
+    [
+     "2000 S Ocean Blvd | Myrtle Beach",
+     5
+    ],
+    [
+     "1906 S Ocean Blvd | Myrtle Beach",
+     3
+    ]
+   ],
+   "sqft_median": 475,
+   "fee_zero_or_blank": 0,
+   "with_fee": 37,
+   "quartiles": {
+    "median": {
+     "at_or_below": 905,
+     "band": [
+      900,
+      905
+     ]
+    },
+    "p25": {
+     "at_or_below": 905,
+     "band": [
+      900,
+      905
+     ]
+    },
+    "p75": {
+     "at_or_below": 905,
+     "band": [
+      900,
+      905
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 31,
+    "pets_allowed": 25,
+    "indoor_pool": 31,
+    "oceanfront_building": 26
+   }
+  },
+  "palace": {
+   "words": "Palace",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace",
+   "total": 25,
+   "read": "2026-11-09T05:56:54.219711Z",
+   "pins_returned": 25,
+   "asking": {
+    "median": 164000,
+    "p25": 132450.0,
+    "p75": 205500.0,
+    "n": 25
+   },
+   "beds": {
+    "0": 10,
+    "1": 7,
+    "2": 8
+   },
+   "streets": [
+    [
+     "1605 S Ocean Blvd | Myrtle Beach",
+     25
+    ]
+   ],
+   "sqft_median": 539,
+   "fee_zero_or_blank": 0,
+   "with_fee": 25,
+   "quartiles": {
+    "median": {
+     "at_or_below": 685,
+     "band": [
+      680,
+      685
+     ]
+    },
+    "p25": {
+     "at_or_below": 460,
+     "band": [
+      455,
+      460
+     ]
+    },
+    "p75": {
+     "at_or_below": 910,
+     "band": [
+      905,
+      910
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 4,
+    "indoor_pool": 23,
+    "oceanfront_building": 23
+   }
+  },
+  "beach-colony": {
+   "words": "Beach Colony",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony",
+   "total": 21,
+   "read": "2026-11-09T05:58:23.684400Z",
+   "pins_returned": 21,
+   "asking": {
+    "median": 220000,
+    "p25": 202500.0,
+    "p75": 264900.0,
+    "n": 21
+   },
+   "beds": {
+    "0": 2,
+    "1": 11,
+    "2": 8
+   },
+   "streets": [
+    [
+     "5308 N Ocean Blvd | Myrtle Beach",
+     21
+    ]
+   ],
+   "sqft_median": 590,
+   "fee_zero_or_blank": 0,
+   "with_fee": 21,
+   "quartiles": {
+    "median": {
+     "at_or_below": 595,
+     "band": [
+      590,
+      595
+     ]
+    },
+    "p25": {
+     "at_or_below": 590,
+     "band": [
+      585,
+      590
+     ]
+    },
+    "p75": {
+     "at_or_below": 740,
+     "band": [
+      735,
+      740
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 14,
+    "pets_allowed": 19,
+    "indoor_pool": 18,
+    "oceanfront_building": 20
+   }
+  },
+  "meridian-plaza": {
+   "words": "Meridian",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian",
+   "total": 17,
+   "read": "2026-11-09T05:59:48.905357Z",
+   "pins_returned": 17,
+   "asking": {
+    "median": 157900,
+    "p25": 147000.0,
+    "p75": 176700.0,
+    "n": 17
+   },
+   "beds": {
+    "1": 17
+   },
+   "streets": [
+    [
+     "2310 N Ocean Blvd | Myrtle Beach",
+     17
+    ]
+   ],
+   "sqft_median": 560,
+   "fee_zero_or_blank": 0,
+   "with_fee": 17,
+   "quartiles": {
+    "median": {
+     "at_or_below": 850,
+     "band": [
+      845,
+      850
+     ]
+    },
+    "p25": {
+     "at_or_below": 850,
+     "band": [
+      845,
+      850
+     ]
+    },
+    "p75": {
+     "at_or_below": 850,
+     "band": [
+      845,
+      850
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 8,
+    "indoor_pool": 17,
+    "oceanfront_building": 15
+   }
+  },
+  "holiday-sands": {
+   "words": "Holiday Sands",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands",
+   "total": 15,
+   "read": "2026-11-09T06:01:14.657971Z",
+   "pins_returned": 15,
+   "asking": {
+    "median": 219000,
+    "p25": 185000.0,
+    "p75": 309900.0,
+    "n": 15
+   },
+   "beds": {
+    "1": 8,
+    "2": 7
+   },
+   "streets": [
+    [
+     "2501 S Ocean Blvd | Myrtle Beach",
+     14
+    ],
+    [
+     "other addresses, one listing each",
+     1
+    ]
+   ],
+   "sqft_median": 711,
+   "fee_zero_or_blank": 0,
+   "with_fee": 15,
+   "quartiles": {
+    "median": {
+     "at_or_below": 980,
+     "band": [
+      975,
+      980
+     ]
+    },
+    "p25": {
+     "at_or_below": 900,
+     "band": [
+      895,
+      900
+     ]
+    },
+    "p75": {
+     "at_or_below": 1345,
+     "band": [
+      1340,
+      1345
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 12,
+    "pets_allowed": 2,
+    "indoor_pool": 13,
+    "oceanfront_building": 13
+   }
+  },
+  "sandy-beach": {
+   "words": "Sandy Beach",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach",
+   "total": 11,
+   "read": "2026-11-09T06:02:45.610316Z",
+   "pins_returned": 11,
+   "asking": {
+    "median": 214900,
+    "p25": 199900.0,
+    "p75": 224900.0,
+    "n": 11
+   },
+   "beds": {
+    "1": 9,
+    "2": 2
+   },
+   "streets": [
+    [
+     "201 S Ocean Blvd | Myrtle Beach",
+     10
+    ],
+    [
+     "other addresses, one listing each",
+     1
+    ]
+   ],
+   "sqft_median": 600,
+   "fee_zero_or_blank": 0,
+   "with_fee": 11,
+   "quartiles": {
+    "median": {
+     "at_or_below": 950,
+     "band": [
+      945,
+      950
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 9,
+    "pets_allowed": 0,
+    "indoor_pool": 9,
+    "oceanfront_building": 9
+   }
+  },
+  "carolina-winds": {
+   "words": "Carolina Winds",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds",
+   "total": 13,
+   "read": "2026-11-09T06:03:29.489363Z",
+   "pins_returned": 13,
+   "asking": {
+    "median": 159900,
+    "p25": 149900.0,
+    "p75": 172200.0,
+    "n": 13
+   },
+   "beds": {
+    "1": 12,
+    "2": 1
+   },
+   "streets": [
+    [
+     "200 76th Ave N | Myrtle Beach",
+     12
+    ],
+    [
+     "other addresses, one listing each",
+     1
+    ]
+   ],
+   "sqft_median": 576,
+   "fee_zero_or_blank": 0,
+   "with_fee": 13,
+   "quartiles": {
+    "median": {
+     "at_or_below": 855,
+     "band": [
+      850,
+      855
+     ]
+    },
+    "p25": {
+     "at_or_below": 855,
+     "band": [
+      850,
+      855
+     ]
+    },
+    "p75": {
+     "at_or_below": 855,
+     "band": [
+      850,
+      855
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 7,
+    "indoor_pool": 13,
+    "oceanfront_building": 13
+   }
+  },
+  "maisons-sur-mer": {
+   "words": "Maisons Sur",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur",
+   "total": 14,
+   "read": "2026-11-09T06:04:56.719346Z",
+   "pins_returned": 14,
+   "asking": {
+    "median": 567450.0,
+    "p25": 496725.0,
+    "p75": 762175.0,
+    "n": 14
+   },
+   "beds": {
+    "2": 14
+   },
+   "streets": [
+    [
+     "9650 Shore Dr | Myrtle Beach",
+     14
+    ]
+   ],
+   "sqft_median": 1420.0,
+   "fee_zero_or_blank": 0,
+   "with_fee": 14,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1015,
+     "band": [
+      1010,
+      1015
+     ]
+    },
+    "p25": {
+     "at_or_below": 1015,
+     "band": [
+      1010,
+      1015
+     ]
+    },
+    "p75": {
+     "at_or_below": 1460,
+     "band": [
+      1455,
+      1460
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 12,
+    "indoor_pool": 1,
+    "oceanfront_building": 13
+   }
+  },
+  "sands-ocean": {
+   "words": "Sands Ocean",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean",
+   "total": 16,
+   "read": "2026-11-09T06:06:23.541975Z",
+   "pins_returned": 16,
+   "asking": {
+    "median": 179250.0,
+    "p25": 160650.0,
+    "p75": 199756.0,
+    "n": 16
+   },
+   "beds": {
+    "0": 11,
+    "1": 2,
+    "2": 3
+   },
+   "streets": [
+    [
+     "9550 Shore Dr | Myrtle Beach",
+     16
+    ]
+   ],
+   "sqft_median": 388.5,
+   "fee_zero_or_blank": 0,
+   "with_fee": 16,
+   "quartiles": {
+    "median": {
+     "at_or_below": 425,
+     "band": [
+      420,
+      425
+     ]
+    },
+    "p25": {
+     "at_or_below": 425,
+     "band": [
+      420,
+      425
+     ]
+    },
+    "p75": {
+     "at_or_below": 635,
+     "band": [
+      630,
+      635
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 13,
+    "pets_allowed": 0,
+    "indoor_pool": 15,
+    "oceanfront_building": 11
+   }
+  },
+  "ocean-forest-plaza": {
+   "words": "Ocean Forest Pl",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl",
+   "total": 14,
+   "read": "2026-11-09T06:07:50.943061Z",
+   "pins_returned": 14,
+   "asking": {
+    "median": 216450.0,
+    "p25": 204431.25,
+    "p75": 268674.75,
+    "n": 14
+   },
+   "beds": {
+    "1": 11,
+    "2": 3
+   },
+   "streets": [
+    [
+     "5523 N Ocean Blvd | Myrtle Beach",
+     14
+    ]
+   ],
+   "sqft_median": 609.0,
+   "fee_zero_or_blank": 0,
+   "with_fee": 14,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1015,
+     "band": [
+      1010,
+      1015
+     ]
+    },
+    "p25": {
+     "at_or_below": 1015,
+     "band": [
+      1010,
+      1015
+     ]
+    },
+    "p75": {
+     "at_or_below": 1015,
+     "band": [
+      1010,
+      1015
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 12,
+    "pets_allowed": 14,
+    "indoor_pool": 14,
+    "oceanfront_building": 11
+   }
+  },
+  "south-hampton": {
+   "words": "South Hampton",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton",
+   "total": 13,
+   "read": "2026-11-09T06:09:16.737473Z",
+   "pins_returned": 13,
+   "asking": {
+    "median": 459900,
+    "p25": 434950.0,
+    "p75": 531000.0,
+    "n": 13
+   },
+   "beds": {
+    "2": 5,
+    "3": 8
+   },
+   "streets": [
+    [
+     "9820 Queensway Blvd | Myrtle Beach",
+     13
+    ]
+   ],
+   "sqft_median": 1514,
+   "fee_zero_or_blank": 0,
+   "with_fee": 13,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1305,
+     "band": [
+      1300,
+      1305
+     ]
+    },
+    "p25": {
+     "at_or_below": 1090,
+     "band": [
+      1085,
+      1090
+     ]
+    },
+    "p75": {
+     "at_or_below": 1305,
+     "band": [
+      1300,
+      1305
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 9,
+    "indoor_pool": 2,
+    "oceanfront_building": 12
+   }
+  },
+  "crescent-shores": {
+   "words": "Crescent Shores",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores",
+   "total": 14,
+   "read": "2026-11-09T06:10:43.836079Z",
+   "pins_returned": 14,
+   "asking": {
+    "median": 527450.0,
+    "p25": 294900.0,
+    "p75": 659925.0,
+    "n": 14
+   },
+   "beds": {
+    "2": 3,
+    "3": 5,
+    "4": 6
+   },
+   "streets": [
+    [
+     "1625 S Ocean Blvd | North Myrtle Beach",
+     12
+    ],
+    [
+     "other addresses, one listing each",
+     2
+    ]
+   ],
+   "sqft_median": 1653.0,
+   "fee_zero_or_blank": 0,
+   "with_fee": 14,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1070,
+     "band": [
+      1065,
+      1070
+     ]
+    },
+    "p25": {
+     "at_or_below": 450,
+     "band": [
+      445,
+      450
+     ]
+    },
+    "p75": {
+     "at_or_below": 1380,
+     "band": [
+      1375,
+      1380
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 8,
+    "indoor_pool": 10,
+    "oceanfront_building": 10
+   }
+  },
+  "holiday-pavilion": {
+   "words": "Pavilion",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion",
+   "total": 15,
+   "read": "2026-11-09T06:12:16.050769Z",
+   "pins_returned": 15,
+   "asking": {
+    "median": 155000,
+    "p25": 149000.0,
+    "p75": 219500.0,
+    "n": 15
+   },
+   "beds": {
+    "0": 6,
+    "1": 5,
+    "3": 4
+   },
+   "streets": [
+    [
+     "1200 N Ocean Blvd | Myrtle Beach",
+     11
+    ],
+    [
+     "other addresses, one listing each",
+     4
+    ]
+   ],
+   "sqft_median": 528,
+   "fee_zero_or_blank": 0,
+   "with_fee": 15,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1055,
+     "band": [
+      1050,
+      1055
+     ]
+    },
+    "p25": {
+     "at_or_below": 580,
+     "band": [
+      575,
+      580
+     ]
+    },
+    "p75": {
+     "at_or_below": 1330,
+     "band": [
+      1325,
+      1330
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 9,
+    "pets_allowed": 4,
+    "indoor_pool": 9,
+    "oceanfront_building": 9
+   }
+  },
+  "boardwalk": {
+   "words": "Boardwalk Oceanfront",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront",
+   "total": 12,
+   "read": "2026-11-09T06:13:45.936061Z",
+   "pins_returned": 12,
+   "asking": {
+    "median": 166500.0,
+    "p25": 156125.0,
+    "p75": 179000.0,
+    "n": 12
+   },
+   "beds": {
+    "1": 11,
+    "2": 1
+   },
+   "streets": [
+    [
+     "2300 N Ocean Blvd | Myrtle Beach",
+     10
+    ],
+    [
+     "2301 N Ocean Blvd | Myrtle Beach",
+     2
+    ]
+   ],
+   "sqft_median": 533.0,
+   "fee_zero_or_blank": 0,
+   "with_fee": 12,
+   "quartiles": {
+    "median": {
+     "at_or_below": 975,
+     "band": [
+      970,
+      975
+     ]
+    },
+    "p25": {
+     "at_or_below": 975,
+     "band": [
+      970,
+      975
+     ]
+    },
+    "p75": {
+     "at_or_below": 995,
+     "band": [
+      990,
+      995
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 8,
+    "pets_allowed": 0,
+    "indoor_pool": 10,
+    "oceanfront_building": 10
+   }
+  },
+  "carolinian": {
+   "words": "Carolinian",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian",
+   "total": 11,
+   "read": "2026-11-09T06:15:13.799459Z",
+   "pins_returned": 11,
+   "asking": {
+    "median": 214000,
+    "p25": 200000.0,
+    "p75": 339000.0,
+    "n": 11
+   },
+   "beds": {
+    "1": 8,
+    "2": 3
+   },
+   "streets": [
+    [
+     "2504 N Ocean Blvd | Myrtle Beach",
+     11
+    ]
+   ],
+   "sqft_median": 783,
+   "fee_zero_or_blank": 0,
+   "with_fee": 11,
+   "quartiles": {
+    "median": {
+     "at_or_below": 730,
+     "band": [
+      725,
+      730
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 8,
+    "pets_allowed": 3,
+    "indoor_pool": 6,
+    "oceanfront_building": 10
+   }
+  },
+  "oceans-one": {
+   "words": "Oceans One",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One",
+   "total": 11,
+   "read": "2026-11-09T06:15:57.854920Z",
+   "pins_returned": 11,
+   "asking": {
+    "median": 229000,
+    "p25": 219000.0,
+    "p75": 409900.0,
+    "n": 11
+   },
+   "beds": {
+    "1": 6,
+    "2": 5
+   },
+   "streets": [
+    [
+     "107 S Ocean Blvd | Myrtle Beach",
+     11
+    ]
+   ],
+   "sqft_median": 627,
+   "fee_zero_or_blank": 0,
+   "with_fee": 11,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1105,
+     "band": [
+      1100,
+      1105
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 10,
+    "pets_allowed": 5,
+    "indoor_pool": 10,
+    "oceanfront_building": 11
+   }
+  },
+  "patricia-grand": {
+   "words": "Patricia Grand",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand",
+   "total": 9,
+   "read": "2026-11-09T06:16:39.793157Z",
+   "pins_returned": 9,
+   "asking": {
+    "median": 203500,
+    "p25": 187249.5,
+    "p75": 217000.0,
+    "n": 9
+   },
+   "beds": {
+    "0": 3,
+    "1": 6
+   },
+   "streets": [
+    [
+     "2710 N Ocean Blvd | Myrtle Beach",
+     8
+    ],
+    [
+     "other addresses, one listing each",
+     1
+    ]
+   ],
+   "sqft_median": 540,
+   "fee_zero_or_blank": 0,
+   "with_fee": 9,
+   "quartiles": {
+    "median": {
+     "at_or_below": 980,
+     "band": [
+      975,
+      980
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 7,
+    "pets_allowed": 8,
+    "indoor_pool": 7,
+    "oceanfront_building": 8
+   }
+  },
+  "mar-vista-grande": {
+   "words": "Mar Vista",
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista",
+   "total": 6,
+   "read": "2026-11-09T06:17:22.578630Z",
+   "pins_returned": 6,
+   "asking": {
+    "median": 835000.0,
+    "p25": 769475.0,
+    "p75": 949675.0,
+    "n": 6
+   },
+   "beds": {
+    "3": 6
+   },
+   "streets": [
+    [
+     "603 S Ocean Blvd | North Myrtle Beach",
+     6
+    ]
+   ],
+   "sqft_median": 1480.0,
+   "fee_zero_or_blank": 0,
+   "with_fee": 6,
+   "quartiles": {
+    "median": {
+     "at_or_below": 1335,
+     "band": [
+      1330,
+      1335
+     ]
+    }
+   },
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 6,
+    "indoor_pool": 6,
+    "oceanfront_building": 6
+   }
+  }
+ },
+ "pulled": "2026-11-09T05:26:50.490614Z",
+ "calls": [
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=625",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=560",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=590",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=605",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=615",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=610",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=305",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=455",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=530",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=570",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=590",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=600",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=605",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=2300",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=1450",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=1025",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=815",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=710",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=655",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=630",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=615",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=620",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&hoaMax=625",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=935",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=965",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=950",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=955",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=960",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=480",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=720",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=840",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=780",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=810",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=795",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=800",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=805",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=2475",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=1715",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=1335",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=1145",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=1050",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=975",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=965",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&hoaMax=960",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1375",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1310",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1340",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1355",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1345",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=670",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1005",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1175",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1260",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1300",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1320",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1330",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1325",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=2670",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=2005",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1670",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1505",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1420",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1460",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1480",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1490",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&hoaMax=1485",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&hoaMax=810",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&hoaMax=780",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&hoaMax=765",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&hoaMax=770",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&hoaMax=775",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&hoaMax=935",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&hoaMax=905",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&hoaMax=890",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&hoaMax=880",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&hoaMax=885",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&hoaMax=625",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&hoaMax=560",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&hoaMax=590",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&hoaMax=605",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&hoaMax=615",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&hoaMax=620",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1375",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1435",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1405",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1390",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1395",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=695",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1045",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=870",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=780",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=735",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=755",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=765",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=760",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=2695",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=2040",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1715",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1955",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1915",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1895",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1905",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&hoaMax=1910",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&hoaMax=625",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&hoaMax=560",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&hoaMax=590",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&hoaMax=575",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&hoaMax=565",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&hoaMax=570",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1625",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1685",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1715",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1700",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1690",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=845",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1265",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1055",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1160",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1105",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1080",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1090",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1085",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=2840",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=2260",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1970",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1825",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1895",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1930",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1950",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1960",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&hoaMax=1955",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1125",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1185",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1215",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1230",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1240",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1245",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=620",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=930",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=775",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=850",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=890",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=870",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=860",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=865",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=2620",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1930",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1585",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1755",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1670",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1625",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1605",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1595",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&hoaMax=1600",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=625",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=685",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=715",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=730",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=740",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=745",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=375",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=560",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=655",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=700",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=675",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=685",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=690",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=695",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=2370",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=1555",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=1150",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=945",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=845",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=895",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=870",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=880",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Island+Vista",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=625",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=685",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=715",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=730",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=740",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=745",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=375",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=560",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=655",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=605",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=630",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=640",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=645",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=2370",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=1555",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=1150",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=945",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=845",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=795",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=770",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=755",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=760",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&hoaMax=765",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=935",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=965",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=950",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=940",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=470",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=705",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=820",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=880",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=910",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=925",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=930",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=935",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=2465",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=1700",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=2080",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=1890",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=1795",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=1745",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=1720",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=1730",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=1735",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&hoaMax=1740",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&hoaMax=810",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&hoaMax=780",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&hoaMax=765",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&hoaMax=770",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&hoaMax=775",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&hoaMax=1750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&hoaMax=1875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&hoaMax=1810",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&hoaMax=1840",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&hoaMax=1825",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&hoaMax=1815",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&hoaMax=1820",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&hoaMax=1250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&hoaMax=1125",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&hoaMax=1060",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&hoaMax=1090",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&hoaMax=1075",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&hoaMax=1065",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&hoaMax=1070",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1625",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1560",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1590",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1605",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1595",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1600",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=800",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1200",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1400",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1450",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1475",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1460",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1455",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=2795",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=2195",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1895",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1745",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1820",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1855",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1835",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&hoaMax=1825",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&hoaMax=810",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&hoaMax=840",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&hoaMax=825",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&hoaMax=830",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&hoaMax=835",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Drive+Beach",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=625",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=560",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=590",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=605",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=615",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=610",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=305",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=455",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=530",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=570",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=590",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=600",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=605",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=2300",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=1450",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=1025",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=1235",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=1130",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=1075",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=1050",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=1060",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&hoaMax=1065",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=810",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=780",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=795",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=785",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=390",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=585",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=685",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=735",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=760",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=770",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=775",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=780",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=2390",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=1585",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=1180",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=980",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=1080",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=1130",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=1105",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=1090",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=1095",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&hoaMax=1100",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort&hoaMax=1250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort&hoaMax=1125",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort&hoaMax=1060",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort&hoaMax=1030",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort&hoaMax=1045",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort&hoaMax=1035",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&hoaMax=250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&hoaMax=375",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&hoaMax=435",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&hoaMax=465",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&hoaMax=480",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&hoaMax=490",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&hoaMax=495",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&hoaMax=1250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&hoaMax=1375",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&hoaMax=1310",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&hoaMax=1280",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&hoaMax=1295",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&hoaMax=1285",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&hoaMax=1290",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=810",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=780",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=795",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=785",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=790",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=395",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=590",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=490",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=540",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=515",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=525",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=530",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=535",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=2390",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=1585",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=1185",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=985",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=885",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=835",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=860",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=870",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&hoaMax=865",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=935",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=965",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=950",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=940",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=470",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=705",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=820",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=880",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=910",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=925",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=930",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=935",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=2465",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=1700",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=1315",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=1125",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=1030",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=980",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=1005",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=990",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&hoaMax=995",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=935",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=905",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=890",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=895",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=900",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=450",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=675",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=790",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=845",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=890",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=895",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=900",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=2450",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=1675",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=1285",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=1090",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=995",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=945",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=920",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=910",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&hoaMax=905",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=625",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=685",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=655",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=670",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=675",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=680",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=340",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=510",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=425",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=465",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=445",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=455",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=460",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=2340",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=1510",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=1095",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=885",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=990",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=935",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=910",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=895",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=900",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&hoaMax=905",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=625",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=560",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=590",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=605",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=595",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=295",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=445",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=520",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=555",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=575",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=585",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=590",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=2295",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=1440",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=1015",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=800",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=695",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=745",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=720",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=730",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=735",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&hoaMax=740",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=810",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=840",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=855",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=845",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=850",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=425",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=635",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=740",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=795",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=820",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=835",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=840",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=845",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=2420",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=1630",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=1235",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=1040",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=940",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=890",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=865",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=855",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&hoaMax=850",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=935",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=965",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=980",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=970",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=975",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=490",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=735",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=855",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=915",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=885",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=900",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=890",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=895",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=2485",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=1730",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=1350",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=1160",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=1255",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=1300",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=1325",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=1335",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=1340",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&hoaMax=1345",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&hoaMax=935",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&hoaMax=965",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&hoaMax=950",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&hoaMax=940",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&hoaMax=945",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=810",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=840",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=855",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=845",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=850",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=425",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=640",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=745",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=800",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=825",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=840",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=845",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=850",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=2425",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=1635",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=1240",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=1045",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=945",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=895",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=870",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=860",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&hoaMax=855",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1125",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1060",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1030",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1015",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1005",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1010",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=505",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=760",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=885",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=950",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=980",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=995",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1005",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1010",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=2505",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1755",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1380",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1565",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1470",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1425",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1445",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1455",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&hoaMax=1460",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=375",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=435",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=405",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=420",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=425",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=210",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=315",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=370",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=395",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=410",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=415",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=420",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=2210",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=1315",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=865",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=640",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=530",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=585",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=610",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=625",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=630",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&hoaMax=635",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1125",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1060",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1030",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1015",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1005",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1010",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=505",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=760",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=885",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=950",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=980",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=995",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1005",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1010",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=2505",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1755",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1380",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1195",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1100",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1055",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1030",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1020",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&hoaMax=1015",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1375",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1310",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1280",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1295",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1300",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1305",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=650",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=975",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1140",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1055",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1095",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1075",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1085",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1090",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=2650",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1975",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1635",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1465",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1380",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1340",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1320",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1310",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&hoaMax=1305",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1125",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1060",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1090",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1075",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1065",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1070",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=535",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=265",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=400",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=465",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=430",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=445",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=455",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=450",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=2530",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1795",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1430",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1245",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1335",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1380",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1355",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1365",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1370",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&hoaMax=1375",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1125",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1060",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1030",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1045",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1050",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1055",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=525",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=790",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=655",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=590",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=555",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=570",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=580",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=575",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=2525",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1785",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1415",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1230",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1320",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1365",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1340",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1330",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&hoaMax=1325",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=935",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=965",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=980",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=970",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=975",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=485",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=730",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=850",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=910",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=940",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=955",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=965",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=970",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=2485",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=1725",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=1345",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=1155",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=1060",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=1015",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=990",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&hoaMax=995",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&hoaMax=625",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&hoaMax=685",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&hoaMax=715",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&hoaMax=730",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&hoaMax=720",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&hoaMax=725",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&hoaMax=1250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&hoaMax=1125",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&hoaMax=1060",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&hoaMax=1090",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&hoaMax=1105",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&hoaMax=1095",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&hoaMax=1100",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&hoaMax=875",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&hoaMax=935",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&hoaMax=965",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&hoaMax=980",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&hoaMax=970",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&hoaMax=975",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&hoaMax=2000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&hoaMax=1000",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&hoaMax=1500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&hoaMax=1250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&hoaMax=1375",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&hoaMax=1310",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&hoaMax=1340",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&hoaMax=1325",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&hoaMax=1330",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&hoaMax=1335",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&has=oceanfront_building"
+ ]
+}

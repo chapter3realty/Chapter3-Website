@@ -1,0 +1,304 @@
+{
+ "source": "HMDA 2025, Horry County, actions_taken=1, loan_purposes=1",
+ "rows_in_file": 10096,
+ "groups": {
+  "home_consumer": {
+   "n": 4174,
+   "total_loan_costs": {
+    "n": 4157,
+    "p25": 3710.02,
+    "median": 4878.06,
+    "p75": 6810.65
+   },
+   "origination_pct_of_loan": {
+    "n": 4138,
+    "p25": 0.33,
+    "median": 0.84,
+    "p75": 1.67
+   },
+   "discount_points_paid_n": 2455,
+   "discount_points_field_n": 2455,
+   "loan_costs_pct_of_value": {
+    "n": 4113,
+    "p25": 0.88,
+    "median": 1.32,
+    "p75": 2.04
+   },
+   "loan_amount": {
+    "n": 4174,
+    "p25": 185000.0,
+    "median": 265000.0,
+    "p75": 355000.0
+   },
+   "property_value": {
+    "n": 4130,
+    "p25": 295000.0,
+    "median": 365000.0,
+    "p75": 485000.0
+   }
+  },
+  "home_business": {
+   "n": 5,
+   "total_loan_costs": null,
+   "origination_pct_of_loan": null,
+   "discount_points_paid_n": 0,
+   "discount_points_field_n": 0,
+   "loan_costs_pct_of_value": null,
+   "loan_amount": {
+    "n": 5,
+    "p25": 165000.0,
+    "median": 175000.0,
+    "p75": 205000.0
+   },
+   "property_value": {
+    "n": 5,
+    "p25": 235000.0,
+    "median": 295000.0,
+    "p75": 315000.0
+   }
+  },
+  "home_all": {
+   "n": 4179,
+   "total_loan_costs": {
+    "n": 4157,
+    "p25": 3710.02,
+    "median": 4878.06,
+    "p75": 6810.65
+   },
+   "origination_pct_of_loan": {
+    "n": 4138,
+    "p25": 0.33,
+    "median": 0.84,
+    "p75": 1.67
+   },
+   "discount_points_paid_n": 2455,
+   "discount_points_field_n": 2455,
+   "loan_costs_pct_of_value": {
+    "n": 4113,
+    "p25": 0.88,
+    "median": 1.32,
+    "p75": 2.04
+   },
+   "loan_amount": {
+    "n": 4179,
+    "p25": 185000.0,
+    "median": 265000.0,
+    "p75": 355000.0
+   },
+   "property_value": {
+    "n": 4135,
+    "p25": 295000.0,
+    "median": 365000.0,
+    "p75": 485000.0
+   }
+  },
+  "second_home_consumer": {
+   "n": 1310,
+   "total_loan_costs": {
+    "n": 1298,
+    "p25": 4316.81,
+    "median": 5450.3,
+    "p75": 7751.9
+   },
+   "origination_pct_of_loan": {
+    "n": 1296,
+    "p25": 0.55,
+    "median": 1.1,
+    "p75": 2.05
+   },
+   "discount_points_paid_n": 823,
+   "discount_points_field_n": 823,
+   "loan_costs_pct_of_value": {
+    "n": 1294,
+    "p25": 1.1,
+    "median": 1.69,
+    "p75": 2.48
+   },
+   "loan_amount": {
+    "n": 1310,
+    "p25": 175000.0,
+    "median": 245000.0,
+    "p75": 325000.0
+   },
+   "property_value": {
+    "n": 1306,
+    "p25": 255000.0,
+    "median": 345000.0,
+    "p75": 455000.0
+   }
+  },
+  "second_home_business": {
+   "n": 7,
+   "total_loan_costs": null,
+   "origination_pct_of_loan": null,
+   "discount_points_paid_n": 0,
+   "discount_points_field_n": 0,
+   "loan_costs_pct_of_value": null,
+   "loan_amount": {
+    "n": 7,
+    "p25": 180000.0,
+    "median": 865000.0,
+    "p75": 1135000.0
+   },
+   "property_value": {
+    "n": 7,
+    "p25": 230000.0,
+    "median": 1075000.0,
+    "p75": 1380000.0
+   }
+  },
+  "second_home_all": {
+   "n": 1317,
+   "total_loan_costs": {
+    "n": 1298,
+    "p25": 4316.81,
+    "median": 5450.3,
+    "p75": 7751.9
+   },
+   "origination_pct_of_loan": {
+    "n": 1296,
+    "p25": 0.55,
+    "median": 1.1,
+    "p75": 2.05
+   },
+   "discount_points_paid_n": 823,
+   "discount_points_field_n": 823,
+   "loan_costs_pct_of_value": {
+    "n": 1294,
+    "p25": 1.1,
+    "median": 1.69,
+    "p75": 2.48
+   },
+   "loan_amount": {
+    "n": 1317,
+    "p25": 175000.0,
+    "median": 245000.0,
+    "p75": 325000.0
+   },
+   "property_value": {
+    "n": 1313,
+    "p25": 255000.0,
+    "median": 345000.0,
+    "p75": 455000.0
+   }
+  },
+  "investment_consumer": {
+   "n": 306,
+   "total_loan_costs": {
+    "n": 287,
+    "p25": 4823.34,
+    "median": 6371.85,
+    "p75": 8356.12
+   },
+   "origination_pct_of_loan": {
+    "n": 301,
+    "p25": 0.78,
+    "median": 1.59,
+    "p75": 2.47
+   },
+   "discount_points_paid_n": 206,
+   "discount_points_field_n": 206,
+   "loan_costs_pct_of_value": {
+    "n": 287,
+    "p25": 1.56,
+    "median": 2.26,
+    "p75": 3.07
+   },
+   "loan_amount": {
+    "n": 306,
+    "p25": 155000.0,
+    "median": 205000.0,
+    "p75": 285000.0
+   },
+   "property_value": {
+    "n": 306,
+    "p25": 225000.0,
+    "median": 300000.0,
+    "p75": 392500.0
+   }
+  },
+  "investment_business": {
+   "n": 913,
+   "total_loan_costs": null,
+   "origination_pct_of_loan": null,
+   "discount_points_paid_n": 0,
+   "discount_points_field_n": 0,
+   "loan_costs_pct_of_value": null,
+   "loan_amount": {
+    "n": 913,
+    "p25": 155000.0,
+    "median": 205000.0,
+    "p75": 295000.0
+   },
+   "property_value": {
+    "n": 902,
+    "p25": 215000.0,
+    "median": 285000.0,
+    "p75": 415000.0
+   }
+  },
+  "investment_all": {
+   "n": 1219,
+   "total_loan_costs": {
+    "n": 287,
+    "p25": 4823.34,
+    "median": 6371.85,
+    "p75": 8356.12
+   },
+   "origination_pct_of_loan": {
+    "n": 301,
+    "p25": 0.78,
+    "median": 1.59,
+    "p75": 2.47
+   },
+   "discount_points_paid_n": 206,
+   "discount_points_field_n": 206,
+   "loan_costs_pct_of_value": {
+    "n": 287,
+    "p25": 1.56,
+    "median": 2.26,
+    "p75": 3.07
+   },
+   "loan_amount": {
+    "n": 1219,
+    "p25": 155000.0,
+    "median": 205000.0,
+    "p75": 295000.0
+   },
+   "property_value": {
+    "n": 1208,
+    "p25": 225000.0,
+    "median": 285000.0,
+    "p75": 415000.0
+   }
+  }
+ },
+ "investment_all": {
+  "n": 1505,
+  "business_purpose": 966,
+  "by_loan_type": {
+   "1": 1502,
+   "2": 2,
+   "3": 1,
+   "4": 0
+  },
+  "by_units": {
+   "1": 1423,
+   "100-149": 1,
+   "2": 39,
+   "25-49": 3,
+   "3": 11,
+   "4": 6,
+   "5-24": 17,
+   "50-99": 3,
+   ">149": 2
+  },
+  "total_loan_costs_reported": 298,
+  "total_loan_costs_reported_business": 0
+ },
+ "by_occupancy_all_types": {
+  "home": 7209,
+  "second_home": 1382,
+  "investment": 1505
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "pulled": "2026-11-10T11:06:59.586057+00:00",
+ "api": "https://chapter3realty.com/homes/api/map?",
+ "area": {
+  "near": "33.69000,-78.89200",
+  "miles": 25
+ },
+ "segments": {
+  "condo_200_265k": {
+   "params": {
+    "type": "condo",
+    "min": 200000,
+    "max": 265000
+   },
+   "total": 622,
+   "fee_zero_or_blank": 0,
+   "with_fee": 622,
+   "median_fee_at_or_below": 550,
+   "band": [
+    545,
+    550
+   ]
+  },
+  "condo_200_265k_oceanfront_unit_str_allowed": {
+   "params": {
+    "type": "condo",
+    "min": 200000,
+    "max": 265000,
+    "has": "oceanfront_unit,str_allowed"
+   },
+   "total": 97,
+   "fee_zero_or_blank": 0,
+   "with_fee": 97,
+   "median_fee_at_or_below": 765,
+   "band": [
+    760,
+    765
+   ]
+  },
+  "house_330_395k": {
+   "params": {
+    "type": "house",
+    "min": 330000,
+    "max": 395000
+   },
+   "total": 498,
+   "fee_zero_or_blank": 65,
+   "with_fee": 433,
+   "median_fee_at_or_below": 85,
+   "band": [
+    80,
+    85
+   ]
+  }
+ }
+}

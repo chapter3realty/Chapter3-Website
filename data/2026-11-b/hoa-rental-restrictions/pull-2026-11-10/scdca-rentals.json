@@ -1,0 +1,65 @@
+{
+ "source": "SCDCA HOA legislative report workbooks",
+ "by_year": {
+  "scdca-legislative-2023.xlsx": {
+   "complaint_year": 2022,
+   "all": 276,
+   "horry": 0,
+   "horry_all": 70
+  },
+  "scdca-legislative-2024.xlsx": {
+   "complaint_year": 2023,
+   "all": 365,
+   "horry": 0,
+   "horry_all": 89,
+   "rental_all": 2
+  },
+  "scdca-legislative-2025.xlsx": {
+   "complaint_year": 2024,
+   "all": 434,
+   "horry": 0,
+   "horry_all": 117,
+   "rental_all": 3,
+   "rental_horry": 1
+  },
+  "scdca-legislative-2026.xlsx": {
+   "complaint_year": 2025,
+   "all": 452,
+   "horry": 0,
+   "horry_all": 140,
+   "rental_all": 1
+  }
+ },
+ "hits": [
+  {
+   "file": "scdca-legislative-2024.xlsx",
+   "complaint": "C23-04311",
+   "horry": false
+  },
+  {
+   "file": "scdca-legislative-2024.xlsx",
+   "complaint": "C23-05451",
+   "horry": false
+  },
+  {
+   "file": "scdca-legislative-2025.xlsx",
+   "complaint": "C24-01177",
+   "horry": true
+  },
+  {
+   "file": "scdca-legislative-2025.xlsx",
+   "complaint": "C24-03943",
+   "horry": false
+  },
+  {
+   "file": "scdca-legislative-2025.xlsx",
+   "complaint": "C24-04131",
+   "horry": false
+  },
+  {
+   "file": "scdca-legislative-2026.xlsx",
+   "complaint": "C25-00285",
+   "horry": false
+  }
+ ]
+}

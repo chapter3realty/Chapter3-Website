@@ -1,0 +1,308 @@
+{
+ "pulled": "2026-11-10T01:56:50.395153+00:00",
+ "by_type": {
+  "condo_all": {
+   "listings": 2704,
+   "nightly": 1936,
+   "yearly_only": 457,
+   "not_marked": 311,
+   "pct_nightly": 71.6,
+   "pct_yearly_only": 16.9,
+   "pct_not_marked": 11.5
+  },
+  "condo_with_hoa_fee": {
+   "listings": 2704,
+   "nightly": 1936,
+   "yearly_only": 457,
+   "not_marked": 311,
+   "pct_nightly": 71.6,
+   "pct_yearly_only": 16.9,
+   "pct_not_marked": 11.5
+  },
+  "townhouse_all": {
+   "listings": 308,
+   "nightly": 74,
+   "yearly_only": 179,
+   "not_marked": 55,
+   "pct_nightly": 24.0,
+   "pct_yearly_only": 58.1,
+   "pct_not_marked": 17.9
+  },
+  "townhouse_no_hoa_fee": {
+   "listings": 25,
+   "nightly": 6,
+   "yearly_only": 19,
+   "not_marked": 0,
+   "pct_nightly": 24.0,
+   "pct_yearly_only": 76.0,
+   "pct_not_marked": 0.0
+  },
+  "townhouse_with_hoa_fee": {
+   "listings": 283,
+   "nightly": 68,
+   "yearly_only": 160,
+   "not_marked": 55,
+   "pct_nightly": 24.0,
+   "pct_yearly_only": 56.5,
+   "pct_not_marked": 19.4
+  },
+  "house_all": {
+   "listings": 2935,
+   "nightly": 343,
+   "yearly_only": 2040,
+   "not_marked": 552,
+   "pct_nightly": 11.7,
+   "pct_yearly_only": 69.5,
+   "pct_not_marked": 18.8
+  },
+  "house_no_hoa_fee": {
+   "listings": 795,
+   "nightly": 251,
+   "yearly_only": 544,
+   "not_marked": 0,
+   "pct_nightly": 31.6,
+   "pct_yearly_only": 68.4,
+   "pct_not_marked": 0.0
+  },
+  "house_with_hoa_fee": {
+   "listings": 2140,
+   "nightly": 92,
+   "yearly_only": 1496,
+   "not_marked": 552,
+   "pct_nightly": 4.3,
+   "pct_yearly_only": 69.9,
+   "pct_not_marked": 25.8
+  }
+ },
+ "by_area": {
+  "myrtle_beach_city": {
+   "name": "City of Myrtle Beach",
+   "condo": {
+    "listings": 643,
+    "nightly": 544,
+    "pct_nightly": 84.6
+   },
+   "house_with_hoa_fee": {
+    "listings": 146,
+    "nightly": 12,
+    "not_marked": 19,
+    "pct_nightly": 8.2,
+    "pct_not_marked": 13.0
+   },
+   "house_no_hoa_fee": {
+    "listings": 46,
+    "nightly": 5,
+    "pct_nightly": 10.9
+   },
+   "share_houses_with_hoa_fee": 76.0
+  },
+  "north_myrtle_beach": {
+   "name": "North Myrtle Beach",
+   "condo": {
+    "listings": 582,
+    "nightly": 475,
+    "pct_nightly": 81.6
+   },
+   "house_with_hoa_fee": {
+    "listings": 119,
+    "nightly": 27,
+    "not_marked": 25,
+    "pct_nightly": 22.7,
+    "pct_not_marked": 21.0
+   },
+   "house_no_hoa_fee": {
+    "listings": 135,
+    "nightly": 86,
+    "pct_nightly": 63.7
+   },
+   "share_houses_with_hoa_fee": 46.9
+  },
+  "surfside_beach": {
+   "name": "Surfside Beach",
+   "condo": {
+    "listings": 86,
+    "nightly": 52,
+    "pct_nightly": 60.5
+   },
+   "house_with_hoa_fee": {
+    "listings": 44,
+    "nightly": 6,
+    "not_marked": 12,
+    "pct_nightly": 13.6,
+    "pct_not_marked": 27.3
+   },
+   "house_no_hoa_fee": {
+    "listings": 40,
+    "nightly": 17,
+    "pct_nightly": 42.5
+   },
+   "share_houses_with_hoa_fee": 52.4
+  },
+  "garden_city": {
+   "name": "Garden City",
+   "condo": {
+    "listings": 72,
+    "nightly": 48,
+    "pct_nightly": 66.7
+   },
+   "house_with_hoa_fee": {
+    "listings": 10,
+    "nightly": 5,
+    "not_marked": 4,
+    "pct_nightly": 50.0,
+    "pct_not_marked": 40.0
+   },
+   "house_no_hoa_fee": {
+    "listings": 27,
+    "nightly": 22,
+    "pct_nightly": 81.5
+   },
+   "share_houses_with_hoa_fee": 27.0
+  },
+  "murrells_inlet": {
+   "name": "Murrells Inlet",
+   "condo": {
+    "listings": 93,
+    "nightly": 23,
+    "pct_nightly": 24.7
+   },
+   "house_with_hoa_fee": {
+    "listings": 106,
+    "nightly": 3,
+    "not_marked": 26,
+    "pct_nightly": 2.8,
+    "pct_not_marked": 24.5
+   },
+   "house_no_hoa_fee": {
+    "listings": 32,
+    "nightly": 17,
+    "pct_nightly": 53.1
+   },
+   "share_houses_with_hoa_fee": 76.8
+  },
+  "little_river": {
+   "name": "Little River",
+   "condo": {
+    "listings": 184,
+    "nightly": 73,
+    "pct_nightly": 39.7
+   },
+   "house_with_hoa_fee": {
+    "listings": 164,
+    "nightly": 9,
+    "not_marked": 48,
+    "pct_nightly": 5.5,
+    "pct_not_marked": 29.3
+   },
+   "house_no_hoa_fee": {
+    "listings": 21,
+    "nightly": 7,
+    "pct_nightly": 33.3
+   },
+   "share_houses_with_hoa_fee": 88.6
+  },
+  "carolina_forest": {
+   "name": "Carolina Forest",
+   "condo": {
+    "listings": 114,
+    "nightly": 59,
+    "pct_nightly": 51.8
+   },
+   "house_with_hoa_fee": {
+    "listings": 297,
+    "nightly": 1,
+    "not_marked": 52,
+    "pct_nightly": 0.3,
+    "pct_not_marked": 17.5
+   },
+   "house_no_hoa_fee": {
+    "listings": 0,
+    "nightly": 0,
+    "pct_nightly": null
+   },
+   "share_houses_with_hoa_fee": 100.0
+  },
+  "socastee": {
+   "name": "Socastee",
+   "condo": {
+    "listings": 16,
+    "nightly": 2,
+    "pct_nightly": 12.5
+   },
+   "house_with_hoa_fee": {
+    "listings": 71,
+    "nightly": 0,
+    "not_marked": 19,
+    "pct_nightly": 0.0,
+    "pct_not_marked": 26.8
+   },
+   "house_no_hoa_fee": {
+    "listings": 22,
+    "nightly": 6,
+    "pct_nightly": 27.3
+   },
+   "share_houses_with_hoa_fee": 76.3
+  },
+  "conway": {
+   "name": "Conway",
+   "condo": {
+    "listings": 33,
+    "nightly": 4,
+    "pct_nightly": 12.1
+   },
+   "house_with_hoa_fee": {
+    "listings": 468,
+    "nightly": 10,
+    "not_marked": 156,
+    "pct_nightly": 2.1,
+    "pct_not_marked": 33.3
+   },
+   "house_no_hoa_fee": {
+    "listings": 165,
+    "nightly": 22,
+    "pct_nightly": 13.3
+   },
+   "share_houses_with_hoa_fee": 73.9
+  },
+  "longs": {
+   "name": "Longs",
+   "condo": {
+    "listings": 22,
+    "nightly": 4,
+    "pct_nightly": 18.2
+   },
+   "house_with_hoa_fee": {
+    "listings": 308,
+    "nightly": 11,
+    "not_marked": 90,
+    "pct_nightly": 3.6,
+    "pct_not_marked": 29.2
+   },
+   "house_no_hoa_fee": {
+    "listings": 20,
+    "nightly": 5,
+    "pct_nightly": 25.0
+   },
+   "share_houses_with_hoa_fee": 93.9
+  }
+ },
+ "boat_parking": {
+  "house_no_hoa_fee": {
+   "listings": 795,
+   "rv_boat_parking": 254,
+   "pct": 31.9
+  },
+  "house_with_hoa_fee": {
+   "listings": 2140,
+   "rv_boat_parking": 53,
+   "pct": 2.5
+  }
+ },
+ "scdca": {
+  "years": "2022-2025",
+  "complaints_all": 1527,
+  "mention_renting_all": 6,
+  "complaints_horry": 416,
+  "mention_renting_horry": 1
+ }
+}

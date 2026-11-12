@@ -1,0 +1,1772 @@
+{
+ "made": "build_findings.py",
+ "pulled": "2026-11-09T05:26:50.490614Z",
+ "deeds": "recorded 2025-10-01 to 2026-09-30",
+ "buildings": [
+  {
+   "slug": "mb-resort",
+   "name": "Myrtle Beach Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 58,
+   "with_fee": 58,
+   "fee": 835,
+   "fee_band": [
+    765,
+    915
+   ],
+   "fee_note": null,
+   "asking_median": 170000,
+   "asking_n": 58,
+   "beds": {
+    "0": 14,
+    "1": 9,
+    "2": 35
+   },
+   "sqft_median": 838.5,
+   "flags": {
+    "hoa_includes_electric": 2,
+    "hoa_includes_internet": 44,
+    "hoa_includes_cable": 34,
+    "hoa_includes_insurance": 46,
+    "pets_allowed": 1,
+    "indoor_pool": 47,
+    "vacation_rental_program": 36,
+    "oceanfront_unit": 11,
+    "oceanfront_building": 36
+   },
+   "units": 244,
+   "sales": 15,
+   "sales_median": 179000,
+   "pct_units_sold": 6.1,
+   "fee_year_pct_of_sale": 5.6,
+   "shares": {
+    "hoa_includes_electric": 0.03,
+    "hoa_includes_internet": 0.76,
+    "hoa_includes_cable": 0.59,
+    "hoa_includes_insurance": 0.79,
+    "pets_allowed": 0.02,
+    "indoor_pool": 0.81,
+    "vacation_rental_program": 0.62,
+    "oceanfront_unit": 0.19,
+    "oceanfront_building": 0.62
+   }
+  },
+  {
+   "slug": "landmark",
+   "name": "Landmark Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 93,
+   "with_fee": 93,
+   "fee": 905,
+   "fee_band": [
+    620,
+    955
+   ],
+   "fee_note": null,
+   "asking_median": 110000,
+   "asking_n": 93,
+   "beds": {
+    "0": 51,
+    "1": 42
+   },
+   "sqft_median": 431,
+   "flags": {
+    "hoa_includes_electric": 80,
+    "hoa_includes_internet": 84,
+    "hoa_includes_cable": 38,
+    "hoa_includes_insurance": 89,
+    "pets_allowed": 39,
+    "indoor_pool": 91,
+    "vacation_rental_program": 83,
+    "oceanfront_unit": 40,
+    "oceanfront_building": 87
+   },
+   "units": 571,
+   "sales": 55,
+   "sales_median": 100000,
+   "pct_units_sold": 9.6,
+   "fee_year_pct_of_sale": 10.9,
+   "shares": {
+    "hoa_includes_electric": 0.86,
+    "hoa_includes_internet": 0.9,
+    "hoa_includes_cable": 0.41,
+    "hoa_includes_insurance": 0.96,
+    "pets_allowed": 0.42,
+    "indoor_pool": 0.98,
+    "vacation_rental_program": 0.89,
+    "oceanfront_unit": 0.43,
+    "oceanfront_building": 0.94
+   }
+  },
+  {
+   "slug": "sea-mist",
+   "name": "Sea Mist Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 32,
+   "with_fee": 32,
+   "fee": 610,
+   "fee_band": [
+    610,
+    630
+   ],
+   "fee_note": null,
+   "asking_median": 70000,
+   "asking_n": 32,
+   "beds": {
+    "0": 32
+   },
+   "sqft_median": 385.0,
+   "flags": {
+    "hoa_includes_electric": 22,
+    "pets_allowed": 1,
+    "indoor_pool": 7,
+    "oceanfront_building": 25
+   },
+   "units": 271,
+   "sales": 64,
+   "sales_median": 53000,
+   "pct_units_sold": 23.6,
+   "fee_year_pct_of_sale": 13.8,
+   "shares": {
+    "hoa_includes_electric": 0.69,
+    "pets_allowed": 0.03,
+    "indoor_pool": 0.22,
+    "oceanfront_building": 0.78
+   }
+  },
+  {
+   "slug": "compass-cove",
+   "name": "Compass Cove",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 35,
+   "with_fee": 35,
+   "fee": 960,
+   "fee_band": [
+    805,
+    960
+   ],
+   "fee_note": null,
+   "asking_median": 155000,
+   "asking_n": 35,
+   "beds": {
+    "0": 14,
+    "1": 16,
+    "2": 1,
+    "3": 4
+   },
+   "sqft_median": 550,
+   "flags": {
+    "hoa_includes_electric": 34,
+    "pets_allowed": 20,
+    "indoor_pool": 30,
+    "oceanfront_building": 34
+   },
+   "units": 486,
+   "sales": 39,
+   "sales_median": 149000,
+   "pct_units_sold": 8.0,
+   "fee_year_pct_of_sale": 7.7,
+   "shares": {
+    "hoa_includes_electric": 0.97,
+    "pets_allowed": 0.57,
+    "indoor_pool": 0.86,
+    "oceanfront_building": 0.97
+   }
+  },
+  {
+   "slug": "coral-beach",
+   "name": "Coral Beach Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 40,
+   "with_fee": 40,
+   "fee": 1345,
+   "fee_band": [
+    1330,
+    1485
+   ],
+   "fee_note": null,
+   "asking_median": 95000,
+   "asking_n": 40,
+   "beds": {
+    "0": 8,
+    "1": 32
+   },
+   "sqft_median": 581.0,
+   "flags": {
+    "hoa_includes_electric": 32,
+    "pets_allowed": 0,
+    "indoor_pool": 35,
+    "oceanfront_building": 38
+   },
+   "units": 295,
+   "sales": 40,
+   "sales_median": 86000,
+   "pct_units_sold": 13.6,
+   "fee_year_pct_of_sale": 18.8,
+   "shares": {
+    "hoa_includes_electric": 0.8,
+    "pets_allowed": 0.0,
+    "indoor_pool": 0.88,
+    "oceanfront_building": 0.95
+   }
+  },
+  {
+   "slug": "bay-view",
+   "name": "Bay View Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 10,
+   "with_fee": 10,
+   "fee": 780,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 155000,
+   "asking_n": 10,
+   "beds": {
+    "1": 7,
+    "2": 2,
+    "3": 1
+   },
+   "sqft_median": 693.0,
+   "flags": {
+    "hoa_includes_electric": 10,
+    "pets_allowed": 0,
+    "indoor_pool": 8,
+    "oceanfront_building": 10
+   },
+   "units": 183,
+   "sales": 12,
+   "sales_median": 188000,
+   "pct_units_sold": 6.6,
+   "fee_year_pct_of_sale": 5.0,
+   "shares": {
+    "hoa_includes_electric": 1.0,
+    "pets_allowed": 0.0,
+    "indoor_pool": 0.8,
+    "oceanfront_building": 1.0
+   }
+  },
+  {
+   "slug": "breakers",
+   "name": "Breakers Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 4,
+   "with_fee": 4,
+   "fee": 885,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 385000,
+   "asking_n": 4,
+   "beds": {
+    "1": 2,
+    "3": 2
+   },
+   "sqft_median": 857.5,
+   "flags": {
+    "hoa_includes_electric": 3,
+    "pets_allowed": 0,
+    "indoor_pool": 4,
+    "oceanfront_building": 4
+   },
+   "units": 179,
+   "sales": 7,
+   "sales_median": 250000,
+   "pct_units_sold": 3.9,
+   "fee_year_pct_of_sale": 4.2,
+   "shares": {
+    "hoa_includes_electric": 0.75,
+    "pets_allowed": 0.0,
+    "indoor_pool": 1.0,
+    "oceanfront_building": 1.0
+   }
+  },
+  {
+   "slug": "camelot",
+   "name": "Camelot by the Sea",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 9,
+   "with_fee": 9,
+   "fee": 625,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 230000,
+   "asking_n": 9,
+   "beds": {
+    "0": 2,
+    "1": 4,
+    "2": 1,
+    "3": 2
+   },
+   "sqft_median": 554,
+   "flags": {
+    "hoa_includes_electric": 7,
+    "pets_allowed": 1,
+    "indoor_pool": 8,
+    "oceanfront_building": 8
+   },
+   "units": 232,
+   "sales": 12,
+   "sales_median": 220000,
+   "pct_units_sold": 5.2,
+   "fee_year_pct_of_sale": 3.4,
+   "shares": {
+    "hoa_includes_electric": 0.78,
+    "pets_allowed": 0.11,
+    "indoor_pool": 0.89,
+    "oceanfront_building": 0.89
+   }
+  },
+  {
+   "slug": "caribbean",
+   "name": "Caribbean Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 26,
+   "with_fee": 26,
+   "fee": 1395,
+   "fee_band": [
+    765,
+    1910
+   ],
+   "fee_note": null,
+   "asking_median": 345000,
+   "asking_n": 26,
+   "beds": {
+    "1": 12,
+    "2": 5,
+    "3": 8,
+    "4": 1
+   },
+   "sqft_median": 975.0,
+   "flags": {
+    "hoa_includes_electric": 24,
+    "pets_allowed": 15,
+    "indoor_pool": 26,
+    "oceanfront_building": 26
+   },
+   "units": 369,
+   "sales": 16,
+   "sales_median": 215000,
+   "pct_units_sold": 4.3,
+   "fee_year_pct_of_sale": 7.8,
+   "shares": {
+    "hoa_includes_electric": 0.92,
+    "pets_allowed": 0.58,
+    "indoor_pool": 1.0,
+    "oceanfront_building": 1.0
+   }
+  },
+  {
+   "slug": "anderson-ocean-club",
+   "name": "Anderson Ocean Club",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 5,
+   "with_fee": 5,
+   "fee": 570,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 315000,
+   "asking_n": 5,
+   "beds": {
+    "1": 3,
+    "2": 2
+   },
+   "sqft_median": 675,
+   "flags": {
+    "hoa_includes_electric": 4,
+    "pets_allowed": 0,
+    "indoor_pool": 5,
+    "oceanfront_building": 5
+   },
+   "units": 314,
+   "sales": 3,
+   "sales_median": null,
+   "pct_units_sold": null,
+   "shares": {
+    "hoa_includes_electric": 0.8,
+    "pets_allowed": 0.0,
+    "indoor_pool": 1.0,
+    "oceanfront_building": 1.0
+   }
+  },
+  {
+   "slug": "dunes-village",
+   "name": "Dunes Village Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 25,
+   "with_fee": 25,
+   "fee": 1690,
+   "fee_band": [
+    1085,
+    1955
+   ],
+   "fee_note": null,
+   "asking_median": 390000,
+   "asking_n": 25,
+   "beds": {
+    "0": 4,
+    "1": 5,
+    "2": 10,
+    "3": 5,
+    "4": 1
+   },
+   "sqft_median": 1064,
+   "flags": {
+    "hoa_includes_electric": 20,
+    "pets_allowed": 11,
+    "indoor_pool": 25,
+    "oceanfront_building": 25
+   },
+   "units": 269,
+   "sales": 18,
+   "sales_median": 302000,
+   "pct_units_sold": 6.7,
+   "fee_year_pct_of_sale": 6.7,
+   "shares": {
+    "hoa_includes_electric": 0.8,
+    "pets_allowed": 0.44,
+    "indoor_pool": 1.0,
+    "oceanfront_building": 1.0
+   }
+  },
+  {
+   "slug": "sand-dunes",
+   "name": "Sand Dunes Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 51,
+   "with_fee": 51,
+   "fee": 1245,
+   "fee_band": [
+    865,
+    1600
+   ],
+   "fee_note": null,
+   "asking_median": 265000,
+   "asking_n": 51,
+   "beds": {
+    "0": 16,
+    "1": 8,
+    "2": 7,
+    "3": 20
+   },
+   "sqft_median": 1050,
+   "flags": {
+    "hoa_includes_electric": 37,
+    "pets_allowed": 10,
+    "indoor_pool": 45,
+    "oceanfront_building": 34
+   },
+   "units": 369,
+   "sales": 32,
+   "sales_median": 268000,
+   "pct_units_sold": 8.7,
+   "fee_year_pct_of_sale": 5.6,
+   "shares": {
+    "hoa_includes_electric": 0.73,
+    "pets_allowed": 0.2,
+    "indoor_pool": 0.88,
+    "oceanfront_building": 0.67
+   }
+  },
+  {
+   "slug": "caravelle",
+   "name": "Caravelle Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 45,
+   "with_fee": 45,
+   "fee": 750,
+   "fee_band": [
+    695,
+    875
+   ],
+   "fee_note": null,
+   "asking_median": 145000,
+   "asking_n": 45,
+   "beds": {
+    "0": 14,
+    "1": 31
+   },
+   "sqft_median": 519,
+   "flags": {
+    "hoa_includes_electric": 38,
+    "pets_allowed": 5,
+    "indoor_pool": 42,
+    "oceanfront_building": 39
+   },
+   "units": 403,
+   "sales": 32,
+   "sales_median": 140000,
+   "pct_units_sold": 7.9,
+   "fee_year_pct_of_sale": 6.4,
+   "shares": {
+    "hoa_includes_electric": 0.84,
+    "pets_allowed": 0.11,
+    "indoor_pool": 0.93,
+    "oceanfront_building": 0.87
+   }
+  },
+  {
+   "slug": "island-vista",
+   "name": "Island Vista",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 0,
+   "with_fee": 0,
+   "fee": null,
+   "fee_band": null,
+   "fee_note": "No units for sale this week",
+   "asking_median": null,
+   "asking_n": null,
+   "beds": null,
+   "sqft_median": null,
+   "flags": null,
+   "units": null,
+   "sales": null,
+   "sales_median": null,
+   "pct_units_sold": null
+  },
+  {
+   "slug": "grande-cayman",
+   "name": "Grande Cayman Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 21,
+   "with_fee": 21,
+   "fee": 750,
+   "fee_band": [
+    645,
+    770
+   ],
+   "fee_note": null,
+   "asking_median": 160000,
+   "asking_n": 21,
+   "beds": {
+    "0": 9,
+    "1": 8,
+    "2": 1,
+    "3": 3
+   },
+   "sqft_median": 529,
+   "flags": {
+    "hoa_includes_electric": 19,
+    "pets_allowed": 6,
+    "indoor_pool": 19,
+    "oceanfront_building": 18
+   },
+   "units": 290,
+   "sales": 22,
+   "sales_median": 170000,
+   "pct_units_sold": 7.6,
+   "fee_year_pct_of_sale": 5.3,
+   "shares": {
+    "hoa_includes_electric": 0.9,
+    "pets_allowed": 0.29,
+    "indoor_pool": 0.9,
+    "oceanfront_building": 0.86
+   }
+  },
+  {
+   "slug": "ocean-reef",
+   "name": "Ocean Reef Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 32,
+   "with_fee": 32,
+   "fee": 940,
+   "fee_band": [
+    940,
+    1740
+   ],
+   "fee_note": null,
+   "asking_median": 165000,
+   "asking_n": 32,
+   "beds": {
+    "0": 17,
+    "1": 5,
+    "2": 3,
+    "3": 5,
+    "4": 2
+   },
+   "sqft_median": 440.0,
+   "flags": {
+    "hoa_includes_electric": 30,
+    "pets_allowed": 14,
+    "indoor_pool": 27,
+    "oceanfront_building": 31
+   },
+   "units": 347,
+   "sales": 19,
+   "sales_median": 124000,
+   "pct_units_sold": 5.5,
+   "fee_year_pct_of_sale": 9.1,
+   "shares": {
+    "hoa_includes_electric": 0.94,
+    "pets_allowed": 0.44,
+    "indoor_pool": 0.84,
+    "oceanfront_building": 0.97
+   }
+  },
+  {
+   "slug": "seawatch",
+   "name": "SeaWatch Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 5,
+   "with_fee": 5,
+   "fee": 780,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 265000,
+   "asking_n": 5,
+   "beds": {
+    "0": 1,
+    "1": 2,
+    "2": 2
+   },
+   "sqft_median": 513,
+   "flags": {
+    "hoa_includes_electric": 5,
+    "pets_allowed": 3,
+    "indoor_pool": 4,
+    "oceanfront_building": 5
+   },
+   "units": 472,
+   "sales": 23,
+   "sales_median": 235000,
+   "pct_units_sold": 4.9,
+   "fee_year_pct_of_sale": 4.0,
+   "shares": {
+    "hoa_includes_electric": 1.0,
+    "pets_allowed": 0.6,
+    "indoor_pool": 0.8,
+    "oceanfront_building": 1.0
+   }
+  },
+  {
+   "slug": "margate",
+   "name": "Margate Tower",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 8,
+   "with_fee": 8,
+   "fee": 1820,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 985000,
+   "asking_n": 8,
+   "beds": {
+    "3": 5,
+    "4": 3
+   },
+   "sqft_median": 2426.0,
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 8,
+    "indoor_pool": 2,
+    "oceanfront_building": 8
+   },
+   "units": 252,
+   "sales": 14,
+   "sales_median": 951000,
+   "pct_units_sold": 5.6,
+   "fee_year_pct_of_sale": 2.3,
+   "shares": {
+    "hoa_includes_electric": 0.0,
+    "pets_allowed": 1.0,
+    "indoor_pool": 0.25,
+    "oceanfront_building": 1.0
+   }
+  },
+  {
+   "slug": "brighton",
+   "name": "Brighton Tower",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 9,
+   "with_fee": 9,
+   "fee": 1075,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 650000,
+   "asking_n": 9,
+   "beds": {
+    "2": 4,
+    "3": 5
+   },
+   "sqft_median": 1246,
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 8,
+    "indoor_pool": 2,
+    "oceanfront_building": 9
+   },
+   "units": 200,
+   "sales": 12,
+   "sales_median": 578000,
+   "pct_units_sold": 6.0,
+   "fee_year_pct_of_sale": 2.2,
+   "shares": {
+    "hoa_includes_electric": 0.0,
+    "pets_allowed": 0.89,
+    "indoor_pool": 0.22,
+    "oceanfront_building": 1.0
+   }
+  },
+  {
+   "slug": "royale-palms",
+   "name": "Royale Palms",
+   "city": "Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 14,
+   "with_fee": 14,
+   "fee": 1600,
+   "fee_band": [
+    1455,
+    1825
+   ],
+   "fee_note": null,
+   "asking_median": 555000,
+   "asking_n": 14,
+   "beds": {
+    "2": 4,
+    "3": 10
+   },
+   "sqft_median": 1917.5,
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 12,
+    "indoor_pool": 1,
+    "oceanfront_building": 13
+   },
+   "units": 185,
+   "sales": 9,
+   "sales_median": 550000,
+   "pct_units_sold": 4.9,
+   "fee_year_pct_of_sale": 3.5,
+   "shares": {
+    "hoa_includes_electric": 0.0,
+    "pets_allowed": 0.86,
+    "indoor_pool": 0.07,
+    "oceanfront_building": 0.93
+   }
+  },
+  {
+   "slug": "avista",
+   "name": "Avista Resort",
+   "city": "North Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 10,
+   "with_fee": 10,
+   "fee": 840,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 310000,
+   "asking_n": 10,
+   "beds": {
+    "1": 6,
+    "2": 1,
+    "3": 3
+   },
+   "sqft_median": 735.0,
+   "flags": {
+    "hoa_includes_electric": 7,
+    "pets_allowed": 0,
+    "indoor_pool": 9,
+    "oceanfront_building": 10
+   },
+   "units": 380,
+   "sales": 15,
+   "sales_median": 260000,
+   "pct_units_sold": 3.9,
+   "fee_year_pct_of_sale": 3.9,
+   "shares": {
+    "hoa_includes_electric": 0.7,
+    "pets_allowed": 0.0,
+    "indoor_pool": 0.9,
+    "oceanfront_building": 1.0
+   }
+  },
+  {
+   "slug": "ocean-drive-beach-golf",
+   "name": "Ocean Drive Beach & Golf",
+   "city": "North Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 0,
+   "with_fee": 0,
+   "fee": null,
+   "fee_band": null,
+   "fee_note": "No units for sale this week",
+   "asking_median": null,
+   "asking_n": null,
+   "beds": null,
+   "sqft_median": null,
+   "flags": null,
+   "units": null,
+   "sales": null,
+   "sales_median": null,
+   "pct_units_sold": null
+  },
+  {
+   "slug": "bay-watch",
+   "name": "Bay Watch Resort",
+   "city": "North Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 46,
+   "with_fee": 46,
+   "fee": 610,
+   "fee_band": [
+    610,
+    1065
+   ],
+   "fee_note": null,
+   "asking_median": 240000,
+   "asking_n": 46,
+   "beds": {
+    "0": 9,
+    "1": 18,
+    "2": 15,
+    "3": 4
+   },
+   "sqft_median": 677.0,
+   "flags": {
+    "hoa_includes_electric": 31,
+    "pets_allowed": 28,
+    "indoor_pool": 43,
+    "oceanfront_building": 45
+   },
+   "units": 532,
+   "sales": 35,
+   "sales_median": 265000,
+   "pct_units_sold": 6.6,
+   "fee_year_pct_of_sale": 2.8,
+   "shares": {
+    "hoa_includes_electric": 0.67,
+    "pets_allowed": 0.61,
+    "indoor_pool": 0.93,
+    "oceanfront_building": 0.98
+   }
+  },
+  {
+   "slug": "beach-cove",
+   "name": "Beach Cove Resort",
+   "city": "North Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 29,
+   "with_fee": 29,
+   "fee": 785,
+   "fee_band": [
+    785,
+    1100
+   ],
+   "fee_note": null,
+   "asking_median": 220000,
+   "asking_n": 29,
+   "beds": {
+    "1": 21,
+    "2": 8
+   },
+   "sqft_median": 637,
+   "flags": {
+    "hoa_includes_electric": 21,
+    "pets_allowed": 18,
+    "indoor_pool": 26,
+    "oceanfront_building": 27
+   },
+   "units": 328,
+   "sales": 36,
+   "sales_median": 172000,
+   "pct_units_sold": 11.0,
+   "fee_year_pct_of_sale": 5.5,
+   "shares": {
+    "hoa_includes_electric": 0.72,
+    "pets_allowed": 0.62,
+    "indoor_pool": 0.9,
+    "oceanfront_building": 0.93
+   }
+  },
+  {
+   "slug": "prince",
+   "name": "Prince Resort",
+   "city": "North Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 7,
+   "with_fee": 7,
+   "fee": 1035,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 240000,
+   "asking_n": 7,
+   "beds": {
+    "1": 5,
+    "2": 2
+   },
+   "sqft_median": 740,
+   "flags": {
+    "hoa_includes_electric": 7,
+    "pets_allowed": 0,
+    "indoor_pool": 2,
+    "oceanfront_building": 4
+   },
+   "units": 262,
+   "sales": 7,
+   "sales_median": 375000,
+   "pct_units_sold": 2.7,
+   "fee_year_pct_of_sale": 3.3,
+   "shares": {
+    "hoa_includes_electric": 1.0,
+    "pets_allowed": 0.0,
+    "indoor_pool": 0.29,
+    "oceanfront_building": 0.57
+   }
+  },
+  {
+   "slug": "towers-on-the-grove",
+   "name": "Towers on the Grove",
+   "city": "North Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 3,
+   "with_fee": 3,
+   "fee": 500,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 145000,
+   "asking_n": 3,
+   "beds": {
+    "0": 2,
+    "2": 1
+   },
+   "sqft_median": 400,
+   "flags": {
+    "hoa_includes_electric": 2,
+    "pets_allowed": 0,
+    "indoor_pool": 1,
+    "oceanfront_building": 3
+   },
+   "units": 236,
+   "sales": 0,
+   "sales_median": null,
+   "pct_units_sold": null,
+   "shares": {
+    "hoa_includes_electric": 0.67,
+    "pets_allowed": 0.0,
+    "indoor_pool": 0.33,
+    "oceanfront_building": 1.0
+   }
+  },
+  {
+   "slug": "north-beach-towers",
+   "name": "North Beach Towers",
+   "city": "North Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 10,
+   "with_fee": 10,
+   "fee": 1295,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 775000,
+   "asking_n": 10,
+   "beds": {
+    "1": 3,
+    "2": 3,
+    "3": 3,
+    "4": 1
+   },
+   "sqft_median": 1352.0,
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 8,
+    "indoor_pool": 10,
+    "oceanfront_building": 10
+   },
+   "units": 339,
+   "sales": 17,
+   "sales_median": 850000,
+   "pct_units_sold": 5.0,
+   "fee_year_pct_of_sale": 1.8,
+   "shares": {
+    "hoa_includes_electric": 0.0,
+    "pets_allowed": 0.8,
+    "indoor_pool": 1.0,
+    "oceanfront_building": 1.0
+   }
+  },
+  {
+   "slug": "ocean-creek",
+   "name": "Ocean Creek Resort",
+   "city": "North Myrtle Beach",
+   "on_july_page": true,
+   "for_sale": 34,
+   "with_fee": 34,
+   "fee": 790,
+   "fee_band": [
+    535,
+    870
+   ],
+   "fee_note": null,
+   "asking_median": 225000,
+   "asking_n": 34,
+   "beds": {
+    "0": 4,
+    "1": 13,
+    "2": 15,
+    "3": 2
+   },
+   "sqft_median": 827.0,
+   "flags": {
+    "hoa_includes_electric": 1,
+    "pets_allowed": 21,
+    "indoor_pool": 22,
+    "oceanfront_building": 9
+   },
+   "units": 163,
+   "sales": 11,
+   "sales_median": 206000,
+   "pct_units_sold": 6.7,
+   "fee_year_pct_of_sale": 4.6,
+   "shares": {
+    "hoa_includes_electric": 0.03,
+    "pets_allowed": 0.62,
+    "indoor_pool": 0.65,
+    "oceanfront_building": 0.26
+   }
+  },
+  {
+   "slug": "monterey-bay",
+   "name": "Monterey Bay Suites",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 31,
+   "with_fee": 31,
+   "fee": 940,
+   "fee_band": [
+    940,
+    995
+   ],
+   "fee_note": null,
+   "asking_median": 150000,
+   "asking_n": 31,
+   "beds": {
+    "1": 31
+   },
+   "sqft_median": 536,
+   "flags": {
+    "hoa_includes_electric": 29,
+    "pets_allowed": 20,
+    "indoor_pool": 29,
+    "oceanfront_building": 30
+   },
+   "units": 195,
+   "sales": 20,
+   "sales_median": 150000,
+   "pct_units_sold": 10.3,
+   "fee_year_pct_of_sale": 7.5,
+   "shares": {
+    "hoa_includes_electric": 0.94,
+    "pets_allowed": 0.65,
+    "indoor_pool": 0.94,
+    "oceanfront_building": 0.97
+   }
+  },
+  {
+   "slug": "bluewater",
+   "name": "Bluewater Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 37,
+   "with_fee": 37,
+   "fee": 905,
+   "fee_band": [
+    905,
+    905
+   ],
+   "fee_note": null,
+   "asking_median": 130000,
+   "asking_n": 37,
+   "beds": {
+    "0": 1,
+    "1": 28,
+    "2": 8
+   },
+   "sqft_median": 475,
+   "flags": {
+    "hoa_includes_electric": 31,
+    "pets_allowed": 25,
+    "indoor_pool": 31,
+    "oceanfront_building": 26
+   },
+   "units": 227,
+   "sales": 22,
+   "sales_median": 94000,
+   "pct_units_sold": 9.7,
+   "fee_year_pct_of_sale": 11.6,
+   "shares": {
+    "hoa_includes_electric": 0.84,
+    "pets_allowed": 0.68,
+    "indoor_pool": 0.84,
+    "oceanfront_building": 0.7
+   }
+  },
+  {
+   "slug": "palace",
+   "name": "The Palace",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 25,
+   "with_fee": 25,
+   "fee": 685,
+   "fee_band": [
+    460,
+    910
+   ],
+   "fee_note": null,
+   "asking_median": 165000,
+   "asking_n": 25,
+   "beds": {
+    "0": 10,
+    "1": 7,
+    "2": 8
+   },
+   "sqft_median": 539,
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 4,
+    "indoor_pool": 23,
+    "oceanfront_building": 23
+   },
+   "units": 302,
+   "sales": 21,
+   "sales_median": 142000,
+   "pct_units_sold": 7.0,
+   "fee_year_pct_of_sale": 5.8,
+   "shares": {
+    "hoa_includes_electric": 0.0,
+    "pets_allowed": 0.16,
+    "indoor_pool": 0.92,
+    "oceanfront_building": 0.92
+   }
+  },
+  {
+   "slug": "beach-colony",
+   "name": "Beach Colony",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 21,
+   "with_fee": 21,
+   "fee": 595,
+   "fee_band": [
+    590,
+    740
+   ],
+   "fee_note": null,
+   "asking_median": 220000,
+   "asking_n": 21,
+   "beds": {
+    "0": 2,
+    "1": 11,
+    "2": 8
+   },
+   "sqft_median": 590,
+   "flags": {
+    "hoa_includes_electric": 14,
+    "pets_allowed": 19,
+    "indoor_pool": 18,
+    "oceanfront_building": 20
+   },
+   "units": 244,
+   "sales": 23,
+   "sales_median": 226000,
+   "pct_units_sold": 9.4,
+   "fee_year_pct_of_sale": 3.2,
+   "shares": {
+    "hoa_includes_electric": 0.67,
+    "pets_allowed": 0.9,
+    "indoor_pool": 0.86,
+    "oceanfront_building": 0.95
+   }
+  },
+  {
+   "slug": "meridian-plaza",
+   "name": "Meridian Plaza",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 17,
+   "with_fee": 17,
+   "fee": 850,
+   "fee_band": [
+    850,
+    850
+   ],
+   "fee_note": null,
+   "asking_median": 160000,
+   "asking_n": 17,
+   "beds": {
+    "1": 17
+   },
+   "sqft_median": 560,
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 8,
+    "indoor_pool": 17,
+    "oceanfront_building": 15
+   },
+   "units": 96,
+   "sales": 7,
+   "sales_median": 134000,
+   "pct_units_sold": 7.3,
+   "fee_year_pct_of_sale": 7.6,
+   "shares": {
+    "hoa_includes_electric": 0.0,
+    "pets_allowed": 0.47,
+    "indoor_pool": 1.0,
+    "oceanfront_building": 0.88
+   }
+  },
+  {
+   "slug": "holiday-sands",
+   "name": "Holiday Sands",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 15,
+   "with_fee": 15,
+   "fee": 980,
+   "fee_band": [
+    900,
+    1345
+   ],
+   "fee_note": null,
+   "asking_median": 220000,
+   "asking_n": 15,
+   "beds": {
+    "1": 8,
+    "2": 7
+   },
+   "sqft_median": 711,
+   "flags": {
+    "hoa_includes_electric": 12,
+    "pets_allowed": 2,
+    "indoor_pool": 13,
+    "oceanfront_building": 13
+   },
+   "units": 119,
+   "sales": 6,
+   "sales_median": 175000,
+   "pct_units_sold": 5.0,
+   "fee_year_pct_of_sale": 6.7,
+   "shares": {
+    "hoa_includes_electric": 0.8,
+    "pets_allowed": 0.13,
+    "indoor_pool": 0.87,
+    "oceanfront_building": 0.87
+   }
+  },
+  {
+   "slug": "sandy-beach",
+   "name": "Sandy Beach Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 11,
+   "with_fee": 11,
+   "fee": 950,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 215000,
+   "asking_n": 11,
+   "beds": {
+    "1": 9,
+    "2": 2
+   },
+   "sqft_median": 600,
+   "flags": {
+    "hoa_includes_electric": 9,
+    "pets_allowed": 0,
+    "indoor_pool": 9,
+    "oceanfront_building": 9
+   },
+   "units": 231,
+   "sales": 3,
+   "sales_median": null,
+   "pct_units_sold": null,
+   "shares": {
+    "hoa_includes_electric": 0.82,
+    "pets_allowed": 0.0,
+    "indoor_pool": 0.82,
+    "oceanfront_building": 0.82
+   }
+  },
+  {
+   "slug": "carolina-winds",
+   "name": "Carolina Winds",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 13,
+   "with_fee": 13,
+   "fee": 855,
+   "fee_band": [
+    855,
+    855
+   ],
+   "fee_note": null,
+   "asking_median": 160000,
+   "asking_n": 13,
+   "beds": {
+    "1": 12,
+    "2": 1
+   },
+   "sqft_median": 576,
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 7,
+    "indoor_pool": 13,
+    "oceanfront_building": 13
+   },
+   "units": 147,
+   "sales": 6,
+   "sales_median": 216000,
+   "pct_units_sold": 4.1,
+   "fee_year_pct_of_sale": 4.8,
+   "shares": {
+    "hoa_includes_electric": 0.0,
+    "pets_allowed": 0.54,
+    "indoor_pool": 1.0,
+    "oceanfront_building": 1.0
+   }
+  },
+  {
+   "slug": "maisons-sur-mer",
+   "name": "Maisons Sur-Mer",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 14,
+   "with_fee": 14,
+   "fee": 1015,
+   "fee_band": [
+    1015,
+    1460
+   ],
+   "fee_note": null,
+   "asking_median": 565000,
+   "asking_n": 14,
+   "beds": {
+    "2": 14
+   },
+   "sqft_median": 1420.0,
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 12,
+    "indoor_pool": 1,
+    "oceanfront_building": 13
+   },
+   "units": 229,
+   "sales": 14,
+   "sales_median": 588000,
+   "pct_units_sold": 6.1,
+   "fee_year_pct_of_sale": 2.1,
+   "shares": {
+    "hoa_includes_electric": 0.0,
+    "pets_allowed": 0.86,
+    "indoor_pool": 0.07,
+    "oceanfront_building": 0.93
+   }
+  },
+  {
+   "slug": "sands-ocean",
+   "name": "Sands Ocean Club",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 16,
+   "with_fee": 16,
+   "fee": 425,
+   "fee_band": [
+    425,
+    635
+   ],
+   "fee_note": null,
+   "asking_median": 180000,
+   "asking_n": 16,
+   "beds": {
+    "0": 11,
+    "1": 2,
+    "2": 3
+   },
+   "sqft_median": 388.5,
+   "flags": {
+    "hoa_includes_electric": 13,
+    "pets_allowed": 0,
+    "indoor_pool": 15,
+    "oceanfront_building": 11
+   },
+   "units": 464,
+   "sales": 32,
+   "sales_median": 134000,
+   "pct_units_sold": 6.9,
+   "fee_year_pct_of_sale": 3.8,
+   "shares": {
+    "hoa_includes_electric": 0.81,
+    "pets_allowed": 0.0,
+    "indoor_pool": 0.94,
+    "oceanfront_building": 0.69
+   }
+  },
+  {
+   "slug": "ocean-forest-plaza",
+   "name": "Ocean Forest Plaza",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 14,
+   "with_fee": 14,
+   "fee": 1015,
+   "fee_band": [
+    1015,
+    1015
+   ],
+   "fee_note": null,
+   "asking_median": 215000,
+   "asking_n": 14,
+   "beds": {
+    "1": 11,
+    "2": 3
+   },
+   "sqft_median": 609.0,
+   "flags": {
+    "hoa_includes_electric": 12,
+    "pets_allowed": 14,
+    "indoor_pool": 14,
+    "oceanfront_building": 11
+   },
+   "units": 206,
+   "sales": 10,
+   "sales_median": 215000,
+   "pct_units_sold": 4.9,
+   "fee_year_pct_of_sale": 5.7,
+   "shares": {
+    "hoa_includes_electric": 0.86,
+    "pets_allowed": 1.0,
+    "indoor_pool": 1.0,
+    "oceanfront_building": 0.79
+   }
+  },
+  {
+   "slug": "south-hampton",
+   "name": "South Hampton",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 13,
+   "with_fee": 13,
+   "fee": 1305,
+   "fee_band": [
+    1090,
+    1305
+   ],
+   "fee_note": null,
+   "asking_median": 460000,
+   "asking_n": 13,
+   "beds": {
+    "2": 5,
+    "3": 8
+   },
+   "sqft_median": 1514,
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 9,
+    "indoor_pool": 2,
+    "oceanfront_building": 12
+   },
+   "units": 144,
+   "sales": 11,
+   "sales_median": 450000,
+   "pct_units_sold": 7.6,
+   "fee_year_pct_of_sale": 3.5,
+   "shares": {
+    "hoa_includes_electric": 0.0,
+    "pets_allowed": 0.69,
+    "indoor_pool": 0.15,
+    "oceanfront_building": 0.92
+   }
+  },
+  {
+   "slug": "crescent-shores",
+   "name": "Crescent Shores",
+   "city": "North Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 14,
+   "with_fee": 14,
+   "fee": 1070,
+   "fee_band": [
+    450,
+    1380
+   ],
+   "fee_note": null,
+   "asking_median": 525000,
+   "asking_n": 14,
+   "beds": {
+    "2": 3,
+    "3": 5,
+    "4": 6
+   },
+   "sqft_median": 1653.0,
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 8,
+    "indoor_pool": 10,
+    "oceanfront_building": 10
+   },
+   "units": 232,
+   "sales": 13,
+   "sales_median": 595000,
+   "pct_units_sold": 5.6,
+   "fee_year_pct_of_sale": 2.2,
+   "shares": {
+    "hoa_includes_electric": 0.0,
+    "pets_allowed": 0.57,
+    "indoor_pool": 0.71,
+    "oceanfront_building": 0.71
+   }
+  },
+  {
+   "slug": "holiday-pavilion",
+   "name": "Holiday Inn Pavilion",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 15,
+   "with_fee": 15,
+   "fee": 1055,
+   "fee_band": [
+    580,
+    1330
+   ],
+   "fee_note": null,
+   "asking_median": 155000,
+   "asking_n": 15,
+   "beds": {
+    "0": 6,
+    "1": 5,
+    "3": 4
+   },
+   "sqft_median": 528,
+   "flags": {
+    "hoa_includes_electric": 9,
+    "pets_allowed": 4,
+    "indoor_pool": 9,
+    "oceanfront_building": 9
+   },
+   "units": 109,
+   "sales": 5,
+   "sales_median": 148000,
+   "pct_units_sold": 4.6,
+   "fee_year_pct_of_sale": 8.6,
+   "shares": {
+    "hoa_includes_electric": 0.6,
+    "pets_allowed": 0.27,
+    "indoor_pool": 0.6,
+    "oceanfront_building": 0.6
+   }
+  },
+  {
+   "slug": "boardwalk",
+   "name": "Boardwalk Oceanfront Tower",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 12,
+   "with_fee": 12,
+   "fee": 975,
+   "fee_band": [
+    975,
+    995
+   ],
+   "fee_note": null,
+   "asking_median": 165000,
+   "asking_n": 12,
+   "beds": {
+    "1": 11,
+    "2": 1
+   },
+   "sqft_median": 533.0,
+   "flags": {
+    "hoa_includes_electric": 8,
+    "pets_allowed": 0,
+    "indoor_pool": 10,
+    "oceanfront_building": 10
+   },
+   "units": 131,
+   "sales": 6,
+   "sales_median": 154000,
+   "pct_units_sold": 4.6,
+   "fee_year_pct_of_sale": 7.6,
+   "shares": {
+    "hoa_includes_electric": 0.67,
+    "pets_allowed": 0.0,
+    "indoor_pool": 0.83,
+    "oceanfront_building": 0.83
+   }
+  },
+  {
+   "slug": "carolinian",
+   "name": "Carolinian Beach Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 11,
+   "with_fee": 11,
+   "fee": 730,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 215000,
+   "asking_n": 11,
+   "beds": {
+    "1": 8,
+    "2": 3
+   },
+   "sqft_median": 783,
+   "flags": {
+    "hoa_includes_electric": 8,
+    "pets_allowed": 3,
+    "indoor_pool": 6,
+    "oceanfront_building": 10
+   },
+   "units": 134,
+   "sales": 14,
+   "sales_median": 270000,
+   "pct_units_sold": 10.4,
+   "fee_year_pct_of_sale": 3.2,
+   "shares": {
+    "hoa_includes_electric": 0.73,
+    "pets_allowed": 0.27,
+    "indoor_pool": 0.55,
+    "oceanfront_building": 0.91
+   }
+  },
+  {
+   "slug": "oceans-one",
+   "name": "Oceans One",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 11,
+   "with_fee": 11,
+   "fee": 1105,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 230000,
+   "asking_n": 11,
+   "beds": {
+    "1": 6,
+    "2": 5
+   },
+   "sqft_median": 627,
+   "flags": {
+    "hoa_includes_electric": 10,
+    "pets_allowed": 5,
+    "indoor_pool": 10,
+    "oceanfront_building": 11
+   },
+   "units": 137,
+   "sales": 13,
+   "sales_median": 224000,
+   "pct_units_sold": 9.5,
+   "fee_year_pct_of_sale": 5.9,
+   "shares": {
+    "hoa_includes_electric": 0.91,
+    "pets_allowed": 0.45,
+    "indoor_pool": 0.91,
+    "oceanfront_building": 1.0
+   }
+  },
+  {
+   "slug": "patricia-grand",
+   "name": "Patricia Grand",
+   "city": "Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 9,
+   "with_fee": 9,
+   "fee": 980,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 205000,
+   "asking_n": 9,
+   "beds": {
+    "0": 3,
+    "1": 6
+   },
+   "sqft_median": 540,
+   "flags": {
+    "hoa_includes_electric": 7,
+    "pets_allowed": 8,
+    "indoor_pool": 7,
+    "oceanfront_building": 8
+   },
+   "units": 142,
+   "sales": 5,
+   "sales_median": 220000,
+   "pct_units_sold": 3.5,
+   "fee_year_pct_of_sale": 5.3,
+   "shares": {
+    "hoa_includes_electric": 0.78,
+    "pets_allowed": 0.89,
+    "indoor_pool": 0.78,
+    "oceanfront_building": 0.89
+   }
+  },
+  {
+   "slug": "mar-vista-grande",
+   "name": "Mar Vista Grande",
+   "city": "North Myrtle Beach",
+   "on_july_page": false,
+   "for_sale": 6,
+   "with_fee": 6,
+   "fee": 1335,
+   "fee_band": null,
+   "fee_note": null,
+   "asking_median": 835000,
+   "asking_n": 6,
+   "beds": {
+    "3": 6
+   },
+   "sqft_median": 1480.0,
+   "flags": {
+    "hoa_includes_electric": 0,
+    "pets_allowed": 6,
+    "indoor_pool": 6,
+    "oceanfront_building": 6
+   },
+   "units": 162,
+   "sales": 8,
+   "sales_median": 795000,
+   "pct_units_sold": 4.9,
+   "fee_year_pct_of_sale": 2.0,
+   "shares": {
+    "hoa_includes_electric": 0.0,
+    "pets_allowed": 1.0,
+    "indoor_pool": 1.0,
+    "oceanfront_building": 1.0
+   }
+  }
+ ],
+ "counts": {
+  "buildings": 47,
+  "with_fee": 45,
+  "july_buildings": 28,
+  "july_with_fee": 26,
+  "for_sale_in_these": 966
+ },
+ "fee_range": {
+  "low": "Sands Ocean Club",
+  "low_fee": 425,
+  "high": "Margate Tower",
+  "high_fee": 1820
+ },
+ "hub_oceanfront": {
+  "total": 1106,
+  "median": 920,
+  "p25": 730,
+  "p75": 1140
+ }
+}

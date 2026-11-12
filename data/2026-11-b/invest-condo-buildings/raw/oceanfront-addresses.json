@@ -1,0 +1,936 @@
+{
+ "pulled": "2026-11-09T05:10:32.631196Z",
+ "query": "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building",
+ "total": 1106,
+ "pins_seen": 1105,
+ "buildings": [
+  {
+   "street": "1501 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 73,
+   "lat": 33.67319,
+   "lng": -78.90075
+  },
+  {
+   "street": "1105 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 37,
+   "lat": 33.67585,
+   "lng": -78.89745
+  },
+  {
+   "street": "6900 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 33,
+   "lat": 33.73885,
+   "lng": -78.82083
+  },
+  {
+   "street": "6804 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 26,
+   "lat": 33.73793,
+   "lng": -78.82216
+  },
+  {
+   "street": "7100 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 25,
+   "lat": 33.74023,
+   "lng": -78.81882
+  },
+  {
+   "street": "2001 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 24,
+   "lat": 33.66928,
+   "lng": -78.90548
+  },
+  {
+   "street": "5905 S Kings Hwy",
+   "city": "Myrtle Beach",
+   "listings": 24,
+   "lat": 33.63211,
+   "lng": -78.94721
+  },
+  {
+   "street": "2401 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 23,
+   "lat": 33.66567,
+   "lng": -78.90971
+  },
+  {
+   "street": "4800 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 23,
+   "lat": 33.79082,
+   "lng": -78.73517
+  },
+  {
+   "street": "201 74th Ave. N",
+   "city": "Myrtle Beach",
+   "listings": 22,
+   "lat": 33.7452,
+   "lng": -78.81078
+  },
+  {
+   "street": "2701 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 21,
+   "lat": 33.80173,
+   "lng": -78.7126
+  },
+  {
+   "street": "1605 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 20,
+   "lat": 33.67271,
+   "lng": -78.90165
+  },
+  {
+   "street": "1207 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 19,
+   "lat": 33.67569,
+   "lng": -78.89782
+  },
+  {
+   "street": "5308 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 19,
+   "lat": 33.72318,
+   "lng": -78.84231
+  },
+  {
+   "street": "7200 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 17,
+   "lat": 33.73795,
+   "lng": -78.82215
+  },
+  {
+   "street": "3000 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 16,
+   "lat": 33.70773,
+   "lng": -78.86116
+  },
+  {
+   "street": "2310 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 13,
+   "lat": 33.70303,
+   "lng": -78.86749
+  },
+  {
+   "street": "5300 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 13,
+   "lat": 33.72458,
+   "lng": -78.84057
+  },
+  {
+   "street": "9994 Beach Club Dr",
+   "city": "Myrtle Beach",
+   "listings": 13,
+   "lat": 33.76914,
+   "lng": -78.77556
+  },
+  {
+   "street": "9650 Shore Dr",
+   "city": "Myrtle Beach",
+   "listings": 13,
+   "lat": 33.76188,
+   "lng": -78.78635
+  },
+  {
+   "street": "200 76th Ave. N",
+   "city": "Myrtle Beach",
+   "listings": 12,
+   "lat": 33.74338,
+   "lng": -78.81433
+  },
+  {
+   "street": "9820 Queensway Blvd",
+   "city": "Myrtle Beach",
+   "listings": 12,
+   "lat": 33.76781,
+   "lng": -78.77694
+  },
+  {
+   "street": "5905 South Kings Hwy",
+   "city": "Myrtle Beach",
+   "listings": 11,
+   "lat": 33.62789,
+   "lng": -78.95265
+  },
+  {
+   "street": "9550 Shore Dr",
+   "city": "Myrtle Beach",
+   "listings": 11,
+   "lat": 33.75973,
+   "lng": -78.78939
+  },
+  {
+   "street": "2501 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 11,
+   "lat": 33.66486,
+   "lng": -78.91076
+  },
+  {
+   "street": "107 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 11,
+   "lat": 33.68245,
+   "lng": -78.88867
+  },
+  {
+   "street": "2007 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 10,
+   "lat": 33.6689,
+   "lng": -78.90591
+  },
+  {
+   "street": "5200 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 10,
+   "lat": 33.72402,
+   "lng": -78.84136
+  },
+  {
+   "street": "504 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 9,
+   "lat": 33.69003,
+   "lng": -78.88189
+  },
+  {
+   "street": "2711 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 9,
+   "lat": 33.80176,
+   "lng": -78.71259
+  },
+  {
+   "street": "2801 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 9,
+   "lat": 33.80165,
+   "lng": -78.71333
+  },
+  {
+   "street": "300 N Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 9,
+   "lat": 33.81995,
+   "lng": -78.66802
+  },
+  {
+   "street": "1625 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 9,
+   "lat": 33.80757,
+   "lng": -78.69959
+  },
+  {
+   "street": "8560 Queensway Blvd",
+   "city": "Myrtle Beach",
+   "listings": 9,
+   "lat": 33.76615,
+   "lng": -78.77996
+  },
+  {
+   "street": "2710 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 8,
+   "lat": 33.70424,
+   "lng": -78.86581
+  },
+  {
+   "street": "2201 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 8,
+   "lat": 33.66806,
+   "lng": -78.907
+  },
+  {
+   "street": "3000 N Ocean Blvd. N",
+   "city": "Myrtle Beach",
+   "listings": 8,
+   "lat": 33.7075,
+   "lng": -78.86146
+  },
+  {
+   "street": "2000 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 8,
+   "lat": 33.69965,
+   "lng": -78.87113
+  },
+  {
+   "street": "100 North Beach Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 8,
+   "lat": 33.79067,
+   "lng": -78.73647
+  },
+  {
+   "street": "8500 Margate Circle",
+   "city": "Myrtle Beach",
+   "listings": 8,
+   "lat": 33.76522,
+   "lng": -78.78131
+  },
+  {
+   "street": "2311 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 7,
+   "lat": 33.66637,
+   "lng": -78.90909
+  },
+  {
+   "street": "1200 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 7,
+   "lat": 33.69443,
+   "lng": -78.87687
+  },
+  {
+   "street": "201 77th Ave. N",
+   "city": "Myrtle Beach",
+   "listings": 7,
+   "lat": 33.74391,
+   "lng": -78.81417
+  },
+  {
+   "street": "2701 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 7,
+   "lat": 33.70597,
+   "lng": -78.86333
+  },
+  {
+   "street": "201 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 7,
+   "lat": 33.68179,
+   "lng": -78.88945
+  },
+  {
+   "street": "2504 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 6,
+   "lat": 33.70441,
+   "lng": -78.86522
+  },
+  {
+   "street": "5523 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 6,
+   "lat": 33.72802,
+   "lng": -78.83655
+  },
+  {
+   "street": "601 Retreat Beach Circle",
+   "city": "Pawleys Island",
+   "listings": 6,
+   "lat": 33.48041,
+   "lng": -79.08833
+  },
+  {
+   "street": "1321 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 6,
+   "lat": 33.81049,
+   "lng": -78.69298
+  },
+  {
+   "street": "100 Ocean Creek Dr",
+   "city": "Myrtle Beach",
+   "listings": 6,
+   "lat": 33.79041,
+   "lng": -78.73818
+  },
+  {
+   "street": "201 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 6,
+   "lat": 33.81737,
+   "lng": -78.6749
+  },
+  {
+   "street": "1501 Ocean Blvd. S",
+   "city": "Myrtle Beach",
+   "listings": 5,
+   "lat": 33.67316,
+   "lng": -78.90079
+  },
+  {
+   "street": "1304 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 5,
+   "lat": 33.69524,
+   "lng": -78.87584
+  },
+  {
+   "street": "2300 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 5,
+   "lat": 33.70236,
+   "lng": -78.86827
+  },
+  {
+   "street": "1708 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 5,
+   "lat": 33.69827,
+   "lng": -78.87257
+  },
+  {
+   "street": "5511 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 5,
+   "lat": 33.72723,
+   "lng": -78.83755
+  },
+  {
+   "street": "501 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 5,
+   "lat": 33.81646,
+   "lng": -78.67777
+  },
+  {
+   "street": "9660 Shore Dr",
+   "city": "Myrtle Beach",
+   "listings": 5,
+   "lat": 33.76237,
+   "lng": -78.78518
+  },
+  {
+   "street": "205 74th Ave. N",
+   "city": "Myrtle Beach",
+   "listings": 5,
+   "lat": 33.74182,
+   "lng": -78.81713
+  },
+  {
+   "street": "5601 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 5,
+   "lat": 33.72918,
+   "lng": -78.83445
+  },
+  {
+   "street": "603 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 5,
+   "lat": 33.81534,
+   "lng": -78.68036
+  },
+  {
+   "street": "1501 S Ocean Blvd. S",
+   "city": "Myrtle Beach",
+   "listings": 4,
+   "lat": 33.6732,
+   "lng": -78.90076
+  },
+  {
+   "street": "2207 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 4,
+   "lat": 33.6676,
+   "lng": -78.90762
+  },
+  {
+   "street": "1501 South Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 4,
+   "lat": 33.67319,
+   "lng": -78.90082
+  },
+  {
+   "street": "201 N 74th Ave. N",
+   "city": "Myrtle Beach",
+   "listings": 4,
+   "lat": 33.74144,
+   "lng": -78.81683
+  },
+  {
+   "street": "6000 N Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 4,
+   "lat": 33.83878,
+   "lng": -78.60659
+  },
+  {
+   "street": "202 70th Ave. N",
+   "city": "Myrtle Beach",
+   "listings": 4,
+   "lat": 33.7392,
+   "lng": -78.82
+  },
+  {
+   "street": "2406 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 4,
+   "lat": 33.70405,
+   "lng": -78.86609
+  },
+  {
+   "street": "1700 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 4,
+   "lat": 33.69778,
+   "lng": -78.87315
+  },
+  {
+   "street": "5523 North Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 4,
+   "lat": 33.72803,
+   "lng": -78.83656
+  },
+  {
+   "street": "3500 N Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 4,
+   "lat": 33.83052,
+   "lng": -78.63343
+  },
+  {
+   "street": "9400 Shore Dr",
+   "city": "Myrtle Beach",
+   "listings": 4,
+   "lat": 33.75754,
+   "lng": -78.79287
+  },
+  {
+   "street": "2600 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 4,
+   "lat": 33.70506,
+   "lng": -78.86452
+  },
+  {
+   "street": "5310 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 4,
+   "lat": 33.72548,
+   "lng": -78.83915
+  },
+  {
+   "street": "1205 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 3,
+   "lat": 33.67524,
+   "lng": -78.89869
+  },
+  {
+   "street": "7100 Ocean Blvd. N",
+   "city": "Myrtle Beach",
+   "listings": 3,
+   "lat": 33.72312,
+   "lng": -78.84139
+  },
+  {
+   "street": "6804 N Ocean Blvd. N",
+   "city": "Myrtle Beach",
+   "listings": 3,
+   "lat": 33.73803,
+   "lng": -78.82151
+  },
+  {
+   "street": "2100 N Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 3,
+   "lat": 33.82712,
+   "lng": -78.64496
+  },
+  {
+   "street": "6900 Ocean Blvd. N",
+   "city": "Myrtle Beach",
+   "listings": 3,
+   "lat": 33.73871,
+   "lng": -78.82087
+  },
+  {
+   "street": "1702 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 3,
+   "lat": 33.69751,
+   "lng": -78.87331
+  },
+  {
+   "street": "1210 N Waccamaw Dr",
+   "city": "Murrells Inlet",
+   "listings": 3,
+   "lat": 33.5856,
+   "lng": -78.99031
+  },
+  {
+   "street": "161 Seawatch Dr",
+   "city": "Myrtle Beach",
+   "listings": 3,
+   "lat": 33.77049,
+   "lng": -78.77147
+  },
+  {
+   "street": "2504 Ocean Blvd. N",
+   "city": "Myrtle Beach",
+   "listings": 3,
+   "lat": 33.70435,
+   "lng": -78.86529
+  },
+  {
+   "street": "9600 Shore Dr",
+   "city": "Myrtle Beach",
+   "listings": 3,
+   "lat": 33.76122,
+   "lng": -78.78716
+  },
+  {
+   "street": "1012 N Waccamaw Dr",
+   "city": "Garden City Beach",
+   "listings": 3,
+   "lat": 33.58399,
+   "lng": -78.99172
+  },
+  {
+   "street": "4315 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 3,
+   "lat": 33.79463,
+   "lng": -78.72698
+  },
+  {
+   "street": "4719 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 3,
+   "lat": 33.79119,
+   "lng": -78.73381
+  },
+  {
+   "street": "2500 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 3,
+   "lat": 33.70412,
+   "lng": -78.86581
+  },
+  {
+   "street": "1903 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 3,
+   "lat": 33.80568,
+   "lng": -78.7039
+  },
+  {
+   "street": "101 Ocean Creek Dr",
+   "city": "Myrtle Beach",
+   "listings": 3,
+   "lat": 33.79008,
+   "lng": -78.739
+  },
+  {
+   "street": "4701 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 3,
+   "lat": 33.79189,
+   "lng": -78.73245
+  },
+  {
+   "street": "1310 N Waccamaw Dr",
+   "city": "Garden City Beach",
+   "listings": 3,
+   "lat": 33.58615,
+   "lng": -78.98989
+  },
+  {
+   "street": "5800 N Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 3,
+   "lat": 33.83825,
+   "lng": -78.60923
+  },
+  {
+   "street": "1605 South Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 2,
+   "lat": 33.67272,
+   "lng": -78.90168
+  },
+  {
+   "street": "2701 S Ocean Blvd. S",
+   "city": "North Myrtle Beach",
+   "listings": 2,
+   "lat": 33.80874,
+   "lng": -78.69598
+  },
+  {
+   "street": "2301 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 2,
+   "lat": 33.70273,
+   "lng": -78.86886
+  },
+  {
+   "street": "7100 N Ocean Blvd. N",
+   "city": "Myrtle Beach",
+   "listings": 2,
+   "lat": 33.74004,
+   "lng": -78.81931
+  },
+  {
+   "street": "2300 Ocean Blvd. N",
+   "city": "Myrtle Beach",
+   "listings": 2,
+   "lat": 33.70222,
+   "lng": -78.86825
+  },
+  {
+   "street": "2106 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 2,
+   "lat": 33.70098,
+   "lng": -78.86947
+  },
+  {
+   "street": "4800 South Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 2,
+   "lat": 33.79073,
+   "lng": -78.73503
+  },
+  {
+   "street": "2006 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 2,
+   "lat": 33.7003,
+   "lng": -78.87044
+  },
+  {
+   "street": "920 N Waccamaw Dr",
+   "city": "Garden City Beach",
+   "listings": 2,
+   "lat": 33.58362,
+   "lng": -78.99215
+  },
+  {
+   "street": "2301 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 2,
+   "lat": 33.80368,
+   "lng": -78.70833
+  },
+  {
+   "street": "4000 N Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 2,
+   "lat": 33.83233,
+   "lng": -78.62859
+  },
+  {
+   "street": "6100 N Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 2,
+   "lat": 33.83906,
+   "lng": -78.60572
+  },
+  {
+   "street": "1901 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 2,
+   "lat": 33.67027,
+   "lng": -78.904
+  },
+  {
+   "street": "720 N Waccamaw Dr",
+   "city": "Garden City Beach",
+   "listings": 2,
+   "lat": 33.58189,
+   "lng": -78.99374
+  },
+  {
+   "street": "1000 N Waccamaw Dr",
+   "city": "Garden City Beach",
+   "listings": 2,
+   "lat": 33.5838,
+   "lng": -78.99184
+  },
+  {
+   "street": "2203 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 2,
+   "lat": 33.80408,
+   "lng": -78.70742
+  },
+  {
+   "street": "1311 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 2,
+   "lat": 33.81068,
+   "lng": -78.6924
+  },
+  {
+   "street": "2511 S Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 2,
+   "lat": 33.64369,
+   "lng": -78.94102
+  },
+  {
+   "street": "5507 N Ocean Blvd",
+   "city": "Myrtle Beach",
+   "listings": 2,
+   "lat": 33.72649,
+   "lng": -78.8382
+  },
+  {
+   "street": "126 N Waccamaw Dr",
+   "city": "Garden City Beach",
+   "listings": 2,
+   "lat": 33.57729,
+   "lng": -78.99793
+  },
+  {
+   "street": "2500 N Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 2,
+   "lat": 33.82813,
+   "lng": -78.64092
+  },
+  {
+   "street": "2405 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 2,
+   "lat": 33.80311,
+   "lng": -78.70956
+  },
+  {
+   "street": "900 N Waccamaw Dr",
+   "city": "Garden City Beach",
+   "listings": 2,
+   "lat": 33.58314,
+   "lng": -78.99264
+  },
+  {
+   "street": "1425 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 2,
+   "lat": 33.80958,
+   "lng": -78.69509
+  },
+  {
+   "street": "1015 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 2,
+   "lat": 33.81209,
+   "lng": -78.68904
+  },
+  {
+   "street": "10200 Beach Club Dr",
+   "city": "Myrtle Beach",
+   "listings": 2,
+   "lat": 33.76995,
+   "lng": -78.77269
+  },
+  {
+   "street": "1401 S Ocean Blvd. S",
+   "city": "North Myrtle Beach",
+   "listings": 2,
+   "lat": 33.81016,
+   "lng": -78.69367
+  },
+  {
+   "street": "811 N Ocean Blvd",
+   "city": "Surfside Beach",
+   "listings": 2,
+   "lat": 33.61137,
+   "lng": -78.96633
+  },
+  {
+   "street": "2501 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 2,
+   "lat": 33.80288,
+   "lng": -78.71024
+  },
+  {
+   "street": "811 Ocean Blvd. N",
+   "city": "Surfside Beach",
+   "listings": 2,
+   "lat": 33.61129,
+   "lng": -78.96635
+  },
+  {
+   "street": "100 N Beach Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 2,
+   "lat": 33.79055,
+   "lng": -78.73662
+  },
+  {
+   "street": "9840 Queensway Blvd",
+   "city": "Myrtle Beach",
+   "listings": 2,
+   "lat": 33.76852,
+   "lng": -78.77587
+  },
+  {
+   "street": "517 S Ocean Blvd",
+   "city": "North Myrtle Beach",
+   "listings": 2,
+   "lat": 33.81595,
+   "lng": -78.67874
+  },
+  {
+   "street": "1217 S Ocean Blvd",
+   "city": "Surfside Beach",
+   "listings": 2,
+   "lat": 33.5957,
+   "lng": -78.98109
+  },
+  {
+   "street": "125 S Dunes Dr",
+   "city": "Pawleys Island",
+   "listings": 2,
+   "lat": 33.47702,
+   "lng": -79.09099
+  }
+ ],
+ "calls": [
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=0&max=100000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=100001&max=200000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=100001&max=150000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=100001&max=125000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=125001&max=150000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=150001&max=200000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=150001&max=175000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=175001&max=200000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=200001&max=400000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=200001&max=300000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=200001&max=250000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=250001&max=300000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=300001&max=400000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=400001&max=20000000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=400001&max=10200000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=400001&max=5300000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=400001&max=2850000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=400001&max=1625000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=400001&max=1012500",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=400001&max=706250",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=400001&max=553125",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=553126&max=706250",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=706251&max=1012500",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=1012501&max=1625000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=1625001&max=2850000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=2850001&max=5300000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=5300001&max=10200000",
+  "https://chapter3realty.com/homes/api/map?type=condo&has=oceanfront_building&min=10200001&max=20000000"
+ ],
+ "other_single_listing_addresses": 141
+}

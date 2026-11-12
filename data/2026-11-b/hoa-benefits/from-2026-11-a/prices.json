@@ -1,0 +1,44 @@
+{
+ "made": "extract_prices.py",
+ "nmb_aquatic_fitness": {
+  "url": "https://afc.nmb.us/174/Membership",
+  "effective": "September 1, 2026",
+  "individual": {
+   "joining_fee": 100,
+   "annual_paid_in_full": 555
+  },
+  "couple": {
+   "joining_fee": 100,
+   "annual_paid_in_full": 805
+  },
+  "senior_individual": {
+   "joining_fee": 100,
+   "annual_paid_in_full": 465
+  }
+ },
+ "myrtle_beach_rec": {
+  "url": "https://cityofmyrtlebeach.com/departments/recreation_center_memberships.php",
+  "annual": {
+   "Teen (13-17)": {
+    "city_resident": 100,
+    "non_city_resident": 170
+   },
+   "Adult (18-54)": {
+    "city_resident": 175,
+    "non_city_resident": 295
+   },
+   "Senior (55+)": {
+    "city_resident": 125,
+    "non_city_resident": 210
+   },
+   "Add Family Member": {
+    "city_resident": 30,
+    "non_city_resident": 55
+   }
+  },
+  "pepper_geddings_has": [
+   "25-Yard Swimming Pool",
+   "Weight Room"
+  ]
+ }
+}

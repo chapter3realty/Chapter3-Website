@@ -1,0 +1,334 @@
+{
+ "note": "Buildings on /invest/condo-buildings/. 'words' is the MLS subdivision search (substring) used by pull_building_fees.py and proposed for the idx-places entries; 'listed' marks the 28 buildings on the July page (Margaritaville Vacation Residences, pre-construction, is not in the MLS feed). Subdivision names seen on listing pages: data/2026-11-a/invest-rental-program-vs-airbnb/raw/by-building.json (2026-11-04).",
+ "buildings": [
+  {
+   "slug": "mb-resort",
+   "name": "Myrtle Beach Resort",
+   "words": "Mb Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "landmark",
+   "name": "Landmark Resort",
+   "words": "Landmark",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "sea-mist",
+   "name": "Sea Mist Resort",
+   "words": "Sea Mist",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "compass-cove",
+   "name": "Compass Cove",
+   "words": "Compass Cove",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "coral-beach",
+   "name": "Coral Beach Resort",
+   "words": "Coral Beach",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "bay-view",
+   "name": "Bay View Resort",
+   "words": "Bay View Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "breakers",
+   "name": "Breakers Resort",
+   "words": "Breakers Resort",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "camelot",
+   "name": "Camelot by the Sea",
+   "words": "Camelot",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "caribbean",
+   "name": "Caribbean Resort",
+   "words": "Caribbean",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "anderson-ocean-club",
+   "name": "Anderson Ocean Club",
+   "words": "Anderson Ocean",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "dunes-village",
+   "name": "Dunes Village Resort",
+   "words": "Dunes Village",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "sand-dunes",
+   "name": "Sand Dunes Resort",
+   "words": "Sand Dunes",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "caravelle",
+   "name": "Caravelle Resort",
+   "words": "Caravelle",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "island-vista",
+   "name": "Island Vista",
+   "words": "Island Vista",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "grande-cayman",
+   "name": "Grande Cayman Resort",
+   "words": "Grande Cayman",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "ocean-reef",
+   "name": "Ocean Reef Resort",
+   "words": "Ocean Reef",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "seawatch",
+   "name": "SeaWatch Resort",
+   "words": "SeaWatch",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "margate",
+   "name": "Margate Tower",
+   "words": "Margate",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "brighton",
+   "name": "Brighton Tower",
+   "words": "Brighton",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "royale-palms",
+   "name": "Royale Palms",
+   "words": "Royale Palms",
+   "city": "Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "avista",
+   "name": "Avista Resort",
+   "words": "Avista",
+   "city": "North Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "ocean-drive-beach-golf",
+   "name": "Ocean Drive Beach & Golf",
+   "words": "Ocean Drive Beach",
+   "city": "North Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "bay-watch",
+   "name": "Bay Watch Resort",
+   "words": "Bay Watch",
+   "city": "North Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "beach-cove",
+   "name": "Beach Cove Resort",
+   "words": "Beach Cove",
+   "city": "North Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "prince",
+   "name": "Prince Resort",
+   "words": "Prince Resort",
+   "city": "North Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "towers-on-the-grove",
+   "name": "Towers on the Grove",
+   "words": "Towers On The Grove",
+   "city": "North Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "north-beach-towers",
+   "name": "North Beach Towers",
+   "words": "North Beach Tower",
+   "city": "North Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "ocean-creek",
+   "name": "Ocean Creek Resort",
+   "words": "Ocean Creek",
+   "city": "North Myrtle Beach",
+   "on_july_page": true
+  },
+  {
+   "slug": "monterey-bay",
+   "name": "Monterey Bay Suites",
+   "words": "Monterey Bay",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "bluewater",
+   "name": "Bluewater Resort",
+   "words": "Bluewater",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "palace",
+   "name": "The Palace",
+   "words": "Palace",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "beach-colony",
+   "name": "Beach Colony",
+   "words": "Beach Colony",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "meridian-plaza",
+   "name": "Meridian Plaza",
+   "words": "Meridian",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "holiday-sands",
+   "name": "Holiday Sands",
+   "words": "Holiday Sands",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "sandy-beach",
+   "name": "Sandy Beach Resort",
+   "words": "Sandy Beach",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "carolina-winds",
+   "name": "Carolina Winds",
+   "words": "Carolina Winds",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "maisons-sur-mer",
+   "name": "Maisons Sur-Mer",
+   "words": "Maisons Sur",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "sands-ocean",
+   "name": "Sands Ocean Club",
+   "words": "Sands Ocean",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "ocean-forest-plaza",
+   "name": "Ocean Forest Plaza",
+   "words": "Ocean Forest Pl",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "south-hampton",
+   "name": "South Hampton",
+   "words": "South Hampton",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "crescent-shores",
+   "name": "Crescent Shores",
+   "words": "Crescent Shores",
+   "city": "North Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "holiday-pavilion",
+   "name": "Holiday Inn Pavilion",
+   "words": "Pavilion",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "boardwalk",
+   "name": "Boardwalk Oceanfront Tower",
+   "words": "Boardwalk Oceanfront",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "carolinian",
+   "name": "Carolinian Beach Resort",
+   "words": "Carolinian",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "oceans-one",
+   "name": "Oceans One",
+   "words": "Oceans One",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "patricia-grand",
+   "name": "Patricia Grand",
+   "words": "Patricia Grand",
+   "city": "Myrtle Beach",
+   "on_july_page": false
+  },
+  {
+   "slug": "mar-vista-grande",
+   "name": "Mar Vista Grande",
+   "words": "Mar Vista",
+   "city": "North Myrtle Beach",
+   "on_july_page": false
+  }
+ ]
+}

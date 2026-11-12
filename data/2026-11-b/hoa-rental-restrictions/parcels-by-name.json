@@ -1,0 +1,178 @@
+{
+ "source": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query",
+ "fields": "LegalDescr, PIN; geometry centroid (outSR 4326)",
+ "Waterfall": {
+  "parcels": 283,
+  "center": [
+   33.86125,
+   -78.70364
+  ],
+  "legal_top": [
+   [
+    "WATERFALL S/D PH 1; LOT 86",
+    1
+   ],
+   [
+    "WATERFALL S/D PH 1; LOT 85",
+    1
+   ],
+   [
+    "WATERFALL S/D PH 1; LOT 84",
+    1
+   ],
+   [
+    "WATERFALL S/D PH 1; LOT 82",
+    1
+   ],
+   [
+    "WATERFALL S/D PH 1; LOT 47",
+    1
+   ]
+  ]
+ },
+ "Surf Estates": {
+  "parcels": 89,
+  "center": [
+   33.83988,
+   -78.64985
+  ],
+  "legal_top": [
+   [
+    "SURF ESTATES; S.F. COMMON AREA O/S",
+    3
+   ],
+   [
+    "SURF ESTATES; LOT 62",
+    1
+   ],
+   [
+    "SURF ESTATES; LOT 35",
+    1
+   ],
+   [
+    "SURF ESTATES; LOT 33",
+    1
+   ],
+   [
+    "SURF ESTATES; LOT 31",
+    1
+   ]
+  ]
+ },
+ "Sugarloaf": {
+  "parcels": 111,
+  "center": [
+   33.85002,
+   -78.82961
+  ],
+  "legal_top": [
+   [
+    "SUGARLOAF PH 1; LOT 22",
+    1
+   ],
+   [
+    "SUGARLOAF PH 1; PUMP STATION",
+    1
+   ],
+   [
+    "SUGARLOAF PH 1; LOT 3",
+    1
+   ],
+   [
+    "SUGARLOAF PH 1; OPEN SPACE 2A",
+    1
+   ],
+   [
+    "SUGARLOAF PH 1; LOT 23",
+    1
+   ]
+  ]
+ },
+ "Atrium": {
+  "parcels": 17,
+  "center": [
+   33.74439,
+   -78.81568
+  ],
+  "legal_top": [
+   [
+    "ATRIUM; C/A",
+    1
+   ],
+   [
+    "ATRIUM; DWL 201",
+    1
+   ],
+   [
+    "ATRIUM; DWL 202",
+    1
+   ],
+   [
+    "THE ATRIUM; DW 304",
+    1
+   ],
+   [
+    "ATRIUM; DWL 102",
+    1
+   ]
+  ]
+ },
+ "Intercoastal Village": {
+  "parcels": 20,
+  "center": [
+   33.6781,
+   -78.98838
+  ],
+  "legal_top": [
+   [
+    "INTRACOASTAL VILLAGE; LOT 26",
+    1
+   ],
+   [
+    "INTRACOASTAL VILLAGE; LOT 25",
+    1
+   ],
+   [
+    "INTRACOASTAL VILLAGE; LOT 14",
+    1
+   ],
+   [
+    "INTRACOASTAL VILLAGE; LT 37 14X66 81 TAY",
+    1
+   ],
+   [
+    "INTRACOASTAL VILLAGE; LOT 35",
+    1
+   ]
+  ]
+ },
+ "Coquina Harbour": {
+  "parcels": 170,
+  "center": [
+   33.86341,
+   -78.63605
+  ],
+  "legal_top": [
+   [
+    "COQUINA HARBOUR MARINA; DOCK SLIP UNIT E",
+    19
+   ],
+   [
+    "COQUINA HARBOUR MARINA; DOCK SLIP UNIT F",
+    19
+   ],
+   [
+    "COQUINA HARBOUR MARINA; DOCK SLIP UNIT G",
+    16
+   ],
+   [
+    "COQUINA HARBOUR MARINA; DOCK SLIP UNIT H",
+    14
+   ],
+   [
+    "COQUINA HARBOUR MARINA; DOCK SLIP UNIT D",
+    10
+   ]
+  ]
+ }
+}

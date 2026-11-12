@@ -1,0 +1,168 @@
+{
+ "note": "County regime names (the legal description before ';') for each building, chosen from a box query around the building (raw/parcels-by-building.json), the deed file's groups, and the MLS subdivision names. A building with [] has no name we could tie to it.",
+ "buildings": {
+  "mb-resort": [
+   "MYRTLE BEACH RESORT"
+  ],
+  "landmark": [
+   "LANDMARK HPR PH I",
+   "LANDMARK HPR PH II"
+  ],
+  "sea-mist": [
+   "TIDES/DRIFTWD/OASIS HPR"
+  ],
+  "compass-cove": [
+   "PINNACLE OCEANFRT TOWER",
+   "COMPASS COVE N TOWER",
+   "SCHOONER OCEANFRT TOWER"
+  ],
+  "coral-beach": [
+   "CORAL BEACH HPR"
+  ],
+  "bay-view": [
+   "BAYVIEW HPR PH I",
+   "BAYVIEW HPR PH II",
+   "BAYVIEW HPR"
+  ],
+  "breakers": [
+   "BREAKERS CONDO TOWER"
+  ],
+  "camelot": [
+   "CAMELOT BY THE SEA HPR"
+  ],
+  "caribbean": [
+   "CARIBBEAN OCEANFRT TWR",
+   "CARIBBEAN TOWER HPR"
+  ],
+  "anderson-ocean-club": [
+   "ANDERSON OCEAN CLUB HPR",
+   "ANDERSON OCEAN CLB HPR"
+  ],
+  "dunes-village": [
+   "DUNES VILLAGE HPR"
+  ],
+  "sand-dunes": [
+   "SAND DUNES OCEANFRONT",
+   "SAND DUNES NORTH TOWER",
+   "SANDS DUNES HPR PH I"
+  ],
+  "caravelle": [
+   "CARAVELLE RESORT HPR",
+   "CARAVELLE TOWER HPR"
+  ],
+  "grande-cayman": [
+   "LONG BAY RESORT HPR"
+  ],
+  "ocean-reef": [
+   "OCEAN REEF RSRT N TOWER",
+   "OCEAN REEF RESORT S T"
+  ],
+  "seawatch": [
+   "SEAWATCH N TOWER HPR",
+   "SEAWATCH TOWERS HPR",
+   "SEAWATCH TOWERS HPR I"
+  ],
+  "margate": [
+   "MARGATE TOWER HPR PH I"
+  ],
+  "brighton": [
+   "BRIGHTON KINGSTON PLANT",
+   "BRIGHTON KINGSTON PLAN"
+  ],
+  "royale-palms": [
+   "ROYALE PALMS HPR PH I"
+  ],
+  "avista": [
+   "AVISTA HPR",
+   "AVISTA HPR PH II"
+  ],
+  "bay-watch": [
+   "BAYWATCH RESORT HPR"
+  ],
+  "beach-cove": [
+   "BEACH COVE OCEAN RESORT",
+   "BCH COVE OCN RESORT",
+   "BEACH COVE OCN RSRT HPR",
+   "BCH COVE OC RESORT",
+   "BEACH COVE OC RESORT"
+  ],
+  "prince": [
+   "PRINCE CONDO @ C.G.PIER",
+   "PRINCE CONDO @ C.G PIER"
+  ],
+  "towers-on-the-grove": [
+   "TOWERS ON THE GROVE HPR"
+  ],
+  "north-beach-towers": [
+   "NORTH BEACH TOWERS HPR"
+  ],
+  "ocean-creek": [
+   "LODGE AT OCEAN CREEK"
+  ],
+  "monterey-bay": [
+   "MONTEREY BAY SUITES RST"
+  ],
+  "palace": [
+   "THE PALACE"
+  ],
+  "holiday-sands": [
+   "HOLIDAY SANDS @ S BEACH"
+  ],
+  "carolinian": [
+   "CAROLINIAN RESORT HPR"
+  ],
+  "oceans-one": [
+   "OCEANS ONE S TOWER HPR"
+  ],
+  "crescent-shores": [
+   "CRESCENT SHORES HPR"
+  ],
+  "mar-vista-grande": [
+   "MAR VISTA GRANDE HPR"
+  ],
+  "patricia-grand": [
+   "PATRICIA GRAND HPR"
+  ],
+  "boardwalk": [
+   "BOARDWALK OCEANFRT TWR"
+  ],
+  "holiday-pavilion": [
+   "HOLIDAY PAVILION HPR"
+  ],
+  "bluewater": [
+   "BLUEWATER VILLAS",
+   "BLUEWATER VILLAS PH I"
+  ],
+  "beach-colony": [
+   "BEACH COLONY RESORT I",
+   "BEACH COLONY RESORT II"
+  ],
+  "meridian-plaza": [
+   "MERIDIAN PLAZA"
+  ],
+  "sandy-beach": [
+   "SANDY BEACH PH II C.T.",
+   "SANDY BEACH CONDO TOWER"
+  ],
+  "carolina-winds": [
+   "CAROLINA WINDS",
+   "CAROLINA WINDS HPR PHII"
+  ],
+  "maisons-sur-mer": [
+   "MAISONS SUR MER",
+   "MAISON SUR MER"
+  ],
+  "sands-ocean": [
+   "SANDS OCEAN CLUB",
+   "SANDS OCEAN CLUB PH II",
+   "SANDS OCEAN CLUB II"
+  ],
+  "ocean-forest-plaza": [
+   "OCEAN FOREST PLAZA"
+  ],
+  "south-hampton": [
+   "SOUTH HAMPTON",
+   "SOUTH HAMPOTN"
+  ]
+ }
+}

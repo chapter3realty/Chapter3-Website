@@ -1,0 +1,157 @@
+{
+ "farm": {
+  "homes": 1571,
+  "budget_2027": 2031964.0,
+  "budget_2026": 2031964.0,
+  "dues_month_2027": 107.0,
+  "dues_month_2026": 107.0,
+  "per_home_month_2027": {
+   "Cable TV": 42.7,
+   "Trash pickup": 13.34,
+   "Lawns, landscaping and ponds": 12.26,
+   "Management company": 9.24,
+   "Power for shared areas": 6.64,
+   "Savings for repairs": 5.57,
+   "Two pools": 5.22,
+   "Insurance": 2.6,
+   "Everything else": 10.22
+  },
+  "share_pct_2027": {
+   "Cable TV": 39.6,
+   "Trash pickup": 12.4,
+   "Lawns, landscaping and ponds": 11.4,
+   "Management company": 8.6,
+   "Power for shared areas": 6.2,
+   "Savings for repairs": 5.2,
+   "Two pools": 4.8,
+   "Insurance": 2.4,
+   "Everything else": 9.5
+  },
+  "cable_2027": 804981.0,
+  "cable_2026": 783167.0
+ },
+ "myrtle_trace": {
+  "homes": 518,
+  "dues_month": 95.0,
+  "pool_and_lakes_year": 77.36,
+  "pool_and_lakes_month": 6.45,
+  "clubhouse_year": 24.63,
+  "grounds_buildings_year": 646.28
+ },
+ "del_webb_grande_dunes": {
+  "lots": 812,
+  "ocean_club_year_per_lot": 962.36,
+  "ocean_club_month_per_lot": 80.2,
+  "yard_care_year_per_lot": 608.05,
+  "yard_care_month_per_lot": 50.67,
+  "assessments_month_per_lot": 382.48,
+  "note": "Budget lines divided by the 812 recorded lots; the budget states no per-home rate (ledger row 76)."
+ },
+ "gate": {
+  "guard_median_hourly": 15.13,
+  "oews_year": "2025",
+  "guards_employed": 1020,
+  "hours_in_a_year": 8760,
+  "one_post_round_the_clock_wages": 132539,
+  "split_examples": {
+   "98": 112.7,
+   "500": 22.09,
+   "1000": 11.04
+  }
+ },
+ "public_pool": {
+  "mb_adult_resident": 175,
+  "mb_adult_nonresident": 295,
+  "mb_senior_resident": 125,
+  "mb_senior_nonresident": 210,
+  "nmb_individual": [
+   100,
+   555
+  ],
+  "nmb_couple": [
+   100,
+   805
+  ],
+  "nmb_senior_individual": [
+   100,
+   465
+  ],
+  "nmb_senior_couple": [
+   100,
+   692
+  ]
+ },
+ "price_test": {
+  "built_2000_plus": {
+   "with_fee_ppsf": 205,
+   "no_fee_ppsf": 274,
+   "with_fee_n": 1974,
+   "no_fee_n": 479,
+   "with_fee_acres": 0.2,
+   "no_fee_acres": 0.53,
+   "zips_compared": 10,
+   "zips_fee_higher": 0,
+   "median_zip_gap_pct": -25.1
+  },
+  "all_ages": {
+   "zips_compared": 13,
+   "zips_fee_higher": 1,
+   "median_zip_gap_pct": -18.0
+  },
+  "bands": [
+   {
+    "band": "under 1 mile",
+    "with_fee_ppsf": 340,
+    "no_fee_ppsf": 417,
+    "with_fee_acres": 0.12,
+    "no_fee_acres": 0.16,
+    "n_with": 109,
+    "n_none": 167,
+    "share_with_fee_pct": 39.5
+   },
+   {
+    "band": "1 to 3 miles",
+    "with_fee_ppsf": 255,
+    "no_fee_ppsf": 298,
+    "with_fee_acres": 0.17,
+    "no_fee_acres": 0.24,
+    "n_with": 455,
+    "n_none": 43,
+    "share_with_fee_pct": 91.4
+   },
+   {
+    "band": "3 to 10 miles",
+    "with_fee_ppsf": 199,
+    "no_fee_ppsf": 225,
+    "with_fee_acres": 0.2,
+    "no_fee_acres": 0.66,
+    "n_with": 905,
+    "n_none": 36,
+    "share_with_fee_pct": 96.2
+   },
+   {
+    "band": "over 10 miles",
+    "with_fee_ppsf": 178,
+    "no_fee_ppsf": 228,
+    "with_fee_acres": 0.23,
+    "no_fee_acres": 1.0,
+    "n_with": 505,
+    "n_none": 233,
+    "share_with_fee_pct": 68.4
+   }
+  ]
+ },
+ "trade_offs": {
+  "houses": 3673,
+  "no_fee": 1154,
+  "with_fee": 2519,
+  "rv_boat_parking_pct_with_fee": 2.9,
+  "rv_boat_parking_pct_no_fee": 30.5,
+  "community_pool_pct_with_fee": 61.5,
+  "boat_ramp_pct_with_fee": 8.9,
+  "boat_ramp_pct_no_fee": 2.0
+ },
+ "complaints": {
+  "source": "from-2026-11-a/scdca-concerns.json (batch 2026-11-a row 25, VERIFIED)"
+ }
+}
