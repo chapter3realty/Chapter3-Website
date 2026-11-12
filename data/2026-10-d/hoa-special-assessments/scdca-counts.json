@@ -1,0 +1,165 @@
+{
+ "source": "https://www.consumer.sc.gov/HOA-reports",
+ "reports": {
+  "2023": {
+   "calendar_year": 2022,
+   "statewide": {
+    "complaints": 276,
+    "fees_special_assessments": 69,
+    "allocation_of_funds": 39,
+    "financial_statements": 38,
+    "maintenance_repairs": 81,
+    "words_special_assessment": 69
+   },
+   "horry": {
+    "complaints": 70,
+    "fees_special_assessments": 15,
+    "allocation_of_funds": 10,
+    "financial_statements": 8,
+    "maintenance_repairs": 30,
+    "words_special_assessment": 15
+   },
+   "georgetown": {
+    "complaints": 12,
+    "fees_special_assessments": 1,
+    "allocation_of_funds": 1,
+    "financial_statements": 1,
+    "maintenance_repairs": 3,
+    "words_special_assessment": 1
+   },
+   "columns": {
+    "county": "HOA County",
+    "concerns": "Complaint Description",
+    "free_text": [
+     "Explanation of your attempt to obtain documents",
+     "Recommendations for enforcing governing documents",
+     "Other recommendations for enforcing governing documents, if any",
+     "Recommendations for changing provisions of governing documents",
+     "Other recommendations for changing provisions of governing documents",
+     "Complaint Description",
+     "Complaint Description Other"
+    ]
+   }
+  },
+  "2024": {
+   "calendar_year": 2023,
+   "statewide": {
+    "complaints": 365,
+    "fees_special_assessments": 65,
+    "allocation_of_funds": 47,
+    "financial_statements": 22,
+    "maintenance_repairs": 94,
+    "words_special_assessment": 65
+   },
+   "horry": {
+    "complaints": 89,
+    "fees_special_assessments": 16,
+    "allocation_of_funds": 14,
+    "financial_statements": 1,
+    "maintenance_repairs": 21,
+    "words_special_assessment": 16
+   },
+   "georgetown": {
+    "complaints": 9,
+    "fees_special_assessments": 1,
+    "allocation_of_funds": 0,
+    "financial_statements": 1,
+    "maintenance_repairs": 1,
+    "words_special_assessment": 1
+   },
+   "columns": {
+    "county": "HOA County",
+    "concerns": "Complaint Description",
+    "free_text": [
+     "Explanation of your attempt to obtain documents",
+     "Recommendations for enforcing governing documents",
+     "Other recommendations for enforcing governing documents, if any",
+     "Recommendations for changing provisions of governing documents",
+     "Other recommendations for changing provisions of governing documents",
+     "Complaint Description",
+     "Complaint Description Other"
+    ]
+   }
+  },
+  "2025": {
+   "calendar_year": 2024,
+   "statewide": {
+    "complaints": 434,
+    "fees_special_assessments": 47,
+    "allocation_of_funds": 59,
+    "financial_statements": 45,
+    "maintenance_repairs": 128,
+    "words_special_assessment": 48
+   },
+   "horry": {
+    "complaints": 117,
+    "fees_special_assessments": 12,
+    "allocation_of_funds": 19,
+    "financial_statements": 12,
+    "maintenance_repairs": 36,
+    "words_special_assessment": 12
+   },
+   "georgetown": {
+    "complaints": 8,
+    "fees_special_assessments": 0,
+    "allocation_of_funds": 0,
+    "financial_statements": 2,
+    "maintenance_repairs": 1,
+    "words_special_assessment": 0
+   },
+   "columns": {
+    "county": "HOA County",
+    "concerns": "Complaint Description",
+    "free_text": [
+     "Explanation of your attempt to obtain documents",
+     "Recommendations for enforcing governing documents",
+     "Other recommendations for enforcing governing documents, if any",
+     "Recommendations for changing provisions of governing documents",
+     "Other recommendations for changing provisions of governing documents",
+     "Complaint Description",
+     "Complaint Description Other"
+    ]
+   }
+  },
+  "2026": {
+   "calendar_year": 2025,
+   "statewide": {
+    "complaints": 452,
+    "fees_special_assessments": 76,
+    "allocation_of_funds": 92,
+    "financial_statements": 76,
+    "maintenance_repairs": 129,
+    "words_special_assessment": 76
+   },
+   "horry": {
+    "complaints": 140,
+    "fees_special_assessments": 30,
+    "allocation_of_funds": 31,
+    "financial_statements": 28,
+    "maintenance_repairs": 39,
+    "words_special_assessment": 30
+   },
+   "georgetown": {
+    "complaints": 15,
+    "fees_special_assessments": 1,
+    "allocation_of_funds": 1,
+    "financial_statements": 0,
+    "maintenance_repairs": 3,
+    "words_special_assessment": 1
+   },
+   "columns": {
+    "county": "HOA County",
+    "concerns": "Complaint Description",
+    "free_text": [
+     "Explanation of your attempt to obtain documents:",
+     "Recommendations for enforcing governing documents",
+     "Other recommendations for enforcing governing documents, if any",
+     "Recommendations for changing provisions of governing documents",
+     "Other recommendations for changing provisions of governing documents",
+     "Complaint Description",
+     "Complaint Description (Other Details)"
+    ]
+   }
+  }
+ }
+}

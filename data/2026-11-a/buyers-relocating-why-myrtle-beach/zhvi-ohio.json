@@ -1,0 +1,34 @@
+{
+ "source": "https://files.zillowstatic.com/research/public_csvs/zhvi/County_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+ "month": "2026-09-30",
+ "counties": [
+  {
+   "fips": "36103",
+   "name": "Suffolk County",
+   "state": "NY",
+   "label": null,
+   "zhvi": 729701
+  },
+  {
+   "fips": "39049",
+   "name": "Franklin County",
+   "state": "OH",
+   "label": "Franklin County (Columbus)",
+   "zhvi": 292001
+  },
+  {
+   "fips": "39035",
+   "name": "Cuyahoga County",
+   "state": "OH",
+   "label": "Cuyahoga County (Cleveland)",
+   "zhvi": 218659
+  },
+  {
+   "fips": "45051",
+   "name": "Horry County",
+   "state": "SC",
+   "label": null,
+   "zhvi": 319809
+  }
+ ]
+}

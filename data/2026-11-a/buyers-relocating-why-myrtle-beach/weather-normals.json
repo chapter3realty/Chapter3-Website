@@ -1,0 +1,14 @@
+{
+ "source": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=normals-monthly-1991-2020&stations=USW00093718 (and normals-annualseasonal-1991-2020)",
+ "station": "N MYRTLE BCH AP, SC US",
+ "jan_high": "55.7",
+ "jan_low": "36.7",
+ "nights_at_or_below_32_year": "33.7",
+ "days_high_at_or_below_32_year": "0.3",
+ "days_90_plus_year": "20.9",
+ "snow": {
+  "source": "https://www.weather.gov/ilm/MYRsnowfallDatabase",
+  "annual_mean_in": 1.0,
+  "total_since_1940_in": 87.4
+ }
+}

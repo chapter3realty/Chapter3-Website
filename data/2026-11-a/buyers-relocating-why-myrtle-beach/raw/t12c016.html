@@ -1,0 +1,680 @@
+﻿
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="robots" content="noimageindex">
+	    <meta charset="iso-8859-1">
+	    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	    	    <title>Code of Laws - Title 12 - Chapter 16- - TAXATION</title>
+	    <link rel="SHORTCUT ICON" href="/images/stateflagsmall.ico" />
+		<link rel="icon" href="/images/stateflagsmall.ico" type="image/ico" />
+		<link rel="SHORTCUT ICON" href="/images/South-Carolina-Flag2.ico" />
+
+		<link type="text/css" rel="stylesheet" href="/css/main.css" media="all" />
+				
+		<!--[if lte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/ie7main.css" media="all" />
+		<![endif]-->
+		<!--[if gte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/iemain.css" media="all" />
+		<![endif]-->
+		<link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+		<link type="text/css" rel="stylesheet" href="/css/supplement.css" media="screen" />
+		<!--<link type="text/css" rel="stylesheet" href="/css/zipsearch.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/vote.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/contact.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/navwrap.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/linkbar.css" media="screen" />-->
+	
+		<!--<script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>-->
+		<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+				<script type="text/javascript" src="/js/main_linux.js"></script>
+		
+
+		
+
+
+
+		<!--<script type="text/javascript" src="/js/common.js"></script>
+		<script type="text/javascript" src="/js/utils.js"></script>
+		<script type="text/javascript" src="/js/date.js"></script>
+		<script type="text/javascript" src="/js/lightbox.js"></script>
+		<script type="text/javascript" src="/js/legislation.js"></script>
+		<script type="text/javascript" src="/js/logon_lits.js"></script>
+		<script type="text/javascript" src="/js/message.js"></script>
+		<script type="text/javascript" src="/js/comm_meeting.js"></script>-->
+		<script type="text/vbscript" src="/vbs/comm_meeting.vbs"></script>
+		<!--<script type="text/javascript" src="/js/regs.js"></script>-->
+				
+	   	<script type="text/javascript">
+	    //document.onclick = function () { document.getElementById('transbox').style.display= 'none' };
+	    	var xmlhttp=false;
+			xmlhttp = create_xml_object();
+	
+			function getElement(ele)
+			{
+				var theobj = false;
+				if(typeof ele == 'string')
+					theobj = (document.getElementById)?document.getElementById(ele):document.all[ele];
+				else
+					theobj = ele;
+			
+				return theobj;
+			}
+		
+			function checkreader(friendlyalert)
+			{
+			 	/*friendlyalert=friendlyalert||false;
+			 	
+			 	var browser_info = perform_acrobat_detection();
+				if (!browser_info.acrobat)
+				{
+				 	loadadobebox('adobebox', '/adobe.php');
+					return false;
+				}
+				else if (friendlyalert)
+				{
+			 		alert(friendlyalert);
+				}*/
+				return true;
+			}
+				
+			function loadadobebox(boxname, url)
+			{
+				var response = false;
+	
+				doRequest(xmlhttp, "GET", url, false, null, null);
+				if (xmlhttp.status == 200)
+				{
+		         	response = xmlhttp.responseText;
+				}
+	
+				if(response)
+				{
+			 		var ele = document.getElementById(boxname);
+				 	if (ele)
+				 	{
+				 		ele.style.visibility = 'hidden';
+		 				ele.style.display = 'block';
+	
+		 				positionElement(ele, 'center', 'center', true);
+	
+						ele.innerHTML = response;
+					    ele.style.visibility = 'visible';
+					    ele.style.display = 'block';
+	//				    ele.scrollIntoView(true);
+					}
+				}
+				return response;
+			}
+	
+	
+			function init()
+			{
+		 		var ld=document.getElementById("loading");
+				if(ld)
+				{
+					ld.style.display = 'none';
+				}
+			}
+			
+			function openmore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				 	var pos = findPos(id);
+				 	id.style.zIndex = 10;
+		//		 	id.style.left = pos[0]+'px';
+		//		  	id.style.top = pos[1]+'px';
+				  	id.style.height = '295px';
+				  	id.style.position = 'absolute';
+				  	id.style.backgroundColor = '#f7f4ec';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'none';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = 'none';
+				  	}
+				}
+			}
+		
+			function closemore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				  	id.style.height = '135px';
+				  	id.style.position = '';
+				  	id.style.backgroundColor = 'transparent';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'block';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = '';
+				  	}
+				}		 	
+			}
+		
+		<!-- This script and many more are available free online at -->
+		<!-- The JavaScript Source!! http://javascript.internet.com -->
+		
+		<!-- Begin
+		function right(e) {
+		var msg = "Use of this image is strictly prohibited unless express written permission is given to the user by South Carolina Legislative Services Agency.";
+		if (navigator.appName == 'Netscape' && e.which == 3) {
+		alert(msg);
+		return false;
+		stopEvent(e);
+		}
+		if (navigator.appName == 'Microsoft Internet Explorer' && event.button==2) {
+		alert(msg);
+		return false;
+			stopEvent(event);
+		}
+		else return true;
+		}
+		
+	function trap() 
+	{
+		if(document.images)
+		{
+			for(i=0;i<document.images.length;i++)
+			{
+				if(document.images[i].className == 'allowcontextmenu')
+				{
+					// this should have no scripting
+				}
+				else
+				{
+				 	document.images[i].onmousedown = right;
+					document.images[i].oncontextmenu = function(){ return false; };
+					//document.images[i].onmouseup = right;
+				}
+			}
+		}
+	}
+
+	function findfwtext(texttofind) 
+	{
+	 	var fwtextele = document.getElementById('fwtext');
+		if(fwtextele)
+		{
+			fwtextele.value = texttofind;
+		}
+	}	
+		// End -->
+		</script>
+
+		<!-- ADDED FOR V4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJY6FMNQKH"></script>
+
+
+<script type="text/javascript">
+
+//ADDED FOR V4
+//Google tag (gtag.js) 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LJY6FMNQKH');
+
+ 
+ /* COMMENTING OUT UPGRADING TO V4 -A
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36207109-1']);
+  _gaq.push(['_setDomainName', 'scstatehouse.gov']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+*/
+  
+      $(document).ready(function(){
+        // COMMENTING THIS OUT NO LONGER BEING ACTIVELY USED TO MONITOR FOR TRAFFIC TO SPECIFIC LINKS - A
+        /*
+          var anchors = $('div#contentsection a');
+
+          //console.log('anchors...'+anchors.length);
+          if(anchors.length > 0){
+            //console.log('setting up event handler...');
+            anchors.click(function(){
+              var a = $(this).attr('href');
+              if(_gaq && (a.substr(-3) == 'htm' || a.substr(-4) == 'html' || a.substr(-3) == 'doc' || a.substr(-4) == 'docx' || a.substr(-3) == 'pdf' || a.substr(-3) == 'xls' || a.substr(-4) == 'xlsx')) {
+                //console.log(a);
+                _gaq.push(['_trackPageview', $(this).attr('href')]);
+              }
+              
+              var aText = $(this).text().toLowerCase();
+              if (a.indexOf('getfile.php') > -1 && aText === 'word'){
+                    _gaq.push(['_trackEvent', 'Word Doc', 'Download', ('from page: ' + document.location + ' - href: ' + a)]);
+              }
+
+            });
+          }
+          */
+      });
+
+</script>
+	</head>
+	
+		
+	<body class="home"  onload="init(); trap();">
+	<noscript>Your browser does not support JavaScript!  This page will not render correctly.</noscript> 
+
+
+	
+	<div id="adobebox" style="position:absolute; width:400px; height:150px; border:2px solid #555555; background-color:#cccccc; display:none;"></div>
+	<div id="container" >	
+				<div id="header" class="nodisplay" style="text-align:center; height:100px;" >
+									<img id="headerimg" class="nodisplay" alt="South Carolina Legislature" title="South Carolina Legislature" src="/images/header8.png" />
+								
+							<!--	<div class="award"><span style="color:#831224; font-weight:bold; font-size:1.5em;">*</span> Recipient of<br>the Notable State Documents Award<br>by the<br>South Carolina<br>State Library.</div>-->
+				
+				
+			</div>
+			<div class="printdisplay"><img border="0" src="/images/titleprint.jpg" alt="South Carolina Legislature" title="South Carolina Legislature" alt="South Carolina Legislature" title="South Carolina State Legislature" /><br /><hr /><br /></div>
+	
+			<div id="pagebody" >
+	
+	
+<!--<div id="topmessage">
+<br style="display:block; margin-top:10px;">
+Searches and data queries will be unavailable beginning Friday, August 19, 2016, from 8:00 PM until Saturday, August 20th at 8:00 AM<br>due to scheduled maintenance.</div>-->
+				<!-- Prompt IE 8/7/6 users to upgrade to a newer browser. -->
+				<!--[if lte IE 8]>
+				<div class="oldframe">In order to improve your experience using this website, please <a href="http://browsehappy.com/">upgrade your browser</a>.</div>
+				<![endif]-->
+			
+			
+			
+			<div id="menu" class="nodisplay">
+				<ul class="nodisplay">
+				<li><a href="/index.php">Home</a></li>
+<li><a href="/senate.php">Senate</a></li>
+<li><a href="/house.php">House</a></li>
+<li><a href="/committeeinfo.php">Committee&nbsp;Postings&nbsp;and&nbsp;Reports</a></li>
+<li><a href="/council.php">Legislative Council</a></li>
+<li><a href="/citizens.php">Citizens&#39; Interest</a></li>
+<li><a href="/publications.php">Publications</a></li>
+		    	</ul>
+			</div>
+			<div id="search" class="nodisplay" style="height: 28px;"><div class="nodisplay" style="float:right; margin:6px 20px 0px 0;">
+							<!--<a style="color:#f7f4ec; height:15px;" href="#" onClick="rsswindow();"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+<!--				<a style="color:#f7f4ec; height:15px;" href="/splashpage/splashpage.html"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a> -->
+				<a style="color:#f7f4ec; height:15px;" href="/onlineservices/index.php"><img border="0" src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>
+			<!--	<a style="color:#f7f4ec; height:15px;" href="/maintenance_portal.php"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+						</div></div>
+			
+	
+					<div id="sidebar" class="nodisplay">
+	<div id="vidlinks" style="height: 50px;">
+						<!--<img src="/images/videobutton12d.png">-->
+											<ul id="vidsidemenu">
+	<li id="vidinnermenu" style="font-size:16px; margin: 0 0 5px 0;">Chamber Video</li>
+<li id="sbroadcast" style="float: left; width:50%;">
+<a id="liveS" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('S', false, false, '0')">Senate</a><br><a id="liveaudioS" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('S', false, false, '1');">(Audio Only)</a>
+</li>
+<li id="hbroadcast" style="float: left; width:50%;">
+<a id="liveH" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('H', false, false, '0')">House</a><br><a id="liveaudioH" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('H', false, false, '1');">(Audio Only)</a>
+</li>
+						</ul>
+					</div>
+					<div id="commvidlinks"><a href="/video/schedule.php">Video&nbsp;Schedule</a><a style="border-top:1px solid #fff; padding-top:12px;" href="/video/archives.php">Video Archives</a></div>
+										<div id="sidemenu">
+						<ul id="innermenu">
+		
+							<li><a href="/howdoi.php">How do I...</a></li>
+										
+							
+								<li class="nolink" onMouseOver="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='block'; document.sidesearchform.searchtext.focus();}" onMouseOut="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Quick Search</div>
+								<div id="sidesearch" class="sidesubmenu">
+									<form id="sidesearchform" name="sidesearchform" method="POST" action="/search.php">
+									<input type="hidden" name="search" value="side" />
+									<div class="topelement"><label for="searchtext"><span class="label">Search for:</span></label><input id="searchtext" name="searchtext" type="text"/><a id="searchlink2" href="javascript:void(0);" onClick="document.sidesearchform.submit();"><img id="searchicon" src="/images/searchbutton.png" alt="Search" title="Search"/></a></div>
+			<!--						<div><input type="checkbox" id="searchchoice_all" name="searchchoice_all" value="all" /><label for="searchchoice_all">All</label></div>-->
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_fullsite" name="category" value="FULLSITE" /><label for="searchchoice_fullsite">&nbsp;Full Site Search</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_billnumber" name="category" value="BILL" /><label for="searchchoice_billnumber">&nbsp;Bill Number</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_legislation" name="category" value="LEGISLATION" CHECKED /><label for="searchchoice_legislation">&nbsp;Legislation</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_budget" name="category" value="BUDGET" /><label for="searchchoice_budget">&nbsp;Budget</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeoflaws" name="category" value="CODEOFLAWS" /><label for="searchchoice_codeoflaws">&nbsp;Code of Laws</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeofregs" name="category" value="CODEOFREGS" /><label for="searchchoice_codeofregs">&nbsp;Code of Regulations</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_constitution" name="category" value="CONSTITUTION" /><label for="searchchoice_constitution">&nbsp;Constitution</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_housejournals" name="category" value="HOUSEJOURNALS" /><label for="searchchoice_housejournals">&nbsp;House Journals</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_senatejournals" name="category" value="SENATEJOURNALS" /><label for="searchchoice_senatejournals">&nbsp;Senate Journals</label></div>
+									<div class="bottomelement" style="padding-left:20px;"><input type="radio" id="searchchoice_billsummary" name="category" value="SUMMARY" /><label for="searchchoice_billsummary">&nbsp;LSA Bill Summary</label></div>
+								</form>
+									
+								</div>
+							</li>
+							<li><a href="/legislatorssearch.php">Find Your Legislators</a></li>
+							<li id="contactLegislatorLink"><a href="/email.php?chamber=B">Contact Your Legislator</a></li>
+									
+							<li><a href="/legislation.php">Legislation</a></li>
+							<li><a href="/listtracking/main.php" target="LTS">Track Legislation</a></li>
+							<li><a href="/multicriteria2/search.php" target="MCS">Multi-Criteria Search</a></li>
+									<!--<li><a href="#" onclick="multisearchwindow('INTROBOTH');">Multi-Criteria Search</a></li>-->
+									<!--<li><a href="#" onclick="multisearchwindow('INTROMANUAL');">Multi-Criteria Search</a></li>-->
+									<li><a href="/research.php">Research</a></li>
+	
+								<li class="nolink" onMouseOver="var ele=document.getElementById('law'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('law'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">South Carolina Law</div> 
+								<div id="law" class="sidesubmenu">
+									<div class="sidediv topelement"><a href="/newlaws.php">Ratifications &amp; Acts</a></div>
+									<div class="sidediv"><a href="/code/statmast.php">Code of Laws</a></div>
+									<div class="sidediv"><a href="/coderegs/statmast.php">Code of Regulations</a></div>
+									<div class="sidediv"><a href="/scconstitution/scconst.php">Constitution</a></div>
+									<div class="sidediv bottomelement"><a href="/state_register.php">State Register</a></div>
+								</div>
+							</li>
+										<li class="nolink" onMouseOver="var ele=document.getElementById('manual'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('manual'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Legislative Manual</div>
+								<div id="manual" class="sidesubmenu">
+								
+<!--									<div class="sidediv topelement"><a href="https://web.sc.gov/LSAShoppingcart/Default.aspx" target="_blank">Purchase Manual</a></div>-->
+								
+<!--									<div class="sidediv topelement"><a href="https://secure.scstatehouse.gov/cgi-bin/webstore.exe" target="_blank">Purchase Manual</a></div>-->
+									<div class="sidediv topelement"><a href="javascript:#" onClick="alert('We are sorry, but we are unable to process online transactions at this time.\n\nIf you would still like to make a purchase, please contact us directly at (803) 212-4490 during normal business hours (8:30am - 5:00pm EST).');">Purchase Manual</a></div>
+									<div class="sidediv bottomelement"><a href="/man26/manual26.php">View Manual Online</a></div>
+								</div>
+							</li>
+							<li><a href="http://www.studentconnection.scstatehouse.gov">Student Connection</a></li>
+							<li><a href="/visit.php">Visiting the State House</a></li>
+							<li><a href="/archives.php">Archives</a></li>
+							<li><a href="http://www.sc.gov/Agency-Listing" target="_blank">State Agency Websites</a></li>
+							<!--<li><a href="/stateagencysites.php">State Agency Websites</a></li>-->
+							<li><a href="/citizensinterestpage/media.php">Media Links</a></li>
+				 		</ul>
+			    	</div>
+	
+					<div id="side_ad">
+						<A href="http://www.sc.gov/" target="_blank"><img border=0 src="/images/scgov3.jpg" alt="SC.gov" title="SC.gov" /></a>
+													<A href="http://www.statelibrary.sc.gov" target="_blank"><img border=0 src="/images/scsl_logo_rgb_web.png" alt="StateLibrary.SC.gov" title="StateLibrary.SC.gov" /></a>
+											</div>	    	
+			</div>
+
+	
+	<script type="text/javascript"> 
+		if ( '' === '1'){
+		 	
+			var link = document.getElementById('contactLegislatorLink');
+			if (link != 'undefined' && link != null){
+				link.style.display = 'none'; 
+				link.style.visibility = 'hidden';
+			}
+		}
+		if ( '' === '1'){
+		 	setTimeout(function(){
+				var link2 = document.getElementById('sendMsgLink');
+				if (link2 != 'undefined' && link2 != null){
+					link2.style.display = 'none'; 
+					link2.style.visibility = 'hidden';
+				};
+			}, 20);
+			
+		}  
+	</script>
+<div class="mainwidepanel">
+
+				<div id="breadcrumbs">
+						South Carolina Law &gt; <a href="/code/statmast.php">Code of Laws</a> &gt; <a href="/code/title12.php">Title 12</a>
+				</div>
+
+					<h2 class="barheader">South Carolina Code of Laws<br />
+									Unannotated<br />
+					</h2>
+
+				<div id="contentsection">
+<div style="font-weight: bold; text-align: center;">Title 12 - TAXATION</div>
+<br />
+
+<div style="text-align: center;">CHAPTER 16</div>
+<div style="text-align: center;">Estate Tax</div><br />
+<div style="text-align: center;">ARTICLE 1</div>
+<div style="text-align: center;">Definitions and Domicile</div><br />
+<span style="font-weight: bold;"> SECTION 12-16-10.</span> Short title.<br /><br />
+	This chapter may be cited as the &quot;South Carolina Estate Tax Act&quot;.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-20.</span> Definitions.<br /><br />
+	As used in this chapter, unless the context clearly shows otherwise, the term or phrase:<br /><br />
+	(1) &quot;Decedent&quot; means a deceased person.<br /><br />
+	(2) &quot;Federal credit&quot; means the maximum amount of the credit for state death taxes allowable by Internal Revenue Code Section 2011. The term &quot;maximum amount&quot; must be construed so as to take full advantage of the credit as allowed by the Internal Revenue Code Section 2011, but (a) only after taking into account other federal estate tax credits permitted by the Internal Revenue Code and (b) not in excess of the amount necessary to reduce the federal estate tax to zero.<br /><br />
+	(3) &quot;Gross estate&quot; means &quot;gross estate&quot; as defined in Internal Revenue Code Section 2031.<br /><br />
+	(4) &quot;Intangible personal property&quot; means incorporeal personal property including deposits in banks, negotiable instruments, mortgages, debts, receivables, shares of stock, bonds, notes, creditors, evidences of an interest in property, evidences of debt, and choses in action generally.<br /><br />
+	(5) &quot;Internal Revenue Code&quot; means the Internal Revenue Code as described in Section 12-6-40(A).<br /><br />
+	(6) &quot;Net estate&quot; means the net estate as determined under the provisions of the Internal Revenue Code.<br /><br />
+	(7) &quot;Nonresident&quot; means a decedent who was domiciled outside of this State at his death.<br /><br />
+	(8) &quot;Person&quot; means persons, corporations, associations, joint stock companies, and business trusts.<br /><br />
+	(9) &quot;Personal representative&quot; means the personal representative of the estate of the decedent, appointed, qualified, and acting within the State, or, if there is no personal representative appointed, qualified, and acting within the State, then any person in actual or constructive possession of the South Carolina gross estate of the decedent.<br /><br />
+	(10) &quot;Resident&quot; means a decedent who was domiciled in this State at his death.<br /><br />
+	(11) &quot;State&quot; means any state, territory, or possession of the United States and the District of Columbia.<br /><br />
+	(12) &quot;Tangible personal property&quot; means corporeal personal property, including money.<br /><br />
+	(13) &quot;Taxable estate&quot; means &quot;taxable estate&quot; as defined in Internal Revenue Code Section 2051.<br /><br />
+	(14) &quot;Transfer&quot; includes the passing of property or any interest therein, in possession or enjoyment, present or future, by inheritance, descent, devise, succession, bequest, grant, deed, bargain, sale, gift, or appointment in the manner herein described.<br /><br />
+	(15) &quot;United States&quot; when used in a geographical sense includes only the fifty states and the District of Columbia.<br /><br />
+	(16) &quot;Value&quot; means &quot;value&quot; as finally determined for federal estate tax purposes under the Internal Revenue Code.<br /><br />
+	(17) &quot;Executor&quot; means personal representative as defined in item (9) of this section.<br /><br />
+	(18) &quot;Deficiency&quot; means the amount by which the tax imposed by this chapter exceeds:<br /><br />
+	(1) the sum of:<br /><br />
+	(a) the amount shown as the tax by the taxpayer upon his return, if a return was made by the taxpayer and an amount was shown as the tax by the taxpayer thereon, plus<br /><br />
+	(b) the amounts previously assessed (or collected without assessment) as a deficiency, over<br /><br />
+	(2) the amount of any credits allowable with respect thereto.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1; 1988 Act No. 463, SECTION 1; 1989 Act No. 189, Part II, SECTION 25B; 1990 Act No. 612, Part II, SECTION 3B; 1992 Act No. 361, SECTION 12(A); 1999 Act No. 114, SECTION 3; 2002 Act No. 217, SECTION 1, eff April 22, 2002.<br /><br />
+Editor&#39;s Note<br /><br />
+	2002 Act No. 217, SECTION 2, provides as follows:<br /><br />
+	&quot;This act takes effect upon approval by the Governor and applies to the calculation of South Carolina estate taxes due on or after that date.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-30.</span> Presumption of residency at death.<br /><br />
+	For the purposes of this chapter, every person is presumed to have died a resident of this State if:<br /><br />
+	(1) The person has dwelt or has lodged in the State during and for the greater part of any period of twelve consecutive months in the twenty-four months next preceding death, notwithstanding the fact that from time to time during the twenty-four months the person may have sojourned outside of this State, and without regard to whether or not the person may have voted, may have been entitled to vote, or may have been assessed for taxes in this State; or<br /><br />
+	(2) The person was a resident of South Carolina, sojourning outside of this State for any period of time.<br /><br />
+	The burden of proof in an estate tax proceeding is on any person claiming exemption by reason of alleged nonresidence, and orders relating to domicile previously entered in the probate proceedings are not conclusive for the purposes of this chapter.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<div style="text-align: center;">ARTICLE 3</div>
+<div style="text-align: center;">Uniform Act on Interstate Compromise and Arbitration of Death Taxes</div><br />
+<span style="font-weight: bold;"> SECTION 12-16-210.</span> Short title of article.<br /><br />
+	This article may be cited as the &quot;Uniform Act on Interstate Compromise and Arbitration of Death Taxes&quot;.<br /><br />
+HISTORY: 1987 Act No. 70 SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-220.</span> Construction and purpose.<br /><br />
+	This article must be interpreted and construed to effectuate its general purpose to make uniform the law of those states which enact it.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-230.</span> Arbitration of conflicting state claims regarding domicile.<br /><br />
+	When the department claims that a decedent was domiciled in this State at the time of his death and the taxing authorities of another state or states make a like claim on behalf of their state or states, the department may make a written agreement with the other taxing authorities and with the executor or administrator to submit the controversy to the decision of a board consisting of one or any uneven number of arbitrators. The executor or administrator is authorized to make the agreement. The parties to the agreement shall select the arbitrator or arbitrators.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-240.</span> Arbitration hearings.<br /><br />
+	The board shall hold hearings at the times and places as it may determine, upon reasonable notice to the parties to the agreement, all of whom are entitled to be heard, to present evidence, and to examine and cross-examine witnesses.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-250.</span> Powers of arbitration board; judicial sanctions for failure to obey subpoena.<br /><br />
+	The board has the power to administer oaths, take testimony, subpoena, and require the attendance of witnesses and the production of books, papers, and documents, and issue commissions to take testimony. Subpoenas may be signed by any member of the board. In case of failure to obey a subpoena, any judge of a court of record of this State, upon application by the board, may make an order requiring compliance with the subpoena and the court may punish failure to obey the order as a contempt.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-260.</span> Determination of domicile.<br /><br />
+	The board shall, by majority vote, determine the domicile of the decedent at the time of his death. This determination is final for purposes of imposing and collecting death taxes but for no other purpose.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-270.</span> Board&#39;s authority over questions arising in arbitration proceedings.<br /><br />
+	Except as provided in SECTION 12-16-250 in respect of the issuance of subpoenas, all questions arising in the course of the proceeding must be determined by majority vote of the board.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-280.</span> Filing requirements.<br /><br />
+	The department, the board, or the executor or administrator shall file the determination of the board as to domicile, the record of the board&#39;s proceedings, and the agreement, or a duplicate, made pursuant to SECTION 12-16-230, with the authority having jurisdiction to assess the death taxes in the state determined to be the domicile and shall file copies of all such documents with the authorities that would have been empowered to assess the death taxes in each of the other states involved.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-290.</span> Interest or penalties for nonpayment of death taxes.<br /><br />
+	In any case where it is determined by the board that the decedent died domiciled in this State, interest or penalties, if otherwise imposed by law, for nonpayment of death taxes may not be imposed between the date of the agreement and of filing of the determination of the board as to domicile.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1; 1988 Act No. 463, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-300.</span> Compromise.<br /><br />
+	Nothing contained in this article prevents at any time a written compromise, if otherwise lawful, by all parties to the agreement made pursuant to SECTION 12-16-230, fixing the amounts to be accepted by this and any other state involved in full satisfaction of death taxes.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-310.</span> Compensation and expenses of board members and employees.<br /><br />
+	The compensation and expenses of the members of the board and its employees may be agreed upon among the members and the executor or administrator and, if they cannot agree, must be fixed by the probate court of the state determined by the board to be the domicile of the decedent. The amounts so agreed upon or fixed are considered an administration expense and are payable by the executor or administrator.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-320.</span> Applicability of article.<br /><br />
+	This article applies only to arbitration cases in which each of the states involved has a law identical with or substantially similar to this article.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<div style="text-align: center;">ARTICLE 5</div>
+<div style="text-align: center;">Imposition of Tax</div><br />
+<span style="font-weight: bold;"> SECTION 12-16-510.</span> Estates of residents.<br /><br />
+	(A) A tax in the amount of the federal credit is imposed on the transfer of the taxable estate of every resident, subject, where applicable, to the credit provided in subsection (B).<br /><br />
+	(B) If any real and tangible personal property of a resident is located outside of this State and is subject to a death tax imposed by another state for which the federal credit is allowed, the amount of the tax due under this section must be credited with the lesser of:<br /><br />
+	(1) the amount of the death tax paid the other state and credited against the federal estate tax; or<br /><br />
+	(2) an amount computed by multiplying the federal credit by a fraction, the numerator of which is the value of that part of the gross estate over which another state or states have jurisdiction to the same extent to which this State would exert jurisdiction under this chapter with respect to the residents of the other state or states and the denominator of which is the value of the decedent&#39;s gross estate.<br /><br />
+	(C) Property of a resident includes:<br /><br />
+	(1) real property situated in this State;<br /><br />
+	(2) tangible personal property having an actual situs in this State; and<br /><br />
+	(3) intangible personal property owned by the resident regardless of where it is located.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1; 1988 Act No. 463, SECTION 3.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-520.</span> Estates of nonresidents.<br /><br />
+	(A) A tax in an amount computed as provided in this section is imposed on the transfer of every nonresident&#39;s taxable estate located in this State.<br /><br />
+	The tax is an amount computed by multiplying the federal credit by a fraction, the numerator of which is the value of that part of the gross estate over which this State has jurisdiction for estate tax purposes and the denominator of which is the value of the decedent&#39;s gross estate.<br /><br />
+	(B) For purposes of this section, property located in this State which is taxable to a nonresident includes:<br /><br />
+	(1) real property and real property interests located in this State, including mineral interests, royalties, production payments, leasehold interests, or working interests in oil, gas, coal, or any other minerals; and<br /><br />
+	(2) tangible personal property having an actual situs in this State.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-530.</span> Estates of aliens.<br /><br />
+	(A) A tax in an amount computed as provided in this section is imposed upon the transfer of real property and tangible personal property having an actual situs in this State and upon intangible personal property physically present within this State of every person who at the time of death was not a resident of the United States.<br /><br />
+	The tax is an amount computed by multiplying the federal credit by a fraction, the numerator of which is the value of that part of the gross estate over which this State has jurisdiction for estate tax purposes and the denominator of which is the decedent&#39;s gross estate taxable by the United States wherever situated.<br /><br />
+	(B) Resident aliens of the United States are subject to the tax imposed by this chapter under SECTION 12-16-520 when the decedent, at the time of death, was not a resident of this State but was a resident of the United States. A resident alien who, at the time of death, was a resident of this State and a resident of the United States is subject to the tax imposed by this chapter under SECTION 12-16-510.<br /><br />
+	(C) For purposes of this section, stock in a corporation organized under the laws of this State is considered physically present within this State.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<div style="text-align: center;">ARTICLE 7</div>
+<div style="text-align: center;">Tax on Generation-Skipping Transfers</div><br />
+<span style="font-weight: bold;"> SECTION 12-16-710.</span> Definitions.<br /><br />
+	(A) Terms, phrases, and words used in this article, except for those defined in subsection (B) of this section, are defined as they are defined under subchapter B of Chapter 13 of the Internal Revenue Code of 1986.<br /><br />
+	(B) As used in this article the phrase:<br /><br />
+	&quot;Original transferor&quot; means any transferor, as defined in Internal Revenue Code Section 2652, who by grant, gift, trust, will, or otherwise makes a transfer of real or personal property that results in a federal generation-skipping transfer tax under applicable provisions of the Internal Revenue Code at any time and for which a credit is available under Section 2604.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-720.</span> Imposition of tax.<br /><br />
+	(A) A tax is imposed upon every generation-skipping transfer, where the original transferor is a resident of this State at the date of original transfer, in an amount equal to the maximum amount allowable as a credit for state generation-skipping transfer taxes under Internal Revenue Code Section 2604, to the extent the credit exceeds the aggregate amount of all taxes on the same transfer actually paid to the several states of the United States, other than this State.<br /><br />
+	(B) A tax is imposed upon every generation-skipping transfer where the original transferor is not a resident of this State at the date of the original transfer, but where the generation-skipping transfer includes real or personal property having a situs in this State, in an amount equal to the maximum amount allowable as a credit for state generation-skipping transfer taxes under Internal Revenue Code Section 2604, reduced by an amount which bears the same ratio to the total state tax credit allowable for federal generation-skipping transfer tax purposes as the value of the transferred property taxable by all other states bears to the value of the gross generation-skipping transfer for federal generation-skipping transfer tax purposes. In any case in which a tax is imposed on a generation-skipping transfer by this State and by one or more other states, the department shall negotiate with the taxing authorities of the other state or states so that the aggregate amount of taxes imposed by this State and the other state or states on a generation-skipping transfer does not exceed one hundred percent of the maximum amount allowable as credit for state generation-skipping transfer taxes under Internal Revenue Code Section 2604.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-730.</span> Payment of tax.<br /><br />
+	(A) Every person required to file a return reporting a generation-skipping transfer under applicable federal statutes and regulations shall file a return with the department on or before the last day prescribed for filing the federal return. For purposes of this article the requirements for filing a return are satisfied by filing a duplicate copy of the federal return.<br /><br />
+	(B) The tax imposed by this section is due upon a taxable distribution or taxable termination as determined under applicable provisions of the federal generation-skipping transfer tax. The person liable for payment of the federal generation-skipping transfer tax is liable for the tax imposed by this article. The tax must be paid to the department on or before the last day allowed for filing a return hereunder. Interest computed as provided in Section 12-54-25 accrues on the amount of unpaid tax from the day after the last day for filing a return until the date of payment.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1; 1988 Act No. 463, SECTION 4.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-740.</span> Amended returns; underpayment of tax.<br /><br />
+	If, after the filing of a duplicate federal generation-skipping tax return, the Internal Revenue Service increases or decreases the amount of the federal generation-skipping transfer tax, an amended return must be filed with the department showing all changes made in the original return and the amount of increase or decrease in the federal generation-skipping transfer tax.<br /><br />
+	If, based upon the deficiency and the ground therefor, it appears that the amount of tax previously paid this State is less than the amount of tax owing, the difference together with interest, as computed under SECTION 12-54-25, must be paid upon notice and demand by the department. If the person required to file a return and pay the tax fails to file the return required by this section, any additional tax which is owing may be assessed, or a proceeding in court for the tax may be begun without assessment, at any time prior to the filing of the return or within thirty days after the delinquent filing of the return.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<div style="text-align: center;">ARTICLE 9</div>
+<div style="text-align: center;">Recapture Tax on Certain Use-Valuations</div><br />
+<span style="font-weight: bold;"> SECTION 12-16-910.</span> Tax treatment of certain farm or business realty; filing requirements; additional tax upon disposition or discontinuance of qualified uses of property.<br /><br />
+	(A) When the gross estate of a decedent at the date of death is a value requiring filing a federal estate tax return and the estate contains certain farm or business real property which qualified for valuation under Internal Revenue Code Section 2032A for the tax imposed under this chapter, a copy of the election made at the time of filing the federal estate tax return, if made, must be attached to the South Carolina estate tax return when filed. The return shall also include an agreement signed by each person in being having an interest, whether or not in possession, in the property and consent to the application of Internal Revenue Code Section 2032A.<br /><br />
+	(B) If, within ten years after the decedent&#39;s death and before the death of the qualified heir, as defined in Internal Revenue Code Section 2032A(e)(1), a qualified heir disposes of any interest in the property, other than to a member of his family, as defined in subsection (e)(2) of the section, or ceases to use the property for qualified uses as defined in subsection (b)(2) of the section, there is imposed an additional South Carolina estate tax, computed as provided in Internal Revenue Code Section 2032A(c) and the applicable regulations.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1; 1988 Act No. 463, SECTION 5.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-920.</span> Qualified heir&#39;s liability for additional tax; lien reflecting adjusted tax difference.<br /><br />
+	The qualified heir is personally liable for the additional tax imposed under this article. The amount of the adjusted tax difference attributable to an interest in any qualified property, computed in the same manner as provided in Internal Revenue Code Section 2032A(c)(2)(C) is a lien on the interest in the property in favor of this State. The lien arises at the time the election is filed hereunder and continues until:<br /><br />
+	(1) the liability for tax under this article attributable to the interest has been satisfied or has become unenforceable by lapse of time; or<br /><br />
+	(2) it is established to the satisfaction of the department that no further tax liability attributable to the interest may arise under this article.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-930.</span> Notification as to any disposition of property or change in property use; time frames for assessment and payment of additional tax.<br /><br />
+	Any qualified heir is required to notify the department, on a form prescribed by the department, of any disposition or change in use of the property and pay any additional South Carolina estate tax resulting from the disposition or change, within six months of the disposition or change. Any tax imposed under this article may be assessed until the expiration of three years from the date of the notification.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<div style="text-align: center;">ARTICLE 11</div>
+<div style="text-align: center;">Returns and Payment of Tax</div><br />
+<span style="font-weight: bold;"> SECTION 12-16-1110.</span> When tax is due; extensions; filing requirements; interest.<br /><br />
+	(A) The tax imposed under this chapter is due and payable no later than nine months from the date of the decedent&#39;s death.<br /><br />
+	(B) The personal representative of every estate subject to the tax imposed by this chapter who is required by the laws of the United States to file a federal estate tax return shall file with the Department of Revenue, on or before the date the federal estate tax return is required to be filed: (1) a return for the tax due under this chapter; and (2) a copy of the federal estate tax return.<br /><br />
+	(C) In addition to the provisions of Section 12-54-70, if the personal representative has obtained an extension of time for filing the federal estate tax return, the filing required by subsection (B) is similarly extended until the end of the time period granted in the extension of time for the federal estate tax return. Upon obtaining an extension of time for filing the federal estate tax return, the personal representative shall provide the department with a copy of the instrument providing for this extension.<br /><br />
+	(D) Except as provided in Section 12-16-910, the tax due under this chapter must be paid by the personal representative to the Department of Revenue at its office in Columbia not later than the date when the return covering this tax is required to be filed under subsection (B) or (C). If the tax is paid pursuant to subsection (C), interest, at a rate equal to the rate of interest established pursuant to Section 12-54-25, must be added for the period between the date when the tax would have been due had no extension been granted and the date of full payment.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1; 1988 Act No. 463, SECTION 6; 1993 Act No. 181, SECTION 126.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-1120.</span> Amended return; assessment of deficiency; limitations period.<br /><br />
+	(A) If the personal representative files an amended federal estate tax return, he shall immediately file with the department an amended return covering the tax imposed by this chapter, accompanying the same with a copy of the amended federal estate tax return. If the personal representative is required to pay an additional tax under this chapter pursuant to the amended return, he shall pay the tax, together with interest as provided in Section 12-54-25, at the time of filing the amended return.<br /><br />
+	(B) If, upon final determination of the federal estate tax due, a deficiency is assessed, the personal representative shall, within sixty days after this determination, give written notice of the deficiency to the department. If any additional tax is due under this chapter by reason of this determination, the personal representative shall pay the additional tax, together with interest as provided in Section 12-54-25, at the same time he files the notice.<br /><br />
+	(C) The limitations on assessment of taxes provided in this chapter do not expire any earlier than ninety days after the personal representative provides the department with the notice required in subsection (B).<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-1140.</span> Extensions of time for payment of tax.<br /><br />
+	The department may extend the time for the payment of the amount of tax required by this chapter for a reasonable period not to exceed twelve months. If the department finds that the payment on the due date of any part of the amount determined by the executor as the tax imposed by this chapter would result in undue hardship to the estate, it may extend the time for payment for a reasonable period not in excess of five years from the date prescribed by Section 12-16-1110.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-1150.</span> Personal representative&#39;s liability for payment of tax.<br /><br />
+	The tax and interest imposed by this chapter must be paid by the personal representative. If any personal representative distributes either in whole or in part any of the property of an estate to the heirs, next of kin, distributees, legatees, or devisees without having paid or secured the tax due pursuant to this chapter, he is personally liable for the tax so due, or so much thereof as may remain due and unpaid, to the full extent of any property belonging to the deceased person or estate which may come into the personal representative&#39;s custody or control.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-1160.</span> Payment of tax owed by estate of nonresident.<br /><br />
+	A resident personal representative holding personal property of a deceased nonresident subject to the tax shall deduct the tax or collect it from the personal representative in the state of the decedent&#39;s domicile and shall not deliver the property to him or any other person until he has collected the tax and paid the same to the department. When the transfer of the personal property is subject to a tax under the provisions of this chapter and the personal representative in the state of domicile neglects or refuses to pay the tax upon demand or if for any reason the tax is not paid within nine months after the decedent&#39;s death, the resident personal representative may petition the probate court where the resident personal representative qualified for authority to sell the property or, if the same can be divided, the portion as may be necessary. He shall then deduct the tax from the proceeds of the sale and account for the balance, if any, in lieu of the property.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1; 1988 Act No. 463, SECTION 8.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-1170.</span> Showing and appraisal of property.<br /><br />
+	The department may require any personal representative to show the property of the decedent to the department or its representative upon demand and may employ a suitable person to appraise the property. The personal representative shall make and subscribe his oath that the property shown on the inventory and appraisal filed by him in the probate court includes all the property, both real and personal, of the decedent that has come to his knowledge or into his possession. The appraiser shall prepare an inventory of the property, shall appraise it at its fair market value at the time of the decedent&#39;s death, and shall return the inventory and appraisal to the department.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-1180.</span> Production of documents and other information.<br /><br />
+	At any time after the expiration of the time required by this chapter for the filing of any return required therein the department may require the personal representative or any person or corporation interested in the succession to appear at the office of the department at a time the department designates and produce for the use of the department in determining whether or not the estate is subject to tax and the amount of tax, if any, all books, papers, or securities which may be within the possession or within the control of the personal representative or beneficiary relating to estate or tax and to furnish other information relating to the same as he may be able and the department may require.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-1190.</span> Attachment incident to neglect or disobedience of summons.<br /><br />
+	Whenever any person summoned under the provisions of this chapter neglects or refuses to obey the summons as required, the department may apply to any circuit judge of the State for an attachment against him for contempt. The judge shall hear the application and, if satisfactory proof is made, issue an attachment directed to the sheriff of the county in which the person resides for the arrest of the person and upon his being brought before him shall proceed to a hearing of the case. At the hearing the judge may make an appropriate order not inconsistent with existing laws for the punishment of contempt, to enforce obedience to the requirements of the summons, and to punish the person for his default or disobedience.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-1200.</span> Mandamus to compel appearance or production of documents.<br /><br />
+	In case of the refusal or neglect of any person summoned under the provisions of this chapter by the department to appear before it and produce books, papers, or securities, the department may apply to any justice of the Supreme Court or circuit judge for a mandamus to compel obedience to the summons and the hearing thereon may be had in Richland County or any other convenient county.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1; 1988 Act No. 463, SECTION 9.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-1210.</span> Tax on transfer of in-state stocks or obligations by foreign executor, administrator or trustee.<br /><br />
+	If a foreign executor, administrator, or trustee assigns or transfers any stock or obligations in this State standing in the name of a decedent or in trust for a decedent, liable for tax under this chapter, the tax must be paid to the department on transfer.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1; 1988 Act No. 463, SECTION 10.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-1220.</span> Information to be furnished by probate judge.<br /><br />
+	The probate judge shall send to the department by mail a copy of the inventory and appraisal of the assets of every estate the gross assets of which for probated purposes are equal to or exceed the sum of six hundred thousand dollars within thirty days after it is filed, together with a copy of any will probated with respect to the estate. In the case of a nonresident decedent, the probate judge shall furnish the department with copies of all wills filed with his office and, in the case of an ancillary administration, the probate judge shall furnish the department with copies of inventories and appraisals in all cases regardless of the value of the tangible personal property and real property having a situs in this State.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<div style="text-align: center;">ARTICLE 13</div>
+<div style="text-align: center;">Assessment and Collection</div><br />
+<span style="font-weight: bold;"> SECTION 12-16-1370.</span> Receipts.<br /><br />
+	The department shall give receipts for all sums collected by it.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1.<br /><br />
+<div style="text-align: center;">ARTICLE 15</div>
+<div style="text-align: center;">Nonpayment of Tax, Lien for Unpaid Taxes, Certificate of Release from Lien</div><br />
+<span style="font-weight: bold;"> SECTION 12-16-1510.</span> Lien for unpaid taxes; certificate of release from lien.<br /><br />
+	(A) A lien arises automatically from the death of the decedent upon all property, real or personal, located in this State of every decedent having a taxable estate who fails to pay the tax imposed by this chapter. Except as provided in Sections 12-16-910 and 12-16-920 the lien once it attaches is enforceable for a period not to exceed ten years from the date of death of the decedent.<br /><br />
+	(B) That part of the property of a decedent subject to the lien provided under subsection (A) is divested of the lien to the extent it is used for payment of charges against the estate or expenses of its administration allowed by the court having jurisdiction thereof.<br /><br />
+	(C) That part of the personal property of a decedent subject to the lien provided under subsection (A) is divested of the lien upon the conveyance or transfer of the property to a purchaser or holder of a security interest for an adequate and full consideration and the lien shall then attach to the proceeds received for the property from the purchaser or holder of a security interest. Real property is not divested of the lien except as provided in subsections (B) and (D) of this section.<br /><br />
+	(D) When any lien under this section has attached and the department is satisfied that the tax liability, if any, of the estate has been fully discharged, the department shall issue a certificate releasing all property of the estate from the lien; or, if the department is satisfied that the tax liability of the estate has been provided for, it shall issue a certificate releasing any surplus property of the estate from the lien.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1; 1988 Act No. 463, SECTION 12.<br /><br />
+<div style="text-align: center;">ARTICLE 17</div>
+<div style="text-align: center;">Enforcement and Liabilities</div><br />
+<span style="font-weight: bold;"> SECTION 12-16-1710.</span> Sale of real estate for payment of tax authorized.<br /><br />
+	The probate court may authorize executors, administrators, personal representatives, and trustees to sell the real estate of a decedent for the payment of the tax in the same manner in which it may authorize them to sell real estate for the payment of debts.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1; 1988 Act No. 463, SECTION 14.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-1720.</span> Notice to and appearance of department in judicial proceedings.<br /><br />
+	The department may appear in any proceeding in any court in which the decree may in any way affect the tax and no decree in any such proceeding or appeal therefrom shall be binding upon the State unless personal notice of such proceeding shall have been given to the department.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1; 1988 Act No. 463, SECTION 14.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-1730.</span> Payment of judgment for taxes and remittance to State Treasurer; executions.<br /><br />
+	Whenever the department in any action instituted by it recovers taxes under the provisions of this chapter, the amount of the judgment so recovered must be paid to the department and the department shall turn over to the State Treasurer all of the taxes after paying the costs, disbursements, and expenses of the suit. The department shall issue executions for any taxes which remain unpaid for a period of ninety days.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1; 1988 Act No. 463, SECTION 14.<br /><br />
+<div style="text-align: center;">ARTICLE 19</div>
+<div style="text-align: center;">Miscellaneous Provisions</div><br />
+<span style="font-weight: bold;"> SECTION 12-16-1910.</span> Effect of disclaimer of property interest.<br /><br />
+	For purposes of this chapter, if a person as defined in Section 62-2-801 makes a disclaimer as provided in Internal Revenue Code Section 2518 with respect to any interest in property, this chapter applies as if the interest had never been transferred to the person.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1; 1988 Act No. 463, SECTION 16.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-16-1950.</span> Department to provide blanks, books, and forms; notice to probate judges regarding their use.<br /><br />
+	The department shall prescribe all forms, books, and blanks for the use of the probate judges necessary for the administration of this chapter, which must be provided at the expense of the several counties, and the department shall mail notice to the probate judge of each form, book, or blank required to be used thirty days before the use thereof is required.<br /><br />
+HISTORY: 1987 Act No. 70, SECTION 1; 1988 Act No. 463, SECTION 16.<br /><br />
+
+</div>
+
+
+					</div>		 <!-- mainwidepanel -->
+					
+				</div>		 <!-- pagebody -->
+				
+				<div id="footer" class="nodisplay" style="height: 30px;" onContextMenu="return false;">
+			<div id="footerdiv" style="margin:0;">
+				South Carolina Legislative Services Agency * 223 Blatt Building * 1105 Pendleton Street * Columbia, SC 29201<!-- * 803-212-4420--><br>
+				
+								<a href="/disclaimer.php">Disclaimer</a> * <a href="/policies.php">Policies</a> * <a href="/credits.php">Photo Credits</a> * <a href="/contact.php">Contact Us</a>
+							</div>
+		</div>
+		<div id="printfooter" class="printdisplay serifNormal" align=center style="font-size: 8pt;">
+			<br>
+			<br>
+			<hr>
+			Legislative Services Agency
+			<br>
+			h t t p : / / w w w . s c s t a t e h o u s e . g o v
+		</div>
+	
+		</div>	<!-- container or main in mobile page-->
+</body>
+</html>
+

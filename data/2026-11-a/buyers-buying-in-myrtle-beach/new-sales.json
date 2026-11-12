@@ -1,0 +1,85 @@
+{
+ "rule": [
+  "Why: the 13,194-sale file (data/2026-10-d/sell-out-of-state-buyers) keeps only parcels with a county building value. New",
+  "houses deeded in 2026 have none yet, so that file drops most 2026 builder sales (CRAFT 2, a filter on a field new items lack).",
+  "This script reuses the verified builder rule and raw files of data/2026-10-d/buyers-new-construction (verify_build_deeds.py,",
+  "5,108 builder sales of 17,881 kept deeds) and splits builder sales into condo (land use 107 or HPR in the legal description,",
+  "the /sell/home-value/ rule) and house. Resales come from analyze.py (6,866 houses, 4,181 condos), which are not affected."
+ ],
+ "kept_deeds": 17881,
+ "builder_sales": 5108,
+ "builder_by_kind": {
+  "house": 4998,
+  "condo": 110
+ },
+ "builder_median_price_by_kind": {
+  "house": 330000.0,
+  "condo": 300287.5
+ },
+ "builder_by_month": {
+  "2025-10": 399,
+  "2025-11": 405,
+  "2025-12": 479,
+  "2026-01": 353,
+  "2026-02": 358,
+  "2026-03": 404,
+  "2026-04": 391,
+  "2026-05": 466,
+  "2026-06": 514,
+  "2026-07": 462,
+  "2026-08": 421,
+  "2026-09": 456
+ },
+ "builder_house_by_month": {
+  "2025-10": 385,
+  "2025-11": 400,
+  "2025-12": 472,
+  "2026-01": 342,
+  "2026-02": 354,
+  "2026-03": 396,
+  "2026-04": 384,
+  "2026-05": 445,
+  "2026-06": 502,
+  "2026-07": 452,
+  "2026-08": 417,
+  "2026-09": 449
+ },
+ "builder_by_price_band": {
+  "house": [
+   {
+    "band": "0-300000",
+    "sold_12mo": 1731
+   },
+   {
+    "band": "300000-450000",
+    "sold_12mo": 2289
+   },
+   {
+    "band": "450000-700000",
+    "sold_12mo": 840
+   },
+   {
+    "band": "700000-up",
+    "sold_12mo": 138
+   }
+  ],
+  "condo": [
+   {
+    "band": "0-150000",
+    "sold_12mo": 0
+   },
+   {
+    "band": "150000-250000",
+    "sold_12mo": 42
+   },
+   {
+    "band": "250000-400000",
+    "sold_12mo": 40
+   },
+   {
+    "band": "400000-up",
+    "sold_12mo": 28
+   }
+  ]
+ }
+}

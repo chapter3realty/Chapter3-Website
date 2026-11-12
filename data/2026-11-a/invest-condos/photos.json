@@ -1,0 +1,142 @@
+{
+ "photos": [
+  {
+   "slug": "invest-condos",
+   "file": "images/2026-11-a/invest-condos/myrtle-beach-condo-towers-2011.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-condos/myrtle-beach-condo-towers-2011-600w.webp",
+    "1200": "images/2026-11-a/invest-condos/myrtle-beach-condo-towers-2011-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "Condo towers and smaller condo buildings on the ocean in Myrtle Beach, USGS oblique aerial photo, August 24, 2011",
+   "what": "A stretch of oceanfront in the City of Myrtle Beach seen from a plane over the ocean: on the left the edge of a glass tower, a tall tower with a red roof line and a tall tan tower with a small cupola, each with a pool deck behind the dunes and wooden walkways over the dunes to the beach; to the right a paved beach access lot and a small playground, then a road that curves inland, with a white mid-rise, a gray low-rise and brown low-rise buildings with pools across it. Houses and a golf course sit among trees behind. Beach umbrellas line the sand. People are too small to recognize; no plate, sign or building name is readable.",
+   "caption": "City of Myrtle Beach: condo towers on North Ocean Boulevard, seen from a plane in 2011.",
+   "alt": "Three tall oceanfront condo towers behind the dunes in Myrtle Beach, with smaller condo buildings across a curving road to the right and the beach and ocean in front",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "North Ocean Boulevard, City of Myrtle Beach (tax district 880)"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "display_credit": "Photo: USGS",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_180150d.jpg (https://coastal.er.usgs.gov/hurricanes/oblique/images/2011/24/2011_0824_180150d.jpg; in https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_180000.zip); aircraft position 33.721180 N, 78.835140 W (11CCH03-Photolocations.csv; the position of the plane, not of the buildings). Local copy 3,722,363 bytes, MD5 082e7393a1034e848d1d8fb322fda5dc, fetched in this batch for /submarkets/myrtle-beach/ and not used there. Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. Not the frame used on any other page (others use 174830, 175156, 175537, 175857, 175915, 175948, 180052, 180133, 180143, 180158, 180512, 180542, 180608 and 181208).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size (3008 x 1960, in four quarters) by the writer on 2026-11-02. Horry County parcels layer 24, queried 2026-11-02 over the shore landward of the plane (envelope -78.8460 33.7150 to -78.8280 33.7320): every oceanfront parcel on this stretch is a condo regime, land use 107, tax district 880 (City of Myrtle Beach): Dunes Village, Pan American, Beach Colony Resort I and II, Southwind, Cabana I, Drayton House, The Anchorage and The Anchorage II, Ocean One, Forest Dunes, Porcher Villas, Sandcastle, Ocean Forest Plaza, A Place at the Beach. The houses behind are in the Dunes sections (land use 100 and 101). The caption names no building and says only that these are condo buildings on the ocean in Myrtle Beach, and the year. No sign or name is legible at page size; people are specks; no plate is readable.",
+   "annotation_sources": {
+    "where": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24 (envelope -78.8460 33.7150 to -78.8280 33.7320; LegalDescr, LandUseCode and TaxDistrict read 2026-11-02)"
+   },
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "crop_note": "Cut as one 3008 x 1692 band (x 0 to 3008, y 268 to 1960 of the frame), then resized.",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-a/invest-condos/myrtle-beach-condo-towers-2011-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-a/invest-condos/myrtle-beach-condo-towers-2011-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-a/invest-condos/myrtle-beach-condo-towers-2011-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "road_check": "Horry County GIS layer 18 (Roads), envelope -78.842 33.718 to -78.832 33.726, read 2026-11-03 by the fixer: N OCEAN BLVD, postal city MYRTLE BEACH (2,665 ft) and OCEAN VILLAGE DR."
+  },
+  {
+   "slug": "invest-condos",
+   "file": "images/2026-11-a/invest-condos/north-myrtle-beach-condos-2011.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-condos/north-myrtle-beach-condos-2011-600w.webp",
+    "1200": "images/2026-11-a/invest-condos/north-myrtle-beach-condos-2011-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "Condo tower and low-rise condo buildings on South Ocean Boulevard, North Myrtle Beach, USGS oblique aerial photo, August 24, 2011",
+   "what": "A stretch of oceanfront in North Myrtle Beach seen from a plane over the ocean: from left, a three-story gray condo building with a pool, a tan ten-story tower, a gray four-story building with a pool, and on the right a wide white fourteen-story tower with a pool deck and palms. Wooden walkways cross the dunes to the beach. A road runs behind the buildings, with older beach houses and trees beyond it. Beach umbrellas line the sand; people are too small to recognize.",
+   "caption": "North Myrtle Beach: a condo tower and low-rise condo buildings on South Ocean Boulevard, with beach houses behind, seen from a plane in 2011.",
+   "alt": "A wide white condo tower and three smaller condo buildings on the dunes in North Myrtle Beach, with a road and beach houses behind them and the beach in front",
+   "place": {
+    "city": "North Myrtle Beach",
+    "sublocation": "South Ocean Boulevard, North Myrtle Beach (tax district 550)"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "display_credit": "Photo: USGS",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_180624d.jpg, from the data release zip (https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_180500.zip); aircraft position 33.807613 N, 78.686753 W (11CCH03-Photolocations.csv; the plane, not the buildings). Fetched 2026-11-03 by the fixer for /invest/condos/. Not used on any other page.",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size (3008 x 1960) by the fixer on 2026-11-03, whole frame and a 1500 x 1000 crop of the center at 100 percent. No sign, plate or building name is readable at page size; people are specks. Horry County parcels layer 24, condo units (land use 1xx, building value above 0, legal description with HPR) in envelope -78.692 33.808 to -78.680 33.816, read 2026-11-03: every condo regime in the envelope is tax district 550 (North Myrtle Beach): Mar Vista Grande, Northshore Villas, Hillside, Coconut Grove, Blue Parrot, Atlantis Villas, Waipani and others. Roads, layer 18: S OCEAN BLVD, postal city NORTH MYRTLE BEACH (2,314 ft), Perrin Dr, 10th and 11th Ave S.",
+   "annotation_sources": {
+    "where": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24 and /18 (envelope -78.692 33.808 to -78.680 33.816, read 2026-11-03)"
+   },
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "crop_note": "Cut as one 3008 x 1692 band (x 0 to 3008, y 150 to 1842 of the frame), then resized."
+  },
+  {
+   "slug": "invest-condos",
+   "file": "images/2026-11-a/invest-condos/garden-city-condos-2011.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-condos/garden-city-condos-2011-600w.webp",
+    "1200": "images/2026-11-a/invest-condos/garden-city-condos-2011-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "Condo towers and low-rise condo buildings on North Waccamaw Drive, Garden City Beach, USGS oblique aerial photo, August 24, 2011",
+   "what": "A stretch of oceanfront at Garden City Beach seen from a plane over the ocean: low-rise condo buildings with pools on the left, a tall tan tower in the middle, a white five-story building with a pool and the edge of another tower on the right. Streets of beach houses run back from the shore road to a wide salt marsh, with more houses on the far side of the marsh. Beach umbrellas line the sand; people are too small to recognize.",
+   "caption": "Garden City Beach, outside city limits: a condo tower and low-rise condo buildings on North Waccamaw Drive, with the marsh behind, seen from a plane in 2011.",
+   "alt": "A tall tan condo tower and several low-rise condo buildings with pools on the beach at Garden City, with beach houses and a wide salt marsh behind them",
+   "place": {
+    "city": "Garden City Beach",
+    "sublocation": "North Waccamaw Drive, Garden City Beach, unincorporated Horry County (tax district 610)"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "display_credit": "Photo: USGS",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_175601d.jpg, from the data release zip (https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_175500.zip); aircraft position 33.578593 N, 78.98845 W (11CCH03-Photolocations.csv; the plane, not the buildings). Fetched 2026-11-03 by the fixer for /invest/condos/. Not used on any other page.",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size (3008 x 1960) by the fixer on 2026-11-03, whole frame and a 1500 x 1000 crop of the center at 100 percent. No sign, plate or building name is readable at page size; people are specks. Horry County parcels layer 24, condo units (land use 1xx, building value above 0, legal description with HPR) in envelope -78.996 33.578 to -78.984 33.588, read 2026-11-03: every condo regime in the envelope is tax district 610, which is not a city district (README \"Area\": 550 North Myrtle Beach, 88x and 89x City of Myrtle Beach, 660 Surfside Beach, 110 Conway; the rest is outside city limits): Sea Oaks, Sandy Shores, Reflections, Afterdeck, Sea Watch VI, Portobello II, Angler Villas and others. Roads, layer 18: N WACCAMAW DR and RAINBOW DR, postal city GARDEN CITY.",
+   "annotation_sources": {
+    "where": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24 and /18 (envelope -78.996 33.578 to -78.984 33.588, read 2026-11-03)"
+   },
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "crop_note": "Cut as one 3008 x 1692 band (x 0 to 3008, y 100 to 1792 of the frame), then resized."
+  }
+ ]
+}

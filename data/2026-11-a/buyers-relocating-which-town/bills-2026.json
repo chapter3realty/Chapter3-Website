@@ -1,0 +1,11 @@
+{
+ "source": "Horry County Treasurer, public tax search, https://horrycountytreasurer.qpaybill.com/Taxes/TaxesDefaultType4.aspx (bill.py), read 2026-11-03",
+ "note": "One 2026 real estate bill per tax district, for a house taxed at the 4 percent rate. PIN and owner left out (kept in scratch). Residential Exemption = assessed x 109.1 mills (the school operating levy), which is how the 4 percent rate skips it.",
+ "bills": [
+  {"district": "400", "where": "Aynor ZIP 29511, outside the town", "district_levy": "400 / 201.", "city_levy": "", "assessed": 12990, "fees": 89.40, "residential_exemption": 1417.21, "total_taxes": 1283.18, "check": "12,990 x 0.201 = 2,610.99 - 1,417.21 + 89.40 = 1,283.18"},
+  {"district": "400", "where": "Aynor ZIP 29511, outside the town", "district_levy": "400 / 201.", "city_levy": "", "assessed": 7050, "fees": 89.40, "residential_exemption": 769.16, "total_taxes": 737.29},
+  {"district": "550", "where": "North Myrtle Beach", "district_levy": "550 / 171.2", "city_levy": "NM / 50.", "assessed": 35220, "fees": 0.00, "residential_exemption": 3842.50, "total_taxes": 3948.16, "check": "35,220 x 0.2212 = 7,790.66 - 3,842.50 = 3,948.16"},
+  {"district": "660", "where": "Surfside Beach", "district_levy": "660 / 171.2", "city_levy": "SS / 43.", "assessed": 11400, "fees": 82.00, "residential_exemption": 1243.74, "total_taxes": 964.84, "check": "11,400 x 0.2142 = 2,441.88 - 1,243.74 + 82.00 = 1,280.14; less the Homestead Exemption of $315.30 printed on this bill (owners 65 or older) = 964.84"},
+  {"district": "220", "where": "City of Loris", "district_levy": "220 / 171.2", "city_levy": "LO / 111.", "assessed": 10500, "fees": 0.00, "residential_exemption": 1145.55, "total_taxes": 1298.25, "check": "10,500 x 0.2822 = 2,963.10 - 1,145.55 = 1,817.55; less the Homestead Exemption of $519.30 printed on this bill = 1,298.25"}
+ ]
+}

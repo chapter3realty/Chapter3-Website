@@ -1,0 +1,519 @@
+{
+ "pulled": "2026-11-01T11:16:01.824827Z",
+ "source": "https://chapter3realty.com/homes/api/map?",
+ "groups": {
+  "mb_city_oceanfront_condo_2br": {
+   "total_beds2plus": 98,
+   "n": 48,
+   "streets": [
+    [
+     "N Ocean Blvd",
+     19
+    ],
+    [
+     "S Ocean Blvd",
+     13
+    ],
+    [
+     "74th Ave. N",
+     3
+    ],
+    [
+     "77th Ave. N",
+     2
+    ],
+    [
+     "Ocean Blvd. N",
+     2
+    ],
+    [
+     "N Ocean Blvd. N",
+     2
+    ],
+    [
+     "76th Ave. N",
+     1
+    ],
+    [
+     "Ocean Creek Dr",
+     1
+    ],
+    [
+     "North Ocean Blvd",
+     1
+    ],
+    [
+     "Queensway Blvd",
+     1
+    ],
+    [
+     "Ocean Blvd. S",
+     1
+    ],
+    [
+     "South Ocean Blvd",
+     1
+    ],
+    [
+     "N 74th Ave. N",
+     1
+    ]
+   ],
+   "fee_le_400": {
+    "n": 0,
+    "streets": []
+   },
+   "fee_le_600": {
+    "n": 2,
+    "streets": [
+     [
+      "N Ocean Blvd",
+      2
+     ]
+    ]
+   },
+   "fee_le_800": {
+    "n": 9,
+    "streets": [
+     [
+      "N Ocean Blvd",
+      7
+     ],
+     [
+      "North Ocean Blvd",
+      1
+     ],
+     [
+      "Ocean Blvd. N",
+      1
+     ]
+    ]
+   }
+  },
+  "mb_city_oceanfront_condo_2br_electric": {
+   "total_beds2plus": 64,
+   "n": 31,
+   "streets": [
+    [
+     "N Ocean Blvd",
+     13
+    ],
+    [
+     "S Ocean Blvd",
+     7
+    ],
+    [
+     "74th Ave. N",
+     3
+    ],
+    [
+     "77th Ave. N",
+     2
+    ],
+    [
+     "Ocean Blvd. N",
+     2
+    ],
+    [
+     "N Ocean Blvd. N",
+     2
+    ],
+    [
+     "North Ocean Blvd",
+     1
+    ],
+    [
+     "N 74th Ave. N",
+     1
+    ]
+   ],
+   "fee_le_400": {
+    "n": 0,
+    "streets": []
+   },
+   "fee_le_600": {
+    "n": 0,
+    "streets": []
+   },
+   "fee_le_800": {
+    "n": 4,
+    "streets": [
+     [
+      "N Ocean Blvd",
+      2
+     ],
+     [
+      "North Ocean Blvd",
+      1
+     ],
+     [
+      "Ocean Blvd. N",
+      1
+     ]
+    ]
+   }
+  },
+  "nmb_oceanfront_condo_2br": {
+   "total_beds2plus": 137,
+   "n": 65,
+   "streets": [
+    [
+     "S Ocean Blvd",
+     40
+    ],
+    [
+     "N Ocean Blvd",
+     13
+    ],
+    [
+     "North Beach Blvd",
+     4
+    ],
+    [
+     "N Ocean Blvd. N",
+     2
+    ],
+    [
+     "Ocean Blvd. S",
+     2
+    ],
+    [
+     "South Ocean Blvd",
+     1
+    ],
+    [
+     "S Ocean Dr",
+     1
+    ],
+    [
+     "S Ocean Blvd. S",
+     1
+    ],
+    [
+     "S 14th Ave. S",
+     1
+    ]
+   ],
+   "fee_le_400": {
+    "n": 0,
+    "streets": []
+   },
+   "fee_le_600": {
+    "n": 5,
+    "streets": [
+     [
+      "N Ocean Blvd. N",
+      1
+     ],
+     [
+      "Ocean Blvd. S",
+      1
+     ],
+     [
+      "S Ocean Blvd",
+      1
+     ],
+     [
+      "N Ocean Blvd",
+      1
+     ],
+     [
+      "South Ocean Blvd",
+      1
+     ]
+    ]
+   },
+   "fee_le_800": {
+    "n": 19,
+    "streets": [
+     [
+      "S Ocean Blvd",
+      10
+     ],
+     [
+      "N Ocean Blvd",
+      4
+     ],
+     [
+      "Ocean Blvd. S",
+      2
+     ],
+     [
+      "N Ocean Blvd. N",
+      1
+     ],
+     [
+      "South Ocean Blvd",
+      1
+     ],
+     [
+      "S Ocean Blvd. S",
+      1
+     ]
+    ]
+   }
+  },
+  "surfside_condo_2br": {
+   "total_beds2plus": 43,
+   "n": 32,
+   "streets": [
+    [
+     "Glenns Bay Rd",
+     9
+    ],
+    [
+     "Double Eagle Dr",
+     5
+    ],
+    [
+     "Colony Dr",
+     4
+    ],
+    [
+     "Bent Grass Dr",
+     3
+    ],
+    [
+     "N Ocean Blvd",
+     3
+    ],
+    [
+     "Auburn Ln",
+     2
+    ],
+    [
+     "3rd Ave. N",
+     1
+    ],
+    [
+     "Ocean Blvd. S",
+     1
+    ],
+    [
+     "Andover Dr",
+     1
+    ],
+    [
+     "Ocean Blvd. N",
+     1
+    ],
+    [
+     "S Dogwood Dr",
+     1
+    ],
+    [
+     "S Ocean Blvd",
+     1
+    ]
+   ],
+   "fee_le_400": {
+    "n": 19,
+    "streets": [
+     [
+      "Glenns Bay Rd",
+      6
+     ],
+     [
+      "Double Eagle Dr",
+      5
+     ],
+     [
+      "Colony Dr",
+      3
+     ],
+     [
+      "Bent Grass Dr",
+      3
+     ],
+     [
+      "Andover Dr",
+      1
+     ],
+     [
+      "Auburn Ln",
+      1
+     ]
+    ]
+   },
+   "fee_le_600": {
+    "n": 26,
+    "streets": [
+     [
+      "Glenns Bay Rd",
+      9
+     ],
+     [
+      "Double Eagle Dr",
+      5
+     ],
+     [
+      "Colony Dr",
+      4
+     ],
+     [
+      "Bent Grass Dr",
+      3
+     ],
+     [
+      "Auburn Ln",
+      2
+     ],
+     [
+      "Andover Dr",
+      1
+     ],
+     [
+      "S Dogwood Dr",
+      1
+     ],
+     [
+      "S Ocean Blvd",
+      1
+     ]
+    ]
+   },
+   "fee_le_800": {
+    "n": 28,
+    "streets": [
+     [
+      "Glenns Bay Rd",
+      9
+     ],
+     [
+      "Double Eagle Dr",
+      5
+     ],
+     [
+      "Colony Dr",
+      4
+     ],
+     [
+      "Bent Grass Dr",
+      3
+     ],
+     [
+      "Auburn Ln",
+      2
+     ],
+     [
+      "3rd Ave. N",
+      1
+     ],
+     [
+      "N Ocean Blvd",
+      1
+     ],
+     [
+      "Andover Dr",
+      1
+     ],
+     [
+      "S Dogwood Dr",
+      1
+     ],
+     [
+      "S Ocean Blvd",
+      1
+     ]
+    ]
+   }
+  },
+  "garden_city_condo_2br": {
+   "total_beds2plus": 39,
+   "n": 23,
+   "streets": [
+    [
+     "N Waccamaw Dr",
+     17
+    ],
+    [
+     "S Waccamaw Dr",
+     2
+    ],
+    [
+     "Atlantic Ave",
+     1
+    ],
+    [
+     "North Waccamaw Dr",
+     1
+    ],
+    [
+     "N Dogwood Dr",
+     1
+    ],
+    [
+     "Waccamaw Dr",
+     1
+    ]
+   ],
+   "fee_le_400": {
+    "n": 2,
+    "streets": [
+     [
+      "North Waccamaw Dr",
+      1
+     ],
+     [
+      "N Waccamaw Dr",
+      1
+     ]
+    ]
+   },
+   "fee_le_600": {
+    "n": 12,
+    "streets": [
+     [
+      "N Waccamaw Dr",
+      8
+     ],
+     [
+      "North Waccamaw Dr",
+      1
+     ],
+     [
+      "N Dogwood Dr",
+      1
+     ],
+     [
+      "S Waccamaw Dr",
+      1
+     ],
+     [
+      "Waccamaw Dr",
+      1
+     ]
+    ]
+   },
+   "fee_le_800": {
+    "n": 17,
+    "streets": [
+     [
+      "N Waccamaw Dr",
+      12
+     ],
+     [
+      "Atlantic Ave",
+      1
+     ],
+     [
+      "North Waccamaw Dr",
+      1
+     ],
+     [
+      "N Dogwood Dr",
+      1
+     ],
+     [
+      "S Waccamaw Dr",
+      1
+     ],
+     [
+      "Waccamaw Dr",
+      1
+     ]
+    ]
+   }
+  }
+ }
+}

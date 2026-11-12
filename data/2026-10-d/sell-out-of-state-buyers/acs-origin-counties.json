@@ -1,0 +1,189 @@
+[
+ {
+  "county": "Horry County",
+  "state": "SC",
+  "fips": "45051",
+  "B25077": {
+   "estimate": "287700",
+   "moe": "4754",
+   "name": "Horry County, South Carolina",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25077&g=0500000US45051"
+  },
+  "B25103": {
+   "estimate": "944",
+   "moe": "18",
+   "name": "Horry County, South Carolina",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25103&g=0500000US45051"
+  }
+ },
+ {
+  "county": "Suffolk County",
+  "state": "NY",
+  "fips": "36103",
+  "B25077": {
+   "estimate": "578400",
+   "moe": "2887",
+   "name": "Suffolk County, New York",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25077&g=0500000US36103"
+  },
+  "B25103": {
+   "estimate": "10001",
+   "moe": "-333333333",
+   "name": "Suffolk County, New York",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25103&g=0500000US36103"
+  }
+ },
+ {
+  "county": "Brunswick County",
+  "state": "NC",
+  "fips": "37019",
+  "B25077": {
+   "estimate": "349800",
+   "moe": "6851",
+   "name": "Brunswick County, North Carolina",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25077&g=0500000US37019"
+  },
+  "B25103": {
+   "estimate": "1890",
+   "moe": "42",
+   "name": "Brunswick County, North Carolina",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25103&g=0500000US37019"
+  }
+ },
+ {
+  "county": "Mecklenburg County",
+  "state": "NC",
+  "fips": "37119",
+  "B25077": {
+   "estimate": "406800",
+   "moe": "4752",
+   "name": "Mecklenburg County, North Carolina",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25077&g=0500000US37119"
+  },
+  "B25103": {
+   "estimate": "2890",
+   "moe": "29",
+   "name": "Mecklenburg County, North Carolina",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25103&g=0500000US37119"
+  }
+ },
+ {
+  "county": "Wake County",
+  "state": "NC",
+  "fips": "37183",
+  "B25077": {
+   "estimate": "461300",
+   "moe": "3848",
+   "name": "Wake County, North Carolina",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25077&g=0500000US37183"
+  },
+  "B25103": {
+   "estimate": "3260",
+   "moe": "35",
+   "name": "Wake County, North Carolina",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25103&g=0500000US37183"
+  }
+ },
+ {
+  "county": "Ocean County",
+  "state": "NJ",
+  "fips": "34029",
+  "B25077": {
+   "estimate": "398400",
+   "moe": "3284",
+   "name": "Ocean County, New Jersey",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25077&g=0500000US34029"
+  },
+  "B25103": {
+   "estimate": "6562",
+   "moe": "55",
+   "name": "Ocean County, New Jersey",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25103&g=0500000US34029"
+  }
+ },
+ {
+  "county": "Orange County",
+  "state": "NY",
+  "fips": "36071",
+  "B25077": {
+   "estimate": "387900",
+   "moe": "4133",
+   "name": "Orange County, New York",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25077&g=0500000US36071"
+  },
+  "B25103": {
+   "estimate": "8494",
+   "moe": "149",
+   "name": "Orange County, New York",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25103&g=0500000US36071"
+  }
+ },
+ {
+  "county": "Nassau County",
+  "state": "NY",
+  "fips": "36059",
+  "B25077": {
+   "estimate": "684700",
+   "moe": "2833",
+   "name": "Nassau County, New York",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25077&g=0500000US36059"
+  },
+  "B25103": {
+   "estimate": "10001",
+   "moe": "-333333333",
+   "name": "Nassau County, New York",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25103&g=0500000US36059"
+  }
+ },
+ {
+  "county": "Columbus County",
+  "state": "NC",
+  "fips": "37047",
+  "B25077": {
+   "estimate": "146000",
+   "moe": "11896",
+   "name": "Columbus County, North Carolina",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25077&g=0500000US37047"
+  },
+  "B25103": {
+   "estimate": "1120",
+   "moe": "67",
+   "name": "Columbus County, North Carolina",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25103&g=0500000US37047"
+  }
+ },
+ {
+  "county": "Dutchess County",
+  "state": "NY",
+  "fips": "36027",
+  "B25077": {
+   "estimate": "400600",
+   "moe": "6095",
+   "name": "Dutchess County, New York",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25077&g=0500000US36027"
+  },
+  "B25103": {
+   "estimate": "7562",
+   "moe": "157",
+   "name": "Dutchess County, New York",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25103&g=0500000US36027"
+  }
+ },
+ {
+  "county": "Maricopa County",
+  "state": "AZ",
+  "fips": "04013",
+  "B25077": {
+   "estimate": "452800",
+   "moe": "1398",
+   "name": "Maricopa County, Arizona",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25077&g=0500000US04013"
+  },
+  "B25103": {
+   "estimate": "1983",
+   "moe": "12",
+   "name": "Maricopa County, Arizona",
+   "url": "https://data.census.gov/api/access/data/table?id=ACSDT5Y2024.B25103&g=0500000US04013"
+  }
+ }
+]

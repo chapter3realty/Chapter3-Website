@@ -1,0 +1,79 @@
+{
+ "title": "Median monthly condo dues by ZIP area, and the yearly amount a full-year rental deducts",
+ "source": "../buyers-cost-to-own/hoa-by-area.json (pulled 2026-11-02)",
+ "rule": "Condos for sale, ZIP areas with 50 or more listings. Deductible = median x 12 (no personal use, IRS Pub. 527 ch. 4).",
+ "rows": [
+  {
+   "zip": "29572",
+   "name": "Myrtle Beach (north end)",
+   "listings": 529,
+   "median_month": 875,
+   "q1": 625,
+   "q3": 1050,
+   "rented_all_year_deductible": 10500
+  },
+  {
+   "zip": "29577",
+   "name": "Myrtle Beach (central and south)",
+   "listings": 828,
+   "median_month": 775,
+   "q1": 525,
+   "q3": 1000,
+   "rented_all_year_deductible": 9300
+  },
+  {
+   "zip": "29582",
+   "name": "North Myrtle Beach",
+   "listings": 569,
+   "median_month": 700,
+   "q1": 550,
+   "q3": 1075,
+   "rented_all_year_deductible": 8400
+  },
+  {
+   "zip": "29575",
+   "name": "Surfside Beach",
+   "listings": 144,
+   "median_month": 525,
+   "q1": 400,
+   "q3": 850,
+   "rented_all_year_deductible": 6300
+  },
+  {
+   "zip": "29576",
+   "name": "Murrells Inlet and Garden City",
+   "listings": 165,
+   "median_month": 525,
+   "q1": 425,
+   "q3": 650,
+   "rented_all_year_deductible": 6300
+  },
+  {
+   "zip": "29566",
+   "name": "Little River",
+   "listings": 184,
+   "median_month": 525,
+   "q1": 425,
+   "q3": 600,
+   "rented_all_year_deductible": 6300
+  },
+  {
+   "zip": "29579",
+   "name": "Carolina Forest",
+   "listings": 145,
+   "median_month": 425,
+   "q1": 375,
+   "q3": 450,
+   "rented_all_year_deductible": 5100
+  },
+  {
+   "zip": "29588",
+   "name": "Socastee",
+   "listings": 61,
+   "median_month": 375,
+   "q1": 300,
+   "q3": 450,
+   "rented_all_year_deductible": 4500
+  }
+ ]
+}

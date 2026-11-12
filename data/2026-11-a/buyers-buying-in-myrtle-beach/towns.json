@@ -1,0 +1,477 @@
+{
+ "meta": {
+  "rule": [
+   "Sales: the same 13,194 deed sales as analyze.py (SALES), each already placed in a Census place by",
+   "data/2026-10-d/sell-out-of-state-buyers/fetch_points.py (field 'place'); kind by the analyze.py rule (LU = RAW/landuse.json).",
+   "Listings: RAW/listings-sets.json (pull_listings.py), placed in the same Census places with PLACES",
+   "(data/2026-11-a/invest-where-to-buy/raw/places.json, TIGERweb current vintage), and kept inside the Horry outline (HORRY).",
+   "Months of supply = for sale now / (sold in 12 months / 12). Towns with 100+ sales of the kind are reported.",
+   "Usage: RAW=<scratch> SALES=<path> HORRY=<path> PLACES=<path> python3 -I analyze_towns.py <this dir> -> towns.json"
+  ],
+  "listings_pulled": "2026-11-03T21:06:33.172796Z"
+ },
+ "towns": [
+  {
+   "place": "outside any Census place",
+   "house": {
+    "sold_12mo": 4277,
+    "resold_12mo": 3110,
+    "for_sale": 1985,
+    "for_sale_new": 767,
+    "price_cut": 1068,
+    "months_supply": 5.6,
+    "months_supply_resale": 4.7
+   },
+   "condo": {
+    "sold_12mo": 1291,
+    "resold_12mo": 1235,
+    "for_sale": 696,
+    "for_sale_new": 25,
+    "price_cut": 368,
+    "months_supply": 6.5,
+    "months_supply_resale": 6.5
+   }
+  },
+  {
+   "place": "North Myrtle Beach city",
+   "house": {
+    "sold_12mo": 908,
+    "resold_12mo": 624,
+    "for_sale": 408,
+    "for_sale_new": 93,
+    "price_cut": 222,
+    "months_supply": 5.4,
+    "months_supply_resale": 6.1
+   },
+   "condo": {
+    "sold_12mo": 979,
+    "resold_12mo": 931,
+    "for_sale": 586,
+    "for_sale_new": 8,
+    "price_cut": 323,
+    "months_supply": 7.2,
+    "months_supply_resale": 7.5
+   }
+  },
+  {
+   "place": "Myrtle Beach city",
+   "house": {
+    "sold_12mo": 721,
+    "resold_12mo": 676,
+    "for_sale": 372,
+    "for_sale_new": 76,
+    "price_cut": 201,
+    "months_supply": 6.2,
+    "months_supply_resale": 5.3
+   },
+   "condo": {
+    "sold_12mo": 990,
+    "resold_12mo": 986,
+    "for_sale": 1015,
+    "for_sale_new": 9,
+    "price_cut": 509,
+    "months_supply": 12.3,
+    "months_supply_resale": 12.2
+   }
+  },
+  {
+   "place": null,
+   "house": {
+    "sold_12mo": 523,
+    "resold_12mo": 401,
+    "for_sale": 0,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": 0.0,
+    "months_supply_resale": 0.0
+   },
+   "condo": {
+    "sold_12mo": 296,
+    "resold_12mo": 280,
+    "for_sale": 0,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": 0.0,
+    "months_supply_resale": 0.0
+   }
+  },
+  {
+   "place": "Carolina Forest CDP",
+   "house": {
+    "sold_12mo": 492,
+    "resold_12mo": 417,
+    "for_sale": 145,
+    "for_sale_new": 15,
+    "price_cut": 96,
+    "months_supply": 3.5,
+    "months_supply_resale": 3.7
+   },
+   "condo": {
+    "sold_12mo": 89,
+    "resold_12mo": 88,
+    "for_sale": 33,
+    "for_sale_new": 0,
+    "price_cut": 17,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  },
+  {
+   "place": "Little River CDP",
+   "house": {
+    "sold_12mo": 337,
+    "resold_12mo": 317,
+    "for_sale": 129,
+    "for_sale_new": 31,
+    "price_cut": 71,
+    "months_supply": 4.6,
+    "months_supply_resale": 3.7
+   },
+   "condo": {
+    "sold_12mo": 229,
+    "resold_12mo": 227,
+    "for_sale": 154,
+    "for_sale_new": 0,
+    "price_cut": 99,
+    "months_supply": 8.1,
+    "months_supply_resale": 8.1
+   }
+  },
+  {
+   "place": "Conway city",
+   "house": {
+    "sold_12mo": 434,
+    "resold_12mo": 321,
+    "for_sale": 183,
+    "for_sale_new": 73,
+    "price_cut": 110,
+    "months_supply": 5.1,
+    "months_supply_resale": 4.1
+   },
+   "condo": {
+    "sold_12mo": 29,
+    "resold_12mo": 20,
+    "for_sale": 8,
+    "for_sale_new": 0,
+    "price_cut": 5,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  },
+  {
+   "place": "Socastee CDP",
+   "house": {
+    "sold_12mo": 375,
+    "resold_12mo": 284,
+    "for_sale": 135,
+    "for_sale_new": 40,
+    "price_cut": 78,
+    "months_supply": 4.3,
+    "months_supply_resale": 4.0
+   },
+   "condo": {
+    "sold_12mo": 62,
+    "resold_12mo": 62,
+    "for_sale": 22,
+    "for_sale_new": 0,
+    "price_cut": 13,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  },
+  {
+   "place": "Garden City CDP",
+   "house": {
+    "sold_12mo": 176,
+    "resold_12mo": 155,
+    "for_sale": 125,
+    "for_sale_new": 4,
+    "price_cut": 77,
+    "months_supply": 8.5,
+    "months_supply_resale": 9.4
+   },
+   "condo": {
+    "sold_12mo": 247,
+    "resold_12mo": 247,
+    "for_sale": 106,
+    "for_sale_new": 0,
+    "price_cut": 49,
+    "months_supply": 5.1,
+    "months_supply_resale": 5.1
+   }
+  },
+  {
+   "place": "Red Hill CDP",
+   "house": {
+    "sold_12mo": 274,
+    "resold_12mo": 215,
+    "for_sale": 88,
+    "for_sale_new": 21,
+    "price_cut": 51,
+    "months_supply": 3.9,
+    "months_supply_resale": 3.7
+   },
+   "condo": {
+    "sold_12mo": 55,
+    "resold_12mo": 55,
+    "for_sale": 36,
+    "for_sale_new": 0,
+    "price_cut": 17,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  },
+  {
+   "place": "Surfside Beach town",
+   "house": {
+    "sold_12mo": 130,
+    "resold_12mo": 129,
+    "for_sale": 45,
+    "for_sale_new": 6,
+    "price_cut": 28,
+    "months_supply": 4.2,
+    "months_supply_resale": 3.6
+   },
+   "condo": {
+    "sold_12mo": 49,
+    "resold_12mo": 48,
+    "for_sale": 21,
+    "for_sale_new": 0,
+    "price_cut": 8,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  },
+  {
+   "place": "Forestbrook CDP",
+   "house": {
+    "sold_12mo": 130,
+    "resold_12mo": 130,
+    "for_sale": 39,
+    "for_sale_new": 5,
+    "price_cut": 23,
+    "months_supply": 3.6,
+    "months_supply_resale": 3.1
+   },
+   "condo": {
+    "sold_12mo": 2,
+    "resold_12mo": 2,
+    "for_sale": 1,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  },
+  {
+   "place": "Loris city",
+   "house": {
+    "sold_12mo": 46,
+    "resold_12mo": 36,
+    "for_sale": 28,
+    "for_sale_new": 13,
+    "price_cut": 19,
+    "months_supply": null,
+    "months_supply_resale": null
+   },
+   "condo": {
+    "sold_12mo": 0,
+    "resold_12mo": 0,
+    "for_sale": 0,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  },
+  {
+   "place": "Homewood CDP",
+   "house": {
+    "sold_12mo": 19,
+    "resold_12mo": 19,
+    "for_sale": 9,
+    "for_sale_new": 3,
+    "price_cut": 3,
+    "months_supply": null,
+    "months_supply_resale": null
+   },
+   "condo": {
+    "sold_12mo": 0,
+    "resold_12mo": 0,
+    "for_sale": 0,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  },
+  {
+   "place": "Aynor town",
+   "house": {
+    "sold_12mo": 17,
+    "resold_12mo": 17,
+    "for_sale": 10,
+    "for_sale_new": 3,
+    "price_cut": 6,
+    "months_supply": null,
+    "months_supply_resale": null
+   },
+   "condo": {
+    "sold_12mo": 0,
+    "resold_12mo": 0,
+    "for_sale": 0,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  },
+  {
+   "place": "Briarcliffe Acres town",
+   "house": {
+    "sold_12mo": 7,
+    "resold_12mo": 7,
+    "for_sale": 2,
+    "for_sale_new": 0,
+    "price_cut": 2,
+    "months_supply": null,
+    "months_supply_resale": null
+   },
+   "condo": {
+    "sold_12mo": 0,
+    "resold_12mo": 0,
+    "for_sale": 0,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  },
+  {
+   "place": "Bucksport CDP",
+   "house": {
+    "sold_12mo": 4,
+    "resold_12mo": 4,
+    "for_sale": 3,
+    "for_sale_new": 0,
+    "price_cut": 3,
+    "months_supply": null,
+    "months_supply_resale": null
+   },
+   "condo": {
+    "sold_12mo": 0,
+    "resold_12mo": 0,
+    "for_sale": 0,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  },
+  {
+   "place": "Live Oak CDP",
+   "house": {
+    "sold_12mo": 2,
+    "resold_12mo": 0,
+    "for_sale": 2,
+    "for_sale_new": 0,
+    "price_cut": 2,
+    "months_supply": null,
+    "months_supply_resale": null
+   },
+   "condo": {
+    "sold_12mo": 0,
+    "resold_12mo": 0,
+    "for_sale": 0,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  },
+  {
+   "place": "Ketchuptown CDP",
+   "house": {
+    "sold_12mo": 1,
+    "resold_12mo": 1,
+    "for_sale": 1,
+    "for_sale_new": 0,
+    "price_cut": 1,
+    "months_supply": null,
+    "months_supply_resale": null
+   },
+   "condo": {
+    "sold_12mo": 0,
+    "resold_12mo": 0,
+    "for_sale": 0,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  },
+  {
+   "place": "Finklea CDP",
+   "house": {
+    "sold_12mo": 1,
+    "resold_12mo": 1,
+    "for_sale": 1,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": null,
+    "months_supply_resale": null
+   },
+   "condo": {
+    "sold_12mo": 0,
+    "resold_12mo": 0,
+    "for_sale": 0,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  },
+  {
+   "place": "Green Sea CDP",
+   "house": {
+    "sold_12mo": 1,
+    "resold_12mo": 1,
+    "for_sale": 0,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": null,
+    "months_supply_resale": null
+   },
+   "condo": {
+    "sold_12mo": 0,
+    "resold_12mo": 0,
+    "for_sale": 0,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  },
+  {
+   "place": "Atlantic Beach town",
+   "house": {
+    "sold_12mo": 1,
+    "resold_12mo": 1,
+    "for_sale": 0,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": null,
+    "months_supply_resale": null
+   },
+   "condo": {
+    "sold_12mo": 0,
+    "resold_12mo": 0,
+    "for_sale": 0,
+    "for_sale_new": 0,
+    "price_cut": 0,
+    "months_supply": null,
+    "months_supply_resale": null
+   }
+  }
+ ]
+}

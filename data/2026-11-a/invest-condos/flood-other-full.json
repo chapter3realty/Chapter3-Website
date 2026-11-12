@@ -1,0 +1,7 @@
+{
+ "note": "Other homes sold (not condos), Horry County deeds recorded 2025-10-01 to 2026-09-30, each sale's parcel point placed on the county's FEMA flood layer (GIS layer 19). Full run of fetch_flood.py on all 10,047 sale points by the independent verifier on 2026-11-02 (Blog-Brain batches/2026-11-a/invest-condos/VERIFY.md, correction 13; facts.md row 28). Replaces findings.json flood_other_sales, which came from a partial run (5,985 points).",
+ "sales_with_zone": 9936,
+ "AE": 990,
+ "VE": 39,
+ "pct_high_risk": 10.4
+}

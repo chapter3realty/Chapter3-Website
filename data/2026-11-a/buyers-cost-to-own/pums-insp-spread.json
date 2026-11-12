@@ -1,0 +1,11 @@
+{
+ "source": "Census ACS PUMS 2024 1-year housing file, South Carolina (psam_h45.csv); PUMAs 02701 and 02702; owner-occupied (TEN 1, 2); one-family detached house (BLD 02); INSP > 0, x ADJHSG/1e6; weighted by WGTP",
+ "script": "insp_p90.py",
+ "records": 783,
+ "p25": 1300,
+ "median": 2000,
+ "p75": 3000,
+ "p90": 3900,
+ "share_4000_or_more": 0.099,
+ "share_6000_or_more": 0.025
+}

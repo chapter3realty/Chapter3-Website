@@ -1,0 +1,826 @@
+{
+ "airroi": {
+  "myrtle-beach": {
+   "slug": "myrtle-beach",
+   "avg_annual_gross": 25807,
+   "period_to": "September 2026",
+   "occupancy_pct": 36.3,
+   "adr": 257,
+   "active_listings": 8698,
+   "pl_gross": [
+    25807,
+    44250
+   ],
+   "pl_nightly": [
+    22507,
+    38600
+   ],
+   "pl_cleaning": [
+    3300,
+    5650
+   ],
+   "cleaning_share_pct": 13,
+   "airbnb_fee_share_pct": 14,
+   "simplified_pricing_share_pct": 86,
+   "utilities_pct": 5,
+   "pl_utilities": [
+    1290,
+    2210
+   ],
+   "supplies_pct": 2,
+   "repairs_pct": 3,
+   "fixed_costs": 390,
+   "pl_running_costs": [
+    9830,
+    16560
+   ],
+   "pl_kept": [
+    15977,
+    27690
+   ],
+   "sizes": {
+    "Studio": {
+     "listings": 376,
+     "median_gross": 8160,
+     "avg_gross": 12300,
+     "adr": 154,
+     "occupancy_pct": 33
+    },
+    "1 bedroom": {
+     "listings": 2391,
+     "median_gross": 17000,
+     "avg_gross": 20700,
+     "adr": 194,
+     "occupancy_pct": 38
+    },
+    "2 bedrooms": {
+     "listings": 2689,
+     "median_gross": 20100,
+     "avg_gross": 25100,
+     "adr": 252,
+     "occupancy_pct": 37
+    },
+    "3 bedrooms": {
+     "listings": 1379,
+     "median_gross": 31700,
+     "avg_gross": 37100,
+     "adr": 339,
+     "occupancy_pct": 38
+    },
+    "4 bedrooms": {
+     "listings": 357,
+     "median_gross": 56000,
+     "avg_gross": 57400,
+     "adr": 476,
+     "occupancy_pct": 40
+    },
+    "5+ bedrooms": {
+     "listings": 163,
+     "median_gross": 65300,
+     "avg_gross": 77900,
+     "adr": 767,
+     "occupancy_pct": 37
+    }
+   },
+   "month_avg_gross": {
+    "January": 1340,
+    "February": 1680,
+    "March": 2530,
+    "April": 2800,
+    "May": 3270,
+    "June": 6070,
+    "July": 6800,
+    "August": 4400,
+    "September": 2550,
+    "October": 2150,
+    "November": 1620,
+    "December": 1590
+   },
+   "median_month_gross_active": 2530,
+   "top_quarter_occ_pct": 56,
+   "median_occ_pct": 34,
+   "avg_stay_nights": 4.7,
+   "bookings_per_listing_year": 19,
+   "booked_or_blocked_days": {
+    "271-366": {
+     "share_pct": 1.4,
+     "listings": 119
+    },
+    "181-270": {
+     "share_pct": 11.7,
+     "listings": 1014
+    },
+    "91-180": {
+     "share_pct": 30.5,
+     "listings": 2651
+    },
+    "31-90": {
+     "share_pct": 34.2,
+     "listings": 2973
+    },
+    "1-30": {
+     "share_pct": 22.3,
+     "listings": 1941
+    }
+   }
+  },
+  "conway": {
+   "slug": "conway",
+   "avg_annual_gross": 23426,
+   "period_to": "September 2026",
+   "occupancy_pct": 36.0,
+   "adr": 234,
+   "active_listings": 106,
+   "pl_gross": [
+    23426,
+    44950
+   ],
+   "pl_nightly": [
+    20526,
+    39390
+   ],
+   "pl_cleaning": [
+    2900,
+    5560
+   ],
+   "cleaning_share_pct": 12,
+   "airbnb_fee_share_pct": 14,
+   "simplified_pricing_share_pct": 86,
+   "utilities_pct": 5,
+   "pl_utilities": [
+    1170,
+    2250
+   ],
+   "supplies_pct": 2,
+   "repairs_pct": 3,
+   "fixed_costs": 350,
+   "pl_running_costs": [
+    8810,
+    16580
+   ],
+   "pl_kept": [
+    14616,
+    28370
+   ],
+   "sizes": {
+    "1 bedroom": {
+     "listings": 18,
+     "median_gross": 15200,
+     "avg_gross": 18400,
+     "adr": 184,
+     "occupancy_pct": 37
+    },
+    "2 bedrooms": {
+     "listings": 26,
+     "median_gross": 21100,
+     "avg_gross": 24000,
+     "adr": 185,
+     "occupancy_pct": 40
+    },
+    "3 bedrooms": {
+     "listings": 23,
+     "median_gross": 27900,
+     "avg_gross": 31500,
+     "adr": 257,
+     "occupancy_pct": 46
+    }
+   },
+   "month_avg_gross": {
+    "January": 1550,
+    "February": 1600,
+    "March": 2030,
+    "April": 2170,
+    "May": 2830,
+    "June": 3800,
+    "July": 3850,
+    "August": 3300,
+    "September": 2020,
+    "October": 2270,
+    "November": 1780,
+    "December": 1830
+   },
+   "median_month_gross_active": 1890,
+   "top_quarter_occ_pct": 55,
+   "median_occ_pct": 36,
+   "avg_stay_nights": 4.3,
+   "bookings_per_listing_year": 23,
+   "booked_or_blocked_days": {
+    "271-366": {
+     "share_pct": 1.9,
+     "listings": 2
+    },
+    "181-270": {
+     "share_pct": 15.1,
+     "listings": 16
+    },
+    "91-180": {
+     "share_pct": 34.0,
+     "listings": 36
+    },
+    "31-90": {
+     "share_pct": 32.1,
+     "listings": 34
+    },
+    "1-30": {
+     "share_pct": 17.0,
+     "listings": 18
+    }
+   }
+  },
+  "north-myrtle-beach": {
+   "slug": "north-myrtle-beach",
+   "avg_annual_gross": 34401,
+   "period_to": "September 2026",
+   "occupancy_pct": 34.7,
+   "adr": 375,
+   "active_listings": 4564,
+   "pl_gross": [
+    34401,
+    61610
+   ],
+   "pl_nightly": [
+    29211,
+    52320
+   ],
+   "pl_cleaning": [
+    5190,
+    9290
+   ],
+   "cleaning_share_pct": 15,
+   "airbnb_fee_share_pct": 14,
+   "simplified_pricing_share_pct": 89,
+   "utilities_pct": 5,
+   "pl_utilities": [
+    1720,
+    3080
+   ],
+   "supplies_pct": 2,
+   "repairs_pct": 3,
+   "fixed_costs": 510,
+   "pl_running_costs": [
+    13990,
+    24640
+   ],
+   "pl_kept": [
+    20411,
+    36970
+   ],
+   "sizes": {
+    "Studio": {
+     "listings": 59,
+     "median_gross": 5340,
+     "avg_gross": 8980,
+     "adr": 146,
+     "occupancy_pct": 30
+    },
+    "1 bedroom": {
+     "listings": 554,
+     "median_gross": 16300,
+     "avg_gross": 21100,
+     "adr": 212,
+     "occupancy_pct": 39
+    },
+    "2 bedrooms": {
+     "listings": 1299,
+     "median_gross": 14900,
+     "avg_gross": 20700,
+     "adr": 246,
+     "occupancy_pct": 34
+    },
+    "3 bedrooms": {
+     "listings": 1403,
+     "median_gross": 21200,
+     "avg_gross": 29700,
+     "adr": 348,
+     "occupancy_pct": 34
+    },
+    "4 bedrooms": {
+     "listings": 644,
+     "median_gross": 36400,
+     "avg_gross": 47800,
+     "adr": 495,
+     "occupancy_pct": 35
+    },
+    "5+ bedrooms": {
+     "listings": 511,
+     "median_gross": 70000,
+     "avg_gross": 86900,
+     "adr": 853,
+     "occupancy_pct": 35
+    }
+   },
+   "month_avg_gross": {
+    "January": 1890,
+    "February": 2390,
+    "March": 3430,
+    "April": 3840,
+    "May": 4790,
+    "June": 8270,
+    "July": 9640,
+    "August": 6080,
+    "September": 3550,
+    "October": 2980,
+    "November": 2330,
+    "December": 2230
+   },
+   "median_month_gross_active": 3220,
+   "top_quarter_occ_pct": 53,
+   "median_occ_pct": 32,
+   "avg_stay_nights": 4.9,
+   "bookings_per_listing_year": 17,
+   "booked_or_blocked_days": {
+    "271-366": {
+     "share_pct": 0.8,
+     "listings": 35
+    },
+    "181-270": {
+     "share_pct": 10.1,
+     "listings": 461
+    },
+    "91-180": {
+     "share_pct": 27.9,
+     "listings": 1274
+    },
+    "31-90": {
+     "share_pct": 35.6,
+     "listings": 1626
+    },
+    "1-30": {
+     "share_pct": 25.6,
+     "listings": 1168
+    }
+   }
+  }
+ },
+ "fmr": {
+  "area": "Myrtle Beach-North Myrtle Beach-Conway, SC HUD Metro FMR Area",
+  "0": 1155,
+  "1": 1258,
+  "2": 1504,
+  "3": 1823,
+  "4": 1981
+ },
+ "levy_mills_6pct": {
+  "myrtle_beach_city": 254.6,
+  "conway_city": 272.5,
+  "unincorporated": 200.99999999999997
+ },
+ "bls": {
+  "total_nonfarm_thousands": {
+   "2025-M01": 148.1,
+   "2025-M02": 150.4,
+   "2025-M03": 154.1,
+   "2025-M04": 157.1,
+   "2025-M05": 158.8,
+   "2025-M06": 161.5,
+   "2025-M07": 159.6,
+   "2025-M08": 159.8,
+   "2025-M09": 157.5,
+   "2025-M10": 157.3,
+   "2025-M11": 155.9,
+   "2025-M12": 154.7,
+   "2025-M13": 156.2,
+   "2026-M01": 151.7,
+   "2026-M02": 153.0,
+   "2026-M03": 156.4,
+   "2026-M04": 160.0,
+   "2026-M05": 162.8,
+   "2026-M06": 166.2,
+   "2026-M07": 167.2,
+   "2026-M08": 165.3,
+   "2026-M09": 163.2
+  },
+  "leisure_hospitality_thousands": {
+   "2025-M01": 31.7,
+   "2025-M02": 32.9,
+   "2025-M03": 35.3,
+   "2025-M04": 38.0,
+   "2025-M05": 39.0,
+   "2025-M06": 41.3,
+   "2025-M07": 40.8,
+   "2025-M08": 39.7,
+   "2025-M09": 37.1,
+   "2025-M10": 36.6,
+   "2025-M11": 34.4,
+   "2025-M12": 33.3,
+   "2025-M13": 36.7,
+   "2026-M01": 32.3,
+   "2026-M02": 33.3,
+   "2026-M03": 36.0,
+   "2026-M04": 38.9,
+   "2026-M05": 41.3,
+   "2026-M06": 44.3,
+   "2026-M07": 45.6,
+   "2026-M08": 43.6,
+   "2026-M09": 41.6
+  },
+  "education_health_thousands": {
+   "2025-M01": 17.9,
+   "2025-M02": 18.0,
+   "2025-M03": 18.1,
+   "2025-M04": 18.1,
+   "2025-M05": 18.3,
+   "2025-M06": 18.2,
+   "2025-M07": 17.9,
+   "2025-M08": 18.2,
+   "2025-M09": 18.2,
+   "2025-M10": 18.4,
+   "2025-M11": 18.5,
+   "2025-M12": 18.4,
+   "2025-M13": 18.2,
+   "2026-M01": 18.3,
+   "2026-M02": 18.5,
+   "2026-M03": 18.6,
+   "2026-M04": 18.7,
+   "2026-M05": 18.7,
+   "2026-M06": 18.7,
+   "2026-M07": 18.7,
+   "2026-M08": 18.7,
+   "2026-M09": 18.7
+  },
+  "jan_2026_total": 151.7,
+  "jul_2026_total": 167.2,
+  "jan_2026_not_leisure": 119.4,
+  "leisure_jan_to_jul_2026": [
+   32.3,
+   45.6
+  ]
+ },
+ "vacancy_sc": {
+  "2026Q1": 12,
+  "2026Q1_moe": 3.3,
+  "2026Q2": 12.3,
+  "2026Q2_moe": 3.1,
+  "2026Q3": 11.2,
+  "2026Q3_moe": 3
+ },
+ "cases": {
+  "mb_2br_condo": {
+   "note": "Myrtle Beach market (81% of AirROI listings are apartments/condos); two bedrooms is the most common size there (36.6% of entire homes).",
+   "market": "myrtle-beach",
+   "size": "2 bedrooms",
+   "beds": 2,
+   "market_kept_over_gross": 0.619,
+   "nightly": {
+    "size_median_gross": 20100,
+    "size_avg_gross": 25100,
+    "size_median_kept": 12400,
+    "size_avg_kept": 15500,
+    "size_adr": 252,
+    "size_occ_pct": 37,
+    "size_listings": 2689,
+    "market_avg_gross": 25807,
+    "market_avg_kept": 15977,
+    "market_top_quarter_gross": 44250,
+    "market_top_quarter_kept": 27690
+   },
+   "yearly": {
+    "fmr_month": 1504,
+    "gross": 18048,
+    "utilities": 1290,
+    "one_month_empty": 1504,
+    "kept": 15254
+   },
+   "break_even": {
+    "per_booked_night_kept": 191.52,
+    "per_booking_cost_share": 0.24,
+    "fixed_costs": 390,
+    "nights": 82,
+    "share_of_year_pct": 22
+   },
+   "gap_median_minus_yearly": -2854,
+   "gap_avg_minus_yearly": 246,
+   "gap_topq_minus_yearly": 12436
+  },
+  "conway_3br_house": {
+   "note": "Conway market, 106 listings; 23 have three bedrooms.",
+   "market": "conway",
+   "size": "3 bedrooms",
+   "beds": 3,
+   "market_kept_over_gross": 0.624,
+   "nightly": {
+    "size_median_gross": 27900,
+    "size_avg_gross": 31500,
+    "size_median_kept": 17400,
+    "size_avg_kept": 19700,
+    "size_adr": 257,
+    "size_occ_pct": 46,
+    "size_listings": 23,
+    "market_avg_gross": 23426,
+    "market_avg_kept": 14616,
+    "market_top_quarter_gross": 44950,
+    "market_top_quarter_kept": 28370
+   },
+   "yearly": {
+    "fmr_month": 1823,
+    "gross": 21876,
+    "utilities": 1170,
+    "one_month_empty": 1823,
+    "kept": 18883
+   },
+   "break_even": {
+    "per_booked_night_kept": 195.32,
+    "per_booking_cost_share": 0.24,
+    "fixed_costs": 350,
+    "nights": 98,
+    "share_of_year_pct": 27
+   },
+   "gap_median_minus_yearly": -1483,
+   "gap_avg_minus_yearly": 817,
+   "gap_topq_minus_yearly": 9487
+  },
+  "nmb_4br_house": {
+   "note": "North Myrtle Beach market; four bedrooms, 644 listings.",
+   "market": "north-myrtle-beach",
+   "size": "4 bedrooms",
+   "beds": 4,
+   "market_kept_over_gross": 0.593,
+   "nightly": {
+    "size_median_gross": 36400,
+    "size_avg_gross": 47800,
+    "size_median_kept": 21600,
+    "size_avg_kept": 28400,
+    "size_adr": 495,
+    "size_occ_pct": 35,
+    "size_listings": 644,
+    "market_avg_gross": 34401,
+    "market_avg_kept": 20411,
+    "market_top_quarter_gross": 61610,
+    "market_top_quarter_kept": 36970
+   },
+   "yearly": {
+    "fmr_month": 1981,
+    "gross": 23772,
+    "utilities": 1720,
+    "one_month_empty": 1981,
+    "kept": 20071
+   },
+   "break_even": {
+    "per_booked_night_kept": 376.2,
+    "per_booking_cost_share": 0.24,
+    "fixed_costs": 510,
+    "nights": 55,
+    "share_of_year_pct": 15
+   },
+   "gap_median_minus_yearly": 1529,
+   "gap_avg_minus_yearly": 8329,
+   "gap_topq_minus_yearly": 16899
+  }
+ },
+ "mb_full_service": {
+  "40": {
+   "average_kept": 6974,
+   "top_quarter_kept": 12250
+  },
+  "50": {
+   "average_kept": 4723,
+   "top_quarter_kept": 8390
+  },
+  "60": {
+   "average_kept": 2473,
+   "top_quarter_kept": 4530
+  },
+  "break_even_nights_40": 172,
+  "break_even_share_40": 47,
+  "break_even_nights_60": 388,
+  "break_even_share_60": 106
+ },
+ "mb_months": [
+  {
+   "month": "January",
+   "nightly_gross": 1340,
+   "nightly_kept": 830,
+   "lease_kept": 1270,
+   "lease_gross": 1504
+  },
+  {
+   "month": "February",
+   "nightly_gross": 1680,
+   "nightly_kept": 1040,
+   "lease_kept": 1270,
+   "lease_gross": 1504
+  },
+  {
+   "month": "March",
+   "nightly_gross": 2530,
+   "nightly_kept": 1570,
+   "lease_kept": 1270,
+   "lease_gross": 1504
+  },
+  {
+   "month": "April",
+   "nightly_gross": 2800,
+   "nightly_kept": 1730,
+   "lease_kept": 1270,
+   "lease_gross": 1504
+  },
+  {
+   "month": "May",
+   "nightly_gross": 3270,
+   "nightly_kept": 2020,
+   "lease_kept": 1270,
+   "lease_gross": 1504
+  },
+  {
+   "month": "June",
+   "nightly_gross": 6070,
+   "nightly_kept": 3760,
+   "lease_kept": 1270,
+   "lease_gross": 1504
+  },
+  {
+   "month": "July",
+   "nightly_gross": 6800,
+   "nightly_kept": 4210,
+   "lease_kept": 1270,
+   "lease_gross": 1504
+  },
+  {
+   "month": "August",
+   "nightly_gross": 4400,
+   "nightly_kept": 2720,
+   "lease_kept": 1270,
+   "lease_gross": 1504
+  },
+  {
+   "month": "September",
+   "nightly_gross": 2550,
+   "nightly_kept": 1580,
+   "lease_kept": 1270,
+   "lease_gross": 1504
+  },
+  {
+   "month": "October",
+   "nightly_gross": 2150,
+   "nightly_kept": 1330,
+   "lease_kept": 1270,
+   "lease_gross": 1504
+  },
+  {
+   "month": "November",
+   "nightly_gross": 1620,
+   "nightly_kept": 1000,
+   "lease_kept": 1270,
+   "lease_gross": 1504
+  },
+  {
+   "month": "December",
+   "nightly_gross": 1590,
+   "nightly_kept": 980,
+   "lease_kept": 1270,
+   "lease_gross": 1504
+  }
+ ],
+ "mb_months_below_lease": [
+  "January",
+  "February",
+  "November",
+  "December"
+ ],
+ "mb_summer_share_pct": 47,
+ "mb_booked_or_blocked_90_or_fewer_pct": 56.5,
+ "mb_booked_or_blocked_181_plus_pct": 13.1,
+ "checkouts": {
+  "avg_stay_nights": 4.7,
+  "average_listing_bookings_year": 19,
+  "break_even": 17,
+  "median_occ_full_year": 26,
+  "top_quarter_full_year": 43
+ },
+ "listings": {
+  "condo_mb_city_oceanfront_building": {
+   "total": 422,
+   "rentals_allowed": 407,
+   "long_term_rental_allowed": 380,
+   "str_allowed": 402,
+   "has_rental_income": 372,
+   "vacation_rental_program": 372,
+   "furnished": 420,
+   "str_and_long_term": 375,
+   "long_term_only_no_str_flag": 5
+  },
+  "condo_mb_city_all": {
+   "total": 641,
+   "rentals_allowed": 611,
+   "long_term_rental_allowed": 568,
+   "str_allowed": 541,
+   "has_rental_income": 454,
+   "vacation_rental_program": 454,
+   "furnished": 571,
+   "str_and_long_term": 498,
+   "long_term_only_no_str_flag": 70
+  },
+  "condo_nmb_oceanfront_building": {
+   "total": 226,
+   "rentals_allowed": 210,
+   "long_term_rental_allowed": 198,
+   "str_allowed": 209,
+   "has_rental_income": 170,
+   "vacation_rental_program": 170,
+   "furnished": 216,
+   "str_and_long_term": 197,
+   "long_term_only_no_str_flag": 1
+  },
+  "condo_all": {
+   "total": 2867,
+   "rentals_allowed": 2521,
+   "long_term_rental_allowed": 2414,
+   "str_allowed": 2021,
+   "has_rental_income": 1406,
+   "vacation_rental_program": 1406,
+   "furnished": 2190,
+   "str_and_long_term": 1915,
+   "long_term_only_no_str_flag": 499
+  },
+  "house_carolina_forest": {
+   "total": 294,
+   "rentals_allowed": 239,
+   "long_term_rental_allowed": 239,
+   "str_allowed": 1,
+   "has_rental_income": 3,
+   "vacation_rental_program": 3,
+   "furnished": 7,
+   "str_and_long_term": 1,
+   "long_term_only_no_str_flag": 238
+  },
+  "house_conway": {
+   "total": 675,
+   "rentals_allowed": 514,
+   "long_term_rental_allowed": 390,
+   "str_allowed": 34,
+   "has_rental_income": 5,
+   "vacation_rental_program": 5,
+   "furnished": 15,
+   "str_and_long_term": 33,
+   "long_term_only_no_str_flag": 357
+  },
+  "house_mb_city": {
+   "total": 201,
+   "rentals_allowed": 179,
+   "long_term_rental_allowed": 160,
+   "str_allowed": 18,
+   "has_rental_income": 15,
+   "vacation_rental_program": 15,
+   "furnished": 25,
+   "str_and_long_term": 17,
+   "long_term_only_no_str_flag": 143
+  },
+  "house_nmb": {
+   "total": 258,
+   "rentals_allowed": 234,
+   "long_term_rental_allowed": 179,
+   "str_allowed": 112,
+   "has_rental_income": 67,
+   "vacation_rental_program": 67,
+   "furnished": 115,
+   "str_and_long_term": 103,
+   "long_term_only_no_str_flag": 76
+  },
+  "house_surfside": {
+   "total": 84,
+   "rentals_allowed": 72,
+   "long_term_rental_allowed": 59,
+   "str_allowed": 23,
+   "has_rental_income": 17,
+   "vacation_rental_program": 17,
+   "furnished": 28,
+   "str_and_long_term": 21,
+   "long_term_only_no_str_flag": 38
+  },
+  "house_all": {
+   "total": 3743,
+   "rentals_allowed": 2996,
+   "long_term_rental_allowed": 2272,
+   "str_allowed": 465,
+   "has_rental_income": 237,
+   "vacation_rental_program": 237,
+   "furnished": 424,
+   "str_and_long_term": 400,
+   "long_term_only_no_str_flag": 1872
+  }
+ },
+ "listing_examples": {
+  "2br_oceanfront_condo_mb_city_str_allowed": {
+   "exact_beds": 2,
+   "n": 48,
+   "price_n": 48,
+   "price_median": 327000.0,
+   "price_p25": 269900,
+   "price_p75": 389900,
+   "fee_zero_or_blank": 0,
+   "fee_median_band_all": [
+    1225,
+    1250
+   ],
+   "fee_median_band_among_with_fee": [
+    1225,
+    1250
+   ]
+  }
+ },
+ "mb_condo_tax_6pct": {
+  "price_used": 327000.0,
+  "mills": 254.6,
+  "tax": 4995
+ }
+}

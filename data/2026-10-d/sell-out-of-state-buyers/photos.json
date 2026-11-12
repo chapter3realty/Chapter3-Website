@@ -1,0 +1,57 @@
+{
+ "photos": [
+  {
+   "slug": "sell-out-of-state-buyers",
+   "file": "images/2026-10-d/sell-out-of-state-buyers/north-myrtle-beach-oceanfront-condo-towers-2011.webp",
+   "variants": {
+    "600": "images/2026-10-d/sell-out-of-state-buyers/north-myrtle-beach-oceanfront-condo-towers-2011-600w.webp",
+    "1200": "images/2026-10-d/sell-out-of-state-buyers/north-myrtle-beach-oceanfront-condo-towers-2011-1200w.webp"
+   },
+   "width": 1200,
+   "height": 782,
+   "title": "Oceanfront condo towers, North Myrtle Beach, USGS oblique aerial photo, August 24, 2011",
+   "what": "Three tall oceanfront condo towers with blue-and-yellow balconies and pools behind the dunes in North Myrtle Beach, seen from a plane over the ocean, with streets of houses and a water tower behind them.",
+   "caption": "Oceanfront condo towers in North Myrtle Beach, seen from over the ocean in 2011.",
+   "alt": "Three tall oceanfront condo towers with pools behind the dunes in North Myrtle Beach, seen from a plane over the ocean, with houses and a water tower behind them",
+   "place": {
+    "city": "North Myrtle Beach",
+    "sublocation": "oceanfront, between Windy Hill and Crescent Beach"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_180542d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_180500.zip; aircraft position 33.797022 N, 78.710948 W (11CCH03-Photolocations.csv; the position of the plane, not of the buildings). Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. The same release as the Crescent Beach and Cherry Grove photos of batch 2026-10-b.",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Checked 2026-11-01 by the writer: the three towers are Horry County parcels whose legal description begins 'BAYWATCH RESORT HPR' (HPR = horizontal property regime, a condo; 535 unit parcels in layer 24; parcel center about 33.8019 N, 78.7134 W, northwest of the plane's position, the camera's view direction). Census TIGERweb layer 4 places that point in North Myrtle Beach city. The building name is not in the caption; the photo shows condo towers, not one building as its subject.",
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty resized the photo and cut 1x1, 4x3 and 16x9 crops from its center for the page's share image",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-10-d/sell-out-of-state-buyers/north-myrtle-beach-oceanfront-condo-towers-2011-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-10-d/sell-out-of-state-buyers/north-myrtle-beach-oceanfront-condo-towers-2011-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-10-d/sell-out-of-state-buyers/north-myrtle-beach-oceanfront-condo-towers-2011-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   }
+  }
+ ]
+}

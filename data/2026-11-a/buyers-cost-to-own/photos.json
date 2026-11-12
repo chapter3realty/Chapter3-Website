@@ -1,0 +1,114 @@
+{
+ "photos": [
+  {
+   "slug": "buyers-cost-to-own",
+   "file": "images/2026-11-a/buyers-cost-to-own/myrtle-beach-oceanfront-condos-2011.webp",
+   "variants": {
+    "600": "images/2026-11-a/buyers-cost-to-own/myrtle-beach-oceanfront-condos-2011-600w.webp",
+    "1200": "images/2026-11-a/buyers-cost-to-own/myrtle-beach-oceanfront-condos-2011-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "Oceanfront condo buildings in Myrtle Beach, USGS oblique aerial photo, August 24, 2011",
+   "what": "A stretch of oceanfront in the City of Myrtle Beach seen from a plane over the ocean: a white high-rise tower on the left, a smaller mid-rise and a group of tan buildings with orange roofs beside it, and three long three-story buildings with white flat roofs, each pair around a pool, with parking lots between them. A road and a footpath run behind the dunes, boardwalks cross the dunes to the beach, and houses sit under oak trees behind. People on the beach are too small to recognize; no plate, sign or building name is readable.",
+   "caption": "Condo buildings on the ocean in Myrtle Beach, seen from a plane.",
+   "alt": "Oceanfront condo buildings in Myrtle Beach seen from the ocean: a white high-rise tower and three low white-roofed buildings around pools and parking lots, behind the dunes and the beach",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Oceanfront in the City of Myrtle Beach, north of the city center (tax district 880)"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "display_credit": "Photo: USGS",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_180158d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_180000.zip; aircraft position 33.723972 N, 78.831567 W (11CCH03-Photolocations.csv; the position of the plane, not of the buildings). The frame was taken from a copy extracted from that zip in this batch; its CRC-32 (0x4ef727f9) and size (3,728,580 bytes) match the zip's own central directory, read by HTTP range request on 2026-11-02. Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. Not the frame used on any other page (others use 174830, 175156, 175537, 175948, 180052, 180133, 180143, 180608 and 181208).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size (3008 x 1960, in four quarters) by the writer on 2026-11-02. Horry County parcels layer 24, queried 2026-11-02 over the stretch of shore landward of the plane's position, holds condo regimes in tax district 880 (City of Myrtle Beach): The Anchorage and The Anchorage II, Forest Dunes, Ocean Forest Plaza, Sandcastle, Ocean One HPR, Drayton House, Cabana I, Southwind HPR and A Place at the Beach. The caption names no building and says only 'condo buildings on the ocean in Myrtle Beach' and the year. No sign or name is legible at page size; people are specks; no plate is readable.",
+   "annotation_sources": {
+    "where": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24 (envelope -78.8436 33.7200 to -78.8296 33.7320; TaxDistrict and LegalDescr read 2026-11-02)"
+   },
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty cropped and resized the photo",
+   "crop_note": "Cut as one 2708 x 1523 band (x 150 to 2858, y 330 to 1853 of the frame), then resized.",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-a/buyers-cost-to-own/myrtle-beach-oceanfront-condos-2011-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-a/buyers-cost-to-own/myrtle-beach-oceanfront-condos-2011-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-a/buyers-cost-to-own/myrtle-beach-oceanfront-condos-2011-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   }
+  },
+  {
+   "slug": "buyers-cost-to-own",
+   "file": "images/2026-11-a/buyers-cost-to-own/carolina-forest-house-streets-from-above.webp",
+   "variants": {
+    "600": "images/2026-11-a/buyers-cost-to-own/carolina-forest-house-streets-from-above-600w.webp",
+    "1200": "images/2026-11-a/buyers-cost-to-own/carolina-forest-house-streets-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Streets of houses in Carolina Forest, NOAA aerial, January 2026",
+   "what": "Two streets of two-story houses with gray roofs, short driveways and small back yards, several fenced, ending in a cul-de-sac, with ponds and a strip of pine woods to the left, in Carolina Forest outside city limits, seen from above on January 12, 2026. Lawns are brown in January. Cars are too small to read; no person can be recognized.",
+   "caption": "Houses on streets in Carolina Forest, outside city limits, seen from above.",
+   "alt": "Rows of two-story houses with gray roofs and short driveways along curving streets and a cul-de-sac, beside ponds and pine woods, seen from above",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Carolina Forest (unincorporated Horry County)"
+   },
+   "source": "https://noaa-eri-pds.s3.amazonaws.com/index.html#2026_Pre_Event/EC2601a_OB_N_RGB/",
+   "source_name": "NOAA Emergency Response Imagery",
+   "author": "NOAA National Geodetic Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+   "provenance": "U.S. government aerial photo: NOAA National Geodetic Survey (NGS), Remote Sensing Division, Emergency Response Imagery, 2026 pre-event coastal collection, East Coast group EC2601a, flown 2026-01-12. One map tile, EC2601a_OB_N_C0785315w334545n.tif (4707 x 4707 px, WGS 84, 2.698e-6 degrees a pixel, top left -78.8875987, 33.7625987), the copy downloaded 2026-11-02 from the public S3 bucket noaa-eri-pds by the writer of /invest/run-the-numbers/ (scratchpad wf2/invest-run-the-numbers/dl). This frame (pixels 1700-2780 x 3420-4230) is a different part of the tile from the photos on /invest/rent-prices/ (2450-4050 x 1550-2750) and /invest/run-the-numbers/ (2800-4400 x 2900-4100).",
+   "license_note": "17 U.S.C. 105(a): \"Copyright protection under this title is not available for any work of the United States Government\". NOAA's terms on the Registry of Open Data (https://registry.opendata.aws/noaa-eri/): \"NOAA data disseminated through NODD are open to the public and can be used as desired.\" NOAA requests attribution for unaltered data and no implied endorsement. So: credit NOAA, say what Chapter3 changed (changes), never suggest NOAA endorses Chapter3.",
+   "terms_urls": [
+    "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+    "https://registry.opendata.aws/noaa-eri/"
+   ],
+   "taken": "2026-01-12",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: NOAA National Geodetic Survey, public domain.",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty cut a 1080 x 810 px view from one NOAA map tile, raised the contrast and color slightly, and resized it to 1200 x 900",
+   "source_files": [
+    "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0785315w334545n.tif"
+   ],
+   "frame": {
+    "bbox_wgs84": [
+     -78.883012,
+     33.751186,
+     -78.880098,
+     33.753372
+    ],
+    "ground_m_per_px_1200w": 0.27
+   },
+   "original_size": "1080x810 cut from the tile at pixels 1700-2780 x 3420-4230",
+   "subject_check": "Looked at full size (1200 x 900) by the fixer on 2026-11-02. All four frame corners and the center fall inside the Census place outline of Carolina Forest (a census-designated place, not a town) in Blog-Brain tools/geo/grand-strand-v2.json (TIGER/Line 2026). The caption names no neighborhood, street or house. No person, plate, sign or house number is readable.",
+   "annotation_sources": {
+    "where": "Blog-Brain tools/geo/grand-strand-v2.json region.towns 'Carolina Forest' outline (U.S. Census Bureau TIGER/Line 2026 places), point-in-polygon test of the bbox corners and center"
+   }
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "source": "Census AHS 2023 National PUF v1.1 (household.csv, project.csv)",
+ "rule": "What the big replacements cost, from the Census American Housing Survey 2023 national PUF (project.csv joined to household.csv).\nJOBTYPE labels from the AHS 2023 Value Labels Package: 16 roofing, 26 central air conditioning, 27 built-in heating, 29 water heater,\n18 doors or windows, 17 siding, 33 fencing. JOBCOST = what the job cost (dollars; Census adds noise to the PUF).\nGroup: owner-occupied (TENURE 1) one-family detached (BLD 02) homes in the South Atlantic division (DIVISION 5, holds SC).\nJobs with JOBCOST <= 0 or a negative code are dropped. Weighted by the household WEIGHT.\nAlso the mean yearly spend on these seven jobs per home (two-year window per the 2023 AHS Definitions, 'Exterior additions and replacements').\nUsage: python3 -I analyze_ahs_jobs.py <household.csv> <project.csv> <out.json>",
+ "owner_detached_homes_weighted": 14505241,
+ "records": 4699,
+ "jobs": {
+  "roof": {
+   "jobs_with_cost": 490,
+   "median_cost": 10400.0,
+   "p25": 6000.0,
+   "p75": 16000.0,
+   "share_of_homes_reporting_job": 0.111
+  },
+  "central air conditioning": {
+   "jobs_with_cost": 427,
+   "median_cost": 7000.0,
+   "p25": 4500.0,
+   "p75": 9300.0,
+   "share_of_homes_reporting_job": 0.091
+  },
+  "heating equipment": {
+   "jobs_with_cost": 264,
+   "median_cost": 5000.0,
+   "p25": 3000.0,
+   "p75": 7000.0,
+   "share_of_homes_reporting_job": 0.063
+  },
+  "water heater": {
+   "jobs_with_cost": 346,
+   "median_cost": 1000.0,
+   "p25": 620.0,
+   "p75": 1900.0,
+   "share_of_homes_reporting_job": 0.078
+  },
+  "doors or windows": {
+   "jobs_with_cost": 404,
+   "median_cost": 3000.0,
+   "p25": 1000.0,
+   "p75": 9000.0,
+   "share_of_homes_reporting_job": 0.082
+  },
+  "siding": {
+   "jobs_with_cost": 88,
+   "median_cost": 4500.0,
+   "p25": 2000.0,
+   "p75": 12000.0,
+   "share_of_homes_reporting_job": 0.019
+  },
+  "fencing": {
+   "jobs_with_cost": 272,
+   "median_cost": 3000.0,
+   "p25": 1000.0,
+   "p75": 5000.0,
+   "share_of_homes_reporting_job": 0.065
+  }
+ },
+ "mean_yearly_spend_on_these_jobs_per_home": 1808,
+ "mean_rule": "sum of job cost x weight over the seven types, / 2 (the survey asks about the last two years), / weighted owner detached homes (including homes with no job)"
+}

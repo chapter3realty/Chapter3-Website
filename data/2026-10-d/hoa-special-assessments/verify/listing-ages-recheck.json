@@ -1,0 +1,349 @@
+{
+ "pulled": "2026-11-01T03:51:21.207810Z",
+ "type": "condo",
+ "status": "for sale (the API's default)",
+ "rows": [
+  {
+   "city": "(all)",
+   "all": 2867,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo",
+   "bands": [
+    {
+     "band": "before 1980",
+     "count": 328,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1979"
+    },
+    {
+     "band": "1980 to 1989",
+     "count": 980,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1980&yearMax=1989"
+    },
+    {
+     "band": "1990 to 1999",
+     "count": 557,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1990&yearMax=1999"
+    },
+    {
+     "band": "2000 to 2009",
+     "count": 881,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2000&yearMax=2009"
+    },
+    {
+     "band": "2010 to 2019",
+     "count": 50,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2010&yearMax=2019"
+    },
+    {
+     "band": "2020 or later",
+     "count": 71,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2020"
+    }
+   ],
+   "sum_of_bands": 2867
+  },
+  {
+   "city": "Myrtle Beach",
+   "all": 1660,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo&city=Myrtle+Beach",
+   "bands": [
+    {
+     "band": "before 1980",
+     "count": 247,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Myrtle+Beach&yearMax=1979"
+    },
+    {
+     "band": "1980 to 1989",
+     "count": 623,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Myrtle+Beach&yearMin=1980&yearMax=1989"
+    },
+    {
+     "band": "1990 to 1999",
+     "count": 325,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Myrtle+Beach&yearMin=1990&yearMax=1999"
+    },
+    {
+     "band": "2000 to 2009",
+     "count": 408,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Myrtle+Beach&yearMin=2000&yearMax=2009"
+    },
+    {
+     "band": "2010 to 2019",
+     "count": 22,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Myrtle+Beach&yearMin=2010&yearMax=2019"
+    },
+    {
+     "band": "2020 or later",
+     "count": 35,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Myrtle+Beach&yearMin=2020"
+    }
+   ],
+   "sum_of_bands": 1660
+  },
+  {
+   "city": "North Myrtle Beach",
+   "all": 589,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo&city=North+Myrtle+Beach",
+   "bands": [
+    {
+     "band": "before 1980",
+     "count": 65,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=North+Myrtle+Beach&yearMax=1979"
+    },
+    {
+     "band": "1980 to 1989",
+     "count": 140,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=North+Myrtle+Beach&yearMin=1980&yearMax=1989"
+    },
+    {
+     "band": "1990 to 1999",
+     "count": 68,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=North+Myrtle+Beach&yearMin=1990&yearMax=1999"
+    },
+    {
+     "band": "2000 to 2009",
+     "count": 290,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=North+Myrtle+Beach&yearMin=2000&yearMax=2009"
+    },
+    {
+     "band": "2010 to 2019",
+     "count": 18,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=North+Myrtle+Beach&yearMin=2010&yearMax=2019"
+    },
+    {
+     "band": "2020 or later",
+     "count": 8,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=North+Myrtle+Beach&yearMin=2020"
+    }
+   ],
+   "sum_of_bands": 589
+  },
+  {
+   "city": "Surfside Beach",
+   "all": 86,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo&city=Surfside+Beach",
+   "bands": [
+    {
+     "band": "before 1980",
+     "count": 2,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Surfside+Beach&yearMax=1979"
+    },
+    {
+     "band": "1980 to 1989",
+     "count": 52,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Surfside+Beach&yearMin=1980&yearMax=1989"
+    },
+    {
+     "band": "1990 to 1999",
+     "count": 31,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Surfside+Beach&yearMin=1990&yearMax=1999"
+    },
+    {
+     "band": "2000 to 2009",
+     "count": 1,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Surfside+Beach&yearMin=2000&yearMax=2009"
+    },
+    {
+     "band": "2010 to 2019",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Surfside+Beach&yearMin=2010&yearMax=2019"
+    },
+    {
+     "band": "2020 or later",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Surfside+Beach&yearMin=2020"
+    }
+   ],
+   "sum_of_bands": 86
+  },
+  {
+   "city": "Garden City",
+   "all": 0,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo&city=Garden+City",
+   "bands": [
+    {
+     "band": "before 1980",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Garden+City&yearMax=1979"
+    },
+    {
+     "band": "1980 to 1989",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Garden+City&yearMin=1980&yearMax=1989"
+    },
+    {
+     "band": "1990 to 1999",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Garden+City&yearMin=1990&yearMax=1999"
+    },
+    {
+     "band": "2000 to 2009",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Garden+City&yearMin=2000&yearMax=2009"
+    },
+    {
+     "band": "2010 to 2019",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Garden+City&yearMin=2010&yearMax=2019"
+    },
+    {
+     "band": "2020 or later",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Garden+City&yearMin=2020"
+    }
+   ],
+   "sum_of_bands": 0
+  },
+  {
+   "city": "Murrells Inlet",
+   "all": 131,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo&city=Murrells+Inlet",
+   "bands": [
+    {
+     "band": "before 1980",
+     "count": 1,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Murrells+Inlet&yearMax=1979"
+    },
+    {
+     "band": "1980 to 1989",
+     "count": 32,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Murrells+Inlet&yearMin=1980&yearMax=1989"
+    },
+    {
+     "band": "1990 to 1999",
+     "count": 17,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Murrells+Inlet&yearMin=1990&yearMax=1999"
+    },
+    {
+     "band": "2000 to 2009",
+     "count": 63,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Murrells+Inlet&yearMin=2000&yearMax=2009"
+    },
+    {
+     "band": "2010 to 2019",
+     "count": 2,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Murrells+Inlet&yearMin=2010&yearMax=2019"
+    },
+    {
+     "band": "2020 or later",
+     "count": 16,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Murrells+Inlet&yearMin=2020"
+    }
+   ],
+   "sum_of_bands": 131
+  },
+  {
+   "city": "Little River",
+   "all": 185,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo&city=Little+River",
+   "bands": [
+    {
+     "band": "before 1980",
+     "count": 1,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Little+River&yearMax=1979"
+    },
+    {
+     "band": "1980 to 1989",
+     "count": 56,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Little+River&yearMin=1980&yearMax=1989"
+    },
+    {
+     "band": "1990 to 1999",
+     "count": 68,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Little+River&yearMin=1990&yearMax=1999"
+    },
+    {
+     "band": "2000 to 2009",
+     "count": 53,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Little+River&yearMin=2000&yearMax=2009"
+    },
+    {
+     "band": "2010 to 2019",
+     "count": 2,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Little+River&yearMin=2010&yearMax=2019"
+    },
+    {
+     "band": "2020 or later",
+     "count": 5,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Little+River&yearMin=2020"
+    }
+   ],
+   "sum_of_bands": 185
+  },
+  {
+   "city": "Conway",
+   "all": 33,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo&city=Conway",
+   "bands": [
+    {
+     "band": "before 1980",
+     "count": 1,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Conway&yearMax=1979"
+    },
+    {
+     "band": "1980 to 1989",
+     "count": 15,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Conway&yearMin=1980&yearMax=1989"
+    },
+    {
+     "band": "1990 to 1999",
+     "count": 7,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Conway&yearMin=1990&yearMax=1999"
+    },
+    {
+     "band": "2000 to 2009",
+     "count": 9,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Conway&yearMin=2000&yearMax=2009"
+    },
+    {
+     "band": "2010 to 2019",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Conway&yearMin=2010&yearMax=2019"
+    },
+    {
+     "band": "2020 or later",
+     "count": 1,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Conway&yearMin=2020"
+    }
+   ],
+   "sum_of_bands": 33
+  },
+  {
+   "city": "Pawleys Island",
+   "all": 100,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo&city=Pawleys+Island",
+   "bands": [
+    {
+     "band": "before 1980",
+     "count": 8,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Pawleys+Island&yearMax=1979"
+    },
+    {
+     "band": "1980 to 1989",
+     "count": 21,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Pawleys+Island&yearMin=1980&yearMax=1989"
+    },
+    {
+     "band": "1990 to 1999",
+     "count": 26,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Pawleys+Island&yearMin=1990&yearMax=1999"
+    },
+    {
+     "band": "2000 to 2009",
+     "count": 39,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Pawleys+Island&yearMin=2000&yearMax=2009"
+    },
+    {
+     "band": "2010 to 2019",
+     "count": 4,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Pawleys+Island&yearMin=2010&yearMax=2019"
+    },
+    {
+     "band": "2020 or later",
+     "count": 2,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Pawleys+Island&yearMin=2020"
+    }
+   ],
+   "sum_of_bands": 100
+  }
+ ]
+}

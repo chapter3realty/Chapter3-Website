@@ -1,0 +1,53 @@
+{
+ "monthly_dues": 650,
+ "yearly_dues": 7800,
+ "source": "median dues of condos for sale in Horry County, ../invest-condos/listings.json",
+ "rule": "IRS Pub. 527 (2025): rental share = days rented at a fair price / (those days + personal days); vacant days count for neither. Counts as a home if personal days > the greater of 14 or 10 percent of rented days; then rental deductions cannot exceed rental income.",
+ "cases": [
+  {
+   "case": "Lived in all year",
+   "rented_days": 0,
+   "personal_days": 365,
+   "rental_share_pct": 0.0,
+   "deductible_dues": 0,
+   "counts_as_home": true,
+   "note": "A main home: dues are not deductible (Pub. 530)."
+  },
+  {
+   "case": "Rented all year, no personal nights",
+   "rented_days": 365,
+   "personal_days": 0,
+   "rental_share_pct": 100.0,
+   "deductible_dues": 7800,
+   "counts_as_home": false,
+   "note": "All of the dues are a rental expense, including weeks it sat empty while held for rent."
+  },
+  {
+   "case": "Rented 120 nights, 20 personal nights",
+   "rented_days": 120,
+   "personal_days": 20,
+   "rental_share_pct": 85.7,
+   "deductible_dues": 6686,
+   "counts_as_home": true,
+   "note": "Counts as a home: 20 is more than 14 and more than 12 (10 percent of 120)."
+  },
+  {
+   "case": "Rented 120 nights, 14 personal nights",
+   "rented_days": 120,
+   "personal_days": 14,
+   "rental_share_pct": 89.6,
+   "deductible_dues": 6985,
+   "counts_as_home": false,
+   "note": "Does not count as a home: 14 is not more than 14."
+  },
+  {
+   "case": "Lived in, rented 10 nights",
+   "rented_days": 10,
+   "personal_days": 355,
+   "rental_share_pct": 0.0,
+   "deductible_dues": 0,
+   "counts_as_home": true,
+   "note": "Rented under 15 days: no rent reported, no rental deduction."
+  }
+ ]
+}

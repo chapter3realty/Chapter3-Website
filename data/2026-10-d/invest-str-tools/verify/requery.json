@@ -1,0 +1,156 @@
+{
+ "towns": {
+  "myrtle_beach_city": {
+   "condo": [
+    641,
+    541
+   ],
+   "house": [
+    201,
+    18
+   ]
+  },
+  "north_myrtle_beach": {
+   "condo": [
+    589,
+    482
+   ],
+   "house": [
+    258,
+    112
+   ]
+  },
+  "surfside_beach": {
+   "condo": [
+    86,
+    50
+   ],
+   "house": [
+    84,
+    23
+   ]
+  },
+  "garden_city": {
+   "condo": [
+    75,
+    53
+   ],
+   "house": [
+    51,
+    38
+   ]
+  },
+  "murrells_inlet": {
+   "condo": [
+    131,
+    30
+   ],
+   "house": [
+    206,
+    34
+   ]
+  },
+  "pawleys_island": {
+   "condo": [
+    100,
+    62
+   ],
+   "house": [
+    123,
+    35
+   ]
+  },
+  "little_river": {
+   "condo": [
+    185,
+    74
+   ],
+   "house": [
+    190,
+    18
+   ]
+  },
+  "conway": {
+   "condo": [
+    33,
+    4
+   ],
+   "house": [
+    675,
+    34
+   ]
+  }
+ },
+ "ex": {
+  "nmb": {
+   "n": 65,
+   "pins2": 65,
+   "median": 369900,
+   "p25": 324900,
+   "p75": 397000,
+   "le0": 0,
+   "le1050": 28,
+   "le1100": 47,
+   "towns_of_pins": [
+    "North Myrtle Beach"
+   ]
+  },
+  "surfside": {
+   "n": 32,
+   "pins2": 32,
+   "median": 192000.0,
+   "p25": 164900,
+   "p75": 319000,
+   "le0": 0,
+   "le350": 4,
+   "le400": 19,
+   "towns_of_pins": [
+    "Surfside Beach"
+   ]
+  },
+  "gc": {
+   "n": 23,
+   "pins2": 23,
+   "median": 343500,
+   "p25": 239900,
+   "p75": 424999,
+   "le0": 0,
+   "le550": 7,
+   "le600": 12,
+   "towns_of_pins": [
+    "Garden City Beach",
+    "Murrells Inlet"
+   ]
+  }
+ },
+ "incl": {
+  "mb": {
+   "hoa_includes_electric": 31,
+   "hoa_includes_insurance": 37,
+   "hoa_includes_internet": 44,
+   "vacation_rental_program": 40,
+   "furnished": 48
+  },
+  "nmb": {
+   "hoa_includes_electric": 20,
+   "hoa_includes_insurance": 38,
+   "hoa_includes_internet": 59,
+   "vacation_rental_program": 48,
+   "furnished": 62
+  },
+  "surfside": {
+   "hoa_includes_electric": 0,
+   "hoa_includes_insurance": 31,
+   "hoa_includes_internet": 24,
+   "vacation_rental_program": 11,
+   "furnished": 13
+  },
+  "gc": {
+   "hoa_includes_electric": 0,
+   "hoa_includes_insurance": 19,
+   "hoa_includes_internet": 13,
+   "vacation_rental_program": 15,
+   "furnished": 22
+  }
+ }
+}

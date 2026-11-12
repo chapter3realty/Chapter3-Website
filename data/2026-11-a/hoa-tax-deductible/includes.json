@@ -1,0 +1,170 @@
+{
+ "pulled": "2026-11-04T07:20:25.140492+00:00",
+ "api": "https://chapter3realty.com/homes/api/map?",
+ "groups": {
+  "condos": {
+   "listings": 2683,
+   "includes": {
+    "hoa_includes_insurance": {
+     "count": 2119,
+     "pct": 79.0
+    },
+    "hoa_includes_water_sewer": {
+     "count": 2284,
+     "pct": 85.1
+    },
+    "hoa_includes_trash": {
+     "count": 2437,
+     "pct": 90.8
+    },
+    "lawn_care_included": {
+     "count": 2446,
+     "pct": 91.2
+    },
+    "hoa_includes_internet": {
+     "count": 1895,
+     "pct": 70.6
+    },
+    "hoa_includes_cable": {
+     "count": 1302,
+     "pct": 48.5
+    },
+    "hoa_includes_pest": {
+     "count": 2056,
+     "pct": 76.6
+    },
+    "hoa_includes_electric": {
+     "count": 732,
+     "pct": 27.3
+    },
+    "community_amenities": {
+     "count": 2337,
+     "pct": 87.1
+    }
+   }
+  },
+  "oceanfront_building": {
+   "listings": 1080,
+   "includes": {
+    "hoa_includes_insurance": {
+     "count": 883,
+     "pct": 81.8
+    },
+    "hoa_includes_water_sewer": {
+     "count": 1045,
+     "pct": 96.8
+    },
+    "hoa_includes_trash": {
+     "count": 1037,
+     "pct": 96.0
+    },
+    "lawn_care_included": {
+     "count": 1038,
+     "pct": 96.1
+    },
+    "hoa_includes_internet": {
+     "count": 955,
+     "pct": 88.4
+    },
+    "hoa_includes_cable": {
+     "count": 610,
+     "pct": 56.5
+    },
+    "hoa_includes_pest": {
+     "count": 910,
+     "pct": 84.3
+    },
+    "hoa_includes_electric": {
+     "count": 624,
+     "pct": 57.8
+    },
+    "community_amenities": {
+     "count": 1018,
+     "pct": 94.3
+    }
+   }
+  }
+ },
+ "calls": [
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry",
+   "total": 2683
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Choa_includes_insurance",
+   "total": 2119
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Choa_includes_water_sewer",
+   "total": 2284
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Choa_includes_trash",
+   "total": 2437
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Clawn_care_included",
+   "total": 2446
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Choa_includes_internet",
+   "total": 1895
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Choa_includes_cable",
+   "total": 1302
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Choa_includes_pest",
+   "total": 2056
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Choa_includes_electric",
+   "total": 732
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Ccommunity_amenities",
+   "total": 2337
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building",
+   "total": 1080
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Choa_includes_insurance",
+   "total": 883
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Choa_includes_water_sewer",
+   "total": 1045
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Choa_includes_trash",
+   "total": 1037
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Clawn_care_included",
+   "total": 1038
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Choa_includes_internet",
+   "total": 955
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Choa_includes_cable",
+   "total": 610
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Choa_includes_pest",
+   "total": 910
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Choa_includes_electric",
+   "total": 624
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Ccommunity_amenities",
+   "total": 1018
+  }
+ ]
+}

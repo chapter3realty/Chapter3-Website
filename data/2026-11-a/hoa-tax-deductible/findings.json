@@ -1,0 +1,334 @@
+{
+ "made": "build_findings.py",
+ "inputs": [
+  "../invest-condos/findings.json",
+  "../invest-condos/listings.json",
+  "../buyers-cost-to-own/hoa-by-area.json",
+  "includes.json",
+  "raw/bills-2026.json",
+  "RAW condo-parcels.json (layer 24, read 2026-11-02)"
+ ],
+ "condo_stock": {
+  "units": 40963,
+  "units_4pct": 8797,
+  "pct_4pct": 21.5,
+  "pct_not_main_home": 78.5,
+  "pct_mailing_outside_sc": 57.7,
+  "by_area_pct_4pct": {
+   "City of Myrtle Beach": 8.9,
+   "Conway": 15.3,
+   "North Myrtle Beach": 16.6,
+   "Outside city limits and other towns": 34.1,
+   "Surfside Beach": 12.3
+  },
+  "by_area_units": {
+   "City of Myrtle Beach": 11880,
+   "Conway": 365,
+   "North Myrtle Beach": 11674,
+   "Outside city limits and other towns": 16801,
+   "Surfside Beach": 243
+  }
+ },
+ "listings": {
+  "condos_for_sale": 2656,
+  "median_dues_month": 650,
+  "str_allowed": 1895,
+  "rentals_allowed": 2341,
+  "vacation_rental_program": 1340,
+  "pct_str_allowed": 71.3,
+  "pct_rentals_allowed": 88.1,
+  "oceanfront_listings": 1071,
+  "oceanfront_median_dues_month": 925
+ },
+ "dues_include": {
+  "pulled": "2026-11-04T07:20:25.140492+00:00",
+  "condos": {
+   "listings": 2683,
+   "includes": {
+    "hoa_includes_insurance": {
+     "count": 2119,
+     "pct": 79.0
+    },
+    "hoa_includes_water_sewer": {
+     "count": 2284,
+     "pct": 85.1
+    },
+    "hoa_includes_trash": {
+     "count": 2437,
+     "pct": 90.8
+    },
+    "lawn_care_included": {
+     "count": 2446,
+     "pct": 91.2
+    },
+    "hoa_includes_internet": {
+     "count": 1895,
+     "pct": 70.6
+    },
+    "hoa_includes_cable": {
+     "count": 1302,
+     "pct": 48.5
+    },
+    "hoa_includes_pest": {
+     "count": 2056,
+     "pct": 76.6
+    },
+    "hoa_includes_electric": {
+     "count": 732,
+     "pct": 27.3
+    },
+    "community_amenities": {
+     "count": 2337,
+     "pct": 87.1
+    }
+   }
+  },
+  "oceanfront_building": {
+   "listings": 1080,
+   "includes": {
+    "hoa_includes_insurance": {
+     "count": 883,
+     "pct": 81.8
+    },
+    "hoa_includes_water_sewer": {
+     "count": 1045,
+     "pct": 96.8
+    },
+    "hoa_includes_trash": {
+     "count": 1037,
+     "pct": 96.0
+    },
+    "lawn_care_included": {
+     "count": 1038,
+     "pct": 96.1
+    },
+    "hoa_includes_internet": {
+     "count": 955,
+     "pct": 88.4
+    },
+    "hoa_includes_cable": {
+     "count": 610,
+     "pct": 56.5
+    },
+    "hoa_includes_pest": {
+     "count": 910,
+     "pct": 84.3
+    },
+    "hoa_includes_electric": {
+     "count": 624,
+     "pct": 57.8
+    },
+    "community_amenities": {
+     "count": 1018,
+     "pct": 94.3
+    }
+   }
+  }
+ },
+ "dues_by_zip": [
+  {
+   "zip": "29572",
+   "name": "Myrtle Beach (north end)",
+   "listings": 529,
+   "median_month": 875,
+   "q1": 625,
+   "q3": 1050,
+   "rented_all_year_deductible": 10500
+  },
+  {
+   "zip": "29577",
+   "name": "Myrtle Beach (central and south)",
+   "listings": 828,
+   "median_month": 775,
+   "q1": 525,
+   "q3": 1000,
+   "rented_all_year_deductible": 9300
+  },
+  {
+   "zip": "29582",
+   "name": "North Myrtle Beach",
+   "listings": 569,
+   "median_month": 700,
+   "q1": 550,
+   "q3": 1075,
+   "rented_all_year_deductible": 8400
+  },
+  {
+   "zip": "29575",
+   "name": "Surfside Beach",
+   "listings": 144,
+   "median_month": 525,
+   "q1": 400,
+   "q3": 850,
+   "rented_all_year_deductible": 6300
+  },
+  {
+   "zip": "29576",
+   "name": "Murrells Inlet and Garden City",
+   "listings": 165,
+   "median_month": 525,
+   "q1": 425,
+   "q3": 650,
+   "rented_all_year_deductible": 6300
+  },
+  {
+   "zip": "29566",
+   "name": "Little River",
+   "listings": 184,
+   "median_month": 525,
+   "q1": 425,
+   "q3": 600,
+   "rented_all_year_deductible": 6300
+  },
+  {
+   "zip": "29579",
+   "name": "Carolina Forest",
+   "listings": 145,
+   "median_month": 425,
+   "q1": 375,
+   "q3": 450,
+   "rented_all_year_deductible": 5100
+  },
+  {
+   "zip": "29588",
+   "name": "Socastee",
+   "listings": 61,
+   "median_month": 375,
+   "q1": 300,
+   "q3": 450,
+   "rented_all_year_deductible": 4500
+  }
+ ],
+ "condo_tax_groups": {
+  "880_6": {
+   "label": "City of Myrtle Beach, tax district 880",
+   "ratio_pct": "6",
+   "units": 7427,
+   "median_assessed": 9510.0,
+   "median_taxable": 158500.0,
+   "median_unit_assessed": 9510.0,
+   "median_unit_taxable": 158500.0
+  },
+  "880_4": {
+   "label": "City of Myrtle Beach, tax district 880",
+   "ratio_pct": "4",
+   "units": 717,
+   "median_assessed": 8210.0,
+   "median_taxable": 205275.0,
+   "median_unit_assessed": 8210.0,
+   "median_unit_taxable": 205275.0
+  },
+  "550_6": {
+   "label": "North Myrtle Beach, tax district 550",
+   "ratio_pct": "6",
+   "units": 9736,
+   "median_assessed": 15040.0,
+   "median_taxable": 250700.0,
+   "median_unit_assessed": 15040.0,
+   "median_unit_taxable": 250700.0
+  },
+  "550_4": {
+   "label": "North Myrtle Beach, tax district 550",
+   "ratio_pct": "4",
+   "units": 1938,
+   "median_assessed": 10580.0,
+   "median_taxable": 264500.0,
+   "median_unit_assessed": 10580.0,
+   "median_unit_taxable": 264500.0
+  }
+ },
+ "bills": {
+  "550_6": {
+   "assessed": 15040.0,
+   "appraisal": 250700.0,
+   "total_taxes": 3326.85
+  },
+  "880_4": {
+   "assessed": 8210.0,
+   "appraisal": 205275.0,
+   "total_taxes": 829.16
+  },
+  "880_6": {
+   "assessed": 9510.0,
+   "appraisal": 158500.0,
+   "total_taxes": 2421.24
+  }
+ },
+ "dues_vs_tax": {
+  "title": "A year of condo dues against a year of property tax",
+  "rows": [
+   {
+    "case": "Myrtle Beach condo, rented (6 percent)",
+    "dues_year": 9300,
+    "tax_year": 2421.24,
+    "ratio": 3.8
+   },
+   {
+    "case": "Myrtle Beach condo, owner's main home (4 percent)",
+    "dues_year": 9300,
+    "tax_year": 829.16,
+    "ratio": 11.2
+   },
+   {
+    "case": "North Myrtle Beach condo, rented (6 percent)",
+    "dues_year": 8400,
+    "tax_year": 3326.85,
+    "ratio": 2.5
+   }
+  ],
+  "rule": "Dues: median monthly dues of condos for sale in ZIP 29577 (Myrtle Beach) or 29582 (North Myrtle Beach) x 12. Tax: the 2026 bill of the median-assessed condo unit in tax district 880 or 550 at that ratio."
+ },
+ "worked_example": {
+  "monthly_dues": 650,
+  "yearly_dues": 7800,
+  "source": "median dues of condos for sale in Horry County, ../invest-condos/listings.json",
+  "rule": "IRS Pub. 527 (2025): rental share = days rented at a fair price / (those days + personal days); vacant days count for neither. Counts as a home if personal days > the greater of 14 or 10 percent of rented days; then rental deductions cannot exceed rental income.",
+  "cases": [
+   {
+    "case": "Lived in all year",
+    "rented_days": 0,
+    "personal_days": 365,
+    "rental_share_pct": 0.0,
+    "deductible_dues": 0,
+    "counts_as_home": true,
+    "note": "A main home: dues are not deductible (Pub. 530)."
+   },
+   {
+    "case": "Rented all year, no personal nights",
+    "rented_days": 365,
+    "personal_days": 0,
+    "rental_share_pct": 100.0,
+    "deductible_dues": 7800,
+    "counts_as_home": false,
+    "note": "All of the dues are a rental expense, including weeks it sat empty while held for rent."
+   },
+   {
+    "case": "Rented 120 nights, 20 personal nights",
+    "rented_days": 120,
+    "personal_days": 20,
+    "rental_share_pct": 85.7,
+    "deductible_dues": 6686,
+    "counts_as_home": true,
+    "note": "Counts as a home: 20 is more than 14 and more than 12 (10 percent of 120)."
+   },
+   {
+    "case": "Rented 120 nights, 14 personal nights",
+    "rented_days": 120,
+    "personal_days": 14,
+    "rental_share_pct": 89.6,
+    "deductible_dues": 6985,
+    "counts_as_home": false,
+    "note": "Does not count as a home: 14 is not more than 14."
+   },
+   {
+    "case": "Lived in, rented 10 nights",
+    "rented_days": 10,
+    "personal_days": 355,
+    "rental_share_pct": 0.0,
+    "deductible_dues": 0,
+    "counts_as_home": true,
+    "note": "Rented under 15 days: no rent reported, no rental deduction."
+   }
+  ]
+ }
+}

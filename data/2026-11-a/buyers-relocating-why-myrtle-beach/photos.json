@@ -1,0 +1,61 @@
+{
+ "photos": [
+  {
+   "slug": "buyers-relocating-why-myrtle-beach",
+   "file": "images/2026-11-a/buyers-relocating-why-myrtle-beach/woods-cleared-for-new-streets-from-above.webp",
+   "variants": {
+    "600": "images/2026-11-a/buyers-relocating-why-myrtle-beach/woods-cleared-for-new-streets-from-above-600w.webp",
+    "1200": "images/2026-11-a/buyers-relocating-why-myrtle-beach/woods-cleared-for-new-streets-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Woods cleared for new streets and house lots outside the city limits in Horry County, from above",
+   "what": "Straight down on 2023 NAIP imagery of unincorporated Horry County between Conway and North Myrtle Beach: two new subdivisions cut out of pine woods on either side of a two-lane road. Above the road, a loop of new paved street around a pond, with bare graded lots and no houses yet. Below the road, streets and ponds still being graded, with machines and sand piles. Older houses on large wooded lots at the upper left, farm ponds at the lower left, woods all around.",
+   "caption": "Woods cleared for new streets and house lots outside the city limits, between Conway and North Myrtle Beach.",
+   "alt": "Aerial photo of two new subdivisions being cut out of pine woods: a paved street loop around a pond with empty lots, and more streets being graded across the road",
+   "place": {
+    "city": "Horry County",
+    "sublocation": "Unincorporated Horry County between Conway and North Myrtle Beach (tax district 100, outside any city or town)"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023) on 2026-11-04, a 1,500 by 1,125 m window centred on 33.8327 N, 78.8589 W; the exact request is in source_request. Source file md5 5f5383f62725f578997c2aa724f3a46e (2000 x 1500 JPEG).",
+   "license_note": "Same source and terms as the NAIP records of invest-where-to-buy in this batch: The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\"; the USDA FSA policy page says public domain information \"may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\"",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo, 2023",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "digitalCapture",
+   "subject_check": "Looked at full size (2000 x 1500) by the writer on 2026-11-04. All 295 Horry County parcels that touch the window (GIS layer 24, query in annotation_sources) are in tax district 100, outside any city or town. Not a window used on any other page. The caption names no subdivision, street or business, and says only what the frame shows.",
+   "annotation_sources": {
+    "where": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?geometry=-78.86703413561662%2C33.82763243243244%2C-78.85076586438339%2C33.83776756756757&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=TaxDistrict%2CLandUseCode%2CMarketImprv%2CAcreage&returnGeometry=false&f=json&resultRecordCount=2000"
+   },
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8779435.480349144%2C4005682.617408756%2C-8777629.702242257%2C4007036.9509889223&bboxSR=3857&imageSR=3857&size=2000%2C1500&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image",
+   "original_size": "2000x1500",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-a/buyers-relocating-why-myrtle-beach/woods-cleared-for-new-streets-from-above-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-a/buyers-relocating-why-myrtle-beach/woods-cleared-for-new-streets-from-above-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-a/buyers-relocating-why-myrtle-beach/woods-cleared-for-new-streets-from-above-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   }
+  }
+ ]
+}

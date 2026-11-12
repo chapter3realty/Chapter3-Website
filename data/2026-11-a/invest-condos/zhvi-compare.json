@@ -1,0 +1,190 @@
+{
+ "source": "Zillow Research, ZHVI, Metro, mid tier (33rd to 67th percentile), smoothed, seasonally adjusted, https://www.zillow.com/research/data/ (files.zillowstatic.com/research/public_csvs/zhvi/Metro_zhvi_uc_<kind>_tier_0.33_0.67_sm_sa_month.csv)",
+ "region": "Myrtle Beach, SC metro (Zillow RegionID 394898)",
+ "first_month": "2001-11",
+ "last_month": "2026-09",
+ "findings": {
+  "condo": {
+   "first": 111905,
+   "last": 231244,
+   "peak_month": "2006-11",
+   "peak": 197091,
+   "trough_month": "2012-01",
+   "trough": 113099,
+   "fall_pct": -42.6,
+   "recovered_month": "2021-10",
+   "years_peak_to_recovery": 14.9,
+   "change_first_to_last_pct": 106.6,
+   "change_from_2006_peak_pct": 17.3,
+   "change_since_2019-12_pct": 46.0,
+   "change_since_2021-12_pct": 12.0,
+   "change_last_12_months_pct": -1.3,
+   "recent_peak_month": "2023-10",
+   "recent_peak": 261418,
+   "change_from_recent_peak_pct": -11.5,
+   "us_change_last_12_months_pct": -0.1,
+   "us_change_since_2019-12_pct": 34.4
+  },
+  "sfr": {
+   "first": 146426,
+   "last": 364275,
+   "peak_month": "2007-06",
+   "peak": 243418,
+   "trough_month": "2011-11",
+   "trough": 169359,
+   "fall_pct": -30.4,
+   "recovered_month": "2020-08",
+   "years_peak_to_recovery": 13.2,
+   "change_first_to_last_pct": 148.8,
+   "change_from_2006_peak_pct": 49.7,
+   "change_since_2019-12_pct": 53.7,
+   "change_since_2021-12_pct": 15.7,
+   "change_last_12_months_pct": 0.5,
+   "recent_peak_month": "2024-06",
+   "recent_peak": 370399,
+   "change_from_recent_peak_pct": -1.7,
+   "us_change_last_12_months_pct": 1.3,
+   "us_change_since_2019-12_pct": 49.3
+  }
+ },
+ "condo_as_share_of_house_value": {
+  "2001-11": 0.764,
+  "2006-11": 0.816,
+  "2012-01": 0.655,
+  "2019-12": 0.668,
+  "2026-09": 0.635
+ },
+ "chart_yearly_december": [
+  {
+   "year": 2001,
+   "condo": 111819,
+   "house": 146577
+  },
+  {
+   "year": 2002,
+   "condo": 113080,
+   "house": 149901
+  },
+  {
+   "year": 2003,
+   "condo": 117278,
+   "house": 156684
+  },
+  {
+   "year": 2004,
+   "condo": 130509,
+   "house": 174382
+  },
+  {
+   "year": 2005,
+   "condo": 167166,
+   "house": 210488
+  },
+  {
+   "year": 2006,
+   "condo": 196779,
+   "house": 242163
+  },
+  {
+   "year": 2007,
+   "condo": 182958,
+   "house": 238020
+  },
+  {
+   "year": 2008,
+   "condo": 158494,
+   "house": 216823
+  },
+  {
+   "year": 2009,
+   "condo": 131914,
+   "house": 191961
+  },
+  {
+   "year": 2010,
+   "condo": 120582,
+   "house": 179033
+  },
+  {
+   "year": 2011,
+   "condo": 113450,
+   "house": 170648
+  },
+  {
+   "year": 2012,
+   "condo": 117461,
+   "house": 174757
+  },
+  {
+   "year": 2013,
+   "condo": 123185,
+   "house": 183888
+  },
+  {
+   "year": 2014,
+   "condo": 127128,
+   "house": 191389
+  },
+  {
+   "year": 2015,
+   "condo": 130034,
+   "house": 199220
+  },
+  {
+   "year": 2016,
+   "condo": 134276,
+   "house": 206159
+  },
+  {
+   "year": 2017,
+   "condo": 140839,
+   "house": 215362
+  },
+  {
+   "year": 2018,
+   "condo": 150041,
+   "house": 226121
+  },
+  {
+   "year": 2019,
+   "condo": 158408,
+   "house": 237000
+  },
+  {
+   "year": 2020,
+   "condo": 166207,
+   "house": 258002
+  },
+  {
+   "year": 2021,
+   "condo": 206532,
+   "house": 314805
+  },
+  {
+   "year": 2022,
+   "condo": 255042,
+   "house": 364880
+  },
+  {
+   "year": 2023,
+   "condo": 260591,
+   "house": 367627
+  },
+  {
+   "year": 2024,
+   "condo": 247693,
+   "house": 369026
+  },
+  {
+   "year": 2025,
+   "condo": 232605,
+   "house": 362547
+  },
+  {
+   "year": "2026-09",
+   "condo": 231244,
+   "house": 364275
+  }
+ ],
+ "note": "ZHVI is a modelled typical value of homes in the middle third, not a sale price. Condo series = Zillow 'Condo/Co-op'; house series = 'Single-Family Homes'."
+}

@@ -1,0 +1,54 @@
+{
+ "source": "Horry County Treasurer, public tax search, https://horrycountytreasurer.qpaybill.com/Taxes/TaxesDefaultType4.aspx, read 2026-11-04",
+ "why": "One condo unit per case, chosen as the median-assessed unit of its group in county parcel layer 24 (build_findings.py names the group).",
+ "bills": [
+  {
+   "tax_year": "2026",
+   "district_levy": "550 / 171.2",
+   "city_levy": "NM / 50.",
+   "ratio_pct": "6",
+   "appraisal": "250,700",
+   "assessed": "15,040",
+   "county_tax": "2,574.85",
+   "city_tax": "752.00",
+   "fees": "0.00",
+   "residential_exemption": "0.00",
+   "homestead_exemption": "0.00",
+   "local_option_credit": "0.00",
+   "total_taxes": "3,326.85",
+   "check": "15,040 x 0.2212 = 3,326.85 - 0.00 - 0.00 + 0.00 = 3,326.85 (bill: 3,326.85)"
+  },
+  {
+   "tax_year": "2026",
+   "district_levy": "880 / 171.2",
+   "city_levy": "MB / 83.4",
+   "ratio_pct": "4",
+   "appraisal": "205,275",
+   "assessed": "8,210",
+   "county_tax": "1,405.55",
+   "city_tax": "684.71",
+   "fees": "0.00",
+   "residential_exemption": "895.71",
+   "homestead_exemption": "0.00",
+   "local_option_credit": "365.39",
+   "total_taxes": "829.16",
+   "check": "8,210 x 0.2546 = 2,090.27 - 895.71 - 365.39 + 0.00 = 829.17 (bill: 829.16)"
+  },
+  {
+   "tax_year": "2026",
+   "district_levy": "880 / 171.2",
+   "city_levy": "MB / 83.4",
+   "ratio_pct": "6",
+   "appraisal": "158,500",
+   "assessed": "9,510",
+   "county_tax": "1,628.11",
+   "city_tax": "793.13",
+   "fees": "0.00",
+   "residential_exemption": "0.00",
+   "homestead_exemption": "0.00",
+   "local_option_credit": "0.00",
+   "total_taxes": "2,421.24",
+   "check": "9,510 x 0.2546 = 2,421.25 - 0.00 - 0.00 + 0.00 = 2,421.25 (bill: 2,421.24)"
+  }
+ ]
+}

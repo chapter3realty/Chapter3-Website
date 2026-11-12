@@ -1,0 +1,869 @@
+{
+ "mills_6pct": {
+  "myrtle-beach": 254.6,
+  "north-myrtle-beach": 221.2,
+  "surfside-beach": 214.2,
+  "garden-city-beach": 207.3
+ },
+ "towns": {
+  "myrtle-beach": {
+   "revenue_avg": 25807,
+   "occupancy_pct": 36.3,
+   "adr": 257,
+   "listings": 8698,
+   "yoy_sentence": "From a year earlier, average revenue rose 8% while the number of active listings grew 43%.",
+   "top3_share_pct": 47,
+   "july_over_january": 5.1,
+   "jun_jul_aug_share_of_calendar_pct": 47,
+   "dec_jan_feb_share_of_calendar_pct": 13,
+   "two_bed": {
+    "listings": 2689,
+    "median": 20100,
+    "average": 25100,
+    "adr": 252,
+    "occupancy_pct": 37
+   },
+   "three_bed": {
+    "listings": 1379,
+    "median": 31700,
+    "average": 37100,
+    "adr": 339,
+    "occupancy_pct": 38
+   },
+   "running_cost_pct_of_gross": 24,
+   "cleaning_share_pct": 13,
+   "insurance_line": 260,
+   "permit_line": 130,
+   "kept_avg_listing_airroi": 15977,
+   "booked_or_blocked_90_or_fewer_pct": 56.5,
+   "booked_or_blocked_over_180_pct": 13.1,
+   "avg_stay_nights": 4.7,
+   "bookings_per_listing": 19,
+   "cleaning_fee_median": 151,
+   "lead_days": 52,
+   "lead_sentence": "Guests book Myrtle Beach stays 52 days ahead on average (about seven weeks). July stays are booked furthest out, about 58 days ahead, and January stays closest to arrival, about 30 days.",
+   "professional_mgmt_pct": 52.4,
+   "condo_pct": 80.6,
+   "house_pct": 12.1,
+   "two_bed_nights_avg": 87,
+   "two_bed_nights_median": 69,
+   "two_bed_kept_per_night": 192,
+   "two_bed_kept_average": 15423,
+   "two_bed_kept_median": 12273
+  },
+  "north-myrtle-beach": {
+   "revenue_avg": 34401,
+   "occupancy_pct": 34.7,
+   "adr": 375,
+   "listings": 4564,
+   "yoy_sentence": "From a year earlier, average revenue rose 12% while the number of active listings grew 31%.",
+   "top3_share_pct": 47,
+   "july_over_january": 5.1,
+   "jun_jul_aug_share_of_calendar_pct": 47,
+   "dec_jan_feb_share_of_calendar_pct": 13,
+   "two_bed": {
+    "listings": 1299,
+    "median": 14900,
+    "average": 20700,
+    "adr": 246,
+    "occupancy_pct": 34
+   },
+   "three_bed": {
+    "listings": 1403,
+    "median": 21200,
+    "average": 29700,
+    "adr": 348,
+    "occupancy_pct": 34
+   },
+   "running_cost_pct_of_gross": 24,
+   "cleaning_share_pct": 15,
+   "insurance_line": 340,
+   "permit_line": 170,
+   "kept_avg_listing_airroi": 20411,
+   "booked_or_blocked_90_or_fewer_pct": 61.2,
+   "booked_or_blocked_over_180_pct": 10.9,
+   "avg_stay_nights": 4.9,
+   "bookings_per_listing": 17,
+   "cleaning_fee_median": 229,
+   "lead_days": 68,
+   "lead_sentence": "Guests book North Myrtle Beach stays 68 days ahead on average (about two months), so guests here plan well ahead. July stays are booked furthest out, about 77 days ahead, and January stays closest to arrival, about 34 days.",
+   "professional_mgmt_pct": 43.4,
+   "condo_pct": 67.0,
+   "house_pct": 30.9,
+   "two_bed_nights_avg": 72,
+   "two_bed_nights_median": 51,
+   "two_bed_kept_per_night": 187,
+   "two_bed_kept_average": 12117,
+   "two_bed_kept_median": 8579
+  },
+  "surfside-beach": {
+   "revenue_avg": 42902,
+   "occupancy_pct": 36.9,
+   "adr": 419,
+   "listings": 551,
+   "yoy_sentence": "From a year earlier, average revenue rose 7% while the number of active listings grew 24%.",
+   "top3_share_pct": 46,
+   "july_over_january": 4.9,
+   "jun_jul_aug_share_of_calendar_pct": 46,
+   "dec_jan_feb_share_of_calendar_pct": 12,
+   "two_bed": {
+    "listings": 175,
+    "median": 15800,
+    "average": 22800,
+    "adr": 245,
+    "occupancy_pct": 35
+   },
+   "three_bed": {
+    "listings": 106,
+    "median": 29200,
+    "average": 33600,
+    "adr": 315,
+    "occupancy_pct": 42
+   },
+   "running_cost_pct_of_gross": 23,
+   "cleaning_share_pct": 14,
+   "insurance_line": 430,
+   "permit_line": 210,
+   "kept_avg_listing_airroi": 26382,
+   "booked_or_blocked_90_or_fewer_pct": 53.3,
+   "booked_or_blocked_over_180_pct": 13.3,
+   "avg_stay_nights": 5.2,
+   "bookings_per_listing": 17,
+   "cleaning_fee_median": 265,
+   "lead_days": 73,
+   "lead_sentence": "Guests book Surfside Beach stays 73 days ahead on average (about two and a half months), so guests here plan well ahead. July stays are booked furthest out, about 97 days ahead, and January stays closest to arrival, about 40 days.",
+   "professional_mgmt_pct": 28.1,
+   "condo_pct": 47.5,
+   "house_pct": 50.5,
+   "two_bed_nights_avg": 80,
+   "two_bed_nights_median": 55,
+   "two_bed_kept_per_night": 189,
+   "two_bed_kept_average": 13724,
+   "two_bed_kept_median": 9314
+  },
+  "garden-city-beach": {
+   "revenue_avg": 41223,
+   "occupancy_pct": 39.6,
+   "adr": 371,
+   "listings": 374,
+   "yoy_sentence": "From a year earlier, average revenue rose 7%.",
+   "top3_share_pct": 45,
+   "july_over_january": 4.9,
+   "jun_jul_aug_share_of_calendar_pct": 45,
+   "dec_jan_feb_share_of_calendar_pct": 13,
+   "two_bed": {
+    "listings": 125,
+    "median": 23400,
+    "average": 26900,
+    "adr": 243,
+    "occupancy_pct": 41
+   },
+   "three_bed": {
+    "listings": 85,
+    "median": 36100,
+    "average": 38700,
+    "adr": 352,
+    "occupancy_pct": 40
+   },
+   "running_cost_pct_of_gross": 23,
+   "cleaning_share_pct": 14,
+   "insurance_line": 410,
+   "permit_line": 210,
+   "kept_avg_listing_airroi": 25333,
+   "booked_or_blocked_90_or_fewer_pct": 48.4,
+   "booked_or_blocked_over_180_pct": 20.6,
+   "avg_stay_nights": 5.1,
+   "bookings_per_listing": 21,
+   "cleaning_fee_median": 230,
+   "lead_days": 73,
+   "lead_sentence": "Guests book Garden City Beach stays 73 days ahead on average (about two and a half months), so guests here plan well ahead. July stays are booked furthest out, about 90 days ahead, and January stays closest to arrival, about 37 days.",
+   "professional_mgmt_pct": 33.7,
+   "condo_pct": 67.6,
+   "house_pct": 31.0,
+   "two_bed_nights_avg": 95,
+   "two_bed_nights_median": 83,
+   "two_bed_kept_per_night": 187,
+   "two_bed_kept_average": 16327,
+   "two_bed_kept_median": 14122
+  },
+  "murrells-inlet": {
+   "revenue_avg": 47603,
+   "occupancy_pct": 41.9,
+   "adr": 405,
+   "listings": 478,
+   "yoy_sentence": "From a year earlier, average revenue rose 19% while the number of active listings grew 56%.",
+   "top3_share_pct": 43,
+   "july_over_january": 4.3,
+   "jun_jul_aug_share_of_calendar_pct": 43,
+   "dec_jan_feb_share_of_calendar_pct": 13,
+   "two_bed": {
+    "listings": 121,
+    "median": 27500,
+    "average": 27900,
+    "adr": 230,
+    "occupancy_pct": 44
+   },
+   "three_bed": {
+    "listings": 134,
+    "median": 30600,
+    "average": 32900,
+    "adr": 304,
+    "occupancy_pct": 41
+   },
+   "running_cost_pct_of_gross": 24,
+   "cleaning_share_pct": 14,
+   "insurance_line": 480,
+   "permit_line": 240,
+   "kept_avg_listing_airroi": 28623,
+   "booked_or_blocked_90_or_fewer_pct": 39.5,
+   "booked_or_blocked_over_180_pct": 17.9,
+   "avg_stay_nights": 5.0,
+   "bookings_per_listing": 23,
+   "cleaning_fee_median": 225,
+   "lead_days": 64,
+   "lead_sentence": "Guests book Murrells Inlet stays 64 days ahead on average (about two months), so guests here plan well ahead. July stays are booked furthest out, about 77 days ahead, and January stays closest to arrival, about 33 days.",
+   "professional_mgmt_pct": 23.4,
+   "condo_pct": 37.9,
+   "house_pct": 59.8,
+   "two_bed_nights_avg": 104,
+   "two_bed_nights_median": 103,
+   "two_bed_kept_per_night": 175,
+   "two_bed_kept_average": 16578,
+   "two_bed_kept_median": 16330
+  },
+  "pawleys-island": {
+   "revenue_avg": 31430,
+   "occupancy_pct": 35.7,
+   "adr": 392,
+   "listings": 453,
+   "yoy_sentence": "From a year earlier, average revenue rose 25% while the number of active listings grew 69%.",
+   "top3_share_pct": 37,
+   "july_over_january": 3.0,
+   "jun_jul_aug_share_of_calendar_pct": 37,
+   "dec_jan_feb_share_of_calendar_pct": 16,
+   "two_bed": {
+    "listings": 140,
+    "median": 18800,
+    "average": 22900,
+    "adr": 253,
+    "occupancy_pct": 36
+   },
+   "three_bed": {
+    "listings": 141,
+    "median": 24000,
+    "average": 27800,
+    "adr": 325,
+    "occupancy_pct": 37
+   },
+   "running_cost_pct_of_gross": 24,
+   "cleaning_share_pct": 17,
+   "insurance_line": 310,
+   "permit_line": 160,
+   "kept_avg_listing_airroi": 17930,
+   "booked_or_blocked_90_or_fewer_pct": 60.9,
+   "booked_or_blocked_over_180_pct": 15.4,
+   "avg_stay_nights": 4.8,
+   "bookings_per_listing": 19,
+   "cleaning_fee_median": 217,
+   "lead_days": 90,
+   "lead_sentence": null,
+   "professional_mgmt_pct": 49.2,
+   "condo_pct": 55.4,
+   "house_pct": 42.4,
+   "two_bed_nights_avg": 75,
+   "two_bed_nights_median": 62,
+   "two_bed_kept_per_night": 192,
+   "two_bed_kept_average": 13041,
+   "two_bed_kept_median": 10622
+  },
+  "little-river": {
+   "revenue_avg": 14963,
+   "occupancy_pct": 33.9,
+   "adr": 200,
+   "listings": 169,
+   "yoy_sentence": "From a year earlier, average revenue rose 19% while the number of active listings grew 56%.",
+   "top3_share_pct": 40,
+   "july_over_january": 2.7,
+   "jun_jul_aug_share_of_calendar_pct": 40,
+   "dec_jan_feb_share_of_calendar_pct": 18,
+   "two_bed": {
+    "listings": 64,
+    "median": 9400,
+    "average": 11800,
+    "adr": 177,
+    "occupancy_pct": 34
+   },
+   "three_bed": {
+    "listings": 47,
+    "median": 15700,
+    "average": 19100,
+    "adr": 249,
+    "occupancy_pct": 35
+   },
+   "running_cost_pct_of_gross": 24,
+   "cleaning_share_pct": 16,
+   "insurance_line": 150,
+   "permit_line": 70,
+   "kept_avg_listing_airroi": 8813,
+   "booked_or_blocked_90_or_fewer_pct": 65.1,
+   "booked_or_blocked_over_180_pct": 3.0,
+   "avg_stay_nights": 5.8,
+   "bookings_per_listing": 14,
+   "cleaning_fee_median": 172,
+   "lead_days": 44,
+   "lead_sentence": "Guests book Little River stays 44 days ahead on average (about six weeks). October stays are booked furthest out, about 58 days ahead, and January stays closest to arrival, about 27 days.",
+   "professional_mgmt_pct": 29.0,
+   "condo_pct": 63.3,
+   "house_pct": 33.7,
+   "two_bed_nights_avg": 56,
+   "two_bed_nights_median": 45,
+   "two_bed_kept_per_night": 135,
+   "two_bed_kept_average": 6860,
+   "two_bed_kept_median": 5420
+  },
+  "conway": {
+   "revenue_avg": 23426,
+   "occupancy_pct": 36.0,
+   "adr": 234,
+   "listings": 106,
+   "yoy_sentence": "From a year earlier, average revenue rose 19% while the number of active listings grew 49%.",
+   "top3_share_pct": 38,
+   "july_over_january": 2.5,
+   "jun_jul_aug_share_of_calendar_pct": 38,
+   "dec_jan_feb_share_of_calendar_pct": 17,
+   "two_bed": {
+    "listings": 26,
+    "median": 21100,
+    "average": 24000,
+    "adr": 185,
+    "occupancy_pct": 40
+   },
+   "three_bed": {
+    "listings": 23,
+    "median": 27900,
+    "average": 31500,
+    "adr": 257,
+    "occupancy_pct": 46
+   },
+   "running_cost_pct_of_gross": 24,
+   "cleaning_share_pct": 12,
+   "insurance_line": 230,
+   "permit_line": 120,
+   "kept_avg_listing_airroi": 14616,
+   "booked_or_blocked_90_or_fewer_pct": 49.1,
+   "booked_or_blocked_over_180_pct": 17.0,
+   "avg_stay_nights": 4.3,
+   "bookings_per_listing": 23,
+   "cleaning_fee_median": 129,
+   "lead_days": 42,
+   "lead_sentence": "Guests book Conway stays 42 days ahead on average (about six weeks). July stays are booked furthest out, about 48 days ahead, and January stays closest to arrival, about 16 days.",
+   "professional_mgmt_pct": 15.1,
+   "condo_pct": 17.0,
+   "house_pct": 59.4,
+   "two_bed_nights_avg": 114,
+   "two_bed_nights_median": 100,
+   "two_bed_kept_per_night": 141,
+   "two_bed_kept_average": 15010,
+   "two_bed_kept_median": 13154
+  }
+ },
+ "examples": {
+  "mb_city_oceanfront_condo_2br": {
+   "town": "myrtle-beach",
+   "for_sale_n": 48,
+   "price_median": 327000.0,
+   "price_p25": 269900,
+   "price_p75": 389900,
+   "hoa_band": [
+    1200,
+    1250
+   ],
+   "hoa_used": 1225.0,
+   "hoa_year": 14700,
+   "mills": 254.6,
+   "tax_6pct": 4995,
+   "insurance_permit": 390,
+   "fixed_year": 20085,
+   "kept_per_night": 192,
+   "nights_to_pay_fixed": 105,
+   "two_bed_nights_avg": 87,
+   "two_bed_nights_median": 69,
+   "avg_two_bed_kept_before_fixed": 15813,
+   "avg_two_bed_left_after_fixed": -4272,
+   "median_two_bed_left_after_fixed": -7422,
+   "gross_avg_two_bed": 25100,
+   "adr_two_bed": 252,
+   "hoa_includes": {
+    "hoa_includes_utilities": 48,
+    "hoa_includes_electric": 31,
+    "hoa_includes_insurance": 37,
+    "hoa_includes_internet": 44,
+    "vacation_rental_program": 40,
+    "furnished": 48
+   },
+   "cap_rate_avg_pct": -1.3
+  },
+  "nmb_oceanfront_condo_2br": {
+   "town": "north-myrtle-beach",
+   "for_sale_n": 65,
+   "price_median": 369900,
+   "price_p25": 324900,
+   "price_p75": 397000,
+   "hoa_band": [
+    1050,
+    1100
+   ],
+   "hoa_used": 1075.0,
+   "hoa_year": 12900,
+   "mills": 221.2,
+   "tax_6pct": 4909,
+   "insurance_permit": 510,
+   "fixed_year": 18319,
+   "kept_per_night": 187,
+   "nights_to_pay_fixed": 98,
+   "two_bed_nights_avg": 72,
+   "two_bed_nights_median": 51,
+   "avg_two_bed_kept_before_fixed": 12627,
+   "avg_two_bed_left_after_fixed": -5692,
+   "median_two_bed_left_after_fixed": -9230,
+   "gross_avg_two_bed": 20700,
+   "adr_two_bed": 246,
+   "hoa_includes": {
+    "hoa_includes_utilities": 64,
+    "hoa_includes_electric": 20,
+    "hoa_includes_insurance": 38,
+    "hoa_includes_internet": 59,
+    "vacation_rental_program": 48,
+    "furnished": 62
+   },
+   "cap_rate_avg_pct": -1.5
+  },
+  "surfside_condo_2br": {
+   "town": "surfside-beach",
+   "for_sale_n": 32,
+   "price_median": 192000.0,
+   "price_p25": 164900,
+   "price_p75": 319000,
+   "hoa_band": [
+    350,
+    400
+   ],
+   "hoa_used": 375.0,
+   "hoa_year": 4500,
+   "mills": 214.2,
+   "tax_6pct": 2468,
+   "insurance_permit": 640,
+   "fixed_year": 7608,
+   "kept_per_night": 189,
+   "nights_to_pay_fixed": 40,
+   "two_bed_nights_avg": 80,
+   "two_bed_nights_median": 55,
+   "avg_two_bed_kept_before_fixed": 14364,
+   "avg_two_bed_left_after_fixed": 6756,
+   "median_two_bed_left_after_fixed": 2346,
+   "gross_avg_two_bed": 22800,
+   "adr_two_bed": 245,
+   "hoa_includes": {
+    "hoa_includes_utilities": 26,
+    "hoa_includes_electric": 0,
+    "hoa_includes_insurance": 31,
+    "hoa_includes_internet": 24,
+    "vacation_rental_program": 11,
+    "furnished": 13
+   },
+   "cap_rate_avg_pct": 3.5
+  },
+  "garden_city_condo_2br": {
+   "town": "garden-city-beach",
+   "for_sale_n": 23,
+   "price_median": 343500,
+   "price_p25": 239900,
+   "price_p75": 424999,
+   "hoa_band": [
+    550,
+    600
+   ],
+   "hoa_used": 575.0,
+   "hoa_year": 6900,
+   "mills": 207.3,
+   "tax_6pct": 4272,
+   "insurance_permit": 620,
+   "fixed_year": 11792,
+   "kept_per_night": 187,
+   "nights_to_pay_fixed": 63,
+   "two_bed_nights_avg": 95,
+   "two_bed_nights_median": 83,
+   "avg_two_bed_kept_before_fixed": 16947,
+   "avg_two_bed_left_after_fixed": 5155,
+   "median_two_bed_left_after_fixed": 2950,
+   "gross_avg_two_bed": 26900,
+   "adr_two_bed": 243,
+   "hoa_includes": {
+    "hoa_includes_utilities": 20,
+    "hoa_includes_electric": 0,
+    "hoa_includes_insurance": 19,
+    "hoa_includes_internet": 13,
+    "vacation_rental_program": 15,
+    "furnished": 22
+   },
+   "cap_rate_avg_pct": 1.5
+  }
+ },
+ "months": {
+  "myrtle-beach": [
+   {
+    "month": "January",
+    "revenue": 1340,
+    "share_pct": 3.6,
+    "season": "Low season"
+   },
+   {
+    "month": "February",
+    "revenue": 1680,
+    "share_pct": 4.6,
+    "season": "Low season"
+   },
+   {
+    "month": "March",
+    "revenue": 2530,
+    "share_pct": 6.9,
+    "season": "Low season"
+   },
+   {
+    "month": "April",
+    "revenue": 2800,
+    "share_pct": 7.6,
+    "season": "Low season"
+   },
+   {
+    "month": "May",
+    "revenue": 3270,
+    "share_pct": 8.9,
+    "season": "Shoulder season"
+   },
+   {
+    "month": "June",
+    "revenue": 6070,
+    "share_pct": 16.5,
+    "season": "High season"
+   },
+   {
+    "month": "July",
+    "revenue": 6800,
+    "share_pct": 18.5,
+    "season": "High season"
+   },
+   {
+    "month": "August",
+    "revenue": 4400,
+    "share_pct": 12.0,
+    "season": "High season"
+   },
+   {
+    "month": "September",
+    "revenue": 2550,
+    "share_pct": 6.9,
+    "season": "Low season"
+   },
+   {
+    "month": "October",
+    "revenue": 2150,
+    "share_pct": 5.8,
+    "season": "Low season"
+   },
+   {
+    "month": "November",
+    "revenue": 1620,
+    "share_pct": 4.4,
+    "season": "Low season"
+   },
+   {
+    "month": "December",
+    "revenue": 1590,
+    "share_pct": 4.3,
+    "season": "Low season"
+   }
+  ],
+  "murrells-inlet": [
+   {
+    "month": "January",
+    "revenue": 2250,
+    "share_pct": 3.7,
+    "season": "Low season"
+   },
+   {
+    "month": "February",
+    "revenue": 2660,
+    "share_pct": 4.4,
+    "season": "Low season"
+   },
+   {
+    "month": "March",
+    "revenue": 4310,
+    "share_pct": 7.1,
+    "season": "Low season"
+   },
+   {
+    "month": "April",
+    "revenue": 5220,
+    "share_pct": 8.6,
+    "season": "Shoulder season"
+   },
+   {
+    "month": "May",
+    "revenue": 6030,
+    "share_pct": 9.9,
+    "season": "High season"
+   },
+   {
+    "month": "June",
+    "revenue": 9300,
+    "share_pct": 15.3,
+    "season": "High season"
+   },
+   {
+    "month": "July",
+    "revenue": 9780,
+    "share_pct": 16.1,
+    "season": "High season"
+   },
+   {
+    "month": "August",
+    "revenue": 6840,
+    "share_pct": 11.3,
+    "season": "High season"
+   },
+   {
+    "month": "September",
+    "revenue": 4490,
+    "share_pct": 7.4,
+    "season": "Low season"
+   },
+   {
+    "month": "October",
+    "revenue": 3900,
+    "share_pct": 6.4,
+    "season": "Low season"
+   },
+   {
+    "month": "November",
+    "revenue": 3020,
+    "share_pct": 5.0,
+    "season": "Low season"
+   },
+   {
+    "month": "December",
+    "revenue": 2980,
+    "share_pct": 4.9,
+    "season": "Low season"
+   }
+  ],
+  "north-myrtle-beach": [
+   {
+    "month": "January",
+    "revenue": 1890,
+    "share_pct": 3.7,
+    "season": "Low season"
+   },
+   {
+    "month": "February",
+    "revenue": 2390,
+    "share_pct": 4.6,
+    "season": "Low season"
+   },
+   {
+    "month": "March",
+    "revenue": 3430,
+    "share_pct": 6.7,
+    "season": "Low season"
+   },
+   {
+    "month": "April",
+    "revenue": 3840,
+    "share_pct": 7.5,
+    "season": "Low season"
+   },
+   {
+    "month": "May",
+    "revenue": 4790,
+    "share_pct": 9.3,
+    "season": "High season"
+   },
+   {
+    "month": "June",
+    "revenue": 8270,
+    "share_pct": 16.1,
+    "season": "High season"
+   },
+   {
+    "month": "July",
+    "revenue": 9640,
+    "share_pct": 18.7,
+    "season": "High season"
+   },
+   {
+    "month": "August",
+    "revenue": 6080,
+    "share_pct": 11.8,
+    "season": "High season"
+   },
+   {
+    "month": "September",
+    "revenue": 3550,
+    "share_pct": 6.9,
+    "season": "Low season"
+   },
+   {
+    "month": "October",
+    "revenue": 2980,
+    "share_pct": 5.8,
+    "season": "Low season"
+   },
+   {
+    "month": "November",
+    "revenue": 2330,
+    "share_pct": 4.5,
+    "season": "Low season"
+   },
+   {
+    "month": "December",
+    "revenue": 2230,
+    "share_pct": 4.3,
+    "season": "Low season"
+   }
+  ],
+  "water_f": [
+   50.1,
+   51.9,
+   59.4,
+   67.0,
+   73.6,
+   79.2,
+   84.1,
+   83.7,
+   79.5,
+   71.9,
+   63.8,
+   54.3
+  ],
+  "air_f": [
+   47.6,
+   52.3,
+   58.5,
+   64.9,
+   71.8,
+   77.9,
+   81.3,
+   79.7,
+   75.4,
+   66.2,
+   59.6,
+   50.5
+  ]
+ },
+ "notes": [],
+ "listings_by_town": {
+  "myrtle_beach_city": {
+   "condo": {
+    "total": 641,
+    "str_allowed": 541
+   },
+   "house": {
+    "total": 201,
+    "str_allowed": 18
+   },
+   "condo_str_share_pct": 84,
+   "house_str_share_pct": 9
+  },
+  "north_myrtle_beach": {
+   "condo": {
+    "total": 589,
+    "str_allowed": 482
+   },
+   "house": {
+    "total": 258,
+    "str_allowed": 112
+   },
+   "condo_str_share_pct": 82,
+   "house_str_share_pct": 43
+  },
+  "surfside_beach": {
+   "condo": {
+    "total": 86,
+    "str_allowed": 50
+   },
+   "house": {
+    "total": 84,
+    "str_allowed": 23
+   },
+   "condo_str_share_pct": 58,
+   "house_str_share_pct": 27
+  },
+  "garden_city": {
+   "condo": {
+    "total": 75,
+    "str_allowed": 53
+   },
+   "house": {
+    "total": 51,
+    "str_allowed": 38
+   },
+   "condo_str_share_pct": 71,
+   "house_str_share_pct": 75
+  },
+  "murrells_inlet": {
+   "condo": {
+    "total": 131,
+    "str_allowed": 30
+   },
+   "house": {
+    "total": 206,
+    "str_allowed": 34
+   },
+   "condo_str_share_pct": 23,
+   "house_str_share_pct": 17
+  },
+  "pawleys_island": {
+   "condo": {
+    "total": 100,
+    "str_allowed": 62
+   },
+   "house": {
+    "total": 123,
+    "str_allowed": 35
+   },
+   "condo_str_share_pct": 62,
+   "house_str_share_pct": 28
+  },
+  "little_river": {
+   "condo": {
+    "total": 185,
+    "str_allowed": 74
+   },
+   "house": {
+    "total": 190,
+    "str_allowed": 18
+   },
+   "condo_str_share_pct": 40,
+   "house_str_share_pct": 9
+  },
+  "conway": {
+   "condo": {
+    "total": 33,
+    "str_allowed": 4
+   },
+   "house": {
+    "total": 675,
+    "str_allowed": 34
+   },
+   "condo_str_share_pct": 12,
+   "house_str_share_pct": 5
+  }
+ },
+ "mb_week": {
+  "nights": 7,
+  "adr": 252,
+  "rent": 1764,
+  "tax_13pct": 229
+ }
+}

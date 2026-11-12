@@ -1,0 +1,264 @@
+{
+ "pulled": "2026-11-01T03:14:40.314744Z",
+ "source": "https://chapter3realty.com/homes/api/map?",
+ "status": "for sale (API default)",
+ "segments": {
+  "condo_mb_city_oceanfront_building": {
+   "params": {
+    "type": "condo",
+    "city": "Myrtle Beach",
+    "has": "oceanfront_building,inside_city_limits"
+   },
+   "total": 422,
+   "flags": {
+    "rentals_allowed": 407,
+    "long_term_rental_allowed": 380,
+    "str_allowed": 402,
+    "has_rental_income": 372,
+    "vacation_rental_program": 372,
+    "furnished": 420,
+    "str_and_long_term": 375,
+    "long_term_only_no_str_flag": 5
+   }
+  },
+  "condo_mb_city_all": {
+   "params": {
+    "type": "condo",
+    "city": "Myrtle Beach",
+    "has": "inside_city_limits"
+   },
+   "total": 641,
+   "flags": {
+    "rentals_allowed": 611,
+    "long_term_rental_allowed": 568,
+    "str_allowed": 541,
+    "has_rental_income": 454,
+    "vacation_rental_program": 454,
+    "furnished": 571,
+    "str_and_long_term": 498,
+    "long_term_only_no_str_flag": 70
+   }
+  },
+  "condo_nmb_oceanfront_building": {
+   "params": {
+    "type": "condo",
+    "city": "North Myrtle Beach",
+    "has": "oceanfront_building"
+   },
+   "total": 226,
+   "flags": {
+    "rentals_allowed": 210,
+    "long_term_rental_allowed": 198,
+    "str_allowed": 209,
+    "has_rental_income": 170,
+    "vacation_rental_program": 170,
+    "furnished": 216,
+    "str_and_long_term": 197,
+    "long_term_only_no_str_flag": 1
+   }
+  },
+  "condo_all": {
+   "params": {
+    "type": "condo"
+   },
+   "total": 2867,
+   "flags": {
+    "rentals_allowed": 2521,
+    "long_term_rental_allowed": 2414,
+    "str_allowed": 2021,
+    "has_rental_income": 1406,
+    "vacation_rental_program": 1406,
+    "furnished": 2190,
+    "str_and_long_term": 1915,
+    "long_term_only_no_str_flag": 499
+   }
+  },
+  "house_carolina_forest": {
+   "params": {
+    "type": "house",
+    "has": "area_carolina_forest"
+   },
+   "total": 294,
+   "flags": {
+    "rentals_allowed": 239,
+    "long_term_rental_allowed": 239,
+    "str_allowed": 1,
+    "has_rental_income": 3,
+    "vacation_rental_program": 3,
+    "furnished": 7,
+    "str_and_long_term": 1,
+    "long_term_only_no_str_flag": 238
+   }
+  },
+  "house_conway": {
+   "params": {
+    "type": "house",
+    "city": "Conway"
+   },
+   "total": 675,
+   "flags": {
+    "rentals_allowed": 514,
+    "long_term_rental_allowed": 390,
+    "str_allowed": 34,
+    "has_rental_income": 5,
+    "vacation_rental_program": 5,
+    "furnished": 15,
+    "str_and_long_term": 33,
+    "long_term_only_no_str_flag": 357
+   }
+  },
+  "house_mb_city": {
+   "params": {
+    "type": "house",
+    "city": "Myrtle Beach",
+    "has": "inside_city_limits"
+   },
+   "total": 201,
+   "flags": {
+    "rentals_allowed": 179,
+    "long_term_rental_allowed": 160,
+    "str_allowed": 18,
+    "has_rental_income": 15,
+    "vacation_rental_program": 15,
+    "furnished": 25,
+    "str_and_long_term": 17,
+    "long_term_only_no_str_flag": 143
+   }
+  },
+  "house_nmb": {
+   "params": {
+    "type": "house",
+    "city": "North Myrtle Beach"
+   },
+   "total": 258,
+   "flags": {
+    "rentals_allowed": 234,
+    "long_term_rental_allowed": 179,
+    "str_allowed": 112,
+    "has_rental_income": 67,
+    "vacation_rental_program": 67,
+    "furnished": 115,
+    "str_and_long_term": 103,
+    "long_term_only_no_str_flag": 76
+   }
+  },
+  "house_surfside": {
+   "params": {
+    "type": "house",
+    "city": "Surfside Beach"
+   },
+   "total": 84,
+   "flags": {
+    "rentals_allowed": 72,
+    "long_term_rental_allowed": 59,
+    "str_allowed": 23,
+    "has_rental_income": 17,
+    "vacation_rental_program": 17,
+    "furnished": 28,
+    "str_and_long_term": 21,
+    "long_term_only_no_str_flag": 38
+   }
+  },
+  "house_all": {
+   "params": {
+    "type": "house"
+   },
+   "total": 3743,
+   "flags": {
+    "rentals_allowed": 2996,
+    "long_term_rental_allowed": 2272,
+    "str_allowed": 465,
+    "has_rental_income": 237,
+    "vacation_rental_program": 237,
+    "furnished": 424,
+    "str_and_long_term": 400,
+    "long_term_only_no_str_flag": 1872
+   }
+  }
+ },
+ "examples": {
+  "2br_oceanfront_condo_mb_city_str_allowed": {
+   "exact_beds": 2,
+   "n": 48,
+   "price_n": 48,
+   "price_median": 327000.0,
+   "price_p25": 269900,
+   "price_p75": 389900,
+   "fee_cdf": {
+    "0": 0,
+    "25": 0,
+    "50": 0,
+    "75": 0,
+    "100": 0,
+    "125": 0,
+    "150": 0,
+    "175": 0,
+    "200": 0,
+    "225": 0,
+    "250": 0,
+    "275": 0,
+    "300": 0,
+    "325": 0,
+    "350": 0,
+    "375": 0,
+    "400": 0,
+    "425": 0,
+    "450": 0,
+    "475": 2,
+    "500": 2,
+    "525": 2,
+    "550": 2,
+    "575": 2,
+    "600": 2,
+    "625": 3,
+    "650": 3,
+    "675": 3,
+    "700": 5,
+    "725": 5,
+    "750": 9,
+    "775": 9,
+    "800": 9,
+    "825": 9,
+    "850": 9,
+    "875": 10,
+    "900": 11,
+    "925": 17,
+    "950": 17,
+    "975": 18,
+    "1000": 18,
+    "1025": 18,
+    "1050": 18,
+    "1075": 19,
+    "1100": 19,
+    "1125": 19,
+    "1150": 21,
+    "1175": 22,
+    "1200": 22,
+    "1225": 23,
+    "1250": 25,
+    "1275": 26,
+    "1300": 26,
+    "1325": 26,
+    "1350": 29,
+    "1375": 30,
+    "1400": 32,
+    "1425": 33,
+    "1450": 36,
+    "1475": 36,
+    "1500": 36,
+    "2000": 47,
+    "3000": 48,
+    "100000": 48
+   },
+   "fee_zero_or_blank": 0,
+   "fee_median_band_all": [
+    1225,
+    1250
+   ],
+   "fee_median_band_among_with_fee": [
+    1225,
+    1250
+   ]
+  }
+ }
+}

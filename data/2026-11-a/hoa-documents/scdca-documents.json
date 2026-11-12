@@ -1,0 +1,214 @@
+{
+ "source": "https://www.consumer.sc.gov/HOA-reports",
+ "years": {
+  "report 2023 (calendar 2022)": {
+   "horry_complaints": 70,
+   "docs": {
+    "Not Noted": 10,
+    "After": 38,
+    "Before": 22
+   },
+   "denied": {
+    "No": 63,
+    "Yes": 7
+   },
+   "when": {
+    "Before Closing": 40,
+    "After Closing": 7,
+    "At Closing": 16,
+    "Not Noted": 7
+   },
+   "understand": {
+    "Yes": 59,
+    "No": 11
+   },
+   "received": {
+    "No": 8,
+    "Yes": 62
+   },
+   "who_provided": {
+    "Consumer's Realtor": 28,
+    "Other": 10,
+    "Closing Attorney": 13,
+    "Seller's Realtor": 11,
+    "Not Noted": 11,
+    "Seller": 2
+   }
+  },
+  "report 2024 (calendar 2023)": {
+   "horry_complaints": 89,
+   "docs": {
+    "Before": 29,
+    "After": 48,
+    "Not Noted": 12
+   },
+   "denied": {
+    "No": 76,
+    "Yes": 13
+   },
+   "when": {
+    "Before Closing": 39,
+    "Not Noted": 15,
+    "At Closing": 22,
+    "After Closing": 13
+   },
+   "understand": {
+    "Yes": 72,
+    "Not Noted": 1,
+    "No": 16
+   },
+   "received": {
+    "Yes": 77,
+    "No": 12
+   },
+   "who_provided": {
+    "Consumer's Realtor": 34,
+    "Not Noted": 18,
+    "Seller": 7,
+    "Closing Attorney": 18,
+    "Other": 7,
+    "Seller's Realtor": 10
+   }
+  },
+  "report 2025 (calendar 2024)": {
+   "horry_complaints": 117,
+   "docs": {
+    "Not Noted": 16,
+    "Before": 36,
+    "After": 65
+   },
+   "denied": {
+    "Yes": 17,
+    "No": 97,
+    "Not Noted": 3
+   },
+   "when": {
+    "Not Noted": 14,
+    "Before Closing": 54,
+    "At Closing": 28,
+    "After Closing": 21
+   },
+   "understand": {
+    "Yes": 101,
+    "No": 14,
+    "Not Noted": 2
+   },
+   "received": {
+    "No": 14,
+    "Yes": 100,
+    "Not Noted": 3
+   },
+   "who_provided": {
+    "Not Noted": 21,
+    "Consumer's Realtor": 51,
+    "Seller": 9,
+    "Closing Attorney": 18,
+    "Seller's Realtor": 7,
+    "Other": 17
+   }
+  },
+  "report 2026 (calendar 2025)": {
+   "horry_complaints": 140,
+   "docs": {
+    "After": 84,
+    "Not Noted": 19,
+    "Before": 37
+   },
+   "denied": {
+    "No": 122,
+    "Yes": 18
+   },
+   "when": {
+    "Before Closing": 65,
+    "At Closing": 53,
+    "Not Noted": 8,
+    "After Closing": 14
+   },
+   "understand": {
+    "No": 20,
+    "Yes": 120
+   },
+   "received": {
+    "Yes": 125,
+    "No": 15
+   },
+   "who_provided": {
+    "Consumer's Realtor": 51,
+    "Seller's Realtor": 13,
+    "Seller": 12,
+    "Not Noted": 22,
+    "Closing Attorney": 41,
+    "Other": 11
+   }
+  }
+ },
+ "statewide": {
+  "docs": {
+   "Not Noted": 248,
+   "After": 805,
+   "Before": 474
+  },
+  "denied": {
+   "Yes": 198,
+   "No": 1306,
+   "Not Noted": 23
+  },
+  "when": {
+   "Not Noted": 194,
+   "Before Closing": 719,
+   "After Closing": 174,
+   "At Closing": 440
+  },
+  "understand": {
+   "No": 268,
+   "Yes": 1246,
+   "Not Noted": 13
+  },
+  "received": {
+   "No": 219,
+   "Yes": 1296,
+   "Not Noted": 12
+  },
+  "all": {
+   "complaints": 1527
+  }
+ },
+ "four_years_horry": {
+  "complaints": 416,
+  "docs": {
+   "Not Noted": 57,
+   "After": 235,
+   "Before": 124
+  },
+  "denied": {
+   "No": 358,
+   "Yes": 55,
+   "Not Noted": 3
+  },
+  "when": {
+   "Before Closing": 198,
+   "After Closing": 55,
+   "At Closing": 119,
+   "Not Noted": 44
+  },
+  "understand": {
+   "Yes": 352,
+   "No": 61,
+   "Not Noted": 3
+  },
+  "received": {
+   "No": 49,
+   "Yes": 364,
+   "Not Noted": 3
+  },
+  "who_provided (a complaint can name more than one)": {
+   "Consumer's Realtor": 164,
+   "Closing Attorney": 90,
+   "Not Noted": 72,
+   "Other": 45,
+   "Seller's Realtor": 41,
+   "Seller": 30
+  }
+ },
+ "denied_yes_share_of_answered_pct": 13.3
+}

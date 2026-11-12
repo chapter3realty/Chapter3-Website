@@ -1,0 +1,43 @@
+{
+ "pulled": "2026-11-03T22:15:25.868559+00:00",
+ "api": "https://chapter3realty.com/homes/api/map?",
+ "rule": "The cost-to-own HOA pull (data/2026-11-a/buyers-cost-to-own/pull_hoa.py, fixed version: $0 tested first), run the same way\nfor three ZIP codes that file does not hold: 29585 (Pawleys Island and Litchfield), 29569 (Loris), 29511 (Aynor). Houses only.\nMonthly HOA fee of houses for sale now (type=house, list price $50,000 or more), counted in aggregate; no listing is saved.\nRun: python3 -I pull_hoa_extra.py <datadir>. Writes hoa-extra.json.",
+ "areas": {
+  "29585": {
+   "name": "Pawleys Island and Litchfield",
+   "house": {
+    "listings": 123,
+    "no_hoa": 33,
+    "q1": 0,
+    "median": 100,
+    "q3": 250,
+    "at_or_under_300": 98,
+    "at_or_under_500": 113
+   }
+  },
+  "29569": {
+   "name": "Loris",
+   "house": {
+    "listings": 151,
+    "no_hoa": 93,
+    "q1": 0,
+    "median": 0,
+    "q3": 100,
+    "at_or_under_300": 151,
+    "at_or_under_500": 151
+   }
+  },
+  "29511": {
+   "name": "Aynor",
+   "house": {
+    "listings": 43,
+    "no_hoa": 24,
+    "q1": 0,
+    "median": 0,
+    "q3": 75,
+    "at_or_under_300": 43,
+    "at_or_under_500": 43
+   }
+  }
+ }
+}

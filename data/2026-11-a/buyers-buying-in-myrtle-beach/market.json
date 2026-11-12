@@ -1,0 +1,115 @@
+{
+ "listings_pulled": "2026-11-03T21:06:33.172796Z",
+ "deeds": "recorded 2025-10-01 to 2026-09-30",
+ "rule": "months of supply = homes for sale now / (homes sold in 12 months / 12); sold = resales (analyze.py) + builder sales (analyze_new.py)",
+ "kinds": {
+  "house": {
+   "for_sale": 3710,
+   "for_sale_new": 1150,
+   "for_sale_resale": 2560,
+   "sold_12mo": 11864,
+   "resold_12mo": 6866,
+   "builder_sold_12mo": 4998,
+   "months_all": 3.8,
+   "months_resale": 4.5,
+   "months_new": 2.8,
+   "price_cut": 2061,
+   "pct_price_cut": 55.6,
+   "listed_over_90_days": 1531,
+   "median_ask": 371000.0,
+   "bands": [
+    {
+     "band": "0-300000",
+     "for_sale": 1141,
+     "sold_12mo": 4129,
+     "months_all": 3.3,
+     "for_sale_resale": 847,
+     "resold_12mo": 2398,
+     "months_resale": 4.2
+    },
+    {
+     "band": "300000-450000",
+     "for_sale": 1231,
+     "sold_12mo": 4633,
+     "months_all": 3.2,
+     "for_sale_resale": 734,
+     "resold_12mo": 2344,
+     "months_resale": 3.8
+    },
+    {
+     "band": "450000-700000",
+     "for_sale": 819,
+     "sold_12mo": 2238,
+     "months_all": 4.4,
+     "for_sale_resale": 565,
+     "resold_12mo": 1398,
+     "months_resale": 4.8
+    },
+    {
+     "band": "700000-up",
+     "for_sale": 519,
+     "sold_12mo": 864,
+     "months_all": 7.2,
+     "for_sale_resale": 414,
+     "resold_12mo": 726,
+     "months_resale": 6.8
+    }
+   ],
+   "pct_listed_over_90_days": 41.3
+  },
+  "condo": {
+   "for_sale": 2678,
+   "for_sale_new": 42,
+   "for_sale_resale": 2636,
+   "sold_12mo": 4291,
+   "resold_12mo": 4181,
+   "builder_sold_12mo": 110,
+   "months_all": 7.5,
+   "months_resale": 7.6,
+   "months_new": 4.6,
+   "price_cut": 1408,
+   "pct_price_cut": 52.6,
+   "listed_over_90_days": 1430,
+   "median_ask": 215900.0,
+   "bands": [
+    {
+     "band": "0-150000",
+     "for_sale": 603,
+     "sold_12mo": 1085,
+     "months_all": 6.7,
+     "for_sale_resale": 603,
+     "resold_12mo": 1085,
+     "months_resale": 6.7
+    },
+    {
+     "band": "150000-250000",
+     "for_sale": 1076,
+     "sold_12mo": 1520,
+     "months_all": 8.5,
+     "for_sale_resale": 1074,
+     "resold_12mo": 1478,
+     "months_resale": 8.7
+    },
+    {
+     "band": "250000-400000",
+     "for_sale": 591,
+     "sold_12mo": 1063,
+     "months_all": 6.7,
+     "for_sale_resale": 572,
+     "resold_12mo": 1023,
+     "months_resale": 6.7
+    },
+    {
+     "band": "400000-up",
+     "for_sale": 408,
+     "sold_12mo": 623,
+     "months_all": 7.9,
+     "for_sale_resale": 387,
+     "resold_12mo": 595,
+     "months_resale": 7.8
+    }
+   ],
+   "pct_listed_over_90_days": 53.4
+  }
+ }
+}

@@ -1,0 +1,1084 @@
+{
+ "made": "analyze.py",
+ "insurance_yearly_middle": 2000,
+ "upkeep_yearly": 3273,
+ "listings_pulled": "2026-11-03T22:21:52.299298+00:00",
+ "listing_api_totals": {
+  "all": 3700,
+  "beach_1mi": 702,
+  "no_hoa": 1104,
+  "new_construction": 1244,
+  "acre_lot": 285,
+  "rv_boat_parking": 339,
+  "waterfront": 528,
+  "one_level": 2073
+ },
+ "listing_truncated": 12,
+ "areas": [
+  {
+   "slug": "loris",
+   "name": "Loris",
+   "sq_mi": 171.6,
+   "houses": 4742,
+   "horry_houses": 4742,
+   "georgetown_houses": 0,
+   "pct_legal_residence": 75.9,
+   "pct_high_risk_flood": 1.2,
+   "top_tax_districts": [
+    [
+     "200",
+     1544
+    ],
+    [
+     "220",
+     954
+    ],
+    [
+     "260",
+     905
+    ],
+    [
+     "250",
+     529
+    ]
+   ],
+   "sales": 163,
+   "horry_resales": 163,
+   "georgetown_sales": 0,
+   "builder_sales_horry": 101,
+   "median_sale": 280000,
+   "p25": 230000,
+   "p75": 347000,
+   "lots": 4742,
+   "median_lot_acres": 0.8,
+   "pct_lot_half_acre_plus": 65.9,
+   "pct_lot_acre_plus": 43.2,
+   "for_sale": {
+    "all": 152,
+    "no_hoa": 92,
+    "new_construction": 97,
+    "acre_lot": 44,
+    "rv_boat_parking": 31,
+    "waterfront": 19,
+    "one_level": 122
+   },
+   "median_ask": 333418,
+   "pct_for_sale": {
+    "all": 100.0,
+    "no_hoa": 60.5,
+    "new_construction": 63.8,
+    "acre_lot": 28.9,
+    "rv_boat_parking": 20.4,
+    "waterfront": 12.5,
+    "one_level": 80.3
+   },
+   "acs": {
+    "name": "ZCTA5 29569",
+    "geo": "860Z200US29569",
+    "units": 8053,
+    "median_year_built": 1995,
+    "pct_built_2010_or_later": 17.1,
+    "pct_built_before_1980": 26.4
+   },
+   "hoa_zip": "29569",
+   "hoa_house": {
+    "listings": 151,
+    "no_hoa": 93,
+    "q1": 0,
+    "median": 0,
+    "q3": 100,
+    "at_or_under_300": 151,
+    "at_or_under_500": 151
+   },
+   "tax_legal_residence_median_house": 1029,
+   "fee_on_bill": 89.4,
+   "hoa_yearly_middle": 0,
+   "yearly_besides_mortgage": {
+    "tax": 1029,
+    "fee": 89.4,
+    "insurance": 2000,
+    "hoa": 0,
+    "upkeep": 3273,
+    "total": 6391
+   }
+  },
+  {
+   "slug": "aynor",
+   "name": "Aynor",
+   "sq_mi": 57.4,
+   "houses": 1606,
+   "horry_houses": 1606,
+   "georgetown_houses": 0,
+   "pct_legal_residence": 80.6,
+   "pct_high_risk_flood": 0.4,
+   "top_tax_districts": [
+    [
+     "400",
+     1090
+    ],
+    [
+     "440",
+     185
+    ],
+    [
+     "300",
+     176
+    ],
+    [
+     "100",
+     148
+    ]
+   ],
+   "sales": 49,
+   "horry_resales": 49,
+   "georgetown_sales": 0,
+   "builder_sales_horry": 49,
+   "median_sale": 347500,
+   "p25": 284998,
+   "p75": 482500,
+   "lots": 1606,
+   "median_lot_acres": 1.0,
+   "pct_lot_half_acre_plus": 88.0,
+   "pct_lot_acre_plus": 57.9,
+   "for_sale": {
+    "all": 36,
+    "no_hoa": 24,
+    "new_construction": 24,
+    "acre_lot": 11,
+    "rv_boat_parking": 2,
+    "one_level": 28
+   },
+   "median_ask": 339950,
+   "pct_for_sale": {
+    "all": 100.0,
+    "no_hoa": 66.7,
+    "new_construction": 66.7,
+    "acre_lot": 30.6,
+    "rv_boat_parking": 5.6,
+    "one_level": 77.8
+   },
+   "acs": {
+    "name": "ZCTA5 29511",
+    "geo": "860Z200US29511",
+    "units": 2637,
+    "median_year_built": 1996,
+    "pct_built_2010_or_later": 18.1,
+    "pct_built_before_1980": 29.7
+   },
+   "hoa_zip": "29511",
+   "hoa_house": {
+    "listings": 43,
+    "no_hoa": 24,
+    "q1": 0,
+    "median": 0,
+    "q3": 75,
+    "at_or_under_300": 43,
+    "at_or_under_500": 43
+   },
+   "tax_legal_residence_median_house": 1277,
+   "fee_on_bill": 89.4,
+   "hoa_yearly_middle": 0,
+   "yearly_besides_mortgage": {
+    "tax": 1277,
+    "fee": 89.4,
+    "insurance": 2000,
+    "hoa": 0,
+    "upkeep": 3273,
+    "total": 6639
+   }
+  },
+  {
+   "slug": "longs",
+   "name": "Longs",
+   "sq_mi": 85.3,
+   "houses": 7731,
+   "horry_houses": 7731,
+   "georgetown_houses": 0,
+   "pct_legal_residence": 77.9,
+   "pct_high_risk_flood": 3.0,
+   "top_tax_districts": [
+    [
+     "500",
+     3964
+    ],
+    [
+     "250",
+     2720
+    ],
+    [
+     "200",
+     795
+    ],
+    [
+     "260",
+     233
+    ]
+   ],
+   "sales": 327,
+   "horry_resales": 327,
+   "georgetown_sales": 0,
+   "builder_sales_horry": 280,
+   "median_sale": 299900,
+   "p25": 260000,
+   "p75": 355000,
+   "lots": 7731,
+   "median_lot_acres": 0.21,
+   "pct_lot_half_acre_plus": 18.5,
+   "pct_lot_acre_plus": 9.3,
+   "for_sale": {
+    "all": 270,
+    "no_hoa": 19,
+    "new_construction": 131,
+    "acre_lot": 13,
+    "rv_boat_parking": 12,
+    "waterfront": 40,
+    "one_level": 205
+   },
+   "median_ask": 313952,
+   "pct_for_sale": {
+    "all": 100.0,
+    "no_hoa": 7.0,
+    "new_construction": 48.5,
+    "acre_lot": 4.8,
+    "rv_boat_parking": 4.4,
+    "waterfront": 14.8,
+    "one_level": 75.9
+   },
+   "acs": {
+    "name": "ZCTA5 29568",
+    "geo": "860Z200US29568",
+    "units": 8811,
+    "median_year_built": 2005,
+    "pct_built_2010_or_later": 38.6,
+    "pct_built_before_1980": 12.5
+   },
+   "hoa_zip": "29568",
+   "hoa_house": {
+    "listings": 341,
+    "no_hoa": 19,
+    "q1": 75,
+    "median": 100,
+    "q3": 125,
+    "at_or_under_300": 321,
+    "at_or_under_500": 340
+   },
+   "tax_legal_residence_median_house": 1102,
+   "fee_on_bill": 89.4,
+   "hoa_yearly_middle": 1200,
+   "yearly_besides_mortgage": {
+    "tax": 1102,
+    "fee": 89.4,
+    "insurance": 2000,
+    "hoa": 1200,
+    "upkeep": 3273,
+    "total": 7664
+   }
+  },
+  {
+   "slug": "little-river",
+   "name": "Little River",
+   "sq_mi": 10.8,
+   "houses": 5272,
+   "horry_houses": 5272,
+   "georgetown_houses": 0,
+   "pct_legal_residence": 76.9,
+   "pct_high_risk_flood": 3.5,
+   "top_tax_districts": [
+    [
+     "500",
+     4324
+    ],
+    [
+     "510",
+     948
+    ]
+   ],
+   "sales": 298,
+   "horry_resales": 298,
+   "georgetown_sales": 0,
+   "builder_sales_horry": 20,
+   "median_sale": 380000,
+   "p25": 310000,
+   "p75": 489925,
+   "lots": 5272,
+   "median_lot_acres": 0.19,
+   "pct_lot_half_acre_plus": 7.0,
+   "pct_lot_acre_plus": 1.8,
+   "for_sale": {
+    "all": 103,
+    "no_hoa": 17,
+    "new_construction": 16,
+    "rv_boat_parking": 4,
+    "waterfront": 14,
+    "one_level": 68
+   },
+   "median_ask": 399900,
+   "pct_for_sale": {
+    "all": 100.0,
+    "no_hoa": 16.5,
+    "new_construction": 15.5,
+    "rv_boat_parking": 3.9,
+    "waterfront": 13.6,
+    "one_level": 66.0
+   },
+   "acs": {
+    "name": "Little River CDP, South Carolina",
+    "geo": "1600000US4542010",
+    "units": 8351,
+    "median_year_built": 1996,
+    "pct_built_2010_or_later": 18.9,
+    "pct_built_before_1980": 6.4
+   },
+   "hoa_zip": "29566",
+   "hoa_house": {
+    "listings": 189,
+    "no_hoa": 23,
+    "q1": 75,
+    "median": 100,
+    "q3": 175,
+    "at_or_under_300": 184,
+    "at_or_under_500": 188
+   },
+   "tax_legal_residence_median_house": 1397,
+   "fee_on_bill": 89.4,
+   "hoa_yearly_middle": 1200,
+   "yearly_besides_mortgage": {
+    "tax": 1397,
+    "fee": 89.4,
+    "insurance": 2000,
+    "hoa": 1200,
+    "upkeep": 3273,
+    "total": 7959
+   }
+  },
+  {
+   "slug": "conway",
+   "name": "Conway",
+   "sq_mi": 29.2,
+   "houses": 8037,
+   "horry_houses": 8037,
+   "georgetown_houses": 0,
+   "pct_legal_residence": 75.6,
+   "pct_high_risk_flood": 4.5,
+   "top_tax_districts": [
+    [
+     "110",
+     8016
+    ],
+    [
+     "100",
+     12
+    ],
+    [
+     "160",
+     9
+    ]
+   ],
+   "sales": 308,
+   "horry_resales": 308,
+   "georgetown_sales": 0,
+   "builder_sales_horry": 119,
+   "median_sale": 271000,
+   "p25": 228094,
+   "p75": 350000,
+   "lots": 8036,
+   "median_lot_acres": 0.25,
+   "pct_lot_half_acre_plus": 12.8,
+   "pct_lot_acre_plus": 3.3,
+   "for_sale": {
+    "all": 170,
+    "no_hoa": 44,
+    "new_construction": 70,
+    "acre_lot": 6,
+    "rv_boat_parking": 17,
+    "waterfront": 19,
+    "one_level": 122
+   },
+   "median_ask": 328435,
+   "pct_for_sale": {
+    "all": 100.0,
+    "no_hoa": 25.9,
+    "new_construction": 41.2,
+    "acre_lot": 3.5,
+    "rv_boat_parking": 10.0,
+    "waterfront": 11.2,
+    "one_level": 71.8
+   },
+   "acs": {
+    "name": "Conway city, South Carolina",
+    "geo": "1600000US4516405",
+    "units": 9573,
+    "median_year_built": 2001,
+    "pct_built_2010_or_later": 30.9,
+    "pct_built_before_1980": 32.3
+   },
+   "hoa_zip": "29526",
+   "hoa_house": {
+    "listings": 471,
+    "no_hoa": 113,
+    "q1": 25,
+    "median": 75,
+    "q3": 100,
+    "at_or_under_300": 469,
+    "at_or_under_500": 471
+   },
+   "tax_legal_residence_median_house": 1771,
+   "fee_on_bill": 0.0,
+   "hoa_yearly_middle": 900,
+   "yearly_besides_mortgage": {
+    "tax": 1771,
+    "fee": 0.0,
+    "insurance": 2000,
+    "hoa": 900,
+    "upkeep": 3273,
+    "total": 7944
+   }
+  },
+  {
+   "slug": "north-myrtle-beach",
+   "name": "North Myrtle Beach",
+   "sq_mi": 22.9,
+   "houses": 11574,
+   "horry_houses": 11574,
+   "georgetown_houses": 0,
+   "pct_legal_residence": 53.2,
+   "pct_high_risk_flood": 22.2,
+   "top_tax_districts": [
+    [
+     "550",
+     10932
+    ],
+    [
+     "551",
+     633
+    ],
+    [
+     "500",
+     9
+    ]
+   ],
+   "sales": 565,
+   "horry_resales": 565,
+   "georgetown_sales": 0,
+   "builder_sales_horry": 279,
+   "median_sale": 565000,
+   "p25": 416500,
+   "p75": 740000,
+   "lots": 11574,
+   "median_lot_acres": 0.17,
+   "pct_lot_half_acre_plus": 3.6,
+   "pct_lot_acre_plus": 0.2,
+   "for_sale": {
+    "all": 320,
+    "beach_1mi": 239,
+    "no_hoa": 133,
+    "new_construction": 77,
+    "acre_lot": 1,
+    "rv_boat_parking": 27,
+    "waterfront": 53,
+    "one_level": 108
+   },
+   "median_ask": 630395,
+   "pct_for_sale": {
+    "all": 100.0,
+    "beach_1mi": 74.7,
+    "no_hoa": 41.6,
+    "new_construction": 24.1,
+    "acre_lot": 0.3,
+    "rv_boat_parking": 8.4,
+    "waterfront": 16.6,
+    "one_level": 33.8
+   },
+   "acs": {
+    "name": "North Myrtle Beach city, South Carolina",
+    "geo": "1600000US4551280",
+    "units": 27608,
+    "median_year_built": 1997,
+    "pct_built_2010_or_later": 12.5,
+    "pct_built_before_1980": 19.3
+   },
+   "hoa_zip": "29582",
+   "hoa_house": {
+    "listings": 255,
+    "no_hoa": 134,
+    "q1": 25,
+    "median": 0,
+    "q3": 150,
+    "at_or_under_300": 236,
+    "at_or_under_500": 247
+   },
+   "tax_legal_residence_median_house": 2533,
+   "fee_on_bill": 0.0,
+   "hoa_yearly_middle": 0,
+   "yearly_besides_mortgage": {
+    "tax": 2533,
+    "fee": 0.0,
+    "insurance": 2000,
+    "hoa": 0,
+    "upkeep": 3273,
+    "total": 7806
+   }
+  },
+  {
+   "slug": "carolina-forest",
+   "name": "Carolina Forest",
+   "sq_mi": 17.3,
+   "houses": 7940,
+   "horry_houses": 7940,
+   "georgetown_houses": 0,
+   "pct_legal_residence": 75.9,
+   "pct_high_risk_flood": 0.2,
+   "top_tax_districts": [
+    [
+     "100",
+     4379
+    ],
+    [
+     "800",
+     3499
+    ],
+    [
+     "600",
+     62
+    ]
+   ],
+   "sales": 405,
+   "horry_resales": 405,
+   "georgetown_sales": 0,
+   "builder_sales_horry": 61,
+   "median_sale": 440000,
+   "p25": 324950,
+   "p75": 598950,
+   "lots": 7940,
+   "median_lot_acres": 0.22,
+   "pct_lot_half_acre_plus": 8.5,
+   "pct_lot_acre_plus": 1.4,
+   "for_sale": {
+    "all": 122,
+    "new_construction": 9,
+    "acre_lot": 3,
+    "rv_boat_parking": 5,
+    "waterfront": 30,
+    "one_level": 36
+   },
+   "median_ask": 470000,
+   "pct_for_sale": {
+    "all": 100.0,
+    "new_construction": 7.4,
+    "acre_lot": 2.5,
+    "rv_boat_parking": 4.1,
+    "waterfront": 24.6,
+    "one_level": 29.5
+   },
+   "acs": {
+    "name": "Carolina Forest CDP, South Carolina",
+    "geo": "1600000US4511833",
+    "units": 11177,
+    "median_year_built": 2007,
+    "pct_built_2010_or_later": 34.9,
+    "pct_built_before_1980": 1.1
+   },
+   "hoa_zip": "29579",
+   "hoa_house": {
+    "listings": 363,
+    "no_hoa": 13,
+    "q1": 100,
+    "median": 125,
+    "q3": 150,
+    "at_or_under_300": 345,
+    "at_or_under_500": 363
+   },
+   "tax_legal_residence_median_house": 1617,
+   "fee_on_bill": 89.4,
+   "hoa_yearly_middle": 1500,
+   "yearly_besides_mortgage": {
+    "tax": 1617,
+    "fee": 89.4,
+    "insurance": 2000,
+    "hoa": 1500,
+    "upkeep": 3273,
+    "total": 8479
+   }
+  },
+  {
+   "slug": "myrtle-beach",
+   "name": "Myrtle Beach",
+   "sq_mi": 23.7,
+   "houses": 10298,
+   "horry_houses": 10298,
+   "georgetown_houses": 0,
+   "pct_legal_residence": 75.1,
+   "pct_high_risk_flood": 4.6,
+   "top_tax_districts": [
+    [
+     "880",
+     6873
+    ],
+    [
+     "882",
+     1271
+    ],
+    [
+     "895",
+     1201
+    ],
+    [
+     "891",
+     525
+    ]
+   ],
+   "sales": 489,
+   "horry_resales": 489,
+   "georgetown_sales": 0,
+   "builder_sales_horry": 20,
+   "median_sale": 535000,
+   "p25": 409900,
+   "p75": 745000,
+   "lots": 10298,
+   "median_lot_acres": 0.2,
+   "pct_lot_half_acre_plus": 8.1,
+   "pct_lot_acre_plus": 0.7,
+   "for_sale": {
+    "all": 265,
+    "beach_1mi": 167,
+    "no_hoa": 68,
+    "new_construction": 53,
+    "acre_lot": 2,
+    "rv_boat_parking": 17,
+    "waterfront": 38,
+    "one_level": 116
+   },
+   "median_ask": 689000,
+   "pct_for_sale": {
+    "all": 100.0,
+    "beach_1mi": 63.0,
+    "no_hoa": 25.7,
+    "new_construction": 20.0,
+    "acre_lot": 0.8,
+    "rv_boat_parking": 6.4,
+    "waterfront": 14.3,
+    "one_level": 43.8
+   },
+   "acs": {
+    "name": "Myrtle Beach city, South Carolina",
+    "geo": "1600000US4549075",
+    "units": 24419,
+    "median_year_built": 1994,
+    "pct_built_2010_or_later": 27.4,
+    "pct_built_before_1980": 27.8
+   },
+   "hoa_zip": "29577",
+   "hoa_house": {
+    "listings": 187,
+    "no_hoa": 63,
+    "q1": 25,
+    "median": 100,
+    "q3": 150,
+    "at_or_under_300": 174,
+    "at_or_under_500": 184
+   },
+   "tax_legal_residence_median_house": 2161,
+   "fee_on_bill": 0.0,
+   "hoa_yearly_middle": 1200,
+   "yearly_besides_mortgage": {
+    "tax": 2161,
+    "fee": 0.0,
+    "insurance": 2000,
+    "hoa": 1200,
+    "upkeep": 3273,
+    "total": 8634
+   }
+  },
+  {
+   "slug": "socastee",
+   "name": "Socastee",
+   "sq_mi": 13.9,
+   "houses": 6297,
+   "horry_houses": 6297,
+   "georgetown_houses": 0,
+   "pct_legal_residence": 74.1,
+   "pct_high_risk_flood": 10.8,
+   "top_tax_districts": [
+    [
+     "630",
+     5923
+    ],
+    [
+     "634",
+     157
+    ],
+    [
+     "600",
+     147
+    ],
+    [
+     "802",
+     70
+    ]
+   ],
+   "sales": 263,
+   "horry_resales": 263,
+   "georgetown_sales": 0,
+   "builder_sales_horry": 96,
+   "median_sale": 299900,
+   "p25": 260000,
+   "p75": 342000,
+   "lots": 6297,
+   "median_lot_acres": 0.21,
+   "pct_lot_half_acre_plus": 7.7,
+   "pct_lot_acre_plus": 3.4,
+   "for_sale": {
+    "all": 105,
+    "no_hoa": 24,
+    "new_construction": 35,
+    "acre_lot": 2,
+    "rv_boat_parking": 4,
+    "waterfront": 11,
+    "one_level": 66
+   },
+   "median_ask": 399990,
+   "pct_for_sale": {
+    "all": 100.0,
+    "no_hoa": 22.9,
+    "new_construction": 33.3,
+    "acre_lot": 1.9,
+    "rv_boat_parking": 3.8,
+    "waterfront": 10.5,
+    "one_level": 62.9
+   },
+   "acs": {
+    "name": "Socastee CDP, South Carolina",
+    "geo": "1600000US4567390",
+    "units": 10012,
+    "median_year_built": 1995,
+    "pct_built_2010_or_later": 14.3,
+    "pct_built_before_1980": 13.8
+   },
+   "hoa_zip": "29588",
+   "hoa_house": {
+    "listings": 276,
+    "no_hoa": 31,
+    "q1": 75,
+    "median": 100,
+    "q3": 125,
+    "at_or_under_300": 274,
+    "at_or_under_500": 276
+   },
+   "tax_legal_residence_median_house": 1102,
+   "fee_on_bill": 89.4,
+   "hoa_yearly_middle": 1200,
+   "yearly_besides_mortgage": {
+    "tax": 1102,
+    "fee": 89.4,
+    "insurance": 2000,
+    "hoa": 1200,
+    "upkeep": 3273,
+    "total": 7664
+   }
+  },
+  {
+   "slug": "surfside-beach",
+   "name": "Surfside Beach",
+   "sq_mi": 1.9,
+   "houses": 2805,
+   "horry_houses": 2805,
+   "georgetown_houses": 0,
+   "pct_legal_residence": 45.4,
+   "pct_high_risk_flood": 30.0,
+   "top_tax_districts": [
+    [
+     "660",
+     2805
+    ]
+   ],
+   "sales": 119,
+   "horry_resales": 119,
+   "georgetown_sales": 0,
+   "builder_sales_horry": 1,
+   "median_sale": 705000,
+   "p25": 500000,
+   "p75": 955000,
+   "lots": 2805,
+   "median_lot_acres": 0.17,
+   "pct_lot_half_acre_plus": 1.4,
+   "pct_lot_acre_plus": 0.1,
+   "for_sale": {
+    "all": 42,
+    "beach_1mi": 42,
+    "no_hoa": 36,
+    "new_construction": 5,
+    "rv_boat_parking": 7,
+    "one_level": 12
+   },
+   "median_ask": 824500,
+   "pct_for_sale": {
+    "all": 100.0,
+    "beach_1mi": 100.0,
+    "no_hoa": 85.7,
+    "new_construction": 11.9,
+    "rv_boat_parking": 16.7,
+    "one_level": 28.6
+   },
+   "acs": {
+    "name": "Surfside Beach town, South Carolina",
+    "geo": "1600000US4570585",
+    "units": 4254,
+    "median_year_built": 1985,
+    "pct_built_2010_or_later": 5.5,
+    "pct_built_before_1980": 35.4
+   },
+   "hoa_zip": "29575",
+   "hoa_house": {
+    "listings": 173,
+    "no_hoa": 116,
+    "q1": 25,
+    "median": 0,
+    "q3": 50,
+    "at_or_under_300": 166,
+    "at_or_under_500": 172
+   },
+   "tax_legal_residence_median_house": 2964,
+   "fee_on_bill": 82.0,
+   "hoa_yearly_middle": 0,
+   "yearly_besides_mortgage": {
+    "tax": 2964,
+    "fee": 82.0,
+    "insurance": 2000,
+    "hoa": 0,
+    "upkeep": 3273,
+    "total": 8319
+   }
+  },
+  {
+   "slug": "garden-city",
+   "name": "Garden City",
+   "sq_mi": 5.5,
+   "houses": 2736,
+   "horry_houses": 2736,
+   "georgetown_houses": 0,
+   "pct_legal_residence": 61.7,
+   "pct_high_risk_flood": 30.9,
+   "top_tax_districts": [
+    [
+     "610",
+     1979
+    ],
+    [
+     "600",
+     504
+    ],
+    [
+     "620",
+     250
+    ],
+    [
+     "624",
+     3
+    ]
+   ],
+   "sales": 140,
+   "horry_resales": 140,
+   "georgetown_sales": 0,
+   "builder_sales_horry": 2,
+   "median_sale": 405550,
+   "p25": 339250,
+   "p75": 669625,
+   "lots": 2736,
+   "median_lot_acres": 0.18,
+   "pct_lot_half_acre_plus": 3.7,
+   "pct_lot_acre_plus": 0.6,
+   "for_sale": {
+    "all": 53,
+    "beach_1mi": 42,
+    "no_hoa": 34,
+    "new_construction": 2,
+    "rv_boat_parking": 14,
+    "waterfront": 6,
+    "one_level": 14
+   },
+   "median_ask": 749900,
+   "pct_for_sale": {
+    "all": 100.0,
+    "beach_1mi": 79.2,
+    "no_hoa": 64.2,
+    "new_construction": 3.8,
+    "rv_boat_parking": 26.4,
+    "waterfront": 11.3,
+    "one_level": 26.4
+   },
+   "acs": {
+    "name": "Garden City CDP, South Carolina",
+    "geo": "1600000US4528455",
+    "units": 10506,
+    "median_year_built": 1990,
+    "pct_built_2010_or_later": 8.2,
+    "pct_built_before_1980": 11.0
+   },
+   "hoa_zip": "29576",
+   "hoa_house": {
+    "listings": 222,
+    "no_hoa": 70,
+    "q1": 25,
+    "median": 100,
+    "q3": 125,
+    "at_or_under_300": 214,
+    "at_or_under_500": 219
+   },
+   "tax_legal_residence_median_house": 1593,
+   "fee_on_bill": 89.4,
+   "hoa_yearly_middle": 1200,
+   "yearly_besides_mortgage": {
+    "tax": 1593,
+    "fee": 89.4,
+    "insurance": 2000,
+    "hoa": 1200,
+    "upkeep": 3273,
+    "total": 8155
+   }
+  },
+  {
+   "slug": "murrells-inlet",
+   "name": "Murrells Inlet",
+   "sq_mi": 7.5,
+   "houses": 3316,
+   "horry_houses": 0,
+   "georgetown_houses": 3316,
+   "pct_legal_residence": 81.2,
+   "pct_high_risk_flood": 17.7,
+   "top_tax_districts": [],
+   "sales": 196,
+   "horry_resales": 0,
+   "georgetown_sales": 196,
+   "builder_sales_horry": 0,
+   "median_sale": 610000,
+   "p25": 488500,
+   "p75": 734638,
+   "lots": 3316,
+   "median_lot_acres": 0.31,
+   "pct_lot_half_acre_plus": 23.9,
+   "pct_lot_acre_plus": 3.2,
+   "for_sale": {
+    "all": 60,
+    "beach_1mi": 11,
+    "no_hoa": 20,
+    "new_construction": 7,
+    "acre_lot": 3,
+    "rv_boat_parking": 13,
+    "waterfront": 5,
+    "one_level": 21
+   },
+   "median_ask": 641250,
+   "pct_for_sale": {
+    "all": 100.0,
+    "beach_1mi": 18.3,
+    "no_hoa": 33.3,
+    "new_construction": 11.7,
+    "acre_lot": 5.0,
+    "rv_boat_parking": 21.7,
+    "waterfront": 8.3,
+    "one_level": 35.0
+   },
+   "acs": {
+    "name": "Murrells Inlet CDP, South Carolina",
+    "geo": "1600000US4548985",
+    "units": 5762,
+    "median_year_built": 2002,
+    "pct_built_2010_or_later": 24.9,
+    "pct_built_before_1980": 7.9
+   },
+   "hoa_zip": "29576",
+   "hoa_house": {
+    "listings": 222,
+    "no_hoa": 70,
+    "q1": 25,
+    "median": 100,
+    "q3": 125,
+    "at_or_under_300": 214,
+    "at_or_under_500": 219
+   },
+   "tax_legal_residence_median_house": 3145,
+   "fee_on_bill": 96.0,
+   "hoa_yearly_middle": 1200,
+   "yearly_besides_mortgage": {
+    "tax": 3145,
+    "fee": 96.0,
+    "insurance": 2000,
+    "hoa": 1200,
+    "upkeep": 3273,
+    "total": 9714
+   }
+  },
+  {
+   "slug": "pawleys-litchfield",
+   "name": "Pawleys Island and Litchfield",
+   "sq_mi": 65.9,
+   "houses": 8095,
+   "horry_houses": 0,
+   "georgetown_houses": 8095,
+   "pct_legal_residence": 70.9,
+   "pct_high_risk_flood": 32.0,
+   "top_tax_districts": [],
+   "sales": 393,
+   "horry_resales": 0,
+   "georgetown_sales": 393,
+   "builder_sales_horry": 0,
+   "median_sale": 649999,
+   "p25": 505000,
+   "p75": 960000,
+   "lots": 8095,
+   "median_lot_acres": 0.34,
+   "pct_lot_half_acre_plus": 25.5,
+   "pct_lot_acre_plus": 6.6,
+   "for_sale": {
+    "all": 119,
+    "beach_1mi": 59,
+    "no_hoa": 32,
+    "new_construction": 24,
+    "acre_lot": 16,
+    "rv_boat_parking": 18,
+    "waterfront": 26,
+    "one_level": 24
+   },
+   "median_ask": 829000,
+   "pct_for_sale": {
+    "all": 100.0,
+    "beach_1mi": 49.6,
+    "no_hoa": 26.9,
+    "new_construction": 20.2,
+    "acre_lot": 13.4,
+    "rv_boat_parking": 15.1,
+    "waterfront": 21.8,
+    "one_level": 20.2
+   },
+   "acs": {
+    "name": "ZCTA5 29585",
+    "geo": "860Z200US29585",
+    "units": 12336,
+    "median_year_built": 1998,
+    "pct_built_2010_or_later": 14.6,
+    "pct_built_before_1980": 14.1
+   },
+   "hoa_zip": "29585",
+   "hoa_house": {
+    "listings": 123,
+    "no_hoa": 33,
+    "q1": 0,
+    "median": 100,
+    "q3": 250,
+    "at_or_under_300": 98,
+    "at_or_under_500": 113
+   },
+   "tax_legal_residence_median_house": 2964,
+   "fee_on_bill": 96.0,
+   "hoa_yearly_middle": 1200,
+   "yearly_besides_mortgage": {
+    "tax": 2964,
+    "fee": 96.0,
+    "insurance": 2000,
+    "hoa": 1200,
+    "upkeep": 3273,
+    "total": 9533
+   }
+  }
+ ]
+}

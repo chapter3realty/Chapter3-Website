@@ -1,0 +1,13 @@
+myrtle_beach_city {'condo': {'total': 641, 'str_allowed': 541}, 'house': {'total': 201, 'str_allowed': 18}} 4
+north_myrtle_beach {'condo': {'total': 589, 'str_allowed': 482}, 'house': {'total': 258, 'str_allowed': 112}} 8
+surfside_beach {'condo': {'total': 86, 'str_allowed': 50}, 'house': {'total': 84, 'str_allowed': 23}} 12
+garden_city {'condo': {'total': 75, 'str_allowed': 53}, 'house': {'total': 51, 'str_allowed': 38}} 16
+murrells_inlet {'condo': {'total': 131, 'str_allowed': 30}, 'house': {'total': 206, 'str_allowed': 34}} 20
+pawleys_island {'condo': {'total': 100, 'str_allowed': 62}, 'house': {'total': 123, 'str_allowed': 35}} 24
+little_river {'condo': {'total': 185, 'str_allowed': 74}, 'house': {'total': 190, 'str_allowed': 18}} 28
+conway {'condo': {'total': 33, 'str_allowed': 4}, 'house': {'total': 675, 'str_allowed': 34}} 32
+mb_city_oceanfront_condo_2br {'params': {'type': 'condo', 'city': 'Myrtle Beach', 'has': 'oceanfront_building,inside_city_limits,str_allowed'}, 'exact_beds': 2, 'n': 48, 'price_n': 48, 'price_median': 327000.0, 'price_p25': 269900, 'price_p75': 389900, 'fee_zero_or_blank': 0, 'fee_median_band_among_with_fee': [1200, 1250]} 100
+nmb_oceanfront_condo_2br {'params': {'type': 'condo', 'city': 'North Myrtle Beach', 'has': 'oceanfront_building,str_allowed'}, 'exact_beds': 2, 'n': 65, 'price_n': 65, 'price_median': 369900, 'price_p25': 324900, 'price_p75': 397000, 'fee_zero_or_blank': 0, 'fee_median_band_among_with_fee': [1050, 1100]} 169
+surfside_condo_2br {'params': {'type': 'condo', 'city': 'Surfside Beach', 'has': 'str_allowed'}, 'exact_beds': 2, 'n': 32, 'price_n': 32, 'price_median': 192000.0, 'price_p25': 164900, 'price_p75': 319000, 'fee_zero_or_blank': 0, 'fee_median_band_among_with_fee': [350, 400]} 239
+garden_city_condo_2br {'params': {'type': 'condo', 'has': 'area_garden_city,str_allowed'}, 'exact_beds': 2, 'n': 23, 'price_n': 23, 'price_median': 343500, 'price_p25': 239900, 'price_p75': 424999, 'fee_zero_or_blank': 0, 'fee_median_band_among_with_fee': [550, 600]} 309
+murrells_inlet_house_3br {'params': {'type': 'house', 'city': 'Murrells Inlet', 'has': 'str_allowed'}, 'exact_beds': 3, 'n': 11, 'price_n': 11, 'price_median': 637500, 'price_p25': 585000, 'price_p75': 778000} 311

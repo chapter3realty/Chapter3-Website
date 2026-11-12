@@ -1,0 +1,674 @@
+{
+ "pulled": "2026-11-03T22:34:22.151888Z",
+ "rows": [
+  {
+   "label": "all homes for sale",
+   "params": {},
+   "echo": "",
+   "total": 8804,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?"
+  },
+  {
+   "label": "all houses for sale",
+   "params": {
+    "type": "house"
+   },
+   "echo": "type=house",
+   "total": 3700,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house"
+  },
+  {
+   "label": "houses at or under 198000",
+   "params": {
+    "type": "house",
+    "max": 198000
+   },
+   "echo": "type=house&max=198000",
+   "total": 96,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=198000"
+  },
+  {
+   "label": "all homes at or under 198000",
+   "params": {
+    "max": 198000
+   },
+   "echo": "max=198000",
+   "total": 2228,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=198000"
+  },
+  {
+   "label": "houses at or under 200000",
+   "params": {
+    "type": "house",
+    "max": 200000
+   },
+   "echo": "type=house&max=200000",
+   "total": 106,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=200000"
+  },
+  {
+   "label": "all homes at or under 200000",
+   "params": {
+    "max": 200000
+   },
+   "echo": "max=200000",
+   "total": 2360,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=200000"
+  },
+  {
+   "label": "houses at or under 228000",
+   "params": {
+    "type": "house",
+    "max": 228000
+   },
+   "echo": "type=house&max=228000",
+   "total": 160,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=228000"
+  },
+  {
+   "label": "all homes at or under 228000",
+   "params": {
+    "max": 228000
+   },
+   "echo": "max=228000",
+   "total": 2841,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=228000"
+  },
+  {
+   "label": "houses at or under 237000",
+   "params": {
+    "type": "house",
+    "max": 237000
+   },
+   "echo": "type=house&max=237000",
+   "total": 212,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=237000"
+  },
+  {
+   "label": "all homes at or under 237000",
+   "params": {
+    "max": 237000
+   },
+   "echo": "max=237000",
+   "total": 3014,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=237000"
+  },
+  {
+   "label": "houses at or under 250000",
+   "params": {
+    "type": "house",
+    "max": 250000
+   },
+   "echo": "type=house&max=250000",
+   "total": 311,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=250000"
+  },
+  {
+   "label": "all homes at or under 250000",
+   "params": {
+    "max": 250000
+   },
+   "echo": "max=250000",
+   "total": 3379,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=250000"
+  },
+  {
+   "label": "houses at or under 300000",
+   "params": {
+    "type": "house",
+    "max": 300000
+   },
+   "echo": "type=house&max=300000",
+   "total": 793,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=300000"
+  },
+  {
+   "label": "all homes at or under 300000",
+   "params": {
+    "max": 300000
+   },
+   "echo": "max=300000",
+   "total": 4353,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=300000"
+  },
+  {
+   "label": "houses at or under 320000",
+   "params": {
+    "type": "house",
+    "max": 320000
+   },
+   "echo": "type=house&max=320000",
+   "total": 999,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=320000"
+  },
+  {
+   "label": "all homes at or under 320000",
+   "params": {
+    "max": 320000
+   },
+   "echo": "max=320000",
+   "total": 4657,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=320000"
+  },
+  {
+   "label": "houses at or under 350000",
+   "params": {
+    "type": "house",
+    "max": 350000
+   },
+   "echo": "type=house&max=350000",
+   "total": 1372,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=350000"
+  },
+  {
+   "label": "all homes at or under 350000",
+   "params": {
+    "max": 350000
+   },
+   "echo": "max=350000",
+   "total": 5236,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=350000"
+  },
+  {
+   "label": "houses at or under 358000",
+   "params": {
+    "type": "house",
+    "max": 358000
+   },
+   "echo": "type=house&max=358000",
+   "total": 1413,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=358000"
+  },
+  {
+   "label": "all homes at or under 358000",
+   "params": {
+    "max": 358000
+   },
+   "echo": "max=358000",
+   "total": 5301,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=358000"
+  },
+  {
+   "label": "houses at or under 400000",
+   "params": {
+    "type": "house",
+    "max": 400000
+   },
+   "echo": "type=house&max=400000",
+   "total": 1785,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=400000"
+  },
+  {
+   "label": "all homes at or under 400000",
+   "params": {
+    "max": 400000
+   },
+   "echo": "max=400000",
+   "total": 5884,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=400000"
+  },
+  {
+   "label": "houses at or under 404000",
+   "params": {
+    "type": "house",
+    "max": 404000
+   },
+   "echo": "type=house&max=404000",
+   "total": 1787,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=404000"
+  },
+  {
+   "label": "all homes at or under 404000",
+   "params": {
+    "max": 404000
+   },
+   "echo": "max=404000",
+   "total": 5887,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=404000"
+  },
+  {
+   "label": "houses at or under 415000",
+   "params": {
+    "type": "house",
+    "max": 415000
+   },
+   "echo": "type=house&max=415000",
+   "total": 1849,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=415000"
+  },
+  {
+   "label": "all homes at or under 415000",
+   "params": {
+    "max": 415000
+   },
+   "echo": "max=415000",
+   "total": 5984,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=415000"
+  },
+  {
+   "label": "houses at or under 450000",
+   "params": {
+    "type": "house",
+    "max": 450000
+   },
+   "echo": "type=house&max=450000",
+   "total": 2090,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=450000"
+  },
+  {
+   "label": "all homes at or under 450000",
+   "params": {
+    "max": 450000
+   },
+   "echo": "max=450000",
+   "total": 6361,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=450000"
+  },
+  {
+   "label": "houses at or under 455000",
+   "params": {
+    "type": "house",
+    "max": 455000
+   },
+   "echo": "type=house&max=455000",
+   "total": 2111,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=455000"
+  },
+  {
+   "label": "all homes at or under 455000",
+   "params": {
+    "max": 455000
+   },
+   "echo": "max=455000",
+   "total": 6383,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=455000"
+  },
+  {
+   "label": "houses at or under 468000",
+   "params": {
+    "type": "house",
+    "max": 468000
+   },
+   "echo": "type=house&max=468000",
+   "total": 2163,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=468000"
+  },
+  {
+   "label": "all homes at or under 468000",
+   "params": {
+    "max": 468000
+   },
+   "echo": "max=468000",
+   "total": 6456,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=468000"
+  },
+  {
+   "label": "houses at or under 471000",
+   "params": {
+    "type": "house",
+    "max": 471000
+   },
+   "echo": "type=house&max=471000",
+   "total": 2182,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=471000"
+  },
+  {
+   "label": "all homes at or under 471000",
+   "params": {
+    "max": 471000
+   },
+   "echo": "max=471000",
+   "total": 6487,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=471000"
+  },
+  {
+   "label": "houses at or under 500000",
+   "params": {
+    "type": "house",
+    "max": 500000
+   },
+   "echo": "type=house&max=500000",
+   "total": 2363,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=500000"
+  },
+  {
+   "label": "all homes at or under 500000",
+   "params": {
+    "max": 500000
+   },
+   "echo": "max=500000",
+   "total": 6761,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=500000"
+  },
+  {
+   "label": "houses at or under 505000",
+   "params": {
+    "type": "house",
+    "max": 505000
+   },
+   "echo": "type=house&max=505000",
+   "total": 2366,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=505000"
+  },
+  {
+   "label": "all homes at or under 505000",
+   "params": {
+    "max": 505000
+   },
+   "echo": "max=505000",
+   "total": 6766,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=505000"
+  },
+  {
+   "label": "houses at or under 550000",
+   "params": {
+    "type": "house",
+    "max": 550000
+   },
+   "echo": "type=house&max=550000",
+   "total": 2565,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=550000"
+  },
+  {
+   "label": "all homes at or under 550000",
+   "params": {
+    "max": 550000
+   },
+   "echo": "max=550000",
+   "total": 7063,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=550000"
+  },
+  {
+   "label": "houses at or under 551000",
+   "params": {
+    "type": "house",
+    "max": 551000
+   },
+   "echo": "type=house&max=551000",
+   "total": 2566,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=551000"
+  },
+  {
+   "label": "all homes at or under 551000",
+   "params": {
+    "max": 551000
+   },
+   "echo": "max=551000",
+   "total": 7064,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=551000"
+  },
+  {
+   "label": "houses at or under 600000",
+   "params": {
+    "type": "house",
+    "max": 600000
+   },
+   "echo": "type=house&max=600000",
+   "total": 2752,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=600000"
+  },
+  {
+   "label": "all homes at or under 600000",
+   "params": {
+    "max": 600000
+   },
+   "echo": "max=600000",
+   "total": 7325,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=600000"
+  },
+  {
+   "label": "houses at or under 650000",
+   "params": {
+    "type": "house",
+    "max": 650000
+   },
+   "echo": "type=house&max=650000",
+   "total": 2889,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=650000"
+  },
+  {
+   "label": "all homes at or under 650000",
+   "params": {
+    "max": 650000
+   },
+   "echo": "max=650000",
+   "total": 7533,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=650000"
+  },
+  {
+   "label": "houses at or under 700000",
+   "params": {
+    "type": "house",
+    "max": 700000
+   },
+   "echo": "type=house&max=700000",
+   "total": 3006,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=700000"
+  },
+  {
+   "label": "all homes at or under 700000",
+   "params": {
+    "max": 700000
+   },
+   "echo": "max=700000",
+   "total": 7699,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=700000"
+  },
+  {
+   "label": "houses at or under 730000",
+   "params": {
+    "type": "house",
+    "max": 730000
+   },
+   "echo": "type=house&max=730000",
+   "total": 3054,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=730000"
+  },
+  {
+   "label": "all homes at or under 730000",
+   "params": {
+    "max": 730000
+   },
+   "echo": "max=730000",
+   "total": 7762,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=730000"
+  },
+  {
+   "label": "houses at or under 750000",
+   "params": {
+    "type": "house",
+    "max": 750000
+   },
+   "echo": "type=house&max=750000",
+   "total": 3095,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=750000"
+  },
+  {
+   "label": "all homes at or under 750000",
+   "params": {
+    "max": 750000
+   },
+   "echo": "max=750000",
+   "total": 7833,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=750000"
+  },
+  {
+   "label": "houses at or under 756000",
+   "params": {
+    "type": "house",
+    "max": 756000
+   },
+   "echo": "type=house&max=756000",
+   "total": 3098,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=756000"
+  },
+  {
+   "label": "all homes at or under 756000",
+   "params": {
+    "max": 756000
+   },
+   "echo": "max=756000",
+   "total": 7836,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=756000"
+  },
+  {
+   "label": "houses at or under 787000",
+   "params": {
+    "type": "house",
+    "max": 787000
+   },
+   "echo": "type=house&max=787000",
+   "total": 3142,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=787000"
+  },
+  {
+   "label": "all homes at or under 787000",
+   "params": {
+    "max": 787000
+   },
+   "echo": "max=787000",
+   "total": 7893,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=787000"
+  },
+  {
+   "label": "houses at or under 800000",
+   "params": {
+    "type": "house",
+    "max": 800000
+   },
+   "echo": "type=house&max=800000",
+   "total": 3176,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=800000"
+  },
+  {
+   "label": "all homes at or under 800000",
+   "params": {
+    "max": 800000
+   },
+   "echo": "max=800000",
+   "total": 7948,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=800000"
+  },
+  {
+   "label": "houses at or under 850000",
+   "params": {
+    "type": "house",
+    "max": 850000
+   },
+   "echo": "type=house&max=850000",
+   "total": 3229,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=850000"
+  },
+  {
+   "label": "all homes at or under 850000",
+   "params": {
+    "max": 850000
+   },
+   "echo": "max=850000",
+   "total": 8025,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=850000"
+  },
+  {
+   "label": "houses at or under 852000",
+   "params": {
+    "type": "house",
+    "max": 852000
+   },
+   "echo": "type=house&max=852000",
+   "total": 3229,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=852000"
+  },
+  {
+   "label": "all homes at or under 852000",
+   "params": {
+    "max": 852000
+   },
+   "echo": "max=852000",
+   "total": 8025,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=852000"
+  },
+  {
+   "label": "houses at or under 900000",
+   "params": {
+    "type": "house",
+    "max": 900000
+   },
+   "echo": "type=house&max=900000",
+   "total": 3293,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?type=house&max=900000"
+  },
+  {
+   "label": "all homes at or under 900000",
+   "params": {
+    "max": 900000
+   },
+   "echo": "max=900000",
+   "total": 8117,
+   "refreshedAt": "2026-11-03T22:30:13.996Z",
+   "url": "https://chapter3realty.com/homes/api/map?max=900000"
+  }
+ ]
+}

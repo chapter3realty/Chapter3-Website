@@ -1,0 +1,749 @@
+﻿
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="robots" content="noimageindex">
+	    <meta charset="iso-8859-1">
+	    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	    	    <title>Code of Laws - Title 26 - Chapter 1- - NOTARIES PUBLIC AND ACKNOWLEDGMENTS</title>
+	    <link rel="SHORTCUT ICON" href="/images/stateflagsmall.ico" />
+		<link rel="icon" href="/images/stateflagsmall.ico" type="image/ico" />
+		<link rel="SHORTCUT ICON" href="/images/South-Carolina-Flag2.ico" />
+
+		<link type="text/css" rel="stylesheet" href="/css/main.css" media="all" />
+				
+		<!--[if lte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/ie7main.css" media="all" />
+		<![endif]-->
+		<!--[if gte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/iemain.css" media="all" />
+		<![endif]-->
+		<link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+		<link type="text/css" rel="stylesheet" href="/css/supplement.css" media="screen" />
+		<!--<link type="text/css" rel="stylesheet" href="/css/zipsearch.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/vote.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/contact.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/navwrap.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/linkbar.css" media="screen" />-->
+	
+		<!--<script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>-->
+		<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+				<script type="text/javascript" src="/js/main_linux.js"></script>
+		
+
+		
+
+
+
+		<!--<script type="text/javascript" src="/js/common.js"></script>
+		<script type="text/javascript" src="/js/utils.js"></script>
+		<script type="text/javascript" src="/js/date.js"></script>
+		<script type="text/javascript" src="/js/lightbox.js"></script>
+		<script type="text/javascript" src="/js/legislation.js"></script>
+		<script type="text/javascript" src="/js/logon_lits.js"></script>
+		<script type="text/javascript" src="/js/message.js"></script>
+		<script type="text/javascript" src="/js/comm_meeting.js"></script>-->
+		<script type="text/vbscript" src="/vbs/comm_meeting.vbs"></script>
+		<!--<script type="text/javascript" src="/js/regs.js"></script>-->
+				
+	   	<script type="text/javascript">
+	    //document.onclick = function () { document.getElementById('transbox').style.display= 'none' };
+	    	var xmlhttp=false;
+			xmlhttp = create_xml_object();
+	
+			function getElement(ele)
+			{
+				var theobj = false;
+				if(typeof ele == 'string')
+					theobj = (document.getElementById)?document.getElementById(ele):document.all[ele];
+				else
+					theobj = ele;
+			
+				return theobj;
+			}
+		
+			function checkreader(friendlyalert)
+			{
+			 	/*friendlyalert=friendlyalert||false;
+			 	
+			 	var browser_info = perform_acrobat_detection();
+				if (!browser_info.acrobat)
+				{
+				 	loadadobebox('adobebox', '/adobe.php');
+					return false;
+				}
+				else if (friendlyalert)
+				{
+			 		alert(friendlyalert);
+				}*/
+				return true;
+			}
+				
+			function loadadobebox(boxname, url)
+			{
+				var response = false;
+	
+				doRequest(xmlhttp, "GET", url, false, null, null);
+				if (xmlhttp.status == 200)
+				{
+		         	response = xmlhttp.responseText;
+				}
+	
+				if(response)
+				{
+			 		var ele = document.getElementById(boxname);
+				 	if (ele)
+				 	{
+				 		ele.style.visibility = 'hidden';
+		 				ele.style.display = 'block';
+	
+		 				positionElement(ele, 'center', 'center', true);
+	
+						ele.innerHTML = response;
+					    ele.style.visibility = 'visible';
+					    ele.style.display = 'block';
+	//				    ele.scrollIntoView(true);
+					}
+				}
+				return response;
+			}
+	
+	
+			function init()
+			{
+		 		var ld=document.getElementById("loading");
+				if(ld)
+				{
+					ld.style.display = 'none';
+				}
+			}
+			
+			function openmore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				 	var pos = findPos(id);
+				 	id.style.zIndex = 10;
+		//		 	id.style.left = pos[0]+'px';
+		//		  	id.style.top = pos[1]+'px';
+				  	id.style.height = '295px';
+				  	id.style.position = 'absolute';
+				  	id.style.backgroundColor = '#f7f4ec';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'none';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = 'none';
+				  	}
+				}
+			}
+		
+			function closemore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				  	id.style.height = '135px';
+				  	id.style.position = '';
+				  	id.style.backgroundColor = 'transparent';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'block';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = '';
+				  	}
+				}		 	
+			}
+		
+		<!-- This script and many more are available free online at -->
+		<!-- The JavaScript Source!! http://javascript.internet.com -->
+		
+		<!-- Begin
+		function right(e) {
+		var msg = "Use of this image is strictly prohibited unless express written permission is given to the user by South Carolina Legislative Services Agency.";
+		if (navigator.appName == 'Netscape' && e.which == 3) {
+		alert(msg);
+		return false;
+		stopEvent(e);
+		}
+		if (navigator.appName == 'Microsoft Internet Explorer' && event.button==2) {
+		alert(msg);
+		return false;
+			stopEvent(event);
+		}
+		else return true;
+		}
+		
+	function trap() 
+	{
+		if(document.images)
+		{
+			for(i=0;i<document.images.length;i++)
+			{
+				if(document.images[i].className == 'allowcontextmenu')
+				{
+					// this should have no scripting
+				}
+				else
+				{
+				 	document.images[i].onmousedown = right;
+					document.images[i].oncontextmenu = function(){ return false; };
+					//document.images[i].onmouseup = right;
+				}
+			}
+		}
+	}
+
+	function findfwtext(texttofind) 
+	{
+	 	var fwtextele = document.getElementById('fwtext');
+		if(fwtextele)
+		{
+			fwtextele.value = texttofind;
+		}
+	}	
+		// End -->
+		</script>
+
+		<!-- ADDED FOR V4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJY6FMNQKH"></script>
+
+
+<script type="text/javascript">
+
+//ADDED FOR V4
+//Google tag (gtag.js) 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LJY6FMNQKH');
+
+ 
+ /* COMMENTING OUT UPGRADING TO V4 -A
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36207109-1']);
+  _gaq.push(['_setDomainName', 'scstatehouse.gov']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+*/
+  
+      $(document).ready(function(){
+        // COMMENTING THIS OUT NO LONGER BEING ACTIVELY USED TO MONITOR FOR TRAFFIC TO SPECIFIC LINKS - A
+        /*
+          var anchors = $('div#contentsection a');
+
+          //console.log('anchors...'+anchors.length);
+          if(anchors.length > 0){
+            //console.log('setting up event handler...');
+            anchors.click(function(){
+              var a = $(this).attr('href');
+              if(_gaq && (a.substr(-3) == 'htm' || a.substr(-4) == 'html' || a.substr(-3) == 'doc' || a.substr(-4) == 'docx' || a.substr(-3) == 'pdf' || a.substr(-3) == 'xls' || a.substr(-4) == 'xlsx')) {
+                //console.log(a);
+                _gaq.push(['_trackPageview', $(this).attr('href')]);
+              }
+              
+              var aText = $(this).text().toLowerCase();
+              if (a.indexOf('getfile.php') > -1 && aText === 'word'){
+                    _gaq.push(['_trackEvent', 'Word Doc', 'Download', ('from page: ' + document.location + ' - href: ' + a)]);
+              }
+
+            });
+          }
+          */
+      });
+
+</script>
+	</head>
+	
+		
+	<body class="home"  onload="init(); trap();">
+	<noscript>Your browser does not support JavaScript!  This page will not render correctly.</noscript> 
+
+
+	
+	<div id="adobebox" style="position:absolute; width:400px; height:150px; border:2px solid #555555; background-color:#cccccc; display:none;"></div>
+	<div id="container" >	
+				<div id="header" class="nodisplay" style="text-align:center; height:100px;" >
+									<img id="headerimg" class="nodisplay" alt="South Carolina Legislature" title="South Carolina Legislature" src="/images/header8.png" />
+								
+							<!--	<div class="award"><span style="color:#831224; font-weight:bold; font-size:1.5em;">*</span> Recipient of<br>the Notable State Documents Award<br>by the<br>South Carolina<br>State Library.</div>-->
+				
+				
+			</div>
+			<div class="printdisplay"><img border="0" src="/images/titleprint.jpg" alt="South Carolina Legislature" title="South Carolina Legislature" alt="South Carolina Legislature" title="South Carolina State Legislature" /><br /><hr /><br /></div>
+	
+			<div id="pagebody" >
+	
+	
+<!--<div id="topmessage">
+<br style="display:block; margin-top:10px;">
+Searches and data queries will be unavailable beginning Friday, August 19, 2016, from 8:00 PM until Saturday, August 20th at 8:00 AM<br>due to scheduled maintenance.</div>-->
+				<!-- Prompt IE 8/7/6 users to upgrade to a newer browser. -->
+				<!--[if lte IE 8]>
+				<div class="oldframe">In order to improve your experience using this website, please <a href="http://browsehappy.com/">upgrade your browser</a>.</div>
+				<![endif]-->
+			
+			
+			
+			<div id="menu" class="nodisplay">
+				<ul class="nodisplay">
+				<li><a href="/index.php">Home</a></li>
+<li><a href="/senate.php">Senate</a></li>
+<li><a href="/house.php">House</a></li>
+<li><a href="/committeeinfo.php">Committee&nbsp;Postings&nbsp;and&nbsp;Reports</a></li>
+<li><a href="/council.php">Legislative Council</a></li>
+<li><a href="/citizens.php">Citizens&#39; Interest</a></li>
+<li><a href="/publications.php">Publications</a></li>
+		    	</ul>
+			</div>
+			<div id="search" class="nodisplay" style="height: 28px;"><div class="nodisplay" style="float:right; margin:6px 20px 0px 0;">
+							<!--<a style="color:#f7f4ec; height:15px;" href="#" onClick="rsswindow();"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+<!--				<a style="color:#f7f4ec; height:15px;" href="/splashpage/splashpage.html"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a> -->
+				<a style="color:#f7f4ec; height:15px;" href="/onlineservices/index.php"><img border="0" src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>
+			<!--	<a style="color:#f7f4ec; height:15px;" href="/maintenance_portal.php"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+						</div></div>
+			
+	
+					<div id="sidebar" class="nodisplay">
+	<div id="vidlinks" style="height: 50px;">
+						<!--<img src="/images/videobutton12d.png">-->
+											<ul id="vidsidemenu">
+	<li id="vidinnermenu" style="font-size:16px; margin: 0 0 5px 0;">Chamber Video</li>
+<li id="sbroadcast" style="float: left; width:50%;">
+<a id="liveS" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('S', false, false, '0')">Senate</a><br><a id="liveaudioS" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('S', false, false, '1');">(Audio Only)</a>
+</li>
+<li id="hbroadcast" style="float: left; width:50%;">
+<a id="liveH" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('H', false, false, '0')">House</a><br><a id="liveaudioH" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('H', false, false, '1');">(Audio Only)</a>
+</li>
+						</ul>
+					</div>
+					<div id="commvidlinks"><a href="/video/schedule.php">Video&nbsp;Schedule</a><a style="border-top:1px solid #fff; padding-top:12px;" href="/video/archives.php">Video Archives</a></div>
+										<div id="sidemenu">
+						<ul id="innermenu">
+		
+							<li><a href="/howdoi.php">How do I...</a></li>
+										
+							
+								<li class="nolink" onMouseOver="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='block'; document.sidesearchform.searchtext.focus();}" onMouseOut="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Quick Search</div>
+								<div id="sidesearch" class="sidesubmenu">
+									<form id="sidesearchform" name="sidesearchform" method="POST" action="/search.php">
+									<input type="hidden" name="search" value="side" />
+									<div class="topelement"><label for="searchtext"><span class="label">Search for:</span></label><input id="searchtext" name="searchtext" type="text"/><a id="searchlink2" href="javascript:void(0);" onClick="document.sidesearchform.submit();"><img id="searchicon" src="/images/searchbutton.png" alt="Search" title="Search"/></a></div>
+			<!--						<div><input type="checkbox" id="searchchoice_all" name="searchchoice_all" value="all" /><label for="searchchoice_all">All</label></div>-->
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_fullsite" name="category" value="FULLSITE" /><label for="searchchoice_fullsite">&nbsp;Full Site Search</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_billnumber" name="category" value="BILL" /><label for="searchchoice_billnumber">&nbsp;Bill Number</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_legislation" name="category" value="LEGISLATION" CHECKED /><label for="searchchoice_legislation">&nbsp;Legislation</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_budget" name="category" value="BUDGET" /><label for="searchchoice_budget">&nbsp;Budget</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeoflaws" name="category" value="CODEOFLAWS" /><label for="searchchoice_codeoflaws">&nbsp;Code of Laws</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeofregs" name="category" value="CODEOFREGS" /><label for="searchchoice_codeofregs">&nbsp;Code of Regulations</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_constitution" name="category" value="CONSTITUTION" /><label for="searchchoice_constitution">&nbsp;Constitution</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_housejournals" name="category" value="HOUSEJOURNALS" /><label for="searchchoice_housejournals">&nbsp;House Journals</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_senatejournals" name="category" value="SENATEJOURNALS" /><label for="searchchoice_senatejournals">&nbsp;Senate Journals</label></div>
+									<div class="bottomelement" style="padding-left:20px;"><input type="radio" id="searchchoice_billsummary" name="category" value="SUMMARY" /><label for="searchchoice_billsummary">&nbsp;LSA Bill Summary</label></div>
+								</form>
+									
+								</div>
+							</li>
+							<li><a href="/legislatorssearch.php">Find Your Legislators</a></li>
+							<li id="contactLegislatorLink"><a href="/email.php?chamber=B">Contact Your Legislator</a></li>
+									
+							<li><a href="/legislation.php">Legislation</a></li>
+							<li><a href="/listtracking/main.php" target="LTS">Track Legislation</a></li>
+							<li><a href="/multicriteria2/search.php" target="MCS">Multi-Criteria Search</a></li>
+									<!--<li><a href="#" onclick="multisearchwindow('INTROBOTH');">Multi-Criteria Search</a></li>-->
+									<!--<li><a href="#" onclick="multisearchwindow('INTROMANUAL');">Multi-Criteria Search</a></li>-->
+									<li><a href="/research.php">Research</a></li>
+	
+								<li class="nolink" onMouseOver="var ele=document.getElementById('law'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('law'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">South Carolina Law</div> 
+								<div id="law" class="sidesubmenu">
+									<div class="sidediv topelement"><a href="/newlaws.php">Ratifications &amp; Acts</a></div>
+									<div class="sidediv"><a href="/code/statmast.php">Code of Laws</a></div>
+									<div class="sidediv"><a href="/coderegs/statmast.php">Code of Regulations</a></div>
+									<div class="sidediv"><a href="/scconstitution/scconst.php">Constitution</a></div>
+									<div class="sidediv bottomelement"><a href="/state_register.php">State Register</a></div>
+								</div>
+							</li>
+										<li class="nolink" onMouseOver="var ele=document.getElementById('manual'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('manual'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Legislative Manual</div>
+								<div id="manual" class="sidesubmenu">
+								
+<!--									<div class="sidediv topelement"><a href="https://web.sc.gov/LSAShoppingcart/Default.aspx" target="_blank">Purchase Manual</a></div>-->
+								
+<!--									<div class="sidediv topelement"><a href="https://secure.scstatehouse.gov/cgi-bin/webstore.exe" target="_blank">Purchase Manual</a></div>-->
+									<div class="sidediv topelement"><a href="javascript:#" onClick="alert('We are sorry, but we are unable to process online transactions at this time.\n\nIf you would still like to make a purchase, please contact us directly at (803) 212-4490 during normal business hours (8:30am - 5:00pm EST).');">Purchase Manual</a></div>
+									<div class="sidediv bottomelement"><a href="/man26/manual26.php">View Manual Online</a></div>
+								</div>
+							</li>
+							<li><a href="http://www.studentconnection.scstatehouse.gov">Student Connection</a></li>
+							<li><a href="/visit.php">Visiting the State House</a></li>
+							<li><a href="/archives.php">Archives</a></li>
+							<li><a href="http://www.sc.gov/Agency-Listing" target="_blank">State Agency Websites</a></li>
+							<!--<li><a href="/stateagencysites.php">State Agency Websites</a></li>-->
+							<li><a href="/citizensinterestpage/media.php">Media Links</a></li>
+				 		</ul>
+			    	</div>
+	
+					<div id="side_ad">
+						<A href="http://www.sc.gov/" target="_blank"><img border=0 src="/images/scgov3.jpg" alt="SC.gov" title="SC.gov" /></a>
+													<A href="http://www.statelibrary.sc.gov" target="_blank"><img border=0 src="/images/scsl_logo_rgb_web.png" alt="StateLibrary.SC.gov" title="StateLibrary.SC.gov" /></a>
+											</div>	    	
+			</div>
+
+	
+	<script type="text/javascript"> 
+		if ( '' === '1'){
+		 	
+			var link = document.getElementById('contactLegislatorLink');
+			if (link != 'undefined' && link != null){
+				link.style.display = 'none'; 
+				link.style.visibility = 'hidden';
+			}
+		}
+		if ( '' === '1'){
+		 	setTimeout(function(){
+				var link2 = document.getElementById('sendMsgLink');
+				if (link2 != 'undefined' && link2 != null){
+					link2.style.display = 'none'; 
+					link2.style.visibility = 'hidden';
+				};
+			}, 20);
+			
+		}  
+	</script>
+<div class="mainwidepanel">
+
+				<div id="breadcrumbs">
+						South Carolina Law &gt; <a href="/code/statmast.php">Code of Laws</a> &gt; <a href="/code/title26.php">Title 26</a>
+				</div>
+
+					<h2 class="barheader">South Carolina Code of Laws<br />
+									Unannotated<br />
+					</h2>
+
+				<div id="contentsection">
+<div style="font-weight: bold; text-align: center;">Title 26 - NOTARIES PUBLIC AND ACKNOWLEDGMENTS</div>
+<br />
+
+<div style="text-align: center;">CHAPTER 1</div>
+<div style="text-align: center;">Notaries Public</div><br />
+<span style="font-weight: bold;"> SECTION 26-1-5.</span> Definitions.<br /><br />
+	For purposes of this chapter:<br /><br />
+	(1) &quot;Acknowledgment&quot; means a notarial act in which a notary certifies that, at a single time and place, all of the following occurred:<br /><br />
+	(a) an individual appeared in person before the notary and presented a record;<br /><br />
+	(b) the individual was personally known to the notary or identified by the notary through satisfactory evidence; and<br /><br />
+	(c) the individual signed the record while in the physical presence of the notary and while being personally observed signing the record by the notary.<br /><br />
+	(2) &quot;Affirmation&quot; means a notarial act which is legally equivalent to an oath and in which a notary certifies that, at a single time and place, all of the following occurred:<br /><br />
+	(a) an individual appeared in person before the notary;<br /><br />
+	(b) the individual was personally known to the notary or identified by the notary through satisfactory evidence; and<br /><br />
+	(c) the individual made a vow of truthfulness on penalty of perjury, based on personal honor and without invoking a deity or using a form of the word &quot;swear&quot;.<br /><br />
+	(3) &quot;Attest&quot; or &quot;attestation&quot; means the completion of a certificate by a notary who has performed a notarial act.<br /><br />
+	(4) &quot;Commission&quot; means the empowerment to perform notarial acts and the written evidence of authority to perform those acts.<br /><br />
+	(5) &quot;Credible witness&quot; means an individual who is personally known to the notary and whom the notary reasonably believes to be honest and reliable for the purpose of confirming to the notary the identity of another individual and the notary believes is not a party to or beneficiary of the transaction.<br /><br />
+	(6) &quot;Jurat&quot; means a notary&#39;s certificate evidencing the administration of an oath or affirmation.<br /><br />
+	(7) &quot;Moral turpitude&quot; means conduct contrary to expected standards of honesty, morality, or integrity.<br /><br />
+	(8) &quot;Notarial act&quot;, &quot;notary act&quot;, and &quot;notarization&quot; mean acts that the laws and regulations of this State authorize notaries public of this State to perform, including the administering of oaths and affirmations, taking proof of execution and acknowledgments of instruments, and attesting documents.<br /><br />
+	(9) &quot;Notarial certificate&quot; and &quot;certificate&quot; mean the portion of a notarized record that is completed by the notary, bears the notary&#39;s signature and seal, and states the facts attested by the notary in a particular notarization.<br /><br />
+	(10) &quot;Notary public&quot; and &quot;notary&quot; mean a person commissioned to perform notarial acts pursuant to this chapter. A notary is a public officer of the State of South Carolina and shall act in full and strict compliance with this chapter.<br /><br />
+	(11) &quot;Oath&quot; means a notarial act that is legally equivalent to an affirmation and in which a notary certifies that at a single time and place all of the following occurred:<br /><br />
+	(a) an individual appeared in person before the notary;<br /><br />
+	(b) the individual was personally known to the notary or identified by the notary through satisfactory evidence; and<br /><br />
+	(c) the individual made a vow of truthfulness on penalty of perjury while invoking a deity or using a form of the word &quot;swear&quot;.<br /><br />
+	(12) &quot;Official misconduct&quot; means a notary&#39;s performance of a prohibited act or failure to perform a mandated act set forth in this chapter or other law in connection with notarization.<br /><br />
+	(13) &quot;Personal appearance&quot; and &quot;appear in person before a notary&quot; means an individual and a notary are in the physical presence of one another so that they may freely see and communicate with one another and exchange records back and forth during the notarization process.<br /><br />
+	(14) &quot;Personal knowledge&quot; or &quot;personally known&quot; means familiarity with an individual resulting from interactions with that individual over a period of time sufficient to eliminate any reasonable doubt that the individual has the identity claimed.<br /><br />
+	(15) &quot;Principal&quot; means:<br /><br />
+	(a) in the case of an acknowledgment, the individual whose identity and due execution of a record is being certified by the notary;<br /><br />
+	(b) in the case of a verification or proof, the individual other than a subscribing witness whose identity and due execution of the record are being proven or signature is being identified as genuine; and<br /><br />
+	(c) in the case of an oath or affirmation, the individual who makes a vow of truthfulness on penalty of perjury.<br /><br />
+	(16) &quot;Record&quot; means information that is inscribed on a tangible medium and called a traditional or paper record. Record also may mean information that is inscribed on a tangible medium or that is stored in an electronic or other medium.<br /><br />
+	(17) &quot;Satisfactory evidence&quot; means identification of an individual based on either:<br /><br />
+	(a) a current identification document issued by a federal or state government agency bearing a photographic image of the individual&#39;s face, signature, and a physical description, except that a current passport without a physical description is acceptable; or<br /><br />
+	(b) upon the oath or affirmation of a credible witness personally known to the notary public or of two witnesses who present an identification document as described in subitem (a).<br /><br />
+	(18) &quot;Seal&quot; or &quot;stamp&quot; means a device for affixing on a paper record an image containing a notary&#39;s name, the words &quot;notary public&quot;, and the words &quot;State of South Carolina&quot;. The device may be in the form of an ink stamp or an embosser.<br /><br />
+	(19) &quot;Secretary&quot; means the South Carolina Secretary of State or the Secretary&#39;s designee.<br /><br />
+	(20) &quot;Subscribing witness&quot; means a person who signs a record for the purpose of being a witness to the principal&#39;s execution of the record or to the principal&#39;s acknowledgment of his execution of the record.<br /><br />
+	(21) &quot;Verification&quot; or &quot;proof&quot; means a notarial act in which a notary certifies that:<br /><br />
+	(a) an individual appeared in person before the notary;<br /><br />
+	(b) the individual was personally known to the notary or identified by the notary through satisfactory evidence;<br /><br />
+	(c) the individual was not a party to or beneficiary of the transaction; and<br /><br />
+	(d) the individual took an oath or gave an affirmation and testified that he is a subscribing witness and as such (i) witnessed the principal who signed the record, or (ii) received the acknowledgement of the principal&#39;s signature from the principal who signed the record.<br /><br />
+HISTORY: 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-10.</span> Appointment and term.<br /><br />
+	The Governor may appoint from the qualified electors as many notaries public throughout the State as the public good requires, to hold their offices for a term of ten years. A commission must be issued to each notary public so appointed and the record of the appointment must be filed in the Office of the Secretary of State.<br /><br />
+HISTORY: 1962 Code SECTION 49-1; 1952 Code SECTION 49-1; 1942 Code SECTION 3459; 1932 Code SECTION 3459; Civ. C. &#39;22 SECTION 817; Civ. C. &#39;12 SECTION 732; Civ. C. &#39;02 SECTION 662; G. S. 520; R. S. 578; 1871 (15) 538; 1911 (27) 139; 1967 (55) 509; 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 185, SECTION 1, deleted the former third and fourth sentences, relating to commissions issued before and after July 1, 1967; and made other nonsubstantive changes.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-15.</span> Qualifications for notarial commission.<br /><br />
+	A person qualified for a notarial commission:<br /><br />
+	(1) must be a registered voter in this State;<br /><br />
+	(2) shall read and write the English language; and<br /><br />
+	(3) shall submit an application containing no significant misstatement or omission of fact. The application form must be provided by the Secretary and must include the signature of the applicant written with pen and ink, and the signature must be acknowledged as the applicant&#39;s by a person authorized to administer oaths.<br /><br />
+HISTORY: 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-20.</span> Endorsement of application.<br /><br />
+	(A) Each county legislative delegation shall determine whether the endorsement of notaries public must be by:<br /><br />
+	(1) one-half of the members of the legislative delegation representing the county in which the applicant resides; or<br /><br />
+	(2) endorsement by the senator and representative in whose district the applicant resides, without other endorsers.<br /><br />
+	(B) Each county legislative delegation shall notify the Secretary of State in writing if it chooses to utilize subsection (A)(2) within the individual county. If the county legislative delegation chooses to utilize subsection (A)(2), the applicant, senator, and representative shall indicate their respective districts on the application provided to the Secretary of State. If the office of senator or representative from that district is vacant at the time the application is submitted, the notary public may be appointed upon the endorsement of a majority of the legislative delegation representing the county in which the applicant resides.<br /><br />
+HISTORY: 1962 Code SECTION 49-2; 1952 Code SECTION 49-2; 1942 Code SECTION 3465; 1932 Code SECTION 3465; Civ. C. &#39;22 SECTION 823; Civ. C. &#39;12 SECTION 738; 1911 (27) 139; 1967 (55) 509; 1989 Act No. 56, SECTION 1; 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 185, SECTION 1, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-25.</span> Additional methods of endorsement of applications.<br /><br />
+	(A) In addition to the methods of endorsement of applications for notary public commissions provided in Section 26-1-20, a legislator may provide for the endorsement of these applications by authorizing either the member serving as chairman or the member serving as secretary of the legislative delegation of the county in which the applicant resides to sign on the legislator&#39;s behalf.<br /><br />
+	(B) A copy of the resolution adopting any or all of these endorsement methods for a county must be forwarded to the Secretary of State, after which the method or methods of endorsement shall continue to apply in the county unless rescinded by a later delegation resolution.<br /><br />
+HISTORY: 1997 Act No. 127, SECTION 1; 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 185, SECTION 1, added the paragraph designators; and in subsection (B), substituted &quot;later&quot; for &quot;subsequent&quot;.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-30.</span> Fee for issuance or renewal of commission.<br /><br />
+	The fee for the issuance or renewal of a commission is twenty-five dollars, collected by the Secretary of State as other fees.<br /><br />
+HISTORY: 1962 Code SECTION 49-3; 1952 Code SECTION 49-3; 1942 Code SECTION 3466; 1932 Code SECTION 3466; Civ. C. &#39;22 SECTION 824; Civ. C. &#39;12 SECTION 739; 1911 (27) 139; 1967 (55) 509; 1983 Act No. 151, Part II, SECTION 8A; 1988 Act No. 658, Part II, SECTION 3A; 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 185, SECTION 1, reenacted the section with no apparent change.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-40.</span> Oath.<br /><br />
+	A notary public shall take the oath of office prescribed by the Constitution, and a certified copy of the written oath must be recorded in the office of the Secretary of State.<br /><br />
+HISTORY: 1962 Code SECTION 49-4; 1952 Code SECTION 49-4; 1942 Code SECTION 3460; 1932 Code SECTION 3460; Civ. C. &#39;22 SECTION 818; Civ. C. &#39;12 SECTION 733; Civ. C. &#39;02 SECTION 663; G. S. 521; R. S. 579; 1871 (15) 538, SECTION 2; 1911 (27) 139; 1961 (52) 510; 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 185, SECTION 1, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-50.</span> Enrollment of commission.<br /><br />
+	Within fifteen days after he has been commissioned, a notary public must exhibit his commission to the clerk of the court of the county in which he resides and be enrolled by the clerk.<br /><br />
+HISTORY: 1962 Code SECTION 49-5; 1952 Code SECTION 49-5; 1942 Code SECTION 3461; 1932 Code SECTION 3461; Civ. C. &#39;22 SECTION 819; Civ. C. &#39;12 SECTION 734; 1911 (27) 139; 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 185, SECTION 1, made nonsubstantive changes.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-60.</span> Seal of office; notary shall indicate date of expiration of commission.<br /><br />
+	A notary public shall have a seal of office, which must be affixed to his notarial acts. He shall indicate below his signature the date of expiration of his commission. The absence of the seal of office or date of expiration does not render his notarial acts invalid if his official title is affixed to it.<br /><br />
+HISTORY: 1962 Code SECTION 49-6; 1952 Code SECTION 49-6; 1942 Code SECTION 3462; 1932 Code SECTION 3462; Civ. C. &#39;22 SECTION 820; Civ. C. &#39;12 SECTION 735; Civ. C. &#39;02 SECTION 664; G. S. 522; R. S. 580; 1871 (15) 538; 1911 (27) 139; 1967 (55) 509; 1968 (55) 2843; 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 185, SECTION 1, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-70.</span> [Reserved].<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws: Former SECTION 26-1-70 was titled Effect of change of name by notary, and had the following history: 1962 Code SECTION 49-6.1; 1967 (55) 509; 1983 Act No. 151, Part II, SECTION 8B. See now SECTION 26-1-130.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-80.</span> Jurisdiction.<br /><br />
+	The jurisdiction of notaries public extends throughout the State.<br /><br />
+HISTORY: 1962 Code SECTION 49-7; 1952 Code SECTION 49-7; 1942 Code SECTION 3459; 1932 Code SECTION 3459; Civ. C. &#39;22 SECTION 817; Civ. C. &#39;12 SECTION 732; Civ. C. &#39;02 SECTION 662; G. S. 520; R. S. 578; 1871 (14) 538; 1911 (27) 139; 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 185, SECTION 1, made nonsubstantive changes.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-90.</span> Powers of notary public.<br /><br />
+	(A) A notary public may perform the following acts:<br /><br />
+	(1) acknowledgments;<br /><br />
+	(2) oaths and affirmations;<br /><br />
+	(3) attestations and jurats;<br /><br />
+	(4) signature witnessing;<br /><br />
+	(5) verifications of fact; and<br /><br />
+	(6) any other acts authorized by law.<br /><br />
+	(B) A notarial act must be attested by the:<br /><br />
+	(1) signature of the notary, exactly as shown on the notary&#39;s commission;<br /><br />
+	(2) legible appearance of the notary&#39;s name exactly as shown on the notary&#39;s commission. The legible appearance of the notary&#39;s name may be ascertained from the notary&#39;s typed or printed name near the notary&#39;s signature or from elsewhere in the notarial certificate or from the notary&#39;s seal if the name is legible; and<br /><br />
+	(3) statement of the date the notary&#39;s commission expires. The statement of the date that the notary&#39;s commission expires may appear in the notary&#39;s stamp or seal or elsewhere in the notarial certificate.<br /><br />
+	(C) A notary may not perform a notarial act if the:<br /><br />
+	(1) principal or subscribing witness is not in the notary&#39;s presence at the time the notarial act is performed;<br /><br />
+	(2) principal or subscribing witness is not personally known to the notary or identified by the notary through satisfactory evidence;<br /><br />
+	(3) notary is a signer of, party to, or beneficiary of the record that is to be notarized. A disqualification pursuant to this item does not apply to an employee of a court within the unified judicial system, a notary who is named in a record solely as the trustee in a deed of trust, the drafter of the record, the person to whom a registered document must be mailed or sent after recording, or the attorney for a party to the record, so long as the notary is not also a party to the record individually or in some other representative or fiduciary capacity; or<br /><br />
+	(4) notary will receive directly from a transaction connected with the notarial act any commission, fee, advantage, right, title, interest, cash, property, or other consideration exceeding in value the fees specified in Section 26-1-100, other than fees or other consideration paid for services rendered by a licensed attorney, a licensed real estate broker or salesperson, a motor vehicle dealer, or a banker.<br /><br />
+	(D) A notary shall not notarize a signature:<br /><br />
+	(1) on a blank or incomplete document; or<br /><br />
+	(2) on a document without notarial certificate wording.<br /><br />
+	(E) A notary shall not certify or authenticate a photograph or photocopy.<br /><br />
+	(F) A notary may certify the affixation of a signature by mark on a record presented for notarization if:<br /><br />
+	(1) the mark is affixed in the presence of the notary;<br /><br />
+	(2) the notary writes below the mark: &quot;Mark affixed by (name of signer by mark) in presence of undersigned notary&quot;; and<br /><br />
+	(3) the notary notarizes the signature by performing an acknowledgment, oath or affirmation, jurat, or verification or proof.<br /><br />
+	(G) If a principal is physically unable to sign or make a mark on a record presented for notarization, that principal may designate another person, who must be a disinterested party, as his designee, to sign on the principal&#39;s behalf pursuant to the following procedure:<br /><br />
+	(1) the principal directs the designee to sign the record in the presence of the notary and two witnesses, who are either personally known to the notary or identified by the notary through satisfactory evidence, and who are unaffected by the record;<br /><br />
+	(2) the designee signs the principal&#39;s name in the presence of the principal, the notary, and the two witnesses;<br /><br />
+	(3) both witnesses sign their own names to the record near the principal&#39;s signature;<br /><br />
+	(4) the notary writes below the principal&#39;s signature: &quot;Signature affixed by designee in the presence of (names and addresses of principal and witnesses)&quot;; and<br /><br />
+	(5) the notary notarizes the signature through an acknowledgment, oath or affirmation, jurat, or verification or proof.<br /><br />
+	(H) A notary may sign the name of a principal physically unable to sign or make a mark on a document presented for notarization if:<br /><br />
+	(1) the principal directs the notary to sign the record in the presence of two witnesses unaffected by the record;<br /><br />
+	(2) the notary signs the principal&#39;s name in the presence of the principal and the witnesses;<br /><br />
+	(3) both witnesses sign their own names to the record near the principal&#39;s signature;<br /><br />
+	(4) the notary writes below the principal&#39;s signature: &quot;Signature affixed by the notary at the direction of (name of principal unable to sign or make a mark) and also in the presence of (names and addresses of witnesses)&quot;; and<br /><br />
+	(5) the notary notarizes the signature through an acknowledgment, oath or affirmation, jurat, or verification or proof.<br /><br />
+	(I) A notary public who is not an attorney licensed to practice law in this State and who advertises his services as a notary public in a language other than English, by radio, television, signs, pamphlets, newspapers, other written communication, or in another manner, shall post or otherwise include with the advertisement the notice set forth in this subsection in English and in the language used for the advertisement. The notice must be of conspicuous size, if in writing, and must state: &quot;I AM NOT AN ATTORNEY LICENSED TO PRACTICE LAW IN THE STATE OF SOUTH CAROLINA, AND I MAY NOT GIVE LEGAL ADVICE OR ACCEPT FEES FOR LEGAL ADVICE.&quot; The notice must provide the fees for notarial acts specified in Section 26-1-100. If the advertisement is by radio or television, the statement may be modified but must include substantially the same message.<br /><br />
+	(J) A notary public who is not an attorney licensed to practice law in this State may not render a service that constitutes the unauthorized practice of law. A nonattorney notary may not assist another person in drafting, completing, selecting, or understanding a record or transaction requiring a notarial act. This subsection does not prohibit an employee of any court within the unified judiciary system, acting within the scope of his employment, from assisting an individual with filing a document with the court, provided that the assistance does not constitute the unauthorized practice of law.<br /><br />
+	(K) A notary may not claim to have powers, qualifications, rights, or privileges that the office of notary does not provide, including the power to counsel on immigration matters.<br /><br />
+	(L) A notary may not use the term &quot;notario publico&quot; or any equivalent non-English term in any business card, advertisement, notice, or sign.<br /><br />
+	(M) A notary may not execute a certificate that is not written in the English language. A notary may execute a certificate written in the English language that accompanies a record written in another language, which record may include a translation of the notarial certificate into the other language. In that instance, the notary shall execute only the English language certificate.<br /><br />
+HISTORY: 1962 Code SECTION 49-8; 1952 Code SECTION 49-8; 1942 Code SECTION 3463; 1932 Code SECTION 3463; Civ. C. &#39;22 SECTION 821; Civ. C. &#39;12 SECTION 736; Civ. C. &#39;02 SECTION 665; G. S. 523; R. S. 581; 1871 (15) 538; 1911 (27) 139; 1927 (35) 43; 1938 (40) 1559; 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 185, SECTION 1, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-95.</span> Repealed by 2014 Act No. 185, SECTION 1, eff June 2, 2014.<br /><br />
+Editor&#39;s Note<br /><br />
+	Former SECTION 26-1-95 was titled False certification by notary and was derived from 1989 Act No. 94, SECTION 1. See now SECTION 26-1-160.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-100.</span> Fees for notary acts.<br /><br />
+	(A) The maximum fees that may be charged by a notary for a notarial act is:<br /><br />
+	(1) for an acknowledgment, five dollars per signature;<br /><br />
+	(2) for an oath or affirmation without a signature, five dollars per person;<br /><br />
+	(3) for a jurat, five dollars per signature;<br /><br />
+	(4) for a signature witnessing, five dollars per signature; and<br /><br />
+	(5) for a verification of fact, five dollars per certificate.<br /><br />
+	(B) A notary who charges a fee for his notarial services shall display conspicuously in his place of business, or present to each principal outside his place of business, an English language schedule of fees for notarial acts.<br /><br />
+	(C) A notary may charge a travel fee when traveling to perform a notarial act if:<br /><br />
+	(1) the notary and the person requesting the notarial act agree upon the travel fee in advance of the travel; and<br /><br />
+	(2) the notary explains to the person requesting the notarial act that the travel fee is both separate from the notarial fee prescribed by subsection (A) and is neither specified nor mandated by law.<br /><br />
+	(D) Nothing in this chapter compels a notary to charge a fee.<br /><br />
+HISTORY: 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws: Former SECTION26-1-100 was titled Criminal jurisdiction, and had the following history: 1962 Code SECTION 49-9; 1952 Code SECTION 49-9; 1942 Code SECTION 3464; 1932 Code SECTION 3464; Civ. C. &#39;22 SECTION 822; Civ. C. &#39;12 SECTION 737; Civ. C. &#39;02 SECTION 666; G. S. 524; R. S. 582, 829; 829 (6) 387. See now SECTION 26-1-170.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-110.</span> Notarizing a paper record.<br /><br />
+	When notarizing a paper record, a notary shall sign by hand in ink on the notarial certificate. The notary shall comply with the requirements of Section 26-1-90(B)(1) and (2). The notary shall affix the official signature only after the notarial act is performed. The notary may not sign a paper record using the facsimile stamp or an electronic or other printing method; except that a notary with a disability may use a signature stamp that depicts the notary&#39;s signature in a clear and legible manner, upon prior approval of the Secretary.<br /><br />
+HISTORY: 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws: Former SECTION26-1-110 was titled Attorney at law; exercise of powers as notary, and had the following history: 1962 Code SECTION 49-10; 1952 Code SECTION 49-10; 1942 Code SECTION 3463; 1932 Code SECTION 3463; Civ. C. &#39;22 SECTION 821; Civ. C. &#39;12 SECTION 736; Civ. C. &#39;02 SECTION 665; G. S. 523; R. S. 581; 1871 (15) 538; 1911 (27) 139; 1927 (35) 43; 1938 (40) 1559. See now SECTION 26-1-180.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-120.</span> Notarial certificate.<br /><br />
+	(A) A notary may not make or give a notarial certificate unless the notary has either personal knowledge or satisfactory evidence of the identity of the principal and, if applicable, the subscribing witness.<br /><br />
+	(B) By making or giving a notarial certificate, regardless of whether it is stated in the certificate, a notary certifies that:<br /><br />
+	(1) at the time the notarial act was performed and the notarial certificate was signed by the notary, the notary was lawfully commissioned, the notary&#39;s commission had neither expired nor been suspended, the notarial act was performed within the geographic limits of the notary&#39;s commission, and the notarial act was performed in accordance with the provisions of this chapter;<br /><br />
+	(2) if the notarial certificate is for an acknowledgment or the administration of an oath or affirmation, the person whose signature was notarized did not appear in the judgment of the notary to be incompetent, lacking in understanding of the nature and consequences of the transaction requiring the notarial act, or to be acting involuntarily, under duress, or undue influence; and<br /><br />
+	(3) the notary was not prohibited from acting pursuant to this chapter.<br /><br />
+	(C) The inclusion of additional information in a notarial certificate, including the representative or fiduciary capacity in which a person signed or the means a notary used to identify a principal, does not invalidate an otherwise sufficient notarial certificate.<br /><br />
+	(D) A notarial certificate for the acknowledgment must comply with Chapter 3, Title 26, the Uniform Recognition of Acknowledgments Act.<br /><br />
+	(E) A notarial certificate for the verification or proof of the signature of a principal by a subscribing witness taken by a notary is sufficient and must be accepted in this State if it is substantially in a form otherwise prescribed by the laws of this State, or if it:<br /><br />
+	(1) identifies the state and county in which the verification or proof occurred;<br /><br />
+	(2) names the subscribing witness who appeared in person before the notary;<br /><br />
+	(3) names the principal whose signature on the record is to be verified or proven;<br /><br />
+	(4) indicates that the subscribing witness certified to the notary under oath or by affirmation that the subscribing witness is not a party to or beneficiary of the transaction, signed the record as a subscribing witness, and either (i) witnessed the principal sign the record, or (ii) witnessed the principal acknowledge the principal&#39;s signature on the record;<br /><br />
+	(5) states the date of the verification or proof;<br /><br />
+	(6) contains the signature of the notary who took the verification or proof; and<br /><br />
+	(7) states the notary&#39;s commission expiration date.<br /><br />
+	(F) A notarial certificate for an oath or affirmation taken by a notary is sufficient and must be accepted in this State if it is substantially in a form otherwise prescribed by the laws of this State, or if it:<br /><br />
+	(1) names the principal who appeared in person before the notary unless the name of the principal otherwise is clear from the record itself;<br /><br />
+	(2) indicates that the principal who appeared in person before the notary signed the record in question and certified to the notary under oath or by affirmation as to the truth of the matters stated in the record;<br /><br />
+	(3) states the date of the oath or affirmation;<br /><br />
+	(4) contains the signature of the notary who took the oath or affirmation; and<br /><br />
+	(5) states the notary&#39;s commission expiration date.<br /><br />
+	(G) A notarial certificate made in another jurisdiction is sufficient in this State if it is made in accordance with federal law or the laws of the jurisdiction where the notarial certificate was made.<br /><br />
+	(H) On records to be filed, registered, recorded, or delivered in another state or jurisdiction of the United States, a South Carolina notary may complete a notarial certificate that is required in that other state or jurisdiction.<br /><br />
+HISTORY: 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Editor&#39;s Note<br /><br />
+	Prior Laws: Former SECTION26-1-120 was titled Notary as stockholder, director, officer or employee of corporation; exercise of powers, and had the following history: 1962 Code SECTION 49-11; 1952 Code SECTION 49-11; 1942 Code SECTION 3463; 1932 Code SECTION 3463; Civ. C. &#39;22 SECTION 821; Civ. C. &#39;12 SECTION 736; Civ. C. &#39;02 SECTION 665; G. S. 523; R. S. 581; 1871 (15) 538; 1911 (27) 139; 1927 (35) 43; 1938 (40) 1559. See now SECTION 26-1-190.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-130.</span> Changes in Notary&#39;s status.<br /><br />
+	(A) Within forty-five days after the following changes in a notary&#39;s status, the notary must notify the Office of the Secretary of State the:<br /><br />
+	(1) change of a notary&#39;s residence, business, or a mailing address or telephone number. The notary&#39;s term expires at the same time as the original term;<br /><br />
+	(2) legal change of a notary&#39;s name. A notary with a new name may continue to use the former name in performing notarial acts until the notary receives a confirmation of Notary&#39;s Name Change Form from the Secretary. Upon receipt of the confirmation of the Notary&#39;s Name Change Form from the Secretary, the notary shall use the new name, and shall destroy or deface all notary seals bearing the former name so that they may not be misused. The notary&#39;s term expires at the same time as the original term; and<br /><br />
+	(3) change of a notary&#39;s county of residence. A notary who has moved to another county in South Carolina remains commissioned until the current commission expires, is not required to obtain a new seal, and may continue to notarize without changing his seal.<br /><br />
+	(B) Notifications to the Office of the Secretary of State required by this section, must be made on a Change in Status Form, accompanied by a fee of ten dollars, and in a form and manner that is prescribed by the Secretary.<br /><br />
+HISTORY: 1962 Code SECTION 49-6.1; 1967 (55) 509; 1983 Act No. 151, Part II, SECTION 8B; former 1976 Code SECTION 26-1-70; 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 185, SECTION 1, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-140.</span> Resignation of commission.<br /><br />
+	(A) A notary who resigns the notary&#39;s commission shall submit to the Secretary a Change in Status Form indicating the effective date of resignation.<br /><br />
+	(B) A notary who ceases to reside in this State, or who becomes permanently unable to perform his notarial duties, shall resign his commission and submit to the Secretary a Change in Status Form indicating the effective date of resignation.<br /><br />
+	(C) A notary who resigns his commission shall destroy or deface all notary seals so that they may not be misused.<br /><br />
+HISTORY: 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-150.</span> Death of notary.<br /><br />
+	If a notary dies during the term of commission, the notary&#39;s personal representative shall:<br /><br />
+	(1) notify the Secretary of State of the death in writing; and<br /><br />
+	(2) as soon as reasonably practicable, destroy or deface all notary seals so that they may not be misused.<br /><br />
+HISTORY: 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-160.</span> Unlawful acts; forfeiture of commission; penalties.<br /><br />
+	(A) Except as otherwise permitted by law, a person who commits one of the following acts is guilty of a misdemeanor:<br /><br />
+	(1) holding one&#39;s self out to the public as a notary if the person does not have a commission;<br /><br />
+	(2) performing a notarial act if the person&#39;s commission has expired or been suspended or restricted; or<br /><br />
+	(3) performing a notarial act before the person had taken the oath of office.<br /><br />
+	(B) A notary is guilty of a misdemeanor if the notary takes:<br /><br />
+	(1) an acknowledgment or administers an oath or affirmation without the principal appearing in person before the notary;<br /><br />
+	(2) a verification or proof without the subscribing witness appearing in person before the notary;<br /><br />
+	(3) an acknowledgment or administers an oath or affirmation without personal knowledge or satisfactory evidence of the identity of the principal;<br /><br />
+	(4) a verification or proof without personal knowledge or satisfactory evidence of the identity of the subscribing witness; or<br /><br />
+	(5) an acknowledgment or a verification or proof or administers an oath or affirmation if the notary knows it is false or fraudulent.<br /><br />
+	(C) It is a misdemeanor for a person to perform notarial acts in this State with the knowledge that he is not commissioned pursuant to this chapter.<br /><br />
+	(D) A person who without authority obtains, uses, conceals, defaces, or destroys the seal or notarial records of a notary is guilty of a misdemeanor.<br /><br />
+	(E) A person who knowingly solicits, coerces, or in a material way influences a notary to commit official misconduct is guilty of aiding and abetting and is subject to the same level of punishment as the notary.<br /><br />
+	(F) The sanctions and remedies of this chapter supplement other sanctions and remedies provided by law.<br /><br />
+	(G) A notary public convicted under the provisions of this section must forfeit his commission and must not be issued another commission. The court in which the notary public is convicted shall notify the Secretary of State within ten days after conviction.<br /><br />
+	(H) A person who violates the provisions of subsections (A), (B), (C), (D), or (E) is guilty of a misdemeanor and, upon conviction, must be fined not more than five hundred dollars or imprisoned for not more than thirty days.<br /><br />
+	(I) The Secretary of State may terminate a notary public&#39;s commission upon notification that the notary public has been charged with an offense listed in this section or may terminate the notary public&#39;s commission at any subsequent point until the final adjudication of the charges. If the Secretary of State terminates a notary public&#39;s commission, then the Secretary of State shall send written notice by certified mail to the notary public at his last known address. A person who has had his notary public commission terminated has thirty days from the receipt of the notice to appeal the termination by filing a request for a contested case hearing with the South Carolina Administrative Law Court.<br /><br />
+HISTORY: 1989 Act No. 94, SECTION 1; former 1976 Code SECTION 26-1-95; 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014; 2021 Act No. 85 (S.631), SECTION 3, eff May 18, 2021.<br /><br />
+Editor&#39;s Note<br /><br />
+	2021 Act No. 85, SECTIONS 1, 6, provide as follows:<br /><br />
+	&quot;SECTION 1. This act must be known and may be cited as the &#39;South Carolina Electronic Notary Public Act&#39;.&quot;<br /><br />
+	&quot;SECTION 6. This act takes effect upon approval by the Governor. Electronic online notary public applications will not be accepted for processing until the administrative rules are in effect and vendors of technology are approved by the Secretary of State.&quot;<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 185, SECTION 1, rewrote the section.<br /><br />
+	2021 Act No. 85, SECTION 3, added (I).<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-170.</span> Criminal jurisdiction.<br /><br />
+	A notary public has no power or jurisdiction in criminal cases.<br /><br />
+HISTORY: 1962 Code SECTION 49-9; 1952 Code SECTION 49-9; 1942 Code SECTION 3464; 1932 Code SECTION 3464; Civ. C. &#39;22 SECTION 822; Civ. C. &#39;12 SECTION 737; Civ. C. &#39;02 SECTION 666; G. S. 524; R. S. 582, 829; 829 (6) 387; former 1976 Code SECTION 26-1-100; 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 185, SECTION 1, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-180.</span> Attorney at law; exercise of powers as notary.<br /><br />
+	An attorney at law who is a notary public may exercise all his powers as a notary, notwithstanding the fact that he may be interested as counsel or attorney at law in a matter with respect to which he may exercise the power, and may probate in any court in this State in which he may be counsel.<br /><br />
+HISTORY: 1962 Code SECTION 49-10; 1952 Code SECTION 49-10; 1942 Code SECTION 3463; 1932 Code SECTION 3463; Civ. C. &#39;22 SECTION 821; Civ. C. &#39;12 SECTION 736; Civ. C. &#39;02 SECTION 665; G. S. 523; R. S. 581; 1871 (15) 538; 1911 (27) 139; 1927 (35) 43; 1938 (40) 1559; former 1976 Code SECTION 26-1-110; 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 185, SECTION 1, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-190.</span> Notary as stockholder, director, officer or employee of corporation; exercise of powers.<br /><br />
+	A notary public who is a stockholder, director, officer, or employee of a corporation may perform a notarial act for that corporation, unless the notary public is individually a party to the instrument or record that is the subject of the notarial act.<br /><br />
+HISTORY: 1962 Code SECTION 49-11; 1952 Code SECTION 49-11; 1942 Code SECTION 3463; 1932 Code SECTION 3463; Civ. C. &#39;22 SECTION 821; Civ. C. &#39;12 SECTION 736; Civ. C. &#39;02 SECTION 665; G. S. 523; R. S. 581; 1871 (15) 538; 1911 (27) 139; 1927 (35) 43; 1938 (40) 1559; former 1976 Code SECTION 26-1-120; 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+Effect of Amendment<br /><br />
+	2014 Act No. 185, SECTION 1, rewrote the section.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-200.</span> Notarized document sent to another state or nation.<br /><br />
+	On a notarized document sent to another state or nation, evidence of the authenticity of the official seal and signature of a notary of this State, if required, shall be in the form of:<br /><br />
+	(1) a certificate of authority from the Secretary of State or designated local official, authenticated as necessary by additional certificates from the United States or foreign government agencies; or<br /><br />
+	(2) in the case of a notarized document to be used in a nation that has signed and ratified the Hague Convention Abolishing the Requirement of Legalization for Foreign Public Documents of October 5, 1961, an Apostille from the federally designated official in the form prescribed by the Convention, with no additional authenticating certificates required.<br /><br />
+HISTORY: 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-210.</span> Certificate of authority.<br /><br />
+	A certificate of authority evidencing the authenticity of the official seal and signature of a notary of this State shall be substantially in the following form:<br /><br />
+	&quot;Certificate of Authority for Notarial Act<br /><br />
+	I, ____________(name of Secretary of State), South Carolina Secretary of State, certify that ____________ (name of notary), the person named in the seal and signature on the attached document, was a Notary Public for the State of South Carolina and authorized to act as such at the time of the document&#39;s notarization.<br /><br />
+	To verify this Certificate of Authority for a Notarial Act, I have affixed below my signature and seal of office this _____ day of_________, 20___.&quot;<br /><br />
+	(Signature and seal of commissioning official)<br /><br />
+HISTORY: 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-220.</span> Fee for issuing certificate of authority or Apostille.<br /><br />
+	The Secretary of State may charge a reasonable fee for issuing a certificate of authority or an Apostille.<br /><br />
+HISTORY: 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-230.</span> Issuance of certificate of authority or Apostille.<br /><br />
+	(A) The Secretary shall not issue a certificate of authority or an Apostille for a document if the Secretary has cause to believe that the certificate is desired for an unlawful or improper purpose. The Secretary may examine not only the document for which a certificate is requested, but also any documents to which the previous seals or other certifications may have been affixed by other authorities. The Secretary may request any additional information that may be necessary to establish that the requested certificate will serve the interests of justice and is not contrary to public policy, including a certified or notarized English translation of document text in a foreign language.<br /><br />
+	(B) The Secretary shall not issue a certificate of authority or an Apostille if:<br /><br />
+	(1) a seal or signature cannot be authenticated by either the Secretary or another official;<br /><br />
+	(2) the seal or signature is of a foreign official; or<br /><br />
+	(3) the document is a facsimile, photocopy, photographic, or other reproduction of a signature or seal.<br /><br />
+	(C) The Secretary may not include within the certificate of authority or Apostille any statement that is not within the Secretary&#39;s power or knowledge to authenticate. The Secretary may not certify that a document has been executed or certified in accordance with the law of any particular jurisdiction or that a document is a valid document in a particular jurisdiction.<br /><br />
+HISTORY: 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+<span style="font-weight: bold;"> SECTION 26-1-240.</span> Act not to contradict requirements of Section 62-2-503.<br /><br />
+	Nothing in this act shall be construed to contradict the requirements of Section 62-2-503.<br /><br />
+HISTORY: 2014 Act No. 185 (S.356), SECTION 1, eff June 2, 2014.<br /><br />
+
+</div>
+
+
+					</div>		 <!-- mainwidepanel -->
+					
+				</div>		 <!-- pagebody -->
+				
+				<div id="footer" class="nodisplay" style="height: 30px;" onContextMenu="return false;">
+			<div id="footerdiv" style="margin:0;">
+				South Carolina Legislative Services Agency * 223 Blatt Building * 1105 Pendleton Street * Columbia, SC 29201<!-- * 803-212-4420--><br>
+				
+								<a href="/disclaimer.php">Disclaimer</a> * <a href="/policies.php">Policies</a> * <a href="/credits.php">Photo Credits</a> * <a href="/contact.php">Contact Us</a>
+							</div>
+		</div>
+		<div id="printfooter" class="printdisplay serifNormal" align=center style="font-size: 8pt;">
+			<br>
+			<br>
+			<hr>
+			Legislative Services Agency
+			<br>
+			h t t p : / / w w w . s c s t a t e h o u s e . g o v
+		</div>
+	
+		</div>	<!-- container or main in mobile page-->
+</body>
+</html>
+

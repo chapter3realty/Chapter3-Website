@@ -1,0 +1,614 @@
+{
+ "source": "https://www.fema.gov/api/open/v3/NfipPolicies",
+ "filter": "startswith(censusGeoid,'45051') and policyEffectiveDate ge '2025-09-01' and policyEffectiveDate lt '2026-09-01'",
+ "pulled": "2026-11-02T04:56:23.454Z",
+ "records": 21274,
+ "asOfDate": "2026-09-08T00:00:00.000Z",
+ "rule": "What a flood policy costs in Horry County, by ZIP area and flood zone, from OpenFEMA NfipPolicies v3.\nInput: PRIVATE/nfip-policies-horry-2025-26.json, the pull made for /buyers/common-mistakes/\n(https://www.fema.gov/api/open/v3/NfipPolicies, filter startswith(censusGeoid,'45051'), policies effective 2025-09-01 to 2026-08-31).\npolicyCost = premium + reserve fund assessment + federal policy fee + HFIAA surcharge (FEMA's definition): what the owner pays.\nHouses: occupancyType 1 or 11, condominiumCoverageTypeCode N or empty. Condo units: condominiumCoverageTypeCode U (a unit owner's own policy).\nOne-year policies only (policyTermIndicator 1). Zone groups from ratedFloodZone: A* high risk, V* coastal high hazard, X/B/C moderate or low.\nRun: PRIVATE=<dir> python3 -I analyze_flood.py <datadir>. Writes flood-by-area.json.",
+ "county": {
+  "house|lived in": {
+   "all_zones": {
+    "n": 14098,
+    "median": 585.0,
+    "p25": 489,
+    "p75": 822
+   },
+   "A": {
+    "n": 2603,
+    "median": 1074,
+    "p25": 789,
+    "p75": 1409
+   },
+   "V": {
+    "n": 42,
+    "median": 2641.5,
+    "p25": 1697,
+    "p75": 3878
+   },
+   "X": {
+    "n": 11453,
+    "median": 551,
+    "p25": 472,
+    "p75": 679
+   },
+   "share_in_A_or_V": 0.188
+  },
+  "house|not lived in": {
+   "all_zones": {
+    "n": 3414,
+    "median": 1131.5,
+    "p25": 762,
+    "p75": 1600
+   },
+   "A": {
+    "n": 1884,
+    "median": 1372.0,
+    "p25": 1058,
+    "p75": 2402
+   },
+   "V": {
+    "n": 99,
+    "median": 3327,
+    "p25": 1465,
+    "p75": 4860
+   },
+   "X": {
+    "n": 1431,
+    "median": 790,
+    "p25": 689,
+    "p75": 1038
+   },
+   "share_in_A_or_V": 0.581
+  },
+  "house|all": {
+   "all_zones": {
+    "n": 17512,
+    "median": 644.0,
+    "p25": 511,
+    "p75": 999
+   },
+   "A": {
+    "n": 4487,
+    "median": 1184,
+    "p25": 872,
+    "p75": 1744
+   },
+   "V": {
+    "n": 141,
+    "median": 3235,
+    "p25": 1482,
+    "p75": 4676
+   },
+   "X": {
+    "n": 12884,
+    "median": 571.0,
+    "p25": 483,
+    "p75": 729
+   },
+   "share_in_A_or_V": 0.264
+  },
+  "condo_unit|lived in": {
+   "all_zones": {
+    "n": 633,
+    "median": 381,
+    "p25": 343,
+    "p75": 444
+   },
+   "A": {
+    "n": 87,
+    "median": 461,
+    "p25": 384,
+    "p75": 727
+   },
+   "V": {
+    "n": 8,
+    "median": 595.0,
+    "p25": 524,
+    "p75": 660
+   },
+   "X": {
+    "n": 538,
+    "median": 375.0,
+    "p25": 340,
+    "p75": 424
+   },
+   "share_in_A_or_V": 0.15
+  },
+  "condo_unit|not lived in": {
+   "all_zones": {
+    "n": 445,
+    "median": 640,
+    "p25": 578,
+    "p75": 817
+   },
+   "A": {
+    "n": 148,
+    "median": 830.0,
+    "p25": 647,
+    "p75": 1216
+   },
+   "V": {
+    "n": 28,
+    "median": 781.5,
+    "p25": 711,
+    "p75": 1208
+   },
+   "X": {
+    "n": 269,
+    "median": 603,
+    "p25": 559,
+    "p75": 673
+   },
+   "share_in_A_or_V": 0.396
+  },
+  "condo_unit|all": {
+   "all_zones": {
+    "n": 1078,
+    "median": 494.0,
+    "p25": 369,
+    "p75": 642
+   },
+   "A": {
+    "n": 235,
+    "median": 721,
+    "p25": 541,
+    "p75": 1005
+   },
+   "V": {
+    "n": 36,
+    "median": 740.0,
+    "p25": 622,
+    "p75": 954
+   },
+   "X": {
+    "n": 807,
+    "median": 421,
+    "p25": 355,
+    "p75": 578
+   },
+   "share_in_A_or_V": 0.251
+  }
+ },
+ "areas": {
+  "29579": {
+   "name": "Carolina Forest",
+   "house_lived_in": {
+    "all_zones": {
+     "n": 1535,
+     "median": 635,
+     "p25": 539,
+     "p75": 808
+    },
+    "A": {
+     "n": 275,
+     "median": 885,
+     "p25": 741,
+     "p75": 1084
+    },
+    "X": {
+     "n": 1260,
+     "median": 605.0,
+     "p25": 527,
+     "p75": 736
+    },
+    "share_rated_A_or_V": 0.179
+   },
+   "house_not_lived_in": {
+    "all_zones": {
+     "n": 163,
+     "median": 820,
+     "p25": 745,
+     "p75": 963
+    }
+   },
+   "condo_unit": {
+    "all_zones": {
+     "n": 81,
+     "median": 445,
+     "p25": 378,
+     "p75": 565
+    }
+   }
+  },
+  "29588": {
+   "name": "Socastee",
+   "house_lived_in": {
+    "all_zones": {
+     "n": 2029,
+     "median": 603,
+     "p25": 520,
+     "p75": 847
+    },
+    "A": {
+     "n": 385,
+     "median": 1041,
+     "p25": 694,
+     "p75": 1270
+    },
+    "X": {
+     "n": 1644,
+     "median": 580.0,
+     "p25": 513,
+     "p75": 730
+    },
+    "share_rated_A_or_V": 0.19
+   },
+   "house_not_lived_in": {
+    "all_zones": {
+     "n": 158,
+     "median": 868.5,
+     "p25": 744,
+     "p75": 1229
+    }
+   },
+   "condo_unit": {
+    "all_zones": {
+     "n": 80,
+     "median": 416.5,
+     "p25": 352,
+     "p75": 554
+    }
+   }
+  },
+  "29577": {
+   "name": "Myrtle Beach (central and south)",
+   "house_lived_in": {
+    "all_zones": {
+     "n": 1498,
+     "median": 590.0,
+     "p25": 515,
+     "p75": 769
+    },
+    "A": {
+     "n": 256,
+     "median": 881.5,
+     "p25": 720,
+     "p75": 1097
+    },
+    "X": {
+     "n": 1239,
+     "median": 568,
+     "p25": 500,
+     "p75": 670
+    },
+    "share_rated_A_or_V": 0.173
+   },
+   "house_not_lived_in": {
+    "all_zones": {
+     "n": 314,
+     "median": 839.5,
+     "p25": 724,
+     "p75": 1204
+    }
+   },
+   "condo_unit": {
+    "all_zones": {
+     "n": 160,
+     "median": 489.0,
+     "p25": 387,
+     "p75": 612
+    }
+   }
+  },
+  "29572": {
+   "name": "Myrtle Beach (north end)",
+   "house_lived_in": {
+    "all_zones": {
+     "n": 676,
+     "median": 522.0,
+     "p25": 439,
+     "p75": 767
+    },
+    "A": {
+     "n": 44,
+     "median": 1074.5,
+     "p25": 873,
+     "p75": 2013
+    },
+    "X": {
+     "n": 628,
+     "median": 507.0,
+     "p25": 435,
+     "p75": 693
+    },
+    "share_rated_A_or_V": 0.071
+   },
+   "house_not_lived_in": {
+    "all_zones": {
+     "n": 143,
+     "median": 909,
+     "p25": 675,
+     "p75": 1301
+    }
+   },
+   "condo_unit": {
+    "all_zones": {
+     "n": 126,
+     "median": 656.0,
+     "p25": 524,
+     "p75": 800
+    }
+   }
+  },
+  "29575": {
+   "name": "Surfside Beach",
+   "house_lived_in": {
+    "all_zones": {
+     "n": 1376,
+     "median": 517.0,
+     "p25": 446,
+     "p75": 734
+    },
+    "A": {
+     "n": 213,
+     "median": 1160,
+     "p25": 966,
+     "p75": 1820
+    },
+    "X": {
+     "n": 1161,
+     "median": 496,
+     "p25": 435,
+     "p75": 585
+    },
+    "share_rated_A_or_V": 0.156
+   },
+   "house_not_lived_in": {
+    "all_zones": {
+     "n": 763,
+     "median": 1127,
+     "p25": 705,
+     "p75": 1495
+    }
+   },
+   "condo_unit": {
+    "all_zones": {
+     "n": 115,
+     "median": 398,
+     "p25": 334,
+     "p75": 585
+    }
+   }
+  },
+  "29576": {
+   "name": "Murrells Inlet and Garden City",
+   "house_lived_in": {
+    "all_zones": {
+     "n": 1691,
+     "median": 605,
+     "p25": 515,
+     "p75": 904
+    },
+    "A": {
+     "n": 247,
+     "median": 1230,
+     "p25": 1034,
+     "p75": 2020
+    },
+    "X": {
+     "n": 1432,
+     "median": 573.0,
+     "p25": 502,
+     "p75": 716
+    },
+    "share_rated_A_or_V": 0.153
+   },
+   "house_not_lived_in": {
+    "all_zones": {
+     "n": 329,
+     "median": 1465,
+     "p25": 960,
+     "p75": 3680
+    }
+   },
+   "condo_unit": {
+    "all_zones": {
+     "n": 155,
+     "median": 411,
+     "p25": 366,
+     "p75": 584
+    }
+   }
+  },
+  "29582": {
+   "name": "North Myrtle Beach",
+   "house_lived_in": {
+    "all_zones": {
+     "n": 1449,
+     "median": 693,
+     "p25": 480,
+     "p75": 1160
+    },
+    "A": {
+     "n": 480,
+     "median": 1354.0,
+     "p25": 1028,
+     "p75": 2569
+    },
+    "X": {
+     "n": 948,
+     "median": 524.5,
+     "p25": 433,
+     "p75": 702
+    },
+    "share_rated_A_or_V": 0.346
+   },
+   "house_not_lived_in": {
+    "all_zones": {
+     "n": 1213,
+     "median": 1359,
+     "p25": 953,
+     "p75": 2468
+    }
+   },
+   "condo_unit": {
+    "all_zones": {
+     "n": 223,
+     "median": 616,
+     "p25": 453,
+     "p75": 796
+    }
+   }
+  },
+  "29566": {
+   "name": "Little River",
+   "house_lived_in": {
+    "all_zones": {
+     "n": 1040,
+     "median": 493.0,
+     "p25": 421,
+     "p75": 680
+    },
+    "A": {
+     "n": 168,
+     "median": 1248.5,
+     "p25": 1037,
+     "p75": 1672
+    },
+    "X": {
+     "n": 872,
+     "median": 466.0,
+     "p25": 406,
+     "p75": 553
+    },
+    "share_rated_A_or_V": 0.162
+   },
+   "house_not_lived_in": {
+    "all_zones": {
+     "n": 97,
+     "median": 858,
+     "p25": 722,
+     "p75": 1342
+    }
+   },
+   "condo_unit": {
+    "all_zones": {
+     "n": 75,
+     "median": 460,
+     "p25": 354,
+     "p75": 612
+    }
+   }
+  },
+  "29568": {
+   "name": "Longs",
+   "house_lived_in": {
+    "all_zones": {
+     "n": 1092,
+     "median": 532.0,
+     "p25": 480,
+     "p75": 601
+    },
+    "A": {
+     "n": 100,
+     "median": 577.5,
+     "p25": 513,
+     "p75": 655
+    },
+    "X": {
+     "n": 992,
+     "median": 529.0,
+     "p25": 477,
+     "p75": 596
+    },
+    "share_rated_A_or_V": 0.092
+   },
+   "house_not_lived_in": {
+    "all_zones": {
+     "n": 61,
+     "median": 769,
+     "p25": 693,
+     "p75": 845
+    }
+   },
+   "condo_unit": {
+    "all_zones": {
+     "n": 52,
+     "median": 368.0,
+     "p25": 336,
+     "p75": 393
+    }
+   }
+  },
+  "29526": {
+   "name": "Conway (29526)",
+   "house_lived_in": {
+    "all_zones": {
+     "n": 1198,
+     "median": 604.0,
+     "p25": 459,
+     "p75": 891
+    },
+    "A": {
+     "n": 283,
+     "median": 978,
+     "p25": 708,
+     "p75": 1227
+    },
+    "X": {
+     "n": 915,
+     "median": 549,
+     "p25": 431,
+     "p75": 713
+    },
+    "share_rated_A_or_V": 0.236
+   },
+   "house_not_lived_in": {
+    "all_zones": {
+     "n": 104,
+     "median": 888.5,
+     "p25": 702,
+     "p75": 1169
+    }
+   },
+   "condo_unit": {
+    "all_zones": {
+     "n": 9,
+     "median": 355,
+     "p25": 339,
+     "p75": 418
+    }
+   }
+  },
+  "29527": {
+   "name": "Conway (29527)",
+   "house_lived_in": {
+    "all_zones": {
+     "n": 298,
+     "median": 762.0,
+     "p25": 574,
+     "p75": 1086
+    },
+    "A": {
+     "n": 109,
+     "median": 975,
+     "p25": 752,
+     "p75": 1167
+    },
+    "X": {
+     "n": 189,
+     "median": 667,
+     "p25": 531,
+     "p75": 1022
+    },
+    "share_rated_A_or_V": 0.366
+   },
+   "house_not_lived_in": {
+    "all_zones": {
+     "n": 38,
+     "median": 902.0,
+     "p25": 769,
+     "p75": 1116
+    }
+   },
+   "condo_unit": {
+    "all_zones": {
+     "n": 1,
+     "median": 633,
+     "p25": 633,
+     "p75": 633
+    }
+   }
+  }
+ }
+}

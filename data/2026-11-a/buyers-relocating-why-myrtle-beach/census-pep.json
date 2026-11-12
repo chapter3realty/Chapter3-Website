@@ -1,0 +1,161 @@
+{
+ "source": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/totals/co-est2025-alldata.csv",
+ "county": "Horry County",
+ "base2020": 351036,
+ "pop": {
+  "2020": 353774,
+  "2021": 366100,
+  "2022": 383626,
+  "2023": 398699,
+  "2024": 414307,
+  "2025": 427551
+ },
+ "components": {
+  "BIRTHS": {
+   "2021": 3093,
+   "2022": 3297,
+   "2023": 3286,
+   "2024": 3354,
+   "2025": 3383,
+   "sum_2021_2025": 16413
+  },
+  "DEATHS": {
+   "2021": 5112,
+   "2022": 5372,
+   "2023": 5040,
+   "2024": 5086,
+   "2025": 5184,
+   "sum_2021_2025": 25794
+  },
+  "NATURALCHG": {
+   "2021": -2019,
+   "2022": -2075,
+   "2023": -1754,
+   "2024": -1732,
+   "2025": -1801,
+   "sum_2021_2025": -9381
+  },
+  "INTERNATIONALMIG": {
+   "2021": 249,
+   "2022": 1426,
+   "2023": 1727,
+   "2024": 2759,
+   "2025": 861,
+   "sum_2021_2025": 7022
+  },
+  "DOMESTICMIG": {
+   "2021": 15130,
+   "2022": 16981,
+   "2023": 14554,
+   "2024": 14186,
+   "2025": 14222,
+   "sum_2021_2025": 75073
+  },
+  "NETMIG": {
+   "2021": 15379,
+   "2022": 18407,
+   "2023": 16281,
+   "2024": 16945,
+   "2025": 15083,
+   "sum_2021_2025": 82095
+  },
+  "RESIDUAL": {
+   "2021": -1034,
+   "2022": 1194,
+   "2023": 546,
+   "2024": 395,
+   "2025": -38,
+   "sum_2021_2025": 1063
+  },
+  "NPOPCHG_": {
+   "sum_2021_2025": 0
+  }
+ },
+ "pct_change_2020_2025": 21.8,
+ "metro": {
+  "pct_2024_2025": {
+   "rank": 2,
+   "of": 387,
+   "value_pct": 3.2,
+   "top5": [
+    [
+     "Ocala, FL",
+     3.43
+    ],
+    [
+     "Myrtle Beach-Conway-North Myrtle Beach, SC",
+     3.2
+    ],
+    [
+     "Spartanburg, SC",
+     2.75
+    ],
+    [
+     "Lakeland-Winter Haven, FL",
+     2.74
+    ],
+    [
+     "Punta Gorda, FL",
+     2.72
+    ]
+   ]
+  },
+  "pct_2020_2025": {
+   "rank": 1,
+   "of": 387,
+   "value_pct": 21.8,
+   "top5": [
+    [
+     "Myrtle Beach-Conway-North Myrtle Beach, SC",
+     21.8
+    ],
+    [
+     "Wildwood-The Villages, FL",
+     21.6
+    ],
+    [
+     "Lakeland-Winter Haven, FL",
+     20.65
+    ],
+    [
+     "St. George, UT",
+     18.52
+    ],
+    [
+     "Ocala, FL",
+     17.76
+    ]
+   ]
+  },
+  "domestic_mig_rate_2020_2025": {
+   "rank": 2,
+   "of": 387,
+   "value_pct": 21.39,
+   "top5": [
+    [
+     "Wildwood-The Villages, FL",
+     28.46
+    ],
+    [
+     "Myrtle Beach-Conway-North Myrtle Beach, SC",
+     21.39
+    ],
+    [
+     "Punta Gorda, FL",
+     19.85
+    ],
+    [
+     "Ocala, FL",
+     18.94
+    ],
+    [
+     "Homosassa Springs, FL",
+     17.81
+    ]
+   ]
+  },
+  "name": "Myrtle Beach-Conway-North Myrtle Beach, SC",
+  "base2020": 351036,
+  "pop2025": 427551
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "INSP": {
+  "rest_of_sc": {
+   "median": 1400,
+   "moe90": 0,
+   "records": 12500
+  },
+  "horry": {
+   "median": 2000,
+   "moe90": 201,
+   "records": 783
+  }
+ },
+ "ELEP": {
+  "rest_of_sc": {
+   "median": 190,
+   "moe90": 0,
+   "records": 13991
+  },
+  "horry": {
+   "median": 150,
+   "moe90": 12,
+   "records": 850
+  }
+ },
+ "SMOCP_no_mortgage": {
+  "rest_of_sc": {
+   "median": 504,
+   "moe90": 8,
+   "records": 6256
+  },
+  "horry": {
+   "median": 555,
+   "moe90": 33,
+   "records": 372
+  }
+ }
+}

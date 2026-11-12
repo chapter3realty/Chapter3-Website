@@ -1,0 +1,181 @@
+{
+ "title": "Association papers filed at the Horry County Register of Deeds, by year (our count of the county index)",
+ "note": "RESTRICTIONS (082) rows kept by analyze_recorded.py. 2026 runs to October. January 10 is the yearly recording deadline for rules (SC Code 27-30-130).",
+ "source": "https://acclaimweb.horrycounty.org/AcclaimWeb/search/SearchTypeDocType (RESTRICTIONS 082; AMENDMENT DEED BOOK 069)",
+ "rows": [
+  {
+   "year": 2012,
+   "rules_and_policies": 0,
+   "amendments": 0,
+   "declarations": 24,
+   "bylaws": 5,
+   "all": 29,
+   "january": 0,
+   "partial": false
+  },
+  {
+   "year": 2013,
+   "rules_and_policies": 0,
+   "amendments": 1,
+   "declarations": 39,
+   "bylaws": 5,
+   "all": 45,
+   "january": 5,
+   "partial": false
+  },
+  {
+   "year": 2014,
+   "rules_and_policies": 1,
+   "amendments": 1,
+   "declarations": 36,
+   "bylaws": 8,
+   "all": 46,
+   "january": 4,
+   "partial": false
+  },
+  {
+   "year": 2015,
+   "rules_and_policies": 0,
+   "amendments": 2,
+   "declarations": 44,
+   "bylaws": 0,
+   "all": 46,
+   "january": 2,
+   "partial": false
+  },
+  {
+   "year": 2016,
+   "rules_and_policies": 0,
+   "amendments": 3,
+   "declarations": 42,
+   "bylaws": 4,
+   "all": 49,
+   "january": 3,
+   "partial": false
+  },
+  {
+   "year": 2017,
+   "rules_and_policies": 0,
+   "amendments": 2,
+   "declarations": 55,
+   "bylaws": 0,
+   "all": 57,
+   "january": 2,
+   "partial": false
+  },
+  {
+   "year": 2018,
+   "rules_and_policies": 246,
+   "amendments": 9,
+   "declarations": 77,
+   "bylaws": 8,
+   "all": 340,
+   "january": 8,
+   "partial": false
+  },
+  {
+   "year": 2019,
+   "rules_and_policies": 720,
+   "amendments": 15,
+   "declarations": 101,
+   "bylaws": 25,
+   "all": 861,
+   "january": 554,
+   "partial": false
+  },
+  {
+   "year": 2020,
+   "rules_and_policies": 279,
+   "amendments": 21,
+   "declarations": 73,
+   "bylaws": 18,
+   "all": 391,
+   "january": 95,
+   "partial": false
+  },
+  {
+   "year": 2021,
+   "rules_and_policies": 295,
+   "amendments": 82,
+   "declarations": 90,
+   "bylaws": 10,
+   "all": 477,
+   "january": 58,
+   "partial": false
+  },
+  {
+   "year": 2022,
+   "rules_and_policies": 273,
+   "amendments": 126,
+   "declarations": 124,
+   "bylaws": 35,
+   "all": 558,
+   "january": 100,
+   "partial": false
+  },
+  {
+   "year": 2023,
+   "rules_and_policies": 308,
+   "amendments": 126,
+   "declarations": 130,
+   "bylaws": 34,
+   "all": 598,
+   "january": 92,
+   "partial": false
+  },
+  {
+   "year": 2024,
+   "rules_and_policies": 353,
+   "amendments": 128,
+   "declarations": 137,
+   "bylaws": 35,
+   "all": 653,
+   "january": 100,
+   "partial": false
+  },
+  {
+   "year": 2025,
+   "rules_and_policies": 443,
+   "amendments": 149,
+   "declarations": 179,
+   "bylaws": 20,
+   "all": 791,
+   "january": 163,
+   "partial": false
+  },
+  {
+   "year": 2026,
+   "rules_and_policies": 317,
+   "amendments": 126,
+   "declarations": 103,
+   "bylaws": 15,
+   "all": 561,
+   "january": 104,
+   "partial": true
+  }
+ ],
+ "last_12_months": {
+  "rules and policies": 403,
+  "all": 716,
+  "amendment": 160,
+  "declaration": 135,
+  "bylaws": 18,
+  "amendment (amendment deed book)": 62
+ },
+ "filers_last_12_months": 362,
+ "months_2018_2019": {
+  "2018-06": 3,
+  "2018-07": 5,
+  "2018-08": 2,
+  "2018-09": 10,
+  "2018-10": 28,
+  "2018-11": 90,
+  "2018-12": 172,
+  "2019-01": 554,
+  "2019-02": 31,
+  "2019-03": 34,
+  "2019-04": 23,
+  "2019-05": 37,
+  "2019-06": 26
+ }
+}

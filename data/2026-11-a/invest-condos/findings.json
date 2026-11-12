@@ -1,0 +1,234 @@
+{
+ "made": "analyze.py",
+ "sources": {
+  "parcels": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query where LegalDescr LIKE '%HPR%' AND LandUseCode LIKE '1%' AND MarketImprv > 0 (read 2026-11-02)",
+  "deeds": "Horry County AcclaimWeb DEED (001), recorded 2025-10-01 to 2026-09-30, batch 2026-10-d pull and filters",
+  "flood": "Horry County GIS layer 19 'Flood Zones' (FEMA flood map), point query at each sale's parcel point"
+ },
+ "stock": {
+  "units": 40963,
+  "regimes_by_legal_name": 1480,
+  "units_4pct": 8797,
+  "pct_4pct": 21.5,
+  "units_mailing_outside_sc": 23653,
+  "pct_mailing_outside_sc": 57.7,
+  "median_county_market_value": 250000.0,
+  "other_homes": {
+   "homes": 186037,
+   "homes_4pct": 115633,
+   "pct_4pct": 62.2
+  },
+  "by_area": {
+   "City of Myrtle Beach": {
+    "units": 11880,
+    "pct_4pct": 8.9,
+    "pct_mailing_outside_sc": 69.4,
+    "median_county_market_value": 229900.0
+   },
+   "Conway": {
+    "units": 365,
+    "pct_4pct": 15.3,
+    "pct_mailing_outside_sc": 56.7,
+    "median_county_market_value": 194900.0
+   },
+   "North Myrtle Beach": {
+    "units": 11674,
+    "pct_4pct": 16.6,
+    "pct_mailing_outside_sc": 66.3,
+    "median_county_market_value": 360000.0
+   },
+   "Outside city limits and other towns": {
+    "units": 16801,
+    "pct_4pct": 34.1,
+    "pct_mailing_outside_sc": 43.7,
+    "median_county_market_value": 224500.0
+   },
+   "Surfside Beach": {
+    "units": 243,
+    "pct_4pct": 12.3,
+    "pct_mailing_outside_sc": 49.0,
+    "median_county_market_value": 450000.0
+   }
+  },
+  "units_per_regime": {
+   "median": 8.0,
+   "regimes_100_plus": 104,
+   "units_in_regimes_100_plus": 20183
+  }
+ },
+ "sales": {
+  "condo": {
+   "sales": 2612,
+   "median_price": 224000.0,
+   "quartiles": [
+    155000,
+    224000,
+    325000
+   ],
+   "builder_sales": 134,
+   "matched_owner": 2398,
+   "pct_buyer_mailing_outside_sc": 54.5,
+   "under_200k": 1070,
+   "pct_under_200k": 41.0
+  },
+  "other": {
+   "sales": 10582,
+   "median_price": 326000.0,
+   "quartiles": [
+    246225,
+    326000,
+    450000
+   ],
+   "builder_sales": 2013,
+   "matched_owner": 9722,
+   "pct_buyer_mailing_outside_sc": 23.6,
+   "under_200k": 1554,
+   "pct_under_200k": 14.7
+  },
+  "condo_by_area": {
+   "Outside city limits and other towns": {
+    "sales": 1173,
+    "median_price": 200000.0
+   },
+   "Conway": {
+    "sales": 26,
+    "median_price": 194500.0
+   },
+   "City of Myrtle Beach": {
+    "sales": 704,
+    "median_price": 174750.0
+   },
+   "North Myrtle Beach": {
+    "sales": 694,
+    "median_price": 340000.0
+   },
+   "Surfside Beach": {
+    "sales": 15,
+    "median_price": 530000.0
+   }
+  },
+  "top_regimes_by_recorded_sales": [
+   {
+    "legal_name": "TIDES/DRIFTWD/OASIS HPR",
+    "sales": 64,
+    "units_in_regime": 271,
+    "pct_of_units_sold": 23.6,
+    "median_price": 53000.0,
+    "builder_sales": 0
+   },
+   {
+    "legal_name": "MAGNOLIA POINTE HPR",
+    "sales": 54,
+    "units_in_regime": 979,
+    "pct_of_units_sold": 5.5,
+    "median_price": 248500.0,
+    "builder_sales": 0
+   },
+   {
+    "legal_name": "CORAL BEACH HPR",
+    "sales": 40,
+    "units_in_regime": 295,
+    "pct_of_units_sold": 13.6,
+    "median_price": 86000.0,
+    "builder_sales": 0
+   },
+   {
+    "legal_name": "BLUE HERON RETREAT TOWNHOMES HPR",
+    "sales": 37,
+    "units_in_regime": 226,
+    "pct_of_units_sold": 16.4,
+    "median_price": 237490.0,
+    "builder_sales": 35
+   },
+   {
+    "legal_name": "BAYWATCH RESORT HPR",
+    "sales": 35,
+    "units_in_regime": 531,
+    "pct_of_units_sold": 6.6,
+    "median_price": 265000.0,
+    "builder_sales": 0
+   },
+   {
+    "legal_name": "CARAVELLE RESORT HPR",
+    "sales": 28,
+    "units_in_regime": 348,
+    "pct_of_units_sold": 8.0,
+    "median_price": 144500.0,
+    "builder_sales": 0
+   },
+   {
+    "legal_name": "LANDMARK HPR PH I",
+    "sales": 28,
+    "units_in_regime": 339,
+    "pct_of_units_sold": 8.3,
+    "median_price": 119950.0,
+    "builder_sales": 0
+   },
+   {
+    "legal_name": "LANDMARK HPR PH II",
+    "sales": 27,
+    "units_in_regime": 231,
+    "pct_of_units_sold": 11.7,
+    "median_price": 73500.0,
+    "builder_sales": 1
+   },
+   {
+    "legal_name": "HILL STREET PARK VILLAS HPR",
+    "sales": 26,
+    "units_in_regime": 35,
+    "pct_of_units_sold": 74.3,
+    "median_price": 397810.5,
+    "builder_sales": 25
+   },
+   {
+    "legal_name": "PINNACLE OCEANFRT TOWER",
+    "sales": 25,
+    "units_in_regime": 290,
+    "pct_of_units_sold": 8.6,
+    "median_price": 150000.0,
+    "builder_sales": 0
+   },
+   {
+    "legal_name": "MAGNOLIA NORTH HPR",
+    "sales": 25,
+    "units_in_regime": 243,
+    "pct_of_units_sold": 10.3,
+    "median_price": 180000.0,
+    "builder_sales": 0
+   },
+   {
+    "legal_name": "WINDSOR GREEN HPR",
+    "sales": 23,
+    "units_in_regime": 257,
+    "pct_of_units_sold": 8.9,
+    "median_price": 163500.0,
+    "builder_sales": 0
+   }
+  ],
+  "regimes_with_a_sale": 662
+ },
+ "flood_condo_sales": {
+  "sales_with_zone": 2439,
+  "by_zone": {
+   "no zone mapped": 1545,
+   "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 503,
+   "AE": 349,
+   "None": 173,
+   "VE": 42
+  },
+  "pct_VE": 1.7,
+  "pct_AE": 14.3,
+  "pct_high_risk": 16.0
+ },
+ "flood_other_sales": {
+  "sales_with_zone": 5985,
+  "by_zone": {
+   "no zone mapped": 4844,
+   "None": 4597,
+   "AE": 619,
+   "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 487,
+   "VE": 35
+  },
+  "pct_high_risk": 10.9
+ }
+}

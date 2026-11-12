@@ -1,0 +1,449 @@
+{
+ "method": "OSRM public router (router.project-osrm.org), fastest route, free flow, no traffic; minutes = duration / 60; miles by road",
+ "pulled": "2026-11-03",
+ "starts": {
+  "Loris": [
+   -78.8896152,
+   34.0569178
+  ],
+  "Aynor": [
+   -79.2046552,
+   33.9984491
+  ],
+  "Longs": [
+   -78.7330522,
+   33.9385274
+  ],
+  "Little River": [
+   -78.6232583,
+   33.8727006
+  ],
+  "Conway": [
+   -79.047814,
+   33.836003
+  ],
+  "North Myrtle Beach": [
+   -78.6735286,
+   33.8211378
+  ],
+  "Carolina Forest": [
+   -78.9603912,
+   33.7602981
+  ],
+  "Myrtle Beach": [
+   -78.8817437,
+   33.6954656
+  ],
+  "Socastee": [
+   -78.9986488,
+   33.6830012
+  ],
+  "Surfside Beach": [
+   -78.9717534,
+   33.6049921
+  ],
+  "Garden City": [
+   -78.99795,
+   33.5769
+  ],
+  "Murrells Inlet": [
+   -79.03313,
+   33.55595
+  ],
+  "Pawleys Island": [
+   -79.12152664,
+   33.43324962
+  ]
+ },
+ "beach_points": {
+  "Cherry Grove Pier": [
+   -78.6326763,
+   33.8287315
+  ],
+  "Main Street at Ocean Drive, North Myrtle Beach": [
+   -78.6735286,
+   33.8211378
+  ],
+  "Pier 14, Myrtle Beach": [
+   -78.8747973,
+   33.6943277
+  ],
+  "2nd Avenue Pier": [
+   -78.885101,
+   33.6833477
+  ],
+  "Springmaid Pier": [
+   -78.9170387,
+   33.6559793
+  ],
+  "Myrtle Beach State Park": [
+   -78.9311317,
+   33.6505854
+  ],
+  "Surfside Beach Pier": [
+   -78.9717534,
+   33.6049921
+  ],
+  "Garden City Pier": [
+   -78.997404,
+   33.5760849
+  ],
+  "Huntington Beach State Park entrance": [
+   -79.07684,
+   33.50898
+  ],
+  "Pawleys Island Town Hall": [
+   -79.12152664,
+   33.43324962
+  ]
+ },
+ "hospitals": {
+  "Grand Strand Medical Center": [
+   -78.817112511714,
+   33.755257431091
+  ],
+  "Conway Medical Center": [
+   -79.002614020538,
+   33.786530436338
+  ],
+  "Tidelands Waccamaw Community Hospital": [
+   -79.041426323186,
+   33.559617169931
+  ],
+  "McLeod Health Seacoast": [
+   -78.664052374945,
+   33.867110999938
+  ],
+  "McLeod Health Loris": [
+   -78.898104118907,
+   34.057310996535
+  ]
+ },
+ "rows": [
+  {
+   "place": "Loris",
+   "beach": {
+    "to": "Main Street at Ocean Drive, North Myrtle Beach",
+    "minutes": 35.5,
+    "miles": 23.7
+   },
+   "hospital": {
+    "to": "McLeod Health Loris",
+    "minutes": 1.8,
+    "miles": 0.6
+   },
+   "Myrtle Beach boardwalk (Pier 14)": {
+    "minutes": 50.9,
+    "miles": 30.2
+   },
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 56.6,
+    "miles": 34.9
+   },
+   "Coastal Grand Mall": {
+    "minutes": 51.6,
+    "miles": 31.8
+   }
+  },
+  {
+   "place": "Aynor",
+   "beach": {
+    "to": "Pier 14, Myrtle Beach",
+    "minutes": 44.3,
+    "miles": 29.5
+   },
+   "hospital": {
+    "to": "Conway Medical Center",
+    "minutes": 28.7,
+    "miles": 19.8
+   },
+   "Myrtle Beach boardwalk (Pier 14)": {
+    "minutes": 44.3,
+    "miles": 29.5
+   },
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 45.7,
+    "miles": 29.6
+   },
+   "Coastal Grand Mall": {
+    "minutes": 42.9,
+    "miles": 28.3
+   }
+  },
+  {
+   "place": "Longs",
+   "beach": {
+    "to": "Main Street at Ocean Drive, North Myrtle Beach",
+    "minutes": 16.6,
+    "miles": 10.4
+   },
+   "hospital": {
+    "to": "McLeod Health Seacoast",
+    "minutes": 10.3,
+    "miles": 6.6
+   },
+   "Myrtle Beach boardwalk (Pier 14)": {
+    "minutes": 36.6,
+    "miles": 25.1
+   },
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 42.0,
+    "miles": 29.1
+   },
+   "Coastal Grand Mall": {
+    "minutes": 37.0,
+    "miles": 26.0
+   }
+  },
+  {
+   "place": "Little River",
+   "beach": {
+    "to": "Main Street at Ocean Drive, North Myrtle Beach",
+    "minutes": 11.1,
+    "miles": 6.1
+   },
+   "hospital": {
+    "to": "McLeod Health Seacoast",
+    "minutes": 4.8,
+    "miles": 2.5
+   },
+   "Myrtle Beach boardwalk (Pier 14)": {
+    "minutes": 35.8,
+    "miles": 22.8
+   },
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 41.2,
+    "miles": 26.8
+   },
+   "Coastal Grand Mall": {
+    "minutes": 36.2,
+    "miles": 23.7
+   }
+  },
+  {
+   "place": "Conway",
+   "beach": {
+    "to": "Pier 14, Myrtle Beach",
+    "minutes": 25.2,
+    "miles": 15.0
+   },
+   "hospital": {
+    "to": "Conway Medical Center",
+    "minutes": 9.6,
+    "miles": 5.2
+   },
+   "Myrtle Beach boardwalk (Pier 14)": {
+    "minutes": 25.2,
+    "miles": 15.0
+   },
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 26.6,
+    "miles": 15.0
+   },
+   "Coastal Grand Mall": {
+    "minutes": 23.7,
+    "miles": 13.7
+   }
+  },
+  {
+   "place": "North Myrtle Beach",
+   "beach": {
+    "to": "Main Street at Ocean Drive, North Myrtle Beach",
+    "minutes": 0.0,
+    "miles": 0.0
+   },
+   "hospital": {
+    "to": "McLeod Health Seacoast",
+    "minutes": 8.1,
+    "miles": 4.3
+   },
+   "Myrtle Beach boardwalk (Pier 14)": {
+    "minutes": 30.2,
+    "miles": 15.9
+   },
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 35.9,
+    "miles": 20.6
+   },
+   "Coastal Grand Mall": {
+    "minutes": 30.8,
+    "miles": 17.5
+   }
+  },
+  {
+   "place": "Carolina Forest",
+   "beach": {
+    "to": "Pier 14, Myrtle Beach",
+    "minutes": 13.6,
+    "miles": 7.8
+   },
+   "hospital": {
+    "to": "Conway Medical Center",
+    "minutes": 6.0,
+    "miles": 3.7
+   },
+   "Myrtle Beach boardwalk (Pier 14)": {
+    "minutes": 13.6,
+    "miles": 7.8
+   },
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 14.9,
+    "miles": 7.9
+   },
+   "Coastal Grand Mall": {
+    "minutes": 12.1,
+    "miles": 6.5
+   }
+  },
+  {
+   "place": "Myrtle Beach",
+   "beach": {
+    "to": "Pier 14, Myrtle Beach",
+    "minutes": 2.5,
+    "miles": 0.6
+   },
+   "hospital": {
+    "to": "Grand Strand Medical Center",
+    "minutes": 12.8,
+    "miles": 6.3
+   },
+   "Myrtle Beach boardwalk (Pier 14)": {
+    "minutes": 2.5,
+    "miles": 0.6
+   },
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 9.3,
+    "miles": 3.8
+   },
+   "Coastal Grand Mall": {
+    "minutes": 8.1,
+    "miles": 3.0
+   }
+  },
+  {
+   "place": "Socastee",
+   "beach": {
+    "to": "Surfside Beach Pier",
+    "minutes": 13.4,
+    "miles": 7.0
+   },
+   "hospital": {
+    "to": "Tidelands Waccamaw Community Hospital",
+    "minutes": 14.1,
+    "miles": 10.0
+   },
+   "Myrtle Beach boardwalk (Pier 14)": {
+    "minutes": 15.0,
+    "miles": 8.2
+   },
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 13.4,
+    "miles": 6.8
+   },
+   "Coastal Grand Mall": {
+    "minutes": 10.5,
+    "miles": 5.5
+   }
+  },
+  {
+   "place": "Surfside Beach",
+   "beach": {
+    "to": "Surfside Beach Pier",
+    "minutes": 0.0,
+    "miles": 0.0
+   },
+   "hospital": {
+    "to": "Tidelands Waccamaw Community Hospital",
+    "minutes": 10.6,
+    "miles": 5.8
+   },
+   "Myrtle Beach boardwalk (Pier 14)": {
+    "minutes": 18.8,
+    "miles": 9.3
+   },
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 15.7,
+    "miles": 7.8
+   },
+   "Coastal Grand Mall": {
+    "minutes": 17.3,
+    "miles": 10.6
+   }
+  },
+  {
+   "place": "Garden City",
+   "beach": {
+    "to": "Garden City Pier",
+    "minutes": 0.0,
+    "miles": 0.0
+   },
+   "hospital": {
+    "to": "Tidelands Waccamaw Community Hospital",
+    "minutes": 7.1,
+    "miles": 3.6
+   },
+   "Myrtle Beach boardwalk (Pier 14)": {
+    "minutes": 23.7,
+    "miles": 11.9
+   },
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 20.7,
+    "miles": 10.4
+   },
+   "Coastal Grand Mall": {
+    "minutes": 20.5,
+    "miles": 12.6
+   }
+  },
+  {
+   "place": "Murrells Inlet",
+   "beach": {
+    "to": "Garden City Pier",
+    "minutes": 8.6,
+    "miles": 4.0
+   },
+   "hospital": {
+    "to": "Tidelands Waccamaw Community Hospital",
+    "minutes": 2.5,
+    "miles": 0.8
+   },
+   "Myrtle Beach boardwalk (Pier 14)": {
+    "minutes": 24.3,
+    "miles": 16.3
+   },
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 22.7,
+    "miles": 14.9
+   },
+   "Coastal Grand Mall": {
+    "minutes": 19.8,
+    "miles": 13.6
+   }
+  },
+  {
+   "place": "Pawleys Island",
+   "beach": {
+    "to": "Pawleys Island Town Hall",
+    "minutes": 0.0,
+    "miles": 0.0
+   },
+   "hospital": {
+    "to": "Tidelands Waccamaw Community Hospital",
+    "minutes": 17.5,
+    "miles": 10.3
+   },
+   "Myrtle Beach boardwalk (Pier 14)": {
+    "minutes": 39.5,
+    "miles": 26.1
+   },
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 37.8,
+    "miles": 24.6
+   },
+   "Coastal Grand Mall": {
+    "minutes": 35.0,
+    "miles": 23.3
+   }
+  }
+ ]
+}

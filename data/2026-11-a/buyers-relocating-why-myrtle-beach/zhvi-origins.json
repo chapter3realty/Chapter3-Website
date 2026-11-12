@@ -1,0 +1,187 @@
+{
+ "source": "https://files.zillowstatic.com/research/public_csvs/zhvi/County_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
+ "month": "2026-09-30",
+ "year_ago": "2025-09-30",
+ "counties": [
+  {
+   "fips": "45051",
+   "name": "Horry County",
+   "state": "SC",
+   "zhvi": 319809,
+   "zhvi_year_ago": 318439,
+   "arrived_returns_2223": null,
+   "left_returns_2223": null,
+   "ratio_to_horry": 1.0,
+   "difference": 0
+  },
+  {
+   "fips": "36103",
+   "name": "Suffolk County",
+   "state": "NY",
+   "zhvi": 729701,
+   "zhvi_year_ago": 701581,
+   "arrived_returns_2223": 320,
+   "left_returns_2223": 50,
+   "ratio_to_horry": 2.28,
+   "difference": 409892
+  },
+  {
+   "fips": "37019",
+   "name": "Brunswick County",
+   "state": "NC",
+   "zhvi": 404357,
+   "zhvi_year_ago": 402440,
+   "arrived_returns_2223": 255,
+   "left_returns_2223": 224,
+   "ratio_to_horry": 1.26,
+   "difference": 84548
+  },
+  {
+   "fips": "37119",
+   "name": "Mecklenburg County",
+   "state": "NC",
+   "zhvi": 414531,
+   "zhvi_year_ago": 418217,
+   "arrived_returns_2223": 228,
+   "left_returns_2223": 194,
+   "ratio_to_horry": 1.3,
+   "difference": 94722
+  },
+  {
+   "fips": "37183",
+   "name": "Wake County",
+   "state": "NC",
+   "zhvi": 471020,
+   "zhvi_year_ago": 479004,
+   "arrived_returns_2223": 182,
+   "left_returns_2223": 127,
+   "ratio_to_horry": 1.47,
+   "difference": 151211
+  },
+  {
+   "fips": "34029",
+   "name": "Ocean County",
+   "state": "NJ",
+   "zhvi": 551299,
+   "zhvi_year_ago": 525830,
+   "arrived_returns_2223": 180,
+   "left_returns_2223": 33,
+   "ratio_to_horry": 1.72,
+   "difference": 231490
+  },
+  {
+   "fips": "36071",
+   "name": "Orange County",
+   "state": "NY",
+   "zhvi": 467501,
+   "zhvi_year_ago": 451540,
+   "arrived_returns_2223": 156,
+   "left_returns_2223": 22,
+   "ratio_to_horry": 1.46,
+   "difference": 147692
+  },
+  {
+   "fips": "36059",
+   "name": "Nassau County",
+   "state": "NY",
+   "zhvi": 851504,
+   "zhvi_year_ago": 805200,
+   "arrived_returns_2223": 142,
+   "left_returns_2223": 41,
+   "ratio_to_horry": 2.66,
+   "difference": 531695
+  },
+  {
+   "fips": "37047",
+   "name": "Columbus County",
+   "state": "NC",
+   "zhvi": 198207,
+   "zhvi_year_ago": 185985,
+   "arrived_returns_2223": 133,
+   "left_returns_2223": 109,
+   "ratio_to_horry": 0.62,
+   "difference": -121602
+  },
+  {
+   "fips": "36027",
+   "name": "Dutchess County",
+   "state": "NY",
+   "zhvi": 504887,
+   "zhvi_year_ago": 477846,
+   "arrived_returns_2223": 116,
+   "left_returns_2223": 26,
+   "ratio_to_horry": 1.58,
+   "difference": 185078
+  },
+  {
+   "fips": "04013",
+   "name": "Maricopa County",
+   "state": "AZ",
+   "zhvi": 455168,
+   "zhvi_year_ago": 459112,
+   "arrived_returns_2223": 102,
+   "left_returns_2223": 48,
+   "ratio_to_horry": 1.42,
+   "difference": 135359
+  },
+  {
+   "fips": "24005",
+   "name": "Baltimore County",
+   "state": "MD",
+   "zhvi": 358090,
+   "zhvi_year_ago": 356650,
+   "arrived_returns_2223": 99,
+   "left_returns_2223": null,
+   "ratio_to_horry": 1.12,
+   "difference": 38281
+  },
+  {
+   "fips": "09110",
+   "missing": true
+  },
+  {
+   "fips": "37051",
+   "name": "Cumberland County",
+   "state": "NC",
+   "zhvi": 227993,
+   "zhvi_year_ago": 227018,
+   "arrived_returns_2223": 96,
+   "left_returns_2223": 50,
+   "ratio_to_horry": 0.71,
+   "difference": -91816
+  },
+  {
+   "fips": "34025",
+   "name": "Monmouth County",
+   "state": "NJ",
+   "zhvi": 786951,
+   "zhvi_year_ago": 734180,
+   "arrived_returns_2223": 91,
+   "left_returns_2223": null,
+   "ratio_to_horry": 2.46,
+   "difference": 467142
+  },
+  {
+   "fips": "42003",
+   "name": "Allegheny County",
+   "state": "PA",
+   "zhvi": 236739,
+   "zhvi_year_ago": 236884,
+   "arrived_returns_2223": 91,
+   "left_returns_2223": 39,
+   "ratio_to_horry": 0.74,
+   "difference": -83070
+  },
+  {
+   "fips": "51059",
+   "name": "Fairfax County",
+   "state": "VA",
+   "zhvi": 756212,
+   "zhvi_year_ago": 747562,
+   "arrived_returns_2223": 90,
+   "left_returns_2223": 27,
+   "ratio_to_horry": 2.36,
+   "difference": 436403
+  }
+ ]
+}

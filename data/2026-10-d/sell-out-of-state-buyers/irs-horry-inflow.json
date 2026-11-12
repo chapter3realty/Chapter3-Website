@@ -1,0 +1,239 @@
+{
+ "source": "https://www.irs.gov/pub/irs-soi/countyinflow2223.csv",
+ "totals": {
+  "Horry County Total Migration-US and Foreign": {
+   "returns": 15075,
+   "people": 25856,
+   "agi_thousands": 1249902
+  },
+  "Horry County Total Migration-US": {
+   "returns": 15027,
+   "people": 25782,
+   "agi_thousands": 1247073
+  },
+  "Horry County Total Migration-Same State": {
+   "returns": 2150,
+   "people": 3711,
+   "agi_thousands": 134490
+  },
+  "Horry County Total Migration-Different State": {
+   "returns": 12877,
+   "people": 22071,
+   "agi_thousands": 1112583
+  },
+  "Horry County Total Migration-Foreign": {
+   "returns": 48,
+   "people": 74,
+   "agi_thousands": 2829
+  }
+ },
+ "nonmigrants": {
+  "returns": 154749,
+  "people": 287474
+ },
+ "top_counties_outside_sc": [
+  {
+   "county": "Suffolk County",
+   "state": "NY",
+   "returns": 320,
+   "people": 558,
+   "agi_thousands": 28229
+  },
+  {
+   "county": "Brunswick County",
+   "state": "NC",
+   "returns": 255,
+   "people": 416,
+   "agi_thousands": 15246
+  },
+  {
+   "county": "Mecklenburg County",
+   "state": "NC",
+   "returns": 228,
+   "people": 351,
+   "agi_thousands": 19462
+  },
+  {
+   "county": "Wake County",
+   "state": "NC",
+   "returns": 182,
+   "people": 316,
+   "agi_thousands": 20368
+  },
+  {
+   "county": "Ocean County",
+   "state": "NJ",
+   "returns": 180,
+   "people": 301,
+   "agi_thousands": 15106
+  },
+  {
+   "county": "Orange County",
+   "state": "NY",
+   "returns": 156,
+   "people": 259,
+   "agi_thousands": 13885
+  },
+  {
+   "county": "Nassau County",
+   "state": "NY",
+   "returns": 142,
+   "people": 245,
+   "agi_thousands": 12045
+  },
+  {
+   "county": "Columbus County",
+   "state": "NC",
+   "returns": 133,
+   "people": 230,
+   "agi_thousands": 4979
+  },
+  {
+   "county": "Dutchess County",
+   "state": "NY",
+   "returns": 116,
+   "people": 204,
+   "agi_thousands": 9491
+  },
+  {
+   "county": "Maricopa County",
+   "state": "AZ",
+   "returns": 102,
+   "people": 169,
+   "agi_thousands": 9311
+  },
+  {
+   "county": "Baltimore County",
+   "state": "MD",
+   "returns": 99,
+   "people": 161,
+   "agi_thousands": 8368
+  },
+  {
+   "county": "Capitol Planning Region",
+   "state": "CT",
+   "returns": 97,
+   "people": 171,
+   "agi_thousands": 10798
+  },
+  {
+   "county": "Cumberland County",
+   "state": "NC",
+   "returns": 96,
+   "people": 170,
+   "agi_thousands": 35995
+  },
+  {
+   "county": "Monmouth County",
+   "state": "NJ",
+   "returns": 91,
+   "people": 160,
+   "agi_thousands": 10346
+  },
+  {
+   "county": "Allegheny County",
+   "state": "PA",
+   "returns": 91,
+   "people": 147,
+   "agi_thousands": 8238
+  },
+  {
+   "county": "Fairfax County",
+   "state": "VA",
+   "returns": 90,
+   "people": 136,
+   "agi_thousands": 10421
+  },
+  {
+   "county": "Guilford County",
+   "state": "NC",
+   "returns": 89,
+   "people": 149,
+   "agi_thousands": 6793
+  },
+  {
+   "county": "New Hanover County",
+   "state": "NC",
+   "returns": 89,
+   "people": 134,
+   "agi_thousands": 4889
+  },
+  {
+   "county": "Anne Arundel County",
+   "state": "MD",
+   "returns": 86,
+   "people": 135,
+   "agi_thousands": 10041
+  },
+  {
+   "county": "Worcester County",
+   "state": "MA",
+   "returns": 85,
+   "people": 161,
+   "agi_thousands": 8727
+  }
+ ],
+ "published_county_rows_by_state": [
+  [
+   "NC",
+   1740
+  ],
+  [
+   "NY",
+   1485
+  ],
+  [
+   "NJ",
+   937
+  ],
+  [
+   "PA",
+   793
+  ],
+  [
+   "FL",
+   550
+  ],
+  [
+   "MD",
+   543
+  ],
+  [
+   "VA",
+   413
+  ],
+  [
+   "MA",
+   392
+  ],
+  [
+   "CT",
+   385
+  ],
+  [
+   "CA",
+   170
+  ],
+  [
+   "GA",
+   162
+  ],
+  [
+   "OH",
+   117
+  ],
+  [
+   "AZ",
+   102
+  ],
+  [
+   "CO",
+   88
+  ],
+  [
+   "TX",
+   82
+  ]
+ ],
+ "note": "County rows are published only where a flow has 20 or more returns; the state sums are minimums."
+}

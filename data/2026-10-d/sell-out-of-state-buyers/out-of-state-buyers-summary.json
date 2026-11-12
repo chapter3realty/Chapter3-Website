@@ -1,0 +1,806 @@
+{
+ "meta": {
+  "made": "analyze.py",
+  "note": "Names of grantors, grantees and owner cities are left out of this file; rerun the pull to see them.",
+  "source": "Horry County AcclaimWeb DEED (001) recorded 2025-10-01..2026-09-30; Horry County GIS layers 24 and 22 read 2026-11-01"
+ },
+ "summary": {
+  "filter_counts": {
+   "home_sales": 13194,
+   "under_10000": 11173,
+   "not_residential_building": 5700,
+   "not_in_parcel_layer": 106,
+   "not_one_parcel": 114,
+   "taxsale_or_corrective": 52
+  },
+  "kept": 13194,
+  "matched_current_owner": 12125,
+  "where_counts": {
+   "SC": 8517,
+   "US": 3577,
+   "CANADA": 21,
+   "BLANK": 5,
+   "OTHER": 5
+  },
+  "all": {
+   "sales": 12125,
+   "outside_sc": 3603,
+   "pct_outside_sc": 29.7
+  },
+  "by_type": {
+   "condo": {
+    "sales": 2402,
+    "outside_sc": 1306,
+    "pct_outside_sc": 54.4
+   },
+   "other": {
+    "sales": 9723,
+    "outside_sc": 2297,
+    "pct_outside_sc": 23.6
+   }
+  },
+  "by_builder": {
+   "builder": {
+    "sales": 1969,
+    "outside_sc": 283,
+    "pct_outside_sc": 14.4
+   },
+   "resale": {
+    "sales": 10156,
+    "outside_sc": 3320,
+    "pct_outside_sc": 32.7
+   }
+  },
+  "by_buyer_kind": {
+   "company": {
+    "sales": 1124,
+    "outside_sc": 601,
+    "pct_outside_sc": 53.5
+   },
+   "person": {
+    "sales": 11001,
+    "outside_sc": 3002,
+    "pct_outside_sc": 27.3
+   }
+  },
+  "top_states": [
+   [
+    "NC",
+    916
+   ],
+   [
+    "NY",
+    438
+   ],
+   [
+    "PA",
+    376
+   ],
+   [
+    "NJ",
+    262
+   ],
+   [
+    "VA",
+    256
+   ],
+   [
+    "MD",
+    169
+   ],
+   [
+    "OH",
+    149
+   ],
+   [
+    "MA",
+    131
+   ],
+   [
+    "CT",
+    129
+   ],
+   [
+    "WV",
+    78
+   ],
+   [
+    "FL",
+    76
+   ],
+   [
+    "GA",
+    58
+   ],
+   [
+    "CA",
+    52
+   ],
+   [
+    "NH",
+    52
+   ],
+   [
+    "TN",
+    45
+   ]
+  ],
+  "canada": 21,
+  "by_price_band": {
+   "0-200000": {
+    "sales": 2310,
+    "outside_sc": 953,
+    "pct_outside_sc": 41.3
+   },
+   "200000-300000": {
+    "sales": 3300,
+    "outside_sc": 1007,
+    "pct_outside_sc": 30.5
+   },
+   "300000-400000": {
+    "sales": 2862,
+    "outside_sc": 662,
+    "pct_outside_sc": 23.1
+   },
+   "400000-500000": {
+    "sales": 1428,
+    "outside_sc": 347,
+    "pct_outside_sc": 24.3
+   },
+   "500000-750000": {
+    "sales": 1536,
+    "outside_sc": 422,
+    "pct_outside_sc": 27.5
+   },
+   "750000-up": {
+    "sales": 689,
+    "outside_sc": 212,
+    "pct_outside_sc": 30.8
+   }
+  },
+  "by_place": {
+   "outside any Census place": {
+    "sales": 5440,
+    "outside_sc": 1112,
+    "pct_outside_sc": 20.4,
+    "condo": {
+     "sales": 664,
+     "outside_sc": 284,
+     "pct_outside_sc": 42.8
+    },
+    "other": {
+     "sales": 4776,
+     "outside_sc": 828,
+     "pct_outside_sc": 17.3
+    }
+   },
+   "North Myrtle Beach city": {
+    "sales": 1856,
+    "outside_sc": 1023,
+    "pct_outside_sc": 55.1,
+    "condo": {
+     "sales": 638,
+     "outside_sc": 442,
+     "pct_outside_sc": 69.3
+    },
+    "other": {
+     "sales": 1218,
+     "outside_sc": 581,
+     "pct_outside_sc": 47.7
+    }
+   },
+   "Myrtle Beach city": {
+    "sales": 1685,
+    "outside_sc": 763,
+    "pct_outside_sc": 45.3,
+    "condo": {
+     "sales": 651,
+     "outside_sc": 418,
+     "pct_outside_sc": 64.2
+    },
+    "other": {
+     "sales": 1034,
+     "outside_sc": 345,
+     "pct_outside_sc": 33.4
+    }
+   },
+   "Carolina Forest CDP": {
+    "sales": 576,
+    "outside_sc": 105,
+    "pct_outside_sc": 18.2,
+    "condo": {
+     "sales": 87,
+     "outside_sc": 29,
+     "pct_outside_sc": 33.3
+    },
+    "other": {
+     "sales": 489,
+     "outside_sc": 76,
+     "pct_outside_sc": 15.5
+    }
+   },
+   "Little River CDP": {
+    "sales": 558,
+    "outside_sc": 158,
+    "pct_outside_sc": 28.3,
+    "condo": {
+     "sales": 117,
+     "outside_sc": 43,
+     "pct_outside_sc": 36.8
+    },
+    "other": {
+     "sales": 441,
+     "outside_sc": 115,
+     "pct_outside_sc": 26.1
+    }
+   },
+   "Conway city": {
+    "sales": 450,
+    "outside_sc": 45,
+    "pct_outside_sc": 10.0,
+    "condo": {
+     "sales": 23,
+     "outside_sc": 8,
+     "pct_outside_sc": 34.8
+    },
+    "other": {
+     "sales": 427,
+     "outside_sc": 37,
+     "pct_outside_sc": 8.7
+    }
+   },
+   "Socastee CDP": {
+    "sales": 426,
+    "outside_sc": 51,
+    "pct_outside_sc": 12.0,
+    "condo": {
+     "sales": 49,
+     "outside_sc": 14,
+     "pct_outside_sc": 28.6
+    },
+    "other": {
+     "sales": 377,
+     "outside_sc": 37,
+     "pct_outside_sc": 9.8
+    }
+   },
+   "Garden City CDP": {
+    "sales": 412,
+    "outside_sc": 162,
+    "pct_outside_sc": 39.3,
+    "condo": {
+     "sales": 114,
+     "outside_sc": 43,
+     "pct_outside_sc": 37.7
+    },
+    "other": {
+     "sales": 298,
+     "outside_sc": 119,
+     "pct_outside_sc": 39.9
+    }
+   },
+   "Red Hill CDP": {
+    "sales": 320,
+    "outside_sc": 77,
+    "pct_outside_sc": 24.1,
+    "condo": {
+     "sales": 43,
+     "outside_sc": 17,
+     "pct_outside_sc": 39.5
+    },
+    "other": {
+     "sales": 277,
+     "outside_sc": 60,
+     "pct_outside_sc": 21.7
+    }
+   },
+   "Surfside Beach town": {
+    "sales": 175,
+    "outside_sc": 81,
+    "pct_outside_sc": 46.3,
+    "condo": {
+     "sales": 14,
+     "outside_sc": 8,
+     "pct_outside_sc": 57.1
+    },
+    "other": {
+     "sales": 161,
+     "outside_sc": 73,
+     "pct_outside_sc": 45.3
+    }
+   },
+   "Forestbrook CDP": {
+    "sales": 129,
+    "outside_sc": 19,
+    "pct_outside_sc": 14.7,
+    "condo": {
+     "sales": 2,
+     "outside_sc": 0,
+     "pct_outside_sc": 0.0
+    },
+    "other": {
+     "sales": 127,
+     "outside_sc": 19,
+     "pct_outside_sc": 15.0
+    }
+   },
+   "Loris city": {
+    "sales": 46,
+    "outside_sc": 2,
+    "pct_outside_sc": 4.3,
+    "condo": {
+     "sales": 0,
+     "outside_sc": 0,
+     "pct_outside_sc": null
+    },
+    "other": {
+     "sales": 46,
+     "outside_sc": 2,
+     "pct_outside_sc": 4.3
+    }
+   },
+   "Homewood CDP": {
+    "sales": 19,
+    "outside_sc": 1,
+    "pct_outside_sc": 5.3,
+    "condo": {
+     "sales": 0,
+     "outside_sc": 0,
+     "pct_outside_sc": null
+    },
+    "other": {
+     "sales": 19,
+     "outside_sc": 1,
+     "pct_outside_sc": 5.3
+    }
+   },
+   "Aynor town": {
+    "sales": 16,
+    "outside_sc": 2,
+    "pct_outside_sc": 12.5,
+    "condo": {
+     "sales": 0,
+     "outside_sc": 0,
+     "pct_outside_sc": null
+    },
+    "other": {
+     "sales": 16,
+     "outside_sc": 2,
+     "pct_outside_sc": 12.5
+    }
+   },
+   "Briarcliffe Acres town": {
+    "sales": 7,
+    "outside_sc": 1,
+    "pct_outside_sc": 14.3,
+    "condo": {
+     "sales": 0,
+     "outside_sc": 0,
+     "pct_outside_sc": null
+    },
+    "other": {
+     "sales": 7,
+     "outside_sc": 1,
+     "pct_outside_sc": 14.3
+    }
+   },
+   "Bucksport CDP": {
+    "sales": 4,
+    "outside_sc": 0,
+    "pct_outside_sc": 0.0,
+    "condo": {
+     "sales": 0,
+     "outside_sc": 0,
+     "pct_outside_sc": null
+    },
+    "other": {
+     "sales": 4,
+     "outside_sc": 0,
+     "pct_outside_sc": 0.0
+    }
+   },
+   "Live Oak CDP": {
+    "sales": 2,
+    "outside_sc": 0,
+    "pct_outside_sc": 0.0,
+    "condo": {
+     "sales": 0,
+     "outside_sc": 0,
+     "pct_outside_sc": null
+    },
+    "other": {
+     "sales": 2,
+     "outside_sc": 0,
+     "pct_outside_sc": 0.0
+    }
+   },
+   "Finklea CDP": {
+    "sales": 1,
+    "outside_sc": 0,
+    "pct_outside_sc": 0.0,
+    "condo": {
+     "sales": 0,
+     "outside_sc": 0,
+     "pct_outside_sc": null
+    },
+    "other": {
+     "sales": 1,
+     "outside_sc": 0,
+     "pct_outside_sc": 0.0
+    }
+   },
+   "Ketchuptown CDP": {
+    "sales": 1,
+    "outside_sc": 0,
+    "pct_outside_sc": 0.0,
+    "condo": {
+     "sales": 0,
+     "outside_sc": 0,
+     "pct_outside_sc": null
+    },
+    "other": {
+     "sales": 1,
+     "outside_sc": 0,
+     "pct_outside_sc": 0.0
+    }
+   },
+   "Green Sea CDP": {
+    "sales": 1,
+    "outside_sc": 0,
+    "pct_outside_sc": 0.0,
+    "condo": {
+     "sales": 0,
+     "outside_sc": 0,
+     "pct_outside_sc": null
+    },
+    "other": {
+     "sales": 1,
+     "outside_sc": 0,
+     "pct_outside_sc": 0.0
+    }
+   }
+  },
+  "by_month": {
+   "2025/10": {
+    "sc": 951,
+    "outside_sc": 352
+   },
+   "2025/11": {
+    "sc": 817,
+    "outside_sc": 279
+   },
+   "2025/12": {
+    "sc": 902,
+    "outside_sc": 336
+   },
+   "2026/01": {
+    "sc": 641,
+    "outside_sc": 207
+   },
+   "2026/02": {
+    "sc": 530,
+    "outside_sc": 239
+   },
+   "2026/03": {
+    "sc": 660,
+    "outside_sc": 290
+   },
+   "2026/04": {
+    "sc": 630,
+    "outside_sc": 328
+   },
+   "2026/05": {
+    "sc": 690,
+    "outside_sc": 350
+   },
+   "2026/06": {
+    "sc": 698,
+    "outside_sc": 324
+   },
+   "2026/07": {
+    "sc": 750,
+    "outside_sc": 305
+   },
+   "2026/08": {
+    "sc": 620,
+    "outside_sc": 310
+   },
+   "2026/09": {
+    "sc": 633,
+    "outside_sc": 283
+   }
+  },
+  "median_price": {
+   "sc": 320000.0,
+   "outside_sc": 275000.0
+  },
+  "median_price_condo": {
+   "sc": 210000.0,
+   "outside_sc": 230000.0
+  },
+  "median_price_other": {
+   "sc": 335000.0,
+   "outside_sc": 310000.0
+  },
+  "same_place_leave_one_out": {
+   "all": {
+    "sc": {
+     "n": 1831,
+     "median": 1.0,
+     "quartiles": [
+      0.8856,
+      1.0,
+      1.129
+     ],
+     "mean": 1.05,
+     "pct_above_others_median": 49.7
+    },
+    "outside_sc": {
+     "n": 1624,
+     "median": 1.0,
+     "quartiles": [
+      0.8783,
+      1.0,
+      1.1381
+     ],
+     "mean": 1.0801,
+     "pct_above_others_median": 47.7
+    }
+   },
+   "condo": {
+    "sc": {
+     "n": 501,
+     "median": 1.002,
+     "quartiles": [
+      0.8927,
+      1.002,
+      1.1111
+     ],
+     "mean": 1.0258,
+     "pct_above_others_median": 50.7
+    },
+    "outside_sc": {
+     "n": 771,
+     "median": 1.0,
+     "quartiles": [
+      0.8852,
+      1.0,
+      1.1281
+     ],
+     "mean": 1.0386,
+     "pct_above_others_median": 47.0
+    }
+   },
+   "other": {
+    "sc": {
+     "n": 1330,
+     "median": 1.0,
+     "quartiles": [
+      0.8816,
+      1.0,
+      1.1339
+     ],
+     "mean": 1.0591,
+     "pct_above_others_median": 49.3
+    },
+    "outside_sc": {
+     "n": 853,
+     "median": 1.0,
+     "quartiles": [
+      0.8696,
+      1.0,
+      1.1594
+     ],
+     "mean": 1.1175,
+     "pct_above_others_median": 48.4
+    }
+   }
+  },
+  "same_place_test": {
+   "groups": 316,
+   "sales": 3455,
+   "rule": "resale (not builder) sales in a building or subdivision (county legal description before ';') with 6+ matched sales and at least one buyer each side; each price divided by that group's median price",
+   "median_ratio": {
+    "sc": 1.0,
+    "outside_sc": 1.0
+   },
+   "n": {
+    "sc": 1831,
+    "outside_sc": 1624
+   },
+   "condo": {
+    "sc": [
+     1.0,
+     501
+    ],
+    "outside_sc": [
+     1.0,
+     771
+    ]
+   },
+   "other": {
+    "sc": [
+     1.0,
+     1330
+    ],
+    "outside_sc": [
+     1.0,
+     853
+    ]
+   }
+  },
+  "stock": {
+   "all": {
+    "parcels": 227000,
+    "sc": 168017,
+    "blank": 66,
+    "outside_sc": 58917,
+    "pct_outside_sc": 26.0,
+    "top": [
+     [
+      17549,
+      "NC"
+     ],
+     [
+      6333,
+      "NY"
+     ],
+     [
+      4598,
+      "PA"
+     ],
+     [
+      4166,
+      "FL"
+     ],
+     [
+      4144,
+      "VA"
+     ],
+     [
+      3896,
+      "NJ"
+     ],
+     [
+      2333,
+      "MD"
+     ],
+     [
+      2119,
+      "OH"
+     ],
+     [
+      1467,
+      "GA"
+     ],
+     [
+      1461,
+      "MA"
+     ],
+     [
+      1432,
+      "CA"
+     ],
+     [
+      1228,
+      "CT"
+     ]
+    ]
+   },
+   "condo": {
+    "parcels": 40963,
+    "sc": 17275,
+    "blank": 35,
+    "outside_sc": 23653,
+    "pct_outside_sc": 57.7,
+    "top": [
+     [
+      6033,
+      "NC"
+     ],
+     [
+      3007,
+      "FL"
+     ],
+     [
+      2704,
+      "NY"
+     ],
+     [
+      1878,
+      "PA"
+     ],
+     [
+      1511,
+      "NJ"
+     ],
+     [
+      1504,
+      "VA"
+     ],
+     [
+      851,
+      "MD"
+     ],
+     [
+      838,
+      "OH"
+     ],
+     [
+      617,
+      "GA"
+     ],
+     [
+      591,
+      "MA"
+     ],
+     [
+      492,
+      "CA"
+     ],
+     [
+      470,
+      "CT"
+     ]
+    ]
+   },
+   "other": {
+    "parcels": 186037,
+    "sc": 150742,
+    "blank": 31,
+    "outside_sc": 35264,
+    "pct_outside_sc": 19.0,
+    "top": [
+     [
+      11516,
+      "NC"
+     ],
+     [
+      3629,
+      "NY"
+     ],
+     [
+      2720,
+      "PA"
+     ],
+     [
+      2640,
+      "VA"
+     ],
+     [
+      2385,
+      "NJ"
+     ],
+     [
+      1482,
+      "MD"
+     ],
+     [
+      1281,
+      "OH"
+     ],
+     [
+      1159,
+      "FL"
+     ],
+     [
+      940,
+      "CA"
+     ],
+     [
+      870,
+      "MA"
+     ],
+     [
+      850,
+      "GA"
+     ],
+     [
+      758,
+      "CT"
+     ]
+    ]
+   }
+  }
+ }
+}

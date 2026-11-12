@@ -1,0 +1,26 @@
+{
+ "read": "2026-11-02",
+ "layer": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24",
+ "counts": {
+  "condo_all": {
+   "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND LegalDescr LIKE '%HPR%'",
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0+AND+LegalDescr+LIKE+%27%25HPR%25%27&returnCountOnly=true&f=json",
+   "count": 40963
+  },
+  "condo_4pct": {
+   "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND LegalDescr LIKE '%HPR%' AND AssessedProp < TaxableProp*0.05",
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0+AND+LegalDescr+LIKE+%27%25HPR%25%27+AND+AssessedProp+%3C+TaxableProp%2A0.05&returnCountOnly=true&f=json",
+   "count": 8797
+  },
+  "other_all": {
+   "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND LegalDescr NOT LIKE '%HPR%'",
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0+AND+LegalDescr+NOT+LIKE+%27%25HPR%25%27&returnCountOnly=true&f=json",
+   "count": 186037
+  },
+  "other_4pct": {
+   "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND LegalDescr NOT LIKE '%HPR%' AND AssessedProp < TaxableProp*0.05",
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0+AND+LegalDescr+NOT+LIKE+%27%25HPR%25%27+AND+AssessedProp+%3C+TaxableProp%2A0.05&returnCountOnly=true&f=json",
+   "count": 115633
+  }
+ }
+}

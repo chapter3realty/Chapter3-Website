@@ -1,0 +1,26 @@
+{
+ "loris-lots": {
+  "lon": -78.912,
+  "lat": 34.0748,
+  "width_m": 900,
+  "height_m": 675,
+  "bbox3857": "-8784986.934414607,4038442.8085245066,-8783900.380543005,4039257.723928209",
+  "request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8784986.934414607%2C4038442.8085245066%2C-8783900.380543005%2C4039257.723928209&bboxSR=3857&imageSR=3857&size=2000%2C1500&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image"
+ },
+ "aynor": {
+  "lon": -79.2047,
+  "lat": 33.9984,
+  "width_m": 1400,
+  "height_m": 1050,
+  "bbox3857": "-8817871.209094495,4027953.9347538333,-8816182.535773497,4029220.4397445824",
+  "request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8817871.209094495%2C4027953.9347538333%2C-8816182.535773497%2C4029220.4397445824&bboxSR=3857&imageSR=3857&size=2000%2C1500&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image"
+ },
+ "socastee-bridge": {
+  "lon": -79.0045,
+  "lat": 33.6872,
+  "width_m": 500,
+  "height_m": 375,
+  "bbox3857": "-8795041.162959194,3986652.225152257,-8794440.257795172,3987102.9040252725",
+  "request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8795041.162959194%2C3986652.225152257%2C-8794440.257795172%2C3987102.9040252725&bboxSR=3857&imageSR=3857&size=2000%2C1500&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image"
+ }
+}

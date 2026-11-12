@@ -1,0 +1,78 @@
+{
+ "source": "Census AHS 2023 National PUF v1.1, household.csv",
+ "rule": "Routine maintenance a homeowner spends in a typical year, from the Census American Housing Survey 2023 national PUF.\nInput: household.csv from https://www2.census.gov/programs-surveys/ahs/2023/AHS%202023%20National%20PUF%20v1.1%20CSV.zip\n(MAINTAMT = yearly routine maintenance cost in a typical year, dollars; the Census verification sheet puts the owner median at $510; MARKETVAL = owner's estimate of value; WEIGHT = final weight).\nAHS definition (2023 AHS Definitions, \"Routine maintenance costs in typical year\"): minor repairs, painting, restoring shingles,\nfixing water pipes, replacing parts of large equipment, repairing fences, gutters, decks; NOT room additions, remodeling or replacements.\nGroups: owner-occupied (TENURE 1), one-family detached (BLD 02), and owned units in buildings of 3+ units (BLD 05-09, mostly condos), U.S. and South Atlantic division (DIVISION 5, which holds SC).\nNegative codes (-6 not applicable, -9 not reported) are dropped. Usage: python3 -I analyze_ahs.py <household.csv> <out.json>",
+ "groups": {
+  "US": {
+   "records": 20810,
+   "weighted_homes": 64973715,
+   "yearly": {
+    "p25": 200.0,
+    "median": 529.0,
+    "p75": 1518.0,
+    "mean": 1419
+   },
+   "share_spending_zero": 0.152,
+   "pct_of_value": {
+    "median": 0.18,
+    "mean_of_totals": 0.29
+   },
+   "mean_marketval_of_homes_with_value": 481761,
+   "built_before_1980_median": 540.0,
+   "built_2000_or_later_median": 501.0
+  },
+  "SouthAtlantic": {
+   "records": 4138,
+   "weighted_homes": 12713537,
+   "yearly": {
+    "p25": 200.0,
+    "median": 523.0,
+    "p75": 1579.0,
+    "mean": 1465
+   },
+   "share_spending_zero": 0.162,
+   "pct_of_value": {
+    "median": 0.17,
+    "mean_of_totals": 0.32
+   },
+   "mean_marketval_of_homes_with_value": 464035,
+   "built_before_1980_median": 519.0,
+   "built_2000_or_later_median": 502.0
+  },
+  "US_owned_unit_in_building_of_3plus": {
+   "records": 1234,
+   "weighted_homes": 3161887,
+   "yearly": {
+    "p25": 0.0,
+    "median": 296.0,
+    "p75": 913.0,
+    "mean": 964
+   },
+   "share_spending_zero": 0.281,
+   "pct_of_value": {
+    "median": 0.07,
+    "mean_of_totals": 0.18
+   },
+   "mean_marketval_of_homes_with_value": 523627,
+   "built_before_1980_median": 291.0,
+   "built_2000_or_later_median": 260.0
+  },
+  "SouthAtlantic_owned_unit_in_building_of_3plus": {
+   "records": 328,
+   "weighted_homes": 724157,
+   "yearly": {
+    "p25": 103.0,
+    "median": 400.0,
+    "p75": 825.0,
+    "mean": 692
+   },
+   "share_spending_zero": 0.192,
+   "pct_of_value": {
+    "median": 0.11,
+    "mean_of_totals": 0.18
+   },
+   "mean_marketval_of_homes_with_value": 393130,
+   "built_before_1980_median": 347.0,
+   "built_2000_or_later_median": 310.0
+  }
+ }
+}

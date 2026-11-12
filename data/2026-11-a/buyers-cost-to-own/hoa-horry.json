@@ -1,0 +1,40 @@
+{
+ "pulled": "2026-11-02T13:18:44.187153+00:00",
+ "api": "https://chapter3realty.com/homes/api/map?",
+ "rule": "Monthly HOA fee of homes for sale now, by ZIP area, counted in aggregate from the site's public map API\n(https://chapter3realty.com/homes/api/map, CRM feed of CCMLS active listings). No listing is saved.\nHouses (type=house) and condos (type=condo), every bedroom count, list price $50,000 or more.\nhoaMax is the site's own filter (\"Up to $X a month\"); hoaMax=0 returns the same count as hoa=0 (no HOA listed).\nMedian: the lowest fee, in $25 steps, at or under which half the listings fall. Also the quartiles the same way.\n\"horry\": the same counts summed over the 15 Horry County ZIPs (the whole feed also holds Georgetown, Pawleys Island,\nMarion, Dillon and North Carolina ZIPs, so \"all\" is not Horry County).\nFix 2026-11-02 (verifier): cut() now tests $0 first, so a median or quartile of $0 prints as $0, not $25.\nRun: python3 -I pull_hoa.py <datadir>. Writes hoa-by-area.json.",
+ "refreshedAt": "2026-11-02T13:20:36.909Z",
+ "note": "The horry block of the fixed pull_hoa.py's run (2026-11-02). build_examples.py reads only this block; the ZIP figures stay those of hoa-by-area.json, the pull the verifier re-tested. This run's full output, with its ZIP figures (some have moved since: 29582 condos $725), is kept in scratch, not on the page.",
+ "horry": {
+  "zips": [
+   "29511",
+   "29526",
+   "29527",
+   "29544",
+   "29566",
+   "29568",
+   "29569",
+   "29572",
+   "29575",
+   "29576",
+   "29577",
+   "29579",
+   "29581",
+   "29582",
+   "29588"
+  ],
+  "house": {
+   "listings": 3060,
+   "no_hoa": 833,
+   "q1": 0,
+   "median": 100,
+   "q3": 125
+  },
+  "condo": {
+   "listings": 2686,
+   "no_hoa": 1,
+   "q1": 475,
+   "median": 650,
+   "q3": 950
+  }
+ }
+}

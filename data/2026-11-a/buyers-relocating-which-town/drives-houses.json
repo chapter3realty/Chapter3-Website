@@ -1,0 +1,532 @@
+{
+ "method": "Drive minutes from the houses themselves, not from a town hall or a pier. For each of the 13 places, 60 detached houses\nare drawn at random (seed 2026) from the county parcel points used by analyze.py (same house rule, same outlines), and the\nOSRM public router's table service (router.project-osrm.org, OpenStreetMap roads, fastest route, free flow: no traffic,\nno stops) gives the minutes from each house to: the nearest of ten public beach points (drives.json beach_points), the\nnearest of five hospitals (drives.json hospitals), Myrtle Beach International Airport's terminal, Coastal Grand Mall and the\nMyrtle Beach boardwalk at Pier 14 (drives.json). Reported: the middle (median) and the quartiles over the 60 houses.\nRun: RAW=<where-to-buy scratch raw> python3 -I drives_houses.py <datadir>. Writes drives-houses.json (no PIN or point kept).",
+ "pulled": "2026-11-03",
+ "houses_in_frame": {
+  "loris": 4742,
+  "aynor": 1606,
+  "longs": 7731,
+  "little-river": 5272,
+  "conway": 8037,
+  "north-myrtle-beach": 11574,
+  "carolina-forest": 7940,
+  "myrtle-beach": 10298,
+  "socastee": 6297,
+  "surfside-beach": 2805,
+  "garden-city": 2736,
+  "murrells-inlet": 3316,
+  "pawleys-litchfield": 8095
+ },
+ "areas": {
+  "loris": {
+   "beach": {
+    "median": 36.0,
+    "p25": 34.1,
+    "p75": 41.0,
+    "n": 60
+   },
+   "hospital": {
+    "median": 10.6,
+    "p25": 5.3,
+    "p75": 14.5,
+    "n": 60
+   },
+   "airport": {
+    "median": 55.2,
+    "p25": 51.9,
+    "p75": 57.8,
+    "n": 60
+   },
+   "mall": {
+    "median": 51.1,
+    "p25": 48.2,
+    "p75": 53.1,
+    "n": 60
+   },
+   "boardwalk": {
+    "median": 51.4,
+    "p25": 47.6,
+    "p75": 53.2,
+    "n": 60
+   },
+   "nearest_beach_point_counts": {
+    "Main Street at Ocean Drive, North Myrtle Beach": 60
+   },
+   "nearest_hospital_counts": {
+    "Grand Strand Medical Center": 1,
+    "McLeod Health Loris": 59
+   }
+  },
+  "aynor": {
+   "beach": {
+    "median": 45.1,
+    "p25": 41.5,
+    "p75": 46.9,
+    "n": 60
+   },
+   "hospital": {
+    "median": 29.5,
+    "p25": 25.3,
+    "p75": 31.2,
+    "n": 60
+   },
+   "airport": {
+    "median": 47.0,
+    "p25": 44.4,
+    "p75": 49.1,
+    "n": 60
+   },
+   "mall": {
+    "median": 44.2,
+    "p25": 41.6,
+    "p75": 46.3,
+    "n": 60
+   },
+   "boardwalk": {
+    "median": 45.6,
+    "p25": 43.1,
+    "p75": 47.7,
+    "n": 60
+   },
+   "nearest_beach_point_counts": {
+    "Main Street at Ocean Drive, North Myrtle Beach": 28,
+    "Pier 14, Myrtle Beach": 32
+   },
+   "nearest_hospital_counts": {
+    "Conway Medical Center": 44,
+    "McLeod Health Loris": 16
+   }
+  },
+  "longs": {
+   "beach": {
+    "median": 18.6,
+    "p25": 15.1,
+    "p75": 21.0,
+    "n": 60
+   },
+   "hospital": {
+    "median": 14.1,
+    "p25": 10.8,
+    "p75": 15.9,
+    "n": 60
+   },
+   "airport": {
+    "median": 43.5,
+    "p25": 38.4,
+    "p75": 46.3,
+    "n": 60
+   },
+   "mall": {
+    "median": 38.5,
+    "p25": 33.4,
+    "p75": 41.3,
+    "n": 60
+   },
+   "boardwalk": {
+    "median": 38.1,
+    "p25": 33.0,
+    "p75": 40.9,
+    "n": 60
+   },
+   "nearest_beach_point_counts": {
+    "Main Street at Ocean Drive, North Myrtle Beach": 60
+   },
+   "nearest_hospital_counts": {
+    "Grand Strand Medical Center": 5,
+    "McLeod Health Seacoast": 54,
+    "McLeod Health Loris": 1
+   }
+  },
+  "little-river": {
+   "beach": {
+    "median": 13.8,
+    "p25": 12.5,
+    "p75": 15.5,
+    "n": 60
+   },
+   "hospital": {
+    "median": 7.1,
+    "p25": 4.9,
+    "p75": 9.2,
+    "n": 60
+   },
+   "airport": {
+    "median": 43.6,
+    "p25": 41.9,
+    "p75": 45.6,
+    "n": 60
+   },
+   "mall": {
+    "median": 38.5,
+    "p25": 36.9,
+    "p75": 40.5,
+    "n": 60
+   },
+   "boardwalk": {
+    "median": 38.2,
+    "p25": 36.5,
+    "p75": 40.2,
+    "n": 60
+   },
+   "nearest_beach_point_counts": {
+    "Main Street at Ocean Drive, North Myrtle Beach": 60
+   },
+   "nearest_hospital_counts": {
+    "McLeod Health Seacoast": 60
+   }
+  },
+  "conway": {
+   "beach": {
+    "median": 28.7,
+    "p25": 26.3,
+    "p75": 30.2,
+    "n": 60
+   },
+   "hospital": {
+    "median": 13.0,
+    "p25": 10.7,
+    "p75": 14.5,
+    "n": 60
+   },
+   "airport": {
+    "median": 30.0,
+    "p25": 27.7,
+    "p75": 31.5,
+    "n": 60
+   },
+   "mall": {
+    "median": 27.2,
+    "p25": 24.9,
+    "p75": 28.7,
+    "n": 60
+   },
+   "boardwalk": {
+    "median": 28.7,
+    "p25": 26.3,
+    "p75": 30.2,
+    "n": 60
+   },
+   "nearest_beach_point_counts": {
+    "Pier 14, Myrtle Beach": 60
+   },
+   "nearest_hospital_counts": {
+    "Conway Medical Center": 60
+   }
+  },
+  "north-myrtle-beach": {
+   "beach": {
+    "median": 6.1,
+    "p25": 3.6,
+    "p75": 9.7,
+    "n": 60
+   },
+   "hospital": {
+    "median": 9.9,
+    "p25": 8.1,
+    "p75": 12.3,
+    "n": 60
+   },
+   "airport": {
+    "median": 35.1,
+    "p25": 32.0,
+    "p75": 37.7,
+    "n": 60
+   },
+   "mall": {
+    "median": 30.1,
+    "p25": 26.9,
+    "p75": 32.7,
+    "n": 60
+   },
+   "boardwalk": {
+    "median": 29.5,
+    "p25": 26.3,
+    "p75": 32.1,
+    "n": 60
+   },
+   "nearest_beach_point_counts": {
+    "Cherry Grove Pier": 8,
+    "Main Street at Ocean Drive, North Myrtle Beach": 52
+   },
+   "nearest_hospital_counts": {
+    "Grand Strand Medical Center": 12,
+    "McLeod Health Seacoast": 48
+   }
+  },
+  "carolina-forest": {
+   "beach": {
+    "median": 18.1,
+    "p25": 16.8,
+    "p75": 20.5,
+    "n": 60
+   },
+   "hospital": {
+    "median": 12.9,
+    "p25": 10.4,
+    "p75": 14.9,
+    "n": 60
+   },
+   "airport": {
+    "median": 21.7,
+    "p25": 20.0,
+    "p75": 23.6,
+    "n": 60
+   },
+   "mall": {
+    "median": 17.9,
+    "p25": 16.6,
+    "p75": 19.9,
+    "n": 60
+   },
+   "boardwalk": {
+    "median": 18.1,
+    "p25": 16.8,
+    "p75": 20.5,
+    "n": 60
+   },
+   "nearest_beach_point_counts": {
+    "Pier 14, Myrtle Beach": 60
+   },
+   "nearest_hospital_counts": {
+    "Grand Strand Medical Center": 22,
+    "Conway Medical Center": 38
+   }
+  },
+  "myrtle-beach": {
+   "beach": {
+    "median": 9.6,
+    "p25": 5.6,
+    "p75": 11.6,
+    "n": 60
+   },
+   "hospital": {
+    "median": 12.2,
+    "p25": 5.2,
+    "p75": 15.0,
+    "n": 60
+   },
+   "airport": {
+    "median": 13.2,
+    "p25": 9.6,
+    "p75": 17.8,
+    "n": 60
+   },
+   "mall": {
+    "median": 10.3,
+    "p25": 8.0,
+    "p75": 12.9,
+    "n": 60
+   },
+   "boardwalk": {
+    "median": 10.8,
+    "p25": 7.0,
+    "p75": 13.4,
+    "n": 60
+   },
+   "nearest_beach_point_counts": {
+    "Pier 14, Myrtle Beach": 38,
+    "2nd Avenue Pier": 7,
+    "Springmaid Pier": 14,
+    "Surfside Beach Pier": 1
+   },
+   "nearest_hospital_counts": {
+    "Grand Strand Medical Center": 45,
+    "Tidelands Waccamaw Community Hospital": 15
+   }
+  },
+  "socastee": {
+   "beach": {
+    "median": 13.1,
+    "p25": 12.1,
+    "p75": 14.3,
+    "n": 60
+   },
+   "hospital": {
+    "median": 14.1,
+    "p25": 12.9,
+    "p75": 15.0,
+    "n": 60
+   },
+   "airport": {
+    "median": 13.8,
+    "p25": 12.7,
+    "p75": 16.0,
+    "n": 60
+   },
+   "mall": {
+    "median": 10.9,
+    "p25": 9.9,
+    "p75": 13.1,
+    "n": 60
+   },
+   "boardwalk": {
+    "median": 15.4,
+    "p25": 14.4,
+    "p75": 17.6,
+    "n": 60
+   },
+   "nearest_beach_point_counts": {
+    "Springmaid Pier": 23,
+    "Surfside Beach Pier": 37
+   },
+   "nearest_hospital_counts": {
+    "Conway Medical Center": 3,
+    "Tidelands Waccamaw Community Hospital": 57
+   }
+  },
+  "surfside-beach": {
+   "beach": {
+    "median": 2.5,
+    "p25": 1.9,
+    "p75": 3.3,
+    "n": 60
+   },
+   "hospital": {
+    "median": 9.7,
+    "p25": 8.8,
+    "p75": 10.5,
+    "n": 60
+   },
+   "airport": {
+    "median": 15.4,
+    "p25": 14.7,
+    "p75": 16.3,
+    "n": 60
+   },
+   "mall": {
+    "median": 17.1,
+    "p25": 16.5,
+    "p75": 17.9,
+    "n": 60
+   },
+   "boardwalk": {
+    "median": 18.5,
+    "p25": 17.7,
+    "p75": 19.3,
+    "n": 60
+   },
+   "nearest_beach_point_counts": {
+    "Surfside Beach Pier": 60
+   },
+   "nearest_hospital_counts": {
+    "Tidelands Waccamaw Community Hospital": 60
+   }
+  },
+  "garden-city": {
+   "beach": {
+    "median": 5.4,
+    "p25": 4.0,
+    "p75": 6.3,
+    "n": 60
+   },
+   "hospital": {
+    "median": 6.9,
+    "p25": 5.8,
+    "p75": 7.9,
+    "n": 60
+   },
+   "airport": {
+    "median": 18.9,
+    "p25": 17.9,
+    "p75": 20.3,
+    "n": 60
+   },
+   "mall": {
+    "median": 18.7,
+    "p25": 17.3,
+    "p75": 19.7,
+    "n": 60
+   },
+   "boardwalk": {
+    "median": 21.5,
+    "p25": 20.7,
+    "p75": 22.8,
+    "n": 60
+   },
+   "nearest_beach_point_counts": {
+    "Surfside Beach Pier": 11,
+    "Garden City Pier": 49
+   },
+   "nearest_hospital_counts": {
+    "Tidelands Waccamaw Community Hospital": 60
+   }
+  },
+  "murrells-inlet": {
+   "beach": {
+    "median": 10.3,
+    "p25": 7.1,
+    "p75": 11.4,
+    "n": 60
+   },
+   "hospital": {
+    "median": 5.7,
+    "p25": 4.1,
+    "p75": 7.7,
+    "n": 60
+   },
+   "airport": {
+    "median": 25.4,
+    "p25": 24.4,
+    "p75": 27.1,
+    "n": 60
+   },
+   "mall": {
+    "median": 22.5,
+    "p25": 21.5,
+    "p75": 24.2,
+    "n": 60
+   },
+   "boardwalk": {
+    "median": 27.0,
+    "p25": 26.0,
+    "p75": 28.7,
+    "n": 60
+   },
+   "nearest_beach_point_counts": {
+    "Huntington Beach State Park entrance": 48,
+    "Garden City Pier": 12
+   },
+   "nearest_hospital_counts": {
+    "Tidelands Waccamaw Community Hospital": 60
+   }
+  },
+  "pawleys-litchfield": {
+   "beach": {
+    "median": 7.2,
+    "p25": 5.2,
+    "p75": 8.3,
+    "n": 60
+   },
+   "hospital": {
+    "median": 18.5,
+    "p25": 14.7,
+    "p75": 21.7,
+    "n": 60
+   },
+   "airport": {
+    "median": 38.9,
+    "p25": 35.0,
+    "p75": 42.0,
+    "n": 60
+   },
+   "mall": {
+    "median": 36.0,
+    "p25": 32.2,
+    "p75": 39.1,
+    "n": 60
+   },
+   "boardwalk": {
+    "median": 40.5,
+    "p25": 36.6,
+    "p75": 43.6,
+    "n": 60
+   },
+   "nearest_beach_point_counts": {
+    "Huntington Beach State Park entrance": 12,
+    "Pawleys Island Town Hall": 48
+   },
+   "nearest_hospital_counts": {
+    "Tidelands Waccamaw Community Hospital": 60
+   }
+  }
+ }
+}

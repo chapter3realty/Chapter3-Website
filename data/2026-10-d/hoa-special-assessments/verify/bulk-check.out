@@ -1,0 +1,12 @@
+2021 name-bulk 3138 threshold-only 1302 rest 783 rest+thr 2085 n_thr_filers 18 [553, 188, 54, 51, 42, 40, 40, 37, 35, 33, 33, 33]
+2022 name-bulk 3047 threshold-only 1903 rest 1083 rest+thr 2986 n_thr_filers 8 [653, 490, 326, 180, 141, 47, 33, 33]
+2023 name-bulk 1542 threshold-only 1603 rest 1092 rest+thr 2695 n_thr_filers 15 [629, 248, 191, 103, 74, 69, 48, 38, 36, 31, 30, 28]
+2024 name-bulk 1358 threshold-only 2493 rest 1466 rest+thr 3959 n_thr_filers 28 [589, 211, 160, 149, 122, 110, 99, 90, 84, 71, 66, 63]
+2025 name-bulk 1249 threshold-only 1137 rest 1536 rest+thr 2673 n_thr_filers 8 [406, 275, 205, 138, 33, 30, 25, 25]
+2026 name-bulk 1427 threshold-only 1093 rest 1345 rest+thr 2438 n_thr_filers 8 [373, 184, 167, 131, 130, 56, 26, 26]
+threshold sensitivity (liens left after removing name-bulk and filers with >= T liens that year)
+25 [783, 1083, 1092, 1466, 1536] 1.96
+50 [1239, 1196, 1381, 1802, 1649] 1.33
+100 [1344, 1196, 1524, 2618, 1649] 1.23
+200 [1532, 1517, 1818, 3159, 1787] 1.17
+1000000000 [2085, 2986, 2695, 3959, 2673] 1.28

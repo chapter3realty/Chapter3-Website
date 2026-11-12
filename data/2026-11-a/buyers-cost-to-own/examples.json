@@ -1,0 +1,307 @@
+{
+ "rule": "Yearly cost of owning the middle house and the middle condo, by area, besides the mortgage. Builds examples.json,\nthe one file the page's table, chart and worked example read. Nothing here is typed from memory: every input is a\ndata file or a verified ledger row (batches/2026-11-a/buyers-cost-to-own/facts.md names the row for each constant).\n\nInputs (paths relative to the website repo root, passed as argv[1]):\n  data/2026-10-d/sell-home-value/findings.json      middle resale price by area (SHV ledger rows 2 and 3, verified)\n  data/2026-11-a/buyers-cost-to-own/pums-2024-1yr.json        what Horry owners pay: insurance, utilities (Census ACS PUMS)\n  data/2026-11-a/buyers-cost-to-own/hoa-by-area.json          middle HOA fee of homes for sale, by ZIP (CRM, aggregate)\n  data/2026-11-a/buyers-cost-to-own/flood-by-area.json        FEMA flood policy cost by zone (OpenFEMA)\n  data/2026-11-a/buyers-cost-to-own/ahs-2023-maintenance.json, ahs-2023-replacements.json   upkeep (Census AHS 2023)\nTax model: the site's own calculator (/buyers/property-taxes/, /buyers/cost-to-own/): 4 percent of value x (levy - 109.1\nschool operating mills), less the City of Myrtle Beach credit of 53.4 percent of its 83.4-mill levy on a 4 percent home;\n6 percent of value x the full levy. Levies: Horry County Auditor, 2026 Horry County Tax Levies (certified 7/27/2026).\nFlat fees on the bill, kept as their own line: unincorporated stormwater $89.40 (on house and condo bills: the Little River sample bill is a condo; one Carolina Forest district 800 sample bill carried no fee); Surfside Beach $82.00 (2026 sample bills).\nThe county taxes its own value, not the price; after a sale the value resets toward the price (CM ledger row 15).\nUsage: python3 -I build_examples.py <website repo root>",
+ "houses": [
+  {
+   "place": "Carolina Forest",
+   "kind": "house",
+   "middle_price": 395000,
+   "sales": 444,
+   "tax_area": "Unincorporated Horry County",
+   "tax_legal_residence": 1452,
+   "tax_second_home": 4764,
+   "fee_on_tax_bill": 89.4,
+   "insurance": 2000,
+   "hoa_zip": "29579",
+   "hoa_listings": 363,
+   "hoa_monthly_middle": 125,
+   "hoa_yearly": 1500,
+   "upkeep": 3273,
+   "total_legal_residence": 8314.4,
+   "total_second_home": 11626.4,
+   "total_per_month_legal_residence": 693
+  },
+  {
+   "place": "Conway",
+   "kind": "house",
+   "middle_price": 265000,
+   "sales": 328,
+   "tax_area": "Conway",
+   "tax_legal_residence": 1732,
+   "tax_second_home": 4333,
+   "fee_on_tax_bill": 0.0,
+   "insurance": 2000,
+   "hoa_zip": "29526",
+   "hoa_listings": 471,
+   "hoa_monthly_middle": 75,
+   "hoa_yearly": 900,
+   "upkeep": 3273,
+   "total_legal_residence": 7905.0,
+   "total_second_home": 10506.0,
+   "total_per_month_legal_residence": 659
+  },
+  {
+   "place": "Myrtle Beach",
+   "kind": "house",
+   "middle_price": 430000,
+   "sales": 705,
+   "tax_area": "City of Myrtle Beach",
+   "tax_legal_residence": 1737,
+   "tax_second_home": 6569,
+   "fee_on_tax_bill": 0.0,
+   "insurance": 2000,
+   "hoa_zip": "29577",
+   "hoa_listings": 187,
+   "hoa_monthly_middle": 100,
+   "hoa_yearly": 1200,
+   "upkeep": 3273,
+   "total_legal_residence": 8210.0,
+   "total_second_home": 13042.0,
+   "total_per_month_legal_residence": 684
+  },
+  {
+   "place": "North Myrtle Beach",
+   "kind": "house",
+   "middle_price": 535000,
+   "sales": 655,
+   "tax_area": "North Myrtle Beach",
+   "tax_legal_residence": 2399,
+   "tax_second_home": 7101,
+   "fee_on_tax_bill": 0.0,
+   "insurance": 2000,
+   "hoa_zip": "29582",
+   "hoa_listings": 255,
+   "hoa_monthly_middle": 0,
+   "hoa_yearly": 0,
+   "upkeep": 3273,
+   "total_legal_residence": 7672.0,
+   "total_second_home": 12374.0,
+   "total_per_month_legal_residence": 639
+  },
+  {
+   "place": "Socastee",
+   "kind": "house",
+   "middle_price": 292000,
+   "sales": 297,
+   "tax_area": "Unincorporated Horry County",
+   "tax_legal_residence": 1073,
+   "tax_second_home": 3522,
+   "fee_on_tax_bill": 89.4,
+   "insurance": 2000,
+   "hoa_zip": "29588",
+   "hoa_listings": 276,
+   "hoa_monthly_middle": 100,
+   "hoa_yearly": 1200,
+   "upkeep": 3273,
+   "total_legal_residence": 7635.4,
+   "total_second_home": 10084.4,
+   "total_per_month_legal_residence": 636
+  }
+ ],
+ "condos": [
+  {
+   "place": "Myrtle Beach",
+   "kind": "condo",
+   "middle_price": 172000,
+   "sales": 1039,
+   "tax_area": "City of Myrtle Beach",
+   "tax_legal_residence": 695,
+   "tax_second_home": 2627,
+   "fee_on_tax_bill": 0.0,
+   "insurance": 800,
+   "hoa_zip": "29577",
+   "hoa_listings": 828,
+   "hoa_monthly_middle": 775,
+   "hoa_yearly": 9300,
+   "upkeep": 692,
+   "total_legal_residence": 11487.0,
+   "total_second_home": 13419.0,
+   "total_per_month_legal_residence": 957
+  },
+  {
+   "place": "North Myrtle Beach",
+   "kind": "condo",
+   "middle_price": 300000,
+   "sales": 987,
+   "tax_area": "North Myrtle Beach",
+   "tax_legal_residence": 1345,
+   "tax_second_home": 3982,
+   "fee_on_tax_bill": 0.0,
+   "insurance": 800,
+   "hoa_zip": "29582",
+   "hoa_listings": 569,
+   "hoa_monthly_middle": 700,
+   "hoa_yearly": 8400,
+   "upkeep": 692,
+   "total_legal_residence": 11237.0,
+   "total_second_home": 13874.0,
+   "total_per_month_legal_residence": 936
+  },
+  {
+   "place": "Garden City",
+   "kind": "condo",
+   "middle_price": 220000,
+   "sales": 259,
+   "tax_area": "Garden City (unincorporated)",
+   "tax_legal_residence": 864,
+   "tax_second_home": 2736,
+   "fee_on_tax_bill": 89.4,
+   "insurance": 800,
+   "hoa_zip": "29576",
+   "hoa_listings": 165,
+   "hoa_monthly_middle": 525,
+   "hoa_yearly": 6300,
+   "upkeep": 692,
+   "total_legal_residence": 8745.4,
+   "total_second_home": 10617.4,
+   "total_per_month_legal_residence": 729
+  },
+  {
+   "place": "Little River",
+   "kind": "condo",
+   "middle_price": 155000,
+   "sales": 260,
+   "tax_area": "Unincorporated Horry County",
+   "tax_legal_residence": 570,
+   "tax_second_home": 1869,
+   "fee_on_tax_bill": 89.4,
+   "insurance": 800,
+   "hoa_zip": "29566",
+   "hoa_listings": 184,
+   "hoa_monthly_middle": 525,
+   "hoa_yearly": 6300,
+   "upkeep": 692,
+   "total_legal_residence": 8451.4,
+   "total_second_home": 9750.4,
+   "total_per_month_legal_residence": 704
+  },
+  {
+   "place": "Carolina Forest",
+   "kind": "condo",
+   "middle_price": 172000,
+   "sales": 89,
+   "tax_area": "Unincorporated Horry County",
+   "tax_legal_residence": 632,
+   "tax_second_home": 2074,
+   "fee_on_tax_bill": 89.4,
+   "insurance": 800,
+   "hoa_zip": "29579",
+   "hoa_listings": 145,
+   "hoa_monthly_middle": 425,
+   "hoa_yearly": 5100,
+   "upkeep": 692,
+   "total_legal_residence": 7313.4,
+   "total_second_home": 8755.4,
+   "total_per_month_legal_residence": 609
+  }
+ ],
+ "worked_example": {
+  "unincorporated": {
+   "price": 350000,
+   "tax_legal_residence": 1287,
+   "tax_second_home": 4221,
+   "fee_on_tax_bill": 89.4,
+   "insurance": 2000,
+   "hoa_yearly": 1200,
+   "upkeep": 3273,
+   "total": 7849.4,
+   "total_per_month": 654,
+   "total_second_home": 10783.4,
+   "utilities": 2280,
+   "total_with_utilities": 10129.4,
+   "check_vs_census_paid_off_house": {
+    "same_parts_as_census_no_upkeep_per_month": 571,
+    "census_median_per_month": 555
+   }
+  },
+  "city_of_myrtle_beach": {
+   "price": 350000,
+   "tax_legal_residence": 1414,
+   "tax_second_home": 5347,
+   "fee_on_tax_bill": 0.0,
+   "insurance": 2000,
+   "hoa_yearly": 1200,
+   "upkeep": 3273,
+   "total": 7887.0,
+   "total_per_month": 657,
+   "total_second_home": 11820.0,
+   "utilities": 2280,
+   "total_with_utilities": 10167.0,
+   "check_vs_census_paid_off_house": {
+    "same_parts_as_census_no_upkeep_per_month": 574,
+    "census_median_per_month": 555
+   }
+  },
+  "condo_unincorporated": {
+   "price": 215000,
+   "tax_legal_residence": 790,
+   "fee_on_tax_bill": 89.4,
+   "insurance": 800,
+   "hoa_yearly": 7800,
+   "upkeep": 692,
+   "total": 10171.4,
+   "utilities": 1080
+  }
+ },
+ "tax_chart_same_house": {
+  "value": 350000,
+  "rows": [
+   {
+    "tax_area": "City of Myrtle Beach",
+    "legal_residence": 1414,
+    "second_home": 5347,
+    "times": 3.8
+   },
+   {
+    "tax_area": "North Myrtle Beach",
+    "legal_residence": 1569,
+    "second_home": 4645,
+    "times": 3.0
+   },
+   {
+    "tax_area": "Conway",
+    "legal_residence": 2288,
+    "second_home": 5722,
+    "times": 2.5
+   },
+   {
+    "tax_area": "Surfside Beach",
+    "legal_residence": 1471,
+    "second_home": 4498,
+    "times": 3.1
+   },
+   {
+    "tax_area": "Garden City (unincorporated)",
+    "legal_residence": 1375,
+    "second_home": 4353,
+    "times": 3.2
+   },
+   {
+    "tax_area": "Unincorporated Horry County",
+    "legal_residence": 1287,
+    "second_home": 4221,
+    "times": 3.3
+   }
+  ]
+ },
+ "flood_extra": {
+  "house_lived_in_outside_high_risk": 551,
+  "house_lived_in_high_risk_A": 1074,
+  "house_not_lived_in_high_risk_A": 1372.0,
+  "condo_unit_lived_in_outside_high_risk": 375.0
+ },
+ "utilities": {
+  "house_electric_year": 1800,
+  "house_water_year": 480,
+  "condo_electric_year": 1080
+ },
+ "paid_off_house_month": {
+  "horry": {
+   "n_records": 372,
+   "weighted_households": 36635,
+   "median": 555,
+   "p25": 388,
+   "p75": 733
+  },
+  "note": "ACS selected monthly owner costs, no mortgage: tax, insurance, utilities, fuels, HOA or condo fee. No upkeep."
+ }
+}

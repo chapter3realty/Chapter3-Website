@@ -1,0 +1,231 @@
+{
+ "rule": [
+  "The page's town table: for each town, the middle resale price (carried from /sell/home-value/, findings.json by_area,",
+  "ledger SHV 3) and months of supply on resales (towns.json, from analyze_towns.py). Houses and condos. A cell is printed",
+  "only with 100+ resales of that kind in the town for months, and 20+ for a price (SHV rule).",
+  "Usage: SHV=<data/2026-10-d/sell-home-value/findings.json> python3 -I build_towns.py <this dir> -> town-table.json"
+ ],
+ "rows": [
+  {
+   "town": "Myrtle Beach",
+   "census_place": "Myrtle Beach city",
+   "house": {
+    "median_resale": 430000,
+    "resales_priced": 705,
+    "for_sale_resale": 296,
+    "resold_12mo": 676,
+    "months_resale": 5.3,
+    "for_sale_all": 372,
+    "price_cut": 201
+   },
+   "condo": {
+    "median_resale": 172000,
+    "resales_priced": 1039,
+    "for_sale_resale": 1006,
+    "resold_12mo": 986,
+    "months_resale": 12.2,
+    "for_sale_all": 1015,
+    "price_cut": 509
+   }
+  },
+  {
+   "town": "North Myrtle Beach",
+   "census_place": "North Myrtle Beach city",
+   "house": {
+    "median_resale": 535000,
+    "resales_priced": 655,
+    "for_sale_resale": 315,
+    "resold_12mo": 624,
+    "months_resale": 6.1,
+    "for_sale_all": 408,
+    "price_cut": 222
+   },
+   "condo": {
+    "median_resale": 300000,
+    "resales_priced": 987,
+    "for_sale_resale": 578,
+    "resold_12mo": 931,
+    "months_resale": 7.5,
+    "for_sale_all": 586,
+    "price_cut": 323
+   }
+  },
+  {
+   "town": "Surfside Beach",
+   "census_place": "Surfside Beach town",
+   "house": {
+    "median_resale": 620000,
+    "resales_priced": 138,
+    "for_sale_resale": 39,
+    "resold_12mo": 129,
+    "months_resale": 3.6,
+    "for_sale_all": 45,
+    "price_cut": 28
+   },
+   "condo": {
+    "median_resale": 370000,
+    "resales_priced": 50,
+    "for_sale_resale": 21,
+    "resold_12mo": 48,
+    "months_resale": null,
+    "for_sale_all": 21,
+    "price_cut": 8
+   }
+  },
+  {
+   "town": "Garden City",
+   "census_place": "Garden City CDP",
+   "house": {
+    "median_resale": 385000,
+    "resales_priced": 163,
+    "for_sale_resale": 121,
+    "resold_12mo": 155,
+    "months_resale": 9.4,
+    "for_sale_all": 125,
+    "price_cut": 77
+   },
+   "condo": {
+    "median_resale": 220000,
+    "resales_priced": 259,
+    "for_sale_resale": 106,
+    "resold_12mo": 247,
+    "months_resale": 5.1,
+    "for_sale_all": 106,
+    "price_cut": 49
+   }
+  },
+  {
+   "town": "Little River",
+   "census_place": "Little River CDP",
+   "house": {
+    "median_resale": 350000,
+    "resales_priced": 332,
+    "for_sale_resale": 98,
+    "resold_12mo": 317,
+    "months_resale": 3.7,
+    "for_sale_all": 129,
+    "price_cut": 71
+   },
+   "condo": {
+    "median_resale": 155000,
+    "resales_priced": 260,
+    "for_sale_resale": 154,
+    "resold_12mo": 227,
+    "months_resale": 8.1,
+    "for_sale_all": 154,
+    "price_cut": 99
+   }
+  },
+  {
+   "town": "Carolina Forest",
+   "census_place": "Carolina Forest CDP",
+   "house": {
+    "median_resale": 395000,
+    "resales_priced": 444,
+    "for_sale_resale": 130,
+    "resold_12mo": 417,
+    "months_resale": 3.7,
+    "for_sale_all": 145,
+    "price_cut": 96
+   },
+   "condo": {
+    "median_resale": 172000,
+    "resales_priced": 89,
+    "for_sale_resale": 33,
+    "resold_12mo": 88,
+    "months_resale": null,
+    "for_sale_all": 33,
+    "price_cut": 17
+   }
+  },
+  {
+   "town": "Forestbrook",
+   "census_place": "Forestbrook CDP",
+   "house": {
+    "median_resale": 331000,
+    "resales_priced": 136,
+    "for_sale_resale": 34,
+    "resold_12mo": 130,
+    "months_resale": 3.1,
+    "for_sale_all": 39,
+    "price_cut": 23
+   },
+   "condo": {
+    "median_resale": null,
+    "resales_priced": 2,
+    "for_sale_resale": 1,
+    "resold_12mo": 2,
+    "months_resale": null,
+    "for_sale_all": 1,
+    "price_cut": 0
+   }
+  },
+  {
+   "town": "Socastee",
+   "census_place": "Socastee CDP",
+   "house": {
+    "median_resale": 292000,
+    "resales_priced": 297,
+    "for_sale_resale": 95,
+    "resold_12mo": 284,
+    "months_resale": 4.0,
+    "for_sale_all": 135,
+    "price_cut": 78
+   },
+   "condo": {
+    "median_resale": 178000,
+    "resales_priced": 65,
+    "for_sale_resale": 22,
+    "resold_12mo": 62,
+    "months_resale": null,
+    "for_sale_all": 22,
+    "price_cut": 13
+   }
+  },
+  {
+   "town": "Red Hill",
+   "census_place": "Red Hill CDP",
+   "house": {
+    "median_resale": 310000,
+    "resales_priced": 223,
+    "for_sale_resale": 67,
+    "resold_12mo": 215,
+    "months_resale": 3.7,
+    "for_sale_all": 88,
+    "price_cut": 51
+   },
+   "condo": {
+    "median_resale": 164000,
+    "resales_priced": 56,
+    "for_sale_resale": 36,
+    "resold_12mo": 55,
+    "months_resale": null,
+    "for_sale_all": 36,
+    "price_cut": 17
+   }
+  },
+  {
+   "town": "Conway",
+   "census_place": "Conway city",
+   "house": {
+    "median_resale": 265000,
+    "resales_priced": 328,
+    "for_sale_resale": 110,
+    "resold_12mo": 321,
+    "months_resale": 4.1,
+    "for_sale_all": 183,
+    "price_cut": 110
+   },
+   "condo": {
+    "median_resale": 164000,
+    "resales_priced": 21,
+    "for_sale_resale": 8,
+    "resold_12mo": 20,
+    "months_resale": null,
+    "for_sale_all": 8,
+    "price_cut": 5
+   }
+  }
+ ],
+ "limit": "819 of the 13,194 deed sales have no map point and no town; town months of supply count only sales with a point, so each town's figure runs a little high (about 6 percent on average)."
+}

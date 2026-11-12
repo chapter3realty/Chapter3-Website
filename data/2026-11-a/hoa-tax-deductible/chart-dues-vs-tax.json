@@ -1,0 +1,24 @@
+{
+ "title": "A year of condo dues against a year of property tax",
+ "rows": [
+  {
+   "case": "Myrtle Beach condo, rented (6 percent)",
+   "dues_year": 9300,
+   "tax_year": 2421.24,
+   "ratio": 3.8
+  },
+  {
+   "case": "Myrtle Beach condo, owner's main home (4 percent)",
+   "dues_year": 9300,
+   "tax_year": 829.16,
+   "ratio": 11.2
+  },
+  {
+   "case": "North Myrtle Beach condo, rented (6 percent)",
+   "dues_year": 8400,
+   "tax_year": 3326.85,
+   "ratio": 2.5
+  }
+ ],
+ "rule": "Dues: median monthly dues of condos for sale in ZIP 29577 (Myrtle Beach) or 29582 (North Myrtle Beach) x 12. Tax: the 2026 bill of the median-assessed condo unit in tax district 880 or 550 at that ratio."
+}

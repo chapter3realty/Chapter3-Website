@@ -1,0 +1,68 @@
+{
+ "pulled": "2026-11-04T07:16:26.394181Z",
+ "api": "https://chapter3realty.com/homes/api/map",
+ "counts": {
+  "condo": {
+   "all": 2842,
+   "no_fee": 1,
+   "rentals_allowed": 2497,
+   "str_allowed": 1991,
+   "long_term_rental_allowed": 2392,
+   "rentals_allowed_no_fee": 1,
+   "str_allowed_no_fee": 0,
+   "ltr_allowed_no_fee": 0
+  },
+  "townhouse": {
+   "all": 365,
+   "no_fee": 29,
+   "rentals_allowed": 293,
+   "str_allowed": 89,
+   "long_term_rental_allowed": 279,
+   "rentals_allowed_no_fee": 29,
+   "str_allowed_no_fee": 7,
+   "ltr_allowed_no_fee": 15
+  },
+  "house": {
+   "all": 3704,
+   "no_fee": 1144,
+   "rentals_allowed": 2960,
+   "str_allowed": 455,
+   "long_term_rental_allowed": 2237,
+   "rentals_allowed_no_fee": 1134,
+   "str_allowed_no_fee": 323,
+   "ltr_allowed_no_fee": 424
+  }
+ },
+ "queries": {
+  "condo": {
+   "all": "type=condo&status=active",
+   "no_fee": "type=condo&status=active&hoaMax=0",
+   "rentals_allowed": "type=condo&status=active&has=rentals_allowed",
+   "str_allowed": "type=condo&status=active&has=str_allowed",
+   "long_term_rental_allowed": "type=condo&status=active&has=long_term_rental_allowed",
+   "rentals_allowed_no_fee": "type=condo&status=active&has=rentals_allowed&hoaMax=0",
+   "str_allowed_no_fee": "type=condo&status=active&has=str_allowed&hoaMax=0",
+   "ltr_allowed_no_fee": "type=condo&status=active&has=long_term_rental_allowed&hoaMax=0"
+  },
+  "townhouse": {
+   "all": "type=townhouse&status=active",
+   "no_fee": "type=townhouse&status=active&hoaMax=0",
+   "rentals_allowed": "type=townhouse&status=active&has=rentals_allowed",
+   "str_allowed": "type=townhouse&status=active&has=str_allowed",
+   "long_term_rental_allowed": "type=townhouse&status=active&has=long_term_rental_allowed",
+   "rentals_allowed_no_fee": "type=townhouse&status=active&has=rentals_allowed&hoaMax=0",
+   "str_allowed_no_fee": "type=townhouse&status=active&has=str_allowed&hoaMax=0",
+   "ltr_allowed_no_fee": "type=townhouse&status=active&has=long_term_rental_allowed&hoaMax=0"
+  },
+  "house": {
+   "all": "type=house&status=active",
+   "no_fee": "type=house&status=active&hoaMax=0",
+   "rentals_allowed": "type=house&status=active&has=rentals_allowed",
+   "str_allowed": "type=house&status=active&has=str_allowed",
+   "long_term_rental_allowed": "type=house&status=active&has=long_term_rental_allowed",
+   "rentals_allowed_no_fee": "type=house&status=active&has=rentals_allowed&hoaMax=0",
+   "str_allowed_no_fee": "type=house&status=active&has=str_allowed&hoaMax=0",
+   "ltr_allowed_no_fee": "type=house&status=active&has=long_term_rental_allowed&hoaMax=0"
+  }
+ }
+}

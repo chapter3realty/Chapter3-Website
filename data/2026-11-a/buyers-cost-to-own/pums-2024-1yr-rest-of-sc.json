@@ -1,0 +1,553 @@
+{
+ "source": "Census ACS PUMS 2024 1-year housing file, South Carolina (psam_h45.csv)",
+ "pumas": "rest of SC (all but 02601, 02701, 02702)",
+ "owner_records": 16961,
+ "groups": {
+  "all_owners": {
+   "records": 16961,
+   "weighted_households": 1450619,
+   "INSP": {
+    "n_records": 14467,
+    "weighted_households": 1250606,
+    "median": 1300,
+    "p25": 940,
+    "p75": 2000
+   },
+   "ELEP": {
+    "n_records": 16829,
+    "weighted_households": 1440222,
+    "median": 190,
+    "p25": 130,
+    "p75": 260
+   },
+   "WATP": {
+    "n_records": 13830,
+    "weighted_households": 1205221,
+    "median": 490,
+    "p25": 100,
+    "p75": 900
+   },
+   "GASP": {
+    "n_records": 7302,
+    "weighted_households": 615880,
+    "median": 50,
+    "p25": 30,
+    "p75": 100
+   },
+   "FULP": {
+    "n_records": 747,
+    "weighted_households": 52197,
+    "median": 300,
+    "p25": 100,
+    "p75": 600
+   },
+   "CONP": {
+    "n_records": 5017,
+    "weighted_households": 480265,
+    "median": 80,
+    "p25": 40,
+    "p75": 220
+   },
+   "TAXAMT": {
+    "n_records": 16039,
+    "weighted_households": 1379602,
+    "median": 1350,
+    "p25": 725,
+    "p75": 2250
+   },
+   "VALP": {
+    "n_records": 16961,
+    "weighted_households": 1450619,
+    "median": 292000,
+    "p25": 170000,
+    "p75": 450000
+   },
+   "SMOCP": {
+    "n_records": 16961,
+    "weighted_households": 1450619,
+    "median": 1070,
+    "p25": 521,
+    "p75": 1838
+   },
+   "share_paying_condo_fee": 0.331,
+   "insp_per_100k_value_median": 467
+  },
+  "house_detached": {
+   "records": 14095,
+   "weighted_households": 1204674,
+   "INSP": {
+    "n_records": 12500,
+    "weighted_households": 1078635,
+    "median": 1400,
+    "p25": 1000,
+    "p75": 2100
+   },
+   "ELEP": {
+    "n_records": 13991,
+    "weighted_households": 1196022,
+    "median": 190,
+    "p25": 130,
+    "p75": 260
+   },
+   "WATP": {
+    "n_records": 12042,
+    "weighted_households": 1047610,
+    "median": 500,
+    "p25": 110,
+    "p75": 960
+   },
+   "GASP": {
+    "n_records": 6738,
+    "weighted_households": 567902,
+    "median": 50,
+    "p25": 30,
+    "p75": 100
+   },
+   "FULP": {
+    "n_records": 604,
+    "weighted_households": 41981,
+    "median": 300,
+    "p25": 100,
+    "p75": 600
+   },
+   "CONP": {
+    "n_records": 4383,
+    "weighted_households": 419097,
+    "median": 70,
+    "p25": 30,
+    "p75": 180
+   },
+   "TAXAMT": {
+    "n_records": 13548,
+    "weighted_households": 1161533,
+    "median": 1450,
+    "p25": 875,
+    "p75": 2350
+   },
+   "VALP": {
+    "n_records": 14095,
+    "weighted_households": 1204674,
+    "median": 300000,
+    "p25": 200000,
+    "p75": 475000
+   },
+   "SMOCP": {
+    "n_records": 14095,
+    "weighted_households": 1204674,
+    "median": 1175,
+    "p25": 576,
+    "p75": 1939
+   },
+   "share_paying_condo_fee": 0.348,
+   "insp_per_100k_value_median": 450
+  },
+  "house_detached_no_mortgage": {
+   "records": 6256,
+   "weighted_households": 474824,
+   "INSP": {
+    "n_records": 5241,
+    "weighted_households": 400296,
+    "median": 1300,
+    "p25": 950,
+    "p75": 2000
+   },
+   "ELEP": {
+    "n_records": 6206,
+    "weighted_households": 470245,
+    "median": 180,
+    "p25": 130,
+    "p75": 250
+   },
+   "WATP": {
+    "n_records": 5117,
+    "weighted_households": 392650,
+    "median": 480,
+    "p25": 110,
+    "p75": 840
+   },
+   "GASP": {
+    "n_records": 2953,
+    "weighted_households": 217462,
+    "median": 60,
+    "p25": 30,
+    "p75": 110
+   },
+   "FULP": {
+    "n_records": 345,
+    "weighted_households": 21884,
+    "median": 300,
+    "p25": 140,
+    "p75": 700
+   },
+   "CONP": {
+    "n_records": 1453,
+    "weighted_households": 121948,
+    "median": 80,
+    "p25": 40,
+    "p75": 220
+   },
+   "TAXAMT": {
+    "n_records": 5940,
+    "weighted_households": 453120,
+    "median": 1250,
+    "p25": 675,
+    "p75": 2050
+   },
+   "VALP": {
+    "n_records": 6256,
+    "weighted_households": 474824,
+    "median": 270000,
+    "p25": 150000,
+    "p75": 425000
+   },
+   "SMOCP": {
+    "n_records": 6256,
+    "weighted_households": 474824,
+    "median": 504,
+    "p25": 368,
+    "p75": 700
+   },
+   "share_paying_condo_fee": 0.257,
+   "insp_per_100k_value_median": 482
+  },
+  "house_detached_with_mortgage": {
+   "records": 7839,
+   "weighted_households": 729850,
+   "INSP": {
+    "n_records": 7259,
+    "weighted_households": 678339,
+    "median": 1500,
+    "p25": 1000,
+    "p75": 2200
+   },
+   "ELEP": {
+    "n_records": 7785,
+    "weighted_households": 725777,
+    "median": 200,
+    "p25": 140,
+    "p75": 270
+   },
+   "WATP": {
+    "n_records": 6925,
+    "weighted_households": 654960,
+    "median": 540,
+    "p25": 110,
+    "p75": 1000
+   },
+   "GASP": {
+    "n_records": 3785,
+    "weighted_households": 350440,
+    "median": 50,
+    "p25": 30,
+    "p75": 100
+   },
+   "FULP": {
+    "n_records": 259,
+    "weighted_households": 20097,
+    "median": 250,
+    "p25": 100,
+    "p75": 500
+   },
+   "CONP": {
+    "n_records": 2930,
+    "weighted_households": 297149,
+    "median": 60,
+    "p25": 30,
+    "p75": 150
+   },
+   "TAXAMT": {
+    "n_records": 7608,
+    "weighted_households": 708413,
+    "median": 1550,
+    "p25": 1050,
+    "p75": 2550
+   },
+   "VALP": {
+    "n_records": 7839,
+    "weighted_households": 729850,
+    "median": 350000,
+    "p25": 240000,
+    "p75": 500000
+   },
+   "SMOCP": {
+    "n_records": 7839,
+    "weighted_households": 729850,
+    "median": 1708,
+    "p25": 1231,
+    "p75": 2400
+   },
+   "share_paying_condo_fee": 0.407,
+   "insp_per_100k_value_median": 434
+  },
+  "attached_or_apartment_building": {
+   "records": 787,
+   "weighted_households": 74700,
+   "INSP": {
+    "n_records": 680,
+    "weighted_households": 65517,
+    "median": 1000,
+    "p25": 500,
+    "p75": 1600
+   },
+   "ELEP": {
+    "n_records": 774,
+    "weighted_households": 73836,
+    "median": 120,
+    "p25": 90,
+    "p75": 170
+   },
+   "WATP": {
+    "n_records": 627,
+    "weighted_households": 60072,
+    "median": 480,
+    "p25": 80,
+    "p75": 750
+   },
+   "GASP": {
+    "n_records": 265,
+    "weighted_households": 25928,
+    "median": 40,
+    "p25": 20,
+    "p75": 70
+   },
+   "FULP": {
+    "n_records": 22,
+    "weighted_households": 1712,
+    "median": 150,
+    "p25": 80,
+    "p75": 250
+   },
+   "CONP": {
+    "n_records": 634,
+    "weighted_households": 61168,
+    "median": 230,
+    "p25": 150,
+    "p75": 400
+   },
+   "TAXAMT": {
+    "n_records": 736,
+    "weighted_households": 69917,
+    "median": 1350,
+    "p25": 925,
+    "p75": 2150
+   },
+   "VALP": {
+    "n_records": 787,
+    "weighted_households": 74700,
+    "median": 295000,
+    "p25": 200000,
+    "p75": 430000
+   },
+   "SMOCP": {
+    "n_records": 787,
+    "weighted_households": 74700,
+    "median": 1192,
+    "p25": 712,
+    "p75": 1838
+   },
+   "share_paying_condo_fee": 0.819,
+   "insp_per_100k_value_median": 345
+  },
+  "apartment_building_3plus": {
+   "records": 210,
+   "weighted_households": 20051,
+   "INSP": {
+    "n_records": 168,
+    "weighted_households": 16476,
+    "median": 1000,
+    "p25": 500,
+    "p75": 2000
+   },
+   "ELEP": {
+    "n_records": 202,
+    "weighted_households": 19560,
+    "median": 100,
+    "p25": 80,
+    "p75": 150
+   },
+   "WATP": {
+    "n_records": 119,
+    "weighted_households": 11731,
+    "median": 450,
+    "p25": 100,
+    "p75": 700
+   },
+   "GASP": {
+    "n_records": 28,
+    "weighted_households": 2866,
+    "median": 30,
+    "p25": 20,
+    "p75": 50
+   },
+   "FULP": {
+    "n_records": 3,
+    "weighted_households": 105,
+    "median": 3300,
+    "p25": 20,
+    "p75": 3300
+   },
+   "CONP": {
+    "n_records": 178,
+    "weighted_households": 16852,
+    "median": 390,
+    "p25": 250,
+    "p75": 550
+   },
+   "TAXAMT": {
+    "n_records": 180,
+    "weighted_households": 17077,
+    "median": 1250,
+    "p25": 725,
+    "p75": 2050
+   },
+   "VALP": {
+    "n_records": 210,
+    "weighted_households": 20051,
+    "median": 260000,
+    "p25": 150000,
+    "p75": 420000
+   },
+   "SMOCP": {
+    "n_records": 210,
+    "weighted_households": 20051,
+    "median": 1014,
+    "p25": 687,
+    "p75": 1736
+   },
+   "share_paying_condo_fee": 0.84,
+   "insp_per_100k_value_median": 375
+  },
+  "apartment_building_3plus_no_mortgage": {
+   "records": 108,
+   "weighted_households": 9282,
+   "INSP": {
+    "n_records": 78,
+    "weighted_households": 6861,
+    "median": 700,
+    "p25": 420,
+    "p75": 1800
+   },
+   "ELEP": {
+    "n_records": 100,
+    "weighted_households": 8791,
+    "median": 90,
+    "p25": 70,
+    "p75": 150
+   },
+   "WATP": {
+    "n_records": 58,
+    "weighted_households": 4692,
+    "median": 420,
+    "p25": 150,
+    "p75": 650
+   },
+   "GASP": {
+    "n_records": 14,
+    "weighted_households": 1049,
+    "median": 30,
+    "p25": 20,
+    "p75": 50
+   },
+   "FULP": {
+    "n_records": 2,
+    "weighted_households": 67,
+    "median": 20,
+    "p25": 20,
+    "p75": 3300
+   },
+   "CONP": {
+    "n_records": 84,
+    "weighted_households": 6951,
+    "median": 400,
+    "p25": 250,
+    "p75": 600
+   },
+   "TAXAMT": {
+    "n_records": 87,
+    "weighted_households": 7659,
+    "median": 1250,
+    "p25": 825,
+    "p75": 2050
+   },
+   "VALP": {
+    "n_records": 108,
+    "weighted_households": 9282,
+    "median": 250000,
+    "p25": 132000,
+    "p75": 450000
+   },
+   "SMOCP": {
+    "n_records": 108,
+    "weighted_households": 9282,
+    "median": 688,
+    "p25": 354,
+    "p75": 939
+   },
+   "share_paying_condo_fee": 0.749,
+   "insp_per_100k_value_median": 333
+  },
+  "mobile_home": {
+   "records": 2049,
+   "weighted_households": 168665,
+   "INSP": {
+    "n_records": 1274,
+    "weighted_households": 105442,
+    "median": 970,
+    "p25": 500,
+    "p75": 1300
+   },
+   "ELEP": {
+    "n_records": 2034,
+    "weighted_households": 167784,
+    "median": 200,
+    "p25": 150,
+    "p75": 300
+   },
+   "WATP": {
+    "n_records": 1149,
+    "weighted_households": 96445,
+    "median": 370,
+    "p25": 120,
+    "p75": 600
+   },
+   "GASP": {
+    "n_records": 279,
+    "weighted_households": 20201,
+    "median": 100,
+    "p25": 40,
+    "p75": 240
+   },
+   "FULP": {
+    "n_records": 115,
+    "weighted_households": 8038,
+    "median": 300,
+    "p25": 100,
+    "p75": 600
+   },
+   "CONP": null,
+   "TAXAMT": {
+    "n_records": 1735,
+    "weighted_households": 146285,
+    "median": 375,
+    "p25": 225,
+    "p75": 725
+   },
+   "VALP": {
+    "n_records": 2049,
+    "weighted_households": 168665,
+    "median": 80000,
+    "p25": 30000,
+    "p75": 150000
+   },
+   "SMOCP": {
+    "n_records": 2049,
+    "weighted_households": 168665,
+    "median": 461,
+    "p25": 296,
+    "p75": 886
+   },
+   "share_paying_condo_fee": 0.0,
+   "insp_per_100k_value_median": 889
+  }
+ }
+}

@@ -1,0 +1,1276 @@
+{
+ "pulled": "2026-11-02T11:20:36.931977+00:00",
+ "api": "https://chapter3realty.com/homes/api/map?",
+ "groups": {
+  "condos": {
+   "params": {
+    "type": "condo",
+    "has": "county_horry"
+   },
+   "listings": 2656,
+   "median_ask_5k": 220000,
+   "under": {
+    "100000": 169,
+    "150000": 609,
+    "200000": 1200,
+    "250000": 1676,
+    "300000": 1944,
+    "400000": 2260,
+    "500000": 2446
+   },
+   "dues_known": 2656,
+   "median_dues_25": 650,
+   "dues_at_or_under": {
+    "300": 109,
+    "400": 379,
+    "500": 830,
+    "600": 1181,
+    "700": 1466,
+    "800": 1686,
+    "900": 1860,
+    "1000": 2105,
+    "1200": 2308,
+    "1500": 2487
+   },
+   "flags": {
+    "str_allowed": 1895,
+    "rentals_allowed": 2341,
+    "long_term_rental_allowed": 2240,
+    "vacation_rental_program": 1340,
+    "conventional_accepted": 1969,
+    "fha_accepted": 307,
+    "va_accepted": 228,
+    "cash_only_listing": 95,
+    "price_reduced": 1366,
+    "furnished": 2051,
+    "hoa_includes_insurance": 2090,
+    "flood_zone": 313,
+    "high_rise": 1152,
+    "elevator_building": 1425
+   },
+   "beds_exact": {
+    "0": 268,
+    "1": 647,
+    "2": 1036,
+    "3": 613
+   }
+  },
+  "oceanfront_building": {
+   "params": {
+    "type": "condo",
+    "has": "county_horry,oceanfront_building"
+   },
+   "listings": 1071,
+   "median_ask_5k": 215000,
+   "under": {
+    "100000": 88,
+    "150000": 300,
+    "200000": 508,
+    "250000": 633,
+    "300000": 708,
+    "400000": 833,
+    "500000": 918
+   },
+   "dues_known": 1071,
+   "median_dues_25": 925,
+   "dues_at_or_under": {
+    "300": 0,
+    "400": 6,
+    "500": 61,
+    "600": 108,
+    "700": 250,
+    "800": 372,
+    "900": 498,
+    "1000": 681,
+    "1200": 821,
+    "1500": 951
+   },
+   "flags": {
+    "str_allowed": 1009,
+    "rentals_allowed": 1018,
+    "long_term_rental_allowed": 956,
+    "vacation_rental_program": 871,
+    "conventional_accepted": 772,
+    "fha_accepted": 60,
+    "va_accepted": 31,
+    "cash_only_listing": 47,
+    "price_reduced": 522,
+    "furnished": 1047,
+    "hoa_includes_insurance": 876,
+    "flood_zone": 236,
+    "high_rise": 951,
+    "elevator_building": 977
+   },
+   "beds_exact": {
+    "0": 199,
+    "1": 430,
+    "2": 253,
+    "3": 153
+   }
+  },
+  "houses": {
+   "params": {
+    "type": "house",
+    "has": "county_horry"
+   },
+   "listings": 2975,
+   "median_ask_5k": 415000,
+   "under": {
+    "100000": 0,
+    "150000": 3,
+    "200000": 24,
+    "250000": 175,
+    "300000": 562,
+    "400000": 1429,
+    "500000": 1938
+   }
+  },
+  "townhouses": {
+   "params": {
+    "type": "townhouse",
+    "has": "county_horry"
+   },
+   "listings": 304,
+   "median_ask_5k": 270000,
+   "under": {
+    "100000": 0,
+    "150000": 6,
+    "200000": 31,
+    "250000": 132,
+    "300000": 197,
+    "400000": 256,
+    "500000": 277
+   }
+  }
+ },
+ "oceanfront_building_2bed": {
+  "listings": 162,
+  "median_ask_5k": 340000,
+  "dues_known": 162,
+  "median_dues_25": 1075
+ },
+ "by_city": {
+  "Myrtle Beach": {
+   "listings": 808,
+   "median_ask_5k": 180000,
+   "dues_known": 808,
+   "median_dues_25": 925
+  },
+  "North Myrtle Beach": {
+   "listings": 221,
+   "median_ask_5k": 380000,
+   "dues_known": 221,
+   "median_dues_25": 1000
+  },
+  "Surfside Beach": {
+   "listings": 10,
+   "median_ask_5k": 550000,
+   "dues_known": 10,
+   "median_dues_25": 1050
+  },
+  "Garden City Beach": {
+   "listings": null,
+   "note": "The API does not know the city name Garden City Beach and returned the whole oceanfront group (1,071). Not used."
+  },
+  "Murrells Inlet": {
+   "listings": 8
+  },
+  "Little River": {
+   "listings": 1
+  }
+ },
+ "calls": [
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry",
+   "total": 2656
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=2500000",
+   "total": 2656
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=1250000",
+   "total": 2650
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=625000",
+   "total": 2561
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=310000",
+   "total": 1969
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=155000",
+   "total": 654
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=230000",
+   "total": 1513
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=190000",
+   "total": 1073
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=210000",
+   "total": 1276
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=220000",
+   "total": 1410
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=215000",
+   "total": 1325
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=100000",
+   "total": 169
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=150000",
+   "total": 609
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=200000",
+   "total": 1200
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=250000",
+   "total": 1676
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=300000",
+   "total": 1944
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=400000",
+   "total": 2260
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&max=500000",
+   "total": 2446
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=5000",
+   "total": 2656
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=2500",
+   "total": 2651
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=1250",
+   "total": 2333
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=625",
+   "total": 1273
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=925",
+   "total": 1936
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=775",
+   "total": 1628
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=700",
+   "total": 1466
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=650",
+   "total": 1346
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=300",
+   "total": 109
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=400",
+   "total": 379
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=500",
+   "total": 830
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=600",
+   "total": 1181
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=700",
+   "total": 1466
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=800",
+   "total": 1686
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=900",
+   "total": 1860
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=1000",
+   "total": 2105
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=1200",
+   "total": 2308
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&hoaMax=1500",
+   "total": 2487
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Cstr_allowed",
+   "total": 1895
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Crentals_allowed",
+   "total": 2341
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Clong_term_rental_allowed",
+   "total": 2240
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Cvacation_rental_program",
+   "total": 1340
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Cconventional_accepted",
+   "total": 1969
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Cfha_accepted",
+   "total": 307
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Cva_accepted",
+   "total": 228
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Ccash_only_listing",
+   "total": 95
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Cprice_reduced",
+   "total": 1366
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Cfurnished",
+   "total": 2051
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Choa_includes_insurance",
+   "total": 2090
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Cflood_zone",
+   "total": 313
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Chigh_rise",
+   "total": 1152
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Celevator_building",
+   "total": 1425
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&beds=1",
+   "total": 2388
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&beds=1",
+   "total": 2388
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&beds=2",
+   "total": 1741
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&beds=2",
+   "total": 1741
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&beds=3",
+   "total": 705
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&beds=3",
+   "total": 705
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry&beds=4",
+   "total": 92
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building",
+   "total": 1071
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=2500000",
+   "total": 1071
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=1250000",
+   "total": 1067
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=625000",
+   "total": 1001
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=310000",
+   "total": 714
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=155000",
+   "total": 320
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=230000",
+   "total": 600
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=190000",
+   "total": 465
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=210000",
+   "total": 532
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=220000",
+   "total": 578
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=215000",
+   "total": 550
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=100000",
+   "total": 88
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=150000",
+   "total": 300
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=200000",
+   "total": 508
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=250000",
+   "total": 633
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=300000",
+   "total": 708
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=400000",
+   "total": 833
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&max=500000",
+   "total": 918
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=5000",
+   "total": 1071
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=2500",
+   "total": 1068
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=1250",
+   "total": 838
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=625",
+   "total": 160
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=925",
+   "total": 547
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=775",
+   "total": 337
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=850",
+   "total": 426
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=875",
+   "total": 465
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=900",
+   "total": 498
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=300",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=400",
+   "total": 6
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=500",
+   "total": 61
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=600",
+   "total": 108
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=700",
+   "total": 250
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=800",
+   "total": 372
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=900",
+   "total": 498
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=1000",
+   "total": 681
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=1200",
+   "total": 821
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&hoaMax=1500",
+   "total": 951
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Cstr_allowed",
+   "total": 1009
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Crentals_allowed",
+   "total": 1018
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Clong_term_rental_allowed",
+   "total": 956
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Cvacation_rental_program",
+   "total": 871
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Cconventional_accepted",
+   "total": 772
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Cfha_accepted",
+   "total": 60
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Cva_accepted",
+   "total": 31
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Ccash_only_listing",
+   "total": 47
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Cprice_reduced",
+   "total": 522
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Cfurnished",
+   "total": 1047
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Choa_includes_insurance",
+   "total": 876
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Cflood_zone",
+   "total": 236
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Chigh_rise",
+   "total": 951
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building%2Celevator_building",
+   "total": 977
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&beds=1",
+   "total": 872
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&beds=1",
+   "total": 872
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&beds=2",
+   "total": 442
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&beds=2",
+   "total": 442
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&beds=3",
+   "total": 189
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&beds=3",
+   "total": 189
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&beds=4",
+   "total": 36
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry",
+   "total": 2975
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=2500000",
+   "total": 2947
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=1250000",
+   "total": 2826
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=625000",
+   "total": 2313
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=310000",
+   "total": 644
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=465000",
+   "total": 1762
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=385000",
+   "total": 1298
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=425000",
+   "total": 1552
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=405000",
+   "total": 1440
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=415000",
+   "total": 1489
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=410000",
+   "total": 1459
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=100000",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=150000",
+   "total": 3
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=200000",
+   "total": 24
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=250000",
+   "total": 175
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=300000",
+   "total": 562
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=400000",
+   "total": 1429
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry&max=500000",
+   "total": 1938
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry",
+   "total": 304
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=2500000",
+   "total": 304
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=1250000",
+   "total": 304
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=625000",
+   "total": 288
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=310000",
+   "total": 203
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=155000",
+   "total": 7
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=230000",
+   "total": 71
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=270000",
+   "total": 163
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=250000",
+   "total": 132
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=260000",
+   "total": 142
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=265000",
+   "total": 149
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=100000",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=150000",
+   "total": 6
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=200000",
+   "total": 31
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=250000",
+   "total": 132
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=300000",
+   "total": 197
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=400000",
+   "total": 256
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=county_horry&max=500000",
+   "total": 277
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2",
+   "total": 258
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3",
+   "total": 96
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&max=2500000",
+   "total": 258
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&max=2500000",
+   "total": 96
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&max=1250000",
+   "total": 256
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&max=1250000",
+   "total": 94
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&max=625000",
+   "total": 225
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&max=625000",
+   "total": 71
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&max=310000",
+   "total": 76
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&max=310000",
+   "total": 6
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&max=465000",
+   "total": 169
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&max=465000",
+   "total": 37
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&max=385000",
+   "total": 128
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&max=385000",
+   "total": 27
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&max=345000",
+   "total": 100
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&max=345000",
+   "total": 15
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&max=325000",
+   "total": 86
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&max=325000",
+   "total": 9
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&max=335000",
+   "total": 91
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&max=335000",
+   "total": 11
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&max=340000",
+   "total": 98
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&max=340000",
+   "total": 15
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&hoaMax=5000",
+   "total": 258
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&hoaMax=5000",
+   "total": 96
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&hoaMax=2500",
+   "total": 256
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&hoaMax=2500",
+   "total": 94
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&hoaMax=1250",
+   "total": 114
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&hoaMax=1250",
+   "total": 8
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&hoaMax=625",
+   "total": 10
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&hoaMax=625",
+   "total": 1
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&hoaMax=925",
+   "total": 63
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&hoaMax=925",
+   "total": 2
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&hoaMax=1075",
+   "total": 90
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&hoaMax=1075",
+   "total": 6
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&hoaMax=1000",
+   "total": 74
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&hoaMax=1000",
+   "total": 5
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&hoaMax=1025",
+   "total": 82
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&hoaMax=1025",
+   "total": 5
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=2&hoaMax=1050",
+   "total": 83
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&beds=3&hoaMax=1050",
+   "total": 5
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach",
+   "total": 808
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&hoaMax=5000",
+   "total": 808
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&max=2500000",
+   "total": 808
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&max=1250000",
+   "total": 806
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&max=625000",
+   "total": 775
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&max=310000",
+   "total": 626
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&max=155000",
+   "total": 308
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&max=230000",
+   "total": 556
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&max=190000",
+   "total": 444
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&max=170000",
+   "total": 383
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&max=180000",
+   "total": 426
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&max=175000",
+   "total": 403
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&hoaMax=2500",
+   "total": 806
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&hoaMax=1250",
+   "total": 627
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&hoaMax=625",
+   "total": 107
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&hoaMax=925",
+   "total": 419
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&hoaMax=775",
+   "total": 255
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&hoaMax=850",
+   "total": 312
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&hoaMax=875",
+   "total": 349
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Myrtle+Beach&hoaMax=900",
+   "total": 375
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach",
+   "total": 221
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&hoaMax=5000",
+   "total": 221
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&max=2500000",
+   "total": 221
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&max=1250000",
+   "total": 219
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&max=625000",
+   "total": 190
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&max=310000",
+   "total": 80
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&max=465000",
+   "total": 138
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&max=385000",
+   "total": 114
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&max=345000",
+   "total": 93
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&max=365000",
+   "total": 102
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&max=375000",
+   "total": 109
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&max=380000",
+   "total": 111
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&hoaMax=2500",
+   "total": 220
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&hoaMax=1250",
+   "total": 170
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&hoaMax=625",
+   "total": 44
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&hoaMax=925",
+   "total": 100
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&hoaMax=1075",
+   "total": 146
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&hoaMax=1000",
+   "total": 111
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&hoaMax=950",
+   "total": 104
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=North+Myrtle+Beach&hoaMax=975",
+   "total": 108
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach",
+   "total": 10
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&hoaMax=5000",
+   "total": 10
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&max=2500000",
+   "total": 10
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&max=1250000",
+   "total": 10
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&max=625000",
+   "total": 7
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&max=310000",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&max=465000",
+   "total": 1
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&max=545000",
+   "total": 4
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&max=585000",
+   "total": 6
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&max=565000",
+   "total": 5
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&max=555000",
+   "total": 5
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&max=550000",
+   "total": 5
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&hoaMax=2500",
+   "total": 10
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&hoaMax=1250",
+   "total": 9
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&hoaMax=625",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&hoaMax=925",
+   "total": 4
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&hoaMax=1075",
+   "total": 6
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&hoaMax=1000",
+   "total": 4
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&hoaMax=1025",
+   "total": 4
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Surfside+Beach&hoaMax=1050",
+   "total": 6
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach",
+   "total": 1071
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&hoaMax=5000",
+   "total": 1071
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&max=2500000",
+   "total": 1071
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&max=1250000",
+   "total": 1067
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&max=625000",
+   "total": 1001
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&max=310000",
+   "total": 714
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&max=155000",
+   "total": 320
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&max=230000",
+   "total": 600
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&max=190000",
+   "total": 465
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&max=210000",
+   "total": 532
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&max=220000",
+   "total": 578
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&max=215000",
+   "total": 550
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&hoaMax=2500",
+   "total": 1068
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&hoaMax=1250",
+   "total": 838
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&hoaMax=625",
+   "total": 160
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&hoaMax=925",
+   "total": 547
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&hoaMax=775",
+   "total": 337
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&hoaMax=850",
+   "total": 426
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&hoaMax=875",
+   "total": 465
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Garden+City+Beach&hoaMax=900",
+   "total": 498
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Murrells+Inlet",
+   "total": 8
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&has=county_horry%2Coceanfront_building&city=Little+River",
+   "total": 1
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "title": "What the law gives a buyer of a home in an association, by state",
+ "note": "Blank cells were not researched; the writer leaves them out, never fills them.",
+ "rows": [
+  {
+   "state": "South Carolina",
+   "packet_by_law": "No",
+   "deadline": "None",
+   "cancel_right": "None tied to the HOA papers",
+   "fee_cap": "None",
+   "rows": "3, 4, 6"
+  },
+  {
+   "state": "Virginia",
+   "packet_by_law": "Yes, resale certificate",
+   "deadline": "",
+   "cancel_right": "3 days after receipt if the contract sets none; any time before settlement if it never arrives",
+   "fee_cap": "",
+   "rows": "24"
+  },
+  {
+   "state": "Maryland",
+   "packet_by_law": "Yes, HOA disclosures",
+   "deadline": "By 20 calendar days after the contract",
+   "cancel_right": "5 calendar days after receipt, if received late",
+   "fee_cap": "Up to $250",
+   "rows": "25"
+  },
+  {
+   "state": "Florida (HOA)",
+   "packet_by_law": "Disclosure summary before the contract",
+   "deadline": "Before signing",
+   "cancel_right": "3 days after receipt, if not given before signing",
+   "fee_cap": "",
+   "rows": "26"
+  },
+  {
+   "state": "North Carolina (condo)",
+   "packet_by_law": "Statement of fees",
+   "deadline": "Before closing",
+   "cancel_right": "",
+   "fee_cap": "",
+   "rows": "27"
+  }
+ ]
+}

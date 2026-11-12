@@ -1,0 +1,29 @@
+{
+ "building_units": 120,
+ "percent_total": 100.0,
+ "repair_cost": 1200000,
+ "reserve_on_hand": 300000,
+ "shortfall": 900000,
+ "average_per_unit": 7500,
+ "rows": [
+  {
+   "unit": "1-bedroom",
+   "count": 60,
+   "percent": 0.65,
+   "share": 5850
+  },
+  {
+   "unit": "2-bedroom",
+   "count": 40,
+   "percent": 0.95,
+   "share": 8550
+  },
+  {
+   "unit": "3-bedroom",
+   "count": 20,
+   "percent": 1.15,
+   "share": 10350
+  }
+ ],
+ "fannie_mae_unfunded_critical_repair_line_per_unit": 10000
+}

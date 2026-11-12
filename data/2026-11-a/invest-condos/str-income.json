@@ -1,0 +1,57 @@
+{
+ "source": "AirROI, Myrtle Beach market page (text copy in data/2026-11-a/submarkets-myrtle-beach/raw/airroi-myrtle-beach.txt)",
+ "source_url": "https://www.airroi.com/airbnb-data/united-states/south-carolina/myrtle-beach",
+ "period": "12 months to September 2026",
+ "note": "Annual figures count every active listing, including those open only part of the year. The top-quarter listing earns at the 75th percentile of monthly revenue, over a full year. Running costs: Airbnb's fee, cleaning paid by the cleaning fee, utilities, supplies, repairs, a short-term rental policy and the permit; no manager.",
+ "by_size": {
+  "Studio": {
+   "listings": 376,
+   "median_year": 8160,
+   "average_year": 12300,
+   "nightly_rate": 154,
+   "occupancy_pct": 33
+  },
+  "1 bedroom": {
+   "listings": 2391,
+   "median_year": 17000,
+   "average_year": 20700,
+   "nightly_rate": 194,
+   "occupancy_pct": 38
+  },
+  "2 bedrooms": {
+   "listings": 2689,
+   "median_year": 20100,
+   "average_year": 25100,
+   "nightly_rate": 252,
+   "occupancy_pct": 37
+  },
+  "3 bedrooms": {
+   "listings": 1379,
+   "median_year": 31700,
+   "average_year": 37100,
+   "nightly_rate": 339,
+   "occupancy_pct": 38
+  }
+ },
+ "average_listing": {
+  "gross": 25807,
+  "running_costs": 9830,
+  "left_for_housing_costs": 15977
+ },
+ "top_quarter_listing": {
+  "gross": 44250,
+  "running_costs": 16560,
+  "left_for_housing_costs": 27690
+ },
+ "management": {
+  "fullServiceLow": 40,
+  "fullServiceHigh": 60,
+  "fullServiceBase": "gross profit",
+  "fullServiceIncludes": "marketing, guest communication, accounting, taxes, maintenance and repairs",
+  "basicLow": 12.62,
+  "basicHigh": 17.45,
+  "basicIncludes": "marketing, guest communication and basic accounting, with condition and financial reporting; repairs and tax help billed separately on request",
+  "observedOn": "2026-08-15",
+  "_note": "Owner-observed market ranges, stated by Devin Day 2026-08-15. Not vendor-published. Present as observed averages, never as a competitor claim."
+ }
+}

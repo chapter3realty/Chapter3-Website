@@ -1,0 +1,314 @@
+{
+ "pulled": "2026-11-01T03:19:04.933473Z",
+ "source": "https://chapter3realty.com/homes/api/map?",
+ "status": "for sale (API default)",
+ "towns": {
+  "myrtle_beach_city": {
+   "condo": {
+    "total": 641,
+    "str_allowed": 541
+   },
+   "house": {
+    "total": 201,
+    "str_allowed": 18
+   }
+  },
+  "north_myrtle_beach": {
+   "condo": {
+    "total": 589,
+    "str_allowed": 482
+   },
+   "house": {
+    "total": 258,
+    "str_allowed": 112
+   }
+  },
+  "surfside_beach": {
+   "condo": {
+    "total": 86,
+    "str_allowed": 50
+   },
+   "house": {
+    "total": 84,
+    "str_allowed": 23
+   }
+  },
+  "garden_city": {
+   "condo": {
+    "total": 75,
+    "str_allowed": 53
+   },
+   "house": {
+    "total": 51,
+    "str_allowed": 38
+   }
+  },
+  "murrells_inlet": {
+   "condo": {
+    "total": 131,
+    "str_allowed": 30
+   },
+   "house": {
+    "total": 206,
+    "str_allowed": 34
+   }
+  },
+  "pawleys_island": {
+   "condo": {
+    "total": 100,
+    "str_allowed": 62
+   },
+   "house": {
+    "total": 123,
+    "str_allowed": 35
+   }
+  },
+  "little_river": {
+   "condo": {
+    "total": 185,
+    "str_allowed": 74
+   },
+   "house": {
+    "total": 190,
+    "str_allowed": 18
+   }
+  },
+  "conway": {
+   "condo": {
+    "total": 33,
+    "str_allowed": 4
+   },
+   "house": {
+    "total": 675,
+    "str_allowed": 34
+   }
+  }
+ },
+ "examples": {
+  "mb_city_oceanfront_condo_2br": {
+   "params": {
+    "type": "condo",
+    "city": "Myrtle Beach",
+    "has": "oceanfront_building,inside_city_limits,str_allowed"
+   },
+   "exact_beds": 2,
+   "n": 48,
+   "price_n": 48,
+   "price_median": 327000.0,
+   "price_p25": 269900,
+   "price_p75": 389900,
+   "fee_cdf": {
+    "0": 0,
+    "50": 0,
+    "100": 0,
+    "150": 0,
+    "200": 0,
+    "250": 0,
+    "300": 0,
+    "350": 0,
+    "400": 0,
+    "450": 0,
+    "500": 2,
+    "550": 2,
+    "600": 2,
+    "650": 3,
+    "700": 5,
+    "750": 9,
+    "800": 9,
+    "850": 9,
+    "900": 11,
+    "950": 17,
+    "1000": 18,
+    "1050": 18,
+    "1100": 19,
+    "1150": 21,
+    "1200": 22,
+    "1250": 25,
+    "1300": 26,
+    "1350": 29,
+    "1400": 32,
+    "1450": 36,
+    "1500": 36,
+    "2000": 47,
+    "100000": 48
+   },
+   "fee_zero_or_blank": 0,
+   "fee_median_band_among_with_fee": [
+    1200,
+    1250
+   ]
+  },
+  "nmb_oceanfront_condo_2br": {
+   "params": {
+    "type": "condo",
+    "city": "North Myrtle Beach",
+    "has": "oceanfront_building,str_allowed"
+   },
+   "exact_beds": 2,
+   "n": 65,
+   "price_n": 65,
+   "price_median": 369900,
+   "price_p25": 324900,
+   "price_p75": 397000,
+   "fee_cdf": {
+    "0": 0,
+    "50": 0,
+    "100": 0,
+    "150": 0,
+    "200": 0,
+    "250": 0,
+    "300": 0,
+    "350": 0,
+    "400": 0,
+    "450": 2,
+    "500": 3,
+    "550": 3,
+    "600": 5,
+    "650": 5,
+    "700": 11,
+    "750": 15,
+    "800": 19,
+    "850": 22,
+    "900": 22,
+    "950": 24,
+    "1000": 24,
+    "1050": 28,
+    "1100": 47,
+    "1150": 51,
+    "1200": 54,
+    "1250": 54,
+    "1300": 58,
+    "1350": 59,
+    "1400": 60,
+    "1450": 62,
+    "1500": 64,
+    "2000": 65,
+    "100000": 65
+   },
+   "fee_zero_or_blank": 0,
+   "fee_median_band_among_with_fee": [
+    1050,
+    1100
+   ]
+  },
+  "surfside_condo_2br": {
+   "params": {
+    "type": "condo",
+    "city": "Surfside Beach",
+    "has": "str_allowed"
+   },
+   "exact_beds": 2,
+   "n": 32,
+   "price_n": 32,
+   "price_median": 192000.0,
+   "price_p25": 164900,
+   "price_p75": 319000,
+   "fee_cdf": {
+    "0": 0,
+    "50": 0,
+    "100": 1,
+    "150": 1,
+    "200": 1,
+    "250": 1,
+    "300": 1,
+    "350": 4,
+    "400": 19,
+    "450": 24,
+    "500": 24,
+    "550": 25,
+    "600": 26,
+    "650": 27,
+    "700": 28,
+    "750": 28,
+    "800": 28,
+    "850": 29,
+    "900": 29,
+    "950": 29,
+    "1000": 29,
+    "1050": 29,
+    "1100": 29,
+    "1150": 29,
+    "1200": 29,
+    "1250": 32,
+    "1300": 32,
+    "1350": 32,
+    "1400": 32,
+    "1450": 32,
+    "1500": 32,
+    "2000": 32,
+    "100000": 32
+   },
+   "fee_zero_or_blank": 0,
+   "fee_median_band_among_with_fee": [
+    350,
+    400
+   ]
+  },
+  "garden_city_condo_2br": {
+   "params": {
+    "type": "condo",
+    "has": "area_garden_city,str_allowed"
+   },
+   "exact_beds": 2,
+   "n": 23,
+   "price_n": 23,
+   "price_median": 343500,
+   "price_p25": 239900,
+   "price_p75": 424999,
+   "fee_cdf": {
+    "0": 0,
+    "50": 0,
+    "100": 0,
+    "150": 0,
+    "200": 0,
+    "250": 0,
+    "300": 0,
+    "350": 2,
+    "400": 2,
+    "450": 3,
+    "500": 7,
+    "550": 7,
+    "600": 12,
+    "650": 14,
+    "700": 16,
+    "750": 17,
+    "800": 17,
+    "850": 17,
+    "900": 19,
+    "950": 22,
+    "1000": 22,
+    "1050": 22,
+    "1100": 22,
+    "1150": 23,
+    "1200": 23,
+    "1250": 23,
+    "1300": 23,
+    "1350": 23,
+    "1400": 23,
+    "1450": 23,
+    "1500": 23,
+    "2000": 23,
+    "100000": 23
+   },
+   "fee_zero_or_blank": 0,
+   "fee_median_band_among_with_fee": [
+    550,
+    600
+   ]
+  },
+  "murrells_inlet_house_3br": {
+   "params": {
+    "type": "house",
+    "city": "Murrells Inlet",
+    "has": "str_allowed"
+   },
+   "exact_beds": 3,
+   "n": 11,
+   "price_n": 11,
+   "price_median": 637500,
+   "price_p25": 585000,
+   "price_p75": 778000
+  }
+ },
+ "calls": 311
+}

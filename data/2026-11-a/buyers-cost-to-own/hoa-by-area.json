@@ -1,0 +1,249 @@
+{
+ "pulled": "2026-11-02T11:13:08.886906+00:00",
+ "api": "https://chapter3realty.com/homes/api/map?",
+ "rule": "Monthly HOA fee of homes for sale now, by ZIP area, counted in aggregate from the site's public map API\n(https://chapter3realty.com/homes/api/map, CRM feed of CCMLS active listings). No listing is saved.\nHouses (type=house) and condos (type=condo), every bedroom count, list price $50,000 or more.\nhoaMax is the site's own filter (\"Up to $X a month\"); hoaMax=0 returns the same count as hoa=0 (no HOA listed).\nMedian: the lowest fee, in $25 steps, at or under which half the listings fall. Also the quartiles the same way.\nRun: python3 -I pull_hoa.py <datadir>. Writes hoa-by-area.json.",
+ "areas": {
+  "29579": {
+   "name": "Carolina Forest",
+   "house": {
+    "listings": 363,
+    "no_hoa": 13,
+    "q1": 100,
+    "median": 125,
+    "q3": 150,
+    "at_or_under_300": 345,
+    "at_or_under_500": 363
+   },
+   "condo": {
+    "listings": 145,
+    "no_hoa": 0,
+    "q1": 375,
+    "median": 425,
+    "q3": 450,
+    "at_or_under_300": 11,
+    "at_or_under_500": 132
+   }
+  },
+  "29588": {
+   "name": "Socastee",
+   "house": {
+    "listings": 276,
+    "no_hoa": 31,
+    "q1": 75,
+    "median": 100,
+    "q3": 125,
+    "at_or_under_300": 274,
+    "at_or_under_500": 276
+   },
+   "condo": {
+    "listings": 61,
+    "no_hoa": 0,
+    "q1": 300,
+    "median": 375,
+    "q3": 450,
+    "at_or_under_300": 17,
+    "at_or_under_500": 59
+   }
+  },
+  "29577": {
+   "name": "Myrtle Beach (central and south)",
+   "house": {
+    "listings": 187,
+    "no_hoa": 63,
+    "q1": 25,
+    "median": 100,
+    "q3": 150,
+    "at_or_under_300": 174,
+    "at_or_under_500": 184
+   },
+   "condo": {
+    "listings": 828,
+    "no_hoa": 0,
+    "q1": 525,
+    "median": 775,
+    "q3": 1000,
+    "at_or_under_300": 18,
+    "at_or_under_500": 182
+   }
+  },
+  "29572": {
+   "name": "Myrtle Beach (north end)",
+   "house": {
+    "listings": 110,
+    "no_hoa": 15,
+    "q1": 125,
+    "median": 300,
+    "q3": 375,
+    "at_or_under_300": 70,
+    "at_or_under_500": 109
+   },
+   "condo": {
+    "listings": 529,
+    "no_hoa": 0,
+    "q1": 625,
+    "median": 875,
+    "q3": 1050,
+    "at_or_under_300": 1,
+    "at_or_under_500": 74
+   }
+  },
+  "29575": {
+   "name": "Surfside Beach",
+   "house": {
+    "listings": 173,
+    "no_hoa": 116,
+    "q1": 25,
+    "median": 25,
+    "q3": 50,
+    "at_or_under_300": 166,
+    "at_or_under_500": 172
+   },
+   "condo": {
+    "listings": 144,
+    "no_hoa": 0,
+    "q1": 400,
+    "median": 525,
+    "q3": 850,
+    "at_or_under_300": 6,
+    "at_or_under_500": 71
+   }
+  },
+  "29576": {
+   "name": "Murrells Inlet and Garden City",
+   "house": {
+    "listings": 222,
+    "no_hoa": 70,
+    "q1": 25,
+    "median": 100,
+    "q3": 125,
+    "at_or_under_300": 214,
+    "at_or_under_500": 219
+   },
+   "condo": {
+    "listings": 165,
+    "no_hoa": 1,
+    "q1": 425,
+    "median": 525,
+    "q3": 650,
+    "at_or_under_300": 4,
+    "at_or_under_500": 81
+   }
+  },
+  "29582": {
+   "name": "North Myrtle Beach",
+   "house": {
+    "listings": 255,
+    "no_hoa": 134,
+    "q1": 25,
+    "median": 25,
+    "q3": 150,
+    "at_or_under_300": 236,
+    "at_or_under_500": 247
+   },
+   "condo": {
+    "listings": 569,
+    "no_hoa": 0,
+    "q1": 550,
+    "median": 700,
+    "q3": 1075,
+    "at_or_under_300": 10,
+    "at_or_under_500": 103
+   }
+  },
+  "29566": {
+   "name": "Little River",
+   "house": {
+    "listings": 189,
+    "no_hoa": 23,
+    "q1": 75,
+    "median": 100,
+    "q3": 175,
+    "at_or_under_300": 184,
+    "at_or_under_500": 188
+   },
+   "condo": {
+    "listings": 184,
+    "no_hoa": 0,
+    "q1": 425,
+    "median": 525,
+    "q3": 600,
+    "at_or_under_300": 32,
+    "at_or_under_500": 86
+   }
+  },
+  "29568": {
+   "name": "Longs",
+   "house": {
+    "listings": 341,
+    "no_hoa": 19,
+    "q1": 75,
+    "median": 100,
+    "q3": 125,
+    "at_or_under_300": 321,
+    "at_or_under_500": 340
+   },
+   "condo": {
+    "listings": 24,
+    "no_hoa": 0,
+    "q1": 400,
+    "median": 400,
+    "q3": 425,
+    "at_or_under_300": 0,
+    "at_or_under_500": 21
+   }
+  },
+  "29526": {
+   "name": "Conway (29526)",
+   "house": {
+    "listings": 471,
+    "no_hoa": 113,
+    "q1": 25,
+    "median": 75,
+    "q3": 100,
+    "at_or_under_300": 469,
+    "at_or_under_500": 471
+   },
+   "condo": {
+    "listings": 33,
+    "no_hoa": 0,
+    "q1": 350,
+    "median": 400,
+    "q3": 450,
+    "at_or_under_300": 5,
+    "at_or_under_500": 33
+   }
+  },
+  "29527": {
+   "name": "Conway (29527)",
+   "house": {
+    "listings": 200,
+    "no_hoa": 58,
+    "q1": 25,
+    "median": 75,
+    "q3": 100,
+    "at_or_under_300": 200,
+    "at_or_under_500": 200
+   },
+   "condo": {
+    "listings": 0
+   }
+  }
+ },
+ "all": {
+  "house": {
+   "listings": 3689,
+   "no_hoa": 1101,
+   "q1": 25,
+   "median": 75,
+   "q3": 125
+  },
+  "condo": {
+   "listings": 2798,
+   "no_hoa": 1,
+   "q1": 475,
+   "median": 650,
+   "q3": 950
+  }
+ },
+ "refreshedAt": "2026-11-02T11:21:07.823Z"
+}

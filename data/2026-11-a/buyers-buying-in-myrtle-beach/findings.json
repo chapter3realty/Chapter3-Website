@@ -1,0 +1,254 @@
+{
+ "meta": {
+  "sales": "Horry County Register of Deeds index (AcclaimWeb DEED 001), recorded 2025-10-01 to 2026-09-30, filtered as in data/2026-10-d/sell-out-of-state-buyers (13,194 home sales)",
+  "kinds": "condo = county land use 107 or HPR in the legal description; house = every other home (houses, townhomes, manufactured homes on their own lot)",
+  "listings": "Chapter3 CRM public map API, active for-sale listings counted inside the Census Horry County outline; house group = MLS house + townhouse + manufactured; condo = MLS condo",
+  "months_of_supply": "homes for sale now / (homes sold in the 12 months / 12)"
+ },
+ "sales": {
+  "house": {
+   "all": 8876,
+   "resale": 6866,
+   "builder": 2010
+  },
+  "condo": {
+   "all": 4318,
+   "resale": 4181,
+   "builder": 137
+  },
+  "total": 13194
+ },
+ "sales_by_month": {
+  "2025-10": {
+   "house": 1054,
+   "condo": 417
+  },
+  "2025-11": {
+   "house": 923,
+   "condo": 310
+  },
+  "2025-12": {
+   "house": 1017,
+   "condo": 359
+  },
+  "2026-01": {
+   "house": 659,
+   "condo": 262
+  },
+  "2026-02": {
+   "house": 558,
+   "condo": 298
+  },
+  "2026-03": {
+   "house": 667,
+   "condo": 379
+  },
+  "2026-04": {
+   "house": 647,
+   "condo": 398
+  },
+  "2026-05": {
+   "house": 687,
+   "condo": 433
+  },
+  "2026-06": {
+   "house": 705,
+   "condo": 399
+  },
+  "2026-07": {
+   "house": 678,
+   "condo": 419
+  },
+  "2026-08": {
+   "house": 647,
+   "condo": 325
+  },
+  "2026-09": {
+   "house": 634,
+   "condo": 319
+  }
+ },
+ "listings": {
+  "pulled": "2026-11-03T21:06:33.172796Z",
+  "refreshedAt": "2026-11-03T21:31:26.800Z",
+  "truncated_bands": 38,
+  "api_totals": {
+   "all/house": 3700,
+   "all/townhouse": 367,
+   "all/condo": 2841,
+   "all/manufactured": 509,
+   "dom30/house": 826,
+   "dom30/townhouse": 95,
+   "dom30/condo": 475,
+   "dom30/manufactured": 107,
+   "dom60/house": 1520,
+   "dom60/townhouse": 169,
+   "dom60/condo": 906,
+   "dom60/manufactured": 201,
+   "dom90/house": 2143,
+   "dom90/townhouse": 225,
+   "dom90/condo": 1329,
+   "dom90/manufactured": 268,
+   "dom120/house": 2536,
+   "dom120/townhouse": 264,
+   "dom120/condo": 1625,
+   "dom120/manufactured": 322,
+   "dom180/house": 3120,
+   "dom180/townhouse": 310,
+   "dom180/condo": 2086,
+   "dom180/manufactured": 406,
+   "dom270/house": 3491,
+   "dom270/townhouse": 345,
+   "dom270/condo": 2478,
+   "dom270/manufactured": 455,
+   "dom365/house": 3608,
+   "dom365/townhouse": 360,
+   "dom365/condo": 2632,
+   "dom365/manufactured": 478,
+   "price_reduced/house": 1900,
+   "price_reduced/townhouse": 197,
+   "price_reduced/condo": 1456,
+   "price_reduced/manufactured": 280,
+   "new_construction/house": 1244,
+   "new_construction/townhouse": 128,
+   "new_construction/condo": 42,
+   "new_construction/manufactured": 44
+  },
+  "house": {
+   "for_sale": 3710,
+   "new_construction": 1150,
+   "price_reduced": 2061,
+   "pct_price_reduced": 55.6,
+   "median_ask": 371000.0,
+   "sold_12mo": 8876,
+   "resold_12mo": 6866,
+   "months_supply_all": 5.0,
+   "months_supply_resale": 4.5,
+   "listed_within_days": {
+    "30": 865,
+    "60": 1584,
+    "90": 2179,
+    "120": 2562,
+    "180": 3139,
+    "270": 3486,
+    "365": 3611
+   },
+   "pct_listed_within_days": {
+    "30": 23.3,
+    "60": 42.7,
+    "90": 58.7,
+    "120": 69.1,
+    "180": 84.6,
+    "270": 94.0,
+    "365": 97.3
+   },
+   "median_days_listed_interpolated": 74,
+   "by_price_band": [
+    {
+     "band": "0-300000",
+     "for_sale": 1141,
+     "sold_12mo": 3061,
+     "months_supply": 4.5,
+     "for_sale_resale": 847,
+     "resold_12mo": 2398,
+     "months_supply_resale": 4.2
+    },
+    {
+     "band": "300000-450000",
+     "for_sale": 1231,
+     "sold_12mo": 3268,
+     "months_supply": 4.5,
+     "for_sale_resale": 734,
+     "resold_12mo": 2344,
+     "months_supply_resale": 3.8
+    },
+    {
+     "band": "450000-700000",
+     "for_sale": 819,
+     "sold_12mo": 1745,
+     "months_supply": 5.6,
+     "for_sale_resale": 565,
+     "resold_12mo": 1398,
+     "months_supply_resale": 4.8
+    },
+    {
+     "band": "700000-up",
+     "for_sale": 519,
+     "sold_12mo": 802,
+     "months_supply": 7.8,
+     "for_sale_resale": 414,
+     "resold_12mo": 726,
+     "months_supply_resale": 6.8
+    }
+   ]
+  },
+  "condo": {
+   "for_sale": 2678,
+   "new_construction": 42,
+   "price_reduced": 1408,
+   "pct_price_reduced": 52.6,
+   "median_ask": 215900.0,
+   "sold_12mo": 4318,
+   "resold_12mo": 4181,
+   "months_supply_all": 7.4,
+   "months_supply_resale": 7.6,
+   "listed_within_days": {
+    "30": 447,
+    "60": 852,
+    "90": 1248,
+    "120": 1535,
+    "180": 1973,
+    "270": 2336,
+    "365": 2478
+   },
+   "pct_listed_within_days": {
+    "30": 16.7,
+    "60": 31.8,
+    "90": 46.6,
+    "120": 57.3,
+    "180": 73.7,
+    "270": 87.2,
+    "365": 92.5
+   },
+   "median_days_listed_interpolated": 100,
+   "by_price_band": [
+    {
+     "band": "0-150000",
+     "for_sale": 603,
+     "sold_12mo": 1093,
+     "months_supply": 6.6,
+     "for_sale_resale": 603,
+     "resold_12mo": 1085,
+     "months_supply_resale": 6.7
+    },
+    {
+     "band": "150000-250000",
+     "for_sale": 1076,
+     "sold_12mo": 1534,
+     "months_supply": 8.4,
+     "for_sale_resale": 1074,
+     "resold_12mo": 1478,
+     "months_supply_resale": 8.7
+    },
+    {
+     "band": "250000-400000",
+     "for_sale": 591,
+     "sold_12mo": 1067,
+     "months_supply": 6.6,
+     "for_sale_resale": 572,
+     "resold_12mo": 1023,
+     "months_supply_resale": 6.7
+    },
+    {
+     "band": "400000-up",
+     "for_sale": 408,
+     "sold_12mo": 624,
+     "months_supply": 7.8,
+     "for_sale_resale": 387,
+     "resold_12mo": 595,
+     "months_supply_resale": 7.8
+    }
+   ]
+  }
+ }
+}
