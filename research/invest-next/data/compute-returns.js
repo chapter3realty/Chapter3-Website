@@ -3,6 +3,10 @@
 const fs=require('fs'),path=require('path');const D=__dirname;
 const Z=require('./zillow-extract-summary.json');
 const STR=JSON.parse(fs.readFileSync(path.join(D,'..','..','..','data','str-market.json'),'utf8'));
+// The 12 months AirROI's figures cover end with the month before its update date (data/str-market.json dataAsOf).
+const MON=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const STR_AS_OF=new Date(STR.dataAsOf+'T12:00:00Z'),STR_END=(STR_AS_OF.getUTCMonth()+11)%12,STR_END_Y=STR_AS_OF.getUTCFullYear()-(STR_AS_OF.getUTCMonth()===0?1:0);
+const STR_THROUGH=`${STR.dataAsOf} (AirROI, ${MON[(STR_END+1)%12]} ${STR_END===11?STR_END_Y:STR_END_Y-1} to ${MON[STR_END]} ${STR_END_Y})`;
 const zipRow=(k,z)=>Z[k].rows.find(r=>r.label===z);
 const cityRow=(k,c)=>Z[k].rows.find(r=>r.label===c);
 // AirROI peak/low month occupancy re-opened 2026-09-08 (see facts file section 1)
@@ -57,7 +61,7 @@ for(const s of subs){
     page_stated_medians:s.pageMedian,page_stated_medians_source:s.pageMedianSrc,
     str_occupancy:pageOcc[s.slug],str_occupancy_note:pageOcc[s.slug]?'12 monthly values as printed on the submarket page, labelled "illustrative" there and unsourced; the page prints each value twice (chart and table), 24 in all. Not AirROI data.':'Page states no STR market; AirROI 404',
     str_annual_occupancy_airroi_pct:strm?strm.occupancy:null,str_peak_low_month_occupancy_airroi:strm?airMonths[s.slug]:null,
-    str_adr_airroi:strm?strm.adr:null,str_avg_annual_revenue_airroi:strm?strm.revenue:null,str_monthly_revenue_median:strm?strm.median:null,str_monthly_revenue_top10:strm?strm.top10:null,str_revenue_yoy_pct:strm?strm.yoy:null,str_active_listings:strm?strm.listings:null,str_data_through:'2026-08-08 (AirROI, August 2025 to July 2026)',
+    str_adr_airroi:strm?strm.adr:null,str_avg_annual_revenue_airroi:strm?strm.revenue:null,str_monthly_revenue_median:strm?strm.median:null,str_monthly_revenue_top10:strm?strm.top10:null,str_revenue_yoy_pct:strm?strm.yoy:null,str_active_listings:strm?strm.listings:null,str_data_through:STR_THROUGH,
     property_tax_mills_6pct:s.mills,property_tax_mills_source:s.millsSrc,property_tax_extra_fees:s.extraFee,
     ltr_math:rows,str_math:strOut,
     sources:{zillow_zip_zori:'https://files.zillowstatic.com/research/public_csvs/zori/Zip_zori_uc_sfrcondomfr_sm_month.csv',zillow_zip_zhvi:'https://files.zillowstatic.com/research/public_csvs/zhvi/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv',zillow_city_zori:'https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv',zillow_city_zhvi:'https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv',hud_fmr_fy2027:'https://www.huduser.gov/portal/datasets/fmr/fmr2027/FY27_FMRs.xlsx',airroi:strm?strm.sourceUrl:null,horry_tax_calculator:'https://chapter3realty.com/buyers/property-taxes/ (Horry County certified 2025 millage embedded in the calculator)',georgetown_tax_calculator:s.slug==='pawleys-island'?'https://gtcountysc.gov/385/Property-Tax-Calculator':undefined,landlord_insurance:'https://chapter3realty.com/invest/landlord-insurance/',fannie_mae_75pct:'https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property',submarket_page:'https://chapter3realty.com/submarkets/'+s.slug+'/'}

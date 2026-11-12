@@ -42,7 +42,7 @@ const PK = require(path.join(BB, "tools", "page-kit.js"));
 const DATA = path.join(__dirname, "..", "data", "2026-10-d", "invest-strategies-dst");
 const read = (f) => JSON.parse(fs.readFileSync(path.join(DATA, f), "utf8"));
 const FD = read("formd_dst_summary.json"), EX = read("worked_example.json"), PTS = read("dst_parcel_points.json");
-const PH = PK.create({ h, photos: read("photos.json").photos }).photoSet({ aerialWidth: "760px" });
+const PH = PK.create({ h, photos: read("photos.json").photos }).photoSet({ aerialWidth: "720px" });
 
 /* Checks: the page's sentences rest on these values (ledger rows 13 to 16, 24, 25, 30). */
 const must = (ok, what) => { if (!ok) throw new Error(`dst.js: ${what}`); };
@@ -89,60 +89,86 @@ const TENK = "https://www.sec.gov/Archives/edgar/data/1314152/000131415226000030
 const HCGIS = "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24";
 
 /* ---------------------------------------------------------------------------- */
-/* The page's own blocks: glass cards in the theme's look (tools/glass.js tokens). */
+/* The page's own blocks. Design pass 2026-11 (redo2/invest-strategies-dst/DESIGN.md), as /invest/condos/ and
+   /hoa/liens-and-foreclosure/: a two-line headline, a contents list with no card, one card style kept for the two
+   charts, the map and the offers; the table, the lists, the steps and the story open, under thin rules; every block
+   of the page's own 720 px wide, the width of the offers; the aerial photo beside its paragraphs on a wide screen. */
+const RULE = "1px solid rgba(28,32,40,.16)";
+const FLAT = "background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important";
 const CSS = `<style>
-main#main .c3d-steps{list-style:none;margin:1.4rem 0 1.6rem;padding:0;display:grid;gap:.7rem;max-width:960px;counter-reset:s}
-main#main .c3d-steps li{position:relative;margin:0;padding:.85rem 1rem .9rem 3.3rem;border-radius:16px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.75);box-shadow:0 6px 18px rgba(28,32,40,.08);line-height:1.5;color:var(--muted);font-size:var(--read,1.0625rem)}
-main#main .c3d-steps li::before{counter-increment:s;content:counter(s);position:absolute;left:1rem;top:.85rem;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--brass);color:#fff;font:600 .95rem/1.7rem var(--sans);text-align:center}
-main#main .c3d-steps strong{display:block;color:var(--navy);font-family:var(--sans);font-weight:650;margin-bottom:.15rem}
+main#main .c3d-steps{list-style:none;margin:1.4rem 0 1.6rem;padding:0;max-width:720px;counter-reset:s}
+main#main .c3d-steps li{position:relative;margin:0;padding:0 0 1.4rem 3.3rem;line-height:1.55;color:var(--muted);font-size:var(--read,1.0625rem)}
+main#main .c3d-steps li:last-child{padding-bottom:0}
+main#main .c3d-steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--brass);color:#fff;font:600 .95rem/2.1rem var(--sans);text-align:center}
+main#main .c3d-steps li:not(:last-child)::after{content:"";position:absolute;left:1rem;top:2.6rem;bottom:.45rem;width:2px;border-radius:2px;background:rgba(28,32,40,.14)}
+main#main .c3d-steps strong{display:block;color:var(--navy);font-family:var(--sans);font-weight:650;font-size:1.08rem;line-height:1.35;padding-top:.3rem;margin-bottom:.2rem}
 main#main .c3d-steps .we{display:block;margin-top:.35rem;color:var(--navy)}
-@media (max-width:699px){main#main .c3d-steps{gap:.45rem}main#main .c3d-steps li{padding:.6rem .9rem .65rem 3rem;line-height:1.45}main#main .c3d-steps li::before{top:.6rem;left:.85rem}}
-/* The steps stay in one column at every width: five in a row were 183 px wide at 1024 (critic, round 2). */
-@media (min-width:900px){main#main .c3d-steps{max-width:820px}}
+@media (max-width:699px){main#main .c3d-steps li{padding-left:2.9rem}main#main .c3d-steps li::before{width:1.9rem;height:1.9rem;line-height:1.9rem}main#main .c3d-steps li:not(:last-child)::after{left:.9rem;top:2.4rem}}
 /* No heading ends on one word alone (critic, round 2). */
 main#main h1,main#main h2,main#main h3{text-wrap:balance}
-main#main .c3d-grid{display:grid;gap:.7rem;margin:1.2rem 0 1.4rem;max-width:960px}
-@media (min-width:760px){main#main .c3d-grid{grid-template-columns:repeat(2,minmax(0,1fr))}main#main .c3d-grid.c3d-3{grid-template-columns:repeat(3,minmax(0,1fr))}}
-main#main .c3d-card{padding:1rem 1.1rem 1.05rem;border-radius:16px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.75);box-shadow:0 6px 18px rgba(28,32,40,.08);color:var(--muted);line-height:1.6;font-size:var(--read,1.0625rem)}
-main#main .c3d-card h3{font-family:var(--sans)!important;font-size:1.05rem!important;font-weight:650;color:var(--navy);margin:0 0 .35rem!important;line-height:1.35}
+/* "Who can buy" and the four ways out: open items under a top rule, two side by side on a wide screen. */
+main#main .c3d-grid{display:grid;gap:1.1rem;margin:1.2rem 0 1.5rem;max-width:720px}
+@media (min-width:760px){main#main .c3d-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem}}
+main#main .c3d-card{padding:.85rem 0 0;border-top:2px solid rgba(28,32,40,.14);color:var(--muted);line-height:1.6;font-size:var(--read,1.0625rem)}
+main#main .c3d-card h3{font-family:var(--sans)!important;font-size:1.08rem!important;font-weight:650;color:var(--navy);margin:0 0 .3rem!important;line-height:1.35}
 main#main .c3d-card p{margin:0}
 main#main .c3d-big{display:block;font-family:var(--serif);font-size:1.6rem;line-height:1.15;color:var(--navy);margin-bottom:.3rem}
-main#main .c3d-limits{counter-reset:l;list-style:none;margin:1rem 0 1.4rem;padding:0;max-width:760px}
+main#main .c3d-limits{counter-reset:l;list-style:none;margin:1rem 0 1.4rem;padding:0;max-width:720px}
 main#main .c3d-limits li{position:relative;padding:.7rem 0 .75rem 2.9rem;border-bottom:1px solid rgba(28,32,40,.1);color:var(--muted);line-height:1.6;font-size:var(--read,1.0625rem)}
 main#main .c3d-limits li::before{counter-increment:l;content:counter(l);position:absolute;left:0;top:.7rem;width:1.9rem;height:1.9rem;border-radius:50%;background:rgba(196,120,58,.14);color:var(--brass-ink);font:650 1rem/1.9rem var(--sans);text-align:center}
 main#main .c3d-limits strong{color:var(--navy);font-weight:600}
 main#main .c3d-limits .m{display:block;margin-top:.1rem}
 main#main .c3d-ask{margin:.6rem 0 1.2rem;padding-left:1.3rem;max-width:720px;color:var(--muted);line-height:1.6;font-size:var(--read,1.0625rem)}
 main#main .c3d-ask li{margin:.25rem 0}
-main#main .c3d-callout{border-left:3px solid var(--brass);padding:1rem 1.2rem;margin:1.4rem 0;max-width:720px;border-radius:0 16px 16px 0;background:rgba(255,255,255,.55);color:var(--muted);line-height:1.7;font-size:var(--read,1.0625rem)}
+/* The story: the brass rule, no box. */
+main#main .c3d-callout{border-left:3px solid var(--brass);padding:.2rem 0 .2rem 1.2rem;margin:1.2rem 0 1.4rem;max-width:720px;box-sizing:border-box;color:var(--muted);line-height:1.7;font-size:var(--read,1.0625rem)}
 main#main .c3d-callout p{margin:0 0 .6rem}main#main .c3d-callout p:last-child{margin:0}
-main#main .c3d-fits{list-style:none;margin:1rem 0 1.4rem;padding:0;max-width:760px;display:grid;gap:.55rem}
-main#main .c3d-fits li{padding:.75rem 1rem;border-radius:14px;background:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.7);color:var(--muted);line-height:1.6;font-size:var(--read,1.0625rem)}
+/* "Which one fits": one list split by rules. */
+main#main .c3d-fits{list-style:none;margin:1rem 0 1.4rem;padding:0;max-width:720px}
+main#main .c3d-fits li{margin:0;padding:.8rem 0 .85rem;border-top:${RULE};color:var(--muted);line-height:1.6;font-size:var(--read,1.0625rem)}
+main#main .c3d-fits li:last-child{border-bottom:${RULE}}
 main#main .c3d-fits strong{color:var(--navy)}
-main#main .c3d-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem;max-width:760px;margin:1rem 0 1.2rem}
-main#main .c3d-stats div{padding:.75rem .6rem;border-radius:14px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.75);text-align:center;color:var(--muted);font-size:.95rem;line-height:1.35}
-main#main .c3d-stats b{display:block;font-family:var(--serif);font-weight:600;font-size:clamp(1.15rem,4.6vw,1.5rem);line-height:1.15;color:var(--navy);margin-bottom:.15rem}
-/* Hero tiles: two by two on a phone, so a long value never runs into the next tile (critic, round 1). */
-@media (max-width:479px){.c3-glance{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:.4rem!important}.c3-glance li{min-width:0;padding:.45rem .35rem!important}.c3-glance span.t{overflow-wrap:break-word}}
-.c3-glance li{min-width:0}
+/* The county counts: three flat figures between two rules. */
+main#main .c3d-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.4rem 1.2rem;max-width:720px;margin:1rem 0 1.2rem;padding:.8rem 0 .85rem;border-top:${RULE};border-bottom:${RULE}}
+main#main .c3d-stats div{color:var(--muted);font-size:.95rem;line-height:1.35}
+main#main .c3d-stats b{display:block;font-family:var(--serif);font-weight:600;font-size:clamp(1.15rem,4.6vw,1.6rem);line-height:1.15;color:var(--navy);margin-bottom:.15rem}
+/* The headline: the italic line at about half the H1's size, on its own line. */
+main#main .detail-h1{text-wrap:balance}
+main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}
+@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}
 /* Hero tiles across the hero's full width from 700 px, so each value fits on one or two lines (critic, round 2). */
+.c3-glance li{min-width:0}
 @media (min-width:700px){.c3-glance{max-width:none!important}.detail-hero .detail-media:has(.c3-glance){max-width:none!important}}
 .c3-glance li,.c3-glance span.t,.c3-glance strong{line-height:1.4!important}
+/* On a phone the tiles are flat rows under hairlines: icon, label, value. */
+@media (max-width:699px){main#main .c3-glance{grid-template-columns:1fr!important;gap:0!important}main#main .c3-glance li{${FLAT};border-top:${RULE}!important;flex-direction:row!important;text-align:left!important;justify-content:flex-start!important;gap:.7rem!important;padding:.4rem 0!important}main#main .c3-glance li:last-child{border-bottom:${RULE}!important}}
+/* The contents list: no card, plain columns between two thin rules. */
+main#main nav[aria-label="On this page"]{${FLAT};border-top:${RULE}!important;border-bottom:${RULE}!important;padding:.8rem 0 .5rem!important}
+main#main nav[aria-label="On this page"]>ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.5rem}
+@media (min-width:700px){main#main nav[aria-label="On this page"]>ul{grid-template-columns:repeat(3,minmax(max-content,1fr))}main#main nav[aria-label="On this page"] li a{padding:.45rem 0!important}}
+/* The three-choices table: no card, plain rows under rules; on a phone, rows split by a rule, not cards. */
+main#main .c3-cc{${FLAT};padding:0!important;max-width:720px!important}
+main#main .c3-cc thead th{border-bottom:1px solid rgba(28,32,40,.3)!important}
+main#main .c3-cc th:first-child,main#main .c3-cc td:first-child{padding-left:0}
+@media (max-width:39.999em){main#main .c3-cc tbody tr{${FLAT};border-top:${RULE}!important;margin:0!important;padding:.7rem 0 .75rem!important}main#main .c3-cc tbody tr:last-child{border-bottom:${RULE}!important}main#main .c3-cc th,main#main .c3-cc td{padding-left:0!important;padding-right:0!important}}
+/* One block width: the charts keep their card, at the offers' width. */
+main#main .c3-gchart{max-width:720px!important}
+/* The photo: no frame. On a wide screen it sits beside the two paragraphs that describe the properties. */
+main#main .c3ph-hero{${FLAT};padding:0!important}main#main .c3ph-hero figcaption{padding:.5rem 0 0!important}
+@media (min-width:1100px){main#main .c3d-side{display:grid;grid-template-columns:minmax(0,665px) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:2.5rem;align-items:start}
+main#main .c3d-side>*{grid-column:1}main#main .c3d-side>.c3-aerial{grid-column:2;grid-row:1/-1;margin-top:.3rem}main#main .c3d-side .c3ph-hero{margin:0!important;max-width:none!important}}
 /* Shared chrome, worked around on this page until the lead fixes the shared CSS (NEEDS.md items 7 and 8):
    the listing search box is 341 px wide in a 320 px window, and the header is 1029 px wide at 1024. */
 @media (max-width:379px){.hx-fb-ai,.hx-fb-ai .hx-ai-badge,.hx-fb-ai .hx-fb-q{max-width:100%!important;min-width:0!important;box-sizing:border-box}.hx-fb-ai .hx-fb-q textarea{flex:1 1 0!important;width:auto!important;min-width:0!important}}
 @media (min-width:1000px) and (max-width:1100px){.header-inner>.primary{gap:2.2rem!important}.header-inner{gap:1.6rem!important}}
-/* "On this page": two columns from 760 px, so the card is not one long column (critic, round 1). */
-@media (min-width:760px){main#main nav[aria-label="On this page"]{max-width:960px!important}main#main nav[aria-label="On this page"] ul{columns:2;column-gap:2.4rem}main#main nav[aria-label="On this page"] li{break-inside:avoid}}
 /* The closing offer band: the website's edge adds the listing disclaimer after it, so it is no longer the
    last child of main, and glass.js draws it as the light top bar with ivory text on it (NEEDS.md). */
-main#main>section[style^="background:var(--navy)"]:last-of-type:not(:first-child)>.wrap{background:#2a3040!important;display:block!important;text-align:center!important;padding:2.2rem 1.6rem!important;margin-left:max(24px,calc((100% - 1132px) / 2))!important;margin-right:0!important;width:min(760px,calc(100% - 48px));max-width:none!important;box-sizing:border-box}
+main#main>section[style^="background:var(--navy)"]:last-of-type:not(:first-child)>.wrap{background:#2a3040!important;display:block!important;text-align:center!important;padding:2.2rem 1.6rem!important;margin-left:max(24px,calc((100% - 1132px) / 2))!important;margin-right:0!important;width:min(720px,calc(100% - 48px));max-width:none!important;box-sizing:border-box}
 /* The band's left edge lines up with the blocks above it (x 154 at 1440), not centered (critic, round 3). */
 main#main>section[style^="background:var(--navy)"]:last-of-type:not(:first-child)>.wrap>p{color:rgba(244,239,232,.82)!important}
-@media (prefers-reduced-transparency:reduce){main#main .c3d-steps li,main#main .c3d-stats div,main#main .c3d-card,main#main .c3d-callout,main#main .c3d-fits li{background:#fbf8f3}}
 </style>`;
 const steps = (items) => `<ol class="c3d-steps" aria-label="The sale and the exchange, step by step">${items.map(([t, d, we]) => `<li><strong>${t}</strong> ${d}${we ? ` <span class="we">${we}</span>` : ""}</li>`).join("")}</ol>`;
-const cards = (items, cls = "") => `<div class="c3d-grid${cls ? " " + cls : ""}">${items.map(([t, d]) => `<div class="c3d-card"><h3>${t}</h3><p>${d}</p></div>`).join("")}</div>`;
+const cards = (items) => `<div class="c3d-grid">${items.map(([t, d]) => `<div class="c3d-card"><h3>${t}</h3><p>${d}</p></div>`).join("")}</div>`;
 
 /* ---------------------------------------------------------------------------- */
 /* Charts and the map, from the data files.                                         */
@@ -150,16 +176,16 @@ const cards = (items, cls = "") => `<div class="c3d-grid${cls ? " " + cls : ""}"
 /* Chart 1: the worked example (row 24). Never add the commission and the tax. Three figures only (owner's-eye review, round 2). */
 const EXAMPLE_CHART = G.bars([
   { name: "Tax the exchange puts off", value: EX.tax_before_niit, valueText: "$" + TAXR.slice(7), feature: "federal and South Carolina, before the 3.8% tax" },
-  { name: "DST sales commissions on the same money", value: EX.dst_commission_on_realized, valueText: "$" + COMMR.slice(7), feature: `about ${MID}% of ${IN}` },
-], { caption: "Our $400,000 example sale, put into a DST", nameLabel: "What", featureLabel: "detail", valueLabel: "Dollars",
-  note: `What is left after selling costs, ${IN}, goes into the DST. The DST's commissions come on top of those selling costs.` });
+  { name: "DST sales commissions on the money you put in", value: EX.dst_commission_on_realized, valueText: "$" + COMMR.slice(7), feature: `about ${MID}% of ${IN}` },
+], { caption: "Our $400,000 example sale: the tax put off, and the DST's sales commissions", nameLabel: "What", featureLabel: "detail", valueLabel: "Dollars",
+  note: `After selling costs, ${IN} is left, and it goes into the DST. The DST's commissions come on top of those selling costs.` });
 
 /* Chart 2: minimums (row 15), from extra.min_buckets. The lowest bucket is all $1,000 (checked above). */
 const MB = FD.extra.min_buckets;
 const MIN_NAME = { "under $25,000": "$1,000" };
-const MIN_FEATURE = { "under $25,000": "20 from one sponsor, wealth test only", "$100,000": "the most common minimum" };
+const MIN_FEATURE = { "under $25,000": "20 from one sponsor; must pass the wealth test", "$100,000": "the most common minimum" };
 const MIN_CHART = G.bars(Object.entries(MB).map(([k, v]) => ({ name: MIN_NAME[k] || k[0].toUpperCase() + k.slice(1), value: v, valueText: `${v} offerings`, ...(MIN_FEATURE[k] ? { feature: MIN_FEATURE[k] } : {}) })),
-  { caption: `The smallest amount each DST offering accepts, ${FD.min_inv.n} offerings`, nameLabel: "Minimum", featureLabel: "note", valueLabel: "Offerings", compact: true,
+  { caption: `The minimum investment in ${FD.min_inv.n} DST offerings`, nameLabel: "Minimum", featureLabel: "note", valueLabel: "Offerings", compact: true,
     note: `Of the ${FD.filings} DST offerings we checked, ${FD.min_inv.n} named a minimum.` });
 
 /* The map: every Horry County parcel a DST owns (rows 25 and 30), at the parcel's center. Row 25's verifier:
@@ -173,7 +199,7 @@ const MAP = (() => {
   const m = regionMap({ name: "Where DSTs own homes for rent in Horry County", places, maxRatio: 0.8 },
     { dir: path.join(__dirname, "..", "chapter3realty", "images", "2026-10-d", "invest-strategies-dst"), src: "/images/2026-10-d/invest-strategies-dst", glass: true });
   return h.figure(m.html, `The three rental communities DSTs own in Horry County, each at its parcel's center in the county's parcel file. Their other ${PTS.parcels - places.length} parcels, commercial and industrial sites and a pump station, are not shown. ${m.credit}`) + (m.unlabelled && m.unlabelled.length ? m.key : "");
-})();
+})().replace('<figure style="margin:1.8rem 0;max-width:760px">', '<figure style="margin:1.8rem 0;max-width:720px">');
 
 /* The photo is of the topic (owner's-eye review, round 2): a DST-owned apartment community from above, USDA
    NAIP 2023, public domain, with the trust's parcel outlined from the county file (ledger row 31). It stays
@@ -198,7 +224,7 @@ module.exports = G.page({
   eyebrow: "Strategy",
   h1: "DST: the hands-off 1031 for a Grand Strand rental",
   h1em: "Swap a Grand Strand rental for a share of a large property: no tenants, tax put off, about 6% to sales commissions.",
-  sub: "A Delaware statutory trust (DST) owns real estate and sells shares in it. A share can replace your rental in a 1031 exchange.",
+  sub: "A Delaware statutory trust (DST) owns real estate and sells shares in it. A share can replace your rental in a 1031 exchange, a trade that puts off the tax.",
   heroMedia: glance([
     { icon: "home", label: "What you get", text: "No tenants, tax later" },
     { icon: "key", label: "Who can buy", text: "$1M+ net worth or $200K+ income" },
@@ -212,7 +238,7 @@ module.exports = G.page({
     `It fits only if you are done managing, pass the Securities and Exchange Commission (SEC) wealth test, and will not need the money for years.`,
   ],
   sections: [
-    { h2: "Should you sell your Grand Strand rental into a DST, another rental, or pay the tax?", toc: "Three choices", id: "three-choices", html: () =>
+    { h2: "Should you sell your Grand Strand rental into a DST, another rental, or pay the tax?", toc: "Three choices", id: "three-choices", html: (bg) =>
       CSS + PH.css() +
       h.p(`On a $400,000 rental sale on the Grand Strand, the Myrtle Beach area, you choose between paying the tax now, keeping the work of a rental, or giving up control of the money. The numbers are our example, worked through below.`) +
       compareCards([
@@ -228,13 +254,14 @@ module.exports = G.page({
         `<strong>Another rental here,</strong> if you want to pick the property, set the rent and decide when to sell. Our ${h.a("/invest/strategies/1031-exchange/", "1031 exchange guide")} covers the deadlines and how we find a replacement on the Grand Strand.`,
         `<strong>Paying the tax,</strong> if you want the cash now, or the tax is small next to what a DST would cost you to enter.`,
         `<strong>Keeping the rental,</strong> if the work is the only problem. A ${h.a("/invest/property-management/", "property manager")} takes the calls, and our page on ${h.a("/invest/how-long-to-hold/", "how long to hold a rental")} shows what waiting has meant here.`,
-      ].map((t) => `<li>${t}</li>`).join("") + `</ul>` },
+      ].map((t) => `<li>${t}</li>`).join("") + `</ul>` +
+      h.cta("What would your rental sell for?", "Send us the address, and we price it, so you weigh the three choices with your own sale price.", "Have us price my rental", "/contact/", bg) },
 
     { h2: "Why does the IRS allow a DST in a 1031 exchange, and who sells one?", toc: "How a DST works", id: "what-a-dst-is", html: () =>
       h.p(`The IRS, in ${h.ext(RR, "Revenue Ruling 2004-86")}, has ruled that you may trade a rental for a share of a Delaware statutory trust with no tax on the gain yet. The trust must follow the ruling's limits, and the other 1031 rules must be met.`) +
       h.p(`You buy the share through a securities firm or broker, called the DST broker on this page. Anyone who sells you a DST share must be registered with the Financial Industry Regulatory Authority (FINRA), the SEC or the state before they can sell you anything. ${h.ext(BROKER, "FINRA's BrokerCheck")} lists each securities firm and broker, with their licenses and record.`) },
 
-    { h2: "What do you give up in a DST, and can you lose money?", toc: "What you give up", id: "what-you-give-up", html: () =>
+    { h2: "What do you give up in a DST, and can you lose money?", toc: "What you give up", id: "what-you-give-up", html: (bg) =>
       h.p(`The ruling requires these limits on the trust:`) +
       `<ol class="c3d-limits">` + [
         ["The trust cannot take in new money from anyone.", "A large repair has to be paid from the trust's own cash. That cash is not paid out to you."],
@@ -252,7 +279,8 @@ module.exports = G.page({
         "Who the tenants are, and how long their leases run.",
       ].map((t) => `<li>${t}</li>`).join("") + `</ul>` +
       h.h3("Can you get back less than you put in?") +
-      h.p(`Yes. You get back your share of what is left of the sale price after the trust's loan is paid off. The sales commissions and the sponsor's fees were paid out of the money first, so the property has to gain value before your share is worth what you paid. If it sells for less than the trust paid, you get back less still.`) },
+      h.p(`Yes. You get back your share of what is left of the sale price after the trust's loan is paid off. The sales commissions and the sponsor's fees were paid out of the money first, so the property has to gain value before your share is worth what you paid. If it sells for less than the trust paid, you get back less still.`) +
+      h.cta("Want to pick your own property instead?", "We find and show you Grand Strand rentals you could buy in your exchange instead of a DST share.", "Have us find a rental to buy", "/contact/", bg) },
 
     { h2: "Who can buy a DST?", toc: "Who can buy", id: "who-can-buy", html: () =>
       h.p(`Most DSTs are sold only to buyers who pass the SEC's wealth test, called ${h.ext(ACCR, "accredited investors")}. For a person, you pass with either of these:`) +
@@ -268,13 +296,14 @@ module.exports = G.page({
         `<strong>A letter</strong> from your CPA, your lawyer, a registered broker-dealer or an SEC-registered investment adviser that says they checked.`,
       ]) },
 
-    { h2: "What does a DST cost, and what is the minimum investment?", toc: "Cost and minimum", id: "minimums-and-fees", html: () =>
+    { h2: "What does a DST cost, and what is the minimum investment?", toc: "Cost and minimum", id: "minimums-and-fees", html: (bg) =>
       h.p(`The usual minimum is $100,000. Sales commissions are about ${MID} percent of the money, and the sponsor's other fees come on top. The Form D filings show only the sales commissions. The other fees are in the PPM.`) +
       MIN_CHART +
       h.h3("What the commission means on a $400,000 sale") +
       h.p(`Our example is the same as on our ${h.a("/sell/capital-gains/", "capital gains page")}: a Grand Strand rental bought for $250,000 and sold for $400,000, with $60,000 of depreciation taken, a gain of $186,000. A 1031 exchange into a rental or a DST puts off all of the tax. A higher-income seller owes up to ${NIIT} more than the chart shows, the 3.8 percent ${h.ext(T559, "net investment income tax")}.`) +
       EXAMPLE_CHART +
-      h.p(`The sales commissions alone come to about half the tax the exchange puts off, or more, before the sponsor's other fees. You do not get the commissions back. The tax is still owed later, unless you exchange again or still own the share at your death.`) },
+      h.p(`The sales commissions alone come to about half the tax the exchange puts off, or more, before the sponsor's other fees. You do not get the commissions back. The tax is still owed later, unless you exchange again or still own the share at your death.`) +
+      h.cta("How much would you have left to put into the exchange?", "From the rental's address, we work out your selling costs and what is left after them.", "Have us work out what I keep", "/contact/", bg) },
 
     { h2: "How do you get your money out of a DST?", toc: "Getting out", id: "getting-out", html: () =>
       h.p(`Mostly when the trust sells its property. The sponsor's planned hold is in the PPM. The SEC filings we checked do not show it. The trust in Revenue Ruling 2004-86 was set up to end after 10 years or when its building sold, whichever came first. A DST can end for you in four ways:`) +
@@ -285,21 +314,23 @@ module.exports = G.page({
         ["You still own it at your death", `Your heirs generally take it at its value on the date of death, so the gain you put off is not taxed to them. A rental you keep until death gets the same ${h.ext(S1014, "rule, 26 U.S.C. 1014")}.`],
       ]) },
 
-    { h2: "Can a DST rescue a 1031 exchange that is going wrong?", toc: "As a 1031 backup", id: "backup", html: () =>
+    { h2: "Can a DST rescue a 1031 exchange that is going wrong?", toc: "As a 1031 backup", id: "backup", html: (bg) =>
       h.p(`Only if the DST is on the list you name by day 45. A ${h.ext(S1031, "1031 exchange")} trades real property only for other real property. Every replacement, a DST share included, must be named in writing within 45 days of the sale. A DST named as a backup can still be bought if the rental you wanted falls through.`) +
       h.p(`The exchange covers less of the tax if you keep cash or the sale pays off a mortgage:`) +
       h.ul([
         `<strong>Cash you keep.</strong> You can put part of the money into the exchange and keep the rest. The cash you keep is taxed, up to the amount of your gain.`,
         `<strong>A mortgage the sale paid off.</strong> It counts as cash you received and is taxed the same way, unless the replacement carries as much debt or you add cash. A DST can help: your share of ${h.ext(I8824, "its loan can count")} toward that debt. If your rental has a mortgage, raise it with your intermediary and tax adviser before you choose a DST. We give them the closing figures.`,
-      ]) },
+      ]) +
+      h.cta("Name a backup by day 45", "Tell us your price range, and we send Grand Strand rentals you could list next to the DST before day 45.", "Send me backup rentals", "/contact/", bg) },
 
     { h2: "Do DSTs own property on the Grand Strand?", toc: "DSTs here", id: "grand-strand", html: () =>
       h.p(`Yes. We checked ${h.ext(HCGIS, "Horry County's parcel file")} for owners with DST in the name:`) +
       `<div class="c3d-stats" role="list" aria-label="DSTs in Horry County's parcel file"><div role="listitem"><b>${PTS.owners}</b>DSTs as owners</div><div role="listitem"><b>${PTS.parcels}</b>parcels they own</div><div role="listitem"><b>$200 million</b>county value for tax, all ${PTS.parcels}</div></div>` +
       MAP +
+      `<div class="c3d-side">` +
       h.p(`They include two large apartment communities, one near Carolina Forest Boulevard and one in the Clear Pond area, a community of rental homes near the US 17 Bypass, and commercial and industrial sites. ${PTS.bought_since_2024_11 === 6 ? "Six" : PTS.bought_since_2024_11} of the ${PTS.owners} trusts bought in the last two years.`) +
       PHOTO +
-      h.p(`A DST share would be a share of a property like these. If you own an apartment community or a commercial or industrial building, DST sponsors are among the buyers here.`) },
+      h.p(`A DST share would be a share of a property like these. If you own an apartment community or a commercial or industrial building, DST sponsors are among the buyers here.`) + `</div>` },
 
     { h2: "What does Chapter3 do when you sell a Grand Strand rental for a DST?", toc: "What we do", id: "what-we-do", html: () =>
       h.p(`Chapter3 sells the rental. DST shares are securities, and Chapter3 does not sell them or advise on them. The DST broker sells the share. Each step of the sale and the exchange, with what our agent does:`) +

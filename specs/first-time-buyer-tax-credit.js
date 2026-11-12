@@ -122,6 +122,10 @@ const CSS = "<style>"
   + ".c3-tc-key span{display:inline-flex;align-items:center;gap:.45rem}.c3-tc-key i{display:inline-block;width:1.3rem;height:.9rem;border-radius:3px}"
   /* The photo */
   + ".c3ph-hero img{border-radius:16px}"
+  /* Light fix, triage 2026-11-08: the italic line at about half the H1's size, on its own line (the approved look,
+     Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md). */
+  + "@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+  + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}"
   + "</style>";
 
 /* ---------------------------------------------------------------------------- */
@@ -292,16 +296,17 @@ module.exports = G.page({
   theme: "glass",
   url: SELF,
   hub: { name: "Buyers", url: "/buyers/" },
-  title: "Andrews' First-Time Buyer Tax Credit: Myrtle Beach | Chapter3",
-  description: "Annie Andrews backs a $50,000 first-time buyer tax credit. The bill, its status, the 2008 to 2010 credit and its repayment, and what Myrtle Beach prices did.",
+  title: "First-Time Home Buyer Tax Credit 2026 in South Carolina",
+  description: "Is there a first-time home buyer tax credit in 2026? No federal one. The $50,000 bill Annie Andrews backs, the last credit, and SC Housing help you can use now.",
   ogTitle: "Annie Andrews Wants a First-Time Buyer Tax Credit. What the Last One Did to Home Prices",
   crumb: "First-Time Buyer Tax Credit",
   eyebrow: "The 2026 election",
-  /* Reviewer round 1, item 4: the answer is not causal. mkpage needs a Grand Strand place in the H1 itself,
-     so "Myrtle Beach" stays in the first line as well as the answer. */
-  h1: "Annie Andrews wants a first-time buyer tax credit. What the last one did to home prices, nationally and in Myrtle Beach:",
-  h1em: "a small rise nationally, while Myrtle Beach prices kept falling until 2012.",
-  sub: "The $50,000 credit she backs has not passed. The last federal credit, up to $8,000, was open while Myrtle Beach prices fell.",
+  /* Light fix, triage 2026-11-08: the H1 asks what people search and the italic line answers it, so the answer is on
+     the first screen. mkpage needs a Grand Strand place in the H1 itself, and the title a place (score.js S1). The sub keeps its second sentence; its first
+     is now the italic line. */
+  h1: "Is there a first-time home buyer tax credit in 2026 for Myrtle Beach buyers?",
+  h1em: "No. The credit Annie Andrews backs has not passed.", /* no dollar figure in the headline (score.js P4) */
+  sub: "The last federal credit, up to $8,000, was open while Myrtle Beach prices fell.",
   heroCta: { title: "Buying your first home? Use the help that exists today", label: "Ask which help fits", href: CONTACT },
   author: "devin+abdulla",
   shortAnswer: [

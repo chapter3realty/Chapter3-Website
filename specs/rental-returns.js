@@ -48,6 +48,13 @@
  * Built by tools/mkpage.js. */
 const { h } = require("../tools/mkpage.js");
 const D = require("../research/invest-next/data/submarkets.json");
+/* The 12 months AirROI's figures cover end with the month before its update date in data/str-market.json. */
+const STRD = require("../data/str-market.json");
+const STR_MONTHS = (() => {
+  const MON = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const d = new Date(STRD.dataAsOf + "T12:00:00Z"), end = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() - 1, 1));
+  return `the 12 months to ${MON[end.getUTCMonth()]} ${end.getUTCFullYear()}`;
+})();
 const BOTTOM = require("../research/invest-next/data/zip-bottom-tier.json");
 const MAP = require("../research/invest-next/data/map-shapes.json");
 
@@ -144,6 +151,9 @@ const strMarkets = D.submarkets.filter(s => s.str_avg_annual_revenue_airroi).map
 }).sort((a, b) => b.capGood - a.capGood);
 
 const fmt$ = (n) => "$" + Math.round(n).toLocaleString("en-US");
+/* Light fix, triage 2026-11-08: a price is shown to the nearest $1,000 ("about $161,000", not "about $160,703").
+   The exact Zillow values are in the sources note. */
+const fmtP = (n) => fmt$(Math.round(n / 1000) * 1000);
 const p1 = (n) => (Math.round(n * 10) / 10).toFixed(1);
 const sp = (n) => (n >= 0 ? "+" : "−") + p1(Math.abs(n));
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
@@ -206,7 +216,7 @@ function pairChart(rows, opt) {
 
 const CHART_LTR = pairChart(
   sortBy(areas.filter(a => a.lowMgr), a => a.lowMgr.cap).map(a => ({
-    name: a.name, note: `${fmt$(a.low)} house, ${fmt$(a.rent)} rent`,
+    name: a.name, note: `${fmtP(a.low)} house, ${fmt$(a.rent)} rent`,
     bars: [a.lowMgr.cap, a.lowSelf.cap] })),
   { max: 10, step: 2, mark: 6, markLabel: "6% target", colors: [BRASS, BRASS_LT],
     labels: ["With a property manager", "Without one"],
@@ -214,7 +224,7 @@ const CHART_LTR = pairChart(
 
 const CHART_STR = pairChart(
   strMarkets.map(m => ({
-    name: m.name, note: `${Math.round(m.occ)}% of nights booked, ${fmt$(m.price)} house`,
+    name: m.name, note: `${Math.round(m.occ)}% of nights booked, ${fmtP(m.price)} house`,
     bars: [m.ltrCap, m.capAvg, m.capGood] })),
   { max: 10, step: 2, mark: 6, markLabel: "6% target", colors: [BRASS, TEAL, TEAL_LT],
     labels: ["Yearly lease", "Nightly, average", "Nightly at 60%"],
@@ -278,7 +288,7 @@ const mapAreas = areas.map(a => ({
   ltr: a.lowMgr ? +p1(a.lowMgr.cap) : null,
   ltrSelf: a.lowSelf ? +p1(a.lowSelf.cap) : null,
   str: a.strAvg !== null ? +p1(a.strAvg) : null, strGood: a.strGood !== null ? +p1(a.strGood) : null,
-  price: a.low, mid: a.mid, rent: a.rent, occ: a.occ ? Math.round(a.occ) : null,
+  price: Math.round(a.low / 1000) * 1000, mid: Math.round(a.mid / 1000) * 1000, rent: a.rent, occ: a.occ ? Math.round(a.occ) : null,
   app: +p1(a.a5),
   twin: a.id === "murrells-inlet",
 }));
@@ -318,7 +328,7 @@ const MAPBLOCK = `
   <div id="rrtip" role="status" aria-live="polite"></div>
 </div>
 <div id="rrleg"></div>
-<p style="font-size:.73rem;color:var(--muted);line-height:1.6;margin:.4rem 0 0">Imagery: U.S. Geological Survey, The National Map. Boundaries: U.S. Census Bureau ZIP code tabulation areas. Both public domain. Prices and rents: Zillow and HUD, July 2026. Short-term figures: AirROI, August 2025 to July 2026.</p>
+<p style="font-size:.73rem;color:var(--muted);line-height:1.6;margin:.4rem 0 0">Imagery: U.S. Geological Survey, The National Map. Boundaries: U.S. Census Bureau ZIP code tabulation areas. Both public domain. Prices and rents: Zillow and HUD, July 2026. Short-term figures: AirROI, ${STR_MONTHS}.</p>
 <script>
 (function(){
 var A=${JSON.stringify(mapAreas)}, LB=${JSON.stringify(LABEL)};
@@ -387,6 +397,19 @@ window.addEventListener("resize",function(){tip.style.display="none";svg.querySe
 paint();
 })();
 </script>`;
+
+/* The full report on one address is the rental analyzer, /invest/long-term-rental/ (cannibalization map, 2026-11-08):
+   this section points there first, and the area tool below is the quick check. */
+const ANALYZER_BOX = `<div style="max-width:760px;margin:1.2rem 0 1.3rem;padding:1.2rem 1.3rem;background:var(--ivory-2);border-left:3px solid var(--brass)">
+  <p style="color:var(--navy);font-weight:600;margin-bottom:.4rem">Want the full report on one address?</p>
+  <p style="color:var(--muted);line-height:1.7;margin-bottom:.9rem">The rental analyzer takes an address and returns the value, the market rent, the coverage ratio, the cash flow and the permits filed nearby.</p>
+  <a class="btn btn-brass btn-lg" href="/invest/long-term-rental/">Open the rental analyzer</a>
+</div>`;
+
+/* Light fix, triage 2026-11-08: the italic line at about half the H1's size, on its own line (the approved look,
+   Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md). */
+const EM_CSS = "<style>@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+  + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}</style>";
 
 /* ---------------- the calculator ---------------- */
 const TOOL = `
@@ -459,11 +482,6 @@ const TOOL = `
     </div>
   </div>
 </div>
-<div style="max-width:760px;margin:1.2rem 0 0;padding:1.2rem 1.3rem;background:var(--ivory-2);border-left:3px solid var(--brass)">
-  <p style="color:var(--navy);font-weight:600;margin-bottom:.4rem">Want the full report on one address?</p>
-  <p style="color:var(--muted);line-height:1.7;margin-bottom:.9rem">The rental analyzer takes an address and returns the value, the market rent, the coverage ratio, the cash flow and the permits filed nearby.</p>
-  <a class="btn btn-brass btn-lg" href="/invest/long-term-rental/">Open the rental analyzer</a>
-</div>
 <script>
   var RR_TAX=${JSON.stringify(Object.fromEntries(areas.map(a => [a.id, [a.mills, a.fees]])))};
   function rr$(i){return document.getElementById(i)}
@@ -520,11 +538,11 @@ const T_TERMS = h.table(["Number", "What it means", "Here"], [
 
 const T_PRICE = h.table(["Area", "A rental costs about", "Every home in the area", "Return on the rental", "Return on the typical home"],
   sortBy(areas.filter(a => a.low), a => a.lowMgr.cap).map(a => [
-    a.name, fmt$(a.low), fmt$(a.mid), `<strong>${p1(a.lowMgr.cap)}%</strong>`, `${p1(a.midMgr.cap)}%`]));
+    a.name, fmtP(a.low), fmtP(a.mid), `<strong>${p1(a.lowMgr.cap)}%</strong>`, `${p1(a.midMgr.cap)}%`]));
 
 const T_LTR = h.table(["Area", "Price", "Rent a month", "With a manager", "Without one"],
   sortBy(areas.filter(a => a.low), a => a.lowMgr.cap).map(a => [
-    a.name, fmt$(a.low), fmt$(a.rent), `<strong>${p1(a.lowMgr.cap)}%</strong>`, `${p1(a.lowSelf.cap)}%`]));
+    a.name, fmtP(a.low), fmt$(a.rent), `<strong>${p1(a.lowMgr.cap)}%</strong>`, `${p1(a.lowSelf.cap)}%`]));
 
 const T_EX = h.table(["Line", "A year"], [
   [`Rent, 12 months at ${fmt$(mb.rent)}`, fmt$(mb.rent * 12)],
@@ -533,7 +551,7 @@ const T_EX = h.table(["Line", "A year"], [
   [`Property tax at 6 percent, ${mb.mills} mills`, "−" + fmt$(mb.lowMgr.tax)],
   ["Landlord insurance", "−" + fmt$(INS)],
   ["<strong>Rent left</strong>", "<strong>" + fmt$(mb.lowMgr.noi) + "</strong>"],
-  [`<strong>Divided by the ${fmt$(mb.low)} price</strong>`, `<strong>${p1(mb.lowMgr.cap)} percent</strong>`],
+  [`<strong>Divided by the ${fmtP(mb.low)} price</strong>`, `<strong>${p1(mb.lowMgr.cap)} percent</strong>`],
 ]);
 
 const T_STR = h.table(["Market", "Listings", "Nights booked", "Revenue a listing", "Cap rate now", "Cap rate at 60%", "Occupancy to beat a yearly lease"],
@@ -547,7 +565,7 @@ const T_BEST = h.table(["If you want", "Look at", "Why"], [
   best("The highest nightly return", strMarkets.slice(0, 2).map(m => m.name).join(", "), "The most booking revenue for the price of a house there."),
   best("The most nights booked", sortBy(strMarkets, m => m.occ).slice(0, 2).map(m => `${m.name} (${Math.round(m.occ)}%)`).join(", "), "Steadier bookings across the shoulder months."),
   best("The strongest appreciation", sortBy(areas, a => a.a5).slice(0, 2).map(a => `${a.name} (${sp(a.a5)}%)`).join(", "), "Five-year rate. Ten-year order differs."),
-  best("The lowest price to start", sortBy(areas.filter(a => a.low), a => a.low, false).slice(0, 2).map(a => `${a.name} (${fmt$(a.low)})`).join(", "), "Less cash in, and the rent barely changes."),
+  best("The lowest price to start", sortBy(areas.filter(a => a.low), a => a.low, false).slice(0, 2).map(a => `${a.name} (${fmtP(a.low)})`).join(", "), "Less cash in, and the rent barely changes."),
   best("A tenant all year, not a guest", `${cf.name}, ${cw.name}`, "Year-round households and workers, away from the nightly-rental rules."),
 ]);
 
@@ -562,7 +580,7 @@ module.exports = {
   url: "/invest/rental-returns/",
   datePublished: "2026-09-11",
   title: "What Return Should a Myrtle Beach Rental Make? | Chapter3",
-  description: "What a Myrtle Beach rental returns: cap rates by area with and without a property manager, short-term returns, appreciation, four dealbreakers and a calculator.",
+  description: "What a Myrtle Beach rental returns: cap rates by area with and without a property manager, short-term returns, appreciation, four dealbreakers and a quick check.",
   ogTitle: "What return should a Myrtle Beach rental make?",
   crumb: "Rental returns",
   eyebrow: "Rental returns",
@@ -571,18 +589,18 @@ module.exports = {
   sub: `Most Myrtle Beach rentals keep about 4 to 9 percent of the price in rent each year, after every cost. Whatever the house appreciates is on top of that.`,
   heroCta: { label: "Have us find top performing properties", href: "/invest/run-the-numbers/" },
   author: "devin",
-  shortAnswer: `A Horry County rental costs about ${fmt$(priceLo)} to ${fmt$(priceHi)}, depending on the area. The average return is ${p1(lowMgrAvg)} percent a year after costs, with a property manager, and ${p1(lowSelfAvg)} percent without one. Appreciation is on average ${p1(metro.a5)} percent a year over the last five years and ${p1(metro.a10)} percent over the last ten.`,
+  shortAnswer: `A Horry County rental costs about ${fmtP(priceLo)} to ${fmtP(priceHi)}, depending on the area. The average return is ${p1(lowMgrAvg)} percent a year after costs, with a property manager, and ${p1(lowSelfAvg)} percent without one. Appreciation is on average ${p1(metro.a5)} percent a year over the last five years and ${p1(metro.a10)} percent over the last ten.`,
   sections: [
     { h2: "What return should you expect on a Myrtle Beach rental?", html:
-      h.raw(PANEL) +
+      h.raw(EM_CSS) + h.raw(PANEL) +
       h.p(`A rental pays you two ways. The rent left after the cost of owning the house, and the appreciation when you sell.`) +
       h.p(`The three return tiles assume you paid cash. A loan changes the money you put in, and adds a payment the rent has to cover. That is the coverage ratio, and it is one of the four dealbreakers below.`) +
       T_TERMS +
       h.p(`${h.ext(ARBOR, "A national research firm puts the cap rate on single-family rentals at 7.3 percent")} for late 2025. Myrtle Beach sits inside that range once you use the price a rental sells for.`) },
 
     { h2: "How expensive are rental properties in Myrtle Beach?", html: (bg) =>
-      h.p(`${h.ext(ZILLOW, "Zillow publishes a typical value for every home in a ZIP code")}. In Murrells Inlet that is ${fmt$(mgc.mid)}. It counts oceanfront houses, second homes and everything else. Almost nobody buys that house as a rental.`) +
-      h.p(`Zillow also publishes the value of the cheaper third of homes in the same ZIP. In Murrells Inlet that is ${fmt$(mgc.low)}. That is much closer to what a rental sells for here, and it is the price this page uses.`) +
+      h.p(`${h.ext(ZILLOW, "Zillow publishes a typical value for every home in a ZIP code")}. In Murrells Inlet that is ${fmtP(mgc.mid)}. It counts oceanfront houses, second homes and everything else. Almost nobody buys that house as a rental.`) +
+      h.p(`Zillow also publishes the value of the cheaper third of homes in the same ZIP. In Murrells Inlet that is ${fmtP(mgc.low)}. That is much closer to what a rental sells for here, and it is the price this page uses.`) +
       h.p(`The rent barely changes between the two. ${h.ext(FMR27, "The county's three-bedroom benchmark rent is " + fmt$(mb.rent))} either way. The price you divide by decides the whole return.`) +
       T_PRICE +
       h.p(`In the Myrtle Beach city core that is the difference between ${p1(mb.midMgr.cap)} percent and ${p1(mb.lowMgr.cap)} percent, on the same rent. Divide by the wrong price and a normal market looks like a bad one.`) +
@@ -592,20 +610,20 @@ module.exports = {
     { h2: "How much does a long-term rental make in each area?", html:
       h.p(`Each area has two bars. The dark bar is the return with a property manager taking 10 percent of the rent. The light bar is the same house with you managing it. Both allow 10 percent of the rent for empty months and repairs.`) +
       h.raw(`<div style="max-width:760px;margin:1.1rem 0 1.3rem">${CHART_LTR}</div>`) +
-      h.p(`The rent is the same county benchmark everywhere, so price alone decides the order. The Myrtle Beach city core leads because a rental there costs ${fmt$(mb.low)}. ${nmb.name} and ${mgc.name} trail because the same rent has to cover a ${fmt$(nmb.low)} or ${fmt$(mgc.low)} house.`) +
+      h.p(`The rent is the same county benchmark everywhere, so price alone decides the order. The Myrtle Beach city core leads because a rental there costs ${fmtP(mb.low)}. ${nmb.name} and ${mgc.name} trail because the same rent has to cover a ${fmtP(nmb.low)} or ${fmtP(mgc.low)} house.`) +
       T_LTR +
       h.h3("One house, line by line") +
       T_EX +
       h.p(`Property tax is the biggest cost after the allowance. A rental pays the 6 percent ratio, not the 4 percent a home you live in pays. ${h.a("/buyers/property-taxes/", "The property tax page")} has every district's rate, and ${h.a("/invest/landlord-insurance/", "the insurance page")} has the range.`) +
       h.p(`The 10 percent allowance for empty months and repairs is close to what the market runs. ${h.ext(FRED, "South Carolina's rental vacancy rate")} was 9.8 percent in 2025. A lender is stricter and ${h.ext("https://selling-guide.fanniemae.com/sel/b3-3.8-02/rental-income-subject-property", "counts only 75 percent of the rent")} when it decides your loan.`) },
 
-    { h2: "How much does a nightly rental make in each area?", html:
+    { h2: "What return does a nightly rental make in each area?", html:
       h.p(`Every bar here is the same house. The brass bar is that house on a yearly lease. The two green bars are the same house rented nightly: first at the occupancy its market averages, then at 60 percent, which is what a well-run listing books.`) +
-      h.p(`${h.ext(AIRROI, "The revenue and occupancy are the average of every active listing")} in each market, August 2025 to July 2026. Nightly costs take 55 percent of revenue, covering management, cleaning, utilities, platform fees, the 6 percent tax and insurance.`) +
+      h.p(`${h.ext(AIRROI, "The revenue and occupancy are AirROI's average per active listing")} in each market for ${STR_MONTHS}, before costs. The revenue includes the cleaning fees guests pay. Nightly costs take 55 percent of revenue, covering management, cleaning, utilities, platform fees, the 6 percent tax and insurance. What Myrtle Beach Airbnbs gross, by area and month, is on ${h.a("/invest/airbnb-income/", "our Airbnb income page")}.`) +
       h.raw(`<div style="max-width:760px;margin:1.1rem 0 1.3rem">${CHART_STR}</div>`) +
       h.p(`Occupancy decides it. The average listing books only ${Math.round(occLo)} to ${Math.round(occHi)} percent of its nights, and at that rate ${strBeat.length} of the ${strMarkets.length} markets beat a yearly lease. Get the same house to 60 percent and every market beats it, most of them twice over. ${sb.name} goes from ${p1(strMarkets.find(m => m.name === sb.name).capAvg)} percent to ${p1(strMarkets.find(m => m.name === sb.name).capGood)} percent.`) +
       T_STR +
-      h.p(`The cap rate is the rent left after costs divided by the price, with no loan in it. The last column is the occupancy a nightly rental needs to match a yearly lease on that house. In ${mgc.name} and ${sb.name} that bar is around 21 percent, which the market already clears. In ${lr.name} it is ${p1(strMarkets.find(m => m.name === lr.name).breakEven)} percent, which almost nothing clears.`) +
+      h.p(`The cap rate is the rent left after costs divided by the price, with no loan in it. The last column is the occupancy a nightly rental needs to match a yearly lease on that house. In ${mgc.name} and ${sb.name} that bar is around ${Math.round((strMarkets.find(m => m.name === "Murrells Inlet").breakEven + strMarkets.find(m => m.name === sb.name).breakEven) / 2)} percent, which the market already clears. In ${lr.name} it is ${p1(strMarkets.find(m => m.name === lr.name).breakEven)} percent, which almost nothing clears.`) +
       h.p(`This section divides by the typical home value, not the cheaper third above. The listings earning this revenue are mostly beach properties, not the cheapest houses in the area.`) +
       h.p(`Carolina Forest has no nightly figure because our data source does not measure it. That is not the same as no demand. It sits beside the new Carolina Forest hospital, and a furnished monthly rental there serves traveling nurses on 13-week contracts. ${h.a("/invest/mid-term-rentals/", "Furnished monthly rentals")} covers that, and ${h.a("/invest/where-to-buy/", "where to buy")} has the nightly-rental rules, which ban them in most neighborhoods.`) },
 
@@ -622,8 +640,9 @@ module.exports = {
       h.p(`These are Chapter3's numbers, not an industry standard. No published study says what one rental house should return. They are not a promise about what one house will do. ${h.a("/invest/strategies/dscr-loans/", "The DSCR page")} has the loan side of the coverage ratio.`) +
       h.cta("Every investor's goals are different.", "Tell us what you want the house to do, and we find properties that fit those goals and run all four numbers on each one.", "Have us find properties for your goals", "/invest/run-the-numbers/", bg) },
 
-    { h2: "Calculate how much your Myrtle Beach rental will make", html:
-      h.p(`Pick the area, then enter a price and a rent. Add the insurance, the dues and your monthly loan payment when you have them. The tool takes out the allowance, the property tax for that area, insurance and dues, and shows the return with a manager and without one.`) +
+    { h2: "Check the return on one house in your area", html:
+      h.raw(ANALYZER_BOX) +
+      h.p(`For a quick check by area, use the tool below. Pick the area, then enter a price and a rent. Add the insurance, the dues and your monthly loan payment when you have them. The tool takes out the allowance, the property tax for that area, insurance and dues, and shows the return with a manager and without one.`) +
       h.raw(TOOL) },
 
     { h2: "How much does appreciation add?", html:
@@ -639,7 +658,7 @@ module.exports = {
     { q: "Why do Myrtle Beach cap rates look so low in some reports?", a: `Because they divide the rent by the typical value of every home in the area, which includes oceanfront houses and second homes nobody rents out. Use the price a rental sells for and the same rent returns far more. In the Myrtle Beach city core that is the difference between ${p1(mb.midMgr.cap)} percent and ${p1(mb.lowMgr.cap)} percent.` },
     { q: "What DSCR do you need for a Myrtle Beach rental?", a: `Our target is 1.25. Divide the monthly rent by the monthly cost of the loan, taxes, insurance and dues. At ${fmt$(mb.rent)} of rent, 1.25 means all of those together stay under ${fmt$(mb.rent / 1.25)} a month. Some lenders will fund below that and charge for it.` },
     { q: "Which Myrtle Beach area has the best rental returns?", a: `For long-term rent, ${sortBy(areas.filter(a => a.low), a => a.lowMgr.cap).slice(0, 2).map(a => a.name).join(" and ")}, because the houses cost least and the rent is the same across the county. For nightly rentals, ${strMarkets.slice(0, 2).map(m => m.name).join(" and ")}, once the house is run well enough to book 60 percent of its nights.` },
-    { q: "Does a property manager make a rental worth it?", a: `A manager takes about 10 percent of the rent, which costs roughly one point of return. On a short-term rental the manager usually earns it back. The middle listing books 25 to 36 percent of nights. The top tenth books 67 to 76 percent. On a long-term rental, self-managing is worth about one extra point a year.` },
+    { q: "Does a property manager make a rental worth it?", a: `A manager takes about 10 percent of the rent, which costs roughly one point of return. On a short-term rental the manager usually earns it back. On a long-term rental, self-managing is worth about one extra point a year.` },
     { q: "How much does a Myrtle Beach rental appreciate?", a: `The metro rose ${p1(metro.a5)} percent a year over five years and ${p1(metro.a10)} percent a year over ten. Over the last three years it fell ${p1(Math.abs(metro.y3))} percent in total. Our target is 3 percent a year over the long run.` },
   ],
   sources: [
@@ -653,8 +672,8 @@ module.exports = {
     { name: "Horry County Assessor", href: ASSESSOR },
     { name: "Georgetown County tax", href: GTCALC },
   ],
-  sourcesNote: "Educational only, not a loan offer and not an appraisal. Chapter3 is a real estate brokerage. Area figures are not a quote on one house.",
+  sourcesNote: `Educational only, not a loan offer and not an appraisal. Chapter3 is a real estate brokerage. Area figures are not a quote on one house. Exact prices: ${areas.filter(a => a.low).map(a => `${a.name.replace(/ and Garden City$/, "")} ${fmt$(a.low)}`).join("; ")}.`,
   bottomCta: { h2: "Tell us what you want a rental to do.", p: "One call. Your goal, the areas that fit it, and all four numbers run on every house before you offer.", label: "Call a specialized agent", href: TEL },
-  keywords: "Myrtle Beach rental returns, cap rate Myrtle Beach rental, Myrtle Beach investment property return, Grand Strand rental cap rate by area, Myrtle Beach Airbnb return, DSCR Myrtle Beach rental",
+  keywords: "Myrtle Beach rental returns, cap rate Myrtle Beach rental, Grand Strand rental cap rate by area, Myrtle Beach Airbnb return",
   about: "The return a rental property makes in Myrtle Beach and the Grand Strand, by area",
 };

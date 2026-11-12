@@ -77,7 +77,7 @@ const AGE_CHART = G.bars([
   { name: "In elevator buildings", value: pct(old30("elevator_building"), ALL.elevator_building), valueText: `${pct(old30("elevator_building"), ALL.elevator_building)}%` },
   { name: "In oceanfront buildings", value: pct(old30("oceanfront_building"), ALL.oceanfront_building), valueText: `${pct(old30("oceanfront_building"), ALL.oceanfront_building)}%` },
 ], { caption: `Share of Grand Strand condos for sale in buildings ${AGE30} years or older`, nameLabel: "Condos for sale", valueLabel: "share", format: (v) => `${v}%`, max: 100, compact: true,
-  note: "Our count of the condos for sale in the local MLS, by the year built each listing gives. Elevator and oceanfront buildings are the listings' own features." });
+  note: "Our count of the condos for sale in the local MLS, by the year built on each listing. Each listing also says whether its building has an elevator and whether it is oceanfront." });
 const FEE = (r) => to10(r.median_fee_month_within_5);
 /* Round 2 (owner's eye): one rounded figure for the two older bands, not a range. Both must sit within $25 of it. */
 const FEE_OLD = Math.round((FEE(OLD) + FEE(MID)) / 2 / 50) * 50;
@@ -85,7 +85,7 @@ if (Math.abs(FEE(OLD) - FEE_OLD) > 25 || Math.abs(FEE(MID) - FEE_OLD) > 25) thro
 
 /* ---- Row 11: saving ahead against a bill or a loan (one firm's example; an association's cost, not a payment). ---- */
 const ROOF_CHART = `<div class="rs-roof">` + G.bars([
-  { name: "Saved for ahead", value: 231823, valueText: "$230,000", feature: "less than the price: savings earn interest" },
+  { name: "Paid from savings", value: 231823, valueText: "$230,000", feature: "less than the price, as savings earn interest" },
   { name: "A special assessment", value: 250000, valueText: "$250,000", feature: "the full price, all at once", reference: true },
   { name: "A bank loan", value: 320071, valueText: "$320,000", feature: "plus the interest on the loan" },
 ], { caption: "What a $250,000 roof costs the owners, three ways", nameLabel: "How it is paid", featureLabel: "why", valueLabel: "cost to owners", compact: true,
@@ -108,10 +108,10 @@ const GAUGE = (() => {
     + `<clipPath id="rsBar"><rect x="${x0}" y="${y}" width="${x1 - x0}" height="${hgt}" rx="15"/></clipPath>`
     + `<g clip-path="url(#rsBar)">${seg(0, 30, "#a8482f")}${seg(30, 70, "#8f6131")}${seg(70, 100, "#3f7461")}</g>`
     + zone(0, 30, "Weak") + zone(30, 70, "Fair") + zone(70, 100, "Strong")
-    + mark(PF_WEAK, `Example: ${PF_WEAK}%`, true) + mark(PF_STRONG, `Same building, ${PF_STRONG}%`, false)
+    + mark(PF_WEAK, `Example: ${PF_WEAK}%`, true) + mark(PF_STRONG, `With more saved: ${PF_STRONG}%`, false)
     + [0, 30, 70, 100].map(tick).join("") + `</svg>`;
-  return `<figure class="rs-fig"><p class="cap">Percent funded: what the fund holds, against what it should hold</p>${svg}`
-    + `<figcaption>Association Reserves, a national reserve-study firm, set these bands from its clients' studies. The two marks are the example building below, with less and with more saved.</figcaption></figure>`;
+  return `<figure class="rs-fig"><p class="cap">Percent funded: the cash in the fund, as a share of what it should hold by now</p>${svg}`
+    + `<figcaption>Association Reserves, a national reserve-study firm, set these bands from its clients' studies. The two marks show the example building below: as it is, and with more saved.</figcaption></figure>`;
 })();
 /* ---- Rows 19, 21 to 23: other states. Every cell from a verified or corrected row; no guesses. Round 2 (owner's
    eye): only what a buyer from that state needs, whether a study is required and how often; the inspection column,
@@ -154,14 +154,17 @@ const CALC = `<div class="rs-calc"><p class="k">Does this budget pass the lender
 /* ---- The page's own blocks. ---- */
 const CARD = "background:linear-gradient(180deg,rgba(255,255,255,.8),rgba(255,255,255,.56));border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 10px 26px -18px rgba(28,32,40,.35)";
 const CSS = "<style>"
-  + `main#main .rs-pots{list-style:none;margin:1.2rem 0 1.4rem;padding:0;display:grid;gap:.7rem;max-width:760px}`
-  + `@media (min-width:760px){main#main .rs-pots{grid-template-columns:repeat(3,minmax(0,1fr))}}`
-  + `main#main .rs-pots li{margin:0;padding:1rem 1.1rem;border-radius:18px;${CARD}}`
-  + `main#main .rs-pots li.hot{border:2px solid var(--brass);background:#fff}`
+  /* Design pass 2026-11 (redo2/hoa-reserves/DESIGN.md): one card style, kept for the charts, the drawing, the
+     calculator, the dark panel and the offers. The short lists are open, each item under a thin rule; red marks the
+     "owners pay" item by its rule or number, not an outline. Every block of the page's own is 720 px, the offers' width. */
+  + `main#main .rs-pots{list-style:none;margin:1.2rem 0 1.5rem;padding:0;display:grid;gap:0;max-width:720px}`
+  + `@media (min-width:760px){main#main .rs-pots{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:1.6rem}main#main .rs-pots li{border-bottom:0!important}}`
+  + `main#main .rs-pots li{margin:0;padding:.85rem 0 .9rem;border-top:2px solid rgba(28,32,40,.14)}main#main .rs-pots li:last-child{border-bottom:1px solid rgba(28,32,40,.14)}`
+  + `main#main .rs-pots li.hot{border-top-color:#a8482f}main#main .rs-pots li.hot .k{color:#a8482f}`
   + `main#main .rs-pots .k{display:block;font-family:var(--sans);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#8a5226;font-weight:700;margin-bottom:.3rem}`
   + `main#main .rs-pots b{display:block;color:var(--navy);font-family:var(--sans);font-size:1.1rem;line-height:1.3;margin-bottom:.25rem}`
   + `main#main .rs-pots span.t{display:block;color:var(--muted);line-height:1.55}`
-  + `main#main .rs-fig{max-width:760px;margin:1.4rem 0 1.4rem;padding:1.1rem 1.2rem 1rem;border-radius:20px;${CARD}}`
+  + `main#main .rs-fig{max-width:720px;box-sizing:border-box;margin:1.4rem 0 1.4rem;padding:1.1rem 1.2rem 1rem;border-radius:20px;${CARD}}`
   + `main#main .rs-fig .cap{color:var(--navy);font-weight:600;font-family:var(--sans);font-size:1.0625rem;line-height:1.4;margin:0 0 .4rem}`
   + `main#main .rs-fig figcaption{color:var(--muted);font-size:1rem;line-height:1.55;margin-top:.4rem}`
   + `main#main .rs-tbl{max-width:760px;margin:1.2rem 0 1rem;border-radius:20px;overflow:hidden;${CARD}}`
@@ -172,7 +175,7 @@ const CSS = "<style>"
   + `main#main .rs-tbl td b{color:var(--navy);font-weight:600}main#main .rs-tbl td small{display:block;font-size:.9rem;color:var(--muted)}`
   + `main#main .rs-tbl .num{text-align:right}main#main .rs-tbl th.num{max-width:9rem}main#main .rs-tbl td.num b{white-space:nowrap}main#main .rs-tbl tr.tot td{border-bottom:0;background:rgba(28,32,40,.04);color:var(--navy);font-weight:700}`
   + `@media (max-width:420px){main#main .rs-tbl th,main#main .rs-tbl td{padding-left:.5rem;padding-right:.5rem}main#main .rs-tbl td{font-size:.95rem}}`
-  + `main#main .rs-gap{max-width:760px;margin:1.2rem 0 1.4rem;padding:1.2rem 1.3rem;border-radius:20px;background:linear-gradient(160deg,rgba(42,48,64,.96),rgba(28,32,40,.98));color:var(--ivory);box-shadow:0 26px 60px -30px rgba(28,32,40,.6)}`
+  + `main#main .rs-gap{max-width:720px;box-sizing:border-box;margin:1.2rem 0 1.4rem;padding:1.2rem 1.3rem;border-radius:20px;background:linear-gradient(160deg,rgba(42,48,64,.96),rgba(28,32,40,.98));color:var(--ivory);box-shadow:0 26px 60px -30px rgba(28,32,40,.6)}`
   + `main#main .rs-gap .k{font-family:var(--sans);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-2);font-weight:600;margin:0 0 .8rem}`
   + `main#main .rs-gap .big{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem .7rem;margin:0 0 .6rem}`
   + `main#main .rs-gap .big strong{color:var(--brass-2);font-family:var(--serif);font-size:clamp(2rem,8vw,2.6rem);line-height:1}`
@@ -180,7 +183,7 @@ const CSS = "<style>"
   + `main#main .rs-gap p.t{margin:0 0 .8rem;color:rgba(244,239,232,.9);line-height:1.55}`
   + `main#main .rs-gap .per{border-top:1px solid rgba(244,239,232,.2);padding-top:.8rem;color:rgba(244,239,232,.9);line-height:1.5;margin:0}`
   + `main#main .rs-gap .per strong{color:#fff;font-family:var(--serif);font-size:1.3rem;margin-right:.2rem}`
-  + `main#main .rs-parts{max-width:760px;margin:1.2rem 0 1.2rem;padding:1.1rem 1.2rem 1rem;border-radius:20px;${CARD}}`
+  + `main#main .rs-parts{max-width:720px;box-sizing:border-box;margin:1.2rem 0 1.2rem;padding:1.1rem 1.2rem 1rem;border-radius:20px;${CARD}}`
   + `main#main .rs-parts .cap{color:var(--navy);font-weight:600;font-family:var(--sans);font-size:1.0625rem;line-height:1.4;margin:0 0 .8rem}`
   + `main#main .rs-parts .in{display:grid;gap:1rem;align-items:center}`
   + `@media (min-width:640px){main#main .rs-parts .in{grid-template-columns:210px minmax(0,1fr);gap:1.4rem}}`
@@ -196,19 +199,19 @@ const CSS = "<style>"
   + `main#main .rs-parts li.due .bar i{background:#a8482f}`
   + `main#main .rs-parts .key{color:var(--muted);font-family:var(--sans);font-size:.95rem;line-height:1.45;margin:.8rem 0 0}`
   + `main#main .rs-parts .key b{display:inline-block;width:.8rem;height:.8rem;border-radius:50%;background:#a8482f;vertical-align:-.05rem;margin-right:.3rem}`
-  + `main#main .rs-flow{list-style:none;counter-reset:rf;margin:1rem 0 1.3rem;padding:0;display:grid;gap:.55rem;max-width:760px}`
-  + `@media (min-width:760px){main#main .rs-flow{grid-template-columns:repeat(3,minmax(0,1fr))}}`
-  + `main#main .rs-flow li{counter-increment:rf;position:relative;margin:0;padding:.85rem 1rem .9rem 3.1rem;border-radius:16px;${CARD};color:var(--muted);line-height:1.5}`
-  + `main#main .rs-flow li::before{content:counter(rf);position:absolute;left:.9rem;top:.85rem;display:inline-flex;align-items:center;justify-content:center;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--sans);font-weight:700;font-size:.85rem}`
-  + `main#main .rs-flow li.last{border:2px solid #a8482f;background:#fff}main#main .rs-flow li.last::before{background:#a8482f}`
+  + `main#main .rs-flow{list-style:none;counter-reset:rf;margin:1.1rem 0 1.4rem;padding:0;display:grid;gap:0;max-width:720px}`
+  + `@media (min-width:760px){main#main .rs-flow{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:1.6rem}main#main .rs-flow li{border-bottom:0!important}}`
+  + `main#main .rs-flow li{counter-increment:rf;position:relative;margin:0;padding:.85rem 0 .9rem 2.4rem;border-top:2px solid rgba(28,32,40,.14);color:var(--muted);line-height:1.5}main#main .rs-flow li:last-child{border-bottom:1px solid rgba(28,32,40,.14)}`
+  + `main#main .rs-flow li::before{content:counter(rf);position:absolute;left:0;top:.85rem;display:inline-flex;align-items:center;justify-content:center;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--sans);font-weight:700;font-size:.85rem}`
+  + `main#main .rs-flow li.last{border-top-color:#a8482f}main#main .rs-flow li.last::before{background:#a8482f}`
   + `main#main .rs-flow b{display:block;color:var(--navy);font-family:var(--sans);font-size:1.05rem;line-height:1.35;margin-bottom:.15rem}`
   + `main#main .rs-roof div[role=rowgroup]:not(.sr)>[role=row]:first-child .b{background:#3f7461}`
-  + `main#main .rs-ways{list-style:none;margin:1.1rem 0 1.4rem;padding:0;display:grid;gap:.6rem;max-width:760px}`
-  + `@media (min-width:760px){main#main .rs-ways{grid-template-columns:repeat(2,minmax(0,1fr))}}`
-  + `main#main .rs-ways li{margin:0;padding:1rem 1.1rem;border-radius:18px;${CARD};color:var(--muted);line-height:1.55}`
-  + `main#main .rs-ways li.no{border:2px solid #a8482f;background:#fff}`
+  + `main#main .rs-ways{list-style:none;margin:1.1rem 0 1.5rem;padding:0;display:grid;gap:0;max-width:720px}`
+  + `@media (min-width:760px){main#main .rs-ways{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem}main#main .rs-ways li{border-bottom:0!important}}`
+  + `main#main .rs-ways li{margin:0;padding:.85rem 0 .9rem;border-top:2px solid rgba(28,32,40,.14);color:var(--muted);line-height:1.6}main#main .rs-ways li:last-child{border-bottom:1px solid rgba(28,32,40,.14)}`
+  + `main#main .rs-ways li.no{border-top-color:#a8482f}main#main .rs-ways li.no b{color:#a8482f}`
   + `main#main .rs-ways b{display:block;color:var(--navy);font-family:var(--sans);font-size:1.08rem;line-height:1.35;margin-bottom:.25rem}`
-  + `main#main .rs-calc{background:var(--navy);border-radius:16px;padding:1.3rem 1.3rem 1.2rem;margin:1.2rem 0 1.4rem;max-width:600px}`
+  + `main#main .rs-calc{background:var(--navy);border-radius:16px;padding:1.3rem 1.3rem 1.2rem;margin:1.2rem 0 1.4rem;max-width:720px;box-sizing:border-box}`
   + `main#main .rs-calc .k{font-family:var(--sans);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-2);margin:0 0 .9rem;font-weight:600}`
   + `main#main .rs-calc .k2{margin-top:1.4rem;padding-top:1.1rem;border-top:1px solid rgba(244,239,232,.22)}`
   + `main#main .rs-calc .g{display:grid;gap:.8rem}`
@@ -219,24 +222,38 @@ const CSS = "<style>"
   + `main#main .rs-calc .out strong{color:var(--brass-2);font-family:var(--serif);font-size:1.8rem;line-height:1}`
   + `main#main .rs-calc .note{color:rgba(244,239,232,.8);font-family:var(--sans);font-size:.98rem;line-height:1.55;margin:.55rem 0 0}`
   + `@media (max-width:420px){main#main .rs-calc label{flex-direction:column;align-items:flex-start;gap:.3rem}main#main .rs-calc input{width:100%}main#main .rs-calc .u{width:100%}}`
-  + `main#main .rs-st{max-width:860px;margin:1.2rem 0 1.4rem;border-radius:20px;overflow:hidden;${CARD}}`
-  + `main#main .rs-st .cap{color:var(--navy);font-weight:600;font-family:var(--sans);font-size:1.0625rem;line-height:1.4;margin:0;padding:1rem 1.1rem .5rem}`
+  + `main#main .rs-st{max-width:720px;margin:1.3rem 0 1.5rem}`
+  + `main#main .rs-st .cap{color:var(--navy);font-weight:600;font-family:var(--sans);font-size:1.0625rem;line-height:1.4;margin:0;padding:0 0 .6rem}`
   + `main#main .rs-st table{width:100%;border-collapse:collapse;font-family:var(--sans)}`
-  + `main#main .rs-st th,main#main .rs-st td{text-align:left;vertical-align:top;padding:.65rem .75rem;border-bottom:1px solid rgba(28,32,40,.08);line-height:1.45;font-size:1rem}`
-  + `main#main .rs-st thead th{font-size:.85rem;color:var(--navy);font-weight:700;border-bottom:2px solid rgba(28,32,40,.18)}`
+  + `main#main .rs-st th,main#main .rs-st td{text-align:left;vertical-align:top;padding:.65rem .75rem .65rem 0;border-bottom:1px solid rgba(28,32,40,.12);line-height:1.45;font-size:1rem}`
+  + `main#main .rs-st thead th{font-size:.85rem;color:var(--navy);font-weight:700;border-top:2px solid rgba(28,32,40,.18);border-bottom:1px solid rgba(28,32,40,.18)}`
   + `main#main .rs-st tbody th{color:var(--navy);font-weight:700;white-space:nowrap}main#main .rs-st td{color:var(--muted)}`
-  + `main#main .rs-st tr.sc th,main#main .rs-st tr.sc td{background:rgba(168,72,47,.07)}`
+  + `main#main .rs-st tr.sc th{color:#a8482f}main#main .rs-st tr.sc td{color:var(--navy);font-weight:600}`
   + `@media (max-width:699px){main#main .rs-st thead{display:none}main#main .rs-st tbody,main#main .rs-st tr,main#main .rs-st th,main#main .rs-st td{display:block}`
-  + `main#main .rs-st tr{padding:.75rem 1.05rem .8rem;border-top:1px solid rgba(28,32,40,.1)}main#main .rs-st tbody th{padding:0 0 .3rem;border:0;font-size:1.08rem}`
+  + `main#main .rs-st tr{padding:.75rem 0 .8rem;border-top:1px solid rgba(28,32,40,.14)}main#main .rs-st tbody tr:first-child{border-top:2px solid rgba(28,32,40,.18)}main#main .rs-st tbody tr:last-child{border-bottom:1px solid rgba(28,32,40,.14)}main#main .rs-st tbody th{padding:0 0 .3rem;border:0;font-size:1.08rem}`
   + `main#main .rs-st td{padding:.15rem 0;border:0}main#main .rs-st td::before{content:attr(data-l) ": ";color:var(--navy);font-weight:600}`
-  + `main#main .rs-st tr.sc th,main#main .rs-st tr.sc td{background:none}main#main .rs-st tr.sc{background:rgba(168,72,47,.07)}}`
+  + `main#main .rs-st tr.sc{background:none}}`
   /* Round 2 work-arounds, page-scoped (NEEDS 10, 11; same as /buyers/undisclosed-flooding/): the shared feed's search
      row at 320 px, the header phone at 1000 to 1100 px, the glance tile type (figure larger than its line, 1.4 line
      height) and the contents box in two columns from 700 px. */
   + "@media (max-width:379px){main#main .hx-fb,main#main .hx-fb>*{min-width:0;max-width:100%}main#main .hx-fb-ai,main#main .hx-fb-q{min-width:0!important;max-width:100%!important;flex-wrap:wrap;box-sizing:border-box}main#main .hx-fb-q textarea{min-width:0;flex:1 1 100%;width:100%}main#main .hx-fb-go{flex:1 1 100%}}"
   + "@media (min-width:1000px) and (max-width:1100px){.header-ctas .hdr-phone{display:none!important}}"
   + "main#main .c3-glance li{line-height:1.4}main#main .c3-glance strong{font-size:1.2rem!important;font-weight:700;line-height:1.25}main#main .c3-glance span.t{font-size:.95rem!important;line-height:1.4!important}"
-  + "@media (min-width:700px){main#main nav[aria-label=\"On this page\"]>ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.6rem}}"
+  /* Design pass 2026-11: the headline's italic line at about half the H1's size, on its own line (as /invest/condos/
+     and /hoa/liens-and-foreclosure/); on a phone the glance tiles are flat rows under thin rules; the contents list has
+     no card, plain columns between two thin rules. */
+  + "main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+  + "main#main .detail-h1{text-wrap:balance}@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}"
+  + "@media (max-width:699px){main#main .c3-glance{grid-template-columns:1fr!important;gap:0!important}main#main .c3-glance li{background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border-top:1px solid rgba(28,32,40,.16)!important;flex-direction:row!important;text-align:left!important;justify-content:flex-start!important;gap:.7rem!important;padding:.55rem 0!important}main#main .c3-glance li:last-child{border-bottom:1px solid rgba(28,32,40,.16)!important}}"
+  + "main#main nav[aria-label=\"On this page\"]{background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border-top:1px solid rgba(28,32,40,.16)!important;border-bottom:1px solid rgba(28,32,40,.16)!important;padding:.8rem 0 .5rem!important}"
+  + "main#main nav[aria-label=\"On this page\"]>ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.5rem}"
+  + "@media (min-width:700px){main#main nav[aria-label=\"On this page\"]>ul{grid-template-columns:repeat(3,minmax(max-content,1fr))}main#main nav[aria-label=\"On this page\"] li a{padding:.45rem 0!important}}"
+  + "@media (max-width:699px){main#main nav[aria-label=\"On this page\"] li:last-child:nth-child(odd){grid-column:1/-1}}"
+  /* the two bar charts at the page's one width; the photo without a frame, and at 1180 px and up beside the age
+     chart and the HUD sentence it shows */
+  + "main#main .c3-gchart{max-width:720px!important;box-sizing:border-box}"
+  + "main#main .c3ph-hero{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;border-radius:0!important;max-width:720px}"
+  + "@media (min-width:1180px){main#main .rs-here{display:grid;grid-template-columns:720px minmax(0,1fr);column-gap:2.6rem;align-items:start}main#main .rs-here>div>*:first-child{margin-top:0}main#main .rs-here .c3-aerial{position:sticky;top:9.5rem;margin-top:.3rem}main#main .rs-here .c3ph-hero{margin:0}}"
   /* Workaround (sibling's NEEDS.md 5): when the site adds a block after the closing band, glass.js treats that band
      as the top offer bar and puts its ivory heading on a light panel. Keep the closing band dark. */
   + "main#main>section[style^=\"background:var(--navy)\"]:has(>.wrap>h2){padding:.9rem 0!important}"
@@ -297,7 +314,7 @@ const WAYS = `<ul class="rs-ways" aria-label="What the lender's reserve test mea
    data folder. It shows roofs and balconies on oceanfront towers; the caption names no building and does not
    say the towers are condos. Some roofs in the frame are orange, so the caption says "roofs", not "flat roofs".
    The photo's year is in the credits only. */
-const ph = PK.create({ h, photos: read("photos.json").photos, mapDir: path.join(__dirname, "..", "chapter3realty", "images", "maps"), mapSrc: "/images/maps" }).photoSet({ aerialWidth: "760px" });
+const ph = PK.create({ h, photos: read("photos.json").photos, mapDir: path.join(__dirname, "..", "chapter3realty", "images", "maps"), mapSrc: "/images/maps" }).photoSet({ aerialWidth: "720px" });
 const PHOTO = ph.aerial("myrtle-beach-oceanfront-towers-2011", "Oceanfront towers in Myrtle Beach, seen from a plane over the ocean. Their roofs, rooftop boxes and stacked balconies are the kind of parts a reserve fund saves for.");
 ph.share("myrtle-beach-oceanfront-towers-2011");
 /* photos.js adds a general "resized these photos and cropped some of them" line; this page's one photo already
@@ -370,7 +387,7 @@ module.exports = G.page({
   heroCta: { title: "Send us the building. We read its reserve study, budget and balance sheet.", label: "Have us read the financials", href: "/contact/" },
   author: "devin",
   shortAnswer: [
-    "Only if it has saved enough. To tell, compare the cash in its reserve fund with what its reserve study says the fund should hold by now. That share is called percent funded. The higher it is, the lower the chance the owners get a special assessment.",
+    "Only if it has saved enough. Its reserve fund is its savings for big repairs. Compare the cash in that fund with what its reserve study, a report on the building's big shared parts, says the fund should hold by now. That share is called percent funded. The higher it is, the lower the chance the owners get a special assessment, a one-time bill to each owner for a cost the fund cannot cover.",
   ],
   sections: [
     { h2: "What is an HOA reserve fund?", toc: "What reserves are", id: "what-reserves-are", html: () => CSS + ph.css() +
@@ -379,11 +396,12 @@ module.exports = G.page({
       h.p("Saving ahead spreads the cost of a roof across every owner who uses it. Without savings, the whole bill falls on whoever owns a unit the year the roof fails.") +
       h.p("A reserve study is a report on the building's big shared parts: what each one costs, how long it lasts, and how much the fund should hold by now.") },
 
-    { h2: "Does South Carolina require HOA reserves or a reserve study?", toc: "The South Carolina rule", id: "south-carolina-rule", html: () =>
+    { h2: "Does South Carolina require HOA reserves or a reserve study?", toc: "The South Carolina rule", id: "south-carolina-rule", html: (bg) =>
       h.p(`No. ${h.a("/hoa/south-carolina-hoa-laws/", "South Carolina law")} does not require a condo or an HOA to keep a reserve fund, to put any amount into one, or to have a reserve study. How much a building saves is up to its board and its own documents.`) +
-      h.p("In a South Carolina condo, every owner shares the cost of keeping up and repairing the shared parts. Each unit's share is the percentage set for it in the condo's founding papers, the recorded documents that created it. After damage, the bill is paid in this order:") +
+      h.p(`In a South Carolina condo, every owner shares the cost of keeping up and repairing the shared parts. Each unit's share is the percentage set for it in the condo's founding papers, the recorded documents that created it. ${h.a("/hoa/who-pays-for-damage/", "After damage, the bill is paid")} in this order:`) +
       ORDER +
-      h.p("A condo board must keep a book of every receipt and expense, with repair costs shown, open to every owner. A buyer is not yet an owner, so we get the papers through the seller.") },
+      h.p("A condo board must keep a book of every receipt and expense, with repair costs shown, open to every owner. A buyer is not yet an owner, so we get the papers through the seller.") +
+      h.cta("Not an owner yet? We ask the seller for the papers", "A buyer cannot see the board's books, so we ask the seller for them before you sign.", "Have us ask for the papers", "/contact/", bg) },
 
     { h2: "How much should a Myrtle Beach condo association have in reserves?", toc: "How much is enough", id: "how-much", html: () =>
       h.p("Enough to cover the part of each big repair that has already worn out. A roof halfway through its life should have about half its cost saved.") +
@@ -392,7 +410,7 @@ module.exports = G.page({
       h.p("Among the firm's own clients, about a third were weak and a quarter strong. Those are associations that pay for a study, and the firm says they may be more careful with money than most.") +
       h.p("Percent funded is a snapshot of today. It does not grade the plan, so we read the plan as well.") },
 
-    { h2: "What does an underfunded condo building look like?", toc: "An example", id: "example", html: () =>
+    { h2: "What does an underfunded condo building look like?", toc: "An example", id: "example", html: (bg) =>
       h.p(`Here is one building with round numbers. It has ${WX.units} units, is 30 years old and has ${money(W.balance)} saved.`) +
       PARTS +
       h.p(`Together, these parts should have about $${FFB_M} million saved by now. The fund is ${PF_WEAK} percent funded: weak.`) +
@@ -401,7 +419,8 @@ module.exports = G.page({
       h.p("The example leaves out inflation and interest. A real condo splits a gap by each unit's percentage in its founding papers, not evenly.") +
       h.h3("Saving ahead costs owners less") +
       h.p("Saved money earns interest. A special assessment pays the full price, and a bank loan adds its interest.") +
-      ROOF_CHART },
+      ROOF_CHART +
+      h.cta("Is a building you like this far behind?", "Tell us the building, and we compare its reserve cash with what its study says it should hold.", "Have us check its savings", "/contact/", bg) },
 
     { h2: "What do lenders require for condo reserves?", toc: "What lenders require", id: "lenders", html: () =>
       h.p("For most conventional condo loans, the lender tests the building's budget. Fannie Mae and Freddie Mac buy these loans from lenders, and the test is theirs.") +
@@ -409,17 +428,18 @@ module.exports = G.page({
       h.h3("10 percent or 15 percent?") +
       h.p("Freddie Mac raises its line to 15 percent for loan applications received on or after January 4, 2027. It says it made the change with its regulator and in alignment with Fannie Mae. Fannie Mae's own guide still says 10 percent.") +
       h.p("From that date, a building that puts 12 percent into reserves fails Freddie Mac's test and passes Fannie Mae's guide as it reads now. Which one applies depends on which company buys your loan. Your loan officer can tell you before you apply.") +
-      h.p("Freddie Mac made the change after buildings with underfunded reserves turned out to be the same ones needing critical repairs. It says owners in those buildings can face special assessments or higher dues.") +
+      h.p(`Freddie Mac made the change after buildings with underfunded reserves turned out to be the same ones needing critical repairs. It says owners in those buildings can face special assessments or ${h.a("/hoa/dues-increases/", "higher dues")}.`) +
       h.h3("A building can pass and still be weak") +
       h.p(`The test reads one line of this year's budget, not the cash in the bank. Our example building puts ${SHARE} percent of its dues into reserves, so it passes while ${PF_WEAK} percent funded. Try your own building's numbers:`) +
       CALC },
 
-    { h2: "Why do reserves matter more on the Grand Strand?", toc: "Why it matters here", id: "why-here", html: () =>
+    { h2: "Why do reserves matter more on the Grand Strand?", toc: "Why it matters here", id: "why-here", html: (bg) =>
       h.p(`Most condos for sale here are in buildings ${AGE30} years or older, and the elevator and oceanfront buildings are older still.`) +
-      AGE_CHART +
-      h.p(`HUD plans on elevator machinery lasting ${ELEV} years and a flat roof 15 to 20. A ${AGE30}-year-old tower has passed one planning life of each.`) +
-      PHOTO +
-      h.p(`The HOA fee will not tell you which ${h.a("/invest/condo-buildings/", "condo buildings")} have saved. In buildings ${AGE30} years or older, the middle listed fee is about ${money(FEE_OLD)} a month, close to the ${money(FEE(ALL))} for all condos for sale. We read the study instead.`) },
+      `<div class="rs-here"><div>` + AGE_CHART +
+      h.p(`HUD plans on elevator machinery lasting ${ELEV} years and a flat roof 15 to 20. A ${AGE30}-year-old tower has passed one planning life of each.`) + `</div>` +
+      PHOTO + `</div>` +
+      h.p(`The HOA fee will not tell you which ${h.a("/invest/condo-buildings/", "condo buildings")} have saved. In buildings ${AGE30} years or older, the middle listed fee is about ${money(FEE_OLD)} a month, close to the ${money(FEE(ALL))} for all condos for sale. We read the study instead.`) +
+      h.cta("Has an older tower saved for its elevators?", "Name the tower. We find when its roof and elevators were last replaced, and whether its fund covers the next ones.", "Ask us to check an older tower", "/contact/", bg) },
 
     { h2: "What do other states require for condo reserves?", toc: "Other states", id: "other-states", html: () =>
       h.p(`${h.a("/buyers/relocating/from-florida/", "Florida")}, ${h.a("/buyers/relocating/from-new-jersey/", "New Jersey")}, ${h.a("/buyers/relocating/from-maryland/", "Maryland")} and Virginia make condo boards study their reserves on a schedule. A buyer from one of them should not expect the same here.`) +

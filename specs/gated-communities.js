@@ -159,13 +159,27 @@ const GUIDE_GROUPS = [
   if (seen.length !== E.length || new Set(seen).size !== E.length) throw new Error("gated-communities: the guide must list each place once");
 }
 /* The guide links to the entries, and its last line to the map, which now sits beside the price table after the entries (owner's eye 14d, H3). */
-/* Round 15 (owner, 2026-10-21: "the landing page is a bit cluttered"): the guide is a grid of small
-   glass cards, one per want, each with an icon and its places, in place of ten rows of links. */
-const GICON = { "The ocean, or an oceanfront club": "beach", "A marina with staff": "dock", "A boat ramp at home": "pond",
-  "A famous golf course": "golf", "History you live inside": "clubhouse", "Main Street by golf cart": "town", "55+": "home",
-  "Lots of nearly half an acre": "lawn", "A fee under $100 a month": "dollar" };
-const GUIDE = G.guideCards(GUIDE_GROUPS.map(([want, ids]) => ({ icon: GICON[want], label: want,
-  items: ids.map((id) => byId[id]).sort((a, b) => a.n - b.n).map((e) => `<a href="#${e.id}">${e.n}. ${e.name}</a>`) })))
+/* Round 15 (owner, 2026-10-21: "the landing page is a bit cluttered") made the guide a grid of glass cards;
+   the light fix below makes it a plain list. */
+/* Light fix, triage 2026-11-08: the nine cards, each with its own heading, become one compact list under the one
+   heading "Choose by what you want": a row per want, under thin rules, as on the approved pages
+   (Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md). Same words, same links. The italic line under the H1
+   is set at about half the H1's size, so the short answer shows on a computer's first screen. */
+const WANTS_CSS = "<style>main#main .c3g-wants{list-style:none;margin:.2rem 0 1rem;padding:0;max-width:760px;border-top:1px solid rgba(28,32,40,.16)}"
+  + "main#main .c3g-wants>li{margin:0;padding:.5rem 0;border-bottom:1px solid rgba(28,32,40,.16);line-height:1.5;font-size:.98rem}"
+  + "@media (min-width:700px){main#main .c3g-wants>li{display:grid;grid-template-columns:15rem minmax(0,1fr);column-gap:1rem}}"
+  + "main#main .c3g-wants b{display:block;color:var(--navy);font-family:var(--sans);font-weight:650;font-size:.92rem}"
+  + "main#main .c3g-wants a{color:var(--navy);text-decoration:underline;text-underline-offset:.18em;white-space:nowrap}"
+  + "main#main .c3g-wants ul{display:inline;list-style:none;margin:0;padding:0}main#main .c3g-wants ul>li{display:inline;margin:0}"
+  + "main#main .c3g-wants ul>li:not(:last-child)::after{content:'\\00b7';color:var(--muted);padding:0 .1rem 0 .4rem}"
+  + "main#main .c3g-wants-h{font-family:var(--sans)!important;font-size:.7rem!important;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)!important;margin:0 0 .5rem!important;font-weight:600;line-height:1.4}"
+  + "@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+  + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}</style>";
+/* The wrapper keeps the guide's class, c3-gcards, so tools that know the selection guide (score.js H14) still read it
+   as a guide, not as a contents list. Each want's places are their own short list, shown inline. */
+const GUIDE = WANTS_CSS + `<div class="c3-gcards c3g-guide-list"><h3 class="c3g-wants-h">Choose by what you want</h3><ul class="c3g-wants">` + GUIDE_GROUPS.map(([want, ids]) => `<li><b>${want}</b><ul>`
+  + ids.map((id) => byId[id]).sort((a, b) => a.n - b.n).map((e) => `<li><a href="#${e.id}">${e.n}. ${e.name}</a></li>`).join(" ")
+  + `</ul></li>`).join("") + `</ul></div>`
   + "<style>main#main .detail-hero .detail-sub{display:none}</style>";
 
 /* ---------------------------------------------------------------------------- */
@@ -188,7 +202,7 @@ const SECTIONS_PLACES = [
     "Tidewater, in North Myrtle Beach, has one of the best public courses in South Carolina: Golf Digest ranks it No. 38 in the state. Nine of its holes play along the tidal inlet at Cherry Grove.",
     "The course opened in 1990. Golf Digest named it the best new public course in America that year. Golf Magazine put it first on its list of 1990's top 10 new public courses. About seven in ten of the house lots touch the course. Golf membership is sold to residents and property owners of Horry, Georgetown and Brunswick counties.",
     "Tidewater is inside North Myrtle Beach's city limits, with city services. It is on the Intracoastal Waterway, not the ocean, but the neighborhood keeps its own beach cabana, with parking, at Cherry Grove Beach.",
-    "Tidewater has about 580 houses and one master association, with six smaller associations under it, so a house may answer to two associations. We check both for any home you like.",
+    `Tidewater has about 580 houses and one master association, with six smaller associations under it, so a house may ${h.a("/hoa/hoa-vs-poa/", "answer to two associations")}. We check both for any home you like.`,
   ], "Homes at Tidewater usually sell for about $625,000. The HOA fee is about $230 a month.",
   ["tidewater-plantation-marsh-from-above-2023", "Tidewater Plantation from above, with its golf holes along the inlet labelled. Houses line the street above the fairways."]),
 
@@ -279,7 +293,7 @@ const SECTIONS_PLACES = [
   ["willbrook-plantation-named-from-above-2023", "Willbrook Plantation from above: its houses are in the middle and at the upper right, beside golf fairways. The houses at the lower left are in Litchfield Plantation."]),
 
   entry("litchfield-plantation", "the owners own the plantation house", [
-    "Near Pawleys Island, at the end of the Avenue of Live Oaks, stands Litchfield Plantation's house, and the owners own it. For about 50 years the developer controlled the association. In 2018 the owners took control after court challenges, and the house, its pool and about 7 acres passed to the association.",
+    `Near Pawleys Island, at the end of the Avenue of Live Oaks, stands Litchfield Plantation's house, and the owners own it. For about 50 years ${h.a("/hoa/developer-control-turnover/", "the developer controlled the association")}. In 2018 the owners took control after court challenges, and the house, its pool and about 7 acres passed to the association.`,
     "The house and its avenue of oaks appear on a map of the land drawn in 1794. After taking it over, the owners repaired it and set up a club room, and it has hosted weddings to help pay for its upkeep. A terrace off the main room overlooks the old rice fields.",
     "The gatehouse stands on the avenue. The association also owns a beach house on Pawleys Island, about 4 miles away by road. A private marina on the river is an optional extra.",
     "The old rice fields beside the community, about 330 acres, still belong to the original development company, not to the owners.",
@@ -378,7 +392,6 @@ module.exports = G.page({
   sections: [
     { id: "choose", html: () =>
       GUIDE_CSS + G.homesCss() + ph.css() +
-      `<p style="font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem;font-weight:600">Choose by what you want</p>` +
       GUIDE },
 
     ...withAreas(SECTIONS_PLACES),
@@ -391,7 +404,7 @@ module.exports = G.page({
     { h2: "What are the pros and cons of a gated community?", toc: "Pros and cons", id: "pros-and-cons", html: (bg) =>
       prosCons([
         "Most of these neighborhoods are built around something you use: a golf course, a marina, a boat ramp or a beach club.",
-        "Some HOA fees cover more than the gate, such as security, cable or internet.",
+        `Some ${h.a("/hoa/benefits/", "HOA fees cover more than the gate")}, such as security, cable or internet.`,
         "Some gates have a guard on duty day and night; others have a gatehouse or a watch desk.",
       ], [
         { text: "Every guest, contractor and delivery has to get through the gate, so a party or a repair takes some planning." },

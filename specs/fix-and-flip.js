@@ -126,8 +126,10 @@ module.exports = G.page({
   crumb: "Fix and Flip",
   eyebrow: "Strategy",
   h1: "How do you find a fix and flip in Myrtle Beach?",
-  h1em: "What quick resales gained here last year, where they were, and how our deal finder looks for the next one.",
-  sub: "Local numbers from the county's deeds, the 70 percent rule, and the rules a flip meets here.",
+  /* Light fix, triage 2026-11-08: the italic line is one short line at the approved size, and the hero line under the
+     byline gives the answer (the short answer's own figures), so a phone sees it before the homes strip. */
+  h1em: "Local numbers from the county's deeds.",
+  sub: `${ALL.length} quick resales (flips) in the year to September 2026. When a company resold, the middle gain was about ${CO_GAIN}. Houses gained most in ${list3(BIG3.map((a) => a.name))}.`,
   heroCta: { title: "The best houses for sale this week, in your price range", text: "Tell us your price range. An agent runs our deal finder and sends you the best houses for sale, with the nearby sales behind each one.", label: "Get the flip list", href: "/contact/" },
   author: "devin",
   shortAnswer: [
@@ -136,8 +138,10 @@ module.exports = G.page({
   ],
   sections: [
     { h2: "Do fix and flips make money in Myrtle Beach?", toc: "Local numbers", id: "local-numbers", html: () =>
-      /* The hero's summary line repeats the line above it (owner's eye, 2026-10-29), so it is hidden on this page, as on /buyers/second-home/. */
-      "<style>main#main .detail-hero .detail-sub{display:none}</style>" +
+      /* The hero's summary line now carries the answer (triage 2026-11-08), so it is shown again. The italic line at about
+         half the H1's size, on its own line (the approved look, Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md). */
+      "<style>@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+      + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}</style>" +
       h.p(`Most resell for more than the earlier deed price. We read every deed Horry County recorded for two years. Quick resales, a home sold again within 12 months of its last sale, were about 3 of every 100 home sales not made by a builder. The chart gives the middle gain: half gained more, half less.`) +
       GAIN_CHART +
       h.p(`The company figure is the closer guide to an investor's flip. Resales by a person hold most of the losses: about ${Math.round(PERSON_LOSSES / 5) * 5} of the ${LOSSES} homes that sold for less than the earlier deed price. Houses also gained more than condos, a middle of about ${round1k(median(HOUSES.map((f) => f.gain)))} against about ${round1k(median(UNITS.map((f) => f.gain)))}.`) },
@@ -209,7 +213,7 @@ module.exports = G.page({
       h.raw('<p style="font-size:.8rem;color:var(--muted);line-height:1.6;max-width:720px;margin-top:-.2rem;margin-bottom:1rem"><strong style="color:var(--navy)">Disclosure.</strong> Chapter3 Realty Corp has a business relationship with BrickWood Mortgage (NMLS #189497). Because of this relationship, this referral may provide Chapter3 Realty a financial or other benefit. You are never required to use BrickWood. You are free to shop any lender. <a href="/buyers/programs/#afba" style="color:var(--navy);text-decoration:underline">See full AfBA Disclosure.</a></p>') +
       h.p("Cash is stronger. Bank-owned and off-market houses usually go to the buyer who can close soonest, and cash has no appraisal to fail. It also removes the largest holding cost, the loan interest.") +
       h.p("You can still win with a loan off-market, where there is no cash offer to lose to. Our agents talk to owners before a house is listed and learn what the seller needs. Then we build the offer around it: the closing date, a shorter inspection, more earnest money, or a price that pays the seller for waiting on your loan.") +
-      h.p(`Keep a backup plan. We run each address through our ${h.a("/invest/long-term-rental/", "rental analyzer")} too, so you know what it would rent for if it does not sell. If it would rent well, you can refinance into a ${h.a("/invest/strategies/dscr-loans/", "DSCR loan")}, which is approved on the rent instead of your tax returns, and keep it. That is the ${h.a("/invest/strategies/brrrr/", "BRRRR strategy")}: buy, fix, rent, refinance, repeat.`) },
+      h.p(`Keep a backup plan. We run each address through our ${h.a("/invest/long-term-rental/", "rental analyzer")} too, so you know what it would rent for if it does not sell. If it would rent well, you can refinance into a ${h.a("/invest/strategies/dscr-loans/", "DSCR loan")}, which is approved on the rent instead of your tax returns, and keep it. That is the ${h.a("/invest/strategies/brrrr/", "BRRRR strategy")}: buy, fix, rent, refinance, repeat. Once it is a rental, ${h.a("/invest/how-long-to-hold/", "how long to hold a rental before selling")} shows when a sale covers its costs.`) },
   ],
   faqTitle: "Fix and flip FAQ",
   faq: [

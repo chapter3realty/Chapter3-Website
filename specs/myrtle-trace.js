@@ -63,7 +63,7 @@
  *         finds no fence is allowed on a golf course or pond lot and that an approved dog run is
  *         (stories.json "hoa-rental-bans-filtered", "ny-buyer-rules-fit").
  */
-const { h, maps, story, glance, photoSet, compareTable, atAGlance, prosCons } = require("./_55-plus-kit.js");
+const { h, maps, story, glance, photoSet, compareTable, atAGlance, icon, prosCons } = require("./_55-plus-kit.js");
 
 const HUB = "/buyers/55-plus-communities/";
 const SELF = "/buyers/55-plus-communities/myrtle-trace/";
@@ -92,6 +92,21 @@ const M = maps("myrtle-trace", [
   regionCaption: "Map of where Myrtle Trace is, inland from Myrtle Beach, with drive times by car.",
   closeCaption: "Map of the streets, ponds and clubhouse inside Myrtle Trace.",
 });
+
+/* Light fix, triage 2026-11-08: the four house rules as a plain list under thin rules, not four cards
+   (the approved look, Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md). Same words. */
+const RULES_CSS = "<style>main#main .mt-rules{list-style:none;margin:1.1rem 0 1.4rem;padding:0;max-width:720px;border-bottom:1px solid rgba(28,32,40,.16)}"
+  + "main#main .mt-rules li{display:flex;gap:.8rem;align-items:flex-start;margin:0;padding:.85rem 0 .9rem;border-top:1px solid rgba(28,32,40,.16);line-height:1.55}"
+  + "main#main .mt-rules .i{flex:0 0 auto;display:flex;color:var(--brass-ink);padding-top:.15rem}"
+  + "main#main .mt-rules strong{display:block;color:var(--navy);font-weight:500;line-height:1.35;margin-bottom:.15rem}"
+  + "main#main .mt-rules span.t{display:block;color:var(--muted)}</style>";
+const ruleList = (items) => `<ul role="list" class="mt-rules">` + items.map((it) =>
+  `<li><span class="i" aria-hidden="true">${icon(it.icon, { size: 22 })}</span><span><strong>${it.label}</strong><span class="t">${it.text}</span></span></li>`).join("") + "</ul>";
+
+/* Light fix, triage 2026-11-08: the italic line at about half the H1's size, on its own line (the approved look,
+   Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md). */
+const EM_CSS = "<style>@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+  + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}</style>";
 
 module.exports = {
   url: SELF,
@@ -122,7 +137,7 @@ module.exports = {
   ],
   sections: [
     { h2: "What is close to Myrtle Trace?", toc: "What is close", html:
-      ph.css() +
+      EM_CSS + ph.css() +
       h.p("The closest beach to Myrtle Trace by car is the one by the Myrtle Beach Boardwalk. In our experience, rush hour adds 5 to 10 minutes to the drive.") +
       M.where },
 
@@ -165,12 +180,12 @@ module.exports = {
 
     { h2: "Who can live in Myrtle Trace?", toc: "Who can live here", html: (bg) =>
       h.p(`At least one person in every home in Myrtle Trace must be 55 or older, under the ${h.ext(COV, "HOA's rules")}. The others in the home can be any age, and grandchildren can visit.`) +
-      atAGlance([
+      RULES_CSS + ruleList([
         { icon: "pets", label: "Pets", text: "Yes. Keep them on a leash outside your yard, and out of the clubhouse and pool area." },
         { icon: "key", label: "Renting it out", text: "Yes, for a year or longer. One tenant must be 55 or older and live there." },
         { icon: "home", label: "Sheds and pools", text: "No free-standing sheds, gazebos or private swimming pools." },
         { icon: "dock", label: "Trucks and boats", text: "Park your truck in the garage. Campers, boats and RVs can park at the clubhouse lot with a permit." },
-      ], { bg, min: "18rem" }) +
+      ]) +
       h.p("In our experience, many HOAs here do not allow renting at all. Myrtle Trace does.") },
 
     { h2: "How does Myrtle Trace compare with other 55+ neighborhoods?", toc: "Compare", html: () =>

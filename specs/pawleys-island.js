@@ -157,10 +157,12 @@ must(F2.dogs.quote.includes("May 1 through September 30") && F2.hurricane_season
 /* Page styles, scoped to main#main.                                              */
 
 const CSS = `<style>
-main#main .c3-pi-fig{margin:1.4rem 0 1.6rem;max-width:640px}
-main#main .c3-pi-fig.narrow{max-width:520px}
+main#main .c3-pi-fig{margin:1.4rem 0 1.6rem;max-width:720px}
+/* The two maps are tall: kept narrower, so each fits on one desktop screen. */
+main#main .c3-pi-fig:not(.c3-gchart){max-width:560px!important}
+main#main .c3-pi-fig.narrow{max-width:520px!important}
 main#main .c3-pi-fig figcaption{color:var(--muted);font-size:.95rem;line-height:1.55;margin-top:.6rem}
-main#main .c3-pi-frame{border-radius:18px;overflow:hidden;background:#2b5f63;border:1px solid rgba(255,255,255,.8);box-shadow:0 8px 24px rgba(28,32,40,.1)}
+main#main .c3-pi-frame{border-radius:14px;overflow:hidden;background:#2b5f63}
 main#main .c3-pi-frame svg{display:block;width:100%;height:auto}
 main#main svg.c3-pi-map .lb{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:74px;fill:#fff;paint-order:stroke;stroke:rgba(20,28,34,.88);stroke-width:15px;stroke-linejoin:round}
 main#main svg.c3-pi-map .lb.it{font-style:italic;font-weight:600}
@@ -173,14 +175,17 @@ main#main svg.c3-pi-inset .lb.sb{fill:#ffd27a}
 main#main .c3-pi-legend{list-style:none;margin:.7rem 0 0;padding:0;display:grid;gap:.35rem;font-size:.98rem;color:var(--muted);line-height:1.4}
 main#main .c3-pi-legend li{display:flex;gap:.6rem;align-items:center;margin:0}
 main#main .c3-pi-legend i{flex:none;display:inline-block;width:1.6rem;height:.9rem;border-radius:3px}
-main#main .c3-pi-rules{list-style:none;padding:0;margin:1rem 0 1.4rem;display:grid;gap:.55rem;max-width:680px}
-@media (min-width:700px){main#main .c3-pi-rules{grid-template-columns:1fr 1fr}}
-main#main .c3-pi-rules li{margin:0;padding:.7rem .9rem;border-radius:14px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.8);color:var(--muted);line-height:1.5;font-size:1rem}
-main#main .c3-pi-rules strong{color:var(--navy);display:block}
-main#main .c3-pi-note{margin:1.1rem 0 1.4rem;padding:.9rem 1rem;max-width:680px;border-left:4px solid var(--navy);border-radius:0 14px 14px 0;background:rgba(255,255,255,.55);color:var(--ink,#1c2028);line-height:1.55}
+/* Short facts: a plain list under thin rules, not cards. */
+main#main .c3-pi-rules{list-style:none;padding:0;margin:1.1rem 0 1.5rem;display:grid;gap:.9rem 2rem;max-width:720px}
+@media (min-width:700px){main#main .c3-pi-rules:not(.one){grid-template-columns:1fr 1fr}}
+main#main .c3-pi-rules.one{max-width:665px}
+main#main .c3-pi-rules li{margin:0;padding:.7rem 0 0;border-top:1px solid rgba(28,32,40,.16);color:var(--muted);line-height:1.5;font-size:1rem}
+main#main .c3-pi-rules strong{color:var(--navy);display:block;margin-bottom:.1rem}
+main#main .c3-pi-note{margin:1.3rem 0 1.5rem;padding:.2rem 0 .2rem 1.1rem;max-width:665px;border-left:3px solid var(--brass,#c4783a);color:var(--ink,#1c2028);line-height:1.6}
 main#main .c3-pi-note strong{display:block;color:var(--navy);margin-bottom:.2rem}
-main#main .c3-pi-place{margin:2.2rem 0 .7rem;font-family:var(--serif);font-size:1.3rem;color:var(--navy);line-height:1.3}
-main#main .c3-pi-place span{display:block;font-family:var(--sans);font-size:.95rem;font-weight:600;color:var(--brass-ink,#8a5a2b);letter-spacing:.02em;margin-top:.15rem}
+/* Each of the four parts starts under a rule, with a heading that can be found while scrolling. */
+main#main .c3-pi-place{clear:both;margin:3rem 0 .9rem;padding-top:1.6rem;border-top:1px solid rgba(28,32,40,.16);font-family:var(--serif);font-size:1.7rem;font-weight:500;color:var(--navy);line-height:1.2;max-width:720px}
+main#main .c3-pi-place span{display:block;font-family:var(--sans);font-size:1rem;font-weight:600;color:var(--brass-ink,#8a5a2b);letter-spacing:.01em;margin-top:.35rem}
 main#main h2{text-wrap:balance}
 main#main figure.c3ph-hero img{aspect-ratio:4/3!important}
 main#main svg.c3-pi-cols text{font-family:var(--sans),system-ui,sans-serif;font-size:21px;fill:#4a5763}
@@ -190,11 +195,53 @@ main#main .c3-pi-names{list-style:none;margin:.6rem 0 0;padding:0;display:flex;f
 main#main .c3-pi-names li{margin:0;padding:.25rem .65rem;border-radius:999px;background:rgba(196,120,58,.13);color:#7a4a22;font-size:.95rem;line-height:1.4}
 main#main .c3-pi-tax td{white-space:nowrap}
 @media (max-width:480px){main#main .c3-pi-tax th,main#main .c3-pi-tax td{padding:.5rem .4rem!important}main#main .c3-pi-tax>div{padding-left:.6rem!important;padding-right:.6rem!important}}
-main#main .c3-pi-stats{list-style:none;padding:0;margin:1.2rem 0 1.4rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:.6rem;max-width:640px}
-main#main .c3-pi-stats li{margin:0;padding:.75rem .85rem;border-radius:16px;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.85);box-shadow:0 6px 18px rgba(28,32,40,.07)}
+main#main .c3-pi-stats{list-style:none;padding:0;margin:1.2rem 0 1.4rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:.9rem 2rem;max-width:720px}
+main#main .c3-pi-stats li{margin:0;padding:.7rem 0 0;border-top:1px solid rgba(28,32,40,.16)}
 main#main .c3-pi-stats b{display:block;font-family:var(--serif);font-size:1.45rem;color:var(--navy);line-height:1.15}
 main#main .c3-pi-stats span{display:block;color:var(--muted);font-size:.95rem;line-height:1.35;margin-top:.2rem}
-@media (min-width:900px){main#main nav[aria-label="On this page"]>ul{columns:2;column-gap:2.4rem}main#main nav[aria-label="On this page"]>ul>li{break-inside:avoid}}
+/* The contents list: no card, plain columns between two thin rules (as /invest/condos/). */
+main#main nav[aria-label="On this page"]{background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border-top:1px solid rgba(28,32,40,.16)!important;border-bottom:1px solid rgba(28,32,40,.16)!important;padding:.8rem 0 .5rem!important}
+main#main nav[aria-label="On this page"]>ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.5rem}
+@media (min-width:700px){main#main nav[aria-label="On this page"]>ul{grid-template-columns:repeat(3,minmax(0,1fr))}main#main nav[aria-label="On this page"] li a{padding:.45rem 0!important}}
+/* One block width: charts, tables, maps, lists and offers are 720 px, like the contents and the top offer. */
+main#main .c3-gchart,main#main div[style^="overflow-x:auto;margin:1.2rem 0"],main#main div[style^="border-left:3px solid var(--brass)"]{max-width:720px!important;box-sizing:border-box}
+main#main .c3-gchart,main#main div[style^="overflow-x:auto;margin:1.2rem 0"],main#main div[style^="border-left:3px solid var(--brass)"]{clear:both}
+/* Photos and maps sit on the page: no card around the picture, the caption under it. */
+main#main figure:not(.c3-gchart){background:none!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;padding:0!important;border-radius:0!important}
+main#main figure:not(.c3-gchart)>figcaption,main#main figure.c3ph-hero figcaption{padding:.6rem 0 0!important;margin-top:0!important;color:var(--muted);font-size:.92rem;line-height:1.5}
+main#main figure .c3ph-f{border-radius:14px!important;box-shadow:none!important}
+main#main .c3-pi-legend{margin-top:.8rem}
+/* A wide screen: the photos inside the text sit beside their paragraphs, in the space right of the text. */
+@media (min-width:1100px){
+main#main>section>.wrap:has(.c3-pi-side){display:flow-root}
+main#main figure.c3-pi-side{float:right;clear:right;width:380px;max-width:380px!important;margin:.35rem 0 1.6rem 2rem!important}
+/* The island part: the close-up sits after the second paragraph on a phone, beside the first on a wide screen. */
+main#main .c3-pi-pair{display:grid;grid-template-columns:minmax(0,665px) 380px;justify-content:space-between;align-items:start}
+main#main .c3-pi-pair>*{grid-column:1}
+main#main .c3-pi-pair>figure.c3-pi-side{grid-column:2;grid-row:1/span 5;float:none;margin:.35rem 0 0!important}
+}
+/* The hero: the walkway photo beside the tiles, byline and sub on a wide screen; after the sub on a narrower one. */
+main#main .detail-hero .detail-media{display:contents}
+main#main .detail-hero .c3-glance{margin-bottom:1.2rem}
+main#main .detail-hero figure.c3-pi-hero{margin:.4rem 0 0!important;max-width:640px}
+main#main .detail-h1 em{display:block;text-wrap:balance}
+/* A phone: each tile is one short row (icon, label, number) under a hairline, with no box. */
+@media (max-width:699px){main#main .detail-hero .c3-glance{grid-template-columns:1fr!important;gap:0!important}
+main#main .detail-hero .c3-glance li{background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border-top:1px solid rgba(28,32,40,.16)!important;flex-direction:row!important;align-items:center!important;text-align:left!important;justify-content:flex-start!important;gap:.7rem!important;padding:.45rem 0!important}
+main#main .detail-hero .c3-glance li:last-child{border-bottom:1px solid rgba(28,32,40,.16)!important}
+main#main .detail-hero .c3-glance li>span:not(.i){flex:1;display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+main#main .detail-hero .c3-glance strong{font-size:1rem;font-weight:400}main#main .detail-hero .c3-glance span.t{color:var(--navy);font-weight:600;white-space:nowrap}
+}
+@media (max-width:1099px){main#main .detail-hero .wrap{display:flex;flex-direction:column}main#main .detail-hero figure.c3-pi-hero{order:9}}
+@media (min-width:700px) and (max-width:1099px){main#main .detail-hero figure.c3-pi-hero{max-width:440px}}
+@media (min-width:1100px){
+main#main .detail-hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) 380px;grid-template-rows:repeat(6,auto) 1fr;column-gap:3rem}
+main#main .detail-hero .wrap>*,main#main .detail-hero .c3-glance{grid-column:1}
+main#main .detail-hero .breadcrumb,main#main .detail-hero .eyebrow,main#main .detail-hero .detail-h1{grid-column:1/-1}
+main#main .detail-hero figure.c3-pi-hero{grid-column:2;grid-row:4/8;align-self:start;margin:0!important;width:380px}
+/* The headline in two lines across the full width: at full size the italic line is a few pixels too long in the fallback font. */
+main#main .detail-h1 em{font-size:min(.95em,70px)}
+}
 /* The end band (the same fix as /submarkets/garden-city/; NEEDS.md there). */
 main#main>section[style^="background:var(--navy)"]:last-of-type:not(.c3-x)>.wrap{display:block!important;text-align:center!important;background:linear-gradient(160deg,rgba(42,48,64,.95),rgba(28,32,40,.97))!important;border:1px solid rgba(255,255,255,.14)!important;border-radius:28px!important;padding:2.2rem 1.6rem!important;margin-left:auto!important;margin-right:auto!important;width:calc(100% - 32px);box-sizing:border-box}
 @media (max-width:699px){main#main>section[style^="background:var(--navy)"]:last-of-type:not(.c3-x)>.wrap{padding:1.6rem 1.2rem 1.7rem!important;border-radius:24px!important}}
@@ -272,7 +319,9 @@ const SETBACK_MAP = (() => {
 /* Photos.                                                                        */
 
 const lazy = (html) => html.replace(' fetchpriority="high" decoding="async"', ' loading="lazy" decoding="async"').replace('<figure class="c3ph-hero" style="', '<figure class="c3ph-hero" style="margin:1.4rem 0 1.6rem;');
-const photo = (r, caption) => lazy(PH.heroPhoto(r, { alt: r.alt, caption: caption || r.caption, maxWidth: "640px", sizes: "(max-width: 700px) 100vw, 640px" }));
+const photo = (r, caption) => lazy(PH.heroPhoto(r, { alt: r.alt, caption: caption || r.caption, maxWidth: "720px", sizes: "(max-width: 700px) 100vw, 720px" }));
+/* A photo beside its paragraph on a wide screen (CSS above); full width in the column below 1,100 px. */
+const side = (r, caption) => lazy(PH.heroPhoto(r, { alt: r.alt, caption: caption || r.caption, maxWidth: "720px", sizes: "(max-width: 700px) 100vw, (max-width: 1099px) 720px, 380px" })).replace('<figure class="c3ph-hero"', '<figure class="c3ph-hero c3-pi-side"');
 const mine = (fn) => MY_PHOTOS.find((x) => x.file.includes(`/${fn}-1200w`));
 const CAUSEWAY = mine("pawleys-island-at-the-north-causeway");
 const WALKWAY = SITE_PHOTOS.find((x) => x.file.endsWith("/pawleys-island-beach-walkway.webp"));
@@ -283,6 +332,9 @@ const WALK_CAPTION = "A wooden walkway over the dunes to the beach on Pawleys Is
 const SHOWN = [CAUSEWAY, MARSH, OLD_HOUSE, WALKWAY, NORTH_END].filter(Boolean);
 const CREDITS = PH.creditsList(SHOWN.map((p) => ({ photo: p, caption: p === WALKWAY ? "A walkway over the dunes on Pawleys Island" : p.title })));
 const maybe = (p) => (p ? photo(p) : "");
+const maybeSide = (p) => (p ? side(p) : "");
+/* The walkway over the dunes opens the page: beside the tiles on a wide screen, after the sub line on a phone. Loads first. */
+const HERO_PHOTO = PH.heroPhoto(WALKWAY, { alt: WALKWAY.alt, caption: WALK_CAPTION, sizes: "(max-width: 1099px) 100vw, 380px" }).replace('<figure class="c3ph-hero"', '<figure class="c3ph-hero c3-pi-hero"');
 
 /* ---------------------------------------------------------------------------- */
 /* Charts.                                                                        */
@@ -389,33 +441,33 @@ module.exports = G.page({
   h1: "Pawleys Island real estate:",
   h1em: "the upscale south end of the Strand.",
   sub: "Pawleys Island is the south end of the Grand Strand: old beach houses on an island, with most homes that share its name on the mainland.",
-  heroMedia: glance([
+  heroMedia: CSS + glance([
     { icon: "home", label: "Island houses", text: "About 480" },
     { icon: "beach", label: "Beach parking", text: "Free" },
     { icon: "tax", label: "Town property tax", text: "None" },
     { icon: "key", label: "Sold last year", text: `${I.sales_window} houses` },
-  ]),
+  ]) + HERO_PHOTO,
   heroCta: TOP,
   topOfferLine: "Island houses rarely list. We watch the island and call you.",
   author: "devin",
   shortAnswer: [
-    `Pawleys Island is a quiet beach town of about 480 houses on a barrier island, with the ocean in front and a tidal creek and salt marsh behind. The middle of the island is a historic district of old wooden summer houses, and beach parking is free.`,
+    `Pawleys Island is a quiet beach town of about 480 houses on a barrier island, a narrow strip of land just off the coast. The ocean is in front, and a tidal creek and salt marsh are behind. The middle of the island is a historic district of old wooden summer houses, and beach parking is free.`,
     `Island houses rarely come up for sale: ${I.sales_window} sold at a market price in the past year, and over three years one sold for about $2.45 million at the middle. Most homes with a Pawleys Island address are on the mainland, where a house sold for about $580,000 to $675,000. Every island house but one is in a high-risk flood zone.`,
   ],
   sections: [
     { h2: "Is Pawleys Island an island, and what are its four parts like?", toc: "The four parts", id: "places", html: () =>
-      CSS +
       h.p(`Yes. Pawleys Island is a barrier island, less than 4 miles long and mostly one house wide, with salt marsh between it and the mainland. Two short causeways, the North Causeway and the South Causeway, cross the marsh.`) +
       h.p(`The Town of Pawleys Island is the island itself. The mainland around it has no town government; it is run by Georgetown County. Much of it shares the island's name and its ZIP code, 29585, so a Pawleys Island address can be a house on the mainland. This page covers four parts, from the beach inland.`) +
       AREA_MAP +
       place("the-island", "Pawleys Island, the town", "The beach in front, the creek behind") +
+      `<div class="c3-pi-pair">` +
       h.p(`The island is one long strip of houses between the ocean and the creek. About 220 houses face the beach. The rest look onto the marsh and the creek, or stand on the streets between. In the middle of the island are the old wooden summer houses of the historic district.`) +
-      photo(CAUSEWAY) +
       h.p(`The water is close on both sides. People fish in the surf and crab from the two marsh bridges, and the island has three boat ramps. Beach parking is free: the south-end lot is the largest free beach lot in Georgetown County, and 8 other public accesses add about 141 spaces. Dogs are allowed on the beach all year, on a leash on summer days.`) +
+      side(CAUSEWAY) +
       h.p(`The pace is slow. The speed limit is 25 mph, and golf carts are allowed on island roads. There are no lifeguards and no fireworks. The town still calls itself by its old nickname, "arrogantly shabby".`) +
-      photo(MARSH) +
       h.p(`Over three years an island house sold for about $2.45 million at the middle, more on the ocean and less on the creek side. At our last count, only ${LG["island/house"].n} island houses were for sale, each asking about $3 million or more.`) +
-      ask("Pawleys Island", "Ask us to watch Pawleys Island for a house") +
+      ask("Pawleys Island", "Send me the Pawleys Island houses for sale now") +
+      `</div>` +
 
       place("litchfield", "Litchfield", "The beach north of the island, and more houses for sale") +
       h.p(`North of the island, Litchfield runs along the beach on the ocean side of the highway. It has about 1,200 houses, and more of them are lived in all year: about 4 in 10 are their owner's main home, twice the island's share.`) +
@@ -442,12 +494,13 @@ module.exports = G.page({
       ask("Pawleys Island", "Get the homes for sale behind Pawleys Island") +
 
       place("west-of-17", "West of US 17", "Most of the homes, most of the golf, the lowest prices") +
-      h.p(`West of US 17 are most of the homes with a Pawleys Island address: about 4,800 houses, and most are their owner's main home. Most of the area's golf courses are here. We count nine on the map, among them Caledonia, True Blue, Heritage and Litchfield Country Club.`) +
+      h.p(`West of US 17 are most of the homes with a Pawleys Island address: about 4,800 houses, and most are their owner's main home. Most of ${h.a("/buyers/golf-communities/", "the area's golf courses")} are here. We count nine on the map, among them Caledonia, True Blue, Heritage and Litchfield Country Club.`) +
       h.p(`The grocery store nearest the island is on this side of the highway, less than 5 minutes by car from Town Hall. Only about 1 in 20 houses here is in a high-risk flood zone.`) +
       h.p(`A house here sold for about $580,000 at the middle in the past year, and a condo for about $320,000.`) +
       ask("Pawleys Island", "Get the homes for sale west of US 17 in Pawleys Island") },
 
     { h2: "What is it like to live on Pawleys Island all year?", toc: "Living there all year", id: "living", html: () =>
+      side(MARSH) +
       h.p(`Winter on the island is quiet. On Census Day, in April, most of the island's homes were seasonal or vacation homes. The town's lodging tax shows when guests come: in 2024, almost 6 in 10 of its dollars came in from July to September, and about 2 in 100 from January to March.`) +
       h.p(`Winter days are mild.`) +
       `<ul class="c3-pi-stats" aria-label="A January day"><li><b>About ${JAN_HI}°</b><span>January's normal high</span></li><li><b>About ${JAN_LO}°</b><span>January's normal low</span></li></ul>` +
@@ -458,7 +511,6 @@ module.exports = G.page({
       h.h3("A South Carolina beach") +
       h.p(`The tax bills for most island houses go to South Carolina addresses: about a quarter to Pawleys Island itself, and many to Columbia, Greenville and Charleston. About 3 in 10 go out of state.`) +
       BILL_CHART +
-      photo(WALKWAY, WALK_CAPTION) +
       h.h3("How far is everything?") +
       h.p(`Drive times by car from Town Hall on the island, without traffic. Summer traffic on US 17 adds time.`) +
       h.table(["From Town Hall to", "By car, about"], [
@@ -494,7 +546,7 @@ module.exports = G.page({
       h.p(`In 2026 the whole island became a local historic district. A house built in 1954 or earlier can be put on the town's list of historic houses. The owner can nominate it, and so can a member of the town council or of the town's board, so a house can be nominated without its owner asking. The council decides.`) +
       h.p(`A listed house needs the board's approval for changes to its outside and to be torn down, and the board can delay a demolition for up to 180 days. The listing stays with the house when it sells. No building permit is issued while a nomination is pending. A house not on the list has none of these rules. We check whether a house you like is listed or nominated.`) },
 
-    { h2: "What does a Pawleys Island house cost to own each year?", toc: "Yearly costs", id: "taxes", html: () =>
+    { h2: "What does a Pawleys Island house cost to own each year?", toc: "Yearly costs", id: "taxes", html: (bg) =>
       h.p(`The biggest yearly costs are property tax and insurance. Both depend most on whether the house is your main home.`) +
       h.h3("Property tax") +
       h.p(`As a second home or rental, a house pays about 3 times the property tax it pays as the home you live in. South Carolina taxes the home you live in on 4 percent of its value and any other house on 6 percent, and the tax rate on a second home is also about twice as high.`) +
@@ -515,7 +567,8 @@ module.exports = G.page({
         ["Property tax as a second home, with the $44 in fees", r100(ISLAND_SECOND_TAX)],
         ["A federal flood policy, the middle for an island house that is not a main home", r10(ISLAND_FLOOD_NOT_MAIN)],
         ["Together", r100(YEARLY)],
-      ]) },
+      ]) +
+      h.cta("Get the yearly cost of the Pawleys house you like", "Send us the address. We work out its tax as a main home and a second home, and get its insurance quotes before you offer.", "Have us work out a house's yearly cost", "/contact/", bg) },
 
     { h2: "Can you rent out a house on Pawleys Island, and what do rentals take in?", toc: "Renting it out", id: "renting", html: () =>
       h.p(`Yes. Short-term rentals are allowed on Pawleys Island. Guests pay about 11 percent in lodging taxes on stays under 90 days. The town's share is filed with the town each month.`) +
@@ -524,7 +577,7 @@ module.exports = G.page({
       h.p(`That is an average. Some houses are never rented, and some of the rent is paid on the island's condos and other rooms.`) +
       h.p(`On the mainland, a homeowners association can limit rentals in its own papers, and we read them for you. The rules town by town are on our ${h.a("/invest/str-rules/", "short-term rental rules page")}. For a yearly tenant instead, see our ${h.a("/invest/long-term-rental/", "long-term rental guide")}. If you are selling a rental elsewhere to buy here, a ${h.a("/invest/strategies/1031-exchange/", "1031 exchange")} can put off the tax on the sale.`) },
 
-    { h2: "Does Pawleys Island flood, and how often do hurricanes come?", toc: "Flooding and storms", id: "flooding", html: () =>
+    { h2: "Does Pawleys Island flood, and how often do hurricanes come?", toc: "Flooding and storms", id: "flooding", html: (bg) =>
       h.p(`Every island house but one is in one of FEMA's high-risk flood zones. A lender making a mortgage on any of them will require flood insurance. The island's houses are split about evenly between two zones:`) +
       `<ul class="c3-pi-rules"><li><strong>About half: water and waves</strong>Rising water and storm waves are both expected here. FEMA calls it the VE zone.</li><li><strong>The other half: water</strong>Water rises in a big flood, but big waves are not expected. FEMA calls it the AE zone.</li></ul>` +
       h.p(`The south end is the most exposed. South of the South Causeway, more than 9 in 10 houses are in the VE zone. North of the North Causeway, fewer than 1 in 10 are.`) +
@@ -533,14 +586,15 @@ module.exports = G.page({
       h.h3("Hurricanes") +
       h.p(`In the past 75 years, 44 storms have passed within 50 miles of the middle of the island, and 7 of them were hurricanes at their closest point. Ian passed about 5 miles away, and Matthew and Charley came closer still.`) +
       STORM_CHART +
-      h.p(`Hurricane Hazel, in 1954, washed away most of the houses built on the south end after World War II. The older houses came through it, as they had come through many storms before.`)  },
+      h.p(`Hurricane Hazel, in 1954, washed away most of the houses built on the south end after World War II. The older houses came through it, as they had come through many storms before.`) +
+      h.cta("Get the flood zone and floor height of one Pawleys house", "Send us the address. We look up its flood zone, VE or AE, and how high its floor is above the flood height on FEMA's map.", "Have us check a house's flood zone", "/contact/", bg) },
 
     { h2: "Can you rebuild an oceanfront house on Pawleys Island?", toc: "Building on the ocean", id: "rebuild", html: () =>
       h.p(`Yes, within limits that matter most at the south end. The state draws two lines along the beach. The baseline follows the top of the front dune. The setback line runs 20 feet behind it, on the land side.`) +
       h.p(`On about 100 of the island's roughly 220 oceanfront houses, part of the house stands on the ocean side of the setback line. Most of them are at the south end. On Litchfield's oceanfront it is more than half of the houses.`) +
       SETBACK_MAP +
       h.p(`For a house past the setback line, state law allows:`) +
-      `<ul class="c3-pi-rules">`
+      `<ul class="c3-pi-rules one">`
         + `<li><strong>Repair</strong>A house damaged by a storm, but not destroyed, can be repaired.</li>`
         + `<li><strong>Rebuild</strong>A house a storm destroys can be rebuilt no larger past the setback line, no wider along the beach and no farther toward the ocean than before. It moves back from the ocean where possible, and never past the baseline.</li>`
         + `<li><strong>New house</strong>A new house built partly past the setback line can have at most 5,000 square feet of heated space.</li>`
@@ -554,9 +608,9 @@ module.exports = G.page({
         + `<li><strong>Paving</strong>Roofs and paved areas together no more than 40 percent of the lot. Driveways are gravel, shell or crushed stone, never paved.</li>`
         + `<li><strong>Approval</strong>A new house needs the town's Architectural Review Board. Taking down a protected tree needs a town permit.</li>`
         + `</ul>` +
+      maybeSide(NORTH_END) +
       h.h3("The beach in front") +
       h.p(`The town rebuilt its beach with about 1.1 million cubic yards of new sand. The plan paid for it from three sources: the town's beach fund, which is its 3 percent lodging tax on rentals, a state grant and a bank loan.`) +
-      maybe(NORTH_END) +
       h.p(`The south tip will change. Under a settlement with the Prince George community across the inlet, a new inlet is to be cut about 800 feet south of the south-end parking lot and kept inside a set zone. The town gets a right to sand for future beach work.`) },
   ],
   faqTitle: "Pawleys Island FAQ",

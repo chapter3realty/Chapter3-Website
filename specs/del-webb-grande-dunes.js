@@ -121,6 +121,11 @@ const M = maps("del-webb-grande-dunes", [
   closeCaption: "Map of Del Webb at Grande Dunes up close, with its clubhouse, beside the Intracoastal Waterway.",
 });
 
+/* Light fix, triage 2026-11-08: the italic line at about half the H1's size, on its own line (the approved look,
+   Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md). */
+const EM_CSS = "<style>@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+  + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}</style>";
+
 module.exports = {
   url: SELF,
   hub: { name: "55+ communities", url: HUB },
@@ -139,8 +144,8 @@ module.exports = {
   heroMedia: glance([
     { icon: "beach", label: "Beach", text: "About 4 minutes" },
     { icon: "hospital", label: "Hospital", text: "About 6 minutes" },
-    { icon: "grocery", label: "Groceries", text: "About 4 minutes" },
-    { icon: "pickleball", label: "Pickleball", text: "Courts here" },
+    { icon: "dollar", label: "HOA fee", text: "About $400 a month" },
+    { icon: "home", label: "Houses", text: "About $665,000" },
   ]),
   heroCta: { label: "Talk to an agent", href: "/contact/" },
   author: "devin",
@@ -150,7 +155,7 @@ module.exports = {
   ],
   sections: [
     { h2: "What is there to do in Del Webb at Grande Dunes?", toc: "Things to do", html:
-      ph.css() +
+      EM_CSS + ph.css() +
       h.p("The clubhouse in Del Webb at Grande Dunes has an indoor pool, an outdoor pool, a fitness center and an arts and crafts room. It is also called the amenity center. Staff are there every day, and your mailbox is there too.") +
       ph.cards([
         { illustration: "outdoor-pool", label: "Indoor and outdoor pools", text: "Swim all year" },

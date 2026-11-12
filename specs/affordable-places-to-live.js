@@ -241,6 +241,15 @@ const ITEMLIST = () => `<script type="application/ld+json">${JSON.stringify({ "@
   name: "The most affordable neighborhoods near Myrtle Beach", numberOfItems: P.length,
   itemListElement: P.map((p) => ({ "@type": "ListItem", position: p.n, name: p.name, url: `https://chapter3realty.com${SELF}#${p.id}` })) })}</script>`;
 
+/* Light fix, triage 2026-11-08: the italic line at about half the H1's size, on its own line (the approved look,
+   Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md). */
+const EM_CSS = "<style>@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+  + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}"
+  /* and the hero ends closer to the short answer (as on /buyers/act-388-changes/), so the answer's first sentence and
+     its price range are on a computer's first screen. */
+  + "main#main .detail-hero{padding-bottom:1.6rem!important}main#main>.detail-hero+section:not(.hx-feed),main#main>.hx-feed-top+section{padding-top:1.6rem!important}"
+  + "@media (max-width:699px){main#main .detail-hero{padding-bottom:.4rem!important}main#main>.detail-hero+section:not(.hx-feed),main#main>.hx-feed-top+section{padding-top:1.1rem!important}}</style>";
+
 module.exports = G.page({
   theme: "glass",
   url: SELF,
@@ -262,14 +271,14 @@ module.exports = G.page({
   ],
   sections: [
     { h2: "What does each neighborhood do best?", toc: "The twelve at a glance", id: "compare", html: () =>
-      PHOTO_CSS + PLACE_CSS + G.homesCss() + GUIDE },
+      EM_CSS + PHOTO_CSS + PLACE_CSS + G.homesCss() + GUIDE },
 
     entry("parkview", "townhomes by the city's golf course, near the beach", () =>
       h.p("Parkview is a four-minute drive from the beach. Its townhomes are off 17th Avenue South, inside the city of Myrtle Beach, around ponds and a pool for owners.") +
       h.p("Built in the mid-2000s, the townhomes have about 1,050 to 1,350 square feet and two or three bedrooms. Many have vaulted ceilings and a front porch, and some have a screened porch.") +
       PH["parkview"] +
       h.p(`Whispering Pines, the ${h.ext(WPINES, "city's own 18-hole golf course")}, is less than a quarter mile from Parkview. It was originally part of the Myrtle Beach Air Force Base, and its tee markers feature the squadron emblems. Residents of Horry, Georgetown and Brunswick counties play a round there for $45 plus tax, with a cart.`) +
-      h.p("There are about 200 townhomes here, and the HOA fee includes water, sewer, grounds care and the pool. For dinner and a movie, The Market Common has shops, restaurants and a theater.") +
+      h.p(`There are about 200 townhomes here, and the HOA fee includes water, sewer, grounds care and the pool. For dinner and a movie, ${h.a("/submarkets/myrtle-beach/market-common/", "The Market Common")} has shops, restaurants and a theater.`) +
       h.p("Few of these townhomes come up for sale in a year, so one of our agents watches for each new listing.")),
 
     entry("fairways-at-wild-wing", "townhomes in a golf community", () =>
@@ -342,7 +351,7 @@ module.exports = G.page({
       h.p(`Flood is a concern here. After Hurricane Florence in 2018, the Waccamaw River rose to historic heights; ${h.ext(POLO_FLOOD, "floodwater filled the streets")} and gutted homes across the neighborhood. More than four in ten of its lots are in a high-risk flood zone. Before you make an offer, we look up the lot on FEMA's flood map.`)),
 
     { h2: "How do the twelve compare on yearly cost, the beach and schools?", toc: "Cost, beach and schools", id: "schools", html: () =>
-      h.p(`The map shows where each place is, and the table gives the HOA fee and tax a year, the drive to a beach and the zoned schools. To choose by what you want nearby, read our guide to the ${h.a("/buyers/best-neighborhoods/", "best neighborhoods near Myrtle Beach")}. For no HOA fee at all, see our guide to ${h.a("/buyers/no-hoa-homes/", "homes with no HOA")}.`) +
+      h.p(`The map shows where each place is, and the table gives the HOA fee and tax a year, the drive to a beach and the zoned schools. To choose by what you want nearby, read our guide to the ${h.a("/buyers/best-neighborhoods/", "best neighborhoods near Myrtle Beach")}. For no HOA fee at all, see our guide to ${h.a("/buyers/no-hoa-homes/", "homes with no HOA")}. To compare one Carolina Forest neighborhood in depth, see ${h.a("/submarkets/carolina-forest/the-farm/", "what it is like to live in The Farm at Carolina Forest")}.`) +
       COMPARE },
 
     { h2: "How much property tax will you pay?", toc: "Property tax", id: "property-tax", html: () =>

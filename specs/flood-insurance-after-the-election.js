@@ -241,7 +241,7 @@ module.exports = G.page({
   theme: "glass",
   url: SELF,
   hub: { name: "Buyers", url: "/buyers/" },
-  title: "Myrtle Beach Flood Insurance After the Election | Chapter3",
+  title: "The Dec. 11 Flood Insurance Deadline and Myrtle Beach Closings",
   description: "Will Annie Andrews' win change flood insurance in Myrtle Beach? The NFIP expires Dec.\u00a011, before she takes office. What a lapse does to a closing.",
   ogTitle: "Will Annie Andrews' win change flood insurance in Myrtle Beach?",
   crumb: "Flood Insurance After the Election",
@@ -249,13 +249,17 @@ module.exports = G.page({
   h1: "Will Annie Andrews' win change flood insurance in Myrtle Beach?",
   h1em: "Not before the Dec.\u00a011 deadline.",
   sub: "Federal flood insurance expires Dec.\u00a011, before South Carolina's new senator is sworn in. In a lapse, Grand Strand buyers cannot get a new federal flood policy.",
-  heroMedia: "<style>main#main .c3-glance li{line-height:1.4}</style>" + PK.glance([
+  /* Light fix, triage 2026-11-08: the italic line at about half the H1's size, on its own line (the approved look,
+     Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md). */
+  heroMedia: "<style>main#main .c3-glance li{line-height:1.4}"
+    + "@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+    + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}</style>" + PK.glance([
     { icon: "calendar", label: "Dec.\u00a011", text: "federal flood insurance expires" },
     { icon: "flood", label: n(HO.contracts), text: "federal flood policies on Horry County homes" },
     { icon: "storm", label: String(D.extensions.count), text: "short extensions since 2017" },
   ]),
   heroCta: { title: "Buying in a flood zone? We help get flood insurance quotes.", label: "Talk to a specialized agent", href: CONTACT },
-  author: "devin+abdulla",
+  author: "devin", /* triage 2026-11-08: Devin Day, Operations Officer, as sole author, reviewed by Tim Nash (owner, 2026-11-08) */
   toc: true,
   shortAnswer: [
     `No, not by itself, and not before Dec.\u00a011. Federal flood insurance expires that day, and Annie Andrews takes her U.S. Senate seat in January.`,
@@ -336,6 +340,6 @@ module.exports = G.page({
   afterSources: () => ph.credits(),
   pageImages: () => ph.pageImages(),
   bottomCta: { h2: "Buying a home in a Grand Strand flood\u00a0zone?", p: "We check the flood zone before you offer. We help get federal and private flood insurance quotes, so you know your choices before a deadline. It is free, with no obligation.", label: "Talk to a specialized agent", href: CONTACT },
-  keywords: "flood insurance Myrtle Beach, NFIP reauthorization 2026, NFIP lapse December 11, Annie Andrews flood insurance, NFIP lapse home closing, private flood insurance South Carolina, flood insurance premium increase limit 18 percent, Alan Wilson insurance",
+  keywords: "federal flood insurance lapse, NFIP reauthorization 2026, NFIP lapse December 11, Annie Andrews flood insurance, NFIP lapse home closing, private flood insurance South Carolina, flood insurance premium increase limit 18 percent, Alan Wilson insurance",
   about: "The National Flood Insurance Program deadline and the 2026 election, for home buyers and owners in Myrtle Beach and Horry County, South Carolina",
 });

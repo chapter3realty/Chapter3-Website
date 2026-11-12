@@ -64,6 +64,7 @@ module.exports = {
   sub: "J-1 students staff the Myrtle Beach summer and rent by the bed. A house holds as many as its bedroom floor area allows, at $100 to $140 a week each.",
   heroCta: { label: "Talk about buying a J-1 house", href: TEL },
   author: "devin",
+  toc: false, /* the live page has no contents list; this light fix does not add one */
   shortAnswer: [
     "J-1 students are college students from abroad, here on a four-month summer work visa. South Carolina hosted about 3,000 of them in 2025. Myrtle Beach was the fourth busiest destination in the country.",
     "They rent by the bed, three or four to a room, at about $100 to $140 a week each. That is the appeal. One house, four months, several rents at once.",
@@ -72,12 +73,17 @@ module.exports = {
   ],
   sections: [
     { h2: "What is a J-1 student, and why do they rent in Myrtle Beach?", html:
+      /* Light fix, triage 2026-11-08: the italic line sits at about half the H1's size on its own line (the approved look,
+         Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md). */
+      h.raw("<style>@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}"
+        + "main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+        + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}</style>") +
       h.p(`A J-1 student is a full-time college student from another country on a Summer Work Travel visa. ${h.ext(CFR32, "The program allows up to four months of seasonal work")} during the student's summer break, and no extension. ${h.ext(SWT, "Most students have a job before they arrive")}, through a sponsor organization that screens them and vets the employer.`) +
       h.p(`They rent here because the jobs are here. Myrtle Beach has about 35,000 residents and ${h.ext(MHN, "about 17 million visitors a year")}. Hotels, restaurants and attractions need summer staff the town cannot supply. ${h.ext(WBTW, "The city has hosted about 8,500 J-1 students since 2018")}.`) +
       h.p(`${h.ext(FLYER, "The State Department counted 104,609 Summer Work Travel students in 2025")}. South Carolina had 3,003 of them, the 14th most of any state. ${h.ext(WTOP, "Myrtle Beach was the fourth busiest destination in the country")}, after Ocean City, Orlando and Wisconsin Dells. No source gives the exact Myrtle Beach count.`) +
       h.p(`The top sending countries in 2025 were Jamaica, Thailand, Mexico, Peru, Romania, Turkey, Ecuador and the Dominican Republic. ${h.ext(DATES, "Each country has its own program window")}. Most run May to September. Peru, Argentina, Brazil, Chile and South Africa run December to April, so some students are here in winter.`) },
     { h2: "Which employers hire the most J-1 students, and do they house them?", html:
-      h.p(`The employers with the most seasonal jobs. ${h.ext(WMBF24, "The president of Lazarus Entertainment Group said in November 2024")} that 150 of the 500 summer staff at Myrtle Waves Water Park and Broadway Grand Prix are J-1 students. He said he had been pre-renting houses around the city to get enough beds. He had reserved 150 of the 300 beds in the new residence hall for the next summer.`) +
+      h.p(`The employers with the most seasonal jobs. ${h.ext(WMBF24, "The president of Lazarus Entertainment Group said in November 2024")} that 150 of the 500 summer staff at Myrtle Waves Water Park and Broadway Grand Prix are J-1 students. He said he had been pre-renting houses around the city to get enough beds. He had reserved 150 beds in the new residence hall for the next summer.`) +
       h.p(`${h.ext(WMBF26, "The owner of Extreme Pizza and Toasted Yolk Cafe")} told a reporter in February 2026 that without the students the summer would be like 2021. That was the year no one had enough staff. ${h.ext(WTG, "Sponsor job listings for the area")} show a pizza restaurant, a diner chain and an oceanfront resort offering housing at $100 a week. A beachwear chain offers it at $110 a week, taken from the paycheck.`) +
       h.p(`The rule puts the housing duty on the sponsor, not the employer. ${h.ext(CFR32, "If the employer does not provide housing, the sponsor must actively and immediately assist the student")} in finding it. The sponsor must also consider housing that meets local codes when it places the job. No rule requires a sponsor to inspect or approve a private landlord's house, and no rule caps the rent.`) +
       h.p(`One purpose-built building exists. ${h.ext(IRH, "The International Residence Hall on Globe Drive")} has more than 300 beds, four to a room, with weekly rent. ${h.ext(WPDE25, "It opened in May 2025")}, with tax incentives from the city. More buildings are planned; the reported totals differ by source. Its rent is not published.`) +
@@ -91,7 +97,7 @@ module.exports = {
       h.p(`There is no sponsor portal where a landlord signs up. ${h.ext(CVB, "The visitor bureau held a J-1 forum for employers, landlords and sponsors")} in February 2026. Employers pre-rent, and students search. A house that an employer has rented for its staff, year after year, is the steadiest version of this rental.`) },
     { h2: "How much rent does a J-1 house collect in Myrtle Beach?", html: (bg) =>
       h.p(`Rent is per bed, per week, with the kitchen, Wi-Fi and laundry included. ${h.ext(SEAAIRE, "One North Myrtle Beach operator lists $120 a week in spring and $130 in summer")}, three to a room, with a 90-day minimum lease and a $260 deposit. ${h.ext(J1HOUSE, "Another lists $130 and $140 a week")}, four to a room in bunk beds, with a $250 deposit. Employer housing in the sponsor listings is $100 to $110 a week.`) +
-      h.p(`That is about $430 to $610 a month per person. Our earlier figure of $500 to $700 a month came from our own observation. The listings are lower, so this page uses the listings.`) +
+      h.p(`That is about $430 to $610 a month per person.`) +
       h.table(["Lawful beds", "Rent per bed a month", "Four months, mid-May to mid-September"], [
         ["10", "$550", "$22,000"],
         ["10", "$600", "$24,000"],
@@ -115,13 +121,12 @@ module.exports = {
       h.p(`Then count it.`) +
       h.table(["What", "How many"], [
         ["International students working on the Grand Strand", `${h.ext(PANDC, "About 3,500")}, roughly 4 percent of the workforce`],
-        ["Beds in the residence hall's first phase", `${h.ext(MHN, "624")}`],
+        ["Beds in the residence hall now open", `${h.ext(IRH, "More than 300")}`],
         ["Beds there when every building is finished", "About 1,200 to 1,500, depending on which source you read"],
         ["Who rents from a private owner", "Everyone else, which is most of them"],
       ]) +
       h.p(`Even finished, the purpose-built building holds under half the students who work here. The rest need a house.`) +
-      h.p(`The gap is not only beds. It is clean beds. ${h.ext(WMBF24, "The mayor said in 2024 that some properties are not taken care of as they should be")}, and that students have been taken advantage of. ${h.ext(MHN, "A partner in the residence hall said he had heard of 19 people in one house")}. A house inside the lawful count, with a real bed for each person, is competing against that.`) +
-      h.cta("Want to rent to J-1 students?", "Tell us which jobs you want to be near and what you want to spend. We find the houses that hold the beds lawfully and check the license and the zoning before you offer.", "Talk about buying a J-1 house", TEL, bg) },
+      h.p(`The gap is not only beds. It is clean beds. ${h.ext(WMBF24, "The mayor said in 2024 that some properties are not taken care of as they should be")}, and that students have been taken advantage of. ${h.ext(MHN, "A partner in the residence hall said he had heard of 19 people in one house")}. A house inside the lawful count, with a real bed for each person, is competing against that.`) },
     { h2: "How do you find J-1 students to rent to?", html: (bg) =>
       h.p(`Start with the employers, not the students. The big ones rent houses before the season and put their own staff in them. ${h.ext(WMBF24, "The president of Lazarus Entertainment Group described putting deposits on houses all over Myrtle Beach")} to get enough beds, and called it difficult. A house an employer takes every year fills with no advertising at all.`) +
       h.p(`Sponsors will not do it for you. ${h.ext(SPONSORS, "The State Department lists every sponsor by name")} and you can call them. They no longer keep lists of landlords, and they have no staff for placing students in private houses. ${h.ext(CFR32, "The rule says only that the sponsor must help the student find housing")} and must send information about available housing before the student leaves home. Nobody inspects or approves your house.`) +
@@ -134,8 +139,7 @@ module.exports = {
       ]) +
       h.p(`Who do you ask about that site? ${h.ext(ISOPPD, "The police department runs it as the International Student Outreach Program")}, with the area chamber and the hospitality association. The program takes calls at ${h.a("tel:+18439181806", "843-918-1806")} and email at ${h.a("mailto:j1studentoutreach@cityofmyrtlebeach.com", "j1studentoutreach@cityofmyrtlebeach.com")}. ${h.ext(MBHA, "The hospitality association")} is at ${h.a("tel:+18436269668", "843-626-9668")}. Be straight about what you are asking. Neither publishes a landlord list, so you are asking them to point students at a house, not to add you to a form.`) +
       h.p(`Write the listing the way a student reads it. The weekly rent per bed. The deposit and what comes back. How far to work, in miles. A photo of the bed. ${h.ext(INTEREX, "Sponsors tell students to ask those exact questions")}, so answer them before they ask.`) +
-      h.p(`List the house over the winter. Employers plan the season months ahead, and the students land in May. A house first listed in March is late.`) +
-      h.cta("Want to rent to J-1 students?", "Tell us which jobs you want to be near and what you want to spend. We find the houses that hold the beds lawfully and check the license and the zoning before you offer.", "Talk about buying a J-1 house", TEL, bg) },
+      h.p(`List the house over the winter. Employers plan the season months ahead, and the students land in May. A house first listed in March is late.`) },
     { h2: "What do J-1 students look for in a Myrtle Beach rental?", html:
       h.ul([
         `<strong>Close to work without a car.</strong> ${h.ext(J1HOUSE, "One operator says all its houses are under two miles from the job")} and most students rent or buy a bike. ${h.ext(COAST, "Every Coast RTA bus carries two bikes")}. A house near the oceanfront employers or on a bus route fills first.`,
@@ -169,7 +173,7 @@ module.exports = {
       h.p(`Wear is the part people forget. Ten people use a house harder than three. Budget paint and cleaning every autumn. Put the turnover between tenants into the year you model.`) },
     { h2: "What can go wrong with a J-1 rental?", html:
       h.p(`Neighbors notice a full house, and the city says neighbors are how it learns about overcrowding. Stay inside the lawful count and that call does not come.`) +
-      h.p(`The residence hall competes at the low end, three hundred beds at a time, with employers reserving blocks. A clean house inside the lawful count, near the jobs, competes on quality. A duplex or fourplex spreads the same model across units; ${h.a("/invest/strategies/small-multifamily/", "the small multifamily page")} has the financing. ${h.a("/invest/student-rentals/", "Student rentals near the university")} are the year-round version.`) },
+      h.p(`The residence hall competes at the low end, with more than 300 beds in one building, and one large employer reserved 150 of them for a summer. A clean house inside the lawful count, near the jobs, competes on quality. A duplex or fourplex spreads the same model across units; ${h.a("/invest/strategies/small-multifamily/", "the small multifamily page")} has the financing. ${h.a("/invest/student-rentals/", "Student rentals near the university")} are the year-round version.`) },
   ],
   faqTitle: "J-1 rental FAQ",
   faq: [

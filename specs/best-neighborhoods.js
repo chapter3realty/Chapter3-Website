@@ -229,7 +229,7 @@ const ENTRIES = [
   ], "Houses here usually sold for about $600,000 last year, and a house in The Preserve pays an HOA fee of about $95 a month."),
 
   ENTRY("tidewater", "houses on the fairways", [
-    "About seven of every ten houses in Tidewater Plantation have lots that border the golf course, and many streets curve between two fairways.",
+    `About seven of every ten houses in Tidewater Plantation have ${h.a("/buyers/golf-communities/", "lots that border the golf course")}, and many streets curve between two fairways.`,
     "The neighborhood is on a neck of land between the Intracoastal Waterway and Cherry Grove Inlet, with salt marsh along its edges. Many of the houses stand under tall trees, and some streets carry sailing names, such as Spinnaker Drive and Topsail Lane.",
     "The course is public, so golfers who do not live here play past the back yards.",
   ], "Houses in Tidewater usually sold for about $625,000 last year, and the HOA fee for a house is about $230 a month."),

@@ -6,7 +6,7 @@
 <a class="logo" href="/" aria-label="Chapter III Realty, home">
 <img class="logo-img" src="/images/brand/chapter-iii-logo-ivory.svg" alt="Chapter III Realty" width="211" height="92" style="display:block;height:clamp(54px,14vw,66px);width:auto">
 </a>
-<p class="footer-desc">The Myrtle Beach investor-focused brokerage. DSCR analysis, STR analysis, and condo-by-condo ROI data for serious real estate investors.</p>
+<p class="footer-desc">The Myrtle Beach investor-focused brokerage. Rental analysis, STR analysis, and condo-by-condo ROI data for serious real estate investors.</p>
 <address class="footer-address">
 <strong style="color:var(--ivory);font-style:normal"><a href="/" style="color:inherit;text-decoration:none">Chapter3 Realty, Corp.</a></strong><br/>
           Vista Drive<br/>
@@ -581,13 +581,14 @@
 <form id="c3a-form" novalidate><p class="c3a-k">Talk to an agent</p><h2 id="c3a-t" class="c3a-t">We'll call you back today.</h2><p class="c3a-about" id="c3a-about" hidden></p>
 <label class="c3a-l" for="c3a-name">Name</label><input class="c3a-i" id="c3a-name" autocomplete="name" required maxlength="120">
 <label class="c3a-l" for="c3a-phone">Phone</label><input class="c3a-i" id="c3a-phone" type="tel" autocomplete="tel" required maxlength="30">
-<label class="c3a-l" for="c3a-email">Email</label><input class="c3a-i" id="c3a-email" type="email" autocomplete="email" required maxlength="160">
+<label class="c3a-l" for="c3a-email">Email <span style="font-weight:400;color:#5c6b78">(optional)</span></label><input class="c3a-i" id="c3a-email" type="email" autocomplete="email" maxlength="160">
 <label class="form-consent c3a-c" for="c3a-consent"><input id="c3a-consent" type="checkbox"><span>I consent to receive calls and text messages from Chapter 3 Realty about my property inquiry, showing appointments, and listing information I requested, at the phone number provided, including calls placed using an automated system or an artificial or prerecorded voice. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase.</span></label>
-<p class="c3a-err" id="c3a-err" hidden></p><button type="submit" class="c3a-go">Talk to an agent</button></form>
+<p class="c3a-err" id="c3a-err" hidden></p><button type="submit" class="c3a-go">Talk to an agent</button><p class="c3a-or">Rather talk now?</p><a class="c3a-call" href="tel:+18543332135">Call 854.333.2135</a></form>
 <div id="c3a-done" class="c3a-done" hidden><p class="c3a-k">Sent</p><h2 class="c3a-t">Thanks. An agent will call you today.</h2><p class="c3a-p">Prefer to talk now? Call <a href="tel:+18543332135">854.333.2135</a>.</p><button type="button" class="c3a-go" data-c3a-close>Close</button></div></div></div>
 <style>
 .c3a{position:fixed;inset:0;z-index:10050;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(18,22,30,.72);backdrop-filter:blur(3px)}.c3a[hidden]{display:none}
 .c3a-card{position:relative;width:100%;max-width:26rem;max-height:calc(100vh - 2rem);overflow:auto;background:#fdfbf7;border-radius:22px;padding:1.7rem 1.6rem 1.4rem;box-shadow:0 30px 80px rgba(18,22,30,.45);border-top:3px solid var(--brass,#c4783a)}
+.c3a-or{margin:.8rem 0 .35rem;text-align:center;font-size:.85rem;color:#5c6b78}.c3a-call{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;border:1px solid rgba(28,32,40,.22);color:var(--navy,#1c2028);font-weight:700;text-decoration:none}.c3a-call:focus-visible{outline:3px solid var(--brass,#c4783a);outline-offset:2px}
 .c3a-x{position:absolute;top:.6rem;right:.8rem;border:0;background:none;font-size:1.6rem;line-height:1;color:#5c6b78;cursor:pointer;padding:.3rem}
 .c3a-k{margin:0 0 .3rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass,#c4783a);font-weight:700}
 .c3a-t{margin:0 0 .8rem;font-family:var(--serif,Georgia,serif);font-size:1.45rem;line-height:1.2;color:var(--navy,#1c2028)}
@@ -618,11 +619,27 @@
   }
   function open(el) {
     ctx = context(el); last = document.activeElement;
+    ask(el);
     var about = document.getElementById('c3a-about');
     about.hidden = !ctx.address; about.textContent = ctx.address ? 'About ' + ctx.address : '';
     form.hidden = false; done.hidden = true; err.hidden = true; box.hidden = false;
     setTimeout(function () { document.getElementById('c3a-name').focus(); }, 30);
     return true;
+  }
+  /* The request in the visitor's own words (owner, 2026-11-10): the box a button sits in gives the headline, and the
+     button's words go to the agent with the lead. A visitor who sent the form before on this device finds it filled. */
+  var T = document.getElementById('c3a-t'), T0 = T.textContent, KEY = 'c3AgentWho';
+  function ask(el) {
+    var label = el && el.textContent ? el.textContent.replace(/\s+/g, ' ').trim() : '';
+    var boxEl = el && el.closest ? el.closest('[class*="cta"],[class*="offer"],aside,div') : null;
+    var h = boxEl ? boxEl.querySelector('h2,h3,h4,strong,b') : null;
+    var head = h ? h.textContent.replace(/\s+/g, ' ').trim() : '';
+    T.textContent = head && head.length <= 90 && head !== label && !(h.closest && h.closest('a')) ? head : T0;
+    ctx.request = label && label.length <= 80 ? label : '';
+    var place = ''; try { place = new URL(el.getAttribute('href') || '', location.href).searchParams.get('place') || ''; } catch (x) {}
+    ctx.place = place;
+    try { var w = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if (w) [['c3a-name', w.name], ['c3a-phone', w.phone], ['c3a-email', w.email]].forEach(function (p) { var i = document.getElementById(p[0]); if (i && !i.value && p[1]) i.value = p[1]; }); } catch (x) {}
   }
   function close() { box.hidden = true; if (last && last.focus) last.focus(); }
   window.c3AgentOpen = open;
@@ -631,7 +648,7 @@
   /* Every link to the contact page, and anything marked data-agent, opens the form. The contact page itself still works when opened directly. */
   document.addEventListener('click', function (e) {
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    var a = e.target.closest && e.target.closest('a[href^="/contact"],[data-agent]');
+    var a = e.target.closest && e.target.closest('a[href^="/contact"],a[href="#lead-form"],[data-agent]');
     if (!a || a.hasAttribute('data-no-agent') || /^\/contact\/?$/.test(location.pathname)) return;
     e.preventDefault(); e.stopPropagation(); open(a);
   }, true);
@@ -642,12 +659,14 @@
     var digits = phone.replace(/[^0-9]/g, '');
     if (!name) { err.textContent = 'Please add your name.'; err.hidden = false; return; }
     if (digits.length < 10) { err.textContent = 'Please add a phone number we can call.'; err.hidden = false; return; }
-    if (email.indexOf('@') < 1) { err.textContent = 'Please add your email.'; err.hidden = false; return; }
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'That email does not look right. You can leave it blank.'; err.hidden = false; return; }
     if (!cb.checked) { err.textContent = 'Please tick the box so we may call and text you.'; err.hidden = false; return; }
     if (typeof window.c3SendForm === 'function') {
       window.c3SendForm({ name: name, phone: phone, email: email, consent: 'yes', property_address: (ctx && ctx.address) || '',
-        message: 'Talk to an agent. ' + ((ctx && ctx.address) ? 'About ' + ctx.address + '. ' : '') + ((ctx && ctx.note) || '') + ' Page: ' + document.title }, 'Talk to an Agent');
+        community: (ctx && ctx.place) || '',
+        message: 'Talk to an agent. ' + ((ctx && ctx.request) ? 'Asked for: ' + ctx.request + '. ' : '') + ((ctx && ctx.place) ? 'Place: ' + ctx.place + '. ' : '') + ((ctx && ctx.address) ? 'About ' + ctx.address + '. ' : '') + ((ctx && ctx.note) || '') + ' Page: ' + document.title }, 'Talk to an Agent');
     }
+    try { localStorage.setItem(KEY, JSON.stringify({ name: name, phone: phone, email: email })); localStorage.setItem('c3PopDone', String(Date.now())); } catch (x) {}
     form.hidden = true; done.hidden = false;
   });
 })();
@@ -740,4 +759,39 @@
   addEventListener('pageshow', clear);
 })();
 </script>
+<style>/* FAQ questions open on a tap (owner, 2026-11-08: "make the FAQ a drop down box to make the scroll bar less intimidating while keeping SEO benefit"). The answers stay in the page's HTML for search engines; this script folds them for readers. Pages built by mkpage already fold their FAQ (.c3-faq); this one skips those and folds the rest (.c3-fold). */
+main .c3-fold{border-top:1px solid var(--rule,#d9d3c7);margin:0;max-width:760px}
+main .c3-fold:last-of-type{border-bottom:1px solid var(--rule,#d9d3c7)}
+main .c3-fold>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.05rem 0;min-height:44px}
+main .c3-fold>summary::-webkit-details-marker{display:none}
+main .c3-fold>summary>h3{margin:0!important;font-size:1.12rem}
+main .c3-fold>summary::after{content:"+";flex:none;font:400 1.6rem/1 var(--sans,system-ui);color:var(--brass-ink,#91592b);transition:transform .15s}
+main .c3-fold[open]>summary::after{transform:rotate(45deg)}
+main .c3-fold>summary:focus-visible{outline:2px solid var(--brass-ink,#91592b);outline-offset:3px}
+main .c3-fold>.c3-fold-a{padding:0 0 1.1rem}
+main .c3-fold>.c3-fold-a>*:first-child{margin-top:0}
+@media (prefers-reduced-motion:reduce){main .c3-fold>summary::after{transition:none}}
+</style>
+<script>(function(){
+  function fold(){
+    var main=document.querySelector('main'); if(!main) return;
+    var h2=[].slice.call(main.querySelectorAll('h2')).filter(function(h){return /\bFAQ\b|questions/i.test(h.textContent)&&!h.closest('.c3-faq,.c3-fold');});
+    h2.forEach(function(h){
+      var sec=h.closest('section')||h.parentElement; if(!sec) return;
+      var qs=[].slice.call(sec.querySelectorAll('h3')).filter(function(q){return !q.closest('.c3-faq,.c3-fold')&&!q.closest('form');});
+      if(qs.length<2) return;
+      qs.forEach(function(q){
+        var parent=q.parentElement, ans=[], n=q.nextElementSibling;
+        while(n&&n.tagName!=='H3'&&n.tagName!=='H2'&&!/^\s*Sources?:/.test(n.textContent)&&!n.querySelector('h3')&&!(n.matches&&n.matches('form,.c3-offer,[class*="cta"],[class*="offer"]'))){ans.push(n);n=n.nextElementSibling;}
+        if(!ans.length) return;
+        var d=document.createElement('details'); d.className='c3-fold';
+        var sm=document.createElement('summary'); var box=document.createElement('div'); box.className='c3-fold-a';
+        parent.insertBefore(d,q); sm.appendChild(q); d.appendChild(sm); ans.forEach(function(a){box.appendChild(a);}); d.appendChild(box);
+        if(parent.children.length===1&&parent!==sec&&parent.tagName==='DIV'&&/border-top/.test(parent.getAttribute('style')||'')){parent.style.borderTop='0';parent.style.padding='0';}
+      });
+    });
+    if(location.hash){var t=document.getElementById(location.hash.slice(1)); var d=t&&t.closest&&t.closest('details.c3-fold'); if(d) d.open=true;}
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fold); else fold();
+})();</script>
 </footer>

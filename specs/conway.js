@@ -198,6 +198,49 @@ main#main>section[style^="background:var(--navy)"]:last-of-type:not(.c3-x)>.wrap
 @media (max-width:359px){.hx-feed .hx-fb-ai,.hx-feed label.hx-fb-q{min-width:0!important;max-width:100%!important;flex-wrap:wrap!important;box-sizing:border-box}.hx-feed .hx-fb-ai>*{min-width:0}.hx-feed .hx-pop{flex-wrap:wrap!important;max-width:100%}}
 </style>`;
 
+/* Design pass, 2026-11-08 (redo3/submarkets-conway/DESIGN.md): a two-line headline, the drive times as one plain line,
+   the contents between rules, each part closed by its homes strip, photos beside the text on a wide screen, one card
+   style (charts and offers), plain tables under thin rules, and one block width of 720 px. */
+const S = "main#main", RULE = "1px solid rgba(28,32,40,.16)";
+const FLAT = "background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important";
+const TBL = `${S} div[style^="overflow-x:auto;margin:1.2rem 0"]`;
+const TOC = `${S} nav[aria-label="On this page"]`;
+const DESIGN_CSS = "<style>"
+  /* 1. The headline: the italic line at about half the H1's size; the drive times one plain line between rules, rows on a phone. */
+  + `@media (min-width:700px){${S} .detail-h1{text-wrap:balance}}${S} .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}`
+  + `@media (max-width:959px){${S} .detail-h1 em{color:var(--g-ink,#8a5226)!important}}`
+  + `${S} .c3-glance{border-top:${RULE};border-bottom:${RULE};max-width:720px;box-sizing:border-box}${S} .c3-glance li{${FLAT};line-height:1.4}${S} .c3-glance span.t{line-height:1.3}`
+  + `@media (min-width:700px){${S} .c3-glance{gap:0 1.6rem!important;padding:.55rem 0!important}${S} .c3-glance li{padding:.2rem 0!important}${S} .c3-glance .i{background:none!important;box-shadow:none!important}}`
+  + `@media (max-width:699px){${S} .c3-glance{grid-template-columns:1fr!important;gap:0!important;border-bottom:0}${S} .c3-glance li{border-bottom:${RULE}!important;flex-direction:row!important;text-align:left!important;justify-content:flex-start!important;align-items:center!important;gap:.7rem!important;padding:.5rem 0!important}`
+  + `${S} .c3-glance li>span:last-child{display:flex;gap:.5rem;align-items:baseline}${S} .c3-glance strong{font-size:1rem!important}}`
+  /* 2. The contents list: no card, in columns between two rules. */
+  + `${TOC}{${FLAT};border-top:${RULE}!important;border-bottom:${RULE}!important;padding:.8rem 0 .5rem!important}`
+  + `${TOC} ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.5rem}`
+  + `@media (min-width:700px){${TOC} ul{grid-template-columns:repeat(3,minmax(0,1fr))}${TOC} li a{padding:.45rem 0!important}}`
+  /* 3. Photos without a frame; on a wide screen a photo sits beside the text it belongs to. Each part ends with its
+     homes strip; below 1,100 px the part's photo shows only while the strip is empty, as before. */
+  + `${S} figure.c3ph-hero{${FLAT};padding:0!important;max-width:720px!important}${S} figure.c3ph-hero figcaption{padding:0!important}`
+  + `@media (min-width:1100px){${S} .c3-cw-side{display:grid;grid-template-columns:minmax(0,1fr) 400px;grid-template-rows:var(--cw-rows);column-gap:2.5rem;align-items:start}`
+  + `${S} .c3-cw-side>*{grid-column:1}${S} .c3-cw-side>figure.c3ph-hero{grid-column:2;grid-row:1/-1;margin:.4rem 0 1.2rem!important;max-width:none!important}`
+  + `${S} .c3-cw-side>h3:first-child~figure.c3ph-hero{margin-top:2.2rem!important}}`
+  + `@media (max-width:1099px){${S} .c3-cw-side:has(+.hx-strip:not(:empty))>figure.c3ph-hero{display:none}}`
+  + `${S} .c3-cw-side+.hx-strip,${S} .c3-cw-part+.hx-strip{margin-top:1.2rem}`
+  + `${S} .hx-strip+.hx-fallback{margin:1rem 0 .4rem}`
+  + `@media (min-width:1100px){${S} .c3-cw-side+.hx-strip,${S} .c3-cw-part+.hx-strip{max-width:none!important}}`
+  /* 4. One card style (charts and offers). Tables, the yearly cost table and pros and cons are plain, under thin rules;
+     the maps keep their own frame and lose the outer card. */
+  + `${TBL}{${FLAT};padding:0!important}`
+  + `${TBL} thead th{border-bottom:1px solid rgba(28,32,40,.3)!important}`
+  + `${TBL} th:first-child,${TBL} td:first-child{padding-left:0!important}${TBL} th:last-child,${TBL} td:last-child{padding-right:0!important}`
+  + `${S} figure.c3-cw-fig:not(.c3-gchart){${FLAT};padding:0!important}${S} figure.c3-cw-fig:not(.c3-gchart)>figcaption{padding:0!important}`
+  + `${S} .c3-cc{${FLAT};padding:0!important}${S} .c3-cc caption{padding-left:0!important;text-align:left}`
+  + `${S} .c3-cc th,${S} .c3-cc td{border-bottom:${RULE}!important}${S} .c3-cc thead th{border-bottom:1px solid rgba(28,32,40,.3)!important}${S} .c3-cc th:first-child,${S} .c3-cc td:first-child{padding-left:0!important}`
+  + `${S} .c3-pc{gap:0 2rem!important}${S} .c3-pc>div{${FLAT};border-top:${RULE}!important;padding:.9rem 0 .4rem!important}`
+  /* 5. One block width. */
+  + `${S} .c3-gchart,${TBL},${S} .c3-cc,${S} .c3-pc{max-width:720px!important;box-sizing:border-box}`
+  + `${S} figure.c3-cw-fig:not(.c3-gchart){max-width:640px!important}`
+  + "</style>";
+
 /* ---------------------------------------------------------------------------- */
 /* Map 1: where Conway is (row 27).                                               */
 
@@ -353,14 +396,14 @@ const RIVER_CHART = (() => {
     + `</svg>`;
   const dash = (d) => `<svg width="26" height="6" aria-hidden="true" style="flex:none"><line x1="0" y1="3" x2="26" y2="3" stroke="#1c2028" stroke-opacity=".7" stroke-width="2" stroke-dasharray="${d}"/></svg>`;
   const legend = `<ul class="c3-cw-legend"><li><span class="c3-cw-line" style="background:${BR}"></span>Florence, 2018</li><li><span class="c3-cw-line" style="background:${SL}"></span>Matthew, 2016</li><li>${dash("2 3")}Major flooding, 14 ft</li><li>${dash("6 4")}Flood stage, 11 ft</li></ul>`;
-  return `<figure class="c3-gchart c3-cw-fig" style="max-width:640px"><span class="cap" style="display:block;color:var(--navy);font-weight:600;font-size:1.1em;line-height:1.35;margin:0 0 .5rem">How high the river at Conway rose on its gauge, in feet, after two hurricanes</span>${legend}${svg}<figcaption>Daily average height on the river gauge at the Conway Marina. After Florence, the river stayed above flood stage for ${RV.florence.above_minor.days} days, ${RV.florence.above_major.days} of them in major flood.</figcaption></figure>`;
+  return `<figure class="c3-gchart c3-cw-fig" style="max-width:640px"><span class="cap" style="display:block;color:var(--navy);font-weight:600;font-size:1.1em;line-height:1.35;margin:0 0 .5rem">After Florence, the river at Conway was highest on day ${FLO_CREST_DAY} and above flood stage for ${RV.florence.above_minor.days} days</span>${legend}${svg}<figcaption>Daily average height in feet on the river gauge at the Conway Marina. After Florence, the river stayed above flood stage for ${RV.florence.above_minor.days} days, ${RV.florence.above_major.days} of them in major flood.</figcaption></figure>`;
 })();
 
 /* Chart: homes with a Conway mailing address, inside and outside the city (row 3). */
 const ADDRESS_CHART = G.bars([
   { name: "Inside the city limits", value: MAIL.inside_city, valueText: near(MAIL.inside_city, 100) },
   { name: "Outside, in the county", value: MAIL.outside_city, valueText: near(MAIL.outside_city, 1000), reference: true },
-], { caption: "Homes with a Conway mailing address, rounded", nameLabel: "Where the home is", valueLabel: "Homes", compact: true });
+], { caption: "Most homes with a Conway mailing address are outside the city", nameLabel: "Where the home is", valueLabel: "Homes", compact: true, note: "Homes, rounded." });
 
 /* Chart: what a home resold for, Conway against the county and other towns (row 7). */
 const TOWNS = [
@@ -419,16 +462,22 @@ const HGTC = "https://www.hgtc.edu/";                                           
 
 const TOP = { title: "See homes for sale in Conway", label: "Send me Conway homes", href: "/contact/" };
 const END = {
-  h2: "Tell us the street. We will tell you what it means.",
-  p: "Send us any Conway house you like. We tell you whether it is inside the city, whether it is in either flood map, and what its yearly tax will be.",
-  label: "Ask about a Conway house", href: `/contact/?place=${encodeURIComponent("Conway")}`,
+  h2: "See the Conway houses you like, in person",
+  p: "Pick the Conway houses you like. An agent shows them to you and answers what the page did not.",
+  label: "Have us set up a Conway showing", href: `/contact/?place=${encodeURIComponent("Conway")}`,
 };
 
 const partH3 = (p, tail) => `<h3 id="${p.id}" data-toc="${p.name}" class="c3-cw-h3" style="font-family:var(--serif);font-size:1.3rem;color:var(--navy);margin:2rem 0 .6rem;line-height:1.3">${numDot(p)}<span>${p.name}: ${tail}</span></h3>`;
 /* A homes strip per part (owner 2026-10-21). The slugs are new: NEEDS.md 7 asks the lead to add them to
    idx-places.json; until then the slot stays empty, takes no space, and the part's photo shows instead. */
-const strip = (p, fallback = "") => G.homes(`conway-${p.id}`, p.place, fallback);
 const ask = (p) => G.offer(p.place, { label: `Get the homes for sale in ${p.place}` });
+/* Design pass, 2026-11-08: the strip closes each part and is its main picture; the old pill is the strip's fallback,
+   shown only while the strip is empty (owner, 2026-11-08: "horizontal idx listings is the strongest tool we have"). */
+const strip = (p) => G.homes(`conway-${p.id}`, p.place, ask(p));
+/* Text and its photo in one block, so the photo can sit beside the text on a wide screen (the photo's grid rows span
+   every text row; the last row takes what is left). A block with no photo is a plain block. */
+const side = (...kids) => { kids = kids.filter(Boolean); const ph = kids.filter((k) => k.includes('class="c3ph-hero"')).length, n = kids.length - ph;
+  return ph ? `<div class="c3-cw-side" style="--cw-rows:${"auto ".repeat(Math.max(n - 1, 0))}1fr">` + kids.join("") + `</div>` : `<div class="c3-cw-part">` + kids.join("") + `</div>`; };
 const D = PARTS[0], U = PARTS[1], WS = PARTS[2], CT = PARTS[3], NO = PARTS[4];
 
 module.exports = G.page({
@@ -436,7 +485,7 @@ module.exports = G.page({
   url: SELF,
   hub: { name: "Neighborhoods", url: "/submarkets/" },
   pageImages: () => PH.pageImages(HALL),
-  title: "Living in Conway, SC: Homes, Prices, Flood Map | Chapter3",
+  title: "Conway, SC Real Estate: Homes, Prices, Flood Map | Chapter3",
   description: "Living in Conway, SC: the five parts of town and what is in each, what homes cost, the city limits and your tax bill, which parts flood, and rents.",
   ogTitle: "Living in Conway, SC: the five parts of town, home prices, and where the river floods",
   crumb: "Conway",
@@ -455,72 +504,78 @@ module.exports = G.page({
   author: "devin",
   shortAnswer: [
     `Conway is a river town with an old downtown on the Waccamaw River, a university and a hospital inside the city, and the beach about ${BEACH} minutes away. A house here resells for about $${UNDER_COUNTY} less than across Horry County.`,
-    `Most Conway addresses are outside the city itself. Only a few places are in the flood maps, near the river, Crabtree Swamp and Kingston Lake.`,
+    `Most homes with a Conway mailing address are outside the city limits. Only a few places are in the flood maps, near the river, Crabtree Swamp and Kingston Lake. The two maps are FEMA's high-risk flood zone and the county's map of where Hurricane Florence's floodwater reached in 2018.`,
   ],
   sections: [
     { h2: "What is it like to live in Conway, SC?", toc: "Living here", id: "living-here", html: () =>
-      CSS + G.homesCss() +
-      h.p(`Conway is a small city on the Waccamaw River, said WAH-kuh-maw. Much of downtown was built in the early 1900s, after a fire, and its streets have old live oaks.`) +
-      h.p(`The Riverwalk is a path of about 1.5 miles along the river, with benches and a kayak launch. It starts about ${RIVERWALK} minutes by car from the center of town. At Riverfront Park beside it are a public boat landing with floating docks, a playground built like an old river steamboat, and rocking chairs under a gazebo.`) +
-      RIVER_PHOTO +
-      h.p(`Conway was laid out in 1732, as Kingston, and later named Conwayborough for General Robert Conway of the state militia.`) +
-      h.p(`City Hall on Main Street was finished in 1825 as the county courthouse. Its design is credited to Robert Mills, who designed the Washington Monument.`) +
-      HALL_PHOTO +
+      CSS + DESIGN_CSS + G.homesCss() +
+      side(
+        h.p(`Conway is a small city on the Waccamaw River, said WAH-kuh-maw. Much of downtown was built in the early 1900s, after a fire, and its streets have old live oaks.`),
+        h.p(`The Riverwalk is a path of about 1.5 miles along the river, with benches and a kayak launch. It starts about ${RIVERWALK} minutes by car from the center of town. At Riverfront Park beside it are a public boat landing with floating docks, a playground built like an old river steamboat, and rocking chairs under a gazebo.`),
+        RIVER_PHOTO) +
+      side(
+        h.p(`Conway was laid out in 1732, as Kingston, and later named Conwayborough for General Robert Conway of the state militia.`),
+        h.p(`City Hall on Main Street was finished in 1825 as the county courthouse. Its design is credited to Robert Mills, who designed the Washington Monument.`),
+        HALL_PHOTO) +
       h.p(`Coastal Carolina University is inside the city, about ${CCU} minutes from downtown. It enrolled ${CCU_STUDENTS} students in fall 2024, a record for the school. Horry-Georgetown Technical College has its Conway campus on US 501, and Conway Medical Center is about ${HOSP} minutes from downtown.`) +
       h.p(`The city is growing fast. By Census estimates it grew about ${GROWTH} percent since 2020, the seventh fastest among South Carolina cities and towns of 10,000 people or more.`) +
       h.p(`The beach is about ${BEACH} minutes away by car, and the airport about ${AIRPORT}.`) +
       WHERE_MAP },
 
-    { h2: "Is a Conway address inside the city of Conway?", toc: "City or county", id: "city-or-county", html: () =>
+    { h2: "Is a Conway address inside the city of Conway?", toc: "City or county", id: "city-or-county", html: (bg) =>
       h.p(`Usually not. Only a little more than 1 in 4 homes with a Conway mailing address is inside the city limits. The rest are in the county, outside any city.`) +
       ADDRESS_CHART +
       h.p(`The same is true of homes for sale. At our last count, only about 1 in 4 houses for sale with a Conway address was inside the city.`) +
       h.h3("What the city line changes") +
       h.p(`Inside the city, the property tax is about $${TAX_GAP} a year more on a typical house you live in. The City of Conway picks up garbage, recycling and yard waste at the curb once a week for homes in the city, and the city has its own police and fire departments.`) +
-      h.p(`Outside the city there is no city pickup. Homes in the county, outside any city, are the only ones allowed to use the county's 25 recycling and convenience centers, where owners bring their own trash.`) },
+      h.p(`Outside the city there is no city pickup. Homes in the county, outside any city, are the only ones allowed to use the county's 25 recycling and convenience centers, where owners bring their own trash.`) +
+      h.cta("Inside the city or not, for one address", "Send us a Conway address. We tell you which side of the city line it is on, and what that means for its tax and its trash pickup.", "Have us look up an address", "/contact/", bg) },
 
     { h2: "Which part of Conway should you look at?", toc: "Five parts of town", id: "parts-of-town", html: () =>
       h.p(`The city's homes fall into five parts. Each has something the others do not. The numbers on the map match the entries below. Each price is what a house or townhouse there usually resold for in the past year, from county deeds.`) +
       PARTS_MAP +
 
-      partH3(D, "a walk to Main Street and the river") +
-      h.p(`Downtown is the old town on the river. Main Street, City Hall, the Riverwalk and Riverfront Park are all here. Kingston Park on Main Street has shaded tables and a fountain, and the Garden Walk off Third Avenue is a walkway with music and lights in the evening.`) +
-      strip(D, OAK_PHOTO) +
-      h.p(`Downtown here means the streets within about a mile of the center of town, on house lots of ${lot(D.a.median_acres_houses)}. Snowhill, Mayfair, Buckwood, Highland Park and Collinswood are the largest subdivisions. Few homes here come up for sale. Those that did resold for about ${r5k(D.a.resales_not_condo.median)}.`) +
-      ask(D) +
+      side(
+        partH3(D, "a walk to Main Street and the river"),
+        h.p(`Downtown is the old town on the river. Main Street, City Hall, the Riverwalk and Riverfront Park are all here. Kingston Park on Main Street has shaded tables and a fountain, and the Garden Walk off Third Avenue is a walkway with music and lights in the evening.`),
+        h.p(`Downtown here means the streets within about a mile of the center of town, on house lots of ${lot(D.a.median_acres_houses)}. Snowhill, Mayfair, Buckwood, Highland Park and Collinswood are the largest subdivisions. Few homes here come up for sale. Those that did resold for about ${r5k(D.a.resales_not_condo.median)}.`),
+        OAK_PHOTO) +
+      strip(D) +
 
-      partH3(U, "the university and the hospital") +
-      h.p(`Along US 501 toward the beach, the city reaches past Coastal Carolina University. Conway Medical Center, on Singleton Ridge Road, and the Conway campus of Horry-Georgetown Technical College are in this part too.`) +
-      strip(U, KIMBEL_PHOTO) +
-      h.p(`Wild Wing, Coastal Point West, Kiskadee Parke and Aviary Village are the largest subdivisions, with about ${homesAbout(U)} homes in all, on lots of ${lot(U.a.median_acres_houses)}. Homes here resold for about ${r5k(U.a.resales_not_condo.median)}. Only the north edge was higher.`) +
-      ask(U) +
+      side(
+        partH3(U, "the university and the hospital"),
+        h.p(`Along US 501 toward the beach, the city reaches past Coastal Carolina University. Conway Medical Center, on Singleton Ridge Road, and the Conway campus of Horry-Georgetown Technical College are in this part too.`),
+        h.p(`Wild Wing, Coastal Point West, Kiskadee Parke and Aviary Village are the largest subdivisions, with about ${homesAbout(U)} homes in all, on lots of ${lot(U.a.median_acres_houses)}. Homes here resold for about ${r5k(U.a.resales_not_condo.median)}. Only the north edge was higher.`),
+        KIMBEL_PHOTO) +
+      strip(U) +
 
-      partH3(WS, "the most homes, three city parks and the lowest prices") +
-      h.p(`West and south of downtown, toward US 378 and US 701 South, is the largest part of the city. The Billy Gardner Recreation Complex on Mill Pond Road holds the Conway Recreation Center, with an indoor pool and walking track, plus ball fields and a playground built for children of all abilities. Smith Jones Park has an outdoor pool, and Collins Park has tennis and pickleball courts.`) +
+      side(
+        partH3(WS, "the most homes, three city parks and the lowest prices"),
+        h.p(`West and south of downtown, toward US 378 and US 701 South, is the largest part of the city. The Billy Gardner Recreation Complex on Mill Pond Road holds the Conway Recreation Center, with an indoor pool and walking track, plus ball fields and a playground built for children of all abilities. Smith Jones Park has an outdoor pool, and Collins Park has tennis and pickleball courts.`),
+        h.p(`Rosehaven, New Castle, Oak Glenn, Woodland Lakes and Jasmine Woods are the largest subdivisions, on lots of ${lot(WS.a.median_acres_houses)}. Homes here resold for about ${r5k(WS.a.resales_not_condo.median)}, the lowest of the five parts.`)) +
       strip(WS) +
-      h.p(`Rosehaven, New Castle, Oak Glenn, Woodland Lakes and Jasmine Woods are the largest subdivisions, on lots of ${lot(WS.a.median_acres_houses)}. Homes here resold for about ${r5k(WS.a.resales_not_condo.median)}, the lowest of the five parts.`) +
-      ask(WS) +
 
-      partH3(CT, "north and northwest of downtown, with a park on Sherwood Drive") +
-      h.p(`North and northwest of downtown, around Crabtree Swamp, are about ${homesAbout(CT)} homes, most of them 2 to 4 miles out. Sherwood Park on Sherwood Drive has a playground and a sand volleyball court, and across the street a nine-hole disc golf course inside a walking track.`) +
+      side(
+        partH3(CT, "north and northwest of downtown, with a park on Sherwood Drive"),
+        h.p(`North and northwest of downtown, around Crabtree Swamp, are about ${homesAbout(CT)} homes, most of them 2 to 4 miles out. Sherwood Park on Sherwood Drive has a playground and a sand volleyball court, and across the street a nine-hole disc golf course inside a walking track.`),
+        h.p(`Midtown Village, Rivertown Row, Elmhurst, Woodcreek, Kingston Bay, Sherwood and Country Club Forest are the largest subdivisions. The lots are the smallest in the city, ${lot(CT.a.median_acres_houses)}, and homes resold for about ${r5k(CT.a.resales_not_condo.median)}.`)) +
       strip(CT) +
-      h.p(`Midtown Village, Rivertown Row, Elmhurst, Woodcreek, Kingston Bay, Sherwood and Country Club Forest are the largest subdivisions. The lots are the smallest in the city, ${lot(CT.a.median_acres_houses)}, and homes resold for about ${r5k(CT.a.resales_not_condo.median)}.`) +
-      ask(CT) +
 
-      partH3(NO, "the biggest lots in the city") +
-      h.p(`At the city's north edge, 4 to 5 miles from downtown, a typical lot is ${lot(NO.a.median_acres_houses)}, the largest in the city. Ridgewood West, Country Manor and Maple Hill are the largest subdivisions, with about ${homesAbout(NO)} homes in all.`) +
-      strip(NO) +
-      h.p(`Few homes resold here, and the middle price was about ${r5k(NO.a.resales_not_condo.median)}, the highest of the five parts.`) +
-      ask(NO) },
+      side(
+        partH3(NO, "the biggest lots in the city"),
+        h.p(`At the city's north edge, 4 to 5 miles from downtown, a typical lot is ${lot(NO.a.median_acres_houses)}, the largest in the city. Ridgewood West, Country Manor and Maple Hill are the largest subdivisions, with about ${homesAbout(NO)} homes in all.`),
+        h.p(`Few homes resold here, and the middle price was about ${r5k(NO.a.resales_not_condo.median)}, the highest of the five parts.`)) +
+      strip(NO) },
 
-    { h2: "Does Conway, SC flood?", toc: "Flooding", id: "flooding", html: () =>
+    { h2: "Does Conway, SC flood?", toc: "Flooding", id: "flooding", html: (bg) =>
       h.p(`A few parts do. About ${OUTSIDE_PER_100} in 100 homes in the city are outside both FEMA's high-risk zone and the land Florence's water reached in 2018. The rest are near the river, Crabtree Swamp and Kingston Lake.`) +
       h.p(`By part of town, none of the homes near the university are in either flood map. Downtown and at the north edge, ${floodWords(D)} homes are in one. West and south, it is ${floodWords(WS)}, and around Crabtree Swamp ${floodWords(CT)}.`) +
       FLOOD_MAP +
-      h.p(`The worst flood on record came after Hurricane Florence in 2018. The river gauge at the Conway Marina read about 21 feet, its highest ever. That is the height of the river on the gauge, not the depth of water on a street. Major flooding starts at 14 feet.`) +
-      FLOOD_PHOTO +
-      h.h3("Why the flood comes late and stays") +
-      h.p(`The flood here comes down the river, days after the storm. Florence came ashore in North Carolina, and the river at Conway was highest ${FLO_CREST_DAY} days later.`) +
+      side(
+        h.p(`The worst flood on record came after Hurricane Florence in 2018. The river gauge at the Conway Marina read about 21 feet, its highest ever. That is the height of the river on the gauge, not the depth of water on a street. Major flooding starts at 14 feet.`),
+        h.h3("Why the flood comes late and stays"),
+        h.p(`The flood here comes down the river, days after the storm. Florence came ashore in North Carolina, and the river at Conway was highest ${FLO_CREST_DAY} days later.`),
+        FLOOD_PHOTO) +
       RIVER_CHART +
       h.p(`During Florence, the county closed ${CL.flood_streets} streets in and at the edge of the city for flooding. Long Avenue, Third Avenue, Church Street and Marina Drive stayed closed about four weeks.`) +
       h.h3("Which streets flood at each river height") +
@@ -537,7 +592,8 @@ module.exports = G.page({
       h.h3("How often it happens") +
       h.p(`Of the ${EVENTS.length} floods on record that reached major flood stage at Conway, ${RECENT.length} came in the last 11 years.`) +
       h.p(`For Florence, flood insurance paid ${NF.by_year["2018"].paid_claims} claims in the city, and the middle claim was about ${r1k(NF.median_paid_2018)}. After Hurricane Matthew, the city used FEMA grants to buy ${BUY["4286"].buildings} buildings. Land bought this way must stay open space.`) +
-      h.p(`Our page on ${h.a("/buyers/undisclosed-flooding/", "how to find out if a house flooded")} shows every record we use.`) },
+      h.p(`Our page on ${h.a("/buyers/undisclosed-flooding/", "how to find out if a house flooded")} shows every record we use.`) +
+      h.cta("The flood maps for one Conway house", "Send us a house you like. We check it against FEMA's flood map and the map of where Florence's water reached, before you make an offer.", "Have us check a house for flooding", "/contact/", bg) },
 
     { h2: "Do you need flood insurance in Conway, and what does it cost?", toc: "Flood insurance", id: "flood-insurance", html: () =>
       h.p(`Federal law makes a lender require it only when the house is in FEMA's high-risk zone. A lender can still ask for it anywhere.`) +
@@ -545,7 +601,7 @@ module.exports = G.page({
       h.table(["Flood policy a year, about", "ZIP 29526", "ZIP 29527"], [["Outside the zone", POL_X1s, POL_X2s], ["Inside the zone", POL_As, POL_As]]) +
       h.p(`A new federal flood policy takes effect 30 days after the application and payment are complete, unless it is bought when a home loan is made. Buy it with the house, not when a storm is coming.`) },
 
-    { h2: "What does it cost to own a home in Conway each year?", toc: "Yearly cost", id: "yearly-cost", html: () =>
+    { h2: "What does it cost to own a home in Conway each year?", toc: "Yearly cost", id: "yearly-cost", html: (bg) =>
       h.p(`For a typical ${money(TAX.price)} house you live in inside the city, the property tax is about ${r100(TAX.inside_city_4pct)} a year, plus a flood policy if you want one.`) +
       compareCards([
         { name: "Property tax, a home you live in", cells: { in: `About ${r100(TAX.inside_city_4pct)}`, out: `About ${r100(TAX.outside_city_4pct_district100)}, with an $89 county fee` } },
@@ -554,7 +610,8 @@ module.exports = G.page({
         { name: "Property tax instead, as a second home or rental", cells: { in: `About ${r100(TAX.inside_city_6pct)}`, out: `About ${r100(TAX.outside_city_6pct_district100)}` } },
       ], [{ key: "in", label: "Inside the city" }, { key: "out", label: "Just outside it" }], { caption: `Each year, for a ${money(TAX.price)} house`, nameLabel: "What you pay" }) +
       h.p(`Homeowners insurance is a third bill, on top of these. Its price depends on the house, its roof and the company. Our ${h.a("/buyers/coastal-insurance/", "coastal insurance page")} explains the policies a house here can need.`) +
-      h.p(`South Carolina taxes a home you live in on 4 percent of its value, and a second home or rental on 6 percent. You must apply for the lower rate. Inside the city, that makes a rental's bill about ${RATIO} times a home's. Our ${h.a("/buyers/property-taxes/", "property tax page")} shows how to apply.`) },
+      h.p(`South Carolina taxes a home you live in on 4 percent of its value, and a second home or rental on 6 percent. You must apply for the lower rate. Inside the city, that makes a rental's bill about ${RATIO} times a home's. Our ${h.a("/buyers/property-taxes/", "property tax page")} shows how to apply.`) +
+      h.cta("The yearly bills on one house, before you offer", "Pick a house. We work out its property tax at the rate you will pay and get you an insurance quote on it.", "Have us price the yearly bills", "/contact/", bg) },
 
     { h2: "What do homes cost in Conway, SC?", toc: "Home prices", id: "home-prices", html: () =>
       h.p(`A house or townhouse that resold inside the city in the past year usually went for about ${HOME}. Half sold for between about ${Q1} and ${Q3}.`) +
@@ -564,13 +621,14 @@ module.exports = G.page({
       h.p(`Conway is not the cheapest town in the county. Homes in Loris and Aynor, two smaller inland towns, resold for less.`) +
       h.p(`At our last count, about ${near(L.api_totals.house, 10)} houses were for sale with a Conway address, more than half of them new construction, and about ${near(L.houses_one_acre_plus, 10)} on an acre or more. Our ${h.a("/buyers/no-hoa-homes/", "no-HOA homes guide")} and ${h.a("/buyers/affordable-places-to-live/", "most affordable places")} include Conway.`) },
 
-    { h2: "What do homes rent for in Conway?", toc: "Renting out", id: "renting-out", html: () =>
-      h.p(`HUD's fair market rent for a three-bedroom in the Conway ZIP codes is ${money(HUD.three)} a month. HUD counts rent and utilities together, so the rent alone is less. The figure sits a little under the middle of the market.`) +
+    { h2: "What do homes rent for in Conway?", toc: "Renting out", id: "renting-out", html: (bg) =>
+      h.p(`HUD's fair market rent for a three-bedroom in the Conway ZIP codes is ${money(HUD.three)} a month. HUD counts rent and utilities together, so the rent alone is less. The figure sits a little under ${h.a("/invest/rent-prices/", "the middle of the market")}.`) +
       h.table(["Bedrooms", "HUD fair market rent, ZIPs 29526 and 29527"], [["Two", money(HUD.two)], ["Three", money(HUD.three)], ["Four", money(HUD.four)]]) +
       h.p(`In Carolina Forest's ZIP code, the three-bedroom figure is about $${HUD_GAP} more.`) +
       h.p(`In our experience, students near the college look for the cheapest house that fits their group. People moving to be near the college pay more for a nice house close to campus.`) +
       h.p(`In our experience near the college, August is the best month to find a new tenant, because new students arrive. Start marketing a month before the lease ends. Our ${h.a("/invest/student-rentals/", "student rental guide")} covers renting near Coastal Carolina.`) +
-      h.p(`For any address, our ${h.a("/invest/long-term-rental/", "rental analyzer")} gives the rent and the costs. For nightly rentals, see ${h.a("/invest/airbnb-income/", "what a nightly rental earns by town")} and ${h.a("/invest/str-rules/", "the short-term rental rules by town")}.`) },
+      h.p(`For any address, our ${h.a("/invest/long-term-rental/", "rental analyzer")} gives the rent and the costs. For nightly rentals, see ${h.a("/invest/airbnb-income/", "what a nightly rental earns by town")} and ${h.a("/invest/str-rules/", "the short-term rental rules by town")}.`) +
+      h.cta("What one Conway house would rent for", "Send us an address. We send back the rent from nearby rentals, the tax at a landlord's rate, and what is left each month after the tax and costs.", "Have us estimate a house's rent", "/contact/", bg) },
 
     { h2: "What are the pros and cons of living in Conway?", toc: "Pros and cons", id: "pros-and-cons", html: (bg) =>
       h.p("The good points are the price, the downtown and the university. The hard ones are flooding in a few places, the city tax and the drive to the beach.") +

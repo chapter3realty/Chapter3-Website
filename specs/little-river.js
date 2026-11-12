@@ -545,14 +545,14 @@ module.exports = G.page({
   url: SELF,
   hub: { name: "Neighborhoods", url: "/submarkets/" },
   pageImages: () => PH.pageImages(WATERFRONT),
-  title: "Living in Little River, SC: Homes, Boat Slips, Flood Zones",
+  title: "Little River, SC Real Estate: Homes, Boat Slips, Flood Zones",
   description: "Living in Little River, SC: deeded boat slips and ramps, the five parts of Little River, home prices from county deeds, flood zones, taxes and rents.",
   ogTitle: "Living in Little River, SC: boat slips you can own, home prices, and where it floods",
   crumb: "Little River",
   eyebrow: "Little River, SC",
   h1: "Little River, SC: the boating end of the Grand Strand.",
   h1em: "About two of every three deeded boat slips in the county are here.",
-  sub: "An unincorporated waterway community at the North Carolina line, with deeded boat slips, public ramps and people who live here all year.",
+  sub: "A waterway community at the North Carolina line, run by Horry County, with deeded boat slips, public ramps and people who live here all year.",
   heroMedia: glance([
     { icon: "dock", label: "Deeded slips", text: `About ${near(SLIPS_ZIP, 10)}` },
     { icon: "beach", label: "Beach", text: `${BEACH} min drive` },
@@ -562,7 +562,7 @@ module.exports = G.page({
   topOfferLine: "Tell us your price range and your boat. We will send the homes that fit.",
   author: "devin",
   shortAnswer: [
-    `Little River is the year-round waterway community at the north end of the Grand Strand, at the North Carolina line. If the boat comes first, look at the old village, where all three marinas with deeded slips are. For golf and dry ground, look north-west toward the Waccamaw River; for the hospital and the highest-priced neighborhoods, look west.`,
+    `Little River is the year-round waterway community at the north end of the Grand Strand, at the North Carolina line. If the boat comes first, look at the old village, where all three marinas with deeded slips are. A deeded slip is one you buy and own, with its own deed. For golf and dry ground, look north-west toward the Waccamaw River; for the hospital and the highest-priced neighborhoods, look west.`,
     `A resold house here usually sells for about ${HOUSE}. Little River is not a town, so Horry County makes the rules and there is no city tax.`,
   ],
   sections: [
@@ -582,7 +582,7 @@ module.exports = G.page({
       h.p(`No. Little River has no town government and no town limits, so Horry County makes its rules and collects its tax. A home here pays the county's property tax and no city tax on top.`) +
       h.p(`One corner is different. A small part of the Little River ZIP code along the waterway is inside the city of North Myrtle Beach. Its homes, about ${near(HZ.inside_north_myrtle_beach, 50)} and mostly condos, have a Little River address and pay North Myrtle Beach's city tax. We check which side of the line a house is on.`) },
 
-    { h2: "Living on the water in Little River: boat slips, ramps and waterfront homes", toc: "On the water", id: "on-the-water", html: () =>
+    { h2: "Living on the water in Little River: boat slips, ramps and waterfront homes", toc: "On the water", id: "on-the-water", html: (bg) =>
       h.p(`Most marinas rent their slips. At Little River's three marinas you can buy one: a deeded slip is its own piece of real estate, with its own deed and its own county tax bill. The 12 slip sales recorded here in the past year were each for a slip alone, at $10,000 to $95,000, without a condo.`) +
       WATER_MAP +
       h.p(`The slips come in sizes. The table gives the length of most slips at each marina, from the county's parcel map. Coquina Harbour's are about 30 to 45 feet. The county's parcel records do not give the depth of the water, so we check it at low tide for any slip you like.`) +
@@ -592,14 +592,15 @@ module.exports = G.page({
         { name: "Dock Holidays Marina, in North Myrtle Beach", cells: { size: "About 40 to 50 feet", sold: String(DH.length), range: `${money(DH[0])} to ${money(DH[9])}`, mid: `About ${money(DH_MID)}` } },
       ], [{ key: "size", label: "Most slips" }, { key: "sold", label: "Sales, past year" }, { key: "range", label: "Prices" }, { key: "mid", label: "Middle price" }], { caption: "Deeded boat slips and what they sold for, from county deeds", nameLabel: "Marina" }) +
       h.p(`Coquina Harbour, with about ${near(COQ_SLIPS, 10)} deeded slips, had no slip sales in the past year.`) +
-      h.p(`The county taxes a slip like a second home, on its own value for the slip. It values most Mariner's Pointe slips at $38,000 or more, above nearly every price paid there in the past year. On the county's full $38,000 value, a slip pays about ${SLIP_TAX} a year in property tax; a slip that has not sold in years may be taxed on a lower, capped value. The marina's association charges a fee on top, and its recorded papers say who may own a slip. We read both before you make an offer.`) +
+      h.p(`The county taxes a slip like a second home, on its own value for the slip. It values most Mariner's Pointe slips at $38,000 or more, above nearly every price paid there in the past year. On the county's full $38,000 value, a slip pays about ${SLIP_TAX} a year in property tax; a slip that has not sold in years may be taxed on a lower, capped value. The marina's association charges a fee on top, and its recorded papers say who may own a slip.`) +
       h.h3("Where to launch a boat") +
       h.p(`Horry County runs two public boat landings in the Little River ZIP. T. Craig Campbell Landing is on the Intracoastal Waterway at the US 17 bridge, about ${CAMPBELL} minutes from the old village, with two ramps, a dock and a paved lot. Johnny Causey Landing faces it across the waterway, just inside North Myrtle Beach, with two more ramps and a larger lot.`) +
       h.p(`On the Waccamaw River, Worthams Ferry Landing has one ramp and an unpaved lot. Chris Anderson Landing, on the river near Longs, has two ramps.`) +
       h.h3("Homes on the water") +
-      h.p(`Few houses here sit on the water: fewer than 2 in every 100 have a lot on the Intracoastal Waterway, a canal off it, or the Waccamaw River. Those few cost far more. Only ${SZ.house_resale_on_water.n} resold in the past year, and the middle one sold for about $1.3 million.`) +
+      h.p(`Few houses here ${h.a("/buyers/waterfront-homes/", "sit on the water")}: fewer than 2 in every 100 have a lot on the Intracoastal Waterway, a canal off it, or the Waccamaw River. Those few cost far more. Only ${SZ.house_resale_on_water.n} resold in the past year, and the middle one sold for about $1.3 million.`) +
       h.p(`Most homes right by the water are condos, and about half of them are in three communities: Carolina Yacht Landing, Mariner's Pointe and Lightkeepers Village. A condo by the water usually sold for about ${r1k(SZ.condo_on_water.median)} in the past year, and one away from it for about ${r1k(SZ.condo_not_water.median)}.`) +
-      h.p(`A typical resold house and a Mariner's Pointe slip come to about $375,000 together. If you would rather keep the boat on a trailer at home, our ${h.a("/buyers/no-hoa-homes/", "guide to homes with no HOA")} covers where that is allowed.`) },
+      h.p(`A typical resold house and a Mariner's Pointe slip come to about $375,000 together. If you would rather keep the boat on a trailer at home, our ${h.a("/buyers/no-hoa-homes/", "guide to homes with no HOA")} covers where that is allowed.`) +
+      h.cta("Get a deeded slip checked before you offer", "Send us the slip or the marina. We check the water depth at low tide and read the association's fee and its papers on who can own a slip.", "Have us check a boat slip", "/contact/", bg) },
 
     { h2: "Which part of Little River should you look at?", toc: "Five parts", id: "parts", html: () =>
       h.p(`Little River's homes fall into five parts, and each gives you something the others do not. The numbers on the map match the entries below.`) +
@@ -637,14 +638,15 @@ module.exports = G.page({
       ask(P5) +
       SUB_CHART },
 
-    { h2: "Does Little River flood?", toc: "Flooding", id: "flooding", html: () =>
+    { h2: "Does Little River flood?", toc: "Flooding", id: "flooding", html: (bg) =>
       h.p(`Most of it does not. About ${OUT_PER_100} in 100 Little River homes are outside FEMA's high-risk flood zone. Homes right by the water are the exception: close to half of them are inside it.`) +
       FLOOD_CHART +
       h.p(`Hurricane Hazel came ashore near Little River, at the North Carolina and South Carolina line, in October 1954 as a Category 4 hurricane. It hit at the year's highest tide, and the storm surge reached as high as 18 feet at Calabash.`) +
-      h.p(`Few houses for sale at our last count were in the high-risk zone. We check the flood map, the elevation and the seller's flood disclosure for every house before you make an offer. Our page on ${h.a("/buyers/undisclosed-flooding/", "how to find out if a house flooded")} shows every record we use.`) +
+      h.p(`Few houses for sale at our last count were in the high-risk zone. Our page on ${h.a("/buyers/undisclosed-flooding/", "how to find out if a house flooded")} shows every record we use.`) +
       h.h3("Do you need flood insurance in Little River?") +
       h.p(`A lender must require flood insurance when the building is in FEMA's high-risk zone, and can ask for it anywhere.`) +
-      h.p(`In the Little River ZIP, a flood policy on a house outside the zone usually costs about ${POL_X} a year, and inside it about ${POL_A}. A new policy starts 30 days after you apply and pay, unless you buy it with your home loan.`) },
+      h.p(`In the Little River ZIP, a flood policy on a house outside the zone usually costs about ${POL_X} a year, and inside it about ${POL_A}. A new policy starts 30 days after you apply and pay, unless you buy it with your home loan.`) +
+      h.cta("Find out the flood risk of one Little River house", "Send us the address. We check its flood map, its elevation and the seller's flood disclosure, and tell you whether a lender must require flood insurance.", "Have us check a house's flood risk", "/contact/", bg) },
 
     { h2: "What does it cost to own a home in Little River each year?", toc: "Yearly cost", id: "yearly-cost", html: () =>
       h.p(`A typical resold house you live in costs about ${r100(WX.tax_4pct + 480 + qx(0.25))} to ${r100(WX.tax_4pct + 480 + qx(0.75))} a year in property tax, a flood policy and homeowners insurance, before wind and hail cover.`) +
@@ -657,7 +659,7 @@ module.exports = G.page({
       h.p(`That insurance range is for a house insured for $350,000. It leaves out wind and hail, which is priced on its own here. We get that quote for any house before you make an offer.`) +
       h.p(`South Carolina taxes a home you live in on 4 percent of its value, and a second home or rental on 6 percent, so the same house as a rental pays about ${TAX_RENT}. The owner must apply for the lower rate; our ${h.a("/buyers/property-taxes/", "property tax page")} shows how. Where there is an HOA, its fee comes on top, and we read its budget and rules with you. Our ${h.a("/buyers/coastal-insurance/", "coastal insurance page")} explains each policy.`) },
 
-    { h2: "What do homes cost in Little River, SC?", toc: "Home prices", id: "home-prices", html: () =>
+    { h2: "What do homes cost in Little River, SC?", toc: "Home prices", id: "home-prices", html: (bg) =>
       h.p(`A resold house in Little River usually sold for about ${HOUSE} in the past year. Half sold for between about ${r1k(SZ.house_resale.q1)} and ${r1k(SZ.house_resale.q3)}. New houses from builders sold for less in the middle.`) +
       PRICE_CHART +
       h.h3("What kind of homes are here") +
@@ -670,7 +672,8 @@ module.exports = G.page({
       ].map(([name, t, k]) => ({ name, value: t.median, valueText: r1k(t.median), feature: `about ${k} for sale` })),
       { caption: "Homes for sale with a Little River address, at our last count", nameLabel: "Kind", featureLabel: "for sale", valueLabel: "Middle asking price", compact: true,
         note: "Asking prices, not sales. Listing counts from the Coastal Carolinas Association of REALTORS MLS, in aggregate." }) +
-      h.p(`About ${L.api_totals["house+new_construction"]} of the houses for sale were new construction, and ${L.house_under_300k} asked under $300,000.`) },
+      h.p(`About ${L.api_totals["house+new_construction"]} of the houses for sale were new construction, and ${L.house_under_300k} asked under $300,000.`) +
+      h.cta("Know what a Little River house is worth before you offer", "Send us the address. We pull what nearby homes like it sold for in the past year and give you a value with those sales behind it.", "Have us value a Little River house", "/contact/", bg) },
 
     { h2: "What do homes rent for in Little River?", toc: "Renting out", id: "renting-out", html: () =>
       h.p(`HUD's Small Area Fair Market Rent for a three-bedroom in the Little River ZIP is ${money(HUD["29566"]["3"])} a month, with utilities. That is above North Myrtle Beach's ZIP and Myrtle Beach's, and close to Carolina Forest's.`) +
@@ -684,10 +687,11 @@ module.exports = G.page({
       h.ul(["a Horry County business license;", "a county hospitality and accommodations account;", "a South Carolina sales and accommodations tax account;", "a yearly county personal property return for its furnishings, due April 30."]) +
       h.p(`An HOA's rules can forbid short stays, and we read them first. See ${h.a("/invest/str-rules/", "the short-term rental rules by town")} and ${h.a("/invest/airbnb-income/", "what a nightly rental earns by town")}.`) },
 
-    { h2: "Is the Carolina Bays Parkway being extended through Little River?", toc: "The new road", id: "carolina-bays-parkway", html: () =>
+    { h2: "Is the Carolina Bays Parkway being extended through Little River?", toc: "The new road", id: "carolina-bays-parkway", html: (bg) =>
       h.p(`The extension is planned but not built. The Carolina Bays Parkway, SC 31, would be extended from SC 9 north-east, passing north and northwest of Little River's old village. It would cross the state line to US 17 near Shallotte, North Carolina. It would be a multi-lane freeway, partly on new ground.`) +
       h.p(`South Carolina's part is in SCDOT's current program. North Carolina has not funded land buying or building for its part. The whole project is estimated at $797 million.`) +
-      h.p(`The two states have named a preferred route. The final choice comes after they review the comments from the public hearings. If you like a house in the north-west part, we show you where it sits against the preferred route's map.`) },
+      h.p(`The two states have named a preferred route. The final choice comes after they review the comments from the public hearings.`) +
+      h.cta("See how close a house is to the planned road", "Send us the address of a house in the north-west part. We show you where it sits on the map of the preferred route.", "Have us map a house against the route", "/contact/", bg) },
 
     { h2: "What are the pros and cons of living in Little River?", toc: "Pros and cons", id: "pros-and-cons", html: (bg) =>
       h.p("The good points are the water, the price and a year-round town. The hard ones are the few houses on the water, flooding at the water's edge, and the drive to the airport.") +

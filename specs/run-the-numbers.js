@@ -194,6 +194,45 @@ main#main>section[style^="background:var(--navy)"]>.wrap{background:linear-gradi
 @media (max-width:360px){main#main .rn-line b{font-size:.98rem}main#main .rn-line em{font-size:1rem}}
 </style>`;
 
+/* Design pass, 2026-11-08 (Blog-Brain redo3/invest-run-the-numbers/DESIGN.md): a two-line headline and the hero facts
+   as one plain line, one card style (the analyzer, the sheet, the charts and the two big offers), plain lists and a
+   plain table under thin rules, the three small offers as lines under a brass rule, the photo beside the 1% chart on
+   a wide screen without a frame, and one block width of 720 px. */
+const S = "main#main", RULE = "1px solid rgba(28,32,40,.16)";
+const FLAT = "background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important";
+const CARD = "background:linear-gradient(180deg,rgba(255,255,255,.82),rgba(255,255,255,.58));border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 10px 26px -18px rgba(28,32,40,.35)";
+const CSS2 = "<style>"
+  /* 1. The headline: the italic line at about half the H1's size, on its own line; the facts as one plain line. */
+  + `@media (min-width:700px){${S} .detail-h1{text-wrap:balance}}${S} .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}`
+  + `@media (max-width:959px){${S} .detail-h1 em{color:#8a5226!important}}`
+  + `${S} .detail-media{max-width:720px!important}${S} .c3-glance{max-width:720px;gap:0 1.4rem!important;border-top:${RULE};border-bottom:${RULE}}`
+  + `${S} .c3-glance li{${FLAT};padding:.7rem 0!important;line-height:1.4}${S} .c3-glance strong{font-size:1.1rem!important;font-weight:700;line-height:1.25}${S} .c3-glance span.t{font-size:.95rem!important;line-height:1.4!important}`
+  + `@media (max-width:699px){${S} .c3-glance{grid-template-columns:1fr!important;border-bottom:0}${S} .c3-glance li{border-bottom:${RULE}!important;flex-direction:row!important;text-align:left!important;justify-content:flex-start!important;gap:.7rem!important;padding:.55rem 0!important}${S} .c3-glance .i{width:2rem!important;height:2rem!important}}`
+  /* 2. One block width of 720 px, and one card style for the tool, the sheet and the charts. */
+  + `${S} .rn-embed,${S} .rn-sheet,${S} .rn-rent,${S} .rn-tax,${S} .c3-gchart,${S} .rn-hard,${S} #rnWrap,${S} #rnOk{max-width:720px!important;box-sizing:border-box}`
+  + `${S} .rn-sheet,${S} .rn-rent,${S} .rn-tax,${S} .c3-gchart{${CARD};border-radius:20px!important}`
+  + `${S} .rn-sheet,${S} .rn-rent,${S} .rn-tax{padding:1.1rem 1.3rem 1rem!important}@media (max-width:520px){${S} .rn-sheet,${S} .rn-rent,${S} .rn-tax{padding:1rem .95rem .9rem!important}}`
+  + `${S} .rn-rent figcaption,${S} .rn-tax figcaption{${FLAT};padding:0!important;margin-top:.8rem!important}`
+  + `${S} .rn-chips li{background:none;border-left:2px solid #c4783a;border-radius:0;padding:.1rem 0 .1rem .7rem}`
+  /* 3. The costs table: a plain table under thin rules, not a card. */
+  + `${S} .rn-costs>div{${FLAT};padding:0!important;max-width:720px!important}`
+  + `${S} .rn-costs table{width:100%;border-collapse:collapse}${S} .rn-costs th,${S} .rn-costs td{border-bottom:${RULE}!important}${S} .rn-costs td:first-child,${S} .rn-costs th:first-child{padding-left:0!important}`
+  /* the three things a calculator cannot see: three plain columns under a rule */
+  + `${S} .rn-plain{max-width:720px;gap:0 1.6rem;margin:1.1rem 0 1.4rem}${S} .rn-plain .rn-card{${FLAT};padding:.9rem 0 .2rem!important;border-top:${RULE}!important}`
+  + `@media (min-width:760px){${S} .rn-plain{grid-template-columns:repeat(3,minmax(0,1fr))}}`
+  + `${S} .rn-plain .rn-card h3{align-items:flex-start;font-size:1.06rem!important}${S} .rn-plain .rn-card h3 .i{display:none}${S} .rn-plain .rn-card p{margin:0 0 .7rem}`
+  /* 4. The three small offers: a line under a brass rule, not a card; the two big offers keep theirs. */
+  + `${S} div[style^="border-left:3px solid var(--brass)"]{${FLAT};border-top:2px solid #c4783a!important;padding:1rem 0 .2rem!important;margin:1.8rem 0 .6rem!important;max-width:720px}`
+  + `${S} div[style^="border-left:3px solid var(--brass)"]>p:first-child{font-family:var(--sans);font-size:1.08rem}`
+  /* 5. The photo: no frame; on a wide screen it sits beside the 1% chart and stays in view. */
+  + `${S} .rn-onerow .c3ph-hero{${FLAT};padding:0!important;max-width:720px!important}${S} .rn-onerow .c3ph-hero figcaption{padding:0!important;margin-top:.55rem}`
+  + `@media (min-width:1180px){${S} .rn-onerow{display:grid;grid-template-columns:720px minmax(0,1fr);column-gap:2.6rem;align-items:start;margin:1.2rem 0 1.4rem}`
+  + `${S} .rn-onerow>.c3-gchart{grid-column:1;grid-row:1;margin:0!important}${S} .rn-onerow>.c3ph-hero{grid-column:2;grid-row:1;margin:0!important;position:sticky;top:9.5rem}}`
+  /* the header phone at 1000 to 1100 px, copied from the approved pages (hoa-documents) */
+  + "@media (min-width:1000px) and (max-width:1100px){.header-ctas .hdr-phone{display:none!important}}"
+  + `${S} h2,${S} h3,${S} .rn-rent .cap,${S} .rn-tax .cap,${S} .c3-gchart .cap{text-wrap:balance}`
+  + "</style>";
+
 /* ---------------------------------------------------------------------------- */
 /* Section 1: the calculator.                                                     */
 /* Hand-worked cases (PLAYBOOK A29b), from rows 17 to 19, before insurance and any loan:
@@ -314,9 +353,14 @@ const HOMES3 = [
   { name: "3-bedroom house, Longs", s: SL },
   { name: "2-bedroom condo, inside the City of Myrtle Beach", s: SC },
 ];
+/* Design pass 2026-11-08: a segment that is zero on every home (insurance, left to the reader's quote) is not drawn
+   and not in the key, and the title says the finding. */
+const SEG_SHOWN = SEG.filter(([k]) => HOMES3.some((x) => segVal(x.s, k) > 0));
+const keepPct = (s) => pct(leftAfter(s), s.rent_year);
 const rentBars = () => {
+  const SEG = SEG_SHOWN;
   const label = HOMES3.map((x) => `${x.name}: ${SEG.map(([k, t]) => `${t} ${pct(segVal(x.s, k), x.s.rent_year)} percent`).join(", ")}`).join(". ");
-  return `<figure class="rn-rent"><span class="cap">Where each home's rent goes in a year</span>`
+  return `<figure class="rn-rent"><span class="cap">What is left of a year's rent: ${keepPct(SH)} and ${keepPct(SL)} percent on the houses, ${keepPct(SC)} percent on the condo</span>`
     + `<ul class="rn-key" aria-hidden="true">${SEG.map(([, t, c]) => `<li><i style="background:${c}"></i>${t}</li>`).join("")}</ul>`
     + `<div role="img" aria-label="${label}.">`
     + HOMES3.map((x) => `<div class="rn-home"><div class="rn-hl"><strong>${x.name}</strong>, asking ${money(x.s.price)}, rent ${money(x.s.rent_month)} a month</div>`
@@ -346,10 +390,13 @@ if (SHOWN.reduce((t, z) => t + z.pass_1pct, 0) !== H1.pass12) throw new Error("t
 const zipName = (z) => /^Conway/.test(z.name) ? `Conway (${z.zip})` : z.name.replace(" (north end)", ", north end");
 if (BYZIP.reduce((t, z) => t + z.houses, 0) !== H1.n || BYZIP.reduce((t, z) => t + z.pass_1pct, 0) !== H1.pass12 || BYZIP.reduce((t, z) => t + z.pass_8pct, 0) !== H1.pass8) throw new Error("chart file and findings.json disagree");
 const LONGS = BYZIP.find((z) => z.zip === "29568");
+/* The chart's title names the area at the top of the sorted bars (design pass 2026-11-08). */
+const ONE_TOP = [...SHOWN].sort((a, b) => b.pass_8pct / b.houses - a.pass_8pct / a.houses)[0].name;
+if (ONE_TOP !== "Longs") throw new Error("the 1% chart's top area changed: reword its title");
 const ONE_CHART = G.bars(SHOWN.map((z) => ({ name: zipName(z), value: z.pass_8pct / z.houses * 100, valueText: `${z.pass_8pct} of ${z.houses}`,
   ...(z.pass_1pct ? { feature: `${z.pass_1pct} pass the 1% rule` } : {}) })).sort((a, b) => b.value - a.value),
-  { caption: "Houses for sale whose yearly rent is at least 8 percent of the price", nameLabel: "Area", featureLabel: "houses that pass the 1% rule", valueLabel: "houses at 8 percent or more", max: 100, compact: true,
-    note: `Houses with 3 or more bedrooms for sale, each against HUD's fair market rent for its ZIP code and bedrooms. The 1 percent rule asks for 12 percent a year, so the bar uses a lower test, 8 percent, to show where the rent comes closest. Not shown: ${LEFT_OUT.map((z) => `${z.name}, ${z.houses} houses, none passing`).join("; ")}.` });
+  { caption: `${ONE_TOP} comes closest: houses for sale whose yearly rent is at least 8 percent of the price`, nameLabel: "Area", featureLabel: "houses that pass the 1% rule", valueLabel: "houses at 8 percent or more", max: 100, compact: true,
+    note: `Houses with 3 or more bedrooms for sale, each against HUD's fair market rent for its ZIP code and bedrooms. The 1 percent rule asks for 12 percent a year. The bar uses a lower test, 8 percent, to show where the rent comes closest. Not shown: ${LEFT_OUT.map((z) => `${z.name}, ${z.houses} houses, none passing`).join("; ")}.` });
 
 /* Section 4: the tax after a sale (rows 6 to 9). */
 const M4 = MULT.seller_on_4pct, M6 = MULT.seller_on_6pct_no_ati_exemption, M6X = MULT.seller_on_6pct_with_ati_exemption;
@@ -358,7 +405,7 @@ const per1000 = (m) => r100(m * 1000);
 const plainLabel = (t) => t.replace(/<[^>]+>/g, "");
 const taxRow = (cls, label, f) => `<div class="rn-tr${cls}"><span class="l" aria-hidden="true">${label}</span><svg class="b" role="img" aria-label="${plainLabel(label)}" viewBox="0 0 100 10" preserveAspectRatio="none" style="--f:${f.toFixed(3)}"><rect width="100" height="10" fill="currentColor"/></svg></div>`;
 const TMAX = 4;
-const TAX_FIG = `<figure class="rn-tax"><span class="cap">Your next tax bill against the seller's, outside city limits</span>`
+const TAX_FIG = `<figure class="rn-tax"><span class="cap">Your next tax bill outside city limits: about ${M4.median.toFixed(1)} times the seller's on an owner's home, ${M6.median.toFixed(1)} times on a rental</span>`
   + `<div>`
   + `<div class="rn-tg"><p>Buying a home taxed at 4 percent, as an owner's home</p>${taxRow("", "The seller's bill: <b>$1,000</b>", 1 / TMAX)}${taxRow(" you", `Your next bill: <b>about ${per1000(M4.median)}</b>`, M4.median / TMAX)}</div>`
   + `<div class="rn-tg"><p>Buying a home already taxed at 6 percent, such as a rental</p>${taxRow("", "The seller's bill: <b>$1,000</b>", 1 / TMAX)}${taxRow(" you", `Your next bill: <b>about ${per1000(M6.median)}</b>`, M6.median / TMAX)}</div>`
@@ -366,9 +413,10 @@ const TAX_FIG = `<figure class="rn-tax"><span class="cap">Your next tax bill aga
 
 /* Section 5: condo dues against the rent, by area (rows 15, 16). */
 const CONDOS = F.gross_yield_by_zip.filter((r) => /^condo/.test(r.type));
+const DUES_MIN = Math.min(...CONDOS.map((r) => r.dues_share_of_rent_pct)), DUES_MAX = Math.max(...CONDOS.map((r) => r.dues_share_of_rent_pct));
 const DUES_CHART = G.bars(CONDOS.map((r) => ({ name: r.name.replace(" (north end)", ", north end"), value: r.dues_share_of_rent_pct, valueText: `${r.dues_share_of_rent_pct}% of the rent`,
   feature: `${money(r.median_dues)} of ${money(r.rent)}` })).sort((a, b) => a.value - b.value),
-  { caption: "The middle 2-bedroom condo's HOA dues, as a share of HUD's rent", nameLabel: "Area", featureLabel: "dues of the rent, a month", valueLabel: "dues, share of the rent", max: 100, compact: true,
+  { caption: `HOA dues take ${DUES_MIN} to ${DUES_MAX} percent of HUD's rent on the middle 2-bedroom condo`, nameLabel: "Area", featureLabel: "dues of the rent, a month", valueLabel: "dues, share of the rent", max: 100, compact: true,
     note: "The middle monthly dues of 2-bedroom condos for sale in each ZIP code, against HUD's fair market rent for 2 bedrooms there." });
 const CF_CONDO = CONDOS.find((r) => r.zip === "29579"), NE_CONDO = CONDOS.find((r) => r.zip === "29572");
 
@@ -422,7 +470,7 @@ module.exports = G.page({
   theme: "glass",
   url: SELF,
   hub: { name: "Invest", url: "/invest/" },
-  title: "Myrtle Beach Rental Property Calculator: Is It a Good Deal?",
+  title: "How to Analyze a Myrtle Beach Rental: 1% Rule, Tax, Dues",
   description: `${H1.pass12} of ${n(H1.n)} houses for sale here pass the 1 percent rule. Try our free rental analyzer, with Chapter3 AI, on any Grand Strand address.`,
   ogTitle: "Is this Myrtle Beach rental a good deal? Run the numbers here",
   crumb: "Run the numbers",
@@ -439,17 +487,17 @@ module.exports = G.page({
   toc: false,
   author: "devin",
   shortAnswer: [
-    `Usually not, for cash flow. Take out the tax, dues, management and repairs. The middle house for sale in Carolina Forest or Longs then keeps about ${capRound(SH)} to ${capRound(SL)} percent of its price a year, before insurance and any loan. A condo keeps about ${capOf(SC).toFixed(1)} percent. Our target is ${CAP_TARGET}. The rest is the rise in price, which beat our ${APP_TARGET} percent target over five and ten years.`,
-    `The tax is higher than the listing shows. A rental pays about ${r100(PER100K(MILLS.unincorporated))} a year for each $100,000 of value outside city limits, about 3 times what an owner who lives there pays. The year after you buy, the county resets the value to about what you paid.`,
+    `Usually not, if you want cash flow: the rent left after costs. Take out tax, HOA dues, management and repairs. The middle house for sale in Carolina Forest or Longs keeps about ${capRound(SH)} to ${capRound(SL)} percent of its price, before insurance and any loan. A condo keeps about ${capOf(SC).toFixed(1)} percent. Our target is ${CAP_TARGET} percent. The rest is the rise in price, which beat our ${APP_TARGET} percent target over five and ten years.`,
+    `The tax is higher than the listing shows. A rental pays about ${r100(PER100K(MILLS.unincorporated))} a year for each $100,000 of value outside city limits, about 3 times what an owner living there pays. The year after you buy, the county resets the value to about what you paid.`,
   ],
   sections: [
     /* Owner, 2026-11-03: "an interactable copy of the rental analyzer with the working AI in the blog page".
        The real analyzer (/invest/long-term-rental/) in embed mode, framed here; it reports its height. */
     { h2: "How do you run the numbers on a Myrtle Beach rental?", toc: "Analyzer", id: "calculator", html: () =>
-      CSS +
+      CSS + CSS2 +
       h.p("Use our rental analyzer. Enter an address and the price, and say whether you pay cash or take a loan. It fills in the rent and the costs, and Chapter3 AI sums up what the numbers mean. Change any number and the results change with it.") +
       ANALYZER +
-      h.raw(`<p class="rn-note">The analyzer's rent and costs are estimates for a first look. For one address we check the rent against nearby rentals and the dues against the association's papers: ${h.a("#run-form", "send it to us")}. For a nightly rental, read the ${h.a("/invest/str-rules/", "rules by city")} first.</p>`) },
+      h.raw(`<p class="rn-note">The analyzer's rent and costs are estimates for a first look. For one address we check the rent against nearby rentals and the dues against the association's papers: ${h.a("#run-form", "send it to us")}. For a nightly rental, read the ${h.a("/invest/str-rules/", "rules by city")} first. Run any address through our ${h.a("/invest/long-term-rental/", "free long-term rental analyzer")}.</p>`) },
 
     { h2: "What does the numbers sheet look like?", toc: "The sheet", id: "sheet", html: () =>
       h.p(`One page with every cost and where each number comes from. Here it is for the middle 3-bedroom house for sale in Carolina Forest, asking ${money(SH.price)}.`) +
@@ -461,16 +509,14 @@ module.exports = G.page({
 
     { h2: "Does the 1 percent rule work in Myrtle Beach?", toc: "The 1% rule", id: "one-percent-rule", html: () =>
       h.p(`Almost never for a house. The rule asks for a month's rent of at least 1 percent of the price. Of ${n(H1.n)} houses with 3 or more bedrooms for sale in Horry County, ${H1.pass12} pass. Longs has ${LONGS.pass_1pct} of them. We ran this count on ${RAN_ON}.`) +
-      ONE_CHART +
-      PHOTO() +
+      `<div class="rn-onerow">` + ONE_CHART + PHOTO() + `</div>` +
       h.p(`Condos often pass on price alone, then fail once the dues are counted. In the ZIP codes we tested, about 1 in ${C_PRICE_ONE_IN} condos for sale passes on price. Count the dues against the rent, and fewer than ${C_DUES_PER100} in 100 still pass.`) +
       ONE_PCT_OFFER },
 
     { h2: "Why is the tax on the listing not the tax you will pay?", toc: "The tax", id: "tax", html: (bg) =>
       h.p("Because the listing shows the seller's bill. After you buy, the county resets the value to about what you paid. A rental also pays a higher rate than a home its owner lives in.") +
       h.p(`A rental pays about ${TAX_OUT} a year for each $100,000 of value outside city limits, and about ${TAX_MB} in the City of Myrtle Beach. Outside city limits, that is about 3 times what an owner who lives there pays.`) +
-      h.p(`A home its owner does not live in, such as a house rented out year-round or a second home, is taxed on ${h.ext(T12_43, "6 percent of its value")}. The home you live in is taxed on 4 percent. That 6 percent is the share of the value that is taxed, not the yearly rate. A rental also pays the school operating tax, which a home you live in does not.`) +
-      h.p("Rent out the home you live in for more than 72 days in a calendar year, and it loses the 4 percent rate. Active-duty military under orders keep it.") +
+      h.p(`A home its owner does not live in, such as a house rented out year-round or a second home, is taxed on ${h.ext(T12_43, "6 percent of its value")}. More on the 4 and 6 percent rates: ${h.a("/buyers/property-taxes/", "Horry County property tax rates")}.`) +
       h.p(`We read the county's deeds for this year's resales and the value each seller was taxed on. The middle home sold for about ${TR.all.median_price_over_taxable.toFixed(1)} times that value.`) +
       TAX_FIG +
       h.p(`Buy a home taxed at 4 percent and rent it out, outside city limits, and your next bill is about ${M4.median.toFixed(1)} times the seller's. Buy a home already taxed at 6 percent, such as a rental from another landlord, and it is about ${M6.median.toFixed(1)} times. In our experience, taxes stop more rental deals than insurance does.`) +
@@ -479,26 +525,19 @@ module.exports = G.page({
       h.p(`A rental bought from another landlord can get a break. The 25 percent exemption applies only when the home was taxed at 6 percent before the sale and stays at 6 percent after it. Then a quarter of its new value is exempt, but the taxed value cannot fall below the county's current market value.`) +
       h.p("The owner or the owner's agent must notify the county assessor before January 31 of the first tax year it applies. We remind you before the deadline.") +
       h.p(`Every town's rate is in our ${h.a("/buyers/property-taxes/", "property tax calculator")}.`) +
-      h.cta("Want the tax for one address?", "We work out the bill you would pay as a landlord, from the county's record for that home and the rate in its town.", "Have us run the numbers on a home", "#run-form", bg) },
+      h.cta("Want the tax for one address?", "We work out the bill you would pay as a landlord, from the county's record for that home and the rate in its town.", "Have us work out a rental's tax", "#run-form", bg) },
 
-    { h2: "What does a condo's HOA fee do to the numbers?", toc: "Condo dues", id: "condo-dues", html: () =>
+    { h2: "What does a condo's HOA fee do to the numbers?", toc: "Condo dues", id: "condo-dues", html: (bg) =>
       h.p("It takes a large share of the rent. More than half of condos for sale on the Grand Strand list dues over $600 a month.") +
       h.p(`For a 2-bedroom condo, the middle dues take from about a quarter of HUD's rent in ${CF_CONDO.name} to about half at the ${NE_CONDO.name.includes("north end") ? "north end of Myrtle Beach" : NE_CONDO.name}.`) +
       DUES_CHART +
-      h.p(`The dues are why the condo in the sheet above keeps so little. Our ${h.a("/invest/condo-buildings/", "condo buildings page")} lists dues building by building. A condo rented by the night has different numbers: our ${h.a("/invest/airbnb-income/", "Airbnb income page")} has them by area, and ${h.a("/invest/condos/", "our condo guide")} covers the building rules.`) },
+      h.p(`The dues are why the condo in the sheet above keeps so little. Our ${h.a("/invest/condo-buildings/", "condo buildings page")} lists dues building by building. A condo rented by the night has different numbers: our ${h.a("/invest/airbnb-income/", "Airbnb income page")} has them by area, and ${h.a("/invest/condos/", "our condo guide")} covers the building rules.`) +
+      h.cta("One condo's dues, set against its rent", "Send us a condo you like. We get its dues and rental rules from the association's papers and show you what is left of the rent.", "Have us look at a condo's dues", "#run-form", bg) },
 
     { h2: "What cap rate, cash-on-cash return and coverage should you aim for here?", toc: "The ratios", id: "ratios", html: () =>
-      h.p(`Our targets are a cap rate of ${CAP_TARGET} percent or more, coverage of ${COV_TARGET} or more, and prices that rise ${APP_TARGET} percent a year or more. None of the three homes in the sheet reaches the cap rate target.`) +
-      h.p(`Why do investors buy here? ${APP_LINE} Our agents keep a list of investors who buy for a modest cash flow plus that rise in price. The ${h.a(RETURNS, "rental returns page")} breaks the rise down by area.`) +
-      `<div class="rn-cards">`
-      + card("dollar", "Cap rate", ["The rent left after every cost in a year, divided by the price. No loan is in it, so it compares homes, not deals."], `Our target: ${CAP_TARGET} percent or more.`)
-      + card("key", "Cash-on-cash return", ["The cash left after the loan payments in a year, divided by the cash you put in. If you pay cash, it is the same as the cap rate. A loan raises it or lowers it, and the calculator shows which once you type the payment."], `With no loan, aim for the same ${CAP_TARGET} percent.`)
-      + card("calendar", "Coverage (DSCR)", [`The debt service coverage ratio: the rent divided by the monthly cost of the loan, taxes, insurance and dues. A DSCR loan is judged on this ratio. A loan officer at our preferred lender starts writing DSCR loans at 0.75, so a home under ${COV_TARGET} can still get one.`], `Our target: ${COV_TARGET}, a rent a quarter more than those monthly costs.`)
-      + card("home", "The 1 percent rule", ["A month's rent should be at least 1 percent of the price. It is a quick screen. The cap rate tells you more."])
-      + card("tax", "The 50 percent rule", ["Investors' shorthand: the costs before the loan take about half the rent. The chart of the three homes above shows it fits the houses and fails the condo."])
-      + `</div>` },
+      h.p(`Our targets are a cap rate of ${CAP_TARGET} percent or more, coverage of ${COV_TARGET} or more, and prices that rise ${APP_TARGET} percent a year or more. Cap rates by area are on our ${h.a(RETURNS, "rental returns page")}.`) },
 
-    { h2: "What are the expenses on a rental property here?", toc: "Every cost", id: "costs", html: () =>
+    { h2: "What are the expenses on a rental property here?", toc: "Every cost", id: "costs", html: (bg) =>
       h.p("Six come out of the rent on every long-term rental: the property tax, insurance, HOA dues, management, repairs and empty months. A nightly rental adds its own taxes and licenses.") +
       `<div class="rn-costs">` + h.table(["Cost", "What it is here"], [
         ["<strong>Property tax</strong>", `About ${TAX_OUT} a year for each $100,000 of value outside city limits, and ${TAX_MB} in the City of Myrtle Beach, on a value reset to about the price after you buy. ${h.a("#tax", "Why the listing's tax is not yours")}.`],
@@ -508,11 +547,12 @@ module.exports = G.page({
         ["<strong>Repairs and empty months</strong>", "We allow 10 percent of the rent."],
         ["<strong>Nightly rental taxes and licenses</strong>", `Only on a short-term rental. ${h.a("/invest/accommodations-tax/", "The accommodations tax")}, by town.`],
         ["<strong>Depreciation, a tax saving</strong>", `The building, not the land, is depreciated over ${h.ext(IRS527, "27.5 years")} for federal tax. ${h.a("/invest/rental-depreciation/", "How it works")}.`],
-      ]) + `</div>` },
+      ]) + `</div>` +
+      h.cta("An insurance quote before you offer", "Insurance is priced house by house. Pick a home, and we get you a quote on it before you make an offer.", "Have us get an insurance quote", "/contact/", bg) },
 
     { h2: "What can a calculator not see?", toc: "What we check", id: "what-we-check", html: () =>
       h.p("The community's rules, how rents keep up with prices, and the seller's own numbers. These are three things we check for you before you offer.") +
-      `<div class="rn-cards">`
+      `<div class="rn-cards rn-plain">`
       + card("gate", "A rental ban", ["Some communities here ban renting the house at all. We filter those out when we search for you, and we read the HOA papers for rules that would block your plan."])
       + card("calendar", "Prices rose, the rent did not", ["An agent now on our team helped buyers purchase about eight nearly identical townhouses in a new Little River community. Each rented for a little over $2,000.", "Prices rose from $230,000 to $292,000 over about 18 months. The rents stayed flat, and the cash flow went away for later buyers."])
       + card("dollar", "The seller's cash flow is not yours", ["An agent at Chapter3 sold a rented house for an owner of 15 years. His cash flow was over $1,200 a month. The next investor would make about $600, because of higher taxes and a bigger loan.", "The agent marketed it to investors who accept a modest cash flow in an area where prices are rising. A cash buyer closed 13 days after it was listed."])
@@ -524,7 +564,7 @@ module.exports = G.page({
       h.ul([
         "The address, or the MLS number. Any home on the Grand Strand, listed with any brokerage, or one not for sale yet.",
         "Your plan: long-term rental, short-term rental, mid-term rental or fix and flip. Not sure is fine.",
-        `How you plan to pay, cash or a loan. We do not need your finances to run the home. ${h.a("/invest/cash-to-close/", "What you pay at closing")}.`,
+        `How you plan to pay, cash or a loan. We do not need your finances to run the home.`,
         `Whether you will stay in it yourself. ${h.a("/invest/14-day-rule/", "How your own stays change the tax")}.`,
       ]) + FORM +
       h.p("A condo can take longer when the dues or the rental rules are only in the association's papers, because we request them first. If the numbers work, we can set up a showing or walk the home on video for you. If they do not, we say so, and you keep the sheet.") },
@@ -553,6 +593,6 @@ module.exports = G.page({
   pageImages: () => PH.pageImages(PHOTO_REC),
   afterSources: () => CREDITS + PH.imageSchema([PHOTO_REC]),
   bottomCta: { h2: "Want the numbers on one home?", p: "Give us the address. We send back the sheet for that home the same day: the rent, the tax at the rate you will pay, the dues, and what is left.", label: "Have us run the numbers on a home", href: "#run-form" },
-  keywords: "rental property calculator Myrtle Beach, is this rental property a good investment, how to analyze a rental property deal, 1 percent rule Myrtle Beach, Horry County rental property tax, cap rate Myrtle Beach, cash on cash return, DSCR calculator, rental property expenses list, Myrtle Beach condo investment HOA dues",
+  keywords: "is this rental property a good investment, how to analyze a rental property deal, 1 percent rule Myrtle Beach, Horry County rental property tax, cash on cash return, rental property expenses list, Myrtle Beach condo investment HOA dues",
   about: "Rental property analysis for Myrtle Beach and Horry County, South Carolina: cash flow, cap rate, the 1 percent rule and the property tax on a rental",
 });

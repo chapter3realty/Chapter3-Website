@@ -163,6 +163,16 @@ const CSS = "<style>"
   /* The site header ran 5 px past a 1024 px window (critic, round 1; the same on every page). This page
      only narrows the header's gap between 1000 and 1100 px until the shared header CSS is fixed. NEEDS.md 10. */
   + "@media (min-width:1000px) and (max-width:1100px){header .header-inner{gap:2rem}}"
+  /* Light fix, triage 2026-11-08 (the approved look, Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md):
+     1. the italic line at about half the H1's size, on its own line; */
+  + "@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+  + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}"
+  /* 2. the Conway house photo without a card frame, and on a wide screen in a side column beside the town chart
+     it belongs to, as on /submarkets/garden-city/. Below 1,100 px the order is unchanged. */
+  + "main#main .c3-pg-part figure.c3ph-hero{background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;padding:0!important}"
+  + "main#main .c3-pg-part figure.c3ph-hero figcaption{padding:0!important}"
+  + "@media (min-width:1100px){main#main .c3-pg-part{display:grid;grid-template-columns:minmax(0,1fr) 400px;grid-template-rows:auto auto 1fr;column-gap:2.5rem;align-items:start}"
+  + "main#main .c3-pg-part>*{grid-column:1}main#main .c3-pg-part>figure.c3ph-hero{grid-column:2;grid-row:1/-1;margin:.3rem 0 0!important;max-width:none!important}}"
   + "</style>";
 
 /* ---------------------------------------------------------------------------- */
@@ -335,7 +345,7 @@ module.exports = G.page({
   theme: "glass",
   url: SELF,
   hub: { name: "Buyers", url: "/buyers/" },
-  title: "SC Housing Down Payment Help in Horry County | Chapter3",
+  title: "SC Down Payment Assistance Programs in Horry County | Chapter3",
   description: "SC Housing's $10,000 down payment help in Horry County: the income and price limits, who qualifies, when it is repaid, which homes count, and how to apply.",
   ogTitle: "SC Housing down payment help in Horry County: no first-time buyer rule, and the homes that count",
   crumb: "SC Down Payment Help",
@@ -348,16 +358,16 @@ module.exports = G.page({
   heroCta: { title: "Homes that fit SC Housing's limits, sent to you", label: "Get the list", href: CONTACT },
   author: "devin",
   shortAnswer: [
-    `The ${money(DPA)} is a second mortgage from SC Housing, the state's housing agency, and it pays toward the down payment and closing costs. SC Housing forgives it after you have lived in the home 15${NB}years. If you sell, refinance or move out sooner, you repay all of it, from the sale or the new loan.`,
+    `The ${money(DPA)} is a second mortgage from SC Housing, the state's housing agency. A second mortgage is a second loan on the home. It pays toward the down payment and closing costs. After you have lived in the home 15${NB}years, SC Housing forgives it, and you owe nothing on the ${money(DPA)}. If you sell, refinance or move out sooner, you repay all of it, from the sale or the new loan.`,
     `To qualify, a household of one or two can earn up to ${money(INC12)}, or ${money(INC3)} for three or more. The home can cost up to ${money(PRICE)}, you need a credit score of ${SCORE}, and you must own no other property when the loan closes.`,
   ],
   sections: [
-    { h2: "Do you qualify for SC Housing's down payment help in Horry County?", toc: "Do you qualify", id: "qualify", html: () =>
+    { h2: "Do you qualify for SC Housing's down payment help in Horry County?", toc: "Do you qualify", id: "qualify", html: (bg) =>
       CSS +
       h.p("You qualify for SC Housing's Homebuyer Program if you pass the seven tests below.") +
       RULES_HTML +
       h.h3("Do you earn too much?") +
-      h.p(`Probably not. SC Housing's limit for one or two people is about ${(INC12 / MED).toFixed(1)} times the median household income in Horry County.`) +
+      h.p(`Probably not. SC Housing's limit for one or two people is about ${(INC12 / MED).toFixed(1)} times the median, or middle, household income in Horry County.`) +
       INCOME_CHART +
       h.p("About four in five renter households in the county earn under $100,000, below the limit for any household size.") +
       /* Rows 2, 32 and F1 (reader, round 1: which loan, and how much cash). */
@@ -371,7 +381,8 @@ module.exports = G.page({
       + `<li><strong>VA:</strong> backed by the U.S. Department of Veterans Affairs, for veterans and service members.</li>`
       + `<li><strong>USDA:</strong> backed by the U.S. Department of Agriculture, for homes inside its area on our map below.</li>`
       + `<li><strong>Conventional:</strong> a loan no government agency backs.</li></ul>` +
-      h.p(`Our ${h.a("/buyers/closing-costs/", "closing cost guide")} adds up the costs at closing for a home at your price. Before you make an offer, we get the lender's figure for that home, so you know your number first.`) },
+      h.p(`Our ${h.a("/buyers/closing-costs/", "closing cost guide")} adds up the costs at closing for a home at your price. Before you make an offer, we get the lender's figure for that home, so you know your number first.`) +
+      h.cta("Know the cash you need for a home you like", "Pick a home, and we ask the lender how much cash you would bring to closing on it, before you make an offer.", "Have us find my cash to close", CONTACT, bg) },
 
     { h2: "Do you have to pay back SC Housing's $10,000?", toc: "Paying it back", id: "paying-it-back", html: () =>
       h.p(`Only if you sell, refinance or stop living in the home before 15${NB}years are up. It does not shrink a little each year: until year${NB}15, you owe all of it.`) +
@@ -384,18 +395,20 @@ module.exports = G.page({
       /* F15: SC Code 23-43-20 and 40-29-20 (critic and owner, round 3: "off-frame modular" was never explained). */
       h.p(`Houses, townhomes, condos in an approved building, and modular homes count, up to ${money(PRICE)}. A modular home is built in sections in a factory and set on a foundation, not on a steel frame.`) +
       /* Round 3 (owner): the chart carries the shares; this line is the one fact it does not show (F12). */
+      `<div class="c3-pg-part">` +
       h.p("Conway has more houses for sale at or under $450,000 than any other town, Myrtle Beach included.") +
       TOWN_CHART +
       PHOTO +
+      `</div>` +
       h.h3("Condos: under the price limit, but the building must be approved") +
       CONDO_TILES +
       h.p("Several of those nine are approved only for some phases or buildings. An FHA loan on a condo in any other building needs a separate approval for that one unit.") +
       h.p(`In Chapter3's experience, a building with a rental program usually fails the rules for a conventional loan, because so many owners are investors. Our ${h.a("/invest/non-warrantable-condos/", "guide to condos most lenders will not lend on")} explains why. We check the building's approval before you make an offer on a condo.`) +
       h.h3("Manufactured homes") +
       h.p("A manufactured home, once called a mobile home, is built on a permanent steel frame to HUD's code. The Homebuyer Program does not take it. Palmetto Home Advantage takes doublewide or larger manufactured homes on a permanent foundation, usually with a credit score of at least 660. A doublewide is built in two sections; a single-wide does not qualify.") +
-      h.cta("Houses and condos under $450,000", "Name the towns you like. An agent sends the houses and condos for sale there under SC Housing's price limit.", "Get the list", CONTACT, bg) },
+      h.cta("Houses and condos under $450,000", "Name the towns you like. An agent sends the houses and condos for sale there under SC Housing's price limit.", "Send me homes under $450,000", CONTACT, bg) },
 
-    { h2: "Can you buy with no money down in Horry County?", toc: "No money down", id: "no-money-down", html: () =>
+    { h2: "Can you buy with no money down in Horry County?", toc: "No money down", id: "no-money-down", html: (bg) =>
       h.p("Yes, with a USDA or VA loan. SC Housing offers both with no down payment. A USDA loan needs a home inside USDA's area, and that area leaves out the coast.") +
       h.p("The part left out is the coastal strip from Little River through Myrtle Beach to Murrells Inlet, and inland past Carolina Forest and Socastee. It is less than a fifth of the county's land.") +
       usdaMap() +
@@ -403,7 +416,8 @@ module.exports = G.page({
       USDA_TABLE +
       h.p("Murrells Inlet counts only its homes in Horry County.") +
       h.p("A home near the edge can fall on either side, so we check each address on USDA's own lookup before you make an offer.") +
-      h.p(`Our ${h.a("/buyers/va-loans/", "VA loan guide")} explains who can use a VA loan.`) },
+      h.p(`Our ${h.a("/buyers/va-loans/", "VA loan guide")} explains who can use a VA loan.`) +
+      h.cta("Is a home you like inside USDA's area?", "Send us the address, and we check it on USDA's own lookup.", "Have us check the address", CONTACT, bg) },
 
     { h2: "Which SC Housing program fits you in Horry County?", toc: "Which program", id: "which-program", html: () =>
       h.p("Four SC Housing programs are open to Horry County buyers now. A fifth, Palmetto Heroes, is closed until its next round. The voucher program works only where the local housing authority takes part. Find the line that matches you.") +
@@ -414,12 +428,13 @@ module.exports = G.page({
       h.p("Palmetto Heroes' 2026 round filled in about four weeks, after 272 loans. SC Housing has not published a date for the next round. A buyer needs a signed sales contract to get the help, so we start the home search before it opens.") +
       h.p("Families with Disabilities is open in every county, has no first-time buyer rule, and uses FHA, VA or USDA loans.") },
 
-    { h2: "Is there down payment help from Horry County or Myrtle Beach?", toc: "Local help", id: "local-help", html: () =>
+    { h2: "Is there down payment help from Horry County or Myrtle Beach?", toc: "Local help", id: "local-help", html: (bg) =>
       h.p("Not from the county or the cities directly. Horry County runs HUD's HOME program for Horry, Georgetown and Williamsburg counties, and that money goes to developers and nonprofits, not to buyers. Two other routes help buyers themselves.") +
       LOCAL_HTML +
       h.p("The bank grants go through banks that applied for them, and we find out which nearby banks still have money.") +
       h.h3("Can you use a bank grant and SC Housing's $10,000 together?") +
-      h.p("Yes, if the grant's own rules allow it. SC Housing's checklist for the lender has a line for a grant from anyone else, and the lender puts the grant's approval letter in the file.") },
+      h.p("Yes, if the grant's own rules allow it. SC Housing's checklist for the lender has a line for a grant from anyone else, and the lender puts the grant's approval letter in the file.") +
+      h.cta("See if a bank grant is open near you", "Name the town, and we find out which banks near it still have grant money and what income they allow.", "Ask us about bank grants", CONTACT, bg) },
 
     { h2: "How do you apply for SC Housing's down payment help?", toc: "How to apply", id: "how-to-apply", html: () =>
       h.p("You apply through an SC Housing approved lender, in the five steps below. The lender handles the application and the reservation.") +
@@ -431,7 +446,7 @@ module.exports = G.page({
       h.p("Our preferred lender is not on SC Housing's lender list for Horry County, so when one of these programs fits you, we introduce you to an approved lender.") +
       h.h3("If you still own a home somewhere else") +
       EXAMPLE +
-      h.p(`Our ${h.a("/buyers/first-time-home-buyer-myrtle-beach/", "first-time home buyer guide")} explains the rest of the purchase, step by step. If you are deciding where to look, our guide to the ${h.a("/buyers/affordable-places-to-live/", "most affordable places to live")} around Myrtle Beach describes each one.`) },
+      h.p(`Our first-time home buyer guide explains ${h.a("/buyers/first-time-home-buyer-myrtle-beach/", "the rest of the first-time buyer steps")}. If you are deciding where to look, our guide to the ${h.a("/buyers/affordable-places-to-live/", "most affordable places to live")} around Myrtle Beach describes each one.`) },
   ],
   faqTitle: "SC Housing questions",
   faq: [
@@ -458,6 +473,6 @@ module.exports = G.page({
   sourcesNote: "Homes for sale: Chapter3's count of MLS listings, in aggregate, by mailing address and list price; each placed on USDA's map. Not loan or tax advice.",
   afterSources: () => PHOTO_CREDIT + AFBA,
   bottomCta: { h2: "Find a home that fits SC Housing's limits", p: "Send us your household size and price range. We tell you which program fits, check each condo building's approval and each address on USDA's map, and send the homes that pass.", label: "Ask which program fits", href: CONTACT },
-  keywords: "SC Housing down payment assistance, SC Housing income limits Horry County, down payment assistance Myrtle Beach, Horry County first time home buyer program, Palmetto Home Advantage, Palmetto Heroes, SC Housing homebuyer program requirements, forgivable down payment assistance South Carolina, USDA eligible areas Horry County",
+  keywords: "SC Housing down payment assistance, SC Housing income limits Horry County, down payment assistance Myrtle Beach, Palmetto Home Advantage, Palmetto Heroes, SC Housing homebuyer program requirements, forgivable down payment assistance South Carolina, USDA eligible areas Horry County",
   about: "SC Housing down payment assistance for home buyers in Horry County, South Carolina",
 });

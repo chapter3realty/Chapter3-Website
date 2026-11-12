@@ -142,6 +142,11 @@ const M = maps("del-webb-north-myrtle-beach", [
   closeCaption: "Map of the streets and the clubhouse inside Del Webb North Myrtle Beach.",
 });
 
+/* Light fix, triage 2026-11-08: the italic line at about half the H1's size, on its own line (the approved look,
+   Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md). */
+const EM_CSS = "<style>@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+  + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}</style>";
+
 module.exports = {
   url: SELF,
   hub: { name: "55+ communities", url: HUB },
@@ -161,7 +166,6 @@ module.exports = {
     { icon: "beach", label: "Beach", text: "About 4 minutes" },
     { icon: "grocery", label: "Groceries", text: "About 6 minutes" },
     { icon: "hospital", label: "Hospital", text: "About 10 minutes" },
-    { icon: "lawn", label: "Lawn care", text: "Mowed for you" },
   ]),
   heroCta: { label: "Talk to an agent", href: "/contact/" },
   author: "devin",
@@ -171,7 +175,7 @@ module.exports = {
   ],
   sections: [
     { h2: "What are the homes like in Del Webb North Myrtle Beach?", toc: "The homes", html:
-      ph.css() +
+      EM_CSS + ph.css() +
       h.p("Most homes in Del Webb North Myrtle Beach are one story, so there are no stairs. They have two or three bedrooms and a garage, and most are about 1,400 to 2,700 square feet.") +
       STREET +
       h.p("The homes are on short streets around ponds, with the clubhouse, pools and courts in the middle of the neighborhood.") +
@@ -244,7 +248,7 @@ module.exports = {
         "If you sell, the next owner keeps the builder's warranty on the structure.",
         "The city's community center, with indoor pickleball, is about a minute away by car.",
       ], [
-        { text: "The builder is still building here.", act: "Ask which streets are finished before you choose a lot." },
+        { text: `${h.a("/hoa/developer-control-turnover/", "The builder is still building here")}.`, act: "Ask which streets are finished before you choose a lot." },
         { text: "Golf carts may cross US 17 but not drive along it." },
         { text: "The airport is about 35 minutes away by car." },
       ], { bg }) },

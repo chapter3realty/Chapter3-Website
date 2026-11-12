@@ -88,8 +88,8 @@ const TOOL = `
 
 module.exports = {
   url: "/invest/section-8-rentals/",
-  title: "Section 8 Rentals in Horry County, SC | Chapter3",
-  description: "Renting to Section 8 voucher tenants in Horry County: the two housing authorities, the payment standard by bedroom count, the inspection, and how you get paid.",
+  title: "Section 8 in Horry County: What Landlords Get Paid by Bedroom",
+  description: "Horry County's 2027 fair market rent is $1,823 for three bedrooms. Two housing authorities pay by direct deposit. The inspection and contract, step by step.",
   ogTitle: "Renting to Section 8 voucher tenants in Horry County",
   crumb: "Section 8 rentals",
   eyebrow: "Voucher rentals",

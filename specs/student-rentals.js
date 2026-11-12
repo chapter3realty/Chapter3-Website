@@ -26,6 +26,8 @@ const UDO = "https://www.conwaysc.gov/Current%20UDO%20(7.20.26).pdf";
 const HORRYZ = "https://www.horrycountysc.gov/media/i0pfcm2o/appendix-b-zoning-ordinance-upated-912026.pdf";
 const HUD = "https://www.hud.gov/helping-americans/fair-housing-act-overview";
 const FR98 = "https://www.govinfo.gov/content/pkg/FR-1998-12-18/html/98-33568.htm";
+const SAFMR = "https://www.huduser.gov/portal/datasets/fmr/smallarea/index.html";
+const DEEDS = "https://acclaimweb.horrycounty.org/AcclaimWeb/search/SearchTypeDocType";
 
 module.exports = {
   url: "/invest/student-rentals/",
@@ -68,7 +70,7 @@ module.exports = {
       h.p(`Yes. Families move here when their student starts at Coastal Carolina, and they buy a house so the student can live at home. ${h.ext(CDS, "Two thirds of the first-year class comes from outside South Carolina")}, 1,952 of the 2,931 students who enrolled in fall 2025. No public count says how many of those families buy a house here.`) +
       h.p(`The house is the family's legal residence. It is taxed at the 4 percent rate and financed as a primary residence. ${h.a("/buyers/property-taxes/", "How Horry County property tax is calculated")}.`) +
       h.p(`Moving here also changes what the student pays for school. ${h.ext(COA, "In-state tuition and fees are $11,640 for the 2026-27 year")}. Out-of-state tuition is $31,302. ${h.ext(RESFAQ, "The university requires twelve months")} in off-campus South Carolina housing before the resident rate applies. It turns down an application that looks like a move made to get that rate. Ask the university's residency office before you count on it.`) +
-      h.p(`A veteran's child can pay no tuition at all. ${h.ext(VETCODE, "State law admits the child of a wartime veteran free of tuition")} at any state-supported college here. The veteran must have been killed in action, died in service, or died of a service-related illness. A living veteran qualifies when permanently and totally disabled, held as a prisoner of war, missing in action, or awarded the Purple Heart or the Medal of Honor. ${h.ext(SCDVA, "In most cases the veteran and the child must each have lived in South Carolina")} for the twelve months before the application. A child who has lived here since birth meets that rule wherever the veteran lives. The child must be 26 or younger. It covers tuition, not fees, books or housing. Apply to the state veterans' affairs department, not to the school.`) +
+      h.p(`A child of certain wartime veterans can attend free of tuition; the rules are on ${h.ext(SCDVA, "the state veterans' affairs page")}.`) +
       h.p("The other pattern is simpler. The student rents, and about three in four times a parent co-signs the lease.") +
       h.p(`A first- or second-year student can live in the family house. ${h.ext(POLICY, "The university's housing policy")} exempts a student whose permanent address on file is within 50 miles of campus and who lives there with a parent or legal guardian. The exemption is automatic. The student does not apply for it.`) },
     { h2: "Which houses and neighborhoods fit?", html: (bg) =>
@@ -76,6 +78,15 @@ module.exports = {
       h.p(`The five overlay subdivisions are the closest and carry the four-person cap with the parking rule. The rest of the city carries the three-person cap. Unincorporated Horry County toward Carolina Forest carries five, at a longer drive. ${h.a("/submarkets/conway/", "Conway, the guide")}. ${h.a("/submarkets/carolina-forest/", "Carolina Forest, the guide")}.`) +
       h.p("Many communities here ban renting outright. We filter those out before you see a house. We then read the covenants and the association's rules for anything that blocks the strategy. That means a leasing cap, a minimum lease term, an occupancy limit or a parking rule. That review is the biggest value Chapter3 adds for an investor here.") +
       h.cta("Looking at a house near campus?", "Tell us the address. We tell you which cap applies, what the county record says the bedroom count is, and what the roommates' rent would need to be.", "Ask about Conway", "/contact/", bg) },
+    { h2: "What do houses near campus rent and sell for?", html:
+      h.p(`${h.ext(SAFMR, "HUD's fair market rent")} in Conway's ZIP code 29526 is $1,630 a month for three bedrooms and $1,900 for four, utilities included. It is not a measured rent. It is the most a housing voucher pays, and HUD's own estimate for this ZIP came in lower. These figures sit at HUD's floor. Split three ways, the three-bedroom figure is about $543 a person. Split four ways, the four-bedroom figure is $475 a person.`) +
+      h.p(`In the latest year of ${h.ext(DEEDS, "county deed records")}, 775 homes other than condos resold in ZIP 29526. They include townhouses and manufactured homes, and the middle price was $310,000. Half sold between about $247,000 and $384,000. Homes sold by builders in the same ZIP, townhouses included, sold at a middle price of $312,000.`) +
+      h.p("In the subdivisions recorded as Quail Creek Village, College Park and College Place II, next to campus, seven houses sold in the same year, from $280,000 to $435,000. The county record does not list bedrooms with a sale, so these prices are for houses of every size.") +
+      h.table(["Sales in the latest year", "Count", "Price"], [
+        ["Resales in ZIP 29526, condos left out", "775", "$310,000 middle"],
+        ["Homes sold by builders in ZIP 29526", "473", "$312,000 middle"],
+        ["Quail Creek Village, College Park and College Place II", "7", "$280,000 to $435,000"],
+      ]) },
     { h2: "How do you manage it from another state?", html:
       h.p(`Most of these owners live far away. Use a written lease that names every tenant and makes each one liable for the whole rent. Add a parent guarantor for each tenant. Hold the deposit under the deposit rules, and give the tenant the owner's name and address in writing. ${h.a("/invest/landlord-rules/", "The landlord rules")}.`) +
       h.p(`Plan the August turnover in June: inspection, paint, cleaning and a lease signed before the old one ends. ${h.a("/invest/property-management/", "A local manager")} does that for a share of the rent, or we give you the numbers to decide whether to self-manage.`) },
@@ -84,7 +95,6 @@ module.exports = {
   faq: [
     { q: "Can freshmen live in my rental house?", a: "Usually not. The university requires first- and second-year students who finished high school within two years to live on campus, with limited exemptions." },
     { q: "Can a freshman live at the parents' house near campus?", a: "Yes. The university's housing policy exempts a student whose permanent address on file is within 50 miles of campus and who lives there with a parent or legal guardian. The exemption is automatic." },
-    { q: "Can a veteran's child go to Coastal Carolina free?", a: "State law admits the child of a wartime veteran free of tuition at a state-supported college. The veteran must have been killed in action, died in service, or died of a service-related illness. A living veteran qualifies when permanently and totally disabled, held as a prisoner of war, missing in action, or awarded the Purple Heart or the Medal of Honor. In most cases the veteran and the child must each have lived in South Carolina for the twelve months before the application. A child who has lived here since birth meets that rule. The child must be 26 or younger. It covers tuition only." },
     { q: "How many students can share a house in Conway?", a: "Inside the city, a household is up to three unrelated people. In the five subdivisions next to campus, the cap is the bedroom count up to four, and overnight parking on the street or the yard is banned. In unincorporated Horry County it is five." },
     { q: "Do student tenants need a co-signer?", a: "Usually. We recommend tenants who earn three to five times the rent, and most students cannot. About three in four student leases in Chapter3's files carry a parent co-signer." },
     { q: "When should the lease start?", a: "Before classes begin. Fall 2026 classes begin August 19 and move-in runs August 12 to 16. A twelve-month lease from August 1 covers the summer; a nine-month lease leaves it to fill. Start marketing one month before the lease ends." },
@@ -101,6 +111,8 @@ module.exports = {
     { name: "SC veterans affairs, tuition", href: SCDVA },
     { name: "City of Conway ordinance", href: UDO },
     { name: "Horry County zoning", href: HORRYZ },
+    { name: "HUD FY2027 Small Area Fair Market Rents", href: SAFMR },
+    { name: "Horry County Register of Deeds", href: DEEDS },
   ],
   sourcesNote: "Educational only. Confirm the parcel with the planning office.",
   bottomCta: { h2: "Run the cap and the parking before you offer.", p: "Send the address. We check the city limit, the overlay, the bedroom count and the parking, and run the numbers.", label: "Send the address", href: RTN },

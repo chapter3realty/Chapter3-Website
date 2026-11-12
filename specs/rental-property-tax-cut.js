@@ -92,58 +92,81 @@ const C36 = "https://www.scstatehouse.gov/code/t12c036.php";
 /* ---------------------------------------------------------------- blocks */
 const CARD = "background:linear-gradient(180deg,rgba(255,255,255,.8),rgba(255,255,255,.56));border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 10px 26px -18px rgba(28,32,40,.35)";
 const CAP = "color:var(--navy);font-weight:600;font-family:var(--sans);font-size:1.0625rem;line-height:1.4";
+const S = "main#main", RULE = "1px solid rgba(28,32,40,.16)";
+const FLAT = "background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important";
 const CSS = "<style>"
-  + `main#main .rt-q{max-width:760px;margin:1.2rem 0 1.4rem;padding:1.2rem 1.3rem;border-radius:20px;${CARD};border-left:4px solid var(--brass)}`
-  + `main#main .rt-q p{margin:0 0 .7rem;color:var(--navy);font-family:var(--serif);font-size:1.2rem;line-height:1.5}`
-  + `main#main .rt-q p.by{margin:0}`
-  + `main#main .rt-q p.by{color:var(--muted);font-family:var(--sans);font-size:1rem;line-height:1.5}`
-  + `main#main .rt-tbl{max-width:760px;margin:1.2rem 0 1.2rem;border-radius:20px;overflow:hidden;${CARD}}`
-  + `main#main .rt-tbl .cap{${CAP};margin:0;padding:1rem 1.1rem .5rem}`
-  + `main#main .rt-tbl table{width:100%;border-collapse:collapse;font-family:var(--sans)}`
-  + `main#main .rt-tbl th{text-align:left;vertical-align:bottom;font-size:.9rem;color:var(--navy);font-weight:700;padding:.5rem .7rem;border-bottom:2px solid rgba(28,32,40,.18);line-height:1.3}`
-  + `main#main .rt-tbl td,main#main .rt-tbl tbody th{padding:.6rem .7rem;border-bottom:1px solid rgba(28,32,40,.08);color:var(--muted);font-size:1rem;line-height:1.4;vertical-align:top}`
-  + `main#main .rt-tbl tbody th{color:var(--navy);font-weight:600}`
-  + `main#main .rt-tbl .num{text-align:right;white-space:nowrap}main#main .rt-tbl td.num b{color:var(--navy)}`
-  + `main#main .rt-tbl .note{color:var(--muted);font-size:.95rem;line-height:1.5;margin:0;padding:.7rem 1.1rem .9rem}`
-  + `@media (max-width:699px){main#main .rt-tbl.rt-stack thead{display:none}main#main .rt-tbl.rt-stack tr{display:block;padding:.5rem 0;border-bottom:1px solid rgba(28,32,40,.1)}`
-  + `main#main .rt-tbl.rt-stack tbody th,main#main .rt-tbl.rt-stack td{display:block;border:0;padding:.2rem 1.1rem;text-align:left}`
-  + `main#main .rt-tbl.rt-stack td::before{content:attr(data-l);display:block;font-size:.85rem;font-weight:700;color:var(--navy);letter-spacing:.02em}}`
-  + `main#main .rt-calc{max-width:760px;margin:1.2rem 0 1.4rem;padding:1.2rem 1.3rem;border-radius:20px;${CARD}}`
-  + `main#main .rt-calc .k{${CAP};margin:0 0 .8rem}`
-  + `main#main .rt-calc .g{display:grid;gap:.8rem;margin-bottom:1rem}@media (min-width:640px){main#main .rt-calc .g{grid-template-columns:1fr 1fr}}`
-  + `main#main .rt-calc label{display:flex;flex-direction:column;gap:.35rem;color:var(--navy);font-family:var(--sans);font-weight:600;font-size:1rem}`
-  + `main#main .rt-calc input,main#main .rt-calc select{font:inherit;font-weight:400;font-size:1.0625rem;padding:.6rem .7rem;border:1px solid rgba(28,32,40,.3);border-radius:10px;background:#fff;color:var(--navy);width:100%;box-sizing:border-box;min-height:44px}`
-  + `main#main .rt-calc .out{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}`
-  + `main#main .rt-calc .out>div{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem;margin:0;padding:.55rem .8rem;border-radius:12px;background:rgba(255,255,255,.7);border:1px solid rgba(28,32,40,.08);font-family:var(--sans);color:var(--muted);line-height:1.35}`
-  + `main#main .rt-calc .out>div strong{color:var(--navy);font-size:1.15rem;white-space:nowrap}`
-  + `main#main .rt-calc .out>div.now{border:2px solid var(--brass);background:#fff}`
-  + `main#main .rt-calc .note{color:var(--muted);font-size:.95rem;line-height:1.5;margin:.8rem 0 0}`
-  + `main#main .rt-fig{max-width:760px;margin:1.4rem 0 1.4rem;padding:1.1rem 1.2rem 1rem;border-radius:20px;${CARD}}`
-  + `main#main .rt-fig .cap{${CAP};margin:0 0 .6rem}`
-  + `main#main figure.rt-fig:not(.c3-gchart){padding:1.1rem 1.2rem 1rem!important}`
-  + `main#main figure.rt-fig>svg[role=img]{display:block;width:100%;max-width:440px;height:auto;margin:0;border-radius:0!important}`
-  + `@media (max-width:699px){main#main figure.rt-fig:not(.c3-gchart){padding:.9rem .7rem .8rem!important}}`
-  + `main#main figure.rt-fig>figcaption{padding:.6rem 0 0!important}`
-  + `main#main .rt-fig figcaption{color:var(--muted);font-size:1rem;line-height:1.55;margin-top:.6rem}`
-  + `main#main .rt-routes{list-style:none;margin:1.2rem 0 1.4rem;padding:0;display:grid;gap:.8rem;max-width:760px}`
-  + `@media (min-width:700px){main#main .rt-routes{grid-template-columns:1fr 1fr}}`
-  + `main#main .rt-routes>li{margin:0;padding:1rem 1.1rem;border-radius:18px;${CARD}}`
-  + `main#main .rt-routes b.t{display:block;font-family:var(--sans);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#8a5226;font-weight:700;margin-bottom:.5rem}`
-  + `main#main .rt-routes ol{margin:0;padding:0;list-style:none;counter-reset:rs;display:grid;gap:.5rem}`
-  + `main#main .rt-routes ol li{counter-increment:rs;position:relative;margin:0;padding-left:2.1rem;color:var(--muted);line-height:1.5;min-height:1.6rem}`
-  + `main#main .rt-routes ol li::before{content:counter(rs);position:absolute;left:0;top:.05rem;width:1.55rem;height:1.55rem;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--sans);font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center}`
-  + `main#main .rt-routes ol li strong{color:var(--navy)}`
-  + `main#main .rt-runs{list-style:none;margin:1.2rem 0 1.4rem;padding:0;display:grid;gap:.8rem;max-width:760px}`
-  + `@media (min-width:760px){main#main .rt-runs{grid-template-columns:1fr 1fr}}`
-  + `main#main .rt-runs>li{margin:0;padding:1rem 1.1rem;border-radius:18px;${CARD}}`
-  + `main#main .rt-runs>li.first{border:2px solid var(--brass);background:#fff}@media (min-width:760px){main#main .rt-runs>li.first{grid-column:1/-1}}`
-  + `main#main .rt-runs .k{display:block;font-family:var(--sans);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#8a5226;font-weight:700;margin-bottom:.3rem}`
-  + `main#main .rt-runs b.h{display:block;color:var(--navy);font-family:var(--sans);font-size:1.1rem;line-height:1.35;margin-bottom:.5rem}`
-  + `main#main .rt-runs ul{margin:0;padding:0 0 0 1.1rem;color:var(--muted);line-height:1.55}main#main .rt-runs ul li{margin:0 0 .45rem}`
+  /* Design pass, 2026-11-08 (redo3/invest-rental-property-tax-cut/DESIGN.md): a normal-size headline, the contents between
+     rules, one card style (the charts, the calculator and the offers), plain lists and tables under thin rules, one width. */
+  /* 1. The headline at a normal size; on a phone the facts are flat rows under rules. */
+  + `${S} .detail-h1{font-size:clamp(2.1rem,4.4vw,3.9rem);max-width:15em;text-wrap:balance}${S} .detail-h1 br,${S} .detail-h1 em:empty{display:none}`
+  + `@media (max-width:699px){${S} .c3-glance{grid-template-columns:1fr!important;gap:0!important}${S} .c3-glance li{${FLAT};border-top:${RULE}!important;flex-direction:row!important;text-align:left!important;justify-content:flex-start!important;align-items:center!important;gap:.7rem!important;padding:.55rem 0!important}${S} .c3-glance li:last-child{border-bottom:${RULE}!important}}`
+  /* 2. The contents list: no card, in columns between two rules. */
+  + `${S} nav[aria-label="On this page"]{${FLAT};border-top:${RULE}!important;border-bottom:${RULE}!important;padding:.8rem 0 .5rem!important}`
+  + `${S} nav[aria-label="On this page"] ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.5rem}`
+  + `@media (min-width:700px){${S} nav[aria-label="On this page"] ul{grid-template-columns:repeat(3,minmax(0,1fr))}${S} nav[aria-label="On this page"] li a{padding:.45rem 0!important}}`
+  /* 5. One block width of 720 px. */
+  + `${S} .c3-gchart,${S} .rt-fig,${S} .rt-tbl,${S} .rt-calc,${S} .rt-q,${S} .rt-routes,${S} .rt-runs,${S} .c3-aerial .c3ph-hero{max-width:720px!important;box-sizing:border-box}`
+  /* 3. The quote: a brass left rule, no box. */
+  + `${S} .rt-q{margin:1.2rem 0 1.4rem;padding:.2rem 0 .2rem 1.2rem;border-left:3px solid var(--brass)}`
+  + `${S} .rt-q p{margin:0 0 .7rem;color:var(--navy);font-family:var(--serif);font-size:1.2rem;line-height:1.5}`
+  + `${S} .rt-q p.by{margin:0;color:var(--muted);font-family:var(--sans);font-size:1rem;line-height:1.5}`
+  /* 3. The photo without a frame. */
+  + `${S} .c3-aerial figure.c3ph-hero{${FLAT};padding:0!important}${S} .c3-aerial figure.c3ph-hero figcaption{padding:0!important;margin-top:.55rem}`
+  /* 3. Tables: plain, under thin rules. On a phone each row is a plain row split by a rule. */
+  + `${S} .rt-tbl{margin:1.3rem 0 1.4rem}`
+  + `${S} .rt-tbl .cap{color:var(--navy);font-weight:600;font-family:var(--sans);font-size:1.0625rem;line-height:1.4;margin:0 0 .5rem}`
+  + `${S} .rt-tbl table{width:100%;border-collapse:collapse;font-family:var(--sans)}`
+  + `${S} .rt-tbl th{text-align:left;vertical-align:bottom;font-size:.85rem;color:var(--navy);font-weight:700;padding:.5rem .6rem .5rem 0;border-bottom:1px solid rgba(28,32,40,.3);line-height:1.3}`
+  + `${S} .rt-tbl td,${S} .rt-tbl tbody th{padding:.7rem .6rem .7rem 0;border-bottom:${RULE};color:var(--muted);font-size:1rem;line-height:1.45;vertical-align:top}`
+  + `${S} .rt-tbl tbody th{color:var(--navy);font-weight:650;font-size:1rem}`
+  + `${S} .rt-tbl .num{text-align:right;white-space:nowrap;padding-right:0}${S} .rt-tbl th.num{padding-left:.6rem}${S} .rt-tbl td.num b{color:var(--navy)}`
+  + `${S} .rt-tbl .note{color:var(--muted);font-size:.95rem;line-height:1.5;margin:0;padding:.7rem 0 0}`
+  + `@media (max-width:699px){${S} .rt-tbl.rt-stack thead{display:none}${S} .rt-tbl.rt-stack tr{display:block;padding:.7rem 0 .75rem;border-top:${RULE}}${S} .rt-tbl.rt-stack tr:last-child{border-bottom:${RULE}}`
+  + `${S} .rt-tbl.rt-stack tbody th,${S} .rt-tbl.rt-stack td{display:block;border:0;padding:.2rem 0;text-align:left;white-space:normal}${S} .rt-tbl.rt-stack tbody th{font-size:1.06rem;margin-bottom:.15rem}`
+  + `${S} .rt-tbl.rt-stack td::before{content:attr(data-l);display:block;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#8a5226}}`
+  /* 3. The calculator keeps the card; its results are plain rows split by rules, no box inside it. */
+  + `${S} .rt-calc{margin:1.2rem 0 1.4rem;padding:1.2rem 1.3rem;border-radius:20px;${CARD}}`
+  + `${S} .rt-calc .k{${CAP};margin:0 0 .8rem}`
+  + `${S} .rt-calc .g{display:grid;gap:.8rem;margin-bottom:1rem}@media (min-width:640px){${S} .rt-calc .g{grid-template-columns:1fr 1fr}}`
+  + `${S} .rt-calc label{display:flex;flex-direction:column;gap:.35rem;color:var(--navy);font-family:var(--sans);font-weight:600;font-size:1rem}`
+  + `${S} .rt-calc input,${S} .rt-calc select{font:inherit;font-weight:400;font-size:1.0625rem;padding:.6rem .7rem;border:1px solid rgba(28,32,40,.3);border-radius:10px;background:#fff;color:var(--navy);width:100%;box-sizing:border-box;min-height:44px}`
+  + `${S} .rt-calc .out{margin:0;padding:0;border-bottom:${RULE}}`
+  + `${S} .rt-calc .out>div{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem;margin:0;padding:.6rem 0;border-top:${RULE};font-family:var(--sans);color:var(--muted);line-height:1.35}`
+  + `${S} .rt-calc .out>div strong{color:var(--navy);font-size:1.15rem;white-space:nowrap}`
+  + `${S} .rt-calc .out>div.now span{color:var(--navy);font-weight:700}${S} .rt-calc .out>div.now strong{font-size:1.3rem}`
+  + `${S} .rt-calc .note{color:var(--muted);font-size:.95rem;line-height:1.5;margin:.8rem 0 0}`
+  /* The charts keep the one card style. */
+  + `${S} .rt-fig{margin:1.4rem 0 1.4rem;padding:1.1rem 1.2rem 1rem;border-radius:20px;${CARD}}`
+  + `${S} .rt-fig .cap{${CAP};margin:0 0 .8rem}`
+  + `${S} figure.rt-fig:not(.c3-gchart){padding:1.1rem 1.2rem 1rem!important}`
+  + `${S} .rt-fig svg[role=img],${S} .rt-fig .rt-ch svg{display:block;width:100%;max-width:440px;height:auto;margin:0;border-radius:0!important}`
+  + `@media (max-width:699px){${S} figure.rt-fig:not(.c3-gchart){padding:.9rem .7rem .8rem!important}}`
+  + `${S} figure.rt-fig>figcaption{padding:.6rem 0 0!important}`
+  + `${S} .rt-fig figcaption{color:var(--muted);font-size:.95rem;line-height:1.55;margin-top:.6rem}`
+  /* 4. The votes chart: the House and the Senate side by side on a wide screen. */
+  + `${S} .rt-ch{display:grid;gap:1rem}@media (min-width:700px){${S} .rt-ch{grid-template-columns:1fr 1fr;column-gap:1.6rem}}`
+  /* 4. The shares chart: its key beside the bars on a wide screen. */
+  + `@media (min-width:760px){${S} figure.rt-side{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);column-gap:1.8rem;align-items:center}${S} figure.rt-side>.cap{grid-column:1/-1}${S} figure.rt-side>figcaption{margin:0;padding:0!important}}`
+  /* 3. The two routes: two plain columns, each under a thin rule. */
+  + `${S} .rt-routes{list-style:none;margin:1.2rem 0 1.4rem;padding:0;display:grid;column-gap:1.6rem}`
+  + `@media (min-width:700px){${S} .rt-routes{grid-template-columns:1fr 1fr}}`
+  + `${S} .rt-routes>li{margin:0;padding:.9rem 0 1rem;border-top:${RULE}}`
+  + `${S} .rt-routes b.t{display:block;font-family:var(--sans);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#8a5226;font-weight:700;margin-bottom:.6rem}`
+  + `${S} .rt-routes ol{margin:0;padding:0;list-style:none;counter-reset:rs;display:grid;gap:.5rem}`
+  + `${S} .rt-routes ol li{counter-increment:rs;position:relative;margin:0;padding-left:2.1rem;color:var(--muted);line-height:1.5;min-height:1.6rem}`
+  + `${S} .rt-routes ol li::before{content:counter(rs);position:absolute;left:0;top:.05rem;width:1.55rem;height:1.55rem;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--sans);font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center}`
+  + `${S} .rt-routes ol li strong{color:var(--navy)}`
+  /* 3. Short run and long run: a plain list under rules; "First" across the top with a brass top rule. */
+  + `${S} .rt-runs{list-style:none;margin:1.2rem 0 1.4rem;padding:0;display:grid;column-gap:1.6rem}`
+  + `@media (min-width:760px){${S} .rt-runs{grid-template-columns:1fr 1fr}${S} .rt-runs>li.first{grid-column:1/-1}}`
+  + `${S} .rt-runs>li{margin:0;padding:.9rem 0 .6rem;border-top:${RULE}}${S} .rt-runs>li.first{border-top:2px solid var(--brass)}`
+  + `${S} .rt-runs .k{display:block;font-family:var(--sans);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#8a5226;font-weight:700;margin-bottom:.3rem}`
+  + `${S} .rt-runs b.h{display:block;color:var(--navy);font-family:var(--sans);font-size:1.1rem;line-height:1.35;margin-bottom:.5rem}`
+  + `${S} .rt-runs ul{margin:0;padding:0 0 0 1.1rem;color:var(--muted);line-height:1.55}${S} .rt-runs ul li{margin:0 0 .45rem}`
+  + `${S} h2,${S} h3,${S} .rt-runs b.h,${S} .rt-fig .cap,${S} .c3-gchart .cap{text-wrap:balance}`
   + "@media (max-width:379px){main#main .hx-fb,main#main .hx-fb>*{min-width:0;max-width:100%}main#main .hx-fb-ai,main#main .hx-fb-q{min-width:0!important;max-width:100%!important;flex-wrap:wrap;box-sizing:border-box}main#main .hx-fb-q textarea{min-width:0;flex:1 1 100%;width:100%}main#main .hx-fb-go{flex:1 1 100%}}"
   + "@media (min-width:1000px) and (max-width:1100px){.header-ctas .hdr-phone{display:none!important}}"
   + "@media (max-width:359px){main#main .c3-glance span.t{font-size:.75rem!important;hyphens:none}main#main .c3-glance li{padding-left:.15rem;padding-right:.15rem}}main#main .c3-glance li{line-height:1.4}main#main .c3-glance strong{font-size:1.2rem!important;font-weight:700;line-height:1.25}main#main .c3-glance span.t{font-size:.95rem!important;line-height:1.4!important}"
-  + "@media (min-width:700px){main#main nav[aria-label=\"On this page\"]>ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.6rem}}"
   + "main#main>section[style^=\"background:var(--navy)\"]:has(>.wrap>h2){padding:.9rem 0!important}"
   + "main#main>section[style^=\"background:var(--navy)\"]:has(>.wrap>h2)>.wrap{display:block!important;text-align:center!important;background:linear-gradient(160deg,rgba(42,48,64,.95),rgba(28,32,40,.97))!important;border:1px solid rgba(255,255,255,.14)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 26px 60px -30px rgba(28,32,40,.6)!important;border-radius:28px!important;padding:2.2rem 1.6rem!important;margin-left:auto!important;margin-right:auto!important}"
   + "@media (max-width:699px){main#main>section[style^=\"background:var(--navy)\"]:has(>.wrap>h2)>.wrap{padding:1.6rem 1.2rem 1.7rem!important;border-radius:24px!important}}"
@@ -159,7 +182,7 @@ const BILL_CHART = G.bars([
   { name: "Today, at 6%", value: MB.six, valueText: money(MB.six), reference: true },
   { name: "At 4%, still paying the school tax", value: MB.four, valueText: money(MB.four) },
   { name: "At 4%, taxed like an owner's home", value: MB.home, valueText: money(MB.home) },
-], { caption: `Yearly property tax on a ${money(PRICE)} rental inside Myrtle Beach city limits`, nameLabel: "Tax rule", valueLabel: "tax a year", max: MB.six, compact: true,
+], { caption: `At 4%, the ${money(MB.six)} tax on a ${money(PRICE)} Myrtle Beach rental falls to ${money(MB.four)} or ${money(MB.home)}`, nameLabel: "Tax rule", valueLabel: "tax a year", max: MB.six, compact: true,
   note: `Horry County's 2026 tax rates, ${MB.mills} mills inside the city: county, schools and city. Before credits, fees and any special district.` });
 
 /* Both places, all three rules (F145 to F148; the unincorporated "like a home" figure is our arithmetic, F147's method). */
@@ -198,11 +221,13 @@ const VOTES = (() => {
       + `<text x="${x1.toFixed(1)}" y="${by + 50}" text-anchor="end" font-size="16" font-weight="700" fill="#1c2028">${d} Democrats</text>`
       + `<line x1="${xn.toFixed(1)}" x2="${xn.toFixed(1)}" y1="${y + 29}" y2="${by + 36}" stroke="#a8482f" stroke-width="3"/>`;
   };
-  const aria = `Two bars. The House: ${HO.republicans_unofficial_2026} Republicans and ${HO.democrats_unofficial_2026} Democrats in the unofficial count, with the two-thirds line at ${HO.two_thirds} of ${HO.members}, past the Republican seats. The Senate: ${SE.republicans} Republicans and ${SE.democrats} Democrats, with the line at ${SE.two_thirds} of ${SE.members}, inside the Republican seats.`;
-  const svg = `<svg role="img" aria-label="${aria}" viewBox="0 0 ${W0} 236" style="font-family:var(--sans)">`
-    + chamber(20, "House", HO.members, HO.republicans_unofficial_2026, HO.democrats_unofficial_2026, HO.two_thirds)
-    + chamber(140, "Senate", SE.members, SE.republicans, SE.democrats, SE.two_thirds) + `</svg>`;
-  return `<figure class="rt-fig"><div class="cap">Seats in each house, and the two-thirds a new rate needs</div>${svg}`
+  const ariaH = `The House: ${HO.republicans_unofficial_2026} Republicans and ${HO.democrats_unofficial_2026} Democrats in the unofficial count, with the two-thirds line at ${HO.two_thirds} of ${HO.members}, past the Republican seats.`;
+  const ariaS = `The Senate: ${SE.republicans} Republicans and ${SE.democrats} Democrats, with the line at ${SE.two_thirds} of ${SE.members}, inside the Republican seats.`;
+  const one = (label, c) => `<svg role="img" aria-label="${label}" viewBox="0 0 ${W0} 112" style="font-family:var(--sans)">${c}</svg>`;
+  const svg = `<div class="rt-ch">`
+    + one(ariaH, chamber(20, "House", HO.members, HO.republicans_unofficial_2026, HO.democrats_unofficial_2026, HO.two_thirds))
+    + one(ariaS, chamber(20, "Senate", SE.members, SE.republicans, SE.democrats, SE.two_thirds)) + `</div>`;
+  return `<figure class="rt-fig"><div class="cap">Republicans hold two-thirds of the Senate, but not of the House</div>${svg}`
     + `<figcaption>House seats are the unofficial 2026 count. Senate seats were not on the ballot, except one special election.</figcaption></figure>`;
 })();
 
@@ -213,20 +238,20 @@ const ROUTES = `<ol class="rt-routes" aria-label="The two ways the rental rate c
 
 /* F149: appraised against assessed share, Horry 2018, as paired bars. */
 const SHARES = (() => {
-  const W0 = 300, lx = 4, bx = 4, bw = 130, rowH = 96, X = (v) => bw * v / 50;
+  const W0 = 340, lx = 4, bx = 4, bw = 120, rowH = 96, X = (v) => bw * v / 50;
   const names = { "Primary residential": "Homes their owners live in", "Other residential": "Rental property, at 6%", "Commercial": "Commercial property" };
   const rows = SH.rows.map((r, i) => {
     const y = 18 + i * rowH;
     return `<text x="${lx}" y="${y}" font-size="18" font-weight="700" fill="#1c2028">${names[r.class]}</text>`
       + `<rect x="${bx}" y="${y + 10}" width="${X(r.appraised).toFixed(1)}" height="20" rx="5" fill="#b9c2ca"/>`
-      + `<text x="${(bx + X(r.appraised) + 6).toFixed(1)}" y="${y + 26}" font-size="17" fill="#1c2028">${r.appraised}% of value</text>`
+      + `<text x="${(bx + X(r.appraised) + 6).toFixed(1)}" y="${y + 26}" font-size="16" fill="#1c2028">${r.appraised}% of value</text>`
       + `<rect x="${bx}" y="${y + 36}" width="${X(r.assessed).toFixed(1)}" height="20" rx="5" fill="#c4783a"/>`
-      + `<text x="${(bx + X(r.assessed) + 6).toFixed(1)}" y="${y + 52}" font-size="17" font-weight="700" fill="#1c2028">${r.assessed}% of tax base</text>`;
+      + `<text x="${(bx + X(r.assessed) + 6).toFixed(1)}" y="${y + 52}" font-size="16" font-weight="700" fill="#1c2028">${r.assessed}% of taxable value</text>`;
   }).join("");
-  const aria = `Paired bars for Horry County in 2018. Homes their owners live in: ${PRI.appraised} percent of value, ${PRI.assessed} percent of the tax base. Rental property at 6 percent: ${OTH.appraised} percent of value, ${OTH.assessed} percent of the tax base. Commercial property: ${COM.appraised} percent of value, ${COM.assessed} percent of the tax base.`;
+  const aria = `Paired bars for Horry County in 2018. Homes their owners live in: ${PRI.appraised} percent of value, ${PRI.assessed} percent of the taxable value. Rental property at 6 percent: ${OTH.appraised} percent of value, ${OTH.assessed} percent of the taxable value. Commercial property: ${COM.appraised} percent of value, ${COM.assessed} percent of the taxable value.`;
   const svg = `<svg role="img" aria-label="${aria}" viewBox="0 0 ${W0} ${18 + 3 * rowH - 22}" style="font-family:var(--sans)">${rows}</svg>`;
-  return `<figure class="rt-fig"><div class="cap">Horry County: each kind of property's share of value, and of the tax base</div>${svg}`
-    + `<figcaption>Gray: share of the value the county assessor counts. Brass: share of the taxable value, after the 4% and 6% rates. 2018, from the Lincoln Institute of Land Policy study. Rental property is the study's "other residential" class, which it describes as typically rental property at 6%.</figcaption></figure>`;
+  return `<figure class="rt-fig rt-side"><div class="cap">Horry County rentals are ${OTH.appraised}% of the value but ${OTH.assessed}% of the taxable value</div>${svg}`
+    + `<figcaption>Gray bar: share of the value the county assessor counts. Brass bar: share of the taxable value, after the 4% and 6% rates. The figures are for 2018, from the Lincoln Institute of Land Policy study. Rental property is the study's "other residential" class, which it describes as typically rental property at 6%.</figcaption></figure>`;
 })();
 
 /* Where the city bill goes (F144 parts of F145). */
@@ -235,7 +260,7 @@ const PARTS_CHART = G.bars([
   { name: "City of Myrtle Beach", value: PARTS.city, valueText: money(PARTS.city) },
   { name: "Horry County", value: PARTS.county, valueText: money(PARTS.county) },
   { name: "School debt", value: PARTS.schoolDebt, valueText: money(PARTS.schoolDebt) },
-], { caption: `Where the ${money(MB.six)} on the ${money(PRICE)} city rental goes`, nameLabel: "Who gets it", valueLabel: "a year", max: PARTS.schoolOps, compact: true,
+], { caption: `The largest part of the ${money(MB.six)} on the ${money(PRICE)} city rental is the school operating tax`, nameLabel: "Who gets it", valueLabel: "a year", max: PARTS.schoolOps, compact: true,
   note: "Horry County's 2026 tax rates, at the 6% rental rate. A home its owner lives in pays no school operating tax." });
 
 /* Short run and long run (predictions.md section 5, with VERIFY.md's cuts). */
@@ -287,10 +312,10 @@ module.exports = G.page({
   hub: { name: "Invest", url: "/invest/" },
   title: "Wilson's Act 388 Rental Tax Cut: What It Means in Myrtle Beach",
   description: "Alan Wilson wants to end the higher property tax on rentals. A $350,000 Myrtle Beach rental's bill at 6% and 4%, the votes it needs, and what could follow.",
-  ogTitle: "Governor-Elect Alan Wilson Wants to Cut the Tax on Rentals. What It Would Mean for Myrtle Beach Investors",
+  ogTitle: "What would Wilson's rental tax cut mean for Myrtle Beach?",
   crumb: "Rental tax cut",
   eyebrow: "Invest",
-  h1: "Governor-Elect Alan Wilson Wants to Cut the Tax on Rentals. What It Would Mean for Myrtle Beach Investors",
+  h1: "What would Wilson's rental tax cut mean for Myrtle Beach?",
   h1em: "",
   sub: `A ${money(PRICE)} rental inside Myrtle Beach pays ${money(MB.six)} a year in property tax. What a lower rate would save, and the votes it needs.`,
   heroMedia: GLANCE,
@@ -317,12 +342,12 @@ module.exports = G.page({
         "Lower personal property taxes for commercial businesses.",
         "Eliminate the state income tax and overhaul property taxes.",
       ]) +
-      h.p(`${h.ext(PRIOR, "His campaign site")} adds a pledge to "eliminate the car property tax for seniors and veterans". Our ${h.a("/market-reports/2026-election/", "guide to the 2026 election")} covers his other plans and the rest of the results.`) },
+      h.p(`${h.ext(PRIOR, "His campaign site")} adds a pledge to "eliminate the car property tax for seniors and veterans". Our ${h.a("/market-reports/2026-election/", "guide to the 2026 election")} covers his other plans and the rest of the results. His plan for faster home permits is on ${h.a("/invest/horry-county-growth-roads-permits/", "our page on what the new leaders say about roads and growth")}.`) },
 
     { h2: "How much property tax does a Myrtle Beach rental pay now, and at 4%?", toc: "The tax at 6% and at 4%", id: "the-tax-now", html: () =>
       h.p(`At 4%, a Myrtle Beach rental would pay a third to three fifths less than it does at 6%. How much depends on whether a change also drops the school operating tax.`) +
       BILL_CHART +
-      h.p(`Two rules make the gap. The ${h.ext(A10, "state constitution")} taxes a rental on 6% of its value and an owner's home on 4%. Since Act 388, an owner's home also pays no school operating tax.`) +
+      h.p(`Two rules make the gap. The ${h.ext(A10, "state constitution")} taxes a rental on 6% of its value and an owner's home on 4%. Since Act 388, an owner's home also pays no school operating tax. How the 4% and 6% rates work today is on our ${h.a("/buyers/property-taxes/", "Horry County property tax page")}.`) +
       h.p(`Wilson has not said which of the two he means, so the chart shows both. Our page on ${h.a("/buyers/act-388-changes/", "what Act 388 changes would mean")} has the law's history.`) +
       BOTH +
       h.h3("Your rental's numbers") +
@@ -403,6 +428,6 @@ module.exports = G.page({
   /* photos.js adds a general "resized these photos" line; this page's one photo already says it was cropped and resized (as on /hoa/reserves/). */
   afterSources: () => { const c = PH.credits(), G1 = '<div role="listitem">Chapter3 Realty resized these photos and cropped some of them. Each photo keeps the license listed with it.</div>'; if (!c.includes(G1)) throw new Error("photos.js changed its general credit line"); return c.replace(G1, ""); },
   bottomCta: { h2: "Buying or selling a Myrtle Beach rental?", p: "Send us the address. We work out its tax at 6% today and at 4%, and price it on the law as it stands.", label: "Send us the rental", href: "/contact/" },
-  keywords: "Alan Wilson property tax, Act 388 rental property, South Carolina 6 percent property tax, rental property tax Myrtle Beach, 4 percent vs 6 percent assessment ratio, two-thirds vote assessment ratio, Jermaine Johnson property tax",
+  keywords: "Alan Wilson property tax, two-thirds vote assessment ratio, Jermaine Johnson property tax",
   about: "Governor-elect Alan Wilson's proposal to end the higher 6% property tax assessment ratio on South Carolina rental property, and its effect on rentals in Myrtle Beach and Horry County",
 });

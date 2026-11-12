@@ -53,10 +53,11 @@ const RENTAL_Q = [
   { type: "townhouse", status: "active", city: "Myrtle Beach", beds: "3", min: "220000", max: "400000", yearMin: "2005", has: "long_term_rental_allowed" },
 ];
 const RENTAL = { head: "Top long-term rental picks", q: RENTAL_Q, post: { yearMin: 2000, minSqft: 1300 }, rank: "rental", link: "beds=3&min=230000&max=460000" };
-const DSCR = { head: "DSCR picks, lowest price per bedroom", q: RENTAL_Q, post: { yearMin: 2000, minSqft: 1300 }, rank: "ppb", link: "beds=3&min=230000&max=460000" };
+const DSCR = { head: "DSCR picks: the most bedrooms for the money", q: RENTAL_Q, post: { yearMin: 2000, minSqft: 1300 }, rank: "ppb", link: "beds=3&min=230000&max=460000" };
 /* Short-term rentals: condos in the beach towns' resort areas, in buildings that allow them. */
 const VACATION = {
-  head: "Condos where nightly rentals are allowed", headToday: "Waterfront condos in Myrtle Beach and North Myrtle Beach",
+  head: "Prime short-term rentals for sale", headToday: "Prime oceanfront condos in Myrtle Beach and North Myrtle Beach",
+  /* Owner, 2026-11-08: "waterfront condos isnt clickbaity enough for an STR blog page it should be prime Short Term Rentals". "Short-term rentals" only once the CRM applies the str_allowed filter; until then the title says only what the search guarantees. */
   needs: "has",
   q: towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", waterfront: "1", min: "200000", max: "850000", yearMin: "1985", has: "str_allowed,east_of_17" }),
   post: { yearMin: 1985 }, link: "type=condo&waterfront=1", fallback: CONDOS,
@@ -64,7 +65,7 @@ const VACATION = {
 const OCEAN_UNITS = { ...VACATION, head: "Oceanfront condos for sale", headToday: VACATION.headToday, q: towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", waterfront: "1", min: "160000", max: "600000", yearMin: "1980", has: "oceanfront_unit" }), post: { yearMin: 1980 } };
 const MULTI = { head: "Duplexes, triplexes and fourplexes", q: [{ type: "multi", status: "active", min: "250000" }], allowTypes: true, link: "type=multi", fallback: RENTAL };
 const NEWER = { head: "Brand-new homes", q: towns(["Myrtle Beach", "Conway", "Little River", "Longs", "North Myrtle Beach"], H({ min: "280000", has: "new_construction" })), post: { builtWithin: 2, strictYear: true }, link: "type=house", fallback: NEWEST };
-const SINCE_2010 = { head: "Built since 2010, no flood zone listed", needs: "has", headToday: "Newer homes, built 2010 or later", q: towns(["Myrtle Beach", "Conway", "Little River", "Murrells Inlet", "North Myrtle Beach"], H({ min: "280000", yearMin: "2010", not: "flood_zone" })), post: { yearMin: 2010, strictYear: true }, link: "type=house", fallback: NEWEST };
+const SINCE_2010 = { head: "Newer homes built since 2010", needs: "has", headToday: "Newer homes, built 2010 or later", q: towns(["Myrtle Beach", "Conway", "Little River", "Murrells Inlet", "North Myrtle Beach"], H({ min: "280000", yearMin: "2010", not: "flood_zone" })), post: { yearMin: 2010, strictYear: true }, link: "type=house", fallback: NEWEST };
 /* Value-add: solid older houses in established towns, never the $50,000 shells. */
 const VALUE_ADD = { head: "Value-add picks", q: towns(["Myrtle Beach", "Surfside Beach", "North Myrtle Beach", "Conway", "Murrells Inlet"], H({ min: "170000", max: "339999", yearMin: "1975", yearMax: "1999" })), post: { yearMin: 1975, yearMax: 1999, minSqft: 1100 }, rank: "ppb", link: "type=house&min=170000&max=340000", fallback: RENTAL };
 /* The 55+ communities the 55+ guide compares (all deed-restricted), each searched by its MLS subdivision name.
@@ -101,7 +102,7 @@ const NEAR_HOSPITAL = cut("Homes within 5 miles of Grand Strand Medical Center",
 const NEAR_AIRPORT = cut("Homes within 5 miles of the Myrtle Beach airport", [{ status: "active", min: "220000", has: "myrtle_beach_airport_5mi" }], "has=myrtle_beach_airport_5mi", NEWEST);
 const OPEN_HOUSE = cut("Open houses coming up in Myrtle Beach and North Myrtle Beach", [{ city: "Myrtle Beach", status: "active", min: "200000", has: "open_house" }, { city: "North Myrtle Beach", status: "active", min: "200000", has: "open_house" }], "has=open_house", town("Myrtle Beach"));
 const STR_OCEAN = { ...cut("Oceanfront condos where nightly rentals are allowed", towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", min: "180000", max: "900000", yearMin: "1985", has: "str_allowed,oceanfront_unit" }), "type=condo&has=str_allowed%2Coceanfront_unit", VACATION), post: { yearMin: 1985 } };
-const TURNKEY = cut("Turnkey condos sold furnished, nightly rentals allowed", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"], { type: "condo", status: "active", min: "150000", has: "furnished,str_allowed" }), "type=condo&has=furnished%2Cstr_allowed", VACATION);
+const TURNKEY = cut("Turnkey Airbnb condos, sold furnished", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"], { type: "condo", status: "active", min: "150000", has: "furnished,str_allowed" }), "type=condo&has=furnished%2Cstr_allowed", VACATION);
 const RENTAL_PROGRAM = cut("Condos in buildings with a rental program", towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", min: "120000", has: "vacation_rental_program" }), "type=condo&has=vacation_rental_program", VACATION);
 const FORECLOSURE = { ...cut("Foreclosures and bank-owned homes for sale", towns(["Myrtle Beach", "Conway", "Surfside Beach", "Little River", "Longs"], { status: "active", min: "120000", has: "foreclosure" }), "has=foreclosure", VALUE_ADD), post: { yearMin: 1970 } };
 const HOA_INSURED = cut("Condos whose HOA fee covers the insurance", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet"], { type: "condo", status: "active", min: "150000", has: "hoa_includes_insurance" }), "type=condo&has=hoa_includes_insurance", CONDOS);
@@ -124,7 +125,7 @@ const GARDEN_CITY = { head: "Top homes in and around Garden City", needs: "has",
 /* Second homes: the best homes near the beach from Cherry Grove to Pawleys Island, on top of the page's own town rows. */
 const TOP_VACATION = { ...cut("Top vacation homes", towns(["North Myrtle Beach", "Myrtle Beach", "Surfside Beach", "Garden City", "Murrells Inlet", "Pawleys Island"], { status: "active", min: "250000", has: "walk_to_beach" }), "has=walk_to_beach", VACATION), withStrips: true };
 /* Jobs: homes within 5 miles (about a 15 to 20 minute drive) of the largest employers the page names: the hospitals, the mall and the airport. */
-const EMPLOYERS = { ask: "Name your industry or employer to see homes nearby", ...cut("Homes nearby major employers", ["grand_strand_medical_center_10mi", "conway_medical_center_10mi", "mcleod_seacoast_10mi", "tidelands_waccamaw_10mi", "coastal_grand_mall_10mi", "myrtle_beach_airport_10mi"].map((k) => ({ status: "active", min: "200000", has: k })), "has=grand_strand_medical_center_10mi", NEWEST) };
+const EMPLOYERS = { ask: "Name your industry or employer to see homes nearby", ...cut("Homes close to the big employers", ["grand_strand_medical_center_10mi", "conway_medical_center_10mi", "mcleod_seacoast_10mi", "tidelands_waccamaw_10mi", "coastal_grand_mall_10mi", "myrtle_beach_airport_10mi"].map((k) => ({ status: "active", min: "200000", has: k })), "has=grand_strand_medical_center_10mi", NEWEST) };
 /* Fix and flip: the page's own best areas for house flips (batch 2026-10-c, the county's deeds: Conway,
    Carolina Forest and Little River had the biggest middle gains on houses). Distressed sales and older
    houses there; the owner, 2026-10-27: the feed backs up the page's headline. */
@@ -146,11 +147,11 @@ const NO_FINES = { ...NO_HOA, head: "No HOA, no fines: homes with no HOA fee" };
 const RENT_TOWNS = [["subdivision", "Carolina Forest"], ["city", "Conway"], ["subdivision", "Market Common"], ["city", "Myrtle Beach"], ["city", "Little River"]];
 const rentals = (o, list = RENT_TOWNS) => list.map(([k, v]) => H({ [k]: v, min: "200000", ...o }));
 const MB_CUT = { ...cut("Myrtle Beach sellers who already cut their price", [H({ city: "Myrtle Beach", min: "250000", yearMin: "2000", has: "price_reduced" }), { type: "condo", city: "Myrtle Beach", status: "active", min: "170000", has: "price_reduced" }, { type: "townhouse", city: "Myrtle Beach", status: "active", min: "200000", has: "price_reduced" }], "city=Myrtle%20Beach&has=price_reduced", OPEN_HOUSE) };
-const FIRST_3 = { head: "3+ bedrooms under $300,000, built since 2005", q: towns(["Conway", "Myrtle Beach", "Longs", "Little River", "Loris"], H({ beds: "3", min: "200000", max: "299999", yearMin: "2005" })), post: { yearMin: 2005, strictYear: true }, link: "type=house&beds=3&max=300000&yearMin=2005", fallback: STARTER };
-const COST_TO_OWN = { head: "No HOA dues, built since 2015", q: towns(["Conway", "Myrtle Beach", "Longs", "Little River", "Murrells Inlet"], H({ hoa: "0", min: "230000", yearMin: "2015" })), post: { yearMin: 2015, strictYear: true }, link: "hoa=0&yearMin=2015", noHoa: true, fallback: NO_HOA };
+const FIRST_3 = { head: "First homes with room to grow: 3+ bedrooms under $300,000", q: towns(["Conway", "Myrtle Beach", "Longs", "Little River", "Loris"], H({ beds: "3", min: "200000", max: "299999", yearMin: "2005" })), post: { yearMin: 2005, strictYear: true }, link: "type=house&beds=3&max=300000&yearMin=2005", fallback: STARTER };
+const COST_TO_OWN = { head: "Newer homes with no HOA dues", q: towns(["Conway", "Myrtle Beach", "Longs", "Little River", "Murrells Inlet"], H({ hoa: "0", min: "230000", yearMin: "2015" })), post: { yearMin: 2015, strictYear: true }, link: "hoa=0&yearMin=2015", noHoa: true, fallback: NO_HOA };
 const OCEAN_CUT = { ...cut("Oceanfront condos with a price cut", towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", min: "150000", yearMin: "1980", has: "oceanfront_unit,price_reduced" }), "type=condo&has=oceanfront_unit%2Cprice_reduced", CONDO_CUT), post: { yearMin: 1980 } };
 /* Flood history: the owner (2026-11-01) wants homes close to the beach but outside a flood zone. "No flood zone listed" is what the MLS field says, not a FEMA ruling. */
-const BEACH_DRY = cut("Houses within a mile of the beach, no flood zone listed", towns(["North Myrtle Beach", "Myrtle Beach", "Surfside Beach", "Garden City", "Murrells Inlet", "Pawleys Island"], H({ min: "250000", has: "beach_1mi", not: "flood_zone" })), "type=house&has=beach_1mi&not=flood_zone", SINCE_2010);
+const BEACH_DRY = cut("Houses within a mile of the beach", towns(["North Myrtle Beach", "Myrtle Beach", "Surfside Beach", "Garden City", "Murrells Inlet", "Pawleys Island"], H({ min: "250000", has: "beach_1mi", not: "flood_zone" })), "type=house&has=beach_1mi&not=flood_zone", SINCE_2010);
 const RAISED = cut("Houses raised on pilings", towns(["Murrells Inlet", "Garden City", "Surfside Beach", "North Myrtle Beach", "Little River", "Pawleys Island"], H({ min: "250000", has: "raised_home" })), "type=house&has=raised_home", SINCE_2010);
 const NEW_ROOF = cut("Houses with a new roof", towns(["Myrtle Beach", "Conway", "Murrells Inlet", "Little River", "North Myrtle Beach", "Surfside Beach"], H({ min: "220000", has: "new_roof" })), "type=house&has=new_roof", SINCE_2010);
 const DEL_WEBB_NMB = { head: "Del Webb North Myrtle Beach, and one-level homes within 2 miles", needs: "has", q: [{ subdivision: "Del Webb", city: "North Myrtle Beach", status: "active" }, H({ near: "33.8252,-78.7000", miles: "2", min: "300000", yearMin: "2005", has: "one_level" })], post: { minPhotos: 6, yearMin: 2005 }, link: "type=house&near=33.8252%2C-78.7000&miles=2&has=one_level", fallback: FIFTY_FIVE };
@@ -164,10 +165,10 @@ const BOTH_WAYS = cut("Rent it by the night or by the year: both allowed", towns
 const OCEAN_300 = { ...cut("Oceanfront condos under $300,000", towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", min: "130000", max: "299999", yearMin: "1980", has: "oceanfront_unit" }), "type=condo&max=300000&has=oceanfront_unit", OCEAN_UNITS), post: { yearMin: 1980 } };
 const CASH_OCEAN = { ...cut("Oceanfront condos the seller lists as cash only", towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", min: "120000", has: "oceanfront_unit,cash_only_listing" }), "type=condo&has=oceanfront_unit%2Ccash_only_listing", OCEAN_UNITS), post: { yearMin: 1975 } };
 const HIGH_OCEAN = { ...cut("Oceanfront, sixth floor and up", towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", min: "180000", yearMin: "1985", has: "oceanfront_unit,high_floor_unit" }), "type=condo&has=oceanfront_unit%2Chigh_floor_unit", OCEAN_UNITS), post: { yearMin: 1985 } };
-const STR_HOUSES = cut("Houses east of 17 where nightly rentals are allowed", towns(["North Myrtle Beach", "Myrtle Beach", "Surfside Beach", "Garden City"], H({ min: "300000", has: "str_allowed,east_of_17" })), "type=house&has=str_allowed%2Ceast_of_17", VACATION);
-const STR_FURNISHED = cut("Furnished houses where nightly rentals are allowed", towns(["North Myrtle Beach", "Myrtle Beach", "Surfside Beach", "Garden City"], H({ min: "300000", has: "furnished,str_allowed" })), "type=house&has=furnished%2Cstr_allowed", VACATION);
-const GEORGETOWN_STR = cut("Nightly rentals allowed, in Georgetown County", [{ status: "active", min: "200000", has: "str_allowed,county_georgetown" }], "has=str_allowed%2Ccounty_georgetown", VACATION);
-const OCEANVIEW_STR = { ...cut("Ocean-view condos where nightly rentals are allowed", towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", min: "150000", yearMin: "1980", has: "oceanview_unit,str_allowed" }), "type=condo&has=oceanview_unit%2Cstr_allowed", VACATION), post: { yearMin: 1980 } };
+const STR_HOUSES = cut("Airbnb beach houses east of 17", towns(["North Myrtle Beach", "Myrtle Beach", "Surfside Beach", "Garden City"], H({ min: "300000", has: "str_allowed,east_of_17" })), "type=house&has=str_allowed%2Ceast_of_17", VACATION);
+const STR_FURNISHED = cut("Furnished houses where Airbnb is allowed", towns(["North Myrtle Beach", "Myrtle Beach", "Surfside Beach", "Garden City"], H({ min: "300000", has: "furnished,str_allowed" })), "type=house&has=furnished%2Cstr_allowed", VACATION);
+const GEORGETOWN_STR = cut("Airbnb-friendly homes in Georgetown County", [{ status: "active", min: "200000", has: "str_allowed,county_georgetown" }], "has=str_allowed%2Ccounty_georgetown", VACATION);
+const OCEANVIEW_STR = { ...cut("Ocean-view condos for Airbnb", towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", min: "150000", yearMin: "1980", has: "oceanview_unit,str_allowed" }), "type=condo&has=oceanview_unit%2Cstr_allowed", VACATION), post: { yearMin: 1980 } };
 const J1 = { head: "4+ bedroom houses within 4 miles of the boardwalk", q: [H({ near: "33.6915,-78.8820", miles: "4", beds: "4", min: "200000", max: "600000" })], post: { yearMin: 1960 }, rank: "ppb", link: "type=house&beds=4&max=600000&near=33.6915%2C-78.8820&miles=4", fallback: RENTAL };
 const FURN_OCEAN = { ...cut("Oceanfront condos that come furnished", towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", min: "180000", yearMin: "1980", has: "oceanfront_unit,furnished" }), "type=condo&has=oceanfront_unit%2Cfurnished", VACATION), post: { yearMin: 1980 } };
 const NEW_RENTAL = { ...cut("Newer rentals: built since 2018, renting allowed", rentals({ beds: "3", max: "480000", yearMin: "2018", has: "long_term_rental_allowed" }), "type=house&beds=3&yearMin=2018&has=long_term_rental_allowed", RENTAL), post: { yearMin: 2018, strictYear: true }, rank: "rental" };
@@ -183,19 +184,19 @@ const FENCED_RENTAL = { ...cut("Rental houses with a fenced yard", rentals({ bed
 const LLC = { ...cut("Rental houses under $350,000", rentals({ beds: "3", max: "349999", yearMin: "2000", has: "long_term_rental_allowed" }), "type=house&beds=3&max=350000&has=long_term_rental_allowed", RENTAL), post: { yearMin: 2000 }, rank: "ppb" };
 const NEW_LTR = { ...cut("New construction where renting is allowed", towns(["Conway", "Myrtle Beach", "Little River", "Longs"], H({ min: "240000", max: "500000", has: "new_construction,long_term_rental_allowed" })), "type=house&has=new_construction%2Clong_term_rental_allowed", NEWER), post: { builtWithin: 2, strictYear: true }, rank: "rental" };
 const TOWNHOUSE_RENTAL = { ...cut("Townhouses where long-term rentals are allowed", towns(["Myrtle Beach", "Conway", "Little River", "North Myrtle Beach", "Longs"], { type: "townhouse", status: "active", min: "180000", max: "400000", yearMin: "2000", has: "long_term_rental_allowed" }), "type=townhouse&has=long_term_rental_allowed", DSCR), post: { yearMin: 2000 }, rank: "ppb" };
-const LL_INS = { ...cut("Rental houses built since 2015, no flood zone listed", rentals({ beds: "3", max: "480000", yearMin: "2015", has: "long_term_rental_allowed", not: "flood_zone" }), "type=house&yearMin=2015&has=long_term_rental_allowed&not=flood_zone", RENTAL), post: { yearMin: 2015, strictYear: true }, rank: "rental" };
+const LL_INS = { ...cut("Rental houses built since 2015", rentals({ beds: "3", max: "480000", yearMin: "2015", has: "long_term_rental_allowed", not: "flood_zone" }), "type=house&yearMin=2015&has=long_term_rental_allowed&not=flood_zone", RENTAL), post: { yearMin: 2015, strictYear: true }, rank: "rental" };
 const FOUR_BED_RENTAL = { ...cut("4+ bedroom houses where renting is allowed", rentals({ beds: "4", min: "260000", max: "520000", yearMin: "2000", has: "long_term_rental_allowed" }), "type=house&beds=4&has=long_term_rental_allowed", RENTAL), post: { yearMin: 2000 }, rank: "rental" };
-const CONWAY_PPB = { head: "Conway houses, lowest price per bedroom first", q: [H({ city: "Conway", beds: "3", min: "200000", max: "380000", yearMin: "1995" })], post: { yearMin: 1995, minSqft: 1200 }, rank: "ppb", link: "city=Conway&type=house&beds=3&max=380000", fallback: RENTAL };
+const CONWAY_PPB = { head: "Conway houses with the most bedrooms for the money", q: [H({ city: "Conway", beds: "3", min: "200000", max: "380000", yearMin: "1995" })], post: { yearMin: 1995, minSqft: 1200 }, rank: "ppb", link: "city=Conway&type=house&beds=3&max=380000", fallback: RENTAL };
 const BRICK_RENTAL = { ...cut("Brick houses where renting is allowed", rentals({ beds: "3", max: "520000", has: "long_term_rental_allowed,brick" }), "type=house&has=long_term_rental_allowed%2Cbrick", RENTAL), rank: "rental" };
 const MIX = { ...cut("Rentals, distressed sales and duplexes for sale now", [{ type: "multi", status: "active", min: "250000" }, { status: "active", min: "150000", has: "distressed_sale" }, ...rentals({ beds: "3", max: "460000", yearMin: "2000", has: "long_term_rental_allowed" }, RENT_TOWNS.slice(0, 3))], "has=long_term_rental_allowed", RENTAL), rank: "rental" };
-const PRE_2000 = { ...VALUE_ADD, head: "Built before 2000, under $340,000", post: { ...VALUE_ADD.post, strictYear: true } };
+const PRE_2000 = { ...VALUE_ADD, head: "BRRRR candidates: older houses under $340,000", post: { ...VALUE_ADD.post, strictYear: true } };
 const RENTS_NOW = cut("Rented now: income property from $400,000", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Conway", "Little River"], { status: "active", min: "400000", has: "has_rental_income" }), "min=400000&has=has_rental_income", MULTI);
 const OCEAN_PROGRAM = { ...cut("Oceanfront condos in a rental program", towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", min: "150000", yearMin: "1980", has: "vacation_rental_program,oceanfront_unit" }), "type=condo&has=vacation_rental_program%2Coceanfront_unit", RENTAL_PROGRAM), post: { yearMin: 1980 } };
 const HOA_COVERS = cut("Condos whose HOA fee covers insurance, water and sewer", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet"], { type: "condo", status: "active", min: "150000", has: "hoa_includes_insurance,hoa_includes_water_sewer" }), "type=condo&has=hoa_includes_insurance%2Choa_includes_water_sewer", HOA_INSURED);
 const NEWEST_CONDOS = { head: "Condos in buildings built since 2015", q: towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet", "Little River", "Conway"], { type: "condo", status: "active", min: "150000", yearMin: "2015" }), post: { yearMin: 2015, strictYear: true }, link: "type=condo&yearMin=2015", fallback: NEWER_CONDOS };
 const DISTRESSED = { ...cut("Distressed sales: foreclosures, short sales and more", [{ status: "active", min: "120000", has: "distressed_sale" }, { status: "active", min: "120000", has: "foreclosure" }, { status: "active", min: "120000", has: "short_sale" }], "has=distressed_sale", FORECLOSURE), post: { yearMin: 1960, minPhotos: 6 } };
 const NO_HOA_BOAT = { head: "No HOA, and room for the boat or RV", needs: "has", noHoa: true, q: towns(["Conway", "Myrtle Beach", "Little River", "Murrells Inlet", "Longs"], H({ hoa: "0", min: "220000", has: "rv_boat_parking" })), link: "hoa=0&has=rv_boat_parking", fallback: NO_FINES };
-const CHEAP_EAST = { head: "Condos under $200,000, east of 17", needs: "has", q: towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Garden City"], { type: "condo", status: "active", min: "120000", max: "199999", yearMin: "1980", has: "east_of_17" }), post: { yearMin: 1980 }, link: "type=condo&max=200000&has=east_of_17", fallback: LOW_FEE };
+const CHEAP_EAST = { head: "Beach-side condos under $200,000", needs: "has", q: towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Garden City"], { type: "condo", status: "active", min: "120000", max: "199999", yearMin: "1980", has: "east_of_17" }), post: { yearMin: 1980 }, link: "type=condo&max=200000&has=east_of_17", fallback: LOW_FEE };
 const RENTED_CONDOS = cut("Condos that are rented now", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Little River"], { type: "condo", status: "active", min: "130000", has: "has_rental_income" }), "type=condo&has=has_rental_income", RENTALS_OK);
 const TOP_FLOOR = cut("Top-floor condos: nobody lives above you", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet", "Little River"], { type: "condo", status: "active", min: "150000", has: "top_floor" }), "type=condo&has=top_floor", HOA_INSURED);
 const LAWN_HOUSE = cut("Houses where the HOA mows the lawn", towns(["Myrtle Beach", "Conway", "Murrells Inlet", "Little River", "North Myrtle Beach"], H({ min: "260000", yearMin: "2000", has: "lawn_care_included" })), "type=house&has=lawn_care_included", NO_HOA);
@@ -206,8 +207,8 @@ const TOUR = cut("Homes for sale with a virtual tour", towns(["Myrtle Beach", "N
 const OLDER = { head: "Houses built before 1990, for sale now", q: towns(["Myrtle Beach", "Conway", "Surfside Beach", "North Myrtle Beach", "Murrells Inlet"], H({ min: "180000", yearMax: "1989" })), post: { yearMin: 1950, yearMax: 1989, strictYear: true }, link: "type=house&yearMax=1989", fallback: COMPETITION };
 const RENTED_HOUSES = { ...cut("Houses that are rented now", towns(["Myrtle Beach", "Conway", "North Myrtle Beach", "Little River", "Surfside Beach", "Longs"], H({ min: "180000", has: "has_rental_income" })), "type=house&has=has_rental_income", RENTAL), post: { yearMin: 1970 } };
 const MOVE_UP = { head: "Moving up: homes from $600,000 to $1.2 million", q: towns(["North Myrtle Beach", "Myrtle Beach", "Murrells Inlet", "Pawleys Island", "Little River"], { status: "active", min: "600000", max: "1200000", yearMin: "2000" }), post: { yearMin: 2000 }, link: "min=600000&max=1200000", fallback: COMPETITION };
-const WEEK = { head: "New this week on the Grand Strand", q: towns(["Myrtle Beach", "North Myrtle Beach", "Conway", "Surfside Beach", "Murrells Inlet", "Little River"], { status: "active", min: "220000", domMax: "7" }), link: "domMax=7", fallback: NEWEST };
-const STR_400 = { ...cut("Nightly rentals allowed, under $400,000", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"], { status: "active", min: "150000", max: "399999", yearMin: "1985", has: "str_allowed" }), "max=400000&has=str_allowed", VACATION), post: { yearMin: 1985 }, low: true };
+const WEEK = { head: "Just listed on the Grand Strand this week", q: towns(["Myrtle Beach", "North Myrtle Beach", "Conway", "Surfside Beach", "Murrells Inlet", "Little River"], { status: "active", min: "220000", domMax: "7" }), link: "domMax=7", fallback: NEWEST };
+const STR_400 = { ...cut("Airbnb opportunities under $400,000", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"], { status: "active", min: "150000", max: "399999", yearMin: "1985", has: "str_allowed" }), "max=400000&has=str_allowed", VACATION), post: { yearMin: 1985 }, low: true };
 const love = (state, q, extra = {}) => ({ head: `Homes people from ${state} love`, q, link: "type=house", fallback: NEWEST, ...extra });
 const FROM = {
   // More house than New York money buys: newer, a garage, near the beach towns.
@@ -243,15 +244,48 @@ const NEW_BUILDS = { ...cut("New construction on the Grand Strand", towns(["Myrt
 const MARKET_COMMON = { head: "For sale now in The Market Common", q: [{ subdivision: "Market Common", status: "active" }], post: { minPhotos: 6, yearMin: 1990 }, link: "subdivision=Market%20Common", withStrips: true };
 const SELLER_NEXT = { ...NEWEST, head: "Just listed: your next home", low: true };
 const SELLER_COMPETE = { ...NEWEST, head: "Your competition: listed in the last 3 weeks", low: true };
+/* Owner, 2026-11-10: "the how much do airbnb's make page that IDX could be filtered for a variety of perfectly located
+   homes and condos for STR not just Short term rentals and then we say prime short term rental opportunities".
+   Oceanfront condos and beach houses, each where the listing says nightly rentals are allowed. */
+const STR_PRIME = {
+  head: "Prime short-term rental opportunities", headToday: "Oceanfront condos and beach houses on the Grand Strand", needs: "has",
+  q: [...towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", min: "180000", max: "850000", yearMin: "1985", has: "str_allowed,oceanfront_unit" }),
+    ...towns(["North Myrtle Beach", "Surfside Beach", "Garden City"], H({ min: "350000", max: "1500000", has: "str_allowed,walk_to_beach" }))],
+  post: { yearMin: 1985 }, link: "has=str_allowed", fallback: VACATION,
+};
+/* Rebuild batch 4 (2026-11-10): bold, true titles, each from its own filter (owner: "be bold with idx feeds instead of nerdy"). */
+const TURNKEY_PROGRAM = { ...cut("Turnkey oceanfront resort condos, already in a rental program", towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", min: "120000", has: "oceanfront_unit,vacation_rental_program,furnished" }), "type=condo&has=oceanfront_unit%2Cvacation_rental_program%2Cfurnished", OCEAN_UNITS), post: { yearMin: 1975, minSqft: 400 }, withStrips: true };
+const RUN_FOR_RENTING = { ...cut("Oceanfront condos in buildings run for renting", towns(["Myrtle Beach", "North Myrtle Beach"], { type: "condo", status: "active", min: "100000", has: "oceanfront_unit,vacation_rental_program" }), "type=condo&has=oceanfront_unit%2Cvacation_rental_program", OCEAN_UNITS), post: { yearMin: 1975, minSqft: 400 }, withStrips: true };
+const RENT_BY_NIGHT = { ...cut("Oceanfront condos you can rent by the night", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"], { type: "condo", status: "active", min: "120000", has: "str_allowed,oceanfront_unit" }), "type=condo&has=str_allowed%2Coceanfront_unit", RENTALS_OK), post: { yearMin: 1975 }, withStrips: true };
+const INSURED_OCEAN = cut("Oceanfront condos with the building's insurance already in the fee", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"], { type: "condo", status: "active", min: "150000", has: "oceanfront_unit,hoa_includes_insurance" }), "type=condo&has=oceanfront_unit%2Choa_includes_insurance", HOA_INSURED);
+const NO_BOARD = { ...NO_HOA, head: "No HOA, no board: homes with no HOA fee" };
+/* The town guides hub (rebuild batch 6): all nine towns the guides cover, Garden City by its area key, Carolina Forest by name. */
+const TOP_NINE = { head: "Pick your town: top homes for sale in all nine", q: [...towns(["North Myrtle Beach", "Myrtle Beach", "Conway", "Murrells Inlet", "Surfside Beach", "Little River", "Pawleys Island", "Garden City"], { status: "active", min: "300000" }), { subdivision: "Carolina Forest", status: "active", min: "300000" }], link: "", fallback: TOP_EACH, withStrips: true };
+/* The 2026-11-08 additions: one title per page, each true from its own search. */
+const LIVE_IN = { head: "Homes to live in: 3+ bedrooms, built since 2010", q: towns(["Myrtle Beach", "Conway", "Little River", "Murrells Inlet", "Longs"], H({ beds: "3", min: "250000", yearMin: "2010" })), post: { yearMin: 2010, strictYear: true }, link: "type=house&beds=3&yearMin=2010", fallback: NEWEST };
+const DRY_450 = { ...cut("Homes under $450,000, built since 2000", towns(["Myrtle Beach", "Conway", "Little River", "Murrells Inlet", "Longs"], H({ min: "220000", max: "449999", yearMin: "2000", not: "flood_zone" })), "type=house&max=450000&not=flood_zone", SINCE_2010), post: { yearMin: 2000 } };
+const RENTAL_2010 = { ...cut("Rental houses built since 2010, renting allowed", rentals({ beds: "3", max: "480000", yearMin: "2010", has: "long_term_rental_allowed" }), "type=house&beds=3&yearMin=2010&has=long_term_rental_allowed", RENTAL), post: { yearMin: 2010, strictYear: true }, rank: "rental" };
+const STR_TODAY = { ...cut("Airbnb-friendly condos under $350,000", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"], { type: "condo", status: "active", min: "150000", max: "349999", yearMin: "1985", has: "str_allowed" }), "type=condo&max=350000&has=str_allowed", VACATION), post: { yearMin: 1985 } };
+const FRESH_MID = { head: "Fresh listings from $300,000 to $600,000", q: towns(["Myrtle Beach", "North Myrtle Beach", "Conway", "Surfside Beach", "Murrells Inlet", "Little River"], { status: "active", min: "300000", max: "599999", domMax: "30" }), link: "min=300000&max=600000&domMax=30", fallback: NEWEST };
 
 export const FEEDS = {
   "/buyers/": NEWEST,
+  /* Owner, 2026-11-08: "the idx for almost every buyer page to be one of the first things". The pages with
+     their own strips above get the feed on top too (withStrips); these had none. The long-term rental
+     analyzer gets none: it is an app, and it shows homes like the reader's own after a run. */
+  "/buyers/first-time-buyer-tax-credit/": STARTER,
+  "/buyers/act-388-changes/": LIVE_IN,
+  "/buyers/flood-insurance-after-the-election/": DRY_450,
+  "/invest/rental-property-tax-cut/": RENTAL_2010,
+  "/invest/short-term-rental-rules-statehouse/": STR_TODAY,
+  "/invest/horry-county-growth-roads-permits/": NEWER,
+  "/market-reports/2026-election/": FRESH_MID,
   "/buyers/buying-in-myrtle-beach/": MB_CUT,
   "/buyers/common-mistakes/": PRICE_CUT,
-  "/buyers/first-time-home-buyer-myrtle-beach/": FHA_FIRST,
+  "/buyers/first-time-home-buyer-myrtle-beach/": { ...FHA_FIRST, withStrips: true },
   "/buyers/programs/": FIRST_3,
   "/buyers/va-loans/": VA_FEED,
-  "/buyers/retirees/": ONE_LEVEL,
+  "/buyers/retirees/": { ...ONE_LEVEL, withStrips: true },
   "/buyers/second-home/": TOP_VACATION,
   "/buyers/new-construction/": QUICK,
   "/buyers/new-construction/builders/": NEW_BUILDS,
@@ -261,9 +295,9 @@ export const FEEDS = {
   "/sell/sell-or-buy-first/": SELLER_NEXT,
   "/sell/best-time-to-sell/": SELLER_COMPETE,
   "/buyers/cost-to-own/": COST_TO_OWN,
-  "/buyers/waterfront-homes/": DOCK,
+  "/buyers/waterfront-homes/": { ...DOCK, head: "Bring the boat: homes with their own dock", withStrips: true },
   "/buyers/golf-communities/": ON_COURSE,
-  "/buyers/condo-in-litigation/": OCEAN_CUT,
+  "/buyers/condo-in-litigation/": { ...OCEAN_CUT, withStrips: true },
   "/buyers/undisclosed-flooding/": BEACH_DRY,
   "/buyers/property-taxes/": OUTSIDE_CITY,
   "/buyers/coastal-insurance/": NEW_ROOF,
@@ -273,7 +307,7 @@ export const FEEDS = {
   "/buyers/55-plus-communities/del-webb-grande-dunes/": { head: "For sale now in Del Webb at Grande Dunes", q: [{ subdivision: "Del Webb", city: "Myrtle Beach", status: "active" }], post: { minPhotos: 6 }, link: "subdivision=Del%20Webb", fallback: FIFTY_FIVE },
   "/buyers/55-plus-communities/myrtle-trace/": { head: "For sale now in Myrtle Trace", q: [{ subdivision: "Myrtle Trace", status: "active" }], post: { minPhotos: 6, yearMin: 1980 }, link: "subdivision=Myrtle%20Trace", fallback: FIFTY_FIVE },
   "/buyers/55-plus-communities/seasons-at-prince-creek-west/": SEASONS,
-  "/buyers/relocating/": MOVE_IN,
+  "/buyers/relocating/": { ...MOVE_IN, head: "Move-in ready homes, for the day the truck arrives" },
   "/buyers/relocating/cost-of-living/": MORE_HOUSE,
   "/buyers/relocating/pros-and-cons/": GOLF_CART,
   "/buyers/relocating/moving-checklist/": GARAGE_2,
@@ -287,24 +321,24 @@ export const FEEDS = {
   "/buyers/relocating/why-myrtle-beach/": WALK_500,
   "/buyers/relocating/beaches/": WALK_BEACH,
   ...Object.fromEntries(Object.entries(FROM).map(([s, f]) => [`/buyers/relocating/from-${s}/`, f])),
-  "/submarkets/": TOP_EACH,
-  "/submarkets/conway/": townTop("Conway"),
-  "/submarkets/garden-city/": GARDEN_CITY,
+  "/submarkets/": TOP_NINE,
+  "/submarkets/conway/": { ...townTop("Conway"), withStrips: true },
+  "/submarkets/garden-city/": { ...GARDEN_CITY, withStrips: true },
   "/submarkets/little-river/": townTop("Little River"),
   "/submarkets/murrells-inlet/": townTop("Murrells Inlet"),
-  "/submarkets/myrtle-beach/": townTop("Myrtle Beach"),
-  "/submarkets/north-myrtle-beach/": townTop("North Myrtle Beach"),
+  "/submarkets/myrtle-beach/": { ...townTop("Myrtle Beach"), withStrips: true },
+  "/submarkets/north-myrtle-beach/": { ...townTop("North Myrtle Beach"), withStrips: true },
   "/submarkets/pawleys-island/": townTop("Pawleys Island"),
-  "/submarkets/surfside-beach/": townTop("Surfside Beach"),
+  "/submarkets/surfside-beach/": { ...townTop("Surfside Beach"), withStrips: true },
   "/submarkets/carolina-forest/": { head: "Top homes in Carolina Forest", q: [{ subdivision: "Carolina Forest", status: "active", min: "250000" }], link: "subdivision=Carolina%20Forest", fallback: townTop("Myrtle Beach") },
   "/invest/": RENTAL,
-  "/invest/str-tools/": STR_400,
+  "/invest/str-tools/": { ...STR_400, withStrips: true },
   "/invest/str-vs-ltr/": BOTH_WAYS,
   "/invest/condos/": VACATION,
-  "/invest/condotel-financing/": OCEAN_300,
-  "/invest/non-warrantable-condos/": CASH_OCEAN,
-  "/invest/condo-buildings/": HIGH_OCEAN,
-  "/invest/airbnb-income/": STR_OCEAN,
+  "/invest/condotel-financing/": TURNKEY_PROGRAM,
+  "/invest/non-warrantable-condos/": RUN_FOR_RENTING,
+  "/invest/condo-buildings/": { ...HIGH_OCEAN, withStrips: true },
+  "/invest/airbnb-income/": { ...STR_PRIME, withStrips: true },
   "/invest/str-rules/": STR_HOUSES,
   "/invest/str-setup/": TURNKEY,
   "/invest/str-tax-treatment/": STR_FURNISHED,
@@ -318,7 +352,6 @@ export const FEEDS = {
   "/invest/run-the-numbers/": RUN_NUMBERS,
   "/invest/out-of-state/": TOUR_RENTAL,
   "/invest/property-management/": WARRANTY_RENTAL,
-  "/invest/cash-to-close/": CUT_RENTAL,
   "/invest/where-to-buy/": WHERE_RENT,
   "/invest/mid-term-rentals/": NURSES,
   "/invest/student-rentals/": { head: "Rental picks near Coastal Carolina University", q: [H({ near: "33.7951,-79.0112", miles: "4", beds: "3", min: "200000", max: "420000", yearMin: "1995" })], post: { yearMin: 1995 }, rank: "rental", link: "type=house&near=33.7951%2C-79.0112&miles=4", fallback: RENTAL },
@@ -327,34 +360,33 @@ export const FEEDS = {
   "/invest/foreclosures/": FORECLOSURE,
   "/invest/section-8-rentals/": { head: "Rental picks under $300,000", q: towns(["Conway", "Myrtle Beach", "Longs"], H({ beds: "3", min: "190000", max: "299999", yearMin: "1995" })), post: { yearMin: 1995 }, rank: "ppb", link: "type=house&beds=3&max=300000", fallback: RENTAL },
   "/invest/new-construction-rentals/": NEW_LTR,
-  "/invest/financing-multiple-rentals/": TOWNHOUSE_RENTAL,
   "/invest/landlord-insurance/": LL_INS,
   "/invest/rent-prices/": FOUR_BED_RENTAL,
   "/invest/rental-returns/": CONWAY_PPB,
   "/invest/how-long-to-hold/": BRICK_RENTAL,
   "/invest/what-is-being-built/": STILL_BUILT,
-  "/invest/strategies/": MIX,
-  "/invest/strategies/dscr-loans/": DSCR,
+  "/invest/strategies/": { ...MIX, head: "This week's investment buys: rentals, fixers and duplexes", withStrips: true },
+  "/invest/strategies/dscr-loans/": { ...DSCR, withStrips: true },
   "/invest/strategies/brrrr/": PRE_2000,
   "/invest/strategies/fix-and-flip/": FIXERS,
-  "/invest/strategies/1031-exchange/": RENTS_NOW,
+  "/invest/strategies/1031-exchange/": { ...RENTS_NOW, withStrips: true },
   "/invest/strategies/dst/": OCEAN_PROGRAM,
-  "/invest/strategies/small-multifamily/": MULTI,
+  "/invest/strategies/small-multifamily/": { ...MULTI, head: "Live in one, rent the rest: duplexes and fourplexes for sale", withStrips: true },
   "/hoa/": HOA_COVERS,
   "/hoa/special-assessments/": NEWER_CONDOS,
   "/hoa/reserves/": NEWEST_CONDOS,
   "/hoa/documents/": HOA_INTERNET,
   "/hoa/liens-and-foreclosure/": DISTRESSED,
-  "/hoa/south-carolina-hoa-laws/": NO_HOA,
+  "/hoa/south-carolina-hoa-laws/": NO_BOARD,
   "/hoa/violations-and-fines/": NO_HOA_BOAT,
   "/hoa/estoppel-and-transfer-fees/": CHEAP_EAST,
   "/hoa/dues-increases/": LOW_FEE,
   "/hoa/tax-deductible/": RENTED_CONDOS,
-  "/hoa/rental-restrictions/": RENTALS_OK,
-  "/hoa/master-insurance-ho6/": HOA_INSURED,
+  "/hoa/rental-restrictions/": RENT_BY_NIGHT,
+  "/hoa/master-insurance-ho6/": INSURED_OCEAN,
   "/hoa/who-pays-for-damage/": TOP_FLOOR,
   "/hoa/hoa-vs-poa/": LAWN_HOUSE,
-  "/hoa/benefits/": AMENITIES,
+  "/hoa/benefits/": { ...AMENITIES, head: "Newer homes with a neighborhood pool and clubhouse", withStrips: true },
   "/hoa/developer-control-turnover/": NEW_COMMUNITY,
   "/sell/": COMPETITION,
   "/sell/home-value/": { ...FRESH, low: true },
@@ -365,8 +397,9 @@ export const FEEDS = {
   "/sell/rental-property/": RENTED_HOUSES,
   "/sell/sell-my-condo/": { ...COMPETITION, head: "Condos competing with yours right now", q: CONDOS.q, link: "type=condo" },
   "/sell/capital-gains/": MOVE_UP,
-  "/market-reports/": WEEK,
-  "/market-reports/july-2026/": CONDO_CUT,
+  "/market-reports/": { ...WEEK, withStrips: true },
+  "/why-chapter-3/": { ...NEWEST, head: "Just listed on the Grand Strand. Tell our AI what you want", low: true, withStrips: true },
+  "/market-reports/july-2026/": { ...CONDO_CUT, head: "Beach condos where the seller already cut the price", withStrips: true },
 };
 
 const SUB = /^[A-Za-z0-9 .,'&()\/-]{2,80}$/;

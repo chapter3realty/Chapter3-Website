@@ -115,7 +115,10 @@ export function card(l, opts = {}) {
     + `${tag ? `<span class="hx-c-tag">${esc(tag)}</span>` : ""}${miles}</span>`
     + `<span class="hx-c-body"><span class="hx-c-price">${esc(headlinePrice(l))}</span><span class="hx-c-facts">${bits.map((b) => `<span>${b}</span>`).join("")}</span>`
     + `<span class="hx-c-addr">${esc(addr)}</span>`
-    + `<span class="hx-c-firm">MLS #${esc(l.mlsNumber)}, ${esc(l.listingFirm || "listing brokerage")}. Listing provided by CCMLS.</span></span></a>`
+    /* On a guide page's strip (owner, 2026-11-12: "i dont really like the MLS information on the horizontal IDX") the card
+       names only the listing firm (16.14); the page carries the CCMLS source and notice (16.16, 16.17). The search keeps the full line. */
+    + (opts.strip ? `<span class="hx-c-firm">Listed by ${esc(l.listingFirm || "the listing brokerage")}</span></span></a>`
+      : `<span class="hx-c-firm">MLS #${esc(l.mlsNumber)}, ${esc(l.listingFirm || "listing brokerage")}. Listing provided by CCMLS.</span></span></a>`)
     + `${heartButton(l, opts.hearted, true)}</article>`;
 }
 
@@ -126,7 +129,7 @@ export function grid(listings, hearts) {
 }
 
 /** The same card in a strip that pans sideways (guide pages, "more homes"). */
-export const stripCard = (l, hearted) => card(l, { hearted });
+export const stripCard = (l, hearted) => card(l, { hearted, strip: true });
 
 /**
  * A strip's cards: only homes with a photo (owner, 2026-10-31: no "no photo" blocks in a row of homes),

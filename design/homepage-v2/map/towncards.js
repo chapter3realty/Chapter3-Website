@@ -24,7 +24,8 @@ function load() {
 function pins({ plane, zv, str } = load()) {
   const f = (n) => +(n / 100).toFixed(4);
   // the town pages' own words for the same figures: "AirROI, data through 2026-08-08"
-  const asOf = new Date(str.dataAsOf + "T12:00:00Z"), strWhen = `data through ${MON[asOf.getUTCMonth()]} ${asOf.getUTCDate()}, ${asOf.getUTCFullYear()}`;
+  const asOf = new Date(str.dataAsOf + "T12:00:00Z"); /* dataAsOf is AirROI's update date; its data runs through the month before it (2026-11-03 refresh). */
+  const thru = new Date(Date.UTC(asOf.getUTCFullYear(), asOf.getUTCMonth() - 1, 15)), strWhen = `12 months to ${MON[thru.getUTCMonth()]} ${thru.getUTCFullYear()}`;
   const towns = Object.entries(plane.towns).sort((a, b) => b[1].y - a[1].y);   // south to north, the order a visitor reads the coast
   const PINS = towns.map(([slug, t], k) => {
     if (!fs.existsSync(path.join(REPO, "chapter3realty", "submarkets", slug, "index.html"))) throw new Error("no page for town " + slug);

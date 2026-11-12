@@ -133,11 +133,11 @@ const decide = (rows) => "<style>main#main .c3-decide{list-style:none;margin:1.2
   + "@media (prefers-reduced-transparency:reduce){main#main .c3-decide li{background:#fbf8f3}}</style>"
   + `<ul class="c3-decide" role="list">` + rows.map((r) => `<li><p class="q"><span class="i" aria-hidden="true">${icon(r.icon, { size: 22 })}</span><span>If ${r.ifText}</span></p><p class="a">${r.then}</p></li>`).join("") + "</ul>";
 const DECIDE = decide([
-  { icon: "home", ifText: "you will live here most of the year", then: "Apply for the lower tax rate on a home you live in, called the 4 percent rate, as soon as you close. At 65, apply for the $50,000 exemption too." },
+  { icon: "home", ifText: "you will live here most of the year", then: "Apply for the lower tax rate on a home you live in, called the 4 percent rate, as soon as you close. At 65, apply for the $50,000 exemption too: it takes $50,000 off the value you are taxed on." },
   { icon: "calendar", ifText: "it will be a second home for a few years first", then: `A second home pays the higher rate: about ${T2ND} a year on a $400,000 house, until it becomes your legal home.` },
   { icon: "dollar", ifText: "you live on Social Security and a modest pension", then: `You may owe no South Carolina income tax. The ${h.a("#income-tax", "calculator below")} works out yours.` },
   { icon: "beach", ifText: "you want to live near the beach", then: `Each of the four 55+ communities below is 4 to 15 minutes by car from the beach.` },
-  { icon: "storm", ifText: "you would rather not plan a hurricane evacuation", then: "Three of the four 55+ communities are outside every evacuation zone." },
+  { icon: "storm", ifText: "you would rather not plan a hurricane evacuation", then: "Three of the four 55+ communities are outside every hurricane evacuation zone." },
 ]);
 
 /* The three 2026 income tax examples (rows 11 to 13). Short headers, so a 940 px table does not wrap them. */
@@ -199,6 +199,10 @@ const entry = (c, n, slug, photo, paras, at = 1) => `<h3 id="${anchor(c)}" style
    on the band with an H2. The top homes strip's search box at 320 px (NEEDS.md 3): kept inside the column. */
 const BAND_END = 'main#main>section[style^="background:var(--navy)"]:has(>.wrap>h2)';
 const PAGE_CSS = "<style>main#main .c3-glance li{line-height:1.4}"
+  /* Light fix, triage 2026-11-08: the italic line at about half the H1's size, on its own line (the approved look,
+     batches/2026-11-a/hoa-documents/DESIGN.md). */
+  + "@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+  + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}"
   + `${BAND_END}{padding:.9rem 0 1.4rem!important}${BAND_END}>.wrap{display:block!important;text-align:center!important;background:linear-gradient(160deg,rgba(42,48,64,.96),rgba(28,32,40,.98))!important;border:1px solid rgba(255,255,255,.14)!important;border-radius:28px!important;padding:2.2rem 1.6rem!important}`
   + `${BAND_END}>.wrap>h2{color:var(--ivory)!important}${BAND_END}>.wrap>p{color:rgba(244,239,232,.82)!important}`
   + `@media (max-width:699px){${BAND_END}>.wrap{padding:1.6rem 1.2rem 1.7rem!important;border-radius:24px!important}${BAND_END}>.wrap>h2{font-size:1.5rem!important;line-height:1.25}}`
@@ -263,7 +267,7 @@ module.exports = G.page({
   heroCta: false, /* round 1 (owner's eye): one offer per community; the end offer closes the page */
   author: "devin",
   shortAnswer: [
-    `Taxes here are lowest on a home you live in full time. Outside the city limits, a $400,000 house you live in is taxed about ${T65} a year at 65, with the $50,000 exemption. A retired couple on Social Security and a modest pension can owe no South Carolina income tax.`,
+    `A retired couple on Social Security and a modest pension can owe no South Carolina income tax. Property tax here is lowest on a home you live in full time. Outside the city limits, a $400,000 house you live in is taxed about ${T65} a year at 65, with the $50,000 exemption. That exemption takes the first $50,000 of the home's value off the tax.`,
     "The four 55+ communities on this page are 4 to 15 minutes by car from the beach. Homes in them usually sell for about $300,000 in Myrtle Trace to about $665,000 for a house in Del Webb at Grande Dunes.",
   ],
   sections: [
@@ -272,38 +276,40 @@ module.exports = G.page({
       h.p("About 128,700 people in Horry County are 65 or older, about 3 in 10 residents. In South Carolina and in the U.S. as a whole, it is about 2 in 10. Whether it suits you depends most on how you will use the home.") +
       DECIDE },
 
-    { h2: "What is a retired week like in Myrtle Beach?", toc: "A retired week", id: "retired-life", html: () =>
+    { h2: "What is a retired week like in Myrtle Beach?", toc: "A retired week", id: "retired-life", html: (bg) =>
       ph.css() + G.homesCss() +
       h.p(`For golf, anyone who lives or owns a home in Horry County can buy the ${h.ext(PASSPORT, "Myrtle Beach Golf Passport")}, $72 a year, for member rates at the courses that take it. The city's own course, ${h.ext(PINES, "Whispering Pines")}, charges county residents $45 a round with a cart, plus tax.`) +
       h.p("In the off season, nothing closes except the tourist attractions and the water parks. The boardwalk stays open, sometimes with shorter hours. Each 55+ community below has its own clubhouse and pool, and three of them have a lifestyle director or a club calendar.") +
       PH_BEACH +
-      h.p(`Family can fly straight here. The ${h.ext(ROUTES, "Myrtle Beach airport's route map")} lists nonstop flights to more than 50 cities on ten airlines, among them New York LaGuardia, Newark, Philadelphia, Pittsburgh, Cleveland and Charlotte. The airport is 20 to 35 minutes by car from the four 55+ communities. Plan on a car: most daily life here is built around driving.`) },
+      h.p(`Family can fly straight here. The ${h.ext(ROUTES, "Myrtle Beach airport's route map")} lists nonstop flights to more than 50 cities on ten airlines, among them New York LaGuardia, Newark, Philadelphia, Pittsburgh, Cleveland and Charlotte. The airport is 20 to 35 minutes by car from the four 55+ communities. Plan on a car: ${h.a("/buyers/relocating/getting-around/", "most daily life here is built around driving")}.`) },
 
-    { h2: "Which 55+ communities near Myrtle Beach should you see?", toc: "55+ communities", id: "communities", html: () =>
+    { h2: "Which 55+ communities near Myrtle Beach should you see?", toc: "55+ communities", id: "communities", html: (bg) =>
       h.p("We have a full guide to each of these four 55+ communities.") +
       ENTRIES +
       h.h3("Do you need a 55+ community?") +
       h.p(`No. About ${OL_TOTAL.toLocaleString("en-US")} houses on one level are for sale across the area, and fewer than ${(Math.floor(IN55 / 10) + 1) * 10} homes are for sale in these four 55+ communities. About two in three of the one-level houses are under $400,000. Of the seven towns in the chart, ${MOST} has the most of those; ${LOWTWO[0]} and ${LOWTWO[1]} have the fewest.`) +
       OL_CHART +
-      h.p(`Our ${h.a("/buyers/55-plus-communities/", "55+ communities guide")} compares more of them.`) },
+      h.p(`Our ${h.a("/buyers/55-plus-communities/", "55+ communities guide")} compares more of them.`) +
+      h.cta("Homes near the golf, beach or clubhouse you want", "Tell us what you want near home, and we send you one-level houses for sale that fit, inside or outside a 55+ community.", "Send us what you want nearby", "/contact/", bg) },
 
     { h2: "How close are the hospitals to Myrtle Beach's 55+ communities?", toc: "Hospitals", id: "hospitals", html: () =>
       h.p(`Each of the four is ${Math.min(...mins)} to ${Math.max(...mins)} minutes by car from a hospital, without traffic.`) +
       MAP.html +
       h.p(`Medicare rates hospitals from 1 to 5 stars. On ${h.ext(CARE, "Care Compare")}, Tidelands Waccamaw Community Hospital, nearest Seasons, has 4 stars. Conway Medical Center, nearest Myrtle Trace, and Grand Strand Medical Center, nearest Del Webb at Grande Dunes, have 2 each.`) +
-      h.p("McLeod Health has cut the ribbon on a new 48-bed hospital in Carolina Forest and says it opens this fall. It is about 6 minutes by car from Del Webb at Grande Dunes, the same as Grand Strand Medical Center.") },
+      h.p(`McLeod Health opened ${h.a("/buyers/relocating/healthcare/", "a new 48-bed hospital in Carolina Forest")} to patients in October 2026. It is about 6 minutes by car from Del Webb at Grande Dunes, the same as Grand Strand Medical Center.`) },
 
-    { h2: "Do Myrtle Beach's 55+ communities have to evacuate for hurricanes?", toc: "Hurricanes and flooding", id: "hurricanes", html: () =>
+    { h2: "Do Myrtle Beach's 55+ communities have to evacuate for hurricanes?", toc: "Hurricanes and flooding", id: "hurricanes", html: (bg) =>
       h.p(`Three of the four are outside every hurricane evacuation zone. Every home in Seasons at Prince Creek West is in Zone C.`) +
       h.p(`South Carolina draws its ${h.ext(ZONES, "evacuation zones")} A, B and C around storm surge, the rise of sea water in a storm. A home outside every zone is not ordered out by its zone.`) +
       h.p("The homes in all four communities are outside FEMA's high-risk flood areas, so federal law does not require flood insurance with a mortgage, though a lender may still ask for it. In Seasons, 45 lots touch a high-risk area at one edge, so we check where the house is on the lot.") +
-      h.p(`Our ${h.a("/buyers/coastal-insurance/", "coastal insurance guide")} explains wind and flood cover, and our ${h.a("/buyers/relocating/hurricanes/", "hurricane page")} has more on storms here.`) },
+      h.p(`Our ${h.a("/buyers/coastal-insurance/", "coastal insurance guide")} explains wind and flood cover, and our ${h.a("/buyers/relocating/hurricanes/", "hurricane page")} has more on storms here.`) +
+      h.cta("The storm zone and flood zone of one home", "Send us a home you like. We tell you its hurricane evacuation zone and whether any of its lot is in a high-risk flood area.", "Have us look up a home's zones", "/contact/", bg) },
 
     { h2: "What is the weather like in Myrtle Beach all year?", toc: "Weather", id: "weather", html: () =>
       h.p("January afternoons are in the mid to upper 50s: about 56 degrees in Myrtle Beach and about 58 in Conway. Each has close to 40 nights a year at or below freezing.") +
       h.p("Summer is milder on the coast. In a normal year, Myrtle Beach has about 22 days of 90 degrees or more, and Conway, inland, about 58.") },
 
-    { h2: "What does a house near Myrtle Beach cost a year at 65?", toc: "Yearly cost at 65", id: "yearly-cost", html: () =>
+    { h2: "What does a house near Myrtle Beach cost a year at 65?", toc: "Yearly cost at 65", id: "yearly-cost", html: (bg) =>
       h.p(`Outside the city limits, a $400,000 house you live in costs about ${YEAR65} a year in county tax and fees at 65, before insurance and any HOA fee.`) +
       TAX_CHART +
       h.p(`The 4 percent rate is the lower tax rate on a home you live in. Until you apply for it, the county bills the house at the second-home rate. To get it, you certify that no one in your household claims to be a legal resident of another state. A house that becomes your home for any part of the year gets the lower rate for the whole year.`) +
@@ -315,7 +321,8 @@ module.exports = G.page({
         ["Homeowners insurance", "A quote on the house"],
       ]) +
       h.p(`Homeowners insurance is priced house by house. The ${h.ext(DOI, "state insurance department")} says the price depends on how the house is built, its age, the fire protection nearby, the coverage and the deductible. We get you a quote on the exact house before you write an offer.`) +
-      h.p("Property tax up north can be many times this. One of our clients from New York sold a $1 million house with more than $20,000 a year in property tax. They bought a $700,000 house here, with about $3,200 in tax. Those are one household's numbers, not a promise.") },
+      h.p("Property tax up north can be many times this. One of our clients from New York sold a $1 million house with more than $20,000 a year in property tax. They bought a $700,000 house here, with about $3,200 in tax. Those are one household's numbers, not a promise.") +
+      h.cta("A year's cost for one house, before you offer", "Pick one house. We add up its tax at that price, its HOA fee and an insurance quote, so you know its cost a year.", "Have us add up one house", "/contact/", bg) },
 
     { h2: "Does South Carolina tax Social Security and pensions?", toc: "Income tax", id: "income-tax", html: () =>
       h.p(`South Carolina does not tax Social Security. Pensions, IRAs and 401(k) plans get a deduction for each person, larger from the year you turn 65, and military retirement pay is not taxed at all. These rules come from a ${h.ext(ACT110, "new state law, Act 110")}.`) +
@@ -350,7 +357,7 @@ module.exports = G.page({
   ogImageAlt: "Retiring to Myrtle Beach: no state tax on Social Security.",
   sourcesNote: "Not legal or tax advice. Tax examples by Chapter3 under the 2026 rules. Full-time homes and hurricane zones: every home in the county's parcel records. Home prices: county deed records. Drives without traffic.",
   afterSources: () => ph.credits(),
-  bottomCta: { h2: "Tell us how you want to live.", p: "For each home you like, we bring the tax at its price, the HOA fee, an insurance quote, the flood zone and the drive to the hospital.", label: "Talk to an agent", href: "/contact/" },
+  bottomCta: { h2: "Choose where to retire, with an agent", p: "Tell us how you want to live. We pick the 55+ communities and homes that fit, and show them to you.", label: "Have us pick homes for you", href: "/contact/" },
   keywords: "retire to Myrtle Beach, retiring in Myrtle Beach, is Myrtle Beach a good place to retire, things to do for retirees in Myrtle Beach, cost of living Myrtle Beach retirees, South Carolina tax on Social Security, does South Carolina tax pensions, homestead exemption Horry County, 55+ communities near Myrtle Beach, Myrtle Beach hospitals",
   about: "Retiring to Myrtle Beach and Horry County, South Carolina",
 });

@@ -16,7 +16,7 @@
  */
 import { COOKIE as COOKIE_NAME, PREVIEW_COOKIE, clearCookie, crm, idxOn, sameOrigin, setCookie, visitorToken } from "../../idx-lib/crm.js";
 import { PLACES } from "../../idx-lib/places.js";
-import { NO_HOA_NOTE, placeParams } from "../../idx-lib/edge.js";
+import { NO_HOA_NOTE, placeParams, placeStripApi } from "../../idx-lib/edge.js";
 import { CITIES, readQuery } from "../../idx-lib/query.js";
 import { featureLabel, featureList, catalogLoaded, isDistance } from "../../idx-lib/features.js";
 import { filterCatalog, panelGroups } from "../../idx-lib/catalog.js";
@@ -91,6 +91,7 @@ async function handle(context) {
     if (name === "lookup" && request.method === "GET") return lookup(context, url);
     if (name === "similar" && request.method === "GET") return similar(context, url);
     if (name === "strip" && request.method === "GET") return stripApi(context, url);
+    if (name === "place" && request.method === "GET") return placeStripApi(env, request, url);
     if (name === "filters" && request.method === "GET") return filtersApi(context);
     if (request.method !== "POST") return json({ ok: false, error: "method" }, 405);
     if (!sameOrigin(request)) return json({ ok: false, error: "forbidden" }, 403);
@@ -1149,6 +1150,8 @@ async function homesLike(context, l, where) {
 
 async function placePage(context, slug, gate, anonymous = false) {
   const place = /^[a-z0-9-]{1,80}$/.test(slug) ? PLACES[slug] : null;
+  // A duplicate place (idx-places.json "same") sends readers and search engines to the one kept page.
+  if (place && place.same && PLACES[place.same]) return Response.redirect(`${SITE}/homes/near/${place.same}/${new URL(context.request.url).search}`, 301);
   if (!place) return notFound(context);
   const p = placeParams(place.q);
   if (!p) return notFound(context);
@@ -1170,7 +1173,9 @@ ${disclaimer(j.meta)}`;
     title: place.title || `Homes for sale in ${place.name}`,
     description: `${place.title || `Homes for sale in ${place.name}`}, from the Coastal Carolinas MLS and refreshed every few minutes, with Chapter3 Realty.`.slice(0, 160),
     canonical: `${SITE}/homes/near/${slug}/`,
-    robots: ls.length ? "index, follow" : "noindex, follow",
+    // "index": false (Blog-Brain idx-places.json): a strip for one guide page only; its page stays out of search
+    // so it does not compete with the town guides (owner, 2026-11-08: "make sure it doesn't cannibalize").
+    robots: ls.length && place.index !== false ? "index, follow" : "noindex, follow",
     body,
   });
 }

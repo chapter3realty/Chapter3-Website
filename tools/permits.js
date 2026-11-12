@@ -17,7 +17,16 @@
  *   3. FRED series MYRT845BPPRIV, the Census count of housing units authorized
  *      by permit in the Myrtle Beach metro, monthly. fred.stlouisfed.org
  *      refuses some clients; when it fails the previous months stay and the
- *      read date does not move.
+ *      read date does not move. Kept for reference only; the page uses feed 4.
+ *   4. Census Building Permits Survey, CBSA files for 34820 (the Myrtle Beach
+ *      metro, which is Horry County alone since the 2023 delineation). The
+ *      newest year-to-date file (cbsaYYMMy), the same month a year earlier,
+ *      the two latest annual files (cbsaYYYYa) and every monthly first count
+ *      (cbsaYYMMc) since January 2024. Units = the four "Estimates with
+ *      Imputation" groups (fields 7, 10, 13 and 16, one-based). The year-to-date
+ *      and annual files add late reports and corrections, so they do not equal
+ *      the sum of the monthly files. Also the place file for the newest full
+ *      year: "Horry County Unincorporated Area".
  *
  * Nothing is inferred: a feed that fails keeps its old values and old read
  * date, and the page shows that date. Then: node tools/mkpage.js
@@ -32,6 +41,8 @@ const today = new Date().toISOString().slice(0, 10);
 const DEV = "https://utility.arcgis.com/usrsvcs/servers/80af96d3ac864d068045634ac4365405/rest/services/PZ_Edit/pz_MajorResidentialDevelopments/FeatureServer/0/query";
 const PERMITS = "https://www.horrycounty.org/gisweb/rest/services/Public/PermitsActive/MapServer/0/query";
 const FRED = "https://fred.stlouisfed.org/data/MYRT845BPPRIV.txt";
+const CBSA_DIR = "https://www2.census.gov/econ/bps/CBSA%20(beginning%20Jan%202024)/";
+const PLACE_SO = "https://www2.census.gov/econ/bps/Place/South%20Region/";
 
 function get(url, params, timeoutMs) {
   const u = new URL(url);
@@ -89,6 +100,34 @@ async function fred(prev) {
   if (Object.keys(monthly).length < 12) throw new Error("fred: too few rows");
   return { ...prev, read: today, monthly: { ...(prev.monthly || {}), ...monthly } };
 }
+async function census(prev) {
+  const listing = await retry(() => get(CBSA_DIR, {}, 60000));
+  const ys = [...new Set(listing.match(/cbsa\d{4}y\.txt/g) || [])].sort();
+  if (!ys.length) throw new Error("census: no year-to-date files listed");
+  const latest = ys[ys.length - 1].slice(4, 8), yy = +latest.slice(0, 2), mm = +latest.slice(2, 4);
+  const units = (txt, file) => {
+    const line = txt.split("\n").find(l => l.split(",")[2] === "34820");
+    if (!line) throw new Error(`census: no 34820 line in ${file}`);
+    const f = line.split(",");
+    return [7, 10, 13, 16].reduce((a, i) => a + Number(f[i - 1]), 0);
+  };
+  const file = async (name) => units(await retry(() => get(CBSA_DIR + name, {}, 60000)), name);
+  const pad = (n) => String(n).padStart(2, "0");
+  const y1 = 2000 + yy - 1, y2 = 2000 + yy - 2;
+  const ytd_now = await file(`cbsa${latest}y.txt`), ytd_prev = await file(`cbsa${pad(yy - 1)}${pad(mm)}y.txt`);
+  const annual = { [y2]: await file(`cbsa${y2}a.txt`), [y1]: await file(`cbsa${y1}a.txt`) };
+  const monthly = { ...(prev.monthly || {}) };
+  for (let y = 24; y <= yy; y++) for (let m = 1; m <= (y === yy ? mm : 12); m++) {
+    const key = `20${pad(y)}-${pad(m)}`;
+    if (monthly[key] === undefined) monthly[key] = await file(`cbsa${pad(y)}${pad(m)}c.txt`);
+  }
+  const place = (await retry(() => get(PLACE_SO + `so${y1}a.txt`, {}, 90000))).split("\n").find(l => (l.split(",")[16] || "").trim() === "Horry County Unincorporated Area");
+  if (!place) throw new Error("census: no Horry County Unincorporated Area line in the place file");
+  const pf = place.split(",");
+  const unincorporated = { year: y1, units: [19, 22, 25, 28].reduce((a, i) => a + Number(pf[i - 1]), 0) };
+  return { source: CBSA_DIR, place_source: PLACE_SO + `so${y1}a.txt`, read: today, latest_month: `20${pad(yy)}-${pad(mm)}`, ytd_now, ytd_prev, annual, monthly, unincorporated,
+    note: "Census Building Permits Survey, CBSA 34820, total units (1-unit + 2-units + 3-4 units + 5+ units), estimates with imputation. ytd and annual files include late reports and corrections; monthly values are each month's first count." };
+}
 
 (async () => {
   const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, "utf8")) : {};
@@ -100,6 +139,8 @@ async function fred(prev) {
   catch (e) { log("permit feed", `FAILED (${e.message}); kept the ${prev.county_permit_feed ? prev.county_permit_feed.read : "seed"} values`); }
   try { next.permits_fred = await fred(prev.permits_fred || {}); const ks = Object.keys(next.permits_fred.monthly).sort(); log("fred", `through ${ks[ks.length - 1]} (${next.permits_fred.monthly[ks[ks.length - 1]]} units)`); }
   catch (e) { const ks = Object.keys((prev.permits_fred || {}).monthly || {}).sort(); log("fred", `FAILED (${e.message}); kept the values through ${ks[ks.length - 1] || "none"}, read ${(prev.permits_fred || {}).read || "seed"}`); }
+  try { next.permits_census = await census(prev.permits_census || {}); const c = next.permits_census; log("census", `through ${c.latest_month}: ytd ${c.ytd_now} (a year earlier ${c.ytd_prev}); annual ${JSON.stringify(c.annual)}; unincorporated ${c.unincorporated.year} ${c.unincorporated.units}`); }
+  catch (e) { log("census", `FAILED (${e.message}); kept the ${prev.permits_census ? prev.permits_census.read : "seed"} values`); }
   if (CHECK) { console.log("\n--check: nothing written"); return; }
   fs.writeFileSync(OUT, JSON.stringify(next, null, 1) + "\n");
   console.log(`\nwrote ${path.relative(process.cwd(), OUT)}`);

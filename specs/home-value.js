@@ -401,29 +401,31 @@ module.exports = G.page({
   h1em: "",
   sub: "A licensed broker tells you what your own Horry County home is worth, free, from the sales most like it.",
   heroCta: { title: "Send your address. An agent calls the same day.", label: LABEL, href: LEAD },
-  author: "tim",
+  author: "devin",
   /* Review 3 (owner): the price first, the date once; the lowest and highest areas (owner nit; critic: "houses and other homes"). */
   shortAnswer: [
     `Houses and other homes that resold in Horry County went for a middle price of about ${r1k(HOUSE.median)} in the ${PERIOD}, and condos for about ${r1k(CONDO.median)}. By area, the middle house price ran from about ${r1k(BOTTOM.house.med)} in the city of Loris to about ${r1k(TOP.house.med)} in the town of Surfside Beach.`,
     `For what your own home is worth, an agent picks the sales most like it and sends you the number with those sales.`,
   ],
   sections: [
-    { h2: "What did homes sell for in my area of Myrtle Beach?", toc: "Your area", id: "your-area", html: () =>
+    { h2: "What did homes sell for in my area of Myrtle Beach?", toc: "Your area", id: "your-area", html: (bg) =>
       HERO_CSS + PICK_CSS + CHART_CSS + WIDTH_CSS + CHROME_CSS + ph.css() +
       h.p(`Pick your area and your kind of home. Half of the homes sold for more than the middle price, and half for less.`) +
       PICKER + ROW_NOTE +
       h.p(`Where your home falls in that range depends on its size, age, lot and condition. That is the part we work out for you.`) +
-      ENDS },
+      ENDS +
+      h.cta("Find out where your home falls in that range", "Send the address. An agent tells you where in your area's range your home falls, and why.", "Show me where mine falls", LEAD, bg) },
 
     { h2: "Are home prices dropping in Myrtle Beach?", toc: "Prices now", id: "prices-now", html: () =>
       h.p(`No. House prices in Horry County have been about flat for a year, after rising about half in the four years before.`) +
       FHFA_FIG },
 
     /* Review 3 (reader): why a typical 6.6 percent miss is not good enough on one house, and what a listing adds. */
-    { h2: "How accurate are online home estimates in Myrtle Beach?", toc: "Online estimates", id: "online-estimates", html: () =>
+    { h2: "How accurate are online home estimates in Myrtle Beach?", toc: "Online estimates", id: "online-estimates", html: (bg) =>
       h.p(`Redfin publishes how close its own estimate comes in Horry County. For homes that were not for sale, the middle miss was ${rfMed} percent: about ${r1k(RF.medianError * ON)} on a ${money(ON)} house. Half of the homes were further off, and about 1${NB_}in${NB_}${rfOver20} was off by more than 20 percent.`) +
       h.p(`No online estimate, Zillow's Zestimate included, tells you whether your home is one of the close ones or one of the far ones.`) +
-      h.p(`Once a home is listed for sale, Redfin's middle miss here falls to ${rlMed} percent. It is closer then because there is more data about a home for sale. A listing adds what the county's records do not show: the rooms, the updates, the photos and an asking price. Our agent looks at those things with you before you list, and sends the number with the sales behind it.`) },
+      h.p(`Once a home is listed for sale, Redfin's middle miss here falls to ${rlMed} percent. It is closer then because there is more data about a home for sale. A listing adds what the county's records do not show: the rooms, the updates, the photos and an asking price. Our agent looks at those things with you before you list, and sends the number with the sales behind it. Before you list, read ${h.a("/sell/repairs-before-selling/", "what to fix before you sell")} and ${h.a("/sell/best-time-to-sell/", "the best month to list")}.`) +
+      h.cta("Get a closer number than an online estimate", "Send the online number you have, and an agent tells you how close it is for your home, with the sales behind it. Free, and you do not have to list.", "Have us check my online estimate", LEAD, bg) },
 
     /* Review 3 (owner): one county value section, with the test, condos and houses, and the tax bill. */
     { h2: "Is the county's value or the nearest sales a good guess at my price?", toc: "Quick numbers", id: "county-value", html: () =>
@@ -450,7 +452,7 @@ module.exports = G.page({
       ]) +
       h.p(`A condo's price also depends on whether lenders will lend in its building. Where many will not, fewer buyers can get a loan. Our ${h.a("/invest/non-warrantable-condos/", "guide to condos most lenders will not lend on")} explains which buildings and why.`) +
       h.p(`Our agents do a CMA for your home, free.`) +
-      h.cta("Have an agent price your home", "Usually in a day or two.", LABEL, LEAD, bg) +
+      h.cta("Have an agent price your home", "Usually in a day or two.", "Ask us to price it", LEAD, bg) +
       h.h3("Is a CMA the same as an appraisal?") +
       h.p(`No. An appraisal is a licensed appraiser's opinion of value. In South Carolina, appraisal work and the title of appraiser need an appraiser's license, and an agent's valuation may not be called an appraisal.`) +
       h.p(`Our agents see low appraisals only rarely here. When a buyer's appraisal comes in low, our agents ask the appraiser to look again, and send recent sales of homes like yours. Once, the value went up, and the buyer brought less cash to closing.`) },
@@ -465,7 +467,7 @@ module.exports = G.page({
       h.h3("New houses for sale near you") +
       h.p(`Your house competes with ${h.a("/buyers/new-construction/", "new ones")}. Builders sold new houses in the same 12 months for a middle price close to the resale one. More than 2 miles from the ocean, new houses for sale ask about $${newSq} a square foot, and older ones about $${oldSq}. A buyer at your price may also be touring new houses.`) +
       h.h3("The time of year") +
-      h.p(`More houses sell in the warm months. From May to October the county recorded about ${warmX} times as many house resales a month as in January and February. The price moved less: the middle stayed within about ${mBand} percent of ${r1k(HOUSE.median)} in every month.`) +
+      h.p(`More houses sell in the warm months. From May to October the county recorded about ${warmX} times as many house resales a month as in January and February. The price moved less: the middle stayed within about ${mBand} percent of ${r1k(HOUSE.median)} in every month. Our ${h.a("/market-reports/", "Myrtle Beach market reports")} track prices, days on market and inventory.`) +
       h.h3("The flood line") +
       h.p(`About ${flPct} percent of the county's resales were inside ${h.a("/buyers/coastal-insurance/", "FEMA's high-risk flood zone")}, most of them condos. Being inside it did not lower the price. In neighborhoods with house sales on both sides of the line, the houses inside it did not sell for less than the others.`) },
 
@@ -480,11 +482,11 @@ module.exports = G.page({
         `<strong>Tax on your gain, often none.</strong> If you owned the home and lived in it for 2 of the last 5 years, up to $250,000 of gain can be left out of your income, or $500,000 for a married couple filing jointly who both lived there. It does not apply if you used it on another home in the 2 years before. Bought for $200,000 and sold for ${money(ON)}, your gain is less than $150,000, inside the limit.`,
         `<strong>A hold-back if you live in another state.</strong> The buyer must hold back part of the price at closing for South Carolina income tax, unless the sale is exempt, for example a main home whose gain is inside that limit. With your signed statement of the gain, it is figured on the gain, not the whole price.`,
       ]) +
-      h.p(`Our ${h.a("/sell/net-proceeds/", "net proceeds calculator")} works out what you keep at your own price. Thinking of selling it yourself? We will price your home either way.`) },
+      h.p(`Our ${h.a("/sell/net-proceeds/", "net proceeds calculator")} works out what you keep at your own price. Thinking of ${h.a("/sell/fsbo/", "selling it yourself")}? We will price your home either way.`) },
 
     { h2: "Get the number for your home", toc: "Get your number", id: "lead-form", html: () =>
       FORM_CSS +
-      h.p(`Send the address and an agent calls you, evenings included. You can ask before you are ready to sell: for insurance, an estate, or to decide when to sell. Prefer to talk? Call ${h.a("tel:+18543332135", "854.333.2135")}.`) +
+      h.p(`Send the address and an agent calls you, evenings included. You can ask before you are ready to sell: for insurance, ${h.a("/sell/inherited-house/", "an estate")}, or to decide when to sell. Prefer to talk? Call ${h.a("tel:+18543332135", "854.333.2135")}.`) +
       kit.glance([
         { icon: "calendar", label: "A call", text: "Same day" },
         { icon: "home", label: "Your analysis", text: "Usually a day or two" },

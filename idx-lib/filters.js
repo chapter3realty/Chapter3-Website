@@ -175,6 +175,8 @@ ${AI_CSS}
 .hx-fb-go{flex:none;border:0;border-radius:999px;background:linear-gradient(180deg,#d4894a,#c4783a);color:#151a22;font:inherit;font-weight:700;font-size:.9rem;padding:.7rem 1.15rem;cursor:pointer;white-space:nowrap}
 .hx-fb-go:hover{background:#c4783a}
 .hx-fb-q textarea::placeholder{color:#6b7480}
+/* Owner, 2026-11-03: nothing cut off. Below 380 px the search row wraps: the words, then the button on its own line (critic: the row ran to 364 px in a 320 px window on every page with a homes row). */
+@media (max-width:379px){.hx-fb-ai,.hx-fb-q{min-width:0;max-width:100%;flex-wrap:wrap;box-sizing:border-box}.hx-fb-q textarea{min-width:0;flex:1 1 100%;width:100%}.hx-fb-go{flex:1 1 100%}.hx-ai-badge{flex-wrap:wrap;white-space:normal}}
 /* The Filters window (owner, 2026-10-28: Zillow's, with our look): the house first, then See more. */
 .hx-fb .hx-modal>.hx-pop-p{position:fixed;left:50%;right:auto;top:calc(var(--hx-top,0px) + 1rem);bottom:1rem;transform:translateX(-50%);width:min(40rem,calc(100vw - 2rem))!important;max-height:52rem;padding:0;display:flex;flex-direction:column;overflow:hidden;z-index:10002;border-radius:20px}
 .hx-modal[open]>summary::before{content:"";position:fixed;inset:0;background:rgba(21,26,34,.5);z-index:10001;cursor:default}

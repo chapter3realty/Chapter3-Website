@@ -215,7 +215,6 @@ const SCRIPT = `<script>(function(){var d=document,root=d.getElementById("main")
   + `if(s)s.addEventListener("input",function(){[].forEach.call(pre,function(b){b.setAttribute("aria-pressed",b.getAttribute("data-v")===s.value?"true":"false")})});`
   + `[].forEach.call(d.querySelectorAll(".ev-hb"),function(f){var rd=f.querySelector(".ev-read");if(!rd)return;var rs=f.querySelectorAll(".r[data-say]");[].forEach.call(rs,function(r){var go=function(){[].forEach.call(rs,function(x){x.classList.toggle("sel",x===r)});rd.textContent=r.getAttribute("data-say")};r.addEventListener("click",go);r.addEventListener("mouseenter",go);r.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}})})});`
   + `var sc=d.getElementById("evScore"),qn=0,qr=0,qs=d.querySelectorAll(".ev-q");[].forEach.call(qs,function(q){var bs=q.querySelectorAll("button");[].forEach.call(bs,function(b){b.addEventListener("click",function(){var ok=b.getAttribute("data-v")===q.getAttribute("data-a");b.classList.add(ok?"ok":"no");[].forEach.call(bs,function(x){x.disabled=true;if(x.getAttribute("data-v")===q.getAttribute("data-a"))x.classList.add("ok")});q.classList.add("done");qn++;if(ok)qr++;if(sc)sc.textContent=qr+" of "+qn+" right"})})});`
-  + `var dd=d.querySelector("[data-ev-days]");if(dd){var t=new Date(dd.getAttribute("data-ev-days")+"T00:00:00"),n=Math.ceil((t-new Date())/864e5);if(n>1)dd.textContent="Flood insurance deadline, "+n+" days away";else if(n===1)dd.textContent="Flood insurance deadline, tomorrow"}`
   + `var cnt=function(e){var to=parseFloat(e.getAttribute("data-ev-count")),dc=+(e.getAttribute("data-ev-dec")||0),t0=null;if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;var st=function(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/900),v=to*(1-Math.pow(1-k,3));e.textContent=dc?v.toFixed(dc):Math.round(v).toLocaleString("en-US");if(k<1)requestAnimationFrame(st)};requestAnimationFrame(st)};[].forEach.call(d.querySelectorAll("[data-ev-count]"),cnt);`
   + `var tl=d.querySelector(".ev-time");if(tl){var tf=d.createElement("span");tf.className="ev-tf";tf.setAttribute("aria-hidden","true");tl.insertBefore(tf,tl.firstChild);var lis=tl.querySelectorAll("li");var tick=function(){var r=tl.getBoundingClientRect(),y=innerHeight*0.6-r.top,h=Math.max(0,Math.min(r.height-26,y));tf.style.height=h+"px";[].forEach.call(lis,function(li){li.classList.toggle("on",li.offsetTop+10<=h)})};addEventListener("scroll",tick,{passive:true});tick()}`
   + `var jn=d.querySelector(".ev-jump");if(jn){var bar=d.createElement("div");bar.className="ev-stick";bar.innerHTML="<ul>"+[].map.call(jn.querySelectorAll("a"),function(a){return '<li><a href="'+a.getAttribute("href")+'">'+a.textContent+"</a></li>"}).join("")+"</ul>";root.appendChild(bar);var hd=d.querySelector("header"),bl=bar.querySelectorAll("a"),ids=[].map.call(bl,function(a){return a.getAttribute("href").slice(1)});`
@@ -331,21 +330,11 @@ const WILSON = [
 ];
 must(ANDREWS.length === WILSON.length, "bipartisan: the same number of plan cards");
 const grid = (rows, needs, party) => `<div class="ev-grid ev-plans ${party}">${rows.map((r, i) => plan(i + 1, r[0], r[1], r[2], i === 0 && needs.first ? needs.first : needs.all)).join("")}</div>`;
-const OTHER_A = `<div class="ev-more"><p class="h">Her other plans, with no direct tie to a home</p><ul>`
-  + ["A two-year national pause on AI data centers, with no data center costs passed on to power bills.", "Three income tax brackets of 10, 20 and 35 percent, and no tax rise for families under $500,000.",
-     "Health care: reverse federal Medicaid cuts, expand Medicaid here, restore marketplace premium help, and add a public option.", "Drug prices: imports from Canada, a $35 insulin cap for every insured patient, and more prices that Medicare negotiates.",
-     "Families: child care apprenticeships, a larger child tax credit, higher wages and paid family leave.", "Taxes: end breaks for the highest earners and for moving jobs overseas, keep no tax on tips and Social Security, and restore free IRS filing.",
-     "Energy: suspend the federal gas tax and restore clean energy tax cuts.", "Congress: term limits, a balanced budget amendment, a stock trading ban and no pay in shutdowns.",
-     "Other: universal background checks, a path to citizenship with border security, a digital bill of rights, phones out of schools, Roe v. Wade protections, and a vote of Congress before military force."]
-    .map((t) => `<li>${t}</li>`).join("") + `</ul></div>`;
-const OTHER_W = `<div class="ev-more"><p class="h">His other plans, with no direct tie to a home</p><ul>`
-  + ["End the state income tax, a long-term goal, and overhaul property taxes, as reported.", "Lower personal property taxes on business equipment, as reported.",
-     "Let the governor pause the state gas tax for up to 120 days, as reported.", "Fully fund public schools and expand school choice.", "Rural clinics and telemedicine.",
-     "Deny state benefits to people here illegally.", "Independent audits of state agencies, led by the lieutenant governor.", "Build the energy grid and add competition, as reported."]
-    .map((t) => `<li>${t}</li>`).join("") + `</ul></div>`;
+/* Light fix, triage 2026-11-08: the two lists of "other plans, with no direct tie to a home" are gone.
+   Only the plans that touch a home stay. */
 const PLANS = tabs("evp", "Pick a winner", [
-  { tab: "Annie Andrews (D), U.S. Senate", cls: "p-d", h3: "Annie Andrews' housing plans", html: grid(ANDREWS, { all: "Needs Congress" }, "d") + OTHER_A },
-  { tab: "Alan Wilson (R), governor", cls: "p-r", h3: "Alan Wilson's housing plans", html: grid(WILSON, { all: "Needs the legislature", first: "Needs two-thirds" }, "r") + OTHER_W },
+  { tab: "Annie Andrews (D), U.S. Senate", cls: "p-d", h3: "Annie Andrews' housing plans", html: grid(ANDREWS, { all: "Needs Congress" }, "d") },
+  { tab: "Alan Wilson (R), governor", cls: "p-r", h3: "Alan Wilson's housing plans", html: grid(WILSON, { all: "Needs the legislature", first: "Needs two-thirds" }, "r") },
 ]);
 
 /* V7: a three-question check of what the page taught. The answers are in the HTML; the script hides
@@ -384,12 +373,12 @@ const FHFA = "https://www.fhfa.gov/data/hpi";
 const CRS = "https://www.congress.gov/crs_external_products/IN/HTML/IN10835.html";
 const PL101 = "https://www.govinfo.gov/content/pkg/PLAW-119publ101/html/PLAW-119publ101.htm";
 
-/* The number tiles under the H1: the four numbers a reader came for. The script counts them up and
-   turns "Dec. 11" into a live count of days; without it they read as written. */
+/* The number tiles under the H1: the four numbers a reader came for. The script counts them up; without it
+   they read as written. The flood deadline shows the date alone, not a count of days (triage 2026-11-08). */
 const tile = (kind, big, label) => `<div class="ev-tile ${kind}"><span class="b">${big}</span><span class="l">${label}</span></div>`;
 const SAVE = Math.round((T6 - T4) / 10) * 10;
 const DASH = `<div class="ev-dash">`
-  + tile("now", "Dec. 11", `<span data-ev-days="2026-12-11">Flood insurance deadline</span>`)
+  + tile("now", "Dec. 11", "Flood insurance deadline")
   + tile("idea", `$<span data-ev-count="${SAVE}">${SAVE.toLocaleString("en-US")}</span>`, `Less tax a year on a ${money(TX.price)} rental at 4 percent`)
   + tile("idea", `<span data-ev-count="${SHORT}">${SHORT}</span> votes`, "Short in the state House for that cut")
   + tile("", `+<span data-ev-count="${pct1(LATEST)}" data-ev-dec="1">${pct1(LATEST)}</span>%`, "Home price appreciation here in the latest year")
@@ -427,18 +416,11 @@ module.exports = G.page({
       h.cta("Ask what the election changes for your house", "Send us the address. We tell you its flood zone, its tax ratio and what a pending vote could change for it.", "Ask about your house", "/contact/", bg) },
 
     { h2: "How much would a Myrtle Beach rental save if Wilson cuts the rental tax?", toc: "Rental tax", id: "rental-tax", html: () =>
-      h.p(`About a third of its yearly property tax, if rentals were taxed at 4 percent instead of 6. A home you live in is taxed on 4 percent of its value, and skips the school operating tax. A rental or second home is taxed on 6 percent.`) +
+      /* Cannibalization fix, 2026-11-08: /invest/rental-property-tax-cut/ owns this question. The hub keeps a
+         two-sentence summary, the slider and its table, and sends readers there. */
+      h.p(`A ${money(TX.price)} rental inside Myrtle Beach pays about ${money(T6)} a year in property tax at 6 percent, and about a third less at 4 percent. What Wilson's plan would do to a Myrtle Beach rental's tax bill, and the votes it needs, is on our ${h.a(P4, "rental tax cut page")}.`) +
       CALC + TAXTAB +
-      h.h3("What has to happen first") +
-      h.p(`The 6 percent is in the ${h.ext(CONST, "state constitution")}. Changing it takes two-thirds of each chamber, so it needs some Democratic votes.`) +
-      METER +
-      h.p(`Wilson has published no bill. The other path is a ${h.ext(AMEND, "constitutional amendment")}, which voters could approve in November 2028 at the earliest.`) +
-      h.h3("Where this was tried before, and what it points to") +
-      h.p(`Act 388, a 2006 state law, took the school operating tax off homes people live in and added a 1 percent sales tax. A 2020 Lincoln Institute study found the state's system shifted the tax burden onto rentals, second homes and businesses. The South Carolina Chamber Foundation and South Carolina Realtors chose its case-study counties. The 2006 law has defenders too, such as nohometax.org.`) +
-      runs(
-        [`If a cut passes, the bill on a rental here falls by about a third.`, `No plan names who makes up the lost tax: other owners, businesses or the state.`],
-        [`A cut would move part of the burden the 2006 law shifted back off rentals.`, `No study we found shows whether the saving would reach tenants or show up in prices.`]) +
-      h.p(`More: ${h.a(P4, "the rental tax cut for investors")} and ${h.a(P5, "what changing the 2006 school tax law would mean")}.`) },
+      h.p(`More: ${h.a(P5, "what changing the 2006 school tax law would mean")}.`) },
 
     { h2: "Would a $50,000 first-time buyer credit raise Myrtle Beach home prices?", toc: "Buyer credit", id: "buyer-credit", html: () =>
       h.p(`The last credit raised prices a little and sales a lot. A $50,000 credit has never been tried, so how much more is unknown.`) +
@@ -492,7 +474,7 @@ module.exports = G.page({
   ],
   sourcesNote: "Results are the unofficial count, not certified. Educational only, not legal or tax advice.",
   bottomCta: { h2: "Ask what the election changes for your house.", p: "Send us a house you are buying or selling. An agent tells you what is set now and what is still a proposal.", label: "Ask about your house", href: "/contact/" },
-  keywords: "2026 election Myrtle Beach real estate, South Carolina election housing plans, Annie Andrews housing plan, flood insurance lapse December 11, will home prices go down after the election, Horry County rental tax after the election",
+  keywords: "2026 election Myrtle Beach real estate, Annie Andrews housing plan",
   about: "What the 2026 South Carolina election means for home buyers, sellers and rental owners in Myrtle Beach and Horry County",
   afterSources: () => CREDITS,
 });

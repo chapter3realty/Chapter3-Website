@@ -105,6 +105,11 @@ const M = maps("seasons-at-prince-creek-west", [
   closeCaption: "Map of the streets, ponds and clubhouse inside Seasons at Prince Creek West.",
 });
 
+/* Light fix, triage 2026-11-08: the italic line at about half the H1's size, on its own line (the approved look,
+   Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md). */
+const EM_CSS = "<style>@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+  + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}</style>";
+
 module.exports = {
   url: SELF,
   hub: { name: "55+ communities", url: HUB },
@@ -134,7 +139,7 @@ module.exports = {
   ],
   sections: [
     { h2: "What is there to do in Seasons at Prince Creek West?", toc: "Things to do", html:
-      ph.css() +
+      EM_CSS + ph.css() +
       h.p("The Seasons clubhouse has a fitness center, with the outdoor pool and the tennis courts right beside it.") +
       atAGlance([
         { icon: "clubhouse", label: "Indoor pool" },

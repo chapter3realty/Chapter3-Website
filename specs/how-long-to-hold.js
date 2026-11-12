@@ -1,6 +1,6 @@
 /* /invest/how-long-to-hold/ - how long to hold a Myrtle Beach rental before
  * selling. Price history from Zillow's home value index (metro, city and ZIP
- * files, data through July 2026), read from research/invest-next/data/hold-*.csv
+ * files, data through the latest month in the file), read from research/invest-next/data/hold-*.csv
  * at build time so the charts and tables cannot drift from the file. Rules
  * quoted from the IRS, the statute and the lender pages named in the sources
  * line (research/invest-next/hold-facts.md). Yields are not restated here: the
@@ -47,10 +47,12 @@ const csv = (f) => parseCSV(fs.readFileSync(path.join(DATA, f), "utf8"));
 const metroRows = csv("hold-zhvi-metro-myrtle-beach.csv").slice(1).map(r => [r[0], +r[1]]);
 const at = (d) => metroRows.find(r => r[0] === d)[1];
 const LAST = metroRows[metroRows.length - 1];
+/* the month-end date y years before the latest month, as the files spell it */
+const ago = (y) => metroRows.find(r => r[0].startsWith(`${+LAST[0].slice(0, 4) - y}${LAST[0].slice(4, 7)}`))[0];
 const chg = (a, b) => (a / b - 1) * 100;
 const ann = (a, b, y) => (Math.pow(a / b, 1 / y) - 1) * 100;
 const now = LAST[1];
-const win = [1, 3, 5, 10, 15, 20].map(y => { const d = `${2026 - y}-07-31`; return { y, from: at(d), total: chg(now, at(d)), a: ann(now, at(d), y) }; });
+const win = [1, 3, 5, 10, 15, 20].map(y => { const d = ago(y); return { y, from: at(d), total: chg(now, at(d)), a: ann(now, at(d), y) }; });
 const pre2015 = metroRows.filter(r => r[0] < "2015-01-01");
 const peak = pre2015.reduce((a, b) => b[1] > a[1] ? b : a);
 const trough = metroRows.filter(r => r[0] > peak[0] && r[0] < "2015-01-01").reduce((a, b) => b[1] < a[1] ? b : a);
@@ -62,18 +64,18 @@ const fall = chg(trough[1], peak[1]);
 /* rolling windows */
 const rw = csv("hold-rolling-windows.csv");
 const rwH = rw[0], rwi = (s) => rwH.findIndex(x => x.includes(s));
-const roll = rw.slice(1).map(r => ({ y: +r[rwi("hold_years")], n: +r[rwi("windows")], worst: +r[rwi("worst_total")], ws: r[rwi("worst_window_start")], we: r[rwi("worst_window_end")], median: +r[rwi("median_total")], best: +r[rwi("best_total")], any: +r[rwi("any gain")], fin: +r[rwi("+10.5%")], cash: +r[rwi("+7.9%")] }));
+const roll = rw.slice(1).map(r => ({ y: +r[rwi("hold_years")], n: +r[rwi("windows")], worst: +r[rwi("worst_total")], ws: r[rwi("worst_window_start")], we: r[rwi("worst_window_end")], bs: r[rwi("best_window_start")], bend: r[rwi("best_window_end")], median: +r[rwi("median_total")], best: +r[rwi("best_total")], any: +r[rwi("any gain")], fin: +r[rwi("+10.5%")], cash: +r[rwi("+7.9%")] }));
 const rollAt = (y) => roll.find(r => r.y === y);
 
 /* break-even */
 const be = csv("hold-breakeven-model.csv").slice(1).map(r => ({ g: r[0], buyer: r[1], comm: r[2], no: r[3], pay: r[4] })).filter(r => r.comm.startsWith("6.0%"));
 const beAt = (g, buyer) => { const r = be.find(x => (x.g === g || x.g.endsWith(" " + g)) && x.buyer === buyer); if (!r) throw new Error(`no break-even row for ${g} ${buyer}`); return r; };
 
-/* by ZIP, July 2026 against July 2025, 2023, 2021, 2016 */
+/* by ZIP, the latest month against the same month 1, 3, 5 and 10 years before */
 const zipCsv = csv("hold-zhvi-zip-grand-strand.csv"), zh = zipCsv[0];
 const col = (d) => zh.indexOf(d);
 const ZIPLABEL = { "29526": "Conway", "29527": "Conway, west", "29566": "Little River", "29568": "Longs", "29569": "Loris", "29572": "Myrtle Beach, north end", "29575": "Surfside Beach", "29576": "Murrells Inlet and Garden City", "29577": "Myrtle Beach, city core", "29579": "Carolina Forest and the 501 corridor", "29582": "North Myrtle Beach", "29585": "Pawleys Island", "29588": "Socastee and Burgess" };
-const zips = zipCsv.slice(1).map(r => { const v = (d) => +r[col(d)]; const n = v("2026-07-31"); return { zip: r[zh.indexOf("RegionName")], label: ZIPLABEL[r[zh.indexOf("RegionName")]] || r[zh.indexOf("City")], now: n, y1: chg(n, v("2025-07-31")), y3: chg(n, v("2023-07-31")), y5: chg(n, v("2021-07-31")), a5: ann(n, v("2021-07-31"), 5), y10: chg(n, v("2016-07-31")), a10: ann(n, v("2016-07-31"), 10) }; }).sort((a, b) => b.a10 - a.a10);
+const zips = zipCsv.slice(1).map(r => { const v = (d) => +r[col(d)]; const n = v(LAST[0]); return { zip: r[zh.indexOf("RegionName")], label: ZIPLABEL[r[zh.indexOf("RegionName")]] || r[zh.indexOf("City")], now: n, y1: chg(n, v(ago(1))), y3: chg(n, v(ago(3))), y5: chg(n, v(ago(5))), a5: ann(n, v(ago(5)), 5), y10: chg(n, v(ago(10))), a10: ann(n, v(ago(10)), 10) }; }).sort((a, b) => b.a10 - a.a10);
 
 /* All-cash model, on the same basis as the returns page (owner, 2026-09-09):
    the price a rental actually sells for (Zillow's cheaper third for the ZIP) and
@@ -125,7 +127,7 @@ function lineChart() {
   const W = 640, H = 270, L = 58, R = 16, T = 14, B = 30, PW = W - L - R, PH = H - T - B;
   const vals = metroRows.map(r => r[1]), lo = 100000, hi = 400000;
   const x = (i) => L + PW * i / (metroRows.length - 1), y = (v) => T + PH * (1 - (v - lo) / (hi - lo));
-  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Typical home value in the Myrtle Beach metro, monthly, November 2001 to July 2026" ${SVGSTYLE}>`;
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Typical home value in the Myrtle Beach metro, monthly, ${mon(metroRows[0][0])} to ${mon(LAST[0])}" ${SVGSTYLE}>`;
   for (const g of [100000, 200000, 300000, 400000]) s += `<line x1="${L}" y1="${y(g)}" x2="${W - R}" y2="${y(g)}" stroke="${GRID}" stroke-width="1"/><text x="${L - 6}" y="${y(g) + 4}" font-size="11" text-anchor="end" fill="${MUTED}">$${g / 1000}k</text>`;
   metroRows.forEach((r, i) => { if (r[0].endsWith("-07-31") && +r[0].slice(0, 4) % 4 === 2) s += `<text x="${x(i)}" y="${H - 10}" font-size="11" text-anchor="middle" fill="${MUTED}">${r[0].slice(0, 4)}</text>`; });
   s += `<polyline fill="none" stroke="${BRASS}" stroke-width="2.5" stroke-linejoin="round" points="${metroRows.map((r, i) => `${x(i).toFixed(1)},${y(r[1]).toFixed(1)}`).join(" ")}"><title>Zillow home value index, Myrtle Beach metro, monthly</title></polyline>`;
@@ -161,20 +163,20 @@ function grouped(groups, opt) {
   return s + "</svg>";
 }
 const num = (s) => /never/.test(s) ? null : +s;
-const beGroups = [["0%", "No appreciation", "never covers the costs"], ["1.94%", `${p1(win[5].a)} percent a year, the 20-year rate`], ["3%", "3 percent a year"], ["6.08%", `${p1(win[3].a)} percent a year, the 10-year rate`]]
+const beGroups = [["0%", "No appreciation", "never covers the costs"], [`${win[5].a.toFixed(2)}%`, `${p1(win[5].a)} percent a year, the 20-year rate`], ["3%", "3 percent a year"], [`${win[3].a.toFixed(2)}%`, `${p1(win[3].a)} percent a year, the 10-year rate`]]
   .map(([k, name, none]) => ({ name, none, a: num(beAt(k, "financed").no), b: num(beAt(k, "cash").no) }));
 const CHART_BE = grouped(beGroups, { max: 6, left: 240, aLabel: "Financed buyer", bLabel: "Cash buyer", fmt: (v) => v.toFixed(1) + " years", aria: "Years until a sale covers the buying and selling costs, at four rates of appreciation, financed and cash buyers" });
 const rollGroups = [1, 2, 3, 5, 7, 10, 15].map(y => { const r = rollAt(y); return { name: `${y} year${y > 1 ? "s" : ""}`, a: r.fin, b: r.cash }; });
 const CHART_ROLL = grouped(rollGroups, { max: 100, left: 80, aLabel: "Financed buyer, needs +10.5 percent", bLabel: "Cash buyer, needs +7.9 percent", fmt: (v) => v + " of 100", aria: "Share of holds of each length since 2001 whose appreciation covered the buying and selling costs" });
 
 /* ---------------- tables ---------------- */
-const T_WIN = h.table(["Bought in July", "Typical value then", "Change to July 2026", "A year"], win.map(w => [`${2026 - w.y} (${w.y} year${w.y > 1 ? "s" : ""})`, fmt$(w.from), sp(w.total) + "%", sp(w.a) + "%"]));
+const T_WIN = h.table([`Bought in ${mon(LAST[0]).split(" ")[0]}`, "Typical value then", `Change to ${mon(LAST[0])}`, "A year"], win.map(w => [`${+LAST[0].slice(0, 4) - w.y} (${w.y} year${w.y > 1 ? "s" : ""})`, fmt$(w.from), sp(w.total) + "%", sp(w.a) + "%"]));
 const T_BE = h.table(["Buyer", "What buying costs", "What selling costs", "Appreciation needed to break even"], [
   ["Financed", "About 3 percent of the price", "Commission, deed fee, about $1,500 of closing fees", "+10.5 percent"],
   ["Cash", "About $1,866: attorney, owner's title policy, termite letter, recording fee", "Commission, deed fee, about $1,500 of closing fees", "+7.9 percent"],
 ]);
 const T_ROLL = h.table(["Hold", "Holds counted", "Worst", "Typical", "Best", "Ended below the start"], [1, 2, 3, 5, 7, 10, 15].map(y => { const r = rollAt(y); return [`${y} year${y > 1 ? "s" : ""}`, r.n, `${sp(r.worst)}% (${r.ws.slice(0, 7)} to ${r.we.slice(0, 7)})`, sp(r.median) + "%", sp(r.best) + "%", `${100 - r.any} of 100`]; }));
-const T_ZIP = h.table(["Area (ZIP)", "Typical value, July 2026", "1 year", "3 years", "5 years, a year", "10 years, a year"], zips.map(z => [`${z.label} (${z.zip})`, fmt$(z.now), sp(z.y1) + "%", sp(z.y3) + "%", sp(z.a5) + "%", sp(z.a10) + "%"]));
+const T_ZIP = h.table(["Area (ZIP)", `Typical value, ${mon(LAST[0])}`, "1 year", "3 years", "5 years, a year", "10 years, a year"], zips.map(z => [`${z.label} (${z.zip})`, fmt$(z.now), sp(z.y1) + "%", sp(z.y3) + "%", sp(z.a5) + "%", sp(z.a10) + "%"]));
 const T_STRAT = h.table(["Strategy", "The waiting period"], [
   ["Flip", "None. Sell as fast as you can."],
   ["Any rental sold outright", "More than one year for the lower long-term capital gains rate. One year or less is taxed as ordinary income."],
@@ -211,7 +213,7 @@ module.exports = {
       h.p(`Buying costs a financed buyer about 3 percent of the price, per ${h.a("/buyers/closing-costs/", "the closing costs page")}. A cash buyer pays about $1,866 at the typical metro price: the attorney, an owner's title policy, the termite letter and the recording fee.`) +
       h.p(`Selling costs come out of the sale, and the seller pays them. They are the commission, ${h.ext(SC1224, "the state's deed fee of $1.85 per $500 of the price")}, and about $1,500 of attorney and closing fees. ${h.a("/sell/net-proceeds/", "The net proceeds calculator")} holds the figures used here.`) +
       T_BE +
-      h.p(`Both figures are worked out on the typical home in the metro, which Zillow put at ${fmt$(now)} in July 2026. On a cheaper house the fixed fees are a bigger share of the price, so the appreciation needed is a little more.`) +
+      h.p(`Both figures are worked out on the typical home in the metro, which Zillow put at ${fmt$(now)} in ${mon(LAST[0])}. On a cheaper house the fixed fees are a bigger share of the price, so the appreciation needed is a little more.`) +
       h.p(`The chart turns that into years. Pick a rate of appreciation on the left and read how long the house takes to cover both sets of costs. It counts no rent and no loan paydown, so it is the slow case.`) +
       h.raw(`<div style="max-width:640px;margin:1rem 0 1.2rem">${CHART_BE}</div>`) +
       h.p(`A loan shortens the wait. Every payment pays down part of what you owe, so less of the sale goes to the payoff. At 3 percent a year it takes the financed buyer from ${beAt("3%", "financed").no} years to ${beAt("3%", "financed").pay} years. With no appreciation at all, the paydown alone takes ${beAt("0%", "financed").pay} years.`) +
@@ -220,9 +222,9 @@ module.exports = {
       h.p(`${h.ext(ZILLOW, "Zillow's home value index")} tracks the typical home in the metro, all types, the middle third by value. The chart is every month from ${mon(metroRows[0][0])} to ${mon(LAST[0])}.`) +
       h.raw(`<div style="max-width:640px;margin:1rem 0 1.2rem">${CHART_LINE}</div>`) +
       h.p(`The peak was ${mon(peak[0])} at ${fmt$(peak[1])}. The low was ${mon(trough[0])} at ${fmt$(trough[1])}, a fall of ${p1(Math.abs(fall))} percent over ${months(peak[0], trough[0])} months. The index did not pass the ${mon(peak[0]).split(" ")[1]} peak again until ${mon(regain[0])}, ${months(peak[0], regain[0])} months later. A buyer at the top who sold before then sold below the purchase price, before any selling cost.`) +
-      h.p(`The fastest rise was July 2021 to July 2022, ${p1(chg(at("2022-07-31"), at("2021-07-31")))} percent in twelve months. The value has been flat since: ${mon(post[0])} was the high at ${fmt$(post[1])}, and ${mon(LAST[0])} is ${p1(Math.abs(chg(LAST[1], post[1])))} percent below it.`) +
+      h.p(`The fastest rise was ${mon(rollAt(1).bs)} to ${mon(rollAt(1).bend)}, ${p1(rollAt(1).best)} percent in twelve months. The value has been flat since: ${mon(post[0])} was the high at ${fmt$(post[1])}, and ${mon(LAST[0])} is ${p1(Math.abs(chg(LAST[1], post[1])))} percent below it.`) +
       T_WIN +
-      h.p(`The 20-year row starts one year before the peak. It is the honest figure for a buyer who bought at the top: ${p1(win[5].a)} percent a year. The 10-year and 15-year rows start after the low, so they are the best case.`) },
+      h.p(`The 20-year row starts ${months(ago(20), peak[0])} months before the peak. It is the honest figure for a buyer who bought near the top: ${p1(win[5].a)} percent a year. The 10-year and 15-year rows start near the low, so they are the best case.`) },
     { h2: "How often did a hold of each length pay?", html:
       h.p(`The chart counts every hold of each length that could have started since November 2001, and asks whether the appreciation covered the costs in the table above. One bust sits inside most of the holds, so this is a count of what happened, not a forecast.`) +
       h.raw(`<div style="max-width:640px;margin:1rem 0 1.2rem">${CHART_ROLL}</div>`) +
@@ -243,13 +245,13 @@ module.exports = {
       h.p(`At a sale the deductions come back. Everything you deducted is added to your gain and taxed at up to 25 percent. That is a higher rate than the long-term rate on the rest of the gain.`) +
       h.p(`Ten years of ${fmt$(dep)} a year is ${fmt$(dep * 10)}. At the top rate that is ${fmt$(dep * 10 * 0.25)} of tax when you sell, before the state's share and before any tax on the appreciation.`) +
       h.p(`Skipping the deduction does not help you. The tax at a sale is worked out on the depreciation you were allowed to take, not on what you took. Take it.`) +
-      h.p(`${h.a("/invest/strategies/1031-exchange/", "A 1031 exchange")} pushes the whole bill into the next house. Our 1031 page has a client who sells when a house has used up its depreciation and trades the money up. That is a hold decided by the tax rule, not by the price.`) +
+      h.p(`${h.a("/invest/strategies/1031-exchange/", "A 1031 exchange")} pushes the whole bill into the next house. Our 1031 page has a client who sells when a house has used up its depreciation and trades the money up. That is a hold decided by the tax rule, not by the price. For an owner who is done managing, ${h.a("/invest/strategies/dst/", "a DST is the hands-off 1031")}, with its own fees and limits.`) +
       h.p(`${h.a("/invest/rental-depreciation/", "The depreciation page")} has the math. ${h.a("/sell/capital-gains/", "The capital gains page")} has the state layer.`) },
   ],
   faqTitle: "Holding period FAQ",
   faq: [
     { q: "How long should I hold a rental property before selling in Myrtle Beach?", a: `Until a sale pays back the buying and selling costs and the tax rule you need is met. A financed buyer at the example commission in our net proceeds calculator needs the price to rise 10.5 percent. At 3 percent a year that is about three years. Since 2001, three-year holds cleared that bar ${rollAt(3).fin} times out of 100 in the Myrtle Beach metro, and every 15-year hold ended above its start.` },
-    { q: "How much has Myrtle Beach real estate appreciated?", a: `Zillow's typical home value for the Myrtle Beach metro was ${fmt$(now)} in July 2026. That is ${sp(win[0].total)} percent over one year and ${sp(win[1].total)} percent over three years. Over five years it is ${sp(win[2].total)} percent, or ${p1(win[2].a)} percent a year. Over ten years it is ${sp(win[3].total)} percent, or ${p1(win[3].a)} percent a year. From the March 2007 peak the value fell ${p1(Math.abs(fall))} percent and did not recover until December 2020.` },
+    { q: "How much has Myrtle Beach real estate appreciated?", a: `Zillow's typical home value for the Myrtle Beach metro was ${fmt$(now)} in ${mon(LAST[0])}. That is ${sp(win[0].total)} percent over one year and ${sp(win[1].total)} percent over three years. Over five years it is ${sp(win[2].total)} percent, or ${p1(win[2].a)} percent a year. Over ten years it is ${sp(win[3].total)} percent, or ${p1(win[3].a)} percent a year. From the March 2007 peak the value fell ${p1(Math.abs(fall))} percent and did not recover until December 2020.` },
     { q: "Do I have to hold a rental for a year before selling?", a: "No law requires it. A house held one year or less is taxed as ordinary income when sold. A house held more than one year gets the lower long-term capital gains rate. A flip is inventory and is taxed as ordinary income at any length." },
     { q: "How long do I have to hold a property before a 1031 exchange?", a: "The statute has no minimum. The house must be held for investment or business use, not for sale. The only IRS time test is a safe harbor for a house you also use yourself. It must be owned and rented for 24 months before the exchange, with personal use inside the limits. The same 24 months apply after." },
     { q: "How long do I have to live in a rental to avoid capital gains?", a: "Two of the last five years as your main home, and you must sell within three years of moving out. That excludes up to $250,000 of gain, or $500,000 on a joint return, except the depreciation taken while it was rented. If you rented it first and moved in later, the rental years before the move are taxed in proportion." },

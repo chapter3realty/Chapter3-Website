@@ -22,6 +22,9 @@
  * opened); a funder for the Lincoln study (no row says who paid); the 8.1-mill waste levy.
  * No photo: the State House grounds file in photos.md shows an office tower, not the State House, and the
  * 1950 postcard could not be downloaded (Commons 429). The share image is the text card.
+ * Design pass, 2026-11-08 (Blog-Brain redo3/buyers-act-388-changes/DESIGN.md), with the overlap fix from
+ * reports/cannibalization-2026-11-08.json: the H1 and title ask what Act 388 is and which bills would change it;
+ * Wilson's plan for rentals is /invest/rental-property-tax-cut/'s question.
  * Built by tools/mkpage.js. */
 const fs = require("fs"), path = require("path");
 const { h, BB, compareCards, glance } = require("./_kit.js");
@@ -74,7 +77,10 @@ const SCVOTES = "https://scvotes.gov/2026-general-election-results/";
 /* The photo (CC BY-SA 4.0, BullDawg2021; record in this page's photos.json): beach houses at Surfside Beach,
    under the sentence on the 6% rate. Its caption states the rule, not who owns the houses. */
 const PH = PK.create({ h, photos: JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "2026-11-e", SLUG, "photos.json"), "utf8")).photos }).photoSet({ aerialWidth: "760px" });
-const PHOTO = PH.aerial("surfside-beach-houses-on-the-dunes", "Beach houses behind the dunes in Surfside Beach. A house here that is not the owner's home is taxed on 6% of its value.", { closeUp: true });
+const PHOTO_RAW = PH.aerial("surfside-beach-houses-on-the-dunes", "Beach houses behind the dunes in Surfside Beach. A house here that is not the owner's home is taxed on 6% of its value.", { closeUp: true });
+/* At most 720 px wide, and about 370 px beside its text on a wide screen, not the 1136 px photos.js assumes. */
+if (!PHOTO_RAW.includes('sizes="(max-width: 1200px) 100vw, 1136px"')) throw new Error("photos.js changed the photo's sizes; recheck");
+const PHOTO = PHOTO_RAW.split('sizes="(max-width: 1200px) 100vw, 1136px"').join('sizes="(max-width: 759px) 100vw, (max-width: 1179px) 720px, 380px"');
 const CREDITS = () => PH.credits().replace(/<div role="listitem">Chapter3 Realty resized these photos and cropped some of them\.[^<]*<\/div>/, "");
 
 /* ---------------------------------------------------------------------------- */
@@ -143,69 +149,122 @@ must(D.reassessment.next_inferred === 2029 && D.reassessment.every === 5, "F157"
 
 /* ---------------------------------------------------------------------------- */
 /* The page's own blocks, in the glass theme's look.                              */
-const CSS = `<style>
-main#main h1,main#main h2,main#main h3{text-wrap:balance}
-main#main .a388-tl{list-style:none;margin:1.3rem 0 1.5rem;padding:0;max-width:760px;position:relative}
-main#main .a388-tl::before{content:"";position:absolute;left:2.05rem;top:.4rem;bottom:.4rem;width:2px;background:rgba(196,120,58,.35)}
-main#main .a388-tl .r{position:relative;display:grid;grid-template-columns:4.1rem minmax(0,1fr);gap:.8rem;align-items:start;margin:0 0 .55rem}
-main#main .a388-tl .y{position:relative;z-index:1;display:block;text-align:center;font:650 .95rem/1.9rem var(--sans);color:var(--navy);background:#fbf8f3;border:1px solid rgba(196,120,58,.45);border-radius:999px}
-main#main .a388-tl .t{display:block;padding:.6rem .9rem;border-radius:14px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.75);box-shadow:0 6px 18px rgba(28,32,40,.07);color:var(--muted);line-height:1.5;font-size:var(--read,1.0625rem)}
-main#main .a388-tl .t strong{color:var(--navy);font-weight:600}
-main#main .a388-tl .r.next .y{background:var(--navy);color:#fff;border-color:var(--navy)}
-main#main .a388-grid{display:grid;gap:.7rem;margin:1.2rem 0 1.4rem;max-width:960px}
-@media (min-width:760px){main#main .a388-grid{grid-template-columns:repeat(3,minmax(0,1fr))}main#main .a388-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}}
-main#main .a388-card{padding:1rem 1.1rem 1.05rem;border-radius:16px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.75);box-shadow:0 6px 18px rgba(28,32,40,.08);color:var(--muted);line-height:1.6;font-size:var(--read,1.0625rem)}
-main#main .a388-card h3{font-family:var(--sans)!important;font-size:1.05rem!important;font-weight:650;color:var(--navy);margin:0 0 .35rem!important;line-height:1.35}
-main#main .a388-card p{margin:0 0 .5rem}main#main .a388-card p:last-child{margin:0}
-main#main .a388-card .k{display:block;font-family:var(--sans);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--g-ink,#8a5226);font-weight:650;margin:.55rem 0 .1rem}
-main#main .a388-big{display:block;font-family:var(--serif);font-size:1.6rem;line-height:1.15;color:var(--navy);margin-bottom:.3rem}
-main#main .a388-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;max-width:760px;margin:1rem 0 1.2rem}
-@media (min-width:700px){main#main .a388-stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
-main#main .a388-stats div{padding:.75rem .6rem;border-radius:14px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.75);text-align:center;color:var(--muted);font-size:1rem;line-height:1.35}
-main#main .a388-stats b{display:block;font-family:var(--serif);font-weight:600;font-size:clamp(1.25rem,5vw,1.6rem);line-height:1.15;color:var(--navy);margin-bottom:.15rem}
-@media (max-width:479px){.c3-glance{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:.4rem!important}.c3-glance li{min-width:0;padding:.45rem .35rem!important}.c3-glance span.t{overflow-wrap:break-word}}
-.c3-glance li{min-width:0}
-.c3-glance li,.c3-glance span.t,.c3-glance strong{line-height:1.4!important}
-@media (min-width:700px){.c3-glance{max-width:none!important}.detail-hero .detail-media:has(.c3-glance){max-width:none!important}}
-@media (min-width:760px){main#main nav[aria-label="On this page"]{max-width:960px!important}main#main nav[aria-label="On this page"] ul{columns:2;column-gap:2.4rem}main#main nav[aria-label="On this page"] li{break-inside:avoid}}
-@media (prefers-reduced-transparency:reduce){main#main .a388-card,main#main .a388-stats div,main#main .a388-tl .t{background:#fbf8f3}}
-@media (max-width:699px){main#main .a388-bills thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}main#main .a388-bills table,main#main .a388-bills tbody,main#main .a388-bills tr,main#main .a388-bills td{display:block;width:auto}main#main .a388-bills tr{margin:0 0 .7rem;padding:.7rem .9rem;border-radius:14px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.75)}main#main .a388-bills td{border:0!important;padding:.15rem 0!important}main#main .a388-bills td:first-child{font-weight:650;font-size:1.05rem}main#main .a388-bills td:last-child{color:var(--navy)}}
-main#main .a388-bills td:first-child{white-space:nowrap}
-</style>`;
+/* Design pass, 2026-11-08 (Blog-Brain redo3/buyers-act-388-changes/DESIGN.md): a two-line headline and the short answer
+   on the first screen, the contents between rules, one card style (the two charts and the offers), plain lists and
+   tables under thin rules, one block width of 720 px, the photo beside its text on a wide screen. */
+const S = "main#main", RULE = "1px solid rgba(28,32,40,.16)";
+const FLAT = "background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important";
+const CARD = "background:linear-gradient(180deg,rgba(255,255,255,.82),rgba(255,255,255,.58))!important;border:1px solid rgba(255,255,255,.8)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 10px 26px -18px rgba(28,32,40,.35)!important;border-radius:20px!important";
+const BRASS = "#c4783a", SLATE = "#5c6b78";
+const CSS = "<style>"
+  + `${S} h1,${S} h2,${S} h3{text-wrap:balance}`
+  /* 1. The headline: the italic line at about half the H1's size; the dek is not shown (the facts above it say the
+     same 4% and 6%); the four facts one quiet line on a wide screen and flat rows under rules on a phone. */
+  + `${S} .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}`
+  + `@media (max-width:959px){${S} .detail-h1 em{color:#8a5226!important}}`
+  + `${S} .detail-hero .detail-sub{display:none}`
+  + `${S} .c3-glance li{${FLAT};min-width:0}${S} .c3-glance li{line-height:1.4!important}${S} .c3-glance strong{font-size:.85rem!important;color:var(--muted)!important;font-weight:500;line-height:1.4!important}${S} .c3-glance span.t{color:var(--navy)!important;font-weight:600;font-size:1rem!important;line-height:1.4!important}`
+  + `@media (min-width:700px){${S} .detail-hero .detail-media:has(.c3-glance){max-width:none!important}${S} .c3-glance{max-width:none!important;display:flex!important;flex-wrap:wrap;gap:.3rem 2.4rem!important;border-top:${RULE};border-bottom:${RULE};padding:.55rem 0}${S} .c3-glance li{padding:.15rem 0!important}}`
+  /* on a phone: a small fact table, the label on the left and the fact on the right, one line each */
+  + `@media (max-width:699px){${S} .c3-glance{grid-template-columns:1fr!important;gap:0!important}${S} .c3-glance li{border-top:${RULE}!important;display:block!important;text-align:left!important;padding:.45rem 0!important}${S} .c3-glance li:last-child{border-bottom:${RULE}!important}${S} .c3-glance .i{display:none!important}`
+  + `${S} .c3-glance li>span:last-child{display:grid;grid-template-columns:8.3rem minmax(0,1fr);column-gap:.45rem;align-items:baseline}${S} .c3-glance strong{font-size:.8rem!important}${S} .c3-glance span.t{font-size:.95rem!important}}`
+  /* the hero ends closer to the short answer, so the answer is on the first screen */
+  + `${S} .detail-hero{padding-bottom:1.6rem!important}${S}>.detail-hero+section:not(.hx-feed),${S}>.hx-feed-top+section{padding-top:1.6rem!important}`
+  + `@media (max-width:699px){${S} .detail-hero{padding-bottom:.4rem!important}${S}>.detail-hero+section:not(.hx-feed),${S}>.hx-feed-top+section{padding-top:1.1rem!important}${S} .detail-hero .detail-media{margin-bottom:.8rem!important}}`
+  /* 2. The contents list: no card, in columns between two rules. */
+  + `${S} nav[aria-label="On this page"]{${FLAT};border-top:${RULE}!important;border-bottom:${RULE}!important;padding:.8rem 0 .5rem!important;max-width:720px!important}`
+  + `${S} nav[aria-label="On this page"] ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.5rem}`
+  + `@media (min-width:700px){${S} nav[aria-label="On this page"] ul{grid-template-columns:repeat(3,minmax(0,1fr))}${S} nav[aria-label="On this page"] li a{padding:.45rem 0!important}}`
+  /* 3. One card style, for the two charts (the offers keep theirs). */
+  + `${S} figure.a388-fig{max-width:720px;margin:1.4rem 0 1.6rem;padding:1.1rem 1.2rem 1rem!important;box-sizing:border-box;${CARD}}`
+  + `${S} .a388-fig .cap{color:var(--navy);font-weight:600;font-family:var(--sans);font-size:1.0625rem;line-height:1.4;margin:0 0 .9rem;text-wrap:balance}`
+  + `${S} .a388-fig figcaption{color:var(--muted);font-size:.92rem!important;line-height:1.55;margin-top:.8rem!important;padding:0!important}`
+  /* the share chart: three groups, two bars each, the number on the bar's end */
+  + `${S} .a388-sh{list-style:none;margin:0;padding:0}${S} .a388-sh>li{margin:0;padding:.55rem 0 .65rem;border-top:${RULE}}${S} .a388-sh>li:first-child{border-top:0;padding-top:0}`
+  + `${S} .a388-sh .g{display:block;color:var(--navy);font-family:var(--sans);font-weight:650;font-size:1.02rem;margin:0 0 .3rem}`
+  + `${S} .a388-sh .r{display:grid;grid-template-columns:minmax(0,10.5rem) minmax(0,1fr);align-items:center;column-gap:.8rem;margin:.2rem 0;font-family:var(--sans);font-size:.95rem;color:var(--muted)}`
+  + `${S} .a388-sh .bar{display:flex;align-items:center;gap:.5rem;min-width:0}${S} .a388-sh .bar i{display:block;height:.85rem;border-radius:999px;background:${SLATE};flex:none}${S} .a388-sh .r.tx .bar i{background:${BRASS}}`
+  + `${S} .a388-sh .bar b{color:var(--navy);font-weight:700;white-space:nowrap}`
+  + `@media (max-width:479px){${S} .a388-sh .r{grid-template-columns:minmax(0,7.4rem) minmax(0,1fr);column-gap:.6rem;font-size:.85rem;line-height:1.25}${S} .a388-sh .bar b{font-size:.9rem}}`
+  /* What Act 388 did, and the short and long run: plain columns under rules. */
+  + `${S} .a388-grid{display:grid;column-gap:1.6rem;margin:1.1rem 0 1.4rem;max-width:720px}`
+  + `@media (min-width:760px){${S} .a388-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}}`
+  /* What Act 388 did: three rows, the part named on the left and what it did on the right */
+  + `${S} .a388-grid:not(.two){border-bottom:${RULE}}@media (min-width:760px){${S} .a388-grid:not(.two) .a388-card{display:grid;grid-template-columns:13rem minmax(0,1fr);column-gap:1.4rem}${S} .a388-grid:not(.two) .a388-card h3{margin:.15rem 0 0!important}}`
+  + `${S} .a388-card{padding:.9rem 0 1rem;border-top:${RULE};color:var(--muted);line-height:1.6;font-size:var(--read,1.0625rem)}`
+  + `${S} .a388-card h3{font-family:var(--sans)!important;font-size:1.08rem!important;font-weight:650;color:var(--navy);margin:0 0 .35rem!important;line-height:1.35}`
+  + `${S} .a388-card p{margin:0 0 .5rem}${S} .a388-card p:last-child{margin:0}`
+  + `${S} .a388-card .k{display:block;font-family:var(--sans);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#8a5226;font-weight:700;margin:.6rem 0 .1rem}`
+  /* the timeline: the years and the line stay; no box around each year's text */
+  + `${S} .a388-tl{list-style:none;margin:1.2rem 0 1.4rem;padding:0;max-width:720px;position:relative}`
+  + `${S} .a388-tl::before{content:"";position:absolute;left:2.05rem;top:.5rem;bottom:.5rem;width:2px;background:rgba(196,120,58,.35)}`
+  + `${S} .a388-tl .r{position:relative;display:grid;grid-template-columns:4.1rem minmax(0,1fr);gap:.9rem;align-items:start;margin:0 0 .9rem}${S} .a388-tl .r:last-child{margin-bottom:0}`
+  + `${S} .a388-tl .y{position:relative;z-index:1;display:block;text-align:center;font:650 .95rem/1.9rem var(--sans);color:var(--navy);background:#fbf8f3;border:1px solid rgba(196,120,58,.45);border-radius:999px}`
+  + `${S} .a388-tl .t{display:block;padding:.2rem 0 0;color:var(--muted);line-height:1.55;font-size:var(--read,1.0625rem)}${S} .a388-tl .t strong{color:var(--navy);font-weight:600}`
+  + `${S} .a388-tl .r.next .y{background:var(--navy);color:#fff;border-color:var(--navy)}`
+  /* the tables: plain under thin rules, 720 px; on a phone, plain rows split by a rule */
+  + `${S} .a388-bills>div,${S} .c3-cc{${FLAT};padding:0!important;max-width:720px!important}`
+  + `${S} .a388-bills td:first-child{white-space:nowrap}${S} .a388-bills td{vertical-align:top!important}${S} .a388-bills th:first-child,${S} .a388-bills td:first-child,${S} .c3-cc th:first-child,${S} .c3-cc td:first-child{padding-left:0!important}${S} .c3-cc :is(th,td):last-child{padding-right:0!important}`
+  + `${S} .c3-cc:has(thead th:nth-child(5)) table{font-size:.95rem}${S} .c3-cc:has(thead th:nth-child(5)) :is(th,td){padding:.55rem .5rem}`
+  + `@media (max-width:699px){${S} .a388-bills thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}${S} .a388-bills table,${S} .a388-bills tbody,${S} .a388-bills tr,${S} .a388-bills td{display:block;width:auto}`
+  + `${S} .a388-bills tr{margin:0;padding:.7rem 0 .75rem;border-top:${RULE}}${S} .a388-bills tr:last-child{border-bottom:${RULE}}${S} .a388-bills td{border:0!important;padding:.15rem 0!important}${S} .a388-bills td:first-child{font-weight:650;font-size:1.05rem}${S} .a388-bills td:last-child{color:var(--navy)}}`
+  + `@media (max-width:39.999em){${S} .c3-cc tbody tr{${FLAT};border-top:${RULE}!important;margin:0!important;padding:.6rem 0 .7rem!important}${S} .c3-cc tbody tr:last-child{border-bottom:${RULE}!important}${S} .c3-cc th,${S} .c3-cc td{padding:.15rem 0!important}}`
+  + `@media (max-width:49.999em){${S} .c3-cc:has(thead th:nth-child(5)) tbody tr{${FLAT};border-top:${RULE}!important;margin:0!important;padding:.6rem 0 .7rem!important}${S} .c3-cc:has(thead th:nth-child(5)) tbody tr:last-child{border-bottom:${RULE}!important}${S} .c3-cc:has(thead th:nth-child(5)) th,${S} .c3-cc:has(thead th:nth-child(5)) td{padding:.15rem 0!important}}`
+  /* 4. The photo: no frame; on a wide screen beside the two paragraphs it explains. */
+  + `${S} #why-second-homes-pay-more>.wrap figure.c3ph-hero{${FLAT};padding:0!important;max-width:720px}${S} #why-second-homes-pay-more>.wrap figure.c3ph-hero figcaption{padding:0!important;margin-top:.55rem!important}`
+  + `@media (min-width:1180px){${S} #why-second-homes-pay-more>.wrap{display:grid;grid-template-columns:720px minmax(0,1fr);column-gap:2.6rem;align-items:start}`
+  + `${S} #why-second-homes-pay-more>.wrap>h2{grid-column:1/-1}${S} #why-second-homes-pay-more>.wrap>p{grid-column:1}${S} #why-second-homes-pay-more>.wrap>.c3-aerial{grid-column:2;grid-row:2/span 2;margin-top:.3rem}${S} #why-second-homes-pay-more>.wrap figure.c3ph-hero{margin:0!important}}`
+  + `@media (prefers-reduced-transparency:reduce){${S} figure.a388-fig{background:#fbf8f3!important}}`
+  /* offer boxes: a larger button (as on the approved pages) */
+  + `${S} div[style^="border-left:3px solid var(--brass)"] a.btn{font-size:1.02rem;padding:.85rem 1.4rem;min-height:48px}`
+  /* The header phone at 1,000 to 1,100 px pushed the page 5 px wider than the window (copied from /hoa/documents/). */
+  + "@media (min-width:1000px) and (max-width:1100px){.header-ctas .hdr-phone{display:none!important}}"
+  /* The closing band kept dark (copied from /hoa/documents/ and /hoa/liens-and-foreclosure/): without it, its
+     ivory words sat on a light card and could not be read. */
+  + "main#main>section[style^=\"background:var(--navy)\"]:has(>.wrap>h2){padding:.9rem 0!important}"
+  + "main#main>section[style^=\"background:var(--navy)\"]:has(>.wrap>h2)>.wrap{display:block!important;text-align:center!important;background:linear-gradient(160deg,rgba(42,48,64,.95),rgba(28,32,40,.97))!important;border:1px solid rgba(255,255,255,.14)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 26px 60px -30px rgba(28,32,40,.6)!important;border-radius:28px!important;padding:2.2rem 1.6rem!important;margin-left:auto!important;margin-right:auto!important}"
+  + "@media (max-width:699px){main#main>section[style^=\"background:var(--navy)\"]:has(>.wrap>h2)>.wrap{padding:1.6rem 1.2rem 1.7rem!important;border-radius:24px!important}}"
+  + "</style>";
 const card = (title, parts) => `<div class="a388-card"><h3>${title}</h3>${parts}</div>`;
 /* The timeline is a visual, drawn as a list of divs (role="list") so it reads as one picture of the years. */
 const tl = (items) => `<div class="a388-tl" role="list" aria-label="Act 388 and the changes since, year by year">${items.map(([y, t, next]) => `<div role="listitem" class="r${next ? " next" : ""}"><span class="y">${y}</span><span class="t">${t}</span></div>`).join("")}</div>`;
-const stats = (label, items) => `<div class="a388-stats" role="list" aria-label="${label}">${items.map(([b, t]) => `<div role="listitem"><b>${b}</b>${t}</div>`).join("")}</div>`;
 
 /* Chart 1: one house, four owners, as an inline SVG drawn from the bills above. 360 units wide, so its
-   15-unit text stays near 15 px on a phone; at most 480 px wide on a wide screen. */
+   15-unit text stays near 15 px on a phone; at most 480 px wide on a wide screen. Its title says what it shows
+   (design pass, 2026-11-08); the note under it keeps the key and the limits. */
 const OWNERS_CHART = (() => {
-  const W = 262, ROW = 62, TOP = 8, BARW = 150, max = Math.max(...OWNERS.map((o) => o.bill));
-  const Hh = TOP + ROW * OWNERS.length + 4;
+  const W = 360, ROW = 60, TOP = 6, BARW = 232, max = Math.max(...OWNERS.map((o) => o.bill));
+  const Hh = TOP + ROW * OWNERS.length + 2;
   const esc = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;");
   const rows = OWNERS.map((o, i) => {
     const y = TOP + i * ROW, w = Math.max(6, Math.round(o.bill / max * BARW));
     const fill = o.ratio === R.other ? "#c4783a" : "#1c2028";
     return `<text x="0" y="${y + 16}" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" fill="#1c2028">${esc(o.name)}</text>`
-      + `<rect x="0" y="${y + 25}" width="${w}" height="18" rx="9" fill="${fill}"/>`
-      + `<text x="${w + 7}" y="${y + 39}" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="600" fill="#1c2028">${about100(o.bill)}</text>`;
+      + `<rect x="0" y="${y + 25}" width="${w}" height="20" rx="10" fill="${fill}"/>`
+      + `<text x="${w + 8}" y="${y + 40}" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="600" fill="#1c2028">${about100(o.bill)}</text>`;
   }).join("");
   const label = `Yearly tax on one $350,000 Myrtle Beach house: ${OWNERS.map((o) => `${o.name.toLowerCase()}, ${about100(o.bill)}`).join("; ")}.`;
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${Hh}" role="img" aria-label="${esc(label)}" style="display:block;width:100%;max-width:380px;height:auto"><title>${esc(label)}</title>${rows}</svg>`;
-  return h.figure(svg, "One $350,000 house inside Myrtle Beach, four owners, the 2026 bill. Dark bars are taxed at 4%, brass bars at 6%. Our example, before credits, fees and any special district.");
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${Hh}" role="img" aria-label="${esc(label)}" style="display:block;width:100%;max-width:480px;height:auto"><title>${esc(label)}</title>${rows}</svg>`;
+  /* h.figure checks the svg's label; the figure then takes this page's chart card. */
+  return h.figure(svg, "Dark bars are taxed at 4%, brass bars at 6%. Our example, before credits, fees and any special district.")
+    .replace('<figure style="margin:1.8rem 0;max-width:760px">', `<figure class="a388-fig"><p class="cap">One $350,000 Myrtle Beach house, four owners: the 2026 tax bill</p>`);
 })();
 
-/* Chart 2: Horry County, 2018, share of market value and of taxable value, by class (F149). */
-const SHARE_CHART = G.bars([
-  { name: "Homes their owners live in, share of market value", reference: true, value: LR.primary.appraised, valueText: `${LR.primary.appraised}%` },
-  { name: "Homes their owners live in, share of taxable value", value: LR.primary.assessed, valueText: `${LR.primary.assessed}%` },
-  { name: "Other homes, mostly rentals, share of market value", reference: true, value: LR.other_residential.appraised, valueText: `${LR.other_residential.appraised}%` },
-  { name: "Other homes, mostly rentals, share of taxable value", value: LR.other_residential.assessed, valueText: `${LR.other_residential.assessed}%` },
-  { name: "Commercial property, share of market value", reference: true, value: LR.commercial.appraised, valueText: `${LR.commercial.appraised}%` },
-  { name: "Commercial property, share of taxable value", value: LR.commercial.assessed, valueText: `${LR.commercial.assessed}%` },
-], { caption: "Horry County, 2018: who owns the value, and who is taxed on it", nameLabel: "Kind of property", valueLabel: "Share", compact: true, max: 50,
-  format: (v) => `${v}%`,
-  note: "Gray bars: share of market value. Brass bars: share of taxable value. Real property the county assessor values only; property the state values and vehicles are not in it. Taxable value is the assessed value, after the 4% or 6% rate. Other homes are, in the study's words, typically rental property at the 6% rate." });
+/* Chart 2: Horry County, 2018, share of market value and of taxable value, by class (F149). Three groups, two
+   bars each, so a reader compares the two shares of one kind of property at a glance (design pass, 2026-11-08). */
+const SHARE_CHART = (() => {
+  const MAX = 50;
+  const groups = [
+    ["Homes their owners live in", LR.primary],
+    ["Other homes, mostly rentals", LR.other_residential],
+    ["Commercial property", LR.commercial],
+  ];
+  const bar = (cls, label, v) => `<span class="r${cls}"><span class="l">${label}</span><span class="bar"><i style="width:${Math.round(v / MAX * 100 * 0.68)}%" aria-hidden="true"></i><b>${v}%</b></span></span>`;
+  const items = groups.map(([name, r]) => `<li><span class="g">${name}</span>${bar("", "Share of market value", r.appraised)}${bar(" tx", "Share of taxable value", r.assessed)}</li>`).join("");
+  return `<figure class="a388-fig"><p class="cap">Horry County, 2018: rentals were taxed on more than their share of the value</p>`
+    + `<ul class="a388-sh" aria-label="Horry County, 2018: share of market value and share of taxable value, by kind of property">${items}</ul>`
+    + `<figcaption>Gray bars: share of market value. Brass bars: share of taxable value. Taxable value is the assessed value, after the 4% or 6% rate. Only real property the county assessor values is counted. Property the state values and vehicles are not in it. Other homes are, in the study's words, typically rental property at the 6% rate.</figcaption></figure>`;
+})();
 
 /* ---------------------------------------------------------------------------- */
 
@@ -213,13 +272,13 @@ module.exports = G.page({
   theme: "glass",
   url: SELF,
   hub: { name: "Buyers", url: "/buyers/" },
-  title: "Act 388 Changes and Your Myrtle Beach Property Tax | Chapter3",
-  description: "What Act 388 did, the bills filed to change it, and who in Myrtle Beach and Horry County would pay more or less: homeowners, second homes, rentals.",
-  ogTitle: "Will the next governor cut the tax on your Myrtle Beach rental? What Act 388 changes would mean",
+  title: "Act 388 in South Carolina: the 15% Cap, 6% Rate and Bills",
+  description: "What Act 388 is, how the 15% cap and the 4% and 6% rates work, and which bills in the legislature would change them, for Myrtle Beach and Horry County owners.",
+  ogTitle: "What is Act 388 in South Carolina, and which bills would change it?",
   crumb: "Act 388 changes",
   eyebrow: "Property tax",
-  h1: "Will the Next Governor Cut the Tax on Your Myrtle Beach Rental?",
-  h1em: "What Act 388 changes would mean",
+  h1: "What is Act 388 in South Carolina, and which bills would change it?",
+  h1em: "The law, the rates and the bills",
   sub: "A Myrtle Beach second home or rental is taxed on 6% of its value, plus school operating tax. A home you live in pays on 4%, without that tax.",
   heroMedia: CSS + glance([
     { icon: "home", label: "Home you live in", text: "4% of value" },
@@ -230,12 +289,12 @@ module.exports = G.page({
   heroCta: { title: "Buying on the Grand Strand? We work out the tax bill on the home first.", label: "Get the tax on a home", href: CONTACT },
   author: "devin+abdulla",
   shortAnswer: [
-    `No, not on his own. Lowering the 6% rate on second homes and rentals takes two-thirds of each house of the legislature, and no bill we found would lower it.`,
-    `Alan Wilson, who won the governor's race, plans to look at reforming Act 388. Republicans won 79 of the 124 state House seats in the unofficial count, four short of two-thirds.`,
+    `Act 388 is the 2006 state law that took school operating taxes off homes their owners live in. Second homes and rentals still pay them, and are taxed at 6% of value, not 4%.`,
+    `Lowering the 6% rate takes two-thirds of each house of the legislature, and no bill we found would lower it.`,
     `For a home you live in, nothing pending raises the 4% rate. The one bill on that rate signed this year keeps it for heirs for a time.`,
   ],
   sections: [
-    { h2: "What is Act 388 in South Carolina?", toc: "What Act 388 did", id: "what-act-388-did", html: () =>
+    { h2: "What did Act 388 do?", toc: "What Act 388 did", id: "what-act-388-did", html: () =>
       h.p(`Act 388 is the 2006 state law that took school operating taxes off homes their owners live in. Everyone else still pays them, including second homes, rentals and businesses.`) +
       `<div class="a388-grid">` +
       card("Homes their owners live in", `<p>They stopped paying the school operating tax. They still pay the school debt tax, the county's tax and the city's.</p>`) +
@@ -256,15 +315,9 @@ module.exports = G.page({
       ]) },
 
     { h2: "Why does a second home or rental in Myrtle Beach pay more property tax?", toc: "Why second homes pay more", id: "why-second-homes-pay-more", html: () =>
-      h.p(`A home you do not live in pays more for two reasons. The state constitution taxes it on 6% of its value instead of 4%, and it still pays the school operating tax.`) +
-      h.ul([
-        `<strong>The 4% rate</strong> is for the home you live in and up to five acres around it. You apply to the county for it. Without the application, the home is taxed at 6%.`,
-        `<strong>The 6% rate</strong> is for all other real property: a second home, a rental, a lot, or a shop.`,
-      ]) +
+      h.p(`The state constitution taxes a home you do not live in on 6% of its value instead of 4%, and it still pays the school operating tax. On the same house inside Myrtle Beach, that makes the second-home bill more than twice the homeowner's. Our ${h.a(TAXES, "Horry County property tax guide")} shows how each bill is figured, and our ${h.a(PAGE4, "page for rental investors works each bill at 6% and 4%")}.`) +
       PH.css() + PHOTO +
-      h.p(`On the same house inside Myrtle Beach, the rate and the school tax together make the second-home bill more than twice the homeowner's. Our ${h.a(PAGE4, "page for rental investors works each bill at 6% and 4%")}.`) +
-      h.p(`The example house pays about ${EFF_HOME}% of its value a year as a home you live in, and about ${EFF_RENT}% as a second home. A statewide study by the Lincoln Institute found about the same: half a percent for homeowners, a little over one and a half for apartments.`) +
-      h.p(`Our ${h.a(TAXES, "Horry County property tax guide")} shows how the bill is figured and when it is due.`) },
+      h.p(`The example house pays about ${EFF_HOME}% of its value a year as a home you live in, and about ${EFF_RENT}% as a second home. A statewide study by the Lincoln Institute found about the same: half a percent for homeowners, a little over one and a half for apartments.`) },
 
     { h2: "How does the 15% cap work, and when does it reset?", toc: "The 15% cap and a sale", id: "the-15-cap", html: (bg) =>
       h.p(`The 15% cap limits how much a reassessment can raise your taxable value while you own the home. A sale or an addition ends the limit for that property.`) +
@@ -277,23 +330,10 @@ module.exports = G.page({
       h.p(`The new second-home buyer pays about ${TIMES} times what the long-time owner who lives there pays, on the same house. The buyer who moves in pays more than the long-time owner too, but at the lower rate.`) +
       h.cta("Before you make an offer on a Grand Strand home", "We work out its tax bill as a home you live in and as a second home, from the county's own record.", "Get the tax on a home", CONTACT, bg) },
 
+    /* Overlap fix (Blog-Brain reports/cannibalization-2026-11-08.json): the Wilson rental question belongs to
+       /invest/rental-property-tax-cut/. This section is two sentences and a link (DESIGN.md lists the cut sentences). */
     { h2: "What did Alan Wilson and Jermaine Johnson say about Act 388?", toc: "What the candidates said", id: "candidates", html: () =>
-      h.p(`Alan Wilson plans to look at reforming Act 388 so rentals are not taxed at a higher rate. Jermaine Johnson's platform, as WMBF summed it up, called for lower property taxes. Neither named a rate, a bill or a cost.`) +
-      compareCards([
-        { name: "In their words", cells: { w: "Reform how rentals are assessed", j: "Lower property taxes" } },
-        { name: "A bill filed", cells: { w: "None named", j: "None named" } },
-        { name: "A rate or dollar amount", cells: { w: "None named", j: "None named" } },
-        { name: "Who pays the difference", cells: { w: "Not named", j: "Not named" } },
-        { name: "Other property tax plans", cells: { w: "Homestead exemption changes", j: "None in the summary" } },
-      ], [{ key: "w", label: "Alan Wilson (R)" }, { key: "j", label: "Jermaine Johnson (D)" }],
-      { caption: "The same tests for both candidates for governor", nameLabel: "Test" }) +
-      h.h3("What Wilson said") +
-      h.p(`In a WIS interview, Wilson said he is "looking at Act 388 and reforming how we assess property taxes on those types of properties," meaning rentals. Owner-occupied homes "are taxed at a much lower rate," he said. "Second, third, and fourth homes, which are usually rental properties, are taxed at a higher rate," he added.`) +
-      h.h3("What his agenda lists") +
-      h.p(`His agenda lists "Reforming Act 388 to remove higher property taxes for rental properties," as Fox Carolina reported it. The agenda also lists automatic sign-up for the senior exemption, a larger exemption for disabled veterans, and lower personal property taxes for businesses.`) +
-      h.h3("What Johnson's platform lists") +
-      h.p(`WMBF's summary also lists income tax relief for lower-income families and more affordable housing. Johnson conceded on election night.`) +
-      h.p(`The U.S. Senate race, won by Annie Andrews, does not change this tax. The rates are in the state constitution. Our ${h.a(PAGE1, "guide to what the 2026 election means for Myrtle Beach buyers and sellers")} shows which office can change what.`) },
+      h.p(`Alan Wilson plans to look at reforming Act 388 for rentals, and neither he nor Jermaine Johnson named a rate, a bill or a cost. What Wilson's plan would do to a Myrtle Beach rental's tax bill is on our ${h.a(PAGE4, "rental tax cut page")}.`) },
 
     { h2: "Which Act 388 bills are in the South Carolina legislature now?", toc: "Bills and their status", id: "bills", html: () =>
       h.p(`One became law and the rest are in committee. We read each bill's page at the Statehouse, and none of them lowers the 6% rate.`) +
@@ -307,16 +347,10 @@ module.exports = G.page({
       ]) + `</div>` +
       h.p(`Two Horry County representatives, Kevin Hardee and William Bailey, were among the sponsors of Act 140. No one voted against it in either house.`) },
 
-    { h2: "What would it take to lower the 6% rate on second homes and rentals?", toc: "What it would take", id: "what-it-would-take", html: () =>
+    /* Overlap fix: bill text only. The vote count (seats won, the recounts) is the rental tax cut page's answer. */
+    { h2: "Which bills would change the 6% rate?", toc: "Bills that would change it", id: "what-it-would-take", html: () =>
       h.p(`Two-thirds of the members of each house must vote for it. The governor can propose a change, but the vote is the legislature's.`) +
-      stats("Votes needed against seats won", [
-        [`${HO.two_thirds}`, `House votes needed, of ${HO.members}`],
-        [`${HO.republicans_unofficial}`, "House seats Republicans won, unofficial"],
-        [`${SE.two_thirds}`, `Senate votes needed, of ${SE.members}`],
-        [`${SE.republicans}`, "Senate seats Republicans have"],
-      ]) +
-      h.p(`The Senate was not on the ballot this year, except one special race. In the House, Republicans would need at least four Democratic votes. Two close House races go to a recount by law. Whichever way they go, Republicans would have 78 to 80 seats.`) +
-      h.p(`The House districts on Horry County ballots elected eight Republicans and three Democrats. Cutting the school tax break for the home you live in also takes a two-thirds roll-call vote in each house.`) +
+      h.p(`Cutting the school tax break for the home you live in also takes a two-thirds roll-call vote in each house.`) +
       h.h3("The longer route: S. 815") +
       h.p(`S. 815 would change the constitution itself. That takes two-thirds of each house and then a majority of voters at the next general election, in November 2028. The next legislature must then ratify it.`) },
 
@@ -425,6 +459,6 @@ module.exports = G.page({
   sourcesNote: "Election results are unofficial until certified. The four-owner example and the shares are our arithmetic. Not legal or tax advice.",
   afterSources: CREDITS,
   bottomCta: { h2: "Buying or owning on the Grand Strand?", p: "Send us the address. We work out the tax bill as a home you live in and as a second home, and what changes when it sells.", label: "Get the tax on a home", href: CONTACT },
-  keywords: "Act 388 South Carolina, Act 388 changes, second home property tax Myrtle Beach, 15 percent cap reassessment, S. 815, Act 140, Horry County reassessment, 25 percent exemption",
+  keywords: "Act 388 school operating tax, Act 388 South Carolina, Act 388 changes, Act 388 bills 2026, 15 percent cap reassessment, S. 815, Act 140, Horry County reassessment",
   about: "South Carolina Act 388 of 2006, the 4% and 6% property tax rates, and proposed changes, for owners in Myrtle Beach and Horry County",
 });

@@ -31,7 +31,7 @@ module.exports = {
   h1em: "In this order.",
   sub: "Eight steps come after closing on a short-term rental and before the first guest: zoning, the license, taxes, the county fee, alarms, insurance, furnishing and the listing.",
   heroCta: { label: "Ask for the closing-day checklist", href: "/contact/" },
-  author: "tim",
+  author: "devin",
   shortAnswer: "After closing, a short-term rental needs the same set of accounts whichever town it is in. Confirm the zoning and the building's rules first, because a business license is refused without them. Then the state tax license if you take bookings yourself, the city or county business license, the county fee account, and the personal property return next spring. Alarms and a landlord policy before the first guest. Then the listing, with the taxes the platform collects and the ones it does not. The whole list fits on one page. Ask us for it at closing.",
   sections: [
     { h2: "What has to be in place before the first guest?", html:

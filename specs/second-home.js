@@ -55,11 +55,26 @@ const CSS = `<style>
 .c3s-t td:first-child{font-weight:600;color:var(--navy);white-space:nowrap}
 .c3s-t td{color:var(--muted)}
 @media(max-width:640px){.c3s-t td:first-child{white-space:normal}}
-</style>`;
+</style>`
+  /* Light fix, triage 2026-11-08: the italic line at about half the H1's size, on its own line (the approved look,
+     Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md). */
+  + "<style>@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+  + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}"
+  /* and the short answer above the live homes feed, so the answer is on a phone's first screen. The site's edge puts
+     the feed between the opening and the short answer (idx-lib/edge.js placeFeedTop) and the feed stays there in the
+     page's order; this shows the short answer first. Without a feed, nothing moves. */
+  + "main#main:has(>.detail-hero+section.hx-feed){display:flex;flex-direction:column}"
+  + "main#main>.detail-hero{order:-2}main#main>.detail-hero+section.hx-feed+section{order:-1}</style>";
 
 /* What a nightly rental took in, from the site's one source for these numbers (data/str-market.json, AirROI,
    trailing twelve months, average per active listing, before costs). Refresh it, then rebuild this page. */
 const STR = require("../data/str-market.json");
+/* AirROI's 12 months end with the month before its update date (dataAsOf). */
+const STR_MONTHS = (() => {
+  const MON = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const d = new Date(STR.dataAsOf + "T12:00:00Z"), end = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() - 1, 1));
+  return `the 12 months to ${MON[end.getUTCMonth()]} ${end.getUTCFullYear()}`;
+})();
 const MARKET = { "north-myrtle-beach": "north-myrtle-beach", "myrtle-beach-oceanfront": "myrtle-beach", "surfside-beach": "surfside-beach",
   "garden-city-beach": "garden-city", "murrells-inlet": "murrells-inlet", "pawleys-island": "pawleys-island" };
 const take = (id) => {
@@ -105,7 +120,7 @@ const PLACES = [
   entry("surfside-beach", "a town pier and streets of beach houses", "Homes for sale near the Surfside Beach pier", [
     "Surfside Beach owns its fishing pier. It is concrete and 814 feet long. Walking on it is free, and a day of fishing costs $14, with the state fishing license included.",
     "Much of the town was once The Ark Plantation. In the 1920s George J. Holiday named it Floral Beach, after his wife Flora and his daughter Floramay. It became Surfside Beach in 1952. When Hurricane Hazel came in 1954, it destroyed 18 of the 65 houses on the beach.",
-    "The town has 36 beach access points and 12 parking lots near the beach. Parking by the pier costs $4 an hour.",
+    `The town has ${h.a("/buyers/relocating/beaches/", "36 beach access points and 12 parking lots near the beach")}. Parking by the pier costs $4 an hour.`,
     "Stays under 30 days are allowed in only two of the town's zoning districts, called R3 and C3. The town's single-family neighborhoods do not allow them, and we tell you which district a house is in.",
   ], "Homes in Surfside Beach usually sell for about $360,000.",
   ["surfside-beach-houses-from-the-sand", "Beach houses behind the low dunes on the ocean side of Surfside Beach."]),
@@ -182,7 +197,7 @@ module.exports = G.page({
       h.p("Yes, in most of these places. Each town makes its own rule, an HOA can forbid what the town allows, and your loan has its own limits.") +
       RENT_TABLE +
       TAKE_TABLE +
-      h.p("The rental figures are averages for the past year, before the manager, cleaning, taxes and the HOA fee. Your own place can earn more or less, depending on the home, its view and how it is run.") +
+      h.p(`The rental figures are AirROI's average per active listing for ${STR_MONTHS}. They include the cleaning fees guests pay. They are before costs: the manager, cleaning, taxes and the HOA fee. Your own place can earn more or less, depending on the home, its view and how it is run.`) +
       h.cta("Want the numbers for one home?", "Send us the listing. We check whether you may rent it by the night, read its HOA rules, and give you its tax bill as a second home.", "Send us the home", "/contact/?topic=second-home", "ivory-2") +
       h.p("Guests pay lodging tax on any stay under 90 days: about 13 percent in the City of Myrtle Beach, about 12 percent elsewhere in Horry County, and about 11 percent on Pawleys Island. You or your rental manager collect it from guests and send it in.") +
       h.p(`The IRS has a rule for a home you both use and rent. Use it yourself for more than 14 days a year, or more than 10 percent of the days it is rented, whichever is more, and the IRS treats it as a home. Then rent from fewer than 15 days a year is tax-free, and your rental deductions cannot be more than the rent. Our ${h.a("/invest/14-day-rule/", "14-day rule")} page has examples.`) },
@@ -203,6 +218,7 @@ module.exports = G.page({
       h.p("South Carolina taxes a second home on 6 percent of its value, and the home you live in on 4 percent. A home you live in also pays no school operating tax, the largest part of the bill. Together, the two rules make a second home's bill three to four times larger.") +
       TAX_TABLE +
       h.p(`In North Myrtle Beach and Surfside Beach, the bill on a $400,000 second home falls between these two. Every town's bill is in our ${h.a("/buyers/property-taxes/", "property tax calculator")}.`) +
+      h.p(`Want to walk to the sand, or swim at home? Our guides to ${h.a("/buyers/homes-near-the-beach/", "houses near the beach")} and ${h.a("/buyers/pool-homes/", "homes with a pool")} show where they are.`) +
       h.p(`Insurance is the other large cost, and the condo and beach house table below shows who insures what. A federal flood policy has a $250 yearly surcharge when the home is no one's main home. For a main home, the surcharge is $25. Renting the home out will likely raise the premium. What each policy costs here is on our ${h.a("/buyers/coastal-insurance/", "coastal insurance")} page.`) +
       h.p("We get the insurance quotes and the HOA fee for any home you like before you make an offer, so you know the whole yearly cost.") },
 

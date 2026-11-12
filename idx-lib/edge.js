@@ -70,6 +70,16 @@ export function placeParams(q) {
     if (String(q.hoa) !== "0") return null;
     p.set("hoa", "0");
   }
+  /* 2026-11-10: a place may also narrow to waterfront and a price floor, so a strip title like "Lake living under
+     $500,000" is true. The feature keys, the town and the ceiling are read above. */
+  if (q.waterfront !== undefined) {
+    if (String(q.waterfront) !== "1") return null;
+    p.set("waterfront", "1");
+  }
+  if (q.min !== undefined) {
+    if (!/^\d{5,8}$/.test(String(q.min))) return null;
+    p.set("min", String(q.min));
+  }
   return p;
 }
 
@@ -78,8 +88,48 @@ export const NO_HOA_NOTE = "No HOA, as listed by the listing agent. Confirm befo
 
 const PLACE_BAR = { minPhotos: 6, yearMin: 1800, minSqft: 0 };
 
+/** A place's CRM search (cached ten minutes by crm()). Long enough to finish in the background. */
+function placeCall(env, request, slug) {
+  const p = placeParams(PLACES[slug].q);
+  if (!p) return Promise.resolve(null);
+  p.set("status", "active");
+  p.set("size", "48");
+  return crm(env, request, `/api/idx/listings?${p.toString()}`, { anonymous: true, timeoutMs: 8000, retry: false }).catch(() => null);
+}
+
+/** The same bar and order as the feeds (owner, 2026-10-26: never "the cheapest dump" first), with no
+ * year or size floor: a place's older houses and small beach cottages are what its page is about. */
+function placeHomes(r) {
+  return r && r.status === 200 && r.json && r.json.ok ? rankHomes(postFilter(r.json.listings || [], PLACE_BAR), "appeal").filter(hasPhoto) : [];
+}
+
+/** Fills the slots that missed the budget, once, after load. Adds the listing notice if the page has none (16.16). */
+const LATE = `<script>(function(){var m=document.querySelector("main");[].forEach.call(document.querySelectorAll(".hx-strip[data-late]"),function(s){
+if(s.firstChild)return;var q=new URLSearchParams({slug:s.getAttribute("data-place"),name:s.getAttribute("data-name")||""});if(s.getAttribute("data-head"))q.set("head",s.getAttribute("data-head"));
+fetch("/homes/api/place?"+q.toString(),{credentials:"same-origin"}).then(function(r){return r.json()}).then(function(j){if(!j||!j.ok||s.firstChild)return;s.innerHTML=j.html;
+if(m&&!document.querySelector(".hx-disclaimer")){var d=document.createElement("div");d.className="hx-wrap";d.style.paddingTop="0";d.innerHTML=j.notice;m.appendChild(d)}}).catch(function(){})})})();</script>`;
+
+/**
+ * GET /homes/api/place?slug=&name=&head=: one guide strip that missed the page's time budget, filled
+ * after load. The same search, bar and markup as the edge's strip, with name and head escaped here.
+ * { ok, html } or { ok: false }. No hearts: the answer is cached for everyone (as /homes/api/strip).
+ */
+export async function placeStripApi(env, request, url) {
+  const slug = url.searchParams.get("slug") || "";
+  const out = (b, status, cc) => new Response(JSON.stringify(b), { status, headers: { "content-type": "application/json", "cache-control": cc } });
+  if (!/^[a-z0-9-]{1,80}$/.test(slug) || !PLACES[slug]) return out({ ok: false }, 404, "no-store");
+  const name = esc((url.searchParams.get("name") || PLACES[slug].name || "").slice(0, 80));
+  const head = url.searchParams.get("head") ? esc(url.searchParams.get("head").slice(0, 120)) : "";
+  const r = await placeCall(env, request, slug);
+  if (r && r.status === 503 && r.json && r.json.error === "stale") return out({ ok: false }, 503, "no-store");
+  const ls = placeHomes(r);
+  if (ls.length < STRIP_MIN) return out({ ok: false }, 200, "public, max-age=120");
+  const html = strip(slug, name, ls, r.json.total, PLACES[slug].q.hoa !== undefined, head).replace(/<button type="button" class="hx-heart[\s\S]*?<\/button>/g, "");
+  return out({ ok: true, html, notice: disclaimer(r.json.meta) }, 200, "public, max-age=300");
+}
+
 function strip(slug, name, listings, total, noHoa, head) {
-  const all = `/homes/near/${slug}/`;
+  const all = `/homes/near/${(PLACES[slug] && PLACES[slug].same) || slug}/`;
   // name is our own markup from the page (already escaped there): print it as it is.
   const n = typeof total === "number" ? total : listings.length;
   // head, like name, is our own escaped markup from the page (glass.js homes()).
@@ -249,35 +299,41 @@ export async function withIdx(context, response) {
     const early = () => (feedMeta ? finish(env, request, gate, html, feedMeta, headers) : new Response(html, { status: 200, headers }));
 
     const slugs = [...new Set(slots.map((m) => m[1]))].filter((s) => PLACES[s]);
-    const calls = Promise.all(slugs.map((s) => {
-      const p = placeParams(PLACES[s].q);
-      if (!p) return null;
-      p.set("status", "active");
-      p.set("size", "48");
-      return crm(env, request, `/api/idx/listings?${p.toString()}`, { anonymous: true, timeoutMs: STRIP_BUDGET_MS - 500 }).catch(() => null);
-    }));
+    // Each place answers on its own: one slow place no longer empties every strip on the page. A place that
+    // misses the page's budget keeps going in the background (waitUntil), so its answer is in the cache for
+    // the next reader, and the page fills its empty slot a moment after load (SCRIPT, /homes/api/place).
+    const pending = slugs.map((s) => placeCall(env, request, s));
+    if (context.waitUntil) context.waitUntil(Promise.allSettled(pending));
     let timer;
-    const late = new Promise((done) => { timer = setTimeout(() => done(null), STRIP_BUDGET_MS); });
-    const answers = await Promise.race([calls, late]);
+    const deadline = new Promise((done) => { timer = setTimeout(done, STRIP_BUDGET_MS); });
+    const answers = await Promise.all(pending.map((c) => Promise.race([c, deadline.then(() => null)])));
     clearTimeout(timer);
-    if (!answers) return early();
     // A stale MLS copy means no listings anywhere on the page (16.7).
     if (answers.some((r) => r && r.status === 503 && r.json && r.json.error === "stale")) return new Response(html, { status: 200, headers });
     const filled = new Map();
     let meta = null;
     slugs.forEach((s, i) => {
       const r = answers[i];
-      // The same bar and order as the feeds (owner, 2026-10-26: never "the cheapest dump" first), with no
-      // year or size floor: a place's older houses and small beach cottages are what its page is about.
-      const ls = r && r.status === 200 && r.json && r.json.ok ? rankHomes(postFilter(r.json.listings || [], PLACE_BAR), "appeal").filter(hasPhoto) : [];
+      const ls = placeHomes(r);
       if (ls.length >= STRIP_MIN) { filled.set(s, [ls, r.json.total]); meta = meta || r.json.meta; }
     });
-    if (!filled.size) return early();
+    // A place that did not answer in time (not one with too few homes) is marked for the after-load fill.
+    const missed = new Set(slugs.filter((s, i) => answers[i] === null));
+    const mark = (slug, name, head) => `<div class="hx-strip" data-place="${slug}" data-name="${name}"${head ? ` data-head="${head}"` : ""} data-late="1"></div>`;
+    if (!filled.size) {
+      if (!missed.size) return early();
+      html = html.replace(SLOT, (whole, slug, name, head) => (missed.has(slug) ? mark(slug, name, head) : whole));
+      if (feedMeta) return finish(env, request, gate, html.replace("</body>", () => `${LATE}</body>`), feedMeta, headers);
+      html = html.replace("</head>", () => `${STYLE}${STRIP_STYLE}</head>`).replace("</body>", () => `${LATE}</body>`);
+      return new Response(html, { status: 200, headers });
+    }
 
     html = html.replace(SLOT, (whole, slug, name, head) => {
       const f = filled.get(slug);
-      return f ? `<div class="hx-strip" data-place="${slug}" data-name="${name}">${strip(slug, name, f[0], f[1], PLACES[slug].q.hoa !== undefined, head)}</div>` : whole;
+      if (f) return `<div class="hx-strip" data-place="${slug}" data-name="${name}">${strip(slug, name, f[0], f[1], PLACES[slug].q.hoa !== undefined, head)}</div>`;
+      return missed.has(slug) ? mark(slug, name, head) : whole;
     });
+    if (missed.size) html = html.replace("</body>", () => `${LATE}</body>`);
     return finish(env, request, gate, html, meta || feedMeta, headers);
   } catch {
     return text === null ? response : new Response(text, { status: response.status, headers: response.headers });

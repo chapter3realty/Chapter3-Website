@@ -35,14 +35,14 @@ const DOI = "https://doi.sc.gov/DocumentCenter/View/2470/All-You-Ever-Wanted-To-
 
 module.exports = {
   url: "/invest/llc/",
-  title: "Buying a Myrtle Beach Rental in an LLC | Chapter3",
-  description: "Holding a Myrtle Beach rental in a South Carolina LLC: the loan, the deed into the LLC, reassessment, the 4 percent rate, one LLC per house, withholding at sale.",
+  title: "South Carolina Rental Property LLC: Cost, Loans, Deed, Tax",
+  description: "A South Carolina LLC costs $110 to form. Deeding your rental into a single-member LLC owes no recording fee and keeps its tax value. DSCR loans close in the LLC.",
   ogTitle: "Buying and holding a Myrtle Beach rental in a South Carolina LLC",
   crumb: "Buying in an LLC",
   eyebrow: "Ownership structure",
   h1: "Should you hold a Myrtle Beach rental in an LLC?",
   h1em: "What it costs and what it changes.",
-  sub: "Every investor client Chapter3 works with holds the rental in an LLC. A single-member LLC costs $110 to form and takes your deed without a recording fee or a reassessment.",
+  sub: "Most Chapter3 investor clients hold each rental in its own LLC. A single-member LLC costs $110 to form and takes your deed without a recording fee or a reassessment.",
   heroCta: { label: "Send the address", href: RTN },
   author: "devin",
   shortAnswer: "An LLC is a company you form with the state to own the rental. Every investor client we work with holds title in an LLC, a trust or a corporation, and about nine in ten form a new LLC for each house. A DSCR loan closes in the LLC, and the lender requires it. A conventional loan is made to a person, not a company. Deeding a rental you already own into a single-member LLC costs no recording fee and does not reset the property tax value. A home owned by a single-member LLC keeps the 4 percent rate when the owner lives in it. South Carolina charges $110 to file and requires a registered agent with a street address in the state. An LLC that is not taxed as a corporation files no annual report. Your income tax does not change. The company's debts stay the company's, unless you sign a personal guaranty.",

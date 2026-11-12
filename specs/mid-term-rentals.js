@@ -27,10 +27,16 @@ module.exports = {
   h1em: "Yes, at 90 days.",
   sub: "South Carolina does not treat a stay of 90 continuous days as a short-term rental. Residential neighborhoods in the city that ban nightly rentals allow a 90-day stay.",
   heroCta: { label: "Send the address", href: RTN },
-  author: "tim",
+  author: "devin",
   shortAnswer: "A mid-term rental is a furnished home rented by the month, for stays of about one to six months. The tenants are travel nurses on 13-week contracts, people between homes, workers on a project, and families waiting on a closing. On the Grand Strand the number that matters is 90. A stay of 90 continuous days pays no accommodations tax and no county hospitality fee. The City of Myrtle Beach does not count it as a short-term rental. That makes a 90-day furnished lease legal in residential zones where nightly rentals are banned. Below: who the tenants are, the rules, the platforms, and how to price it.",
   sections: [
     { h2: "What is a mid-term rental?", html:
+      /* Light fix, triage 2026-11-08: the H1 ran three giant lines on a computer. It is set smaller there, and the italic
+         line sits at about half the H1's size on its own line (the approved look, Blog-Brain
+         batches/2026-11-a/hoa-documents/DESIGN.md), so the headline and the italic line fit in three lines. */
+      h.raw("<style>@media (min-width:700px){main#main .detail-h1{font-size:clamp(2.3rem,3.9vw,3.4rem);line-height:1.08;text-wrap:balance}}"
+        + "main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+        + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}</style>") +
       h.p("A mid-term rental is a furnished home rented by the month, for stays of about one to six months. The rent usually includes utilities and internet. The tenant brings clothes and a laptop, not a sofa.") +
       h.p("It sits between the two rentals most owners know. A short-term rental is rented by the night and pays the accommodations tax. A long-term rental is unfurnished on a twelve-month lease. The mid-term rental is furnished and monthly, and it is outside the nightly-rental rules once the stay is long enough.") +
       h.p("The tenants are travel nurses on contracts, people between homes, workers on a project, families waiting on a closing, and insurance placements after a fire or a flood.") },

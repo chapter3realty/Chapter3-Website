@@ -136,7 +136,7 @@ module.exports = G.page({
   theme: "glass",
   url: SELF,
   hub: { name: "Invest", url: "/invest/" },
-  title: "Grand Strand Short-Term Rental Rules After the 2026 Election",
+  title: "Could SC Lawmakers Override Local Short-Term Rental Rules?",
   description: "Myrtle Beach and North Myrtle Beach decide where short-term rentals go. What a state law like H. 3861 would change, and what the new House split means.",
   ogTitle: "Short-term rentals on the Grand Strand: which rules can a new Statehouse change?",
   crumb: "Short-term rental rules and the Statehouse",
@@ -168,33 +168,18 @@ module.exports = G.page({
         ["Business license", "Each city and the county", "Every rental in Myrtle Beach and North Myrtle Beach needs one"],
       ]) +
       h.p(`We checked the state code's chapters on local government, zoning and property and sales tax for a limit on local bans under another name, and found none. The one rule on rental websites asks them to post a notice about local licensing.`) +
-      h.p(`Election day changed none of these local rules. Horry County, Myrtle Beach, North Myrtle Beach and Surfside Beach had no question on the Nov. 3 ballot.`) },
+      h.p(`Election day changed none of these local rules. Horry County, Myrtle Beach, North Myrtle Beach and Surfside Beach had no question on the Nov. 3 ballot. The vote changed no building rule either, as ${h.a("/invest/horry-county-growth-roads-permits/", "our page on what the 2026 election changed for building in Horry County")} shows.`) },
 
-    { h2: "What are Myrtle Beach's short-term rental rules?", toc: "Myrtle Beach", id: "myrtle-beach", html: () =>
-      h.p(`Myrtle Beach keeps short-term rentals out of most of its residential neighborhoods. In the city, a short-term rental is a stay of under 90 days.`) +
+    { h2: "What are the short-term rental rules in each town today?", toc: "The rules today", id: "rules-today", html: (bg) =>
+      h.p(`Each town writes its own rules today. Our ${h.a("/invest/str-rules/", "short-term rental rules guide")} lists them town by town, with every license and tax. The short version follows.`) +
       h.ul([
-        `<strong>Residential zones.</strong> ${h.ext(MB, "No zone that begins with R")} allows them, except RMV (Residential Multifamily Visitor). Most traditional neighborhoods are in R zones.`,
-        `<strong>Grandfathered houses.</strong> Fewer than 30 houses in those zones, citywide, can keep renting short-term under the old rules.`,
-        `<strong>License and fines.</strong> Every rental needs a city business license. A violation can bring a fine of up to $500, 30 days in jail, or both, on conviction.`,
+        `<strong>Myrtle Beach</strong> keeps short-term rentals, stays of under 90 days, out of most of its residential neighborhoods. ${h.ext(MB, "No zone that begins with R")} allows them, except RMV. Fewer than 30 houses in those zones can keep renting under the old rules.`,
+        `<strong>North Myrtle Beach</strong> allows them with a ${h.ext(NMB, "city business license")}, renewed every year, and no special zoning.`,
+        `<strong>Surfside Beach and Horry County</strong> outside the cities each decide their own rules too.`,
       ]) +
       PHOTO +
-      h.p(`The city added one more rule in December 2024. City council voted unanimously for a ${h.ext(OVERLAY, "conversion overlay")} on commercial districts east of Kings Highway, on the ocean side. Under it, short-term rentals there may not convert to long-term rentals. It took effect at once, and a temporary moratorium was set to expire.`) +
-      h.p(`Two kinds of units are exempt from the overlay. One is a unit that already has a long-term rental license. The other is a former primary residence or second home that was never rented.`) },
-
-    { h2: "What are the rules in North Myrtle Beach, Surfside Beach and the rest of Horry County?", toc: "North Myrtle Beach and the rest", id: "north-myrtle-beach", html: (bg) =>
-      h.p(`North Myrtle Beach allows short-term rentals with a ${h.ext(NMB, "city business license")}, renewed every year. The city requires no special zoning or permit beyond the license. Each rental collects accommodations tax for the city, the county and the state.`) +
-      h.p(`Surfside Beach and Horry County, outside the cities, each decide their own rules too. Our agents check the zone of any Surfside Beach or county address with the town or county before you make an offer. Our ${h.a("/invest/str-rules/", "short-term rental rules guide")} lists the rules town by town on the Grand Strand.`) +
+      h.p(`The tax works differently. The state charges ${h.ext(ATAX, "7% of the rent")}, and a city or county can add a ${h.ext(LTAX, "local accommodations tax")} of up to 3%. Both rates are in state law, so the legislature can change them with an ordinary bill. Our ${h.a("/invest/accommodations-tax/", "accommodations tax guide")} gives the full rate for each town.`) +
       h.cta("Want to buy a rental?", "We show you rentals in the zones where short stays are allowed, in Myrtle Beach, North Myrtle Beach and Surfside Beach.", "Have us find you your next investment", "/contact/", bg) },
-
-    { h2: "How much tax does a Grand Strand short-term rental collect, and who decides it?", toc: "Accommodations tax", id: "accommodations-tax", html: () =>
-      h.p(`The state charges ${h.ext(ATAX, "7% of the rent")} on rooms and homes rented to short-stay guests. A city or county can add a ${h.ext(LTAX, "local accommodations tax")} of up to 3%. A county may not charge more than 1.5% inside a city unless the city agrees.`) +
-      h.p(`Three kinds of rentals owe no state accommodations tax:`) +
-      h.ul([
-        `Renting fewer than six rooms in the home you live in.`,
-        `A home rented out for 14 days or fewer in a year, the ${h.a("/invest/14-day-rule/", "14-day rule")} in federal tax law.`,
-        `A stay of 90 days or more in a row by the same guest.`,
-      ]) +
-      h.p(`Both rates are in state law, so the legislature can change them with an ordinary bill. Our ${h.a("/invest/accommodations-tax/", "accommodations tax guide")} gives the full rate for each Grand Strand city and county.`) },
 
     { h2: "What would H. 3861 have done to Myrtle Beach's rules?", toc: "What H. 3861 would have done", id: "h-3861", html: () =>
       h.p(`${h.ext(H3861, "H. 3861")} said no city or county may make or enforce a rule that bans renting a home to short-term guests. Myrtle Beach could no longer have kept stays of fewer than 29 days out of its R zones.`) +
@@ -281,6 +266,6 @@ module.exports = G.page({
   sourcesNote: "Election results are the unofficial count until certified. Not legal or tax advice.",
   afterSources: () => PH.credits().replace(/Chapter3 Realty resized these photos and cropped some of them\.[^<]*/, "Chapter3 Realty cropped and resized this photo."),
   bottomCta: { h2: "Buying a short-term rental on the Grand Strand?", p: "We check the zone, the license and the grandfathered status of the rental you want. We also find rentals where short stays are allowed.", label: "Have us find you your next investment", href: "/contact/" },
-  keywords: "Myrtle Beach short term rental laws, Horry County short term rental laws, North Myrtle Beach short term rentals, H. 3861 South Carolina, short-term rental preemption, South Carolina accommodations tax, 2026 election short-term rentals",
+  keywords: "state law on short-term rentals, H. 3861 South Carolina, South Carolina short-term rental bill, state law and local rental rules, short-term rental preemption, South Carolina accommodations tax, 2026 election short-term rentals",
   about: "Who decides short-term rental rules in Myrtle Beach, North Myrtle Beach and Horry County, South Carolina, and whether the state legislature elected in 2026 could change them",
 });

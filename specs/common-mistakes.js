@@ -292,12 +292,13 @@ if (HOA_SHARE !== 7) throw new Error("hoa-counts.json: houses with a fee moved o
 const feeBand = (b) => { const r = AGES.rows.find((x) => x.band === b); if (!r) throw new Error(`condo-ages.json: no ${b}`); return r.median_fee_month_within_5; };
 const FEE_ALL = feeBand("all"), FEE_OLD = feeBand("built 1986 or earlier");
 
-/* An offer box inside a section: h.cta's look (glass.js styles it), with the phone as a second button (CTA-4).
-   One label on the whole page (review round 1). */
+/* An offer box inside a section: h.cta's look (glass.js styles it). The first one also carries the phone as a
+   second button (CTA-4). Owner, 2026-11-03: an offer after about every second section, each tied to the entry
+   above it, and no two with the same words (CRAFT 3, STANDARD H5); this replaces review round 1's one label. */
 const CTA_LABEL = "Have us check a house";
-const ctaBox = (title, text, bg) => `<div style="border-left:3px solid var(--brass);background:var(--${bg});padding:1.2rem 1.4rem;margin:1.8rem 0;max-width:720px"><p style="color:var(--navy);font-weight:600;margin-bottom:.4rem">${title}</p><p style="color:var(--muted);line-height:1.7;margin-bottom:.8rem">${text}</p>`
-  + `<p style="display:flex;flex-wrap:wrap;gap:.6rem;margin:0"><a class="btn btn-brass" href="/contact/">${CTA_LABEL}</a><a class="btn btn-brass" href="tel:+18543332135">Call 854.333.2135</a></p></div>`;
-const MID_CTA = (bg) => ctaBox("Found a house you like?", "We can find its flood zone on FEMA's map, get a flood insurance quote and price the tax at both rates, before you make an offer.", bg);
+const ctaBox = (title, text, label, bg, phone) => `<div style="border-left:3px solid var(--brass);background:var(--${bg});padding:1.2rem 1.4rem;margin:1.8rem 0;max-width:720px"><p style="color:var(--navy);font-weight:600;margin-bottom:.4rem">${title}</p><p style="color:var(--muted);line-height:1.7;margin-bottom:.8rem">${text}</p>`
+  + `<p style="display:flex;flex-wrap:wrap;gap:.6rem;margin:0"><a class="btn btn-brass" href="/contact/">${label}</a>${phone ? `<a class="btn btn-brass" href="tel:+18543332135">Call 854.333.2135</a>` : ""}</p></div>`;
+const MID_CTA = (bg) => ctaBox("Found a house you like?", "We can find its flood zone on FEMA's map, get a flood insurance quote and price the tax at both rates, before you make an offer.", "Have us check a house's flood zone and tax", bg, true);
 
 module.exports = G.page({
   theme: "glass",
@@ -311,7 +312,7 @@ module.exports = G.page({
   eyebrow: "Before you buy",
   h1: "The Myrtle Beach buyer mistakes",
   h1em: "that cost the most.",
-  sub: `The costliest mistake here is paying the 6 percent tax on a home you live in: about ${r10(CO.gap_per_year)} a year on a ${PRICE_T} house. Nine more follow, by cost.`,
+  sub: `The costliest mistake is paying the second-home 6 percent tax on a home you live in: about ${r10(CO.gap_per_year)} a year on a ${PRICE_T} house. Nine more follow, by cost.`,
   heroMedia: glance([
     { icon: "tax", label: "Your home taxed at 6 percent", text: `${TIMES} times the 4 percent bill` },
     { icon: "flood", label: "Houses for sale in the flood zone", text: "8 in 10 listings do not say so" },
@@ -321,8 +322,8 @@ module.exports = G.page({
   toc: false, /* the ranked list links to every entry and is the page's contents */
   author: "devin",
   shortAnswer: [
-    `Of people who bought a house in Horry County in 2024 and get its tax bill at that house, about ${oneIn(...S24)} are still taxed at 6 percent. That is the costliest mistake here, and it comes back every year until they apply for 4 percent.`,
-    "Flood insurance, wind cover and the seller's low tax bill come next.",
+    `Of people who bought a house in Horry County in 2024 and have its tax bill mailed to that house, about ${oneIn(...S24)} are still taxed at 6 percent. That is the rate for second homes and rentals. It is the costliest mistake here, and it comes back every year until they apply for the 4 percent rate for the home they live in.`,
+    "The seller's low tax bill, flood insurance and wind cover come next.",
   ],
   sections: [
     { h2: "What are the biggest mistakes when buying a house in Myrtle Beach?", toc: "The ten mistakes", id: "the-list", html: () =>
@@ -330,7 +331,7 @@ module.exports = G.page({
       h.p(`Each one says what it costs and when we check for it, and links to its section. If this is your first home, read our ${h.a("/buyers/first-time-home-buyer-myrtle-beach/", "first-time buyer guide")} too.`) +
       RANKED },
 
-    { h2: "Are you paying the 6 percent tax on a home you live in?", toc: LABEL[0], id: ENTRY_IDS[0], html: () =>
+    { h2: "Are you paying the 6 percent tax on a home you live in?", toc: LABEL[0], id: ENTRY_IDS[0], html: (bg) =>
       h.p("Yes, until you apply. A home you live in is taxed on 4 percent of its value once you apply and qualify, and it does not pay the part of the tax that runs the schools. Until then, the county bills it at 6 percent, the rate for second homes and rentals.") +
       TAX_CHART +
       h.p("Newer owners are the most likely to still pay it.") +
@@ -345,7 +346,8 @@ module.exports = G.page({
       ]) +
       h.p("You also certify that no one in the home claims the 4 percent rate on another home. That means you, a spouse or a child under 18 you support. None of you can claim to be a legal resident of another state.") +
       APPLY_CARDS +
-      we(`We can price the tax at both rates while you choose a house, and give you the county's list of papers at closing. Our ${h.a("/buyers/property-taxes/", "property tax calculator")} works out the bill in any town.`) },
+      we(`Our ${h.a("/buyers/property-taxes/", "property tax calculator")} works out the bill in any town.`) +
+      ctaBox("Get the tax on a house at 4 percent and at 6 percent", "Send us the address. We can work out its tax bill at both rates while you choose, and give you the county's list of papers at closing.", "Have us price the tax on a house", bg) },
 
     { h2: "Why is my tax bill so much higher than the seller's?", toc: LABEL[1], id: ENTRY_IDS[1], html: () =>
       h.p("The seller's bill shows what the seller pays, not what you will pay. A home owned for many years is often taxed on a value far below the county's own value of it. A sale resets that value, and the new value is first taxed the year after the sale.") +
@@ -373,13 +375,14 @@ module.exports = G.page({
       h.p(`If wind is left out, you need a separate wind policy. The state's backup insurer for wind sells one to owners in this coastal area who cannot get it from another insurer. Our ${h.a("/buyers/coastal-insurance/", "coastal insurance guide")} explains the three policies a house here can need.`) +
       h.p("Before you offer, we can tell you which side of the line a house is on, and get a homeowners quote that shows whether wind is in it.") },
 
-    { h2: "How do I know a condo building has saved enough for repairs?", toc: LABEL[5], id: ENTRY_IDS[5], html: () =>
+    { h2: "How do I know a condo building has saved enough for repairs?", toc: LABEL[5], id: ENTRY_IDS[5], html: (bg) =>
       h.p("Only from the building's own budget and records. South Carolina does not require a condo to keep repair savings, called reserves, or to study what its repairs will need.") +
       h.p(`More than half of the condos for sale on the Grand Strand are in buildings ${CONDO_AGE} years old or older.`) +
       PH_TOWERS +
       `<div class="c3m-ex"><span class="k">Example</span><p>An 80-unit building has saved 26 percent of what it should hold by now for its repairs. ${h.ext(AR, "Association Reserves")}, a firm that studies condo savings, calls anything under 30 percent weak, with a high chance of a special bill to the owners.</p><p>In our example, the bill five years out is about $4,750 a unit, split evenly. It leaves out inflation and interest.</p></div>` +
       h.p(`${h.ext(FREDDIE, "Freddie Mac")} buys home loans from lenders. For loan applications from January 4, 2027, it needs a building's budget to put at least 15 percent of its dues into savings. A buyer whose loan follows Freddie Mac's rules needs a building that meets it.`) +
-      we(`Before you offer, we can get the building's budget, its savings figure and its recent board minutes. Our pages on ${h.a("/hoa/reserves/", "condo reserves")}, ${h.a("/hoa/special-assessments/", "special assessments")} and ${h.a("/buyers/condo-in-litigation/", "condos in a lawsuit")} explain each one.`) },
+      we(`Our pages on ${h.a("/hoa/reserves/", "condo reserves")}, ${h.a("/hoa/special-assessments/", "special assessments")} and ${h.a("/buyers/condo-in-litigation/", "condos in a lawsuit")} explain each one.`) +
+      ctaBox("Find out what a condo building has saved for repairs", "Send us the building. Before you offer, we can get its budget, its savings figure and its recent board minutes, and go over them with you.", "Have us get a condo's budget", bg) },
 
     { h2: "Can I rent my Myrtle Beach house by the week?", toc: LABEL[6], id: ENTRY_IDS[6], html: () =>
       h.p(`Inside the City of Myrtle Beach, only where the zoning allows rentals under 90 days. Most of the city's residential neighborhoods are not zoned for them.`) +
@@ -396,11 +399,12 @@ module.exports = G.page({
       SEPTIC_CHART +
       h.p("We can line up the inspection once the seller accepts your offer, with a septic and a well check where the house has them.") },
 
-    { h2: "Will the HOA let me keep my boat, golf cart or rental?", toc: LABEL[8], id: ENTRY_IDS[8], html: () =>
+    { h2: "Will the HOA let me keep my boat, golf cart or rental?", toc: LABEL[8], id: ENTRY_IDS[8], html: (bg) =>
       h.p(`Only if its recorded rules allow it. About ${HOA_SHARE} in 10 houses for sale on our MLS, which covers the Grand Strand and inland Horry County, have an HOA fee, so most houses here come with a homeowners association (HOA) and its rules.`) +
       h.p("In South Carolina, those rules bind you only if they are on file with the county. The HOA's papers are recorded at the county's Register of Deeds. A rule the board adds or changes must be recorded by January 10 of the next year to stay in force.") +
-      h.p("The biggest mistake we see from buyers moving from New York is not checking that a community's rules fit how they live: its rules on boats, golf carts, rentals and pools. The same check matters for any buyer with a boat, a cart or a rental plan.") +
-      we(`Many communities here ban renting the house out at all. When we search for you, we leave those out, and we read the HOA papers for any rule that would block your rental plan. We can read them for the boat, the cart and the pool too. If you would rather have no HOA, see our page on ${h.a("/buyers/no-hoa-homes/", "homes with no HOA")}.`) },
+      h.p(`The biggest mistake we see from buyers moving from New York is not checking that a community's rules fit how they live: its rules on boats, golf carts, rentals and pools. The same check matters for any buyer with a boat, a cart or a rental plan. For one community's rules, read ${h.a("/submarkets/carolina-forest/the-farm/", "the HOA rules in The Farm at Carolina Forest")}.`) +
+      we(`Many communities here ban renting the house out at all. When we search for you, we leave those out, and we read the HOA papers for any rule that would block your rental plan. If you would rather have no HOA, see our page on ${h.a("/buyers/no-hoa-homes/", "homes with no HOA")}.`) +
+      ctaBox("Find out if a community's rules fit how you live", "Send us the community or the address. We can read its HOA papers for the boat, the golf cart, the pool and renting before you offer.", "Have us read the HOA rules", bg) },
 
     { h2: "Does the agent I called work for me?", toc: LABEL[9], id: ENTRY_IDS[9], html: () =>
       h.p("Not until you both sign. In South Carolina, no brokerage firm represents you until you and the firm agree to it in writing.") +
@@ -437,7 +441,7 @@ module.exports = G.page({
   ],
   sourcesNote: "Our counts: Horry County parcel records, FEMA's flood policy and claim files, and homes for sale on the MLS, counted in total. Not legal, tax or insurance advice.",
   afterSources: () => ph.credits(),
-  bottomCta: { h2: "Buying on the Grand Strand?", p: "Tell us about the house. Before you offer, we can price the tax at both rates, test the flood map and the wind line, look up the zoning and read the HOA papers.", label: CTA_LABEL, href: "/contact/" },
+  bottomCta: { h2: "Buying on the Grand Strand?", p: "Tell us about the house. Before you offer, we can price the tax at both rates, test the flood map and the wind line, look up the zoning and read the HOA papers.", label: "Send us the house you like", href: "/contact/" },
   keywords: "home buyer mistakes Myrtle Beach, biggest mistakes when buying a house, mistakes to avoid when buying a house South Carolina, Horry County legal residence application, 4 percent tax rate South Carolina, Myrtle Beach flood zone, do I need flood insurance Myrtle Beach, does homeowners insurance cover wind Myrtle Beach, should I waive inspection, buyer agent South Carolina, Myrtle Beach short term rental zoning",
   about: "Mistakes home buyers make in Myrtle Beach and Horry County, South Carolina",
 });

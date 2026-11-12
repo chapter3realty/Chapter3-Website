@@ -13,7 +13,7 @@ const x = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt
 export async function onRequest(context) {
   const { env, request } = context;
   if (!idxOn(env, request).on || idxOn(env, request).preview) return new Response("Not found", { status: 404 });
-  const urls = [`<url><loc>${SITE}/homes/</loc></url>`, ...Object.keys(PLACES).map((s) => `<url><loc>${SITE}/homes/near/${s}/</loc></url>`)];
+  const urls = [`<url><loc>${SITE}/homes/</loc></url>`, ...Object.keys(PLACES).filter((s) => PLACES[s].index !== false).map((s) => `<url><loc>${SITE}/homes/near/${s}/</loc></url>`)] /* a place marked index:false (the 13-town strips) stays out of search */;
   if (env.IDX_INDEX_LISTINGS === "1") {
     const r = await crm(env, request, "/api/idx/sitemap", { anonymous: true, cacheSeconds: 3600, timeoutMs: 25000 } /* the CRM may take several seconds; only crawlers wait here */);
     if (r.status === 200 && r.json && r.json.ok) {

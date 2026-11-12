@@ -9,8 +9,10 @@
  * values (VERIFY.md). Struck wording: batches/2026-11-e/facts/election-2026-struck.json. In particular:
  * never "I-73 has no funding" (write that funding for most of the $1.6 billion is not identified); the
  * RIDE IV terms come from the ballot text (25 years or $6.35 billion; the I-73 local match of up to half
- * and its condition); the $450 million is WIS's figure; the 2021 freeboard ordinance was advanced on
- * second reading, and its final vote is not confirmed.
+ * and its condition); the $450 million is WIS's figure. The freeboard rule is today's county rule
+ * (Blog-Brain batches/2026-11-b/invest-horry-county-growth-roads-permits/facts.md rows 1 to 4): 3 feet
+ * in AE and VE zones, 24 inches above grade in an A zone with no base flood elevation, adopted in the
+ * rewritten flood ordinance in summer 2021, now Chapter 9. No ordinance number was found; print none.
  * Data: data/2026-11-e/horry-county-growth-roads-permits/data.json (Census county permit files, the FHFA
  * metro index, the RIDE IV ballot terms, the fee, the election rows) and photos.json. The chart, the
  * tables and every computed figure are read from that file here, never typed.
@@ -78,7 +80,8 @@ const FHFA = "https://www.fhfa.gov/hpi/download/quarterly_datasets/hpi_at_metro.
 const WIS73 = "https://www.wistv.com/2026/08/26/i-73-project-gains-renewed-attention-after-trump-pledge/";
 const ROW = "https://www.wmbfnews.com/2026/02/10/scdot-makes-progress-right-of-way-acquisition-proposed-i-73/";
 const FEES = "https://www.wmbfnews.com/2026/07/21/impact-fee-schedule-change-now-effect-concerns-raised-over-homeownership/";
-const FLOOD21 = "https://www.wmbfnews.com/2021/06/17/horry-county-council-passes-new-flood-regulations-some-neighbors-say-its-not-enough";
+const FLOODRULE = FB.source, FLOODPLAN = FB.adopted_source;
+const CODE9 = "https://www.horrycountysc.gov/departments/stormwater/engineers/resources-tools/ordinances-manuals-and-reports/";
 const DIFA = "https://www.scstatehouse.gov/code/t06c001.php";
 const ZONING = "https://www.scstatehouse.gov/code/t06c029.php";
 const AND_INF = "https://drannieandrews.com/issue/transportation-infrastructure-that-works/";
@@ -177,13 +180,13 @@ const freeboardSvg = (() => {
       + `<line x1="${x}" x2="${x + w}" y1="${floor}" y2="${floor}" stroke="#1c2028" stroke-width="2"/>`
       + `<text x="${cx}" y="${floor - 18}" text-anchor="middle" font-size="13" font-weight="600" fill="#1c2028">${label}</text>`;
   };
-  return `<svg class="g7-fb" viewBox="0 0 ${W} ${H}" role="img" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" style="display:block;width:100%;height:auto;max-width:420px;margin:0 auto" aria-label="Drawing of two houses on posts in a flood zone. The left house's floor is ${FB.from_ft} foot above the flood level. The right house's floor is ${FB.to_ft} feet above it, the height in the 2021 ordinance.">`
+  return `<svg class="g7-fb" viewBox="0 0 ${W} ${H}" role="img" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" style="display:block;width:100%;height:auto;max-width:420px;margin:0 auto" aria-label="Drawing of two houses on posts in a flood zone. The left house's floor is ${FB.from_ft} foot above the flood level. The right house's floor is ${FB.to_ft} feet above it, the height the county requires now.">`
     + `<rect x="0" y="${base}" width="${W}" height="${H - base}" fill="#5c8fb0" fill-opacity=".28"/>`
     + `<line x1="0" x2="${W}" y1="${base}" y2="${base}" stroke="#2c5d80" stroke-width="2" stroke-dasharray="6 4"/>`
     + `<text x="${W / 2}" y="${base + 20}" text-anchor="middle" font-size="13" fill="#1c2028">Flood level</text>`
     + house(90, FB.from_ft, `${FB.from_ft} foot`) + house(250, FB.to_ft, `${FB.to_ft} feet`) + `</svg>`;
 })();
-const FREEBOARD_FIG = `<figure class="g7-fig"><span class="cap">Floor height above the flood level for a new home in a flood zone</span>${freeboardSvg}<figcaption>Left, the old rule of ${FB.from_ft} foot. Right, the ${FB.to_ft} feet in the ordinance the council advanced in 2021. Our drawing.</figcaption></figure>`;
+const FREEBOARD_FIG = `<figure class="g7-fig"><span class="cap">Floor height above the flood level for a new home in a flood zone</span>${freeboardSvg}<figcaption>Left, the old rule of ${FB.from_ft} foot. Right, the ${FB.to_ft} feet the county requires now in AE and VE zones in the unincorporated county. Our drawing.</figcaption></figure>`;
 
 /* ---------- the photo (F016): the county's government complex, for the council section ---------- */
 const PHOTO = PH.aerial("horry-county-government-complex-conway", "The Horry County courthouse and county office complex in Conway, the county seat.", { closeUp: true, alt: "The Horry County courthouse and county office complex in Conway, two red brick buildings joined by a white entrance" });
@@ -203,7 +206,7 @@ const SPEC = {
   ogTitle: "Growth, roads and permits: what the new leaders mean for building in Horry County",
   crumb: "Growth, roads and permits",
   eyebrow: "2026 election",
-  h1: "Growth, Roads and Permits: What the New Leaders Mean for Building in Horry County",
+  h1: "Did the 2026 election change building rules in Horry County?",
   h1em: "",
   sub: `The 2026 election changed no rule for building in Horry County. The road tax, the impact fees and the flood rules are the same as before the vote.`,
   heroCta: { title: "Want to buy a new construction home in Horry County?", label: "Talk to a specialized agent", href: "/contact/" },
@@ -278,9 +281,10 @@ const SPEC = {
       h.p(`On a new home, we ask the builder whether the fee is already in the price, so you compare homes on the same terms. Our ${h.a(NEWC, "guide to buying new construction")} covers the rest of the process.`) },
 
     { h2: "What are the flood building rules for a new home in Horry County?", toc: "Flood rules", id: "flood-rules", html: () =>
-      h.p(`In a flood zone, the lowest floor of a new home must be built above the expected flood level. The extra height is called freeboard. In June 2021 the county council advanced an ordinance raising the freeboard for new homes in flood zones from ${FB.from_ft} foot to ${FB.to_ft} feet. Its final vote was scheduled for July 13, 2021.`) +
+      h.p(`In a flood zone, the lowest floor of a new home must be above the expected level of a big flood. The extra height is called freeboard. In the unincorporated county ${h.ext(FLOODRULE, `the rule is ${FB.to_ft} feet above that flood level in AE and VE zones`)}. In an AE zone that is the lowest floor. In a VE zone it is the bottom of the lowest supporting beam. A surveyor's certificate on the finished building proves the height.`) +
+      h.p(`In an A zone with no flood level on the map, the lowest floor must be at least ${FB.a_zone_in} inches above the highest ground next to the building. The building inspector checks it. The county council ${h.ext(FLOODPLAN, `raised the freeboard from ${FB.from_ft} foot to ${FB.to_ft} feet when it rewrote its flood ordinance in ${FB.adopted}`)}. The rule is now ${h.ext(CODE9, "Chapter 9 of the county code")}. Cities have their own rules. For a lot inside a city, ask the city.`) +
       FREEBOARD_FIG +
-      h.p(`We confirm the current height rule with the county for any lot in a flood zone before you buy, because it changes the cost of the build. What a flood zone means for insurance is on ${h.a(P3, "our page on flood insurance after the election")} and ${h.a(COAST, "our coastal insurance guide")}.`) },
+      h.p(`Our agents check the height rule for the lot's flood zone with the county or the city before you buy, because it changes the cost of the build. What a flood zone means for insurance is on ${h.a(P3, "our page on flood insurance after the election")} and ${h.a(COAST, "our coastal insurance guide")}.`) },
 
     { h2: "What could happen to new home and land prices in Horry County, short and long term?", toc: "Short and long term", id: "outlook", html: (bg) =>
       h.p(`In the next year or two, we expect the pattern of the last five years to continue unless the national market turns. Over five years or more, Horry prices have fallen about ${DROP}% (2008 to 2012) and risen to about ${TIMES} times the low (2012 to 2026).`) +
@@ -313,8 +317,7 @@ const SPEC = {
         ["The flood height", "We confirm the county's current floor-height rule for the lot's flood zone, and what it means for the build."],
         ["Road plans", "We check the RIDE IV project list and the I-73 route for work near the lot."],
         ["The fees", "We ask the builder whether the impact fee is in the price."],
-      ], "What we check for a lot or a new home") +
-      `<div class="g7-story"><p>Chapter3's clients from North Carolina bought land in Longs and built a new house there with a builder. They also expanded their cleaning business here.</p></div>` },
+      ], "What we check for a lot or a new home") },
   ],
   faqTitle: "Horry County growth and roads questions",
   faq: [
@@ -332,7 +335,9 @@ const SPEC = {
     { name: "WIS, I-73", href: WIS73 },
     { name: "WMBF, right of way", href: ROW },
     { name: "WMBF, impact fees", href: FEES },
-    { name: "WMBF, flood rules", href: FLOOD21 },
+    { name: "Horry County, flood building rules", href: FLOODRULE },
+    { name: "Horry County, Flood Resilience Master Plan summary", href: FLOODPLAN },
+    { name: "Horry County Code, Chapter 9", href: CODE9 },
     { name: "S.C. Code 6-1-930", href: DIFA },
     { name: "S.C. Code 6-29-720", href: ZONING },
     { name: "Andrews, infrastructure", href: AND_INF },
@@ -343,7 +348,7 @@ const SPEC = {
   sourcesNote: "Election results are unofficial. RIDE IV terms are from the ballot text. Not legal or investment advice.",
   afterSources: CREDITS,
   bottomCta: { h2: "Buying land or a new home in Horry County?", p: "Tell us where you want to build or buy. An agent helps you choose the lot or the home and buy it.", label: "Talk to a specialized agent", href: "/contact/" },
-  keywords: "Horry County growth, Horry County permits by year, RIDE IV, Horry County road tax, when will I-73 be complete, I-73 funding, Horry County impact fees, Horry County flood rules, freeboard, 2026 election Horry County, new construction Myrtle Beach",
+  keywords: "Horry County growth, Horry County permits by year, RIDE IV, Horry County road tax, when will I-73 be complete, I-73 funding, Horry County impact fees, Horry County flood rules, freeboard, 2026 election Horry County",
   about: "Building, roads and permits in Horry County, South Carolina, after the 2026 election: single-family permits, the RIDE IV sales tax, Interstate 73, impact fees and flood building rules",
 };
 SPEC.sections = SPEC.sections.map((x) => ({ ...x, html: (bg) => NOBREAK(typeof x.html === "function" ? x.html(bg) : x.html) }));

@@ -91,9 +91,12 @@ function dollars(n, unit) {
 const MONEY = String.raw`\$?\s*(\d[\d,]*(?:\.\d+)?)\s*(k|m|thousand|million)?\b`;
 
 /** Community names from our guide pages, longest first, so "Market Common" beats "Market". */
+/* Only places with their own indexed page: a typed "Cherry Grove" is the community, never a one-guide slice
+   (nohoa-*, second-home-*, a town guide's parts; cannibalization map, 2026-11-08). Town names are read as towns above. */
 const PLACE_NAMES = Object.entries(PLACES)
   /* A strip that is a search (a feature, a price), not a community, is never read as a place in a sentence. */
   .filter(([, p]) => !p.listOnly)
+  .filter(([, p]) => p.index !== false)
   .map(([slug, p]) => [slug, String(p.name || "").toLowerCase().replace(/,.*$/, "").trim()])
   .filter(([, n]) => n.length >= 4)
   .sort((a, b) => b[1].length - a[1].length);

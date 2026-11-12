@@ -41,7 +41,21 @@ module.exports = {
   sub: "Horry County's foreclosure sale is held at 11 in the morning on the first Monday of each month, for registered bidders with certified funds. Bank-owned homes list on the MLS.",
   heroCta: { label: "Ask about a sale property", href: "/contact/" },
   author: "devin",
-  shortAnswer: "Horry County's foreclosed homes are sold two ways. The master-in-equity court auctions them at 11 in the morning on the first Monday of each month, in Conway. You register a week ahead and bid in person. You pay 5 percent of the bid in certified funds by noon the next day, and the rest within 30 days. If the lender asked for a deficiency judgment, bidding stays open for 30 more days and anyone can outbid you. The deed carries no warranty and comes subject to unpaid taxes and senior liens. Bank-owned homes, called REO, list on the MLS and sell through an ordinary contract, and government sellers give owner-occupants the first days. A tenant in the house keeps the lease or gets 90 days. Tim Nash has bought at this sale many times, for himself and for clients.",
+  /* Light fix, triage 2026-11-08: the short answer was one 139-word block. It is now a two-sentence answer, the sale's
+     steps as a short list, and the rest in a closing paragraph, with every word kept. mkpage wraps each item in a <p>, so
+     the list closes the first paragraph and opens the last one. */
+  shortAnswer: [
+    "Horry County's foreclosed homes are sold two ways. The master-in-equity court auctions them in Conway, and bank-owned homes, called REO, list on the MLS and sell through an ordinary contract.</p>"
+      + `<p style="color:var(--navy);font-weight:600;line-height:1.75;max-width:720px;margin-bottom:.5rem">At the courthouse sale:</p>`
+      + h.ol([
+        "Register a week ahead.",
+        "Bid in person at 11 in the morning on the first Monday of each month.",
+        "Pay 5 percent of the bid in certified funds by noon the next day.",
+        "Pay the rest within 30 days.",
+        "If the lender asked for a deficiency judgment, bidding stays open for 30 more days and anyone can outbid you.",
+      ])
+      + `<p style="color:var(--muted);line-height:1.75;max-width:720px;margin-bottom:1rem">The deed carries no warranty and comes subject to unpaid taxes and senior liens. On a bank-owned home, government sellers give owner-occupants the first days. A tenant in the house keeps the lease or gets 90 days. Tim Nash has bought at this sale many times, for himself and for clients.`,
+  ],
   sections: [
     { h2: "What is a foreclosure sale in Horry County?", html:
       h.p("A foreclosure sale is a court-ordered auction of a home whose owner defaulted on the mortgage. In South Carolina the lender sues, the court orders the sale, and a judge called the master-in-equity holds the auction. The high bidder gets a master's deed from the court, not a deed from the owner.") +

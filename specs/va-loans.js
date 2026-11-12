@@ -299,7 +299,7 @@ module.exports = G.page({
   author: "devin",
   pageImages: () => PH.pageImages(WARBIRD).map(fixImg),
   shortAnswer: [
-    `For a house you will live in, yes, if the seller agrees and it passes the VA appraisal. ${cap1(inWords(HOUSE.va, HOUSE.all))} the houses for sale on the Grand Strand are marked as taking a VA loan. A condo needs a community on the VA's list, and few oceanfront resort towers are on it.`,
+    `You can use a VA loan on a house you will live in, if the seller agrees and the house passes the VA appraisal. The appraisal is the VA's check of the home's value and condition. ${cap1(inWords(HOUSE.va, HOUSE.all))} the houses for sale on the Grand Strand are marked as taking a VA loan. A condo needs a community on the VA's list, and few oceanfront resort towers are on it.`,
     `If the VA rates you permanently and totally disabled from your service, you pay no property tax on your home. On a home the county values at $400,000, that saves about ${money(EX_LO)} to ${money(EX_HI)} a year.`,
   ],
   sections: [
@@ -327,14 +327,13 @@ module.exports = G.page({
       h.h3("Flood zones") +
       h.p(`${cap1(inWords(FLOOD.va, FLOOD.all))} houses for sale listed as in a flood zone are marked VA. In a high-risk flood zone, a VA loan requires flood insurance for the life of the loan. Our ${h.a("/buyers/coastal-insurance/", "coastal insurance guide")} gives what it costs.`) +
       h.h3("Taking over a seller's VA loan") +
-      h.p(`A buyer can take over a seller's VA loan instead of getting a new one. This is called assuming the loan. Only ${L.assumable_all} homes for sale on the Grand Strand are listed with a loan you can take over, of any kind, so we ask the seller's agent about the loan on each home you like.`) +
-      h.cta("Houses for sale that take VA", "Tell us the towns you like and your price range. We send you the houses for sale there that are marked as taking a VA loan, and we show you the ones you pick.", "Get the list", CONTACT, bg) },
+      h.p(`A buyer can take over a seller's VA loan instead of getting a new one. This is called assuming the loan. Only ${L.assumable_all} homes for sale on the Grand Strand are listed with a loan you can take over, of any kind, so we ask the seller's agent about the loan on each home you like.`) },
 
     { h2: "Can you buy a beach house or a rental with a VA loan?", toc: "Second homes and rentals", id: "second-homes", html: () =>
-      h.p(`Only as the home you live in. You can buy a house with 2 to 4 units, live in one and rent the others, but few sellers of these homes here mark VA: ${MULTI["multi+va"]} of the ${MULTI.multi} for sale.`) +
+      h.p(`Only as the home you live in. You can buy a house with 2 to 4 units, live in one and rent the others, but few sellers of these homes here mark VA: ${MULTI["multi+va"]} of the ${MULTI.multi} for sale. Our guide to ${h.a("/invest/strategies/small-multifamily/", "buying a duplex or fourplex")} covers the rest.`) +
       h.p("A beach second home or a pure rental does not qualify. You certify that you intend to move in. If you are on active duty and cannot live there because of it, your spouse can meet the rule.") },
 
-    { h2: "Do disabled veterans pay property tax in South Carolina?", toc: "Property tax exemption", id: "property-tax", html: () =>
+    { h2: "Do disabled veterans pay property tax in South Carolina?", toc: "Property tax exemption", id: "property-tax", html: (bg) =>
       h.p("Not on their home, if the VA rates them permanently and totally disabled from their service. The exemption covers the home they own and live in, alone or with a spouse, with up to 5 acres, and up to two cars. A lower rating does not qualify.") +
       TAX_CHART +
       h.p(`A surviving spouse who has not remarried and lives in the home keeps the exemption, and can move it to a later home. Every town's tax rate is in our ${h.a("/buyers/property-taxes/", "property tax calculator")}.`) +
@@ -342,7 +341,8 @@ module.exports = G.page({
       h.p("The exemption is not automatic. The SC Department of Revenue grants it, not the county auditor, and the order matters.") +
       STEPS +
       h.h3("Rated below 100 percent?") +
-      h.p("At 65, after a year living in South Carolina, the first $50,000 of your home's value is not taxed. It also applies if a state or federal agency has classified you totally and permanently disabled. You apply to the county auditor by July 15.") },
+      h.p("At 65, after a year living in South Carolina, the first $50,000 of your home's value is not taxed. It also applies if a state or federal agency has classified you totally and permanently disabled. You apply to the county auditor by July 15.") +
+      h.cta("The property tax on one home, worked out for you", "Send us a home you like. We work out its yearly tax at its town's rate, and what an exemption would take off it.", "Have us work out a home's tax", CONTACT, bg) },
 
     { h2: "What does the VA appraisal check?", toc: "The VA appraisal", id: "appraisal", html: () =>
       h.p("Two things: what the home is worth, and whether it meets the VA's minimum property requirements, which your lender confirms.") +
@@ -353,7 +353,7 @@ module.exports = G.page({
       h.p("Older homes get one extra look. In a home built before 1978, the VA presumes lead paint, and any peeling or damaged paint must be fixed. Homes that old are far less common here than in the country as a whole.") +
       AGE_CHART },
 
-    { h2: "What does a VA buyer pay at closing?", toc: "Funding fee and closing costs", id: "closing", html: () =>
+    { h2: "What does a VA buyer pay at closing?", toc: "Funding fee and closing costs", id: "closing", html: (bg) =>
       h.p("A VA loan can need no down payment, as long as the price is not higher than the appraised value.") +
       h.p(`Unless you are exempt, you pay a one-time ${h.ext(VA_FEE, "VA funding fee")}. It is a share of the loan amount. The share drops if you make a large enough down payment. With little or no down payment, it is higher if you have used a VA loan before. You can add the fee to the loan or pay it at closing. On a purchase it is the only cost you can add to the loan.`) +
       h.h3("Who pays no funding fee") +
@@ -361,7 +361,8 @@ module.exports = G.page({
       h.p("If the VA later awards you disability pay that starts before your closing date, you can ask for the funding fee back.") +
       h.h3("What the seller can pay") +
       h.p("A seller can pay all of your closing costs, with no VA limit. The VA's 4 percent limit is only for other help from the seller, such as paying your funding fee or paying off a debt. It is 4 percent of the value the VA appraisal gives the home.") +
-      h.p(`Who pays the commission, the lender's fee for making the loan, the appraisal fee and title insurance is up to you and the seller. We write what you ask for into your offer. Our ${h.a("/buyers/closing-costs/", "closing cost guide")} lists each cost at closing in South Carolina.`) },
+      h.p(`Who pays the commission, the lender's fee for making the loan, the appraisal fee and title insurance is up to you and the seller. We write what you ask for into your offer. Our ${h.a("/buyers/closing-costs/", "closing cost guide")} lists each cost at closing in South Carolina.`) +
+      h.cta("Ask the seller for your closing costs", "When you find the home, we write your offer and ask the seller in it to pay the closing costs you choose.", "Have us write your offer", CONTACT, bg) },
 
     { h2: "Where is the VA clinic in Myrtle Beach?", toc: "The VA clinic", id: "va-clinic", html: () =>
       h.p(`The Myrtle Beach VA Clinic is at 1800 Airpark Drive. It offers primary care, mental health and specialty care, and replaced two older clinics in town.`) +
@@ -408,7 +409,7 @@ module.exports = G.page({
   ],
   sourcesNote: "Homes for sale: Chapter3's count of MLS listings, in aggregate; a community's condos are matched by its name and checked against its street. Drive times: OpenStreetMap routing, no traffic. Not loan or tax advice.",
   afterSources: () => CREDITS + fullCredit(PH.imageSchema([WARBIRD])),
-  bottomCta: { h2: "Send us the home you like", p: "For a condo, we look up its community. For a house, we ask whether the seller takes VA. Then we show you the homes you pick.", label: "Ask about a home", href: CONTACT },
+  bottomCta: { h2: "Houses for sale that take VA", p: "Send us the towns and price you want. We send you the VA-marked homes for sale and show you the ones you pick.", label: "Send us your towns and price", href: CONTACT },
   keywords: "VA loan Myrtle Beach, VA approved condos Myrtle Beach, VA loan condo approval list Horry County, VA loan second home, SC disabled veteran property tax exemption, Horry County disabled veteran property tax, VA funding fee exemption, VA clinic Myrtle Beach, VA loan requirements for sellers",
   about: "VA home loans and the disabled-veteran property tax exemption for buyers in Myrtle Beach and Horry County, South Carolina",
 });

@@ -94,32 +94,39 @@ const H5204 = "https://www.scstatehouse.gov/sess126_2025-2026/bills/5204.htm";
 const CARD = "background:linear-gradient(180deg,rgba(255,255,255,.82),rgba(255,255,255,.58));border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 10px 26px -18px rgba(28,32,40,.35)";
 const RED = "#a8482f", GREY = "#c9c2b6";
 const CSS = "<style>"
+  /* Design pass 2026-11 (redo/hoa-liens-and-foreclosure/DESIGN.md): one card style, kept for the data figures and the
+     offers only; the lists are open, with rules; red marks an urgent item by its number, not by a box; every block of
+     the page's own is 720 px, the width of the offer boxes. */
   /* figures: a glass card with a caption line on top */
-  + `main#main .lf-fig{max-width:760px;margin:1.3rem 0 1.5rem;padding:1.1rem 1.2rem 1rem;border-radius:20px;box-sizing:border-box;${CARD}}`
+  + `main#main .lf-fig{max-width:720px;margin:1.3rem 0 1.5rem;padding:1.1rem 1.2rem 1rem;border-radius:20px;box-sizing:border-box;${CARD}}`
   + `main#main .lf-fig .cap{color:var(--navy);font-weight:600;font-family:var(--sans);font-size:1.0625rem;line-height:1.4;margin:0 0 .8rem}`
   + `main#main .lf-fig figcaption{color:var(--muted);font-size:.95rem;line-height:1.55;margin-top:.8rem}`
   /* the 19 cases, one square each */
-  + `main#main .lf-waffle{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:.4rem;max-width:520px}`
+  + `main#main .lf-waffle{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:.4rem;max-width:100%}`
   + `main#main .lf-waffle li{margin:0;aspect-ratio:1;border-radius:7px;background:${GREY}}main#main .lf-waffle li.a{background:${RED}}`
   + `main#main .lf-key{list-style:none;margin:.9rem 0 0;padding:0;display:grid;gap:.35rem;font-family:var(--sans);font-size:1rem;line-height:1.4;color:var(--navy)}`
   + `main#main .lf-key li{margin:0;display:flex;align-items:flex-start;gap:.5rem}main#main .lf-key i{flex:0 0 auto;width:1rem;height:1rem;border-radius:4px;margin-top:.2rem;background:${GREY}}main#main .lf-key i.a{background:${RED}}`
   + `main#main .lf-key b{font-weight:700}`
   /* the share bar: the debt against the home's county value */
-  + `main#main .lf-share{position:relative;height:2.6rem;border-radius:999px;background:${GREY};overflow:hidden;max-width:620px}`
+  + `main#main .lf-share{position:relative;height:2.6rem;border-radius:999px;background:${GREY};overflow:hidden}`
   + `main#main .lf-share i{position:absolute;left:0;top:0;bottom:0;background:${RED}}main#main .lf-share i.lo{width:5%}main#main .lf-share i.hi{width:10%;opacity:.45}`
   + `main#main .lf-share span{position:absolute;right:1rem;top:50%;transform:translateY(-50%);color:var(--navy);font-family:var(--sans);font-weight:700;font-size:1rem}`
-  + `main#main .lf-sharekey{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.3rem 1rem;max-width:620px;margin:.55rem 0 0;font-family:var(--sans);font-size:1rem;line-height:1.4;color:var(--navy)}`
+  + `main#main .lf-sharekey{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.3rem 1rem;margin:.55rem 0 0;font-family:var(--sans);font-size:1rem;line-height:1.4;color:var(--navy)}`
   + `main#main .lf-sharekey b{color:${RED}}`
-  /* the steps, as a timeline */
-  + `main#main .lf-steps{list-style:none;margin:1.2rem 0 1.4rem;padding:0;max-width:760px;position:relative}`
-  + `main#main .lf-steps::before{content:"";position:absolute;left:1.05rem;top:.6rem;bottom:.6rem;width:2px;background:rgba(28,32,40,.16)}`
-  + `main#main .lf-steps>li{position:relative;margin:0 0 .7rem;padding:0 0 0 3.1rem}`
-  + `main#main .lf-steps .n{position:absolute;left:0;top:.75rem;display:inline-flex;align-items:center;justify-content:center;width:2.15rem;height:2.15rem;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--sans);font-weight:700;font-size:.95rem}`
+  /* the steps, as a timeline: open, no card per step */
+  + `main#main .lf-steps{list-style:none;margin:1.4rem 0 1.4rem;padding:0;max-width:720px;position:relative}`
+  + `main#main .lf-steps>li{position:relative;margin:0;padding:0 0 1.5rem 3.4rem}main#main .lf-steps>li:last-child{padding-bottom:0}`
+  + `main#main .lf-steps>li:not(:last-child)::after{content:"";position:absolute;left:1.02rem;top:2.6rem;bottom:.45rem;width:2px;border-radius:2px;background:rgba(28,32,40,.14)}`
+  + `main#main .lf-steps .n{position:absolute;left:0;top:0;display:inline-flex;align-items:center;justify-content:center;width:2.15rem;height:2.15rem;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--sans);font-weight:700;font-size:.95rem}`
   + `main#main .lf-steps li.hot .n{background:${RED}}`
-  + `main#main .lf-steps .c{display:block;padding:.85rem 1rem .9rem;border-radius:16px;${CARD};color:var(--muted);line-height:1.55}`
-  + `main#main .lf-steps li.hot .c{border:2px solid ${RED};background:#fff}`
-  + `main#main .lf-steps .t{display:inline-block;margin:0 0 .3rem;padding:.1rem .55rem;border-radius:999px;background:rgba(28,32,40,.07);color:var(--navy);font-family:var(--sans);font-size:.85rem;font-weight:600;letter-spacing:.02em}`
-  + `main#main .lf-steps b{display:block;color:var(--navy);font-family:var(--sans);font-size:1.08rem;line-height:1.35;margin-bottom:.2rem}`
+  + `main#main .lf-steps .c{display:block;color:var(--muted);line-height:1.6}`
+  + `main#main .lf-steps .t{display:block;margin:0 0 .15rem;color:#8a5226;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1.3;padding-top:.1rem}`
+  + `main#main .lf-steps b{display:block;color:var(--navy);font-family:var(--sans);font-size:1.12rem;line-height:1.35;margin-bottom:.25rem}`
+  + `main#main .lf-steps li:not(:has(.t)) b{padding-top:.3rem}`
+  /* on a wide screen, the courthouse photo beside the steps (step 7 happens there) */
+  + `main#main .lf-stepsrow .c3ph-hero{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;border-radius:0!important;max-width:720px}`
+  + `@media (min-width:1180px){main#main .lf-stepsrow{display:grid;grid-template-columns:720px minmax(0,1fr);column-gap:2.6rem;align-items:start}`
+  + `main#main .lf-stepsrow .c3-aerial{position:sticky;top:9.5rem;margin-top:1.4rem}main#main .lf-stepsrow .c3ph-hero{margin:0}}`
   /* the Winrose bill: a table with bars */
   + `main#main .lf-bill{width:100%;border-collapse:collapse;font-family:var(--sans)}`
   + `main#main .lf-bill th,main#main .lf-bill td{text-align:left;vertical-align:top;padding:.6rem .2rem;border-bottom:1px solid rgba(28,32,40,.1);font-size:1rem;line-height:1.4}`
@@ -130,41 +137,52 @@ const CSS = "<style>"
   + `main#main .lf-bill tbody tr:first-child .bar i{background:var(--navy)}`
   + `main#main .lf-bill tfoot th,main#main .lf-bill tfoot td{border-bottom:0;background:rgba(28,32,40,.05);color:var(--navy);font-weight:700;font-size:1.05rem;padding:.7rem .6rem}`
   /* the dark callout: what the house sold for */
-  + `main#main .lf-sold{max-width:760px;margin:1.3rem 0 1.5rem;padding:1.2rem 1.3rem;border-radius:20px;box-sizing:border-box;background:linear-gradient(160deg,rgba(42,48,64,.96),rgba(28,32,40,.98));color:var(--ivory);box-shadow:0 26px 60px -30px rgba(28,32,40,.6)}`
+  + `main#main .lf-sold{max-width:720px;margin:1.3rem 0 1.5rem;padding:1.2rem 1.3rem;border-radius:20px;box-sizing:border-box;background:linear-gradient(160deg,rgba(42,48,64,.96),rgba(28,32,40,.98));color:var(--ivory);box-shadow:0 26px 60px -30px rgba(28,32,40,.6)}`
   + `main#main .lf-sold .k{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-2);font-weight:600;margin:0 0 .9rem}`
   + `main#main .lf-sold ol{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}@media (min-width:700px){main#main .lf-sold ol{grid-template-columns:repeat(3,minmax(0,1fr))}}`
   + `main#main .lf-sold li{margin:0;padding:0}main#main .lf-sold strong{display:block;color:var(--brass-2);font-family:var(--serif);font-size:clamp(1.9rem,7vw,2.3rem);line-height:1.05;margin-bottom:.3rem}`
   + `main#main .lf-sold span{display:block;color:rgba(244,239,232,.92);line-height:1.5;font-size:1rem}`
-  /* the priority ladder */
-  + `main#main .lf-ladder{list-style:none;counter-reset:ld;margin:0;padding:0;display:grid;gap:.5rem}`
-  + `main#main .lf-ladder li{counter-increment:ld;position:relative;margin:0;padding:.75rem 1rem .75rem 3rem;border-radius:14px;background:rgba(255,255,255,.75);border:1px solid rgba(28,32,40,.1);color:var(--navy);font-family:var(--sans);font-size:1.02rem;line-height:1.4}`
-  + `main#main .lf-ladder li::before{content:counter(ld);position:absolute;left:.85rem;top:.7rem;display:inline-flex;align-items:center;justify-content:center;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:.85rem}`
-  + `main#main .lf-ladder li.us{border:2px solid ${RED};background:#fff}main#main .lf-ladder li.us::before{background:${RED}}`
-  + `main#main .lf-ladder small{display:block;color:var(--muted);font-size:.95rem;margin-top:.1rem}`
-  /* two or three cards side by side on a wide screen */
-  + `main#main .lf-cards{list-style:none;margin:1.1rem 0 1.4rem;padding:0;display:grid;gap:.65rem;max-width:760px}`
-  + `@media (min-width:760px){main#main .lf-cards:not(.lf-one){grid-template-columns:repeat(2,minmax(0,1fr))}}`
-  + `main#main .lf-cards li{margin:0;padding:1rem 1.1rem;border-radius:18px;${CARD};color:var(--muted);line-height:1.55}`
-  + `main#main .lf-cards li.no{border:2px solid ${RED};background:#fff}`
-  + `main#main .lf-cards .k{display:block;font-family:var(--sans);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#8a5226;font-weight:700;margin-bottom:.3rem}`
-  + `main#main .lf-cards .w{display:block;margin-top:.5rem;padding-top:.5rem;border-top:1px solid rgba(28,32,40,.1);color:var(--navy);font-family:var(--sans);font-size:.95rem;font-weight:600}`
-  + `main#main .lf-cards b{display:block;color:var(--navy);font-family:var(--sans);font-size:1.08rem;line-height:1.35;margin-bottom:.25rem}`
-  /* the numbered actions */
-  + `main#main .lf-acts{list-style:none;counter-reset:ac;margin:1.1rem 0 1.4rem;padding:0;display:grid;gap:.6rem;max-width:760px}`
-  + `main#main .lf-acts li{counter-increment:ac;position:relative;margin:0;padding:.9rem 1rem .95rem 3.1rem;border-radius:16px;${CARD};color:var(--muted);line-height:1.55}`
-  + `main#main .lf-acts li::before{content:counter(ac);position:absolute;left:.9rem;top:.9rem;display:inline-flex;align-items:center;justify-content:center;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--sans);font-weight:700;font-size:.85rem}`
-  + `main#main .lf-acts li.hot{border:2px solid ${RED};background:#fff}main#main .lf-acts li.hot::before{background:${RED}}`
-  + `main#main .lf-acts b{display:block;color:var(--navy);font-family:var(--sans);font-size:1.08rem;line-height:1.35;margin-bottom:.2rem}`
+  /* the priority ladder: plain rows inside the one figure card */
+  + `main#main .lf-ladder{list-style:none;counter-reset:ld;margin:0;padding:0;display:grid}`
+  + `main#main .lf-ladder li{counter-increment:ld;position:relative;margin:0;padding:.7rem 0 .7rem 2.6rem;border-top:1px solid rgba(28,32,40,.1);color:var(--navy);font-family:var(--sans);font-size:1.02rem;line-height:1.4}main#main .lf-ladder li:first-child{border-top:0}`
+  + `main#main .lf-ladder li::before{content:counter(ld);position:absolute;left:0;top:.62rem;display:inline-flex;align-items:center;justify-content:center;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:.85rem}`
+  + `main#main .lf-ladder li.us{font-weight:700}main#main .lf-ladder li.us::before{background:${RED}}`
+  + `main#main .lf-ladder small{display:block;color:var(--muted);font-size:.95rem;font-weight:400;margin-top:.1rem}`
+  /* pairs and short lists: open, each item under a thin rule; two side by side on a wide screen */
+  + `main#main .lf-cards{list-style:none;margin:1.2rem 0 1.5rem;padding:0;display:grid;gap:1.1rem;max-width:720px}`
+  + `@media (min-width:760px){main#main .lf-cards:not(.lf-one){grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem}}`
+  + `main#main .lf-cards li{margin:0;padding:.85rem 0 0;border-top:2px solid rgba(28,32,40,.14);color:var(--muted);line-height:1.6}`
+  + `main#main .lf-cards.lf-one{gap:0}main#main .lf-cards.lf-one li{padding:.9rem 0 1rem;border-top:1px solid rgba(28,32,40,.14)}main#main .lf-cards.lf-one li:last-child{border-bottom:1px solid rgba(28,32,40,.14)}`
+  + `main#main .lf-cards li.no{border-top-color:${RED}}main#main .lf-cards li.no .k{color:${RED}}`
+  + `main#main .lf-cards .k{display:block;font-family:var(--sans);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#8a5226;font-weight:700;margin-bottom:.3rem}`
+  + `main#main .lf-cards .k a{color:#8a5226!important}`
+  + `main#main .lf-cards .w{display:block;margin-top:.45rem;color:var(--navy);font-family:var(--sans);font-size:.95rem;font-weight:600}`
+  + `main#main .lf-cards b{display:block;color:var(--navy);font-family:var(--sans);font-size:1.12rem;line-height:1.35;margin-bottom:.25rem}`
+  /* the numbered actions: open, a rule between them */
+  + `main#main .lf-acts{list-style:none;counter-reset:ac;margin:1.2rem 0 1.5rem;padding:0;display:grid;max-width:720px}`
+  + `main#main .lf-acts li{counter-increment:ac;position:relative;margin:0;padding:1rem 0 1.05rem 3rem;border-top:1px solid rgba(28,32,40,.14);color:var(--muted);line-height:1.6}main#main .lf-acts li:last-child{border-bottom:1px solid rgba(28,32,40,.14)}`
+  + `main#main .lf-acts li::before{content:counter(ac);position:absolute;left:0;top:1rem;display:inline-flex;align-items:center;justify-content:center;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--sans);font-weight:700;font-size:.9rem}`
+  + `main#main .lf-acts li.hot::before{background:${RED}}`
+  + `main#main .lf-acts b{display:block;color:var(--navy);font-family:var(--sans);font-size:1.12rem;line-height:1.35;margin-bottom:.25rem}`
   /* the court's words */
   + `main#main .lf-quote{max-width:720px;margin:1.2rem 0 1.4rem;padding:.2rem 0 .2rem 1.1rem;border-left:3px solid var(--brass)}`
   + `main#main .lf-quote p{margin:0 0 .35rem;color:var(--navy);font-family:var(--serif);font-size:1.25rem;line-height:1.45}`
   + `main#main .lf-quote cite{font-style:normal;color:var(--muted);font-size:.95rem}`
   /* no single word alone on a heading's last line (critic, round 1) */
   + "main#main h2,main#main h3,main#main .lf-cards b,main#main .lf-acts b,main#main .lf-steps b,main#main a.btn{text-wrap:balance}"
+  /* the headline: the italic sub line at about half the H1's size, on its own line (as /sell/fsbo/ and /invest/condos/) */
+  + "main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+  + "main#main .detail-h1{text-wrap:balance}@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}"
   /* the hero glance tiles: larger figures */
   + "main#main .c3-glance li{line-height:1.4}main#main .c3-glance strong{font-size:1.2rem!important;font-weight:700;line-height:1.25}main#main .c3-glance span.t{font-size:.95rem!important;line-height:1.4!important}"
-  /* the contents list in two columns on a wide screen (as on /hoa/reserves/) */
-  + "@media (min-width:700px){main#main nav[aria-label=\"On this page\"]>ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.6rem}}"
+  /* on a phone the tiles are short rows under hairlines, with no box (as /sell/fsbo/ and /invest/condos/) */
+  + "@media (max-width:699px){main#main .c3-glance{grid-template-columns:1fr!important;gap:0!important}main#main .c3-glance li{background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border-top:1px solid rgba(28,32,40,.16)!important;flex-direction:row!important;text-align:left!important;justify-content:flex-start!important;gap:.7rem!important;padding:.55rem 0!important}main#main .c3-glance li:last-child{border-bottom:1px solid rgba(28,32,40,.16)!important}}"
+  /* the contents list: no card, plain columns between two thin rules (as /invest/condos/) */
+  + "main#main nav[aria-label=\"On this page\"]{background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border-top:1px solid rgba(28,32,40,.16)!important;border-bottom:1px solid rgba(28,32,40,.16)!important;padding:.8rem 0 .5rem!important}"
+  + "main#main nav[aria-label=\"On this page\"]>ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.5rem}"
+  /* each column at least as wide as its longest label, so the FAQ's label (its H2) stays on one line; on a phone it takes the last row to itself */
+  + "@media (min-width:700px){main#main nav[aria-label=\"On this page\"]>ul{grid-template-columns:repeat(3,minmax(max-content,1fr))}main#main nav[aria-label=\"On this page\"] li a{padding:.45rem 0!important}}"
+  + "@media (max-width:699px){main#main nav[aria-label=\"On this page\"] li:last-child:nth-child(odd){grid-column:1/-1}}"
   /* Work-arounds copied from /hoa/reserves/ (its NEEDS 10, 11, and the sibling's NEEDS 5): the shared feed's search
      row at 320 px, the header phone at 1000 to 1100 px, and the closing band kept dark when the site adds a block after it. */
   + "@media (max-width:379px){main#main .hx-fb,main#main .hx-fb>*{min-width:0;max-width:100%}main#main .hx-fb-ai,main#main .hx-fb-q{min-width:0!important;max-width:100%!important;flex-wrap:wrap;box-sizing:border-box}main#main .hx-fb-q textarea{min-width:0;flex:1 1 100%;width:100%}main#main .hx-fb-go{flex:1 1 100%}}"
@@ -253,7 +271,7 @@ const BILLS = `<ul class="lf-cards lf-one" aria-label="Bills before the South Ca
   + `</ul>`;
 
 /* The one photo (row 39; place checked by the writer, see photos.json subject_check). */
-const ph = PK.create({ h, photos: read("photos.json").photos, mapDir: path.join(__dirname, "..", "chapter3realty", "images", "maps"), mapSrc: "/images/maps" }).photoSet({ aerialWidth: "760px" });
+const ph = PK.create({ h, photos: read("photos.json").photos, mapDir: path.join(__dirname, "..", "chapter3realty", "images", "maps"), mapSrc: "/images/maps" }).photoSet({ aerialWidth: "720px" });
 const PHOTO = ph.aerial("horry-government-justice-center", "Horry County's Government and Justice Center in Conway, where the county's foreclosure cases are heard and its foreclosure sales are held.");
 ph.share("horry-government-justice-center");
 /* photos.js adds a general "resized these photos and cropped some of them" line; the one photo already says it
@@ -293,17 +311,18 @@ module.exports = G.page({
   heroCta: { title: "Behind on HOA dues? Ask us about selling before the auction.", label: "Talk to an agent", href: "/contact/" },
   author: "devin",
   shortAnswer: [
-    "Yes. For a house or a condo, a South Carolina homeowners association (HOA) or condo association can put a lien on your home for unpaid dues and ask a court to sell it. The lien is on the home itself, so it applies whether or not you have a mortgage.",
+    `Yes. For a house or a condo, a South Carolina homeowners association (HOA) or ${h.a("/hoa/hoa-vs-poa/", "condo association")} can put a lien on your home for unpaid dues and ask a court to sell it. A lien is a legal claim for money owed. The lien is on the home itself, so it applies whether or not you have a mortgage.`,
     "The bill that starts it can be small. Lawyers' fees and court costs are added to it.",
-    "If you are sued, you usually have 30 days to answer; the summons gives the time. Answer, and get the case itself dismissed, because paying the bill does not by itself end the lawsuit. Or sell before the auction.",
+    "If you are sued, you usually have 30 days to answer; the summons, the paper served on you, gives the time. Answer, and get the case itself dismissed, because paying the bill does not by itself end the lawsuit. Or sell before the auction.",
   ],
   sections: [
-    { h2: "Can an HOA foreclose on your house in South Carolina?", toc: "Can they foreclose?", id: "can-they-foreclose", html: () => CSS + ph.css() +
-      h.p("Yes, for a house or a condo, through the court. An association cannot sell your home on its own. It files a lawsuit, and a judge orders the sale, the same way a bank forecloses a mortgage. It can also sue you for the money alone, without asking to sell the home.") +
+    { h2: "Can an HOA foreclose on your house in South Carolina?", toc: "Can they foreclose?", id: "can-they-foreclose", html: (bg) => CSS + ph.css() +
+      h.p("Yes, for a house or a condo, through the court. An association cannot sell your home on its own. It files a lawsuit, and a judge orders the sale, the same way a bank forecloses, or forces a sale, when a mortgage is not paid. It can also sue you for the money alone, without asking to sell the home.") +
       h.p("The power comes from one of two places:") +
       KINDS +
       h.p(`In a ${h.a("#how-the-bill-grows", "2019 case")}, the community's rules allowed foreclosure, and the South Carolina Supreme Court said the HOA had the legal right to foreclose. It still set that sale aside.`) +
-      h.p(`For an HOA that is not a condo, ${h.ext(T27_30, "the state's HOA law")} says nothing about late fees, interest, liens or foreclosure. Those rules are in your community's own papers, so they differ from one community to the next. Our guide to ${h.a("/hoa/south-carolina-hoa-laws/", "South Carolina HOA law")} has what the state does say, and our guide to ${h.a("/hoa/violations-and-fines/", "HOA violations and fines")} covers fines.`) },
+      h.p(`For an HOA that is not a condo, ${h.ext(T27_30, "the state's HOA law")} says nothing about late fees, interest, liens or foreclosure. Those rules are in your community's own papers, so they differ from one community to the next. Our guide to ${h.a("/hoa/south-carolina-hoa-laws/", "South Carolina HOA law")} has what the state does say, and our guide to ${h.a("/hoa/violations-and-fines/", "HOA violations and fines")} covers fines.`) +
+      h.cta("Your community's papers, marked for you", "Send us the community's name. We get its recorded papers and mark the parts on late fees, liens and foreclosure, so you can take them to a lawyer.", "Have us get the HOA papers", "/contact/", bg) },
 
     { h2: "How often do HOAs foreclose in Horry County?", toc: "How often here", id: "how-often", html: () =>
       h.p(`Associations bring a real share of the county's foreclosures, mostly against condo units. We read every case on ${h.ext(MIE_LIST, "Horry County's sale list")} for one month and matched each association case to the county's parcel records.`) +
@@ -312,11 +331,11 @@ module.exports = G.page({
       SHARE +
       h.p(`More of the complaints in the ${h.ext(SCDCA, "state's 2026 HOA report")} came from Horry County than from any other county, almost a third of them.`) },
 
-    { h2: "What happens if you stop paying HOA dues?", toc: "Step by step", id: "step-by-step", html: () =>
+    { h2: "What happens if you stop paying HOA dues?", toc: "Step by step", id: "step-by-step", html: (bg) =>
       h.p("The bill grows, a lien goes on the home, and the association can sue to have it sold. The months below are from one South Carolina case, Winrose, in Richland County. The time to answer, usually 30 days, is in the court's rules, and the summons states it.") +
-      STEPS +
-      PHOTO +
-      h.p(`In all ${HOA_N} association cases on the county's list, ${h.ext(T15_39, "the bidding closes at the auction")}. It does not stay open 30 days for higher bids. Plan to settle or sell before that day.`) },
+      h.raw(`<div class="lf-stepsrow">${STEPS}${PHOTO}</div>`) +
+      h.p(`In all ${HOA_N} association cases on the county's list, ${h.ext(T15_39, "the bidding closes at the auction")}. It does not stay open 30 days for higher bids. Plan to settle or sell before that day.`) +
+      h.cta("What your home could sell for, before the auction", "Send us your address. We give you a value with the recent sales behind it, so you know what a sale would bring.", "Have us value your home", "/contact/", bg) },
 
     { h2: "How does a small HOA bill turn into thousands?", toc: "How the bill grows", id: "how-the-bill-grows", html: () =>
       h.p(`Mostly through lawyers' fees and court costs. In the ${h.ext(WINROSE, "Winrose case")}, the court's judgment was almost ${money(JUDG_ROUND)} on $250 of unpaid dues, about ${TIMES_ROUND} times the dues.`) +
@@ -327,7 +346,7 @@ module.exports = G.page({
       h.raw(`<blockquote class="lf-quote"><p>"A foreclosure proceeding is a last resort, not a business model to be swiftly invoked for the purpose of exploiting property owners."</p><cite>South Carolina Supreme Court, Winrose Homeowners' Association v. Hale</cite></blockquote>`) +
       h.p(`The steps that stop a bill like this are in ${h.a("#behind-now", "what to do if you are behind")}.`) },
 
-    { h2: "Does an HOA lien come before your mortgage?", toc: "Your mortgage", id: "your-mortgage", html: () =>
+    { h2: "Does an HOA lien come before your mortgage?", toc: "Your mortgage", id: "your-mortgage", html: (bg) =>
       h.p(`No, not before a mortgage that was recorded first. South Carolina has no law that puts an association's lien ahead of a first mortgage, the rule called a super lien.`) +
       LADDER +
       h.p(`For an HOA that is not a condo, no law ranks the HOA's lien. In a ${h.ext(BAILEY, "1994 case")}, a mortgage recorded before the dues fell due came first. That HOA's papers did not say the HOA came first.`) +
@@ -337,11 +356,11 @@ module.exports = G.page({
     { h2: "Behind on HOA dues? What to do before the sale", toc: "Behind now", id: "behind-now", html: (bg) =>
       h.p("Start with the lawsuit papers.") +
       ACTS +
-      h.cta("Selling to pay the association", "A Chapter3 agent finds out before closing what the association says is owed, so that amount is paid from the sale. We tell you what your home could sell for, and what would be left after the association and the mortgage are paid.", "Plan a sale", "/contact/", bg) },
+      h.cta("Selling to pay the association", "A Chapter3 agent finds out before closing what the association says is owed, so it is paid from the sale. The agent also tells you what would be left for you after the association and the mortgage.", "Ask us to plan a sale", "/contact/", bg) },
 
     { h2: "Buying a condo or HOA home: will the seller's unpaid dues follow you?", toc: "Buying", id: "buying", html: (bg) =>
       h.p(`In a condo, only up to what the association puts in writing. A condo buyer is liable with the seller for unpaid dues, but only up to the amount in the statement the association must issue on request. The unpaid dues are paid from the sale price at closing, after taxes and recorded mortgages. That limit does not cover a buyer at a foreclosure sale.`) +
-      h.p(`When a sale leaves no profit to pay them, the association could go after the new buyer for the fees, or waive them. Our agents check for unpaid fees before closing. A title search shows a lien the association has recorded and any notice of a lawsuit. Dues owed but not recorded show only in the association's statement, also called an ${h.a("/hoa/estoppel-and-transfer-fees/", "estoppel letter")}.`) +
+      h.p(`When a sale leaves no profit to pay them, the association could go after the new buyer for the fees, or waive them. Our agents check for unpaid fees before closing. A title search shows a lien the association has recorded and any notice of a lawsuit. Dues owed but not recorded show only in ${h.a("/hoa/estoppel-and-transfer-fees/", "the association's statement")}, a letter that says what the seller still owes.`) +
       h.h3("Owners behind on dues can affect your loan") +
       LOAN_CARDS +
       h.p(`A building's savings matter for the same reason. Our guide to ${h.a("/hoa/reserves/", "condo reserves")} shows how we read them.`) +
@@ -373,7 +392,7 @@ module.exports = G.page({
     { name: "SC Bar referral", href: SCBAR },
   ],
   sourcesNote: "Our count: the county's sale list for one month, with the county's values.",
-  bottomCta: { h2: "Behind on dues, or buying into an HOA?", p: "If you are behind, an agent can tell you what your home could sell for and plan the sale. If you are buying, we check the unit for unpaid dues before you close.", label: "Talk to an agent", href: "/contact/" },
+  bottomCta: { h2: "Behind on dues, or buying into an HOA?", p: "If you are behind, an agent can time your sale so the association is paid before the court sells the home. If you are buying, we check the unit for unpaid dues before you close.", label: "Ask an agent about selling or buying", href: "/contact/" },
   keywords: "can an HOA foreclose in South Carolina, HOA lien South Carolina, HOA foreclosure South Carolina, what happens if you don't pay HOA fees, unpaid HOA dues, condo association lien, HOA lien priority, HOA super lien, Master in Equity HOA foreclosure, HOA fines lien, HOA dues bankruptcy",
   about: "Homeowners association and condo association liens and foreclosure for unpaid dues in South Carolina and Horry County",
 });

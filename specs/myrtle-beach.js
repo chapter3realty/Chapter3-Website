@@ -265,6 +265,45 @@ main#main>section[style^="background:var(--navy)"]:last-of-type:not(.c3-x)>.wrap
 @media (max-width:359px){.hx-feed .hx-fb-ai,.hx-feed label.hx-fb-q{min-width:0!important;max-width:100%!important;flex-wrap:wrap!important;box-sizing:border-box}.hx-feed .hx-fb-ai>*{min-width:0}.hx-feed .hx-pop{flex-wrap:wrap!important;max-width:100%}}
 </style>`;
 
+/* Design pass, 2026-11-08 (redo2/submarkets-myrtle-beach/DESIGN.md), as on the approved condo and HOA lien pages:
+   a two-line headline, the contents in columns, one card style (the map, the charts, the receipt and the offers),
+   plain tables and lists, photos without frames, one block width of 720 px, and on a wide screen the two USGS photos
+   beside the paragraphs they explain. */
+const M = "main#main", RULE = "1px solid rgba(28,32,40,.16)";
+const FLAT = "background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important";
+const DESIGN_CSS = "<style>"
+  /* 1. The headline: the italic line at about half the H1's size; on a phone the tiles are short rows under thin rules. */
+  + `@media (min-width:700px){${M} .detail-h1{text-wrap:balance}}${M} .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}`
+  + `@media (max-width:959px){${M} .detail-h1 em{color:var(--g-ink,#8a5226)!important}}`
+  + `${M} .c3-glance li{line-height:1.4}${M} .c3-glance span.t{line-height:1.3}`
+  + `@media (max-width:699px){${M} .c3-glance{grid-template-columns:1fr!important;gap:0!important}${M} .c3-glance li{${FLAT};border-top:${RULE}!important;flex-direction:row!important;text-align:left!important;justify-content:flex-start!important;gap:.7rem!important;padding:.55rem 0!important}${M} .c3-glance li:last-child{border-bottom:${RULE}!important}}`
+  + `@media (min-width:360px) and (max-width:699px){${M} .c3-glance{grid-template-columns:1fr 1fr!important;column-gap:1rem!important}${M} .c3-glance li:nth-last-child(2){border-bottom:${RULE}!important}}`
+  /* 2. The contents: no card, in columns between two rules. */
+  + `${M} nav[aria-label="On this page"]{${FLAT};border-top:${RULE}!important;border-bottom:${RULE}!important;padding:.8rem 0 .5rem!important}`
+  + `${M} nav[aria-label="On this page"] ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.5rem}`
+  + `@media (min-width:700px){${M} nav[aria-label="On this page"] ul{grid-template-columns:repeat(3,minmax(0,1fr))}${M} nav[aria-label="On this page"] li a{padding:.45rem 0!important}}`
+  /* 3. One card style. The life list: one list split by rules. */
+  + `${M} .c3-mb-life{gap:0!important}${M} .c3-mb-life li{${FLAT};border-top:${RULE}!important;padding:.8rem 0!important}${M} .c3-mb-life li:last-child{border-bottom:${RULE}!important}`
+  /* Photos without a frame; the map keeps one card, with no frame inside it. */
+  + `${M} figure.c3ph-hero{${FLAT};padding:0!important}${M} figure.c3ph-hero figcaption{padding:0!important}`
+  + `${M} .c3-mb-frame{background:none!important;border:0!important;box-shadow:none!important;border-radius:12px!important}`
+  /* Tables: plain, under thin rules; on a phone, plain rows split by a rule. */
+  + `${M} .c3-cc{${FLAT};padding:0!important}${M} .c3-cc thead th{border-bottom:1px solid rgba(28,32,40,.3)!important}`
+  + `${M} .c3-cc th:first-child,${M} .c3-cc td:first-child{padding-left:0}`
+  + `@media (max-width:39.999em){${M} .c3-cc tbody tr{${FLAT};border-top:${RULE}!important;margin:0!important;padding:.7rem 0 .75rem!important}`
+  + `${M} .c3-cc tbody tr:last-child{border-bottom:${RULE}!important}${M} .c3-cc th,${M} .c3-cc td{padding-left:0!important;padding-right:0!important}}`
+  /* The months to sell: two plain columns under a rule, the numbers kept large. */
+  + `${M} .c3-mb-tiles{column-gap:2rem!important;row-gap:0!important}${M} .c3-mb-tile{${FLAT};border-top:${RULE}!important;padding:.8rem 0 .4rem!important}`
+  /* The pros and cons: two plain columns, each under a brass rule. */
+  + `${M} .c3-pc>div{${FLAT};border-top:2px solid var(--brass)!important;padding:.9rem 0 0!important}${M} .c3-pc{column-gap:2.5rem!important}`
+  /* 4. One block width. */
+  + `${M} .c3-cc,${M} .c3-gchart,${M} figure.c3-mb-fig,${M} figure.c3ph-hero,${M} .c3-mb-life,${M} .c3-mb-tiles,${M} .c3-mb-sum,${M} .c3-pc{max-width:720px!important;box-sizing:border-box}`
+  /* 5. On a wide screen, each USGS photo sits to the right of the paragraphs it explains. */
+  + `@media (min-width:1180px){${M} .c3-mb-beside{display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:2.5rem;align-items:start;margin:1.6rem 0 1.4rem}`
+  + `${M} .c3-mb-beside>*{grid-column:1}${M} .c3-mb-beside>figure.c3ph-hero{grid-column:2;grid-row:1/3;margin:.35rem 0 0!important;max-width:none!important}}`
+  + "</style>";
+const beside = (...parts) => `<div class="c3-mb-beside">${parts.join("")}</div>`;
+
 /* ---------------------------------------------------------------------------- */
 /* The parts of the city people choose between (rows 22 to 24, 13, 17, 41 to 46).  */
 
@@ -371,7 +410,7 @@ const BKEY = { "Landmark Resort": "LANDMARK HPR PH I" };
 const BUILDING_TABLE = compareCards(BUILDINGS.slice().sort((a, b) => b.median - a.median).map((b) => {
   const k = BKEY[b.name] || OF.top_buildings.find((x) => x.n === b.n && x.median === b.median).group;
   return { name: b.name, cells: { price: `About ${r1k(b.median)}`, units: unitWords(k) } };
-}), [{ key: "price", label: "Middle resale price" }, { key: "units", label: "Most homes for sale now" }],
+}), [{ key: "price", label: "Middle resale price" }, { key: "units", label: "What its homes for sale are now" }],
 { caption: "The nine oceanfront condo buildings in the city with the most resales in the past year", nameLabel: "Building" });
 must(unitWords("TIDES/DRIFTWD/OASIS HPR") === "Studios" && unitWords("MONTEREY BAY SUITES RST") === "One-bedrooms" && unitWords("DUNES VILLAGE HPR") === "One- to three-bedrooms", "row 52 words");
 
@@ -388,11 +427,11 @@ const SEASON_CHART = (() => {
   const svg = `<svg class="c3-mb-chart" viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Bar chart of what the average Myrtle Beach nightly rental takes in each month: ${M.map(([m, v]) => `${m} ${money(v)}`).join(", ")}.">`
     + `<line x1="${L0}" y1="${B0}" x2="${R0}" y2="${B0}" stroke="#1c2028" stroke-opacity=".25"/>` + bars + tag("January") + tag("July") + `</svg>`;
   const legend = `<ul class="c3-mb-legend"><li><span class="c3-mb-sw" style="background:#c4783a"></span>June to August</li><li><span class="c3-mb-sw" style="background:#5c6b78;opacity:.55"></span>The other months</li></ul>`;
-  return `<figure class="c3-gchart c3-mb-fig"><span class="cap" style="display:block;color:var(--navy);font-weight:600;font-size:1.1em;line-height:1.35;margin:0 0 .5rem">What the average Myrtle Beach nightly rental takes in, by month</span>${legend}${svg}<figcaption>Each month averaged over the past two years, for the Myrtle Beach market, which reaches past the city limits. Source: AirROI.</figcaption></figure>`;
+  return `<figure class="c3-gchart c3-mb-fig"><span class="cap" style="display:block;color:var(--navy);font-weight:600;font-size:1.1em;line-height:1.35;margin:0 0 .5rem">What the average Myrtle Beach nightly rental takes in, by month</span>${legend}${svg}<figcaption>Each month is the average of the past two years. The figures cover the whole Myrtle Beach market, which reaches past the city limits. Source: AirROI.</figcaption></figure>`;
 })();
 
 /* The worked example (rows 30 to 33), as a receipt with a total row. */
-const WX_TITLE = "A typical one-bedroom's income on a typical oceanfront one-bedroom's price";
+const WX_TITLE = "A year for an oceanfront one-bedroom rented by the night, at typical income and price";   // design pass 2026-11-08: plainer title, same facts
 const WORKED = `<div class="c3-mb-sum" role="group" aria-label="${WX_TITLE}"><span class="cap">${WX_TITLE}</span><ol>`
   + `<li><span>What a typical one-bedroom nightly rental took in for a year, counting listings open only part of the year</span><strong>About ${r1k(WX.gross_bookings_1br_median)}</strong></li>`
   + `<li><span>Running costs for an owner who runs it without a manager: the Airbnb fee, cleaning, utilities, supplies, repairs, a short-term rental policy and the permit</span><strong>About ${r100(WX.running_costs)}</strong></li>`
@@ -472,7 +511,7 @@ const TOP = { title: "Tell us how you will use the home", label: "Ask about a My
 const END = {
   h2: "Send us an address or a building.",
   p: "We tell you its zone, its HOA's rules on rentals, its HOA fee and its flood zone. Then we send you the homes for sale that fit your plan.",
-  label: "Ask about a Myrtle Beach home", href: `/contact/?place=${encodeURIComponent("Myrtle Beach")}`,
+  label: "Send us a Myrtle Beach address", href: `/contact/?place=${encodeURIComponent("Myrtle Beach")}`,
 };
 const partH3 = (p, tail) => `<h3 id="${p.id}" data-toc="${p.name}" class="c3-mb-h3" style="font-family:var(--serif);font-size:1.3rem;color:var(--navy);margin:2rem 0 .6rem;line-height:1.3">${numDot(p)}<span>${p.name}${tail ? `: ${tail}` : ""}</span></h3>`;
 const [P1, P2, P3, P4] = PARTS;
@@ -504,15 +543,15 @@ module.exports = G.page({
   author: "devin",
   shortAnswer: [
     `Buy a house if you will live here. About 3 in 4 houses in the city are their owners' main homes, and almost none may be rented by the night. Buy an oceanfront condo if you want to rent it to visitors: about 3 in 4 condos are in zones where the city allows nightly rentals.`,
-    `Houses in the city resold for about ${HOUSE_MED} in the middle, and their prices are steady. Condos resold for about ${money(RC.median)}, and their prices are falling.`,
+    `Houses in the city resold for about ${HOUSE_MED} in the middle, and their prices are steady. Condos resold for about ${money(RC.median)}, and ${h.a("/market-reports/july-2026/", "their prices are falling")}.`,
   ],
   sections: [
     { h2: "What is it like to live in Myrtle Beach?", toc: "Living here", id: "living", html: () =>
-      CSS + G.homesCss() +
+      CSS + DESIGN_CSS + G.homesCss() +
       h.p(`Myrtle Beach is a city of about ${POP} people on the ocean. About ${GROWTH} percent more people live here than in 2020.`) +
       `<ul class="c3-mb-life">`
       + `<li><strong>The Boardwalk.</strong> Downtown, the ${h.ext(CITY_BW, "Boardwalk")} is about 1.3 miles long, beside the ocean. It has a raised wooden boardwalk, a wide section for entertainment, and a winding walk along the ocean.</li>`
-      + `<li><strong>A large hospital.</strong> Grand Strand Medical Center is inside the city, about a mile from the ocean. It has the region's only heart surgery program and a trauma center for the most serious injuries.</li>`
+      + `<li><strong>A large hospital.</strong> Grand Strand Medical Center is inside the city, about a mile from the ocean. It has a heart surgery program and a trauma center for the most serious injuries.</li>`
       + `<li><strong>The airport.</strong> Myrtle Beach International Airport is inside the city too, ${AIRPORT_TO_OCEAN} from the ocean. It has nonstop flights to more than 50 cities.</li>`
       + `<li><strong>Golf and shops.</strong> Two golf clubs, Pine Lakes and The Dunes, are in the older neighborhoods described ${h.a("#older-neighborhoods", "below")}. The Market Common, on the south end, has shops, restaurants, a movie theater and two parks.</li>`
       + `</ul>` +
@@ -521,7 +560,7 @@ module.exports = G.page({
       h.p(`Hotels, restaurants and other leisure businesses in the county had about ${Math.round((JM["2025-07"] / JM["2025-01"] - 1) * 100)} percent more workers in July than in January last year.`) },
 
     { h2: "Where should you live in Myrtle Beach?", toc: "Where to live", id: "where-to-live", html: (bg) =>
-      h.p(`In one of three parts of the city where 7 in 10 or more of the houses are their owners' main homes: Grande Dunes, The Market Common or the older neighborhoods near the golf clubs. Or in a condo, on the oceanfront or off it. For a house near $300,000, look at the ${h.a("#near-300k", "two smaller neighborhoods")} after part 3.`) +
+      h.p(`In one of three parts of the city where 7 in 10 or more of the houses are their owners' main homes: Grande Dunes, The Market Common or the older neighborhoods near the golf clubs. Or in a condo, on the oceanfront or off it. For a house near $300,000, look at the ${h.a("#near-300k", "two smaller neighborhoods")} after part 3. To pick a neighborhood by what you want close to home, see ${h.a("/buyers/best-neighborhoods/", "the best neighborhoods in Myrtle Beach")}.`) +
       h.p(`The numbers on the map show where each part is. The orange areas are where the city allows nightly rentals.`) +
       RENTAL_MAP +
 
@@ -555,46 +594,48 @@ module.exports = G.page({
       h.p(`Off the oceanfront, where nightly rentals are not allowed, about 1 in 3 condos is its owner's main home. Those condos resold for about ${r5k(SL.by_zone_class.r_no.condo.median)} in the middle, more than oceanfront condos, but there were only a few dozen sales. The ${h.a("#oceanfront-buildings", "oceanfront buildings")} are next.`) +
       h.cta("Tour the part of the city you like", "Tell us which part of Myrtle Beach fits you. We set up showings of the homes for sale there.", "Book a showing in Myrtle Beach", "/contact/", bg) },
 
-    { h2: "Can you rent a home by the night in Myrtle Beach?", toc: "Nightly rentals", id: "nightly-rentals", html: () =>
+    { h2: "Can you rent a home by the night in Myrtle Beach?", toc: "Nightly rentals", id: "nightly-rentals", html: (bg) =>
       h.p(`Most condos, yes. Almost every house, no. Inside the City of Myrtle Beach, nightly rentals are legal only in the zones where the city allows them, and any stay shorter than 90 days counts.`) +
       h.p(`Those zones include most of the oceanfront hotel and condo strip, the Broadway at the Beach area, stretches of the US 17 Bypass and US 501, and The Market Common's town center. They are the orange areas on the ${h.a("#rental-map", "map")}.`) +
       h.p(`The city bans nightly rentals in every zone for homes, except one zone set aside for visitor stays. A house outside the allowed zones cannot be switched over to nightly rentals. Breaking the rule is a misdemeanor, with a fine, jail time or both for each violation.`) +
       SPLIT +
-      photo(SPLIT_PH) +
-      h.p(`The homes for sale today split the same way. Nearly every oceanfront condo for sale is in an allowed zone. Only about 1 in 5 houses and townhouses for sale in the city is.`) +
-      h.p(`Fewer than 30 houses in the zones for homes may still be rented by the night, because they were rented that way before the current zoning. No new ones can be added.`) +
+      beside(photo(SPLIT_PH),
+      h.p(`The homes for sale today split the same way. Nearly every oceanfront condo for sale is in an allowed zone. Only about 1 in 5 houses and townhouses for sale in the city is.`),
+      h.p(`Fewer than 30 houses in the zones for homes may still be rented by the night, because they were rented that way before the current zoning. No new ones can be added.`)) +
       h.h3("If a listing says short-term rentals are allowed, can you rent it nightly?") +
       h.p(`Not always. ${HI.listing_says_str_allowed} houses and townhouses for sale in the city say so in the listing. We checked each of them against our map, and ${HI.listing_says_str_allowed_not_str_zone} are not in an allowed zone. Many HOAs also ban rentals of any length. We check the zone and the HOA's rules for any home you like, and we leave out the homes where your plan is not allowed.`) +
       h.h3("What does a nightly rental need?") +
       h.p(`A ${h.ext(CITY_BL, "city business license")}. Every rental in the city needs one, short or long, and its fee is based on the rent you collect.`) +
-      h.p(`Guests pay about 13 percent in lodging taxes on top of each stay under 90 days. When a guest books through Airbnb, ${h.ext(AIRBNB_TAX, "Airbnb collects these taxes")} for the state, the county and the city. On a booking you take yourself, you collect and pay them.`) },
+      h.p(`Guests pay about 13 percent in lodging taxes on top of each stay under 90 days. When a guest books through Airbnb, ${h.ext(AIRBNB_TAX, "Airbnb collects these taxes")} for the state, the county and the city. On a booking you take yourself, you collect and pay them.`) +
+      h.cta("Find out if you can rent a home by the night", "Send us the address. Before you offer, we tell you if the city and its HOA let you rent it by the night.", "Have us check a home's rental rules", "/contact/", bg) },
 
-    { h2: "Which oceanfront condo buildings in Myrtle Beach sell the most?", toc: "Oceanfront buildings", id: "oceanfront-buildings", html: () =>
-      h.p(`About ${near(OCS.n, 10)} condos in oceanfront buildings inside the city resold in the past year. Nine buildings had the most sales, and their homes range from hotel-style studios to three-bedroom condos. For a one-bedroom on the oceanfront, plan on about ${r1k(WX.asking_price_median_1br_oceanfront_inside_city)}, the middle asking price today.`) +
-      BUILDING_TABLE +
-      h.p(`The lowest prices are for studios of about ${near(UNITS["TIDES/DRIFTWD/OASIS HPR"].median_sqft, 50)} square feet at Tides, Driftwood and Oasis. Many of these buildings have a rental program for their owners.`) +
-      photo(TOWERS) +
-      h.p(`Most buyers here live out of state. About 3 in 4 buyers of these oceanfront condos have their tax bill mailed outside South Carolina.`) +
+    { h2: "What are oceanfront condos like in Myrtle Beach?", toc: "Oceanfront condos", id: "oceanfront-buildings", html: () =>
+      h.p(`About ${near(OCS.n, 10)} condos in oceanfront buildings inside the city resold in the past year. They range from hotel-style studios to three-bedroom condos. For a one-bedroom on the oceanfront, plan on about ${r1k(WX.asking_price_median_1br_oceanfront_inside_city)}, the middle asking price today.`) +
+      h.p(`Building by building, the fees, sale prices and units for sale are on our ${h.a("/invest/condo-buildings/", "oceanfront condo buildings page")}.`) +
+      beside(h.p(`The lowest prices are for studios of about ${near(UNITS["TIDES/DRIFTWD/OASIS HPR"].median_sqft, 50)} square feet at Tides, Driftwood and Oasis. Many of these buildings have a rental program for their owners.`),
+      photo(TOWERS),
+      h.p(`Most buyers here live out of state. About 3 in 4 buyers of these oceanfront condos have their tax bill mailed outside South Carolina.`)) +
       h.h3("Can you get a loan on an oceanfront condo?") +
       h.p(`Yes, but in many of these buildings not the most common kind. ${h.ext(FNMA, "Fannie Mae")} will not back a loan in a building managed like a hotel: with a front desk, daily cleaning, or a rule that owners put their unit in the rental program.`) +
       h.p(`Our preferred lender can tell you which loans work in the building you like. At closing, buyers usually also pay an HOA transfer fee and a few months of HOA dues in advance.`) +
       G.offer("Myrtle Beach", { label: "Get the oceanfront condos for sale in Myrtle Beach" }) },
 
-    { h2: "Does an oceanfront condo in Myrtle Beach pay for itself?", toc: "What a condo earns", id: "what-a-condo-earns", html: () =>
+    { h2: "Does an oceanfront condo in Myrtle Beach pay for itself?", toc: "What a condo earns", id: "what-a-condo-earns", html: (bg) =>
       h.p(`At typical figures, it covers its running costs and property tax, with about ${r100(WX.left_for_hoa_insurance_and_any_loan)} a year left. That money must pay the HOA fee, a policy on the unit itself and any loan.`) +
       h.p(`For the example below, we used the middle asking price for a one-bedroom on the oceanfront, about ${r1k(WX.asking_price_median_1br_oceanfront_inside_city)}. We used the income of a typical one-bedroom nightly rental in the Myrtle Beach market, not this unit's own.`) +
       WORKED +
-      h.p(`Whether the unit pays for itself depends on the building's HOA fee, which is different in every building. We get the real fee for any building you send us and run these figures with it.`) +
+      h.p(`Whether the unit pays for itself depends on the building's HOA fee, which is different in every building.`) +
       h.h3("Most of the year's rental income comes in summer") +
       h.p(`The average listing takes in about ${JULY_X_JAN} times as much in July as in January. June, July and August bring in almost half of a year's revenue.`) +
-      SEASON_CHART },
+      SEASON_CHART +
+      h.cta("See if one oceanfront condo pays for itself", "Send us the building. We get its HOA fee and run the figures in the table above for that condo.", "Have us run the numbers on a condo", "/contact/", bg) },
 
     { h2: "Are Myrtle Beach home prices dropping?", toc: "Prices", id: "prices", html: () =>
       h.p(`For condos, yes. The typical condo value in Myrtle Beach is about ${CONDO_OFF_PEAK} percent below its high in 2024, and it is still falling. For houses, no: the typical house value has stayed about the same since 2022.`) +
       PRICE_CHART +
       h.p(`Condos also sell far more slowly than houses. At the past year's pace, it would take about a year and a half to sell every condo for sale now.`) +
       SUPPLY +
-      h.p(`That gives a condo buyer room to negotiate. On the house side, there are fewer homes for sale than buyers in a year.`) +
+      h.p(`That gives a condo buyer ${h.a("/buyers/buying-in-myrtle-beach/", "room to negotiate")}. On the house side, there are fewer homes for sale than buyers in a year.`) +
       h.p(`In the past year, condos in the city resold for about ${money(RC.median)} in the middle: half sold for more, half for less. Houses resold for about ${HOUSE_MED}.`) },
 
     { h2: "Is a Myrtle Beach address in the City of Myrtle Beach?", toc: "City or county", id: "city-or-county", html: () =>
@@ -602,13 +643,14 @@ module.exports = G.page({
       h.p(`Carolina Forest and Forestbrook are almost all outside the city, and Socastee is entirely outside it. Our ${h.a("/submarkets/carolina-forest/", "Carolina Forest guide")} covers that area.`) +
       h.p(`North Myrtle Beach is a separate city. A short-term rental there needs a business license, and for now there is no special zoning or permit process beyond it. Our ${h.a("/submarkets/north-myrtle-beach/", "North Myrtle Beach guide")} covers it.`) },
 
-    { h2: "What do property tax and flood insurance cost in Myrtle Beach?", toc: "Tax and flood insurance", id: "yearly-cost", html: () =>
+    { h2: "What do property tax and flood insurance cost in Myrtle Beach?", toc: "Tax and flood insurance", id: "yearly-cost", html: (bg) =>
       h.p(`Inside the city, a second home or rental pays almost four times the property tax of a home you live in. You apply for the lower rate on the home you live in, and our ${h.a("/buyers/property-taxes/", "property tax guide")} shows how.`) +
       OWN +
       h.h3("Will you need flood insurance?") +
       h.p(`For most houses, no. Only about 1 in 23 houses in the city is in the high-risk flood zone of FEMA, the Federal Emergency Management Agency. About 1 in 4 condos is, many of them at the ocean's edge.`) +
       h.p(`In the high-risk zone, your lender will require flood insurance. On a house there, it usually costs about ${FLOOD_HIGH} a year. Outside that zone, federal rules do not require it, and a policy usually costs about ${FLOOD_X}.`) +
-      h.p(`A condo's HOA insures the building itself and adds the cost to the HOA fee.`) },
+      h.p(`A condo's HOA insures the building itself and adds the cost to the HOA fee.`) +
+      h.cta("Get the tax and the flood zone for one address", "Send us the address. We work out its property tax as your main home and as a second home, and look up its flood zone.", "Have us work out a home's tax and flood zone", "/contact/", bg) },
 
     { h2: "What are the pros and cons of Myrtle Beach?", toc: "Pros and cons", id: "pros-and-cons", html: (bg) =>
       h.p(`The good points are the house neighborhoods, the beach and the price of a condo. The hard ones are the condo market, the season and the flood zone at the ocean.`) +
@@ -662,6 +704,6 @@ module.exports = G.page({
   sourcesNote: "Counts are ours, from city zoning, county parcels, FEMA and deeds. Listings in aggregate from CCMLS. Not legal or tax advice.",
   afterSources: () => CREDITS + PH.imageSchema(SHOWN),
   bottomCta: END,
-  keywords: "where to live in Myrtle Beach, Myrtle Beach real estate, Myrtle Beach neighborhoods, Myrtle Beach short term rental zoning map, can you Airbnb in Myrtle Beach, Myrtle Beach oceanfront condos for sale, Myrtle Beach home prices dropping, Myrtle Beach buyers market, Myrtle Beach city limits, Myrtle Beach property tax second home, Myrtle Beach flood insurance",
+  keywords: "where to live in Myrtle Beach, Myrtle Beach real estate, Myrtle Beach neighborhoods, Myrtle Beach home prices dropping, Myrtle Beach buyers market, Myrtle Beach city limits, Myrtle Beach property tax second home, Myrtle Beach flood insurance",
   about: "Real estate in the City of Myrtle Beach, South Carolina",
 });

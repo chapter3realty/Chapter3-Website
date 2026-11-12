@@ -1,7 +1,9 @@
 /* /invest/what-is-being-built/ - what is being built on the Grand Strand right
- * now, regenerated monthly. The moving numbers come from
+ * now. The moving numbers come from
  * research/invest-next/data/pipeline-latest.json, which tools/permits.js
- * refreshes from the federal permit count (FRED MYRT845BPPRIV), the county's
+ * refreshes from the federal permit count (Census CBSA files for 34820: the
+ * year-to-date and annual totals, and each month's first count for the bars;
+ * FRED is no longer used), the county's
  * "Major Residential Developments" layer and the county's permit map. Each
  * feed prints its own read date, and a stale feed reads as stale. The fixed
  * facts (hospitals, the interstate, roads, the airport, downtown) are quoted
@@ -17,7 +19,8 @@ const { h } = require("../tools/mkpage.js");
 const P = require(path.join(__dirname, "..", "research", "invest-next", "data", "pipeline-latest.json"));
 
 const TEL = "tel:+18543332135";
-const FRED = "https://fred.stlouisfed.org/series/MYRT845BPPRIV";
+const CENSUS = "https://www2.census.gov/econ/bps/CBSA%20(beginning%20Jan%202024)/";
+const OMB = "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2023/delineation-files/list1_2023.xlsx";
 const DEVLAYER = "https://www.arcgis.com/home/item.html?id=80af96d3ac864d068045634ac4365405";
 const PACKET = "https://horrycounty.granicus.com/AgendaViewer.php?view_id=3&clip_id=3355";
 const COLES = "https://www.postandcourier.com/myrtle-beach/news/development-deal-horry-county-conway-subdivision/article_fd486de6-223e-497c-92a8-a7cbaff6d183.html";
@@ -27,6 +30,9 @@ const I73 = "https://projectportal.scdot.gov/i-73-project";
 const RIDE73 = "https://roads.horrycountysc.gov/projects/interstate-connector/";
 const CON = "https://dph.sc.gov/sites/scdph/files/2026-09/2026_August_Archived_CON_Applications.pdf";
 const MCLEOD = "https://www.mcleodhealth.org/news-entry/mcleod-health-offers-preview-of-new-hospital-in-carolina-forest/";
+const MCLEOD_OPEN = "https://www.mcleodhealth.org/locations/carolina-forest-overview/carolina-forest-new-hospital/";
+const MCLEOD_NOW = "https://www.mcleodhealth.org/news-entry/mcleod-health-carolina-forest-hospital-now-open/";
+const GSH = "https://www.mygrandstrandhealth.com/about-us/newsroom/grand-strand-health-commits-over-350-million-dollars-to-expand-and-meet-regional-growth";
 const HCA = "https://www.wmbfnews.com/2026/02/09/its-really-about-access-south-strand-hospital-breaks-ground-220-million-facility/";
 const TIDE = "https://wpde.com/news/local/tidelands-health-carolina-bays-new-hospital-horry-county-interchange-highway-31-707-acute-care-provider-medical-surgical-services-heart-care-musc-rehabilitation-encompass-open-in-2028-south-carolina-septmeber-27-2023";
 const CMC = "https://www.conwaymedicalcenter.com/news/topic/cmc-breaks-ground-for-new-cmc-socastee-free-standing-emergency-department/";
@@ -41,11 +47,11 @@ const ENERGOV = "https://egweb.horrycounty.org/EnerGov_prod/selfservice#/home";
 const WARDEN = "https://www.aol.com/myrtle-beach-area-full-developments-100000068.html";
 
 /* ---------------- the moving numbers ---------------- */
-const F = P.permits_fred, monthly = F.monthly, months = Object.keys(monthly).sort();
-const latestM = months[months.length - 1], latestY = latestM.slice(0, 4), latestMo = +latestM.slice(5, 7);
-const sumYear = (y) => months.filter(m => m.startsWith(y)).reduce((a, m) => a + monthly[m], 0);
-const ytd = (y) => months.filter(m => m.startsWith(y) && +m.slice(5, 7) <= latestMo).reduce((a, m) => a + monthly[m], 0);
-const y2024 = sumYear("2024"), y2025 = sumYear("2025"), ytdNow = ytd(latestY), ytdPrev = ytd(String(+latestY - 1));
+/* Year totals are the Census's own year-to-date and annual files, which add
+   late reports and corrections. The bars are each month's first count. */
+const C = P.permits_census, monthly = C.monthly, months = Object.keys(monthly).filter(m => m <= C.latest_month).sort();
+const latestM = C.latest_month, latestY = latestM.slice(0, 4), latestMo = +latestM.slice(5, 7);
+const y2024 = C.annual["2024"], y2025 = C.annual["2025"], ytdNow = C.ytd_now, ytdPrev = C.ytd_prev, U = C.unincorporated;
 const ytdChg = (ytdNow / ytdPrev - 1) * 100;
 const MONTH = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const mName = (m) => MONTH[+m.slice(5, 7) - 1] + " " + m.slice(0, 4);
@@ -55,6 +61,7 @@ const top = D.by_community.filter(c => !/no community/.test(c.name)).slice(0, 10
 const longDate = (iso) => { const [y, m, d] = iso.split("-").map(Number); return `${MONTH[m - 1]} ${d}, ${y}`; };
 const fmt = (n) => Math.round(n).toLocaleString("en-US");
 const p1 = (n) => (Math.round(n * 10) / 10).toFixed(1);
+const half = (x) => { const r = Math.round(x * 2) / 2; return Number.isInteger(r) ? String(r) : `${Math.floor(r)} and a half`; };
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
 const airChg = (air.jan_jul_2026 / air.jan_jul_2025 - 1) * 100, air25 = (air.passengers_2025 / air.passengers_2024 - 1) * 100;
 
@@ -78,7 +85,7 @@ function permitChart() {
 }
 function communityChart() {
   const W = 640, L = 130, R = 70, BW = W - L - R, rowH = 24, H = top.length * rowH + 10, max = Math.max(...top.map(c => c.rem));
-  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Approved but unbuilt homes by community, unincorporated Horry County" ${SVGSTYLE}>`;
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Approved but unbuilt homes by community, Horry County planning office layer" ${SVGSTYLE}>`;
   top.forEach((c, i) => { const y = i * rowH + 3, w = Math.max(2, Math.round(BW * c.rem / max)); s += `<text x="${L - 8}" y="${y + 14}" font-size="12" text-anchor="end" fill="${NAVY}">${esc(c.name)}</text><rect x="${L}" y="${y}" width="${w}" height="18" fill="${BRASS}"><title>${esc(c.name)}: ${fmt(c.rem)} units</title></rect><text x="${L + w + 6}" y="${y + 14}" font-size="12" fill="${NAVY}">${fmt(c.rem)}</text>`; });
   return s + "</svg>";
 }
@@ -87,8 +94,8 @@ const CHART_PERMITS = permitChart(), CHART_COMM = communityChart();
 /* ---------------- tables ---------------- */
 const T_SUM = h.table(["What", "Where it stands"], [
   ["Houses", `${fmt(ytdNow)} homes permitted in the metro, ${ytdLabel}; ${fmt(y2025)} in 2025`],
-  ["Approved and not yet built", `${fmt(D.remaining_total)} units in the unincorporated county's planning layer`],
-  ["Hospitals", "Three with state licenses and not yet fully open: 48, 59 and 36 beds; five free-standing emergency departments"],
+  ["Approved and not yet built", `${fmt(D.remaining_total)} units approved through the county's planning office`],
+  ["Hospitals", "McLeod Carolina Forest, 48 beds, now open; two more licensed and not yet open, 59 and 36 beds; five free-standing emergency departments"],
   ["Interstate 73", "Right of way bought, plans drawn, no construction contract and no construction money"],
   ["Roads", "US 501 to SC 544 and the downtown 501 realignment finishing fall 2026; US 701 north of Conway and the US 17 Bypass six-laning under way"],
   ["Airport", "$93.5 million terminal open since December 2025"],
@@ -109,8 +116,8 @@ const T_DEV = h.table(["Development (community)", "Approved", "Built", "Left to 
   ["Bella Vita (Carolina Forest)", "1,807", "1,409", "398", "July 2026"],
 ]);
 const T_HOSP = h.table(["Hospital", "Beds", "Where", "Where it stands"], [
-  ["McLeod Health Carolina Forest", "48", "Carolina Forest", "Ribbon cut August 27, 2026; the hospital says it opens this fall; about $90 million by its latest figure"],
-  ["South Strand Hospital (Grand Strand Health)", "59", "US 17 Bypass at Sheffield Parkway", "Ground broken February 9, 2026; completion reported for late 2027; about $220 million"],
+  ["McLeod Health Carolina Forest", "48", "Carolina Forest", `${h.ext(MCLEOD_NOW, "Open to patients, McLeod announced October 30, 2026")}; ribbon cut August 27, 2026; $90 million by its own figure`],
+  ["South Strand Hospital (Grand Strand Health)", "59", "US 17 Bypass at Sheffield Parkway", `${h.ext(HCA, "Ground broken February 9, 2026")}; no opening date from the system; ${h.ext(GSH, "$226 million in its 2025 plan")}`],
   ["Tidelands Health Carolina Bays", "36, plus a 24-bed long-term care hospital and a 36-bed rehabilitation hospital", "SC 31 at SC 707", "Licensed; appeals resolved in 2023; opening projected for 2028"],
   ["Free-standing emergency departments", "", "Little River (open), Murrells Inlet, Conway (Rivertown), Socastee (late 2026), SC 90 at SC 22 (2027)", "Two systems: Grand Strand Health and Conway Medical Center"],
 ]);
@@ -132,20 +139,20 @@ const T_ROADS = h.table(["Road", "What", "Budget", "Where it stands"], [
 module.exports = {
   url: "/invest/what-is-being-built/",
   title: "What Is Being Built in Myrtle Beach Right Now | Chapter3",
-  description: "What is being built on the Grand Strand: the homes permitted this year, the approved units not yet built, three hospitals, the roads and I-73. Updated monthly.",
+  description: "What is being built on the Grand Strand: the homes permitted this year, the approved units not yet built, the hospitals, the roads and I-73.",
   ogTitle: "What is being built on the Grand Strand right now?",
   crumb: "What is being built",
-  eyebrow: "Updated monthly",
+  eyebrow: "Permits, hospitals, roads",
   h1: "What is being built on the Grand Strand right now?",
-  h1em: "Houses, hospitals, roads, and the permit count.",
-  sub: `Builders were allowed to start ${fmt(ytdNow)} homes in the Myrtle Beach metro from ${ytdLabel.replace("January to ", "January through ")}. Three hospitals are being built or opening. The interstate has no contract.`,
+  h1em: "Houses, hospitals and roads.",
+  sub: `Builders were allowed to start ${fmt(ytdNow)} homes in the Myrtle Beach metro from ${ytdLabel.replace("January to ", "January through ")}. One hospital opened. Two more are licensed. The interstate is not being built.`,
   heroCta: { label: "Call a specialized agent", href: TEL },
   author: "devin",
   shortAnswer: [
     `Houses, mostly. Builders were allowed to start ${fmt(y2025)} homes in the Myrtle Beach metro in 2025, and ${fmt(ytdNow)} from ${ytdLabel}. That is ${p1(Math.abs(ytdChg))} percent ${ytdChg < 0 ? "below" : "above"} the same months a year earlier.`,
     `The county has ${fmt(D.remaining_total)} more units already approved and not yet built. Most of them are in Longs, Carolina Forest, Surfside and Burgess.`,
-    `The big projects are three hospitals holding state licenses that are not fully open, four road jobs under way, and the airport terminal that opened in December 2025. Interstate 73 has right of way and plans. It has no construction contract and no money to build.`,
-    `This page is rebuilt every month from the federal permit count and the county's own data. The sections below have each number and where it came from.`,
+    `The big projects are two licensed hospitals, four road jobs under way, and the airport terminal that opened in December 2025. McLeod's new hospital in Carolina Forest is now open. Interstate 73 has right of way and plans. It has no construction contract and no money to build.`,
+    `The numbers come from the federal permit count and the county's own data. The sections below have each number, its date and where it came from.`,
   ],
   sections: [
     { h2: "What is being built in Myrtle Beach right now?", html:
@@ -153,18 +160,18 @@ module.exports = {
       T_SUM +
       h.p(`Nothing is under construction on Interstate 73. No new bridge to the beach has a contract. The section on roads has what is funded and what is only planned.`) },
     { h2: "How many houses are being built?", html: (bg) =>
-      h.p(`${h.ext(FRED, "The federal government counts the homes that local governments permit each month")}. The count covers the Myrtle Beach metro, which is Horry County plus Brunswick County in North Carolina. Each month's figure arrives about four weeks after the month ends.`) +
+      h.p(`${h.ext(CENSUS, "The federal government counts the homes that local governments permit each month")}. The count covers the Myrtle Beach metro, ${h.ext(OMB, "which is Horry County")}. Each month's figure arrives about four weeks after the month ends. The bars show each month's first count. The year totals below are the Census's own, which add late reports and corrections, so the bars do not add up to them exactly.`) +
       h.raw(`<div style="max-width:640px;margin:1rem 0 1.2rem">${CHART_PERMITS}</div>`) +
       T_PERMITS +
       h.p(`${ytdLabel} is ${p1(Math.abs(ytdChg))} percent ${ytdChg < 0 ? "below" : "above"} the same months of ${+latestY - 1}. Most of the permits are single-family houses in planned communities. ${h.a("/invest/new-construction-rentals/", "Buying a new house as a rental")} has the warranty, the incentives and the recorded rules.`) +
       h.h3("What is approved and not yet built") +
-      h.p(`${h.ext(DEVLAYER, "The county's planning office keeps a map of every major subdivision")} with the units its zoning allows and the units built. Subtracting one from the other gives the homes that can still be built without a new approval. On ${longDate(D.read)} that was ${fmt(D.remaining_total)} units in the unincorporated county: ${fmt(D.remaining_single_family)} houses and ${fmt(D.remaining_multifamily)} apartments or condos. The cities keep their own records.`) +
+      h.p(`${h.ext(DEVLAYER, "The county's planning office keeps a map of every major subdivision")} with the units its zoning allows and the units built. Subtracting one from the other gives the homes that can still be built without a new approval. On ${longDate(D.read)} that was ${fmt(D.remaining_total)} units approved through the county's planning office: ${fmt(D.remaining_single_family)} houses and ${fmt(D.remaining_multifamily)} apartments or condos. The cities keep their own records.`) +
       h.raw(`<div style="max-width:640px;margin:1rem 0 1.2rem">${CHART_COMM}</div>`) +
-      h.p(`The county says it updates the layer once a year. ${D.updated[0].n} of its ${fmt(D.records)} records still carry a ${D.updated[0].updated.toLowerCase().replace(/\b[a-z]/, (c) => c.toUpperCase())} date, and those hold ${fmt(D.updated[0].rem)} of the remaining units. Treat a count from an old record as an old count. The largest developments, with the date on each record:`) +
+      h.p(`The county says it updates the layer once a year. ${D.updated[0].n} of its ${fmt(D.records)} records still carry a ${D.updated[0].updated.toLowerCase().replace(/\b[a-z]/, (c) => c.toUpperCase())} date, and those hold ${fmt(D.updated[0].rem)} of the remaining units. The most recent updates on the layer are from August 2026. Treat a count from an old record as an old count. The largest developments, with the date on each record:`) +
       T_DEV +
-      h.p(`Pine Ridge is the one to watch. ${h.ext(PACKET, "Horry County Council passed a development agreement with Pulte Home Company on August 18, 2026")}. The tract was entitled to 2,506 homes and the builder agreed to a cap of 2,000. In return the county gets a connection of SC 31 from SC 707 to US 17 Bypass, with the builder paying part of the road. The county also gets land for a recreation center. A resident told council at the vote that building would start about 2029.`) +
+      h.p(`Pine Ridge is the one to watch. ${h.ext(PACKET, "Horry County Council passed a development agreement with Pulte Home Company on August 18, 2026")}. The tract was entitled to 2,506 homes and the builder agreed to a cap of 2,000. In return the county gets a connection of SC 31 from SC 707 to US 17 Bypass, with the builder paying part of the road. The county also gets land for a recreation center. A resident told council at the vote that building would start about 2029. Which builders sell the most homes here, and where, is on our page on ${h.a("/buyers/new-construction/builders/", "the new home builders")}.`) +
       h.p(`Inside the city of Conway, ${h.ext(WARDEN, "Warden Station was annexed in January 2024 with more than 3,300 homes planned")} on about 1,800 acres along US 701 South. The news report counts 1,380 houses, 1,018 townhomes and 920 apartments. The city's own agreement was not found online. It is not in the county layer because it is inside the city.`) +
-      h.p(`At the 2025 pace of ${fmt(y2025)} permits a year, the ${fmt(D.remaining_total)} approved units are about ${Math.round(D.remaining_total / y2025)} years of building. ${h.a("/invest/rent-prices/", "The rent page")} has what new supply does to the rent in the areas that get it.`) +
+      h.p(`The whole county permitted ${fmt(y2025)} homes in 2025, cities included. At that pace the ${fmt(D.remaining_total)} approved units are about ${Math.round(D.remaining_total / y2025)} years of building. At ${h.ext(C.place_source, `the unincorporated county's own ${U.year} pace of ${fmt(U.units)} homes`)}, they are about ${half(D.remaining_total / U.units)} years. ${h.a("/invest/rent-prices/", "The rent page")} has what new supply does to the rent in the areas that get it.`) +
       h.cta("Buying a rental where the building is?", "Tell us the area and the budget. We run the numbers with the rent from local leases, and check the approved units around the house before you offer.", "Have us run the numbers", "/invest/run-the-numbers/", bg) },
     { h2: "What is being discussed but not yet approved?", html:
       h.p(`None of these is approved. Each one sits somewhere in the county's or a city's process, and any of them can be changed or voted down.`) +
@@ -182,9 +189,9 @@ module.exports = {
       h.p(`The Coles Tract shows the shape of these deals here. ${h.ext(COLES, "The applicant offered the county $5,800 a home")}, about $2 million. On top of that: a traffic signal, turning lanes, 1.2 acres for a fire station, and land for widening SC 905 later. The county trades density for roads and land.`) +
       h.p(`A proposal at this stage is not supply and it is not a reason to pay more for a house nearby. Watch it. Do not price it. A rezoning that fails leaves the land as it was.`) },
     { h2: "Which hospitals are being built?", html:
-      h.p(`Three. ${h.ext(CON, "The state's license list")}, updated August 31, 2026, carries all three with their bed counts and their approval dates from 2021. Each was appealed by competing systems and each survived.`) +
+      h.p(`Two. The third, McLeod's in Carolina Forest, is open to patients, ${h.ext(MCLEOD_NOW, "McLeod announced on October 30, 2026")}. ${h.ext(CON, "The state's license list")}, updated August 31, 2026, carries all three with their bed counts and their approval dates from 2021. Each was appealed by competing systems and each survived.`) +
       T_HOSP +
-      h.p(`${h.ext(MCLEOD, "McLeod cut the ribbon on August 27, 2026")} on a four-story, 48-bed hospital in Carolina Forest, the first new hospital in Horry County since 2011. ${h.ext(HCA, "Grand Strand Health broke ground on February 9, 2026")} on the 59-bed South Strand Hospital across from its existing medical center. ${h.ext(TIDE, "Tidelands Health's 36-bed hospital at SC 31 and SC 707")} cleared its appeals in 2023 with a 2028 target. The system's own page could not be opened for this update.`) +
+      h.p(`McLeod's four-story, 48-bed hospital in Carolina Forest ${h.ext(MCLEOD_OPEN, "is now open")}, the first new hospital in Horry County since 2011. ${h.ext(HCA, "Grand Strand Health broke ground on February 9, 2026")} on the 59-bed South Strand Hospital across from its existing medical center. ${h.ext(TIDE, "Tidelands Health's 36-bed hospital at SC 31 and SC 707")} cleared its appeals in 2023 with a 2028 target. The system's own page could not be opened for this update.`) +
       h.p(`${h.ext(CMC, "Conway Medical Center is building two free-standing emergency departments")} and no hospital. One is in Socastee, opening late 2026. One is at SC 90 and SC 22, in 2027. A hospital brings traveling nurses on 13-week contracts. ${h.a("/invest/mid-term-rentals/", "Furnished monthly rentals")} is the rental they use.`) },
     { h2: "Is Interstate 73 being built?", html:
       h.p(`No. ${h.ext(I73, "The state transportation department's own page")} says right of way is bought from I-95 to US 501. It is nearly bought from US 501 to the Marion County line. From there to SC 22 it is still being bought, through 2026. It also says: funding has not been identified to advance construction on any of the three phases. The northern half, into North Carolina, is on hold.`) +
@@ -211,19 +218,23 @@ module.exports = {
   ],
   faqTitle: "Grand Strand construction FAQ",
   faq: [
-    { q: "How many homes are being built in Myrtle Beach?", a: `Builders were allowed to start ${fmt(y2025)} homes in the Myrtle Beach metro in 2025 and ${fmt(ytdNow)} from ${ytdLabel}, by the federal permit count. The unincorporated county has ${fmt(D.remaining_total)} more units approved and not yet built, most of them in Longs, Carolina Forest, Surfside and Burgess.` },
+    { q: "How many homes are being built in Myrtle Beach?", a: `Builders were allowed to start ${fmt(y2025)} homes in the Myrtle Beach metro in 2025 and ${fmt(ytdNow)} from ${ytdLabel}, by the federal permit count. The county's planning office has ${fmt(D.remaining_total)} more units approved and not yet built, most of them in Longs, Carolina Forest, Surfside and Burgess.` },
     { q: "Is Interstate 73 under construction?", a: "No. The state has bought right of way from I-95 to US 501 and most of the way to SC 22, and has plans. It says funding has not been identified to build any of the three phases. Horry County's $450 million is a match paid only after the state signs a construction contract." },
-    { q: "What new hospitals are being built in Myrtle Beach?", a: "Three hold state licenses. McLeod Health Carolina Forest, 48 beds, cut its ribbon in August 2026 and opens this fall. South Strand Hospital, 59 beds, broke ground in February 2026 for late 2027. Tidelands Health Carolina Bays, 36 beds at SC 31 and SC 707, is projected for 2028. Five free-standing emergency departments are open or under way." },
+    { q: "What new hospitals are being built in Myrtle Beach?", a: "McLeod Health Carolina Forest, 48 beds, is now open. Two more hold state licenses. South Strand Hospital, 59 beds, broke ground in February 2026, and the system has given no opening date. Tidelands Health Carolina Bays, 36 beds at SC 31 and SC 707, is projected for 2028. Five free-standing emergency departments are open or under way." },
     { q: "Which roads are being widened in Myrtle Beach?", a: "US 501 from SC 31 to SC 544 and the downtown 501 realignment finish in fall 2026. US 701 north of Conway is under construction. The US 17 Bypass is going from four lanes to six between SC 707 and Harrelson Boulevard. SC 90 is in design for 2025 to 2030, and the SC 22 extension is not started." },
-    { q: "How often is this page updated?", a: `Monthly. The federal permit count, the county's development layer and the county's permit map are read by machine and the page is rebuilt. The current data runs to ${mName(latestM)} for permits and ${longDate(D.read)} for the county layer.` },
+    { q: "How current is this page?", a: `The permit count runs to ${mName(latestM)}. The county's development layer was read on ${longDate(D.read)}, and its most recent updates are from August 2026. ${feed.live ? "The county's permit map is current." : `The county's permit map has not been updated since ${longDate(feed.max_issue_date)}.`}` },
   ],
   sources: [
-    { name: "Census permits, FRED", href: FRED },
+    { name: "Census permits (CBSA files)", href: CENSUS },
+    { name: "OMB metro delineation, 2023", href: OMB },
+    { name: `Census place file, ${U.year}`, href: C.place_source },
     { name: "Horry County development layer", href: DEVLAYER },
     { name: "Council packet, Ordinance 73-2026", href: PACKET },
     { name: "SCDOT, I-73", href: I73 },
     { name: "State license list", href: CON },
     { name: "McLeod Health", href: MCLEOD },
+    { name: "McLeod Health, now open", href: MCLEOD_NOW },
+    { name: "Grand Strand Health, 2025 plan", href: GSH },
     { name: "WMBF, South Strand Hospital", href: HCA },
     { name: "RIDE 4", href: RIDE4 },
     { name: "county road projects", href: US501 },

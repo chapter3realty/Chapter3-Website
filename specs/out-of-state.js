@@ -17,10 +17,13 @@ module.exports = {
   h1em: "Without flying in.",
   sub: "Many Grand Strand rental owners live in another state. The walk-through, the inspection and the closing can all be done without a flight to Myrtle Beach.",
   heroCta: { label: "Send us the address", href: RTN },
-  author: "tim",
-  shortAnswer: "You can buy a Grand Strand rental without visiting. A buyer in Canada has <a href=\"/invest/canadian-buyers/\" style=\"color:var(--navy);text-decoration:underline\">four extra steps</a>. A local agent walks the property on video. A licensed home inspector reports on it. A South Carolina attorney runs the closing, and you sign the papers in your own state before a notary with two witnesses. Flood insurance starts on the day the loan closes. Property tax is charged at the 6 percent rate because the property is not your legal residence. Two things go wrong for remote buyers: wire fraud, and a signing package that does not meet South Carolina form. Both are avoidable.",
+  author: "devin",
+  shortAnswer: "You can buy a Grand Strand rental without visiting. A local agent walks the property on video. A licensed home inspector reports on it. A South Carolina attorney runs the closing, and you sign the papers in your own state before a notary with two witnesses. Flood insurance starts on the day the loan closes. Property tax is charged at the 6 percent rate because the property is not your legal residence. Two things go wrong for remote buyers: wire fraud, and a signing package that does not meet South Carolina form. Both are avoidable. Buying from Canada? <a href=\"/invest/canadian-buyers/\" style=\"color:var(--navy);text-decoration:underline\">Our Canadian buyers page</a> covers the extra steps.",
   sections: [
     { h2: "What does buying from out of state involve?", html:
+      /* Light fix, triage 2026-11-08: the county's own number, from /sell/out-of-state-buyers/ (Blog-Brain
+         batches/2026-10-d/sell-out-of-state-buyers/facts.md rows 3 and 6, verified). */
+      h.p(`Many owners here live somewhere else. About 1 in 4 homes in Horry County has its tax bill mailed outside South Carolina. More than half of condo buyers have a tax bill sent to another state. The county's counts are on ${h.a("/sell/out-of-state-buyers/", "our page on selling from another state")}.`) +
       h.p("Five steps have to happen in South Carolina while you are somewhere else. Each one has a person here who does it.") +
       h.table(["Step", "Who does it here", "What you do"], [
         ["Seeing the property", "A Chapter3 agent walks it on video and checks the things that do not show up in the photos.", "Watch, ask, and decide."],
@@ -32,7 +35,7 @@ module.exports = {
       ]) },
     { h2: "Why does South Carolina require an attorney at closing?", html:
       h.p(`South Carolina treats a real estate closing as the practice of law. The title search, the documents, the closing itself and the recording must be done or supervised by a South Carolina attorney. ${h.ext("https://www.sccourts.org/media/opinions/HTMLFiles/SC/26214.htm", "The state's highest court set that rule")}, and it applies to cash buyers as well as financed ones.`) +
-      h.p(`You do not pick a title company here. You pick an attorney. The attorney orders the title search, prepares the deed, collects the money, pays the seller and records the deed. The fee is part of your closing costs. ${h.a("/buyers/closing-costs/", "What closing costs in South Carolina include")}.`) },
+      h.p(`You do not pick a title company here. You pick an attorney. The attorney orders the title search, prepares the deed, collects the money, pays the seller and records the deed. If ${h.a("/invest/llc/", "an LLC will own the rental")}, form it before the contract, so the deed is in its name. The fee is part of your closing costs. ${h.a("/buyers/closing-costs/", "What closing costs in South Carolina include")}.`) },
     { h2: "How do you sign without being in South Carolina?", html: (bg) =>
       h.p("There are two ways. The attorney chooses which one the file can use, and your lender has a say if there is a loan.") +
       h.h3("Sign by mail in your own state") +

@@ -356,7 +356,7 @@ module.exports = G.page({
   theme: "glass",
   url: SELF,
   hub: { name: "Buyers", url: "/buyers/" },
-  title: "Has This House Flooded? Myrtle Beach Flood History | Chapter3",
+  title: "How to Find Out If a House Flooded: Myrtle Beach | Chapter3",
   description: "Has this house flooded before? How to find a house's flood history in Myrtle Beach and Horry County, what a seller must disclose, and the county's Florence map.",
   ogTitle: "Did this Myrtle Beach house flood before? How to find its flood history",
   crumb: "Flood History",
@@ -372,7 +372,7 @@ module.exports = G.page({
   author: "devin",
   toc: false,
   shortAnswer: [
-    `FEMA's flood claim records go only to the owner, so we ask the seller for them. We put the house on FEMA's flood map and the county's map of Florence's flooding. We ask the county's staff about past floods and look for permits behind repairs. At the showing, we look for clues at the house and on its street.`,
+    `FEMA's records of flood insurance claims on a house go only to its owner, so we ask the seller for them. We put the house on FEMA's flood map and the county's map of the flooding from Hurricane Florence. We ask the county's staff about past floods and look for permits behind repairs. At the showing, we look for clues at the house and on its street.`,
     `We run these checks before you offer. If you learn of a flood after you sign, the South Carolina REALTORS sales contract gives you a due diligence period to end it.`,
   ],
   sections: [
@@ -386,13 +386,14 @@ module.exports = G.page({
       h.p(`Yes, inside the due diligence period on the South Carolina REALTORS sales contract. In that period the buyer ${h.ext(DD_LAW, "can end the contract")} with a written notice of termination to the seller. We tell you what ending it would cost under the contract you sign, before you sign it. That is why we run these checks first.`) },
 
     { h2: "Does a seller have to disclose flooding in South Carolina?", toc: "What the seller must disclose", id: "seller-disclosure", html: (bg) =>
-      h.p(`Yes, on the state's disclosure form, but only for the years the seller owned the house. ${h.ext(T27_50, "South Carolina law")} requires the form for a home with one to four units. The seller hands it over before you sign the contract, unless the contract says otherwise.`) +
+      h.p(`Yes, on the state's disclosure form, but only for the years the seller owned the house. ${h.ext(T27_50, "South Carolina law")} requires the form for a home with one to four units. The seller hands it over before you sign the contract, unless the contract says otherwise. Our guide to ${h.a("/sell/seller-disclosure/", "the seller disclosure form")} lists every question on it.`) +
       h.p(`${h.ext(FORM, "The form")} asks about floods, flood insurance claims, flood repairs and federal flood aid, each only for the seller's years. One question asks about any flood risk the seller knows of.`) +
       YEARS +
       h.h3('What does "No Representation" mean?') +
       h.p(`It is an answer on the form. A seller may choose it only when they do not have the knowledge to answer. The form says a seller may not choose it to avoid a question, must still disclose what they know, and is not freed from liability by it.`) +
       h.h3("Which sales need no disclosure form?") +
-      h.p(`Some sales need no form at all. Among them are estate and trust sales, foreclosure sales, public auctions, the first sale of a ${h.a("/buyers/new-construction/", "new home no one has lived in")}, and a sale where both sides agree in writing to skip it. In those sales, the five checks matter more.`) },
+      h.p(`Some sales need no form at all. Among them are estate and trust sales, foreclosure sales, public auctions, the first sale of a ${h.a("/buyers/new-construction/", "new home no one has lived in")}, and a sale where both sides agree in writing to skip it. In those sales, the five checks matter more.`) +
+      h.cta("Get the flood claim records a buyer cannot get alone", "We ask the seller for the house's flood claim reports and tell you right away if they refuse.", "Have us ask the seller", CONTACT, bg) },
 
     { h2: "Can a house flood if it is not in a flood zone?", toc: "Outside the flood zone", id: "outside-the-zone", html: (bg) =>
       h.p(`Yes, and in Horry County it happens most in rain and river floods. Since 1978, nearly 1 in 4 paid flood insurance claims here were on buildings insured as outside FEMA's high-risk zone. That means the policy was priced for a lower-risk zone.`) +
@@ -409,14 +410,15 @@ module.exports = G.page({
       h.h3("Does a clean claim history mean the house never flooded?") +
       h.p(`No. A house with no flood insurance leaves no flood claim. Horry County has about one ${h.a("/buyers/coastal-insurance/", "federal flood policy")} for every seven residential buildings, so most houses here have no federal flood policy to claim on.`) },
 
-    { h2: "Should you buy a house that flooded?", toc: "Buying one that flooded", id: "buy-one-that-flooded", html: () =>
+    { h2: "Should you buy a house that flooded?", toc: "Buying one that flooded", id: "buy-one-that-flooded", html: (bg) =>
       h.p("Buy a house that flooded only when three things are true. Our agents check each one.") +
       THREE +
       h.p(`A house outside the high-risk zone can still be a repeat-flood house: nearly 1 in 5 Horry County properties on FEMA's list of repeat flood claims are outside it. The worst, which FEMA calls ${h.ext(SRL, "severe repetitive loss")}, pay at least 15 percent more for federal flood insurance.`) +
       h.p(`A seller who took federal flood aid that required flood insurance must tell you in writing, in the sale papers, that you must keep flood insurance on the house. ${h.ext(USC5154A, "Federal law")} requires it.`) +
       h.h3('<span id="empty-lots">Why does a street have empty lots between houses?</span>') +
       h.p(`Sometimes because of a flood buyout. The ${h.ext(SCOR, "state's voluntary buyout program")} has bought dozens of homes in the Socastee area that flooded again and again. It tears the houses down, and the land stays open green space.`) +
-      h.p("When a house you like sits beside empty lots, we ask the county's floodplain staff about the street's flood history.") },
+      h.p("When a house you like sits beside empty lots, we ask the county's floodplain staff about the street's flood history.") +
+      h.cta("Empty lots beside a house you like?", "Send us the address, and we ask the county's floodplain staff about floods on that street.", "Ask us to check the street", CONTACT, bg) },
 
     { h2: "What if the seller did not disclose flooding?", toc: "If the seller hid it", id: "if-the-seller-hid-it", html: (bg) =>
       h.p(`A seller who knowingly gives false, incomplete or misleading answers on the form ${h.ext(T27_50, "is liable")} for the buyer's actual damages from them, and court costs. The court may also award reasonable attorney fees to whichever side wins.`) +

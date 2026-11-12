@@ -27,7 +27,7 @@ const DOJ = "https://www.justice.gov/servicemembers/financial-and-housing-rights
 
 module.exports = {
   url: "/invest/landlord-rules/",
-  title: "South Carolina Landlord Rules and Evictions | Chapter3",
+  title: "South Carolina Landlord Tenant Law: Deposits, Entry, Eviction",
   description: "South Carolina landlord rules for a Myrtle Beach rental: the deposit clock, 24-hour entry, the five-day rent notice, and the Horry County eviction steps and fees.",
   ogTitle: "South Carolina landlord rules and the Horry County eviction process",
   crumb: "Landlord rules",
@@ -40,6 +40,11 @@ module.exports = {
   shortAnswer: "A South Carolina landlord must give the tenant the owner's name and address in writing and keep the home fit and habitable. The landlord must give 24 hours notice before entering, and must return or itemize the deposit within 30 days of move-out. Rent unpaid five days after the due date lets you end the lease, if the lease carries the state's notice clause in bold. Every other breach gets 14 days to cure. An eviction is filed at the Horry County magistrate court for the property's area, on a sworn two-page form, for $55 on the statewide fee schedule. The tenant has ten days to answer. After the writ, the sheriff gives 24 hours. In Chapter3's files the process takes up to three weeks. Changing the locks yourself costs three months of rent.",
   sections: [
     { h2: "Who is a landlord under South Carolina law?", html:
+      /* Light fix, triage 2026-11-08: the italic line at about half the H1's size, on its own line (the approved look,
+         Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md). The eviction fees change on January 1, 2027: the fee
+         paragraph and the FAQ answer below need their figures updated after that date. */
+      h.raw("<style>@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+        + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}</style>") +
       h.p(`${h.ext(LTA, "South Carolina's residential landlord and tenant law")} covers every house, condo and apartment rented as a home. It applies whoever owns the property and wherever the owner lives. It lists duties for the landlord and for the tenant. A lease cannot make the tenant waive them.`) +
       h.p(`The law also treats a manager as the landlord in one case. A manager who never gives the tenant the owner's name and address in writing becomes the landlord for notices and lawsuits. ${h.a("/invest/property-management/", "What a manager must do for you")}.`) },
     { h2: "What must a landlord give a new tenant in writing?", html:

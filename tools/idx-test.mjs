@@ -4,6 +4,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { onRequest as homes } from "../functions/homes/[[path]].js";
 import { onRequest as mw } from "../functions/_middleware.js";
 import { onRequest as sitemap } from "../functions/sitemap-homes.xml.js";
@@ -35,6 +36,7 @@ let MAPPOINTS = false;
 let BIG = false;
 let sent2 = "";
 let HANG = false;
+let SLOW = ""; // a CRM search whose URL has this answers after the page budget
 let INVALID = false;
 let INVALID_TS = false;
 let APPLIED = false;
@@ -84,6 +86,7 @@ globalThis.fetch = async (input, init = {}) => {
   if (STALE) return J({ ok: false, error: "stale" }, 503);
   if (FLAKY > 0) { FLAKY--; return new Response("bad gateway", { status: 502 }); }
   if (SIGNED_DOWN && auth && /^\/api\/idx\/listings\/\w+$/.test(u.pathname)) return new Response("bad gateway", { status: 502 });
+  if (SLOW && u.toString().includes(SLOW)) await new Promise((ok) => setTimeout(ok, 3400));
   if (HANG) return new Promise((_, no) => init.signal && init.signal.addEventListener("abort", () => no(new Error("aborted"))));
   if (INVALID && auth) return J({ ok: false, error: "unauthorized", visitor: "invalid" }, 401);
   if (REMARKS_API && u.pathname === "/api/idx/remarks") {
@@ -185,13 +188,22 @@ r = await run(homes, req("/homes/near/cherry-grove/"));
 t = await r.text();
 check("place page: homes in Cherry Grove, indexed", r.status === 200 && t.includes("Homes for sale in Cherry Grove") && t.includes("index, follow"));
 check("place page: an unknown place is a 404", (await run(homes, req("/homes/near/nowhere/"))).status === 404);
+{
+  // Duplicates (cannibalization map, 2026-11-08): one page per community; the other slug redirects to it.
+  const dup = await run(homes, req("/homes/near/tidewater/?k=abc"));
+  check("place page: a duplicate place redirects to the kept one, with the query string (fires)", dup.status === 301 && dup.headers.get("location") === "https://chapter3realty.com/homes/near/tidewater-plantation/?k=abc");
+  check("place page (quiet): a place that is not a duplicate does not redirect", (await run(homes, req("/homes/near/tidewater-plantation/"))).status === 200);
+  const xml = await (await run(sitemap, req("/sitemap-homes.xml"))).text();
+  check("sitemap: no duplicate place and no one-guide slice (nohoa-, second-home-, conway-)", !xml.includes("/homes/near/tidewater/") && !xml.includes("/homes/near/golf-and-yacht-club/") && !/\/homes\/near\/(nohoa|second-home|conway)-/.test(xml) && xml.includes("/homes/near/tidewater-plantation/"));
+}
 r = await run(mw, req("/buyers/best-neighborhoods/"));
 t = await r.text();
 const strips = (t.match(/class="hx-s-row"/g) || []).length;
 check("strips: filled on a guide page", strips >= 10);
+check("strips: a duplicate place's strip links to the kept page", !t.includes('href="/homes/near/tidewater/"') && !t.includes('href="/homes/near/golf-and-yacht-club/"'));
 check("strips: Tidewater (2 homes) keeps its empty slot", /data-place="tidewater" data-name="[^"]*"><\/div>/.test(t));
 check("strips: at most 10 cards a row, spread across price (the kept spares in a <template> not counted)", (t.split('data-place="cherry-grove"')[1].split("hx-s-all")[0].replace(/<template class="hx-spare">[\s\S]*?<\/template>/g, "").match(/<article class="hx-c">/g) || []).length === 10);
-check("strips: the owner's card template on every card (price, facts, address, MLS line)", (t.match(/<article class="hx-c">/g) || []).length > 0 && (t.match(/<article class="hx-c">/g) || []).length === (t.match(/class="hx-c-price">\$[0-9,]+</g) || []).length && (t.match(/<article class="hx-c">/g) || []).length === (t.match(/Listing provided by CCMLS\./g) || []).length);
+check("strips: the owner's card template on every card (price, facts, address, the listing firm; owner, 2026-11-12: no MLS number or MLS line on a strip)", (t.match(/<article class="hx-c">/g) || []).length > 0 && (t.match(/<article class="hx-c">/g) || []).length === (t.match(/class="hx-c-price">\$[0-9,]+</g) || []).length && (t.match(/<article class="hx-c">/g) || []).length === (t.match(/class="hx-c-firm">Listed by [^<]+</g) || []).length && !/class="hx-c-firm">MLS #/.test(t.slice(t.indexOf('<main'))));
 check("strips: one notice, the dialogs and the script", (t.match(/class="hx-disclaimer"/g) || []).length === 1 && t.includes('id="hx-signup"'));
 check("header: Search Listings opens the map page (owner, 2026-10-28)", t.includes("location.href='/homes/map/'") && !t.includes('onclick="openIdx()"'));
 STALE = true;
@@ -235,6 +247,24 @@ r = await run(mw, req("/buyers/best-neighborhoods/"));
 t = await r.text();
 check("slow CRM: a guide page comes back unchanged within the budget", Date.now() - t0 < 4000 && r.status === 200 && !t.includes('<article class="hx-c">'));
 HANG = false;
+// One slow place (Loris on the 13-town page, 2026-11-08) no longer empties the page's other strips; its slot is
+// marked and filled after load from /homes/api/place, whose answer the background call has put in the cache.
+SLOW = "near=33.834340";
+t0 = Date.now();
+r = await run(mw, req("/buyers/best-neighborhoods/"));
+t = await r.text();
+SLOW = "";
+check("slow place: the page waits no longer than the budget, the other strips fill, the slow one is marked for the after-load fill (fires)",
+  Date.now() - t0 < 4000 && (t.match(/class="hx-s-row"/g) || []).length >= 9 && /data-place="cherry-grove" data-name="[^"]*" data-late="1"><\/div>/.test(t)
+  && (t.match(/hx-strip\[data-late\]/g) || []).length === 1 && (t.match(/class="hx-disclaimer"/g) || []).length === 1);
+check("slow place (quiet): a place with too few homes is not marked late", /data-place="tidewater" data-name="[^"]*"><\/div>/.test(t));
+r = await run(homes, req("/homes/api/place?slug=cherry-grove&name=Cherry%20Grove%20%3Cb%3E"));
+{
+  const j = JSON.parse(await r.text());
+  check("place api: the strip's homes, the name escaped, no hearts, the listing notice, cached", r.status === 200 && j.ok && j.html.includes('class="hx-c"') && j.html.includes("Cherry Grove &lt;b&gt;")
+    && !j.html.includes("hx-heart") && j.notice.includes("hx-disclaimer") && (r.headers.get("cache-control") || "").includes("public"));
+}
+check("place api: an unknown place is a 404", (await run(homes, req("/homes/api/place?slug=nowhere"))).status === 404);
 check("guide page: no stale ETag or Last-Modified", !r.headers.get("etag") && !r.headers.get("last-modified"));
 INVALID = true;
 r = await run(homes, req("/homes/", cookie));
@@ -335,7 +365,7 @@ check("map data: plain words work on the map too", sent2.includes("city=Conway")
 t = await (await run(homes, req("/homes/api/map?city=Conway"))).text();
 check("map data: pins as data, with < escaped", /"pins":\[\{/.test(t) && !/</.test(t));
 MAPPOINTS = false;
-check("click layout: the footer shows the next page's grey layout (a home, the map, a list, an article) after the page's own handlers, never for a cancelled click, and clears it on the back button; render.js has no second bar", (() => { const f = fs.readFileSync(path.join(path.dirname(new URL(import.meta.url).pathname), "../partials/footer.html"), "utf8"); return f.includes("window.c3Skel") && f.includes("if (!e.defaultPrevented) go(u.href)") && ["home:", "map:", "list:", "page:"].every((k) => f.includes(k)) && f.includes("addEventListener('pageshow', clear)") && f.includes("window.hxGo = go"); })() && !SCRIPT.includes("hx-go-on") && MAP_SCRIPT.includes("window.hxGo(p.url)"));
+check("click layout: the footer shows the next page's grey layout (a home, the map, a list, an article) after the page's own handlers, never for a cancelled click, and clears it on the back button; render.js has no second bar", (() => { const f = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "../partials/footer.html"), "utf8"); return f.includes("window.c3Skel") && f.includes("if (!e.defaultPrevented) go(u.href)") && ["home:", "map:", "list:", "page:"].every((k) => f.includes(k)) && f.includes("addEventListener('pageshow', clear)") && f.includes("window.hxGo = go"); })() && !SCRIPT.includes("hx-go-on") && MAP_SCRIPT.includes("window.hxGo(p.url)"));
 check("map script: it parses", (() => { try { new Function(MAP_SCRIPT.replace(/^<script>|<\/script>$/g, "")); return true; } catch { return false; } })());
 
 // The rental analyzer's MLS lookup (2026-10-25).
@@ -372,8 +402,9 @@ t = await (await run(mw, req("/buyers/new-construction/"))).text();
 check("feed: a feature title the CRM did not apply falls back, never shows over homes that may not have it", t.includes("Just listed on the Grand Strand") || t.includes("Brand-new homes"));
 t = await (await run(mw, req("/invest/strategies/dscr-loans/"))).text();
 {
-  const prices = [...t.slice(t.indexOf('class="hx-feed')).matchAll(/class="hx-c-price">\$([\d,]+)/g)].map((m) => +m[1].replace(/,/g, ""));
-  check("feed: DSCR picks, 3+ bed houses and townhouses in the rental areas, lowest price per bedroom first", t.includes("DSCR picks, lowest price per bedroom") && prices.length >= 3 && prices.every((v, i) => !i || v >= prices[i - 1]) && calls.slice(-6).some((c) => c.url.includes("type=townhouse") && c.url.includes("beds=3")) && calls.slice(-6).some((c) => c.url.includes("has=long_term_rental_allowed")));
+  const feedOnly = t.slice(t.indexOf('class="hx-feed'), t.indexOf('</section>', t.indexOf('class="hx-feed')));
+  const prices = [...feedOnly.matchAll(/class="hx-c-price">\$([\d,]+)/g)].map((m) => +m[1].replace(/,/g, ""));
+  check("feed: DSCR picks, 3+ bed houses and townhouses in the rental areas, lowest price per bedroom first", t.includes("DSCR picks: the most bedrooms for the money") && prices.length >= 3 && prices.every((v, i) => !i || v >= prices[i - 1]) && calls.slice(-6).some((c) => c.url.includes("type=townhouse") && c.url.includes("beds=3")) && calls.slice(-6).some((c) => c.url.includes("has=long_term_rental_allowed")));
 }
 t = await (await run(mw, req("/buyers/relocating/from-maryland/"))).text();
 check("feed: a moving-from page: Homes people from Maryland love, on the water, with no subtitle", t.includes("Homes people from Maryland love") && !t.includes("Zillow, July") && calls.slice(-5).some((c) => c.url.includes("waterfront=1") && c.url.includes("has=private_dock")));
@@ -496,16 +527,16 @@ t = await (await run(homes, req("/homes/"))).text();
 check("sign-up: the Already have an account form stays hidden until asked for (display:flex no longer beats hidden)", STYLE_OK());
 check("sign-up: one full name box, email, phone, Continue to photos, Already have an account?", t.includes('name="name" autocomplete="name"') && !t.includes('name="lastName"') && t.includes("Continue to photos") && t.includes("Already have an account?") && t.includes('name="termsAccepted"') && t.includes('name="smsConsent"'));
 {
-  const home = fs.readFileSync(path.join(path.dirname(new URL(import.meta.url).pathname), "../chapter3realty/index.html"), "utf8");
+  const home = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "../chapter3realty/index.html"), "utf8");
   /* Owner, 2026-11-07: a tester did not see how to search. The hero is the AI search bar on the map; the I am
      paths are their own section under it. */
   check("homepage: the hero is an AI search form that opens the map with the words; the I am paths follow in their own section", /<form class="cine-ai" action="\/homes\/map\/" method="get"[^]*?name="q"/.test(home) && home.indexOf('class="cine-ai"') < home.indexOf('class="home-paths') && /<section class="home-paths[^]*?href="\/sell\/"[^]*?href="\/invest\/"/.test(home) && !home.includes('class="cine-main"'));
-  const ltr = fs.readFileSync(path.join(path.dirname(new URL(import.meta.url).pathname), "../chapter3realty/invest/long-term-rental/index.html"), "utf8");
+  const ltr = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "../chapter3realty/invest/long-term-rental/index.html"), "utf8");
   check("analyzer: no box for beds, baths, size or HOA; a cash box; the cash or loan question ready", ["ltr-beds", "ltr-baths", "ltr-sqft", "ltr-hoa"].every((id) => new RegExp(`<input id="${id}" type="hidden"/>`).test(ltr)) && ltr.includes('id="ltr-is-cash"') && ltr.includes('<dialog id="ltr-fin"'));
   check("analyzer: no rate or down payment is typed in for the visitor", !/id="ltr-(rate|down)"[^>]*value=/.test(ltr) && !/name="(rate|down)"[^>]*value=/.test(ltr));
   check("analyzer and homepage: no number box the scroll wheel can change, and the guard for every other page", !/type="number"/.test(ltr) && !/type="number"/.test(home) && home.includes("a.type === 'number' && e.target === a) a.blur()"));
   // The analyzer's own script: the one the analyzer page loads that defines ltrMoney.
-  const assetsDir = path.join(path.dirname(new URL(import.meta.url).pathname), "../chapter3realty/assets");
+  const assetsDir = path.join(path.dirname(fileURLToPath(import.meta.url)), "../chapter3realty/assets");
   const ltrAsset = [...ltr.matchAll(/src="\/assets\/(s\.[0-9a-f]+\.js)"/g)].map((m) => m[1]).find((f) => fs.readFileSync(path.join(assetsDir, f), "utf8").includes("function ltrMoney"));
   const js = fs.readFileSync(path.join(assetsDir, ltrAsset), "utf8");
   check("analyzer: the value is the MLS asking price or the estimate, never the county's tax appraisal (owner, 2026-10-26: $400,000 read $118,000)", !/d\.estimatedValue\s*=\s*_ltrParcel\.marketValue/.test(js) && /d\.estimatedValue = _ltrMls\.listPrice/.test(js) && js.includes("d.countyValue = _ltrParcel.marketValue"));
@@ -618,8 +649,12 @@ CATALOG = false; resetCatalog();
 APPLIED = true;
 t = await (await run(mw, req("/buyers/common-mistakes/"))).text();
 check("feed: a hook the filters make true: 'Price just cut' asks the CRM for price_reduced", t.includes("Price just cut on these homes") && calls.slice(-6).some((c) => c.url.includes("has=price_reduced")));
+{ const before = calls.length;
 t = await (await run(mw, req("/buyers/waterfront-homes/"))).text();
-check("feed: 'Homes with their own dock' asks for private_dock", t.includes("Homes with their own dock") && calls.slice(-6).some((c) => c.url.includes("has=private_dock")));
+check("feed: 'Bring the boat: homes with their own dock' asks for private_dock", t.includes("Bring the boat: homes with their own dock") && calls.slice(before).some((c) => c.url.includes("has=private_dock")));
+// A place with a feature filter (2026-11-10): the strip's search carries it, so its title stays true.
+check("place strip: a waterfront strip asks for its feature and price limit (fires)", calls.slice(before).some((c) => c.url.includes("has=water_lake") && c.url.includes("max=500000") && c.url.includes("waterfront=1"))); }
+check("place: a feature key the CRM does not list is refused, with or without a point (quiet)", placeParams({ has: "Not A Key" }) === null && placeParams({ near: "33.69,-78.89", has: "Not A Key" }) === null && placeParams({ type: "house" }) === null);
 APPLIED = false;
 
 // The search box as a sentence (owner, 2026-10-28): buyer phrases, employers, and what is left for the AI.

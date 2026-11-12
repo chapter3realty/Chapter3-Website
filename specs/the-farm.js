@@ -259,6 +259,11 @@ const END = {
   href: "/contact/",
 };
 
+/* Light fix, triage 2026-11-08: the italic line at about half the H1's size, on its own line (the approved look,
+   Blog-Brain batches/2026-11-a/hoa-documents/DESIGN.md). */
+const EM_CSS = "<style>@media (min-width:700px){main#main .detail-h1{text-wrap:balance}}main#main .detail-h1 em{display:block;font-size:clamp(1.3rem,2.5vw,2.25rem);line-height:1.25;margin-top:.55rem;text-wrap:balance}"
+  + "@media (max-width:959px){main#main .detail-h1 em{color:#8a5226!important}}</style>";
+
 module.exports = G.page({
   theme: "glass",
   url: SELF,
@@ -293,7 +298,7 @@ module.exports = G.page({
   sections: [
     /* Round 15 (owner, 2026-10-21: "easier for someone to get hooked and start scrolling"): the homes for
        sale in The Farm right under the top offer, once the listing search is on; empty and hidden until then. */
-    { id: "homes-now", html: G.homesCss() + G.homes("the-farm", "The Farm") + "<style>main#main .detail-hero .detail-sub{display:none}</style>" },
+    { id: "homes-now", html: G.homesCss() + G.homes("the-farm", "The Farm") + "<style>main#main .detail-hero .detail-sub{display:none}</style>" + EM_CSS },
     { h2: "What makes The Farm at Carolina Forest different?", toc: "What makes it different", html: (bg) =>
       ph.css() +
       h.p(`Conway Medical Center planned a $160 million healthcare facility on the 353 acres along The Farm's north edge. The state bought the land instead, for the ${h.ext(SCDNR, "Lewis Ocean Bay Heritage Preserve")}.`) +
