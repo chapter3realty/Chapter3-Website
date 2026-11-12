@@ -1,0 +1,46 @@
+{
+ "median_repeat_price": 195000,
+ "house": {
+  "beds_min": 3,
+  "listings": 3563,
+  "at_or_under_median_repeat_price": 67
+ },
+ "condo": {
+  "beds_min": 2,
+  "listings": 1897,
+  "at_or_under_median_repeat_price": 432
+ },
+ "townhouse": {
+  "beds_min": 2,
+  "listings": 364,
+  "at_or_under_median_repeat_price": 31
+ },
+ "feed_refreshed": "2026-11-04T13:00:24.039Z",
+ "pulled": "2026-11-04T13:03:03.033761Z",
+ "calls": [
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&beds=3",
+   "total": 3563
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&beds=3&max=195000",
+   "total": 67
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&beds=2",
+   "total": 1897
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=condo&beds=2&max=195000",
+   "total": 432
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&beds=2",
+   "total": 364
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=townhouse&beds=2&max=195000",
+   "total": 31
+  }
+ ]
+}

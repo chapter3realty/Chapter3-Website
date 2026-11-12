@@ -1,0 +1,580 @@
+{
+ "source": "HMDA, Horry County SC (45051), FFIEC data browser",
+ "years": {
+  "2025": {
+   "rows_in_file": 30135,
+   "applications": 25924,
+   "by_occupancy": {
+    "home": {
+     "applications": 20497,
+     "originated": 11719,
+     "originated_by_kind": {
+      "refinance": 1199,
+      "cash_out_refinance": 1519,
+      "purchase": 7173,
+      "line_of_credit": 1228,
+      "other": 451,
+      "home_improvement": 149
+     },
+     "applications_by_kind": {
+      "purchase": 11159,
+      "refinance": 2342,
+      "cash_out_refinance": 3218,
+      "line_of_credit": 2476,
+      "other": 995,
+      "home_improvement": 301,
+      "not_applicable": 6
+     },
+     "denied_by_kind": {
+      "purchase": 1672,
+      "cash_out_refinance": 675,
+      "line_of_credit": 804,
+      "refinance": 337,
+      "other": 258,
+      "home_improvement": 67,
+      "not_applicable": 2
+     },
+     "denial_rate_by_kind": {
+      "home_improvement": {
+       "decided": 222,
+       "denied": 67,
+       "denied_pct": 30.2
+      },
+      "other": {
+       "decided": 718,
+       "denied": 258,
+       "denied_pct": 35.9
+      },
+      "not_applicable": {
+       "decided": 2,
+       "denied": 2,
+       "denied_pct": 100.0
+      },
+      "cash_out_refinance": {
+       "decided": 2271,
+       "denied": 675,
+       "denied_pct": 29.7
+      },
+      "refinance": {
+       "decided": 1672,
+       "denied": 337,
+       "denied_pct": 20.2
+      },
+      "purchase": {
+       "decided": 9127,
+       "denied": 1672,
+       "denied_pct": 18.3
+      },
+      "line_of_credit": {
+       "decided": 2112,
+       "denied": 804,
+       "denied_pct": 38.1
+      }
+     },
+     "line_of_credit_originated": {
+      "n": 1228,
+      "distinct_lenders": 87
+     }
+    },
+    "second_home": {
+     "applications": 2425,
+     "originated": 1537,
+     "originated_by_kind": {
+      "purchase": 1378,
+      "refinance": 49,
+      "cash_out_refinance": 33,
+      "line_of_credit": 62,
+      "home_improvement": 5,
+      "other": 10
+     },
+     "applications_by_kind": {
+      "purchase": 1952,
+      "refinance": 123,
+      "cash_out_refinance": 104,
+      "line_of_credit": 192,
+      "home_improvement": 19,
+      "other": 35
+     },
+     "denied_by_kind": {
+      "line_of_credit": 83,
+      "purchase": 191,
+      "cash_out_refinance": 38,
+      "other": 10,
+      "refinance": 14,
+      "home_improvement": 8
+     },
+     "denial_rate_by_kind": {
+      "home_improvement": {
+       "decided": 13,
+       "denied": 8,
+       "denied_pct": 61.5
+      },
+      "other": {
+       "decided": 21,
+       "denied": 10,
+       "denied_pct": 47.6
+      },
+      "cash_out_refinance": {
+       "decided": 74,
+       "denied": 38,
+       "denied_pct": 51.4
+      },
+      "refinance": {
+       "decided": 69,
+       "denied": 14,
+       "denied_pct": 20.3
+      },
+      "purchase": {
+       "decided": 1612,
+       "denied": 191,
+       "denied_pct": 11.8
+      },
+      "line_of_credit": {
+       "decided": 152,
+       "denied": 83,
+       "denied_pct": 54.6
+      }
+     }
+    },
+    "investment": {
+     "applications": 3002,
+     "originated": 1903,
+     "originated_by_kind": {
+      "cash_out_refinance": 149,
+      "purchase": 1501,
+      "refinance": 203,
+      "line_of_credit": 17,
+      "other": 7,
+      "home_improvement": 26
+     },
+     "applications_by_kind": {
+      "cash_out_refinance": 294,
+      "purchase": 2225,
+      "refinance": 345,
+      "line_of_credit": 70,
+      "other": 24,
+      "home_improvement": 44
+     },
+     "denied_by_kind": {
+      "purchase": 271,
+      "cash_out_refinance": 51,
+      "refinance": 55,
+      "other": 13,
+      "line_of_credit": 35,
+      "home_improvement": 7
+     },
+     "denial_rate_by_kind": {
+      "home_improvement": {
+       "decided": 34,
+       "denied": 7,
+       "denied_pct": 20.6
+      },
+      "other": {
+       "decided": 21,
+       "denied": 13,
+       "denied_pct": 61.9
+      },
+      "cash_out_refinance": {
+       "decided": 205,
+       "denied": 51,
+       "denied_pct": 24.9
+      },
+      "refinance": {
+       "decided": 267,
+       "denied": 55,
+       "denied_pct": 20.6
+      },
+      "purchase": {
+       "decided": 1837,
+       "denied": 271,
+       "denied_pct": 14.8
+      },
+      "line_of_credit": {
+       "decided": 56,
+       "denied": 35,
+       "denied_pct": 62.5
+      }
+     },
+     "denials": 432,
+     "denial_reasons_any_listed": {
+      "collateral": 188,
+      "debt_to_income": 112,
+      "other": 77,
+      "insufficient_cash": 45,
+      "credit_history": 42,
+      "application_incomplete": 40,
+      "unverifiable_information": 31,
+      "employment_history": 6,
+      "mortgage_insurance_denied": 1
+     },
+     "denial_reasons_purchase": {
+      "collateral": 120,
+      "debt_to_income": 65,
+      "other": 52,
+      "insufficient_cash": 36,
+      "credit_history": 25,
+      "unverifiable_information": 18,
+      "application_incomplete": 17,
+      "employment_history": 2
+     },
+     "denials_purchase": 271,
+     "denial_reasons_cash_out": {
+      "collateral": 17,
+      "debt_to_income": 16,
+      "other": 8,
+      "unverifiable_information": 7,
+      "credit_history": 7,
+      "application_incomplete": 5,
+      "insufficient_cash": 2,
+      "mortgage_insurance_denied": 1
+     },
+     "denials_cash_out": 51,
+     "purchase_originated": {
+      "n": 1501,
+      "business_purpose": 962,
+      "consumer_purpose": 324,
+      "conventional": 1498,
+      "units_1": 1419,
+      "units_2_4": 56,
+      "property_value": {
+       "n": 1274,
+       "p25": 225000,
+       "median": 295000,
+       "p75": 415000
+      },
+      "loan_amount": {
+       "n": 1501,
+       "p25": 155000,
+       "median": 205000,
+       "p75": 305000
+      },
+      "first_lien": 1498
+     },
+     "cash_out_originated": {
+      "n": 149,
+      "business_purpose": 123,
+      "loan_amount": {
+       "n": 149,
+       "p25": 145000,
+       "median": 215000,
+       "p75": 365000
+      },
+      "property_value": {
+       "n": 146,
+       "p25": 237500,
+       "median": 335000,
+       "p75": 565000
+      },
+      "ltv_ledger_only": {
+       "n": 145,
+       "p25": 60,
+       "median": 70,
+       "p75": 73
+      },
+      "distinct_lenders": 68
+     },
+     "line_of_credit_originated": {
+      "n": 17,
+      "first_lien": 8,
+      "second_lien": 9,
+      "loan_amount": {
+       "n": 17,
+       "p25": 65000,
+       "median": 105000,
+       "p75": 155000
+      },
+      "distinct_lenders": 13
+     },
+     "distinct_lenders_any_investment_origination": 259
+    }
+   }
+  },
+  "2024": {
+   "rows_in_file": 28232,
+   "applications": 24628,
+   "by_occupancy": {
+    "home": {
+     "applications": 19375,
+     "originated": 10889,
+     "originated_by_kind": {
+      "purchase": 7138,
+      "refinance": 758,
+      "cash_out_refinance": 1265,
+      "line_of_credit": 1166,
+      "other": 393,
+      "home_improvement": 169
+     },
+     "applications_by_kind": {
+      "refinance": 1435,
+      "purchase": 11279,
+      "cash_out_refinance": 2740,
+      "line_of_credit": 2518,
+      "other": 1057,
+      "home_improvement": 346
+     },
+     "denied_by_kind": {
+      "cash_out_refinance": 657,
+      "purchase": 1819,
+      "refinance": 189,
+      "line_of_credit": 910,
+      "other": 368,
+      "home_improvement": 103
+     },
+     "denial_rate_by_kind": {
+      "home_improvement": {
+       "decided": 275,
+       "denied": 103,
+       "denied_pct": 37.5
+      },
+      "other": {
+       "decided": 780,
+       "denied": 368,
+       "denied_pct": 47.2
+      },
+      "cash_out_refinance": {
+       "decided": 1976,
+       "denied": 657,
+       "denied_pct": 33.2
+      },
+      "refinance": {
+       "decided": 1014,
+       "denied": 189,
+       "denied_pct": 18.6
+      },
+      "purchase": {
+       "decided": 9241,
+       "denied": 1819,
+       "denied_pct": 19.7
+      },
+      "line_of_credit": {
+       "decided": 2146,
+       "denied": 910,
+       "denied_pct": 42.4
+      }
+     },
+     "line_of_credit_originated": {
+      "n": 1166,
+      "distinct_lenders": 81
+     }
+    },
+    "second_home": {
+     "applications": 2411,
+     "originated": 1593,
+     "originated_by_kind": {
+      "purchase": 1420,
+      "other": 21,
+      "line_of_credit": 90,
+      "refinance": 32,
+      "cash_out_refinance": 25,
+      "home_improvement": 5
+     },
+     "applications_by_kind": {
+      "cash_out_refinance": 57,
+      "purchase": 2007,
+      "refinance": 74,
+      "line_of_credit": 210,
+      "other": 51,
+      "home_improvement": 12
+     },
+     "denied_by_kind": {
+      "purchase": 212,
+      "line_of_credit": 81,
+      "cash_out_refinance": 17,
+      "other": 15,
+      "refinance": 15,
+      "home_improvement": 5
+     },
+     "denial_rate_by_kind": {
+      "home_improvement": {
+       "decided": 10,
+       "denied": 5,
+       "denied_pct": 50.0
+      },
+      "other": {
+       "decided": 37,
+       "denied": 15,
+       "denied_pct": 40.5
+      },
+      "cash_out_refinance": {
+       "decided": 44,
+       "denied": 17,
+       "denied_pct": 38.6
+      },
+      "refinance": {
+       "decided": 48,
+       "denied": 15,
+       "denied_pct": 31.2
+      },
+      "purchase": {
+       "decided": 1682,
+       "denied": 212,
+       "denied_pct": 12.6
+      },
+      "line_of_credit": {
+       "decided": 177,
+       "denied": 81,
+       "denied_pct": 45.8
+      }
+     }
+    },
+    "investment": {
+     "applications": 2842,
+     "originated": 1760,
+     "originated_by_kind": {
+      "purchase": 1441,
+      "refinance": 163,
+      "home_improvement": 26,
+      "line_of_credit": 18,
+      "cash_out_refinance": 101,
+      "other": 11
+     },
+     "applications_by_kind": {
+      "purchase": 2222,
+      "line_of_credit": 54,
+      "refinance": 251,
+      "home_improvement": 41,
+      "cash_out_refinance": 232,
+      "other": 37,
+      "not_applicable": 5
+     },
+     "denied_by_kind": {
+      "purchase": 333,
+      "home_improvement": 8,
+      "refinance": 40,
+      "cash_out_refinance": 66,
+      "other": 15,
+      "line_of_credit": 26,
+      "not_applicable": 1
+     },
+     "denial_rate_by_kind": {
+      "home_improvement": {
+       "decided": 35,
+       "denied": 8,
+       "denied_pct": 22.9
+      },
+      "other": {
+       "decided": 27,
+       "denied": 15,
+       "denied_pct": 55.6
+      },
+      "not_applicable": {
+       "decided": 1,
+       "denied": 1,
+       "denied_pct": 100.0
+      },
+      "cash_out_refinance": {
+       "decided": 174,
+       "denied": 66,
+       "denied_pct": 37.9
+      },
+      "refinance": {
+       "decided": 209,
+       "denied": 40,
+       "denied_pct": 19.1
+      },
+      "purchase": {
+       "decided": 1849,
+       "denied": 333,
+       "denied_pct": 18.0
+      },
+      "line_of_credit": {
+       "decided": 46,
+       "denied": 26,
+       "denied_pct": 56.5
+      }
+     },
+     "denials": 489,
+     "denial_reasons_any_listed": {
+      "collateral": 205,
+      "debt_to_income": 116,
+      "other": 75,
+      "credit_history": 55,
+      "application_incomplete": 45,
+      "unverifiable_information": 43,
+      "insufficient_cash": 42,
+      "employment_history": 7
+     },
+     "denial_reasons_purchase": {
+      "collateral": 145,
+      "debt_to_income": 85,
+      "other": 43,
+      "insufficient_cash": 37,
+      "unverifiable_information": 35,
+      "credit_history": 30,
+      "application_incomplete": 24,
+      "employment_history": 5
+     },
+     "denials_purchase": 333,
+     "denial_reasons_cash_out": {
+      "collateral": 25,
+      "application_incomplete": 13,
+      "debt_to_income": 13,
+      "credit_history": 10,
+      "other": 7,
+      "unverifiable_information": 6,
+      "insufficient_cash": 3,
+      "employment_history": 1
+     },
+     "denials_cash_out": 66,
+     "purchase_originated": {
+      "n": 1441,
+      "business_purpose": 953,
+      "consumer_purpose": 377,
+      "conventional": 1438,
+      "units_1": 1373,
+      "units_2_4": 50,
+      "property_value": {
+       "n": 1324,
+       "p25": 232500,
+       "median": 305000,
+       "p75": 425000
+      },
+      "loan_amount": {
+       "n": 1441,
+       "p25": 155000,
+       "median": 205000,
+       "p75": 295000
+      },
+      "first_lien": 1438
+     },
+     "cash_out_originated": {
+      "n": 101,
+      "business_purpose": 83,
+      "loan_amount": {
+       "n": 101,
+       "p25": 165000,
+       "median": 205000,
+       "p75": 345000
+      },
+      "property_value": {
+       "n": 100,
+       "p25": 262500,
+       "median": 330000,
+       "p75": 557500
+      },
+      "ltv_ledger_only": {
+       "n": 99,
+       "p25": 59,
+       "median": 65,
+       "p75": 73
+      },
+      "distinct_lenders": 49
+     },
+     "line_of_credit_originated": {
+      "n": 18,
+      "first_lien": 8,
+      "second_lien": 10,
+      "loan_amount": {
+       "n": 18,
+       "p25": 67500,
+       "median": 135000,
+       "p75": 330000
+      },
+      "distinct_lenders": 12
+     },
+     "distinct_lenders_any_investment_origination": 244
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "photos": [
+  {
+   "slug": "invest-condotel-financing",
+   "file": "images/2026-10-d/hoa-reserves/myrtle-beach-oceanfront-towers-2011.webp",
+   "variants": {
+    "600": "images/2026-10-d/hoa-reserves/myrtle-beach-oceanfront-towers-2011-600w.webp",
+    "1200": "images/2026-10-d/hoa-reserves/myrtle-beach-oceanfront-towers-2011-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "Oceanfront towers in Myrtle Beach, USGS oblique aerial photo, August 24, 2011",
+   "what": "A row of oceanfront high-rise and mid-rise buildings in Myrtle Beach seen from a plane over the ocean: flat roofs with rooftop boxes, stacked balconies on every floor, pools and umbrellas behind the dunes, the beach and surf in front, parking lots and trees behind. People on the beach are too small to recognize.",
+   "caption": "Oceanfront towers in Myrtle Beach, seen from a plane over the ocean in 2011.",
+   "alt": "A row of oceanfront towers in Myrtle Beach with flat roofs, stacked balconies and pools behind the dunes, seen from a plane over the ocean",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Oceanfront, central Myrtle Beach"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_180052d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_180000.zip; aircraft position 33.699958 N, 78.862068 W (11CCH03-Photolocations.csv; the position of the plane, not of the buildings). Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. The same release as the photos on /hoa/special-assessments/ and /sell/out-of-state-buyers/ (different frames).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size by the writer on 2026-11-01. The frame shows oceanfront towers with flat roofs and stacked balconies; it does not show whether each building is a condo or a hotel, so the caption says 'oceanfront towers', names no building, and says only that roofs and balconies like these are parts a condo reserve fund saves for. No sign or name is legible at page size. Reused on /buyers/va-loans/ (2026-11-02, looked at full size again): the caption there says these are oceanfront towers, names no building, and says only how few oceanfront resort buildings in our directory have an accepted VA record. Reused on /invest/condotel-financing/ (2026-11-10): the caption says these are oceanfront condo and resort towers with pools behind the dunes, names no building, and makes no claim about which of them is run as a hotel.",
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty cropped and resized the photo",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-10-d/hoa-reserves/myrtle-beach-oceanfront-towers-2011-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-10-d/hoa-reserves/myrtle-beach-oceanfront-towers-2011-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-10-d/hoa-reserves/myrtle-beach-oceanfront-towers-2011-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "crop_note": "Cut as a 16x9 band from the 3008x1960 frame (rows 230 to 1922), then resized; 1x1, 4x3 and 16x9 crops from its center for the share image"
+  }
+ ]
+}

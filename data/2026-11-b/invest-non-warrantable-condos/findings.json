@@ -1,0 +1,163 @@
+{
+ "read": {
+  "owners": "2026-11-10T04:35:32.695252+00:00",
+  "control": "2026-11-10T02:37:44.215317+00:00",
+  "hud": "2026-11-10T02:34:25Z",
+  "program": "2026-11-10T02:38:50.607239+00:00"
+ },
+ "buildings": 43,
+ "units": 11471,
+ "units_taxed_as_home": 528,
+ "share_taxed_as_home": 4.6,
+ "building_share_taxed_as_home": {
+  "median": 3.3,
+  "max": 27.8,
+  "max_building": "maisons-sur-mer",
+  "under_10": 37,
+  "zero": [
+   "anderson-ocean-club",
+   "dunes-village",
+   "holiday-pavilion",
+   "ocean-reef"
+  ]
+ },
+ "buildings_75pct_or_more_not_home": 42,
+ "buildings_under_75pct_not_home": [
+  "maisons-sur-mer"
+ ],
+ "control_seagate_village": {
+  "units": 716,
+  "legal_residence_4pct": 352,
+  "share": 49.2,
+  "regimes": 8
+ },
+ "single_entity_over_20pct": {
+  "regimes": [
+   {
+    "building": "anderson-ocean-club",
+    "name": "Anderson Ocean Club",
+    "regime": "ANDERSONOCEANCLUBHPR",
+    "units": 314,
+    "top_owner_units": 172,
+    "share": 54.8,
+    "kind": "company"
+   },
+   {
+    "building": "seawatch",
+    "name": "SeaWatch Resort",
+    "regime": "SEAWATCHNTOWERHPR",
+    "units": 248,
+    "top_owner_units": 50,
+    "share": 20.2,
+    "kind": "company"
+   },
+   {
+    "building": "seawatch",
+    "name": "SeaWatch Resort",
+    "regime": "SEAWATCHTOWERSHPRI",
+    "units": 97,
+    "top_owner_units": 28,
+    "share": 28.9,
+    "kind": "company"
+   },
+   {
+    "building": "avista",
+    "name": "Avista Resort",
+    "regime": "AVISTAHPR",
+    "units": 194,
+    "top_owner_units": 40,
+    "share": 20.6,
+    "kind": "company"
+   },
+   {
+    "building": "prince",
+    "name": "Prince Resort",
+    "regime": "PRINCECONDOCGPIER",
+    "units": 262,
+    "top_owner_units": 86,
+    "share": 32.8,
+    "kind": "company"
+   },
+   {
+    "building": "towers-on-the-grove",
+    "name": "Towers on the Grove",
+    "regime": "TOWERSONTHEGROVEHPR",
+    "units": 236,
+    "top_owner_units": 137,
+    "share": 58.1,
+    "kind": "company"
+   },
+   {
+    "building": "sands-ocean",
+    "name": "Sands Ocean Club",
+    "regime": "SANDSOCEANCLUB",
+    "units": 212,
+    "top_owner_units": 64,
+    "share": 30.2,
+    "kind": "company"
+   },
+   {
+    "building": "sands-ocean",
+    "name": "Sands Ocean Club",
+    "regime": "SANDSOCNCLUB",
+    "units": 22,
+    "top_owner_units": 6,
+    "share": 27.3,
+    "kind": "company"
+   }
+  ],
+  "buildings": [
+   "anderson-ocean-club",
+   "avista",
+   "prince",
+   "sands-ocean",
+   "seawatch",
+   "towers-on-the-grove"
+  ],
+  "count_buildings": 6
+ },
+ "rental_program_for_sale": {
+  "buildings_with_listings": 45,
+  "median_share": 84.4,
+  "buildings_90pct_plus": 16,
+  "buildings_under_half": [
+   "maisons-sur-mer",
+   "ocean-forest-plaza"
+  ],
+  "for_sale": 965,
+  "in_program": 795
+ },
+ "home_like": [
+  {
+   "building": "maisons-sur-mer",
+   "name": "Maisons Sur-Mer",
+   "taxed_as_home_pct": 27.8,
+   "for_sale": 14,
+   "in_program": 3
+  },
+  {
+   "building": "ocean-forest-plaza",
+   "name": "Ocean Forest Plaza",
+   "taxed_as_home_pct": 23.8,
+   "for_sale": 14,
+   "in_program": 5
+  },
+  {
+   "building": "margate",
+   "name": "Margate Tower",
+   "taxed_as_home_pct": 18.3,
+   "for_sale": 8,
+   "in_program": 4
+  }
+ ],
+ "oceanfront_in_program_share": 81.0,
+ "hud": {
+  "records": 117,
+  "by_status": {
+   "Rejected": 78,
+   "Expired": 26,
+   "Approved": 9,
+   "Withdrawn": 4
+  }
+ }
+}

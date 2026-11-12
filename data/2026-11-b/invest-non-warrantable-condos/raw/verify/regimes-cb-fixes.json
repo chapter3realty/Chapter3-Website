@@ -1,0 +1,64 @@
+{
+ "note": "Regime names changed from ../../../invest-condo-buildings/regimes.json to apply the CB verifier row 5 fixes (VERIFY.md rows 5): Myrtle Beach Resort and Ocean Creek cut; spellings added on the same footprint. Used for findings-cb-fixes.json.",
+ "changes": {
+  "mb-resort": {
+   "before": [
+    "MYRTLE BEACH RESORT"
+   ],
+   "after": []
+  },
+  "beach-cove": {
+   "before": [
+    "BEACH COVE OCEAN RESORT",
+    "BCH COVE OCN RESORT",
+    "BEACH COVE OCN RSRT HPR",
+    "BCH COVE OC RESORT",
+    "BEACH COVE OC RESORT"
+   ],
+   "after": [
+    "BEACH COVE OCEAN RESORT",
+    "BCH COVE OCN RESORT",
+    "BEACH COVE OCN RSRT HPR",
+    "BCH COVE OC RESORT",
+    "BEACH COVE OC RESORT",
+    "BCH COVE OCN RESORT II",
+    "BCH COVE OCEAN RESORT",
+    "BCH COVE OCH RESORT"
+   ]
+  },
+  "ocean-creek": {
+   "before": [
+    "LODGE AT OCEAN CREEK"
+   ],
+   "after": []
+  },
+  "maisons-sur-mer": {
+   "before": [
+    "MAISONS SUR MER",
+    "MAISON SUR MER"
+   ],
+   "after": [
+    "MAISONS SUR MER",
+    "MAISON SUR MER",
+    "MAISON-SUR-MER",
+    "MAISONS-SUR MER"
+   ]
+  },
+  "sands-ocean": {
+   "before": [
+    "SANDS OCEAN CLUB",
+    "SANDS OCEAN CLUB PH II",
+    "SANDS OCEAN CLUB II"
+   ],
+   "after": [
+    "SANDS OCEAN CLUB",
+    "SANDS OCEAN CLUB PH II",
+    "SANDS OCEAN CLUB II",
+    "SANDS OCN CLUB",
+    "SANDS OCN CLUB (P-H)",
+    "SAND OCEAN CLUB II",
+    "SANDS OCEAN CLU II"
+   ]
+  }
+ }
+}

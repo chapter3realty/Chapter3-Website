@@ -1,0 +1,71 @@
+{
+ "read": "2026-11-10",
+ "dunes_club": [
+  {
+   "from": "sands-ocean",
+   "parcel_pin": 39400000256,
+   "owner": "DUNES GOLF & BEACH CLUB INC C/O GOLF BEACH CLUB",
+   "legal": "INT N OCEAN BLVD &; US 17",
+   "acres": 216.5,
+   "miles_to_edge": 0.202
+  },
+  {
+   "from": "maisons-sur-mer",
+   "parcel_pin": 39400000256,
+   "owner": "DUNES GOLF & BEACH CLUB INC C/O GOLF BEACH CLUB",
+   "legal": "INT N OCEAN BLVD &; US 17",
+   "acres": 216.5,
+   "miles_to_edge": 0.373
+  }
+ ],
+ "pine_lakes": [
+  {
+   "from": "ocean-forest-plaza",
+   "parcel_pin": 42100000010,
+   "owner": "FOUNDERS NATIONAL GOLF LLC C/O FOUNDERS GROUP INTERNATIONAL",
+   "legal": "PINE LAKES; REVISED PARCEL 4",
+   "acres": 156.18,
+   "miles_to_edge": 0.304
+  }
+ ],
+ "maisons-sur-mer": {
+  "floors": {
+   "rows_parsed": 250,
+   "top_floor": 24,
+   "units_on_top_floor": 11
+  },
+  "dof": [
+   {
+    "oas": "45-000344",
+    "verified": true,
+    "city": "MYRTLE BEACH",
+    "lat": 33.762222,
+    "lon": -78.786111,
+    "agl_ft": 300,
+    "amsl_ft": 314,
+    "line": "45-000344 O US SC MYRTLE BEACH     33 45 44.00N 078 47 10.00W BLDG               1 00300 00314 D 2 C N 1998ASO02733OE C 2014152",
+    "m": 44
+   }
+  ]
+ },
+ "ocean-forest-plaza": {
+  "floors": {
+   "rows_parsed": 204,
+   "top_floor": 23,
+   "units_on_top_floor": 8
+  },
+  "dof": [
+   {
+    "oas": "45-000668",
+    "verified": true,
+    "city": "MYRTLE BEACH",
+    "lat": 33.728056,
+    "lon": -78.836417,
+    "agl_ft": 252,
+    "amsl_ft": 270,
+    "line": "45-000668 O US SC MYRTLE BEACH     33 43 41.00N 078 50 11.10W BLDG               1 00252 00270 D 4 D N 2024ASO05811OE C 2024128",
+    "m": 13
+   }
+  ]
+ }
+}

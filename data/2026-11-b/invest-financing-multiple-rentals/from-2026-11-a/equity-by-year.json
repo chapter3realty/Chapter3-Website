@@ -1,0 +1,123 @@
+{
+ "source": "Zillow ZHVI metro single-family mid tier SA, Myrtle Beach-Conway-North Myrtle Beach (includes Brunswick County, NC)",
+ "now_month": "2026-09-30",
+ "value_now": 364275,
+ "peak_month": "2024-06-30",
+ "peak_value": 370399,
+ "by_purchase_year": [
+  {
+   "bought_sept": 2012,
+   "typical_value_then": 174278,
+   "typical_value_now": 364275,
+   "gain": 189997,
+   "gain_pct": 109.0
+  },
+  {
+   "bought_sept": 2013,
+   "typical_value_then": 181043,
+   "typical_value_now": 364275,
+   "gain": 183232,
+   "gain_pct": 101.2
+  },
+  {
+   "bought_sept": 2014,
+   "typical_value_then": 189855,
+   "typical_value_now": 364275,
+   "gain": 174421,
+   "gain_pct": 91.9
+  },
+  {
+   "bought_sept": 2015,
+   "typical_value_then": 196999,
+   "typical_value_now": 364275,
+   "gain": 167276,
+   "gain_pct": 84.9
+  },
+  {
+   "bought_sept": 2016,
+   "typical_value_then": 203289,
+   "typical_value_now": 364275,
+   "gain": 160987,
+   "gain_pct": 79.2
+  },
+  {
+   "bought_sept": 2017,
+   "typical_value_then": 212263,
+   "typical_value_now": 364275,
+   "gain": 152012,
+   "gain_pct": 71.6
+  },
+  {
+   "bought_sept": 2018,
+   "typical_value_then": 223552,
+   "typical_value_now": 364275,
+   "gain": 140723,
+   "gain_pct": 62.9
+  },
+  {
+   "bought_sept": 2019,
+   "typical_value_then": 233878,
+   "typical_value_now": 364275,
+   "gain": 130398,
+   "gain_pct": 55.8
+  },
+  {
+   "bought_sept": 2020,
+   "typical_value_then": 247174,
+   "typical_value_now": 364275,
+   "gain": 117102,
+   "gain_pct": 47.4
+  },
+  {
+   "bought_sept": 2021,
+   "typical_value_then": 299439,
+   "typical_value_now": 364275,
+   "gain": 64836,
+   "gain_pct": 21.7
+  },
+  {
+   "bought_sept": 2022,
+   "typical_value_then": 366002,
+   "typical_value_now": 364275,
+   "gain": -1726,
+   "gain_pct": -0.5
+  },
+  {
+   "bought_sept": 2023,
+   "typical_value_then": 366650,
+   "typical_value_now": 364275,
+   "gain": -2374,
+   "gain_pct": -0.6
+  },
+  {
+   "bought_sept": 2024,
+   "typical_value_then": 369833,
+   "typical_value_now": 364275,
+   "gain": -5557,
+   "gain_pct": -1.5
+  },
+  {
+   "bought_sept": 2025,
+   "typical_value_then": 362352,
+   "typical_value_now": 364275,
+   "gain": 1923,
+   "gain_pct": 0.5
+  }
+ ],
+ "example": {
+  "label": "Example",
+  "bought_sept": 2019,
+  "price_then": 233900.0,
+  "value_now": 364300.0,
+  "still_owed_assumed": 150000,
+  "cap_share": 0.75,
+  "largest_new_loan": 273200.0,
+  "cash_before_closing_costs": 123200.0,
+  "note": "The owed figure is an assumption for the example, not computed from any rate. The cap is the largest new loan as a share of the appraised value; the page states it in dollars only."
+ },
+ "bought_2022": {
+  "then": 366002,
+  "now": 364275,
+  "change_pct": -0.5
+ }
+}

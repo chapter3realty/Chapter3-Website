@@ -1,0 +1,37 @@
+{
+ "house": {
+  "zip": "29579",
+  "area": "Carolina Forest",
+  "asking": 390000,
+  "rent_month": 2230,
+  "tax_year": 4700,
+  "hoa_year": 1200,
+  "insurance_year": 3300
+ },
+ "non_loan_cost_month": 766.67,
+ "rent_counted": {
+  "long_term_share": 0.75,
+  "rent": 2230,
+  "counted": 1672.5,
+  "short_term_share": 0.5,
+  "note": "Short-term: 50% of a market rent from Form 1007 or three comparable short-term rentals, offset against the house's own cost only."
+ },
+ "reserves": {
+  "subject_months": 6,
+  "subject_non_loan_part": 4600,
+  "plus": "six months of the new loan's principal and interest (the reader's own figure)",
+  "financed_properties": "2 or 3 (the first rental, the new one, and the reader's home if it has a mortgage): the 2 percent tier",
+  "other_rental_balance": 273200.0,
+  "other_share": 0.02,
+  "other_part": 5464,
+  "total_before_loan_payments": 10064
+ },
+ "worst_case": {
+  "houses": 2,
+  "months": 3,
+  "non_loan_costs": 4600,
+  "rent_not_collected": 13380,
+  "plus": "three payments on each loan (the reader's own figure)"
+ },
+ "reserve_minus_worst_case_non_loan": 5464
+}

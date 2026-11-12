@@ -1,0 +1,29 @@
+{
+ "title": "How owners here took cash out of a home in 2025",
+ "unit": "loans made in Horry County, 2025",
+ "source": "HMDA 2025, Horry County (FFIEC data browser)",
+ "rows": [
+  {
+   "label": "Cash-out refinance on a rental",
+   "n": 149
+  },
+  {
+   "label": "Line of credit on a rental",
+   "n": 17
+  },
+  {
+   "label": "Line of credit on a home the owner lives in",
+   "n": 1228
+  }
+ ],
+ "denied_pct": {
+  "rental_cash_out": 24.9,
+  "rental_line_of_credit": 62.5,
+  "home_line_of_credit": 38.1
+ },
+ "lenders": {
+  "rental_line_of_credit": 13,
+  "rental_cash_out": 68,
+  "home_line_of_credit": 87
+ }
+}

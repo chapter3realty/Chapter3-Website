@@ -1,0 +1,455 @@
+{
+ "note": "Public signs only; a lender's review of the building's documents decides. No owner, PIN, unit or value.",
+ "rows": [
+  {
+   "slug": "anderson-ocean-club",
+   "name": "Anderson Ocean Club",
+   "units": 314,
+   "taxed_as_home_pct": 0.0,
+   "largest_owner_pct_in_a_regime": 54.8,
+   "over_single_entity_line": true,
+   "for_sale": 5,
+   "for_sale_in_program_pct": 80.0
+  },
+  {
+   "slug": "avista",
+   "name": "Avista Resort",
+   "units": 380,
+   "taxed_as_home_pct": 1.1,
+   "largest_owner_pct_in_a_regime": 20.6,
+   "over_single_entity_line": true,
+   "for_sale": 11,
+   "for_sale_in_program_pct": 90.9
+  },
+  {
+   "slug": "bay-view",
+   "name": "Bay View Resort",
+   "units": 183,
+   "taxed_as_home_pct": 1.1,
+   "largest_owner_pct_in_a_regime": 3.3,
+   "over_single_entity_line": false,
+   "for_sale": 10,
+   "for_sale_in_program_pct": 100.0
+  },
+  {
+   "slug": "bay-watch",
+   "name": "Bay Watch Resort",
+   "units": 532,
+   "taxed_as_home_pct": 4.1,
+   "largest_owner_pct_in_a_regime": 1.9,
+   "over_single_entity_line": false,
+   "for_sale": 46,
+   "for_sale_in_program_pct": 95.7
+  },
+  {
+   "slug": "beach-colony",
+   "name": "Beach Colony",
+   "units": 244,
+   "taxed_as_home_pct": 9.8,
+   "largest_owner_pct_in_a_regime": 1.8,
+   "over_single_entity_line": false,
+   "for_sale": 21,
+   "for_sale_in_program_pct": 90.5
+  },
+  {
+   "slug": "beach-cove",
+   "name": "Beach Cove Resort",
+   "units": 328,
+   "taxed_as_home_pct": 0.6,
+   "largest_owner_pct_in_a_regime": 8.3,
+   "over_single_entity_line": false,
+   "for_sale": 29,
+   "for_sale_in_program_pct": 100.0
+  },
+  {
+   "slug": "bluewater",
+   "name": "Bluewater Resort",
+   "units": 227,
+   "taxed_as_home_pct": 11.9,
+   "largest_owner_pct_in_a_regime": 7.1,
+   "over_single_entity_line": false,
+   "for_sale": 37,
+   "for_sale_in_program_pct": 83.8
+  },
+  {
+   "slug": "boardwalk",
+   "name": "Boardwalk Oceanfront Tower",
+   "units": 131,
+   "taxed_as_home_pct": 0.8,
+   "largest_owner_pct_in_a_regime": 9.2,
+   "over_single_entity_line": false,
+   "for_sale": 12,
+   "for_sale_in_program_pct": 100.0
+  },
+  {
+   "slug": "breakers",
+   "name": "Breakers Resort",
+   "units": 179,
+   "taxed_as_home_pct": 0.6,
+   "largest_owner_pct_in_a_regime": 3.9,
+   "over_single_entity_line": false,
+   "for_sale": 4,
+   "for_sale_in_program_pct": 100.0
+  },
+  {
+   "slug": "brighton",
+   "name": "Brighton Tower",
+   "units": 200,
+   "taxed_as_home_pct": 7.5,
+   "largest_owner_pct_in_a_regime": 1.0,
+   "over_single_entity_line": false,
+   "for_sale": 9,
+   "for_sale_in_program_pct": 66.7
+  },
+  {
+   "slug": "camelot",
+   "name": "Camelot by the Sea",
+   "units": 232,
+   "taxed_as_home_pct": 1.7,
+   "largest_owner_pct_in_a_regime": 12.9,
+   "over_single_entity_line": false,
+   "for_sale": 9,
+   "for_sale_in_program_pct": 77.8
+  },
+  {
+   "slug": "caravelle",
+   "name": "Caravelle Resort",
+   "units": 403,
+   "taxed_as_home_pct": 2.2,
+   "largest_owner_pct_in_a_regime": 10.3,
+   "over_single_entity_line": false,
+   "for_sale": 45,
+   "for_sale_in_program_pct": 97.8
+  },
+  {
+   "slug": "caribbean",
+   "name": "Caribbean Resort",
+   "units": 369,
+   "taxed_as_home_pct": 0.5,
+   "largest_owner_pct_in_a_regime": 7.1,
+   "over_single_entity_line": false,
+   "for_sale": 25,
+   "for_sale_in_program_pct": 100.0
+  },
+  {
+   "slug": "carolina-winds",
+   "name": "Carolina Winds",
+   "units": 147,
+   "taxed_as_home_pct": 5.4,
+   "largest_owner_pct_in_a_regime": 4.9,
+   "over_single_entity_line": false,
+   "for_sale": 13,
+   "for_sale_in_program_pct": 84.6
+  },
+  {
+   "slug": "carolinian",
+   "name": "Carolinian Beach Resort",
+   "units": 134,
+   "taxed_as_home_pct": 8.2,
+   "largest_owner_pct_in_a_regime": 4.5,
+   "over_single_entity_line": false,
+   "for_sale": 11,
+   "for_sale_in_program_pct": 63.6
+  },
+  {
+   "slug": "compass-cove",
+   "name": "Compass Cove",
+   "units": 486,
+   "taxed_as_home_pct": 0.6,
+   "largest_owner_pct_in_a_regime": 10.9,
+   "over_single_entity_line": false,
+   "for_sale": 35,
+   "for_sale_in_program_pct": 100.0
+  },
+  {
+   "slug": "coral-beach",
+   "name": "Coral Beach Resort",
+   "units": 295,
+   "taxed_as_home_pct": 0.7,
+   "largest_owner_pct_in_a_regime": 1.0,
+   "over_single_entity_line": false,
+   "for_sale": 40,
+   "for_sale_in_program_pct": 95.0
+  },
+  {
+   "slug": "crescent-shores",
+   "name": "Crescent Shores",
+   "units": 232,
+   "taxed_as_home_pct": 9.5,
+   "largest_owner_pct_in_a_regime": 3.4,
+   "over_single_entity_line": false,
+   "for_sale": 14,
+   "for_sale_in_program_pct": 50.0
+  },
+  {
+   "slug": "dunes-village",
+   "name": "Dunes Village Resort",
+   "units": 269,
+   "taxed_as_home_pct": 0.0,
+   "largest_owner_pct_in_a_regime": 5.9,
+   "over_single_entity_line": false,
+   "for_sale": 26,
+   "for_sale_in_program_pct": 96.2
+  },
+  {
+   "slug": "grande-cayman",
+   "name": "Grande Cayman Resort",
+   "units": 290,
+   "taxed_as_home_pct": 0.3,
+   "largest_owner_pct_in_a_regime": 2.8,
+   "over_single_entity_line": false,
+   "for_sale": 22,
+   "for_sale_in_program_pct": 86.4
+  },
+  {
+   "slug": "holiday-pavilion",
+   "name": "Holiday Inn Pavilion",
+   "units": 109,
+   "taxed_as_home_pct": 0.0,
+   "largest_owner_pct_in_a_regime": 3.7,
+   "over_single_entity_line": false,
+   "for_sale": 15,
+   "for_sale_in_program_pct": 80.0
+  },
+  {
+   "slug": "holiday-sands",
+   "name": "Holiday Sands",
+   "units": 119,
+   "taxed_as_home_pct": 10.9,
+   "largest_owner_pct_in_a_regime": 3.4,
+   "over_single_entity_line": false,
+   "for_sale": 15,
+   "for_sale_in_program_pct": 86.7
+  },
+  {
+   "slug": "landmark",
+   "name": "Landmark Resort",
+   "units": 571,
+   "taxed_as_home_pct": 3.5,
+   "largest_owner_pct_in_a_regime": 4.1,
+   "over_single_entity_line": false,
+   "for_sale": 92,
+   "for_sale_in_program_pct": 89.1
+  },
+  {
+   "slug": "maisons-sur-mer",
+   "name": "Maisons Sur-Mer",
+   "units": 229,
+   "taxed_as_home_pct": 27.5,
+   "largest_owner_pct_in_a_regime": 1.7,
+   "over_single_entity_line": false,
+   "for_sale": 14,
+   "for_sale_in_program_pct": 21.4
+  },
+  {
+   "slug": "mar-vista-grande",
+   "name": "Mar Vista Grande",
+   "units": 162,
+   "taxed_as_home_pct": 9.9,
+   "largest_owner_pct_in_a_regime": 1.2,
+   "over_single_entity_line": false,
+   "for_sale": 6,
+   "for_sale_in_program_pct": 50.0
+  },
+  {
+   "slug": "margate",
+   "name": "Margate Tower",
+   "units": 252,
+   "taxed_as_home_pct": 18.3,
+   "largest_owner_pct_in_a_regime": 0.8,
+   "over_single_entity_line": false,
+   "for_sale": 8,
+   "for_sale_in_program_pct": 50.0
+  },
+  {
+   "slug": "meridian-plaza",
+   "name": "Meridian Plaza",
+   "units": 96,
+   "taxed_as_home_pct": 4.2,
+   "largest_owner_pct_in_a_regime": 3.1,
+   "over_single_entity_line": false,
+   "for_sale": 17,
+   "for_sale_in_program_pct": 70.6
+  },
+  {
+   "slug": "monterey-bay",
+   "name": "Monterey Bay Suites",
+   "units": 195,
+   "taxed_as_home_pct": 4.1,
+   "largest_owner_pct_in_a_regime": 5.1,
+   "over_single_entity_line": false,
+   "for_sale": 29,
+   "for_sale_in_program_pct": 79.3
+  },
+  {
+   "slug": "mb-resort",
+   "name": "Myrtle Beach Resort",
+   "units": 244,
+   "taxed_as_home_pct": 4.5,
+   "largest_owner_pct_in_a_regime": 1.6,
+   "over_single_entity_line": false,
+   "for_sale": 58,
+   "for_sale_in_program_pct": 62.1
+  },
+  {
+   "slug": "north-beach-towers",
+   "name": "North Beach Towers",
+   "units": 339,
+   "taxed_as_home_pct": 1.5,
+   "largest_owner_pct_in_a_regime": 2.7,
+   "over_single_entity_line": false,
+   "for_sale": 10,
+   "for_sale_in_program_pct": 100.0
+  },
+  {
+   "slug": "ocean-creek",
+   "name": "Ocean Creek Resort",
+   "units": 163,
+   "taxed_as_home_pct": 8.0,
+   "largest_owner_pct_in_a_regime": 1.2,
+   "over_single_entity_line": false,
+   "for_sale": 34,
+   "for_sale_in_program_pct": 55.9
+  },
+  {
+   "slug": "ocean-forest-plaza",
+   "name": "Ocean Forest Plaza",
+   "units": 206,
+   "taxed_as_home_pct": 23.8,
+   "largest_owner_pct_in_a_regime": 1.5,
+   "over_single_entity_line": false,
+   "for_sale": 14,
+   "for_sale_in_program_pct": 35.7
+  },
+  {
+   "slug": "ocean-reef",
+   "name": "Ocean Reef Resort",
+   "units": 347,
+   "taxed_as_home_pct": 0.0,
+   "largest_owner_pct_in_a_regime": 4.3,
+   "over_single_entity_line": false,
+   "for_sale": 32,
+   "for_sale_in_program_pct": 84.4
+  },
+  {
+   "slug": "oceans-one",
+   "name": "Oceans One",
+   "units": 137,
+   "taxed_as_home_pct": 2.2,
+   "largest_owner_pct_in_a_regime": 10.2,
+   "over_single_entity_line": false,
+   "for_sale": 11,
+   "for_sale_in_program_pct": 81.8
+  },
+  {
+   "slug": "patricia-grand",
+   "name": "Patricia Grand",
+   "units": 142,
+   "taxed_as_home_pct": 0.7,
+   "largest_owner_pct_in_a_regime": 2.8,
+   "over_single_entity_line": false,
+   "for_sale": 8,
+   "for_sale_in_program_pct": 100.0
+  },
+  {
+   "slug": "prince",
+   "name": "Prince Resort",
+   "units": 262,
+   "taxed_as_home_pct": 4.6,
+   "largest_owner_pct_in_a_regime": 32.8,
+   "over_single_entity_line": true,
+   "for_sale": 7,
+   "for_sale_in_program_pct": 85.7
+  },
+  {
+   "slug": "royale-palms",
+   "name": "Royale Palms",
+   "units": 185,
+   "taxed_as_home_pct": 6.5,
+   "largest_owner_pct_in_a_regime": 2.7,
+   "over_single_entity_line": false,
+   "for_sale": 14,
+   "for_sale_in_program_pct": 64.3
+  },
+  {
+   "slug": "sand-dunes",
+   "name": "Sand Dunes Resort",
+   "units": 369,
+   "taxed_as_home_pct": 4.1,
+   "largest_owner_pct_in_a_regime": 20.0,
+   "over_single_entity_line": false,
+   "for_sale": 51,
+   "for_sale_in_program_pct": 88.2
+  },
+  {
+   "slug": "sands-ocean",
+   "name": "Sands Ocean Club",
+   "units": 464,
+   "taxed_as_home_pct": 3.4,
+   "largest_owner_pct_in_a_regime": 30.2,
+   "over_single_entity_line": true,
+   "for_sale": 16,
+   "for_sale_in_program_pct": 68.8
+  },
+  {
+   "slug": "sandy-beach",
+   "name": "Sandy Beach Resort",
+   "units": 231,
+   "taxed_as_home_pct": 1.7,
+   "largest_owner_pct_in_a_regime": 19.0,
+   "over_single_entity_line": false,
+   "for_sale": 11,
+   "for_sale_in_program_pct": 90.9
+  },
+  {
+   "slug": "sea-mist",
+   "name": "Sea Mist Resort",
+   "units": 271,
+   "taxed_as_home_pct": 6.6,
+   "largest_owner_pct_in_a_regime": 1.8,
+   "over_single_entity_line": false,
+   "for_sale": 33,
+   "for_sale_in_program_pct": 72.7
+  },
+  {
+   "slug": "seawatch",
+   "name": "SeaWatch Resort",
+   "units": 472,
+   "taxed_as_home_pct": 2.1,
+   "largest_owner_pct_in_a_regime": 28.9,
+   "over_single_entity_line": true,
+   "for_sale": 5,
+   "for_sale_in_program_pct": 80.0
+  },
+  {
+   "slug": "south-hampton",
+   "name": "South Hampton",
+   "units": 144,
+   "taxed_as_home_pct": 8.3,
+   "largest_owner_pct_in_a_regime": 1.4,
+   "over_single_entity_line": false,
+   "for_sale": 13,
+   "for_sale_in_program_pct": 69.2
+  },
+  {
+   "slug": "palace",
+   "name": "The Palace",
+   "units": 302,
+   "taxed_as_home_pct": 10.6,
+   "largest_owner_pct_in_a_regime": 0.7,
+   "over_single_entity_line": false,
+   "for_sale": 25,
+   "for_sale_in_program_pct": 84.0
+  },
+  {
+   "slug": "towers-on-the-grove",
+   "name": "Towers on the Grove",
+   "units": 236,
+   "taxed_as_home_pct": 0.8,
+   "largest_owner_pct_in_a_regime": 58.1,
+   "over_single_entity_line": true,
+   "for_sale": 3,
+   "for_sale_in_program_pct": 100.0
+  }
+ ]
+}

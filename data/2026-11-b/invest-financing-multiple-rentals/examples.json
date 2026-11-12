@@ -1,0 +1,39 @@
+{
+ "label": "Example",
+ "first_rental": {
+  "bought_sept": 2019,
+  "typical_value_then": 233900,
+  "value_now": 364300,
+  "largest_new_loan": 273200,
+  "assumed_owed": 150000,
+  "cash_before_closing_costs": 123200
+ },
+ "next_house": {
+  "zip": "29579",
+  "area": "Carolina Forest",
+  "beds": 3,
+  "asking": 390000,
+  "hud_rent_month": 2230,
+  "tax_year": 4700,
+  "hoa_year": 1200,
+  "tax_and_dues_month": 491.67,
+  "tax_and_dues_year": 5900,
+  "rent_counted_long_term": 1672.5,
+  "rent_counted_short_term": 1115.0
+ },
+ "reserve": {
+  "new_house_tax_and_dues_6_months": 2950,
+  "other_balance": 273200,
+  "other_share": 0.02,
+  "other_part": 5464,
+  "total_before_loan_payment_and_insurance": 8414,
+  "plus": "six months of the new loan's payment and insurance (the reader's own figures)"
+ },
+ "worst_case": {
+  "houses": 2,
+  "months": 3,
+  "tax_and_dues": 2950,
+  "rent_not_collected_at_hud_figure": 13380,
+  "plus": "three payments on each loan, and insurance (the reader's own figures)"
+ }
+}

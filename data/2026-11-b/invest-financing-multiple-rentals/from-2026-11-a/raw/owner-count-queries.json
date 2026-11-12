@@ -1,0 +1,29 @@
+{
+ "layer": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query",
+ "read": "2026-11-04",
+ "queries": [
+  {
+   "name": "homes",
+   "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND TaxableProp > 0",
+   "count": 226741,
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0+AND+TaxableProp+%3E+0&returnCountOnly=true&f=json"
+  },
+  {
+   "name": "six",
+   "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND TaxableProp > 0 AND AssessedProp > 0.055 * TaxableProp AND AssessedProp < 0.065 * TaxableProp",
+   "count": 101843,
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0+AND+TaxableProp+%3E+0+AND+AssessedProp+%3E+0.055+%2A+TaxableProp+AND+AssessedProp+%3C+0.065+%2A+TaxableProp&returnCountOnly=true&f=json"
+  },
+  {
+   "name": "four",
+   "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND TaxableProp > 0 AND AssessedProp > 0.035 * TaxableProp AND AssessedProp < 0.045 * TaxableProp",
+   "count": 120776,
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0+AND+TaxableProp+%3E+0+AND+AssessedProp+%3E+0.035+%2A+TaxableProp+AND+AssessedProp+%3C+0.045+%2A+TaxableProp&returnCountOnly=true&f=json"
+  },
+  {
+   "name": "six_all_rows",
+   "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND TaxableProp > 0 AND AssessedProp > 0.055 * TaxableProp AND AssessedProp < 0.065 * TaxableProp",
+   "rows": 101843
+  }
+ ]
+}

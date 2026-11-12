@@ -1,0 +1,10 @@
+{
+ "read": "2026-11-10T02:37:44.215317+00:00",
+ "query": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27SEAGATE+VILLAGE%25%27&outFields=LegalDescr%2CAssessedProp%2CTaxableProp%2CMarketImprv&returnGeometry=false&resultRecordCount=2000&f=json",
+ "seagate_village": {
+  "units": 716,
+  "legal_residence_4pct": 352,
+  "share": 49.2,
+  "regimes": 8
+ }
+}

@@ -1,0 +1,105 @@
+{
+ "made": "build_findings.py",
+ "note": "Do not edit by hand. Every value is read from the file named in its 'from'.",
+ "flip": {
+  "from": "data/2026-10-c/horry-flips.json",
+  "quick_resales": 344,
+  "company_resales": 143,
+  "company_gain_median": 75000,
+  "all_gain_median": 38000,
+  "houses": 221,
+  "house_buy_median": 265000,
+  "house_resale_median": 315000,
+  "house_gain_median": 56000,
+  "losses": 66,
+  "house_first_deed_earliest": "2024-11-21",
+  "resale_last": "2026-09-30"
+ },
+ "small_multifamily": {
+  "from": "data/2026-11-b/invest-strategies-small-multifamily/findings.json",
+  "buildings": 1268,
+  "within_1_mile": 910,
+  "placed": 1240,
+  "within_1_mile_pct": 73.4,
+  "sold_n": 58,
+  "sold_median": 520000,
+  "for_sale_n": 55,
+  "for_sale_median": 680000,
+  "listings_pulled": "2026-11-10T06:10:52.884102Z"
+ },
+ "dst": {
+  "from": "data/2026-10-d/invest-strategies-dst/formd_dst_summary.json",
+  "filings": 160,
+  "min_median": 100000,
+  "commission_median_pct": 6.0,
+  "horry_note": "DST ledger row 25 (CORRECTED); counted below from the DST page's parcel file.",
+  "horry_from": "data/2026-10-d/invest-strategies-dst/horry_dst_parcels.json",
+  "horry_parcels": 11,
+  "horry_trusts": 10,
+  "horry_market_value": 201747318
+ },
+ "prices": {
+  "from": "data/2026-11-b/invest-strategies-1031-exchange/findings.json",
+  "resale_house_median": 350000,
+  "resale_condo_median": 215000,
+  "sales": 12125,
+  "buyers_outside_sc_pct": 29.7,
+  "company_buyers": 1124,
+  "company_buyers_pct": 9.3
+ },
+ "ltr": {
+  "from": "data/2026-11-a/invest-rent-prices/findings.json",
+  "house_asking_rent": 2070,
+  "house_asking_rent_exact": 2074,
+  "zillow_month": "2026-09-30",
+  "fmr_3br_fy2027": 1823
+ },
+ "str": {
+  "from": "data/str-market.json",
+  "vendor": "AirROI",
+  "retrieved": "2026-11-03",
+  "dataAsOf": "2026-10-01",
+  "myrtle_beach_avg_gross": 25807,
+  "myrtle_beach_listings": 8698,
+  "myrtle_beach_median_month": 2530,
+  "top_market": "Murrells Inlet",
+  "murrells_inlet_avg_gross": 47603,
+  "markets": 8
+ },
+ "dscr": {
+  "from": "data/2026-11-b/invest-strategies-dscr-loans/findings.json",
+  "target_ratio": 1.25,
+  "cases": [
+   {
+    "name": "Longs, 3-bedroom house",
+    "pct_left_for_loan_at_1_25": 49.3,
+    "pct_tax_ins_dues": 30.7
+   },
+   {
+    "name": "Carolina Forest, 3-bedroom house",
+    "pct_left_for_loan_at_1_25": 45.6,
+    "pct_tax_ins_dues": 34.4
+   },
+   {
+    "name": "Carolina Forest, 2-bedroom condo",
+    "pct_left_for_loan_at_1_25": 43.5,
+    "pct_tax_ins_dues": 36.5
+   },
+   {
+    "name": "Myrtle Beach, 2-bedroom condo, yearly lease",
+    "pct_left_for_loan_at_1_25": 14.0,
+    "pct_tax_ins_dues": 66.0
+   },
+   {
+    "name": "Myrtle Beach oceanfront, 2-bedroom condo, nightly (75 percent counted)",
+    "pct_left_for_loan_at_1_25": -29.4,
+    "pct_tax_ins_dues": 109.4
+   },
+   {
+    "name": "Garden City Beach, 2-bedroom condo, nightly (75 percent counted)",
+    "pct_left_for_loan_at_1_25": 19.7,
+    "pct_tax_ins_dues": 60.3
+   }
+  ]
+ }
+}

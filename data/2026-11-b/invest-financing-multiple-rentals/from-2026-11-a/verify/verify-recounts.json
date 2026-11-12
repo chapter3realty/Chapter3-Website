@@ -1,0 +1,68 @@
+{
+ "repeat_buyers": {
+  "buyers": 255,
+  "homes": 645,
+  "share_pct": 4.9,
+  "people_incl_trusts": 138,
+  "of_which_trusts": 13,
+  "companies": 117,
+  "exactly_two": 192,
+  "median_price": 195000.0,
+  "condo_pct": 30.2,
+  "still_owned_by_buyer": 484,
+  "still_owned_tax_bill_outside_sc_pct": 50.4,
+  "left_out_noninvestor_buyers": 2
+ },
+ "owners_6pct": {
+  "owners_2plus": 5977,
+  "exactly_two": 4060,
+  "homes": 20581,
+  "people_incl_trusts": 4181,
+  "of_which_trusts": 634,
+  "companies": 1796,
+  "owners_10plus": 172,
+  "left_out_resort_timeshare_assoc_owners": 93,
+  "their_homes": 2709
+ },
+ "listings_horry": {
+  "calls": [
+   {
+    "url": "https://chapter3realty.com/homes/api/map?type=house&beds=3&has=county_horry",
+    "total": 2889
+   },
+   {
+    "url": "https://chapter3realty.com/homes/api/map?type=house&beds=3&max=195000&has=county_horry",
+    "total": 9
+   },
+   {
+    "url": "https://chapter3realty.com/homes/api/map?type=condo&beds=2&has=county_horry",
+    "total": 1756
+   },
+   {
+    "url": "https://chapter3realty.com/homes/api/map?type=condo&beds=2&max=195000&has=county_horry",
+    "total": 417
+   },
+   {
+    "url": "https://chapter3realty.com/homes/api/map?type=townhouse&beds=2&has=county_horry",
+    "total": 304
+   },
+   {
+    "url": "https://chapter3realty.com/homes/api/map?type=townhouse&beds=2&max=195000&has=county_horry",
+    "total": 26
+   }
+  ],
+  "feed_refreshed": "2026-11-04T14:00:28.538Z",
+  "house": {
+   "listings": 2889,
+   "at_or_under_195000": 9
+  },
+  "condo": {
+   "listings": 1756,
+   "at_or_under_195000": 417
+  },
+  "townhouse": {
+   "listings": 304,
+   "at_or_under_195000": 26
+  }
+ }
+}

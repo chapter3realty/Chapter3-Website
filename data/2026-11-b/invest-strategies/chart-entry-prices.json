@@ -1,0 +1,39 @@
+{
+ "title": "What each way in costs here, at the middle",
+ "unit": "USD",
+ "period": "sales recorded October 2025 to September 2026; DST minimums from SEC filings in the same 12 months",
+ "flip_period": "resales recorded October 2025 to September 2026; their first deeds from 2024-11-21",
+ "rows": [
+  {
+   "name": "A share of a DST",
+   "value": 100000,
+   "note": "usual minimum, not a price",
+   "strategy": "dst",
+   "reference": true
+  },
+  {
+   "name": "A condo (resale)",
+   "value": 215000,
+   "note": "middle sale, county deeds",
+   "strategy": "str"
+  },
+  {
+   "name": "A house resold within a year (first price)",
+   "value": 265000,
+   "note": "middle price paid before the resale",
+   "strategy": "flip"
+  },
+  {
+   "name": "A home other than a condo (resale)",
+   "value": 350000,
+   "note": "mostly houses, middle sale",
+   "strategy": "ltr"
+  },
+  {
+   "name": "A duplex, triplex or fourplex",
+   "value": 520000,
+   "note": "middle sale, county deeds",
+   "strategy": "small-multifamily"
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+{
+ "source": "Horry County AcclaimWeb DEED (001) recorded 2025-10-01..2026-09-30 (30,339 deeds, 2026-10-d pull); kept home sales from data/2026-10-d/sell-out-of-state-buyers/out-of-state-buyers.json",
+ "method": "Homes = distinct parcels per buyer. Buyer = the deed index's first-named grantee, letters and digits only. A couple listed in a different order on two deeds counts as two buyers, so repeat counts are a floor.",
+ "home_sales": 13194,
+ "unmatched": 0,
+ "buyers": 12714,
+ "buyers_by_count": {
+  "1": 12439,
+  "2": 202,
+  "10+": 4,
+  "5-9": 13,
+  "3-4": 56
+ },
+ "buyers_by_kind_and_count": {
+  "person": {
+   "1": 11071,
+   "2": 107,
+   "3-4": 17,
+   "5-9": 2
+  },
+  "company": {
+   "1": 1317,
+   "10+": 1,
+   "5-9": 10,
+   "2": 86,
+   "3-4": 34
+  },
+  "builder": {
+   "1": 48,
+   "3-4": 5,
+   "10+": 2,
+   "2": 8
+  },
+  "institution": {
+   "5-9": 1,
+   "1": 3,
+   "10+": 1,
+   "2": 1
+  }
+ },
+ "homes_bought_by_repeat_buyers_by_kind": {
+  "person": 279,
+  "company": 371,
+  "institution": 27,
+  "builder": 62
+ },
+ "repeat_person_or_company": {
+  "buyers": 257,
+  "homes": 650,
+  "share_of_all_home_sales_pct": 4.9,
+  "people": 126,
+  "companies": 131,
+  "homes_by_people": 279,
+  "homes_by_companies": 371,
+  "exactly_two": 193,
+  "condo_share_pct": 30.0,
+  "median_price": 195000.0,
+  "median_price_all_sales": 310000.0,
+  "tax_bill_outside_sc_pct": 50.3,
+  "from_builder_pct": 13.4
+ },
+ "people_two_homes_days_between": {
+  "n": 107,
+  "median": 50,
+  "same_day": 21,
+  "within_30": 44,
+  "over_180": 21
+ },
+ "people_two_homes_same_census_place": {
+  "n": 107,
+  "same": 66
+ }
+}

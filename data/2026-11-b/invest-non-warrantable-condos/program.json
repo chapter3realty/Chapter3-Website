@@ -1,0 +1,429 @@
+{
+ "read": "2026-11-10T02:38:50.607239+00:00",
+ "api": "https://chapter3realty.com/homes/api/map?",
+ "buildings": {
+  "mb-resort": {
+   "for_sale": 58,
+   "in_program": 36,
+   "share": 62.1,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mb+Resort",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mb+Resort&has=vacation_rental_program"
+   ]
+  },
+  "landmark": {
+   "for_sale": 92,
+   "in_program": 82,
+   "share": 89.1,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Landmark",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Landmark&has=vacation_rental_program"
+   ]
+  },
+  "sea-mist": {
+   "for_sale": 33,
+   "in_program": 24,
+   "share": 72.7,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sea+Mist&has=vacation_rental_program"
+   ]
+  },
+  "compass-cove": {
+   "for_sale": 35,
+   "in_program": 35,
+   "share": 100.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Compass+Cove&has=vacation_rental_program"
+   ]
+  },
+  "coral-beach": {
+   "for_sale": 40,
+   "in_program": 38,
+   "share": 95.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Coral+Beach&has=vacation_rental_program"
+   ]
+  },
+  "bay-view": {
+   "for_sale": 10,
+   "in_program": 10,
+   "share": 100.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+View+Resort&has=vacation_rental_program"
+   ]
+  },
+  "breakers": {
+   "for_sale": 4,
+   "in_program": 4,
+   "share": 100.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Breakers+Resort&has=vacation_rental_program"
+   ]
+  },
+  "camelot": {
+   "for_sale": 9,
+   "in_program": 7,
+   "share": 77.8,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Camelot&has=vacation_rental_program"
+   ]
+  },
+  "caribbean": {
+   "for_sale": 25,
+   "in_program": 25,
+   "share": 100.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caribbean&has=vacation_rental_program"
+   ]
+  },
+  "anderson-ocean-club": {
+   "for_sale": 5,
+   "in_program": 4,
+   "share": 80.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Anderson+Ocean&has=vacation_rental_program"
+   ]
+  },
+  "dunes-village": {
+   "for_sale": 26,
+   "in_program": 25,
+   "share": 96.2,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Dunes+Village&has=vacation_rental_program"
+   ]
+  },
+  "sand-dunes": {
+   "for_sale": 51,
+   "in_program": 45,
+   "share": 88.2,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sand+Dunes&has=vacation_rental_program"
+   ]
+  },
+  "caravelle": {
+   "for_sale": 45,
+   "in_program": 44,
+   "share": 97.8,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Caravelle&has=vacation_rental_program"
+   ]
+  },
+  "island-vista": {
+   "for_sale": 0,
+   "in_program": 0,
+   "share": null,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Island+Vista",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Island+Vista&has=vacation_rental_program"
+   ]
+  },
+  "grande-cayman": {
+   "for_sale": 22,
+   "in_program": 19,
+   "share": 86.4,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Grande+Cayman&has=vacation_rental_program"
+   ]
+  },
+  "ocean-reef": {
+   "for_sale": 32,
+   "in_program": 27,
+   "share": 84.4,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Reef&has=vacation_rental_program"
+   ]
+  },
+  "seawatch": {
+   "for_sale": 5,
+   "in_program": 4,
+   "share": 80.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=SeaWatch&has=vacation_rental_program"
+   ]
+  },
+  "margate": {
+   "for_sale": 8,
+   "in_program": 4,
+   "share": 50.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Margate&has=vacation_rental_program"
+   ]
+  },
+  "brighton": {
+   "for_sale": 9,
+   "in_program": 6,
+   "share": 66.7,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Brighton&has=vacation_rental_program"
+   ]
+  },
+  "royale-palms": {
+   "for_sale": 14,
+   "in_program": 9,
+   "share": 64.3,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Royale+Palms&has=vacation_rental_program"
+   ]
+  },
+  "avista": {
+   "for_sale": 11,
+   "in_program": 10,
+   "share": 90.9,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Avista&has=vacation_rental_program"
+   ]
+  },
+  "ocean-drive-beach-golf": {
+   "for_sale": 0,
+   "in_program": 0,
+   "share": null,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Drive+Beach",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Drive+Beach&has=vacation_rental_program"
+   ]
+  },
+  "bay-watch": {
+   "for_sale": 46,
+   "in_program": 44,
+   "share": 95.7,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bay+Watch&has=vacation_rental_program"
+   ]
+  },
+  "beach-cove": {
+   "for_sale": 29,
+   "in_program": 29,
+   "share": 100.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Cove&has=vacation_rental_program"
+   ]
+  },
+  "prince": {
+   "for_sale": 7,
+   "in_program": 6,
+   "share": 85.7,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Prince+Resort&has=vacation_rental_program"
+   ]
+  },
+  "towers-on-the-grove": {
+   "for_sale": 3,
+   "in_program": 3,
+   "share": 100.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Towers+On+The+Grove&has=vacation_rental_program"
+   ]
+  },
+  "north-beach-towers": {
+   "for_sale": 10,
+   "in_program": 10,
+   "share": 100.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=North+Beach+Tower&has=vacation_rental_program"
+   ]
+  },
+  "ocean-creek": {
+   "for_sale": 34,
+   "in_program": 19,
+   "share": 55.9,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Creek&has=vacation_rental_program"
+   ]
+  },
+  "monterey-bay": {
+   "for_sale": 29,
+   "in_program": 23,
+   "share": 79.3,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Monterey+Bay&has=vacation_rental_program"
+   ]
+  },
+  "bluewater": {
+   "for_sale": 37,
+   "in_program": 31,
+   "share": 83.8,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Bluewater&has=vacation_rental_program"
+   ]
+  },
+  "palace": {
+   "for_sale": 25,
+   "in_program": 21,
+   "share": 84.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Palace&has=vacation_rental_program"
+   ]
+  },
+  "beach-colony": {
+   "for_sale": 21,
+   "in_program": 19,
+   "share": 90.5,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Beach+Colony&has=vacation_rental_program"
+   ]
+  },
+  "meridian-plaza": {
+   "for_sale": 17,
+   "in_program": 12,
+   "share": 70.6,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Meridian&has=vacation_rental_program"
+   ]
+  },
+  "holiday-sands": {
+   "for_sale": 15,
+   "in_program": 13,
+   "share": 86.7,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Holiday+Sands&has=vacation_rental_program"
+   ]
+  },
+  "sandy-beach": {
+   "for_sale": 11,
+   "in_program": 10,
+   "share": 90.9,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sandy+Beach&has=vacation_rental_program"
+   ]
+  },
+  "carolina-winds": {
+   "for_sale": 13,
+   "in_program": 11,
+   "share": 84.6,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolina+Winds&has=vacation_rental_program"
+   ]
+  },
+  "maisons-sur-mer": {
+   "for_sale": 14,
+   "in_program": 3,
+   "share": 21.4,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Maisons+Sur&has=vacation_rental_program"
+   ]
+  },
+  "sands-ocean": {
+   "for_sale": 16,
+   "in_program": 11,
+   "share": 68.8,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Sands+Ocean&has=vacation_rental_program"
+   ]
+  },
+  "ocean-forest-plaza": {
+   "for_sale": 14,
+   "in_program": 5,
+   "share": 35.7,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Ocean+Forest+Pl&has=vacation_rental_program"
+   ]
+  },
+  "south-hampton": {
+   "for_sale": 13,
+   "in_program": 9,
+   "share": 69.2,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=South+Hampton&has=vacation_rental_program"
+   ]
+  },
+  "crescent-shores": {
+   "for_sale": 14,
+   "in_program": 7,
+   "share": 50.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Crescent+Shores&has=vacation_rental_program"
+   ]
+  },
+  "holiday-pavilion": {
+   "for_sale": 15,
+   "in_program": 12,
+   "share": 80.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Pavilion&has=vacation_rental_program"
+   ]
+  },
+  "boardwalk": {
+   "for_sale": 12,
+   "in_program": 12,
+   "share": 100.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Boardwalk+Oceanfront&has=vacation_rental_program"
+   ]
+  },
+  "carolinian": {
+   "for_sale": 11,
+   "in_program": 7,
+   "share": 63.6,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Carolinian&has=vacation_rental_program"
+   ]
+  },
+  "oceans-one": {
+   "for_sale": 11,
+   "in_program": 9,
+   "share": 81.8,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Oceans+One&has=vacation_rental_program"
+   ]
+  },
+  "patricia-grand": {
+   "for_sale": 8,
+   "in_program": 8,
+   "share": 100.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Patricia+Grand&has=vacation_rental_program"
+   ]
+  },
+  "mar-vista-grande": {
+   "for_sale": 6,
+   "in_program": 3,
+   "share": 50.0,
+   "calls": [
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista",
+    "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Mar+Vista&has=vacation_rental_program"
+   ]
+  }
+ }
+}

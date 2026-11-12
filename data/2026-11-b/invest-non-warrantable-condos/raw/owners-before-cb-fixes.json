@@ -1,0 +1,2196 @@
+{
+ "read": "2026-11-10T02:43:31.583619+00:00",
+ "source": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query",
+ "regimes_file": "../invest-condo-buildings/regimes.json",
+ "buildings": {
+  "mb-resort": {
+   "regimes": {
+    "MYRTLEBEACHRESORT": {
+     "units": 244,
+     "legal_residence_4pct": 11,
+     "legal_residence_share": 4.5,
+     "not_legal_residence_share": 95.5,
+     "top_owner_units": 4,
+     "top_owner_share": 1.6,
+     "top_owner_kind": "company",
+     "owners": 227,
+     "owners_with_2plus_units": 11,
+     "units_held_by_multi_owners": 28,
+     "out_of_state_owner_units": 182,
+     "out_of_state_share": 74.6,
+     "landuse_first_digit": {
+      "3xx": 2,
+      "1xx": 242
+     }
+    }
+   },
+   "building": {
+    "units": 244,
+    "legal_residence_4pct": 11,
+    "legal_residence_share": 4.5,
+    "not_legal_residence_share": 95.5,
+    "top_owner_units": 4,
+    "top_owner_share": 1.6,
+    "top_owner_kind": "company",
+    "owners": 227,
+    "owners_with_2plus_units": 11,
+    "units_held_by_multi_owners": 28,
+    "out_of_state_owner_units": 182,
+    "out_of_state_share": 74.6,
+    "landuse_first_digit": {
+     "3xx": 2,
+     "1xx": 242
+    }
+   }
+  },
+  "landmark": {
+   "regimes": {
+    "LANDMARKHPRPHI": {
+     "units": 340,
+     "legal_residence_4pct": 8,
+     "legal_residence_share": 2.4,
+     "not_legal_residence_share": 97.6,
+     "top_owner_units": 14,
+     "top_owner_share": 4.1,
+     "top_owner_kind": "company",
+     "owners": 307,
+     "owners_with_2plus_units": 21,
+     "units_held_by_multi_owners": 54,
+     "out_of_state_owner_units": 268,
+     "out_of_state_share": 78.8,
+     "landuse_first_digit": {
+      "1xx": 339,
+      "3xx": 1
+     }
+    },
+    "LANDMARKHPRPHII": {
+     "units": 231,
+     "legal_residence_4pct": 12,
+     "legal_residence_share": 5.2,
+     "not_legal_residence_share": 94.8,
+     "top_owner_units": 4,
+     "top_owner_share": 1.7,
+     "top_owner_kind": "person or trust",
+     "owners": 210,
+     "owners_with_2plus_units": 14,
+     "units_held_by_multi_owners": 35,
+     "out_of_state_owner_units": 141,
+     "out_of_state_share": 61.0,
+     "landuse_first_digit": {
+      "1xx": 231
+     }
+    }
+   },
+   "building": {
+    "units": 571,
+    "legal_residence_4pct": 20,
+    "legal_residence_share": 3.5,
+    "not_legal_residence_share": 96.5,
+    "top_owner_units": 14,
+    "top_owner_share": 2.5,
+    "top_owner_kind": "company",
+    "owners": 501,
+    "owners_with_2plus_units": 41,
+    "units_held_by_multi_owners": 111,
+    "out_of_state_owner_units": 409,
+    "out_of_state_share": 71.6,
+    "landuse_first_digit": {
+     "1xx": 570,
+     "3xx": 1
+    }
+   }
+  },
+  "sea-mist": {
+   "regimes": {
+    "TIDESDRIFTWDOASISHPR": {
+     "units": 271,
+     "legal_residence_4pct": 18,
+     "legal_residence_share": 6.6,
+     "not_legal_residence_share": 93.4,
+     "top_owner_units": 5,
+     "top_owner_share": 1.8,
+     "top_owner_kind": "company",
+     "owners": 244,
+     "owners_with_2plus_units": 22,
+     "units_held_by_multi_owners": 49,
+     "out_of_state_owner_units": 181,
+     "out_of_state_share": 66.8,
+     "landuse_first_digit": {
+      "1xx": 271
+     }
+    }
+   },
+   "building": {
+    "units": 271,
+    "legal_residence_4pct": 18,
+    "legal_residence_share": 6.6,
+    "not_legal_residence_share": 93.4,
+    "top_owner_units": 5,
+    "top_owner_share": 1.8,
+    "top_owner_kind": "company",
+    "owners": 244,
+    "owners_with_2plus_units": 22,
+    "units_held_by_multi_owners": 49,
+    "out_of_state_owner_units": 181,
+    "out_of_state_share": 66.8,
+    "landuse_first_digit": {
+     "1xx": 271
+    }
+   }
+  },
+  "compass-cove": {
+   "regimes": {
+    "PINNACLEOCEANFRTTOWER": {
+     "units": 293,
+     "legal_residence_4pct": 3,
+     "legal_residence_share": 1.0,
+     "not_legal_residence_share": 99.0,
+     "top_owner_units": 7,
+     "top_owner_share": 2.4,
+     "top_owner_kind": "company",
+     "owners": 257,
+     "owners_with_2plus_units": 23,
+     "units_held_by_multi_owners": 59,
+     "out_of_state_owner_units": 228,
+     "out_of_state_share": 77.8,
+     "landuse_first_digit": {
+      "1xx": 291,
+      "3xx": 2
+     }
+    },
+    "COMPASSCOVENTOWER": {
+     "units": 101,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 3,
+     "top_owner_share": 3.0,
+     "top_owner_kind": "person or trust",
+     "owners": 97,
+     "owners_with_2plus_units": 3,
+     "units_held_by_multi_owners": 7,
+     "out_of_state_owner_units": 84,
+     "out_of_state_share": 83.2,
+     "landuse_first_digit": {
+      "1xx": 99,
+      "3xx": 2
+     }
+    },
+    "SCHOONEROCEANFRTTOWER": {
+     "units": 92,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 10,
+     "top_owner_share": 10.9,
+     "top_owner_kind": "company",
+     "owners": 72,
+     "owners_with_2plus_units": 5,
+     "units_held_by_multi_owners": 25,
+     "out_of_state_owner_units": 74,
+     "out_of_state_share": 80.4,
+     "landuse_first_digit": {
+      "1xx": 92
+     }
+    }
+   },
+   "building": {
+    "units": 486,
+    "legal_residence_4pct": 3,
+    "legal_residence_share": 0.6,
+    "not_legal_residence_share": 99.4,
+    "top_owner_units": 14,
+    "top_owner_share": 2.9,
+    "top_owner_kind": "company",
+    "owners": 413,
+    "owners_with_2plus_units": 32,
+    "units_held_by_multi_owners": 105,
+    "out_of_state_owner_units": 386,
+    "out_of_state_share": 79.4,
+    "landuse_first_digit": {
+     "1xx": 482,
+     "3xx": 4
+    }
+   }
+  },
+  "coral-beach": {
+   "regimes": {
+    "CORALBEACHHPR": {
+     "units": 295,
+     "legal_residence_4pct": 2,
+     "legal_residence_share": 0.7,
+     "not_legal_residence_share": 99.3,
+     "top_owner_units": 3,
+     "top_owner_share": 1.0,
+     "top_owner_kind": "company",
+     "owners": 272,
+     "owners_with_2plus_units": 21,
+     "units_held_by_multi_owners": 44,
+     "out_of_state_owner_units": 235,
+     "out_of_state_share": 79.7,
+     "landuse_first_digit": {
+      "1xx": 295
+     }
+    }
+   },
+   "building": {
+    "units": 295,
+    "legal_residence_4pct": 2,
+    "legal_residence_share": 0.7,
+    "not_legal_residence_share": 99.3,
+    "top_owner_units": 3,
+    "top_owner_share": 1.0,
+    "top_owner_kind": "company",
+    "owners": 272,
+    "owners_with_2plus_units": 21,
+    "units_held_by_multi_owners": 44,
+    "out_of_state_owner_units": 235,
+    "out_of_state_share": 79.7,
+    "landuse_first_digit": {
+     "1xx": 295
+    }
+   }
+  },
+  "bay-view": {
+   "regimes": {
+    "BAYVIEWHPRPHI": {
+     "units": 183,
+     "legal_residence_4pct": 2,
+     "legal_residence_share": 1.1,
+     "not_legal_residence_share": 98.9,
+     "top_owner_units": 6,
+     "top_owner_share": 3.3,
+     "top_owner_kind": "person or trust",
+     "owners": 157,
+     "owners_with_2plus_units": 15,
+     "units_held_by_multi_owners": 41,
+     "out_of_state_owner_units": 155,
+     "out_of_state_share": 84.7,
+     "landuse_first_digit": {
+      "1xx": 183
+     }
+    }
+   },
+   "building": {
+    "units": 183,
+    "legal_residence_4pct": 2,
+    "legal_residence_share": 1.1,
+    "not_legal_residence_share": 98.9,
+    "top_owner_units": 6,
+    "top_owner_share": 3.3,
+    "top_owner_kind": "person or trust",
+    "owners": 157,
+    "owners_with_2plus_units": 15,
+    "units_held_by_multi_owners": 41,
+    "out_of_state_owner_units": 155,
+    "out_of_state_share": 84.7,
+    "landuse_first_digit": {
+     "1xx": 183
+    }
+   }
+  },
+  "breakers": {
+   "regimes": {
+    "BREAKERSCONDOTOWER": {
+     "units": 179,
+     "legal_residence_4pct": 1,
+     "legal_residence_share": 0.6,
+     "not_legal_residence_share": 99.4,
+     "top_owner_units": 7,
+     "top_owner_share": 3.9,
+     "top_owner_kind": "company",
+     "owners": 145,
+     "owners_with_2plus_units": 19,
+     "units_held_by_multi_owners": 53,
+     "out_of_state_owner_units": 158,
+     "out_of_state_share": 88.3,
+     "landuse_first_digit": {
+      "1xx": 175,
+      "3xx": 4
+     }
+    }
+   },
+   "building": {
+    "units": 179,
+    "legal_residence_4pct": 1,
+    "legal_residence_share": 0.6,
+    "not_legal_residence_share": 99.4,
+    "top_owner_units": 7,
+    "top_owner_share": 3.9,
+    "top_owner_kind": "company",
+    "owners": 145,
+    "owners_with_2plus_units": 19,
+    "units_held_by_multi_owners": 53,
+    "out_of_state_owner_units": 158,
+    "out_of_state_share": 88.3,
+    "landuse_first_digit": {
+     "1xx": 175,
+     "3xx": 4
+    }
+   }
+  },
+  "camelot": {
+   "regimes": {
+    "CAMELOTBYTHESEAHPR": {
+     "units": 232,
+     "legal_residence_4pct": 4,
+     "legal_residence_share": 1.7,
+     "not_legal_residence_share": 98.3,
+     "top_owner_units": 30,
+     "top_owner_share": 12.9,
+     "top_owner_kind": "company",
+     "owners": 173,
+     "owners_with_2plus_units": 22,
+     "units_held_by_multi_owners": 81,
+     "out_of_state_owner_units": 163,
+     "out_of_state_share": 70.3,
+     "landuse_first_digit": {
+      "1xx": 231,
+      "3xx": 1
+     }
+    }
+   },
+   "building": {
+    "units": 232,
+    "legal_residence_4pct": 4,
+    "legal_residence_share": 1.7,
+    "not_legal_residence_share": 98.3,
+    "top_owner_units": 30,
+    "top_owner_share": 12.9,
+    "top_owner_kind": "company",
+    "owners": 173,
+    "owners_with_2plus_units": 22,
+    "units_held_by_multi_owners": 81,
+    "out_of_state_owner_units": 163,
+    "out_of_state_share": 70.3,
+    "landuse_first_digit": {
+     "1xx": 231,
+     "3xx": 1
+    }
+   }
+  },
+  "caribbean": {
+   "regimes": {
+    "CARIBBEANOCEANFRTTWR": {
+     "units": 196,
+     "legal_residence_4pct": 2,
+     "legal_residence_share": 1.0,
+     "not_legal_residence_share": 99.0,
+     "top_owner_units": 14,
+     "top_owner_share": 7.1,
+     "top_owner_kind": "company",
+     "owners": 164,
+     "owners_with_2plus_units": 12,
+     "units_held_by_multi_owners": 44,
+     "out_of_state_owner_units": 165,
+     "out_of_state_share": 84.2,
+     "landuse_first_digit": {
+      "1xx": 196
+     }
+    },
+    "CARIBBEANTOWERHPR": {
+     "units": 173,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 6,
+     "top_owner_share": 3.5,
+     "top_owner_kind": "company",
+     "owners": 157,
+     "owners_with_2plus_units": 9,
+     "units_held_by_multi_owners": 25,
+     "out_of_state_owner_units": 150,
+     "out_of_state_share": 86.7,
+     "landuse_first_digit": {
+      "1xx": 169,
+      "3xx": 4
+     }
+    }
+   },
+   "building": {
+    "units": 369,
+    "legal_residence_4pct": 2,
+    "legal_residence_share": 0.5,
+    "not_legal_residence_share": 99.5,
+    "top_owner_units": 14,
+    "top_owner_share": 3.8,
+    "top_owner_kind": "company",
+    "owners": 315,
+    "owners_with_2plus_units": 22,
+    "units_held_by_multi_owners": 76,
+    "out_of_state_owner_units": 315,
+    "out_of_state_share": 85.4,
+    "landuse_first_digit": {
+     "1xx": 365,
+     "3xx": 4
+    }
+   }
+  },
+  "anderson-ocean-club": {
+   "regimes": {
+    "ANDERSONOCEANCLUBHPR": {
+     "units": 314,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 172,
+     "top_owner_share": 54.8,
+     "top_owner_kind": "company",
+     "owners": 86,
+     "owners_with_2plus_units": 13,
+     "units_held_by_multi_owners": 241,
+     "out_of_state_owner_units": 77,
+     "out_of_state_share": 24.5,
+     "landuse_first_digit": {
+      "1xx": 312,
+      "3xx": 2
+     }
+    }
+   },
+   "building": {
+    "units": 314,
+    "legal_residence_4pct": 0,
+    "legal_residence_share": 0.0,
+    "not_legal_residence_share": 100.0,
+    "top_owner_units": 172,
+    "top_owner_share": 54.8,
+    "top_owner_kind": "company",
+    "owners": 86,
+    "owners_with_2plus_units": 13,
+    "units_held_by_multi_owners": 241,
+    "out_of_state_owner_units": 77,
+    "out_of_state_share": 24.5,
+    "landuse_first_digit": {
+     "1xx": 312,
+     "3xx": 2
+    }
+   }
+  },
+  "dunes-village": {
+   "regimes": {
+    "DUNESVILLAGEHPR": {
+     "units": 269,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 16,
+     "top_owner_share": 5.9,
+     "top_owner_kind": "company",
+     "owners": 220,
+     "owners_with_2plus_units": 28,
+     "units_held_by_multi_owners": 77,
+     "out_of_state_owner_units": 231,
+     "out_of_state_share": 85.9,
+     "landuse_first_digit": {
+      "1xx": 267,
+      "5xx": 1,
+      "3xx": 1
+     }
+    }
+   },
+   "building": {
+    "units": 269,
+    "legal_residence_4pct": 0,
+    "legal_residence_share": 0.0,
+    "not_legal_residence_share": 100.0,
+    "top_owner_units": 16,
+    "top_owner_share": 5.9,
+    "top_owner_kind": "company",
+    "owners": 220,
+    "owners_with_2plus_units": 28,
+    "units_held_by_multi_owners": 77,
+    "out_of_state_owner_units": 231,
+    "out_of_state_share": 85.9,
+    "landuse_first_digit": {
+     "1xx": 267,
+     "5xx": 1,
+     "3xx": 1
+    }
+   }
+  },
+  "sand-dunes": {
+   "regimes": {
+    "SANDSDUNESHPRPHI": {
+     "units": 61,
+     "legal_residence_4pct": 4,
+     "legal_residence_share": 6.6,
+     "not_legal_residence_share": 93.4,
+     "top_owner_units": 3,
+     "top_owner_share": 4.9,
+     "top_owner_kind": "company",
+     "owners": 59,
+     "owners_with_2plus_units": 1,
+     "units_held_by_multi_owners": 3,
+     "out_of_state_owner_units": 42,
+     "out_of_state_share": 68.9,
+     "landuse_first_digit": {
+      "1xx": 61
+     }
+    },
+    "SANDDUNESOCEANFRONT": {
+     "units": 175,
+     "legal_residence_4pct": 5,
+     "legal_residence_share": 2.9,
+     "not_legal_residence_share": 97.1,
+     "top_owner_units": 35,
+     "top_owner_share": 20.0,
+     "top_owner_kind": "company",
+     "owners": 124,
+     "owners_with_2plus_units": 11,
+     "units_held_by_multi_owners": 62,
+     "out_of_state_owner_units": 106,
+     "out_of_state_share": 60.6,
+     "landuse_first_digit": {
+      "1xx": 172,
+      "3xx": 3
+     }
+    },
+    "SANDDUNESNORTHTOWER": {
+     "units": 133,
+     "legal_residence_4pct": 6,
+     "legal_residence_share": 4.5,
+     "not_legal_residence_share": 95.5,
+     "top_owner_units": 5,
+     "top_owner_share": 3.8,
+     "top_owner_kind": "company",
+     "owners": 126,
+     "owners_with_2plus_units": 3,
+     "units_held_by_multi_owners": 10,
+     "out_of_state_owner_units": 106,
+     "out_of_state_share": 79.7,
+     "landuse_first_digit": {
+      "3xx": 3,
+      "1xx": 130
+     }
+    }
+   },
+   "building": {
+    "units": 369,
+    "legal_residence_4pct": 15,
+    "legal_residence_share": 4.1,
+    "not_legal_residence_share": 95.9,
+    "top_owner_units": 43,
+    "top_owner_share": 11.7,
+    "top_owner_kind": "company",
+    "owners": 305,
+    "owners_with_2plus_units": 14,
+    "units_held_by_multi_owners": 78,
+    "out_of_state_owner_units": 254,
+    "out_of_state_share": 68.8,
+    "landuse_first_digit": {
+     "1xx": 363,
+     "3xx": 6
+    }
+   }
+  },
+  "caravelle": {
+   "regimes": {
+    "CARAVELLERESORTHPR": {
+     "units": 348,
+     "legal_residence_4pct": 4,
+     "legal_residence_share": 1.1,
+     "not_legal_residence_share": 98.9,
+     "top_owner_units": 36,
+     "top_owner_share": 10.3,
+     "top_owner_kind": "company",
+     "owners": 283,
+     "owners_with_2plus_units": 21,
+     "units_held_by_multi_owners": 86,
+     "out_of_state_owner_units": 224,
+     "out_of_state_share": 64.4,
+     "landuse_first_digit": {
+      "1xx": 348
+     }
+    },
+    "CARAVELLETOWERHPR": {
+     "units": 55,
+     "legal_residence_4pct": 5,
+     "legal_residence_share": 9.1,
+     "not_legal_residence_share": 90.9,
+     "top_owner_units": 3,
+     "top_owner_share": 5.5,
+     "top_owner_kind": "company",
+     "owners": 52,
+     "owners_with_2plus_units": 2,
+     "units_held_by_multi_owners": 5,
+     "out_of_state_owner_units": 37,
+     "out_of_state_share": 67.3,
+     "landuse_first_digit": {
+      "1xx": 54,
+      "3xx": 1
+     }
+    }
+   },
+   "building": {
+    "units": 403,
+    "legal_residence_4pct": 9,
+    "legal_residence_share": 2.2,
+    "not_legal_residence_share": 97.8,
+    "top_owner_units": 38,
+    "top_owner_share": 9.4,
+    "top_owner_kind": "company",
+    "owners": 331,
+    "owners_with_2plus_units": 21,
+    "units_held_by_multi_owners": 93,
+    "out_of_state_owner_units": 261,
+    "out_of_state_share": 64.8,
+    "landuse_first_digit": {
+     "1xx": 402,
+     "3xx": 1
+    }
+   }
+  },
+  "grande-cayman": {
+   "regimes": {
+    "LONGBAYRESORTHPR": {
+     "units": 290,
+     "legal_residence_4pct": 1,
+     "legal_residence_share": 0.3,
+     "not_legal_residence_share": 99.7,
+     "top_owner_units": 8,
+     "top_owner_share": 2.8,
+     "top_owner_kind": "company",
+     "owners": 258,
+     "owners_with_2plus_units": 20,
+     "units_held_by_multi_owners": 52,
+     "out_of_state_owner_units": 226,
+     "out_of_state_share": 77.9,
+     "landuse_first_digit": {
+      "1xx": 286,
+      "3xx": 4
+     }
+    }
+   },
+   "building": {
+    "units": 290,
+    "legal_residence_4pct": 1,
+    "legal_residence_share": 0.3,
+    "not_legal_residence_share": 99.7,
+    "top_owner_units": 8,
+    "top_owner_share": 2.8,
+    "top_owner_kind": "company",
+    "owners": 258,
+    "owners_with_2plus_units": 20,
+    "units_held_by_multi_owners": 52,
+    "out_of_state_owner_units": 226,
+    "out_of_state_share": 77.9,
+    "landuse_first_digit": {
+     "1xx": 286,
+     "3xx": 4
+    }
+   }
+  },
+  "ocean-reef": {
+   "regimes": {
+    "OCEANREEFRESORTST": {
+     "units": 92,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 3,
+     "top_owner_share": 3.3,
+     "top_owner_kind": "person or trust",
+     "owners": 85,
+     "owners_with_2plus_units": 6,
+     "units_held_by_multi_owners": 13,
+     "out_of_state_owner_units": 74,
+     "out_of_state_share": 80.4,
+     "landuse_first_digit": {
+      "1xx": 91,
+      "3xx": 1
+     }
+    },
+    "OCEANREEFRSRTNTOWER": {
+     "units": 255,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 11,
+     "top_owner_share": 4.3,
+     "top_owner_kind": "company",
+     "owners": 197,
+     "owners_with_2plus_units": 27,
+     "units_held_by_multi_owners": 85,
+     "out_of_state_owner_units": 210,
+     "out_of_state_share": 82.4,
+     "landuse_first_digit": {
+      "1xx": 255
+     }
+    }
+   },
+   "building": {
+    "units": 347,
+    "legal_residence_4pct": 0,
+    "legal_residence_share": 0.0,
+    "not_legal_residence_share": 100.0,
+    "top_owner_units": 11,
+    "top_owner_share": 3.2,
+    "top_owner_kind": "company",
+    "owners": 270,
+    "owners_with_2plus_units": 40,
+    "units_held_by_multi_owners": 117,
+    "out_of_state_owner_units": 284,
+    "out_of_state_share": 81.8,
+    "landuse_first_digit": {
+     "1xx": 346,
+     "3xx": 1
+    }
+   }
+  },
+  "seawatch": {
+   "regimes": {
+    "SEAWATCHNTOWERHPR": {
+     "units": 248,
+     "legal_residence_4pct": 7,
+     "legal_residence_share": 2.8,
+     "not_legal_residence_share": 97.2,
+     "top_owner_units": 50,
+     "top_owner_share": 20.2,
+     "top_owner_kind": "company",
+     "owners": 174,
+     "owners_with_2plus_units": 21,
+     "units_held_by_multi_owners": 95,
+     "out_of_state_owner_units": 144,
+     "out_of_state_share": 58.1,
+     "landuse_first_digit": {
+      "1xx": 245,
+      "3xx": 3
+     }
+    },
+    "SEAWATCHTOWERSHPR": {
+     "units": 127,
+     "legal_residence_4pct": 1,
+     "legal_residence_share": 0.8,
+     "not_legal_residence_share": 99.2,
+     "top_owner_units": 16,
+     "top_owner_share": 12.6,
+     "top_owner_kind": "company",
+     "owners": 97,
+     "owners_with_2plus_units": 5,
+     "units_held_by_multi_owners": 35,
+     "out_of_state_owner_units": 85,
+     "out_of_state_share": 66.9,
+     "landuse_first_digit": {
+      "1xx": 127
+     }
+    },
+    "SEAWATCHTOWERSHPRI": {
+     "units": 97,
+     "legal_residence_4pct": 2,
+     "legal_residence_share": 2.1,
+     "not_legal_residence_share": 97.9,
+     "top_owner_units": 28,
+     "top_owner_share": 28.9,
+     "top_owner_kind": "company",
+     "owners": 69,
+     "owners_with_2plus_units": 2,
+     "units_held_by_multi_owners": 30,
+     "out_of_state_owner_units": 57,
+     "out_of_state_share": 58.8,
+     "landuse_first_digit": {
+      "1xx": 96,
+      "3xx": 1
+     }
+    }
+   },
+   "building": {
+    "units": 472,
+    "legal_residence_4pct": 10,
+    "legal_residence_share": 2.1,
+    "not_legal_residence_share": 97.9,
+    "top_owner_units": 94,
+    "top_owner_share": 19.9,
+    "top_owner_kind": "company",
+    "owners": 323,
+    "owners_with_2plus_units": 38,
+    "units_held_by_multi_owners": 187,
+    "out_of_state_owner_units": 286,
+    "out_of_state_share": 60.6,
+    "landuse_first_digit": {
+     "1xx": 468,
+     "3xx": 4
+    }
+   }
+  },
+  "margate": {
+   "regimes": {
+    "MARGATETOWERHPRPHI": {
+     "units": 252,
+     "legal_residence_4pct": 46,
+     "legal_residence_share": 18.3,
+     "not_legal_residence_share": 81.7,
+     "top_owner_units": 2,
+     "top_owner_share": 0.8,
+     "top_owner_kind": "company",
+     "owners": 247,
+     "owners_with_2plus_units": 5,
+     "units_held_by_multi_owners": 10,
+     "out_of_state_owner_units": 175,
+     "out_of_state_share": 69.4,
+     "landuse_first_digit": {
+      "1xx": 252
+     }
+    }
+   },
+   "building": {
+    "units": 252,
+    "legal_residence_4pct": 46,
+    "legal_residence_share": 18.3,
+    "not_legal_residence_share": 81.7,
+    "top_owner_units": 2,
+    "top_owner_share": 0.8,
+    "top_owner_kind": "company",
+    "owners": 247,
+    "owners_with_2plus_units": 5,
+    "units_held_by_multi_owners": 10,
+    "out_of_state_owner_units": 175,
+    "out_of_state_share": 69.4,
+    "landuse_first_digit": {
+     "1xx": 252
+    }
+   }
+  },
+  "brighton": {
+   "regimes": {
+    "BRIGHTONKINGSTONPLAN": {
+     "units": 1,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 1,
+     "top_owner_share": 100.0,
+     "top_owner_kind": "person or trust",
+     "owners": 1,
+     "owners_with_2plus_units": 0,
+     "units_held_by_multi_owners": 0,
+     "out_of_state_owner_units": 1,
+     "out_of_state_share": 100.0,
+     "landuse_first_digit": {
+      "1xx": 1
+     }
+    },
+    "BRIGHTONKINGSTONPLANT": {
+     "units": 199,
+     "legal_residence_4pct": 15,
+     "legal_residence_share": 7.5,
+     "not_legal_residence_share": 92.5,
+     "top_owner_units": 2,
+     "top_owner_share": 1.0,
+     "top_owner_kind": "company",
+     "owners": 196,
+     "owners_with_2plus_units": 3,
+     "units_held_by_multi_owners": 6,
+     "out_of_state_owner_units": 165,
+     "out_of_state_share": 82.9,
+     "landuse_first_digit": {
+      "1xx": 198,
+      "3xx": 1
+     }
+    }
+   },
+   "building": {
+    "units": 200,
+    "legal_residence_4pct": 15,
+    "legal_residence_share": 7.5,
+    "not_legal_residence_share": 92.5,
+    "top_owner_units": 2,
+    "top_owner_share": 1.0,
+    "top_owner_kind": "company",
+    "owners": 197,
+    "owners_with_2plus_units": 3,
+    "units_held_by_multi_owners": 6,
+    "out_of_state_owner_units": 166,
+    "out_of_state_share": 83.0,
+    "landuse_first_digit": {
+     "1xx": 199,
+     "3xx": 1
+    }
+   }
+  },
+  "royale-palms": {
+   "regimes": {
+    "ROYALEPALMSHPRPHI": {
+     "units": 185,
+     "legal_residence_4pct": 12,
+     "legal_residence_share": 6.5,
+     "not_legal_residence_share": 93.5,
+     "top_owner_units": 5,
+     "top_owner_share": 2.7,
+     "top_owner_kind": "company",
+     "owners": 172,
+     "owners_with_2plus_units": 7,
+     "units_held_by_multi_owners": 20,
+     "out_of_state_owner_units": 146,
+     "out_of_state_share": 78.9,
+     "landuse_first_digit": {
+      "1xx": 185
+     }
+    }
+   },
+   "building": {
+    "units": 185,
+    "legal_residence_4pct": 12,
+    "legal_residence_share": 6.5,
+    "not_legal_residence_share": 93.5,
+    "top_owner_units": 5,
+    "top_owner_share": 2.7,
+    "top_owner_kind": "company",
+    "owners": 172,
+    "owners_with_2plus_units": 7,
+    "units_held_by_multi_owners": 20,
+    "out_of_state_owner_units": 146,
+    "out_of_state_share": 78.9,
+    "landuse_first_digit": {
+     "1xx": 185
+    }
+   }
+  },
+  "avista": {
+   "regimes": {
+    "AVISTAHPRPHII": {
+     "units": 186,
+     "legal_residence_4pct": 1,
+     "legal_residence_share": 0.5,
+     "not_legal_residence_share": 99.5,
+     "top_owner_units": 29,
+     "top_owner_share": 15.6,
+     "top_owner_kind": "company",
+     "owners": 130,
+     "owners_with_2plus_units": 12,
+     "units_held_by_multi_owners": 68,
+     "out_of_state_owner_units": 110,
+     "out_of_state_share": 59.1,
+     "landuse_first_digit": {
+      "1xx": 186
+     }
+    },
+    "AVISTAHPR": {
+     "units": 194,
+     "legal_residence_4pct": 3,
+     "legal_residence_share": 1.5,
+     "not_legal_residence_share": 98.5,
+     "top_owner_units": 40,
+     "top_owner_share": 20.6,
+     "top_owner_kind": "company",
+     "owners": 138,
+     "owners_with_2plus_units": 5,
+     "units_held_by_multi_owners": 61,
+     "out_of_state_owner_units": 119,
+     "out_of_state_share": 61.3,
+     "landuse_first_digit": {
+      "1xx": 194
+     }
+    }
+   },
+   "building": {
+    "units": 380,
+    "legal_residence_4pct": 4,
+    "legal_residence_share": 1.1,
+    "not_legal_residence_share": 98.9,
+    "top_owner_units": 69,
+    "top_owner_share": 18.2,
+    "top_owner_kind": "company",
+    "owners": 259,
+    "owners_with_2plus_units": 18,
+    "units_held_by_multi_owners": 139,
+    "out_of_state_owner_units": 229,
+    "out_of_state_share": 60.3,
+    "landuse_first_digit": {
+     "1xx": 380
+    }
+   }
+  },
+  "bay-watch": {
+   "regimes": {
+    "BAYWATCHRESORTHPR": {
+     "units": 532,
+     "legal_residence_4pct": 22,
+     "legal_residence_share": 4.1,
+     "not_legal_residence_share": 95.9,
+     "top_owner_units": 10,
+     "top_owner_share": 1.9,
+     "top_owner_kind": "company",
+     "owners": 482,
+     "owners_with_2plus_units": 34,
+     "units_held_by_multi_owners": 84,
+     "out_of_state_owner_units": 429,
+     "out_of_state_share": 80.6,
+     "landuse_first_digit": {
+      "1xx": 531,
+      "3xx": 1
+     }
+    }
+   },
+   "building": {
+    "units": 532,
+    "legal_residence_4pct": 22,
+    "legal_residence_share": 4.1,
+    "not_legal_residence_share": 95.9,
+    "top_owner_units": 10,
+    "top_owner_share": 1.9,
+    "top_owner_kind": "company",
+    "owners": 482,
+    "owners_with_2plus_units": 34,
+    "units_held_by_multi_owners": 84,
+    "out_of_state_owner_units": 429,
+    "out_of_state_share": 80.6,
+    "landuse_first_digit": {
+     "1xx": 531,
+     "3xx": 1
+    }
+   }
+  },
+  "beach-cove": {
+   "regimes": {
+    "BEACHCOVEOCNRSRTHPR": {
+     "units": 72,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 2,
+     "top_owner_share": 2.8,
+     "top_owner_kind": "company",
+     "owners": 68,
+     "owners_with_2plus_units": 4,
+     "units_held_by_multi_owners": 8,
+     "out_of_state_owner_units": 58,
+     "out_of_state_share": 80.6,
+     "landuse_first_digit": {
+      "1xx": 71,
+      "3xx": 1
+     }
+    },
+    "BEACHCOVEOCEANRESORT": {
+     "units": 149,
+     "legal_residence_4pct": 2,
+     "legal_residence_share": 1.3,
+     "not_legal_residence_share": 98.7,
+     "top_owner_units": 3,
+     "top_owner_share": 2.0,
+     "top_owner_kind": "company",
+     "owners": 140,
+     "owners_with_2plus_units": 7,
+     "units_held_by_multi_owners": 16,
+     "out_of_state_owner_units": 113,
+     "out_of_state_share": 75.8,
+     "landuse_first_digit": {
+      "1xx": 146,
+      "3xx": 3
+     }
+    },
+    "BCHCOVEOCNRESORT": {
+     "units": 81,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 4,
+     "top_owner_share": 4.9,
+     "top_owner_kind": "company",
+     "owners": 74,
+     "owners_with_2plus_units": 5,
+     "units_held_by_multi_owners": 12,
+     "out_of_state_owner_units": 68,
+     "out_of_state_share": 84.0,
+     "landuse_first_digit": {
+      "1xx": 81
+     }
+    },
+    "BCHCOVEOCRESORT": {
+     "units": 24,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 2,
+     "top_owner_share": 8.3,
+     "top_owner_kind": "person or trust",
+     "owners": 23,
+     "owners_with_2plus_units": 1,
+     "units_held_by_multi_owners": 2,
+     "out_of_state_owner_units": 20,
+     "out_of_state_share": 83.3,
+     "landuse_first_digit": {
+      "1xx": 24
+     }
+    },
+    "BEACHCOVEOCRESORT": {
+     "units": 2,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 1,
+     "top_owner_share": 50.0,
+     "top_owner_kind": "person or trust",
+     "owners": 2,
+     "owners_with_2plus_units": 0,
+     "units_held_by_multi_owners": 0,
+     "out_of_state_owner_units": 1,
+     "out_of_state_share": 50.0,
+     "landuse_first_digit": {
+      "1xx": 2
+     }
+    }
+   },
+   "building": {
+    "units": 328,
+    "legal_residence_4pct": 2,
+    "legal_residence_share": 0.6,
+    "not_legal_residence_share": 99.4,
+    "top_owner_units": 5,
+    "top_owner_share": 1.5,
+    "top_owner_kind": "company",
+    "owners": 292,
+    "owners_with_2plus_units": 25,
+    "units_held_by_multi_owners": 61,
+    "out_of_state_owner_units": 260,
+    "out_of_state_share": 79.3,
+    "landuse_first_digit": {
+     "1xx": 324,
+     "3xx": 4
+    }
+   }
+  },
+  "prince": {
+   "regimes": {
+    "PRINCECONDOCGPIER": {
+     "units": 262,
+     "legal_residence_4pct": 12,
+     "legal_residence_share": 4.6,
+     "not_legal_residence_share": 95.4,
+     "top_owner_units": 86,
+     "top_owner_share": 32.8,
+     "top_owner_kind": "company",
+     "owners": 122,
+     "owners_with_2plus_units": 7,
+     "units_held_by_multi_owners": 147,
+     "out_of_state_owner_units": 99,
+     "out_of_state_share": 37.8,
+     "landuse_first_digit": {
+      "1xx": 258,
+      "3xx": 4
+     }
+    }
+   },
+   "building": {
+    "units": 262,
+    "legal_residence_4pct": 12,
+    "legal_residence_share": 4.6,
+    "not_legal_residence_share": 95.4,
+    "top_owner_units": 86,
+    "top_owner_share": 32.8,
+    "top_owner_kind": "company",
+    "owners": 122,
+    "owners_with_2plus_units": 7,
+    "units_held_by_multi_owners": 147,
+    "out_of_state_owner_units": 99,
+    "out_of_state_share": 37.8,
+    "landuse_first_digit": {
+     "1xx": 258,
+     "3xx": 4
+    }
+   }
+  },
+  "towers-on-the-grove": {
+   "regimes": {
+    "TOWERSONTHEGROVEHPR": {
+     "units": 236,
+     "legal_residence_4pct": 2,
+     "legal_residence_share": 0.8,
+     "not_legal_residence_share": 99.2,
+     "top_owner_units": 137,
+     "top_owner_share": 58.1,
+     "top_owner_kind": "company",
+     "owners": 37,
+     "owners_with_2plus_units": 10,
+     "units_held_by_multi_owners": 209,
+     "out_of_state_owner_units": 223,
+     "out_of_state_share": 94.5,
+     "landuse_first_digit": {
+      "1xx": 234,
+      "3xx": 1,
+      "5xx": 1
+     }
+    }
+   },
+   "building": {
+    "units": 236,
+    "legal_residence_4pct": 2,
+    "legal_residence_share": 0.8,
+    "not_legal_residence_share": 99.2,
+    "top_owner_units": 137,
+    "top_owner_share": 58.1,
+    "top_owner_kind": "company",
+    "owners": 37,
+    "owners_with_2plus_units": 10,
+    "units_held_by_multi_owners": 209,
+    "out_of_state_owner_units": 223,
+    "out_of_state_share": 94.5,
+    "landuse_first_digit": {
+     "1xx": 234,
+     "3xx": 1,
+     "5xx": 1
+    }
+   }
+  },
+  "north-beach-towers": {
+   "regimes": {
+    "NORTHBEACHTOWERSHPR": {
+     "units": 339,
+     "legal_residence_4pct": 5,
+     "legal_residence_share": 1.5,
+     "not_legal_residence_share": 98.5,
+     "top_owner_units": 9,
+     "top_owner_share": 2.7,
+     "top_owner_kind": "company",
+     "owners": 301,
+     "owners_with_2plus_units": 25,
+     "units_held_by_multi_owners": 63,
+     "out_of_state_owner_units": 286,
+     "out_of_state_share": 84.4,
+     "landuse_first_digit": {
+      "1xx": 337,
+      "3xx": 2
+     }
+    }
+   },
+   "building": {
+    "units": 339,
+    "legal_residence_4pct": 5,
+    "legal_residence_share": 1.5,
+    "not_legal_residence_share": 98.5,
+    "top_owner_units": 9,
+    "top_owner_share": 2.7,
+    "top_owner_kind": "company",
+    "owners": 301,
+    "owners_with_2plus_units": 25,
+    "units_held_by_multi_owners": 63,
+    "out_of_state_owner_units": 286,
+    "out_of_state_share": 84.4,
+    "landuse_first_digit": {
+     "1xx": 337,
+     "3xx": 2
+    }
+   }
+  },
+  "ocean-creek": {
+   "regimes": {
+    "LODGEATOCEANCREEK": {
+     "units": 163,
+     "legal_residence_4pct": 13,
+     "legal_residence_share": 8.0,
+     "not_legal_residence_share": 92.0,
+     "top_owner_units": 2,
+     "top_owner_share": 1.2,
+     "top_owner_kind": "company",
+     "owners": 157,
+     "owners_with_2plus_units": 6,
+     "units_held_by_multi_owners": 12,
+     "out_of_state_owner_units": 125,
+     "out_of_state_share": 76.7,
+     "landuse_first_digit": {
+      "1xx": 163
+     }
+    }
+   },
+   "building": {
+    "units": 163,
+    "legal_residence_4pct": 13,
+    "legal_residence_share": 8.0,
+    "not_legal_residence_share": 92.0,
+    "top_owner_units": 2,
+    "top_owner_share": 1.2,
+    "top_owner_kind": "company",
+    "owners": 157,
+    "owners_with_2plus_units": 6,
+    "units_held_by_multi_owners": 12,
+    "out_of_state_owner_units": 125,
+    "out_of_state_share": 76.7,
+    "landuse_first_digit": {
+     "1xx": 163
+    }
+   }
+  },
+  "monterey-bay": {
+   "regimes": {
+    "MONTEREYBAYSUITESRST": {
+     "units": 195,
+     "legal_residence_4pct": 8,
+     "legal_residence_share": 4.1,
+     "not_legal_residence_share": 95.9,
+     "top_owner_units": 10,
+     "top_owner_share": 5.1,
+     "top_owner_kind": "company",
+     "owners": 178,
+     "owners_with_2plus_units": 9,
+     "units_held_by_multi_owners": 26,
+     "out_of_state_owner_units": 133,
+     "out_of_state_share": 68.2,
+     "landuse_first_digit": {
+      "1xx": 195
+     }
+    }
+   },
+   "building": {
+    "units": 195,
+    "legal_residence_4pct": 8,
+    "legal_residence_share": 4.1,
+    "not_legal_residence_share": 95.9,
+    "top_owner_units": 10,
+    "top_owner_share": 5.1,
+    "top_owner_kind": "company",
+    "owners": 178,
+    "owners_with_2plus_units": 9,
+    "units_held_by_multi_owners": 26,
+    "out_of_state_owner_units": 133,
+    "out_of_state_share": 68.2,
+    "landuse_first_digit": {
+     "1xx": 195
+    }
+   }
+  },
+  "palace": {
+   "regimes": {
+    "THEPALACE": {
+     "units": 302,
+     "legal_residence_4pct": 32,
+     "legal_residence_share": 10.6,
+     "not_legal_residence_share": 89.4,
+     "top_owner_units": 2,
+     "top_owner_share": 0.7,
+     "top_owner_kind": "person or trust",
+     "owners": 287,
+     "owners_with_2plus_units": 15,
+     "units_held_by_multi_owners": 30,
+     "out_of_state_owner_units": 198,
+     "out_of_state_share": 65.6,
+     "landuse_first_digit": {
+      "1xx": 298,
+      "3xx": 4
+     }
+    }
+   },
+   "building": {
+    "units": 302,
+    "legal_residence_4pct": 32,
+    "legal_residence_share": 10.6,
+    "not_legal_residence_share": 89.4,
+    "top_owner_units": 2,
+    "top_owner_share": 0.7,
+    "top_owner_kind": "person or trust",
+    "owners": 287,
+    "owners_with_2plus_units": 15,
+    "units_held_by_multi_owners": 30,
+    "out_of_state_owner_units": 198,
+    "out_of_state_share": 65.6,
+    "landuse_first_digit": {
+     "1xx": 298,
+     "3xx": 4
+    }
+   }
+  },
+  "holiday-sands": {
+   "regimes": {
+    "HOLIDAYSANDSSBEACH": {
+     "units": 119,
+     "legal_residence_4pct": 13,
+     "legal_residence_share": 10.9,
+     "not_legal_residence_share": 89.1,
+     "top_owner_units": 4,
+     "top_owner_share": 3.4,
+     "top_owner_kind": "company",
+     "owners": 112,
+     "owners_with_2plus_units": 4,
+     "units_held_by_multi_owners": 11,
+     "out_of_state_owner_units": 75,
+     "out_of_state_share": 63.0,
+     "landuse_first_digit": {
+      "1xx": 117,
+      "3xx": 2
+     }
+    }
+   },
+   "building": {
+    "units": 119,
+    "legal_residence_4pct": 13,
+    "legal_residence_share": 10.9,
+    "not_legal_residence_share": 89.1,
+    "top_owner_units": 4,
+    "top_owner_share": 3.4,
+    "top_owner_kind": "company",
+    "owners": 112,
+    "owners_with_2plus_units": 4,
+    "units_held_by_multi_owners": 11,
+    "out_of_state_owner_units": 75,
+    "out_of_state_share": 63.0,
+    "landuse_first_digit": {
+     "1xx": 117,
+     "3xx": 2
+    }
+   }
+  },
+  "carolinian": {
+   "regimes": {
+    "CAROLINIANRESORTHPR": {
+     "units": 134,
+     "legal_residence_4pct": 11,
+     "legal_residence_share": 8.2,
+     "not_legal_residence_share": 91.8,
+     "top_owner_units": 6,
+     "top_owner_share": 4.5,
+     "top_owner_kind": "company",
+     "owners": 126,
+     "owners_with_2plus_units": 4,
+     "units_held_by_multi_owners": 12,
+     "out_of_state_owner_units": 100,
+     "out_of_state_share": 74.6,
+     "landuse_first_digit": {
+      "1xx": 129,
+      "3xx": 5
+     }
+    }
+   },
+   "building": {
+    "units": 134,
+    "legal_residence_4pct": 11,
+    "legal_residence_share": 8.2,
+    "not_legal_residence_share": 91.8,
+    "top_owner_units": 6,
+    "top_owner_share": 4.5,
+    "top_owner_kind": "company",
+    "owners": 126,
+    "owners_with_2plus_units": 4,
+    "units_held_by_multi_owners": 12,
+    "out_of_state_owner_units": 100,
+    "out_of_state_share": 74.6,
+    "landuse_first_digit": {
+     "1xx": 129,
+     "3xx": 5
+    }
+   }
+  },
+  "oceans-one": {
+   "regimes": {
+    "OCEANSONESTOWERHPR": {
+     "units": 137,
+     "legal_residence_4pct": 3,
+     "legal_residence_share": 2.2,
+     "not_legal_residence_share": 97.8,
+     "top_owner_units": 14,
+     "top_owner_share": 10.2,
+     "top_owner_kind": "company",
+     "owners": 92,
+     "owners_with_2plus_units": 13,
+     "units_held_by_multi_owners": 58,
+     "out_of_state_owner_units": 98,
+     "out_of_state_share": 71.5,
+     "landuse_first_digit": {
+      "1xx": 137
+     }
+    }
+   },
+   "building": {
+    "units": 137,
+    "legal_residence_4pct": 3,
+    "legal_residence_share": 2.2,
+    "not_legal_residence_share": 97.8,
+    "top_owner_units": 14,
+    "top_owner_share": 10.2,
+    "top_owner_kind": "company",
+    "owners": 92,
+    "owners_with_2plus_units": 13,
+    "units_held_by_multi_owners": 58,
+    "out_of_state_owner_units": 98,
+    "out_of_state_share": 71.5,
+    "landuse_first_digit": {
+     "1xx": 137
+    }
+   }
+  },
+  "crescent-shores": {
+   "regimes": {
+    "CRESCENTSHORESHPR": {
+     "units": 232,
+     "legal_residence_4pct": 22,
+     "legal_residence_share": 9.5,
+     "not_legal_residence_share": 90.5,
+     "top_owner_units": 8,
+     "top_owner_share": 3.4,
+     "top_owner_kind": "association",
+     "owners": 220,
+     "owners_with_2plus_units": 5,
+     "units_held_by_multi_owners": 17,
+     "out_of_state_owner_units": 174,
+     "out_of_state_share": 75.0,
+     "landuse_first_digit": {
+      "1xx": 232
+     }
+    }
+   },
+   "building": {
+    "units": 232,
+    "legal_residence_4pct": 22,
+    "legal_residence_share": 9.5,
+    "not_legal_residence_share": 90.5,
+    "top_owner_units": 8,
+    "top_owner_share": 3.4,
+    "top_owner_kind": "association",
+    "owners": 220,
+    "owners_with_2plus_units": 5,
+    "units_held_by_multi_owners": 17,
+    "out_of_state_owner_units": 174,
+    "out_of_state_share": 75.0,
+    "landuse_first_digit": {
+     "1xx": 232
+    }
+   }
+  },
+  "mar-vista-grande": {
+   "regimes": {
+    "MARVISTAGRANDEHPR": {
+     "units": 162,
+     "legal_residence_4pct": 16,
+     "legal_residence_share": 9.9,
+     "not_legal_residence_share": 90.1,
+     "top_owner_units": 2,
+     "top_owner_share": 1.2,
+     "top_owner_kind": "person or trust",
+     "owners": 157,
+     "owners_with_2plus_units": 5,
+     "units_held_by_multi_owners": 10,
+     "out_of_state_owner_units": 123,
+     "out_of_state_share": 75.9,
+     "landuse_first_digit": {
+      "1xx": 162
+     }
+    }
+   },
+   "building": {
+    "units": 162,
+    "legal_residence_4pct": 16,
+    "legal_residence_share": 9.9,
+    "not_legal_residence_share": 90.1,
+    "top_owner_units": 2,
+    "top_owner_share": 1.2,
+    "top_owner_kind": "person or trust",
+    "owners": 157,
+    "owners_with_2plus_units": 5,
+    "units_held_by_multi_owners": 10,
+    "out_of_state_owner_units": 123,
+    "out_of_state_share": 75.9,
+    "landuse_first_digit": {
+     "1xx": 162
+    }
+   }
+  },
+  "patricia-grand": {
+   "regimes": {
+    "PATRICIAGRANDHPR": {
+     "units": 142,
+     "legal_residence_4pct": 1,
+     "legal_residence_share": 0.7,
+     "not_legal_residence_share": 99.3,
+     "top_owner_units": 4,
+     "top_owner_share": 2.8,
+     "top_owner_kind": "person or trust",
+     "owners": 115,
+     "owners_with_2plus_units": 16,
+     "units_held_by_multi_owners": 43,
+     "out_of_state_owner_units": 101,
+     "out_of_state_share": 71.1,
+     "landuse_first_digit": {
+      "1xx": 139,
+      "3xx": 3
+     }
+    }
+   },
+   "building": {
+    "units": 142,
+    "legal_residence_4pct": 1,
+    "legal_residence_share": 0.7,
+    "not_legal_residence_share": 99.3,
+    "top_owner_units": 4,
+    "top_owner_share": 2.8,
+    "top_owner_kind": "person or trust",
+    "owners": 115,
+    "owners_with_2plus_units": 16,
+    "units_held_by_multi_owners": 43,
+    "out_of_state_owner_units": 101,
+    "out_of_state_share": 71.1,
+    "landuse_first_digit": {
+     "1xx": 139,
+     "3xx": 3
+    }
+   }
+  },
+  "boardwalk": {
+   "regimes": {
+    "BOARDWALKOCEANFRTTWR": {
+     "units": 131,
+     "legal_residence_4pct": 1,
+     "legal_residence_share": 0.8,
+     "not_legal_residence_share": 99.2,
+     "top_owner_units": 12,
+     "top_owner_share": 9.2,
+     "top_owner_kind": "company",
+     "owners": 108,
+     "owners_with_2plus_units": 10,
+     "units_held_by_multi_owners": 33,
+     "out_of_state_owner_units": 114,
+     "out_of_state_share": 87.0,
+     "landuse_first_digit": {
+      "1xx": 131
+     }
+    }
+   },
+   "building": {
+    "units": 131,
+    "legal_residence_4pct": 1,
+    "legal_residence_share": 0.8,
+    "not_legal_residence_share": 99.2,
+    "top_owner_units": 12,
+    "top_owner_share": 9.2,
+    "top_owner_kind": "company",
+    "owners": 108,
+    "owners_with_2plus_units": 10,
+    "units_held_by_multi_owners": 33,
+    "out_of_state_owner_units": 114,
+    "out_of_state_share": 87.0,
+    "landuse_first_digit": {
+     "1xx": 131
+    }
+   }
+  },
+  "holiday-pavilion": {
+   "regimes": {
+    "HOLIDAYPAVILIONHPR": {
+     "units": 109,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 4,
+     "top_owner_share": 3.7,
+     "top_owner_kind": "person or trust",
+     "owners": 93,
+     "owners_with_2plus_units": 12,
+     "units_held_by_multi_owners": 28,
+     "out_of_state_owner_units": 90,
+     "out_of_state_share": 82.6,
+     "landuse_first_digit": {
+      "1xx": 108,
+      "3xx": 1
+     }
+    }
+   },
+   "building": {
+    "units": 109,
+    "legal_residence_4pct": 0,
+    "legal_residence_share": 0.0,
+    "not_legal_residence_share": 100.0,
+    "top_owner_units": 4,
+    "top_owner_share": 3.7,
+    "top_owner_kind": "person or trust",
+    "owners": 93,
+    "owners_with_2plus_units": 12,
+    "units_held_by_multi_owners": 28,
+    "out_of_state_owner_units": 90,
+    "out_of_state_share": 82.6,
+    "landuse_first_digit": {
+     "1xx": 108,
+     "3xx": 1
+    }
+   }
+  },
+  "bluewater": {
+   "regimes": {
+    "BLUEWATERVILLAS": {
+     "units": 199,
+     "legal_residence_4pct": 26,
+     "legal_residence_share": 13.1,
+     "not_legal_residence_share": 86.9,
+     "top_owner_units": 3,
+     "top_owner_share": 1.5,
+     "top_owner_kind": "company",
+     "owners": 191,
+     "owners_with_2plus_units": 7,
+     "units_held_by_multi_owners": 15,
+     "out_of_state_owner_units": 125,
+     "out_of_state_share": 62.8,
+     "landuse_first_digit": {
+      "1xx": 198,
+      "3xx": 1
+     }
+    },
+    "BLUEWATERVILLASPHI": {
+     "units": 28,
+     "legal_residence_4pct": 1,
+     "legal_residence_share": 3.6,
+     "not_legal_residence_share": 96.4,
+     "top_owner_units": 2,
+     "top_owner_share": 7.1,
+     "top_owner_kind": "company",
+     "owners": 26,
+     "owners_with_2plus_units": 2,
+     "units_held_by_multi_owners": 4,
+     "out_of_state_owner_units": 8,
+     "out_of_state_share": 28.6,
+     "landuse_first_digit": {
+      "1xx": 28
+     }
+    }
+   },
+   "building": {
+    "units": 227,
+    "legal_residence_4pct": 27,
+    "legal_residence_share": 11.9,
+    "not_legal_residence_share": 88.1,
+    "top_owner_units": 3,
+    "top_owner_share": 1.3,
+    "top_owner_kind": "company",
+    "owners": 217,
+    "owners_with_2plus_units": 9,
+    "units_held_by_multi_owners": 19,
+    "out_of_state_owner_units": 133,
+    "out_of_state_share": 58.6,
+    "landuse_first_digit": {
+     "1xx": 226,
+     "3xx": 1
+    }
+   }
+  },
+  "beach-colony": {
+   "regimes": {
+    "BEACHCOLONYRESORTII": {
+     "units": 78,
+     "legal_residence_4pct": 6,
+     "legal_residence_share": 7.7,
+     "not_legal_residence_share": 92.3,
+     "top_owner_units": 1,
+     "top_owner_share": 1.3,
+     "top_owner_kind": "person or trust",
+     "owners": 78,
+     "owners_with_2plus_units": 0,
+     "units_held_by_multi_owners": 0,
+     "out_of_state_owner_units": 61,
+     "out_of_state_share": 78.2,
+     "landuse_first_digit": {
+      "1xx": 77,
+      "3xx": 1
+     }
+    },
+    "BEACHCOLONYRESORTI": {
+     "units": 166,
+     "legal_residence_4pct": 18,
+     "legal_residence_share": 10.8,
+     "not_legal_residence_share": 89.2,
+     "top_owner_units": 3,
+     "top_owner_share": 1.8,
+     "top_owner_kind": "person or trust",
+     "owners": 153,
+     "owners_with_2plus_units": 12,
+     "units_held_by_multi_owners": 25,
+     "out_of_state_owner_units": 109,
+     "out_of_state_share": 65.7,
+     "landuse_first_digit": {
+      "1xx": 166
+     }
+    }
+   },
+   "building": {
+    "units": 244,
+    "legal_residence_4pct": 24,
+    "legal_residence_share": 9.8,
+    "not_legal_residence_share": 90.2,
+    "top_owner_units": 3,
+    "top_owner_share": 1.2,
+    "top_owner_kind": "person or trust",
+    "owners": 227,
+    "owners_with_2plus_units": 14,
+    "units_held_by_multi_owners": 31,
+    "out_of_state_owner_units": 170,
+    "out_of_state_share": 69.7,
+    "landuse_first_digit": {
+     "1xx": 243,
+     "3xx": 1
+    }
+   }
+  },
+  "meridian-plaza": {
+   "regimes": {
+    "MERIDIANPLAZA": {
+     "units": 96,
+     "legal_residence_4pct": 4,
+     "legal_residence_share": 4.2,
+     "not_legal_residence_share": 95.8,
+     "top_owner_units": 3,
+     "top_owner_share": 3.1,
+     "top_owner_kind": "association",
+     "owners": 86,
+     "owners_with_2plus_units": 8,
+     "units_held_by_multi_owners": 18,
+     "out_of_state_owner_units": 65,
+     "out_of_state_share": 67.7,
+     "landuse_first_digit": {
+      "1xx": 93,
+      "3xx": 3
+     }
+    }
+   },
+   "building": {
+    "units": 96,
+    "legal_residence_4pct": 4,
+    "legal_residence_share": 4.2,
+    "not_legal_residence_share": 95.8,
+    "top_owner_units": 3,
+    "top_owner_share": 3.1,
+    "top_owner_kind": "association",
+    "owners": 86,
+    "owners_with_2plus_units": 8,
+    "units_held_by_multi_owners": 18,
+    "out_of_state_owner_units": 65,
+    "out_of_state_share": 67.7,
+    "landuse_first_digit": {
+     "1xx": 93,
+     "3xx": 3
+    }
+   }
+  },
+  "sandy-beach": {
+   "regimes": {
+    "SANDYBEACHPHIICT": {
+     "units": 152,
+     "legal_residence_4pct": 4,
+     "legal_residence_share": 2.6,
+     "not_legal_residence_share": 97.4,
+     "top_owner_units": 16,
+     "top_owner_share": 10.5,
+     "top_owner_kind": "company",
+     "owners": 113,
+     "owners_with_2plus_units": 12,
+     "units_held_by_multi_owners": 51,
+     "out_of_state_owner_units": 100,
+     "out_of_state_share": 65.8,
+     "landuse_first_digit": {
+      "1xx": 152
+     }
+    },
+    "SANDYBEACHCONDOTOWER": {
+     "units": 79,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 15,
+     "top_owner_share": 19.0,
+     "top_owner_kind": "company",
+     "owners": 56,
+     "owners_with_2plus_units": 4,
+     "units_held_by_multi_owners": 27,
+     "out_of_state_owner_units": 47,
+     "out_of_state_share": 59.5,
+     "landuse_first_digit": {
+      "1xx": 78,
+      "3xx": 1
+     }
+    }
+   },
+   "building": {
+    "units": 231,
+    "legal_residence_4pct": 4,
+    "legal_residence_share": 1.7,
+    "not_legal_residence_share": 98.3,
+    "top_owner_units": 31,
+    "top_owner_share": 13.4,
+    "top_owner_kind": "company",
+    "owners": 164,
+    "owners_with_2plus_units": 17,
+    "units_held_by_multi_owners": 84,
+    "out_of_state_owner_units": 147,
+    "out_of_state_share": 63.6,
+    "landuse_first_digit": {
+     "1xx": 230,
+     "3xx": 1
+    }
+   }
+  },
+  "carolina-winds": {
+   "regimes": {
+    "CAROLINAWINDSHPRPHII": {
+     "units": 24,
+     "legal_residence_4pct": 1,
+     "legal_residence_share": 4.2,
+     "not_legal_residence_share": 95.8,
+     "top_owner_units": 1,
+     "top_owner_share": 4.2,
+     "top_owner_kind": "company",
+     "owners": 24,
+     "owners_with_2plus_units": 0,
+     "units_held_by_multi_owners": 0,
+     "out_of_state_owner_units": 19,
+     "out_of_state_share": 79.2,
+     "landuse_first_digit": {
+      "3xx": 1,
+      "1xx": 23
+     }
+    },
+    "CAROLINAWINDS": {
+     "units": 123,
+     "legal_residence_4pct": 7,
+     "legal_residence_share": 5.7,
+     "not_legal_residence_share": 94.3,
+     "top_owner_units": 6,
+     "top_owner_share": 4.9,
+     "top_owner_kind": "company",
+     "owners": 112,
+     "owners_with_2plus_units": 7,
+     "units_held_by_multi_owners": 18,
+     "out_of_state_owner_units": 86,
+     "out_of_state_share": 69.9,
+     "landuse_first_digit": {
+      "1xx": 122,
+      "3xx": 1
+     }
+    }
+   },
+   "building": {
+    "units": 147,
+    "legal_residence_4pct": 8,
+    "legal_residence_share": 5.4,
+    "not_legal_residence_share": 94.6,
+    "top_owner_units": 6,
+    "top_owner_share": 4.1,
+    "top_owner_kind": "company",
+    "owners": 133,
+    "owners_with_2plus_units": 9,
+    "units_held_by_multi_owners": 23,
+    "out_of_state_owner_units": 105,
+    "out_of_state_share": 71.4,
+    "landuse_first_digit": {
+     "3xx": 2,
+     "1xx": 145
+    }
+   }
+  },
+  "maisons-sur-mer": {
+   "regimes": {
+    "MAISONSSURMER": {
+     "units": 170,
+     "legal_residence_4pct": 51,
+     "legal_residence_share": 30.0,
+     "not_legal_residence_share": 70.0,
+     "top_owner_units": 2,
+     "top_owner_share": 1.2,
+     "top_owner_kind": "person or trust",
+     "owners": 169,
+     "owners_with_2plus_units": 1,
+     "units_held_by_multi_owners": 2,
+     "out_of_state_owner_units": 105,
+     "out_of_state_share": 61.8,
+     "landuse_first_digit": {
+      "1xx": 170
+     }
+    },
+    "MAISONSURMER": {
+     "units": 59,
+     "legal_residence_4pct": 12,
+     "legal_residence_share": 20.3,
+     "not_legal_residence_share": 79.7,
+     "top_owner_units": 1,
+     "top_owner_share": 1.7,
+     "top_owner_kind": "person or trust",
+     "owners": 59,
+     "owners_with_2plus_units": 0,
+     "units_held_by_multi_owners": 0,
+     "out_of_state_owner_units": 38,
+     "out_of_state_share": 64.4,
+     "landuse_first_digit": {
+      "1xx": 59
+     }
+    }
+   },
+   "building": {
+    "units": 229,
+    "legal_residence_4pct": 63,
+    "legal_residence_share": 27.5,
+    "not_legal_residence_share": 72.5,
+    "top_owner_units": 2,
+    "top_owner_share": 0.9,
+    "top_owner_kind": "person or trust",
+    "owners": 226,
+    "owners_with_2plus_units": 3,
+    "units_held_by_multi_owners": 6,
+    "out_of_state_owner_units": 143,
+    "out_of_state_share": 62.4,
+    "landuse_first_digit": {
+     "1xx": 229
+    }
+   }
+  },
+  "sands-ocean": {
+   "regimes": {
+    "SANDSOCEANCLUBPHII": {
+     "units": 159,
+     "legal_residence_4pct": 10,
+     "legal_residence_share": 6.3,
+     "not_legal_residence_share": 93.7,
+     "top_owner_units": 5,
+     "top_owner_share": 3.1,
+     "top_owner_kind": "company",
+     "owners": 130,
+     "owners_with_2plus_units": 18,
+     "units_held_by_multi_owners": 47,
+     "out_of_state_owner_units": 101,
+     "out_of_state_share": 63.5,
+     "landuse_first_digit": {
+      "1xx": 158,
+      "3xx": 1
+     }
+    },
+    "SANDSOCEANCLUB": {
+     "units": 212,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 64,
+     "top_owner_share": 30.2,
+     "top_owner_kind": "company",
+     "owners": 78,
+     "owners_with_2plus_units": 15,
+     "units_held_by_multi_owners": 149,
+     "out_of_state_owner_units": 69,
+     "out_of_state_share": 32.5,
+     "landuse_first_digit": {
+      "1xx": 212
+     }
+    },
+    "SANDSOCEANCLUBII": {
+     "units": 93,
+     "legal_residence_4pct": 6,
+     "legal_residence_share": 6.5,
+     "not_legal_residence_share": 93.5,
+     "top_owner_units": 3,
+     "top_owner_share": 3.2,
+     "top_owner_kind": "company",
+     "owners": 80,
+     "owners_with_2plus_units": 10,
+     "units_held_by_multi_owners": 23,
+     "out_of_state_owner_units": 61,
+     "out_of_state_share": 65.6,
+     "landuse_first_digit": {
+      "1xx": 93
+     }
+    }
+   },
+   "building": {
+    "units": 464,
+    "legal_residence_4pct": 16,
+    "legal_residence_share": 3.4,
+    "not_legal_residence_share": 96.6,
+    "top_owner_units": 64,
+    "top_owner_share": 13.8,
+    "top_owner_kind": "company",
+    "owners": 268,
+    "owners_with_2plus_units": 45,
+    "units_held_by_multi_owners": 241,
+    "out_of_state_owner_units": 231,
+    "out_of_state_share": 49.8,
+    "landuse_first_digit": {
+     "1xx": 463,
+     "3xx": 1
+    }
+   }
+  },
+  "ocean-forest-plaza": {
+   "regimes": {
+    "OCEANFORESTPLAZA": {
+     "units": 206,
+     "legal_residence_4pct": 49,
+     "legal_residence_share": 23.8,
+     "not_legal_residence_share": 76.2,
+     "top_owner_units": 3,
+     "top_owner_share": 1.5,
+     "top_owner_kind": "person or trust",
+     "owners": 199,
+     "owners_with_2plus_units": 6,
+     "units_held_by_multi_owners": 13,
+     "out_of_state_owner_units": 119,
+     "out_of_state_share": 57.8,
+     "landuse_first_digit": {
+      "1xx": 205,
+      "3xx": 1
+     }
+    }
+   },
+   "building": {
+    "units": 206,
+    "legal_residence_4pct": 49,
+    "legal_residence_share": 23.8,
+    "not_legal_residence_share": 76.2,
+    "top_owner_units": 3,
+    "top_owner_share": 1.5,
+    "top_owner_kind": "person or trust",
+    "owners": 199,
+    "owners_with_2plus_units": 6,
+    "units_held_by_multi_owners": 13,
+    "out_of_state_owner_units": 119,
+    "out_of_state_share": 57.8,
+    "landuse_first_digit": {
+     "1xx": 205,
+     "3xx": 1
+    }
+   }
+  },
+  "south-hampton": {
+   "regimes": {
+    "SOUTHHAMPTON": {
+     "units": 143,
+     "legal_residence_4pct": 12,
+     "legal_residence_share": 8.4,
+     "not_legal_residence_share": 91.6,
+     "top_owner_units": 2,
+     "top_owner_share": 1.4,
+     "top_owner_kind": "company",
+     "owners": 141,
+     "owners_with_2plus_units": 2,
+     "units_held_by_multi_owners": 4,
+     "out_of_state_owner_units": 114,
+     "out_of_state_share": 79.7,
+     "landuse_first_digit": {
+      "1xx": 143
+     }
+    },
+    "SOUTHHAMPOTN": {
+     "units": 1,
+     "legal_residence_4pct": 0,
+     "legal_residence_share": 0.0,
+     "not_legal_residence_share": 100.0,
+     "top_owner_units": 1,
+     "top_owner_share": 100.0,
+     "top_owner_kind": "person or trust",
+     "owners": 1,
+     "owners_with_2plus_units": 0,
+     "units_held_by_multi_owners": 0,
+     "out_of_state_owner_units": 1,
+     "out_of_state_share": 100.0,
+     "landuse_first_digit": {
+      "1xx": 1
+     }
+    }
+   },
+   "building": {
+    "units": 144,
+    "legal_residence_4pct": 12,
+    "legal_residence_share": 8.3,
+    "not_legal_residence_share": 91.7,
+    "top_owner_units": 2,
+    "top_owner_share": 1.4,
+    "top_owner_kind": "company",
+    "owners": 142,
+    "owners_with_2plus_units": 2,
+    "units_held_by_multi_owners": 4,
+    "out_of_state_owner_units": 115,
+    "out_of_state_share": 79.9,
+    "landuse_first_digit": {
+     "1xx": 144
+    }
+   }
+  }
+ }
+}

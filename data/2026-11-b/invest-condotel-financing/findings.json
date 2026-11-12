@@ -1,0 +1,130 @@
+{
+ "made": "build_findings.py",
+ "pulled": "2026-11-10T01:55:13.611074+00:00",
+ "groups": {
+  "oceanfront_building": {
+   "listings": 1093,
+   "studios": 202,
+   "studios_pct": 18.5,
+   "under_400": 119,
+   "under_400_pct": 10.9,
+   "under_500": 231,
+   "under_500_pct": 21.1,
+   "at_least_500": 862,
+   "at_least_500_pct": 78.9,
+   "fha_flag": 64,
+   "va_flag": 34,
+   "conventional_flag": 791,
+   "cash_only_flag": 48
+  },
+  "in_program": {
+   "listings": 885,
+   "studios": 179,
+   "studios_pct": 20.2,
+   "under_400": 102,
+   "under_400_pct": 11.5,
+   "under_500": 199,
+   "under_500_pct": 22.5,
+   "at_least_500": 686,
+   "at_least_500_pct": 77.5,
+   "fha_flag": 53,
+   "va_flag": 28,
+   "conventional_flag": 634,
+   "cash_only_flag": 39
+  }
+ },
+ "in_program_share_of_oceanfront": 81.0,
+ "directory": {
+  "buildings": 47,
+  "resort_or_hotel_common_name": 22,
+  "names": [
+   "Myrtle Beach Resort",
+   "Landmark Resort",
+   "Sea Mist Resort",
+   "Coral Beach Resort",
+   "Bay View Resort",
+   "Breakers Resort",
+   "Caribbean Resort",
+   "Dunes Village Resort",
+   "Sand Dunes Resort",
+   "Caravelle Resort",
+   "Grande Cayman Resort",
+   "Ocean Reef Resort",
+   "SeaWatch Resort",
+   "Avista Resort",
+   "Bay Watch Resort",
+   "Beach Cove Resort",
+   "Prince Resort",
+   "Ocean Creek Resort",
+   "Bluewater Resort",
+   "Sandy Beach Resort",
+   "Holiday Inn Pavilion",
+   "Carolinian Beach Resort"
+  ],
+  "with_county_regime": 45,
+  "resort_in_county_regime_name": 8,
+  "legal_slugs": [
+   "bay-watch",
+   "beach-colony",
+   "beach-cove",
+   "caravelle",
+   "carolinian",
+   "grande-cayman",
+   "mb-resort",
+   "ocean-reef"
+  ],
+  "median_unit_under_500_sqft_10plus_for_sale": [
+   {
+    "name": "Sea Mist Resort",
+    "sqft_median": 385.0,
+    "for_sale": 32,
+    "beds": {
+     "0": 32
+    }
+   },
+   {
+    "name": "Sands Ocean Club",
+    "sqft_median": 388.5,
+    "for_sale": 16,
+    "beds": {
+     "0": 11,
+     "1": 2,
+     "2": 3
+    }
+   },
+   {
+    "name": "Landmark Resort",
+    "sqft_median": 431,
+    "for_sale": 93,
+    "beds": {
+     "0": 51,
+     "1": 42
+    }
+   },
+   {
+    "name": "Ocean Reef Resort",
+    "sqft_median": 440.0,
+    "for_sale": 32,
+    "beds": {
+     "0": 17,
+     "1": 5,
+     "2": 3,
+     "3": 5,
+     "4": 2
+    }
+   },
+   {
+    "name": "Bluewater Resort",
+    "sqft_median": 475,
+    "for_sale": 37,
+    "beds": {
+     "0": 1,
+     "1": 28,
+     "2": 8
+    }
+   }
+  ],
+  "sales_year": 804,
+  "units": 11822
+ }
+}

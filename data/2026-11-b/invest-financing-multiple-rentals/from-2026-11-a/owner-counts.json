@@ -1,0 +1,85 @@
+{
+ "source": "Horry County GIS parcel layer 24, read 2026-11-04",
+ "definition": "Home = land use 1xx with a building value. 6 percent = assessed value 5.5 to 6.5 percent of taxable value (not the owner's legal residence: rentals, second homes, homes held by companies, and new homes a builder has not sold).",
+ "homes_6pct": 101843,
+ "owners": 82868,
+ "owners_by_kind_and_tier": {
+  "person": {
+   "1": 63244,
+   "2": 2677,
+   "3-4": 707,
+   "5-9": 156,
+   "10+": 23
+  },
+  "company": {
+   "1": 12929,
+   "2": 1414,
+   "5-9": 296,
+   "3-4": 617,
+   "10+": 180
+  },
+  "institution": {
+   "1": 263,
+   "5-9": 4,
+   "3-4": 18,
+   "10+": 26,
+   "2": 18
+  },
+  "builder": {
+   "1": 228,
+   "5-9": 11,
+   "2": 23,
+   "10+": 16,
+   "3-4": 18
+  }
+ },
+ "homes_by_kind_and_tier": {
+  "person": {
+   "1": 63244,
+   "2": 5354,
+   "3-4": 2302,
+   "5-9": 947,
+   "10+": 595
+  },
+  "company": {
+   "1": 12929,
+   "2": 2828,
+   "5-9": 1825,
+   "3-4": 2059,
+   "10+": 7380
+  },
+  "institution": {
+   "1": 263,
+   "5-9": 26,
+   "3-4": 62,
+   "10+": 1153,
+   "2": 36
+  },
+  "builder": {
+   "1": 228,
+   "5-9": 67,
+   "2": 46,
+   "10+": 442,
+   "3-4": 57
+  }
+ },
+ "people_and_companies": {
+  "owners": 82243,
+  "homes": 99463,
+  "owners_2plus": 6070,
+  "homes_held_by_owners_2plus": 23290,
+  "share_of_their_homes_held_by_2plus_pct": 23.4,
+  "owners_exactly_1": 76173,
+  "owners_2": 4091,
+  "owners_3_4": 1324,
+  "owners_5_9": 452,
+  "owners_10plus": 203,
+  "people_2plus": 3563,
+  "companies_2plus": 2507,
+  "people_2_to_4": 3384,
+  "owners_2plus_mailing_sc_pct": 50.1,
+  "owners_2plus_all_condos": 1517,
+  "owners_2plus_no_condo": 3355,
+  "median_value_of_homes_held_by_2plus": 240000.0
+ }
+}
