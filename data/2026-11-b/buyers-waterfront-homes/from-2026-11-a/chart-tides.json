@@ -1,0 +1,50 @@
+{
+ "what": "Average rise and fall of the tide in 2026, feet (NOAA predictions)",
+ "rows": [
+  {
+   "station": "Springmaid Pier, Myrtle Beach (ocean)",
+   "kind": "ocean",
+   "mean_range_ft": 4.8
+  },
+  {
+   "station": "Cherry Grove (inside)",
+   "kind": "channel",
+   "mean_range_ft": 4.47
+  },
+  {
+   "station": "Little River (town)",
+   "kind": "waterway",
+   "mean_range_ft": 4.25
+  },
+  {
+   "station": "North Myrtle Beach, ICWW",
+   "kind": "waterway",
+   "mean_range_ft": 1.69
+  },
+  {
+   "station": "Myrtle Beach, Combination Bridge",
+   "kind": "waterway",
+   "mean_range_ft": 1.62
+  },
+  {
+   "station": "Socastee Bridge",
+   "kind": "waterway",
+   "mean_range_ft": 1.98
+  },
+  {
+   "station": "Conway, RR. bridge",
+   "kind": "river",
+   "mean_range_ft": 1.13
+  },
+  {
+   "station": "Captain Alex's Marina, Parsonage Creek",
+   "kind": "creek",
+   "mean_range_ft": 4.14
+  },
+  {
+   "station": "Bennet's Dock, Pawleys Island Creek",
+   "kind": "creek",
+   "mean_range_ft": 3.38
+  }
+ ]
+}

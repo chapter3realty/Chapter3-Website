@@ -1,0 +1,14 @@
+[out:json][timeout:120];
+(
+  way["leisure"="golf_course"](33.48,-79.16,33.70,-78.95);
+  relation["leisure"="golf_course"](33.48,-79.16,33.70,-78.95);
+  nwr["leisure"="marina"](33.48,-79.16,33.70,-78.95);
+  nwr["leisure"="slipway"](33.48,-79.16,33.70,-78.95);
+  nwr["name"~"MarshWalk|Marsh Walk",i](33.48,-79.16,33.70,-78.95);
+  nwr["shop"="supermarket"](33.48,-79.16,33.70,-78.95);
+  nwr["amenity"="hospital"](33.40,-79.20,33.75,-78.85);
+  nwr["leisure"="park"]["name"](33.48,-79.16,33.70,-78.95);
+  nwr["man_made"="pier"]["name"](33.48,-79.16,33.70,-78.95);
+  nwr["tourism"="attraction"]["name"](33.48,-79.16,33.70,-78.95);
+);
+out center tags;

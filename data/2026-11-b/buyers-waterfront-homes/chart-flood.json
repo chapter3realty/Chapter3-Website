@@ -1,0 +1,40 @@
+{
+ "title_draft": "On the waterway, many lots sit outside the high-risk flood zone",
+ "rows": [
+  {
+   "water": "Oceanfront houses",
+   "houses": 411,
+   "lot_reaches_high_risk": 406,
+   "lot_reaches_VE": 241,
+   "middle_of_lot_outside_high_risk": 79
+  },
+  {
+   "water": "Cherry Grove channels",
+   "houses": 688,
+   "lot_reaches_high_risk": 687,
+   "lot_reaches_VE": 66,
+   "middle_of_lot_outside_high_risk": 3
+  },
+  {
+   "water": "Waccamaw River",
+   "houses": 456,
+   "lot_reaches_high_risk": 452,
+   "lot_reaches_VE": 0,
+   "middle_of_lot_outside_high_risk": 160
+  },
+  {
+   "water": "Intracoastal Waterway",
+   "houses": 985,
+   "lot_reaches_high_risk": 688,
+   "lot_reaches_VE": 0,
+   "middle_of_lot_outside_high_risk": 573
+  }
+ ],
+ "lake_sold": {
+  "houses_sold": 172,
+  "zone_at_middle_of_lot": {
+   "A": 16,
+   "X": 156
+  }
+ }
+}

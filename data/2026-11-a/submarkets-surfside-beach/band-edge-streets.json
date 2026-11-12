@@ -1,0 +1,33 @@
+{
+ "edge_with_R1R2_m": 3564,
+ "points": 67,
+ "nearest_street_counts": {
+  "LAKESIDE DR (south of the pier)": 21,
+  "DOGWOOD DR N (north of the pier)": 17,
+  "WILLOW DR S (south of the pier)": 8,
+  "OAK DR N (north of the pier)": 4,
+  "MELODY LN (south of the pier)": 3,
+  "WILLOW DR N (north of the pier)": 2,
+  "MYRTLE OAK DR (north of the pier)": 2
+ },
+ "N OCEAN BLVD": {
+  "in_band_m": 1548,
+  "in_R1R2_m": 0
+ },
+ "DOGWOOD DR N": {
+  "in_band_m": 920,
+  "in_R1R2_m": 801
+ },
+ "LAKESIDE DR": {
+  "in_band_m": 1438,
+  "in_R1R2_m": 0
+ },
+ "WILLOW DR S": {
+  "in_band_m": 513,
+  "in_R1R2_m": 843
+ },
+ "DOGWOOD DR S": {
+  "in_band_m": 1558,
+  "in_R1R2_m": 0
+ }
+}

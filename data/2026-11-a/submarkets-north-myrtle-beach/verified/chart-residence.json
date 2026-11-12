@@ -1,0 +1,70 @@
+{
+ "title": "Homes that are someone's legal residence, by part",
+ "unit": "percent",
+ "rows": [
+  {
+   "area": "Cherry Grove",
+   "key": "cg",
+   "all": 14.4,
+   "houses": 23.7,
+   "condos": 8.3,
+   "homes": 4848
+  },
+  {
+   "area": "Little River Neck",
+   "key": "neck",
+   "all": 50.9,
+   "houses": 72.9,
+   "condos": 31.3,
+   "homes": 2784
+  },
+  {
+   "area": "Tilghman Beach",
+   "key": "til",
+   "all": 32.0,
+   "houses": 67.1,
+   "condos": 15.6,
+   "homes": 4520
+  },
+  {
+   "area": "Ocean Drive",
+   "key": "od",
+   "all": 19.0,
+   "houses": 41.0,
+   "condos": 11.2,
+   "homes": 3035
+  },
+  {
+   "area": "Crescent Beach",
+   "key": "cb",
+   "all": 17.3,
+   "houses": 32.2,
+   "condos": 9.5,
+   "homes": 3969
+  },
+  {
+   "area": "Windy Hill",
+   "key": "wh",
+   "all": 14.4,
+   "houses": 32.0,
+   "condos": 8.8,
+   "homes": 3920
+  },
+  {
+   "area": "West of US 17",
+   "key": "west17",
+   "all": 52.3,
+   "houses": 72.2,
+   "condos": 25.4,
+   "homes": 2866
+  },
+  {
+   "area": "Across the waterway",
+   "key": "across",
+   "all": 42.9,
+   "houses": 74.1,
+   "condos": 23.2,
+   "homes": 5193
+  }
+ ]
+}

@@ -1,0 +1,312 @@
+{
+ "read": "2026-11-04",
+ "local_zips": [
+  "29511",
+  "29526",
+  "29527",
+  "29528",
+  "29544",
+  "29545",
+  "29566",
+  "29568",
+  "29569",
+  "29572",
+  "29575",
+  "29576",
+  "29577",
+  "29578",
+  "29579",
+  "29581",
+  "29582",
+  "29585",
+  "29587",
+  "29588",
+  "29597",
+  "29598"
+ ],
+ "groups": {
+  "res4_condo": {
+   "count": 8801,
+   "local": 8501,
+   "sc_elsewhere": 30,
+   "nc": 73,
+   "other_states": 195,
+   "abroad": 1,
+   "blank": 1,
+   "pct": {
+    "local": 96.6,
+    "sc_elsewhere": 0.3,
+    "nc": 0.8,
+    "other_states": 2.2,
+    "abroad": 0.0,
+    "blank": 0.0
+   },
+   "not_local": 300,
+   "pct_not_local": 3.4,
+   "top_states_outside_sc": [
+    [
+     "NC",
+     73
+    ],
+    [
+     "NY",
+     39
+    ],
+    [
+     "PA",
+     27
+    ],
+    [
+     "VA",
+     22
+    ],
+    [
+     "NJ",
+     18
+    ],
+    [
+     "MA",
+     11
+    ],
+    [
+     "GA",
+     9
+    ],
+    [
+     "NH",
+     8
+    ]
+   ]
+  },
+  "res4_house_other": {
+   "count": 115688,
+   "local": 114182,
+   "sc_elsewhere": 374,
+   "nc": 277,
+   "other_states": 850,
+   "abroad": 3,
+   "blank": 2,
+   "pct": {
+    "local": 98.7,
+    "sc_elsewhere": 0.3,
+    "nc": 0.2,
+    "other_states": 0.7,
+    "abroad": 0.0,
+    "blank": 0.0
+   },
+   "not_local": 1506,
+   "pct_not_local": 1.3,
+   "top_states_outside_sc": [
+    [
+     "NC",
+     277
+    ],
+    [
+     "NY",
+     135
+    ],
+    [
+     "NJ",
+     83
+    ],
+    [
+     "VA",
+     80
+    ],
+    [
+     "PA",
+     73
+    ],
+    [
+     "MA",
+     53
+    ],
+    [
+     "FL",
+     49
+    ],
+    [
+     "MD",
+     44
+    ]
+   ]
+  },
+  "other6_condo": {
+   "count": 32162,
+   "local": 7060,
+   "sc_elsewhere": 1685,
+   "nc": 5959,
+   "other_states": 17035,
+   "abroad": 389,
+   "blank": 34,
+   "pct": {
+    "local": 22.0,
+    "sc_elsewhere": 5.2,
+    "nc": 18.5,
+    "other_states": 53.0,
+    "abroad": 1.2,
+    "blank": 0.1
+   },
+   "not_local": 25102,
+   "pct_not_local": 78.0,
+   "top_states_outside_sc": [
+    [
+     "NC",
+     5959
+    ],
+    [
+     "FL",
+     3001
+    ],
+    [
+     "NY",
+     2664
+    ],
+    [
+     "PA",
+     1849
+    ],
+    [
+     "NJ",
+     1493
+    ],
+    [
+     "VA",
+     1482
+    ],
+    [
+     "MD",
+     847
+    ],
+    [
+     "OH",
+     833
+    ]
+   ]
+  },
+  "other6_house_other": {
+   "count": 70349,
+   "local": 30459,
+   "sc_elsewhere": 5729,
+   "nc": 11249,
+   "other_states": 22637,
+   "abroad": 247,
+   "blank": 28,
+   "pct": {
+    "local": 43.3,
+    "sc_elsewhere": 8.1,
+    "nc": 16.0,
+    "other_states": 32.2,
+    "abroad": 0.4,
+    "blank": 0.0
+   },
+   "not_local": 39890,
+   "pct_not_local": 56.7,
+   "top_states_outside_sc": [
+    [
+     "NC",
+     11249
+    ],
+    [
+     "NY",
+     3493
+    ],
+    [
+     "PA",
+     2645
+    ],
+    [
+     "VA",
+     2559
+    ],
+    [
+     "NJ",
+     2302
+    ],
+    [
+     "MD",
+     1436
+    ],
+    [
+     "OH",
+     1251
+    ],
+    [
+     "FL",
+     1109
+    ]
+   ]
+  }
+ },
+ "all_6pct": {
+  "count": 102511,
+  "local": 37519,
+  "sc_elsewhere": 7414,
+  "nc": 17208,
+  "other_states": 39672,
+  "abroad": 636,
+  "blank": 62,
+  "not_local": 64992,
+  "pct_not_local": 63.4,
+  "pct_local": 36.6
+ },
+ "all_4pct": {
+  "count": 124489,
+  "local": 122683
+ },
+ "individual_6pct": {
+  "condo": {
+   "count": 26563,
+   "local": 5325,
+   "sc_elsewhere": 1617,
+   "nc": 5586,
+   "other_states": 13612,
+   "abroad": 389,
+   "not_local": 21238,
+   "pct_not_local": 80.0,
+   "pct": {
+    "local": 20.0,
+    "sc_elsewhere": 6.1,
+    "nc": 21.0,
+    "other_states": 51.2,
+    "abroad": 1.5
+   },
+   "bulk_addresses": 89,
+   "bulk_homes": 5599,
+   "bulk_local": 1735
+  },
+  "house_other": {
+   "count": 65121,
+   "local": 27390,
+   "sc_elsewhere": 5625,
+   "nc": 10814,
+   "other_states": 21017,
+   "abroad": 247,
+   "not_local": 37731,
+   "pct_not_local": 57.9,
+   "pct": {
+    "local": 42.1,
+    "sc_elsewhere": 8.6,
+    "nc": 16.6,
+    "other_states": 32.3,
+    "abroad": 0.4
+   },
+   "bulk_addresses": 172,
+   "bulk_homes": 5228,
+   "bulk_local": 3069
+  },
+  "all": {
+   "count": 91684,
+   "local": 32715,
+   "sc_elsewhere": 7242,
+   "nc": 16400,
+   "other_states": 34629,
+   "abroad": 636,
+   "not_local": 58969,
+   "bulk_homes": 10827,
+   "bulk_addresses": 261,
+   "pct_not_local": 64.3,
+   "pct_out_of_state": 56.4
+  }
+ }
+}

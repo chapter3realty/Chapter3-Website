@@ -1,0 +1,461 @@
+{
+ "made": "build_hub.py",
+ "sources": {
+  "deeds": "Horry County AcclaimWeb deeds Oct 2025 - Sep 2026 + parcel layer 24 (batch 2026-10-d)",
+  "irs": "https://www.irs.gov/pub/irs-soi/countyinflow2223.csv",
+  "gazetteer": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_counties_national.zip",
+  "router": "https://router.project-osrm.org (OpenStreetMap road network, no traffic)"
+ },
+ "deeds": {
+  "matched_sales": 12125,
+  "outside_sc": 3598,
+  "pct_outside_sc": 29.7,
+  "guide_states_buyers": 2902,
+  "pct_of_outside_from_guide_states": 80.7,
+  "houses": 9723,
+  "houses_outside_sc": 2293,
+  "pct_houses_outside_sc": 23.6,
+  "by_state": [
+   [
+    "NC",
+    916
+   ],
+   [
+    "NY",
+    438
+   ],
+   [
+    "PA",
+    376
+   ],
+   [
+    "NJ",
+    262
+   ],
+   [
+    "VA",
+    256
+   ],
+   [
+    "MD",
+    169
+   ],
+   [
+    "OH",
+    149
+   ],
+   [
+    "MA",
+    131
+   ],
+   [
+    "CT",
+    129
+   ],
+   [
+    "WV",
+    78
+   ],
+   [
+    "FL",
+    76
+   ],
+   [
+    "GA",
+    58
+   ],
+   [
+    "CA",
+    52
+   ],
+   [
+    "NH",
+    52
+   ],
+   [
+    "TN",
+    45
+   ],
+   [
+    "MI",
+    36
+   ],
+   [
+    "KY",
+    36
+   ],
+   [
+    "AZ",
+    28
+   ],
+   [
+    "IL",
+    27
+   ],
+   [
+    "IN",
+    27
+   ],
+   [
+    "DE",
+    26
+   ],
+   [
+    "TX",
+    25
+   ],
+   [
+    "RI",
+    24
+   ],
+   [
+    "CO",
+    22
+   ],
+   [
+    "CANADA",
+    21
+   ]
+  ],
+  "by_state_house": [
+   [
+    "NC",
+    585
+   ],
+   [
+    "NY",
+    266
+   ],
+   [
+    "PA",
+    222
+   ],
+   [
+    "NJ",
+    167
+   ],
+   [
+    "VA",
+    165
+   ],
+   [
+    "MD",
+    123
+   ],
+   [
+    "OH",
+    97
+   ],
+   [
+    "MA",
+    92
+   ],
+   [
+    "CT",
+    89
+   ],
+   [
+    "FL",
+    57
+   ],
+   [
+    "WV",
+    52
+   ],
+   [
+    "CA",
+    41
+   ],
+   [
+    "NH",
+    31
+   ],
+   [
+    "GA",
+    29
+   ],
+   [
+    "TN",
+    26
+   ]
+  ],
+  "by_state_condo": [
+   [
+    "NC",
+    331
+   ],
+   [
+    "NY",
+    172
+   ],
+   [
+    "PA",
+    154
+   ],
+   [
+    "NJ",
+    95
+   ],
+   [
+    "VA",
+    91
+   ],
+   [
+    "OH",
+    52
+   ],
+   [
+    "MD",
+    46
+   ],
+   [
+    "CT",
+    40
+   ],
+   [
+    "MA",
+    39
+   ],
+   [
+    "GA",
+    29
+   ],
+   [
+    "WV",
+    26
+   ],
+   [
+    "NH",
+    21
+   ],
+   [
+    "KY",
+    20
+   ],
+   [
+    "FL",
+    19
+   ],
+   [
+    "TN",
+    19
+   ]
+  ]
+ },
+ "guide_states": [
+  {
+   "state": "NC",
+   "slug": "north-carolina",
+   "buyers": 916,
+   "houses": 585,
+   "condos": 331,
+   "irs_top_county": {
+    "fips": "37019",
+    "county": "Brunswick County",
+    "households": 255
+   },
+   "drive": {
+    "from": "Brunswick County",
+    "point": [
+     34.038754,
+     -78.227765
+    ],
+    "road_miles": 51,
+    "minutes_no_traffic": 74
+   }
+  },
+  {
+   "state": "NY",
+   "slug": "new-york",
+   "buyers": 438,
+   "houses": 266,
+   "condos": 172,
+   "irs_top_county": {
+    "fips": "36103",
+    "county": "Suffolk County",
+    "households": 320
+   },
+   "drive": {
+    "from": "Suffolk County",
+    "point": [
+     40.943554,
+     -72.692218
+    ],
+    "road_miles": 747,
+    "minutes_no_traffic": 910
+   }
+  },
+  {
+   "state": "PA",
+   "slug": "pennsylvania",
+   "buyers": 376,
+   "houses": 222,
+   "condos": 154,
+   "irs_top_county": {
+    "fips": "42003",
+    "county": "Allegheny County",
+    "households": 91
+   },
+   "drive": {
+    "from": "Allegheny County",
+    "point": [
+     40.469757,
+     -79.980451
+    ],
+    "road_miles": 612,
+    "minutes_no_traffic": 727
+   }
+  },
+  {
+   "state": "NJ",
+   "slug": "new-jersey",
+   "buyers": 262,
+   "houses": 167,
+   "condos": 95,
+   "irs_top_county": {
+    "fips": "34029",
+    "county": "Ocean County",
+    "households": 180
+   },
+   "drive": {
+    "from": "Ocean County",
+    "point": [
+     39.865669,
+     -74.258864
+    ],
+    "road_miles": 636,
+    "minutes_no_traffic": 807
+   }
+  },
+  {
+   "state": "VA",
+   "slug": "virginia",
+   "buyers": 256,
+   "houses": 165,
+   "condos": 91,
+   "irs_top_county": {
+    "fips": "51059",
+    "county": "Fairfax County",
+    "households": 90
+   },
+   "drive": {
+    "from": "Fairfax County",
+    "point": [
+     38.82952,
+     -77.273252
+    ],
+    "road_miles": 438,
+    "minutes_no_traffic": 507
+   }
+  },
+  {
+   "state": "MD",
+   "slug": "maryland",
+   "buyers": 169,
+   "houses": 123,
+   "condos": 46,
+   "irs_top_county": {
+    "fips": "24005",
+    "county": "Baltimore County",
+    "households": 99
+   },
+   "drive": {
+    "from": "Baltimore County",
+    "point": [
+     39.443167,
+     -76.616569
+    ],
+    "road_miles": 503,
+    "minutes_no_traffic": 589
+   }
+  },
+  {
+   "state": "OH",
+   "slug": "ohio",
+   "buyers": 149,
+   "houses": 97,
+   "condos": 52,
+   "irs_top_county": {
+    "fips": "39049",
+    "county": "Franklin County",
+    "households": 58
+   },
+   "drive": {
+    "from": "Franklin County",
+    "point": [
+     39.969875,
+     -83.009086
+    ],
+    "road_miles": 591,
+    "minutes_no_traffic": 707
+   }
+  },
+  {
+   "state": "MA",
+   "slug": "massachusetts",
+   "buyers": 131,
+   "houses": 92,
+   "condos": 39,
+   "irs_top_county": {
+    "fips": "25027",
+    "county": "Worcester County",
+    "households": 85
+   },
+   "drive": {
+    "from": "Worcester County",
+    "point": [
+     42.311693,
+     -71.940282
+    ],
+    "road_miles": 842,
+    "minutes_no_traffic": 1021
+   }
+  },
+  {
+   "state": "CT",
+   "slug": "connecticut",
+   "buyers": 129,
+   "houses": 89,
+   "condos": 40,
+   "irs_top_county": {
+    "fips": "09110",
+    "county": "Capitol Planning Region",
+    "households": 97
+   },
+   "drive": {
+    "from": "Capitol Planning Region",
+    "point": [
+     41.81697,
+     -72.575886
+    ],
+    "road_miles": 792,
+    "minutes_no_traffic": 955
+   }
+  },
+  {
+   "state": "FL",
+   "slug": "florida",
+   "buyers": 76,
+   "houses": 57,
+   "condos": 19,
+   "irs_top_county": {
+    "fips": "12011",
+    "county": "Broward County",
+    "households": 60
+   },
+   "drive": {
+    "from": "Broward County",
+    "point": [
+     26.193535,
+     -80.476683
+    ],
+    "road_miles": 693,
+    "minutes_no_traffic": 783
+   }
+  }
+ ],
+ "control_charlotte": {
+  "road_miles": 170,
+  "minutes_no_traffic": 225
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "photos": [
+  {
+   "slug": "hoa",
+   "file": "images/2026-11-b/hoa/houses-and-towers-from-the-ocean.webp",
+   "variants": {
+    "600": "images/2026-11-b/hoa/houses-and-towers-from-the-ocean-600w.webp",
+    "1200": "images/2026-11-b/hoa/houses-and-towers-from-the-ocean-1200w.webp"
+   },
+   "width": 1200,
+   "height": 782,
+   "title": "Myrtle Beach oceanfront, houses and condo towers side by side, USGS oblique aerial photo, August 24, 2011",
+   "what": "The Myrtle Beach oceanfront seen from a plane over the ocean: on the left, older two-story houses on lawns between the beach and Ocean Boulevard, with streets of houses under oaks behind them; on the right, two condo and hotel towers on the beach.",
+   "caption": "Houses and oceanfront towers on the same beach in Myrtle Beach.",
+   "alt": "Older two-story houses on lawns along the beach at left, and two tall condo towers on the beach at right, with streets of houses under oak trees behind, seen from a plane over the ocean in Myrtle Beach",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "The oceanfront"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_180143d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_180000.zip; aircraft position 33.718773 N, -78.838295 W (11CCH03-Photolocations.csv and the file's EXIF GPS; the position of the plane, not of the buildings). Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. Not the frame used on any other page (other pages use 174830, 175156, 175537, 180052, 180608 and 181208).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size (3008 px, in two halves) by the writer of /submarkets/myrtle-beach/ on 2026-11-02. Placed by testing points 500 to 600 m inland of the plane's position, 250 m either side, against map-str-zones.geojson: R zone at the left and the middle, shaded (nightly rentals) at the right, which matches houses at left and towers at right. People on the beach are too small to recognize; no readable sign, logo, plate or house number at page size.",
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty resized the photo and cut 1x1, 4x3 and 16x9 crops",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-b/hoa/houses-and-towers-from-the-ocean-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-b/hoa/houses-and-towers-from-the-ocean-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-b/hoa/houses-and-towers-from-the-ocean-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "reused_from": "data/2026-11-a/hoa-documents/photos.json (itself from /buyers/common-mistakes/ and /submarkets/myrtle-beach/); the files are copied into this page folder so this page does not depend on that one. Looked at full size (1200 px) by this page's writer on 2026-11-09: older houses on lawns at left, two tall towers at right, beach and surf in front, no legible sign, plate or person. The caption says 'towers', not 'condo towers' (the record's 'what' calls them condo and hotel towers). The fee line was cut from the caption in review 1 (the chart title says it)."
+  }
+ ]
+}

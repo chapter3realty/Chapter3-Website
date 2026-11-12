@@ -1,0 +1,69 @@
+{
+ "start": [
+  -78.9717534,
+  33.6049921
+ ],
+ "router": "https://router.project-osrm.org/route/v1/driving/",
+ "drives": {
+  "garden_city_pier": {
+   "minutes": 5.9,
+   "miles": 2.6,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.971753,33.604992;-78.997404,33.576085?overview=false"
+  },
+  "food_lion_bus17": {
+   "minutes": 4.6,
+   "miles": 1.8,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.971753,33.604992;-78.993840,33.601925?overview=false"
+  },
+  "market_common": {
+   "minutes": 14.1,
+   "miles": 6.6,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.971753,33.604992;-78.940213,33.670670?overview=false"
+  },
+  "airport_terminal": {
+   "minutes": 15.7,
+   "miles": 7.8,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.971753,33.604992;-78.922789,33.681467?overview=false"
+  },
+  "myrtle_beach_state_park": {
+   "minutes": 11.4,
+   "miles": 5.1,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.971753,33.604992;-78.931132,33.650585?overview=false"
+  },
+  "marshwalk": {
+   "minutes": 11.8,
+   "miles": 5.6,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.971753,33.604992;-79.031823,33.557878?overview=false"
+  },
+  "tidelands_waccamaw_hospital": {
+   "minutes": 11.6,
+   "miles": 6.0,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.971753,33.604992;-79.043381,33.560596?overview=false"
+  },
+  "coastal_grand": {
+   "minutes": 17.4,
+   "miles": 10.6,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.971753,33.604992;-78.922934,33.702568?overview=false"
+  },
+  "broadway_at_the_beach": {
+   "minutes": 20.7,
+   "miles": 13.1,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.971753,33.604992;-78.880761,33.716270?overview=false"
+  },
+  "grand_strand_medical": {
+   "minutes": 27.0,
+   "miles": 17.4,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.971753,33.604992;-78.819470,33.758080?overview=false"
+  },
+  "huntington_beach_sp": {
+   "minutes": 20.6,
+   "miles": 10.5,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.971753,33.604992;-79.062282,33.513189?overview=false"
+  },
+  "ocean_lakes_campground": {
+   "minutes": 6.6,
+   "miles": 2.7,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.971753,33.604992;-78.959823,33.624885?overview=false"
+  }
+ }
+}

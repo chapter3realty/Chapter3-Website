@@ -1,0 +1,439 @@
+{
+ "source": "Census ACS PUMS 2020-2024 5-year, SC housing file, PUMAs 02701 and 02702",
+ "dollars": "2024 dollars (ADJHSG)",
+ "pumas": {
+  "02701": "Horry central and north (North Myrtle Beach, Conway, Little River, Longs)",
+  "02702": "Horry central and south (Myrtle Beach, Socastee, Surfside, Murrells Inlet)"
+ },
+ "contract_rent": {
+  "all_renters": {
+   "records": 1047,
+   "homes": 30740,
+   "median": 1179,
+   "moe90": 51
+  },
+  "house_detached": {
+   "records": 275,
+   "homes": 8071,
+   "median": 1400,
+   "moe90": 155
+  },
+  "townhouse_attached": {
+   "records": 67,
+   "homes": 1807,
+   "median": 1393,
+   "moe90": 221
+  },
+  "apartment_or_condo_2plus": {
+   "records": 618,
+   "homes": 18259,
+   "median": 1132,
+   "moe90": 54
+  },
+  "mobile_home": {
+   "records": 85,
+   "homes": 2585,
+   "median": 804,
+   "moe90": 56
+  },
+  "house_detached_1br": {
+   "records": 8,
+   "homes": 479,
+   "median": 462,
+   "moe90": 0
+  },
+  "apartment_or_condo_1br": {
+   "records": 157,
+   "homes": 4627,
+   "median": 1101,
+   "moe90": 102
+  },
+  "all_1br": {
+   "records": 168,
+   "homes": 5121,
+   "median": 1072,
+   "moe90": 133
+  },
+  "house_detached_2br": {
+   "records": 59,
+   "homes": 1527,
+   "median": 1200,
+   "moe90": 364
+  },
+  "apartment_or_condo_2br": {
+   "records": 347,
+   "homes": 10376,
+   "median": 1159,
+   "moe90": 62
+  },
+  "all_2br": {
+   "records": 470,
+   "homes": 13829,
+   "median": 1132,
+   "moe90": 76
+  },
+  "house_detached_3br": {
+   "records": 157,
+   "homes": 4639,
+   "median": 1500,
+   "moe90": 103
+  },
+  "apartment_or_condo_3br": {
+   "records": 76,
+   "homes": 2215,
+   "median": 1200,
+   "moe90": 136
+  },
+  "all_3br": {
+   "records": 304,
+   "homes": 8887,
+   "median": 1336,
+   "moe90": 130
+  },
+  "house_detached_4br": {
+   "records": 51,
+   "homes": 1426,
+   "median": 1600,
+   "moe90": 409
+  },
+  "apartment_or_condo_4br": {
+   "records": 9,
+   "homes": 233,
+   "median": 611,
+   "moe90": 65
+  },
+  "all_4br": {
+   "records": 73,
+   "homes": 2021,
+   "median": 1390,
+   "moe90": 306
+  },
+  "house_detached_3br_moved_in_last_2y": {
+   "records": 59,
+   "homes": 1762,
+   "median": 1608,
+   "moe90": 284
+  },
+  "house_detached_3br_5y_or_more": {
+   "records": 49,
+   "homes": 1327,
+   "median": 1235,
+   "moe90": 248
+  },
+  "house_detached_moved_in_last_12m": {
+   "records": 76,
+   "homes": 2079,
+   "median": 1700,
+   "moe90": 234
+  },
+  "house_detached_moved_in_last_2y": {
+   "records": 105,
+   "homes": 2924,
+   "median": 1608,
+   "moe90": 114
+  },
+  "house_detached_5y_or_more": {
+   "records": 84,
+   "homes": 2604,
+   "median": 1072,
+   "moe90": 287
+  },
+  "all_moved_in_last_12m": {
+   "records": 295,
+   "homes": 8719,
+   "median": 1390,
+   "moe90": 114
+  },
+  "all_moved_in_last_2y": {
+   "records": 425,
+   "homes": 12435,
+   "median": 1338,
+   "moe90": 113
+  },
+  "all_5y_or_more": {
+   "records": 281,
+   "homes": 8434,
+   "median": 926,
+   "moe90": 105
+  },
+  "puma_02701_house_detached": {
+   "records": 128,
+   "homes": 3736,
+   "median": 1393,
+   "moe90": 320
+  },
+  "puma_02701_house_detached_3br": {
+   "records": 69,
+   "homes": 2063,
+   "median": 1336,
+   "moe90": 254
+  },
+  "puma_02701_apartment_or_condo_2br": {
+   "records": 181,
+   "homes": 5811,
+   "median": 1202,
+   "moe90": 54
+  },
+  "puma_02701_all_renters": {
+   "records": 493,
+   "homes": 14596,
+   "median": 1215,
+   "moe90": 68
+  },
+  "puma_02702_house_detached": {
+   "records": 147,
+   "homes": 4335,
+   "median": 1457,
+   "moe90": 192
+  },
+  "puma_02702_house_detached_3br": {
+   "records": 88,
+   "homes": 2576,
+   "median": 1501,
+   "moe90": 137
+  },
+  "puma_02702_apartment_or_condo_2br": {
+   "records": 166,
+   "homes": 4565,
+   "median": 1072,
+   "moe90": 92
+  },
+  "puma_02702_all_renters": {
+   "records": 554,
+   "homes": 16144,
+   "median": 1101,
+   "moe90": 112
+  }
+ },
+ "gross_rent": {
+  "all_renters": {
+   "records": 1047,
+   "homes": 30740,
+   "median": 1307,
+   "moe90": 80
+  },
+  "house_detached": {
+   "records": 275,
+   "homes": 8071,
+   "median": 1646,
+   "moe90": 71
+  },
+  "townhouse_attached": {
+   "records": 67,
+   "homes": 1807,
+   "median": 1543,
+   "moe90": 185
+  },
+  "apartment_or_condo_2plus": {
+   "records": 618,
+   "homes": 18259,
+   "median": 1254,
+   "moe90": 52
+  },
+  "mobile_home": {
+   "records": 85,
+   "homes": 2585,
+   "median": 950,
+   "moe90": 82
+  },
+  "house_detached_1br": {
+   "records": 8,
+   "homes": 479,
+   "median": 576,
+   "moe90": 2
+  },
+  "apartment_or_condo_1br": {
+   "records": 157,
+   "homes": 4627,
+   "median": 1190,
+   "moe90": 102
+  },
+  "all_1br": {
+   "records": 168,
+   "homes": 5121,
+   "median": 1130,
+   "moe90": 125
+  },
+  "house_detached_2br": {
+   "records": 59,
+   "homes": 1527,
+   "median": 1367,
+   "moe90": 263
+  },
+  "apartment_or_condo_2br": {
+   "records": 347,
+   "homes": 10376,
+   "median": 1275,
+   "moe90": 38
+  },
+  "all_2br": {
+   "records": 470,
+   "homes": 13829,
+   "median": 1269,
+   "moe90": 52
+  },
+  "house_detached_3br": {
+   "records": 157,
+   "homes": 4639,
+   "median": 1683,
+   "moe90": 138
+  },
+  "apartment_or_condo_3br": {
+   "records": 76,
+   "homes": 2215,
+   "median": 1457,
+   "moe90": 115
+  },
+  "all_3br": {
+   "records": 304,
+   "homes": 8887,
+   "median": 1529,
+   "moe90": 82
+  },
+  "house_detached_4br": {
+   "records": 51,
+   "homes": 1426,
+   "median": 1872,
+   "moe90": 398
+  },
+  "apartment_or_condo_4br": {
+   "records": 9,
+   "homes": 233,
+   "median": 740,
+   "moe90": 54
+  },
+  "all_4br": {
+   "records": 73,
+   "homes": 2021,
+   "median": 1547,
+   "moe90": 474
+  },
+  "house_detached_3br_moved_in_last_2y": {
+   "records": 59,
+   "homes": 1762,
+   "median": 1811,
+   "moe90": 207
+  },
+  "house_detached_3br_5y_or_more": {
+   "records": 49,
+   "homes": 1327,
+   "median": 1477,
+   "moe90": 375
+  },
+  "house_detached_moved_in_last_12m": {
+   "records": 76,
+   "homes": 2079,
+   "median": 1913,
+   "moe90": 207
+  },
+  "house_detached_moved_in_last_2y": {
+   "records": 105,
+   "homes": 2924,
+   "median": 1811,
+   "moe90": 152
+  },
+  "house_detached_5y_or_more": {
+   "records": 84,
+   "homes": 2604,
+   "median": 1267,
+   "moe90": 321
+  },
+  "all_moved_in_last_12m": {
+   "records": 295,
+   "homes": 8719,
+   "median": 1506,
+   "moe90": 67
+  },
+  "all_moved_in_last_2y": {
+   "records": 425,
+   "homes": 12435,
+   "median": 1483,
+   "moe90": 98
+  },
+  "all_5y_or_more": {
+   "records": 281,
+   "homes": 8434,
+   "median": 1077,
+   "moe90": 42
+  },
+  "puma_02701_house_detached": {
+   "records": 128,
+   "homes": 3736,
+   "median": 1653,
+   "moe90": 179
+  },
+  "puma_02701_house_detached_3br": {
+   "records": 69,
+   "homes": 2063,
+   "median": 1640,
+   "moe90": 223
+  },
+  "puma_02701_apartment_or_condo_2br": {
+   "records": 181,
+   "homes": 5811,
+   "median": 1307,
+   "moe90": 101
+  },
+  "puma_02701_all_renters": {
+   "records": 493,
+   "homes": 14596,
+   "median": 1356,
+   "moe90": 47
+  },
+  "puma_02702_house_detached": {
+   "records": 147,
+   "homes": 4335,
+   "median": 1643,
+   "moe90": 107
+  },
+  "puma_02702_house_detached_3br": {
+   "records": 88,
+   "homes": 2576,
+   "median": 1776,
+   "moe90": 227
+  },
+  "puma_02702_apartment_or_condo_2br": {
+   "records": 166,
+   "homes": 4565,
+   "median": 1213,
+   "moe90": 85
+  },
+  "puma_02702_all_renters": {
+   "records": 554,
+   "homes": 16144,
+   "median": 1263,
+   "moe90": 72
+  }
+ },
+ "utilities_paid_by_renter": {
+  "house_detached": {
+   "records": 275,
+   "median": 214
+  },
+  "apartment_or_condo_2plus": {
+   "records": 618,
+   "median": 107
+  }
+ },
+ "detached_bedrooms_share": {
+  "1": 5.9,
+  "2": 18.9,
+  "3": 57.5,
+  "4+": 17.7
+ },
+ "share_of_renter_homes": {
+  "house_detached": 26.3,
+  "townhouse_attached": 5.9,
+  "apartment_or_condo_2plus": 59.4,
+  "mobile_home": 8.4
+ },
+ "detached_moved_in": {
+  "1": 25.8,
+  "2": 10.5,
+  "3": 31.5,
+  "4": 14.3,
+  "5": 10.8,
+  "6": 6.5,
+  "7": 0.7
+ }
+}

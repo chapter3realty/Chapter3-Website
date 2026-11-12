@@ -1,0 +1,1751 @@
+{
+ "read": "2026-11-04",
+ "layer": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24",
+ "counts": {
+  "all_condo_units": {
+   "where": "LegalDescr LIKE '%HPR%' AND LandUseCode LIKE '1%' AND MarketImprv > 0",
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27%25HPR%25%27+AND+LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0&returnCountOnly=true&f=json",
+   "count": 40963
+  },
+  "name_resort": {
+   "where": "LegalDescr LIKE '%HPR%' AND LandUseCode LIKE '1%' AND MarketImprv > 0 AND LegalDescr LIKE '%RESORT%'",
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27%25HPR%25%27+AND+LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0+AND+LegalDescr+LIKE+%27%25RESORT%25%27&returnCountOnly=true&f=json",
+   "count": 2609
+  },
+  "name_hotel": {
+   "where": "LegalDescr LIKE '%HPR%' AND LandUseCode LIKE '1%' AND MarketImprv > 0 AND LegalDescr LIKE '%HOTEL%'",
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27%25HPR%25%27+AND+LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0+AND+LegalDescr+LIKE+%27%25HOTEL%25%27&returnCountOnly=true&f=json",
+   "count": 0
+  },
+  "name_motel": {
+   "where": "LegalDescr LIKE '%HPR%' AND LandUseCode LIKE '1%' AND MarketImprv > 0 AND LegalDescr LIKE '%MOTEL%'",
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27%25HPR%25%27+AND+LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0+AND+LegalDescr+LIKE+%27%25MOTEL%25%27&returnCountOnly=true&f=json",
+   "count": 0
+  },
+  "name_inn": {
+   "where": "LegalDescr LIKE '%HPR%' AND LandUseCode LIKE '1%' AND MarketImprv > 0 AND LegalDescr LIKE '%INN%'",
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27%25HPR%25%27+AND+LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0+AND+LegalDescr+LIKE+%27%25INN%25%27&returnCountOnly=true&f=json",
+   "count": 779
+  },
+  "name_suites": {
+   "where": "LegalDescr LIKE '%HPR%' AND LandUseCode LIKE '1%' AND MarketImprv > 0 AND LegalDescr LIKE '%SUITES%'",
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27%25HPR%25%27+AND+LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0+AND+LegalDescr+LIKE+%27%25SUITES%25%27&returnCountOnly=true&f=json",
+   "count": 195
+  },
+  "name_resort_hotel_motel": {
+   "where": "LegalDescr LIKE '%HPR%' AND LandUseCode LIKE '1%' AND MarketImprv > 0 AND (LegalDescr LIKE '%RESORT%' OR LegalDescr LIKE '%HOTEL%' OR LegalDescr LIKE '%MOTEL%')",
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LegalDescr+LIKE+%27%25HPR%25%27+AND+LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0+AND+%28LegalDescr+LIKE+%27%25RESORT%25%27+OR+LegalDescr+LIKE+%27%25HOTEL%25%27+OR+LegalDescr+LIKE+%27%25MOTEL%25%27%29&returnCountOnly=true&f=json",
+   "count": 2609
+  }
+ },
+ "regimes": [
+  {
+   "name": "BAYWATCH RESORT HPR",
+   "units": 531
+  },
+  {
+   "name": "CARAVELLE RESORT HPR",
+   "units": 348
+  },
+  {
+   "name": "LONG BAY RESORT HPR",
+   "units": 286
+  },
+  {
+   "name": "SUN N SAND RESORT HPR",
+   "units": 222
+  },
+  {
+   "name": "PARADISE RESORT HPR",
+   "units": 203
+  },
+  {
+   "name": "SOUTH BEACH RESORT HPR",
+   "units": 148
+  },
+  {
+   "name": "CAROLINIAN RESORT HPR",
+   "units": 129
+  },
+  {
+   "name": "HARBOURGATE RESORT HPR",
+   "units": 109
+  },
+  {
+   "name": "WAVE RIDER RESORT HPR",
+   "units": 80
+  },
+  {
+   "name": "LITTLE RIVER RESORT HPR",
+   "units": 41
+  },
+  {
+   "name": "GOLF COLONY RESORT HPR",
+   "units": 40
+  },
+  {
+   "name": "NMB G & T RESORT HPR",
+   "units": 27
+  },
+  {
+   "name": "GRAND STRAND RESORT HPR",
+   "units": 18
+  },
+  {
+   "name": "RESORT HPR",
+   "units": 7
+  },
+  {
+   "name": "LAST RESORT III HPR",
+   "units": 6
+  },
+  {
+   "name": "M B RESORT HPR",
+   "units": 5
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1913 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1924 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1932 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1222 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1224 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1911 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1934 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1212 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1213 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1214 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1914 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1921 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1922 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1923 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1231 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1232 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1233 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1234 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1211 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1912 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1931 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1933 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1221 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1223 PH 3 HPR",
+   "units": 1
+  },
+  {
+   "name": "CARAVELL RESORT HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 216 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 217 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 417 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 418 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 419 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 420 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 620 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 621 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 622 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 716 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 822 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 916 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 917 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 918 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 919 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1118 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1119 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 219 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 221 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 321 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 416 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 421 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 516 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 616 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 618 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 718 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 720 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 818 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 820 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 920 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 922 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1022 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1117 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1122 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1217 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1417 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1419 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT PH-19 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT PH-21 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 316 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 317 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 318 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1120 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1121 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1421 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1422 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT PH-16 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT PH-17 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 319 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 518 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 519 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 520 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 521 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 721 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 722 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 816 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 817 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1017 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1018 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1019 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1020 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1219 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1220 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1221 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1222 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1416 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT PH-22 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 218 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 220 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 222 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 320 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 322 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 422 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 517 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 522 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 617 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 619 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 717 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 719 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 819 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 821 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 921 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1016 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1021 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1116 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1216 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1218 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1418 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT 1420 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT PH-18 HPR",
+   "units": 1
+  },
+  {
+   "name": "OCEAN REEF RESORT S T; UNIT PH-20 HPR",
+   "units": 1
+  },
+  {
+   "name": "M GRANDE RESORT & SPA; UNIT 0511 HPR",
+   "units": 1
+  },
+  {
+   "name": "M GRANDE RESORT & SPA; UNIT 0409 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT COM #3 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT COM #4 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT COM #5 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT COM #6 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 105 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 106 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 107 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 108 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 303 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT COM #11 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT COM #12 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT COM #13 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT COM #14 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 204 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 205 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 206 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 207 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 403 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 404 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 405 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 406 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 601 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 304 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 305 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 306 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 307 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 502 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 503 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 504 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 505 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 701 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 702 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 703 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 704 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 808 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 809 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 901 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 902 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 903 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1007 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1008 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1009 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1101 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1206 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1207 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1208 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1209 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 602 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 603 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 604 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 605 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 709 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 801 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 802 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 803 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 908 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 909 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1001 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1002 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1107 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1108 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1109 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1201 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1305 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1401 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1402 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1403 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT COM #8 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT COM #10 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT COM #15 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 102 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 104 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 109 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 202 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 209 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 302 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 309 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 402 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 407 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 409 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 507 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 509 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 607 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 609 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 705 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 707 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 805 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 807 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 905 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 907 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1003 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1005 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1103 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1105 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1203 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1205 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1301 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1303 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1405 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT COM #2 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UN COM #7 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT COM #9 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 101 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 103 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 201 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 203 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 208 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 301 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 308 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 401 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 408 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 501 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 506 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 508 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 606 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 608 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 706 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 708 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 804 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 806 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 904 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 906 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1004 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1006 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1102 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1104 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1106 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1202 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1204 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1302 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1304 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT 1404 HPR",
+   "units": 1
+  },
+  {
+   "name": "N TOWER BAREFOOT RESORT; UNIT COM #1 HPR",
+   "units": 1
+  },
+  {
+   "name": "CYPRESS BAY G&T RESORT; UNIT J-1 PH IV HPR",
+   "units": 1
+  },
+  {
+   "name": "CYPRESS BAY G&T RESORT; UNIT J-9 PH IV HPR",
+   "units": 1
+  },
+  {
+   "name": "CYPRESS BAY G&T RESORT; UNIT J-6 PH IV HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 112 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 914 PH 5 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 833 PH 8B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 623 PH 7B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1132 PH 4 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1112 PH 4 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 734 PH 8A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1122 PH 4 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 621 PH 7B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 823 PH 8B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 732 PH 8A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 711 PH 8A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2212 PH 6B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2132 PH 6A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 934 PH 5 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1114 PH 4 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2032 PH 4-A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1123 PH 4 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 714 PH 8A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2213 PH 6B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1021 PH 4-B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 733 PH 8A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 932 PH 5 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 114 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1023 PH 4-B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1022 PH 4-B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1024 PH 4-B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 812 PH 8B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2221 PH 6B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 524 PH 7A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 632 PH 7B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 722 PH 8A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 534 PH 7A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 721 PH 8A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 633 PH 7B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 521 PH 7A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2122 PH 6A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 922 PH 5 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1121 PH 4 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2123 PH 6A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 814 PH 8B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 611 PH 7B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 811 PH 8B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2033 PH 4-A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2124 PH 6A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2231 PH 6B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2232 PH 6B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1034 PH 4-B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 511 PH 7A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 131 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 634 PH 7B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 512 PH 7A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1124 PH 4 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2224 PH 6B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2234 PH 6B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2131 PH 6A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 821 PH 8B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 822 PH 8B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2233 PH 6B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2022 PH 4-A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 622 PH 7B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 613 PH 7B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 133 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2012 PH 4-A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 122 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2211 PH 6B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2023 PH 4-A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 614 PH 7B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2121 PH 6A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2214 PH 6B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 523 PH 7A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 924 PH 5 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2031 PH 4-A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 123 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1134 PH 4 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 712 PH 8A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 612 PH 7B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 124 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 834 PH 8B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2034 PH 4-A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 723 PH 8A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2134 PH 6A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 513 PH 7A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1031 PH 4-B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1013 PH 4-B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 832 PH 8B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 624 PH 7B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 533 PH 7A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; LOT 134 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 113 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 824 PH 8B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2014 PH 4-A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2112 PH 6A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 514 PH 7A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1133 PH 4 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2113 PH 6A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 111 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 912 PH 5 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 532 PH 7A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1113 PH 4 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 911 PH 5 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2222 PH 6B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2114 PH 6A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 923 PH 5 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2024 PH 4-A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 522 PH 7A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 713 PH 8A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 933 PH 5 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1012 PH 4-B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 531 PH 7A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 631 PH 7B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2013 PH 4-A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 913 PH 5 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 921 PH 5 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 813 PH 8B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1131 PH 4 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1033 PH 4-B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2223 PH 6B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 724 PH 8A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2011 PH 4-A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 931 PH 5 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1032 PH 4-B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1014 PH 4-B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1011 PH 4-B HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2133 PH 6A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2111 PH 6A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 132 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 121 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 2021 PH 4-A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 1111 PH 4 HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 731 PH 8A HPR",
+   "units": 1
+  },
+  {
+   "name": "HARBOUR LIGHTS RESORT; UNIT 831 PH 8B HPR",
+   "units": 1
+  },
+  {
+   "name": "PLNTN RESORT VILLAS IV; UNIT 233 C-2 HPR",
+   "units": 1
+  },
+  {
+   "name": "PLNTN RESORT VILLAS IV; UNIT 233 A-1 HPR",
+   "units": 1
+  },
+  {
+   "name": "PLNTN RESORT VILLAS IV; UNIT 233 B-1 HPR",
+   "units": 1
+  },
+  {
+   "name": "PLNTN RESORT VILLAS IV; UNIT 233 A-2 HPR",
+   "units": 1
+  },
+  {
+   "name": "PLNTN RESORT VILLAS IV; UNIT 233 E-1 HPR",
+   "units": 1
+  },
+  {
+   "name": "PLNTN RESORT VILLAS IV; UNIT 233 D-2 HPR",
+   "units": 1
+  },
+  {
+   "name": "PLNTN RESORT VILLAS IV; UNIT 233 B-2 HPR",
+   "units": 1
+  },
+  {
+   "name": "PLNTN RESORT VILLAS IV; UNIT 233-C1 HPR",
+   "units": 1
+  },
+  {
+   "name": "PLNTN RESORT VILLAS IV; UNIT 233 E-2 HPR",
+   "units": 1
+  },
+  {
+   "name": "PLNTN RESORT VILLAS IV; UNIT 233 D-1 HPR",
+   "units": 1
+  },
+  {
+   "name": "THE DYE TOWNHOMES @ BAREFOOT RESORT PH4; HPR PH 9 UNIT 404",
+   "units": 1
+  },
+  {
+   "name": "THE DYE TOWNHOMES @ BAREFOOT RESORT PH4; HPR PH 9 UNIT 403",
+   "units": 1
+  },
+  {
+   "name": "THE DYE TOWNHOMES @ BAREFOOT RESORT PH4; HPR PH 9 UNIT 402",
+   "units": 1
+  },
+  {
+   "name": "THE DYE TOWNHOMES @ BAREFOOT RESORT PH4; HPR PH 9 UNIT 401",
+   "units": 1
+  },
+  {
+   "name": "THE DYE TOWNHOUSES @ BAREFOOT RESORT PH3; HPR PH 10 UN 303",
+   "units": 1
+  },
+  {
+   "name": "THE DYE TOWNHOUSES @ BAREFOOT RESORT PH3; HPR PH 10 UN 304",
+   "units": 1
+  },
+  {
+   "name": "THE DYE TOWNHOUSES @ BAREFOOT RESORT PH3; HPR PH 10 UN 305",
+   "units": 1
+  },
+  {
+   "name": "THE DYE TOWNHOUSES @ BAREFOOT RESORT PH3; HPR PH 10 UN 302",
+   "units": 1
+  },
+  {
+   "name": "THE DYE TOWNHOUSES @ BAREFOOT RESORT PH3; HPR PH 10 UN 301",
+   "units": 1
+  },
+  {
+   "name": "THE DYE TOWNHOMES @ BAREFOOT RESORT PH1; VHPR PH 11 UNIT 104",
+   "units": 1
+  },
+  {
+   "name": "THE DYE TOWNHOMES @ BAREFOOT RESORT PH1; HPR PH 11 UNIT 101",
+   "units": 1
+  },
+  {
+   "name": "THE DYE TOWNHOMES @ BAREFOOT RESORT PH1; HPR PH 11 UNIT 102",
+   "units": 1
+  },
+  {
+   "name": "THE DYE TOWNHOMES @ BAREFOOT RESORT PH1; HPR PH 11 UNIT 103",
+   "units": 1
+  }
+ ],
+ "tax_districts": {
+  "880": 1517,
+  "550": 831,
+  "600": 207,
+  "500": 44,
+  "660": 6,
+  "800": 4
+ }
+}

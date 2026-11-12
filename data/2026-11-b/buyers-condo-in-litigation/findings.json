@@ -1,0 +1,62 @@
+{
+ "pulled_listings": "2026-11-10T06:42:17.672301+00:00",
+ "pulled_parcels": "2026-11-10T06:44:40.765440+00:00",
+ "condos_for_sale": 2860,
+ "inside_8_years_built_2018_or_later": 73,
+ "inside_share_pct": 2.6,
+ "built_2000_or_earlier": 1914,
+ "built_2000_or_earlier_pct": 66.9,
+ "built_1980_or_earlier": 373,
+ "by_city": {
+  "(all)": {
+   "all": 2860,
+   "built_2018_or_later": 73
+  },
+  "Myrtle Beach": {
+   "all": 1671,
+   "built_2018_or_later": 39
+  },
+  "North Myrtle Beach": {
+   "all": 582,
+   "built_2018_or_later": 8
+  },
+  "Surfside Beach": {
+   "all": 86,
+   "built_2018_or_later": 0
+  },
+  "Garden City": {
+   "all": 0,
+   "built_2018_or_later": 0
+  },
+  "Murrells Inlet": {
+   "all": 130,
+   "built_2018_or_later": 16
+  },
+  "Little River": {
+   "all": 184,
+   "built_2018_or_later": 6
+  }
+ },
+ "case_buildings": {
+  "Riverwalk at Arrowhead Country Club": {
+   "units": 216,
+   "changed_hands_last_365_days": 23,
+   "share_pct": 10.6
+  },
+  "Magnolia North": {
+   "units": 366,
+   "changed_hands_last_365_days": 37,
+   "share_pct": 10.1
+  },
+  "Wedgewood (name match only, see README)": {
+   "units": 111,
+   "changed_hands_last_365_days": 8,
+   "share_pct": 7.2
+  },
+  "Renaissance Tower": {
+   "units": 324,
+   "changed_hands_last_365_days": 51,
+   "share_pct": 15.7
+  }
+ }
+}

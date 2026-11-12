@@ -1,0 +1,1152 @@
+{
+ "pulled": "2026-11-09T03:07:38.343414Z",
+ "source": "https://chapter3realty.com/homes/api/map?type=..&has=..&not=..&hoaMax=..",
+ "status": "for sale (the API's default)",
+ "segments": {
+  "condo_oceanfront_highrise": {
+   "params": {
+    "type": "condo",
+    "has": "oceanfront_building,high_rise"
+   },
+   "total": 972,
+   "fee_zero_or_blank": 0,
+   "with_fee": 972,
+   "quartiles": {
+    "p25": {
+     "at_or_below": 750,
+     "band": [
+      745,
+      750
+     ]
+    },
+    "median": {
+     "at_or_below": 940,
+     "band": [
+      935,
+      940
+     ]
+    },
+    "p75": {
+     "at_or_below": 1185,
+     "band": [
+      1180,
+      1185
+     ]
+    }
+   },
+   "covers": {
+    "hoa_includes_insurance": {
+     "with_flag": 795,
+     "with_flag_and_fee": 795,
+     "share_of_with_fee": 0.818
+    },
+    "hoa_includes_water_sewer": {
+     "with_flag": 947,
+     "with_flag_and_fee": 947,
+     "share_of_with_fee": 0.974
+    },
+    "hoa_includes_trash": {
+     "with_flag": 930,
+     "with_flag_and_fee": 930,
+     "share_of_with_fee": 0.957
+    },
+    "hoa_includes_internet": {
+     "with_flag": 869,
+     "with_flag_and_fee": 869,
+     "share_of_with_fee": 0.894
+    },
+    "hoa_includes_cable": {
+     "with_flag": 565,
+     "with_flag_and_fee": 565,
+     "share_of_with_fee": 0.581
+    },
+    "hoa_includes_pest": {
+     "with_flag": 812,
+     "with_flag_and_fee": 812,
+     "share_of_with_fee": 0.835
+    },
+    "hoa_includes_electric": {
+     "with_flag": 625,
+     "with_flag_and_fee": 625,
+     "share_of_with_fee": 0.643
+    },
+    "lawn_care_included": {
+     "with_flag": 927,
+     "with_flag_and_fee": 927,
+     "share_of_with_fee": 0.954
+    },
+    "community_pool": {
+     "with_flag": 945,
+     "with_flag_and_fee": 945,
+     "share_of_with_fee": 0.972
+    },
+    "clubhouse": {
+     "with_flag": 422,
+     "with_flag_and_fee": 422,
+     "share_of_with_fee": 0.434
+    },
+    "security_service": {
+     "with_flag": 593,
+     "with_flag_and_fee": 593,
+     "share_of_with_fee": 0.61
+    },
+    "gated": {
+     "with_flag": 80,
+     "with_flag_and_fee": 80,
+     "share_of_with_fee": 0.082
+    },
+    "tennis": {
+     "with_flag": 92,
+     "with_flag_and_fee": 92,
+     "share_of_with_fee": 0.095
+    },
+    "golf_included": {
+     "with_flag": 2,
+     "with_flag_and_fee": 2,
+     "share_of_with_fee": 0.002
+    }
+   }
+  },
+  "condo_oceanfront": {
+   "params": {
+    "type": "condo",
+    "has": "oceanfront_building"
+   },
+   "total": 1106,
+   "fee_zero_or_blank": 0,
+   "with_fee": 1106,
+   "quartiles": {
+    "p25": {
+     "at_or_below": 730,
+     "band": [
+      725,
+      730
+     ]
+    },
+    "median": {
+     "at_or_below": 920,
+     "band": [
+      915,
+      920
+     ]
+    },
+    "p75": {
+     "at_or_below": 1140,
+     "band": [
+      1135,
+      1140
+     ]
+    }
+   },
+   "covers": {
+    "hoa_includes_insurance": {
+     "with_flag": 896,
+     "with_flag_and_fee": 896,
+     "share_of_with_fee": 0.81
+    },
+    "hoa_includes_water_sewer": {
+     "with_flag": 1068,
+     "with_flag_and_fee": 1068,
+     "share_of_with_fee": 0.966
+    },
+    "hoa_includes_trash": {
+     "with_flag": 1060,
+     "with_flag_and_fee": 1060,
+     "share_of_with_fee": 0.958
+    },
+    "hoa_includes_internet": {
+     "with_flag": 974,
+     "with_flag_and_fee": 974,
+     "share_of_with_fee": 0.881
+    },
+    "hoa_includes_cable": {
+     "with_flag": 628,
+     "with_flag_and_fee": 628,
+     "share_of_with_fee": 0.568
+    },
+    "hoa_includes_pest": {
+     "with_flag": 925,
+     "with_flag_and_fee": 925,
+     "share_of_with_fee": 0.836
+    },
+    "hoa_includes_electric": {
+     "with_flag": 631,
+     "with_flag_and_fee": 631,
+     "share_of_with_fee": 0.571
+    },
+    "lawn_care_included": {
+     "with_flag": 1057,
+     "with_flag_and_fee": 1057,
+     "share_of_with_fee": 0.956
+    },
+    "community_pool": {
+     "with_flag": 1067,
+     "with_flag_and_fee": 1067,
+     "share_of_with_fee": 0.965
+    },
+    "clubhouse": {
+     "with_flag": 462,
+     "with_flag_and_fee": 462,
+     "share_of_with_fee": 0.418
+    },
+    "security_service": {
+     "with_flag": 640,
+     "with_flag_and_fee": 640,
+     "share_of_with_fee": 0.579
+    },
+    "gated": {
+     "with_flag": 114,
+     "with_flag_and_fee": 114,
+     "share_of_with_fee": 0.103
+    },
+    "tennis": {
+     "with_flag": 128,
+     "with_flag_and_fee": 128,
+     "share_of_with_fee": 0.116
+    },
+    "golf_included": {
+     "with_flag": 2,
+     "with_flag_and_fee": 2,
+     "share_of_with_fee": 0.002
+    }
+   }
+  },
+  "condo_off_ocean": {
+   "params": {
+    "type": "condo",
+    "not": "oceanfront_building"
+   },
+   "total": 1747,
+   "fee_zero_or_blank": 1,
+   "with_fee": 1746,
+   "quartiles": {
+    "p25": {
+     "at_or_below": 410,
+     "band": [
+      405,
+      410
+     ]
+    },
+    "median": {
+     "at_or_below": 515,
+     "band": [
+      510,
+      515
+     ]
+    },
+    "p75": {
+     "at_or_below": 685,
+     "band": [
+      680,
+      685
+     ]
+    }
+   },
+   "covers": {
+    "hoa_includes_insurance": {
+     "with_flag": 1346,
+     "with_flag_and_fee": 1346,
+     "share_of_with_fee": 0.771
+    },
+    "hoa_includes_water_sewer": {
+     "with_flag": 1337,
+     "with_flag_and_fee": 1337,
+     "share_of_with_fee": 0.766
+    },
+    "hoa_includes_trash": {
+     "with_flag": 1526,
+     "with_flag_and_fee": 1526,
+     "share_of_with_fee": 0.874
+    },
+    "hoa_includes_internet": {
+     "with_flag": 1023,
+     "with_flag_and_fee": 1023,
+     "share_of_with_fee": 0.586
+    },
+    "hoa_includes_cable": {
+     "with_flag": 755,
+     "with_flag_and_fee": 755,
+     "share_of_with_fee": 0.432
+    },
+    "hoa_includes_pest": {
+     "with_flag": 1243,
+     "with_flag_and_fee": 1243,
+     "share_of_with_fee": 0.712
+    },
+    "hoa_includes_electric": {
+     "with_flag": 120,
+     "with_flag_and_fee": 120,
+     "share_of_with_fee": 0.069
+    },
+    "lawn_care_included": {
+     "with_flag": 1536,
+     "with_flag_and_fee": 1536,
+     "share_of_with_fee": 0.88
+    },
+    "community_pool": {
+     "with_flag": 1557,
+     "with_flag_and_fee": 1557,
+     "share_of_with_fee": 0.892
+    },
+    "clubhouse": {
+     "with_flag": 743,
+     "with_flag_and_fee": 743,
+     "share_of_with_fee": 0.426
+    },
+    "security_service": {
+     "with_flag": 465,
+     "with_flag_and_fee": 465,
+     "share_of_with_fee": 0.266
+    },
+    "gated": {
+     "with_flag": 318,
+     "with_flag_and_fee": 318,
+     "share_of_with_fee": 0.182
+    },
+    "tennis": {
+     "with_flag": 402,
+     "with_flag_and_fee": 402,
+     "share_of_with_fee": 0.23
+    },
+    "golf_included": {
+     "with_flag": 7,
+     "with_flag_and_fee": 7,
+     "share_of_with_fee": 0.004
+    }
+   }
+  },
+  "townhouse": {
+   "params": {
+    "type": "townhouse"
+   },
+   "total": 366,
+   "fee_zero_or_blank": 28,
+   "with_fee": 338,
+   "quartiles": {
+    "p25": {
+     "at_or_below": 190,
+     "band": [
+      185,
+      190
+     ]
+    },
+    "median": {
+     "at_or_below": 290,
+     "band": [
+      285,
+      290
+     ]
+    },
+    "p75": {
+     "at_or_below": 425,
+     "band": [
+      420,
+      425
+     ]
+    }
+   },
+   "covers": {
+    "hoa_includes_insurance": {
+     "with_flag": 125,
+     "with_flag_and_fee": 124,
+     "share_of_with_fee": 0.367
+    },
+    "hoa_includes_water_sewer": {
+     "with_flag": 64,
+     "with_flag_and_fee": 64,
+     "share_of_with_fee": 0.189
+    },
+    "hoa_includes_trash": {
+     "with_flag": 248,
+     "with_flag_and_fee": 245,
+     "share_of_with_fee": 0.725
+    },
+    "hoa_includes_internet": {
+     "with_flag": 78,
+     "with_flag_and_fee": 78,
+     "share_of_with_fee": 0.231
+    },
+    "hoa_includes_cable": {
+     "with_flag": 102,
+     "with_flag_and_fee": 97,
+     "share_of_with_fee": 0.287
+    },
+    "hoa_includes_pest": {
+     "with_flag": 112,
+     "with_flag_and_fee": 112,
+     "share_of_with_fee": 0.331
+    },
+    "hoa_includes_electric": {
+     "with_flag": 1,
+     "with_flag_and_fee": 1,
+     "share_of_with_fee": 0.003
+    },
+    "lawn_care_included": {
+     "with_flag": 285,
+     "with_flag_and_fee": 285,
+     "share_of_with_fee": 0.843
+    },
+    "community_pool": {
+     "with_flag": 206,
+     "with_flag_and_fee": 205,
+     "share_of_with_fee": 0.607
+    },
+    "clubhouse": {
+     "with_flag": 111,
+     "with_flag_and_fee": 111,
+     "share_of_with_fee": 0.328
+    },
+    "security_service": {
+     "with_flag": 30,
+     "with_flag_and_fee": 30,
+     "share_of_with_fee": 0.089
+    },
+    "gated": {
+     "with_flag": 31,
+     "with_flag_and_fee": 31,
+     "share_of_with_fee": 0.092
+    },
+    "tennis": {
+     "with_flag": 38,
+     "with_flag_and_fee": 38,
+     "share_of_with_fee": 0.112
+    },
+    "golf_included": {
+     "with_flag": 0,
+     "with_flag_and_fee": 0,
+     "share_of_with_fee": 0.0
+    }
+   }
+  },
+  "house": {
+   "params": {
+    "type": "house"
+   },
+   "total": 3667,
+   "fee_zero_or_blank": 1141,
+   "with_fee": 2526,
+   "quartiles": {
+    "p25": {
+     "at_or_below": 70,
+     "band": [
+      65,
+      70
+     ]
+    },
+    "median": {
+     "at_or_below": 95,
+     "band": [
+      90,
+      95
+     ]
+    },
+    "p75": {
+     "at_or_below": 135,
+     "band": [
+      130,
+      135
+     ]
+    }
+   },
+   "covers": {
+    "hoa_includes_insurance": {
+     "with_flag": 101,
+     "with_flag_and_fee": 101,
+     "share_of_with_fee": 0.04
+    },
+    "hoa_includes_water_sewer": {
+     "with_flag": 40,
+     "with_flag_and_fee": 39,
+     "share_of_with_fee": 0.015
+    },
+    "hoa_includes_trash": {
+     "with_flag": 1204,
+     "with_flag_and_fee": 1161,
+     "share_of_with_fee": 0.46
+    },
+    "hoa_includes_internet": {
+     "with_flag": 219,
+     "with_flag_and_fee": 216,
+     "share_of_with_fee": 0.086
+    },
+    "hoa_includes_cable": {
+     "with_flag": 2,
+     "with_flag_and_fee": 2,
+     "share_of_with_fee": 0.001
+    },
+    "hoa_includes_pest": {
+     "with_flag": 23,
+     "with_flag_and_fee": 22,
+     "share_of_with_fee": 0.009
+    },
+    "hoa_includes_electric": {
+     "with_flag": 0,
+     "with_flag_and_fee": 0,
+     "share_of_with_fee": 0.0
+    },
+    "lawn_care_included": {
+     "with_flag": 217,
+     "with_flag_and_fee": 213,
+     "share_of_with_fee": 0.084
+    },
+    "community_pool": {
+     "with_flag": 1631,
+     "with_flag_and_fee": 1554,
+     "share_of_with_fee": 0.615
+    },
+    "clubhouse": {
+     "with_flag": 1173,
+     "with_flag_and_fee": 1122,
+     "share_of_with_fee": 0.444
+    },
+    "security_service": {
+     "with_flag": 423,
+     "with_flag_and_fee": 363,
+     "share_of_with_fee": 0.144
+    },
+    "gated": {
+     "with_flag": 503,
+     "with_flag_and_fee": 425,
+     "share_of_with_fee": 0.168
+    },
+    "tennis": {
+     "with_flag": 515,
+     "with_flag_and_fee": 505,
+     "share_of_with_fee": 0.2
+    },
+    "golf_included": {
+     "with_flag": 15,
+     "with_flag_and_fee": 15,
+     "share_of_with_fee": 0.006
+    }
+   }
+  },
+  "house_no_amenities": {
+   "params": {
+    "type": "house",
+    "not": "community_amenities"
+   },
+   "total": 2094,
+   "fee_zero_or_blank": 1084,
+   "with_fee": 1010,
+   "quartiles": {
+    "p25": {
+     "at_or_below": 55,
+     "band": [
+      50,
+      55
+     ]
+    },
+    "median": {
+     "at_or_below": 70,
+     "band": [
+      65,
+      70
+     ]
+    },
+    "p75": {
+     "at_or_below": 100,
+     "band": [
+      95,
+      100
+     ]
+    }
+   },
+   "covers": {
+    "hoa_includes_insurance": {
+     "with_flag": 19,
+     "with_flag_and_fee": 19,
+     "share_of_with_fee": 0.019
+    },
+    "hoa_includes_water_sewer": {
+     "with_flag": 3,
+     "with_flag_and_fee": 3,
+     "share_of_with_fee": 0.003
+    },
+    "hoa_includes_trash": {
+     "with_flag": 386,
+     "with_flag_and_fee": 377,
+     "share_of_with_fee": 0.373
+    },
+    "hoa_includes_internet": {
+     "with_flag": 38,
+     "with_flag_and_fee": 36,
+     "share_of_with_fee": 0.036
+    },
+    "hoa_includes_cable": {
+     "with_flag": 0,
+     "with_flag_and_fee": 0,
+     "share_of_with_fee": 0.0
+    },
+    "hoa_includes_pest": {
+     "with_flag": 4,
+     "with_flag_and_fee": 3,
+     "share_of_with_fee": 0.003
+    },
+    "hoa_includes_electric": {
+     "with_flag": 0,
+     "with_flag_and_fee": 0,
+     "share_of_with_fee": 0.0
+    },
+    "lawn_care_included": {
+     "with_flag": 36,
+     "with_flag_and_fee": 36,
+     "share_of_with_fee": 0.036
+    },
+    "community_pool": {
+     "with_flag": 93,
+     "with_flag_and_fee": 71,
+     "share_of_with_fee": 0.07
+    },
+    "clubhouse": {
+     "with_flag": 42,
+     "with_flag_and_fee": 42,
+     "share_of_with_fee": 0.042
+    },
+    "security_service": {
+     "with_flag": 45,
+     "with_flag_and_fee": 32,
+     "share_of_with_fee": 0.032
+    },
+    "gated": {
+     "with_flag": 89,
+     "with_flag_and_fee": 63,
+     "share_of_with_fee": 0.062
+    },
+    "tennis": {
+     "with_flag": 13,
+     "with_flag_and_fee": 13,
+     "share_of_with_fee": 0.013
+    },
+    "golf_included": {
+     "with_flag": 10,
+     "with_flag_and_fee": 10,
+     "share_of_with_fee": 0.01
+    }
+   }
+  },
+  "house_pool_or_clubhouse": {
+   "params": {
+    "type": "house",
+    "has": "pool_or_clubhouse"
+   },
+   "total": 1570,
+   "fee_zero_or_blank": 57,
+   "with_fee": 1513,
+   "quartiles": {
+    "p25": {
+     "at_or_below": 90,
+     "band": [
+      85,
+      90
+     ]
+    },
+    "median": {
+     "at_or_below": 110,
+     "band": [
+      105,
+      110
+     ]
+    },
+    "p75": {
+     "at_or_below": 165,
+     "band": [
+      160,
+      165
+     ]
+    }
+   },
+   "covers": {
+    "hoa_includes_insurance": {
+     "with_flag": 82,
+     "with_flag_and_fee": 82,
+     "share_of_with_fee": 0.054
+    },
+    "hoa_includes_water_sewer": {
+     "with_flag": 37,
+     "with_flag_and_fee": 36,
+     "share_of_with_fee": 0.024
+    },
+    "hoa_includes_trash": {
+     "with_flag": 818,
+     "with_flag_and_fee": 784,
+     "share_of_with_fee": 0.518
+    },
+    "hoa_includes_internet": {
+     "with_flag": 181,
+     "with_flag_and_fee": 180,
+     "share_of_with_fee": 0.119
+    },
+    "hoa_includes_cable": {
+     "with_flag": 2,
+     "with_flag_and_fee": 2,
+     "share_of_with_fee": 0.001
+    },
+    "hoa_includes_pest": {
+     "with_flag": 19,
+     "with_flag_and_fee": 19,
+     "share_of_with_fee": 0.013
+    },
+    "hoa_includes_electric": {
+     "with_flag": 0,
+     "with_flag_and_fee": 0,
+     "share_of_with_fee": 0.0
+    },
+    "lawn_care_included": {
+     "with_flag": 181,
+     "with_flag_and_fee": 177,
+     "share_of_with_fee": 0.117
+    },
+    "community_pool": {
+     "with_flag": 1537,
+     "with_flag_and_fee": 1482,
+     "share_of_with_fee": 0.98
+    },
+    "clubhouse": {
+     "with_flag": 1129,
+     "with_flag_and_fee": 1078,
+     "share_of_with_fee": 0.712
+    },
+    "security_service": {
+     "with_flag": 378,
+     "with_flag_and_fee": 331,
+     "share_of_with_fee": 0.219
+    },
+    "gated": {
+     "with_flag": 414,
+     "with_flag_and_fee": 362,
+     "share_of_with_fee": 0.239
+    },
+    "tennis": {
+     "with_flag": 499,
+     "with_flag_and_fee": 489,
+     "share_of_with_fee": 0.323
+    },
+    "golf_included": {
+     "with_flag": 5,
+     "with_flag_and_fee": 5,
+     "share_of_with_fee": 0.003
+    }
+   }
+  },
+  "house_gated": {
+   "params": {
+    "type": "house",
+    "has": "gated"
+   },
+   "total": 503,
+   "fee_zero_or_blank": 78,
+   "with_fee": 425,
+   "quartiles": {
+    "p25": {
+     "at_or_below": 120,
+     "band": [
+      115,
+      120
+     ]
+    },
+    "median": {
+     "at_or_below": 160,
+     "band": [
+      155,
+      160
+     ]
+    },
+    "p75": {
+     "at_or_below": 235,
+     "band": [
+      230,
+      235
+     ]
+    }
+   },
+   "covers": {
+    "hoa_includes_insurance": {
+     "with_flag": 30,
+     "with_flag_and_fee": 30,
+     "share_of_with_fee": 0.071
+    },
+    "hoa_includes_water_sewer": {
+     "with_flag": 16,
+     "with_flag_and_fee": 15,
+     "share_of_with_fee": 0.035
+    },
+    "hoa_includes_trash": {
+     "with_flag": 187,
+     "with_flag_and_fee": 147,
+     "share_of_with_fee": 0.346
+    },
+    "hoa_includes_internet": {
+     "with_flag": 40,
+     "with_flag_and_fee": 39,
+     "share_of_with_fee": 0.092
+    },
+    "hoa_includes_cable": {
+     "with_flag": 2,
+     "with_flag_and_fee": 2,
+     "share_of_with_fee": 0.005
+    },
+    "hoa_includes_pest": {
+     "with_flag": 5,
+     "with_flag_and_fee": 5,
+     "share_of_with_fee": 0.012
+    },
+    "hoa_includes_electric": {
+     "with_flag": 0,
+     "with_flag_and_fee": 0,
+     "share_of_with_fee": 0.0
+    },
+    "lawn_care_included": {
+     "with_flag": 72,
+     "with_flag_and_fee": 68,
+     "share_of_with_fee": 0.16
+    },
+    "community_pool": {
+     "with_flag": 417,
+     "with_flag_and_fee": 357,
+     "share_of_with_fee": 0.84
+    },
+    "clubhouse": {
+     "with_flag": 393,
+     "with_flag_and_fee": 344,
+     "share_of_with_fee": 0.809
+    },
+    "security_service": {
+     "with_flag": 337,
+     "with_flag_and_fee": 283,
+     "share_of_with_fee": 0.666
+    },
+    "gated": {
+     "with_flag": 503,
+     "with_flag_and_fee": 425,
+     "share_of_with_fee": 1.0
+    },
+    "tennis": {
+     "with_flag": 251,
+     "with_flag_and_fee": 241,
+     "share_of_with_fee": 0.567
+    },
+    "golf_included": {
+     "with_flag": 0,
+     "with_flag_and_fee": 0,
+     "share_of_with_fee": 0.0
+    }
+   }
+  },
+  "house_golf_community": {
+   "params": {
+    "type": "house",
+    "has": "golf_community"
+   },
+   "total": 358,
+   "fee_zero_or_blank": 23,
+   "with_fee": 335,
+   "quartiles": {
+    "p25": {
+     "at_or_below": 75,
+     "band": [
+      70,
+      75
+     ]
+    },
+    "median": {
+     "at_or_below": 105,
+     "band": [
+      100,
+      105
+     ]
+    },
+    "p75": {
+     "at_or_below": 225,
+     "band": [
+      220,
+      225
+     ]
+    }
+   },
+   "covers": {
+    "hoa_includes_insurance": {
+     "with_flag": 13,
+     "with_flag_and_fee": 13,
+     "share_of_with_fee": 0.039
+    },
+    "hoa_includes_water_sewer": {
+     "with_flag": 11,
+     "with_flag_and_fee": 11,
+     "share_of_with_fee": 0.033
+    },
+    "hoa_includes_trash": {
+     "with_flag": 134,
+     "with_flag_and_fee": 134,
+     "share_of_with_fee": 0.4
+    },
+    "hoa_includes_internet": {
+     "with_flag": 34,
+     "with_flag_and_fee": 34,
+     "share_of_with_fee": 0.101
+    },
+    "hoa_includes_cable": {
+     "with_flag": 0,
+     "with_flag_and_fee": 0,
+     "share_of_with_fee": 0.0
+    },
+    "hoa_includes_pest": {
+     "with_flag": 0,
+     "with_flag_and_fee": 0,
+     "share_of_with_fee": 0.0
+    },
+    "hoa_includes_electric": {
+     "with_flag": 0,
+     "with_flag_and_fee": 0,
+     "share_of_with_fee": 0.0
+    },
+    "lawn_care_included": {
+     "with_flag": 53,
+     "with_flag_and_fee": 53,
+     "share_of_with_fee": 0.158
+    },
+    "community_pool": {
+     "with_flag": 257,
+     "with_flag_and_fee": 257,
+     "share_of_with_fee": 0.767
+    },
+    "clubhouse": {
+     "with_flag": 257,
+     "with_flag_and_fee": 257,
+     "share_of_with_fee": 0.767
+    },
+    "security_service": {
+     "with_flag": 150,
+     "with_flag_and_fee": 150,
+     "share_of_with_fee": 0.448
+    },
+    "gated": {
+     "with_flag": 144,
+     "with_flag_and_fee": 144,
+     "share_of_with_fee": 0.43
+    },
+    "tennis": {
+     "with_flag": 187,
+     "with_flag_and_fee": 187,
+     "share_of_with_fee": 0.558
+    },
+    "golf_included": {
+     "with_flag": 15,
+     "with_flag_and_fee": 15,
+     "share_of_with_fee": 0.045
+    }
+   }
+  },
+  "house_gated_golf": {
+   "params": {
+    "type": "house",
+    "has": "gated,golf_community"
+   },
+   "total": 144,
+   "fee_zero_or_blank": 0,
+   "with_fee": 144,
+   "quartiles": {
+    "p25": {
+     "at_or_below": 100,
+     "band": [
+      95,
+      100
+     ]
+    },
+    "median": {
+     "at_or_below": 200,
+     "band": [
+      195,
+      200
+     ]
+    },
+    "p75": {
+     "at_or_below": 320,
+     "band": [
+      315,
+      320
+     ]
+    }
+   },
+   "covers": {
+    "hoa_includes_insurance": {
+     "with_flag": 6,
+     "with_flag_and_fee": 6,
+     "share_of_with_fee": 0.042
+    },
+    "hoa_includes_water_sewer": {
+     "with_flag": 7,
+     "with_flag_and_fee": 7,
+     "share_of_with_fee": 0.049
+    },
+    "hoa_includes_trash": {
+     "with_flag": 54,
+     "with_flag_and_fee": 54,
+     "share_of_with_fee": 0.375
+    },
+    "hoa_includes_internet": {
+     "with_flag": 17,
+     "with_flag_and_fee": 17,
+     "share_of_with_fee": 0.118
+    },
+    "hoa_includes_cable": {
+     "with_flag": 0,
+     "with_flag_and_fee": 0,
+     "share_of_with_fee": 0.0
+    },
+    "hoa_includes_pest": {
+     "with_flag": 0,
+     "with_flag_and_fee": 0,
+     "share_of_with_fee": 0.0
+    },
+    "hoa_includes_electric": {
+     "with_flag": 0,
+     "with_flag_and_fee": 0,
+     "share_of_with_fee": 0.0
+    },
+    "lawn_care_included": {
+     "with_flag": 40,
+     "with_flag_and_fee": 40,
+     "share_of_with_fee": 0.278
+    },
+    "community_pool": {
+     "with_flag": 128,
+     "with_flag_and_fee": 128,
+     "share_of_with_fee": 0.889
+    },
+    "clubhouse": {
+     "with_flag": 129,
+     "with_flag_and_fee": 129,
+     "share_of_with_fee": 0.896
+    },
+    "security_service": {
+     "with_flag": 129,
+     "with_flag_and_fee": 129,
+     "share_of_with_fee": 0.896
+    },
+    "gated": {
+     "with_flag": 144,
+     "with_flag_and_fee": 144,
+     "share_of_with_fee": 1.0
+    },
+    "tennis": {
+     "with_flag": 116,
+     "with_flag_and_fee": 116,
+     "share_of_with_fee": 0.806
+    },
+    "golf_included": {
+     "with_flag": 0,
+     "with_flag_and_fee": 0,
+     "share_of_with_fee": 0.0
+    }
+   }
+  },
+  "condo": {
+   "params": {
+    "type": "condo"
+   },
+   "total": 2853,
+   "fee_zero_or_blank": 1,
+   "with_fee": 2852,
+   "quartiles": {
+    "p25": {
+     "at_or_below": 460,
+     "band": [
+      455,
+      460
+     ]
+    },
+    "median": {
+     "at_or_below": 645,
+     "band": [
+      640,
+      645
+     ]
+    },
+    "p75": {
+     "at_or_below": 940,
+     "band": [
+      935,
+      940
+     ]
+    }
+   },
+   "covers": {
+    "hoa_includes_insurance": {
+     "with_flag": 2242,
+     "with_flag_and_fee": 2242,
+     "share_of_with_fee": 0.786
+    },
+    "hoa_includes_water_sewer": {
+     "with_flag": 2405,
+     "with_flag_and_fee": 2405,
+     "share_of_with_fee": 0.843
+    },
+    "hoa_includes_trash": {
+     "with_flag": 2586,
+     "with_flag_and_fee": 2586,
+     "share_of_with_fee": 0.907
+    },
+    "hoa_includes_internet": {
+     "with_flag": 1997,
+     "with_flag_and_fee": 1997,
+     "share_of_with_fee": 0.7
+    },
+    "hoa_includes_cable": {
+     "with_flag": 1383,
+     "with_flag_and_fee": 1383,
+     "share_of_with_fee": 0.485
+    },
+    "hoa_includes_pest": {
+     "with_flag": 2168,
+     "with_flag_and_fee": 2168,
+     "share_of_with_fee": 0.76
+    },
+    "hoa_includes_electric": {
+     "with_flag": 751,
+     "with_flag_and_fee": 751,
+     "share_of_with_fee": 0.263
+    },
+    "lawn_care_included": {
+     "with_flag": 2593,
+     "with_flag_and_fee": 2593,
+     "share_of_with_fee": 0.909
+    },
+    "community_pool": {
+     "with_flag": 2624,
+     "with_flag_and_fee": 2624,
+     "share_of_with_fee": 0.92
+    },
+    "clubhouse": {
+     "with_flag": 1205,
+     "with_flag_and_fee": 1205,
+     "share_of_with_fee": 0.423
+    },
+    "security_service": {
+     "with_flag": 1105,
+     "with_flag_and_fee": 1105,
+     "share_of_with_fee": 0.387
+    },
+    "gated": {
+     "with_flag": 432,
+     "with_flag_and_fee": 432,
+     "share_of_with_fee": 0.151
+    },
+    "tennis": {
+     "with_flag": 530,
+     "with_flag_and_fee": 530,
+     "share_of_with_fee": 0.186
+    },
+    "golf_included": {
+     "with_flag": 9,
+     "with_flag_and_fee": 9,
+     "share_of_with_fee": 0.003
+    }
+   }
+  }
+ },
+ "calls": 61,
+ "pulled_more": {
+  "condo": "2026-11-09T03:43:59.983939Z"
+ }
+}

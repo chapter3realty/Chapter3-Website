@@ -1,0 +1,95 @@
+{
+ "del_webb_grande_dunes_2025": {
+  "source": "Del Webb at Grande Dunes, Budget Comparison Statement, Dept. 1 Operating, annual budget 2025",
+  "lines": {
+   "40005": 1835460.0,
+   "40015": 781440.0,
+   "40016": 615384.0,
+   "40020": 493734.0,
+   "49001": -198000.0,
+   "55013": 4764.0,
+   "55022": 69551.0,
+   "55025": 659160.0,
+   "55032": 36475.0,
+   "55035": 24000.0,
+   "55159": 22716.0,
+   "51005": 307792.44,
+   "51025": 73872.0,
+   "51065": 139956.0,
+   "51997": 781440.0,
+   "51998": 615384.0,
+   "53179": 493734.0,
+   "53307": 46500.0,
+   "53316": 22166.0,
+   "52005": 163080.0,
+   "52025": 33012.0,
+   "52045": 35839.92,
+   "52061": 13788.0
+  },
+  "total_assessment_revenue": 3726869.0,
+  "total_expense": 3713069.02,
+  "transfer_to_reserves": 198000.0,
+  "spend_and_save": 3911069.02,
+  "groups": {
+   "Grande Dunes Ocean Club (beach club)": {
+    "dollars": 781440,
+    "share_pct": 20.0
+   },
+   "Grande Dunes master association": {
+    "dollars": 615384,
+    "share_pct": 15.7
+   },
+   "Lawns and landscaping": {
+    "dollars": 1221560,
+    "share_pct": 31.2
+   },
+   "Staff (wages, taxes, benefits)": {
+    "dollars": 381664,
+    "share_pct": 9.8
+   },
+   "Power, water, gas, phone and internet for shared buildings": {
+    "dollars": 245720,
+    "share_pct": 6.3
+   },
+   "Savings for future repairs (reserves)": {
+    "dollars": 198000,
+    "share_pct": 5.1
+   },
+   "Insurance": {
+    "dollars": 139956,
+    "share_pct": 3.6
+   },
+   "Everything else (cleaning, pool, ponds, management, upkeep)": {
+    "dollars": 327345,
+    "share_pct": 8.4
+   }
+  }
+ },
+ "myrtle_trace_2026": {
+  "source": "Myrtle Trace HOA, 2025 & 2026 Budget Comparisons, 2026 BUDGET column (scan, p. 6)",
+  "lines_2026": {
+   "Homeowners Dues": 590520.0,
+   "Miscellaneous Other": 33280.0,
+   "TOTAL INCOME": 623800.0,
+   "Clubhouse Expenses": 12760.0,
+   "General & Administration Expenses": 75191.0,
+   "Grounds & Buildings Expenses": 334771.0,
+   "Pool & Lake Expenses": 40072.0,
+   "Property & Income Tax Expenses": 2000.0,
+   "Utilities, Clubhouse Communications": 48372.0,
+   "TOTAL OPERATING EXPENSES": 513166.0,
+   "EXCESS TOTAL REVENUES OVER EXPENSES": 110634.0
+  },
+  "homes": 518,
+  "dues_per_home_month": 95.0,
+  "groups_of_each_100_income": {
+   "Grounds and buildings": 53.7,
+   "Left over after expenses": 17.7,
+   "Office, management and administration": 12.1,
+   "Utilities": 7.8,
+   "Pool and lakes": 6.4,
+   "Clubhouse": 2.0,
+   "Taxes": 0.3
+  }
+ }
+}

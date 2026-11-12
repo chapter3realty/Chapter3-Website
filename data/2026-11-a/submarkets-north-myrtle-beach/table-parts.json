@@ -1,0 +1,193 @@
+{
+ "title": "The parts of North Myrtle Beach",
+ "window": [
+  "2025/10/01",
+  "2026/09/30"
+ ],
+ "rows": [
+  {
+   "key": "cg",
+   "name": "Cherry Grove",
+   "homes": 4848,
+   "houses": 1920,
+   "condos": 2860,
+   "house_resale": {
+    "n": 103,
+    "median": 695000,
+    "p25": 590000,
+    "p75": 860000
+   },
+   "condo_sales": {
+    "n": 156,
+    "median": 309750,
+    "p25": 194900,
+    "p75": 450000
+   },
+   "pct_houses_legal_residence": 23.7,
+   "pct_condos_legal_residence": 8.3,
+   "pct_homes_high_risk_flood": 88.1,
+   "listing_house_ask_per_sqft": 487
+  },
+  {
+   "key": "neck",
+   "name": "Little River Neck",
+   "homes": 2784,
+   "houses": 1413,
+   "condos": 639,
+   "house_resale": {
+    "n": 70,
+    "median": 588782,
+    "p25": 465000,
+    "p75": 665000
+   },
+   "condo_sales": {
+    "n": 81,
+    "median": 317500,
+    "p25": 250000,
+    "p75": 385000
+   },
+   "pct_houses_legal_residence": 72.9,
+   "pct_condos_legal_residence": 31.3,
+   "pct_homes_high_risk_flood": 9.9,
+   "listing_house_ask_per_sqft": 265
+  },
+  {
+   "key": "til",
+   "name": "Tilghman Beach",
+   "homes": 4520,
+   "houses": 1404,
+   "condos": 3028,
+   "house_resale": {
+    "n": 73,
+    "median": 725000,
+    "p25": 600000,
+    "p75": 865000
+   },
+   "condo_sales": {
+    "n": 181,
+    "median": 325000,
+    "p25": 255000,
+    "p75": 440000
+   },
+   "pct_houses_legal_residence": 67.1,
+   "pct_condos_legal_residence": 15.6,
+   "pct_homes_high_risk_flood": 32.9,
+   "listing_house_ask_per_sqft": 298
+  },
+  {
+   "key": "od",
+   "name": "Ocean Drive",
+   "homes": 3035,
+   "houses": 825,
+   "condos": 2145,
+   "house_resale": {
+    "n": 39,
+    "median": 600000,
+    "p25": 385000,
+    "p75": 980000
+   },
+   "condo_sales": {
+    "n": 116,
+    "median": 358250,
+    "p25": 250000,
+    "p75": 600000
+   },
+   "pct_houses_legal_residence": 41.0,
+   "pct_condos_legal_residence": 11.2,
+   "pct_homes_high_risk_flood": 52.3,
+   "listing_house_ask_per_sqft": 349
+  },
+  {
+   "key": "cb",
+   "name": "Crescent Beach",
+   "homes": 5416,
+   "houses": 1434,
+   "condos": 3863,
+   "house_resale": {
+    "n": 66,
+    "median": 411000,
+    "p25": 345000,
+    "p75": 675000
+   },
+   "condo_sales": {
+    "n": 216,
+    "median": 349700,
+    "p25": 215000,
+    "p75": 485000
+   },
+   "pct_houses_legal_residence": 31.7,
+   "pct_condos_legal_residence": 7.5,
+   "pct_homes_high_risk_flood": 31.7,
+   "listing_house_ask_per_sqft": 342
+  },
+  {
+   "key": "wh",
+   "name": "Windy Hill",
+   "homes": 2473,
+   "houses": 889,
+   "condos": 1309,
+   "house_resale": {
+    "n": 28,
+    "median": 460000,
+    "p25": 433000,
+    "p75": 615000
+   },
+   "condo_sales": {
+    "n": 71,
+    "median": 325000,
+    "p25": 250000,
+    "p75": 500000
+   },
+   "pct_houses_legal_residence": 33.0,
+   "pct_condos_legal_residence": 14.1,
+   "pct_homes_high_risk_flood": 32.1,
+   "listing_house_ask_per_sqft": 314
+  },
+  {
+   "key": "west17",
+   "name": "West of US 17",
+   "homes": 2866,
+   "houses": 1643,
+   "condos": 1093,
+   "house_resale": {
+    "n": 91,
+    "median": 475000,
+    "p25": 350000,
+    "p75": 589900
+   },
+   "condo_sales": {
+    "n": 71,
+    "median": 175000,
+    "p25": 132000,
+    "p75": 230000
+   },
+   "pct_houses_legal_residence": 72.2,
+   "pct_condos_legal_residence": 25.4,
+   "pct_homes_high_risk_flood": 6.8,
+   "listing_house_ask_per_sqft": 280
+  },
+  {
+   "key": "across",
+   "name": "Across the waterway",
+   "homes": 5193,
+   "houses": 1922,
+   "condos": 2961,
+   "house_resale": {
+    "n": 90,
+    "median": 477500,
+    "p25": 392000,
+    "p75": 635000
+   },
+   "condo_sales": {
+    "n": 200,
+    "median": 275000,
+    "p25": 224900,
+    "p75": 380000
+   },
+   "pct_houses_legal_residence": 74.1,
+   "pct_condos_legal_residence": 23.2,
+   "pct_homes_high_risk_flood": 0.0,
+   "listing_house_ask_per_sqft": 255
+  }
+ ]
+}

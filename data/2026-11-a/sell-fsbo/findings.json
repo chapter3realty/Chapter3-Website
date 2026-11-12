@@ -1,0 +1,161 @@
+{
+ "form": {
+  "source": "https://llr.sc.gov/re/recpdf/Property-Condition-Disclosure-Statement-06.2025.pdf",
+  "pages": 7,
+  "numbered_questions": 28,
+  "addendum_questions": 11,
+  "parts": [
+   "I. WATER SUPPLY AND SANITARY SEWAGE DISPOSAL SYSTEM Y",
+   "II. ROOF, CHIMNEYS, FLOORS, FOUNDATION, BASEMENT, AND",
+   "III. PLUMBING, ELECTRICAL, HEATING, COOLING, AND OTHER",
+   "IV. PRESENT OR PAST INFESTATION OF WOOD DESTROYING INSECTS OR ORGANI SMS OR DRY",
+   "V. THE ZONING LAWS, RESTRICTIVE COVENANTS, BUILDING CODES, AND OTHER LAND USE",
+   "VI. BURIED, UNBURIED, OR COVERED PRESENCE OF THE FOLLOWING",
+   "VII. EXISTENCE OF A RENTAL, RENTAL MANAGEMENT, VACATION RENTAL, OR OTHER LEASE",
+   "VIII. EXISTENCE OF A METER CONSERVATION CHARGE, AS PERMITTED BY SECTION",
+   "IX. WHETHER THE PROPERTY IS SUBJECT TO GOVERNANCE OF A HOMEOWNERS ASSOCIATION",
+   "X. PLEASE USE THE SPACE BELOW FOR"
+  ],
+  "answer_choices": [
+   "Yes",
+   "No",
+   "No Representation"
+  ],
+  "coastal_questions": {
+   "22": "erosion and erosion control (bulkhead, seawall, sandbags)",
+   "23": "flood hazards, wetlands, flood zones, flood risk",
+   "24": "flood insurance on the property now",
+   "25": "flood insurance claims during your ownership",
+   "26": "flood repairs not claimed on insurance during your ownership",
+   "27": "federal flood disaster aid during your ownership",
+   "28": "beach nourishment assessment during your ownership"
+  },
+  "coastal_count": 7
+ },
+ "nar_2025": {
+  "source": "NAR 2025 Profile of Home Buyers and Sellers, ch. 8 (transactions July 2024 to June 2025)",
+  "fsbo_share_pct": 5,
+  "agent_assisted_pct": 91,
+  "fsbo_knew_buyer_pct": 3,
+  "fsbo_did_not_know_pct": 2,
+  "resort_area": {
+   "fsbo_pct": 9,
+   "agent_pct": 90
+  },
+  "rural": {
+   "fsbo_pct": 10
+  },
+  "suburb": {
+   "fsbo_pct": 3
+  },
+  "median_price": {
+   "fsbo_seller_knew_buyer": 360000,
+   "fsbo_seller_did_not_know_buyer": 372200,
+   "agent_assisted_only": 425000,
+   "first_fsbo_then_agent": 425000,
+   "all_fsbo": 360000
+  },
+  "main_reason": {
+   "sold_to_relative_friend_neighbor": 30,
+   "did_not_want_to_pay_commission": 28,
+   "buyer_contacted_seller": 14
+  },
+  "did_not_actively_market_pct": 40,
+  "hardest_task": {
+   "getting_the_price_right": 17,
+   "preparing_or_fixing_up": 12,
+   "selling_in_time_planned": 10,
+   "paperwork": 7,
+   "none": 42
+  }
+ },
+ "worked": {
+  "price": 350000,
+  "price_source": "SHV row 2 (middle resale house, Horry County, 12 months to Sept 2026)",
+  "deed_fee": 1295.0,
+  "one_percent": 3500.0
+ },
+ "surnames": {
+  "person_to_person_resales": 7522,
+  "same_surname": 73,
+  "self_deeds_left_out": 27,
+  "median_price": {
+   "same_surname": 200000,
+   "other_person_to_person": 310000,
+   "all_home_sales": 310000,
+   "all_resales_not_builder": 300000,
+   "houses_not_condo_resale": 324900
+  },
+  "same_surname_price_bands": {
+   "300k+": 20,
+   "under 100k": 22,
+   "100k-200k": 14,
+   "200k-300k": 17
+  },
+  "other_price_bands": {
+   "200k-300k": 2058,
+   "300k+": 3910,
+   "100k-200k": 1187,
+   "under 100k": 294
+  },
+  "vs_neighbors_same_group_min3": {
+   "same_surname": {
+    "n": 23,
+    "median": 0.652,
+    "p25": 0.477,
+    "p75": 0.921,
+    "share_below_90pct": 73.9,
+    "share_below_75pct": 60.9
+   },
+   "other_person_to_person": {
+    "n": 3427,
+    "median": 1.0,
+    "p25": 0.895,
+    "p75": 1.115,
+    "share_below_90pct": 25.8,
+    "share_below_75pct": 8.9
+   }
+  },
+  "under_100k": {
+   "same": 22,
+   "same_n": 73,
+   "other": 294,
+   "other_n": 7449,
+   "same_pct": 30.1,
+   "other_pct": 3.9
+  }
+ },
+ "listings_crosscheck": {
+  "any": {
+   "all": 8807,
+   "price_reduced": 4265,
+   "listed_30d": 1665,
+   "listed_7d": 375
+  },
+  "house": {
+   "all": 3704,
+   "price_reduced": 1905,
+   "listed_30d": 825,
+   "listed_7d": 190
+  },
+  "townhouse": {
+   "all": 365,
+   "price_reduced": 196,
+   "listed_30d": 93,
+   "listed_7d": 13
+  },
+  "condo": {
+   "all": 2842,
+   "price_reduced": 1459,
+   "listed_30d": 468,
+   "listed_7d": 120
+  },
+  "manufactured": {
+   "all": 509,
+   "price_reduced": 279,
+   "listed_30d": 108,
+   "listed_7d": 18
+  },
+  "pulled": "2026-11-04T07:58:27.302802Z"
+ }
+}

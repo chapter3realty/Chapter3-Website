@@ -1,0 +1,539 @@
+{
+ "made": "compute.py",
+ "manual": {
+  "management_pct": 35.0,
+  "marketing_pct": 2.6,
+  "inventory_pct": 1.0,
+  "program_take_pct": 38.6,
+  "health_club_per_month": 53.0,
+  "health_club_per_year": 636.0,
+  "statement": {
+   "gross": 229.95,
+   "marketing": 5.98,
+   "management": 80.48,
+   "fees_total": 86.46,
+   "owner_revenue": 143.49,
+   "health_club": 40.85,
+   "inventory": 2.3,
+   "maintenance": 22.5,
+   "personal": 11.0,
+   "other_total": 76.65,
+   "check": 66.84,
+   "nights": 3,
+   "fees_pct_of_gross": 37.6,
+   "check_pct_of_gross": 29.1
+  }
+ },
+ "platform": {
+  "airbnb_single_pct": 15.5,
+  "airbnb_split_pct": 3.0,
+  "vrbo_pct": 12.0
+ },
+ "per_1000": {
+  "program_manual": 614.0,
+  "airbnb_single": 845.0,
+  "vrbo": 880.0,
+  "airbnb_split_old": 970.0,
+  "full_service_low_take": 600.0,
+  "full_service_high_take": 400.0
+ },
+ "break_even_per_1000": 231.0,
+ "years": {
+  "myrtle-beach": {
+   "market": "Myrtle Beach",
+   "gross": 25807,
+   "program_after_fees_and_club": 15209,
+   "airbnb_after_fee": 21807,
+   "vrbo_after_fee": 22710,
+   "gap_airbnb_minus_program": 6597,
+   "gap_pct_of_gross": 25.6,
+   "full_service_40": 15484,
+   "full_service_60": 10323
+  },
+  "north-myrtle-beach": {
+   "market": "North Myrtle Beach",
+   "gross": 34401,
+   "program_after_fees_and_club": 20486,
+   "airbnb_after_fee": 29069,
+   "vrbo_after_fee": 30273,
+   "gap_airbnb_minus_program": 8583,
+   "gap_pct_of_gross": 24.9,
+   "full_service_40": 20641,
+   "full_service_60": 13760
+  }
+ },
+ "str_market": {
+  "retrieved": "2026-11-03",
+  "dataAsOf": "2026-10-01"
+ },
+ "crm": {
+  "pulled": "2026-11-04 (first run of pull_listings.py, log raw/pull_listings-run1.log)",
+  "oceanfront_listings": 1080,
+  "in_program": 879,
+  "pct_in_program": 81.4,
+  "not_in_program": 201,
+  "conventional": {
+   "program": [
+    633,
+    879,
+    72.0
+   ],
+   "not": [
+    150,
+    201,
+    74.6
+   ]
+  },
+  "cash_only": {
+   "program": [
+    39,
+    4.4
+   ],
+   "not": [
+    9,
+    4.5
+   ]
+  },
+  "fha": {
+   "program": 52,
+   "not": 10
+  },
+  "furnished": {
+   "program": 99.5,
+   "not": 89.6
+  },
+  "median_ask": {
+   "program": 200000,
+   "all": 215000
+  },
+  "median_dues": {
+   "program": 925,
+   "all": 925
+  },
+  "ask_at_or_under_200k": {
+   "program": 50.9,
+   "not": 30.8
+  },
+  "city": {
+   "program": {
+    "Myrtle Beach": 678,
+    "North Myrtle Beach": 171,
+    "Surfside Beach": 10
+   },
+   "not": {
+    "Myrtle Beach": 134,
+    "North Myrtle Beach": 54,
+    "Surfside Beach": 1
+   }
+  }
+ },
+ "buildings": {
+  "count_named": 159,
+  "with_8_plus": 43,
+  "all_in_program": [
+   "Compass Cove Pinnacle Oceanfront Tower",
+   "Beach Cove",
+   "Caribbean Oceanfront Suite Tower - PH I",
+   "Dunes Village Resort",
+   "Bay View Resort",
+   "Bay Watch PH II - South Tower",
+   "Bay Watch PH III - Center Tower",
+   "North Beach Towers - Ocean Front",
+   "Holiday Inn - Pavilion - MB",
+   "Boardwalk Oceanfront Tower",
+   "Patricia Grand I",
+   "Paradise Resort",
+   "Grand Atlantic"
+  ],
+  "none_in_program": [],
+  "table": [
+   {
+    "building": "Landmark Resort",
+    "listings": 83,
+    "in_program": 75,
+    "conventional_accepted": 52,
+    "street_addresses": 4,
+    "city": "Myrtle Beach",
+    "pct_program": 90
+   },
+   {
+    "building": "Coral Beach",
+    "listings": 38,
+    "in_program": 36,
+    "conventional_accepted": 27,
+    "street_addresses": 2,
+    "city": "Myrtle Beach",
+    "pct_program": 95
+   },
+   {
+    "building": "Caravelle Resort",
+    "listings": 37,
+    "in_program": 36,
+    "conventional_accepted": 24,
+    "street_addresses": 3,
+    "city": "Myrtle Beach",
+    "pct_program": 97
+   },
+   {
+    "building": "Mb Resort Rt",
+    "listings": 34,
+    "in_program": 21,
+    "conventional_accepted": 21,
+    "street_addresses": 1,
+    "city": "Myrtle Beach",
+    "pct_program": 62
+   },
+   {
+    "building": "Ocean Reef Resort North Tower",
+    "listings": 31,
+    "in_program": 26,
+    "conventional_accepted": 24,
+    "street_addresses": 3,
+    "city": "Myrtle Beach",
+    "pct_program": 84
+   },
+   {
+    "building": "Monterey Bay Suites Resort",
+    "listings": 29,
+    "in_program": 24,
+    "conventional_accepted": 21,
+    "street_addresses": 3,
+    "city": "Myrtle Beach",
+    "pct_program": 83
+   },
+   {
+    "building": "Sand Dunes Phii",
+    "listings": 29,
+    "in_program": 27,
+    "conventional_accepted": 19,
+    "street_addresses": 5,
+    "city": "Myrtle Beach",
+    "pct_program": 93
+   },
+   {
+    "building": "Bluewater Resort - Hi rise",
+    "listings": 26,
+    "in_program": 22,
+    "conventional_accepted": 18,
+    "street_addresses": 3,
+    "city": "Myrtle Beach",
+    "pct_program": 85
+   },
+   {
+    "building": "Sea Mist Resort",
+    "listings": 25,
+    "in_program": 18,
+    "conventional_accepted": 13,
+    "street_addresses": 4,
+    "city": "Myrtle Beach",
+    "pct_program": 72
+   },
+   {
+    "building": "Compass Cove Pinnacle Oceanfront Tower",
+    "listings": 25,
+    "in_program": 25,
+    "conventional_accepted": 14,
+    "street_addresses": 2,
+    "city": "Myrtle Beach",
+    "pct_program": 100
+   },
+   {
+    "building": "Beach Cove",
+    "listings": 25,
+    "in_program": 25,
+    "conventional_accepted": 18,
+    "street_addresses": 3,
+    "city": "North Myrtle Beach",
+    "pct_program": 100
+   },
+   {
+    "building": "Caribbean Oceanfront Suite Tower - PH I",
+    "listings": 25,
+    "in_program": 25,
+    "conventional_accepted": 23,
+    "street_addresses": 3,
+    "city": "Myrtle Beach",
+    "pct_program": 100
+   },
+   {
+    "building": "Bay Watch PH I - North Tower",
+    "listings": 23,
+    "in_program": 21,
+    "conventional_accepted": 12,
+    "street_addresses": 2,
+    "city": "North Myrtle Beach",
+    "pct_program": 91
+   },
+   {
+    "building": "Palace, The",
+    "listings": 22,
+    "in_program": 18,
+    "conventional_accepted": 18,
+    "street_addresses": 2,
+    "city": "Myrtle Beach",
+    "pct_program": 82
+   },
+   {
+    "building": "Beach Colony",
+    "listings": 18,
+    "in_program": 17,
+    "conventional_accepted": 12,
+    "street_addresses": 1,
+    "city": "Myrtle Beach",
+    "pct_program": 94
+   },
+   {
+    "building": "Grande Cayman Resort (formerly Long Bay Resort)",
+    "listings": 17,
+    "in_program": 16,
+    "conventional_accepted": 14,
+    "street_addresses": 2,
+    "city": "Myrtle Beach",
+    "pct_program": 94
+   },
+   {
+    "building": "Meridian Pla",
+    "listings": 15,
+    "in_program": 10,
+    "conventional_accepted": 10,
+    "street_addresses": 2,
+    "city": "Myrtle Beach",
+    "pct_program": 67
+   },
+   {
+    "building": "Holiday Sands",
+    "listings": 15,
+    "in_program": 13,
+    "conventional_accepted": 11,
+    "street_addresses": 2,
+    "city": "Myrtle Beach",
+    "pct_program": 87
+   },
+   {
+    "building": "Sandy Beach Resort, Phase Ii",
+    "listings": 14,
+    "in_program": 10,
+    "conventional_accepted": 14,
+    "street_addresses": 2,
+    "city": "Myrtle Beach",
+    "pct_program": 71
+   },
+   {
+    "building": "Dunes Village Resort",
+    "listings": 14,
+    "in_program": 14,
+    "conventional_accepted": 13,
+    "street_addresses": 1,
+    "city": "Myrtle Beach",
+    "pct_program": 100
+   },
+   {
+    "building": "Carolina Winds",
+    "listings": 13,
+    "in_program": 11,
+    "conventional_accepted": 13,
+    "street_addresses": 2,
+    "city": "Myrtle Beach",
+    "pct_program": 85
+   },
+   {
+    "building": "Maisons Sur-Mer",
+    "listings": 13,
+    "in_program": 3,
+    "conventional_accepted": 13,
+    "street_addresses": 1,
+    "city": "Myrtle Beach",
+    "pct_program": 23
+   },
+   {
+    "building": "Sands Ocean",
+    "listings": 12,
+    "in_program": 9,
+    "conventional_accepted": 10,
+    "street_addresses": 1,
+    "city": "Myrtle Beach",
+    "pct_program": 75
+   },
+   {
+    "building": "Royale Palms",
+    "listings": 12,
+    "in_program": 8,
+    "conventional_accepted": 4,
+    "street_addresses": 1,
+    "city": "Myrtle Beach",
+    "pct_program": 67
+   },
+   {
+    "building": "Bay View Resort",
+    "listings": 11,
+    "in_program": 11,
+    "conventional_accepted": 9,
+    "street_addresses": 2,
+    "city": "Myrtle Beach",
+    "pct_program": 100
+   },
+   {
+    "building": "Ocean Forest Pl",
+    "listings": 11,
+    "in_program": 4,
+    "conventional_accepted": 8,
+    "street_addresses": 2,
+    "city": "Myrtle Beach",
+    "pct_program": 36
+   },
+   {
+    "building": "Bay Watch PH II - South Tower",
+    "listings": 11,
+    "in_program": 11,
+    "conventional_accepted": 8,
+    "street_addresses": 3,
+    "city": "North Myrtle Beach",
+    "pct_program": 100
+   },
+   {
+    "building": "Bay Watch PH III - Center Tower",
+    "listings": 11,
+    "in_program": 11,
+    "conventional_accepted": 10,
+    "street_addresses": 3,
+    "city": "North Myrtle Beach",
+    "pct_program": 100
+   },
+   {
+    "building": "Dunes Village Phase II",
+    "listings": 11,
+    "in_program": 9,
+    "conventional_accepted": 11,
+    "street_addresses": 1,
+    "city": "Myrtle Beach",
+    "pct_program": 82
+   },
+   {
+    "building": "Kingston Plantation - South Hampton",
+    "listings": 11,
+    "in_program": 8,
+    "conventional_accepted": 6,
+    "street_addresses": 1,
+    "city": "Myrtle Beach",
+    "pct_program": 73
+   },
+   {
+    "building": "Crescent Shores - High Rise",
+    "listings": 11,
+    "in_program": 7,
+    "conventional_accepted": 8,
+    "street_addresses": 2,
+    "city": "North Myrtle Beach",
+    "pct_program": 64
+   },
+   {
+    "building": "North Beach Towers - Ocean Front",
+    "listings": 11,
+    "in_program": 11,
+    "conventional_accepted": 9,
+    "street_addresses": 1,
+    "city": "North Myrtle Beach",
+    "pct_program": 100
+   },
+   {
+    "building": "Holiday Inn - Pavilion - MB",
+    "listings": 10,
+    "in_program": 10,
+    "conventional_accepted": 8,
+    "street_addresses": 3,
+    "city": "Myrtle Beach",
+    "pct_program": 100
+   },
+   {
+    "building": "Boardwalk Oceanfront Tower",
+    "listings": 10,
+    "in_program": 10,
+    "conventional_accepted": 9,
+    "street_addresses": 4,
+    "city": "Myrtle Beach",
+    "pct_program": 100
+   },
+   {
+    "building": "Carolinian Beach Resort",
+    "listings": 10,
+    "in_program": 6,
+    "conventional_accepted": 8,
+    "street_addresses": 2,
+    "city": "Myrtle Beach",
+    "pct_program": 60
+   },
+   {
+    "building": "Oceans One South Tower - Myrtle Beach",
+    "listings": 10,
+    "in_program": 8,
+    "conventional_accepted": 7,
+    "street_addresses": 1,
+    "city": "Myrtle Beach",
+    "pct_program": 80
+   },
+   {
+    "building": "Avista Ocean Resort",
+    "listings": 10,
+    "in_program": 9,
+    "conventional_accepted": 8,
+    "street_addresses": 1,
+    "city": "North Myrtle Beach",
+    "pct_program": 90
+   },
+   {
+    "building": "Kingston Plantation - Brighton Towers",
+    "listings": 9,
+    "in_program": 6,
+    "conventional_accepted": 3,
+    "street_addresses": 1,
+    "city": "Myrtle Beach",
+    "pct_program": 67
+   },
+   {
+    "building": "Atlantica III",
+    "listings": 8,
+    "in_program": 7,
+    "conventional_accepted": 4,
+    "street_addresses": 2,
+    "city": "Myrtle Beach",
+    "pct_program": 88
+   },
+   {
+    "building": "Patricia Grand I",
+    "listings": 8,
+    "in_program": 8,
+    "conventional_accepted": 6,
+    "street_addresses": 1,
+    "city": "Myrtle Beach",
+    "pct_program": 100
+   },
+   {
+    "building": "Paradise Resort",
+    "listings": 8,
+    "in_program": 8,
+    "conventional_accepted": 6,
+    "street_addresses": 1,
+    "city": "Myrtle Beach",
+    "pct_program": 100
+   },
+   {
+    "building": "Camelot By The Sea",
+    "listings": 8,
+    "in_program": 7,
+    "conventional_accepted": 4,
+    "street_addresses": 1,
+    "city": "Myrtle Beach",
+    "pct_program": 88
+   },
+   {
+    "building": "Grand Atlantic",
+    "listings": 8,
+    "in_program": 8,
+    "conventional_accepted": 6,
+    "street_addresses": 1,
+    "city": "Myrtle Beach",
+    "pct_program": 100
+   }
+  ]
+ }
+}

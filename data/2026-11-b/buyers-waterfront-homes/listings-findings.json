@@ -1,0 +1,373 @@
+{
+ "pulled": "2026-11-10T07:01:28.980730+00:00",
+ "source": "https://chapter3realty.com/homes/api/map (type, waterfront=1, has=<key>, price bands)",
+ "kinds": {
+  "ocean_house": {
+   "n": 30,
+   "median_ask": 3152500.0,
+   "p25": 2166750.0,
+   "p75": 5861750.0,
+   "min": 975000.0,
+   "max": 7500000.0,
+   "median_per_sqft": 862,
+   "under_300k": 0,
+   "over_1m": 29
+  },
+  "ocean_condo_building": {
+   "n": 1105,
+   "median_ask": 215000.0,
+   "p25": 149000.0,
+   "p75": 384900.0,
+   "min": 44900.0,
+   "max": 3495000.0,
+   "median_per_sqft": 330,
+   "under_300k": 721,
+   "over_1m": 11
+  },
+  "ocean_condo_unit_faces_ocean": {
+   "n": 717,
+   "median_ask": 220000.0,
+   "p25": 154950.0,
+   "p75": 407950.0,
+   "min": 19975.0,
+   "max": 3495000.0,
+   "median_per_sqft": 349,
+   "under_300k": 438,
+   "over_1m": 10
+  },
+  "icw_house": {
+   "n": 117,
+   "median_ask": 962000.0,
+   "p25": 642400.0,
+   "p75": 1675000.0,
+   "min": 244900.0,
+   "max": 6498999.0,
+   "median_per_sqft": 315,
+   "under_300k": 4,
+   "over_1m": 51
+  },
+  "icw_house_with_dock": {
+   "n": 53,
+   "median_ask": 1197000.0,
+   "p25": 766250.0,
+   "p75": 2049500.0,
+   "min": 399990.0,
+   "max": 4400000.0,
+   "median_per_sqft": 384,
+   "under_300k": 0,
+   "over_1m": 27
+  },
+  "icw_house_no_dock": {
+   "n": 64,
+   "median_ask": 861950.0,
+   "p25": 499000.0,
+   "p75": 1268746.25,
+   "min": 244900.0,
+   "max": 6498999.0,
+   "median_per_sqft": 281,
+   "under_300k": 4,
+   "over_1m": 24
+  },
+  "marsh_house": {
+   "n": 21,
+   "median_ask": 874000.0,
+   "p25": 493400.0,
+   "p75": 1524450.0,
+   "min": 249000.0,
+   "max": 3325000.0,
+   "median_per_sqft": 361,
+   "under_300k": 1,
+   "over_1m": 8
+  },
+  "creek_house": {
+   "n": 42,
+   "median_ask": 1137000.0,
+   "p25": 816150.0,
+   "p75": 1774900.0,
+   "min": 262500.0,
+   "max": 4995000.0,
+   "median_per_sqft": 415,
+   "under_300k": 1,
+   "over_1m": 23
+  },
+  "canal_house": {
+   "n": 35,
+   "median_ask": 949000.0,
+   "p25": 700000.0,
+   "p75": 1350000.0,
+   "min": 315000.0,
+   "max": 3995000.0,
+   "median_per_sqft": 430,
+   "under_300k": 0,
+   "over_1m": 11
+  },
+  "river_house": {
+   "n": 51,
+   "median_ask": 612000.0,
+   "p25": 508800.0,
+   "p75": 872500.0,
+   "min": 279900.0,
+   "max": 6498999.0,
+   "median_per_sqft": 282,
+   "under_300k": 1,
+   "over_1m": 8
+  },
+  "lake_or_pond_house": {
+   "n": 429,
+   "median_ask": 449900.0,
+   "p25": 329990.0,
+   "p75": 649900.0,
+   "min": 177000.0,
+   "max": 3700000.0,
+   "median_per_sqft": 215,
+   "under_300k": 73,
+   "over_1m": 39
+  },
+  "lake_or_pond_only_house": {
+   "n": 414,
+   "median_ask": 449250.0,
+   "p25": 329410.0,
+   "p75": 621250.0,
+   "min": 177000.0,
+   "max": 3700000.0,
+   "median_per_sqft": 214,
+   "under_300k": 73,
+   "over_1m": 35
+  },
+  "waterfront_house": {
+   "n": 506,
+   "median_ask": 489900.0,
+   "p25": 349967.5,
+   "p75": 802425.0,
+   "min": 177000.0,
+   "max": 7500000.0,
+   "median_per_sqft": 227,
+   "under_300k": 73,
+   "over_1m": 79
+  },
+  "tidal_or_river_house_with_dock": {
+   "n": 93,
+   "median_ask": 999900.0,
+   "p25": 745000.0,
+   "p75": 2049500.0,
+   "min": 310000.0,
+   "max": 5999990.0,
+   "median_per_sqft": 407,
+   "under_300k": 0,
+   "over_1m": 45
+  },
+  "tidal_or_river_house_no_dock": {
+   "n": 136,
+   "median_ask": 907449.5,
+   "p25": 572400.0,
+   "p75": 1637250.0,
+   "min": 244900.0,
+   "max": 7500000.0,
+   "median_per_sqft": 343,
+   "under_300k": 6,
+   "over_1m": 56
+  },
+  "deep_water_house": {
+   "n": 68,
+   "median_ask": 1074900.0,
+   "p25": 656150.0,
+   "p75": 1960975.0,
+   "min": 279900.0,
+   "max": 6498999.0,
+   "median_per_sqft": 362,
+   "under_300k": 1,
+   "over_1m": 34
+  },
+  "boat_slip_house": {
+   "n": 27,
+   "median_ask": 949900.0,
+   "p25": 775000.0,
+   "p75": 1775000.0,
+   "min": 276000.0,
+   "max": 3850000.0,
+   "median_per_sqft": 358,
+   "under_300k": 1,
+   "over_1m": 12
+  }
+ },
+ "on_the_water": {
+  "ocean_house": {
+   "n": 28,
+   "median_ask": 3387500.0,
+   "p25": 2191750.0,
+   "p75": 5885250.0,
+   "min": 975000.0,
+   "max": 7500000.0,
+   "median_per_sqft": 889,
+   "under_300k": 0,
+   "over_1m": 27
+  },
+  "icw_house": {
+   "n": 22,
+   "median_ask": 954999.5,
+   "p25": 619925.0,
+   "p75": 1737000.0,
+   "min": 369900.0,
+   "max": 2750000.0,
+   "median_per_sqft": 311,
+   "under_300k": 0,
+   "over_1m": 10
+  },
+  "icw_with_dock": {
+   "n": 9,
+   "median_ask": 1197000.0,
+   "p25": 637500.0,
+   "p75": 2148000.0,
+   "min": 445000.0,
+   "max": 2750000.0,
+   "median_per_sqft": 319,
+   "under_300k": 0,
+   "over_1m": 5
+  },
+  "icw_no_dock": {
+   "n": 13,
+   "median_ask": 899000.0,
+   "p25": 519700.0,
+   "p75": 1174995.0,
+   "min": 369900.0,
+   "max": 1999999.0,
+   "median_per_sqft": 260,
+   "under_300k": 0,
+   "over_1m": 5
+  },
+  "marsh_house": {
+   "n": 5,
+   "median_ask": 2296000.0,
+   "p25": 654500.0,
+   "p75": 3037500.0,
+   "min": 435000.0,
+   "max": 3325000.0,
+   "median_per_sqft": 491,
+   "under_300k": 0,
+   "over_1m": 3
+  },
+  "creek_house": {
+   "n": 13,
+   "median_ask": 1349000.0,
+   "p25": 850000.0,
+   "p75": 2150100.0,
+   "min": 599999.0,
+   "max": 3995000.0,
+   "median_per_sqft": 430,
+   "under_300k": 0,
+   "over_1m": 8
+  },
+  "canal_house": {
+   "n": 35,
+   "median_ask": 949000.0,
+   "p25": 700000.0,
+   "p75": 1350000.0,
+   "min": 315000.0,
+   "max": 3995000.0,
+   "median_per_sqft": 430,
+   "under_300k": 0,
+   "over_1m": 11
+  },
+  "river_house": {
+   "n": 26,
+   "median_ask": 674950.0,
+   "p25": 524700.0,
+   "p75": 893000.0,
+   "min": 310000.0,
+   "max": 2750000.0,
+   "median_per_sqft": 330,
+   "under_300k": 0,
+   "over_1m": 5
+  },
+  "lake_or_pond_house": {
+   "n": 429,
+   "median_ask": 449900.0,
+   "p25": 329990.0,
+   "p75": 649900.0,
+   "min": 177000.0,
+   "max": 3700000.0,
+   "median_per_sqft": 215,
+   "under_300k": 73,
+   "over_1m": 39
+  },
+  "tidal_or_river_with_dock": {
+   "n": 37,
+   "median_ask": 872500.0,
+   "p25": 637450.0,
+   "p75": 1312000.0,
+   "min": 310000.0,
+   "max": 2750000.0,
+   "median_per_sqft": 388,
+   "under_300k": 0,
+   "over_1m": 12
+  },
+  "tidal_or_river_no_dock": {
+   "n": 27,
+   "median_ask": 775000.0,
+   "p25": 549000.0,
+   "p75": 950000.0,
+   "min": 315000.0,
+   "max": 1999999.0,
+   "median_per_sqft": 310,
+   "under_300k": 0,
+   "over_1m": 5
+  },
+  "waterfront_houses_with_dock": {
+   "n": 52,
+   "median_ask": 945000.0,
+   "p25": 618725.0,
+   "p75": 1425000.0,
+   "min": 310000.0,
+   "max": 5999990.0,
+   "median_per_sqft": 364,
+   "under_300k": 0,
+   "over_1m": 20
+  },
+  "waterfront_houses": {
+   "n": 506,
+   "median_ask": 489900.0,
+   "p25": 349967.5,
+   "p75": 802425.0,
+   "min": 177000.0,
+   "max": 7500000.0,
+   "median_per_sqft": 227,
+   "under_300k": 73,
+   "over_1m": 79
+  },
+  "waterfront_under_300k_on_lake_or_pond_only": 73
+ },
+ "names_vs_marked_waterfront": {
+  "water_ocean": {
+   "name_it": 30,
+   "marked_waterfront": 28
+  },
+  "water_icw": {
+   "name_it": 117,
+   "marked_waterfront": 22
+  },
+  "water_marsh": {
+   "name_it": 21,
+   "marked_waterfront": 5
+  },
+  "water_creek": {
+   "name_it": 42,
+   "marked_waterfront": 13
+  },
+  "water_canal": {
+   "name_it": 35,
+   "marked_waterfront": 35
+  },
+  "water_river": {
+   "name_it": 51,
+   "marked_waterfront": 26
+  },
+  "water_lake": {
+   "name_it": 429,
+   "marked_waterfront": 429
+  },
+  "private_dock": {
+   "name_it": 122,
+   "marked_waterfront": 52
+  }
+ }
+}

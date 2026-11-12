@@ -1,0 +1,1279 @@
+{
+ "pulled": "2026-11-04T08:56:23.486855+00:00",
+ "pins": 1074,
+ "source": "CRM public map API pins in price slices (raw/pins.json); building = Subdivision line on one listing page per street address",
+ "buildings": [
+  {
+   "building": "Landmark Resort",
+   "listings": 83,
+   "in_program": 75,
+   "conventional_accepted": 52,
+   "street_addresses": 4,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Coral Beach",
+   "listings": 38,
+   "in_program": 36,
+   "conventional_accepted": 27,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Caravelle Resort",
+   "listings": 37,
+   "in_program": 36,
+   "conventional_accepted": 24,
+   "street_addresses": 3,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Mb Resort Rt",
+   "listings": 34,
+   "in_program": 21,
+   "conventional_accepted": 21,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Ocean Reef Resort North Tower",
+   "listings": 31,
+   "in_program": 26,
+   "conventional_accepted": 24,
+   "street_addresses": 3,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Monterey Bay Suites Resort",
+   "listings": 29,
+   "in_program": 24,
+   "conventional_accepted": 21,
+   "street_addresses": 3,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Sand Dunes Phii",
+   "listings": 29,
+   "in_program": 27,
+   "conventional_accepted": 19,
+   "street_addresses": 5,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Bluewater Resort - Hi rise",
+   "listings": 26,
+   "in_program": 22,
+   "conventional_accepted": 18,
+   "street_addresses": 3,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Sea Mist Resort",
+   "listings": 25,
+   "in_program": 18,
+   "conventional_accepted": 13,
+   "street_addresses": 4,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Compass Cove Pinnacle Oceanfront Tower",
+   "listings": 25,
+   "in_program": 25,
+   "conventional_accepted": 14,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Beach Cove",
+   "listings": 25,
+   "in_program": 25,
+   "conventional_accepted": 18,
+   "street_addresses": 3,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Caribbean Oceanfront Suite Tower - PH I",
+   "listings": 25,
+   "in_program": 25,
+   "conventional_accepted": 23,
+   "street_addresses": 3,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Bay Watch PH I - North Tower",
+   "listings": 23,
+   "in_program": 21,
+   "conventional_accepted": 12,
+   "street_addresses": 2,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Palace, The",
+   "listings": 22,
+   "in_program": 18,
+   "conventional_accepted": 18,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Beach Colony",
+   "listings": 18,
+   "in_program": 17,
+   "conventional_accepted": 12,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Grande Cayman Resort (formerly Long Bay Resort)",
+   "listings": 17,
+   "in_program": 16,
+   "conventional_accepted": 14,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Meridian Pla",
+   "listings": 15,
+   "in_program": 10,
+   "conventional_accepted": 10,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Holiday Sands",
+   "listings": 15,
+   "in_program": 13,
+   "conventional_accepted": 11,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Sandy Beach Resort, Phase Ii",
+   "listings": 14,
+   "in_program": 10,
+   "conventional_accepted": 14,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Dunes Village Resort",
+   "listings": 14,
+   "in_program": 14,
+   "conventional_accepted": 13,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Carolina Winds",
+   "listings": 13,
+   "in_program": 11,
+   "conventional_accepted": 13,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Maisons Sur-Mer",
+   "listings": 13,
+   "in_program": 3,
+   "conventional_accepted": 13,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Sands Ocean",
+   "listings": 12,
+   "in_program": 9,
+   "conventional_accepted": 10,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Royale Palms",
+   "listings": 12,
+   "in_program": 8,
+   "conventional_accepted": 4,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Bay View Resort",
+   "listings": 11,
+   "in_program": 11,
+   "conventional_accepted": 9,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Ocean Forest Pl",
+   "listings": 11,
+   "in_program": 4,
+   "conventional_accepted": 8,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Bay Watch PH II - South Tower",
+   "listings": 11,
+   "in_program": 11,
+   "conventional_accepted": 8,
+   "street_addresses": 3,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Bay Watch PH III - Center Tower",
+   "listings": 11,
+   "in_program": 11,
+   "conventional_accepted": 10,
+   "street_addresses": 3,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Dunes Village Phase II",
+   "listings": 11,
+   "in_program": 9,
+   "conventional_accepted": 11,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Kingston Plantation - South Hampton",
+   "listings": 11,
+   "in_program": 8,
+   "conventional_accepted": 6,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Crescent Shores - High Rise",
+   "listings": 11,
+   "in_program": 7,
+   "conventional_accepted": 8,
+   "street_addresses": 2,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "North Beach Towers - Ocean Front",
+   "listings": 11,
+   "in_program": 11,
+   "conventional_accepted": 9,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Holiday Inn - Pavilion - MB",
+   "listings": 10,
+   "in_program": 10,
+   "conventional_accepted": 8,
+   "street_addresses": 3,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Boardwalk Oceanfront Tower",
+   "listings": 10,
+   "in_program": 10,
+   "conventional_accepted": 9,
+   "street_addresses": 4,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Carolinian Beach Resort",
+   "listings": 10,
+   "in_program": 6,
+   "conventional_accepted": 8,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Oceans One South Tower - Myrtle Beach",
+   "listings": 10,
+   "in_program": 8,
+   "conventional_accepted": 7,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Avista Ocean Resort",
+   "listings": 10,
+   "in_program": 9,
+   "conventional_accepted": 8,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Kingston Plantation - Brighton Towers",
+   "listings": 9,
+   "in_program": 6,
+   "conventional_accepted": 3,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Atlantica III",
+   "listings": 8,
+   "in_program": 7,
+   "conventional_accepted": 4,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Patricia Grand I",
+   "listings": 8,
+   "in_program": 8,
+   "conventional_accepted": 6,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Paradise Resort",
+   "listings": 8,
+   "in_program": 8,
+   "conventional_accepted": 6,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Camelot By The Sea",
+   "listings": 8,
+   "in_program": 7,
+   "conventional_accepted": 4,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Grand Atlantic",
+   "listings": 8,
+   "in_program": 8,
+   "conventional_accepted": 6,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Schooner At Compass Cove - Mb South",
+   "listings": 7,
+   "in_program": 7,
+   "conventional_accepted": 5,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Grande Shores",
+   "listings": 7,
+   "in_program": 7,
+   "conventional_accepted": 4,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Forest Dunes",
+   "listings": 7,
+   "in_program": 5,
+   "conventional_accepted": 7,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "The Strand (formerly called Breakers Boutique)",
+   "listings": 7,
+   "in_program": 6,
+   "conventional_accepted": 4,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Oceans, The",
+   "listings": 7,
+   "in_program": 4,
+   "conventional_accepted": 6,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Kingston Plantation - Margate Tower",
+   "listings": 7,
+   "in_program": 3,
+   "conventional_accepted": 5,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Mar Vista Grande",
+   "listings": 7,
+   "in_program": 4,
+   "conventional_accepted": 6,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "A Place At The Beach IV Shore Drive",
+   "listings": 6,
+   "in_program": 3,
+   "conventional_accepted": 5,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Bahama Sands - NMB",
+   "listings": 6,
+   "in_program": 4,
+   "conventional_accepted": 5,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Ocean Creek Tower North",
+   "listings": 6,
+   "in_program": 3,
+   "conventional_accepted": 3,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Sandcastle South",
+   "listings": 5,
+   "in_program": 3,
+   "conventional_accepted": 3,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "YACHTSMAN -South Tower",
+   "listings": 5,
+   "in_program": 5,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Sea Cabin",
+   "listings": 5,
+   "in_program": 0,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Atlantica",
+   "listings": 5,
+   "in_program": 4,
+   "conventional_accepted": 3,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Verandas, The - Nmb",
+   "listings": 5,
+   "in_program": 4,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Seaside Inn Resort - Crescent Beach",
+   "listings": 5,
+   "in_program": 5,
+   "conventional_accepted": 5,
+   "street_addresses": 2,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Sands Bch I",
+   "listings": 5,
+   "in_program": 5,
+   "conventional_accepted": 3,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Sand Dunes Piii",
+   "listings": 5,
+   "in_program": 5,
+   "conventional_accepted": 3,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Ocean Forest Villas",
+   "listings": 5,
+   "in_program": 3,
+   "conventional_accepted": 5,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "St Clements",
+   "listings": 4,
+   "in_program": 3,
+   "conventional_accepted": 4,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Palms, The",
+   "listings": 4,
+   "in_program": 4,
+   "conventional_accepted": 4,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "SeaWatch N TWR - MB Arcadian",
+   "listings": 4,
+   "in_program": 3,
+   "conventional_accepted": 3,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Prince Resort - Phase I - Cherry Grove",
+   "listings": 4,
+   "in_program": 3,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Breakers Resort",
+   "listings": 4,
+   "in_program": 4,
+   "conventional_accepted": 4,
+   "street_addresses": 3,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Waters Edge",
+   "listings": 4,
+   "in_program": 3,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "Garden City Beach"
+  },
+  {
+   "building": "Anderson Ocean Club",
+   "listings": 4,
+   "in_program": 3,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Ocean Pier Iv",
+   "listings": 4,
+   "in_program": 3,
+   "conventional_accepted": 4,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Sea Shadow",
+   "listings": 4,
+   "in_program": 4,
+   "conventional_accepted": 4,
+   "street_addresses": 2,
+   "city": "Surfside Beach"
+  },
+  {
+   "building": "Paradise Pointe",
+   "listings": 4,
+   "in_program": 1,
+   "conventional_accepted": 4,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Towers On The Grove - Cherry Grove Section",
+   "listings": 3,
+   "in_program": 3,
+   "conventional_accepted": 3,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Sailfish Resort",
+   "listings": 3,
+   "in_program": 3,
+   "conventional_accepted": 3,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "A Place At The Beach V - Shore Drive",
+   "listings": 3,
+   "in_program": 0,
+   "conventional_accepted": 3,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Beach House",
+   "listings": 3,
+   "in_program": 2,
+   "conventional_accepted": 3,
+   "street_addresses": 2,
+   "city": "Garden City Beach"
+  },
+  {
+   "building": "Sea Winds",
+   "listings": 3,
+   "in_program": 2,
+   "conventional_accepted": 3,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Tilghman B&R",
+   "listings": 3,
+   "in_program": 1,
+   "conventional_accepted": 2,
+   "street_addresses": 3,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Xanadu I",
+   "listings": 3,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 2,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Duneside I",
+   "listings": 3,
+   "in_program": 3,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "Garden City Beach"
+  },
+  {
+   "building": "Palmwood Vil",
+   "listings": 3,
+   "in_program": 3,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Sea Master",
+   "listings": 3,
+   "in_program": 2,
+   "conventional_accepted": 3,
+   "street_addresses": 1,
+   "city": "Garden City Beach"
+  },
+  {
+   "building": "Ocean Creek Tower South",
+   "listings": 3,
+   "in_program": 1,
+   "conventional_accepted": 3,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "South Shore Villas - Nmb",
+   "listings": 3,
+   "in_program": 3,
+   "conventional_accepted": 3,
+   "street_addresses": 2,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Summit, The - Windy Hill",
+   "listings": 3,
+   "in_program": 2,
+   "conventional_accepted": 3,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Xanadu Ii",
+   "listings": 3,
+   "in_program": 1,
+   "conventional_accepted": 3,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Roxanne Towers",
+   "listings": 2,
+   "in_program": 2,
+   "conventional_accepted": 1,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Carolina Shores - Garden City",
+   "listings": 2,
+   "in_program": 0,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "Garden City Beach"
+  },
+  {
+   "building": "Buena Vista",
+   "listings": 2,
+   "in_program": 2,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Summer Place",
+   "listings": 2,
+   "in_program": 2,
+   "conventional_accepted": 2,
+   "street_addresses": 2,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Royal Garden",
+   "listings": 2,
+   "in_program": 1,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "Murrells Inlet"
+  },
+  {
+   "building": "Sea Pointe",
+   "listings": 2,
+   "in_program": 2,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Ocean Park",
+   "listings": 2,
+   "in_program": 2,
+   "conventional_accepted": 1,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Windy Village",
+   "listings": 2,
+   "in_program": 2,
+   "conventional_accepted": 2,
+   "street_addresses": 2,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Sun Villas",
+   "listings": 2,
+   "in_program": 1,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Sea Watch - Garden City",
+   "listings": 2,
+   "in_program": 0,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Garden City Beach"
+  },
+  {
+   "building": "Sand Dollar",
+   "listings": 2,
+   "in_program": 2,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "Garden City Beach"
+  },
+  {
+   "building": "Ocean View Vill",
+   "listings": 2,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 2,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Seasider",
+   "listings": 2,
+   "in_program": 1,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "Garden City Beach"
+  },
+  {
+   "building": "Regency Towers",
+   "listings": 2,
+   "in_program": 1,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Anchorage II",
+   "listings": 2,
+   "in_program": 2,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Sea Castle",
+   "listings": 2,
+   "in_program": 0,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Wellington - North Myrtle Beach",
+   "listings": 2,
+   "in_program": 2,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Arcadian I",
+   "listings": 2,
+   "in_program": 1,
+   "conventional_accepted": 0,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Crescent Keyes - NMB",
+   "listings": 2,
+   "in_program": 1,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Kingston Plantation - North Hampton",
+   "listings": 2,
+   "in_program": 2,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "One Ocean Place",
+   "listings": 2,
+   "in_program": 1,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "Garden City Beach"
+  },
+  {
+   "building": "Tidemaster",
+   "listings": 2,
+   "in_program": 0,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Admiral Quarters II",
+   "listings": 2,
+   "in_program": 2,
+   "conventional_accepted": 2,
+   "street_addresses": 1,
+   "city": "Surfside Beach"
+  },
+  {
+   "building": "Ocean Blue",
+   "listings": 2,
+   "in_program": 2,
+   "conventional_accepted": 2,
+   "street_addresses": 2,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Ambassador Villas",
+   "listings": 2,
+   "in_program": 2,
+   "conventional_accepted": 1,
+   "street_addresses": 2,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Caravelle Tower",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 0,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Sandy Beach",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 0,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Mb Resort Ii",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 0,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Grand Strand Resort II",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Crescent Beach Villas",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Duneside III",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 0,
+   "street_addresses": 1,
+   "city": "Garden City Beach"
+  },
+  {
+   "building": "Chateau Manor",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 0,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Windsong",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "A Place At The Beach III-III Shore Drive",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Ocean Pier I",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "San-A-Bel",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Ocean Inn",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Sea Mark Tow",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Beach Colony II",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "The Horizon at 77th N.",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "A Place At The Beach VI - Shore Drive",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Chateau By Sea",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Raintree Vil",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Caribbean Oceanfront Condominium Tower - PH II",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 0,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Sea Mystique",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Murrells Inlet"
+  },
+  {
+   "building": "Carolina Dunes NMB",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Sea Banks",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 0,
+   "street_addresses": 1,
+   "city": "Garden City Beach"
+  },
+  {
+   "building": "Channel Marker-Surfside Beach",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Surfside Beach"
+  },
+  {
+   "building": "Waterpointe Ii",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Shoreline",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Ocean Towers",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Lightkeepers Village - HPR",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Little River"
+  },
+  {
+   "building": "Lighthouse II",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Surfside Beach"
+  },
+  {
+   "building": "Springs Tower",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 0,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Crescent Sands - Windy Hill",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Arcadian II",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  },
+  {
+   "building": "Surfwatch 2",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 0,
+   "street_addresses": 1,
+   "city": "Surfside Beach"
+  },
+  {
+   "building": "Coastal Dune",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Sea Marsh Ii",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Atalaya Towers",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Garden City Beach"
+  },
+  {
+   "building": "Sea Marsh I",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Crescent Dunes",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "North Shore Villa",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Dolphin Cay",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Surfside Beach"
+  },
+  {
+   "building": "Emerald Cove I",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Ashworth, The",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 0,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Laguna Keyes",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Beach Villas - Cherry Grove",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Horizon East",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Murrells Inlet"
+  },
+  {
+   "building": "Surfmaster I",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Murrells Inlet"
+  },
+  {
+   "building": "Ocean Club at Surfside",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Surfside Beach"
+  },
+  {
+   "building": "Windy Hill Dune",
+   "listings": 1,
+   "in_program": 0,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "North Myrtle Beach"
+  },
+  {
+   "building": "Bali Bay Resort",
+   "listings": 1,
+   "in_program": 1,
+   "conventional_accepted": 1,
+   "street_addresses": 1,
+   "city": "Myrtle Beach"
+  }
+ ]
+}

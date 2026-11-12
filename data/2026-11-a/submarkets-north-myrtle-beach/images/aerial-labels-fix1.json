@@ -1,0 +1,120 @@
+{
+ "windy-hill-beach": {
+  "file": "windy-hill-beach.png",
+  "size": [
+   1200,
+   857
+  ],
+  "bbox_wgs84": [
+   -78.739,
+   33.789657,
+   -78.721,
+   33.800342
+  ],
+  "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8765185.385154428,4000593.013238669,-8763181.635154428,4002024.263238669&bboxSR=3857&imageSR=3857&size=1400,1000&format=jpg&f=image",
+  "labels": [
+   {
+    "text": "Windy Hill",
+    "lon": -78.7308,
+    "lat": 33.7963,
+    "px": [
+     547,
+     324
+    ],
+    "source": "the middle of our wh part (map-parts.geojson, polylabel)"
+   },
+   {
+    "text": "Atlantic Ocean",
+    "lon": -78.7262,
+    "lat": 33.7912,
+    "px": [
+     853,
+     733
+    ],
+    "source": "a point read from the county layers"
+   }
+  ]
+ },
+ "west-of-us-17-new-streets": {
+  "file": "west-of-us-17-new-streets.png",
+  "size": [
+   1200,
+   857
+  ],
+  "bbox_wgs84": [
+   -78.708,
+   33.815159,
+   -78.69,
+   33.825841
+  ],
+  "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8761734.480939837,4004009.3275686656,-8759730.730939837,4005440.5775686656&bboxSR=3857&imageSR=3857&size=1400,1000&format=jpg&f=image",
+  "labels": [
+   {
+    "text": "Central Park",
+    "lon": -78.6969325,
+    "lat": 33.8171504,
+    "px": [
+     738,
+     697
+    ],
+    "source": "OpenStreetMap point for Central Park (landmarks.json)"
+   },
+   {
+    "text": "US 17",
+    "lon": -78.6943,
+    "lat": 33.8169,
+    "px": [
+     913,
+     717
+    ],
+    "source": "a point read from the county layers"
+   },
+   {
+    "text": "West of US 17",
+    "lon": -78.6995,
+    "lat": 33.824,
+    "px": [
+     567,
+     148
+    ],
+    "source": "a point inside our west17 part (map-parts.geojson)"
+   }
+  ]
+ },
+ "tilghman-beach": {
+  "file": "tilghman-beach.png",
+  "size": [
+   1200,
+   857
+  ],
+  "bbox_wgs84": [
+   -78.673,
+   33.818159,
+   -78.655,
+   33.82884
+  ],
+  "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8757838.298762074,4004411.3138567074,-8755834.548762074,4005842.5638567074&bboxSR=3857&imageSR=3857&size=1400,1000&format=jpg&f=image",
+  "labels": [
+   {
+    "text": "Tilghman Beach",
+    "lon": -78.6653,
+    "lat": 33.8253,
+    "px": [
+     513,
+     284
+    ],
+    "source": "the middle of our til part (map-parts.geojson, polylabel)"
+   },
+   {
+    "text": "Atlantic Ocean",
+    "lon": -78.659,
+    "lat": 33.8203,
+    "px": [
+     933,
+     685
+    ],
+    "source": "a point read from the county layers"
+   }
+  ]
+ }
+}

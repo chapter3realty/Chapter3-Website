@@ -1,0 +1,619 @@
+{
+ "source": "OpenFEMA NfipPolicies v3",
+ "filter": "reportedZipCode 29576, policyEffectiveDate 2025-06-01 to 2026-05-31",
+ "areas_by_block_group": {
+  "120270101021": "horry",
+  "450439205021": "georgetown",
+  "450439205022": "georgetown",
+  "450439205023": "georgetown",
+  "450439205092": "georgetown",
+  "450439205101": "strip",
+  "450439205102": "georgetown",
+  "450439205111": "georgetown",
+  "450439205112": "georgetown",
+  "450510512023": "horry",
+  "450510513011": "strip",
+  "450510513012": "strip",
+  "450510513021": "garden_city",
+  "450510513022": "garden_city",
+  "450510514052": "garden_city",
+  "450510514061": "garden_city",
+  "450510514062": "garden_city",
+  "450510514063": "garden_city",
+  "450510516031": "horry",
+  "450510516051": "horry",
+  "450510516081": "horry",
+  "450510516082": "horry",
+  "450510516091": "horry",
+  "450510516092": "horry",
+  "450510516093": "horry",
+  "450510517002": "horry"
+ },
+ "groups": {
+  "garden_city/all/any": {
+   "what": "all",
+   "policies": 719,
+   "median_cost": 1084,
+   "p25": 759.0,
+   "p75": 2001.0,
+   "primary_residence": 452,
+   "median_building_coverage": 250000
+  },
+  "garden_city/11/A": {
+   "what": "single-family home",
+   "policies": 282,
+   "median_cost": 1278.0,
+   "p25": 1064.0,
+   "p75": 2746.75,
+   "primary_residence": 176,
+   "median_building_coverage": 250000.0
+  },
+  "garden_city/11/V": {
+   "what": "single-family home",
+   "policies": 39,
+   "median_cost": 4676,
+   "p25": 1780.0,
+   "p75": 6159.0,
+   "primary_residence": 9,
+   "median_building_coverage": 250000
+  },
+  "garden_city/11/X": {
+   "what": "single-family home",
+   "policies": 230,
+   "median_cost": 839.0,
+   "p25": 455.5,
+   "p75": 1081.25,
+   "primary_residence": 201,
+   "median_building_coverage": 250000.0
+  },
+  "garden_city/11/any": {
+   "what": "single-family home",
+   "policies": 551,
+   "median_cost": 1084,
+   "p25": 834.0,
+   "p75": 1724.0,
+   "primary_residence": 386,
+   "median_building_coverage": 250000
+  },
+  "garden_city/12/any": {
+   "what": "2-4 family",
+   "policies": 7,
+   "median_cost": 6842,
+   "p25": 1081.0,
+   "p75": 8192.0,
+   "primary_residence": 1,
+   "median_building_coverage": 250000
+  },
+  "garden_city/13/V": {
+   "what": "other residential",
+   "policies": 5,
+   "median_cost": 5753,
+   "p25": 3607.5,
+   "p75": 5805.0,
+   "primary_residence": 0,
+   "median_building_coverage": 100000
+  },
+  "garden_city/13/any": {
+   "what": "other residential",
+   "policies": 7,
+   "median_cost": 4874,
+   "p25": 955.0,
+   "p75": 5805.0,
+   "primary_residence": 0,
+   "median_building_coverage": 125000
+  },
+  "garden_city/14/A": {
+   "what": "manufactured home",
+   "policies": 27,
+   "median_cost": 2123,
+   "p25": 1174.0,
+   "p75": 3286.0,
+   "primary_residence": 15,
+   "median_building_coverage": 100000
+  },
+  "garden_city/14/X": {
+   "what": "manufactured home",
+   "policies": 49,
+   "median_cost": 682,
+   "p25": 521.0,
+   "p75": 840.0,
+   "primary_residence": 35,
+   "median_building_coverage": 100000
+  },
+  "garden_city/14/any": {
+   "what": "manufactured home",
+   "policies": 78,
+   "median_cost": 840.0,
+   "p25": 595.75,
+   "p75": 1974.5,
+   "primary_residence": 52,
+   "median_building_coverage": 101000.0
+  },
+  "garden_city/15/A": {
+   "what": "condo building policy",
+   "policies": 7,
+   "median_cost": 10599,
+   "p25": 9165.0,
+   "p75": 19388.0,
+   "primary_residence": 0,
+   "median_building_coverage": 3000000
+  },
+  "garden_city/15/V": {
+   "what": "condo building policy",
+   "policies": 6,
+   "median_cost": 13403.5,
+   "p25": 8668.75,
+   "p75": 33676.25,
+   "primary_residence": 0,
+   "median_building_coverage": 3896500.0
+  },
+  "garden_city/15/any": {
+   "what": "condo building policy",
+   "policies": 13,
+   "median_cost": 10655,
+   "p25": 9169.0,
+   "p75": 20710.0,
+   "primary_residence": 0,
+   "median_building_coverage": 3459000
+  },
+  "garden_city/16/X": {
+   "what": "condo unit policy",
+   "policies": 19,
+   "median_cost": 414,
+   "p25": 339.0,
+   "p75": 579.0,
+   "primary_residence": 11,
+   "median_building_coverage": 148000
+  },
+  "garden_city/16/any": {
+   "what": "condo unit policy",
+   "policies": 23,
+   "median_cost": 424,
+   "p25": 353.0,
+   "p75": 636.0,
+   "primary_residence": 13,
+   "median_building_coverage": 121000
+  },
+  "garden_city/18/V": {
+   "what": 18,
+   "policies": 15,
+   "median_cost": 7661,
+   "p25": 3823.0,
+   "p75": 9817.0,
+   "primary_residence": 0,
+   "median_building_coverage": 163000
+  },
+  "garden_city/18/X": {
+   "what": 18,
+   "policies": 21,
+   "median_cost": 1150,
+   "p25": 814.0,
+   "p75": 1426.0,
+   "primary_residence": 0,
+   "median_building_coverage": 500000
+  },
+  "garden_city/18/any": {
+   "what": 18,
+   "policies": 39,
+   "median_cost": 1529,
+   "p25": 1144.0,
+   "p75": 7661.0,
+   "primary_residence": 0,
+   "median_building_coverage": 303000
+  },
+  "georgetown/all/any": {
+   "what": "all",
+   "policies": 737,
+   "median_cost": 615,
+   "p25": 490.0,
+   "p75": 1081.0,
+   "primary_residence": 615,
+   "median_building_coverage": 250000
+  },
+  "georgetown/11/A": {
+   "what": "single-family home",
+   "policies": 129,
+   "median_cost": 1084,
+   "p25": 927.5,
+   "p75": 1394.5,
+   "primary_residence": 105,
+   "median_building_coverage": 250000
+  },
+  "georgetown/11/V": {
+   "what": "single-family home",
+   "policies": 16,
+   "median_cost": 2160.0,
+   "p25": 1084.0,
+   "p75": 3339.25,
+   "primary_residence": 12,
+   "median_building_coverage": 250000.0
+  },
+  "georgetown/11/X": {
+   "what": "single-family home",
+   "policies": 461,
+   "median_cost": 553,
+   "p25": 479.0,
+   "p75": 676.0,
+   "primary_residence": 435,
+   "median_building_coverage": 250000
+  },
+  "georgetown/11/any": {
+   "what": "single-family home",
+   "policies": 606,
+   "median_cost": 593.0,
+   "p25": 491.75,
+   "p75": 1024.5,
+   "primary_residence": 552,
+   "median_building_coverage": 250000.0
+  },
+  "georgetown/12/A": {
+   "what": "2-4 family",
+   "policies": 13,
+   "median_cost": 1091,
+   "p25": 1089.0,
+   "p75": 1091.0,
+   "primary_residence": 0,
+   "median_building_coverage": 250000
+  },
+  "georgetown/12/X": {
+   "what": "2-4 family",
+   "policies": 6,
+   "median_cost": 1085.0,
+   "p25": 921.5,
+   "p75": 1091.0,
+   "primary_residence": 1,
+   "median_building_coverage": 250000.0
+  },
+  "georgetown/12/any": {
+   "what": "2-4 family",
+   "policies": 19,
+   "median_cost": 1091,
+   "p25": 1085.0,
+   "p75": 1091.0,
+   "primary_residence": 1,
+   "median_building_coverage": 250000
+  },
+  "georgetown/14/A": {
+   "what": "manufactured home",
+   "policies": 6,
+   "median_cost": 588.5,
+   "p25": 461.25,
+   "p75": 1112.5,
+   "primary_residence": 6,
+   "median_building_coverage": 94000.0
+  },
+  "georgetown/14/X": {
+   "what": "manufactured home",
+   "policies": 14,
+   "median_cost": 652.0,
+   "p25": 452.5,
+   "p75": 765.75,
+   "primary_residence": 14,
+   "median_building_coverage": 94000.0
+  },
+  "georgetown/14/any": {
+   "what": "manufactured home",
+   "policies": 20,
+   "median_cost": 652.0,
+   "p25": 457.5,
+   "p75": 738.25,
+   "primary_residence": 20,
+   "median_building_coverage": 94000.0
+  },
+  "georgetown/15/V": {
+   "what": "condo building policy",
+   "policies": 5,
+   "median_cost": 4332,
+   "p25": 4326.5,
+   "p75": 4427.0,
+   "primary_residence": 0,
+   "median_building_coverage": 2000000
+  },
+  "georgetown/15/any": {
+   "what": "condo building policy",
+   "policies": 6,
+   "median_cost": 4332.0,
+   "p25": 4037.5,
+   "p75": 4413.5,
+   "primary_residence": 0,
+   "median_building_coverage": 1750000.0
+  },
+  "georgetown/16/A": {
+   "what": "condo unit policy",
+   "policies": 16,
+   "median_cost": 1150.5,
+   "p25": 911.25,
+   "p75": 1492.5,
+   "primary_residence": 11,
+   "median_building_coverage": 194000.0
+  },
+  "georgetown/16/X": {
+   "what": "condo unit policy",
+   "policies": 38,
+   "median_cost": 422.0,
+   "p25": 350.5,
+   "p75": 512.5,
+   "primary_residence": 30,
+   "median_building_coverage": 121000.0
+  },
+  "georgetown/16/any": {
+   "what": "condo unit policy",
+   "policies": 58,
+   "median_cost": 506.5,
+   "p25": 395.5,
+   "p75": 911.25,
+   "primary_residence": 42,
+   "median_building_coverage": 141000.0
+  },
+  "georgetown/18/A": {
+   "what": 18,
+   "policies": 7,
+   "median_cost": 4616,
+   "p25": 2310.0,
+   "p75": 7786.0,
+   "primary_residence": 0,
+   "median_building_coverage": 500000
+  },
+  "georgetown/18/X": {
+   "what": 18,
+   "policies": 17,
+   "median_cost": 1813,
+   "p25": 1067.0,
+   "p75": 2353.5,
+   "primary_residence": 0,
+   "median_building_coverage": 500000
+  },
+  "georgetown/18/any": {
+   "what": 18,
+   "policies": 24,
+   "median_cost": 1826.5,
+   "p25": 1310.0,
+   "p75": 3817.5,
+   "primary_residence": 0,
+   "median_building_coverage": 500000.0
+  },
+  "horry/all/any": {
+   "what": "all",
+   "policies": 1542,
+   "median_cost": 568.0,
+   "p25": 496.0,
+   "p75": 710.0,
+   "primary_residence": 1444,
+   "median_building_coverage": 250000.0
+  },
+  "horry/11/A": {
+   "what": "single-family home",
+   "policies": 55,
+   "median_cost": 1060,
+   "p25": 857.0,
+   "p75": 1166.0,
+   "primary_residence": 52,
+   "median_building_coverage": 250000
+  },
+  "horry/11/X": {
+   "what": "single-family home",
+   "policies": 1346,
+   "median_cost": 571.0,
+   "p25": 504.0,
+   "p75": 701.0,
+   "primary_residence": 1286,
+   "median_building_coverage": 250000.0
+  },
+  "horry/11/any": {
+   "what": "single-family home",
+   "policies": 1401,
+   "median_cost": 576,
+   "p25": 506.0,
+   "p75": 716.5,
+   "primary_residence": 1338,
+   "median_building_coverage": 250000
+  },
+  "horry/12/X": {
+   "what": "2-4 family",
+   "policies": 6,
+   "median_cost": 529.5,
+   "p25": 468.25,
+   "p75": 825.75,
+   "primary_residence": 4,
+   "median_building_coverage": 250000.0
+  },
+  "horry/12/any": {
+   "what": "2-4 family",
+   "policies": 6,
+   "median_cost": 529.5,
+   "p25": 468.25,
+   "p75": 825.75,
+   "primary_residence": 4,
+   "median_building_coverage": 250000.0
+  },
+  "horry/16/X": {
+   "what": "condo unit policy",
+   "policies": 117,
+   "median_cost": 398,
+   "p25": 355.5,
+   "p75": 470.5,
+   "primary_residence": 99,
+   "median_building_coverage": 138000
+  },
+  "horry/16/any": {
+   "what": "condo unit policy",
+   "policies": 120,
+   "median_cost": 397.5,
+   "p25": 355.0,
+   "p75": 471.75,
+   "primary_residence": 102,
+   "median_building_coverage": 136000.0
+  },
+  "horry/18/X": {
+   "what": 18,
+   "policies": 9,
+   "median_cost": 1420,
+   "p25": 868.5,
+   "p75": 2001.5,
+   "primary_residence": 0,
+   "median_building_coverage": 500000
+  },
+  "horry/18/any": {
+   "what": 18,
+   "policies": 11,
+   "median_cost": 1540,
+   "p25": 960.0,
+   "p75": 2283.0,
+   "primary_residence": 0,
+   "median_building_coverage": 500000
+  },
+  "strip/all/any": {
+   "what": "all",
+   "policies": 667,
+   "median_cost": 3504,
+   "p25": 1302.0,
+   "p75": 6897.0,
+   "primary_residence": 209,
+   "median_building_coverage": 250000
+  },
+  "strip/11/A": {
+   "what": "single-family home",
+   "policies": 413,
+   "median_cost": 3061,
+   "p25": 1260.0,
+   "p75": 6410.0,
+   "primary_residence": 166,
+   "median_building_coverage": 250000
+  },
+  "strip/11/V": {
+   "what": "single-family home",
+   "policies": 97,
+   "median_cost": 4839,
+   "p25": 1881.0,
+   "p75": 6956.5,
+   "primary_residence": 23,
+   "median_building_coverage": 250000
+  },
+  "strip/11/X": {
+   "what": "single-family home",
+   "policies": 23,
+   "median_cost": 1030,
+   "p25": 742.0,
+   "p75": 1309.0,
+   "primary_residence": 12,
+   "median_building_coverage": 250000
+  },
+  "strip/11/any": {
+   "what": "single-family home",
+   "policies": 533,
+   "median_cost": 3259,
+   "p25": 1273.0,
+   "p75": 6397.0,
+   "primary_residence": 201,
+   "median_building_coverage": 250000
+  },
+  "strip/12/A": {
+   "what": "2-4 family",
+   "policies": 12,
+   "median_cost": 1311.0,
+   "p25": 967.5,
+   "p75": 5986.5,
+   "primary_residence": 2,
+   "median_building_coverage": 250000.0
+  },
+  "strip/12/any": {
+   "what": "2-4 family",
+   "policies": 13,
+   "median_cost": 1305,
+   "p25": 974.0,
+   "p75": 5221.0,
+   "primary_residence": 3,
+   "median_building_coverage": 250000
+  },
+  "strip/14/A": {
+   "what": "manufactured home",
+   "policies": 13,
+   "median_cost": 2374,
+   "p25": 1056.5,
+   "p75": 2657.5,
+   "primary_residence": 2,
+   "median_building_coverage": 73000
+  },
+  "strip/14/X": {
+   "what": "manufactured home",
+   "policies": 5,
+   "median_cost": 915,
+   "p25": 688.5,
+   "p75": 1001.5,
+   "primary_residence": 2,
+   "median_building_coverage": 75000
+  },
+  "strip/14/any": {
+   "what": "manufactured home",
+   "policies": 18,
+   "median_cost": 1148.0,
+   "p25": 928.5,
+   "p75": 2652.5,
+   "primary_residence": 4,
+   "median_building_coverage": 74000.0
+  },
+  "strip/15/A": {
+   "what": "condo building policy",
+   "policies": 52,
+   "median_cost": 15800.5,
+   "p25": 3903.5,
+   "p75": 29185.0,
+   "primary_residence": 0,
+   "median_building_coverage": 2899000.0
+  },
+  "strip/15/V": {
+   "what": "condo building policy",
+   "policies": 9,
+   "median_cost": 30182,
+   "p25": 15695.5,
+   "p75": 35464.0,
+   "primary_residence": 0,
+   "median_building_coverage": 3681000
+  },
+  "strip/15/any": {
+   "what": "condo building policy",
+   "policies": 61,
+   "median_cost": 17240,
+   "p25": 4485.5,
+   "p75": 31584.0,
+   "primary_residence": 0,
+   "median_building_coverage": 3090000
+  },
+  "strip/16/A": {
+   "what": "condo unit policy",
+   "policies": 16,
+   "median_cost": 1547.5,
+   "p25": 955.0,
+   "p75": 2176.0,
+   "primary_residence": 1,
+   "median_building_coverage": 38500.0
+  },
+  "strip/16/any": {
+   "what": "condo unit policy",
+   "policies": 19,
+   "median_cost": 1561,
+   "p25": 961.0,
+   "p75": 2187.0,
+   "primary_residence": 1,
+   "median_building_coverage": 50000
+  },
+  "strip/18/A": {
+   "what": 18,
+   "policies": 14,
+   "median_cost": 5963.5,
+   "p25": 3842.0,
+   "p75": 13947.25,
+   "primary_residence": 0,
+   "median_building_coverage": 500000.0
+  },
+  "strip/18/any": {
+   "what": 18,
+   "policies": 21,
+   "median_cost": 4668,
+   "p25": 2389.0,
+   "p75": 14564.5,
+   "primary_residence": 0,
+   "median_building_coverage": 500000
+  }
+ }
+}

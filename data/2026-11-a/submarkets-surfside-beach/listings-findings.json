@@ -1,0 +1,249 @@
+{
+ "pulled": "2026-11-03T20:36:50.621729+00:00",
+ "api_totals_postal_city": {
+  "house": 83,
+  "townhouse": 14,
+  "condo": 86,
+  "manufactured": 30,
+  "land": 13,
+  "multi": 8,
+  "all": 238
+ },
+ "in_town": 77,
+ "hoa_calls": 84,
+ "note": "CRM public map API (CCMLS listings), city=Surfside Beach, kept inside the town limits. Aggregate only. HOA fee: houses tested at hoaMax=0 only; condo fees to within $25 (top of the bracket).",
+ "groups": {
+  "all/all": {
+   "n": 77,
+   "median_ask": 650000.0,
+   "median_ask_per_sqft": 407,
+   "no_hoa_fee": 38,
+   "fee_known": 57,
+   "median_fee_upper": 0
+  },
+  "all/house": {
+   "n": 42,
+   "median_ask": 824500.0,
+   "median_ask_per_sqft": 401,
+   "no_hoa_fee": 36,
+   "fee_known": 36,
+   "median_fee_upper": 0.0
+  },
+  "all/condo": {
+   "n": 19,
+   "median_ask": 519000.0,
+   "median_ask_per_sqft": 515,
+   "no_hoa_fee": 0,
+   "fee_known": 19,
+   "median_fee_upper": 875
+  },
+  "all/townhouse": {
+   "n": 3,
+   "median_ask": 327000.0,
+   "median_ask_per_sqft": 308,
+   "no_hoa_fee": 2,
+   "fee_known": 2,
+   "median_fee_upper": 0.0
+  },
+  "all/land": {
+   "n": 7,
+   "median_ask": 650000.0,
+   "median_ask_per_sqft": null,
+   "no_hoa_fee": 0,
+   "fee_known": 0,
+   "median_fee_upper": null
+  },
+  "R3/all": {
+   "n": 45,
+   "median_ask": 715000.0,
+   "median_ask_per_sqft": 521,
+   "no_hoa_fee": 18,
+   "fee_known": 37,
+   "median_fee_upper": 250
+  },
+  "R3/house": {
+   "n": 19,
+   "median_ask": 1250000.0,
+   "median_ask_per_sqft": 552,
+   "no_hoa_fee": 18,
+   "fee_known": 18,
+   "median_fee_upper": 0.0
+  },
+  "R3/condo": {
+   "n": 19,
+   "median_ask": 519000.0,
+   "median_ask_per_sqft": 515,
+   "no_hoa_fee": 0,
+   "fee_known": 19,
+   "median_fee_upper": 875
+  },
+  "R3/land": {
+   "n": 4,
+   "median_ask": 650000.0,
+   "median_ask_per_sqft": null,
+   "no_hoa_fee": 0,
+   "fee_known": 0,
+   "median_fee_upper": null
+  },
+  "R1/all": {
+   "n": 10,
+   "median_ask": 622000.0,
+   "median_ask_per_sqft": 327,
+   "no_hoa_fee": 9,
+   "fee_known": 9,
+   "median_fee_upper": 0
+  },
+  "R1/house": {
+   "n": 10,
+   "median_ask": 622000.0,
+   "median_ask_per_sqft": 327,
+   "no_hoa_fee": 9,
+   "fee_known": 9,
+   "median_fee_upper": 0
+  },
+  "R2/all": {
+   "n": 14,
+   "median_ask": 472000.0,
+   "median_ask_per_sqft": 306,
+   "no_hoa_fee": 11,
+   "fee_known": 11,
+   "median_fee_upper": 0
+  },
+  "R2/house": {
+   "n": 9,
+   "median_ask": 514900.0,
+   "median_ask_per_sqft": 306,
+   "no_hoa_fee": 9,
+   "fee_known": 9,
+   "median_fee_upper": 0
+  },
+  "R2/townhouse": {
+   "n": 2,
+   "median_ask": 383000.0,
+   "median_ask_per_sqft": 301,
+   "no_hoa_fee": 2,
+   "fee_known": 2,
+   "median_fee_upper": 0.0
+  },
+  "R2/land": {
+   "n": 1,
+   "median_ask": 339900.0,
+   "median_ask_per_sqft": null,
+   "no_hoa_fee": 0,
+   "fee_known": 0,
+   "median_fee_upper": null
+  },
+  "PD/all": {
+   "n": 7,
+   "median_ask": 699900.0,
+   "median_ask_per_sqft": 329,
+   "no_hoa_fee": 0,
+   "fee_known": 0,
+   "median_fee_upper": null
+  },
+  "PD/house": {
+   "n": 4,
+   "median_ask": 624900.0,
+   "median_ask_per_sqft": 347,
+   "no_hoa_fee": 0,
+   "fee_known": 0,
+   "median_fee_upper": null
+  },
+  "PD/townhouse": {
+   "n": 1,
+   "median_ask": 287500.0,
+   "median_ask_per_sqft": 308,
+   "no_hoa_fee": 0,
+   "fee_known": 0,
+   "median_fee_upper": null
+  },
+  "PD/land": {
+   "n": 1,
+   "median_ask": 799000.0,
+   "median_ask_per_sqft": null,
+   "no_hoa_fee": 0,
+   "fee_known": 0,
+   "median_fee_upper": null
+  },
+  "C1/all": {
+   "n": 1,
+   "median_ask": 1285000.0,
+   "median_ask_per_sqft": null,
+   "no_hoa_fee": 0,
+   "fee_known": 0,
+   "median_fee_upper": null
+  },
+  "C1/land": {
+   "n": 1,
+   "median_ask": 1285000.0,
+   "median_ask_per_sqft": null,
+   "no_hoa_fee": 0,
+   "fee_known": 0,
+   "median_fee_upper": null
+  },
+  "R3C3/all": {
+   "n": 45,
+   "median_ask": 715000.0,
+   "median_ask_per_sqft": 521,
+   "no_hoa_fee": 18,
+   "fee_known": 37,
+   "median_fee_upper": 250
+  },
+  "R3C3/house": {
+   "n": 19,
+   "median_ask": 1250000.0,
+   "median_ask_per_sqft": 552,
+   "no_hoa_fee": 18,
+   "fee_known": 18,
+   "median_fee_upper": 0.0
+  },
+  "R3C3/condo": {
+   "n": 19,
+   "median_ask": 519000.0,
+   "median_ask_per_sqft": 515,
+   "no_hoa_fee": 0,
+   "fee_known": 19,
+   "median_fee_upper": 875
+  },
+  "R3C3/land": {
+   "n": 4,
+   "median_ask": 650000.0,
+   "median_ask_per_sqft": null,
+   "no_hoa_fee": 0,
+   "fee_known": 0,
+   "median_fee_upper": null
+  },
+  "R1R2/all": {
+   "n": 24,
+   "median_ask": 514950.0,
+   "median_ask_per_sqft": 306,
+   "no_hoa_fee": 20,
+   "fee_known": 20,
+   "median_fee_upper": 0.0
+  },
+  "R1R2/house": {
+   "n": 19,
+   "median_ask": 545000.0,
+   "median_ask_per_sqft": 320,
+   "no_hoa_fee": 18,
+   "fee_known": 18,
+   "median_fee_upper": 0.0
+  },
+  "R1R2/townhouse": {
+   "n": 2,
+   "median_ask": 383000.0,
+   "median_ask_per_sqft": 301,
+   "no_hoa_fee": 2,
+   "fee_known": 2,
+   "median_fee_upper": 0.0
+  },
+  "R1R2/land": {
+   "n": 1,
+   "median_ask": 339900.0,
+   "median_ask_per_sqft": null,
+   "no_hoa_fee": 0,
+   "fee_known": 0,
+   "median_fee_upper": null
+  }
+ }
+}

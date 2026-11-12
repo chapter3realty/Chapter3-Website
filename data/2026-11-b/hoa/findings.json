@@ -1,0 +1,479 @@
+{
+ "fees_by_kind": {
+  "condo": {
+   "homes_for_sale": 2853,
+   "with_fee": 2852,
+   "no_fee_or_blank": 1,
+   "median": 645,
+   "p25": 460,
+   "p75": 940,
+   "median_year": 7740,
+   "covers_pct": {
+    "hoa_includes_insurance": 79,
+    "hoa_includes_water_sewer": 84,
+    "hoa_includes_trash": 91,
+    "hoa_includes_internet": 70,
+    "hoa_includes_cable": 48,
+    "hoa_includes_pest": 76,
+    "hoa_includes_electric": 26,
+    "lawn_care_included": 91,
+    "community_pool": 92,
+    "clubhouse": 42,
+    "security_service": 39,
+    "gated": 15,
+    "tennis": 19,
+    "golf_included": 0
+   },
+   "label": "Condo (all)"
+  },
+  "condo_oceanfront_highrise": {
+   "homes_for_sale": 972,
+   "with_fee": 972,
+   "no_fee_or_blank": 0,
+   "median": 940,
+   "p25": 750,
+   "p75": 1185,
+   "median_year": 11280,
+   "covers_pct": {
+    "hoa_includes_insurance": 82,
+    "hoa_includes_water_sewer": 97,
+    "hoa_includes_trash": 96,
+    "hoa_includes_internet": 89,
+    "hoa_includes_cable": 58,
+    "hoa_includes_pest": 84,
+    "hoa_includes_electric": 64,
+    "lawn_care_included": 95,
+    "community_pool": 97,
+    "clubhouse": 43,
+    "security_service": 61,
+    "gated": 8,
+    "tennis": 10,
+    "golf_included": 0
+   },
+   "label": "Condo in an oceanfront tower"
+  },
+  "condo_oceanfront": {
+   "homes_for_sale": 1106,
+   "with_fee": 1106,
+   "no_fee_or_blank": 0,
+   "median": 920,
+   "p25": 730,
+   "p75": 1140,
+   "median_year": 11040,
+   "covers_pct": {
+    "hoa_includes_insurance": 81,
+    "hoa_includes_water_sewer": 97,
+    "hoa_includes_trash": 96,
+    "hoa_includes_internet": 88,
+    "hoa_includes_cable": 57,
+    "hoa_includes_pest": 84,
+    "hoa_includes_electric": 57,
+    "lawn_care_included": 96,
+    "community_pool": 96,
+    "clubhouse": 42,
+    "security_service": 58,
+    "gated": 10,
+    "tennis": 12,
+    "golf_included": 0
+   },
+   "label": "Condo in an oceanfront building"
+  },
+  "condo_off_ocean": {
+   "homes_for_sale": 1747,
+   "with_fee": 1746,
+   "no_fee_or_blank": 1,
+   "median": 515,
+   "p25": 410,
+   "p75": 685,
+   "median_year": 6180,
+   "covers_pct": {
+    "hoa_includes_insurance": 77,
+    "hoa_includes_water_sewer": 77,
+    "hoa_includes_trash": 87,
+    "hoa_includes_internet": 59,
+    "hoa_includes_cable": 43,
+    "hoa_includes_pest": 71,
+    "hoa_includes_electric": 7,
+    "lawn_care_included": 88,
+    "community_pool": 89,
+    "clubhouse": 43,
+    "security_service": 27,
+    "gated": 18,
+    "tennis": 23,
+    "golf_included": 0
+   },
+   "label": "Condo off the ocean"
+  },
+  "townhouse": {
+   "homes_for_sale": 366,
+   "with_fee": 338,
+   "no_fee_or_blank": 28,
+   "median": 290,
+   "p25": 190,
+   "p75": 425,
+   "median_year": 3480,
+   "covers_pct": {
+    "hoa_includes_insurance": 37,
+    "hoa_includes_water_sewer": 19,
+    "hoa_includes_trash": 72,
+    "hoa_includes_internet": 23,
+    "hoa_includes_cable": 29,
+    "hoa_includes_pest": 33,
+    "hoa_includes_electric": 0,
+    "lawn_care_included": 84,
+    "community_pool": 61,
+    "clubhouse": 33,
+    "security_service": 9,
+    "gated": 9,
+    "tennis": 11,
+    "golf_included": 0
+   },
+   "label": "Townhouse"
+  },
+  "house": {
+   "homes_for_sale": 3667,
+   "with_fee": 2526,
+   "no_fee_or_blank": 1141,
+   "median": 95,
+   "p25": 70,
+   "p75": 135,
+   "median_year": 1140,
+   "covers_pct": {
+    "hoa_includes_insurance": 4,
+    "hoa_includes_water_sewer": 2,
+    "hoa_includes_trash": 46,
+    "hoa_includes_internet": 9,
+    "hoa_includes_cable": 0,
+    "hoa_includes_pest": 1,
+    "hoa_includes_electric": 0,
+    "lawn_care_included": 8,
+    "community_pool": 62,
+    "clubhouse": 44,
+    "security_service": 14,
+    "gated": 17,
+    "tennis": 20,
+    "golf_included": 1
+   },
+   "label": "House (all with a fee)"
+  },
+  "house_no_amenities": {
+   "homes_for_sale": 2094,
+   "with_fee": 1010,
+   "no_fee_or_blank": 1084,
+   "median": 70,
+   "p25": 55,
+   "p75": 100,
+   "median_year": 840,
+   "covers_pct": {
+    "hoa_includes_insurance": 2,
+    "hoa_includes_water_sewer": 0,
+    "hoa_includes_trash": 37,
+    "hoa_includes_internet": 4,
+    "hoa_includes_cable": 0,
+    "hoa_includes_pest": 0,
+    "hoa_includes_electric": 0,
+    "lawn_care_included": 4,
+    "community_pool": 7,
+    "clubhouse": 4,
+    "security_service": 3,
+    "gated": 6,
+    "tennis": 1,
+    "golf_included": 1
+   },
+   "label": "House, neighborhood with no shared amenities"
+  },
+  "house_pool_or_clubhouse": {
+   "homes_for_sale": 1570,
+   "with_fee": 1513,
+   "no_fee_or_blank": 57,
+   "median": 110,
+   "p25": 90,
+   "p75": 165,
+   "median_year": 1320,
+   "covers_pct": {
+    "hoa_includes_insurance": 5,
+    "hoa_includes_water_sewer": 2,
+    "hoa_includes_trash": 52,
+    "hoa_includes_internet": 12,
+    "hoa_includes_cable": 0,
+    "hoa_includes_pest": 1,
+    "hoa_includes_electric": 0,
+    "lawn_care_included": 12,
+    "community_pool": 98,
+    "clubhouse": 71,
+    "security_service": 22,
+    "gated": 24,
+    "tennis": 32,
+    "golf_included": 0
+   },
+   "label": "House, neighborhood with a pool or clubhouse"
+  },
+  "house_gated": {
+   "homes_for_sale": 503,
+   "with_fee": 425,
+   "no_fee_or_blank": 78,
+   "median": 160,
+   "p25": 120,
+   "p75": 235,
+   "median_year": 1920,
+   "covers_pct": {
+    "hoa_includes_insurance": 7,
+    "hoa_includes_water_sewer": 4,
+    "hoa_includes_trash": 35,
+    "hoa_includes_internet": 9,
+    "hoa_includes_cable": 0,
+    "hoa_includes_pest": 1,
+    "hoa_includes_electric": 0,
+    "lawn_care_included": 16,
+    "community_pool": 84,
+    "clubhouse": 81,
+    "security_service": 67,
+    "gated": 100,
+    "tennis": 57,
+    "golf_included": 0
+   },
+   "label": "House in a gated community"
+  },
+  "house_golf_community": {
+   "homes_for_sale": 358,
+   "with_fee": 335,
+   "no_fee_or_blank": 23,
+   "median": 105,
+   "p25": 75,
+   "p75": 225,
+   "median_year": 1260,
+   "covers_pct": {
+    "hoa_includes_insurance": 4,
+    "hoa_includes_water_sewer": 3,
+    "hoa_includes_trash": 40,
+    "hoa_includes_internet": 10,
+    "hoa_includes_cable": 0,
+    "hoa_includes_pest": 0,
+    "hoa_includes_electric": 0,
+    "lawn_care_included": 16,
+    "community_pool": 77,
+    "clubhouse": 77,
+    "security_service": 45,
+    "gated": 43,
+    "tennis": 56,
+    "golf_included": 4
+   },
+   "label": "House in a golf community"
+  },
+  "house_gated_golf": {
+   "homes_for_sale": 144,
+   "with_fee": 144,
+   "no_fee_or_blank": 0,
+   "median": 200,
+   "p25": 100,
+   "p75": 320,
+   "median_year": 2400,
+   "covers_pct": {
+    "hoa_includes_insurance": 4,
+    "hoa_includes_water_sewer": 5,
+    "hoa_includes_trash": 38,
+    "hoa_includes_internet": 12,
+    "hoa_includes_cable": 0,
+    "hoa_includes_pest": 0,
+    "hoa_includes_electric": 0,
+    "lawn_care_included": 28,
+    "community_pool": 89,
+    "clubhouse": 90,
+    "security_service": 90,
+    "gated": 100,
+    "tennis": 81,
+    "golf_included": 0
+   },
+   "label": "House in a gated golf community"
+  }
+ },
+ "tower_vs_house_times": 9.9,
+ "census_owners": {
+  "horry_house": {
+   "n_records": 524,
+   "weighted_households": 55837,
+   "median": 90,
+   "p25": 50,
+   "p75": 110
+  },
+  "horry_condo_bldg_3plus": {
+   "n_records": 113,
+   "weighted_households": 10753,
+   "median": 440,
+   "p25": 350,
+   "p75": 500
+  },
+  "horry_share_paying": 0.613,
+  "rest_sc_house": {
+   "n_records": 4383,
+   "weighted_households": 419097,
+   "median": 70,
+   "p25": 30,
+   "p75": 180
+  },
+  "rest_sc_condo_bldg_3plus": {
+   "n_records": 178,
+   "weighted_households": 16852,
+   "median": 390,
+   "p25": 250,
+   "p75": 550
+  },
+  "rest_sc_share_paying": 0.331,
+  "note": "Horry = PUMAs 02701, 02702 (Loris area 02601 left out). Medians among owners who pay a fee."
+ },
+ "flood_policy_per_unit_year": {
+  "all": {
+   "policies": 1172,
+   "per_unit_median": 405,
+   "per_unit_p25": 242,
+   "per_unit_p75": 654,
+   "building_cost_median": 3420,
+   "units_median": 9.0,
+   "units_total": 32500
+  },
+  "zone_V": {
+   "policies": 50,
+   "per_unit_median": 549,
+   "per_unit_p25": 306,
+   "per_unit_p75": 1165,
+   "building_cost_median": 16484,
+   "units_median": 42.0,
+   "units_total": 3255
+  },
+  "asOfDate": "2026-09-08T00:00:00.000Z"
+ },
+ "flood_policy_per_unit_month_median": 34,
+ "budget_del_webb_grande_dunes_2025": {
+  "Grande Dunes Ocean Club (beach club)": {
+   "dollars": 781440,
+   "share_pct": 20.0
+  },
+  "Grande Dunes master association": {
+   "dollars": 615384,
+   "share_pct": 15.7
+  },
+  "Lawns and landscaping": {
+   "dollars": 1221560,
+   "share_pct": 31.2
+  },
+  "Staff (wages, taxes, benefits)": {
+   "dollars": 381664,
+   "share_pct": 9.8
+  },
+  "Power, water, gas, phone and internet for shared buildings": {
+   "dollars": 245720,
+   "share_pct": 6.3
+  },
+  "Savings for future repairs (reserves)": {
+   "dollars": 198000,
+   "share_pct": 5.1
+  },
+  "Insurance": {
+   "dollars": 139956,
+   "share_pct": 3.6
+  },
+  "Everything else (cleaning, pool, ponds, management, upkeep)": {
+   "dollars": 327345,
+   "share_pct": 8.4
+  }
+ },
+ "budget_myrtle_trace_2026": {
+  "Grounds and buildings": 53.7,
+  "Left over after expenses": 17.7,
+  "Office, management and administration": 12.1,
+  "Utilities": 7.8,
+  "Pool and lakes": 6.4,
+  "Clubhouse": 2.0,
+  "Taxes": 0.3
+ },
+ "by_area_2026_11_02": {
+  "29579": {
+   "name": "Carolina Forest",
+   "condo_median": 425,
+   "condo_n": 145,
+   "house_median": 125,
+   "house_n": 363,
+   "house_no_hoa": 13
+  },
+  "29588": {
+   "name": "Socastee",
+   "condo_median": 375,
+   "condo_n": 61,
+   "house_median": 100,
+   "house_n": 276,
+   "house_no_hoa": 31
+  },
+  "29577": {
+   "name": "Myrtle Beach (central and south)",
+   "condo_median": 775,
+   "condo_n": 828,
+   "house_median": 100,
+   "house_n": 187,
+   "house_no_hoa": 63
+  },
+  "29572": {
+   "name": "Myrtle Beach (north end)",
+   "condo_median": 875,
+   "condo_n": 529,
+   "house_median": 300,
+   "house_n": 110,
+   "house_no_hoa": 15
+  },
+  "29575": {
+   "name": "Surfside Beach",
+   "condo_median": 525,
+   "condo_n": 144,
+   "house_median": 25,
+   "house_n": 173,
+   "house_no_hoa": 116
+  },
+  "29576": {
+   "name": "Murrells Inlet and Garden City",
+   "condo_median": 525,
+   "condo_n": 165,
+   "house_median": 100,
+   "house_n": 222,
+   "house_no_hoa": 70
+  },
+  "29582": {
+   "name": "North Myrtle Beach",
+   "condo_median": 700,
+   "condo_n": 569,
+   "house_median": 25,
+   "house_n": 255,
+   "house_no_hoa": 134
+  },
+  "29566": {
+   "name": "Little River",
+   "condo_median": 525,
+   "condo_n": 184,
+   "house_median": 100,
+   "house_n": 189,
+   "house_no_hoa": 23
+  },
+  "29568": {
+   "name": "Longs",
+   "condo_median": 400,
+   "condo_n": 24,
+   "house_median": 100,
+   "house_n": 341,
+   "house_no_hoa": 19
+  },
+  "29526": {
+   "name": "Conway (29526)",
+   "condo_median": 400,
+   "condo_n": 33,
+   "house_median": 75,
+   "house_n": 471,
+   "house_no_hoa": 113
+  },
+  "29527": {
+   "name": "Conway (29527)",
+   "condo_median": null,
+   "condo_n": 0,
+   "house_median": 75,
+   "house_n": 200,
+   "house_no_hoa": 58
+  }
+ }
+}

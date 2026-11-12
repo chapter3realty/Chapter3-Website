@@ -1,0 +1,38 @@
+{
+ "source": "https://www.fema.gov/api/open/v3/NfipPolicies",
+ "filter": "reportedZipCode eq '29575' and policyEffectiveDate ge '2026-01-01T00:00:00.000Z'",
+ "policies": 1986,
+ "latest_effective": "2026-11-24T00:00:00.000Z",
+ "by_community_class": [
+  [
+   "HORRY COUNTY *",
+   "450104",
+   5,
+   1222
+  ],
+  [
+   "SURFSIDE BEACH, TOWN OF",
+   "450111",
+   7,
+   761
+  ],
+  [
+   "NORTH MYRTLE BEACH, CITY OF",
+   "450110",
+   6,
+   1
+  ],
+  [
+   "GREENWOOD COUNTY*",
+   "450094",
+   null,
+   1
+  ],
+  [
+   "MYRTLE BEACH, CITY OF",
+   "450109",
+   5,
+   1
+  ]
+ ]
+}

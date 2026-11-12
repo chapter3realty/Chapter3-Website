@@ -1,0 +1,437 @@
+{
+ "photos": [
+  {
+   "slug": "invest-where-to-buy",
+   "file": "images/2026-11-a/invest-where-to-buy/north-myrtle-beach-towers-and-houses-2011.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-where-to-buy/north-myrtle-beach-towers-and-houses-2011-600w.webp",
+    "1200": "images/2026-11-a/invest-where-to-buy/north-myrtle-beach-towers-and-houses-2011-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "Condo towers and beach houses on one block in North Myrtle Beach, USGS oblique aerial photo, August 24, 2011",
+   "what": "The oceanfront in the City of North Myrtle Beach seen from a plane over the ocean: a tan condo tower of about twelve stories and a taller grey glass tower stand on the same stretch as a three-story white condo building, a grey house and rows of raised houses on the streets behind, under oak trees. Dunes with boardwalks and the beach are in front. People on the beach are specks; no sign, plate or name is readable.",
+   "caption": "Condo towers and beach houses on the same oceanfront block in North Myrtle Beach.",
+   "alt": "Two condo towers, a low condo building and raised beach houses side by side behind the dunes in North Myrtle Beach, seen from over the ocean",
+   "place": {
+    "city": "North Myrtle Beach",
+    "sublocation": "Oceanfront in the City of North Myrtle Beach (Horry County tax district 550)"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "display_credit": "USGS photo, 2011",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_180624d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_180500.zip; aircraft position 33.807613 N, 78.686753 W (11CCH03-Photolocations.csv; the position of the plane, not of the buildings). Read from the zip by HTTP range request on 2026-11-02; 3,412,421 bytes, md5 8ee55a01d90cffac9347ec5d9b442fa7. Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. Not a frame used on any other page (others use 174830, 175156, 175537, 175948, 180052, 180133, 180143, 180150, 180158, 180608 and 181208).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size (3008 x 1960) by the writer on 2026-11-02. Parcels landward of the plane's position, queried 2026-11-02: -78.6905 33.8085 to -78.6845 33.8125: 154 parcels, all tax district 550 (City of North Myrtle Beach). The caption names no building and says only what the frame shows and the year.",
+   "annotation_sources": {
+    "where": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24 ; https://gis1.georgetowncountysc.org/portal/rest/services/GCGIS_Export/FeatureServer/2 (read 2026-11-02)"
+   },
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "crop_note": "Cut as one 2708 x 1523 band (x 150 to 2858, y 150 to 1673 of the frame), then resized.",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-a/invest-where-to-buy/north-myrtle-beach-towers-and-houses-2011-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-a/invest-where-to-buy/north-myrtle-beach-towers-and-houses-2011-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-a/invest-where-to-buy/north-myrtle-beach-towers-and-houses-2011-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   }
+  },
+  {
+   "slug": "invest-where-to-buy",
+   "file": "images/2026-11-a/invest-where-to-buy/surfside-beach-pier-and-houses-2011.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-where-to-buy/surfside-beach-pier-and-houses-2011-600w.webp",
+    "1200": "images/2026-11-a/invest-where-to-buy/surfside-beach-pier-and-houses-2011-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "The Surfside Beach pier and rows of raised beach houses, USGS oblique aerial photo, August 24, 2011",
+   "what": "The oceanfront of the Town of Surfside Beach seen from a plane over the ocean: the wooden fishing pier runs out from the beach in the middle, with a parking lot and a mid-rise building to its left and close rows of raised two- and three-story beach houses to its right. Streets of houses and trees fill the background. People on the beach are specks; no sign, plate or name is readable.",
+   "caption": "The pier and rows of raised beach houses in Surfside Beach.",
+   "alt": "The Surfside Beach fishing pier with a parking lot on one side and rows of raised beach houses on the other, seen from over the ocean",
+   "place": {
+    "city": "Surfside Beach",
+    "sublocation": "The pier and the oceanfront of the Town of Surfside Beach (Horry County tax district 660)"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "display_credit": "USGS photo, 2011",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_175655d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_175500.zip; aircraft position 33.600147 N, 78.968485 W (11CCH03-Photolocations.csv; the position of the plane, not of the buildings). Read from the zip by HTTP range request on 2026-11-02; 3,466,285 bytes, md5 585a2937b2965ba2c3e901527bc737f6. Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. Not a frame used on any other page (others use 174830, 175156, 175537, 175948, 180052, 180133, 180143, 180150, 180158, 180608 and 181208).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size (3008 x 1960) by the writer on 2026-11-02. Parcels landward of the plane's position, queried 2026-11-02: -78.9745 33.6030 to -78.9690 33.6075: 258 parcels, all tax district 660 (Town of Surfside Beach). The caption names no building and says only what the frame shows and the year.",
+   "annotation_sources": {
+    "where": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24 ; https://gis1.georgetowncountysc.org/portal/rest/services/GCGIS_Export/FeatureServer/2 (read 2026-11-02)"
+   },
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "crop_note": "Cut as one 2708 x 1523 band (x 150 to 2858, y 150 to 1673 of the frame), then resized."
+  },
+  {
+   "slug": "invest-where-to-buy",
+   "file": "images/2026-11-a/invest-where-to-buy/garden-city-pier-and-beach-road-2011.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-where-to-buy/garden-city-pier-and-beach-road-2011-600w.webp",
+    "1200": "images/2026-11-a/invest-where-to-buy/garden-city-pier-and-beach-road-2011-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "The Garden City pier, condo buildings and houses on the strip between the ocean and the marsh, USGS oblique aerial photo, August 24, 2011",
+   "what": "Garden City Beach seen from a plane over the ocean: the end of the pier at the left edge, the beach road running back to a causeway over the salt marsh, shops and parking lots beside it, several mid-rise condo buildings and raised houses along the beach, and the marsh and creeks behind. People are specks; no sign, plate or name is readable.",
+   "caption": "Condo buildings and houses on the strip between the ocean and the marsh at Garden City.",
+   "alt": "Garden City Beach from over the ocean: the pier, shops along the beach road, mid-rise condo buildings and raised houses, with the salt marsh behind",
+   "place": {
+    "city": "Garden City",
+    "sublocation": "Garden City Beach by the pier (Horry County tax district 610, Murrells Inlet - Garden City fire district)"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "display_credit": "USGS photo, 2011",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_175549d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_175500.zip; aircraft position 33.573597 N, 78.993193 W (11CCH03-Photolocations.csv; the position of the plane, not of the buildings). Read from the zip by HTTP range request on 2026-11-02; 3,209,629 bytes, md5 c95d28f6e26614005b0ebf2fcb776d40. Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. Not a frame used on any other page (others use 174830, 175156, 175537, 175948, 180052, 180133, 180143, 180150, 180158, 180608 and 181208).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size (3008 x 1960) by the writer on 2026-11-02. Parcels landward of the plane's position, queried 2026-11-02: -79.0000 33.5760 to -78.9940 33.5800: 366 parcels with a district, all tax district 610. The caption names no building and says only what the frame shows and the year.",
+   "annotation_sources": {
+    "where": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24 ; https://gis1.georgetowncountysc.org/portal/rest/services/GCGIS_Export/FeatureServer/2 (read 2026-11-02)"
+   },
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "crop_note": "Cut as one 2708 x 1523 band (x 150 to 2858, y 0 to 1523 of the frame), then resized."
+  },
+  {
+   "slug": "invest-where-to-buy",
+   "file": "images/2026-11-a/invest-where-to-buy/litchfield-beach-houses-and-condos-2011.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-where-to-buy/litchfield-beach-houses-and-condos-2011-600w.webp",
+    "1200": "images/2026-11-a/invest-where-to-buy/litchfield-beach-houses-and-condos-2011-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "Beach houses and low condo buildings at Litchfield Beach, with docks across the marsh, USGS oblique aerial photo, August 24, 2011",
+   "what": "Litchfield Beach in Georgetown County seen from a plane over the ocean: raised beach houses on the left, a group of two- and three-story condo buildings around a pool and lawns in the middle and right, the dunes and beach in front, and long wooden docks running back across the salt marsh to a creek. People are specks; no sign, plate or name is readable.",
+   "caption": "Beach houses and low condo buildings at Litchfield Beach, with docks across the marsh.",
+   "alt": "Raised beach houses and low condo buildings around a pool at Litchfield Beach, with long docks crossing the marsh behind, seen from over the ocean",
+   "place": {
+    "city": "Pawleys Island",
+    "sublocation": "Litchfield Beach, unincorporated Georgetown County, ZIP code 29585"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "display_credit": "USGS photo, 2011",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_175124d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_175000.zip; aircraft position 33.458527 N, 79.09792 W (11CCH03-Photolocations.csv; the position of the plane, not of the buildings). Read from the zip by HTTP range request on 2026-11-02; 3,272,257 bytes, md5 f065ddfb94d4713672958d50213418d0. Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. Not a frame used on any other page (others use 174830, 175156, 175537, 175948, 180052, 180133, 180143, 180150, 180158, 180608 and 181208).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size (3008 x 1960) by the writer on 2026-11-02. Parcels landward of the plane's position, queried 2026-11-02: Georgetown County parcels (GCGIS_Export layer 2), -79.1060 33.4600 to -79.0990 33.4660: 129 parcels; legal descriptions name Litchfield Beach and Inlet Point; ZIP 29585. The caption names no building and says only what the frame shows and the year.",
+   "annotation_sources": {
+    "where": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24 ; https://gis1.georgetowncountysc.org/portal/rest/services/GCGIS_Export/FeatureServer/2 (read 2026-11-02)"
+   },
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "crop_note": "Cut as one 2708 x 1523 band (x 150 to 2858, y 200 to 1723 of the frame), then resized."
+  },
+  {
+   "slug": "invest-where-to-buy",
+   "file": "images/2026-11-a/invest-where-to-buy/myrtle-beach-oceanfront-towers-2011.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-where-to-buy/myrtle-beach-oceanfront-towers-2011-600w.webp",
+    "1200": "images/2026-11-a/invest-where-to-buy/myrtle-beach-oceanfront-towers-2011-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "Oceanfront towers in Myrtle Beach, USGS oblique aerial photo, August 24, 2011",
+   "what": "The oceanfront in the City of Myrtle Beach seen from a plane over the ocean: three large towers of about twelve to fifteen stories with pools in front, a smaller building beside them, and streets of houses and low buildings under trees behind. The beach is crowded with umbrellas. People are specks; no sign, plate or name is readable.",
+   "caption": "Oceanfront towers in Myrtle Beach. Three in four condos in the city are in a zone marked for nightly rentals.",
+   "alt": "Three large oceanfront towers with pools in front of them in Myrtle Beach, and streets of houses behind, seen from over the ocean",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Oceanfront in the City of Myrtle Beach, north of the city center (Horry County tax district 880)"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "display_credit": "USGS photo, 2011",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_180234d.jpg from https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_180000.zip; aircraft position 33.736513 N, 78.814373 W (11CCH03-Photolocations.csv; the position of the plane, not of the buildings). Read from the zip by HTTP range request on 2026-11-02; 3,439,546 bytes, md5 add930b17cced8106f402f7ce7e11e2c. Data release: Morgan, K.L.M., 2017, https://doi.org/10.5066/F7N877XX. Not a frame used on any other page (others use 174830, 175156, 175537, 175948, 180052, 180133, 180143, 180150, 180158, 180608 and 181208).",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size (3008 x 1960) by the writer on 2026-11-02. Parcels landward of the plane's position, queried 2026-11-02: -78.8200 33.7390 to -78.8130 33.7440: 1,943 parcels with a district, all tax district 880 (City of Myrtle Beach). The caption names no building and says only what the frame shows and the year.",
+   "annotation_sources": {
+    "where": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24 ; https://gis1.georgetowncountysc.org/portal/rest/services/GCGIS_Export/FeatureServer/2 (read 2026-11-02)"
+   },
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "crop_note": "Cut as one 2708 x 1523 band (x 150 to 2858, y 150 to 1673 of the frame), then resized."
+  },
+  {
+   "slug": "invest-where-to-buy",
+   "file": "images/2026-11-a/invest-where-to-buy/longs-new-subdivision-from-above.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-where-to-buy/longs-new-subdivision-from-above-600w.webp",
+    "1200": "images/2026-11-a/invest-where-to-buy/longs-new-subdivision-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "A new subdivision going up in Longs, from above",
+   "what": "Straight down on a new subdivision in Longs (ZIP 29568) on 2023 NAIP imagery: new streets and three storm ponds cut into bare sand, houses finished or framed along two streets, most lots still empty, a four-lane highway on the left, older houses on large lots and farm fields around it.",
+   "caption": "A new subdivision going up beside farm fields in Longs: streets and ponds dug, some houses built or framed, and most lots still empty.",
+   "alt": "Aerial photo of a new subdivision in Longs with streets and ponds cut into bare ground, a few rows of new houses, empty lots, and farm fields and woods around it",
+   "place": {
+    "city": "Longs",
+    "sublocation": "A subdivision east of a four-lane highway, ZIP code area 29568, outside North Myrtle Beach"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023) on 2026-11-03, a 1,000 by 750 m window centred on 33.975 N, 78.74 W; the exact request is in source_request.",
+   "license_note": "Same source and terms as the Murrells Inlet and Little River NAIP records of this batch: The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\"; the USDA FSA policy page says public domain information \"may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\"",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo, 2023",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "digitalCapture",
+   "subject_check": "Looked at full size (2000 x 1500) by the fixer on 2026-11-03. Window chosen as the densest block of house parcels inside this page's A subdivision east of a four-lane highway, ZIP code area 29568, outside North Myrtle Beach outline (Horry County GIS layer 24 or Georgetown County parcels, read 2026-11-02); at least six of nine test points of the window fall inside the outline. No label is drawn; the caption names no subdivision, street or business.",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8765899.635425163%2C4024993.431470942%2C-8764693.772259278%2C4025897.828845355&bboxSR=3857&imageSR=3857&size=2000%2C1500&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image"
+  },
+  {
+   "slug": "invest-where-to-buy",
+   "file": "images/2026-11-a/invest-where-to-buy/socastee-subdivision-from-above.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-where-to-buy/socastee-subdivision-from-above-600w.webp",
+    "1200": "images/2026-11-a/invest-where-to-buy/socastee-subdivision-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "A subdivision of houses in Socastee, from above",
+   "what": "Straight down on Socastee on 2023 NAIP imagery: a subdivision of similar houses on curving streets around a pond, a pool and clubhouse at its entrance, older houses on wooded lots across the road, a highway on a long bridge on the right with land being cleared beside it, and woods and dark water along the bottom.",
+   "caption": "A subdivision of similar houses around a pond in Socastee, with older houses on wooded lots across the road and a highway bridge on the right.",
+   "alt": "Aerial photo of rows of similar houses on curving streets around a pond in Socastee, older houses on wooded lots above them and a highway on a bridge at the right",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Socastee Census designated place"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023) on 2026-11-03, a 1,000 by 750 m window centred on 33.687 N, 79.028 W; the exact request is in source_request.",
+   "license_note": "Same source and terms as the Murrells Inlet and Little River NAIP records of this batch: The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\"; the USDA FSA policy page says public domain information \"may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\"",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo, 2023",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "digitalCapture",
+   "subject_check": "Looked at full size (2000 x 1500) by the fixer on 2026-11-03. Window chosen as the densest block of house parcels inside this page's Socastee Census designated place outline (Horry County GIS layer 24 or Georgetown County parcels, read 2026-11-02); at least six of nine test points of the window fall inside the outline. No label is drawn; the caption names no subdivision, street or business.",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8797957.620952034%2C3986400.1292578126%2C-8796755.813420413%2C3987301.4849065277&bboxSR=3857&imageSR=3857&size=2000%2C1500&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image"
+  },
+  {
+   "slug": "invest-where-to-buy",
+   "file": "images/2026-11-a/invest-where-to-buy/little-river-houses-and-ponds-from-above.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-where-to-buy/little-river-houses-and-ponds-from-above-600w.webp",
+    "1200": "images/2026-11-a/invest-where-to-buy/little-river-houses-and-ponds-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Houses around ponds in Little River, from above",
+   "what": "Straight down on Little River on 2023 NAIP imagery: subdivisions of houses on curving streets around ponds in the upper left, older houses under trees in the middle right, larger multi-unit buildings with parking lots in the lower left, and woods between them.",
+   "caption": "Houses on curving streets around ponds in Little River, with larger buildings and their parking lots at the lower left.",
+   "alt": "Aerial photo of houses on curving streets around ponds in Little River, with larger buildings and parking lots at the lower left and woods between",
+   "place": {
+    "city": "Little River",
+    "sublocation": "Little River Census designated place"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023) on 2026-11-03, a 1,000 by 750 m window centred on 33.87 N, 78.652 W; the exact request is in source_request.",
+   "license_note": "Same source and terms as the Murrells Inlet and Little River NAIP records of this batch: The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\"; the USDA FSA policy page says public domain information \"may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\"",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo, 2023",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "digitalCapture",
+   "subject_check": "Looked at full size (2000 x 1500) by the fixer on 2026-11-03. Window chosen as the densest block of house parcels inside this page's Little River Census designated place outline (Horry County GIS layer 24 or Georgetown County parcels, read 2026-11-02); at least six of nine test points of the window fall inside the outline. No label is drawn; the caption names no subdivision, street or business.",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8756102.777582135%2C4010907.888797773%2C-8754898.399725419%2C4011811.1721903114&bboxSR=3857&imageSR=3857&size=2000%2C1500&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image"
+  },
+  {
+   "slug": "invest-where-to-buy",
+   "file": "images/2026-11-a/invest-where-to-buy/carolina-forest-houses-and-woods-from-above.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-where-to-buy/carolina-forest-houses-and-woods-from-above-600w.webp",
+    "1200": "images/2026-11-a/invest-where-to-buy/carolina-forest-houses-and-woods-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "A subdivision of houses in Carolina Forest, from above",
+   "what": "Straight down on Carolina Forest on 2023 NAIP imagery: houses on streets that end in cul-de-sacs, two ponds, thick pine woods around them, a power line cleared through the woods at the top, and land being cleared for new streets on the right.",
+   "caption": "Houses on streets that end in cul-de-sacs in Carolina Forest, with woods around them and land being cleared for more on the right.",
+   "alt": "Aerial photo of a subdivision of houses on cul-de-sac streets in Carolina Forest, with ponds, thick woods around it and cleared land on the right",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Carolina Forest Census designated place"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023) on 2026-11-03, a 1,000 by 750 m window centred on 33.774 N, 78.912 W; the exact request is in source_request.",
+   "license_note": "Same source and terms as the Murrells Inlet and Little River NAIP records of this batch: The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\"; the USDA FSA policy page says public domain information \"may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\"",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo, 2023",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "digitalCapture",
+   "subject_check": "Looked at full size (2000 x 1500) by the fixer on 2026-11-03. Window chosen as the densest block of house parcels inside this page's Carolina Forest Census designated place outline (Horry County GIS layer 24 or Georgetown County parcels, read 2026-11-02); at least six of nine test points of the window fall inside the outline. No label is drawn; the caption names no subdivision, street or business.",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8785045.169550858%2C3998044.8314545667%2C-8783842.14296114%2C3998947.101396855&bboxSR=3857&imageSR=3857&size=2000%2C1500&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image"
+  },
+  {
+   "slug": "invest-where-to-buy",
+   "file": "images/2026-11-a/invest-where-to-buy/murrells-inlet-georgetown-side-from-above.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-where-to-buy/murrells-inlet-georgetown-side-from-above-600w.webp",
+    "1200": "images/2026-11-a/invest-where-to-buy/murrells-inlet-georgetown-side-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "Murrells Inlet on the Georgetown County side, from above",
+   "what": "Straight down on the Georgetown County side of Murrells Inlet on 2023 NAIP imagery, south of the county line: a subdivision of houses on curving streets with a pond at the top, and below it older houses on larger wooded lots, a pond and long storage buildings by a road on the right.",
+   "caption": "A subdivision on the Georgetown County side of Murrells Inlet, with older houses on larger wooded lots below it.",
+   "alt": "Aerial photo of a subdivision of houses on curving streets on the Georgetown County side of Murrells Inlet, with houses on larger wooded lots below it",
+   "place": {
+    "city": "Murrells Inlet",
+    "sublocation": "Murrells Inlet Census designated place, Georgetown County"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023) on 2026-11-03, a 1,000 by 750 m window centred on 33.5655 N, 79.044 W; the exact request is in source_request.",
+   "license_note": "Same source and terms as the Murrells Inlet and Little River NAIP records of this batch: The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\"; the USDA FSA policy page says public domain information \"may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\"",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo, 2023",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "digitalCapture",
+   "subject_check": "Looked at full size (2000 x 1500) by the fixer on 2026-11-03. Window chosen as the densest block of house parcels inside this page's Murrells Inlet Census designated place, Georgetown County outline (Horry County GIS layer 24 or Georgetown County parcels, read 2026-11-02); at least six of nine test points of the window fall inside the outline. No label is drawn; the caption names no subdivision, street or business.",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8799737.88594223%2C3970157.4007617943%2C-8798537.772135103%2C3971057.4861171385&bboxSR=3857&imageSR=3857&size=2000%2C1500&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image"
+  },
+  {
+   "slug": "invest-where-to-buy",
+   "file": "images/2026-11-a/invest-where-to-buy/conway-riverwalk-and-warehouses.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-where-to-buy/conway-riverwalk-and-warehouses-600w.webp",
+    "1200": "images/2026-11-a/invest-where-to-buy/conway-riverwalk-and-warehouses-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Waccamaw River Warehouse Historic District, June 2010",
+   "what": "A wooden boardwalk with a black metal rail runs past old wooden warehouses with tin roofs and a white building with a screened porch, under sycamore trees, in Conway's Waccamaw River Warehouse Historic District. A highway bridge shows through the trees at the upper left. One person walks far down the boardwalk, too small to recognise.",
+   "caption": "The riverwalk boardwalk past old wooden warehouses in downtown Conway.",
+   "alt": "A wooden boardwalk with a black rail running past old wooden warehouses and a building with a screened porch, under tall sycamore trees, in Conway",
+   "place": {
+    "city": "Conway",
+    "sublocation": "Waccamaw River Warehouse Historic District, downtown Conway"
+   },
+   "source": "https://commons.wikimedia.org/wiki/File:Waccamaw_River_Warehouse_Historic_District_Jun_10.JPG",
+   "commons_page": "https://commons.wikimedia.org/wiki/File:Waccamaw_River_Warehouse_Historic_District_Jun_10.JPG",
+   "source_name": "Wikimedia Commons",
+   "author": "Pubdog",
+   "author_type": "Person",
+   "license": "Public domain",
+   "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+   "license_note": "Commons file page and API (extmetadata, read 2026-11-03): License 'pd', LicenseShortName 'Public domain', Credit 'Own work', Artist User:Pubdog, category PD-self. Checked by the batch verifier (VERIFY.md, photo candidates: 'Public domain, released by its author (Pubdog, own work, 2010). Usable.').",
+   "provenance": "Commons 1920 px thumbnail of the 2592 x 1944 original, downloaded 2026-11-03 (md5 60efbaa4154a4f5e73e555d56aa85962). DateTimeOriginal 2010-06-20; GPS 33.833333 N, 79.045 W (Commons page).",
+   "terms_urls": [
+    "https://commons.wikimedia.org/wiki/File:Waccamaw_River_Warehouse_Historic_District_Jun_10.JPG",
+    "https://commons.wikimedia.org/wiki/Template:PD-self"
+   ],
+   "taken": "2010-06-20",
+   "display_credit": "Photo: Pubdog, 2010",
+   "credit": "Photo: Pubdog, public domain, via Wikimedia Commons.",
+   "digital_source_type": "digitalCapture",
+   "subject_check": "Looked at full size (1920 x 1440) by the fixer on 2026-11-03. The caption does not say the photo shows one of the zoning districts in ledger row 7 (VERIFY.md): the historic district and the Waccamaw Riverfront zoning district are not the same thing."
+  }
+ ]
+}

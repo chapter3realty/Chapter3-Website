@@ -1,0 +1,61 @@
+{
+ "source": "findings.json",
+ "window": [
+  "2025-10-01",
+  "2026-09-30"
+ ],
+ "rows": [
+  {
+   "part": "horry/west",
+   "label": "Horry side, west of the US 17 bypass",
+   "houses": 6704,
+   "house_sales_12m": 396,
+   "house_median": 449950.0,
+   "house_p25": 359250.0,
+   "house_p75": 527250.0,
+   "condo_sales_12m": 90,
+   "condo_median": 273500.0,
+   "pct_legal_residence_houses": 86.5,
+   "pct_high_risk_flood_all": 1.8
+  },
+  {
+   "part": "georgetown/west",
+   "label": "Georgetown side, west of the US 17 bypass",
+   "houses": 2206,
+   "house_sales_12m": 113,
+   "house_median": 568000,
+   "house_p25": 450500.0,
+   "house_p75": 737500.0,
+   "condo_sales_12m": 5,
+   "condo_median": null,
+   "pct_legal_residence_houses": 88.3,
+   "pct_high_risk_flood_all": 1.6
+  },
+  {
+   "part": "georgetown/old_road",
+   "label": "Georgetown side, between the bypass and Business 17",
+   "houses": 613,
+   "house_sales_12m": 29,
+   "house_median": 530000,
+   "house_p25": 425000.0,
+   "house_p75": 645000.0,
+   "condo_sales_12m": 16,
+   "condo_median": 278750.0,
+   "pct_legal_residence_houses": 69.7,
+   "pct_high_risk_flood_all": 34.8
+  },
+  {
+   "part": "georgetown/inlet",
+   "label": "Georgetown side, the creek side of Business 17",
+   "houses": 344,
+   "house_sales_12m": 12,
+   "house_median": 629500.0,
+   "house_p25": 460252.5,
+   "house_p75": 815000.0,
+   "condo_sales_12m": 0,
+   "condo_median": null,
+   "pct_legal_residence_houses": 70.1,
+   "pct_high_risk_flood_all": 85.8
+  }
+ ]
+}

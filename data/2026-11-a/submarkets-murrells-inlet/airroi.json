@@ -1,0 +1,140 @@
+{
+ "source": "https://www.airroi.com/airbnb-data/united-states/south-carolina/murrells-inlet",
+ "read": "2026-11-02",
+ "headline": {
+  "revenue": "$47,603",
+  "occupancy": "41.9%",
+  "adr": "$405",
+  "listings": "478",
+  "period": "12 months to September 2026",
+  "median_month": "$3,590",
+  "top25_month": "$6,390",
+  "bottom25_month": "$1,960",
+  "updated": "October 1, 2026",
+  "permit_share": "0%"
+ },
+ "months": {
+  "Sep 2025": {
+   "revenue": 5058.0,
+   "occupancy": 41.4,
+   "adr": 374.0,
+   "revpar": 169.0
+  },
+  "Oct 2025": {
+   "revenue": 4490.0,
+   "occupancy": 37.5,
+   "adr": 359.0,
+   "revpar": 145.0
+  },
+  "Nov 2025": {
+   "revenue": 3342.0,
+   "occupancy": 31.3,
+   "adr": 354.0,
+   "revpar": 111.0
+  },
+  "Dec 2025": {
+   "revenue": 3029.0,
+   "occupancy": 28.2,
+   "adr": 361.0,
+   "revpar": 98.0
+  },
+  "Jan 2026": {
+   "revenue": 2420.0,
+   "occupancy": 24.2,
+   "adr": 362.0,
+   "revpar": 78.0
+  },
+  "Feb 2026": {
+   "revenue": 2885.0,
+   "occupancy": 30.7,
+   "adr": 359.0,
+   "revpar": 103.0
+  },
+  "Mar 2026": {
+   "revenue": 4560.0,
+   "occupancy": 41.7,
+   "adr": 370.0,
+   "revpar": 147.0
+  },
+  "Apr 2026": {
+   "revenue": 5183.0,
+   "occupancy": 43.3,
+   "adr": 384.0,
+   "revpar": 173.0
+  },
+  "May 2026": {
+   "revenue": 6804.0,
+   "occupancy": 48.6,
+   "adr": 445.0,
+   "revpar": 219.0
+  },
+  "Jun 2026": {
+   "revenue": 10271.0,
+   "occupancy": 65.3,
+   "adr": 486.0,
+   "revpar": 342.0
+  },
+  "Jul 2026": {
+   "revenue": 10571.0,
+   "occupancy": 62.2,
+   "adr": 495.0,
+   "revpar": 341.0
+  },
+  "Aug 2026": {
+   "revenue": 6889.0,
+   "occupancy": 51.4,
+   "adr": 433.0,
+   "revpar": 222.0
+  }
+ },
+ "calendar_avg_2yr": {
+  "January": {
+   "season": "Low",
+   "revenue": 2250.0
+  },
+  "February": {
+   "season": "Low",
+   "revenue": 2660.0
+  },
+  "March": {
+   "season": "Low",
+   "revenue": 4310.0
+  },
+  "April": {
+   "season": "Shoulder",
+   "revenue": 5220.0
+  },
+  "May": {
+   "season": "High",
+   "revenue": 6030.0
+  },
+  "June": {
+   "season": "High",
+   "revenue": 9300.0
+  },
+  "July": {
+   "season": "High",
+   "revenue": 9780.0
+  },
+  "August": {
+   "season": "High",
+   "revenue": 6840.0
+  },
+  "September": {
+   "season": "Low",
+   "revenue": 4490.0
+  },
+  "October": {
+   "season": "Low",
+   "revenue": 3900.0
+  },
+  "November": {
+   "season": "Low",
+   "revenue": 3020.0
+  },
+  "December": {
+   "season": "Low",
+   "revenue": 2980.0
+  }
+ }
+}

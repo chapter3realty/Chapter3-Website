@@ -1,0 +1,377 @@
+{
+ "method": "each house counted once, in this order:\n  ocean      the lot is in the first row on the beach (oceanfront.py)\n  ocean_condo  a condo sale whose point (county address) is within 60 m of a condo the CRM lists as in an oceanfront\n             building (RAW/listings-water.json, pulled by pull_listings.py): the method of the Myrtle Beach ledger, row 18\n  icw        the lot is within 15 m of the Intracoastal Waterway outline (the 2026-11-a rule)\n  river      within 15 m of the Waccamaw River outline\n  channels   within 15 m of the House Creek outline (the Cherry Grove channels and the marsh edge behind them)\n  swamp_or_marsh  within 10 m of a USGS swamp or marsh polygon within 3 km of the coast. NOT USED ON THE PAGE: 33 of its\n             48 resales are in Myrtle Beach in zone X, so the group is mostly freshwater swamp, not tidal marsh. Tidal marsh\n             prices come from the Garden City (row 13) and Murrells Inlet (row 9) ledgers, which drew the salt marsh.\n  lake       within 10 m of a USGS lake or pond (FType 390, 0.001 square km or more; sewage and oxidation ponds left out)\n  none       none of these\nHouse = county land use 100, 101, 102, 110 or 126 (the 2026-10-d rule).\nFlood zone: the zone under the middle of the lot (VE, an A zone, or neither = outside the high-risk zone).",
+ "deeds": "Horry County Register of Deeds, recorded 2025-10-01 to 2026-09-30 (batch 2026-10-d kept sales)",
+ "kinds": {
+  "ocean": {
+   "all": {
+    "n": 20,
+    "median": 2157500.0,
+    "p25": 1606250.0,
+    "p75": 3118750.0,
+    "min": 1325000.0,
+    "max": 4635000.0
+   },
+   "resale": {
+    "n": 20,
+    "median": 2157500.0,
+    "p25": 1606250.0,
+    "p75": 3118750.0,
+    "min": 1325000.0,
+    "max": 4635000.0
+   },
+   "builder_sales": 0,
+   "zone": {
+    "A": 17,
+    "X": 3
+   },
+   "zone_pct": {
+    "A": 85.0,
+    "X": 15.0
+   },
+   "nearby_off_water_resale": {
+    "n": 309,
+    "median": 615000.0,
+    "p25": 400000.0,
+    "p75": 877500.0,
+    "min": 10000.0,
+    "max": 6225000.0
+   },
+   "ratio_to_nearby": 3.51
+  },
+  "ocean_condo": {
+   "all": {
+    "n": 671,
+    "median": 210000.0,
+    "p25": 120000.0,
+    "p75": 390000.0,
+    "min": 24000.0,
+    "max": 8424000.0
+   },
+   "resale": {
+    "n": 669,
+    "median": 213900.0,
+    "p25": 120000.0,
+    "p75": 391250.0,
+    "min": 24000.0,
+    "max": 8424000.0
+   },
+   "builder_sales": 2,
+   "zone": {},
+   "zone_pct": {},
+   "resale_by_place": {
+    "Garden City CDP": {
+     "n": 2,
+     "median": 530000.0,
+     "p25": null,
+     "p75": null,
+     "min": 415000.0,
+     "max": 645000.0
+    },
+    "Little River CDP": {
+     "n": 2,
+     "median": 400000.0,
+     "p25": null,
+     "p75": null,
+     "min": 400000.0,
+     "max": 400000.0
+    },
+    "Myrtle Beach city": {
+     "n": 457,
+     "median": 149000.0,
+     "p25": 94250.0,
+     "p75": 247500.0,
+     "min": 24000.0,
+     "max": 1200000.0
+    },
+    "North Myrtle Beach city": {
+     "n": 160,
+     "median": 505250.0,
+     "p25": 310000.0,
+     "p75": 629375.0,
+     "min": 107000.0,
+     "max": 8424000.0
+    },
+    "Surfside Beach town": {
+     "n": 2,
+     "median": 552500.0,
+     "p25": null,
+     "p75": null,
+     "min": 530000.0,
+     "max": 575000.0
+    },
+    "outside any Census place": {
+     "n": 46,
+     "median": 417500.0,
+     "p25": 227475.0,
+     "p75": 881250.0,
+     "min": 100000.0,
+     "max": 1633125.0
+    }
+   },
+   "resale_also_first_row_parcel": 319
+  },
+  "icw": {
+   "all": {
+    "n": 57,
+    "median": 1325000.0,
+    "p25": 902500.0,
+    "p75": 1712500.0,
+    "min": 155000.0,
+    "max": 3000000.0
+   },
+   "resale": {
+    "n": 54,
+    "median": 1325000.0,
+    "p25": 872500.0,
+    "p75": 1700000.0,
+    "min": 155000.0,
+    "max": 3000000.0
+   },
+   "builder_sales": 3,
+   "zone": {
+    "A": 19,
+    "X": 38
+   },
+   "zone_pct": {
+    "A": 33.3,
+    "X": 66.7
+   },
+   "nearby_off_water_resale": {
+    "n": 477,
+    "median": 434000.0,
+    "p25": 296000.0,
+    "p75": 668000.0,
+    "min": 30000.0,
+    "max": 2615000.0
+   },
+   "ratio_to_nearby": 3.05
+  },
+  "river": {
+   "all": {
+    "n": 16,
+    "median": 494000.0,
+    "p25": 362250.0,
+    "p75": 688750.0,
+    "min": 219500.0,
+    "max": 1425000.0
+   },
+   "resale": {
+    "n": 14,
+    "median": 537000.0,
+    "p25": 385500.0,
+    "p75": 705000.0,
+    "min": 219500.0,
+    "max": 1425000.0
+   },
+   "builder_sales": 2,
+   "zone": {
+    "A": 9,
+    "X": 7
+   },
+   "zone_pct": {
+    "A": 56.2,
+    "X": 43.8
+   },
+   "nearby_off_water_resale": {
+    "n": 37,
+    "median": 281000.0,
+    "p25": 249450.0,
+    "p75": 350553.5,
+    "min": 165000.0,
+    "max": 700000.0
+   },
+   "ratio_to_nearby": 1.91
+  },
+  "channels": {
+   "all": {
+    "n": 40,
+    "median": 715000.0,
+    "p25": 657725.0,
+    "p75": 861500.0,
+    "min": 74168.0,
+    "max": 1643000.0
+   },
+   "resale": {
+    "n": 40,
+    "median": 715000.0,
+    "p25": 657725.0,
+    "p75": 861500.0,
+    "min": 74168.0,
+    "max": 1643000.0
+   },
+   "builder_sales": 0,
+   "zone": {
+    "A": 36,
+    "VE": 4
+   },
+   "zone_pct": {
+    "A": 90.0,
+    "VE": 10.0
+   },
+   "nearby_off_water_resale": {
+    "n": 60,
+    "median": 612500.0,
+    "p25": 466250.0,
+    "p75": 752925.0,
+    "min": 55000.0,
+    "max": 1600000.0
+   },
+   "ratio_to_nearby": 1.17
+  },
+  "swamp_or_marsh": {
+   "all": {
+    "n": 52,
+    "median": 651000.0,
+    "p25": 456250.0,
+    "p75": 768262.5,
+    "min": 300000.0,
+    "max": 2100000.0
+   },
+   "resale": {
+    "n": 48,
+    "median": 630000.0,
+    "p25": 451250.0,
+    "p75": 738750.0,
+    "min": 300000.0,
+    "max": 2100000.0
+   },
+   "builder_sales": 4,
+   "zone": {
+    "X": 45,
+    "A": 7
+   },
+   "zone_pct": {
+    "X": 86.5,
+    "A": 13.5
+   },
+   "nearby_off_water_resale": {
+    "n": 253,
+    "median": 640000.0,
+    "p25": 475000.0,
+    "p75": 784000.0,
+    "min": 55000.0,
+    "max": 2615000.0
+   },
+   "ratio_to_nearby": 0.98
+  },
+  "lake": {
+   "all": {
+    "n": 172,
+    "median": 425000.0,
+    "p25": 330047.5,
+    "p75": 643750.0,
+    "min": 145000.0,
+    "max": 5850000.0
+   },
+   "resale": {
+    "n": 122,
+    "median": 495000.0,
+    "p25": 365993.75,
+    "p75": 763500.0,
+    "min": 145000.0,
+    "max": 5850000.0
+   },
+   "builder_sales": 50,
+   "zone": {
+    "A": 16,
+    "X": 156
+   },
+   "zone_pct": {
+    "A": 9.3,
+    "X": 90.7
+   },
+   "nearby_off_water_resale": {
+    "n": 1582,
+    "median": 415000.0,
+    "p25": 315000.0,
+    "p75": 600000.0,
+    "min": 10000.0,
+    "max": 6225000.0
+   },
+   "ratio_to_nearby": 1.19
+  },
+  "none": {
+   "all": {
+    "n": 7271,
+    "median": 360000.0,
+    "p25": 289000.0,
+    "p75": 485000.0,
+    "min": 10000.0,
+    "max": 6335250.0
+   },
+   "resale": {
+    "n": 5538,
+    "median": 366000.0,
+    "p25": 288000.0,
+    "p75": 508000.0,
+    "min": 10000.0,
+    "max": 6335250.0
+   },
+   "builder_sales": 1733,
+   "zone": {
+    "X": 6928,
+    "A": 342,
+    "VE": 1
+   },
+   "zone_pct": {
+    "X": 95.3,
+    "A": 4.7,
+    "VE": 0.0
+   }
+  }
+ },
+ "stock_flood": {
+  "ocean": {
+   "houses": 411,
+   "zone_at_middle_of_lot": {
+    "X": 79,
+    "A": 324,
+    "VE": 8
+   },
+   "middle_outside_high_risk_pct": 19.2,
+   "lot_reaches_VE": 241,
+   "lot_reaches_VE_pct": 58.6,
+   "lot_reaches_high_risk": 406,
+   "lot_wholly_outside_high_risk_pct": 1.2
+  },
+  "icw": {
+   "houses": 985,
+   "zone_at_middle_of_lot": {
+    "X": 573,
+    "A": 412,
+    "VE": 0
+   },
+   "middle_outside_high_risk_pct": 58.2,
+   "lot_reaches_VE": 0,
+   "lot_reaches_VE_pct": 0.0,
+   "lot_reaches_high_risk": 688,
+   "lot_wholly_outside_high_risk_pct": 30.2
+  },
+  "river": {
+   "houses": 456,
+   "zone_at_middle_of_lot": {
+    "X": 160,
+    "A": 296,
+    "VE": 0
+   },
+   "middle_outside_high_risk_pct": 35.1,
+   "lot_reaches_VE": 0,
+   "lot_reaches_VE_pct": 0.0,
+   "lot_reaches_high_risk": 452,
+   "lot_wholly_outside_high_risk_pct": 0.9
+  },
+  "channels": {
+   "houses": 688,
+   "zone_at_middle_of_lot": {
+    "X": 3,
+    "A": 629,
+    "VE": 56
+   },
+   "middle_outside_high_risk_pct": 0.4,
+   "lot_reaches_VE": 66,
+   "lot_reaches_VE_pct": 9.6,
+   "lot_reaches_high_risk": 687,
+   "lot_wholly_outside_high_risk_pct": 0.1
+  }
+ }
+}

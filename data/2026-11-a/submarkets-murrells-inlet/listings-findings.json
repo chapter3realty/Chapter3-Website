@@ -1,0 +1,712 @@
+{
+ "pulled": "2026-11-02T12:05:57.566631+00:00",
+ "query": {
+  "city": "Murrells Inlet"
+ },
+ "api_totals": {
+  "house": 202,
+  "townhouse": 33,
+  "condo": 129,
+  "manufactured": 58,
+  "land": 39,
+  "multi": 5,
+  "all": 474
+ },
+ "truncated": [],
+ "groups": {
+  "georgetown/gc_strip/all": {
+   "n": 12,
+   "median_ask": 2199500.0,
+   "p25": 1161500.0,
+   "p75": 3156250.0,
+   "median_ask_per_sqft": 744
+  },
+  "georgetown/gc_strip/house": {
+   "n": 9,
+   "median_ask": 2500000.0,
+   "p25": 1824500.0,
+   "p75": 4611000.0,
+   "median_ask_per_sqft": 804
+  },
+  "georgetown/gc_strip/condo": {
+   "n": 2,
+   "median_ask": 724500.0,
+   "p25": null,
+   "p75": null,
+   "median_ask_per_sqft": 435
+  },
+  "georgetown/gc_strip/land": {
+   "n": 1,
+   "median_ask": 250000.0,
+   "p25": null,
+   "p75": null,
+   "median_ask_per_sqft": null
+  },
+  "georgetown/inlet/all": {
+   "n": 20,
+   "median_ask": 599995.0,
+   "p25": 456175.0,
+   "p75": 1305250.0,
+   "median_ask_per_sqft": 324
+  },
+  "georgetown/inlet/house": {
+   "n": 12,
+   "median_ask": 961500.0,
+   "p25": 590500.0,
+   "p75": 1426750.0,
+   "median_ask_per_sqft": 378
+  },
+  "georgetown/inlet/condo": {
+   "n": 5,
+   "median_ask": 365000.0,
+   "p25": 339000.0,
+   "p75": 462450.0,
+   "median_ask_per_sqft": 242
+  },
+  "georgetown/inlet/land": {
+   "n": 3,
+   "median_ask": 604990.0,
+   "p25": null,
+   "p75": null,
+   "median_ask_per_sqft": null
+  },
+  "georgetown/old_road/all": {
+   "n": 40,
+   "median_ask": 584000.0,
+   "p25": 429500.0,
+   "p75": 679900.0,
+   "median_ask_per_sqft": 278
+  },
+  "georgetown/old_road/house": {
+   "n": 17,
+   "median_ask": 679900.0,
+   "p25": 609500.0,
+   "p75": 749500.0,
+   "median_ask_per_sqft": 291
+  },
+  "georgetown/old_road/condo": {
+   "n": 3,
+   "median_ask": 224000.0,
+   "p25": null,
+   "p75": null,
+   "median_ask_per_sqft": 153
+  },
+  "georgetown/old_road/townhouse": {
+   "n": 14,
+   "median_ask": 489949.5,
+   "p25": 429500.0,
+   "p75": 638650.0,
+   "median_ask_per_sqft": 280
+  },
+  "georgetown/old_road/manufactured": {
+   "n": 1,
+   "median_ask": 79900.0,
+   "p25": null,
+   "p75": null,
+   "median_ask_per_sqft": 45
+  },
+  "georgetown/old_road/land": {
+   "n": 4,
+   "median_ask": 265000.0,
+   "p25": 208000.0,
+   "p75": 448749.25,
+   "median_ask_per_sqft": null
+  },
+  "georgetown/west/all": {
+   "n": 98,
+   "median_ask": 244900.0,
+   "p25": 186625.0,
+   "p75": 520500.0,
+   "median_ask_per_sqft": 170
+  },
+  "georgetown/west/house": {
+   "n": 35,
+   "median_ask": 575000.0,
+   "p25": 495000.0,
+   "p75": 899900.0,
+   "median_ask_per_sqft": 264
+  },
+  "georgetown/west/condo": {
+   "n": 28,
+   "median_ask": 228700.0,
+   "p25": 215000.0,
+   "p75": 257499.25,
+   "median_ask_per_sqft": 156
+  },
+  "georgetown/west/townhouse": {
+   "n": 2,
+   "median_ask": 200000.0,
+   "p25": null,
+   "p75": null,
+   "median_ask_per_sqft": 164
+  },
+  "georgetown/west/manufactured": {
+   "n": 24,
+   "median_ask": 92250.0,
+   "p25": 64924.75,
+   "p75": 125500.0,
+   "median_ask_per_sqft": 79
+  },
+  "georgetown/west/land": {
+   "n": 8,
+   "median_ask": 195000.0,
+   "p25": 185625.0,
+   "p75": 778225.0,
+   "median_ask_per_sqft": null
+  },
+  "horry/garden_city/all": {
+   "n": 116,
+   "median_ask": 279950.0,
+   "p25": 184225.0,
+   "p75": 583725.0,
+   "median_ask_per_sqft": 215
+  },
+  "horry/garden_city/house": {
+   "n": 30,
+   "median_ask": 788500.0,
+   "p25": 561800.0,
+   "p75": 1081250.0,
+   "median_ask_per_sqft": 374
+  },
+  "horry/garden_city/condo": {
+   "n": 50,
+   "median_ask": 226500.0,
+   "p25": 191652.5,
+   "p75": 346225.0,
+   "median_ask_per_sqft": 210
+  },
+  "horry/garden_city/manufactured": {
+   "n": 29,
+   "median_ask": 155000.0,
+   "p25": 107400.0,
+   "p75": 202450.0,
+   "median_ask_per_sqft": 122
+  },
+  "horry/garden_city/land": {
+   "n": 4,
+   "median_ask": 474950.0,
+   "p25": 232474.25,
+   "p75": 2405000.0,
+   "median_ask_per_sqft": null
+  },
+  "horry/west/all": {
+   "n": 179,
+   "median_ask": 472000.0,
+   "p25": 305000.0,
+   "p75": 550000.0,
+   "median_ask_per_sqft": 219
+  },
+  "horry/west/house": {
+   "n": 99,
+   "median_ask": 528000.0,
+   "p25": 444900.0,
+   "p75": 624000.0,
+   "median_ask_per_sqft": 244
+  },
+  "horry/west/condo": {
+   "n": 41,
+   "median_ask": 275000.0,
+   "p25": 219900.0,
+   "p75": 412400.0,
+   "median_ask_per_sqft": 188
+  },
+  "horry/west/townhouse": {
+   "n": 17,
+   "median_ask": 354900.0,
+   "p25": 247116.5,
+   "p75": 514000.0,
+   "median_ask_per_sqft": 198
+  },
+  "horry/west/manufactured": {
+   "n": 4,
+   "median_ask": 174950.0,
+   "p25": 127475.0,
+   "p75": 188750.0,
+   "median_ask_per_sqft": 116
+  },
+  "horry/west/land": {
+   "n": 18,
+   "median_ask": 524500.0,
+   "p25": 195000.0,
+   "p75": 1821250.0,
+   "median_ask_per_sqft": null
+  },
+  "*/all": {
+   "n": 465,
+   "median_ask": 415000.0,
+   "p25": 220000.0,
+   "p75": 602495.0,
+   "median_ask_per_sqft": 225
+  },
+  "*/house": {
+   "n": 202,
+   "median_ask": 589500.0,
+   "p25": 498675.0,
+   "p75": 907175.0,
+   "median_ask_per_sqft": 270
+  },
+  "*/condo": {
+   "n": 129,
+   "median_ask": 250000.0,
+   "p25": 215000.0,
+   "p75": 351150.0,
+   "median_ask_per_sqft": 190
+  },
+  "*/townhouse": {
+   "n": 33,
+   "median_ask": 450000.0,
+   "p25": 266950.0,
+   "p75": 524000.0,
+   "median_ask_per_sqft": 250
+  },
+  "*/manufactured": {
+   "n": 58,
+   "median_ask": 117500.0,
+   "p25": 79975.0,
+   "p75": 180400.0,
+   "median_ask_per_sqft": 110
+  },
+  "*/land": {
+   "n": 38,
+   "median_ask": 364450.0,
+   "p25": 195000.0,
+   "p75": 1405000.0,
+   "median_ask_per_sqft": null
+  }
+ },
+ "features": {
+  "county_georgetown": {
+   "n": 175,
+   "by_part": {
+    "georgetown/west": 96,
+    "georgetown/old_road": 40,
+    "georgetown/gc_strip": 12,
+    "georgetown/inlet": 20,
+    "horry/garden_city": 1,
+    "horry/west": 6
+   },
+   "by_type": {
+    "land": 20,
+    "manufactured": 25,
+    "townhouse": 18,
+    "condo": 38,
+    "house": 72,
+    "multi": 2
+   }
+  },
+  "private_dock": {
+   "n": 9,
+   "by_part": {
+    "georgetown/gc_strip": 2,
+    "horry/garden_city": 5,
+    "georgetown/inlet": 2
+   },
+   "by_type": {
+    "condo": 2,
+    "house": 7
+   }
+  },
+  "boat_slip": {
+   "n": 2,
+   "by_part": {
+    "georgetown/gc_strip": 2
+   },
+   "by_type": {
+    "land": 1,
+    "house": 1
+   }
+  },
+  "boat_access": {
+   "n": 29,
+   "by_part": {
+    "georgetown/gc_strip": 4,
+    "georgetown/west": 5,
+    "horry/garden_city": 7,
+    "georgetown/inlet": 3,
+    "horry/west": 9,
+    "georgetown/old_road": 1
+   },
+   "by_type": {
+    "condo": 3,
+    "land": 2,
+    "house": 23,
+    "manufactured": 1
+   }
+  },
+  "deep_water": {
+   "n": 7,
+   "by_part": {
+    "horry/garden_city": 3,
+    "georgetown/inlet": 1,
+    "horry/west": 2,
+    "georgetown/gc_strip": 1
+   },
+   "by_type": {
+    "house": 6,
+    "condo": 1
+   }
+  },
+  "marsh_view": {
+   "n": 28,
+   "by_part": {
+    "horry/garden_city": 11,
+    "georgetown/inlet": 10,
+    "georgetown/west": 1,
+    "georgetown/gc_strip": 5,
+    "georgetown/old_road": 1
+   },
+   "by_type": {
+    "house": 16,
+    "condo": 9,
+    "land": 1,
+    "manufactured": 2
+   }
+  },
+  "waterfront": {
+   "n": 92,
+   "by_part": {
+    "georgetown/west": 16,
+    "horry/garden_city": 28,
+    "horry/west": 31,
+    "georgetown/gc_strip": 7,
+    "georgetown/inlet": 6,
+    "georgetown/old_road": 4
+   },
+   "by_type": {
+    "condo": 38,
+    "house": 40,
+    "townhouse": 4,
+    "manufactured": 9,
+    "land": 1
+   }
+  },
+  "flood_zone": {
+   "n": 27,
+   "by_part": {
+    "horry/garden_city": 15,
+    "georgetown/inlet": 3,
+    "georgetown/gc_strip": 6,
+    "georgetown/west": 1,
+    "horry/west": 2
+   },
+   "by_type": {
+    "house": 15,
+    "condo": 11,
+    "land": 1
+   }
+  },
+  "golf_community": {
+   "n": 65,
+   "by_part": {
+    "horry/west": 39,
+    "georgetown/west": 23,
+    "horry/garden_city": 3
+   },
+   "by_type": {
+    "condo": 32,
+    "townhouse": 3,
+    "house": 29,
+    "land": 1
+   }
+  },
+  "on_golf_course": {
+   "n": 35,
+   "by_part": {
+    "horry/west": 20,
+    "georgetown/west": 14,
+    "horry/garden_city": 1
+   },
+   "by_type": {
+    "condo": 20,
+    "land": 1,
+    "house": 13,
+    "townhouse": 1
+   }
+  },
+  "gated": {
+   "n": 62,
+   "by_part": {
+    "georgetown/gc_strip": 3,
+    "georgetown/west": 30,
+    "georgetown/inlet": 1,
+    "georgetown/old_road": 4,
+    "horry/west": 24
+   },
+   "by_type": {
+    "condo": 17,
+    "land": 2,
+    "house": 38,
+    "townhouse": 5
+   }
+  },
+  "no_hoa": {
+   "n": 465,
+   "by_part": {
+    "georgetown/west": 98,
+    "horry/west": 179,
+    "georgetown/old_road": 40,
+    "horry/garden_city": 116,
+    "georgetown/gc_strip": 12,
+    "georgetown/inlet": 20
+   },
+   "by_type": {
+    "land": 38,
+    "condo": 129,
+    "manufactured": 58,
+    "townhouse": 33,
+    "house": 202,
+    "multi": 5
+   }
+  },
+  "new_construction": {
+   "n": 44,
+   "by_part": {
+    "georgetown/gc_strip": 1,
+    "horry/west": 25,
+    "georgetown/old_road": 9,
+    "horry/garden_city": 2,
+    "georgetown/west": 4,
+    "georgetown/inlet": 3
+   },
+   "by_type": {
+    "house": 14,
+    "condo": 15,
+    "townhouse": 14,
+    "manufactured": 1
+   }
+  },
+  "str_allowed": {
+   "n": 74,
+   "by_part": {
+    "horry/garden_city": 42,
+    "georgetown/gc_strip": 9,
+    "georgetown/old_road": 11,
+    "georgetown/inlet": 2,
+    "georgetown/west": 9,
+    "horry/west": 1
+   },
+   "by_type": {
+    "condo": 29,
+    "house": 33,
+    "townhouse": 7,
+    "manufactured": 1,
+    "multi": 4
+   }
+  },
+  "long_term_rental_allowed": {
+   "n": 283,
+   "by_part": {
+    "georgetown/old_road": 26,
+    "horry/garden_city": 70,
+    "georgetown/gc_strip": 8,
+    "georgetown/west": 53,
+    "georgetown/inlet": 16,
+    "horry/west": 110
+   },
+   "by_type": {
+    "land": 7,
+    "townhouse": 24,
+    "condo": 101,
+    "house": 139,
+    "multi": 5,
+    "manufactured": 7
+   }
+  },
+  "rentals_allowed": {
+   "n": 381,
+   "by_part": {
+    "georgetown/west": 89,
+    "horry/west": 128,
+    "georgetown/old_road": 33,
+    "horry/garden_city": 102,
+    "georgetown/gc_strip": 11,
+    "georgetown/inlet": 18
+   },
+   "by_type": {
+    "land": 31,
+    "manufactured": 55,
+    "townhouse": 26,
+    "condo": 102,
+    "house": 162,
+    "multi": 5
+   }
+  },
+  "one_level": {
+   "n": 206,
+   "by_part": {
+    "horry/west": 69,
+    "georgetown/old_road": 7,
+    "horry/garden_city": 69,
+    "georgetown/west": 57,
+    "georgetown/inlet": 4
+   },
+   "by_type": {
+    "condo": 82,
+    "manufactured": 45,
+    "townhouse": 5,
+    "house": 74
+   }
+  },
+  "marshwalk_1mi": {
+   "n": 69,
+   "by_part": {
+    "georgetown/west": 21,
+    "georgetown/old_road": 33,
+    "georgetown/gc_strip": 6,
+    "georgetown/inlet": 9
+   },
+   "by_type": {
+    "land": 8,
+    "townhouse": 13,
+    "condo": 21,
+    "house": 25,
+    "multi": 1,
+    "manufactured": 1
+   }
+  },
+  "huntington_beach_state_park_5mi": {
+   "n": 227,
+   "by_part": {
+    "georgetown/west": 97,
+    "horry/west": 54,
+    "georgetown/old_road": 40,
+    "georgetown/gc_strip": 12,
+    "georgetown/inlet": 20,
+    "horry/garden_city": 4
+   },
+   "by_type": {
+    "land": 26,
+    "manufactured": 26,
+    "townhouse": 26,
+    "condo": 38,
+    "house": 109,
+    "multi": 2
+   }
+  },
+  "rv_boat_parking": {
+   "n": 31,
+   "by_part": {
+    "horry/garden_city": 11,
+    "georgetown/gc_strip": 4,
+    "horry/west": 3,
+    "georgetown/old_road": 5,
+    "georgetown/inlet": 5,
+    "georgetown/west": 3
+   },
+   "by_type": {
+    "manufactured": 1,
+    "condo": 2,
+    "house": 28
+   }
+  },
+  "raised_home": {
+   "n": 68,
+   "by_part": {
+    "horry/garden_city": 34,
+    "georgetown/inlet": 7,
+    "georgetown/gc_strip": 9,
+    "georgetown/old_road": 13,
+    "horry/west": 3,
+    "georgetown/west": 2
+   },
+   "by_type": {
+    "condo": 14,
+    "house": 54
+   }
+  },
+  "pool": {
+   "n": 49,
+   "by_part": {
+    "georgetown/gc_strip": 8,
+    "georgetown/west": 4,
+    "horry/garden_city": 20,
+    "horry/west": 12,
+    "georgetown/old_road": 2,
+    "georgetown/inlet": 3
+   },
+   "by_type": {
+    "condo": 18,
+    "house": 31
+   }
+  },
+  "community_pool": {
+   "n": 263,
+   "by_part": {
+    "horry/west": 112,
+    "horry/garden_city": 64,
+    "georgetown/west": 67,
+    "georgetown/inlet": 5,
+    "georgetown/old_road": 13,
+    "georgetown/gc_strip": 2
+   },
+   "by_type": {
+    "condo": 108,
+    "manufactured": 35,
+    "land": 4,
+    "house": 95,
+    "townhouse": 20,
+    "multi": 1
+   }
+  }
+ },
+ "house_no_hoa": {
+  "api_total": 55,
+  "by_part": {
+   "horry/garden_city": 23,
+   "georgetown/gc_strip": 6,
+   "georgetown/inlet": 6,
+   "georgetown/west": 10,
+   "horry/west": 5,
+   "georgetown/old_road": 5
+  },
+  "complete": true
+ },
+ "house_hoa_monthly": {
+  "note": "Each fee is known to within $10 (top of its bracket). Houses with a fee above $0 only; houses that never appeared up to $2,000 are not counted.",
+  "bracketed": 202,
+  "groups": {
+   "georgetown/gc_strip": {
+    "houses_with_fee": 3,
+    "median_upper": 240,
+    "q1_upper": 240,
+    "q3_upper": 700
+   },
+   "georgetown/inlet": {
+    "houses_with_fee": 6,
+    "median_upper": 135.0,
+    "q1_upper": 70,
+    "q3_upper": 230
+   },
+   "georgetown/old_road": {
+    "houses_with_fee": 11,
+    "median_upper": 90,
+    "q1_upper": 50,
+    "q3_upper": 170
+   },
+   "georgetown/west": {
+    "houses_with_fee": 25,
+    "median_upper": 150,
+    "q1_upper": 120,
+    "q3_upper": 160
+   },
+   "horry/garden_city": {
+    "houses_with_fee": 7,
+    "median_upper": 120,
+    "q1_upper": 50,
+    "q3_upper": 200
+   },
+   "horry/west": {
+    "houses_with_fee": 94,
+    "median_upper": 110.0,
+    "q1_upper": 80,
+    "q3_upper": 120
+   },
+   "*": {
+    "houses_with_fee": 146,
+    "median_upper": 110.0,
+    "q1_upper": 90,
+    "q3_upper": 160
+   }
+  }
+ }
+}

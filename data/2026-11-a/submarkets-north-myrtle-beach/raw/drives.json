@@ -1,0 +1,65 @@
+{
+ "cherry_grove_pier": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.673529,33.821138;-78.632676,33.828732?overview=false",
+  "duration_s": 464.2,
+  "distance_m": 4313.7,
+  "minutes": 7.7,
+  "miles": 2.7
+ },
+ "heritage_shores": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.673529,33.821138;-78.611854,33.843104?overview=false",
+  "duration_s": 735.2,
+  "distance_m": 7031.3,
+  "minutes": 12.3,
+  "miles": 4.4
+ },
+ "barefoot_landing": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.673529,33.821138;-78.742440,33.799875?overview=false",
+  "duration_s": 651.4,
+  "distance_m": 7978.6,
+  "minutes": 10.9,
+  "miles": 5.0
+ },
+ "mcleod_seacoast": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.673529,33.821138;-78.663710,33.865730?overview=false",
+  "duration_s": 528,
+  "distance_m": 7142.1,
+  "minutes": 8.8,
+  "miles": 4.4
+ },
+ "grand_strand_medical": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.673529,33.821138;-78.819470,33.758080?overview=false",
+  "duration_s": 1234.7,
+  "distance_m": 16621.6,
+  "minutes": 20.6,
+  "miles": 10.3
+ },
+ "skywheel_myrtle_beach": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.673529,33.821138;-78.877355,33.693851?overview=false",
+  "duration_s": 1826.5,
+  "distance_m": 25675.4,
+  "minutes": 30.4,
+  "miles": 16.0
+ },
+ "airport_terminal": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.673529,33.821138;-78.922789,33.681467?overview=false",
+  "duration_s": 2151.6,
+  "distance_m": 33133.4,
+  "minutes": 35.9,
+  "miles": 20.6
+ },
+ "coastal_grand": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.673529,33.821138;-78.922317,33.702751?overview=false",
+  "duration_s": 1849.2,
+  "distance_m": 28101.1,
+  "minutes": 30.8,
+  "miles": 17.5
+ },
+ "little_river_waterfront": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.673529,33.821138;-78.616290,33.875290?overview=false",
+  "duration_s": 682.5,
+  "distance_m": 10089.4,
+  "minutes": 11.4,
+  "miles": 6.3
+ }
+}

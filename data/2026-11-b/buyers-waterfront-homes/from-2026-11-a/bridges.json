@@ -1,0 +1,169 @@
+{
+ "what": "Every crossing over the Atlantic Intracoastal Waterway from the state line to Socastee, in waterway miles, with the clearance a boat has under it when it is closed. Read from NOAA U.S. Coast Pilot 4, Chapter 12 (edition dated 01 NOV 2026), paragraphs 155 to 174. Names: SCDOT historic bridge record (Little River), Horry County road centerlines that cross the county's waterway outline (Barefoot Resort Bridge Road; the fixed bridges), and the Coast Pilot itself (Socastee, US 501, Fantasy Harbour).",
+ "source": "https://nauticalcharts.noaa.gov/publications/coast-pilot/files/cp4/CPB4_C12_WEB.pdf",
+ "rows": [
+  {
+   "mile": 340.8,
+   "kind": "line",
+   "name": "North Carolina and South Carolina state line",
+   "clear_ft": null,
+   "quote": "The North Carolina-South Carolina State Line crosses at Mile 340.8"
+  },
+  {
+   "mile": 347.2,
+   "kind": "fixed",
+   "name": "US 17 bridge, Little River",
+   "clear_ft": 65,
+   "quote": "A fixed highway bridge, with a clearance of 65 feet at the center, crosses the waterway at Mile 347.2.",
+   "lat": 33.8533,
+   "lng": -78.6541,
+   "where_from": "county road US-17 crossing"
+  },
+  {
+   "mile": 347.3,
+   "kind": "swing",
+   "name": "Little River swing bridge (Sea Mountain Highway)",
+   "clear_ft": 7,
+   "quote": "highway bridge (locally known as Little River bridge) over the waterway at Mile 347.3 has a swing span with a clearance of 7 feet.",
+   "lat": 33.8517,
+   "lng": -78.6563,
+   "where_from": "county road S26-20 Sea Mountain Hwy crossing"
+  },
+  {
+   "mile": 348.3,
+   "kind": "fixed",
+   "name": "Robert Edge Parkway bridge",
+   "clear_ft": 65,
+   "quote": "At Mile 348.3, a fixed highway bridge with a clearance of 65 feet crosses the waterway.",
+   "lat": 33.834,
+   "lng": -78.6843,
+   "where_from": "county road Robert Edge Pky crossing"
+  },
+  {
+   "mile": 353.3,
+   "kind": "swing",
+   "name": "Barefoot Landing swing bridge (Barefoot Resort Bridge Road)",
+   "clear_ft": 31,
+   "quote": "At Mile 353.3, a swing bridge with a clearance of 31 feet crosses the waterway.",
+   "lat": 33.803,
+   "lng": -78.7414,
+   "where_from": "county road Barefoot Resort Bridge Rd crossing"
+  },
+  {
+   "mile": 355.5,
+   "kind": "fixed",
+   "name": "SC 22 bridge",
+   "clear_ft": 65,
+   "quote": "At Mile 355.5, a fixed bridge with a clearance of 65 feet crosses the waterway.",
+   "lat": 33.79,
+   "lng": -78.7768,
+   "where_from": "county road SC 22 crossing"
+  },
+  {
+   "mile": 356.4,
+   "kind": "cable car",
+   "name": "Overhead cable car",
+   "clear_ft": 67,
+   "quote": "An overhead cable car crosses the waterway at Mile 356.4. The low point of travel of the cabin is not less than 67 feet."
+  },
+  {
+   "mile": 358.3,
+   "kind": "fixed",
+   "name": "Grande Dunes Boulevard bridge",
+   "clear_ft": 65,
+   "quote": "At Mile 358.3, a fixed highway bridge with a clearance of 65 feet crosses the waterway.",
+   "lat": 33.7668,
+   "lng": -78.8148,
+   "where_from": "county road Grande Dunes Blvd crossing"
+  },
+  {
+   "mile": 360.5,
+   "kind": "fixed",
+   "name": "Fixed highway bridge, Mile 360.5",
+   "clear_ft": 65,
+   "quote": "At Mile 360.5, a fixed highway bridge with a reported clearance of 65 feet crosses the waterway.",
+   "lat": 33.7497,
+   "lng": -78.849,
+   "where_from": "county road S26-1315 crossing, next in order; name not used"
+  },
+  {
+   "mile": 365.4,
+   "kind": "railroad",
+   "name": "Railroad bridge (bascule, opens)",
+   "clear_ft": 16,
+   "quote": "At Mile 365.4, the Seaboard Coast Line Railroad bridge has a bascule span with a clearance of 16 feet.",
+   "lat": 33.7144,
+   "lng": -78.922,
+   "where_from": "county road US-501 crossing"
+  },
+  {
+   "mile": 365.4,
+   "kind": "fixed",
+   "name": "US 501 bridge",
+   "clear_ft": 65,
+   "quote": "Close westward, U.S. Route 501 highway bridge to Myrtle Beach has a fixed span with a clearance of 65 feet.",
+   "lat": 33.7144,
+   "lng": -78.922,
+   "where_from": "county road US-501 crossing"
+  },
+  {
+   "mile": 366.4,
+   "kind": "fixed",
+   "name": "Fantasy Harbour bridge (George Bishop Parkway)",
+   "clear_ft": 65,
+   "quote": "At Mile 366.4, a fixed highway bridge (locally known as Fantasy Harbour bridge) crosses the waterway with a clearance of 65 feet.",
+   "lat": 33.7052,
+   "lng": -78.9341,
+   "where_from": "county road George Bishop Pky crossing"
+  },
+  {
+   "mile": 371.0,
+   "kind": "swing",
+   "name": "Socastee swing bridge",
+   "clear_ft": 11,
+   "quote": "The State Route 544 highway bridge over the waterway at Socastee, Mile 371.0, has a swing span with a clearance of 11 feet",
+   "lat": 33.6867,
+   "lng": -79.005,
+   "where_from": "NOAA tide station 8660983 Socastee Bridge position"
+  },
+  {
+   "mile": 371.1,
+   "kind": "fixed",
+   "name": "Fixed bridge at Socastee",
+   "clear_ft": 65,
+   "quote": "At Mile 371.1, a fixed highway bridge with a reported clearance of 65 feet crosses the waterway.",
+   "lat": 33.6867,
+   "lng": -79.005,
+   "where_from": "NOAA tide station 8660983 Socastee Bridge position"
+  }
+ ],
+ "also": [
+  {
+   "what": "rock ledges",
+   "quote": "In 1983, numerous rock ledges were reported abutting the deep portion of the waterway from Mile 347.0 to Mile 365.5. Extreme caution is advised when transiting the area."
+  },
+  {
+   "what": "where the waterway joins the inlet",
+   "quote": "The waterway joins Little River at Calabash River, and extends northeastward from Little River just north of the waterway cutoff and southward to connect the waterway with Little River Inlet."
+  },
+  {
+   "what": "inlet channel",
+   "source": "https://nauticalcharts.noaa.gov/publications/coast-pilot/files/cp4/CPB4_C06_WEB.pdf",
+   "quote": "Once past the jetties, a marked channel leads northwestward for about 1.8 miles to a junction with the Intracoastal Waterway. ... Extreme caution is advised when entering and leaving the inlet. The mean range of tide at the inlet is about 5 feet."
+  },
+  {
+   "what": "Waccamaw from Enterprise Landing",
+   "quote": "The route of the waterway enters Waccamaw River at Enterprise Landing, Mile 375.2, and follows the river to Winyah Bay."
+  },
+  {
+   "what": "Murrells Inlet marinas",
+   "source": "https://nauticalcharts.noaa.gov/publications/coast-pilot/files/cp4/CPB4_C06_WEB.pdf",
+   "quote": "Depths in the approaches and alongside the piers at the marinas are reported to be about 3 feet."
+  },
+  {
+   "what": "federal project depth",
+   "quote": "The Federal project for the Intracoastal Waterway via Albemarle and Chesapeake Canal provides for a least depth of 12 feet from Norfolk, VA (ICW Mile 0.0), to Fort Pierce, FL (ICW Mile 965.6)"
+  }
+ ],
+ "positions": "Positions are for the map only: the centre of the county road line where it crosses the county water outline (Public/Streets layer 1 and parcelapp layer 21, roads-icw.json in RAW), matched to the Coast Pilot miles in order from north to south; Socastee from the NOAA station position. Not used as addresses."
+}

@@ -1,0 +1,145 @@
+{
+ "pulled": "2026-11-04 (first run of pull_listings.py, log raw/pull_listings-run1.log)",
+ "api": "https://chapter3realty.com/homes/api/map?",
+ "how": "medians by halving the max and hoaMax filters to the nearest $5,000 and $25; counts with the has= flags named; not-in-program by subtraction",
+ "groups": {
+  "oceanfront_building": {
+   "listings": 1080,
+   "median_ask_5k": 215000,
+   "dues_known": 1080,
+   "median_dues_25": 925,
+   "ask_at_or_under": {
+    "150000": 304,
+    "200000": 509,
+    "250000": 635,
+    "300000": 711,
+    "400000": 835,
+    "500000": 923
+   },
+   "dues_at_or_under": {
+    "600": 109,
+    "800": 374,
+    "1000": 686,
+    "1200": 828
+   },
+   "flags": {
+    "str_allowed": 1016,
+    "long_term_rental_allowed": 964,
+    "conventional_accepted": 783,
+    "fha_accepted": 62,
+    "va_accepted": 34,
+    "cash_only_listing": 48,
+    "furnished": 1055,
+    "hoa_includes_insurance": 883,
+    "hoa_includes_electric": 624,
+    "has_rental_income": 879,
+    "high_rise": 957
+   },
+   "beds_at_least": {
+    "1": 881,
+    "2": 451,
+    "3": 194,
+    "4": 38
+   },
+   "city": {
+    "Myrtle Beach": 812,
+    "North Myrtle Beach": 225,
+    "Surfside Beach": 11
+   },
+   "params": {
+    "type": "condo",
+    "has": "county_horry,oceanfront_building"
+   }
+  },
+  "in_program": {
+   "listings": 879,
+   "median_ask_5k": 200000,
+   "dues_known": 879,
+   "median_dues_25": 925,
+   "ask_at_or_under": {
+    "150000": 267,
+    "200000": 447,
+    "250000": 549,
+    "300000": 608,
+    "400000": 704,
+    "500000": 770
+   },
+   "dues_at_or_under": {
+    "600": 88,
+    "800": 308,
+    "1000": 563,
+    "1200": 665
+   },
+   "flags": {
+    "str_allowed": 832,
+    "long_term_rental_allowed": 781,
+    "conventional_accepted": 633,
+    "fha_accepted": 52,
+    "va_accepted": 28,
+    "cash_only_listing": 39,
+    "furnished": 875,
+    "hoa_includes_insurance": 723,
+    "hoa_includes_electric": 558,
+    "has_rental_income": 879,
+    "high_rise": 804
+   },
+   "beds_at_least": {
+    "1": 703,
+    "2": 330,
+    "3": 145,
+    "4": 31
+   },
+   "city": {
+    "Myrtle Beach": 678,
+    "North Myrtle Beach": 171,
+    "Surfside Beach": 10
+   },
+   "params": {
+    "type": "condo",
+    "has": "county_horry,oceanfront_building,vacation_rental_program"
+   }
+  },
+  "not_in_program_by_subtraction": {
+   "listings": 201,
+   "ask_at_or_under": {
+    "150000": 37,
+    "200000": 62,
+    "250000": 86,
+    "300000": 103,
+    "400000": 131,
+    "500000": 153
+   },
+   "dues_at_or_under": {
+    "600": 21,
+    "800": 66,
+    "1000": 123,
+    "1200": 163
+   },
+   "flags": {
+    "str_allowed": 184,
+    "long_term_rental_allowed": 183,
+    "conventional_accepted": 150,
+    "fha_accepted": 10,
+    "va_accepted": 6,
+    "cash_only_listing": 9,
+    "furnished": 180,
+    "hoa_includes_insurance": 160,
+    "hoa_includes_electric": 66,
+    "has_rental_income": 0,
+    "high_rise": 153
+   },
+   "beds_at_least": {
+    "1": 178,
+    "2": 121,
+    "3": 49,
+    "4": 7
+   },
+   "city": {
+    "Myrtle Beach": 134,
+    "North Myrtle Beach": 54,
+    "Surfside Beach": 1
+   },
+   "dues_known": 201
+  }
+ }
+}

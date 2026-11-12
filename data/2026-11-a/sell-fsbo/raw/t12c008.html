@@ -1,0 +1,744 @@
+﻿
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="robots" content="noimageindex">
+	    <meta charset="iso-8859-1">
+	    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	    	    <title>Code of Laws - Title 12 - Chapter 8- - TAXATION</title>
+	    <link rel="SHORTCUT ICON" href="/images/stateflagsmall.ico" />
+		<link rel="icon" href="/images/stateflagsmall.ico" type="image/ico" />
+		<link rel="SHORTCUT ICON" href="/images/South-Carolina-Flag2.ico" />
+
+		<link type="text/css" rel="stylesheet" href="/css/main.css" media="all" />
+				
+		<!--[if lte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/ie7main.css" media="all" />
+		<![endif]-->
+		<!--[if gte IE 7]>
+		<link type="text/css" rel="stylesheet" href="/css/iemain.css" media="all" />
+		<![endif]-->
+		<link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+		<link type="text/css" rel="stylesheet" href="/css/supplement.css" media="screen" />
+		<!--<link type="text/css" rel="stylesheet" href="/css/zipsearch.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/vote.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/contact.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/navwrap.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/css/linkbar.css" media="screen" />-->
+	
+		<!--<script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>-->
+		<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+				<script type="text/javascript" src="/js/main_linux.js"></script>
+		
+
+		
+
+
+
+		<!--<script type="text/javascript" src="/js/common.js"></script>
+		<script type="text/javascript" src="/js/utils.js"></script>
+		<script type="text/javascript" src="/js/date.js"></script>
+		<script type="text/javascript" src="/js/lightbox.js"></script>
+		<script type="text/javascript" src="/js/legislation.js"></script>
+		<script type="text/javascript" src="/js/logon_lits.js"></script>
+		<script type="text/javascript" src="/js/message.js"></script>
+		<script type="text/javascript" src="/js/comm_meeting.js"></script>-->
+		<script type="text/vbscript" src="/vbs/comm_meeting.vbs"></script>
+		<!--<script type="text/javascript" src="/js/regs.js"></script>-->
+				
+	   	<script type="text/javascript">
+	    //document.onclick = function () { document.getElementById('transbox').style.display= 'none' };
+	    	var xmlhttp=false;
+			xmlhttp = create_xml_object();
+	
+			function getElement(ele)
+			{
+				var theobj = false;
+				if(typeof ele == 'string')
+					theobj = (document.getElementById)?document.getElementById(ele):document.all[ele];
+				else
+					theobj = ele;
+			
+				return theobj;
+			}
+		
+			function checkreader(friendlyalert)
+			{
+			 	/*friendlyalert=friendlyalert||false;
+			 	
+			 	var browser_info = perform_acrobat_detection();
+				if (!browser_info.acrobat)
+				{
+				 	loadadobebox('adobebox', '/adobe.php');
+					return false;
+				}
+				else if (friendlyalert)
+				{
+			 		alert(friendlyalert);
+				}*/
+				return true;
+			}
+				
+			function loadadobebox(boxname, url)
+			{
+				var response = false;
+	
+				doRequest(xmlhttp, "GET", url, false, null, null);
+				if (xmlhttp.status == 200)
+				{
+		         	response = xmlhttp.responseText;
+				}
+	
+				if(response)
+				{
+			 		var ele = document.getElementById(boxname);
+				 	if (ele)
+				 	{
+				 		ele.style.visibility = 'hidden';
+		 				ele.style.display = 'block';
+	
+		 				positionElement(ele, 'center', 'center', true);
+	
+						ele.innerHTML = response;
+					    ele.style.visibility = 'visible';
+					    ele.style.display = 'block';
+	//				    ele.scrollIntoView(true);
+					}
+				}
+				return response;
+			}
+	
+	
+			function init()
+			{
+		 		var ld=document.getElementById("loading");
+				if(ld)
+				{
+					ld.style.display = 'none';
+				}
+			}
+			
+			function openmore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				 	var pos = findPos(id);
+				 	id.style.zIndex = 10;
+		//		 	id.style.left = pos[0]+'px';
+		//		  	id.style.top = pos[1]+'px';
+				  	id.style.height = '295px';
+				  	id.style.position = 'absolute';
+				  	id.style.backgroundColor = '#f7f4ec';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'none';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = 'none';
+				  	}
+				}
+			}
+		
+			function closemore()
+			{
+			 	var id = document.getElementById('quicksearch');
+			 	if (id)
+			 	{
+				  	id.style.height = '135px';
+				  	id.style.position = '';
+				  	id.style.backgroundColor = 'transparent';
+				  	var id2 = document.getElementById('searchmore');
+				  	if (id2)
+				  	{
+				  	 	id2.style.display = 'block';
+				  	}
+				  	var id3 = document.getElementById('contactlegislatordiv');
+				  	if (id3)
+				  	{
+				  	 	id3.style.display = '';
+				  	}
+				}		 	
+			}
+		
+		<!-- This script and many more are available free online at -->
+		<!-- The JavaScript Source!! http://javascript.internet.com -->
+		
+		<!-- Begin
+		function right(e) {
+		var msg = "Use of this image is strictly prohibited unless express written permission is given to the user by South Carolina Legislative Services Agency.";
+		if (navigator.appName == 'Netscape' && e.which == 3) {
+		alert(msg);
+		return false;
+		stopEvent(e);
+		}
+		if (navigator.appName == 'Microsoft Internet Explorer' && event.button==2) {
+		alert(msg);
+		return false;
+			stopEvent(event);
+		}
+		else return true;
+		}
+		
+	function trap() 
+	{
+		if(document.images)
+		{
+			for(i=0;i<document.images.length;i++)
+			{
+				if(document.images[i].className == 'allowcontextmenu')
+				{
+					// this should have no scripting
+				}
+				else
+				{
+				 	document.images[i].onmousedown = right;
+					document.images[i].oncontextmenu = function(){ return false; };
+					//document.images[i].onmouseup = right;
+				}
+			}
+		}
+	}
+
+	function findfwtext(texttofind) 
+	{
+	 	var fwtextele = document.getElementById('fwtext');
+		if(fwtextele)
+		{
+			fwtextele.value = texttofind;
+		}
+	}	
+		// End -->
+		</script>
+
+		<!-- ADDED FOR V4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJY6FMNQKH"></script>
+
+
+<script type="text/javascript">
+
+//ADDED FOR V4
+//Google tag (gtag.js) 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LJY6FMNQKH');
+
+ 
+ /* COMMENTING OUT UPGRADING TO V4 -A
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36207109-1']);
+  _gaq.push(['_setDomainName', 'scstatehouse.gov']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+*/
+  
+      $(document).ready(function(){
+        // COMMENTING THIS OUT NO LONGER BEING ACTIVELY USED TO MONITOR FOR TRAFFIC TO SPECIFIC LINKS - A
+        /*
+          var anchors = $('div#contentsection a');
+
+          //console.log('anchors...'+anchors.length);
+          if(anchors.length > 0){
+            //console.log('setting up event handler...');
+            anchors.click(function(){
+              var a = $(this).attr('href');
+              if(_gaq && (a.substr(-3) == 'htm' || a.substr(-4) == 'html' || a.substr(-3) == 'doc' || a.substr(-4) == 'docx' || a.substr(-3) == 'pdf' || a.substr(-3) == 'xls' || a.substr(-4) == 'xlsx')) {
+                //console.log(a);
+                _gaq.push(['_trackPageview', $(this).attr('href')]);
+              }
+              
+              var aText = $(this).text().toLowerCase();
+              if (a.indexOf('getfile.php') > -1 && aText === 'word'){
+                    _gaq.push(['_trackEvent', 'Word Doc', 'Download', ('from page: ' + document.location + ' - href: ' + a)]);
+              }
+
+            });
+          }
+          */
+      });
+
+</script>
+	</head>
+	
+		
+	<body class="home"  onload="init(); trap();">
+	<noscript>Your browser does not support JavaScript!  This page will not render correctly.</noscript> 
+
+
+	
+	<div id="adobebox" style="position:absolute; width:400px; height:150px; border:2px solid #555555; background-color:#cccccc; display:none;"></div>
+	<div id="container" >	
+				<div id="header" class="nodisplay" style="text-align:center; height:100px;" >
+									<img id="headerimg" class="nodisplay" alt="South Carolina Legislature" title="South Carolina Legislature" src="/images/header8.png" />
+								
+							<!--	<div class="award"><span style="color:#831224; font-weight:bold; font-size:1.5em;">*</span> Recipient of<br>the Notable State Documents Award<br>by the<br>South Carolina<br>State Library.</div>-->
+				
+				
+			</div>
+			<div class="printdisplay"><img border="0" src="/images/titleprint.jpg" alt="South Carolina Legislature" title="South Carolina Legislature" alt="South Carolina Legislature" title="South Carolina State Legislature" /><br /><hr /><br /></div>
+	
+			<div id="pagebody" >
+	
+	
+<!--<div id="topmessage">
+<br style="display:block; margin-top:10px;">
+Searches and data queries will be unavailable beginning Friday, August 19, 2016, from 8:00 PM until Saturday, August 20th at 8:00 AM<br>due to scheduled maintenance.</div>-->
+				<!-- Prompt IE 8/7/6 users to upgrade to a newer browser. -->
+				<!--[if lte IE 8]>
+				<div class="oldframe">In order to improve your experience using this website, please <a href="http://browsehappy.com/">upgrade your browser</a>.</div>
+				<![endif]-->
+			
+			
+			
+			<div id="menu" class="nodisplay">
+				<ul class="nodisplay">
+				<li><a href="/index.php">Home</a></li>
+<li><a href="/senate.php">Senate</a></li>
+<li><a href="/house.php">House</a></li>
+<li><a href="/committeeinfo.php">Committee&nbsp;Postings&nbsp;and&nbsp;Reports</a></li>
+<li><a href="/council.php">Legislative Council</a></li>
+<li><a href="/citizens.php">Citizens&#39; Interest</a></li>
+<li><a href="/publications.php">Publications</a></li>
+		    	</ul>
+			</div>
+			<div id="search" class="nodisplay" style="height: 28px;"><div class="nodisplay" style="float:right; margin:6px 20px 0px 0;">
+							<!--<a style="color:#f7f4ec; height:15px;" href="#" onClick="rsswindow();"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+<!--				<a style="color:#f7f4ec; height:15px;" href="/splashpage/splashpage.html"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a> -->
+				<a style="color:#f7f4ec; height:15px;" href="/onlineservices/index.php"><img border="0" src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>
+			<!--	<a style="color:#f7f4ec; height:15px;" href="/maintenance_portal.php"><img border=0 src="/images/lock.png" style="vertical-align: middle; width: 15px; height: 15px;">&nbsp;Staff&nbsp;Portal</a>-->
+						</div></div>
+			
+	
+					<div id="sidebar" class="nodisplay">
+	<div id="vidlinks" style="height: 50px;">
+						<!--<img src="/images/videobutton12d.png">-->
+											<ul id="vidsidemenu">
+	<li id="vidinnermenu" style="font-size:16px; margin: 0 0 5px 0;">Chamber Video</li>
+<li id="sbroadcast" style="float: left; width:50%;">
+<a id="liveS" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('S', false, false, '0')">Senate</a><br><a id="liveaudioS" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('S', false, false, '1');">(Audio Only)</a>
+</li>
+<li id="hbroadcast" style="float: left; width:50%;">
+<a id="liveH" style="width: 100%; text-decoration:underline;" href="javascript:void(0);" onClick="live_stream('H', false, false, '0')">House</a><br><a id="liveaudioH" style="margin:-3px 0 0 0; text-decoration:underline; width: 100%; font-size: 8px;" href="javascript:void(0);" onClick="live_stream('H', false, false, '1');">(Audio Only)</a>
+</li>
+						</ul>
+					</div>
+					<div id="commvidlinks"><a href="/video/schedule.php">Video&nbsp;Schedule</a><a style="border-top:1px solid #fff; padding-top:12px;" href="/video/archives.php">Video Archives</a></div>
+										<div id="sidemenu">
+						<ul id="innermenu">
+		
+							<li><a href="/howdoi.php">How do I...</a></li>
+										
+							
+								<li class="nolink" onMouseOver="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='block'; document.sidesearchform.searchtext.focus();}" onMouseOut="var ele=document.getElementById('sidesearch'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Quick Search</div>
+								<div id="sidesearch" class="sidesubmenu">
+									<form id="sidesearchform" name="sidesearchform" method="POST" action="/search.php">
+									<input type="hidden" name="search" value="side" />
+									<div class="topelement"><label for="searchtext"><span class="label">Search for:</span></label><input id="searchtext" name="searchtext" type="text"/><a id="searchlink2" href="javascript:void(0);" onClick="document.sidesearchform.submit();"><img id="searchicon" src="/images/searchbutton.png" alt="Search" title="Search"/></a></div>
+			<!--						<div><input type="checkbox" id="searchchoice_all" name="searchchoice_all" value="all" /><label for="searchchoice_all">All</label></div>-->
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_fullsite" name="category" value="FULLSITE" /><label for="searchchoice_fullsite">&nbsp;Full Site Search</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_billnumber" name="category" value="BILL" /><label for="searchchoice_billnumber">&nbsp;Bill Number</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_legislation" name="category" value="LEGISLATION" CHECKED /><label for="searchchoice_legislation">&nbsp;Legislation</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_budget" name="category" value="BUDGET" /><label for="searchchoice_budget">&nbsp;Budget</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeoflaws" name="category" value="CODEOFLAWS" /><label for="searchchoice_codeoflaws">&nbsp;Code of Laws</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_codeofregs" name="category" value="CODEOFREGS" /><label for="searchchoice_codeofregs">&nbsp;Code of Regulations</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_constitution" name="category" value="CONSTITUTION" /><label for="searchchoice_constitution">&nbsp;Constitution</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_housejournals" name="category" value="HOUSEJOURNALS" /><label for="searchchoice_housejournals">&nbsp;House Journals</label></div>
+									<div style="padding-left:20px;"><input type="radio" id="searchchoice_senatejournals" name="category" value="SENATEJOURNALS" /><label for="searchchoice_senatejournals">&nbsp;Senate Journals</label></div>
+									<div class="bottomelement" style="padding-left:20px;"><input type="radio" id="searchchoice_billsummary" name="category" value="SUMMARY" /><label for="searchchoice_billsummary">&nbsp;LSA Bill Summary</label></div>
+								</form>
+									
+								</div>
+							</li>
+							<li><a href="/legislatorssearch.php">Find Your Legislators</a></li>
+							<li id="contactLegislatorLink"><a href="/email.php?chamber=B">Contact Your Legislator</a></li>
+									
+							<li><a href="/legislation.php">Legislation</a></li>
+							<li><a href="/listtracking/main.php" target="LTS">Track Legislation</a></li>
+							<li><a href="/multicriteria2/search.php" target="MCS">Multi-Criteria Search</a></li>
+									<!--<li><a href="#" onclick="multisearchwindow('INTROBOTH');">Multi-Criteria Search</a></li>-->
+									<!--<li><a href="#" onclick="multisearchwindow('INTROMANUAL');">Multi-Criteria Search</a></li>-->
+									<li><a href="/research.php">Research</a></li>
+	
+								<li class="nolink" onMouseOver="var ele=document.getElementById('law'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('law'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">South Carolina Law</div> 
+								<div id="law" class="sidesubmenu">
+									<div class="sidediv topelement"><a href="/newlaws.php">Ratifications &amp; Acts</a></div>
+									<div class="sidediv"><a href="/code/statmast.php">Code of Laws</a></div>
+									<div class="sidediv"><a href="/coderegs/statmast.php">Code of Regulations</a></div>
+									<div class="sidediv"><a href="/scconstitution/scconst.php">Constitution</a></div>
+									<div class="sidediv bottomelement"><a href="/state_register.php">State Register</a></div>
+								</div>
+							</li>
+										<li class="nolink" onMouseOver="var ele=document.getElementById('manual'); if(ele){ele.style.display='block';}" onMouseOut="var ele=document.getElementById('manual'); if(ele){ele.style.display='none';}"><div class="nolinkdiv">Legislative Manual</div>
+								<div id="manual" class="sidesubmenu">
+								
+<!--									<div class="sidediv topelement"><a href="https://web.sc.gov/LSAShoppingcart/Default.aspx" target="_blank">Purchase Manual</a></div>-->
+								
+<!--									<div class="sidediv topelement"><a href="https://secure.scstatehouse.gov/cgi-bin/webstore.exe" target="_blank">Purchase Manual</a></div>-->
+									<div class="sidediv topelement"><a href="javascript:#" onClick="alert('We are sorry, but we are unable to process online transactions at this time.\n\nIf you would still like to make a purchase, please contact us directly at (803) 212-4490 during normal business hours (8:30am - 5:00pm EST).');">Purchase Manual</a></div>
+									<div class="sidediv bottomelement"><a href="/man26/manual26.php">View Manual Online</a></div>
+								</div>
+							</li>
+							<li><a href="http://www.studentconnection.scstatehouse.gov">Student Connection</a></li>
+							<li><a href="/visit.php">Visiting the State House</a></li>
+							<li><a href="/archives.php">Archives</a></li>
+							<li><a href="http://www.sc.gov/Agency-Listing" target="_blank">State Agency Websites</a></li>
+							<!--<li><a href="/stateagencysites.php">State Agency Websites</a></li>-->
+							<li><a href="/citizensinterestpage/media.php">Media Links</a></li>
+				 		</ul>
+			    	</div>
+	
+					<div id="side_ad">
+						<A href="http://www.sc.gov/" target="_blank"><img border=0 src="/images/scgov3.jpg" alt="SC.gov" title="SC.gov" /></a>
+													<A href="http://www.statelibrary.sc.gov" target="_blank"><img border=0 src="/images/scsl_logo_rgb_web.png" alt="StateLibrary.SC.gov" title="StateLibrary.SC.gov" /></a>
+											</div>	    	
+			</div>
+
+	
+	<script type="text/javascript"> 
+		if ( '' === '1'){
+		 	
+			var link = document.getElementById('contactLegislatorLink');
+			if (link != 'undefined' && link != null){
+				link.style.display = 'none'; 
+				link.style.visibility = 'hidden';
+			}
+		}
+		if ( '' === '1'){
+		 	setTimeout(function(){
+				var link2 = document.getElementById('sendMsgLink');
+				if (link2 != 'undefined' && link2 != null){
+					link2.style.display = 'none'; 
+					link2.style.visibility = 'hidden';
+				};
+			}, 20);
+			
+		}  
+	</script>
+<div class="mainwidepanel">
+
+				<div id="breadcrumbs">
+						South Carolina Law &gt; <a href="/code/statmast.php">Code of Laws</a> &gt; <a href="/code/title12.php">Title 12</a>
+				</div>
+
+					<h2 class="barheader">South Carolina Code of Laws<br />
+									Unannotated<br />
+					</h2>
+
+				<div id="contentsection">
+<div style="font-weight: bold; text-align: center;">Title 12 - TAXATION</div>
+<br />
+
+<div style="text-align: center;">CHAPTER 8</div>
+<div style="text-align: center;">Income Tax Withholding</div><br />
+<div style="text-align: center;">ARTICLE 1</div>
+<div style="text-align: center;">Definitions</div><br />
+<span style="font-weight: bold;"> SECTION 12-8-10.</span> Definitions.<br /><br />
+	As used in this chapter unless otherwise required by the context:<br /><br />
+	(1) &quot;Person&quot; includes an individual, trust, estate, partnership, receiver, association, company, corporation, or any other entity including the United States, a state, a political subdivision or agency of the United States or any state, and a municipality located in this State.<br /><br />
+	(2) &quot;Withholding agent&quot; means a person required to withhold income taxes under the provisions of this chapter.<br /><br />
+	(3) &quot;Employee&quot; includes a resident individual receiving wages, as defined in Section 12-8-520(D), for services regardless of where the services are rendered and nonresident individual receiving wages, as defined in Section 12-8-520(D), for services rendered in this State.<br /><br />
+	(4) &quot;Employer&quot; means the person for whom an individual performs or performed a service, of whatever nature, as the employee of the person.<br /><br />
+	(5) &quot;Nonresident&quot; means an individual domiciled outside this State and an entity whose principal place of business is outside of this State. For corporations, principal place of business is defined in Section 12-6-30(9). This definition does not apply to Section 12-8-580.<br /><br />
+	(6) &quot;Internal Revenue Code&quot; means the Internal Revenue Code as defined in Section 12-6-40(A).<br /><br />
+	(7) All definitions provided in Chapter 6 of this title are applicable for purposes of this chapter unless otherwise provided or required by the context.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+<div style="text-align: center;">ARTICLE 5</div>
+<div style="text-align: center;">Withholding Required</div><br />
+<span style="font-weight: bold;"> SECTION 12-8-510.</span> Parties subject to withholding laws.<br /><br />
+	A person located, doing business, or having gross income in this State and an employer having an employee earning income within this State are subject to the withholding laws provided in this chapter.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-520.</span> Incomes subject to withholding and amounts to be withheld.<br /><br />
+	(A) An employer paying wages to an employee shall withhold income tax for that employee if at the time of payment the wages are expected to equal one thousand dollars or more during the year, except as provided in (C), using the tables and rules promulgated by the department.<br /><br />
+	(B) In determining the amount to be withheld, the employer may compute wages to the nearest dollar.<br /><br />
+	(C) The following wages are not subject to the withholding requirements of this chapter:<br /><br />
+	(1) Wages of a resident employee receiving wages in another state if:<br /><br />
+	(a) the wages are subject to the withholding laws of the state in which they are earned; and<br /><br />
+	(b) the employer is withholding income taxes on behalf of the other state.<br /><br />
+	(2) Wages of an employee obtaining a waiver of withholding pursuant to Section 12-8-1040.<br /><br />
+	(D) For purposes of this chapter &quot;wages&quot; is all remuneration for services of any nature performed by an employee for an employer, including the fair market value of all remuneration paid in a medium other than cash, except the term does not include remuneration paid:<br /><br />
+	(1) for agricultural services performed by an employee on a farm in connection with:<br /><br />
+	(a) cultivating the soil, or raising or harvesting any agricultural or horticultural commodity, including the raising, shearing, feeding, training, and management of livestock, bees, poultry, fur-bearing animals and wildlife;<br /><br />
+	(b) the operation, management, conservation, improvement, or maintenance of a farm and its tools and equipment; or<br /><br />
+	(c) salvaging timber or clearing land of brush and other debris left by a hurricane if the major part of the service is performed on a farm.<br /><br />
+	(2) for domestic services performed in a private residence;<br /><br />
+	(3) for personal services performed in this State by nonresident employees in connection with their regular employment outside of this State when the gross South Carolina wages are equal to or less than the personal exemption amount provided in Internal Revenue Code Section 151(d) as defined in Section 12-6-40. However, this item does not apply to employees performing construction, installation, engineering, or similar services where the situs of the job is in this State;<br /><br />
+	(4) for services performed by a duly ordained, commissioned, or licensed minister of a church in the exercise of the ministry or by members of a religious order in the exercise of duties required by the order;<br /><br />
+	(5) for services performed by an individual on a boat with a crew of ten or fewer engaged in catching fish or other forms of aquatic animal life under an arrangement with the boat owner or operator in which the individual receives only a share of the boat&#39;s catch or a share of the proceeds from the sale of the catch and for services involving a multiple boat operation, with each boat&#39;s crew being ten or fewer, in which the individual receives a share of all the boats&#39; catch or a share of the proceeds from the sale of all the boats&#39; catch;<br /><br />
+	(6) for reimbursement of employee business expenses if, at the time of the payment, it is reasonable to believe that the reimbursement is excluded from South Carolina taxable income;<br /><br />
+	(7) for employee moving expenses if it is reasonable to believe that the reimbursement is excluded from South Carolina taxable income;<br /><br />
+	(8) for group-term life insurance premium payments on the life of an employee that is excluded from South Carolina taxable income;<br /><br />
+	(9) in the form of payments to or from employee benefit plans which are excluded from South Carolina taxable income;<br /><br />
+	(10) for payments to a self-employed retirement fund (Keogh Plans) or to an individual retirement account or program as permitted under the Internal Revenue Code if, at the time of the payment, it is reasonable to believe that the amounts are excludable or deductible from South Carolina gross income;<br /><br />
+	(11) for services performed by a disabled person:<br /><br />
+	(a) as defined by the Office of Intellectual and Developmental Disabilities;<br /><br />
+	(b) employed in a program approved by the Office of Intellectual and Developmental Disabilities; and<br /><br />
+	(c) with a projected income of seven thousand five hundred dollars a year, or less.<br /><br />
+	(E) Withholding in addition to that required under this section is permitted in cases in which the employer and the employee agree to the additional withholding. This additional withholding is considered tax required to be deducted and withheld under this chapter.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2; 1998 Act No. 419, Part II, SECTION 62A; 2005 Act No. 145, SECTION 19.A, eff June 7, 2005.<br /><br />
+Code Commissioner&#39;s Note<br /><br />
+	At the direction of the Code Commissioner, certain references in the S.C. Code to the State Department of Mental Health, South Carolina Mental Health Commission, Department of Disabilities and Special Needs, Department of Disabilities and Special Needs Commission, Department of Alcohol and Other Drug Abuse Services, and other related terms were changed to reflect the restructuring of these agencies into component offices under the Department of Behavioral Health and Developmental Disabilities, pursuant to 2025 Act No. 3, SECTION 18.<br /><br />
+Editor&#39;s Note<br /><br />
+	2005 Act No. 145, SECTION 19.B, provides as follows:<br /><br />
+	&quot;Subsections (A) and (D)(3) of Section 12-8-520 of the 1976 Code, as amended by this section, apply for taxable years beginning after 2005.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-530.</span> Withholding on cash prizes or winnings; noncash prizes; exception for spectator sporting events where admission charged.<br /><br />
+	(A) A person distributing prizes or winnings to a resident or nonresident of five hundred dollars or more shall withhold a percentage equal to the maximum individual tax rate of each distribution made to an individual, partnership, trust, or estate and five percent of each distribution made to a corporation or other entity.<br /><br />
+	(B) When withholding on noncash prizes, the person distributing the prize may either:<br /><br />
+	(1) accept cash from the prize recipient for the amount of the withholding; or<br /><br />
+	(2) pay all taxes required to be withheld. If this subitem is used, the withholding also becomes income for the prize recipient and the amount to be withheld is calculated as follows:<br /><br />
+	(a) for individuals, partnerships, trusts, or estates, the fair market value of the prize is divided by .93 and the quotient is multiplied by .07;<br /><br />
+	(b) for corporations, the fair market value of the prize is divided by .95 and the quotient is multiplied by .05.<br /><br />
+	(C) This section does not apply to payments of prizes or winnings given to participants in spectator sporting events for which an admission is charged.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2; 2024 Act No. 215 (S.577), SECTION 1, eff July 2, 2024.<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 215, SECTION 1, in (A), substituted &quot;a percentage equal to the maximum individual tax rate&quot; for &quot;seven percent&quot;.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-540.</span> Withholding for rent or royalty payments to nonresident; exemptions; revocation of exemption.<br /><br />
+	(A) A person making rent or royalty payments to a nonresident of twelve hundred dollars in any calendar year or more annually for the use or privilege of using property in this State shall withhold a percentage equal to the maximum individual tax rate of each payment to a nonresident individual, partnership, trust, or estate and five percent of each payment to a nonresident corporation or any other nonresident entity.<br /><br />
+	(B) This section does not apply:<br /><br />
+	(1) to a person for the rental of residential housing units, including short-term rentals, when four or fewer units are owned by the nonresident;<br /><br />
+	(2) to an individual who pays rent directly to a nonresident solely for a residential housing unit which is his legal residence;<br /><br />
+	(3) to a nonresident which has registered with the Secretary of State or the Department of Revenue and by that registration has agreed to be subject to the jurisdiction of the department and the courts of this State to determine its South Carolina tax liability, including estimated taxes, together with any related interest and penalties, if any. Registering with the Secretary of State or the department is not an admission of tax liability. If the person renting from or having a royalty contract with a nonresident obtains an affidavit from the nonresident stating that the nonresident is registered with the department or with the Secretary of State, the person is not responsible for the withholding.<br /><br />
+	The department may revoke the exemption granted by the registration provided in this item if it determines that the nonresident taxpayer is not cooperating with the department in the determination of the nonresident taxpayer&#39;s correct South Carolina tax liability. The revocation does not revive the duty of a person renting from or having a royalty contract with a nonresident to withhold until the person receives notice of the revocation.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2; 2024 Act No. 215 (S.577), SECTION 2, eff July 2, 2024.<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 215, SECTION 2, in (A), substituted &quot;a percentage equal to the maximum individual tax rate&quot; for &quot;seven percent&quot;.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-550.</span> Withholding for nonresident temporarily conducting business or performing personal services; exemption; revocation of exemption.<br /><br />
+	(A) A person hiring or contracting with a nonresident conducting a business or performing personal services of a temporary nature within this State shall withhold two percent of each payment in which the South Carolina portion of the contract exceeds or could reasonably be expected to exceed ten thousand dollars. This section does not apply to a nonresident which registered with the Secretary of State or the Department of Revenue and by that registration agreed to be subject to the jurisdiction of the department and the courts of this State to determine its South Carolina tax liability, including withholding and estimated taxes, together with any related interest and penalties. Registering with the Secretary of State or the department is not an admission of tax liability nor does it require the filing of an income tax or franchise (license) tax return. If the person hiring, contracting, or having a contract with a nonresident obtains an affidavit from the nonresident stating that the nonresident is registered with the department or with the Secretary of State, the person is not responsible for the withholding.<br /><br />
+	(B) The department may revoke the exemption granted by registering with the Secretary of State or the department if it determines that the nonresident taxpayer is not cooperating with the department in the determination of the nonresident taxpayer&#39;s correct South Carolina tax liability. This revocation does not revive the duty of a person hiring, contracting, or having a contract with a nonresident to withhold, until the person receives notice of the revocation.<br /><br />
+	(C) This section does not apply to payments on purchase orders for tangible personal property when those payments are not accompanied by services to be performed in this State.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2; 2000 Act No. 399, SECTION 3(D)(4), eff August 17, 2000.<br /><br />
+Editor&#39;s Note<br /><br />
+	2000 Act No. 399, SECTION 3.Z., provides, in pertinent part, as follows:<br /><br />
+	&quot;This section takes effect upon approval by the Governor, or as otherwise stated, except that ... subsection D. applies to taxable years beginning after December 31, 2000 ...&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-560.</span> Partial or total exemptions of classes of transactions; exemption for portion of transaction not taxable in State; waiver of withholding if compliance guaranteed and certain items given to department.<br /><br />
+	(A) The department may partially or totally exempt classes of transactions from the provisions of Sections 12-8-530, 12-8-540, and 12-8-550, and may exempt the portion of any transaction which is not taxable in this State.<br /><br />
+	(B) Withholding required under Sections 12-8-540 and 12-8-550 may be waived by the department if the payee guarantees compliance with the provisions of Chapter 6 of this title and the requirements of a withholding agent under this chapter by furnishing the department with:<br /><br />
+	(1) a bond secured by an insurance company licensed by the South Carolina Department of Insurance;<br /><br />
+	(2) a deposit of securities which have been approved by the State Treasurer; or<br /><br />
+	(3) cash which does not bear interest.<br /><br />
+	The amount of the bond or deposit must be at least as much as the withholding otherwise required under Sections 12-8-540 and 12-8-550.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-570.</span> Withholding by trust or estate from distribution to nonresident beneficiary; exemptions.<br /><br />
+	(A) A trust or estate making a distribution of South Carolina taxable income to a nonresident beneficiary must withhold a percentage equal to the maximum individual tax rate of the beneficiary&#39;s distribution which is attributable to South Carolina taxable income. The amounts withheld must be remitted to the department at the time estimated tax payments are due.<br /><br />
+	(B) This section does not apply to a:<br /><br />
+	(1) trust that is exempt from taxation under Internal Revenue Code Section 501;<br /><br />
+	(2) nonresident beneficiary who is exempt from taxation under Internal Revenue Code Section 501; or<br /><br />
+	(3) nonresident beneficiary who agrees to be subject to the jurisdiction of the department and the courts of this State to determine South Carolina tax liability, including estimated taxes and related interest and penalties. The agreement is not an admission of tax liability.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2; 1998 Act No. 387, SECTION 1; 2024 Act No. 215 (S.577), SECTION 3, eff July 2, 2024.<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 215, SECTION 3, in (A), in the first sentence, substituted &quot;a percentage equal to the maximum individual tax rate&quot; for &quot;seven percent&quot;.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-580.</span> Withholding by buyer of real property or associated tangible personal property from nonresident seller.<br /><br />
+	(A)(1) A person who purchases real property, or real property and associated tangible personal property, from a nonresident seller shall withhold:<br /><br />
+	(a) a percentage equal to the maximum individual tax rate of the gain recognized on the sale by a nonresident individual, partnership, trust, or estate and five percent for a nonresident corporation or other nonresident entity if the seller provides the buyer with an affidavit, described in subsection (E), stating the amount of gain;<br /><br />
+	(b) a percentage equal to the maximum individual tax rate of the amount realized on the sale for a nonresident individual, partnership, trust, or estate and five percent by a nonresident corporation or any other nonresident entity if the seller does not provide the buyer with an affidavit described in subsection (E); or<br /><br />
+	(c) the entire net proceeds payable to the nonresident seller, if the amount required to be withheld in subitem (1) or (2) exceeds the net proceeds payable to the seller.<br /><br />
+	(2) If a seller finances all or part of the transaction, in lieu of remitting the tax due on each installment payment, the seller may give the buyer an affidavit stating that, for state income tax purposes, he will elect out of installment sales treatment, as defined by Section 453 of the Internal Revenue Code, and remit the entire amount of tax to be due over the period of the installment agreement.<br /><br />
+	(B)(1) For purposes of this section a sale is a transfer where gain or loss is computed in accordance with Internal Revenue Code Section 1001 with modifications provided in Chapter 6 of this title for South Carolina income tax purposes.<br /><br />
+	(2)(a) A sale does not include tax exempt or tax deferred transactions, other than installment sales.<br /><br />
+	(b) A sale does not include a transaction to the extent the gain on the sale of a principal residence is excluded in accordance with Internal Revenue Code Section 121. Any gain in excess of this permitted exclusion is subject to the provisions of this section.<br /><br />
+	(3) The department may exempt certain other classes of transactions from the provisions of this section when it determines that the benefits to the State are insufficient to justify the burdens imposed on the buyer and seller. The department may revoke the exemption granted by this item if it determines that the nonresident is not cooperating with the department in the determination of the nonresident taxpayer&#39;s correct South Carolina tax liability. The revocation does not revive the duty of a person purchasing real property or associated tangible personal property from a nonresident seller to withhold until the person receives notice of the revocation.<br /><br />
+	(C)(1) For purposes of this section, a nonresident is:<br /><br />
+	(a) an individual whose permanent home is outside of this State on the date of the sale;<br /><br />
+	(b) a corporation incorporated outside of this State;<br /><br />
+	(c) a partnership whose principal place of business is located outside of this State;<br /><br />
+	(d) a trust administered outside of this State; or<br /><br />
+	(e) an estate of a decedent whose permanent home was outside of this State at the time of death.<br /><br />
+	(2) However, a nonresident seller is considered a resident for purposes of this section if:<br /><br />
+	(a)(i) the seller is a corporation incorporated outside of this State that has its principal place of business in this State and does no business in its state of incorporation; or<br /><br />
+	(ii) the seller is a nonresident who:<br /><br />
+	(I) has filed at least one South Carolina income tax return and is not delinquent with respect to filing South Carolina income tax returns;<br /><br />
+	(II) has been in business in this State during the last two taxable years, including the year of sale, and shall continue in substantially the same business in the State after the sale; and<br /><br />
+	(III) has a certificate of authority to do business in this State if the seller is a corporation or is registered to do business in this State if the seller is a limited partnership.<br /><br />
+	(b) the seller provides the buyer an affidavit described in subsection (E) certifying that the above requirements are met and that the seller shall report the sale on a timely filed South Carolina income tax return.<br /><br />
+	(D)(1) The buyer shall remit the amount withheld to the department with the appropriate form on or before the fifteenth day of the month following the month in which the sale takes place. However, the department may extend the time for withholding and remitting payments for seller financed sales.<br /><br />
+	(2) The buyer is liable for the collection and payment of an amount due pursuant to this section. A lending institution, real estate agent, or closing attorney is not liable for the collection of an amount due from the buyer pursuant to this section. However, a lending institution, real estate agent, or closing attorney that has in fact withheld taxes is required timely to remit the amount withheld within the timeframe provided in item (1) of this subsection.<br /><br />
+	(E) The buyer may rely on an affidavit provided by the seller if the buyer does not know the affidavit is false and the seller, under penalties of perjury, states the following:<br /><br />
+	(1) the seller&#39;s name, address, and social security or other federal tax identification number;<br /><br />
+	(2) the date of the sale; and<br /><br />
+	(3) a description of the property.<br /><br />
+	(F) If a withholding payment:<br /><br />
+	(1) results in excess withholding based on the amount of gain required to be recognized from the sale; or<br /><br />
+	(2) contains a computational error;<br /><br />
+	the seller may file an amended nonresident withholding statement with the department and request a refund for any amount over withheld or pay any amount due.<br /><br />
+	(G) The department shall prescribe rules and regulations necessary to enforce and administer the provisions of this section.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2; 1998 Act No. 387, SECTION 2; 2000 Act No. 399, SECTION 3(D)(5), eff August 17, 2000; 2003 Act No. 69, SECTION 3.D, eff June 18, 2003; 2007 Act No. 110, SECTION 19, eff June 21, 2007; 2007 Act No. 116, SECTION 25, eff June 28, 2007, applicable for tax years beginning after 2007; 2024 Act No. 215 (S.577), SECTION 4, eff July 2, 2024.<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 215, SECTION 4, in (A)(1), in (a) and (b), substituted &quot;a percentage equal to the maximum individual tax rate&quot; for &quot;seven percent&quot;.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-590.</span> Tax withholding on distributions to nonresidential shareholders of &quot;S&quot; corporations and nonresident partners; returns.<br /><br />
+	(A) Corporations having a valid &quot;S&quot; election for South Carolina income tax purposes are required to withhold income taxes at a rate of five percent on a nonresident shareholder&#39;s share of South Carolina taxable income of the corporation, whether distributed or undistributed, and pay the withheld amount to the department in the manner prescribed by the department. For a taxable year beginning after 1991, the corporation shall make a return and pay over the withheld funds on or before the fifteenth day of the third month following the close of its tax year. Taxes withheld in the name of the nonresident shareholder must be used as credit against taxes due at the time the nonresident files income taxes for the taxable year.<br /><br />
+	(B) An &quot;S&quot; corporation required to withhold taxes on distributed or undistributed income shall make a return with each payment of tax to the department disclosing on the return the names, taxpayer identification numbers, the total amount of South Carolina taxable income paid or credited to each nonresident shareholder, the tax withheld for each nonresident shareholder, and any other information the department requires. The &quot;S&quot; corporation shall furnish to each nonresident shareholder a written statement as required by Section 12-8-1540(A) as proof of the amount of his share of distributed or undistributed income and of the amount that has been withheld.<br /><br />
+	(C) Partnerships are required to withhold income taxes at a rate of five percent on a nonresident partner&#39;s share of South Carolina taxable income of the partnership, whether distributed or undistributed, and pay the withheld amount to the department in the manner prescribed by the department. The partnership shall make a return and pay over the withheld funds on or before the fifteenth day of the third month following the close of its tax year. Taxes withheld in the name of the nonresident partner must be used as credit against taxes due at the time the nonresident files income taxes for the taxable year.<br /><br />
+	(D) A partnership required to withhold taxes on distributed or undistributed income shall make a return with each payment of tax to the department disclosing on the return the name, taxpayer identification number, the total amount of South Carolina taxable income paid or credited to each nonresident partner, the tax withheld for each nonresident partner, and other information the department requires. The partnership shall furnish to each nonresident partner a written statement as required by Section 12-8-1540(A) as proof of the amount of his share of distributed or undistributed income that has been withheld.<br /><br />
+	(E) If a nonresident shareholder or partner provides the partnership or &quot;S&quot; corporation with a statement that the shareholder or partner is an organization exempt from income taxes under Internal Revenue Code Section 501(a), then the partnership or &quot;S&quot; corporation is not required to withhold with regard to that partner or shareholder. The statement must contain the shareholder&#39;s or partner&#39;s name, federal identification number, Internal Revenue Code section exemption number, and a copy of the Internal Revenue Service exemption letter.<br /><br />
+	(F)(1) For purposes of computing the penalty under Section 12-54-55, the amount withheld is deemed a payment of estimated tax, and an equal part of the amount is deemed paid on each estimated tax due date for the previous taxable year.<br /><br />
+	(2) If an &quot;S&quot; corporation or partnership is subject to withholding on the sale of real property pursuant to Section 12-8-580, the &quot;S&quot; corporation or partnership is exempt from withholding on income attributable to the sale under this section.<br /><br />
+	(3) If a nonresident shareholder or partner files an affidavit with the department in a form acceptable to the department by which he agrees that he is subject to the personal jurisdiction of the department and courts of this State for the purpose of determining and collecting any South Carolina taxes, including estimated taxes, together with any related interest and penalties, then the &quot;S&quot; corporation or partnership is not required to withhold with regard to that shareholder or partner. The department may revoke an exemption granted by this item at any time it determines that the nonresident shareholder or partner is not abiding by its terms.<br /><br />
+	(G) The department is authorized to require such returns and other information as it considers appropriate to administer the provisions of this section, and to issue rulings and promulgate regulations as necessary or appropriate to implement this section.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2; 2007 Act No. 110, SECTION 20, eff June 21, 2007; 2007 Act No. 116, SECTION 26, eff June 28, 2007, applicable to tax years beginning after 2007; 2016 Act No. 160 (H.4328), SECTION 4.B, eff April 21, 2016.<br /><br />
+Effect of Amendment<br /><br />
+	2016 Act No. 160, SECTION 4.B, in (C), in the second sentence, deleted reference to taxable year beginning after 1991, and substituted &quot;third month&quot; for &quot;fourth month&quot;.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-595.</span> Withholding on wages paid to individual failing to provide taxpayer identification number or social security number; penalties against withholding agents.<br /><br />
+	(A) A withholding agent, as defined in Section 12-8-10, shall withhold state income tax at the same rate as the maximum individual income tax rate of the amount of compensation paid to an individual, which compensation is reported on Form 1099 and with respect to which the individual has:<br /><br />
+	(1) failed to provide a taxpayer identification number or social security number;<br /><br />
+	(2) failed to provide a correct taxpayer identification number or social security number; or<br /><br />
+	(3) provided an Internal Revenue Service issued taxpayer identification number issued for nonresident aliens.<br /><br />
+	(B) A withholding agent who fails to comply with the withholding requirements of this subsection shall be liable for the taxes required to have been withheld unless the withholding agent is exempt from federal withholding with respect to the individual pursuant to a properly filed Internal Revenue Service Form 8233 and has provided a copy of the form to the commissioner.<br /><br />
+	(C) A withholding agent does not violate this section if the individual provides a false or incorrect social security number or taxpayer identification number that is facially correct and the withholding agent does not know or should not have known based on a reasonable investigation that the number provided is false or incorrect.<br /><br />
+	(D) The director of the South Carolina Department of Revenue shall send written notice of this section to all South Carolina employers no later than July 1, 2008.<br /><br />
+HISTORY: 2008 Act No. 280, SECTION 8, eff June 4, 2008; 2024 Act No. 215 (S.577), SECTION 5, eff July 2, 2024.<br /><br />
+Effect of Amendment<br /><br />
+	2024 Act No. 215, SECTION 5, in (A), substituted &quot;same rate as the maximum individual income tax rate&quot; for &quot;rate of seven percent&quot;.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-600.</span> Withholding from any type of payment included in state gross income not specified in chapter; agreement by payee and payor; properly executed withholding exemption certificate deemed request for withholding.<br /><br />
+	(A) A payee and payor may enter into an agreement to withhold income tax from any type of payment not otherwise provided in this chapter that is includable in South Carolina gross income. The agreement is effective for a mutually agreed upon period unless the payor or payee furnishes a signed written notice to the other party terminating the agreement.<br /><br />
+	(B) A properly executed withholding exemption certificate furnished by the payee to the payor constitutes a request for withholding. The amount to be withheld must be determined in accordance with this chapter and the tables and rules promulgated by the department with respect to withholding.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+<div style="text-align: center;">ARTICLE 9</div>
+<div style="text-align: center;">Procedure for Withholding on Wages</div><br />
+<span style="font-weight: bold;"> SECTION 12-8-1010.</span> Withholding exemptions and exemption certificates.<br /><br />
+	(A)(1) Every employee shall furnish the employer with a signed withholding exemption certificate on or before the date employment begins indicating the number of withholding exemptions which the employee claims. A properly completed federal withholding exemption certificate is acceptable for South Carolina purposes.<br /><br />
+	(2) The number of exemptions claimed for South Carolina may not exceed the lesser of the number allowed under Internal Revenue Code Section 3402 or the number actually claimed for federal income tax withholding purposes. If an employee claims fewer exemptions for South Carolina than for federal purposes, the employee shall furnish the employer with a federal withholding exemption certificate which indicates that it is for state purposes.<br /><br />
+	(B) A withholding exemption certificate is effective upon the first payment of wages after the certificate is furnished to the employer and continues in effect until a new certificate is furnished to the employer.<br /><br />
+	(C) If an employee fails to furnish an employer with an exemption certificate as provided by this chapter, the number of withholding exemptions claimed is zero.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-1020.</span> Change in exemptions; decrease.<br /><br />
+	If a change occurs which decreases the number of exemptions to which an employee is entitled, the employee shall furnish the employer with a revised withholding exemption certificate within thirty days from the date of change.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-1030.</span> Incorrect withholding exemption certificate; notification of department; determination of number of exemptions to be allowed; appeal by employee.<br /><br />
+	(A)(1) If an employer receives a withholding exemption certificate from an employee claiming ten or more withholding exemptions or he believes an employee&#39;s withholding exemption certificate is incorrect, the employer shall furnish a copy of the certificate to the department within thirty days after it is received.<br /><br />
+	(2) Until otherwise informed by the department the employer shall withhold on the basis of the claimed exemptions.<br /><br />
+	(B)(1) If an employer furnishes a copy of an employee&#39;s withholding exemption certificate to the department, or if the department for any other reason believes an employee&#39;s withholding exemption certificate may be incorrect, the department may request that the employee submit written verification of the statements on the certificate within thirty days.<br /><br />
+	(2) If the department determines, upon review, the information is incorrect, it shall inform the employee that the exemption certificate is invalid and of the number of exemptions allowed. If the employee does not provide adequate verification to support the exemptions claimed on the withholding certificate, the department shall allow only one exemption.<br /><br />
+	(C)(1) The determination by the department may be appealed as provided under the Revenue Procedures Act within thirty days after the department&#39;s decision is rendered. Final review of the appeal includes the final decision of the Administrative Law Court or court if the matter was heard by the Administrative Law Court or appealed to a court.<br /><br />
+	(2) If the employee does not appeal the department&#39;s determination, the department shall notify the employer of the number of exemptions to allow in computing the employee&#39;s withholding. The correct number of exemptions, as determined by the department, Administrative Law Court, or court, must begin on the first payroll period ending on or after the date the employer receives notification.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2; 1998 Act No. 387, SECTION 3A.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-1040.</span> Waiver of withholding requirements.<br /><br />
+	An employee may request waiver of the withholding requirements in Section 12-8-520 if the employee files a withholding exemption certificate annually on or before January 1 and certifies that he:<br /><br />
+	(1) incurred no liability for income tax imposed under Chapter 6 of Title 12 in the previous taxable year; and<br /><br />
+	(2) anticipates no income tax liability for the current year.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-1050.</span> Withholding on wages paid for period which is not payroll period; withholding on wages paid without regard to any period; withholding in miscellaneous payroll period.<br /><br />
+	(A) If wages are paid for a period which is not a payroll period, the amount to be withheld is that amount applicable to a miscellaneous payroll period containing the number of days, including Sundays and holidays, equal to the number of days in the period for which such wages are paid.<br /><br />
+	(B) If wages are paid by an employer without regard to a payroll period or other period, the amount to be withheld is that amount applicable to a miscellaneous payroll period containing the number of days, including Sundays and holidays, which have elapsed since the date of the last payment of such wages to the employee during the calendar year, the date of commencement of employment of the employee or January first, whichever is the later.<br /><br />
+	(C) To compute the withholding required in a miscellaneous payroll period, the daily payroll withholding tables published by the department must be used in the same manner as provided in Internal Revenue Code Subsections 3402(c)(2) and (c)(3).<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-1060.</span> Estimated quarterly payments by employer of withholding.<br /><br />
+	The department may authorize employers to:<br /><br />
+	(1) estimate the wages that are paid to an employee in a quarter of the calendar year;<br /><br />
+	(2) determine the amount to be withheld on each payment of wages during the quarter as if the appropriate average of the estimated wages is the actual wages paid; and<br /><br />
+	(3) withhold on a payment of the employee&#39;s wages during the quarter the amount necessary to adjust the estimated amount withheld to the actual amount required to be withheld during the quarter as if the payroll period of the employee was quarterly.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-1070.</span> Manner of withholding and amount deducted and withheld determined according to rules or regulations of department.<br /><br />
+	If payment of wages is made to an employee by an employer:<br /><br />
+	(1) with respect to a payroll period or other period, a part of which is included in a payroll period or other period with respect to which wages are also paid to the employee by the employer;<br /><br />
+	(2) without regard to a payroll period or other period but on or before the expiration of a payroll period or other period with respect to which wages are also paid to an employee by an employer;<br /><br />
+	(3) with respect to a period beginning in one and ending in another calendar year; or<br /><br />
+	(4) through an agent, fiduciary, or other person who also has the control, recent custody, disposal of or pays the wages payable by another employer to the employee; the manner of withholding and the amount to be deducted and withheld under this article must be determined in accordance with rules or regulations promulgated by the department under which the withholding exemption allowed to the employee in a calendar year approximates the withholding exemption allowable with respect to an annual payroll period.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-1080.</span> Agreement between department and U.S. Secretary of Treasury regarding withholding.<br /><br />
+	The department shall make an agreement with the Secretary of the Treasury of the United States with respect to withholding of income tax as provided by this section, pursuant to 5 U.S.C. Section 5517 and executive orders issued pursuant to that section.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+<div style="text-align: center;">ARTICLE 13</div>
+<div style="text-align: center;">Depositing and Filing Returns in Connection with Withholding</div><br />
+<span style="font-weight: bold;"> SECTION 12-8-1510.</span> Inapplicability of article&#39;s provisions to withholding.<br /><br />
+	The provisions of this article do not apply to withholding pursuant to Section 12-8-580 or 12-8-590.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-1520.</span> Withholding agents&#39; duties to deposit and pay withholdings.<br /><br />
+	(A)(1) Resident withholding agents who deposit and pay withholding to the Internal Revenue Service under the provisions of the Internal Revenue Code as defined in Section 12-6-40(A) and applicable regulations shall remit all South Carolina taxes withheld pursuant to this chapter on or before the date their federal withholding taxes are due.<br /><br />
+	(2) If a resident withholding agent is required under the Internal Revenue Code to deposit withheld funds at a financial institution, then the withholding agent shall deposit the funds required to be withheld under this chapter at a financial institution selected by the State Treasurer, unless otherwise instructed by the department.<br /><br />
+	(3) If a resident withholding agent is not required to deposit and pay federal withholding to the Internal Revenue Service under the provisions of the Internal Revenue Code and applicable regulations, the resident withholding agent shall remit South Carolina withholding to the department in accordance with subsection (B).<br /><br />
+	(B) A nonresident withholding agent and a resident withholding agent described in (A)(3) must remit South Carolina taxes withheld under this chapter as follows:<br /><br />
+	(1) on or before the fifteenth day of the month following the month in which the aggregate amount withheld is five hundred dollars or more; or<br /><br />
+	(2) on or before the last day of the month following the quarter in which funds were withheld if the aggregate amount withheld in a calendar quarter is less than five hundred dollars.<br /><br />
+	(C) In order to maintain conformity with the federal withholding system, the department may by rule adopt new federal withholding regulations.<br /><br />
+	(D) Any withholding agent making at least twenty-four payments in a year must do so as provided in Section 12-54-250.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2; 1997 Act No. 83, SECTION 1; 2005 Act No. 145, SECTION 20.A, eff July 1, 2005; 2005 Act No. 145, SECTION 20.B, eff June 7, 2005.<br /><br />
+Editor&#39;s Note<br /><br />
+	2005 Act No. 145, SECTION 20.C, provides as follows:<br /><br />
+	&quot;Section 12-8-1520(A)(2) of the 1976 Code, as amended in subsection A. of this section, takes effect July 1, 2005. The amendment to Section 12-8-1520 in the 1976 Code in subsection B. of this section applies for payments due after January 1, 2006.&quot;<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-1530.</span> Quarterly returns; agent to continue to file reports until certain events occur.<br /><br />
+	(A) A withholding agent shall file a quarterly return in a form prescribed by the department indicating the total amount withheld pursuant to this chapter during the calendar quarter. The return must be filed even in quarters when no income tax has been withheld. The return must be filed on or before dates required for filing federal quarterly withholding returns specified in Internal Revenue Code Section 6071 and Internal Revenue Code Regulation Section 31.6071(a)(1), except the fourth quarter return. The fourth quarter return is due on or before the last day of January following the calendar year of the withholding.<br /><br />
+	(B)(1) A withholding agent may discontinue filing quarterly returns only after the withholding agent:<br /><br />
+	(a) notifies the department in writing that he is no longer required to withhold; and<br /><br />
+	(b) has remitted all taxes withheld or required to be withheld under the provisions of this chapter.<br /><br />
+	(2) A withholding agent who notifies the department that he is no longer required to withhold under subsection (B)(1) may furnish the department with the reconciliation statement required under Section 12-8-1550(A)(2) at the time notification is given.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2; 1997 Act No. 83, SECTION 2; 2016 Act No. 160 (H.4328), SECTION 1, eff April 21, 2016.<br /><br />
+Effect of Amendment<br /><br />
+	2016 Act No. 160, SECTION 1, in (A), substituted &quot;January&quot; for &quot;February&quot; in the last sentence.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-1540.</span> Agents shall furnish statements to taxpayers and department; contents.<br /><br />
+	(A) A person required to withhold income tax under this chapter, or who would have been required to withhold a tax under Section 12-8-520 if the taxpayer had claimed a single exemption, shall furnish on or before January thirty-first of the following year a properly completed federal wage and tax statement or federal 1099 to the taxpayer with respect to the remuneration paid during the calendar year, showing the following:<br /><br />
+	(1) the withholding agent&#39;s name, address, and South Carolina withholding tax account number;<br /><br />
+	(2) the taxpayer&#39;s name, address, and social security or federal employer identification number;<br /><br />
+	(3) the total amount of wages or payments; and<br /><br />
+	(4) the total amount withheld.<br /><br />
+	(B) The wage and tax statement or 1099 required to be furnished by this section may be required to be furnished at other times, and contain other information as prescribed by the department.<br /><br />
+	(C) This section does not apply to agents withholding pursuant to Section 12-8-580 who provide the seller with the nonresident real estate withholding form or to agents required to withhold income tax pursuant to Section 12-8-580.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-1550.</span> Due date for statements filed with department; recapitulation and reconciliation statement; request for filing extension.<br /><br />
+	(A) On or before the last day of January following the calendar year of the withholding, the following items must be filed with the department:<br /><br />
+	(1) the original copy of the statement required by Section 12-8-1540;<br /><br />
+	(2) a recapitulation and reconciliation of taxes withheld and paid in the form the department prescribes.<br /><br />
+	(B) A withholding agent may request in writing an extension of time for filing the information required under this section for a time not to exceed thirty days.<br /><br />
+	(C) Where essentially the same information required to be submitted by Section 12-8-1540 is required to be submitted to the Internal Revenue Service on magnetic media, the same method must be used for purposes of this section.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2; 1997 Act No. 83, SECTION 3; 2016 Act No. 160 (H.4328), SECTION 2, eff April 21, 2016.<br /><br />
+Effect of Amendment<br /><br />
+	2016 Act No. 160, SECTION 2, in (A), substituted &quot;January&quot; for &quot;February&quot;.<br /><br />
+<div style="text-align: center;">ARTICLE 17</div>
+<div style="text-align: center;">Enforcement and Administrative Provisions</div><br />
+<span style="font-weight: bold;"> SECTION 12-8-2010.</span> Liability of agent failing to withhold or pay tax.<br /><br />
+	(A) A withholding agent who fails to withhold or pay to the department an amount required by this chapter is personally and individually liable for the amount of tax not withheld or paid.<br /><br />
+	(B) If a withholding agent fails to remit an amount withheld from a taxpayer under this chapter to the department, the taxpayer is allowed a credit for the amount of income tax withheld from him but not remitted.<br /><br />
+	(C) The amount required to be withheld may not be collected from a withholding agent who fails to withhold income tax as required under the provisions of this chapter after the taxpayer whose wages or payments should have been withheld upon pays the tax applicable to that withholding. However, the payment by the taxpayer does not relieve the withholding agent from liability for penalty and interest.<br /><br />
+	(D) For purposes of this section, the term &quot;withholding agent&quot; includes an officer or employee of a corporation, or a member or employee of a partnership, who as such officer, employee, or member is under a duty to perform the act in respect of which the violation occurs.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-2020.</span> Refund of credit for overpayment.<br /><br />
+	(A) A refund or credit may be allowed for an overpayment of tax withheld pursuant to this chapter to:<br /><br />
+	(1) the withholding agent to the extent that the withholding agent did not withhold the overpayment amount from the taxpayer; or<br /><br />
+	(2) the taxpayer to the extent that the overpayment was withheld from the taxpayer.<br /><br />
+	(B) A refund or credit may be granted to a withholding agent who has withheld taxes in error if the withholding agent has refunded or unconditionally credited the amount erroneously withheld to the taxpayer and the amount is refunded or credited to the taxpayer before the issuance of the original wage and tax statement for the calendar year.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2; 2007 Act No. 110, SECTION 21, eff June 21, 2007; 2007 Act No. 116, SECTION 27, eff June 28, 2007, applicable for tax years beginning after 2007.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-2030.</span> Amount withheld held in trust for State; lien on property of agent for amount withheld; recording of lien.<br /><br />
+	An amount withheld under this chapter must be held in trust for the State and is a lien against all property, both real and personal, tangible and intangible, of the withholding agent. The lien becomes effective after it has been properly recorded in the county where the withholding agent&#39;s business is located.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+<span style="font-weight: bold;"> SECTION 12-8-2040.</span> Quarterly return, annual reconciliation, and form filed in connection with withholding considered returns.<br /><br />
+	For purposes of Chapter 54, the quarterly return required under Section 12-8-1530, the annual reconciliation required under Section 12-8-1550, and the form required to be filed in connection with withholding under Section 12-8-580 are considered returns.<br /><br />
+HISTORY: 1995 Act No. 76, SECTION 2.<br /><br />
+
+</div>
+
+
+					</div>		 <!-- mainwidepanel -->
+					
+				</div>		 <!-- pagebody -->
+				
+				<div id="footer" class="nodisplay" style="height: 30px;" onContextMenu="return false;">
+			<div id="footerdiv" style="margin:0;">
+				South Carolina Legislative Services Agency * 223 Blatt Building * 1105 Pendleton Street * Columbia, SC 29201<!-- * 803-212-4420--><br>
+				
+								<a href="/disclaimer.php">Disclaimer</a> * <a href="/policies.php">Policies</a> * <a href="/credits.php">Photo Credits</a> * <a href="/contact.php">Contact Us</a>
+							</div>
+		</div>
+		<div id="printfooter" class="printdisplay serifNormal" align=center style="font-size: 8pt;">
+			<br>
+			<br>
+			<hr>
+			Legislative Services Agency
+			<br>
+			h t t p : / / w w w . s c s t a t e h o u s e . g o v
+		</div>
+	
+		</div>	<!-- container or main in mobile page-->
+</body>
+</html>
+

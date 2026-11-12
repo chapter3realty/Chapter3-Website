@@ -1,0 +1,84 @@
+{
+ "method": "straight line to Ocean Boulevard (county layer 18); ocean-side homes = 0",
+ "zones": {
+  "town": {
+   "homes": 4045,
+   "median_miles": 0.21,
+   "max_miles": 0.8,
+   "within_quarter_mile_pct": 54.6,
+   "within_half_mile_pct": 82.2
+  },
+  "R1": {
+   "homes": 977,
+   "median_miles": 0.36,
+   "max_miles": 0.65,
+   "within_quarter_mile_pct": 27.0,
+   "within_half_mile_pct": 78.9
+  },
+  "R1R2": {
+   "homes": 1874,
+   "median_miles": 0.37,
+   "max_miles": 0.65,
+   "within_quarter_mile_pct": 21.8,
+   "within_half_mile_pct": 77.5
+  },
+  "PD": {
+   "homes": 447,
+   "median_miles": 0.51,
+   "max_miles": 0.69,
+   "within_quarter_mile_pct": 29.1,
+   "within_half_mile_pct": 45.9
+  },
+  "R3": {
+   "homes": 1562,
+   "median_miles": 0.03,
+   "max_miles": 0.19,
+   "within_quarter_mile_pct": 100.0,
+   "within_half_mile_pct": 100.0
+  },
+  "R3C3": {
+   "homes": 1662,
+   "median_miles": 0.02,
+   "max_miles": 0.19,
+   "within_quarter_mile_pct": 100.0,
+   "within_half_mile_pct": 100.0
+  },
+  "R2": {
+   "homes": 897,
+   "median_miles": 0.38,
+   "max_miles": 0.64,
+   "within_quarter_mile_pct": 16.2,
+   "within_half_mile_pct": 76.0
+  },
+  "C3": {
+   "homes": 100,
+   "median_miles": 0.01,
+   "max_miles": 0.13,
+   "within_quarter_mile_pct": 100.0,
+   "within_half_mile_pct": 100.0
+  },
+  "C1": {
+   "homes": 55,
+   "median_miles": 0.65,
+   "max_miles": 0.8,
+   "within_quarter_mile_pct": 0.0,
+   "within_half_mile_pct": 0.0
+  },
+  "C4": {
+   "homes": 6,
+   "median_miles": 0.0,
+   "max_miles": 0.0,
+   "within_quarter_mile_pct": 100.0,
+   "within_half_mile_pct": 100.0
+  },
+  "PL": {
+   "homes": 1,
+   "median_miles": 0.04,
+   "max_miles": 0.04,
+   "within_quarter_mile_pct": 100.0,
+   "within_half_mile_pct": 100.0
+  }
+ },
+ "town_area_sq_miles": 1.91,
+ "ocean_blvd_in_town_miles": 2.13
+}

@@ -1,0 +1,1230 @@
+{
+ "note": "Built by build_findings.py. Do not edit by hand.",
+ "acs_period": "2020-2024 American Community Survey 5-year estimates",
+ "zillow_latest_month": "2026-09-30",
+ "headline": {
+  "zillow_house_asking": 2074,
+  "zillow_apartment_asking": 1583,
+  "zillow_all_asking": 1722,
+  "zillow_house_12m_pct": 2.7,
+  "zillow_all_12m_pct": 2.3,
+  "zillow_house_peak": {
+   "month": "2026-09-30",
+   "value": 2074.1,
+   "change_since_pct": 0.0
+  }
+ },
+ "fmr_fy2027": {
+  "0": 1155,
+  "1": 1258,
+  "2": 1504,
+  "3": 1823,
+  "4": 1981
+ },
+ "fmr_fy2026": {
+  "0": 1145,
+  "1": 1229,
+  "2": 1465,
+  "3": 1805,
+  "4": 2111
+ },
+ "fmr_by_year_2_3_4br": {
+  "2015": {
+   "2": 801,
+   "3": 998,
+   "4": 1171
+  },
+  "2016": {
+   "2": 797,
+   "3": 1044,
+   "4": 1189
+  },
+  "2017": {
+   "2": 880,
+   "3": 1172,
+   "4": 1345
+  },
+  "2018": {
+   "2": 931,
+   "3": 1231,
+   "4": 1439
+  },
+  "2019": {
+   "2": 932,
+   "3": 1214,
+   "4": 1401
+  },
+  "2020": {
+   "2": 997,
+   "3": 1288,
+   "4": 1460
+  },
+  "2021": {
+   "2": 898,
+   "3": 1160,
+   "4": 1314
+  },
+  "2022": {
+   "2": 1062,
+   "3": 1349,
+   "4": 1526
+  },
+  "2023": {
+   "2": 1141,
+   "3": 1455,
+   "4": 1642
+  },
+  "2024": {
+   "2": 1361,
+   "3": 1724,
+   "4": 2005
+  },
+  "2025": {
+   "2": 1406,
+   "3": 1771,
+   "4": 2065
+  },
+  "2026": {
+   "2": 1465,
+   "3": 1805,
+   "4": 2111
+  },
+  "2027": {
+   "2": 1504,
+   "3": 1823,
+   "4": 1981
+  }
+ },
+ "pums_lease_rent": {
+  "house_detached": {
+   "records": 275,
+   "homes": 8071,
+   "median": 1400,
+   "moe90": 155
+  },
+  "house_detached_2br": {
+   "records": 59,
+   "homes": 1527,
+   "median": 1200,
+   "moe90": 364
+  },
+  "house_detached_3br": {
+   "records": 157,
+   "homes": 4639,
+   "median": 1500,
+   "moe90": 103
+  },
+  "house_detached_4br": {
+   "records": 51,
+   "homes": 1426,
+   "median": 1600,
+   "moe90": 409
+  },
+  "townhouse_attached": {
+   "records": 67,
+   "homes": 1807,
+   "median": 1393,
+   "moe90": 221
+  },
+  "apartment_or_condo_2plus": {
+   "records": 618,
+   "homes": 18259,
+   "median": 1132,
+   "moe90": 54
+  },
+  "apartment_or_condo_1br": {
+   "records": 157,
+   "homes": 4627,
+   "median": 1101,
+   "moe90": 102
+  },
+  "apartment_or_condo_2br": {
+   "records": 347,
+   "homes": 10376,
+   "median": 1159,
+   "moe90": 62
+  },
+  "mobile_home": {
+   "records": 85,
+   "homes": 2585,
+   "median": 804,
+   "moe90": 56
+  },
+  "all_renters": {
+   "records": 1047,
+   "homes": 30740,
+   "median": 1179,
+   "moe90": 51
+  },
+  "house_detached_3br_moved_in_last_2y": {
+   "records": 59,
+   "homes": 1762,
+   "median": 1608,
+   "moe90": 284
+  },
+  "house_detached_3br_5y_or_more": {
+   "records": 49,
+   "homes": 1327,
+   "median": 1235,
+   "moe90": 248
+  },
+  "house_detached_moved_in_last_12m": {
+   "records": 76,
+   "homes": 2079,
+   "median": 1700,
+   "moe90": 234
+  },
+  "house_detached_5y_or_more": {
+   "records": 84,
+   "homes": 2604,
+   "median": 1072,
+   "moe90": 287
+  },
+  "all_moved_in_last_12m": {
+   "records": 295,
+   "homes": 8719,
+   "median": 1390,
+   "moe90": 114
+  },
+  "all_5y_or_more": {
+   "records": 281,
+   "homes": 8434,
+   "median": 926,
+   "moe90": 105
+  }
+ },
+ "pums_gross_rent": {
+  "house_detached": {
+   "records": 275,
+   "homes": 8071,
+   "median": 1646,
+   "moe90": 71
+  },
+  "house_detached_3br": {
+   "records": 157,
+   "homes": 4639,
+   "median": 1683,
+   "moe90": 138
+  },
+  "house_detached_3br_moved_in_last_2y": {
+   "records": 59,
+   "homes": 1762,
+   "median": 1811,
+   "moe90": 207
+  },
+  "apartment_or_condo_2br": {
+   "records": 347,
+   "homes": 10376,
+   "median": 1275,
+   "moe90": 38
+  }
+ },
+ "pums_utilities": {
+  "house_detached": {
+   "records": 275,
+   "median": 214
+  },
+  "apartment_or_condo_2plus": {
+   "records": 618,
+   "median": 107
+  }
+ },
+ "pums_share_of_renter_homes": {
+  "house_detached": 26.3,
+  "townhouse_attached": 5.9,
+  "apartment_or_condo_2plus": 59.4,
+  "mobile_home": 8.4
+ },
+ "pums_detached_bedrooms_share": {
+  "1": 5.9,
+  "2": 18.9,
+  "3": 57.5,
+  "4+": 17.7
+ },
+ "pums_detached_moved_in": {
+  "1": 25.8,
+  "2": 10.5,
+  "3": 31.5,
+  "4": 14.3,
+  "5": 10.8,
+  "6": 6.5,
+  "7": 0.7
+ },
+ "areas": [
+  {
+   "name": "Carolina Forest",
+   "geo": "Carolina Forest CDP",
+   "median_gross_rent": {
+    "est": 1668,
+    "moe": 102,
+    "wide": false
+   },
+   "median_contract_rent": {
+    "est": 1537,
+    "moe": 87,
+    "wide": false
+   },
+   "gross_rent_by_bedrooms": {
+    "1": {
+     "est": 1325,
+     "moe": 84,
+     "wide": false
+    },
+    "2": {
+     "est": 1686,
+     "moe": 85,
+     "wide": false
+    },
+    "3": {
+     "est": 1979,
+     "moe": 229,
+     "wide": false
+    },
+    "4": {
+     "est": 2044,
+     "moe": 655,
+     "wide": true
+    }
+   },
+   "renter_households": 3074,
+   "renter_share_pct": 30.4,
+   "renters_in_detached_houses_pct": 33.7,
+   "rent_30pct_or_more_of_income_pct": 40.7,
+   "rental_vacancy_rate_pct": 10.3
+  },
+  {
+   "name": "Socastee",
+   "geo": "Socastee CDP",
+   "median_gross_rent": {
+    "est": 1246,
+    "moe": 101,
+    "wide": false
+   },
+   "median_contract_rent": {
+    "est": 1075,
+    "moe": 114,
+    "wide": false
+   },
+   "gross_rent_by_bedrooms": {
+    "1": {
+     "est": 1122,
+     "moe": 346,
+     "wide": true
+    },
+    "2": {
+     "est": 1312,
+     "moe": 170,
+     "wide": false
+    },
+    "3": {
+     "est": 1220,
+     "moe": 486,
+     "wide": true
+    },
+    "4": {
+     "est": 1233,
+     "moe": 689,
+     "wide": true
+    }
+   },
+   "renter_households": 3116,
+   "renter_share_pct": 34.1,
+   "renters_in_detached_houses_pct": 22.9,
+   "rent_30pct_or_more_of_income_pct": 43.7,
+   "rental_vacancy_rate_pct": 2.1
+  },
+  {
+   "name": "Forestbrook",
+   "geo": "Forestbrook CDP",
+   "median_gross_rent": {
+    "est": 814,
+    "moe": 452,
+    "wide": true
+   },
+   "median_contract_rent": {
+    "est": 739,
+    "moe": 168,
+    "wide": false
+   },
+   "gross_rent_by_bedrooms": {
+    "1": null,
+    "2": {
+     "est": 778,
+     "moe": 294,
+     "wide": true
+    },
+    "3": null,
+    "4": null
+   },
+   "renter_households": 252,
+   "renter_share_pct": 8.5,
+   "renters_in_detached_houses_pct": 62.7,
+   "rent_30pct_or_more_of_income_pct": 17.9,
+   "rental_vacancy_rate_pct": 12.2
+  },
+  {
+   "name": "Myrtle Beach (city)",
+   "geo": "Myrtle Beach city",
+   "median_gross_rent": {
+    "est": 1261,
+    "moe": 77,
+    "wide": false
+   },
+   "median_contract_rent": {
+    "est": 1110,
+    "moe": 70,
+    "wide": false
+   },
+   "gross_rent_by_bedrooms": {
+    "1": {
+     "est": 1289,
+     "moe": 182,
+     "wide": false
+    },
+    "2": {
+     "est": 1212,
+     "moe": 79,
+     "wide": false
+    },
+    "3": {
+     "est": 1377,
+     "moe": 196,
+     "wide": false
+    },
+    "4": {
+     "est": 1824,
+     "moe": 307,
+     "wide": false
+    }
+   },
+   "renter_households": 6960,
+   "renter_share_pct": 39.5,
+   "renters_in_detached_houses_pct": 7.8,
+   "rent_30pct_or_more_of_income_pct": 59.4,
+   "rental_vacancy_rate_pct": 17.4
+  },
+  {
+   "name": "North Myrtle Beach",
+   "geo": "North Myrtle Beach city",
+   "median_gross_rent": {
+    "est": 1263,
+    "moe": 117,
+    "wide": false
+   },
+   "median_contract_rent": {
+    "est": 1134,
+    "moe": 110,
+    "wide": false
+   },
+   "gross_rent_by_bedrooms": {
+    "1": {
+     "est": 1082,
+     "moe": 156,
+     "wide": false
+    },
+    "2": {
+     "est": 1266,
+     "moe": 143,
+     "wide": false
+    },
+    "3": {
+     "est": 1427,
+     "moe": 276,
+     "wide": false
+    },
+    "4": null
+   },
+   "renter_households": 1778,
+   "renter_share_pct": 17.8,
+   "renters_in_detached_houses_pct": 27.8,
+   "rent_30pct_or_more_of_income_pct": 64.0,
+   "rental_vacancy_rate_pct": 65.5
+  },
+  {
+   "name": "Surfside Beach",
+   "geo": "Surfside Beach town",
+   "median_gross_rent": {
+    "est": 1274,
+    "moe": 214,
+    "wide": false
+   },
+   "median_contract_rent": {
+    "est": 1155,
+    "moe": 111,
+    "wide": false
+   },
+   "gross_rent_by_bedrooms": {
+    "1": {
+     "est": 1114,
+     "moe": 93,
+     "wide": false
+    },
+    "2": {
+     "est": 1258,
+     "moe": 200,
+     "wide": false
+    },
+    "3": {
+     "est": 1388,
+     "moe": 353,
+     "wide": true
+    },
+    "4": {
+     "est": 2083,
+     "moe": 276,
+     "wide": false
+    }
+   },
+   "renter_households": 662,
+   "renter_share_pct": 32.5,
+   "renters_in_detached_houses_pct": 22.2,
+   "rent_30pct_or_more_of_income_pct": 50.2,
+   "rental_vacancy_rate_pct": 34.9
+  },
+  {
+   "name": "Murrells Inlet",
+   "geo": "Murrells Inlet CDP",
+   "median_gross_rent": {
+    "est": 1751,
+    "moe": 96,
+    "wide": false
+   },
+   "median_contract_rent": {
+    "est": 1662,
+    "moe": 71,
+    "wide": false
+   },
+   "gross_rent_by_bedrooms": {
+    "1": {
+     "est": 1222,
+     "moe": 612,
+     "wide": true
+    },
+    "2": {
+     "est": 1679,
+     "moe": 109,
+     "wide": false
+    },
+    "3": {
+     "est": 1861,
+     "moe": 154,
+     "wide": false
+    },
+    "4": null
+   },
+   "renter_households": 645,
+   "renter_share_pct": 14.0,
+   "renters_in_detached_houses_pct": 20.3,
+   "rent_30pct_or_more_of_income_pct": 79.9,
+   "rental_vacancy_rate_pct": 0.0
+  },
+  {
+   "name": "Garden City",
+   "geo": "Garden City CDP",
+   "median_gross_rent": {
+    "est": 1472,
+    "moe": 120,
+    "wide": false
+   },
+   "median_contract_rent": {
+    "est": 1283,
+    "moe": 93,
+    "wide": false
+   },
+   "gross_rent_by_bedrooms": {
+    "1": null,
+    "2": {
+     "est": 1429,
+     "moe": 232,
+     "wide": false
+    },
+    "3": {
+     "est": 1544,
+     "moe": 199,
+     "wide": false
+    },
+    "4": null
+   },
+   "renter_households": 882,
+   "renter_share_pct": 14.6,
+   "renters_in_detached_houses_pct": 41.6,
+   "rent_30pct_or_more_of_income_pct": 33.1,
+   "rental_vacancy_rate_pct": 11.9
+  },
+  {
+   "name": "Little River",
+   "geo": "Little River CDP",
+   "median_gross_rent": {
+    "est": 1528,
+    "moe": 202,
+    "wide": false
+   },
+   "median_contract_rent": {
+    "est": 1422,
+    "moe": 202,
+    "wide": false
+   },
+   "gross_rent_by_bedrooms": {
+    "1": {
+     "est": 984,
+     "moe": 396,
+     "wide": true
+    },
+    "2": {
+     "est": 1582,
+     "moe": 191,
+     "wide": false
+    },
+    "3": {
+     "est": 1559,
+     "moe": 424,
+     "wide": true
+    },
+    "4": null
+   },
+   "renter_households": 1375,
+   "renter_share_pct": 23.4,
+   "renters_in_detached_houses_pct": 24.1,
+   "rent_30pct_or_more_of_income_pct": 54.5,
+   "rental_vacancy_rate_pct": 4.7
+  },
+  {
+   "name": "Conway (city)",
+   "geo": "Conway city",
+   "median_gross_rent": {
+    "est": 866,
+    "moe": 158,
+    "wide": false
+   },
+   "median_contract_rent": {
+    "est": 688,
+    "moe": 154,
+    "wide": false
+   },
+   "gross_rent_by_bedrooms": {
+    "1": {
+     "est": 577,
+     "moe": 73,
+     "wide": false
+    },
+    "2": {
+     "est": 765,
+     "moe": 142,
+     "wide": false
+    },
+    "3": {
+     "est": 1362,
+     "moe": 204,
+     "wide": false
+    },
+    "4": {
+     "est": 749,
+     "moe": 36,
+     "wide": false
+    }
+   },
+   "renter_households": 3036,
+   "renter_share_pct": 34.6,
+   "renters_in_detached_houses_pct": 39.4,
+   "rent_30pct_or_more_of_income_pct": 52.1,
+   "rental_vacancy_rate_pct": 4.4
+  },
+  {
+   "name": "Red Hill",
+   "geo": "Red Hill CDP",
+   "median_gross_rent": {
+    "est": 1179,
+    "moe": 167,
+    "wide": false
+   },
+   "median_contract_rent": {
+    "est": 942,
+    "moe": 103,
+    "wide": false
+   },
+   "gross_rent_by_bedrooms": {
+    "1": {
+     "est": 1365,
+     "moe": 1013,
+     "wide": true
+    },
+    "2": {
+     "est": 1140,
+     "moe": 213,
+     "wide": false
+    },
+    "3": {
+     "est": 1219,
+     "moe": 277,
+     "wide": false
+    },
+    "4": null
+   },
+   "renter_households": 1640,
+   "renter_share_pct": 25.5,
+   "renters_in_detached_houses_pct": 32.1,
+   "rent_30pct_or_more_of_income_pct": 36.0,
+   "rental_vacancy_rate_pct": 10.8
+  },
+  {
+   "name": "Bucksport",
+   "geo": "Bucksport CDP",
+   "median_gross_rent": null,
+   "median_contract_rent": null,
+   "gross_rent_by_bedrooms": {
+    "1": null,
+    "2": null,
+    "3": null,
+    "4": null
+   },
+   "renter_households": 73,
+   "renter_share_pct": 27.5,
+   "renters_in_detached_houses_pct": 24.7,
+   "rent_30pct_or_more_of_income_pct": 0.0,
+   "rental_vacancy_rate_pct": 0.0
+  },
+  {
+   "name": "Horry County",
+   "geo": "Horry County",
+   "median_gross_rent": {
+    "est": 1255,
+    "moe": 35,
+    "wide": false
+   },
+   "median_contract_rent": {
+    "est": 1111,
+    "moe": 31,
+    "wide": false
+   },
+   "gross_rent_by_bedrooms": {
+    "1": {
+     "est": 1061,
+     "moe": 115,
+     "wide": false
+    },
+    "2": {
+     "est": 1241,
+     "moe": 49,
+     "wide": false
+    },
+    "3": {
+     "est": 1399,
+     "moe": 94,
+     "wide": false
+    },
+    "4": {
+     "est": 1531,
+     "moe": 237,
+     "wide": false
+    }
+   },
+   "renter_households": 36099,
+   "renter_share_pct": 22.7,
+   "renters_in_detached_houses_pct": 28.9,
+   "rent_30pct_or_more_of_income_pct": 52.0,
+   "rental_vacancy_rate_pct": 19.2
+  },
+  {
+   "name": "South Carolina",
+   "geo": "South Carolina",
+   "median_gross_rent": {
+    "est": 1180,
+    "moe": 9,
+    "wide": false
+   },
+   "median_contract_rent": {
+    "est": 966,
+    "moe": 9,
+    "wide": false
+   },
+   "gross_rent_by_bedrooms": {
+    "1": {
+     "est": 1113,
+     "moe": 16,
+     "wide": false
+    },
+    "2": {
+     "est": 1148,
+     "moe": 11,
+     "wide": false
+    },
+    "3": {
+     "est": 1240,
+     "moe": 16,
+     "wide": false
+    },
+    "4": {
+     "est": 1461,
+     "moe": 59,
+     "wide": false
+    }
+   },
+   "renter_households": 595868,
+   "renter_share_pct": 28.1,
+   "renters_in_detached_houses_pct": 30.9,
+   "rent_30pct_or_more_of_income_pct": 52.1,
+   "rental_vacancy_rate_pct": 8.3
+  },
+  {
+   "name": "United States",
+   "geo": "United States",
+   "median_gross_rent": {
+    "est": 1413,
+    "moe": 2,
+    "wide": false
+   },
+   "median_contract_rent": {
+    "est": 1219,
+    "moe": 2,
+    "wide": false
+   },
+   "gross_rent_by_bedrooms": {
+    "1": {
+     "est": 1235,
+     "moe": 2,
+     "wide": false
+    },
+    "2": {
+     "est": 1407,
+     "moe": 2,
+     "wide": false
+    },
+    "3": {
+     "est": 1584,
+     "moe": 4,
+     "wide": false
+    },
+    "4": {
+     "est": 1957,
+     "moe": 9,
+     "wide": false
+    }
+   },
+   "renter_households": 45017354,
+   "renter_share_pct": 34.8,
+   "renters_in_detached_houses_pct": 25.0,
+   "rent_30pct_or_more_of_income_pct": 51.1,
+   "rental_vacancy_rate_pct": 5.5
+  }
+ ],
+ "zips": [
+  {
+   "zip": "29511",
+   "median_gross_rent": {
+    "est": 980,
+    "moe": 241,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 888,
+    "moe": 440,
+    "wide": true
+   },
+   "gross_rent_2br": {
+    "est": 1068,
+    "moe": 149,
+    "wide": false
+   },
+   "zillow_asking_all_homes": null
+  },
+  {
+   "zip": "29526",
+   "median_gross_rent": {
+    "est": 1056,
+    "moe": 94,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 1217,
+    "moe": 104,
+    "wide": false
+   },
+   "gross_rent_2br": {
+    "est": 989,
+    "moe": 171,
+    "wide": false
+   },
+   "zillow_asking_all_homes": 1809
+  },
+  {
+   "zip": "29527",
+   "median_gross_rent": {
+    "est": 964,
+    "moe": 95,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 1172,
+    "moe": 106,
+    "wide": false
+   },
+   "gross_rent_2br": {
+    "est": 739,
+    "moe": 128,
+    "wide": false
+   },
+   "zillow_asking_all_homes": 1800
+  },
+  {
+   "zip": "29544",
+   "median_gross_rent": {
+    "est": 956,
+    "moe": 76,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 960,
+    "moe": 78,
+    "wide": false
+   },
+   "gross_rent_2br": {
+    "est": 914,
+    "moe": 437,
+    "wide": true
+   },
+   "zillow_asking_all_homes": null
+  },
+  {
+   "zip": "29545",
+   "median_gross_rent": {
+    "est": 750,
+    "moe": 183,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 854,
+    "moe": 223,
+    "wide": true
+   },
+   "gross_rent_2br": null,
+   "zillow_asking_all_homes": null
+  },
+  {
+   "zip": "29566",
+   "median_gross_rent": {
+    "est": 1520,
+    "moe": 219,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 1526,
+    "moe": 579,
+    "wide": true
+   },
+   "gross_rent_2br": {
+    "est": 1546,
+    "moe": 227,
+    "wide": false
+   },
+   "zillow_asking_all_homes": 1562
+  },
+  {
+   "zip": "29568",
+   "median_gross_rent": {
+    "est": 1823,
+    "moe": 558,
+    "wide": true
+   },
+   "gross_rent_3br": {
+    "est": 1978,
+    "moe": 605,
+    "wide": true
+   },
+   "gross_rent_2br": {
+    "est": 1672,
+    "moe": 1050,
+    "wide": true
+   },
+   "zillow_asking_all_homes": 1840
+  },
+  {
+   "zip": "29569",
+   "median_gross_rent": {
+    "est": 786,
+    "moe": 73,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 1014,
+    "moe": 105,
+    "wide": false
+   },
+   "gross_rent_2br": {
+    "est": 776,
+    "moe": 82,
+    "wide": false
+   },
+   "zillow_asking_all_homes": null
+  },
+  {
+   "zip": "29572",
+   "median_gross_rent": {
+    "est": 1334,
+    "moe": 96,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 1486,
+    "moe": 292,
+    "wide": false
+   },
+   "gross_rent_2br": {
+    "est": 1315,
+    "moe": 94,
+    "wide": false
+   },
+   "zillow_asking_all_homes": 1528
+  },
+  {
+   "zip": "29575",
+   "median_gross_rent": {
+    "est": 1305,
+    "moe": 239,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 1722,
+    "moe": 110,
+    "wide": false
+   },
+   "gross_rent_2br": {
+    "est": 1232,
+    "moe": 126,
+    "wide": false
+   },
+   "zillow_asking_all_homes": 1612
+  },
+  {
+   "zip": "29576",
+   "median_gross_rent": {
+    "est": 1622,
+    "moe": 110,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 1692,
+    "moe": 159,
+    "wide": false
+   },
+   "gross_rent_2br": {
+    "est": 1588,
+    "moe": 144,
+    "wide": false
+   },
+   "zillow_asking_all_homes": 1919
+  },
+  {
+   "zip": "29577",
+   "median_gross_rent": {
+    "est": 1217,
+    "moe": 88,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 1355,
+    "moe": 227,
+    "wide": false
+   },
+   "gross_rent_2br": {
+    "est": 1172,
+    "moe": 88,
+    "wide": false
+   },
+   "zillow_asking_all_homes": 1682
+  },
+  {
+   "zip": "29579",
+   "median_gross_rent": {
+    "est": 1617,
+    "moe": 69,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 1914,
+    "moe": 206,
+    "wide": false
+   },
+   "gross_rent_2br": {
+    "est": 1598,
+    "moe": 77,
+    "wide": false
+   },
+   "zillow_asking_all_homes": 1769
+  },
+  {
+   "zip": "29581",
+   "median_gross_rent": {
+    "est": 775,
+    "moe": 168,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 691,
+    "moe": 62,
+    "wide": false
+   },
+   "gross_rent_2br": {
+    "est": 823,
+    "moe": 183,
+    "wide": false
+   },
+   "zillow_asking_all_homes": null
+  },
+  {
+   "zip": "29582",
+   "median_gross_rent": {
+    "est": 1258,
+    "moe": 114,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 1362,
+    "moe": 237,
+    "wide": false
+   },
+   "gross_rent_2br": {
+    "est": 1270,
+    "moe": 133,
+    "wide": false
+   },
+   "zillow_asking_all_homes": 1949
+  },
+  {
+   "zip": "29585",
+   "median_gross_rent": {
+    "est": 1660,
+    "moe": 83,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 1417,
+    "moe": 133,
+    "wide": false
+   },
+   "gross_rent_2br": {
+    "est": 1709,
+    "moe": 50,
+    "wide": false
+   },
+   "zillow_asking_all_homes": 1841
+  },
+  {
+   "zip": "29588",
+   "median_gross_rent": {
+    "est": 1282,
+    "moe": 101,
+    "wide": false
+   },
+   "gross_rent_3br": {
+    "est": 1348,
+    "moe": 299,
+    "wide": false
+   },
+   "gross_rent_2br": {
+    "est": 1308,
+    "moe": 161,
+    "wide": false
+   },
+   "zillow_asking_all_homes": 1656
+  }
+ ],
+ "zillow_seasonal_pct_by_month": {
+  "01": -1.35,
+  "02": -1.05,
+  "03": -0.43,
+  "04": -0.19,
+  "05": 0.0,
+  "06": 0.24,
+  "07": 0.45,
+  "08": 0.59,
+  "09": 0.43,
+  "10": 0.19,
+  "11": -0.5,
+  "12": -1.2
+ },
+ "zillow_seasonal_years": [
+  "2015",
+  "2026"
+ ],
+ "zillow_growth_since": {
+  "2015-09-30": {
+   "zori_house_sm": 78.9,
+   "zori_all_sm": 73.9,
+   "zhvi_house_mid": 84.9,
+   "zhvi_all_mid": 85.8
+  },
+  "2019-09-30": {
+   "zori_house_sm": 50.3,
+   "zori_all_sm": 47.0,
+   "zhvi_house_mid": 55.8,
+   "zhvi_all_mid": 55.1
+  },
+  "2022-09-30": {
+   "zori_house_sm": 8.5,
+   "zori_all_sm": 4.0,
+   "zhvi_house_mid": -0.5,
+   "zhvi_all_mid": -1.3
+  },
+  "2023-09-30": {
+   "zori_house_sm": 5.2,
+   "zori_all_sm": 2.7,
+   "zhvi_house_mid": -0.6,
+   "zhvi_all_mid": -2.1
+  }
+ },
+ "zillow_house_rent_x12_over_value_pct": {
+  "2015": 7.06,
+  "2016": 7.13,
+  "2017": 7.13,
+  "2018": 7.06,
+  "2019": 7.08,
+  "2020": 6.96,
+  "2021": 6.85,
+  "2022": 6.27,
+  "2023": 6.45,
+  "2024": 6.52,
+  "2025": 6.69,
+  "2026": 6.83
+ },
+ "zillow_house_series_sept": {
+  "2015": 1160,
+  "2016": 1207,
+  "2017": 1262,
+  "2018": 1316,
+  "2019": 1380,
+  "2020": 1433,
+  "2021": 1708,
+  "2022": 1912,
+  "2023": 1972,
+  "2024": 2010,
+  "2025": 2019,
+  "2026": 2074
+ },
+ "zillow_house_value_series_sept": {
+  "2015": 197000.0,
+  "2016": 203000.0,
+  "2017": 212000.0,
+  "2018": 224000.0,
+  "2019": 234000.0,
+  "2020": 247000.0,
+  "2021": 299000.0,
+  "2022": 366000.0,
+  "2023": 367000.0,
+  "2024": 370000.0,
+  "2025": 362000.0,
+  "2026": 364000.0
+ },
+ "population": {
+  "base_2020": 351036,
+  "july_2025": 427551,
+  "natural_change_2020_2025": -9638,
+  "net_migration_2020_2025": 85472,
+  "growth_pct": 21.8
+ },
+ "new_vs_long_lease_3br": {
+  "moved_in_last_2y": 1608,
+  "stayed_5y_or_more": 1235,
+  "gap": 373,
+  "gap_pct": 30
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "8661529": {
+  "name": "Captain Alex's Marina, Parsonage Creek",
+  "url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=chapter3realty&begin_date=20260101&end_date=20261231&datum=MLLW&station=8661529&time_zone=lst_ldt&units=english&interval=hilo&format=json",
+  "tides": 1411,
+  "mean_range_ft": 4.14,
+  "max_high_ft": 5.836,
+  "min_low_ft": -0.747,
+  "mean_high_ft": 4.34,
+  "mean_low_ft": 0.2,
+  "lows_below_0": 213
+ },
+ "8661437": {
+  "name": "Garden City Pier (ocean)",
+  "url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=chapter3realty&begin_date=20260101&end_date=20261231&datum=MLLW&station=8661437&time_zone=lst_ldt&units=english&interval=hilo&format=json",
+  "tides": 1410,
+  "mean_range_ft": 4.8,
+  "max_high_ft": 6.845,
+  "min_low_ft": -0.934,
+  "mean_high_ft": 5.11,
+  "mean_low_ft": 0.31,
+  "lows_below_0": 205
+ },
+ "8661493": {
+  "name": "Wachesaw Landing, Waccamaw River",
+  "url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=chapter3realty&begin_date=20260101&end_date=20261231&datum=MLLW&station=8661493&time_zone=lst_ldt&units=english&interval=hilo&format=json",
+  "tides": 1411,
+  "mean_range_ft": 2.33,
+  "max_high_ft": 3.533,
+  "min_low_ft": -0.565,
+  "mean_high_ft": 2.55,
+  "mean_low_ft": 0.22,
+  "lows_below_0": 176
+ }
+}

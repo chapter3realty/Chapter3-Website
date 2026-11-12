@@ -1,0 +1,138 @@
+{
+ "note": "Built by build_findings.py. Do not edit by hand.",
+ "owners": {
+  "homes_6pct": 102511,
+  "homes_4pct": 124489,
+  "pct_6pct_not_local": 63.4,
+  "pct_6pct_local": 36.6,
+  "condo_6pct": 32162,
+  "condo_6pct_not_local_pct": 78.0,
+  "house_6pct": 70349,
+  "house_6pct_not_local_pct": 56.7,
+  "res4_local_pct": 98.5,
+  "individual_all_pct_not_local": 64.3,
+  "individual_condo_pct_not_local": 80.0,
+  "individual_house_pct_not_local": 57.9,
+  "bulk_homes": 10827,
+  "bulk_addresses": 261,
+  "chart_6pct": [
+   {
+    "label": "Grand Strand",
+    "n": 37519,
+    "pct": 36.6
+   },
+   {
+    "label": "Elsewhere in South Carolina",
+    "n": 7414,
+    "pct": 7.2
+   },
+   {
+    "label": "North Carolina",
+    "n": 17208,
+    "pct": 16.8
+   },
+   {
+    "label": "Other states",
+    "n": 39672,
+    "pct": 38.7
+   },
+   {
+    "label": "Outside the U.S.",
+    "n": 636,
+    "pct": 0.6
+   }
+  ],
+  "top_states_condo_6pct": [
+   [
+    "NC",
+    5959
+   ],
+   [
+    "FL",
+    3001
+   ],
+   [
+    "NY",
+    2664
+   ],
+   [
+    "PA",
+    1849
+   ],
+   [
+    "NJ",
+    1493
+   ]
+  ],
+  "top_states_house_6pct": [
+   [
+    "NC",
+    11249
+   ],
+   [
+    "NY",
+    3493
+   ],
+   [
+    "PA",
+    2645
+   ],
+   [
+    "VA",
+    2559
+   ],
+   [
+    "NJ",
+    2302
+   ]
+  ]
+ },
+ "lt_fees": {
+  "firms": 5,
+  "at_10pct": 4,
+  "monthly_min_pct": 7,
+  "monthly_max_pct": 10,
+  "monthly_median_pct": 10,
+  "leasing_median_share": 0.5,
+  "leasing_min_share": 0.0,
+  "leasing_max_share": 1.0,
+  "renewals_published_usd": [
+   100,
+   150
+  ],
+  "excluded": 4
+ },
+ "worked_year": {
+  "rent": 1600,
+  "annual_rent": 19200,
+  "monthly_fee": 160,
+  "mgmt_year": 1920,
+  "leasing_half": 800,
+  "leasing_full": 1600,
+  "renewal_mid": 125,
+  "year_new_tenant_low": 2720,
+  "year_new_tenant_high": 3360,
+  "year_renewal": 2045,
+  "turnover_share_12m": 25.8,
+  "avg_year_low": 2219,
+  "avg_year_high": 2384,
+  "avg_pct_of_rent_low": 11.6,
+  "avg_pct_of_rent_high": 12.4,
+  "new_year_pct_low": 14.2,
+  "new_year_pct_high": 17.5,
+  "seven_pct_with_150_min_effective_pct": 9.4,
+  "seven_pct_breakeven_rent": 2143
+ },
+ "str_year": {
+  "market": "myrtle-beach",
+  "revenue": 25807,
+  "dataAsOf": "2026-10-01",
+  "basic_low_pct": 12.62,
+  "basic_high_pct": 17.45,
+  "basic_low_usd": 3260.0,
+  "basic_high_usd": 4500.0,
+  "full_low_pct": 40,
+  "full_high_pct": 60,
+  "full_base": "gross profit"
+ }
+}

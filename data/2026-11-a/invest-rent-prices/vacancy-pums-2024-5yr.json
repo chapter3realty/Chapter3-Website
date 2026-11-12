@@ -1,0 +1,158 @@
+{
+ "house_detached": {
+  "rental_vacancy": {
+   "num": 1783,
+   "den": 10281,
+   "rate_pct": 17.3,
+   "moe90_pct": 4.3,
+   "num_moe90": 462,
+   "records": 50
+  },
+  "dur_lt_2m": {
+   "num": 1709,
+   "den": 1783,
+   "rate_pct": 95.8,
+   "moe90_pct": 4.1,
+   "num_moe90": 431,
+   "records": 47
+  },
+  "dur_lt_1m": {
+   "num": 1597,
+   "den": 1783,
+   "rate_pct": 89.6,
+   "moe90_pct": 7.9,
+   "num_moe90": 418,
+   "records": 43
+  },
+  "dur_2_to_6m": {
+   "num": 60,
+   "den": 1783,
+   "rate_pct": 3.4,
+   "moe90_pct": 4.0,
+   "num_moe90": 77,
+   "records": 2
+  },
+  "dur_6m_plus": {
+   "num": 14,
+   "den": 1783,
+   "rate_pct": 0.8,
+   "moe90_pct": 1.2,
+   "num_moe90": 21,
+   "records": 1
+  },
+  "dur_counts": {
+   "1": 43,
+   "2": 4,
+   "3": 1,
+   "4": 1,
+   "5": 0,
+   "6": 0,
+   "7": 1
+  },
+  "seasonal_records": 319
+ },
+ "apartment_or_condo_2plus": {
+  "rental_vacancy": {
+   "num": 6432,
+   "den": 25433,
+   "rate_pct": 25.3,
+   "moe90_pct": 3.0,
+   "num_moe90": 910,
+   "records": 193
+  },
+  "dur_lt_2m": {
+   "num": 6168,
+   "den": 6432,
+   "rate_pct": 95.9,
+   "moe90_pct": 3.1,
+   "num_moe90": 883,
+   "records": 187
+  },
+  "dur_lt_1m": {
+   "num": 5883,
+   "den": 6432,
+   "rate_pct": 91.5,
+   "moe90_pct": 4.1,
+   "num_moe90": 834,
+   "records": 178
+  },
+  "dur_2_to_6m": {
+   "num": 223,
+   "den": 6432,
+   "rate_pct": 3.5,
+   "moe90_pct": 3.1,
+   "num_moe90": 197,
+   "records": 5
+  },
+  "dur_6m_plus": {
+   "num": 41,
+   "den": 6432,
+   "rate_pct": 0.6,
+   "moe90_pct": 1.0,
+   "num_moe90": 68,
+   "records": 1
+  },
+  "dur_counts": {
+   "1": 178,
+   "2": 9,
+   "3": 2,
+   "4": 3,
+   "5": 0,
+   "6": 1,
+   "7": 0
+  },
+  "seasonal_records": 679
+ },
+ "all": {
+  "rental_vacancy": {
+   "num": 8706,
+   "den": 40738,
+   "rate_pct": 21.4,
+   "moe90_pct": 2.2,
+   "num_moe90": 1102,
+   "records": 261
+  },
+  "dur_lt_2m": {
+   "num": 8324,
+   "den": 8706,
+   "rate_pct": 95.6,
+   "moe90_pct": 2.6,
+   "num_moe90": 1063,
+   "records": 250
+  },
+  "dur_lt_1m": {
+   "num": 7804,
+   "den": 8706,
+   "rate_pct": 89.6,
+   "moe90_pct": 4.0,
+   "num_moe90": 1023,
+   "records": 233
+  },
+  "dur_2_to_6m": {
+   "num": 327,
+   "den": 8706,
+   "rate_pct": 3.8,
+   "moe90_pct": 2.6,
+   "num_moe90": 227,
+   "records": 9
+  },
+  "dur_6m_plus": {
+   "num": 55,
+   "den": 8706,
+   "rate_pct": 0.6,
+   "moe90_pct": 0.8,
+   "num_moe90": 71,
+   "records": 2
+  },
+  "dur_counts": {
+   "1": 233,
+   "2": 17,
+   "3": 4,
+   "4": 5,
+   "5": 0,
+   "6": 1,
+   "7": 1
+  },
+  "seasonal_records": 1172
+ }
+}

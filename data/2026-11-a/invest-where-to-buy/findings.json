@@ -1,0 +1,1865 @@
+{
+ "made": "analyze.py",
+ "areas": [
+  {
+   "slug": "myrtle-beach",
+   "name": "Myrtle Beach",
+   "sq_mi": 23.7,
+   "main_zip": "29577",
+   "zips": [
+    [
+     29577,
+     459
+    ],
+    [
+     29572,
+     221
+    ],
+    [
+     29579,
+     19
+    ]
+   ],
+   "house": {
+    "homes": 10298,
+    "pct_6pct": 24.9,
+    "pct_owner_out_of_state": 11.7,
+    "pct_high_risk_flood": 4.6,
+    "pct_ve": 0.1,
+    "horry_homes": 10298,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "880",
+      6873
+     ],
+     [
+      "882",
+      1271
+     ],
+     [
+      "895",
+      1201
+     ]
+    ],
+    "resales": 489,
+    "median_resale": 535000,
+    "p25": 409900,
+    "p75": 745000,
+    "horry_resales": 489,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 20,
+    "listings": 262,
+    "listings_str_allowed": 22,
+    "pct_listings_str": 8.4,
+    "listings_rentals_allowed": 220,
+    "median_ask": 675000
+   },
+   "condo": {
+    "homes": 16929,
+    "pct_6pct": 88.2,
+    "pct_owner_out_of_state": 64.7,
+    "pct_high_risk_flood": 24.6,
+    "pct_ve": 6.5,
+    "horry_homes": 16929,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "880",
+      12663
+     ],
+     [
+      "899",
+      1088
+     ],
+     [
+      "893",
+      1034
+     ]
+    ],
+    "resales": 1052,
+    "median_resale": 172512,
+    "p25": 110000,
+    "p75": 268750,
+    "horry_resales": 1052,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 4,
+    "listings": 1008,
+    "listings_str_allowed": 822,
+    "pct_listings_str": 81.5,
+    "listings_rentals_allowed": 900,
+    "median_ask": 174650
+   },
+   "townhouse": {
+    "homes": 3465,
+    "pct_6pct": 69.6,
+    "pct_owner_out_of_state": 34.6,
+    "pct_high_risk_flood": 6.2,
+    "pct_ve": 0.0,
+    "horry_homes": 3465,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "880",
+      2362
+     ],
+     [
+      "891",
+      354
+     ],
+     [
+      "893",
+      241
+     ]
+    ],
+    "resales": 228,
+    "median_resale": 189000,
+    "p25": 131000,
+    "p75": 305250,
+    "horry_resales": 228,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 30,
+    "listings": 85,
+    "listings_str_allowed": 13,
+    "pct_listings_str": 15.3,
+    "listings_rentals_allowed": 75,
+    "median_ask": 319999
+   },
+   "all": {
+    "homes": 31031,
+    "pct_6pct": 65.1,
+    "pct_owner_out_of_state": 43.3,
+    "pct_high_risk_flood": 15.7,
+    "pct_ve": 3.6,
+    "horry_homes": 31031,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "880",
+      22209
+     ],
+     [
+      "882",
+      2183
+     ],
+     [
+      "891",
+      1702
+     ]
+    ],
+    "resales": 0,
+    "median_resale": null,
+    "p25": null,
+    "p75": null,
+    "horry_resales": 0,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 1355,
+    "listings_str_allowed": 857,
+    "pct_listings_str": 63.2,
+    "listings_rentals_allowed": 1195,
+    "median_ask": 215900
+   },
+   "hud_safmr_fy2027": {
+    "0": 1090,
+    "1": 1190,
+    "2": 1420,
+    "3": 1720,
+    "4": 1900,
+    "area": "Myrtle Beach-North Myrtle Beach-Conway, SC HUD Metro FMR Area"
+   },
+   "acs_2024_5yr": {
+    "median_gross_rent": 1261,
+    "moe": 77,
+    "occupied": 17623,
+    "renter": 6960,
+    "pct_renter": 39.5,
+    "geo": "1600000US4549075",
+    "name": "Myrtle Beach city, South Carolina"
+   },
+   "mills_6pct": 254.6,
+   "tax_6pct_median_house": 8173,
+   "tax_6pct_median_condo": 2635,
+   "gross_yield_house_3br_pct": 3.9,
+   "rent_minus_tax_house_pct": 2.3,
+   "nightly_airroi": {
+    "revenue": 20946,
+    "occupancy": 33.2,
+    "adr": 253,
+    "listings": 8583,
+    "median": 2115,
+    "peakMonth": "June",
+    "peakRevenue": 4878,
+    "lowMonth": "January",
+    "lowRevenue": 1466
+   }
+  },
+  {
+   "slug": "north-myrtle-beach",
+   "name": "North Myrtle Beach",
+   "sq_mi": 22.9,
+   "main_zip": "29582",
+   "zips": [
+    [
+     29582,
+     775
+    ],
+    [
+     29568,
+     147
+    ],
+    [
+     29566,
+     10
+    ],
+    [
+     29572,
+     3
+    ]
+   ],
+   "house": {
+    "homes": 11574,
+    "pct_6pct": 46.8,
+    "pct_owner_out_of_state": 30.3,
+    "pct_high_risk_flood": 22.2,
+    "pct_ve": 0.7,
+    "horry_homes": 11574,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "550",
+      10932
+     ],
+     [
+      "551",
+      633
+     ],
+     [
+      "500",
+      9
+     ]
+    ],
+    "resales": 565,
+    "median_resale": 565000,
+    "p25": 416500,
+    "p75": 740000,
+    "horry_resales": 565,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 279,
+    "listings": 330,
+    "listings_str_allowed": 108,
+    "pct_listings_str": 32.7,
+    "listings_rentals_allowed": 297,
+    "median_ask": 614028
+   },
+   "condo": {
+    "homes": 17177,
+    "pct_6pct": 85.6,
+    "pct_owner_out_of_state": 67.2,
+    "pct_high_risk_flood": 42.7,
+    "pct_ve": 0.0,
+    "horry_homes": 17177,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "550",
+      17169
+     ],
+     [
+      "551",
+      8
+     ]
+    ],
+    "resales": 1011,
+    "median_resale": 300000,
+    "p25": 220000,
+    "p75": 425000,
+    "horry_resales": 1011,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 53,
+    "listings": 580,
+    "listings_str_allowed": 465,
+    "pct_listings_str": 80.2,
+    "listings_rentals_allowed": 519,
+    "median_ask": 299950
+   },
+   "townhouse": {
+    "homes": 1177,
+    "pct_6pct": 80.4,
+    "pct_owner_out_of_state": 49.4,
+    "pct_high_risk_flood": 25.1,
+    "pct_ve": 0.0,
+    "horry_homes": 1177,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "550",
+      1177
+     ]
+    ],
+    "resales": 56,
+    "median_resale": 348750,
+    "p25": 245500,
+    "p75": 489975,
+    "horry_resales": 56,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 25,
+    "listings": 49,
+    "listings_str_allowed": 11,
+    "pct_listings_str": 22.4,
+    "listings_rentals_allowed": 41,
+    "median_ask": 326990
+   },
+   "all": {
+    "homes": 31132,
+    "pct_6pct": 70.7,
+    "pct_owner_out_of_state": 51.7,
+    "pct_high_risk_flood": 33.1,
+    "pct_ve": 0.3,
+    "horry_homes": 31132,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "550",
+      30471
+     ],
+     [
+      "551",
+      643
+     ],
+     [
+      "500",
+      18
+     ]
+    ],
+    "resales": 0,
+    "median_resale": null,
+    "p25": null,
+    "p75": null,
+    "horry_resales": 0,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 959,
+    "listings_str_allowed": 584,
+    "pct_listings_str": 60.9,
+    "listings_rentals_allowed": 857,
+    "median_ask": 399900
+   },
+   "hud_safmr_fy2027": {
+    "0": 1190,
+    "1": 1300,
+    "2": 1550,
+    "3": 1880,
+    "4": 2040,
+    "area": "Myrtle Beach-North Myrtle Beach-Conway, SC HUD Metro FMR Area"
+   },
+   "acs_2024_5yr": {
+    "median_gross_rent": 1263,
+    "moe": 117,
+    "occupied": 9967,
+    "renter": 1778,
+    "pct_renter": 17.8,
+    "geo": "1600000US4551280",
+    "name": "North Myrtle Beach city, South Carolina"
+   },
+   "mills_6pct": 221.2,
+   "tax_6pct_median_house": 7499,
+   "tax_6pct_median_condo": 3982,
+   "gross_yield_house_3br_pct": 4.0,
+   "rent_minus_tax_house_pct": 2.7,
+   "nightly_airroi": {
+    "revenue": 28667,
+    "occupancy": 32.2,
+    "adr": 374,
+    "listings": 4406,
+    "median": 2729,
+    "peakMonth": "June",
+    "peakRevenue": 6040,
+    "lowMonth": "January",
+    "lowRevenue": 2349
+   }
+  },
+  {
+   "slug": "surfside-beach",
+   "name": "Surfside Beach",
+   "sq_mi": 1.9,
+   "main_zip": "29575",
+   "zips": [
+    [
+     29575,
+     130
+    ]
+   ],
+   "house": {
+    "homes": 2805,
+    "pct_6pct": 54.6,
+    "pct_owner_out_of_state": 28.6,
+    "pct_high_risk_flood": 30.0,
+    "pct_ve": 0.4,
+    "horry_homes": 2805,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "660",
+      2805
+     ]
+    ],
+    "resales": 119,
+    "median_resale": 705000,
+    "p25": 500000,
+    "p75": 955000,
+    "horry_resales": 119,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 1,
+    "listings": 41,
+    "listings_str_allowed": 14,
+    "pct_listings_str": 34.1,
+    "listings_rentals_allowed": 38,
+    "median_ask": 855000
+   },
+   "condo": {
+    "homes": 873,
+    "pct_6pct": 89.6,
+    "pct_owner_out_of_state": 54.9,
+    "pct_high_risk_flood": 80.3,
+    "pct_ve": 0.1,
+    "horry_homes": 873,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "660",
+      841
+     ],
+     [
+      "600",
+      32
+     ]
+    ],
+    "resales": 52,
+    "median_resale": 370000,
+    "p25": 290000,
+    "p75": 496250,
+    "horry_resales": 52,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 1,
+    "listings": 20,
+    "listings_str_allowed": 17,
+    "pct_listings_str": 85.0,
+    "listings_rentals_allowed": 17,
+    "median_ask": 453000
+   },
+   "townhouse": {
+    "homes": 314,
+    "pct_6pct": 64.6,
+    "pct_owner_out_of_state": 37.9,
+    "pct_high_risk_flood": 0.6,
+    "pct_ve": 0.0,
+    "horry_homes": 314,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "660",
+      314
+     ]
+    ],
+    "resales": 17,
+    "median_resale": 269500,
+    "p25": 211000,
+    "p75": 323000,
+    "horry_resales": 17,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 3,
+    "listings_str_allowed": 0,
+    "pct_listings_str": 0.0,
+    "listings_rentals_allowed": 3,
+    "median_ask": 327000
+   },
+   "all": {
+    "homes": 4076,
+    "pct_6pct": 63.6,
+    "pct_owner_out_of_state": 35.3,
+    "pct_high_risk_flood": 38.7,
+    "pct_ve": 0.3,
+    "horry_homes": 4076,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "660",
+      4044
+     ],
+     [
+      "600",
+      32
+     ]
+    ],
+    "resales": 0,
+    "median_resale": null,
+    "p25": null,
+    "p75": null,
+    "horry_resales": 0,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 64,
+    "listings_str_allowed": 31,
+    "pct_listings_str": 48.4,
+    "listings_rentals_allowed": 58,
+    "median_ask": 647000
+   },
+   "hud_safmr_fy2027": {
+    "0": 1220,
+    "1": 1330,
+    "2": 1590,
+    "3": 1930,
+    "4": 2090,
+    "area": "Myrtle Beach-North Myrtle Beach-Conway, SC HUD Metro FMR Area"
+   },
+   "acs_2024_5yr": {
+    "median_gross_rent": 1274,
+    "moe": 214,
+    "occupied": 2034,
+    "renter": 662,
+    "pct_renter": 32.5,
+    "geo": "1600000US4570585",
+    "name": "Surfside Beach town, South Carolina"
+   },
+   "mills_6pct": 214.2,
+   "tax_6pct_median_house": 9061,
+   "tax_6pct_median_condo": 4755,
+   "gross_yield_house_3br_pct": 3.3,
+   "rent_minus_tax_house_pct": 2.0,
+   "nightly_airroi": {
+    "revenue": 35482,
+    "occupancy": 34.2,
+    "adr": 415,
+    "listings": 538,
+    "median": 3221,
+    "peakMonth": "June",
+    "peakRevenue": null,
+    "lowMonth": "December",
+    "lowRevenue": null
+   }
+  },
+  {
+   "slug": "garden-city",
+   "name": "Garden City",
+   "sq_mi": 5.5,
+   "main_zip": "29576",
+   "zips": [
+    [
+     29576,
+     137
+    ],
+    [
+     29575,
+     44
+    ]
+   ],
+   "house": {
+    "homes": 2736,
+    "pct_6pct": 38.3,
+    "pct_owner_out_of_state": 16.4,
+    "pct_high_risk_flood": 30.9,
+    "pct_ve": 2.2,
+    "horry_homes": 2736,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "610",
+      1979
+     ],
+     [
+      "600",
+      504
+     ],
+     [
+      "620",
+      250
+     ]
+    ],
+    "resales": 140,
+    "median_resale": 405550,
+    "p25": 339250,
+    "p75": 669625,
+    "horry_resales": 140,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 2,
+    "listings": 51,
+    "listings_str_allowed": 29,
+    "pct_listings_str": 56.9,
+    "listings_rentals_allowed": 42,
+    "median_ask": 749900
+   },
+   "condo": {
+    "homes": 3429,
+    "pct_6pct": 76.0,
+    "pct_owner_out_of_state": 47.5,
+    "pct_high_risk_flood": 46.9,
+    "pct_ve": 2.8,
+    "horry_homes": 3429,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "610",
+      2645
+     ],
+     [
+      "600",
+      784
+     ]
+    ],
+    "resales": 262,
+    "median_resale": 221250,
+    "p25": 164338,
+    "p75": 335000,
+    "horry_resales": 262,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 104,
+    "listings_str_allowed": 56,
+    "pct_listings_str": 53.8,
+    "listings_rentals_allowed": 88,
+    "median_ask": 229200
+   },
+   "townhouse": {
+    "homes": 293,
+    "pct_6pct": 76.5,
+    "pct_owner_out_of_state": 22.5,
+    "pct_high_risk_flood": 58.0,
+    "pct_ve": 14.0,
+    "horry_homes": 293,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "610",
+      246
+     ],
+     [
+      "600",
+      47
+     ]
+    ],
+    "resales": 5,
+    "median_resale": 260000,
+    "p25": 232500,
+    "p75": 385000,
+    "horry_resales": 5,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 19,
+    "listings": 2,
+    "listings_str_allowed": 1,
+    "pct_listings_str": 50.0,
+    "listings_rentals_allowed": 1,
+    "median_ask": 299000
+   },
+   "all": {
+    "homes": 7464,
+    "pct_6pct": 61.1,
+    "pct_owner_out_of_state": 33.9,
+    "pct_high_risk_flood": 39.1,
+    "pct_ve": 2.7,
+    "horry_homes": 7464,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "610",
+      5872
+     ],
+     [
+      "600",
+      1335
+     ],
+     [
+      "620",
+      252
+     ]
+    ],
+    "resales": 0,
+    "median_resale": null,
+    "p25": null,
+    "p75": null,
+    "horry_resales": 0,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 157,
+    "listings_str_allowed": 86,
+    "pct_listings_str": 54.8,
+    "listings_rentals_allowed": 131,
+    "median_ask": 343500
+   },
+   "hud_safmr_fy2027": {
+    "0": 1300,
+    "1": 1410,
+    "2": 1720,
+    "3": 2080,
+    "4": 2420,
+    "area": "Georgetown County, SC"
+   },
+   "acs_2024_5yr": {
+    "median_gross_rent": 1472,
+    "moe": 120,
+    "occupied": 6023,
+    "renter": 882,
+    "pct_renter": 14.6,
+    "geo": "1600000US4528455",
+    "name": "Garden City CDP, South Carolina"
+   },
+   "mills_6pct": 207.3,
+   "tax_6pct_median_house": 5044,
+   "tax_6pct_median_condo": 2752,
+   "gross_yield_house_3br_pct": 6.2,
+   "rent_minus_tax_house_pct": 4.9,
+   "nightly_airroi": {
+    "revenue": 33942,
+    "occupancy": 36.2,
+    "adr": 372,
+    "listings": 395,
+    "median": 2916,
+    "peakMonth": "June",
+    "peakRevenue": 6480,
+    "lowMonth": "January",
+    "lowRevenue": 2701
+   }
+  },
+  {
+   "slug": "murrells-inlet",
+   "name": "Murrells Inlet",
+   "sq_mi": 7.5,
+   "main_zip": "29576",
+   "zips": [],
+   "house": {
+    "homes": 3316,
+    "pct_6pct": 18.8,
+    "pct_owner_out_of_state": 7.7,
+    "pct_high_risk_flood": 17.7,
+    "pct_ve": 1.1,
+    "horry_homes": 0,
+    "georgetown_homes": 3316,
+    "top_tax_districts": [],
+    "resales": 196,
+    "median_resale": 610000,
+    "p25": 488500,
+    "p75": 734638,
+    "horry_resales": 0,
+    "georgetown_sales": 196,
+    "builder_sales_horry": 0,
+    "listings": 61,
+    "listings_str_allowed": 9,
+    "pct_listings_str": 14.8,
+    "listings_rentals_allowed": 49,
+    "median_ask": 637500
+   },
+   "condo": {
+    "homes": 539,
+    "pct_6pct": 67.9,
+    "pct_owner_out_of_state": 16.0,
+    "pct_high_risk_flood": 27.1,
+    "pct_ve": 0.4,
+    "horry_homes": 0,
+    "georgetown_homes": 539,
+    "top_tax_districts": [],
+    "resales": 25,
+    "median_resale": 265000,
+    "p25": 216450,
+    "p75": 401000,
+    "horry_resales": 0,
+    "georgetown_sales": 25,
+    "builder_sales_horry": 0,
+    "listings": 36,
+    "listings_str_allowed": 5,
+    "pct_listings_str": 13.9,
+    "listings_rentals_allowed": 32,
+    "median_ask": 239450
+   },
+   "townhouse": {
+    "homes": 0,
+    "pct_6pct": null,
+    "pct_owner_out_of_state": null,
+    "pct_high_risk_flood": null,
+    "pct_ve": null,
+    "horry_homes": 0,
+    "georgetown_homes": 0,
+    "top_tax_districts": [],
+    "resales": 0,
+    "median_resale": null,
+    "p25": null,
+    "p75": null,
+    "horry_resales": 0,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 16,
+    "listings_str_allowed": 7,
+    "pct_listings_str": 43.8,
+    "listings_rentals_allowed": 16,
+    "median_ask": 474450
+   },
+   "all": {
+    "homes": 3855,
+    "pct_6pct": 25.7,
+    "pct_owner_out_of_state": 8.8,
+    "pct_high_risk_flood": 19.0,
+    "pct_ve": 1.0,
+    "horry_homes": 0,
+    "georgetown_homes": 3855,
+    "top_tax_districts": [],
+    "resales": 0,
+    "median_resale": null,
+    "p25": null,
+    "p75": null,
+    "horry_resales": 0,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 113,
+    "listings_str_allowed": 21,
+    "pct_listings_str": 18.6,
+    "listings_rentals_allowed": 97,
+    "median_ask": 499000
+   },
+   "hud_safmr_fy2027": {
+    "0": 1300,
+    "1": 1410,
+    "2": 1720,
+    "3": 2080,
+    "4": 2420,
+    "area": "Georgetown County, SC"
+   },
+   "acs_2024_5yr": {
+    "median_gross_rent": 1751,
+    "moe": 96,
+    "occupied": 4605,
+    "renter": 645,
+    "pct_renter": 14.0,
+    "geo": "1600000US4548985",
+    "name": "Murrells Inlet CDP, South Carolina"
+   },
+   "mills_6pct": 252.0,
+   "tax_6pct_median_house": 9223,
+   "tax_6pct_median_condo": 4007,
+   "gross_yield_house_3br_pct": 4.1,
+   "rent_minus_tax_house_pct": 2.6,
+   "nightly_airroi": {
+    "revenue": 38356,
+    "occupancy": 37.7,
+    "adr": 406,
+    "listings": 461,
+    "median": 3047,
+    "peakMonth": "June",
+    "peakRevenue": 7420,
+    "lowMonth": "January",
+    "lowRevenue": 2366
+   }
+  },
+  {
+   "slug": "pawleys-litchfield",
+   "name": "Pawleys Island and Litchfield",
+   "sq_mi": 65.9,
+   "main_zip": "29585",
+   "zips": [],
+   "house": {
+    "homes": 8095,
+    "pct_6pct": 29.1,
+    "pct_owner_out_of_state": 14.2,
+    "pct_high_risk_flood": 32.0,
+    "pct_ve": 7.8,
+    "horry_homes": 0,
+    "georgetown_homes": 8095,
+    "top_tax_districts": [],
+    "resales": 393,
+    "median_resale": 649999,
+    "p25": 505000,
+    "p75": 960000,
+    "horry_resales": 0,
+    "georgetown_sales": 393,
+    "builder_sales_horry": 0,
+    "listings": 120,
+    "listings_str_allowed": 36,
+    "pct_listings_str": 30.0,
+    "listings_rentals_allowed": 92,
+    "median_ask": 794945
+   },
+   "condo": {
+    "homes": 1272,
+    "pct_6pct": 70.9,
+    "pct_owner_out_of_state": 16.7,
+    "pct_high_risk_flood": 25.6,
+    "pct_ve": 2.5,
+    "horry_homes": 0,
+    "georgetown_homes": 1272,
+    "top_tax_districts": [],
+    "resales": 49,
+    "median_resale": 325000,
+    "p25": 260000,
+    "p75": 411250,
+    "horry_resales": 0,
+    "georgetown_sales": 49,
+    "builder_sales_horry": 0,
+    "listings": 98,
+    "listings_str_allowed": 61,
+    "pct_listings_str": 62.2,
+    "listings_rentals_allowed": 78,
+    "median_ask": 296500
+   },
+   "townhouse": {
+    "homes": 0,
+    "pct_6pct": null,
+    "pct_owner_out_of_state": null,
+    "pct_high_risk_flood": null,
+    "pct_ve": null,
+    "horry_homes": 0,
+    "georgetown_homes": 0,
+    "top_tax_districts": [],
+    "resales": 0,
+    "median_resale": null,
+    "p25": null,
+    "p75": null,
+    "horry_resales": 0,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 20,
+    "listings_str_allowed": 4,
+    "pct_listings_str": 20.0,
+    "listings_rentals_allowed": 13,
+    "median_ask": 369450
+   },
+   "all": {
+    "homes": 9367,
+    "pct_6pct": 34.7,
+    "pct_owner_out_of_state": 14.5,
+    "pct_high_risk_flood": 31.1,
+    "pct_ve": 7.1,
+    "horry_homes": 0,
+    "georgetown_homes": 9367,
+    "top_tax_districts": [],
+    "resales": 0,
+    "median_resale": null,
+    "p25": null,
+    "p75": null,
+    "horry_resales": 0,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 238,
+    "listings_str_allowed": 101,
+    "pct_listings_str": 42.4,
+    "listings_rentals_allowed": 183,
+    "median_ask": 588000
+   },
+   "hud_safmr_fy2027": {
+    "0": 1140,
+    "1": 1200,
+    "2": 1570,
+    "3": 1870,
+    "4": 2620,
+    "area": "Georgetown County, SC"
+   },
+   "acs_2024_5yr": {
+    "median_gross_rent": 1660,
+    "moe": 83,
+    "occupied": 7826,
+    "renter": 963,
+    "pct_renter": 12.3,
+    "geo": "860Z200US29585",
+    "name": "ZCTA5 29585"
+   },
+   "mills_6pct": 237.1,
+   "tax_6pct_median_house": 9247,
+   "tax_6pct_median_condo": 4623,
+   "gross_yield_house_3br_pct": 3.5,
+   "rent_minus_tax_house_pct": 2.0,
+   "nightly_airroi": {
+    "revenue": 27953,
+    "occupancy": 33.4,
+    "adr": 392,
+    "listings": 428,
+    "median": 2528,
+    "peakMonth": "June",
+    "peakRevenue": 5457,
+    "lowMonth": "January",
+    "lowRevenue": 2105
+   }
+  },
+  {
+   "slug": "carolina-forest",
+   "name": "Carolina Forest",
+   "sq_mi": 17.3,
+   "main_zip": "29579",
+   "zips": [
+    [
+     29579,
+     526
+    ]
+   ],
+   "house": {
+    "homes": 7940,
+    "pct_6pct": 24.1,
+    "pct_owner_out_of_state": 11.8,
+    "pct_high_risk_flood": 0.2,
+    "pct_ve": 0.0,
+    "horry_homes": 7940,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "100",
+      4379
+     ],
+     [
+      "800",
+      3499
+     ],
+     [
+      "600",
+      62
+     ]
+    ],
+    "resales": 405,
+    "median_resale": 440000,
+    "p25": 324950,
+    "p75": 598950,
+    "horry_resales": 405,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 61,
+    "listings": 120,
+    "listings_str_allowed": 0,
+    "pct_listings_str": 0.0,
+    "listings_rentals_allowed": 91,
+    "median_ask": 464500
+   },
+   "condo": {
+    "homes": 1196,
+    "pct_6pct": 57.4,
+    "pct_owner_out_of_state": 34.6,
+    "pct_high_risk_flood": 0.0,
+    "pct_ve": 0.0,
+    "horry_homes": 1196,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "100",
+      1116
+     ],
+     [
+      "800",
+      80
+     ]
+    ],
+    "resales": 91,
+    "median_resale": 172000,
+    "p25": 160000,
+    "p75": 195000,
+    "horry_resales": 91,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 1,
+    "listings": 36,
+    "listings_str_allowed": 2,
+    "pct_listings_str": 5.6,
+    "listings_rentals_allowed": 32,
+    "median_ask": 180000
+   },
+   "townhouse": {
+    "homes": 574,
+    "pct_6pct": 50.9,
+    "pct_owner_out_of_state": 25.3,
+    "pct_high_risk_flood": 0.0,
+    "pct_ve": 0.0,
+    "horry_homes": 574,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "800",
+      379
+     ],
+     [
+      "600",
+      112
+     ],
+     [
+      "100",
+      83
+     ]
+    ],
+    "resales": 34,
+    "median_resale": 229500,
+    "p25": 211250,
+    "p75": 244500,
+    "horry_resales": 34,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 19,
+    "listings": 18,
+    "listings_str_allowed": 4,
+    "pct_listings_str": 22.2,
+    "listings_rentals_allowed": 16,
+    "median_ask": 272000
+   },
+   "all": {
+    "homes": 9999,
+    "pct_6pct": 30.9,
+    "pct_owner_out_of_state": 16.0,
+    "pct_high_risk_flood": 0.6,
+    "pct_ve": 0.0,
+    "horry_homes": 9999,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "100",
+      5633
+     ],
+     [
+      "800",
+      3963
+     ],
+     [
+      "600",
+      403
+     ]
+    ],
+    "resales": 0,
+    "median_resale": null,
+    "p25": null,
+    "p75": null,
+    "horry_resales": 0,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 174,
+    "listings_str_allowed": 6,
+    "pct_listings_str": 3.4,
+    "listings_rentals_allowed": 139,
+    "median_ask": 370750
+   },
+   "hud_safmr_fy2027": {
+    "0": 1410,
+    "1": 1540,
+    "2": 1840,
+    "3": 2230,
+    "4": 2420,
+    "area": "Myrtle Beach-North Myrtle Beach-Conway, SC HUD Metro FMR Area"
+   },
+   "acs_2024_5yr": {
+    "median_gross_rent": 1668,
+    "moe": 102,
+    "occupied": 10113,
+    "renter": 3074,
+    "pct_renter": 30.4,
+    "geo": "1600000US4511833",
+    "name": "Carolina Forest CDP, South Carolina"
+   },
+   "mills_6pct": 201.0,
+   "tax_6pct_median_house": 5306,
+   "tax_6pct_median_condo": 2074,
+   "gross_yield_house_3br_pct": 6.1,
+   "rent_minus_tax_house_pct": 4.9,
+   "nightly_airroi": null
+  },
+  {
+   "slug": "socastee",
+   "name": "Socastee",
+   "sq_mi": 13.9,
+   "main_zip": "29588",
+   "zips": [
+    [
+     29588,
+     388
+    ],
+    [
+     29577,
+     8
+    ]
+   ],
+   "house": {
+    "homes": 6297,
+    "pct_6pct": 25.9,
+    "pct_owner_out_of_state": 9.3,
+    "pct_high_risk_flood": 10.8,
+    "pct_ve": 0.0,
+    "horry_homes": 6297,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "630",
+      5923
+     ],
+     [
+      "634",
+      157
+     ],
+     [
+      "600",
+      147
+     ]
+    ],
+    "resales": 263,
+    "median_resale": 299900,
+    "p25": 260000,
+    "p75": 342000,
+    "horry_resales": 263,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 96,
+    "listings": 102,
+    "listings_str_allowed": 8,
+    "pct_listings_str": 7.8,
+    "listings_rentals_allowed": 85,
+    "median_ask": 398745
+   },
+   "condo": {
+    "homes": 1003,
+    "pct_6pct": 54.8,
+    "pct_owner_out_of_state": 29.5,
+    "pct_high_risk_flood": 8.2,
+    "pct_ve": 0.0,
+    "horry_homes": 1003,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "630",
+      893
+     ],
+     [
+      "600",
+      50
+     ],
+     [
+      "802",
+      39
+     ]
+    ],
+    "resales": 66,
+    "median_resale": 178000,
+    "p25": 149500,
+    "p75": 271500,
+    "horry_resales": 66,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 22,
+    "listings_str_allowed": 1,
+    "pct_listings_str": 4.5,
+    "listings_rentals_allowed": 17,
+    "median_ask": 187450
+   },
+   "townhouse": {
+    "homes": 209,
+    "pct_6pct": 59.3,
+    "pct_owner_out_of_state": 16.3,
+    "pct_high_risk_flood": 0.0,
+    "pct_ve": 0.0,
+    "horry_homes": 209,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "630",
+      209
+     ]
+    ],
+    "resales": 12,
+    "median_resale": 241500,
+    "p25": 229750,
+    "p75": 248750,
+    "horry_resales": 12,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 11,
+    "listings_str_allowed": 0,
+    "pct_listings_str": 0.0,
+    "listings_rentals_allowed": 6,
+    "median_ask": 239399
+   },
+   "all": {
+    "homes": 8059,
+    "pct_6pct": 32.0,
+    "pct_owner_out_of_state": 11.6,
+    "pct_high_risk_flood": 10.7,
+    "pct_ve": 0.0,
+    "horry_homes": 8059,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "630",
+      7574
+     ],
+     [
+      "600",
+      197
+     ],
+     [
+      "634",
+      157
+     ]
+    ],
+    "resales": 0,
+    "median_resale": null,
+    "p25": null,
+    "p75": null,
+    "horry_resales": 0,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 135,
+    "listings_str_allowed": 9,
+    "pct_listings_str": 6.7,
+    "listings_rentals_allowed": 108,
+    "median_ask": 320000
+   },
+   "hud_safmr_fy2027": {
+    "0": 1180,
+    "1": 1290,
+    "2": 1540,
+    "3": 1870,
+    "4": 2030,
+    "area": "Myrtle Beach-North Myrtle Beach-Conway, SC HUD Metro FMR Area"
+   },
+   "acs_2024_5yr": {
+    "median_gross_rent": 1246,
+    "moe": 101,
+    "occupied": 9131,
+    "renter": 3116,
+    "pct_renter": 34.1,
+    "geo": "1600000US4567390",
+    "name": "Socastee CDP, South Carolina"
+   },
+   "mills_6pct": 201.0,
+   "tax_6pct_median_house": 3617,
+   "tax_6pct_median_condo": 2147,
+   "gross_yield_house_3br_pct": 7.5,
+   "rent_minus_tax_house_pct": 6.3,
+   "nightly_airroi": null
+  },
+  {
+   "slug": "conway",
+   "name": "Conway",
+   "sq_mi": 29.2,
+   "main_zip": "29526",
+   "zips": [
+    [
+     29526,
+     294
+    ],
+    [
+     29527,
+     141
+    ]
+   ],
+   "house": {
+    "homes": 8037,
+    "pct_6pct": 24.4,
+    "pct_owner_out_of_state": 5.2,
+    "pct_high_risk_flood": 4.5,
+    "pct_ve": 0.0,
+    "horry_homes": 8037,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "110",
+      8016
+     ],
+     [
+      "100",
+      12
+     ],
+     [
+      "160",
+      9
+     ]
+    ],
+    "resales": 308,
+    "median_resale": 271000,
+    "p25": 228094,
+    "p75": 350000,
+    "horry_resales": 308,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 119,
+    "listings": 172,
+    "listings_str_allowed": 13,
+    "pct_listings_str": 7.6,
+    "listings_rentals_allowed": 133,
+    "median_ask": 327335
+   },
+   "condo": {
+    "homes": 444,
+    "pct_6pct": 83.3,
+    "pct_owner_out_of_state": 54.5,
+    "pct_high_risk_flood": 12.2,
+    "pct_ve": 0.0,
+    "horry_homes": 444,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "110",
+      444
+     ]
+    ],
+    "resales": 21,
+    "median_resale": 164000,
+    "p25": 134000,
+    "p75": 193000,
+    "horry_resales": 21,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 11,
+    "listings": 8,
+    "listings_str_allowed": 1,
+    "pct_listings_str": 12.5,
+    "listings_rentals_allowed": 7,
+    "median_ask": 152450
+   },
+   "townhouse": {
+    "homes": 373,
+    "pct_6pct": 46.6,
+    "pct_owner_out_of_state": 16.9,
+    "pct_high_risk_flood": 7.0,
+    "pct_ve": 0.0,
+    "horry_homes": 373,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "110",
+      373
+     ]
+    ],
+    "resales": 28,
+    "median_resale": 212500,
+    "p25": 200000,
+    "p75": 220225,
+    "horry_resales": 28,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 14,
+    "listings_str_allowed": 5,
+    "pct_listings_str": 35.7,
+    "listings_rentals_allowed": 12,
+    "median_ask": 221200
+   },
+   "all": {
+    "homes": 8917,
+    "pct_6pct": 28.6,
+    "pct_owner_out_of_state": 8.2,
+    "pct_high_risk_flood": 5.0,
+    "pct_ve": 0.0,
+    "horry_homes": 8917,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "110",
+      8894
+     ],
+     [
+      "100",
+      14
+     ],
+     [
+      "160",
+      9
+     ]
+    ],
+    "resales": 0,
+    "median_resale": null,
+    "p25": null,
+    "p75": null,
+    "horry_resales": 0,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 194,
+    "listings_str_allowed": 19,
+    "pct_listings_str": 9.8,
+    "listings_rentals_allowed": 152,
+    "median_ask": 311445
+   },
+   "hud_safmr_fy2027": {
+    "0": 1040,
+    "1": 1110,
+    "2": 1320,
+    "3": 1630,
+    "4": 1900,
+    "area": "Myrtle Beach-North Myrtle Beach-Conway, SC HUD Metro FMR Area"
+   },
+   "acs_2024_5yr": {
+    "median_gross_rent": 866,
+    "moe": 158,
+    "occupied": 8762,
+    "renter": 3036,
+    "pct_renter": 34.6,
+    "geo": "1600000US4516405",
+    "name": "Conway city, South Carolina"
+   },
+   "mills_6pct": 272.5,
+   "tax_6pct_median_house": 4431,
+   "tax_6pct_median_condo": 2681,
+   "gross_yield_house_3br_pct": 7.2,
+   "rent_minus_tax_house_pct": 5.6,
+   "nightly_airroi": {
+    "revenue": 21285,
+    "occupancy": 34.7,
+    "adr": 245,
+    "listings": 106,
+    "median": 1808,
+    "peakMonth": "June",
+    "peakRevenue": null,
+    "lowMonth": "January",
+    "lowRevenue": null
+   }
+  },
+  {
+   "slug": "little-river",
+   "name": "Little River",
+   "sq_mi": 10.8,
+   "main_zip": "29566",
+   "zips": [
+    [
+     29566,
+     359
+    ]
+   ],
+   "house": {
+    "homes": 5272,
+    "pct_6pct": 23.1,
+    "pct_owner_out_of_state": 10.0,
+    "pct_high_risk_flood": 3.5,
+    "pct_ve": 0.0,
+    "horry_homes": 5272,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "500",
+      4324
+     ],
+     [
+      "510",
+      948
+     ]
+    ],
+    "resales": 298,
+    "median_resale": 380000,
+    "p25": 310000,
+    "p75": 489925,
+    "horry_resales": 298,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 20,
+    "listings": 101,
+    "listings_str_allowed": 14,
+    "pct_listings_str": 13.9,
+    "listings_rentals_allowed": 79,
+    "median_ask": 399900
+   },
+   "condo": {
+    "homes": 3317,
+    "pct_6pct": 63.6,
+    "pct_owner_out_of_state": 40.9,
+    "pct_high_risk_flood": 7.8,
+    "pct_ve": 0.0,
+    "horry_homes": 3317,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "500",
+      3316
+     ],
+     [
+      "510",
+      1
+     ]
+    ],
+    "resales": 239,
+    "median_resale": 155000,
+    "p25": 129000,
+    "p75": 225000,
+    "horry_resales": 239,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 2,
+    "listings": 152,
+    "listings_str_allowed": 56,
+    "pct_listings_str": 36.8,
+    "listings_rentals_allowed": 131,
+    "median_ask": 179000
+   },
+   "townhouse": {
+    "homes": 560,
+    "pct_6pct": 49.5,
+    "pct_owner_out_of_state": 32.5,
+    "pct_high_risk_flood": 5.7,
+    "pct_ve": 0.0,
+    "horry_homes": 560,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "500",
+      503
+     ],
+     [
+      "510",
+      57
+     ]
+    ],
+    "resales": 34,
+    "median_resale": 219950,
+    "p25": 181875,
+    "p75": 279375,
+    "horry_resales": 34,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 1,
+    "listings": 24,
+    "listings_str_allowed": 2,
+    "pct_listings_str": 8.3,
+    "listings_rentals_allowed": 13,
+    "median_ask": 238500
+   },
+   "all": {
+    "homes": 9387,
+    "pct_6pct": 40.0,
+    "pct_owner_out_of_state": 22.5,
+    "pct_high_risk_flood": 5.1,
+    "pct_ve": 0.0,
+    "horry_homes": 9387,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "500",
+      8381
+     ],
+     [
+      "510",
+      1006
+     ]
+    ],
+    "resales": 0,
+    "median_resale": null,
+    "p25": null,
+    "p75": null,
+    "horry_resales": 0,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 277,
+    "listings_str_allowed": 72,
+    "pct_listings_str": 26.0,
+    "listings_rentals_allowed": 223,
+    "median_ask": 247500
+   },
+   "hud_safmr_fy2027": {
+    "0": 1330,
+    "1": 1450,
+    "2": 1730,
+    "3": 2100,
+    "4": 2280,
+    "area": "Myrtle Beach-North Myrtle Beach-Conway, SC HUD Metro FMR Area"
+   },
+   "acs_2024_5yr": {
+    "median_gross_rent": 1528,
+    "moe": 202,
+    "occupied": 5886,
+    "renter": 1375,
+    "pct_renter": 23.4,
+    "geo": "1600000US4542010",
+    "name": "Little River CDP, South Carolina"
+   },
+   "mills_6pct": 201.0,
+   "tax_6pct_median_house": 4583,
+   "tax_6pct_median_condo": 1869,
+   "gross_yield_house_3br_pct": 6.6,
+   "rent_minus_tax_house_pct": 5.4,
+   "nightly_airroi": {
+    "revenue": 12243,
+    "occupancy": 30.3,
+    "adr": 202,
+    "listings": 171,
+    "median": 1505,
+    "peakMonth": "June",
+    "peakRevenue": null,
+    "lowMonth": "January",
+    "lowRevenue": null
+   }
+  },
+  {
+   "slug": "longs",
+   "name": "Longs",
+   "sq_mi": 85.3,
+   "main_zip": "29568",
+   "zips": [
+    [
+     29568,
+     603
+    ],
+    [
+     29569,
+     33
+    ],
+    [
+     29588,
+     4
+    ],
+    [
+     29566,
+     1
+    ]
+   ],
+   "house": {
+    "homes": 7731,
+    "pct_6pct": 22.1,
+    "pct_owner_out_of_state": 7.4,
+    "pct_high_risk_flood": 3.0,
+    "pct_ve": 0.0,
+    "horry_homes": 7731,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "500",
+      3964
+     ],
+     [
+      "250",
+      2720
+     ],
+     [
+      "200",
+      795
+     ]
+    ],
+    "resales": 327,
+    "median_resale": 299900,
+    "p25": 260000,
+    "p75": 355000,
+    "horry_resales": 327,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 280,
+    "listings": 270,
+    "listings_str_allowed": 17,
+    "pct_listings_str": 6.3,
+    "listings_rentals_allowed": 183,
+    "median_ask": 313664
+   },
+   "condo": {
+    "homes": 736,
+    "pct_6pct": 47.7,
+    "pct_owner_out_of_state": 31.7,
+    "pct_high_risk_flood": 7.3,
+    "pct_ve": 0.0,
+    "horry_homes": 736,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "500",
+      477
+     ],
+     [
+      "250",
+      259
+     ]
+    ],
+    "resales": 70,
+    "median_resale": 159650,
+    "p25": 133000,
+    "p75": 185500,
+    "horry_resales": 70,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 4,
+    "listings": 21,
+    "listings_str_allowed": 4,
+    "pct_listings_str": 19.0,
+    "listings_rentals_allowed": 19,
+    "median_ask": 181500
+   },
+   "townhouse": {
+    "homes": 81,
+    "pct_6pct": 37.0,
+    "pct_owner_out_of_state": 18.5,
+    "pct_high_risk_flood": 0.0,
+    "pct_ve": 0.0,
+    "horry_homes": 81,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "250",
+      43
+     ],
+     [
+      "500",
+      37
+     ],
+     [
+      "550",
+      1
+     ]
+    ],
+    "resales": 4,
+    "median_resale": 321500,
+    "p25": 275000,
+    "p75": 371375,
+    "horry_resales": 4,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 2,
+    "listings": 9,
+    "listings_str_allowed": 3,
+    "pct_listings_str": 33.3,
+    "listings_rentals_allowed": 6,
+    "median_ask": 329900
+   },
+   "all": {
+    "homes": 9543,
+    "pct_6pct": 26.2,
+    "pct_owner_out_of_state": 9.3,
+    "pct_high_risk_flood": 3.5,
+    "pct_ve": 0.0,
+    "horry_homes": 9543,
+    "georgetown_homes": 0,
+    "top_tax_districts": [
+     [
+      "500",
+      4973
+     ],
+     [
+      "250",
+      3301
+     ],
+     [
+      "200",
+      928
+     ]
+    ],
+    "resales": 0,
+    "median_resale": null,
+    "p25": null,
+    "p75": null,
+    "horry_resales": 0,
+    "georgetown_sales": 0,
+    "builder_sales_horry": 0,
+    "listings": 300,
+    "listings_str_allowed": 24,
+    "pct_listings_str": 8.0,
+    "listings_rentals_allowed": 208,
+    "median_ask": 307490
+   },
+   "hud_safmr_fy2027": {
+    "0": 1440,
+    "1": 1560,
+    "2": 1870,
+    "3": 2270,
+    "4": 2460,
+    "area": "Myrtle Beach-North Myrtle Beach-Conway, SC HUD Metro FMR Area"
+   },
+   "acs_2024_5yr": {
+    "median_gross_rent": 1823,
+    "moe": 558,
+    "occupied": 7373,
+    "renter": 1078,
+    "pct_renter": 14.6,
+    "geo": "860Z200US29568",
+    "name": "ZCTA5 29568"
+   },
+   "mills_6pct": 201.0,
+   "tax_6pct_median_house": 3617,
+   "tax_6pct_median_condo": 1925,
+   "gross_yield_house_3br_pct": 9.1,
+   "rent_minus_tax_house_pct": 7.9,
+   "nightly_airroi": null
+  }
+ ],
+ "str_market_file": {
+  "retrieved": "2026-08-15",
+  "vendor": "AirROI"
+ },
+ "listings_pulled": "2026-11-02T11:48:44.023120+00:00",
+ "listing_api_totals": {
+  "all|house": 3690,
+  "all|townhouse": 364,
+  "all|condo": 2817,
+  "str_allowed|house": 450,
+  "str_allowed|townhouse": 89,
+  "str_allowed|condo": 1977,
+  "rentals_allowed|house": 2949,
+  "rentals_allowed|townhouse": 294,
+  "rentals_allowed|condo": 2472
+ },
+ "listing_truncated": 14
+}

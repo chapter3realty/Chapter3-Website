@@ -1,0 +1,6 @@
+#!/bin/sh
+# Second set of Google search suggestions (shorter seeds). Run: sh pull-suggestions-2.sh > raw/google-suggestions-2.txt
+for q in "myrtle beach airbnb" "myrtle beach airbnb laws" "myrtle beach airbnb rules" "airbnb myrtle beach zoning" "short term rental myrtle beach" "myrtle beach short term rental map" "is north myrtle beach a good investment" "is surfside beach a good investment" "is conway sc a good place to invest" "is carolina forest a good investment" "myrtle beach rental property for sale" "myrtle beach rentals long term" "myrtle beach rent prices" "myrtle beach real estate investment" "best place to invest in real estate in south carolina" "best place to buy a beach house to rent out" "best beach town to buy rental property" "myrtle beach property tax rental" "myrtle beach flood zone map" "myrtle beach tourism by month" "myrtle beach off season" "horry county rental" "investing in myrtle beach" "myrtle beach condo or house investment" "myrtle beach vacation rental investment" "north myrtle beach vs myrtle beach" "surfside beach vs garden city" "murrells inlet vs" "longs sc"; do
+  printf '== %s\n' "$q"
+  curl -sS -A "Mozilla/5.0" "https://suggestqueries.google.com/complete/search?client=firefox&hl=en&gl=us&q=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$q")"; echo
+done

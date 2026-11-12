@@ -1,0 +1,255 @@
+{
+ "pulled": "2026-11-04T07:58:27.302802Z",
+ "rows": {
+  "any": {
+   "all": {
+    "url": "https://chapter3realty.com/homes/api/map?",
+    "total": 8807,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "",
+     "more": ""
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   },
+   "price_reduced": {
+    "url": "https://chapter3realty.com/homes/api/map?has=price_reduced",
+    "total": 4265,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "",
+     "more": "Filters (1)"
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   },
+   "listed_30d": {
+    "url": "https://chapter3realty.com/homes/api/map?domMax=30",
+    "total": 1665,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "",
+     "more": "Filters (1)"
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   },
+   "listed_7d": {
+    "url": "https://chapter3realty.com/homes/api/map?domMax=7",
+    "total": 375,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "",
+     "more": "Filters (1)"
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   }
+  },
+  "house": {
+   "all": {
+    "url": "https://chapter3realty.com/homes/api/map?type=house",
+    "total": 3704,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "House",
+     "more": ""
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   },
+   "price_reduced": {
+    "url": "https://chapter3realty.com/homes/api/map?type=house&has=price_reduced",
+    "total": 1905,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "House",
+     "more": "Filters (1)"
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   },
+   "listed_30d": {
+    "url": "https://chapter3realty.com/homes/api/map?type=house&domMax=30",
+    "total": 825,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "House",
+     "more": "Filters (1)"
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   },
+   "listed_7d": {
+    "url": "https://chapter3realty.com/homes/api/map?type=house&domMax=7",
+    "total": 190,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "House",
+     "more": "Filters (1)"
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   }
+  },
+  "townhouse": {
+   "all": {
+    "url": "https://chapter3realty.com/homes/api/map?type=townhouse",
+    "total": 365,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "Townhouse",
+     "more": ""
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   },
+   "price_reduced": {
+    "url": "https://chapter3realty.com/homes/api/map?type=townhouse&has=price_reduced",
+    "total": 196,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "Townhouse",
+     "more": "Filters (1)"
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   },
+   "listed_30d": {
+    "url": "https://chapter3realty.com/homes/api/map?type=townhouse&domMax=30",
+    "total": 93,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "Townhouse",
+     "more": "Filters (1)"
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   },
+   "listed_7d": {
+    "url": "https://chapter3realty.com/homes/api/map?type=townhouse&domMax=7",
+    "total": 13,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "Townhouse",
+     "more": "Filters (1)"
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   }
+  },
+  "condo": {
+   "all": {
+    "url": "https://chapter3realty.com/homes/api/map?type=condo",
+    "total": 2842,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "Condo",
+     "more": ""
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   },
+   "price_reduced": {
+    "url": "https://chapter3realty.com/homes/api/map?type=condo&has=price_reduced",
+    "total": 1459,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "Condo",
+     "more": "Filters (1)"
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   },
+   "listed_30d": {
+    "url": "https://chapter3realty.com/homes/api/map?type=condo&domMax=30",
+    "total": 468,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "Condo",
+     "more": "Filters (1)"
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   },
+   "listed_7d": {
+    "url": "https://chapter3realty.com/homes/api/map?type=condo&domMax=7",
+    "total": 120,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "Condo",
+     "more": "Filters (1)"
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   }
+  },
+  "manufactured": {
+   "all": {
+    "url": "https://chapter3realty.com/homes/api/map?type=manufactured",
+    "total": 509,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "Manufactured",
+     "more": ""
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   },
+   "price_reduced": {
+    "url": "https://chapter3realty.com/homes/api/map?type=manufactured&has=price_reduced",
+    "total": 279,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "Manufactured",
+     "more": "Filters (1)"
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   },
+   "listed_30d": {
+    "url": "https://chapter3realty.com/homes/api/map?type=manufactured&domMax=30",
+    "total": 108,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "Manufactured",
+     "more": "Filters (1)"
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   },
+   "listed_7d": {
+    "url": "https://chapter3realty.com/homes/api/map?type=manufactured&domMax=7",
+    "total": 18,
+    "labels": {
+     "sale": "",
+     "price": "",
+     "beds": "",
+     "type": "Manufactured",
+     "more": "Filters (1)"
+    },
+    "refreshedAt": "2026-11-04T07:50:20.441Z"
+   }
+  }
+ }
+}

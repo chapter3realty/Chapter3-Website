@@ -1,0 +1,7 @@
+#!/bin/sh
+# Google search suggestions for /buyers/waterfront-homes/ (batch 2026-11-b: prices by kind of water, and the places).
+# The 2026-11-a pull (66 queries) is reused; these add price and place questions. Run: sh pull-suggestions.sh > raw/google-suggestions-2026-11-b.txt
+for q in "waterfront homes myrtle beach" "oceanfront homes myrtle beach" "oceanfront homes for sale myrtle beach" "oceanfront house myrtle beach price" "how much is an oceanfront house in myrtle beach" "how much does a house on the intracoastal cost" "intracoastal waterway homes for sale" "intracoastal homes with dock" "homes with boat dock myrtle beach" "marsh front homes" "marsh front homes for sale sc" "creek front homes murrells inlet" "canal homes north myrtle beach" "cherry grove canal" "lake front homes myrtle beach" "lakefront homes for sale myrtle beach sc" "lake homes conway sc" "waccamaw river homes" "riverfront homes sc" "oceanfront condo myrtle beach price" "waterfront property myrtle beach" "waterfront homes south carolina cheap" "is it worth buying waterfront property" "do waterfront homes appreciate" "waterfront vs water view" "sunrise myrtle beach" "does the sun rise over the ocean in myrtle beach" "intracoastal waterway dolphins" "is the intracoastal waterway salt water" "can you boat from myrtle beach to florida"; do
+  printf '== %s\n' "$q"
+  curl -sS -A "Mozilla/5.0" "https://suggestqueries.google.com/complete/search?client=firefox&hl=en&gl=us&q=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$q")"; echo
+done

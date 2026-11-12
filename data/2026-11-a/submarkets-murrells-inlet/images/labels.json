@@ -1,0 +1,119 @@
+{
+ "creek": {
+  "labels": [
+   {
+    "label": "MarshWalk",
+    "lon": -79.03183,
+    "lat": 33.55795,
+    "how": "given point"
+   },
+   {
+    "label": "Business 17",
+    "lon": -79.032834,
+    "lat": 33.557971,
+    "how": "nearest point on the road line, map-layers.geojson"
+   }
+  ],
+  "bbox_wgs84": [
+   -79.035703,
+   33.55561,
+   -79.028697,
+   33.55999
+  ],
+  "size": [
+   2400,
+   1800
+  ]
+ },
+ "horry": {
+  "labels": [],
+  "bbox_wgs84": [
+   -79.034045,
+   33.602473,
+   -79.025955,
+   33.607526
+  ],
+  "size": [
+   2400,
+   1800
+  ]
+ },
+ "river": {
+  "labels": [
+   {
+    "label": "Waccamaw River",
+    "lon": -79.0868,
+    "lat": 33.5612,
+    "how": "given point"
+   },
+   {
+    "label": "Wacca Wache Landing",
+    "lon": -79.08571,
+    "lat": 33.56199,
+    "how": "given point"
+   }
+  ],
+  "bbox_wgs84": [
+   -79.088504,
+   33.56031,
+   -79.081496,
+   33.56469
+  ],
+  "size": [
+   2400,
+   1800
+  ]
+ },
+ "between": {
+  "labels": [
+   {
+    "label": "US 17 bypass",
+    "lon": -79.048232,
+    "lat": 33.549974,
+    "how": "nearest point on the road line, map-layers.geojson"
+   },
+   {
+    "label": "Business 17",
+    "lon": -79.044025,
+    "lat": 33.548754,
+    "how": "nearest point on the road line, map-layers.geojson"
+   }
+  ],
+  "bbox_wgs84": [
+   -79.049434,
+   33.547179,
+   -79.042966,
+   33.551221
+  ],
+  "size": [
+   2400,
+   1800
+  ]
+ },
+ "docks": {
+  "labels": [
+   {
+    "label": "Business 17",
+    "lon": -79.043014,
+    "lat": 33.54986,
+    "how": "nearest point on the road line, map-layers.geojson"
+   },
+   {
+    "label": "Salt marsh",
+    "lon": -79.0403,
+    "lat": 33.5495,
+    "how": "given point"
+   }
+  ],
+  "bbox_wgs84": [
+   -79.044064,
+   33.548585,
+   -79.039536,
+   33.551415
+  ],
+  "size": [
+   2400,
+   1800
+  ]
+ }
+}

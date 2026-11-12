@@ -1,0 +1,47 @@
+{
+ "title": "Typical monthly HOA fee, homes for sale on the Grand Strand",
+ "rows": [
+  {
+   "kind": "House, neighborhood with no shared amenities",
+   "median": 70,
+   "p25": 55,
+   "p75": 100,
+   "n": 1010
+  },
+  {
+   "kind": "House, neighborhood with a pool or clubhouse",
+   "median": 110,
+   "p25": 90,
+   "p75": 165,
+   "n": 1513
+  },
+  {
+   "kind": "House in a gated golf community",
+   "median": 200,
+   "p25": 100,
+   "p75": 320,
+   "n": 144
+  },
+  {
+   "kind": "Townhouse",
+   "median": 290,
+   "p25": 190,
+   "p75": 425,
+   "n": 338
+  },
+  {
+   "kind": "Condo off the ocean",
+   "median": 515,
+   "p25": 410,
+   "p75": 685,
+   "n": 1746
+  },
+  {
+   "kind": "Condo in an oceanfront tower",
+   "median": 940,
+   "p25": 750,
+   "p75": 1185,
+   "n": 972
+  }
+ ]
+}

@@ -1,0 +1,246 @@
+{
+ "pulled": "2026-11-10T06:42:17.672301+00:00",
+ "type": "condo",
+ "status": "for sale (the API's default)",
+ "rule": "S.C. Code 15-3-640: no defect suit more than eight years after substantial completion (exceptions in 15-3-670)",
+ "rows": [
+  {
+   "city": "(all)",
+   "all": 2860,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo",
+   "bands": [
+    {
+     "band": "built 2019 or later",
+     "count": 70,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2019"
+    },
+    {
+     "band": "built 2018",
+     "count": 3,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2018&yearMax=2018"
+    },
+    {
+     "band": "built 2001 to 2017",
+     "count": 873,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=2001&yearMax=2017"
+    },
+    {
+     "band": "built 1981 to 2000",
+     "count": 1541,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMin=1981&yearMax=2000"
+    },
+    {
+     "band": "built 1980 or earlier",
+     "count": 373,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&yearMax=1980"
+    }
+   ],
+   "sum_of_bands": 2860,
+   "no_year_or_gap": 0
+  },
+  {
+   "city": "Myrtle Beach",
+   "all": 1671,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo&city=Myrtle+Beach",
+   "bands": [
+    {
+     "band": "built 2019 or later",
+     "count": 37,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Myrtle+Beach&yearMin=2019"
+    },
+    {
+     "band": "built 2018",
+     "count": 2,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Myrtle+Beach&yearMin=2018&yearMax=2018"
+    },
+    {
+     "band": "built 2001 to 2017",
+     "count": 412,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Myrtle+Beach&yearMin=2001&yearMax=2017"
+    },
+    {
+     "band": "built 1981 to 2000",
+     "count": 939,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Myrtle+Beach&yearMin=1981&yearMax=2000"
+    },
+    {
+     "band": "built 1980 or earlier",
+     "count": 281,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Myrtle+Beach&yearMax=1980"
+    }
+   ],
+   "sum_of_bands": 1671,
+   "no_year_or_gap": 0
+  },
+  {
+   "city": "North Myrtle Beach",
+   "all": 582,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo&city=North+Myrtle+Beach",
+   "bands": [
+    {
+     "band": "built 2019 or later",
+     "count": 7,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=North+Myrtle+Beach&yearMin=2019"
+    },
+    {
+     "band": "built 2018",
+     "count": 1,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=North+Myrtle+Beach&yearMin=2018&yearMax=2018"
+    },
+    {
+     "band": "built 2001 to 2017",
+     "count": 297,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=North+Myrtle+Beach&yearMin=2001&yearMax=2017"
+    },
+    {
+     "band": "built 1981 to 2000",
+     "count": 205,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=North+Myrtle+Beach&yearMin=1981&yearMax=2000"
+    },
+    {
+     "band": "built 1980 or earlier",
+     "count": 72,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=North+Myrtle+Beach&yearMax=1980"
+    }
+   ],
+   "sum_of_bands": 582,
+   "no_year_or_gap": 0
+  },
+  {
+   "city": "Surfside Beach",
+   "all": 86,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo&city=Surfside+Beach",
+   "bands": [
+    {
+     "band": "built 2019 or later",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Surfside+Beach&yearMin=2019"
+    },
+    {
+     "band": "built 2018",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Surfside+Beach&yearMin=2018&yearMax=2018"
+    },
+    {
+     "band": "built 2001 to 2017",
+     "count": 1,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Surfside+Beach&yearMin=2001&yearMax=2017"
+    },
+    {
+     "band": "built 1981 to 2000",
+     "count": 83,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Surfside+Beach&yearMin=1981&yearMax=2000"
+    },
+    {
+     "band": "built 1980 or earlier",
+     "count": 2,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Surfside+Beach&yearMax=1980"
+    }
+   ],
+   "sum_of_bands": 86,
+   "no_year_or_gap": 0
+  },
+  {
+   "city": "Garden City",
+   "all": 0,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo&city=Garden+City",
+   "bands": [
+    {
+     "band": "built 2019 or later",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Garden+City&yearMin=2019"
+    },
+    {
+     "band": "built 2018",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Garden+City&yearMin=2018&yearMax=2018"
+    },
+    {
+     "band": "built 2001 to 2017",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Garden+City&yearMin=2001&yearMax=2017"
+    },
+    {
+     "band": "built 1981 to 2000",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Garden+City&yearMin=1981&yearMax=2000"
+    },
+    {
+     "band": "built 1980 or earlier",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Garden+City&yearMax=1980"
+    }
+   ],
+   "sum_of_bands": 0,
+   "no_year_or_gap": 0
+  },
+  {
+   "city": "Murrells Inlet",
+   "all": 130,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo&city=Murrells+Inlet",
+   "bands": [
+    {
+     "band": "built 2019 or later",
+     "count": 16,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Murrells+Inlet&yearMin=2019"
+    },
+    {
+     "band": "built 2018",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Murrells+Inlet&yearMin=2018&yearMax=2018"
+    },
+    {
+     "band": "built 2001 to 2017",
+     "count": 55,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Murrells+Inlet&yearMin=2001&yearMax=2017"
+    },
+    {
+     "band": "built 1981 to 2000",
+     "count": 57,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Murrells+Inlet&yearMin=1981&yearMax=2000"
+    },
+    {
+     "band": "built 1980 or earlier",
+     "count": 2,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Murrells+Inlet&yearMax=1980"
+    }
+   ],
+   "sum_of_bands": 130,
+   "no_year_or_gap": 0
+  },
+  {
+   "city": "Little River",
+   "all": 184,
+   "all_url": "https://chapter3realty.com/homes/api/map?type=condo&city=Little+River",
+   "bands": [
+    {
+     "band": "built 2019 or later",
+     "count": 6,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Little+River&yearMin=2019"
+    },
+    {
+     "band": "built 2018",
+     "count": 0,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Little+River&yearMin=2018&yearMax=2018"
+    },
+    {
+     "band": "built 2001 to 2017",
+     "count": 42,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Little+River&yearMin=2001&yearMax=2017"
+    },
+    {
+     "band": "built 1981 to 2000",
+     "count": 135,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Little+River&yearMin=1981&yearMax=2000"
+    },
+    {
+     "band": "built 1980 or earlier",
+     "count": 1,
+     "url": "https://chapter3realty.com/homes/api/map?type=condo&city=Little+River&yearMax=1980"
+    }
+   ],
+   "sum_of_bands": 184,
+   "no_year_or_gap": 0
+  }
+ ]
+}

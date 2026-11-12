@@ -1,0 +1,7 @@
+#!/bin/sh
+# Google search suggestions for /buyers/condo-in-litigation/. Run: sh pull-suggestions.sh > raw/google-suggestions-<date>.txt
+for q in "condo in litigation" "condo litigation" "buying a condo in litigation" "can you buy a condo in litigation" "can you get a mortgage on a condo in litigation" "condo hoa litigation" "hoa litigation" "hoa in litigation" "hoa lawsuit" "condo lawsuit" "condo association lawsuit" "condo pending litigation" "pending litigation condo" "condo litigation fannie mae" "fannie mae condo litigation" "fha condo litigation" "va condo litigation" "condo litigation financing" "condo construction defect lawsuit" "construction defect lawsuit condo" "how to find out if a condo is in litigation" "how to check if hoa is in litigation" "is the hoa involved in any litigation" "condo questionnaire litigation" "minor litigation condo" "selling a condo in litigation" "condo in litigation myrtle beach" "myrtle beach condo lawsuit" "myrtle beach hoa lawsuit" "horry county public index" "horry county court records" "sc public index" "south carolina condo lawsuit" "should i buy a condo in litigation" "buying a condo with pending litigation" "condo litigation discount" "condo litigation cash buyer" "portfolio loan condo litigation"; do
+  printf '== %s\n' "$q"
+  curl -sS "https://suggestqueries.google.com/complete/search?client=firefox&hl=en&gl=us&q=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$q")"; echo
+  sleep 0.4
+done

@@ -1,0 +1,65 @@
+{
+ "street_points": 34277,
+ "street_within_6m": 0.474,
+ "street_median_m": 6.9,
+ "poly_parcel_pairs_under_6m": 3980,
+ "poly_parcel_median_m": 0.9,
+ "poly_street_within_6m": 0.994,
+ "poly_street_median_m": 1.0,
+ "poly_coef": [
+  [
+   -2202.079985543705,
+   -655.9008919366945
+  ],
+  [
+   2170.3279999051165,
+   2773.170626437547
+  ],
+  [
+   -2743.654068747508,
+   2148.284745558894
+  ],
+  [
+   1.422758889738395,
+   -0.9257246344525807
+  ],
+  [
+   -10.209014631136059,
+   13.39522702663333
+  ],
+  [
+   29.463539439417275,
+   -19.068565333446237
+  ]
+ ],
+ "street_labels": 118,
+ "label_median_m": 96.4,
+ "label_p90_m": 125.4,
+ "after_label_median_m": 0.3,
+ "after_label_p90_m": 2.9,
+ "outline_mean_error_m": 57.6,
+ "outline_p90_error_m": 113.5,
+ "parcel_pairs": 1741,
+ "pdf_parcels": 4583,
+ "county_parcels": 4861,
+ "parcel_median_error_m": 5.9,
+ "rotation_start_deg": 50,
+ "parcel_p90_error_m": 9.2,
+ "points": 482,
+ "matrix": [
+  [
+   2.208435204969951,
+   2.803596288183658
+  ],
+  [
+   -2.768007605966858,
+   2.161143551267868
+  ],
+  [
+   -2156.0357125470646,
+   -592.8466347689572
+  ]
+ ],
+ "lon0": -78.97746546574261,
+ "lat0": 33.609542268643395
+}

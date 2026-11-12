@@ -1,0 +1,1079 @@
+{
+ "made": "2026-11-04T12:09:27.756880+00:00",
+ "homes_on_water": {
+  "rule": "a parcel with a county land-use code starting with 1 and a building value above 0 whose outline comes within 15 m of a polygon in the county's hydrography layer (parcelapp layer 21). Murrells Inlet's creeks, the Garden City and Pawleys marsh creeks and the lakes are not in that layer, so their homes are not counted.",
+  "by_stretch": {
+   "Waterway: Little River and North Myrtle Beach": {
+    "house": 332,
+    "other": 29,
+    "manufactured": 2,
+    "condo": 577,
+    "townhouse": 12
+   },
+   "Waterway: Myrtle Beach and Carolina Forest": {
+    "house": 348,
+    "condo": 121,
+    "manufactured": 5,
+    "other": 7
+   },
+   "Waterway: Socastee": {
+    "house": 305,
+    "manufactured": 7,
+    "other": 9,
+    "condo": 87
+   },
+   "Waccamaw River": {
+    "house": 456,
+    "other": 104,
+    "manufactured": 36,
+    "condo": 20
+   },
+   "DUNN SOUND CREEK": {
+    "other": 3,
+    "house": 1
+   },
+   "Cherry Grove channels (House Creek)": {
+    "house": 689,
+    "other": 5,
+    "condo": 137,
+    "townhouse": 4,
+    "manufactured": 7
+   }
+  },
+  "houses_total": 2131,
+  "all_homes_total": 3303,
+  "vacant_residential_lots_by_stretch": {
+   "Waterway: Little River and North Myrtle Beach": 156,
+   "Waterway: Myrtle Beach and Carolina Forest": 97,
+   "Waterway: Socastee": 97,
+   "DUNN SOUND CREEK": 15,
+   "Waccamaw River": 559,
+   "Little River": 2,
+   "Cherry Grove channels (House Creek)": 199
+  },
+  "water_bodies_in_layer": [
+   " ",
+   "DUNN SOUND CREEK",
+   "HOUSE CREEK",
+   "Intracoastal Waterway",
+   "Lake Busbee",
+   "Little Pee Dee River",
+   "Little River",
+   "Lumber River",
+   "SHEEPHEAD CREEK",
+   "Waccamaw River"
+  ]
+ },
+ "sales": {
+  "source": "Horry County Register of Deeds, deeds recorded 2025-10-01 to 2026-09-30, the kept home sales of batch 2026-10-d (data/2026-10-d/sell-out-of-state-buyers/out-of-state-buyers.json)",
+  "rule": "houses only (land use 100, 101, 102, 110, 126); on the water = parcel outline within 15 m of the county's water outline; nearby = a house sale not on the water within 1 km of an on-water sale on the same water; deeds under $10,000 dropped",
+  "house_sales_tested": 1027,
+  "groups": {
+   "Intracoastal Waterway": {
+    "on_water": {
+     "n": 56,
+     "median": 1325000.0,
+     "q1": 891250.0,
+     "q3": 1700000.0
+    },
+    "on_water_builder": 3,
+    "on_water_under_10000_dropped": 0,
+    "within_1km_not_on_water": {
+     "n": 462,
+     "median": 527000.0,
+     "q1": 319500.0,
+     "q3": 724925.0
+    },
+    "ratio_medians": 2.51
+   },
+   "Waterway: Little River and North Myrtle Beach": {
+    "on_water": {
+     "n": 12,
+     "median": 1325000.0,
+     "q1": 968750.0,
+     "q3": 2190000.0
+    },
+    "within_1km_not_on_water": {
+     "n": 126,
+     "median": 576592.5,
+     "q1": 350000.0,
+     "q3": 665250.0
+    },
+    "ratio_medians": 2.3
+   },
+   "Waterway: Socastee": {
+    "on_water": {
+     "n": 17,
+     "median": 721742.0,
+     "q1": 525000.0,
+     "q3": 1040000.0
+    },
+    "within_1km_not_on_water": {
+     "n": 204,
+     "median": 345500.0,
+     "q1": 270000.0,
+     "q3": 490000.0
+    },
+    "ratio_medians": 2.09
+   },
+   "Waterway: Myrtle Beach and Carolina Forest": {
+    "on_water": {
+     "n": 27,
+     "median": 1550000.0,
+     "q1": 1325000.0,
+     "q3": 1775000.0
+    },
+    "within_1km_not_on_water": {
+     "n": 151,
+     "median": 750000.0,
+     "q1": 640000.0,
+     "q3": 956500.0
+    },
+    "ratio_medians": 2.07
+   },
+   "Cherry Grove channels (House Creek)": {
+    "on_water": {
+     "n": 39,
+     "median": 725000.0,
+     "q1": 665900.0,
+     "q3": 862000.0
+    },
+    "on_water_builder": 0,
+    "on_water_under_10000_dropped": 0,
+    "within_1km_not_on_water": {
+     "n": 74,
+     "median": 622500.0,
+     "q1": 550000.0,
+     "q3": 855000.0
+    },
+    "ratio_medians": 1.16
+   },
+   "Waccamaw River": {
+    "on_water": {
+     "n": 14,
+     "median": 537000.0,
+     "q1": 386750.0,
+     "q3": 705000.0
+    },
+    "on_water_builder": 2,
+    "on_water_under_10000_dropped": 0,
+    "within_1km_not_on_water": {
+     "n": 82,
+     "median": 329890.0,
+     "q1": 285449.75,
+     "q3": 370000.0
+    },
+    "ratio_medians": 1.63
+   }
+  }
+ },
+ "listings": {
+  "pulled": "2026-11-04T12:07:11.297800+00:00",
+  "api_totals": {
+   "house+waterfront": 525,
+   "house+water_ocean": 28,
+   "house+water_icw": 119,
+   "house+water_marsh": 22,
+   "house+water_lake": 446,
+   "house+water_pond": 446,
+   "house+water_river": 50,
+   "house+water_canal": 37,
+   "house+water_creek": 44,
+   "house+deep_water": 50,
+   "house+private_dock": 94,
+   "house+boat_slip": 26,
+   "house+waterfront+nohoa": 84,
+   "house": 3692,
+   "townhouse+waterfront": 47,
+   "townhouse": 365,
+   "condo+waterfront": 949,
+   "condo+water_ocean": 1119,
+   "condo+water_icw": 118,
+   "condo": 2831
+  },
+  "truncated": [
+   [
+    {
+     "type": "condo",
+     "waterfront": "1"
+    },
+    294878,
+    295258,
+    4,
+    3
+   ],
+   [
+    {
+     "type": "condo",
+     "waterfront": "1"
+    },
+    368883,
+    369263,
+    2,
+    1
+   ],
+   [
+    {
+     "type": "condo",
+     "has": "water_ocean"
+    },
+    368883,
+    369263,
+    4,
+    3
+   ]
+  ],
+  "source_line": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+  "rule": "Horry County and the Georgetown County coast: South Carolina addresses, less Manning, Awendaw, Mullins and Andrews; houses unless named. Lake and pond are one set in the CRM (identical), so they are one kind here.",
+  "house+waterfront": {
+   "n": 497,
+   "median_price": 497500.0,
+   "median_per_sqft": 225,
+   "with_private_dock": 41,
+   "with_dock": {
+    "n": 41,
+    "median_price": 945000.0,
+    "median_per_sqft": 361
+   },
+   "without_dock": {
+    "n": 456,
+    "median_price": 474999.5,
+    "median_per_sqft": 220
+   }
+  },
+  "house+water_ocean": {
+   "n": 28,
+   "median_price": 3360000.0,
+   "median_per_sqft": 908,
+   "with_private_dock": 2,
+   "with_dock": {
+    "n": 2,
+    "median_price": 4662495.0,
+    "median_per_sqft": 1126
+   },
+   "without_dock": {
+    "n": 26,
+    "median_price": 3187500.0,
+    "median_per_sqft": 889
+   }
+  },
+  "house+water_icw": {
+   "n": 112,
+   "median_price": 984950.0,
+   "median_per_sqft": 320,
+   "with_private_dock": 42,
+   "with_dock": {
+    "n": 42,
+    "median_price": 1224500.0,
+    "median_per_sqft": 390
+   },
+   "without_dock": {
+    "n": 70,
+    "median_price": 899000.0,
+    "median_per_sqft": 298
+   }
+  },
+  "house+water_canal": {
+   "n": 37,
+   "median_price": 944900.0,
+   "median_per_sqft": 430,
+   "with_private_dock": 22,
+   "with_dock": {
+    "n": 22,
+    "median_price": 972000.0,
+    "median_per_sqft": 418
+   },
+   "without_dock": {
+    "n": 15,
+    "median_price": 860000.0,
+    "median_per_sqft": 507
+   }
+  },
+  "house+water_creek": {
+   "n": 44,
+   "median_price": 1049450.0,
+   "median_per_sqft": 415,
+   "with_private_dock": 20,
+   "with_dock": {
+    "n": 20,
+    "median_price": 1349500.0,
+    "median_per_sqft": 461
+   },
+   "without_dock": {
+    "n": 24,
+    "median_price": 927499.5,
+    "median_per_sqft": 355
+   }
+  },
+  "house+water_marsh": {
+   "n": 21,
+   "median_price": 874000.0,
+   "median_per_sqft": 361,
+   "with_private_dock": 4,
+   "with_dock": {
+    "n": 4,
+    "median_price": 2523000.0,
+    "median_per_sqft": 543
+   },
+   "without_dock": {
+    "n": 17,
+    "median_price": 835000.0,
+    "median_per_sqft": 359
+   }
+  },
+  "house+water_river": {
+   "n": 46,
+   "median_price": 605000.0,
+   "median_per_sqft": 278,
+   "with_private_dock": 18,
+   "with_dock": {
+    "n": 18,
+    "median_price": 659900.0,
+    "median_per_sqft": 302
+   },
+   "without_dock": {
+    "n": 28,
+    "median_price": 559000.0,
+    "median_per_sqft": 256
+   }
+  },
+  "house+water_lake": {
+   "n": 421,
+   "median_price": 453555.0,
+   "median_per_sqft": 214,
+   "with_private_dock": 9,
+   "with_dock": {
+    "n": 9,
+    "median_price": 849000.0,
+    "median_per_sqft": 236
+   },
+   "without_dock": {
+    "n": 412,
+    "median_price": 449950.0,
+    "median_per_sqft": 214
+   }
+  },
+  "house+water_pond": {
+   "n": 421,
+   "median_price": 453555.0,
+   "median_per_sqft": 214,
+   "with_private_dock": 9,
+   "with_dock": {
+    "n": 9,
+    "median_price": 849000.0,
+    "median_per_sqft": 236
+   },
+   "without_dock": {
+    "n": 412,
+    "median_price": 449950.0,
+    "median_per_sqft": 214
+   }
+  },
+  "house+deep_water": {
+   "n": 48,
+   "median_price": 999400.0,
+   "median_per_sqft": 347,
+   "with_private_dock": 30,
+   "with_dock": {
+    "n": 30,
+    "median_price": 1173450.0,
+    "median_per_sqft": 384
+   },
+   "without_dock": {
+    "n": 18,
+    "median_price": 923950.0,
+    "median_per_sqft": 274
+   }
+  },
+  "house+boat_slip": {
+   "n": 26,
+   "median_price": 962400.0,
+   "median_per_sqft": 360,
+   "with_private_dock": 16,
+   "with_dock": {
+    "n": 16,
+    "median_price": 1374500.0,
+    "median_per_sqft": 380
+   },
+   "without_dock": {
+    "n": 10,
+    "median_price": 794500.0,
+    "median_per_sqft": 252
+   }
+  },
+  "house+private_dock": {
+   "n": 89,
+   "median_price": 997000.0,
+   "median_per_sqft": 388
+  },
+  "house+private_dock_not_waterfront_flag": {
+   "n": 48,
+   "median_price": 1303500.0,
+   "median_per_sqft": 414
+  },
+  "house_waterfront_lake_or_pond_only": {
+   "n": 408,
+   "median_price": 449900.0,
+   "median_per_sqft": 213
+  },
+  "house_waterfront_on_moving_water": {
+   "n": 89,
+   "median_price": 998500.0,
+   "median_per_sqft": 507
+  },
+  "house_waterfront_no_water_kind": {
+   "n": 0,
+   "median_price": null,
+   "median_per_sqft": null
+  },
+  "lake_and_pond_sets_identical": true,
+  "condo+water_ocean": {
+   "n": 1117,
+   "median_price": 214000.0,
+   "median_per_sqft": 328
+  },
+  "condo+waterfront": {
+   "n": 945,
+   "median_price": 225000.0,
+   "median_per_sqft": 324
+  },
+  "condo+water_icw": {
+   "n": 118,
+   "median_price": 317450.0,
+   "median_per_sqft": 227
+  },
+  "townhouse+water_ocean": {
+   "n": 0,
+   "median_price": null,
+   "median_per_sqft": null
+  },
+  "townhouse+waterfront": {
+   "n": 46,
+   "median_price": 287000.0,
+   "median_per_sqft": 174
+  },
+  "townhouse+water_icw": {
+   "n": 0,
+   "median_price": null,
+   "median_per_sqft": null
+  },
+  "house_dock_by_city": [
+   [
+    "Myrtle Beach",
+    27
+   ],
+   [
+    "North Myrtle Beach",
+    18
+   ],
+   [
+    "Georgetown",
+    15
+   ],
+   [
+    "Pawleys Island",
+    7
+   ],
+   [
+    "Murrells Inlet",
+    7
+   ],
+   [
+    "Little River",
+    6
+   ],
+   [
+    "Conway",
+    4
+   ],
+   [
+    "Garden City Beach",
+    3
+   ],
+   [
+    "Longs",
+    2
+   ]
+  ],
+  "house_icw_by_city": [
+   [
+    "Myrtle Beach",
+    54
+   ],
+   [
+    "Georgetown",
+    20
+   ],
+   [
+    "Little River",
+    18
+   ],
+   [
+    "North Myrtle Beach",
+    12
+   ],
+   [
+    "Pawleys Island",
+    5
+   ],
+   [
+    "Longs",
+    2
+   ],
+   [
+    "Murrells Inlet",
+    1
+   ]
+  ],
+  "house+waterfront+nohoa": {
+   "n": 82,
+   "median_price": 947000.0,
+   "median_per_sqft": 429,
+   "by_kind": {
+    "water_ocean": 21,
+    "water_icw": 2,
+    "water_canal": 25,
+    "water_creek": 11,
+    "water_marsh": 3,
+    "water_river": 11,
+    "water_lake": 28
+   },
+   "with_private_dock": 21,
+   "by_city": [
+    [
+     "North Myrtle Beach",
+     28
+    ],
+    [
+     "Myrtle Beach",
+     13
+    ],
+    [
+     "Murrells Inlet",
+     10
+    ],
+    [
+     "Conway",
+     8
+    ],
+    [
+     "Pawleys Island",
+     6
+    ],
+    [
+     "Garden City Beach",
+     5
+    ],
+    [
+     "Loris",
+     4
+    ],
+    [
+     "Georgetown",
+     4
+    ],
+    [
+     "Longs",
+     2
+    ],
+    [
+     "Galivants Ferry",
+     1
+    ],
+    [
+     "Little River",
+     1
+    ]
+   ]
+  },
+  "house_waterfront_by_city": [
+   [
+    "Myrtle Beach",
+    175
+   ],
+   [
+    "Conway",
+    76
+   ],
+   [
+    "Longs",
+    54
+   ],
+   [
+    "North Myrtle Beach",
+    44
+   ],
+   [
+    "Murrells Inlet",
+    41
+   ],
+   [
+    "Little River",
+    29
+   ],
+   [
+    "Pawleys Island",
+    24
+   ],
+   [
+    "Georgetown",
+    21
+   ],
+   [
+    "Loris",
+    12
+   ],
+   [
+    "Surfside Beach",
+    8
+   ],
+   [
+    "Galivants Ferry",
+    6
+   ],
+   [
+    "Garden City Beach",
+    6
+   ],
+   [
+    "Litchfield",
+    1
+   ]
+  ],
+  "house_lake_by_city": [
+   [
+    "Myrtle Beach",
+    165
+   ],
+   [
+    "Conway",
+    70
+   ],
+   [
+    "Longs",
+    54
+   ],
+   [
+    "Murrells Inlet",
+    30
+   ],
+   [
+    "Little River",
+    27
+   ],
+   [
+    "North Myrtle Beach",
+    20
+   ],
+   [
+    "Pawleys Island",
+    17
+   ],
+   [
+    "Georgetown",
+    13
+   ],
+   [
+    "Loris",
+    12
+   ],
+   [
+    "Surfside Beach",
+    8
+   ],
+   [
+    "Galivants Ferry",
+    5
+   ]
+  ],
+  "house_waterfront_under_300k": {
+   "all": 69,
+   "lake_or_pond": 69,
+   "river": 0
+  },
+  "not_sc_dropped": 40,
+  "tidal_or_river_waterfront": {
+   "rule": "listed as waterfront and naming a canal, creek, marsh, the Intracoastal Waterway or a river, and not the ocean",
+   "all": {
+    "n": 61,
+    "median_price": 874000.0,
+    "median_per_sqft": 372
+   },
+   "with_dock": {
+    "n": 31,
+    "median_price": 945000.0,
+    "median_per_sqft": 388,
+    "median_sqft": 2448
+   },
+   "without_dock": {
+    "n": 30,
+    "median_price": 854500.0,
+    "median_per_sqft": 343,
+    "median_sqft": 1865.0
+   }
+  },
+  "waterfront_flag_by_kind": {
+   "water_ocean": 28,
+   "water_canal": 37,
+   "water_creek": 14,
+   "water_marsh": 5,
+   "water_icw": 19,
+   "water_river": 22,
+   "water_lake": 421
+  },
+  "kind_flag_not_waterfront": {
+   "water_icw": 93,
+   "water_creek": 30,
+   "water_marsh": 16,
+   "water_river": 24
+  },
+  "waterfront_under_300k_by_city": [
+   [
+    "Longs",
+    22
+   ],
+   [
+    "Conway",
+    18
+   ],
+   [
+    "Myrtle Beach",
+    11
+   ],
+   [
+    "Loris",
+    6
+   ],
+   [
+    "Little River",
+    3
+   ],
+   [
+    "Georgetown",
+    3
+   ],
+   [
+    "Galivants Ferry",
+    3
+   ],
+   [
+    "Pawleys Island",
+    2
+   ],
+   [
+    "Murrells Inlet",
+    1
+   ]
+  ]
+ },
+ "nfip": {
+  "source": "OpenFEMA NfipPolicies v3, single-family (occupancyType 1 or 11), policies that began 2025-06-01 to 2026-05-31, ZIPs 29526, 29527, 29566, 29568, 29572, 29575, 29576, 29577, 29579, 29582, 29588",
+  "what": "policyCost: what the policyholder paid for the year, premium plus fees and surcharges",
+  "groups": {
+   "A/all": {
+    "n": 4940,
+    "median": 1161.0,
+    "q1": 886.25,
+    "q3": 1820.75
+   },
+   "A/home": {
+    "n": 2855,
+    "median": 1042,
+    "q1": 805.0,
+    "q3": 1418.0
+   },
+   "A/second": {
+    "n": 2085,
+    "median": 1368,
+    "q1": 1064.0,
+    "q3": 2743.5
+   },
+   "V/all": {
+    "n": 246,
+    "median": 3703.5,
+    "q1": 1477.75,
+    "q3": 5504.75
+   },
+   "V/home": {
+    "n": 75,
+    "median": 3456,
+    "q1": 1654.0,
+    "q3": 5303.0
+   },
+   "V/second": {
+    "n": 171,
+    "median": 4032,
+    "q1": 1453.0,
+    "q3": 5557.0
+   },
+   "X/all": {
+    "n": 13670,
+    "median": 568.0,
+    "q1": 479.0,
+    "q3": 723.0
+   },
+   "X/home": {
+    "n": 12184,
+    "median": 546.0,
+    "q1": 470.0,
+    "q3": 671.0
+   },
+   "X/second": {
+    "n": 1486,
+    "median": 790.0,
+    "q1": 688.0,
+    "q3": 1040.5
+   },
+   "all/all": {
+    "n": 18856,
+    "median": 647.0,
+    "q1": 509.0,
+    "q3": 1018.0
+   },
+   "zip29526/A": {
+    "n": 332,
+    "median": 983.0,
+    "q1": 715.25,
+    "q3": 1204.25
+   },
+   "zip29526/X": {
+    "n": 1000,
+    "median": 560.0,
+    "q1": 432.25,
+    "q3": 726.5
+   },
+   "zip29527/A": {
+    "n": 137,
+    "median": 985,
+    "q1": 758.5,
+    "q3": 1154.5
+   },
+   "zip29527/X": {
+    "n": 219,
+    "median": 679,
+    "q1": 536.0,
+    "q3": 1029.0
+   },
+   "zip29566/A": {
+    "n": 203,
+    "median": 1247,
+    "q1": 1037.0,
+    "q3": 1736.0
+   },
+   "zip29566/X": {
+    "n": 968,
+    "median": 477.0,
+    "q1": 408.0,
+    "q3": 584.0
+   },
+   "zip29568/A": {
+    "n": 113,
+    "median": 597,
+    "q1": 521.5,
+    "q3": 723.0
+   },
+   "zip29568/X": {
+    "n": 1065,
+    "median": 530,
+    "q1": 476.5,
+    "q3": 599.0
+   },
+   "zip29572/A": {
+    "n": 74,
+    "median": 1186.5,
+    "q1": 916.75,
+    "q3": 1815.5
+   },
+   "zip29572/X": {
+    "n": 769,
+    "median": 544,
+    "q1": 441.0,
+    "q3": 755.5
+   },
+   "zip29575/A": {
+    "n": 707,
+    "median": 1181,
+    "q1": 876.0,
+    "q3": 1680.0
+   },
+   "zip29575/V": {
+    "n": 21,
+    "median": 4171,
+    "q1": 1543.0,
+    "q3": 5062.5
+   },
+   "zip29575/X": {
+    "n": 1482,
+    "median": 522.0,
+    "q1": 447.0,
+    "q3": 704.0
+   },
+   "zip29576/A": {
+    "n": 879,
+    "median": 1430,
+    "q1": 1068.0,
+    "q3": 4480.0
+   },
+   "zip29576/V": {
+    "n": 152,
+    "median": 4642.5,
+    "q1": 1741.5,
+    "q3": 6444.75
+   },
+   "zip29576/X": {
+    "n": 2060,
+    "median": 573.0,
+    "q1": 497.0,
+    "q3": 732.0
+   },
+   "zip29577/A": {
+    "n": 376,
+    "median": 858.5,
+    "q1": 712.5,
+    "q3": 1086.0
+   },
+   "zip29577/X": {
+    "n": 1513,
+    "median": 585,
+    "q1": 511.0,
+    "q3": 741.0
+   },
+   "zip29579/A": {
+    "n": 328,
+    "median": 891.5,
+    "q1": 749.75,
+    "q3": 1075.0
+   },
+   "zip29579/X": {
+    "n": 1449,
+    "median": 614,
+    "q1": 529.0,
+    "q3": 753.5
+   },
+   "zip29582/A": {
+    "n": 1362,
+    "median": 1463.0,
+    "q1": 1101.0,
+    "q3": 2942.75
+   },
+   "zip29582/V": {
+    "n": 60,
+    "median": 2151.0,
+    "q1": 1173.0,
+    "q3": 3704.75
+   },
+   "zip29582/X": {
+    "n": 1325,
+    "median": 603,
+    "q1": 460.0,
+    "q3": 797.5
+   },
+   "zip29588/A": {
+    "n": 429,
+    "median": 1043,
+    "q1": 708.0,
+    "q3": 1311.0
+   },
+   "zip29588/X": {
+    "n": 1820,
+    "median": 588.0,
+    "q1": 515.0,
+    "q3": 762.0
+   }
+  }
+ },
+ "tides": {
+  "8661070": {
+   "name": "Springmaid Pier, Myrtle Beach (ocean)",
+   "kind": "ocean",
+   "mean_range_ft": 4.8,
+   "max_range_ft": 7.62,
+   "min_low_ft": -1.099
+  },
+  "8660265": {
+   "name": "Cherry Grove (inside)",
+   "kind": "channel",
+   "mean_range_ft": 4.47,
+   "max_range_ft": 6.81,
+   "min_low_ft": -0.813
+  },
+  "8660121": {
+   "name": "Little River (town)",
+   "kind": "waterway",
+   "mean_range_ft": 4.25,
+   "max_range_ft": 6.29,
+   "min_low_ft": -0.897
+  },
+  "8660642": {
+   "name": "North Myrtle Beach, ICWW",
+   "kind": "waterway",
+   "mean_range_ft": 1.69,
+   "max_range_ft": 3.25,
+   "min_low_ft": -0.954
+  },
+  "8660854": {
+   "name": "Myrtle Beach, Combination Bridge",
+   "kind": "waterway",
+   "mean_range_ft": 1.62,
+   "max_range_ft": 3.24,
+   "min_low_ft": -1.011
+  },
+  "8660983": {
+   "name": "Socastee Bridge",
+   "kind": "waterway",
+   "mean_range_ft": 1.98,
+   "max_range_ft": 3.46,
+   "min_low_ft": -0.84
+  },
+  "8660275": {
+   "name": "Conway, RR. bridge",
+   "kind": "river",
+   "mean_range_ft": 1.13,
+   "max_range_ft": 2.43,
+   "min_low_ft": -0.84
+  },
+  "8661529": {
+   "name": "Captain Alex's Marina, Parsonage Creek",
+   "kind": "creek",
+   "mean_range_ft": 4.14,
+   "max_range_ft": 6.29,
+   "min_low_ft": -0.747
+  },
+  "8661989": {
+   "name": "Bennet's Dock, Pawleys Island Creek",
+   "kind": "creek",
+   "mean_range_ft": 3.38,
+   "max_range_ft": 5.47,
+   "min_low_ft": -0.282
+  }
+ },
+ "bridges": {
+  "fixed_65": 8,
+  "swing": [
+   [
+    "Little River swing bridge (Sea Mountain Highway)",
+    347.3,
+    7
+   ],
+   [
+    "Barefoot Landing swing bridge (Barefoot Resort Bridge Road)",
+    353.3,
+    31
+   ],
+   [
+    "Socastee swing bridge",
+    371.0,
+    11
+   ]
+  ],
+  "lowest_fixed_ft": 65,
+  "rail": [
+   [
+    "Railroad bridge (bascule, opens)",
+    365.4,
+    16
+   ]
+  ],
+  "miles_state_line_to_socastee": 30.2
+ }
+}

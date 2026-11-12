@@ -1,0 +1,125 @@
+{
+ "meta": {
+  "made": "analyze_surnames.py",
+  "sales_file": "data/2026-10-d/sell-out-of-state-buyers/out-of-state-buyers.json",
+  "deeds": "Horry County AcclaimWeb DEED (001), recorded 2025-10-01..2026-09-30, first-named grantor and grantee",
+  "note": "No names are written here. A deed whose first-named grantor and grantee share a surname and first name (one person deeding to themselves, often adding a spouse) is left out. Same surname = the first word of the first-named grantor and grantee match, both people (not a company, trust or estate)."
+ },
+ "home_sales": 13194,
+ "matched_to_deed_row": 13194,
+ "missing_deed_row": 0,
+ "kinds": [
+  [
+   "person->person",
+   7551
+  ],
+  [
+   "company->person",
+   3116
+  ],
+  [
+   "person->company",
+   870
+  ],
+  [
+   "trust->person",
+   673
+  ],
+  [
+   "company->company",
+   404
+  ],
+  [
+   "person->trust",
+   329
+  ],
+  [
+   "company->trust",
+   85
+  ],
+  [
+   "trust->company",
+   56
+  ],
+  [
+   "trust->trust",
+   43
+  ],
+  [
+   "estate->person",
+   22
+  ],
+  [
+   "person->estate",
+   21
+  ],
+  [
+   "company->estate",
+   15
+  ]
+ ],
+ "self_deeds_left_out": 27,
+ "person_to_person_resales": 7522,
+ "same_surname": 73,
+ "pct_same_of_person_to_person": 1.0,
+ "pct_same_of_all_home_sales": 0.6,
+ "median_price": {
+  "same_surname": 200000,
+  "other_person_to_person": 310000,
+  "all_home_sales": 310000,
+  "all_resales_not_builder": 300000,
+  "houses_not_condo_resale": 324900
+ },
+ "condo_share": {
+  "same": 11.0,
+  "other": 20.8
+ },
+ "vs_neighbors_same_group_min5": {
+  "same_surname": {
+   "n": 15,
+   "median": 0.665,
+   "p25": 0.477,
+   "p75": 0.969,
+   "share_below_90pct": 66.7,
+   "share_below_75pct": 53.3
+  },
+  "other_person_to_person": {
+   "n": 2194,
+   "median": 1.0,
+   "p25": 0.89,
+   "p75": 1.118,
+   "share_below_90pct": 26.7,
+   "share_below_75pct": 9.4
+  }
+ },
+ "vs_neighbors_same_group_min3": {
+  "same_surname": {
+   "n": 23,
+   "median": 0.652,
+   "p25": 0.477,
+   "p75": 0.921,
+   "share_below_90pct": 73.9,
+   "share_below_75pct": 60.9
+  },
+  "other_person_to_person": {
+   "n": 3427,
+   "median": 1.0,
+   "p25": 0.895,
+   "p75": 1.115,
+   "share_below_90pct": 25.8,
+   "share_below_75pct": 8.9
+  }
+ },
+ "same_surname_price_bands": {
+  "300k+": 20,
+  "under 100k": 22,
+  "100k-200k": 14,
+  "200k-300k": 17
+ },
+ "other_price_bands": {
+  "200k-300k": 2058,
+  "300k+": 3910,
+  "100k-200k": 1187,
+  "under 100k": 294
+ }
+}

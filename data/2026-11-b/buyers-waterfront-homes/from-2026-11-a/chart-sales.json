@@ -1,0 +1,101 @@
+{
+ "what": "Middle house sale price, on the water and within 1 km but not on it, deeds recorded 2025-10-01 to 2026-09-30",
+ "rows": [
+  {
+   "water": "Intracoastal Waterway",
+   "on": {
+    "n": 56,
+    "median": 1325000.0,
+    "q1": 891250.0,
+    "q3": 1700000.0
+   },
+   "near": {
+    "n": 462,
+    "median": 527000.0,
+    "q1": 319500.0,
+    "q3": 724925.0
+   },
+   "ratio": 2.51
+  },
+  {
+   "water": "Waterway: Little River and North Myrtle Beach",
+   "on": {
+    "n": 12,
+    "median": 1325000.0,
+    "q1": 968750.0,
+    "q3": 2190000.0
+   },
+   "near": {
+    "n": 126,
+    "median": 576592.5,
+    "q1": 350000.0,
+    "q3": 665250.0
+   },
+   "ratio": 2.3
+  },
+  {
+   "water": "Waterway: Socastee",
+   "on": {
+    "n": 17,
+    "median": 721742.0,
+    "q1": 525000.0,
+    "q3": 1040000.0
+   },
+   "near": {
+    "n": 204,
+    "median": 345500.0,
+    "q1": 270000.0,
+    "q3": 490000.0
+   },
+   "ratio": 2.09
+  },
+  {
+   "water": "Waterway: Myrtle Beach and Carolina Forest",
+   "on": {
+    "n": 27,
+    "median": 1550000.0,
+    "q1": 1325000.0,
+    "q3": 1775000.0
+   },
+   "near": {
+    "n": 151,
+    "median": 750000.0,
+    "q1": 640000.0,
+    "q3": 956500.0
+   },
+   "ratio": 2.07
+  },
+  {
+   "water": "Cherry Grove channels (House Creek)",
+   "on": {
+    "n": 39,
+    "median": 725000.0,
+    "q1": 665900.0,
+    "q3": 862000.0
+   },
+   "near": {
+    "n": 74,
+    "median": 622500.0,
+    "q1": 550000.0,
+    "q3": 855000.0
+   },
+   "ratio": 1.16
+  },
+  {
+   "water": "Waccamaw River",
+   "on": {
+    "n": 14,
+    "median": 537000.0,
+    "q1": 386750.0,
+    "q3": 705000.0
+   },
+   "near": {
+    "n": 82,
+    "median": 329890.0,
+    "q1": 285449.75,
+    "q3": 370000.0
+   },
+   "ratio": 1.63
+  }
+ ]
+}

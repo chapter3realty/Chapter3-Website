@@ -1,0 +1,2380 @@
+{
+ "made": "analyze.py",
+ "window": [
+  "2025-10-01",
+  "2026-09-30"
+ ],
+ "stock": {
+  "horry/west/all": {
+   "homes": 8945,
+   "legal_residence": 7100,
+   "pct_legal_residence": 79.4,
+   "pct_bill_outside_sc": 12.4,
+   "top_states": [
+    [
+     "SC",
+     7836
+    ],
+    [
+     "NY",
+     289
+    ],
+    [
+     "NJ",
+     163
+    ],
+    [
+     "PA",
+     117
+    ],
+    [
+     "NC",
+     77
+    ],
+    [
+     "VA",
+     60
+    ]
+   ],
+   "fema": {
+    "none": 8719,
+    "AE": 163,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 63
+   },
+   "pct_high_risk": 1.8,
+   "pct_ve": 0.0,
+   "taxdist": {
+    "610": 8171,
+    "600": 774
+   },
+   "elem": {
+    "St James Elementary": 8943,
+    "Burgess Elementary": 2
+   },
+   "middle": {
+    "St James Intermediate": 8945
+   },
+   "high": {
+    "St James High": 8945
+   }
+  },
+  "horry/west/house": {
+   "homes": 6704,
+   "legal_residence": 5796,
+   "pct_legal_residence": 86.5,
+   "pct_bill_outside_sc": 6.9,
+   "top_states": [
+    [
+     "SC",
+     6239
+    ],
+    [
+     "NY",
+     102
+    ],
+    [
+     "NJ",
+     57
+    ],
+    [
+     "PA",
+     40
+    ],
+    [
+     "NC",
+     35
+    ],
+    [
+     "VA",
+     31
+    ]
+   ],
+   "fema": {
+    "none": 6503,
+    "AE": 148,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 53
+   },
+   "pct_high_risk": 2.2,
+   "pct_ve": 0.0,
+   "taxdist": {
+    "600": 744,
+    "610": 5960
+   },
+   "elem": {
+    "St James Elementary": 6702,
+    "Burgess Elementary": 2
+   },
+   "middle": {
+    "St James Intermediate": 6704
+   },
+   "high": {
+    "St James High": 6704
+   }
+  },
+  "horry/west/condo": {
+   "homes": 1293,
+   "legal_residence": 712,
+   "pct_legal_residence": 55.1,
+   "pct_bill_outside_sc": 33.3,
+   "top_states": [
+    [
+     "SC",
+     861
+    ],
+    [
+     "NY",
+     128
+    ],
+    [
+     "NJ",
+     75
+    ],
+    [
+     "PA",
+     50
+    ],
+    [
+     "NC",
+     30
+    ],
+    [
+     "CT",
+     19
+    ]
+   ],
+   "fema": {
+    "none": 1282,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 7,
+    "AE": 4
+   },
+   "pct_high_risk": 0.3,
+   "pct_ve": 0.0,
+   "taxdist": {
+    "610": 1293
+   },
+   "elem": {
+    "St James Elementary": 1293
+   },
+   "middle": {
+    "St James Intermediate": 1293
+   },
+   "high": {
+    "St James High": 1293
+   }
+  },
+  "horry/west/other": {
+   "homes": 948,
+   "legal_residence": 592,
+   "pct_legal_residence": 62.4,
+   "pct_bill_outside_sc": 22.4,
+   "top_states": [
+    [
+     "SC",
+     736
+    ],
+    [
+     "NY",
+     59
+    ],
+    [
+     "NJ",
+     31
+    ],
+    [
+     "PA",
+     27
+    ],
+    [
+     "CT",
+     15
+    ],
+    [
+     "MA",
+     15
+    ]
+   ],
+   "fema": {
+    "none": 934,
+    "AE": 11,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 3
+   },
+   "pct_high_risk": 1.2,
+   "pct_ve": 0.0,
+   "taxdist": {
+    "610": 918,
+    "600": 30
+   },
+   "elem": {
+    "St James Elementary": 948
+   },
+   "middle": {
+    "St James Intermediate": 948
+   },
+   "high": {
+    "St James High": 948
+   }
+  },
+  "horry/east/all": {
+   "homes": 0
+  },
+  "horry/east/house": {
+   "homes": 0
+  },
+  "horry/east/condo": {
+   "homes": 0
+  },
+  "horry/east/other": {
+   "homes": 0
+  },
+  "horry/garden_city/all": {
+   "homes": 5376,
+   "legal_residence": 2061,
+   "pct_legal_residence": 38.3,
+   "pct_bill_outside_sc": 32.2,
+   "top_states": [
+    [
+     "SC",
+     3644
+    ],
+    [
+     "NC",
+     498
+    ],
+    [
+     "NY",
+     217
+    ],
+    [
+     "PA",
+     161
+    ],
+    [
+     "VA",
+     116
+    ],
+    [
+     "NJ",
+     99
+    ]
+   ],
+   "fema": {
+    "none": 2114,
+    "AE": 2225,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 833,
+    "VE": 204
+   },
+   "pct_high_risk": 45.2,
+   "pct_ve": 3.8,
+   "taxdist": {
+    "610": 5119,
+    "620": 252,
+    "624": 5
+   },
+   "elem": {
+    "Seaside Elementary": 5376
+   },
+   "middle": {
+    "St James Intermediate": 5376
+   },
+   "high": {
+    "St James High": 5376
+   }
+  },
+  "horry/garden_city/house": {
+   "homes": 2106,
+   "legal_residence": 1255,
+   "pct_legal_residence": 59.6,
+   "pct_bill_outside_sc": 16.8,
+   "top_states": [
+    [
+     "SC",
+     1753
+    ],
+    [
+     "NC",
+     125
+    ],
+    [
+     "VA",
+     27
+    ],
+    [
+     "PA",
+     26
+    ],
+    [
+     "NY",
+     26
+    ],
+    [
+     "NJ",
+     22
+    ]
+   ],
+   "fema": {
+    "AE": 751,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 549,
+    "none": 750,
+    "VE": 56
+   },
+   "pct_high_risk": 38.3,
+   "pct_ve": 2.7,
+   "taxdist": {
+    "610": 1854,
+    "620": 249,
+    "624": 3
+   },
+   "elem": {
+    "Seaside Elementary": 2106
+   },
+   "middle": {
+    "St James Intermediate": 2106
+   },
+   "high": {
+    "St James High": 2106
+   }
+  },
+  "horry/garden_city/condo": {
+   "homes": 2350,
+   "legal_residence": 507,
+   "pct_legal_residence": 21.6,
+   "pct_bill_outside_sc": 48.2,
+   "top_states": [
+    [
+     "SC",
+     1216
+    ],
+    [
+     "NC",
+     254
+    ],
+    [
+     "NY",
+     174
+    ],
+    [
+     "PA",
+     116
+    ],
+    [
+     "OH",
+     78
+    ],
+    [
+     "NJ",
+     69
+    ]
+   ],
+   "fema": {
+    "none": 949,
+    "AE": 1217,
+    "VE": 97,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 87
+   },
+   "pct_high_risk": 55.9,
+   "pct_ve": 4.1,
+   "taxdist": {
+    "610": 2350
+   },
+   "elem": {
+    "Seaside Elementary": 2350
+   },
+   "middle": {
+    "St James Intermediate": 2350
+   },
+   "high": {
+    "St James High": 2350
+   }
+  },
+  "horry/garden_city/other": {
+   "homes": 920,
+   "legal_residence": 299,
+   "pct_legal_residence": 32.5,
+   "pct_bill_outside_sc": 26.6,
+   "top_states": [
+    [
+     "SC",
+     675
+    ],
+    [
+     "NC",
+     119
+    ],
+    [
+     "VA",
+     21
+    ],
+    [
+     "PA",
+     19
+    ],
+    [
+     "NY",
+     17
+    ],
+    [
+     "NJ",
+     8
+    ]
+   ],
+   "fema": {
+    "none": 415,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 197,
+    "AE": 257,
+    "VE": 51
+   },
+   "pct_high_risk": 33.5,
+   "pct_ve": 5.5,
+   "taxdist": {
+    "610": 915,
+    "620": 3,
+    "624": 2
+   },
+   "elem": {
+    "Seaside Elementary": 920
+   },
+   "middle": {
+    "St James Intermediate": 920
+   },
+   "high": {
+    "St James High": 920
+   }
+  },
+  "georgetown/inlet/all": {
+   "homes": 366,
+   "legal_residence": 244,
+   "pct_legal_residence": 66.7,
+   "pct_bill_outside_sc": 10.4,
+   "top_states": [
+    [
+     "SC",
+     328
+    ],
+    [
+     "NC",
+     12
+    ],
+    [
+     "NJ",
+     4
+    ],
+    [
+     "MD",
+     3
+    ],
+    [
+     "VA",
+     3
+    ],
+    [
+     "FL",
+     2
+    ]
+   ],
+   "fema": {
+    "X shaded": 50,
+    "AE": 288,
+    "X": 2,
+    "VE": 26
+   },
+   "pct_high_risk": 85.8,
+   "pct_ve": 7.1,
+   "taxdist": {
+    "4": 34,
+    "41": 332
+   },
+   "elem": {
+    "WACCAMAW ELEM": 366
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 366
+   },
+   "high": {
+    "WACCAMAW HIGH": 366
+   }
+  },
+  "georgetown/inlet/house": {
+   "homes": 344,
+   "legal_residence": 241,
+   "pct_legal_residence": 70.1,
+   "pct_bill_outside_sc": 10.5,
+   "top_states": [
+    [
+     "SC",
+     308
+    ],
+    [
+     "NC",
+     12
+    ],
+    [
+     "NJ",
+     4
+    ],
+    [
+     "VA",
+     3
+    ],
+    [
+     "FL",
+     2
+    ],
+    [
+     "NH",
+     2
+    ]
+   ],
+   "fema": {
+    "X shaded": 40,
+    "AE": 279,
+    "X": 1,
+    "VE": 24
+   },
+   "pct_high_risk": 88.1,
+   "pct_ve": 7.0,
+   "taxdist": {
+    "4": 26,
+    "41": 318
+   },
+   "elem": {
+    "WACCAMAW ELEM": 344
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 344
+   },
+   "high": {
+    "WACCAMAW HIGH": 344
+   }
+  },
+  "georgetown/inlet/condo": {
+   "homes": 6,
+   "legal_residence": 1,
+   "pct_legal_residence": 16.7,
+   "pct_bill_outside_sc": 0.0,
+   "top_states": [
+    [
+     "SC",
+     6
+    ]
+   ],
+   "fema": {
+    "X": 1,
+    "X shaded": 1,
+    "AE": 4
+   },
+   "pct_high_risk": 66.7,
+   "pct_ve": 0.0,
+   "taxdist": {
+    "41": 6
+   },
+   "elem": {
+    "WACCAMAW ELEM": 6
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 6
+   },
+   "high": {
+    "WACCAMAW HIGH": 6
+   }
+  },
+  "georgetown/inlet/other": {
+   "homes": 16,
+   "legal_residence": 2,
+   "pct_legal_residence": 12.5,
+   "pct_bill_outside_sc": 12.5,
+   "top_states": [
+    [
+     "SC",
+     14
+    ],
+    [
+     "MD",
+     2
+    ]
+   ],
+   "fema": {
+    "X shaded": 9,
+    "AE": 5,
+    "VE": 2
+   },
+   "pct_high_risk": 43.8,
+   "pct_ve": 12.5,
+   "taxdist": {
+    "4": 8,
+    "41": 8
+   },
+   "elem": {
+    "WACCAMAW ELEM": 16
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 16
+   },
+   "high": {
+    "WACCAMAW HIGH": 16
+   }
+  },
+  "georgetown/old_road/all": {
+   "homes": 800,
+   "legal_residence": 519,
+   "pct_legal_residence": 64.9,
+   "pct_bill_outside_sc": 14.1,
+   "top_states": [
+    [
+     "SC",
+     686
+    ],
+    [
+     "NC",
+     25
+    ],
+    [
+     "NJ",
+     14
+    ],
+    [
+     "MD",
+     8
+    ],
+    [
+     "NY",
+     8
+    ],
+    [
+     "PA",
+     8
+    ]
+   ],
+   "fema": {
+    "X": 192,
+    "X shaded": 330,
+    "AE": 276,
+    "VE": 2
+   },
+   "pct_high_risk": 34.8,
+   "pct_ve": 0.2,
+   "taxdist": {
+    "41": 800
+   },
+   "elem": {
+    "WACCAMAW ELEM": 800
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 800
+   },
+   "high": {
+    "WACCAMAW HIGH": 800
+   }
+  },
+  "georgetown/old_road/house": {
+   "homes": 613,
+   "legal_residence": 427,
+   "pct_legal_residence": 69.7,
+   "pct_bill_outside_sc": 12.1,
+   "top_states": [
+    [
+     "SC",
+     538
+    ],
+    [
+     "NC",
+     19
+    ],
+    [
+     "MD",
+     6
+    ],
+    [
+     "NJ",
+     6
+    ],
+    [
+     "VA",
+     5
+    ],
+    [
+     "NY",
+     4
+    ]
+   ],
+   "fema": {
+    "X": 137,
+    "X shaded": 296,
+    "AE": 178,
+    "VE": 2
+   },
+   "pct_high_risk": 29.4,
+   "pct_ve": 0.3,
+   "taxdist": {
+    "41": 613
+   },
+   "elem": {
+    "WACCAMAW ELEM": 613
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 613
+   },
+   "high": {
+    "WACCAMAW HIGH": 613
+   }
+  },
+  "georgetown/old_road/condo": {
+   "homes": 174,
+   "legal_residence": 90,
+   "pct_legal_residence": 51.7,
+   "pct_bill_outside_sc": 20.7,
+   "top_states": [
+    [
+     "SC",
+     138
+    ],
+    [
+     "NJ",
+     7
+    ],
+    [
+     "PA",
+     5
+    ],
+    [
+     "NC",
+     4
+    ],
+    [
+     "NY",
+     4
+    ],
+    [
+     "TN",
+     3
+    ]
+   ],
+   "fema": {
+    "X": 54,
+    "X shaded": 28,
+    "AE": 92
+   },
+   "pct_high_risk": 52.9,
+   "pct_ve": 0.0,
+   "taxdist": {
+    "41": 174
+   },
+   "elem": {
+    "WACCAMAW ELEM": 174
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 174
+   },
+   "high": {
+    "WACCAMAW HIGH": 174
+   }
+  },
+  "georgetown/old_road/other": {
+   "homes": 13,
+   "legal_residence": 2,
+   "pct_legal_residence": 15.4,
+   "pct_bill_outside_sc": 23.1,
+   "top_states": [
+    [
+     "SC",
+     10
+    ],
+    [
+     "NC",
+     2
+    ],
+    [
+     "NJ",
+     1
+    ]
+   ],
+   "fema": {
+    "X": 1,
+    "AE": 6,
+    "X shaded": 6
+   },
+   "pct_high_risk": 46.2,
+   "pct_ve": 0.0,
+   "taxdist": {
+    "41": 13
+   },
+   "elem": {
+    "WACCAMAW ELEM": 13
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 13
+   },
+   "high": {
+    "WACCAMAW HIGH": 13
+   }
+  },
+  "georgetown/west/all": {
+   "homes": 2464,
+   "legal_residence": 2009,
+   "pct_legal_residence": 81.5,
+   "pct_bill_outside_sc": 7.6,
+   "top_states": [
+    [
+     "SC",
+     2274
+    ],
+    [
+     "NC",
+     35
+    ],
+    [
+     "PA",
+     26
+    ],
+    [
+     "NY",
+     24
+    ],
+    [
+     "NJ",
+     19
+    ],
+    [
+     "OH",
+     9
+    ]
+   ],
+   "fema": {
+    "X": 2422,
+    "AE": 40,
+    "X shaded": 2
+   },
+   "pct_high_risk": 1.6,
+   "pct_ve": 0.0,
+   "taxdist": {
+    "41": 2464
+   },
+   "elem": {
+    "WACCAMAW ELEM": 2461,
+    "null": 3
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 2461,
+    "null": 3
+   },
+   "high": {
+    "WACCAMAW HIGH": 2461,
+    "null": 3
+   }
+  },
+  "georgetown/west/house": {
+   "homes": 2206,
+   "legal_residence": 1947,
+   "pct_legal_residence": 88.3,
+   "pct_bill_outside_sc": 5.9,
+   "top_states": [
+    [
+     "SC",
+     2074
+    ],
+    [
+     "NY",
+     17
+    ],
+    [
+     "PA",
+     16
+    ],
+    [
+     "NJ",
+     15
+    ],
+    [
+     "OH",
+     9
+    ],
+    [
+     "NC",
+     8
+    ]
+   ],
+   "fema": {
+    "X": 2165,
+    "AE": 40,
+    "X shaded": 1
+   },
+   "pct_high_risk": 1.8,
+   "pct_ve": 0.0,
+   "taxdist": {
+    "41": 2206
+   },
+   "elem": {
+    "WACCAMAW ELEM": 2204,
+    "null": 2
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 2204,
+    "null": 2
+   },
+   "high": {
+    "WACCAMAW HIGH": 2204,
+    "null": 2
+   }
+  },
+  "georgetown/west/condo": {
+   "homes": 244,
+   "legal_residence": 61,
+   "pct_legal_residence": 25.0,
+   "pct_bill_outside_sc": 23.4,
+   "top_states": [
+    [
+     "SC",
+     187
+    ],
+    [
+     "NC",
+     27
+    ],
+    [
+     "PA",
+     9
+    ],
+    [
+     "NY",
+     7
+    ],
+    [
+     "NJ",
+     4
+    ],
+    [
+     "FL",
+     2
+    ]
+   ],
+   "fema": {
+    "X": 243,
+    "X shaded": 1
+   },
+   "pct_high_risk": 0.0,
+   "pct_ve": 0.0,
+   "taxdist": {
+    "41": 244
+   },
+   "elem": {
+    "WACCAMAW ELEM": 243,
+    "null": 1
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 243,
+    "null": 1
+   },
+   "high": {
+    "WACCAMAW HIGH": 243,
+    "null": 1
+   }
+  },
+  "georgetown/west/other": {
+   "homes": 14,
+   "legal_residence": 1,
+   "pct_legal_residence": 7.1,
+   "pct_bill_outside_sc": 7.1,
+   "top_states": [
+    [
+     "SC",
+     13
+    ],
+    [
+     "PA",
+     1
+    ]
+   ],
+   "fema": {
+    "X": 14
+   },
+   "pct_high_risk": 0.0,
+   "pct_ve": 0.0,
+   "taxdist": {
+    "41": 14
+   },
+   "elem": {
+    "WACCAMAW ELEM": 14
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 14
+   },
+   "high": {
+    "WACCAMAW HIGH": 14
+   }
+  },
+  "georgetown/gc_strip/all": {
+   "homes": 667,
+   "legal_residence": 164,
+   "pct_legal_residence": 24.6,
+   "pct_bill_outside_sc": 29.7,
+   "top_states": [
+    [
+     "SC",
+     468
+    ],
+    [
+     "NC",
+     73
+    ],
+    [
+     "NY",
+     15
+    ],
+    [
+     "VA",
+     14
+    ],
+    [
+     "PA",
+     13
+    ],
+    [
+     "GA",
+     10
+    ]
+   ],
+   "fema": {
+    "X shaded": 7,
+    "AE": 440,
+    "none": 15,
+    "VE": 202,
+    "X": 3
+   },
+   "pct_high_risk": 96.3,
+   "pct_ve": 30.3,
+   "taxdist": {
+    "4": 18,
+    "41": 649
+   },
+   "elem": {
+    "WACCAMAW ELEM": 667
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 667
+   },
+   "high": {
+    "WACCAMAW HIGH": 667
+   }
+  },
+  "georgetown/gc_strip/house": {
+   "homes": 100,
+   "legal_residence": 51,
+   "pct_legal_residence": 51.0,
+   "pct_bill_outside_sc": 19.0,
+   "top_states": [
+    [
+     "SC",
+     81
+    ],
+    [
+     "NC",
+     7
+    ],
+    [
+     "PA",
+     3
+    ],
+    [
+     "KY",
+     2
+    ],
+    [
+     "VA",
+     2
+    ],
+    [
+     "FL",
+     1
+    ]
+   ],
+   "fema": {
+    "X shaded": 7,
+    "AE": 72,
+    "none": 1,
+    "VE": 17,
+    "X": 3
+   },
+   "pct_high_risk": 89.0,
+   "pct_ve": 17.0,
+   "taxdist": {
+    "4": 18,
+    "41": 82
+   },
+   "elem": {
+    "WACCAMAW ELEM": 100
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 100
+   },
+   "high": {
+    "WACCAMAW HIGH": 100
+   }
+  },
+  "georgetown/gc_strip/condo": {
+   "homes": 1,
+   "legal_residence": 0,
+   "pct_legal_residence": 0.0,
+   "pct_bill_outside_sc": 0.0,
+   "top_states": [
+    [
+     "SC",
+     1
+    ]
+   ],
+   "fema": {
+    "AE": 1
+   },
+   "pct_high_risk": 100.0,
+   "pct_ve": 0.0,
+   "taxdist": {
+    "41": 1
+   },
+   "elem": {
+    "WACCAMAW ELEM": 1
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 1
+   },
+   "high": {
+    "WACCAMAW HIGH": 1
+   }
+  },
+  "georgetown/gc_strip/other": {
+   "homes": 566,
+   "legal_residence": 113,
+   "pct_legal_residence": 20.0,
+   "pct_bill_outside_sc": 31.6,
+   "top_states": [
+    [
+     "SC",
+     386
+    ],
+    [
+     "NC",
+     66
+    ],
+    [
+     "NY",
+     15
+    ],
+    [
+     "VA",
+     12
+    ],
+    [
+     "GA",
+     10
+    ],
+    [
+     "PA",
+     10
+    ]
+   ],
+   "fema": {
+    "none": 14,
+    "AE": 367,
+    "VE": 185
+   },
+   "pct_high_risk": 97.5,
+   "pct_ve": 32.7,
+   "taxdist": {
+    "41": 566
+   },
+   "elem": {
+    "WACCAMAW ELEM": 566
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 566
+   },
+   "high": {
+    "WACCAMAW HIGH": 566
+   }
+  },
+  "horry/*/all": {
+   "homes": 14321,
+   "legal_residence": 9161,
+   "pct_legal_residence": 64.0,
+   "pct_bill_outside_sc": 19.8,
+   "top_states": [
+    [
+     "SC",
+     11480
+    ],
+    [
+     "NC",
+     575
+    ],
+    [
+     "NY",
+     506
+    ],
+    [
+     "PA",
+     278
+    ],
+    [
+     "NJ",
+     262
+    ],
+    [
+     "VA",
+     176
+    ]
+   ],
+   "fema": {
+    "none": 10833,
+    "AE": 2388,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 896,
+    "VE": 204
+   },
+   "pct_high_risk": 18.1,
+   "pct_ve": 1.4,
+   "taxdist": {
+    "610": 13290,
+    "600": 774,
+    "620": 252,
+    "624": 5
+   },
+   "elem": {
+    "St James Elementary": 8943,
+    "Seaside Elementary": 5376,
+    "Burgess Elementary": 2
+   },
+   "middle": {
+    "St James Intermediate": 14321
+   },
+   "high": {
+    "St James High": 14321
+   }
+  },
+  "horry/*/house": {
+   "homes": 8810,
+   "legal_residence": 7051,
+   "pct_legal_residence": 80.0,
+   "pct_bill_outside_sc": 9.3,
+   "top_states": [
+    [
+     "SC",
+     7992
+    ],
+    [
+     "NC",
+     160
+    ],
+    [
+     "NY",
+     128
+    ],
+    [
+     "NJ",
+     79
+    ],
+    [
+     "PA",
+     66
+    ],
+    [
+     "VA",
+     58
+    ]
+   ],
+   "fema": {
+    "none": 7253,
+    "AE": 899,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 602,
+    "VE": 56
+   },
+   "pct_high_risk": 10.8,
+   "pct_ve": 0.6,
+   "taxdist": {
+    "600": 744,
+    "610": 7814,
+    "620": 249,
+    "624": 3
+   },
+   "elem": {
+    "St James Elementary": 6702,
+    "Seaside Elementary": 2106,
+    "Burgess Elementary": 2
+   },
+   "middle": {
+    "St James Intermediate": 8810
+   },
+   "high": {
+    "St James High": 8810
+   }
+  },
+  "horry/*/condo": {
+   "homes": 3643,
+   "legal_residence": 1219,
+   "pct_legal_residence": 33.5,
+   "pct_bill_outside_sc": 42.9,
+   "top_states": [
+    [
+     "SC",
+     2077
+    ],
+    [
+     "NY",
+     302
+    ],
+    [
+     "NC",
+     284
+    ],
+    [
+     "PA",
+     166
+    ],
+    [
+     "NJ",
+     144
+    ],
+    [
+     "OH",
+     92
+    ]
+   ],
+   "fema": {
+    "none": 2231,
+    "AE": 1221,
+    "VE": 97,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 94
+   },
+   "pct_high_risk": 36.2,
+   "pct_ve": 2.7,
+   "taxdist": {
+    "610": 3643
+   },
+   "elem": {
+    "Seaside Elementary": 2350,
+    "St James Elementary": 1293
+   },
+   "middle": {
+    "St James Intermediate": 3643
+   },
+   "high": {
+    "St James High": 3643
+   }
+  },
+  "horry/*/other": {
+   "homes": 1868,
+   "legal_residence": 891,
+   "pct_legal_residence": 47.7,
+   "pct_bill_outside_sc": 24.5,
+   "top_states": [
+    [
+     "SC",
+     1411
+    ],
+    [
+     "NC",
+     131
+    ],
+    [
+     "NY",
+     76
+    ],
+    [
+     "PA",
+     46
+    ],
+    [
+     "NJ",
+     39
+    ],
+    [
+     "VA",
+     31
+    ]
+   ],
+   "fema": {
+    "none": 1349,
+    "AE": 268,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 200,
+    "VE": 51
+   },
+   "pct_high_risk": 17.1,
+   "pct_ve": 2.7,
+   "taxdist": {
+    "610": 1833,
+    "600": 30,
+    "620": 3,
+    "624": 2
+   },
+   "elem": {
+    "St James Elementary": 948,
+    "Seaside Elementary": 920
+   },
+   "middle": {
+    "St James Intermediate": 1868
+   },
+   "high": {
+    "St James High": 1868
+   }
+  },
+  "georgetown/*/all": {
+   "homes": 4297,
+   "legal_residence": 2936,
+   "pct_legal_residence": 68.3,
+   "pct_bill_outside_sc": 12.5,
+   "top_states": [
+    [
+     "SC",
+     3756
+    ],
+    [
+     "NC",
+     145
+    ],
+    [
+     "NY",
+     48
+    ],
+    [
+     "PA",
+     47
+    ],
+    [
+     "NJ",
+     43
+    ],
+    [
+     "VA",
+     29
+    ]
+   ],
+   "fema": {
+    "X shaded": 389,
+    "AE": 1044,
+    "X": 2619,
+    "none": 15,
+    "VE": 230
+   },
+   "pct_high_risk": 29.6,
+   "pct_ve": 5.4,
+   "taxdist": {
+    "4": 52,
+    "41": 4245
+   },
+   "elem": {
+    "WACCAMAW ELEM": 4294,
+    "null": 3
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 4294,
+    "null": 3
+   },
+   "high": {
+    "WACCAMAW HIGH": 4294,
+    "null": 3
+   }
+  },
+  "georgetown/*/house": {
+   "homes": 3263,
+   "legal_residence": 2666,
+   "pct_legal_residence": 81.7,
+   "pct_bill_outside_sc": 7.9,
+   "top_states": [
+    [
+     "SC",
+     3001
+    ],
+    [
+     "NC",
+     46
+    ],
+    [
+     "NJ",
+     25
+    ],
+    [
+     "NY",
+     22
+    ],
+    [
+     "PA",
+     22
+    ],
+    [
+     "VA",
+     16
+    ]
+   ],
+   "fema": {
+    "X shaded": 344,
+    "AE": 569,
+    "X": 2306,
+    "none": 1,
+    "VE": 43
+   },
+   "pct_high_risk": 18.8,
+   "pct_ve": 1.3,
+   "taxdist": {
+    "4": 44,
+    "41": 3219
+   },
+   "elem": {
+    "WACCAMAW ELEM": 3261,
+    "null": 2
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 3261,
+    "null": 2
+   },
+   "high": {
+    "WACCAMAW HIGH": 3261,
+    "null": 2
+   }
+  },
+  "georgetown/*/condo": {
+   "homes": 425,
+   "legal_residence": 152,
+   "pct_legal_residence": 35.8,
+   "pct_bill_outside_sc": 21.9,
+   "top_states": [
+    [
+     "SC",
+     332
+    ],
+    [
+     "NC",
+     31
+    ],
+    [
+     "PA",
+     14
+    ],
+    [
+     "NJ",
+     11
+    ],
+    [
+     "NY",
+     11
+    ],
+    [
+     "TN",
+     4
+    ]
+   ],
+   "fema": {
+    "X": 298,
+    "X shaded": 30,
+    "AE": 97
+   },
+   "pct_high_risk": 22.8,
+   "pct_ve": 0.0,
+   "taxdist": {
+    "41": 425
+   },
+   "elem": {
+    "WACCAMAW ELEM": 424,
+    "null": 1
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 424,
+    "null": 1
+   },
+   "high": {
+    "WACCAMAW HIGH": 424,
+    "null": 1
+   }
+  },
+  "georgetown/*/other": {
+   "homes": 609,
+   "legal_residence": 118,
+   "pct_legal_residence": 19.4,
+   "pct_bill_outside_sc": 30.4,
+   "top_states": [
+    [
+     "SC",
+     423
+    ],
+    [
+     "NC",
+     68
+    ],
+    [
+     "NY",
+     15
+    ],
+    [
+     "VA",
+     12
+    ],
+    [
+     "PA",
+     11
+    ],
+    [
+     "GA",
+     10
+    ]
+   ],
+   "fema": {
+    "X shaded": 15,
+    "AE": 378,
+    "X": 15,
+    "none": 14,
+    "VE": 187
+   },
+   "pct_high_risk": 92.8,
+   "pct_ve": 30.7,
+   "taxdist": {
+    "4": 8,
+    "41": 601
+   },
+   "elem": {
+    "WACCAMAW ELEM": 609
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 609
+   },
+   "high": {
+    "WACCAMAW HIGH": 609
+   }
+  },
+  "core/all": {
+   "homes": 12575,
+   "legal_residence": 9872,
+   "pct_legal_residence": 78.5,
+   "pct_bill_outside_sc": 11.5,
+   "top_states": [
+    [
+     "SC",
+     11124
+    ],
+    [
+     "NY",
+     322
+    ],
+    [
+     "NJ",
+     200
+    ],
+    [
+     "PA",
+     151
+    ],
+    [
+     "NC",
+     149
+    ],
+    [
+     "VA",
+     75
+    ]
+   ],
+   "fema": {
+    "none": 8719,
+    "AE": 767,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 63,
+    "X shaded": 382,
+    "X": 2616,
+    "VE": 28
+   },
+   "pct_high_risk": 6.3,
+   "pct_ve": 0.2,
+   "taxdist": {
+    "610": 8171,
+    "600": 774,
+    "4": 34,
+    "41": 3596
+   },
+   "elem": {
+    "St James Elementary": 8943,
+    "Burgess Elementary": 2,
+    "WACCAMAW ELEM": 3627,
+    "null": 3
+   },
+   "middle": {
+    "St James Intermediate": 8945,
+    "WACC MIDDLE INTERM": 3627,
+    "null": 3
+   },
+   "high": {
+    "St James High": 8945,
+    "WACCAMAW HIGH": 3627,
+    "null": 3
+   }
+  },
+  "core/house": {
+   "homes": 9867,
+   "legal_residence": 8411,
+   "pct_legal_residence": 85.2,
+   "pct_bill_outside_sc": 7.1,
+   "top_states": [
+    [
+     "SC",
+     9159
+    ],
+    [
+     "NY",
+     124
+    ],
+    [
+     "NJ",
+     82
+    ],
+    [
+     "NC",
+     74
+    ],
+    [
+     "PA",
+     59
+    ],
+    [
+     "VA",
+     45
+    ]
+   ],
+   "fema": {
+    "none": 6503,
+    "AE": 645,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 53,
+    "X shaded": 337,
+    "X": 2303,
+    "VE": 26
+   },
+   "pct_high_risk": 6.8,
+   "pct_ve": 0.3,
+   "taxdist": {
+    "600": 744,
+    "610": 5960,
+    "4": 26,
+    "41": 3137
+   },
+   "elem": {
+    "St James Elementary": 6702,
+    "Burgess Elementary": 2,
+    "WACCAMAW ELEM": 3161,
+    "null": 2
+   },
+   "middle": {
+    "St James Intermediate": 6704,
+    "WACC MIDDLE INTERM": 3161,
+    "null": 2
+   },
+   "high": {
+    "St James High": 6704,
+    "WACCAMAW HIGH": 3161,
+    "null": 2
+   }
+  },
+  "core/condo": {
+   "homes": 1717,
+   "legal_residence": 864,
+   "pct_legal_residence": 50.3,
+   "pct_bill_outside_sc": 30.5,
+   "top_states": [
+    [
+     "SC",
+     1192
+    ],
+    [
+     "NY",
+     139
+    ],
+    [
+     "NJ",
+     86
+    ],
+    [
+     "PA",
+     64
+    ],
+    [
+     "NC",
+     61
+    ],
+    [
+     "CT",
+     22
+    ]
+   ],
+   "fema": {
+    "none": 1282,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 7,
+    "AE": 100,
+    "X": 298,
+    "X shaded": 30
+   },
+   "pct_high_risk": 5.8,
+   "pct_ve": 0.0,
+   "taxdist": {
+    "610": 1293,
+    "41": 424
+   },
+   "elem": {
+    "St James Elementary": 1293,
+    "WACCAMAW ELEM": 423,
+    "null": 1
+   },
+   "middle": {
+    "St James Intermediate": 1293,
+    "WACC MIDDLE INTERM": 423,
+    "null": 1
+   },
+   "high": {
+    "St James High": 1293,
+    "WACCAMAW HIGH": 423,
+    "null": 1
+   }
+  },
+  "core/other": {
+   "homes": 991,
+   "legal_residence": 597,
+   "pct_legal_residence": 60.2,
+   "pct_bill_outside_sc": 22.0,
+   "top_states": [
+    [
+     "SC",
+     773
+    ],
+    [
+     "NY",
+     59
+    ],
+    [
+     "NJ",
+     32
+    ],
+    [
+     "PA",
+     28
+    ],
+    [
+     "CT",
+     15
+    ],
+    [
+     "MA",
+     15
+    ]
+   ],
+   "fema": {
+    "none": 934,
+    "AE": 22,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 3,
+    "X shaded": 15,
+    "X": 15,
+    "VE": 2
+   },
+   "pct_high_risk": 2.4,
+   "pct_ve": 0.2,
+   "taxdist": {
+    "610": 918,
+    "600": 30,
+    "4": 8,
+    "41": 35
+   },
+   "elem": {
+    "St James Elementary": 948,
+    "WACCAMAW ELEM": 43
+   },
+   "middle": {
+    "St James Intermediate": 948,
+    "WACC MIDDLE INTERM": 43
+   },
+   "high": {
+    "St James High": 948,
+    "WACCAMAW HIGH": 43
+   }
+  },
+  "georgetown/inlet/house_marsh": {
+   "homes": 217,
+   "legal_residence": 143,
+   "pct_legal_residence": 65.9,
+   "pct_bill_outside_sc": 12.4,
+   "top_states": [
+    [
+     "SC",
+     190
+    ],
+    [
+     "NC",
+     9
+    ],
+    [
+     "NJ",
+     3
+    ],
+    [
+     "NH",
+     2
+    ],
+    [
+     "VA",
+     2
+    ],
+    [
+     "OH",
+     1
+    ]
+   ],
+   "fema": {
+    "AE": 193,
+    "VE": 24
+   },
+   "pct_high_risk": 100.0,
+   "pct_ve": 11.1,
+   "taxdist": {
+    "4": 11,
+    "41": 206
+   },
+   "elem": {
+    "WACCAMAW ELEM": 217
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 217
+   },
+   "high": {
+    "WACCAMAW HIGH": 217
+   }
+  },
+  "georgetown/inlet/house_not_marsh": {
+   "homes": 127,
+   "legal_residence": 98,
+   "pct_legal_residence": 77.2,
+   "pct_bill_outside_sc": 7.1,
+   "top_states": [
+    [
+     "SC",
+     118
+    ],
+    [
+     "NC",
+     3
+    ],
+    [
+     "OR",
+     1
+    ],
+    [
+     "AR",
+     1
+    ],
+    [
+     "FL",
+     1
+    ],
+    [
+     "MA",
+     1
+    ]
+   ],
+   "fema": {
+    "X shaded": 40,
+    "AE": 86,
+    "X": 1
+   },
+   "pct_high_risk": 67.7,
+   "pct_ve": 0.0,
+   "taxdist": {
+    "4": 15,
+    "41": 112
+   },
+   "elem": {
+    "WACCAMAW ELEM": 127
+   },
+   "middle": {
+    "WACC MIDDLE INTERM": 127
+   },
+   "high": {
+    "WACCAMAW HIGH": 127
+   }
+  }
+ },
+ "sales": {
+  "horry/west/all": {
+   "sales": 564,
+   "median": 382750.0,
+   "p25": 300000.0,
+   "p75": 495000.0,
+   "min": 10000.0,
+   "max": 4100000.0,
+   "builder": 66,
+   "high_risk_flood": 14
+  },
+  "horry/west/house": {
+   "sales": 396,
+   "median": 449950.0,
+   "p25": 359250.0,
+   "p75": 527250.0,
+   "min": 10000.0,
+   "max": 4100000.0,
+   "builder": 43,
+   "high_risk_flood": 13
+  },
+  "horry/west/condo": {
+   "sales": 90,
+   "median": 273500.0,
+   "p25": 230000.0,
+   "p75": 316250.0,
+   "min": 110000.0,
+   "max": 440000.0,
+   "builder": 3,
+   "high_risk_flood": 1
+  },
+  "horry/west/other": {
+   "sales": 78,
+   "median": 320710.0,
+   "p25": 274625.0,
+   "p75": 355000.0,
+   "min": 110000.0,
+   "max": 420000.0,
+   "builder": 20,
+   "high_risk_flood": 0
+  },
+  "horry/east/all": {
+   "sales": 0
+  },
+  "horry/east/house": {
+   "sales": 0
+  },
+  "horry/east/condo": {
+   "sales": 0
+  },
+  "horry/east/other": {
+   "sales": 0
+  },
+  "horry/garden_city/all": {
+   "sales": 333,
+   "median": 322900.0,
+   "p25": 210000.0,
+   "p75": 469999.5,
+   "min": 18000.0,
+   "max": 2350000.0,
+   "builder": 2,
+   "high_risk_flood": 164
+  },
+  "horry/garden_city/house": {
+   "sales": 112,
+   "median": 520000.0,
+   "p25": 349925.0,
+   "p75": 763750.0,
+   "min": 30000.0,
+   "max": 2350000.0,
+   "builder": 2,
+   "high_risk_flood": 44
+  },
+  "horry/garden_city/condo": {
+   "sales": 190,
+   "median": 250000.0,
+   "p25": 170000.0,
+   "p75": 336225.0,
+   "min": 18000.0,
+   "max": 1345000.0,
+   "builder": 0,
+   "high_risk_flood": 110
+  },
+  "horry/garden_city/other": {
+   "sales": 31,
+   "median": 280000.0,
+   "p25": 224900.0,
+   "p75": 365000.0,
+   "min": 60000.0,
+   "max": 2000000.0,
+   "builder": 0,
+   "high_risk_flood": 10
+  },
+  "georgetown/inlet/all": {
+   "sales": 12,
+   "median": 629500.0,
+   "p25": 460252.5,
+   "p75": 815000.0,
+   "min": 350000,
+   "max": 1500000,
+   "builder": 0,
+   "high_risk_flood": 10
+  },
+  "georgetown/inlet/house": {
+   "sales": 12,
+   "median": 629500.0,
+   "p25": 460252.5,
+   "p75": 815000.0,
+   "min": 350000,
+   "max": 1500000,
+   "builder": 0,
+   "high_risk_flood": 10
+  },
+  "georgetown/inlet/condo": {
+   "sales": 0
+  },
+  "georgetown/inlet/other": {
+   "sales": 0
+  },
+  "georgetown/old_road/all": {
+   "sales": 45,
+   "median": 430000,
+   "p25": 294500.0,
+   "p75": 570880.0,
+   "min": 162500,
+   "max": 790000,
+   "builder": 0,
+   "high_risk_flood": 14
+  },
+  "georgetown/old_road/house": {
+   "sales": 29,
+   "median": 530000,
+   "p25": 425000.0,
+   "p75": 645000.0,
+   "min": 180000,
+   "max": 790000,
+   "builder": 0,
+   "high_risk_flood": 9
+  },
+  "georgetown/old_road/condo": {
+   "sales": 16,
+   "median": 278750.0,
+   "p25": 223675.0,
+   "p75": 414375.0,
+   "min": 162500,
+   "max": 479000,
+   "builder": 0,
+   "high_risk_flood": 5
+  },
+  "georgetown/old_road/other": {
+   "sales": 0
+  },
+  "georgetown/west/all": {
+   "sales": 118,
+   "median": 565000.0,
+   "p25": 443750.0,
+   "p75": 716250.0,
+   "min": 130000,
+   "max": 1900927.14,
+   "builder": 0,
+   "high_risk_flood": 0
+  },
+  "georgetown/west/house": {
+   "sales": 113,
+   "median": 568000,
+   "p25": 450500.0,
+   "p75": 737500.0,
+   "min": 130000,
+   "max": 1900927.14,
+   "builder": 0,
+   "high_risk_flood": 0
+  },
+  "georgetown/west/condo": {
+   "sales": 5,
+   "median": 370000,
+   "p25": 173500.0,
+   "p75": 465000.0,
+   "min": 157000,
+   "max": 550000,
+   "builder": 0,
+   "high_risk_flood": 0
+  },
+  "georgetown/west/other": {
+   "sales": 0
+  },
+  "georgetown/gc_strip/all": {
+   "sales": 26,
+   "median": 1731250.0,
+   "p25": 998750.0,
+   "p75": 2075000.0,
+   "min": 650000,
+   "max": 4275000,
+   "builder": 0,
+   "high_risk_flood": 23
+  },
+  "georgetown/gc_strip/house": {
+   "sales": 9,
+   "median": 1725000,
+   "p25": 800000.0,
+   "p75": 2000000.0,
+   "min": 650000,
+   "max": 4275000,
+   "builder": 0,
+   "high_risk_flood": 7
+  },
+  "georgetown/gc_strip/condo": {
+   "sales": 0
+  },
+  "georgetown/gc_strip/other": {
+   "sales": 17,
+   "median": 1737500,
+   "p25": 1273765.5,
+   "p75": 2325000.0,
+   "min": 765500,
+   "max": 3500000,
+   "builder": 0,
+   "high_risk_flood": 16
+  },
+  "horry/*/all": {
+   "sales": 897,
+   "median": 360000.0,
+   "p25": 273750.0,
+   "p75": 487250.0,
+   "min": 10000.0,
+   "max": 4100000.0,
+   "builder": 68,
+   "high_risk_flood": 178
+  },
+  "horry/*/house": {
+   "sales": 508,
+   "median": 455000.0,
+   "p25": 355500.0,
+   "p75": 560000.0,
+   "min": 10000.0,
+   "max": 4100000.0,
+   "builder": 45,
+   "high_risk_flood": 57
+  },
+  "horry/*/condo": {
+   "sales": 280,
+   "median": 257500.0,
+   "p25": 195625.0,
+   "p75": 325375.0,
+   "min": 18000.0,
+   "max": 1345000.0,
+   "builder": 3,
+   "high_risk_flood": 111
+  },
+  "horry/*/other": {
+   "sales": 109,
+   "median": 318775.0,
+   "p25": 260000.0,
+   "p75": 359000.0,
+   "min": 60000.0,
+   "max": 2000000.0,
+   "builder": 20,
+   "high_risk_flood": 10
+  },
+  "georgetown/*/all": {
+   "sales": 201,
+   "median": 575000,
+   "p25": 431000.0,
+   "p75": 777700.0,
+   "min": 130000,
+   "max": 4275000,
+   "builder": 0,
+   "high_risk_flood": 47
+  },
+  "georgetown/*/house": {
+   "sales": 163,
+   "median": 575000,
+   "p25": 451000.0,
+   "p75": 750000.0,
+   "min": 130000,
+   "max": 4275000,
+   "builder": 0,
+   "high_risk_flood": 26
+  },
+  "georgetown/*/condo": {
+   "sales": 21,
+   "median": 280000,
+   "p25": 216450.0,
+   "p75": 410250.0,
+   "min": 157000,
+   "max": 550000,
+   "builder": 0,
+   "high_risk_flood": 5
+  },
+  "georgetown/*/other": {
+   "sales": 17,
+   "median": 1737500,
+   "p25": 1273765.5,
+   "p75": 2325000.0,
+   "min": 765500,
+   "max": 3500000,
+   "builder": 0,
+   "high_risk_flood": 16
+  },
+  "core/all": {
+   "sales": 739,
+   "median": 417500.0,
+   "p25": 311830.0,
+   "p75": 535000.0,
+   "min": 10000.0,
+   "max": 4100000.0,
+   "builder": 66,
+   "high_risk_flood": 38
+  },
+  "core/house": {
+   "sales": 550,
+   "median": 475500.0,
+   "p25": 380000.0,
+   "p75": 575000.0,
+   "min": 10000.0,
+   "max": 4100000.0,
+   "builder": 43,
+   "high_risk_flood": 32
+  },
+  "core/condo": {
+   "sales": 111,
+   "median": 275000.0,
+   "p25": 230000.0,
+   "p75": 325000.0,
+   "min": 110000.0,
+   "max": 550000,
+   "builder": 3,
+   "high_risk_flood": 6
+  },
+  "core/other": {
+   "sales": 78,
+   "median": 320710.0,
+   "p25": 274625.0,
+   "p75": 355000.0,
+   "min": 110000.0,
+   "max": 420000.0,
+   "builder": 20,
+   "high_risk_flood": 0
+  },
+  "georgetown/inlet/house_marsh_3y": {
+   "sales": 21,
+   "median": 929000,
+   "p25": 605000.0,
+   "p75": 1273750.0,
+   "min": 104162.53,
+   "max": 2100000,
+   "builder": 0,
+   "high_risk_flood": 21
+  },
+  "georgetown/inlet/house_not_marsh_3y": {
+   "sales": 17,
+   "median": 605000,
+   "p25": 444950.0,
+   "p75": 827500.0,
+   "min": 310000,
+   "max": 1250000,
+   "builder": 0,
+   "high_risk_flood": 12
+  },
+  "georgetown/west/house_3y": {
+   "sales": 259,
+   "median": 560000,
+   "p25": 434000.0,
+   "p75": 750000.0,
+   "min": 100000,
+   "max": 1900927.14,
+   "builder": 0,
+   "high_risk_flood": 3
+  },
+  "georgetown/old_road/house_3y": {
+   "sales": 89,
+   "median": 591760,
+   "p25": 450000.0,
+   "p75": 708000.0,
+   "min": 53900,
+   "max": 977995.11,
+   "builder": 0,
+   "high_risk_flood": 27
+  }
+ },
+ "cdp_homes_by_part": {
+  "inlet": 332,
+  "old_road": 800,
+  "west": 2463,
+  "gc_strip": 35
+ },
+ "georgetown_outside_cdp": {
+  "inlet": 34,
+  "gc_strip": 632,
+  "west": 1
+ },
+ "horry_marsh_houses_outside_gc": 0
+}

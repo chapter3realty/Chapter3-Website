@@ -1,0 +1,1586 @@
+{
+ "read": "2026-11-04",
+ "min": 10,
+ "q": {
+  "condo": {
+   "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND AssessedProp >= TaxableProp*0.05 AND LegalDescr LIKE '%HPR%'",
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0+AND+AssessedProp+%3E%3D+TaxableProp%2A0.05+AND+LegalDescr+LIKE+%27%25HPR%25%27&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22n%22%7D%5D&groupByFieldsForStatistics=OwnerStreet%2COwnerZip%2COwnerState&having=COUNT%28OBJECTID%29+%3E%3D+10&orderByFields=n+DESC&f=json",
+   "groups": [
+    [
+     "6277 SEA HARBOR DR #8TH FL",
+     "32821",
+     "FL",
+     460
+    ],
+    [
+     "1200 BARTOW RD S STE 40",
+     "33801",
+     "FL",
+     363
+    ],
+    [
+     "9002 SAN MARCO CT #4TH FL",
+     "32819",
+     "FL",
+     294
+    ],
+    [
+     "4960 BLUE LAKE DR",
+     "33431",
+     "FL",
+     269
+    ],
+    [
+     "151 SEAWATCH DR",
+     "29572",
+     "SC",
+     229
+    ],
+    [
+     "4960 CONFERENCE WAY N",
+     "33431",
+     "FL",
+     215
+    ],
+    [
+     "300 N OCEAN BLVD",
+     "29582",
+     "SC",
+     178
+    ],
+    [
+     "5601 WINDHOVER DR",
+     "32819",
+     "FL",
+     165
+    ],
+    [
+     "1000 2ND AVE S STE 310",
+     "29582",
+     "SC",
+     164
+    ],
+    [
+     "5114 WILSHIRE BLVD #100",
+     "90211",
+     "CA",
+     159
+    ],
+    [
+     "9271 S JOHN YOUNG PKWY",
+     "32819",
+     "FL",
+     152
+    ],
+    [
+     "250 VESEY ST FL 15",
+     "10281",
+     "NY",
+     150
+    ],
+    [
+     "8505 W IRLO",
+     "34747",
+     "FL",
+     146
+    ],
+    [
+     "6277 SEA HARBOR DR FL 8",
+     "32821",
+     "FL",
+     137
+    ],
+    [
+     "6277 SEA HARBOR DR 8TH FL",
+     "32821",
+     "FL",
+     134
+    ],
+    [
+     "13860 BALLANTYNE CORP PL STE 240",
+     "28277",
+     "NC",
+     132
+    ],
+    [
+     "6260 AVALON BLVD",
+     "30009",
+     "GA",
+     120
+    ],
+    [
+     "2-8 HAWLEY ST",
+     "13901",
+     "NY",
+     108
+    ],
+    [
+     "11605 N COMMUNITY HOUSE RD STE 525",
+     "28277",
+     "NC",
+     92
+    ],
+    [
+     "2024 CORPORATE CENTRE DR STE 101",
+     "29577",
+     "SC",
+     82
+    ],
+    [
+     "3405 S OCEAN BLVD",
+     "29582",
+     "SC",
+     82
+    ],
+    [
+     "PO BOX 4838",
+     "29597",
+     "SC",
+     72
+    ],
+    [
+     "21 W 38TH ST FL 11",
+     "10018",
+     "NY",
+     72
+    ],
+    [
+     "1250 HIGHWAY 17 N",
+     "29575",
+     "SC",
+     71
+    ],
+    [
+     "9002 SAN MARCO COURT",
+     "32819",
+     "FL",
+     68
+    ],
+    [
+     "6277 SEA HARBOUR DR",
+     "32821",
+     "FL",
+     66
+    ],
+    [
+     "1331 44TH AVE N #102",
+     "29577",
+     "SC",
+     65
+    ],
+    [
+     "5025 NOBLESTOWN RD",
+     "15071",
+     "PA",
+     64
+    ],
+    [
+     "PO BOX 6779",
+     "28469",
+     "NC",
+     62
+    ],
+    [
+     "201 77TH AVE N",
+     "29572",
+     "SC",
+     56
+    ],
+    [
+     "3531 QUEENS HARBOUR BLVD",
+     "29588",
+     "SC",
+     51
+    ],
+    [
+     "201 S OCEAN BLVD",
+     "29577",
+     "SC",
+     49
+    ],
+    [
+     "877 ISLAND PARK DR STE 200",
+     "29492",
+     "SC",
+     40
+    ],
+    [
+     "605 BRIARWOOD DR STE C",
+     "29572",
+     "SC",
+     38
+    ],
+    [
+     "39 CHAPIN CIR",
+     "29572",
+     "SC",
+     38
+    ],
+    [
+     "4876 BAREFOOT RESORT BRDG RD",
+     "29582",
+     "SC",
+     35
+    ],
+    [
+     "9002 SAN MARCO CT #4THFL",
+     "32819",
+     "FL",
+     34
+    ],
+    [
+     "407 30TH AVE N",
+     "29577",
+     "SC",
+     33
+    ],
+    [
+     "1125 48TH AVE N",
+     "29577",
+     "SC",
+     31
+    ],
+    [
+     "2105 FARLOW ST",
+     "29577",
+     "SC",
+     30
+    ],
+    [
+     "1 VANCE GAP RD",
+     "28805",
+     "NC",
+     30
+    ],
+    [
+     "5932 PINE GROVE TRL #107",
+     "37421",
+     "TN",
+     29
+    ],
+    [
+     "2180 WATERVIEW DR #1100",
+     "29582",
+     "SC",
+     28
+    ],
+    [
+     "1000 2ND AVE S #310",
+     "29582",
+     "SC",
+     28
+    ],
+    [
+     "2200 PREMIER RESORTS BLVD",
+     "29582",
+     "SC",
+     26
+    ],
+    [
+     "514 MECKLEM LN",
+     "16117",
+     "PA",
+     25
+    ],
+    [
+     "998 BLUFFVIEW DR",
+     "29579",
+     "SC",
+     24
+    ],
+    [
+     "PO BOX 2308",
+     "29585",
+     "SC",
+     24
+    ],
+    [
+     "5103 N OCEAN BLVD",
+     "29577",
+     "SC",
+     23
+    ],
+    [
+     "600 16TH AVE N STE 4",
+     "29577",
+     "SC",
+     23
+    ],
+    [
+     "9400 SHORE DR",
+     "29572",
+     "SC",
+     23
+    ],
+    [
+     "2650 PETE DYE DR",
+     "29582",
+     "SC",
+     22
+    ],
+    [
+     "3807 BRANDON AVE SW STE 245",
+     "24018",
+     "VA",
+     22
+    ],
+    [
+     "1406 COMMERCE PL STE B",
+     "29577",
+     "SC",
+     19
+    ],
+    [
+     "17699 LAKE ESTATES DR",
+     "33496",
+     "FL",
+     19
+    ],
+    [
+     "PO BOX 58166",
+     "28305",
+     "NC",
+     18
+    ],
+    [
+     "PO BOX 15896",
+     "29587",
+     "SC",
+     18
+    ],
+    [
+     "6650 RIVERS AVE STE 100",
+     "29406",
+     "SC",
+     18
+    ],
+    [
+     "828 WAVE DR",
+     "08731",
+     "NJ",
+     16
+    ],
+    [
+     "10615 PARK RUN DR",
+     "89144",
+     "NV",
+     16
+    ],
+    [
+     "PO BOX 986",
+     "29597",
+     "SC",
+     15
+    ],
+    [
+     "1 N WACKER DR STE 2400",
+     "60606",
+     "IL",
+     15
+    ],
+    [
+     "2500 REGENCY PKWY",
+     "27518",
+     "NC",
+     15
+    ],
+    [
+     "637 BELLAMY AVE UNIT D",
+     "29576",
+     "SC",
+     14
+    ],
+    [
+     "24 ROCK GLENN RD",
+     "21078",
+     "MD",
+     14
+    ],
+    [
+     "1865 HORSESHOE POINT RD",
+     "23432",
+     "VA",
+     14
+    ],
+    [
+     "1000 2ND AVE STE 310",
+     "29582",
+     "SC",
+     13
+    ],
+    [
+     "237 MOUNT VERNON AVE",
+     "24541",
+     "VA",
+     13
+    ],
+    [
+     "1507 LAKE UPCHURCH DR",
+     "28371",
+     "NC",
+     12
+    ],
+    [
+     "1310 AZALEA CT STE P",
+     "29577",
+     "SC",
+     12
+    ],
+    [
+     "2053 HAYSTACK WAY",
+     "29579",
+     "SC",
+     12
+    ],
+    [
+     "618 CHESTNUT RD STE 101",
+     "29572",
+     "SC",
+     12
+    ],
+    [
+     "5700 CAPE FOX DR",
+     "27310",
+     "NC",
+     12
+    ],
+    [
+     "1501 S OCEAN BLVD",
+     "29577",
+     "SC",
+     12
+    ],
+    [
+     "625 SEA MOUNTAIN HWY",
+     "29582",
+     "SC",
+     12
+    ],
+    [
+     "15 WINCHELL SMITH DR",
+     "06032",
+     "CT",
+     11
+    ],
+    [
+     "818 E COLLEGE PKWY STE B",
+     "21409",
+     "MD",
+     11
+    ],
+    [
+     "850 NW 13TH AVE",
+     "97209",
+     "OR",
+     11
+    ],
+    [
+     "44 VALLEY WOOD DR",
+     "08873",
+     "NJ",
+     11
+    ],
+    [
+     "511 38TH AVE N",
+     "29577",
+     "SC",
+     11
+    ],
+    [
+     "1903 ORANGE ST",
+     "18603",
+     "PA",
+     10
+    ],
+    [
+     "2245 PORTSIDE WAY",
+     "29407",
+     "SC",
+     10
+    ],
+    [
+     "4974 SALT CREEK CT",
+     "29582",
+     "SC",
+     10
+    ],
+    [
+     "335 POSADA DR",
+     "29572",
+     "SC",
+     10
+    ],
+    [
+     "15417 MAPLE RIDGE RD",
+     "21797",
+     "MD",
+     10
+    ],
+    [
+     "250 VICTORY LN",
+     "29526",
+     "SC",
+     10
+    ],
+    [
+     "PO BOX 1274",
+     "29578",
+     "SC",
+     10
+    ],
+    [
+     "PO BOX 70999",
+     "29577",
+     "SC",
+     10
+    ],
+    [
+     "PO BOX 70999",
+     "29572",
+     "SC",
+     10
+    ]
+   ],
+   "exceeded": null
+  },
+  "house_other": {
+   "where": "LandUseCode LIKE '1%' AND MarketImprv > 0 AND AssessedProp >= TaxableProp*0.05 AND LegalDescr NOT LIKE '%HPR%'",
+   "url": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?where=LandUseCode+LIKE+%271%25%27+AND+MarketImprv+%3E+0+AND+AssessedProp+%3E%3D+TaxableProp%2A0.05+AND+LegalDescr+NOT+LIKE+%27%25HPR%25%27&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID%22%2C+%22outStatisticFieldName%22%3A+%22n%22%7D%5D&groupByFieldsForStatistics=OwnerStreet%2COwnerZip%2COwnerState&having=COUNT%28OBJECTID%29+%3E%3D+10&orderByFields=n+DESC&f=json",
+   "groups": [
+    [
+     "PO BOX 3849",
+     "29578",
+     "SC",
+     291
+    ],
+    [
+     "1250 HIGHWAY 17 N",
+     "29575",
+     "SC",
+     250
+    ],
+    [
+     "PO BOX 4900",
+     "85261",
+     "AZ",
+     201
+    ],
+    [
+     "1 VANCE GAP RD",
+     "28805",
+     "NC",
+     195
+    ],
+    [
+     "141 5TH AVE FL 2",
+     "10010",
+     "NY",
+     144
+    ],
+    [
+     "PO BOX 31236",
+     "84131",
+     "UT",
+     135
+    ],
+    [
+     "4960 CONFERENCE WAY N",
+     "33431",
+     "FL",
+     129
+    ],
+    [
+     "4709 S OCEAN BLVD",
+     "29582",
+     "SC",
+     111
+    ],
+    [
+     "4401 NORTHSIDE PKWY NW STE 250",
+     "30327",
+     "GA",
+     106
+    ],
+    [
+     "8505 W IRLO",
+     "34747",
+     "FL",
+     100
+    ],
+    [
+     "PO BOX 766",
+     "28390",
+     "NC",
+     89
+    ],
+    [
+     "PO BOX 3478",
+     "29578",
+     "SC",
+     88
+    ],
+    [
+     "300 CRESCENT CT STE 700",
+     "75201",
+     "TX",
+     88
+    ],
+    [
+     "8447 WILSHIRE BLVD STE 400",
+     "90211",
+     "CA",
+     86
+    ],
+    [
+     "PO BOX 1708",
+     "29598",
+     "SC",
+     82
+    ],
+    [
+     "PO BOX 1117",
+     "29598",
+     "SC",
+     74
+    ],
+    [
+     "2627 BREKONRIDGE CENTRE DR",
+     "28110",
+     "NC",
+     71
+    ],
+    [
+     "10495 N KINGS HWY",
+     "29572",
+     "SC",
+     71
+    ],
+    [
+     "PO BOX 416",
+     "29528",
+     "SC",
+     68
+    ],
+    [
+     "2508 DOGWOOD RD",
+     "29568",
+     "SC",
+     58
+    ],
+    [
+     "5601 WINDHOVER DR",
+     "32819",
+     "FL",
+     56
+    ],
+    [
+     "2507 FORESTBROOK RD UNIT K",
+     "29588",
+     "SC",
+     53
+    ],
+    [
+     "2108 N OCEAN BLVD",
+     "29577",
+     "SC",
+     53
+    ],
+    [
+     "PO BOX 1111",
+     "29578",
+     "SC",
+     49
+    ],
+    [
+     "11 DUPONT CIR 9TH FLOOR",
+     "20036",
+     "DC",
+     48
+    ],
+    [
+     "PO BOX 1730",
+     "29598",
+     "SC",
+     47
+    ],
+    [
+     "4049 BELLE TERRE BLVD",
+     "29579",
+     "SC",
+     47
+    ],
+    [
+     "3531 QUEENS HARBOUR BLVD",
+     "29588",
+     "SC",
+     46
+    ],
+    [
+     "9400 SHORE DR",
+     "29572",
+     "SC",
+     45
+    ],
+    [
+     "164 MARKET ST # 202",
+     "29401",
+     "SC",
+     44
+    ],
+    [
+     "100 N WACCAMAW DR",
+     "29576",
+     "SC",
+     43
+    ],
+    [
+     "264 HIGHLAND PARK BLVD",
+     "18702",
+     "PA",
+     41
+    ],
+    [
+     "1981 HIGHWAY 905",
+     "29526",
+     "SC",
+     40
+    ],
+    [
+     "673 POTOMAC STATION DR NE # 148",
+     "20176",
+     "VA",
+     39
+    ],
+    [
+     "1650 DEER CREEK RD",
+     "29575",
+     "SC",
+     37
+    ],
+    [
+     "17 HIGH COTTON LN",
+     "29585",
+     "SC",
+     36
+    ],
+    [
+     "1304 4TH AVE",
+     "29526",
+     "SC",
+     34
+    ],
+    [
+     "818 E COLLEGE PKWY STE B",
+     "21409",
+     "MD",
+     34
+    ],
+    [
+     "3105 GLENWOOD AVE #105",
+     "27612",
+     "NC",
+     33
+    ],
+    [
+     "39 CHAPIN CIR",
+     "29572",
+     "SC",
+     33
+    ],
+    [
+     "200 75TH AVE N",
+     "29572",
+     "SC",
+     32
+    ],
+    [
+     "229 MAIN ST",
+     "29526",
+     "SC",
+     32
+    ],
+    [
+     "PO BOX 15896",
+     "29587",
+     "SC",
+     30
+    ],
+    [
+     "PO BOX 2308",
+     "29585",
+     "SC",
+     30
+    ],
+    [
+     "12109 LINDA FLORA DR",
+     "93023",
+     "CA",
+     29
+    ],
+    [
+     "PO BOX 665",
+     "29511",
+     "SC",
+     29
+    ],
+    [
+     "9550 SHORE DR",
+     "29572",
+     "SC",
+     28
+    ],
+    [
+     "1525 S OCEAN BLVD",
+     "29582",
+     "SC",
+     28
+    ],
+    [
+     "1505 KING STREET EXT STE 100",
+     "29405",
+     "SC",
+     25
+    ],
+    [
+     "225 LIBERTY ST STE 4210",
+     "10281",
+     "NY",
+     25
+    ],
+    [
+     "14 STEUBEN LN",
+     "08527",
+     "NJ",
+     25
+    ],
+    [
+     "123 PRATHER PARK DR",
+     "29588",
+     "SC",
+     23
+    ],
+    [
+     "PO BOX 5",
+     "29528",
+     "SC",
+     23
+    ],
+    [
+     "55 N LYLE AVE",
+     "07670",
+     "NJ",
+     23
+    ],
+    [
+     "7509 N OCEAN BLVD BOX #13",
+     "29572",
+     "SC",
+     22
+    ],
+    [
+     "2 N RIVERSIDE PLZ STE 800",
+     "60606",
+     "IL",
+     22
+    ],
+    [
+     "6650 RIVERS AVE STE 100",
+     "29406",
+     "SC",
+     22
+    ],
+    [
+     "215 ATLANTIC AVE",
+     "29576",
+     "SC",
+     22
+    ],
+    [
+     "2610 N OCEAN BLVD",
+     "29577",
+     "SC",
+     21
+    ],
+    [
+     "1301 2ND AVE",
+     "29526",
+     "SC",
+     21
+    ],
+    [
+     "448 VIKING DR STE 220",
+     "23452",
+     "VA",
+     21
+    ],
+    [
+     "108 VISTAMAR DR",
+     "28405",
+     "NC",
+     20
+    ],
+    [
+     "2611 S OCEAN BLVD",
+     "29577",
+     "SC",
+     19
+    ],
+    [
+     "5025 NOBLESTOWN RD",
+     "15071",
+     "PA",
+     18
+    ],
+    [
+     "2366 ISLAND WAY",
+     "29566",
+     "SC",
+     18
+    ],
+    [
+     "1304 FOURTH AVE",
+     "29526",
+     "SC",
+     18
+    ],
+    [
+     "9002 SAN MARCO CT #4TH FL",
+     "32819",
+     "FL",
+     18
+    ],
+    [
+     "2303 LEONARD AVE",
+     "29527",
+     "SC",
+     18
+    ],
+    [
+     "704 SEABOARD ST #G",
+     "29577",
+     "SC",
+     18
+    ],
+    [
+     "472 S FORT APACHE RD",
+     "89147",
+     "NV",
+     17
+    ],
+    [
+     "300 FRANK W BURR BLVD STE 68",
+     "07666",
+     "NJ",
+     17
+    ],
+    [
+     "PO BOX 6940",
+     "29572",
+     "SC",
+     17
+    ],
+    [
+     "618 CHESTNUT RD #101",
+     "29572",
+     "SC",
+     16
+    ],
+    [
+     "PO BOX 3410",
+     "29578",
+     "SC",
+     16
+    ],
+    [
+     "1855 BELLAMY RD",
+     "29526",
+     "SC",
+     16
+    ],
+    [
+     "12 YORKSHIRE DR",
+     "07840",
+     "NJ",
+     16
+    ],
+    [
+     "3565 PASEO DE LOS CALIFORNIANOS #254",
+     "92056",
+     "CA",
+     15
+    ],
+    [
+     "9549 BELLASERA CIR",
+     "29579",
+     "SC",
+     15
+    ],
+    [
+     "603 BRIEF RD W",
+     "28079",
+     "NC",
+     15
+    ],
+    [
+     "12109 LINDA FLORA DR # OA1",
+     "93023",
+     "CA",
+     15
+    ],
+    [
+     "3685 RIVERWOOD FARMS RD",
+     "29588",
+     "SC",
+     15
+    ],
+    [
+     "PO BOX 246",
+     "29578",
+     "SC",
+     14
+    ],
+    [
+     "PO BOX 14343",
+     "29587",
+     "SC",
+     14
+    ],
+    [
+     "9700 KINGS RD",
+     "29572",
+     "SC",
+     14
+    ],
+    [
+     "160 LAKEVIEW DR",
+     "95018",
+     "CA",
+     14
+    ],
+    [
+     "510 3RD AVE N",
+     "29575",
+     "SC",
+     14
+    ],
+    [
+     "575 BRUNSON SPRING RD",
+     "29544",
+     "SC",
+     14
+    ],
+    [
+     "1406-B COMMERCE PL STE B",
+     "29577",
+     "SC",
+     14
+    ],
+    [
+     "1064 LINKS RD",
+     "29575",
+     "SC",
+     14
+    ],
+    [
+     "PO BOX 6",
+     "29545",
+     "SC",
+     14
+    ],
+    [
+     "2408 RIDGE ST",
+     "29582",
+     "SC",
+     14
+    ],
+    [
+     "PO BOX 3708",
+     "29578",
+     "SC",
+     14
+    ],
+    [
+     "755 GRAND BLVD STE 105 B-353 STE 105 B-3",
+     "32550",
+     "FL",
+     13
+    ],
+    [
+     "932 COX FERRY CIR",
+     "29526",
+     "SC",
+     13
+    ],
+    [
+     "9377 CHARLESTON CT",
+     "29572",
+     "SC",
+     13
+    ],
+    [
+     "PO BOX 16119",
+     "29587",
+     "SC",
+     13
+    ],
+    [
+     "1061 STONEY FALLS BLVD",
+     "29579",
+     "SC",
+     13
+    ],
+    [
+     "PO BOX 860",
+     "23060",
+     "VA",
+     13
+    ],
+    [
+     "9547 EDGERTON DR #605",
+     "29572",
+     "SC",
+     13
+    ],
+    [
+     "600 16TH AVE N STE 4",
+     "29577",
+     "SC",
+     13
+    ],
+    [
+     "6307 N OCEAN BLVD",
+     "29572",
+     "SC",
+     13
+    ],
+    [
+     "PO BOX 70999",
+     "29572",
+     "SC",
+     13
+    ],
+    [
+     "1406 COMMERCE PL STE B",
+     "29577",
+     "SC",
+     13
+    ],
+    [
+     "1101 SPINNAKER DR",
+     "29582",
+     "SC",
+     13
+    ],
+    [
+     "116 7TH AVE S",
+     "29575",
+     "SC",
+     13
+    ],
+    [
+     "PO BOX 12006",
+     "29731",
+     "SC",
+     13
+    ],
+    [
+     "PO BOX 1292",
+     "29578",
+     "SC",
+     13
+    ],
+    [
+     "PO BOX 606",
+     "29511",
+     "SC",
+     13
+    ],
+    [
+     "PO BOX 856",
+     "29528",
+     "SC",
+     13
+    ],
+    [
+     "PO BOX 2217",
+     "29576",
+     "SC",
+     12
+    ],
+    [
+     "5901 S KINGS HWY ",
+     "29575",
+     "SC",
+     12
+    ],
+    [
+     "137 OLD BLUE MOUNTAIN LN",
+     "78633",
+     "TX",
+     12
+    ],
+    [
+     "206 BUSBEE ST",
+     "29526",
+     "SC",
+     12
+    ],
+    [
+     "6277 SEA HARBOR DR 8TH FL",
+     "32821",
+     "FL",
+     12
+    ],
+    [
+     "6800 N OCEAN BLVD",
+     "29572",
+     "SC",
+     12
+    ],
+    [
+     "77 HIGHWAY 17 S",
+     "29582",
+     "SC",
+     12
+    ],
+    [
+     "9650 SHORE DR #2409",
+     "29572",
+     "SC",
+     12
+    ],
+    [
+     "9480 RONDA CT",
+     "29579",
+     "SC",
+     12
+    ],
+    [
+     "213 DUCHESS CT",
+     "29588",
+     "SC",
+     12
+    ],
+    [
+     "5793 CREEKSIDE DR",
+     "29588",
+     "SC",
+     12
+    ],
+    [
+     "841 HARRISON MILL ST",
+     "29579",
+     "SC",
+     12
+    ],
+    [
+     "16 ROLLING RD",
+     "08873",
+     "NJ",
+     12
+    ],
+    [
+     "PO BOX 4838",
+     "29597",
+     "SC",
+     12
+    ],
+    [
+     "405 79TH AVE N",
+     "29572",
+     "SC",
+     12
+    ],
+    [
+     "7700 BEACH DR",
+     "29572",
+     "SC",
+     12
+    ],
+    [
+     "14803 DAVIS TRACE DR",
+     "28227",
+     "NC",
+     12
+    ],
+    [
+     "PO BOX 788",
+     "29597",
+     "SC",
+     12
+    ],
+    [
+     "1 REDWOOD RD",
+     "08902",
+     "NJ",
+     12
+    ],
+    [
+     "20 WILLIAMS RD",
+     "08824",
+     "NJ",
+     12
+    ],
+    [
+     "2000 HWY 15",
+     "29577",
+     "SC",
+     12
+    ],
+    [
+     "201 CHESTER ST APT 7",
+     "29577",
+     "SC",
+     11
+    ],
+    [
+     "213 S OCEAN BLVD",
+     "29575",
+     "SC",
+     11
+    ],
+    [
+     "1514 SIMPSON CREEK DR",
+     "29569",
+     "SC",
+     11
+    ],
+    [
+     "1 STONE LN",
+     "11959",
+     "NY",
+     11
+    ],
+    [
+     "1007 PEARLIE ST",
+     "29582",
+     "SC",
+     11
+    ],
+    [
+     "PO BOX 790",
+     "29597",
+     "SC",
+     11
+    ],
+    [
+     "PO BOX 8202",
+     "29578",
+     "SC",
+     11
+    ],
+    [
+     "637 BELLAMY AVE UNIT D",
+     "29576",
+     "SC",
+     11
+    ],
+    [
+     "PO BOX 1448",
+     "29576",
+     "SC",
+     11
+    ],
+    [
+     "PO BOX 1648",
+     "29598",
+     "SC",
+     11
+    ],
+    [
+     "PO BOX 30776",
+     "29588",
+     "SC",
+     11
+    ],
+    [
+     "PO BOX 315",
+     "29528",
+     "SC",
+     11
+    ],
+    [
+     "10 HOLLY CRES",
+     "12533",
+     "NY",
+     11
+    ],
+    [
+     "918 ANSON CT",
+     "29575",
+     "SC",
+     11
+    ],
+    [
+     "204 JESSAMINE ST",
+     "29526",
+     "SC",
+     11
+    ],
+    [
+     "131 BROOKLANE CT",
+     "29527",
+     "SC",
+     11
+    ],
+    [
+     "2209 STEEP LANDING RD",
+     "29526",
+     "SC",
+     10
+    ],
+    [
+     "1631 MOUNTAIN HAWK DR",
+     "29577",
+     "SC",
+     10
+    ],
+    [
+     "1490 BROOKGREEN DR",
+     "29577",
+     "SC",
+     10
+    ],
+    [
+     "1500 MURRELLS LANDING RD",
+     "29526",
+     "SC",
+     10
+    ],
+    [
+     "8353 JUXA DR",
+     "29579",
+     "SC",
+     10
+    ],
+    [
+     "4692 ELY TRL",
+     "29588",
+     "SC",
+     10
+    ],
+    [
+     "1221 PETERSON ST",
+     "29577",
+     "SC",
+     10
+    ],
+    [
+     "465 LONG ACRES DR",
+     "29568",
+     "SC",
+     10
+    ],
+    [
+     "601 21ST AVE N #203",
+     "29577",
+     "SC",
+     10
+    ],
+    [
+     "613 5TH AVE S",
+     "29577",
+     "SC",
+     10
+    ],
+    [
+     "306 RIMROCK RD",
+     "91361",
+     "CA",
+     10
+    ],
+    [
+     "316 FAIRWOOD TER",
+     "29588",
+     "SC",
+     10
+    ],
+    [
+     "332 WATERSIDE DR",
+     "29577",
+     "SC",
+     10
+    ],
+    [
+     "1162 PINE ISLAND RD",
+     "29577",
+     "SC",
+     10
+    ],
+    [
+     "1250 HWY 17 N",
+     "29575",
+     "SC",
+     10
+    ],
+    [
+     "12924 PINTAIL RD",
+     "22192",
+     "VA",
+     10
+    ],
+    [
+     "4664 ELY TRL",
+     "29588",
+     "SC",
+     10
+    ],
+    [
+     "2983 SEAFORD CT",
+     "11793",
+     "NY",
+     10
+    ],
+    [
+     "819 BAY ST",
+     "29577",
+     "SC",
+     10
+    ],
+    [
+     "PO BOX 50122",
+     "29579",
+     "SC",
+     10
+    ],
+    [
+     "PO BOX 1031",
+     "29578",
+     "SC",
+     10
+    ],
+    [
+     "6001 S KINGS HWY",
+     "29575",
+     "SC",
+     10
+    ],
+    [
+     "874 DENALI DR",
+     "29526",
+     "SC",
+     10
+    ],
+    [
+     "300 LYONS COVE DR",
+     "29577",
+     "SC",
+     10
+    ],
+    [
+     "250 VICTORY LN",
+     "29526",
+     "SC",
+     10
+    ],
+    [
+     "2703 BONNIE LN",
+     "29526",
+     "SC",
+     10
+    ]
+   ],
+   "exceeded": null
+  }
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "source": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query",
+ "where": "LegalDescr LIKE '%OCEAN LAKES%'",
+ "records": 963,
+ "with_building": 956,
+ "with_building_land_value_zero": 949,
+ "with_building_acreage_zero": 950,
+ "median_building_value": 248462.5,
+ "land_use_codes": [
+  [
+   "118",
+   893
+  ],
+  [
+   "122",
+   37
+  ],
+  [
+   "119",
+   19
+  ],
+  [
+   "325",
+   3
+  ],
+  [
+   "342",
+   2
+  ],
+  [
+   "301",
+   1
+  ],
+  [
+   "373",
+   1
+  ]
+ ],
+ "owner_state_top": [
+  [
+   "SC",
+   414
+  ],
+  [
+   "NC",
+   352
+  ],
+  [
+   "VA",
+   70
+  ],
+  [
+   "NY",
+   16
+  ],
+  [
+   "GA",
+   16
+  ],
+  [
+   "TN",
+   12
+  ]
+ ],
+ "legal_mentions_parent_45900000325": 319,
+ "parent_parcel": [
+  {
+   "LandUseCode": "214",
+   "MarketLand": 206798850.0,
+   "MarketImprv": 74581614.0,
+   "Acreage": 241.67,
+   "LegalDescr": "; INT S26-375 & HWY 17"
+  }
+ ]
+}

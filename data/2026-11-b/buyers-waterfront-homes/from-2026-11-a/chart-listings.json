@@ -1,0 +1,63 @@
+{
+ "what": "Houses for sale listed as waterfront, by the water each listing names (a listing can name more than one), CRM active listings in aggregate (CCMLS), pulled 2026-11-04",
+ "rule": "Horry County and the Georgetown County coast: South Carolina addresses, less Manning, Awendaw, Mullins and Andrews; houses unless named. Lake and pond are one set in the CRM (identical), so they are one kind here.",
+ "total_waterfront_houses": 497,
+ "lake_or_pond_only": 408,
+ "rows": [
+  {
+   "kind": "A lake or pond",
+   "key": "water_lake",
+   "n": 421
+  },
+  {
+   "kind": "A canal or channel",
+   "key": "water_canal",
+   "n": 37
+  },
+  {
+   "kind": "The ocean",
+   "key": "water_ocean",
+   "n": 28
+  },
+  {
+   "kind": "A river",
+   "key": "water_river",
+   "n": 22
+  },
+  {
+   "kind": "The Intracoastal Waterway",
+   "key": "water_icw",
+   "n": 19
+  },
+  {
+   "kind": "A tidal creek",
+   "key": "water_creek",
+   "n": 14
+  },
+  {
+   "kind": "The marsh",
+   "key": "water_marsh",
+   "n": 5
+  }
+ ],
+ "dock_compare": {
+  "rule": "listed as waterfront and naming a canal, creek, marsh, the Intracoastal Waterway or a river, and not the ocean",
+  "all": {
+   "n": 61,
+   "median_price": 874000.0,
+   "median_per_sqft": 372
+  },
+  "with_dock": {
+   "n": 31,
+   "median_price": 945000.0,
+   "median_per_sqft": 388,
+   "median_sqft": 2448
+  },
+  "without_dock": {
+   "n": 30,
+   "median_price": 854500.0,
+   "median_per_sqft": 343,
+   "median_sqft": 1865.0
+  }
+ }
+}

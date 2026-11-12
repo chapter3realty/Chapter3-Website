@@ -1,0 +1,74 @@
+{
+ "title": "What a house resold for, by part of North Myrtle Beach",
+ "unit": "USD",
+ "window": [
+  "2025/10/01",
+  "2026/09/30"
+ ],
+ "rows": [
+  {
+   "area": "Cherry Grove",
+   "key": "cg",
+   "n": 103,
+   "median": 695000,
+   "p25": 590000,
+   "p75": 860000
+  },
+  {
+   "area": "Little River Neck",
+   "key": "neck",
+   "n": 70,
+   "median": 588782,
+   "p25": 465000,
+   "p75": 665000
+  },
+  {
+   "area": "Tilghman Beach",
+   "key": "til",
+   "n": 73,
+   "median": 725000,
+   "p25": 600000,
+   "p75": 865000
+  },
+  {
+   "area": "Ocean Drive",
+   "key": "od",
+   "n": 39,
+   "median": 600000,
+   "p25": 385000,
+   "p75": 980000
+  },
+  {
+   "area": "Crescent Beach",
+   "key": "cb",
+   "n": 66,
+   "median": 411000,
+   "p25": 345000,
+   "p75": 675000
+  },
+  {
+   "area": "Windy Hill",
+   "key": "wh",
+   "n": 28,
+   "median": 460000,
+   "p25": 433000,
+   "p75": 615000
+  },
+  {
+   "area": "West of US 17",
+   "key": "west17",
+   "n": 91,
+   "median": 475000,
+   "p25": 350000,
+   "p75": 589900
+  },
+  {
+   "area": "Across the waterway",
+   "key": "across",
+   "n": 90,
+   "median": 477500,
+   "p25": 392000,
+   "p75": 635000
+  }
+ ]
+}

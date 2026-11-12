@@ -1,0 +1,23 @@
+{
+ "title": "Most condos for sale here are in buildings past the state's 8-year limit on defect suits",
+ "source": "Chapter3 map API (CCMLS active listings), aggregate; S.C. Code 15-3-640",
+ "pulled": "2026-11-10T06:42:17.672301+00:00",
+ "bars": [
+  {
+   "label": "Built 2018 or later (about 8 years old or newer)",
+   "count": 73
+  },
+  {
+   "label": "Built 2001 to 2017",
+   "count": 873
+  },
+  {
+   "label": "Built 1981 to 2000",
+   "count": 1541
+  },
+  {
+   "label": "Built 1980 or earlier",
+   "count": 373
+  }
+ ]
+}

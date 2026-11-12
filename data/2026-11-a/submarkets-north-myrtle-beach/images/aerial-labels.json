@@ -1,0 +1,216 @@
+{
+ "cherry-grove-channels": {
+  "file": "cherry-grove-channels.png",
+  "size": [
+   1200,
+   857
+  ],
+  "bbox_wgs84": [
+   -78.6265,
+   33.83391,
+   -78.6085,
+   33.84459
+  ],
+  "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8752661.942857325,4006521.994611285,-8750658.192023048,4007953.245207197&bboxSR=3857&imageSR=3857&size=1400,1000&format=jpg&f=image",
+  "labels": [
+   {
+    "text": "Boat ramp",
+    "lon": -78.6175078,
+    "lat": 33.8420331,
+    "px": [
+     599,
+     205
+    ],
+    "source": "OpenStreetMap point for Cherry Grove Boat Ramp (landmarks.json)"
+   },
+   {
+    "text": "Heritage Shores",
+    "lon": -78.6118539,
+    "lat": 33.8431038,
+    "px": [
+     976,
+     119
+    ],
+    "source": "OpenStreetMap point for Heritage Shores Nature Preserve (landmarks.json)"
+   },
+   {
+    "text": "Channel houses",
+    "lon": -78.6195,
+    "lat": 33.8372,
+    "px": [
+     467,
+     593
+    ],
+    "source": "a point read from the county layers"
+   },
+   {
+    "text": "Atlantic Ocean",
+    "lon": -78.612,
+    "lat": 33.8356,
+    "px": [
+     967,
+     721
+    ],
+    "source": "a point read from the county layers"
+   }
+  ]
+ },
+ "ocean-drive-main-street": {
+  "file": "ocean-drive-main-street.png",
+  "size": [
+   1200,
+   857
+  ],
+  "bbox_wgs84": [
+   -78.683,
+   33.813909,
+   -78.665,
+   33.824591
+  ],
+  "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8758951.494087145,4003841.8587367893,-8756947.743252866,4005273.1093327026&bboxSR=3857&imageSR=3857&size=1400,1000&format=jpg&f=image",
+  "labels": [
+   {
+    "text": "Main Street",
+    "lon": -78.6735286,
+    "lat": 33.8211378,
+    "px": [
+     631,
+     277
+    ],
+    "source": "OpenStreetMap point for Main Street (Ocean Drive) (landmarks.json)"
+   },
+   {
+    "text": "McLean Park",
+    "lon": -78.6761145,
+    "lat": 33.8206878,
+    "px": [
+     459,
+     313
+    ],
+    "source": "OpenStreetMap point for McLean Park (landmarks.json)"
+   },
+   {
+    "text": "Atlantic Ocean",
+    "lon": -78.67,
+    "lat": 33.8168,
+    "px": [
+     867,
+     625
+    ],
+    "source": "a point read from the county layers"
+   }
+  ]
+ },
+ "barefoot-landing-waterway": {
+  "file": "barefoot-landing-waterway.png",
+  "size": [
+   1200,
+   857
+  ],
+  "bbox_wgs84": [
+   -78.753,
+   33.793408,
+   -78.735,
+   33.804092
+  ],
+  "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8766743.858442673,4001095.369830301,-8764740.107608395,4002526.6204262143&bboxSR=3857&imageSR=3857&size=1400,1000&format=jpg&f=image",
+  "labels": [
+   {
+    "text": "Barefoot Landing",
+    "lon": -78.7424398,
+    "lat": 33.7998752,
+    "px": [
+     704,
+     338
+    ],
+    "source": "OpenStreetMap point for Barefoot Landing (landmarks.json)"
+   },
+   {
+    "text": "Intracoastal Waterway",
+    "lon": -78.74807,
+    "lat": 33.80101,
+    "px": [
+     329,
+     247
+    ],
+    "source": "a point read from the county layers"
+   },
+   {
+    "text": "US 17",
+    "lon": -78.746,
+    "lat": 33.7965,
+    "px": [
+     467,
+     609
+    ],
+    "source": "a point read from the county layers"
+   },
+   {
+    "text": "Across the waterway",
+    "lon": -78.75119,
+    "lat": 33.80332,
+    "px": [
+     121,
+     62
+    ],
+    "source": "a point read from the county layers"
+   }
+  ]
+ },
+ "atlantic-beach-between": {
+  "file": "atlantic-beach-between.png",
+  "size": [
+   1200,
+   857
+  ],
+  "bbox_wgs84": [
+   -78.740296,
+   33.79,
+   -78.700704,
+   33.8135
+  ],
+  "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8765329.678141298,4000638.892040695,-8760922.271842485,4003787.03939699&bboxSR=3857&imageSR=3857&size=1400,1000&format=jpg&f=image",
+  "labels": [
+   {
+    "text": "Atlantic Beach",
+    "lon": -78.7179,
+    "lat": 33.8038,
+    "px": [
+     679,
+     354
+    ],
+    "source": "a point read from the county layers"
+   },
+   {
+    "text": "Crescent Beach",
+    "lon": -78.7114,
+    "lat": 33.8049,
+    "px": [
+     876,
+     314
+    ],
+    "source": "the middle of our cb part (map-parts.geojson, polylabel)"
+   },
+   {
+    "text": "Windy Hill",
+    "lon": -78.7308,
+    "lat": 33.7963,
+    "px": [
+     288,
+     627
+    ],
+    "source": "the middle of our wh part (map-parts.geojson, polylabel)"
+   },
+   {
+    "text": "Atlantic Ocean",
+    "lon": -78.712,
+    "lat": 33.795,
+    "px": [
+     858,
+     675
+    ],
+    "source": "a point read from the county layers"
+   }
+  ]
+ }
+}

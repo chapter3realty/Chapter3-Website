@@ -1,0 +1,96 @@
+{
+ "photos": [
+  {
+   "slug": "invest-rent-prices",
+   "file": "images/2026-11-a/invest-rent-prices/carolina-forest-streets-from-above.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-rent-prices/carolina-forest-streets-from-above-600w.webp",
+    "1200": "images/2026-11-a/invest-rent-prices/carolina-forest-streets-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Streets of houses in Carolina Forest, NOAA aerial, January 2026",
+   "what": "Four streets of one- and two-story houses with gray roofs, short driveways and small back yards, with strips of pine and oak woods between the rows, in The Farm at Carolina Forest, seen from above at a slight angle on January 12, 2026. Lawns are brown in January. Cars are too small to read; no person can be recognized.",
+   "caption": "Houses in Carolina Forest, seen from above.",
+   "alt": "Rows of houses with gray roofs and short driveways along streets with strips of woods between them in Carolina Forest, seen from above",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Carolina Forest"
+   },
+   "source": "https://noaa-eri-pds.s3.amazonaws.com/index.html#2026_Pre_Event/EC2601a_OB_N_RGB/",
+   "source_name": "NOAA Emergency Response Imagery",
+   "author": "NOAA National Geodetic Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+   "provenance": "U.S. government aerial photo: NOAA National Geodetic Survey (NGS), Remote Sensing Division, Emergency Response Imagery, 2026 pre-event coastal collection, East Coast group EC2601a, flown 2026-01-12. One map tile, EC2601a_OB_N_C0785315w334545n.tif (4707 x 4707 px, WGS 84, 2.698e-6 degrees a pixel, top left -78.8875987, 33.7625987), the copy downloaded 2026-11-02 from the public S3 bucket noaa-eri-pds by the writer of /invest/run-the-numbers/. This frame is a different part of the tile from that page's photo (rows 1550-2750 against 2900-4100).",
+   "license_note": "17 U.S.C. 105(a): \"Copyright protection under this title is not available for any work of the United States Government\". NOAA's terms on the Registry of Open Data (https://registry.opendata.aws/noaa-eri/): \"NOAA data disseminated through NODD are open to the public and can be used as desired.\" NOAA requests attribution for unaltered data and no implied endorsement. So: credit NOAA, say what Chapter3 changed (changes), never suggest NOAA endorses Chapter3.",
+   "terms_urls": [
+    "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+    "https://registry.opendata.aws/noaa-eri/"
+   ],
+   "taken": "2026-01-12",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: NOAA National Geodetic Survey, public domain.",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty cut a 1600 x 1200 px view from one NOAA map tile, raised the contrast and color slightly, and resized it",
+   "source_files": [
+    "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0785315w334545n.tif"
+   ],
+   "frame": {
+    "bbox_wgs84": [-78.880989, 33.755179, -78.876672, 33.758417],
+    "ground_m_per_px_1200w": 0.33
+   },
+   "original_size": "1600x1200 cut from the tile at pixels 2450-4050 x 1550-2750",
+   "annotation_sources": {
+    "where": "Horry County parcels layer 24 at four points inside the frame (-78.88018 33.75653; -78.87829 33.75707; -78.87991 33.75766; -78.8770 33.7590): legal descriptions 'FARM @ CAROLINA FOREST; OPEN SPACE #30', 'FARM @ CAROLINA FOREST; LOT 932 PH 15', 'FARM @ C.F PH 26; HOA OPEN SPACE 31', 'FARM AT CAROLINA FOREST; OPEN SPACE # 2', tax district 800, read 2026-11-02. https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24"
+   },
+   "subject_check": "Looked at full size by the writer on 2026-11-02. The frame shows streets of houses in The Farm at Carolina Forest (inside Carolina Forest CDP and ZIP 29579). It does not show which houses are rented, so the caption says only that these are houses in Carolina Forest, one of the two places with the highest middle rent in the page's table. No person, plate, sign or house number is legible.",
+   "method": "ImageMagick: crop, -modulate 100,108, -sigmoidal-contrast 2,50%, PNG; then Blog-Brain tools/photos.js variants and crops. No labels drawn. Metadata embedded with tools/photos.js embed.",
+   "crops": {
+    "1x1": { "path": "images/2026-11-a/invest-rent-prices/carolina-forest-streets-from-above-1x1.webp", "width": 1200, "height": 1200 },
+    "4x3": { "path": "images/2026-11-a/invest-rent-prices/carolina-forest-streets-from-above-4x3.webp", "width": 1200, "height": 900 },
+    "16x9": { "path": "images/2026-11-a/invest-rent-prices/carolina-forest-streets-from-above-16x9.webp", "width": 1200, "height": 675 }
+   },
+   "crop_note": "1x1, 4x3 and 16x9 crops cut from the center of the 1600 x 1200 source with tools/photos.js crops, for Article.image and the share image"
+  },
+  {
+   "slug": "invest-rent-prices",
+   "file": "images/2026-11-a/invest-rent-prices/coastal-carolina-bell-tower.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-rent-prices/coastal-carolina-bell-tower-600w.webp",
+    "1200": "images/2026-11-a/invest-rent-prices/coastal-carolina-bell-tower-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "The bell tower in Spadoni Park, Coastal Carolina University",
+   "what": "The Graham Family Bell Tower in Spadoni Park at Coastal Carolina University: a dark clock and bell cupola on a red brick base with arches, at the right; a crape myrtle in pink bloom, pines and a bed of red flowers at the left; a paved walk and a campus building with tall windows behind. Summer. No person can be seen.",
+   "caption": "The bell tower in Spadoni Park, at Coastal Carolina University in Conway.",
+   "alt": "A clock and bell tower on a red brick base beside a pink crape myrtle and flower beds on the Coastal Carolina University campus",
+   "place": {
+    "city": "Conway",
+    "sublocation": "Coastal Carolina University"
+   },
+   "source": "https://commons.wikimedia.org/wiki/File:Spadoni_Park_Circle.jpg",
+   "source_name": "Wikimedia Commons",
+   "commons_page": "https://commons.wikimedia.org/wiki/File:Spadoni_Park_Circle.jpg",
+   "author": "Sk5893",
+   "author_type": "Person",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "credit": "Photo: Sk5893, CC BY-SA 4.0, via Wikimedia Commons.",
+   "provenance": "Own work of the author (Commons Information template: source {{own}}, author User:Sk5893, date 2017-07-19). Downloaded as the Commons 1280 px thumbnail on 2026-11-02.",
+   "license_note": "Commons file page raw wikitext read 2026-11-02: license section {{self|cc-by-sa-4.0}}. Description: 'The Graham Family Bell Tower in Spadoni Park in Coastal Carolina University in Conway, South Carolina, US.' Attribution required. Our resized copy is shared under the same licence.",
+   "subject_check": "Looked at full size (1280 px) by the writer on 2026-11-02. The Commons description names the bell tower and Spadoni Park at Coastal Carolina University; the photo matches it. No person, no car, no plate, no readable sign.",
+   "terms_urls": [
+    "https://commons.wikimedia.org/wiki/File:Spadoni_Park_Circle.jpg",
+    "https://creativecommons.org/licenses/by-sa/4.0/"
+   ],
+   "taken": "2017-07-19",
+   "original_size": "1280x720 (Commons thumbnail)",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty resized the photo",
+   "share_alike": true
+  }
+ ]
+}

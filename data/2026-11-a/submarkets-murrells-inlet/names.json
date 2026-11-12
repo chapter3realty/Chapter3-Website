@@ -1,0 +1,1168 @@
+{
+ "made": "names.py",
+ "note": "Neighborhoods with 40 or more homes; Horry names from legal descriptions (approximate), Georgetown from the county layer.",
+ "names": [
+  {
+   "county": "georgetown",
+   "part": "west",
+   "name": "WACHESAW PLANTATION",
+   "homes": 824,
+   "kinds": {
+    "house": 651,
+    "condo": 167,
+    "other": 6
+   },
+   "legal_residence_pct": 77.2,
+   "high_risk_flood": 0,
+   "sales_12m": 37,
+   "median_12m": 565000
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "INDIGO CREEK",
+   "homes": 559,
+   "kinds": {
+    "house": 559
+   },
+   "legal_residence_pct": 87.3,
+   "high_risk_flood": 0,
+   "sales_12m": 26,
+   "median_12m": 371000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "SEASONS @ PRINCE CREEK",
+   "homes": 441,
+   "kinds": {
+    "house": 441
+   },
+   "legal_residence_pct": 93.2,
+   "high_risk_flood": 18,
+   "sales_12m": 19,
+   "median_12m": 499000.0
+  },
+  {
+   "county": "georgetown",
+   "part": "west",
+   "name": "LINKSBROOK",
+   "homes": 414,
+   "kinds": {
+    "condo": 6,
+    "house": 408
+   },
+   "legal_residence_pct": 86.0,
+   "high_risk_flood": 0,
+   "sales_12m": 18,
+   "median_12m": 490000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "THE PINES OF ST JAMES",
+   "homes": 378,
+   "kinds": {
+    "house": 370,
+    "other": 8
+   },
+   "legal_residence_pct": 79.9,
+   "high_risk_flood": 1,
+   "sales_12m": 18,
+   "median_12m": 274900.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "MARCLIFFE HPR",
+   "homes": 331,
+   "kinds": {
+    "condo": 331
+   },
+   "legal_residence_pct": 40.2,
+   "high_risk_flood": 0,
+   "sales_12m": 23,
+   "median_12m": 225000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "WYNBROOKE",
+   "homes": 321,
+   "kinds": {
+    "other": 261,
+    "condo": 60
+   },
+   "legal_residence_pct": 64.8,
+   "high_risk_flood": 0,
+   "sales_12m": 15,
+   "median_12m": 253000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "LONGWOOD BLUFFS",
+   "homes": 300,
+   "kinds": {
+    "house": 258,
+    "other": 42
+   },
+   "legal_residence_pct": 86.7,
+   "high_risk_flood": 6,
+   "sales_12m": 24,
+   "median_12m": 605000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "PARK WEST HPR",
+   "homes": 278,
+   "kinds": {
+    "condo": 278
+   },
+   "legal_residence_pct": 60.1,
+   "high_risk_flood": 0,
+   "sales_12m": 20,
+   "median_12m": 299450.0
+  },
+  {
+   "county": "georgetown",
+   "part": "west",
+   "name": "COLLINS CREEK",
+   "homes": 187,
+   "kinds": {
+    "house": 187
+   },
+   "legal_residence_pct": 97.3,
+   "high_risk_flood": 2,
+   "sales_12m": 11,
+   "median_12m": 1034894
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "WILLOW BAY",
+   "homes": 174,
+   "kinds": {
+    "house": 174
+   },
+   "legal_residence_pct": 92.0,
+   "high_risk_flood": 0,
+   "sales_12m": 4,
+   "median_12m": 549000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "CREEKHAVEN",
+   "homes": 164,
+   "kinds": {
+    "house": 164
+   },
+   "legal_residence_pct": 89.0,
+   "high_risk_flood": 0,
+   "sales_12m": 12,
+   "median_12m": 529950.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "TWIN OAKS",
+   "homes": 155,
+   "kinds": {
+    "house": 155
+   },
+   "legal_residence_pct": 91.0,
+   "high_risk_flood": 0,
+   "sales_12m": 8,
+   "median_12m": 505000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "MEADOWS OF ST PATRICK",
+   "homes": 151,
+   "kinds": {
+    "house": 151
+   },
+   "legal_residence_pct": 80.8,
+   "high_risk_flood": 0,
+   "sales_12m": 6,
+   "median_12m": 352500.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "CYPRESS KEYES",
+   "homes": 150,
+   "kinds": {
+    "house": 150
+   },
+   "legal_residence_pct": 82.7,
+   "high_risk_flood": 0,
+   "sales_12m": 6,
+   "median_12m": 359450.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "SHALLOW CREEK BAY",
+   "homes": 144,
+   "kinds": {
+    "house": 143,
+    "other": 1
+   },
+   "legal_residence_pct": 88.2,
+   "high_risk_flood": 0,
+   "sales_12m": 7,
+   "median_12m": 402500.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "KINGS GRANT",
+   "homes": 142,
+   "kinds": {
+    "house": 137,
+    "other": 5
+   },
+   "legal_residence_pct": 70.4,
+   "high_risk_flood": 0,
+   "sales_12m": 5,
+   "median_12m": 268000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "WREN BAY",
+   "homes": 141,
+   "kinds": {
+    "house": 141
+   },
+   "legal_residence_pct": 92.9,
+   "high_risk_flood": 0,
+   "sales_12m": 6,
+   "median_12m": 532450.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "JOHN'S BAY",
+   "homes": 134,
+   "kinds": {
+    "other": 133,
+    "house": 1
+   },
+   "legal_residence_pct": 70.1,
+   "high_risk_flood": 0,
+   "sales_12m": 6,
+   "median_12m": 357000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "BROOKEFIELD",
+   "homes": 133,
+   "kinds": {
+    "house": 133
+   },
+   "legal_residence_pct": 93.2,
+   "high_risk_flood": 0,
+   "sales_12m": 8,
+   "median_12m": 422500.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "PARMELEE",
+   "homes": 131,
+   "kinds": {
+    "other": 131
+   },
+   "legal_residence_pct": 64.9,
+   "high_risk_flood": 0,
+   "sales_12m": 15,
+   "median_12m": 375000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "SPRING FOREST",
+   "homes": 124,
+   "kinds": {
+    "house": 96,
+    "other": 28
+   },
+   "legal_residence_pct": 83.9,
+   "high_risk_flood": 0,
+   "sales_12m": 8,
+   "median_12m": 289500.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "WILDERNESS POINTE",
+   "homes": 115,
+   "kinds": {
+    "house": 115
+   },
+   "legal_residence_pct": 82.6,
+   "high_risk_flood": 0,
+   "sales_12m": 15,
+   "median_12m": 485000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "CYPRESS GROVE HPR",
+   "homes": 112,
+   "kinds": {
+    "condo": 112
+   },
+   "legal_residence_pct": 65.2,
+   "high_risk_flood": 4,
+   "sales_12m": 7,
+   "median_12m": 350500.0
+  },
+  {
+   "county": "georgetown",
+   "part": "west",
+   "name": "PALM BAY AT PRINCE CREEK",
+   "homes": 110,
+   "kinds": {
+    "house": 110
+   },
+   "legal_residence_pct": 90.9,
+   "high_risk_flood": 0,
+   "sales_12m": 7,
+   "median_12m": 580000
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "VILLAS @ INT'L CL HPR",
+   "homes": 108,
+   "kinds": {
+    "condo": 108
+   },
+   "legal_residence_pct": 46.3,
+   "high_risk_flood": 0,
+   "sales_12m": 4,
+   "median_12m": 225900.0
+  },
+  {
+   "county": "georgetown",
+   "part": "inlet",
+   "name": "EAST OF 17 BUSSINESS",
+   "homes": 103,
+   "kinds": {
+    "house": 103
+   },
+   "legal_residence_pct": 64.1,
+   "high_risk_flood": 98,
+   "sales_12m": 3,
+   "median_12m": 815000
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "COLDSTREAM COVE HPR",
+   "homes": 100,
+   "kinds": {
+    "condo": 100
+   },
+   "legal_residence_pct": 53.0,
+   "high_risk_flood": 0,
+   "sales_12m": 10,
+   "median_12m": 298450.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "SPRINGFIELD",
+   "homes": 97,
+   "kinds": {
+    "house": 97
+   },
+   "legal_residence_pct": 87.6,
+   "high_risk_flood": 0,
+   "sales_12m": 9,
+   "median_12m": 379000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "PEBBLE CREEK @ INT'L CL",
+   "homes": 97,
+   "kinds": {
+    "house": 97
+   },
+   "legal_residence_pct": 94.8,
+   "high_risk_flood": 0,
+   "sales_12m": 2,
+   "median_12m": 511000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "WILDERNESS BLUFFS",
+   "homes": 95,
+   "kinds": {
+    "house": 95
+   },
+   "legal_residence_pct": 77.9,
+   "high_risk_flood": 3,
+   "sales_12m": 27,
+   "median_12m": 504157.0
+  },
+  {
+   "county": "georgetown",
+   "part": "old_road",
+   "name": "WILCOX AND BRIGGS",
+   "homes": 95,
+   "kinds": {
+    "house": 95
+   },
+   "legal_residence_pct": 57.9,
+   "high_risk_flood": 9,
+   "sales_12m": 4,
+   "median_12m": 577500.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "CREEK HARBOUR",
+   "homes": 92,
+   "kinds": {
+    "house": 92
+   },
+   "legal_residence_pct": 95.7,
+   "high_risk_flood": 7,
+   "sales_12m": 5,
+   "median_12m": 970000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "BELLWOOD LANDING",
+   "homes": 91,
+   "kinds": {
+    "house": 91
+   },
+   "legal_residence_pct": 90.1,
+   "high_risk_flood": 13,
+   "sales_12m": 7,
+   "median_12m": 810000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "EVANS PARK",
+   "homes": 89,
+   "kinds": {
+    "house": 89
+   },
+   "legal_residence_pct": 83.1,
+   "high_risk_flood": 0,
+   "sales_12m": 14,
+   "median_12m": 462859.0
+  },
+  {
+   "county": "georgetown",
+   "part": "west",
+   "name": "JONES HARPER",
+   "homes": 89,
+   "kinds": {
+    "house": 89
+   },
+   "legal_residence_pct": 89.9,
+   "high_risk_flood": 1,
+   "sales_12m": 4,
+   "median_12m": 637500.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "PEBBLE CREEK",
+   "homes": 87,
+   "kinds": {
+    "house": 87
+   },
+   "legal_residence_pct": 92.0,
+   "high_risk_flood": 0,
+   "sales_12m": 2,
+   "median_12m": 530000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "FOX CHASE @ COLLINS CRK",
+   "homes": 87,
+   "kinds": {
+    "house": 86,
+    "other": 1
+   },
+   "legal_residence_pct": 82.8,
+   "high_risk_flood": 13,
+   "sales_12m": 4,
+   "median_12m": 482950.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "COLLINS GLENN",
+   "homes": 86,
+   "kinds": {
+    "house": 86
+   },
+   "legal_residence_pct": 88.4,
+   "high_risk_flood": 7,
+   "sales_12m": 7,
+   "median_12m": 401000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "RUN",
+   "homes": 79,
+   "kinds": {
+    "house": 79
+   },
+   "legal_residence_pct": 92.4,
+   "high_risk_flood": 13,
+   "sales_12m": 3,
+   "median_12m": 444000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "HUNTERS GROVE",
+   "homes": 75,
+   "kinds": {
+    "house": 75
+   },
+   "legal_residence_pct": 93.3,
+   "high_risk_flood": 0,
+   "sales_12m": 4,
+   "median_12m": 551000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "HAMILTON ESTATES",
+   "homes": 74,
+   "kinds": {
+    "house": 74
+   },
+   "legal_residence_pct": 82.4,
+   "high_risk_flood": 0,
+   "sales_12m": 2,
+   "median_12m": 225000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "THE HIGHLANDS",
+   "homes": 74,
+   "kinds": {
+    "house": 74
+   },
+   "legal_residence_pct": 78.4,
+   "high_risk_flood": 0,
+   "sales_12m": 3,
+   "median_12m": 299900.0
+  },
+  {
+   "county": "georgetown",
+   "part": "west",
+   "name": "HIGHWOOD AT PRINCECREEK",
+   "homes": 74,
+   "kinds": {
+    "house": 74
+   },
+   "legal_residence_pct": 87.8,
+   "high_risk_flood": 1,
+   "sales_12m": 3,
+   "median_12m": 810000
+  },
+  {
+   "county": "georgetown",
+   "part": "inlet",
+   "name": "SUNNYSIDE",
+   "homes": 70,
+   "kinds": {
+    "house": 67,
+    "condo": 3
+   },
+   "legal_residence_pct": 61.4,
+   "high_risk_flood": 69,
+   "sales_12m": 5,
+   "median_12m": 413670
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "INLET RESERVE",
+   "homes": 69,
+   "kinds": {
+    "house": 69
+   },
+   "legal_residence_pct": 89.9,
+   "high_risk_flood": 0,
+   "sales_12m": 1,
+   "median_12m": 477500.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "INLET ESTATES",
+   "homes": 68,
+   "kinds": {
+    "house": 68
+   },
+   "legal_residence_pct": 76.5,
+   "high_risk_flood": 0,
+   "sales_12m": 6,
+   "median_12m": 294000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "OAK HAMPTON PDD",
+   "homes": 65,
+   "kinds": {
+    "house": 65
+   },
+   "legal_residence_pct": 90.8,
+   "high_risk_flood": 0,
+   "sales_12m": 3,
+   "median_12m": 444000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "SOMERSBY AT LONGWOOD",
+   "homes": 64,
+   "kinds": {
+    "house": 64
+   },
+   "legal_residence_pct": 89.1,
+   "high_risk_flood": 0,
+   "sales_12m": 2,
+   "median_12m": 519000.0
+  },
+  {
+   "county": "georgetown",
+   "part": "west",
+   "name": "LAKE SHORE",
+   "homes": 64,
+   "kinds": {
+    "house": 64
+   },
+   "legal_residence_pct": 93.8,
+   "high_risk_flood": 0,
+   "sales_12m": 7,
+   "median_12m": 510000
+  },
+  {
+   "county": "georgetown",
+   "part": "old_road",
+   "name": "MOSS CREEK CONDOS",
+   "homes": 62,
+   "kinds": {
+    "other": 5,
+    "condo": 57
+   },
+   "legal_residence_pct": 54.8,
+   "high_risk_flood": 43,
+   "sales_12m": 4,
+   "median_12m": 227450.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "SUMMER LAKES",
+   "homes": 60,
+   "kinds": {
+    "house": 60
+   },
+   "legal_residence_pct": 80.0,
+   "high_risk_flood": 0,
+   "sales_12m": 4,
+   "median_12m": 300125.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "COURSE CLUB VILLAS @ PRINCE CREEK",
+   "homes": 60,
+   "kinds": {
+    "other": 58,
+    "house": 2
+   },
+   "legal_residence_pct": 58.3,
+   "high_risk_flood": 0,
+   "sales_12m": 24,
+   "median_12m": 320172.5
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "INDIGO FIELDS",
+   "homes": 59,
+   "kinds": {
+    "house": 59
+   },
+   "legal_residence_pct": 86.4,
+   "high_risk_flood": 0,
+   "sales_12m": 3,
+   "median_12m": 367500.0
+  },
+  {
+   "county": "georgetown",
+   "part": "old_road",
+   "name": "EASON ACRES",
+   "homes": 59,
+   "kinds": {
+    "house": 59
+   },
+   "legal_residence_pct": 62.7,
+   "high_risk_flood": 37,
+   "sales_12m": 5,
+   "median_12m": 430000
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "THE MEADOWS @INT'L CLUB",
+   "homes": 57,
+   "kinds": {
+    "house": 57
+   },
+   "legal_residence_pct": 87.7,
+   "high_risk_flood": 0,
+   "sales_12m": 0,
+   "median_12m": null
+  },
+  {
+   "county": "georgetown",
+   "part": "old_road",
+   "name": "CREEKSIDE COTTAGES",
+   "homes": 57,
+   "kinds": {
+    "house": 56,
+    "other": 1
+   },
+   "legal_residence_pct": 89.5,
+   "high_risk_flood": 22,
+   "sales_12m": 3,
+   "median_12m": 650000
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "GRAND VISTAS HPR",
+   "homes": 56,
+   "kinds": {
+    "condo": 56
+   },
+   "legal_residence_pct": 53.6,
+   "high_risk_flood": 0,
+   "sales_12m": 3,
+   "median_12m": 240000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "MUIRFIELD AT LONG",
+   "homes": 55,
+   "kinds": {
+    "house": 55
+   },
+   "legal_residence_pct": 89.1,
+   "high_risk_flood": 0,
+   "sales_12m": 6,
+   "median_12m": 489500.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "LINKS @ INT'L CLUB",
+   "homes": 55,
+   "kinds": {
+    "house": 55
+   },
+   "legal_residence_pct": 78.2,
+   "high_risk_flood": 0,
+   "sales_12m": 4,
+   "median_12m": 390000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "LAUREL BAY",
+   "homes": 54,
+   "kinds": {
+    "house": 54
+   },
+   "legal_residence_pct": 90.7,
+   "high_risk_flood": 0,
+   "sales_12m": 3,
+   "median_12m": 465000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "SUMMERALL OAKS",
+   "homes": 53,
+   "kinds": {
+    "house": 53
+   },
+   "legal_residence_pct": 86.8,
+   "high_risk_flood": 0,
+   "sales_12m": 6,
+   "median_12m": 344750.0
+  },
+  {
+   "county": "georgetown",
+   "part": "west",
+   "name": "OAK HILL",
+   "homes": 53,
+   "kinds": {
+    "house": 52,
+    "other": 1
+   },
+   "legal_residence_pct": 83.0,
+   "high_risk_flood": 2,
+   "sales_12m": 3,
+   "median_12m": 200000
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "DEVONSHIRE IA",
+   "homes": 52,
+   "kinds": {
+    "house": 52
+   },
+   "legal_residence_pct": 96.2,
+   "high_risk_flood": 0,
+   "sales_12m": 2,
+   "median_12m": 467500.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "RANCH HAVEN SUBDIVSION",
+   "homes": 50,
+   "kinds": {
+    "house": 50
+   },
+   "legal_residence_pct": 86.0,
+   "high_risk_flood": 3,
+   "sales_12m": 1,
+   "median_12m": 424500.0
+  },
+  {
+   "county": "georgetown",
+   "part": "west",
+   "name": "GROVE PARK",
+   "homes": 50,
+   "kinds": {
+    "house": 50
+   },
+   "legal_residence_pct": 84.0,
+   "high_risk_flood": 0,
+   "sales_12m": 2,
+   "median_12m": 392500.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "MEADOWOODS BL B",
+   "homes": 49,
+   "kinds": {
+    "house": 49
+   },
+   "legal_residence_pct": 75.5,
+   "high_risk_flood": 0,
+   "sales_12m": 0,
+   "median_12m": null
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "CHAMPIONS VILLAGE",
+   "homes": 49,
+   "kinds": {
+    "house": 49
+   },
+   "legal_residence_pct": 71.4,
+   "high_risk_flood": 9,
+   "sales_12m": 4,
+   "median_12m": 492450.0
+  },
+  {
+   "county": "georgetown",
+   "part": "west",
+   "name": "BERKELEY COURT",
+   "homes": 49,
+   "kinds": {
+    "house": 49
+   },
+   "legal_residence_pct": 85.7,
+   "high_risk_flood": 26,
+   "sales_12m": 0,
+   "median_12m": null
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "STONEGATE @ PRINCE CK",
+   "homes": 48,
+   "kinds": {
+    "condo": 48
+   },
+   "legal_residence_pct": 81.2,
+   "high_risk_flood": 0,
+   "sales_12m": 2,
+   "median_12m": 390750.0
+  },
+  {
+   "county": "georgetown",
+   "part": "old_road",
+   "name": "HAMMOCKS",
+   "homes": 48,
+   "kinds": {
+    "house": 46,
+    "condo": 2
+   },
+   "legal_residence_pct": 58.3,
+   "high_risk_flood": 1,
+   "sales_12m": 3,
+   "median_12m": 420000
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "GLENS @ INT'L CLUB",
+   "homes": 47,
+   "kinds": {
+    "other": 47
+   },
+   "legal_residence_pct": 51.1,
+   "high_risk_flood": 0,
+   "sales_12m": 3,
+   "median_12m": 265000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "HIGHWOOD",
+   "homes": 46,
+   "kinds": {
+    "house": 46
+   },
+   "legal_residence_pct": 100.0,
+   "high_risk_flood": 4,
+   "sales_12m": 0,
+   "median_12m": null
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "CYPRESS ESTATES LT @CYPRESS KEYS",
+   "homes": 46,
+   "kinds": {
+    "house": 46
+   },
+   "legal_residence_pct": 89.1,
+   "high_risk_flood": 0,
+   "sales_12m": 1,
+   "median_12m": 425000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "OAK ARBOR",
+   "homes": 46,
+   "kinds": {
+    "house": 46
+   },
+   "legal_residence_pct": 82.6,
+   "high_risk_flood": 0,
+   "sales_12m": 7,
+   "median_12m": 367500.0
+  },
+  {
+   "county": "georgetown",
+   "part": "old_road",
+   "name": "CRYSTAL OAKS",
+   "homes": 46,
+   "kinds": {
+    "house": 46
+   },
+   "legal_residence_pct": 73.9,
+   "high_risk_flood": 0,
+   "sales_12m": 1,
+   "median_12m": 324000
+  },
+  {
+   "county": "georgetown",
+   "part": "west",
+   "name": "BELLAMY WOODS",
+   "homes": 46,
+   "kinds": {
+    "house": 46
+   },
+   "legal_residence_pct": 87.0,
+   "high_risk_flood": 0,
+   "sales_12m": 3,
+   "median_12m": 326625
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "DEVONSHIRE",
+   "homes": 45,
+   "kinds": {
+    "house": 45
+   },
+   "legal_residence_pct": 88.9,
+   "high_risk_flood": 0,
+   "sales_12m": 4,
+   "median_12m": 506250.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "CREEKHAVEN PRINCE CREEK",
+   "homes": 45,
+   "kinds": {
+    "house": 45
+   },
+   "legal_residence_pct": 91.1,
+   "high_risk_flood": 1,
+   "sales_12m": 2,
+   "median_12m": 589000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "STONEGATE @ PRINCE CREEK",
+   "homes": 45,
+   "kinds": {
+    "house": 45
+   },
+   "legal_residence_pct": 95.6,
+   "high_risk_flood": 0,
+   "sales_12m": 2,
+   "median_12m": 536500.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "GLASGOW VILLAGE",
+   "homes": 44,
+   "kinds": {
+    "house": 44
+   },
+   "legal_residence_pct": 72.7,
+   "high_risk_flood": 0,
+   "sales_12m": 0,
+   "median_12m": null
+  },
+  {
+   "county": "georgetown",
+   "part": "west",
+   "name": "WACHESAW PALCE CONDOS",
+   "homes": 44,
+   "kinds": {
+    "other": 1,
+    "condo": 43
+   },
+   "legal_residence_pct": 13.6,
+   "high_risk_flood": 0,
+   "sales_12m": 2,
+   "median_12m": 173500.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "HAVEN VIEW",
+   "homes": 43,
+   "kinds": {
+    "house": 43
+   },
+   "legal_residence_pct": 65.1,
+   "high_risk_flood": 0,
+   "sales_12m": 3,
+   "median_12m": 479000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "THE LINKS @ INT'L CLUB",
+   "homes": 42,
+   "kinds": {
+    "house": 42
+   },
+   "legal_residence_pct": 83.3,
+   "high_risk_flood": 0,
+   "sales_12m": 1,
+   "median_12m": 395000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "PARMELEE LT",
+   "homes": 42,
+   "kinds": {
+    "other": 42
+   },
+   "legal_residence_pct": 76.2,
+   "high_risk_flood": 0,
+   "sales_12m": 3,
+   "median_12m": 370000.0
+  },
+  {
+   "county": "georgetown",
+   "part": "old_road",
+   "name": "MACKLIN",
+   "homes": 41,
+   "kinds": {
+    "house": 41
+   },
+   "legal_residence_pct": 78.0,
+   "high_risk_flood": 2,
+   "sales_12m": 1,
+   "median_12m": 507500
+  },
+  {
+   "county": "georgetown",
+   "part": "west",
+   "name": "PLANTERS TRACE",
+   "homes": 41,
+   "kinds": {
+    "house": 41
+   },
+   "legal_residence_pct": 87.8,
+   "high_risk_flood": 0,
+   "sales_12m": 2,
+   "median_12m": 275000.0
+  },
+  {
+   "county": "horry",
+   "part": "west",
+   "name": "THE ENCLAVE @ INTL CLUB",
+   "homes": 40,
+   "kinds": {
+    "house": 40
+   },
+   "legal_residence_pct": 90.0,
+   "high_risk_flood": 0,
+   "sales_12m": 1,
+   "median_12m": 585000.0
+  }
+ ]
+}

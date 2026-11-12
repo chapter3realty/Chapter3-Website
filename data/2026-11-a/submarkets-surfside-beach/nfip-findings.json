@@ -1,0 +1,520 @@
+{
+ "source": "OpenFEMA NfipPolicies v3, reportedZipCode 29575, policyEffectiveDate 2025-06-01 to 2026-05-31",
+ "by_zone_occupancy": {
+  "11/A": {
+   "policies": 707,
+   "median_cost": 1181,
+   "p25": 876,
+   "p75": 1680
+  },
+  "11/V": {
+   "policies": 21,
+   "median_cost": 4171,
+   "p25": 1543,
+   "p75": 5062
+  },
+  "11/X": {
+   "policies": 1482,
+   "median_cost": 522,
+   "p25": 447,
+   "p75": 704
+  },
+  "11/all": {
+   "policies": 2210,
+   "median_cost": 645,
+   "p25": 481,
+   "p75": 1099
+  },
+  "12/A": {
+   "policies": 27,
+   "median_cost": 1623,
+   "p25": 1207,
+   "p75": 4026
+  },
+  "12/V": {
+   "policies": 2,
+   "median_cost": 7531,
+   "p25": null,
+   "p75": null
+  },
+  "12/X": {
+   "policies": 23,
+   "median_cost": 872,
+   "p25": 656,
+   "p75": 978
+  },
+  "12/all": {
+   "policies": 52,
+   "median_cost": 1208,
+   "p25": 886,
+   "p75": 2646
+  },
+  "15/A": {
+   "policies": 79,
+   "median_cost": 7475,
+   "p25": 3308,
+   "p75": 11104
+  },
+  "15/V": {
+   "policies": 6,
+   "median_cost": 5902,
+   "p25": 4492,
+   "p75": 10970
+  },
+  "15/X": {
+   "policies": 15,
+   "median_cost": 1885,
+   "p25": 1143,
+   "p75": 2598
+  },
+  "15/all": {
+   "policies": 100,
+   "median_cost": 5412,
+   "p25": 2587,
+   "p75": 10756
+  },
+  "16/A": {
+   "policies": 18,
+   "median_cost": 932,
+   "p25": 695,
+   "p75": 1253
+  },
+  "16/V": {
+   "policies": 1,
+   "median_cost": 622,
+   "p25": null,
+   "p75": null
+  },
+  "16/X": {
+   "policies": 98,
+   "median_cost": 372,
+   "p25": 328,
+   "p75": 551
+  },
+  "16/all": {
+   "policies": 117,
+   "median_cost": 408,
+   "p25": 332,
+   "p75": 570
+  },
+  "all/A": {
+   "policies": 972,
+   "median_cost": 1256,
+   "p25": 912,
+   "p75": 2378
+  },
+  "all/V": {
+   "policies": 32,
+   "median_cost": 4508,
+   "p25": 2137,
+   "p75": 6400
+  },
+  "all/X": {
+   "policies": 1736,
+   "median_cost": 536,
+   "p25": 447,
+   "p75": 742
+  },
+  "all/all": {
+   "policies": 2740,
+   "median_cost": 696,
+   "p25": 493,
+   "p75": 1213
+  }
+ },
+ "by_bg": {
+  "450510402003/11": {
+   "policies": 3,
+   "median_cost": 1189,
+   "p25": null,
+   "p75": null
+  },
+  "450510403002/11": {
+   "policies": 1,
+   "median_cost": 712,
+   "p25": null,
+   "p75": null
+  },
+  "450510403002/15": {
+   "policies": 1,
+   "median_cost": 9325,
+   "p25": null,
+   "p75": null
+  },
+  "450510405002/11": {
+   "policies": 1,
+   "median_cost": 1181,
+   "p25": null,
+   "p75": null
+  },
+  "450510503032/11": {
+   "policies": 1,
+   "median_cost": 1193,
+   "p25": null,
+   "p75": null
+  },
+  "450510504021/11": {
+   "policies": 1,
+   "median_cost": 3905,
+   "p25": null,
+   "p75": null
+  },
+  "450510504021/15": {
+   "policies": 1,
+   "median_cost": 4223,
+   "p25": null,
+   "p75": null
+  },
+  "450510504022/11": {
+   "policies": 12,
+   "median_cost": 1366,
+   "p25": 1072,
+   "p75": 2207
+  },
+  "450510504022/15": {
+   "policies": 2,
+   "median_cost": 3380,
+   "p25": null,
+   "p75": null
+  },
+  "450510505002/11": {
+   "policies": 1,
+   "median_cost": 3483,
+   "p25": null,
+   "p75": null
+  },
+  "450510505002/15": {
+   "policies": 1,
+   "median_cost": 2369,
+   "p25": null,
+   "p75": null
+  },
+  "450510506002/11": {
+   "policies": 6,
+   "median_cost": 949,
+   "p25": 618,
+   "p75": 1046
+  },
+  "450510506002/15": {
+   "policies": 2,
+   "median_cost": 4676,
+   "p25": null,
+   "p75": null
+  },
+  "450510507001/11": {
+   "policies": 6,
+   "median_cost": 1240,
+   "p25": 782,
+   "p75": 1668
+  },
+  "450510510001/11": {
+   "policies": 1,
+   "median_cost": 497,
+   "p25": null,
+   "p75": null
+  },
+  "450510512011/11": {
+   "policies": 250,
+   "median_cost": 1112,
+   "p25": 842,
+   "p75": 1495
+  },
+  "450510512011/16": {
+   "policies": 2,
+   "median_cost": 739,
+   "p25": null,
+   "p75": null
+  },
+  "450510512011/15": {
+   "policies": 7,
+   "median_cost": 4226,
+   "p25": 3950,
+   "p75": 10570
+  },
+  "450510512012/11": {
+   "policies": 165,
+   "median_cost": 1244,
+   "p25": 988,
+   "p75": 1481
+  },
+  "450510512012/16": {
+   "policies": 10,
+   "median_cost": 1217,
+   "p25": 832,
+   "p75": 1362
+  },
+  "450510512012/15": {
+   "policies": 25,
+   "median_cost": 7936,
+   "p25": 4878,
+   "p75": 12994
+  },
+  "450510512021/11": {
+   "policies": 301,
+   "median_cost": 1256,
+   "p25": 1058,
+   "p75": 1684
+  },
+  "450510512021/16": {
+   "policies": 8,
+   "median_cost": 758,
+   "p25": 635,
+   "p75": 1021
+  },
+  "450510512021/15": {
+   "policies": 43,
+   "median_cost": 5986,
+   "p25": 3150,
+   "p75": 10995
+  },
+  "450510512022/11": {
+   "policies": 50,
+   "median_cost": 684,
+   "p25": 585,
+   "p75": 817
+  },
+  "450510512022/16": {
+   "policies": 4,
+   "median_cost": 449,
+   "p25": 375,
+   "p75": 629
+  },
+  "450510512023/11": {
+   "policies": 64,
+   "median_cost": 702,
+   "p25": 619,
+   "p75": 853
+  },
+  "450510513011/11": {
+   "policies": 70,
+   "median_cost": 1148,
+   "p25": 865,
+   "p75": 1468
+  },
+  "450510514031/11": {
+   "policies": 205,
+   "median_cost": 517,
+   "p25": 492,
+   "p75": 550
+  },
+  "450510514031/16": {
+   "policies": 3,
+   "median_cost": 343,
+   "p25": null,
+   "p75": null
+  },
+  "450510514032/11": {
+   "policies": 98,
+   "median_cost": 416,
+   "p25": 384,
+   "p75": 477
+  },
+  "450510514032/16": {
+   "policies": 5,
+   "median_cost": 548,
+   "p25": 319,
+   "p75": 553
+  },
+  "450510514032/15": {
+   "policies": 5,
+   "median_cost": 1065,
+   "p25": 857,
+   "p75": 1173
+  },
+  "450510514033/11": {
+   "policies": 135,
+   "median_cost": 601,
+   "p25": 500,
+   "p75": 751
+  },
+  "450510514033/16": {
+   "policies": 17,
+   "median_cost": 392,
+   "p25": 291,
+   "p75": 464
+  },
+  "450510514033/15": {
+   "policies": 7,
+   "median_cost": 952,
+   "p25": 932,
+   "p75": 1072
+  },
+  "450510514041/11": {
+   "policies": 240,
+   "median_cost": 457,
+   "p25": 424,
+   "p75": 487
+  },
+  "450510514041/16": {
+   "policies": 9,
+   "median_cost": 382,
+   "p25": 301,
+   "p75": 564
+  },
+  "450510514042/11": {
+   "policies": 93,
+   "median_cost": 516,
+   "p25": 480,
+   "p75": 545
+  },
+  "450510514042/16": {
+   "policies": 7,
+   "median_cost": 319,
+   "p25": 312,
+   "p75": 551
+  },
+  "450510514043/11": {
+   "policies": 40,
+   "median_cost": 494,
+   "p25": 441,
+   "p75": 536
+  },
+  "450510514043/16": {
+   "policies": 17,
+   "median_cost": 369,
+   "p25": 336,
+   "p75": 392
+  },
+  "450510514051/11": {
+   "policies": 160,
+   "median_cost": 435,
+   "p25": 415,
+   "p75": 461
+  },
+  "450510514051/16": {
+   "policies": 28,
+   "median_cost": 348,
+   "p25": 325,
+   "p75": 551
+  },
+  "450510514052/11": {
+   "policies": 57,
+   "median_cost": 419,
+   "p25": 412,
+   "p75": 446
+  },
+  "450510514052/16": {
+   "policies": 4,
+   "median_cost": 462,
+   "p25": 326,
+   "p75": 592
+  },
+  "450510515032/11": {
+   "policies": 1,
+   "median_cost": 984,
+   "p25": null,
+   "p75": null
+  },
+  "450510517002/11": {
+   "policies": 246,
+   "median_cost": 677,
+   "p25": 633,
+   "p75": 998
+  },
+  "450510517002/16": {
+   "policies": 3,
+   "median_cost": 863,
+   "p25": null,
+   "p75": null
+  },
+  "450510517002/15": {
+   "policies": 6,
+   "median_cost": 12278,
+   "p25": 2164,
+   "p75": 31986
+  },
+  "450510601021/11": {
+   "policies": 1,
+   "median_cost": 1265,
+   "p25": null,
+   "p75": null
+  },
+  "450510604063/11": {
+   "policies": 1,
+   "median_cost": 647,
+   "p25": null,
+   "p75": null
+  }
+ },
+ "bg_town_homes": {
+  "450510512011": {
+   "town_homes": 832,
+   "R3_C3_share": 0.3,
+   "R1_R2_share": 0.58
+  },
+  "450510512023": {
+   "town_homes": 530,
+   "R3_C3_share": 0.0,
+   "R1_R2_share": 0.92
+  },
+  "450510512012": {
+   "town_homes": 814,
+   "R3_C3_share": 0.57,
+   "R1_R2_share": 0.39
+  },
+  "450510512021": {
+   "town_homes": 1443,
+   "R3_C3_share": 0.66,
+   "R1_R2_share": 0.28
+  },
+  "450510512022": {
+   "town_homes": 418,
+   "R3_C3_share": 0.0,
+   "R1_R2_share": 0.4
+  },
+  "450510514042": {
+   "town_homes": 2,
+   "R3_C3_share": 0.0,
+   "R1_R2_share": 0.0
+  },
+  "450510517002": {
+   "town_homes": 6,
+   "R3_C3_share": 0.0,
+   "R1_R2_share": 1.0
+  }
+ },
+ "groups": {
+  "mostly_R3": [
+   "450510512021"
+  ],
+  "mostly_R1_R2": [
+   "450510512023"
+  ],
+  "mostly_R3/11": {
+   "policies": 301,
+   "median_cost": 1256,
+   "p25": 1058,
+   "p75": 1684
+  },
+  "mostly_R3/16": {
+   "policies": 8,
+   "median_cost": 758,
+   "p25": 635,
+   "p75": 1021
+  },
+  "mostly_R3/15": {
+   "policies": 43,
+   "median_cost": 5986,
+   "p25": 3150,
+   "p75": 10995
+  },
+  "mostly_R1_R2/11": {
+   "policies": 64,
+   "median_cost": 702,
+   "p25": 619,
+   "p75": 853
+  },
+  "mostly_R1_R2/16": {
+   "policies": 0,
+   "median_cost": null,
+   "p25": null,
+   "p75": null
+  },
+  "mostly_R1_R2/15": {
+   "policies": 0,
+   "median_cost": null,
+   "p25": null,
+   "p75": null
+  }
+ }
+}

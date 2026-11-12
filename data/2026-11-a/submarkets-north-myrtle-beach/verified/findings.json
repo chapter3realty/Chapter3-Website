@@ -1,0 +1,2030 @@
+{
+ "method": "areas.py; kinds as the Little River ledger; deeds 2025-10-01 to 2026-09-30 (batch 2026-10-d)",
+ "city_sq_miles": null,
+ "homes": {
+  "all": 31135,
+  "by_kind": {
+   "condo": 17898,
+   "house": 11450,
+   "manufactured": 813,
+   "townhouse": 526,
+   "other": 448
+  }
+ },
+ "homes_by_area": {
+  "cg": {
+   "n": 4848,
+   "by_kind": {
+    "condo": 2860,
+    "house": 1920,
+    "other": 39,
+    "townhouse": 25,
+    "manufactured": 4
+   }
+  },
+  "neck": {
+   "n": 2784,
+   "by_kind": {
+    "house": 1413,
+    "manufactured": 661,
+    "condo": 639,
+    "other": 61,
+    "townhouse": 10
+   }
+  },
+  "til": {
+   "n": 4520,
+   "by_kind": {
+    "condo": 3028,
+    "house": 1404,
+    "townhouse": 66,
+    "other": 21,
+    "manufactured": 1
+   }
+  },
+  "od": {
+   "n": 3035,
+   "by_kind": {
+    "condo": 2145,
+    "house": 825,
+    "other": 61,
+    "townhouse": 4
+   }
+  },
+  "cb": {
+   "n": 3969,
+   "by_kind": {
+    "condo": 2498,
+    "house": 1365,
+    "townhouse": 65,
+    "other": 39,
+    "manufactured": 2
+   }
+  },
+  "wh": {
+   "n": 3920,
+   "by_kind": {
+    "condo": 2674,
+    "house": 958,
+    "other": 165,
+    "manufactured": 87,
+    "townhouse": 36
+   }
+  },
+  "west17": {
+   "n": 2866,
+   "by_kind": {
+    "house": 1643,
+    "condo": 1093,
+    "manufactured": 57,
+    "other": 50,
+    "townhouse": 23
+   }
+  },
+  "across": {
+   "n": 5193,
+   "by_kind": {
+    "condo": 2961,
+    "house": 1922,
+    "townhouse": 297,
+    "other": 12,
+    "manufactured": 1
+   }
+  }
+ },
+ "residence": {
+  "all": {
+   "n": 31135,
+   "pct_legal_residence": 29.3,
+   "pct_bill_out_of_state": 51.7
+  },
+  "houses": {
+   "n": 11450,
+   "pct_legal_residence": 53.5,
+   "pct_bill_out_of_state": 30.1
+  },
+  "condos": {
+   "n": 17898,
+   "pct_legal_residence": 14.5,
+   "pct_bill_out_of_state": 66.6
+  },
+  "by_area": {
+   "cg": {
+    "all": {
+     "n": 4848,
+     "pct_legal_residence": 14.4,
+     "pct_bill_out_of_state": 62.7
+    },
+    "houses": {
+     "n": 1920,
+     "pct_legal_residence": 23.7,
+     "pct_bill_out_of_state": 49.3
+    },
+    "condos": {
+     "n": 2860,
+     "pct_legal_residence": 8.3,
+     "pct_bill_out_of_state": 72.2
+    }
+   },
+   "neck": {
+    "all": {
+     "n": 2784,
+     "pct_legal_residence": 50.9,
+     "pct_bill_out_of_state": 31.9
+    },
+    "houses": {
+     "n": 1413,
+     "pct_legal_residence": 72.9,
+     "pct_bill_out_of_state": 17.1
+    },
+    "condos": {
+     "n": 639,
+     "pct_legal_residence": 31.3,
+     "pct_bill_out_of_state": 56.8
+    }
+   },
+   "til": {
+    "all": {
+     "n": 4520,
+     "pct_legal_residence": 32.0,
+     "pct_bill_out_of_state": 50.7
+    },
+    "houses": {
+     "n": 1404,
+     "pct_legal_residence": 67.1,
+     "pct_bill_out_of_state": 22.9
+    },
+    "condos": {
+     "n": 3028,
+     "pct_legal_residence": 15.6,
+     "pct_bill_out_of_state": 64.3
+    }
+   },
+   "od": {
+    "all": {
+     "n": 3035,
+     "pct_legal_residence": 19.0,
+     "pct_bill_out_of_state": 66.4
+    },
+    "houses": {
+     "n": 825,
+     "pct_legal_residence": 41.0,
+     "pct_bill_out_of_state": 38.8
+    },
+    "condos": {
+     "n": 2145,
+     "pct_legal_residence": 11.2,
+     "pct_bill_out_of_state": 76.7
+    }
+   },
+   "cb": {
+    "all": {
+     "n": 3969,
+     "pct_legal_residence": 17.3,
+     "pct_bill_out_of_state": 62.0
+    },
+    "houses": {
+     "n": 1365,
+     "pct_legal_residence": 32.2,
+     "pct_bill_out_of_state": 45.6
+    },
+    "condos": {
+     "n": 2498,
+     "pct_legal_residence": 9.5,
+     "pct_bill_out_of_state": 71.5
+    }
+   },
+   "wh": {
+    "all": {
+     "n": 3920,
+     "pct_legal_residence": 14.4,
+     "pct_bill_out_of_state": 60.6
+    },
+    "houses": {
+     "n": 958,
+     "pct_legal_residence": 32.0,
+     "pct_bill_out_of_state": 45.9
+    },
+    "condos": {
+     "n": 2674,
+     "pct_legal_residence": 8.8,
+     "pct_bill_out_of_state": 68.7
+    }
+   },
+   "west17": {
+    "all": {
+     "n": 2866,
+     "pct_legal_residence": 52.3,
+     "pct_bill_out_of_state": 26.5
+    },
+    "houses": {
+     "n": 1643,
+     "pct_legal_residence": 72.2,
+     "pct_bill_out_of_state": 14.2
+    },
+    "condos": {
+     "n": 1093,
+     "pct_legal_residence": 25.4,
+     "pct_bill_out_of_state": 44.2
+    }
+   },
+   "across": {
+    "all": {
+     "n": 5193,
+     "pct_legal_residence": 42.9,
+     "pct_bill_out_of_state": 43.4
+    },
+    "houses": {
+     "n": 1922,
+     "pct_legal_residence": 74.1,
+     "pct_bill_out_of_state": 16.7
+    },
+    "condos": {
+     "n": 2961,
+     "pct_legal_residence": 23.2,
+     "pct_bill_out_of_state": 60.3
+    }
+   }
+  }
+ },
+ "flood": {
+  "all": {
+   "n": 31135,
+   "in_sfha": 10332,
+   "ve": 85,
+   "pct_sfha": 33.2
+  },
+  "houses": {
+   "n": 11450,
+   "in_sfha": 2566,
+   "ve": 81,
+   "pct_sfha": 22.4
+  },
+  "condos": {
+   "n": 17898,
+   "in_sfha": 7560,
+   "ve": 0,
+   "pct_sfha": 42.2
+  },
+  "by_area": {
+   "cg": {
+    "all": {
+     "n": 4848,
+     "in_sfha": 4270,
+     "ve": 81,
+     "pct_sfha": 88.1
+    },
+    "houses": {
+     "n": 1920,
+     "in_sfha": 1820,
+     "ve": 79,
+     "pct_sfha": 94.8
+    },
+    "condos": {
+     "n": 2860,
+     "in_sfha": 2402,
+     "ve": 0,
+     "pct_sfha": 84.0
+    }
+   },
+   "neck": {
+    "all": {
+     "n": 2784,
+     "in_sfha": 276,
+     "ve": 3,
+     "pct_sfha": 9.9
+    },
+    "houses": {
+     "n": 1413,
+     "in_sfha": 187,
+     "ve": 1,
+     "pct_sfha": 13.2
+    },
+    "condos": {
+     "n": 639,
+     "in_sfha": 64,
+     "ve": 0,
+     "pct_sfha": 10.0
+    }
+   },
+   "til": {
+    "all": {
+     "n": 4520,
+     "in_sfha": 1488,
+     "ve": 0,
+     "pct_sfha": 32.9
+    },
+    "houses": {
+     "n": 1404,
+     "in_sfha": 213,
+     "ve": 0,
+     "pct_sfha": 15.2
+    },
+    "condos": {
+     "n": 3028,
+     "in_sfha": 1267,
+     "ve": 0,
+     "pct_sfha": 41.8
+    }
+   },
+   "od": {
+    "all": {
+     "n": 3035,
+     "in_sfha": 1587,
+     "ve": 1,
+     "pct_sfha": 52.3
+    },
+    "houses": {
+     "n": 825,
+     "in_sfha": 84,
+     "ve": 1,
+     "pct_sfha": 10.2
+    },
+    "condos": {
+     "n": 2145,
+     "in_sfha": 1452,
+     "ve": 0,
+     "pct_sfha": 67.7
+    }
+   },
+   "cb": {
+    "all": {
+     "n": 3969,
+     "in_sfha": 387,
+     "ve": 0,
+     "pct_sfha": 9.8
+    },
+    "houses": {
+     "n": 1365,
+     "in_sfha": 19,
+     "ve": 0,
+     "pct_sfha": 1.4
+    },
+    "condos": {
+     "n": 2498,
+     "in_sfha": 367,
+     "ve": 0,
+     "pct_sfha": 14.7
+    }
+   },
+   "wh": {
+    "all": {
+     "n": 3920,
+     "in_sfha": 2126,
+     "ve": 0,
+     "pct_sfha": 54.2
+    },
+    "houses": {
+     "n": 958,
+     "in_sfha": 164,
+     "ve": 0,
+     "pct_sfha": 17.1
+    },
+    "condos": {
+     "n": 2674,
+     "in_sfha": 1898,
+     "ve": 0,
+     "pct_sfha": 71.0
+    }
+   },
+   "west17": {
+    "all": {
+     "n": 2866,
+     "in_sfha": 196,
+     "ve": 0,
+     "pct_sfha": 6.8
+    },
+    "houses": {
+     "n": 1643,
+     "in_sfha": 78,
+     "ve": 0,
+     "pct_sfha": 4.7
+    },
+    "condos": {
+     "n": 1093,
+     "in_sfha": 109,
+     "ve": 0,
+     "pct_sfha": 10.0
+    }
+   },
+   "across": {
+    "all": {
+     "n": 5193,
+     "in_sfha": 2,
+     "ve": 0,
+     "pct_sfha": 0.0
+    },
+    "houses": {
+     "n": 1922,
+     "in_sfha": 1,
+     "ve": 0,
+     "pct_sfha": 0.1
+    },
+    "condos": {
+     "n": 2961,
+     "in_sfha": 1,
+     "ve": 0,
+     "pct_sfha": 0.0
+    }
+   }
+  }
+ },
+ "water_houses": {
+  "all": 857,
+  "by_water": {
+   "Intracoastal Waterway": 175,
+   "HOUSE CREEK": 682
+  },
+  "by_area": {
+   "cg": {
+    "houses": 1920,
+    "on_water": 676,
+    "by_water": {
+     "HOUSE CREEK": 676
+    }
+   },
+   "neck": {
+    "houses": 1413,
+    "on_water": 45,
+    "by_water": {
+     "Intracoastal Waterway": 39,
+     "HOUSE CREEK": 6
+    }
+   },
+   "til": {
+    "houses": 1404,
+    "on_water": 0,
+    "by_water": {}
+   },
+   "od": {
+    "houses": 825,
+    "on_water": 0,
+    "by_water": {}
+   },
+   "cb": {
+    "houses": 1365,
+    "on_water": 0,
+    "by_water": {}
+   },
+   "wh": {
+    "houses": 958,
+    "on_water": 0,
+    "by_water": {}
+   },
+   "west17": {
+    "houses": 1643,
+    "on_water": 109,
+    "by_water": {
+     "Intracoastal Waterway": 109
+    }
+   },
+   "across": {
+    "houses": 1922,
+    "on_water": 27,
+    "by_water": {
+     "Intracoastal Waterway": 27
+    }
+   }
+  }
+ },
+ "channel_houses": {
+  "n": 682,
+  "by_area": {
+   "cg": 676,
+   "neck": 6
+  },
+  "in_sfha": 679,
+  "zones": {
+   "AE": 622,
+   "VE": 57,
+   "outside": 3
+  },
+  "legal_residence_pct": 23.0,
+  "median_county_value": 672514,
+  "median_acres": 0.19
+ },
+ "sales_window": [
+  "2025/10/01",
+  "2026/09/30"
+ ],
+ "sales": {
+  "all": 2029,
+  "house_resale": {
+   "n": 560,
+   "median": 565000,
+   "p25": 420000,
+   "p75": 740000
+  },
+  "house_new_builder": {
+   "n": 279,
+   "median": 441595,
+   "p25": 378500,
+   "p75": 596000
+  },
+  "townhouse": {
+   "n": 58,
+   "median": 350000,
+   "p25": 309990,
+   "p75": 430000
+  },
+  "condo": {
+   "n": 1092,
+   "median": 309750,
+   "p25": 221000,
+   "p75": 430000
+  },
+  "condo_resale": {
+   "n": 1039,
+   "median": 297000,
+   "p25": 219900,
+   "p75": 425000
+  },
+  "house_resale_channel": {
+   "n": 38,
+   "median": 715000,
+   "p25": 655000,
+   "p75": 860000
+  },
+  "house_resale_cg_not_channel": {
+   "n": 65,
+   "median": 665000,
+   "p25": 535000,
+   "p75": 850000
+  },
+  "pct_buyer_bill_out_of_state": 55.1
+ },
+ "sales_by_area": {
+  "cg": {
+   "house_resale": {
+    "n": 103,
+    "median": 695000,
+    "p25": 590000,
+    "p75": 860000
+   },
+   "house_new_builder": {
+    "n": 1,
+    "median": 625000,
+    "p25": 625000,
+    "p75": 625000
+   },
+   "condo": {
+    "n": 156,
+    "median": 309750,
+    "p25": 194900,
+    "p75": 450000
+   },
+   "townhouse": {
+    "n": 1,
+    "median": 740000,
+    "p25": 740000,
+    "p75": 740000
+   }
+  },
+  "neck": {
+   "house_resale": {
+    "n": 70,
+    "median": 588782,
+    "p25": 465000,
+    "p75": 665000
+   },
+   "house_new_builder": {
+    "n": 53,
+    "median": 480000,
+    "p25": 410000,
+    "p75": 575000
+   },
+   "condo": {
+    "n": 81,
+    "median": 317500,
+    "p25": 250000,
+    "p75": 385000
+   },
+   "townhouse": {
+    "n": 0,
+    "median": null,
+    "p25": null,
+    "p75": null
+   }
+  },
+  "til": {
+   "house_resale": {
+    "n": 73,
+    "median": 725000,
+    "p25": 600000,
+    "p75": 865000
+   },
+   "house_new_builder": {
+    "n": 2,
+    "median": 730000,
+    "p25": 600000,
+    "p75": 860000
+   },
+   "condo": {
+    "n": 181,
+    "median": 325000,
+    "p25": 255000,
+    "p75": 440000
+   },
+   "townhouse": {
+    "n": 1,
+    "median": 240000,
+    "p25": 240000,
+    "p75": 240000
+   }
+  },
+  "od": {
+   "house_resale": {
+    "n": 39,
+    "median": 600000,
+    "p25": 385000,
+    "p75": 980000
+   },
+   "house_new_builder": {
+    "n": 2,
+    "median": 856862,
+    "p25": 850000,
+    "p75": 863725
+   },
+   "condo": {
+    "n": 116,
+    "median": 358250,
+    "p25": 250000,
+    "p75": 600000
+   },
+   "townhouse": {
+    "n": 1,
+    "median": 3900000,
+    "p25": 3900000,
+    "p75": 3900000
+   }
+  },
+  "cb": {
+   "house_resale": {
+    "n": 65,
+    "median": 410000,
+    "p25": 345000,
+    "p75": 664470
+   },
+   "house_new_builder": {
+    "n": 2,
+    "median": 889950,
+    "p25": 699900,
+    "p75": 1080000
+   },
+   "condo": {
+    "n": 129,
+    "median": 338400,
+    "p25": 230000,
+    "p75": 470000
+   },
+   "townhouse": {
+    "n": 1,
+    "median": 270000,
+    "p25": 270000,
+    "p75": 270000
+   }
+  },
+  "wh": {
+   "house_resale": {
+    "n": 29,
+    "median": 460000,
+    "p25": 433000,
+    "p75": 650000
+   },
+   "house_new_builder": {
+    "n": 0,
+    "median": null,
+    "p25": null,
+    "p75": null
+   },
+   "condo": {
+    "n": 158,
+    "median": 358500,
+    "p25": 175000,
+    "p75": 542500
+   },
+   "townhouse": {
+    "n": 4,
+    "median": 385000,
+    "p25": 380000,
+    "p75": 390000
+   }
+  },
+  "west17": {
+   "house_resale": {
+    "n": 91,
+    "median": 475000,
+    "p25": 350000,
+    "p75": 589900
+   },
+   "house_new_builder": {
+    "n": 94,
+    "median": 569500,
+    "p25": 410000,
+    "p75": 650000
+   },
+   "condo": {
+    "n": 71,
+    "median": 175000,
+    "p25": 132000,
+    "p75": 230000
+   },
+   "townhouse": {
+    "n": 3,
+    "median": 247000,
+    "p25": 247000,
+    "p75": 740000
+   }
+  },
+  "across": {
+   "house_resale": {
+    "n": 90,
+    "median": 477500,
+    "p25": 392000,
+    "p75": 635000
+   },
+   "house_new_builder": {
+    "n": 125,
+    "median": 404000,
+    "p25": 358480,
+    "p75": 445540
+   },
+   "condo": {
+    "n": 200,
+    "median": 275000,
+    "p25": 224900,
+    "p75": 380000
+   },
+   "townhouse": {
+    "n": 47,
+    "median": 350000,
+    "p25": 313015,
+    "p75": 430000
+   }
+  }
+ },
+ "tax_example": {
+  "mills": 221.2,
+  "mills_at_4pct": 112.1,
+  "house": {
+   "value": 565000,
+   "as_home": 2533,
+   "as_second_or_rental": 7499
+  },
+  "condo": {
+   "value": 309750,
+   "as_home": 1389,
+   "as_second_or_rental": 4111
+  },
+  "per_100k": {
+   "as_home": 448,
+   "as_second_or_rental": 1327
+  }
+ },
+ "lodging_tax_example": {
+  "rent": 2000,
+  "state_9pct": 180,
+  "city_hospitality_1_5pct": 30,
+  "county_hospitality_1_5pct": 30,
+  "total_12pct": 240
+ },
+ "nfip_policies_29582": {
+  "x": {
+   "n": 1325,
+   "median": 603,
+   "p25": 460,
+   "p75": 796,
+   "primary_residence": 985
+  },
+  "a": {
+   "n": 1362,
+   "median": 1463,
+   "p25": 1101,
+   "p75": 2937,
+   "primary_residence": 501
+  },
+  "v": {
+   "n": 60,
+   "median": 2151,
+   "p25": 1203,
+   "p75": 3701,
+   "primary_residence": 21
+  }
+ },
+ "listings": {
+  "pulled": "2026-11-03T20:27:24.110747+00:00",
+  "api_totals": {
+   "house": 254,
+   "townhouse": 35,
+   "condo": 579,
+   "manufactured": 40,
+   "land": 34,
+   "house+flood_zone": 15,
+   "house+new_construction": 28,
+   "house+no_hoa": 254,
+   "house+private_dock": 18,
+   "house+boat_slip": 5,
+   "house+boat_access": 24,
+   "house+water_icw": 12,
+   "house+deep_water": 5,
+   "house+oceanfront": 254,
+   "house+ocean_view": 18,
+   "house+golf_community": 26,
+   "house+gated": 30,
+   "house+str_allowed": 110,
+   "house+long_term_rental_allowed": 176,
+   "house+pool": 42,
+   "house+elevator": 30
+  },
+  "with_point": 942,
+  "inside_city": 930,
+  "by_type": {
+   "house": {
+    "n": 252,
+    "median": 692500,
+    "p25": 524900,
+    "p75": 915000
+   },
+   "condo": {
+    "n": 574,
+    "median": 300000,
+    "p25": 224000,
+    "p75": 449900
+   },
+   "townhouse": {
+    "n": 35,
+    "median": 327745,
+    "p25": 244000,
+    "p75": 450000
+   },
+   "manufactured": {
+    "n": 39,
+    "median": 145000,
+    "p25": 125000,
+    "p75": 195000
+   },
+   "land": {
+    "n": 30,
+    "median": 257700,
+    "p25": 145000,
+    "p75": 1250000
+   }
+  },
+  "by_area": {
+   "cg": {
+    "house": {
+     "n": 43,
+     "median": 850000,
+     "p25": 680000,
+     "p75": 997500
+    },
+    "condo": {
+     "n": 89,
+     "median": 287000,
+     "p25": 214900,
+     "p75": 420000
+    }
+   },
+   "neck": {
+    "house": {
+     "n": 39,
+     "median": 645000,
+     "p25": 539900,
+     "p75": 774900
+    },
+    "condo": {
+     "n": 18,
+     "median": 254450,
+     "p25": 234303,
+     "p75": 305900
+    }
+   },
+   "til": {
+    "house": {
+     "n": 17,
+     "median": 749900,
+     "p25": 539900,
+     "p75": 999750
+    },
+    "condo": {
+     "n": 73,
+     "median": 344900,
+     "p25": 260000,
+     "p75": 480000
+    }
+   },
+   "od": {
+    "house": {
+     "n": 29,
+     "median": 690000,
+     "p25": 399000,
+     "p75": 799900
+    },
+    "condo": {
+     "n": 56,
+     "median": 434700,
+     "p25": 229900,
+     "p75": 635000
+    }
+   },
+   "cb": {
+    "house": {
+     "n": 41,
+     "median": 449900,
+     "p25": 395000,
+     "p75": 759900
+    },
+    "condo": {
+     "n": 114,
+     "median": 382400,
+     "p25": 233700,
+     "p75": 490000
+    }
+   },
+   "wh": {
+    "house": {
+     "n": 39,
+     "median": 699900,
+     "p25": 558500,
+     "p75": 1150000
+    },
+    "condo": {
+     "n": 75,
+     "median": 339000,
+     "p25": 215000,
+     "p75": 459000
+    }
+   },
+   "west17": {
+    "house": {
+     "n": 30,
+     "median": 651816,
+     "p25": 528000,
+     "p75": 994000
+    },
+    "condo": {
+     "n": 40,
+     "median": 199900,
+     "p25": 159900,
+     "p75": 235000
+    }
+   },
+   "across": {
+    "house": {
+     "n": 14,
+     "median": 683450,
+     "p25": 589000,
+     "p75": 799000
+    },
+    "condo": {
+     "n": 109,
+     "median": 299900,
+     "p25": 229000,
+     "p75": 409999
+    }
+   }
+  },
+  "house_under_400k": 27,
+  "condo_under_200k": 84,
+  "house_ppsf": {
+   "cg": 487,
+   "neck": 265,
+   "til": 298,
+   "od": 349,
+   "cb": 314,
+   "wh": 344,
+   "west17": 280,
+   "across": 255
+  }
+ },
+ "drives_from_main_street": {
+  "cherry_grove_pier": {
+   "minutes": 7.7,
+   "miles": 2.7
+  },
+  "heritage_shores": {
+   "minutes": 12.3,
+   "miles": 4.4
+  },
+  "barefoot_landing": {
+   "minutes": 10.9,
+   "miles": 5.0
+  },
+  "mcleod_seacoast": {
+   "minutes": 8.8,
+   "miles": 4.4
+  },
+  "grand_strand_medical": {
+   "minutes": 20.6,
+   "miles": 10.3
+  },
+  "skywheel_myrtle_beach": {
+   "minutes": 30.4,
+   "miles": 16.0
+  },
+  "airport_terminal": {
+   "minutes": 35.9,
+   "miles": 20.6
+  },
+  "coastal_grand": {
+   "minutes": 30.8,
+   "miles": 17.5
+  },
+  "little_river_waterfront": {
+   "minutes": 11.4,
+   "miles": 6.3
+  }
+ },
+ "area_names": {
+  "cg": "Cherry Grove",
+  "neck": "Little River Neck",
+  "til": "Tilghman Beach",
+  "od": "Ocean Drive",
+  "cb": "Crescent Beach",
+  "wh": "Windy Hill",
+  "west17": "West of US 17",
+  "across": "Across the waterway"
+ },
+ "subdivisions_by_area": {
+  "cg": [
+   {
+    "name": "CHERRY GROVE",
+    "homes": 621,
+    "kinds": {
+     "house": 609,
+     "other": 9,
+     "manufactured": 1,
+     "condo": 2
+    },
+    "legal_residence_pct": 21,
+    "in_sfha": 612,
+    "resales_main_kind": {
+     "n": 36,
+     "median": 697500,
+     "p25": 582500,
+     "p75": 847000
+    }
+   },
+   {
+    "name": "CHERRY GROVE BEACH",
+    "homes": 522,
+    "kinds": {
+     "house": 503,
+     "other": 15,
+     "condo": 4
+    },
+    "legal_residence_pct": 16,
+    "in_sfha": 521,
+    "resales_main_kind": {
+     "n": 26,
+     "median": 700000,
+     "p25": 500000,
+     "p75": 881000
+    }
+   },
+   {
+    "name": "CHERRY GROVE BCH",
+    "homes": 469,
+    "kinds": {
+     "house": 445,
+     "condo": 19,
+     "other": 5
+    },
+    "legal_residence_pct": 20,
+    "in_sfha": 469,
+    "resales_main_kind": {
+     "n": 23,
+     "median": 695000,
+     "p25": 625000,
+     "p75": 860000
+    }
+   },
+   {
+    "name": "TOWERS ON THE GROVE",
+    "homes": 234,
+    "kinds": {
+     "condo": 234
+    },
+    "legal_residence_pct": 1,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 0
+    }
+   },
+   {
+    "name": "PRINCE CONDO @ C.G.PIER",
+    "homes": 160,
+    "kinds": {
+     "condo": 160
+    },
+    "legal_residence_pct": 3,
+    "in_sfha": 160,
+    "resales_main_kind": {
+     "n": 6,
+     "median": 365000,
+     "p25": 330000,
+     "p75": 385000
+    }
+   },
+   {
+    "name": "PEPPERTREE OCEAN CLUB",
+    "homes": 124,
+    "kinds": {
+     "condo": 123,
+     "other": 1
+    },
+    "legal_residence_pct": 0,
+    "in_sfha": 124,
+    "resales_main_kind": {
+     "n": 0
+    }
+   },
+   {
+    "name": "SEA CABIN OCN",
+    "homes": 105,
+    "kinds": {
+     "condo": 105
+    },
+    "legal_residence_pct": 1,
+    "in_sfha": 105,
+    "resales_main_kind": {
+     "n": 14,
+     "median": 156500,
+     "p25": 140000,
+     "p75": 200000
+    }
+   },
+   {
+    "name": "PRINCE CONDO @ C.G PIER",
+    "homes": 98,
+    "kinds": {
+     "condo": 98
+    },
+    "legal_residence_pct": 7,
+    "in_sfha": 98,
+    "resales_main_kind": {
+     "n": 1
+    }
+   }
+  ],
+  "neck": [
+   {
+    "name": "TIDEWATER PLNTN",
+    "homes": 309,
+    "kinds": {
+     "house": 308,
+     "other": 1
+    },
+    "legal_residence_pct": 84,
+    "in_sfha": 2,
+    "resales_main_kind": {
+     "n": 13,
+     "median": 615000,
+     "p25": 588500,
+     "p75": 700000
+    }
+   },
+   {
+    "name": "MYRTLE BEACH RV RESORT",
+    "homes": 204,
+    "kinds": {
+     "manufactured": 163,
+     "other": 35,
+     "house": 6
+    },
+    "legal_residence_pct": 28,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 4
+    }
+   },
+   {
+    "name": "THE GROVE",
+    "homes": 189,
+    "kinds": {
+     "manufactured": 143,
+     "house": 41,
+     "other": 5
+    },
+    "legal_residence_pct": 29,
+    "in_sfha": 1,
+    "resales_main_kind": {
+     "n": 7,
+     "median": 252500,
+     "p25": 240000,
+     "p75": 269900
+    }
+   },
+   {
+    "name": "TIDEWATER PLANTATION",
+    "homes": 173,
+    "kinds": {
+     "house": 173
+    },
+    "legal_residence_pct": 82,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 7,
+     "median": 561250,
+     "p25": 475000,
+     "p75": 675000
+    }
+   },
+   {
+    "name": "TEAL LAKE VILLAGE",
+    "homes": 132,
+    "kinds": {
+     "condo": 132
+    },
+    "legal_residence_pct": 30,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 8,
+     "median": 247500,
+     "p25": 232500,
+     "p75": 250000
+    }
+   },
+   {
+    "name": "CHARLESTON LANDING",
+    "homes": 130,
+    "kinds": {
+     "house": 126,
+     "other": 4
+    },
+    "legal_residence_pct": 75,
+    "in_sfha": 5,
+    "resales_main_kind": {
+     "n": 13,
+     "median": 650000,
+     "p25": 640000,
+     "p75": 665000
+    }
+   },
+   {
+    "name": "SEVEN OAKS",
+    "homes": 123,
+    "kinds": {
+     "condo": 123
+    },
+    "legal_residence_pct": 24,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 11,
+     "median": 210000,
+     "p25": 189900,
+     "p75": 259900
+    }
+   },
+   {
+    "name": "WATERS EDGE",
+    "homes": 77,
+    "kinds": {
+     "house": 77
+    },
+    "legal_residence_pct": 78,
+    "in_sfha": 5,
+    "resales_main_kind": {
+     "n": 9,
+     "median": 420000,
+     "p25": 400000,
+     "p75": 450000
+    }
+   }
+  ],
+  "til": [
+   {
+    "name": "TILGHMAN EST",
+    "homes": 532,
+    "kinds": {
+     "house": 449,
+     "townhouse": 8,
+     "other": 2,
+     "condo": 73
+    },
+    "legal_residence_pct": 44,
+    "in_sfha": 190,
+    "resales_main_kind": {
+     "n": 18,
+     "median": 1187500,
+     "p25": 600000,
+     "p75": 1925000
+    }
+   },
+   {
+    "name": "SEASHORE VILLAS",
+    "homes": 418,
+    "kinds": {
+     "condo": 418
+    },
+    "legal_residence_pct": 20,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 21,
+     "median": 318600,
+     "p25": 300000,
+     "p75": 330000
+    }
+   },
+   {
+    "name": "AVISTA",
+    "homes": 380,
+    "kinds": {
+     "condo": 380
+    },
+    "legal_residence_pct": 1,
+    "in_sfha": 380,
+    "resales_main_kind": {
+     "n": 15,
+     "median": 260000,
+     "p25": 247500,
+     "p75": 430000
+    }
+   },
+   {
+    "name": "TILGHMAN BCH &GOLF RSRT",
+    "homes": 220,
+    "kinds": {
+     "condo": 220
+    },
+    "legal_residence_pct": 12,
+    "in_sfha": 220,
+    "resales_main_kind": {
+     "n": 11,
+     "median": 490000,
+     "p25": 455000,
+     "p75": 570000
+    }
+   },
+   {
+    "name": "TILGHMAN BCH&RCT CLB",
+    "homes": 208,
+    "kinds": {
+     "condo": 208
+    },
+    "legal_residence_pct": 6,
+    "in_sfha": 208,
+    "resales_main_kind": {
+     "n": 20,
+     "median": 296600,
+     "p25": 269000,
+     "p75": 310000
+    }
+   },
+   {
+    "name": "ROBBERS ROOST",
+    "homes": 203,
+    "kinds": {
+     "condo": 95,
+     "house": 107,
+     "other": 1
+    },
+    "legal_residence_pct": 56,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 9,
+     "median": 225000,
+     "p25": 225000,
+     "p75": 237000
+    }
+   },
+   {
+    "name": "SEABROOK PLANTATION",
+    "homes": 167,
+    "kinds": {
+     "house": 166,
+     "other": 1
+    },
+    "legal_residence_pct": 86,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 8,
+     "median": 757500,
+     "p25": 658000,
+     "p75": 836900
+    }
+   },
+   {
+    "name": "THE ASHWORTH",
+    "homes": 162,
+    "kinds": {
+     "condo": 162
+    },
+    "legal_residence_pct": 8,
+    "in_sfha": 162,
+    "resales_main_kind": {
+     "n": 12,
+     "median": 630000,
+     "p25": 615000,
+     "p75": 640000
+    }
+   }
+  ],
+  "od": [
+   {
+    "name": "FAIRFIELD MB OCEAN BLVD",
+    "homes": 283,
+    "kinds": {
+     "condo": 283
+    },
+    "legal_residence_pct": 0,
+    "in_sfha": 107,
+    "resales_main_kind": {
+     "n": 0
+    }
+   },
+   {
+    "name": "FAIRFLD MB OCN BLVD",
+    "homes": 281,
+    "kinds": {
+     "condo": 281
+    },
+    "legal_residence_pct": 0,
+    "in_sfha": 281,
+    "resales_main_kind": {
+     "n": 0
+    }
+   },
+   {
+    "name": "OCEAN BAY CLUB",
+    "homes": 167,
+    "kinds": {
+     "condo": 167
+    },
+    "legal_residence_pct": 16,
+    "in_sfha": 167,
+    "resales_main_kind": {
+     "n": 9,
+     "median": 595000,
+     "p25": 570000,
+     "p75": 607000
+    }
+   },
+   {
+    "name": "SEA GARDEN",
+    "homes": 165,
+    "kinds": {
+     "condo": 165
+    },
+    "legal_residence_pct": 34,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 10,
+     "median": 250000,
+     "p25": 250000,
+     "p75": 253000
+    }
+   },
+   {
+    "name": "INGRAM BEACH",
+    "homes": 162,
+    "kinds": {
+     "house": 144,
+     "other": 10,
+     "condo": 8
+    },
+    "legal_residence_pct": 19,
+    "in_sfha": 50,
+    "resales_main_kind": {
+     "n": 12,
+     "median": 1350000,
+     "p25": 980000,
+     "p75": 1600000
+    }
+   },
+   {
+    "name": "MAR VISTA GRANDE",
+    "homes": 162,
+    "kinds": {
+     "condo": 162
+    },
+    "legal_residence_pct": 10,
+    "in_sfha": 162,
+    "resales_main_kind": {
+     "n": 8,
+     "median": 795000,
+     "p25": 775000,
+     "p75": 860000
+    }
+   },
+   {
+    "name": "PEPPERTREE BY THE SEA",
+    "homes": 90,
+    "kinds": {
+     "other": 39,
+     "condo": 51
+    },
+    "legal_residence_pct": 0,
+    "in_sfha": 90,
+    "resales_main_kind": {
+     "n": 0
+    }
+   },
+   {
+    "name": "COTTAGES @ 7TH AVE",
+    "homes": 89,
+    "kinds": {
+     "condo": 89
+    },
+    "legal_residence_pct": 36,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 6,
+     "median": 348000,
+     "p25": 340000,
+     "p75": 360000
+    }
+   }
+  ],
+  "cb": [
+   {
+    "name": "BAYWATCH RESORT",
+    "homes": 532,
+    "kinds": {
+     "condo": 532
+    },
+    "legal_residence_pct": 4,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 35,
+     "median": 265000,
+     "p25": 222000,
+     "p75": 362000
+    }
+   },
+   {
+    "name": "CRESCENT BEACH",
+    "homes": 439,
+    "kinds": {
+     "house": 376,
+     "townhouse": 29,
+     "condo": 19,
+     "manufactured": 1,
+     "other": 14
+    },
+    "legal_residence_pct": 23,
+    "in_sfha": 6,
+    "resales_main_kind": {
+     "n": 14,
+     "median": 717500,
+     "p25": 380000,
+     "p75": 975000
+    }
+   },
+   {
+    "name": "CRESCENT BCH",
+    "homes": 312,
+    "kinds": {
+     "house": 297,
+     "other": 13,
+     "condo": 2
+    },
+    "legal_residence_pct": 25,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 11,
+     "median": 664470,
+     "p25": 510000,
+     "p75": 880000
+    }
+   },
+   {
+    "name": "CRESCENT SHORES",
+    "homes": 233,
+    "kinds": {
+     "condo": 233
+    },
+    "legal_residence_pct": 9,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 13,
+     "median": 595000,
+     "p25": 535000,
+     "p75": 615000
+    }
+   },
+   {
+    "name": "JORDAN TERR",
+    "homes": 112,
+    "kinds": {
+     "house": 111,
+     "other": 1
+    },
+    "legal_residence_pct": 38,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 4
+    }
+   },
+   {
+    "name": "SAN-A-BEL TOWERS",
+    "homes": 96,
+    "kinds": {
+     "condo": 96
+    },
+    "legal_residence_pct": 8,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 6,
+     "median": 262500,
+     "p25": 255000,
+     "p75": 281000
+    }
+   },
+   {
+    "name": "CRESCENT KEYES",
+    "homes": 95,
+    "kinds": {
+     "condo": 95
+    },
+    "legal_residence_pct": 15,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 3
+    }
+   },
+   {
+    "name": "BAHAMA SANDS",
+    "homes": 92,
+    "kinds": {
+     "condo": 92
+    },
+    "legal_residence_pct": 2,
+    "in_sfha": 92,
+    "resales_main_kind": {
+     "n": 4
+    }
+   }
+  ],
+  "wh": [
+   {
+    "name": "NORTH BEACH TOWERS",
+    "homes": 337,
+    "kinds": {
+     "condo": 337
+    },
+    "legal_residence_pct": 1,
+    "in_sfha": 337,
+    "resales_main_kind": {
+     "n": 17,
+     "median": 850000,
+     "p25": 745000,
+     "p75": 865000
+    }
+   },
+   {
+    "name": "WINDY HILL BCH",
+    "homes": 332,
+    "kinds": {
+     "house": 320,
+     "other": 10,
+     "condo": 2
+    },
+    "legal_residence_pct": 26,
+    "in_sfha": 10,
+    "resales_main_kind": {
+     "n": 10,
+     "median": 439000,
+     "p25": 360000,
+     "p75": 510000
+    }
+   },
+   {
+    "name": "BEACH COVE OCEAN RESORT",
+    "homes": 146,
+    "kinds": {
+     "condo": 146
+    },
+    "legal_residence_pct": 1,
+    "in_sfha": 146,
+    "resales_main_kind": {
+     "n": 17,
+     "median": 164000,
+     "p25": 157000,
+     "p75": 175000
+    }
+   },
+   {
+    "name": "BRIARCLIFFE WATERFRONT",
+    "homes": 136,
+    "kinds": {
+     "condo": 136
+    },
+    "legal_residence_pct": 49,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 7,
+     "median": 222000,
+     "p25": 207000,
+     "p75": 307000
+    }
+   },
+   {
+    "name": "SHORE CREST VAC VLAS",
+    "homes": 126,
+    "kinds": {
+     "condo": 126
+    },
+    "legal_residence_pct": 0,
+    "in_sfha": 126,
+    "resales_main_kind": {
+     "n": 0
+    }
+   },
+   {
+    "name": "BRIARCLIFFE RV RESORT",
+    "homes": 121,
+    "kinds": {
+     "manufactured": 60,
+     "other": 60,
+     "house": 1
+    },
+    "legal_residence_pct": 14,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 2
+    }
+   },
+   {
+    "name": "OCEAN PIER",
+    "homes": 118,
+    "kinds": {
+     "condo": 118
+    },
+    "legal_residence_pct": 4,
+    "in_sfha": 118,
+    "resales_main_kind": {
+     "n": 6,
+     "median": 281250,
+     "p25": 222000,
+     "p75": 310000
+    }
+   },
+   {
+    "name": "SHORE CREST VAC VILLAS",
+    "homes": 114,
+    "kinds": {
+     "condo": 114
+    },
+    "legal_residence_pct": 0,
+    "in_sfha": 114,
+    "resales_main_kind": {
+     "n": 0
+    }
+   }
+  ],
+  "west17": [
+   {
+    "name": "CHESTNUT GREENS",
+    "homes": 408,
+    "kinds": {
+     "house": 408
+    },
+    "legal_residence_pct": 83,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 18,
+     "median": 514950,
+     "p25": 475000,
+     "p75": 609000
+    }
+   },
+   {
+    "name": "CAROLINA KEYES",
+    "homes": 281,
+    "kinds": {
+     "condo": 281
+    },
+    "legal_residence_pct": 34,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 9,
+     "median": 270000,
+     "p25": 249900,
+     "p75": 305000
+    }
+   },
+   {
+    "name": "WATERWAY LANDING",
+    "homes": 188,
+    "kinds": {
+     "condo": 188
+    },
+    "legal_residence_pct": 24,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 15,
+     "median": 217000,
+     "p25": 170000,
+     "p75": 262000
+    }
+   },
+   {
+    "name": "SUNSET HARBOUR",
+    "homes": 166,
+    "kinds": {
+     "house": 161,
+     "other": 5
+    },
+    "legal_residence_pct": 71,
+    "in_sfha": 68,
+    "resales_main_kind": {
+     "n": 9,
+     "median": 759000,
+     "p25": 725000,
+     "p75": 1000000
+    }
+   },
+   {
+    "name": "TIMBER RIDGE VILLAGE",
+    "homes": 141,
+    "kinds": {
+     "house": 126,
+     "manufactured": 15
+    },
+    "legal_residence_pct": 60,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 6,
+     "median": 211500,
+     "p25": 171900,
+     "p75": 246000
+    }
+   },
+   {
+    "name": "PINEWOOD ACRES",
+    "homes": 130,
+    "kinds": {
+     "house": 126,
+     "other": 1,
+     "manufactured": 1,
+     "condo": 2
+    },
+    "legal_residence_pct": 68,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 7,
+     "median": 361000,
+     "p25": 325000,
+     "p75": 460000
+    }
+   },
+   {
+    "name": "FOREST LAKE",
+    "homes": 110,
+    "kinds": {
+     "house": 109,
+     "other": 1
+    },
+    "legal_residence_pct": 65,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 9,
+     "median": 365000,
+     "p25": 260000,
+     "p75": 410000
+    }
+   },
+   {
+    "name": "HARBOURGATE RESORT",
+    "homes": 109,
+    "kinds": {
+     "condo": 109
+    },
+    "legal_residence_pct": 25,
+    "in_sfha": 109,
+    "resales_main_kind": {
+     "n": 11,
+     "median": 220000,
+     "p25": 193000,
+     "p75": 235000
+    }
+   }
+  ],
+  "across": [
+   {
+    "name": "THE HAVENS",
+    "homes": 317,
+    "kinds": {
+     "condo": 317
+    },
+    "legal_residence_pct": 21,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 19,
+     "median": 290000,
+     "p25": 225000,
+     "p75": 376000
+    }
+   },
+   {
+    "name": "THE IRONWOOD",
+    "homes": 297,
+    "kinds": {
+     "condo": 297
+    },
+    "legal_residence_pct": 9,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 21,
+     "median": 215900,
+     "p25": 205000,
+     "p75": 239900
+    }
+   },
+   {
+    "name": "THE EDGEWATER",
+    "homes": 288,
+    "kinds": {
+     "condo": 288
+    },
+    "legal_residence_pct": 40,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 25,
+     "median": 342900,
+     "p25": 285000,
+     "p75": 385000
+    }
+   },
+   {
+    "name": "GRANDE DUNES N",
+    "homes": 284,
+    "kinds": {
+     "house": 261,
+     "manufactured": 1,
+     "other": 3,
+     "townhouse": 19
+    },
+    "legal_residence_pct": 57,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 13,
+     "median": 374000,
+     "p25": 365000,
+     "p75": 455000
+    }
+   },
+   {
+    "name": "WATERSIDE",
+    "homes": 206,
+    "kinds": {
+     "house": 206
+    },
+    "legal_residence_pct": 72,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 11,
+     "median": 385000,
+     "p25": 360000,
+     "p75": 399900
+    }
+   },
+   {
+    "name": "WILLOW BEND",
+    "homes": 202,
+    "kinds": {
+     "condo": 202
+    },
+    "legal_residence_pct": 17,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 19,
+     "median": 227500,
+     "p25": 218000,
+     "p75": 243900
+    }
+   },
+   {
+    "name": "BAREFOOT RESRT YACHT CL",
+    "homes": 194,
+    "kinds": {
+     "condo": 194
+    },
+    "legal_residence_pct": 18,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 12,
+     "median": 421000,
+     "p25": 370000,
+     "p75": 435000
+    }
+   },
+   {
+    "name": "CLEARWATER BAY",
+    "homes": 186,
+    "kinds": {
+     "condo": 186
+    },
+    "legal_residence_pct": 47,
+    "in_sfha": 0,
+    "resales_main_kind": {
+     "n": 6,
+     "median": 540000,
+     "p25": 422000,
+     "p75": 570000
+    }
+   }
+  ]
+ }
+}

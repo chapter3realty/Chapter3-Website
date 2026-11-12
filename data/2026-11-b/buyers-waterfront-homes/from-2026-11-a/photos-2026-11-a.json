@@ -1,0 +1,239 @@
+{
+ "note": "Reused records, copied unchanged from data/2026-11-a/buyers-relocating-which-town/photos.json (which copied them from the town pages). The image files stay where the town pages keep them. Copied 2026-11-04 for /buyers/waterfront-homes/.",
+ "photos": [
+  {
+   "slug": "submarkets-little-river",
+   "source": "https://planetarycomputer.microsoft.com/dataset/naip",
+   "source_name": "Microsoft Planetary Computer",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "license_note": "NAIP is a U.S. government work. The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\" (the same terms as batch 2026-10-a's NAIP records). Read 2026-11-02.",
+   "terms_urls": [
+    "https://www.fsa.usda.gov/help/policies-and-links/",
+    "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+   ],
+   "taken": "2023-04-10",
+   "display_credit": "U.S. government aerial photo, 2023",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via Microsoft Planetary Computer. Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP image, raised the contrast a little and added labels placed from county and Census coordinates",
+   "method": "data/2026-11-a/submarkets-little-river/aerial_render_r1.py and aerial-labels-r1.json (review round 1: a 4:3 landscape cut that keeps every label inside the frame and the bottom-right corner clear for the credit; labels from ground coordinates through the crop's bbox, never by eye)",
+   "file": "images/2026-11-a/submarkets-little-river/little-river-harbours-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-little-river/little-river-harbours-from-above-600w.webp",
+    "1200": "images/2026-11-a/submarkets-little-river/little-river-harbours-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Coquina Harbour and Lightkeepers Village slips from above, NAIP aerial, April 2023",
+   "what": "One long marina basin off the Intracoastal Waterway in Little River from straight above on April 10, 2023, full of boats in rows of slips: Coquina Harbour's slips in its upper part, Lightkeepers Village's near its mouth. Condo buildings line both sides, US 17 crosses the top left corner, a golf course is at the upper right, and the wide waterway and marsh are across the bottom. Labels: US 17, Coquina Harbour, Lightkeepers Village, Intracoastal Waterway.",
+   "caption": "Coquina Harbour and Lightkeepers Village share one basin between US 17 and the waterway.",
+   "alt": "A marina basin full of boats off the Intracoastal Waterway, from above, with Coquina Harbour labelled at its upper end, Lightkeepers Village near its mouth, US 17 at the top left and a golf course at the upper right",
+   "place": {
+    "city": "Little River",
+    "sublocation": "Coquina Harbour and Lightkeepers Village, on the Intracoastal Waterway"
+   },
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (STAC item sc_m_3307811_ne_17_060_20230410_20230712; datetime 2023-04-10T16:00:00Z). Cut by Chapter3 from the Planetary Computer data API: https://planetarycomputer.microsoft.com/api/data/v1/item/crop/-78.6440,33.8570,-78.6310,33.8680/1980x2008.png?collection=naip&item=sc_m_3307811_ne_17_060_20230410_20230712&assets=image&asset_bidx=image|1,2,3. Two flight lines meet in the water at the bottom, so the water's color changes there.",
+   "naip_tiles": [
+    "m_3307811_ne_17_060_20230410"
+   ],
+   "labels": [
+    "US 17",
+    "Coquina Harbour",
+    "Lightkeepers Village",
+    "Intracoastal Waterway"
+   ],
+   "annotation_sources": {
+    "Coquina Harbour": "centre of the 81 deeded slip parcels at Coquina Harbour (-78.63774, 33.86453), Horry County GIS parcels layer 24, land use 306",
+    "Lightkeepers Village": "centre of the 25 deeded slip parcels at Lightkeepers Village (-78.63757, 33.86081), same layer",
+    "Intracoastal Waterway": "a point inside the county water outline (-78.6350, 33.8598), Horry County GIS layer 21",
+    "US 17": "midpoint of the US 17 centreline segment (-78.6432, 33.8650) to (-78.6365, 33.8674), Census TIGER/Line (tools/geo/grand-strand-v2.json)"
+   },
+   "subject_check": "Looked at full size (1200 px) and at 600 px by the writer of /submarkets/little-river/ on 2026-11-02. Both slip-parcel centres fall on rows of slips with boats in the one basin. No person, sign, plate or house number is readable at this scale. Review round 1: the 1200x900 cut looked at full size and at 600 px on 2026-11-02; every label is inside the frame and none is in the bottom-right corner where the credit sits. The harbours view has the seam of two NAIP flight lines in the water at the bottom (lighter water on the left); no other 2023 NAIP flight covers it.",
+   "frame": {
+    "bbox_wgs84": [
+     -78.644,
+     33.85846,
+     -78.631,
+     33.8666
+    ],
+    "ground_m_per_px_1200w": 1.0
+   },
+   "original_size": "1980x2008 (Planetary Computer crop), resized to 1200 px wide, labels drawn at 50 px, then cut to 1200x900",
+   "reused_on": "/buyers/relocating/which-town/ (licence record copied from data/2026-11-a/submarkets-little-river/photos.json)"
+  },
+  {
+   "slug": "submarkets-north-myrtle-beach",
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "USGS The National Map",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "license_note": "NAIP is a U.S. government work. The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Same terms as the Little River and batch 2026-10-a NAIP records. Read 2026-11-03.",
+   "terms_urls": [
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023-04-10",
+   "display_credit": "U.S. government aerial photo, 2023",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via USGS The National Map. Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty exported this view from the NAIP image service, raised the contrast a little and added labels placed from OpenStreetMap, Horry County and Census coordinates",
+   "method": "data/2026-11-a/submarkets-north-myrtle-beach/images/aerial_render.py and aerial-labels.json (labels from ground coordinates through the export's own EPSG:3857 extent, never by eye)",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8752661.942857325,4006521.994611285,-8750658.192023048,4007953.245207197&bboxSR=3857&imageSR=3857&size=1400,1000&format=jpg&f=image",
+   "frame": {
+    "bbox_wgs84": [
+     -78.6265,
+     33.83391,
+     -78.6085,
+     33.84459
+    ],
+    "ground_m_per_px_1200w": 1.7
+   },
+   "naip_tiles": [
+    "m_3307812_nw_17_060_20230410"
+   ],
+   "labels": [
+    "Boat ramp",
+    "Heritage Shores",
+    "Channel houses",
+    "Atlantic Ocean"
+   ],
+   "annotation_sources": {
+    "Boat ramp": "OpenStreetMap point for Cherry Grove Boat Ramp (landmarks.json) (-78.6175078, 33.8420331)",
+    "Heritage Shores": "OpenStreetMap point for Heritage Shores Nature Preserve (landmarks.json) (-78.6118539, 33.8431038)",
+    "Channel houses": "a point read from the county layers (-78.6195, 33.8372)",
+    "Atlantic Ocean": "a point read from the county layers (-78.612, 33.8356)"
+   },
+   "file": "images/2026-11-a/submarkets-north-myrtle-beach/cherry-grove-channels-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-north-myrtle-beach/cherry-grove-channels-from-above-600w.webp",
+    "1200": "images/2026-11-a/submarkets-north-myrtle-beach/cherry-grove-channels-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 857,
+   "title": "The Cherry Grove channels from above, NAIP aerial, April 2023",
+   "what": "Cherry Grove in North Myrtle Beach from straight above: rows of houses on long finger lots between dug channels, most with a dock behind the house; the open marsh and its creeks to the north-west; the city boat ramp's lot on the marsh; the Heritage Shores island at the top right; Ocean Boulevard, the beach and the ocean along the bottom. Labels: Boat ramp, Heritage Shores, Channel houses, Atlantic Ocean.",
+   "caption": "Houses on the Cherry Grove channels, many with a dock behind them, the marsh, the boat ramp and Heritage Shores, from above.",
+   "alt": "Cherry Grove from above: rows of houses on narrow lots between dug channels, with docks behind them, the marsh beyond, and the ocean along the bottom, labelled Boat ramp, Heritage Shores, Channel houses and Atlantic Ocean",
+   "place": {
+    "city": "North Myrtle Beach",
+    "sublocation": "The Cherry Grove channels and marsh"
+   },
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (tile m_3307812_nw_17_060_20230410, read with the image service's identify call on 2026-11-03).",
+   "subject_check": "Looked at full size (1200 px) by the writer of /submarkets/north-myrtle-beach/ on 2026-11-03. Every label's dot or box sits on the place it names (coordinates in aerial-labels.json). No person, sign, plate or house number is readable at this scale.",
+   "reused_on": "/buyers/relocating/which-town/ (licence record copied from data/2026-11-a/submarkets-north-myrtle-beach/photos.json)"
+  },
+  {
+   "slug": "submarkets-murrells-inlet",
+   "file": "images/2026-11-a/submarkets-murrells-inlet/murrells-inlet-creek-front-docks-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-a/submarkets-murrells-inlet/murrells-inlet-creek-front-docks-from-above-600w.webp",
+    "1200": "images/2026-11-a/submarkets-murrells-inlet/murrells-inlet-creek-front-docks-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Creek-front houses with docks from above",
+   "what": "Creek-front houses with docks from above (USDA NAIP aerial photo, 2023): Business 17 at the left with shops along it; houses under large trees between the road and the creek; several wooden docks with floating platforms on the creek; salt marsh islands at the right.",
+   "caption": "Houses on the creek side of Business 17 from above, with docks reaching out over the marsh edge to the creek.",
+   "alt": "Aerial photo of creek-front houses in Murrells Inlet, labelled: Business 17 at the left, houses under live oaks, and wooden docks running from the yards out to the tidal creek, with salt marsh islands beyond",
+   "place": {
+    "city": "Murrells Inlet",
+    "sublocation": "The creek side of Business 17, Georgetown County"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023) on 2026-11-02; the exact request is in source_request.",
+   "license_note": "Same source and terms as the batch 2026-10-b and Garden City NAIP records: The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\"; the USDA FSA policy page says public domain information \"may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\"",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo, 2023",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS). Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP service and added labels placed from map data",
+   "labels": [
+    "Business 17",
+    "Salt marsh"
+   ],
+   "annotation_sources": {
+    "Business 17": "nearest point on the road line, map-layers.geojson (-79.043014, 33.54986); label_naip.py",
+    "Salt marsh": "given point (-79.0403, 33.5495); label_naip.py"
+   },
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8799144.90606172%2C3968347.90688999%2C-8798640.948705822%2C3968725.8749069143&bboxSR=3857&imageSR=3857&size=2400%2C1800&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+   "frame": {
+    "bbox_wgs84": [
+     -79.044064,
+     33.548585,
+     -79.039536,
+     33.551415
+    ],
+    "ground_m_per_px_1200w": 0.35
+   },
+   "original_size": "2400x1800 (NAIP export, labels drawn, then resized)",
+   "subject_check": "Looked at full size by the writer of /submarkets/murrells-inlet/ on 2026-11-02. It shows: Business 17 at the left with shops along it; houses under large trees between the road and the creek; several wooden docks with floating platforms on the creek; salt marsh islands at the right. No person; no readable sign, plate or house number at page size.",
+   "reused_on": "/buyers/relocating/which-town/ (licence record copied from data/2026-11-a/submarkets-murrells-inlet/photos.json)"
+  },
+  {
+   "slug": "buyers-relocating-which-town",
+   "file": "images/2026-11-a/buyers-relocating-which-town/socastee-swing-bridge-from-above.webp",
+   "variants": {
+    "600": "images/2026-11-a/buyers-relocating-which-town/socastee-swing-bridge-from-above-600w.webp",
+    "1200": "images/2026-11-a/buyers-relocating-which-town/socastee-swing-bridge-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "The old Socastee swing bridge, from above",
+   "what": "Straight down on the Intracoastal Waterway at Socastee on 2023 NAIP imagery: the old steel truss swing bridge, painted blue, carries a two-lane road across the waterway in the middle; a newer four-lane highway bridge crosses at the lower left; houses on a curving street at the upper left, woods along both banks, a small dock and boat landing below the old bridge.",
+   "caption": "The old Socastee swing bridge, the blue steel span, on the Intracoastal Waterway, with the newer highway bridge at the lower left.",
+   "alt": "Aerial photo of a blue steel truss swing bridge carrying a two-lane road over the Intracoastal Waterway at Socastee, with a newer four-lane bridge at the lower left and houses at the upper left",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Old Socastee Swing Span (S-616, old SC 544), Socastee"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023) on 2026-11-04, a 500 by 375 m window centred on 33.6872 N, 79.0045 W; the exact request is in source_request.",
+   "license_note": "Same source and terms as the NAIP records of /invest/where-to-buy/ in this batch: The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\"; the USDA FSA policy page says public domain information \"may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\"",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo, 2023",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "digitalCapture",
+   "subject_check": "Looked at full size (2000 x 1500) by the writer on 2026-11-04. Window centred on the OpenStreetMap point of the Socastee Swing Bridge (way 24818207) (Nominatim, read 2026-11-04). No label is drawn; the caption names no business, street or subdivision. No person, plate or sign is readable at 60 cm.",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8795041.162959194%2C3986652.225152257%2C-8794440.257795172%2C3987102.9040252725&bboxSR=3857&imageSR=3857&size=2000%2C1500&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-a/buyers-relocating-which-town/socastee-swing-bridge-from-above-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-a/buyers-relocating-which-town/socastee-swing-bridge-from-above-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-a/buyers-relocating-which-town/socastee-swing-bridge-from-above-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   }
+  }
+ ]
+}

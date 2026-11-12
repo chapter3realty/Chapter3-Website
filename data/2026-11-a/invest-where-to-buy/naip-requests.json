@@ -1,0 +1,32 @@
+{
+ "longs": {
+  "lon": -78.74,
+  "lat": 33.975,
+  "bbox3857": "-8765899.635425163,4024993.431470942,-8764693.772259278,4025897.828845355",
+  "request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8765899.635425163%2C4024993.431470942%2C-8764693.772259278%2C4025897.828845355&bboxSR=3857&imageSR=3857&size=2000%2C1500&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image"
+ },
+ "socastee": {
+  "lon": -79.028,
+  "lat": 33.687,
+  "bbox3857": "-8797957.620952034,3986400.1292578126,-8796755.813420413,3987301.4849065277",
+  "request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8797957.620952034%2C3986400.1292578126%2C-8796755.813420413%2C3987301.4849065277&bboxSR=3857&imageSR=3857&size=2000%2C1500&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image"
+ },
+ "little-river": {
+  "lon": -78.652,
+  "lat": 33.87,
+  "bbox3857": "-8756102.777582135,4010907.888797773,-8754898.399725419,4011811.1721903114",
+  "request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8756102.777582135%2C4010907.888797773%2C-8754898.399725419%2C4011811.1721903114&bboxSR=3857&imageSR=3857&size=2000%2C1500&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image"
+ },
+ "carolina-forest": {
+  "lon": -78.912,
+  "lat": 33.774,
+  "bbox3857": "-8785045.169550858,3998044.8314545667,-8783842.14296114,3998947.101396855",
+  "request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8785045.169550858%2C3998044.8314545667%2C-8783842.14296114%2C3998947.101396855&bboxSR=3857&imageSR=3857&size=2000%2C1500&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image"
+ },
+ "murrells-inlet": {
+  "lon": -79.044,
+  "lat": 33.5655,
+  "bbox3857": "-8799737.88594223,3970157.4007617943,-8798537.772135103,3971057.4861171385",
+  "request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8799737.88594223%2C3970157.4007617943%2C-8798537.772135103%2C3971057.4861171385&bboxSR=3857&imageSR=3857&size=2000%2C1500&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image"
+ }
+}

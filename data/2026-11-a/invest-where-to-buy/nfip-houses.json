@@ -1,0 +1,51 @@
+{
+ "source": "https://www.fema.gov/api/open/v3/NfipPolicies",
+ "pulled": "2026-11-03",
+ "filter": "reportedZipCode per ZIP; policyEffectiveDate 2025-09-01 to 2026-08-31; propertyState SC; occupancyType 1 or 11; policyCost > 0",
+ "field": "policyCost (premium plus fees), dollars a year",
+ "beach_zips": [
+  "29582",
+  "29572",
+  "29577",
+  "29575",
+  "29576",
+  "29585"
+ ],
+ "inland_zips": [
+  "29568",
+  "29579",
+  "29588",
+  "29526",
+  "29566"
+ ],
+ "beach_v": {
+  "n": 569,
+  "median": 3284,
+  "q1": 1453,
+  "q3": 6274
+ },
+ "beach_a": {
+  "n": 4365,
+  "median": 1358,
+  "q1": 1057,
+  "q3": 2623
+ },
+ "beach_x": {
+  "n": 8055,
+  "median": 588,
+  "q1": 481,
+  "q3": 784
+ },
+ "inland_a": {
+  "n": 1404,
+  "median": 994.5,
+  "q1": 716,
+  "q3": 1259
+ },
+ "inland_x": {
+  "n": 6075,
+  "median": 566,
+  "q1": 483,
+  "q3": 702
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "same_house_value": 450000,
+ "horry_610": {
+  "legal_residence": 1857,
+  "second_home_or_rental": 5686
+ },
+ "georgetown_41": {
+  "legal_residence": 2416,
+  "second_home_or_rental": 6900
+ },
+ "horry_middle_house": {
+  "value": 449950.0,
+  "legal_residence": 1857,
+  "second_home_or_rental": 5686
+ },
+ "georgetown_west_middle_house": {
+  "value": 568000,
+  "legal_residence": 3025,
+  "second_home_or_rental": 8684
+ },
+ "note": "Horry fee $89.40 = the fees on every 2026 Horry bill the Garden City verifier read; Georgetown $96 = the calculator's household fee for district 41.",
+ "diff_same_house": {
+  "legal_residence": 559,
+  "second_home_or_rental": 1214
+ },
+ "str_vs_ltr": [
+  {
+   "bedrooms": "2",
+   "airbnb_typical_gross_year": 27500,
+   "hud_fair_rent_year": 20640,
+   "gap": 6860
+  },
+  {
+   "bedrooms": "3",
+   "airbnb_typical_gross_year": 30600,
+   "hud_fair_rent_year": 24960,
+   "gap": 5640
+  },
+  {
+   "bedrooms": "4",
+   "airbnb_typical_gross_year": 54100,
+   "hud_fair_rent_year": 29040,
+   "gap": 25060
+  }
+ ]
+}

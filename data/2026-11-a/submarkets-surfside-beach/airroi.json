@@ -1,0 +1,140 @@
+{
+ "source": "https://www.airroi.com/airbnb-data/united-states/south-carolina/surfside-beach",
+ "read": "2026-11-03",
+ "headline": {
+  "revenue": "$42,902",
+  "occupancy": "36.9%",
+  "adr": "$419",
+  "listings": "551",
+  "period": "12 months to September 2026",
+  "median_month": "$3,840",
+  "top25_month": "$7,470",
+  "bottom25_month": "$1,810",
+  "updated": "October 1, 2026",
+  "permit_share": "0%"
+ },
+ "months": {
+  "Sep 2025": {
+   "revenue": 5024.0,
+   "occupancy": 40.1,
+   "adr": 381.0,
+   "revpar": 167.0
+  },
+  "Oct 2025": {
+   "revenue": 4151.0,
+   "occupancy": 35.3,
+   "adr": 363.0,
+   "revpar": 134.0
+  },
+  "Nov 2025": {
+   "revenue": 3126.0,
+   "occupancy": 28.6,
+   "adr": 356.0,
+   "revpar": 104.0
+  },
+  "Dec 2025": {
+   "revenue": 2472.0,
+   "occupancy": 21.9,
+   "adr": 363.0,
+   "revpar": 80.0
+  },
+  "Jan 2026": {
+   "revenue": 2542.0,
+   "occupancy": 19.9,
+   "adr": 363.0,
+   "revpar": 82.0
+  },
+  "Feb 2026": {
+   "revenue": 2846.0,
+   "occupancy": 26.9,
+   "adr": 363.0,
+   "revpar": 102.0
+  },
+  "Mar 2026": {
+   "revenue": 4386.0,
+   "occupancy": 36.0,
+   "adr": 375.0,
+   "revpar": 141.0
+  },
+  "Apr 2026": {
+   "revenue": 5099.0,
+   "occupancy": 41.4,
+   "adr": 392.0,
+   "revpar": 170.0
+  },
+  "May 2026": {
+   "revenue": 6778.0,
+   "occupancy": 45.3,
+   "adr": 449.0,
+   "revpar": 219.0
+  },
+  "Jun 2026": {
+   "revenue": 10550.0,
+   "occupancy": 57.1,
+   "adr": 505.0,
+   "revpar": 352.0
+  },
+  "Jul 2026": {
+   "revenue": 12242.0,
+   "occupancy": 58.6,
+   "adr": 509.0,
+   "revpar": 395.0
+  },
+  "Aug 2026": {
+   "revenue": 7483.0,
+   "occupancy": 49.7,
+   "adr": 450.0,
+   "revpar": 241.0
+  }
+ },
+ "calendar_avg_2yr": {
+  "January": {
+   "season": "Low",
+   "revenue": 2360.0
+  },
+  "February": {
+   "season": "Low",
+   "revenue": 2820.0
+  },
+  "March": {
+   "season": "Low",
+   "revenue": 4090.0
+  },
+  "April": {
+   "season": "Shoulder",
+   "revenue": 5070.0
+  },
+  "May": {
+   "season": "High",
+   "revenue": 6310.0
+  },
+  "June": {
+   "season": "High",
+   "revenue": 9930.0
+  },
+  "July": {
+   "season": "High",
+   "revenue": 11600.0
+  },
+  "August": {
+   "season": "High",
+   "revenue": 7650.0
+  },
+  "September": {
+   "season": "Low",
+   "revenue": 4650.0
+  },
+  "October": {
+   "season": "Low",
+   "revenue": 3930.0
+  },
+  "November": {
+   "season": "Low",
+   "revenue": 2970.0
+  },
+  "December": {
+   "season": "Low",
+   "revenue": 2570.0
+  }
+ }
+}

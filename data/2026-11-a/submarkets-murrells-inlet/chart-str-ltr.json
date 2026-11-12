@@ -1,0 +1,23 @@
+{
+ "what": "Typical yearly gross: Airbnb (AirROI median by bedrooms) vs HUD Fair Market Rent for ZIP 29576 x 12",
+ "rows": [
+  {
+   "bedrooms": "2",
+   "airbnb_typical_gross_year": 27500,
+   "hud_fair_rent_year": 20640,
+   "gap": 6860
+  },
+  {
+   "bedrooms": "3",
+   "airbnb_typical_gross_year": 30600,
+   "hud_fair_rent_year": 24960,
+   "gap": 5640
+  },
+  {
+   "bedrooms": "4",
+   "airbnb_typical_gross_year": 54100,
+   "hud_fair_rent_year": 29040,
+   "gap": 25060
+  }
+ ]
+}

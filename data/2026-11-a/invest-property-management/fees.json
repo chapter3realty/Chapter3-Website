@@ -1,0 +1,22 @@
+{
+ "_readme": "Published owner fees of property managers that serve Horry County, read from each firm's own web page on the date in raw/fees/index.json. Each value is copied from the page text saved in raw/fees/<id>.txt (line given). Firm names are kept here for the verifier; the page shows the counts and the range, never a verdict on a named firm. Long-term = leases of a year; short-term = nightly and weekly stays.",
+ "long_term": [
+  {"id": "beachrentalgroup", "office": "North Myrtle Beach, SC 29582", "plan": "Full Service (their most popular)", "monthly_pct": 10, "monthly_note": "starting 2nd month", "leasing": "100% of first month's rent", "leasing_share_of_month": 1.0, "renewal_usd": 150, "setup_usd": 0, "lines": "90-92, 114, 132", "other_plans": "Hero Program 8% (military, first responder, teacher, nurse); Investor 8% with $1,000 first month"},
+  {"id": "jnp", "office": "Myrtle Beach, SC 29579", "plan": "Standard Management", "monthly_pct": 10, "leasing": "45% of 1st month's rent", "leasing_share_of_month": 0.45, "renewal_usd": 100, "setup_usd": 200, "lines": "56, 82-85, 170", "other_plans": "Deluxe 15% with 40% leasing and $50 renewal; a leasing-only plan at one month's rent ($1,000 minimum), $500 renewal"},
+  {"id": "annualrentals", "office": "Berkshire Hathaway HomeServices Coastal Real Estate (Myrtle Beach rentals site)", "plan": "Management", "monthly_pct": 10, "monthly_note": "only on rent collected", "leasing": "100% of the first full month's rent (finder's fee)", "leasing_share_of_month": 1.0, "renewal_usd": null, "setup_usd": null, "lines": "66, 76-77", "page_footer": "(c) 2023"},
+  {"id": "childs", "office": "Myrtle Beach, SC 29588", "plan": "Personal Flat Fee Service", "monthly_pct": 7, "monthly_note": "as low as 7%, $150 a month minimum, A and B class properties only", "monthly_min_usd": 150, "leasing": "No placement fee", "leasing_share_of_month": 0.0, "renewal_usd": null, "setup_usd": null, "lines": "22, 29, 37, 55"},
+  {"id": "purepm", "office": "PURE HomeRiver Property Management of South Carolina, Summerville, SC 29486 (serves Myrtle Beach from its Charleston-area office)", "plan": "Full Service", "monthly_pct": 10, "leasing": "50% of 1st month's rent", "leasing_share_of_month": 0.5, "renewal_usd": null, "setup_usd": null, "lines": "70-72, 114-117"}
+ ],
+ "long_term_excluded": [
+  {"id": "coastalheights", "why": "Fee page is on a site whose footer reads 'Copyright (c) 2015'; too old to state as current. It printed 10% and 50% of the first month (lines 30-32)."},
+  {"id": "marble", "why": "Virtual service, flat monthly fee; not a local manager who shows and screens in person."},
+  {"id": "hemlane", "why": "Software and services platform; page prints no management percentage."},
+  {"id": "renpro", "why": "Software vendor's guide that estimates national ranges; not a fee schedule."}
+ ],
+ "short_term": [
+  {"id": "oceanbreeze", "office": "Little River, SC 29566", "what": "Management fee", "pct_low": 15, "pct_high": 15, "lines": "70, 94"},
+  {"id": "mbvhr", "office": "Myrtle Beach, SC 29577", "what": "Commission, varies by property", "pct_low": 10, "pct_high": 25, "lines": "27, 83"},
+  {"id": "evolve", "office": "national, no Horry County office named", "what": "Core 10%, Plus 15%, after guests check in; $250 onboarding", "pct_low": 10, "pct_high": 15, "lines": "69-70", "note": "Half-service: cleaning and maintenance are not in the fee (Evolve page wording to be read by the verifier)"},
+  {"id": "seaside", "office": "North Myrtle Beach, SC 29582", "what": "Commissions vary from property to property; 10% on owner-referred guests", "pct_low": null, "pct_high": null, "lines": "92-95, 117"}
+ ]
+}

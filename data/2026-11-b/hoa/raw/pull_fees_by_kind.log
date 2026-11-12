@@ -1,0 +1,13 @@
+/tmp/claude-0/-home-user-Blog-Brain/6dac3d75-8af3-5045-bdd7-7ad0adf5395f/scratchpad/wt-live/data/2026-11-b/hoa/pull_fees_by_kind.py:46: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  res = {"pulled": datetime.datetime.utcnow().isoformat() + "Z", "source": BASE + "type=..&has=..&not=..&hoaMax=..",
+condo_oceanfront_highrise 972 0 {'p25': 750, 'median': 940, 'p75': 1185} 47
+condo_oceanfront 1106 0 {'p25': 730, 'median': 920, 'p75': 1140} 93
+condo_off_ocean 1747 1 {'p25': 410, 'median': 515, 'p75': 685} 153
+townhouse 366 28 {'p25': 190, 'median': 290, 'p75': 425} 213
+house 3667 1141 {'p25': 70, 'median': 95, 'p75': 135} 274
+house_no_amenities 2094 1084 {'p25': 55, 'median': 70, 'p75': 100} 334
+house_pool_or_clubhouse 1570 57 {'p25': 90, 'median': 110, 'p75': 165} 395
+house_gated 503 78 {'p25': 120, 'median': 160, 'p75': 235} 456
+house_golf_community 358 23 {'p25': 75, 'median': 105, 'p75': 225} 517
+house_gated_golf 144 0 {'p25': 100, 'median': 200, 'p75': 320} 564
+done 564

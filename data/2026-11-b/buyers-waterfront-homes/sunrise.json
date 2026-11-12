@@ -1,0 +1,118 @@
+{
+ "method": "1. The direction the beach faces: for each stretch of the coastline (RAW/coast.json, the county boundary's ocean edge,\n   the Georgetown county line trimmed off), the bearing square to the shore, toward the sea.\n2. Where the sun rises: NOAA's solar position equations (NOAA Global Monitoring Laboratory, \"General Solar Position\n   Calculations\", https://gml.noaa.gov/grad/solcalc/solareqns.PDF), every day of 2026, at each stretch's latitude and\n   longitude. Sunrise is when the sun's centre is 0.833 degrees below the horizon (refraction and the sun's radius).\n3. The open sea is everything within 90 degrees of the direction the beach faces (a straight shore).",
+ "stretches": [
+  {
+   "from": [
+    33.8517,
+    -78.5413
+   ],
+   "to": [
+    33.8326,
+    -78.6239
+   ],
+   "beach_faces_deg": 164.6,
+   "open_sea_from_deg": 74.6,
+   "open_sea_to_deg": 254.6,
+   "sunrise_az_min_deg": 60.7,
+   "sunrise_az_max_deg": 118.0,
+   "days_sun_rises_over_sea": 245
+  },
+  {
+   "from": [
+    33.8326,
+    -78.6239
+   ],
+   "to": [
+    33.8001,
+    -78.713
+   ],
+   "beach_faces_deg": 156.5,
+   "open_sea_from_deg": 66.5,
+   "open_sea_to_deg": 246.5,
+   "sunrise_az_min_deg": 60.7,
+   "sunrise_az_max_deg": 118.0,
+   "days_sun_rises_over_sea": 291
+  },
+  {
+   "from": [
+    33.8001,
+    -78.713
+   ],
+   "to": [
+    33.7606,
+    -78.7854
+   ],
+   "beach_faces_deg": 146.9,
+   "open_sea_from_deg": 56.9,
+   "open_sea_to_deg": 236.9,
+   "sunrise_az_min_deg": 60.7,
+   "sunrise_az_max_deg": 117.9,
+   "days_sun_rises_over_sea": 365
+  },
+  {
+   "from": [
+    33.7606,
+    -78.7854
+   ],
+   "to": [
+    33.714,
+    -78.852
+   ],
+   "beach_faces_deg": 140.1,
+   "open_sea_from_deg": 50.1,
+   "open_sea_to_deg": 230.1,
+   "sunrise_az_min_deg": 60.8,
+   "sunrise_az_max_deg": 117.9,
+   "days_sun_rises_over_sea": 365
+  },
+  {
+   "from": [
+    33.714,
+    -78.852
+   ],
+   "to": [
+    33.6589,
+    -78.9157
+   ],
+   "beach_faces_deg": 134.1,
+   "open_sea_from_deg": 44.1,
+   "open_sea_to_deg": 224.1,
+   "sunrise_az_min_deg": 60.8,
+   "sunrise_az_max_deg": 117.9,
+   "days_sun_rises_over_sea": 365
+  },
+  {
+   "from": [
+    33.6589,
+    -78.9157
+   ],
+   "to": [
+    33.5986,
+    -78.9767
+   ],
+   "beach_faces_deg": 130.3,
+   "open_sea_from_deg": 40.3,
+   "open_sea_to_deg": 220.3,
+   "sunrise_az_min_deg": 60.8,
+   "sunrise_az_max_deg": 117.9,
+   "days_sun_rises_over_sea": 365
+  },
+  {
+   "from": [
+    33.5986,
+    -78.9767
+   ],
+   "to": [
+    33.5761,
+    -78.9974
+   ],
+   "beach_faces_deg": 127.8,
+   "open_sea_from_deg": 37.8,
+   "open_sea_to_deg": 217.8,
+   "sunrise_az_min_deg": 60.8,
+   "sunrise_az_max_deg": 117.9,
+   "days_sun_rises_over_sea": 365
+  }
+ ],
+ "all_year_everywhere": false
+}

@@ -1,0 +1,64 @@
+{
+ "title_draft": "The ocean costs the most, a lake the least",
+ "unit": "dollars, middle resale price",
+ "window": "Horry County Register of Deeds, recorded 2025-10-01 to 2026-09-30 (batch 2026-10-d kept sales)",
+ "rows": [
+  {
+   "kind": "Oceanfront house",
+   "median": 2157500.0,
+   "n": 20,
+   "what": "houses in the first row on the beach, resales",
+   "src": "deeds-findings.json kinds.ocean.resale"
+  },
+  {
+   "kind": "House on the Intracoastal Waterway",
+   "median": 1325000.0,
+   "n": 56,
+   "what": "all house sales, 3 by a builder",
+   "src": "from-2026-11-a/findings.json sales.groups.Intracoastal Waterway.on_water"
+  },
+  {
+   "kind": "House on the salt marsh (Garden City)",
+   "median": 1237000.0,
+   "n": 13,
+   "what": "houses between Waccamaw Drive and Business 17 on the salt marsh or a tidal creek",
+   "src": "Garden City ledger row 13, verifier's corrected figures (replaces findings.json sales['middle/on_water/house'])"
+  },
+  {
+   "kind": "House on the Cherry Grove channels",
+   "median": 715000,
+   "n": 38,
+   "what": "resales",
+   "src": "submarkets-north-myrtle-beach/findings.json sales.house_resale_channel"
+  },
+  {
+   "kind": "House on the Waccamaw River",
+   "median": 537000.0,
+   "n": 14,
+   "what": "all house sales, 2 by a builder",
+   "src": "from-2026-11-a/findings.json sales.groups.Waccamaw River.on_water"
+  },
+  {
+   "kind": "House on a lake or pond",
+   "median": 495000.0,
+   "n": 122,
+   "what": "resales; lakes and ponds the USGS maps",
+   "src": "deeds-findings.json kinds.lake.resale"
+  },
+  {
+   "kind": "House on no water",
+   "median": 366000.0,
+   "n": 5538,
+   "what": "resales, for comparison",
+   "src": "deeds-findings.json kinds.none.resale",
+   "reference": true
+  },
+  {
+   "kind": "Condo in an oceanfront building",
+   "median": 213900.0,
+   "n": 669,
+   "what": "resales",
+   "src": "deeds-findings.json kinds.ocean_condo.resale"
+  }
+ ]
+}
