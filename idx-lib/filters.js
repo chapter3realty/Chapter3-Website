@@ -67,7 +67,7 @@ export function filterBar({ action = "/homes/map/", params, features = false, co
   const ticks = (list) => list.filter(([key]) => isFeature(key)).map(([key, word]) => `<label class="hx-tick"><input type="checkbox" name="has" value="${esc(key)}" data-cur${has.has(key) ? " checked" : ""}><span>${esc(word)}</span></label>`).join("");
   const curated = new Set([...HOUSE_TICKS, ...LISTING_TICKS, ...AREA_TICKS].map(([key]) => key).filter(isFeature));
   // Kept as is: what has no control in this bar.
-  const keep = ["city", "subdivision", "near", "miles", "zip", "sort", "yearMax", "sold", "not", ...(features ? [] : ["has", "yearMin", "lotMin", "hoaMax", "garage", "domMax", "sqft"])]
+  const keep = ["city", "subdivision", "near", "miles", "zip", "sort", "yearMax", "sold", "not", "want", ...(features ? [] : ["has", "yearMin", "lotMin", "hoaMax", "garage", "domMax", "sqft"])]
     .filter((x) => p.get(x)).map((x) => `<input type="hidden" name="${x}" value="${esc(p.get(x))}">`).join("");
   const prices = (name, cur) => `<select name="${name}" aria-label="${name === "min" ? "Lowest price" : "Highest price"}">${opt("", name === "min" ? "No min" : "No max", cur)}${[...new Set([...PRICE_STEPS, +cur || 0])].filter(Boolean).sort((a, b) => a - b).map((v) => opt(v, k(v), cur)).join("")}</select>`;
   const quick = [["", "300000", "Under $300K"], ["300000", "500000", "$300K to $500K"], ["500000", "1000000", "$500K to $1M"], ["1000000", "", "$1M+"]]

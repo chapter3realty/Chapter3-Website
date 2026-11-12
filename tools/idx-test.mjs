@@ -559,6 +559,13 @@ t = await r.text();
   const sentF = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
   check("search: features reach the CRM as one list, with a removable chip each", sentF.includes("has=pool%2Cgarage") && t.includes(">Private pool<span") && t.includes(">Garage<span"));
 }
+r = await run(homes, req("/homes/?has=private_dock&want=pool,private_dock"));
+t = await r.text();
+{
+  // A wish (CRM Ticket 671) is a light filter: it reaches the CRM as want, never repeats a has key, and has its own chip.
+  const sentF = calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url;
+  check("search: a wish reaches the CRM as want, without a key already in has, with a removable chip", sentF.includes("want=pool&") && !sentF.includes("want=pool%2C") && t.includes(">Private pool<span"));
+}
 r = await run(homes, req("/homes/api/strip?type=condo&max=500000&city=Conway"));
 {
   const j = JSON.parse(await r.text());

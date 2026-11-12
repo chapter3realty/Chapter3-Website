@@ -345,6 +345,9 @@ function searchParams(q, signed) {
   const notKeys = featureList(q.getAll("not"), hasKeys.filter(isDistance).length);
   if (hasKeys.length) p.set("has", hasKeys.join(","));
   if (notKeys.length) p.set("not", notKeys.join(","));
+  // Wishes (CRM Ticket 671): light filters, met by any similar feature; at most 3, never a key already in has.
+  const wantKeys = featureList(q.getAll("want")).filter((k) => !hasKeys.includes(k) && !isDistance(k)).slice(0, 3);
+  if (wantKeys.length) p.set("want", wantKeys.join(","));
   for (const [name, lo, hi] of [["yearMin", 1800, 2100], ["yearMax", 1800, 2100], ["hoaMax", 0, 100000], ["garage", 1, 10], ["domMax", 0, 10000]]) {
     const v = q.get(name); if (v && /^\d{1,6}$/.test(v) && +v >= lo && +v <= hi) p.set(name, v);
   }
@@ -376,7 +379,7 @@ function chipList(p) {
     const x = new URLSearchParams(p); x.delete(k); x.delete("page"); x.delete("size"); if (k === "near") { x.delete("miles"); if (x.get("sort") === "nearest") x.delete("sort"); }
     return { t: label[k](p.get(k)), x: x.toString() };
   });
-  for (const name of ["has", "not"]) for (const key of (p.get(name) || "").split(",").filter(Boolean)) {
+  for (const name of ["has", "not", "want"]) for (const key of (p.get(name) || "").split(",").filter(Boolean)) {
     const x = new URLSearchParams(p); x.delete("page"); x.delete("size");
     const rest = (p.get(name) || "").split(",").filter((y) => y && y !== key);
     if (rest.length) x.set(name, rest.join(",")); else x.delete(name);
@@ -509,7 +512,9 @@ async function mapSearch(context, q) {
     search is kept as it was. */
 function closestSteps(p) {
   const out = [];
-  const a = new URLSearchParams(p); let more = false;
+  // A wish is light (CRM Ticket 671): with nothing found, it goes first, and the price and the rest stay.
+  if (p.get("want")) { const w = new URLSearchParams(p); w.delete("want"); out.push(w); }
+  const a = new URLSearchParams(p); a.delete("want"); let more = false;
   if (a.get("max")) { a.set("max", String(Math.round(+a.get("max") * 1.25 / 1000) * 1000)); more = true; }
   if (a.get("min")) { a.set("min", String(Math.round(+a.get("min") * 0.75 / 1000) * 1000)); more = true; }
   for (const k of ["beds", "baths"]) if (+a.get(k) > 1) { a.set(k, String(+a.get(k) - 1)); more = true; }
