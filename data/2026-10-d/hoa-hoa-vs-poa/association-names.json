@@ -1,0 +1,85 @@
+{
+ "source": "https://acclaimweb.horrycounty.org/AcclaimWeb/search/SearchTypeDocType (CONDO LIEN (064))",
+ "method": "What Horry County's associations call themselves: the name label of every association that recorded a lien\nfor unpaid assessments, from the Register of Deeds index (AcclaimWeb, document type CONDO LIEN (064)).\nInput: the monthly index pulls made by data/2026-10-d/hoa-special-assessments/pull_liens.py (RAW dir; they carry\nowners' names, so they stay out of the repo). Output: counts only, no names, except the list of label words.\nBulk filers (timeshare companies, a utility, trustees, or 25+ liens by one filer in a year) are left out, the same\nrule as hoa-special-assessments/analyze_liens.py, so \"2025\" matches that page's 540 associations_filing; \"2025_any_count\" leaves out only the name-matched bulk\nfilers and matches its 548 associations_filing_any_count (the number the sibling page prints).\nThe index cuts names at 40 letters, so a label at the end of a long name can be lost (\"cut\").\nLabel, first match wins, in this order:\n  condo   REGIME, HPR, HORIZONTAL, CONDO, CO-OWNER, COUNCIL OF   (the legal forms of a condo in South Carolina)\n  poa     PROPERTY OWNER(S), POA, P O A\n  hoa     HOMEOWNER(S), HOME OWNER(S), HOA, H O A\n  community  COMMUNITY ASSOC, MASTER, OWNERS ASSOC, RESIDENTS, ASSOCIATION, ASSN, ASSOC (any other association name)\n  other   anything else (often a name cut before its label)\nmaster is counted on its own too: any name with MASTER. condo_word_and_poa_or_hoa_word: a condo word and a POA or HOA word\nin the same name. ends_inc_corporation: names with INC, INCORPORATED or CORP.\nUsage: RAW=<dir> python3 -I classify_names.py <this dir>. Writes association-names.json.",
+ "2025": {
+  "associations": 540,
+  "by_label": {
+   "community": 99,
+   "hoa": 285,
+   "poa": 102,
+   "other": 7,
+   "condo": 47
+  },
+  "share_pct": {
+   "community": 18.3,
+   "hoa": 52.8,
+   "poa": 18.9,
+   "other": 1.3,
+   "condo": 8.7
+  },
+  "master_named": 4,
+  "condo_word_and_poa_or_hoa_word": 5,
+  "ends_inc_corporation": 481,
+  "lien_documents_by_label": {
+   "poa": 273,
+   "hoa": 740,
+   "community": 404,
+   "condo": 103,
+   "other": 16
+  }
+ },
+ "2025_any_count": {
+  "associations": 548,
+  "by_label": {
+   "community": 104,
+   "hoa": 286,
+   "poa": 103,
+   "other": 7,
+   "condo": 48
+  },
+  "share_pct": {
+   "community": 19.0,
+   "hoa": 52.2,
+   "poa": 18.8,
+   "other": 1.3,
+   "condo": 8.8
+  },
+  "master_named": 4,
+  "condo_word_and_poa_or_hoa_word": 5,
+  "ends_inc_corporation": 488,
+  "lien_documents_by_label": {
+   "poa": 306,
+   "hoa": 945,
+   "community": 1028,
+   "condo": 378,
+   "other": 16
+  }
+ },
+ "2021_to_2025": {
+  "associations": 1192,
+  "by_label": {
+   "community": 158,
+   "hoa": 601,
+   "other": 72,
+   "condo": 124,
+   "poa": 237
+  },
+  "share_pct": {
+   "community": 13.3,
+   "hoa": 50.4,
+   "other": 6.0,
+   "condo": 10.4,
+   "poa": 19.9
+  },
+  "master_named": 5,
+  "condo_word_and_poa_or_hoa_word": 15,
+  "ends_inc_corporation": 950,
+  "lien_documents_by_label": {
+   "condo": 515,
+   "hoa": 2614,
+   "community": 1429,
+   "other": 192,
+   "poa": 1210
+  }
+ }
+}

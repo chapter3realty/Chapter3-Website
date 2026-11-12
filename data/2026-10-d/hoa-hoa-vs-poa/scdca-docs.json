@@ -1,0 +1,80 @@
+{
+ "source": "https://www.consumer.sc.gov/HOA-reports",
+ "years": {
+  "report 2023 (calendar 2022)": {
+   "complaints": 70,
+   "docs_not noted": 10,
+   "informed_yes": 63,
+   "docs_after": 38,
+   "docs_before": 22,
+   "informed_no": 6,
+   "informed_not noted": 1,
+   "name_poa": 8,
+   "name_hoa": 39,
+   "name_other": 7,
+   "name_condo": 4,
+   "name_community": 1,
+   "distinct_names": 59
+  },
+  "report 2024 (calendar 2023)": {
+   "complaints": 89,
+   "docs_before": 29,
+   "informed_yes": 75,
+   "docs_after": 48,
+   "informed_no": 14,
+   "docs_not noted": 12,
+   "name_poa": 12,
+   "name_hoa": 46,
+   "name_other": 10,
+   "name_community": 3,
+   "name_condo": 1,
+   "distinct_names": 72
+  },
+  "report 2025 (calendar 2024)": {
+   "complaints": 117,
+   "docs_not noted": 16,
+   "informed_no": 9,
+   "docs_before": 36,
+   "informed_yes": 107,
+   "docs_after": 65,
+   "informed_not noted": 1,
+   "name_poa": 16,
+   "name_other": 14,
+   "name_hoa": 62,
+   "name_condo": 2,
+   "name_community": 7,
+   "distinct_names": 101
+  },
+  "report 2026 (calendar 2025)": {
+   "complaints": 140,
+   "docs_after": 84,
+   "informed_yes": 130,
+   "docs_not noted": 19,
+   "docs_before": 37,
+   "informed_no": 9,
+   "informed_not noted": 1,
+   "name_hoa": 60,
+   "name_condo": 8,
+   "name_community": 7,
+   "name_poa": 21,
+   "name_other": 5,
+   "distinct_names": 101
+  }
+ },
+ "four_years_horry": {
+  "complaints": 416,
+  "docs_not noted": 57,
+  "informed_yes": 375,
+  "docs_after": 235,
+  "docs_before": 124,
+  "informed_no": 38,
+  "informed_not noted": 3,
+  "name_poa": 57,
+  "name_hoa": 207,
+  "name_other": 36,
+  "name_condo": 15,
+  "name_community": 18,
+  "distinct_names": 333
+ },
+ "share_after_of_known_pct": 65.5
+}

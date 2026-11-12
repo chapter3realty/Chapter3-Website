@@ -1,0 +1,23 @@
+{
+ "source": "https://acclaimweb.horrycounty.org/AcclaimWeb/search/SearchTypeDocType (CONDO LIEN (064))",
+ "method": "What Horry County's associations call themselves: the name label of every association that recorded a lien\nfor unpaid assessments, from the Register of Deeds index (AcclaimWeb, document type CONDO LIEN (064)).\nInput: the monthly index pulls made by data/2026-10-d/hoa-special-assessments/pull_liens.py (RAW dir; they carry\nowners' names, so they stay out of the repo). Output: counts only, no names, except the list of label words.\nBulk filers (timeshare companies, a utility, trustees, or 25+ liens by one filer in a year) are left out, the same\nrule as hoa-special-assessments/analyze_liens.py, so \"2025\" matches that page's 540 associations_filing; \"2025_any_count\" leaves out only the name-matched bulk\nfilers and matches its 548 associations_filing_any_count (the number the sibling page prints).\nThe index cuts names at 40 letters, so a label at the end of a long name can be lost (\"cut\").\nLabel, first match wins, in this order:\n  condo   REGIME, HPR, HORIZONTAL, CONDO, CO-OWNER, COUNCIL OF   (the legal forms of a condo in South Carolina)\n  poa     PROPERTY OWNER(S), POA, P O A\n  hoa     HOMEOWNER(S), HOME OWNER(S), HOA, H O A\n  community  COMMUNITY ASSOC, MASTER, OWNERS ASSOC, RESIDENTS, ASSOCIATION, ASSN, ASSOC (any other association name)\n  other   anything else (often a name cut before its label)\nmaster is counted on its own too: any name with MASTER. condo_word_and_poa_or_hoa_word: a condo word and a POA or HOA word\nin the same name. ends_inc_corporation: names with INC, INCORPORATED or CORP.\nUsage: RAW=<dir> python3 -I classify_names.py <this dir>. Writes association-names.json.",
+ "year": 2025,
+ "associations": 526,
+ "by_label": {
+  "hoa": 275,
+  "poa": 103,
+  "community": 97,
+  "condo": 45,
+  "other": 6
+ },
+ "share_pct": {
+  "hoa": 52.3,
+  "poa": 19.6,
+  "community": 18.4,
+  "condo": 8.6,
+  "other": 1.1
+ },
+ "inc_or_corp_in_a_spelling": 480,
+ "master_named": 4,
+ "condo_word_and_poa_or_hoa_word": 4
+}

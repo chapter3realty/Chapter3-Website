@@ -1,0 +1,570 @@
+{
+ "note": "Where builders sold the most homes, community by community (fixer, review round 1, 2026-11-01).",
+ "builder_sales": 5108,
+ "with_a_community_name": 4867,
+ "communities_named": 299,
+ "top10_sales": 1402,
+ "communities": [
+  {
+   "name": "AUBERON WOODS",
+   "sales": 219,
+   "builders": [
+    [
+     "D.R. Horton",
+     219
+    ]
+   ],
+   "median_price": 391000.0,
+   "price_quartiles": [
+    336097.5,
+    391000.0,
+    449269.5
+   ],
+   "mid": [
+    -78.8531,
+    33.8266
+   ],
+   "municipality": [
+    [
+     "unincorporated",
+     219
+    ]
+   ],
+   "nearest_highways_miles": [
+    [
+     "HWY 90",
+     1.2
+    ],
+    [
+     "OLD REAVES FERRY RD",
+     1.2
+    ],
+    [
+     "HWY 22",
+     2.4
+    ]
+   ],
+   "ocean_miles": 5.9,
+   "plat_open_space_common_acres": 188.2,
+   "plat_amenity": [
+    "AUBERON WOODS SUBDIVISION; PH 5 AMENITY SITE PORTION TO COMBINE",
+    "AUBERON WOODS PH 9; OPEN SPACE 28/AMENITY SITE AREA"
+   ],
+   "postal_city": [
+    [
+     "Conway",
+     219
+    ]
+   ],
+   "months": [
+    "2025-10",
+    "2026-09"
+   ]
+  },
+  {
+   "name": "GRANDE DUNES NORTH",
+   "sales": 197,
+   "builders": [
+    [
+     "NVR (Ryan Homes)",
+     197
+    ]
+   ],
+   "median_price": 402075.0,
+   "price_quartiles": [
+    342580.0,
+    402075.0,
+    514800.0
+   ],
+   "mid": [
+    -78.7933,
+    33.7882
+   ],
+   "municipality": [
+    [
+     "NORTH MYRTLE BEACH",
+     197
+    ]
+   ],
+   "nearest_highways_miles": [
+    [
+     "N KINGS HWY",
+     0.5
+    ],
+    [
+     "CAROLINA BAYS PKWY",
+     0.6
+    ],
+    [
+     "HWY 22",
+     0.8
+    ]
+   ],
+   "ocean_miles": 1.8,
+   "plat_open_space_common_acres": 5.6,
+   "plat_amenity": [],
+   "postal_city": [
+    [
+     "Longs",
+     131
+    ],
+    [
+     "no address yet",
+     66
+    ]
+   ],
+   "months": [
+    "2025-10",
+    "2026-09"
+   ]
+  },
+  {
+   "name": "ARCADIA",
+   "sales": 158,
+   "builders": [
+    [
+     "Clayton Properties",
+     83
+    ],
+    [
+     "Pulte",
+     38
+    ],
+    [
+     "Lennar",
+     37
+    ]
+   ],
+   "median_price": 420000.0,
+   "price_quartiles": [
+    384991.75,
+    420000.0,
+    508717.5
+   ],
+   "mid": [
+    -79.0044,
+    33.709
+   ],
+   "municipality": [
+    [
+     "unincorporated",
+     158
+    ]
+   ],
+   "nearest_highways_miles": [
+    [
+     "CAROLINA BAYS PKWY",
+     0.2
+    ],
+    [
+     "HWY 544",
+     0.7
+    ],
+    [
+     "FORESTBROOK RD",
+     0.9
+    ]
+   ],
+   "ocean_miles": 6.1,
+   "plat_open_space_common_acres": 66.1,
+   "plat_amenity": [],
+   "postal_city": [
+    [
+     "Myrtle Beach",
+     155
+    ],
+    [
+     "no address yet",
+     3
+    ]
+   ],
+   "months": [
+    "2025-10",
+    "2026-09"
+   ]
+  },
+  {
+   "name": "WATERSIDE NEIGHBORHOOD",
+   "sales": 137,
+   "builders": [
+    [
+     "Meritage",
+     137
+    ]
+   ],
+   "median_price": 365000.0,
+   "price_quartiles": [
+    334900.0,
+    365000.0,
+    405000.0
+   ],
+   "mid": [
+    -78.7847,
+    33.8
+   ],
+   "municipality": [
+    [
+     "NORTH MYRTLE BEACH",
+     137
+    ]
+   ],
+   "nearest_highways_miles": [
+    [
+     "HWY 22",
+     0.3
+    ],
+    [
+     "CAROLINA BAYS PKWY",
+     0.5
+    ],
+    [
+     "N KINGS HWY",
+     1.0
+    ]
+   ],
+   "ocean_miles": 2.2,
+   "plat_open_space_common_acres": 42.5,
+   "plat_amenity": [],
+   "postal_city": [
+    [
+     "Longs",
+     137
+    ]
+   ],
+   "months": [
+    "2025-10",
+    "2026-09"
+   ]
+  },
+  {
+   "name": "INDIGO GROVE",
+   "sales": 136,
+   "builders": [
+    [
+     "Lennar",
+     135
+    ],
+    [
+     "Chris Manning",
+     1
+    ]
+   ],
+   "median_price": 245000.0,
+   "price_quartiles": [
+    235000.0,
+    245000.0,
+    261827.5
+   ],
+   "mid": [
+    -78.7497,
+    33.8629
+   ],
+   "municipality": [
+    [
+     "unincorporated",
+     136
+    ]
+   ],
+   "nearest_highways_miles": [
+    [
+     "HWY 90",
+     0.4
+    ],
+    [
+     "S HWY 57",
+     1.2
+    ],
+    [
+     "ROBERT EDGE PKY",
+     2.7
+    ]
+   ],
+   "ocean_miles": 4.8,
+   "plat_open_space_common_acres": 22.5,
+   "plat_amenity": [],
+   "postal_city": [
+    [
+     "Longs",
+     136
+    ]
+   ],
+   "months": [
+    "2025-11",
+    "2026-09"
+   ]
+  },
+  {
+   "name": "CHESTNUT GREENS",
+   "sales": 120,
+   "builders": [
+    [
+     "Pulte",
+     120
+    ]
+   ],
+   "median_price": 634305.0,
+   "price_quartiles": [
+    480678.0,
+    634305.0,
+    716077.5
+   ],
+   "mid": [
+    -78.6962,
+    33.8225
+   ],
+   "municipality": [
+    [
+     "NORTH MYRTLE BEACH",
+     120
+    ]
+   ],
+   "nearest_highways_miles": [
+    [
+     "S HWY 17",
+     0.4
+    ],
+    [
+     "ROBERT EDGE PKY",
+     1.0
+    ],
+    [
+     "CAROLINA BAYS PKWY",
+     1.2
+    ]
+   ],
+   "ocean_miles": 0.9,
+   "plat_open_space_common_acres": 60.7,
+   "plat_amenity": [],
+   "postal_city": [
+    [
+     "North Myrtle Beach",
+     120
+    ]
+   ],
+   "months": [
+    "2025-10",
+    "2026-09"
+   ]
+  },
+  {
+   "name": "CYPRESS RIDGE",
+   "sales": 116,
+   "builders": [
+    [
+     "Meritage",
+     116
+    ]
+   ],
+   "median_price": 294950.0,
+   "price_quartiles": [
+    264492.5,
+    294950.0,
+    320492.5
+   ],
+   "mid": [
+    -78.7355,
+    33.9744
+   ],
+   "municipality": [
+    [
+     "unincorporated",
+     116
+    ]
+   ],
+   "nearest_highways_miles": [
+    [
+     "HWY 9",
+     0.4
+    ],
+    [
+     "N HWY 905",
+     1.7
+    ],
+    [
+     "S HWY 905",
+     2.5
+    ]
+   ],
+   "ocean_miles": 11.4,
+   "plat_open_space_common_acres": 35.0,
+   "plat_amenity": [],
+   "postal_city": [
+    [
+     "Longs",
+     116
+    ]
+   ],
+   "months": [
+    "2025-10",
+    "2026-08"
+   ]
+  },
+  {
+   "name": "KINGSTON OAKS",
+   "sales": 111,
+   "builders": [
+    [
+     "Lennar",
+     111
+    ]
+   ],
+   "median_price": 243500.0,
+   "price_quartiles": [
+    232500.0,
+    243500.0,
+    258950.0
+   ],
+   "mid": [
+    -78.9934,
+    33.9071
+   ],
+   "municipality": [
+    [
+     "CONWAY",
+     111
+    ]
+   ],
+   "nearest_highways_miles": [
+    [
+     "HWY 19",
+     1.6
+    ],
+    [
+     "HWY 22",
+     2.3
+    ],
+    [
+     "HWY 905",
+     2.3
+    ]
+   ],
+   "ocean_miles": 15.3,
+   "plat_open_space_common_acres": 41.1,
+   "plat_amenity": [],
+   "postal_city": [
+    [
+     "Conway",
+     95
+    ],
+    [
+     "no address yet",
+     16
+    ]
+   ],
+   "months": [
+    "2025-10",
+    "2026-09"
+   ]
+  },
+  {
+   "name": "CRESCENT COVE",
+   "sales": 107,
+   "builders": [
+    [
+     "Pulte",
+     107
+    ]
+   ],
+   "median_price": 459795.0,
+   "price_quartiles": [
+    425295.0,
+    459795.0,
+    564895.0
+   ],
+   "mid": [
+    -78.9668,
+    33.6922
+   ],
+   "municipality": [
+    [
+     "unincorporated",
+     107
+    ]
+   ],
+   "nearest_highways_miles": [
+    [
+     "SOCASTEE BLVD",
+     0.5
+    ],
+    [
+     "HWY 17 BYP",
+     0.6
+    ],
+    [
+     "FARROW PKY",
+     0.6
+    ]
+   ],
+   "ocean_miles": 3.7,
+   "plat_open_space_common_acres": 76.6,
+   "plat_amenity": [],
+   "postal_city": [
+    [
+     "Myrtle Beach",
+     107
+    ]
+   ],
+   "months": [
+    "2025-10",
+    "2026-09"
+   ]
+  },
+  {
+   "name": "EDEN SPRINGS",
+   "sales": 101,
+   "builders": [
+    [
+     "D.R. Horton",
+     101
+    ]
+   ],
+   "median_price": 352000.0,
+   "price_quartiles": [
+    323000.0,
+    352000.0,
+    418000.0
+   ],
+   "mid": [
+    -78.7952,
+    33.8527
+   ],
+   "municipality": [
+    [
+     "unincorporated",
+     101
+    ]
+   ],
+   "nearest_highways_miles": [
+    [
+     "HWY 90",
+     0.3
+    ],
+    [
+     "HWY 22",
+     1.4
+    ],
+    [
+     "CAROLINA BAYS PKWY",
+     3.0
+    ]
+   ],
+   "ocean_miles": 5.6,
+   "plat_open_space_common_acres": 120.8,
+   "plat_amenity": [],
+   "postal_city": [
+    [
+     "Longs",
+     100
+    ],
+    [
+     "no address yet",
+     1
+    ]
+   ],
+   "months": [
+    "2025-10",
+    "2026-09"
+   ]
+  }
+ ]
+}

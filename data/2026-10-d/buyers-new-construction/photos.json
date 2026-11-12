@@ -1,0 +1,47 @@
+{
+ "photos": [
+  {
+   "slug": "buyers-new-construction",
+   "file": "images/2026-10-d/buyers-new-construction/new-street-being-built-myrtle-beach-2023-1200w.webp",
+   "variants": {
+    "600": "images/2026-10-d/buyers-new-construction/new-street-being-built-myrtle-beach-2023-600w.webp",
+    "1200": "images/2026-10-d/buyers-new-construction/new-street-being-built-myrtle-beach-2023-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "New streets being built in the City of Myrtle Beach, from above (USDA NAIP, April 10, 2023)",
+   "what": "A new neighborhood in the City of Myrtle Beach from above on April 10, 2023: bare dirt lots, a new concrete slab, a house in open wood framing and finished houses, beside a pond. Chapter3 added four numbered markers and an outline round the slab.",
+   "caption": "New streets in the City of Myrtle Beach from above, in April 2023.",
+   "alt": "Aerial view of a new neighborhood with curving streets and ponds: finished houses with gray roofs, bare dirt lots between them, a white concrete slab and a house still in open wood framing, marked 1 to 4",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "a neighborhood laid out around ponds, inside the city limits"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "license_note": "Same source and terms as the batch 2026-10-a and 2026-10-b NAIP records (data/2026-10-b/photos.json, aynor-country-lot): the USGS service offers 'free downloads of public domain, NAIP compressed orthoimagery'; the USDA FSA policy page says public domain information 'may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.'",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS). Numbered markers by Chapter3 Realty.",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (tiles m_3307810_se_17_060_20230410 and m_3307810_sw_17_060_20230410, from the image service's catalog query at the spot). Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023), 440 m by 330 m at 2400 by 1800 px, centered on 33.75509 N, 78.81522 W; the exact request is in source_request.",
+   "subject_check": "Checked 2026-11-01 by the writer: Census TIGERweb incorporated places at 33.7565 N, 78.8125 W returns 'Myrtle Beach city' (GEOID 4549075). Horry County parcel layer 24 at that point: land use 101 (residential), tax district 880, a recorded subdivision lot. The caption names the city only, no subdivision and no builder. The four markers were placed by eye on what the 2400 px export shows: 1 on a bare dirt lot, 2 beside a white concrete slab with no walls, 3 beside a house in open wood framing with lumber around it, 4 beside finished houses with gray roofs. Marker centers in the 2400 px export: (1060,1150), (1350,1130), (712,1400), (1482,1248). No person, plate or sign is readable at 60 cm. Review round 1 (2026-11-01, fixer): redrawn from the unmarked 2400 px export (wf2 naip/b.png, the source_request view). Marker 2 sat on dirt right of the slab; the slab (about x 1193 to 1267, y 1060 to 1200 in the 2400 px export) now has an orange outline with a short leader to marker 2 at (1346,1128). Markers 1, 3 and 4 unchanged. Checked at full size.",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8773934.763396699%2C3995765.357777091%2C-8773405.548480354%2C3996162.268964349&bboxSR=3857&imageSR=3857&size=2400%2C1800&format=png&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+   "naip_tiles": [
+    "m_3307810_se_17_060_20230410",
+    "m_3307810_sw_17_060_20230410"
+   ],
+   "taken": "2023-04-10",
+   "original_size": "2400x1800 export of 440 x 330 m; cut 1400 x 1050 px (x 560, y 700) after the markers, then resized",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty exported this view from the NAIP image service, added four numbered markers and an outline round the slab, cut it to the middle of the street and resized it",
+   "share_alike": false,
+   "display_credit": "U.S. government aerial photo"
+  }
+ ]
+}

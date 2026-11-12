@@ -1,0 +1,605 @@
+{
+ "pulled": "2026-11-01T01:56:08.685331Z",
+ "totals": {
+  "house_all": {
+   "query": {
+    "type": "house"
+   },
+   "total": 3741
+  },
+  "townhouse_all": {
+   "query": {
+    "type": "townhouse"
+   },
+   "total": 369
+  },
+  "condo_all": {
+   "query": {
+    "type": "condo"
+   },
+   "total": 2867
+  },
+  "all_types": {
+   "query": {},
+   "total": 8892
+  },
+  "new_all_types": {
+   "query": {
+    "has": "new_construction"
+   },
+   "total": 1488
+  },
+  "new_never_occupied_all": {
+   "query": {
+    "has": "quick_move_in"
+   },
+   "total": 657
+  },
+  "new_never_occupied_house": {
+   "query": {
+    "type": "house",
+    "has": "quick_move_in"
+   },
+   "total": 570
+  },
+  "new_condo": {
+   "query": {
+    "type": "condo",
+    "has": "new_construction"
+   },
+   "total": 43
+  },
+  "builder_dr_horton": {
+   "query": {
+    "has": "new_construction,builder_dr_horton"
+   },
+   "total": 251
+  },
+  "builder_lennar": {
+   "query": {
+    "has": "new_construction,builder_lennar"
+   },
+   "total": 36
+  },
+  "builder_bradley_jones": {
+   "query": {
+    "has": "new_construction,builder_bradley_jones"
+   },
+   "total": 71
+  },
+  "builder_beverly": {
+   "query": {
+    "has": "new_construction,builder_beverly"
+   },
+   "total": 56
+  },
+  "builder_mungo": {
+   "query": {
+    "has": "new_construction,builder_mungo"
+   },
+   "total": 52
+  },
+  "builder_beazer": {
+   "query": {
+    "has": "new_construction,builder_beazer"
+   },
+   "total": 46
+  },
+  "builder_meritage": {
+   "query": {
+    "has": "new_construction,builder_meritage"
+   },
+   "total": 50
+  },
+  "builder_stanley_martin": {
+   "query": {
+    "has": "new_construction,builder_stanley_martin"
+   },
+   "total": 51
+  },
+  "builder_pulte": {
+   "query": {
+    "has": "new_construction,builder_pulte"
+   },
+   "total": 24
+  },
+  "builder_ryan": {
+   "query": {
+    "has": "new_construction,builder_ryan"
+   },
+   "total": 43
+  },
+  "builder_chesapeake": {
+   "query": {
+    "has": "new_construction,builder_chesapeake"
+   },
+   "total": 34
+  },
+  "builder_dream_finders": {
+   "query": {
+    "has": "new_construction,builder_dream_finders"
+   },
+   "total": 31
+  },
+  "builder_clayton": {
+   "query": {
+    "has": "new_construction,builder_clayton"
+   },
+   "total": 14
+  },
+  "builder_adams": {
+   "query": {
+    "has": "new_construction,builder_adams"
+   },
+   "total": 20
+  },
+  "builder_starlight": {
+   "query": {
+    "has": "new_construction,builder_starlight"
+   },
+   "total": 16
+  },
+  "builder_great_southern": {
+   "query": {
+    "has": "new_construction,builder_great_southern"
+   },
+   "total": 10
+  },
+  "builder_ashton_woods": {
+   "query": {
+    "has": "new_construction,builder_ashton_woods"
+   },
+   "total": 10
+  }
+ },
+ "sets": {
+  "new_house": {
+   "pulled": 1263,
+   "no_point": 0,
+   "in_horry": 1006,
+   "all": {
+    "count": 1006,
+    "median_price": 371445.0,
+    "median_sqft": 1913.0,
+    "median_ppsf": 199.9,
+    "n_ppsf": 1006,
+    "median_acres": 0.23,
+    "n_acres": 998
+   },
+   "years": {
+    "2025": 68,
+    "2026": 757,
+    "2027": 63
+   }
+  },
+  "new_townhouse": {
+   "pulled": 131,
+   "no_point": 0,
+   "in_horry": 108,
+   "all": {
+    "count": 108,
+    "median_price": 273490.0,
+    "median_sqft": 1581.0,
+    "median_ppsf": 171.5,
+    "n_ppsf": 108,
+    "median_acres": null,
+    "n_acres": 0
+   },
+   "years": {
+    "2025": 11,
+    "2026": 66,
+    "2027": 11
+   }
+  },
+  "nearlynew_house": {
+   "pulled": 737,
+   "no_point": 0,
+   "in_horry": 664,
+   "all": {
+    "count": 664,
+    "median_price": 435450.0,
+    "median_sqft": 2030.0,
+    "median_ppsf": 217.6,
+    "n_ppsf": 664,
+    "median_acres": 0.19,
+    "n_acres": 650
+   },
+   "years": {}
+  },
+  "all_house": {
+   "pulled": 3731,
+   "no_point": 0,
+   "in_horry": 3014,
+   "all": {
+    "count": 3014,
+    "median_price": 415150.0,
+    "median_sqft": 1928.0,
+    "median_ppsf": 213.7,
+    "n_ppsf": 3014,
+    "median_acres": 0.21,
+    "n_acres": 2899
+   },
+   "years": {
+    "2025": 119,
+    "2026": 772,
+    "2027": 63
+   }
+  }
+ },
+ "by_city_house": [
+  {
+   "city": "Conway",
+   "new": {
+    "count": 368,
+    "median_price": 333945.0,
+    "median_sqft": 1889.0,
+    "median_ppsf": 181.8,
+    "n_ppsf": 368,
+    "median_acres": 0.23,
+    "n_acres": 368
+   },
+   "nearly_new_2016_2023": {
+    "count": 133,
+    "median_price": 315000.0,
+    "median_sqft": 1770,
+    "median_ppsf": 194.5,
+    "n_ppsf": 133,
+    "median_acres": 0.22,
+    "n_acres": 132
+   },
+   "ppsf_premium_pct": -6.5
+  },
+  {
+   "city": "Longs",
+   "new": {
+    "count": 196,
+    "median_price": 349490.0,
+    "median_sqft": 1886.5,
+    "median_ppsf": 188.4,
+    "n_ppsf": 196,
+    "median_acres": 0.19,
+    "n_acres": 196
+   },
+   "nearly_new_2016_2023": {
+    "count": 67,
+    "median_price": 294300.0,
+    "median_sqft": 1615,
+    "median_ppsf": 186.2,
+    "n_ppsf": 67,
+    "median_acres": 0.17,
+    "n_acres": 67
+   },
+   "ppsf_premium_pct": 1.2
+  },
+  {
+   "city": "Myrtle Beach",
+   "new": {
+    "count": 192,
+    "median_price": 505595.0,
+    "median_sqft": 2204.5,
+    "median_ppsf": 235.4,
+    "n_ppsf": 192,
+    "median_acres": 0.17,
+    "n_acres": 185
+   },
+   "nearly_new_2016_2023": {
+    "count": 287,
+    "median_price": 509900.0,
+    "median_sqft": 2390,
+    "median_ppsf": 234.5,
+    "n_ppsf": 287,
+    "median_acres": 0.18,
+    "n_acres": 277
+   },
+   "ppsf_premium_pct": 0.4
+  },
+  {
+   "city": "Loris",
+   "new": {
+    "count": 99,
+    "median_price": 339997.0,
+    "median_sqft": 1737,
+    "median_ppsf": 203.0,
+    "n_ppsf": 99,
+    "median_acres": 0.34,
+    "n_acres": 99
+   },
+   "nearly_new_2016_2023": {
+    "count": 10,
+    "median_price": 377450.0,
+    "median_sqft": 1929.0,
+    "median_ppsf": 221.8,
+    "n_ppsf": 10,
+    "median_acres": 0.54,
+    "n_acres": 10
+   },
+   "ppsf_premium_pct": -8.5
+  },
+  {
+   "city": "Little River",
+   "new": {
+    "count": 44,
+    "median_price": 449945.0,
+    "median_sqft": 1984.5,
+    "median_ppsf": 229.1,
+    "n_ppsf": 44,
+    "median_acres": 0.17,
+    "n_acres": 44
+   },
+   "nearly_new_2016_2023": {
+    "count": 54,
+    "median_price": 399949.5,
+    "median_sqft": 1926.0,
+    "median_ppsf": 221.8,
+    "n_ppsf": 54,
+    "median_acres": 0.18,
+    "n_acres": 53
+   },
+   "ppsf_premium_pct": 3.3
+  },
+  {
+   "city": "Galivants Ferry",
+   "new": {
+    "count": 32,
+    "median_price": 389400.0,
+    "median_sqft": 1892.0,
+    "median_ppsf": 229.5,
+    "n_ppsf": 32,
+    "median_acres": 0.66,
+    "n_acres": 32
+   },
+   "nearly_new_2016_2023": {
+    "count": 18,
+    "median_price": 349950.0,
+    "median_sqft": 1523.0,
+    "median_ppsf": 218.9,
+    "n_ppsf": 18,
+    "median_acres": 0.525,
+    "n_acres": 18
+   },
+   "ppsf_premium_pct": 4.8
+  },
+  {
+   "city": "North Myrtle Beach",
+   "new": {
+    "count": 28,
+    "median_price": 666250.0,
+    "median_sqft": 2449.0,
+    "median_ppsf": 326.5,
+    "n_ppsf": 28,
+    "median_acres": 0.17,
+    "n_acres": 27
+   },
+   "nearly_new_2016_2023": {
+    "count": 28,
+    "median_price": 829950.0,
+    "median_sqft": 2561.5,
+    "median_ppsf": 319.1,
+    "n_ppsf": 28,
+    "median_acres": 0.16,
+    "n_acres": 26
+   },
+   "ppsf_premium_pct": 2.3
+  },
+  {
+   "city": "Aynor",
+   "new": {
+    "count": 24,
+    "median_price": 337445.0,
+    "median_sqft": 1821.5,
+    "median_ppsf": 205.2,
+    "n_ppsf": 24,
+    "median_acres": 0.42500000000000004,
+    "n_acres": 24
+   },
+   "nearly_new_2016_2023": {
+    "count": 12,
+    "median_price": 315000.0,
+    "median_sqft": 1772.0,
+    "median_ppsf": 179.9,
+    "n_ppsf": 12,
+    "median_acres": 0.265,
+    "n_acres": 12
+   },
+   "ppsf_premium_pct": 14.1
+  },
+  {
+   "city": "Nichols",
+   "new": {
+    "count": 10,
+    "median_price": 392400.0,
+    "median_sqft": 1645.0,
+    "median_ppsf": 235.0,
+    "n_ppsf": 10,
+    "median_acres": 2.57,
+    "n_acres": 10
+   },
+   "nearly_new_2016_2023": {
+    "count": 0,
+    "median_price": null,
+    "median_sqft": null,
+    "median_ppsf": null,
+    "n_ppsf": 0,
+    "median_acres": null,
+    "n_acres": 0
+   },
+   "ppsf_premium_pct": null
+  },
+  {
+   "city": "Surfside Beach",
+   "new": {
+    "count": 7,
+    "median_price": 1255000.0,
+    "median_sqft": 2276,
+    "median_ppsf": 559.3,
+    "n_ppsf": 7,
+    "median_acres": 0.1,
+    "n_acres": 7
+   },
+   "nearly_new_2016_2023": {
+    "count": 13,
+    "median_price": 570000.0,
+    "median_sqft": 2225,
+    "median_ppsf": 276.8,
+    "n_ppsf": 13,
+    "median_acres": 0.22,
+    "n_acres": 13
+   },
+   "ppsf_premium_pct": null
+  },
+  {
+   "city": "Murrells Inlet",
+   "new": {
+    "count": 5,
+    "median_price": 1449900.0,
+    "median_sqft": 3118,
+    "median_ppsf": 498.7,
+    "n_ppsf": 5,
+    "median_acres": 0.79,
+    "n_acres": 5
+   },
+   "nearly_new_2016_2023": {
+    "count": 40,
+    "median_price": 525000.0,
+    "median_sqft": 2098.0,
+    "median_ppsf": 250.0,
+    "n_ppsf": 40,
+    "median_acres": 0.17,
+    "n_acres": 40
+   },
+   "ppsf_premium_pct": null
+  }
+ ],
+ "new_house_price_bands": [
+  {
+   "band": [
+    0,
+    300000
+   ],
+   "count": 198
+  },
+  {
+   "band": [
+    300001,
+    400000
+   ],
+   "count": 385
+  },
+  {
+   "band": [
+    400001,
+    500000
+   ],
+   "count": 190
+  },
+  {
+   "band": [
+    500001,
+    750000
+   ],
+   "count": 149
+  },
+  {
+   "band": [
+    750001,
+    99000000000.0
+   ],
+   "count": 84
+  }
+ ],
+ "share_new": {
+  "houses_in_horry": 3014,
+  "new_in_horry_all_set": 1006,
+  "by_city": [
+   {
+    "city": "Loris",
+    "houses": 155,
+    "new": 99,
+    "pct": 64
+   },
+   {
+    "city": "Longs",
+    "houses": 346,
+    "new": 196,
+    "pct": 57
+   },
+   {
+    "city": "Aynor",
+    "houses": 44,
+    "new": 24,
+    "pct": 55
+   },
+   {
+    "city": "Conway",
+    "houses": 673,
+    "new": 368,
+    "pct": 55
+   },
+   {
+    "city": "Galivants Ferry",
+    "houses": 62,
+    "new": 32,
+    "pct": 52
+   },
+   {
+    "city": "Little River",
+    "houses": 187,
+    "new": 44,
+    "pct": 24
+   },
+   {
+    "city": "Myrtle Beach",
+    "houses": 1049,
+    "new": 192,
+    "pct": 18
+   },
+   {
+    "city": "North Myrtle Beach",
+    "houses": 257,
+    "new": 28,
+    "pct": 11
+   },
+   {
+    "city": "Surfside Beach",
+    "houses": 84,
+    "new": 7,
+    "pct": 8
+   },
+   {
+    "city": "Murrells Inlet",
+    "houses": 133,
+    "new": 5,
+    "pct": 4
+   }
+  ]
+ },
+ "matched": {
+  "rule": "new house vs houses built 2016-2023 (not flagged new) within 1 mile and within 20% of its square feet; at least 3 matches",
+  "new_houses_matched": 244,
+  "median_ratio": 1.009,
+  "share_new_cheaper_per_sqft": 0.488,
+  "quartiles": [
+   0.893,
+   1.009,
+   1.135
+  ],
+  "by_city": {
+   "Conway": {
+    "n": 58,
+    "median_ratio": 1.031
+   },
+   "Little River": {
+    "n": 17,
+    "median_ratio": 0.948
+   },
+   "Longs": {
+    "n": 60,
+    "median_ratio": 0.953
+   },
+   "Myrtle Beach": {
+    "n": 87,
+    "median_ratio": 1.044
+   }
+  }
+ }
+}

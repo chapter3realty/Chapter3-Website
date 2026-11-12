@@ -1,0 +1,27 @@
+{
+ "flood_source": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/19/query",
+ "flood_read": "2026-11-01",
+ "listings_pulled": "2026-11-01T01:56:08.685331Z",
+ "new_house": {
+  "in_horry": 1006,
+  "in_sfha": 52,
+  "by_zone": {
+   "AE": 52
+  }
+ },
+ "nearlynew_house": {
+  "in_horry": 664,
+  "in_sfha": 34,
+  "by_zone": {
+   "AE": 34
+  }
+ },
+ "all_house": {
+  "in_horry": 3014,
+  "in_sfha": 248,
+  "by_zone": {
+   "AE": 241,
+   "VE": 7
+  }
+ }
+}

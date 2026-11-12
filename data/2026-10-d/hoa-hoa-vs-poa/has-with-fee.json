@@ -1,0 +1,152 @@
+{
+ "pulled": "2026-11-01T02:41:59.050971Z",
+ "types": {
+  "condo": {
+   "total": 2867,
+   "fee_zero_or_blank": 1,
+   "with_fee": 2866,
+   "has": {
+    "hoa_includes_insurance": {
+     "all": 2242,
+     "no_fee": 0,
+     "with_fee": 2242,
+     "pct_of_with_fee": 78.2
+    },
+    "lawn_care_included": {
+     "all": 2605,
+     "no_fee": 0,
+     "with_fee": 2605,
+     "pct_of_with_fee": 90.9
+    },
+    "hoa_includes_water_sewer": {
+     "all": 2403,
+     "no_fee": 0,
+     "with_fee": 2403,
+     "pct_of_with_fee": 83.8
+    },
+    "hoa_includes_trash": {
+     "all": 2597,
+     "no_fee": 0,
+     "with_fee": 2597,
+     "pct_of_with_fee": 90.6
+    },
+    "hoa_includes_internet": {
+     "all": 1996,
+     "no_fee": 0,
+     "with_fee": 1996,
+     "pct_of_with_fee": 69.6
+    },
+    "community_amenities": {
+     "all": 2504,
+     "no_fee": 0,
+     "with_fee": 2504,
+     "pct_of_with_fee": 87.4
+    },
+    "gated": {
+     "all": 384,
+     "no_fee": 0,
+     "with_fee": 384,
+     "pct_of_with_fee": 13.4
+    }
+   }
+  },
+  "townhouse": {
+   "total": 368,
+   "fee_zero_or_blank": 30,
+   "with_fee": 338,
+   "has": {
+    "hoa_includes_insurance": {
+     "all": 116,
+     "no_fee": 1,
+     "with_fee": 115,
+     "pct_of_with_fee": 34.0
+    },
+    "lawn_care_included": {
+     "all": 281,
+     "no_fee": 0,
+     "with_fee": 281,
+     "pct_of_with_fee": 83.1
+    },
+    "hoa_includes_water_sewer": {
+     "all": 64,
+     "no_fee": 0,
+     "with_fee": 64,
+     "pct_of_with_fee": 18.9
+    },
+    "hoa_includes_trash": {
+     "all": 250,
+     "no_fee": 3,
+     "with_fee": 247,
+     "pct_of_with_fee": 73.1
+    },
+    "hoa_includes_internet": {
+     "all": 84,
+     "no_fee": 0,
+     "with_fee": 84,
+     "pct_of_with_fee": 24.9
+    },
+    "community_amenities": {
+     "all": 190,
+     "no_fee": 1,
+     "with_fee": 189,
+     "pct_of_with_fee": 55.9
+    },
+    "gated": {
+     "all": 26,
+     "no_fee": 0,
+     "with_fee": 26,
+     "pct_of_with_fee": 7.7
+    }
+   }
+  },
+  "house": {
+   "total": 3743,
+   "fee_zero_or_blank": 1153,
+   "with_fee": 2590,
+   "has": {
+    "hoa_includes_insurance": {
+     "all": 105,
+     "no_fee": 0,
+     "with_fee": 105,
+     "pct_of_with_fee": 4.1
+    },
+    "lawn_care_included": {
+     "all": 244,
+     "no_fee": 4,
+     "with_fee": 240,
+     "pct_of_with_fee": 9.3
+    },
+    "hoa_includes_water_sewer": {
+     "all": 41,
+     "no_fee": 1,
+     "with_fee": 40,
+     "pct_of_with_fee": 1.5
+    },
+    "hoa_includes_trash": {
+     "all": 1248,
+     "no_fee": 44,
+     "with_fee": 1204,
+     "pct_of_with_fee": 46.5
+    },
+    "hoa_includes_internet": {
+     "all": 237,
+     "no_fee": 3,
+     "with_fee": 234,
+     "pct_of_with_fee": 9.0
+    },
+    "community_amenities": {
+     "all": 1636,
+     "no_fee": 60,
+     "with_fee": 1576,
+     "pct_of_with_fee": 60.8
+    },
+    "gated": {
+     "all": 446,
+     "no_fee": 63,
+     "with_fee": 383,
+     "pct_of_with_fee": 14.8
+    }
+   }
+  }
+ }
+}

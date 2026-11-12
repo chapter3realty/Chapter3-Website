@@ -1,0 +1,688 @@
+{
+ "inputs": {
+  "sales_in_file": 13194,
+  "dropped": {
+   "other land use": 419
+  },
+  "kept": 12775,
+  "with_point": 11985
+ },
+ "by_kind": {
+  "condo": {
+   "sales": 4332,
+   "median": 219000.0,
+   "under_250k": 2621,
+   "under_300k": 3138
+  },
+  "townhouse": {
+   "sales": 663,
+   "median": 253500.0,
+   "under_250k": 324,
+   "under_300k": 430
+  },
+  "house": {
+   "sales": 7628,
+   "median": 366555.0,
+   "under_250k": 901,
+   "under_300k": 2147
+  },
+  "manufactured": {
+   "sales": 152,
+   "median": 146750.0,
+   "under_250k": 132,
+   "under_300k": 148
+  }
+ },
+ "houses_new_vs_resale": {
+  "new": {
+   "sales": 1792,
+   "median": 349492.0,
+   "under_300k": 521
+  },
+  "resale": {
+   "sales": 5836,
+   "median": 375000.0,
+   "under_300k": 1626
+  }
+ },
+ "ladder": [
+  {
+   "band": [
+    0,
+    150000
+   ],
+   "total": 1356,
+   "condo": 1076,
+   "townhouse": 32,
+   "house": 171,
+   "manufactured": 77,
+   "house_new": 3,
+   "townhouse_new": 0
+  },
+  {
+   "band": [
+    150000,
+    200000
+   ],
+   "total": 1042,
+   "condo": 800,
+   "townhouse": 83,
+   "house": 132,
+   "manufactured": 27,
+   "house_new": 4,
+   "townhouse_new": 1
+  },
+  {
+   "band": [
+    200000,
+    250000
+   ],
+   "total": 1580,
+   "condo": 745,
+   "townhouse": 209,
+   "house": 598,
+   "manufactured": 28,
+   "house_new": 158,
+   "townhouse_new": 89
+  },
+  {
+   "band": [
+    250000,
+    300000
+   ],
+   "total": 1885,
+   "condo": 517,
+   "townhouse": 106,
+   "house": 1246,
+   "manufactured": 16,
+   "house_new": 356,
+   "townhouse_new": 40
+  },
+  {
+   "band": [
+    300000,
+    350000
+   ],
+   "total": 1687,
+   "condo": 304,
+   "townhouse": 91,
+   "house": 1290,
+   "manufactured": 2,
+   "house_new": 382,
+   "townhouse_new": 33
+  },
+  {
+   "band": [
+    350000,
+    400000
+   ],
+   "total": 1342,
+   "condo": 258,
+   "townhouse": 75,
+   "house": 1009,
+   "manufactured": 0,
+   "house_new": 289,
+   "townhouse_new": 13
+  },
+  {
+   "band": [
+    400000,
+    450000
+   ],
+   "total": 928,
+   "condo": 165,
+   "townhouse": 18,
+   "house": 745,
+   "manufactured": 0,
+   "house_new": 205,
+   "townhouse_new": 0
+  },
+  {
+   "band": [
+    450000,
+    null
+   ],
+   "total": 2955,
+   "condo": 467,
+   "townhouse": 49,
+   "house": 2437,
+   "manufactured": 2,
+   "house_new": 395,
+   "townhouse_new": 28
+  }
+ ],
+ "under_250k": {
+  "total": 3978,
+  "condo": 2621,
+  "townhouse": 324,
+  "house": 901,
+  "manufactured": 132,
+  "share_of_all_sales": 31.1
+ },
+ "under_300k": {
+  "total": 5863,
+  "condo": 3138,
+  "townhouse": 430,
+  "house": 2147,
+  "manufactured": 148,
+  "share_of_all_sales": 45.9
+ },
+ "starter_by_zip": [
+  {
+   "zip": "29526",
+   "name": "Conway",
+   "starter": 478,
+   "all_house_townhouse": 1137,
+   "share": 42.0,
+   "median_all": 315000.0
+  },
+  {
+   "zip": "29568",
+   "name": "Longs",
+   "starter": 313,
+   "all_house_townhouse": 744,
+   "share": 42.1,
+   "median_all": 315000.0
+  },
+  {
+   "zip": "29588",
+   "name": "Socastee",
+   "starter": 295,
+   "all_house_townhouse": 970,
+   "share": 30.4,
+   "median_all": 343750.0
+  },
+  {
+   "zip": "29527",
+   "name": "Conway",
+   "starter": 259,
+   "all_house_townhouse": 377,
+   "share": 68.7,
+   "median_all": 272000.0
+  },
+  {
+   "zip": "29579",
+   "name": "Myrtle Beach",
+   "starter": 234,
+   "all_house_townhouse": 1204,
+   "share": 19.4,
+   "median_all": 410000.0
+  },
+  {
+   "zip": "29566",
+   "name": "Little River",
+   "starter": 179,
+   "all_house_townhouse": 592,
+   "share": 30.2,
+   "median_all": 339900.0
+  },
+  {
+   "zip": "29569",
+   "name": "Loris",
+   "starter": 171,
+   "all_house_townhouse": 267,
+   "share": 64.0,
+   "median_all": 270000.0
+  },
+  {
+   "zip": "29577",
+   "name": "Myrtle Beach",
+   "starter": 132,
+   "all_house_townhouse": 482,
+   "share": 27.4,
+   "median_all": 415000.0
+  },
+  {
+   "zip": "29576",
+   "name": "Murrells Inlet",
+   "starter": 82,
+   "all_house_townhouse": 555,
+   "share": 14.8,
+   "median_all": 420000.0
+  },
+  {
+   "zip": "29575",
+   "name": "Surfside Beach",
+   "starter": 76,
+   "all_house_townhouse": 380,
+   "share": 20.0,
+   "median_all": 420000.0
+  },
+  {
+   "zip": "29582",
+   "name": "North Myrtle Beach",
+   "starter": 56,
+   "all_house_townhouse": 694,
+   "share": 8.1,
+   "median_all": 559632.5
+  },
+  {
+   "zip": "29511",
+   "name": "Aynor",
+   "starter": 43,
+   "all_house_townhouse": 99,
+   "share": 43.4,
+   "median_all": 310000.0
+  },
+  {
+   "zip": "29544",
+   "name": "Galivants Ferry",
+   "starter": 39,
+   "all_house_townhouse": 72,
+   "share": 54.2,
+   "median_all": 291250.0
+  },
+  {
+   "zip": "29572",
+   "name": "Myrtle Beach",
+   "starter": 34,
+   "all_house_townhouse": 224,
+   "share": 15.2,
+   "median_all": 640000.0
+  },
+  {
+   "zip": "29545",
+   "name": "Green Sea",
+   "starter": 6,
+   "all_house_townhouse": 7,
+   "share": 85.7,
+   "median_all": 155450.0
+  },
+  {
+   "zip": "29581",
+   "name": "Nichols",
+   "starter": 6,
+   "all_house_townhouse": 7,
+   "share": 85.7,
+   "median_all": 200000.0
+  }
+ ],
+ "starter_total_placed": 2403,
+ "flood": {
+  "house_townhouse_under_300k": {
+   "placed": 2403,
+   "in_sfha": 78,
+   "pct": 3.2,
+   "zones": {
+    "AE": 78
+   }
+  },
+  "condo_under_300k": {
+   "placed": 2926,
+   "in_sfha": 490,
+   "pct": 16.7,
+   "zones": {
+    "AE": 426,
+    "VE": 64
+   }
+  },
+  "all_house_townhouse": {
+   "placed": 7811,
+   "in_sfha": 417,
+   "pct": 5.3,
+   "zones": {
+    "AE": 412,
+    "VE": 5
+   }
+  },
+  "all_condo": {
+   "placed": 4034,
+   "in_sfha": 961,
+   "pct": 23.8,
+   "zones": {
+    "AE": 887,
+    "VE": 74
+   }
+  },
+  "all": {
+   "placed": 11985,
+   "in_sfha": 1381,
+   "pct": 11.5,
+   "zones": {
+    "AE": 1302,
+    "VE": 79
+   }
+  }
+ },
+ "out_of_state": {
+  "condo_under_300k": {
+   "matched": 2878,
+   "outside_sc": 1509,
+   "pct": 52.4
+  },
+  "house_townhouse_under_300k": {
+   "matched": 2307,
+   "outside_sc": 349,
+   "pct": 15.1
+  },
+  "all_under_300k": {
+   "matched": 5315,
+   "outside_sc": 1877,
+   "pct": 35.3
+  },
+  "all": {
+   "matched": 11755,
+   "outside_sc": 3504,
+   "pct": 29.8
+  }
+ },
+ "starter_tax_districts": [
+  [
+   "100",
+   488
+  ],
+  [
+   "500",
+   330
+  ],
+  [
+   "630",
+   295
+  ],
+  [
+   "110",
+   288
+  ],
+  [
+   "600",
+   249
+  ],
+  [
+   "250",
+   190
+  ],
+  [
+   "880",
+   126
+  ],
+  [
+   "400",
+   108
+  ],
+  [
+   "200",
+   88
+  ],
+  [
+   "800",
+   74
+  ],
+  [
+   "610",
+   73
+  ],
+  [
+   "550",
+   65
+  ]
+ ],
+ "listings_inputs": {
+  "listings_up_to_400k": 5017,
+  "inside_horry": 4414
+ },
+ "listings": {
+  "pulled": "2026-11-01T01:28:26.542242Z",
+  "totals": {
+   "house": {
+    "all": 3741,
+    "max400k": 1802,
+    "points": 1799
+   },
+   "townhouse": {
+    "all": 369,
+    "max400k": 296,
+    "points": 296
+   },
+   "condo": {
+    "all": 2866,
+    "max400k": 2420,
+    "points": 2418
+   },
+   "manufactured": {
+    "all": 517,
+    "max400k": 504,
+    "points": 504
+   },
+   "(all types)": {
+    "all": 8891
+   }
+  },
+  "house_le_250k": {
+   "count": 178,
+   "median_sqft": 1243.0,
+   "median_beds": 3.0,
+   "beds_3plus": 147,
+   "with_beds": 178,
+   "median_acres": 0.2,
+   "median_price": 234900.0
+  },
+  "house_le_300k": {
+   "count": 576,
+   "median_sqft": 1474.0,
+   "median_beds": 3.0,
+   "beds_3plus": 525,
+   "with_beds": 576,
+   "median_acres": 0.2,
+   "median_price": 270000.0
+  },
+  "house_le_350k": {
+   "count": 1081,
+   "median_sqft": 1606,
+   "median_beds": 3,
+   "beds_3plus": 1013,
+   "with_beds": 1081,
+   "median_acres": 0.21,
+   "median_price": 299900.0
+  },
+  "house_le_400k": {
+   "count": 1447,
+   "median_sqft": 1670,
+   "median_beds": 3,
+   "beds_3plus": 1370,
+   "with_beds": 1447,
+   "median_acres": 0.21,
+   "median_price": 318000.0
+  },
+  "townhouse_le_250k": {
+   "count": 136,
+   "median_sqft": 1418.0,
+   "median_beds": 3.0,
+   "beds_3plus": 82,
+   "with_beds": 136,
+   "median_acres": null,
+   "median_price": 226000.0
+  },
+  "townhouse_le_300k": {
+   "count": 202,
+   "median_sqft": 1430.0,
+   "median_beds": 3.0,
+   "beds_3plus": 131,
+   "with_beds": 202,
+   "median_acres": null,
+   "median_price": 239900.0
+  },
+  "townhouse_le_350k": {
+   "count": 239,
+   "median_sqft": 1437,
+   "median_beds": 3,
+   "beds_3plus": 158,
+   "with_beds": 239,
+   "median_acres": null,
+   "median_price": 244000.0
+  },
+  "townhouse_le_400k": {
+   "count": 261,
+   "median_sqft": 1437,
+   "median_beds": 3,
+   "beds_3plus": 176,
+   "with_beds": 261,
+   "median_acres": null,
+   "median_price": 249500.0
+  },
+  "condo_le_250k": {
+   "count": 1705,
+   "median_sqft": 741,
+   "median_beds": 1,
+   "beds_3plus": 173,
+   "with_beds": 1705,
+   "median_acres": null,
+   "median_price": 170000.0
+  },
+  "condo_le_300k": {
+   "count": 1974,
+   "median_sqft": 840.0,
+   "median_beds": 2.0,
+   "beds_3plus": 279,
+   "with_beds": 1974,
+   "median_acres": null,
+   "median_price": 180000.0
+  },
+  "condo_le_350k": {
+   "count": 2146,
+   "median_sqft": 885.0,
+   "median_beds": 2.0,
+   "beds_3plus": 353,
+   "with_beds": 2146,
+   "median_acres": null,
+   "median_price": 189900.0
+  },
+  "condo_le_400k": {
+   "count": 2291,
+   "median_sqft": 900,
+   "median_beds": 2,
+   "beds_3plus": 412,
+   "with_beds": 2291,
+   "median_acres": null,
+   "median_price": 198500.0
+  },
+  "manufactured_le_250k": {
+   "count": 323,
+   "median_sqft": 1200.0,
+   "median_beds": 3,
+   "beds_3plus": 192,
+   "with_beds": 311,
+   "median_acres": 0.51,
+   "median_price": 159990.0
+  },
+  "manufactured_le_300k": {
+   "count": 385,
+   "median_sqft": 1216.0,
+   "median_beds": 3,
+   "beds_3plus": 242,
+   "with_beds": 373,
+   "median_acres": 0.54,
+   "median_price": 175000.0
+  },
+  "manufactured_le_350k": {
+   "count": 407,
+   "median_sqft": 1227.5,
+   "median_beds": 3,
+   "beds_3plus": 262,
+   "with_beds": 395,
+   "median_acres": 0.54,
+   "median_price": 180000.0
+  },
+  "manufactured_le_400k": {
+   "count": 415,
+   "median_sqft": 1232.0,
+   "median_beds": 3,
+   "beds_3plus": 270,
+   "with_beds": 403,
+   "median_acres": 0.55,
+   "median_price": 184900.0
+  },
+  "house_le_300k_by_zip": [
+   {
+    "zip": "29526",
+    "name": "Conway",
+    "count": 118
+   },
+   {
+    "zip": "29568",
+    "name": "Longs",
+    "count": 111
+   },
+   {
+    "zip": "29527",
+    "name": "Conway",
+    "count": 105
+   },
+   {
+    "zip": "29569",
+    "name": "Loris",
+    "count": 61
+   },
+   {
+    "zip": "29588",
+    "name": "Socastee",
+    "count": 47
+   },
+   {
+    "zip": "29579",
+    "name": "Myrtle Beach",
+    "count": 37
+   },
+   {
+    "zip": "29566",
+    "name": "Little River",
+    "count": 22
+   },
+   {
+    "zip": "29511",
+    "name": "Aynor",
+    "count": 16
+   },
+   {
+    "zip": "29575",
+    "name": "Surfside Beach",
+    "count": 14
+   },
+   {
+    "zip": "29577",
+    "name": "Myrtle Beach",
+    "count": 14
+   },
+   {
+    "zip": "29544",
+    "name": "Galivants Ferry",
+    "count": 14
+   },
+   {
+    "zip": "29576",
+    "name": "Murrells Inlet",
+    "count": 8
+   },
+   {
+    "zip": "29582",
+    "name": "North Myrtle Beach",
+    "count": 4
+   },
+   {
+    "zip": "29581",
+    "name": "Nichols",
+    "count": 3
+   },
+   {
+    "zip": "29572",
+    "name": "Myrtle Beach",
+    "count": 2
+   }
+  ]
+ },
+ "tax_example": {
+  "value": 270000.0,
+  "mills_legal_residence": 91.9,
+  "mills_other": 201.0,
+  "tax_4pct": 993,
+  "tax_6pct": 3256,
+  "ratio": 3.28,
+  "levies": {
+   "county": 52.1,
+   "school_debt": 10.0,
+   "school_operating": 109.1,
+   "county_fire": 20.2,
+   "fire_apparatus": 1.5,
+   "waste_management": 8.1
+  }
+ }
+}

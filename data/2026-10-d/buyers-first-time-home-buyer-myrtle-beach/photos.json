@@ -1,0 +1,57 @@
+{
+ "_comment": "Photo records for /buyers/first-time-home-buyer-myrtle-beach/ (batch 2026-10-d). Checked with tools/photos.js check.",
+ "as_of": "2026-11-03",
+ "image_root": "chapter3realty",
+ "photos": [
+  {
+   "slug": "buyers-first-time-home-buyer-myrtle-beach",
+   "file": "images/2026-10-d/buyers-first-time-home-buyer-myrtle-beach/bent-oak-estates-houses-from-above.webp",
+   "variants": {
+    "600": "images/2026-10-d/buyers-first-time-home-buyer-myrtle-beach/bent-oak-estates-houses-from-above-600w.webp",
+    "1200": "images/2026-10-d/buyers-first-time-home-buyer-myrtle-beach/bent-oak-estates-houses-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Streets of houses in Bent Oak Estates, Myrtle Beach, NOAA aerial, January 2026",
+   "what": "Three streets of one-story houses on small lots, close together, with short driveways and small yards, in Bent Oak Estates in the City of Myrtle Beach, seen straight down from above on January 12, 2026. Bare winter trees; brown lawns. Cars are too small to read; no person can be recognized.",
+   "caption": "Houses in Bent Oak Estates, Myrtle Beach, seen from above.",
+   "alt": "Rows of small one-story houses with gray and brown roofs, short driveways and small yards along three streets, seen from above",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Bent Oak Estates"
+   },
+   "source": "https://noaa-eri-pds.s3.amazonaws.com/index.html#2026_Pre_Event/EC2601a_OB_N_RGB/",
+   "source_name": "NOAA Emergency Response Imagery",
+   "author": "NOAA National Geodetic Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+   "provenance": "U.S. government aerial photo: NOAA National Geodetic Survey (NGS), Remote Sensing Division, Emergency Response Imagery, 2026 pre-event coastal collection, East Coast group EC2601a, flown 2026-01-12 (the same group as the records for /invest/run-the-numbers/ and /submarkets/carolina-forest/the-farm/). One map tile, EC2601a_OB_N_C0785445w334115n.tif (4707 x 4707 px, WGS 84, 2.698e-6 degrees a pixel, top left -78.9125, 33.6875), downloaded 2026-11-03 from the public S3 bucket noaa-eri-pds. Frame: pixels 633 to 1833 across and 1003 to 1903 down, not resized.",
+   "license_note": "17 U.S.C. 105(a): \"Copyright protection under this title is not available for any work of the United States Government\". NOAA's terms on the Registry of Open Data (https://registry.opendata.aws/noaa-eri/): \"NOAA data disseminated through NODD are open to the public and can be used as desired.\" NOAA requests attribution for unaltered data and no implied endorsement. So: credit NOAA, say what Chapter3 changed (changes), never suggest NOAA endorses Chapter3.",
+   "terms_urls": [
+    "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+    "https://registry.opendata.aws/noaa-eri/"
+   ],
+   "taken": "2026-01-12",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: NOAA National Geodetic Survey, public domain.",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty cut a 1200 x 900 px view from one NOAA map tile and raised the contrast and color slightly",
+   "frame": {
+    "bbox_wgs84": [
+     -78.910792,
+     33.682366,
+     -78.907555,
+     33.684794
+    ]
+   },
+   "annotation_sources": {
+    "where": "Horry County parcels layer 24 at four points inside the frame (-78.90926 33.68294; -78.9088 33.68389; -78.90793 33.68417; -78.91019 33.68321): legal descriptions 'BENT OAK ESTATES #3; LT 51', 'BENT OAK ESTATES # 4; LOT 64', 'BENT OAK ESTATES #4; LOT 24', 'BENT OAK ESTATES # 4; LOT 88', land use 101 and 110, tax district 880, read 2026-11-03. https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24",
+    "sales": "Deed sales inside the frame, October 2025 to September 2026 (data/2026-10-d/sell-out-of-state-buyers/out-of-state-buyers.json, the sales this page's findings use): 11 sales of 10 houses, all in Bent Oak Estates; 10 sales of 9 houses were under $300,000 ($147,500 to $290,000); one, lot 43, was $570,000. Script: Blog-Brain batches/2026-10-d/buyers-first-time-home-buyer-myrtle-beach/frame-sales.py."
+   },
+   "source_files": [
+    "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0785445w334115n.tif"
+   ]
+  }
+ ]
+}

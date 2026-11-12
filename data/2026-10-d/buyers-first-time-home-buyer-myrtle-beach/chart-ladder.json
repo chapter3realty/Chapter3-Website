@@ -1,0 +1,110 @@
+{
+ "title": "Horry County home sales, Oct 2025 to Sep 2026, by price and kind of home",
+ "source": "Horry County deed index and parcel records",
+ "rows": [
+  {
+   "band": [
+    0,
+    150000
+   ],
+   "total": 1356,
+   "condo": 1076,
+   "townhouse": 32,
+   "house": 171,
+   "manufactured": 77,
+   "house_new": 3,
+   "townhouse_new": 0
+  },
+  {
+   "band": [
+    150000,
+    200000
+   ],
+   "total": 1042,
+   "condo": 800,
+   "townhouse": 83,
+   "house": 132,
+   "manufactured": 27,
+   "house_new": 4,
+   "townhouse_new": 1
+  },
+  {
+   "band": [
+    200000,
+    250000
+   ],
+   "total": 1580,
+   "condo": 745,
+   "townhouse": 209,
+   "house": 598,
+   "manufactured": 28,
+   "house_new": 158,
+   "townhouse_new": 89
+  },
+  {
+   "band": [
+    250000,
+    300000
+   ],
+   "total": 1885,
+   "condo": 517,
+   "townhouse": 106,
+   "house": 1246,
+   "manufactured": 16,
+   "house_new": 356,
+   "townhouse_new": 40
+  },
+  {
+   "band": [
+    300000,
+    350000
+   ],
+   "total": 1687,
+   "condo": 304,
+   "townhouse": 91,
+   "house": 1290,
+   "manufactured": 2,
+   "house_new": 382,
+   "townhouse_new": 33
+  },
+  {
+   "band": [
+    350000,
+    400000
+   ],
+   "total": 1342,
+   "condo": 258,
+   "townhouse": 75,
+   "house": 1009,
+   "manufactured": 0,
+   "house_new": 289,
+   "townhouse_new": 13
+  },
+  {
+   "band": [
+    400000,
+    450000
+   ],
+   "total": 928,
+   "condo": 165,
+   "townhouse": 18,
+   "house": 745,
+   "manufactured": 0,
+   "house_new": 205,
+   "townhouse_new": 0
+  },
+  {
+   "band": [
+    450000,
+    null
+   ],
+   "total": 2955,
+   "condo": 467,
+   "townhouse": 49,
+   "house": 2437,
+   "manufactured": 2,
+   "house_new": 395,
+   "townhouse_new": 28
+  }
+ ]
+}

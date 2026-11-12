@@ -1,0 +1,70 @@
+{
+ "source": "Chapter3 CRM map API, active CCMLS listings, houses, inside Horry County",
+ "pulled": "2026-11-01T01:56:08.685331Z",
+ "rows": [
+  {
+   "town": "Loris",
+   "houses": 155,
+   "new": 99,
+   "pct": 64
+  },
+  {
+   "town": "Longs",
+   "houses": 346,
+   "new": 196,
+   "pct": 57
+  },
+  {
+   "town": "Aynor",
+   "houses": 44,
+   "new": 24,
+   "pct": 55
+  },
+  {
+   "town": "Conway",
+   "houses": 673,
+   "new": 368,
+   "pct": 55
+  },
+  {
+   "town": "Galivants Ferry",
+   "houses": 62,
+   "new": 32,
+   "pct": 52
+  },
+  {
+   "town": "Little River",
+   "houses": 187,
+   "new": 44,
+   "pct": 24
+  },
+  {
+   "town": "Myrtle Beach",
+   "houses": 1049,
+   "new": 192,
+   "pct": 18
+  },
+  {
+   "town": "North Myrtle Beach",
+   "houses": 257,
+   "new": 28,
+   "pct": 11
+  },
+  {
+   "town": "Surfside Beach",
+   "houses": 84,
+   "new": 7,
+   "pct": 8
+  },
+  {
+   "town": "Murrells Inlet",
+   "houses": 133,
+   "new": 5,
+   "pct": 4
+  }
+ ],
+ "total": {
+  "houses": 3014,
+  "new": 1006
+ }
+}

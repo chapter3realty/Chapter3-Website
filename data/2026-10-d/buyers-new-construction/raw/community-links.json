@@ -1,0 +1,56 @@
+{
+ "pulled": "2026-11-01",
+ "source": "https://chapter3realty.com/homes/api/map",
+ "links": {
+  "AUBERON WOODS": {
+   "q": "subdivision=Auberon+Woods",
+   "total": 26,
+   "farthest_miles": 0.35
+  },
+  "GRANDE DUNES NORTH": {
+   "q": "subdivision=Grande+Dunes&city=Longs",
+   "total": 19,
+   "farthest_miles": 0.46
+  },
+  "ARCADIA": {
+   "q": "subdivision=Arcadia&near=33.709%2C-79.0044&miles=1.5",
+   "total": 13,
+   "farthest_miles": 0.73
+  },
+  "WATERSIDE NEIGHBORHOOD": {
+   "q": "subdivision=Waterside&city=Longs",
+   "total": 16,
+   "farthest_miles": 0.73
+  },
+  "INDIGO GROVE": {
+   "q": "subdivision=The+Overlook",
+   "total": 5,
+   "farthest_miles": 0.19
+  },
+  "CHESTNUT GREENS": {
+   "q": "subdivision=Del+Webb&city=North+Myrtle+Beach",
+   "total": 2,
+   "farthest_miles": 0.35
+  },
+  "CYPRESS RIDGE": {
+   "q": "subdivision=Cypress+Ridge",
+   "total": 4,
+   "farthest_miles": 0.35
+  },
+  "KINGSTON OAKS": {
+   "q": "subdivision=Kingston+Oaks",
+   "total": 7,
+   "farthest_miles": 0.19
+  },
+  "CRESCENT COVE": {
+   "q": "subdivision=Crescent+Cove",
+   "total": 16,
+   "farthest_miles": 0.35
+  },
+  "EDEN SPRINGS": {
+   "q": "subdivision=Eden+Springs",
+   "total": 18,
+   "farthest_miles": 0.48
+  }
+ }
+}
