@@ -1,0 +1,380 @@
+{
+ "meta": {
+  "made": "analyze.py",
+  "listings_pulled": "2026-11-09T05:15:47.201775Z",
+  "listings_source": "https://chapter3realty.com/homes/api/map?",
+  "note": "Active listings in aggregate only. No address, firm or MLS number is in this file."
+ },
+ "listings_horry": {
+  "condo": {
+   "all_mls_area": 2851,
+   "horry": 2694,
+   "median": 215000,
+   "p25": 158000,
+   "p75": 319000,
+   "at_or_over_example": 471,
+   "under_200k": 1212,
+   "band_200_400k": 1078,
+   "band_400_600k": 295,
+   "600k_up": 109
+  },
+  "multi": {
+   "all_mls_area": 61,
+   "horry": 51,
+   "median": 680000,
+   "p25": 485000,
+   "p75": 982000,
+   "at_or_over_example": 44,
+   "under_200k": 1,
+   "band_200_400k": 6,
+   "band_400_600k": 15,
+   "600k_up": 29
+  },
+  "house": {
+   "all_mls_area": 3663,
+   "horry": 2929,
+   "median": 420000,
+   "p25": 320000,
+   "p75": 599000,
+   "at_or_over_example": 1720,
+   "under_200k": 19,
+   "band_200_400k": 1376,
+   "band_400_600k": 821,
+   "600k_up": 713
+  },
+  "townhouse": {
+   "all_mls_area": 366,
+   "horry": 307,
+   "median": 265000,
+   "p25": 230000,
+   "p75": 345000,
+   "at_or_over_example": 58,
+   "under_200k": 31,
+   "band_200_400k": 225,
+   "band_400_600k": 31,
+   "600k_up": 20
+  }
+ },
+ "listings_api_totals": {
+  "condo": 2853,
+  "multi": 61,
+  "house": 3667,
+  "townhouse": 366
+ },
+ "listings_truncated_bands": [
+  [
+   "condo",
+   294878,
+   295258,
+   17,
+   16
+  ],
+  [
+   "condo",
+   368883,
+   369263,
+   4,
+   3
+  ],
+  [
+   "house",
+   229647,
+   230028,
+   15,
+   14
+  ],
+  [
+   "house",
+   389864,
+   390244,
+   27,
+   26
+  ],
+  [
+   "house",
+   398638,
+   399018,
+   13,
+   12
+  ],
+  [
+   "house",
+   528719,
+   529100,
+   8,
+   7
+  ]
+ ],
+ "resale_medians_carried": {
+  "county_all": {
+   "resale_house": {
+    "n": 6866,
+    "median": 350000,
+    "iqr": [
+     266000,
+     500000
+    ]
+   },
+   "resale_condo": {
+    "n": 4181,
+    "median": 215000,
+    "iqr": [
+     147000,
+     310000
+    ]
+   },
+   "new_house": {
+    "n": 2010,
+    "median": 337000,
+    "iqr": [
+     280000,
+     427000
+    ]
+   },
+   "new_condo": {
+    "n": 137,
+    "median": 260000,
+    "iqr": [
+     225000,
+     385000
+    ]
+   }
+  },
+  "by_area": [
+   {
+    "area": "Myrtle Beach (city)",
+    "house": {
+     "n": 705,
+     "median": 430000,
+     "iqr": [
+      230000,
+      615000
+     ]
+    },
+    "condo": {
+     "n": 1039,
+     "median": 172000,
+     "iqr": [
+      109000,
+      268000
+     ]
+    }
+   },
+   {
+    "area": "North Myrtle Beach (city)",
+    "house": {
+     "n": 655,
+     "median": 535000,
+     "iqr": [
+      385000,
+      725000
+     ]
+    },
+    "condo": {
+     "n": 987,
+     "median": 300000,
+     "iqr": [
+      220000,
+      419000
+     ]
+    }
+   },
+   {
+    "area": "Little River",
+    "house": {
+     "n": 332,
+     "median": 350000,
+     "iqr": [
+      286000,
+      475000
+     ]
+    },
+    "condo": {
+     "n": 260,
+     "median": 155000,
+     "iqr": [
+      128000,
+      214000
+     ]
+    }
+   },
+   {
+    "area": "Carolina Forest",
+    "house": {
+     "n": 444,
+     "median": 395000,
+     "iqr": [
+      299000,
+      574000
+     ]
+    },
+    "condo": {
+     "n": 89,
+     "median": 172000,
+     "iqr": [
+      160000,
+      190000
+     ]
+    }
+   },
+   {
+    "area": "Garden City",
+    "house": {
+     "n": 163,
+     "median": 385000,
+     "iqr": [
+      325000,
+      648000
+     ]
+    },
+    "condo": {
+     "n": 259,
+     "median": 220000,
+     "iqr": [
+      164000,
+      332000
+     ]
+    }
+   },
+   {
+    "area": "Conway (city)",
+    "house": {
+     "n": 328,
+     "median": 265000,
+     "iqr": [
+      220000,
+      340000
+     ]
+    },
+    "condo": {
+     "n": 21,
+     "median": 164000,
+     "iqr": [
+      134000,
+      192000
+     ]
+    }
+   },
+   {
+    "area": "Surfside Beach",
+    "house": {
+     "n": 138,
+     "median": 620000,
+     "iqr": [
+      450000,
+      910000
+     ]
+    },
+    "condo": {
+     "n": 50,
+     "median": 370000,
+     "iqr": [
+      297000,
+      478000
+     ]
+    }
+   }
+  ]
+ },
+ "buyer_states_carried": {
+  "all": {
+   "sales": 12125,
+   "outside_sc": 3603,
+   "pct_outside_sc": 29.7
+  },
+  "by_type": {
+   "condo": {
+    "sales": 2402,
+    "outside_sc": 1306,
+    "pct_outside_sc": 54.4
+   },
+   "other": {
+    "sales": 9723,
+    "outside_sc": 2297,
+    "pct_outside_sc": 23.6
+   }
+  },
+  "by_buyer_kind": {
+   "company": {
+    "sales": 1124,
+    "outside_sc": 601,
+    "pct_outside_sc": 53.5
+   },
+   "person": {
+    "sales": 11001,
+    "outside_sc": 3002,
+    "pct_outside_sc": 27.3
+   }
+  },
+  "top_states": [
+   [
+    "NC",
+    916
+   ],
+   [
+    "NY",
+    438
+   ],
+   [
+    "PA",
+    376
+   ],
+   [
+    "NJ",
+    262
+   ],
+   [
+    "VA",
+    256
+   ]
+  ]
+ },
+ "worked_example": {
+  "inputs": {
+   "price": 400000,
+   "bought": 250000,
+   "depreciation": 60000,
+   "selling_costs": 24000.0,
+   "rate_2026": 0.0521,
+   "sc_deduction": 0.44,
+   "boot_kept": 30000
+  },
+  "amount_realized": 376000.0,
+  "adjusted_basis": 190000,
+  "gain": 186000.0,
+  "withhold_no_affidavit": 19589.6,
+  "withhold_affidavit_of_gain": 9690.6,
+  "withhold_full_exchange_paid_to_state": 0,
+  "partial_exchange": {
+   "replacement_cost": 346000.0,
+   "gain_recognized": 30000,
+   "withhold_on_boot": 1563.0,
+   "sc_tax_on_boot_top_rate": 875.28
+  },
+  "sc_tax_full_sale_top_rate": 5426.74,
+  "replacement_to_defer_all": 376000.0,
+  "note": "Constructed example, no mortgage, the seller's other SC income already at or above $30,000 so 5.21 percent is the marginal rate. Withholding: SC Code 12-8-580(A)(1); amount realized = price less selling expenses (SC RR 09-13 Q15). Boot taxed up to its amount: IRC 1031(b)."
+ },
+ "clock": {
+  "examples": [
+   {
+    "closing": "2026-03-02",
+    "day45": "2026-04-16",
+    "day180": "2026-08-29"
+   },
+   {
+    "closing": "2026-06-15",
+    "day45": "2026-07-30",
+    "day180": "2026-12-12"
+   },
+   {
+    "closing": "2026-11-02",
+    "day45": "2026-12-17",
+    "day180": "2027-05-01"
+   }
+  ],
+  "return_due_2026_sales": "2027-04-15",
+  "latest_closing_with_full_180_without_extension": "2026-10-17",
+  "note": "Day counts from 26 USC 1031(a)(3); the earlier of day 180 and the return due date (with extensions). The federal return for a calendar-year individual is due on the 15th day of April after the year (26 USC 6072(a)); April 15, 2027 is a Thursday. Example dates are for the arithmetic only; the page states no calendar date."
+ }
+}

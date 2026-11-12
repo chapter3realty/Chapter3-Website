@@ -1,0 +1,32 @@
+{
+ "source": "U.S. Census Bureau TIGER/Line 2026 COASTLINE, via Blog-Brain tools/geo/grand-strand-v2.json (about 10 m simplification)",
+ "north_end": {
+  "state_line_vertex": [
+   -78.5411,
+   33.8511
+  ],
+  "coast_vertex": [
+   -78.541,
+   33.8522
+  ],
+  "gap_miles": 0.08
+ },
+ "to": {
+  "pawleys_island_town_south_end": {
+   "coast_vertex": [
+    -79.1392,
+    33.3969
+   ],
+   "shore_miles": 48.6,
+   "straight_miles": 46.6
+  },
+  "near_winyah_bay_33.20": {
+   "coast_vertex": [
+    -79.179,
+    33.1944
+   ],
+   "shore_miles": 63.1,
+   "straight_miles": 58.4
+  }
+ }
+}

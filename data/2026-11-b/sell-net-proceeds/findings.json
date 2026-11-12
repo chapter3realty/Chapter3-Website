@@ -1,0 +1,208 @@
+{
+ "meta": {
+  "made": "build_findings.py",
+  "note": "Builds findings.json (batch 2026-11-b; copied from 2026-11-a and re-run), the one file the page's tables, chart and worked examples read for /sell/net-proceeds/."
+ },
+ "tiers": [
+  {
+   "key": "quarter_house",
+   "label": "A quarter of houses sold for less",
+   "price": 266000,
+   "deed_fee": 984.2,
+   "deed_record": 15.0,
+   "satisfaction": 10.0,
+   "per_1pct_commission": 2660,
+   "fixed_by_law": 1009.2,
+   "deed_fee_pct": 0.37,
+   "fixed_pct": 0.379,
+   "fixed_no_mortgage": 999.2,
+   "tax_year_legal": 978,
+   "tax_year_second": 3208,
+   "with_5pct": 14309,
+   "with_6pct": 16969
+  },
+  {
+   "key": "middle_house",
+   "label": "The middle house",
+   "price": 350000,
+   "deed_fee": 1295.0,
+   "deed_record": 15.0,
+   "satisfaction": 10.0,
+   "per_1pct_commission": 3500,
+   "fixed_by_law": 1320.0,
+   "deed_fee_pct": 0.37,
+   "fixed_pct": 0.377,
+   "fixed_no_mortgage": 1310.0,
+   "tax_year_legal": 1287,
+   "tax_year_second": 4221,
+   "with_5pct": 18820,
+   "with_6pct": 22320
+  },
+  {
+   "key": "upper_house",
+   "label": "A quarter sold for more",
+   "price": 500000,
+   "deed_fee": 1850.0,
+   "deed_record": 15.0,
+   "satisfaction": 10.0,
+   "per_1pct_commission": 5000,
+   "fixed_by_law": 1875.0,
+   "deed_fee_pct": 0.37,
+   "fixed_pct": 0.375,
+   "fixed_no_mortgage": 1865.0,
+   "tax_year_legal": 1838,
+   "tax_year_second": 6030,
+   "with_5pct": 26875,
+   "with_6pct": 31875
+  },
+  {
+   "key": "middle_condo",
+   "label": "The middle condo",
+   "price": 215000,
+   "deed_fee": 795.5,
+   "deed_record": 15.0,
+   "satisfaction": 10.0,
+   "per_1pct_commission": 2150,
+   "fixed_by_law": 820.5,
+   "deed_fee_pct": 0.37,
+   "fixed_pct": 0.382,
+   "fixed_no_mortgage": 810.5,
+   "tax_year_legal": 790,
+   "tax_year_second": 2593,
+   "with_5pct": 11570,
+   "with_6pct": 13720
+  }
+ ],
+ "proration_middle_house": {
+  "price": 350000,
+  "rule": "seller's share = this year's tax x days owned / 365 [rows 10, 11]; tax as row 13, outside city limits",
+  "legal_residence": {
+   "end_of_march": 317,
+   "end_of_june": 638,
+   "end_of_september": 962,
+   "end_of_december": 1287
+  },
+  "second_home_or_rental": {
+   "end_of_march": 1041,
+   "end_of_june": 2093,
+   "end_of_september": 3157,
+   "end_of_december": 4221
+  },
+  "year_legal": 1287,
+  "year_second": 4221
+ },
+ "withholding_middle_condo": {
+  "price": 215000,
+  "rate": 0.0521,
+  "no_affidavit_on_price": 11202,
+  "note": "12-8-580(A)(1)(b) uses the amount realized; the price less selling costs makes it a little smaller. Example only, with an affidavit (I-295): 5.21% of the gain.",
+  "with_affidavit_gain_25000": 1302,
+  "with_affidavit_gain_50000": 2605
+ },
+ "deed_fees_12mo": {
+  "sales": 13194,
+  "total": 18044870,
+  "median": 1147,
+  "period": "deeds recorded 2025-10-01 to 2026-09-30, home sales of $10,000 or more (OSB filter)"
+ },
+ "owners_outside_sc": {
+  "condo": {
+   "homes": 40963,
+   "outside_sc": 23653,
+   "pct": 57.8
+  },
+  "house": {
+   "homes": 186037,
+   "outside_sc": 35264,
+   "pct": 19.0
+  }
+ },
+ "listings": {
+  "pulled": "2026-11-09T03:06:59.286619Z",
+  "house": {
+   "for_sale": 3236,
+   "resale": 2188,
+   "price_cut_resale": 1260,
+   "pct_price_cut_resale": 57.6,
+   "warranty": 956,
+   "warranty_new": 894,
+   "warranty_resale": 62,
+   "pct_warranty_resale": 2.8,
+   "bands": [
+    {
+     "band": "0-300000",
+     "resale": 491,
+     "price_cut": 307,
+     "warranty": 13,
+     "pct_price_cut": 62.5,
+     "pct_warranty": 2.6
+    },
+    {
+     "band": "300000-450000",
+     "resale": 714,
+     "price_cut": 403,
+     "warranty": 19,
+     "pct_price_cut": 56.4,
+     "pct_warranty": 2.7
+    },
+    {
+     "band": "450000-700000",
+     "resale": 569,
+     "price_cut": 318,
+     "warranty": 19,
+     "pct_price_cut": 55.9,
+     "pct_warranty": 3.3
+    },
+    {
+     "band": "700000-up",
+     "resale": 414,
+     "price_cut": 232,
+     "warranty": 11,
+     "pct_price_cut": 56.0,
+     "pct_warranty": 2.7
+    }
+   ]
+  },
+  "condo": {
+   "resale": 2652,
+   "price_cut_resale": 1372,
+   "pct_price_cut_resale": 51.7,
+   "warranty_resale": 33,
+   "pct_warranty_resale": 1.2,
+   "bands": [
+    {
+     "band": "0-150000",
+     "resale": 609,
+     "price_cut": 336,
+     "warranty": 5,
+     "pct_price_cut": 55.2,
+     "pct_warranty": 0.8
+    },
+    {
+     "band": "150000-250000",
+     "resale": 1089,
+     "price_cut": 579,
+     "warranty": 16,
+     "pct_price_cut": 53.2,
+     "pct_warranty": 1.5
+    },
+    {
+     "band": "250000-400000",
+     "resale": 571,
+     "price_cut": 273,
+     "warranty": 8,
+     "pct_price_cut": 47.8,
+     "pct_warranty": 1.4
+    },
+    {
+     "band": "400000-up",
+     "resale": 383,
+     "price_cut": 184,
+     "warranty": 4,
+     "pct_price_cut": 48.0,
+     "pct_warranty": 1.0
+    }
+   ]
+  }
+ }
+}

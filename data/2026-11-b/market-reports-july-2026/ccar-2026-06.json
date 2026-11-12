@@ -1,0 +1,2078 @@
+{
+ "meta": {
+  "made": "parse_june.py",
+  "data_month": "2026-06",
+  "current_as_of": "2026-07-10",
+  "read": "2026-11-10",
+  "files": {
+   "Coastal-Carolinas_MMI_2026-06.pdf": "c6c6d0732351863cf9f312cbd0999f369df338b51d54bf0544c892c1f7c93419",
+   "July_2026_All_Cities.pdf": "205af1318f3b82f2978458c3bca2cfc7ec99a7f1ffd4595612983c63f51318dd"
+  },
+  "urls": {
+   "Coastal-Carolinas_MMI_2026-06.pdf": "https://www.ccarsc.org/clientuploads/2026_Market_Stats/Coastal-Carolinas_MMI_2026-06.pdf",
+   "July_2026_All_Cities.pdf": "https://www.ccarsc.org/clientuploads/2026_Market_Stats/July_2026_All_Cities.pdf"
+  }
+ },
+ "overview": {
+  "single_family": {
+   "New Listings": {
+    "jun_2025": 1338.0,
+    "jun_2026": 1390.0,
+    "chg": "+3.9%",
+    "ytd_2025": 8414.0,
+    "ytd_2026": 8595.0,
+    "ytd_chg": "+2.2%"
+   },
+   "Pending Sales": {
+    "jun_2025": 982.0,
+    "jun_2026": 1060.0,
+    "chg": "+7.9%",
+    "ytd_2025": 5845.0,
+    "ytd_2026": 6019.0,
+    "ytd_chg": "+3.0%"
+   },
+   "Closed Sales": {
+    "jun_2025": 1056.0,
+    "jun_2026": 1127.0,
+    "chg": "+6.7%",
+    "ytd_2025": 5295.0,
+    "ytd_2026": 5422.0,
+    "ytd_chg": "+2.4%"
+   },
+   "Days on Market Until Sale": {
+    "jun_2025": 123.0,
+    "jun_2026": 121.0,
+    "chg": "-1.6%",
+    "ytd_2025": 125.0,
+    "ytd_2026": 125.0,
+    "ytd_chg": "0.0%"
+   },
+   "Median Sales Price": {
+    "jun_2025": 365000.0,
+    "jun_2026": 359945.0,
+    "chg": "-1.4%",
+    "ytd_2025": 362584.0,
+    "ytd_2026": 359843.0,
+    "ytd_chg": "-0.8%"
+   },
+   "Average Sales Price": {
+    "jun_2025": 435702.0,
+    "jun_2026": 448491.0,
+    "chg": "+2.9%",
+    "ytd_2025": 439105.0,
+    "ytd_2026": 445522.0,
+    "ytd_chg": "+1.5%"
+   },
+   "Percent of List Price Received": {
+    "jun_2025": 97.5,
+    "jun_2026": 97.3,
+    "chg": "-0.2%",
+    "ytd_2025": 97.3,
+    "ytd_2026": 97.3,
+    "ytd_chg": "0.0%"
+   },
+   "Housing Affordability Index": {
+    "jun_2025": 79.0,
+    "jun_2026": 82.0,
+    "chg": "+3.8%",
+    "ytd_2025": 79.0,
+    "ytd_2026": 82.0,
+    "ytd_chg": "+3.8%"
+   },
+   "Inventory of Homes for Sale": {
+    "jun_2025": 4163.0,
+    "jun_2026": 4023.0,
+    "chg": "-3.4%",
+    "ytd_2025": null,
+    "ytd_2026": null,
+    "ytd_chg": "\u2013\u2013"
+   },
+   "Months Supply of Inventory": {
+    "jun_2025": 4.6,
+    "jun_2026": 4.3,
+    "chg": "-6.5%",
+    "ytd_2025": null,
+    "ytd_2026": null,
+    "ytd_chg": "\u2013\u2013"
+   }
+  },
+  "condo": {
+   "New Listings": {
+    "jun_2025": 682.0,
+    "jun_2026": 693.0,
+    "chg": "+1.6%",
+    "ytd_2025": 4803.0,
+    "ytd_2026": 4935.0,
+    "ytd_chg": "+2.7%"
+   },
+   "Pending Sales": {
+    "jun_2025": 400.0,
+    "jun_2026": 486.0,
+    "chg": "+21.5%",
+    "ytd_2025": 2561.0,
+    "ytd_2026": 2834.0,
+    "ytd_chg": "+10.7%"
+   },
+   "Closed Sales": {
+    "jun_2025": 452.0,
+    "jun_2026": 498.0,
+    "chg": "+10.2%",
+    "ytd_2025": 2434.0,
+    "ytd_2026": 2584.0,
+    "ytd_chg": "+6.2%"
+   },
+   "Days on Market Until Sale": {
+    "jun_2025": 132.0,
+    "jun_2026": 137.0,
+    "chg": "+3.8%",
+    "ytd_2025": 128.0,
+    "ytd_2026": 133.0,
+    "ytd_chg": "+3.9%"
+   },
+   "Median Sales Price": {
+    "jun_2025": 239500.0,
+    "jun_2026": 244270.0,
+    "chg": "+2.0%",
+    "ytd_2025": 240000.0,
+    "ytd_2026": 232500.0,
+    "ytd_chg": "-3.1%"
+   },
+   "Average Sales Price": {
+    "jun_2025": 270796.0,
+    "jun_2026": 271045.0,
+    "chg": "+0.1%",
+    "ytd_2025": 273683.0,
+    "ytd_2026": 269502.0,
+    "ytd_chg": "-1.5%"
+   },
+   "Percent of List Price Received": {
+    "jun_2025": 96.5,
+    "jun_2026": 96.2,
+    "chg": "-0.3%",
+    "ytd_2025": 96.0,
+    "ytd_2026": 95.9,
+    "ytd_chg": "-0.1%"
+   },
+   "Housing Affordability Index": {
+    "jun_2025": 120.0,
+    "jun_2026": 121.0,
+    "chg": "+0.8%",
+    "ytd_2025": 120.0,
+    "ytd_2026": 127.0,
+    "ytd_chg": "+5.8%"
+   },
+   "Inventory of Homes for Sale": {
+    "jun_2025": 3274.0,
+    "jun_2026": 3294.0,
+    "chg": "+0.6%",
+    "ytd_2025": null,
+    "ytd_2026": null,
+    "ytd_chg": "\u2013\u2013"
+   },
+   "Months Supply of Inventory": {
+    "jun_2025": 8.2,
+    "jun_2026": 7.6,
+    "chg": "-7.3%",
+    "ytd_2025": null,
+    "ytd_2026": null,
+    "ytd_chg": "\u2013\u2013"
+   }
+  }
+ },
+ "quick_facts_closed_sales_change": {
+  "all": "+7.7%",
+  "single_family": "+6.7%",
+  "condo": "+10.2%"
+ },
+ "monthly": {
+  "New Listings": [
+   {
+    "month": "Jul-2025",
+    "single_family": 1315.0,
+    "sf_chg": "+4.8%",
+    "condo": 686.0,
+    "condo_chg": "-5.8%"
+   },
+   {
+    "month": "Aug-2025",
+    "single_family": 1256.0,
+    "sf_chg": "+3.1%",
+    "condo": 767.0,
+    "condo_chg": "-1.8%"
+   },
+   {
+    "month": "Sep-2025",
+    "single_family": 1315.0,
+    "sf_chg": "+14.9%",
+    "condo": 754.0,
+    "condo_chg": "+13.4%"
+   },
+   {
+    "month": "Oct-2025",
+    "single_family": 1256.0,
+    "sf_chg": "-1.6%",
+    "condo": 730.0,
+    "condo_chg": "+5.5%"
+   },
+   {
+    "month": "Nov-2025",
+    "single_family": 999.0,
+    "sf_chg": "-7.2%",
+    "condo": 615.0,
+    "condo_chg": "-3.5%"
+   },
+   {
+    "month": "Dec-2025",
+    "single_family": 881.0,
+    "sf_chg": "+14.0%",
+    "condo": 492.0,
+    "condo_chg": "+14.4%"
+   },
+   {
+    "month": "Jan-2026",
+    "single_family": 1370.0,
+    "sf_chg": "+5.5%",
+    "condo": 869.0,
+    "condo_chg": "+7.5%"
+   },
+   {
+    "month": "Feb-2026",
+    "single_family": 1275.0,
+    "sf_chg": "+1.2%",
+    "condo": 767.0,
+    "condo_chg": "-4.1%"
+   },
+   {
+    "month": "Mar-2026",
+    "single_family": 1596.0,
+    "sf_chg": "+5.2%",
+    "condo": 994.0,
+    "condo_chg": "+11.4%"
+   },
+   {
+    "month": "Apr-2026",
+    "single_family": 1491.0,
+    "sf_chg": "-1.9%",
+    "condo": 833.0,
+    "condo_chg": "-2.0%"
+   },
+   {
+    "month": "May-2026",
+    "single_family": 1473.0,
+    "sf_chg": "-0.5%",
+    "condo": 779.0,
+    "condo_chg": "+1.0%"
+   },
+   {
+    "month": "Jun-2026",
+    "single_family": 1390.0,
+    "sf_chg": "+3.9%",
+    "condo": 693.0,
+    "condo_chg": "+1.6%"
+   }
+  ],
+  "Pending Sales": [
+   {
+    "month": "Jul-2025",
+    "single_family": 1039.0,
+    "sf_chg": "+7.4%",
+    "condo": 456.0,
+    "condo_chg": "+3.6%"
+   },
+   {
+    "month": "Aug-2025",
+    "single_family": 986.0,
+    "sf_chg": "+11.3%",
+    "condo": 416.0,
+    "condo_chg": "-0.7%"
+   },
+   {
+    "month": "Sep-2025",
+    "single_family": 933.0,
+    "sf_chg": "+6.9%",
+    "condo": 445.0,
+    "condo_chg": "+20.6%"
+   },
+   {
+    "month": "Oct-2025",
+    "single_family": 958.0,
+    "sf_chg": "+11.1%",
+    "condo": 424.0,
+    "condo_chg": "+10.1%"
+   },
+   {
+    "month": "Nov-2025",
+    "single_family": 741.0,
+    "sf_chg": "-1.1%",
+    "condo": 354.0,
+    "condo_chg": "-2.7%"
+   },
+   {
+    "month": "Dec-2025",
+    "single_family": 611.0,
+    "sf_chg": "-4.4%",
+    "condo": 277.0,
+    "condo_chg": "+3.4%"
+   },
+   {
+    "month": "Jan-2026",
+    "single_family": 833.0,
+    "sf_chg": "+2.8%",
+    "condo": 417.0,
+    "condo_chg": "+2.5%"
+   },
+   {
+    "month": "Feb-2026",
+    "single_family": 838.0,
+    "sf_chg": "-6.1%",
+    "condo": 411.0,
+    "condo_chg": "-7.4%"
+   },
+   {
+    "month": "Mar-2026",
+    "single_family": 1105.0,
+    "sf_chg": "+3.2%",
+    "condo": 472.0,
+    "condo_chg": "+2.6%"
+   },
+   {
+    "month": "Apr-2026",
+    "single_family": 1076.0,
+    "sf_chg": "+1.3%",
+    "condo": 534.0,
+    "condo_chg": "+34.5%"
+   },
+   {
+    "month": "May-2026",
+    "single_family": 1107.0,
+    "sf_chg": "+7.7%",
+    "condo": 514.0,
+    "condo_chg": "+13.5%"
+   },
+   {
+    "month": "Jun-2026",
+    "single_family": 1060.0,
+    "sf_chg": "+7.9%",
+    "condo": 486.0,
+    "condo_chg": "+21.5%"
+   }
+  ],
+  "Closed Sales": [
+   {
+    "month": "Jul-2025",
+    "single_family": 1074.0,
+    "sf_chg": "+10.3%",
+    "condo": 399.0,
+    "condo_chg": "-12.9%"
+   },
+   {
+    "month": "Aug-2025",
+    "single_family": 1008.0,
+    "sf_chg": "+2.5%",
+    "condo": 443.0,
+    "condo_chg": "+0.9%"
+   },
+   {
+    "month": "Sep-2025",
+    "single_family": 1046.0,
+    "sf_chg": "+13.7%",
+    "condo": 420.0,
+    "condo_chg": "+0.7%"
+   },
+   {
+    "month": "Oct-2025",
+    "single_family": 983.0,
+    "sf_chg": "+5.2%",
+    "condo": 458.0,
+    "condo_chg": "+9.3%"
+   },
+   {
+    "month": "Nov-2025",
+    "single_family": 843.0,
+    "sf_chg": "+2.1%",
+    "condo": 369.0,
+    "condo_chg": "+15.7%"
+   },
+   {
+    "month": "Dec-2025",
+    "single_family": 984.0,
+    "sf_chg": "+14.6%",
+    "condo": 422.0,
+    "condo_chg": "+10.2%"
+   },
+   {
+    "month": "Jan-2026",
+    "single_family": 656.0,
+    "sf_chg": "+0.5%",
+    "condo": 288.0,
+    "condo_chg": "-13.5%"
+   },
+   {
+    "month": "Feb-2026",
+    "single_family": 714.0,
+    "sf_chg": "+2.9%",
+    "condo": 368.0,
+    "condo_chg": "-0.8%"
+   },
+   {
+    "month": "Mar-2026",
+    "single_family": 915.0,
+    "sf_chg": "-2.1%",
+    "condo": 455.0,
+    "condo_chg": "+14.0%"
+   },
+   {
+    "month": "Apr-2026",
+    "single_family": 946.0,
+    "sf_chg": "+0.9%",
+    "condo": 455.0,
+    "condo_chg": "+0.4%"
+   },
+   {
+    "month": "May-2026",
+    "single_family": 1064.0,
+    "sf_chg": "+4.4%",
+    "condo": 520.0,
+    "condo_chg": "+22.1%"
+   },
+   {
+    "month": "Jun-2026",
+    "single_family": 1127.0,
+    "sf_chg": "+6.7%",
+    "condo": 498.0,
+    "condo_chg": "+10.2%"
+   }
+  ],
+  "Days on Market Until Sale": [
+   {
+    "month": "Jul-2025",
+    "single_family": 123.0,
+    "sf_chg": "+7.0%",
+    "condo": 134.0,
+    "condo_chg": "+18.6%"
+   },
+   {
+    "month": "Aug-2025",
+    "single_family": 117.0,
+    "sf_chg": "+0.9%",
+    "condo": 136.0,
+    "condo_chg": "+19.3%"
+   },
+   {
+    "month": "Sep-2025",
+    "single_family": 126.0,
+    "sf_chg": "-3.8%",
+    "condo": 142.0,
+    "condo_chg": "+8.4%"
+   },
+   {
+    "month": "Oct-2025",
+    "single_family": 118.0,
+    "sf_chg": "-3.3%",
+    "condo": 142.0,
+    "condo_chg": "+24.6%"
+   },
+   {
+    "month": "Nov-2025",
+    "single_family": 117.0,
+    "sf_chg": "0.0%",
+    "condo": 135.0,
+    "condo_chg": "+11.6%"
+   },
+   {
+    "month": "Dec-2025",
+    "single_family": 127.0,
+    "sf_chg": "-2.3%",
+    "condo": 127.0,
+    "condo_chg": "+3.3%"
+   },
+   {
+    "month": "Jan-2026",
+    "single_family": 127.0,
+    "sf_chg": "-3.8%",
+    "condo": 133.0,
+    "condo_chg": "-4.3%"
+   },
+   {
+    "month": "Feb-2026",
+    "single_family": 134.0,
+    "sf_chg": "+3.9%",
+    "condo": 134.0,
+    "condo_chg": "+16.5%"
+   },
+   {
+    "month": "Mar-2026",
+    "single_family": 132.0,
+    "sf_chg": "+4.8%",
+    "condo": 135.0,
+    "condo_chg": "-1.5%"
+   },
+   {
+    "month": "Apr-2026",
+    "single_family": 124.0,
+    "sf_chg": "+1.6%",
+    "condo": 130.0,
+    "condo_chg": "-0.8%"
+   },
+   {
+    "month": "May-2026",
+    "single_family": 117.0,
+    "sf_chg": "-2.5%",
+    "condo": 127.0,
+    "condo_chg": "+10.4%"
+   },
+   {
+    "month": "Jun-2026",
+    "single_family": 121.0,
+    "sf_chg": "-1.6%",
+    "condo": 137.0,
+    "condo_chg": "+3.8%"
+   }
+  ],
+  "Median Sales Price": [
+   {
+    "month": "Jul-2025",
+    "single_family": 374995.0,
+    "sf_chg": "+3.6%",
+    "condo": 239000.0,
+    "condo_chg": "-3.9%"
+   },
+   {
+    "month": "Aug-2025",
+    "single_family": 362868.0,
+    "sf_chg": "+3.1%",
+    "condo": 230000.0,
+    "condo_chg": "-2.5%"
+   },
+   {
+    "month": "Sep-2025",
+    "single_family": 365000.0,
+    "sf_chg": "+4.0%",
+    "condo": 242250.0,
+    "condo_chg": "-2.3%"
+   },
+   {
+    "month": "Oct-2025",
+    "single_family": 365000.0,
+    "sf_chg": "-1.1%",
+    "condo": 234500.0,
+    "condo_chg": "-8.0%"
+   },
+   {
+    "month": "Nov-2025",
+    "single_family": 365000.0,
+    "sf_chg": "+3.1%",
+    "condo": 248000.0,
+    "condo_chg": "-0.8%"
+   },
+   {
+    "month": "Dec-2025",
+    "single_family": 366950.0,
+    "sf_chg": "+2.8%",
+    "condo": 235000.0,
+    "condo_chg": "-4.5%"
+   },
+   {
+    "month": "Jan-2026",
+    "single_family": 358198.0,
+    "sf_chg": "-2.2%",
+    "condo": 235000.0,
+    "condo_chg": "-5.1%"
+   },
+   {
+    "month": "Feb-2026",
+    "single_family": 350000.0,
+    "sf_chg": "-1.8%",
+    "condo": 220000.0,
+    "condo_chg": "-6.0%"
+   },
+   {
+    "month": "Mar-2026",
+    "single_family": 355000.0,
+    "sf_chg": "+1.3%",
+    "condo": 223900.0,
+    "condo_chg": "-1.1%"
+   },
+   {
+    "month": "Apr-2026",
+    "single_family": 368000.0,
+    "sf_chg": "+0.0%",
+    "condo": 231000.0,
+    "condo_chg": "-7.6%"
+   },
+   {
+    "month": "May-2026",
+    "single_family": 358450.0,
+    "sf_chg": "-1.8%",
+    "condo": 232500.0,
+    "condo_chg": "-3.1%"
+   },
+   {
+    "month": "Jun-2026",
+    "single_family": 359945.0,
+    "sf_chg": "-1.4%",
+    "condo": 244270.0,
+    "condo_chg": "+2.0%"
+   }
+  ],
+  "Average Sales Price": [
+   {
+    "month": "Jul-2025",
+    "single_family": 442950.0,
+    "sf_chg": "+1.9%",
+    "condo": 262958.0,
+    "condo_chg": "-5.9%"
+   },
+   {
+    "month": "Aug-2025",
+    "single_family": 438536.0,
+    "sf_chg": "+0.3%",
+    "condo": 265618.0,
+    "condo_chg": "-4.8%"
+   },
+   {
+    "month": "Sep-2025",
+    "single_family": 446815.0,
+    "sf_chg": "+5.0%",
+    "condo": 283504.0,
+    "condo_chg": "+0.1%"
+   },
+   {
+    "month": "Oct-2025",
+    "single_family": 440586.0,
+    "sf_chg": "+3.3%",
+    "condo": 263062.0,
+    "condo_chg": "-11.7%"
+   },
+   {
+    "month": "Nov-2025",
+    "single_family": 429323.0,
+    "sf_chg": "+0.5%",
+    "condo": 299509.0,
+    "condo_chg": "+7.4%"
+   },
+   {
+    "month": "Dec-2025",
+    "single_family": 467717.0,
+    "sf_chg": "+7.9%",
+    "condo": 262524.0,
+    "condo_chg": "-8.4%"
+   },
+   {
+    "month": "Jan-2026",
+    "single_family": 450256.0,
+    "sf_chg": "+0.1%",
+    "condo": 269410.0,
+    "condo_chg": "-4.2%"
+   },
+   {
+    "month": "Feb-2026",
+    "single_family": 427788.0,
+    "sf_chg": "-2.2%",
+    "condo": 251012.0,
+    "condo_chg": "-7.5%"
+   },
+   {
+    "month": "Mar-2026",
+    "single_family": 445301.0,
+    "sf_chg": "+5.7%",
+    "condo": 271799.0,
+    "condo_chg": "+8.2%"
+   },
+   {
+    "month": "Apr-2026",
+    "single_family": 462832.0,
+    "sf_chg": "+3.4%",
+    "condo": 273712.0,
+    "condo_chg": "-2.7%"
+   },
+   {
+    "month": "May-2026",
+    "single_family": 436147.0,
+    "sf_chg": "-2.0%",
+    "condo": 275479.0,
+    "condo_chg": "-3.6%"
+   },
+   {
+    "month": "Jun-2026",
+    "single_family": 448491.0,
+    "sf_chg": "+2.9%",
+    "condo": 271045.0,
+    "condo_chg": "+0.1%"
+   }
+  ],
+  "Percent of List Price Received": [
+   {
+    "month": "Jul-2025",
+    "single_family": 97.3,
+    "sf_chg": "-0.1%",
+    "condo": 96.2,
+    "condo_chg": "-0.3%"
+   },
+   {
+    "month": "Aug-2025",
+    "single_family": 97.2,
+    "sf_chg": "-0.1%",
+    "condo": 96.3,
+    "condo_chg": "-0.1%"
+   },
+   {
+    "month": "Sep-2025",
+    "single_family": 97.5,
+    "sf_chg": "+0.2%",
+    "condo": 96.0,
+    "condo_chg": "-0.2%"
+   },
+   {
+    "month": "Oct-2025",
+    "single_family": 97.3,
+    "sf_chg": "-0.4%",
+    "condo": 95.8,
+    "condo_chg": "-0.8%"
+   },
+   {
+    "month": "Nov-2025",
+    "single_family": 97.5,
+    "sf_chg": "+0.2%",
+    "condo": 96.0,
+    "condo_chg": "-0.6%"
+   },
+   {
+    "month": "Dec-2025",
+    "single_family": 97.2,
+    "sf_chg": "+0.1%",
+    "condo": 96.1,
+    "condo_chg": "-0.3%"
+   },
+   {
+    "month": "Jan-2026",
+    "single_family": 97.0,
+    "sf_chg": "+0.1%",
+    "condo": 95.7,
+    "condo_chg": "-0.4%"
+   },
+   {
+    "month": "Feb-2026",
+    "single_family": 96.9,
+    "sf_chg": "-0.4%",
+    "condo": 95.0,
+    "condo_chg": "-0.4%"
+   },
+   {
+    "month": "Mar-2026",
+    "single_family": 97.3,
+    "sf_chg": "-0.1%",
+    "condo": 95.8,
+    "condo_chg": "-0.3%"
+   },
+   {
+    "month": "Apr-2026",
+    "single_family": 97.6,
+    "sf_chg": "+0.3%",
+    "condo": 96.0,
+    "condo_chg": "+0.1%"
+   },
+   {
+    "month": "May-2026",
+    "single_family": 97.5,
+    "sf_chg": "0.0%",
+    "condo": 96.3,
+    "condo_chg": "+0.1%"
+   },
+   {
+    "month": "Jun-2026",
+    "single_family": 97.3,
+    "sf_chg": "-0.2%",
+    "condo": 96.2,
+    "condo_chg": "-0.3%"
+   }
+  ],
+  "Housing Affordability Index": [
+   {
+    "month": "Jul-2025",
+    "single_family": 77.0,
+    "sf_chg": "-3.8%",
+    "condo": 121.0,
+    "condo_chg": "+4.3%"
+   },
+   {
+    "month": "Aug-2025",
+    "single_family": 81.0,
+    "sf_chg": "-4.7%",
+    "condo": 128.0,
+    "condo_chg": "+0.8%"
+   },
+   {
+    "month": "Sep-2025",
+    "single_family": 82.0,
+    "sf_chg": "-5.7%",
+    "condo": 124.0,
+    "condo_chg": "+0.8%"
+   },
+   {
+    "month": "Oct-2025",
+    "single_family": 83.0,
+    "sf_chg": "+3.8%",
+    "condo": 129.0,
+    "condo_chg": "+12.2%"
+   },
+   {
+    "month": "Nov-2025",
+    "single_family": 83.0,
+    "sf_chg": "+2.5%",
+    "condo": 122.0,
+    "condo_chg": "+6.1%"
+   },
+   {
+    "month": "Dec-2025",
+    "single_family": 83.0,
+    "sf_chg": "+3.8%",
+    "condo": 129.0,
+    "condo_chg": "+11.2%"
+   },
+   {
+    "month": "Jan-2026",
+    "single_family": 85.0,
+    "sf_chg": "+10.4%",
+    "condo": 130.0,
+    "condo_chg": "+13.0%"
+   },
+   {
+    "month": "Feb-2026",
+    "single_family": 88.0,
+    "sf_chg": "+8.6%",
+    "condo": 140.0,
+    "condo_chg": "+13.8%"
+   },
+   {
+    "month": "Mar-2026",
+    "single_family": 84.0,
+    "sf_chg": "+1.2%",
+    "condo": 133.0,
+    "condo_chg": "+3.1%"
+   },
+   {
+    "month": "Apr-2026",
+    "single_family": 82.0,
+    "sf_chg": "+5.1%",
+    "condo": 131.0,
+    "condo_chg": "+13.9%"
+   },
+   {
+    "month": "May-2026",
+    "single_family": 82.0,
+    "sf_chg": "+5.1%",
+    "condo": 126.0,
+    "condo_chg": "+5.9%"
+   },
+   {
+    "month": "Jun-2026",
+    "single_family": 82.0,
+    "sf_chg": "+3.8%",
+    "condo": 121.0,
+    "condo_chg": "+0.8%"
+   }
+  ],
+  "Inventory of Homes for Sale": [
+   {
+    "month": "Jul-2025",
+    "single_family": 4040.0,
+    "sf_chg": "+18.2%",
+    "condo": 3212.0,
+    "condo_chg": "+13.3%"
+   },
+   {
+    "month": "Aug-2025",
+    "single_family": 3942.0,
+    "sf_chg": "+13.2%",
+    "condo": 3266.0,
+    "condo_chg": "+13.6%"
+   },
+   {
+    "month": "Sep-2025",
+    "single_family": 3990.0,
+    "sf_chg": "+14.7%",
+    "condo": 3236.0,
+    "condo_chg": "+12.1%"
+   },
+   {
+    "month": "Oct-2025",
+    "single_family": 3890.0,
+    "sf_chg": "+10.1%",
+    "condo": 3202.0,
+    "condo_chg": "+10.5%"
+   },
+   {
+    "month": "Nov-2025",
+    "single_family": 3801.0,
+    "sf_chg": "+4.6%",
+    "condo": 3191.0,
+    "condo_chg": "+8.8%"
+   },
+   {
+    "month": "Dec-2025",
+    "single_family": 3584.0,
+    "sf_chg": "+4.6%",
+    "condo": 2974.0,
+    "condo_chg": "+8.8%"
+   },
+   {
+    "month": "Jan-2026",
+    "single_family": 3765.0,
+    "sf_chg": "+5.3%",
+    "condo": 3125.0,
+    "condo_chg": "+8.8%"
+   },
+   {
+    "month": "Feb-2026",
+    "single_family": 3841.0,
+    "sf_chg": "+3.7%",
+    "condo": 3204.0,
+    "condo_chg": "+7.4%"
+   },
+   {
+    "month": "Mar-2026",
+    "single_family": 4015.0,
+    "sf_chg": "+4.0%",
+    "condo": 3467.0,
+    "condo_chg": "+12.1%"
+   },
+   {
+    "month": "Apr-2026",
+    "single_family": 4103.0,
+    "sf_chg": "+1.8%",
+    "condo": 3463.0,
+    "condo_chg": "+4.8%"
+   },
+   {
+    "month": "May-2026",
+    "single_family": 4102.0,
+    "sf_chg": "-1.6%",
+    "condo": 3417.0,
+    "condo_chg": "+3.1%"
+   },
+   {
+    "month": "Jun-2026",
+    "single_family": 4023.0,
+    "sf_chg": "-3.4%",
+    "condo": 3294.0,
+    "condo_chg": "+0.6%"
+   }
+  ],
+  "Months Supply of Inventory": [
+   {
+    "month": "Jul-2025",
+    "single_family": 4.5,
+    "sf_chg": "+15.4%",
+    "condo": 8.0,
+    "condo_chg": "+25.0%"
+   },
+   {
+    "month": "Aug-2025",
+    "single_family": 4.3,
+    "sf_chg": "+7.5%",
+    "condo": 8.1,
+    "condo_chg": "+22.7%"
+   },
+   {
+    "month": "Sep-2025",
+    "single_family": 4.3,
+    "sf_chg": "+10.3%",
+    "condo": 7.9,
+    "condo_chg": "+16.2%"
+   },
+   {
+    "month": "Oct-2025",
+    "single_family": 4.2,
+    "sf_chg": "+5.0%",
+    "condo": 7.8,
+    "condo_chg": "+14.7%"
+   },
+   {
+    "month": "Nov-2025",
+    "single_family": 4.1,
+    "sf_chg": "+2.5%",
+    "condo": 7.8,
+    "condo_chg": "+13.0%"
+   },
+   {
+    "month": "Dec-2025",
+    "single_family": 3.9,
+    "sf_chg": "+2.6%",
+    "condo": 7.2,
+    "condo_chg": "+10.8%"
+   },
+   {
+    "month": "Jan-2026",
+    "single_family": 4.1,
+    "sf_chg": "+2.5%",
+    "condo": 7.6,
+    "condo_chg": "+11.8%"
+   },
+   {
+    "month": "Feb-2026",
+    "single_family": 4.2,
+    "sf_chg": "0.0%",
+    "condo": 7.8,
+    "condo_chg": "+8.3%"
+   },
+   {
+    "month": "Mar-2026",
+    "single_family": 4.3,
+    "sf_chg": "0.0%",
+    "condo": 8.5,
+    "condo_chg": "+13.3%"
+   },
+   {
+    "month": "Apr-2026",
+    "single_family": 4.4,
+    "sf_chg": "-2.2%",
+    "condo": 8.2,
+    "condo_chg": "+1.2%"
+   },
+   {
+    "month": "May-2026",
+    "single_family": 4.4,
+    "sf_chg": "-4.3%",
+    "condo": 8.0,
+    "condo_chg": "-2.4%"
+   },
+   {
+    "month": "Jun-2026",
+    "single_family": 4.3,
+    "sf_chg": "-6.5%",
+    "condo": 7.6,
+    "condo_chg": "-7.3%"
+   }
+  ]
+ },
+ "areas": {
+  "Andrews": {
+   "zips": "29510",
+   "single_family": {
+    "New Listings": {
+     "jun_2025": 8.0,
+     "jun_2026": 7.0,
+     "ytd_2025": 45.0,
+     "ytd_2026": 35.0
+    },
+    "Closed Sales": {
+     "jun_2025": 2.0,
+     "jun_2026": 4.0,
+     "ytd_2025": 18.0,
+     "ytd_2026": 25.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 217500.0,
+     "jun_2026": 165000.0,
+     "ytd_2025": 225000.0,
+     "ytd_2026": 195000.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 100.0,
+     "jun_2026": 89.6,
+     "ytd_2025": 98.7,
+     "ytd_2026": 94.0
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 40.0,
+     "jun_2026": 104.0,
+     "ytd_2025": 102.0,
+     "ytd_2026": 135.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 30.0,
+     "jun_2026": 24.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   },
+   "condo": {
+    "New Listings": {
+     "jun_2025": 0.0,
+     "jun_2026": 0.0,
+     "ytd_2025": 0.0,
+     "ytd_2026": 0.0
+    },
+    "Closed Sales": {
+     "jun_2025": 0.0,
+     "jun_2026": 0.0,
+     "ytd_2025": 0.0,
+     "ytd_2026": 0.0
+    },
+    "Median Sales Price": {
+     "jun_2025": null,
+     "jun_2026": null,
+     "ytd_2025": null,
+     "ytd_2026": null
+    },
+    "Percent of List Price Received": {
+     "jun_2025": null,
+     "jun_2026": null,
+     "ytd_2025": null,
+     "ytd_2026": null
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": null,
+     "jun_2026": null,
+     "ytd_2025": null,
+     "ytd_2026": null
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 0.0,
+     "jun_2026": 0.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   }
+  },
+  "Aynor": {
+   "zips": "29511",
+   "single_family": {
+    "New Listings": {
+     "jun_2025": 11.0,
+     "jun_2026": 16.0,
+     "ytd_2025": 109.0,
+     "ytd_2026": 117.0
+    },
+    "Closed Sales": {
+     "jun_2025": 10.0,
+     "jun_2026": 17.0,
+     "ytd_2025": 46.0,
+     "ytd_2026": 97.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 313750.0,
+     "jun_2026": 335000.0,
+     "ytd_2025": 326000.0,
+     "ytd_2026": 317900.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 95.5,
+     "jun_2026": 99.7,
+     "ytd_2025": 97.3,
+     "ytd_2026": 99.7
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 123.0,
+     "jun_2026": 185.0,
+     "ytd_2025": 137.0,
+     "ytd_2026": 141.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 61.0,
+     "jun_2026": 39.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   },
+   "condo": {
+    "New Listings": {
+     "jun_2025": 0.0,
+     "jun_2026": 0.0,
+     "ytd_2025": 0.0,
+     "ytd_2026": 0.0
+    },
+    "Closed Sales": {
+     "jun_2025": 0.0,
+     "jun_2026": 0.0,
+     "ytd_2025": 0.0,
+     "ytd_2026": 0.0
+    },
+    "Median Sales Price": {
+     "jun_2025": null,
+     "jun_2026": null,
+     "ytd_2025": null,
+     "ytd_2026": null
+    },
+    "Percent of List Price Received": {
+     "jun_2025": null,
+     "jun_2026": null,
+     "ytd_2025": null,
+     "ytd_2026": null
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": null,
+     "jun_2026": null,
+     "ytd_2025": null,
+     "ytd_2026": null
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 0.0,
+     "jun_2026": 0.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   }
+  },
+  "Carolina Forest": {
+   "zips": "Area: 10B",
+   "single_family": {
+    "New Listings": {
+     "jun_2025": 117.0,
+     "jun_2026": 89.0,
+     "ytd_2025": 837.0,
+     "ytd_2026": 667.0
+    },
+    "Closed Sales": {
+     "jun_2025": 121.0,
+     "jun_2026": 78.0,
+     "ytd_2025": 624.0,
+     "ytd_2026": 459.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 462335.0,
+     "jun_2026": 450950.0,
+     "ytd_2025": 434250.0,
+     "ytd_2026": 471239.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 97.5,
+     "jun_2026": 97.2,
+     "ytd_2025": 97.7,
+     "ytd_2026": 97.6
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 126.0,
+     "jun_2026": 106.0,
+     "ytd_2025": 124.0,
+     "ytd_2026": 119.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 371.0,
+     "jun_2026": 275.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   },
+   "condo": {
+    "New Listings": {
+     "jun_2025": 46.0,
+     "jun_2026": 39.0,
+     "ytd_2025": 350.0,
+     "ytd_2026": 320.0
+    },
+    "Closed Sales": {
+     "jun_2025": 33.0,
+     "jun_2026": 40.0,
+     "ytd_2025": 192.0,
+     "ytd_2026": 184.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 200000.0,
+     "jun_2026": 209450.0,
+     "ytd_2025": 215000.0,
+     "ytd_2026": 197500.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 96.9,
+     "jun_2026": 97.3,
+     "ytd_2025": 96.3,
+     "ytd_2026": 96.8
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 111.0,
+     "jun_2026": 130.0,
+     "ytd_2025": 102.0,
+     "ytd_2026": 138.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 197.0,
+     "jun_2026": 183.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   }
+  },
+  "Conway": {
+   "zips": "29526 and 29527",
+   "single_family": {
+    "New Listings": {
+     "jun_2025": 275.0,
+     "jun_2026": 322.0,
+     "ytd_2025": 1719.0,
+     "ytd_2026": 1780.0
+    },
+    "Closed Sales": {
+     "jun_2025": 228.0,
+     "jun_2026": 234.0,
+     "ytd_2025": 1098.0,
+     "ytd_2026": 1133.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 308204.0,
+     "jun_2026": 315995.0,
+     "ytd_2025": 310000.0,
+     "ytd_2026": 311000.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 97.6,
+     "jun_2026": 97.8,
+     "ytd_2025": 97.7,
+     "ytd_2026": 97.6
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 130.0,
+     "jun_2026": 130.0,
+     "ytd_2025": 132.0,
+     "ytd_2026": 137.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 860.0,
+     "jun_2026": 876.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   },
+   "condo": {
+    "New Listings": {
+     "jun_2025": 15.0,
+     "jun_2026": 12.0,
+     "ytd_2025": 154.0,
+     "ytd_2026": 135.0
+    },
+    "Closed Sales": {
+     "jun_2025": 8.0,
+     "jun_2026": 21.0,
+     "ytd_2025": 82.0,
+     "ytd_2026": 121.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 166500.0,
+     "jun_2026": 228000.0,
+     "ytd_2025": 208700.0,
+     "ytd_2026": 224000.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 95.2,
+     "jun_2026": 98.2,
+     "ytd_2025": 96.4,
+     "ytd_2026": 97.0
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 96.0,
+     "jun_2026": 156.0,
+     "ytd_2025": 76.0,
+     "ytd_2026": 145.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 58.0,
+     "jun_2026": 54.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   }
+  },
+  "Garden City / Murrells Inlet": {
+   "zips": "29576",
+   "single_family": {
+    "New Listings": {
+     "jun_2025": 95.0,
+     "jun_2026": 101.0,
+     "ytd_2025": 653.0,
+     "ytd_2026": 645.0
+    },
+    "Closed Sales": {
+     "jun_2025": 64.0,
+     "jun_2026": 78.0,
+     "ytd_2025": 400.0,
+     "ytd_2026": 393.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 448500.0,
+     "jun_2026": 436450.0,
+     "ytd_2025": 475000.0,
+     "ytd_2026": 455000.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 96.8,
+     "jun_2026": 96.6,
+     "ytd_2025": 97.0,
+     "ytd_2026": 96.6
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 110.0,
+     "jun_2026": 113.0,
+     "ytd_2025": 122.0,
+     "ytd_2026": 118.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 336.0,
+     "jun_2026": 312.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   },
+   "condo": {
+    "New Listings": {
+     "jun_2025": 52.0,
+     "jun_2026": 45.0,
+     "ytd_2025": 369.0,
+     "ytd_2026": 391.0
+    },
+    "Closed Sales": {
+     "jun_2025": 43.0,
+     "jun_2026": 64.0,
+     "ytd_2025": 181.0,
+     "ytd_2026": 240.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 317030.0,
+     "jun_2026": 313413.0,
+     "ytd_2025": 306300.0,
+     "ytd_2026": 304960.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 96.6,
+     "jun_2026": 97.8,
+     "ytd_2025": 96.7,
+     "ytd_2026": 97.5
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 130.0,
+     "jun_2026": 173.0,
+     "ytd_2025": 129.0,
+     "ytd_2026": 147.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 230.0,
+     "jun_2026": 222.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   }
+  },
+  "Georgetown": {
+   "zips": "29440",
+   "single_family": {
+    "New Listings": {
+     "jun_2025": 33.0,
+     "jun_2026": 44.0,
+     "ytd_2025": 254.0,
+     "ytd_2026": 279.0
+    },
+    "Closed Sales": {
+     "jun_2025": 32.0,
+     "jun_2026": 35.0,
+     "ytd_2025": 170.0,
+     "ytd_2026": 148.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 367500.0,
+     "jun_2026": 352000.0,
+     "ytd_2025": 339245.0,
+     "ytd_2026": 375000.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 96.6,
+     "jun_2026": 96.6,
+     "ytd_2025": 96.3,
+     "ytd_2026": 96.8
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 119.0,
+     "jun_2026": 123.0,
+     "ytd_2025": 135.0,
+     "ytd_2026": 134.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 127.0,
+     "jun_2026": 177.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   },
+   "condo": {
+    "New Listings": {
+     "jun_2025": 1.0,
+     "jun_2026": 1.0,
+     "ytd_2025": 8.0,
+     "ytd_2026": 20.0
+    },
+    "Closed Sales": {
+     "jun_2025": 3.0,
+     "jun_2026": 0.0,
+     "ytd_2025": 10.0,
+     "ytd_2026": 10.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 229000.0,
+     "jun_2026": null,
+     "ytd_2025": 306500.0,
+     "ytd_2026": 786250.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 98.1,
+     "jun_2026": null,
+     "ytd_2025": 97.5,
+     "ytd_2026": 95.9
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 226.0,
+     "jun_2026": null,
+     "ytd_2025": 150.0,
+     "ytd_2026": 69.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 5.0,
+     "jun_2026": 15.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   }
+  },
+  "Little River": {
+   "zips": "29566",
+   "single_family": {
+    "New Listings": {
+     "jun_2025": 82.0,
+     "jun_2026": 79.0,
+     "ytd_2025": 484.0,
+     "ytd_2026": 464.0
+    },
+    "Closed Sales": {
+     "jun_2025": 57.0,
+     "jun_2026": 64.0,
+     "ytd_2025": 294.0,
+     "ytd_2026": 301.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 355000.0,
+     "jun_2026": 357500.0,
+     "ytd_2025": 363750.0,
+     "ytd_2026": 349900.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 98.1,
+     "jun_2026": 97.0,
+     "ytd_2025": 97.6,
+     "ytd_2026": 97.1
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 126.0,
+     "jun_2026": 126.0,
+     "ytd_2025": 123.0,
+     "ytd_2026": 124.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 270.0,
+     "jun_2026": 221.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   },
+   "condo": {
+    "New Listings": {
+     "jun_2025": 41.0,
+     "jun_2026": 76.0,
+     "ytd_2025": 321.0,
+     "ytd_2026": 375.0
+    },
+    "Closed Sales": {
+     "jun_2025": 27.0,
+     "jun_2026": 27.0,
+     "ytd_2025": 156.0,
+     "ytd_2026": 159.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 205000.0,
+     "jun_2026": 237500.0,
+     "ytd_2025": 198650.0,
+     "ytd_2026": 200000.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 96.8,
+     "jun_2026": 95.8,
+     "ytd_2025": 95.8,
+     "ytd_2026": 95.7
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 153.0,
+     "jun_2026": 128.0,
+     "ytd_2025": 142.0,
+     "ytd_2026": 132.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 203.0,
+     "jun_2026": 246.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   }
+  },
+  "Loris / Longs": {
+   "zips": "29568 and 29569",
+   "single_family": {
+    "New Listings": {
+     "jun_2025": 165.0,
+     "jun_2026": 213.0,
+     "ytd_2025": 1045.0,
+     "ytd_2026": 1380.0
+    },
+    "Closed Sales": {
+     "jun_2025": 146.0,
+     "jun_2026": 225.0,
+     "ytd_2025": 753.0,
+     "ytd_2026": 901.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 296475.0,
+     "jun_2026": 315000.0,
+     "ytd_2025": 295000.0,
+     "ytd_2026": 301120.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 97.9,
+     "jun_2026": 97.4,
+     "ytd_2025": 97.9,
+     "ytd_2026": 97.9
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 133.0,
+     "jun_2026": 123.0,
+     "ytd_2025": 138.0,
+     "ytd_2026": 125.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 496.0,
+     "jun_2026": 504.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   },
+   "condo": {
+    "New Listings": {
+     "jun_2025": 27.0,
+     "jun_2026": 11.0,
+     "ytd_2025": 120.0,
+     "ytd_2026": 147.0
+    },
+    "Closed Sales": {
+     "jun_2025": 16.0,
+     "jun_2026": 15.0,
+     "ytd_2025": 66.0,
+     "ytd_2026": 85.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 269750.0,
+     "jun_2026": 313765.0,
+     "ytd_2025": 329500.0,
+     "ytd_2026": 306880.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 97.5,
+     "jun_2026": 99.4,
+     "ytd_2025": 98.1,
+     "ytd_2026": 98.3
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 144.0,
+     "jun_2026": 111.0,
+     "ytd_2025": 181.0,
+     "ytd_2026": 148.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 61.0,
+     "jun_2026": 57.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   }
+  },
+  "Myrtle Beach": {
+   "zips": "29572 and 29577",
+   "single_family": {
+    "New Listings": {
+     "jun_2025": 81.0,
+     "jun_2026": 88.0,
+     "ytd_2025": 515.0,
+     "ytd_2026": 522.0
+    },
+    "Closed Sales": {
+     "jun_2025": 59.0,
+     "jun_2026": 65.0,
+     "ytd_2025": 294.0,
+     "ytd_2026": 319.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 500000.0,
+     "jun_2026": 590000.0,
+     "ytd_2025": 539900.0,
+     "ytd_2026": 525000.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 97.0,
+     "jun_2026": 95.5,
+     "ytd_2025": 96.5,
+     "ytd_2026": 96.1
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 150.0,
+     "jun_2026": 155.0,
+     "ytd_2025": 133.0,
+     "ytd_2026": 137.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 284.0,
+     "jun_2026": 322.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   },
+   "condo": {
+    "New Listings": {
+     "jun_2025": 261.0,
+     "jun_2026": 243.0,
+     "ytd_2025": 1750.0,
+     "ytd_2026": 1796.0
+    },
+    "Closed Sales": {
+     "jun_2025": 159.0,
+     "jun_2026": 167.0,
+     "ytd_2025": 824.0,
+     "ytd_2026": 879.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 241000.0,
+     "jun_2026": 209000.0,
+     "ytd_2025": 235000.0,
+     "ytd_2026": 205000.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 96.5,
+     "jun_2026": 95.0,
+     "ytd_2025": 95.5,
+     "ytd_2026": 94.8
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 150.0,
+     "jun_2026": 147.0,
+     "ytd_2025": 137.0,
+     "ytd_2026": 145.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 1407.0,
+     "jun_2026": 1432.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   }
+  },
+  "North Myrtle Beach": {
+   "zips": "29582",
+   "single_family": {
+    "New Listings": {
+     "jun_2025": 98.0,
+     "jun_2026": 92.0,
+     "ytd_2025": 678.0,
+     "ytd_2026": 648.0
+    },
+    "Closed Sales": {
+     "jun_2025": 82.0,
+     "jun_2026": 65.0,
+     "ytd_2025": 338.0,
+     "ytd_2026": 364.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 599520.0,
+     "jun_2026": 635000.0,
+     "ytd_2025": 568954.0,
+     "ytd_2026": 566748.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 97.0,
+     "jun_2026": 97.7,
+     "ytd_2025": 96.6,
+     "ytd_2026": 96.3
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 112.0,
+     "jun_2026": 123.0,
+     "ytd_2025": 109.0,
+     "ytd_2026": 124.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 345.0,
+     "jun_2026": 327.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   },
+   "condo": {
+    "New Listings": {
+     "jun_2025": 112.0,
+     "jun_2026": 125.0,
+     "ytd_2025": 883.0,
+     "ytd_2026": 928.0
+    },
+    "Closed Sales": {
+     "jun_2025": 77.0,
+     "jun_2026": 73.0,
+     "ytd_2025": 476.0,
+     "ytd_2026": 438.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 272500.0,
+     "jun_2026": 289000.0,
+     "ytd_2025": 294500.0,
+     "ytd_2026": 310000.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 96.5,
+     "jun_2026": 96.3,
+     "ytd_2025": 96.1,
+     "ytd_2026": 96.1
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 109.0,
+     "jun_2026": 126.0,
+     "ytd_2025": 122.0,
+     "ytd_2026": 122.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 607.0,
+     "jun_2026": 626.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   }
+  },
+  "Pawleys Island / Litchfield": {
+   "zips": "29585",
+   "single_family": {
+    "New Listings": {
+     "jun_2025": 53.0,
+     "jun_2026": 49.0,
+     "ytd_2025": 289.0,
+     "ytd_2026": 280.0
+    },
+    "Closed Sales": {
+     "jun_2025": 29.0,
+     "jun_2026": 40.0,
+     "ytd_2025": 168.0,
+     "ytd_2026": 204.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 554500.0,
+     "jun_2026": 631380.0,
+     "ytd_2025": 597000.0,
+     "ytd_2026": 656250.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 98.4,
+     "jun_2026": 97.8,
+     "ytd_2025": 97.5,
+     "ytd_2026": 96.8
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 133.0,
+     "jun_2026": 85.0,
+     "ytd_2025": 117.0,
+     "ytd_2026": 116.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 146.0,
+     "jun_2026": 117.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   },
+   "condo": {
+    "New Listings": {
+     "jun_2025": 28.0,
+     "jun_2026": 29.0,
+     "ytd_2025": 224.0,
+     "ytd_2026": 211.0
+    },
+    "Closed Sales": {
+     "jun_2025": 20.0,
+     "jun_2026": 33.0,
+     "ytd_2025": 119.0,
+     "ytd_2026": 133.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 335000.0,
+     "jun_2026": 320000.0,
+     "ytd_2025": 325000.0,
+     "ytd_2026": 317500.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 95.2,
+     "jun_2026": 96.0,
+     "ytd_2025": 96.6,
+     "ytd_2026": 96.8
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 88.0,
+     "jun_2026": 125.0,
+     "ytd_2025": 111.0,
+     "ytd_2026": 117.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 127.0,
+     "jun_2026": 120.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   }
+  },
+  "Socastee": {
+   "zips": "29588",
+   "single_family": {
+    "New Listings": {
+     "jun_2025": 169.0,
+     "jun_2026": 146.0,
+     "ytd_2025": 928.0,
+     "ytd_2026": 894.0
+    },
+    "Closed Sales": {
+     "jun_2025": 113.0,
+     "jun_2026": 125.0,
+     "ytd_2025": 601.0,
+     "ytd_2026": 627.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 365000.0,
+     "jun_2026": 350000.0,
+     "ytd_2025": 355000.0,
+     "ytd_2026": 358000.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 98.3,
+     "jun_2026": 98.1,
+     "ytd_2025": 97.7,
+     "ytd_2026": 97.7
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 106.0,
+     "jun_2026": 106.0,
+     "ytd_2025": 106.0,
+     "ytd_2026": 116.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 363.0,
+     "jun_2026": 346.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   },
+   "condo": {
+    "New Listings": {
+     "jun_2025": 31.0,
+     "jun_2026": 23.0,
+     "ytd_2025": 199.0,
+     "ytd_2026": 185.0
+    },
+    "Closed Sales": {
+     "jun_2025": 15.0,
+     "jun_2026": 19.0,
+     "ytd_2025": 93.0,
+     "ytd_2026": 101.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 184000.0,
+     "jun_2026": 234000.0,
+     "ytd_2025": 215000.0,
+     "ytd_2026": 173500.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 97.4,
+     "jun_2026": 96.3,
+     "ytd_2025": 97.3,
+     "ytd_2026": 96.2
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 161.0,
+     "jun_2026": 93.0,
+     "ytd_2025": 123.0,
+     "ytd_2026": 99.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 112.0,
+     "jun_2026": 99.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   }
+  },
+  "Surfside Beach": {
+   "zips": "29575",
+   "single_family": {
+    "New Listings": {
+     "jun_2025": 85.0,
+     "jun_2026": 87.0,
+     "ytd_2025": 487.0,
+     "ytd_2026": 513.0
+    },
+    "Closed Sales": {
+     "jun_2025": 61.0,
+     "jun_2026": 54.0,
+     "ytd_2025": 279.0,
+     "ytd_2026": 271.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 403908.0,
+     "jun_2026": 449500.0,
+     "ytd_2025": 402735.0,
+     "ytd_2026": 418000.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 95.7,
+     "jun_2026": 96.3,
+     "ytd_2025": 95.6,
+     "ytd_2026": 96.1
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 115.0,
+     "jun_2026": 111.0,
+     "ytd_2025": 122.0,
+     "ytd_2026": 117.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 315.0,
+     "jun_2026": 319.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   },
+   "condo": {
+    "New Listings": {
+     "jun_2025": 50.0,
+     "jun_2026": 60.0,
+     "ytd_2025": 322.0,
+     "ytd_2026": 298.0
+    },
+    "Closed Sales": {
+     "jun_2025": 39.0,
+     "jun_2026": 30.0,
+     "ytd_2025": 166.0,
+     "ytd_2026": 187.0
+    },
+    "Median Sales Price": {
+     "jun_2025": 212500.0,
+     "jun_2026": 187500.0,
+     "ytd_2025": 174500.0,
+     "ytd_2026": 179000.0
+    },
+    "Percent of List Price Received": {
+     "jun_2025": 95.4,
+     "jun_2026": 94.7,
+     "ytd_2025": 95.0,
+     "ytd_2026": 95.1
+    },
+    "Days on Market Until Sale": {
+     "jun_2025": 123.0,
+     "jun_2026": 125.0,
+     "ytd_2025": 130.0,
+     "ytd_2026": 118.0
+    },
+    "Inventory of Homes for Sale": {
+     "jun_2025": 210.0,
+     "jun_2026": 178.0,
+     "ytd_2025": null,
+     "ytd_2026": null
+    }
+   }
+  }
+ }
+}

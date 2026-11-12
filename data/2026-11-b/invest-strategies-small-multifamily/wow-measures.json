@@ -1,0 +1,14 @@
+{
+ "made": "fix round 1, 2026-11-10, by hand from the sources below (no address of any building; group middle points from group-points.json)",
+ "sources": {
+  "group_points": "group-points.json (median address point of each named group)",
+  "ocean": "../../2026-10-d/sell-home-value/raw/ocean.json (Census Atlantic Ocean polygon), nearest edge point",
+  "drive": "router.project-osrm.org, driving, no traffic",
+  "foot": "routing.openstreetmap.de/routed-foot",
+  "hospital": "Horry County GIS AddressPoints: 809 82ND PKWY, Myrtle Beach (33.7587, -78.8195); Grand Strand Medical Center, /submarkets/myrtle-beach/ ledger row 47",
+  "waterfront": "Little River ShrimpFest page: Historic Little River Waterfront, 4468 Mineola Avenue; county AddressPoints 4460 and 4472 MINEOLA AVE (33.8718, -78.6109)"
+ },
+ "windtree_estates": { "ocean_straight_mi": 0.66, "ocean_walk_mi": 0.75, "ocean_walk_min": 16.0, "hospital_straight_mi": 1.48, "hospital_drive_mi": 2.1, "hospital_drive_min": 5.7 },
+ "tarpon_bay_ii": { "ocean_straight_mi": 4.97, "beach_drive_mi": 6.0, "beach_drive_min": 12.2, "beach_drive_end": "7th Avenue South, Myrtle Beach" },
+ "a_place_at_the_river": { "ocean_straight_mi": 2.71, "waterfront_straight_mi": 0.94, "waterfront_drive_mi": 1.4, "waterfront_drive_min": 4.2 }
+}

@@ -1,0 +1,118 @@
+{
+ "pulled": "2026-11-10T10:28:50.946024+00:00",
+ "source_listings": "Chapter3 map API (CCMLS active listings through the CRM), https://chapter3realty.com/homes/api/map",
+ "source_map": "Horry County GIS parcelapp MapServer layer 19 (FEMA flood zones, SFHA_TF='T'), layer 33 (county outline)",
+ "listing_field": "has=flood_zone: the listing marks the home as in a flood zone",
+ "api_totals_all": {
+  "house": 3662,
+  "townhouse": 368,
+  "condo": 2850,
+  "manufactured": 500
+ },
+ "api_totals_flagged": {
+  "house": 125,
+  "townhouse": 1,
+  "condo": 335,
+  "manufactured": 3
+ },
+ "pins_all": 7374,
+ "pins_flagged": 464,
+ "pins_with_point": 7374,
+ "truncated": [
+  [
+   "house",
+   229647,
+   230028,
+   17,
+   16
+  ],
+  [
+   "house",
+   389864,
+   390244,
+   27,
+   26
+  ],
+  [
+   "house",
+   398638,
+   399018,
+   14,
+   13
+  ],
+  [
+   "house",
+   528719,
+   529100,
+   6,
+   5
+  ],
+  [
+   "condo",
+   294878,
+   295258,
+   17,
+   16
+  ],
+  [
+   "condo",
+   368883,
+   369263,
+   4,
+   3
+  ]
+ ],
+ "horry": {
+  "horry": 6335,
+  "sfha": 1118,
+  "sfha_not_flagged": 888,
+  "sfha_flagged": 230,
+  "flagged": 391,
+  "core": 672,
+  "core_not_flagged": 543,
+  "flagged_not_sfha": 161
+ },
+ "horry_by_type": {
+  "house": {
+   "horry": 2924,
+   "sfha": 245,
+   "sfha_not_flagged": 197,
+   "sfha_flagged": 48,
+   "flagged": 71,
+   "core": 172,
+   "core_not_flagged": 132,
+   "flagged_not_sfha": 23
+  },
+  "townhouse": {
+   "horry": 310,
+   "sfha": 3,
+   "sfha_not_flagged": 3,
+   "core": 1,
+   "core_not_flagged": 1,
+   "flagged": 1,
+   "flagged_not_sfha": 1
+  },
+  "condo": {
+   "horry": 2690,
+   "sfha": 831,
+   "sfha_not_flagged": 650,
+   "core": 478,
+   "core_not_flagged": 390,
+   "flagged": 317,
+   "flagged_not_sfha": 136,
+   "sfha_flagged": 181
+  },
+  "manufactured": {
+   "horry": 411,
+   "sfha": 39,
+   "sfha_not_flagged": 38,
+   "core": 21,
+   "core_not_flagged": 20,
+   "flagged": 2,
+   "flagged_not_sfha": 1,
+   "sfha_flagged": 1
+  }
+ },
+ "core": "core = inside FEMA's high-risk zone shrunk by about 30 m, so a pin on a zone edge is not counted",
+ "limits": "Points are the listing's map pin. A pin on the edge of a zone can fall on either side. FEMA's zone is the county's copy of the effective map (12/16/2021). Georgetown County homes are left out (no map loaded)."
+}

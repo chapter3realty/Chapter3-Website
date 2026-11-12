@@ -1,0 +1,63 @@
+{
+ "method": "Address points (layer 22) per PIN, for parcels (layer 24) with MarketImprv > 0 under each land use code. 101 sampled (first 400 PINs).",
+ "codes": {
+  "101": {
+   "parcels_with_building": 2000,
+   "checked": 400,
+   "address_points_per_parcel": {
+    "1": 391,
+    "2": 9
+   }
+  },
+  "102": {
+   "parcels_with_building": 984,
+   "checked": 984,
+   "address_points_per_parcel": {
+    "0": 22,
+    "1": 739,
+    "2": 194,
+    "3": 11,
+    "4": 12,
+    "5": 2,
+    "6": 4
+   }
+  },
+  "103": {
+   "parcels_with_building": 103,
+   "checked": 103,
+   "address_points_per_parcel": {
+    "0": 4,
+    "1": 71,
+    "2": 6,
+    "3": 19,
+    "4": 1,
+    "6": 1,
+    "8": 1
+   }
+  },
+  "104": {
+   "parcels_with_building": 181,
+   "checked": 181,
+   "address_points_per_parcel": {
+    "0": 2,
+    "1": 136,
+    "2": 9,
+    "3": 4,
+    "4": 23,
+    "5": 3,
+    "6": 1,
+    "8": 1,
+    "9": 2
+   }
+  },
+  "126": {
+   "parcels_with_building": 1021,
+   "checked": 1021,
+   "address_points_per_parcel": {
+    "0": 71,
+    "1": 929,
+    "2": 21
+   }
+  }
+ }
+}

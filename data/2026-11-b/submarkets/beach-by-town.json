@@ -1,0 +1,42 @@
+{
+ "source": "U.S. Census Bureau TIGER/Line 2026 COASTLINE and PLACE, via Blog-Brain tools/geo/grand-strand-v2.json",
+ "method": "coast segment midpoint inside a place outline or within BUF m (default 120); NC line to 33.38 N",
+ "places": {
+  "Myrtle Beach": 10.0,
+  "North Myrtle Beach": 8.6,
+  "Litchfield Beach": 4.1,
+  "Pawleys Island": 3.6,
+  "Surfside Beach": 2.1,
+  "Garden City": 1.9,
+  "Briarcliffe Acres": 0.7,
+  "Atlantic Beach": 0.1
+ },
+ "outside_any_place_miles": 18.6,
+ "kinds": {
+  "Conway": "city",
+  "Garden City": "community",
+  "Little River": "community",
+  "Murrells Inlet": "community",
+  "Myrtle Beach": "city",
+  "North Myrtle Beach": "city",
+  "Pawleys Island": "town",
+  "Surfside Beach": "town",
+  "Andrews": "town",
+  "Atlantic Beach": "town",
+  "Aynor": "town",
+  "Calabash": "town",
+  "Carolina Forest": "community",
+  "Forestbrook": "community",
+  "Georgetown": "city",
+  "Green Sea": "community",
+  "Litchfield Beach": "community",
+  "Loris": "city",
+  "Red Hill": "community",
+  "Socastee": "community",
+  "Sunset Beach": "town",
+  "Briarcliffe Acres": "town",
+  "Finklea": "community",
+  "Ketchuptown": "community",
+  "Live Oak": "community"
+ }
+}

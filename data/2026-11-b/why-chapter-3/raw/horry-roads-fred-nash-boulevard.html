@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+
+	<link rel="stylesheet" href="/css/controls/control.css" />
+	<link rel="stylesheet" href="/css/controls/footer.css" />
+	<link rel="stylesheet" href="/css/controls/header.css" />
+	<link rel="stylesheet" href="/css/controls/main.css" />
+	<link rel="stylesheet" href="/css/controls/styles.css" />
+	<link rel="stylesheet" href="/css/partials/site-leave-disclaimer.css" />
+	<link rel="stylesheet" href="/css/partials/accordion-links.css" />
+	<link rel="stylesheet" href="https://use.typekit.net/gfl2jqh.css">
+	<link rel="icon" type="image/png" href="/media/xlkl0mfd/favicon-32x32.png" />
+	
+	<title>Fred Nash Boulevard</title>
+	<link rel="stylesheet" href="/css/pages/project-details.css" />
+
+	<script src="https://unpkg.com/lucide@latest"></script>
+	<script defer src="/js/siteLeaveDisclaimer.js"></script>
+	<script defer src="/js/navigation.js"></script>
+	<script defer src="/js/obfuscation.js"></script>
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-ND8VVY1DP9"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ND8VVY1DP9');
+</script>
+
+</head>
+<body style="">
+  <header>
+  <div class="main-container">
+    <a href="/" class="logo-container">
+      <img src="/media/t40hkuvs/hcg-icon.svg" />
+      <div class="logo-text">
+        <h1 class="made-up-logo">HC<strong>Government</strong></h1>
+        <div class="tag-line">
+          Transportation Improvement Plan
+        </div>
+      </div>
+    </a>
+    
+
+<nav>
+  <div class="nav-wrapper">
+    <div id="hamburger" class="hamburger">
+      <i data-lucide="menu"></i>
+    </div>
+
+    <ul class="link-list primary-list">
+        <li class="link drop-down">
+          <div class="main-link">
+             <a href="/?#projectSearch">Projects</a>
+<i data-lucide="chevron-down"></i>          </div>
+          
+            <ul class="link-list secondary-list">
+                  <li class="child-link">
+                    <a href="/?statusFilter=current#projectSearch">
+                      Current Projects
+                    </a>
+                  </li>
+                  <li class="child-link">
+                    <a href="/?statusFilter=past#projectSearch">
+                      Past Projects
+                    </a>
+                  </li>
+                  <li class="child-link">
+                    <a href="/?statusFilter=future#projectSearch">
+                      Future Projects
+                    </a>
+                  </li>
+                  <li class="child-link">
+                    <a href="/projects/">
+                      Project Map
+                    </a>
+                  </li>
+                  
+
+
+<li class="child-group has-label" data-depth="1">
+    <a href="https://www.scdot.org/projects/current-projects.html" target="_blank">SCDOT Projects</a>
+</li>
+            </ul>
+        </li>
+        <li class="link drop-down">
+          <div class="main-link">
+             <a href="/resources/">Resources</a>
+<i data-lucide="chevron-down"></i>          </div>
+          
+            <ul class="link-list secondary-list">
+                  <li class="child-link">
+                    <a href="/resources/ride-3/">
+                      RIDE 3
+                    </a>
+                  </li>
+                  <li class="child-link">
+                    <a href="/resources/ride-4/">
+                      RIDE 4
+                    </a>
+                  </li>
+                  <li class="child-link">
+                    <a href="/resources/future-in-focus/">
+                      Future in Focus
+                    </a>
+                  </li>
+                  <li class="child-link">
+                    <a href="/resources/how-a-road-gets-built/">
+                      How a Road Gets Built
+                    </a>
+                  </li>
+                  
+
+
+<li class="child-group " data-depth="1">
+    <ul>
+          <li class="child-link">
+            <a href="https://www.scstatehouse.gov/code/t04c010.php" target="_blank">
+              Capital Projects Sales Tax Law
+            </a>
+          </li>
+          <li class="child-link">
+            <a href="https://www.511sc.org/#zoom=7.392317422778981&amp;lon=-80.72462271068872&amp;lat=33.54446902822535&amp;dmsg&amp;rest&amp;cams&amp;other&amp;cong&amp;wthr&amp;acon&amp;incd&amp;trfc" target="_blank">
+              SCDOT Webcam
+            </a>
+          </li>
+    </ul>
+</li>
+            </ul>
+        </li>
+        <li class="link">
+          <div class="main-link">
+             <a href="/public-meetings/">Public Meetings</a>
+          </div>
+          
+        </li>
+        <li class="link">
+          <div class="main-link">
+             <a href="/submit-feedback/">Submit Feedback</a>
+          </div>
+          
+        </li>
+    </ul>
+  </div>
+</nav>
+  </div>
+  
+
+  <div class="breadcrumbs">
+    <i data-lucide="home" style="margin-bottom:-.25rem;"></i>
+          <a href="/">Home</a> <span class="divider">/</span>
+          <a href="/projects/">Projects</a> <span class="divider">/</span>
+
+      <div class="active">Fred Nash Boulevard</div>
+  </div>
+
+</header>
+  <main>
+    
+
+
+
+<!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
+<link rel="stylesheet" href="https://js.arcgis.com/4.31/esri/themes/light/main.css" />
+<script defer src="https://js.arcgis.com/4.31/"></script>
+
+<script defer type="text/javascript" src="/js/projectMap.js"></script>
+
+<script>
+	var __PROJECT_MAP_OPTIONS = {
+		featureIds: [9],
+		idField: "ITEMID",
+		basemap: "gray-vector",
+		featureLayerUrl: "https://services1.arcgis.com/If0JkGr8ABreBTuS/ArcGIS/rest/services/Road_Projects/FeatureServer/0",
+		featureSymbol: {
+    type: "simple-line",
+    color: "black",
+    width: "2px",
+    style: "solid"
+},
+		selectedFeatureSymbol: {
+    type: "simple-line",
+    color: "blue",
+    width: "3px",
+    style: "solid"
+},
+		buffer: 100,
+		bufferSymbol: {
+    type: "simple-fill",
+    color: [150, 150, 150, 0.3],
+    outline: {
+        color: [0, 0, 0, 0.5],
+        width: 1
+    }
+},
+		bufferMinScale: 50000
+	}
+</script>
+
+
+
+
+<h1 class="title">Fred Nash Boulevard</h1>
+
+<div class="project-attributes">
+	<div class="attribute">
+		<div class="title">Project Number</div>
+		<div class="info">S100016</div>
+	</div>
+	<div class="attribute">
+		<div class="title">Type</div>
+		<div class="info">Major Projects</div>
+	</div>
+	<div class="attribute">
+		<div class="title">Program Source</div>
+		<div class="info">RIDE 3</div>
+	</div>
+</div>
+
+
+<div class="project-details">
+	<div class="details-container">
+		<div class="info">
+				<div class="detail">
+					<h2 class="title">Description</h2>
+					<p>Construct new 3-lane road, including a center turn-lane, to extend Fred Nash Boulevard around the end of the airport runway (MYR) to provide a direct connection to Harrelson Boulevard. The project includes bicycle facilities.</p>
+				</div>
+				<div class="detail">
+					<h2 class="title">Features and Benefits</h2>
+					<ul><li><p class="" data-start="88" data-end="196"><strong data-start="88" data-end="107">New 3-Lane Road</strong><br>Constructs a 3-lane road with a center turn lane to improve traffic flow and access.</p></li><li><p class="" data-start="200" data-end="333"><strong data-start="200" data-end="244">Direct Connection to Harrelson Boulevard</strong><br>Provides a more efficient route around the airport, enhancing regional connectivity.</p></li><li><p class="" data-start="337" data-end="445"><strong data-start="337" data-end="359">Bicycle Facilities</strong><br>Includes dedicated bike lanes to support safe, multimodal transportation options.</p></li><li><p class="" data-start="449" data-end="606"><strong data-start="449" data-end="500">Improved Access for Airport &amp; Surrounding Areas</strong><br>Strengthens infrastructure around the Myrtle Beach International Airport (MYR).</p></li></ul><p></p>
+				</div>
+				<div class="detail">
+					<h2 class="title">Funding Sources</h2>
+					<p>RIDE 3</p>
+				</div>
+			<div class="detail">
+				<h2 class="title">Budget</h2>
+				<div class="line-item">$19,300,000</div>
+			</div>
+			<div class="detail">
+				<h2 class="title">Expenditures</h2>
+				<div class="line-item">$33,195,670</div>
+			</div>
+
+
+				<div class="detail">
+					<h2 class="title">Schedule</h2>
+					<div class="description"><p>Project Completed with punch list items.&nbsp;</p></div>
+					<div class="updated">Updated On: 3/20/2026 3:40:05 PM</div>
+				</div>
+		</div>
+		<div class="map"></div>
+	</div>
+
+		<div class="phase-container">
+			<div class="phase-container-label">
+				Phase
+			</div>
+				<div class="phase">
+					<div class="indicator">
+						<i class="icon" data-lucide="triangle-alert"></i>
+					</div>
+					<div class="label">Not Yet Started</div>
+				</div>
+				<div class="phase">
+					<div class="indicator">
+						<i class="icon" data-lucide="brain-cog"></i>
+					</div>
+					<div class="label">Design &amp; Engineering</div>
+				</div>
+				<div class="phase">
+					<div class="indicator">
+						<i class="icon" data-lucide="merge"></i>
+					</div>
+					<div class="label">Right of Way Acquisition</div>
+				</div>
+				<div class="phase active">
+					<div class="indicator">
+						<i class="icon" data-lucide="construction"></i>
+					</div>
+					<div class="label">Construction</div>
+				</div>
+				<div class="phase">
+					<div class="indicator">
+						<i class="icon" data-lucide="circle-check-big"></i>
+					</div>
+					<div class="label">Completed</div>
+				</div>
+		</div>
+
+</div>
+
+ 
+
+  </main>
+  <footer class="main-footer">
+  <div class="county-website-info column">
+    <img class="footer--logo" src="https://www.horrycountysc.gov/media/e5pcpyao/hcgtreelogo-placeholder.svg" alt="Horry County Official Logo">
+    <section class="column">
+      <div class="row"><a href="https://www.horrycountysc.gov"> www.horrycountysc.gov</a>&emsp;|&emsp;HC<strong>Government</strong></div>
+      <div class="row">A product of Horry County Government</div>
+      <div class="row">©2026 by Horry County Government&hairsp;—&hairsp;All Rights Reserved.</div>
+    </section>
+  </div>
+  <div class="more-info-container">
+    <div class="label">WANT MORE INFORMATION</div>
+    <a class="button-link" href="/submit-feedback#constant_Contact">
+      SIGN UP NOW
+    </a>
+  </div>
+  <div class="contact-us">
+    <div class="label">Contact Us</div>
+    <ul>
+      <li>
+        <a href="/submit-feedback">Submit Feedback</a>
+      </li>
+      <li>
+        <a href="https://www.horrycountysc.gov/departments/ride/#contact">RIDE Department</a>
+      </li>
+      <li>
+        <a href="https://www.horrycountysc.gov/departments/public-works/#contact">Public Works Department</a>
+      </li>
+      <li>
+        <a href="https://www.horrycountysc.gov/departments/public-information/#contact">Public Information Department</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+  <div id="fullscreen_Modal" class="fullscreen-modal">
+
+  <div class="disclaimer">
+    <h1 class="title">Disclaimer</h1>
+    <p>You are leaving Horry County's website and visiting the website of another 
+      agency or company. Horry County may not be responsible for the construction 
+      projects or website content on subsequent pages.
+      <br /> <br />
+      Do you wish to continue?
+    </p>
+
+    <div class="row buttons">
+      <button id="cancel">Cancel</button>
+      <a id="outside_Link" href="">Accept</a>
+    </div>
+  </div>
+</div>
+  <script>
+    lucide.createIcons();
+
+    
+  </script>
+</body>
+</html>

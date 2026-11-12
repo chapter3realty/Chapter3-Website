@@ -1,0 +1,69 @@
+{
+ "made_by": "homes_places.py",
+ "note": "The CRM place for each town's homes strip on /submarkets/; the same search as which-town's entry.",
+ "places": [
+  {
+   "town": "little-river",
+   "slug": "town-little-river",
+   "name": "Little River",
+   "near": "33.87869,-78.63932",
+   "miles": 4
+  },
+  {
+   "town": "north-myrtle-beach",
+   "slug": "town-north-myrtle-beach",
+   "name": "North Myrtle Beach",
+   "near": "33.82443,-78.71079",
+   "miles": 4
+  },
+  {
+   "town": "myrtle-beach",
+   "slug": "town-myrtle-beach",
+   "name": "Myrtle Beach",
+   "near": "33.70882,-78.88539",
+   "miles": 3
+  },
+  {
+   "town": "surfside-beach",
+   "slug": "town-surfside-beach",
+   "name": "Surfside Beach",
+   "near": "33.60600,-78.97500",
+   "miles": 1
+  },
+  {
+   "town": "garden-city",
+   "slug": "town-garden-city",
+   "name": "Garden City",
+   "near": "33.59107,-79.00642",
+   "miles": 1.5
+  },
+  {
+   "town": "murrells-inlet",
+   "slug": "town-murrells-inlet",
+   "name": "Murrells Inlet",
+   "near": "33.54500,-79.06500",
+   "miles": 2
+  },
+  {
+   "town": "pawleys-island",
+   "slug": "town-pawleys-litchfield",
+   "name": "Pawleys Island and Litchfield",
+   "near": "33.50574,-79.13559",
+   "miles": 4
+  },
+  {
+   "town": "carolina-forest",
+   "slug": "town-carolina-forest",
+   "name": "Carolina Forest",
+   "near": "33.77000,-78.92500",
+   "miles": 3
+  },
+  {
+   "town": "conway",
+   "slug": "town-conway",
+   "name": "Conway",
+   "near": "33.84000,-79.05000",
+   "miles": 3
+  }
+ ]
+}

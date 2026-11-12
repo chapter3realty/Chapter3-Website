@@ -1,0 +1,90 @@
+{
+ "made": "group_points.py",
+ "note": "Median address point of each named group, rounded to 3 decimals. Group centers only.",
+ "groups": [
+  {
+   "name": "CRESCENT BEACH",
+   "buildings": 119,
+   "lat": 33.807,
+   "lon": -78.706
+  },
+  {
+   "name": "CHERRY GROVE BEACH",
+   "buildings": 113,
+   "lat": 33.832,
+   "lon": -78.635
+  },
+  {
+   "name": "TARPON BAY II",
+   "buildings": 75,
+   "lat": 33.728,
+   "lon": -78.956
+  },
+  {
+   "name": "OCEAN TERRACE",
+   "buildings": 54,
+   "lat": 33.607,
+   "lon": -78.98
+  },
+  {
+   "name": "WINDTREE ESTATES",
+   "buildings": 49,
+   "lat": 33.741,
+   "lon": -78.834
+  },
+  {
+   "name": "WINDY HILL BEACH",
+   "buildings": 43,
+   "lat": 33.799,
+   "lon": -78.724
+  },
+  {
+   "name": "INGRAM BEACH",
+   "buildings": 42,
+   "lat": 33.813,
+   "lon": -78.687
+  },
+  {
+   "name": "GARDEN CITY",
+   "buildings": 42,
+   "lat": 33.585,
+   "lon": -79.003
+  },
+  {
+   "name": "OCEAN PINES",
+   "buildings": 32,
+   "lat": 33.598,
+   "lon": -78.987
+  },
+  {
+   "name": "KINGS HWY EXT",
+   "buildings": 32,
+   "lat": 33.714,
+   "lon": -78.861
+  },
+  {
+   "name": "OCEAN DRIVE BEACH",
+   "buildings": 24,
+   "lat": 33.818,
+   "lon": -78.677
+  },
+  {
+   "name": "HOTEL SEC",
+   "buildings": 23,
+   "lat": 33.692,
+   "lon": -78.891
+  },
+  {
+   "name": "SPARROW",
+   "buildings": 22,
+   "lat": 33.601,
+   "lon": -78.985
+  },
+  {
+   "name": "A PLACE AT THE RIVER",
+   "buildings": 22,
+   "lat": 33.874,
+   "lon": -78.627
+  }
+ ]
+}

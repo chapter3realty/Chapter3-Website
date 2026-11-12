@@ -1,0 +1,79 @@
+{
+ "made_by": "map_points.py",
+ "order": "north to south by label latitude",
+ "points": [
+  {
+   "n": 1,
+   "name": "Little River",
+   "lon": -78.6405,
+   "lat": 33.8806,
+   "kind": "community",
+   "from": "grand-strand-v2.json towns"
+  },
+  {
+   "n": 2,
+   "name": "Conway",
+   "lon": -79.0492,
+   "lat": 33.8345,
+   "kind": "city",
+   "from": "grand-strand-v2.json towns"
+  },
+  {
+   "n": 3,
+   "name": "North Myrtle Beach",
+   "lon": -78.703,
+   "lat": 33.822,
+   "kind": "city",
+   "from": "grand-strand-v2.json towns"
+  },
+  {
+   "n": 4,
+   "name": "Carolina Forest",
+   "lon": -78.9135,
+   "lat": 33.7664,
+   "kind": "community",
+   "from": "grand-strand-v2.json towns"
+  },
+  {
+   "n": 5,
+   "name": "Myrtle Beach",
+   "lon": -78.886,
+   "lat": 33.7104,
+   "kind": "city",
+   "from": "grand-strand-v2.json towns"
+  },
+  {
+   "n": 6,
+   "name": "Surfside Beach",
+   "lon": -78.9775,
+   "lat": 33.6097,
+   "kind": "town",
+   "from": "grand-strand-v2.json towns"
+  },
+  {
+   "n": 7,
+   "name": "Garden City",
+   "lon": -79.0066,
+   "lat": 33.5917,
+   "kind": "community",
+   "from": "grand-strand-v2.json towns"
+  },
+  {
+   "n": 8,
+   "name": "Murrells Inlet",
+   "lon": -79.0572,
+   "lat": 33.5573,
+   "kind": "community",
+   "from": "grand-strand-v2.json towns"
+  },
+  {
+   "n": 9,
+   "name": "Pawleys Island",
+   "lon": -79.1262,
+   "lat": 33.4279,
+   "kind": "town",
+   "from": "grand-strand-v2.json towns"
+  }
+ ],
+ "missing": []
+}

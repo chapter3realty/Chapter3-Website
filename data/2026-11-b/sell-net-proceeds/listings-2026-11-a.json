@@ -1,0 +1,104 @@
+{
+ "pulled": "2026-11-04T13:34:21.540099Z",
+ "refreshedAt": "2026-11-04T13:30:22.899Z",
+ "truncated": 7,
+ "rule": "Active for-sale listings from the Chapter3 CRM's public map API (https://chapter3realty.com/homes/api/map), counted in House group = MLS house + townhouse; condo = MLS condo. Resale = not tagged new construction. Bands use the list price; a band's low end is included, its high end is not.",
+ "kinds": {
+  "house": {
+   "for_sale": 3283,
+   "resale": 2188,
+   "new": 1095,
+   "price_cut": 1720,
+   "price_cut_resale": 1264,
+   "warranty": 1000,
+   "warranty_resale": 65,
+   "warranty_new": 935,
+   "bands": [
+    {
+     "band": "0-300000",
+     "resale": 498,
+     "price_cut": 325,
+     "warranty": 14,
+     "pct_price_cut": 65.3,
+     "pct_warranty": 2.8
+    },
+    {
+     "band": "300000-450000",
+     "resale": 708,
+     "price_cut": 403,
+     "warranty": 20,
+     "pct_price_cut": 56.9,
+     "pct_warranty": 2.8
+    },
+    {
+     "band": "450000-700000",
+     "resale": 563,
+     "price_cut": 311,
+     "warranty": 20,
+     "pct_price_cut": 55.2,
+     "pct_warranty": 3.6
+    },
+    {
+     "band": "700000-up",
+     "resale": 419,
+     "price_cut": 225,
+     "warranty": 11,
+     "pct_price_cut": 53.7,
+     "pct_warranty": 2.6
+    }
+   ],
+   "pct_price_cut": 52.4,
+   "pct_price_cut_resale": 57.8,
+   "pct_warranty": 30.5,
+   "pct_warranty_resale": 3.0
+  },
+  "condo": {
+   "for_sale": 2671,
+   "resale": 2629,
+   "new": 42,
+   "price_cut": 1356,
+   "price_cut_resale": 1348,
+   "warranty": 58,
+   "warranty_resale": 33,
+   "warranty_new": 25,
+   "bands": [
+    {
+     "band": "0-150000",
+     "resale": 604,
+     "price_cut": 335,
+     "warranty": 5,
+     "pct_price_cut": 55.5,
+     "pct_warranty": 0.8
+    },
+    {
+     "band": "150000-250000",
+     "resale": 1072,
+     "price_cut": 560,
+     "warranty": 16,
+     "pct_price_cut": 52.2,
+     "pct_warranty": 1.5
+    },
+    {
+     "band": "250000-400000",
+     "resale": 566,
+     "price_cut": 272,
+     "warranty": 8,
+     "pct_price_cut": 48.1,
+     "pct_warranty": 1.4
+    },
+    {
+     "band": "400000-up",
+     "resale": 387,
+     "price_cut": 181,
+     "warranty": 4,
+     "pct_price_cut": 46.8,
+     "pct_warranty": 1.0
+    }
+   ],
+   "pct_price_cut": 50.8,
+   "pct_price_cut_resale": 51.3,
+   "pct_warranty": 2.2,
+   "pct_warranty_resale": 1.3
+  }
+ }
+}

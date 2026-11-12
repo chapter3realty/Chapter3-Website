@@ -1,0 +1,3 @@
+{"read": "2026-11-10", "source": "https://chapter3realty.com/homes/api/map (CRM public map API over CCAR MLS active listings; counts only, no listing saved)",
+ "oceanfront_condos_mb_under_205k": {"q": "type=condo&near=33.70882,-78.88539&miles=3&max=205000&has=oceanfront_unit", "total": 154},
+ "condos_mb_under_205k": {"q": "type=condo&near=33.70882,-78.88539&miles=3&max=205000", "total": 469}}

@@ -1,0 +1,96 @@
+{
+ "pulled": "2026-11-12T04:12:31.678Z",
+ "live": {
+  "homes_for_sale_total": 8858,
+  "map_keys": [
+   "ok",
+   "total",
+   "meta",
+   "params",
+   "chips",
+   "labels",
+   "left",
+   "q",
+   "closest",
+   "foot"
+  ],
+  "filters_counted_at": "2026-11-12T00:30:52.562Z",
+  "feature_groups": [
+   {
+    "label": "Water and boats",
+    "items": 46
+   },
+   {
+    "label": "Beach and places nearby",
+    "items": 216
+   },
+   {
+    "label": "Outside",
+    "items": 168
+   },
+   {
+    "label": "Inside",
+    "items": 212
+   },
+   {
+    "label": "Community and HOA",
+    "items": 45
+   },
+   {
+    "label": "The listing",
+    "items": 52
+   },
+   {
+    "label": "Kind of home",
+    "items": 14
+   }
+  ],
+  "features_total": 753
+ },
+ "demos": [
+  {
+   "q": "condo I can airbnb near the beach under 300k",
+   "total": 1266,
+   "chips": [
+    "Condo",
+    "Up to $300,000",
+    "Short-term rentals allowed",
+    "Near the beach"
+   ],
+   "params": "type=condo&max=300000&has=str_allowed%2Cnear_beach",
+   "left": "can"
+  },
+  {
+   "q": "3 bedroom house with a pool under 600k in Murrells Inlet",
+   "total": 10,
+   "chips": [
+    "Murrells Inlet",
+    "House",
+    "Up to $600,000",
+    "3+ beds",
+    "Private pool"
+   ],
+   "params": "city=Murrells+Inlet&type=house&max=600000&beds=3&has=pool",
+   "left": ""
+  },
+  {
+   "q": "one level home for retiring with no HOA near a golf course",
+   "total": 2,
+   "chips": [
+    "No HOA",
+    "One level",
+    "On the golf course"
+   ],
+   "params": "hoa=0&has=one_level%2Con_golf_course",
+   "left": "retiring"
+  }
+ ],
+ "site": {
+  "sitemap_pages": 144,
+  "pages_with_feed": 130,
+  "feeds_total": 137,
+  "places_with_strip": 157,
+  "strip_slots": 202,
+  "pages_with_strips": 38
+ }
+}

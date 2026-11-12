@@ -1,0 +1,413 @@
+{
+ "meta": {
+  "made": "build_findings.py",
+  "ccar_month": "2026-09",
+  "ccar_current_as_of": "2026-10-10"
+ },
+ "market": {
+  "single_family": {
+   "median_price_sep": 370000.0,
+   "median_price_ytd": 362000.0,
+   "median_price_ytd_prev": 365000.0,
+   "dom_sep": 118.0,
+   "dom_ytd": 122.0,
+   "pct_list_sep": 97.3,
+   "pct_list_ytd": 97.3,
+   "months_supply_sep": 4.2,
+   "inventory_sep": 3855.0,
+   "closed_ytd": 8494.0,
+   "closed_ytd_prev": 8424.0,
+   "pending_ytd": 8769.0,
+   "pending_ytd_prev": 8810.0,
+   "gap_dollars_at_median_ytd": 9800
+  },
+  "condo": {
+   "median_price_sep": 230125.0,
+   "median_price_ytd": 232000.0,
+   "median_price_ytd_prev": 239000.0,
+   "dom_sep": 137.0,
+   "dom_ytd": 131.0,
+   "pct_list_sep": 95.9,
+   "pct_list_ytd": 96.0,
+   "months_supply_sep": 7.5,
+   "inventory_sep": 3235.0,
+   "closed_ytd": 3874.0,
+   "closed_ytd_prev": 3696.0,
+   "pending_ytd": 4105.0,
+   "pending_ytd_prev": 3878.0,
+   "gap_dollars_at_median_ytd": 9300
+  }
+ },
+ "pending_by_month": [
+  {
+   "month": "Oct-2025",
+   "single_family": 962,
+   "condo": 421,
+   "total": 1383
+  },
+  {
+   "month": "Nov-2025",
+   "single_family": 755,
+   "condo": 355,
+   "total": 1110
+  },
+  {
+   "month": "Dec-2025",
+   "single_family": 639,
+   "condo": 277,
+   "total": 916
+  },
+  {
+   "month": "Jan-2026",
+   "single_family": 852,
+   "condo": 417,
+   "total": 1269
+  },
+  {
+   "month": "Feb-2026",
+   "single_family": 877,
+   "condo": 408,
+   "total": 1285
+  },
+  {
+   "month": "Mar-2026",
+   "single_family": 1121,
+   "condo": 472,
+   "total": 1593
+  },
+  {
+   "month": "Apr-2026",
+   "single_family": 1080,
+   "condo": 534,
+   "total": 1614
+  },
+  {
+   "month": "May-2026",
+   "single_family": 1053,
+   "condo": 519,
+   "total": 1572
+  },
+  {
+   "month": "Jun-2026",
+   "single_family": 965,
+   "condo": 460,
+   "total": 1425
+  },
+  {
+   "month": "Jul-2026",
+   "single_family": 980,
+   "condo": 416,
+   "total": 1396
+  },
+  {
+   "month": "Aug-2026",
+   "single_family": 964,
+   "condo": 459,
+   "total": 1423
+  },
+  {
+   "month": "Sep-2026",
+   "single_family": 877,
+   "condo": 420,
+   "total": 1297
+  }
+ ],
+ "pending_top3": [
+  "Apr-2026",
+  "Mar-2026",
+  "May-2026"
+ ],
+ "pending_low": "Dec-2025",
+ "dom_by_month": [
+  {
+   "month": "Oct-2025",
+   "single_family": 118,
+   "condo": 142
+  },
+  {
+   "month": "Nov-2025",
+   "single_family": 117,
+   "condo": 135
+  },
+  {
+   "month": "Dec-2025",
+   "single_family": 127,
+   "condo": 127
+  },
+  {
+   "month": "Jan-2026",
+   "single_family": 127,
+   "condo": 133
+  },
+  {
+   "month": "Feb-2026",
+   "single_family": 134,
+   "condo": 135
+  },
+  {
+   "month": "Mar-2026",
+   "single_family": 132,
+   "condo": 135
+  },
+  {
+   "month": "Apr-2026",
+   "single_family": 124,
+   "condo": 130
+  },
+  {
+   "month": "May-2026",
+   "single_family": 118,
+   "condo": 127
+  },
+  {
+   "month": "Jun-2026",
+   "single_family": 121,
+   "condo": 137
+  },
+  {
+   "month": "Jul-2026",
+   "single_family": 117,
+   "condo": 133
+  },
+  {
+   "month": "Aug-2026",
+   "single_family": 112,
+   "condo": 117
+  },
+  {
+   "month": "Sep-2026",
+   "single_family": 118,
+   "condo": 137
+  }
+ ],
+ "areas_ytd": [
+  {
+   "area": "Andrews",
+   "zips": "29510",
+   "single_family": null,
+   "condo": null
+  },
+  {
+   "area": "Aynor",
+   "zips": "29511",
+   "single_family": {
+    "closed_ytd": 139,
+    "median_price_ytd": 317900.0,
+    "dom_ytd": 136.0,
+    "pct_list_ytd": 99.6
+   },
+   "condo": null
+  },
+  {
+   "area": "Carolina Forest",
+   "zips": "Area: 10B",
+   "single_family": {
+    "closed_ytd": 694,
+    "median_price_ytd": 480000.0,
+    "dom_ytd": 113.0,
+    "pct_list_ytd": 97.6
+   },
+   "condo": {
+    "closed_ytd": 274,
+    "median_price_ytd": 194500.0,
+    "dom_ytd": 131.0,
+    "pct_list_ytd": 96.5
+   }
+  },
+  {
+   "area": "Conway",
+   "zips": "29526 and 29527",
+   "single_family": {
+    "closed_ytd": 1773,
+    "median_price_ytd": 311000.0,
+    "dom_ytd": 133.0,
+    "pct_list_ytd": 97.8
+   },
+   "condo": {
+    "closed_ytd": 170,
+    "median_price_ytd": 224385.0,
+    "dom_ytd": 144.0,
+    "pct_list_ytd": 97.0
+   }
+  },
+  {
+   "area": "Garden City / Murrells Inlet",
+   "zips": "29576",
+   "single_family": {
+    "closed_ytd": 620,
+    "median_price_ytd": 471500.0,
+    "dom_ytd": 111.0,
+    "pct_list_ytd": 96.5
+   },
+   "condo": {
+    "closed_ytd": 372,
+    "median_price_ytd": 296000.0,
+    "dom_ytd": 148.0,
+    "pct_list_ytd": 97.3
+   }
+  },
+  {
+   "area": "Georgetown",
+   "zips": "29440",
+   "single_family": {
+    "closed_ytd": 247,
+    "median_price_ytd": 364374.0,
+    "dom_ytd": 130.0,
+    "pct_list_ytd": 96.6
+   },
+   "condo": null
+  },
+  {
+   "area": "Little River",
+   "zips": "29566",
+   "single_family": {
+    "closed_ytd": 478,
+    "median_price_ytd": 350000.0,
+    "dom_ytd": 119.0,
+    "pct_list_ytd": 97.2
+   },
+   "condo": {
+    "closed_ytd": 261,
+    "median_price_ytd": 196000.0,
+    "dom_ytd": 133.0,
+    "pct_list_ytd": 95.8
+   }
+  },
+  {
+   "area": "Loris / Longs",
+   "zips": "29568 and 29569",
+   "single_family": {
+    "closed_ytd": 1426,
+    "median_price_ytd": 311000.0,
+    "dom_ytd": 120.0,
+    "pct_list_ytd": 98.1
+   },
+   "condo": {
+    "closed_ytd": 138,
+    "median_price_ytd": 312438.0,
+    "dom_ytd": 152.0,
+    "pct_list_ytd": 98.5
+   }
+  },
+  {
+   "area": "Myrtle Beach",
+   "zips": "29572 and 29577",
+   "single_family": {
+    "closed_ytd": 480,
+    "median_price_ytd": 522500.0,
+    "dom_ytd": 131.0,
+    "pct_list_ytd": 96.2
+   },
+   "condo": {
+    "closed_ytd": 1252,
+    "median_price_ytd": 205000.0,
+    "dom_ytd": 142.0,
+    "pct_list_ytd": 94.8
+   }
+  },
+  {
+   "area": "North Myrtle Beach",
+   "zips": "29582",
+   "single_family": {
+    "closed_ytd": 624,
+    "median_price_ytd": 569995.0,
+    "dom_ytd": 120.0,
+    "pct_list_ytd": 96.6
+   },
+   "condo": {
+    "closed_ytd": 677,
+    "median_price_ytd": 310000.0,
+    "dom_ytd": 121.0,
+    "pct_list_ytd": 96.2
+   }
+  },
+  {
+   "area": "Pawleys Island / Litchfield",
+   "zips": "29585",
+   "single_family": {
+    "closed_ytd": 305,
+    "median_price_ytd": 668000.0,
+    "dom_ytd": 116.0,
+    "pct_list_ytd": 96.9
+   },
+   "condo": {
+    "closed_ytd": 190,
+    "median_price_ytd": 319500.0,
+    "dom_ytd": 114.0,
+    "pct_list_ytd": 97.2
+   }
+  },
+  {
+   "area": "Socastee",
+   "zips": "29588",
+   "single_family": {
+    "closed_ytd": 942,
+    "median_price_ytd": 360000.0,
+    "dom_ytd": 116.0,
+    "pct_list_ytd": 97.8
+   },
+   "condo": {
+    "closed_ytd": 167,
+    "median_price_ytd": 195000.0,
+    "dom_ytd": 109.0,
+    "pct_list_ytd": 96.7
+   }
+  },
+  {
+   "area": "Surfside Beach",
+   "zips": "29575",
+   "single_family": {
+    "closed_ytd": 413,
+    "median_price_ytd": 415000.0,
+    "dom_ytd": 119.0,
+    "pct_list_ytd": 95.6
+   },
+   "condo": {
+    "closed_ytd": 269,
+    "median_price_ytd": 175000.0,
+    "dom_ytd": 117.0,
+    "pct_list_ytd": 95.3
+   }
+  }
+ ],
+ "areas_rule": "CCAR Local Market Update, January to September 2026 (year to date); cells with fewer than 50 closed sales are left out.",
+ "investor": {
+  "pairs_houses": 82,
+  "median_bought": 172250.0,
+  "median_resold": 257500.0,
+  "median_markup": 0.448,
+  "median_days_between": 87.0,
+  "share_paid_of_resale": 0.691,
+  "bought_over_county_value": 0.666,
+  "resold_to_company": 19,
+  "company_house_ratio": 0.934,
+  "person_house_ratio": 1.012,
+  "company_house_n": 613,
+  "person_house_n": 6253,
+  "company_condo_ratio": 0.919,
+  "person_condo_ratio": 0.953,
+  "company_condo_n": 671,
+  "person_condo_n": 3507
+ },
+ "example_350k": {
+  "price_fixed_up": 350000,
+  "investor_price_at_median_share": 242000,
+  "listed_at_pct_of_list": 341000
+ },
+ "costs_middle_house": {
+  "price": 350000,
+  "fixed_by_law": 1320.0,
+  "per_1pct_commission": 3500
+ },
+ "price_cuts_now": {
+  "pulled": "2026-11-09T03:06:59.286619Z",
+  "house_resale": 2188,
+  "house_resale_cut": 1260,
+  "house_pct_cut": 57.6,
+  "condo": {
+   "resale": 2652,
+   "price_cut_resale": 1372,
+   "pct_price_cut_resale": 51.7
+  }
+ }
+}

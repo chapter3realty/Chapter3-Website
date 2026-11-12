@@ -1,0 +1,57 @@
+{
+ "photos": [
+  {
+   "slug": "sell-net-proceeds",
+   "file": "images/2026-11-a/buyers-cost-to-own/carolina-forest-house-streets-from-above.webp",
+   "variants": {
+    "600": "images/2026-11-a/buyers-cost-to-own/carolina-forest-house-streets-from-above-600w.webp",
+    "1200": "images/2026-11-a/buyers-cost-to-own/carolina-forest-house-streets-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Streets of houses in Carolina Forest, NOAA aerial, January 2026",
+   "what": "Two streets of two-story houses with gray roofs, short driveways and small back yards, several fenced, ending in a cul-de-sac, with ponds and a strip of pine woods to the left, in Carolina Forest outside city limits, seen from above on January 12, 2026. Lawns are brown in January. Cars are too small to read; no person can be recognized.",
+   "caption": "Houses on streets in Carolina Forest, outside city limits, seen from above.",
+   "alt": "Rows of two-story houses with gray roofs and short driveways along curving streets and a cul-de-sac, beside ponds and pine woods, seen from above",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Carolina Forest (unincorporated Horry County)"
+   },
+   "source": "https://noaa-eri-pds.s3.amazonaws.com/index.html#2026_Pre_Event/EC2601a_OB_N_RGB/",
+   "source_name": "NOAA Emergency Response Imagery",
+   "author": "NOAA National Geodetic Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+   "provenance": "U.S. government aerial photo: NOAA National Geodetic Survey (NGS), Remote Sensing Division, Emergency Response Imagery, 2026 pre-event coastal collection, East Coast group EC2601a, flown 2026-01-12. One map tile, EC2601a_OB_N_C0785315w334545n.tif (4707 x 4707 px, WGS 84, 2.698e-6 degrees a pixel, top left -78.8875987, 33.7625987), the copy downloaded 2026-11-02 from the public S3 bucket noaa-eri-pds by the writer of /invest/run-the-numbers/ (scratchpad wf2/invest-run-the-numbers/dl). This frame (pixels 1700-2780 x 3420-4230) is a different part of the tile from the photos on /invest/rent-prices/ (2450-4050 x 1550-2750) and /invest/run-the-numbers/ (2800-4400 x 2900-4100).",
+   "license_note": "17 U.S.C. 105(a): \"Copyright protection under this title is not available for any work of the United States Government\". NOAA's terms on the Registry of Open Data (https://registry.opendata.aws/noaa-eri/): \"NOAA data disseminated through NODD are open to the public and can be used as desired.\" NOAA requests attribution for unaltered data and no implied endorsement. So: credit NOAA, say what Chapter3 changed (changes), never suggest NOAA endorses Chapter3.",
+   "terms_urls": [
+    "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+    "https://registry.opendata.aws/noaa-eri/"
+   ],
+   "taken": "2026-01-12",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: NOAA National Geodetic Survey, public domain.",
+   "digital_source_type": "digitalCapture",
+   "changes": "Chapter3 Realty cut a 1080 x 810 px view from one NOAA map tile, raised the contrast and color slightly, and resized it to 1200 x 900",
+   "source_files": [
+    "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0785315w334545n.tif"
+   ],
+   "frame": {
+    "bbox_wgs84": [
+     -78.883012,
+     33.751186,
+     -78.880098,
+     33.753372
+    ],
+    "ground_m_per_px_1200w": 0.27
+   },
+   "original_size": "1080x810 cut from the tile at pixels 1700-2780 x 3420-4230",
+   "subject_check": "Looked at full size (1200 x 900) by the fixer on 2026-11-02. All four frame corners and the center fall inside the Census place outline of Carolina Forest (a census-designated place, not a town) in Blog-Brain tools/geo/grand-strand-v2.json (TIGER/Line 2026). The caption names no neighborhood, street or house. No person, plate, sign or house number is readable.",
+   "annotation_sources": {
+    "where": "Blog-Brain tools/geo/grand-strand-v2.json region.towns 'Carolina Forest' outline (U.S. Census Bureau TIGER/Line 2026 places), point-in-polygon test of the bbox corners and center"
+   },
+   "reuse_note": "Fix round 1, 2026-11-09: replaces the 2006 courthouse photo, which only decorated the deed stamp section (reviewer; owner 2026-10-11: photos of the topic). Same record and files as /buyers/cost-to-own/ (batch 2026-11-a, looked at full size by that fixer on 2026-11-02); the files stay in that page's image folder, already on the live branch."
+  }
+ ]
+}

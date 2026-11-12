@@ -1,0 +1,160 @@
+{
+ "check": {
+  "all/house": {
+   "union": 3690,
+   "api_total": 3694,
+   "fallback_dropped": 288,
+   "short": 4
+  },
+  "all/townhouse": {
+   "union": 365,
+   "api_total": 365,
+   "fallback_dropped": 97,
+   "short": 0
+  },
+  "all/condo": {
+   "union": 2830,
+   "api_total": 2832,
+   "fallback_dropped": 288,
+   "short": 2
+  },
+  "price_reduced/house": {
+   "union": 1898,
+   "api_total": 1899,
+   "fallback_dropped": 144,
+   "short": 1
+  },
+  "price_reduced/townhouse": {
+   "union": 196,
+   "api_total": 196,
+   "fallback_dropped": 104,
+   "short": 0
+  },
+  "price_reduced/condo": {
+   "union": 1449,
+   "api_total": 1449,
+   "fallback_dropped": 145,
+   "short": 0
+  },
+  "home_warranty/house": {
+   "union": 1074,
+   "api_total": 1074,
+   "fallback_dropped": 96,
+   "short": 0
+  },
+  "home_warranty/townhouse": {
+   "union": 111,
+   "api_total": 111,
+   "fallback_dropped": 0,
+   "short": 0
+  },
+  "home_warranty/condo": {
+   "union": 62,
+   "api_total": 62,
+   "fallback_dropped": 0,
+   "short": 0
+  },
+  "new_construction/house": {
+   "union": 1246,
+   "api_total": 1246,
+   "fallback_dropped": 96,
+   "short": 0
+  },
+  "new_construction/townhouse": {
+   "union": 128,
+   "api_total": 128,
+   "fallback_dropped": 0,
+   "short": 0
+  },
+  "new_construction/condo": {
+   "union": 42,
+   "api_total": 42,
+   "fallback_dropped": 0,
+   "short": 0
+  }
+ },
+ "kinds": {
+  "house": {
+   "for_sale": 3282,
+   "resale": 2187,
+   "price_cut_resale": 1264,
+   "warranty": 1000,
+   "warranty_new": 935,
+   "warranty_resale": 65,
+   "R_not_in_A": 0,
+   "bands": [
+    [
+     0,
+     300000,
+     498,
+     325,
+     65.3
+    ],
+    [
+     300000,
+     450000,
+     707,
+     403,
+     57.0
+    ],
+    [
+     450000,
+     700000,
+     563,
+     311,
+     55.2
+    ],
+    [
+     700000,
+     null,
+     419,
+     225,
+     53.7
+    ]
+   ],
+   "pct_price_cut_resale": 57.8,
+   "pct_warranty_resale": 3.0
+  },
+  "condo": {
+   "for_sale": 2669,
+   "resale": 2627,
+   "price_cut_resale": 1347,
+   "warranty": 58,
+   "warranty_new": 25,
+   "warranty_resale": 33,
+   "R_not_in_A": 0,
+   "bands": [
+    [
+     0,
+     150000,
+     602,
+     335,
+     55.6
+    ],
+    [
+     150000,
+     250000,
+     1072,
+     559,
+     52.1
+    ],
+    [
+     250000,
+     400000,
+     566,
+     272,
+     48.1
+    ],
+    [
+     400000,
+     null,
+     387,
+     181,
+     46.8
+    ]
+   ],
+   "pct_price_cut_resale": 51.3,
+   "pct_warranty_resale": 1.3
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
-  "_readme": "Article headlines (owner, 2026-10-26: 'make their headlines better for marketing more clickbait and better filters to back up my click bait'). Each hook is a fact the page itself states, and the page's homes feed (idx-lib/feeds.js) shows homes that make it true. Applied by tools/headlines.js: hand-made pages directly, relocating pages through their data files. Spec pages keep their titles in their specs.",
+  "_readme": "Article headlines (owner, 2026-10-26: 'make their headlines better for marketing more clickbait and better filters to back up my click bait'). Each hook is a fact the page itself states, and the page's homes feed (idx-lib/feeds.js) shows homes that make it true. Applied by tools/headlines.js: hand-made pages directly, relocating pages through their data files. Spec pages keep their titles in their specs. Owner's compare data, 2026-11-07: every title that dropped the words people search lost most of its showings (property taxes 1,140 to 312; closing costs lost 'calculator' and fell from position 19 to 76 for 'south carolina closing costs calculator'). The searched words come first; the hook follows.",
   "/buyers/": {
     "title": "Every Myrtle Beach Home Buyer Guide in One Place | Chapter3",
     "h1": [
@@ -64,10 +64,10 @@
     ]
   },
   "/buyers/waterfront-homes/": {
-    "title": "Waterfront Homes in Myrtle Beach: The Dock Sets the Value",
+    "title": "Waterfront Homes in Myrtle Beach: Prices From Ocean to Lake",
     "h1": [
       "Waterfront homes in Myrtle Beach:",
-      "the dock decides the value."
+      "from the ocean to the lake, what each one costs."
     ]
   },
   "/buyers/golf-communities/": {
@@ -92,31 +92,31 @@
     ]
   },
   "/buyers/property-taxes/": {
-    "title": "Horry Property Tax: Why Rentals Pay 3-4x More | Chapter3",
+    "title": "Horry County Property Tax Rate: 4% vs 6%, With a Calculator",
     "h1": [
-      "Horry County property taxes:",
-      "why a rental pays three to four times more."
+      "Horry County property tax rates:",
+      "4% if you live there, 6% if you don't."
     ]
   },
   "/buyers/coastal-insurance/": {
-    "title": "Myrtle Beach Home Insurance: What It Costs, 6 Ways to Cut It",
+    "title": "Myrtle Beach Homeowners Insurance Cost: Home, Wind and Flood",
     "h1": [
-      "What home insurance costs in Myrtle Beach,",
-      "and six ways to lower it."
+      "What home and flood insurance cost in Myrtle Beach,",
+      "and six ways to pay less."
     ]
   },
   "/buyers/closing-costs/": {
-    "title": "SC Closing Costs, Calculated: Who Pays What | Chapter3",
+    "title": "South Carolina Closing Costs Calculator: Buyers Pay 2-5%",
     "h1": [
-      "South Carolina closing costs:",
-      "who pays what, calculated."
+      "South Carolina closing costs calculator:",
+      "buyers pay about 2 to 5 percent."
     ]
   },
   "/buyers/55-plus-communities/": {
-    "title": "Myrtle Beach 55+ Communities: Real HOA Fees Compared",
+    "title": "Myrtle Beach 55+ Communities: 9 Compared, Fees From $43",
     "h1": [
-      "Myrtle Beach 55+ communities,",
-      "with their real prices and HOA fees."
+      "Myrtle Beach 55+ communities:",
+      "nine compared, with real prices and fees."
     ]
   },
   "/buyers/relocating/": {
@@ -141,7 +141,7 @@
     ]
   },
   "/buyers/relocating/jobs/": {
-    "title": "Myrtle Beach Jobs: What the Average Job Pays | Chapter3",
+    "title": "Jobs in Myrtle Beach, SC: What the Average Job Pays",
     "h1": [
       "Jobs in Myrtle Beach:",
       "what the average job pays."
@@ -239,10 +239,10 @@
     ]
   },
   "/submarkets/carolina-forest/": {
-    "title": "Carolina Forest: No City Tax, 11 Subdivisions | Chapter3",
+    "title": "Carolina Forest, SC Real Estate: Home Prices, 11 Subdivisions",
     "h1": [
-      "Carolina Forest:",
-      "no city tax, eleven subdivisions."
+      "Carolina Forest, SC real estate:",
+      "home prices, eleven subdivisions, no city tax."
     ]
   },
   "/invest/str-vs-ltr/": {
@@ -274,24 +274,24 @@
     ]
   },
   "/invest/airbnb-income/": {
-    "title": "Myrtle Beach Airbnbs Gross $20,900 to $42,000: 2026 Data",
+    "title": "How Much Do Myrtle Beach Airbnbs Make? $25,800 to $42,000",
     "h1": [
       "How much do Airbnbs make in Myrtle Beach?",
-      "$20,900 to $42,000 a year, gross."
+      "$25,800 to $42,000 a year, gross."
     ]
   },
   "/invest/str-rules/": {
-    "title": "Where Airbnb Is Legal in Myrtle Beach, City by City | Chapter3",
+    "title": "Myrtle Beach Short-Term Rental Rules: Where Airbnb Is Legal",
     "h1": [
-      "Where short-term rentals are legal in Myrtle Beach,",
-      "city by city."
+      "Myrtle Beach short-term rental rules:",
+      "where Airbnb is legal, city by city."
     ]
   },
   "/invest/strategies/dscr-loans/": {
-    "title": "DSCR Loans in Myrtle Beach: Qualify on the Rent | Chapter3",
+    "title": "DSCR Loans in Myrtle Beach, SC: Which Rentals Pass the Ratio",
     "h1": [
       "DSCR loans in Myrtle Beach:",
-      "the loan qualifies on the rent."
+      "which rentals here pass the ratio?"
     ]
   },
   "/invest/strategies/brrrr/": {
@@ -327,6 +327,13 @@
     "h1": [
       "What is my home worth",
       "in Myrtle Beach?"
+    ]
+  },
+  "/hoa/violations-and-fines/": {
+    "title": "Can an HOA Fine You in SC? There's No Legal Cap | Chapter3",
+    "h1": [
+      "Can your HOA fine you?",
+      "In South Carolina, there is no legal cap."
     ]
   }
 }

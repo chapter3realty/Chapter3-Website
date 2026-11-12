@@ -1,0 +1,120 @@
+{
+ "source": "Census ACS PUMS 2020-2024 5-year, SC housing file, PUMAs 02701 and 02702 (most of Horry County)",
+ "dollars": "2024 dollars (ADJHSG)",
+ "contract_rent": {
+  "small_2to4_all": {
+   "records": 159,
+   "homes": 4291,
+   "median": 947,
+   "moe90": 85
+  },
+  "duplex_bld04": {
+   "records": 45,
+   "homes": 1232,
+   "median": 927,
+   "moe90": 190
+  },
+  "three_four_bld05": {
+   "records": 114,
+   "homes": 3059,
+   "median": 947,
+   "moe90": 96
+  },
+  "house_detached": {
+   "records": 275,
+   "homes": 8071,
+   "median": 1400,
+   "moe90": 155
+  },
+  "small_2to4_1br": {
+   "records": 26,
+   "homes": 908,
+   "median": 700,
+   "moe90": 326
+  },
+  "small_2to4_2br": {
+   "records": 107,
+   "homes": 2674,
+   "median": 1000,
+   "moe90": 68
+  },
+  "small_2to4_3br": {
+   "records": 24,
+   "homes": 621,
+   "median": 1050,
+   "moe90": 380
+  }
+ },
+ "gross_rent": {
+  "small_2to4_all": {
+   "records": 159,
+   "homes": 4291,
+   "median": 1099,
+   "moe90": 51
+  },
+  "duplex_bld04": {
+   "records": 45,
+   "homes": 1232,
+   "median": 1111,
+   "moe90": 185
+  },
+  "three_four_bld05": {
+   "records": 114,
+   "homes": 3059,
+   "median": 1090,
+   "moe90": 59
+  },
+  "house_detached": {
+   "records": 275,
+   "homes": 8071,
+   "median": 1646,
+   "moe90": 71
+  },
+  "small_2to4_1br": {
+   "records": 26,
+   "homes": 908,
+   "median": 809,
+   "moe90": 303
+  },
+  "small_2to4_2br": {
+   "records": 107,
+   "homes": 2674,
+   "median": 1135,
+   "moe90": 92
+  },
+  "small_2to4_3br": {
+   "records": 24,
+   "homes": 621,
+   "median": 1379,
+   "moe90": 382
+  }
+ },
+ "counts": {
+  "occupied_in_2to4": {
+   "records": 240,
+   "homes": 5799,
+   "moe90": 816
+  },
+  "renter_in_2to4": {
+   "records": 159,
+   "homes": 4291,
+   "moe90": 701
+  },
+  "owner_in_2to4": {
+   "records": 79,
+   "homes": 1465,
+   "moe90": 355
+  },
+  "all_renter_homes": {
+   "records": 1047,
+   "homes": 30740,
+   "moe90": 1681
+  }
+ },
+ "bedrooms_share_2to4_renters": {
+  "0": 2.1,
+  "1": 21.2,
+  "2": 62.3,
+  "3+": 14.5
+ }
+}

@@ -1,0 +1,188 @@
+{
+ "made_by": "build_towns.py",
+ "note": "Each price is the town guide's own figure, read from the guide's own data file.",
+ "towns": [
+  {
+   "slug": "little-river",
+   "name": "Little River",
+   "guide": "/submarkets/little-river/",
+   "ledger_row": "LR 25",
+   "group": "a resold house",
+   "median": 357000.0,
+   "sales": 511,
+   "shown": 357000,
+   "window": "deeds recorded 2025-10-01 to 2026-09-30",
+   "where": "At the North Carolina line",
+   "wow": "About two of every three deeded boat slips in the county are here: slips you buy and own, each on its own deed.",
+   "rule": "The county asks for a business license and tax filings. An HOA can still say no.",
+   "refs": [
+    "H12 (LR R1-1)",
+    "H27 (LR 40, GC 20)"
+   ]
+  },
+  {
+   "slug": "north-myrtle-beach",
+   "name": "North Myrtle Beach",
+   "guide": "/submarkets/north-myrtle-beach/",
+   "ledger_row": "NMB 9",
+   "group": "a resold house",
+   "median": 565000,
+   "sales": 560,
+   "shown": 565000,
+   "window": "deeds recorded 2025-10-01 to 2026-09-30",
+   "where": "Its own city, north of Myrtle Beach",
+   "wow": "The shag, the state dance, is still danced on Main Street. At Fat Harold's Beach Club, the home of the shag, DJs play every night from 7.",
+   "rule": "A yearly city business license, and no special zoning or permit beyond it. An HOA or the deed can still bar rentals.",
+   "refs": [
+    "H13 (NMB 6, 46)",
+    "H25 (NMB 23)"
+   ]
+  },
+  {
+   "slug": "myrtle-beach",
+   "name": "Myrtle Beach",
+   "guide": "/submarkets/myrtle-beach/",
+   "ledger_row": "MB 53",
+   "group": "a resold house in the city",
+   "median": 539500.0,
+   "sales": 459,
+   "shown": 540000,
+   "window": "deeds recorded 2025-10-01 to 2026-09-30",
+   "where": "The city in the middle of the Grand Strand",
+   "wow": "Downtown, the Boardwalk is about 1.3 miles long, beside the ocean. The airport is inside the city, with nonstop flights to more than 50 destinations.",
+   "rule": "Only in the zones the city allows. Most neighborhoods of houses are not zoned for it.",
+   "refs": [
+    "H14 (MB 41)",
+    "H15 (MB 48)",
+    "H24 (MB 1, 2)"
+   ]
+  },
+  {
+   "slug": "surfside-beach",
+   "name": "Surfside Beach",
+   "guide": "/submarkets/surfside-beach/",
+   "ledger_row": "SB 6",
+   "group": "a house near the ocean",
+   "median": 1000000.0,
+   "sales": 39,
+   "shown": 1000000,
+   "window": "deeds recorded 2025-10-01 to 2026-09-30",
+   "where": "A town south of Myrtle Beach",
+   "wow": "The town's concrete pier reaches 814 feet into the ocean, and walking on it is free.",
+   "rule": "Only in the two zones by the ocean.",
+   "refs": [
+    "H16 (SB 17)",
+    "H26 (SB 1)"
+   ],
+   "also": {
+    "group": "a house on the inland streets",
+    "low": 485000,
+    "high": 540000,
+    "ledger_row": "SB 7",
+    "sales": [
+     20,
+     28
+    ]
+   }
+  },
+  {
+   "slug": "garden-city",
+   "name": "Garden City",
+   "guide": "/submarkets/garden-city/",
+   "ledger_row": "GC 11",
+   "group": "a condo on the ocean side by the pier, on the Horry part",
+   "median": 319900.0,
+   "sales": 89,
+   "shown": 320000,
+   "window": "deeds recorded 2025-10-01 to 2026-09-30",
+   "where": "Between Surfside Beach and Murrells Inlet, in two counties",
+   "wow": "At the far end of the Garden City Pier, people learn line dances out over the ocean.",
+   "rule": "Horry side: the county asks for a business license and tax filings. Georgetown end: the county requires no business license.",
+   "refs": [
+    "H17 (GC 49)",
+    "H27 (GC 20)",
+    "H28 (GC 22)"
+   ]
+  },
+  {
+   "slug": "murrells-inlet",
+   "name": "Murrells Inlet",
+   "guide": "/submarkets/murrells-inlet/",
+   "ledger_row": "MI 6",
+   "group": "a house on the Horry side",
+   "median": 449950.0,
+   "sales": 396,
+   "shown": 450000,
+   "window": "deeds recorded 2025-10-01 to 2026-09-30",
+   "where": "On the salt marsh, split by the county line",
+   "wow": "The MarshWalk is a wooden boardwalk along the salt marsh, lined with restaurants, and its live music is free to hear.",
+   "rule": "Horry side: the county asks for a business license and tax filings. Georgetown side: the county requires no business license.",
+   "refs": [
+    "H18 (MI 30, corrected)",
+    "H27 (MI 24)",
+    "H28 (MI 26)"
+   ]
+  },
+  {
+   "slug": "pawleys-island",
+   "name": "Pawleys Island",
+   "guide": "/submarkets/pawleys-island/",
+   "ledger_row": "PI 13",
+   "group": "a house west of US 17",
+   "median": 580000,
+   "sales": 220,
+   "shown": 580000,
+   "window": "Georgetown County parcel sale dates, 2025-10-01 to 2026-09-30 (the island figure: 2023-10-01 to 2026-09-30)",
+   "where": "The south end, in Georgetown County",
+   "wow": "The old island houses were built mostly of cypress, hewn on the mainland. Each timber was chiseled with Roman numerals so the house could be put together on the island.",
+   "rule": "Allowed on the island.",
+   "refs": [
+    "H19 (PI 43, corrected)",
+    "H29 (PI 35)"
+   ],
+   "also": {
+    "group": "an island house, over three years of sales",
+    "median": 2450000,
+    "ledger_row": "PI 10",
+    "data_median": 2450000
+   }
+  },
+  {
+   "slug": "carolina-forest",
+   "name": "Carolina Forest",
+   "guide": "/submarkets/carolina-forest/",
+   "ledger_row": "CF 2",
+   "group": "a resold house",
+   "median": 440000,
+   "sales": 405,
+   "shown": 440000,
+   "window": "deeds recorded 2025-10-01 to 2026-09-30",
+   "where": "Inland, outside any city or town",
+   "wow": "The county's Bike and Run Park, on the Intracoastal Waterway, has about 7 miles of mountain-bike and hiking trails on 70 acres.",
+   "rule": "The county asks for a business license and tax filings. An HOA can still say no.",
+   "refs": [
+    "H22 (WT 25)",
+    "H23 (affordable 72)",
+    "H27"
+   ]
+  },
+  {
+   "slug": "conway",
+   "name": "Conway",
+   "guide": "/submarkets/conway/",
+   "ledger_row": "CW 5",
+   "group": "a resold house or townhouse in the city",
+   "median": 264250.0,
+   "sales": 334,
+   "shown": 265000,
+   "window": "deeds recorded 2025-10-01 to 2026-09-30",
+   "where": "Inland, on the Waccamaw River",
+   "wow": "Riverfront Park on the Waccamaw has a playground built like a steamboat, the F.G. Burroughs, beside a riverwalk of about 1.5 miles.",
+   "rule": "We check the city's zoning for each address.",
+   "refs": [
+    "H21 (CW 46, corrected)",
+    "H30 struck: no rule stated"
+   ]
+  }
+ ]
+}

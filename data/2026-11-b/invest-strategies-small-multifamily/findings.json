@@ -1,0 +1,1180 @@
+{
+ "meta": {
+  "made": "analyze.py",
+  "listings_pulled": "2026-11-10T06:10:52.884102Z",
+  "listings_refreshed": "2026-11-10T06:00:56.385Z",
+  "listings_source": "https://chapter3realty.com/homes/api/map?type=multi",
+  "parcels_fetched": "2026-11-10",
+  "note": "Active listings, parcels and sales in aggregate only. No address, PIN, firm, owner or MLS number is in this file."
+ },
+ "for_sale": {
+  "api_total": 65,
+  "with_point": 65,
+  "outside_horry": 10,
+  "horry": {
+   "n": 55,
+   "median": 680000,
+   "p25": 485000,
+   "p75": 982000,
+   "min": 95000,
+   "max": 3500000
+  },
+  "horry_by_town": {
+   "North Myrtle Beach": {
+    "n": 26,
+    "median": 842000,
+    "p25": 581000,
+    "p75": 1237000,
+    "min": 379000,
+    "max": 3500000
+   },
+   "Myrtle Beach": {
+    "n": 11,
+    "median": 715000,
+    "p25": 397000,
+    "p75": 812000,
+    "min": 300000,
+    "max": 1250000
+   },
+   "Surfside Beach": {
+    "n": 9,
+    "median": 575000,
+    "p25": 495000,
+    "p75": 700000,
+    "min": 350000,
+    "max": 990000
+   },
+   "Murrells Inlet": {
+    "n": 3,
+    "median": 450000,
+    "p25": 438000,
+    "p75": 540000,
+    "min": 425000,
+    "max": 630000
+   },
+   "Little River": {
+    "n": 2,
+    "median": 574000,
+    "p25": 412000,
+    "p75": 737000,
+    "min": 250000,
+    "max": 899000
+   },
+   "Conway": {
+    "n": 2,
+    "median": 597000,
+    "p25": 448000,
+    "p75": 746000,
+    "min": 299000,
+    "max": 895000
+   },
+   "Atlantic Beach": {
+    "n": 1,
+    "median": 500000,
+    "p25": 500000,
+    "p75": 500000,
+    "min": 500000,
+    "max": 500000
+   },
+   "Longs": {
+    "n": 1,
+    "median": 95000,
+    "p25": 95000,
+    "p75": 95000,
+    "min": 95000,
+    "max": 95000
+   }
+  },
+  "outside_by_town": {
+   "Kingstree": 1,
+   "Georgetown": 2,
+   "Murrells Inlet": 2,
+   "Pawleys Island": 5
+  },
+  "horry_by_parcel_code": {
+   "102": 16,
+   "135+500": 1,
+   "211": 4,
+   "344": 1,
+   "101": 9,
+   "103": 7,
+   "no parcel at the pin": 2,
+   "104": 3,
+   "300": 5,
+   "301": 2,
+   "100": 2,
+   "113": 2,
+   "123": 1
+  },
+  "horry_bands": {
+   "under_300k": 4,
+   "300_500k": 12,
+   "500_750k": 16,
+   "750k_1m": 11,
+   "1m_up": 12
+  },
+  "ocean_bands": {
+   "under 0.25 mile": {
+    "n": 32,
+    "median": 812000,
+    "p25": 629000,
+    "p75": 1212000,
+    "min": 359000,
+    "max": 3500000
+   },
+   "0.25 to 1 mile": {
+    "n": 14,
+    "median": 462000,
+    "p25": 438000,
+    "p75": 511000,
+    "min": 325000,
+    "max": 990000
+   },
+   "1 to 3 miles": {
+    "n": 5,
+    "median": 350000,
+    "p25": 300000,
+    "p75": 700000,
+    "min": 250000,
+    "max": 1200000
+   },
+   "over 3 miles": {
+    "n": 4,
+    "median": 597000,
+    "p25": 248000,
+    "p75": 896000,
+    "min": 95000,
+    "max": 899000
+   }
+  },
+  "tags": {
+   "Waterfront": 3,
+   "": 45,
+   "1.7-acre lot": 1,
+   "Built 2027": 1,
+   "65-acre lot": 1,
+   "1-acre lot": 1,
+   "5.6-acre lot": 1,
+   "2.3-acre lot": 1,
+   "4-acre lot": 1
+  },
+  "on_coded_parcels": {
+   "102": {
+    "n": 16,
+    "median": 575000,
+    "p25": 484000,
+    "p75": 755000,
+    "min": 379000,
+    "max": 1249000
+   },
+   "103": {
+    "n": 7,
+    "median": 975000,
+    "p25": 762000,
+    "p75": 1086000,
+    "min": 435000,
+    "max": 2650000
+   },
+   "104": {
+    "n": 3,
+    "median": 1040000,
+    "p25": 835000,
+    "p75": 1214000,
+    "min": 630000,
+    "max": 1389000
+   }
+  },
+  "on_coded_parcels_at_or_under_fha_limit": {
+   "102": 11,
+   "103": 2,
+   "104": 2
+  },
+  "all_horry_under_2unit_fha_limit": 28
+ },
+ "stock": {
+  "total": 1268,
+  "by_code": {
+   "102": 984,
+   "103": 103,
+   "104": 181
+  },
+  "units_total": 3001,
+  "by_town": [
+   [
+    "North Myrtle Beach",
+    439
+   ],
+   [
+    "Myrtle Beach",
+    362
+   ],
+   [
+    "Surfside Beach",
+    187
+   ],
+   [
+    "Conway",
+    110
+   ],
+   [
+    "Murrells Inlet",
+    76
+   ],
+   [
+    "Little River",
+    50
+   ],
+   [
+    "(no address point)",
+    28
+   ],
+   [
+    "Loris",
+    13
+   ],
+   [
+    "Longs",
+    2
+   ],
+   [
+    "Galivants Ferry",
+    1
+   ]
+  ],
+  "by_town_and_code": {
+   "North Myrtle Beach": {
+    "102": 356,
+    "103": 38,
+    "104": 45
+   },
+   "Myrtle Beach": {
+    "102": 242,
+    "103": 24,
+    "104": 96
+   },
+   "Surfside Beach": {
+    "102": 153,
+    "103": 23,
+    "104": 11
+   },
+   "Conway": {
+    "102": 88,
+    "103": 10,
+    "104": 12
+   },
+   "Murrells Inlet": {
+    "102": 67,
+    "103": 2,
+    "104": 7
+   },
+   "Little River": {
+    "102": 41,
+    "103": 1,
+    "104": 8
+   },
+   "(no address point)": {
+    "102": 22,
+    "103": 4,
+    "104": 2
+   },
+   "Loris": {
+    "102": 12,
+    "103": 1
+   },
+   "Longs": {
+    "102": 2
+   },
+   "Galivants Ferry": {
+    "102": 1
+   }
+  },
+  "ratio": {
+   "6%": 1055,
+   "4%": 121,
+   "split": 92
+  },
+  "ratio_by_code": {
+   "102": {
+    "6%": 813,
+    "4%": 89,
+    "split": 82
+   },
+   "103": {
+    "6%": 91,
+    "split": 7,
+    "4%": 5
+   },
+   "104": {
+    "6%": 151,
+    "4%": 27,
+    "split": 3
+   }
+  },
+  "ratio_by_town": {
+   "North Myrtle Beach": {
+    "6%": 390,
+    "4%": 27,
+    "split": 22
+   },
+   "Myrtle Beach": {
+    "6%": 282,
+    "4%": 48,
+    "split": 32
+   },
+   "Surfside Beach": {
+    "6%": 142,
+    "split": 25,
+    "4%": 20
+   },
+   "Conway": {
+    "4%": 7,
+    "6%": 101,
+    "split": 2
+   },
+   "Murrells Inlet": {
+    "4%": 12,
+    "6%": 59,
+    "split": 5
+   },
+   "Little River": {
+    "6%": 42,
+    "split": 6,
+    "4%": 2
+   },
+   "(no address point)": {
+    "6%": 27,
+    "4%": 1
+   },
+   "Loris": {
+    "6%": 10,
+    "4%": 3
+   }
+  },
+  "county_value_median_by_code": {
+   "102": 432000,
+   "103": 555000,
+   "104": 456000
+  },
+  "stock_by_landuse_with_building": [
+   [
+    "100",
+    142
+   ],
+   [
+    "101",
+    126425
+   ],
+   [
+    "102",
+    984
+   ],
+   [
+    "103",
+    103
+   ],
+   [
+    "104",
+    181
+   ],
+   [
+    "105",
+    37
+   ],
+   [
+    "106",
+    439
+   ],
+   [
+    "107",
+    61594
+   ],
+   [
+    "108",
+    2887
+   ],
+   [
+    "109",
+    8003
+   ],
+   [
+    "110",
+    2350
+   ],
+   [
+    "111",
+    2
+   ],
+   [
+    "112",
+    2916
+   ],
+   [
+    "113",
+    1079
+   ],
+   [
+    "115",
+    1
+   ],
+   [
+    "116",
+    16
+   ],
+   [
+    "117",
+    483
+   ],
+   [
+    "118",
+    2732
+   ],
+   [
+    "119",
+    708
+   ],
+   [
+    "120",
+    5437
+   ],
+   [
+    "121",
+    2065
+   ],
+   [
+    "122",
+    1404
+   ],
+   [
+    "123",
+    1101
+   ],
+   [
+    "125",
+    5
+   ],
+   [
+    "126",
+    1021
+   ],
+   [
+    "127",
+    83
+   ],
+   [
+    "130",
+    2624
+   ],
+   [
+    "131",
+    1
+   ],
+   [
+    "134",
+    3
+   ],
+   [
+    "135",
+    1947
+   ]
+  ],
+  "code_check": {
+   "101": {
+    "parcels_with_building": 2000,
+    "checked": 400,
+    "address_points_per_parcel": {
+     "1": 391,
+     "2": 9
+    }
+   },
+   "102": {
+    "parcels_with_building": 984,
+    "checked": 984,
+    "address_points_per_parcel": {
+     "0": 22,
+     "1": 739,
+     "2": 194,
+     "3": 11,
+     "4": 12,
+     "5": 2,
+     "6": 4
+    }
+   },
+   "103": {
+    "parcels_with_building": 103,
+    "checked": 103,
+    "address_points_per_parcel": {
+     "0": 4,
+     "1": 71,
+     "2": 6,
+     "3": 19,
+     "4": 1,
+     "6": 1,
+     "8": 1
+    }
+   },
+   "104": {
+    "parcels_with_building": 181,
+    "checked": 181,
+    "address_points_per_parcel": {
+     "0": 2,
+     "1": 136,
+     "2": 9,
+     "3": 4,
+     "4": 23,
+     "5": 3,
+     "6": 1,
+     "8": 1,
+     "9": 2
+    }
+   },
+   "126": {
+    "parcels_with_building": 1021,
+    "checked": 1021,
+    "address_points_per_parcel": {
+     "0": 71,
+     "1": 929,
+     "2": 21
+    }
+   }
+  },
+  "ocean_bands": {
+   "under 0.25 mile": 452,
+   "0.25 to 1 mile": 458,
+   "1 to 3 miles": 132,
+   "over 3 miles": 198
+  },
+  "ocean_no_point": 28,
+  "ocean_bands_by_town": {
+   "North Myrtle Beach": {
+    "under 0.25 mile": 354,
+    "0.25 to 1 mile": 84,
+    "1 to 3 miles": 1,
+    "over 3 miles": 0
+   },
+   "Myrtle Beach": {
+    "under 0.25 mile": 23,
+    "0.25 to 1 mile": 206,
+    "1 to 3 miles": 22,
+    "over 3 miles": 111
+   },
+   "Surfside Beach": {
+    "under 0.25 mile": 51,
+    "0.25 to 1 mile": 126,
+    "1 to 3 miles": 10,
+    "over 3 miles": 0
+   },
+   "Conway": {
+    "under 0.25 mile": 0,
+    "0.25 to 1 mile": 1,
+    "1 to 3 miles": 44,
+    "over 3 miles": 65
+   },
+   "Murrells Inlet": {
+    "under 0.25 mile": 24,
+    "0.25 to 1 mile": 41,
+    "1 to 3 miles": 7,
+    "over 3 miles": 4
+   },
+   "Little River": {
+    "under 0.25 mile": 0,
+    "0.25 to 1 mile": 0,
+    "1 to 3 miles": 48,
+    "over 3 miles": 2
+   },
+   "(no address point)": {
+    "under 0.25 mile": 0,
+    "0.25 to 1 mile": 0,
+    "1 to 3 miles": 0,
+    "over 3 miles": 0
+   }
+  },
+  "top_legal_groups": [
+   [
+    "TARPON BAY II",
+    75
+   ],
+   [
+    "CRESCENT BEACH",
+    64
+   ],
+   [
+    "CHERRY GROVE BEACH",
+    60
+   ],
+   [
+    "CRESCENT BCH",
+    55
+   ],
+   [
+    "WINDTREE EST",
+    47
+   ],
+   [
+    "",
+    46
+   ],
+   [
+    "OCEAN TERR",
+    46
+   ],
+   [
+    "INGRAM BEACH",
+    42
+   ],
+   [
+    "GARDEN CITY",
+    42
+   ],
+   [
+    "WINDY HILL BCH",
+    37
+   ],
+   [
+    "CHERRY GROVE",
+    36
+   ],
+   [
+    "OCEAN PINES",
+    32
+   ],
+   [
+    "KINGS HWY EXT",
+    32
+   ],
+   [
+    "HOTEL SEC",
+    23
+   ],
+   [
+    "OCEAN DR BCH",
+    22
+   ],
+   [
+    "SPARROW",
+    22
+   ],
+   [
+    "A PLACE AT THE RIVER",
+    22
+   ],
+   [
+    "BTW SEC",
+    19
+   ],
+   [
+    "BLYNN ACRES",
+    19
+   ],
+   [
+    "COLLEGE PLACE II",
+    18
+   ],
+   [
+    "LAKEWOOD TERR",
+    16
+   ],
+   [
+    "CHERRY GROVE BCH",
+    15
+   ],
+   [
+    "MYRTLE DUNES",
+    12
+   ],
+   [
+    "PERRIN OCEAN ANNEX",
+    11
+   ],
+   [
+    "BEAVER CREEK SUBD",
+    11
+   ]
+  ],
+  "clusters": [
+   {
+    "name": "CRESCENT BEACH",
+    "buildings": 119,
+    "codes": {
+     "102": 98,
+     "103": 11,
+     "104": 10
+    },
+    "mailing_city": "North Myrtle Beach",
+    "ocean_m_median": 311,
+    "county_value_median": 587000,
+    "owner_4pct_or_split": 19
+   },
+   {
+    "name": "CHERRY GROVE BEACH",
+    "buildings": 113,
+    "codes": {
+     "102": 91,
+     "103": 12,
+     "104": 10
+    },
+    "mailing_city": "North Myrtle Beach",
+    "ocean_m_median": 186,
+    "county_value_median": 666000,
+    "owner_4pct_or_split": 9
+   },
+   {
+    "name": "TARPON BAY II",
+    "buildings": 75,
+    "codes": {
+     "102": 75
+    },
+    "mailing_city": "Myrtle Beach",
+    "ocean_m_median": 8064,
+    "county_value_median": 238000,
+    "owner_4pct_or_split": 20
+   },
+   {
+    "name": "OCEAN TERRACE",
+    "buildings": 54,
+    "codes": {
+     "102": 49,
+     "103": 4,
+     "104": 1
+    },
+    "mailing_city": "Surfside Beach",
+    "ocean_m_median": 783,
+    "county_value_median": 447000,
+    "owner_4pct_or_split": 20
+   },
+   {
+    "name": "WINDTREE ESTATES",
+    "buildings": 49,
+    "codes": {
+     "104": 49
+    },
+    "mailing_city": "Myrtle Beach",
+    "ocean_m_median": 1092,
+    "county_value_median": 230000,
+    "owner_4pct_or_split": 23
+   },
+   {
+    "name": "WINDY HILL BEACH",
+    "buildings": 43,
+    "codes": {
+     "102": 34,
+     "103": 3,
+     "104": 6
+    },
+    "mailing_city": "North Myrtle Beach",
+    "ocean_m_median": 285,
+    "county_value_median": 487000,
+    "owner_4pct_or_split": 6
+   },
+   {
+    "name": "INGRAM BEACH",
+    "buildings": 42,
+    "codes": {
+     "102": 32,
+     "103": 8,
+     "104": 2
+    },
+    "mailing_city": "North Myrtle Beach",
+    "ocean_m_median": 145,
+    "county_value_median": 685000,
+    "owner_4pct_or_split": 4
+   },
+   {
+    "name": "GARDEN CITY",
+    "buildings": 42,
+    "codes": {
+     "102": 41,
+     "103": 1
+    },
+    "mailing_city": "Murrells Inlet",
+    "ocean_m_median": 917,
+    "county_value_median": 622000,
+    "owner_4pct_or_split": 9
+   },
+   {
+    "name": "OCEAN PINES",
+    "buildings": 32,
+    "codes": {
+     "102": 26,
+     "103": 4,
+     "104": 2
+    },
+    "mailing_city": "Surfside Beach",
+    "ocean_m_median": 642,
+    "county_value_median": 460000,
+    "owner_4pct_or_split": 6
+   },
+   {
+    "name": "KINGS HWY EXT",
+    "buildings": 32,
+    "codes": {
+     "102": 25,
+     "103": 2,
+     "104": 5
+    },
+    "mailing_city": "Myrtle Beach",
+    "ocean_m_median": 531,
+    "county_value_median": 433000,
+    "owner_4pct_or_split": 6
+   },
+   {
+    "name": "OCEAN DRIVE BEACH",
+    "buildings": 24,
+    "codes": {
+     "102": 20,
+     "104": 4
+    },
+    "mailing_city": "North Myrtle Beach",
+    "ocean_m_median": 211,
+    "county_value_median": 553000,
+    "owner_4pct_or_split": 2
+   },
+   {
+    "name": "HOTEL SEC",
+    "buildings": 23,
+    "codes": {
+     "102": 17,
+     "103": 3,
+     "104": 3
+    },
+    "mailing_city": "Myrtle Beach",
+    "ocean_m_median": 703,
+    "county_value_median": 216000,
+    "owner_4pct_or_split": 2
+   },
+   {
+    "name": "SPARROW",
+    "buildings": 22,
+    "codes": {
+     "102": 13,
+     "103": 6,
+     "104": 3
+    },
+    "mailing_city": "Surfside Beach",
+    "ocean_m_median": 661,
+    "county_value_median": 567000,
+    "owner_4pct_or_split": 3
+   },
+   {
+    "name": "A PLACE AT THE RIVER",
+    "buildings": 22,
+    "codes": {
+     "102": 22
+    },
+    "mailing_city": "Little River",
+    "ocean_m_median": 4400,
+    "county_value_median": 255000,
+    "owner_4pct_or_split": 5
+   }
+  ]
+ },
+ "sold": {
+  "window": "deeds recorded 2025-10-01 to 2026-09-30",
+  "all": {
+   "n": 58,
+   "median": 520000,
+   "p25": 411000,
+   "p75": 846000,
+   "min": 100000,
+   "max": 2140000
+  },
+  "by_code": {
+   "102": {
+    "n": 45,
+    "median": 512000,
+    "p25": 410000,
+    "p75": 870000,
+    "min": 100000,
+    "max": 2140000
+   },
+   "103": {
+    "n": 5,
+    "median": 710000,
+    "p25": 680000,
+    "p75": 889000,
+    "min": 320000,
+    "max": 1625000
+   },
+   "104": {
+    "n": 8,
+    "median": 525000,
+    "p25": 409000,
+    "p75": 562000,
+    "min": 199000,
+    "max": 835000
+   }
+  },
+  "by_town": {
+   "North Myrtle Beach": {
+    "n": 29,
+    "median": 835000,
+    "p25": 640000,
+    "p75": 1080000,
+    "min": 390000,
+    "max": 2140000
+   },
+   "Myrtle Beach": {
+    "n": 14,
+    "median": 268000,
+    "p25": 210000,
+    "p75": 479000,
+    "min": 100000,
+    "max": 600000
+   },
+   "Surfside Beach": {
+    "n": 7,
+    "median": 520000,
+    "p25": 469000,
+    "p75": 742000,
+    "min": 285000,
+    "max": 1625000
+   },
+   "Conway": {
+    "n": 5,
+    "median": 410000,
+    "p25": 300000,
+    "p75": 410000,
+    "min": 210000,
+    "max": 435000
+   },
+   "(no address point)": {
+    "n": 2,
+    "median": 482000,
+    "p25": 471000,
+    "p75": 494000,
+    "min": 460000,
+    "max": 505000
+   },
+   "Murrells Inlet": {
+    "n": 1,
+    "median": 550000,
+    "p25": 550000,
+    "p75": 550000,
+    "min": 550000,
+    "max": 550000
+   }
+  },
+  "buyer_tax_bill_out_of_state": 18,
+  "buyer_company": 27,
+  "share_of_all_home_sales_pct": 0.4,
+  "all_home_sales": 13194,
+  "ocean_bands": {
+   "under 0.25 mile": {
+    "n": 28,
+    "median": 842000,
+    "p25": 674000,
+    "p75": 1250000,
+    "min": 390000,
+    "max": 2140000
+   },
+   "0.25 to 1 mile": {
+    "n": 16,
+    "median": 500000,
+    "p25": 382000,
+    "p75": 562000,
+    "min": 199000,
+    "max": 889000
+   },
+   "1 to 3 miles": {
+    "n": 7,
+    "median": 410000,
+    "p25": 222000,
+    "p75": 422000,
+    "min": 100000,
+    "max": 520000
+   },
+   "over 3 miles": {
+    "n": 5,
+    "median": 245000,
+    "p25": 210000,
+    "p75": 282000,
+    "min": 100000,
+    "max": 300000
+   }
+  },
+  "by_cluster": {
+   "CRESCENT BEACH": {
+    "n": 8,
+    "median": 860000,
+    "p25": 796000,
+    "p75": 1031000,
+    "min": 505000,
+    "max": 2140000
+   },
+   "CHERRY GROVE BEACH": {
+    "n": 7,
+    "median": 655000,
+    "p25": 570000,
+    "p75": 728000,
+    "min": 390000,
+    "max": 1600000
+   },
+   "TARPON BAY II": {
+    "n": 3,
+    "median": 245000,
+    "p25": 172000,
+    "p75": 264000,
+    "min": 100000,
+    "max": 282000
+   },
+   "OCEAN TERRACE": {
+    "n": 2,
+    "median": 509000,
+    "p25": 507000,
+    "p75": 511000,
+    "min": 505000,
+    "max": 512000
+   },
+   "WINDTREE ESTATES": {
+    "n": 1,
+    "median": 199000,
+    "p25": 199000,
+    "p75": 199000,
+    "min": 199000,
+    "max": 199000
+   },
+   "WINDY HILL BEACH": {
+    "n": 1,
+    "median": 510000,
+    "p25": 510000,
+    "p75": 510000,
+    "min": 510000,
+    "max": 510000
+   },
+   "INGRAM BEACH": {
+    "n": 5,
+    "median": 1600000,
+    "p25": 1400000,
+    "p75": 1600000,
+    "min": 980000,
+    "max": 1627000
+   },
+   "GARDEN CITY": {
+    "n": 0
+   },
+   "OCEAN PINES": {
+    "n": 0
+   },
+   "KINGS HWY EXT": {
+    "n": 1,
+    "median": 500000,
+    "p25": 500000,
+    "p75": 500000,
+    "min": 500000,
+    "max": 500000
+   },
+   "OCEAN DRIVE BEACH": {
+    "n": 1,
+    "median": 430000,
+    "p25": 430000,
+    "p75": 430000,
+    "min": 430000,
+    "max": 430000
+   },
+   "HOTEL SEC": {
+    "n": 0
+   },
+   "SPARROW": {
+    "n": 2,
+    "median": 560000,
+    "p25": 492000,
+    "p75": 628000,
+    "min": 425000,
+    "max": 695000
+   },
+   "A PLACE AT THE RIVER": {
+    "n": 0
+   }
+  },
+  "by_month": {
+   "2025/10": 7,
+   "2025/11": 1,
+   "2025/12": 4,
+   "2026/01": 3,
+   "2026/02": 3,
+   "2026/03": 6,
+   "2026/04": 4,
+   "2026/05": 5,
+   "2026/06": 6,
+   "2026/07": 5,
+   "2026/08": 4,
+   "2026/09": 10
+  }
+ },
+ "rents": {
+  "lease_2br_in_2to4": {
+   "records": 107,
+   "homes": 2674,
+   "median": 1000,
+   "moe90": 68
+  },
+  "with_utilities_2br_in_2to4": {
+   "records": 107,
+   "homes": 2674,
+   "median": 1135,
+   "moe90": 92
+  },
+  "lease_all_in_2to4": {
+   "records": 159,
+   "homes": 4291,
+   "median": 947,
+   "moe90": 85
+  },
+  "with_utilities_all_in_2to4": {
+   "records": 159,
+   "homes": 4291,
+   "median": 1099,
+   "moe90": 51
+  },
+  "lease_house_detached": {
+   "records": 275,
+   "homes": 8071,
+   "median": 1400,
+   "moe90": 155
+  },
+  "bedrooms_share_2to4_renters": {
+   "0": 2.1,
+   "1": 21.2,
+   "2": 62.3,
+   "3+": 14.5
+  },
+  "counts": {
+   "occupied_in_2to4": {
+    "records": 240,
+    "homes": 5799,
+    "moe90": 816
+   },
+   "renter_in_2to4": {
+    "records": 159,
+    "homes": 4291,
+    "moe90": 701
+   },
+   "owner_in_2to4": {
+    "records": 79,
+    "homes": 1465,
+    "moe90": 355
+   },
+   "all_renter_homes": {
+    "records": 1047,
+    "homes": 30740,
+    "moe90": 1681
+   }
+  }
+ },
+ "worked_example": {
+  "duplex_price_median_sold": 512000,
+  "units": 2,
+  "lease_rent_each_2br": 1000,
+  "rent_roll_month": 2000,
+  "rent_roll_year": 24000,
+  "gross_rent_pct_of_price": 4.7,
+  "price_per_unit": 256000,
+  "fha_self_sufficiency_fourplex": {
+   "units": 4,
+   "rent_each": 1000,
+   "appraiser_rent_total": 4000,
+   "less_25pct": 3000,
+   "rule": "PITI / net self-sufficiency rent may not exceed 100 percent (HUD 4000.1 II.A.1.b.iv(B)(3)(c)); net = appraiser's fair market rent of all units, including the owner's, less the greater of the appraiser's vacancy and maintenance or 25 percent."
+  },
+  "note": "Constructed example. Rent is the Census median lease rent for a 2-bedroom unit in a 2 to 4 unit building, Horry County, leases in place (2020-2024, 2024 dollars); a new lease runs higher (rent-prices ledger row 7). No payment, rate or loan amount."
+ }
+}

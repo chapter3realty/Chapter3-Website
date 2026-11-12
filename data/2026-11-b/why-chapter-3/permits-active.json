@@ -1,0 +1,30 @@
+{
+ "pulled": "2026-11-10T10:15:18.418454+00:00",
+ "total": 2646,
+ "total_url": "https://www.horrycounty.org/gisweb/rest/services/Public/PermitsActive/MapServer/0/query?where=1%3D1&returnCountOnly=true&f=json",
+ "issued_first": "2008-04-22",
+ "issued_last": "2025-09-22",
+ "by_permit_type": [
+  [
+   "Residential Permit",
+   2143
+  ],
+  [
+   "Mobile Home Permit",
+   344
+  ],
+  [
+   "Commercial Permit",
+   159
+  ]
+ ],
+ "by_permit_type_url": "https://www.horrycounty.org/gisweb/rest/services/Public/PermitsActive/MapServer/0/query?where=1%3D1&groupByFieldsForStatistics=PermitType&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID_1%22%2C+%22outStatisticFieldName%22%3A+%22n%22%7D%5D&f=json",
+ "by_workclass": [
+  [
+   "New ",
+   2646
+  ]
+ ],
+ "by_workclass_url": "https://www.horrycounty.org/gisweb/rest/services/Public/PermitsActive/MapServer/0/query?where=1%3D1&groupByFieldsForStatistics=Workclass&outStatistics=%5B%7B%22statisticType%22%3A+%22count%22%2C+%22onStatisticField%22%3A+%22OBJECTID_1%22%2C+%22outStatisticFieldName%22%3A+%22n%22%7D%5D&f=json",
+ "limits": "Active permits only, as the county's public layer holds them; not a count of permits issued this year. Every row's work class is 'New'. The newest issue date in the layer is the date above, so the layer is not a current feed. Which towns' permits are in it was not checked."
+}

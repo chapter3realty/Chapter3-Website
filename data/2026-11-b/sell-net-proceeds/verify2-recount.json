@@ -1,0 +1,77 @@
+{
+ "house": {
+  "all": 3236,
+  "resale": 2188,
+  "cut_resale": 1260,
+  "warr": 956,
+  "warr_new": 894,
+  "warr_resale": 62,
+  "R_not_in_A": 0,
+  "W_not_in_A": 0,
+  "N_not_in_A": 0,
+  "bands": [
+   [
+    0,
+    491,
+    307,
+    62.5
+   ],
+   [
+    300000,
+    714,
+    403,
+    56.4
+   ],
+   [
+    450000,
+    569,
+    318,
+    55.9
+   ],
+   [
+    700000,
+    414,
+    232,
+    56.0
+   ]
+  ]
+ },
+ "condo": {
+  "all": 2694,
+  "resale": 2652,
+  "cut_resale": 1372,
+  "warr": 58,
+  "warr_new": 25,
+  "warr_resale": 33,
+  "R_not_in_A": 0,
+  "W_not_in_A": 0,
+  "N_not_in_A": 0,
+  "bands": [
+   [
+    0,
+    609,
+    336,
+    55.2
+   ],
+   [
+    150000,
+    1089,
+    579,
+    53.2
+   ],
+   [
+    250000,
+    571,
+    273,
+    47.8
+   ],
+   [
+    400000,
+    383,
+    184,
+    48.0
+   ]
+  ]
+ },
+ "note": "Verifier 2026-11-09: own pull at 03:16Z (feed refreshedAt 03:00:14Z), counted with a shapely polygon test. HOA (verify2_hoa.py, hoa=0, same outline): houses 790 of 2,929 list no HOA fee; townhouses 24 of 307; condos 0 of 2,694."
+}

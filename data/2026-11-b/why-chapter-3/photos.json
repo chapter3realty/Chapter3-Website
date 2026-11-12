@@ -1,0 +1,46 @@
+{
+ "note": "Photo records for /why-chapter-3/ (second rewrite, 2026-11-12). The Garden City Beach record is copied from data/2026-11-b/invest-strategies/photos.json (itself from /invest/condos/): a public domain USGS oblique aerial, 2011. It is the fallback of the Garden City Beach homes strip and shows only until the strip has homes. The first rewrite used the Government and Justice Center photo; that page section is cut.",
+ "photos": [
+  {
+   "slug": "invest-strategies",
+   "file": "images/2026-11-a/invest-condos/garden-city-condos-2011.webp",
+   "variants": {
+    "600": "images/2026-11-a/invest-condos/garden-city-condos-2011-600w.webp",
+    "1200": "images/2026-11-a/invest-condos/garden-city-condos-2011-1200w.webp"
+   },
+   "width": 1200,
+   "height": 675,
+   "title": "Condo towers and low-rise condo buildings on North Waccamaw Drive, Garden City Beach, USGS oblique aerial photo, August 24, 2011",
+   "what": "A stretch of oceanfront at Garden City Beach seen from a plane over the ocean: low-rise condo buildings with pools on the left, a tall tan tower in the middle, a white five-story building with a pool and the edge of another tower on the right. Streets of beach houses run back from the shore road to a wide salt marsh, with more houses on the far side of the marsh. Beach umbrellas line the sand; people are too small to recognize.",
+   "caption": "Garden City Beach, outside city limits: a condo tower and low-rise condo buildings on North Waccamaw Drive, with the marsh behind, seen from a plane in 2011.",
+   "alt": "A tall tan condo tower and several low-rise condo buildings with pools on the beach at Garden City, with beach houses and a wide salt marsh behind them",
+   "place": {
+    "city": "Garden City Beach",
+    "sublocation": "North Waccamaw Drive, Garden City Beach, unincorporated Horry County (tax district 610)"
+   },
+   "source": "https://doi.org/10.5066/F7N877XX",
+   "source_name": "U.S. Geological Survey",
+   "author": "U.S. Geological Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.usa.gov/publicdomain/label/1.0/",
+   "credit": "Photo: U.S. Geological Survey, public domain. Credit not required; give it anyway.",
+   "display_credit": "Photo: USGS",
+   "provenance": "U.S. government photo: USGS baseline coastal oblique aerial survey 11CCH03 (Ponte Vedra, Florida, to the South Carolina/North Carolina border), flown 2011-08-24, photographer Karen L.M. Morgan (USGS). Frame 2011_0824_175601d.jpg, from the data release zip (https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03_0824_175500.zip); aircraft position 33.578593 N, 78.98845 W (11CCH03-Photolocations.csv; the plane, not the buildings). Fetched 2026-11-03 by the fixer for /invest/condos/. Not used on any other page. Copied 2026-11-10 by the writer of /invest/strategies/ from the DSCR page's record (data/2026-11-b/invest-strategies-dscr-loans/photos.json); the same file, not a new download.",
+   "license_note": "USGS metadata, Use_Constraints: 'Public domain data from the U.S. Government are freely redistributable with proper metadata and source attribution. Please recognize the U.S. Geological Survey as the originator of the dataset.'",
+   "subject_check": "Looked at full size (3008 x 1960) by the fixer on 2026-11-03, whole frame and a 1500 x 1000 crop of the center at 100 percent. No sign, plate or building name is readable at page size; people are specks. Horry County parcels layer 24, condo units (land use 1xx, building value above 0, legal description with HPR) in envelope -78.996 33.578 to -78.984 33.588, read 2026-11-03: every condo regime in the envelope is tax district 610, which is not a city district (README \"Area\": 550 North Myrtle Beach, 88x and 89x City of Myrtle Beach, 660 Surfside Beach, 110 Conway; the rest is outside city limits): Sea Oaks, Sandy Shores, Reflections, Afterdeck, Sea Watch VI, Portobello II, Angler Villas and others. Roads, layer 18: N WACCAMAW DR and RAINBOW DR, postal city GARDEN CITY.",
+   "annotation_sources": {
+    "where": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24 and /18 (envelope -78.996 33.578 to -78.984 33.588, read 2026-11-03)"
+   },
+   "terms_urls": [
+    "https://doi.org/10.5066/F7N877XX",
+    "https://coastal.er.usgs.gov/data-release/doi-F7N877XX/data/11CCH03-Metadata.txt"
+   ],
+   "taken": "2011-08-24",
+   "original_size": "3008x1960",
+   "digital_source_type": "digitalCapture",
+   "crop_note": "Cut as one 3008 x 1692 band (x 0 to 3008, y 100 to 1792 of the frame), then resized.",
+   "reused_on": "/invest/strategies/dscr-loans/ (licence record copied from data/2026-11-a/invest-condos/photos.json on 2026-11-10; the file is not copied or changed)"
+  }
+ ]
+}

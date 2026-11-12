@@ -1,0 +1,6 @@
+#!/bin/sh
+# Google search suggestions for the seller hub. Run: sh pull-suggestions.sh > raw/google-suggestions.txt
+for q in "sell my house myrtle beach" "sell my house fast myrtle beach" "sell my home myrtle beach sc" "sell my house horry county" "selling a house in myrtle beach" "selling a house in south carolina" "how long does it take to sell a house in myrtle beach" "is now a good time to sell my house in myrtle beach" "best time to sell a house in myrtle beach" "myrtle beach days on market" "sell house as is myrtle beach" "cash home buyers myrtle beach" "we buy houses myrtle beach" "off market sale vs listing" "sell to investor or list" "cash offer vs listing" "myrtle beach realtor to sell my house" "myrtle beach listing agent" "how much does it cost to sell a house in sc" "sell my house and buy another" "sell house myrtle beach" "myrtle beach housing market" "selling a home in south carolina" "do i need a lawyer to sell my house in sc" "how to sell my house in sc"; do
+  printf '== %s\n' "$q"
+  curl -sS -A "Mozilla/5.0" "https://suggestqueries.google.com/complete/search?client=firefox&hl=en&gl=us&q=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$q")"; echo
+done

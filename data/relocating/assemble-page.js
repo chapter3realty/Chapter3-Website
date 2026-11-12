@@ -20,7 +20,10 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
 const SITE = path.join(ROOT, 'chapter3realty');
-const DONOR = path.join(SITE, 'buyers', 'cost-to-own', 'index.html');
+/* The donor is a frozen copy of /buyers/cost-to-own/ as it stood before that page was rebuilt from a spec
+ * (batch 2026-11-a). The relocating pages keep its chrome; the live cost-to-own page can change freely.
+ * `node build.js stitch` still stamps the current header, footer and analytics into every built page. */
+const DONOR = path.join(__dirname, 'donor-cost-to-own.html');
 const DONOR_SLUG = '/buyers/cost-to-own/';
 const DONOR_CUR = 'buyers-costtoown';
 const ORIGIN = 'https://chapter3realty.com';

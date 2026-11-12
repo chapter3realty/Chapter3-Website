@@ -1,0 +1,60 @@
+{
+ "title": "How much of the rent the tax, insurance and HOA fee use before the loan",
+ "note": "Share of the monthly rent a lender counts. At a 1.25 ratio, 20 percent of the rent must be left over; the rest of the bar is what the rent leaves for principal and interest.",
+ "rows": [
+  {
+   "label": "Longs, 3-bedroom house",
+   "tax": 14.2,
+   "insurance": 12.1,
+   "hoa": 4.4,
+   "cushion": 20.0,
+   "left_for_loan": 49.3,
+   "short_by": 0
+  },
+  {
+   "label": "Carolina Forest, 3-bedroom house",
+   "tax": 17.6,
+   "insurance": 12.3,
+   "hoa": 4.5,
+   "cushion": 20.0,
+   "left_for_loan": 45.6,
+   "short_by": 0
+  },
+  {
+   "label": "Carolina Forest, 2-bedroom condo",
+   "tax": 9.0,
+   "insurance": 4.4,
+   "hoa": 23.1,
+   "cushion": 20.0,
+   "left_for_loan": 43.5,
+   "short_by": 0
+  },
+  {
+   "label": "Myrtle Beach, 2-bedroom condo, yearly lease",
+   "tax": 21.5,
+   "insurance": 5.7,
+   "hoa": 38.7,
+   "cushion": 20.0,
+   "left_for_loan": 14.0,
+   "short_by": 0
+  },
+  {
+   "label": "Myrtle Beach oceanfront, 2-bedroom condo, nightly (75 percent counted)",
+   "tax": 26.4,
+   "insurance": 5.1,
+   "hoa": 77.8,
+   "cushion": 20.0,
+   "left_for_loan": 0,
+   "short_by": 29.4
+  },
+  {
+   "label": "Garden City Beach, 2-bedroom condo, nightly (75 percent counted)",
+   "tax": 21.2,
+   "insurance": 4.8,
+   "hoa": 34.3,
+   "cushion": 20.0,
+   "left_for_loan": 19.7,
+   "short_by": 0
+  }
+ ]
+}
