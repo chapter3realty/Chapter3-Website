@@ -24,7 +24,12 @@ import { PHOTO_HINT, STYLE, STRIP_STYLE, SCRIPT, disclaimer, esc, hasPhoto, sign
 const SLOT = /<div class="hx-strip" data-place="([a-z0-9-]+)" data-name="([^"<>]*)"(?: data-head="([^"<>]*)")?><\/div>/g;
 const STRIP_CARDS = 10;
 const STRIP_MIN = 3;
-const STRIP_BUDGET_MS = 3000; // a slow CRM never holds up a guide page: past this, no strips
+/* A slow CRM never holds up a guide page. The whole page waits at most PAGE_BUDGET_MS for listings (2026-11-13: a cold
+   cache held the first visit, often Googlebot's, for about 3 seconds). A search still running at the deadline keeps
+   going in the background (waitUntil), so its answer is cached for the next visitor; a strip that missed it fills
+   after load (LATE). */
+const STRIP_BUDGET_MS = 1500;
+const PAGE_BUDGET_MS = 1800;
 const TYPES = ["house", "condo", "townhouse", "manufactured", "multi", "land"];
 
 /** The CRM search for a place, from validated parts only (contract §3, §5). Null if a part is bad. */
@@ -140,15 +145,16 @@ function strip(slug, name, listings, total, noHoa, head) {
 }
 
 /** Run a feed's searches at once, merged and de-duplicated. "stale", or [listings, total, meta], or null. */
-async function runFeed(env, request, feed) {
+async function runFeed(env, request, feed, waitUntil, budgetMs = STRIP_BUDGET_MS) {
   const calls = (feed.q || []).map((q) => {
     const p = feedParams(q);
     if (!p) return null;
     p.set("size", feed.q.length > 2 ? "24" : "48");
-    return crm(env, request, `/api/idx/listings?${p.toString()}`, { anonymous: true, timeoutMs: STRIP_BUDGET_MS - 500 }).catch(() => null);
+    return crm(env, request, `/api/idx/listings?${p.toString()}`, { anonymous: true, timeoutMs: 8000, retry: false }).catch(() => null);
   });
+  if (waitUntil) waitUntil(Promise.allSettled(calls));
   let timer;
-  const late = new Promise((done) => { timer = setTimeout(() => done(null), STRIP_BUDGET_MS); });
+  const late = new Promise((done) => { timer = setTimeout(() => done(null), Math.max(200, budgetMs)); });
   const answers = await Promise.race([Promise.all(calls), late]);
   clearTimeout(timer);
   if (!answers) return null;
@@ -263,6 +269,8 @@ export async function withIdx(context, response) {
     const gate = idxOn(env, request);
     if (!gate.on) return response;
     const url = new URL(request.url);
+    const t0 = Date.now(), left = () => PAGE_BUDGET_MS - (Date.now() - t0);
+    const wait = context.waitUntil ? (pr) => context.waitUntil(pr) : null;
     text = await response.text();
     let html = switchHeader(text);
     const headers = new Headers(response.headers);
@@ -280,14 +288,14 @@ export async function withIdx(context, response) {
       let used = feed;
       // The CRM's live feature list first (cached an hour): a feed whose key it no longer lists is skipped.
       await filterCatalog(env, request);
-      let got = await runFeed(env, request, used);
+      let got = await runFeed(env, request, used, wait, Math.min(STRIP_BUDGET_MS, left()));
       // A title the CRM's features make true, from a CRM that did not apply them, would be a false title: fall back.
       const untrue = (f, g) => g && g !== "stale" && f.needs === "has" && !f.headToday && !g[3];
       if (got && got !== "stale" && (got[0].length < STRIP_MIN || untrue(used, got))) {
         const wider = feed.fallback || FEEDS["/buyers/"];
-        if (wider !== used) { used = wider; got = await runFeed(env, request, used); }
+        if (wider !== used && left() > 300) { used = wider; got = await runFeed(env, request, used, wait, left()); }
         // One more step down when the fallback is itself a feature title that cannot be shown.
-        if (got && got !== "stale" && (got[0].length < STRIP_MIN || untrue(used, got)) && used.fallback && used.fallback !== used) { used = used.fallback; got = await runFeed(env, request, used); }
+        if (got && got !== "stale" && (got[0].length < STRIP_MIN || untrue(used, got)) && used.fallback && used.fallback !== used && left() > 300) { used = used.fallback; got = await runFeed(env, request, used, wait, left()); }
       }
       if (got && got !== "stale" && got[0].length >= STRIP_MIN) {
         html = (feed.low ? placeFeed : placeFeedTop)(html, feedSection({ ...used, low: feed.low }, got[0], got[1], got[3]));
@@ -305,7 +313,7 @@ export async function withIdx(context, response) {
     const pending = slugs.map((s) => placeCall(env, request, s));
     if (context.waitUntil) context.waitUntil(Promise.allSettled(pending));
     let timer;
-    const deadline = new Promise((done) => { timer = setTimeout(done, STRIP_BUDGET_MS); });
+    const deadline = new Promise((done) => { timer = setTimeout(done, Math.max(300, Math.min(STRIP_BUDGET_MS, left()))); });
     const answers = await Promise.all(pending.map((c) => Promise.race([c, deadline.then(() => null)])));
     clearTimeout(timer);
     // A stale MLS copy means no listings anywhere on the page (16.7).

@@ -246,6 +246,8 @@ let t0 = Date.now();
 r = await run(mw, req("/buyers/best-neighborhoods/"));
 t = await r.text();
 check("slow CRM: a guide page comes back unchanged within the budget", Date.now() - t0 < 4000 && r.status === 200 && !t.includes('<article class="hx-c">'));
+// 2026-11-13: the whole page waits at most about 1.8 seconds for listings, so a cold cache no longer holds up Googlebot.
+check("slow CRM: the page budget is under 2.5 seconds, not 3", Date.now() - t0 < 2500);
 HANG = false;
 // One slow place (Loris on the 13-town page, 2026-11-08) no longer empties the page's other strips; its slot is
 // marked and filled after load from /homes/api/place, whose answer the background call has put in the cache.
@@ -255,7 +257,7 @@ r = await run(mw, req("/buyers/best-neighborhoods/"));
 t = await r.text();
 SLOW = "";
 check("slow place: the page waits no longer than the budget, the other strips fill, the slow one is marked for the after-load fill (fires)",
-  Date.now() - t0 < 4000 && (t.match(/class="hx-s-row"/g) || []).length >= 9 && /data-place="cherry-grove" data-name="[^"]*" data-late="1"><\/div>/.test(t)
+  Date.now() - t0 < 2500 && (t.match(/class="hx-s-row"/g) || []).length >= 9 && /data-place="cherry-grove" data-name="[^"]*" data-late="1"><\/div>/.test(t)
   && (t.match(/hx-strip\[data-late\]/g) || []).length === 1 && (t.match(/class="hx-disclaimer"/g) || []).length === 1);
 check("slow place (quiet): a place with too few homes is not marked late", /data-place="tidewater" data-name="[^"]*"><\/div>/.test(t));
 r = await run(homes, req("/homes/api/place?slug=cherry-grove&name=Cherry%20Grove%20%3Cb%3E"));
