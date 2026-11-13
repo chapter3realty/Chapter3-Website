@@ -15,7 +15,7 @@ import { featureList } from "../idx-lib/features.js";
 import { readQuery } from "../idx-lib/query.js";
 import { nearbySales, flipMath, FLIP_DEFAULTS, repairTier } from "../idx-lib/deals.js";
 import { photo, photoUrl, warm, ourPhoto, crmParts, forgetFresh, FRESH, PAGES_PER_RUN, SWEEP_EVERY_MS, FRESH_MS } from "../idx-lib/photo.js";
-import { resetCatalog } from "../idx-lib/catalog.js";
+import { resetCatalog, filterCatalog } from "../idx-lib/catalog.js";
 import { SCRIPT, STYLE, PHOTO_FIX, PHOTO_HINT, hasPhoto, stripCards, NO_PHOTO } from "../idx-lib/render.js";
 const STYLE_OK = () => STYLE.includes(".hx-dialog form[hidden]{display:none}");
 import { MAP_SCRIPT } from "../idx-lib/map.js";
@@ -1047,6 +1047,38 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
     M.includes('var s=el("span");s.appendChild(el("b",null,String(x[0])))') && !M.includes('f.appendChild(el("i"))')
     && MS.includes("grid-template-columns:clamp(6.5rem,34%,8.5rem) minmax(0,1fr)") && MS.includes("main#main .hx-mpop .hx-c-price{padding-right:1.9rem}")
     && MS.includes(".hx-map-hint{top:.8rem;bottom:auto;left:.8rem;font-size:.78rem;max-width:calc(100% - 9rem)") && MS.includes(".hx-mpop.hx-mpop-top{bottom:auto;top:4.4rem}"));
+}
+
+// The CRM's filter list (CRM thread "The filter list is called far more than once an hour", 2026-11-13): one shared copy
+// for every visitor everywhere, the CRM called at most once an hour, and after a 429 nobody calls until its retry-after.
+{
+  const objs = new Map(); let et = 0;
+  const R2 = {
+    head: async (k) => { const o = objs.get(k); return o ? { etag: o.etag, customMetadata: o.cm } : null; },
+    get: async (k) => { const o = objs.get(k); return o ? { text: async () => o.body } : null; },
+    put: async (k, body, opt = {}) => { const cur = objs.get(k); if (opt.onlyIf && (!cur || cur.etag !== opt.onlyIf.etagMatches)) return null; objs.set(k, { body: String(body), etag: `e${++et}`, cm: opt.customMetadata || {} }); return {}; },
+  };
+  const env = { IDX_DEV_KEY: "devkey", PHOTOS: R2 }, req = new Request("https://chapter3realty.com/homes/");
+  const savedFetch = globalThis.fetch, savedNow = Date.now; let now = Date.UTC(2026, 10, 13, 12), calls = 0, mode = "ok";
+  Date.now = () => now;
+  globalThis.fetch = async (u) => {
+    if (!String(u).includes("/api/idx/filters")) return savedFetch(u);
+    calls++;
+    if (mode === "429") return new Response(JSON.stringify({ ok: false, error: "rate_limited" }), { status: 429, headers: { "content-type": "application/json", "retry-after": "600" } });
+    return new Response(JSON.stringify({ ok: true, countedAt: "x", filters: [{ key: "pool", label: "Private pool", group: "outside", params: ["has", "not"], forSale: 900 }] }), { status: 200, headers: { "content-type": "application/json" } });
+  };
+  // 50 isolates in 50 places, all at once, then each again: one CRM call.
+  const isolates = async (n) => { const out = []; for (let i = 0; i < n; i++) { resetCatalog(); out.push(await filterCatalog(env, req)); } return out; };
+  const first = await Promise.all(Array.from({ length: 50 }, () => (resetCatalog(), filterCatalog(env, req))));
+  const firstCalls = calls; const again = await isolates(50);
+  // An hour later the CRM says 429 for 10 minutes: one try, the last good copy is served, and no call until the wait is over.
+  now += 61 * 60_000; mode = "429"; const during = await isolates(50); const calls429 = calls - firstCalls;
+  now += 5 * 60_000; const later = await isolates(50); const callsWaiting = calls - firstCalls - calls429;
+  now += 6 * 60_000; mode = "ok"; await isolates(50); const callsAfter = calls - firstCalls - calls429 - callsWaiting;
+  Date.now = savedNow; globalThis.fetch = savedFetch; resetCatalog();
+  const has = (l) => l && l.features && l.features[0] && l.features[0].key === "pool";
+  check("filter list: 100 isolates make one CRM call; after a 429 the last good copy is served by all, one try is made, none until retry-after passes, then one",
+    firstCalls === 1 && first.every(has) && again.every(has) && calls429 === 1 && during.every(has) && callsWaiting === 0 && later.every(has) && callsAfter === 1);
 }
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");
