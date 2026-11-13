@@ -14,7 +14,7 @@ import { filterBar } from "../idx-lib/filters.js";
 import { featureList } from "../idx-lib/features.js";
 import { readQuery } from "../idx-lib/query.js";
 import { nearbySales, flipMath, FLIP_DEFAULTS, repairTier } from "../idx-lib/deals.js";
-import { photo, photoUrl, warm, ourPhoto } from "../idx-lib/photo.js";
+import { photo, photoUrl, warm, ourPhoto, crmParts, forgetFresh, FRESH, PAGES_PER_RUN, SWEEP_EVERY_MS, FRESH_MS } from "../idx-lib/photo.js";
 import { resetCatalog } from "../idx-lib/catalog.js";
 import { SCRIPT, STYLE, PHOTO_FIX, PHOTO_HINT, hasPhoto, stripCards, NO_PHOTO } from "../idx-lib/render.js";
 const STYLE_OK = () => STYLE.includes(".hx-dialog form[hidden]{display:none}");
@@ -690,8 +690,8 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
   globalThis.fetch = async () => new Response("quota", { status: 429, headers: { "content-type": "text/plain" } });
   const busy = await photo(ctx("*/*"), new URL(`https://chapter3realty.com/homes/p/big?u=${encodeURIComponent(T)}`), "big");
   globalThis.fetch = saved;
-  check("photos: our resizer makes a card photo small (a drawn 1600 px test photo comes back smaller, as a JPEG) and it is kept 30 days; a foreign link is refused; when the MLS says no, the browser is sent to the MLS and nothing is kept",
-    ok.status === 200 && ok.headers.get("content-type") === "image/jpeg" && okBytes < jpg.length && /max-age=2592000/.test(ok.headers.get("cache-control"))
+  check("photos: our resizer makes an MLS-host photo small (a drawn 1600 px test photo comes back smaller, as a JPEG), cached an hour at most and never stored; a foreign link is refused; when the MLS says no, the browser is sent to the MLS",
+    ok.status === 200 && ok.headers.get("content-type") === "image/jpeg" && okBytes < jpg.length && ok.headers.get("cache-control") === "public, max-age=3600"
     && no.status === 404 && busy.status === 302 && busy.headers.get("location") === T && busy.headers.get("cache-control") === "no-store");
 }
 
@@ -701,33 +701,108 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
   check("listing photos open full screen and page through (arrows, swipe, keys); the map has a Full map button and its 2D and 3D buttons sit above Google's layers", S.includes('box.className="hx-lb"') && S.includes('e.key==="ArrowRight"') && M.includes('getElementById("hx-full-b")') && MS.includes(".hx-map{position:absolute;inset:0;z-index:0}"));
 }
 
-// The photo warmer: every home's first photo kept in the bucket, at most 12 an MLS call each, stopping when the MLS runs low.
+// The photo warmer and the MLS licence (2026-11-13; CLAUDE.md non-negotiable 9): one run at a time, the CRM spared, and a
+// stored photo never outliving its listing.
 {
-  const fs = await import("node:fs");
-  const jpg = fs.readFileSync(new URL("./fixtures/listing-photo.jpg", import.meta.url));
-  const bucket = new Map();
-  const R2 = { head: async (k) => (bucket.has(k) ? {} : null), get: async (k) => (bucket.has(k) ? { body: bucket.get(k).body, httpMetadata: bucket.get(k).meta } : null), put: async (k, body, o) => { bucket.set(k, { body, meta: o.httpMetadata }); } };
-  const link = (i) => `https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/${1000 + i}/1/MTIxOTIvMTMxMTAvMjA/x/sig${i}`;
-  const homes = Array.from({ length: 24 }, (_, i) => ({ photo: link(i) }));
-  const listPage = async () => ({ total: 24, listings: homes });
-  const saved = globalThis.fetch; let mlsCalls = 0, left = 200;
-  globalThis.fetch = async () => { mlsCalls++; left--; return new Response(jpg, { status: 200, headers: { "content-type": "image/jpeg", "minute-quota-available": String(left), "hour-quota-available": "8000" } }); };
-  const call = (key, envX) => warm({ env: envX, request: new Request("https://chapter3realty.com/homes/api/warm?slot=0&slots=1", { headers: key ? { "x-warm-key": key } : {} }), waitUntil() {} }, new URL("https://chapter3realty.com/homes/api/warm?slot=0&slots=1"), listPage);
-  const env1 = { WARM_KEY: "k".repeat(32), PHOTOS: R2 };
-  const noKey = await call("", env1), wrong = await call("nope", env1);
-  const a = await (await call("k".repeat(32), env1)).json();
-  const b = await (await call("k".repeat(32), env1)).json();
-  const c = await (await call("k".repeat(32), env1)).json();
-  const keptCopies = bucket.size; left = 40;
-  bucket.clear(); const d = await (await call("k".repeat(32), env1)).json();
-  // A visitor's photo now comes from the bucket, not the MLS.
-  bucket.clear(); left = 200; await (await call("k".repeat(32), env1)).json();
-  const callsBefore = mlsCalls;
-  const viaBucket = await photo({ env: env1, request: new Request("https://chapter3realty.com/homes/p/card"), waitUntil() {} }, new URL(`https://chapter3realty.com/homes/p/card?u=${encodeURIComponent(link(0))}`), "card");
+  // A bucket as R2 behaves: etags, a compare-and-swap put, delete of a list, list by prefix with a cursor and metadata.
+  const objs = new Map(); let etag = 0, r2ops = 0;
+  const R2 = {
+    head: async (k) => { r2ops++; const o = objs.get(k); return o ? { etag: o.etag, customMetadata: o.cm, httpMetadata: o.hm } : null; },
+    get: async (k) => { r2ops++; const o = objs.get(k); return o ? { body: o.body, httpMetadata: o.hm, customMetadata: o.cm, text: async () => (typeof o.body === "string" ? o.body : new TextDecoder().decode(o.body)) } : null; },
+    put: async (k, body, opt = {}) => { r2ops++; const cur = objs.get(k); if (opt.onlyIf && opt.onlyIf.etagMatches !== undefined && (!cur || cur.etag !== opt.onlyIf.etagMatches)) return null;
+      const o = { body, etag: `e${++etag}`, cm: opt.customMetadata || {}, hm: opt.httpMetadata || {} }; objs.set(k, o); return { etag: o.etag }; },
+    delete: async (ks) => { r2ops++; for (const k of [].concat(ks)) objs.delete(k); },
+    list: async ({ prefix, cursor, limit = 1000, include }) => { r2ops++; const all = [...objs.keys()].filter((k) => k.startsWith(prefix)).sort(); const at = cursor ? +cursor : 0;
+      const page = all.slice(at, at + limit).map((k) => ({ key: k, ...(include ? { customMetadata: objs.get(k).cm } : {}) })); const next = at + limit;
+      return { objects: page, truncated: next < all.length, cursor: next < all.length ? String(next) : undefined }; },
+  };
+  const KEY = "k".repeat(32), link = (key, v) => `https://app.chapter3realty.com/api/idx/photo/${key}/${v}/0/480/sig${key}.webp`;
+  // The CRM: 1,000 homes for sale, by price; each call counted with its time.
+  let homes = Array.from({ length: 1000 }, (_, i) => ({ key: String(1000000 + i), v: "a1", listPrice: 100000 + Math.floor(i / 3) * 1000 }));
+  let clock = Date.UTC(2026, 10, 13, 12), crmCalls = [], answer = null;
+  const listPage = async (min, page) => {
+    crmCalls.push(clock);
+    if (answer) return answer;
+    const all = homes.filter((h) => h.listPrice >= min).sort((x, y) => x.listPrice - y.listPrice || x.key.localeCompare(y.key));
+    const p = Math.min(page, 100);
+    return { status: 200, json: { ok: true, total: all.length, listings: all.slice((p - 1) * 48, p * 48).map((h) => ({ listPrice: h.listPrice, photo: link(h.key, h.v) })) } };
+  };
+  const saved = globalThis.fetch; let photoFetches = 0;
+  globalThis.fetch = async (u) => { photoFetches++; crmCalls.push(clock); return new Response(new Uint8Array([82, 73, 70, 70]), { status: 200, headers: { "content-type": "image/webp" } }); };
+  const env = { WARM_KEY: KEY, PHOTOS: R2 };
+  const call = async (q = "", key = KEY) => (await warm({ env, now: () => clock, request: new Request(`https://chapter3realty.com/homes/api/warm${q}`, { headers: key ? { "x-warm-key": key } : {} }), waitUntil() {} },
+    new URL(`https://chapter3realty.com/homes/api/warm${q}`), listPage));
+  const tick = async (n = 1) => { const out = []; for (let i = 0; i < n; i++) { clock += 15 * 60_000; out.push(await (await call()).json()); } return out; };
+  const stored = () => [...objs.keys()].filter((k) => k.startsWith("l/"));
+  const listingOf = (k) => k.split("/")[1];
+
+  const noKey = (await call("", "")).status, wrong = (await call("", "nope")).status;
+  // The old Worker's 18 calls at once: one runs, 17 cost nothing.
+  const burst = await Promise.all(Array.from({ length: 18 }, () => call("?slot=0&slots=18").then((r) => r.json())));
+  const ran = burst.filter((r) => r.run).length, skipped = burst.filter((r) => r.skipped === "another_run").length, burstCalls = crmCalls.length;
+  const firstRun = burst.find((r) => r.run);
+  // Again within the 14 minutes: nothing.
+  clock += 5 * 60_000; const early = await (await call()).json(); clock -= 5 * 60_000;
+  // Runs every 15 minutes until the first sweep ends.
+  const runs = await tick(12);
+  const done = runs.find((r) => r.lastSweepOkAt !== null);
+  let worst10 = 0; for (const t of crmCalls) worst10 = Math.max(worst10, crmCalls.filter((x) => x >= t && x < t + 10 * 60_000).length);
+  // Every copy is of a listing the CRM returned.
+  const onlyReturned = stored().every((k) => homes.some((h) => h.key === listingOf(k)));
+  check("photo warmer: only with the secret; of 18 calls at once one runs and 17 make no CRM call; a call within 14 minutes does nothing; a run reads at most 16 pages, one call at a time",
+    noKey === 404 && wrong === 404 && ran === 1 && skipped === 17 && burstCalls === firstRun.run.crm && firstRun.run.pages === PAGES_PER_RUN && early.skipped === "another_run" && runs.every((r) => !r.run || r.run.pages <= PAGES_PER_RUN));
+  check("photo warmer: the first sweep reaches all 1,000 homes in 21 pages of 48, under 30 CRM calls in any 10 minutes, and stores photos only for listings the CRM returned",
+    !!done && done.serving === true && runs.filter((r) => r.lastSweepOkAt === null).length < 2 && worst10 < 30 && onlyReturned && stored().length > 0);
+
+  // Keep going until every photo is stored, then the copies are never fetched again.
+  for (let i = 0; i < 120 && (await (await call("?status=1")).json()).toFetch > 0; i++) await tick();
+  const full = stored().length, fetchedBefore = photoFetches;
+  // HARD RULE: a listing missing from the API has all its copies deleted on the next sweep; a changed version loses its old copies in the run that sees it.
+  const gone = homes[500].key; homes = homes.filter((h) => h.key !== gone);
+  homes[10].v = "b2"; const changed = homes[10].key;
+  objs.set(`l/${gone}/a1/3-1200.webp`, { body: "x", etag: "z", cm: {}, hm: {} });
+  clock += SWEEP_EVERY_MS;
+  const sweep2 = [];
+  for (let i = 0; i < 12; i++) { const r = (await tick())[0]; sweep2.push(r); if (r.lastSweepOkAt === clock) break; }
+  const goneLeft = stored().filter((k) => listingOf(k) === gone).length;
+  const oldVersion = stored().filter((k) => k.startsWith(`l/${changed}/a1/`)).length;
+  check("photo warmer HARD RULE: a listing missing from the API has every one of its copies deleted on the next sweep; a listing whose photos changed loses the old version's copies; a kept copy is never fetched again",
+    full === 1000 && goneLeft === 0 && oldVersion === 0 && sweep2.some((r) => r.run && r.run.deleted >= 2) && photoFetches - fetchedBefore <= 2);
+
+  // The CRM's answers: 429 waits as long as it says and ends the run; 503 stale or any 5xx ends the run; never a retry.
+  clock += SWEEP_EVERY_MS; answer = { status: 429, json: { ok: false, error: "rate_limited" }, retryAfter: "1800" };
+  let n0 = crmCalls.length; const r429 = (await tick())[0]; const after429 = crmCalls.length - n0;
+  n0 = crmCalls.length; const paused = (await tick())[0]; const duringPause = crmCalls.length - n0;
+  clock += 20 * 60_000; answer = { status: 503, json: { ok: false, error: "stale" } };
+  n0 = crmCalls.length; const stale = (await tick())[0]; const afterStale = crmCalls.length - n0;
+  answer = { status: 500, json: null }; n0 = crmCalls.length; const r500 = (await tick())[0]; const after500 = crmCalls.length - n0;
+  check("photo warmer: a 429 ends the run after one call and no call is made until its retry-after has passed; 503 stale and a 500 end the run after one call",
+    r429.run.stop === "crm_429" && after429 === 1 && duringPause === 0 && paused.run.stop === "crm_asked_to_wait" && stale.run.stop === "crm_stale" && afterStale === 1 && r500.run.stop === "crm_500" && after500 === 1);
+
+  // A visitor's photo: the copy while the removal sweep is current, cached an hour at most; past 6 hours, the CRM's own link.
+  forgetFresh();
+  const okAt = JSON.parse(await (await R2.get(FRESH)).text()).okAt;
+  const ask = async (u, at) => { forgetFresh(); return photo({ env, now: () => at, request: new Request("https://chapter3realty.com/homes/p/card"), waitUntil() {} }, new URL(`https://chapter3realty.com/homes/p/card?u=${encodeURIComponent(u)}`), "card"); };
+  const live = homes[0], fresh = await ask(link(live.key, live.v), okAt + 60_000), late = await ask(link(live.key, live.v), okAt + FRESH_MS + 1);
+  const leftLink = link(gone, "a1"), leftAsk = await ask(leftLink, okAt + 60_000);
+  const before = objs.size; await ask(link("9999999", "zz"), okAt + 60_000); const visitorStored = objs.size !== before;
+  check("photo store: a copy is served only while the last finished sweep is under 6 hours old, cached an hour at most; later, or for a listing that left, the page gets the CRM's link; a visitor's request never stores",
+    fresh.status === 200 && fresh.headers.get("cache-control") === "public, max-age=3600" && late.status === 302 && late.headers.get("location") === link(live.key, live.v)
+    && leftAsk.status === 302 && !visitorStored);
+
+  // The copies from before 2026-11-13 (named by a hash): after a finished sweep, those of listings it saw at that version are kept and tracked; every other is deleted.
+  const sha = async (size, u) => `p/v1/${size}/${[...new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(u)))].map((b) => b.toString(16).padStart(2, "0")).join("")}`;
+  const keepU = link(homes[1].key, homes[1].v), oldU = link(gone, "a1"), staleV = link(homes[2].key, "old0");
+  for (const u of [keepU, oldU, staleV]) objs.set(await sha("card", u), { body: "j", etag: "q", cm: { src: u }, hm: { contentType: "image/jpeg" } });
+  objs.set("p/v1/card/trestle", { body: "j", etag: "q", cm: { src: "https://api.cotality.com/trestle/Media/x" }, hm: {} });
+  answer = null; await R2.delete(["state/warm.json"]); // a lost bookkeeping file is rebuilt from the bucket
+  await R2.put("state/lock", "0", { customMetadata: { at: "0" } });
+  for (let i = 0; i < 14; i++) { const r = (await tick())[0]; if (r.legacy === "done") break; }
+  const legacyLeft = [...objs.keys()].filter((k) => k.startsWith("p/v1/"));
+  const legacyServed = await ask(keepU, clock);
+  check("photo store: old hash-named copies are kept only for listings a finished sweep saw at that version (then served and tracked); the rest are deleted; a lost bookkeeping file is rebuilt from the bucket",
+    legacyLeft.length === 1 && legacyLeft[0] === (await sha("card", keepU)) && legacyServed.status === 200 && stored().length >= 999);
   globalThis.fetch = saved;
-  check("photo warmer: only with the secret; 12 photos a call, both sizes kept; the next call takes the next 12; then nothing is fetched again; it stops when the MLS has under 40 left this minute; a visitor's photo then comes from the bucket",
-    noKey.status === 404 && wrong.status === 404 && a.fetched === 12 && a.stored === 12 && b.fetched === 12 && b.kept === 12 && c.fetched === 0 && c.kept === 24 && keptCopies === 48
-    && d.fetched === 1 && d.stop === "mls_limit" && viaBucket.status === 200 && mlsCalls === callsBefore);
 }
 
 // The deal finder's fix-and-flip math (owners, 2026-10-29). It never values the house (no AVM licence):
@@ -939,16 +1014,12 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
   const C = "https://app.chapter3realty.com/api/idx/photo/1193398589/ttn5mv0/0/480/6FGpCJWlQzo3f770oaSDnH.webp";
   check("photo store: the CRM's photo links are ours (left as they are on the page); lookalikes are refused",
     ourPhoto(C) && photoUrl(C) === C && !ourPhoto("https://app.chapter3realty.com.evil.test/api/idx/photo/1/x.webp") && !ourPhoto("https://app.chapter3realty.com/api/idx/photo/../../x") && !ourPhoto("https://app.chapter3realty.com/api/idx/listings/1"));
-  const saved = globalThis.fetch; let n = 0;
-  globalThis.fetch = async () => (++n === 1 ? new Response("", { status: 503 }) : new Response(new Uint8Array([82, 73, 70, 70]), { status: 200, headers: { "content-type": "image/webp" } }));
   const ctx = { request: new Request("https://chapter3realty.com/homes/p/card"), waitUntil: () => {}, env: {} };
-  const got = await photo(ctx, new URL(`https://chapter3realty.com/homes/p/card?u=${encodeURIComponent(C)}`), "card");
-  const twice = n;
-  n = 0; globalThis.fetch = async () => { n++; return new Response("", { status: 503 }); };
-  const down = await photo(ctx, new URL(`https://chapter3realty.com/homes/p/card?u=${encodeURIComponent(C)}`), "card");
+  const saved = globalThis.fetch; let n = 0; globalThis.fetch = async () => { n++; return new Response("", { status: 200 }); };
+  const noBucket = await photo(ctx, new URL(`https://chapter3realty.com/homes/p/card?u=${encodeURIComponent(C)}`), "card");
   globalThis.fetch = saved;
-  check("photo store: a CRM photo that says 503 once is asked again and served (fires); still 503: the browser is sent to the link, nothing kept",
-    got.status === 200 && got.headers.get("content-type") === "image/webp" && twice === 2 && down.status === 302 && down.headers.get("location") === C && n === 2);
+  check("photo store: with no bucket, a CRM photo is the CRM's own link (no fetch, nothing kept)", noBucket.status === 302 && noBucket.headers.get("location") === C && noBucket.headers.get("cache-control") === "no-store" && n === 0);
+  check("photo store: a CRM link's listing, version, place and width name its copy", JSON.stringify(crmParts(C)) === JSON.stringify({ key: "1193398589", v: "ttn5mv0", n: 0, w: 480, obj: "l/1193398589/ttn5mv0/0-480.webp" }) && crmParts("https://app.chapter3realty.com/api/idx/photo/1/a/0/480/x.jpg") === null);
 }
 
 // The map: no "No photo yet"; the AI picks row shows homes with a photo; the hint never runs under the 2D and 3D buttons on a phone.

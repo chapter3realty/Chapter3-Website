@@ -96,7 +96,7 @@ export function sameOrigin(request) {
 /**
  * GET or POST the CRM. path is built by the caller from parameters it validated.
  * opts: { method, body, token (string|null|undefined = read the cookie), anonymous,
- *         cacheSeconds (at most an hour; with longCache, up to a year), longCache, timeoutMs (default 8000) }. Returns { status, json, retryAfter }.
+ *         cacheSeconds (at most an hour, always), cache (false: never read or write the edge cache), timeoutMs (default 8000) }. Returns { status, json, retryAfter }.
  * A network failure or a timeout reads as { status: 502, json: null }; a non-JSON
  * answer keeps its status with json: null.
  */
@@ -105,7 +105,8 @@ export async function crm(env, request, path, opts = {}) {
   const method = opts.method || "GET";
   const token = opts.anonymous ? null : opts.token !== undefined ? opts.token : visitorToken(request);
   const url = `${crmBase(env)}${path}`;
-  const cacheable = !token && method === "GET";
+  // opts.cache === false: a caller that must see the CRM as it is now (the photo warmer's removal sweep).
+  const cacheable = !token && method === "GET" && opts.cache !== false;
   const cache = typeof caches !== "undefined" ? caches.default : null;
   const cacheKey = cacheable && cache ? new Request(`https://chapter3realty.com/__idx-cache/${encodeURIComponent(url)}`) : null;
   if (cacheKey) {
@@ -139,7 +140,8 @@ export async function crm(env, request, path, opts = {}) {
     return { status: res.status === 200 ? 502 : res.status, json: null, retryAfter: res.headers.get("retry-after") };
   }
   if (cacheKey && res.status === 200 && json && json.ok === true) {
-    const seconds = Math.min(opts.cacheSeconds || 600, opts.longCache ? 31536000 : 3600);
+    // Never longer than an hour (the CRM's contract §4; owner's brief 2026-11-13): a listing that left IDX must not live on here.
+    const seconds = Math.min(opts.cacheSeconds || 600, 3600);
     await cache.put(cacheKey, new Response(JSON.stringify(json), { headers: { "content-type": "application/json", "cache-control": `public, max-age=${seconds}` } }));
   }
   return { status: res.status, json, retryAfter: res.headers.get("retry-after") };

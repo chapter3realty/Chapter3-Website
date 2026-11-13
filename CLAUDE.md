@@ -77,6 +77,31 @@ traps that have cost the most time. **Read it at the start of a new session.**
    present in the HTML and invisible on screen — that has happened twice.
 8. **Re-open every source.** In the last research batch 20 of 163 sourced facts
    were wrong. Never carry a number from another page without re-checking it.
+9. **A stored MLS photo never outlives its listing (the MLS licence; owner's
+   brief, 2026-11-13).** A listing photo may show only while its listing is in
+   the IDX feed, and must stop within 12 hours of the listing leaving it. Copies
+   in R2 (the `listing-photos` bucket) are allowed only because
+   `idx-lib/photo.js` enforces this in code:
+   - Only the photo warmer stores, and only for listings the CRM's API returned
+     in the current sweep. A visitor's request never stores a photo.
+   - A full removal sweep starts every 5 h 45 min. When it ends, every copy in
+     the bucket whose listing or version it did not see is deleted, checked
+     against the bucket itself, not the bookkeeping. A listing whose photos
+     changed loses its old copies in the run that sees it. A sweep not finished
+     6 hours after it started is dropped and started again.
+   - A copy is served only while the last finished sweep is under 6 hours old.
+     Otherwise the page gets the CRM's own link, which stops for a listing that
+     left IDX. On `503 stale` the site shows no listings.
+   - A served copy is cached one hour at most. No CRM answer is cached at the
+     edge longer than an hour (`idx-lib/crm.js`).
+   - The warmer obeys the CRM: one run at a time (a lock in the bucket), at most
+     28 CRM calls a run, runs 15 minutes apart; a `429` waits its `retry-after`
+     and ends the run; `503` or any 5xx ends the run.
+   `tools/idx-test.mjs` holds it: "photo warmer HARD RULE" fails if a listing
+   missing from the API keeps a copy after the next sweep. Never weaken these
+   numbers or remove that test. The CRM's own contract (its
+   `docs/website-listing-api.md` §8 rule 7) says the website stores no photo;
+   this rule is the owner's exception to it, on exactly these terms.
 
 ## Writing style — owner instruction
 

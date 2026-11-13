@@ -83,11 +83,10 @@ async function handle(context) {
     if (name === "deals" && request.method === "GET") return dealsApi(context, url);
     if (name === "remarks" && request.method === "GET") return remarksApi(context, url);
     if (name === "read" && request.method === "POST") return readApi(context);
-    // The photo warmer's call (idx-lib/photo.js): a page of homes for sale, 24 at a time, from the CRM.
-    if (name === "warm" && request.method === "GET") return warm(context, url, async (pg) => {
-      const r = await crm(env, request, `/api/idx/listings?status=active&size=24&page=${pg}`, { anonymous: true });
-      return r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? { total: typeof r.json.total === "number" ? r.json.total : r.json.listings.length, listings: r.json.listings } : null;
-    });
+    // The photo warmer's run (idx-lib/photo.js): one CRM call per page of the removal sweep, homes for sale by price,
+    // never from the edge cache and never retried (a 429 or a 5xx ends the run there).
+    if (name === "warm" && request.method === "GET") return warm(context, url, (min, pg) =>
+      crm(env, request, `/api/idx/listings?status=active&size=48&sort=price_asc&min=${Math.max(0, Math.floor(min))}&page=${pg}`, { anonymous: true, cache: false, retry: false }));
     if (name === "lookup" && request.method === "GET") return lookup(context, url);
     if (name === "similar" && request.method === "GET") return similar(context, url);
     if (name === "strip" && request.method === "GET") return stripApi(context, url);
@@ -611,10 +610,10 @@ ${sorryHtml(null, 1)}<div id="hx-map-cards" class="hx-map-cards" aria-busy="true
  * it answers one listing at a time, for a signed-up visitor only.
  */
 async function descriptionsFor(env, request, ids) {
-  /* Kept up to a year (owner, 2026-11-08: "it can cache the data for all of that for the year"). Which homes are for
-     sale is never cached this long: the search itself asks the CRM for homes for sale only, at most 10 minutes old,
-     and the AI only judges homes that search returned, so a sold or under contract home never comes back this way. */
-  const all = await crm(env, request, `/api/idx/remarks?mls=${ids.map(encodeURIComponent).join(",")}`, { anonymous: true, timeoutMs: 6000, cacheSeconds: 31536000, longCache: true });
+  /* Kept an hour at most (owner's brief, 2026-11-13: no CRM answer is cached longer, so listing data never outlives
+     its listing here; it was a year from 2026-11-08). The AI's own answer per home is still kept (readApi), so a
+     description is never read by the AI twice. */
+  const all = await crm(env, request, `/api/idx/remarks?mls=${ids.map(encodeURIComponent).join(",")}`, { anonymous: true, timeoutMs: 6000, cacheSeconds: 3600 });
   const clean = (x) => ({ remarks: typeof x.remarks === "string" ? x.remarks.replace(/\s+/g, " ").trim().slice(0, 4000) : null, details: x.details && typeof x.details === "object" ? Object.fromEntries(Object.entries(x.details).filter(([k]) => !/School/.test(k))) : {}, type: x.type || null, status: x.status || null });
   if (all.status === 200 && all.json && all.json.ok && Array.isArray(all.json.rows)) {
     const by = {};
