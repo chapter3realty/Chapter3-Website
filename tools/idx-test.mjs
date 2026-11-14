@@ -1137,7 +1137,7 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
   check("homepage: the search says what to type", home.includes('placeholder="Describe what you want in a home to see options"'));
   check("homepage: the line under the search (30+ years, AI-powered home search, free AI-powered investment tools), and a buyers and sellers section before the team",
     /<ul class="cine-trust"[^>]*><li>30\+ years on the Grand Strand<\/li><li>AI-powered home search<\/li><li>Free AI-powered investment tools<\/li><\/ul>/.test(home)
-    && home.indexOf('id="buy-sell"') > 0 && home.indexOf('id="buy-sell"') < home.indexOf('id="team"') && home.includes('href="/sell/home-value/"'));
+    && home.indexOf('id="buyers-why"') > 0 && home.indexOf('id="buyers-why"') < home.indexOf('id="sellers-why"') && home.indexOf('id="sellers-why"') < home.indexOf('id="team"') && home.includes('href="/sell/home-value/"'));
   check("analyzer: no price is asked; city and ZIP boxes; the money questions one a screen (cash or loan, then down payment, then rate) with a bar",
     ltr.includes('<input id="ltr-price" type="hidden"/>') && ltr.includes('id="ltr-city" type="text"') && ltr.includes('id="ltr-zip" type="text"')
     && ['data-q="how"', 'data-q="down"', 'data-q="rate"', 'id="ltr-fin-prog"'].every((x) => ltr.includes(x)));
