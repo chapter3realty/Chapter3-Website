@@ -543,6 +543,28 @@ body.home .cine-ai textarea::placeholder{color:rgba(244,239,232,.62)}
 .cine-trust li::before{content:"";width:16px;height:16px;flex:none;border-radius:50%;background:rgba(90,209,154,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.9' fill='none' stroke='%235ad19a' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
 @media (max-width:560px){.cine-trust{gap:6px 12px;margin-top:12px}.cine-trust li{font-size:12.5px}}
 
+/* BUYERS AND SELLERS, before the team (owner, 2026-11-14: "a section for buyers and sellers before the meet the team that
+   talk briefly about why we are so good for those"). Each line is something the site already offers or a client said. */
+body.home #page-home>#buy-sell.bs{padding:clamp(52px,7vw,92px) 0}
+.bs-in{width:min(1136px,calc(100% - 48px));margin:0 auto;display:grid;gap:clamp(24px,3.5vw,40px)}
+#buy-sell.bs h2{margin:0;max-width:20ch;font-family:var(--disp,Fraunces),Georgia,serif;font-weight:300;font-size:clamp(2.2rem,4.4vw,3.6rem);line-height:1.04;letter-spacing:-.02em;color:#1c2028;text-wrap:balance}
+#buy-sell.bs h2 .it{font-style:italic;color:#91592b}
+.bs-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,24px)}
+.bs-card{display:flex;flex-direction:column;gap:16px;padding:clamp(22px,3vw,34px);border-radius:26px;background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);box-shadow:0 18px 50px rgba(28,32,40,.08),inset 0 1px 0 #fff}
+#page-home #buy-sell .bs-k{margin:0;font:700 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#91592b}
+#buy-sell .bs-card h3{margin:0;font-family:var(--disp,Fraunces),Georgia,serif;font-weight:400;font-size:clamp(1.45rem,2.2vw,1.8rem);line-height:1.15;color:#1c2028;text-wrap:balance}
+.bs-list{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+#page-home #buy-sell .bs-list li{position:relative;padding-left:28px;font-size:16px;line-height:1.55;color:rgba(28,32,40,.8)}
+#buy-sell .bs-list li::before{content:"";position:absolute;left:0;top:.2em;width:18px;height:18px;border-radius:50%;background:rgba(196,120,58,.14) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.9' fill='none' stroke='%2391592b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+#buy-sell .bs-list b{color:#1c2028;font-weight:600}
+.bs-cta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:auto;padding-top:6px}
+.bs-go{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;background:#1c2028;color:#f4efe8;font:600 15px/1 var(--sans);text-decoration:none;transition:transform .2s,background .2s}
+.bs-go:hover{transform:translateY(-1px);background:#2a3040}
+.bs-more{display:inline-flex;align-items:center;min-height:44px;font:600 15px/1 var(--sans);color:#91592b;text-decoration:none}
+.bs-more:hover{text-decoration:underline}
+@media (max-width:820px){.bs-grid{grid-template-columns:minmax(0,1fr)}.bs-in{width:calc(100% - 40px)}}
+@media (max-width:420px){.bs-in{width:calc(100% - 28px)}.bs-card{padding:20px}}
+
 /* THE ANALYZER: its own dark glass panel under the hero, with a glowing card (owner, 2026-11-14: "make the analyzer
    input area look premium and make it distinct"; "the ai analyzer is not shown in a tempting enough way"). */
 body.home #page-home>#ltr-teaser.az{padding:clamp(52px,7vw,96px) 0;
@@ -666,7 +688,7 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
 <h2 style="color:rgba(244,239,232,.86)" class="cine-sub">Buy, sell and invest in Myrtle Beach real estate with a specialized real estate agent.</h2>
 <form class="cine-ai" action="/homes/map/" method="get" role="search" aria-label="AI home search">
 <div class="cine-ai-row"><span class="cine-ai-k" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l1.9 5.6L19.5 9.5l-5.6 1.9L12 17l-1.9-5.6L4.5 9.5l5.6-1.9zM19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/></svg></span><textarea id="home-q" name="q" aria-label="AI home search: describe what you want in a home to see options" enterkeyhint="search" autocomplete="off" maxlength="400" rows="1" placeholder="Describe what you want in a home to see options"></textarea><button type="submit">Search</button></div>
-<ul class="cine-trust" role="list"><li>30+ years on the Grand Strand</li><li>Licensed South Carolina brokerage</li><li>Live MLS listings</li></ul>
+<ul class="cine-trust" role="list"><li>30+ years on the Grand Strand</li><li>AI-powered home search</li><li>Free AI-powered investment tools</li></ul>
 </form><script>(function(){var t=document.getElementById('home-q');if(!t)return;function fit(){t.style.height='auto';var h=Math.min(t.scrollHeight,76);t.style.height=Math.max(h,46)+'px'}t.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();if(t.value.trim()){t.form.requestSubmit?t.form.requestSubmit():t.form.submit()}}});t.addEventListener('input',fit);function ph(){if(!t.value){t.style.height='auto';t.style.height=Math.max(Math.min(t.scrollHeight,76),46)+'px'}}ph();addEventListener('resize',ph)})();</script>
 </div>
 <div class="tw-stage" data-plane="-79.62,34.2,0.832389639,1483.161062,1851.852,1601.814">
@@ -890,6 +912,35 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
 </section>
 
 <!-- TEAM -->
+<section id="buy-sell" class="band band-ivory2 bs" aria-labelledby="bs-h">
+<div class="bs-in">
+<h2 id="bs-h">Why buyers and sellers <span class="it">work with Chapter3.</span></h2>
+<div class="bs-grid">
+<article class="bs-card" aria-labelledby="bs-buy">
+<p class="bs-k">For buyers</p>
+<h3 id="bs-buy">Find the right home, and know what you are buying.</h3>
+<ul class="bs-list" role="list">
+<li><b>Search the way you talk.</b> Our AI search reads each home's description and photos, so "a screened porch and a dock" finds the homes that have them.</li>
+<li><b>See what is being built nearby.</b> We pull the building permits near a home before you make an offer.</li>
+<li><b>Buy from out of state.</b> We walk the home with you on video.</li>
+<li><b>A straight answer.</b> We tell you when a home is not worth it.</li>
+</ul>
+<div class="bs-cta"><a class="bs-go" href="/homes/map/">Search homes</a><a class="bs-more" href="/buyers/">Buyer guides <span aria-hidden="true">&rarr;</span></a></div>
+</article>
+<article class="bs-card" aria-labelledby="bs-sell">
+<p class="bs-k">For sellers</p>
+<h3 id="bs-sell">Sell for the most your home can bring, or sell fast.</h3>
+<ul class="bs-list" role="list">
+<li><b>Two prices, side by side.</b> We price your home listed, and sold as is for cash, so you can choose.</li>
+<li><b>Every comparable sale explained.</b> We walk you through the recent sales and the city projects that move your price.</li>
+<li><b>Cash buyers when speed matters.</b> We bring offers from buyers who close on your date.</li>
+<li><b>Instant replies, weekends included.</b></li>
+</ul>
+<div class="bs-cta"><a class="bs-go" href="/sell/home-value/">What is my home worth?</a><a class="bs-more" href="/sell/">Selling guide <span aria-hidden="true">&rarr;</span></a></div>
+</article>
+</div>
+</div>
+</section>
 <section id="team" class="band band-ivory" aria-labelledby="team-h">
 <div class="w">
 <p class="eb" data-io>The team</p>

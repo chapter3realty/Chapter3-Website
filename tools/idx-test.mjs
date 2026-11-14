@@ -1135,6 +1135,9 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
     /name="street"/.test(card) && /name="city"/.test(card) && /name="zip"/.test(card) && /name="go" value="1"/.test(card) && !/name="(price|down|rate|cash)"/.test(card)
     && card.includes('action="/invest/long-term-rental/"') && !home.includes('class="an-rep"') && !home.includes('id="an-banner"'));
   check("homepage: the search says what to type", home.includes('placeholder="Describe what you want in a home to see options"'));
+  check("homepage: the line under the search (30+ years, AI-powered home search, free AI-powered investment tools), and a buyers and sellers section before the team",
+    /<ul class="cine-trust"[^>]*><li>30\+ years on the Grand Strand<\/li><li>AI-powered home search<\/li><li>Free AI-powered investment tools<\/li><\/ul>/.test(home)
+    && home.indexOf('id="buy-sell"') > 0 && home.indexOf('id="buy-sell"') < home.indexOf('id="team"') && home.includes('href="/sell/home-value/"'));
   check("analyzer: no price is asked; city and ZIP boxes; the money questions one a screen (cash or loan, then down payment, then rate) with a bar",
     ltr.includes('<input id="ltr-price" type="hidden"/>') && ltr.includes('id="ltr-city" type="text"') && ltr.includes('id="ltr-zip" type="text"')
     && ['data-q="how"', 'data-q="down"', 'data-q="rate"', 'id="ltr-fin-prog"'].every((x) => ltr.includes(x)));
