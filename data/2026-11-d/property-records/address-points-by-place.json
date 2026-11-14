@@ -1,0 +1,101 @@
+{
+ "source": "Horry County OpenData AddressPoints, Municipalities, EvacuationZones_Horry (gisportal.horrycounty.org), read 2026-11-13",
+ "address_points_with_location": 246621,
+ "no_location": 0,
+ "municipality_names": [
+  "LORIS",
+  "BRIARCLIFFE",
+  "ATLANTIC BEACH",
+  "SURFSIDE BEACH",
+  "AYNOR",
+  "NORTH MYRTLE BEACH",
+  "CONWAY",
+  "MYRTLE BEACH",
+  null
+ ],
+ "by_town_limits": {
+  "UNINCORPORATED": 178313,
+  "NORTH MYRTLE BEACH": 24440,
+  "MYRTLE BEACH": 22824,
+  "CONWAY": 13919,
+  "SURFSIDE BEACH": 4065,
+  "LORIS": 1789,
+  "AYNOR": 579,
+  "ATLANTIC BEACH": 421,
+  "BRIARCLIFFE": 271
+ },
+ "by_evac_zone": {
+  "none": 160001,
+  "C": 51920,
+  "B": 23496,
+  "A": 11204
+ },
+ "by_point_type": {
+  "1": 226528,
+  "4": 8550,
+  "3": 7244,
+  "2": 4299
+ },
+ "mailing_city_vs_town_limits": {
+  "MYRTLE BEACH": {
+   "UNINCORPORATED": 63359,
+   "MYRTLE BEACH": 22801,
+   "BRIARCLIFFE": 271,
+   "NORTH MYRTLE BEACH": 170,
+   "SURFSIDE BEACH": 12,
+   "CONWAY": 2
+  },
+  "CONWAY": {
+   "UNINCORPORATED": 38342,
+   "CONWAY": 13880
+  },
+  "NORTH MYRTLE BEACH": {
+   "NORTH MYRTLE BEACH": 20887,
+   "ATLANTIC BEACH": 421,
+   "UNINCORPORATED": 416
+  },
+  "LITTLE RIVER": {
+   "UNINCORPORATED": 15702,
+   "NORTH MYRTLE BEACH": 906
+  },
+  "LONGS": {
+   "UNINCORPORATED": 14017,
+   "NORTH MYRTLE BEACH": 2459
+  },
+  "MURRELLS INLET": {
+   "UNINCORPORATED": 15529
+  },
+  "LORIS": {
+   "UNINCORPORATED": 11355,
+   "LORIS": 1786
+  },
+  "SURFSIDE BEACH": {
+   "UNINCORPORATED": 7840,
+   "SURFSIDE BEACH": 4052,
+   "MYRTLE BEACH": 1
+  },
+  "GALIVANTS FERRY": {
+   "UNINCORPORATED": 4160,
+   "AYNOR": 147
+  },
+  "AYNOR": {
+   "UNINCORPORATED": 3736,
+   "AYNOR": 429
+  },
+  "NICHOLS": {
+   "UNINCORPORATED": 2147
+  },
+  "GREEN SEA": {
+   "UNINCORPORATED": 1353
+  },
+  "": {
+   "UNINCORPORATED": 357,
+   "CONWAY": 37,
+   "MYRTLE BEACH": 22,
+   "NORTH MYRTLE BEACH": 18,
+   "AYNOR": 3,
+   "LORIS": 3,
+   "SURFSIDE BEACH": 1
+  }
+ }
+}

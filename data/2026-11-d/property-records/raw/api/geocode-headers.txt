@@ -1,0 +1,17 @@
+HTTP/1.1 200 Connection Established
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Content-Length: 1343
+Connection: keep-alive
+Cache-Control: must-revalidate,max-age=0,public
+ETag: "4deb5933"
+Vary: Origin
+Server: Microsoft-IIS/10.0
+X-Content-Type-Options: nosniff
+Access-Control-Allow-Origin: https://chapter3realty.com
+Access-Control-Allow-Credentials: true
+Set-Cookie: AGS_ROLES=sym-gcm|1|Mso-5frYegDEd0M8iGePig==|LlFb9LcQKgCwn69MfTICxeAP_3Er7znhHH6k_Ebh; Max-Age=60; Expires=Fri, 13 Nov 2026 20:26:48 GMT; Path=/server/rest; Secure; HttpOnly; SameSite=Lax
+Date: Fri, 13 Nov 2026 20:25:48 GMT
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+

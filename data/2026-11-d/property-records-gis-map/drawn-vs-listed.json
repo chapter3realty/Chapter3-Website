@@ -1,0 +1,125 @@
+{
+ "rows": 302630,
+ "pin_patterns": [
+  [
+   "99999999999",
+   302626
+  ],
+  [
+   "",
+   4
+  ]
+ ],
+ "tms_patterns": [
+  [
+   "9999999999",
+   231797
+  ],
+  [
+   "",
+   70722
+  ],
+  [
+   "<Null>",
+   92
+  ],
+  [
+   "9999999",
+   7
+  ],
+  [
+   " ",
+   5
+  ]
+ ],
+ "condo_label_rows": 12511,
+ "acres_null_or_zero": 216968,
+ "by_type": [
+  [
+   2,
+   215775
+  ],
+  [
+   1,
+   67728
+  ],
+  [
+   5,
+   11350
+  ],
+  [
+   7,
+   5435
+  ],
+  [
+   3,
+   746
+  ],
+  [
+   8,
+   603
+  ],
+  [
+   6,
+   359
+  ],
+  [
+   4,
+   320
+  ],
+  [
+   9,
+   314
+  ]
+ ],
+ "comparable": 85490,
+ "within_2pct": 62.7,
+ "within_5pct": 80.1,
+ "within_10pct": 89.3,
+ "off_10pct_or_more": 10.7,
+ "off_25pct_or_more": 2.7,
+ "drawn_bigger_share": 51.2,
+ "median_abs_pct": 1.17,
+ "bands": [
+  {
+   "band": "under 1/4 acre",
+   "n": 23283,
+   "within_5pct": 89.6,
+   "off_10pct_or_more": 4.7,
+   "median_abs_pct": 1.5
+  },
+  {
+   "band": "1/4 to 1/2 acre",
+   "n": 7202,
+   "within_5pct": 84.4,
+   "off_10pct_or_more": 10.5,
+   "median_abs_pct": 1.05
+  },
+  {
+   "band": "1/2 to 1 acre",
+   "n": 11804,
+   "within_5pct": 71.9,
+   "off_10pct_or_more": 17.9,
+   "median_abs_pct": 0.97
+  },
+  {
+   "band": "1 to 5 acres",
+   "n": 27737,
+   "within_5pct": 75.8,
+   "off_10pct_or_more": 13.2,
+   "median_abs_pct": 0.71
+  },
+  {
+   "band": "5 acres or more",
+   "n": 15464,
+   "within_5pct": 77.6,
+   "off_10pct_or_more": 10.0,
+   "median_abs_pct": 1.13
+  }
+ ],
+ "acres_listed_n": 85662,
+ "acres_median": 1.0,
+ "share_under_quarter_acre": 27.2,
+ "share_1_acre_plus": 50.5,
+ "share_10_acre_plus": 11.6
+}

@@ -1,0 +1,1169 @@
+{
+ "parcels_count": 302630,
+ "parcels_by_type": [
+  [
+   2,
+   215775
+  ],
+  [
+   1,
+   67728
+  ],
+  [
+   5,
+   11350
+  ],
+  [
+   7,
+   5435
+  ],
+  [
+   3,
+   746
+  ],
+  [
+   8,
+   603
+  ],
+  [
+   6,
+   359
+  ],
+  [
+   4,
+   320
+  ],
+  [
+   9,
+   314
+  ]
+ ],
+ "parcels_max_saledate_ms": 1794323668000,
+ "parcels_by_taxdistrict": [
+  [
+   "100",
+   41652
+  ],
+  [
+   "550",
+   35735
+  ],
+  [
+   "600",
+   28943
+  ],
+  [
+   "500",
+   27304
+  ],
+  [
+   "880",
+   25276
+  ],
+  [
+   "800",
+   24303
+  ],
+  [
+   "630",
+   21653
+  ],
+  [
+   "610",
+   16149
+  ],
+  [
+   "110",
+   12990
+  ],
+  [
+   "400",
+   9271
+  ],
+  [
+   null,
+   8005
+  ],
+  [
+   "250",
+   6999
+  ],
+  [
+   "200",
+   6562
+  ],
+  [
+   "660",
+   4822
+  ],
+  [
+   "300",
+   4672
+  ],
+  [
+   "260",
+   3249
+  ],
+  [
+   "882",
+   2994
+  ],
+  [
+   "700",
+   2462
+  ],
+  [
+   "891",
+   1966
+  ],
+  [
+   "220",
+   1936
+  ],
+  [
+   "160",
+   1828
+  ],
+  [
+   "893",
+   1724
+  ],
+  [
+   "899",
+   1455
+  ],
+  [
+   "895",
+   1432
+  ],
+  [
+   "124",
+   1214
+  ],
+  [
+   "510",
+   1195
+  ],
+  [
+   "240",
+   948
+  ],
+  [
+   "894",
+   767
+  ],
+  [
+   "440",
+   708
+  ],
+  [
+   "551",
+   663
+  ],
+  [
+   "760",
+   529
+  ],
+  [
+   "898",
+   480
+  ],
+  [
+   "590",
+   411
+  ],
+  [
+   "881",
+   347
+  ],
+  [
+   "750",
+   332
+  ],
+  [
+   "870",
+   269
+  ],
+  [
+   "620",
+   263
+  ],
+  [
+   "802",
+   210
+  ],
+  [
+   "403",
+   200
+  ],
+  [
+   "634",
+   160
+  ],
+  [
+   "810",
+   152
+  ],
+  [
+   "624",
+   141
+  ],
+  [
+   "632",
+   40
+  ],
+  [
+   "896",
+   37
+  ],
+  [
+   "883",
+   30
+  ],
+  [
+   "108",
+   27
+  ],
+  [
+   "803",
+   20
+  ],
+  [
+   "602",
+   19
+  ],
+  [
+   "897",
+   17
+  ],
+  [
+   "103   ",
+   15
+  ],
+  [
+   "402",
+   15
+  ],
+  [
+   "221",
+   10
+  ],
+  [
+   "553",
+   6
+  ],
+  [
+   "102   ",
+   5
+  ],
+  [
+   "502",
+   5
+  ],
+  [
+   "104",
+   4
+  ],
+  [
+   "884",
+   2
+  ],
+  [
+   "107",
+   1
+  ],
+  [
+   "247",
+   1
+  ],
+  [
+   "503",
+   1
+  ],
+  [
+   "580",
+   1
+  ],
+  [
+   "603",
+   1
+  ],
+  [
+   "804",
+   1
+  ],
+  [
+   "999",
+   1
+  ]
+ ],
+ "flood_zones_by_code": [
+  [
+   "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+   1322
+  ],
+  [
+   "AE",
+   711
+  ],
+  [
+   "VE",
+   42
+  ],
+  [
+   "A",
+   5
+  ]
+ ],
+ "flood_zones_by_sfha": [
+  [
+   "F",
+   1322
+  ],
+  [
+   "T",
+   758
+  ]
+ ],
+ "retired_parcels_count": 8482,
+ "parcel_lot_count": 302631,
+ "pin_numbers_count": 302631,
+ "address_points_count": 244565,
+ "line_dimensions_count": 806611,
+ "line_dimensions_by_type": [
+  [
+   1,
+   783891
+  ],
+  [
+   2,
+   21963
+  ],
+  [
+   3,
+   757
+  ]
+ ],
+ "building_footprints_count": 417124,
+ "zoning_polygons": 9617,
+ "zoning_codes": [
+  [
+   "CFA",
+   1353
+  ],
+  [
+   "FA",
+   1310
+  ],
+  [
+   "HC",
+   716
+  ],
+  [
+   "SF 10",
+   648
+  ],
+  [
+   "MSF 10",
+   617
+  ],
+  [
+   "SF 40",
+   481
+  ],
+  [
+   "SF 20",
+   403
+  ],
+  [
+   "MSF 20",
+   381
+  ],
+  [
+   "LFA",
+   343
+  ],
+  [
+   "PDD",
+   331
+  ],
+  [
+   "GR",
+   295
+  ],
+  [
+   "SF 6",
+   285
+  ],
+  [
+   "PUD",
+   255
+  ],
+  [
+   "MSF 6",
+   210
+  ],
+  [
+   "RC",
+   176
+  ],
+  [
+   "RE 4",
+   172
+  ],
+  [
+   "NC",
+   140
+  ],
+  [
+   "MSF 40",
+   129
+  ],
+  [
+   "MHP",
+   116
+  ],
+  [
+   "MRD 1",
+   107
+  ],
+  [
+   "LI",
+   103
+  ],
+  [
+   "AG 2",
+   78
+  ],
+  [
+   "MRD 3",
+   72
+  ],
+  [
+   "RE 3",
+   67
+  ],
+  [
+   "TRS",
+   63
+  ],
+  [
+   "SF 14.5",
+   56
+  ],
+  [
+   "SF 8.5",
+   56
+  ],
+  [
+   "MSF 14.5",
+   56
+  ],
+  [
+   "MRD 2",
+   52
+  ],
+  [
+   "RR",
+   49
+  ],
+  [
+   "CP",
+   47
+  ],
+  [
+   "OPI",
+   47
+  ],
+  [
+   "MA 2",
+   39
+  ],
+  [
+   "RE 1",
+   37
+  ],
+  [
+   "RCS",
+   33
+  ],
+  [
+   "AG 3",
+   27
+  ],
+  [
+   "RE 2",
+   27
+  ],
+  [
+   "SF 7",
+   23
+  ],
+  [
+   "MA 1",
+   21
+  ],
+  [
+   "DP",
+   20
+  ],
+  [
+   "ME 1",
+   18
+  ],
+  [
+   "HI",
+   13
+  ],
+  [
+   "AC",
+   11
+  ],
+  [
+   "CC",
+   10
+  ],
+  [
+   "EIO",
+   9
+  ],
+  [
+   "AG 6",
+   9
+  ],
+  [
+   "AM 2",
+   8
+  ],
+  [
+   "AG 7",
+   8
+  ],
+  [
+   "RE",
+   7
+  ],
+  [
+   "PR 1",
+   7
+  ],
+  [
+   "PA 1",
+   7
+  ],
+  [
+   "GR-5",
+   7
+  ],
+  [
+   "CR",
+   6
+  ],
+  [
+   "MA 3",
+   6
+  ],
+  [
+   "MRD-P",
+   6
+  ],
+  [
+   "GR-7",
+   6
+  ],
+  [
+   "GR-6",
+   5
+  ],
+  [
+   "MI",
+   3
+  ],
+  [
+   "AG 5",
+   3
+  ],
+  [
+   "GR-8",
+   3
+  ],
+  [
+   "BO 1",
+   3
+  ],
+  [
+   "AG 1",
+   3
+  ],
+  [
+   "AG 4",
+   3
+  ],
+  [
+   "GR-15",
+   2
+  ],
+  [
+   "MSF 7",
+   2
+  ],
+  [
+   "GR-10",
+   2
+  ],
+  [
+   "GR-14",
+   2
+  ],
+  [
+   "MSF 8.5",
+   1
+  ],
+  [
+   "GR-3",
+   1
+  ],
+  [
+   "AM 1",
+   1
+  ],
+  [
+   "GR-18",
+   1
+  ],
+  [
+   "GR-13",
+   1
+  ],
+  [
+   "GR-12",
+   1
+  ],
+  [
+   "RH",
+   1
+  ]
+ ],
+ "zoning_last_edited_ms": 1794520365000,
+ "zoning_overlays": [
+  [
+   "CCU NEIGHBORHOOD OVERLAY",
+   48
+  ],
+  [
+   "BURGESS OVERLAY",
+   1
+  ],
+  [
+   "EAST HWY 544 OVERLAY",
+   1
+  ],
+  [
+   "GARDEN CITY OVERLAY ZONE 120 FT",
+   1
+  ],
+  [
+   "GARDEN CITY OVERLAY ZONE 180 FT",
+   1
+  ],
+  [
+   "GARDEN CITY OVERLAY ZONE 35 FT",
+   1
+  ],
+  [
+   "GARDEN CITY OVERLAY ZONE 80 FT",
+   1
+  ],
+  [
+   "GARDEN CITY PARKING OVERLAY",
+   1
+  ],
+  [
+   "HWY 17 SOUTH OVERLAY",
+   1
+  ],
+  [
+   "HWY 501 OVERLAY",
+   1
+  ],
+  [
+   "HWY 707 OVERLAY",
+   1
+  ],
+  [
+   "LITTLE RIVER CORRIDOR OVERLAY",
+   1
+  ],
+  [
+   "LITTLE RIVER OVERLAY ZONE",
+   1
+  ],
+  [
+   "RESTAURANT ROW OVERLAY",
+   1
+  ],
+  [
+   "SOCASTEE BLVD OVERLAY",
+   1
+  ],
+  [
+   "SOUTH KINGS HWY OVERLAY",
+   1
+  ],
+  [
+   "VETERANS HWY OVERLAY",
+   1
+  ],
+  [
+   "WEST HWY 544 OVERLAY",
+   1
+  ]
+ ],
+ "airport_overlays": [
+  [
+   "AIRPORT ENVIRONS OVERLAY - HORIZONTAL ZONE",
+   8
+  ],
+  [
+   "AIRPORT ENVIRONS OVERLAY - INNER APPROACH ZONE",
+   8
+  ],
+  [
+   "AIRPORT ENVIRONS OVERLAY - OUTER APPROACH ZONE",
+   8
+  ],
+  [
+   "AIRPORT ENVIRONS OVERLAY - RUNWAY PROTECTION ZONE",
+   8
+  ],
+  [
+   "AIRPORT ENVIRONS OVERLAY - TRANSITION ZONE",
+   6
+  ],
+  [
+   "AIRPORT ENVIRONS OVERLAY - CONICAL ZONE",
+   4
+  ],
+  [
+   "AIRPORT ENVIRONS OVERLAY - FUTURE USE PROTECT ZONE",
+   3
+  ]
+ ],
+ "spoilage_by_easement": [
+  [
+   1000.0,
+   7
+  ],
+  [
+   1200.0,
+   2
+  ]
+ ],
+ "future_land_use": [
+  [
+   "SCENIC & CONSERVATION",
+   596
+  ],
+  [
+   "SUBURBAN",
+   210
+  ],
+  [
+   "RURAL",
+   122
+  ],
+  [
+   "RURAL COMMUNITIES",
+   116
+  ],
+  [
+   "MIXED USE",
+   85
+  ],
+  [
+   "ECONOMIC ACTIVITY CENTER",
+   33
+  ],
+  [
+   "MUNICIPALITY",
+   32
+  ],
+  [
+   "COMMERCIAL CORRIDOR",
+   30
+  ],
+  [
+   "RURAL ACTIVITY CENTER",
+   16
+  ],
+  [
+   "NEIGHBORHOOD ACTIVITY CENTER",
+   16
+  ],
+  [
+   "INDUSTRIAL CORRIDOR - HEAVY",
+   5
+  ],
+  [
+   "COMMUNITY ACTIVITY CENTER - CORE",
+   5
+  ],
+  [
+   "COMMUNITY ACTIVITY CENTER - OUTER RING",
+   5
+  ],
+  [
+   "INDUSTRIAL CORRIDOR - LIGHT",
+   3
+  ]
+ ],
+ "contour_values_count": 4939664,
+ "contour_min": -42.0,
+ "contour_max": 158.0,
+ "soils_count": 16223,
+ "soil_names": [
+  [
+   "Kenansville fine sand, 0 to 6 percent slopes",
+   1529
+  ],
+  [
+   "Goldsboro loamy fine sand, 0 to 2 percent slopes",
+   1319
+  ],
+  [
+   "Yauhannah fine sandy loam, 0 to 2 percent slopes",
+   985
+  ],
+  [
+   "Water",
+   875
+  ],
+  [
+   "Nansemond loamy fine sand, 0 to 2 percent slopes",
+   793
+  ],
+  [
+   "Leon fine sand",
+   789
+  ],
+  [
+   "Eulonia loamy fine sand, 0 to 2 percent slopes",
+   749
+  ],
+  [
+   "Centenary fine sand",
+   611
+  ],
+  [
+   "Woodington fine sandy loam",
+   603
+  ],
+  [
+   "Echaw sand",
+   577
+  ],
+  [
+   "Lynchburg loamy fine sand",
+   553
+  ],
+  [
+   "Blanton sand, 0 to 6 percent slopes",
+   526
+  ],
+  [
+   "Norfolk loamy fine sand, 0 to 2 percent slopes",
+   518
+  ],
+  [
+   "Ogeechee loamy fine sand",
+   483
+  ],
+  [
+   "Suffolk loamy fine sand, 0 to 2 percent slopes",
+   483
+  ],
+  [
+   "Wahee fine sandy loam",
+   466
+  ],
+  [
+   "Yemassee loamy fine sand",
+   397
+  ],
+  [
+   "Pocomoke fine sandy loam",
+   378
+  ],
+  [
+   "Bladen fine sandy loam",
+   332
+  ],
+  [
+   "Rutlege loamy sand",
+   282
+  ],
+  [
+   "Lynn Haven sand",
+   263
+  ],
+  [
+   "Emporia loamy fine sand, 2 to 6 percent slopes",
+   260
+  ],
+  [
+   "Lakeland sand, 0 to 6 percent slopes",
+   225
+  ],
+  [
+   "Coxville fine sandy loam",
+   217
+  ],
+  [
+   "Witherbee sand",
+   208
+  ],
+  [
+   "Osier loamy sand",
+   191
+  ],
+  [
+   "Nankin fine sandy loam, 2 to 6 percent slopes",
+   188
+  ],
+  [
+   "Eulonia loamy fine sand, 2 to 6 percent slopes",
+   186
+  ],
+  [
+   "Duplin loamy fine sand, 0 to 2 percent slopes",
+   170
+  ],
+  [
+   "Udorthents and Udipsamments, well drained",
+   159
+  ],
+  [
+   "Suffolk loamy fine sand, 2 to 6 percent slopes",
+   154
+  ],
+  [
+   "Johnston loam",
+   146
+  ],
+  [
+   "Hobcaw fine sandy loam",
+   144
+  ],
+  [
+   "Summerton fine sandy loam, 0 to 2 percent slopes",
+   111
+  ],
+  [
+   "Yonges fine sandy loam",
+   97
+  ],
+  [
+   "Rimini sand, 0 to 6 percent slopes",
+   92
+  ],
+  [
+   "Meggett loam",
+   87
+  ],
+  [
+   "Bohicket silty clay loam",
+   34
+  ],
+  [
+   "Hobonny muck",
+   21
+  ],
+  [
+   "Brookman loam",
+   9
+  ],
+  [
+   "Beaches",
+   5
+  ],
+  [
+   "Newhan fine sand, 0 to 6 percent slopes",
+   5
+  ],
+  [
+   "Chisolm fine sand, 0 to 6 percent slopes",
+   3
+  ]
+ ],
+ "i73_count": 63870,
+ "watersheds": [
+  [
+   "Black",
+   1
+  ],
+  [
+   "Brier",
+   1
+  ],
+  [
+   "Broad",
+   1
+  ],
+  [
+   "Broad-St. Helena",
+   1
+  ],
+  [
+   "Bulls Bay",
+   1
+  ],
+  [
+   "Calibogue Sound-Wright River",
+   1
+  ],
+  [
+   "Carolina Coastal-Sampit",
+   1
+  ],
+  [
+   "Coastal Carolina",
+   1
+  ],
+  [
+   "Congaree",
+   1
+  ],
+  [
+   "Cooper",
+   1
+  ],
+  [
+   "Edisto River",
+   1
+  ],
+  [
+   "Enoree",
+   1
+  ],
+  [
+   "Four Hole Swamp",
+   1
+  ],
+  [
+   "Lake Marion",
+   1
+  ],
+  [
+   "Little",
+   1
+  ],
+  [
+   "Little Pee Dee",
+   1
+  ],
+  [
+   "Lower Broad",
+   1
+  ],
+  [
+   "Lower Catawba",
+   1
+  ],
+  [
+   "Lower Pee Dee",
+   1
+  ],
+  [
+   "Lower Savannah",
+   1
+  ],
+  [
+   "Lumber",
+   1
+  ],
+  [
+   "Lynches",
+   1
+  ],
+  [
+   "Middle Savannah",
+   1
+  ],
+  [
+   "North Fork Edisto",
+   1
+  ],
+  [
+   "Rocky",
+   1
+  ],
+  [
+   "Salkehatchie",
+   1
+  ],
+  [
+   "Saluda",
+   1
+  ],
+  [
+   "Santee",
+   1
+  ],
+  [
+   "Seneca",
+   1
+  ],
+  [
+   "South Carolina Coastal",
+   1
+  ],
+  [
+   "South Fork Edisto",
+   1
+  ],
+  [
+   "St. Helena Island",
+   1
+  ],
+  [
+   "Stevens",
+   1
+  ],
+  [
+   "Tugaloo",
+   1
+  ],
+  [
+   "Tyger",
+   1
+  ],
+  [
+   "Upper Broad",
+   1
+  ],
+  [
+   "Upper Catawba",
+   1
+  ],
+  [
+   "Upper French Broad",
+   1
+  ],
+  [
+   "Upper Pee Dee",
+   1
+  ],
+  [
+   "Upper Savannah",
+   1
+  ],
+  [
+   "Waccamaw",
+   1
+  ],
+  [
+   "Wateree",
+   1
+  ]
+ ]
+}
