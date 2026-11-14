@@ -74,7 +74,8 @@ export async function sendRequests(env, now = Date.now()) {
   const pending = POSTS.filter((p) => !st.sent[p.id]);
   // The answers: read at most once an hour, and before answering a thread (to find it by its title).
   let threads = st.threads || [];
-  if (pending.some((p) => p.thread) || !st.checkedAt || now - Date.parse(st.checkedAt) >= 3600_000) {
+  // Read before any post (a note already there is never sent again), and otherwise at most once an hour.
+  if (pending.length || !st.checkedAt || now - Date.parse(st.checkedAt) >= 3600_000) {
     const r = await call(env, "GET", st.checkedAt ? `?since=${encodeURIComponent(st.checkedAt)}` : "");
     if (r.status === 429) { st.waitUntil = now + Math.min(Math.max(Number(r.retryAfter) || 60, 1), 3600) * 1000; await save(); return { ...out, stop: "429" }; }
     if (r.status === 403) { st.keyOff = keyId; await save(); return { ...out, stop: "key_refused" }; }
@@ -87,10 +88,14 @@ export async function sendRequests(env, now = Date.now()) {
       st.checkedAt = new Date(now).toISOString();
     }
   }
+  const titled = (title) => threads.find((x) => x.title.trim().toLowerCase() === title.trim().toLowerCase() && x.id);
   for (const p of pending) {
+    // A new note whose title is already among our threads went out before (two runs at once, or an answer lost on the
+    // way back): it is marked sent, never posted twice (2026-11-14: "Website AI connected" arrived twice).
+    if (p.post && titled(p.post.title)) { st.sent[p.id] = { at: new Date(now).toISOString(), thread: titled(p.post.title).id, found: true }; continue; }
     let body;
     if (p.thread) {
-      const t = threads.find((x) => x.title.trim().toLowerCase() === p.thread.toLowerCase() && x.id);
+      const t = titled(p.thread);
       const text = p.body(new Date(now).toISOString());
       body = t ? { thread: t.id, body: text } : { kind: "note", title: p.thread, body: text };
     } else body = p.post;
