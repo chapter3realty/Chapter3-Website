@@ -1,0 +1,208 @@
+{
+ "pulled": "2026-11-13T05:58:16.621601+00:00",
+ "rule": "Drive times from the middle of Plantation Point without The Landing and the middle of The Landing (the mean of their parcel\ncentre points, findings.json \"center_main\" and \"center_landing\"), by the OSRM public router (driving profile, no traffic), plus the foot route to the beach.\nBeach: the 10 public beach accesses in SC DES's Beach Access layer nearest in a straight line, each routed; the shortest is kept.\nPlaces: Nominatim (OpenStreetMap) points; the airport terminal is OSM way 308490784 (as in data/2026-11-n/submarkets-market-common).\nRun: python3 -I pull_drives.py <this dir>. Writes drives.json.",
+ "starts": {
+  "Plantation Point (middle, The Landing left out)": [
+   33.72855,
+   -78.88639
+  ],
+  "The Landing (middle)": [
+   33.72713,
+   -78.87644
+  ]
+ },
+ "drives": {
+  "Plantation Point (middle, The Landing left out)": {
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 16.2,
+    "miles": 7.3,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.88639,33.72855;-78.922789,33.681467?overview=false"
+   },
+   "Broadway at the Beach": {
+    "minutes": 7.1,
+    "miles": 1.73,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.88639,33.72855;-78.8807609,33.7162695?overview=false"
+   },
+   "Coastal Grand Mall": {
+    "minutes": 11.2,
+    "miles": 4.18,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.88639,33.72855;-78.9223169,33.7027515?overview=false"
+   },
+   "Grand Strand Medical Center": {
+    "minutes": 13.5,
+    "miles": 5.98,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.88639,33.72855;-78.8194704,33.7580795?overview=false"
+   },
+   "Myrtlewood Golf Club clubhouse (1500 48th Ave N)": {
+    "minutes": 9.9,
+    "miles": 3.4,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.88639,33.72855;-78.8687547,33.7362738?overview=false"
+   },
+   "Food Lion, Plantation Point Plaza (1241 38th Ave N)": {
+    "minutes": 7.9,
+    "miles": 2.39,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.88639,33.72855;-78.869565,33.724684?overview=false"
+   },
+   "nearest public beach access": {
+    "minutes": 8.6,
+    "miles": 2.72,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.88639,33.72855;-78.862011666672,33.70735761328546?overview=false",
+    "name": "MYRTLE BEACH 86",
+    "parking": "No"
+   },
+   "beach accesses routed": [
+    [
+     "MYRTLE BEACH 86",
+     8.6,
+     2.72
+    ],
+    [
+     "MYRTLE BEACH 83",
+     9.2,
+     2.86
+    ],
+    [
+     "MYRTLE BEACH 82",
+     9.2,
+     2.88
+    ],
+    [
+     "MYRTLE BEACH 81",
+     9.2,
+     2.89
+    ],
+    [
+     "MYRTLE BEACH 80",
+     9.3,
+     2.91
+    ],
+    [
+     "MYRTLE BEACH 84",
+     9.0,
+     2.78
+    ],
+    [
+     "MYRTLE BEACH 76",
+     9.9,
+     3.06
+    ],
+    [
+     "MYRTLE BEACH 77",
+     9.7,
+     3.03
+    ],
+    [
+     "MYRTLE BEACH 78",
+     9.5,
+     3.0
+    ],
+    [
+     "MYRTLE BEACH 90",
+     9.4,
+     3.06
+    ]
+   ],
+   "walk to that access": {
+    "minutes": 58.9,
+    "miles": 2.73,
+    "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-78.88639,33.72855;-78.862011666672,33.70735761328546?overview=false"
+   }
+  },
+  "The Landing (middle)": {
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 14.0,
+    "miles": 7.33,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.87644,33.72713;-78.922789,33.681467?overview=false"
+   },
+   "Broadway at the Beach": {
+    "minutes": 5.1,
+    "miles": 1.75,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.87644,33.72713;-78.8807609,33.7162695?overview=false"
+   },
+   "Coastal Grand Mall": {
+    "minutes": 9.0,
+    "miles": 4.2,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.87644,33.72713;-78.9223169,33.7027515?overview=false"
+   },
+   "Grand Strand Medical Center": {
+    "minutes": 9.0,
+    "miles": 4.35,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.87644,33.72713;-78.8194704,33.7580795?overview=false"
+   },
+   "Myrtlewood Golf Club clubhouse (1500 48th Ave N)": {
+    "minutes": 5.5,
+    "miles": 1.77,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.87644,33.72713;-78.8687547,33.7362738?overview=false"
+   },
+   "Food Lion, Plantation Point Plaza (1241 38th Ave N)": {
+    "minutes": 3.3,
+    "miles": 0.76,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.87644,33.72713;-78.869565,33.724684?overview=false"
+   },
+   "nearest public beach access": {
+    "minutes": 5.5,
+    "miles": 1.85,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.87644,33.72713;-78.85405538641504,33.71345637119147?overview=false",
+    "name": "MYRTLE BEACH 92",
+    "parking": "Yes"
+   },
+   "beach accesses routed": [
+    [
+     "MYRTLE BEACH 90",
+     6.1,
+     2.1
+    ],
+    [
+     "MYRTLE BEACH 91",
+     5.7,
+     1.91
+    ],
+    [
+     "MYRTLE BEACH 92",
+     5.5,
+     1.85
+    ],
+    [
+     "MYRTLE BEACH 86",
+     6.5,
+     2.42
+    ],
+    [
+     "MYRTLE BEACH 89",
+     6.6,
+     2.34
+    ],
+    [
+     "MYRTLE BEACH 93",
+     5.7,
+     1.92
+    ],
+    [
+     "MYRTLE BEACH 88",
+     6.7,
+     2.38
+    ],
+    [
+     "MYRTLE BEACH 94",
+     5.8,
+     1.98
+    ],
+    [
+     "MYRTLE BEACH 84",
+     6.8,
+     2.49
+    ],
+    [
+     "MYRTLE BEACH 87",
+     6.8,
+     2.47
+    ]
+   ],
+   "walk to that access": {
+    "minutes": 40.9,
+    "miles": 1.89,
+    "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-78.87644,33.72713;-78.85405538641504,33.71345637119147?overview=false"
+   }
+  }
+ }
+}

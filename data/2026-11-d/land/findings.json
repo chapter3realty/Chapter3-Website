@@ -1,0 +1,278 @@
+{
+ "pulled": "2026-11-13T04:46:12.251309+00:00",
+ "group": "land for sale (type=land), listing asks, not sales",
+ "totals": {
+  "land_all_feed": 1191,
+  "land_horry": 763,
+  "land_georgetown": 172,
+  "manufactured_horry": 414,
+  "house_horry": 2965
+ },
+ "horry": {
+  "listings": 763,
+  "median_ask": 195000,
+  "median_acres": 1.7,
+  "one_acre_plus": 484,
+  "per_acre_1ac_plus": 40000,
+  "ten_acres_plus": 146
+ },
+ "georgetown": {
+  "listings": 172,
+  "median_ask": 160000
+ },
+ "by_size": [
+  {
+   "key": "under_half_acre",
+   "label": "Under half an acre",
+   "listings": 158,
+   "per_acre": 686000,
+   "median_ask": 140000,
+   "median_acres": 0.24
+  },
+  {
+   "key": "half_to_1",
+   "label": "Half an acre to 1 acre",
+   "listings": 117,
+   "per_acre": 140000,
+   "median_ask": 75000,
+   "median_acres": 0.67
+  },
+  {
+   "key": "1_to_5",
+   "label": "1 to 5 acres",
+   "listings": 267,
+   "per_acre": 54000,
+   "median_ask": 100000,
+   "median_acres": 2.0
+  },
+  {
+   "key": "5_to_20",
+   "label": "5 to 20 acres",
+   "listings": 112,
+   "per_acre": 30000,
+   "median_ask": 275000,
+   "median_acres": 8.55
+  },
+  {
+   "key": "20_plus",
+   "label": "20 acres or more",
+   "listings": 105,
+   "per_acre": 19000,
+   "median_ask": 900000,
+   "median_acres": 45.0
+  }
+ ],
+ "by_area": [
+  {
+   "key": "loris_green_sea_nichols",
+   "label": "Around Loris, Green Sea and Nichols",
+   "tracts_1ac_plus": 212,
+   "listings": 266,
+   "per_acre_1ac_plus": 25000,
+   "median_acres": 2.5,
+   "median_ask": 90000,
+   "ten_acres_plus": 70
+  },
+  {
+   "key": "aynor_galivants_ferry",
+   "label": "Around Aynor and Galivants Ferry",
+   "tracts_1ac_plus": 50,
+   "listings": 54,
+   "per_acre_1ac_plus": 40000,
+   "median_acres": 4.0,
+   "median_ask": 120000,
+   "ten_acres_plus": 12
+  },
+  {
+   "key": "conway",
+   "label": "Around Conway",
+   "tracts_1ac_plus": 97,
+   "listings": 151,
+   "per_acre_1ac_plus": 51000,
+   "median_acres": 2.3,
+   "median_ask": 230000,
+   "ten_acres_plus": 35
+  },
+  {
+   "key": "longs",
+   "label": "Longs",
+   "tracts_1ac_plus": 31,
+   "listings": 37,
+   "per_acre_1ac_plus": 73000,
+   "median_acres": 4.7,
+   "median_ask": 540000,
+   "ten_acres_plus": 10
+  },
+  {
+   "key": "myrtle_beach_carolina_forest_socastee",
+   "label": "Myrtle Beach, Carolina Forest, Socastee",
+   "tracts_1ac_plus": 52,
+   "listings": 133,
+   "per_acre_1ac_plus": 152000,
+   "median_acres": 0.6,
+   "median_ask": 225000,
+   "ten_acres_plus": 6
+  },
+  {
+   "key": "little_river",
+   "label": "Little River",
+   "tracts_1ac_plus": 17,
+   "listings": 49,
+   "per_acre_1ac_plus": 265000,
+   "median_acres": 0.7,
+   "median_ask": 160000,
+   "ten_acres_plus": 3
+  },
+  {
+   "key": "murrells_inlet_garden_city",
+   "label": "Murrells Inlet and Garden City",
+   "tracts_1ac_plus": 15,
+   "listings": 40,
+   "per_acre_1ac_plus": 302000,
+   "median_acres": 0.8,
+   "median_ask": 310000,
+   "ten_acres_plus": 3
+  },
+  {
+   "key": "pawleys_island",
+   "label": "Pawleys Island area",
+   "tracts_1ac_plus": 19,
+   "listings": 35,
+   "per_acre_1ac_plus": 342000,
+   "median_acres": 1.1,
+   "median_ask": 430000,
+   "ten_acres_plus": 0
+  }
+ ],
+ "horry_flags": {
+  "septic_approved": {
+   "n": 177,
+   "of": 763,
+   "pct": 23.2
+  },
+  "public_sewer": {
+   "n": 267,
+   "of": 763,
+   "pct": 35.0
+  },
+  "public_water": {
+   "n": 325,
+   "of": 763,
+   "pct": 42.6
+  },
+  "well_water": {
+   "n": 41,
+   "of": 763,
+   "pct": 5.4
+  },
+  "mobile_home_allowed": {
+   "n": 111,
+   "of": 763,
+   "pct": 14.5
+  },
+  "deed_restrictions": {
+   "n": 74,
+   "of": 763,
+   "pct": 9.7
+  },
+  "no_hoa_fee": {
+   "n": 666,
+   "of": 763,
+   "pct": 87.3
+  },
+  "dirt_road": {
+   "n": 77,
+   "of": 763,
+   "pct": 10.1
+  },
+  "private_road": {
+   "n": 49,
+   "of": 763,
+   "pct": 6.4
+  },
+  "easement_access": {
+   "n": 27,
+   "of": 763,
+   "pct": 3.5
+  },
+  "wooded_lot": {
+   "n": 348,
+   "of": 763,
+   "pct": 45.6
+  },
+  "cleared_lot": {
+   "n": 281,
+   "of": 763,
+   "pct": 36.8
+  },
+  "subdividable": {
+   "n": 92,
+   "of": 763,
+   "pct": 12.1
+  },
+  "hunting_land": {
+   "n": 30,
+   "of": 763,
+   "pct": 3.9
+  },
+  "pond_on_property": {
+   "n": 52,
+   "of": 763,
+   "pct": 6.8
+  },
+  "outside_city_limits": {
+   "n": 363,
+   "of": 763,
+   "pct": 47.6
+  },
+  "lot_1_acres_plus": {
+   "n": 484,
+   "of": 763,
+   "pct": 63.4
+  },
+  "lot_10_acres_plus": {
+   "n": 146,
+   "of": 763,
+   "pct": 19.1
+  },
+  "lot_25_acres_plus": {
+   "n": 86,
+   "of": 763,
+   "pct": 11.3
+  },
+  "lot_50_acres_plus": {
+   "n": 43,
+   "of": 763,
+   "pct": 5.6
+  },
+  "lot_100_acres_plus": {
+   "n": 17,
+   "of": 763,
+   "pct": 2.2
+  }
+ },
+ "county_map": {
+  "pulled": "2026-11-13T05:00:08.015703+00:00",
+  "listings": 763,
+  "unincorporated": 637,
+  "fa_cfa": 368,
+  "fa_cfa_pct": 48.2,
+  "mobile_home_zone": 406,
+  "mobile_home_zone_pct": 53.2,
+  "mobile_home_zones_counted": [
+   "FA",
+   "CFA",
+   "MSF 10",
+   "MSF 6",
+   "MSF 20",
+   "MSF 40"
+  ],
+  "sf_no_mobile": 62,
+  "tracts_1ac_plus": 484,
+  "tracts_1ac_plus_fa_cfa": 295,
+  "tracts_1ac_plus_fa_cfa_pct": 61.0,
+  "flood_high_risk": 91,
+  "flood_high_risk_pct": 11.9,
+  "flood_moderate_0_2": 24
+ }
+}

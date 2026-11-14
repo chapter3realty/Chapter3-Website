@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2,user-scalable=yes">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Sign In | Land Records</title>
+  <link rel="stylesheet" href="https://use.typekit.net/gfl2jqh.css">
+  <link rel="stylesheet" href="/apps/LandRecords/Content/css/login.css?v=639156716053476696" />
+</head>
+<body>
+  <header>
+    <div>
+      <a class="logo" href="https://www.horrycountysc.gov">
+        <img alt="Horry County Government logo" id="hcglogo" src="https://www.horrycountysc.gov/documents/icon">
+      </a>
+      <h1>
+        <span> Land Records -</span>
+        <strong>Login</strong>
+      </h1>
+    </div>
+    <div class="decoration"></div>
+  </header>
+
+  <div class="sign-in-container">
+
+    
+
+
+<form action="/apps/LandRecords/Account/Login" method="post">  <h2>Land Records</h2>
+<input class="form-control" data-val="true" data-val-required="The UserName field is required." id="UserName" name="UserName" placeholder="Username" type="text" value="" /><input class="form-control" data-val="true" data-val-required="The Password field is required." id="Password" name="Password" placeholder="Password" type="password" value="" />  <div class="error" style="display: none">
+    <span class="field-validation-valid" data-valmsg-for="LoginError" data-valmsg-replace="true"></span>
+  </div>
+  <button type="submit" value="Sign In" class="btn btn-lg btn-primary btn-block">Sign In</button>
+  <div class="text-muted"><em>**Requires an Horry County Government account for authorized access.</em></div>
+  <hr />
+  <div style="padding: 1rem; background: #f2f2f2; flex-direction: column; gap: .5rem;">
+    <div>Having trouble?</div>
+    <div class="text-muted">
+      <strong><a href="https://www.horrycountysc.gov/register" target="_blank">Register</a></strong>
+      to create an account
+    </div>
+      <div class="text-muted">Recover my
+  
+        <strong><a href="https://www.horrycountysc.gov/username-recovery" target="_blank">Username</a></strong>
+        |
+        <strong><a href="https://www.horrycountysc.gov/password-recovery" target="_blank">Password</a></strong>
+     
+    </div>
+  </div>
+</form>
+  </div>
+  <img class="background-img" src="/Content/Images/login-background.jpg" />
+
+  <footer>
+    <div class="decoration"></div>
+  </footer>
+</body>
+</html>

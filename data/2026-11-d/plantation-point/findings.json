@@ -1,0 +1,382 @@
+{
+ "made": "2026-11-13",
+ "rule": "Findings for /submarkets/myrtle-beach/plantation-point/, from the county cache (pull_county.py) and the county deed index.\nInputs: RAW/county.json; SALES = Horry County deeds recorded 2025-11-01 to 2026-10-31\n(data/2026-11-n/buyers-builders/raw/deeds-co.json, AcclaimWeb DEED (001); person names already blanked there).\nA sale = a deed on a community parcel with a stated price over $10,000. A deed covering several parcels is dropped.\nHouses = parcels with a county building value over $0. Size = the largest county 'Residential' footprint (layer 27,\nStructures 2023) on the lot: ground floor plus garage roof outline, not heated living area. Pool = an 'Pool Inground' footprint on the lot.\nTax status: assessed value / taxable value = 0.04 is the 4% legal-residence (owner's full-time home) ratio; 0.06 is every other home.\nFlood: the FEMA zone at each lot's inside point (layer 19), and whether any part of the lot touches a high-risk (SFHA) zone.\nWaterway lot = within 25 m of the county's Intracoastal Waterway outline (layer 21). Golf lot = within 15 m of the\nMyrtlewood course parcel (owner FOUNDERS NATIONAL GOLF LLC, 376.6 acres). The Landing = lots on Landing Rd, Lighthouse Way, Ketch Ct, Shipyard Rd and Plantation Dr (its streets),\nplus every parcel whose legal description names The Landing.\nWrites findings.json: counts, medians and ranges only; no PIN, owner, address or deed book and page.\nRun: RAW=<scratch> SALES=<deeds-co.json> python3 -I analyze.py <this dir>",
+ "county_read": "2026-11-13T05:51:11.531840+00:00",
+ "all": {
+  "parcels": 506,
+  "houses": 491,
+  "vacant_lots": 14,
+  "lot_sqft": {
+   "n": 491,
+   "min": 5146,
+   "q1": 7828.0,
+   "median": 20643,
+   "q3": 26727.0,
+   "max": 93310
+  },
+  "house_footprint_sqft": {
+   "n": 484,
+   "min": 776,
+   "q1": 1971.0,
+   "median": 3273.5,
+   "q3": 4271.5,
+   "max": 9495
+  },
+  "county_value": {
+   "n": 491,
+   "min": 184050.0,
+   "q1": 319198.0,
+   "median": 689883.0,
+   "q3": 910632.0,
+   "max": 3912060.0
+  },
+  "pools": 177,
+  "waterway_lots": 58,
+  "golf_lots": 135,
+  "lot_center_in_high_risk_flood_zone": 0,
+  "lot_touches_high_risk_zone": 35,
+  "flood_zone_at_lot_center": {
+   "outside mapped zones (X)": 506
+  },
+  "owner_mailing_out_of_state": 18,
+  "house_footprint_touches_high_risk_zone": 0,
+  "assessed_at_4pct_legal_residence": 381,
+  "assessed_at_6pct": 109,
+  "in_city_limits": 0,
+  "zoning": {
+   "SF 10": 364,
+   "SF 6": 139,
+   "GR": 3
+  },
+  "streets": {
+   "LANDING RD": 77,
+   "BROOKGREEN DR": 65,
+   "ARUNDEL": 49,
+   "WATERFORD": 48,
+   "PLANTATION DR": 30,
+   "LARK HILL DR": 29,
+   "ANNANDALE": 21,
+   "LIGHTHOUSE WAY": 19,
+   "NIGHTINGALE DR": 17,
+   "OLD BRYAN DR": 17,
+   "HOBCAW": 12,
+   "RICE HOPE CT": 12,
+   "WYNFIELD DR": 12,
+   "DOAR PT": 11,
+   "MATANZAS DR": 11,
+   "SHIPYARD RD": 9,
+   "CALEDONIA DR": 8,
+   "HOPSEWEE": 7,
+   "null": 6,
+   "TIP TOP CT": 6,
+   "KINLOCH": 5,
+   "DITCHFORD CT": 5,
+   "HIGH SOCIETY CT": 5,
+   "HASTY PT": 4,
+   "WILLBROOK": 4,
+   "COYLEDOM CT": 4,
+   "KETCH CT": 4,
+   "WESTFIELD DR": 3,
+   "KENSINGTON CT": 3,
+   "CULROSS CT": 3
+  }
+ },
+ "main": {
+  "parcels": 367,
+  "houses": 352,
+  "vacant_lots": 14,
+  "lot_sqft": {
+   "n": 352,
+   "min": 14180,
+   "q1": 19938.25,
+   "median": 23084.5,
+   "q3": 30120.5,
+   "max": 93310
+  },
+  "house_footprint_sqft": {
+   "n": 347,
+   "min": 1772,
+   "q1": 3171.0,
+   "median": 3869,
+   "q3": 4669.0,
+   "max": 9495
+  },
+  "county_value": {
+   "n": 352,
+   "min": 391130.0,
+   "q1": 663758.0,
+   "median": 814990.0,
+   "q3": 993790.25,
+   "max": 3912060.0
+  },
+  "pools": 176,
+  "waterway_lots": 58,
+  "golf_lots": 88,
+  "lot_center_in_high_risk_flood_zone": 0,
+  "lot_touches_high_risk_zone": 35,
+  "flood_zone_at_lot_center": {
+   "outside mapped zones (X)": 367
+  },
+  "owner_mailing_out_of_state": 11,
+  "house_footprint_touches_high_risk_zone": 0,
+  "assessed_at_4pct_legal_residence": 300,
+  "assessed_at_6pct": 51,
+  "in_city_limits": 0,
+  "zoning": {
+   "SF 10": 364,
+   "GR": 3
+  },
+  "streets": {
+   "BROOKGREEN DR": 65,
+   "ARUNDEL": 49,
+   "WATERFORD": 48,
+   "LARK HILL DR": 29,
+   "ANNANDALE": 21,
+   "NIGHTINGALE DR": 17,
+   "OLD BRYAN DR": 17,
+   "HOBCAW": 12,
+   "RICE HOPE CT": 12,
+   "WYNFIELD DR": 12,
+   "DOAR PT": 11,
+   "MATANZAS DR": 11,
+   "CALEDONIA DR": 8,
+   "HOPSEWEE": 7,
+   "null": 6,
+   "TIP TOP CT": 6,
+   "KINLOCH": 5,
+   "DITCHFORD CT": 5,
+   "HIGH SOCIETY CT": 5,
+   "HASTY PT": 4,
+   "WILLBROOK": 4,
+   "COYLEDOM CT": 4,
+   "WESTFIELD DR": 3,
+   "KENSINGTON CT": 3,
+   "CULROSS CT": 3
+  }
+ },
+ "landing": {
+  "parcels": 139,
+  "houses": 139,
+  "vacant_lots": 0,
+  "lot_sqft": {
+   "n": 139,
+   "min": 5146,
+   "q1": 6060.0,
+   "median": 6561,
+   "q3": 7148.0,
+   "max": 9488
+  },
+  "house_footprint_sqft": {
+   "n": 137,
+   "min": 776,
+   "q1": 1365.5,
+   "median": 1669,
+   "q3": 1844.5,
+   "max": 2753
+  },
+  "county_value": {
+   "n": 139,
+   "min": 184050.0,
+   "q1": 251605.0,
+   "median": 270834.0,
+   "q3": 297340.0,
+   "max": 401020.0
+  },
+  "pools": 1,
+  "waterway_lots": 0,
+  "golf_lots": 47,
+  "lot_center_in_high_risk_flood_zone": 0,
+  "lot_touches_high_risk_zone": 0,
+  "flood_zone_at_lot_center": {
+   "outside mapped zones (X)": 139
+  },
+  "owner_mailing_out_of_state": 7,
+  "house_footprint_touches_high_risk_zone": 0,
+  "assessed_at_4pct_legal_residence": 81,
+  "assessed_at_6pct": 58,
+  "in_city_limits": 0,
+  "zoning": {
+   "SF 6": 139
+  },
+  "streets": {
+   "LANDING RD": 77,
+   "PLANTATION DR": 30,
+   "LIGHTHOUSE WAY": 19,
+   "SHIPYARD RD": 9,
+   "KETCH CT": 4
+  }
+ },
+ "sections": {
+  "PLANTATION PT ADD II": 89,
+  "PLANTATION PT": 121,
+  "PLANTATION POINT": 41,
+  "PLANTATION POINT ADD I": 11,
+  "PLNTN PT ADD III PH II": 43,
+  "PLANTATION POINT ADD II": 19,
+  "PLNTN PT ADD III PH I": 46,
+  "LANDING AT PLANT PT": 17,
+  "LANDING AT PLANT": 1,
+  "THE LANDING AT PLANT": 1,
+  "PLNTN PT ADD III PH III": 34,
+  "PLANTATION POINT S-D": 13,
+  "PLNTN POINT ADD 4 PH I": 23,
+  "PLANTATION PT ADD TWO": 1,
+  "17 BYPASS": 1,
+  "PLANTATION": 1,
+  "THE LANDING PLANT": 34,
+  "THE LANDING AT": 2,
+  "LANDING PLANTATION": 1,
+  "THE LANDING @ PLANT PT": 1,
+  "LAND AT PLANT PT": 2,
+  "LANDING PLANT POINT": 1,
+  "LANDING PLANT PT": 1,
+  "THE LANDING LT #6571": 1,
+  "LANDING L PLAN PT": 1
+ },
+ "sales_window": [
+  "2025-11-01",
+  "2026-10-31"
+ ],
+ "sales": {
+  "all": {
+   "count": 21,
+   "prices": {
+    "n": 21,
+    "min": 200000.0,
+    "q1": 316250.0,
+    "median": 560000.0,
+    "q3": 1012500.0,
+    "max": 1900000.0
+   },
+   "by_month": {
+    "2025/12": 5,
+    "2026/01": 1,
+    "2026/02": 2,
+    "2026/03": 2,
+    "2026/04": 1,
+    "2026/05": 2,
+    "2026/06": 2,
+    "2026/07": 2,
+    "2026/09": 2,
+    "2026/10": 2
+   }
+  },
+  "houses": {
+   "count": 20,
+   "prices": {
+    "n": 20,
+    "min": 200000.0,
+    "q1": 311875.0,
+    "median": 543500.0,
+    "q3": 1018750.0,
+    "max": 1900000.0
+   },
+   "by_month": {
+    "2025/12": 5,
+    "2026/01": 1,
+    "2026/02": 2,
+    "2026/03": 2,
+    "2026/04": 1,
+    "2026/05": 1,
+    "2026/06": 2,
+    "2026/07": 2,
+    "2026/09": 2,
+    "2026/10": 2
+   }
+  },
+  "houses_main": {
+   "count": 13,
+   "prices": {
+    "n": 13,
+    "min": 375000.0,
+    "q1": 543500.0,
+    "median": 785000.0,
+    "q3": 1135000.0,
+    "max": 1900000.0
+   },
+   "by_month": {
+    "2025/12": 3,
+    "2026/01": 1,
+    "2026/02": 2,
+    "2026/03": 1,
+    "2026/06": 2,
+    "2026/07": 1,
+    "2026/09": 1,
+    "2026/10": 2
+   }
+  },
+  "houses_landing": {
+   "count": 7,
+   "prices": {
+    "n": 7,
+    "min": 200000.0,
+    "q1": 250000.0,
+    "median": 280000.0,
+    "q3": 325000.0,
+    "max": 408250.0
+   },
+   "by_month": {
+    "2025/12": 2,
+    "2026/03": 1,
+    "2026/04": 1,
+    "2026/05": 1,
+    "2026/07": 1,
+    "2026/09": 1
+   }
+  },
+  "houses_waterway": {
+   "count": 2,
+   "prices": {
+    "n": 2,
+    "min": 1170000.0,
+    "q1": 987500.0,
+    "median": 1535000.0,
+    "q3": 2082500.0,
+    "max": 1900000.0
+   },
+   "by_month": {
+    "2025/12": 1,
+    "2026/06": 1
+   }
+  },
+  "houses_golf": {
+   "count": 6,
+   "prices": {
+    "n": 6,
+    "min": 250000.0,
+    "q1": 260372.5,
+    "median": 341250.0,
+    "q3": 518000.0,
+    "max": 587000.0
+   },
+   "by_month": {
+    "2025/12": 1,
+    "2026/04": 1,
+    "2026/05": 1,
+    "2026/06": 1,
+    "2026/07": 2
+   }
+  },
+  "lots": {
+   "count": 1,
+   "prices": {
+    "n": 1
+   },
+   "by_month": {
+    "2026/05": 1
+   }
+  }
+ },
+ "center": [
+  33.72816,
+  -78.88365
+ ],
+ "center_main": [
+  33.72855,
+  -78.88639
+ ],
+ "center_landing": [
+  33.72713,
+  -78.87644
+ ]
+}

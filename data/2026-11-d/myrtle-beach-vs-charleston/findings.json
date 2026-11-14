@@ -1,0 +1,375 @@
+{
+ "generated_from": "raw/ (see pull.sh)",
+ "acs_vintage": "ACS 1-year 2025",
+ "metros": {
+  "charleston_metro": {
+   "population": 889263,
+   "median_home_value": 429100,
+   "median_home_value_moe": 9108,
+   "median_real_estate_taxes_paid": 1932,
+   "median_real_estate_taxes_moe": 71,
+   "median_household_income": 93054,
+   "median_year_built": 1999,
+   "median_gross_rent": 1855,
+   "mean_commute_min": 29.7,
+   "commute_45_59_pct": 10.8,
+   "commute_60plus_pct": 10.8,
+   "work_from_home_pct": 15.6,
+   "workers_16plus": 454891,
+   "commute_45plus_pct": 21.6,
+   "value_to_income": 4.61,
+   "industry_pct": {
+    "arts_recreation_accommodation_food": 9.9,
+    "manufacturing": 10.1,
+    "professional_scientific_management": 15.2,
+    "education_health": 21.2,
+    "construction": 7.3,
+    "public_administration": 4.7
+   },
+   "median_earnings_workers": 51897,
+   "permits_2025_single_family_units": 5799,
+   "permits_2025_single_family_avg_construction_value": 371331,
+   "permits_2025_total_units": 7287,
+   "sf_permits_per_1000_residents": 6.5
+  },
+  "myrtle_beach_metro": {
+   "population": 427551,
+   "median_home_value": 323600,
+   "median_home_value_moe": 8549,
+   "median_real_estate_taxes_paid": 1181,
+   "median_real_estate_taxes_moe": 46,
+   "median_household_income": 71086,
+   "median_year_built": 2003,
+   "median_gross_rent": 1441,
+   "mean_commute_min": 25.3,
+   "commute_45_59_pct": 8.2,
+   "commute_60plus_pct": 4.9,
+   "work_from_home_pct": 11.8,
+   "workers_16plus": 182388,
+   "commute_45plus_pct": 13.1,
+   "value_to_income": 4.55,
+   "industry_pct": {
+    "arts_recreation_accommodation_food": 14.3,
+    "manufacturing": 4.2,
+    "professional_scientific_management": 10.9,
+    "education_health": 23.7,
+    "construction": 9.8,
+    "public_administration": 2.6
+   },
+   "median_earnings_workers": 40561,
+   "permits_2025_single_family_units": 6418,
+   "permits_2025_single_family_avg_construction_value": 217733,
+   "permits_2025_total_units": 6511,
+   "sf_permits_per_1000_residents": 15.0
+  },
+  "charleston_county": {
+   "population": 436200,
+   "median_home_value": 625400,
+   "median_home_value_moe": 22077,
+   "median_real_estate_taxes_paid": 2306,
+   "median_real_estate_taxes_moe": 94,
+   "median_household_income": 93482,
+   "median_year_built": 1996,
+   "median_gross_rent": 1891,
+   "mean_commute_min": 26.2,
+   "commute_45_59_pct": 10.3,
+   "commute_60plus_pct": 6.0,
+   "work_from_home_pct": 17.0,
+   "workers_16plus": 232512,
+   "commute_45plus_pct": 16.3,
+   "value_to_income": 6.69
+  },
+  "horry_county": {
+   "population": 427551,
+   "median_home_value": 323600,
+   "median_home_value_moe": 8549,
+   "median_real_estate_taxes_paid": 1181,
+   "median_real_estate_taxes_moe": 46,
+   "median_household_income": 71086,
+   "median_year_built": 2003,
+   "median_gross_rent": 1441,
+   "mean_commute_min": 25.3,
+   "commute_45_59_pct": 8.2,
+   "commute_60plus_pct": 4.9,
+   "work_from_home_pct": 11.8,
+   "workers_16plus": 182388,
+   "commute_45plus_pct": 13.1,
+   "value_to_income": 4.55
+  }
+ },
+ "zhvi": {
+  "latest_month": "2026-09-30",
+  "series_name": "ZHVI all homes (SFR+condo), mid tier, smoothed, seasonally adjusted, metro",
+  "latest": {
+   "United States": 366157,
+   "Charleston, SC": 437474,
+   "Myrtle Beach, SC": 339738
+  },
+  "july_2026": {
+   "United States": 365413,
+   "Charleston, SC": 437252,
+   "Myrtle Beach, SC": 339406
+  },
+  "year_ago": {
+   "United States": 361859,
+   "Charleston, SC": 438466,
+   "Myrtle Beach, SC": 337789
+  },
+  "ten_years_ago": {
+   "United States": 206363,
+   "Charleston, SC": 241221,
+   "Myrtle Beach, SC": 188698
+  },
+  "ten_years_ago_month": "2016-09-30",
+  "gap_latest": 97736,
+  "gap_ten_years_ago": 52523,
+  "chart_annual_sept": {
+   "2016": {
+    "charleston": 241221,
+    "myrtle_beach": 188698
+   },
+   "2017": {
+    "charleston": 256540,
+    "myrtle_beach": 197222
+   },
+   "2018": {
+    "charleston": 269901,
+    "myrtle_beach": 208319
+   },
+   "2019": {
+    "charleston": 277662,
+    "myrtle_beach": 219100
+   },
+   "2020": {
+    "charleston": 290954,
+    "myrtle_beach": 230952
+   },
+   "2021": {
+    "charleston": 346029,
+    "myrtle_beach": 279093
+   },
+   "2022": {
+    "charleston": 411174,
+    "myrtle_beach": 344317
+   },
+   "2023": {
+    "charleston": 422946,
+    "myrtle_beach": 347009
+   },
+   "2024": {
+    "charleston": 441283,
+    "myrtle_beach": 347878
+   },
+   "2025": {
+    "charleston": 438466,
+    "myrtle_beach": 337789
+   },
+   "2026": {
+    "charleston": 437474,
+    "myrtle_beach": 339738
+   }
+  }
+ },
+ "beach_access": {
+  "by_county_type": {
+   "HORRY|PUBLIC BEACH ACCESS": 362,
+   "CHARLESTON|PUBLIC BEACH ACCESS": 132,
+   "CHARLESTON|BEACH PARK": 4,
+   "HORRY|blank": 15
+  },
+  "by_area": {
+   "HORRY|GARDEN CITY": 17,
+   "HORRY|SURFSIDE BEACH": 32,
+   "HORRY|MYRTLE BEACH": 143,
+   "CHARLESTON|BOTANY BAY/POCKOY ISLANDS": 1,
+   "CHARLESTON|KIAWAH ISLAND": 1,
+   "HORRY|NORTH MYRTLE BEACH": 167,
+   "HORRY|ATLANTIC BEACH": 3,
+   "CHARLESTON|ISLE OF PALMS": 56,
+   "CHARLESTON|FOLLY BEACH": 52,
+   "CHARLESTON|SULLIVANS ISLAND": 26,
+   "HORRY| ": 15
+  },
+  "horry_blank_type_rows": [
+   {
+    "NAME": " ",
+    "Beach_Name": "North Myrtle Beach",
+    "BEACH_AREA": " ",
+    "ADMIN": " ",
+    "Notes": " "
+   },
+   {
+    "NAME": " ",
+    "Beach_Name": "North Myrtle Beach",
+    "BEACH_AREA": " ",
+    "ADMIN": " ",
+    "Notes": " "
+   },
+   {
+    "NAME": " ",
+    "Beach_Name": "North Myrtle Beach",
+    "BEACH_AREA": " ",
+    "ADMIN": " ",
+    "Notes": " "
+   },
+   {
+    "NAME": " ",
+    "Beach_Name": "North Myrtle Beach",
+    "BEACH_AREA": " ",
+    "ADMIN": " ",
+    "Notes": " "
+   },
+   {
+    "NAME": " ",
+    "Beach_Name": "North Myrtle Beach",
+    "BEACH_AREA": " ",
+    "ADMIN": " ",
+    "Notes": " "
+   },
+   {
+    "NAME": " ",
+    "Beach_Name": "North Myrtle Beach",
+    "BEACH_AREA": " ",
+    "ADMIN": " ",
+    "Notes": " "
+   },
+   {
+    "NAME": " ",
+    "Beach_Name": "North Myrtle Beach",
+    "BEACH_AREA": " ",
+    "ADMIN": " ",
+    "Notes": " "
+   },
+   {
+    "NAME": " ",
+    "Beach_Name": "Myrtle Beach State Park",
+    "BEACH_AREA": " ",
+    "ADMIN": " ",
+    "Notes": " "
+   },
+   {
+    "NAME": " ",
+    "Beach_Name": "Myrtle Beach State Park",
+    "BEACH_AREA": " ",
+    "ADMIN": " ",
+    "Notes": " "
+   },
+   {
+    "NAME": " ",
+    "Beach_Name": "Myrtle Beach State Park",
+    "BEACH_AREA": " ",
+    "ADMIN": " ",
+    "Notes": " "
+   },
+   {
+    "NAME": " ",
+    "Beach_Name": "Myrtle Beach State Park",
+    "BEACH_AREA": " ",
+    "ADMIN": " ",
+    "Notes": " "
+   },
+   {
+    "NAME": " ",
+    "Beach_Name": "Myrtle Beach State Park",
+    "BEACH_AREA": " ",
+    "ADMIN": " ",
+    "Notes": " "
+   },
+   {
+    "NAME": " ",
+    "Beach_Name": "Myrtle Beach State Park",
+    "BEACH_AREA": " ",
+    "ADMIN": " ",
+    "Notes": " "
+   },
+   {
+    "NAME": " ",
+    "Beach_Name": "Myrtle Beach State Park",
+    "BEACH_AREA": " ",
+    "ADMIN": " ",
+    "Notes": " "
+   },
+   {
+    "NAME": " ",
+    "Beach_Name": "Myrtle Beach",
+    "BEACH_AREA": " ",
+    "ADMIN": " ",
+    "Notes": " "
+   }
+  ]
+ },
+ "nfip_penetration": [
+  {
+   "state": "South Carolina",
+   "county": "Charleston",
+   "resPenetrationRateSfha": 0.7828,
+   "resPenetrationRate": 0.3166,
+   "resContractsInForceSfha": 35189,
+   "resContractsInForce": 46856,
+   "totalResStructuresSfha": 44952,
+   "totalResStructures": 148009,
+   "fipsCode": "45019",
+   "asOfDate": "2026-08-03T00:00:00.000Z",
+   "id": "17c81b93-4871-4442-852c-a8ea0363108c"
+  },
+  {
+   "state": "South Carolina",
+   "county": "Horry",
+   "resPenetrationRateSfha": null,
+   "resPenetrationRate": 0.1463,
+   "resContractsInForceSfha": 5861,
+   "resContractsInForce": 20388,
+   "totalResStructuresSfha": 0,
+   "totalResStructures": 139337,
+   "fipsCode": "45051",
+   "asOfDate": "2026-08-03T00:00:00.000Z",
+   "id": "84f5baad-b2af-4674-937c-5d01158c6f04"
+  }
+ ],
+ "normals_1991_2020": {
+  "USW00093718": {
+   "name": "N MYRTLE BCH AP, SC US",
+   "ann_high": 72.7,
+   "ann_low": 55.2,
+   "ann_precip_in": 48.47,
+   "ann_snow_in": null,
+   "days_90_plus": 20.9,
+   "nights_32_or_below": 33.7,
+   "jan_high": 55.7,
+   "jan_low": 36.7,
+   "jul_high": 87.6,
+   "jul_low": 73.7
+  },
+  "USW00013880": {
+   "name": "CHARLESTON INTL AP, SC US",
+   "ann_high": 76.7,
+   "ann_low": 56.4,
+   "ann_precip_in": 52.51,
+   "ann_snow_in": 0.3,
+   "days_90_plus": 64.3,
+   "nights_32_or_below": 22.4,
+   "jan_high": 60.2,
+   "jan_low": 38.9,
+   "jul_high": 91.3,
+   "jul_low": 73.7
+  }
+ },
+ "drives_no_traffic": {
+  "mb_city_hall_to_charleston_city_hall": {
+   "miles": 98.1,
+   "minutes": 137
+  },
+  "charleston_city_hall_to_sullivans_island": {
+   "miles": 10.1,
+   "minutes": 20
+  },
+  "charleston_city_hall_to_folly_beach_pier": {
+   "miles": 11.8,
+   "minutes": 22
+  },
+  "charleston_city_hall_to_isle_of_palms_front_beach": {
+   "miles": 13.7,
+   "minutes": 26
+  }
+ }
+}

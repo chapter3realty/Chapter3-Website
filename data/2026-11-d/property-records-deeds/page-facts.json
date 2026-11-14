@@ -1,0 +1,208 @@
+{
+  "_about": "The fees, the office, the document types and the Horry vs Georgetown rows that /buyers/property-records/deeds/ shows in its tables and cards. Each value is the verifier's wording or figure from Blog-Brain batches/2026-11-d/property-records-deeds/facts.md (VERIFIED or CORRECTED rows only; VERIFY.md). The row number is beside each entry. The spec reads this file and checks it; no table value is typed in the spec.",
+  "copies": [
+    {
+      "what": "At the office, on the copy machine",
+      "cost": "50 cents a page",
+      "row": 12
+    },
+    {
+      "what": "At the office, copied by staff",
+      "cost": "$1 a page",
+      "row": 12
+    },
+    {
+      "what": "By mail, a deed or other document",
+      "cost": "$8 for the first 4 pages, then $1 a page",
+      "row": 13
+    },
+    {
+      "what": "By mail, a plat",
+      "cost": "$5 small (up to 11 by 17), $10 large (24 by 36)",
+      "row": 13
+    },
+    {
+      "what": "At the office, a plat",
+      "cost": "$2 a page up to 11 by 17; $10 large, $15 in color",
+      "row": 12
+    },
+    {
+      "what": "To certify a copy",
+      "cost": "$2 more",
+      "row": 12
+    }
+  ],
+  "mail": {
+    "to": "Register of Deeds, PO Box 470, Conway, SC 29528",
+    "pay": "check or money order",
+    "deedFirst4": 8,
+    "perPageAfter": 1,
+    "row": 13
+  },
+  "recording": [
+    {
+      "what": "Deed",
+      "fee": 15
+    },
+    {
+      "what": "Mortgage",
+      "fee": 25
+    },
+    {
+      "what": "Mortgage satisfaction (a paid-off loan)",
+      "fee": 10
+    },
+    {
+      "what": "Plat",
+      "fee": 25
+    },
+    {
+      "what": "Easement",
+      "fee": 25
+    },
+    {
+      "what": "Mechanics lien",
+      "fee": 25
+    },
+    {
+      "what": "Restrictions (a neighborhood's rules)",
+      "fee": 25
+    }
+  ],
+  "recordingRow": 25,
+  "deedFee": {
+    "per500": 1.85,
+    "per1000": 3.7,
+    "row": 26
+  },
+  "office": {
+    "phone": "(843) 915-5430",
+    "tel": "+18439155430",
+    "hours": "Monday to Friday, 8 a.m. to 4:45 p.m.",
+    "street": "1301 Second Avenue, Conway, SC 29526",
+    "mail": "PO Box 470, Conway, SC 29528",
+    "row": 14
+  },
+  "types": [
+    {
+      "want": "A sale or other change of owner",
+      "type": "DEED (001)"
+    },
+    {
+      "want": "A loan against the home",
+      "type": "MORTGAGE (002)"
+    },
+    {
+      "want": "Proof a loan was paid off",
+      "type": "MORTGAGE SATISFACTION (011), or RELEASE - MORTGAGE BOOK (009)"
+    },
+    {
+      "want": "A contractor's claim for unpaid work",
+      "type": "MECHANICS LIEN (015); paid: MECHANICS LIEN SATISFACTION (042)"
+    },
+    {
+      "want": "A condo association's claim for dues",
+      "type": "CONDO LIEN (064); paid: CONDO LIEN SATISFACTION (036)",
+      "link": "/hoa/liens-and-foreclosure/"
+    },
+    {
+      "want": "A tax lien",
+      "type": "TAX LIENS - FEDERAL (093), TAX LIENS - STATE (084)"
+    },
+    {
+      "want": "A lawsuit or a foreclosure",
+      "type": "LIS PENDENS DEED (135), NOTICE OF FORECLOSURE (143)",
+      "link": "/invest/foreclosures/"
+    },
+    {
+      "want": "An easement on the land",
+      "type": "EASEMENT (062)"
+    },
+    {
+      "want": "A neighborhood's rules, or a condo building's master deed",
+      "type": "RESTRICTIONS (082), MASTER DEED (022)",
+      "link": "/hoa/documents/"
+    },
+    {
+      "want": "The surveyor's drawing of the lots",
+      "type": "PLAT - LEGAL SIZE (006), PLAT - OTHER THAN LEGAL SIZE (061), CONDO PLAT (007)"
+    },
+    {
+      "want": "An estate or a power of attorney",
+      "type": "PROBATE FIDUCIARY LETTER (CHARGE) (133), CERTIFICATE OF DEATH (058), POWER OF ATTORNEY (063)",
+      "link": "/sell/inherited-house/"
+    }
+  ],
+  "typesRow": 8,
+  "entryFields": [
+    [
+      "Record Date",
+      "The day the county recorded the paper."
+    ],
+    [
+      "Book / Page",
+      "Where it is filed. A copy is ordered by this."
+    ],
+    [
+      "Instrument Number",
+      "The county's own number for the paper."
+    ],
+    [
+      "Map #",
+      "The lot's parcel number."
+    ],
+    [
+      "Number Of Pages",
+      "How long it is, and so what a copy by mail costs."
+    ],
+    [
+      "Doc Type",
+      "The kind of paper, such as 001 - DEED."
+    ],
+    [
+      "Grantor",
+      "On a deed, the seller."
+    ],
+    [
+      "Grantee",
+      "On a deed, the buyer."
+    ],
+    [
+      "Consideration",
+      "The price shown on the paper. Often $0 or blank."
+    ],
+    [
+      "Memo, Legal Description",
+      "The land in short: a lot number and a subdivision name."
+    ]
+  ],
+  "entryRow": 21,
+  "compare": [
+    [
+      "Search by name online",
+      "Yes, free, no account",
+      "Yes"
+    ],
+    [
+      "See the deed itself online",
+      "No, only in Conway",
+      "Yes, when the image is available"
+    ],
+    [
+      "Copies at the office",
+      "50 cents a page; $1 by staff",
+      "50 cents a page; $1 for 11 by 17"
+    ],
+    [
+      "Fraud alert",
+      "Free, by email",
+      "Free, by email or text"
+    ],
+    [
+      "How current, when we checked",
+      "A few days behind",
+      "To the day before"
+    ]
+  ],
+  "compareRows": "Horry 2, 3, 10, 12, 16, 9; Georgetown 34, 35, 38, 40, 36"
+}

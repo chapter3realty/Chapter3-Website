@@ -1,0 +1,459 @@
+<!DOCTYPE html> 
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Horry County Records Search
+        
+    </title>
+    <!--[if IE 9]><link rel="stylesheet" type="text/css" media="screen" href="../Content/ie9specific.css" /><![endif]-->
+    <!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="../Content/ie8specific.css" /><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="../Content/ie7specific.css" /><![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link type="text/css" href="../Content/common.css" rel="stylesheet" />
+	<link type="text/css" href="../Content/telerik.common.css" rel="stylesheet" />
+	<link type="text/css" href="../Content/2012.1.214/telerik.outlook.min.css" rel="stylesheet" />
+    <link type="text/css" href="../App_Themes/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+    <script type="text/javascript" src="/Scripts/jquery-latest.pack.js" ></script>
+    <script type="text/javascript" src="/Scripts/jquery-ui-1.8.16.custom.min.js" ></script>
+    <script type="text/javascript" src="/Scripts/jquery.unobtrusive-ajax.min.js" ></script>
+    <script type="text/javascript" src="/Scripts/jquery.maskedinput-1.3.js" ></script>
+    <script type="text/javascript" src="/Scripts/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-migrate-3.3.0.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/kendo/2023.1.117/kendo.all.min.js" ></script>
+    <script type="text/javascript" src="/Scripts/kendo/2023.1.117/kendo.aspnetmvc.min.js" ></script>
+    <link href="/Content/kendo/kendo.common.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/kendo/kendo.Office365.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/Scripts/jquery.cookie.js" ></script>
+    <script type="text/javascript" src="/Scripts/jquery.hoverIntent.js" ></script>
+    <script type="text/javascript" src="/Scripts/MicrosoftAjax.debug.js"></script>
+    <script type="text/javascript" src="/Scripts/MicrosoftMvcAjax.debug.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.popupWindow.js"></script>
+    <script type="text/javascript" src="/Scripts/AcclaimSearchPages.js" ></script>
+    <script type="text/javascript" src="/Scripts/AcclaimCommon.js" ></script>
+
+    
+    <style type="text/css">
+        body
+        {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<head><link href="../App_Themes/Horry/Site.css" type="text/css" rel="stylesheet" /><title>
+	Record Date
+</title></head>
+
+<!-- .Compress(true)-->
+<body>
+    
+    <div class="page">
+        <div id="pageheader">
+            <div id="header">
+                
+
+<div class="navigationBar" style="display:none;">
+
+                <div style="border-right: thin solid #ccc;">Welcome <i>Guest</i></div>
+         
+        <div><a href="/AcclaimWeb/OnlineOrders/Cart" class="MasterNavigationButtonStyle">
+          <span id="NavCartInfoSpan"></span> 
+             
+                     <img src="/AcclaimWeb/Content/Images/shopping_cart_icon.png"  alt="Shopping Cart" style="border:none;" title="Shopping Cart" />
+                  
+              </a></div>
+ 
+</div>
+
+            <div id="home">
+                <a href="#" title="County Homepage" onclick="window.open('https://www.horrycounty.org/Departments/Register-of-Deeds')"> </a>
+            </div>
+            
+            <input type="hidden" id="resxHeaderLogo" value=""/>
+            <input type="hidden" id="resxLogoAlign"  value=""/>
+            <input type="hidden" id="resxLogoTitle"  value=""/>
+            <input type="hidden" id="resxHeaderBackroundColor"  value=""/>
+            </div>
+            <div id="submenucontainer" class="t-header">
+                
+
+<script>
+    var EcommerceEnabled = true;
+    var EnableFbnDownload = false;
+    var Agent = false;    
+</script>
+
+<div>
+    <ul class="k-widget k-reset k-header k-menu" id="Menu"><li class="k-item k-state-highlight"><a class="k-link k-menu-link" href="/AcclaimWeb/"><img alt="image" class="k-image" src="/AcclaimWeb/Content/Images/searchMenu.png" /><span class="k-menu-link-text">Official Records</span><span class="k-menu-expand-arrow"><span class="k-icon k-i-arrow-s k-menu-expand-arrow-icon"></span></span></a><ul class="k-group k-menu-group k-reset k-menu-group-md"><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeName"><span class="k-menu-link-text">Name</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeBookPage"><span class="k-menu-link-text">Book/Page</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeDocLegal"><span class="k-menu-link-text">New Legal Description</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeComments"><span class="k-menu-link-text">Legal Description/Memo</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeDocType"><span class="k-menu-link-text">Document Type</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeConsideration"><span class="k-menu-link-text">Consideration</span></a></li><li class="k-item k-selected"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeRecordDate"><span class="k-menu-link-text">Record Date</span></a></li></ul></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/Support"><img alt="image" class="k-image" src="/AcclaimWeb/Content/images/supportMenu.png" /><span class="k-menu-link-text">Support</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/Search/Settings"><img alt="image" class="k-image" src="/AcclaimWeb/Content/images/imageTools24.png" /><span class="k-menu-link-text">Settings</span></a></li><li class="k-item" style="float: right; border-right: 0;"><a class="k-link k-menu-link" href="/AcclaimWeb/Login"><img alt="image" class="k-image" src="/AcclaimWeb/Content/Images/logout.png" /><span class="k-menu-link-text">Login</span></a></li></ul><script>
+	kendo.syncReady(function(){jQuery("#Menu").kendoMenu({});});
+</script>    
+</div>
+<noscript>
+    <div>
+        <h2 style="color: White;background-color:Red;"> You must enable Javascript to continue. Click 
+            <a href='Support' style="color: White;background-color:Red;text-decoration:underline">here</a> for help on how to enable Javascript. </h2>
+    </div>
+</noscript>
+<script> function addBlankTargetToLink(obj) {
+     obj.attributes("target", "_blank");
+}</script>
+<div id="cookiesDisabled" style="display:none">
+    <h2 style="color: White;background-color:Red;"> You must enable Cookies to continue. Click 
+        <a href='Support' style="color: White;background-color:Red;text-decoration:underline">here</a> for help on how to enable browser cookies. </h2>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+    <div id="mainBack">
+        <div id="main">
+            <div class="releaseHolder">
+                <span class="releaseInfo" style="color: lightgrey; font-weight: bold;font-size: 15px">Released through date:
+                    11/08/2026&nbsp;|&nbsp;Released through
+                    Instrument Number:
+                    2026000124291&nbsp;|&nbsp;As of
+                    11/12/2026 10:52:24 PM</span></div>
+            <div style="margin: auto;">
+                <div id="divMainForm">
+                       
+    
+      <div id="divSimpleTwoColumn" class="formSimple">
+      <div class="ItemTitle t-header"> 
+          <img src="../Content/Images/recordDateTitle.png" alt="Record Date Search" /> 
+          Record Date</div>
+      <form action="/AcclaimWeb/search/SearchTypeRecordDate?Length=6" id="schfrm" method="post" onclick="Sys.Mvc.AsyncForm.handleClick(this, new Sys.UI.DomEvent(event));" onsubmit="Sys.Mvc.AsyncForm.handleSubmit(this, new Sys.UI.DomEvent(event), { insertionMode: Sys.Mvc.InsertionMode.replace, onBegin: Function.createDelegate(this, SearchFormValidate), onSuccess: Function.createDelegate(this, Form_OnSuccess) });">
+      <div class="formContainer">
+            <div class="formRow" style="border-bottom: none;">
+            <div class="formLabel col1">
+            <label for="RecordDate" title="RecordDate"> Record Date</label>
+            </div>
+            <div class="formInput col2">
+                <input class="wide-datepicker" id="RecordDate" name="RecordDate" title="recorddate" type="text" value="11/10/2026" /><script>
+	kendo.syncReady(function(){jQuery("#RecordDate").kendoDatePicker({"format":"M/d/yyyy","min":new Date(1774,11,31,0,0,0,0),"max":new Date(2026,10,12,0,0,0,0)});});
+</script>
+             </div></div>
+          <div class="formRow" style="border-bottom: none;">
+                               
+          </div>
+      </div>  
+            
+
+        <div class="boxFooterLine">
+           
+           
+            <div id="formErrors">
+            </div>
+            <input type="button" value="Reset" onclick="formReset2();" class="t-button" />
+            <input type="submit" id="btnSearch" value="Search" class="t-button" />
+        </div>
+
+     
+    </div>
+
+    </form>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+
+            jQuery("#schfrm").validate(
+        {
+            rules: {
+                RecordDate: {
+                    required: true,
+                    date: true
+                }
+            },
+            messages: {
+                RecordDate: {
+                    required: "* Record date is Required",
+                    date: "* Record date is invalid"
+                }
+            },
+            errorPlacement: function (error, element) {
+                error.appendTo($("#formErrors"));
+            }
+        });
+            $("#RecordDate").focus();
+        })
+    </script>
+
+                </div>
+            </div>
+        </div>
+        <div style="position: relative;">
+           <!-- <div class="criteriaButtonHolder" style="display: none;">
+                <button type="button" class="t-button" id="SearchCriteriaButton">
+                    Search Criteria</button>
+            </div>-->
+        </div>
+        <div style="position: relative;">
+            <div class="pinHolder">
+                <button id="toggleForm" value="Toggle" type="button" class="t-button" title="Toggle Search Form"
+                    style="padding: 0px; line-height: .9;">
+                    <div id="pushPinButton" class="pushPinUp">
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div id="divResultsPrint" class="divResultsPrintStyle">
+            <div class="divResultsPrintButtonsStyle"><button type="button" onclick="window.print(); $('#divResultsPrint').hide();">
+                Print</button>
+            <button type="button" onclick="$('#divResultsPrint').hide();">
+                Close</button>
+                </div>
+        </div>
+        <div id="gridMain">
+            <div class="gridHolder floatLeft">
+                <div id="SearchGridDiv">
+					<div class="welcomeMessage"><span>Please start your search now</span>
+						<div class="instructions">
+							<div class="ItemTitle t-header" style="font-size: 1em">Search Tips</div>
+							
+    <ol><li>Select / Enter the record date to search.</li> <li>Click Search.</li></ol>
+</div>
+					</div>
+					<div class="ImportantMessageDiv" style="margin:0 auto; width:938px; font-size: 1.2em;display:block;">
+							
+
+<div class="Alert AlertMessage">
+
+    <div class="AlertTitle AlertTitleMessage" style="font-size: 1em; 
+    font-weight: bold; color: white; background-color: #b30000; text-align: left;padding-left:5px ">
+        Important Message
+    </div>
+    <div class="AlertText AlertTextMessage" style="text-align: left;font-size: 1em;color: #444; background-color: white; ">
+     <p>
+       &nbsp;
+        <strong><u>Removal of redaction bars is granted upon purchase for 24 hours.  After that time the document will revert to it's prepurchased state and redaction bars will show again.</u></strong> 
+
+<br /><br /> If you wish to update your account information (contact info, password, etc.) you will need to contact our office via written request. This request needs to be via mail, or email only. 
+
+<br /><br /> Please include your account number, along with the relevant change you wish to have made. It must also come from the contact information on file for your account, otherwise the request will be returned to you stating the information is incorrect.
+
+<br /><br /> Our office may contact you regarding your request to ensure it is properly handled in the manner you requested.<br /><br /><a href="https://www.horrycountysc.gov/departments/register-of-deeds/#contact">Register of Deeds Contact Information</a>
+    </p>
+    </div>
+</div>
+
+					</div> 
+                 <div class="searchGridDiv">
+<script type="text/javascript">
+    var rowCount = 0;
+    var linkCount = 0;
+    function LinkCount() {
+        linkCount++;
+        
+    }
+    gridHeight1();
+</script>
+
+<div class="searchTools t-header" id="divSearchToolsT-header">
+    
+        <span class="leftTools">
+            <button type="button" id="btnAddToCart" onclick="displayCheckedOrders('/AcclaimWeb/Search/SearchResultItemsInCart')" class="t-button">
+                Add to Cart</button>
+             <a class="t-button" href="/AcclaimWeb/Search/ExportCsv" id="btnCsvButton">Export to CSV</a>
+
+        </span>
+    
+    <span id="spnGridCenterFilter">
+    <span style="margin-left: 200px">
+        <select aria-label="filter" class="filterList" id="fldName" name="fldName" onchange="PopulateFilterOptionsOnChange()" title="Populate Filter Options On Change"><option value="{&quot;colName&quot;: &quot;Consideration&quot;, &quot;colType&quot;:&quot;System.Decimal&quot;}">Consideration</option>
+<option value="{&quot;colName&quot;: &quot;DirectName&quot;, &quot;colType&quot;:&quot;System.String&quot;}">First Direct Name</option>
+<option value="{&quot;colName&quot;: &quot;IndirectName&quot;, &quot;colType&quot;:&quot;System.String&quot;}">First Cross Party</option>
+<option value="{&quot;colName&quot;: &quot;BookPage&quot;, &quot;colType&quot;:&quot;System.String&quot;}">Book/Page</option>
+<option value="{&quot;colName&quot;: &quot;RecordDate&quot;, &quot;colType&quot;:&quot;System.DateTime&quot;}">Record Date</option>
+<option value="{&quot;colName&quot;: &quot;DocTypeDescription&quot;, &quot;colType&quot;:&quot;System.String&quot;}">Doc Type</option>
+<option value="{&quot;colName&quot;: &quot;BookType&quot;, &quot;colType&quot;:&quot;System.String&quot;}">Book Type</option>
+<option value="{&quot;colName&quot;: &quot;Comments&quot;, &quot;colType&quot;:&quot;System.String&quot;}">Legal Description/Memo</option>
+<option value="{&quot;colName&quot;: &quot;DeletedAfterVerify&quot;, &quot;colType&quot;:&quot;System.Decimal&quot;}">DeletedAfterVerify</option>
+</select>
+    </span><span>
+        <select name="fldOptions" aria-label="filteroptions" id="fldOptions" style="width: 80px; font-size: 1.1em;" title="Choose an option from the dropdown">
+            <option selected value="eq">equal</option>
+            <option value="bw">begins with</option>
+            <option value="ew">ends with</option>
+            <option value="cn">contains</option>
+        </select>
+    </span><span>
+        <input class="default vdata" type="text" id="fldText" style="font-size:15px" aria-label="filterdata"  title="Default Data" />
+    </span>
+    <div style="display: none" class="ui-del ui-state-default ui-corner-all">
+        <span class="ui-icon ui-icon-minus"></span>
+    </div>
+    <div style="display: none" class="ui-add ui-state-default ui-corner-all">
+        <span class="ui-icon ui-icon-plus"></span>
+    </div>
+    <span>
+        <button type="button" class="t-button" onclick="FilterGrid('RsltsGrid')" style="font-size:10px">
+            Filter Grid</button>
+    </span><span>
+        <button class="t-button" type="button" onclick="ResetGrid('RsltsGrid')" style="font-size:10px">
+            Reset Grid</button>
+    </span>
+    </span>
+    <div class="rightTools">
+        
+            <button type="button" id="SearchCriteriaButton" onmouseover="criteriaHover();"
+                class="t-button" style="font-size:10px">
+                Search Criteria</button>
+            <button type="button" id="btnSelCols" onclick="SelectGridColumns(event,'SearchTypeRecordDate');"
+                class="t-button" style="font-size:10px">
+                Columns</button>
+            <button type="button" id="rsltsClr" onclick="ClearResults();  formReset1('schfrm');"
+                class="t-button" style="font-size:10px">
+                Clear</button>
+            <button type="button" id="Wrap" onclick="wrapText();" class="t-button" style="font-size:10px">
+                Word Wrap</button></span> 
+            <button type="button" id="printResults" onclick="PrintSearchResults('SearchTypeRecordDate')" class="t-button" style="font-size:10px">
+                Print</button></span>
+            
+    </div>
+</div>
+<div id="criteria" style="display: none;">
+Search Criteria - Record Date: 11/10/2026 
+</div>
+
+<hr style="clear: both; border: none; margin-bottom: 0px;" />
+<div id="divColSelector">
+    <div class="t-window-titlebar t-header">
+        &nbsp;<span class="t-window-title">Select Columns:</span>
+        <div class="t-window-actions t-header" role="button" onclick="$('#divColSelector').hide()">
+            <span class="t-link t-icon t-close">Close</span></div>
+    </div>
+    <div id="divColSelectorColumns" class="t-window-content t-content" style="height: 250px;
+        width: 250px; overflow: auto; font-size: 15px; z-index: 1000; text-align:left; margin-left:5px;">
+        <p id="chkColList"></p>
+    </div>
+    <p style="margin-left: 15px">
+        <button class="t-button" type="button" id="btnHideShowResultsColumns" title="Hide/Show Search result columns and Save preference"
+            onclick="SaveVisibleColumnsListWithWidth('SearchTypeRecordDate')">
+            Done</button>
+    </p>
+</div>
+
+<span id='CurrentSearchTypeName' style="display: none">
+    SearchTypeRecordDate</span>
+<div id="SearchGridContainer" class="noWhiteSpace"><!--whiteSpace=Wordrap and noWhiteSpace=No wordwrap -->
+    <div class="gridDiv">
+        <div class="k-widget k-grid" id="RsltsGrid" style="width:auto; height:auto;"><div class="k-grid-header"><div class="k-grid-header-wrap"><table id="4a57c409-ab42-40b7-aec4-043afb3847ba" role="none" tabindex="0"><colgroup><col style="width:1px" /><col style="width:30px" /></colgroup><thead id="9adb15dd-6267-4bb7-a3e1-b216bad45142" role="rowgroup"><tr role="row"><th class="k-header" data-field="" data-index="0" data-title="" id="e732a242-2d41-4b0b-823c-fdc32050d09c" role="columnheader" scope="col"><span></span></th><th class="k-header" data-field="RowNum" data-index="1" data-title="Row" id="b3a15f91-5765-49a2-b7fc-2bbcf5bacf6a" role="columnheader" scope="col"><span class="k-link">Row</span></th></tr></thead></table></div></div><div class="k-grid-content k-auto-scrollable" style="height:200px"><table id="4a57c409-ab42-40b7-aec4-043afb3847ba" role="grid" tabindex="0"><colgroup><col style="width:1px" /><col style="width:30px" /></colgroup><tbody id="fbbf5f84-4646-41c1-af68-f95e5600edef" role="rowgroup"><tr class="k-no-data"><td colspan="2"></td></tr></tbody></table></div><div aria-controls="4a57c409-ab42-40b7-aec4-043afb3847ba" class="k-pager-wrap k-grid-pager"><a aria-label="Go to the first page" class="k-link k-pager-nav k-disabled k-pager-first" data-page="1" href="#" title="Go to the first page"><span class="k-icon k-i-arrow-end-left"></span></a><a aria-label="Go to the previous page" class="k-link k-pager-nav k-disabled" data-page="0" href="#" title="Go to the previous page"><span class="k-icon k-i-arrow-60-left"></span></a><div class="k-pager-numbers-wrap k-floatwrap"><select class="k-dropdown k-picker k-dropdown-list"><option selected="selected">1</option></select><ul class="k-pager-numbers"><li><span class="k-link k-selected" data-page="1">1</span></li></ul></div><span class="k-pager-input k-label">Page<input class="k-textbox" type="text" value="1" />of 1</span><a aria-label="Go to the next page" class="k-link k-pager-nav k-disabled" data-page="2" href="#" title="Go to the next page"><span class="k-icon k-i-arrow-60-right"></span></a><a aria-label="Go to the last page" class="k-link k-pager-nav k-disabled k-pager-last" data-page="1" href="#" title="Go to the last page"><span class="k-icon k-i-arrow-end-right"></span></a><span class="k-pager-sizes k-label"><select><option value="11">11</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="150">150</option><option value="200">200</option><option value="250">250</option><option value="500">500</option></select>items per page</span><a aria-label="Refresh" class="k-pager-refresh k-link" href="/AcclaimWeb/Search/GridResults?Length=6" title="Refresh"><span class="k-icon k-i-reload"></span></a><span class="k-pager-info k-label">No items to display</span></div></div><script>
+	kendo.syncReady(function(){jQuery("#RsltsGrid").kendoGrid({"change":onRowSelected,"columnResize":onSearchGridColumnResize,"dataBound":Grid_DataBoundScroll,"dataBinding":Grid_OnDataBinding,"columns":[{"headerAttributes":{"data-field":"","data-title":""},"width":"1px","field":"","filterable":false,"encoded":true},{"title":"Row","headerAttributes":{"data-field":"RowNum","data-title":"Row"},"width":"30px","template":" #= rowCountFunc() #","field":"RowNum","sortable":false,"filterable":false,"encoded":true}],"pageable":{"input":true,"refresh":true,"pageSizes":[11,25,50,100,150,200,250,500],"buttonCount":10,"position":"top"},"sortable":true,"selectable":{"mode":"Single, Row"},"resizable":true,"scrollable":{"height":"200px"},"noRecords":true,"messages":{"noRecords":"No records found. Please refine your search and try again."},"dataSource":{"type":(function(){if(kendo.data.transports['aspnetmvc-ajax']){return 'aspnetmvc-ajax';} else{throw new Error('The kendo.aspnetmvc.min.js script is not included.');}})(),"transport":{"read":{"url":"/AcclaimWeb/Search/GridResults"},"prefix":""},"pageSize":10,"page":1,"groupPaging":false,"total":0,"schema":{"data":"Data","total":"Total","errors":"Errors","model":{"fields":{"DataView":{"editable":false,"type":"object"},"RowVersion":{"editable":false,"type":"number"},"Row":{"editable":false,"type":"object"},"IsNew":{"editable":false,"type":"boolean"},"IsEdit":{"editable":false,"type":"boolean"}}}},"data":{"Data":[],"Total":0,"AggregateResults":null}},"navigatable":true});});
+</script>
+        <div class="gridLegend">
+        
+        </div>
+        <input id="propertyAppraiserLinkFormatting" name="propertyAppraiserLinkFormatting" type="hidden" value=>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    var grid = $("#RsltsGrid").data("kendoGrid");
+
+    // Function to remove the role attribute from all <th> elements
+    function removeRoleFromTable() {
+		if (grid == null) { return;}
+	
+        // Find all <table>,<th>, <tr>, <td> elements inside the table header of the grid
+        grid.table.find("table").removeAttr("role");
+        grid.thead.find("th").removeAttr("role");
+        grid.tbody.find("tr").removeAttr("role");
+        grid.tbody.find("td").removeAttr("role");
+    }
+
+	if (grid != null){
+    // Remove the role after the grid is bound and rendered
+    grid.bind("dataBound", function () {
+        removeRoleFromTable();
+
+    });
+	}
+
+    // Optionally, if the role needs to be removed immediately after initialization, call the function here:
+    removeRoleFromTable();
+
+</script></div>
+                </div>
+                <div class="disableGrid" style="display: none;">
+                </div>
+            </div>
+            <!--<div class="cartButton">
+                
+                <button class="t-button" type="button" onclick="displayCheckedOrders('/AcclaimWeb/Search/SearchResultItemsInCart')">
+                    Add to Cart</button>
+            </div>-->
+            <div id="AddToCartDiv" class="AddToCartDivStyle">
+            </div>
+            <div id="NamesWin" style="display:none">
+            <div id="frmSchTarget">
+            </div>
+            </div><script>
+	kendo.syncReady(function(){jQuery("#NamesWin").kendoWindow({"close":CloseSearchWait,"iframe":false,"scrollable":true,"pinned":false,"title":"Select Names:","resizable":false,"width":"400px","height":"390px","actions":["Close"]});});
+</script><div id="ListWin" style="display:none">
+            <div id="ListContent">
+            </div>
+            </div><script>
+	kendo.syncReady(function(){jQuery("#ListWin").kendoWindow({"iframe":false,"scrollable":true,"pinned":false,"title":"List Window:","resizable":false,"width":"400px","height":"400px","actions":["Close"]});});
+</script><div id="ErrorWin" style="display:none">
+            <div id="ErrorMsg">
+            </div>
+            </div><script>
+	kendo.syncReady(function(){jQuery("#ErrorWin").kendoWindow({"iframe":false,"scrollable":true,"pinned":false,"title":"Error","resizable":false,"width":"400px","height":"300px","actions":["Close"]});});
+</script><div id="CartWin" style="display:none">
+            <div id="result">
+            </div>
+            <div class="boxFooterLine" style="position: absolute; bottom: 10px; width: 95%;">
+                <button class="t-button" onclick="parent.location.href='/AcclaimWeb/OnlineOrders/Cart'">
+                    Proceed to Check Out</button>
+                <button class="t-button" onclick="HideCartWin()">
+                    Continue Shopping</button>
+            </div>
+            </div><script>
+	kendo.syncReady(function(){jQuery("#CartWin").kendoWindow({"iframe":false,"scrollable":true,"pinned":false,"title":"Cart Message","resizable":false,"width":"400px","height":"300px","actions":["Close"]});});
+</script>
+        </div>
+        <div class="help">
+        <br />
+            
+    <ol><li>Select / Enter the record date to search.</li> <li>Click Search.</li></ol>
+
+        </div>
+        <div id="helpTip">
+            <button id="HelpButton" type="button" class="t-button">
+                <img src="/Content/Images/help24.png" class="helpButton" style="vertical-align: middle;
+                    cursor: pointer;" />Search Tips</button>
+        </div>
+    </div>
+    <div id="SearchFooter">
+        
+<div id="footer" class="t-header">
+<div id="BrandFooter"></div>
+        Copyright 2026 &copy;  Acclaim, is a registered trademark of HARRIS RECORDING SOLUTIONS
+        |  <span style="text-decoration: underline;"><a href="https://www.horrycountysc.gov/departments/register-of-deeds/" class="t-link">Contact Us</a></span>
+    </div>
+</div>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            if (!IsCookiesFeatureEnabled()) { $('#cookiesDisabled').show(); }
+            //Grid_Settings();
+
+            $(".t-window-actions t-header").click(function () {
+                ShowSearchWait(false);
+            });
+
+        });              
+
+    </script>
+    <div id="SearchingWaitImg" style="display: none">
+        <img alt="Searching..." src="../Content/Images/loading.gif" /></div>
+</body>
+<style type="text/css">
+    .t-grid-filter
+    {
+        display: none !important;
+    }
+</style>
+</html>

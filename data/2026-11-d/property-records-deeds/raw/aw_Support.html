@@ -1,0 +1,388 @@
+<!DOCTYPE html> 
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><title>
+	Horry County Records Search
+</title><meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <!--[if IE 9]><link rel="stylesheet" type="text/css" media="screen" href="/Content/ie9specific.css" /><![endif]-->
+    <!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/Content/ie8specific.css" /><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/Content/ie7specific.css" /><![endif]-->
+    <link href="/Content/common.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="/Scripts/jquery-latest.pack.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-migrate-3.3.0.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/kendo/2023.1.117/kendo.all.min.js" ></script>
+    <script type="text/javascript" src="/Scripts/kendo/2023.1.117/kendo.aspnetmvc.min.js" ></script>
+    <link href="/Content/kendo/kendo.common.min.css" rel="stylesheet" type="text/css" /><link href="/Content/kendo/kendo.Office365.min.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery.hoverIntent.js"></script>
+	<script type="text/javascript" src="/Scripts/jquery.cookie.js"></script>	
+	<script type="text/javascript" src="/Scripts/AcclaimCommon.js" ></script>
+    <script type="text/javascript" src="/Scripts/AcclaimCustom.js" ></script>
+    
+	
+    <script type="text/javascript" src="/Scripts/AcclaimSupportPages.js" ></script>
+
+    
+
+<link href="App_Themes/Horry/Site.css" type="text/css" rel="stylesheet" /></head> 
+
+    <!-- .Combined(true)
+        .Compress(true)-->
+<body>
+    <div class="page">
+        <header id="pageheader">
+            <div id="header">
+                
+
+<div class="navigationBar" style="display:none;">
+
+                <div style="border-right: thin solid #ccc;">Welcome <i>Guest</i></div>
+         
+        <div><a href="/AcclaimWeb/OnlineOrders/Cart" class="MasterNavigationButtonStyle">
+          <span id="NavCartInfoSpan"></span> 
+             
+                     <img src="/AcclaimWeb/Content/Images/shopping_cart_icon.png"  alt="Shopping Cart" style="border:none;" title="Shopping Cart" />
+                  
+              </a></div>
+ 
+</div>
+
+            <div id="home">
+                <a href="#" title="County Homepage" onclick="window.open('https://www.horrycounty.org/Departments/Register-of-Deeds')"> </a>
+            </div>
+            
+            <input type="hidden" id="resxHeaderLogo" value=""/>
+            <input type="hidden" id="resxLogoAlign"  value=""/>
+            <input type="hidden" id="resxLogoTitle"  value=""/>
+            <input type="hidden" id="resxHeaderBackroundColor"  value=""/> 
+            </div>
+             <div id="submenucontainer">
+                
+
+<script>
+    var EcommerceEnabled = true;
+    var EnableFbnDownload = false;
+    var Agent = false;    
+</script>
+
+<div>
+    <ul class="k-widget k-reset k-header k-menu" id="Menu"><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/"><img alt="image" class="k-image" src="/AcclaimWeb/Content/Images/searchMenu.png" /><span class="k-menu-link-text">Official Records</span><span class="k-menu-expand-arrow"><span class="k-icon k-i-arrow-s k-menu-expand-arrow-icon"></span></span></a><ul class="k-group k-menu-group k-reset k-menu-group-md"><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeName"><span class="k-menu-link-text">Name</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeBookPage"><span class="k-menu-link-text">Book/Page</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeDocLegal"><span class="k-menu-link-text">New Legal Description</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeComments"><span class="k-menu-link-text">Legal Description/Memo</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeDocType"><span class="k-menu-link-text">Document Type</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeConsideration"><span class="k-menu-link-text">Consideration</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeRecordDate"><span class="k-menu-link-text">Record Date</span></a></li></ul></li><li class="k-item k-state-highlight"><a class="k-link k-menu-link" href="/AcclaimWeb/Support"><img alt="image" class="k-image" src="/AcclaimWeb/Content/images/supportMenu.png" /><span class="k-menu-link-text">Support</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/Search/Settings"><img alt="image" class="k-image" src="/AcclaimWeb/Content/images/imageTools24.png" /><span class="k-menu-link-text">Settings</span></a></li><li class="k-item" style="float: right; border-right: 0;"><a class="k-link k-menu-link" href="/AcclaimWeb/Login"><img alt="image" class="k-image" src="/AcclaimWeb/Content/Images/logout.png" /><span class="k-menu-link-text">Login</span></a></li></ul><script>
+	kendo.syncReady(function(){jQuery("#Menu").kendoMenu({});});
+</script>    
+</div>
+<noscript>
+    <div>
+        <h2 style="color: White;background-color:Red;"> You must enable Javascript to continue. Click 
+            <a href='Support' style="color: White;background-color:Red;text-decoration:underline">here</a> for help on how to enable Javascript. </h2>
+    </div>
+</noscript>
+<script> function addBlankTargetToLink(obj) {
+     obj.attributes("target", "_blank");
+}</script>
+<div id="cookiesDisabled" style="display:none">
+    <h2 style="color: White;background-color:Red;"> You must enable Cookies to continue. Click 
+        <a href='Support' style="color: White;background-color:Red;text-decoration:underline">here</a> for help on how to enable browser cookies. </h2>
+</div>
+
+
+            </div>
+        </header>
+    </div>    
+    <main id="mainBack">
+        <div id="main">
+            <div id="mainForm" tabindex="0">
+                
+    
+    
+    <a name="Top"></a>
+    
+
+   <div id="divSimpleTwoColumn" style="clear: both;">
+        <div class="ItemTitle t-header">
+        <img src="Content/Images/SupportTitle.png" alt="Support" style="vertical-align: middle;"/> General Support</div>
+		<div id="divSimpleTwoColumn" style="width:96%">
+		<h2>Release of Liability</h2>
+				<p>
+					The user understands that any changes made to his or her personal computer or systems based on recommendations provided by the Clerk’s Office or by Harris Recording Solutions are made at the user’s own risk and may affect the performance or operation of other programs or of the user’s entire system.  Users should confer with their own technical support before making changes to assure that such changes are in compliance with their own policies and that they will not adversely affect computer performance.</p>
+				<p>
+		</div>		
+        <div class="SupportDivStyle">
+            <h3 tabindex="0">Having problems Searching or Viewing Images?</h3>
+            <div id="answer1"  class="FaqAnswerStyle">
+                <a target="_blank" href="Documents/Support/UsingAcclaimWebSearchFeatures.pdf" style="text-decoration: underline;">Guide to Searching and Viewing Images</a>
+                
+            </div>
+            <h3 tabindex="0">
+                How do I contact the county for support or concerns or feedback?</h3>
+            <div id="answer2"  class="FaqAnswerStyle" >
+                <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tbody>
+                    <tr>
+                        <td width="34%" valign="top">
+                            <b>Marion D. Foxworth, III,</b><br />
+                            Register of Deeds<br />
+                            (843) 915-5430
+                        </td>
+                        <td width="34%" valign="top">
+                            <b>Physical Address:</b><br />
+                            1301 Second Avenue<br />
+                            Conway, SC 29526&nbsp;&nbsp;03301
+                        </td>
+                        <td width="34%" valign="top">
+                            <b>Mailing Address:</b><br />
+                            P.O. Box 470<br />
+                            Conway, SC 29528&nbsp;&nbsp;03302-0248
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+                <hr />
+                <span style="text-decoration: underline;"><a href="https://www.horrycountysc.gov/departments/register-of-deeds/">Contact Horry County, Register of Deeds</a></span>
+            </div>
+            <h3 tabindex="0">
+                What are the minimum requirements to run this website?</h3>
+            <div id="answer3"  class="FaqAnswerStyle" >
+                <ol>
+                    <li>The application works best with Microsoft Internet Explorer 7, or Mozilla 3.5 or
+                        Google Chrome and higher . Older versions will not support all functions. </li>
+                    <li>Javascript must be enabled.</li>
+                    <li>Cookies must be enabled.</li>
+                </ol>
+            </div>
+            <h3 tabindex="0">
+                How do I enable cookies?</h3>
+            <div id="answer4"  class="FaqAnswerStyle" >
+                <h4 tabindex="0">
+                    Internet Explorer 
+                </h4>
+                <div id="answer5" ><span>Go To Tools > Internet Options ></span>
+                <img src="Content/Images/Support-IECookies.png" alt="IE cookie support" /></div>
+                <h4 tabindex="0">
+                    Mozilla Firefox
+                </h4>
+              <div id="answer6" > <span> Go To Tools > Options ></span><br />
+                <img src="Content/Images/Support-FFCookies.png" alt="Mozilla cookie support" /></div>
+                <h4 tabindex="0">
+                    Google Chrome
+                </h4>
+                <div id="answer7" ><span>Go To Tools > Options ></span><br />
+                <img src="Content/Images/Support-ChromeCookies.png" alt="Chrome cookie support" /></div>
+            </div>
+            <h3 tabindex="0">
+                How do I enable javascript?</h3>
+            <div id="answer8" class="FaqAnswerStyle" >
+                <h4 tabindex="0">
+                    Internet Explorer
+                </h4>
+                <div id="answer9" ><span>Go To Tools > Internet Options ></span>
+                <img src="Content/Images/Support-IEscript.png" alt="IE javascript support" /></div>
+                <h4 tabindex="0">
+                    Mozilla Firefox
+                </h4>
+                 <div id="answer10" ><span>Go To Tools > Options ></span><br />
+                <img src="Content/Images/Support-FFscript.png" alt="Mozilla cookie support" /></div>
+                <h4 tabindex="0">
+                    Google Chrome
+                </h4>
+                <div id="answer11" ><span>Go To Tools > Options ></span>
+                <img src="Content/Images/Support-Chromescript.png" alt="Chrome cookie support" /></div>
+            </div>
+            <h3 tabindex="0">
+                How do I turn on PDF Viewer in Chrome browser?</h3>
+            <div id="answer12" class="FaqAnswerStyle" >
+                To get to the Plug-ins installed in Chrome:
+                <p>
+                    Google Chrome - Go To Tools -> Options -> 'Under The Hood' tab on the left -> Content
+                    Settings -> Plug-ins -> Click on Link 'Disable individual plug-ins'
+                </p>
+                Or
+                <p>
+                    Google Chrome - In the address bar type - 'about:plugins'
+                </p>
+                <p>
+                    Enable the 'Adobe Acrobat' Plugin</p>
+                <img src="Content/Images/Support-ChromePdf.png" alt="Chrome PDF support" />
+            </div>
+			<h3 tabindex="0">
+                How do I disable pop-up blocker for Acclaim Web in Internet Explorer 8 browser? (If having problems viewing images or Printing)</h3>
+            <div class="FaqAnswerStyle" style="display: none;">
+                <p>
+                    1.	Click Tools > Pop-up Blocker > Pop-up Blocker Settings.					
+				</p>
+				<p>
+					2. Add the County Official Records website URL to the allowed list.
+				<p/>
+		   </div>	
+			<h3 tabindex="0">
+                How do I disable pop-up blocker for Acclaim Web in Internet Explorer 9 browser? (If having problems viewing images or Printing)</h3>
+            <div class="FaqAnswerStyle" style="display: none;">
+                <p>
+                    1.	Click Tools > Internet Options > Privacy > Settings.
+				</p>
+				<p>
+					2.  Add the County Official Records website URL to the allowed list.
+				</p>
+            </div>
+			<h3 tabindex="0">
+                How do I disable pop-up blocker for Acclaim Web in Chrome browser? (If having problems viewing images or Printing)</h3>
+            <div class="FaqAnswerStyle" style="display: none;">
+                <p>
+                    1.	If pop-ups have been blocked, you'll see the red 'X' icon in the address bar. Click the icon to see a list of the blocked pop-ups.
+				</p>
+				<p>
+					2.	Click the link for the pop-up window that you'd like to see.
+				</p>
+                <p>
+                    3.  Select "Always show pop-ups from [website URL]" The site will be added to the exceptions list, which you can manage in the Content Settings dialog.
+                </p>
+                <p>
+            </div>
+			<h3 tabindex="0">
+                How do I disable pop-up blocker for Acclaim Web in Firefox browser? (If having problems viewing images or Printing)</h3>
+            <div class="FaqAnswerStyle" style="display: none;">
+                <p>
+                    1.	At the top of the Firefox window, click on the Firefox button (Tools menu in Windows XP) and then click Options.
+				</p>
+				<p>
+					2.	Select the Content panel.
+				</p>
+                <p>
+                    3.  In the content panel, click 'Exceptions'. This is a list of sites that you want to allow to display pop-ups. Add the County Official Records website URL to the allowed list.
+                </p>
+                <p>
+            </div>
+			<h3 tabindex="0">
+                How do I disable pop-up blocker for Acclaim Web in Safari browser? (If having problems viewing images or Printing)</h3>
+            <div class="FaqAnswerStyle" style="display: none;">
+                <p>
+                    1.	From the Safari menu, make sure Block Pop-Up Windows is unchecked.
+				</p>
+			</div>	
+			<h3 tabindex="0">
+                How do I disable pop-up blocker for Acclaim Web in the Google Toolbar? (If having problems viewing images or Printing)</h3>
+            <div class="FaqAnswerStyle" style="display: none;">
+                <p>
+                    1.	Click on the Google logo on the Google toolbar and select Options.
+				</p>
+                <p>
+                    2.	Uncheck Popup Blocker, and then click OK.
+				</p>
+			</div>
+			<h3 tabindex="0">
+                How do I resize the search result columns?</h3>
+            <div class="FaqAnswerStyle" style="display: none;">
+                <p>
+                    1.	On the search results page, place you mouse to the right of the column you would like to adjust, hold the left mouse button, and drag the column to the desired width.
+				</p>
+				<img style="display:none" src="Content/images/supportColumnResize.png" alt="Resize Column support" />
+            </div>
+			<h3 tabindex="0">
+                How do I print the document details page?</h3>
+            <div class="FaqAnswerStyle" style="display: none;">
+                <p>
+                    1.	In Internet Explorer and Google Chrome: On the document details screen, right click near the index information and select ‘Print’. Select your printer on the print dialog screen and choose print.
+				</p>
+				<p>
+                    1.	In Firefox: On the document details screen, Click the Firefox menu then Print.
+				</p>
+            </div>
+			<h3 tabindex="0">
+                How do I print a search report?</h3>
+            <div class="FaqAnswerStyle" style="display: none;">
+                <p>
+					1.  Right click over search results and select print preview. 
+				</p>
+				<p>
+					2.  Change 'Shrink to Fit' to '80%' or less depending on individuals computer.
+				</p>
+				<p>
+					3.  Click printer icon, click preferences, click finishing tab, change to landscape, click OK and then click print.
+				</p>
+            </div>
+			<h3 tabindex="0">
+                How do I adjust the zoom rate in my browser? (If having trouble viewing search results)</h3>
+            <div class="FaqAnswerStyle" style="display: none;">
+                <p>
+                    1.	If you have a scroll mouse, you can hold the ‘Ctrl’ key on your keyboard and scroll the wheel on your mouse forward and back to zoom in and out.
+				</p>
+				<p>
+                    2.	If you do not have a scroll mouse, you can hold the ‘Ctrl’ key on your keyboard and hit the '+' or '-' keys to zoom in and out.
+				</p>
+            </div>
+			<h3 tabindex="0">
+                How do I clear the temporary internet files/cache in Internet Explorer?</h3>
+            <div class="FaqAnswerStyle" style="display: none;">
+                <p>
+                    1.	Go to Tools > Internet Options.
+				</p>
+				<p>
+                    2.	Under browsing history, click ‘Delete’.
+				</p>
+				<img style="display:none" src="Content/images/supportClearCache.png" alt="Resize Column support" />
+				<p>
+                    3.	Make sure that the ‘Temporary Internet Files’ and ‘Cookies’ boxes are checked.
+				</p>
+				<p>
+                    4.	Make sure that the ‘Preserve Favorites website data’ box is Unchecked.
+				</p>
+				<p>
+					5.	Click ‘Delete’.
+				</p>				
+            </div>				
+            		
+        </div>
+    </div>
+   <script type="text/javascript">
+       $(document).ready(function () {
+           $('div[id^="answer"]').hide();
+
+           $('h3').on('keypress', function (event) {
+               if (event.key === "Enter" || event.keyCode === 13) {
+                   var answerId = $(this).next('div.FaqAnswerStyle');  
+                   answerId.stop(true, true).slideToggle(600); 
+               }
+           });
+
+           $('h4').on('keypress', function (event) {
+               if (event.key === "Enter" || event.keyCode === 13) {
+                   var answerDiv = $(this).next('div'); 
+                   if (answerDiv.length > 0) {
+                       answerDiv.stop(true, true).slideToggle(600); 
+                   }
+               }
+           });
+       });
+   </script>
+
+
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        
+<div id="footer" class="t-header">
+<div id="BrandFooter"></div>
+        Copyright 2026 &copy;  Acclaim, is a registered trademark of HARRIS RECORDING SOLUTIONS
+        |  <span style="text-decoration: underline;"><a href="https://www.horrycountysc.gov/departments/register-of-deeds/" class="t-link">Contact Us</a></span>
+    </div>
+
+    </footer>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        mainHieght();
+        window.name = 'AcclaimwebMainWindow';
+        if (!IsCookiesFeatureEnabled()) { $('#cookiesDisabled').show(); }
+    })
+    window.onresize = function () {
+        mainHieght();
+    }   
+</script>
+</body>
+
+</html>

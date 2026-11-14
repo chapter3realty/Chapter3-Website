@@ -1,0 +1,32 @@
+{
+ "title": "The more land you buy, the less each acre costs",
+ "unit": "median asking price per acre, Horry County land for sale",
+ "rows": [
+  {
+   "label": "Under half an acre",
+   "value": 686000,
+   "n": 158
+  },
+  {
+   "label": "Half an acre to 1 acre",
+   "value": 140000,
+   "n": 117
+  },
+  {
+   "label": "1 to 5 acres",
+   "value": 54000,
+   "n": 267
+  },
+  {
+   "label": "5 to 20 acres",
+   "value": 30000,
+   "n": 112
+  },
+  {
+   "label": "20 acres or more",
+   "value": 19000,
+   "n": 105
+  }
+ ],
+ "pulled": "2026-11-13T04:46:12.251309+00:00"
+}

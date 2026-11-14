@@ -1,0 +1,112 @@
+{
+ "read": "2026-11-13T05:12:22.435564+00:00",
+ "layer19_fields": [
+  "OBJECTID",
+  "Shape",
+  "Shape.STArea()",
+  "Shape.STLength()",
+  "FLD_AR_ID",
+  "FLD_ZONE",
+  "FLOODWAY",
+  "SFHA_TF",
+  "STATIC_BFE",
+  "V_DATUM",
+  "DEPTH",
+  "LEN_UNIT",
+  "VELOCITY",
+  "VEL_UNIT",
+  "AR_REVERT",
+  "BFE_REVERT",
+  "DEP_REVERT",
+  "SOURCE_CIT"
+ ],
+ "footprint_parcels": 303,
+ "footprint_center": [
+  33.672518,
+  -78.901529
+ ],
+ "footprint_bounds": [
+  -78.902194,
+  33.671951,
+  -78.900871,
+  33.673096
+ ],
+ "zones_touching": [
+  {
+   "attributes": {
+    "FLD_ZONE": "AE",
+    "SFHA_TF": "T",
+    "STATIC_BFE": 12.0
+   },
+   "all_attribute_names": [
+    "OBJECTID",
+    "Shape.STArea()",
+    "Shape.STLength()",
+    "FLD_AR_ID",
+    "FLD_ZONE",
+    "FLOODWAY",
+    "SFHA_TF",
+    "STATIC_BFE",
+    "V_DATUM",
+    "DEPTH",
+    "LEN_UNIT",
+    "VELOCITY",
+    "VEL_UNIT",
+    "AR_REVERT",
+    "BFE_REVERT",
+    "DEP_REVERT",
+    "SOURCE_CIT"
+   ],
+   "share_of_footprint": 0.037
+  },
+  {
+   "attributes": {
+    "FLD_ZONE": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+    "SFHA_TF": "F",
+    "STATIC_BFE": -9999.0
+   },
+   "all_attribute_names": [
+    "OBJECTID",
+    "Shape.STArea()",
+    "Shape.STLength()",
+    "FLD_AR_ID",
+    "FLD_ZONE",
+    "FLOODWAY",
+    "SFHA_TF",
+    "STATIC_BFE",
+    "V_DATUM",
+    "DEPTH",
+    "LEN_UNIT",
+    "VELOCITY",
+    "VEL_UNIT",
+    "AR_REVERT",
+    "BFE_REVERT",
+    "DEP_REVERT",
+    "SOURCE_CIT"
+   ],
+   "share_of_footprint": 0.728
+  }
+ ],
+ "center_point_zones": [
+  {
+   "OBJECTID": 1024,
+   "Shape.STArea()": 7152028.027012014,
+   "Shape.STLength()": 71431.63484461536,
+   "FLD_AR_ID": "1024",
+   "FLD_ZONE": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+   "FLOODWAY": " ",
+   "SFHA_TF": "F",
+   "STATIC_BFE": -9999.0,
+   "V_DATUM": " ",
+   "DEPTH": -9999.0,
+   "LEN_UNIT": " ",
+   "VELOCITY": -9999.0,
+   "VEL_UNIT": " ",
+   "AR_REVERT": " ",
+   "BFE_REVERT": -9999.0,
+   "DEP_REVERT": -9999.0,
+   "SOURCE_CIT": "STUDY1"
+  }
+ ],
+ "share_in_no_zone": 0.235
+}

@@ -1,0 +1,136 @@
+{
+ "pulled": "2026-11-13T05:18:24.281948+00:00",
+ "refreshedAt": "2026-11-13T05:10:31.422Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 25,
+ "at_1605": 25,
+ "beds": {
+  "0": 10,
+  "1": 7,
+  "2": 8
+ },
+ "asking": {
+  "all": {
+   "median": 159999,
+   "min": 110000,
+   "max": 255000
+  },
+  "0": {
+   "n": 10,
+   "median": 132450.0,
+   "min": 110000,
+   "max": 159999,
+   "sqft_median": 386.0,
+   "sqft_range": [
+    341,
+    478
+   ]
+  },
+  "1": {
+   "n": 7,
+   "median": 164900,
+   "min": 115000,
+   "max": 187000,
+   "sqft_median": 539,
+   "sqft_range": [
+    509,
+    539
+   ]
+  },
+  "2": {
+   "n": 8,
+   "median": 218750.0,
+   "min": 194888,
+   "max": 255000,
+   "sqft_median": 785.0,
+   "sqft_range": [
+    739,
+    950
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 0,
+  "all": {
+   "n": 25,
+   "median_at_or_under": 700,
+   "lowest_at_or_under": 475,
+   "highest_at_or_under": 925,
+   "middle_half": [
+    475.0,
+    925.0
+   ]
+  },
+  "zero_or_blank": 0,
+  "0": {
+   "n": 10,
+   "median_at_or_under": 475.0,
+   "lowest_at_or_under": 475,
+   "highest_at_or_under": 475,
+   "middle_half": [
+    475.0,
+    475.0
+   ]
+  },
+  "1": {
+   "n": 7,
+   "median_at_or_under": 700,
+   "lowest_at_or_under": 700,
+   "highest_at_or_under": 700,
+   "middle_half": null
+  },
+  "2": {
+   "n": 8,
+   "median_at_or_under": 925.0,
+   "lowest_at_or_under": 925,
+   "highest_at_or_under": 925,
+   "middle_half": [
+    925.0,
+    925.0
+   ]
+  }
+ },
+ "flags": {
+  "str_allowed": 22,
+  "rentals_allowed": 22,
+  "long_term_rental_allowed": 21,
+  "vacation_rental_program": 21,
+  "has_rental_income": 21,
+  "furnished": 25,
+  "pets_allowed": 4,
+  "oceanfront_unit": 8,
+  "ocean_view": 23,
+  "oceanfront_building": 23,
+  "high_floor_unit": 20,
+  "low_floor_unit": 3,
+  "top_floor": 0,
+  "balcony": 21,
+  "parking_garage": 21,
+  "covered_parking": 25,
+  "indoor_pool": 23,
+  "sauna": 1,
+  "elevator_building": 25,
+  "flood_zone": 5,
+  "hoa_includes_trash": 23,
+  "hoa_includes_utilities": 24,
+  "hoa_includes_water_sewer": 24,
+  "hoa_includes_insurance": 23,
+  "hoa_includes_internet": 23,
+  "hoa_includes_pest": 18,
+  "hoa_includes_cable": 11,
+  "hoa_includes_electric": 0,
+  "security_service": 14
+ },
+ "year_built": {
+  "1986": 22,
+  "1985": 2,
+  "1987": 1
+ },
+ "flood_zone_field": {
+  "None": 25
+ },
+ "subdivision_field": {
+  "PALACE, THE": 25
+ }
+}

@@ -1,0 +1,915 @@
+{
+ "costs": {
+  "year": 2025,
+  "area": "Myrtle Beach-Conway-North Myrtle Beach",
+  "monthly": {
+   "assisted_living": {
+    "myrtle_beach_area": 5850,
+    "sc": 5350,
+    "us": 6200
+   },
+   "nursing_home_semi_private": {
+    "myrtle_beach_area": 8897,
+    "sc": 9034,
+    "us": 9581
+   },
+   "nursing_home_private": {
+    "myrtle_beach_area": 9885,
+    "sc": 9612,
+    "us": 10798
+   },
+   "home_care_services": {
+    "myrtle_beach_area": 5911,
+    "sc": 5982,
+    "us": 6673
+   },
+   "adult_day_care": {
+    "myrtle_beach_area": 1560,
+    "sc": 1560,
+    "us": 2058
+   }
+  },
+  "annual_myrtle_beach_area": {
+   "assisted_living": 70200,
+   "nursing_home_semi_private": 106763,
+   "nursing_home_private": 118625,
+   "home_care_services": 70928,
+   "adult_day_care": 18720
+  },
+  "home_care_hourly": 31,
+  "al_growth_pct_mb": 5
+ },
+ "al_by_sc_area": [
+  {
+   "area": "Columbia",
+   "al_monthly": 6520
+  },
+  {
+   "area": "Hilton Head Island-Bluffton-Port Royal",
+   "al_monthly": 6198
+  },
+  {
+   "area": "Myrtle Beach-Conway-North Myrtle Beach",
+   "al_monthly": 5850
+  },
+  {
+   "area": "Charleston-North Charleston",
+   "al_monthly": 5746
+  },
+  {
+   "area": "Greenville-Anderson-Greer",
+   "al_monthly": 5155
+  },
+  {
+   "area": "Florence",
+   "al_monthly": 5125
+  },
+  {
+   "area": "SC NONMETROPOLITAN AREA",
+   "al_monthly": 4950
+  },
+  {
+   "area": "Spartanburg",
+   "al_monthly": 3690
+  }
+ ],
+ "facilities": [
+  {
+   "type": "adult day care",
+   "name": "ELITE DAY CENTER OF GEORGETOWN",
+   "city": "Georgetown",
+   "county": "Georgetown",
+   "zip5": "29440",
+   "licensed": 60,
+   "alzheimer_unit": null,
+   "alzheimer_care": null,
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "ADC-0494",
+   "expires": "ADC-0494 / 06/30/2027"
+  },
+  {
+   "type": "adult day care",
+   "name": "NY'S ADULT DAYCARE",
+   "city": "Georgetown",
+   "county": "Georgetown",
+   "zip5": "29440",
+   "licensed": 19,
+   "alzheimer_unit": null,
+   "alzheimer_care": null,
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "ADC-0458",
+   "expires": "ADC-0458 / 06/30/2027"
+  },
+  {
+   "type": "adult day care",
+   "name": "ELITE DAY CENTER OF CONWAY",
+   "city": "Conway",
+   "county": "Horry",
+   "zip5": "29527",
+   "licensed": 60,
+   "alzheimer_unit": null,
+   "alzheimer_care": null,
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "ADC-0493",
+   "expires": "ADC-0493 / 01/31/2027"
+  },
+  {
+   "type": "adult day care",
+   "name": "ELITE DAY CENTER OF LORIS",
+   "city": "Loris",
+   "county": "Horry",
+   "zip5": "29569",
+   "licensed": 44,
+   "alzheimer_unit": null,
+   "alzheimer_care": null,
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "ADC-0492",
+   "expires": "ADC-0492 / 01/31/2027"
+  },
+  {
+   "type": "adult day care",
+   "name": "ACTIVE DAY OF GRAND STRAND",
+   "city": "Myrtle Beach",
+   "county": "Horry",
+   "zip5": "29577",
+   "licensed": 80,
+   "alzheimer_unit": null,
+   "alzheimer_care": null,
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "ADC-0129",
+   "expires": "ADC-0129 / 10/31/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "CROSSINGS OF GEORGETOWN",
+   "city": "Georgetown",
+   "county": "Georgetown",
+   "zip5": "29440",
+   "licensed": 50,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "CRC-2328",
+   "expires": "CRC-2328 / 04/30/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "LANDINGS OF GEORGETOWN",
+   "city": "Georgetown",
+   "county": "Georgetown",
+   "zip5": "29440",
+   "licensed": 68,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "CRC-2233",
+   "expires": "CRC-2233 / 08/31/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "MARYVILLE COMMUNITY RESIDENCE",
+   "city": "Georgetown",
+   "county": "Georgetown",
+   "zip5": "29440",
+   "licensed": 8,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "CRC-1446",
+   "expires": "CRC-1446 / 06/30/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "OASIS RESIDENTIAL HOME",
+   "city": "Georgetown",
+   "county": "Georgetown",
+   "zip5": "29440",
+   "licensed": 22,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "CRC-1219",
+   "expires": "CRC-1219 / 08/31/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "MARY'S HOME CARE",
+   "city": "Hemingway",
+   "county": "Georgetown",
+   "zip5": "29554",
+   "licensed": 21,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "CRC-1505",
+   "expires": "CRC-1505 / 05/31/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "INLET COASTAL RESORT",
+   "city": "Murrells Inlet",
+   "county": "Georgetown",
+   "zip5": "29576",
+   "licensed": 62,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "CRC-1549",
+   "expires": "CRC-1549 / 08/31/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "ARBOR LANDING AT PAWLEYS",
+   "city": "Pawleys Island",
+   "county": "Georgetown",
+   "zip5": "29585",
+   "licensed": 100,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "CRC-1937",
+   "expires": "CRC-1937 / 09/30/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "LAKES AT LITCHFIELD ASSISTED LIVING",
+   "city": "Pawleys Island",
+   "county": "Georgetown",
+   "zip5": "29585",
+   "licensed": 79,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "CRC-1116",
+   "expires": "CRC-1116 / 08/31/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "ANDERSON OAKS ASSISTED LIVING",
+   "city": "Conway",
+   "county": "Horry",
+   "zip5": "29526",
+   "licensed": 80,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "CRC-1506",
+   "expires": "CRC-1506 / 07/31/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "BROOKDALE CONWAY",
+   "city": "Conway",
+   "county": "Horry",
+   "zip5": "29526",
+   "licensed": 52,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "CRC-2143",
+   "expires": "CRC-2143 / 01/31/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "LADIES COMMUNITY RESIDENCE",
+   "city": "Conway",
+   "county": "Horry",
+   "zip5": "29526",
+   "licensed": 8,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "CRC-1449",
+   "expires": "CRC-1449 / 07/31/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "LOIS EARGLE HOME",
+   "city": "Conway",
+   "county": "Horry",
+   "zip5": "29527",
+   "licensed": 8,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "CRC-1450",
+   "expires": "CRC-1450 / 07/31/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "SPRING OAK CONWAY",
+   "city": "Conway",
+   "county": "Horry",
+   "zip5": "29527",
+   "licensed": 100,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "CRC-2342",
+   "expires": "CRC-2342 / 02/28/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "BARCLAY AT LITTLE RIVER",
+   "city": "Little River",
+   "county": "Horry",
+   "zip5": "29566",
+   "licensed": 90,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "CRC-2377",
+   "expires": "CRC-2377 / 01/31/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "LEGACY OF NORTH MYRTLE BEACH",
+   "city": "Little River",
+   "county": "Horry",
+   "zip5": "29566",
+   "licensed": 80,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "CRC-1360",
+   "expires": "CRC-1360 / 06/30/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "RIVER PARK SENIOR LIVING",
+   "city": "Little River",
+   "county": "Horry",
+   "zip5": "29566",
+   "licensed": 90,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "CRC-2430",
+   "expires": "CRC-2430 / 04/30/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "MAGNOLIA BRIDGE AT MURRELLS INLET",
+   "city": "Murrells Inlet",
+   "county": "Horry",
+   "zip5": "29576",
+   "licensed": 82,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "CRC-2297",
+   "expires": "CRC-2297 / 05/31/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "PALMETTOS OF GARDEN CITY",
+   "city": "Murrells Inlet",
+   "county": "Horry",
+   "zip5": "29576",
+   "licensed": 90,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": "C",
+   "license": "CRC-1649",
+   "expires": "CRC-1649 / 06/30/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "SEABROOK AT MURRELLS INLET",
+   "city": "Murrells Inlet",
+   "county": "Horry",
+   "zip5": "29576",
+   "licensed": 110,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "CRC-2442",
+   "expires": "CRC-2442 / 04/30/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "WINDRUSH AT GARDEN CITY",
+   "city": "Murrells Inlet",
+   "county": "Horry",
+   "zip5": "29576",
+   "licensed": 111,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "CRC-2363",
+   "expires": "CRC-2363 / 05/31/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "AMERICAN HOUSE MYRTLE BEACH AT GRANDE DUNES",
+   "city": "Myrtle Beach",
+   "county": "Horry",
+   "zip5": "29577",
+   "licensed": 122,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "CRC-2465",
+   "expires": "CRC-2465 / 09/30/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "ARBOR LANDING AT SURFSIDE",
+   "city": "Myrtle Beach",
+   "county": "Horry",
+   "zip5": "29588",
+   "licensed": 40,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": "C",
+   "license": "CRC-2279",
+   "expires": "CRC-2279 / 05/31/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "BRIGHTWATER ASSISTED LIVING",
+   "city": "Myrtle Beach",
+   "county": "Horry",
+   "zip5": "29579",
+   "licensed": 56,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "CRC-1489",
+   "expires": "CRC-1489 / 04/30/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "INDIGO AT CAROLINA FOREST",
+   "city": "Myrtle Beach",
+   "county": "Horry",
+   "zip5": "29577",
+   "licensed": 85,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "CRC-2135",
+   "expires": "CRC-2135 / 09/30/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "MYRTLE BEACH GROVE SENIOR LIVING",
+   "city": "Myrtle Beach",
+   "county": "Horry",
+   "zip5": "29588",
+   "licensed": 142,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": "C",
+   "license": "CRC-2215",
+   "expires": "CRC-2215 / 09/30/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "MYRTLE BEACH MANOR RETIREMENT COMMUNITY",
+   "city": "Myrtle Beach",
+   "county": "Horry",
+   "zip5": "29572",
+   "licensed": 111,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "CRC-2123",
+   "expires": "CRC-2123 / 01/31/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "PORTSIDE AT GRANDE DUNES",
+   "city": "Myrtle Beach",
+   "county": "Horry",
+   "zip5": "29572",
+   "licensed": 120,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": "A",
+   "license": "CRC-2259",
+   "expires": "CRC-2259 / 02/28/2027"
+  },
+  {
+   "type": "assisted living (CRCF)",
+   "name": "REFLECTIONS AT CAROLINA FOREST",
+   "city": "Myrtle Beach",
+   "county": "Horry",
+   "zip5": "29579",
+   "licensed": 42,
+   "alzheimer_unit": "Y",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "CRC-1456",
+   "expires": "CRC-1456 / 11/30/2027"
+  },
+  {
+   "type": "hospice facility",
+   "name": "EMBRACE HOSPICE HOUSE",
+   "city": "Myrtle Beach",
+   "county": "Horry",
+   "zip5": "29579",
+   "licensed": 36,
+   "alzheimer_unit": null,
+   "alzheimer_care": null,
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "HPF-0047",
+   "expires": "HPF-0047 / 06/30/2027"
+  },
+  {
+   "type": "nursing home",
+   "name": "GEORGETOWN NURSING CENTER",
+   "city": "Georgetown",
+   "county": "Georgetown",
+   "zip5": "29440",
+   "licensed": 84,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "Y",
+   "cms_certified": null,
+   "evacuation_zone": "A",
+   "license": "NCF-1119",
+   "expires": "NCF-1119 / 05/31/2027"
+  },
+  {
+   "type": "nursing home",
+   "name": "PRINCE GEORGE HEALTHCARE CENTER",
+   "city": "Georgetown",
+   "county": "Georgetown",
+   "zip5": "29440",
+   "licensed": 148,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": "Y",
+   "evacuation_zone": "A",
+   "license": "NCF-0930",
+   "expires": "NCF-0930 / 09/30/2027"
+  },
+  {
+   "type": "nursing home",
+   "name": "LAKES AT LITCHFIELD SKILLED NURSING CENTER",
+   "city": "Pawleys Island",
+   "county": "Georgetown",
+   "zip5": "29585",
+   "licensed": 24,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": "Y",
+   "evacuation_zone": "B",
+   "license": "NCF-0843",
+   "expires": "NCF-0843 / 12/31/2026"
+  },
+  {
+   "type": "nursing home",
+   "name": "COMPASS POST ACUTE REHABILITATION",
+   "city": "Conway",
+   "county": "Horry",
+   "zip5": "29527",
+   "licensed": 95,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "NCF-0977",
+   "expires": "NCF-0977 / 12/31/2026"
+  },
+  {
+   "type": "nursing home",
+   "name": "OAK VIEW HEALTH AND REHABILITATION",
+   "city": "Conway",
+   "county": "Horry",
+   "zip5": "29527",
+   "licensed": 190,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "NCF-1074",
+   "expires": "NCF-1074 / 05/31/2027"
+  },
+  {
+   "type": "nursing home",
+   "name": "PRUITTHEALTH - CONWAY AT CONWAY MEDICAL CENTER",
+   "city": "Conway",
+   "county": "Horry",
+   "zip5": "29526",
+   "licensed": 88,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": null,
+   "license": "NCF-1007",
+   "expires": "NCF-1007 / 10/31/2027"
+  },
+  {
+   "type": "nursing home",
+   "name": "LORIS REHAB AND NURSING CENTER",
+   "city": "Loris",
+   "county": "Horry",
+   "zip5": "29569",
+   "licensed": 88,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": "Y",
+   "evacuation_zone": null,
+   "license": "NCF-0207",
+   "expires": "NCF-0207 / 08/31/2027"
+  },
+  {
+   "type": "nursing home",
+   "name": "NHC HEALTHCARE GARDEN CITY",
+   "city": "Murrells Inlet",
+   "county": "Horry",
+   "zip5": "29576",
+   "licensed": 148,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": "Y",
+   "evacuation_zone": "C",
+   "license": "NCF-0825",
+   "expires": "NCF-0825 / 10/31/2027"
+  },
+  {
+   "type": "nursing home",
+   "name": "ANGEL OAK NURSING AND REHABILITATION CENTER",
+   "city": "Myrtle Beach",
+   "county": "Horry",
+   "zip5": "29588",
+   "licensed": 88,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": "C",
+   "license": "NCF-1046",
+   "expires": "NCF-1046 / 05/31/2027"
+  },
+  {
+   "type": "nursing home",
+   "name": "BRIGHTWATER SKILLED NURSING CENTER",
+   "city": "Myrtle Beach",
+   "county": "Horry",
+   "zip5": "29579",
+   "licensed": 67,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": "Y",
+   "evacuation_zone": null,
+   "license": "NCF-0955",
+   "expires": "NCF-0955 / 04/30/2027"
+  },
+  {
+   "type": "nursing home",
+   "name": "MYRTLE BEACH MANOR",
+   "city": "Myrtle Beach",
+   "county": "Horry",
+   "zip5": "29572",
+   "licensed": 60,
+   "alzheimer_unit": "N",
+   "alzheimer_care": "N",
+   "cms_certified": null,
+   "evacuation_zone": "B",
+   "license": "NCF-1041",
+   "expires": "NCF-1041 / 12/31/2027"
+  }
+ ],
+ "by_town": [
+  {
+   "county": "Horry",
+   "city": "Myrtle Beach",
+   "adc": 1,
+   "al": 8,
+   "al_beds": 718,
+   "al_memory_units": 8,
+   "nh": 3,
+   "nh_beds": 215
+  },
+  {
+   "county": "Horry",
+   "city": "Murrells Inlet",
+   "nh": 1,
+   "nh_beds": 148,
+   "al": 4,
+   "al_beds": 393,
+   "al_memory_units": 3
+  },
+  {
+   "county": "Horry",
+   "city": "Little River",
+   "al": 3,
+   "al_beds": 260,
+   "al_memory_units": 2
+  },
+  {
+   "county": "Horry",
+   "city": "Conway",
+   "al": 5,
+   "al_beds": 248,
+   "nh": 3,
+   "nh_beds": 373,
+   "adc": 1
+  },
+  {
+   "county": "Horry",
+   "city": "Loris",
+   "nh": 1,
+   "nh_beds": 88,
+   "adc": 1
+  },
+  {
+   "county": "Georgetown",
+   "city": "Pawleys Island",
+   "nh": 1,
+   "nh_beds": 24,
+   "al": 2,
+   "al_beds": 179,
+   "al_memory_units": 2
+  },
+  {
+   "county": "Georgetown",
+   "city": "Georgetown",
+   "nh": 2,
+   "nh_beds": 232,
+   "al": 4,
+   "al_beds": 148,
+   "adc": 2
+  },
+  {
+   "county": "Georgetown",
+   "city": "Murrells Inlet",
+   "al": 1,
+   "al_beds": 62,
+   "al_memory_units": 1
+  },
+  {
+   "county": "Georgetown",
+   "city": "Hemingway",
+   "al": 1,
+   "al_beds": 21
+  }
+ ],
+ "totals": {
+  "horry": {
+   "adc": 3,
+   "al": 20,
+   "al_beds": 1619,
+   "al_memory_units": 13,
+   "nh": 8,
+   "nh_beds": 824
+  },
+  "georgetown": {
+   "nh": 3,
+   "nh_beds": 256,
+   "al": 8,
+   "al_beds": 410,
+   "al_memory_units": 3,
+   "adc": 2
+  },
+  "both": {
+   "adc": 5,
+   "al": 28,
+   "al_beds": 2029,
+   "al_memory_units": 16,
+   "nh": 11,
+   "nh_beds": 1080
+  },
+  "grand_strand_towns": {
+   "al": 23,
+   "al_beds": 1860,
+   "nh": 9,
+   "nh_beds": 848,
+   "adc": 3,
+   "al_memory_units": 16
+  }
+ },
+ "statewide_crcf": {
+  "count": 427,
+  "beds": 21152,
+  "horry_count": 20,
+  "horry_beds": 1619,
+  "alz_units": 139,
+  "rank_by_beds": [
+   [
+    "Greenville",
+    2604
+   ],
+   [
+    "Charleston",
+    2412
+   ],
+   [
+    "Horry",
+    1619
+   ],
+   [
+    "Richland",
+    1404
+   ],
+   [
+    "Lexington",
+    1400
+   ],
+   [
+    "York",
+    1392
+   ],
+   [
+    "Spartanburg",
+    1363
+   ],
+   [
+    "Beaufort",
+    1058
+   ]
+  ]
+ },
+ "ccrc": {
+  "statewide": 33,
+  "grand_strand": [
+   {
+    "name": "Brightwater Retirement Community",
+    "city": "Myrtle Beach"
+   },
+   {
+    "name": "The Lakes at Litchfield Retirement Community",
+    "city": "Pawleys Island"
+   }
+  ]
+ },
+ "hud_elderly": [
+  {
+   "name": "MILLNER ELDERLY HOUSING, INC.",
+   "city": "Georgetown",
+   "county": "Georgetown",
+   "units": 48,
+   "group": "Wholly Elderly Housekeeping"
+  },
+  {
+   "name": "ST. ELIZABETH PLACE",
+   "city": "Pawleys Island",
+   "county": "Georgetown",
+   "units": 48,
+   "group": "Elderly"
+  },
+  {
+   "name": "PLANTATION APARTMENTS",
+   "city": "Myrtle Beach",
+   "county": "Horry",
+   "units": 110,
+   "group": "Partially elderly handicapped"
+  },
+  {
+   "name": "JEFFERSON PLACE",
+   "city": "Myrtle Beach",
+   "county": "Horry",
+   "units": 41,
+   "group": "Wholly Elderly Housekeeping"
+  },
+  {
+   "name": "NOEL VILLA APARTMENTS",
+   "city": "Conway",
+   "county": "Horry",
+   "units": 49,
+   "group": "Elderly"
+  },
+  {
+   "name": "Watsons Place",
+   "city": "Loris",
+   "county": "Horry",
+   "units": 28,
+   "group": "Elderly"
+  }
+ ]
+}

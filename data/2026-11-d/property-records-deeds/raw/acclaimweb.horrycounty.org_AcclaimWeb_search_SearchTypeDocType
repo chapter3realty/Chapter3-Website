@@ -1,0 +1,179 @@
+<!DOCTYPE html> 
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><title>
+	Horry County Records Search
+</title><meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <!--[if IE 9]><link rel="stylesheet" type="text/css" media="screen" href="/Content/ie9specific.css" /><![endif]-->
+    <!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/Content/ie8specific.css" /><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/Content/ie7specific.css" /><![endif]-->
+    <link href="/Content/common.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="/Scripts/jquery-latest.pack.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-migrate-3.3.0.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/kendo/2023.1.117/kendo.all.min.js" ></script>
+    <script type="text/javascript" src="/Scripts/kendo/2023.1.117/kendo.aspnetmvc.min.js" ></script>
+    <link href="/Content/kendo/kendo.common.min.css" rel="stylesheet" type="text/css" /><link href="/Content/kendo/kendo.Office365.min.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery.hoverIntent.js"></script>
+	<script type="text/javascript" src="/Scripts/jquery.cookie.js"></script>	
+	<script type="text/javascript" src="/Scripts/AcclaimCommon.js" ></script>
+    <script type="text/javascript" src="/Scripts/AcclaimCustom.js" ></script>
+    
+	
+    <script type="text/javascript" src="/Scripts/jquery-latest.pack.js"></script>
+	<script type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.hoverIntent.js"></script>
+	<script type="text/javascript" src="/Scripts/jquery.cookie.js"></script>	
+    <script type="text/javascript" src="/Scripts/AcclaimCommon.js" ></script>
+    <script type="text/javascript" src="/Scripts/AcclaimCustom.js" ></script>
+    <link href="../App_Themes/Horry/Site.css" type="text/css" rel="stylesheet" /></head> 
+
+    <!-- .Combined(true)
+        .Compress(true)-->
+<body>
+    <div class="page">
+        <header id="pageheader">
+            <div id="header">
+                
+
+<div class="navigationBar" style="display:none;">
+
+                <div style="border-right: thin solid #ccc;">Welcome <i>Guest</i></div>
+         
+        <div><a href="/AcclaimWeb/OnlineOrders/Cart" class="MasterNavigationButtonStyle">
+          <span id="NavCartInfoSpan"></span> 
+             
+                     <img src="/AcclaimWeb/Content/Images/shopping_cart_icon.png"  alt="Shopping Cart" style="border:none;" title="Shopping Cart" />
+                  
+              </a></div>
+ 
+</div>
+
+            <div id="home">
+                <a href="#" title="County Homepage" onclick="window.open('https://www.horrycounty.org/Departments/Register-of-Deeds')"> </a>
+            </div>
+            
+            <input type="hidden" id="resxHeaderLogo" value=""/>
+            <input type="hidden" id="resxLogoAlign"  value=""/>
+            <input type="hidden" id="resxLogoTitle"  value=""/>
+            <input type="hidden" id="resxHeaderBackroundColor"  value=""/> 
+            </div>
+             <div id="submenucontainer">
+                
+
+<script>
+    var EcommerceEnabled = true;
+    var EnableFbnDownload = false;
+    var Agent = false;    
+</script>
+
+<div>
+    <ul class="k-widget k-reset k-header k-menu" id="Menu"><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/"><img alt="image" class="k-image" src="/AcclaimWeb/Content/Images/searchMenu.png" /><span class="k-menu-link-text">Official Records</span><span class="k-menu-expand-arrow"><span class="k-icon k-i-arrow-s k-menu-expand-arrow-icon"></span></span></a><ul class="k-group k-menu-group k-reset k-menu-group-md"><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeName"><span class="k-menu-link-text">Name</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeBookPage"><span class="k-menu-link-text">Book/Page</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeDocLegal"><span class="k-menu-link-text">New Legal Description</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeComments"><span class="k-menu-link-text">Legal Description/Memo</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeDocType"><span class="k-menu-link-text">Document Type</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeConsideration"><span class="k-menu-link-text">Consideration</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeRecordDate"><span class="k-menu-link-text">Record Date</span></a></li></ul></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/Support"><img alt="image" class="k-image" src="/AcclaimWeb/Content/images/supportMenu.png" /><span class="k-menu-link-text">Support</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/Search/Settings"><img alt="image" class="k-image" src="/AcclaimWeb/Content/images/imageTools24.png" /><span class="k-menu-link-text">Settings</span></a></li><li class="k-item" style="float: right; border-right: 0;"><a class="k-link k-menu-link" href="/AcclaimWeb/Login"><img alt="image" class="k-image" src="/AcclaimWeb/Content/Images/logout.png" /><span class="k-menu-link-text">Login</span></a></li></ul><script>
+	kendo.syncReady(function(){jQuery("#Menu").kendoMenu({});});
+</script>    
+</div>
+<noscript>
+    <div>
+        <h2 style="color: White;background-color:Red;"> You must enable Javascript to continue. Click 
+            <a href='Support' style="color: White;background-color:Red;text-decoration:underline">here</a> for help on how to enable Javascript. </h2>
+    </div>
+</noscript>
+<script> function addBlankTargetToLink(obj) {
+     obj.attributes("target", "_blank");
+}</script>
+<div id="cookiesDisabled" style="display:none">
+    <h2 style="color: White;background-color:Red;"> You must enable Cookies to continue. Click 
+        <a href='Support' style="color: White;background-color:Red;text-decoration:underline">here</a> for help on how to enable browser cookies. </h2>
+</div>
+
+
+            </div>
+        </header>
+    </div>    
+    <main id="mainBack">
+        <div id="main">
+            <div id="mainForm" tabindex="0">
+                
+    
+    <div id="divSimpleTwoColumn" style="margin-top: 20px;">
+
+    <div style="padding: 0 10px; text-align:justify;">
+        <div class="ItemTitle t-header" style="margin-left: -15px;">Disclaimer</div>
+            <p>
+                The County presents the information on this web site as a service to the public.
+                We have tried to ensure that the information contained in this electronic search
+                system is accurate. County makes no warranty or guarantee concerning the accuracy
+                or reliability of the content at this site or at other sites to which we link. Assessing
+                accuracy and reliability of information is the responsibility of the user. The user
+                is advised to search on all possible spelling variations of proper names, in order
+                to maximize search results.</p>
+            <p>
+                The County shall not be liable for errors contained herein or for any damages in
+                connection with the use of the information contained herein.
+            </p>
+            <p>
+                If you choose not to accept the conditions stated above please exit this search
+                application.
+            </p> 
+        </div>
+    <div style="font-family: Verdana; color: Green; font-size: 11pt; width:100%; text-align:left;">
+    <form action="/AcclaimWeb/Search/Disclaimer?st=/AcclaimWeb/search/SearchTypeDocType" method="post">
+        <input type="hidden" name="disclaimer" value="true" />
+        <div style="text-align: right"><input type="submit" id="btnButton" value="I accept the conditions above." class="t-button" /></div>
+    </form>
+        <div class="ImportantMessageDiv AlertMessage" style="display: block; width: 925px;">
+            
+
+<div class="Alert AlertMessage">
+
+    <div class="AlertTitle AlertTitleMessage" style="font-size: 1em; 
+    font-weight: bold; color: white; background-color: #b30000; text-align: left;padding-left:5px ">
+        Important Message
+    </div>
+    <div class="AlertText AlertTextMessage" style="text-align: left;font-size: 1em;color: #444; background-color: white; ">
+     <p>
+       &nbsp;
+        <strong><u>Removal of redaction bars is granted upon purchase for 24 hours.  After that time the document will revert to it's prepurchased state and redaction bars will show again.</u></strong> 
+
+<br /><br /> If you wish to update your account information (contact info, password, etc.) you will need to contact our office via written request. This request needs to be via mail, or email only. 
+
+<br /><br /> Please include your account number, along with the relevant change you wish to have made. It must also come from the contact information on file for your account, otherwise the request will be returned to you stating the information is incorrect.
+
+<br /><br /> Our office may contact you regarding your request to ensure it is properly handled in the manner you requested.<br /><br /><a href="https://www.horrycountysc.gov/departments/register-of-deeds/#contact">Register of Deeds Contact Information</a>
+    </p>
+    </div>
+</div>
+
+        </div>
+    </div></div>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        
+<div id="footer" class="t-header">
+<div id="BrandFooter"></div>
+        Copyright 2026 &copy;  Acclaim, is a registered trademark of HARRIS RECORDING SOLUTIONS
+        |  <span style="text-decoration: underline;"><a href="https://www.horrycountysc.gov/departments/register-of-deeds/" class="t-link">Contact Us</a></span>
+    </div>
+
+    </footer>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        mainHieght();
+        window.name = 'AcclaimwebMainWindow';
+        if (!IsCookiesFeatureEnabled()) { $('#cookiesDisabled').show(); }
+    })
+    window.onresize = function () {
+        mainHieght();
+    }   
+</script>
+</body>
+
+</html>

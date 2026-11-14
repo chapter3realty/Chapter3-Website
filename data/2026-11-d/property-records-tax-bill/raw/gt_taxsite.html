@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="avalonCMS">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    <meta name="{{ page.Description ? 'description' : 'dynamic' }}" content="{{ page.Description }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/images/mobile/appleTouch57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/mobile/appleTouch72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/mobile/appleTouch114.png" />
+    <title ng-bind="page.Title">Loading...</title>    
+
+    <script type="text/javascript">
+        if(window.location.protocol!="https:"){var img=document.createElement("img");img.src="https://"+window.location.hostname+"/sniTest.gif";img.onload=function(){window.location.href=window.location.href.replace("http:", "https:")};img.style.display="none";document.body.appendChild(img)}
+    </script>
+
+    <script type="text/javascript">
+        var appInsights=window.appInsights||function(a){
+        function b(a){c[a]=function(){var b=arguments;c.queue.push(function(){c[a].apply(c,b)})}}var c={config:a},d=document,e=window;setTimeout(function(){var b=d.createElement("script");b.src=a.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js",d.getElementsByTagName("script")[0].parentNode.appendChild(b)});try{c.cookie=d.cookie}catch(a){}c.queue=[];for(var f=["Event","Exception","Metric","PageView","Trace","Dependency"];f.length;)b("track"+f.pop());if(b("setAuthenticatedUserContext"),b("clearAuthenticatedUserContext"),b("startTrackEvent"),b("stopTrackEvent"),b("startTrackPage"),b("stopTrackPage"),b("flush"),!a.disableExceptionTracking){f="onerror",b("_"+f);var g=e[f];e[f]=function(a,b,d,e,h){var i=g&&g(a,b,d,e,h);return!0!==i&&c["_"+f](a,b,d,e,h),i}}return c
+        }({
+            instrumentationKey:"d021b713-5928-4e28-9cf9-72c496cd1d11"
+        });
+
+        window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
+	</script>	
+
+    <link rel="stylesheet" href="//d1ebsyxxbc7tep.cloudfront.net/resources.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="/css/styles.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .ada-hidden-link {
+            position: fixed;
+            top: -40px;
+            left: 0;
+            background: #fff;
+            color: #23527c;
+            padding: 8px 16px;
+            z-index: 1000;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .ada-hidden-link:focus,
+        .ada-hidden-link:hover {
+            top: 0;
+            color: #2b825c;
+            border: 4px solid #2b825c;
+        }
+    </style>
+    <!--[if lte IE 9]>
+        <script src="//d1ebsyxxbc7tep.cloudfront.net/xdomain.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <a href="#content" class="ada-hidden-link">Skip to main content</a>
+    <a href="https://catalisgov.com/accessibility-policy/" aria-label="Accessibility Statement (Opens in a new window)" class="ada-hidden-link" target="_blank">Accessibility Statement</a>
+    <ng-include src="adminTemplate"></ng-include>
+    <ng-view></ng-view>    
+    <!--[if lte IE 9]>
+        <script type="text/javascript">
+            xdomain.slaves({ "https://d1ebsyxxbc7tep.cloudfront.net" : "/proxy.html?master=" + location.href });
+            xdomain.slaves({ "https://avalon.sturgiswebservices.com" : "/proxy.html?master=" + location.href });
+        </script>
+    <![endif]-->    
+    <script src="//d1ebsyxxbc7tep.cloudfront.net/resources.min.js"></script>
+    <script src="/avalonCMS.js"></script> 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!--AvalonEmbedJSHere-->
+    <script defer>
+        $(function() {
+            $('.ada-hidden-link').first().on('click', function(e) {
+                e.preventDefault();
+                var $main = $('#content');
+                if ($main.length) {
+                    $main.focus();
+                    $main[0].scrollIntoView();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

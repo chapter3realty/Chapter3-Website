@@ -1,0 +1,822 @@
+{
+ "pulled": "2026-11-13T04:46:12.251309+00:00",
+ "api": "https://chapter3realty.com/homes/api/map?type=land&has=county_..&min=..&max=..",
+ "status": "for sale (the API's default)",
+ "note": "listing asks, not sales; each listing agent's acres and flags",
+ "totals": {
+  "land_all_feed": 1191,
+  "land_horry": 763,
+  "land_georgetown": 172,
+  "manufactured_horry": 414,
+  "house_horry": 2965
+ },
+ "split_check": {
+  "county_horry": {
+   "unsplit_total": 763,
+   "pins_read": 763
+  },
+  "county_georgetown": {
+   "unsplit_total": 172,
+   "pins_read": 172
+  }
+ },
+ "by_county": {
+  "county_horry": {
+   "listings": 763,
+   "with_acres": 759,
+   "median_ask": 195000.0,
+   "ask_p25": 75000.0,
+   "ask_p75": 503646.5,
+   "median_acres": 1.67,
+   "acres_p25": 0.515,
+   "acres_p75": 5.859999999999999,
+   "median_ask_per_acre": 78235.29411764706,
+   "ppa_p25": 30000.0,
+   "ppa_p75": 393673.54845851555,
+   "one_acre_or_more": 484,
+   "median_ask_per_acre_one_acre_plus": 39591.26984126984,
+   "ten_acres_or_more": 146
+  },
+  "county_georgetown": {
+   "listings": 172,
+   "with_acres": 172,
+   "median_ask": 159000.0,
+   "ask_p25": 69425.0,
+   "ask_p75": 399250.0,
+   "median_acres": 0.785,
+   "acres_p25": 0.2675,
+   "acres_p75": 3.015,
+   "median_ask_per_acre": 249218.75,
+   "ppa_p25": 42559.52380952382,
+   "ppa_p75": 594121.7261904762,
+   "one_acre_or_more": 77,
+   "median_ask_per_acre_one_acre_plus": 41117.64705882353,
+   "ten_acres_or_more": 17
+  }
+ },
+ "by_area": {
+  "aynor_galivants_ferry": {
+   "listings": 54,
+   "with_acres": 54,
+   "median_ask": 122500.0,
+   "ask_p25": 79900.0,
+   "ask_p75": 349750.0,
+   "median_acres": 4.035,
+   "acres_p25": 1.8475000000000001,
+   "acres_p75": 9.7425,
+   "median_ask_per_acre": 39950.0,
+   "ppa_p25": 27354.960928250057,
+   "ppa_p75": 50837.24856849215,
+   "one_acre_or_more": 50,
+   "median_ask_per_acre_one_acre_plus": 39644.15233177911,
+   "ten_acres_or_more": 12,
+   "zips": [
+    "29511",
+    "29544"
+   ]
+  },
+  "loris_green_sea_nichols": {
+   "listings": 266,
+   "with_acres": 266,
+   "median_ask": 90950.0,
+   "ask_p25": 54900.0,
+   "ask_p75": 279000.0,
+   "median_acres": 2.45,
+   "acres_p25": 1.0725,
+   "acres_p75": 10.0,
+   "median_ask_per_acre": 32698.704103671706,
+   "ppa_p25": 20903.339532412327,
+   "ppa_p75": 62619.86958189489,
+   "one_acre_or_more": 212,
+   "median_ask_per_acre_one_acre_plus": 25000.0,
+   "ten_acres_or_more": 70,
+   "zips": [
+    "29569",
+    "29545",
+    "29581"
+   ]
+  },
+  "conway": {
+   "listings": 151,
+   "with_acres": 151,
+   "median_ask": 227500.0,
+   "ask_p25": 75000.0,
+   "ask_p75": 699500.0,
+   "median_acres": 2.28,
+   "acres_p25": 0.56,
+   "acres_p75": 8.719999999999999,
+   "median_ask_per_acre": 90497.73755656109,
+   "ppa_p25": 38417.832167832166,
+   "ppa_p75": 257891.0358322123,
+   "one_acre_or_more": 97,
+   "median_ask_per_acre_one_acre_plus": 51255.23012552301,
+   "ten_acres_or_more": 35,
+   "zips": [
+    "29526",
+    "29527",
+    "29528"
+   ]
+  },
+  "longs": {
+   "listings": 37,
+   "with_acres": 37,
+   "median_ask": 539000.0,
+   "ask_p25": 99900.0,
+   "ask_p75": 1200000.0,
+   "median_acres": 4.7,
+   "acres_p25": 1.98,
+   "acres_p75": 11.0,
+   "median_ask_per_acre": 87631.57894736843,
+   "ppa_p25": 42732.558139534885,
+   "ppa_p75": 226190.4761904762,
+   "one_acre_or_more": 31,
+   "median_ask_per_acre_one_acre_plus": 73013.69863013699,
+   "ten_acres_or_more": 10,
+   "zips": [
+    "29568"
+   ]
+  },
+  "little_river": {
+   "listings": 49,
+   "with_acres": 45,
+   "median_ask": 160000.0,
+   "ask_p25": 99000.0,
+   "ask_p75": 530000.0,
+   "median_acres": 0.7,
+   "acres_p25": 0.3,
+   "acres_p75": 1.25,
+   "median_ask_per_acre": 434131.73652694613,
+   "ppa_p25": 170689.6551724138,
+   "ppa_p75": 555333.3333333334,
+   "one_acre_or_more": 17,
+   "median_ask_per_acre_one_acre_plus": 264705.8823529412,
+   "ten_acres_or_more": 3,
+   "zips": [
+    "29566"
+   ]
+  },
+  "north_myrtle_beach": {
+   "listings": 38,
+   "with_acres": 38,
+   "median_ask": 277750.0,
+   "ask_p25": 144500.0,
+   "ask_p75": 1012250.0,
+   "median_acres": 0.28,
+   "acres_p25": 0.1325,
+   "acres_p75": 0.975,
+   "median_ask_per_acre": 1072355.7692307692,
+   "ppa_p25": 463618.25980392157,
+   "ppa_p75": 1921743.6974789915,
+   "one_acre_or_more": 10,
+   "median_ask_per_acre_one_acre_plus": 50000.0,
+   "ten_acres_or_more": 7,
+   "zips": [
+    "29582"
+   ]
+  },
+  "myrtle_beach_carolina_forest_socastee": {
+   "listings": 133,
+   "with_acres": 133,
+   "median_ask": 225000.0,
+   "ask_p25": 149900.0,
+   "ask_p75": 525000.0,
+   "median_acres": 0.56,
+   "acres_p25": 0.24,
+   "acres_p75": 1.88,
+   "median_ask_per_acre": 510208.3333333334,
+   "ppa_p25": 215384.61538461538,
+   "ppa_p75": 865671.6417910447,
+   "one_acre_or_more": 52,
+   "median_ask_per_acre_one_acre_plus": 152001.97628458496,
+   "ten_acres_or_more": 6,
+   "zips": [
+    "29572",
+    "29577",
+    "29579",
+    "29588"
+   ]
+  },
+  "murrells_inlet_garden_city": {
+   "listings": 40,
+   "with_acres": 40,
+   "median_ask": 312450.0,
+   "ask_p25": 195000.0,
+   "ask_p75": 1056250.0,
+   "median_acres": 0.755,
+   "acres_p25": 0.4475,
+   "acres_p75": 1.53,
+   "median_ask_per_acre": 576189.880952381,
+   "ppa_p25": 271037.9464285714,
+   "ppa_p75": 839765.5949625329,
+   "one_acre_or_more": 15,
+   "median_ask_per_acre_one_acre_plus": 302424.24242424243,
+   "ten_acres_or_more": 3,
+   "zips": [
+    "29576"
+   ]
+  },
+  "surfside_beach": {
+   "listings": 15,
+   "with_acres": 15,
+   "median_ask": 650000.0,
+   "ask_p25": 462500.0,
+   "ask_p75": 749500.0,
+   "median_acres": 0.57,
+   "acres_p25": 0.125,
+   "acres_p75": 1.81,
+   "median_ask_per_acre": 983333.3333333334,
+   "ppa_p25": 448423.81101376726,
+   "ppa_p75": 3998868.7782805427,
+   "one_acre_or_more": 5,
+   "median_ask_per_acre_one_acre_plus": 250000.00000000003,
+   "ten_acres_or_more": 0,
+   "zips": [
+    "29575"
+   ]
+  },
+  "pawleys_island": {
+   "listings": 35,
+   "with_acres": 35,
+   "median_ask": 430000.0,
+   "ask_p25": 262500.0,
+   "ask_p75": 799000.0,
+   "median_acres": 1.13,
+   "acres_p25": 0.45499999999999996,
+   "acres_p75": 2.02,
+   "median_ask_per_acre": 353982.3008849558,
+   "ppa_p25": 283782.7715355805,
+   "ppa_p75": 711688.3116883116,
+   "one_acre_or_more": 19,
+   "median_ask_per_acre_one_acre_plus": 341552.79503105587,
+   "ten_acres_or_more": 0,
+   "zips": [
+    "29585"
+   ]
+  },
+  "other": {
+   "listings": 117,
+   "with_acres": 117,
+   "median_ask": 99900.0,
+   "ask_p25": 49900.0,
+   "ask_p75": 210000.0,
+   "median_acres": 0.77,
+   "acres_p25": 0.21,
+   "acres_p75": 4.65,
+   "median_ask_per_acre": 115584.41558441558,
+   "ppa_p25": 24950.0,
+   "ppa_p75": 370967.7419354839,
+   "one_acre_or_more": 53,
+   "median_ask_per_acre_one_acre_plus": 22413.793103448275,
+   "ten_acres_or_more": 17,
+   "zips": "rest"
+  }
+ },
+ "horry_by_size": {
+  "under_half_acre": {
+   "listings": 158,
+   "with_acres": 158,
+   "median_ask": 141450.0,
+   "ask_p25": 79900.0,
+   "ask_p75": 249900.0,
+   "median_acres": 0.24,
+   "acres_p25": 0.16,
+   "acres_p75": 0.32,
+   "median_ask_per_acre": 686274.5098039216,
+   "ppa_p25": 352974.38330170774,
+   "ppa_p75": 1257500.0,
+   "one_acre_or_more": 0,
+   "median_ask_per_acre_one_acre_plus": null,
+   "ten_acres_or_more": 0
+  },
+  "half_to_1": {
+   "listings": 117,
+   "with_acres": 117,
+   "median_ask": 75000.0,
+   "ask_p25": 50000.0,
+   "ask_p75": 250000.0,
+   "median_acres": 0.67,
+   "acres_p25": 0.51,
+   "acres_p75": 0.83,
+   "median_ask_per_acre": 139800.0,
+   "ppa_p25": 70000.0,
+   "ppa_p75": 428571.4285714285,
+   "one_acre_or_more": 0,
+   "median_ask_per_acre_one_acre_plus": null,
+   "ten_acres_or_more": 0
+  },
+  "1_to_5": {
+   "listings": 267,
+   "with_acres": 267,
+   "median_ask": 99900.0,
+   "ask_p25": 66450.0,
+   "ask_p75": 340000.0,
+   "median_acres": 2.0,
+   "acres_p25": 1.33,
+   "acres_p75": 2.865,
+   "median_ask_per_acre": 53823.529411764706,
+   "ppa_p25": 32350.219255186857,
+   "ppa_p75": 165833.3333333333,
+   "one_acre_or_more": 267,
+   "median_ask_per_acre_one_acre_plus": 53823.529411764706,
+   "ten_acres_or_more": 0
+  },
+  "5_to_20": {
+   "listings": 112,
+   "with_acres": 112,
+   "median_ask": 275000.0,
+   "ask_p25": 169900.0,
+   "ask_p75": 749250.0,
+   "median_acres": 8.555,
+   "acres_p25": 6.0,
+   "acres_p75": 12.0,
+   "median_ask_per_acre": 30000.0,
+   "ppa_p25": 21734.197196645902,
+   "ppa_p75": 79847.24318628428,
+   "one_acre_or_more": 112,
+   "median_ask_per_acre_one_acre_plus": 30000.0,
+   "ten_acres_or_more": 41
+  },
+  "20_plus": {
+   "listings": 105,
+   "with_acres": 105,
+   "median_ask": 899900.0,
+   "ask_p25": 539900.0,
+   "ask_p75": 1795000.0,
+   "median_acres": 45.0,
+   "acres_p25": 27.0,
+   "acres_p75": 74.0,
+   "median_ask_per_acre": 18897.63779527559,
+   "ppa_p25": 11160.714285714286,
+   "ppa_p75": 35087.71929824561,
+   "one_acre_or_more": 105,
+   "median_ask_per_acre_one_acre_plus": 18897.63779527559,
+   "ten_acres_or_more": 105
+  }
+ },
+ "horry_no_acres": 4,
+ "by_size_all": {
+  "under_half_acre": {
+   "listings": 227,
+   "with_acres": 227,
+   "median_ask": 129900.0,
+   "ask_p25": 72000.0,
+   "ask_p75": 241950.0,
+   "median_acres": 0.23,
+   "acres_p25": 0.16,
+   "acres_p75": 0.32,
+   "median_ask_per_acre": 590454.5454545454,
+   "ppa_p25": 304910.71428571426,
+   "ppa_p75": 1145104.895104895,
+   "one_acre_or_more": 0,
+   "median_ask_per_acre_one_acre_plus": null,
+   "ten_acres_or_more": 0
+  },
+  "half_to_1": {
+   "listings": 143,
+   "with_acres": 143,
+   "median_ask": 89000.0,
+   "ask_p25": 50000.0,
+   "ask_p75": 327450.0,
+   "median_acres": 0.68,
+   "acres_p25": 0.54,
+   "acres_p75": 0.835,
+   "median_ask_per_acre": 156862.74509803922,
+   "ppa_p25": 71946.16977225672,
+   "ppa_p75": 496588.3116883117,
+   "one_acre_or_more": 0,
+   "median_ask_per_acre_one_acre_plus": null,
+   "ten_acres_or_more": 0
+  },
+  "1_to_5": {
+   "listings": 314,
+   "with_acres": 314,
+   "median_ask": 100000.0,
+   "ask_p25": 66175.0,
+   "ask_p75": 399675.0,
+   "median_acres": 2.0,
+   "acres_p25": 1.33,
+   "acres_p75": 3.0,
+   "median_ask_per_acre": 59049.01215805471,
+   "ppa_p25": 33000.0,
+   "ppa_p75": 214970.45875810937,
+   "one_acre_or_more": 314,
+   "median_ask_per_acre_one_acre_plus": 59049.01215805471,
+   "ten_acres_or_more": 0
+  },
+  "5_to_20": {
+   "listings": 133,
+   "with_acres": 133,
+   "median_ask": 250000.0,
+   "ask_p25": 150000.0,
+   "ask_p75": 650000.0,
+   "median_acres": 8.51,
+   "acres_p25": 6.0,
+   "acres_p75": 12.0,
+   "median_ask_per_acre": 26500.0,
+   "ppa_p25": 19000.0,
+   "ppa_p75": 76538.46153846153,
+   "one_acre_or_more": 133,
+   "median_ask_per_acre_one_acre_plus": 26500.0,
+   "ten_acres_or_more": 49
+  },
+  "20_plus": {
+   "listings": 114,
+   "with_acres": 114,
+   "median_ask": 886000.0,
+   "ask_p25": 469823.25,
+   "ask_p75": 1593750.0,
+   "median_acres": 44.0,
+   "acres_p25": 27.0,
+   "acres_p75": 69.75,
+   "median_ask_per_acre": 16681.818181818184,
+   "ppa_p25": 10764.293248945149,
+   "ppa_p75": 34922.34685073339,
+   "one_acre_or_more": 114,
+   "median_ask_per_acre_one_acre_plus": 16681.818181818184,
+   "ten_acres_or_more": 114
+  }
+ },
+ "horry_flags": {
+  "septic_approved": 177,
+  "septic": 196,
+  "public_water": 325,
+  "public_sewer": 267,
+  "well_water": 41,
+  "mobile_home_allowed": 111,
+  "agricultural_zoning": 350,
+  "flood_zone": 17,
+  "wetlands_lot": 0,
+  "wooded_lot": 348,
+  "cleared_lot": 281,
+  "hunting_land": 30,
+  "subdividable": 92,
+  "deed_restrictions": 74,
+  "rural": 461,
+  "outside_city_limits": 363,
+  "inside_city_limits": 76,
+  "acreage_lot": 506,
+  "public_road_frontage": 346,
+  "state_road_frontage": 102,
+  "county_road": 211,
+  "dirt_road": 77,
+  "private_road": 49,
+  "easement_access": 27,
+  "water_river": 8,
+  "creek_on_property": 13,
+  "pond_on_property": 52,
+  "horse_property": 9,
+  "zoned_commercial": 87,
+  "waterfront_lot": 53,
+  "rv_boat_parking": 51,
+  "no_hoa_fee": 666,
+  "lot_1_acres_plus": 484,
+  "lot_5_acres_plus": 217,
+  "lot_10_acres_plus": 146,
+  "lot_25_acres_plus": 86,
+  "lot_50_acres_plus": 43,
+  "lot_100_acres_plus": 17
+ },
+ "calls": 85,
+ "call_log": [
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land",
+   "total": 1191
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry",
+   "total": 763
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown",
+   "total": 172
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=manufactured&has=county_horry",
+   "total": 414
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=house&has=county_horry",
+   "total": 2965
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry",
+   "total": 763
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=0&max=50000000",
+   "total": 763
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=0&max=25000000",
+   "total": 763
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=0&max=12500000",
+   "total": 763
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=0&max=6250000",
+   "total": 757
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=0&max=3125000",
+   "total": 742
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=0&max=1562500",
+   "total": 705
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=0&max=781250",
+   "total": 633
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=0&max=390625",
+   "total": 536
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=0&max=195312",
+   "total": 382
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=0&max=97656",
+   "total": 255
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=0&max=48828",
+   "total": 72
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=48829&max=97656",
+   "total": 183
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=48829&max=73242",
+   "total": 106
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=73243&max=97656",
+   "total": 77
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=97657&max=195312",
+   "total": 127
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=195313&max=390625",
+   "total": 154
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=195313&max=292969",
+   "total": 104
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=292970&max=390625",
+   "total": 50
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=390626&max=781250",
+   "total": 97
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=781251&max=1562500",
+   "total": 72
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=1562501&max=3125000",
+   "total": 37
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=3125001&max=6250000",
+   "total": 15
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=6250001&max=12500000",
+   "total": 6
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=12500001&max=25000000",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&min=25000001&max=50000000",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown",
+   "total": 172
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown&min=0&max=50000000",
+   "total": 172
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown&min=0&max=25000000",
+   "total": 172
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown&min=0&max=12500000",
+   "total": 172
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown&min=0&max=6250000",
+   "total": 172
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown&min=0&max=3125000",
+   "total": 171
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown&min=0&max=1562500",
+   "total": 166
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown&min=0&max=781250",
+   "total": 150
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown&min=0&max=390625",
+   "total": 128
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown&min=390626&max=781250",
+   "total": 22
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown&min=781251&max=1562500",
+   "total": 16
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown&min=1562501&max=3125000",
+   "total": 5
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown&min=3125001&max=6250000",
+   "total": 1
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown&min=6250001&max=12500000",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown&min=12500001&max=25000000",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_georgetown&min=25000001&max=50000000",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cseptic_approved",
+   "total": 177
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cseptic",
+   "total": 196
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cpublic_water",
+   "total": 325
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cpublic_sewer",
+   "total": 267
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cwell_water",
+   "total": 41
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cmobile_home_allowed",
+   "total": 111
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cagricultural_zoning",
+   "total": 350
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cflood_zone",
+   "total": 17
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cwetlands_lot",
+   "total": 0
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cwooded_lot",
+   "total": 348
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Ccleared_lot",
+   "total": 281
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Chunting_land",
+   "total": 30
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Csubdividable",
+   "total": 92
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cdeed_restrictions",
+   "total": 74
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Crural",
+   "total": 461
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Coutside_city_limits",
+   "total": 363
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cinside_city_limits",
+   "total": 76
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cacreage_lot",
+   "total": 506
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cpublic_road_frontage",
+   "total": 346
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cstate_road_frontage",
+   "total": 102
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Ccounty_road",
+   "total": 211
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cdirt_road",
+   "total": 77
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cprivate_road",
+   "total": 49
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Ceasement_access",
+   "total": 27
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cwater_river",
+   "total": 8
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Ccreek_on_property",
+   "total": 13
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cpond_on_property",
+   "total": 52
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Chorse_property",
+   "total": 9
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Czoned_commercial",
+   "total": 87
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Cwaterfront_lot",
+   "total": 53
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry%2Crv_boat_parking",
+   "total": 51
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&hoa=0",
+   "total": 666
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&lotMin=1",
+   "total": 484
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&lotMin=5",
+   "total": 217
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&lotMin=10",
+   "total": 146
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&lotMin=25",
+   "total": 86
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&lotMin=50",
+   "total": 43
+  },
+  {
+   "url": "https://chapter3realty.com/homes/api/map?type=land&has=county_horry&lotMin=100",
+   "total": 17
+  }
+ ]
+}

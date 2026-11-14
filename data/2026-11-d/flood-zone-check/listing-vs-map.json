@@ -1,0 +1,295 @@
+{
+ "pulled": "2026-11-13T21:00:56.527650+00:00",
+ "source_listings": "Chapter3 map API (CCMLS active listings through the CRM), https://chapter3realty.com/homes/api/map",
+ "source_map": "Horry County GIS parcelapp MapServer layer 19 (FEMA flood zones, SFHA_TF='T'), layer 33 (county outline)",
+ "listing_field": "has=flood_zone: the Flood zone feature in our home search (idx-lib/features.js, Utilities group); the CRM builds its feature keys from each home's MLS fields, its description and its photos (idx-lib/map.js line 401)",
+ "api_totals_all": {
+  "house": 3706,
+  "townhouse": 361,
+  "condo": 2878,
+  "manufactured": 498
+ },
+ "api_totals_flagged": {
+  "house": 129,
+  "townhouse": 1,
+  "condo": 338,
+  "manufactured": 3
+ },
+ "pins_all": 7436,
+ "pins_flagged": 471,
+ "pins_with_point": 7436,
+ "truncated": [
+  [
+   "house",
+   229647,
+   230028,
+   17,
+   16
+  ],
+  [
+   "house",
+   389864,
+   390244,
+   25,
+   24
+  ],
+  [
+   "house",
+   398638,
+   399018,
+   14,
+   13
+  ],
+  [
+   "house",
+   528719,
+   529100,
+   6,
+   5
+  ],
+  [
+   "condo",
+   78966,
+   79346,
+   3,
+   2
+  ],
+  [
+   "condo",
+   294878,
+   295258,
+   20,
+   19
+  ],
+  [
+   "condo",
+   368883,
+   369263,
+   4,
+   3
+  ]
+ ],
+ "horry": {
+  "horry": 6393,
+  "sfha": 1122,
+  "sfha_not_flagged": 891,
+  "sfha_flagged": 231,
+  "flagged": 397,
+  "core": 678,
+  "core_not_flagged": 548,
+  "flagged_not_sfha": 166
+ },
+ "horry_by_type": {
+  "house": {
+   "horry": 2959,
+   "sfha": 249,
+   "sfha_not_flagged": 199,
+   "sfha_flagged": 50,
+   "flagged": 74,
+   "core": 173,
+   "core_not_flagged": 132,
+   "flagged_not_sfha": 24
+  },
+  "townhouse": {
+   "horry": 305,
+   "sfha": 3,
+   "sfha_not_flagged": 3,
+   "core": 1,
+   "core_not_flagged": 1,
+   "flagged": 1,
+   "flagged_not_sfha": 1
+  },
+  "condo": {
+   "horry": 2719,
+   "sfha": 833,
+   "sfha_not_flagged": 653,
+   "core": 484,
+   "core_not_flagged": 396,
+   "flagged": 320,
+   "flagged_not_sfha": 140,
+   "sfha_flagged": 180
+  },
+  "manufactured": {
+   "horry": 410,
+   "sfha": 37,
+   "sfha_not_flagged": 36,
+   "core": 20,
+   "core_not_flagged": 19,
+   "flagged": 2,
+   "flagged_not_sfha": 1,
+   "sfha_flagged": 1
+  }
+ },
+ "price_bands": {
+  "under $200,000": {
+   "horry": 1502,
+   "sfha": 337,
+   "sfha_flagged": 61
+  },
+  "$200,000 to $299,999": {
+   "horry": 1638,
+   "sfha": 228,
+   "sfha_flagged": 35
+  },
+  "$300,000 to $399,999": {
+   "horry": 1244,
+   "sfha": 156,
+   "sfha_flagged": 33
+  },
+  "$400,000 to $599,999": {
+   "horry": 1158,
+   "sfha": 195,
+   "sfha_flagged": 47
+  },
+  "$600,000 to $999,999": {
+   "horry": 618,
+   "sfha": 147,
+   "sfha_flagged": 41
+  },
+  "$1 million and up": {
+   "horry": 233,
+   "sfha": 59,
+   "sfha_flagged": 14
+  }
+ },
+ "towns_by_postal_city": {
+  "Myrtle Beach": {
+   "horry": 3041,
+   "sfha": 595,
+   "sfha_flagged": 111
+  },
+  "North Myrtle Beach": {
+   "horry": 902,
+   "sfha": 316,
+   "sfha_flagged": 60
+  },
+  "Surfside Beach": {
+   "horry": 212,
+   "sfha": 53,
+   "sfha_flagged": 12
+  },
+  "Murrells Inlet": {
+   "horry": 286,
+   "sfha": 52,
+   "sfha_flagged": 19
+  },
+  "Garden City Beach": {
+   "horry": 62,
+   "sfha": 45,
+   "sfha_flagged": 23
+  },
+  "Conway": {
+   "horry": 777,
+   "sfha": 22,
+   "sfha_flagged": 5
+  },
+  "Little River": {
+   "horry": 417,
+   "sfha": 20
+  },
+  "Longs": {
+   "horry": 381,
+   "sfha": 14
+  },
+  "Loris": {
+   "horry": 159,
+   "sfha": 3
+  },
+  "Galivants Ferry": {
+   "horry": 77,
+   "sfha": 1
+  },
+  "Nichols": {
+   "horry": 25,
+   "sfha": 1,
+   "sfha_flagged": 1
+  },
+  "Aynor": {
+   "horry": 46
+  },
+  "Green Sea": {
+   "horry": 8
+  }
+ },
+ "fema_zone_letter": {
+  "AE": {
+   "sfha": 1014,
+   "sfha_flagged": 208
+  },
+  "VE": {
+   "sfha": 108,
+   "sfha_flagged": 23
+  }
+ },
+ "type_by_band": {
+  "condo|$1 million and up": {
+   "sfha": 5
+  },
+  "condo|$200,000 to $299,999": {
+   "sfha": 185,
+   "sfha_flagged": 32
+  },
+  "condo|$300,000 to $399,999": {
+   "sfha": 123,
+   "sfha_flagged": 30
+  },
+  "condo|$400,000 to $599,999": {
+   "sfha": 134,
+   "sfha_flagged": 36
+  },
+  "condo|$600,000 to $999,999": {
+   "sfha": 63,
+   "sfha_flagged": 21
+  },
+  "condo|under $200,000": {
+   "sfha": 323,
+   "sfha_flagged": 61
+  },
+  "house|$1 million and up": {
+   "sfha": 53,
+   "sfha_flagged": 14
+  },
+  "house|$200,000 to $299,999": {
+   "sfha": 26,
+   "sfha_flagged": 3
+  },
+  "house|$300,000 to $399,999": {
+   "sfha": 26,
+   "sfha_flagged": 2
+  },
+  "house|$400,000 to $599,999": {
+   "sfha": 60,
+   "sfha_flagged": 11
+  },
+  "house|$600,000 to $999,999": {
+   "sfha": 84,
+   "sfha_flagged": 20
+  },
+  "manufactured|$1 million and up": {
+   "sfha": 1
+  },
+  "manufactured|$200,000 to $299,999": {
+   "sfha": 15
+  },
+  "manufactured|$300,000 to $399,999": {
+   "sfha": 7,
+   "sfha_flagged": 1
+  },
+  "manufactured|$400,000 to $599,999": {
+   "sfha": 1
+  },
+  "manufactured|under $200,000": {
+   "sfha": 13
+  },
+  "townhouse|$200,000 to $299,999": {
+   "sfha": 2
+  },
+  "townhouse|under $200,000": {
+   "sfha": 1
+  }
+ },
+ "sfha_polygons": 758,
+ "core": "core = inside FEMA's high-risk zone shrunk by about 30 m, so a pin on a zone edge is not counted",
+ "towns_note": "Town is the postal city in the listing address, not city limits.",
+ "limits": "Points are the listing's map pin. A pin on the edge of a zone can fall on either side. FEMA's zone is the county's copy of the effective map (12/16/2021). Georgetown County homes are left out (no map loaded)."
+}

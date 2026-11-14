@@ -1,0 +1,338 @@
+<!DOCTYPE html> 
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><title>
+	Horry County Records Search
+</title><meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <!--[if IE 9]><link rel="stylesheet" type="text/css" media="screen" href="/Content/ie9specific.css" /><![endif]-->
+    <!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/Content/ie8specific.css" /><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/Content/ie7specific.css" /><![endif]-->
+    <link href="/Content/common.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="/Scripts/jquery-latest.pack.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-migrate-3.3.0.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/kendo/2023.1.117/kendo.all.min.js" ></script>
+    <script type="text/javascript" src="/Scripts/kendo/2023.1.117/kendo.aspnetmvc.min.js" ></script>
+    <link href="/Content/kendo/kendo.common.min.css" rel="stylesheet" type="text/css" /><link href="/Content/kendo/kendo.Office365.min.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery.hoverIntent.js"></script>
+	<script type="text/javascript" src="/Scripts/jquery.cookie.js"></script>	
+	<script type="text/javascript" src="/Scripts/AcclaimCommon.js" ></script>
+    <script type="text/javascript" src="/Scripts/AcclaimCustom.js" ></script>
+    
+	<link href="App_Themes/Horry/Site.css" type="text/css" rel="stylesheet" /></head> 
+
+    <!-- .Combined(true)
+        .Compress(true)-->
+<body>
+    <div class="page">
+        <header id="pageheader">
+            <div id="header">
+                
+
+<div class="navigationBar" style="display:none;">
+
+                <div style="border-right: thin solid #ccc;">Welcome <i>Guest</i></div>
+         
+        <div><a href="/AcclaimWeb/OnlineOrders/Cart" class="MasterNavigationButtonStyle">
+          <span id="NavCartInfoSpan"></span> 
+             
+                     <img src="/AcclaimWeb/Content/Images/shopping_cart_icon.png"  alt="Shopping Cart" style="border:none;" title="Shopping Cart" />
+                  
+              </a></div>
+ 
+</div>
+
+            <div id="home">
+                <a href="#" title="County Homepage" onclick="window.open('https://www.horrycounty.org/Departments/Register-of-Deeds')"> </a>
+            </div>
+            
+            <input type="hidden" id="resxHeaderLogo" value=""/>
+            <input type="hidden" id="resxLogoAlign"  value=""/>
+            <input type="hidden" id="resxLogoTitle"  value=""/>
+            <input type="hidden" id="resxHeaderBackroundColor"  value=""/> 
+            </div>
+             <div id="submenucontainer">
+                
+
+<script>
+    var EcommerceEnabled = true;
+    var EnableFbnDownload = false;
+    var Agent = false;    
+</script>
+
+<div>
+    <ul class="k-widget k-reset k-header k-menu" id="Menu"><li class="k-item k-state-highlight"><a class="k-link k-menu-link" href="/AcclaimWeb/"><img alt="image" class="k-image" src="/AcclaimWeb/Content/Images/searchMenu.png" /><span class="k-menu-link-text">Official Records</span><span class="k-menu-expand-arrow"><span class="k-icon k-i-arrow-s k-menu-expand-arrow-icon"></span></span></a><ul class="k-group k-menu-group k-reset k-menu-group-md"><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeName"><span class="k-menu-link-text">Name</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeBookPage"><span class="k-menu-link-text">Book/Page</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeDocLegal"><span class="k-menu-link-text">New Legal Description</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeComments"><span class="k-menu-link-text">Legal Description/Memo</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeDocType"><span class="k-menu-link-text">Document Type</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeConsideration"><span class="k-menu-link-text">Consideration</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeRecordDate"><span class="k-menu-link-text">Record Date</span></a></li></ul></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/Support"><img alt="image" class="k-image" src="/AcclaimWeb/Content/images/supportMenu.png" /><span class="k-menu-link-text">Support</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/Search/Settings"><img alt="image" class="k-image" src="/AcclaimWeb/Content/images/imageTools24.png" /><span class="k-menu-link-text">Settings</span></a></li><li class="k-item" style="float: right; border-right: 0;"><a class="k-link k-menu-link" href="/AcclaimWeb/Login"><img alt="image" class="k-image" src="/AcclaimWeb/Content/Images/logout.png" /><span class="k-menu-link-text">Login</span></a></li></ul><script>
+	kendo.syncReady(function(){jQuery("#Menu").kendoMenu({});});
+</script>    
+</div>
+<noscript>
+    <div>
+        <h2 style="color: White;background-color:Red;"> You must enable Javascript to continue. Click 
+            <a href='Support' style="color: White;background-color:Red;text-decoration:underline">here</a> for help on how to enable Javascript. </h2>
+    </div>
+</noscript>
+<script> function addBlankTargetToLink(obj) {
+     obj.attributes("target", "_blank");
+}</script>
+<div id="cookiesDisabled" style="display:none">
+    <h2 style="color: White;background-color:Red;"> You must enable Cookies to continue. Click 
+        <a href='Support' style="color: White;background-color:Red;text-decoration:underline">here</a> for help on how to enable browser cookies. </h2>
+</div>
+
+
+            </div>
+        </header>
+    </div>    
+    <main id="mainBack">
+        <div id="main">
+            <div id="mainForm" tabindex="0">
+                
+    <div id="divDisclaimerLogin" class="disclaimerLogin t-header" 
+        style="display: block; overflow:auto; height:auto;">
+
+        <br /><br />
+        <div id="disclaimer" style="display: block;">
+            
+     <div id="divSimpleTwoColumn" class="paper formSimple" style="width: 400px; border: none;">
+      <div  class="t-header" style="width: 411px; margin-left: -6px; font-size: 1.5em; line-height: 2; font-weight: bold;">Disclaimer</div>
+            <p>
+                The County presents the information on this web site as a service to the public.
+                We have tried to ensure that the information contained in this electronic search
+                system is accurate. County makes no warranty or guarantee concerning the accuracy
+                or reliability of the content at this site or at other sites to which we link. Assessing
+                accuracy and reliability of information is the responsibility of the user. The user
+                is advised to search on all possible spelling variations of proper names, in order
+                to maximize search results.</p>
+            <p>
+                The County shall not be liable for errors contained herein or for any damages in
+                connection with the use of the information contained herein.
+            </p>
+            <p>
+                If you choose not to accept the conditions stated above please exit this search
+                application.
+            </p>   
+    <form action="/AcclaimWeb/search/Disclaimer" method="post">
+        <input type="hidden" name="Disclaimer" value="true" />
+        <div style="text-align:right; display:block;">
+            <input type="submit" id="btnButton" value="I accept the conditions above." class="t-button" />
+        </div>
+    </form>
+</div>
+        </div>
+        <br />
+        <div class="importantMessageDiv" style="display: block;
+              margin-left: 20px; width: 411px;">
+            
+
+<div class="Alert AlertMessage">
+
+    <div class="AlertTitle AlertTitleMessage" style="font-size: 1em; 
+    font-weight: bold; color: white; background-color: #b30000; text-align: left;padding-left:5px ">
+        Important Message
+    </div>
+    <div class="AlertText AlertTextMessage" style="text-align: left;font-size: 1em;color: #444; background-color: white; ">
+     <p>
+       &nbsp;
+        <strong><u>Removal of redaction bars is granted upon purchase for 24 hours.  After that time the document will revert to it's prepurchased state and redaction bars will show again.</u></strong> 
+
+<br /><br /> If you wish to update your account information (contact info, password, etc.) you will need to contact our office via written request. This request needs to be via mail, or email only. 
+
+<br /><br /> Please include your account number, along with the relevant change you wish to have made. It must also come from the contact information on file for your account, otherwise the request will be returned to you stating the information is incorrect.
+
+<br /><br /> Our office may contact you regarding your request to ensure it is properly handled in the manner you requested.<br /><br /><a href="https://www.horrycountysc.gov/departments/register-of-deeds/#contact">Register of Deeds Contact Information</a>
+    </p>
+    </div>
+</div>
+
+        </div><br/>
+        <div style="display: block;">
+            <form action="/AcclaimWeb/Login" id="login" method="post"><input name="__RequestVerificationToken" type="hidden" value="ESWSrUSj-NPANUtH2f4FCstuzP-92v381JM4m5uUaTvj3yJC7i0wnJH6Kwzdf0VxCfu6LHaHn8Gm56ZJ9IsPceOnX6mRYvyV31NbvFEzZeI1" />
+
+<div id="divSimpleTwoColumn" class="paper formSimple" style="width: 400px;  border: none;">
+<div  class="t-header" style="width: 411px; margin-left: -6px; font-size: 1.5em; line-height: 2; font-weight: bold;">
+    Sign In</div>
+    <div class="formLabel">
+        Login As</div>
+    <div class="formContainer" style="clear: both;">
+    <div class="formRow" >
+    <div class="formLabel col1" style="width: 85px;">
+       <label for="Username"> User Name </label>
+    </div>
+    <div class="formInput col2" style="width: 300px;">
+        <input Class="t-input required" id="Username" name="Username" style="Width: 295px; margin-bottom: 3px;" type="text" value="" />
+    </div>
+    </div>
+    <div class="formRow">
+    <div class="formLabel col1" style="width: 85px;">
+       <label for="Password"> Password</label>
+    </div>
+    <div class="formInput col2" style="width: 300px;">
+        <input Class="t-input required" id="Password" name="Password" style="Width: 295px" type="password" />
+
+    </div>
+    </div>
+    
+    </div>
+    <div class="loginFooter">
+ <span><a href="/AcclaimWeb/Agent/ResetPassword">Forgot Password</a></span>
+       <span><input type="checkbox" id="Disclaimer" value="true" name="disclaimer" /><label for="Disclaimer"> Accept Disclaimer</label></span>
+        
+          <span style="padding-right: 0 !important;"><button type="button" class="t-button" onclick="location.href= '/AcclaimWeb/Agent/Create'">I'm a new user</button>
+
+        
+        <input type="submit" id="Submit1" value="Login" class="t-button" onclick="acclaimValidate('login');" /></span>
+    </div>
+ 	<p class="InstructionsTextStyle">
+        County Agents Only: Login using your agent key.<br />If you do not have an agent key and would like one, please contact the county.
+    </p>   
+</div>
+</form>
+
+
+	
+	<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        $("#Username").focus();
+    })
+</script>
+
+            <br/>
+            <br/>
+        </div>
+    </div>
+    <h1 class="t-header" style="padding-left: 15px; margin:0;">
+        Official Records Search</h1>
+    <div>
+        <div id= "boxHolder2">
+            
+                    <div class="boxName searchIndexDiv">
+                        <h4 style="text-align: center;">
+                          <button class="t-button" onclick="location.href='/AcclaimWeb/search/SearchTypeName'">
+                              <img src="/AcclaimWeb/Content/images/Name.png" alt="Name" style="border: 0px;" /> 
+                          </button><br />
+                            <a id="mnname" href="/AcclaimWeb/search/SearchTypeName"
+                                class="subspace">
+                                Name</a></h4>
+               
+                        <div style="height: 100px; overflow: auto;">
+                            <span class="nameDesc">
+                                Perform a Party Name (Grantor and/or Grantee) search on Official Records documents.</span>
+                        </div>
+                    </div> 
+                    <div class="boxBookPage searchIndexDiv">
+                        <h4 style="text-align: center;">
+                          <button class="t-button" onclick="location.href='/AcclaimWeb/search/SearchTypeBookPage'">
+                              <img src="/AcclaimWeb/Content/images/BookPage.png" alt="Book/Page" style="border: 0px;" /> 
+                          </button><br />
+                            <a id="mnbookpage" href="/AcclaimWeb/search/SearchTypeBookPage"
+                                class="subspace">
+                                Book/Page</a></h4>
+               
+                        <div style="height: 100px; overflow: auto;">
+                            <span class="nameDesc">
+                                Perform a combined Book Type, Number and Page search on Official Records documents.</span>
+                        </div>
+                    </div> 
+                    <div class="boxDocLegal searchIndexDiv">
+                        <h4 style="text-align: center;">
+                          <button class="t-button" onclick="location.href='/AcclaimWeb/search/SearchTypeDocLegal'">
+                              <img src="/AcclaimWeb/Content/images/DocLegal.png" alt="New Legal Description" style="border: 0px;" /> 
+                          </button><br />
+                            <a id="mndoclegal" href="/AcclaimWeb/search/SearchTypeDocLegal"
+                                class="subspace">
+                                New Legal Description</a></h4>
+               
+                        <div style="height: 100px; overflow: auto;">
+                            <span class="nameDesc">
+                                Perform a Parsed Legal Description search on Official Records documents.</span>
+                        </div>
+                    </div> 
+                    <div class="boxComments searchIndexDiv">
+                        <h4 style="text-align: center;">
+                          <button class="t-button" onclick="location.href='/AcclaimWeb/search/SearchTypeComments'">
+                              <img src="/AcclaimWeb/Content/images/Comments.png" alt="Legal Description/Memo" style="border: 0px;" /> 
+                          </button><br />
+                            <a id="mncomments" href="/AcclaimWeb/search/SearchTypeComments"
+                                class="subspace">
+                                Legal Description/Memo</a></h4>
+               
+                        <div style="height: 100px; overflow: auto;">
+                            <span class="nameDesc">
+                                Perform a search on the Legal Description/Memo made to an Official Records document.</span>
+                        </div>
+                    </div> 
+                    <div class="boxDocType searchIndexDiv">
+                        <h4 style="text-align: center;">
+                          <button class="t-button" onclick="location.href='/AcclaimWeb/search/SearchTypeDocType'">
+                              <img src="/AcclaimWeb/Content/images/DocType.png" alt="Document Type" style="border: 0px;" /> 
+                          </button><br />
+                            <a id="mndoctype" href="/AcclaimWeb/search/SearchTypeDocType"
+                                class="subspace">
+                                Document Type</a></h4>
+               
+                        <div style="height: 100px; overflow: auto;">
+                            <span class="nameDesc">
+                                Perform a Document Type(s) search on Official Records documents.</span>
+                        </div>
+                    </div> 
+                    <div class="boxConsideration searchIndexDiv">
+                        <h4 style="text-align: center;">
+                          <button class="t-button" onclick="location.href='/AcclaimWeb/search/SearchTypeConsideration'">
+                              <img src="/AcclaimWeb/Content/images/Consideration.png" alt="Consideration" style="border: 0px;" /> 
+                          </button><br />
+                            <a id="mnconsideration" href="/AcclaimWeb/search/SearchTypeConsideration"
+                                class="subspace">
+                                Consideration</a></h4>
+               
+                        <div style="height: 100px; overflow: auto;">
+                            <span class="nameDesc">
+                                Perform a Consideration range (upper & lower bound price) search on an Official Records conveyance document.</span>
+                        </div>
+                    </div> 
+                    <div class="boxRecordDate searchIndexDiv">
+                        <h4 style="text-align: center;">
+                          <button class="t-button" onclick="location.href='/AcclaimWeb/search/SearchTypeRecordDate'">
+                              <img src="/AcclaimWeb/Content/images/RecordDate.png" alt="Record Date" style="border: 0px;" /> 
+                          </button><br />
+                            <a id="mnrecorddate" href="/AcclaimWeb/search/SearchTypeRecordDate"
+                                class="subspace">
+                                Record Date</a></h4>
+               
+                        <div style="height: 100px; overflow: auto;">
+                            <span class="nameDesc">
+                                Perform a Date search on a single day Official Records.</span>
+                        </div>
+                    </div> 
+        </div>
+    </div>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        
+<div id="footer" class="t-header">
+<div id="BrandFooter"></div>
+        Copyright 2026 &copy;  Acclaim, is a registered trademark of HARRIS RECORDING SOLUTIONS
+        |  <span style="text-decoration: underline;"><a href="https://www.horrycountysc.gov/departments/register-of-deeds/" class="t-link">Contact Us</a></span>
+    </div>
+
+    </footer>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        mainHieght();
+        window.name = 'AcclaimwebMainWindow';
+        if (!IsCookiesFeatureEnabled()) { $('#cookiesDisabled').show(); }
+    })
+    window.onresize = function () {
+        mainHieght();
+    }   
+</script>
+</body>
+
+</html>

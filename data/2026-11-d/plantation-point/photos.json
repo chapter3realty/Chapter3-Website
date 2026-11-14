@@ -1,0 +1,71 @@
+{
+ "rule": "Photo records for /submarkets/myrtle-beach/plantation-point/ (tools/photos.js format).",
+ "photos": [
+  {
+   "slug": "plantation-point",
+   "file": "images/2026-11-d/plantation-point/plantation-point-pools-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-d/plantation-point/plantation-point-pools-from-above-600w.webp",
+    "1200": "images/2026-11-d/plantation-point/plantation-point-pools-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Plantation Point from above",
+   "what": "Plantation Point from above (USDA NAIP aerial photo, 2023): curving streets of large houses on wooded lots, many with a bright blue in-ground pool behind the house; a strip of pine woods runs through the middle, the Intracoastal Waterway is at the top left corner and a pond at the top.",
+   "caption": "Part of Plantation Point from the air. The bright blue shapes behind the houses are in-ground pools.",
+   "alt": "Aerial photo of part of Plantation Point in Myrtle Beach: large houses on wooded lots along curving streets, many with a blue in-ground pool behind the house",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Plantation Point"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023) on 2026-11-13; the exact request is in source_request.",
+   "license_note": "Same source and terms as the NAIP records of /submarkets/garden-city/ (data/2026-11-a/submarkets-garden-city/photos.json): The National Map offers free downloads of public domain NAIP orthoimagery; the USDA FSA policy page says public domain information may be freely distributed or copied, with credit requested.",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP service and cropped it to 4:3",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8782328.58715373%2C3992002.669105696%2C-8781549.35071818%2C3992604.985523196&bboxSR=3857&imageSR=3857&size=1400%2C1082&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+   "frame": {
+    "bbox_wgs84": [
+     -78.893,
+     33.7255,
+     -78.886,
+     33.73
+    ],
+    "ground_m_per_px_1200w": 0.54
+   },
+   "original_size": "1400x1082 (NAIP export), cut to 1400x1050, then resized",
+   "subject_check": "Looked at full size by the writer of /submarkets/myrtle-beach/plantation-point/ on 2026-11-13. Every house outline in the frame (129 on the county's map of buildings) is on a Plantation Point lot, and the county map shows 53 in-ground pools in it. No person; no readable sign, plate or house number at page size.",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-d/plantation-point/plantation-point-pools-from-above-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-d/plantation-point/plantation-point-pools-from-above-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-d/plantation-point/plantation-point-pools-from-above-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "crop_note": "Crops cut from the center of a second export of the same frame at 1800 x 1391 (crop_source_request) by tools/photos.js crops, for Article.image and the share image.",
+   "crop_source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8782328.58715373%2C3992002.669105696%2C-8781549.35071818%2C3992604.985523196&bboxSR=3857&imageSR=3857&size=1800%2C1391&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2"
+  }
+ ]
+}

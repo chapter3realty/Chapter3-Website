@@ -1,0 +1,2052 @@
+<!DocType html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Georgetown County Search Deeds</title>
+
+    <link rel="stylesheet" type="text/css" href="css/guilford.css" />
+    <link rel="stylesheet" type="text/css" href="css/smoothness/jquery-ui-1.8.22.custom.css" />
+
+
+	        <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+	    
+    <script type="text/javascript" src="js/jquery.maskedinput-1.3.js" ></script>
+
+    <script src="js/jquery.easing.js" type="text/javascript"></script>
+    <script src="js/jqueryFileTree.js" type="text/javascript"></script>
+
+
+    <script src="js/functions.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            //Bug #16823 - Implementing a Select All function
+            $('#checkAllBoxes').click(function(event) {
+                if(this.checked) {
+                    $('.checkboxSelect').each(function() {
+                        this.checked = true;
+                    });
+                }else{
+                    $('.checkboxSelect').each(function() {
+                        this.checked = false;
+                    });
+                }
+            });
+            //End Bug #16823
+        });
+
+          // Tooltip functionality for the search results page.
+        $(function () {
+            var hideTimeout;
+            
+            $('.tooltip-trigger').on('mouseenter focus', function () {
+                var tooltipId = '#' + $(this).attr('aria-describedby');
+                clearTimeout(hideTimeout);
+                $(tooltipId).show();
+            });
+
+            $('.tooltip-trigger').on('mouseleave blur', function () {
+                var tooltipId = '#' + $(this).attr('aria-describedby');
+                hideTimeout = setTimeout(function() {
+                    $(tooltipId).hide();
+                }, 300);
+            });
+
+            $('.tooltip-trigger').on('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    $('#' + $(this).attr('aria-describedby')).hide();
+                    $(this).blur();
+                }
+            });
+            
+            // Allow hovering over the tooltip content itself
+            $('.tooltip-content').on('mouseenter', function () {
+                clearTimeout(hideTimeout);
+                $(this).show();
+            });
+            
+            $('.tooltip-content').on('mouseleave', function () {
+                var $tooltip = $(this);
+                hideTimeout = setTimeout(function() {
+                    $tooltip.hide();
+                }, 300);
+            });
+        });
+    </script>
+
+
+
+    <script type="text/javascript">
+        $(function(){
+            $("#start_date").datepicker();
+            $("#end_date").datepicker();
+        });
+
+
+        $(document).keydown(function(e) {
+            if (e.which == 113) { // f2 key was pressed
+                $("#frmlookup_form").submit();
+            }
+
+            if(e.which==120){
+                window.location='NameSearch.php';
+            }
+
+        });
+
+
+        jQuery(function($){
+            $("#start_date").mask("99/99/9999");
+            $("#end_date").mask("99/99/9999");
+        });
+
+
+
+        function resetForm(){
+            window.location="NameSearch.php?resetForm=true";
+        }
+
+        function checkStartDate(){
+
+            var x = $("#start_date").val();
+            var bits = x.split('/');
+            var nd = bits[2]+bits[0]+bits[1];
+            if(nd < 19970000){
+                alert('The Start Date has been changed to 00/00/'+bits[2]);
+                $("#start_date").val('00/00/'+bits[2]);
+            }
+
+        }
+
+
+
+        function switchIC(e){
+            $('#checkAllBoxes').attr('checked',false);
+        }
+
+        function checkEndDate(){
+
+            var x = $("#end_date").val();
+            var bits = x.split('/');
+            var nd = bits[2]+bits[0]+bits[1];
+            if(nd < 19970000){
+                alert('The End Date has been changed to 00/00/'+bits[2]);
+                $("#end_date").val('00/00/'+bits[2]);
+            }
+        }
+
+    </script>
+
+
+    <script language="javascript">
+
+        var igchecked = 0; //used to tell when any intrument groups are checked
+
+        function dateinfo(){
+            alert("Due to past record keeping processes, dates before 1997 were recorded as year only.  Any search date entered prior to 1997 will be set to the year only.")
+        }
+
+
+        function taxwindow(){
+            /*
+             alert("You are now being directed away from the Register of Deeds Online System.  If you have problems or questions pertaining to Tax Collection, plase call the tax dept.  TECHNICAL SUPPORT 336-641-4833");
+             window.open('http://gcms0004.co.guilford.nc.us/Novation/taxpub.html');
+             */
+        }
+
+        //checks for a valid date
+        function validDate(d)
+        {
+            var curdate = new Date();
+            var curyear = 2026;
+            var curmonth = curdate.getMonth();
+            var curday = curdate.getDate();
+
+            if (document.getElementById(d).value.length == 8)
+            {
+                date = document.getElementById(d).value
+                var month = date.substr(0,2);
+                var day = date.substr(2, 2);
+                var year = date.substr(4,4); //year/month/day
+
+                if(month > 12)
+                {
+                    alert("Month has to be 01 - 12");
+                    document.getElementById(d).select();
+                    document.getElementById(d).focus();
+                    return false;
+                }
+
+                if(day > 31)
+                {
+                    alert("Day has to be 01 - 31");
+                    document.getElementById(d).select();
+                    document.getElementById(d).focus();
+                    return false;
+                }
+
+                if(year > curyear)
+                {
+                    alert("Year has to be " + curyear + " or lower");
+                    document.getElementById(d).select();
+                    document.getElementById(d).focus();
+                    return false;
+                }
+
+                if(d == "start_date")//d is the id of a form element passed in onKeyPress('start_date')
+                {
+                    document.getElementById('start_day').value = day;
+                    document.getElementById('start_month').value = month;
+                    document.getElementById('start_year').value = year;
+                }
+                else
+                {
+                    document.getElementById('end_day').value = day;
+                    document.getElementById('end_month').value = month;
+                    document.getElementById('end_year').value = year;
+                }
+                disableSearch();
+                return checkDates();
+            }
+            else
+            {
+                if(d === "start_date")
+                {
+                    document.getElementById('start_day').value = "";
+                    document.getElementById('start_month').value = "";
+                    document.getElementById('start_year').value = "";
+                }
+                else
+                {
+                    document.getElementById('end_day').value = "";
+                    document.getElementById('end_month').value = "";
+                    document.getElementById('end_year').value = "";
+                }
+
+                disableSearch();
+                return checkDates();
+            }
+
+        }
+
+        //all keys that are non numeric
+        function checkKeys(s)
+        {
+            var key = window.event.keyCode;
+
+            if(key > 47 && key < 58)
+            {
+                return;
+            }
+            else
+                window.event.returnValue = null;
+        }
+
+        //sets a var for search purposes if instrument group is checked
+        function setIG()
+        {
+            igchecked =1;
+        }
+
+
+        //used to check or uncheck all instgroups
+        function checkInstGroups(x)
+        {
+            if(x == 'check')
+            {
+                                disableSearch();
+            }
+
+            if(x=='uncheck')
+            {
+                                disableSearch();
+            }
+
+        }
+
+        //compares the dates...so start date isn't after the end date
+        function checkDates()
+        {
+            var elem = document.getElementById('frmlookup_form').elements;
+            if(elem['start_month'].value != "" && elem['start_day'].value != "" && elem['start_year'].value != "" &&
+                elem['end_month'].value != "" && elem['end_day'].value != "" && elem['end_year'].value != "")
+            {
+                if (elem['start_year'].value+elem['start_month'].value+elem['start_day'].value >
+                    elem['end_year'].value+elem['end_month'].value+elem['end_day'].value)
+                {
+                    document.forms['frmlookup_form'].searchbutton.disabled = true;
+                    alert("Start Date must be before End Date!");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+
+        //disables the search button
+        function dSearch()
+        {
+            document.forms['frmlookup_form'].searchbutton.disabled = true;
+        }
+
+
+
+        //used to validate fname and lname
+        function check()
+        {
+            var key = window.event.keyCode;
+
+            if((key > 44 && key < 91) || (key > 96 && key < 123) || (key == 32))
+            {
+                disableSearch();
+                return;
+            }
+            else
+                window.event.returnValue = null;
+        }
+
+        function showUCC(){
+            $("#uccDiv").show();
+            $("#frmlookup_form").attr("action","forsythNameDisplay.php");
+
+            $("#grantor_lable").html("Debtor");
+            $("#grantee_lable").html("Secured Party");
+            $("#entity_type_table").hide();
+            $("#instTypeContainer").hide();
+            $("#bottom_stuff").hide();
+            $("#auto_suggest_span").hide();
+
+            $("#search_type_fulltext").hide();
+            $("#search_type_soundslike").hide();
+            $("#stsl").hide();
+            $("#stft").hide();
+        }
+
+        function hideUCC(){
+            $("#uccDiv").hide();
+            $("#frmlookup_form").attr("action","forsythNamePick.php");
+            $("#grantor_lable").html("Grantor");
+            $("#grantee_lable").html("Grantee");
+            $("#entity_type_table").show();
+            $("#instTypeContainer").show();
+        }
+
+
+
+        function showPropSearch(){
+            $('#formlookup_div').hide();
+            $('#companyLogo').hide();
+            $('#propertySearch').show();
+        }
+
+        function hidePropSearch(){
+            $('#propertySearch').hide();
+            $('#companyLogo').show();
+            $('#formlookup_div').show();
+        }
+
+        function clearField(field){
+            if(!document.getElementById('search_both').checked){
+                $('#'+field).val('');
+            }
+        }
+
+    </script>
+
+
+    <style>
+        input[type=text]{
+            width:90%;
+            text-transform: uppercase;
+        }
+
+        .bottomButtons {
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 5px;
+            min-width: 12%;
+            margin-right: 5px;
+        }
+
+        /* Checkbox & Radio - accent color if required will changes it*/
+        /* input[type="checkbox"],
+        input[type="radio"] {
+            accent-color: #006BBD;
+            width: 14px;
+            height: 14px;
+            cursor: pointer;
+            margin: 2px;
+            border: 2px solid #333333;
+        }
+        
+        
+        
+        input[type="radio"]:checked {
+            border-color: #000000;
+        } */
+        input[type="radio"]:focus,
+        input[type="checkbox"]:focus {
+            outline: 3px solid #0066CC;
+            outline-offset: 2px;
+        }
+
+        /* Keyboard focus for text inputs, selects, buttons */
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="search"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: 3px solid #0066CC;
+            outline-offset: 2px;
+        }
+
+        button:focus,
+        input[type="submit"]:focus,
+        input[type="button"]:focus {
+            outline: 3px solid #0066CC;
+            outline-offset: 2px;
+        }
+        
+          .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000066;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 9999;
+            border-radius: 0 0 8px 0;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* WCAG 2.1 1.4.10: Ensure datepicker fits within viewport at 400% zoom */
+        #ui-datepicker-div {
+            max-width: 100vw !important;
+            width: auto !important;
+            box-sizing: border-box;
+            left: 5px;
+        }
+
+        .ui-datepicker {
+            width: auto !important;
+            max-width: calc(100vw - 10px) !important;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        /* Make datepicker header responsive */
+        .ui-datepicker-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            padding: 4px 2px;
+        }
+
+        .ui-datepicker-title {
+            flex: 0 1 auto;
+            text-align: center;
+        }
+
+        /* Reduce font size for month/year text at high zoom */
+        .ui-datepicker-month,
+        .ui-datepicker-year {
+            font-size: 0.95em;
+        }
+
+        /* Navigation buttons */
+        .ui-datepicker-prev,
+        .ui-datepicker-next {
+            width: auto;
+            height: auto;
+        }
+
+        .ui-datepicker-prev span,
+        .ui-datepicker-next span {
+            font-size: 0.85em;
+        }
+
+        /* Calendar grid responsive */
+        .ui-datepicker table {
+            width: 100%;
+            font-size: 0.9em;
+        }
+
+        .ui-datepicker td {
+            padding: 2px;
+        }
+
+        .ui-datepicker a {
+            padding: 2px 4px;
+        }
+
+        /* At high zoom, ensure single column layout */
+        @media (max-width: 320px) {
+            #ui-datepicker-div {
+                left: 0 !important;
+                right: 0 !important;
+                margin: 0 auto;
+            }
+            
+            .ui-datepicker {
+                max-width: 100vw !important;
+            }
+        }
+        </style>
+
+</head>
+
+<body onLoad="disableSearch();">
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+<style>
+    body{
+        background-color: #CCCCCC;
+    }
+
+        
+    .secondNav{
+        margin: auto;
+    }
+    .imageCenter{
+        display: block;
+    }
+     
+    a:visited {
+        color: purple;
+    }
+
+    a.navLinks{
+        text-decoration: none;
+        font-size: 100%;
+        color: black;
+        font-family: "texgyreadventor", sans-serif;
+    }
+    a.navLinks:hover{
+        text-decoration: underline;
+    }
+
+      .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000066;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 9999;
+            border-radius: 0 0 8px 0;
+        }
+        .skip-link:focus {
+            top: 0;
+            outline: 3px solid #FFFF00;
+            outline-offset: 2px;
+        }
+</style>
+
+<link rel="stylesheet" type="text/css" href="css/layout.css" />
+<link rel="stylesheet" type="text/css" href="css/default.css" />
+<div class="secondNav">
+    <a href="NameSearch.php" aria-label="Georgetown County Deed Search Home">
+                <img class="imageCenter" src="images/sc_georgetown_banner.png" alt="" role="presentation">
+            </a>
+</div>
+<br>
+<main id="main-content" role="main">
+
+<table border="2" width="99%" ><tr><td>
+            <div align="center">            <b class="heading">Georgetown Real Estate Look Up</b><hr></div>
+            <div id="formlookup_div" style="border:0px #000 solid">
+                <form method="post" action="NamePick.php" id="frmlookup_form" name="frmlookup_form">
+                    <table border="0" width="100%">
+                        <tr>
+                            <td colspan="7" align="center">
+	                                                                <div style="float:right;">Instruments Verified Through: November 12, 2026 12:59:00 PM</div>
+	                                                        </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" valign="top"><b>Search Type Selection</b><br>
+
+
+                                <!-- Search Type -->
+                                <table cellpadding="0" cellspacing="0">
+                                    <caption style="text-align: left; font-size: 11px;font-weight: normal;">Search Type </caption>
+                                    <tbody>
+                                    <tr><td>
+                                            <input type="radio" name="search_type" id="search_type_standard" aria-label="Search Type: Standard" value="Standard" checked="checked"  onClick="" />
+
+                                        </td>
+                                        
+                                        <td>
+                                            <label for="search_type_standard"> Standard</label>
+                                            <button type="button" class="tooltip-trigger"
+                                            aria-describedby="tooltip-standard">
+                                            <img src="images/Help.png" alt="Help icon for standard search" />
+                                        </button>
+                                        <div id="tooltip-standard" role="tooltip" class="tooltip-content" hidden>Standard Search Help
+                                            This search allows you to search on pure alpha characters. It will exclude spaces, punctuation, and special characters.
+                                            Names beginning with Articles such as And, An, and The can be found whether or not you include them in the search.
+                                        </div>
+                                    </td>
+                                    
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td>
+                                <!-- Sort Type -->
+                                <div style="display:none">
+                                    <table cellpadding="0" cellspacing="0">
+                                        <tr><th colspan="2">Sort Type</th></tr>
+                                        <tr><td>
+                                                <input type="radio" name="sort_type" value="Date" id="sort_type" aria-label="Sort Type: Date"
+	                                                />
+                                            </td><td>Date</td></tr>
+                                        <tr><td>
+                                                <input type="radio" name="sort_type" value="Name" id="sort_type" aria-label="Sort Type: Name" checked="checked"
+	                                                checked="checked"/>
+                                            </td><td>Name</td></tr>
+                                    </table>
+                                </div>
+
+                            </td>
+
+
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td style="font-weight:bold">
+
+                            </td>
+
+                        </tr>
+                        <tr valign="bottom">
+                            <td colspan="4">&nbsp;</td>
+                            <td valign="top" width="20%" colspan="3" rowspan="8">
+
+                                <div id="instTypeContainer">
+
+
+
+
+	                                	                                        <table id="instTypeTable">
+                            <tr>
+                                <td style="font-size:10px;" colspan="2">Category<br />
+                                    <div id="name_category_container">
+                                    <input type="checkbox" name="instType[ALL]" value="ALL" id="checkAllBoxes" aria-label="Select All Categories"
+                                             checked="checked"                                         /> SELECT ALL <br />
+                                        <hr />
+                                        <button type="button" aria-expanded="true" aria-controls="name_category_containerDiv" onclick="expandContainer('name_category_containerDiv'); this.textContent = this.textContent === '[+]' ? '[-]' : '[+]'; this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');" style="text-decoration:none; color:#0000EE; background:none; border:none; cursor:pointer; padding:0; font-size:11px;">[-]</button>
+                                        <div id="name_category_containerDiv" style="display:block; overflow:scroll; height:320px;">
+
+	                                        
+                                                <div id="frmlookup_form_category_container_ADD TAX    ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[ADD TAX    ]" value="ADD TAX    " aria-label="ADD TAX    "
+                                                         checked="checked"                                                            id="ADD TAX    " onClick="switchIC('frmlookup_ADD TAX    ');"/> ADD TAX                                                        <br />
+                                                    <div style="display:none; padding-left:20px;" id="ADD TAX    _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[ADD TAX    ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_AGR NO FEE ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[AGR NO FEE ]" value="AGR NO FEE " aria-label="AGR NO FEE "
+                                                         checked="checked"                                                            id="AGR NO FEE " onClick="switchIC('frmlookup_AGR NO FEE ');"/> AGR NO FEE                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="AGR NO FEE _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[AGR NO FEE ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_AGREEMENT  ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[AGREEMENT  ]" value="AGREEMENT  " aria-label="AGREEMENT  "
+                                                         checked="checked"                                                            id="AGREEMENT  " onClick="switchIC('frmlookup_AGREEMENT  ');"/> AGREEMENT                                                      <br />
+                                                    <div style="display:none; padding-left:20px;" id="AGREEMENT  _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[AGREEMENT  ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_AGREEMENTS ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[AGREEMENTS ]" value="AGREEMENTS " aria-label="AGREEMENTS "
+                                                         checked="checked"                                                            id="AGREEMENTS " onClick="switchIC('frmlookup_AGREEMENTS ');"/> AGREEMENTS                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="AGREEMENTS _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[AGREEMENTS ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_AMENDMENT  ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[AMENDMENT  ]" value="AMENDMENT  " aria-label="AMENDMENT  "
+                                                         checked="checked"                                                            id="AMENDMENT  " onClick="switchIC('frmlookup_AMENDMENT  ');"/> AMENDMENT                                                      <br />
+                                                    <div style="display:none; padding-left:20px;" id="AMENDMENT  _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[AMENDMENT  ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_AMND">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[AMND]" value="AMND" aria-label="AMND"
+                                                         checked="checked"                                                            id="AMND" onClick="switchIC('frmlookup_AMND');"/> AMND                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="AMND_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[AMND][UCC]" value="UCC" aria-label="UCC"
+                                                                       id="UCC"  onClick="selectAll('name')"/> UCC<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_ARTICLES">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[ARTICLES]" value="ARTICLES" aria-label="ARTICLES"
+                                                         checked="checked"                                                            id="ARTICLES" onClick="switchIC('frmlookup_ARTICLES');"/> ARTICLES                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="ARTICLES_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[ARTICLES][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_ASGN">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[ASGN]" value="ASGN" aria-label="ASGN"
+                                                         checked="checked"                                                            id="ASGN" onClick="switchIC('frmlookup_ASGN');"/> ASGN                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="ASGN_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[ASGN][UCC]" value="UCC" aria-label="UCC"
+                                                                       id="UCC"  onClick="selectAll('name')"/> UCC<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_ASSIGN NOFE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[ASSIGN NOFE]" value="ASSIGN NOFE" aria-label="ASSIGN NOFE"
+                                                         checked="checked"                                                            id="ASSIGN NOFE" onClick="switchIC('frmlookup_ASSIGN NOFE');"/> ASSIGN NOFE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="ASSIGN NOFE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[ASSIGN NOFE][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_ASSIGNMENT ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[ASSIGNMENT ]" value="ASSIGNMENT " aria-label="ASSIGNMENT "
+                                                         checked="checked"                                                            id="ASSIGNMENT " onClick="switchIC('frmlookup_ASSIGNMENT ');"/> ASSIGNMENT                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="ASSIGNMENT _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[ASSIGNMENT ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_ASSIGNMENTD">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[ASSIGNMENTD]" value="ASSIGNMENTD" aria-label="ASSIGNMENTD"
+                                                         checked="checked"                                                            id="ASSIGNMENTD" onClick="switchIC('frmlookup_ASSIGNMENTD');"/> ASSIGNMENTD                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="ASSIGNMENTD_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[ASSIGNMENTD][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_ASSIN NOFEE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[ASSIN NOFEE]" value="ASSIN NOFEE" aria-label="ASSIN NOFEE"
+                                                         checked="checked"                                                            id="ASSIN NOFEE" onClick="switchIC('frmlookup_ASSIN NOFEE');"/> ASSIN NOFEE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="ASSIN NOFEE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[ASSIN NOFEE][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_ASSUMP MTG ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[ASSUMP MTG ]" value="ASSUMP MTG " aria-label="ASSUMP MTG "
+                                                         checked="checked"                                                            id="ASSUMP MTG " onClick="switchIC('frmlookup_ASSUMP MTG ');"/> ASSUMP MTG                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="ASSUMP MTG _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[ASSUMP MTG ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_ATTACH ESTA">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[ATTACH ESTA]" value="ATTACH ESTA" aria-label="ATTACH ESTA"
+                                                         checked="checked"                                                            id="ATTACH ESTA" onClick="switchIC('frmlookup_ATTACH ESTA');"/> ATTACH ESTA                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="ATTACH ESTA_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[ATTACH ESTA][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_ATTACH/REL ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[ATTACH/REL ]" value="ATTACH/REL " aria-label="ATTACH/REL "
+                                                         checked="checked"                                                            id="ATTACH/REL " onClick="switchIC('frmlookup_ATTACH/REL ');"/> ATTACH/REL                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="ATTACH/REL _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[ATTACH/REL ][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_ATTORNEY SUBSTITUTION">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[ATTORNEY SUBSTITUTION]" value="ATTORNEY SUBSTITUTION" aria-label="ATTORNEY SUBSTITUTION"
+                                                         checked="checked"                                                            id="ATTORNEY SUBSTITUTION" onClick="switchIC('frmlookup_ATTORNEY SUBSTITUTION');"/> ATTORNEY SUBSTITUTION                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="ATTORNEY SUBSTITUTION_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[ATTORNEY SUBSTITUTION][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_BILL OF SALE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[BILL OF SALE]" value="BILL OF SALE" aria-label="BILL OF SALE"
+                                                         checked="checked"                                                            id="BILL OF SALE" onClick="switchIC('frmlookup_BILL OF SALE');"/> BILL OF SALE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="BILL OF SALE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[BILL OF SALE][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_CANCEL/SALE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[CANCEL/SALE]" value="CANCEL/SALE" aria-label="CANCEL/SALE"
+                                                         checked="checked"                                                            id="CANCEL/SALE" onClick="switchIC('frmlookup_CANCEL/SALE');"/> CANCEL/SALE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="CANCEL/SALE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[CANCEL/SALE][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_CHILD LIEN ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[CHILD LIEN ]" value="CHILD LIEN " aria-label="CHILD LIEN "
+                                                         checked="checked"                                                            id="CHILD LIEN " onClick="switchIC('frmlookup_CHILD LIEN ');"/> CHILD LIEN                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="CHILD LIEN _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[CHILD LIEN ][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_CHILD SAT  ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[CHILD SAT  ]" value="CHILD SAT  " aria-label="CHILD SAT  "
+                                                         checked="checked"                                                            id="CHILD SAT  " onClick="switchIC('frmlookup_CHILD SAT  ');"/> CHILD SAT                                                      <br />
+                                                    <div style="display:none; padding-left:20px;" id="CHILD SAT  _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[CHILD SAT  ][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_CL SAT     ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[CL SAT     ]" value="CL SAT     " aria-label="CL SAT     "
+                                                         checked="checked"                                                            id="CL SAT     " onClick="switchIC('frmlookup_CL SAT     ');"/> CL SAT                                                         <br />
+                                                    <div style="display:none; padding-left:20px;" id="CL SAT     _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[CL SAT     ][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_CLAIM LIEN ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[CLAIM LIEN ]" value="CLAIM LIEN " aria-label="CLAIM LIEN "
+                                                         checked="checked"                                                            id="CLAIM LIEN " onClick="switchIC('frmlookup_CLAIM LIEN ');"/> CLAIM LIEN                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="CLAIM LIEN _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[CLAIM LIEN ][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_CLAIM PT RE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[CLAIM PT RE]" value="CLAIM PT RE" aria-label="CLAIM PT RE"
+                                                         checked="checked"                                                            id="CLAIM PT RE" onClick="switchIC('frmlookup_CLAIM PT RE');"/> CLAIM PT RE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="CLAIM PT RE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[CLAIM PT RE][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_CONT">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[CONT]" value="CONT" aria-label="CONT"
+                                                         checked="checked"                                                            id="CONT" onClick="switchIC('frmlookup_CONT');"/> CONT                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="CONT_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[CONT][UCC]" value="UCC" aria-label="UCC"
+                                                                       id="UCC"  onClick="selectAll('name')"/> UCC<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_CONTRACT   ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[CONTRACT   ]" value="CONTRACT   " aria-label="CONTRACT   "
+                                                         checked="checked"                                                            id="CONTRACT   " onClick="switchIC('frmlookup_CONTRACT   ');"/> CONTRACT                                                       <br />
+                                                    <div style="display:none; padding-left:20px;" id="CONTRACT   _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[CONTRACT   ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_COURT ORDER">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[COURT ORDER]" value="COURT ORDER" aria-label="COURT ORDER"
+                                                         checked="checked"                                                            id="COURT ORDER" onClick="switchIC('frmlookup_COURT ORDER');"/> COURT ORDER                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="COURT ORDER_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[COURT ORDER][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_CROP LIEN  ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[CROP LIEN  ]" value="CROP LIEN  " aria-label="CROP LIEN  "
+                                                         checked="checked"                                                            id="CROP LIEN  " onClick="switchIC('frmlookup_CROP LIEN  ');"/> CROP LIEN                                                      <br />
+                                                    <div style="display:none; padding-left:20px;" id="CROP LIEN  _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[CROP LIEN  ][TAX LIEN]" value="TAX LIEN" aria-label="TAX LIEN"
+                                                                       id="TAX LIEN"  onClick="selectAll('name')"/> TAX LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_DEATH CERTIFICATE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[DEATH CERTIFICATE]" value="DEATH CERTIFICATE" aria-label="DEATH CERTIFICATE"
+                                                         checked="checked"                                                            id="DEATH CERTIFICATE" onClick="switchIC('frmlookup_DEATH CERTIFICATE');"/> DEATH CERTIFICATE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="DEATH CERTIFICATE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[DEATH CERTIFICATE][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_DEED">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[DEED]" value="DEED" aria-label="DEED"
+                                                         checked="checked"                                                            id="DEED" onClick="switchIC('frmlookup_DEED');"/> DEED                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="DEED_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[DEED][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_DEED AFFIDAVIT">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[DEED AFFIDAVIT]" value="DEED AFFIDAVIT" aria-label="DEED AFFIDAVIT"
+                                                         checked="checked"                                                            id="DEED AFFIDAVIT" onClick="switchIC('frmlookup_DEED AFFIDAVIT');"/> DEED AFFIDAVIT                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="DEED AFFIDAVIT_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[DEED AFFIDAVIT][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_DEED NO FEE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[DEED NO FEE]" value="DEED NO FEE" aria-label="DEED NO FEE"
+                                                         checked="checked"                                                            id="DEED NO FEE" onClick="switchIC('frmlookup_DEED NO FEE');"/> DEED NO FEE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="DEED NO FEE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[DEED NO FEE][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_EASE NO FEE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[EASE NO FEE]" value="EASE NO FEE" aria-label="EASE NO FEE"
+                                                         checked="checked"                                                            id="EASE NO FEE" onClick="switchIC('frmlookup_EASE NO FEE');"/> EASE NO FEE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="EASE NO FEE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[EASE NO FEE][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_EASEMENT   ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[EASEMENT   ]" value="EASEMENT   " aria-label="EASEMENT   "
+                                                         checked="checked"                                                            id="EASEMENT   " onClick="switchIC('frmlookup_EASEMENT   ');"/> EASEMENT                                                       <br />
+                                                    <div style="display:none; padding-left:20px;" id="EASEMENT   _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[EASEMENT   ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_LEASE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[LEASE]" value="LEASE" aria-label="LEASE"
+                                                         checked="checked"                                                            id="LEASE" onClick="switchIC('frmlookup_LEASE');"/> LEASE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="LEASE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[LEASE][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_M UCC CONT ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC CONT ]" value="M UCC CONT " aria-label="M UCC CONT "
+                                                         checked="checked"                                                            id="M UCC CONT " onClick="switchIC('frmlookup_M UCC CONT ');"/> M UCC CONT                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="M UCC CONT _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC CONT ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_M UCC MH   ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC MH   ]" value="M UCC MH   " aria-label="M UCC MH   "
+                                                         checked="checked"                                                            id="M UCC MH   " onClick="switchIC('frmlookup_M UCC MH   ');"/> M UCC MH                                                       <br />
+                                                    <div style="display:none; padding-left:20px;" id="M UCC MH   _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC MH   ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_M UCC NF   ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC NF   ]" value="M UCC NF   " aria-label="M UCC NF   "
+                                                         checked="checked"                                                            id="M UCC NF   " onClick="switchIC('frmlookup_M UCC NF   ');"/> M UCC NF                                                       <br />
+                                                    <div style="display:none; padding-left:20px;" id="M UCC NF   _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC NF   ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_M UCC PREL ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC PREL ]" value="M UCC PREL " aria-label="M UCC PREL "
+                                                         checked="checked"                                                            id="M UCC PREL " onClick="switchIC('frmlookup_M UCC PREL ');"/> M UCC PREL                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="M UCC PREL _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC PREL ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_M UCC PUB  ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC PUB  ]" value="M UCC PUB  " aria-label="M UCC PUB  "
+                                                         checked="checked"                                                            id="M UCC PUB  " onClick="switchIC('frmlookup_M UCC PUB  ');"/> M UCC PUB                                                      <br />
+                                                    <div style="display:none; padding-left:20px;" id="M UCC PUB  _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC PUB  ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_M UCC REL  ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC REL  ]" value="M UCC REL  " aria-label="M UCC REL  "
+                                                         checked="checked"                                                            id="M UCC REL  " onClick="switchIC('frmlookup_M UCC REL  ');"/> M UCC REL                                                      <br />
+                                                    <div style="display:none; padding-left:20px;" id="M UCC REL  _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC REL  ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_M UCC SUB  ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC SUB  ]" value="M UCC SUB  " aria-label="M UCC SUB  "
+                                                         checked="checked"                                                            id="M UCC SUB  " onClick="switchIC('frmlookup_M UCC SUB  ');"/> M UCC SUB                                                      <br />
+                                                    <div style="display:none; padding-left:20px;" id="M UCC SUB  _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC SUB  ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_M UCC TERM ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC TERM ]" value="M UCC TERM " aria-label="M UCC TERM "
+                                                         checked="checked"                                                            id="M UCC TERM " onClick="switchIC('frmlookup_M UCC TERM ');"/> M UCC TERM                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="M UCC TERM _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[M UCC TERM ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MANUF HM AFFID RETIRE TITLE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MANUF HM AFFID RETIRE TITLE]" value="MANUF HM AFFID RETIRE TITLE" aria-label="MANUF HM AFFID RETIRE TITLE"
+                                                         checked="checked"                                                            id="MANUF HM AFFID RETIRE TITLE" onClick="switchIC('frmlookup_MANUF HM AFFID RETIRE TITLE');"/> MANUF HM AFFID RETIRE TITLE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="MANUF HM AFFID RETIRE TITLE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MANUF HM AFFID RETIRE TITLE][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MANUF HM LIEN AFFIDAVIT">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MANUF HM LIEN AFFIDAVIT]" value="MANUF HM LIEN AFFIDAVIT" aria-label="MANUF HM LIEN AFFIDAVIT"
+                                                         checked="checked"                                                            id="MANUF HM LIEN AFFIDAVIT" onClick="switchIC('frmlookup_MANUF HM LIEN AFFIDAVIT');"/> MANUF HM LIEN AFFIDAVIT                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="MANUF HM LIEN AFFIDAVIT_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MANUF HM LIEN AFFIDAVIT][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MANUF HM SEV AFFIDAVIT">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MANUF HM SEV AFFIDAVIT]" value="MANUF HM SEV AFFIDAVIT" aria-label="MANUF HM SEV AFFIDAVIT"
+                                                         checked="checked"                                                            id="MANUF HM SEV AFFIDAVIT" onClick="switchIC('frmlookup_MANUF HM SEV AFFIDAVIT');"/> MANUF HM SEV AFFIDAVIT                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="MANUF HM SEV AFFIDAVIT_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MANUF HM SEV AFFIDAVIT][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MASTER DEED">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MASTER DEED]" value="MASTER DEED" aria-label="MASTER DEED"
+                                                         checked="checked"                                                            id="MASTER DEED" onClick="switchIC('frmlookup_MASTER DEED');"/> MASTER DEED                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="MASTER DEED_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MASTER DEED][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MECH LIEN">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MECH LIEN]" value="MECH LIEN" aria-label="MECH LIEN"
+                                                         checked="checked"                                                            id="MECH LIEN" onClick="switchIC('frmlookup_MECH LIEN');"/> MECH LIEN                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="MECH LIEN_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MECH LIEN][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MECH LIEN B">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MECH LIEN B]" value="MECH LIEN B" aria-label="MECH LIEN B"
+                                                         checked="checked"                                                            id="MECH LIEN B" onClick="switchIC('frmlookup_MECH LIEN B');"/> MECH LIEN B                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="MECH LIEN B_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MECH LIEN B][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MECH LIEN PART RELEASE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MECH LIEN PART RELEASE]" value="MECH LIEN PART RELEASE" aria-label="MECH LIEN PART RELEASE"
+                                                         checked="checked"                                                            id="MECH LIEN PART RELEASE" onClick="switchIC('frmlookup_MECH LIEN PART RELEASE');"/> MECH LIEN PART RELEASE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="MECH LIEN PART RELEASE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MECH LIEN PART RELEASE][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MECHANICS LIEN AFFIDAVIT">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MECHANICS LIEN AFFIDAVIT]" value="MECHANICS LIEN AFFIDAVIT" aria-label="MECHANICS LIEN AFFIDAVIT"
+                                                         checked="checked"                                                            id="MECHANICS LIEN AFFIDAVIT" onClick="switchIC('frmlookup_MECHANICS LIEN AFFIDAVIT');"/> MECHANICS LIEN AFFIDAVIT                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="MECHANICS LIEN AFFIDAVIT_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MECHANICS LIEN AFFIDAVIT][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MHL SAT">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MHL SAT]" value="MHL SAT" aria-label="MHL SAT"
+                                                         checked="checked"                                                            id="MHL SAT" onClick="switchIC('frmlookup_MHL SAT');"/> MHL SAT                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="MHL SAT_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MHL SAT][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MISC       ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MISC       ]" value="MISC       " aria-label="MISC       "
+                                                         checked="checked"                                                            id="MISC       " onClick="switchIC('frmlookup_MISC       ');"/> MISC                                                           <br />
+                                                    <div style="display:none; padding-left:20px;" id="MISC       _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MISC       ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MISC NF    ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MISC NF    ]" value="MISC NF    " aria-label="MISC NF    "
+                                                         checked="checked"                                                            id="MISC NF    " onClick="switchIC('frmlookup_MISC NF    ');"/> MISC NF                                                        <br />
+                                                    <div style="display:none; padding-left:20px;" id="MISC NF    _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MISC NF    ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MISC NO FED">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MISC NO FED]" value="MISC NO FED" aria-label="MISC NO FED"
+                                                         checked="checked"                                                            id="MISC NO FED" onClick="switchIC('frmlookup_MISC NO FED');"/> MISC NO FED                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="MISC NO FED_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MISC NO FED][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MISC NO FEE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MISC NO FEE]" value="MISC NO FEE" aria-label="MISC NO FEE"
+                                                         checked="checked"                                                            id="MISC NO FEE" onClick="switchIC('frmlookup_MISC NO FEE');"/> MISC NO FEE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="MISC NO FEE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MISC NO FEE][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MISCELLANEO">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MISCELLANEO]" value="MISCELLANEO" aria-label="MISCELLANEO"
+                                                         checked="checked"                                                            id="MISCELLANEO" onClick="switchIC('frmlookup_MISCELLANEO');"/> MISCELLANEO                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="MISCELLANEO_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MISCELLANEO][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_ML SATISFAC">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[ML SATISFAC]" value="ML SATISFAC" aria-label="ML SATISFAC"
+                                                         checked="checked"                                                            id="ML SATISFAC" onClick="switchIC('frmlookup_ML SATISFAC');"/> ML SATISFAC                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="ML SATISFAC_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[ML SATISFAC][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_ML SURETY  ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[ML SURETY  ]" value="ML SURETY  " aria-label="ML SURETY  "
+                                                         checked="checked"                                                            id="ML SURETY  " onClick="switchIC('frmlookup_ML SURETY  ');"/> ML SURETY                                                      <br />
+                                                    <div style="display:none; padding-left:20px;" id="ML SURETY  _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[ML SURETY  ][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MODIFICATIO">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MODIFICATIO]" value="MODIFICATIO" aria-label="MODIFICATIO"
+                                                         checked="checked"                                                            id="MODIFICATIO" onClick="switchIC('frmlookup_MODIFICATIO');"/> MODIFICATIO                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="MODIFICATIO_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MODIFICATIO][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MORTGAGE   ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MORTGAGE   ]" value="MORTGAGE   " aria-label="MORTGAGE   "
+                                                         checked="checked"                                                            id="MORTGAGE   " onClick="switchIC('frmlookup_MORTGAGE   ');"/> MORTGAGE                                                       <br />
+                                                    <div style="display:none; padding-left:20px;" id="MORTGAGE   _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MORTGAGE   ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MTG AFFIDAVIT">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MTG AFFIDAVIT]" value="MTG AFFIDAVIT" aria-label="MTG AFFIDAVIT"
+                                                         checked="checked"                                                            id="MTG AFFIDAVIT" onClick="switchIC('frmlookup_MTG AFFIDAVIT');"/> MTG AFFIDAVIT                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="MTG AFFIDAVIT_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MTG AFFIDAVIT][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_MTG NO FEE ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[MTG NO FEE ]" value="MTG NO FEE " aria-label="MTG NO FEE "
+                                                         checked="checked"                                                            id="MTG NO FEE " onClick="switchIC('frmlookup_MTG NO FEE ');"/> MTG NO FEE                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="MTG NO FEE _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[MTG NO FEE ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_NOT OF LEVY">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[NOT OF LEVY]" value="NOT OF LEVY" aria-label="NOT OF LEVY"
+                                                         checked="checked"                                                            id="NOT OF LEVY" onClick="switchIC('frmlookup_NOT OF LEVY');"/> NOT OF LEVY                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="NOT OF LEVY_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[NOT OF LEVY][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_NOTICE OF LIEN">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[NOTICE OF LIEN]" value="NOTICE OF LIEN" aria-label="NOTICE OF LIEN"
+                                                         checked="checked"                                                            id="NOTICE OF LIEN" onClick="switchIC('frmlookup_NOTICE OF LIEN');"/> NOTICE OF LIEN                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="NOTICE OF LIEN_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[NOTICE OF LIEN][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_NOTICE/SALE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[NOTICE/SALE]" value="NOTICE/SALE" aria-label="NOTICE/SALE"
+                                                         checked="checked"                                                            id="NOTICE/SALE" onClick="switchIC('frmlookup_NOTICE/SALE');"/> NOTICE/SALE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="NOTICE/SALE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[NOTICE/SALE][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_OPTION     ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[OPTION     ]" value="OPTION     " aria-label="OPTION     "
+                                                         checked="checked"                                                            id="OPTION     " onClick="switchIC('frmlookup_OPTION     ');"/> OPTION                                                         <br />
+                                                    <div style="display:none; padding-left:20px;" id="OPTION     _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[OPTION     ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_OTHER      ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[OTHER      ]" value="OTHER      " aria-label="OTHER      "
+                                                         checked="checked"                                                            id="OTHER      " onClick="switchIC('frmlookup_OTHER      ');"/> OTHER                                                          <br />
+                                                    <div style="display:none; padding-left:20px;" id="OTHER      _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[OTHER      ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_PARTIAL RELEASE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[PARTIAL RELEASE]" value="PARTIAL RELEASE" aria-label="PARTIAL RELEASE"
+                                                         checked="checked"                                                            id="PARTIAL RELEASE" onClick="switchIC('frmlookup_PARTIAL RELEASE');"/> PARTIAL RELEASE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="PARTIAL RELEASE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[PARTIAL RELEASE][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_PLAT /S NF ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[PLAT /S NF ]" value="PLAT /S NF " aria-label="PLAT /S NF "
+                                                         checked="checked"                                                            id="PLAT /S NF " onClick="switchIC('frmlookup_PLAT /S NF ');"/> PLAT /S NF                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="PLAT /S NF _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[PLAT /S NF ][PLAT]" value="PLAT" aria-label="PLAT"
+                                                                       id="PLAT"  onClick="selectAll('name')"/> PLAT<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_PLAT/RECORD">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[PLAT/RECORD]" value="PLAT/RECORD" aria-label="PLAT/RECORD"
+                                                         checked="checked"                                                            id="PLAT/RECORD" onClick="switchIC('frmlookup_PLAT/RECORD');"/> PLAT/RECORD                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="PLAT/RECORD_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[PLAT/RECORD][PLAT]" value="PLAT" aria-label="PLAT"
+                                                                       id="PLAT"  onClick="selectAll('name')"/> PLAT<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_PLATS /S   ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[PLATS /S   ]" value="PLATS /S   " aria-label="PLATS /S   "
+                                                         checked="checked"                                                            id="PLATS /S   " onClick="switchIC('frmlookup_PLATS /S   ');"/> PLATS /S                                                       <br />
+                                                    <div style="display:none; padding-left:20px;" id="PLATS /S   _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[PLATS /S   ][PLAT]" value="PLAT" aria-label="PLAT"
+                                                                       id="PLAT"  onClick="selectAll('name')"/> PLAT<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_PLATS BK NF">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[PLATS BK NF]" value="PLATS BK NF" aria-label="PLATS BK NF"
+                                                         checked="checked"                                                            id="PLATS BK NF" onClick="switchIC('frmlookup_PLATS BK NF');"/> PLATS BK NF                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="PLATS BK NF_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[PLATS BK NF][PLAT]" value="PLAT" aria-label="PLAT"
+                                                                       id="PLAT"  onClick="selectAll('name')"/> PLAT<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_PLATS BOOKS">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[PLATS BOOKS]" value="PLATS BOOKS" aria-label="PLATS BOOKS"
+                                                         checked="checked"                                                            id="PLATS BOOKS" onClick="switchIC('frmlookup_PLATS BOOKS');"/> PLATS BOOKS                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="PLATS BOOKS_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[PLATS BOOKS][PLAT]" value="PLAT" aria-label="PLAT"
+                                                                       id="PLAT"  onClick="selectAll('name')"/> PLAT<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_POSTAGE    ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[POSTAGE    ]" value="POSTAGE    " aria-label="POSTAGE    "
+                                                         checked="checked"                                                            id="POSTAGE    " onClick="switchIC('frmlookup_POSTAGE    ');"/> POSTAGE                                                        <br />
+                                                    <div style="display:none; padding-left:20px;" id="POSTAGE    _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[POSTAGE    ][]" value="" aria-label=""
+                                                                       id=""  onClick="selectAll('name')"/> <br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_POW AG RES ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[POW AG RES ]" value="POW AG RES " aria-label="POW AG RES "
+                                                         checked="checked"                                                            id="POW AG RES " onClick="switchIC('frmlookup_POW AG RES ');"/> POW AG RES                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="POW AG RES _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[POW AG RES ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_POWER / ATT">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[POWER / ATT]" value="POWER / ATT" aria-label="POWER / ATT"
+                                                         checked="checked"                                                            id="POWER / ATT" onClick="switchIC('frmlookup_POWER / ATT');"/> POWER / ATT                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="POWER / ATT_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[POWER / ATT][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_PREL">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[PREL]" value="PREL" aria-label="PREL"
+                                                         checked="checked"                                                            id="PREL" onClick="switchIC('frmlookup_PREL');"/> PREL                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="PREL_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[PREL][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_RELEASE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[RELEASE]" value="RELEASE" aria-label="RELEASE"
+                                                         checked="checked"                                                            id="RELEASE" onClick="switchIC('frmlookup_RELEASE');"/> RELEASE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="RELEASE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[RELEASE][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_RELEASE NF ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[RELEASE NF ]" value="RELEASE NF " aria-label="RELEASE NF "
+                                                         checked="checked"                                                            id="RELEASE NF " onClick="switchIC('frmlookup_RELEASE NF ');"/> RELEASE NF                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="RELEASE NF _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[RELEASE NF ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_RESCISSION">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[RESCISSION]" value="RESCISSION" aria-label="RESCISSION"
+                                                         checked="checked"                                                            id="RESCISSION" onClick="switchIC('frmlookup_RESCISSION');"/> RESCISSION                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="RESCISSION_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[RESCISSION][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_RESOLUTION">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[RESOLUTION]" value="RESOLUTION" aria-label="RESOLUTION"
+                                                         checked="checked"                                                            id="RESOLUTION" onClick="switchIC('frmlookup_RESOLUTION');"/> RESOLUTION                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="RESOLUTION_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[RESOLUTION][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_REST COV NF">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[REST COV NF]" value="REST COV NF" aria-label="REST COV NF"
+                                                         checked="checked"                                                            id="REST COV NF" onClick="switchIC('frmlookup_REST COV NF');"/> REST COV NF                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="REST COV NF_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[REST COV NF][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_REST COVE  ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[REST COVE  ]" value="REST COVE  " aria-label="REST COVE  "
+                                                         checked="checked"                                                            id="REST COVE  " onClick="switchIC('frmlookup_REST COVE  ');"/> REST COVE                                                      <br />
+                                                    <div style="display:none; padding-left:20px;" id="REST COVE  _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[REST COVE  ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_REVOCATION OF RELEASE OF TAX LIEN">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[REVOCATION OF RELEASE OF TAX LIEN]" value="REVOCATION OF RELEASE OF TAX LIEN" aria-label="REVOCATION OF RELEASE OF TAX LIEN"
+                                                         checked="checked"                                                            id="REVOCATION OF RELEASE OF TAX LIEN" onClick="switchIC('frmlookup_REVOCATION OF RELEASE OF TAX LIEN');"/> REVOCATION OF RELEASE OF TAX LIEN                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="REVOCATION OF RELEASE OF TAX LIEN_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[REVOCATION OF RELEASE OF TAX LIEN][TAX LIEN]" value="TAX LIEN" aria-label="TAX LIEN"
+                                                                       id="TAX LIEN"  onClick="selectAll('name')"/> TAX LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_REVOKE POA ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[REVOKE POA ]" value="REVOKE POA " aria-label="REVOKE POA "
+                                                         checked="checked"                                                            id="REVOKE POA " onClick="switchIC('frmlookup_REVOKE POA ');"/> REVOKE POA                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="REVOKE POA _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[REVOKE POA ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_SAT LEVY   ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[SAT LEVY   ]" value="SAT LEVY   " aria-label="SAT LEVY   "
+                                                         checked="checked"                                                            id="SAT LEVY   " onClick="switchIC('frmlookup_SAT LEVY   ');"/> SAT LEVY                                                       <br />
+                                                    <div style="display:none; padding-left:20px;" id="SAT LEVY   _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[SAT LEVY   ][MISC LIEN]" value="MISC LIEN" aria-label="MISC LIEN"
+                                                                       id="MISC LIEN"  onClick="selectAll('name')"/> MISC LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_SAT NO FEE ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[SAT NO FEE ]" value="SAT NO FEE " aria-label="SAT NO FEE "
+                                                         checked="checked"                                                            id="SAT NO FEE " onClick="switchIC('frmlookup_SAT NO FEE ');"/> SAT NO FEE                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="SAT NO FEE _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[SAT NO FEE ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_SATISFACTIO">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[SATISFACTIO]" value="SATISFACTIO" aria-label="SATISFACTIO"
+                                                         checked="checked"                                                            id="SATISFACTIO" onClick="switchIC('frmlookup_SATISFACTIO');"/> SATISFACTIO                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="SATISFACTIO_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[SATISFACTIO][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_SUB ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[SUB ]" value="SUB " aria-label="SUB "
+                                                         checked="checked"                                                            id="SUB " onClick="switchIC('frmlookup_SUB ');"/> SUB                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="SUB _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[SUB ][UCC]" value="UCC" aria-label="UCC"
+                                                                       id="UCC"  onClick="selectAll('name')"/> UCC<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_SUBORDINATI">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[SUBORDINATI]" value="SUBORDINATI" aria-label="SUBORDINATI"
+                                                         checked="checked"                                                            id="SUBORDINATI" onClick="switchIC('frmlookup_SUBORDINATI');"/> SUBORDINATI                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="SUBORDINATI_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[SUBORDINATI][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_TAX LIEN">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[TAX LIEN]" value="TAX LIEN" aria-label="TAX LIEN"
+                                                         checked="checked"                                                            id="TAX LIEN" onClick="switchIC('frmlookup_TAX LIEN');"/> TAX LIEN                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="TAX LIEN_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[TAX LIEN][TAX LIEN]" value="TAX LIEN" aria-label="TAX LIEN"
+                                                                       id="TAX LIEN"  onClick="selectAll('name')"/> TAX LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_TAX LIEN AMEND">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[TAX LIEN AMEND]" value="TAX LIEN AMEND" aria-label="TAX LIEN AMEND"
+                                                         checked="checked"                                                            id="TAX LIEN AMEND" onClick="switchIC('frmlookup_TAX LIEN AMEND');"/> TAX LIEN AMEND                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="TAX LIEN AMEND_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[TAX LIEN AMEND][TAX LIEN]" value="TAX LIEN" aria-label="TAX LIEN"
+                                                                       id="TAX LIEN"  onClick="selectAll('name')"/> TAX LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_TAX LIEN PARTIAL RELEASE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[TAX LIEN PARTIAL RELEASE]" value="TAX LIEN PARTIAL RELEASE" aria-label="TAX LIEN PARTIAL RELEASE"
+                                                         checked="checked"                                                            id="TAX LIEN PARTIAL RELEASE" onClick="switchIC('frmlookup_TAX LIEN PARTIAL RELEASE');"/> TAX LIEN PARTIAL RELEASE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="TAX LIEN PARTIAL RELEASE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[TAX LIEN PARTIAL RELEASE][TAX LIEN]" value="TAX LIEN" aria-label="TAX LIEN"
+                                                                       id="TAX LIEN"  onClick="selectAll('name')"/> TAX LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_TAX LN SAT">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[TAX LN SAT]" value="TAX LN SAT" aria-label="TAX LN SAT"
+                                                         checked="checked"                                                            id="TAX LN SAT" onClick="switchIC('frmlookup_TAX LN SAT');"/> TAX LN SAT                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="TAX LN SAT_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[TAX LN SAT][TAX LIEN]" value="TAX LIEN" aria-label="TAX LIEN"
+                                                                       id="TAX LIEN"  onClick="selectAll('name')"/> TAX LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_TERM">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[TERM]" value="TERM" aria-label="TERM"
+                                                         checked="checked"                                                            id="TERM" onClick="switchIC('frmlookup_TERM');"/> TERM                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="TERM_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[TERM][UCC]" value="UCC" aria-label="UCC"
+                                                                       id="UCC"  onClick="selectAll('name')"/> UCC<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_TERM NO FEE">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[TERM NO FEE]" value="TERM NO FEE" aria-label="TERM NO FEE"
+                                                         checked="checked"                                                            id="TERM NO FEE" onClick="switchIC('frmlookup_TERM NO FEE');"/> TERM NO FEE                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="TERM NO FEE_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[TERM NO FEE][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_TERMINATION">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[TERMINATION]" value="TERMINATION" aria-label="TERMINATION"
+                                                         checked="checked"                                                            id="TERMINATION" onClick="switchIC('frmlookup_TERMINATION');"/> TERMINATION                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="TERMINATION_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[TERMINATION][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_TIMBER CON ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[TIMBER CON ]" value="TIMBER CON " aria-label="TIMBER CON "
+                                                         checked="checked"                                                            id="TIMBER CON " onClick="switchIC('frmlookup_TIMBER CON ');"/> TIMBER CON                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="TIMBER CON _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[TIMBER CON ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_TIME SHARE ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[TIME SHARE ]" value="TIME SHARE " aria-label="TIME SHARE "
+                                                         checked="checked"                                                            id="TIME SHARE " onClick="switchIC('frmlookup_TIME SHARE ');"/> TIME SHARE                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="TIME SHARE _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[TIME SHARE ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_TRUST      ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[TRUST      ]" value="TRUST      " aria-label="TRUST      "
+                                                         checked="checked"                                                            id="TRUST      " onClick="switchIC('frmlookup_TRUST      ');"/> TRUST                                                          <br />
+                                                    <div style="display:none; padding-left:20px;" id="TRUST      _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[TRUST      ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_UCC        ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC        ]" value="UCC        " aria-label="UCC        "
+                                                         checked="checked"                                                            id="UCC        " onClick="switchIC('frmlookup_UCC        ');"/> UCC                                                            <br />
+                                                    <div style="display:none; padding-left:20px;" id="UCC        _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC        ][UCC]" value="UCC" aria-label="UCC"
+                                                                       id="UCC"  onClick="selectAll('name')"/> UCC<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_UCC AGREE  ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC AGREE  ]" value="UCC AGREE  " aria-label="UCC AGREE  "
+                                                         checked="checked"                                                            id="UCC AGREE  " onClick="switchIC('frmlookup_UCC AGREE  ');"/> UCC AGREE                                                      <br />
+                                                    <div style="display:none; padding-left:20px;" id="UCC AGREE  _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC AGREE  ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_UCC AMENDME">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC AMENDME]" value="UCC AMENDME" aria-label="UCC AMENDME"
+                                                         checked="checked"                                                            id="UCC AMENDME" onClick="switchIC('frmlookup_UCC AMENDME');"/> UCC AMENDME                                                    <br />
+                                                    <div style="display:none; padding-left:20px;" id="UCC AMENDME_IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC AMENDME][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_UCC ASSIGN ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC ASSIGN ]" value="UCC ASSIGN " aria-label="UCC ASSIGN "
+                                                         checked="checked"                                                            id="UCC ASSIGN " onClick="switchIC('frmlookup_UCC ASSIGN ');"/> UCC ASSIGN                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="UCC ASSIGN _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC ASSIGN ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_UCC CERT   ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC CERT   ]" value="UCC CERT   " aria-label="UCC CERT   "
+                                                         checked="checked"                                                            id="UCC CERT   " onClick="switchIC('frmlookup_UCC CERT   ');"/> UCC CERT                                                       <br />
+                                                    <div style="display:none; padding-left:20px;" id="UCC CERT   _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC CERT   ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_UCC MTG    ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC MTG    ]" value="UCC MTG    " aria-label="UCC MTG    "
+                                                         checked="checked"                                                            id="UCC MTG    " onClick="switchIC('frmlookup_UCC MTG    ');"/> UCC MTG                                                        <br />
+                                                    <div style="display:none; padding-left:20px;" id="UCC MTG    _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC MTG    ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_UCC MTG 2  ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC MTG 2  ]" value="UCC MTG 2  " aria-label="UCC MTG 2  "
+                                                         checked="checked"                                                            id="UCC MTG 2  " onClick="switchIC('frmlookup_UCC MTG 2  ');"/> UCC MTG 2                                                      <br />
+                                                    <div style="display:none; padding-left:20px;" id="UCC MTG 2  _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC MTG 2  ][MG]" value="MG" aria-label="MG"
+                                                                       id="MG"  onClick="selectAll('name')"/> MG<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_UCC NO FEE ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC NO FEE ]" value="UCC NO FEE " aria-label="UCC NO FEE "
+                                                         checked="checked"                                                            id="UCC NO FEE " onClick="switchIC('frmlookup_UCC NO FEE ');"/> UCC NO FEE                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="UCC NO FEE _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC NO FEE ][UCC]" value="UCC" aria-label="UCC"
+                                                                       id="UCC"  onClick="selectAll('name')"/> UCC<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_UCC TEMP   ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC TEMP   ]" value="UCC TEMP   " aria-label="UCC TEMP   "
+                                                         checked="checked"                                                            id="UCC TEMP   " onClick="switchIC('frmlookup_UCC TEMP   ');"/> UCC TEMP                                                       <br />
+                                                    <div style="display:none; padding-left:20px;" id="UCC TEMP   _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[UCC TEMP   ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_VOIDED DOC ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[VOIDED DOC ]" value="VOIDED DOC " aria-label="VOIDED DOC "
+                                                         checked="checked"                                                            id="VOIDED DOC " onClick="switchIC('frmlookup_VOIDED DOC ');"/> VOIDED DOC                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="VOIDED DOC _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[VOIDED DOC ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_WAIVER     ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[WAIVER     ]" value="WAIVER     " aria-label="WAIVER     "
+                                                         checked="checked"                                                            id="WAIVER     " onClick="switchIC('frmlookup_WAIVER     ');"/> WAIVER                                                         <br />
+                                                    <div style="display:none; padding-left:20px;" id="WAIVER     _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[WAIVER     ][DEED]" value="DEED" aria-label="DEED"
+                                                                       id="DEED"  onClick="selectAll('name')"/> DEED<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                            
+                                                <div id="frmlookup_form_category_container_WITHDRAWAL ">
+
+                                                    <input class="checkboxSelect" type="checkbox" name="instType[WITHDRAWAL ]" value="WITHDRAWAL " aria-label="WITHDRAWAL "
+                                                         checked="checked"                                                            id="WITHDRAWAL " onClick="switchIC('frmlookup_WITHDRAWAL ');"/> WITHDRAWAL                                                     <br />
+                                                    <div style="display:none; padding-left:20px;" id="WITHDRAWAL _IC">
+	                                                    		                                                                                                                    <input class="checkboxSelect" type="checkbox" name="instType[WITHDRAWAL ][TAX LIEN]" value="TAX LIEN" aria-label="TAX LIEN"
+                                                                       id="TAX LIEN"  onClick="selectAll('name')"/> TAX LIEN<br />
+		                                                    	                                                                                                        </div>
+                                                </div>
+                                                                                    </div>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+	                        </td></div>
+    </tr>
+
+    <tr>
+        <td>
+            <!-- Entity Type -->
+            <table cellpadding="0" cellspacing="0" id="entity_type_table">
+                <caption style="text-align: left;font-size: 11px;font-weight: normal;">Entity Type</caption>
+                <tbody>
+                <tr><td>
+                        <input type="radio" name="entity_type" id="entity_type_both" value="Both" checked="checked" aria-label="Entity Type: Both"
+	                        />
+                    </td><td><label for="entity_type_both">Both</label></td></tr>
+                <tr><td><input type="radio" name="entity_type" id="entity_type_company" value="Company" aria-label="Entity Type: Company"
+			                 />
+                    </td><td><label for="entity_type_company">Company</label></td></tr>
+                <tr><td><input type="radio" name="entity_type" id="entity_type_person" value="Person" aria-label="Entity Type: Person"
+			                 />
+                    </td><td><label for="entity_type_person">Human</label></td></tr>
+                </tbody>
+            </table>
+        </td>
+        <td></td>
+        <td>
+            <table border="0">
+                <tr>
+                    <td><b>Grantor:</b></td>
+                    
+                                            <td colspan="3"><label for="tor_last_name">Last/ First Name or Company name</label>
+                            <br />
+                            <input type="text" name="tor_last_name" id="tor_last_name" aria-label="Grantor Last/First Name or Company Name" onKeyUp="checkAutoSuggest();" style="width: 500px;" autocomplete="off"/>
+                        </td>
+                    
+                    <td>
+                        <table>
+                            <tr><td>
+                                    <input type="checkbox" name="search_each" id="search_each" aria-label="Search records that are either Grantor or Grantee" checked="checked" >
+                                </td><td>
+                                    <label for="search_each"><b>Search records that are either Grantor or Grantee</b></label></td>
+                                <td>
+                                    <button type="button" class="tooltip-trigger"
+                                        aria-describedby="tooltip-search-each">
+                                        <img src="images/Help.png" alt="Help icon for search both grantor and grantee" />
+                                    </button>
+                                    <div id="tooltip-search-each" role="tooltip" class="tooltip-content" hidden>Search records that are either Grantor or Grantee
+
+Selecting this option will search for documents which the entered name was
+indexed as either a GRANTOR or a GRANTEE.
+
+For example, selecting this option and entering JOHN SMITH in the GRANTOR field,
+will return documents that contain JOHN SMITH as the GRANTOR as well as
+documents that contain JOHN SMITH as the GRANTEE.
+                                    </div>
+                                </td></tr></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Grantee:</b></td>
+                                        
+                                            <td colspan="3"><label for="tee_last_name">Last/ First Name or Company name</label>
+                            <br />
+                            <input type="text" name="tee_last_name" id="tee_last_name" aria-label="Grantee Last/First Name or Company Name" onKeyUp="checkAutoSuggest();"
+                                   onKeyPress="clearField('tor_first_name'); clearField('tor_last_name');" style="width: 500px;" autocomplete="off"/>
+                        </td>
+                                    </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2">
+                        <table>
+                            <tr><td>
+                                    <label for="start_date">Start Date</label> <i>mm/dd/yyyy<br /><input type="text" id="start_date" name="start_date" aria-label="Start Date"
+                                                                         value="01/01/1977"  style="width: 100px;" autocomplete="off"></td>
+
+                                <td colspan="3"><label for="end_date">End Date</label> <i>mm/dd/yyyy<br /><input type="text" id="end_date" name="end_date" aria-label="End Date"
+                                                                                   value="11/12/2026" style="width: 100px;" autocomplete="off"></td>
+                            </tr>
+
+                        </table>
+                <tr>
+                    <td colspan="5" align="center"><input type="submit" value="Search">
+                        <input type="reset" value="Reset" onClick="resetForm();">
+                    </td>
+                    </td>
+                </tr>
+
+	                        </table>
+        </td>
+    </tr>
+    </tr></tr><tr><td colspan="4">
+            </form>
+            </div>
+
+			                <script>
+                    function addExampleforOldPlat(){
+                        var e = document.getElementById("bookcode");
+                        var strUser = e.options[e.selectedIndex].value;
+                        if(strUser == "PLAT"){
+                            document.getElementById("bnum").placeholder = 'EX: CABR';
+                        }
+                        else if(strUser == "P"){
+                            document.getElementById("bnum").placeholder = 'EX: CABR';
+                        }
+                        else{
+                            document.getElementById("bnum").placeholder = '';
+                        }
+                    }
+
+                    function disableSearch() {
+                        var bookelem = document.getElementById('frm_book_lookup').elements;
+                        if (
+                            (
+                                bookelem['bookcode']?.value === "" ||
+                                bookelem['instgroup']?.value === "" ||
+                                bookelem['instgroupbookcode']?.value === "" ||
+                                bookelem['bnum'].value === "" ||
+                                bookelem['bpagenum'].value === ""
+                            ) &&
+                            bookelem['inst_num'].value === "" &&
+                            (bookelem['map_num']?.value === undefined || bookelem['map_num']?.value === "")
+                        ) {
+                            document.forms['frm_book_lookup'].booksearch.disabled = true;
+                        } else {
+                            document.forms['frm_book_lookup'].booksearch.disabled = false;
+                        }
+                    }
+
+                    // BO-105: Delete empty element
+                    document.addEventListener('DOMContentLoaded', () => {
+                        let parentElement = document.getElementById("instBookElement");
+                        if (parentElement.querySelector('select').options[1] === undefined) {
+                            parentElement.remove();
+                        }
+                    });
+                </script>
+                <table border="0" id="bottom_stuff">
+                    <tr>
+                        <td>
+                            <table border="0" cellpadding="0" cellspacing="0">
+                                <form method="get" action="BookSearch.php" id="frm_book_lookup" name="frm_book_lookup">
+                                    <tr><td colspan="3" align="center">
+                                            <span style="color:#333333;font-weight: bold">Book-Page (OR) File # Search</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td valign="top" id="instBookElement">
+                                            
+                                                <label for="bookcode">
+                                                    Book Type                                                </label><br>
+
+                                                <select name="book[bookcode]" id="bookcode" aria-label="Book Type" onchange="disableSearch();"
+                                                    onkeydown="disableSearch(); addExampleforOldPlat();">
+
+                                                    <option value='All' selected>ALL</option><option value='01'>DEED</option><option value='02'>MORTGAGE</option><option value='03'>PLAT INDEX</option><option value='04'>UCC INDEX</option><option value='05'>TAX LIEN INDEX</option><option value='06'>MISCELLANOUES LIEN INDEX</option><option value='11'>UCC</option><option value='MLB'>MISC LIEN BOOK</option><option value='PLS'>PLAT SLIDE</option><option value='RB'>RECORD BOOK</option>                                                </select>
+                                            </td>
+
+                                            <td valign="top">
+                                                <label for="bnum">Book</label><br>
+                                                <input type="text" name="book[booknum]" id="bnum" onkeydown="disableSearch()" onchange="disableSearch()" value="" autocomplete="off">
+                                            </td>
+
+                                            <td valign="top">
+                                                <label for="bpagenum">Page</label><br>
+                                                <input type="text" name="book[pagenum]" id="bpagenum" onkeydown="disableSearch()" onchange="disableSearch()" value="" autocomplete="off">
+                                            </td>
+
+                                            <td>
+                                                <label for="pagesuffix">Page Suffix</label><br>
+                                                <input type="text"  name="book[pagesuffix]" id="pagesuffix" maxlength="2" style="width:50px;" onkeydown="disableSearch()" onchange="disableSearch()" value="" autocomplete="off">
+                                            </td>
+                                    </tr>
+                                    <!-- old code -->
+                                    <!-- <tr>
+                                        <td valign="top" id="instBookElement"><label for="booktype"> Book Type </label><br>
+                                            <select
+                                                name="book[bookcode]" id="bookcode"                                                onChange="disableSearch();" onKeyPress="disableSearch(); addExampleforOldPlat();" id="booktype">
+                                                <option value='All' selected='selected'>ALL</option><option value='01'>DEED</option><option value='02'>MORTGAGE</option><option value='03'>PLAT INDEX</option><option value='04'>UCC INDEX</option><option value='05'>TAX LIEN INDEX</option><option value='06'>MISCELLANOUES LIEN INDEX</option><option value='11'>UCC</option><option value='MLB'>MISC LIEN BOOK</option><option value='PLS'>PLAT SLIDE</option><option value='RB'>RECORD BOOK</option>                                            </select>&nbsp;&nbsp;&nbsp;
+                                        </td>
+                                        <td valign="top"><label for="bnum">Book</label><br><input type="text" name="book[booknum]" id="bnum" aria-label="Book Number" onChange="disableSearch()" onKeyPress="disableSearch()" value=""
+                                            autocomplete="off">&nbsp;&nbsp;&nbsp;</td>
+                                        <td valign="top"><label for="bpagenum">Page</label><br><input type="text" name="book[pagenum]" id="bpagenum" aria-label="Page Number" onChange="disableSearch()" onKeyPress="disableSearch()" value="" autocomplete="off"></td>
+
+                                        <td><label for="pagesuffix">Page Suffix</label><br><input type='text' name='book[pagesuffix]' id='pagesuffix' aria-label='Page Suffix' onChange='disableSearch()' onKeyPress='disableSearch()' value="" maxlength="2" style="width:50px;" autocomplete="off"></td>
+                                    </tr> -->
+                                    <tr>
+                                        <td valign="top"><label for="inst_num">Inst #</label><br><input type="text" name="inst_num" id="inst_num" aria-label="Instrument Number" onChange="disableSearch()" onKeyPress="disableSearch()" value="" autocomplete="off"></td>
+                                                                            </tr>
+                                    <tr>
+                                        <td colspan="3" align="center"><br><input type="submit" value="Search" id="booksearch"></td>
+                                    </tr>
+                                    <tr><td colspan='3' align='center'>Any documents recorded after 5/14/2021 will be searchable under the following new Book Codes: RB (Record Book), PLS (Plat Slide), MLB (Miscellaneous Book).</td></tr>                                </form>
+                            </table>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <br><br>
+
+                            <!-- the buttons -->
+                            <div style="width:100%;">
+
+                                <!-- View Backscanned Document -->
+                                                                    <input type="button" value="View Backscanned Document" class="bottomButtons"
+                                           onClick="window.location.href = 'deedhold/deedhold_v3.php'" >
+                                    
+                                <!-- Daily Notebook -->
+                                                                    <input type="button" value="Daily Notebook" class="bottomButtons"
+                                           onClick="window.location.href = 'nontemp.php'" >
+                                    
+                                <!-- Not Temp -->
+                                
+                                <!-- Non-Indexed Plats -->
+                                
+                                <!-- Old Index Books -->
+                                                                    <input type="button" value="Old Index Books" class="bottomButtons"
+                                           onClick="window.location.href = 'oldIndexes/oldindexsearch.php'" >
+                                    
+                                <!-- Vitals Record Search -->
+                                
+                                <!-- Plats/Condominiums -->
+                                
+                                <!-- Tax Collection Info -->
+                                
+                                <!-- Slavery Deeds -->
+                                
+                                <!-- Temp Index -->
+                                
+                                <!-- Bulk Image Download -->
+                                
+                                <!-- Notary Record Search -->
+                                
+                                <!-- Definitions -->
+                                
+                                <!-- Property Description -->
+                                
+                                <!-- Recording Alert -->
+                                                            </div>
+                        </td>
+                    </tr>
+                </table>
+	                    </td></tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+
+<div align="center">
+    <img id="companyLogo" src="images/logo_footer.png" alt="i3 Verticals logo" style=" margin-top: 15px; max-width:25%" border="0">
+</div>
+
+<div id="propertySearch" style="width: 100%; display:none" align="center">
+	
+    <b>Property Description Search</b><br>
+
+
+    <table>
+        <form method="post" action="NameDisplay.php">
+            <input type="hidden" name="prop_search" value="1" />
+	        <tr><td><label for="prop_SubName">Subdivision</label></td><td><input type="text" id="prop_SubName" name="prop[SubName]" autocomplete="off"></td><td><label for="prop_Lot">Lot</label></td><td><input type="text" id="prop_Lot" name="prop[Lot]" autocomplete="off"></td></tr><tr><td><label for="prop_Block">Block</label></td><td><input type="text" id="prop_Block" name="prop[Block]" autocomplete="off"></td><td><label for="prop_Section">Section</label></td><td><input type="text" id="prop_Section" name="prop[Section]" autocomplete="off"></td></tr><tr><td><label for="prop_Map">Map</label></td><td><input type="text" id="prop_Map" name="prop[Map]" autocomplete="off"></td><td><label for="prop_Phase">Phase</label></td><td><input type="text" id="prop_Phase" name="prop[Phase]" autocomplete="off"></td></tr><tr><td><label for="prop_Unit">Unit</label></td><td><input type="text" id="prop_Unit" name="prop[Unit]" autocomplete="off"></td><td><label for="prop_PropDesc">Property Description</label></td><td><input type="text" id="prop_PropDesc" name="prop[PropDesc]" autocomplete="off"></td></tr>            <tr><td colspan = 4 align="center"><input type="button" onClick="hidePropSearch();" value="Back"> &nbsp;&nbsp;&nbsp;<input type="submit" value="Search Property"></td></tr>
+        </form>
+    </table>
+
+</div>
+</main>
+
+</body>
+</html>
