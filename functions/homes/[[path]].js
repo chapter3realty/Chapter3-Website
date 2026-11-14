@@ -23,6 +23,7 @@ import { filterCatalog, panelGroups } from "../../idx-lib/catalog.js";
 import { filterBar, labels as filterLabels } from "../../idx-lib/filters.js";
 import { postFilter, rankHomes } from "../../idx-lib/feeds.js";
 import { photo, photoUrl, warm } from "../../idx-lib/photo.js";
+import { sameHome, streetKey } from "../../idx-lib/address.js";
 import { DEALS_SCRIPT, FLIP_DEFAULTS, findFlips, flipSettings } from "../../idx-lib/deals.js";
 import { MAP_SCRIPT, MAP_STYLE, geocode, mapsKey, nearOf, pinOf, sorryHtml, withPoints } from "../../idx-lib/map.js";
 import { AI_CSS, ASK_CSS, ASK_SCRIPT, aiChip } from "../../idx-lib/ai.js";
@@ -798,11 +799,6 @@ const DEALS_STYLE = `<style>
 
 // ── the rental analyzer's MLS lookup ────────────────────────────────────────
 
-/** The house number and the first word of the street name, for matching an address. */
-function streetKey(a) {
-  const m = /^\s*(\d+[a-z]?)\s+(?:(?:n|s|e|w|north|south|east|west)\.?\s+)?([a-z0-9]+)/i.exec(String(a || ""));
-  return m ? `${m[1].toLowerCase()} ${m[2].toLowerCase()}` : "";
-}
 
 /**
  * GET /homes/api/lookup?mls=<MLS#>, or ?street=<address>&lat=&lng=: the listing's facts for
@@ -820,14 +816,15 @@ async function lookup(context, url) {
     if (!key || !n) return json({ ok: true, found: false });
     const r = await crm(context.env, context.request, `/api/idx/listings?near=${encodeURIComponent(n.near)}&miles=0.2&size=48`, { anonymous: true });
     const ls = r.status === 200 && r.json && r.json.ok && Array.isArray(r.json.listings) ? r.json.listings : [];
-    let hit = ls.find((l) => l.address && streetKey(l.address) === key);
+    const city = String(q.get("city") || "").slice(0, 60), zip = String(q.get("zip") || "").slice(0, 5);
+    let hit = ls.find((l) => sameHome(l, q.get("street"), city, zip));
     // Not for sale: a signed-up visitor can study a home that sold in the last 24 months
     // (sold records are for signed-up visitors only, contract §5).
     const signed = Boolean(visitorToken(context.request));
     if (!hit && signed) {
       const s = await crm(context.env, context.request, `/api/idx/listings?near=${encodeURIComponent(n.near)}&miles=0.2&sold=1&size=48`);
       const sl = s.status === 200 && s.json && s.json.ok && Array.isArray(s.json.listings) ? s.json.listings : [];
-      hit = sl.find((l) => l.address && streetKey(l.address) === key);
+      hit = sl.find((l) => sameHome(l, q.get("street"), city, zip));
     }
     if (!hit) return json({ ok: true, found: false, soldNeedsSignup: !signed }, 200, { "cache-control": "private, no-store" });
     mls = hit.mlsNumber;
@@ -836,7 +833,15 @@ async function lookup(context, url) {
   if (badToken(r)) return json({ ok: true, found: false }, 200, { "set-cookie": clearCookie() });
   if (r.status !== 200 || !r.json || !r.json.ok || !r.json.listing) return json({ ok: true, found: false });
   const l = r.json.listing;
-  const d = r.json.tier === "registered" && l.details ? l.details : {};
+  /* The analyzer figures every visitor's numbers from the MLS (owner, 2026-11-14: "It needs to get all of its numbers
+     from the mls"): a visitor who has not signed up gets the HOA fee, the tax and the flood zone from the server's
+     own read of the listing (descriptionsFor, CRM Ticket 557). The description itself stays for signed-up visitors. */
+  let d = r.json.tier === "registered" && l.details ? l.details : {};
+  if (r.json.tier !== "registered") {
+    const by = await descriptionsFor(context.env, context.request, [String(l.mlsNumber)]).catch(() => null);
+    const x = by && by[String(l.mlsNumber)];
+    if (x && x.details) d = { AssociationFee: x.details.AssociationFee, AssociationFeeFrequency: x.details.AssociationFeeFrequency, TaxAnnualAmount: x.details.TaxAnnualAmount, FloodZone: x.details.FloodZone };
+  }
   const n = (v) => (typeof v === "number" && isFinite(v) ? v : null);
   const fee = n(d.AssociationFee), freq = String(d.AssociationFeeFrequency || "").toLowerCase();
   const hoaMonthly = fee === null ? null : /annual|year/.test(freq) ? Math.round(fee / 12) : /quarter/.test(freq) ? Math.round(fee / 3) : fee;

@@ -31,6 +31,31 @@ export const POSTS = [
       "Also live in the same deploy (commit 14406393): the photo warmer makes one run every 15 minutes, at most 28 CRM calls a run (16 listing pages of 48, 12 photos), one call at a time; 429 waits retry-after, 503 or 5xx ends the run.",
     ].join("\n"),
   },
+  {
+    id: "sharper-photos-2026-11-14",
+    post: {
+      kind: "request",
+      title: "Sharper listing photos on cards and listing pages",
+      body: [
+        "What: a sharper card photo. Today `photo` is 480 px wide (webp). Please add a second link, `photo2x`, at 960 px (or let the photo route serve w=960 for the same signed link), and serve listing page photos (`photos[].url`) at 1600 px instead of 1200.",
+        "Why: the owner says IDX photos look blurry (2026-11-14). A phone shows about 3 device pixels per CSS pixel, and a card is 330 to 380 CSS px wide there, so it needs about 1,000 px; a 480 px photo is stretched about twice. On a desktop listing page the main photo is up to 1,200 CSS px wide, so 1200 px is soft on a retina screen.",
+        "Example: <img src=\"<photo>\" srcset=\"<photo> 480w, <photo2x> 960w\" sizes=\"(max-width:600px) 92vw, 380px\"> on every card.",
+        "Used by: the search results and map cards, the guide page strips, the listing page gallery. The website only uses the links the CRM sends (contract §8 rule 7).",
+      ].join("\n"),
+    },
+  },
+  {
+    id: "analyzer-mls-details-2026-11-14",
+    post: {
+      kind: "note",
+      title: "The rental analyzer now uses the MLS HOA fee, tax and flood zone for every visitor",
+      body: [
+        "Owner, 2026-11-14: the rental analyzer \"needs to get all of its numbers from the mls\". Its lookup (the website's /homes/api/lookup) now reads AssociationFee, AssociationFeeFrequency, TaxAnnualAmount and FloodZone from GET /api/idx/remarks for a visitor who has not signed up, server-side, and figures the HOA cost from the MLS fee. The description itself still goes only to signed-up visitors.",
+        "The lookup now also matches the listing to the typed address by house number, street word, direction (N/S/E/W) and the town or ZIP code. Before, \"1100 S Ocean Blvd, Surfside Beach\" could match \"1100 N Ocean Blvd, North Myrtle Beach\".",
+        "If the HOA fee or tax should stay behind the sign-up for the analyzer too, say so here and the website will change it back.",
+      ].join("\n"),
+    },
+  },
 ];
 
 /** One call to the request line: { status, json, retryAfter }. */

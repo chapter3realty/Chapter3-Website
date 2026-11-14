@@ -17,6 +17,7 @@ import { nearbySales, flipMath, FLIP_DEFAULTS, repairTier } from "../idx-lib/dea
 import { photo, photoUrl, warm, ourPhoto, crmParts, forgetFresh, FRESH, PAGES_PER_RUN, SWEEP_EVERY_MS, FRESH_MS } from "../idx-lib/photo.js";
 import { resetCatalog, filterCatalog } from "../idx-lib/catalog.js";
 import { sendRequests, POSTS } from "../idx-lib/crm-requests.js";
+import { sameHome } from "../idx-lib/address.js";
 import { SCRIPT, STYLE, PHOTO_FIX, PHOTO_HINT, hasPhoto, stripCards, NO_PHOTO } from "../idx-lib/render.js";
 const STYLE_OK = () => STYLE.includes(".hx-dialog form[hidden]{display:none}");
 import { MAP_SCRIPT } from "../idx-lib/map.js";
@@ -549,7 +550,7 @@ check("sign-up: one full name box, email, phone, Continue to photos, Already hav
   check("analyzer script: a new address forgets the old home's facts; one run at a time; the cash-or-loan box closes on any end", js.includes("function ltrForgetHome()") && js.includes("if (_ltrRunning) return;") && js.includes("dlg.onclose = function () { finish({ cash: true }); };"));
   check("analyzer script: an address from a link is limited to address characters", js.includes("replace(/[^A-Za-z0-9 #.,'\\/-]/g, '')"));
   check("analyzer (owner, 2026-10-28): loan terms in a second row of the same box, a second scenario beside the first, what is good in the town under each ?, the similar row moves and drags, no MLS note on the form", js.includes('id="${p}-loanrow"') && js.includes("function ltrCompare(") && js.includes("const LTR_AREA = ") && js.includes("box.querySelectorAll('.hx-s-row').forEach(ltrRig)") && !js.includes("We filled these in for you") && !ltr.includes("Nothing else to type") && ltr.includes('id="ltr-sc-b"'));
-  check("analyzer (owner, 2026-10-28): offices, stores, warehouses and other business property are figured by the square foot and the lease, from the form or the MLS type; the booking popup waits while it works", js.includes("function LTR_COMMERCIAL(") && js.includes("function ltrUseOf(") && js.includes("window.c3Busy = true;") && ltr.includes('id="ltr-use"') && ltr.includes("if (window.c3Busy) return;"));
+  check("analyzer (owner, 2026-10-28): offices, stores, warehouses and other business property are figured by the square foot and the lease, from the form or the MLS type; and the timed popup is gone from the site (owner, 2026-11-14)", js.includes("function LTR_COMMERCIAL(") && js.includes("function ltrUseOf(") && ltr.includes('id="ltr-use"') && !ltr.includes('id="c3-pop"') && !home.includes('id="c3-pop"'));
   check("analyzer: the repair check reads the listing's photos by link and is cached per listing; it shows only when it sees work", js.includes("type: 'image', source: { type: 'url', url: u }") && js.includes("cache_key: ['repair2'") && js.includes("if (!r || !r.needsWork) { box.hidden = true; return; }"));
   check("analyzer script: parses", (() => { try { new Function(js); return true; } catch { return false; } })());
   check("footer: address suggestions on every address box", home.includes("places.googleapis.com/v1/places:autocomplete") && home.includes("#ltr-street,#ldCtx,#rnAddr,#sbh-street"));
@@ -1113,6 +1114,25 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
     none.stop === "no_key" && noneCalls === 0 && a.sent.length === POSTS.length && posts.length === POSTS.length && reply && reply.body.thread === "t42" && /ab2ee29f/.test(reply.body.body)
     && posts.some((x) => x.body.title === "Website AI connected") && b.sent.length === 0 && postsAfter === POSTS.length && sent.every((x) => !x.key || x.key === "c3r_testkey123")
     && !JSON.stringify(posts.map((x) => x.body)).includes("c3r_") && f.sent.length === POSTS.length - 1 && postsSeen === POSTS.length - 1 && c.stop === "429" && d.stop === "waiting" && during === 0 && e.stop === "key_refused" && after403 === 0);
+}
+
+// The home page and the analyzer (owner, 2026-11-14).
+{
+  const fs2 = await import("node:fs");
+  const home = fs2.readFileSync(new URL("../chapter3realty/index.html", import.meta.url), "utf8");
+  const ltr = fs2.readFileSync(new URL("../chapter3realty/invest/long-term-rental/index.html", import.meta.url), "utf8");
+  const L = { address: "1100 N Ocean Blvd", city: "North Myrtle Beach", postalCode: "29582" };
+  check("analyzer lookup: a Surfside Beach address never matches a North Myrtle Beach listing (direction, town and ZIP); the same address in the same town does",
+    sameHome(L, "1100 S Ocean Blvd", "Surfside Beach", "29575") === false && sameHome(L, "1100 Ocean Blvd", "Surfside Beach", "") === false
+    && sameHome(L, "1100 N Ocean Blvd", "North Myrtle Beach", "") === true && sameHome(L, "1100 Ocean Blvd", "", "29582") === true);
+  const card = (home.match(/<form class="az-card"[\s\S]*?<\/form>/) || [""])[0];
+  check("homepage analyzer: the street, the city and the ZIP code only, no price, no loan boxes, no sample report; it opens the analyzer and runs",
+    /name="street"/.test(card) && /name="city"/.test(card) && /name="zip"/.test(card) && /name="go" value="1"/.test(card) && !/name="(price|down|rate|cash)"/.test(card)
+    && card.includes('action="/invest/long-term-rental/"') && !home.includes('class="an-rep"') && !home.includes('id="an-banner"'));
+  check("homepage: the search says what to type", home.includes('placeholder="Describe what you want in a home to see options"'));
+  check("analyzer: no price is asked; city and ZIP boxes; the money questions one a screen (cash or loan, then down payment, then rate) with a bar",
+    ltr.includes('<input id="ltr-price" type="hidden"/>') && ltr.includes('id="ltr-city" type="text"') && ltr.includes('id="ltr-zip" type="text"')
+    && ['data-q="how"', 'data-q="down"', 'data-q="rate"', 'id="ltr-fin-prog"'].every((x) => ltr.includes(x)));
 }
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");

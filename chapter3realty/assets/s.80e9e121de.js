@@ -58,7 +58,7 @@ function ltrSoldHint() {
     const set = function (id, v) { const el = document.getElementById(id); if (el && v != null && v !== '') el.value = String(v).slice(0, 120); };
     // An address from a link goes into the AI's prompt: letters, digits and address marks only.
     const addr = function (v) { return v == null ? v : String(v).replace(/[^A-Za-z0-9 #.,'\/-]/g, '').slice(0, 120); };
-    set('ltr-street', addr(q.get('street'))); set('ltr-city', addr(q.get('city'))); set('ltr-price', q.get('price'));
+    set('ltr-street', addr(q.get('street'))); set('ltr-city', addr(q.get('city'))); set('ltr-zip', /^\d{5}$/.test(q.get('zip') || '') ? q.get('zip') : null); set('ltr-price', q.get('price'));
     set('ltr-down', q.get('down')); set('ltr-rate', q.get('rate')); set('ltr-term', /^(15|20|30)$/.test(q.get('term') || '') ? q.get('term') : null);
     if (q.get('cash') === '1') { document.getElementById('ltr-is-cash').checked = true; toggleLtrCash(); }
     if (mls) set('ltr-street', mls);
@@ -361,7 +361,7 @@ function c3AcPick(i) {
   ['ltr-beds', 'ltr-baths', 'ltr-sqft'].forEach(function (id) { const e = document.getElementById(id); if (e) e.value = ''; });
   const old = document.getElementById('ltr-mls-note'); if (old) old.remove();
   if (s.lat != null && s.lng != null) {
-    ltrMlsLookup('street=' + encodeURIComponent(s.street || '') + '&lat=' + s.lat + '&lng=' + s.lng).then(function (f) { if (f) ltrShowMls(f); });
+    ltrMlsLookup('street=' + encodeURIComponent(s.street || '') + '&lat=' + s.lat + '&lng=' + s.lng + '&city=' + encodeURIComponent(s.city || '') + '&zip=' + encodeURIComponent(s.zip || '')).then(function (f) { if (f) ltrShowMls(f); });
   }
 }
 
@@ -445,7 +445,7 @@ document.addEventListener('c3:address', function (e) {
     // The visitor typed again while this ran: these coordinates are for the old text.
     if (document.getElementById('ltr-street').value !== d.street) return;
     _c3Ac.picked = { street: d.street, city: d.city, zip: '', lat: c ? c.lat : null, lng: c ? c.lng : null };
-    if (c) ltrMlsLookup('street=' + encodeURIComponent(d.street || '') + '&lat=' + c.lat + '&lng=' + c.lng).then(function (f) { if (f) ltrShowMls(f); });
+    if (c) ltrMlsLookup('street=' + encodeURIComponent(d.street || '') + '&lat=' + c.lat + '&lng=' + c.lng + '&city=' + encodeURIComponent(d.city || '')).then(function (f) { if (f) ltrShowMls(f); });
   });
 });
 // Typing again after a pick: the old pick no longer describes the box.
@@ -471,39 +471,60 @@ function ltrMoney(v) {
 // which is cached by address for every visitor.
 let _ltrFinCancel = null;
 function ltrAskFinancing() {
+  /* One question a screen, with a bar across the top (owner, 2026-11-14: "pop up questions from the loading screen
+     such as cash or loan if loan then have it ask down payment and then ask interest rate. Have each question its own
+     screen when they answer it goes away and the next question appears with a load bar at the top"). */
   let cancel = function () {};
   const promise = new Promise(function (done) {
     const dlg = document.getElementById('ltr-fin');
     if (!dlg || !dlg.showModal) { done({ cash: true }); return; }
-    const form = document.getElementById('ltr-fin-form'), loan = document.getElementById('ltr-fin-loan'), go = form.querySelector('.ltr-fin-go');
-    let mode = null, settled = false;
-    const btns = form.querySelectorAll('[data-fin]');
-    // A fresh box on every run.
-    btns.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
-    loan.hidden = true; go.disabled = true;
-    const finish = function (answer) { if (settled) return; settled = true; clearTimeout(timer); if (dlg.open) dlg.close(); done(answer); };
-    const ready = function () {
-      go.disabled = !(mode === 'cash' || (mode === 'loan' && ltrMoney(form.elements.down.value) >= 0 && ltrMoney(form.elements.rate.value) >= 0));
+    const form = document.getElementById('ltr-fin-form');
+    const screens = form.querySelectorAll('.ltr-fin-q'), bar = document.getElementById('ltr-fin-prog'), count = document.getElementById('ltr-fin-n');
+    const ORDER = ['how', 'down', 'rate'];
+    let settled = false, step = 'how';
+    const show = function (name, filled) {
+      step = name;
+      screens.forEach(function (q) { const on = q.getAttribute('data-q') === name; q.hidden = !on; if (on) { q.classList.remove('ltr-fin-in'); void q.offsetWidth; q.classList.add('ltr-fin-in'); } });
+      const i = ORDER.indexOf(name);
+      if (bar) bar.style.width = Math.round(((filled != null ? filled : i) / ORDER.length) * 100) + '%';
+      if (count) count.textContent = name === 'how' ? 'One quick question' : 'Question ' + (i + 1) + ' of 3';
+      const inp = form.querySelector('[data-q="' + name + '"] input');
+      if (inp) setTimeout(function () { try { inp.focus(); } catch (e) {} }, 60);
     };
-    btns.forEach(function (b) {
+    const finish = function (answer) {
+      if (settled) return; settled = true; clearTimeout(timer);
+      if (bar) bar.style.width = '100%';
+      setTimeout(function () { if (dlg.open) dlg.close(); done(answer); }, 260);
+    };
+    const bad = function (inp) { inp.setAttribute('aria-invalid', 'true'); inp.classList.remove('ltr-fin-shake'); void inp.offsetWidth; inp.classList.add('ltr-fin-shake'); inp.focus(); };
+    // A fresh set of screens on every run.
+    form.elements.down.value = ''; form.elements.rate.value = '';
+    form.elements.down.removeAttribute('aria-invalid'); form.elements.rate.removeAttribute('aria-invalid');
+    show('how');
+    form.querySelectorAll('[data-fin]').forEach(function (b) {
       b.onclick = function () {
-        mode = b.getAttribute('data-fin');
-        btns.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-        loan.hidden = mode !== 'loan';
-        if (mode === 'loan') form.elements.down.focus();
-        ready();
+        if (b.getAttribute('data-fin') === 'cash') finish({ cash: true });
+        else show('down', 1);
       };
     });
-    form.oninput = ready;
     form.onsubmit = function (ev) {
       ev.preventDefault();
-      if (go.disabled) return;
-      finish(mode === 'cash' ? { cash: true } : { cash: false, down: ltrMoney(form.elements.down.value), rate: ltrMoney(form.elements.rate.value), term: form.elements.term.value });
+      if (step === 'down') {
+        const v = ltrMoney(form.elements.down.value);
+        if (!(v >= 0 && v <= 100)) { bad(form.elements.down); return; }
+        form.elements.down.removeAttribute('aria-invalid'); show('rate', 2);
+      } else if (step === 'rate') {
+        const v = ltrMoney(form.elements.rate.value);
+        if (!(v >= 0 && v <= 25)) { bad(form.elements.rate); return; }
+        finish({ cash: false, down: ltrMoney(form.elements.down.value), rate: v, term: form.elements.term.value || '30' });
+      }
     };
+    const back = form.querySelectorAll('[data-fin-back]');
+    back.forEach(function (b) { b.onclick = function () { show(b.getAttribute('data-fin-back'), ORDER.indexOf(b.getAttribute('data-fin-back'))); }; });
     // Closed without an answer (Escape, or the page closing it): figured as a cash purchase.
     dlg.oncancel = function () { finish({ cash: true }); };
     dlg.onclose = function () { finish({ cash: true }); };
-    const timer = setTimeout(function () { if (!settled && !dlg.open) dlg.showModal(); }, 1200);
+    const timer = setTimeout(function () { if (!settled && !dlg.open) dlg.showModal(); }, 900);
     cancel = function () { finish({ cash: true }); };
   });
   return { promise: promise, cancel: function () { cancel(); } };
@@ -571,7 +592,7 @@ async function ltrRun() {
 
   if (!street) { ltrShowError('Please enter the address or the MLS number.'); return; }
   // Without a town the address is a guess, and a guess becomes the cached answer for everyone.
-  if (!city) { ltrShowError('Pick the address from the list, or add the town after a comma: "123 Main St, Conway".'); return; }
+  if (!city) { ltrShowError('Add the city, or pick the address from the list.'); const c = document.getElementById('ltr-city'); if (c && c.type !== 'hidden') c.focus(); return; }
 
   ltrHideError();
   document.getElementById('ltr-form').style.display = 'none';
@@ -605,7 +626,7 @@ async function ltrRun() {
     const _pick0 = (_c3Ac.picked && _c3Ac.picked.lat != null) ? _c3Ac.picked : null;
     const coords = _pick0 ? { lat: _pick0.lat, lng: _pick0.lng } : await ltrGeocodeAddress(fullAddr);
     let mls = _ltrMls;
-    if (!mls && coords) mls = await ltrMlsLookup('street=' + encodeURIComponent(street) + '&lat=' + coords.lat + '&lng=' + coords.lng);
+    if (!mls && coords) mls = await ltrMlsLookup('street=' + encodeURIComponent(street) + '&lat=' + coords.lat + '&lng=' + coords.lng + '&city=' + encodeURIComponent(city) + '&zip=' + encodeURIComponent(zip || ''));
     _ltrMls = mls || null;
     if (mls) {
       if (!beds && mls.beds) beds = mls.beds;
@@ -707,6 +728,8 @@ FLAGS: 5 to 7 insights, each ONE plain sentence of 30 words or fewer, each a dif
     // tax are matters of public record, not something worth guessing at.
     // A home for sale is worth about its asking price to a buyer: the MLS price, not a guess.
     if (_ltrMls && !_ltrMls.soldPrice && _ltrMls.listPrice > 0) { d.estimatedValue = _ltrMls.listPrice; d.valueFrom = 'asking'; }
+    // The HOA fee is the MLS's, never the model's (owner, 2026-11-14: "all of its numbers from the mls").
+    if (_ltrMls && _ltrMls.hoaMonthly != null) d.hoaAnnual = Math.round(_ltrMls.hoaMonthly * 12);
     if (_ltrParcel) {
       if (_ltrParcel.marketValue) d.countyValue = _ltrParcel.marketValue;
       if (_ltrParcel.investorAnnualTax) d.propertyTaxAnnual = _ltrParcel.investorAnnualTax;
@@ -863,7 +886,7 @@ function ltrRenderResults(d, address, isFixer, isCash) {
   if (verdictEl) verdictEl.textContent = ltrSafeNarrative(d.overview || d.verdict || '') || ltrSafeNarrative(d.verdict || '');
   document.getElementById('ltr-r-value').textContent = ltrFmt(d.estimatedValue);
   const go = document.getElementById('ltr-cta-go'); if (go) go.href = '/contact/?topic=investment' + (_ltrMls ? '&mls=' + encodeURIComponent(_ltrMls.mlsNumber) : '');
-  const vk = document.getElementById('ltr-r-vk'); if (vk) vk.textContent = d.valueFrom === 'asking' ? 'Asking price' : 'Estimated value';
+  const vk = document.getElementById('ltr-r-vk'); if (vk) vk.textContent = d.valueFrom === 'asking' ? 'Listing price' : 'Estimated price';
   const cv = document.getElementById('ltr-r-county');
   if (cv) cv.textContent = d.countyValue ? 'County value for tax: ' + ltrFmt(d.countyValue) : '';
 
