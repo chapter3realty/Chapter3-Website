@@ -574,6 +574,7 @@ module.exports = GL.page({
 
     entry("aynor", "an acre and a river landing", [
       `Around Aynor, lots are typically about an acre, with room beside the house for a boat or a camper. More than half of the houses for sale here are new.`,
+      `For land sold by the acre, see our ${h.a("/buyers/land/", "land for sale in Horry County guide")}.`,
       `Galivants Ferry Landing, a county ramp on the ${h.ext(USGS_LPD, "Little Pee Dee River")}, is about 6 minutes from the center of town. The Little Pee Dee is ${h.ext(AYNOR_APPEAL, "popular with canoes, kayaks and small powerboats")}.`,
       `At ${h.ext(GALIVANTS_NR, "Galivants Ferry")}, the old farm houses have full-width front porches on brick piers. Some were built from wood cut on the farm itself, and the district has log tobacco barns. Galivants Ferry has also held a political speaking, the Stump, since 1880.`,
       `Each September, ${h.ext(AYNOR_TOWN, "almost 25,000 people")} come to the Aynor Harvest Hoe-Down, a festival the Pilot Club of Aynor started. In the town of Aynor, zoning does not limit a camper or a work truck at home. Most of these houses are outside the town, under county rules.`,
@@ -583,7 +584,7 @@ module.exports = GL.page({
     { h2: "What can you do at home with no HOA?", toc: "What you can do at home", id: "boats-and-work-trucks", html: (bg) =>
       h.p(`With no HOA, the limits on parking, rentals and buildings on your lot are the town's, or the county's outside the towns, along with any deed restriction. Most of the homes with no HOA fee around Conway, Loris and Aynor are outside the town limits, under the county's rules.`) +
       homeRules() +
-      h.p(`Before you make an offer, we check the town or county rules for that lot, the deed for restrictions and the county records for an HOA.`) +
+      h.p(`Before you make an offer, we check the town or county rules for that lot, the deed for restrictions and the county records for an HOA. To see a lot's lines and zoning yourself, use our ${h.a("/buyers/property-records/gis-map/", "Horry County GIS map guide")}.`) +
       h.p(`In ${h.ext(MB_STR, "Myrtle Beach")}, ${h.ext(NMB_RENTAL, "North Myrtle Beach")} and ${h.ext(SSB_STR, "Surfside Beach")}, renting out a home needs a business license. In the towns, you can leave a boat in the driveway for a day to load and unload. On county roads, the county ${h.ext(HORRY_CODE, "bans parking")} only where it posts a sign.`) +
       story(STORY, "", bg) },
 
@@ -595,7 +596,7 @@ module.exports = GL.page({
 
     { h2: "What do you give up with no HOA?", toc: "What you give up", html: () =>
       h.p("No HOA means no shared pool, clubhouse or gate, and no HOA rules for your neighbors' houses either. A home with no HOA can still have deed restrictions on what you build or keep there.") +
-      h.p(`If you want a pool, a clubhouse or a gate, you pay an HOA fee for them. Our page ${h.a("/hoa/benefits/", "are HOA fees worth it")} weighs what a fee buys against the control you give up. A pool of your own needs no HOA: our ${h.a("/buyers/pool-homes/", "guide to homes with a pool")} shows where they are. Many houses near the sand have no HOA fee either, as our ${h.a("/buyers/homes-near-the-beach/", "guide to houses near the beach")} shows. Our guides to the ${h.a("/buyers/best-neighborhoods/", "best neighborhoods for what you want nearby")} and to ${h.a("/buyers/gated-communities/", "gated communities around Myrtle Beach")} show where to look. Our guide to ${h.a("/submarkets/carolina-forest/the-farm/", "The Farm at Carolina Forest")} shows one Carolina Forest neighborhood, and our guide to ${h.a("/hoa/", "what HOA fees cover")} explains each part of a fee.`) },
+      h.p(`If you want a pool, a clubhouse or a gate, you pay an HOA fee for them. Our page ${h.a("/hoa/benefits/", "are HOA fees worth it")} weighs what a fee buys against the control you give up. The fee in each community is in our ${h.a("/hoa/fees-by-neighborhood/", "HOA fees by neighborhood guide")}. A pool of your own needs no HOA: our ${h.a("/buyers/pool-homes/", "guide to homes with a pool")} shows where they are. Many houses near the sand have no HOA fee either, as our ${h.a("/buyers/homes-near-the-beach/", "guide to houses near the beach")} shows. Our guides to the ${h.a("/buyers/best-neighborhoods/", "best neighborhoods for what you want nearby")} and to ${h.a("/buyers/gated-communities/", "gated communities around Myrtle Beach")} show where to look. Our guide to ${h.a("/submarkets/carolina-forest/the-farm/", "The Farm at Carolina Forest")} shows one Carolina Forest neighborhood, and our guide to ${h.a("/hoa/", "what HOA fees cover")} explains each part of a fee.`) },
   ],
   faqTitle: "Homes with no HOA FAQ",
   faq: [

@@ -488,7 +488,7 @@ module.exports = G.page({
       h.p(`Often, if the house is close to the ocean and you buy with a mortgage. About half of Horry County houses within a quarter mile of the ocean are in FEMA's high-risk flood zone. A quarter to half a mile back, about 1 in 4 are.`) +
       `<div class="nb-aside">${FLOOD_CHART}</div>` +
       h.p(`If the house is in the high-risk flood zone and you buy with a mortgage, the lender requires flood insurance.`) +
-      h.p(`Past about three quarters of a mile from the ocean, fewer than 1 in 20 houses are in the high-risk zone.`) +
+      h.p(`Past about three quarters of a mile from the ocean, fewer than 1 in 20 houses are in the high-risk zone. To check one address, use our ${h.a("/buyers/flood-zone-check/", "flood zone lookup")}.`) +
       `</div>` +
       h.p(`Near the ocean, it depends on the town. Of the three Horry County stretches, Myrtle Beach has the fewest houses in the high-risk zone:`) +
       FLOOD_STAT +

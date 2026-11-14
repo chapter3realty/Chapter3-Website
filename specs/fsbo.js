@@ -434,7 +434,7 @@ module.exports = G.page({
       h.p(`Nationally, yes, but many of those sales were to someone the seller knew. NAR, the National Association of Realtors, surveys people who bought a home to live in and also sold one. In ${h.ext(NAR_REL, "its 2025 survey")}, 5 percent sold by owner, the lowest share in NAR's records.`) +
       h.p(`More than half of by-owner sellers already knew the buyer. In resort and recreation areas, 9 percent sold by owner.`) +
       NAR_CHART +
-      h.p("County deeds point the same way for sales between people who share a last name. We read the county's deed index for a year and compared those sales with other sales between two people.") +
+      h.p(`County deeds point the same way for sales between people who share a last name. We read the county's deed index for a year and compared those sales with other sales between two people. To search that index yourself, see our ${h.a("/buyers/property-records/deeds/", "guide to searching Horry County deeds by name")}.`) +
       SN_CHART +
       h.p(`A shared last name is not proof of family, and relatives with different last names are missed. Even so, those ${SN.same_surname} sales recorded far lower prices.`) +
       h.h3("Selling to a stranger") +

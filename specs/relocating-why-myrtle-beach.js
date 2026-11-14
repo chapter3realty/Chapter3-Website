@@ -217,7 +217,7 @@ const cards = (rows) => `<ul class="c3-rc" role="list">` + rows.map((r) => `<li>
 const REASONS = cards([
   { icon: "dock", q: "The beach and the water", a: "The ocean still averages the low 70s in October. Behind the beach towns are the Intracoastal Waterway, the Waccamaw River and the Murrells Inlet marsh, each with public boat landings." },
   { icon: "calendar", q: "The winter is short and mild", a: "A January day averages a high of about 56 degrees and a low of about 37. Snow averages about an inch a year, and about two winters in three bring none." },
-  { icon: "home", q: "A house costs less than in most places movers leave", a: `A typical home in Horry County is valued at about ${r1k(HORRY.zhvi)}. Around Charlotte it is about ${r1k(MECK.zhvi)}, and on Long Island about ${r1k(SUFFOLK.zhvi)} or more.` },
+  { icon: "home", q: "A house costs less than in most places movers leave", a: `A typical home in Horry County is valued at about ${r1k(HORRY.zhvi)}. Around Charlotte it is about ${r1k(MECK.zhvi)}, and on Long Island about ${r1k(SUFFOLK.zhvi)} or more. For a side-by-side with Charleston, see our ${h.a("/buyers/relocating/myrtle-beach-vs-charleston/", "Myrtle Beach or Charleston comparison")}.` },
   { icon: "tax", q: "The property tax is low", a: "An owner who lives in the home here typically pays about $944 a year. On Long Island the typical bill is $10,000 or more." },
 ]);
 
@@ -368,6 +368,7 @@ module.exports = G.page({
         `At 65, after a year living in South Carolina, ${h.ext(T12_37, "you pay no property tax")} on the first $50,000 of your home's value. For 2026 only, an owner who already qualified in 2025 gets $75,000.`,
         `South Carolina ${h.ext(T12_16, "has no estate tax")}.`,
       ]) +
+      h.p(`If you may need care later, see our ${h.a("/buyers/senior-living/", "guide to senior living around Myrtle Beach")}.`) +
       h.h3("The tax many movers do not expect") +
       h.p("South Carolina taxes vehicles every year. One of our team moved here from a village of about 400 in Ohio, and his first vehicle tax bill was $325.") +
       h.p(`Each car first titled in another state also pays a ${h.ext(T56_3, "one-time $250 state fee")} when you register it here. Owners on active duty in the military, and their spouses and dependents, do not pay it.`) +

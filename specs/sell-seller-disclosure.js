@@ -175,7 +175,7 @@ const LEAD_CHART = G.bars(TOWNS.map((p) => ({ name: tname(p.name), value: p.pct_
 const step = (n, title, text) => `<li><span class="n" aria-hidden="true">${n}</span><span class="c"><b>${title}</b>${text}</span></li>`;
 const STEPS = `<ol class="sd-steps" aria-label="How to fill out the South Carolina seller disclosure, in order">`
   + step(1, "Check whether your sale needs it", "Compare your sale with the 15 exempt kinds above.")
-  + step(2, "Gather your records", "The roof's year and repair bills, permits for any work, your termite contract, the HOA dues and contact, and any lease or rental booking.")
+  + step(2, "Gather your records", `The roof's year and repair bills, permits for any work, your termite contract, the HOA dues and contact, and any lease or rental booking. For the parcel number and the deed, use our ${h.a("/buyers/property-records/", "Horry County property search by address")}.`)
   + step(3, "Get your flood and insurance history", `Ask FEMA for your home's flood claim record, and order its CLUE report. The ${h.a("#flooding", "flooding section")} says how to ask for each.`)
   + step(4, "Answer every question", "Yes means you explain it or attach a report.")
   + step(5, "Built before 1978? Add the lead papers", "The federal lead form and the pamphlet.")

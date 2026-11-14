@@ -615,6 +615,11 @@ r = await run(homes, req("/homes/api/strip?type=condo&max=500000&city=Conway"));
   check("feed: a title that names a year shows no home without one", postFilter([y0], { yearMin: 2010, strictYear: true }).length === 0 && postFilter([y0], { yearMin: 2010 }).length === 1);
   check("feed: land or a low price the reader asked for keeps only status and photos", postFilter([{ ...y0, propertySubType: "UnimprovedLand", listPrice: 40000, sqft: 0 }], { floors: false }, { allowTypes: true }).length === 1);
 }
+r = await run(homes, req("/homes/api/strip?type=land&lotMax=0.5&city=Conway"));
+{
+  const j = JSON.parse(await r.text());
+  check("strip: lotMax keeps only lots the listing gives under it, never the CRM's total, and links to the full search", j.ok && !/See all/.test(j.html || "") && (j.total === 0 || /See more in the full search/.test(j.html)) && !calls.filter((c) => c.url.includes("/api/idx/listings?")).pop().url.includes("lotMax"));
+}
 r = await run(homes, req("/homes/api/strip?hoa=0&city=Conway"));
 {
   const j = JSON.parse(await r.text());

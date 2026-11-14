@@ -664,7 +664,7 @@ module.exports = G.page({
       PRICE_CHART +
       h.h3("What kind of homes are here") +
       h.p(`About two in three homes in the Little River ZIP are houses, and more than a quarter are condos.`) +
-      h.p(`Room to spread out is uncommon. Fewer than one in twenty houses sits on an acre or more, and the typical house lot is about a fifth of an acre.`) +
+      h.p(`Room to spread out is uncommon. Fewer than one in twenty houses sits on an acre or more, and the typical house lot is about a fifth of an acre. For an acre or more, see ${h.a("/buyers/land/", "what an acre costs in Horry County")}.`) +
       h.h3("Homes for sale now") +
       G.bars([
         ["Houses", LT.house, near(LT.house.n, 10)], ["Townhouses", LT.townhouse, String(LT.townhouse.n)], ["Manufactured homes", LT.manufactured, String(LT.manufactured.n)],

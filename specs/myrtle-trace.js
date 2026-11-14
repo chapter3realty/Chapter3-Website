@@ -139,7 +139,8 @@ module.exports = {
     { h2: "What is close to Myrtle Trace?", toc: "What is close", html:
       EM_CSS + ph.css() +
       h.p("The closest beach to Myrtle Trace by car is the one by the Myrtle Beach Boardwalk. In our experience, rush hour adds 5 to 10 minutes to the drive.") +
-      M.where },
+      M.where +
+      h.p(`For care later, see our ${h.a("/buyers/senior-living/", "guide to memory care and assisted living costs")}.`) },
 
     { h2: "What is a month like in Myrtle Trace?", toc: "A normal month", html:
       h.p(`In a normal month in Myrtle Trace, you can play bingo, swim, fish and play in a league. The rest is on the ${h.ext(CAL, "neighborhood's calendar")}.`) +

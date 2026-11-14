@@ -458,7 +458,7 @@ module.exports = G.page({
       h.h3("What does a rental manager take?") +
       h.p("It depends on how much of the work you keep. These are the ranges we see on the Grand Strand:") +
       MANAGE +
-      h.p(`Rental programs here are usually in oceanfront buildings run for short-term rentals. A building's own ${h.a("/invest/rental-program-vs-airbnb/", "rental program")} is one choice; your own listing is the other.`) +
+      h.p(`Rental programs here are usually in oceanfront buildings run for short-term rentals. A building's own ${h.a("/invest/rental-program-vs-airbnb/", "rental program")} is one choice; your own listing is the other. Our ${h.a("/invest/condo-buildings/palace-resort/", "Palace Resort condos guide")} covers how one building's owners rent.`) +
       h.cta("Want the numbers on one condo before you offer?", "Tell us the building or your price range. If you buy with us, an agent reads the building's rental rules, gets you an insurance quote for the unit and confirms the loan with the lender before you make an offer.", "Have us check a condo", CTA_HREF, bg) },
 
     { h2: "Can you rent out a Myrtle Beach condo by the night?", toc: "Renting it", id: "renting-it", html: (bg) =>

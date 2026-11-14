@@ -398,6 +398,7 @@ module.exports = G.page({
 
     { h2: "What do homes sell for, and what is the HOA fee?", toc: "Prices", id: "compare", html: (bg) =>
       `<div class="c3g-where">${TABLE}</div>` +
+      h.p(`The fee in other communities is in our ${h.a("/hoa/fees-by-neighborhood/", "neighborhood HOA fee table")}.`) +
       h.p(`For neighborhoods without a gate, see ${h.a("/buyers/best-neighborhoods/", "the best neighborhoods in Myrtle Beach")}, ${h.a("/buyers/no-hoa-homes/", "homes with no HOA")}, ${h.a("/buyers/golf-communities/", "golf communities")} and ${h.a("/buyers/55-plus-communities/", "55+ communities")}.`) },
 
 

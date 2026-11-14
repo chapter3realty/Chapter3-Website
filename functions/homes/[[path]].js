@@ -904,14 +904,17 @@ async function stripApi(context, url) {
   const allow = ["land", "manufactured", "multi"].includes(asked);
   // What the reader picked wins over the feeds' bar: land, mobile homes or a low max keep only status and photos.
   const low = +p.get("max") > 0 && +p.get("max") <= 150000;
+  /* lotMax (2026-11-14, the land guide's strip per lot size): the CRM has no lot ceiling, so the strip keeps only
+     homes whose listing gives a lot under it. The count then is the strip's own, never the CRM's total. */
+  const lm = url.searchParams.get("lotMax"), lotMax = lm && /^\d{1,4}(\.\d{1,3})?$/.test(lm) && +lm > 0 ? +lm : 0;
   const homes = rankHomes(postFilter(r.json.listings, { yearMin: p.get("yearMin") ? +p.get("yearMin") : 1950, minPhotos: 6, floors: !(allow || low) }, { allowTypes: allow }), "appeal")
-    .filter(hasPhoto);
+    .filter(hasPhoto).filter((h) => !lotMax || (typeof h.lotAcres === "number" && h.lotAcres > 0 && h.lotAcres < lotMax));
   const keep = new URLSearchParams(p); keep.delete("size");
   const link = `/homes/${keep.toString() ? `?${keep.toString()}` : ""}`;
-  const total = typeof r.json.total === "number" ? r.json.total : homes.length;
+  const total = lotMax ? homes.length : typeof r.json.total === "number" ? r.json.total : homes.length;
   const html = homes.length
     // No heart buttons: this answer is cached for everyone, and the page bound its hearts at load (as similar()).
-    ? `${stripCards(homes, 10, (h) => h.replace(/<button type="button" class="hx-heart[\s\S]*?<\/button>/, ""))}<a class="hx-s-all" href="${esc(link)}" draggable="false">See all ${esc(total.toLocaleString("en-US"))} homes</a>`
+    ? `${stripCards(homes, 10, (h) => h.replace(/<button type="button" class="hx-heart[\s\S]*?<\/button>/, ""))}<a class="hx-s-all" href="${esc(link)}" draggable="false">${lotMax ? "See more in the full search" : `See all ${esc(total.toLocaleString("en-US"))} homes`}</a>`
     : `<p class="hx-s-empty">No homes match those filters right now. <a href="${esc(link)}">Open the full search</a> to widen them.</p>`;
   const L = filterLabels(p);
   return json({ ok: true, html, total, link, labels: { price: L.price, beds: L.bb, type: L.type, town: L.town, more: L.more }, note: p.get("hoa") === "0" ? NO_HOA_NOTE : "" }, 200, { "cache-control": "public, max-age=120" });

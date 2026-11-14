@@ -628,7 +628,7 @@ module.exports = G.page({
     { h2: "How do the towns compare on price and the cost to keep a house?", toc: "Compare", id: "compare", html: (bg) =>
       h.p(`The chart puts what a typical house sold for beside what it costs each year, besides the mortgage. The next section shows where that yearly cost comes from.`) +
       PRICE_CHART +
-      h.p(`The table adds the drives and the flood zone. The lot sizes are in the entries for Loris and Aynor. Drive minutes are with no traffic; summer traffic on US 17 adds time.`) +
+      h.p(`The table adds the drives and the flood zone. To weigh Myrtle Beach against Charleston, see our ${h.a("/buyers/relocating/myrtle-beach-vs-charleston/", "living in Myrtle Beach vs Charleston guide")}. The lot sizes are in the entries for Loris and Aynor. Drive minutes are with no traffic; summer traffic on US 17 adds time.`) +
       TABLE +
       `<p class="c3t-note">A hospital here is the nearest of Grand Strand Medical Center, Conway Medical Center, McLeod Health Loris, McLeod Health Seacoast and Tidelands Waccamaw Community Hospital.</p>` +
       h.cta("Narrowed it to two or three?", "Tell us which places and your budget. We send houses for sale in those places, with the flood zone, the tax and the HOA fee for each.", "Send us your towns", CONTACT, bg) },

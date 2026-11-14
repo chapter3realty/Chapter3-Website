@@ -336,7 +336,7 @@ module.exports = G.page({
       DESIGN_CSS + ph.css() +
       h.p(`Myrtle Beach HOA fees depend most on the kind of home, and on whether a condo is on the ocean.`) +
       FEE_CHART +
-      h.p(`Listings here give the fee by the month. Over a year, that is about ${money(HOUSE_YEAR)} for a typical house and about ${money(CONDO_YEAR)} for a typical condo.`) },
+      h.p(`Listings here give the fee by the month. Over a year, that is about ${money(HOUSE_YEAR)} for a typical house and about ${money(CONDO_YEAR)} for a typical condo. For the fee in each community, see our ${h.a("/hoa/fees-by-neighborhood/", "HOA fees by neighborhood guide")}.`) },
 
     { h2: "What do HOA fees cover in Myrtle Beach?", toc: "What fees cover", id: "what-fees-cover", html: () =>
       h.p(`A house fee rarely includes anything inside the house. A condo fee includes far more.`) +

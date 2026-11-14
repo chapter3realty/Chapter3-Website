@@ -268,8 +268,28 @@ const RENTAL_2010 = { ...cut("Rental houses built since 2010, renting allowed", 
 const STR_TODAY = { ...cut("Airbnb-friendly condos under $350,000", towns(["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"], { type: "condo", status: "active", min: "150000", max: "349999", yearMin: "1985", has: "str_allowed" }), "type=condo&max=350000&has=str_allowed", VACATION), post: { yearMin: 1985 } };
 const FRESH_MID = { head: "Fresh listings from $300,000 to $600,000", q: towns(["Myrtle Beach", "North Myrtle Beach", "Conway", "Surfside Beach", "Murrells Inlet", "Little River"], { status: "active", min: "300000", max: "599999", domMax: "30" }), link: "min=300000&max=600000&domMax=30", fallback: NEWEST };
 
+
+/* Batch 2026-11-d (owner, 2026-11-14: "why would there be no idx feed for these pages"). One feed for each new page. */
+const BIG_LOT = { head: "Houses on half an acre or more", q: towns(["Conway", "Myrtle Beach", "Little River", "Longs", "Murrells Inlet"], H({ min: "250000", lotMin: "0.5" })), link: "type=house&lotMin=0.5", fallback: NEWEST };
+const LAND = { head: "Land for sale in Horry County", q: [{ type: "land", status: "active", min: "25000", lotMin: "0.5" }], post: { floors: false, minPhotos: 3 }, allowTypes: true, link: "type=land", withStrips: true, fallback: NEWEST };
+const HOUSE_LOW_HOA = { head: "Houses with an HOA fee under $100 a month", q: towns(["Myrtle Beach", "Conway", "Little River", "Longs", "Murrells Inlet"], H({ min: "250000", hoaMax: "99" })), link: "type=house&hoaMax=100", fallback: NEWEST };
+const PLANTATION_POINT = { head: "For sale now in Plantation Point", q: [{ subdivision: "Plantation Point", status: "active" }], post: { minPhotos: 6, yearMin: 1960 }, link: "subdivision=Plantation%20Point", withStrips: true, fallback: townTop("Myrtle Beach") };
+const PALACE = { head: "Palace Resort condos for sale now", q: [{ subdivision: "Palace", type: "condo", status: "active" }], post: { minPhotos: 6, yearMin: 1980 }, link: "subdivision=Palace&type=condo", withStrips: true, fallback: OCEAN_UNITS };
+const FLOOD_CHECK = { ...NEWEST, head: "Just listed. Check any of them in our flood zone lookup" };
+
 export const FEEDS = {
   "/buyers/": NEWEST,
+  "/buyers/property-records/": { ...WEEK, head: "Fresh on the market in Horry County this week", withStrips: true },
+  "/buyers/property-records/deeds/": { ...PRICE_CUT, head: "Sellers who just cut their price" },
+  "/buyers/property-records/gis-map/": BIG_LOT,
+  "/buyers/property-records/tax-bill/": { ...OUTSIDE_CITY, head: "Homes outside city limits, with no city tax on the bill" },
+  "/buyers/flood-zone-check/": { ...FLOOD_CHECK, withStrips: true },
+  "/buyers/land/": LAND,
+  "/buyers/senior-living/": { ...ONE_LEVEL, head: "One-level living with a garage", withStrips: true },
+  "/hoa/fees-by-neighborhood/": { ...HOUSE_LOW_HOA, withStrips: true },
+  "/buyers/relocating/myrtle-beach-vs-charleston/": { ...MORE_HOUSE, head: "4+ bedrooms under $400,000, here on the Grand Strand", withStrips: true },
+  "/submarkets/myrtle-beach/plantation-point/": PLANTATION_POINT,
+  "/invest/condo-buildings/palace-resort/": PALACE,
   /* Owner, 2026-11-08: "the idx for almost every buyer page to be one of the first things". The pages with
      their own strips above get the feed on top too (withStrips); these had none. The long-term rental
      analyzer gets none: it is an app, and it shows homes like the reader's own after a run. */

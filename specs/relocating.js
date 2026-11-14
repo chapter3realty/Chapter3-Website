@@ -218,6 +218,7 @@ const GROUPS = [
   ]],
   ["Where should I live?", [
     [`${R}which-town/`, "13 towns near Myrtle Beach, compared"],
+    [`${R}myrtle-beach-vs-charleston/`, "Living in Myrtle Beach vs Charleston, side by side"],
     ["/buyers/best-neighborhoods/", "The best neighborhoods, by what you love"],
     ["/submarkets/", "A guide to each part of the Grand Strand"],
   ]],

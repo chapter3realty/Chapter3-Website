@@ -563,7 +563,7 @@ module.exports = G.page({
         ["Between the marsh and Business 17", "About half"],
         ["West of Business 17", "None"],
       ]) +
-      h.p(`Flood insurance costs about five times as much on the beach strip. Along Waccamaw Drive, the middle federal flood policy on a house cost about $3,260 a year. Elsewhere in Garden City's ZIP code it was about $620.`) +
+      h.p(`Flood insurance costs about five times as much on the beach strip. Along Waccamaw Drive, the middle federal flood policy on a house cost about $3,260 a year. Elsewhere in Garden City's ZIP code it was about $620. To check one address, use our ${h.a("/buyers/flood-zone-check/", "Horry County flood zone check")}.`) +
       h.p(`A condo building's own flood policy on the strip cost about $17,000 a year at the middle, shared by the owners through their dues.`) +
       h.h3("What the big storms did") +
       h.p(`In September 1989, Hurricane Hugo's storm surge wiped out up to 90 percent of Garden City's homes. The pier was destroyed, and sand covered roads three blocks inland.`) +

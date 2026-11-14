@@ -279,7 +279,7 @@ module.exports = G.page({
         photo(P_OCEAN),
         h.p(`An oceanfront house has no other house between its lot and the beach. ${OCEAN.houses} houses in Horry County stand in the first row like this.`),
         h.p(`In the past year, ${OCEAN.resold} of them resold, and the middle price was ${OCEAN.median}. Other houses within about two-thirds of a mile, off the water, resold for ${OCEAN.nearby}. Want the sand a walk away instead? Our guide to ${h.a("/buyers/homes-near-the-beach/", "houses near the beach")} counts them by distance, and our guide to ${h.a("/buyers/pool-homes/", "homes with a pool")} shows where the pools are.`),
-        h.p(`On the day we counted, the houses for sale listed as on the ocean asked about $3.4 million at the middle. About 6 in 10 first-row lots reach FEMA's VE zone, where waves are expected.`)) +
+        h.p(`On the day we counted, the houses for sale listed as on the ocean asked about $3.4 million at the middle. About 6 in 10 first-row lots reach FEMA's VE zone, where waves are expected. To check one address, use our ${h.a("/buyers/flood-zone-check/", "guide to checking a flood zone")}.`)) +
       strip("wf-oceanfront-houses", "oceanfront houses", "Wake up on the beach: oceanfront houses for sale", "the oceanfront", "Book a showing on the oceanfront") +
 
       /* 2. A condo in an oceanfront building: rows 2 (corrected), 10 (corrected), 23. Condo prices and fees belong to
@@ -297,7 +297,7 @@ module.exports = G.page({
       /* 3. The Intracoastal Waterway: rows 24, 20, 16, 33, 3. */
       entry(
         kindH3(KINDS[2], "Intracoastal Waterway homes: your boat at your own dock"),
-        h.p(`From a dock on the Intracoastal Waterway here, your boat can head north to Norfolk, Virginia, or south to Florida without going out on the ocean.`),
+        h.p(`From a dock on the Intracoastal Waterway here, your boat can head north to Norfolk, Virginia, or south to Florida without going out on the ocean. Our ${h.a("/submarkets/myrtle-beach/plantation-point/", "guide to Plantation Point")} covers one Myrtle Beach neighborhood by the waterway.`),
         h.p(`The waterway runs behind the Atlantic coast. When you want the ocean, the way out is Little River Inlet, at the North Carolina line.`),
         `<p class="c3-wf-story">Our clients from New York bought beachfront in North Myrtle Beach near the waterway, so they could use their boat.</p>`,
         photo(P_ICW),
@@ -356,7 +356,7 @@ module.exports = G.page({
       h.p(`The permit covers tidal salt water, the marsh and other land the average high tide covers, and the beach. Docks on lakes and fresh water fall under other rules.`) +
       h.h3("Is the lot wide enough?") +
       h.p(`On a lot created after May 23, 1993, a private dock needs at least 75 feet of frontage at the marsh edge. On such a lot, under 50 feet means no dock of its own. Two neighbors with at least 50 feet each can share one.`) +
-      h.p(`A waterfront subdivision may have a dock master plan, recorded with its map of lots, that shows which lots may get a dock and where. A plan is a guide, not a promise of a permit.`) +
+      h.p(`A waterfront subdivision may have a dock master plan, recorded with its map of lots, that shows which lots may get a dock and where. A plan is a guide, not a promise of a permit. To see a lot's width and lines, use our ${h.a("/buyers/property-records/gis-map/", "Horry County GIS map guide")}.`) +
       h.h3("How big can the dock be?") +
       h.p(`Under the state rule in force now, a dock on a tidal creek is sized by the creek's width, from marsh grass to marsh grass.`) +
       h.table(["Creek width", "Dock the state usually allows"], [

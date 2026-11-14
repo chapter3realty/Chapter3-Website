@@ -287,6 +287,7 @@ const E = {
     `The Palace stands 241 feet tall. It has two beach accesses and a putting green next to its oceanfront pools, and its guests get two free passes a day to the H2Oasis water park at Landmark, in season.`,
     /* Row 27. */
     `It stands ${far("palace", "landmark", "beside")} Landmark Resort. Its units for sale are studios, one-bedrooms and two-bedrooms in about equal numbers. A typical unit sold for about ${sold("palace")}, with a typical fee of about ${fee("palace")} a month.`,
+    `For its fee by unit size and the units that sold, see ${h.a("/invest/condo-buildings/palace-resort/", "Palace Resort condos for sale")}.`,
   ]),
   "landmark": () => entry("landmark", "Oceanfront condos at Landmark Resort, home of the H2Oasis water park", [
     /* Row 49. Row 17 (VERIFIED): the water park is for rental-program guests. */

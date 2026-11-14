@@ -204,7 +204,8 @@ module.exports = {
       TOBEACH +
       h.p("In our experience, rush hour adds 5 to 10 minutes to the drive times on the map.") +
       M.where +
-      h.p("For an emergency, the North Strand emergency room is closer than the hospital, about 5 minutes by car. It is open day and night.") },
+      h.p("For an emergency, the North Strand emergency room is closer than the hospital, about 5 minutes by car. It is open day and night.") +
+      h.p(`For care later, see our ${h.a("/buyers/senior-living/", "senior living guide for Myrtle Beach")}.`) },
 
     { h2: "What is North Myrtle Beach like?", toc: "The town", html: (bg) =>
       h.p("North Myrtle Beach has a wide sand beach lined with beach houses. The city keeps hundreds of paths to the beach and dozens of public parking lots, so you can find a place near the sand.") +

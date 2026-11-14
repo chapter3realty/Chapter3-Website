@@ -331,7 +331,7 @@ module.exports = G.page({
         ["The roof", "In a condo, the roof belongs to all the owners together, and its repair is a shared expense. Owners of a one-family house in the South Atlantic states, which include South Carolina, who replaced a roof paid a middle of more than $10,000."],
         ["A policy lenders accept", `For a loan sold to Fannie Mae, the building's deductible may be no more than 5 percent of its coverage. When it is charged per unit, the limit is $50,000 a unit. If the policy falls outside those limits, fewer of your buyers can get a loan there. Our page on ${h.a("/hoa/master-insurance-ho6/", "the building's policy and your own")} explains both.`],
       ]) +
-      h.p(`Our page about ${h.a("/hoa/", "Myrtle Beach HOA fees")} explains why condo fees are high here. Fees building by building are on our ${h.a("/invest/condo-buildings/", "oceanfront condo buildings")} page.`) },
+      h.p(`Our page about ${h.a("/hoa/", "Myrtle Beach HOA fees")} explains why condo fees are high here. The fee in each community is in our list of ${h.a("/hoa/fees-by-neighborhood/", "HOA fees in 382 neighborhoods")}. Fees building by building are on our ${h.a("/invest/condo-buildings/", "oceanfront condo buildings")} page.`) },
 
     { h2: "Do HOAs increase property value in Myrtle Beach?", toc: "Property value", id: "value", html: (bg) =>
       h.p(`Not in asking prices. Here, newer houses with an HOA fee list for less a square foot than houses without one. Of houses for sale built in 2000 or later in Horry County ZIP codes, those with a fee list for a middle of about $${B2.with_fee_ppsf} a square foot. Those with no fee list for about $${B2.no_fee_ppsf}.`) +

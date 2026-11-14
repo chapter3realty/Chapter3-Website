@@ -144,7 +144,7 @@ const SOLD = [
   entry(2, "sand-dunes", "Sand Dunes Oceanfront Tower, Myrtle Beach: papers that allow short stays",
     h.p(`Sand Dunes Resort has ${h.ext(SANDS, "a water park with slides")} and a large lazy river on the oceanfront. Our ${h.a("/invest/condo-buildings/#sand-dunes-resort", "oceanfront condo building guide")} has its fees and prices.`)
     + h.p(`The tower's ${h.ext(docOf("Sand Dunes Oceanfront Tower"), "master deed")} allows "permanent or transient residential use". It also says nothing in it limits an owner's right to rent or lease a unit.`)
-    + h.p("Transient means short stays. The city's zoning says whether a stay by the night is legal in a unit, so we check it for that unit before you offer."),
+    + h.p("Transient means short stays. The city's zoning says whether a stay by the night is legal in a unit, so we check it for that unit before you offer.") + h.p(`Another oceanfront building, the Palace Resort, has ${h.a("/invest/condo-buildings/palace-resort/", "its own guide")}, covering how its owners rent by the night.`),
     "sand-dunes-resort", "Sand Dunes", "Sand Dunes condos for sale, with a lazy river on the oceanfront",
     "Sand Dunes", "Get the Sand Dunes condos for sale"),
   entry(3, "the-farm", "The Farm at Carolina Forest: renting is allowed, and no board rule can ban it",

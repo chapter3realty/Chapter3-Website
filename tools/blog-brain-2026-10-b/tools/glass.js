@@ -415,6 +415,35 @@ const HOMES_RULES = [
 ].join("");
 const homesCss = () => `<style>${HOMES_RULES}</style>`;
 
+/* homesQ(q, head): a live strip for any search on the site, filled in the visitor's browser from
+   GET /homes/api/strip (owner, 2026-11-14: "an IDX feed for each of these ... it's by far the strongest CTA
+   we have"). For a row of a chart, a lot size, a community a table names, the homes near an address.
+   q: the site's own search filters as a query string ("type=land&lotMin=5", "subdivision=Plantation Point",
+   "near=33.7,-78.9&miles=1"); lotMax is kept by the strip itself. head: the strip's title, true of the search.
+   The page needs homesQScript() once. With no script, or no homes, the slot stays empty and hidden. */
+const Q_KEYS = ["type", "lotMin", "lotMax", "subdivision", "city", "near", "miles", "min", "max", "beds", "has", "not", "hoa", "hoaMax", "waterfront", "yearMin", "domMax", "sort"];
+function homesQ(q, head) {
+  const p = new URLSearchParams(q);
+  for (const [k, v] of p) {
+    if (!Q_KEYS.includes(k)) throw new Error(`glass.js: homesQ key "${k}" is not a search filter the site reads`);
+    if (!/^[A-Za-z0-9 .,'&()\/_-]{1,80}$/.test(v)) throw new Error(`glass.js: homesQ value "${v}" for ${k}`);
+  }
+  if (!p.has("type") && !p.has("subdivision") && !p.has("near") && !p.has("city") && !p.has("has")) throw new Error("glass.js: homesQ needs a type, a place or a feature, never every listing");
+  const h = plainText("the homes strip's title", head, 70);
+  return `<div class="hx-strip hx-qs" data-q="${esc(p.toString())}" data-head="${esc(h)}"></div>`;
+}
+const homesQScript = () => `<style>main#main .hx-qs{margin:1rem 0 1.4rem}main#main .hx-strip.hx-qs:empty{display:block!important;height:0;margin:0;overflow:hidden}</style><script>(function(){`
+  + `function fill(s){if(s.getAttribute("data-done"))return;s.setAttribute("data-done","1");`
+  + `fetch("/homes/api/strip?"+s.getAttribute("data-q"),{credentials:"same-origin"}).then(function(r){return r.ok?r.json():null}).then(function(j){`
+  + `if(!j||!j.ok||!j.html||j.html.indexOf("hx-s-empty")>-1)return;var hd=document.createElement("p");hd.className="hx-s-head";var b=document.createElement("b");b.textContent=s.getAttribute("data-head");hd.appendChild(b);`
+  + `if(j.link&&j.link.charAt(0)==="/"){var a=document.createElement("a");a.href=j.link;a.textContent="See all";hd.appendChild(a)}`
+  + `var row=document.createElement("div");row.className="hx-s-row";row.innerHTML=j.html;s.appendChild(hd);s.appendChild(row);`
+  + `if(j.note){var n=document.createElement("p");n.className="hx-s-note";n.textContent=j.note;s.insertBefore(n,row)}}).catch(function(){})}`
+  + `function go(){var all=[].slice.call(document.querySelectorAll(".hx-qs[data-q]"));if(!("IntersectionObserver" in window)){all.forEach(fill);return}`
+  + `var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);fill(e.target)}})},{rootMargin:"600px 0px"});all.forEach(function(s){io.observe(s)})}`
+  /* The script may sit above the strips it fills: wait for the whole page. */
+  + `if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go()})();</script>`;
+
 /* ---------------------------------------------------------------------------- */
 /* guideCards(groups): the selection guide as small glass cards (round 15)         */
 
@@ -432,7 +461,7 @@ function guideCards(groups) {
     + `<ul class="c3-gul">` + g.items.map((it) => `<li class="c3-gi">${it}</li>`).join("") + `</ul></div>`).join("") + `</div>`;
 }
 
-module.exports = { page, css, offerCss, chartCss, bars, offer, homes, homesCss, guideCards, glassIcons, TOKENS: T, BIG, CARDS, CTA_PROMISE };
+module.exports = { page, css, offerCss, chartCss, bars, offer, homes, homesCss, homesQ, homesQScript, guideCards, glassIcons, TOKENS: T, BIG, CARDS, CTA_PROMISE };
 
 if (require.main === module) {
   const c = css();

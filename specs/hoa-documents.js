@@ -348,7 +348,7 @@ module.exports = G.page({
       h.p(`A bill now in a House committee, ${h.ext(H5204, "H. 5204")}, would require an HOA seller packet on a website at no charge. It would also require the seller certification and governing documents within 15 days of the seller's request. It has not moved out of committee and is not law.`) },
 
     { h2: "Are HOA documents public record in Horry County?", toc: "Public record", id: "public-record", html: (bg) =>
-      h.p(`Yes, the recorded ones. An association's declaration, its bylaws, their amendments and its rules must be filed with the county's ${h.ext(ROD, "Register of Deeds")} to be enforced. The county's ${h.ext(INDEX, "index")} is online, but the pages are not, so we pull them at the county and send you the copies.`) +
+      h.p(`Yes, the recorded ones. An association's declaration, its bylaws, their amendments and its rules must be filed with the county's ${h.ext(ROD, "Register of Deeds")} to be enforced. The county's ${h.ext(INDEX, "index")} is online, but the pages are not, so we pull them at the county and send you the copies. To look up a property's records yourself, use our ${h.a("/buyers/property-records/", "Horry County property records lookup")}.`) +
       h.h3("The papers the county does not keep") +
       h.p("The budget, the minutes, the reserve study and the insurance certificate come from the association or its manager. The seller, who still owns the home, can ask for them, and we ask the seller and the manager as soon as you are under contract.") +
       h.cta("Need the budget and the minutes?", "We get them from the seller and the manager, then mark what the savings, the dues and the board's plans mean for you.", "Ask us to get the budget and minutes", "/contact/", bg) },
@@ -399,6 +399,6 @@ module.exports = G.page({
   ],
   sourcesNote: "Our count of the county's deed index and the state's complaint files; listings in aggregate.",
   bottomCta: { h2: "Get the HOA papers read before you are committed.", p: "Send the community name. We get the papers, read them and tell you what we found.", label: "Have us get and read the papers", href: "/contact/" },
-  keywords: "what to look for in HOA documents, HOA documents before buying, HOA red flags, condo red flags, HOA documents South Carolina, are HOA documents public record, who pays for HOA documents, Horry County Register of Deeds, CC&Rs, HOA resale certificate South Carolina, condo questionnaire, HOA documents needed for closing",
+  keywords: "what to look for in HOA documents, HOA documents before buying, HOA red flags, condo red flags, HOA documents South Carolina, are HOA documents public record, who pays for HOA documents, CC&Rs, HOA resale certificate South Carolina, condo questionnaire, HOA documents needed for closing",
   about: "Homeowners association and condo documents a buyer reviews before purchase in South Carolina and Horry County",
 });
