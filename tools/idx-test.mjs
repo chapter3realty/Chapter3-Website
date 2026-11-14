@@ -534,7 +534,7 @@ check("sign-up: one full name box, email, phone, Continue to photos, Already hav
   const home = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "../chapter3realty/index.html"), "utf8");
   /* Owner, 2026-11-07: a tester did not see how to search. The hero is the AI search bar on the map; the I am
      paths are their own section under it. */
-  check("homepage: the hero is an AI search form that opens the map with the words; the I am paths follow in their own section", /<form class="cine-ai" action="\/homes\/map\/" method="get"[^]*?name="q"/.test(home) && home.indexOf('class="cine-ai"') < home.indexOf('class="home-paths') && /<section class="home-paths[^]*?href="\/sell\/"[^]*?href="\/invest\/"/.test(home) && !home.includes('class="cine-main"'));
+  check("homepage: the hero opens the home search; the I am paths follow in their own section", /<div class="cine-ai cine-find"><a class="cine-find-go" href="\/homes\/map\/"/.test(home) && home.indexOf('class="cine-ai"') < home.indexOf('class="home-paths') && /<section class="home-paths[^]*?href="\/sell\/"[^]*?href="\/invest\/"/.test(home) && !home.includes('class="cine-main"'));
   const ltr = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "../chapter3realty/invest/long-term-rental/index.html"), "utf8");
   check("analyzer: no box for beds, baths, size or HOA; a cash box; the cash or loan question ready", ["ltr-beds", "ltr-baths", "ltr-sqft", "ltr-hoa"].every((id) => new RegExp(`<input id="${id}" type="hidden"/>`).test(ltr)) && ltr.includes('id="ltr-is-cash"') && ltr.includes('<dialog id="ltr-fin"'));
   check("analyzer: no rate or down payment is typed in for the visitor", !/id="ltr-(rate|down)"[^>]*value=/.test(ltr) && !/name="(rate|down)"[^>]*value=/.test(ltr));
@@ -1134,7 +1134,7 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
   check("homepage analyzer: the street, the city and the ZIP code only, no price, no loan boxes, no sample report; it opens the analyzer and runs",
     /name="street"/.test(card) && /name="city"/.test(card) && /name="zip"/.test(card) && /name="go" value="1"/.test(card) && !/name="(price|down|rate|cash)"/.test(card)
     && card.includes('action="/invest/long-term-rental/"') && !home.includes('class="an-rep"') && !home.includes('id="an-banner"'));
-  check("homepage: the search says what to type", home.includes('placeholder="Describe what you want in a home to see options"'));
+  check("homepage: the hero search is one big Find homes button to the home search (owner, 2026-11-14)", /<a class="cine-find-go" href="\/homes\/map\/">Find homes /.test(home) && !home.includes('id="home-q"'));
   check("homepage: the line under the search (30+ years, AI-powered home search, free AI-powered investment tools), and a buyers and sellers section before the team",
     /<ul class="cine-trust"[^>]*><li>30\+ years on the Grand Strand<\/li><li>AI-powered home search<\/li><li>Free AI-powered investment tools<\/li><\/ul>/.test(home)
     && home.indexOf('id="buyers-why"') > 0 && home.indexOf('id="buyers-why"') < home.indexOf('id="sellers-why"') && home.indexOf('id="sellers-why"') < home.indexOf('id="team"') && home.includes('href="/sell/home-value/"'));
