@@ -1,0 +1,111 @@
+{
+ "real_estate": {
+  "rows": 1772,
+  "unique_pins": 1771,
+  "bids_n": 1772,
+  "bid_total": 9220760,
+  "bid_median": 2709,
+  "bid_p10": 635,
+  "bid_p25": 1109,
+  "bid_p75": 5359,
+  "bid_p90": 9196,
+  "bid_min": 184,
+  "bid_max": 273164,
+  "under_1000": 362,
+  "under_2500": 843,
+  "over_10000": 152,
+  "desc_keywords": {
+   "UNIT": 387,
+   "TRACT": 119,
+   "LOT": 393,
+   "VILLA": 38,
+   "PARCEL": 33,
+   "ACRE": 32,
+   "MOBILE": 1,
+   "BLDG": 39,
+   "CONDO": 2
+  },
+  "title": "2026 REAL ESTATE DELINQUENT TAX SALE LIST AS OF 11/12/2026",
+  "buckets": [
+   {
+    "label": "under $500",
+    "count": 117
+   },
+   {
+    "label": "$500 to $999",
+    "count": 245
+   },
+   {
+    "label": "$1,000 to $2,499",
+    "count": 481
+   },
+   {
+    "label": "$2,500 to $4,999",
+    "count": 459
+   },
+   {
+    "label": "$5,000 to $9,999",
+    "count": 318
+   },
+   {
+    "label": "$10,000 to $24,999",
+    "count": 121
+   },
+   {
+    "label": "$25,000 or more",
+    "count": 31
+   }
+  ]
+ },
+ "mobile_home": {
+  "rows": 459,
+  "unique_pins": 459,
+  "bids_n": 459,
+  "bid_total": 436933,
+  "bid_median": 586,
+  "bid_p10": 252,
+  "bid_p25": 373,
+  "bid_p75": 1065,
+  "bid_p90": 1959,
+  "bid_min": 188,
+  "bid_max": 10516,
+  "under_1000": 334,
+  "under_2500": 426,
+  "over_10000": 1,
+  "desc_keywords": {
+   "LOT": 9,
+   "VILLA": 1
+  },
+  "title": "2026 MOBILE HOMES DELINQUENT LIST (HOME ONLY, NO LAND) AS OF 11/12/2026",
+  "buckets": [
+   {
+    "label": "under $500",
+    "count": 189
+   },
+   {
+    "label": "$500 to $999",
+    "count": 145
+   },
+   {
+    "label": "$1,000 to $2,499",
+    "count": 92
+   },
+   {
+    "label": "$2,500 to $4,999",
+    "count": 27
+   },
+   {
+    "label": "$5,000 to $9,999",
+    "count": 5
+   },
+   {
+    "label": "$10,000 to $24,999",
+    "count": 1
+   },
+   {
+    "label": "$25,000 or more",
+    "count": 0
+   }
+  ]
+ }
+}

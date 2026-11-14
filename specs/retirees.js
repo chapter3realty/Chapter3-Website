@@ -274,7 +274,8 @@ module.exports = G.page({
     { h2: "Is Myrtle Beach a good place to retire?", toc: "Good place to retire?", id: "good-place-to-retire", html: () =>
       PAGE_CSS +
       h.p("About 128,700 people in Horry County are 65 or older, about 3 in 10 residents. In South Carolina and in the U.S. as a whole, it is about 2 in 10. Whether it suits you depends most on how you will use the home.") +
-      DECIDE },
+      DECIDE +
+      h.p(`To weigh Myrtle Beach against Charleston, see our ${h.a("/buyers/relocating/myrtle-beach-vs-charleston/", "Myrtle Beach vs Charleston guide")}.`) },
 
     { h2: "What is a retired week like in Myrtle Beach?", toc: "A retired week", id: "retired-life", html: (bg) =>
       ph.css() + G.homesCss() +
@@ -296,7 +297,8 @@ module.exports = G.page({
       h.p(`Each of the four is ${Math.min(...mins)} to ${Math.max(...mins)} minutes by car from a hospital, without traffic.`) +
       MAP.html +
       h.p(`Medicare rates hospitals from 1 to 5 stars. On ${h.ext(CARE, "Care Compare")}, Tidelands Waccamaw Community Hospital, nearest Seasons, has 4 stars. Conway Medical Center, nearest Myrtle Trace, and Grand Strand Medical Center, nearest Del Webb at Grande Dunes, have 2 each.`) +
-      h.p(`McLeod Health opened ${h.a("/buyers/relocating/healthcare/", "a new 48-bed hospital in Carolina Forest")} to patients in October 2026. It is about 6 minutes by car from Del Webb at Grande Dunes, the same as Grand Strand Medical Center.`) },
+      h.p(`McLeod Health opened ${h.a("/buyers/relocating/healthcare/", "a new 48-bed hospital in Carolina Forest")} to patients in October 2026. It is about 6 minutes by car from Del Webb at Grande Dunes, the same as Grand Strand Medical Center.`) +
+      h.p(`For care later, see our ${h.a("/buyers/senior-living/", "guide to assisted living, memory care and nursing homes in Myrtle Beach")}.`) },
 
     { h2: "Do Myrtle Beach's 55+ communities have to evacuate for hurricanes?", toc: "Hurricanes and flooding", id: "hurricanes", html: (bg) =>
       h.p(`Three of the four are outside every hurricane evacuation zone. Every home in Seasons at Prince Creek West is in Zone C.`) +

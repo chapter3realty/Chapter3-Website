@@ -335,6 +335,8 @@ module.exports = G.page({
       + D.neighborhoods.map((n, i) => `<tr><th scope="row"><a href="#${n.id}">${i + 1}. ${n.short}</a></th><td>${n.cells.price}</td><td>${n.cells.fee}</td><td>${n.cells.beach}</td></tr>`).join("")
       + `</tbody></table></div>`
       + h.p("Times are by car with no traffic, except Cherry Grove and Surfside Beach, which are on foot. Each time is from the middle of the neighborhood to the nearest public beach access.")
+      + h.p(`For one Myrtle Beach neighborhood in detail, see our ${h.a("/submarkets/myrtle-beach/plantation-point/", "Plantation Point guide")}.`)
+      + h.p(`The fee in other communities is in our table of ${h.a("/hoa/fees-by-neighborhood/", "HOA fees for each neighborhood")}.`)
       + h.p(`For clubs and gates, see our ${h.a(GATED, "guide to gated communities near Myrtle Beach")}. If price matters most, see ${h.a("/buyers/affordable-places-to-live/", "the most affordable places near Myrtle Beach")}. For no HOA fee at all, see ${h.a("/buyers/no-hoa-homes/", "homes with no HOA near Myrtle Beach")}. Our ${h.a("/buyers/55-plus-communities/", "guide to 55+ communities near Myrtle Beach")} compares four with a 55+ age rule. To walk to the sand from a house, see ${h.a("/buyers/homes-near-the-beach/", "houses near the beach")}. For a pool of your own, see ${h.a("/buyers/pool-homes/", "homes with a pool near Myrtle Beach")}.`) },
   ],
   faqTitle: "Best neighborhoods in Myrtle Beach: FAQ",

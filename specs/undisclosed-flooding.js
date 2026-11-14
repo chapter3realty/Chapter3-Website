@@ -181,7 +181,7 @@ const STEPS = [
     miss: "A flood on a house that had no flood insurance." },
   { k: "Put the house on two flood maps", tag: TAG("Public maps: we pull them"),
     body: [`FEMA's flood map is a forecast of risk. After Florence, Horry County ${h.ext(PSDS, "mapped how far Florence's water went")}.`,
-      `We put the house on both maps. ${h.a("#florence-map", "Our map of the two")} shows where they differ.`],
+      `We put the house on both maps. ${h.a("#florence-map", "Our map of the two")} shows where they differ. To check one address on FEMA's map, use our ${h.a("/buyers/flood-zone-check/", "flood zone check guide")}.`],
     miss: "Whether water got inside. The county's map shows the ground Florence's water covered, in that one storm." },
   { k: "Ask the county's floodplain staff", tag: TAG("We ask the county"),
     body: [`Horry County's ${h.ext(HC_FLOOD_NEWS, "floodplain staff")} answer "Has my property ever flooded?" and keep the county's flood history, including where floods have repeated. The county also posts the ${h.ext(HC_EC, "signed surveys")} it has on file that show how high a floor is.`],

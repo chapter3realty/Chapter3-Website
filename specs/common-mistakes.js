@@ -353,7 +353,7 @@ module.exports = G.page({
       h.p("The seller's bill shows what the seller pays, not what you will pay. A home owned for many years is often taxed on a value far below the county's own value of it. A sale resets that value, and the new value is first taxed the year after the sale.") +
       h.p("Example: the seller has lived in a house since about 2010. The county taxes it on much less than its full value. You buy the house as a second home. Your bill is on the full value, at the second-home rate. You pay about five times the seller's bill.") +
       SELLER_CHART +
-      h.p(`We can work out your bill at your price and your tax rate, not from the seller's bill. Our ${h.a("/buyers/property-taxes/", "property tax guide")} explains how a sale resets the value.`) },
+      h.p(`We can work out your bill at your price and your tax rate, not from the seller's bill. Our ${h.a("/buyers/property-taxes/", "property tax guide")} explains how a sale resets the value. To see what the county bills a house now, use our ${h.a("/buyers/property-records/", "property lookup for any Horry County address")}.`) },
 
     { h2: "Do I need flood insurance if the house is not in a flood zone?", toc: LABEL[2], id: ENTRY_IDS[2], html: () =>
       h.p("Federal law does not require flood insurance outside FEMA's high-risk zone. But since 2015, 3 in 10 paid flood claims in Horry County were on buildings outside that zone, and those repairs cost more.") +
@@ -367,7 +367,7 @@ module.exports = G.page({
       STACK +
       h.p("In the zone, a loan from a federally regulated lender requires flood insurance, and you must be told in writing.") +
       h.p("Flood insurance costs more in the zone, and more again on a house the owner does not live in.") + FLOOD_TABLE +
-      we("We can test any address against FEMA's flood map before you offer, so the insurance is in your budget before the lender asks for it.") +
+      we(`We can test any address against FEMA's flood map before you offer, so the insurance is in your budget before the lender asks for it. To check one yourself, use our ${h.a("/buyers/flood-zone-check/", "flood zone check for any Horry County address")}.`) +
       MID_CTA(bg) },
 
     { h2: "Does a homeowners policy cover wind near the beach?", toc: LABEL[4], id: ENTRY_IDS[4], html: () =>
@@ -401,7 +401,7 @@ module.exports = G.page({
 
     { h2: "Will the HOA let me keep my boat, golf cart or rental?", toc: LABEL[8], id: ENTRY_IDS[8], html: (bg) =>
       h.p(`Only if its recorded rules allow it. About ${HOA_SHARE} in 10 houses for sale on our MLS, which covers the Grand Strand and inland Horry County, have an HOA fee, so most houses here come with a homeowners association (HOA) and its rules.`) +
-      h.p("In South Carolina, those rules bind you only if they are on file with the county. The HOA's papers are recorded at the county's Register of Deeds. A rule the board adds or changes must be recorded by January 10 of the next year to stay in force.") +
+      h.p(`In South Carolina, those rules bind you only if they are on file with the county. The HOA's papers are recorded at the county's Register of Deeds. A rule the board adds or changes must be recorded by January 10 of the next year to stay in force. Our guide to ${h.a("/buyers/property-records/deeds/", "searching Horry County land records by name")} shows how to find them.`) +
       h.p(`The biggest mistake we see from buyers moving from New York is not checking that a community's rules fit how they live: its rules on boats, golf carts, rentals and pools. The same check matters for any buyer with a boat, a cart or a rental plan. For one community's rules, read ${h.a("/submarkets/carolina-forest/the-farm/", "the HOA rules in The Farm at Carolina Forest")}.`) +
       we(`Many communities here ban renting the house out at all. When we search for you, we leave those out, and we read the HOA papers for any rule that would block your rental plan. If you would rather have no HOA, see our page on ${h.a("/buyers/no-hoa-homes/", "homes with no HOA")}.`) +
       ctaBox("Find out if a community's rules fit how you live", "Send us the community or the address. We can read its HOA papers for the boat, the golf cart, the pool and renting before you offer.", "Have us read the HOA rules", bg) },

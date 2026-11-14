@@ -360,7 +360,7 @@ module.exports = G.page({
 
     { h2: "Buying a condo or HOA home: will the seller's unpaid dues follow you?", toc: "Buying", id: "buying", html: (bg) =>
       h.p(`In a condo, only up to what the association puts in writing. A condo buyer is liable with the seller for unpaid dues, but only up to the amount in the statement the association must issue on request. The unpaid dues are paid from the sale price at closing, after taxes and recorded mortgages. That limit does not cover a buyer at a foreclosure sale.`) +
-      h.p(`When a sale leaves no profit to pay them, the association could go after the new buyer for the fees, or waive them. Our agents check for unpaid fees before closing. A title search shows a lien the association has recorded and any notice of a lawsuit. Dues owed but not recorded show only in ${h.a("/hoa/estoppel-and-transfer-fees/", "the association's statement")}, a letter that says what the seller still owes.`) +
+      h.p(`When a sale leaves no profit to pay them, the association could go after the new buyer for the fees, or waive them. Our agents check for unpaid fees before closing. A title search shows a lien the association has recorded and any notice of a lawsuit. You can also ${h.a("/buyers/property-records/deeds/", "search Horry County land records by name")} for a recorded lien. Dues owed but not recorded show only in ${h.a("/hoa/estoppel-and-transfer-fees/", "the association's statement")}, a letter that says what the seller still owes.`) +
       h.h3("Owners behind on dues can affect your loan") +
       LOAN_CARDS +
       h.p(`A building's savings matter for the same reason. Our guide to ${h.a("/hoa/reserves/", "condo reserves")} shows how we read them.`) +

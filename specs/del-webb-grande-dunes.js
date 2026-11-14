@@ -178,7 +178,8 @@ module.exports = {
     { h2: "Where is Del Webb at Grande Dunes?", toc: "Where it is", html:
       h.p("Del Webb at Grande Dunes is inside the city of Myrtle Beach, on the ocean side of the Intracoastal Waterway. In our experience, rush hour adds 5 to 10 minutes to the drive times below.") +
       M.where +
-      h.p("The nearest hospital is Grand Strand Medical Center, and the nearest grocery store is a Food Lion. The Boardwalk, with its big Ferris wheel, is about 15 minutes away.") },
+      h.p("The nearest hospital is Grand Strand Medical Center, and the nearest grocery store is a Food Lion. The Boardwalk, with its big Ferris wheel, is about 15 minutes away.") +
+      h.p(`For care later, see our ${h.a("/buyers/senior-living/", "assisted living in Myrtle Beach guide")}.`) },
 
     { h2: "What are the homes like in Del Webb at Grande Dunes?", toc: "The homes", html: (bg) =>
       h.p("Most homes in Del Webb at Grande Dunes are on one level, with 2 or 3 bedrooms and about 1,500 to 2,900 square feet.") +

@@ -391,7 +391,7 @@ module.exports = G.page({
 
     { h2: "Do HOA fees count as property tax?", toc: "HOA fees and property tax", id: "property-tax", html: (bg) =>
       h.p(`No. HOA fees are not a property tax, because an association, not a government, charges them. The IRS says you ${h.ext(P530, "cannot deduct them as real estate tax")}.`) +
-      h.p(`A home you live in, once you claim it with the county, is taxed at the 4 percent rate. Rentals, second homes and any home whose owner has not claimed that rate pay 6 percent. An owner who lives in another state pays 6 percent, because the 4 percent rate is only for the owner's ${h.ext(T12_43, "domicile")}.`) +
+      h.p(`A home you live in, once you claim it with the county, is taxed at the 4 percent rate. Rentals, second homes and any home whose owner has not claimed that rate pay 6 percent. An owner who lives in another state pays 6 percent, because the 4 percent rate is only for the owner's ${h.ext(T12_43, "domicile")}. To look up what the county bills a home, use our ${h.a("/buyers/property-records/tax-bill/", "Horry County tax records guide")}.`) +
       h.p(`On a Myrtle Beach condo at the 4 percent rate, a year of dues at the middle for condos for sale in ZIP 29577 is about ${money(MB4.dues_year)}. That is ${times(MB4)} the 2026 tax bill on a middle-valued condo in the city taxed at that rate, ${about10(MB4.tax_year)}.`) +
       DUES_TAX +
       h.p(`On a home you live in, the property tax counts on the federal return if you itemize, meaning you list your deductions instead of taking the standard deduction. The dues never do. On a rental, both are rental expenses.`) +

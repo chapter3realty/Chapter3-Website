@@ -1,0 +1,124 @@
+{
+ "_comment": "Photo records for /hoa/fees-by-neighborhood/ (batch 2026-11-d). Both are U.S. government aerials, public domain, already licensed and recorded for the site.",
+ "photos": [
+  {
+   "slug": "hoa-fees-by-neighborhood",
+   "file": "images/2026-11-d/hoa-fees-by-neighborhood/waterbridge-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-d/hoa-fees-by-neighborhood/waterbridge-from-above-600w.webp",
+    "1200": "images/2026-11-d/hoa-fees-by-neighborhood/waterbridge-from-above-1200w.webp"
+   },
+   "title": "Waterbridge from above, NAIP aerial, April 2023",
+   "what": "Waterbridge in Carolina Forest from above on April 10, 2023: the HOA's pool complex and clubhouse, labelled, inside a circle drive, with streets of houses around it.",
+   "caption": "Waterbridge from above: the pools and clubhouse inside a circle of streets.",
+   "alt": "Waterbridge from above: a pool complex and clubhouse, labelled, inside a circle drive, with streets of houses all around",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Waterbridge"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm, flown 2023-04-10 (tiles m_3307809_se_17_060_20230410; the service gives acquisition_date 2023-04-10). Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023); the exact request is in source_request.",
+   "license_note": "The USGS service page says The National Map offers \"free downloads of public domain, NAIP compressed orthoimagery\". The USDA Farm Service Agency policy page says \"Most information presented on the FSA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Planetary Computer's NAIP collection links the same FSA page as its license, titled \"Public Domain\". Read 2026-10-11 (batch 2026-10-a records); same source and terms.",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/",
+    "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+   ],
+   "taken": "2023-04-10",
+   "naip_tiles": [
+    "m_3307809_se_17_060_20230410"
+   ],
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS). Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP service, adjusted the colors and added labels placed from county data",
+   "labels": [
+    "Pools and clubhouse"
+   ],
+   "annotation_sources": {
+    "Pools and clubhouse": "pool footprint 411682 on the Waterbridge HOA amenity parcel PIN 39707030065; label to the right, touching the complex (-78.900906, 33.765676); Horry County GIS https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/27 and /24"
+   },
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8783635.67545675%2C3997152.0934911207%2C-8782913.930194201%2C3997697.222059912&bboxSR=3857&imageSR=3857&size=2400%2C1800&format=png&pixelType=U8&interpolation=RSP_CubicConvolution&noData=&compression=&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+   "frame": {
+    "bbox_wgs84": [
+     -78.904742,
+     33.763965,
+     -78.898258,
+     33.768035
+    ],
+    "ground_m_per_px_1200w": 0.5
+   },
+   "original_size": "2400x1800 (NAIP export, colors adjusted, labels drawn at 84 px, then resized)",
+   "method": "scratchpad r7/nrender.py and nconfig.json (labels from ground coordinates through the export bbox, never by eye); aerial/scripts/fetch.py",
+   "width": 1200,
+   "height": 900,
+   "copied_note": "Record copied from data/2026-10-b/photos.json (batch 2026-10-b, /buyers/best-neighborhoods/); the 600w and 1200w files copied byte for byte from Blog-Brain batches/2026-10-b/images/best-neighborhoods/ into this page's images folder, 2026-11-13."
+  },
+  {
+   "slug": "hoa-fees-by-neighborhood",
+   "file": "images/2026-11-b/hoa-benefits/the-farm-pool-from-above-2026-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-b/hoa-benefits/the-farm-pool-from-above-2026-600w.webp",
+    "1200": "images/2026-11-b/hoa-benefits/the-farm-pool-from-above-2026-1200w.webp"
+   },
+   "title": "The large pool and activity center in The Farm at Carolina Forest, NOAA aerial, January 2026",
+   "what": "The large pool of The Farm at Carolina Forest and its activity center from above on January 12, 2026, with two labels. The pool is a curving pool with two small islands of palms and a wide deck, beside a pond. The activity center is the white-roofed building at the lower left. Trees are bare in January.",
+   "caption": "The large pool and the activity center, from above.",
+   "alt": "The Farm at Carolina Forest from above in winter, labelled: a large curving blue pool with a wide deck and two palm islands beside a dark pond, and a white-roofed activity center at the lower left by a curving road",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "The Farm at Carolina Forest"
+   },
+   "source": "https://noaa-eri-pds.s3.amazonaws.com/index.html#2026_Pre_Event/EC2601a_OB_N_RGB/",
+   "source_name": "NOAA Emergency Response Imagery",
+   "author": "NOAA National Geodetic Survey",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+   "provenance": "U.S. government aerial photo: NOAA National Geodetic Survey (NGS), Remote Sensing Division, Emergency Response Imagery, 2026 pre-event coastal collection, East Coast group EC2601a, flown 2026-01-12 (the same group and flight date as the batch 2026-10-a records; ledger row 83). The three map tiles over The Farm cover only its southern part (image data at 462 of 1,571 home parcels): the Farmers Rest Drive entrance, the large pool and the activity center. Downloaded from the public S3 bucket noaa-eri-pds; the exact files are in source_files.",
+   "license_note": "17 U.S.C. 105(a): \"Copyright protection under this title is not available for any work of the United States Government\". NOAA's terms on the Registry of Open Data (https://registry.opendata.aws/noaa-eri/): \"NOAA data disseminated through NODD are open to the public and can be used as desired.\" ... \"NOAA requests attribution for the use or dissemination of unaltered NOAA data. However, it is not permissible to state or imply endorsement by or affiliation with NOAA. If you modify NOAA data, you may not state or imply that it is original, unaltered NOAA data.\" So: credit NOAA, say what Chapter3 changed (changes), never suggest NOAA endorses Chapter3. Read 2026-10-11 (batch 2026-10-a records); same source and terms.",
+   "terms_urls": [
+    "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/html/USCODE-2023-title17-chap1-sec105.htm",
+    "https://registry.opendata.aws/noaa-eri/",
+    "https://www.fisheries.noaa.gov/inport/item/67562"
+   ],
+   "taken": "2026-01-12",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: NOAA National Geodetic Survey, public domain. Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty joined three NOAA map tiles, cut a close view, brightened the colors and added two labels placed from county building footprints",
+   "labels": [
+    "Large pool",
+    "Activity center"
+   ],
+   "annotation_sources": {
+    "large_pool": "Horry County GIS building footprints layer 27, object 412186 (Pool Inground): label centered on the pool, at the footprint's center (-78.87577, 33.759814). https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/27",
+    "activity_center": "Horry County GIS building footprints layer 27, object 390424, the building on the HOA parcel PIN 39609030003 with the address point 190 Farmers Rest Dr: label to the right of its east edge (-78.877103, 33.759172). https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/27; https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/22"
+   },
+   "source_files": [
+    "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0785230w334545n.tif",
+    "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0785230w334630n.tif",
+    "https://noaa-eri-pds.s3.amazonaws.com/2026_Pre_Event/EC2601a_OB_N_RGB/EC2601a_OB_N_C0785315w334545n.tif"
+   ],
+   "frame": {
+    "bbox_wgs84": [
+     -78.877531,
+     33.758806,
+     -78.875369,
+     33.760154
+    ],
+    "ground_m_per_px_1200w": 0.17
+   },
+   "original_size": "2400x1800 (cut from the NOAA tiles, Web Mercator, Lanczos, drawn on at 2x, colors adjusted, then resized)",
+   "method": "scratchpad farmw/scripts/mosaic.py (three NOAA tiles joined at their GeoTIFF tie points), eri_fetch.py (frame in Web Mercator, no no-data pixels) and render_eri.py; config farmw/aerial/work/config.json, key the-farm-pool (round 2: a tighter 200 m frame and brighter colors)",
+   "width": 1200,
+   "height": 900,
+   "copied_note": "Record copied from data/2026-10-b/photos.json. The files are the ones /hoa/benefits/ already serves (images/2026-11-b/hoa-benefits/, byte for byte the batch 2026-10-b files)."
+  }
+ ]
+}

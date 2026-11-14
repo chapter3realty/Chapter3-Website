@@ -504,7 +504,7 @@ module.exports = G.page({
       h.cta("Get the yearly cost of one address", "Send us the address. We work out its tax as a main home and as a rental, and get a flood quote for the house.", "Have us price the tax", "/contact/", bg) },
 
     { h2: "Does Surfside Beach flood?", toc: "Flooding", id: "flooding", html: (bg) =>
-      h.p(`Inland, few homes are in a high-risk flood zone: ${pct(ST["R2/all"].pct_high_risk)} on the smaller-lot streets and ${pct(ST["R1/all"].pct_high_risk)} on the largest lots. Near the ocean it is most homes, and every home on the ocean side of Ocean Boulevard.`) +
+      h.p(`Inland, few homes are in a high-risk flood zone: ${pct(ST["R2/all"].pct_high_risk)} on the smaller-lot streets and ${pct(ST["R1/all"].pct_high_risk)} on the largest lots. Near the ocean it is most homes, and every home on the ocean side of Ocean Boulevard. To check one address, use our ${h.a("/buyers/flood-zone-check/", "flood map check")}.`) +
       FLOOD_CHART +
       h.p(`A federally backed or regulated mortgage on a home in a high-risk zone requires flood insurance.`) +
       h.h3("The 48 percent rule") +

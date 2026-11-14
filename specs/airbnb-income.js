@@ -302,7 +302,7 @@ module.exports = G.page({
       plain([
         ["A basic plan", `In what we have seen here, a basic plan costs about ${Math.round(STR.management.basicLow)} to ${Math.round(STR.management.basicHigh)} percent. It covers marketing, guest messages and basic accounting.`],
         ["Full service", `It adds taxes, maintenance and repairs, and is priced as a share of the profit.`],
-        ["A resort's rental program", `One large oceanfront resort in Myrtle Beach took 38.6 percent of gross rental income on its 2017 terms, before its other charges. Our page on ${h.a("/invest/rental-program-vs-airbnb/", "a rental program or Airbnb")} compares the two.`],
+        ["A resort's rental program", `One large oceanfront resort in Myrtle Beach took 38.6 percent of gross rental income on its 2017 terms, before its other charges. Our page on ${h.a("/invest/rental-program-vs-airbnb/", "a rental program or Airbnb")} compares the two. For one resort's rental terms, see ${h.a("/invest/condo-buildings/palace-resort/", "Palace Resort in Myrtle Beach")}.`],
       ]) +
       /* Story bank str-cheapest-cleaner (observation; Chapter3 does no property management, so nothing implies it does). */
       h.p(`If you will not be here, a manager or a cleaner you trust matters. The worst short-term rental mistake we see here is an owner running it alone with the cheapest cleaner. Theft and damage followed. Our page on ${h.a("/invest/property-management/", "property management")} covers hiring a manager.`) },

@@ -1,0 +1,739 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta property="og:title" content="Horry County Government" />
+  <meta property="og:image" content="https://www.horrycountysc.gov/media/boylqowh/hcg-horizontal-onbase.png" />
+  <title>Register of Deeds - Horry County SC.Gov</title>
+
+  <link rel="stylesheet" href="/css_v2/controls/control.css?v=Y6y87RioBtgPQBXC99TsgCiq2w1ZcJVMYLl4pKqrjpw" />
+  <link rel="stylesheet" href="/css_v2/controls/control-nav.css?v=pN7mLnG2LEixcU6Qlu7kH-QUrOHNmDKedqnzrrdBmok" />
+  <link rel="stylesheet" href="/css_v2/controls/control-color.css?v=zkIbALsAyOfPKrNaD2aCqb6ZkZkX53zBO9vxnl80dlo" />
+  <link rel="stylesheet" href="/css_v2/controls/control-main.css?v=5ddDgCXxqEaiTj2a5v-dtXrenv7clIX-CoU4eAE-xiI" />
+  <link rel="stylesheet" href="/css_v2/controls/control-mobile.css?v=tcfhUj9PiDzkUVeUgbbiRQaWmisKfsmRVd6HEbO9Egw" />
+  <link rel="stylesheet" href="/css_v2/controls/control-footer.css?v=5zFNWOiL_wf8vfnC8Hp3rcNy_RJuF1cnoY-zVd-Tq9s" />
+  <link rel="stylesheet" href="/css_v2/controls/control-header.css?v=3egwiqyw6Y7h12Nbjc3Ucv9FrjVZfSxzLc7Fjpypapo" />
+  <link rel="stylesheet" href="/css_v2/controls/control-print.css?v=Cj03yHR9-3FuSmTGWoqPSQDyGB2FxTzTZDNucBm7MTs" />
+  <link rel="stylesheet" href="/css_v2/controls/navigation/dropdown.css?v=dSEBzYKONHGiyyAq1mTtOjT0hI3DRP-qwx5ID7jYrZo" />
+  <link rel="stylesheet" href="/css_v2/library/buttons/button--brand.css?v=KvnrGMWeZqKiEel--ir9oT6atGTZbs_-dTThwnAEHOY" />
+  <link rel="stylesheet" href="/css_v2/controls/control-styles.css?v=rWHd-x7YMr03wf95hrtFAhVeK-V-MxEKSarXZELRE4U" />
+  <link rel="stylesheet" href="/css_v2/modules/profile.css?v=FQ1sczFn0ju9fmzcXdVZqNa7bRGiTxOGgcK66MwMFzM" />
+  <link rel="stylesheet" href="/css_v2/block-list/breadcrumbs.css?v=N46OvxjJy_-VLextaPK1VZ9Vk2jmw3_vX7JdGAFHc50" />
+  <link rel="stylesheet" href="https://use.typekit.net/gfl2jqh.css">
+
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <script src="https://unpkg.com/feather-icons" integrity="sha384-qEqAs1VsN9WH2myXDbiP2wGGIttL9bMRZBKCl54ZnzpDlVqbYANP9vMaoT/wvQcf" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@0.536.0" integrity="sha384-sOYzDqbJyEAI6B6wPCtZqHvD8MgGG6vSiOaUPlLw6VOhOvIdYKZWVpUVlK4WCoIf" crossorigin="anonymous"></script>
+ 
+  <base href="https://www.horrycountysc.gov/" />
+  
+  <link rel="stylesheet" href="/css_v2/pages/general-page.css?v=ZQbJ7kuzyRxw_F5VlvXTKvThLP2m30dxfafDEayxaxs" />
+
+  <link rel="stylesheet" href="/css_v2/block-list/block-container.css?v=i2jMXypgQyWo7UjVIjIGQFuA-HrlOAcvECnFWHCKA0g" />
+<link rel="stylesheet" href="/css_v2/block-list/two-column.css?v=9sAgvV-v79N7Mu893jeBh7W5CcCNkiewVH-k-5pnRxQ" />
+<link rel="stylesheet" href="/css_v2/block-list/ad-space.css?v=Ie3c_Uj02e_an4O2vOPPQw3BCbtqE6K3ZfGvHigLJ3w" />
+<link rel="stylesheet" href="/css_v2/block-list/tabs.css?v=99-PG3_fNPLW7_uVz09VNpft5-jH9ccdgcGxBdihg5c" />
+<link rel="stylesheet" href="/css_v2/block-list/contact-block.css?v=XTc_GdAH8wS7TU7FlfdXvRVRQOuUshU1fOfBf5ZSv00" />
+<link rel="stylesheet" href="/css_v2/misc/swiper-slide.css?v=O9iFzwlmjgWwf5PS2ptyshNHtOKCTsWBdIoRR9wXlbk" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+
+  <!-- Google Tag Manager -->
+  <script>    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5777K2WN');</script>
+  <!-- End Google Tag Manager -->
+  
+  <script async src = "https://www.googletagmanager.com/gtag/js?id=G-0HSV5BK7T6" ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-0HSV5BK7T6');
+  </script>
+</head>
+
+<body class="light government">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5777K2WN"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <a class="skip-link" href="/departments/register-of-deeds/#main-content"><svg class="skip-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg><span>Skip to main content</span></a>
+  <nav class="nav--main" role="navigation" aria-label="Main navigation">
+    
+
+
+
+<div class="nav-2 nav--wrapper nav-container open">
+  <div class="nav--primary">
+    <a href="/" class="logo--wrapper">
+      <img
+        src="/images/HCG-Horizontal.svg"
+        alt="H C Government Logo"
+      />
+    </a>
+    <div class="nav-group">
+        <div class="search-mobile" data-dropdown-scope data-dropdown>
+    <button type="button" class="search-opener" data-dropdown-trigger aria-expanded="false" aria-label="Search"><i data-feather="search" aria-hidden="true"></i></button>
+    <div class="search-mobile-wrapper"  data-dropdown-panel>
+      <form class="search--wrapper" action="https://www.horrycountysc.gov/search/">
+        <input class="search--main"
+             type="search"
+             id="query" 
+             name="query"
+             aria-label="Search Website"
+             placeholder="Search Website" />  
+          <button aria-label="Search" class="search--icon" type="submit">
+            <i data-lucide="search"></i>
+          </button>
+        </form>
+      </div>
+  </div>
+  <script>
+    lucide.createIcons()
+
+    const searchWrapper = document.getElementsByClassName("search--wrapper")[0];
+    const searchOpener = document.getElementsByClassName("search-opener")[0];
+
+    function openSearch() {
+      searchWrapper.classList.add("active");
+        searchOpener.setAttribute("onClick", "closeSearch()");
+    }
+
+    function closeSearch() {
+      searchWrapper.classList.remove("active");
+      searchOpener.setAttribute("onClick", "openSearch()");
+    }
+
+
+  </script>
+
+      
+
+
+
+
+
+<div id="primary-dropdown" class="dropdown" data-dropdown data-dropdown-scope="mainNav" >
+  <button id="hamburger" class="hamburger--wrapper" data-dropdown-trigger aria-expanded="false" aria-label="Toggle navigation menu" aria-controls="nav-listings">
+    <i class="hamburger" data-feather="menu" aria-hidden="true"></i>
+  </button>
+  <ul id="nav-listings" class="nav--listings" data-dropdown-panel>
+
+    <li class="nav-list-item" data-dropdown>
+      <button type="button" class="category-link" data-dropdown-trigger aria-expanded="false">
+        <i data-lucide="landmark" aria-hidden="true"></i>
+        <span>Government</span>
+      </button>
+
+      <div class="primary-dropdown-panel" data-dropdown-panel>
+        <ul class="nav-category-list">
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/departments/administrator/">
+                Administrator
+              </a>
+            </li>
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/appointed-and-elected-officials/">
+                Appointed and Elected Officials
+              </a>
+            </li>
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/boards-and-commissions/">
+                Boards and Commissions
+              </a>
+            </li>
+                <li class="nav-category-item">
+                  <a href="https://library.municode.com/sc/horry_county/codes/code_of_ordinances" target="_blank">
+                Code of Ordinances
+              </a>
+            </li>
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/county-council/">
+                County Council
+              </a>
+            </li>
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/departments/">
+                Departments
+              </a>
+            </li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-list-item" data-dropdown>
+      <button type="button" class="category-link" data-dropdown-trigger aria-expanded="false">
+        <i data-lucide="building-2" aria-hidden="true"></i>
+        <span>Business</span>
+      </button>
+
+      <div class="primary-dropdown-panel" data-dropdown-panel>
+        <ul class="nav-category-list">
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/online-services/bidrfp-packages/">
+                Bid Opportunities
+              </a>
+            </li>
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/departments/treasurer/business-license/">
+                Business License
+              </a>
+            </li>
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/departments/treasurer/hospitality-fee/">
+                Hospitality Fee
+              </a>
+            </li>
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/departments/register-of-deeds/">
+                Register of Deeds
+              </a>
+            </li>
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/tax-payer-services/">
+                Tax Payer Services
+              </a>
+            </li>
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/departments/planning-and-zoning/current-planning-zoning/">
+                Zoning Compliance
+              </a>
+            </li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-list-item" data-dropdown>
+      <button type="button" class="category-link" data-dropdown-trigger aria-expanded="false">
+        <i data-lucide="house" aria-hidden="true"></i>
+        <span>Residents</span>
+      </button>
+
+      <div class="primary-dropdown-panel" data-dropdown-panel>
+        <ul class="nav-category-list">
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/311/">
+                311 Service Request
+              </a>
+            </li>
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/video/council/">
+                Council Meetings &amp; Agendas
+              </a>
+            </li>
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/departments/emergency-management/flooding/">
+                Flooding &amp; Disaster Prep
+              </a>
+            </li>
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/land-info/">
+                Land Info
+              </a>
+            </li>
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/tax-payer-services/">
+                Tax Payer Services
+              </a>
+            </li>
+                <li class="nav-category-item">
+                  <a href="https://www.horrycountysc.gov/things-to-do/">
+                Things to Do
+              </a>
+            </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+
+   
+      <div class="profile--wrapper" data-dropdown>
+        
+
+
+  <div class="login-status">
+    <a class="login-register" aria-label="Sign in" href="/login?returnUrl=/departments/register-of-deeds/"><i data-lucide="circle-user-round"></i><span>Sign in</span></a>
+    </div>
+
+<script>
+  lucide.createIcons();
+</script>
+
+        
+
+
+
+  <div class="profile--container">
+  <div class="profile">
+    <img class="logo" src="/media/mbwdqqz5/hcgtreecircleonly.svg" alt="tree logo" />
+    <div class="button-row">
+      <a class="has-icon" href="/login?returnUrl=/departments/register-of-deeds/"><i data-lucide="key"></i><span>Login</span></a>
+      <a class="has-icon" href="/register"><i data-lucide="user-plus"></i><span>Register</span></a>
+    </div>
+  </div>
+  </div>
+
+<script>
+  lucide.createIcons();
+</script>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  lucide.createIcons()
+</script>
+
+
+    
+
+
+
+
+<div class="nav--wrapper">
+  <div class="nav--secondary">
+    <a href="https://www.horrycountysc.gov/departments/register-of-deeds/" class="nav--title">
+      <div class="brand-button">
+        <div class="button--push" title="Register of Deeds home">
+          <img class="button--icon" src="https://www.horrycountysc.gov/media/zqaimsla/register-of-deeds-icon.svg" alt="" />
+        </div>
+      </div>
+      <div class="nav--name">
+        Register of Deeds
+      </div>
+    </a>
+   
+    <div class="kabob-drop" data-dropdown-scope="subNav" data-dropdown>
+      <button class="kabob-wrapper" id="kabob" data-dropdown-trigger aria-expanded="false" aria-controls="sub-nav-list" aria-label="Register of Deeds links">
+        <i data-lucide="ellipsis-vertical" aria-hidden="true"></i>
+      </button>
+        <ul id="sub-nav-list" class="nav--listings" data-dropdown-panel>
+              <li class="sub-nav-list-item"><a class="label" href="https://www.horrycountysc.gov/departments/register-of-deeds/recording-notification-service/">Fraud Alert</a></li>
+              <li class="sub-nav-list-item"><a class="label" href="https://www.horrycountysc.gov/boards-and-commissions/forfeited-land-commission/">FLC</a></li>
+              <li class="sub-nav-mega-menu sub-nav-list-item" data-dropdown>
+                <button type="button" class="label" data-dropdown-trigger aria-expanded="false">Forms &amp; Links <i data-feather="chevron-down" aria-hidden="true"></i></button>
+              
+                  <div class="sub-menu" data-dropdown-panel>
+                      <div class="inner-wrapper">
+                          <div class="category column">
+                            <span>Forms &amp; Links</span>
+                              <ul class="column">
+                                  <li>
+                                    <a href="https://www.horrycountysc.gov/departments/register-of-deeds/forms-links/">Forms &amp; Links</a>
+                                  </li>
+                                  <li>
+                                    <a href="https://www.horrycountysc.gov/departments/register-of-deeds/erecording/">E-Recording</a>
+                                  </li>
+                                  <li>
+                                    <a href="https://www.horrycountysc.gov/departments/register-of-deeds/escrow-accounts/">Escrow Accounts</a>
+                                  </li>
+                                  <li>
+                                    <a href="https://acclaimweb.horrycounty.org/acclaimweb">Index to Database</a>
+                                  </li>
+                                  <li>
+                                    <a href="https://www.horrycountysc.gov/media/t3wpam13/customer-service-request-form.pdf">Request for Documents</a>
+                                  </li>
+                                  <li>
+                                    <a href="https://www.horrycountysc.gov/departments/register-of-deeds/#contact">Contact Us</a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+              </div>
+            </li>
+              <li class="sub-nav-list-item"><a class="label" href="https://www.horrycountysc.gov/departments/register-of-deeds/#contact">Contact</a></li>
+      </ul>
+      </div>
+  </div>
+</div>
+
+
+    <div class="scrolling-progress-bar">
+      <div class="progress"></div>
+    </div>
+  </nav>
+  
+
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="links-wrapper">
+
+    <div class="breadcrumbs-start">
+      <a href="/" aria-label="Home"><i data-lucide="house"></i><span id="home-label">Home</span></a>
+      <i data-lucide="chevron-right"></i>
+
+    </div>
+
+    <div class="breadcrumbs-end">
+            <a href="https://www.horrycountysc.gov/departments/">
+              Departments
+            </a>
+            <i data-lucide="chevron-right"></i>
+
+        <div class="current">Register of Deeds</div>
+    </div>
+
+  </div>
+</nav>
+
+<script>
+  lucide.createIcons();
+</script>
+
+  
+
+
+
+  <header>
+    <div class="img-wrapper">
+      <img src="https://www.horrycountysc.gov/media/z3chb4cv/register-of-deeds.jpg" alt=""/>
+    </div>
+  </header>
+<main id="main-content" tabindex="-1" class="government general-page" style="--nav-adjust: 0rem;">
+  
+
+<div id="" class="block " style="">
+  <div class="block--container">
+    
+
+
+<div id="" class="two-column " style=" --column-gap: 4rem;">
+  <div class="column">
+
+
+<div id="" class="opener " style="">
+  <h2>Welcome to the Horry County Register of Deeds website!</h2>
+  
+
+
+<p>As the custodian of land records for Horry County, South Carolina, we are committed to providing efficient and transparent access to vital property information for our community members. Whether you're a homeowner, real estate professional, or researcher, our comprehensive database and resources are here to assist you.</p>
+</div></div>
+  <div class="column">
+
+
+<div class="column" style="padding: 1rem; border-radius: .25rem; background: var(--compare);">
+<p>Horry County Register of Deeds<br>Customer Service and Recording Desk<br><br>Will close at <strong>3:30PM </strong>on<br><strong>Tuesday, June 30, 2026<br></strong>In order to complete the<br>2026 Fiscal Year-End Closing<br><br>All public rooms will remain open</p>
+</div></div>
+</div>
+
+  </div>
+</div>
+
+
+<div id="" class="block">
+    <div class="end-point row " style="margin-top: 2rem">
+        <div class="three-quarters">
+            <div class="intro">
+                
+
+<div id="" class="column">
+    <h2>Responsibilities</h2>
+    <div class="tabs " style="--number-of-tabs: 3; ">
+
+            <input id="0b540bb4-d467-4fbb-8324-e0d5bee38f6e" class="off-the-grid" type="radio" name="7199012f-0ff4-445a-85d9-9dfbc06838f4" />
+            <input id="3709e8b0-4baf-4ae2-9f4c-5c47b16a1074" class="off-the-grid" type="radio" name="7199012f-0ff4-445a-85d9-9dfbc06838f4" />
+            <input id="8fd509e6-ad17-43b5-830a-11d431e48f80" class="off-the-grid" type="radio" name="7199012f-0ff4-445a-85d9-9dfbc06838f4" />
+          <label for="0b540bb4-d467-4fbb-8324-e0d5bee38f6e">Land Records</label>
+          <label for="3709e8b0-4baf-4ae2-9f4c-5c47b16a1074">Recording Information</label>
+          <label for="8fd509e6-ad17-43b5-830a-11d431e48f80">Records Research</label>
+        <div class="tab--container">
+            
+
+
+<div id="" class="tab--block " style="">
+   
+
+
+<p>Our office meticulously maintains and preserves a vast array of land records, including deeds, mortgages, plats, and other pertinent documents essential for property transactions and ownership verification. Whether you're searching for historical deeds or the most recent property transactions, our user-friendly system makes it easy to access the information you need.</p>
+</div>
+
+<div id="" class="tab--block " style="">
+   
+
+
+<p>For individuals or entities involved in property transactions, our office provides a streamlined process for recording deeds, mortgages, and other related documents. Our knowledgeable staff ensures that each document is accurately recorded and securely stored, maintaining the integrity of property ownership records for future generations.</p>
+</div>
+
+<div id="" class="tab--block " style="">
+   
+
+
+<p>Researchers and genealogists will find our office to be a valuable resource for exploring Horry County's rich history through property records. Whether you're tracing the lineage of a family homestead or conducting academic research, our archives offer a wealth of information waiting to be discovered. Our dedicated staff is available to assist with research inquiries and provide guidance on navigating our extensive collection of records.</p>
+</div>
+
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <aside>
+            
+
+        </aside>
+    </div>
+</div>
+
+<div id="" class="block " style="">
+  <div class="block--container">
+    
+
+
+<div id="" class="two-column " style=" --column-gap: 4rem;">
+  <div class="column">
+
+
+<div id="" class="opener " style="">
+  <h2>Recording and Service Fee Change</h2>
+  
+
+
+<p class="" style="">
+  On May 16, 2019 the Governor signed Bill H3243. This act amended Section 8-21-310 of the South Carolina Code of Laws as it relates to the schedule of recording fees used in South Carolina. These fees will be effective beginning August 1, 2019.
+</p>
+
+<p class="" style="">
+  This will remove the current per page fees used for recordings, and instead create flat fees used to record the majority of documents. This amendment will affect the recording fees of all documents as well. It will also involve the creation of a separate recording fee for any deed relating to a title of interest in a vacation time sharing plan. However, in order to record a document as such the deed must include clear notice on the first page and be titled &#x2018;Vacation Time Sharing Ownership Deed&#x2019;. If not titled this way the document will be rejected due to not meeting the recording requirements defined in the State Statute.
+</p>
+
+<p class="" style="">
+  Due to this amendment the Horry County Register of Deeds schedule of fees has changed. As such we are posting the updated fee schedule as it will exist beginning at 8am on August 1st.
+</p>
+</div></div>
+  <div class="column">
+
+
+<div id="" class="docs " style="">
+    <h3>Links</h3>
+
+    <ul class="column multi-column" style="--row-count: 2; --col-count: 1;">
+      
+
+
+<li id="" class="" style="">
+  <a class="quick-link" href="https://www.horrycountysc.gov/media/uevkqtt4/price.pdf" target="_blank">
+    <span>Price</span>
+  </a>
+</li>
+
+
+<li id="" class="" style="">
+  <a class="quick-link" href="https://www.scstatehouse.gov/sess123_2019-2020/bills/3243.htm" target="_blank">
+    <span>Bill H3243</span>
+  </a>
+</li>
+
+    </ul>
+</div>
+</div>
+</div>
+
+  </div>
+</div>
+
+<div id="" class="block spacer" style="">
+  <div class="block--container">
+    
+
+
+<div id="" class="two-column " style=" --column-gap: 4rem;">
+  <div class="column">
+
+
+<div id="" class="opener " style="">
+  <h2>UCC Filings</h2>
+  
+
+
+<p class="" style="">
+  Amendments to UCC Article 9 are effective July 1, 2013, as a result of S.323 signed into law on June 7, 2013. The changes are a result of the 2010 Amendments to Article 9 from the Uniform Law Commission and adopted by the International Association of Commercial Administrators (IACA) which were to become effective July 1, 2013.
+</p>
+
+<p class="" style="">
+  Forms submitted for recording must be dated July 1, 2013. Approved forms can be downloaded from the South Carolina Secretary of State website.
+</p>
+
+<p class="" style="">
+  The law governing the change can be found on the South Carolina Legislature website.
+</p>
+</div></div>
+  <div class="column">
+
+
+<div id="" class="docs " style="">
+    <h3>Links</h3>
+
+    <ul class="column " style="--row-count: 1; --col-count: 1;">
+      
+
+
+<li class="" style="">
+  <a class="quick-link" href="https://www.scstatehouse.gov/billsearch.php?billnumbers=323&amp;session=120&amp;summary=B" target="_blank">
+    <span>South Carolina Legislature</span>
+  </a>
+</li>
+
+    </ul>
+</div>
+</div>
+</div>
+
+  </div>
+</div>
+
+<div id="contact" class="block spacer" style="">
+  <div class="block--container">
+    
+
+
+
+  <div class="contact-block single">
+    <section class="initial">
+      <h2><span>Register of Deeds</span></h2>
+      <div class="lower">
+        <div class="numbers">
+          <a href="tel:(843) 915-5430" class="phone">
+            <i data-feather="phone"></i>
+            <span>(843) 915-5430</span>
+          </a>
+            <div class="fax">
+              <i data-feather="printer"></i>
+              <span>(843) 915-6430</span>
+            </div>
+        </div>
+      <div class="email">
+        <span class='encryptedText'>PGEgaHJlZj0nbWFpbHRvOmhjZy5SZWdpc3Rlck9mRGVlZHNAaG9ycnljb3VudHlzYy5nb3YnPjxpIGRhdGEtZmVhdGhlcj0nbWFpbCc+PC9pPjxzcGFuPmhjZy5SZWdpc3Rlck9mRGVlZHNAaG9ycnljb3VudHlzYy5nb3Y8L3NwYW4+PC9hPg==</span>
+      </div>
+      </div>
+    </section>
+    <div id="locations" class="single-location">
+      <section>
+
+        <div class="location-container">
+          <div class="hours">
+            <label>HOURS</label>
+            <div class="open-period">
+<p>Monday-Friday<br>8am-4:45pm</p>            </div>
+          </div>
+        <div class="locations">
+          <div class="physical-location">
+            <label>Location</label>
+            <div class="address">
+              1301 Second Avenue <br />
+              Conway, SC 29526
+            </div>
+          </div>
+          <div class="mailing-location">
+            <label>Mailing</label>
+              <div class="address">
+                P.O. Box 470 <br />
+                Conway, SC 29528
+              </div>
+          </div>
+        </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+<script>
+  // Wait for the page: the email link (and its mail icon) is decoded by obfuscation.js, which runs after this.
+  document.addEventListener('DOMContentLoaded', () => feather.replace())
+</script>
+
+  </div>
+</div>
+
+</main>
+
+  
+
+<footer class="main-footer">
+  <div class="county-website-info column">
+    <img class="footer--logo" src="https://www.horrycountysc.gov/media/e5pcpyao/hcgtreelogo-placeholder.svg" alt="Horry County Official Logo" />
+    <section class="column">
+      <div class="row"><a href="https://www.horrycountysc.gov"> www.horrycountysc.gov</a>&emsp;|&emsp;HC<strong>Government</strong></div>
+      <div class="row">A product of Horry County Government</div>
+      <div class="row">©2026 by Horry County Government&hairsp;—&hairsp;All Rights Reserved.</div>
+    </section>
+    <div class="footer--email">
+      <span>General Info</span>
+      <span class='encryptedText'>PGEgaHJlZj0nbWFpbHRvOmluZm9AaG9ycnljb3VudHlzYy5nb3YnPmluZm9AaG9ycnljb3VudHlzYy5nb3Y8L2E+</span>
+    </div>
+  </div>
+  <div class="link-groups">
+      <div class="footer--column">
+          <section class="footer--section">
+              <a class="footer--section-link" href="https://www.horrycountysc.gov/departments/">
+                Departments
+              </a>
+              <a class="footer--section-link" href="https://www.horrycountysc.gov/employment/">
+                Employment
+              </a>
+              <a class="footer--section-link" href="https://www.horrycountysc.gov/news/">
+                News
+              </a>
+              <a class="footer--section-link" href="https://www.horrycountysc.gov/online-services/">
+                Online Services
+              </a>
+              <a class="footer--section-link" href="https://www.horrycountysc.gov/search/">
+                Search
+              </a>
+              <a class="footer--section-link" href="https://www.horrycountysc.gov/site-map/">
+                Site Map
+              </a>
+              <a class="footer--section-link" href="https://www.horrycountysc.gov/tax-payer-services/">
+                Tax Payer Services
+              </a>
+        </section>
+      </div>
+      <div class="footer--column">
+          <section class="footer--section">
+                <div class="footer--section-header">Legal</div>
+              <a class="footer--section-link" href="https://www.horrycountysc.gov/accessibility-statement/">
+                Accessibility Statement
+              </a>
+              <a class="footer--section-link" href="https://www.horrycountysc.gov/privacy/">
+                Privacy
+              </a>
+              <a class="footer--section-link" href="https://www.horrycountysc.gov/terms/">
+                Terms
+              </a>
+        </section>
+      </div>
+  </div>
+</footer>
+
+  
+  
+    <script src="/js/react.production.min.js?v=S0lp-k7zWUMk2ixteM6HZvu8L9Eh__OVrt-ZfbCpmgY"></script>
+    <script src="/js/react-dom.production.min.js?v=IXWO0ITNDjfnNXIu5POVfqlgYoop36bDzhodR6LW5Pc"></script>
+  
+  <script src="/js/scroll-progress.js?v=voXV4B6tX74h6M8hI5gZNbUH22InXjrsihi-t1ZdW8k" defer></script>
+  <script src="/js/large-table.js?v=CR9_kBrSYn5PrlSJl3j7OcAgSPqjYOwEpvrL5jBQzEk" defer></script>
+  <script src="/_framework/blazor.server.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js" integrity="sha384-/Gm+ur33q/W+9ANGYwB2Q4V0ZWApToOzRuA8md/1p9xMMxpqnlguMvk8QuEFWA1B" crossorigin="anonymous" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" type="text/javascript"></script>
+<script src="/js/modules/new-contact-block.js?v=rz36kBacdrHWsibbtmmyM-UIp-24ln7I_vjG8UY9DQY" type="text/javascript"></script>
+<script src="/js/obfuscation.js?v=K-HDBbaARZTOIfCCjedHrQ8wTmKlZ6ZLkmZaKclmoPI" type="text/javascript"></script>
+<script src="/js/nav-script-v2.js?v=NflN8B8DEq-SAfUzzwwSDfbI0bGl3G4QqJINdOOf5S0" type="text/javascript"></script>
+<script src="/js/modules/profileView.js?v=8Rgdrc7AOMitBZCcK6LQW_C9YGeTQz6Rtk_5Wntj-V4" type="text/javascript"></script>
+<script src="https://unpkg.com/lucide@latest" type="text/javascript"></script>
+
+  
+
+</body>
+</html>

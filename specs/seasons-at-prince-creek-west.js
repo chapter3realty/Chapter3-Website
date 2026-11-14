@@ -153,6 +153,7 @@ module.exports = {
       h.p("Seasons is in the Murrells Inlet area, and the nearest beach is in Garden City. In our experience, rush hour adds 5 to 10 minutes to the drive times on the map.") +
       M.where +
       h.p("Murrells Inlet is on a salt marsh, with fishing boats and marinas. The MarshWalk on the map is a boardwalk along the marsh.") +
+      h.p(`For care later, see our ${h.a("/buyers/senior-living/", "assisted living and memory care guide")}.`) +
       BOATS },
 
     { h2: "What are the homes like in Seasons?", toc: "The homes", html:

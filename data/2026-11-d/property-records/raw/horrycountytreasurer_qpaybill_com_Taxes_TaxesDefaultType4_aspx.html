@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="" lang="en">
+<!--<![endif]-->
+<head id="ctl00_Head1"><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="format-detection" content="telephone=no" /><title>
+	Online Tax Payment Center
+</title>
+    <link href="https://resources.qpaybill.com/Resources/Styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://resources.qpaybill.com/Resources/Styles/custom.css" rel="stylesheet" />
+    <link href="https://resources.qpaybill.com/Resources/Styles/print.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700,800,400,600" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="https://resources.qpaybill.com/Resources/Scripts/respond.min.js"></script>
+    <script type="text/javascript" src="https://resources.qpaybill.com/Resources/Scripts/jquery-3.5.1.min.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script type="text/javascript" src="https://resources.qpaybill.com/Resources/Scripts/ie10-viewport-bug-workaround.js"></script>
+    
+    <style type="text/css">
+        .block-out
+        {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: rgba(0, 0, 0, 0.5);
+            top: 0;
+            left: 0;
+            z-index:100 !important;
+            overflow: hidden;
+        }
+        .loading
+        {
+            font-family: inherit;
+            font-size: 16px;
+            color: #643838;
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            position: fixed;
+            background: #f4f4f4;
+            text-align:center;
+            top:50%;
+            left:50%;
+            margin-top:-50px;
+            margin-left:-100px;
+            z-index:110 !important;
+            overflow: hidden;
+        } 
+    </style>
+
+    <script type="text/javascript">
+        function printpage() {
+            window.print()
+        }
+
+        function printIFrame(id) {
+            const frame = document.getElementById(id).contentWindow;
+            frame.focus();
+            frame.print();
+        }
+
+        function btnSearch_Click() {
+            if (confirm("Searching. Please wait...")) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+    </script>
+    
+
+    <!--[if gte IE 9]>
+      <style type="text/css">
+        .gradient {
+           filter: none;
+        }
+      </style>
+    <![endif]-->
+    <style type="text/css"> #style_override {font-family:"Open Sans", sans-serif;;background-color:#96C3F2;}#style_override header h1, #style_override header h2 {color: #3F6894;}#style_override header h1, #style_override header h2 {text-shadow: 0px 0px 0px #333333;}#style_override main h1, #style_override main h2, #style_override main h3, #style_override main h4, #style_override main h5 {color: #3F6894;}#style_override .btn-primary {background-color: #3F6894;}#style_override .btn-primary:hover, #style_override .btn-primary:focus, #style_override .btn-primary:active, #style_override .btn-primary.active {background-color: #254d77;}#style_override .btn-primary {color: ;}#style_override .btn-primary:hover, #style_override .btn-primary:focus, #style_override .btn-primary:active, #style_override .btn-primary.active {color: ;}#style_override .bar {background-color: ;}#style_override .gvheader {background: ;color:  ;}#style_override .disclaimer,  #style_override .disclaimer a, #style_override .disclaimer a:hover, #style_override .disclaimer a:focus, #style_override .disclaimer a:visited  {color: ;} </style>
+</head>
+<body id="style_override" class="beach blue" style="">
+    <form name="aspnetForm" method="post" action="./TaxesDefaultType4.aspx" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_MainContent_btnSearch')" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZKsUwZqjwSf8yHhMrPpwIgOKkGdyOPKnKmaL1q7J8AD5_Q4LZXK15Oc6KLFGiAfvqw2&amp;t=639190689332169432" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yEsc3pyzGuNOYZSLPPGaGxZ1epCmaPZ5mVNacdwtCtIPaOkvGwDIIxwtZVC7V_DtnDmpGfZjz8a_XXfENyPy40mP-D_4tzFOWLapJ7ueGgWPKNZROIlB7xI4CNf2m_IfWuFRB7s3YomLKQciERPJcx01&amp;t=ffffffffbec1863d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Jw6tUGWnA15YEa3ai3FadOk1wTEyrLQEn4elFU1AZD3vFWlHrUWySuANMTOn9LUS1uBH2ebM-E8ml56UIvNtc-CGaAiJJYntew7fkxymqfilPYDceHOHwzUEwCnhFVV9SoBhjYy6WANZyftvU1DhUs2o4Ym2PQrD0cuU4luPL8A1&amp;t=ffffffffbec1863d" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5273894A" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="Hpclo4c3YktW6aN86Ljk0nWHKU8A0WzHJngTHbNxg9jLe7hANFyaBw+oPWGMDiMZWUHmZ7HlOvQezdMGzVwi5LqHk0BW7mQfrOVVvdxwPQmQQDyI111SodJ5H1+2x13moFPRWRGcShm6sKBMAwMlnhq7iJUenMV0DpfeK67HjpQcBorhCd8mtUH7xow4wo1vnI8F9aVuJFy+D5cbNZYgBh9r5+vJXzfkbWDlSYhGWkhQWuXvuWFx4uwiOw0UzmbEaAjgQP3o6equ6QdHFlYaZIgT6rxV0dLHNtXfmRl/u0y7vvmMbQW2Za+EnonZE0ITyYy8mCKgqjfyuOo0XsoYn5tRsdZDkqnM122WMcxkPDldkeEFMFopysKPQ2C7KofZnJXFownPx6+URkzSI7U0/Tol6YiYjN0Gee2RQ8omTOVc1jHOf/4Q0husAZauPMfbKKmVNaidImMMZvKZJeDPkJvXkV6Q9RiU2r+G2PsK70eHXKf8emh/US65lhn8I7YkQxNeDbM+x7vZduJRWuWqqHAtGvhJWRF+nhd36wcCqLubcyWFm0/C7+BXnsB6A0wltpvXS7gl2KXzeRIFFe6SFxdtIkm14rWSDCcwql6dKRWmce5nYVyFE3hems1Pm3bRUMLdfhTX/DjpCoCtvaelD2T5BqtHBBAutgT9KMp/kIjnIBcDVcfb06yJqSf8Ba6hml9Wvx4nEOsM1drUHU5bLnDBSfVgIoVzXye00QXBwYQ=" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', ['tctl00$MainContent$UpdatePanel1','','tctl00$MainContent$updpanelSearchResults',''], ['ctl00$MainContent$btnSearch',''], [], 90, 'ctl00');
+//]]>
+</script>
+
+        <header class="hide-printing">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-sm-10">
+                        <div class="middle">
+                            <div class="vert-column">
+                                <img id="ctl00_Image1" src="https://resources.qpaybill.com/Resources/Images/County/6602_logo.png" alt="County Logo" style="border-width:0px;" /></div>
+                            <div class="vert-column">
+                                <h1>
+                                    <span id="ctl00_lblCustomerName">Horry County</span></h1>
+                                <h2>ONLINE TAX PAYMENT</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2" style="text-align: right;">
+                        <div id="ctl00_PanelCart">
+	
+                            <div class="cart">
+                                <p>Cart: Items
+                                    <span id="ctl00_LabelItemCount">0</span></p>
+                                <p>
+                                    <input type="submit" name="ctl00$btnCheckout" value="View Cart" id="ctl00_btnCheckout" disabled="disabled" class="btn btn-primary hidden-print" /></p>
+                            </div>
+                        
+</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="bar hide-printing"></div>
+        <main>
+            <div class="container">
+                <div class="row">
+                    
+            <div class="col-lg-12 col-md-12 col-sm-12">
+            <h1>Tax Search</h1>
+            <span id="ctl00_MainContent_lblAdditional1">In order to locate all delinquent Personal Property taxes, you must search by Name or Tax ID#. If delinquent taxes are owed, you must pay the oldest tax year first.
+
+
+
+</span>
+            
+            <div class="meta">
+                <p><span id="ctl00_MainContent_lblAdditional3"></span></p>
+                <p><span id="ctl00_MainContent_lblAdditional4"></span></p>
+            </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-sm-push-6">
+                <h3>County Information</h3>
+                <div class="beigebox">
+                    <span id="ctl00_MainContent_lblAdditional2">Welcome to the Horry County Tax Payment Website!<BR><BR>Horry County Treasurer’s office<BR>1301 2nd Ave, Ste 1C09<BR>Conway, SC 29526 </span>
+                </div>
+                <br />
+                
+
+                
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-sm-pull-6">
+            <h3>Search Parameters</h3>
+                <div id="ctl00_MainContent_UpdatePanel1" DefaultFocus="radVehicleButton" DefaultButton="btnSearch">
+	
+                        <strong>Search Type:</strong>
+                        <ul class="options_ul">
+                        <li><input id="ctl00_MainContent_radVehicleButton" type="radio" name="ctl00$MainContent$SearchType" value="radVehicleButton" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$radVehicleButton\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="ctl00_MainContent_radVehicleButton">Vehicle</label></li>
+                        <li><input id="ctl00_MainContent_radRealEstateButton" type="radio" name="ctl00$MainContent$SearchType" value="radRealEstateButton" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$radRealEstateButton\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="ctl00_MainContent_radRealEstateButton">Real Estate</label></li>
+                        <li><input id="ctl00_MainContent_radPersonalButton" type="radio" name="ctl00$MainContent$SearchType" value="radPersonalButton" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$radPersonalButton\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="ctl00_MainContent_radPersonalButton">Personal</label></li>
+                            <li><input id="ctl00_MainContent_radWatercraftButton" type="radio" name="ctl00$MainContent$SearchType" value="radWatercraftButton" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$radWatercraftButton\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="ctl00_MainContent_radWatercraftButton">Watercraft</label></li>
+                        <li><input id="ctl00_MainContent_radAllSearchButton" type="radio" name="ctl00$MainContent$SearchType" value="radAllSearchButton" checked="checked" /><label for="ctl00_MainContent_radAllSearchButton">All</label></li>
+                        </ul>
+                        <strong>Payment Status:</strong>
+                        <ul class="options_ul">
+                            <li><input id="ctl00_MainContent_radUnpaidButton" type="radio" name="ctl00$MainContent$PaidStatus" value="radUnpaidButton" /><label for="ctl00_MainContent_radUnpaidButton">Unpaid</label></li>
+                            <li><input id="ctl00_MainContent_radPaidButton" type="radio" name="ctl00$MainContent$PaidStatus" value="radPaidButton" /><label for="ctl00_MainContent_radPaidButton">Paid</label></li>
+                            <li><input id="ctl00_MainContent_radAllPaymentsButton" type="radio" name="ctl00$MainContent$PaidStatus" value="radAllPaymentsButton" checked="checked" /><label for="ctl00_MainContent_radAllPaymentsButton">All</label></li>
+                         </ul>
+                        <p><strong>Tax Year:</strong></p>
+                        <div class="field"><select name="ctl00$MainContent$ddlYearList" id="ctl00_MainContent_ddlYearList">
+		<option selected="selected" value="All">All</option>
+		<option value="2026">2026</option>
+		<option value="2025">2025</option>
+		<option value="2024">2024</option>
+		<option value="2023">2023</option>
+		<option value="2022">2022</option>
+		<option value="2021">2021</option>
+		<option value="2020">2020</option>
+		<option value="2019">2019</option>
+		<option value="2018">2018</option>
+		<option value="2017">2017</option>
+		<option value="2016">2016</option>
+
+	</select></div>
+                            <div class="clearfix"></div>
+                        <p><strong>Search By:</strong></p>
+                        <div class="field">
+                           <select name="ctl00$MainContent$ddlCriteriaList" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$ddlCriteriaList\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_MainContent_ddlCriteriaList">
+		<option value="Receipt">Notice Number</option>
+		<option value="Map">Map Number</option>
+		<option selected="selected" value="Name">Owner Name</option>
+		<option value="PIN">PIN</option>
+		<option value="DOR">Tax ID</option>
+
+	</select></div>
+                        <div class="field">
+                            <input name="ctl00$MainContent$txtCriteriaBox" type="text" maxlength="50" id="ctl00_MainContent_txtCriteriaBox" /></div>
+                            <div class="clearfix"></div>
+                            <p class="fineprint"><span id="ctl00_MainContent_lblHelper">Please enter your last name first followed by your first name.</span></p>    
+                        <p>
+                            <input type="submit" name="ctl00$MainContent$btnSearch" value="Search" id="ctl00_MainContent_btnSearch" class="btn btn-primary" AssociatedControlId="txtCriteriaBox" />
+                            &nbsp;&nbsp;
+                            <input type="submit" name="ctl00$MainContent$btnClearSearch" value="Clear Search" id="ctl00_MainContent_btnClearSearch" class="btn btn-primary" />
+                                                  
+                        </p>
+                        <p>
+                            <span id="ctl00_MainContent_lblError" style="color: red;"></span>
+                        </p>
+                    
+</div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+            <div id="ctl00_MainContent_updpanelSearchResults">
+	
+                    <div class="search_hand"><img alt="Hand" src="https://resources.qpaybill.com/Resources/Images/Swipe.png" /></div>
+                    <div class="search_scroll pad">
+                        <div>
+
+	</div>
+                    </div>
+                
+</div>
+            <div id="ctl00_MainContent_UpdateProgress1" style="display:none;">
+	
+                    <div class="block-out">
+                        <div class="loading">                          
+                            <p>Loading... Please Wait.</p>
+                            <img alt="Loading" src="https://resources.qpaybill.com/Resources/Images/loader.gif" />
+                        </div>
+                    </div>
+                
+</div>
+        </div>
+
+                </div>
+            </div>
+        </main>
+        <div class="bar"></div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 print-block disclaimer">
+                        &copy; 2026
+                        <span id="ctl00_lblClusterNameFooter"> Springbrook Holding Company, LLC. PUBLIQ, LLC, is a wholly-owned affiliate of Springbrook Holding Company, LLC. The PUBLIQ&#174; Software word mark and logo are trademarks owned by PUBLIQ, LLC.</span>
+                        -
+                        <a id="ctl00_lnkPrivacy" rel="nofollow" href="https://springbrooksoftware.com/privacy-policy/" target="_blank" style="text-decoration: underline;">Privacy Statement</a>
+                        <span id="ctl00_labelDevInfo" style="color:Red;"></span>
+                    </div>
+                    <div class="col-md-6 hidden-print">
+                        <img id="ctl00_ImageVisa" class="footer_logo" src="https://resources.qpaybill.com/Resources/Images/Visa.png" alt="Visa Payment Card Logo" style="height:36px;border-width:0px;" />
+                        <img id="ctl00_ImageMasterCard" class="footer_logo" src="https://resources.qpaybill.com/Resources/Images/MasterCard.png" alt="Mastercard Payment Card Logo" style="height:36px;border-width:0px;" />
+                        <img id="ctl00_ImageDiscover" class="footer_logo" src="https://resources.qpaybill.com/Resources/Images/Discover.png" alt="Discover Payment Card Logo" style="height:36px;border-width:0px;" />
+                        
+                    </div>
+                    <div class="hidden-lg hidden-md hidden-sm hidden-print"><a class="btn btn-primary" href="#">Back to top</a></div>
+                </div>
+            </div>
+        </footer>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":null,"displayAfter":500,"dynamicLayout":true}, null, null, $get("ctl00_MainContent_UpdateProgress1"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

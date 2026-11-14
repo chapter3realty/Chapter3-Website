@@ -400,7 +400,7 @@ module.exports = G.page({
       CHART +
       h.p(`The five largest sold about two-thirds of the new homes. A builder's new home sold for about ${r1k(F.builder_median_price)} in the middle, against about ${r1k(F.other_median_price_seller_a_person_building_on_roll)} for a home resold by its owner.`) +
       h.p(`Five more sellers are companies that each sell new homes in one community, such as Waterbridge SC LLC in Waterbridge. Their deeds name no builder, so we count them apart. Together they sold ${n0(GRP.sales)} homes, mostly with Myrtle Beach and Little River addresses.`) +
-      h.p(`This page counts builders that sell new homes in their own communities. To build on a lot you own, you hire a builder under a construction contract. The license check in the last section applies to that builder too, and our guide gives ${h.a(NC + "#how-long", "how long each kind of build takes")}.`) },
+      h.p(`This page counts builders that sell new homes in their own communities. To build on a lot you own, you hire a builder under a construction contract. To buy the lot first, see our ${h.a("/buyers/land/", "guide to buying land in Horry County")}. The license check in the last section applies to that builder too, and our guide gives ${h.a(NC + "#how-long", "how long each kind of build takes")}.`) },
 
     { h2: "Where does each builder build in Horry County?", toc: "Where they build", id: "where", html: (bg) =>
       h.p(`Mostly inland, around Conway, Longs and Myrtle Beach. A mailing address is not the city limits: a Myrtle Beach address includes Carolina Forest and Socastee:`) +

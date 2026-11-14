@@ -360,7 +360,7 @@ module.exports = G.page({
       h.p(`A regime fee is the condo fee. South Carolina's ${h.ext(T27_31, "condo law")} calls a condo a horizontal property regime. A condo fee is higher because it pays for the building: on the Grand Strand, the typical condo fee is nearly ${TIMES} times the typical house fee.`) +
       FEE_CHART +
       h.p(`In a year, that is about ${money(YEAR_CONDO)} for the typical condo and about ${money(YEAR_HOUSE)} for the typical house, on top of the mortgage, the property tax and your own insurance.`) +
-      h.p(`What fees run here, by kind of home, and what each one covers is on our ${h.a("/hoa/", "Myrtle Beach HOA fees page")}.`) +
+      h.p(`What fees run here, by kind of home, and what each one covers is on our ${h.a("/hoa/", "Myrtle Beach HOA fees page")}. The fee in each community is in our list of ${h.a("/hoa/fees-by-neighborhood/", "HOA fees by neighborhood")}.`) +
       PAYS +
       h.p(`About three in ten houses for sale have no association at all. ${h.a("/buyers/no-hoa-homes/", "Homes with no HOA")} has its own page.`) },
 

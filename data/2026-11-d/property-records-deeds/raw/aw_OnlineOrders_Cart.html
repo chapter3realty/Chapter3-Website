@@ -1,0 +1,240 @@
+<!DOCTYPE html> 
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><title>
+	Horry County Records Search
+</title><meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <!--[if IE 9]><link rel="stylesheet" type="text/css" media="screen" href="/Content/ie9specific.css" /><![endif]-->
+    <!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/Content/ie8specific.css" /><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/Content/ie7specific.css" /><![endif]-->
+    <link href="/Content/common.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="/Scripts/jquery-latest.pack.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-migrate-3.3.0.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/kendo/2023.1.117/kendo.all.min.js" ></script>
+    <script type="text/javascript" src="/Scripts/kendo/2023.1.117/kendo.aspnetmvc.min.js" ></script>
+    <link href="/Content/kendo/kendo.common.min.css" rel="stylesheet" type="text/css" /><link href="/Content/kendo/kendo.Office365.min.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery.hoverIntent.js"></script>
+	<script type="text/javascript" src="/Scripts/jquery.cookie.js"></script>	
+	<script type="text/javascript" src="/Scripts/AcclaimCommon.js" ></script>
+    <script type="text/javascript" src="/Scripts/AcclaimCustom.js" ></script>
+    
+	
+	<link href="/Content/common.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/Scripts/jquery-latest.pack.js"></script>
+    <script src="/Scripts/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/Scripts/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-migrate-3.3.0.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/kendo/2023.1.117/kendo.all.min.js" ></script>
+    <script type="text/javascript" src="/Scripts/kendo/2023.1.117/kendo.aspnetmvc.min.js" ></script>
+    <link href="/Content/kendo/kendo.common.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/kendo/kendo.material.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/Scripts/MicrosoftAjax.debug.js"></script>
+    <script type="text/javascript" src="/Scripts/MicrosoftMvcAjax.debug.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.popupWindow.js"></script>
+    <script type="text/javascript" src="/Scripts/ie7.js" ></script>
+    <script type="text/javascript" src="/Scripts/jquery.cookie.js"></script>	
+    <script type="text/javascript" src="/Scripts/AcclaimCommon.js"></script>
+    <script type="text/javascript" src="/Scripts/AcclaimOnlineOrdersPages.js"></script>
+<link href="../App_Themes/Horry/Site.css" type="text/css" rel="stylesheet" /></head> 
+
+    <!-- .Combined(true)
+        .Compress(true)-->
+<body>
+    <div class="page">
+        <header id="pageheader">
+            <div id="header">
+                
+
+<div class="navigationBar" style="display:none;">
+
+                <div style="border-right: thin solid #ccc;">Welcome <i>Guest</i></div>
+         
+        <div><a href="/AcclaimWeb/OnlineOrders/Cart" class="MasterNavigationButtonStyle">
+          <span id="NavCartInfoSpan"></span> 
+             
+                     <img src="/AcclaimWeb/Content/Images/shopping_cart_icon.png"  alt="Shopping Cart" style="border:none;" title="Shopping Cart" />
+                  
+              </a></div>
+ 
+</div>
+
+            <div id="home">
+                <a href="#" title="County Homepage" onclick="window.open('https://www.horrycounty.org/Departments/Register-of-Deeds')"> </a>
+            </div>
+            
+            <input type="hidden" id="resxHeaderLogo" value=""/>
+            <input type="hidden" id="resxLogoAlign"  value=""/>
+            <input type="hidden" id="resxLogoTitle"  value=""/>
+            <input type="hidden" id="resxHeaderBackroundColor"  value=""/> 
+            </div>
+             <div id="submenucontainer">
+                
+
+<script>
+    var EcommerceEnabled = true;
+    var EnableFbnDownload = false;
+    var Agent = false;    
+</script>
+
+<div>
+    <ul class="k-widget k-reset k-header k-menu" id="Menu"><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/"><img alt="image" class="k-image" src="/AcclaimWeb/Content/Images/searchMenu.png" /><span class="k-menu-link-text">Official Records</span><span class="k-menu-expand-arrow"><span class="k-icon k-i-arrow-s k-menu-expand-arrow-icon"></span></span></a><ul class="k-group k-menu-group k-reset k-menu-group-md"><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeName"><span class="k-menu-link-text">Name</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeBookPage"><span class="k-menu-link-text">Book/Page</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeDocLegal"><span class="k-menu-link-text">New Legal Description</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeComments"><span class="k-menu-link-text">Legal Description/Memo</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeDocType"><span class="k-menu-link-text">Document Type</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeConsideration"><span class="k-menu-link-text">Consideration</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeRecordDate"><span class="k-menu-link-text">Record Date</span></a></li></ul></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/Support"><img alt="image" class="k-image" src="/AcclaimWeb/Content/images/supportMenu.png" /><span class="k-menu-link-text">Support</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/Search/Settings"><img alt="image" class="k-image" src="/AcclaimWeb/Content/images/imageTools24.png" /><span class="k-menu-link-text">Settings</span></a></li><li class="k-item" style="float: right; border-right: 0;"><a class="k-link k-menu-link" href="/AcclaimWeb/Login"><img alt="image" class="k-image" src="/AcclaimWeb/Content/Images/logout.png" /><span class="k-menu-link-text">Login</span></a></li></ul><script>
+	kendo.syncReady(function(){jQuery("#Menu").kendoMenu({});});
+</script>    
+</div>
+<noscript>
+    <div>
+        <h2 style="color: White;background-color:Red;"> You must enable Javascript to continue. Click 
+            <a href='Support' style="color: White;background-color:Red;text-decoration:underline">here</a> for help on how to enable Javascript. </h2>
+    </div>
+</noscript>
+<script> function addBlankTargetToLink(obj) {
+     obj.attributes("target", "_blank");
+}</script>
+<div id="cookiesDisabled" style="display:none">
+    <h2 style="color: White;background-color:Red;"> You must enable Cookies to continue. Click 
+        <a href='Support' style="color: White;background-color:Red;text-decoration:underline">here</a> for help on how to enable browser cookies. </h2>
+</div>
+
+
+            </div>
+        </header>
+    </div>    
+    <main id="mainBack">
+        <div id="main">
+            <div id="mainForm" tabindex="0">
+                
+    
+
+  <div id="divSimpleTwoColumn" style="clear: both">  
+        <div class="ItemTitle t-header">
+        Your Cart  
+
+ <div id="goBackLink">
+    
+</div>
+
+
+    </div>
+    <div class="CartInstructionStyle">
+                <ol>;<li>Please confirm that the items in the cart and amount are correct.</li><li>If you have made any additional changes to the cart, click the <b>Update</b> button to ensure your changes have been saved.</li><li>If you have any questions regarding the shopping cart process, please contact any of our office numbers.</li></ol> 
+    </div>
+
+    
+    </div>
+
+		
+    <div id="CartInfo" class="ElementHidden">
+        
+        &nbsp;
+		<form action="/AcclaimWeb/OnlineOrders/Cart?id=cartfrm" method="post">
+        
+        
+		<div id="CartContentDiv" class="CartDivStyle">
+        <table class="CartChangeTableStyle" cellpadding="0px" cellspacing="0px" role="none">
+            <tr>
+                <td>
+                    <input type="submit" id="cartFormSubmitRemove" name="cartFormSubmitType" class="t-button" value="Remove"
+                        title="Remove" style="font-size: 9px;" />
+                </td>
+
+                <td></td>
+                <td>
+                    <div class="CartUpdateTDStyle">
+                        </div>
+                </td>
+            </tr>
+        </table>
+		
+        <div id="Div1" class="CartDivStyle">
+			<table id="tblCart" class="CartTableStyle"  cellspacing="0" role="form" aria-label="Cart" >
+            <tr class="t-header">
+            <th><input type="checkbox" id="removeCartToggle" name="removeCartToggle" title="Remove Cart toggle" /></th>
+            <th>Name</th>
+            <th>Reverse Name</th>
+            <th>Book/Page</th>
+            <th>Instrument Number</th>
+
+
+            <th># of Pages</th>
+
+			
+            <th>Specific Pages</th>
+			
+
+            <th>Total</th>
+            </tr>
+                
+            </table>
+		</div>
+		</div>
+    </div>
+       <div class="cartholder"> 
+      <h3 style="margin-top: -3px; padding: 0px;"> <img src="/Content/Images/shopping_cart_icon.png" alt="Shopping Cart" style="border: 0px; margin: 0 8px -2px 5px;"  />Order Summary</h3>
+
+	<div class="ElementViewable" style="margin: 5px;">
+        Cart is empty.
+    </div>
+	
+	<div class="CartTotalDivStyle">
+			
+			<br />
+            <span class="CartTotalStyle">Total :
+                $0.00</span>
+        </div>
+        <div class="ButtonBackground">
+        <div class="CheckOutDivStyle">
+        <input type="submit" id="cartFormSubmitUpdate" name="cartFormSubmitType" class="t-button" value="Update"/>
+        <input type="button" value="Proceed to Check Out" class="t-button" onclick="location.href='/AcclaimWeb/OnlineOrders/CheckOut'"/>
+        </div>
+    </div></div>
+    <div id="blanket" style="display:none;"></div>
+    <div style="display: none" id="SelectCertifiedCopyDiv" class="SelectCopyPopupStyle">
+        <div class="PopupCloseTextStyle" onclick="$('#SelectCertifiedCopyDiv').hide();"><a>Close X</a></div>
+        <h2>Select Copies</h2>
+        <p>Enter the number of copies for certified or non-certified <br/> - Click on the update button to save the cart</p>
+        <div id="SelectIndividualPages" style="overflow: auto; max-height: 150pt; display:block;">
+
+                  
+
+        </div>
+        <input type="hidden" name="mdl.Cart.UpdateItemNumber" id="mdl.Cart.UpdateItemNumber" value="-1" />
+		
+        <input type="submit" name="cartFormSubmitType" value="Update Pages" />
+    </div>
+    </form>
+    
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        
+<div id="footer" class="t-header">
+<div id="BrandFooter"></div>
+        Copyright 2026 &copy;  Acclaim, is a registered trademark of HARRIS RECORDING SOLUTIONS
+        |  <span style="text-decoration: underline;"><a href="https://www.horrycountysc.gov/departments/register-of-deeds/" class="t-link">Contact Us</a></span>
+    </div>
+
+    </footer>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        mainHieght();
+        window.name = 'AcclaimwebMainWindow';
+        if (!IsCookiesFeatureEnabled()) { $('#cookiesDisabled').show(); }
+    })
+    window.onresize = function () {
+        mainHieght();
+    }   
+</script>
+</body>
+
+</html>

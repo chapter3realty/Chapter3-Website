@@ -605,7 +605,7 @@ module.exports = G.page({
 
     { h2: "Spec home or to-be-built: how long does a new house take?", toc: "How long it takes", id: "how-long", html: () =>
       h.p(`A spec home, one the builder starts before it has a buyer, is often finished and ready now. Of the new houses for sale in the MLS feed, almost half are finished and never lived in. The rest are still being built.`) +
-      h.p(`A house the builder has not started takes months. ${h.ext(SOC, "In the South")}, a builder's house took about 5 and a half months from start to finish in the 2025 figures. A house a contractor builds on your own lot took about 9 months.`) +
+      h.p(`A house the builder has not started takes months. ${h.ext(SOC, "In the South")}, a builder's house took about 5 and a half months from start to finish in the 2025 figures. A house a contractor builds on your own lot took about 9 months. To find a lot, see our ${h.a("/buyers/land/", "guide to land for sale")}.`) +
       AERIAL },
 
     { h2: "What inspections does a new house need?", toc: "Inspections", id: "inspections", html: (bg) =>

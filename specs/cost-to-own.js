@@ -261,7 +261,7 @@ const HOUSE_TABLE = compareCards(HOUSES.slice().sort((a, b) => a.total_legal_res
 { caption: "A typical house in five places, as your home: what it costs to own", nameLabel: "Place", css: false });
 const noteList = (items) => `<ul class="c3k-note c3k-nl">${items.map((t) => `<li>${t}</li>`).join("")}</ul>`;
 const HOUSE_NOTE = noteList([
-  `Carolina Forest and Socastee are outside city limits, where most tax bills include the ${usd(FEE)} county fee.`,
+  `Carolina Forest and Socastee are outside city limits, where most tax bills include the ${usd(FEE)} county fee. To look up a bill, use our ${h.a("/buyers/property-records/tax-bill/", "guide to finding a Horry County tax bill")}.`,
   `The city rows leave out each city's own stormwater and trash fees, which come with the water bill.`,
   `On the north end of Myrtle Beach, a typical house lists an HOA fee of $${HOA.areas["29572"].house.median} a month. Conway's HOA fee is for its main ZIP code, which is mostly outside the city.`,
 ]);
@@ -482,7 +482,7 @@ module.exports = G.page({
   sections: [
     { h2: "How much does it cost to own a home in Myrtle Beach each year?", toc: "The yearly total", id: "yearly-total", html: () =>
       PAGE_CSS + ph.css() + CC_STYLE +
-      h.p(`Upkeep and insurance are the biggest parts. Your lender usually collects the tax and insurance with each loan payment, but they are counted here, not in the loan. The HOA fee goes to your homeowners association. It and upkeep are usually paid separately.`) +
+      h.p(`Upkeep and insurance are the biggest parts. Your lender usually collects the tax and insurance with each loan payment, but they are counted here, not in the loan. The HOA fee goes to your homeowners association. It and upkeep are usually paid separately. The fee in each community is in our ${h.a("/hoa/fees-by-neighborhood/", "HOA fee list by neighborhood")}.`) +
       BILL +
       PH_STREET +
       h.p(`Inside the City of Myrtle Beach, the same house costs about ${r10(CITY.total)} a year as your home. The tax is higher there, about ${r10(CITY.tax_legal_residence)}, and there is no county fee on the tax bill.`) +

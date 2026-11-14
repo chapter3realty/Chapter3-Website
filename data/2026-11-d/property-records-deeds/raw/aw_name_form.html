@@ -1,0 +1,625 @@
+<!DOCTYPE html> 
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Horry County Records Search
+        
+    </title>
+    <!--[if IE 9]><link rel="stylesheet" type="text/css" media="screen" href="../Content/ie9specific.css" /><![endif]-->
+    <!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="../Content/ie8specific.css" /><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="../Content/ie7specific.css" /><![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link type="text/css" href="../Content/common.css" rel="stylesheet" />
+	<link type="text/css" href="../Content/telerik.common.css" rel="stylesheet" />
+	<link type="text/css" href="../Content/2012.1.214/telerik.outlook.min.css" rel="stylesheet" />
+    <link type="text/css" href="../App_Themes/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+    <script type="text/javascript" src="/Scripts/jquery-latest.pack.js" ></script>
+    <script type="text/javascript" src="/Scripts/jquery-ui-1.8.16.custom.min.js" ></script>
+    <script type="text/javascript" src="/Scripts/jquery.unobtrusive-ajax.min.js" ></script>
+    <script type="text/javascript" src="/Scripts/jquery.maskedinput-1.3.js" ></script>
+    <script type="text/javascript" src="/Scripts/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-migrate-3.3.0.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/kendo/2023.1.117/kendo.all.min.js" ></script>
+    <script type="text/javascript" src="/Scripts/kendo/2023.1.117/kendo.aspnetmvc.min.js" ></script>
+    <link href="/Content/kendo/kendo.common.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/kendo/kendo.Office365.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/Scripts/jquery.cookie.js" ></script>
+    <script type="text/javascript" src="/Scripts/jquery.hoverIntent.js" ></script>
+    <script type="text/javascript" src="/Scripts/MicrosoftAjax.debug.js"></script>
+    <script type="text/javascript" src="/Scripts/MicrosoftMvcAjax.debug.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.popupWindow.js"></script>
+    <script type="text/javascript" src="/Scripts/AcclaimSearchPages.js" ></script>
+    <script type="text/javascript" src="/Scripts/AcclaimCommon.js" ></script>
+
+    
+    <style type="text/css">
+        body
+        {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<head><link href="../App_Themes/Horry/Site.css" type="text/css" rel="stylesheet" /><title>
+	Name Search
+</title></head>
+
+<!-- .Compress(true)-->
+<body>
+    
+    <div class="page">
+        <div id="pageheader">
+            <div id="header">
+                
+
+<div class="navigationBar" style="display:none;">
+
+                <div style="border-right: thin solid #ccc;">Welcome <i>Guest</i></div>
+         
+        <div><a href="/AcclaimWeb/OnlineOrders/Cart" class="MasterNavigationButtonStyle">
+          <span id="NavCartInfoSpan"></span> 
+             
+                     <img src="/AcclaimWeb/Content/Images/shopping_cart_icon.png"  alt="Shopping Cart" style="border:none;" title="Shopping Cart" />
+                  
+              </a></div>
+ 
+</div>
+
+            <div id="home">
+                <a href="#" title="County Homepage" onclick="window.open('https://www.horrycounty.org/Departments/Register-of-Deeds')"> </a>
+            </div>
+            
+            <input type="hidden" id="resxHeaderLogo" value=""/>
+            <input type="hidden" id="resxLogoAlign"  value=""/>
+            <input type="hidden" id="resxLogoTitle"  value=""/>
+            <input type="hidden" id="resxHeaderBackroundColor"  value=""/>
+            </div>
+            <div id="submenucontainer" class="t-header">
+                
+
+<script>
+    var EcommerceEnabled = true;
+    var EnableFbnDownload = false;
+    var Agent = false;    
+</script>
+
+<div>
+    <ul class="k-widget k-reset k-header k-menu" id="Menu"><li class="k-item k-state-highlight"><a class="k-link k-menu-link" href="/AcclaimWeb/"><img alt="image" class="k-image" src="/AcclaimWeb/Content/Images/searchMenu.png" /><span class="k-menu-link-text">Official Records</span><span class="k-menu-expand-arrow"><span class="k-icon k-i-arrow-s k-menu-expand-arrow-icon"></span></span></a><ul class="k-group k-menu-group k-reset k-menu-group-md"><li class="k-item k-selected"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeName"><span class="k-menu-link-text">Name</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeBookPage"><span class="k-menu-link-text">Book/Page</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeDocLegal"><span class="k-menu-link-text">New Legal Description</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeComments"><span class="k-menu-link-text">Legal Description/Memo</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeDocType"><span class="k-menu-link-text">Document Type</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeConsideration"><span class="k-menu-link-text">Consideration</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/search/SearchTypeRecordDate"><span class="k-menu-link-text">Record Date</span></a></li></ul></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/Support"><img alt="image" class="k-image" src="/AcclaimWeb/Content/images/supportMenu.png" /><span class="k-menu-link-text">Support</span></a></li><li class="k-item"><a class="k-link k-menu-link" href="/AcclaimWeb/Search/Settings"><img alt="image" class="k-image" src="/AcclaimWeb/Content/images/imageTools24.png" /><span class="k-menu-link-text">Settings</span></a></li><li class="k-item" style="float: right; border-right: 0;"><a class="k-link k-menu-link" href="/AcclaimWeb/Login"><img alt="image" class="k-image" src="/AcclaimWeb/Content/Images/logout.png" /><span class="k-menu-link-text">Login</span></a></li></ul><script>
+	kendo.syncReady(function(){jQuery("#Menu").kendoMenu({});});
+</script>    
+</div>
+<noscript>
+    <div>
+        <h2 style="color: White;background-color:Red;"> You must enable Javascript to continue. Click 
+            <a href='Support' style="color: White;background-color:Red;text-decoration:underline">here</a> for help on how to enable Javascript. </h2>
+    </div>
+</noscript>
+<script> function addBlankTargetToLink(obj) {
+     obj.attributes("target", "_blank");
+}</script>
+<div id="cookiesDisabled" style="display:none">
+    <h2 style="color: White;background-color:Red;"> You must enable Cookies to continue. Click 
+        <a href='Support' style="color: White;background-color:Red;text-decoration:underline">here</a> for help on how to enable browser cookies. </h2>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+    <div id="mainBack">
+        <div id="main">
+            <div class="releaseHolder">
+                <span class="releaseInfo" style="color: lightgrey; font-weight: bold;font-size: 15px">Released through date:
+                    11/08/2026&nbsp;|&nbsp;Released through
+                    Instrument Number:
+                    2026000124291&nbsp;|&nbsp;As of
+                    11/12/2026 10:52:24 PM</span></div>
+            <div style="margin: auto;">
+                <div id="divMainForm">
+                    
+<script language="javascript" type="text/javascript">
+        var tabIndexDateRange = 3;
+        var tabIndexDateFrom = 4;
+        var tabIndexDateTo = 5;
+    </script>
+    
+    
+        <script language="javascript" type="text/javascript">
+            var tabIndexShowNames = 0;
+            var tabIndexName = 0;
+            var tabIndexDocType = 0;
+            var tabIndexSimpleQuestions = 0;
+            var tabIndexBookType = 0;
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#Both').attr('tabindex', tabIndexShowNames);
+                $('#SearchOnName').attr('tabindex', tabIndexName);
+                $('#DocTypesDisplay').attr('tabindex', tabIndexDocType);
+                $('#BookTypesDisplay').attr('tabindex', tabIndexBookType);
+            });
+        </script>
+
+
+    <div id="divSimpleTwoColumn" class="formSimple">
+        <div class="ItemTitle t-header">
+        <img src="../Content/Images/nameTitle.png" alt="Name Search" />Name
+    </div>
+        <form action="/AcclaimWeb/search/SearchTypeName?Length=6" id="schfrm" method="post" onclick="Sys.Mvc.AsyncForm.handleClick(this, new Sys.UI.DomEvent(event));" onsubmit="Sys.Mvc.AsyncForm.handleSubmit(this, new Sys.UI.DomEvent(event), { insertionMode: Sys.Mvc.InsertionMode.replace, updateTargetId: &#39;frmSchTarget&#39;, onBegin: Function.createDelegate(this, SearchFormValidate), onSuccess: Function.createDelegate(this, SchForm_OnSuccess) });">
+        <div class="formContainer">
+        <textarea HiddenField="true" ReadOnly="true" Style="display:none;height:50px" cols="20" id="IsParsedName" name="IsParsedName" rows="2">
+False</textarea>
+        <div class="formRow">
+        
+
+        <div class="formLabel col1">
+            Show Names</div>
+        <div class="formInput col2">
+            <input type="radio" id="Both" name="Both" value="Both" checked="checked" />
+            All
+            <input type="radio" id="Direct" name="Direct" value="Direct" />Grantor
+            <input type="radio" id="Reverse" name="Reverse" value="Reverse" />Grantee
+            <input type="text" style="display: none;" id="PartyType" value="Both" name="PartyType" />
+            <!--<span style="position:absolute; right:0px;">Auto-Complete<input type="checkbox" style="" name="AllowAutoCompleteCB" id="AllowAutoCompleteCB" /></span>-->
+        </div>
+        </div>
+        <div class="formRow">
+            
+            
+        </div>
+        <div class="formRow">
+            
+<div class="formLabel col1">
+ <label for="SearchOnName">Name</label>
+</div>
+<div class="formInput col2">
+    <input Class="txtbox required ClearOnExit" Style="margin-left:5px; width: 295px" Title="Search On Name" id="SearchOnName" name="SearchOnName" tabindex="1" type="text" value="" />
+    <em title="required">*</em>
+</div>
+
+
+<div class="formLabel col1">
+  <label> Date Range</label>  
+</div>
+
+<div class="formInput col2">
+<input Id="DateRangeDropDown" Style="width: 305px" id="DateRangeDropDown" name="DateRangeList" title="daterange" type="text" value=" " /><script>
+	kendo.syncReady(function(){jQuery("#DateRangeDropDown").kendoDropDownList({"change":dynamicDateChange,"dataBound":tabIndexNum,"dataSource":[{"Text":"Specify Date Range...","Value":" "},{"Text":"Today","Value":"Today"},{"Text":"Yesterday","Value":"Yesterday"},{"Text":"Last 7 Days","Value":"Last7Days"},{"Text":"Last 30 Days","Value":"Last30Days"},{"Text":"Last 90 Days","Value":"Last90Days"},{"Text":"Last 180 Days","Value":"Last180Days"},{"Text":"Last 1 Year","Value":"Last1Year"},{"Text":"Last 3 Years","Value":"Last3Years"}],"dataTextField":"Text","dataValueField":"Value"});});
+</script>
+    </div>
+
+<script type="text/javascript">
+    function tabIndexNum() {
+           $('#DateRangeDropDown').attr("tabindex", tabIndexDateRange);
+        };
+    function dynamicDateChange() {
+        var ddl = $('#DateRangeDropDown').data('kendoDropDownList');
+        var value = ddl.value();
+        var DefaultRecordDate = $('#RecordDateFrom').val();
+        if (value == "") {
+            $('#RecordDateFrom').val(DefaultRecordDate);
+        };
+        if (value == "Today") {
+            FillDate('RecordDateFrom', 0);
+            FillDate('RecordDateTo', 0);
+        };
+        if (value == "Yesterday") {
+            FillDate('RecordDateFrom', 1);
+            FillDate('RecordDateTo', 0);
+        };
+        if (value == "Last7Days") {
+            FillDate('RecordDateFrom', 7);
+            FillDate('RecordDateTo', 0);
+        };
+        if (value == "Last30Days") {
+            FillDate('RecordDateFrom', 30);
+            FillDate('RecordDateTo', 0);
+        };
+        if (value == "Last90Days") {
+            FillDate('RecordDateFrom', 90);
+            FillDate('RecordDateTo', 0);
+        };
+        if (value == "Last180Days") {
+            FillDate('RecordDateFrom', 180);
+            FillDate('RecordDateTo', 0);
+        };
+        if (value == "Last1Year") {
+            FillDate('RecordDateFrom', 365);
+            FillDate('RecordDateTo', 0);
+        };
+        if (value == "Last3Years") {
+            FillDate('RecordDateFrom', 1095);
+            FillDate('RecordDateTo', 0);
+        };
+    }
+</script>
+
+
+       
+        </div>
+        <div class="formRow">     
+			
+<div class="formLabel col1">
+<label for="DocTypesDisplay" title="Doctype"> Document Type </label>
+</div>
+<div class="formInput col2">
+    <textarea HiddenField="true" ReadOnly="true" Style="display:none;height:50px" cols="20" id="DocTypes" name="DocTypes" rows="2">
+all</textarea>
+    
+    <input id="DocTypesDisplay" name="DocTypesDisplay" style="width: 280px; float: left;" tabindex="0" title="Doc Types Display" type="text" /><script>
+	kendo.syncReady(function(){jQuery("#DocTypesDisplay").kendoComboBox({"change":DocTypesDisplayChange,"dataSource":[{"Text":"All","Value":""},{"Text":"AFFIDAVIT - LIEN BOOK (109)","Value":"85"},{"Text":"AFFIDAVIT (071)","Value":"167"},{"Text":"AFFIDAVIT (101)","Value":"83"},{"Text":"AGREEMENT (AMENDED FEE) (102)","Value":"119"},{"Text":"AGREEMENT DEED BOOK (108)","Value":"175"},{"Text":"AGREEMENT MORTGAGE BOOK (005)","Value":"200"},{"Text":"AMED OF PARTNERSHIP (021)","Value":"143"},{"Text":"AMENDMENT DEED BOOK (069)","Value":"166"},{"Text":"ARBITRATION (083)","Value":"20"},{"Text":"ARTICLES OF ASSOCIATION (023)","Value":"144"},{"Text":"ARTICLES OF INCORPORATION (024)","Value":"145"},{"Text":"ASSIGNMENT DEED (111)","Value":"177"},{"Text":"ASSIGNMENT MTG (008)","Value":"201"},{"Text":"ASSIGNMENT OF LEASE (028)","Value":"147"},{"Text":"ASSIGNMENT OF LEASE, RENTS AND PROFITS - DEED BOOK (037)","Value":"149"},{"Text":"ASSIGNMENT OF LEASE, RENTS AND PROFITS - MORTGAGE BOOK (039)","Value":"115"},{"Text":"ASSIGNMENT OF LEASE, RENTS AND PROFITS SATISFACTION - MORTGAGE BOOK (040)","Value":"116"},{"Text":"BANKRUPTCY (088)","Value":"174"},{"Text":"BILL OF SALE (072)","Value":"168"},{"Text":"BLANKET ASSIGNMENT - DEED BOOK (046)","Value":"153"},{"Text":"BLANKET ASSIGNMENT - MORTGAGE BOOK (074)","Value":"208"},{"Text":"BLANKET PARTIAL RELEASE - DEED BOOK (041)","Value":"151"},{"Text":"BLANKET PARTIAL RELEASE- MORTGAGE BOOK (033)","Value":"204"},{"Text":"CERTIFICATE OF DEATH (058)","Value":"159"},{"Text":"CHILD SUPPORT LIEN (031)","Value":"94"},{"Text":"CHILD SUPPORT LIEN SATISFACTION (097)","Value":"105"},{"Text":"CONDEMNATION (060)","Value":"160"},{"Text":"CONDO LIEN - AMENDMENT (105)","Value":"192"},{"Text":"CONDO LIEN - PARTIAL RELEASE (110)","Value":"184"},{"Text":"CONDO LIEN (064)","Value":"189"},{"Text":"CONDO LIEN SATISFACTION (036)","Value":"188"},{"Text":"CONDO PLAT (007)","Value":"212"},{"Text":"CONTRACT OF SALE (068)","Value":"165"},{"Text":"CONTRACTORS NOTICE OF PROJECT (034)","Value":"187"},{"Text":"COURT ORDER DEED (125)","Value":"133"},{"Text":"DEED (001)","Value":"138"},{"Text":"DEED (TIMESHARE) (1)","Value":"81"},{"Text":"DEED BOOK - NO CHARGE (501)","Value":"176"},{"Text":"DISSOLUTION OF PARTNERSHIP (073)","Value":"169"},{"Text":"EASEMENT (062)","Value":"161"},{"Text":"FEDERAL TAX PARTIAL RELEASE (122)","Value":"90"},{"Text":"FEDERAL TAX SATISFACTION (117)","Value":"87"},{"Text":"FEDERAL TAX WITHDRAWAL (120)","Value":"89"},{"Text":"FIREWORKS (030)","Value":"14"},{"Text":"HCG DEED (131)","Value":"74"},{"Text":"HCG EASEMENT (130)","Value":"75"},{"Text":"HCG PLAT - OTHER THAN LEGAL SIZE (132)","Value":"128"},{"Text":"HCG PROBATE FIDUCIARY LETTER (144)","Value":"231"},{"Text":"HCG PROBATE FIDUCIARY LETTER REVOCATION (145)","Value":"232"},{"Text":"HCG RESTRICTIONS (146)","Value":"233"},{"Text":"LEASE (003)","Value":"139"},{"Text":"LEASE AGREEMENT (010)","Value":"141"},{"Text":"LIEN SATISFACTION RESCISSION (124)","Value":"92"},{"Text":"LIS PENDENS DEED (135)","Value":"132"},{"Text":"LIS PENDENS DEED RELEASE (137)","Value":"180"},{"Text":"LIS PENDENS DEED SATISFACTION (136)","Value":"179"},{"Text":"LIS PENDENS MTG (138)","Value":"210"},{"Text":"LIS PENDENS MTG RELEASE (140)","Value":"198"},{"Text":"LIS PENDENS MTG SATISFACTION (139)","Value":"211"},{"Text":"MANUFACTURED HOME LIEN AFFIDAVIT (049)","Value":"205"},{"Text":"MANUFACTURED HOME SATISFACTION AFFIDAVIT (051)","Value":"206"},{"Text":"MANUFACTURED HOME SEVERANCE AFFIDAVIT (050)","Value":"155"},{"Text":"MANUFACTURED HOME TITLE RETIREMENT (048)","Value":"154"},{"Text":"MASTER DEED (022)","Value":"213"},{"Text":"MECHANICS \u0026 CONDO LIEN SATISFACTION (035)","Value":"95"},{"Text":"MECHANICS LIEN - PARTIAL RELEASE (103)","Value":"190"},{"Text":"MECHANICS LIEN - SEP. AFF. OF SERVICE (104)","Value":"191"},{"Text":"MECHANICS LIEN (015)","Value":"185"},{"Text":"MECHANICS LIEN AMENDMENT (098)","Value":"182"},{"Text":"MECHANICS LIEN SATISFACTION (042)","Value":"96"},{"Text":"MECHANICS LIEN SURETY BOND (094)","Value":"181"},{"Text":"MEMORANDUM OF TRUST (052)","Value":"156"},{"Text":"MENTAL HEALTH AMENDMENT (099)","Value":"183"},{"Text":"MENTAL HEALTH LIEN (029)","Value":"186"},{"Text":"MENTAL HEALTH LIEN SATISFACTION (095)","Value":"193"},{"Text":"MERGER (032)","Value":"148"},{"Text":"METER CONSERVATION NOTICE (128)","Value":"134"},{"Text":"MISC - DEEDS NO PAGES (090)","Value":"80"},{"Text":"MISC - DEEDS WITH PAGES (086)","Value":"172"},{"Text":"MISC - LIEN (115)","Value":"107"},{"Text":"MISC - LIEN SATISFACTION (116)","Value":"108"},{"Text":"MISC - MORTGAGE NO PAGES (091)","Value":"118"},{"Text":"MISC - MORTGAGE WITH PAGES (089)","Value":"209"},{"Text":"MISC MORTGAGE BOOK (118)","Value":"195"},{"Text":"MORTGAGE (002)","Value":"199"},{"Text":"MORTGAGE BOND (025)","Value":"114"},{"Text":"MORTGAGE BOOK - NO CHARGE (502)","Value":"124"},{"Text":"MORTGAGE MODIFICATION (053)","Value":"207"},{"Text":"MORTGAGE SATISFACTION (011)","Value":"203"},{"Text":"MORTGAGE SATISFACTION RESCISSION (121)","Value":"196"},{"Text":"NON-INDEXED (NONINDEXED)","Value":"72"},{"Text":"NOTICE OF BANKRUPTCY  DISCHARGE (087)","Value":"173"},{"Text":"NOTICE OF FORECLOSURE (143)","Value":"137"},{"Text":"NOTICE OF PLEDGE OF REAL ESTATE (129)","Value":"197"},{"Text":"NOTICE OF TERMINATION (085)","Value":"171"},{"Text":"OPTION (004)","Value":"140"},{"Text":"ORDINANCE (057)","Value":"158"},{"Text":"PARTNERSHIP AGREEMENT (020)","Value":"142"},{"Text":"PLAT - LEGAL SIZE (006)","Value":"129"},{"Text":"PLAT - OTHER THAN LEGAL SIZE (061)","Value":"130"},{"Text":"PLAT BOOK - NO CHARGE (096)","Value":"126"},{"Text":"POWER OF ATTORNEY (063)","Value":"162"},{"Text":"POWER OF ATTORNEY REVOCATION (043)","Value":"152"},{"Text":"PROBATE FIDUCIARY LETTER (CHARGE) (133)","Value":"135"},{"Text":"PROBATE FIDUCIARY LETTER REVOCATION (CHARGE) (134)","Value":"136"},{"Text":"RELEASE - DEED BOOK (113)","Value":"178"},{"Text":"RELEASE - MORTGAGE BOOK (009)","Value":"202"},{"Text":"RESTRICTIONS (082)","Value":"170"},{"Text":"REVOCATION OF RELEASE (126)","Value":"93"},{"Text":"SATISFACTION - DEED BOOK (038)","Value":"150"},{"Text":"SATISFACTION OF METER CONSERVATION (141)","Value":"76"},{"Text":"STATE TAX PARTIAL RELEASE (119)","Value":"88"},{"Text":"STATE TAX WITHDRAWAL (123)","Value":"91"},{"Text":"SUBLEASE (027)","Value":"146"},{"Text":"SUBORDINATION AGREEMENT - DEED BOOK (055)","Value":"157"},{"Text":"SUBORDINATION AGREEMENT - MORTGAGE BOOK (054)","Value":"117"},{"Text":"SUBORDINATION AGREEMENT - PLAT BOOK (127)","Value":"127"},{"Text":"TAX LIEN AMENDMENT (106)","Value":"102"},{"Text":"TAX LIENS - FEDERAL (093)","Value":"101"},{"Text":"TAX LIENS - FEDERAL CHARGE (112)","Value":"86"},{"Text":"TAX LIENS - STATE (084)","Value":"99"},{"Text":"TAX SATISFACTION (092)","Value":"100"},{"Text":"TRANSFER OF MORTGAGE (012)","Value":"113"},{"Text":"TRUST AGREEMENT (065)","Value":"163"},{"Text":"TRUST AGREEMENT REVOCATION (142)","Value":"77"},{"Text":"UCC ASSIGNMENT (018)","Value":"12"},{"Text":"UCC CONTINUATION (079)","Value":"19"},{"Text":"UCC RELEASE (019)","Value":"13"},{"Text":"UCC TERMINATION (078)","Value":"18"},{"Text":"UCC1 (206)","Value":"120"},{"Text":"UCC1: (2PAGES+, 1-2 DEBTORS) (207)","Value":"121"},{"Text":"UCC1: 1-2 PAGES, 1-2 DEBTORS (200)","Value":"22"},{"Text":"UCC1: 2+ PAGES, 1-2 DEBTORS (201)","Value":"23"},{"Text":"UCC3 (208)","Value":"122"},{"Text":"UCC3: (2PAGES+, 1-2 DEBTORS) (209)","Value":"123"},{"Text":"UCC3: 1-2 PAGES, 1-2 DEBTORS (203)","Value":"103"},{"Text":"UCC3: 2+ PAGES, 1-2 DEBTORS (204)","Value":"104"},{"Text":"UCC3: ASSIGNMENT (213)","Value":"111"},{"Text":"UCC3: ASSIGNMENT (2PAGES+, 1-2 DEBTORS) (214)","Value":"112"},{"Text":"UCC3: TERMINATION LIEN BK (210)","Value":"106"},{"Text":"UCC3: TERMINATION MTG BK (211)","Value":"125"},{"Text":"UCC3: TERMINATION MTG BK 2+ PAGES (212)","Value":"110"},{"Text":"WAIVER (067)","Value":"164"}],"dataTextField":"Text","filter":"startswith","clearButton":false,"dataValueField":"Value","highlightFirst":true,"size":"large"});});
+</script>
+    &nbsp;
+   
+     <button type="button" class="t-button" aria-label="DocType Button" onclick="ShowDocTypes();" style=" padding: 3px; line-height: 1.1; margin-left:4px">...</button>
+       
+    
+</div>
+
+
+
+<style type="text/css">
+    .t-picker-wrap .t-input, .t-combobox .t-input {
+        vertical-align: top;
+        width: 96%;       
+    }    
+</style>
+<script type="text/jscript" >
+    $(function () {
+        $("#DocTypesDisplay_input").focus().select();
+    });
+
+</script>
+
+<script>
+    $(function () {
+        var multiselect = $("#DocTypesDisplay").data("kendoComboBox");
+        var firstItem = multiselect.dataSource.data()[0];
+        if (firstItem) {
+            multiselect.value(firstItem.Value);
+        }
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        tabIndexFromDate();
+    });
+
+    function tabIndexFromDate() {
+        $('#RecordDateFrom').attr("tabindex", tabIndexDateFrom);
+    };
+</script>
+        <div class="formLabel col1">
+         <label for="RecordDateFrom" title="RecordDateFrom"> From Record Date </label>
+        </div>
+        <div class="formInput col2">
+            <input accesskey="w" class="wide-datepicker" id="RecordDateFrom" name="RecordDateFrom" title="datepicker" type="text" value="1/1/1984" /><script>
+	kendo.syncReady(function(){jQuery("#RecordDateFrom").kendoDatePicker({"format":"M/d/yyyy","min":new Date(1774,11,31,0,0,0,0),"max":new Date(2026,10,12,0,0,0,0)});});
+</script>
+            <input type="hidden" id="DefaultFromDate" value="01/01/1984"/>
+        </div>
+        </div>
+		<div class="formRow">     
+			
+ <div class="formLabel col1 bookTypeLabel">
+<label for="BookTypesDisplay">Book Type</label></div>
+<div class="formInput col2 bookTypeRow">
+<input Class="searchFieldTextBoxStyle" HiddenField="true" ReadOnly="true" id="BookTypesDisplay" name="BookTypesDisplay" type="text" value="All" />
+<textarea HiddenField="true" ReadOnly="true" Style="display:none;height:50px" cols="20" id="BookTypes" name="BookTypes" rows="2">
+All</textarea>
+<button type="button" class="t-button" aria-label="BookType Button" onclick="ShowTypes(event, 'BookTypeDiv');" style="line-height: 1.1; margin-left:2px">...</button>
+</div>
+<div id="BookTypeDiv" style="display: none">
+<h3> Book Type List</h3>
+    <div role="group" aria-label="BookTypeList" class="BookTypeListDiv">
+        <input aria-label="BookTypeCheckBox" name="BookTypeInfoCheckBox" title=" D - Deed" type="checkbox" value="1"> D - Deed</input><br /><input aria-label="BookTypeCheckBox" name="BookTypeInfoCheckBox" title=" LN - Lien" type="checkbox" value="3"> LN - Lien</input><br /><input aria-label="BookTypeCheckBox" name="BookTypeInfoCheckBox" title=" MTG - Mortgage" type="checkbox" value="5"> MTG - Mortgage</input><br /><input aria-label="BookTypeCheckBox" name="BookTypeInfoCheckBox" title=" P - Plat" type="checkbox" value="6"> P - Plat</input><br />
+    </div>
+    <div role="group" aria-label="SelectAllBookTypes" style="text-align:right;">
+        <div style="float:left; width: 80px;"><input type="checkbox" id="Checkbox1" aria-label="SelectAllBookTypesCheckbox" name="SelectAllBookTypesToggle" onclick="javascript:ToggleChk(this, 'BookTypeInfoCheckBox');" /> All / None</div>
+        <input type="button" value="Done" class="t-button" onclick="javascript:GetBookTypeString();"/>
+    </div>            
+</div>
+<div class="formLabel col1">
+     <label for="RecordDateTo" title="RecordDateTo"> To Record Date</label></div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        tabIndexToDate();
+    });
+
+    function tabIndexToDate() {
+        $('#RecordDateTo').attr("tabindex", tabIndexDateTo);
+    };
+</script>
+<div class="formInput col2">
+    <input accesskey="w" class="wide-datepicker" id="RecordDateTo" name="RecordDateTo" title="datepicker" type="text" value="11/12/2026" /><script>
+	kendo.syncReady(function(){jQuery("#RecordDateTo").kendoDatePicker({"format":"M/d/yyyy","min":new Date(1774,11,31,0,0,0,0),"max":new Date(2026,10,12,0,0,0,0)});});
+</script>
+</div>
+
+       
+        </div>
+        <div class="formRow" style="display:none; border-bottom: none;">
+               
+        </div>
+            <div class="formRow" style="display:none; border-botton: none;">
+                
+            </div>
+            
+        
+        </div>
+         
+
+        <div class="boxFooterLine">
+           
+           
+            <div id="formErrors">
+            </div>
+            <input type="button" value="Reset" onclick="formReset2();" class="t-button" />
+            <input type="submit" id="btnSearch" value="Search" class="t-button" />
+        </div>
+
+       
+        </div>
+    </form>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    jQuery("#schfrm").validate(
+                    {
+                        rules: {
+                            SearchOnName: {
+                                required: true,
+                                minnamelength: 2
+                            }
+                        },
+                        messages: {
+                            SearchOnName: {
+                                required: "* valid name required",
+                                minnamelength: jQuery.format("* {0} letters required")
+                            }
+                        },
+                        errorPlacement: function (error, element) {
+                            error.appendTo($("#formErrors"));
+                        }
+                    });
+                    $("#SearchOnName").focus();
+                })
+            </script>
+    <div id="DocTypesWin" style="display:none">
+                <div id="DocTypelist">
+                    <div class="k-widget k-tabstrip" id="DocumentTypesList"><ul class="k-reset k-tabstrip-items"><li class="k-item k-active"><span class="k-link" unselectable="on">Doc Type Category</span></li><li class="k-item"><span class="k-link" unselectable="on">Doc Type List</span></li></ul><div class="k-content k-active" id="DocumentTypesList-1" style="display:block">                        
+                                                <div style="height: 340px;">
+                                                <h3>Document Categories</h3>
+                                                <div class="formContainer" style="overflow: auto; margin-right: 10px;"><div class="formLabel col1">
+                                                Category</div>
+                                            <div role="group" aria-label="DocTypeGroup" class="formInput col2">
+                                                <select Class="SearchFieldDropDownStyle" Title="DocType Group" aria-label="SearchFieldDropDown" id="DocTypeGroupDropDown" name="DocTypeGroupDropDown" style="width: 255px;"><option value="HCG DEED (131),HCG EASEMENT (130),SATISFACTION OF METER CONSERVATION (141),TRUST AGREEMENT REVOCATION (142),DEED (TIMESHARE) (1),LIS PENDENS DEED (135),COURT ORDER DEED (125),METER CONSERVATION NOTICE (128),PROBATE FIDUCIARY LETTER (CHARGE) (133),PROBATE FIDUCIARY LETTER REVOCATION (CHARGE) (134),NOTICE OF FORECLOSURE (143),DEED (001),LEASE (003),OPTION (004),LEASE AGREEMENT (010),PARTNERSHIP AGREEMENT (020),AMED OF PARTNERSHIP (021),ARTICLES OF ASSOCIATION (023),ARTICLES OF INCORPORATION (024),SUBLEASE (027),ASSIGNMENT OF LEASE (028),MERGER (032),ASSIGNMENT OF LEASE, RENTS AND PROFITS - DEED BOOK (037),SATISFACTION - DEED BOOK (038),BLANKET PARTIAL RELEASE - DEED BOOK (041),POWER OF ATTORNEY REVOCATION (043),BLANKET ASSIGNMENT - DEED BOOK (046),MANUFACTURED HOME TITLE RETIREMENT (048),MANUFACTURED HOME SEVERANCE AFFIDAVIT (050),MEMORANDUM OF TRUST (052),SUBORDINATION AGREEMENT - DEED BOOK (055),ORDINANCE (057),CERTIFICATE OF DEATH (058),CONDEMNATION (060),EASEMENT (062),POWER OF ATTORNEY (063),TRUST AGREEMENT (065),WAIVER (067),CONTRACT OF SALE (068),AMENDMENT DEED BOOK (069),AFFIDAVIT (071),BILL OF SALE (072),DISSOLUTION OF PARTNERSHIP (073),RESTRICTIONS (082),NOTICE OF TERMINATION (085),MISC - DEEDS WITH PAGES (086),NOTICE OF BANKRUPTCY  DISCHARGE (087),BANKRUPTCY (088),AGREEMENT DEED BOOK (108),DEED BOOK - NO CHARGE (501),ASSIGNMENT DEED (111),RELEASE - DEED BOOK (113),LIS PENDENS DEED SATISFACTION (136),LIS PENDENS DEED RELEASE (137),MASTER DEED (022),HCG PROBATE FIDUCIARY LETTER (144),HCG PROBATE FIDUCIARY LETTER REVOCATION (145),HCG RESTRICTIONS (146)|74,75,76,77,81,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,213,231,232,233">DEEDS</option>
+<option value="AFFIDAVIT - LIEN BOOK (109),TAX LIENS - FEDERAL CHARGE (112),FEDERAL TAX SATISFACTION (117),STATE TAX PARTIAL RELEASE (119),FEDERAL TAX WITHDRAWAL (120),FEDERAL TAX PARTIAL RELEASE (122),STATE TAX WITHDRAWAL (123),LIEN SATISFACTION RESCISSION (124),REVOCATION OF RELEASE (126),CHILD SUPPORT LIEN (031),MECHANICS &amp;amp; CONDO LIEN SATISFACTION (035),MECHANICS LIEN SATISFACTION (042),TAX LIENS - STATE (084),TAX SATISFACTION (092),TAX LIENS - FEDERAL (093),TAX LIEN AMENDMENT (106),UCC3: 1-2 PAGES, 1-2 DEBTORS (203),UCC3: 2+ PAGES, 1-2 DEBTORS (204),CHILD SUPPORT LIEN SATISFACTION (097),UCC3: TERMINATION LIEN BK (210),MISC - LIEN (115),MISC - LIEN SATISFACTION (116),MECHANICS LIEN SURETY BOND (094),MECHANICS LIEN AMENDMENT (098),MENTAL HEALTH AMENDMENT (099),CONDO LIEN - PARTIAL RELEASE (110),MECHANICS LIEN (015),MENTAL HEALTH LIEN (029),CONTRACTORS NOTICE OF PROJECT (034),CONDO LIEN SATISFACTION (036),CONDO LIEN (064),MECHANICS LIEN - PARTIAL RELEASE (103),MECHANICS LIEN - SEP. AFF. OF SERVICE (104),CONDO LIEN - AMENDMENT (105),MENTAL HEALTH LIEN SATISFACTION (095)|85,86,87,88,89,90,91,92,93,94,95,96,99,100,101,102,103,104,105,106,107,108,181,182,183,184,185,186,187,188,189,190,191,192,193">LIENS</option>
+<option value="UCC3: TERMINATION MTG BK 2+ PAGES (212),UCC3: ASSIGNMENT (213),UCC3: ASSIGNMENT (2PAGES+, 1-2 DEBTORS) (214),TRANSFER OF MORTGAGE (012),MORTGAGE BOND (025),SUBORDINATION AGREEMENT - MORTGAGE BOOK (054),MISC - MORTGAGE NO PAGES (091),AGREEMENT (AMENDED FEE) (102),UCC1 (206),UCC1: (2PAGES+, 1-2 DEBTORS) (207),UCC3 (208),UCC3: (2PAGES+, 1-2 DEBTORS) (209),MORTGAGE BOOK - NO CHARGE (502),UCC3: TERMINATION MTG BK (211),MISC MORTGAGE BOOK (118),MORTGAGE SATISFACTION RESCISSION (121),NOTICE OF PLEDGE OF REAL ESTATE (129),LIS PENDENS MTG RELEASE (140),MORTGAGE (002),AGREEMENT MORTGAGE BOOK (005),ASSIGNMENT MTG (008),RELEASE - MORTGAGE BOOK (009),MORTGAGE SATISFACTION (011),BLANKET PARTIAL RELEASE- MORTGAGE BOOK (033),MANUFACTURED HOME LIEN AFFIDAVIT (049),MANUFACTURED HOME SATISFACTION AFFIDAVIT (051),MORTGAGE MODIFICATION (053),BLANKET ASSIGNMENT - MORTGAGE BOOK (074),MISC - MORTGAGE WITH PAGES (089),LIS PENDENS MTG (138),LIS PENDENS MTG SATISFACTION (139)|110,111,112,113,114,117,118,119,120,121,122,123,124,125,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211">MTG</option>
+<option value="PLAT BOOK - NO CHARGE (096),SUBORDINATION AGREEMENT - PLAT BOOK (127),HCG PLAT - OTHER THAN LEGAL SIZE (132),PLAT - LEGAL SIZE (006),PLAT - OTHER THAN LEGAL SIZE (061),CONDO PLAT (007)|126,127,128,129,130,212">PLATS</option>
+<option selected="selected" value="All|all">All</option>
+<option value=""></option>
+</select>
+                                            </div>                                            
+                                            </div>
+                                            <input type="button" value="Done" class="t-button" onclick="GetDocTypeStringFromGroup();" style="margin-top:68%"/>
+                                            </div>
+                                           </div><div class="k-content" id="DocumentTypesList-2">
+	                                            <h3>Document Type List</h3>
+	                                            <div role="group" aria-label="DocTypeInfo" style="height:290px; overflow:auto;">
+		                                            <input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="AFFIDAVIT - LIEN BOOK (109)" type="checkbox" value="85">AFFIDAVIT - LIEN BOOK (109)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="AFFIDAVIT (071)" type="checkbox" value="167">AFFIDAVIT (071)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="AFFIDAVIT (101)" type="checkbox" value="83">AFFIDAVIT (101)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="AGREEMENT (AMENDED FEE) (102)" type="checkbox" value="119">AGREEMENT (AMENDED FEE) (102)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="AGREEMENT DEED BOOK (108)" type="checkbox" value="175">AGREEMENT DEED BOOK (108)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="AGREEMENT MORTGAGE BOOK (005)" type="checkbox" value="200">AGREEMENT MORTGAGE BOOK (005)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="AMED OF PARTNERSHIP (021)" type="checkbox" value="143">AMED OF PARTNERSHIP (021)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="AMENDMENT DEED BOOK (069)" type="checkbox" value="166">AMENDMENT DEED BOOK (069)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="ARBITRATION (083)" type="checkbox" value="20">ARBITRATION (083)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="ARTICLES OF ASSOCIATION (023)" type="checkbox" value="144">ARTICLES OF ASSOCIATION (023)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="ARTICLES OF INCORPORATION (024)" type="checkbox" value="145">ARTICLES OF INCORPORATION (024)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="ASSIGNMENT DEED (111)" type="checkbox" value="177">ASSIGNMENT DEED (111)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="ASSIGNMENT MTG (008)" type="checkbox" value="201">ASSIGNMENT MTG (008)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="ASSIGNMENT OF LEASE (028)" type="checkbox" value="147">ASSIGNMENT OF LEASE (028)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="ASSIGNMENT OF LEASE, RENTS AND PROFITS - DEED BOOK (037)" type="checkbox" value="149">ASSIGNMENT OF LEASE, RENTS AND PROFITS - DEED BOOK (037)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="ASSIGNMENT OF LEASE, RENTS AND PROFITS - MORTGAGE BOOK (039)" type="checkbox" value="115">ASSIGNMENT OF LEASE, RENTS AND PROFITS - MORTGAGE BOOK (039)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="ASSIGNMENT OF LEASE, RENTS AND PROFITS SATISFACTION - MORTGAGE BOOK (040)" type="checkbox" value="116">ASSIGNMENT OF LEASE, RENTS AND PROFITS SATISFACTION - MORTGAGE BOOK (040)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="BANKRUPTCY (088)" type="checkbox" value="174">BANKRUPTCY (088)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="BILL OF SALE (072)" type="checkbox" value="168">BILL OF SALE (072)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="BLANKET ASSIGNMENT - DEED BOOK (046)" type="checkbox" value="153">BLANKET ASSIGNMENT - DEED BOOK (046)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="BLANKET ASSIGNMENT - MORTGAGE BOOK (074)" type="checkbox" value="208">BLANKET ASSIGNMENT - MORTGAGE BOOK (074)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="BLANKET PARTIAL RELEASE - DEED BOOK (041)" type="checkbox" value="151">BLANKET PARTIAL RELEASE - DEED BOOK (041)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="BLANKET PARTIAL RELEASE- MORTGAGE BOOK (033)" type="checkbox" value="204">BLANKET PARTIAL RELEASE- MORTGAGE BOOK (033)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="CERTIFICATE OF DEATH (058)" type="checkbox" value="159">CERTIFICATE OF DEATH (058)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="CHILD SUPPORT LIEN (031)" type="checkbox" value="94">CHILD SUPPORT LIEN (031)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="CHILD SUPPORT LIEN SATISFACTION (097)" type="checkbox" value="105">CHILD SUPPORT LIEN SATISFACTION (097)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="CONDEMNATION (060)" type="checkbox" value="160">CONDEMNATION (060)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="CONDO LIEN - AMENDMENT (105)" type="checkbox" value="192">CONDO LIEN - AMENDMENT (105)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="CONDO LIEN - PARTIAL RELEASE (110)" type="checkbox" value="184">CONDO LIEN - PARTIAL RELEASE (110)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="CONDO LIEN (064)" type="checkbox" value="189">CONDO LIEN (064)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="CONDO LIEN SATISFACTION (036)" type="checkbox" value="188">CONDO LIEN SATISFACTION (036)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="CONDO PLAT (007)" type="checkbox" value="212">CONDO PLAT (007)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="CONTRACT OF SALE (068)" type="checkbox" value="165">CONTRACT OF SALE (068)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="CONTRACTORS NOTICE OF PROJECT (034)" type="checkbox" value="187">CONTRACTORS NOTICE OF PROJECT (034)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="COURT ORDER DEED (125)" type="checkbox" value="133">COURT ORDER DEED (125)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="DEED (001)" type="checkbox" value="138">DEED (001)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="DEED (TIMESHARE) (1)" type="checkbox" value="81">DEED (TIMESHARE) (1)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="DEED BOOK - NO CHARGE (501)" type="checkbox" value="176">DEED BOOK - NO CHARGE (501)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="DISSOLUTION OF PARTNERSHIP (073)" type="checkbox" value="169">DISSOLUTION OF PARTNERSHIP (073)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="EASEMENT (062)" type="checkbox" value="161">EASEMENT (062)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="FEDERAL TAX PARTIAL RELEASE (122)" type="checkbox" value="90">FEDERAL TAX PARTIAL RELEASE (122)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="FEDERAL TAX SATISFACTION (117)" type="checkbox" value="87">FEDERAL TAX SATISFACTION (117)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="FEDERAL TAX WITHDRAWAL (120)" type="checkbox" value="89">FEDERAL TAX WITHDRAWAL (120)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="FIREWORKS (030)" type="checkbox" value="14">FIREWORKS (030)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="HCG DEED (131)" type="checkbox" value="74">HCG DEED (131)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="HCG EASEMENT (130)" type="checkbox" value="75">HCG EASEMENT (130)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="HCG PLAT - OTHER THAN LEGAL SIZE (132)" type="checkbox" value="128">HCG PLAT - OTHER THAN LEGAL SIZE (132)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="HCG PROBATE FIDUCIARY LETTER (144)" type="checkbox" value="231">HCG PROBATE FIDUCIARY LETTER (144)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="HCG PROBATE FIDUCIARY LETTER REVOCATION (145)" type="checkbox" value="232">HCG PROBATE FIDUCIARY LETTER REVOCATION (145)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="HCG RESTRICTIONS (146)" type="checkbox" value="233">HCG RESTRICTIONS (146)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="LEASE (003)" type="checkbox" value="139">LEASE (003)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="LEASE AGREEMENT (010)" type="checkbox" value="141">LEASE AGREEMENT (010)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="LIEN SATISFACTION RESCISSION (124)" type="checkbox" value="92">LIEN SATISFACTION RESCISSION (124)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="LIS PENDENS DEED (135)" type="checkbox" value="132">LIS PENDENS DEED (135)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="LIS PENDENS DEED RELEASE (137)" type="checkbox" value="180">LIS PENDENS DEED RELEASE (137)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="LIS PENDENS DEED SATISFACTION (136)" type="checkbox" value="179">LIS PENDENS DEED SATISFACTION (136)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="LIS PENDENS MTG (138)" type="checkbox" value="210">LIS PENDENS MTG (138)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="LIS PENDENS MTG RELEASE (140)" type="checkbox" value="198">LIS PENDENS MTG RELEASE (140)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="LIS PENDENS MTG SATISFACTION (139)" type="checkbox" value="211">LIS PENDENS MTG SATISFACTION (139)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MANUFACTURED HOME LIEN AFFIDAVIT (049)" type="checkbox" value="205">MANUFACTURED HOME LIEN AFFIDAVIT (049)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MANUFACTURED HOME SATISFACTION AFFIDAVIT (051)" type="checkbox" value="206">MANUFACTURED HOME SATISFACTION AFFIDAVIT (051)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MANUFACTURED HOME SEVERANCE AFFIDAVIT (050)" type="checkbox" value="155">MANUFACTURED HOME SEVERANCE AFFIDAVIT (050)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MANUFACTURED HOME TITLE RETIREMENT (048)" type="checkbox" value="154">MANUFACTURED HOME TITLE RETIREMENT (048)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MASTER DEED (022)" type="checkbox" value="213">MASTER DEED (022)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MECHANICS &amp; CONDO LIEN SATISFACTION (035)" type="checkbox" value="95">MECHANICS & CONDO LIEN SATISFACTION (035)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MECHANICS LIEN - PARTIAL RELEASE (103)" type="checkbox" value="190">MECHANICS LIEN - PARTIAL RELEASE (103)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MECHANICS LIEN - SEP. AFF. OF SERVICE (104)" type="checkbox" value="191">MECHANICS LIEN - SEP. AFF. OF SERVICE (104)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MECHANICS LIEN (015)" type="checkbox" value="185">MECHANICS LIEN (015)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MECHANICS LIEN AMENDMENT (098)" type="checkbox" value="182">MECHANICS LIEN AMENDMENT (098)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MECHANICS LIEN SATISFACTION (042)" type="checkbox" value="96">MECHANICS LIEN SATISFACTION (042)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MECHANICS LIEN SURETY BOND (094)" type="checkbox" value="181">MECHANICS LIEN SURETY BOND (094)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MEMORANDUM OF TRUST (052)" type="checkbox" value="156">MEMORANDUM OF TRUST (052)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MENTAL HEALTH AMENDMENT (099)" type="checkbox" value="183">MENTAL HEALTH AMENDMENT (099)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MENTAL HEALTH LIEN (029)" type="checkbox" value="186">MENTAL HEALTH LIEN (029)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MENTAL HEALTH LIEN SATISFACTION (095)" type="checkbox" value="193">MENTAL HEALTH LIEN SATISFACTION (095)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MERGER (032)" type="checkbox" value="148">MERGER (032)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="METER CONSERVATION NOTICE (128)" type="checkbox" value="134">METER CONSERVATION NOTICE (128)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MISC - DEEDS NO PAGES (090)" type="checkbox" value="80">MISC - DEEDS NO PAGES (090)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MISC - DEEDS WITH PAGES (086)" type="checkbox" value="172">MISC - DEEDS WITH PAGES (086)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MISC - LIEN (115)" type="checkbox" value="107">MISC - LIEN (115)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MISC - LIEN SATISFACTION (116)" type="checkbox" value="108">MISC - LIEN SATISFACTION (116)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MISC - MORTGAGE NO PAGES (091)" type="checkbox" value="118">MISC - MORTGAGE NO PAGES (091)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MISC - MORTGAGE WITH PAGES (089)" type="checkbox" value="209">MISC - MORTGAGE WITH PAGES (089)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MISC MORTGAGE BOOK (118)" type="checkbox" value="195">MISC MORTGAGE BOOK (118)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MORTGAGE (002)" type="checkbox" value="199">MORTGAGE (002)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MORTGAGE BOND (025)" type="checkbox" value="114">MORTGAGE BOND (025)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MORTGAGE BOOK - NO CHARGE (502)" type="checkbox" value="124">MORTGAGE BOOK - NO CHARGE (502)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MORTGAGE MODIFICATION (053)" type="checkbox" value="207">MORTGAGE MODIFICATION (053)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MORTGAGE SATISFACTION (011)" type="checkbox" value="203">MORTGAGE SATISFACTION (011)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="MORTGAGE SATISFACTION RESCISSION (121)" type="checkbox" value="196">MORTGAGE SATISFACTION RESCISSION (121)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="NON-INDEXED (NONINDEXED)" type="checkbox" value="72">NON-INDEXED (NONINDEXED)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="NOTICE OF BANKRUPTCY  DISCHARGE (087)" type="checkbox" value="173">NOTICE OF BANKRUPTCY  DISCHARGE (087)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="NOTICE OF FORECLOSURE (143)" type="checkbox" value="137">NOTICE OF FORECLOSURE (143)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="NOTICE OF PLEDGE OF REAL ESTATE (129)" type="checkbox" value="197">NOTICE OF PLEDGE OF REAL ESTATE (129)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="NOTICE OF TERMINATION (085)" type="checkbox" value="171">NOTICE OF TERMINATION (085)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="OPTION (004)" type="checkbox" value="140">OPTION (004)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="ORDINANCE (057)" type="checkbox" value="158">ORDINANCE (057)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="PARTNERSHIP AGREEMENT (020)" type="checkbox" value="142">PARTNERSHIP AGREEMENT (020)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="PLAT - LEGAL SIZE (006)" type="checkbox" value="129">PLAT - LEGAL SIZE (006)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="PLAT - OTHER THAN LEGAL SIZE (061)" type="checkbox" value="130">PLAT - OTHER THAN LEGAL SIZE (061)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="PLAT BOOK - NO CHARGE (096)" type="checkbox" value="126">PLAT BOOK - NO CHARGE (096)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="POWER OF ATTORNEY (063)" type="checkbox" value="162">POWER OF ATTORNEY (063)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="POWER OF ATTORNEY REVOCATION (043)" type="checkbox" value="152">POWER OF ATTORNEY REVOCATION (043)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="PROBATE FIDUCIARY LETTER (CHARGE) (133)" type="checkbox" value="135">PROBATE FIDUCIARY LETTER (CHARGE) (133)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="PROBATE FIDUCIARY LETTER REVOCATION (CHARGE) (134)" type="checkbox" value="136">PROBATE FIDUCIARY LETTER REVOCATION (CHARGE) (134)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="RELEASE - DEED BOOK (113)" type="checkbox" value="178">RELEASE - DEED BOOK (113)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="RELEASE - MORTGAGE BOOK (009)" type="checkbox" value="202">RELEASE - MORTGAGE BOOK (009)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="RESTRICTIONS (082)" type="checkbox" value="170">RESTRICTIONS (082)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="REVOCATION OF RELEASE (126)" type="checkbox" value="93">REVOCATION OF RELEASE (126)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="SATISFACTION - DEED BOOK (038)" type="checkbox" value="150">SATISFACTION - DEED BOOK (038)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="SATISFACTION OF METER CONSERVATION (141)" type="checkbox" value="76">SATISFACTION OF METER CONSERVATION (141)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="STATE TAX PARTIAL RELEASE (119)" type="checkbox" value="88">STATE TAX PARTIAL RELEASE (119)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="STATE TAX WITHDRAWAL (123)" type="checkbox" value="91">STATE TAX WITHDRAWAL (123)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="SUBLEASE (027)" type="checkbox" value="146">SUBLEASE (027)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="SUBORDINATION AGREEMENT - DEED BOOK (055)" type="checkbox" value="157">SUBORDINATION AGREEMENT - DEED BOOK (055)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="SUBORDINATION AGREEMENT - MORTGAGE BOOK (054)" type="checkbox" value="117">SUBORDINATION AGREEMENT - MORTGAGE BOOK (054)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="SUBORDINATION AGREEMENT - PLAT BOOK (127)" type="checkbox" value="127">SUBORDINATION AGREEMENT - PLAT BOOK (127)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="TAX LIEN AMENDMENT (106)" type="checkbox" value="102">TAX LIEN AMENDMENT (106)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="TAX LIENS - FEDERAL (093)" type="checkbox" value="101">TAX LIENS - FEDERAL (093)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="TAX LIENS - FEDERAL CHARGE (112)" type="checkbox" value="86">TAX LIENS - FEDERAL CHARGE (112)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="TAX LIENS - STATE (084)" type="checkbox" value="99">TAX LIENS - STATE (084)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="TAX SATISFACTION (092)" type="checkbox" value="100">TAX SATISFACTION (092)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="TRANSFER OF MORTGAGE (012)" type="checkbox" value="113">TRANSFER OF MORTGAGE (012)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="TRUST AGREEMENT (065)" type="checkbox" value="163">TRUST AGREEMENT (065)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="TRUST AGREEMENT REVOCATION (142)" type="checkbox" value="77">TRUST AGREEMENT REVOCATION (142)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC ASSIGNMENT (018)" type="checkbox" value="12">UCC ASSIGNMENT (018)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC CONTINUATION (079)" type="checkbox" value="19">UCC CONTINUATION (079)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC RELEASE (019)" type="checkbox" value="13">UCC RELEASE (019)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC TERMINATION (078)" type="checkbox" value="18">UCC TERMINATION (078)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC1 (206)" type="checkbox" value="120">UCC1 (206)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC1: (2PAGES+, 1-2 DEBTORS) (207)" type="checkbox" value="121">UCC1: (2PAGES+, 1-2 DEBTORS) (207)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC1: 1-2 PAGES, 1-2 DEBTORS (200)" type="checkbox" value="22">UCC1: 1-2 PAGES, 1-2 DEBTORS (200)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC1: 2+ PAGES, 1-2 DEBTORS (201)" type="checkbox" value="23">UCC1: 2+ PAGES, 1-2 DEBTORS (201)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC3 (208)" type="checkbox" value="122">UCC3 (208)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC3: (2PAGES+, 1-2 DEBTORS) (209)" type="checkbox" value="123">UCC3: (2PAGES+, 1-2 DEBTORS) (209)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC3: 1-2 PAGES, 1-2 DEBTORS (203)" type="checkbox" value="103">UCC3: 1-2 PAGES, 1-2 DEBTORS (203)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC3: 2+ PAGES, 1-2 DEBTORS (204)" type="checkbox" value="104">UCC3: 2+ PAGES, 1-2 DEBTORS (204)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC3: ASSIGNMENT (213)" type="checkbox" value="111">UCC3: ASSIGNMENT (213)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC3: ASSIGNMENT (2PAGES+, 1-2 DEBTORS) (214)" type="checkbox" value="112">UCC3: ASSIGNMENT (2PAGES+, 1-2 DEBTORS) (214)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC3: TERMINATION LIEN BK (210)" type="checkbox" value="106">UCC3: TERMINATION LIEN BK (210)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC3: TERMINATION MTG BK (211)" type="checkbox" value="125">UCC3: TERMINATION MTG BK (211)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="UCC3: TERMINATION MTG BK 2+ PAGES (212)" type="checkbox" value="110">UCC3: TERMINATION MTG BK 2+ PAGES (212)</input><br /><input aria-label="BookTypeCheckBox" name="DocTypeInfoCheckBox" title="WAIVER (067)" type="checkbox" value="164">WAIVER (067)</input><br />
+	                                            </div>
+                                                <br />
+	                                            <div style="text-align: right; border-top: thin solid #ccc; padding-right: 3px;">
+		                                            <div role="group" aria-label="SelectAllDocTypes" style="float: left; width: 80px;">
+			                                            <input type="checkbox" id="Checkbox1" name="SelectAllDocTypesToggle" onclick="ToggleChk(this, 'DocTypeInfoCheckBox');" title="SelectAllDocTypes" />
+			                                            All / None
+		                                            </div>
+		                                            <input type="button" value="Done" class="t-button" onclick="GetDocTypeString();" />
+	                                            </div>
+                                           </div></div><script>
+	kendo.syncReady(function(){jQuery("#DocumentTypesList").kendoTabStrip({});});
+</script>
+                    </div>
+                </div><script>
+	kendo.syncReady(function(){jQuery("#DocTypesWin").kendoWindow({"iframe":false,"scrollable":true,"pinned":false,"title":"Document Types:","resizable":false,"width":"400px","height":"410px","actions":["Close"]});});
+</script>
+                </div>
+            </div>
+        </div>
+        <div style="position: relative;">
+           <!-- <div class="criteriaButtonHolder" style="display: none;">
+                <button type="button" class="t-button" id="SearchCriteriaButton">
+                    Search Criteria</button>
+            </div>-->
+        </div>
+        <div style="position: relative;">
+            <div class="pinHolder">
+                <button id="toggleForm" value="Toggle" type="button" class="t-button" title="Toggle Search Form"
+                    style="padding: 0px; line-height: .9;">
+                    <div id="pushPinButton" class="pushPinUp">
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div id="divResultsPrint" class="divResultsPrintStyle">
+            <div class="divResultsPrintButtonsStyle"><button type="button" onclick="window.print(); $('#divResultsPrint').hide();">
+                Print</button>
+            <button type="button" onclick="$('#divResultsPrint').hide();">
+                Close</button>
+                </div>
+        </div>
+        <div id="gridMain">
+            <div class="gridHolder floatLeft">
+                <div id="SearchGridDiv">
+					<div class="welcomeMessage"><span>Please start your search now</span>
+						<div class="instructions">
+							<div class="ItemTitle t-header" style="font-size: 1em">Search Tips</div>
+							
+    <ol><li>Enter the name, Last name, First name like "Sparks, Sheldon".</li><li>Name must be atleast 3 characters long.</li><li>Select / Enter a beginning date.</li> <li>Select / Enter an ending date. <li>Click Search.</li> </ol>
+</div>
+					</div>
+					<div class="ImportantMessageDiv" style="margin:0 auto; width:938px; font-size: 1.2em;display:block;">
+							
+
+<div class="Alert AlertMessage">
+
+    <div class="AlertTitle AlertTitleMessage" style="font-size: 1em; 
+    font-weight: bold; color: white; background-color: #b30000; text-align: left;padding-left:5px ">
+        Important Message
+    </div>
+    <div class="AlertText AlertTextMessage" style="text-align: left;font-size: 1em;color: #444; background-color: white; ">
+     <p>
+       &nbsp;
+        <strong><u>Removal of redaction bars is granted upon purchase for 24 hours.  After that time the document will revert to it's prepurchased state and redaction bars will show again.</u></strong> 
+
+<br /><br /> If you wish to update your account information (contact info, password, etc.) you will need to contact our office via written request. This request needs to be via mail, or email only. 
+
+<br /><br /> Please include your account number, along with the relevant change you wish to have made. It must also come from the contact information on file for your account, otherwise the request will be returned to you stating the information is incorrect.
+
+<br /><br /> Our office may contact you regarding your request to ensure it is properly handled in the manner you requested.<br /><br /><a href="https://www.horrycountysc.gov/departments/register-of-deeds/#contact">Register of Deeds Contact Information</a>
+    </p>
+    </div>
+</div>
+
+					</div> 
+                 <div class="searchGridDiv">
+<script type="text/javascript">
+    var rowCount = 0;
+    var linkCount = 0;
+    function LinkCount() {
+        linkCount++;
+        
+    }
+    gridHeight1();
+</script>
+
+<hr style="clear: both; border: none; margin-bottom: 0px;" />
+<div id="divColSelector">
+    <div class="t-window-titlebar t-header">
+        &nbsp;<span class="t-window-title">Select Columns:</span>
+        <div class="t-window-actions t-header" role="button" onclick="$('#divColSelector').hide()">
+            <span class="t-link t-icon t-close">Close</span></div>
+    </div>
+    <div id="divColSelectorColumns" class="t-window-content t-content" style="height: 250px;
+        width: 250px; overflow: auto; font-size: 15px; z-index: 1000; text-align:left; margin-left:5px;">
+        <p id="chkColList"></p>
+    </div>
+    <p style="margin-left: 15px">
+        <button class="t-button" type="button" id="btnHideShowResultsColumns" title="Hide/Show Search result columns and Save preference"
+            onclick="SaveVisibleColumnsListWithWidth('')">
+            Done</button>
+    </p>
+</div>
+
+
+<script type="text/javascript">
+
+    var grid = $("#RsltsGrid").data("kendoGrid");
+
+    // Function to remove the role attribute from all <th> elements
+    function removeRoleFromTable() {
+		if (grid == null) { return;}
+	
+        // Find all <table>,<th>, <tr>, <td> elements inside the table header of the grid
+        grid.table.find("table").removeAttr("role");
+        grid.thead.find("th").removeAttr("role");
+        grid.tbody.find("tr").removeAttr("role");
+        grid.tbody.find("td").removeAttr("role");
+    }
+
+	if (grid != null){
+    // Remove the role after the grid is bound and rendered
+    grid.bind("dataBound", function () {
+        removeRoleFromTable();
+
+    });
+	}
+
+    // Optionally, if the role needs to be removed immediately after initialization, call the function here:
+    removeRoleFromTable();
+
+</script></div>
+                </div>
+                <div class="disableGrid" style="display: none;">
+                </div>
+            </div>
+            <!--<div class="cartButton">
+                
+                <button class="t-button" type="button" onclick="displayCheckedOrders('/AcclaimWeb/Search/SearchResultItemsInCart')">
+                    Add to Cart</button>
+            </div>-->
+            <div id="AddToCartDiv" class="AddToCartDivStyle">
+            </div>
+            <div id="NamesWin" style="display:none">
+            <div id="frmSchTarget">
+            </div>
+            </div><script>
+	kendo.syncReady(function(){jQuery("#NamesWin").kendoWindow({"close":CloseSearchWait,"iframe":false,"scrollable":true,"pinned":false,"title":"Select Names:","resizable":false,"width":"400px","height":"390px","actions":["Close"]});});
+</script><div id="ListWin" style="display:none">
+            <div id="ListContent">
+            </div>
+            </div><script>
+	kendo.syncReady(function(){jQuery("#ListWin").kendoWindow({"iframe":false,"scrollable":true,"pinned":false,"title":"List Window:","resizable":false,"width":"400px","height":"400px","actions":["Close"]});});
+</script><div id="ErrorWin" style="display:none">
+            <div id="ErrorMsg">
+            </div>
+            </div><script>
+	kendo.syncReady(function(){jQuery("#ErrorWin").kendoWindow({"iframe":false,"scrollable":true,"pinned":false,"title":"Error","resizable":false,"width":"400px","height":"300px","actions":["Close"]});});
+</script><div id="CartWin" style="display:none">
+            <div id="result">
+            </div>
+            <div class="boxFooterLine" style="position: absolute; bottom: 10px; width: 95%;">
+                <button class="t-button" onclick="parent.location.href='/AcclaimWeb/OnlineOrders/Cart'">
+                    Proceed to Check Out</button>
+                <button class="t-button" onclick="HideCartWin()">
+                    Continue Shopping</button>
+            </div>
+            </div><script>
+	kendo.syncReady(function(){jQuery("#CartWin").kendoWindow({"iframe":false,"scrollable":true,"pinned":false,"title":"Cart Message","resizable":false,"width":"400px","height":"300px","actions":["Close"]});});
+</script>
+        </div>
+        <div class="help">
+        <br />
+            
+    <ol><li>Enter the name, Last name, First name like "Sparks, Sheldon".</li><li>Name must be atleast 3 characters long.</li><li>Select / Enter a beginning date.</li> <li>Select / Enter an ending date. <li>Click Search.</li> </ol>
+
+        </div>
+        <div id="helpTip">
+            <button id="HelpButton" type="button" class="t-button">
+                <img src="/Content/Images/help24.png" class="helpButton" style="vertical-align: middle;
+                    cursor: pointer;" />Search Tips</button>
+        </div>
+    </div>
+    <div id="SearchFooter">
+        
+<div id="footer" class="t-header">
+<div id="BrandFooter"></div>
+        Copyright 2026 &copy;  Acclaim, is a registered trademark of HARRIS RECORDING SOLUTIONS
+        |  <span style="text-decoration: underline;"><a href="https://www.horrycountysc.gov/departments/register-of-deeds/" class="t-link">Contact Us</a></span>
+    </div>
+</div>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            if (!IsCookiesFeatureEnabled()) { $('#cookiesDisabled').show(); }
+            //Grid_Settings();
+
+            $(".t-window-actions t-header").click(function () {
+                ShowSearchWait(false);
+            });
+
+        });              
+
+    </script>
+    <div id="SearchingWaitImg" style="display: none">
+        <img alt="Searching..." src="../Content/Images/loading.gif" /></div>
+</body>
+<style type="text/css">
+    .t-grid-filter
+    {
+        display: none !important;
+    }
+</style>
+</html>

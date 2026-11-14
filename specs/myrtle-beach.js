@@ -589,6 +589,7 @@ module.exports = G.page({
       h.p(`Bent Oak Estates, off Pridgen Road, had the most house sales at $350,000 or less. It has about ${near(BO.district_houses, 10)} houses, about a mile from the beach and from the airport. About 7 in 10 are their owners' main homes.`) +
       h.p(`Meridian and Summit at Meridian, west of the airport, are one planned development of ${ME.district_houses} houses. Of the city's zoning districts with 50 or more houses, it has the highest share in FEMA's high-risk flood zone. Nightly rentals are not allowed in any of the three.`) +
 
+      h.p(`For one Myrtle Beach neighborhood in detail, see our ${h.a("/submarkets/myrtle-beach/plantation-point/", "Plantation Point guide")}.`) +
       partH3(P4, "") +
       h.p(`You can live in a condo too. Nearly every oceanfront condo building is where the city allows nightly rentals, so most of your neighbors there will be guests. Only about 1 in 18 condos there is someone's main home.`) +
       h.p(`Off the oceanfront, where nightly rentals are not allowed, about 1 in 3 condos is its owner's main home. Those condos resold for about ${r5k(SL.by_zone_class.r_no.condo.median)} in the middle, more than oceanfront condos, but there were only a few dozen sales. The ${h.a("#oceanfront-buildings", "oceanfront buildings")} are next.`) +
@@ -611,7 +612,7 @@ module.exports = G.page({
 
     { h2: "What are oceanfront condos like in Myrtle Beach?", toc: "Oceanfront condos", id: "oceanfront-buildings", html: () =>
       h.p(`About ${near(OCS.n, 10)} condos in oceanfront buildings inside the city resold in the past year. They range from hotel-style studios to three-bedroom condos. For a one-bedroom on the oceanfront, plan on about ${r1k(WX.asking_price_median_1br_oceanfront_inside_city)}, the middle asking price today.`) +
-      h.p(`Building by building, the fees, sale prices and units for sale are on our ${h.a("/invest/condo-buildings/", "oceanfront condo buildings page")}.`) +
+      h.p(`Building by building, the fees, sale prices and units for sale are on our ${h.a("/invest/condo-buildings/", "oceanfront condo buildings page")}. The ${h.a("/invest/condo-buildings/palace-resort/", "Palace Resort has its own guide")}, with its fees by unit size.`) +
       beside(h.p(`The lowest prices are for studios of about ${near(UNITS["TIDES/DRIFTWD/OASIS HPR"].median_sqft, 50)} square feet at Tides, Driftwood and Oasis. Many of these buildings have a rental program for their owners.`),
       photo(TOWERS),
       h.p(`Most buyers here live out of state. About 3 in 4 buyers of these oceanfront condos have their tax bill mailed outside South Carolina.`)) +

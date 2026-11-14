@@ -114,6 +114,7 @@ const PLACES = [
     "The city took its name from the wax myrtle, a shrub that grows wild here. The name won a contest in 1900, and Edgewater came second. South of the towers, Myrtle Beach State Park keeps about a mile of beach with no buildings on it. It opened in 1936 as the first park in the state system.",
     "The city allows nightly rentals only where the zoning allows them, and most of its neighborhoods of houses are zoned against them. The fine is up to $500 for each offense.",
     `Some oceanfront buildings run like hotels, with a registration desk and daily rentals. Those buildings are harder to finance, as the ${h.a("#loan", "loan section")} explains.`,
+    `One oceanfront building, the Palace Resort, has ${h.a("/invest/condo-buildings/palace-resort/", "its own guide, with HOA fees by unit size")}.`,
   ], "Homes across the City of Myrtle Beach usually sell for about $325,000.",
   ["myrtle-beach-beach-from-above", "The wide beach and the dunes in Myrtle Beach, seen from a high floor of an oceanfront building."]),
 
@@ -215,7 +216,7 @@ module.exports = G.page({
       h.p(`Fannie Mae does not buy loans in a condo building run like a hotel, with a rental pool or daily rentals, so many lenders will not finance a unit there. Other loans exist for those buildings: see ${h.a("/invest/condotel-financing/", "loans for hotel-style condos")}. Our lending partner can lay out both kinds of loan for the home you choose.`) },
 
     { h2: "What does a second home cost to hold each year?", toc: "Yearly cost", id: "cost", html: () =>
-      h.p("South Carolina taxes a second home on 6 percent of its value, and the home you live in on 4 percent. A home you live in also pays no school operating tax, the largest part of the bill. Together, the two rules make a second home's bill three to four times larger.") +
+      h.p(`South Carolina taxes a second home on 6 percent of its value, and the home you live in on 4 percent. A home you live in also pays no school operating tax, the largest part of the bill. Together, the two rules make a second home's bill three to four times larger. To look up what an address is billed, use our ${h.a("/buyers/property-records/tax-bill/", "Horry County tax records search")}.`) +
       TAX_TABLE +
       h.p(`In North Myrtle Beach and Surfside Beach, the bill on a $400,000 second home falls between these two. Every town's bill is in our ${h.a("/buyers/property-taxes/", "property tax calculator")}.`) +
       h.p(`Want to walk to the sand, or swim at home? Our guides to ${h.a("/buyers/homes-near-the-beach/", "houses near the beach")} and ${h.a("/buyers/pool-homes/", "homes with a pool")} show where they are.`) +

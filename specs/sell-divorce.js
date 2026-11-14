@@ -126,7 +126,7 @@ const BUYOUT = `<ol class="dv-num" aria-label="How a buyout works, in order">`
   + stp("Agree on the value", "Use an appraisal, or a real estate agent's written price estimate. If you do not agree, the judge decides the value from the evidence and may appoint an expert, such as an appraiser.")
   + stp("Write the terms down", "The agreement says who keeps the house, what the other is paid and by when.")
   + stp("The new loan", `The spouse who keeps the house must qualify for a new loan. It has to pay off the old loan and pay the other spouse. On the example above, that is at least ${money(WB.new_loan_at_least)}.`)
-  + stp("The deed", `A deed from one spouse to the other as part of the divorce is ${h.ext(T12_24, "exempt from the deed fee")}. The exception is a spouse who gets it and is neither a US citizen nor a US resident. A sale of the same house pays ${money(DEED)}.`)
+  + stp("The deed", `A deed from one spouse to the other as part of the divorce is ${h.ext(T12_24, "exempt from the deed fee")}. The exception is a spouse who gets it and is neither a US citizen nor a US resident. A sale of the same house pays ${money(DEED)}. To find a house's deed, use our ${h.a("/buyers/property-records/deeds/", "Horry County deed search guide")}.`)
   + stp("The old loan is paid off", "The new loan pays off the old one. That ends the debt of the spouse who left.")
   + `</ol>`;
 

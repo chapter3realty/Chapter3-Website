@@ -332,7 +332,7 @@ module.exports = G.page({
   author: "devin",
   shortAnswer: [
     `A house with its own pool is most likely near the ocean and at a higher price. The middle one asks about ${money(MED.ask.pool)}. The row of homes above shows some of them.`,
-    `On a smaller budget, the usual way to have a pool is a neighborhood with a shared one, such as The Farm at Carolina Forest or Berkshire Forest. There the pool comes with the homeowners association (HOA) fee.`,
+    `On a smaller budget, the usual way to have a pool is a neighborhood with a shared one, such as The Farm at Carolina Forest or Berkshire Forest. There the pool comes with the homeowners association (HOA) fee. Our ${h.a("/submarkets/myrtle-beach/plantation-point/", "Plantation Point homes guide")} shows one Myrtle Beach neighborhood where houses have in-ground pools.`,
   ],
   sections: [
     { h2: "Where are the homes for sale with a pool in Myrtle Beach?", toc: "Where", id: "where", html: () =>

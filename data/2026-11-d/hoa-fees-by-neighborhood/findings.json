@@ -1,0 +1,966 @@
+{
+ "pulled": "2026-11-13T21:42:09.335946+00:00",
+ "communities_sc": 382,
+ "left_out_nc": 19,
+ "homes_in_table": 2585,
+ "homes_seen": 4213,
+ "with_a_fee": 328,
+ "no_fee_on_any": 51,
+ "leased_land": [
+  [
+   "Lakeside Crossing",
+   21
+  ],
+  [
+   "Apache Campground",
+   8
+  ],
+  [
+   "Ocean Lakes",
+   145
+  ]
+ ],
+ "house_communities_by_middle_fee": {
+  "Under $50": 37,
+  "$50 to $100": 125,
+  "$100 to $150": 56,
+  "$150 to $200": 24,
+  "$200 to $300": 19,
+  "$300 to $500": 16,
+  "Over $500": 3
+ },
+ "left_out_search_ignores_name": [
+  "Bell\u2019s Lake",
+  "Ocean Villas @67th",
+  "The Farm @ Timberlake",
+  "Villas @ Bellasera"
+ ],
+ "house_middle_of_middles": 95.0,
+ "townhome_middle_of_middles": 250.0,
+ "house_lawn_vs_not": {
+  "lawn": 300,
+  "n_lawn": 19,
+  "no_lawn": 90.0,
+  "n_no_lawn": 261
+ },
+ "house_pool_clubhouse_vs_neither": {
+  "both": 115.0,
+  "n_both": 130,
+  "neither": 68.0,
+  "n_neither": 92
+ },
+ "lowest_house_with_pool_and_clubhouse": [
+  [
+   25.0,
+   "The Lakes",
+   "Myrtle Beach",
+   6
+  ],
+  [
+   30,
+   "Aberdeen",
+   "Longs",
+   3
+  ],
+  [
+   38,
+   "Long Bay",
+   "Longs",
+   5
+  ],
+  [
+   46,
+   "Southgate",
+   "Carolina Forest",
+   3
+  ],
+  [
+   48,
+   "Lakeside at Eagle Nest",
+   "Little River",
+   3
+  ],
+  [
+   50,
+   "Blackmoor",
+   "Murrells Inlet",
+   5
+  ],
+  [
+   50,
+   "Tilghman Forest - Tilghman Estates",
+   "North Myrtle Beach",
+   3
+  ],
+  [
+   52.0,
+   "Arrowhead",
+   "Myrtle Beach",
+   12
+  ],
+  [
+   53.5,
+   "The Gates",
+   "Myrtle Beach",
+   4
+  ],
+  [
+   56,
+   "The Gates - Sommerset Cove",
+   "Myrtle Beach",
+   3
+  ]
+ ],
+ "highest_house": [
+  [
+   898,
+   "North Beach Plantation - The Cottages at Margaret",
+   "North Myrtle Beach",
+   3,
+   [
+    "lawn care",
+    "internet"
+   ],
+   [
+    "pool"
+   ]
+  ],
+  [
+   898,
+   "North Beach Plantation - Banyan",
+   "North Myrtle Beach",
+   3,
+   [
+    "lawn care",
+    "internet",
+    "trash pickup"
+   ],
+   [
+    "pool"
+   ]
+  ],
+  [
+   503,
+   "Grande Dunes - Waterside Pointe",
+   "Myrtle Beach",
+   3,
+   [
+    "lawn care"
+   ],
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ]
+  ],
+  [
+   492.5,
+   "Prince George Ocean",
+   "Pawleys Island",
+   4,
+   [],
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ]
+  ],
+  [
+   401.0,
+   "Grande Dunes - Del Webb",
+   "Myrtle Beach",
+   26,
+   [
+    "lawn care"
+   ],
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ]
+  ],
+  [
+   400,
+   "Grande Dunes - Bal Harbor",
+   "Myrtle Beach",
+   3,
+   [],
+   []
+  ],
+  [
+   398,
+   "Barefoot Resort - Leatherleaf",
+   "North Myrtle Beach",
+   3,
+   [
+    "trash pickup"
+   ],
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ]
+  ],
+  [
+   390,
+   "Rivergate - Little River",
+   "Little River",
+   3,
+   [
+    "lawn care",
+    "internet",
+    "trash pickup",
+    "insurance"
+   ],
+   [
+    "pool"
+   ]
+  ],
+  [
+   370,
+   "Grande Dunes - Living Dunes",
+   "Myrtle Beach",
+   11,
+   [
+    "trash pickup"
+   ],
+   [
+    "pool",
+    "clubhouse"
+   ]
+  ],
+  [
+   346,
+   "Willbrook Plantation",
+   "Pawleys Island",
+   3,
+   [],
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ]
+  ],
+  [
+   344.0,
+   "Grande Dunes - Riviera Village",
+   "Myrtle Beach",
+   4,
+   [],
+   [
+    "pool",
+    "clubhouse"
+   ]
+  ],
+  [
+   344,
+   "Grande Dunes - Members Club",
+   "Myrtle Beach",
+   3,
+   [
+    "trash pickup"
+   ],
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ]
+  ]
+ ],
+ "lowest_house": [
+  [
+   1.0,
+   "The Olde Village",
+   "Murrells Inlet",
+   3
+  ],
+  [
+   5,
+   "North Litchfield Beach",
+   "Pawleys Island",
+   5
+  ],
+  [
+   9,
+   "Mt Gilead",
+   "Murrells Inlet",
+   5
+  ],
+  [
+   9,
+   "Myrtle Dunes",
+   "Garden City Beach",
+   3
+  ],
+  [
+   10,
+   "Rosehaven",
+   "Conway",
+   7
+  ],
+  [
+   12,
+   "The Palms at 5th Avenue South - NMB",
+   "North Myrtle Beach",
+   3
+  ],
+  [
+   13,
+   "Brandymill",
+   "Socastee",
+   3
+  ],
+  [
+   23,
+   "Ocean Pines - NMB",
+   "North Myrtle Beach",
+   3
+  ],
+  [
+   24,
+   "Bridgewater - Conway",
+   "Conway",
+   3
+  ],
+  [
+   25,
+   "Corbin Estates",
+   "Conway",
+   3
+  ],
+  [
+   25.0,
+   "Myrtle Grove Plantation",
+   "Longs",
+   6
+  ],
+  [
+   25.0,
+   "The Lakes",
+   "Myrtle Beach",
+   6
+  ]
+ ],
+ "by_town": {
+  "Aynor": {
+   "communities": 3,
+   "middle_of_middles": 66
+  },
+  "Carolina Forest": {
+   "communities": 34,
+   "middle_of_middles": 107.0
+  },
+  "Conway": {
+   "communities": 63,
+   "middle_of_middles": 81.5
+  },
+  "Garden City Beach": {
+   "communities": 3,
+   "middle_of_middles": 9
+  },
+  "Georgetown": {
+   "communities": 16,
+   "middle_of_middles": 125
+  },
+  "Little River": {
+   "communities": 24,
+   "middle_of_middles": 117.5
+  },
+  "Longs": {
+   "communities": 38,
+   "middle_of_middles": 93.5
+  },
+  "Loris": {
+   "communities": 7,
+   "middle_of_middles": 80.0
+  },
+  "Murrells Inlet": {
+   "communities": 35,
+   "middle_of_middles": 140
+  },
+  "Myrtle Beach": {
+   "communities": 88,
+   "middle_of_middles": 110
+  },
+  "North Myrtle Beach": {
+   "communities": 29,
+   "middle_of_middles": 206
+  },
+  "Pawleys Island": {
+   "communities": 14,
+   "middle_of_middles": 236.25
+  },
+  "Socastee": {
+   "communities": 11,
+   "middle_of_middles": 77.5
+  },
+  "Surfside Beach": {
+   "communities": 17,
+   "middle_of_middles": 72
+  }
+ },
+ "carolina_forest": [
+  [
+   46,
+   "Southgate",
+   3,
+   [
+    "pool",
+    "clubhouse"
+   ],
+   []
+  ],
+  [
+   50,
+   "North Cove",
+   11,
+   [
+    "pool"
+   ],
+   [
+    "trash pickup"
+   ]
+  ],
+  [
+   66,
+   "The Sanctuary at Wild Wing Plantation",
+   3,
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ],
+   []
+  ],
+  [
+   67,
+   "Southcreek",
+   9,
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ],
+   []
+  ],
+  [
+   74,
+   "Carolina Forest - Covington Lake",
+   3,
+   [
+    "pool"
+   ],
+   []
+  ],
+  [
+   75,
+   "Merrill Villas",
+   5,
+   [
+    "pool"
+   ],
+   [
+    "trash pickup"
+   ]
+  ],
+  [
+   80,
+   "Landing at River Oaks",
+   9,
+   [
+    "pool",
+    "tennis"
+   ],
+   [
+    "trash pickup"
+   ]
+  ],
+  [
+   81,
+   "Carolina Forest - Bellegrove Oaks",
+   3,
+   [
+    "pool",
+    "clubhouse"
+   ],
+   [
+    "trash pickup"
+   ]
+  ],
+  [
+   85,
+   "Carolina Forest - Avalon",
+   11,
+   [
+    "pool",
+    "clubhouse"
+   ],
+   [
+    "trash pickup"
+   ]
+  ],
+  [
+   87.5,
+   "Carolina Forest - Covington Lake East",
+   4,
+   [
+    "pool",
+    "clubhouse"
+   ],
+   []
+  ],
+  [
+   90.0,
+   "Walkers Woods",
+   4,
+   [
+    "pool",
+    "clubhouse"
+   ],
+   []
+  ],
+  [
+   92,
+   "Trieste at Bella Vita",
+   5,
+   [
+    "pool",
+    "clubhouse"
+   ],
+   [
+    "trash pickup"
+   ]
+  ],
+  [
+   95,
+   "Waterford Plantation",
+   9,
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ],
+   []
+  ],
+  [
+   100.0,
+   "The Isles of Bella Vita",
+   6,
+   [
+    "pool",
+    "clubhouse"
+   ],
+   [
+    "trash pickup"
+   ]
+  ],
+  [
+   105,
+   "Clear Pond at Myrtle Beach National",
+   25,
+   [
+    "pool",
+    "clubhouse"
+   ],
+   [
+    "trash pickup"
+   ]
+  ],
+  [
+   106,
+   "Carolina Waterway Plan",
+   7,
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ],
+   []
+  ],
+  [
+   107.0,
+   "Carolina Forest - The Farm",
+   14,
+   [
+    "pool",
+    "clubhouse"
+   ],
+   [
+    "internet",
+    "trash pickup"
+   ]
+  ],
+  [
+   110,
+   "Bella Vita",
+   9,
+   [
+    "pool",
+    "clubhouse"
+   ],
+   [
+    "trash pickup"
+   ]
+  ],
+  [
+   116.0,
+   "Berkshire Forest-Carolina Forest",
+   16,
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ],
+   [
+    "trash pickup"
+   ]
+  ],
+  [
+   120.0,
+   "The Parks of Carolina Forest",
+   12,
+   [
+    "pool",
+    "clubhouse"
+   ],
+   [
+    "trash pickup"
+   ]
+  ],
+  [
+   120.0,
+   "Traditions at Carolina Forest",
+   6,
+   [
+    "pool",
+    "clubhouse"
+   ],
+   [
+    "trash pickup",
+    "insurance"
+   ]
+  ],
+  [
+   125.0,
+   "Plantation Lakes",
+   14,
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ],
+   [
+    "trash pickup"
+   ]
+  ],
+  [
+   127.0,
+   "Indigo Bay",
+   6,
+   [
+    "pool",
+    "clubhouse"
+   ],
+   [
+    "trash pickup",
+    "insurance"
+   ]
+  ],
+  [
+   135,
+   "Wild Wing Plantation",
+   21,
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ],
+   []
+  ],
+  [
+   150.0,
+   "Townes at Carolina Forest",
+   4,
+   [],
+   [
+    "lawn care",
+    "trash pickup"
+   ]
+  ],
+  [
+   150.0,
+   "Waterbridge",
+   26,
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ],
+   []
+  ],
+  [
+   154,
+   "The Bluffs On The Waterway",
+   13,
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ],
+   []
+  ],
+  [
+   156.0,
+   "Waterway Palms Plantation",
+   21,
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ],
+   []
+  ],
+  [
+   159.0,
+   "The Battery on the Waterway",
+   6,
+   [],
+   []
+  ],
+  [
+   235.0,
+   "Victory Point",
+   4,
+   [
+    "pool",
+    "clubhouse"
+   ],
+   [
+    "lawn care",
+    "trash pickup"
+   ]
+  ],
+  [
+   389,
+   "Tuscany - Carolina Forest Area - 31JJ21",
+   3,
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ],
+   [
+    "lawn care",
+    "trash pickup"
+   ]
+  ],
+  [
+   423.0,
+   "Sawgrass East - Carolina Forest",
+   8,
+   [
+    "pool",
+    "clubhouse"
+   ],
+   [
+    "lawn care",
+    "trash pickup",
+    "water and sewer",
+    "insurance"
+   ]
+  ],
+  [
+   486.0,
+   "Kiskadee Parke At Wild Wing",
+   4,
+   [
+    "pool",
+    "clubhouse",
+    "tennis"
+   ],
+   [
+    "lawn care",
+    "trash pickup",
+    "water and sewer",
+    "insurance"
+   ]
+  ]
+ ],
+ "biggest": [
+  [
+   145,
+   "Ocean Lakes",
+   "Myrtle Beach",
+   null,
+   null
+  ],
+  [
+   28,
+   "Oceanside Village",
+   "Surfside Beach",
+   376,
+   376
+  ],
+  [
+   26,
+   "Waterbridge",
+   "Carolina Forest",
+   150,
+   150
+  ],
+  [
+   26,
+   "Grande Dunes - Del Webb",
+   "Myrtle Beach",
+   401,
+   435
+  ],
+  [
+   25,
+   "Clear Pond at Myrtle Beach National",
+   "Carolina Forest",
+   105,
+   105
+  ],
+  [
+   25,
+   "Auberon Woods",
+   "Conway",
+   95,
+   95
+  ],
+  [
+   21,
+   "Wild Wing Plantation",
+   "Carolina Forest",
+   135,
+   135
+  ],
+  [
+   21,
+   "Waterway Palms Plantation",
+   "Carolina Forest",
+   137,
+   157
+  ],
+  [
+   21,
+   "The Townes at Amber Bluff",
+   "Conway",
+   100,
+   100
+  ],
+  [
+   21,
+   "Lakeside Crossing",
+   "Conway",
+   807,
+   807
+  ],
+  [
+   21,
+   "Carrington Woods",
+   "Longs",
+   80,
+   80
+  ],
+  [
+   19,
+   "Tidewater Plantation",
+   "North Myrtle Beach",
+   192,
+   231
+  ],
+  [
+   18,
+   "Winfield Farms",
+   "Myrtle Beach",
+   85,
+   85
+  ],
+  [
+   18,
+   "Palmetto Place",
+   "Longs",
+   103,
+   103
+  ],
+  [
+   17,
+   "The Forest At Black Bear",
+   "Longs",
+   65,
+   65
+  ],
+  [
+   17,
+   "Somerset",
+   "Myrtle Beach",
+   110,
+   111
+  ],
+  [
+   17,
+   "Marshfield",
+   "Longs",
+   125,
+   125
+  ],
+  [
+   16,
+   "Heritage Park",
+   "Longs",
+   82,
+   82
+  ],
+  [
+   16,
+   "Eden Springs",
+   "Longs",
+   70,
+   70
+  ],
+  [
+   16,
+   "Berkshire Forest-Carolina Forest",
+   "Carolina Forest",
+   116,
+   116
+  ],
+  [
+   15,
+   "SayeBrook",
+   "Socastee",
+   130,
+   130
+  ],
+  [
+   15,
+   "Debordieu Colony",
+   "Georgetown",
+   306,
+   310
+  ],
+  [
+   15,
+   "Coopers Bluff",
+   "Socastee",
+   88,
+   88
+  ],
+  [
+   15,
+   "Blue Heron Retreat",
+   "Little River",
+   101,
+   343
+  ],
+  [
+   14,
+   "Waterford Oaks",
+   "Garden City Beach",
+   null,
+   null
+  ]
+ ]
+}

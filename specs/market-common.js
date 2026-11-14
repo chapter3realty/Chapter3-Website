@@ -548,7 +548,7 @@ module.exports = G.page({
       `<p class="mc-note">Past year. The Market Common and Carolina Forest: resales in Horry County deeds; Carolina Forest is the Census area of that name. Surfside Beach houses: every house sale in the town, its own page's figure.</p>` +
       h.p(`Carolina Forest is a much larger inland area, with more than twice as many homes, about 25 minutes north by car. Our ${h.a("/submarkets/carolina-forest/", "Carolina Forest guide")} covers it in detail.`) +
       h.p(`Surfside Beach is a beach town about 13 to 14 minutes south, where about 3 in 10 houses are in a high-risk flood zone. Our ${h.a("/submarkets/surfside-beach/", "Surfside Beach guide")} covers its two sides of the highway.`) +
-      h.p(`The Market Common is one part of Myrtle Beach. Our ${h.a("/submarkets/myrtle-beach/", "Myrtle Beach guide")} covers the city's other parts and its rules on nightly rentals.`) },
+      h.p(`The Market Common is one part of Myrtle Beach. Our ${h.a("/submarkets/myrtle-beach/", "Myrtle Beach guide")} covers the city's other parts and its rules on nightly rentals. For a neighborhood by the Intracoastal Waterway, see ${h.a("/submarkets/myrtle-beach/plantation-point/", "Plantation Point in Myrtle Beach")}.`) },
 
     { h2: "What was The Market Common before?", toc: "Before", id: "before", html: () =>
       h.p(`The Market Common stands on the old Myrtle Beach Air Force Base, which closed in 1993. The town center opened on part of it in 2008.`) +

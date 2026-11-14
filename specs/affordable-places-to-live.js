@@ -352,7 +352,9 @@ module.exports = G.page({
 
     { h2: "How do the twelve compare on yearly cost, the beach and schools?", toc: "Cost, beach and schools", id: "schools", html: () =>
       h.p(`The map shows where each place is, and the table gives the HOA fee and tax a year, the drive to a beach and the zoned schools. To choose by what you want nearby, read our guide to the ${h.a("/buyers/best-neighborhoods/", "best neighborhoods near Myrtle Beach")}. For no HOA fee at all, see our guide to ${h.a("/buyers/no-hoa-homes/", "homes with no HOA")}. To compare one Carolina Forest neighborhood in depth, see ${h.a("/submarkets/carolina-forest/the-farm/", "what it is like to live in The Farm at Carolina Forest")}.`) +
-      COMPARE },
+      COMPARE +
+      h.p(`To weigh Myrtle Beach against Charleston, see our ${h.a("/buyers/relocating/myrtle-beach-vs-charleston/", "Myrtle Beach vs Charleston comparison")}.`) +
+      h.p(`To buy land and build, see our ${h.a("/buyers/land/", "land for sale in Horry County")}.`) },
 
     { h2: "How much property tax will you pay?", toc: "Property tax", id: "property-tax", html: () =>
       h.p(`Take a $240,000 home that is your main home. ${h.ext(LEVY, "Its yearly tax")} depends on where it is:`) +

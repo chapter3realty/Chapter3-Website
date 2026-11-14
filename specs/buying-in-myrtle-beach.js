@@ -242,7 +242,7 @@ const STEPS = [
   { t: "Closing, here or from home",
     p: "You can sign at the attorney's office. From another state, you can sign the deed papers and the mortgage before a notary where you live, with two witnesses." },
   { t: "The deed is recorded in Conway",
-    p: `The deed and mortgage are recorded at the Horry County Register of Deeds in Conway. The seller pays the state's deed fee.`,
+    p: `The deed and mortgage are recorded at the Horry County Register of Deeds in Conway. The seller pays the state's deed fee. To look up a recorded deed, use our ${h.a("/buyers/property-records/", "Horry County property lookup")}.`,
     we: `${h.a("/buyers/closing-costs/", "What the buyer pays at closing")} is listed fee by fee on its own page.` },
   { t: "Apply for the 4&nbsp;percent tax rate",
     p: `A home you live in and apply for is taxed on 4 percent of its value; a second home or a rental on 6 percent. The 4 percent rate is not automatic: you ${h.a("/buyers/property-taxes/", "apply to the county")} after you buy.`,
@@ -430,7 +430,8 @@ module.exports = G.page({
       h.p(`The middle house, about $350,000, costs about ${r10(WX.total)} a year besides the mortgage if you live in it outside city limits. That is about ${r10(WX.total_per_month)} a month. The biggest parts are upkeep, about $3,270, and insurance, about $2,000.`) + `</div>` +
       h.p(`The middle resale condo, about ${k1(CX.price)}, costs about ${r10(CX.total)} a year, and three quarters of that is the condo fee. The fee pays to run and keep up the shared building and grounds, and may pay the building's insurance.`) +
       YEAR_CHART +
-      h.p(`In Myrtle Beach and North Myrtle Beach the middle condo ${h.a("/buyers/cost-to-own/", "costs more to own each year")} than the middle house. But it costs less to buy: in Myrtle Beach, less than half as much. Weigh the smaller loan against the larger fee.`) },
+      h.p(`In Myrtle Beach and North Myrtle Beach the middle condo ${h.a("/buyers/cost-to-own/", "costs more to own each year")} than the middle house. But it costs less to buy: in Myrtle Beach, less than half as much. Weigh the smaller loan against the larger fee.`) +
+      h.p(`To compare prices with Charleston, see our ${h.a("/buyers/relocating/myrtle-beach-vs-charleston/", "Charleston vs Myrtle Beach page")}.`) },
 
     { h2: "What are the steps to buy a house in South Carolina?", toc: "The steps", id: "steps", html: () =>
       h.p(`Eight steps, from choosing an agent to the deed recorded in Conway. The biggest difference from many states: every South Carolina home closing must be supervised by a South Carolina attorney.`) +

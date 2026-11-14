@@ -1,0 +1,64 @@
+{
+ "pulled": "2026-11-13T05:58:09.227072+00:00",
+ "api": "https://chapter3realty.com/homes/api/map",
+ "rule": "Homes for sale now in Plantation Point and The Landing at Plantation Point, in aggregate, from the site's public map API\n(https://chapter3realty.com/homes/api/map, CCMLS active listings through the CRM) and the public listing card (/homes/api/lookup).\nA home counts when its map point falls inside the community outline (the county parcels of pull_county.py, buffered 40 m).\nMLS subdivision names searched: \"Plantation Point\" and \"The Landing\". HOA fee: bracketed with the site's own filter\nhoaMax=T (T = 0, 25, 50 ... 1000); hoa=0 = the listing says there is no HOA. hoaMax=0 also returns listings that name an HOA with a $0 fee.\nSaved: counts, list-price median and range, beds range, size median, year-built range, fee brackets. No MLS number, address,\nlisting firm or photo is saved. Run: RAW=<scratch> python3 -I pull_listings.py <this dir>. Writes listings.json.",
+ "groups": {
+  "Plantation Point": {
+   "for_sale": 6,
+   "subdivision_names": [
+    "Plantation Point"
+   ],
+   "types": [
+    "Detached"
+   ],
+   "listing_says_no_hoa": 3,
+   "fee_at_or_under": {
+    "0": 6
+   },
+   "list_price": {
+    "median": 1237000.0,
+    "min": 749999,
+    "max": 2099000
+   },
+   "year_built": [
+    1987,
+    2005
+   ],
+   "sqft_median": 3900.5,
+   "beds": [
+    4,
+    6
+   ],
+   "hoa_monthly_listed": []
+  },
+  "The Landing at Plantation Point": {
+   "for_sale": 1,
+   "subdivision_names": [
+    "The Landing"
+   ],
+   "types": [
+    "Detached"
+   ],
+   "listing_says_no_hoa": 1,
+   "fee_at_or_under": {
+    "0": 1
+   },
+   "list_price": {
+    "median": 378900,
+    "min": 378900,
+    "max": 378900
+   },
+   "year_built": [
+    1979,
+    1979
+   ],
+   "sqft_median": 1500,
+   "beds": [
+    3,
+    3
+   ],
+   "hoa_monthly_listed": []
+  }
+ },
+ "refreshedAt": "2026-11-13T05:50:30.963Z"
+}

@@ -441,7 +441,7 @@ module.exports = G.page({
       h.p(`Never follow wiring instructions that arrive in an email. ${h.ext(CFPB_WIRE, "Confirm them by phone")} with the attorney's office, at a number you agreed on in advance.`) },
 
     { h2: "Who pays the property taxes when you sell in Horry County?", toc: "Property taxes", id: "property-taxes", html: (bg) =>
-      h.p(`You pay for the part of the year you owned the home, and the buyer pays for the rest. South Carolina property taxes for a year are ${h.ext(T12_45, "due between September 30 and January 15")} after they are assessed.`) +
+      h.p(`You pay for the part of the year you owned the home, and the buyer pays for the rest. South Carolina property taxes for a year are ${h.ext(T12_45, "due between September 30 and January 15")} after they are assessed. To look up the bill for your home, use our ${h.a("/buyers/property-records/tax-bill/", "guide to Horry County tax payments")}.`) +
       h.p("For most of the year, the tax for the months you have owned the home has not been billed yet. At closing you credit the buyer your share. The credit is your own tax for those months, not an extra cost.") +
       TAX_CHART +
       h.h3("Why a second home pays about three times as much") +

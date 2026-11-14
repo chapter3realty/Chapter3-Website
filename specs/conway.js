@@ -525,7 +525,7 @@ module.exports = G.page({
     { h2: "Is a Conway address inside the city of Conway?", toc: "City or county", id: "city-or-county", html: (bg) =>
       h.p(`Usually not. Only a little more than 1 in 4 homes with a Conway mailing address is inside the city limits. The rest are in the county, outside any city.`) +
       ADDRESS_CHART +
-      h.p(`The same is true of homes for sale. At our last count, only about 1 in 4 houses for sale with a Conway address was inside the city.`) +
+      h.p(`The same is true of homes for sale. At our last count, only about 1 in 4 houses for sale with a Conway address was inside the city. To see a lot's lines and zoning, use our ${h.a("/buyers/property-records/gis-map/", "Horry County GIS map guide")}.`) +
       h.h3("What the city line changes") +
       h.p(`Inside the city, the property tax is about $${TAX_GAP} a year more on a typical house you live in. The City of Conway picks up garbage, recycling and yard waste at the curb once a week for homes in the city, and the city has its own police and fire departments.`) +
       h.p(`Outside the city there is no city pickup. Homes in the county, outside any city, are the only ones allowed to use the county's 25 recycling and convenience centers, where owners bring their own trash.`) +
@@ -619,7 +619,7 @@ module.exports = G.page({
       h.p(`Builders sold about ${near(NEW.n, 10)} new homes in the city in the same year, for about ${r5k(NEW.median)} in the middle. Few resales were condos, and those went for about ${r5k(CONDO.median)}.`) +
       PRICE_CHART +
       h.p(`Conway is not the cheapest town in the county. Homes in Loris and Aynor, two smaller inland towns, resold for less.`) +
-      h.p(`At our last count, about ${near(L.api_totals.house, 10)} houses were for sale with a Conway address, more than half of them new construction, and about ${near(L.houses_one_acre_plus, 10)} on an acre or more. Our ${h.a("/buyers/no-hoa-homes/", "no-HOA homes guide")} and ${h.a("/buyers/affordable-places-to-live/", "most affordable places")} include Conway.`) },
+      h.p(`At our last count, about ${near(L.api_totals.house, 10)} houses were for sale with a Conway address, more than half of them new construction, and about ${near(L.houses_one_acre_plus, 10)} on an acre or more. Our ${h.a("/buyers/no-hoa-homes/", "no-HOA homes guide")} and ${h.a("/buyers/affordable-places-to-live/", "most affordable places")} include Conway. For vacant land, see ${h.a("/buyers/land/", "land for sale around Conway and the county")}.`) },
 
     { h2: "What do homes rent for in Conway?", toc: "Renting out", id: "renting-out", html: (bg) =>
       h.p(`HUD's fair market rent for a three-bedroom in the Conway ZIP codes is ${money(HUD.three)} a month. HUD counts rent and utilities together, so the rent alone is less. The figure sits a little under ${h.a("/invest/rent-prices/", "the middle of the market")}.`) +
